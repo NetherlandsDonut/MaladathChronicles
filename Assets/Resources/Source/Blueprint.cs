@@ -207,7 +207,6 @@ public class Blueprint
     public static List<Blueprint> desktopBlueprints = new()
     {
         new("Menu", () => {
-            AddHotkey(Q, () => { CDesktop.LBWindow.Rebuild(); });
             AddHotkey(R, () => { SpawnWindowBlueprint("Testing"); });
             AddHotkey(L, () => { SpawnWindowBlueprint("LayoutTest"); });
             AddHotkey(U, () => { SpawnWindowBlueprint("UnitCardsExplorer"); });

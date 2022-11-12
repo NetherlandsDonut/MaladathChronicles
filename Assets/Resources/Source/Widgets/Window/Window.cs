@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 using static Root;
 
+using static Root.Anchor;
 using static Root.RegionBackgroundType;
 
 public class Window : MonoBehaviour
@@ -29,7 +30,7 @@ public class Window : MonoBehaviour
     {
         this.title = title;
         this.desktop = desktop;
-        anchor = new WindowAnchor(Anchor.Center);
+        anchor = new WindowAnchor(Center);
         regionGroups = new();
         shadows = new GameObject[8];
 
@@ -47,27 +48,27 @@ public class Window : MonoBehaviour
     //    highestGroup.SetWidths(rows.Max(x => x.Sum(y => y.regions.Max(z => z.AutoWidth()))));
     //}
 
-    public int PlannedHeight()
+    public int PlannedHeight(bool includeHeader = false)
     {
-        return regionGroups.Max(x => x.PlannedHeight());
+        return regionGroups.Max(x => x.PlannedHeight()) + (includeHeader && headerGroup != null ? headerGroup.PlannedHeight() : 0);
     }
 
     public void ResetPosition()
     {
-        transform.localPosition = Anchorise();
+        transform.localPosition = Anchor();
         transform.localPosition += (Vector3)anchor.offset;
 
-        Vector2 Anchorise()
+        Vector2 Anchor()
         {
             switch (anchor.anchor)
             {
-                case Anchor.Bottom: return new Vector2(475 - xOffset / 2, -536 + PlannedHeight());
-                case Anchor.BottomRight: return new Vector2(956 - xOffset, -536 + PlannedHeight());
-                case Anchor.BottomLeft: return new Vector2(2, -536 + PlannedHeight());
-                case Anchor.Top: return new Vector2(475 - xOffset / 2, -2);
-                case Anchor.TopRight: return new Vector2(956 - xOffset, -2);
-                case Anchor.TopLeft: return new Vector2(2, -2);
-                case Anchor.Center: return new Vector2(480 - xOffset / 2, -270 + PlannedHeight() / 2);
+                case Bottom: return new Vector2(475 - xOffset / 2, -536 + PlannedHeight());
+                case BottomRight: return new Vector2(956 - xOffset, -536 + PlannedHeight());
+                case BottomLeft: return new Vector2(2, -536 + PlannedHeight());
+                case Top: return new Vector2(475 - xOffset / 2, -2);
+                case TopRight: return new Vector2(956 - xOffset, -2);
+                case TopLeft: return new Vector2(2, -2);
+                case Center: return new Vector2(480 - xOffset / 2, -270 + PlannedHeight() / 2);
                 default: return new Vector2(0, 0);
             }
         }
@@ -118,9 +119,9 @@ public class Window : MonoBehaviour
         shadows[2].transform.localPosition = new Vector3(xOffset + 2, 18, 0.9f);
         shadows[3].transform.localPosition = new Vector3(-18, 0, 0.9f);
         shadows[4].transform.localPosition = new Vector3(xOffset + 2, 0, 0.9f);
-        shadows[5].transform.localPosition = new Vector3(-18, -PlannedHeight() - 2 - (headerGroup != null ? headerGroup.PlannedHeight() : 0), 0.9f);
-        shadows[6].transform.localPosition = new Vector3(0, -PlannedHeight() - 2 - (headerGroup != null ? headerGroup.PlannedHeight() : 0), 0.9f);
-        shadows[7].transform.localPosition = new Vector3(xOffset + 2, -PlannedHeight() - 2 - (headerGroup != null ? headerGroup.PlannedHeight() : 0), 0.9f);
+        shadows[5].transform.localPosition = new Vector3(-18, -PlannedHeight(true) - 2, 0.9f);
+        shadows[6].transform.localPosition = new Vector3(0, -PlannedHeight(true) - 2, 0.9f);
+        shadows[7].transform.localPosition = new Vector3(xOffset + 2, -PlannedHeight(true) - 2, 0.9f);
     }
 
     public void BuildRegionGroup(RegionGroup regionGroup)

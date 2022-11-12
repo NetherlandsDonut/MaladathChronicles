@@ -68,7 +68,12 @@ public class Highlightable : MonoBehaviour
             cursor.SetCursor(Click);
             var curScreenSpace = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
             var curPosition = (Vector2)Camera.main.ScreenToWorldPoint(curScreenSpace) + window.dragOffset;
-            window.transform.position = new Vector3((int)curPosition.x, (int)curPosition.y, window.transform.position.z);
+            var t = window.transform;
+            t.position = new Vector3((int)curPosition.x, (int)curPosition.y, t.position.z);
+            if (t.position.x < 2) t.position = new Vector3(2, t.position.y, t.position.z);
+            if (t.position.x > 956 - window.xOffset) t.position = new Vector3(956 - window.xOffset, t.position.y, t.position.z);
+            if (t.position.y > -2) t.position = new Vector3(t.position.x, -2, t.position.z);
+            if (t.position.y < -536 + window.PlannedHeight(true)) t.position = new Vector3(t.position.x, -536 + window.PlannedHeight(true), t.position.z);
         }
     }
 }
