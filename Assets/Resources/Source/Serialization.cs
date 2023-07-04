@@ -13,7 +13,7 @@ class Serialization
         if (!Directory.Exists("Torf_Data_2"))
             Directory.CreateDirectory("Torf_Data_2");
         if (!File.Exists("Torf_Data_2\\" + file + (encoded ? ".TORF" : ".json"))) return;
-        var content = File.ReadAllText("Haldern_Data_2\\" + file + (encoded ? ".TORF" : ".json"));
+        var content = File.ReadAllText("Torf_Data_2\\" + file + (encoded ? ".TORF" : ".json"));
         if (encoded) content = Decrypt(content);
         target = DeserializeObject<T>(content);
     }

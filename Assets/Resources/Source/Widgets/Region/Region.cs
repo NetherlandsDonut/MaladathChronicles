@@ -18,6 +18,8 @@ public class Region : MonoBehaviour
     public LineCheckbox checkbox;
     public LineSmallButton LBSmallButton;
     public List<LineSmallButton> smallButtons;
+    public LineBigButton LBBigButton;
+    public List<LineBigButton> bigButtons;
 
     //Fields
     public Tooltip tooltip;
@@ -32,6 +34,7 @@ public class Region : MonoBehaviour
     {
         lines = new();
         smallButtons = new();
+        bigButtons = new();
         borders = new GameObject[4];
         this.draw = draw;
         this.pressEvent = pressEvent;
@@ -46,6 +49,7 @@ public class Region : MonoBehaviour
     public int PlannedHeight()
     {
         var content = lines.Count * 15 + (inputLine != null ? 15 : 0);
+        if (content < 34 && bigButtons.Count > 0) content = 34;
         return content + (content > 0 ? 4 : 0);
     }
 
@@ -56,6 +60,9 @@ public class Region : MonoBehaviour
 
     public int AutoWidth()
     {
+        //If a region has any big buttons we assume there is nothing
+        //else in it and we set the width to 38px times the amount of buttons
+        if (bigButtons.Count > 0) return 38 * bigButtons.Count - 10;
         //Number "12" is simply additional free space to not clamp the
         //window borders tightly on region content, the "19" is the button sprite width
         //and the "15" is the checkbox width that fills the line
@@ -73,6 +80,9 @@ public class Region : MonoBehaviour
         for (int i = 0; i < smallButtons.Count; i++)
             Destroy(smallButtons[i].gameObject);
         smallButtons = new();
+        for (int i = 0; i < bigButtons.Count; i++)
+            Destroy(bigButtons[i].gameObject);
+        bigButtons = new();
         if (checkbox != null)
             Destroy(checkbox.gameObject);
         checkbox = null;
