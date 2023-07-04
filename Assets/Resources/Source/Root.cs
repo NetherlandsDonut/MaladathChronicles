@@ -10,6 +10,9 @@ using static Root.RegionBackgroundType;
 
 public static class Root
 {
+    public static int screenX = 640;
+    public static int screenY = 360;
+
     public static String testText = new String();
     public static String testText2 = new String();
 
@@ -61,9 +64,11 @@ public static class Root
 
     private static void AddDesktop(string title)
     {
-        var newObject = new GameObject("Desktop: " + title, typeof(Desktop));
+        var newObject = new GameObject("Desktop: " + title, typeof(Desktop), typeof(SpriteRenderer));
         newObject.transform.localPosition = new Vector3();
         var newDesktop = newObject.GetComponent<Desktop>();
+        newObject.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Textures/Desktop Stone");
+        newObject.GetComponent<SpriteRenderer>().sortingLayerName = "Desktop Background";
         LBDesktop = newDesktop;
         newDesktop.Initialise(title);
         desktops.Add(newDesktop);
@@ -106,7 +111,7 @@ public static class Root
 
     public static void AddWindow(string title)
     {
-        var newObject = new GameObject("Window: " + title, typeof(Window));
+        var newObject = new GameObject("Window: " + title, typeof(Window), typeof(AudioSource));
         newObject.transform.parent = CDesktop.transform;
         newObject.transform.localPosition = new Vector3();
         newObject.GetComponent<Window>().Initialise(CDesktop, title);
@@ -169,7 +174,6 @@ public static class Root
             UnityEngine.Object.Destroy(regionGroup.gameObject);
         }
     }
-
 
     public static void MarkRegionGroupGlobal(string id)
     {
@@ -258,7 +262,7 @@ public static class Root
         insert, id);
     }
 
-    public static void SetTooltipForRegion(Action tooltip)
+    public static void SetTooltipForRegion(Func<Highlightable, Action> tooltip)
     {
         var target = CDesktop.LBWindow.LBRegionGroup.LBRegion;
         target.gameObject.AddComponent<TooltipHandle>().tooltip = new Tooltip(() => target.background.GetComponent<Highlightable>(), tooltip);
@@ -356,7 +360,7 @@ public static class Root
         );
     }
 
-    public static void SetTooltipForSmallButton(Action tooltip)
+    public static void SetTooltipForSmallButton(Func<Highlightable, Action> tooltip)
     {
         var target = CDesktop.LBWindow.LBRegionGroup.LBRegion.LBSmallButton;
         target.gameObject.AddComponent<TooltipHandle>().tooltip = new Tooltip(() => target.GetComponent<Highlightable>(), tooltip);
@@ -368,6 +372,25 @@ public static class Root
     //        CDesktop.globalLines.Remove(id);
     //    CDesktop.globalLines.Add(id, CDesktop.LBWindow.LBRegionGroup.LBRegion.LBLine);
     //}
+
+    #endregion
+
+    #region BigButtons
+
+    public static void AddBigButton(BigButtonTypes type, Action<Highlightable> pressEvent)
+    {
+        var region = CDesktop.LBWindow.LBRegionGroup.LBRegion;
+        if (region.lines.Count > 1) return;
+        var newObject = new GameObject("BigButton: " + type.ToString(), typeof(LineBigButton), typeof(SpriteRenderer));
+        newObject.transform.parent = region.transform;
+        newObject.GetComponent<LineBigButton>().Initialise(region, type, pressEvent);
+    }
+
+    public static void SetTooltipForBigButton(Func<Highlightable, Action> tooltip)
+    {
+        var target = CDesktop.LBWindow.LBRegionGroup.LBRegion.LBBigButton;
+        target.gameObject.AddComponent<TooltipHandle>().tooltip = new Tooltip(() => target.GetComponent<Highlightable>(), tooltip);
+    }
 
     #endregion
 
@@ -400,7 +423,7 @@ public static class Root
         newObject.GetComponent<LineCheckbox>().Initialise(region, value);
     }
 
-    public static void SetTooltipForCheckbox(Action tooltip)
+    public static void SetTooltipForCheckbox(Func<Highlightable, Action> tooltip)
     {
         var target = CDesktop.LBWindow.LBRegionGroup.LBRegion.checkbox;
         target.gameObject.AddComponent<TooltipHandle>().tooltip = new Tooltip(() => target.GetComponent<Highlightable>(), tooltip);
@@ -534,6 +557,24 @@ public static class Root
         PreviousPage
     }
 
+    public enum BigButtonTypes
+    {
+        Empty,
+        CopperCoins,
+        SilverCoins,
+        GoldCoins,
+        Skulls,
+        Scarabs,
+        Ooze,
+        Obsidian
+    }
+
+    public enum SoundEffects
+    {
+        None,
+        Coins
+    }
+
     public enum Anchor
     {
         None,
@@ -546,16 +587,54 @@ public static class Root
         TopLeft
     }
 
-    public static Color32 GetColor(Color color) => colors[color];
-    public static Dictionary<Color, Color32> colors = new()
+    //public static Color32 GetColor(Color color) => colors[color];
+    //public static Dictionary<Color, Color32> colors = new()
+    //{
+    //    { White, new Color32(234, 234, 234, 255) },
+    //    { LightGray, new Color32(202, 202, 202, 255) },
+    //    { Gray, new Color32(183, 183, 183, 255) },
+    //    { DarkGray, new Color32(114, 114, 114, 255) },
+    //    { Black, new Color32(31, 31, 31, 255) },
+    //    { Red, new Color32(181, 77, 77, 255) },
+    //    { Green, new Color32(73, 178, 86, 255) }
+    //};
+
+    public static Color32 GetColor(Color color) => colors[0][color];
+    public static Dictionary<Color, Color32>[] colors = new Dictionary<Color, Color32>[]
     {
-        { White, new Color32(234, 234, 234, 255) },
-        { LightGray, new Color32(202, 202, 202, 255) },
-        { Gray, new Color32(183, 183, 183, 255) },
-        { DarkGray, new Color32(114, 114, 114, 255) },
-        { Black, new Color32(31, 31, 31, 255) },
-        { Red, new Color32(181, 77, 77, 255) },
-        { Green, new Color32(73, 178, 86, 255) },
+        new ()
+        {
+            { White, new Color32(234, 234, 234, 255) },
+            { LightGray, new Color32(202, 202, 202, 255) },
+            { Gray, new Color32(183, 183, 183, 255) },
+            { DarkGray, new Color32(114, 114, 114, 255) },
+            { Black, new Color32(31, 31, 31, 255) },
+            { Red, new Color32(181, 77, 77, 255) },
+            { Green, new Color32(73, 178, 86, 255) },
+            { Druid, new Color32(184, 90, 7, 255) },
+            { Warrior, new Color32(144, 113, 79, 255) },
+            { Rogue, new Color32(184, 177, 76, 255) },
+            { Hunter, new Color32(124, 153, 83, 255) },
+            { Mage, new Color32(45, 144, 170, 255) },
+            { Shaman, new Color32(0, 81, 160, 255) },
+            { Warlock, new Color32(97, 98, 172, 255) },
+            { Paladin, new Color32(177, 101, 134, 255) },
+            { Priest, new Color32(184, 184, 184, 255) },
+            { Copper, new Color32(184, 80, 41, 255) },
+            { Silver, new Color32(170, 188, 210, 255) },
+            { Gold, new Color32(255, 210, 11, 255) }
+        },
+        new ()
+        {
+            { White, new Color32(234, 234, 234, 255) },
+            { LightGray, new Color32(202, 202, 202, 255) },
+            { Gray, new Color32(183, 183, 183, 255) },
+            { DarkGray, new Color32(114, 114, 114, 255) },
+            { Black, new Color32(31, 31, 31, 255) },
+            { TrueBlack, new Color32(0, 0, 0, 255) },
+            { Red, new Color32(181, 77, 77, 255) },
+            { Green, new Color32(73, 178, 86, 255) }
+        }
     };
 
     public enum Color
@@ -565,13 +644,32 @@ public static class Root
         Gray,
         DarkGray,
         Black,
+        TrueBlack,
         Red,
+        DarkRed,
         Green,
+        DarkGreen,
         Blue,
+        DarkBlue,
         Yellow,
+        Brown,
+        Pink,
         Purple,
         Orange,
-        Brown,
+
+        Druid,
+        Warrior,
+        Rogue,
+        Hunter,
+        Mage,
+        Shaman,
+        Warlock,
+        Paladin,
+        Priest,
+
+        Copper,
+        Silver,
+        Gold
     }
 
     public enum CursorType

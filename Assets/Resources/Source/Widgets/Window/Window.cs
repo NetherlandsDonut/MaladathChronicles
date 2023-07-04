@@ -62,16 +62,25 @@ public class Window : MonoBehaviour
         {
             switch (anchor.anchor)
             {
-                case Bottom: return new Vector2(475 - xOffset / 2, -536 + PlannedHeight());
-                case BottomRight: return new Vector2(956 - xOffset, -536 + PlannedHeight());
-                case BottomLeft: return new Vector2(2, -536 + PlannedHeight());
-                case Top: return new Vector2(475 - xOffset / 2, -2);
-                case TopRight: return new Vector2(956 - xOffset, -2);
+                case Bottom: return new Vector2(screenX / 2 - 5 - xOffset / 2, 4 - screenY + PlannedHeight());
+                case BottomRight: return new Vector2(screenX - 4 - xOffset, 4 - screenY + PlannedHeight());
+                case BottomLeft: return new Vector2(2, 4 - screenY + PlannedHeight());
+                case Top: return new Vector2(screenX / 2 - 5 - xOffset / 2, -2);
+                case TopRight: return new Vector2(screenX - 4 - xOffset, -2);
                 case TopLeft: return new Vector2(2, -2);
-                case Center: return new Vector2(480 - xOffset / 2, -270 + PlannedHeight() / 2);
+                case Center: return new Vector2(screenX / 2 - xOffset / 2, screenY / -2 + PlannedHeight() / 2);
                 default: return new Vector2(0, 0);
             }
         }
+    }
+
+    public void PlaySound(string path)
+    {
+        var audio = GetComponent<AudioSource>();
+        var temp = Resources.Load<AudioClip>("Sounds/" + path);
+        if (temp == null) return;
+        audio.clip = temp;
+        audio.Play();
     }
 
     public void Rebuild()
@@ -195,6 +204,27 @@ public class Window : MonoBehaviour
                 smallButton.frame.transform.localPosition = new Vector3();
             }
 
+        //Draws big buttons for single lined regions
+        foreach (var region in regionGroup.regions)
+        {
+            if (region.bigButtons.Count > 0 && region.currentHeight < 34)
+                region.currentHeight = 34;
+            foreach (var bigButton in region.bigButtons)
+            {
+                bigButton.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/BigButtons/" + bigButton.buttonType);
+                bigButton.transform.localPosition = new Vector3(region.xExtend + 20 + 38 * region.bigButtons.IndexOf(bigButton), -20f, 0.1f);
+                if (bigButton.gameObject.GetComponent<BoxCollider2D>() == null)
+                    bigButton.gameObject.AddComponent<BoxCollider2D>();
+                if (bigButton.gameObject.GetComponent<Highlightable>() == null)
+                    bigButton.gameObject.AddComponent<Highlightable>().Initialise(this, region);
+                if (bigButton.frame == null)
+                    bigButton.frame = new GameObject("BigButtonFrame", typeof(SpriteRenderer));
+                bigButton.frame.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/Borders/BigButtonFrame");
+                bigButton.frame.transform.parent = bigButton.transform;
+                bigButton.frame.transform.localPosition = new Vector3();
+            }
+        }
+
         //Draws checkbox for the region
         foreach (var region in regionGroup.regions)
             if (region.checkbox != null)
@@ -299,6 +329,12 @@ public class Window : MonoBehaviour
             if (region.smallButtons.Count > 0)
                 foreach (var smallButtonHandle in region.smallButtons.Select(x => x.GetComponent<TooltipHandle>()).ToList().FindAll(x => x != null))
                     smallButtonHandle.ApplyTooltip();
+
+        //Asigning tooltips for big buttons
+        foreach (var region in regionGroup.regions)
+            if (region.bigButtons.Count > 0)
+                foreach (var bigButtonHandle in region.bigButtons.Select(x => x.GetComponent<TooltipHandle>()).ToList().FindAll(x => x != null))
+                    bigButtonHandle.ApplyTooltip();
 
         //Asigning tooltips for checkboxes
         foreach (var region in regionGroup.regions)

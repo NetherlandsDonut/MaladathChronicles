@@ -34,35 +34,29 @@ public class SpritesToolsWindow : EditorWindow
         if (spritesheet != null)
         {
             string spritesheetPath = AssetDatabase.GetAssetPath(spritesheet);
-
             if (!string.IsNullOrEmpty(spritesheetPath))
             {
-
                 TextureImporter importer = AssetImporter.GetAtPath(spritesheetPath) as TextureImporter;
-
                 if (importer != null && importer.spritesheet != null && importer.spriteImportMode == SpriteImportMode.Multiple)
                 {
                     SpriteMetaData[] spritesMetaData = importer.spritesheet;
                     for (int i = 0; i < spritesMetaData.Length; i++)
                     {
                         SpriteMetaData metaData = spritesMetaData[i];
+                        metaData.name = "Font_" + i;
                         metaData.pivot = m_CommonPivot;
                         metaData.alignment = (int)SpriteAlignment.Custom;
                         spritesMetaData[i] = metaData;
                     }
-
                     importer.spritesheet = spritesMetaData; // seems like this setter internally change stuff (needed)
                     EditorUtility.SetDirty(importer);
                     importer.SaveAndReimport();
-
                     m_Log += string.Format("Edited {0} sprites in {1}\n", spritesMetaData.Length, spritesheetPath);
                     return;
                 }
-
                 m_Log += "Texture is not a spritesheet.\n";
             }
         }
-
         m_Log += "Could not complete action.\n";
     }
 }

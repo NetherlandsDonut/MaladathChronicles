@@ -22,7 +22,8 @@ public class Highlightable : MonoBehaviour
     public void OnMouseEnter()
     {
         if (cursor.render.sprite == null) return;
-        if (tooltip != null) window.desktop.SetTooltip(tooltip);
+        if (tooltip != null)
+            window.desktop.SetTooltip(tooltip);
         if (GetComponent<InputCharacter>() != null) cursor.SetCursor(Write);
         if (!pressed || !windowHandle)
             render.color -= new UnityEngine.Color(0.1f, 0.1f, 0.1f, 0);
@@ -71,9 +72,9 @@ public class Highlightable : MonoBehaviour
             var t = window.transform;
             t.position = new Vector3((int)curPosition.x, (int)curPosition.y, t.position.z);
             if (t.position.x < 2) t.position = new Vector3(2, t.position.y, t.position.z);
-            if (t.position.x > 956 - window.xOffset) t.position = new Vector3(956 - window.xOffset, t.position.y, t.position.z);
+            if (t.position.x > screenX - 4 - window.xOffset) t.position = new Vector3(screenX - 4 - window.xOffset, t.position.y, t.position.z);
             if (t.position.y > -2) t.position = new Vector3(t.position.x, -2, t.position.z);
-            if (t.position.y < -536 + window.PlannedHeight(true)) t.position = new Vector3(t.position.x, -536 + window.PlannedHeight(true), t.position.z);
+            if (t.position.y < 4 - screenY + window.PlannedHeight(true)) t.position = new Vector3(t.position.x, 4 - screenY + window.PlannedHeight(true), t.position.z);
         }
     }
 }

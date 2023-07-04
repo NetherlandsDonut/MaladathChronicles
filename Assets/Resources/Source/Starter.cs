@@ -13,6 +13,7 @@ public class Starter : MonoBehaviour
         testText.Set("Aqualung");
         testText2.Set("Baby Yoda");
         cursor = FindObjectOfType<Cursor>();
+        Board.board = new Board(8, 8);
         SpawnDesktopBlueprint("Menu");
 
         Data.data = new Data()

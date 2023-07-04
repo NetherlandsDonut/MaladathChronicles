@@ -53,7 +53,8 @@ public class Desktop : MonoBehaviour
     {
         for (int i = 0; i < windows.Count; i++)
         {
-            if (i > 0 && windows[i].closeOnLostFocus) CloseWindow(windows[i--].title);
+            var savewindowsfromclosingbecauseoftooltip = i == 1 && windows[0].closeOnLostFocus;
+            if (i > 0 && windows[i].closeOnLostFocus && !savewindowsfromclosingbecauseoftooltip) CloseWindow(windows[i--].title);
             else windows[i].transform.position = new Vector3(windows[i].transform.position.x, windows[i].transform.position.y, i);
         }
     }
@@ -143,7 +144,6 @@ public class Desktop : MonoBehaviour
             }
             else foreach (char c in Input.inputString)
             {
-                 
                 var a = inputLineMarker;
                 if (c == '\b')
                 {
