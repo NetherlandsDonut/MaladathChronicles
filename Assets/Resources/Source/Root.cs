@@ -20,6 +20,8 @@ public static class Root
     public static int inputLineMarker;
     public static System.Random random;
     public static float heldKeyTime;
+    public static float animationTime;
+    public static float frameTime = 0.07f;
     public static List<Desktop> desktops;
     public static Desktop CDesktop, LBDesktop;
     public static string markerCharacter = "_", currentInputLine = "";
@@ -72,6 +74,12 @@ public static class Root
         LBDesktop = newDesktop;
         newDesktop.Initialise(title);
         desktops.Add(newDesktop);
+        //if (desktops.Count == 1) CDesktop = newDesktop;
+        newDesktop.screenlock = new GameObject("Screenlock", typeof(BoxCollider2D));
+        newDesktop.screenlock.GetComponent<BoxCollider2D>().offset = new Vector2(320, -180);
+        newDesktop.screenlock.GetComponent<BoxCollider2D>().size = new Vector2(640, 360);
+        newDesktop.screenlock.transform.parent = newObject.transform;
+        newDesktop.UnlockScreen();
         newObject.SetActive(false);
     }
 
@@ -363,6 +371,7 @@ public static class Root
     public static void SetTooltipForSmallButton(Func<Highlightable, Action> tooltip)
     {
         var target = CDesktop.LBWindow.LBRegionGroup.LBRegion.LBSmallButton;
+        if (target == null) return; //THIS LINE IS HAVOC, DELETE IT WHEN POSSIBLE
         target.gameObject.AddComponent<TooltipHandle>().tooltip = new Tooltip(() => target.GetComponent<Highlightable>(), tooltip);
     }
 

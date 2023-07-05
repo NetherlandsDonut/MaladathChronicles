@@ -10,8 +10,6 @@ using static Root.SmallButtonTypes;
 using static Root.BigButtonTypes;
 
 using static UnityEngine.KeyCode;
-using System.Diagnostics;
-using UnityEngine;
 
 public class Blueprint
 {

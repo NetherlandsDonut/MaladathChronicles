@@ -74,13 +74,11 @@ public class Window : MonoBehaviour
         }
     }
 
-    public void PlaySound(string path)
+    public void PlaySound(string path, float volume = 0.5f)
     {
-        var audio = GetComponent<AudioSource>();
         var temp = Resources.Load<AudioClip>("Sounds/" + path);
         if (temp == null) return;
-        audio.clip = temp;
-        audio.Play();
+        GetComponent<AudioSource>().PlayOneShot(temp, volume);
     }
 
     public void Rebuild()

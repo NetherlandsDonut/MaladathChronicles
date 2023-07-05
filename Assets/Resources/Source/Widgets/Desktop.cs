@@ -3,11 +3,9 @@ using UnityEngine;
 using System.Collections.Generic;
 
 using static Root;
-using static Blueprint;
 
 public class Desktop : MonoBehaviour
 {
-
     //Children
     public Window LBWindow;
     public List<Window> windows;
@@ -17,6 +15,8 @@ public class Desktop : MonoBehaviour
     public Tooltip tooltip;
     public float tooltipChanneling;
     public Dictionary<KeyCode, Action> hotkeys;
+    public GameObject screenlock;
+    public bool screenLocked;
 
     //Global markers
     public Dictionary<string, Window> globalWindows;
@@ -25,7 +25,6 @@ public class Desktop : MonoBehaviour
     public Dictionary<string, Line> globalLines;
     public Dictionary<string, LineText> globalTexts;
     public Dictionary<string, InputLine> globalInputLines;
-
 
     public void Initialise(string title)
     {
@@ -70,101 +69,127 @@ public class Desktop : MonoBehaviour
         tooltipChanneling = 0.5f;
     }
 
+    public void LockScreen()
+    {
+        screenLocked = true;
+        screenlock.SetActive(true);
+    }
+
+    public void UnlockScreen()
+    {
+        screenLocked = false;
+        screenlock.SetActive(false);
+    }
+
     public void Update()
     {
-        if (tooltip != null && tooltipChanneling > 0)
+        if (screenLocked)
         {
-            tooltipChanneling -= Time.deltaTime;
-            if (tooltipChanneling <= 0) tooltip.SpawnTooltip();
-        }
-        if (heldKeyTime > 0) heldKeyTime -= Time.deltaTime;
-        if (currentInputLine != "" && globalInputLines.ContainsKey(currentInputLine))
-        {
-            var didSomething = false;
-            var CIL = globalInputLines[currentInputLine];
-            var length = CIL.text.text.Value().Length;
-            if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Return))
+            if (animationTime > 0) animationTime -= Time.deltaTime;
+            if (animationTime <= 0)
             {
-                currentInputLine = "";
-                cursor.SetCursor(CursorType.Default);
-                UnityEngine.Cursor.lockState = CursorLockMode.None;
-                if (Input.GetKeyDown(KeyCode.Return))
-                {
-                    CIL.text.text.Confirm();
-                    windows.ForEach(x => x.Rebuild());
-                }
-                else
-                {
-                    CIL.text.text.Reset();
-                    didSomething = true;
-                }
+                Board.board.AnimateFill();
+                Rebuild();
+                animationTime = frameTime;
             }
-            //else if (Input.GetKeyDown(KeyCode.Delete) && inputLineMarker < )
-            //{
-            //    heldArrowKeyTime = 0.4f;
-            //    Debug.Log(Input.inputString);
-            //    inputLineMarker--;
-            //    didSomething = true;
-            //}
-            else if (Input.GetKeyDown(KeyCode.Delete) && inputLineMarker < length)
-            {
-                heldKeyTime = 0.4f;
-                CIL.text.text.RemoveNextOne(inputLineMarker);
-                didSomething = true;
-            }
-            else if (Input.GetKey(KeyCode.Delete) && inputLineMarker < length && heldKeyTime <= 0)
-            {
-                heldKeyTime = 0.0245f;
-                CIL.text.text.RemoveNextOne(inputLineMarker);
-                didSomething = true;
-            }
-            else if (Input.GetKeyDown(KeyCode.LeftArrow) && inputLineMarker > 0)
-            {
-                heldKeyTime = 0.4f;
-                inputLineMarker--;
-                didSomething = true;
-            }
-            else if (Input.GetKey(KeyCode.LeftArrow) && inputLineMarker > 0 && heldKeyTime <= 0)
-            {
-                heldKeyTime = 0.0245f;
-                inputLineMarker--;
-                didSomething = true;
-            }
-            else if (Input.GetKeyDown(KeyCode.RightArrow) && inputLineMarker < length)
-            {
-                heldKeyTime = 0.4f;
-                inputLineMarker++;
-                didSomething = true;
-            }
-            else if (Input.GetKey(KeyCode.RightArrow) && inputLineMarker < length && heldKeyTime <= 0)
-            {
-                heldKeyTime = 0.0245f;
-                inputLineMarker++;
-                didSomething = true;
-            }
-            else foreach (char c in Input.inputString)
-            {
-                var a = inputLineMarker;
-                if (c == '\b')
-                {
-                    if (inputLineMarker > 0 && length > 0)
-                        CIL.text.text.RemovePreviousOne(inputLineMarker--);
-                }
-                else if (c != '\n' && c != '\r' && CIL.CheckInput(c))
-                {
-                    CIL.text.text.Insert(inputLineMarker, c);
-                    inputLineMarker++;
-                }
-                if (length == CIL.text.text.Value().Length)
-                    inputLineMarker = a;
-                didSomething = true;
-            }
-            if (didSomething)
-                CIL.region.regionGroup.window.Rebuild();
         }
         else
-            foreach (var hotkey in hotkeys)
-                if (Input.GetKeyDown(hotkey.Key))
-                    hotkey.Value();
+        {
+            if (tooltip != null && tooltipChanneling > 0)
+            {
+                tooltipChanneling -= Time.deltaTime;
+                if (tooltipChanneling <= 0 && tooltip.caller != null && tooltip.caller() != null)
+                    tooltip.SpawnTooltip();
+            }
+            if (heldKeyTime > 0) heldKeyTime -= Time.deltaTime;
+            if (currentInputLine != "" && globalInputLines.ContainsKey(currentInputLine))
+            {
+                var didSomething = false;
+                var CIL = globalInputLines[currentInputLine];
+                var length = CIL.text.text.Value().Length;
+                if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Return))
+                {
+                    currentInputLine = "";
+                    cursor.SetCursor(CursorType.Default);
+                    UnityEngine.Cursor.lockState = CursorLockMode.None;
+                    if (Input.GetKeyDown(KeyCode.Return))
+                    {
+                        CIL.text.text.Confirm();
+                        windows.ForEach(x => x.Rebuild());
+                    }
+                    else
+                    {
+                        CIL.text.text.Reset();
+                        didSomething = true;
+                    }
+                }
+                //else if (Input.GetKeyDown(KeyCode.Delete) && inputLineMarker < )
+                //{
+                //    heldArrowKeyTime = 0.4f;
+                //    Debug.Log(Input.inputString);
+                //    inputLineMarker--;
+                //    didSomething = true;
+                //}
+                else if (Input.GetKeyDown(KeyCode.Delete) && inputLineMarker < length)
+                {
+                    heldKeyTime = 0.4f;
+                    CIL.text.text.RemoveNextOne(inputLineMarker);
+                    didSomething = true;
+                }
+                else if (Input.GetKey(KeyCode.Delete) && inputLineMarker < length && heldKeyTime <= 0)
+                {
+                    heldKeyTime = 0.0245f;
+                    CIL.text.text.RemoveNextOne(inputLineMarker);
+                    didSomething = true;
+                }
+                else if (Input.GetKeyDown(KeyCode.LeftArrow) && inputLineMarker > 0)
+                {
+                    heldKeyTime = 0.4f;
+                    inputLineMarker--;
+                    didSomething = true;
+                }
+                else if (Input.GetKey(KeyCode.LeftArrow) && inputLineMarker > 0 && heldKeyTime <= 0)
+                {
+                    heldKeyTime = 0.0245f;
+                    inputLineMarker--;
+                    didSomething = true;
+                }
+                else if (Input.GetKeyDown(KeyCode.RightArrow) && inputLineMarker < length)
+                {
+                    heldKeyTime = 0.4f;
+                    inputLineMarker++;
+                    didSomething = true;
+                }
+                else if (Input.GetKey(KeyCode.RightArrow) && inputLineMarker < length && heldKeyTime <= 0)
+                {
+                    heldKeyTime = 0.0245f;
+                    inputLineMarker++;
+                    didSomething = true;
+                }
+                else foreach (char c in Input.inputString)
+                    {
+                        var a = inputLineMarker;
+                        if (c == '\b')
+                        {
+                            if (inputLineMarker > 0 && length > 0)
+                                CIL.text.text.RemovePreviousOne(inputLineMarker--);
+                        }
+                        else if (c != '\n' && c != '\r' && CIL.CheckInput(c))
+                        {
+                            CIL.text.text.Insert(inputLineMarker, c);
+                            inputLineMarker++;
+                        }
+                        if (length == CIL.text.text.Value().Length)
+                            inputLineMarker = a;
+                        didSomething = true;
+                    }
+                if (didSomething)
+                    CIL.region.regionGroup.window.Rebuild();
+            }
+            else
+                foreach (var hotkey in hotkeys)
+                    if (Input.GetKeyDown(hotkey.Key))
+                        hotkey.Value();
+        }
     }
 }

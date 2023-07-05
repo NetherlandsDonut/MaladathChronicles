@@ -1,3 +1,4 @@
+using System.Linq;
 using System.Collections.Generic;
 
 using static Root;
@@ -10,7 +11,6 @@ public class Board
     public Board(int x, int y)
     {
         field = new int[x, y];
-        Reset();
     }
 
     public static Board board;
@@ -22,7 +22,38 @@ public class Board
         field = new int[field.GetLength(0), field.GetLength(1)];
         for (int i = 0; i < field.GetLength(0); i++)
             for (int j = 0; j < field.GetLength(1); j++)
-                field[i, j] = random.Next(1, 4);
+                field[i, j] = 0;
+        StartAnimationFill();
+    }
+
+    public int animFrame;
+    public void StartAnimationFill()
+    {
+        animFrame = 0;
+        CDesktop.LockScreen();
+    }
+
+    public void AnimateFill()
+    {
+        if (animFrame > 0)
+            for (int j = field.GetLength(1) - 1; j > 0; j--)
+                for (int i = field.GetLength(0) - 1; i >= 0; i--)
+                    if (field[i, j] == 0 && field[i, j - 1] != 0)
+                    {
+                        (field[i, j], field[i, j - 1]) = (field[i, j - 1], 0);
+                        for (int k = 0; k < field.GetLength(1); k++)
+                            if (field[k, j] == 0) break;
+                            else if (k == field.GetLength(1) - 1)
+                                CDesktop.FocusedWindow().PlaySound("GemFall", 0.04f);
+                    }
+        for (int i = 0; i < field.GetLength(0); i++)
+            if (field[i, 0] == 0)
+                field[i, 0] = random.Next(1, 4);
+        animFrame++;
+        for (int j = field.GetLength(1) - 1; j >= 0; j--)
+            for (int i = field.GetLength(0) - 1; i >= 0; i--)
+                if (field[i, j] == 0) return;
+        CDesktop.UnlockScreen();
     }
 
     public int fieldGetCounterX = 0;
@@ -44,9 +75,10 @@ public class Board
 
     public void FloodDestroy(Window window, int x, int y)
     {
-        window.PlaySound(collectSoundDictionary[field[x, y]].ToString());
+        window.PlaySound(collectSoundDictionary[field[x, y]].ToString(), 0.3f);
         foreach (var a in FloodCount(x, y))
             field[a.Item1, a.Item2] = 0;
+        StartAnimationFill();
     }
 
     public List<(int, int)> FloodCount(int x, int y)
