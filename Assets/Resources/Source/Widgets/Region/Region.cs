@@ -22,21 +22,23 @@ public class Region : MonoBehaviour
     public List<LineBigButton> bigButtons;
 
     //Fields
-    public Tooltip tooltip;
     public Action draw;
+    public Tooltip tooltip;
     public Action<Highlightable> pressEvent;
     public int currentHeight, xExtend, yExtend;
     public RegionBackgroundType backgroundType;
     public GameObject background;
     public GameObject[] borders;
 
-    public void Initialise(RegionGroup regionGroup, RegionBackgroundType backgroundType, Action draw, Action<Highlightable> pressEvent, int insert)
+    public void Initialise(RegionGroup regionGroup, RegionBackgroundType backgroundType, Action draw, Action<Highlightable> pressEvent, Func<Highlightable, Action> tooltip, int insert)
     {
         lines = new();
         smallButtons = new();
         bigButtons = new();
         borders = new GameObject[4];
         this.draw = draw;
+        if (tooltip != null)
+            this.tooltip = new Tooltip(() => background.GetComponent<Highlightable>(), tooltip);
         this.pressEvent = pressEvent;
         this.regionGroup = regionGroup;
         this.backgroundType = backgroundType;

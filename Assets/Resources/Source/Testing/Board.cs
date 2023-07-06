@@ -50,7 +50,7 @@ public class Board
                     }
         for (int i = 0; i < field.GetLength(0); i++)
             if (field[i, 0] == 0)
-                field[i, 0] = random.Next(1, 21);
+                field[i, 0] = random.Next(11, 21);
         animFrame++;
         for (int j = field.GetLength(1) - 1; j >= 0; j--)
             for (int i = field.GetLength(0) - 1; i >= 0; i--)
@@ -73,6 +73,14 @@ public class Board
         if (fieldGetCounterY == field.GetLength(1))
             fieldGetCounterY = 0;
         return r;
+    }
+
+    public void FloodDestroy(Window window, List<(int, int)> list)
+    {
+        window.PlaySound(collectSoundDictionary[field[list[0].Item1, list[0].Item2]].ToString(), 0.3f);
+        foreach (var a in list)
+            field[a.Item1, a.Item2] = 0;
+        StartAnimationFill();
     }
 
     public void FloodDestroy(Window window, int x, int y)

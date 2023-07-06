@@ -12,6 +12,7 @@ public static class Root
 {
     public static int screenX = 640;
     public static int screenY = 360;
+    public static int shadowSystem = 1;
 
     public static String testText = new String();
     public static String testText2 = new String();
@@ -121,7 +122,9 @@ public static class Root
     {
         var newObject = new GameObject("Window: " + title, typeof(Window), typeof(AudioSource));
         newObject.transform.parent = CDesktop.transform;
-        newObject.transform.localPosition = new Vector3();
+        //I'm spawning it at z = 9999 because I don't want it to
+        //cover anything on the screen when it's being built
+        newObject.transform.localPosition = new Vector3(0, 0, 9999);
         newObject.GetComponent<Window>().Initialise(CDesktop, title);
     }
 
@@ -132,7 +135,6 @@ public static class Root
         UnityEngine.Object.Destroy(window.gameObject);
         CDesktop.Reindex();
     }
-
 
     public static void CloseWindowOnLostFocus() => CDesktop.LBWindow.closeOnLostFocus = true;
 
@@ -227,33 +229,33 @@ public static class Root
 
     #region Regions
 
-    private static void AddRegion(RegionBackgroundType backgroundType, Action draw, Action<Highlightable> pressEvent, int insert = -1, string id = "")
+    private static void AddRegion(RegionBackgroundType backgroundType, Action draw, Action<Highlightable> pressEvent, Func<Highlightable, Action> tooltip, int insert = -1, string id = "")
     {
         var newObject = new GameObject("Region", typeof(Region));
         var regionGroup = CDesktop.LBWindow.LBRegionGroup;
         newObject.transform.parent = regionGroup.transform;
-        newObject.GetComponent<Region>().Initialise(regionGroup, backgroundType, draw, pressEvent, insert);
+        newObject.GetComponent<Region>().Initialise(regionGroup, backgroundType, draw, pressEvent, tooltip, insert);
         if (id != "") MarkRegionGlobal(id);
     }
 
     public static void AddHandleRegion(Action draw, int insert = -1, string id = "")
     {
-        AddRegion(Handle, draw, (h) => { }, insert, id);
+        AddRegion(Handle, draw, (h) => { }, null, insert, id);
     }
 
-    public static void AddButtonRegion(Action draw, Action<Highlightable> pressEvent, int insert = -1, string id = "")
+    public static void AddButtonRegion(Action draw, Action<Highlightable> pressEvent, Func<Highlightable, Action> tooltip = null, int insert = -1, string id = "")
     {
-        AddRegion(Button, draw, pressEvent, insert, id);
+        AddRegion(Button, draw, pressEvent, tooltip, insert, id);
     }
 
     public static void AddHeaderRegion(Action draw, int insert = -1, string id = "")
     {
-        AddRegion(Header, draw, (h) => { }, insert, id);
+        AddRegion(Header, draw, (h) => { }, null, insert, id);
     }
 
     public static void AddPaddingRegion(Action draw, int insert = -1, string id = "")
     {
-        AddRegion(Padding, draw, (h) => { }, insert, id);
+        AddRegion(Padding, draw, (h) => { }, null, insert, id);
     }
 
     public static void AddInputRegion(String refText, InputType inputType, string id, int insert = -1)
@@ -267,13 +269,7 @@ public static class Root
             //CAN BE ACCESSED THROUGH H?
             inputLineMarker = CDesktop.globalInputLines[id].text.text.Value().Length;
         },
-        insert, id);
-    }
-
-    public static void SetTooltipForRegion(Func<Highlightable, Action> tooltip)
-    {
-        var target = CDesktop.LBWindow.LBRegionGroup.LBRegion;
-        target.gameObject.AddComponent<TooltipHandle>().tooltip = new Tooltip(() => target.background.GetComponent<Highlightable>(), tooltip);
+        null, insert, id);
     }
 
     public static void MarkRegionGlobal(string id)
@@ -329,13 +325,13 @@ public static class Root
 
     #region SmallButtons
 
-    public static void AddSmallButton(SmallButtonTypes type, Action<Highlightable> pressEvent)
+    public static void AddSmallButton(SmallButtonTypes type, Action<Highlightable> pressEvent, Func<Highlightable, Action> tooltip = null)
     {
         var region = CDesktop.LBWindow.LBRegionGroup.LBRegion;
         if (region.lines.Count > 1) return;
         var newObject = new GameObject("SmallButton: " + type.ToString(), typeof(LineSmallButton), typeof(SpriteRenderer));
         newObject.transform.parent = region.transform;
-        newObject.GetComponent<LineSmallButton>().Initialise(region, type, pressEvent);
+        newObject.GetComponent<LineSmallButton>().Initialise(region, type, pressEvent, tooltip);
     }
 
     public static void AddNextPageButton()
@@ -368,13 +364,6 @@ public static class Root
         );
     }
 
-    public static void SetTooltipForSmallButton(Func<Highlightable, Action> tooltip)
-    {
-        var target = CDesktop.LBWindow.LBRegionGroup.LBRegion.LBSmallButton;
-        if (target.gameObject == null) return; //THIS LINE IS HAVOC, DELETE IT WHEN POSSIBLE
-        target.gameObject.AddComponent<TooltipHandle>().tooltip = new Tooltip(() => target.GetComponent<Highlightable>(), tooltip);
-    }
-
     //public static void MarkLineGlobal(string id)
     //{
     //    if (CDesktop.globalLines.ContainsKey(id))
@@ -386,20 +375,13 @@ public static class Root
 
     #region BigButtons
 
-    public static void AddBigButton(BigButtonTypes type, Action<Highlightable> pressEvent)
+    public static void AddBigButton(BigButtonTypes type, Action<Highlightable> pressEvent, Func<Highlightable, Action> tooltip = null)
     {
         var region = CDesktop.LBWindow.LBRegionGroup.LBRegion;
         if (region.lines.Count > 1) return;
         var newObject = new GameObject("BigButton: " + type.ToString(), typeof(LineBigButton), typeof(SpriteRenderer));
         newObject.transform.parent = region.transform;
-        newObject.GetComponent<LineBigButton>().Initialise(region, type, pressEvent);
-    }
-
-    public static void SetTooltipForBigButton(Func<Highlightable, Action> tooltip)
-    {
-        var target = CDesktop.LBWindow.LBRegionGroup.LBRegion.LBBigButton;
-        if (target.gameObject == null) return; //THIS LINE IS HAVOC, DELETE IT WHEN POSSIBLE
-        target.gameObject.AddComponent<TooltipHandle>().tooltip = new Tooltip(() => target.GetComponent<Highlightable>(), tooltip);
+        newObject.GetComponent<LineBigButton>().Initialise(region, type, pressEvent, tooltip);
     }
 
     #endregion
@@ -431,12 +413,6 @@ public static class Root
         var newObject = new GameObject("Checkbox", typeof(LineCheckbox), typeof(SpriteRenderer));
         newObject.transform.parent = region.transform;
         newObject.GetComponent<LineCheckbox>().Initialise(region, value);
-    }
-
-    public static void SetTooltipForCheckbox(Func<Highlightable, Action> tooltip)
-    {
-        var target = CDesktop.LBWindow.LBRegionGroup.LBRegion.checkbox;
-        target.gameObject.AddComponent<TooltipHandle>().tooltip = new Tooltip(() => target.GetComponent<Highlightable>(), tooltip);
     }
 
     //public static void MarkLineGlobal(string id)
