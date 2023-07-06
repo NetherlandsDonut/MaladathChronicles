@@ -371,7 +371,7 @@ public static class Root
     public static void SetTooltipForSmallButton(Func<Highlightable, Action> tooltip)
     {
         var target = CDesktop.LBWindow.LBRegionGroup.LBRegion.LBSmallButton;
-        if (target == null) return; //THIS LINE IS HAVOC, DELETE IT WHEN POSSIBLE
+        if (target.gameObject == null) return; //THIS LINE IS HAVOC, DELETE IT WHEN POSSIBLE
         target.gameObject.AddComponent<TooltipHandle>().tooltip = new Tooltip(() => target.GetComponent<Highlightable>(), tooltip);
     }
 
@@ -398,6 +398,7 @@ public static class Root
     public static void SetTooltipForBigButton(Func<Highlightable, Action> tooltip)
     {
         var target = CDesktop.LBWindow.LBRegionGroup.LBRegion.LBBigButton;
+        if (target.gameObject == null) return; //THIS LINE IS HAVOC, DELETE IT WHEN POSSIBLE
         target.gameObject.AddComponent<TooltipHandle>().tooltip = new Tooltip(() => target.GetComponent<Highlightable>(), tooltip);
     }
 
@@ -569,19 +570,45 @@ public static class Root
     public enum BigButtonTypes
     {
         Empty,
-        CopperCoins,
-        SilverCoins,
-        GoldCoins,
-        Skulls,
-        Scarabs,
-        Ooze,
-        Obsidian
+        AwakenedEarth,
+        AwakenedFire,
+        AwakenedWater,
+        AwakenedAir,
+        AwakenedLightning,
+        AwakenedFrost,
+        AwakenedDecay,
+        AwakenedArcane,
+        AwakenedOrder,
+        AwakenedShadow,
+        RousingEarth,
+        RousingFire,
+        RousingWater,
+        RousingAir,
+        RousingLightning,
+        RousingFrost,
+        RousingDecay,
+        RousingArcane,
+        RousingOrder,
+        RousingShadow,
+        SoulOfEarth,
+        SoulOfFire,
+        SoulOfWater,
+        SoulOfAir,
+        SoulOfLightning,
+        SoulOfFrost,
+        SoulOfDecay,
+        SoulOfArcane,
+        SoulOfOrder,
+        SoulOfShadow,
     }
 
     public enum SoundEffects
     {
         None,
-        Coins
+        Coins,
+        PutDownSmallWood,
+        PutDownSmallMetal,
+        PickUpRocks,
     }
 
     public enum Anchor
