@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 
 using static Root;
@@ -7,7 +7,6 @@ using static Root.Color;
 using static Root.Anchor;
 using static Root.RegionBackgroundType;
 using static Root.SmallButtonTypes;
-using static Root.BigButtonTypes;
 
 using static UnityEngine.KeyCode;
 
@@ -437,23 +436,57 @@ public class Blueprint
             AddInputRegion(testText, InputType.Everything, "TestingText");
             AddInputRegion(testText2, InputType.Everything, "TestingText2");
         }),
-        new("Inventory", () => {
+        new("PlayerBattleInfo", () => {
             SetAnchor(TopLeft);
-            AddHeaderGroup();
+            AddRegionGroup();
             AddHandleRegion(() =>
             {
-                AddLine("Inventory", Black);
-                AddSmallButton(Close,
+                AddLine("Chemical plant", Black);
+                AddSmallButton(NextPage,
                     (h) =>
                     {
-                        CloseWindow(h.window);
+                        AddRegionGroup(1);
+                        AddHandleRegion(() =>
+                        {
+                            AddLine("Chemical plant", Black);
+                            AddSmallButton(Close,
+                                (h) =>
+                                {
+                                    CloseRegionGroup(h.region.regionGroup);
+                                }
+                            );
+                        });
+                        AddHeaderRegion(() =>
+                        {
+                            AddLine("General", LightGray);
+                        });
+                        AddPaddingRegion(() =>
+                        {
+                            SetRegionAsGroupExtender();
+                            AddLine("Crafting speed: ", DarkGray);
+                            AddText("1.00", Gray);
+                            AddLine("Products finished: ", DarkGray);
+                            AddText("7406", Gray);
+                            AddLine("Pollution: ", DarkGray);
+                            AddText("4/m", Gray);
+                            AddLine("Health: ", DarkGray);
+                            AddText("300/300", Gray);
+                        });
+                        AddButtonRegion(() =>
+                        {
+                            AddLine("Add to list of abilities", Black);
+                        },
+                        (h) =>
+                        {
+                            h.window.Rebuild();
+                        });
                     }
                 );
             });
-            var list = new List<string> { "Steel Axe +2", "Steel Axe \"Reaper\" +7", "Iron Cleaver +1", "Steel Spear +3" };
+            var list = new List<string> { "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight" };
             AddPaddingRegion(() =>
             {
-                AddLine("Weapons:", Gray);
+                AddLine("List:", Gray);
             });
             AddLineList(6,
                 () => list.Count,
@@ -461,19 +494,6 @@ public class Blueprint
                 {
                     SetRegionBackground(Button);
                     AddLine(list[i], Black);
-                    SetTooltipForRegion(
-                        (h) => () =>
-                        {
-                            SetAnchor(BottomRight);
-                            AddRegionGroup();
-                            AddHeaderRegion(
-                                () =>
-                                {
-                                    AddLine("as", LightGray);
-                                }
-                            );
-                        }
-                    );
                 },
                 (i) =>
                 {
@@ -488,106 +508,79 @@ public class Blueprint
                 AddNextPageButton();
                 AddPreviousPageButton();
             });
-        }),
-        new("UnitCardsExplorer", () => {
-            SetAnchor(Center);
-
-            AddHeaderGroup();
-            AddHandleRegion(() =>
-            {
-                AddLine("Unit Cards Explorer", Black);
-                AddSmallButton(Close,
-                    (h) =>
-                    {
-                        CloseWindow("UnitCardsExplorer");
-                    }
-                );
-            });
-            AddRegionGroup();
-            SetRegionGroupWidth(150);
             AddButtonRegion(
                 () =>
                 {
-                    AddLine("Leader cards:", Gray);
-                    AddDropdown((s) => s + ":", () => new List<string> { "Leader cards", "Unit cards", "Spell cards" });
-                    AddSmallButton(NextPage,
-                        (h) =>
-                        {
-                            Data.data.leaderCards.Add(new LeaderCard() { title = random.Next(10000, 100000).ToString() });
-                        }
-                    );
+                    AddLine("Mutilate", Black);
                 },
                 (h) =>
                 {
 
                 }
             );
-            AddLineList(12,
-                () => Data.data.leaderCards.Count,
-                (i) =>
+            AddButtonRegion(
+                () =>
                 {
-                    SetRegionBackground(Button);
-                    AddLine(Data.data.leaderCards[i].title, Black);
-                    SetTooltipForRegion(
-                        (h) => () =>
-                        {
-                            SetAnchor(BottomRight);
-                            AddRegionGroup();
-                            AddHeaderRegion(
-                                () =>
-                                {
-                                    AddLine(Data.data.leaderCards[i].title, LightGray);
-                                }
-                            );
-                        }
-                    );
+                    AddLine("Garrote", Black);
                 },
-                (i) =>
+                (h) =>
                 {
-                    SetRegionBackground(Padding);
-                    AddLine("", Gray);
-                },
-                null
+
+                }
             );
-            AddPaddingRegion(() =>
-            {
-                AddPaginationLine();
-                AddNextPageButton();
-                AddPreviousPageButton();
-            });
-            AddRegionGroup();
-            AddPaddingRegion(() =>
-            {
-                AddLine("Max. consumption: ", DarkGray);
-                AddText("217 kW", Gray);
-                AddLine("Min. consumption: ", DarkGray);
-                AddText("7 kW", Gray);
-            });
-        }),
-        new("ExampleUnit", () => {
-            SetAnchor(Center);
-            AddHeaderGroup();
-            AddHandleRegion(() =>
-            {
-                AddLine("Board", Black);
-                AddSmallButton(Close,
-                    (h) =>
-                    {
-                        Board.board.Reset();
-                    }
-                );
-                SetTooltipForSmallButton((h) => () =>
+            AddButtonRegion(
+                () =>
                 {
-                    SetAnchor(BottomRight);
-                    AddRegionGroup();
-                    AddHeaderRegion(
-                        () =>
-                        {
-                            AddLine(testText2.Value(), LightGray);
-                        }
-                    );
-                });
-            });
+                    AddLine("Rupture", Black);
+                },
+                (h) =>
+                {
+
+                }
+            );
+            AddButtonRegion(
+                () =>
+                {
+                    AddLine("Envenom", Black);
+                },
+                (h) =>
+                {
+
+                }
+            );
+            AddButtonRegion(
+                () =>
+                {
+                    AddLine("Evasion", Black);
+                },
+                (h) =>
+                {
+
+                }
+            );
+            AddButtonRegion(
+                () =>
+                {
+                    AddLine("Kidney Shot", Black);
+                },
+                (h) =>
+                {
+
+                }
+            );
+            AddButtonRegion(
+                () =>
+                {
+                    AddLine("Shiv", Black);
+                },
+                (h) =>
+                {
+
+                }
+            );
+        }),
+        new("BattleBoard", () => {
+            SetAnchor(Center);
             AddRegionGroup();
             for (int i = 0; i < Board.board.field.GetLength(0); i++)
             {
@@ -616,76 +609,6 @@ public class Blueprint
                     }
                 });
             }
-            //AddPaddingRegion(() =>
-            //{
-            //    AddBigButton(CopperCoins, (h) => { UnityEngine.Debug.Log(h.region.bigButtons.FindIndex(x => x.GetComponent<Highlightable>() == h) + ", " + h.region.regionGroup.regions.IndexOf(h.region)); });
-            //    AddBigButton(SilverCoins, (h) => { UnityEngine.Debug.Log(h.region.bigButtons.FindIndex(x => x.GetComponent<Highlightable>() == h) + ", " + h.region.regionGroup.regions.IndexOf(h.region)); });
-            //    AddBigButton(SilverCoins, (h) => { UnityEngine.Debug.Log(h.region.bigButtons.FindIndex(x => x.GetComponent<Highlightable>() == h) + ", " + h.region.regionGroup.regions.IndexOf(h.region)); });
-            //    AddBigButton(SilverCoins, (h) => { UnityEngine.Debug.Log(h.region.bigButtons.FindIndex(x => x.GetComponent<Highlightable>() == h) + ", " + h.region.regionGroup.regions.IndexOf(h.region)); });
-            //    AddBigButton(Skulls, (h) => { UnityEngine.Debug.Log(h.region.bigButtons.FindIndex(x => x.GetComponent<Highlightable>() == h) + ", " + h.region.regionGroup.regions.IndexOf(h.region)); });
-            //    AddBigButton(CopperCoins, (h) => { UnityEngine.Debug.Log(h.region.bigButtons.FindIndex(x => x.GetComponent<Highlightable>() == h) + ", " + h.region.regionGroup.regions.IndexOf(h.region)); });
-            //    AddBigButton(CopperCoins, (h) => { UnityEngine.Debug.Log(h.region.bigButtons.FindIndex(x => x.GetComponent<Highlightable>() == h) + ", " + h.region.regionGroup.regions.IndexOf(h.region)); });
-            //});
-            //AddPaddingRegion(() =>
-            //{
-            //    AddBigButton(GoldCoins, (h) => { UnityEngine.Debug.Log(h.region.bigButtons.FindIndex(x => x.GetComponent<Highlightable>() == h) + ", " + h.region.regionGroup.regions.IndexOf(h.region)); });
-            //    AddBigButton(GoldCoins, (h) => { UnityEngine.Debug.Log(h.region.bigButtons.FindIndex(x => x.GetComponent<Highlightable>() == h) + ", " + h.region.regionGroup.regions.IndexOf(h.region)); });
-            //    AddBigButton(GoldCoins, (h) => { UnityEngine.Debug.Log(h.region.bigButtons.FindIndex(x => x.GetComponent<Highlightable>() == h) + ", " + h.region.regionGroup.regions.IndexOf(h.region)); });
-            //    AddBigButton(CopperCoins, (h) => { UnityEngine.Debug.Log(h.region.bigButtons.FindIndex(x => x.GetComponent<Highlightable>() == h) + ", " + h.region.regionGroup.regions.IndexOf(h.region)); });
-            //    AddBigButton(CopperCoins, (h) => { UnityEngine.Debug.Log(h.region.bigButtons.FindIndex(x => x.GetComponent<Highlightable>() == h) + ", " + h.region.regionGroup.regions.IndexOf(h.region)); });
-            //    AddBigButton(CopperCoins, (h) => { UnityEngine.Debug.Log(h.region.bigButtons.FindIndex(x => x.GetComponent<Highlightable>() == h) + ", " + h.region.regionGroup.regions.IndexOf(h.region)); });
-            //    AddBigButton(Skulls, (h) => { UnityEngine.Debug.Log(h.region.bigButtons.FindIndex(x => x.GetComponent<Highlightable>() == h) + ", " + h.region.regionGroup.regions.IndexOf(h.region)); });
-            //});
-            //AddPaddingRegion(() =>
-            //{
-            //    AddBigButton(SilverCoins, (h) => { UnityEngine.Debug.Log(h.region.bigButtons.FindIndex(x => x.GetComponent<Highlightable>() == h) + ", " + h.region.regionGroup.regions.IndexOf(h.region)); });
-            //    AddBigButton(CopperCoins, (h) => { UnityEngine.Debug.Log(h.region.bigButtons.FindIndex(x => x.GetComponent<Highlightable>() == h) + ", " + h.region.regionGroup.regions.IndexOf(h.region)); });
-            //    AddBigButton(GoldCoins, (h) => { UnityEngine.Debug.Log(h.region.bigButtons.FindIndex(x => x.GetComponent<Highlightable>() == h) + ", " + h.region.regionGroup.regions.IndexOf(h.region)); });
-            //    AddBigButton(GoldCoins, (h) => { UnityEngine.Debug.Log(h.region.bigButtons.FindIndex(x => x.GetComponent<Highlightable>() == h) + ", " + h.region.regionGroup.regions.IndexOf(h.region)); });
-            //    AddBigButton(GoldCoins, (h) => { UnityEngine.Debug.Log(h.region.bigButtons.FindIndex(x => x.GetComponent<Highlightable>() == h) + ", " + h.region.regionGroup.regions.IndexOf(h.region)); });
-            //    AddBigButton(Skulls, (h) => { UnityEngine.Debug.Log(h.region.bigButtons.FindIndex(x => x.GetComponent<Highlightable>() == h) + ", " + h.region.regionGroup.regions.IndexOf(h.region)); });
-            //    AddBigButton(SilverCoins, (h) => { UnityEngine.Debug.Log(h.region.bigButtons.FindIndex(x => x.GetComponent<Highlightable>() == h) + ", " + h.region.regionGroup.regions.IndexOf(h.region)); });
-            //});
-            //AddPaddingRegion(() =>
-            //{
-            //    AddBigButton(GoldCoins, (h) => { UnityEngine.Debug.Log(h.region.bigButtons.FindIndex(x => x.GetComponent<Highlightable>() == h) + ", " + h.region.regionGroup.regions.IndexOf(h.region)); });
-            //    AddBigButton(SilverCoins, (h) => { UnityEngine.Debug.Log(h.region.bigButtons.FindIndex(x => x.GetComponent<Highlightable>() == h) + ", " + h.region.regionGroup.regions.IndexOf(h.region)); });
-            //    AddBigButton(SilverCoins, (h) => { UnityEngine.Debug.Log(h.region.bigButtons.FindIndex(x => x.GetComponent<Highlightable>() == h) + ", " + h.region.regionGroup.regions.IndexOf(h.region)); });
-            //    AddBigButton(SilverCoins, (h) => { UnityEngine.Debug.Log(h.region.bigButtons.FindIndex(x => x.GetComponent<Highlightable>() == h) + ", " + h.region.regionGroup.regions.IndexOf(h.region)); });
-            //    AddBigButton(SilverCoins, (h) => { UnityEngine.Debug.Log(h.region.bigButtons.FindIndex(x => x.GetComponent<Highlightable>() == h) + ", " + h.region.regionGroup.regions.IndexOf(h.region)); });
-            //    AddBigButton(CopperCoins, (h) => { UnityEngine.Debug.Log(h.region.bigButtons.FindIndex(x => x.GetComponent<Highlightable>() == h) + ", " + h.region.regionGroup.regions.IndexOf(h.region)); });
-            //    AddBigButton(SilverCoins, (h) => { UnityEngine.Debug.Log(h.region.bigButtons.FindIndex(x => x.GetComponent<Highlightable>() == h) + ", " + h.region.regionGroup.regions.IndexOf(h.region)); });
-            //});
-            //AddPaddingRegion(() =>
-            //{
-            //    AddBigButton(SilverCoins, (h) => { UnityEngine.Debug.Log(h.region.bigButtons.FindIndex(x => x.GetComponent<Highlightable>() == h) + ", " + h.region.regionGroup.regions.IndexOf(h.region)); });
-            //    AddBigButton(GoldCoins, (h) => { UnityEngine.Debug.Log(h.region.bigButtons.FindIndex(x => x.GetComponent<Highlightable>() == h) + ", " + h.region.regionGroup.regions.IndexOf(h.region)); });
-            //    AddBigButton(CopperCoins, (h) => { UnityEngine.Debug.Log(h.region.bigButtons.FindIndex(x => x.GetComponent<Highlightable>() == h) + ", " + h.region.regionGroup.regions.IndexOf(h.region)); });
-            //    AddBigButton(CopperCoins, (h) => { UnityEngine.Debug.Log(h.region.bigButtons.FindIndex(x => x.GetComponent<Highlightable>() == h) + ", " + h.region.regionGroup.regions.IndexOf(h.region)); });
-            //    AddBigButton(CopperCoins, (h) => { UnityEngine.Debug.Log(h.region.bigButtons.FindIndex(x => x.GetComponent<Highlightable>() == h) + ", " + h.region.regionGroup.regions.IndexOf(h.region)); });
-            //    AddBigButton(GoldCoins, (h) => { UnityEngine.Debug.Log(h.region.bigButtons.FindIndex(x => x.GetComponent<Highlightable>() == h) + ", " + h.region.regionGroup.regions.IndexOf(h.region)); });
-            //    AddBigButton(SilverCoins, (h) => { UnityEngine.Debug.Log(h.region.bigButtons.FindIndex(x => x.GetComponent<Highlightable>() == h) + ", " + h.region.regionGroup.regions.IndexOf(h.region)); });
-            //});
-            //AddPaddingRegion(() =>
-            //{
-            //    AddBigButton(GoldCoins, (h) => { UnityEngine.Debug.Log(h.region.bigButtons.FindIndex(x => x.GetComponent<Highlightable>() == h) + ", " + h.region.regionGroup.regions.IndexOf(h.region)); });
-            //    AddBigButton(SilverCoins, (h) => { UnityEngine.Debug.Log(h.region.bigButtons.FindIndex(x => x.GetComponent<Highlightable>() == h) + ", " + h.region.regionGroup.regions.IndexOf(h.region)); });
-            //    AddBigButton(SilverCoins, (h) => { UnityEngine.Debug.Log(h.region.bigButtons.FindIndex(x => x.GetComponent<Highlightable>() == h) + ", " + h.region.regionGroup.regions.IndexOf(h.region)); });
-            //    AddBigButton(Skulls, (h) => { UnityEngine.Debug.Log(h.region.bigButtons.FindIndex(x => x.GetComponent<Highlightable>() == h) + ", " + h.region.regionGroup.regions.IndexOf(h.region)); });
-            //    AddBigButton(CopperCoins, (h) => { UnityEngine.Debug.Log(h.region.bigButtons.FindIndex(x => x.GetComponent<Highlightable>() == h) + ", " + h.region.regionGroup.regions.IndexOf(h.region)); });
-            //    AddBigButton(CopperCoins, (h) => { UnityEngine.Debug.Log(h.region.bigButtons.FindIndex(x => x.GetComponent<Highlightable>() == h) + ", " + h.region.regionGroup.regions.IndexOf(h.region)); });
-            //    AddBigButton(SilverCoins, (h) => { UnityEngine.Debug.Log(h.region.bigButtons.FindIndex(x => x.GetComponent<Highlightable>() == h) + ", " + h.region.regionGroup.regions.IndexOf(h.region)); });
-            //});
-            //AddPaddingRegion(() =>
-            //{
-            //    AddBigButton(GoldCoins, (h) => { UnityEngine.Debug.Log(h.region.bigButtons.FindIndex(x => x.GetComponent<Highlightable>() == h) + ", " + h.region.regionGroup.regions.IndexOf(h.region)); });
-            //    AddBigButton(GoldCoins, (h) => { UnityEngine.Debug.Log(h.region.bigButtons.FindIndex(x => x.GetComponent<Highlightable>() == h) + ", " + h.region.regionGroup.regions.IndexOf(h.region)); });
-            //    AddBigButton(SilverCoins, (h) => { UnityEngine.Debug.Log(h.region.bigButtons.FindIndex(x => x.GetComponent<Highlightable>() == h) + ", " + h.region.regionGroup.regions.IndexOf(h.region)); });
-            //    AddBigButton(SilverCoins, (h) => { UnityEngine.Debug.Log(h.region.bigButtons.FindIndex(x => x.GetComponent<Highlightable>() == h) + ", " + h.region.regionGroup.regions.IndexOf(h.region)); });
-            //    AddBigButton(CopperCoins, (h) => { UnityEngine.Debug.Log(h.region.bigButtons.FindIndex(x => x.GetComponent<Highlightable>() == h) + ", " + h.region.regionGroup.regions.IndexOf(h.region)); });
-            //    AddBigButton(CopperCoins, (h) => { UnityEngine.Debug.Log(h.region.bigButtons.FindIndex(x => x.GetComponent<Highlightable>() == h) + ", " + h.region.regionGroup.regions.IndexOf(h.region)); });
-            //    AddBigButton(SilverCoins, (h) => { UnityEngine.Debug.Log(h.region.bigButtons.FindIndex(x => x.GetComponent<Highlightable>() == h) + ", " + h.region.regionGroup.regions.IndexOf(h.region)); });
-            //});
         }),
     };
 
@@ -698,8 +621,7 @@ public class Blueprint
             AddHotkey(L, () => { SpawnWindowBlueprint("LayoutTest"); });
             AddHotkey(U, () => { SpawnWindowBlueprint("UnitCardsExplorer"); });
             AddHotkey(P, () => { SpawnWindowBlueprint("Piracy"); });
-            AddHotkey(I, () => { SpawnWindowBlueprint("Inventory"); });
-            AddHotkey(A, () => { SpawnWindowBlueprint("ExampleUnit"); });
+            AddHotkey(A, () => { SpawnWindowBlueprint("BattleBoard"); SpawnWindowBlueprint("PlayerBattleInfo"); Board.board.Reset(); });
             AddHotkey(Escape, () => { SpawnWindowBlueprint("ESCMenu"); });
             AddHotkey(Tab, () => { SpawnDesktopBlueprint("Game"); });
         }),

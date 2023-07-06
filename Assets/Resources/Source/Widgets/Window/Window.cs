@@ -209,7 +209,7 @@ public class Window : MonoBehaviour
                 region.currentHeight = 34;
             foreach (var bigButton in region.bigButtons)
             {
-                bigButton.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/BigButtons/" + bigButton.buttonType);
+                bigButton.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/BigButtons/" + Board.boardButtonPathDictionary[bigButton.buttonType]);
                 bigButton.transform.localPosition = new Vector3(region.xExtend + 20 + 38 * region.bigButtons.IndexOf(bigButton), -20f, 0.1f);
                 if (bigButton.gameObject.GetComponent<BoxCollider2D>() == null)
                     bigButton.gameObject.AddComponent<BoxCollider2D>();
