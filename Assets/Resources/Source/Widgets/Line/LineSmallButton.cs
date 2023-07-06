@@ -1,6 +1,5 @@
 using System;
 using UnityEngine;
-
 using static Root;
 
 public class LineSmallButton : MonoBehaviour
@@ -12,14 +11,17 @@ public class LineSmallButton : MonoBehaviour
     public GameObject frame;
 
     //Fields
+    public Tooltip tooltip;
     public Action<Highlightable> pressEvent;
     public SmallButtonTypes buttonType;
 
-    public void Initialise(Region region, SmallButtonTypes buttonType, Action<Highlightable> pressEvent)
+    public void Initialise(Region region, SmallButtonTypes buttonType, Action<Highlightable> pressEvent, Func<Highlightable, Action> tooltip)
     {
         this.region = region;
         this.buttonType = buttonType;
         this.pressEvent = pressEvent;
+        if (tooltip != null)
+            this.tooltip = new Tooltip(() => GetComponent<Highlightable>(), tooltip);
 
         region.LBSmallButton = this;
         region.smallButtons.Add(this);

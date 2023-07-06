@@ -150,20 +150,6 @@ public class Blueprint
             {
 
             });
-            SetTooltipForRegion(
-                (h) => () =>
-                {
-                    SetAnchor(BottomRight);
-                    AddRegionGroup();
-                    AddHeaderRegion(
-                        () =>
-                        {
-                            AddLine("Opens a menu where", LightGray);
-                            AddLine("the game can be configured.", LightGray);
-                        }
-                    );
-                }
-            );
             AddButtonRegion(() =>
             {
                 AddLine("Exit", Black);
@@ -171,22 +157,20 @@ public class Blueprint
             (h) =>
             {
                 UnityEngine.Application.Quit();
+            },
+            (h) => () =>
+            {
+                SetAnchor(BottomRight);
+                AddRegionGroup();
+                AddHeaderRegion(
+                    () =>
+                    {
+                        AddLine("Exits the game.", LightGray);
+                        AddLine("This action does not", LightGray);
+                        AddLine("save your game progress!", LightGray);
+                    }
+                );
             });
-            SetTooltipForRegion(
-                (h) => () =>
-                {
-                    SetAnchor(BottomRight);
-                    AddRegionGroup();
-                    AddHeaderRegion(
-                        () =>
-                        {
-                            AddLine("Exits the game.", LightGray);
-                            AddLine("This action does not", LightGray);
-                            AddLine("save your game progress!", LightGray);
-                        }
-                    );
-                }
-            );
         }),
         new("City", () => {
             SetAnchor(Center);
@@ -276,26 +260,26 @@ public class Blueprint
             AddHeaderRegion(() =>
             {
                 AddLine("Ambrose", Paladin);
-                AddSmallButton(SmallButtonTypes.Unwind,
+                AddSmallButton(Unwind,
                     (h) =>
                     {
+                    },
+                    (h) => () =>
+                    {
+                        AddPaddingRegion(() =>
+                        {
+                            SetRegionAsGroupExtender();
+                            AddLine("Crafting speed: ", DarkGray);
+                            AddText("1.00", Gray);
+                            AddLine("Products finished: ", DarkGray);
+                            AddText("7406", Gray);
+                            AddLine("Pollution: ", DarkGray);
+                            AddText("4/m", Gray);
+                            AddLine("Health: ", DarkGray);
+                            AddText("300/300", Gray);
+                        });
                     }
                 );
-                SetTooltipForSmallButton((h) => () =>
-                {
-                    AddPaddingRegion(() =>
-                    {
-                        SetRegionAsGroupExtender();
-                        AddLine("Crafting speed: ", DarkGray);
-                        AddText("1.00", Gray);
-                        AddLine("Products finished: ", DarkGray);
-                        AddText("7406", Gray);
-                        AddLine("Pollution: ", DarkGray);
-                        AddText("4/m", Gray);
-                        AddLine("Health: ", DarkGray);
-                        AddText("300/300", Gray);
-                    });
-                });
             }
             );
             AddPaddingRegion(() =>
@@ -437,77 +421,23 @@ public class Blueprint
             AddInputRegion(testText2, InputType.Everything, "TestingText2");
         }),
         new("PlayerBattleInfo", () => {
-            SetAnchor(TopLeft);
+            SetAnchor(TopRight);
             AddRegionGroup();
             AddHandleRegion(() =>
             {
-                AddLine("Chemical plant", Black);
-                AddSmallButton(NextPage,
-                    (h) =>
-                    {
-                        AddRegionGroup(1);
-                        AddHandleRegion(() =>
-                        {
-                            AddLine("Chemical plant", Black);
-                            AddSmallButton(Close,
-                                (h) =>
-                                {
-                                    CloseRegionGroup(h.region.regionGroup);
-                                }
-                            );
-                        });
-                        AddHeaderRegion(() =>
-                        {
-                            AddLine("General", LightGray);
-                        });
-                        AddPaddingRegion(() =>
-                        {
-                            SetRegionAsGroupExtender();
-                            AddLine("Crafting speed: ", DarkGray);
-                            AddText("1.00", Gray);
-                            AddLine("Products finished: ", DarkGray);
-                            AddText("7406", Gray);
-                            AddLine("Pollution: ", DarkGray);
-                            AddText("4/m", Gray);
-                            AddLine("Health: ", DarkGray);
-                            AddText("300/300", Gray);
-                        });
-                        AddButtonRegion(() =>
-                        {
-                            AddLine("Add to list of abilities", Black);
-                        },
-                        (h) =>
-                        {
-                            h.window.Rebuild();
-                        });
-                    }
-                );
+                AddLine("Roowr", Black);
             });
-            var list = new List<string> { "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight" };
+            AddHeaderRegion(() =>
+            {
+                AddLine("Resources:", Gray);
+            });
             AddPaddingRegion(() =>
             {
-                AddLine("List:", Gray);
+                AddLine("x2 Decay", Gray);
+                AddLine("x3 Shadow", Gray);
+                AddLine("x1 Air", Gray);
             });
-            AddLineList(6,
-                () => list.Count,
-                (i) =>
-                {
-                    SetRegionBackground(Button);
-                    AddLine(list[i], Black);
-                },
-                (i) =>
-                {
-                    SetRegionBackground(Padding);
-                    AddLine("", Gray);
-                },
-                null
-            );
-            AddPaddingRegion(() =>
-            {
-                AddPaginationLine();
-                AddNextPageButton();
-                AddPreviousPageButton();
-            });
+            SetRegionAsGroupExtender();
             AddButtonRegion(
                 () =>
                 {
@@ -546,6 +476,39 @@ public class Blueprint
                 (h) =>
                 {
 
+                },
+                (h) => () =>
+                {
+                    SetAnchor(Center);
+                    AddRegionGroup();
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Envenom", Gray);
+                    });
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Cast cost:", Gray);
+                    });
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine("x2 Decay", Gray);
+                        AddLine("x3 Shadow", Gray);
+                        AddLine("x1 Air", Gray);
+                    });
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Effects:", Gray);
+                    });
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine("Strike the target for 24* damage.", Gray);
+                        AddLine("Additionaly poison the target for 4* damage", Gray);
+                        AddLine("every time they make move for next 3 turns.", Gray);
+                    });
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine("* Scaled with Agility and Decay Mastery.", Gray);
+                    });
                 }
             );
             AddButtonRegion(
@@ -568,16 +531,6 @@ public class Blueprint
 
                 }
             );
-            AddButtonRegion(
-                () =>
-                {
-                    AddLine("Shiv", Black);
-                },
-                (h) =>
-                {
-
-                }
-            );
         }),
         new("BattleBoard", () => {
             SetAnchor(Center);
@@ -590,9 +543,10 @@ public class Blueprint
                     {
                         AddBigButton(Board.board.GetFieldButton(), (h) =>
                         {
-                            Board.board.FloodDestroy(h.window, h.region.bigButtons.FindIndex(x => x.GetComponent<Highlightable>() == h), h.region.regionGroup.regions.IndexOf(h.region));
-                        });
-                        SetTooltipForBigButton((h) => () =>
+                            var list = Board.board.FloodCount(h.region.bigButtons.FindIndex(x => x.GetComponent<Highlightable>() == h), h.region.regionGroup.regions.IndexOf(h.region));
+                            Board.board.FloodDestroy(h.window, list);
+                        },
+                        (h) => () =>
                         {
                             var coords = (h.region.bigButtons.FindIndex(x => x.GetComponent<Highlightable>() == h), h.region.regionGroup.regions.IndexOf(h.region));
                             var count = Board.board.FloodCount(coords.Item1, coords.Item2).Count;

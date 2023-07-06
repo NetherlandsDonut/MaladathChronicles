@@ -1,5 +1,5 @@
+using System;
 using UnityEngine;
-
 
 using static Root;
 using static Root.CursorType;
@@ -8,7 +8,6 @@ public class Highlightable : MonoBehaviour
 {
     public Region region;
     public Window window;
-    public Tooltip tooltip;
     public SpriteRenderer render;
     public bool over, pressed, windowHandle;
 
@@ -19,11 +18,18 @@ public class Highlightable : MonoBehaviour
         this.region = region;
     }
 
+    public Tooltip FindTooltip()
+    {
+        if (TryGetComponent<LineSmallButton>(out var smallButton)) return smallButton.tooltip;
+        if (TryGetComponent<LineBigButton>(out var bigButton)) return bigButton.tooltip;
+        return region.tooltip;
+    }
+
     public void OnMouseEnter()
     {
         if (cursor.render.sprite == null) return;
-        if (tooltip != null)
-            window.desktop.SetTooltip(tooltip);
+        if (FindTooltip() != null)
+            window.desktop.SetTooltip(FindTooltip());
         if (GetComponent<InputCharacter>() != null) cursor.SetCursor(Write);
         if (!pressed || !windowHandle)
             render.color -= new UnityEngine.Color(0.1f, 0.1f, 0.1f, 0);
@@ -32,8 +38,8 @@ public class Highlightable : MonoBehaviour
     public void OnMouseExit()
     {
         if (cursor.render.sprite == null) return;
-        if (tooltip != null && window.desktop.tooltip == tooltip)
-            if (tooltip.window != null) CloseWindow(tooltip.window);
+        if (FindTooltip() != null && window.desktop.tooltip == FindTooltip())
+            if (FindTooltip().window != null) CloseWindow(FindTooltip().window);
             else window.desktop.tooltip = null;
         if (!pressed && !windowHandle) cursor.SetCursor(Default);
         if (!pressed || !windowHandle) render.color += new UnityEngine.Color(0.1f, 0.1f, 0.1f, 0);
