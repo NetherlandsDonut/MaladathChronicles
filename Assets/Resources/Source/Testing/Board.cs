@@ -4,8 +4,6 @@ using System.Collections.Generic;
 using static Root;
 using static Root.Color;
 using static Root.SoundEffects;
-using static Root.BigButtonTypes;
-using static UnityEngine.Tilemaps.TilemapRenderer;
 
 public class Board
 {
@@ -64,7 +62,7 @@ public class Board
     public string GetFieldName(int x, int y) => boardNameDictionary[field[x, y]].ToString();
     public Color GetFieldColor(int x, int y) => boardColorDictionary[field[x, y]];
 
-    public BigButtonTypes GetFieldButton()
+    public string GetFieldButton()
     {
         var r = boardButtonDictionary[field[fieldGetCounterX, fieldGetCounterY]];
         fieldGetCounterX++;
@@ -181,74 +179,39 @@ public class Board
         { 30, LightGray },
     };
 
-    public static Dictionary<int, BigButtonTypes> boardButtonDictionary = new()
+    public static Dictionary<int, string> boardButtonDictionary = new()
     {
-        { 00, Empty },
-        { 01, AwakenedEarth },
-        { 02, AwakenedFire },
-        { 03, AwakenedWater },
-        { 04, AwakenedAir },
-        { 05, AwakenedLightning },
-        { 06, AwakenedFrost },
-        { 07, AwakenedDecay },
-        { 08, AwakenedArcane },
-        { 09, AwakenedOrder },
-        { 10, AwakenedShadow },
-        { 11, RousingEarth },
-        { 12, RousingFire },
-        { 13, RousingWater },
-        { 14, RousingAir },
-        { 15, RousingLightning },
-        { 16, RousingFrost },
-        { 17, RousingDecay },
-        { 18, RousingArcane },
-        { 19, RousingOrder },
-        { 20, RousingShadow },
-        { 21, SoulOfEarth },
-        { 22, SoulOfFire },
-        { 23, SoulOfWater },
-        { 24, SoulOfAir },
-        { 25, SoulOfLightning },
-        { 26, SoulOfFrost },
-        { 27, SoulOfDecay },
-        { 28, SoulOfArcane },
-        { 29, SoulOfOrder },
-        { 30, SoulOfShadow },
-    };
-
-    public static Dictionary<BigButtonTypes, string> boardButtonPathDictionary = new()
-    {
-        { Empty, "Empty" },
-        { AwakenedEarth, "Elements/Earth/AwakenedEarth" },
-        { AwakenedFire, "Elements/Fire/AwakenedFire" },
-        { AwakenedWater, "Elements/Water/AwakenedWater" },
-        { AwakenedAir, "Elements/Air/AwakenedAir" },
-        { AwakenedLightning, "Elements/Lightning/AwakenedLightning" },
-        { AwakenedFrost, "Elements/Frost/AwakenedFrost" },
-        { AwakenedDecay, "Elements/Decay/AwakenedDecay" },
-        { AwakenedArcane, "Elements/Arcane/AwakenedArcane" },
-        { AwakenedOrder, "Elements/Order/AwakenedOrder" },
-        { AwakenedShadow, "Elements/Shadow/AwakenedShadow" },
-        { RousingEarth, "Elements/Earth/RousingEarth" },
-        { RousingFire, "Elements/Fire/RousingFire" },
-        { RousingWater, "Elements/Water/RousingWater" },
-        { RousingAir, "Elements/Air/RousingAir" },
-        { RousingLightning, "Elements/Lightning/RousingLightning" },
-        { RousingFrost, "Elements/Frost/RousingFrost" },
-        { RousingDecay, "Elements/Decay/RousingDecay" },
-        { RousingArcane, "Elements/Arcane/RousingArcane" },
-        { RousingOrder, "Elements/Order/RousingOrder" },
-        { RousingShadow, "Elements/Shadow/RousingShadow" },
-        { SoulOfEarth, "Elements/Earth/SoulEarth" },
-        { SoulOfFire, "Elements/Fire/SoulFire" },
-        { SoulOfWater, "Elements/Water/SoulWater" },
-        { SoulOfAir, "Elements/Air/SoulAir" },
-        { SoulOfLightning, "Elements/Lightning/SoulLightning" },
-        { SoulOfFrost, "Elements/Frost/SoulFrost" },
-        { SoulOfDecay, "Elements/Decay/SoulDecay" },
-        { SoulOfArcane, "Elements/Arcane/SoulArcane" },
-        { SoulOfOrder, "Elements/Order/SoulOrder" },
-        { SoulOfShadow, "Elements/Shadow/SoulShadow" },
+        { 00, "OtherEmpty" },
+        { 01, "ElementEarthAwakened" },
+        { 02, "ElementFireAwakened" },
+        { 03, "ElementWaterAwakened" },
+        { 04, "ElementAirAwakened" },
+        { 05, "ElementLightningAwakened" },
+        { 06, "ElementFrostAwakened" },
+        { 07, "ElementDecayAwakened" },
+        { 08, "ElementArcaneAwakened" },
+        { 09, "ElementOrderAwakened" },
+        { 10, "ElementShadowAwakened" },
+        { 11, "ElementEarthRousing" },
+        { 12, "ElementFireRousing" },
+        { 13, "ElementWaterRousing" },
+        { 14, "ElementAirRousing" },
+        { 15, "ElementLightningRousing" },
+        { 16, "ElementFrostRousing" },
+        { 17, "ElementDecayRousing" },
+        { 18, "ElementArcaneRousing" },
+        { 19, "ElementOrderRousing" },
+        { 20, "ElementShadowRousing" },
+        { 21, "ElementEarthSoul" },
+        { 22, "ElementFireSoul" },
+        { 23, "ElementWaterSoul" },
+        { 24, "ElementAirSoul" },
+        { 25, "ElementLightningSoul" },
+        { 26, "ElementFrostSoul" },
+        { 27, "ElementDecaySoul" },
+        { 28, "ElementArcaneSoul" },
+        { 29, "ElementOrderSoul" },
+        { 30, "ElementShadowSoul" },
     };
 
     public static Dictionary<int, SoundEffects> collectSoundDictionary = new()

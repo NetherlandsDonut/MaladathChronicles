@@ -145,14 +145,19 @@ public static class Root
         CDesktop.globalWindows.Add(id, CDesktop.LBWindow);
     }
 
+    public static void SetAnchor(Anchor anchor, Window magnet)
+    {
+        CDesktop.LBWindow.anchor = new WindowAnchor(anchor, 0, 0, magnet);
+    }
+
     public static void SetAnchor(float x = 0, float y = 0)
     {
-        CDesktop.LBWindow.anchor = new WindowAnchor(Anchor.None, x, y);
+        CDesktop.LBWindow.anchor = new WindowAnchor(Anchor.None, x, y, null);
     }
 
     public static void SetAnchor(Anchor anchor, float x = 0, float y = 0)
     {
-        CDesktop.LBWindow.anchor = new WindowAnchor(anchor, x, y);
+        CDesktop.LBWindow.anchor = new WindowAnchor(anchor, x, y, null);
     }
 
     #endregion
@@ -325,7 +330,7 @@ public static class Root
 
     #region SmallButtons
 
-    public static void AddSmallButton(SmallButtonTypes type, Action<Highlightable> pressEvent, Func<Highlightable, Action> tooltip = null)
+    public static void AddSmallButton(string type, Action<Highlightable> pressEvent, Func<Highlightable, Action> tooltip = null)
     {
         var region = CDesktop.LBWindow.LBRegionGroup.LBRegion;
         if (region.lines.Count > 1) return;
@@ -337,7 +342,7 @@ public static class Root
     public static void AddNextPageButton()
     {
         var regionGroup = CDesktop.LBWindow.LBRegionGroup;
-        AddSmallButton(SmallButtonTypes.NextPage,
+        AddSmallButton("OtherNextPage",
             (h) =>
             {
                 if ((int)Math.Ceiling((double)regionGroup.regionList.count() / regionGroup.regionList.regions.Count) - 1 > regionGroup.pagination)
@@ -352,7 +357,7 @@ public static class Root
     public static void AddPreviousPageButton()
     {
         var regionGroup = CDesktop.LBWindow.LBRegionGroup;
-        AddSmallButton(SmallButtonTypes.PreviousPage,
+        AddSmallButton("OtherPreviousPage",
             (h) =>
             {
                 if (regionGroup.pagination > 0)
@@ -375,7 +380,7 @@ public static class Root
 
     #region BigButtons
 
-    public static void AddBigButton(BigButtonTypes type, Action<Highlightable> pressEvent, Func<Highlightable, Action> tooltip = null)
+    public static void AddBigButton(string type, Action<Highlightable> pressEvent, Func<Highlightable, Action> tooltip = null)
     {
         var region = CDesktop.LBWindow.LBRegionGroup.LBRegion;
         if (region.lines.Count > 1) return;
@@ -533,49 +538,6 @@ public static class Root
         Button,
         Header,
         Padding
-    }
-
-    public enum SmallButtonTypes
-    {
-        Close,
-        Unwind,
-        NextPage,
-        PreviousPage
-    }
-
-    public enum BigButtonTypes
-    {
-        Empty,
-        AwakenedEarth,
-        AwakenedFire,
-        AwakenedWater,
-        AwakenedAir,
-        AwakenedLightning,
-        AwakenedFrost,
-        AwakenedDecay,
-        AwakenedArcane,
-        AwakenedOrder,
-        AwakenedShadow,
-        RousingEarth,
-        RousingFire,
-        RousingWater,
-        RousingAir,
-        RousingLightning,
-        RousingFrost,
-        RousingDecay,
-        RousingArcane,
-        RousingOrder,
-        RousingShadow,
-        SoulOfEarth,
-        SoulOfFire,
-        SoulOfWater,
-        SoulOfAir,
-        SoulOfLightning,
-        SoulOfFrost,
-        SoulOfDecay,
-        SoulOfArcane,
-        SoulOfOrder,
-        SoulOfShadow,
     }
 
     public enum SoundEffects

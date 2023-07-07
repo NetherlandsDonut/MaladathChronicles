@@ -50,24 +50,39 @@ public class Window : MonoBehaviour
 
     public int PlannedHeight(bool includeHeader = false)
     {
-        return regionGroups.Max(x => x.PlannedHeight()) + (includeHeader && headerGroup != null ? headerGroup.PlannedHeight() : 0);
+        return (regionGroups.Count > 0 ? regionGroups.Max(x => x.PlannedHeight()) : 0) + (includeHeader && headerGroup != null ? headerGroup.PlannedHeight() : 0);
     }
 
     public void ResetPosition()
     {
-        transform.localPosition = Anchor();
+        transform.localPosition = anchor.magnet != null ? MagnetAnchor(anchor.magnet.transform.localPosition, new Vector2(anchor.magnet.xOffset, anchor.magnet.PlannedHeight())) : Anchor();
         transform.localPosition += (Vector3)anchor.offset;
 
         Vector2 Anchor()
         {
             switch (anchor.anchor)
             {
-                case Bottom: return new Vector2(screenX / 2 - 5 - xOffset / 2, 4 - screenY + PlannedHeight());
-                case BottomRight: return new Vector2(screenX - 4 - xOffset, 4 - screenY + PlannedHeight());
+                case Bottom: return new Vector2(screenX / 2 - xOffset / 2 - 1, 2 - screenY + PlannedHeight());
+                case BottomRight: return new Vector2(screenX - 2 - xOffset, 2 - screenY + PlannedHeight());
+                case BottomLeft: return new Vector2(0, 4 - screenY + PlannedHeight());
+                case Top: return new Vector2(screenX / 2 - xOffset / 2 - 1, 0);
+                case TopRight: return new Vector2(screenX - 2 - xOffset, 0);
+                case TopLeft: return new Vector2(0, 0);
+                case Center: return new Vector2(screenX / 2 - xOffset / 2 - 1, screenY / -2 + PlannedHeight() / 2);
+                default: return new Vector2(0, 0);
+            }
+        }
+
+        Vector2 MagnetAnchor(Vector2 position, Vector2 size)
+        {
+            switch (anchor.anchor)
+            {
+                case Bottom: return new Vector2(position.x - (xOffset - size.x) / 2, position.y + size.y);
+                case BottomRight: return new Vector2(position.x + size.x, position.y - size.y + PlannedHeight());
                 case BottomLeft: return new Vector2(2, 4 - screenY + PlannedHeight());
-                case Top: return new Vector2(screenX / 2 - 5 - xOffset / 2, -2);
-                case TopRight: return new Vector2(screenX - 4 - xOffset, -2);
-                case TopLeft: return new Vector2(2, -2);
+                case Top: return new Vector2(position.x - (xOffset - size.x) / 2, position.y + PlannedHeight());
+                case TopRight: return new Vector2(position.x + size.x, position.y);
+                case TopLeft: return new Vector2(position.x - xOffset, position.y);
                 case Center: return new Vector2(screenX / 2 - xOffset / 2, screenY / -2 + PlannedHeight() / 2);
                 default: return new Vector2(0, 0);
             }
@@ -132,7 +147,7 @@ public class Window : MonoBehaviour
             shadows[6].transform.localPosition = new Vector3(0, -PlannedHeight(true) - 2, 0.9f);
             shadows[7].transform.localPosition = new Vector3(xOffset + 2, -PlannedHeight(true) - 2, 0.9f);
         }
-        else
+        else if (shadowSystem == 1)
         {
             var shadowSprites = Resources.LoadAll<Sprite>("Sprites/Building/Shadows/Second");
             for (int i = 0; i < 5; i++)
@@ -149,6 +164,27 @@ public class Window : MonoBehaviour
             shadows[2].transform.localPosition = new Vector3(xOffset + 2, -PlannedHeight(true) - 2, 0.9f);
             shadows[3].transform.localPosition = new Vector3(4, -PlannedHeight(true) - 2, 0.9f);
             shadows[4].transform.localPosition = new Vector3(0, -PlannedHeight(true) - 2, 0.9f);
+        }
+        else
+        {
+            var shadowSprites = Resources.LoadAll<Sprite>("Sprites/Building/Shadows/Third");
+            for (int i = 0; i < 8; i++)
+                if (shadows[i] == null)
+                {
+                    shadows[i] = new GameObject("Shadow", typeof(SpriteRenderer));
+                    shadows[i].transform.parent = transform;
+                    shadows[i].GetComponent<SpriteRenderer>().sprite = shadowSprites[i];
+                }
+            shadows[1].transform.localScale = shadows[6].transform.localScale = new Vector3(xOffset + 2, 1, 1);
+            shadows[3].transform.localScale = shadows[4].transform.localScale = new Vector3(1, PlannedHeight() + 2 + (headerGroup != null ? headerGroup.PlannedHeight() : 0), 1);
+            shadows[0].transform.localPosition = new Vector3(-5, 5, 0.9f);
+            shadows[1].transform.localPosition = new Vector3(0, 5, 0.9f);
+            shadows[2].transform.localPosition = new Vector3(xOffset + 2, 5, 0.9f);
+            shadows[3].transform.localPosition = new Vector3(-5, 0, 0.9f);
+            shadows[4].transform.localPosition = new Vector3(xOffset + 2, 0, 0.9f);
+            shadows[5].transform.localPosition = new Vector3(-5, -PlannedHeight(true) - 2, 0.9f);
+            shadows[6].transform.localPosition = new Vector3(0, -PlannedHeight(true) - 2, 0.9f);
+            shadows[7].transform.localPosition = new Vector3(xOffset + 2, -PlannedHeight(true) - 2, 0.9f);
         }
     }
 
@@ -194,8 +230,8 @@ public class Window : MonoBehaviour
         foreach (var region in regionGroup.regions)
             foreach (var line in region.lines)
             {
-                var checkboxOffset = region.checkbox != null ? 15 : 0;
-                line.transform.localPosition = new Vector3(6 + checkboxOffset, -region.currentHeight - 3, 0);
+                var objectOffset = (region.checkbox != null ? 15 : 0) + region.bigButtons.Count * 38;
+                line.transform.localPosition = new Vector3(6 + objectOffset, -region.currentHeight - 3, 0);
                 region.currentHeight += 15;
                 int length = 0;
                 foreach (var text in line.texts)
@@ -210,7 +246,8 @@ public class Window : MonoBehaviour
         foreach (var region in regionGroup.regions)
             foreach (var smallButton in region.smallButtons)
             {
-                smallButton.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/Buttons/" + smallButton.buttonType);
+                var load = Resources.Load<Sprite>("Sprites/Building/Buttons/" + smallButton.buttonType);
+                smallButton.GetComponent<SpriteRenderer>().sprite = load == null ? Resources.Load<Sprite>("Sprites/Building/Buttons/OtherEmpty") : load;
                 smallButton.transform.localPosition = new Vector3(regionGroup.AutoWidth() + region.xExtend + 1.5f - 19 * region.smallButtons.IndexOf(smallButton), -10.5f, 0.1f);
                 if (smallButton.gameObject.GetComponent<BoxCollider2D>() == null)
                     smallButton.gameObject.AddComponent<BoxCollider2D>();
@@ -230,7 +267,8 @@ public class Window : MonoBehaviour
                 region.currentHeight = 34;
             foreach (var bigButton in region.bigButtons)
             {
-                bigButton.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/BigButtons/" + Board.boardButtonPathDictionary[bigButton.buttonType]);
+                var load = Resources.Load<Sprite>("Sprites/Building/BigButtons/" + bigButton.buttonType);
+                bigButton.GetComponent<SpriteRenderer>().sprite = load == null ? Resources.Load<Sprite>("Sprites/Building/BigButtons/OtherEmpty") : load;
                 bigButton.transform.localPosition = new Vector3(region.xExtend + 20 + 38 * region.bigButtons.IndexOf(bigButton), -20f, 0.1f);
                 if (bigButton.gameObject.GetComponent<BoxCollider2D>() == null)
                     bigButton.gameObject.AddComponent<BoxCollider2D>();

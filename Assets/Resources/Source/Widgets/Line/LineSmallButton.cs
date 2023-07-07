@@ -13,9 +13,9 @@ public class LineSmallButton : MonoBehaviour
     //Fields
     public Tooltip tooltip;
     public Action<Highlightable> pressEvent;
-    public SmallButtonTypes buttonType;
+    public string buttonType;
 
-    public void Initialise(Region region, SmallButtonTypes buttonType, Action<Highlightable> pressEvent, Func<Highlightable, Action> tooltip)
+    public void Initialise(Region region, string buttonType, Action<Highlightable> pressEvent, Func<Highlightable, Action> tooltip)
     {
         this.region = region;
         this.buttonType = buttonType;
