@@ -38,6 +38,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Map
+    uniqueID: 4282497117
+    locked: 0
   - name: Desktop Background
     uniqueID: 2260662579
     locked: 0

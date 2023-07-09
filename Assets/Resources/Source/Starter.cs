@@ -14,6 +14,7 @@ public class Starter : MonoBehaviour
         testText2.Set("Baby Yoda");
         cursor = FindObjectOfType<Cursor>();
         Board.board = new Board(8, 8);
+        Entity.player = new Entity(Race.races.Find(x => x.name == "Night Elf"), Class.classes.Find(x => x.name == "Rogue"), "Hoolahop");
         SpawnDesktopBlueprint("Menu");
 
         //Serialize(Data.data, "Data");
