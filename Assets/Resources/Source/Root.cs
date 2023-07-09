@@ -70,7 +70,7 @@ public static class Root
         var newObject = new GameObject("Desktop: " + title, typeof(Desktop), typeof(SpriteRenderer));
         newObject.transform.localPosition = new Vector3();
         var newDesktop = newObject.GetComponent<Desktop>();
-        newObject.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Textures/Desktop Stone");
+        newObject.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Textures/Desktop Empty");
         newObject.GetComponent<SpriteRenderer>().sortingLayerName = "Desktop Background";
         LBDesktop = newDesktop;
         newDesktop.Initialise(title);

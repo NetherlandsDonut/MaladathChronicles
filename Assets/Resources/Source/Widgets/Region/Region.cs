@@ -4,6 +4,7 @@ using System.Linq;
 using System.Collections.Generic;
 
 using static Root;
+using UnityEngine.AI;
 
 public class Region : MonoBehaviour
 {
@@ -52,6 +53,7 @@ public class Region : MonoBehaviour
     {
         var content = lines.Count * 15 + (inputLine != null ? 15 : 0);
         if (content < 34 && bigButtons.Count > 0) content = 34;
+        else if (content < 15 && smallButtons.Count > 0) content = 15;
         return content + (content > 0 ? 4 : 0);
     }
 
@@ -62,13 +64,10 @@ public class Region : MonoBehaviour
 
     public int AutoWidth()
     {
-        //If a region has any big buttons we assume there is nothing
-        //else in it and we set the width to 38px times the amount of buttons
-        if (bigButtons.Count > 0) return 38 * bigButtons.Count - 10;
         //Number "12" is simply additional free space to not clamp the
         //window borders tightly on region content, the "19" is the button sprite width
         //and the "15" is the checkbox width that fills the line
-        return (lines.Count > 0 ? lines.Max(x => x.Length()) + 12 : 0) + 19 * smallButtons.Count + (checkbox != null ? 15 : 0) + (inputLine != null ? (inputLine.Length() > 0 ? inputLine.Length() : 4) + (inputLine.FindID() == currentInputLine ? font.Length(markerCharacter) : 0) : 0);
+        return (lines.Count > 0 && lines.Max(x => x.Length()) > 0 ? lines.Max(x => x.Length()) + 12 : -10) + 38 * bigButtons.Count + 19 * smallButtons.Count + (checkbox != null ? 15 : 0) + (inputLine != null ? (inputLine.Length() > 0 ? inputLine.Length() : 4) + (inputLine.FindID() == currentInputLine ? font.Length(markerCharacter) : 0) : 0);
     }
 
     public void ResetContent()

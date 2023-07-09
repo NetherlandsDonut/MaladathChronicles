@@ -246,6 +246,7 @@ public class Window : MonoBehaviour
         foreach (var region in regionGroup.regions)
             foreach (var smallButton in region.smallButtons)
             {
+                if (region.currentHeight < 15) region.currentHeight = 15;
                 var load = Resources.Load<Sprite>("Sprites/Building/Buttons/" + smallButton.buttonType);
                 smallButton.GetComponent<SpriteRenderer>().sprite = load == null ? Resources.Load<Sprite>("Sprites/Building/Buttons/OtherEmpty") : load;
                 smallButton.transform.localPosition = new Vector3(regionGroup.AutoWidth() + region.xExtend + 1.5f - 19 * region.smallButtons.IndexOf(smallButton), -10.5f, 0.1f);
@@ -263,8 +264,7 @@ public class Window : MonoBehaviour
         //Draws big buttons for single lined regions
         foreach (var region in regionGroup.regions)
         {
-            if (region.bigButtons.Count > 0 && region.currentHeight < 34)
-                region.currentHeight = 34;
+            if (region.bigButtons.Count > 0 && region.currentHeight < 34) region.currentHeight = 34;
             foreach (var bigButton in region.bigButtons)
             {
                 var load = Resources.Load<Sprite>("Sprites/Building/BigButtons/" + bigButton.buttonType);
@@ -402,6 +402,6 @@ public class Window : MonoBehaviour
 
         //Finish, add width to total window width
         if (headerGroup != regionGroup)
-            xOffset += regionGroup.AutoWidth() + 10;
+            xOffset += regionGroup.AutoWidth() + 10; //WHYTHEFUCK
     }
 }

@@ -374,6 +374,81 @@ public class Blueprint
             AddButtonRegion(
                 () =>
                 {
+                    AddLine("Chromaggus", Black);
+                },
+                (h) =>
+                {
+
+                }
+            );
+            AddHeaderRegion(() =>
+            {
+                AddBigButton("wtf", (h) => { });
+                AddLine("Level 60", Gray);
+            });
+            AddButtonRegion(
+                () =>
+                {
+                    AddLine("?", Black);
+                    AddSmallButton("OtherUnknown", (h) => { });
+                },
+                (h) =>
+                {
+
+                }
+            );
+            AddButtonRegion(
+                () =>
+                {
+                    AddLine("?", Black);
+                    AddSmallButton("OtherUnknown", (h) => { });
+                },
+                (h) =>
+                {
+
+                }
+            );
+            AddButtonRegion(
+                () =>
+                {
+                    AddLine("?", Black);
+                    AddSmallButton("OtherUnknown", (h) => { });
+                },
+                (h) =>
+                {
+
+                }
+            );
+            AddButtonRegion(
+                () =>
+                {
+                    AddLine("?", Black);
+                    AddSmallButton("OtherUnknown", (h) => { });
+                },
+                (h) =>
+                {
+
+                }
+            );
+            AddButtonRegion(
+                () =>
+                {
+                    AddLine("?", Black);
+                    AddSmallButton("OtherUnknown", (h) => { });
+                },
+                (h) =>
+                {
+
+                }
+            );
+        }),
+        new("EnemyBattleInfo Old", () => {
+            SetAnchor(BottomRight);
+            AddRegionGroup();
+            SetRegionGroupWidth(138);
+            AddButtonRegion(
+                () =>
+                {
                     AddLine("Bone Construct", Black);
                 },
                 (h) =>
@@ -410,6 +485,92 @@ public class Blueprint
             );
         }),
         new("JourneyInfo", () => {
+            SetAnchor(TopRight);
+            AddRegionGroup();
+            SetRegionGroupWidth(138);
+            AddButtonRegion(
+                () =>
+                {
+                    AddLine("Nefarian", Black);
+                },
+                (h) =>
+                {
+
+                }
+            );
+            AddHeaderRegion(() =>
+            {
+                AddBigButton("PortraitNefarian", (h) => { });
+                AddLine("Level 60", Gray);
+            });
+            AddButtonRegion(
+                () =>
+                {
+                    AddLine("?", Black);
+                    AddSmallButton("OtherUnknown", (h) => { });
+                },
+                (h) =>
+                {
+
+                }
+            );
+            AddButtonRegion(
+                () =>
+                {
+                    AddLine("?", Black);
+                    AddSmallButton("OtherUnknown", (h) => { });
+                },
+                (h) =>
+                {
+
+                }
+            );
+            AddButtonRegion(
+                () =>
+                {
+                    AddLine("?", Black);
+                    AddSmallButton("OtherUnknown", (h) => { });
+                },
+                (h) =>
+                {
+
+                }
+            );
+            AddButtonRegion(
+                () =>
+                {
+                    AddLine("?", Black);
+                    AddSmallButton("OtherUnknown", (h) => { });
+                },
+                (h) =>
+                {
+
+                }
+            );
+            AddButtonRegion(
+                () =>
+                {
+                    AddLine("?", Black);
+                    AddSmallButton("OtherUnknown", (h) => { });
+                },
+                (h) =>
+                {
+
+                }
+            );
+            AddButtonRegion(
+                () =>
+                {
+                    AddLine("?", Black);
+                    AddSmallButton("OtherUnknown", (h) => { });
+                },
+                (h) =>
+                {
+
+                }
+            );
+        }),
+        new("JourneyInfoOld", () => {
             SetAnchor(TopRight);
             AddRegionGroup();
             SetRegionGroupWidth(138);
@@ -588,6 +749,52 @@ public class Blueprint
                 (h) => { });
             });
         }),
+        new("Crossroads", () => {
+            SetAnchor(Center);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                AddSmallButton("FactionHorde",
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+                    SetAnchor(TopRight, h.window);
+                    AddRegionGroup();
+                    AddHeaderRegion(() =>
+                    {
+                        AddBigButton("FactionHorde", (h) => { });
+                        AddLine("Crossroads", Gray);
+                    });
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Cast cost:", Gray);
+                    });
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine("x2 Decay", Gray);
+                        AddLine("x3 Shadow", Gray);
+                        AddLine("x1 Air", Gray);
+                    });
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Effects:", Gray);
+                    });
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine("Strike the target for 24* damage.", Gray);
+                        AddLine("Additionaly poison the target for 4* damage", Gray);
+                        AddLine("every time they make move for next 3 turns.", Gray);
+                    });
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine("* Scaled with Agility and Decay Mastery.", Gray);
+                    });
+                });
+            });
+        })
     };
 
     public static List<Blueprint> desktopBlueprints = new()
@@ -599,7 +806,7 @@ public class Blueprint
             AddHotkey(L, () => { SpawnWindowBlueprint("LayoutTest"); });
             AddHotkey(U, () => { SpawnWindowBlueprint("UnitCardsExplorer"); });
             AddHotkey(P, () => { SpawnWindowBlueprint("Piracy"); });
-            AddHotkey(A, () => { SpawnWindowBlueprint("BattleBoard"); SpawnWindowBlueprint("PlayerBattleInfo"); SpawnWindowBlueprint("EnemyBattleInfo"); SpawnWindowBlueprint("BattleActionBar"); SpawnWindowBlueprint("JourneyInfo"); Board.board.Reset(); });
+            AddHotkey(A, () => { /*SpawnWindowBlueprint("BattleBoard"); SpawnWindowBlueprint("PlayerBattleInfo"); SpawnWindowBlueprint("EnemyBattleInfo"); SpawnWindowBlueprint("BattleActionBar"); */SpawnWindowBlueprint("Crossroads"); Board.board.Reset(); });
             AddHotkey(Escape, () => { SpawnWindowBlueprint("ESCMenu"); });
             AddHotkey(Tab, () => { SpawnDesktopBlueprint("Game"); });
         }),
