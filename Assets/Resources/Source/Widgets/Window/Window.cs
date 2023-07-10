@@ -55,7 +55,7 @@ public class Window : MonoBehaviour
 
     public void ResetPosition()
     {
-        if (anchor.anchor != None && anchor.magnet == null) transform.parent = Root.camera.transform;
+        if (anchor.anchor != None && anchor.magnet == null) transform.parent = desktop.screen.transform;
         transform.localPosition = Vector3.zero;
         transform.localPosition = anchor.magnet != null ? MagnetAnchor(anchor.magnet.transform.localPosition, new Vector2(anchor.magnet.xOffset, anchor.magnet.PlannedHeight())) : Anchor();
         transform.localPosition += (anchor.anchor != None && anchor.magnet == null ? new Vector3(screenX / -2, screenY / 2) : Vector3.zero) + (Vector3)anchor.offset;

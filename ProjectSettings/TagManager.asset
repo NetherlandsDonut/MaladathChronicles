@@ -41,16 +41,16 @@ TagManager:
   - name: Map
     uniqueID: 4282497117
     locked: 0
-  - name: Desktop Background
+  - name: DesktopBackground
     uniqueID: 2260662579
     locked: 0
-  - name: Camera Shadow
+  - name: CameraShadow
     uniqueID: 4241744009
     locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Camera Border
+  - name: CameraBorder
     uniqueID: 4121732107
     locked: 0
   - name: Cursor

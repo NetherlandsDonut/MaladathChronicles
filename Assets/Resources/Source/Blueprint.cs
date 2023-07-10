@@ -9,7 +9,7 @@ using static Root.Anchor;
 using static Root.RegionBackgroundType;
 
 using static UnityEngine.KeyCode;
-using Unity.Collections.LowLevel.Unsafe;
+using UnityEditor.Experimental.GraphView;
 
 public class Blueprint
 {
@@ -129,19 +129,22 @@ public class Blueprint
             AddInputRegion(testText, InputType.Everything, "TestingText");
             AddInputRegion(testText2, InputType.Everything, "TestingText2");
         }),
-        new("ESCMenu", () => {
-            CloseWindowOnLostFocus();
+        new("TitleScreenMenu", () => {
             SetAnchor(Center);
-            AddRegionGroup();
-            AddHandleRegion(() =>
+            AddHeaderGroup();
+            AddHeaderRegion(() =>
             {
-                AddLine("Menu", Black);
-                AddSmallButton("OtherClose",
-                    (h) =>
-                    {
-                        CloseWindow(h.window);
-                    }
-                );
+                AddLine("Menu", Gray);
+            });
+            AddRegionGroup();
+            AddButtonRegion(() =>
+            {
+                AddLine("Singleplayer", Black);
+            },
+            (h) =>
+            {
+                SpawnWindowBlueprint("TitleScreenSingleplayer");
+                CloseWindow(h.window);
             });
             AddButtonRegion(() =>
             {
@@ -149,7 +152,39 @@ public class Blueprint
             },
             (h) =>
             {
-
+                SpawnWindowBlueprint("TitleScreenSettings");
+                CloseWindow(h.window);
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("Graveyard", Black);
+            },
+            (h) =>
+            {
+                //SpawnWindowBlueprint("TitleScreenGraveyard");
+                //CloseWindow(h.window);
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("Credits", Black);
+            },
+            (h) =>
+            {
+                //SpawnWindowBlueprint("TitleScreenGraveyard");
+                //CloseWindow(h.window);
+            },
+            (h) => () =>
+            {
+                SetAnchor(BottomRight);
+                AddRegionGroup();
+                AddHeaderRegion(
+                    () =>
+                    {
+                        AddLine("Exits the game.", LightGray);
+                        AddLine("This action does not", LightGray);
+                        AddLine("save your game progress!", LightGray);
+                    }
+                );
             });
             AddButtonRegion(() =>
             {
@@ -173,147 +208,84 @@ public class Blueprint
                 );
             });
         }),
-        new("City", () => {
+        new("TitleScreenSingleplayer", () => {
             SetAnchor(Center);
             AddHeaderGroup();
-            AddHandleRegion(() =>
+            AddHeaderRegion(() =>
             {
-                AddLine("The Synagogue", Black);
-                AddSmallButton("OtherClose",
-                    (h) =>
-                    {
-                        CloseWindow(h.window);
-                    }
-                );
+                AddLine("Singleplayer", Gray);
             });
-            var list = new List<string> { "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight" };
-            AddPaddingRegion(() =>
-            {
-                AddLine("Encounters", Gray);
-            });
-            AddLineList(6,
-                () => list.Count,
-                (i) =>
-                {
-                    SetRegionBackground(Button);
-                    AddLine(list[i], Black);
-                },
-                (i) =>
-                {
-                    SetRegionBackground(Padding);
-                    AddLine("", Gray);
-                },
-                null
-            );
-            AddPaddingRegion(() =>
-            {
-                AddPaginationLine();
-                AddNextPageButton();
-                AddPreviousPageButton();
-            });
-
             AddRegionGroup();
-            AddHandleRegion(() =>
+            AddButtonRegion(() =>
             {
-                AddLine("Chemical plant", Black);
+                AddLine("Continue last game", Black);
+            },
+            (h) =>
+            {
+                saveGames.Add(new SaveGame());
+                SpawnDesktopBlueprint("Map");
+                SwitchDesktop("Map");
             });
             AddButtonRegion(() =>
             {
-                AddLine("Select", Black);
+                AddLine("Create a new character", Black);
             },
             (h) =>
             {
 
             });
-            AddHeaderRegion(() =>
+            AddButtonRegion(() =>
             {
-                AddLine("General", LightGray);
-            });
-            AddPaddingRegion(() =>
+                AddLine("Load saved game", Black);
+            },
+            (h) =>
             {
-                SetRegionAsGroupExtender();
-                AddLine("Crafting speed: ", DarkGray);
-                AddText("1.00", Gray);
-                AddLine("Products finished: ", DarkGray);
-                AddText("7406", Gray);
-                AddLine("Pollution: ", DarkGray);
-                AddText("4/m", Gray);
-                AddLine("Health: ", DarkGray);
-                AddText("300/300", Gray);
+
             });
-            AddInputRegion(testText, InputType.Everything, "TestingText");
-            AddInputRegion(testText2, InputType.Everything, "TestingText2");
+            AddButtonRegion(() =>
+            {
+                AddLine("Back", Black);
+            },
+            (h) =>
+            {
+                SpawnWindowBlueprint("TitleScreenMenu");
+                CloseWindow(h.window);
+            },
+            (h) => () =>
+            {
+                SetAnchor(BottomRight);
+                AddRegionGroup();
+                AddHeaderRegion(
+                    () =>
+                    {
+                        AddLine("Returns you to the main menu", LightGray);
+                    }
+                );
+            });
         }),
-        new("Piracy", () => {
+        new("TitleScreenSettings", () => {
             SetAnchor(Center);
             AddHeaderGroup();
-            AddHandleRegion(() =>
-            {
-                AddLine("The Synagogue", Black);
-                AddSmallButton("OtherClose",
-                    (h) =>
-                    {
-                        CloseWindow(h.window);
-                    }
-                );
-            });
-            var list = new List<string> { "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight" };
-            AddPaddingRegion(() =>
-            {
-                AddLine("Encounters", Gray);
-            });
-            AddLineList(6,
-                () => list.Count,
-                (i) =>
-                {
-                    SetRegionBackground(Button);
-                    AddLine(list[i], Black);
-                },
-                (i) =>
-                {
-                    SetRegionBackground(Padding);
-                    AddLine("", Gray);
-                },
-                null
-            );
-            AddPaddingRegion(() =>
-            {
-                AddPaginationLine();
-                AddNextPageButton();
-                AddPreviousPageButton();
-            });
-
-            AddRegionGroup();
-            AddHandleRegion(() =>
-            {
-                AddLine("Chemical plant", Black);
-            });
-            AddButtonRegion(() =>
-            {
-                AddLine("Select", Black);
-            },
-            (h) =>
-            {
-
-            });
             AddHeaderRegion(() =>
             {
-                AddLine("General", LightGray);
+                AddLine("Settings", Gray);
             });
+            AddRegionGroup();
             AddPaddingRegion(() =>
             {
-                SetRegionAsGroupExtender();
-                AddLine("Crafting speed: ", DarkGray);
-                AddText("1.00", Gray);
-                AddLine("Products finished: ", DarkGray);
-                AddText("7406", Gray);
-                AddLine("Pollution: ", DarkGray);
-                AddText("4/m", Gray);
-                AddLine("Health: ", DarkGray);
-                AddText("300/300", Gray);
+                AddCheckbox(settings.shadows);
+                AddLine("Shadows", Gray);
             });
-            AddInputRegion(testText, InputType.Everything, "TestingText");
-            AddInputRegion(testText2, InputType.Everything, "TestingText2");
+            AddButtonRegion(() =>
+                {
+                    AddLine("Back", Black);
+                },
+                (h) =>
+                {
+                    SpawnWindowBlueprint("TitleScreenMenu");
+                    CloseWindow(h.window);
+                }
+            );
         }),
         new("PlayerBattleInfo", () => {
             SetAnchor(TopLeft);
@@ -367,6 +339,7 @@ public class Blueprint
                     }
                 );
                 AddLine("Level 21", Gray);
+                AddLine("Health: " + Battle.battle.first.health + "/ 100", Gray);
             });
         }),
         new("EnemyBattleInfo", () => {
@@ -376,7 +349,7 @@ public class Blueprint
             AddButtonRegion(
                 () =>
                 {
-                    AddLine("Chromaggus", Black);
+                    AddLine("Nefarian", Black);
                 },
                 (h) =>
                 {
@@ -385,8 +358,9 @@ public class Blueprint
             );
             AddHeaderRegion(() =>
             {
-                AddBigButton("wtf", (h) => { });
+                AddBigButton("Nefarian", (h) => { });
                 AddLine("Level 60", Gray);
+                AddLine("Health: " + Battle.battle.second.health + "/ 100", Gray);
             });
             AddButtonRegion(
                 () =>
@@ -671,7 +645,19 @@ public class Blueprint
                         (h) =>
                         {
                             var list = Board.board.FloodCount(h.region.bigButtons.FindIndex(x => x.GetComponent<Highlightable>() == h), h.region.regionGroup.regions.IndexOf(h.region));
+                            Battle.battle.second.health -= list.Count;
                             Board.board.FloodDestroy(h.window, list);
+                            if (Battle.battle.second.health <= 0)
+                            {
+                                SwitchDesktop("Map");
+                                CloseDesktop("Game");
+                            }
+                            Battle.battle.NextTurn(h);
+                            if (Battle.battle.first.health <= 0)
+                            {
+                                SwitchDesktop("Map");
+                                CloseDesktop("Game");
+                            }
                         },
                         (h) => () =>
                         {
@@ -2203,7 +2189,12 @@ public class Blueprint
                 AddSmallButton("SiteDungeon",
                 (h) =>
                 {
-
+                    Battle.battle = new Battle();
+                    SpawnWindowBlueprint("BattleBoard");
+                    SpawnWindowBlueprint("PlayerBattleInfo");
+                    SpawnWindowBlueprint("EnemyBattleInfo");
+                    SpawnWindowBlueprint("BattleActionBar");
+                    Board.board.Reset();
                 },
                 (h) => () =>
                 {
@@ -2355,7 +2346,8 @@ public class Blueprint
 
     public static List<Blueprint> desktopBlueprints = new()
     {
-        new("Map", () => {
+        new("Map", () =>
+        {
             SpawnWindowBlueprint("Crossroads");
             SpawnWindowBlueprint("Ratchet");
             SpawnWindowBlueprint("WailingCaverns");
@@ -2394,18 +2386,22 @@ public class Blueprint
             SpawnWindowBlueprint("Valormok");
             SpawnWindowBlueprint("ZulFarrak");
             SpawnWindowBlueprint("CenarionHold");
-            AddHotkey(W, () => { camera.transform.position += new Vector3(0, EuelerGrowth()); }, false);
-            AddHotkey(A, () => { camera.transform.position += new Vector3(-EuelerGrowth(), 0); }, false);
-            AddHotkey(S, () => { camera.transform.position += new Vector3(0, -EuelerGrowth()); }, false);
-            AddHotkey(D, () => { camera.transform.position += new Vector3(EuelerGrowth(), 0); }, false);
-            AddHotkey(Q, () => { /*SpawnWindowBlueprint("BattleBoard"); SpawnWindowBlueprint("PlayerBattleInfo"); SpawnWindowBlueprint("EnemyBattleInfo"); SpawnWindowBlueprint("BattleActionBar"); */SpawnWindowBlueprint("Crossroads"); Board.board.Reset(); });
-            AddHotkey(Escape, () => { SpawnWindowBlueprint("ESCMenu"); });
-            AddHotkey(Tab, () => { SpawnDesktopBlueprint("Game"); });
+            AddHotkey(W, () => { var amount = new Vector3(0, (float)Math.Round(EuelerGrowth())); CDesktop.screen.transform.position += amount; cursor.transform.position += amount; }, false);
+            AddHotkey(A, () => { var amount = new Vector3(-(float)Math.Round(EuelerGrowth()), 0); CDesktop.screen.transform.position += amount; cursor.transform.position += amount; }, false);
+            AddHotkey(S, () => { var amount = new Vector3(0, -(float)Math.Round(EuelerGrowth())); CDesktop.screen.transform.position += amount; cursor.transform.position += amount; }, false);
+            AddHotkey(D, () => { var amount = new Vector3((float)Math.Round(EuelerGrowth()), 0); CDesktop.screen.transform.position += amount; cursor.transform.position += amount; }, false);
+            AddHotkey(Q, () => {  });
         }),
-        new("Game", () => {
+        new("Game", () =>
+        {
             SetDesktopBackground("ZoneStonetalonMountains");
             AddHotkey(A, () => { SpawnWindowBlueprint("Testing"); });
-            AddHotkey(Tab, () => { SwitchDesktop("Map"); CloseDesktop("Game"); });
+            AddHotkey(Escape, () => { SwitchDesktop("Map"); CloseDesktop("Game"); });
+        }),
+        new("TitleScreen", () =>
+        {
+            //SetDesktopBackground("ZoneStonetalonMountains");
+            SpawnWindowBlueprint("TitleScreenMenu");
         }),
     };
 }

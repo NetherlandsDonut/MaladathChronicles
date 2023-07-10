@@ -24,6 +24,7 @@ public class Entity
     }
 
     public string customName, race;
+    public int health = 20;
     public Dictionary<string, int> resources;
     public Stats stats;
     public Class spec;

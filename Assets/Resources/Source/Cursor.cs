@@ -12,8 +12,8 @@ public class Cursor : MonoBehaviour
     void Update()
     {
         var curScreenSpace = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
-        var curPosition = (Vector2)Camera.main.ScreenToWorldPoint(curScreenSpace);
-        transform.position = new Vector3((int)curPosition.x, (int)curPosition.y, transform.position.z);
+        var curPosition = (Vector2)CDesktop.screen.ScreenToWorldPoint(curScreenSpace);
+        transform.position = new Vector3((int)System.Math.Round(curPosition.x), (int)System.Math.Round(curPosition.y), transform.position.z);
     }
 
     public void SetCursor(CursorType cursor)

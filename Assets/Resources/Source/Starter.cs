@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 using static Root;
 using static Serialization;
@@ -15,8 +16,9 @@ public class Starter : MonoBehaviour
         cursor = FindObjectOfType<Cursor>();
         Board.board = new Board(8, 8);
         Entity.player = new Entity(Race.races.Find(x => x.name == "Night Elf"), Class.classes.Find(x => x.name == "Rogue"), "Hoolahop");
-        Root.camera = FindObjectOfType<Camera>();
-        SpawnDesktopBlueprint("Map");
+        settings = new Settings();
+        saveGames = new List<SaveGame>();
+        SpawnDesktopBlueprint("TitleScreen");
 
         //Serialize(Data.data, "Data");
 
