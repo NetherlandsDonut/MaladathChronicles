@@ -44,8 +44,14 @@ TagManager:
   - name: Desktop Background
     uniqueID: 2260662579
     locked: 0
+  - name: Camera Shadow
+    uniqueID: 4241744009
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Camera Border
+    uniqueID: 4121732107
     locked: 0
   - name: Cursor
     uniqueID: 3056468255

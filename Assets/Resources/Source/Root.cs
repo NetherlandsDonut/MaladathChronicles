@@ -20,12 +20,14 @@ public static class Root
     public static Cursor cursor;
     public static int inputLineMarker;
     public static System.Random random;
+    public static int keyStack;
     public static float heldKeyTime;
     public static float animationTime;
     public static float frameTime = 0.07f;
     public static List<Desktop> desktops;
     public static Desktop CDesktop, LBDesktop;
     public static string markerCharacter = "_", currentInputLine = "";
+    public static Camera camera;
 
     #region Fonts
 
@@ -50,9 +52,9 @@ public static class Root
         var blueprint = desktopBlueprints.Find(x => x.title == blueprintTitle);
         if (blueprint == null) return;
         AddDesktop(blueprint.title);
-        blueprint.actions();
         if (autoSwitch)
             SwitchDesktop(blueprintTitle);
+        blueprint.actions();
         //currentDesktop.Rebuild();
     }
 
@@ -70,7 +72,6 @@ public static class Root
         var newObject = new GameObject("Desktop: " + title, typeof(Desktop), typeof(SpriteRenderer));
         newObject.transform.localPosition = new Vector3();
         var newDesktop = newObject.GetComponent<Desktop>();
-        newObject.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Textures/Desktop Empty");
         newObject.GetComponent<SpriteRenderer>().sortingLayerName = "Desktop Background";
         LBDesktop = newDesktop;
         newDesktop.Initialise(title);
@@ -98,10 +99,20 @@ public static class Root
         }
     }
 
-    //Hotkeys can be added only on desktop creation!
-    public static void AddHotkey(KeyCode key, Action action)
+    public static void SetDesktopBackground(string texture)
     {
-        LBDesktop.hotkeys.Add(key, action);
+        LBDesktop.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Textures/" + texture);
+    }
+
+    //Hotkeys can be added only on desktop creation!
+    public static void AddHotkey(KeyCode key, Action action, bool keyDown = true)
+    {
+        LBDesktop.hotkeys.Add(new Hotkey(key, action, keyDown));
+    }
+
+    public static float EuelerGrowth()
+    {
+        return (float)Math.Pow(keyStack / 100.0 + 1.0, Math.E);
     }
 
     #endregion

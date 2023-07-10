@@ -6,7 +6,7 @@ public class WindowAnchor
 {
     public WindowAnchor(float x = 0, float y = 0)
     {
-        anchor = Anchor.Center;
+        anchor = Anchor.None;
         offset = new Vector2(x, y);
     }
 
