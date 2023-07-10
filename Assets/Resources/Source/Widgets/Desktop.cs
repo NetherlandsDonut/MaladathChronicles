@@ -3,13 +3,14 @@ using UnityEngine;
 using System.Collections.Generic;
 
 using static Root;
-using System.Globalization;
+using UnityEditor;
 
 public class Desktop : MonoBehaviour
 {
     //Children
     public Window LBWindow;
     public List<Window> windows;
+    public Camera screen;
 
     //Fields
     public string title;
@@ -84,6 +85,17 @@ public class Desktop : MonoBehaviour
 
     public void Update()
     {
+        if (CDesktop.name == "Desktop: TitleScreen")
+        {
+            var amount = new Vector3(titleScreenCameraDirection < 2 ? -0.07f : 0.07f, titleScreenCameraDirection > 2 ? -0.07f : (titleScreenCameraDirection < 1 ? -0.07f : 0.07f));
+            screen.transform.localPosition += amount;
+            cursor.transform.localPosition += amount;
+            if (Math.Abs(screen.transform.localPosition.x - 1500) > 750)
+            {
+                titleScreenCameraDirection = random.Next(0, 4);
+                screen.transform.localPosition = cursor.transform.position = new Vector3(1500, random.Next(-3690, -1100));
+            }
+        }
         if (screenLocked)
         {
             if (animationTime > 0) animationTime -= Time.deltaTime;

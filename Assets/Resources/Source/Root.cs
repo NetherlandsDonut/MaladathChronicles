@@ -21,13 +21,16 @@ public static class Root
     public static int inputLineMarker;
     public static System.Random random;
     public static int keyStack;
+    public static int titleScreenCameraDirection;
     public static float heldKeyTime;
     public static float animationTime;
     public static float frameTime = 0.07f;
     public static List<Desktop> desktops;
     public static Desktop CDesktop, LBDesktop;
     public static string markerCharacter = "_", currentInputLine = "";
-    public static Camera camera;
+
+    public static List<SaveGame> saveGames;
+    public static Settings settings;
 
     #region Fonts
 
@@ -72,11 +75,25 @@ public static class Root
         var newObject = new GameObject("Desktop: " + title, typeof(Desktop), typeof(SpriteRenderer));
         newObject.transform.localPosition = new Vector3();
         var newDesktop = newObject.GetComponent<Desktop>();
-        newObject.GetComponent<SpriteRenderer>().sortingLayerName = "Desktop Background";
+        newObject.GetComponent<SpriteRenderer>().sortingLayerName = "DesktopBackground";
         LBDesktop = newDesktop;
         newDesktop.Initialise(title);
         desktops.Add(newDesktop);
-        //if (desktops.Count == 1) CDesktop = newDesktop;
+        newDesktop.screen = new GameObject("Camera", typeof(Camera)).GetComponent<Camera>();
+        newDesktop.screen.transform.parent = newDesktop.transform;
+        newDesktop.screen.orthographicSize = 180;
+        newDesktop.screen.nearClipPlane = -100;
+        newDesktop.screen.farClipPlane = 1000;
+        newDesktop.screen.clearFlags = CameraClearFlags.SolidColor;
+        newDesktop.screen.backgroundColor = UnityEngine.Color.black;
+        newDesktop.screen.orthographic = true;
+        var cameraBorder = new GameObject("CameraBorder", typeof(SpriteRenderer));
+        var cameraShadow = new GameObject("CameraShadow", typeof(SpriteRenderer));
+        cameraShadow.transform.parent = cameraBorder.transform.parent = newDesktop.screen.transform;
+        cameraBorder.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Textures/CameraBorder");
+        cameraShadow.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Textures/CameraShadow");
+        cameraBorder.GetComponent<SpriteRenderer>().sortingLayerName = "CameraBorder";
+        cameraShadow.GetComponent<SpriteRenderer>().sortingLayerName = "CameraShadow";
         newDesktop.screenlock = new GameObject("Screenlock", typeof(BoxCollider2D));
         newDesktop.screenlock.GetComponent<BoxCollider2D>().offset = new Vector2(320, -180);
         newDesktop.screenlock.GetComponent<BoxCollider2D>().size = new Vector2(640, 360);
