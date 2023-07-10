@@ -55,8 +55,10 @@ public class Window : MonoBehaviour
 
     public void ResetPosition()
     {
+        if (anchor.anchor != None && anchor.magnet == null) transform.parent = Root.camera.transform;
+        transform.localPosition = Vector3.zero;
         transform.localPosition = anchor.magnet != null ? MagnetAnchor(anchor.magnet.transform.localPosition, new Vector2(anchor.magnet.xOffset, anchor.magnet.PlannedHeight())) : Anchor();
-        transform.localPosition += (Vector3)anchor.offset;
+        transform.localPosition += (anchor.anchor != None && anchor.magnet == null ? new Vector3(screenX / -2, screenY / 2) : Vector3.zero) + (Vector3)anchor.offset;
 
         Vector2 Anchor()
         {
@@ -77,9 +79,9 @@ public class Window : MonoBehaviour
         {
             switch (anchor.anchor)
             {
-                case Bottom: return new Vector2(position.x - (xOffset - size.x) / 2, position.y + size.y);
+                case Bottom: return new Vector2(position.x - (xOffset - size.x) / 2, position.y - size.y);
                 case BottomRight: return new Vector2(position.x + size.x, position.y - size.y + PlannedHeight());
-                case BottomLeft: return new Vector2(2, 4 - screenY + PlannedHeight());
+                case BottomLeft: return new Vector2(2, position.y - size.y + PlannedHeight());
                 case Top: return new Vector2(position.x - (xOffset - size.x) / 2, position.y + PlannedHeight());
                 case TopRight: return new Vector2(position.x + size.x, position.y);
                 case TopLeft: return new Vector2(position.x - xOffset, position.y);

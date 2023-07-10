@@ -1,4 +1,5 @@
 ﻿using System;
+using UnityEngine;
 using System.Collections.Generic;
 
 using static Root;
@@ -8,6 +9,7 @@ using static Root.Anchor;
 using static Root.RegionBackgroundType;
 
 using static UnityEngine.KeyCode;
+using Unity.Collections.LowLevel.Unsafe;
 
 public class Blueprint
 {
@@ -155,7 +157,7 @@ public class Blueprint
             },
             (h) =>
             {
-                UnityEngine.Application.Quit();
+                Application.Quit();
             },
             (h) => () =>
             {
@@ -750,7 +752,7 @@ public class Blueprint
             });
         }),
         new("Crossroads", () => {
-            SetAnchor(Center);
+            SetAnchor(1774, -2571);
             AddRegionGroup();
             AddPaddingRegion(() =>
             {
@@ -765,54 +767,1645 @@ public class Blueprint
                     AddRegionGroup();
                     AddHeaderRegion(() =>
                     {
-                        AddBigButton("FactionHorde", (h) => { });
                         AddLine("Crossroads", Gray);
                     });
                     AddHeaderRegion(() =>
                     {
-                        AddLine("Cast cost:", Gray);
+                        AddLine("Nothing:", Gray);
                     });
                     AddPaddingRegion(() =>
                     {
-                        AddLine("x2 Decay", Gray);
-                        AddLine("x3 Shadow", Gray);
-                        AddLine("x1 Air", Gray);
+                        AddLine("There is nothing here yet", Gray);
+                        AddLine("But there will be something soon", Gray);
+                        AddLine("I hope so", Gray);
                     });
                     AddHeaderRegion(() =>
                     {
-                        AddLine("Effects:", Gray);
+                        AddLine("Very nothing:", Gray);
                     });
                     AddPaddingRegion(() =>
                     {
-                        AddLine("Strike the target for 24* damage.", Gray);
-                        AddLine("Additionaly poison the target for 4* damage", Gray);
-                        AddLine("every time they make move for next 3 turns.", Gray);
-                    });
-                    AddPaddingRegion(() =>
-                    {
-                        AddLine("* Scaled with Agility and Decay Mastery.", Gray);
+                        AddLine("I hope so", Gray);
+                        AddLine("There is nothing here yet", Gray);
+                        AddLine("But there will be something soon", Gray);
                     });
                 });
             });
-        })
+        }),
+        new("Ratchet", () => {
+            SetAnchor(1984, -2677);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                AddSmallButton("FactionNeutral",
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+                    SetAnchor(TopRight, h.window);
+                    AddRegionGroup();
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Ratchet", Gray);
+                    });
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Nothing:", Gray);
+                    });
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine("There is nothing here yet", Gray);
+                        AddLine("But there will be something soon", Gray);
+                        AddLine("I hope so", Gray);
+                    });
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Very nothing:", Gray);
+                    });
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine("I hope so", Gray);
+                        AddLine("There is nothing here yet", Gray);
+                        AddLine("But there will be something soon", Gray);
+                    });
+                });
+            });
+        }),
+        new("WailingCaverns", () => {
+            SetAnchor(1647, -2664);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                AddSmallButton("SiteDungeon",
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+                    SetAnchor(TopRight, h.window);
+                    AddRegionGroup();
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Wailing Caverns", Gray);
+                    });
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Nothing:", Gray);
+                    });
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine("There is nothing here yet", Gray);
+                        AddLine("But there will be something soon", Gray);
+                        AddLine("I hope so", Gray);
+                    });
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Very nothing:", Gray);
+                    });
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine("There is nothing here yet", Gray);
+                        AddLine("But there will be something soon", Gray);
+                    });
+                });
+            });
+        }),
+        new("CampTaurajo", () => {
+            SetAnchor(1644, -2968);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                AddSmallButton("FactionHorde",
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+                    SetAnchor(Bottom, h.window);
+                    AddRegionGroup();
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Camp Taurajo", Gray);
+                    });
+                    //AddHeaderRegion(() =>
+                    //{
+                    //    AddLine("Nothing:", Gray);
+                    //});
+                    //AddPaddingRegion(() =>
+                    //{
+                    //    AddLine("There is nothing here yet", Gray);
+                    //    AddLine("But there will be something soon", Gray);
+                    //    AddLine("I hope so", Gray);
+                    //});
+                    //AddHeaderRegion(() =>
+                    //{
+                    //    AddLine("Very nothing:", Gray);
+                    //});
+                    //AddPaddingRegion(() =>
+                    //{
+                    //    AddLine("There is nothing here yet", Gray);
+                    //    AddLine("But there will be something soon", Gray);
+                    //});
+                });
+            });
+        }),
+        new("Maraudon", () => {
+            SetAnchor(645, -2779);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                AddSmallButton("SiteDungeon",
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+                    SetAnchor(TopRight, h.window);
+                    AddRegionGroup();
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Maraudon", Gray);
+                    });
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Nothing:", Gray);
+                    });
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine("There is nothing here yet", Gray);
+                        AddLine("But there will be something soon", Gray);
+                        AddLine("I hope so", Gray);
+                    });
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Very nothing:", Gray);
+                    });
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine("There is nothing here yet", Gray);
+                        AddLine("But there will be something soon", Gray);
+                    });
+                });
+            });
+        }),
+        new("TheramoreIsle", () => {
+            SetAnchor(2141, -3256);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                AddSmallButton("FactionAlliance",
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+                    SetAnchor(TopRight, h.window);
+                    AddRegionGroup();
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Theramore Isle", Gray);
+                    });
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Nothing:", Gray);
+                    });
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine("There is nothing here yet", Gray);
+                        AddLine("But there will be something soon", Gray);
+                        AddLine("I hope so", Gray);
+                    });
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Very nothing:", Gray);
+                    });
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine("There is nothing here yet", Gray);
+                        AddLine("But there will be something soon", Gray);
+                    });
+                });
+            });
+        }),
+        new("Gadgetzan", () => {
+            SetAnchor(2011, -3939);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                AddSmallButton("FactionNeutral",
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+                    SetAnchor(TopRight, h.window);
+                    AddRegionGroup();
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Gadgetzan", Gray);
+                    });
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Nothing:", Gray);
+                    });
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine("There is nothing here yet", Gray);
+                        AddLine("But there will be something soon", Gray);
+                        AddLine("I hope so", Gray);
+                    });
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Very nothing:", Gray);
+                    });
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine("I hope so", Gray);
+                        AddLine("There is nothing here yet", Gray);
+                        AddLine("But there will be something soon", Gray);
+                    });
+                });
+            });
+        }),
+        new("Everlook", () => {
+            SetAnchor(2191, -1113);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                AddSmallButton("FactionNeutral",
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+                    SetAnchor(TopRight, h.window);
+                    AddRegionGroup();
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Everlook", Gray);
+                    });
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Nothing:", Gray);
+                    });
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine("There is nothing here yet", Gray);
+                        AddLine("But there will be something soon", Gray);
+                        AddLine("I hope so", Gray);
+                    });
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Very nothing:", Gray);
+                    });
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine("I hope so", Gray);
+                        AddLine("There is nothing here yet", Gray);
+                        AddLine("But there will be something soon", Gray);
+                    });
+                });
+            });
+        }),
+        new("TalonbranchGlade", () => {
+            SetAnchor(1623, -1227);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                AddSmallButton("FactionAlliance",
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+                    SetAnchor(TopRight, h.window);
+                    AddRegionGroup();
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Talonbranch Glade", Gray);
+                    });
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Nothing:", Gray);
+                    });
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine("There is nothing here yet", Gray);
+                        AddLine("But there will be something soon", Gray);
+                        AddLine("I hope so", Gray);
+                    });
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Very nothing:", Gray);
+                    });
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine("There is nothing here yet", Gray);
+                        AddLine("But there will be something soon", Gray);
+                    });
+                });
+            });
+        }),
+        new("BloodvenomPost", () => {
+            SetAnchor(1341, -1382);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                AddSmallButton("FactionHorde",
+                (h) =>
+                {
+                    SpawnWindowBlueprint("SelectedTown");
+                },
+                (h) => () =>
+                {
+                    SetAnchor(TopRight, h.window);
+                    AddRegionGroup();
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Bloodvenom Post", Gray);
+                    });
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Nothing:", Gray);
+                    });
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine("There is nothing here yet", Gray);
+                        AddLine("But there will be something soon", Gray);
+                        AddLine("I hope so", Gray);
+                    });
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Very nothing:", Gray);
+                    });
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine("There is nothing here yet", Gray);
+                        AddLine("But there will be something soon", Gray);
+                    });
+                });
+            });
+        }),
+        new("RazorHill", () => {
+            SetAnchor(2202, -2421);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                AddSmallButton("FactionHorde",
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+                    SetAnchor(TopRight, h.window);
+                    AddRegionGroup();
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Razor Hill", Gray);
+                    });
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Nothing:", Gray);
+                    });
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine("There is nothing here yet", Gray);
+                        AddLine("But there will be something soon", Gray);
+                        AddLine("I hope so", Gray);
+                    });
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Very nothing:", Gray);
+                    });
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine("There is nothing here yet", Gray);
+                        AddLine("But there will be something soon", Gray);
+                    });
+                });
+            });
+        }),
+        new("ThunderBluff", () => {
+            SetAnchor(1228, -2734);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                AddSmallButton("FactionHorde",
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+                    SetAnchor(TopRight, h.window);
+                    AddRegionGroup();
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Thunder Bluff", Gray);
+                    });
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Nothing:", Gray);
+                    });
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine("There is nothing here yet", Gray);
+                        AddLine("But there will be something soon", Gray);
+                        AddLine("I hope so", Gray);
+                    });
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Very nothing:", Gray);
+                    });
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine("There is nothing here yet", Gray);
+                        AddLine("But there will be something soon", Gray);
+                    });
+                });
+            });
+        }),
+        new("Orgrimmar", () => {
+            SetAnchor(2093, -2160);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                AddSmallButton("FactionHorde",
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+                    SetAnchor(TopRight, h.window);
+                    AddRegionGroup();
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Orgrimmar", Gray);
+                    });
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Nothing:", Gray);
+                    });
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine("There is nothing here yet", Gray);
+                        AddLine("But there will be something soon", Gray);
+                        AddLine("I hope so", Gray);
+                    });
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Very nothing:", Gray);
+                    });
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine("There is nothing here yet", Gray);
+                        AddLine("But there will be something soon", Gray);
+                    });
+                });
+            });
+        }),
+        new("SplintertreePost", () => {
+            SetAnchor(1744, -2009);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                AddSmallButton("FactionHorde",
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+                    SetAnchor(TopRight, h.window);
+                    AddRegionGroup();
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Splintertree Post", Gray);
+                    });
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Nothing:", Gray);
+                    });
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine("There is nothing here yet", Gray);
+                        AddLine("But there will be something soon", Gray);
+                        AddLine("I hope so", Gray);
+                    });
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Very nothing:", Gray);
+                    });
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine("There is nothing here yet", Gray);
+                        AddLine("But there will be something soon", Gray);
+                    });
+                });
+            });
+        }),
+        new("DireMaul", () => {
+            SetAnchor(960, -3397);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                AddSmallButton("SiteDungeon",
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+                    SetAnchor(TopRight, h.window);
+                    AddRegionGroup();
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Dire Maul", Gray);
+                    });
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Nothing:", Gray);
+                    });
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine("There is nothing here yet", Gray);
+                        AddLine("But there will be something soon", Gray);
+                        AddLine("I hope so", Gray);
+                    });
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Very nothing:", Gray);
+                    });
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine("There is nothing here yet", Gray);
+                        AddLine("But there will be something soon", Gray);
+                    });
+                });
+            });
+        }),
+        new("RuinsAhnQiraj", () => {
+            SetAnchor(844, -4395);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                AddSmallButton("SiteRaid",
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+                    SetAnchor(TopRight, h.window);
+                    AddRegionGroup();
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Ruins of Ahn\'Qiraj", Gray);
+                    });
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Nothing:", Gray);
+                    });
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine("There is nothing here yet", Gray);
+                        AddLine("But there will be something soon", Gray);
+                        AddLine("I hope so", Gray);
+                    });
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Very nothing:", Gray);
+                    });
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine("There is nothing here yet", Gray);
+                        AddLine("But there will be something soon", Gray);
+                    });
+                });
+            });
+        }),
+        new("TempleAhnQiraj", () => {
+            SetAnchor(824, -4236);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                AddSmallButton("SiteRaid",
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+                    SetAnchor(TopRight, h.window);
+                    AddRegionGroup();
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Temple of Ahn\'Qiraj", Gray);
+                    });
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Nothing:", Gray);
+                    });
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine("There is nothing here yet", Gray);
+                        AddLine("But there will be something soon", Gray);
+                        AddLine("I hope so", Gray);
+                    });
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Very nothing:", Gray);
+                    });
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine("There is nothing here yet", Gray);
+                        AddLine("But there will be something soon", Gray);
+                    });
+                });
+            });
+        }),
+        new("SunrockRetreat", () => {
+            SetAnchor(1033, -2300);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                AddSmallButton("FactionHorde",
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+                    SetAnchor(TopRight, h.window);
+                    AddRegionGroup();
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Sunrock Retreat", Gray);
+                    });
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Nothing:", Gray);
+                    });
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine("There is nothing here yet", Gray);
+                        AddLine("But there will be something soon", Gray);
+                        AddLine("I hope so", Gray);
+                    });
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Very nothing:", Gray);
+                    });
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine("There is nothing here yet", Gray);
+                        AddLine("But there will be something soon", Gray);
+                    });
+                });
+            });
+        }),
+        new("ZoramgarOutpost", () => {
+            SetAnchor(1030, -1804);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                AddSmallButton("FactionHorde",
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+                    SetAnchor(TopRight, h.window);
+                    AddRegionGroup();
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Zoram\'gar Outpost", Gray);
+                    });
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Nothing:", Gray);
+                    });
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine("There is nothing here yet", Gray);
+                        AddLine("But there will be something soon", Gray);
+                        AddLine("I hope so", Gray);
+                    });
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Very nothing:", Gray);
+                    });
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine("There is nothing here yet", Gray);
+                        AddLine("But there will be something soon", Gray);
+                    });
+                });
+            });
+        }),
+        new("StonetalonPeak", () => {
+            SetAnchor(939, -1943);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                AddSmallButton("FactionAlliance",
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+                    SetAnchor(TopRight, h.window);
+                    AddRegionGroup();
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Stonetalon Peak", Gray);
+                    });
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Nothing:", Gray);
+                    });
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine("There is nothing here yet", Gray);
+                        AddLine("But there will be something soon", Gray);
+                        AddLine("I hope so", Gray);
+                    });
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Very nothing:", Gray);
+                    });
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine("There is nothing here yet", Gray);
+                        AddLine("But there will be something soon", Gray);
+                    });
+                });
+            });
+        }),
+        new("NijelsPoint", () => {
+            SetAnchor(975, -2446);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                AddSmallButton("FactionAlliance",
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+                    SetAnchor(TopRight, h.window);
+                    AddRegionGroup();
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Nijel\'s Point", Gray);
+                    });
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Nothing:", Gray);
+                    });
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine("There is nothing here yet", Gray);
+                        AddLine("But there will be something soon", Gray);
+                        AddLine("I hope so", Gray);
+                    });
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Very nothing:", Gray);
+                    });
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine("There is nothing here yet", Gray);
+                        AddLine("But there will be something soon", Gray);
+                    });
+                });
+            });
+        }),
+        new("ShadowpreyVillage", () => {
+            SetAnchor(592, -2818);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                AddSmallButton("FactionHorde",
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+                    SetAnchor(TopRight, h.window);
+                    AddRegionGroup();
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Shadowprey Village", Gray);
+                    });
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Nothing:", Gray);
+                    });
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine("There is nothing here yet", Gray);
+                        AddLine("But there will be something soon", Gray);
+                        AddLine("I hope so", Gray);
+                    });
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Very nothing:", Gray);
+                    });
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine("There is nothing here yet", Gray);
+                        AddLine("But there will be something soon", Gray);
+                    });
+                });
+            });
+        }),
+        new("CampMojache", () => {
+            SetAnchor(1179, -3374);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                AddSmallButton("FactionHorde",
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+                    SetAnchor(TopRight, h.window);
+                    AddRegionGroup();
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Camp Mojache", Gray);
+                    });
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Nothing:", Gray);
+                    });
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine("There is nothing here yet", Gray);
+                        AddLine("But there will be something soon", Gray);
+                        AddLine("I hope so", Gray);
+                    });
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Very nothing:", Gray);
+                    });
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine("There is nothing here yet", Gray);
+                        AddLine("But there will be something soon", Gray);
+                    });
+                });
+            });
+        }),
+        new("FreewindPost", () => {
+            SetAnchor(1734, -3592);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                AddSmallButton("FactionHorde",
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+                    SetAnchor(TopRight, h.window);
+                    AddRegionGroup();
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Freewind Post", Gray);
+                    });
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Nothing:", Gray);
+                    });
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine("There is nothing here yet", Gray);
+                        AddLine("But there will be something soon", Gray);
+                        AddLine("I hope so", Gray);
+                    });
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Very nothing:", Gray);
+                    });
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine("There is nothing here yet", Gray);
+                        AddLine("But there will be something soon", Gray);
+                    });
+                });
+            });
+        }),
+        new("RazorfenDowns", () => {
+            SetAnchor(1762, -3467);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                AddSmallButton("SiteDungeon",
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+                    SetAnchor(TopRight, h.window);
+                    AddRegionGroup();
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Razorfen Downs", Gray);
+                    });
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Nothing:", Gray);
+                    });
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine("There is nothing here yet", Gray);
+                        AddLine("But there will be something soon", Gray);
+                        AddLine("I hope so", Gray);
+                    });
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Very nothing:", Gray);
+                    });
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine("There is nothing here yet", Gray);
+                        AddLine("But there will be something soon", Gray);
+                    });
+                });
+            });
+        }),
+        new("BrackenwallVillage", () => {
+            SetAnchor(1821, -3131);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                AddSmallButton("FactionHorde",
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+                    SetAnchor(TopRight, h.window);
+                    AddRegionGroup();
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Brackenwall Village", Gray);
+                    });
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Nothing:", Gray);
+                    });
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine("There is nothing here yet", Gray);
+                        AddLine("But there will be something soon", Gray);
+                        AddLine("I hope so", Gray);
+                    });
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Very nothing:", Gray);
+                    });
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine("There is nothing here yet", Gray);
+                        AddLine("But there will be something soon", Gray);
+                    });
+                });
+            });
+        }),
+        new("BloodhoofVillage", () => {
+            SetAnchor(1319, -2956);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                AddSmallButton("FactionHorde",
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+                    SetAnchor(TopRight, h.window);
+                    AddRegionGroup();
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Bloodhoof Village", Gray);
+                    });
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Nothing:", Gray);
+                    });
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine("There is nothing here yet", Gray);
+                        AddLine("But there will be something soon", Gray);
+                        AddLine("I hope so", Gray);
+                    });
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Very nothing:", Gray);
+                    });
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine("There is nothing here yet", Gray);
+                        AddLine("But there will be something soon", Gray);
+                    });
+                });
+            });
+        }),
+        new("SenjinVillage", () => {
+            SetAnchor(2233, -2656);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                AddSmallButton("FactionHorde",
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+                    SetAnchor(TopRight, h.window);
+                    AddRegionGroup();
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Sen\'jin Village", Gray);
+                    });
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Nothing:", Gray);
+                    });
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine("There is nothing here yet", Gray);
+                        AddLine("But there will be something soon", Gray);
+                        AddLine("I hope so", Gray);
+                    });
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Very nothing:", Gray);
+                    });
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine("There is nothing here yet", Gray);
+                        AddLine("But there will be something soon", Gray);
+                    });
+                });
+            });
+        }),
+        new("Thalaanar", () => {
+            SetAnchor(1382, -3397);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                AddSmallButton("FactionAlliance",
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+                    SetAnchor(TopRight, h.window);
+                    AddRegionGroup();
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Thalaanar", Gray);
+                    });
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Nothing:", Gray);
+                    });
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine("There is nothing here yet", Gray);
+                        AddLine("But there will be something soon", Gray);
+                        AddLine("I hope so", Gray);
+                    });
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Very nothing:", Gray);
+                    });
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine("There is nothing here yet", Gray);
+                        AddLine("But there will be something soon", Gray);
+                    });
+                });
+            });
+        }),
+        new("FeathermoonStronghold", () => {
+            SetAnchor(563, -3392);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                AddSmallButton("FactionAlliance",
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+                    SetAnchor(TopRight, h.window);
+                    AddRegionGroup();
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Feathermoon Stronghold", Gray);
+                    });
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Nothing:", Gray);
+                    });
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine("There is nothing here yet", Gray);
+                        AddLine("But there will be something soon", Gray);
+                        AddLine("I hope so", Gray);
+                    });
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Very nothing:", Gray);
+                    });
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine("There is nothing here yet", Gray);
+                        AddLine("But there will be something soon", Gray);
+                    });
+                });
+            });
+        }),
+        new("Auberdine", () => {
+            SetAnchor(1142, -1176);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                AddSmallButton("FactionAlliance",
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+                    SetAnchor(TopRight, h.window);
+                    AddRegionGroup();
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Auberdine", Gray);
+                    });
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Nothing:", Gray);
+                    });
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine("There is nothing here yet", Gray);
+                        AddLine("But there will be something soon", Gray);
+                        AddLine("I hope so", Gray);
+                    });
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Very nothing:", Gray);
+                    });
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine("There is nothing here yet", Gray);
+                        AddLine("But there will be something soon", Gray);
+                    });
+                });
+            });
+        }),
+        new("BlackfathomDeeps", () => {
+            SetAnchor(1057, -1659);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                AddSmallButton("SiteDungeon",
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+                    SetAnchor(TopRight, h.window);
+                    AddRegionGroup();
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Blackfathom Deeps", Gray);
+                    });
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Nothing:", Gray);
+                    });
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine("There is nothing here yet", Gray);
+                        AddLine("But there will be something soon", Gray);
+                        AddLine("I hope so", Gray);
+                    });
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Very nothing:", Gray);
+                    });
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine("There is nothing here yet", Gray);
+                        AddLine("But there will be something soon", Gray);
+                    });
+                });
+            });
+        }),
+        new("Darnassus", () => {
+            SetAnchor(720, -465);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                AddSmallButton("FactionAlliance",
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+                    SetAnchor(TopRight, h.window);
+                    AddRegionGroup();
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Darnassus", Gray);
+                    });
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Nothing:", Gray);
+                    });
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine("There is nothing here yet", Gray);
+                        AddLine("But there will be something soon", Gray);
+                        AddLine("I hope so", Gray);
+                    });
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Very nothing:", Gray);
+                    });
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine("There is nothing here yet", Gray);
+                        AddLine("But there will be something soon", Gray);
+                    });
+                });
+            });
+        }),
+        new("RutTheranVilage", () => {
+            SetAnchor(1027, -711);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                AddSmallButton("FactionAlliance",
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+                    SetAnchor(TopRight, h.window);
+                    AddRegionGroup();
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("RutTheranVilage", Gray);
+                    });
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Nothing:", Gray);
+                    });
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine("There is nothing here yet", Gray);
+                        AddLine("But there will be something soon", Gray);
+                        AddLine("I hope so", Gray);
+                    });
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Very nothing:", Gray);
+                    });
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine("There is nothing here yet", Gray);
+                        AddLine("But there will be something soon", Gray);
+                    });
+                });
+            });
+        }),
+        new("TalrendisPoint", () => {
+            SetAnchor(2183, -1958);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                AddSmallButton("FactionAlliance",
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+                    SetAnchor(TopRight, h.window);
+                    AddRegionGroup();
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Talrendis Point", Gray);
+                    });
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Nothing:", Gray);
+                    });
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine("There is nothing here yet", Gray);
+                        AddLine("But there will be something soon", Gray);
+                        AddLine("I hope so", Gray);
+                    });
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Very nothing:", Gray);
+                    });
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine("There is nothing here yet", Gray);
+                        AddLine("But there will be something soon", Gray);
+                    });
+                });
+            });
+        }),
+        new("Valormok", () => {
+            SetAnchor(2120, -1745);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                AddSmallButton("FactionHorde",
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+                    SetAnchor(TopRight, h.window);
+                    AddRegionGroup();
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Valormok", Gray);
+                    });
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Nothing:", Gray);
+                    });
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine("There is nothing here yet", Gray);
+                        AddLine("But there will be something soon", Gray);
+                        AddLine("I hope so", Gray);
+                    });
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Very nothing:", Gray);
+                    });
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine("There is nothing here yet", Gray);
+                        AddLine("But there will be something soon", Gray);
+                    });
+                });
+            });
+        }),
+        new("ZulFarrak", () => {
+            SetAnchor(1781, -3768);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                AddSmallButton("SiteDungeon",
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+                    SetAnchor(TopRight, h.window);
+                    AddRegionGroup();
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Zul\'Farrak", Gray);
+                    });
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Nothing:", Gray);
+                    });
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine("There is nothing here yet", Gray);
+                        AddLine("But there will be something soon", Gray);
+                        AddLine("I hope so", Gray);
+                    });
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Very nothing:", Gray);
+                    });
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine("There is nothing here yet", Gray);
+                        AddLine("But there will be something soon", Gray);
+                    });
+                });
+            });
+        }),
+        new("CenarionHold", () => {
+            SetAnchor(1076, -3875);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                AddSmallButton("FactionNeutral",
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+                    SetAnchor(TopRight, h.window);
+                    AddRegionGroup();
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Cenarion Hold", Gray);
+                    });
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Nothing:", Gray);
+                    });
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine("There is nothing here yet", Gray);
+                        AddLine("But there will be something soon", Gray);
+                        AddLine("I hope so", Gray);
+                    });
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Very nothing:", Gray);
+                    });
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine("I hope so", Gray);
+                        AddLine("There is nothing here yet", Gray);
+                        AddLine("But there will be something soon", Gray);
+                    });
+                });
+            });
+        }),
+        new("SelectedTown", () => {
+            SetAnchor(BottomLeft);
+            AddRegionGroup();
+            AddButtonRegion(() =>
+            {
+                AddLine("Bloodvenom Post", Black);
+                AddSmallButton("OtherClose",
+                (h) =>
+                {
+                    CloseWindow(h.window);
+                },
+                (h) => () =>
+                {
+                    SetAnchor(BottomRight);
+                    AddRegionGroup();
+                    AddHeaderRegion(
+                        () =>
+                        {
+                            AddLine("Close this window", Gray);
+                        }
+                    );
+                });
+            },
+            (h) =>
+            {
+            });
+            AddHeaderRegion(() =>
+            {
+                AddBigButton("FactionHorde",
+                (h) =>
+                {
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Nothing:", Gray);
+            });
+            AddPaddingRegion(() =>
+            {
+                AddLine("There is nothing here yet", Gray);
+                AddLine("But there will be something soon", Gray);
+                AddLine("I hope so", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Very nothing:", Gray);
+            });
+            AddPaddingRegion(() =>
+            {
+                AddLine("There is nothing here yet", Gray);
+                AddLine("But there will be something soon", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Very nothing:", Gray);
+            });
+            AddPaddingRegion(() =>
+            {
+                AddLine("There is nothing here yet", Gray);
+                AddLine("But there will be something soon", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Very nothing:", Gray);
+            });
+            AddPaddingRegion(() =>
+            {
+                AddLine("There is nothing here yet", Gray);
+                AddLine("But there will be something soon", Gray);
+            });
+        }),
     };
 
     public static List<Blueprint> desktopBlueprints = new()
     {
-        new("Menu", () => {
-            AddHotkey(B, () => { SpawnWindowBlueprint("BlackTemple"); });
-            AddHotkey(C, () => { SpawnWindowBlueprint("City"); });
-            AddHotkey(R, () => { SpawnWindowBlueprint("Testing"); });
-            AddHotkey(L, () => { SpawnWindowBlueprint("LayoutTest"); });
-            AddHotkey(U, () => { SpawnWindowBlueprint("UnitCardsExplorer"); });
-            AddHotkey(P, () => { SpawnWindowBlueprint("Piracy"); });
-            AddHotkey(A, () => { /*SpawnWindowBlueprint("BattleBoard"); SpawnWindowBlueprint("PlayerBattleInfo"); SpawnWindowBlueprint("EnemyBattleInfo"); SpawnWindowBlueprint("BattleActionBar"); */SpawnWindowBlueprint("Crossroads"); Board.board.Reset(); });
+        new("Map", () => {
+            SpawnWindowBlueprint("Crossroads");
+            SpawnWindowBlueprint("Ratchet");
+            SpawnWindowBlueprint("WailingCaverns");
+            SpawnWindowBlueprint("CampTaurajo");
+            SpawnWindowBlueprint("Maraudon");
+            SpawnWindowBlueprint("TheramoreIsle");
+            SpawnWindowBlueprint("Gadgetzan");
+            SpawnWindowBlueprint("Everlook");
+            SpawnWindowBlueprint("TalonbranchGlade");
+            SpawnWindowBlueprint("BloodvenomPost");
+            SpawnWindowBlueprint("RazorHill");
+            SpawnWindowBlueprint("ThunderBluff");
+            SpawnWindowBlueprint("Orgrimmar");
+            SpawnWindowBlueprint("SplintertreePost");
+            SpawnWindowBlueprint("DireMaul");
+            SpawnWindowBlueprint("RuinsAhnQiraj");
+            SpawnWindowBlueprint("TempleAhnQiraj");
+            SpawnWindowBlueprint("SunrockRetreat");
+            SpawnWindowBlueprint("ZoramgarOutpost");
+            SpawnWindowBlueprint("StonetalonPeak");
+            SpawnWindowBlueprint("NijelsPoint");
+            SpawnWindowBlueprint("ShadowpreyVillage");
+            SpawnWindowBlueprint("CampMojache");
+            SpawnWindowBlueprint("FreewindPost");
+            SpawnWindowBlueprint("RazorfenDowns");
+            SpawnWindowBlueprint("BrackenwallVillage");
+            SpawnWindowBlueprint("BloodhoofVillage");
+            SpawnWindowBlueprint("SenjinVillage");
+            SpawnWindowBlueprint("Thalaanar");
+            SpawnWindowBlueprint("FeathermoonStronghold");
+            SpawnWindowBlueprint("Auberdine");
+            SpawnWindowBlueprint("BlackfathomDeeps");
+            SpawnWindowBlueprint("Darnassus");
+            SpawnWindowBlueprint("RutTheranVilage");
+            SpawnWindowBlueprint("TalrendisPoint");
+            SpawnWindowBlueprint("Valormok");
+            SpawnWindowBlueprint("ZulFarrak");
+            SpawnWindowBlueprint("CenarionHold");
+            AddHotkey(W, () => { camera.transform.position += new Vector3(0, EuelerGrowth()); }, false);
+            AddHotkey(A, () => { camera.transform.position += new Vector3(-EuelerGrowth(), 0); }, false);
+            AddHotkey(S, () => { camera.transform.position += new Vector3(0, -EuelerGrowth()); }, false);
+            AddHotkey(D, () => { camera.transform.position += new Vector3(EuelerGrowth(), 0); }, false);
+            AddHotkey(Q, () => { /*SpawnWindowBlueprint("BattleBoard"); SpawnWindowBlueprint("PlayerBattleInfo"); SpawnWindowBlueprint("EnemyBattleInfo"); SpawnWindowBlueprint("BattleActionBar"); */SpawnWindowBlueprint("Crossroads"); Board.board.Reset(); });
             AddHotkey(Escape, () => { SpawnWindowBlueprint("ESCMenu"); });
             AddHotkey(Tab, () => { SpawnDesktopBlueprint("Game"); });
         }),
         new("Game", () => {
+            SetDesktopBackground("ZoneStonetalonMountains");
             AddHotkey(A, () => { SpawnWindowBlueprint("Testing"); });
-            AddHotkey(Tab, () => { SwitchDesktop("Menu"); CloseDesktop("Game"); });
+            AddHotkey(Tab, () => { SwitchDesktop("Map"); CloseDesktop("Game"); });
         }),
     };
 }

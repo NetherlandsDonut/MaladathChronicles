@@ -15,7 +15,8 @@ public class Starter : MonoBehaviour
         cursor = FindObjectOfType<Cursor>();
         Board.board = new Board(8, 8);
         Entity.player = new Entity(Race.races.Find(x => x.name == "Night Elf"), Class.classes.Find(x => x.name == "Rogue"), "Hoolahop");
-        SpawnDesktopBlueprint("Menu");
+        Root.camera = FindObjectOfType<Camera>();
+        SpawnDesktopBlueprint("Map");
 
         //Serialize(Data.data, "Data");
 

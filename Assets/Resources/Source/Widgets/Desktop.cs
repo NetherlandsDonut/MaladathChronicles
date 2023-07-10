@@ -3,6 +3,7 @@ using UnityEngine;
 using System.Collections.Generic;
 
 using static Root;
+using System.Globalization;
 
 public class Desktop : MonoBehaviour
 {
@@ -14,7 +15,7 @@ public class Desktop : MonoBehaviour
     public string title;
     public Tooltip tooltip;
     public float tooltipChanneling;
-    public Dictionary<KeyCode, Action> hotkeys;
+    public List<Hotkey> hotkeys;
     public GameObject screenlock;
     public bool screenLocked;
 
@@ -187,9 +188,18 @@ public class Desktop : MonoBehaviour
                     CIL.region.regionGroup.window.Rebuild();
             }
             else
+            {
+                int downs = 0, helds = 0;
                 foreach (var hotkey in hotkeys)
-                    if (Input.GetKeyDown(hotkey.Key))
-                        hotkey.Value();
+                    if (Input.GetKeyDown(hotkey.key) && hotkey.keyDown || Input.GetKey(hotkey.key) && !hotkey.keyDown)
+                    {
+                        if (Input.GetKeyDown(hotkey.key)) downs++;
+                        else helds++;
+                        hotkey.action();
+                    }
+                if (downs > 0) keyStack = 0;
+                if (helds > 0 && keyStack < 100) keyStack++;
+            }
         }
     }
 }
