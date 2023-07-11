@@ -29,6 +29,8 @@ public class Window : MonoBehaviour
     public void Initialise(Desktop desktop, string title)
     {
         this.title = title;
+        if (title == "BattleBoard")
+            Board.board.window = this;
         this.desktop = desktop;
         anchor = new WindowAnchor(Center);
         regionGroups = new();
@@ -128,66 +130,67 @@ public class Window : MonoBehaviour
             background.AddComponent<BoxCollider2D>();
 
         //Draws window shadows
-        if (shadowSystem == 0)
-        {
-            var shadowSprites = Resources.LoadAll<Sprite>("Sprites/Building/Shadows/First");
-            for (int i = 0; i < 8; i++)
-                if (shadows[i] == null)
-                {
-                    shadows[i] = new GameObject("Shadow", typeof(SpriteRenderer));
-                    shadows[i].transform.parent = transform;
-                    shadows[i].GetComponent<SpriteRenderer>().sprite = shadowSprites[i];
-                }
-            shadows[1].transform.localScale = shadows[6].transform.localScale = new Vector3(xOffset + 2, 1, 1);
-            shadows[3].transform.localScale = shadows[4].transform.localScale = new Vector3(1, PlannedHeight() + 2 + (headerGroup != null ? headerGroup.PlannedHeight() : 0), 1);
-            shadows[0].transform.localPosition = new Vector3(-18, 18, 0.9f);
-            shadows[1].transform.localPosition = new Vector3(0, 18, 0.9f);
-            shadows[2].transform.localPosition = new Vector3(xOffset + 2, 18, 0.9f);
-            shadows[3].transform.localPosition = new Vector3(-18, 0, 0.9f);
-            shadows[4].transform.localPosition = new Vector3(xOffset + 2, 0, 0.9f);
-            shadows[5].transform.localPosition = new Vector3(-18, -PlannedHeight(true) - 2, 0.9f);
-            shadows[6].transform.localPosition = new Vector3(0, -PlannedHeight(true) - 2, 0.9f);
-            shadows[7].transform.localPosition = new Vector3(xOffset + 2, -PlannedHeight(true) - 2, 0.9f);
-        }
-        else if (shadowSystem == 1)
-        {
-            var shadowSprites = Resources.LoadAll<Sprite>("Sprites/Building/Shadows/Second");
-            for (int i = 0; i < 5; i++)
-                if (shadows[i] == null)
-                {
-                    shadows[i] = new GameObject("Shadow", typeof(SpriteRenderer));
-                    shadows[i].transform.parent = transform;
-                    shadows[i].GetComponent<SpriteRenderer>().sprite = shadowSprites[i];
-                }
-            shadows[1].transform.localScale = new Vector3(1, PlannedHeight() - 2 + (headerGroup != null ? headerGroup.PlannedHeight() : 0), 1);
-            shadows[3].transform.localScale = new Vector3(xOffset - 2, 1, 1);
-            shadows[0].transform.localPosition = new Vector3(xOffset + 2, 0, 0.9f);
-            shadows[1].transform.localPosition = new Vector3(xOffset + 2, -4, 0.9f);
-            shadows[2].transform.localPosition = new Vector3(xOffset + 2, -PlannedHeight(true) - 2, 0.9f);
-            shadows[3].transform.localPosition = new Vector3(4, -PlannedHeight(true) - 2, 0.9f);
-            shadows[4].transform.localPosition = new Vector3(0, -PlannedHeight(true) - 2, 0.9f);
-        }
-        else
-        {
-            var shadowSprites = Resources.LoadAll<Sprite>("Sprites/Building/Shadows/Third");
-            for (int i = 0; i < 8; i++)
-                if (shadows[i] == null)
-                {
-                    shadows[i] = new GameObject("Shadow", typeof(SpriteRenderer));
-                    shadows[i].transform.parent = transform;
-                    shadows[i].GetComponent<SpriteRenderer>().sprite = shadowSprites[i];
-                }
-            shadows[1].transform.localScale = shadows[6].transform.localScale = new Vector3(xOffset + 2, 1, 1);
-            shadows[3].transform.localScale = shadows[4].transform.localScale = new Vector3(1, PlannedHeight() + 2 + (headerGroup != null ? headerGroup.PlannedHeight() : 0), 1);
-            shadows[0].transform.localPosition = new Vector3(-5, 5, 0.9f);
-            shadows[1].transform.localPosition = new Vector3(0, 5, 0.9f);
-            shadows[2].transform.localPosition = new Vector3(xOffset + 2, 5, 0.9f);
-            shadows[3].transform.localPosition = new Vector3(-5, 0, 0.9f);
-            shadows[4].transform.localPosition = new Vector3(xOffset + 2, 0, 0.9f);
-            shadows[5].transform.localPosition = new Vector3(-5, -PlannedHeight(true) - 2, 0.9f);
-            shadows[6].transform.localPosition = new Vector3(0, -PlannedHeight(true) - 2, 0.9f);
-            shadows[7].transform.localPosition = new Vector3(xOffset + 2, -PlannedHeight(true) - 2, 0.9f);
-        }
+        if (settings.shadows.Value())
+            if (shadowSystem == 0)
+            {
+                var shadowSprites = Resources.LoadAll<Sprite>("Sprites/Building/Shadows/First");
+                for (int i = 0; i < 8; i++)
+                    if (shadows[i] == null)
+                    {
+                        shadows[i] = new GameObject("Shadow", typeof(SpriteRenderer));
+                        shadows[i].transform.parent = transform;
+                        shadows[i].GetComponent<SpriteRenderer>().sprite = shadowSprites[i];
+                    }
+                shadows[1].transform.localScale = shadows[6].transform.localScale = new Vector3(xOffset + 2, 1, 1);
+                shadows[3].transform.localScale = shadows[4].transform.localScale = new Vector3(1, PlannedHeight() + 2 + (headerGroup != null ? headerGroup.PlannedHeight() : 0), 1);
+                shadows[0].transform.localPosition = new Vector3(-18, 18, 0.9f);
+                shadows[1].transform.localPosition = new Vector3(0, 18, 0.9f);
+                shadows[2].transform.localPosition = new Vector3(xOffset + 2, 18, 0.9f);
+                shadows[3].transform.localPosition = new Vector3(-18, 0, 0.9f);
+                shadows[4].transform.localPosition = new Vector3(xOffset + 2, 0, 0.9f);
+                shadows[5].transform.localPosition = new Vector3(-18, -PlannedHeight(true) - 2, 0.9f);
+                shadows[6].transform.localPosition = new Vector3(0, -PlannedHeight(true) - 2, 0.9f);
+                shadows[7].transform.localPosition = new Vector3(xOffset + 2, -PlannedHeight(true) - 2, 0.9f);
+            }
+            else if (shadowSystem == 1)
+            {
+                var shadowSprites = Resources.LoadAll<Sprite>("Sprites/Building/Shadows/Second");
+                for (int i = 0; i < 5; i++)
+                    if (shadows[i] == null)
+                    {
+                        shadows[i] = new GameObject("Shadow", typeof(SpriteRenderer));
+                        shadows[i].transform.parent = transform;
+                        shadows[i].GetComponent<SpriteRenderer>().sprite = shadowSprites[i];
+                    }
+                shadows[1].transform.localScale = new Vector3(1, PlannedHeight() - 2 + (headerGroup != null ? headerGroup.PlannedHeight() : 0), 1);
+                shadows[3].transform.localScale = new Vector3(xOffset - 2, 1, 1);
+                shadows[0].transform.localPosition = new Vector3(xOffset + 2, 0, 0.9f);
+                shadows[1].transform.localPosition = new Vector3(xOffset + 2, -4, 0.9f);
+                shadows[2].transform.localPosition = new Vector3(xOffset + 2, -PlannedHeight(true) - 2, 0.9f);
+                shadows[3].transform.localPosition = new Vector3(4, -PlannedHeight(true) - 2, 0.9f);
+                shadows[4].transform.localPosition = new Vector3(0, -PlannedHeight(true) - 2, 0.9f);
+            }
+            else
+            {
+                var shadowSprites = Resources.LoadAll<Sprite>("Sprites/Building/Shadows/Third");
+                for (int i = 0; i < 8; i++)
+                    if (shadows[i] == null)
+                    {
+                        shadows[i] = new GameObject("Shadow", typeof(SpriteRenderer));
+                        shadows[i].transform.parent = transform;
+                        shadows[i].GetComponent<SpriteRenderer>().sprite = shadowSprites[i];
+                    }
+                shadows[1].transform.localScale = shadows[6].transform.localScale = new Vector3(xOffset + 2, 1, 1);
+                shadows[3].transform.localScale = shadows[4].transform.localScale = new Vector3(1, PlannedHeight() + 2 + (headerGroup != null ? headerGroup.PlannedHeight() : 0), 1);
+                shadows[0].transform.localPosition = new Vector3(-5, 5, 0.9f);
+                shadows[1].transform.localPosition = new Vector3(0, 5, 0.9f);
+                shadows[2].transform.localPosition = new Vector3(xOffset + 2, 5, 0.9f);
+                shadows[3].transform.localPosition = new Vector3(-5, 0, 0.9f);
+                shadows[4].transform.localPosition = new Vector3(xOffset + 2, 0, 0.9f);
+                shadows[5].transform.localPosition = new Vector3(-5, -PlannedHeight(true) - 2, 0.9f);
+                shadows[6].transform.localPosition = new Vector3(0, -PlannedHeight(true) - 2, 0.9f);
+                shadows[7].transform.localPosition = new Vector3(xOffset + 2, -PlannedHeight(true) - 2, 0.9f);
+            }
     }
 
     public void BuildRegionGroup(RegionGroup regionGroup)

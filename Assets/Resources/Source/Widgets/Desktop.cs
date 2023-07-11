@@ -98,12 +98,16 @@ public class Desktop : MonoBehaviour
         }
         if (screenLocked)
         {
-            if (animationTime > 0) animationTime -= Time.deltaTime;
-            if (animationTime <= 0)
+            if (title == "Game")
             {
-                Board.board.AnimateFill();
-                Rebuild();
-                animationTime = frameTime;
+                if (animationTime > 0)
+                    animationTime -= Time.deltaTime;
+                if (animationTime <= 0)
+                {
+                    animationTime = frameTime;
+                    Board.board.AnimateFill();
+                    Rebuild();
+                }
             }
         }
         else

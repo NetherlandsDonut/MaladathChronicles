@@ -16,6 +16,7 @@ public class Board
     public static Board board;
 
     public int[,] field;
+    public Window window;
 
     public void Reset()
     {
@@ -53,7 +54,28 @@ public class Board
         for (int j = field.GetLength(1) - 1; j >= 0; j--)
             for (int i = field.GetLength(0) - 1; i >= 0; i--)
                 if (field[i, j] == 0) return;
-        CDesktop.UnlockScreen();
+        if (Battle.battle.first.health <= 0)
+        {
+            SwitchDesktop("TitleScreen");
+            CloseDesktop("Game");
+            CloseDesktop("Map");
+        }
+        else if (Battle.battle.second.health <= 0)
+        {
+            SwitchDesktop("Map");
+            CloseDesktop("Game");
+        }
+        else if (Battle.battle.turnFirst)
+            CDesktop.UnlockScreen();
+        else
+        {
+            animationTime = 3f;
+            var list = board.FloodCount(random.Next(0, 8), random.Next(0, 8));
+            Battle.battle.first.health -= list.Count;
+            board.FloodDestroy(list);
+            if (list.Count < 4)
+                Battle.battle.turnFirst = true;
+        }
     }
 
     public int fieldGetCounterX = 0;
@@ -73,15 +95,17 @@ public class Board
         return r;
     }
 
-    public void FloodDestroy(Window window, List<(int, int)> list)
+    public void FloodDestroy(List<(int, int)> list)
     {
         window.PlaySound(collectSoundDictionary[field[list[0].Item1, list[0].Item2]].ToString(), 0.3f);
         foreach (var a in list)
-            field[a.Item1, a.Item2] = 0;
+            if (a == list[0] && list.Count >= 4 && field[a.Item1, a.Item2] > 10)
+                field[a.Item1, a.Item2] -= 10;
+            else field[a.Item1, a.Item2] = 0;
         StartAnimationFill();
     }
 
-    public void FloodDestroy(Window window, int x, int y)
+    public void FloodDestroy(int x, int y)
     {
         window.PlaySound(collectSoundDictionary[field[x, y]].ToString(), 0.3f);
         foreach (var a in FloodCount(x, y))

@@ -12,15 +12,16 @@ public class Battle
     {
         first = saveGames[0].player;
         second = new Entity(races.Find(x => x.name == "Nefarian"));
+        turnFirst = true;
     }
 
-    public void NextTurn(Highlightable h)
+    public void ComputerMove()
     {
-        turnFirst = false;
-        var list = Board.board.FloodCount(h.region.bigButtons.FindIndex(x => x.GetComponent<Highlightable>() == h), h.region.regionGroup.regions.IndexOf(h.region));
-        battle.first.health -= list.Count;
-        Board.board.FloodDestroy(h.window, list);
-        turnFirst = true;
+        //turnFirst = false;
+        //var list = Board.board.FloodCount(h.region.bigButtons.FindIndex(x => x.GetComponent<Highlightable>() == h), h.region.regionGroup.regions.IndexOf(h.region));
+        //battle.first.health -= list.Count;
+        //Board.board.FloodDestroy(h.window, list);
+        //turnFirst = true;
     }
 
     public static Battle battle;

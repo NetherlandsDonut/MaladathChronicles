@@ -646,18 +646,22 @@ public class Blueprint
                         {
                             var list = Board.board.FloodCount(h.region.bigButtons.FindIndex(x => x.GetComponent<Highlightable>() == h), h.region.regionGroup.regions.IndexOf(h.region));
                             Battle.battle.second.health -= list.Count;
-                            Board.board.FloodDestroy(h.window, list);
-                            if (Battle.battle.second.health <= 0)
+                            Board.board.FloodDestroy(list);
+                            if (list.Count < 4)
                             {
-                                SwitchDesktop("Map");
-                                CloseDesktop("Game");
+                                Battle.battle.turnFirst = false;
                             }
-                            Battle.battle.NextTurn(h);
-                            if (Battle.battle.first.health <= 0)
-                            {
-                                SwitchDesktop("Map");
-                                CloseDesktop("Game");
-                            }
+                            //if (Battle.battle.second.health <= 0)
+                            //{
+                            //    SwitchDesktop("Map");
+                            //    CloseDesktop("Game");
+                            //}
+                            //Battle.battle.NextTurn(h);
+                            //if (Battle.battle.first.health <= 0)
+                            //{
+                            //    SwitchDesktop("Map");
+                            //    CloseDesktop("Game");
+                            //}
                         },
                         (h) => () =>
                         {
@@ -2190,11 +2194,8 @@ public class Blueprint
                 (h) =>
                 {
                     Battle.battle = new Battle();
-                    SpawnWindowBlueprint("BattleBoard");
-                    SpawnWindowBlueprint("PlayerBattleInfo");
-                    SpawnWindowBlueprint("EnemyBattleInfo");
-                    SpawnWindowBlueprint("BattleActionBar");
-                    Board.board.Reset();
+                    SpawnDesktopBlueprint("Game");
+                    SwitchDesktop("Game");
                 },
                 (h) => () =>
                 {
@@ -2395,6 +2396,11 @@ public class Blueprint
         new("Game", () =>
         {
             SetDesktopBackground("ZoneStonetalonMountains");
+            SpawnWindowBlueprint("BattleBoard");
+            SpawnWindowBlueprint("PlayerBattleInfo");
+            SpawnWindowBlueprint("EnemyBattleInfo");
+            SpawnWindowBlueprint("BattleActionBar");
+            Board.board.Reset();
             AddHotkey(A, () => { SpawnWindowBlueprint("Testing"); });
             AddHotkey(Escape, () => { SwitchDesktop("Map"); CloseDesktop("Game"); });
         }),

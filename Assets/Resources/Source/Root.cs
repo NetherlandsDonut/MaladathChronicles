@@ -30,7 +30,7 @@ public static class Root
     public static string markerCharacter = "_", currentInputLine = "";
 
     public static List<SaveGame> saveGames;
-    public static Settings settings;
+    public static GameSettings settings;
 
     #region Fonts
 
@@ -81,6 +81,7 @@ public static class Root
         desktops.Add(newDesktop);
         newDesktop.screen = new GameObject("Camera", typeof(Camera)).GetComponent<Camera>();
         newDesktop.screen.transform.parent = newDesktop.transform;
+        if (title == "Map") newDesktop.screen.transform.localPosition = new Vector3(1781, -3768);
         newDesktop.screen.orthographicSize = 180;
         newDesktop.screen.nearClipPlane = -100;
         newDesktop.screen.farClipPlane = 1000;
