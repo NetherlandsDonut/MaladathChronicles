@@ -4,7 +4,7 @@ public class SaveGame
 {
     public SaveGame()
     {
-        player = new Entity(Race.races.Find(x => x.name == "Forsaken"));
+        player = new Entity(Race.races.Find(x => x.name == "Night Elf"), Class.classes.Find(x => x.name == "Rogue"), "Gavel");
     }
 
     public Entity player;

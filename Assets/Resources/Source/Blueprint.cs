@@ -9,7 +9,6 @@ using static Root.Anchor;
 using static Root.RegionBackgroundType;
 
 using static UnityEngine.KeyCode;
-using UnityEditor.Experimental.GraphView;
 
 public class Blueprint
 {
@@ -294,7 +293,7 @@ public class Blueprint
             AddButtonRegion(
                 () =>
                 {
-                    AddLine("Roowr", Black);
+                    AddLine(Board.board.player.name, Black);
                 },
                 (h) =>
                 {
@@ -303,53 +302,86 @@ public class Blueprint
             );
             AddHeaderRegion(() =>
             {
-                AddBigButton("ClassRogue",
-                    (h) => { },
-                    (h) => () =>
+                AddBigButton("Class" + Board.board.player.spec.name,
+                    (h) => { }
+                    //(h) => () =>
+                    //{
+                    //    SetAnchor(BottomRight);
+                    //    AddRegionGroup();
+                    //    AddHeaderRegion(() =>
+                    //    {
+                    //        AddBigButton("ClassRogue", (h) => { });
+                    //        AddLine("Rogue", Gray);
+                    //    });
+                    //    AddHeaderRegion(() =>
+                    //    {
+                    //        AddLine("Main elements:", Gray);
+                    //    });
+                    //    AddPaddingRegion(() =>
+                    //    {
+                    //        AddBigButton("ElementDecayAwakened", (h) => { });
+                    //        AddBigButton("ElementShadowAwakened", (h) => { });
+                    //        AddBigButton("ElementAirAwakened", (h) => { });
+                    //    });
+                    //    AddHeaderRegion(() =>
+                    //    {
+                    //        AddLine("Class description:", Gray);
+                    //    });
+                    //    AddPaddingRegion(() =>
+                    //    {
+                    //        AddLine("Rogues often initiate combat with a surprise attack", DarkGray);
+                    //        AddLine("from the shadows, leading with vicious melee strikes. ", DarkGray);
+                    //        AddLine("When in protracted battles, they utilize a successive ", DarkGray);
+                    //        AddLine("combination of carefully chosen attacks to soften", DarkGray);
+                    //        AddLine("the enemy up for a killing blow.", DarkGray);
+                    //    });
+                    //}
+                );
+                AddLine("Level " + Board.board.player.level, Gray);
+                AddLine("Health: " + Board.board.player.health + "/" + Board.board.player.MaxHealth(), Gray);
+            });
+            foreach (var ability in Board.board.player.abilities)
+            {
+                var abilityObj = Ability.abilities.Find(x => x.name == ability);
+                AddButtonRegion(
+                    () =>
+                    {
+                        AddLine(ability, Black);
+                        AddSmallButton("Ability" + ability.Replace(" ", ""), (h) => { });
+                    },
+                    (h) =>
                     {
                         SetAnchor(BottomRight);
                         AddRegionGroup();
                         AddHeaderRegion(() =>
                         {
-                            AddBigButton("ClassRogue", (h) => { });
-                            AddLine("Rogue", Gray);
+                            AddBigButton("Ability" + ability.Replace(" ", ""), (h) => { });
+                            AddLine(ability, Gray);
                         });
                         AddHeaderRegion(() =>
                         {
-                            AddLine("Main elements:", Gray);
+                            AddLine("Resource cost:", Gray);
                         });
                         AddPaddingRegion(() =>
                         {
-                            AddBigButton("ElementDecayAwakened", (h) => { });
-                            AddBigButton("ElementShadowAwakened", (h) => { });
-                            AddBigButton("ElementAirAwakened", (h) => { });
-                        });
-                        AddHeaderRegion(() =>
-                        {
-                            AddLine("Class description:", Gray);
-                        });
-                        AddPaddingRegion(() =>
-                        {
-                            AddLine("Rogues often initiate combat with a surprise attack", DarkGray);
-                            AddLine("from the shadows, leading with vicious melee strikes. ", DarkGray);
-                            AddLine("When in protracted battles, they utilize a successive ", DarkGray);
-                            AddLine("combination of carefully chosen attacks to soften", DarkGray);
-                            AddLine("the enemy up for a killing blow.", DarkGray);
+                            foreach (var resource in abilityObj.cost)
+                            {
+                                AddLine(resource.Key, Gray);
+                                AddText(" x" + resource.Value, White);
+                            }
                         });
                     }
                 );
-                AddLine("Level 21", Gray);
-                AddLine("Health: " + Battle.battle.first.health + "/ 100", Gray);
-            });
+            }
         }),
         new("EnemyBattleInfo", () => {
-            SetAnchor(BottomRight);
+            SetAnchor(TopRight);
             AddRegionGroup();
             SetRegionGroupWidth(138);
             AddButtonRegion(
                 () =>
                 {
-                    AddLine("Nefarian", Black);
+                    AddLine(Board.board.enemy.name, Black);
                 },
                 (h) =>
                 {
@@ -358,65 +390,43 @@ public class Blueprint
             );
             AddHeaderRegion(() =>
             {
-                AddBigButton("Nefarian", (h) => { });
-                AddLine("Level 60", Gray);
-                AddLine("Health: " + Battle.battle.second.health + "/ 100", Gray);
+                AddBigButton("Portrait" + Board.board.enemy.name.Replace(", ", ""), (h) => { });
+                AddLine("Level " + Board.board.enemy.level, Gray);
+                AddLine("Health: " + Board.board.enemy.health + "/" + Board.board.enemy.MaxHealth(), Gray);
             });
-            AddButtonRegion(
-                () =>
-                {
-                    AddLine("?", Black);
-                    AddSmallButton("OtherUnknown", (h) => { });
-                },
-                (h) =>
-                {
-
-                }
-            );
-            AddButtonRegion(
-                () =>
-                {
-                    AddLine("?", Black);
-                    AddSmallButton("OtherUnknown", (h) => { });
-                },
-                (h) =>
-                {
-
-                }
-            );
-            AddButtonRegion(
-                () =>
-                {
-                    AddLine("?", Black);
-                    AddSmallButton("OtherUnknown", (h) => { });
-                },
-                (h) =>
-                {
-
-                }
-            );
-            AddButtonRegion(
-                () =>
-                {
-                    AddLine("?", Black);
-                    AddSmallButton("OtherUnknown", (h) => { });
-                },
-                (h) =>
-                {
-
-                }
-            );
-            AddButtonRegion(
-                () =>
-                {
-                    AddLine("?", Black);
-                    AddSmallButton("OtherUnknown", (h) => { });
-                },
-                (h) =>
-                {
-
-                }
-            );
+            foreach (var ability in Board.board.enemy.abilities)
+            {
+                var abilityObj = Ability.abilities.Find(x => x.name == ability);
+                AddButtonRegion(
+                    () =>
+                    {
+                        AddLine(ability, Black);
+                        AddSmallButton("Ability" + ability, (h) => { });
+                    },
+                    (h) =>
+                    {
+                        SetAnchor(BottomRight);
+                        AddRegionGroup();
+                        AddHeaderRegion(() =>
+                        {
+                            AddBigButton("Ability" + ability.Replace(" ", ""), (h) => { });
+                            AddLine(ability, Gray);
+                        });
+                        AddHeaderRegion(() =>
+                        {
+                            AddLine("Resource cost:", Gray);
+                        });
+                        AddPaddingRegion(() =>
+                        {
+                            foreach (var resource in abilityObj.cost)
+                            {
+                                AddLine(resource.Key, Gray);
+                                AddText(" x" + resource.Value, White);
+                            }
+                        });
+                    }
+                );
+            }
         }),
         new("EnemyBattleInfo Old", () => {
             SetAnchor(BottomRight);
@@ -645,23 +655,10 @@ public class Blueprint
                         (h) =>
                         {
                             var list = Board.board.FloodCount(h.region.bigButtons.FindIndex(x => x.GetComponent<Highlightable>() == h), h.region.regionGroup.regions.IndexOf(h.region));
-                            Battle.battle.second.health -= list.Count;
+                            Board.board.enemy.health -= list.Count;
                             Board.board.FloodDestroy(list);
                             if (list.Count < 4)
-                            {
-                                Battle.battle.turnFirst = false;
-                            }
-                            //if (Battle.battle.second.health <= 0)
-                            //{
-                            //    SwitchDesktop("Map");
-                            //    CloseDesktop("Game");
-                            //}
-                            //Battle.battle.NextTurn(h);
-                            //if (Battle.battle.first.health <= 0)
-                            //{
-                            //    SwitchDesktop("Map");
-                            //    CloseDesktop("Game");
-                            //}
+                                Board.board.playerTurn = false;
                         },
                         (h) => () =>
                         {
@@ -1986,7 +1983,7 @@ public class Blueprint
             });
         }),
         new("BlackfathomDeeps", () => {
-            SetAnchor(1057, -1659);
+            SetAnchor(1058, -1644);
             AddRegionGroup();
             AddPaddingRegion(() =>
             {
@@ -2193,7 +2190,7 @@ public class Blueprint
                 AddSmallButton("SiteDungeon",
                 (h) =>
                 {
-                    Battle.battle = new Battle();
+                    Board.board = new Board(8, 8, "Nefarian");
                     SpawnDesktopBlueprint("Game");
                     SwitchDesktop("Game");
                 },
@@ -2264,6 +2261,32 @@ public class Blueprint
                         AddLine("I hope so", Gray);
                         AddLine("There is nothing here yet", Gray);
                         AddLine("But there will be something soon", Gray);
+                    });
+                });
+            });
+        }),
+        new("WindshearMine", () => {
+            SetAnchor(1317, -2281);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                AddSmallButton("SiteHostileArea",
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+                    SetAnchor(TopRight, h.window);
+                    AddRegionGroup();
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Windshear Mine", Gray);
+                    });
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine("Enemy levels: ", DarkGray);
+                        AddText("19-23", Gray);
                     });
                 });
             });
@@ -2387,6 +2410,7 @@ public class Blueprint
             SpawnWindowBlueprint("Valormok");
             SpawnWindowBlueprint("ZulFarrak");
             SpawnWindowBlueprint("CenarionHold");
+            SpawnWindowBlueprint("WindshearMine");
             AddHotkey(W, () => { var amount = new Vector3(0, (float)Math.Round(EuelerGrowth())); CDesktop.screen.transform.position += amount; cursor.transform.position += amount; }, false);
             AddHotkey(A, () => { var amount = new Vector3(-(float)Math.Round(EuelerGrowth()), 0); CDesktop.screen.transform.position += amount; cursor.transform.position += amount; }, false);
             AddHotkey(S, () => { var amount = new Vector3(0, -(float)Math.Round(EuelerGrowth())); CDesktop.screen.transform.position += amount; cursor.transform.position += amount; }, false);
@@ -2399,9 +2423,8 @@ public class Blueprint
             SpawnWindowBlueprint("BattleBoard");
             SpawnWindowBlueprint("PlayerBattleInfo");
             SpawnWindowBlueprint("EnemyBattleInfo");
-            SpawnWindowBlueprint("BattleActionBar");
+            //SpawnWindowBlueprint("BattleActionBar");
             Board.board.Reset();
-            AddHotkey(A, () => { SpawnWindowBlueprint("Testing"); });
             AddHotkey(Escape, () => { SwitchDesktop("Map"); CloseDesktop("Game"); });
         }),
         new("TitleScreen", () =>

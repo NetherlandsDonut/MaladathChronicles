@@ -1,37 +1,38 @@
-using UnityEngine;
-using System.Collections.Generic;
 using System.Linq;
+using System.Collections.Generic;
 
 public class Entity
 {
     public static Entity player;
 
-    public Entity(Race race, Class spec, string customName)
+    public Entity(Race race, Class spec, string name)
     {
-        this.race = race.name;
-        stats = new Stats(race.stats.ToDictionary(x => x.Key, x => x.Value));
+        this.name = name;
         this.spec = spec;
-        this.customName = customName;
-        SetStartingResources();
+
+        this.race = race.name;
+        stats = new Stats(race.stats.stats.ToDictionary(x => x.Key, x => x.Value));
+        level = race.level;
+        abilities = race.abilities.Select(x => x).Concat(spec.abilities.FindAll(x => x.Item2 <= level).Select(x => x.Item1)).Distinct().ToList();
+        Initialise();
     }
 
     public Entity(Race race)
     {
-        this.race = race.name;
-        stats = new Stats(race.stats.ToDictionary(x => x.Key, x => x.Value));
-        customName = null;
-        SetStartingResources();
+        this.race = name = race.name;
+        stats = new Stats(race.stats.stats.ToDictionary(x => x.Key, x => x.Value));
+        level = race.level;
+        abilities = race.abilities.Select(x => x).Distinct().ToList();
+        Initialise();
     }
 
-    public string customName, race;
-    public int health = 20;
-    public Dictionary<string, int> resources;
-    public Stats stats;
-    public Class spec;
-
-    public void SetStartingResources()
+    public void Initialise(bool fullReset = true)
     {
-        resources = new() 
+        if (fullReset)
+        {
+            health = MaxHealth();
+        }
+        resources = new()
         {
             { "Earth", 0 },
             { "Fire", 0 },
@@ -45,4 +46,16 @@ public class Entity
             { "Shadow", 0 },
         };
     }
+
+    public int MaxHealth() 
+    {
+        return stats.stats["Stamina"] * 20;
+    }
+
+    public int health, level;
+    public string name, race;
+    public Dictionary<string, int> resources;
+    public List<string> abilities;
+    public Stats stats;
+    public Class spec;
 }
