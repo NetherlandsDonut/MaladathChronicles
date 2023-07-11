@@ -2,7 +2,6 @@ using UnityEngine;
 using System.Collections.Generic;
 
 using static Root;
-using static Serialization;
 
 public class Starter : MonoBehaviour
 {
@@ -14,8 +13,6 @@ public class Starter : MonoBehaviour
         testText.Set("Aqualung");
         testText2.Set("Baby Yoda");
         cursor = FindObjectOfType<Cursor>();
-        Board.board = new Board(8, 8);
-        Entity.player = new Entity(Race.races.Find(x => x.name == "Night Elf"), Class.classes.Find(x => x.name == "Rogue"), "Hoolahop");
         settings = new GameSettings();
         saveGames = new List<SaveGame>();
         SpawnDesktopBlueprint("TitleScreen");

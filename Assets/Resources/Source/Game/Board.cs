@@ -1,22 +1,27 @@
 using System.Linq;
 using System.Collections.Generic;
 
+using static Race;
 using static Root;
 using static Root.Color;
 using static Root.SoundEffects;
 
 public class Board
 {
-    public Board(int x, int y)
+    public Board(int x, int y, string enemy)
     {
-        //THERE ARE SOME ISSUES WITH THE BOARD NOT BEING SQUARE
         field = new int[x, y];
+        player = saveGames[0].player;
+        this.enemy = new Entity(races.Find(x => x.name == enemy));
+        playerTurn = true;
     }
 
     public static Board board;
 
     public int[,] field;
     public Window window;
+    public Entity player, enemy;
+    public bool playerTurn;
 
     public void Reset()
     {
@@ -54,27 +59,27 @@ public class Board
         for (int j = field.GetLength(1) - 1; j >= 0; j--)
             for (int i = field.GetLength(0) - 1; i >= 0; i--)
                 if (field[i, j] == 0) return;
-        if (Battle.battle.first.health <= 0)
+        if (player.health <= 0)
         {
             SwitchDesktop("TitleScreen");
             CloseDesktop("Game");
             CloseDesktop("Map");
         }
-        else if (Battle.battle.second.health <= 0)
+        else if (enemy.health <= 0)
         {
             SwitchDesktop("Map");
             CloseDesktop("Game");
         }
-        else if (Battle.battle.turnFirst)
+        else if (playerTurn)
             CDesktop.UnlockScreen();
         else
         {
-            animationTime = 3f;
+            //animationTime = 3f;
             var list = board.FloodCount(random.Next(0, 8), random.Next(0, 8));
-            Battle.battle.first.health -= list.Count;
+            player.health -= list.Count;
             board.FloodDestroy(list);
             if (list.Count < 4)
-                Battle.battle.turnFirst = true;
+                playerTurn = true;
         }
     }
 
@@ -95,11 +100,11 @@ public class Board
         return r;
     }
 
-    public void FloodDestroy(List<(int, int)> list)
+    public void FloodDestroy(List<(int, int, int)> list)
     {
-        window.PlaySound(collectSoundDictionary[field[list[0].Item1, list[0].Item2]].ToString(), 0.3f);
+        window.PlaySound(collectSoundDictionary[list[0].Item3].ToString(), 0.3f);
         foreach (var a in list)
-            if (a == list[0] && list.Count >= 4 && field[a.Item1, a.Item2] > 10)
+            if (a == list[0] && list.Count >= 4 && a.Item3 > 10)
                 field[a.Item1, a.Item2] -= 10;
             else field[a.Item1, a.Item2] = 0;
         StartAnimationFill();
@@ -113,10 +118,10 @@ public class Board
         StartAnimationFill();
     }
 
-    public List<(int, int)> FloodCount(int x, int y)
+    public List<(int, int, int)> FloodCount(int x, int y)
     {
         var visited = new List<(int, int)>();
-        var positives = new List<(int, int)>();
+        var positives = new List<(int, int, int)>();
         Flood(x, y);
         return positives;
 
@@ -124,8 +129,8 @@ public class Board
         {
             if (visited.Contains((i, j))) return;
             visited.Add((i, j));
-            if (field[i, j] != field[x, y] || positives.Contains((i, j))) return;
-            positives.Add((i, j));
+            if (field[i, j] != field[x, y] || positives.Contains((i, j, field[i, j]))) return;
+            positives.Add((i, j, field[i, j]));
             if (i > 0) Flood(i - 1, j);
             if (j > 0) Flood(i, j - 1);
             if (i < field.GetLength(0) - 1) Flood(i + 1, j);

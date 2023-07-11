@@ -32,7 +32,11 @@ public class Race
                 { "Decay Mastery", 1 },
                 { "Shadow Mastery", 1 },
                 { "Order Mastery", 3 },
-            })
+            }),
+            abilities = new()
+            {
+
+            }
         },
         new Race
         {
@@ -57,7 +61,11 @@ public class Race
                 { "Decay Mastery", 2 },
                 { "Shadow Mastery", 3 },
                 { "Order Mastery", 1 },
-            })
+            }),
+            abilities = new()
+            {
+
+            }
         },
         new Race
         {
@@ -82,7 +90,11 @@ public class Race
                 { "Decay Mastery", 1 },
                 { "Shadow Mastery", 2 },
                 { "Order Mastery", 3 },
-            })
+            }),
+            abilities = new()
+            {
+
+            }
         },
         new Race
         {
@@ -107,7 +119,11 @@ public class Race
                 { "Decay Mastery", 1 },
                 { "Shadow Mastery", 2 },
                 { "Order Mastery", 2 },
-            })
+            }),
+            abilities = new()
+            {
+
+            }
         },
         new Race
         {
@@ -132,7 +148,11 @@ public class Race
                 { "Decay Mastery", 2 },
                 { "Shadow Mastery", 2 },
                 { "Order Mastery", 1 },
-            })
+            }),
+            abilities = new()
+            {
+
+            }
         },
         new Race
         {
@@ -157,7 +177,11 @@ public class Race
                 { "Decay Mastery", 1 },
                 { "Shadow Mastery", 1 },
                 { "Order Mastery", 2 },
-            })
+            }),
+            abilities = new()
+            {
+
+            }
         },
         new Race
         {
@@ -182,7 +206,11 @@ public class Race
                 { "Decay Mastery", 1 },
                 { "Shadow Mastery", 3 },
                 { "Order Mastery", 1 },
-            })
+            }),
+            abilities = new()
+            {
+
+            }
         },
         new Race
         {
@@ -207,7 +235,40 @@ public class Race
                 { "Decay Mastery", 3 },
                 { "Shadow Mastery", 3 },
                 { "Order Mastery", 1 },
-            })
+            }),
+            abilities = new()
+            {
+
+            }
+        },
+        new Race
+        {
+            level = 21,
+            name = "Kobold Digger",
+            faction = "Neutral",
+            stats = new Stats(new()
+            {
+                { "Stamina", 1 },
+
+                { "Strength", 1 },
+                { "Agility", 1 },
+                { "Intellect", 1 },
+
+                { "Earth Mastery", 4 },
+                { "Fire Mastery", 1 },
+                { "Air Mastery", 1 },
+                { "Water Mastery", 1 },
+                { "Frost Mastery", 1 },
+                { "Lightning Mastery", 1 },
+                { "Arcane Mastery", 1 },
+                { "Decay Mastery", 1 },
+                { "Shadow Mastery", 1 },
+                { "Order Mastery", 1 },
+            }),
+            abilities = new()
+            {
+
+            }
         },
         new Race
         {
@@ -216,11 +277,11 @@ public class Race
             faction = "Neutral",
             stats = new Stats(new()
             {
-                { "Stamina", 100 },
+                { "Stamina", 40 },
 
-                { "Strength", 100 },
-                { "Agility", 100 },
-                { "Intellect", 100 },
+                { "Strength", 40 },
+                { "Agility", 40 },
+                { "Intellect", 40 },
 
                 { "Earth Mastery", 20 },
                 { "Fire Mastery", 20 },
