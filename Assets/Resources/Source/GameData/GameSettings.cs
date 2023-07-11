@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Settings
+public class GameSettings
 {
-    public Settings()
+    public GameSettings()
     {
         shadows = new Bool(true);
     }

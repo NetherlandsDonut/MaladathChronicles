@@ -16,7 +16,7 @@ public class Starter : MonoBehaviour
         cursor = FindObjectOfType<Cursor>();
         Board.board = new Board(8, 8);
         Entity.player = new Entity(Race.races.Find(x => x.name == "Night Elf"), Class.classes.Find(x => x.name == "Rogue"), "Hoolahop");
-        settings = new Settings();
+        settings = new GameSettings();
         saveGames = new List<SaveGame>();
         SpawnDesktopBlueprint("TitleScreen");
 
