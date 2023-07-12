@@ -11,7 +11,7 @@ public class Board
     public Board(int x, int y, string enemy)
     {
         field = new int[x, y];
-        player = saveGames[0].player;
+        player = currentSave.player;
         this.enemy = new Entity(races.Find(x => x.name == enemy));
         playerTurn = true;
     }

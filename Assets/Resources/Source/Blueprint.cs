@@ -222,6 +222,7 @@ public class Blueprint
             (h) =>
             {
                 saveGames.Add(new SaveGame());
+                currentSave = saveGames[0];
                 SpawnDesktopBlueprint("Map");
                 SwitchDesktop("Map");
             });
@@ -675,25 +676,6 @@ public class Blueprint
                             );
                         });
                     }
-                });
-            }
-        }),
-        new("PlayerEquipment", () => {
-            SetAnchor(Center/*, 0, -39*/);
-            AddRegionGroup();
-            for (int i = 0; i < 2; i++)
-            {
-                AddPaddingRegion(() =>
-                {
-                    AddBigButton("OtherEmpty",
-                    (h) =>
-                    {
-
-                    },
-                    (h) => () =>
-                    {
-                            
-                    });
                 });
             }
         }),
@@ -2385,6 +2367,244 @@ public class Blueprint
                 AddLine("But there will be something soon", Gray);
             });
         }),
+        new("CharacterNeckSlot", () => {
+            SetAnchor(-98, 74);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var item = currentSave.player.GetSlot("Neck");
+                AddBigButton(item == null ? "OtherEmpty" : item.icon,
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("CharacterBackSlot", () => {
+            SetAnchor(-98, 22);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var item = currentSave.player.GetSlot("Back");
+                AddBigButton(item == null ? "OtherEmpty" : item.icon,
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("CharacterRingSlot", () => {
+            SetAnchor(-98, -30);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var item = currentSave.player.GetSlot("Ring");
+                AddBigButton(item == null ? "OtherEmpty" : item.icon,
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("CharacterHeadSlot", () => {
+            SetAnchor(-46, 100);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var item = currentSave.player.GetSlot("Head");
+                AddBigButton(item == null ? "OtherEmpty" : item.icon,
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("CharacterChestSlot", () => {
+            SetAnchor(-46, 48);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var item = currentSave.player.GetSlot("Chest");
+                AddBigButton(item == null ? "OtherEmpty" : item.icon,
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("CharacterLegsSlot", () => {
+            SetAnchor(-46, -4);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var item = currentSave.player.GetSlot("Legs");
+                AddBigButton(item == null ? "OtherEmpty" : item.icon,
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("CharacterFeetSlot", () => {
+            SetAnchor(-46, -56);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var item = currentSave.player.GetSlot("Feet");
+                AddBigButton(item == null ? "OtherEmpty" : item.icon,
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("CharacterShouldersSlot", () => {
+            SetAnchor(6, 100);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var item = currentSave.player.GetSlot("Shoulders");
+                AddBigButton(item == null ? "OtherEmpty" : item.icon,
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("CharacterHandsSlot", () => {
+            SetAnchor(6, 48);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var item = currentSave.player.GetSlot("Hands");
+                AddBigButton(item == null ? "OtherEmpty" : item.icon,
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("CharacterWaistSlot", () => {
+            SetAnchor(6, -4);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var item = currentSave.player.GetSlot("Waist");
+                AddBigButton(item == null ? "OtherEmpty" : item.icon,
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("CharacterSpecialSlot", () => {
+            SetAnchor(6, -56);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var item = currentSave.player.GetSlot("Special");
+                AddBigButton(item == null ? "OtherEmpty" : item.icon,
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("CharacterMainHandSlot", () => {
+            SetAnchor(58, 74);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var item = currentSave.player.GetSlot("MainHand");
+                AddBigButton(item == null ? "OtherEmpty" : item.icon,
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("CharacterOffHandSlot", () => {
+            SetAnchor(58, 22);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var item = currentSave.player.GetSlot("OffHand");
+                AddBigButton(item == null ? "OtherEmpty" : item.icon,
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("CharacterTrinketSlot", () => {
+            SetAnchor(58, -30);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var item = currentSave.player.GetSlot("Trinket");
+                AddBigButton(item == null ? "OtherEmpty" : item.icon,
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
     };
 
     public static List<Blueprint> desktopBlueprints = new()
@@ -2434,7 +2654,7 @@ public class Blueprint
             AddHotkey(A, () => { var amount = new Vector3(-(float)Math.Round(EuelerGrowth()), 0); CDesktop.screen.transform.position += amount; cursor.transform.position += amount; }, false);
             AddHotkey(S, () => { var amount = new Vector3(0, -(float)Math.Round(EuelerGrowth())); CDesktop.screen.transform.position += amount; cursor.transform.position += amount; }, false);
             AddHotkey(D, () => { var amount = new Vector3((float)Math.Round(EuelerGrowth()), 0); CDesktop.screen.transform.position += amount; cursor.transform.position += amount; }, false);
-            AddHotkey(C, () => { SpawnWindowBlueprint("PlayerEquipment"); });
+            AddHotkey(C, () => { SpawnDesktopBlueprint("CharacterScreen"); SwitchDesktop("CharacterScreen"); });
             AddHotkey(B, () => { SpawnWindowBlueprint("PlayerInventory"); });
         }),
         new("Game", () =>
@@ -2446,6 +2666,29 @@ public class Blueprint
             //SpawnWindowBlueprint("BattleActionBar");
             Board.board.Reset();
             AddHotkey(Escape, () => { SwitchDesktop("Map"); CloseDesktop("Game"); });
+        }),
+        new("CharacterScreen", () =>
+        {
+            SetDesktopBackground("Stone");
+            SpawnWindowBlueprint("CharacterNeckSlot");
+            SpawnWindowBlueprint("CharacterBackSlot");
+            SpawnWindowBlueprint("CharacterRingSlot");
+            SpawnWindowBlueprint("CharacterHeadSlot");
+            SpawnWindowBlueprint("CharacterChestSlot");
+            SpawnWindowBlueprint("CharacterLegsSlot");
+            SpawnWindowBlueprint("CharacterFeetSlot");
+            SpawnWindowBlueprint("CharacterShouldersSlot");
+            SpawnWindowBlueprint("CharacterHandsSlot");
+            SpawnWindowBlueprint("CharacterWaistSlot");
+            SpawnWindowBlueprint("CharacterSpecialSlot");
+            SpawnWindowBlueprint("CharacterMainHandSlot");
+            SpawnWindowBlueprint("CharacterOffHandSlot");
+            SpawnWindowBlueprint("CharacterTrinketSlot");
+            //SpawnWindowBlueprint("PlayerBattleInfo");
+            //SpawnWindowBlueprint("EnemyBattleInfo");
+            //SpawnWindowBlueprint("BattleActionBar");
+            AddHotkey(C, () => { SwitchDesktop("Map"); CloseDesktop("CharacterScreen"); });
+            AddHotkey(Escape, () => { SwitchDesktop("Map"); CloseDesktop("CharacterScreen"); });
         }),
         new("TitleScreen", () =>
         {
