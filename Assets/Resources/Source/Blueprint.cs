@@ -678,6 +678,25 @@ public class Blueprint
                 });
             }
         }),
+        new("PlayerEquipment", () => {
+            SetAnchor(Center/*, 0, -39*/);
+            AddRegionGroup();
+            for (int i = 0; i < 2; i++)
+            {
+                AddPaddingRegion(() =>
+                {
+                    AddBigButton("OtherEmpty",
+                    (h) =>
+                    {
+
+                    },
+                    (h) => () =>
+                    {
+                            
+                    });
+                });
+            }
+        }),
         new("BattleActionBar", () => {
             SetAnchor(Bottom);
             AddRegionGroup();
@@ -2415,7 +2434,8 @@ public class Blueprint
             AddHotkey(A, () => { var amount = new Vector3(-(float)Math.Round(EuelerGrowth()), 0); CDesktop.screen.transform.position += amount; cursor.transform.position += amount; }, false);
             AddHotkey(S, () => { var amount = new Vector3(0, -(float)Math.Round(EuelerGrowth())); CDesktop.screen.transform.position += amount; cursor.transform.position += amount; }, false);
             AddHotkey(D, () => { var amount = new Vector3((float)Math.Round(EuelerGrowth()), 0); CDesktop.screen.transform.position += amount; cursor.transform.position += amount; }, false);
-            AddHotkey(Q, () => {  });
+            AddHotkey(C, () => { SpawnWindowBlueprint("PlayerEquipment"); });
+            AddHotkey(B, () => { SpawnWindowBlueprint("PlayerInventory"); });
         }),
         new("Game", () =>
         {
