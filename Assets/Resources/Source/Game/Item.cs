@@ -97,56 +97,31 @@ public class Item
     {
         if (type == "TwoHanded")
         {
-            var offhand = entity.GetSlot("OffHand");
-            if ((detailedType != "Bow" || detailedType != "Crossbow") && offhand != null && offhand.detailedType == "Quiver")
-                entity.Unequip(new() { "OffHand" });
-            else if (detailedType != "Gun" && offhand != null && offhand.detailedType == "Pouch")
-                entity.Unequip(new() { "OffHand" });
-            entity.Unequip(new() { "MainHand", "TwoHand" });
+            entity.Unequip(new() { "OffHand", "MainHand" });
             entity.equipment["TwoHand"] = name;
         }
         else if (type == "OffHand")
         {
-            entity.Unequip(new() { "OffHand", "TwoHand" });
+            var mainHand = entity.GetSlot("MainHand");
+            if (mainHand != null && mainHand.type == "TwoHanded")
+                entity.Unequip(new() { "MainHand" });
+            entity.Unequip(new() { "OffHand" });
             entity.equipment["OffHand"] = name;
         }
         else if (type == "OneHanded")
         {
             if (secondSlot)
             {
-                entity.Unequip(new() { "OffHand", "TwoHand" });
+                var mainHand = entity.GetSlot("MainHand");
+                if (mainHand != null && mainHand.type == "TwoHanded")
+                    entity.Unequip(new() { "MainHand" });
+                entity.Unequip(new() { "OffHand" });
                 entity.equipment["OffHand"] = name;
             }
             else
             {
-                entity.Unequip(new() { "MainHand", "TwoHand" });
+                entity.Unequip(new() { "MainHand" });
                 entity.equipment["MainHand"] = name;
-            }
-        }
-        else if (type == "Ring")
-        {
-            if (secondSlot)
-            {
-                entity.Unequip(new() { "OffRing" });
-                entity.equipment["OffRing"] = name;
-            }
-            else
-            {
-                entity.Unequip(new() { "MainRing" });
-                entity.equipment["MainRing"] = name;
-            }
-        }
-        else if (type == "Trinket")
-        {
-            if (secondSlot)
-            {
-                entity.Unequip(new() { "OffTrinket" });
-                entity.equipment["OffTrinket"] = name;
-            }
-            else
-            {
-                entity.Unequip(new() { "MainTrinket" });
-                entity.equipment["MainTrinket"] = name;
             }
         }
         else
@@ -264,7 +239,7 @@ public class Item
         new Item(55, 50, "Uncommon", 0.8750,
             "Ribbly's Quiver",
             "ItemQuiver6",
-            "OffHand",
+            "Special",
             "Quiver",
             new Stats(new()
             {

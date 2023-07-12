@@ -29,6 +29,7 @@ public static class Root
     public static Desktop CDesktop, LBDesktop;
     public static string markerCharacter = "_", currentInputLine = "";
 
+    public static SaveGame currentSave;
     public static List<SaveGame> saveGames;
     public static GameSettings settings;
 
@@ -81,7 +82,7 @@ public static class Root
         desktops.Add(newDesktop);
         newDesktop.screen = new GameObject("Camera", typeof(Camera)).GetComponent<Camera>();
         newDesktop.screen.transform.parent = newDesktop.transform;
-        if (title == "Map") newDesktop.screen.transform.localPosition = new Vector3(1781, -3768);
+        //if (title == "Map") newDesktop.transform.position = new Vector3(1781, -3768);
         newDesktop.screen.orthographicSize = 180;
         newDesktop.screen.nearClipPlane = -100;
         newDesktop.screen.farClipPlane = 1000;
