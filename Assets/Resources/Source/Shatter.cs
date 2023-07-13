@@ -10,14 +10,14 @@ public class Shatter : MonoBehaviour
     {
         this.time = time;
         render = GetComponent<SpriteRenderer>();
-        StartCoroutine(SelfDestruct(time));
+        if (render == null) StartCoroutine(SelfDestruct(time));
     }
 
     public void Update()
     {
         if (render != null)
         {
-            render.color = new Color(render.color.r, render.color.g, render.color.b, render.color.a - (0.2f * time));
+            render.color = new Color(render.color.r, render.color.g, render.color.b, render.color.a - (0.4f * time));
             if (render.color.a <= 0) Destroy(gameObject);
         }
     }

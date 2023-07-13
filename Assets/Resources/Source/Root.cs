@@ -55,33 +55,23 @@ public static class Root
     public static void SpawnShatter(Vector3 position, string sprite)
     {
         var shatter = new GameObject("Shatter", typeof(CircleCollider2D), typeof(Shatter));
-        shatter.GetComponent<Shatter>().Initiate(0.4f);
+        shatter.GetComponent<Shatter>().Initiate(3);
         shatter.transform.position = position;
         shatter.layer = 1;
         shatter.GetComponent<CircleCollider2D>().offset = new Vector2(17.5f, 17.5f);
         shatter.GetComponent<CircleCollider2D>().radius = 20;
         var foo = Resources.Load<Sprite>("Sprites/Building/BigButtons/" + sprite);
         int x = (int)foo.textureRect.width, y = (int)foo.textureRect.height;
-        bool skip = false;
         var dot = Resources.Load<GameObject>("Prefabs/Dot");
-        for (int i = 4; i < x - 4; i++)
-        {
-            skip ^= true;
-            for (int j = 4; j < y - 4; j++)
-            {
-                skip ^= true;
-                if (!skip && random.Next(0, 2) == 0)
-                {
-                    var color = foo.texture.GetPixel(i, j);
-                    SpawnDot(i, j, color);
-                }
-            }
-        }
+        for (int i = 6; i < x - 5; i++)
+            for (int j = 6; j < y - 5; j++)
+                if (random.Next(0, 7) == 0)
+                    SpawnDot(i, j, foo.texture.GetPixel(i, j));
 
         void SpawnDot(int c, int v, Color32 color)
         {
             var newObject = UnityEngine.Object.Instantiate(dot);
-            newObject.GetComponent<Shatter>().Initiate((float)random.NextDouble() / 3);
+            newObject.GetComponent<Shatter>().Initiate(random.Next(1, 8) / 50.0f);
             newObject.transform.parent = shatter.transform;
             newObject.transform.localPosition = new Vector3(c, v);
             newObject.GetComponent<SpriteRenderer>().color = color;
@@ -142,8 +132,10 @@ public static class Root
         cameraShadow.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Textures/CameraShadow");
         cameraBorder.GetComponent<SpriteRenderer>().sortingLayerName = "CameraBorder";
         cameraShadow.GetComponent<SpriteRenderer>().sortingLayerName = "CameraShadow";
-        newDesktop.screenlock = new GameObject("Screenlock", typeof(BoxCollider2D));
-        newDesktop.screenlock.GetComponent<BoxCollider2D>().offset = new Vector2(320, -180);
+        newDesktop.screenlock = new GameObject("Screenlock", typeof(BoxCollider2D), typeof(SpriteRenderer));
+        newDesktop.screenlock.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Textures/Screenlock");
+        newDesktop.screenlock.GetComponent<SpriteRenderer>().sortingLayerName = "DesktopBackground";
+        newDesktop.screenlock.GetComponent<SpriteRenderer>().sortingOrder = 1;
         newDesktop.screenlock.GetComponent<BoxCollider2D>().size = new Vector2(640, 360);
         newDesktop.screenlock.transform.parent = newObject.transform;
         newDesktop.UnlockScreen();
@@ -614,15 +606,6 @@ public static class Root
         Button,
         Header,
         Padding
-    }
-
-    public enum SoundEffects
-    {
-        None,
-        Coins,
-        PutDownSmallWood,
-        PutDownSmallMetal,
-        PickUpRocks,
     }
 
     public enum Anchor
