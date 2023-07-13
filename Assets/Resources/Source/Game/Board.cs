@@ -1,4 +1,4 @@
-using System.Linq;
+using UnityEngine;
 using System.Collections.Generic;
 
 using static Race;
@@ -59,13 +59,14 @@ public class Board
         for (int j = field.GetLength(1) - 1; j >= 0; j--)
             for (int i = field.GetLength(0) - 1; i >= 0; i--)
                 if (field[i, j] == 0) return;
-        if (player.health <= 0)
-        {
-            SwitchDesktop("TitleScreen");
-            CloseDesktop("Game");
-            CloseDesktop("Map");
-        }
-        else if (enemy.health <= 0)
+        //if (player.health <= 0)
+        //{
+        //    SwitchDesktop("TitleScreen");
+        //    CloseDesktop("Game");
+        //    CloseDesktop("Map");
+        //}
+        //else
+        if (enemy.health <= 0)
         {
             SwitchDesktop("Map");
             CloseDesktop("Game");
@@ -87,7 +88,7 @@ public class Board
     public int fieldGetCounterY = 0;
 
     public string GetFieldName(int x, int y) => boardNameDictionary[field[x, y]].ToString();
-    public Color GetFieldColor(int x, int y) => boardColorDictionary[field[x, y]];
+    public Root.Color GetFieldColor(int x, int y) => boardColorDictionary[field[x, y]];
 
     public string GetFieldButton()
     {
@@ -104,9 +105,13 @@ public class Board
     {
         window.PlaySound(collectSoundDictionary[list[0].Item3].ToString(), 0.3f);
         foreach (var a in list)
+        {
+            SpawnShatter(window.LBRegionGroup.regions[a.Item2].bigButtons[a.Item1].transform.position + new Vector3(-17.5f, -17.5f), boardButtonDictionary[a.Item3]);
             if (a == list[0] && list.Count >= 4 && a.Item3 > 10)
                 field[a.Item1, a.Item2] -= 10;
-            else field[a.Item1, a.Item2] = 0;
+            else
+                field[a.Item1, a.Item2] = 0;
+        }
         StartAnimationFill();
     }
 
@@ -173,7 +178,7 @@ public class Board
         { 30, "Soul of Shadow" },
     };
 
-    public static Dictionary<int, Color> boardColorDictionary = new()
+    public static Dictionary<int, Root.Color> boardColorDictionary = new()
     {
         { 00, Black },
         { 01, LightGray },

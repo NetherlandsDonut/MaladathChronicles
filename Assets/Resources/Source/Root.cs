@@ -7,6 +7,7 @@ using static Blueprint;
 
 using static Root.Color;
 using static Root.RegionBackgroundType;
+using UnityEngine.U2D;
 
 public static class Root
 {
@@ -49,6 +50,46 @@ public static class Root
 
     #endregion
 
+    #region Shatter
+
+    public static void SpawnShatter(Vector3 position, string sprite)
+    {
+        var shatter = new GameObject("Shatter", typeof(CircleCollider2D), typeof(Shatter));
+        shatter.GetComponent<Shatter>().Initiate(0.4f);
+        shatter.transform.position = position;
+        shatter.layer = 1;
+        shatter.GetComponent<CircleCollider2D>().offset = new Vector2(17.5f, 17.5f);
+        shatter.GetComponent<CircleCollider2D>().radius = 20;
+        var foo = Resources.Load<Sprite>("Sprites/Building/BigButtons/" + sprite);
+        int x = (int)foo.textureRect.width, y = (int)foo.textureRect.height;
+        bool skip = false;
+        var dot = Resources.Load<GameObject>("Prefabs/Dot");
+        for (int i = 4; i < x - 4; i++)
+        {
+            skip ^= true;
+            for (int j = 4; j < y - 4; j++)
+            {
+                skip ^= true;
+                if (!skip && random.Next(0, 2) == 0)
+                {
+                    var color = foo.texture.GetPixel(i, j);
+                    SpawnDot(i, j, color);
+                }
+            }
+        }
+
+        void SpawnDot(int c, int v, Color32 color)
+        {
+            var newObject = UnityEngine.Object.Instantiate(dot);
+            newObject.GetComponent<Shatter>().Initiate((float)random.NextDouble() / 3);
+            newObject.transform.parent = shatter.transform;
+            newObject.transform.localPosition = new Vector3(c, v);
+            newObject.GetComponent<SpriteRenderer>().color = color;
+        }
+    }
+
+    #endregion
+
     #region Desktop
 
     public static void SpawnDesktopBlueprint(string blueprintTitle, bool autoSwitch = true)
@@ -80,7 +121,7 @@ public static class Root
         LBDesktop = newDesktop;
         newDesktop.Initialise(title);
         desktops.Add(newDesktop);
-        newDesktop.screen = new GameObject("Camera", typeof(Camera)).GetComponent<Camera>();
+        newDesktop.screen = new GameObject("Camera", typeof(Camera)/*, typeof(PixelPerfectCamera)*/).GetComponent<Camera>();
         newDesktop.screen.transform.parent = newDesktop.transform;
         //if (title == "Map") newDesktop.transform.position = new Vector3(1781, -3768);
         newDesktop.screen.orthographicSize = 180;
@@ -89,6 +130,11 @@ public static class Root
         newDesktop.screen.clearFlags = CameraClearFlags.SolidColor;
         newDesktop.screen.backgroundColor = UnityEngine.Color.black;
         newDesktop.screen.orthographic = true;
+        //var ppc = newDesktop.screen.GetComponent<PixelPerfectCamera>();
+        //ppc.assetsPPU = 1;
+        //ppc.refResolutionX = 640;
+        //ppc.refResolutionY = 360;
+        //ppc.pixelSnapping = true;
         var cameraBorder = new GameObject("CameraBorder", typeof(SpriteRenderer));
         var cameraShadow = new GameObject("CameraShadow", typeof(SpriteRenderer));
         cameraShadow.transform.parent = cameraBorder.transform.parent = newDesktop.screen.transform;
