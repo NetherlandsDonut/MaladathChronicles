@@ -4,12 +4,12 @@ using System.Collections.Generic;
 using static Race;
 using static Root;
 using static Root.Color;
-using static Root.SoundEffects;
 
 public class Board
 {
     public Board(int x, int y, string enemy)
     {
+        bonusTurnStreak = 0;
         field = new int[x, y];
         player = currentSave.player;
         this.enemy = new Entity(races.Find(x => x.name == enemy));
@@ -18,10 +18,11 @@ public class Board
 
     public static Board board;
 
+    public int bonusTurnStreak;
     public int[,] field;
     public Window window;
     public Entity player, enemy;
-    public bool playerTurn;
+    public bool playerTurn, breakForEnemy;
 
     public void Reset()
     {
@@ -35,27 +36,24 @@ public class Board
     public int animFrame;
     public void StartAnimationFill()
     {
-        animFrame = 0;
         CDesktop.LockScreen();
     }
 
     public void AnimateFill()
     {
-        if (animFrame > 0)
-            for (int j = field.GetLength(1) - 1; j > 0; j--)
-                for (int i = field.GetLength(0) - 1; i >= 0; i--)
-                    if (field[i, j] == 0 && field[i, j - 1] != 0)
-                    {
-                        (field[i, j], field[i, j - 1]) = (field[i, j - 1], 0);
-                        for (int k = 0; k < field.GetLength(0); k++)
-                            if (field[k, j] == 0) break;
-                            else if (k == field.GetLength(0) - 1)
-                                CDesktop.FocusedWindow().PlaySound("PutDownSmallWood", 0.04f);
-                    }
+        for (int j = field.GetLength(1) - 1; j > 0; j--)
+            for (int i = field.GetLength(0) - 1; i >= 0; i--)
+                if (field[i, j] == 0 && field[i, j - 1] != 0)
+                {
+                    (field[i, j], field[i, j - 1]) = (field[i, j - 1], 0);
+                    for (int k = 0; k < field.GetLength(0); k++)
+                        if (field[k, j] == 0) break;
+                        else if (k == field.GetLength(0) - 1)
+                            CDesktop.FocusedWindow().PlaySound("PutDownSmallWood", 0.04f);
+                }
         for (int i = 0; i < field.GetLength(0); i++)
             if (field[i, 0] == 0)
                 field[i, 0] = random.Next(11, 21);
-        animFrame++;
         for (int j = field.GetLength(1) - 1; j >= 0; j--)
             for (int i = field.GetLength(0) - 1; i >= 0; i--)
                 if (field[i, j] == 0) return;
@@ -65,23 +63,32 @@ public class Board
         //    CloseDesktop("Game");
         //    CloseDesktop("Map");
         //}
-        //else
-        if (enemy.health <= 0)
+        //else if (enemy.health <= 0)
+        //{
+        //    SwitchDesktop("Map");
+        //    CloseDesktop("Game");
+        //}
+        if (playerTurn) CDesktop.UnlockScreen();
+        else if (breakForEnemy)
         {
-            SwitchDesktop("Map");
-            CloseDesktop("Game");
-        }
-        else if (playerTurn)
-            CDesktop.UnlockScreen();
-        else
-        {
-            //animationTime = 3f;
+            breakForEnemy = false;
             var list = board.FloodCount(random.Next(0, 8), random.Next(0, 8));
             player.health -= list.Count;
             board.FloodDestroy(list);
             if (list.Count < 4)
-                playerTurn = true;
+                SwitchTurn();
         }
+        else
+        {
+            animationTime = (float)(random.Next(4, 8) / 10.0) + 0.3f;
+            breakForEnemy = true;
+        }
+    }
+
+    public void SwitchTurn()
+    {
+        bonusTurnStreak = 0;
+        playerTurn ^= true;
     }
 
     public int fieldGetCounterX = 0;
@@ -104,6 +111,11 @@ public class Board
     public void FloodDestroy(List<(int, int, int)> list)
     {
         window.PlaySound(collectSoundDictionary[list[0].Item3].ToString(), 0.3f);
+        if (list.Count > 3)
+        {
+            bonusTurnStreak++;
+            window.PlaySound("BonusMove" + bonusTurnStreak, 0.4f);
+        }
         foreach (var a in list)
         {
             SpawnShatter(window.LBRegionGroup.regions[a.Item2].bigButtons[a.Item1].transform.position + new Vector3(-17.5f, -17.5f), boardButtonDictionary[a.Item3]);
@@ -248,38 +260,38 @@ public class Board
         { 30, "ElementShadowSoul" },
     };
 
-    public static Dictionary<int, SoundEffects> collectSoundDictionary = new()
+    public static Dictionary<int, string> collectSoundDictionary = new()
     {
-        { 00, None },
-        { 01, PickUpRocks },
-        { 02, PickUpRocks },
-        { 03, PickUpRocks },
-        { 04, PickUpRocks },
-        { 05, PickUpRocks },
-        { 06, PickUpRocks },
-        { 07, PickUpRocks },
-        { 08, PickUpRocks },
-        { 09, PickUpRocks },
-        { 10, PickUpRocks },
-        { 11, PickUpRocks },
-        { 12, PickUpRocks },
-        { 13, PickUpRocks },
-        { 14, PickUpRocks },
-        { 15, PickUpRocks },
-        { 16, PickUpRocks },
-        { 17, PickUpRocks },
-        { 18, PickUpRocks },
-        { 19, PickUpRocks },
-        { 20, PickUpRocks },
-        { 21, PickUpRocks },
-        { 22, PickUpRocks },
-        { 23, PickUpRocks },
-        { 24, PickUpRocks },
-        { 25, PickUpRocks },
-        { 26, PickUpRocks },
-        { 27, PickUpRocks },
-        { 28, PickUpRocks },
-        { 29, PickUpRocks },
-        { 30, PickUpRocks },
+        { 00, "" },
+        { 01, "ElementEarth" },
+        { 02, "ElementFire" },
+        { 03, "ElementWater" },
+        { 04, "ElementAir" },
+        { 05, "ElementLightning" },
+        { 06, "ElementFrost" },
+        { 07, "ElementDecay" },
+        { 08, "ElementArcane" },
+        { 09, "ElementOrder" },
+        { 10, "ElementShadow" },
+        { 11, "ElementEarth" },
+        { 12, "ElementFire" },
+        { 13, "ElementWater" },
+        { 14, "ElementAir" },
+        { 15, "ElementLightning" },
+        { 16, "ElementFrost" },
+        { 17, "ElementDecay" },
+        { 18, "ElementArcane" },
+        { 19, "ElementOrder" },
+        { 20, "ElementShadow" },
+        { 21, "ElementEarth" },
+        { 22, "ElementFire" },
+        { 23, "ElementWater" },
+        { 24, "ElementAir" },
+        { 25, "ElementLightning" },
+        { 26, "ElementFrost" },
+        { 27, "ElementDecay" },
+        { 28, "ElementArcane" },
+        { 29, "ElementOrder" },
+        { 30, "ElementShadow" },
     };
 }

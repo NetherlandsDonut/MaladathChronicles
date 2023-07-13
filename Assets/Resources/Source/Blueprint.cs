@@ -646,7 +646,7 @@ public class Blueprint
             );
         }),
         new("BattleBoard", () => {
-            SetAnchor(Top/*, 0, -39*/);
+            SetAnchor(Top, 0, -19);
             AddRegionGroup();
             for (int i = 0; i < Board.board.field.GetLength(0); i++)
             {
@@ -660,8 +660,8 @@ public class Blueprint
                             var list = Board.board.FloodCount(h.region.bigButtons.FindIndex(x => x.GetComponent<Highlightable>() == h), h.region.regionGroup.regions.IndexOf(h.region));
                             Board.board.enemy.health -= list.Count;
                             Board.board.FloodDestroy(list);
-                            if (list.Count < 4)
-                                Board.board.playerTurn = false;
+                            if (list.Count < 1)
+                                Board.board.SwitchTurn();
                         },
                         (h) => () =>
                         {
