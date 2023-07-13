@@ -344,6 +344,7 @@ public class Blueprint
             foreach (var ability in Board.board.player.abilities)
             {
                 var abilityObj = Ability.abilities.Find(x => x.name == ability);
+                if (abilityObj == null || abilityObj.cost == null) continue;
                 AddButtonRegion(
                     () =>
                     {
@@ -398,6 +399,7 @@ public class Blueprint
             foreach (var ability in Board.board.enemy.abilities)
             {
                 var abilityObj = Ability.abilities.Find(x => x.name == ability);
+                if (abilityObj == null || abilityObj.cost == null) continue;
                 AddButtonRegion(
                     () =>
                     {
@@ -665,7 +667,7 @@ public class Blueprint
                         {
                             var coords = (h.region.bigButtons.FindIndex(x => x.GetComponent<Highlightable>() == h), h.region.regionGroup.regions.IndexOf(h.region));
                             var count = Board.board.FloodCount(coords.Item1, coords.Item2).Count;
-                            SetAnchor(TopRight);
+                            SetAnchor(BottomRight);
                             AddRegionGroup();
                             AddHeaderRegion(
                                 () =>
@@ -2184,7 +2186,8 @@ public class Blueprint
             });
         }),
         new("ZulFarrak", () => {
-            SetAnchor(1781, -3768);
+            //SetAnchor(1781, -3768);
+            SetAnchor(0, -0);
             AddRegionGroup();
             AddPaddingRegion(() =>
             {
@@ -2605,6 +2608,15 @@ public class Blueprint
                 });
             });
         }),
+        new("CharacterStats", () => {
+            SetAnchor(BottomLeft);
+            AddRegionGroup();
+            AddHeaderRegion(() =>
+            {
+                foreach (var foo in currentSave.player.stats.stats)
+                    AddLine(foo.Key + ": " + foo.Value, Gray);
+            });
+        }),
     };
 
     public static List<Blueprint> desktopBlueprints = new()
@@ -2684,6 +2696,7 @@ public class Blueprint
             SpawnWindowBlueprint("CharacterMainHandSlot");
             SpawnWindowBlueprint("CharacterOffHandSlot");
             SpawnWindowBlueprint("CharacterTrinketSlot");
+            SpawnWindowBlueprint("CharacterStats");
             //SpawnWindowBlueprint("PlayerBattleInfo");
             //SpawnWindowBlueprint("EnemyBattleInfo");
             //SpawnWindowBlueprint("BattleActionBar");
