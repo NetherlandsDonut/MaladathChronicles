@@ -22,7 +22,7 @@ public class Board
     public int[,] field;
     public Window window;
     public Entity player, enemy;
-    public bool playerTurn, breakForEnemy;
+    public bool playerTurn, breakForEnemy, breakForCascade, enemyFinishedMoving;
 
     public void Reset()
     {
@@ -57,38 +57,54 @@ public class Board
         for (int j = field.GetLength(1) - 1; j >= 0; j--)
             for (int i = field.GetLength(0) - 1; i >= 0; i--)
                 if (field[i, j] == 0) return;
-        //if (player.health <= 0)
-        //{
-        //    SwitchDesktop("TitleScreen");
-        //    CloseDesktop("Game");
-        //    CloseDesktop("Map");
-        //}
-        //else if (enemy.health <= 0)
-        //{
-        //    SwitchDesktop("Map");
-        //    CloseDesktop("Game");
-        //}
-        if (playerTurn) CDesktop.UnlockScreen();
+        for (int j = field.GetLength(1) - 1; j >= 0; j--)
+            for (int i = field.GetLength(0) - 1; i >= 0; i--)
+            {
+                var list = FloodCount(i, j);
+                if (list.Count >= 3)
+                {
+                    if (!breakForCascade)
+                    {
+                        FloodDestroy(list);
+                        breakForCascade = true;
+                    }
+                    else
+                    {
+                        breakForCascade = false;
+                        animationTime += frameTime;
+                    }
+                    return;
+                }
+            }
+        if (enemyFinishedMoving)
+        {
+            playerTurn = true;
+            enemyFinishedMoving = false;
+        }
+        if (playerTurn)
+            if (bonusTurnStreak != 0)
+            {
+                bonusTurnStreak = 0;
+                CDesktop.UnlockScreen();
+            }
+            else playerTurn = false;
         else if (breakForEnemy)
         {
             breakForEnemy = false;
+            bonusTurnStreak = 0;
             var list = board.FloodCount(random.Next(0, 8), random.Next(0, 8));
-            player.health -= list.Count;
             board.FloodDestroy(list);
-            if (list.Count < 4)
-                SwitchTurn();
+            if (bonusTurnStreak == 0)
+            {
+                bonusTurnStreak = -1;
+                enemyFinishedMoving = true;
+            }
         }
         else
         {
             animationTime = (float)(random.Next(4, 8) / 10.0) + 0.3f;
             breakForEnemy = true;
         }
-    }
-
-    public void SwitchTurn()
-    {
-        bonusTurnStreak = 0;
-        playerTurn ^= true;
     }
 
     public int fieldGetCounterX = 0;
@@ -108,30 +124,45 @@ public class Board
         return r;
     }
 
+    public void SelectDestroy(int x, int y)
+    {
+        window.PlaySound(collectSoundDictionary[field[x, y]].ToString(), 0.3f);
+        SpawnShatter(window.LBRegionGroup.regions[y].bigButtons[x].transform.position + new Vector3(-17.5f, -17.5f), boardButtonDictionary[field[x, y]]);
+        field[x, y] = 0;
+        StartAnimationFill();
+    }
+
     public void FloodDestroy(List<(int, int, int)> list)
     {
         window.PlaySound(collectSoundDictionary[list[0].Item3].ToString(), 0.3f);
         if (list.Count > 3)
         {
             bonusTurnStreak++;
-            window.PlaySound("BonusMove" + bonusTurnStreak, 0.4f);
+            window.PlaySound("BonusMove" + (bonusTurnStreak > 4 ? 4 : bonusTurnStreak), 0.4f);
         }
+        //var rand = random.Next(0, list.Count);
         foreach (var a in list)
         {
             SpawnShatter(window.LBRegionGroup.regions[a.Item2].bigButtons[a.Item1].transform.position + new Vector3(-17.5f, -17.5f), boardButtonDictionary[a.Item3]);
-            if (a == list[0] && list.Count >= 4 && a.Item3 > 10)
-                field[a.Item1, a.Item2] -= 10;
-            else
-                field[a.Item1, a.Item2] = 0;
-        }
-        StartAnimationFill();
-    }
+            //if (a == list[rand] && list.Count >= 4)
+            //    field[a.Item1, a.Item2] -= list.Exists(x => x.Item3 < 11) ? -10 : 10;
+            //else if (a.Item3 > 20)
+            //{
+            //    field[a.Item1 - 1, a.Item2] = a.Item3 % 20 + field[a.Item1 - 1, a.Item2] - field[a.Item1 - 1, a.Item2] % 10;
+            //    field[a.Item1 + 1, a.Item2] = a.Item3 % 20 + field[a.Item1 - 1, a.Item2] - field[a.Item1 - 1, a.Item2] % 10;
+            //    field[a.Item1, a.Item2 - 1] = a.Item3 % 20 + field[a.Item1 - 1, a.Item2] - field[a.Item1 - 1, a.Item2] % 10;
+            //    field[a.Item1, a.Item2 + 1] = a.Item3 % 20 + field[a.Item1 - 1, a.Item2] - field[a.Item1 - 1, a.Item2] % 10;
+            //    field[a.Item1 + 1, a.Item2 + 1] = a.Item3 % 20 + field[a.Item1 - 1, a.Item2] - field[a.Item1 - 1, a.Item2] % 10;
+            //    field[a.Item1 + 1, a.Item2 - 1] = a.Item3 % 20 + field[a.Item1 - 1, a.Item2] - field[a.Item1 - 1, a.Item2] % 10;
+            //    field[a.Item1 - 1, a.Item2 - 1] = a.Item3 % 20 + field[a.Item1 - 1, a.Item2] - field[a.Item1 - 1, a.Item2] % 10;
+            //    field[a.Item1 - 1, a.Item2 + 1] = a.Item3 % 20 + field[a.Item1 - 1, a.Item2 + 1] - field[a.Item1 - 1, a.Item2 + 1] % 10;
+            //    Foo(a.Item1 - 1, a.Item2 + 1);
 
-    public void FloodDestroy(int x, int y)
-    {
-        window.PlaySound(collectSoundDictionary[field[x, y]].ToString(), 0.3f);
-        foreach (var a in FloodCount(x, y))
+            //    void Foo(int q, int w) => field[q, w] = a.Item3 % 20 + field[q, w] - field[q, w] % 10;
+            //}
+            //else
             field[a.Item1, a.Item2] = 0;
+        }
         StartAnimationFill();
     }
 
@@ -146,7 +177,7 @@ public class Board
         {
             if (visited.Contains((i, j))) return;
             visited.Add((i, j));
-            if (field[i, j] != field[x, y] || positives.Contains((i, j, field[i, j]))) return;
+            if (field[x, y] > 20 && (x != i || y != j) || field[i, j] > 20 || field[i, j] != field[x, y] && field[i, j] != field[x, y] - 10 && field[i, j] - 10 != field[x, y] || positives.Contains((i, j, field[i, j]))) return;
             positives.Add((i, j, field[i, j]));
             if (i > 0) Flood(i - 1, j);
             if (j > 0) Flood(i, j - 1);

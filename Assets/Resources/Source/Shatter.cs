@@ -3,13 +3,14 @@ using System.Collections;
 
 public class Shatter : MonoBehaviour
 {
+    public bool turn;
     public float time;
     public SpriteRenderer render;
 
     public void Initiate(float time)
     {
         this.time = time;
-        render = GetComponent<SpriteRenderer>();
+        turn = Board.board.playerTurn;
         if (render == null) StartCoroutine(SelfDestruct(time));
     }
 
@@ -17,7 +18,8 @@ public class Shatter : MonoBehaviour
     {
         if (render != null)
         {
-            render.color = new Color(render.color.r, render.color.g, render.color.b, render.color.a - (0.4f * time));
+            //transform.position = Vector3.Lerp(transform.position, turn ? new Vector3(-300, 141) : new Vector3(188, 141), Time.deltaTime * 2);
+            render.color = new Color(render.color.r, render.color.g, render.color.b, render.color.a - (0.3f * time));
             if (render.color.a <= 0) Destroy(gameObject);
         }
     }

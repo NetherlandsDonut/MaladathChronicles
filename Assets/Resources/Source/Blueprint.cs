@@ -658,10 +658,7 @@ public class Blueprint
                         (h) =>
                         {
                             var list = Board.board.FloodCount(h.region.bigButtons.FindIndex(x => x.GetComponent<Highlightable>() == h), h.region.regionGroup.regions.IndexOf(h.region));
-                            Board.board.enemy.health -= list.Count;
                             Board.board.FloodDestroy(list);
-                            if (list.Count < 1)
-                                Board.board.SwitchTurn();
                         },
                         (h) => () =>
                         {
