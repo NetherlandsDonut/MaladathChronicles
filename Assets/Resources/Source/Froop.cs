@@ -3,20 +3,20 @@ using UnityEngine;
 public class Froop : MonoBehaviour
 {
     public bool turn;
-    public int space;
     public SpriteRenderer render;
 
     public void Initiate()
     {
         turn = Board.board.playerTurn;
-        space = turn ? Board.board.player.inventorySpace++ : Board.board.enemy.inventorySpace++;
+        if (turn) Board.board.temporaryElementsPlayer.Add(gameObject);
+        else Board.board.temporaryElementsEnemy.Add(gameObject);
     }
 
     public void Update()
     {
         if (render != null)
-        {
-            transform.position = Vector3.Lerp(transform.position, turn ? new Vector3(-305.5f + 23 * (space % 6), 108.5f - 23 * (space / 6)) : new Vector3(305.5f - 23 * (space % 6), 108.5f - 23 * (space / 6)), Time.deltaTime * 4);
-        }
+            transform.position = Vector3.Lerp(transform.position, turn ? new Vector3(-214.5f + 23 * (Index() / 4), -162.5f + 23 * (Index() % 4)) : new Vector3(214.5f - 23 * (Index() / 4), -162.5f + 23 * (Index() % 4)), Time.deltaTime * 4);
     }
+
+    public int Index() => turn ? Board.board.temporaryElementsPlayer.IndexOf(gameObject) : Board.board.temporaryElementsEnemy.IndexOf(gameObject);
 }

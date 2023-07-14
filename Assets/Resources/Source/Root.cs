@@ -24,7 +24,7 @@ public static class Root
     public static int titleScreenCameraDirection;
     public static float heldKeyTime;
     public static float animationTime;
-    public static float frameTime = 0.06f;
+    public static float frameTime = 0.07f;
     public static List<Desktop> desktops;
     public static Desktop CDesktop, LBDesktop;
     public static string markerCharacter = "_", currentInputLine = "";
@@ -53,7 +53,7 @@ public static class Root
 
     public static void SpawnShatter(Vector3 position, string sprite)
     {
-        var mana = UnityEngine.Object.Instantiate(Resources.Load<GameObject>("Prefabs/Mana"));
+        var mana = UnityEngine.Object.Instantiate(Resources.Load<GameObject>("Prefabs/Button"));
         mana.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/Buttons/" + sprite);
         mana.transform.position = position;
         mana.GetComponent<Froop>().Initiate();

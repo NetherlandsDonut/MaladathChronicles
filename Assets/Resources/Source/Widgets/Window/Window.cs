@@ -68,7 +68,7 @@ public class Window : MonoBehaviour
             {
                 case Bottom: return new Vector2(screenX / 2 - xOffset / 2 - 1, 2 - screenY + PlannedHeight());
                 case BottomRight: return new Vector2(screenX - 2 - xOffset, 2 - screenY + PlannedHeight());
-                case BottomLeft: return new Vector2(0, 4 - screenY + PlannedHeight());
+                case BottomLeft: return new Vector2(0, 2 - screenY + PlannedHeight());
                 case Top: return new Vector2(screenX / 2 - xOffset / 2 - 1, 0);
                 case TopRight: return new Vector2(screenX - 2 - xOffset, 0);
                 case TopLeft: return new Vector2(0, 0);

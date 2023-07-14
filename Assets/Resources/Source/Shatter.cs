@@ -18,7 +18,6 @@ public class Shatter : MonoBehaviour
     {
         if (render != null)
         {
-            //transform.position = Vector3.Lerp(transform.position, turn ? new Vector3(-300, 141) : new Vector3(188, 141), Time.deltaTime * 2);
             render.color = new Color(render.color.r, render.color.g, render.color.b, render.color.a - (0.3f * time));
             if (render.color.a <= 0) Destroy(gameObject);
         }

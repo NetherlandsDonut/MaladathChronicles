@@ -75,7 +75,7 @@ public class Entity
         return stats.stats["Stamina"] * 20;
     }
 
-    public int health, level, inventorySpace;
+    public int health, level;
     public string name, race;
     public Dictionary<string, int> resources;
     public List<string> abilities;
