@@ -7,7 +7,6 @@ using static Blueprint;
 
 using static Root.Color;
 using static Root.RegionBackgroundType;
-using UnityEngine.U2D;
 
 public static class Root
 {
@@ -25,7 +24,7 @@ public static class Root
     public static int titleScreenCameraDirection;
     public static float heldKeyTime;
     public static float animationTime;
-    public static float frameTime = 0.07f;
+    public static float frameTime = 0.06f;
     public static List<Desktop> desktops;
     public static Desktop CDesktop, LBDesktop;
     public static string markerCharacter = "_", currentInputLine = "";
@@ -54,18 +53,20 @@ public static class Root
 
     public static void SpawnShatter(Vector3 position, string sprite)
     {
-        var shatter = new GameObject("Shatter", typeof(CircleCollider2D), typeof(Shatter));
+        var mana = UnityEngine.Object.Instantiate(Resources.Load<GameObject>("Prefabs/Mana"));
+        mana.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/Buttons/" + sprite);
+        mana.transform.position = position;
+        mana.GetComponent<Froop>().Initiate();
+        var shatter = new GameObject("Shatter", typeof(Shatter));
         shatter.GetComponent<Shatter>().Initiate(3);
         shatter.transform.position = position;
         shatter.layer = 1;
-        shatter.GetComponent<CircleCollider2D>().offset = new Vector2(17.5f, 17.5f);
-        shatter.GetComponent<CircleCollider2D>().radius = 20;
         var foo = Resources.Load<Sprite>("Sprites/Building/BigButtons/" + sprite);
         int x = (int)foo.textureRect.width, y = (int)foo.textureRect.height;
         var dot = Resources.Load<GameObject>("Prefabs/Dot");
         for (int i = 6; i < x - 5; i++)
             for (int j = 6; j < y - 5; j++)
-                if (random.Next(0, 7) == 0)
+                if (random.Next(0, 5) == 0)
                     SpawnDot(i, j, foo.texture.GetPixel(i, j));
 
         void SpawnDot(int c, int v, Color32 color)
@@ -75,6 +76,7 @@ public static class Root
             newObject.transform.parent = shatter.transform;
             newObject.transform.localPosition = new Vector3(c, v);
             newObject.GetComponent<SpriteRenderer>().color = color;
+            newObject.GetComponent<Rigidbody2D>().AddRelativeForce(UnityEngine.Random.insideUnitCircle * 100);
         }
     }
 
