@@ -14,6 +14,8 @@ public class Board
         player = currentSave.player;
         this.enemy = new Entity(races.Find(x => x.name == enemy));
         playerTurn = true;
+        temporaryElementsPlayer = new();
+        temporaryElementsEnemy = new();
     }
 
     public static Board board;
@@ -23,6 +25,7 @@ public class Board
     public Window window;
     public Entity player, enemy;
     public bool playerTurn, breakForEnemy, breakForCascade, enemyFinishedMoving;
+    public List<GameObject> temporaryElementsPlayer, temporaryElementsEnemy;
 
     public void Reset()
     {
@@ -80,6 +83,8 @@ public class Board
         {
             playerTurn = true;
             enemyFinishedMoving = false;
+            temporaryElementsPlayer.ForEach(x => Object.Destroy(x));
+            temporaryElementsPlayer = new();
         }
         if (playerTurn)
             if (bonusTurnStreak != 0)
@@ -87,12 +92,17 @@ public class Board
                 bonusTurnStreak = 0;
                 CDesktop.UnlockScreen();
             }
-            else playerTurn = false;
+            else
+            {
+                playerTurn = false;
+                temporaryElementsEnemy.ForEach(x => Object.Destroy(x));
+                temporaryElementsEnemy = new();
+            }
         else if (breakForEnemy)
         {
             breakForEnemy = false;
             bonusTurnStreak = 0;
-            var list = board.FloodCount(random.Next(0, 8), random.Next(0, 8));
+            var list = board.FloodCount(random.Next(0, field.GetLength(0)), random.Next(0, field.GetLength(1)));
             board.FloodDestroy(list);
             if (bonusTurnStreak == 0)
             {
@@ -140,27 +150,25 @@ public class Board
             bonusTurnStreak++;
             window.PlaySound("BonusMove" + (bonusTurnStreak > 4 ? 4 : bonusTurnStreak), 0.4f);
         }
-        //var rand = random.Next(0, list.Count);
         foreach (var a in list)
         {
             SpawnShatter(window.LBRegionGroup.regions[a.Item2].bigButtons[a.Item1].transform.position + new Vector3(-17.5f, -17.5f), boardButtonDictionary[a.Item3]);
-            //if (a == list[rand] && list.Count >= 4)
-            //    field[a.Item1, a.Item2] -= list.Exists(x => x.Item3 < 11) ? -10 : 10;
-            //else if (a.Item3 > 20)
-            //{
-            //    field[a.Item1 - 1, a.Item2] = a.Item3 % 20 + field[a.Item1 - 1, a.Item2] - field[a.Item1 - 1, a.Item2] % 10;
-            //    field[a.Item1 + 1, a.Item2] = a.Item3 % 20 + field[a.Item1 - 1, a.Item2] - field[a.Item1 - 1, a.Item2] % 10;
-            //    field[a.Item1, a.Item2 - 1] = a.Item3 % 20 + field[a.Item1 - 1, a.Item2] - field[a.Item1 - 1, a.Item2] % 10;
-            //    field[a.Item1, a.Item2 + 1] = a.Item3 % 20 + field[a.Item1 - 1, a.Item2] - field[a.Item1 - 1, a.Item2] % 10;
-            //    field[a.Item1 + 1, a.Item2 + 1] = a.Item3 % 20 + field[a.Item1 - 1, a.Item2] - field[a.Item1 - 1, a.Item2] % 10;
-            //    field[a.Item1 + 1, a.Item2 - 1] = a.Item3 % 20 + field[a.Item1 - 1, a.Item2] - field[a.Item1 - 1, a.Item2] % 10;
-            //    field[a.Item1 - 1, a.Item2 - 1] = a.Item3 % 20 + field[a.Item1 - 1, a.Item2] - field[a.Item1 - 1, a.Item2] % 10;
-            //    field[a.Item1 - 1, a.Item2 + 1] = a.Item3 % 20 + field[a.Item1 - 1, a.Item2 + 1] - field[a.Item1 - 1, a.Item2 + 1] % 10;
-            //    Foo(a.Item1 - 1, a.Item2 + 1);
-
-            //    void Foo(int q, int w) => field[q, w] = a.Item3 % 20 + field[q, w] - field[q, w] % 10;
-            //}
-            //else
+            var element = "";
+            switch (a.Item3 % 10)
+            {
+                case 1: element = "Earth"; break;
+                case 2: element = "Fire"; break;
+                case 3: element = "Water"; break;
+                case 4: element = "Air"; break;
+                case 5: element = "Lightning"; break;
+                case 6: element = "Frost"; break;
+                case 7: element = "Decay"; break;
+                case 8: element = "Arcane"; break;
+                case 9: element = "Order"; break;
+                case 0: element = "Shadow"; break;
+            }
+            if (playerTurn) player.resources[element]++;
+            else enemy.resources[element]++;
             field[a.Item1, a.Item2] = 0;
         }
         StartAnimationFill();
@@ -177,7 +185,7 @@ public class Board
         {
             if (visited.Contains((i, j))) return;
             visited.Add((i, j));
-            if (field[x, y] > 20 && (x != i || y != j) || field[i, j] > 20 || field[i, j] != field[x, y] && field[i, j] != field[x, y] - 10 && field[i, j] - 10 != field[x, y] || positives.Contains((i, j, field[i, j]))) return;
+            if (field[i, j] != field[x, y] && field[i, j] != field[x, y] - 10 && field[i, j] - 10 != field[x, y] || positives.Contains((i, j, field[i, j]))) return;
             positives.Add((i, j, field[i, j]));
             if (i > 0) Flood(i - 1, j);
             if (j > 0) Flood(i, j - 1);

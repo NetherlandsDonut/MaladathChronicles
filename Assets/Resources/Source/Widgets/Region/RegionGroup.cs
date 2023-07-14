@@ -1,9 +1,6 @@
-using System;
 using System.Linq;
 using UnityEngine;
 using System.Collections.Generic;
-
-using static Root.RegionBackgroundType;
 
 public class RegionGroup : MonoBehaviour
 {
@@ -47,7 +44,8 @@ public class RegionGroup : MonoBehaviour
     public int AutoWidth()
     {
         var regionMax = regions.Max(x => x.AutoWidth());
-        return setWidth > regionMax ? setWidth : regionMax;
+        //return setWidth > regionMax ? setWidth : regionMax;
+        return setWidth != 0 ? setWidth : regionMax;
     }
 
     public void ResetContent()

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using UnityEngine;
 using System.Collections.Generic;
 
@@ -9,6 +10,7 @@ using static Root.Anchor;
 using static Root.RegionBackgroundType;
 
 using static UnityEngine.KeyCode;
+using UnityEngine.U2D;
 
 public class Blueprint
 {
@@ -559,94 +561,18 @@ public class Blueprint
                 }
             );
         }),
-        new("JourneyInfoOld", () => {
-            SetAnchor(TopRight);
+        new("LocationInfo", () => {
+            SetAnchor(Top);
             AddRegionGroup();
-            SetRegionGroupWidth(138);
-            AddButtonRegion(
+            AddHeaderRegion(
                 () =>
                 {
-                    AddLine("Nefarian", Black);
-                },
-                (h) =>
-                {
-
-                }
-            );
-            AddHeaderRegion(() =>
-            {
-                AddBigButton("PortraitNefarian", (h) => { });
-                AddLine("Level 60", Gray);
-            });
-            AddButtonRegion(
-                () =>
-                {
-                    AddLine("?", Black);
-                    AddSmallButton("OtherUnknown", (h) => { });
-                },
-                (h) =>
-                {
-
-                }
-            );
-            AddButtonRegion(
-                () =>
-                {
-                    AddLine("?", Black);
-                    AddSmallButton("OtherUnknown", (h) => { });
-                },
-                (h) =>
-                {
-
-                }
-            );
-            AddButtonRegion(
-                () =>
-                {
-                    AddLine("?", Black);
-                    AddSmallButton("OtherUnknown", (h) => { });
-                },
-                (h) =>
-                {
-
-                }
-            );
-            AddButtonRegion(
-                () =>
-                {
-                    AddLine("?", Black);
-                    AddSmallButton("OtherUnknown", (h) => { });
-                },
-                (h) =>
-                {
-
-                }
-            );
-            AddButtonRegion(
-                () =>
-                {
-                    AddLine("?", Black);
-                    AddSmallButton("OtherUnknown", (h) => { });
-                },
-                (h) =>
-                {
-
-                }
-            );
-            AddButtonRegion(
-                () =>
-                {
-                    AddLine("?", Black);
-                    AddSmallButton("OtherUnknown", (h) => { });
-                },
-                (h) =>
-                {
-
+                    AddLine("Blackwing Lair", Gray);
                 }
             );
         }),
         new("BattleBoard", () => {
-            SetAnchor(Top, 0, -19);
+            SetAnchor(Top, 0, -29);
             AddRegionGroup();
             for (int i = 0; i < Board.board.field.GetLength(0); i++)
             {
@@ -664,7 +590,7 @@ public class Blueprint
                         {
                             var coords = (h.region.bigButtons.FindIndex(x => x.GetComponent<Highlightable>() == h), h.region.regionGroup.regions.IndexOf(h.region));
                             var count = Board.board.FloodCount(coords.Item1, coords.Item2).Count;
-                            SetAnchor(BottomRight);
+                            SetAnchor(Bottom);
                             AddRegionGroup();
                             AddHeaderRegion(
                                 () =>
@@ -2191,7 +2117,7 @@ public class Blueprint
                 AddSmallButton("SiteDungeon",
                 (h) =>
                 {
-                    Board.board = new Board(8, 8, "Nefarian");
+                    Board.board = new Board(6, 6, "Nefarian");
                     SpawnDesktopBlueprint("Game");
                     SwitchDesktop("Game");
                 },
@@ -2614,6 +2540,58 @@ public class Blueprint
                     AddLine(foo.Key + ": " + foo.Value, Gray);
             });
         }),
+        new("PlayerResources", () => {
+            SetAnchor(BottomLeft);
+            AddRegionGroup();
+            var elements1 = new List<string> { "Fire", "Water", "Earth", "Air", "Frost" };
+            var elements2 = new List<string> { "Lightning", "Arcane", "Decay", "Order", "Shadow" };
+            foreach (var element in elements1)
+                AddHeaderRegion(() =>
+                {
+                    AddSmallButton("Element" + element + "Rousing", (h) => { });
+                });
+            AddRegionGroup();
+            SetRegionGroupWidth(34);
+            foreach (var element in elements1)
+                AddHeaderRegion(() =>
+                {
+                    AddLine(Board.board.player.resources.ToList().Find(x => x.Key == element).Value + "", White);
+                    AddSmallButton("Element" + elements2[elements1.IndexOf(element)] + "Rousing", (h) => { });
+                });
+            AddRegionGroup();
+            SetRegionGroupWidth(15);
+            foreach (var element in elements2)
+                AddHeaderRegion(() =>
+                {
+                    AddLine(Board.board.player.resources.ToList().Find(x => x.Key == element).Value + "", White);
+                });
+        }),
+        new("EnemyResources", () => {
+            SetAnchor(BottomRight);
+            AddRegionGroup();
+            var elements1 = new List<string> { "Fire", "Water", "Earth", "Air", "Frost" };
+            var elements2 = new List<string> { "Lightning", "Arcane", "Decay", "Order", "Shadow" };
+            foreach (var element in elements1)
+                AddHeaderRegion(() =>
+                {
+                    AddSmallButton("Element" + element + "Rousing", (h) => { });
+                });
+            AddRegionGroup();
+            SetRegionGroupWidth(34);
+            foreach (var element in elements1)
+                AddHeaderRegion(() =>
+                {
+                    AddLine(Board.board.enemy.resources.ToList().Find(x => x.Key == element).Value + "", White);
+                    AddSmallButton("Element" + elements2[elements1.IndexOf(element)] + "Rousing", (h) => { });
+                });
+            AddRegionGroup();
+            SetRegionGroupWidth(15);
+            foreach (var element in elements2)
+                AddHeaderRegion(() =>
+                {
+                    AddLine(Board.board.enemy.resources.ToList().Find(x => x.Key == element).Value + "", White);
+                });
+        }),
     };
 
     public static List<Blueprint> desktopBlueprints = new()
@@ -2672,7 +2650,9 @@ public class Blueprint
             SpawnWindowBlueprint("BattleBoard");
             SpawnWindowBlueprint("PlayerBattleInfo");
             SpawnWindowBlueprint("EnemyBattleInfo");
-            //SpawnWindowBlueprint("BattleActionBar");
+            SpawnWindowBlueprint("PlayerResources");
+            SpawnWindowBlueprint("EnemyResources");
+            //SpawnWindowBlueprint("LocationInfo");
             Board.board.Reset();
             AddHotkey(Escape, () => { SwitchDesktop("Map"); CloseDesktop("Game"); });
         }),
