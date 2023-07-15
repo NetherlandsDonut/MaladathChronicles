@@ -55,10 +55,12 @@ public static class Root
     {
         var mana = UnityEngine.Object.Instantiate(Resources.Load<GameObject>("Prefabs/Button"));
         mana.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/Buttons/" + sprite);
+        mana.transform.parent = Board.board.window.desktop.transform;
         mana.transform.position = position;
         mana.GetComponent<Froop>().Initiate();
         var shatter = new GameObject("Shatter", typeof(Shatter));
         shatter.GetComponent<Shatter>().Initiate(3);
+        shatter.transform.parent = Board.board.window.desktop.transform;
         shatter.transform.position = position;
         shatter.layer = 1;
         var foo = Resources.Load<Sprite>("Sprites/Building/BigButtons/" + sprite);
@@ -619,7 +621,13 @@ public static class Root
         BottomLeft,
         Top,
         TopRight,
-        TopLeft
+        TopLeft,
+        LeftBottom,
+        Left,
+        LeftTop,
+        RightBottom,
+        Right,
+        RightTop
     }
 
     //public static Color32 GetColor(Color color) => colors[color];

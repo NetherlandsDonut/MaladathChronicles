@@ -21,7 +21,7 @@ public class LineBigButton : MonoBehaviour
         this.region = region;
         this.buttonType = buttonType;
         this.pressEvent = pressEvent;
-        if (tooltip != null)
+        if (tooltip != null && gameObject != null)
             this.tooltip = new Tooltip(() => GetComponent<Highlightable>(), tooltip);
 
         region.LBBigButton = this;
