@@ -292,7 +292,7 @@ public class Blueprint
         new("PlayerBattleInfo", () => {
             SetAnchor(TopLeft);
             AddRegionGroup();
-            SetRegionGroupWidth(138);
+            SetRegionGroupWidth(163);
             AddButtonRegion(
                 () =>
                 {
@@ -353,18 +353,16 @@ public class Blueprint
                         AddLine(ability, Black);
                         AddSmallButton("Ability" + ability.Replace(" ", ""), (h) => { });
                     },
-                    (h) =>
+                    (h) => { },
+                    (h) => () =>
                     {
-                        SetAnchor(BottomRight);
+                        SetAnchor(BottomRight, h.window);
                         AddRegionGroup();
+                        SetRegionGroupWidth(119);
                         AddHeaderRegion(() =>
                         {
                             AddBigButton("Ability" + ability.Replace(" ", ""), (h) => { });
                             AddLine(ability, Gray);
-                        });
-                        AddHeaderRegion(() =>
-                        {
-                            AddLine("Resource cost:", Gray);
                         });
                         AddPaddingRegion(() =>
                         {
@@ -374,6 +372,21 @@ public class Blueprint
                                 AddText(" x" + resource.Value, White);
                             }
                         });
+                        SetRegionAsGroupExtender();
+                        AddRegionGroup();
+                        var elements1 = new List<string> { "Fire", "Water", "Earth", "Air", "Fire", "Water", "Earth", "Air", "Air" };
+                        foreach (var element in elements1)
+                            AddHeaderRegion(() =>
+                            {
+                                AddSmallButton("Element" + element + "Rousing", (h) => { });
+                            });
+                        AddRegionGroup();
+                        SetRegionGroupWidth(15);
+                        foreach (var element in elements1)
+                            AddHeaderRegion(() =>
+                            {
+                                AddLine(Board.board.player.resources.ToList().Find(x => x.Key == element).Value + "", LightGray);
+                            });
                     }
                 );
             }
@@ -381,7 +394,7 @@ public class Blueprint
         new("EnemyBattleInfo", () => {
             SetAnchor(TopRight);
             AddRegionGroup();
-            SetRegionGroupWidth(138);
+            SetRegionGroupWidth(163);
             AddButtonRegion(
                 () =>
                 {
@@ -410,7 +423,7 @@ public class Blueprint
                     },
                     (h) =>
                     {
-                        SetAnchor(BottomRight);
+                        SetAnchor(BottomLeft);
                         AddRegionGroup();
                         AddHeaderRegion(() =>
                         {
@@ -572,34 +585,34 @@ public class Blueprint
             );
         }),
         new("BattleBoard", () => {
-            SetAnchor(Top, 0, -29);
+            SetAnchor(Top, 0, -13);
             AddRegionGroup();
-            for (int i = 0; i < Board.board.field.GetLength(0); i++)
+            for (int i = 0; i < Board.board.field.GetLength(1); i++)
             {
                 AddPaddingRegion(() =>
                 {
-                    for (int j = 0; j < Board.board.field.GetLength(1); j++)
+                    for (int j = 0; j < Board.board.field.GetLength(0); j++)
                     {
                         AddBigButton(Board.board.GetFieldButton(),
                         (h) =>
                         {
                             var list = Board.board.FloodCount(h.region.bigButtons.FindIndex(x => x.GetComponent<Highlightable>() == h), h.region.regionGroup.regions.IndexOf(h.region));
                             Board.board.FloodDestroy(list);
-                        },
-                        (h) => () =>
-                        {
-                            var coords = (h.region.bigButtons.FindIndex(x => x.GetComponent<Highlightable>() == h), h.region.regionGroup.regions.IndexOf(h.region));
-                            var count = Board.board.FloodCount(coords.Item1, coords.Item2).Count;
-                            SetAnchor(Bottom);
-                            AddRegionGroup();
-                            AddHeaderRegion(
-                                () =>
-                                {
-                                    AddLine("x" + count + " ", LightGray);
-                                    AddText(Board.board.GetFieldName(coords.Item1, coords.Item2), Board.board.GetFieldColor(coords.Item1, coords.Item2));
-                                }
-                            );
                         });
+                        //(h) => () =>
+                        //{
+                        //    var coords = (h.region.bigButtons.FindIndex(x => x.GetComponent<Highlightable>() == h), h.region.regionGroup.regions.IndexOf(h.region));
+                        //    var count = Board.board.FloodCount(coords.Item1, coords.Item2).Count;
+                        //    SetAnchor(Bottom);
+                        //    AddRegionGroup();
+                        //    AddHeaderRegion(
+                        //        () =>
+                        //        {
+                        //            AddLine("x" + count + " ", LightGray);
+                        //            AddText(Board.board.GetFieldName(coords.Item1, coords.Item2), Board.board.GetFieldColor(coords.Item1, coords.Item2));
+                        //        }
+                        //    );
+                        //});
                     }
                 });
             }
@@ -2117,7 +2130,7 @@ public class Blueprint
                 AddSmallButton("SiteDungeon",
                 (h) =>
                 {
-                    Board.board = new Board(6, 6, "Nefarian");
+                    Board.board = new Board(7, 7, "Nefarian");
                     SpawnDesktopBlueprint("Game");
                     SwitchDesktop("Game");
                 },
@@ -2555,7 +2568,7 @@ public class Blueprint
             foreach (var element in elements1)
                 AddHeaderRegion(() =>
                 {
-                    AddLine(Board.board.player.resources.ToList().Find(x => x.Key == element).Value + "", White);
+                    AddLine(Board.board.player.resources.ToList().Find(x => x.Key == element).Value + "", LightGray);
                     AddSmallButton("Element" + elements2[elements1.IndexOf(element)] + "Rousing", (h) => { });
                 });
             AddRegionGroup();
@@ -2563,7 +2576,7 @@ public class Blueprint
             foreach (var element in elements2)
                 AddHeaderRegion(() =>
                 {
-                    AddLine(Board.board.player.resources.ToList().Find(x => x.Key == element).Value + "", White);
+                    AddLine(Board.board.player.resources.ToList().Find(x => x.Key == element).Value + "", LightGray);
                 });
         }),
         new("EnemyResources", () => {
@@ -2581,7 +2594,7 @@ public class Blueprint
             foreach (var element in elements1)
                 AddHeaderRegion(() =>
                 {
-                    AddLine(Board.board.enemy.resources.ToList().Find(x => x.Key == element).Value + "", White);
+                    AddLine(Board.board.enemy.resources.ToList().Find(x => x.Key == element).Value + "", LightGray);
                     AddSmallButton("Element" + elements2[elements1.IndexOf(element)] + "Rousing", (h) => { });
                 });
             AddRegionGroup();
@@ -2589,7 +2602,7 @@ public class Blueprint
             foreach (var element in elements2)
                 AddHeaderRegion(() =>
                 {
-                    AddLine(Board.board.enemy.resources.ToList().Find(x => x.Key == element).Value + "", White);
+                    AddLine(Board.board.enemy.resources.ToList().Find(x => x.Key == element).Value + "", LightGray);
                 });
         }),
     };

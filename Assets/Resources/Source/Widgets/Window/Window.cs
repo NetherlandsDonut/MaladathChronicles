@@ -82,12 +82,14 @@ public class Window : MonoBehaviour
             switch (anchor.anchor)
             {
                 case Bottom: return new Vector2(position.x - (xOffset - size.x) / 2, position.y - size.y);
-                case BottomRight: return new Vector2(position.x + size.x, position.y - size.y + PlannedHeight());
-                case BottomLeft: return new Vector2(2, position.y - size.y + PlannedHeight());
+                case BottomLeft: return new Vector2(position.x + size.x - xOffset, position.y - size.y);
+                case BottomRight: return new Vector2(position.x, position.y - size.y);
                 case Top: return new Vector2(position.x - (xOffset - size.x) / 2, position.y + PlannedHeight());
                 case TopRight: return new Vector2(position.x + size.x, position.y);
                 case TopLeft: return new Vector2(position.x - xOffset, position.y);
                 case Center: return new Vector2(screenX / 2 - xOffset / 2, screenY / -2 + PlannedHeight() / 2);
+                case RightTop: return new Vector2(position.x + size.x, position.y - size.y + PlannedHeight());
+                case RightBottom: return new Vector2(position.x + size.x - xOffset, position.y - size.y);
                 default: return new Vector2(0, 0);
             }
         }

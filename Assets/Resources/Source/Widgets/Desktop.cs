@@ -85,6 +85,8 @@ public class Desktop : MonoBehaviour
 
     public void Update()
     {
+        //if (1.0f / Time.smoothDeltaTime < 60)
+        //    Debug.LogError("FPS: " + (int)(1.0f / Time.smoothDeltaTime));
         if (CDesktop.name == "Desktop: TitleScreen")
         {
             var amount = new Vector3(titleScreenCameraDirection < 2 ? -1f : 1f, titleScreenCameraDirection > 2 ? -1f : (titleScreenCameraDirection < 1 ? -1f : 1f));

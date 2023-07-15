@@ -12,6 +12,7 @@ public class Board
         bonusTurnStreak = 0;
         field = new int[x, y];
         player = currentSave.player;
+        player.Initialise(false);
         this.enemy = new Entity(races.Find(x => x.name == enemy));
         playerTurn = true;
         temporaryElementsPlayer = new();
@@ -83,7 +84,6 @@ public class Board
         {
             playerTurn = true;
             enemyFinishedMoving = false;
-            temporaryElementsPlayer.ForEach(x => Object.Destroy(x));
             temporaryElementsPlayer = new();
         }
         if (playerTurn)
@@ -95,7 +95,6 @@ public class Board
             else
             {
                 playerTurn = false;
-                temporaryElementsEnemy.ForEach(x => Object.Destroy(x));
                 temporaryElementsEnemy = new();
             }
         else if (breakForEnemy)
