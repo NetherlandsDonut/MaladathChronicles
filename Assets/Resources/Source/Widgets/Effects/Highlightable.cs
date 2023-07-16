@@ -49,6 +49,7 @@ public class Highlightable : MonoBehaviour
     {
         if (cursor.render.sprite == null) return;
         pressed = true;
+        window.desktop.tooltip = null;
         if (window.desktop.FocusedWindow() != window)
             window.desktop.Focus(window);
         if (windowHandle)

@@ -49,6 +49,12 @@ public class Entity
                 equipment.Remove(slot);
     }
 
+    public void DetractResources(Dictionary<string, int> resources)
+    {
+        foreach (var resource in resources)
+            this.resources[resource.Key] -= resource.Value;
+    }
+
     public void Initialise(bool fullReset = true)
     {
         if (fullReset)

@@ -13,7 +13,7 @@ public class RegionGroup : MonoBehaviour
     public Region LBRegion, EXTRegion;
 
     //Fields
-    public int setWidth, currentHeight, pagination;
+    public int setWidth, setHeight, currentHeight, pagination;
 
     //For header group
     public void Initialise(Window window)
@@ -38,13 +38,13 @@ public class RegionGroup : MonoBehaviour
 
     public int PlannedHeight()
     {
-        return regions.Sum(x => x.PlannedHeight());
+        var regionSum = regions.Sum(x => x.PlannedHeight());
+        return regionSum;
     }
 
     public int AutoWidth()
     {
         var regionMax = regions.Max(x => x.AutoWidth());
-        //return setWidth > regionMax ? setWidth : regionMax;
         return setWidth != 0 ? setWidth : regionMax;
     }
 
