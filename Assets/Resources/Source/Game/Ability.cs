@@ -70,26 +70,7 @@ public class Ability
         },
         () =>
         {
-            AddPaddingRegion(() =>
-            {
-                AddLine("Casting Blizzard will shroud a target in a", Gray);
-                AddLine("freezing cloud that will rain ice shards at", Gray);
-                AddLine("them whenever the spelll caster gains", Gray);
-                AddLine("new frost elements from the board.", Gray);
-            });
-            AddPaddingRegion(() =>
-            {
-                AddLine("Each frost element collected deals 3 damage ", Gray);
-                AddLine("scaled with caster\'s Intelligence.", Gray);
-            });
-            AddPaddingRegion(() =>
-            {
-                SetRegionAsGroupExtender();
-                AddLine("Each point in Frost Mastery adds 1% chance", Gray);
-                AddLine("for a falling frost shard to call upon", Gray);
-                AddLine("another one to hit the target again for", Gray);
-                AddLine("the same amount of damage.", Gray);
-            });
+
         },
         (p) =>
         {
@@ -101,26 +82,7 @@ public class Ability
         },
         () =>
         {
-            AddPaddingRegion(() =>
-            {
-                AddLine("Casting Blizzard will shroud a target in a", Gray);
-                AddLine("freezing cloud that will rain ice shards at", Gray);
-                AddLine("them whenever the spelll caster gains", Gray);
-                AddLine("new frost elements from the board.", Gray);
-            });
-            AddHeaderRegion(() =>
-            {
-                AddLine("Each frost element collected deals 3 damage ", Gray);
-                AddLine("scaled with caster\'s Intelligence.", Gray);
-            });
-            AddHeaderRegion(() =>
-            {
-                SetRegionAsGroupExtender();
-                AddLine("Each point in Frost Mastery adds 1% chance", Gray);
-                AddLine("for a falling frost shard to call upon", Gray);
-                AddLine("another one to hit the target again for", Gray);
-                AddLine("the same amount of damage.", Gray);
-            });
+
         },
         (p) =>
         {
@@ -132,26 +94,7 @@ public class Ability
         },
         () =>
         {
-            AddPaddingRegion(() =>
-            {
-                AddLine("Casting Blizzard will shroud a target in a", Gray);
-                AddLine("freezing cloud that will rain ice shards at", Gray);
-                AddLine("them whenever the spelll caster gains", Gray);
-                AddLine("new frost elements from the board.", Gray);
-            });
-            AddHeaderRegion(() =>
-            {
-                AddLine("Each frost element collected deals 3 damage ", Gray);
-                AddLine("scaled with caster\'s Intelligence.", Gray);
-            });
-            AddHeaderRegion(() =>
-            {
-                SetRegionAsGroupExtender();
-                AddLine("Each point in Frost Mastery adds 1% chance", Gray);
-                AddLine("for a falling frost shard to call upon", Gray);
-                AddLine("another one to hit the target again for", Gray);
-                AddLine("the same amount of damage.", Gray);
-            });
+
         },
         (p) =>
         {
@@ -163,26 +106,7 @@ public class Ability
         },
         () =>
         {
-            AddPaddingRegion(() =>
-            {
-                AddLine("Casting Blizzard will shroud a target in a", Gray);
-                AddLine("freezing cloud that will rain ice shards at", Gray);
-                AddLine("them whenever the spelll caster gains", Gray);
-                AddLine("new frost elements from the board.", Gray);
-            });
-            AddHeaderRegion(() =>
-            {
-                AddLine("Each frost element collected deals 3 damage ", Gray);
-                AddLine("scaled with caster\'s Intelligence.", Gray);
-            });
-            AddHeaderRegion(() =>
-            {
-                SetRegionAsGroupExtender();
-                AddLine("Each point in Frost Mastery adds 1% chance", Gray);
-                AddLine("for a falling frost shard to call upon", Gray);
-                AddLine("another one to hit the target again for", Gray);
-                AddLine("the same amount of damage.", Gray);
-            });
+
         },
         (p) =>
         {
@@ -194,26 +118,7 @@ public class Ability
         },
         () =>
         {
-            AddPaddingRegion(() =>
-            {
-                AddLine("Casting Blizzard will shroud a target in a", Gray);
-                AddLine("freezing cloud that will rain ice shards at", Gray);
-                AddLine("them whenever the spelll caster gains", Gray);
-                AddLine("new frost elements from the board.", Gray);
-            });
-            AddHeaderRegion(() =>
-            {
-                AddLine("Each frost element collected deals 3 damage ", Gray);
-                AddLine("scaled with caster\'s Intelligence.", Gray);
-            });
-            AddHeaderRegion(() =>
-            {
-                SetRegionAsGroupExtender();
-                AddLine("Each point in Frost Mastery adds 1% chance", Gray);
-                AddLine("for a falling frost shard to call upon", Gray);
-                AddLine("another one to hit the target again for", Gray);
-                AddLine("the same amount of damage.", Gray);
-            });
+
         },
         (p) =>
         {
@@ -225,26 +130,7 @@ public class Ability
         },
         () =>
         {
-            AddPaddingRegion(() =>
-            {
-                AddLine("Casting Blizzard will shroud a target in a", Gray);
-                AddLine("freezing cloud that will rain ice shards at", Gray);
-                AddLine("them whenever the spelll caster gains", Gray);
-                AddLine("new frost elements from the board.", Gray);
-            });
-            AddHeaderRegion(() =>
-            {
-                AddLine("Each frost element collected deals 3 damage ", Gray);
-                AddLine("scaled with caster\'s Intelligence.", Gray);
-            });
-            AddHeaderRegion(() =>
-            {
-                SetRegionAsGroupExtender();
-                AddLine("Each point in Frost Mastery adds 1% chance", Gray);
-                AddLine("for a falling frost shard to call upon", Gray);
-                AddLine("another one to hit the target again for", Gray);
-                AddLine("the same amount of damage.", Gray);
-            });
+
         },
         (p) =>
         {
@@ -356,7 +242,7 @@ public class Ability
                 AddLine("to turn another element into a frost one.", Gray);
                 AddLine("This effect loops and for example 120%", Gray);
                 AddLine("has a 100% chance to turn another", Gray);
-                AddLine("element and 20%for a second bonus one.", Gray);
+                AddLine("element and 20% for a second bonus one.", Gray);
             });
         },
         (p) =>
@@ -375,16 +261,11 @@ public class Ability
             }
             Board.board.actions.Add(() =>
             {
-                Board.board.field[list[0].Item1, list[0].Item2] = 16;
-                Board.board.field[list[1].Item1, list[1].Item2] = 16;
-                Board.board.field[list[2].Item1, list[2].Item2] = 16;
-                Board.board.field[list[3].Item1, list[3].Item2] = 16;
-                Board.board.field[list[4].Item1, list[4].Item2] = 16;
-                SpawnShatter(4, 1.0, Board.board.window.LBRegionGroup.regions[list[0].Item2].bigButtons[list[0].Item1].transform.position + new Vector3(-17.5f, -17.5f), "ElementFrostRousing", false);
-                SpawnShatter(4, 1.0, Board.board.window.LBRegionGroup.regions[list[1].Item2].bigButtons[list[1].Item1].transform.position + new Vector3(-17.5f, -17.5f), "ElementFrostRousing", false);
-                SpawnShatter(4, 1.0, Board.board.window.LBRegionGroup.regions[list[2].Item2].bigButtons[list[2].Item1].transform.position + new Vector3(-17.5f, -17.5f), "ElementFrostRousing", false);
-                SpawnShatter(4, 1.0, Board.board.window.LBRegionGroup.regions[list[3].Item2].bigButtons[list[3].Item1].transform.position + new Vector3(-17.5f, -17.5f), "ElementFrostRousing", false);
-                SpawnShatter(4, 1.0, Board.board.window.LBRegionGroup.regions[list[4].Item2].bigButtons[list[4].Item1].transform.position + new Vector3(-17.5f, -17.5f), "ElementFrostRousing", false);
+                foreach (var e in list)
+                {
+                    Board.board.field[e.Item1, e.Item2] = 16;
+                    SpawnShatter(4, 1.0, Board.board.window.LBRegionGroup.regions[e.Item2].bigButtons[e.Item1].transform.position + new Vector3(-17.5f, -17.5f), Board.boardButtonDictionary[Board.board.field[e.Item1, e.Item2]], false);
+                }
                 Board.board.window.PlaySound("AbilityFreezingNovaImpact");
             });
             Board.board.actions.Add(() =>
@@ -428,7 +309,9 @@ public class Ability
         }),
         new Ability("Deep Freeze", 5, new()
         {
-            { "Frost", 15 }
+            { "Frost", 5 },
+            { "Air", 5 },
+            { "Earth", 10 },
         },
         () =>
         {

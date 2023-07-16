@@ -2163,9 +2163,8 @@ public class Blueprint
                 });
             });
         }),
-        new("ZulFarrak", () => {
+        new("TestingArena", () => {
             SetAnchor(0, 0);
-            //SetAnchor(1781, -3768);
             AddRegionGroup();
             AddPaddingRegion(() =>
             {
@@ -2175,6 +2174,48 @@ public class Blueprint
                     Board.board = new Board(7, 7, "Nefarian");
                     SpawnDesktopBlueprint("Game");
                     SwitchDesktop("Game");
+                },
+                (h) => () =>
+                {
+                    SetAnchor(TopRight, h.window);
+                    AddRegionGroup();
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Zul\'Farrak", Gray);
+                    });
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Nothing:", Gray);
+                    });
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine("There is nothing here yet", Gray);
+                        AddLine("But there will be something soon", Gray);
+                        AddLine("I hope so", Gray);
+                    });
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Very nothing:", Gray);
+                    });
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine("There is nothing here yet", Gray);
+                        AddLine("But there will be something soon", Gray);
+                    });
+                });
+                AddLine("Testing Arena");
+                AddLine("Click the button to begin");
+            });
+        }),
+        new("ZulFarrak", () => {
+            SetAnchor(1781, -3768);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                AddSmallButton("SiteDungeon",
+                (h) =>
+                {
+
                 },
                 (h) => () =>
                 {
@@ -2692,6 +2733,7 @@ public class Blueprint
             SpawnWindowBlueprint("ZulFarrak");
             SpawnWindowBlueprint("CenarionHold");
             SpawnWindowBlueprint("WindshearMine");
+            SpawnWindowBlueprint("TestingArena");
             AddHotkey(W, () => { var amount = new Vector3(0, (float)Math.Round(EuelerGrowth())); CDesktop.screen.transform.position += amount; cursor.transform.position += amount; }, false);
             AddHotkey(A, () => { var amount = new Vector3(-(float)Math.Round(EuelerGrowth()), 0); CDesktop.screen.transform.position += amount; cursor.transform.position += amount; }, false);
             AddHotkey(S, () => { var amount = new Vector3(0, -(float)Math.Round(EuelerGrowth())); CDesktop.screen.transform.position += amount; cursor.transform.position += amount; }, false);
