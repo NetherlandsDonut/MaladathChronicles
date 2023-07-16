@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using System.Collections.Generic;
 
@@ -17,6 +18,7 @@ public class Board
         playerTurn = true;
         temporaryElementsPlayer = new();
         temporaryElementsEnemy = new();
+        actions = new List<Action>();
     }
 
     public static Board board;
@@ -25,8 +27,23 @@ public class Board
     public int[,] field;
     public Window window;
     public Entity player, enemy;
-    public bool playerTurn, breakForEnemy, breakForCascade, enemyFinishedMoving;
+    public bool playerTurn, breakForEnemy, breakForCascade, enemyFinishedMoving, playerFinishedMoving;
     public List<GameObject> temporaryElementsPlayer, temporaryElementsEnemy;
+    public List<Action> actions;
+
+    public void EndTurn()
+    {
+        if (playerTurn)
+        {
+            playerTurn = false;
+            playerFinishedMoving = false;
+        }
+        else
+        {
+            playerTurn = true;
+            enemyFinishedMoving = false;
+        }
+    }
 
     public void Reset()
     {
@@ -34,17 +51,18 @@ public class Board
         for (int i = 0; i < field.GetLength(0); i++)
             for (int j = 0; j < field.GetLength(1); j++)
                 field[i, j] = 0;
-        StartAnimationFill();
+        StartAnimations();
     }
 
     public int animFrame;
-    public void StartAnimationFill()
+    public void StartAnimations()
     {
         CDesktop.LockScreen();
     }
 
-    public void AnimateFill()
+    public void AnimateBoard()
     {
+        //MOVE ELEMENTS DOWN WITH GRAVITY
         for (int j = field.GetLength(1) - 1; j > 0; j--)
             for (int i = field.GetLength(0) - 1; i >= 0; i--)
                 if (field[i, j] == 0 && field[i, j - 1] != 0)
@@ -55,14 +73,28 @@ public class Board
                         else if (k == field.GetLength(0) - 1)
                             CDesktop.FocusedWindow().PlaySound("PutDownSmallWood", 0.04f);
                 }
+
+        //SPAWN NEW ELEMENTS ON TOP OF THE BOARD
         for (int i = 0; i < field.GetLength(0); i++)
             if (field[i, 0] == 0)
                 field[i, 0] = random.Next(11, 21);
+
+        //IF BOARD NEEDS TO FILLED UP DON'T DO ANY FURTHER STEPS AND RETURN TO BEGINNING
         for (int j = field.GetLength(1) - 1; j >= 0; j--)
             for (int i = field.GetLength(0) - 1; i >= 0; i--)
                 if (field[i, j] == 0) return;
-        for (int j = field.GetLength(1) - 1; j >= 0; j--)
-            for (int i = field.GetLength(0) - 1; i >= 0; i--)
+
+        //DO ONE SCHEDULED ACTION AND RETURN AFTER TO DO ONE AT A TIME
+        if (actions.Count > 0)
+        {
+            actions[0]();
+            actions.RemoveAt(0);
+            return;
+        }
+
+        //CASCADE FOR CURRENT PLAYER
+        for (int j = 0; j < field.GetLength(1); j++)
+            for (int i = 0; i < field.GetLength(0); i++)
             {
                 var list = FloodCount(i, j);
                 if (list.Count >= 3)
@@ -80,39 +112,61 @@ public class Board
                     return;
                 }
             }
-        if (enemyFinishedMoving)
+
+        //IF IT'S ENEMY'S TURN..
+        if (!playerTurn)
         {
-            playerTurn = true;
-            enemyFinishedMoving = false;
-            temporaryElementsPlayer = new();
-        }
-        if (playerTurn)
-            if (bonusTurnStreak != 0)
+            //IF ENEMY FINISHED MOVING END THEIR TURN
+            if (enemyFinishedMoving)
             {
-                bonusTurnStreak = 0;
-                CDesktop.UnlockScreen();
+                //UNLESS THEY SCORED A BONUS MOVE
+                if (bonusTurnStreak > 0)
+                {
+                    bonusTurnStreak = 0;
+                    enemyFinishedMoving = false;
+                }
+                else
+                    EndTurn();
             }
+
+            //DO ANIMATION BREAK FOR ENEMY TO GIVE THEM TIME TO THINK
+            else if (!breakForEnemy)
+            {
+                animationTime = (float)(random.Next(4, 8) / 10.0) + 0.3f;
+                breakForEnemy = true;
+            }
+
+            //IF ENEMY WAS ALREADY ON THINKING BREAK MAKE THEM MOVE
             else
             {
-                playerTurn = false;
+                breakForEnemy = false;
+                bonusTurnStreak = 0;
+                var list = board.FloodCount(random.Next(0, field.GetLength(0)), random.Next(0, field.GetLength(1)));
                 temporaryElementsEnemy = new();
-            }
-        else if (breakForEnemy)
-        {
-            breakForEnemy = false;
-            bonusTurnStreak = 0;
-            var list = board.FloodCount(random.Next(0, field.GetLength(0)), random.Next(0, field.GetLength(1)));
-            board.FloodDestroy(list);
-            if (bonusTurnStreak == 0)
-            {
-                bonusTurnStreak = -1;
+                board.FloodDestroy(list);
                 enemyFinishedMoving = true;
             }
         }
+
+        //IF IT's PLAYER'S TURN..
         else
         {
-            animationTime = (float)(random.Next(4, 8) / 10.0) + 0.3f;
-            breakForEnemy = true;
+            //IF PLAYER FINISHED MOVING TURN END THEIR TURN
+            if (playerFinishedMoving)
+            {
+                //UNLESS THEY SCORED A BONUS MOVE
+                if (bonusTurnStreak > 0)
+                {
+                    bonusTurnStreak = 0;
+                    playerFinishedMoving = false;
+                    CDesktop.UnlockScreen();
+                }
+                else
+                    EndTurn();
+            }
+
+            //IF PLAYER IS STILL GOING TO MOVE UNLOCK THE SCREEN
+            else CDesktop.UnlockScreen();
         }
     }
 
@@ -136,9 +190,9 @@ public class Board
     public void SelectDestroy(int x, int y)
     {
         window.PlaySound(collectSoundDictionary[field[x, y]].ToString(), 0.3f);
-        SpawnShatter(window.LBRegionGroup.regions[y].bigButtons[x].transform.position + new Vector3(-17.5f, -17.5f), boardButtonDictionary[field[x, y]]);
+        SpawnShatter(1, 0.5, window.LBRegionGroup.regions[y].bigButtons[x].transform.position + new Vector3(-17.5f, -17.5f), boardButtonDictionary[field[x, y]]);
         field[x, y] = 0;
-        StartAnimationFill();
+        StartAnimations();
     }
 
     public void FloodDestroy(List<(int, int, int)> list)
@@ -151,7 +205,7 @@ public class Board
         }
         foreach (var a in list)
         {
-            SpawnShatter(window.LBRegionGroup.regions[a.Item2].bigButtons[a.Item1].transform.position + new Vector3(-17.5f, -17.5f), boardButtonDictionary[a.Item3]);
+            SpawnShatter(1, 0.5, window.LBRegionGroup.regions[a.Item2].bigButtons[a.Item1].transform.position + new Vector3(-17.5f, -17.5f), boardButtonDictionary[a.Item3]);
             var element = "";
             switch (a.Item3 % 10)
             {
@@ -170,7 +224,7 @@ public class Board
             else enemy.resources[element]++;
             field[a.Item1, a.Item2] = 0;
         }
-        StartAnimationFill();
+        StartAnimations();
     }
 
     public List<(int, int, int)> FloodCount(int x, int y)

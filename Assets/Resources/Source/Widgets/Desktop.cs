@@ -107,7 +107,7 @@ public class Desktop : MonoBehaviour
                 if (animationTime <= 0)
                 {
                     animationTime = frameTime;
-                    Board.board.AnimateFill();
+                    Board.board.AnimateBoard();
                     Rebuild();
                 }
             }

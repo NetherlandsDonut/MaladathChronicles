@@ -51,13 +51,16 @@ public static class Root
 
     #region Shatter
 
-    public static void SpawnShatter(Vector3 position, string sprite)
+    public static void SpawnShatter(double speed, double amount, Vector3 position, string sprite, bool collected = true)
     {
-        var mana = UnityEngine.Object.Instantiate(Resources.Load<GameObject>("Prefabs/Button"));
-        mana.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/Buttons/" + sprite);
-        mana.transform.parent = Board.board.window.desktop.transform;
-        mana.transform.position = position;
-        mana.GetComponent<Froop>().Initiate();
+        if (collected)
+        {
+            var mana = UnityEngine.Object.Instantiate(Resources.Load<GameObject>("Prefabs/Button"));
+            mana.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/Buttons/" + sprite);
+            mana.transform.parent = Board.board.window.desktop.transform;
+            mana.transform.position = position;
+            mana.GetComponent<Froop>().Initiate();
+        }
         var shatter = new GameObject("Shatter", typeof(Shatter));
         shatter.GetComponent<Shatter>().Initiate(3);
         shatter.transform.parent = Board.board.window.desktop.transform;
@@ -66,9 +69,11 @@ public static class Root
         var foo = Resources.Load<Sprite>("Sprites/Building/BigButtons/" + sprite);
         int x = (int)foo.textureRect.width, y = (int)foo.textureRect.height;
         var dot = Resources.Load<GameObject>("Prefabs/Dot");
+        if (amount > 1) amount = 1;
+        else if (amount < 0) amount = 0;
         for (int i = 6; i < x - 5; i++)
             for (int j = 6; j < y - 5; j++)
-                if (random.Next(0, 5) == 0)
+                if (random.Next(0, (int)Math.Abs(amount * 10 - 10)) == 0)
                     SpawnDot(i, j, foo.texture.GetPixel(i, j));
 
         void SpawnDot(int c, int v, Color32 color)
@@ -78,7 +83,7 @@ public static class Root
             newObject.transform.parent = shatter.transform;
             newObject.transform.localPosition = new Vector3(c, v);
             newObject.GetComponent<SpriteRenderer>().color = color;
-            newObject.GetComponent<Rigidbody2D>().AddRelativeForce(UnityEngine.Random.insideUnitCircle * 100);
+            newObject.GetComponent<Rigidbody2D>().AddRelativeForce(UnityEngine.Random.insideUnitCircle * (int)(100 * speed));
         }
     }
 
@@ -274,6 +279,11 @@ public static class Root
         CDesktop.LBWindow.LBRegionGroup.setWidth = width;
     }
 
+    public static void SetRegionGroupHeight(int height)
+    {
+        CDesktop.LBWindow.LBRegionGroup.setHeight = height;
+    }
+
     #endregion
 
     #region RegionLists
@@ -401,6 +411,16 @@ public static class Root
     #endregion
 
     #region SmallButtons
+
+    public static void AddSmallButtonGrid()
+    {
+        var region = CDesktop.LBWindow.LBRegionGroup.LBRegion;
+        var button = region.LBSmallButton.gameObject;
+        var newObject = new GameObject("SmallButtonGrid", typeof(SpriteRenderer));
+        newObject.transform.parent = button.transform;
+        newObject.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/Buttons/OtherGrid");
+        newObject.GetComponent<SpriteRenderer>().sortingOrder = 1;
+    }
 
     public static void AddSmallButton(string type, Action<Highlightable> pressEvent, Func<Highlightable, Action> tooltip = null)
     {

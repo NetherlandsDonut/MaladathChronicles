@@ -52,27 +52,27 @@ public class Window : MonoBehaviour
 
     public int PlannedHeight(bool includeHeader = false)
     {
-        return (regionGroups.Count > 0 ? regionGroups.Max(x => x.PlannedHeight()) : 0) + (includeHeader && headerGroup != null ? headerGroup.PlannedHeight() : 0);
+        return (regionGroups.Count > 0 ? regionGroups.Max(x => x.PlannedHeight()) : 0) + (includeHeader && headerGroup != null ? (headerGroup.setHeight != 0 ? headerGroup.setHeight : headerGroup.PlannedHeight()) : 0);
     }
 
     public void ResetPosition()
     {
         if (anchor.anchor != None && anchor.magnet == null) transform.parent = desktop.screen.transform;
         transform.localPosition = Vector3.zero;
-        transform.localPosition = anchor.magnet != null ? MagnetAnchor(anchor.magnet.transform.localPosition, new Vector2(anchor.magnet.xOffset, anchor.magnet.PlannedHeight())) : Anchor();
+        transform.localPosition = anchor.magnet != null ? MagnetAnchor(anchor.magnet.transform.localPosition, new Vector2(anchor.magnet.Width(), anchor.magnet.PlannedHeight())) : Anchor();
         transform.localPosition += (anchor.anchor != None && anchor.magnet == null ? new Vector3(screenX / -2, screenY / 2) : Vector3.zero) + (Vector3)anchor.offset;
 
         Vector2 Anchor()
         {
             switch (anchor.anchor)
             {
-                case Bottom: return new Vector2(screenX / 2 - xOffset / 2 - 1, 2 - screenY + PlannedHeight());
-                case BottomRight: return new Vector2(screenX - 2 - xOffset, 2 - screenY + PlannedHeight());
+                case Bottom: return new Vector2(screenX / 2 - Width() / 2 - 1, 2 - screenY + PlannedHeight());
+                case BottomRight: return new Vector2(screenX - 2 - Width(), 2 - screenY + PlannedHeight());
                 case BottomLeft: return new Vector2(0, 2 - screenY + PlannedHeight());
-                case Top: return new Vector2(screenX / 2 - xOffset / 2 - 1, 0);
-                case TopRight: return new Vector2(screenX - 2 - xOffset, 0);
+                case Top: return new Vector2(screenX / 2 - Width() / 2 - 1, 0);
+                case TopRight: return new Vector2(screenX - 2 - Width(), 0);
                 case TopLeft: return new Vector2(0, 0);
-                case Center: return new Vector2(screenX / 2 - xOffset / 2 - 1, screenY / -2 + PlannedHeight() / 2);
+                case Center: return new Vector2(screenX / 2 - Width() / 2 - 1, screenY / -2 + PlannedHeight() / 2);
                 default: return new Vector2(0, 0);
             }
         }
@@ -81,15 +81,15 @@ public class Window : MonoBehaviour
         {
             switch (anchor.anchor)
             {
-                case Bottom: return new Vector2(position.x - (xOffset - size.x) / 2, position.y - size.y);
-                case BottomLeft: return new Vector2(position.x + size.x - xOffset, position.y - size.y);
+                case Bottom: return new Vector2(position.x - (Width() - size.x) / 2, position.y - size.y);
+                case BottomLeft: return new Vector2(position.x + size.x - Width(), position.y - size.y);
                 case BottomRight: return new Vector2(position.x, position.y - size.y);
-                case Top: return new Vector2(position.x - (xOffset - size.x) / 2, position.y + PlannedHeight());
+                case Top: return new Vector2(position.x - (Width() - size.x) / 2, position.y + PlannedHeight());
                 case TopRight: return new Vector2(position.x + size.x, position.y);
-                case TopLeft: return new Vector2(position.x - xOffset, position.y);
-                case Center: return new Vector2(screenX / 2 - xOffset / 2, screenY / -2 + PlannedHeight() / 2);
+                case TopLeft: return new Vector2(position.x - Width(), position.y);
+                case Center: return new Vector2(screenX / 2 - Width() / 2, screenY / -2 + PlannedHeight() / 2);
                 case RightTop: return new Vector2(position.x + size.x, position.y - size.y + PlannedHeight());
-                case RightBottom: return new Vector2(position.x + size.x - xOffset, position.y - size.y);
+                case RightBottom: return new Vector2(position.x + size.x - Width(), position.y - size.y);
                 default: return new Vector2(0, 0);
             }
         }
@@ -100,6 +100,12 @@ public class Window : MonoBehaviour
         var temp = Resources.Load<AudioClip>("Sounds/" + path);
         if (temp == null) return;
         GetComponent<AudioSource>().PlayOneShot(temp, volume);
+    }
+
+    public int Width()
+    {
+        var head = headerGroup != null ? headerGroup.AutoWidth() : 0;
+        return head > xOffset ? head : xOffset;
     }
 
     public void Rebuild()
@@ -143,16 +149,16 @@ public class Window : MonoBehaviour
                         shadows[i].transform.parent = transform;
                         shadows[i].GetComponent<SpriteRenderer>().sprite = shadowSprites[i];
                     }
-                shadows[1].transform.localScale = shadows[6].transform.localScale = new Vector3(xOffset + 2, 1, 1);
+                shadows[1].transform.localScale = shadows[6].transform.localScale = new Vector3(Width() + 2, 1, 1);
                 shadows[3].transform.localScale = shadows[4].transform.localScale = new Vector3(1, PlannedHeight() + 2 + (headerGroup != null ? headerGroup.PlannedHeight() : 0), 1);
                 shadows[0].transform.localPosition = new Vector3(-18, 18, 0.9f);
                 shadows[1].transform.localPosition = new Vector3(0, 18, 0.9f);
-                shadows[2].transform.localPosition = new Vector3(xOffset + 2, 18, 0.9f);
+                shadows[2].transform.localPosition = new Vector3(Width() + 2, 18, 0.9f);
                 shadows[3].transform.localPosition = new Vector3(-18, 0, 0.9f);
-                shadows[4].transform.localPosition = new Vector3(xOffset + 2, 0, 0.9f);
+                shadows[4].transform.localPosition = new Vector3(Width() + 2, 0, 0.9f);
                 shadows[5].transform.localPosition = new Vector3(-18, -PlannedHeight(true) - 2, 0.9f);
                 shadows[6].transform.localPosition = new Vector3(0, -PlannedHeight(true) - 2, 0.9f);
-                shadows[7].transform.localPosition = new Vector3(xOffset + 2, -PlannedHeight(true) - 2, 0.9f);
+                shadows[7].transform.localPosition = new Vector3(Width() + 2, -PlannedHeight(true) - 2, 0.9f);
             }
             else if (shadowSystem == 1)
             {
@@ -164,13 +170,13 @@ public class Window : MonoBehaviour
                         shadows[i].transform.parent = transform;
                         shadows[i].GetComponent<SpriteRenderer>().sprite = shadowSprites[i];
                     }
-                shadows[1].transform.localScale = new Vector3(1, PlannedHeight() - 2 + (headerGroup != null ? headerGroup.PlannedHeight() : 0), 1);
-                shadows[3].transform.localScale = new Vector3(xOffset - 2, 1, 1);
-                shadows[0].transform.localPosition = new Vector3(xOffset + 2, 0, 0.9f);
-                shadows[1].transform.localPosition = new Vector3(xOffset + 2, -4, 0.9f);
-                shadows[2].transform.localPosition = new Vector3(xOffset + 2, -PlannedHeight(true) - 2, 0.9f);
-                shadows[3].transform.localPosition = new Vector3(4, -PlannedHeight(true) - 2, 0.9f);
-                shadows[4].transform.localPosition = new Vector3(0, -PlannedHeight(true) - 2, 0.9f);
+                shadows[1].transform.localScale = new Vector3(1, PlannedHeight() - 2 + (headerGroup != null ? (headerGroup.setHeight != 0 ? headerGroup.setHeight + 10 : headerGroup.PlannedHeight()) : 0), 1);
+                shadows[3].transform.localScale = new Vector3(Width() - 2, 1, 1);
+                shadows[0].transform.localPosition = new Vector3(Width() + 2, 0, 0.9f);
+                shadows[1].transform.localPosition = new Vector3(Width() + 2, -4, 0.9f);
+                shadows[2].transform.localPosition = new Vector3(Width() + 2, -PlannedHeight(true) - 2 - (headerGroup != null && headerGroup.setHeight != 0 ? 10 : 0), 0.9f);
+                shadows[3].transform.localPosition = new Vector3(4, -PlannedHeight(true) - 2 - (headerGroup != null && headerGroup.setHeight != 0 ? 10 : 0), 0.9f);
+                shadows[4].transform.localPosition = new Vector3(0, -PlannedHeight(true) - 2 - (headerGroup != null && headerGroup.setHeight != 0 ? 10 : 0), 0.9f);
             }
             else
             {
@@ -182,16 +188,16 @@ public class Window : MonoBehaviour
                         shadows[i].transform.parent = transform;
                         shadows[i].GetComponent<SpriteRenderer>().sprite = shadowSprites[i];
                     }
-                shadows[1].transform.localScale = shadows[6].transform.localScale = new Vector3(xOffset + 2, 1, 1);
+                shadows[1].transform.localScale = shadows[6].transform.localScale = new Vector3(Width() + 2, 1, 1);
                 shadows[3].transform.localScale = shadows[4].transform.localScale = new Vector3(1, PlannedHeight() + 2 + (headerGroup != null ? headerGroup.PlannedHeight() : 0), 1);
                 shadows[0].transform.localPosition = new Vector3(-5, 5, 0.9f);
                 shadows[1].transform.localPosition = new Vector3(0, 5, 0.9f);
-                shadows[2].transform.localPosition = new Vector3(xOffset + 2, 5, 0.9f);
+                shadows[2].transform.localPosition = new Vector3(Width() + 2, 5, 0.9f);
                 shadows[3].transform.localPosition = new Vector3(-5, 0, 0.9f);
-                shadows[4].transform.localPosition = new Vector3(xOffset + 2, 0, 0.9f);
+                shadows[4].transform.localPosition = new Vector3(Width() + 2, 0, 0.9f);
                 shadows[5].transform.localPosition = new Vector3(-5, -PlannedHeight(true) - 2, 0.9f);
                 shadows[6].transform.localPosition = new Vector3(0, -PlannedHeight(true) - 2, 0.9f);
-                shadows[7].transform.localPosition = new Vector3(xOffset + 2, -PlannedHeight(true) - 2, 0.9f);
+                shadows[7].transform.localPosition = new Vector3(Width() + 2, -PlannedHeight(true) - 2, 0.9f);
             }
     }
 
@@ -221,7 +227,11 @@ public class Window : MonoBehaviour
             regionGroup.LBRegion = region;
             region.draw();
             if (regionGroup == headerGroup)
-                region.xExtend = xOffset - headerGroup.AutoWidth() - 10;
+            {
+                var temp = xOffset - headerGroup.AutoWidth() - 10;
+                if (region.xExtend < temp)
+                    region.xExtend = temp;
+            }
         }
 
         #endregion
@@ -331,11 +341,16 @@ public class Window : MonoBehaviour
         {
             region.transform.localPosition = new Vector3(0, -regionGroup.currentHeight, 0);
             if (extendOffset != 0) region.transform.localPosition = new Vector3(region.transform.localPosition.x, -regionGroup.currentHeight - extendOffset, region.transform.localPosition.z);
-            if (regionGroup != headerGroup && regionGroup.PlannedHeight() < PlannedHeight())
+            if (regionGroup == headerGroup)
+            {
+                if (regionGroup.EXTRegion == region && regionGroup.setHeight != 0)
+                    region.yExtend = regionGroup.setHeight - regionGroup.PlannedHeight() + 10;
+            }
+            else if (regionGroup.PlannedHeight() < PlannedHeight())
                 if (regionGroup.EXTRegion == region || regionGroup.EXTRegion == null && region == regionGroup.regions.Last())
                     region.yExtend = PlannedHeight() - regionGroup.PlannedHeight();
             if (region.yExtend > 0) extendOffset += region.yExtend;
-            regionGroup.currentHeight += 4 + region.currentHeight;
+            regionGroup.currentHeight += 4 + region.currentHeight + region.yExtend;
         }
 
         #endregion

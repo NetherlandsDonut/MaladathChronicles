@@ -11,6 +11,7 @@ using static Root.RegionBackgroundType;
 
 using static UnityEngine.KeyCode;
 using UnityEngine.U2D;
+using System.Xml.Linq;
 
 public class Blueprint
 {
@@ -352,41 +353,58 @@ public class Blueprint
                     {
                         AddLine(ability, Black);
                         AddSmallButton("Ability" + ability.Replace(" ", ""), (h) => { });
+                        if (!abilityObj.EnoughResources(Board.board.player))
+                            AddSmallButtonGrid();
                     },
-                    (h) => { },
+                    (h) =>
+                    {
+                        if (abilityObj.EnoughResources(Board.board.player))
+                        {
+                            abilityObj.effects(true);
+                            Board.board.player.DetractResources(abilityObj.cost);
+                            Board.board.temporaryElementsPlayer = new();
+                            h.window.desktop.Rebuild();
+                        }
+                    },
                     (h) => () =>
                     {
-                        SetAnchor(BottomRight, h.window);
-                        AddRegionGroup();
-                        SetRegionGroupWidth(119);
+                        SetAnchor(Top, 0, -13);
+                        AddHeaderGroup();
+                        SetRegionGroupWidth(256);
+                        SetRegionGroupHeight(237);
                         AddHeaderRegion(() =>
                         {
-                            AddBigButton("Ability" + ability.Replace(" ", ""), (h) => { });
                             AddLine(ability, Gray);
                         });
                         AddPaddingRegion(() =>
                         {
-                            foreach (var resource in abilityObj.cost)
-                            {
-                                AddLine(resource.Key, Gray);
-                                AddText(" x" + resource.Value, White);
-                            }
+                            AddBigButton("Ability" + ability.Replace(" ", ""), (h) => { });
+                            AddLine("Required level: ", DarkGray);
+                            AddText(Board.board.player.spec.abilities.Find(x => x.Item1 == ability).Item2 + "", Gray);
+                            AddLine("Cooldown: ", DarkGray);
+                            AddText(abilityObj.cooldown + " turns", Gray);
                         });
-                        SetRegionAsGroupExtender();
-                        AddRegionGroup();
-                        var elements1 = new List<string> { "Fire", "Water", "Earth", "Air", "Fire", "Water", "Earth", "Air", "Air" };
-                        foreach (var element in elements1)
+                        abilityObj.description();
+                        foreach (var cost in abilityObj.cost)
+                        {
+                            AddRegionGroup();
                             AddHeaderRegion(() =>
                             {
-                                AddSmallButton("Element" + element + "Rousing", (h) => { });
+                                AddSmallButton("Element" + cost.Key + "Rousing", (h) => { });
                             });
-                        AddRegionGroup();
-                        SetRegionGroupWidth(15);
-                        foreach (var element in elements1)
+                            AddRegionGroup();
+                            SetRegionGroupWidth(15);
                             AddHeaderRegion(() =>
                             {
-                                AddLine(Board.board.player.resources.ToList().Find(x => x.Key == element).Value + "", LightGray);
+                                AddLine(cost.Value + "", cost.Value > Board.board.player.resources[cost.Key] ? Red : Green);
                             });
+                        }
+                        AddRegionGroup();
+                        SetRegionGroupWidth(256 - abilityObj.cost.Count * 44);
+                        AddPaddingRegion(() =>
+                        {
+                            AddLine("", LightGray);
+                        });
                     }
                 );
             }
@@ -419,28 +437,50 @@ public class Blueprint
                     () =>
                     {
                         AddLine(ability, Black);
-                        AddSmallButton("Ability" + ability, (h) => { });
+                        AddSmallButton("Ability" + ability.Replace(" ", ""), (h) => { });
                     },
                     (h) =>
                     {
-                        SetAnchor(BottomLeft);
-                        AddRegionGroup();
+
+                    },
+                    (h) => () =>
+                    {
+                        SetAnchor(Top, 0, -13);
+                        AddHeaderGroup();
+                        SetRegionGroupWidth(256);
+                        SetRegionGroupHeight(237);
                         AddHeaderRegion(() =>
                         {
-                            AddBigButton("Ability" + ability.Replace(" ", ""), (h) => { });
                             AddLine(ability, Gray);
-                        });
-                        AddHeaderRegion(() =>
-                        {
-                            AddLine("Resource cost:", Gray);
                         });
                         AddPaddingRegion(() =>
                         {
-                            foreach (var resource in abilityObj.cost)
+                            AddBigButton("Ability" + ability.Replace(" ", ""), (h) => { });
+                            //AddLine("Required level: ", DarkGray);
+                            //AddText(Board.board.enemy.spec.abilities.Find(x => x.Item1 == ability).Item2 + "", Gray);
+                            AddLine("Cooldown: ", DarkGray);
+                            AddText(abilityObj.cooldown == 0 ? "None" : abilityObj.cooldown + (abilityObj.cooldown == 1 ? " turn"  : " turns"), Gray);
+                        });
+                        abilityObj.description();
+                        foreach (var cost in abilityObj.cost)
+                        {
+                            AddRegionGroup();
+                            AddHeaderRegion(() =>
                             {
-                                AddLine(resource.Key, Gray);
-                                AddText(" x" + resource.Value, White);
-                            }
+                                AddSmallButton("Element" + cost.Key + "Rousing", (h) => { });
+                            });
+                            AddRegionGroup();
+                            SetRegionGroupWidth(15);
+                            AddHeaderRegion(() =>
+                            {
+                                AddLine(cost.Value + "", LightGray);
+                            });
+                        }
+                        AddRegionGroup();
+                        SetRegionGroupWidth(256 - abilityObj.cost.Count * 44);
+                        AddPaddingRegion(() =>
+                        {
+                            AddLine("", LightGray);
                         });
                     }
                 );
@@ -597,6 +637,8 @@ public class Blueprint
                         (h) =>
                         {
                             var list = Board.board.FloodCount(h.region.bigButtons.FindIndex(x => x.GetComponent<Highlightable>() == h), h.region.regionGroup.regions.IndexOf(h.region));
+                            Board.board.temporaryElementsPlayer = new();
+                            Board.board.playerFinishedMoving = true;
                             Board.board.FloodDestroy(list);
                         });
                         //(h) => () =>
@@ -2122,8 +2164,8 @@ public class Blueprint
             });
         }),
         new("ZulFarrak", () => {
+            SetAnchor(0, 0);
             //SetAnchor(1781, -3768);
-            SetAnchor(0, -0);
             AddRegionGroup();
             AddPaddingRegion(() =>
             {

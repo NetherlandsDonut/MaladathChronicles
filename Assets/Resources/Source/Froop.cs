@@ -6,7 +6,7 @@ public class Froop : MonoBehaviour
     public int index;
     public SpriteRenderer render;
 
-    public static int flySpeed = 4;
+    public static int flySpeed = 6;
     public static int rowAmount = 3;
 
     public void Initiate()

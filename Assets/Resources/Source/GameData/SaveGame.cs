@@ -7,7 +7,7 @@ public class SaveGame
         player = new Entity(
             "Gaval",
             Race.races.Find(x => x.name == "Human"),
-            Class.classes.Find(x => x.name == "Rogue"),
+            Class.classes.Find(x => x.name == "Mage"),
             new()
             {
                 "Scaled Silithid Gauntlets",
