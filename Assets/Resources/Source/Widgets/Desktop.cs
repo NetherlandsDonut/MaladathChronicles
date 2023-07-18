@@ -83,6 +83,14 @@ public class Desktop : MonoBehaviour
         screenlock.SetActive(false);
     }
 
+    public void Start()
+    {
+        if (CDesktop.name == "Desktop: TalentScreen")
+            screen.transform.localPosition = new Vector3(320, -178);
+        else if (CDesktop.name == "Desktop: Map")
+            screen.transform.localPosition = new Vector3(1781, -3768);
+    }
+
     public void Update()
     {
         //if (1.0f / Time.smoothDeltaTime < 60)

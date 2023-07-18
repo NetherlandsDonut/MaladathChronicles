@@ -116,13 +116,12 @@ public static class Root
         var newObject = new GameObject("Desktop: " + title, typeof(Desktop), typeof(SpriteRenderer));
         newObject.transform.localPosition = new Vector3();
         var newDesktop = newObject.GetComponent<Desktop>();
-        newObject.GetComponent<SpriteRenderer>().sortingLayerName = "DesktopBackground";
         LBDesktop = newDesktop;
         newDesktop.Initialise(title);
         desktops.Add(newDesktop);
-        newDesktop.screen = new GameObject("Camera", typeof(Camera)/*, typeof(PixelPerfectCamera)*/).GetComponent<Camera>();
+        newDesktop.screen = new GameObject("Camera", typeof(Camera)/*, typeof(PixelPerfectCamera)*/, typeof(SpriteRenderer)).GetComponent<Camera>();
         newDesktop.screen.transform.parent = newDesktop.transform;
-        //if (title == "Map") newDesktop.transform.position = new Vector3(1781, -3768);
+        newDesktop.screen.GetComponent<SpriteRenderer>().sortingLayerName = "DesktopBackground";
         newDesktop.screen.orthographicSize = 180;
         newDesktop.screen.nearClipPlane = -100;
         newDesktop.screen.farClipPlane = 1000;
@@ -167,7 +166,7 @@ public static class Root
 
     public static void SetDesktopBackground(string texture)
     {
-        LBDesktop.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Textures/" + texture);
+        LBDesktop.screen.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Textures/" + texture);
     }
 
     //Hotkeys can be added only on desktop creation!

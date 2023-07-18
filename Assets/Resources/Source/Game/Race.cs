@@ -273,6 +273,35 @@ public class Race
         new Race
         {
             level = 60,
+            name = "Lord Victor Nefarius",
+            faction = "Neutral",
+            stats = new Stats(new()
+            {
+                { "Stamina", 40 },
+
+                { "Strength", 40 },
+                { "Agility", 40 },
+                { "Intellect", 40 },
+
+                { "Earth Mastery", 20 },
+                { "Fire Mastery", 20 },
+                { "Air Mastery", 20 },
+                { "Water Mastery", 20 },
+                { "Frost Mastery", 20 },
+                { "Lightning Mastery", 20 },
+                { "Arcane Mastery", 20 },
+                { "Decay Mastery", 20 },
+                { "Shadow Mastery", 20 },
+                { "Order Mastery", 20 },
+            }),
+            abilities = new()
+            {
+                
+            }
+        },
+        new Race
+        {
+            level = 60,
             name = "Nefarian",
             faction = "Neutral",
             stats = new Stats(new()
@@ -296,8 +325,7 @@ public class Race
             }),
             abilities = new()
             {
-                "Ass Spell",
-                "Piss Ass Spell",
+                "Shadowflame Breath"
             }
         }
     };

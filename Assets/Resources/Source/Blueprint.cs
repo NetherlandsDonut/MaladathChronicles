@@ -306,7 +306,7 @@ public class Blueprint
             );
             AddHeaderRegion(() =>
             {
-                AddBigButton("Class" + Board.board.player.spec.name,
+                AddBigButton("Class" + Board.board.player.spec,
                     (h) => { }
                     //(h) => () =>
                     //{
@@ -380,9 +380,9 @@ public class Blueprint
                         {
                             AddBigButton("Ability" + ability.Replace(" ", ""), (h) => { });
                             AddLine("Required level: ", DarkGray);
-                            AddText(Board.board.player.spec.abilities.Find(x => x.Item1 == ability).Item2 + "", Gray);
+                            AddText(Board.board.player.GetClass().abilities.Find(x => x.Item1 == ability).Item2 + "", Gray);
                             AddLine("Cooldown: ", DarkGray);
-                            AddText(abilityObj.cooldown + " turns", Gray);
+                            AddText(abilityObj.cooldown == 0 ? "None" : abilityObj.cooldown + (abilityObj.cooldown == 1 ? " turn"  : " turns"), Gray);
                         });
                         abilityObj.description();
                         foreach (var cost in abilityObj.cost)
@@ -485,48 +485,6 @@ public class Blueprint
                     }
                 );
             }
-        }),
-        new("EnemyBattleInfo Old", () => {
-            SetAnchor(BottomRight);
-            AddRegionGroup();
-            SetRegionGroupWidth(138);
-            AddButtonRegion(
-                () =>
-                {
-                    AddLine("Bone Construct", Black);
-                },
-                (h) =>
-                {
-
-                }
-            );
-            AddHeaderRegion(() =>
-            {
-                AddBigButton("PortraitBoneConstruct", (h) => { });
-                AddLine("Level 60", Gray);
-            });
-            AddButtonRegion(
-                () =>
-                {
-                    AddLine("?", Black);
-                    AddSmallButton("OtherUnknown", (h) => { });
-                },
-                (h) =>
-                {
-
-                }
-            );
-            AddButtonRegion(
-                () =>
-                {
-                    AddLine("?", Black);
-                    AddSmallButton("OtherUnknown", (h) => { });
-                },
-                (h) =>
-                {
-
-                }
-            );
         }),
         new("JourneyInfo", () => {
             SetAnchor(TopRight);
@@ -2163,8 +2121,8 @@ public class Blueprint
                 });
             });
         }),
-        new("TestingArena", () => {
-            SetAnchor(0, 0);
+        new("ZulFarrak", () => {
+            SetAnchor(1781, -3768);
             AddRegionGroup();
             AddPaddingRegion(() =>
             {
@@ -2174,48 +2132,6 @@ public class Blueprint
                     Board.board = new Board(7, 7, "Nefarian");
                     SpawnDesktopBlueprint("Game");
                     SwitchDesktop("Game");
-                },
-                (h) => () =>
-                {
-                    SetAnchor(TopRight, h.window);
-                    AddRegionGroup();
-                    AddHeaderRegion(() =>
-                    {
-                        AddLine("Zul\'Farrak", Gray);
-                    });
-                    AddHeaderRegion(() =>
-                    {
-                        AddLine("Nothing:", Gray);
-                    });
-                    AddPaddingRegion(() =>
-                    {
-                        AddLine("There is nothing here yet", Gray);
-                        AddLine("But there will be something soon", Gray);
-                        AddLine("I hope so", Gray);
-                    });
-                    AddHeaderRegion(() =>
-                    {
-                        AddLine("Very nothing:", Gray);
-                    });
-                    AddPaddingRegion(() =>
-                    {
-                        AddLine("There is nothing here yet", Gray);
-                        AddLine("But there will be something soon", Gray);
-                    });
-                });
-                AddLine("Testing Arena");
-                AddLine("Click the button to begin");
-            });
-        }),
-        new("ZulFarrak", () => {
-            SetAnchor(1781, -3768);
-            AddRegionGroup();
-            AddPaddingRegion(() =>
-            {
-                AddSmallButton("SiteDungeon",
-                (h) =>
-                {
-
                 },
                 (h) => () =>
                 {
@@ -2387,6 +2303,1626 @@ public class Blueprint
             {
                 AddLine("There is nothing here yet", Gray);
                 AddLine("But there will be something soon", Gray);
+            });
+        }),
+        new("Talent000", () => {
+            SetAnchor(25, -23);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var playerClass = currentSave.player.GetClass();
+                var talent = playerClass.talentTrees[0].talents.Find(x => x.row == 0 && x.col == 0);
+                AddBigButton("Ability" + talent.ability.Replace(" ", ""),
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("Talent001", () => {
+            SetAnchor(87, -23);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var playerClass = currentSave.player.GetClass();
+                var talent = playerClass.talentTrees[0].talents.Find(x => x.row == 0 && x.col == 1);
+                AddBigButton("Ability" + talent.ability.Replace(" ", ""),
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("Talent002", () => {
+            SetAnchor(149, -23);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var playerClass = currentSave.player.GetClass();
+                var talent = playerClass.talentTrees[0].talents.Find(x => x.row == 0 && x.col == 2);
+                AddBigButton("Ability" + talent.ability.Replace(" ", ""),
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("Talent010", () => {
+            SetAnchor(25, -85);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var playerClass = currentSave.player.GetClass();
+                var talent = playerClass.talentTrees[0].talents.Find(x => x.row == 1 && x.col == 0);
+                AddBigButton("Ability" + talent.ability.Replace(" ", ""),
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("Talent011", () => {
+            SetAnchor(87, -85);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var playerClass = currentSave.player.GetClass();
+                var talent = playerClass.talentTrees[0].talents.Find(x => x.row == 1 && x.col == 1);
+                AddBigButton("Ability" + talent.ability.Replace(" ", ""),
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("Talent012", () => {
+            SetAnchor(149, -85);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var playerClass = currentSave.player.GetClass();
+                var talent = playerClass.talentTrees[0].talents.Find(x => x.row == 1 && x.col == 2);
+                AddBigButton("Ability" + talent.ability.Replace(" ", ""),
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("Talent020", () => {
+            SetAnchor(25, -147);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var playerClass = currentSave.player.GetClass();
+                var talent = playerClass.talentTrees[0].talents.Find(x => x.row == 2 && x.col == 0);
+                AddBigButton("Ability" + talent.ability.Replace(" ", ""),
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("Talent021", () => {
+            SetAnchor(87, -147);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var playerClass = currentSave.player.GetClass();
+                var talent = playerClass.talentTrees[0].talents.Find(x => x.row == 2 && x.col == 1);
+                AddBigButton("Ability" + talent.ability.Replace(" ", ""),
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("Talent022", () => {
+            SetAnchor(149, -147);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var playerClass = currentSave.player.GetClass();
+                var talent = playerClass.talentTrees[0].talents.Find(x => x.row == 2 && x.col == 2);
+                AddBigButton("Ability" + talent.ability.Replace(" ", ""),
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("Talent030", () => {
+            SetAnchor(25, -209);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var playerClass = currentSave.player.GetClass();
+                var talent = playerClass.talentTrees[0].talents.Find(x => x.row == 3 && x.col == 0);
+                AddBigButton("Ability" + talent.ability.Replace(" ", ""),
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("Talent031", () => {
+            SetAnchor(87, -209);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var playerClass = currentSave.player.GetClass();
+                var talent = playerClass.talentTrees[0].talents.Find(x => x.row == 3 && x.col == 1);
+                AddBigButton("Ability" + talent.ability.Replace(" ", ""),
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("Talent032", () => {
+            SetAnchor(149, -209);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var playerClass = currentSave.player.GetClass();
+                var talent = playerClass.talentTrees[0].talents.Find(x => x.row == 3 && x.col == 2);
+                AddBigButton("Ability" + talent.ability.Replace(" ", ""),
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("Talent040", () => {
+            SetAnchor(25, -271);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var playerClass = currentSave.player.GetClass();
+                var talent = playerClass.talentTrees[0].talents.Find(x => x.row == 4 && x.col == 0);
+                AddBigButton("Ability" + talent.ability.Replace(" ", ""),
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("Talent041", () => {
+            SetAnchor(87, -271);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var playerClass = currentSave.player.GetClass();
+                var talent = playerClass.talentTrees[0].talents.Find(x => x.row == 4 && x.col == 1);
+                AddBigButton("Ability" + talent.ability.Replace(" ", ""),
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("Talent042", () => {
+            SetAnchor(149, -271);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var playerClass = currentSave.player.GetClass();
+                var talent = playerClass.talentTrees[0].talents.Find(x => x.row == 4 && x.col == 2);
+                AddBigButton("Ability" + talent.ability.Replace(" ", ""),
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("Talent050", () => {
+            SetAnchor(25, -333);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var playerClass = currentSave.player.GetClass();
+                var talent = playerClass.talentTrees[0].talents.Find(x => x.row == 5 && x.col == 0);
+                AddBigButton("Ability" + talent.ability.Replace(" ", ""),
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("Talent051", () => {
+            SetAnchor(87, -333);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var playerClass = currentSave.player.GetClass();
+                var talent = playerClass.talentTrees[0].talents.Find(x => x.row == 5 && x.col == 1);
+                AddBigButton("Ability" + talent.ability.Replace(" ", ""),
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("Talent052", () => {
+            SetAnchor(149, -333);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var playerClass = currentSave.player.GetClass();
+                var talent = playerClass.talentTrees[0].talents.Find(x => x.row == 5 && x.col == 2);
+                AddBigButton("Ability" + talent.ability.Replace(" ", ""),
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("Talent060", () => {
+            SetAnchor(25, -395);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var playerClass = currentSave.player.GetClass();
+                var talent = playerClass.talentTrees[0].talents.Find(x => x.row == 6 && x.col == 0);
+                AddBigButton("Ability" + talent.ability.Replace(" ", ""),
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("Talent061", () => {
+            SetAnchor(87, -395);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var playerClass = currentSave.player.GetClass();
+                var talent = playerClass.talentTrees[0].talents.Find(x => x.row == 6 && x.col == 1);
+                AddBigButton("Ability" + talent.ability.Replace(" ", ""),
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("Talent062", () => {
+            SetAnchor(149, -395);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var playerClass = currentSave.player.GetClass();
+                var talent = playerClass.talentTrees[0].talents.Find(x => x.row == 6 && x.col == 2);
+                AddBigButton("Ability" + talent.ability.Replace(" ", ""),
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("Talent070", () => {
+            SetAnchor(25, -457);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var playerClass = currentSave.player.GetClass();
+                var talent = playerClass.talentTrees[0].talents.Find(x => x.row == 7 && x.col == 0);
+                AddBigButton("Ability" + talent.ability.Replace(" ", ""),
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("Talent071", () => {
+            SetAnchor(87, -457);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var playerClass = currentSave.player.GetClass();
+                var talent = playerClass.talentTrees[0].talents.Find(x => x.row == 7 && x.col == 1);
+                AddBigButton("Ability" + talent.ability.Replace(" ", ""),
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("Talent072", () => {
+            SetAnchor(149, -457);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var playerClass = currentSave.player.GetClass();
+                var talent = playerClass.talentTrees[0].talents.Find(x => x.row == 7 && x.col == 2);
+                AddBigButton("Ability" + talent.ability.Replace(" ", ""),
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("Talent080", () => {
+            SetAnchor(25, -519);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var playerClass = currentSave.player.GetClass();
+                var talent = playerClass.talentTrees[0].talents.Find(x => x.row == 8 && x.col == 0);
+                AddBigButton("Ability" + talent.ability.Replace(" ", ""),
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("Talent081", () => {
+            SetAnchor(87, -519);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var playerClass = currentSave.player.GetClass();
+                var talent = playerClass.talentTrees[0].talents.Find(x => x.row == 8 && x.col == 1);
+                AddBigButton("Ability" + talent.ability.Replace(" ", ""),
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("Talent082", () => {
+            SetAnchor(149, -519);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var playerClass = currentSave.player.GetClass();
+                var talent = playerClass.talentTrees[0].talents.Find(x => x.row == 8 && x.col == 2);
+                AddBigButton("Ability" + talent.ability.Replace(" ", ""),
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("Talent090", () => {
+            SetAnchor(25, -581);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var playerClass = currentSave.player.GetClass();
+                var talent = playerClass.talentTrees[0].talents.Find(x => x.row == 9 && x.col == 0);
+                AddBigButton("Ability" + talent.ability.Replace(" ", ""),
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("Talent091", () => {
+            SetAnchor(87, -581);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var playerClass = currentSave.player.GetClass();
+                var talent = playerClass.talentTrees[0].talents.Find(x => x.row == 9 && x.col == 1);
+                AddBigButton("Ability" + talent.ability.Replace(" ", ""),
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("Talent092", () => {
+            SetAnchor(149, -581);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var playerClass = currentSave.player.GetClass();
+                var talent = playerClass.talentTrees[0].talents.Find(x => x.row == 9 && x.col == 2);
+                AddBigButton("Ability" + talent.ability.Replace(" ", ""),
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("Talent100", () => {
+            SetAnchor(238, -23);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var playerClass = currentSave.player.GetClass();
+                var talent = playerClass.talentTrees[1].talents.Find(x => x.row == 0 && x.col == 0);
+                AddBigButton("Ability" + talent.ability.Replace(" ", ""),
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("Talent101", () => {
+            SetAnchor(300, -23);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var playerClass = currentSave.player.GetClass();
+                var talent = playerClass.talentTrees[1].talents.Find(x => x.row == 0 && x.col == 1);
+                AddBigButton("Ability" + talent.ability.Replace(" ", ""),
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("Talent102", () => {
+            SetAnchor(362, -23);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var playerClass = currentSave.player.GetClass();
+                var talent = playerClass.talentTrees[1].talents.Find(x => x.row == 0 && x.col == 2);
+                AddBigButton("Ability" + talent.ability.Replace(" ", ""),
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("Talent110", () => {
+            SetAnchor(238, -85);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var playerClass = currentSave.player.GetClass();
+                var talent = playerClass.talentTrees[1].talents.Find(x => x.row == 1 && x.col == 0);
+                AddBigButton("Ability" + talent.ability.Replace(" ", ""),
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("Talent111", () => {
+            SetAnchor(300, -85);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var playerClass = currentSave.player.GetClass();
+                var talent = playerClass.talentTrees[1].talents.Find(x => x.row == 1 && x.col == 1);
+                AddBigButton("Ability" + talent.ability.Replace(" ", ""),
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("Talent112", () => {
+            SetAnchor(362, -85);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var playerClass = currentSave.player.GetClass();
+                var talent = playerClass.talentTrees[1].talents.Find(x => x.row == 1 && x.col == 2);
+                AddBigButton("Ability" + talent.ability.Replace(" ", ""),
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("Talent120", () => {
+            SetAnchor(238, -147);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var playerClass = currentSave.player.GetClass();
+                var talent = playerClass.talentTrees[1].talents.Find(x => x.row == 2 && x.col == 0);
+                AddBigButton("Ability" + talent.ability.Replace(" ", ""),
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("Talent121", () => {
+            SetAnchor(300, -147);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var playerClass = currentSave.player.GetClass();
+                var talent = playerClass.talentTrees[1].talents.Find(x => x.row == 2 && x.col == 1);
+                AddBigButton("Ability" + talent.ability.Replace(" ", ""),
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("Talent122", () => {
+            SetAnchor(362, -147);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var playerClass = currentSave.player.GetClass();
+                var talent = playerClass.talentTrees[1].talents.Find(x => x.row == 2 && x.col == 2);
+                AddBigButton("Ability" + talent.ability.Replace(" ", ""),
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("Talent130", () => {
+            SetAnchor(238, -209);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var playerClass = currentSave.player.GetClass();
+                var talent = playerClass.talentTrees[1].talents.Find(x => x.row == 3 && x.col == 0);
+                AddBigButton("Ability" + talent.ability.Replace(" ", ""),
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("Talent131", () => {
+            SetAnchor(300, -209);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var playerClass = currentSave.player.GetClass();
+                var talent = playerClass.talentTrees[1].talents.Find(x => x.row == 3 && x.col == 1);
+                AddBigButton("Ability" + talent.ability.Replace(" ", ""),
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("Talent132", () => {
+            SetAnchor(362, -209);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var playerClass = currentSave.player.GetClass();
+                var talent = playerClass.talentTrees[1].talents.Find(x => x.row == 3 && x.col == 2);
+                AddBigButton("Ability" + talent.ability.Replace(" ", ""),
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("Talent140", () => {
+            SetAnchor(238, -271);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var playerClass = currentSave.player.GetClass();
+                var talent = playerClass.talentTrees[1].talents.Find(x => x.row == 4 && x.col == 0);
+                AddBigButton("Ability" + talent.ability.Replace(" ", ""),
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("Talent141", () => {
+            SetAnchor(300, -271);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var playerClass = currentSave.player.GetClass();
+                var talent = playerClass.talentTrees[1].talents.Find(x => x.row == 4 && x.col == 1);
+                AddBigButton("Ability" + talent.ability.Replace(" ", ""),
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("Talent142", () => {
+            SetAnchor(362, -271);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var playerClass = currentSave.player.GetClass();
+                var talent = playerClass.talentTrees[1].talents.Find(x => x.row == 4 && x.col == 2);
+                AddBigButton("Ability" + talent.ability.Replace(" ", ""),
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("Talent150", () => {
+            SetAnchor(238, -333);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var playerClass = currentSave.player.GetClass();
+                var talent = playerClass.talentTrees[1].talents.Find(x => x.row == 5 && x.col == 0);
+                AddBigButton("Ability" + talent.ability.Replace(" ", ""),
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("Talent151", () => {
+            SetAnchor(300, -333);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var playerClass = currentSave.player.GetClass();
+                var talent = playerClass.talentTrees[1].talents.Find(x => x.row == 5 && x.col == 1);
+                AddBigButton("Ability" + talent.ability.Replace(" ", ""),
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("Talent152", () => {
+            SetAnchor(362, -333);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var playerClass = currentSave.player.GetClass();
+                var talent = playerClass.talentTrees[1].talents.Find(x => x.row == 5 && x.col == 2);
+                AddBigButton("Ability" + talent.ability.Replace(" ", ""),
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("Talent160", () => {
+            SetAnchor(238, -395);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var playerClass = currentSave.player.GetClass();
+                var talent = playerClass.talentTrees[1].talents.Find(x => x.row == 6 && x.col == 0);
+                AddBigButton("Ability" + talent.ability.Replace(" ", ""),
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("Talent161", () => {
+            SetAnchor(300, -395);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var playerClass = currentSave.player.GetClass();
+                var talent = playerClass.talentTrees[1].talents.Find(x => x.row == 6 && x.col == 1);
+                AddBigButton("Ability" + talent.ability.Replace(" ", ""),
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("Talent162", () => {
+            SetAnchor(362, -395);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var playerClass = currentSave.player.GetClass();
+                var talent = playerClass.talentTrees[1].talents.Find(x => x.row == 6 && x.col == 2);
+                AddBigButton("Ability" + talent.ability.Replace(" ", ""),
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("Talent170", () => {
+            SetAnchor(238, -457);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var playerClass = currentSave.player.GetClass();
+                var talent = playerClass.talentTrees[1].talents.Find(x => x.row == 7 && x.col == 0);
+                AddBigButton("Ability" + talent.ability.Replace(" ", ""),
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("Talent171", () => {
+            SetAnchor(300, -457);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var playerClass = currentSave.player.GetClass();
+                var talent = playerClass.talentTrees[1].talents.Find(x => x.row == 7 && x.col == 1);
+                AddBigButton("Ability" + talent.ability.Replace(" ", ""),
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("Talent172", () => {
+            SetAnchor(362, -457);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var playerClass = currentSave.player.GetClass();
+                var talent = playerClass.talentTrees[1].talents.Find(x => x.row == 7 && x.col == 2);
+                AddBigButton("Ability" + talent.ability.Replace(" ", ""),
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("Talent180", () => {
+            SetAnchor(238, -519);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var playerClass = currentSave.player.GetClass();
+                var talent = playerClass.talentTrees[1].talents.Find(x => x.row == 8 && x.col == 0);
+                AddBigButton("Ability" + talent.ability.Replace(" ", ""),
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("Talent181", () => {
+            SetAnchor(300, -519);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var playerClass = currentSave.player.GetClass();
+                var talent = playerClass.talentTrees[1].talents.Find(x => x.row == 8 && x.col == 1);
+                AddBigButton("Ability" + talent.ability.Replace(" ", ""),
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("Talent182", () => {
+            SetAnchor(362, -519);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var playerClass = currentSave.player.GetClass();
+                var talent = playerClass.talentTrees[1].talents.Find(x => x.row == 8 && x.col == 2);
+                AddBigButton("Ability" + talent.ability.Replace(" ", ""),
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("Talent190", () => {
+            SetAnchor(238, -581);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var playerClass = currentSave.player.GetClass();
+                var talent = playerClass.talentTrees[1].talents.Find(x => x.row == 9 && x.col == 0);
+                AddBigButton("Ability" + talent.ability.Replace(" ", ""),
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("Talent191", () => {
+            SetAnchor(300, -581);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var playerClass = currentSave.player.GetClass();
+                var talent = playerClass.talentTrees[1].talents.Find(x => x.row == 9 && x.col == 1);
+                AddBigButton("Ability" + talent.ability.Replace(" ", ""),
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("Talent192", () => {
+            SetAnchor(362, -581);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var playerClass = currentSave.player.GetClass();
+                var talent = playerClass.talentTrees[1].talents.Find(x => x.row == 9 && x.col == 2);
+                AddBigButton("Ability" + talent.ability.Replace(" ", ""),
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("Talent200", () => {
+            SetAnchor(450, -23);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var playerClass = currentSave.player.GetClass();
+                var talent = playerClass.talentTrees[2].talents.Find(x => x.row == 0 && x.col == 0);
+                AddBigButton("Ability" + talent.ability.Replace(" ", ""),
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("Talent201", () => {
+            SetAnchor(512, -23);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var playerClass = currentSave.player.GetClass();
+                var talent = playerClass.talentTrees[2].talents.Find(x => x.row == 0 && x.col == 1);
+                AddBigButton("Ability" + talent.ability.Replace(" ", ""),
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("Talent202", () => {
+            SetAnchor(574, -23);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var playerClass = currentSave.player.GetClass();
+                var talent = playerClass.talentTrees[2].talents.Find(x => x.row == 0 && x.col == 2);
+                AddBigButton("Ability" + talent.ability.Replace(" ", ""),
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("Talent210", () => {
+            SetAnchor(450, -85);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var playerClass = currentSave.player.GetClass();
+                var talent = playerClass.talentTrees[2].talents.Find(x => x.row == 1 && x.col == 0);
+                AddBigButton("Ability" + talent.ability.Replace(" ", ""),
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("Talent211", () => {
+            SetAnchor(512, -85);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var playerClass = currentSave.player.GetClass();
+                var talent = playerClass.talentTrees[2].talents.Find(x => x.row == 1 && x.col == 1);
+                AddBigButton("Ability" + talent.ability.Replace(" ", ""),
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("Talent212", () => {
+            SetAnchor(574, -85);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var playerClass = currentSave.player.GetClass();
+                var talent = playerClass.talentTrees[2].talents.Find(x => x.row == 1 && x.col == 2);
+                AddBigButton("Ability" + talent.ability.Replace(" ", ""),
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("Talent220", () => {
+            SetAnchor(450, -147);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var playerClass = currentSave.player.GetClass();
+                var talent = playerClass.talentTrees[2].talents.Find(x => x.row == 2 && x.col == 0);
+                AddBigButton("Ability" + talent.ability.Replace(" ", ""),
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("Talent221", () => {
+            SetAnchor(512, -147);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var playerClass = currentSave.player.GetClass();
+                var talent = playerClass.talentTrees[2].talents.Find(x => x.row == 2 && x.col == 1);
+                AddBigButton("Ability" + talent.ability.Replace(" ", ""),
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("Talent222", () => {
+            SetAnchor(574, -147);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var playerClass = currentSave.player.GetClass();
+                var talent = playerClass.talentTrees[2].talents.Find(x => x.row == 2 && x.col == 2);
+                AddBigButton("Ability" + talent.ability.Replace(" ", ""),
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("Talent230", () => {
+            SetAnchor(450, -209);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var playerClass = currentSave.player.GetClass();
+                var talent = playerClass.talentTrees[2].talents.Find(x => x.row == 3 && x.col == 0);
+                AddBigButton("Ability" + talent.ability.Replace(" ", ""),
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("Talent231", () => {
+            SetAnchor(512, -209);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var playerClass = currentSave.player.GetClass();
+                var talent = playerClass.talentTrees[2].talents.Find(x => x.row == 3 && x.col == 1);
+                AddBigButton("Ability" + talent.ability.Replace(" ", ""),
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("Talent232", () => {
+            SetAnchor(574, -209);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var playerClass = currentSave.player.GetClass();
+                var talent = playerClass.talentTrees[2].talents.Find(x => x.row == 3 && x.col == 2);
+                AddBigButton("Ability" + talent.ability.Replace(" ", ""),
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("Talent240", () => {
+            SetAnchor(450, -271);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var playerClass = currentSave.player.GetClass();
+                var talent = playerClass.talentTrees[2].talents.Find(x => x.row == 4 && x.col == 0);
+                AddBigButton("Ability" + talent.ability.Replace(" ", ""),
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("Talent241", () => {
+            SetAnchor(512, -271);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var playerClass = currentSave.player.GetClass();
+                var talent = playerClass.talentTrees[2].talents.Find(x => x.row == 4 && x.col == 1);
+                AddBigButton("Ability" + talent.ability.Replace(" ", ""),
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("Talent242", () => {
+            SetAnchor(574, -271);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var playerClass = currentSave.player.GetClass();
+                var talent = playerClass.talentTrees[2].talents.Find(x => x.row == 4 && x.col == 2);
+                AddBigButton("Ability" + talent.ability.Replace(" ", ""),
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("Talent250", () => {
+            SetAnchor(450, -333);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var playerClass = currentSave.player.GetClass();
+                var talent = playerClass.talentTrees[2].talents.Find(x => x.row == 5 && x.col == 0);
+                AddBigButton("Ability" + talent.ability.Replace(" ", ""),
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("Talent251", () => {
+            SetAnchor(512, -333);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var playerClass = currentSave.player.GetClass();
+                var talent = playerClass.talentTrees[2].talents.Find(x => x.row == 5 && x.col == 1);
+                AddBigButton("Ability" + talent.ability.Replace(" ", ""),
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("Talent252", () => {
+            SetAnchor(574, -333);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var playerClass = currentSave.player.GetClass();
+                var talent = playerClass.talentTrees[2].talents.Find(x => x.row == 5 && x.col == 2);
+                AddBigButton("Ability" + talent.ability.Replace(" ", ""),
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("Talent260", () => {
+            SetAnchor(450, -395);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var playerClass = currentSave.player.GetClass();
+                var talent = playerClass.talentTrees[2].talents.Find(x => x.row == 6 && x.col == 0);
+                AddBigButton("Ability" + talent.ability.Replace(" ", ""),
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("Talent261", () => {
+            SetAnchor(512, -395);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var playerClass = currentSave.player.GetClass();
+                var talent = playerClass.talentTrees[2].talents.Find(x => x.row == 6 && x.col == 1);
+                AddBigButton("Ability" + talent.ability.Replace(" ", ""),
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("Talent262", () => {
+            SetAnchor(574, -395);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var playerClass = currentSave.player.GetClass();
+                var talent = playerClass.talentTrees[2].talents.Find(x => x.row == 6 && x.col == 2);
+                AddBigButton("Ability" + talent.ability.Replace(" ", ""),
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("Talent270", () => {
+            SetAnchor(450, -457);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var playerClass = currentSave.player.GetClass();
+                var talent = playerClass.talentTrees[2].talents.Find(x => x.row == 7 && x.col == 0);
+                AddBigButton("Ability" + talent.ability.Replace(" ", ""),
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("Talent271", () => {
+            SetAnchor(512, -457);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var playerClass = currentSave.player.GetClass();
+                var talent = playerClass.talentTrees[2].talents.Find(x => x.row == 7 && x.col == 1);
+                AddBigButton("Ability" + talent.ability.Replace(" ", ""),
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("Talent272", () => {
+            SetAnchor(574, -457);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var playerClass = currentSave.player.GetClass();
+                var talent = playerClass.talentTrees[2].talents.Find(x => x.row == 7 && x.col == 2);
+                AddBigButton("Ability" + talent.ability.Replace(" ", ""),
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("Talent280", () => {
+            SetAnchor(450, -519);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var playerClass = currentSave.player.GetClass();
+                var talent = playerClass.talentTrees[2].talents.Find(x => x.row == 8 && x.col == 0);
+                AddBigButton("Ability" + talent.ability.Replace(" ", ""),
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("Talent281", () => {
+            SetAnchor(512, -519);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var playerClass = currentSave.player.GetClass();
+                var talent = playerClass.talentTrees[2].talents.Find(x => x.row == 8 && x.col == 1);
+                AddBigButton("Ability" + talent.ability.Replace(" ", ""),
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("Talent282", () => {
+            SetAnchor(574, -519);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var playerClass = currentSave.player.GetClass();
+                var talent = playerClass.talentTrees[2].talents.Find(x => x.row == 8 && x.col == 2);
+                AddBigButton("Ability" + talent.ability.Replace(" ", ""),
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("Talent290", () => {
+            SetAnchor(450, -581);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var playerClass = currentSave.player.GetClass();
+                var talent = playerClass.talentTrees[2].talents.Find(x => x.row == 9 && x.col == 0);
+                AddBigButton("Ability" + talent.ability.Replace(" ", ""),
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("Talent291", () => {
+            SetAnchor(512, -581);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var playerClass = currentSave.player.GetClass();
+                var talent = playerClass.talentTrees[2].talents.Find(x => x.row == 9 && x.col == 1);
+                AddBigButton("Ability" + talent.ability.Replace(" ", ""),
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
+            });
+        }),
+        new("Talent292", () => {
+            SetAnchor(574, -581);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var playerClass = currentSave.player.GetClass();
+                var talent = playerClass.talentTrees[2].talents.Find(x => x.row == 9 && x.col == 2);
+                AddBigButton("Ability" + talent.ability.Replace(" ", ""),
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+
+                });
             });
         }),
         new("CharacterNeckSlot", () => {
@@ -2733,12 +4269,12 @@ public class Blueprint
             SpawnWindowBlueprint("ZulFarrak");
             SpawnWindowBlueprint("CenarionHold");
             SpawnWindowBlueprint("WindshearMine");
-            SpawnWindowBlueprint("TestingArena");
             AddHotkey(W, () => { var amount = new Vector3(0, (float)Math.Round(EuelerGrowth())); CDesktop.screen.transform.position += amount; cursor.transform.position += amount; }, false);
             AddHotkey(A, () => { var amount = new Vector3(-(float)Math.Round(EuelerGrowth()), 0); CDesktop.screen.transform.position += amount; cursor.transform.position += amount; }, false);
             AddHotkey(S, () => { var amount = new Vector3(0, -(float)Math.Round(EuelerGrowth())); CDesktop.screen.transform.position += amount; cursor.transform.position += amount; }, false);
             AddHotkey(D, () => { var amount = new Vector3((float)Math.Round(EuelerGrowth()), 0); CDesktop.screen.transform.position += amount; cursor.transform.position += amount; }, false);
             AddHotkey(C, () => { SpawnDesktopBlueprint("CharacterScreen"); SwitchDesktop("CharacterScreen"); });
+            AddHotkey(N, () => { SpawnDesktopBlueprint("TalentScreen"); SwitchDesktop("TalentScreen"); });
             AddHotkey(B, () => { SpawnWindowBlueprint("PlayerInventory"); });
         }),
         new("Game", () =>
@@ -2752,6 +4288,36 @@ public class Blueprint
             //SpawnWindowBlueprint("LocationInfo");
             Board.board.Reset();
             AddHotkey(Escape, () => { SwitchDesktop("Map"); CloseDesktop("Game"); });
+            AddHotkey(PageUp, () => {
+                Board.board.player.resources = new Dictionary<string, int>
+                {
+                    { "Earth", 99 },
+                    { "Fire", 99 },
+                    { "Air", 99 },
+                    { "Water", 99 },
+                    { "Frost", 99 },
+                    { "Lightning", 99 },
+                    { "Arcane", 99 },
+                    { "Decay", 99 },
+                    { "Order", 99 },
+                    { "Shadow", 99 },
+                };
+            });
+            AddHotkey(PageDown, () => {
+                Board.board.enemy.resources = new Dictionary<string, int>
+                {
+                    { "Earth", 99 },
+                    { "Fire", 99 },
+                    { "Air", 99 },
+                    { "Water", 99 },
+                    { "Frost", 99 },
+                    { "Lightning", 99 },
+                    { "Arcane", 99 },
+                    { "Decay", 99 },
+                    { "Order", 99 },
+                    { "Shadow", 99 },
+                };
+            });
         }),
         new("CharacterScreen", () =>
         {
@@ -2777,9 +4343,38 @@ public class Blueprint
             AddHotkey(C, () => { SwitchDesktop("Map"); CloseDesktop("CharacterScreen"); });
             AddHotkey(Escape, () => { SwitchDesktop("Map"); CloseDesktop("CharacterScreen"); });
         }),
+        new("TalentScreen", () =>
+        {
+            SetDesktopBackground("StoneSplit");
+            var playerClass = currentSave.player.GetClass();
+            for (int spec = 0; spec < 3; spec++)
+                for (int row = 0; row <= playerClass.talentTrees[spec].talents.Max(x => x.row); row++)
+                    for (int col = 0; col < 3; col++)
+                        if (windowBlueprints.Exists(x => x.title == "Talent" + spec + row + col))
+                            if (playerClass.talentTrees[spec].talents.Exists(x => x.row == row && x.col == col))
+                                SpawnWindowBlueprint("Talent" + spec + row + col);
+            AddHotkey(N, () => { SwitchDesktop("Map"); CloseDesktop("TalentScreen"); });
+            AddHotkey(Escape, () => { SwitchDesktop("Map"); CloseDesktop("TalentScreen"); });
+            AddHotkey(W, () =>
+            {
+                var amount = new Vector3(0, (float)Math.Round(EuelerGrowth())) / 2;
+                CDesktop.screen.transform.position += amount; cursor.transform.position += amount;
+                if (CDesktop.screen.transform.position.y > -178)
+                {
+                    var off = CDesktop.screen.transform.position.y + 178f;
+                    CDesktop.screen.transform.position -= new Vector3(0, off);
+                    cursor.transform.position -= new Vector3(0, off);
+                }
+            },  false);
+            AddHotkey(S, () =>
+            {
+                var amount = new Vector3(0, -(float)Math.Round(EuelerGrowth())) / 2;
+                CDesktop.screen.transform.position += amount; cursor.transform.position += amount;
+            },  false);
+            CDesktop.LBWindow.PlaySound("DesktopTalentScreenOpen");
+        }),
         new("TitleScreen", () =>
         {
-            //SetDesktopBackground("ZoneStonetalonMountains");
             SpawnWindowBlueprint("TitleScreenMenu");
         }),
     };

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using static Race;
 using static Root;
 using static Root.Color;
+using System.Linq;
 
 public class Board
 {
@@ -21,6 +22,8 @@ public class Board
         actions = new List<Action>();
     }
 
+    //STATIC REFERENCE TO THE BOARD
+    //THERE CAN BE ONLY ONE AT A TIME THANKS TO STATIC REF
     public static Board board;
 
     public int bonusTurnStreak;
@@ -31,6 +34,7 @@ public class Board
     public List<GameObject> temporaryElementsPlayer, temporaryElementsEnemy;
     public List<Action> actions;
 
+    //ENDS THE CURRENT PLAYER'S TURN
     public void EndTurn()
     {
         if (playerTurn)
@@ -45,18 +49,13 @@ public class Board
         }
     }
 
+    //RESETS THE BOARD TO BE EMPTY AND REFILLED AGAIN
     public void Reset()
     {
         field = new int[field.GetLength(0), field.GetLength(1)];
         for (int i = 0; i < field.GetLength(0); i++)
             for (int j = 0; j < field.GetLength(1); j++)
                 field[i, j] = 0;
-        StartAnimations();
-    }
-
-    public int animFrame;
-    public void StartAnimations()
-    {
         CDesktop.LockScreen();
     }
 
@@ -141,10 +140,21 @@ public class Board
             {
                 breakForEnemy = false;
                 bonusTurnStreak = 0;
-                var list = board.FloodCount(random.Next(0, field.GetLength(0)), random.Next(0, field.GetLength(1)));
                 temporaryElementsEnemy = new();
-                board.FloodDestroy(list);
-                enemyFinishedMoving = true;
+                var abilities = enemy.abilities.Select(x => Ability.abilities.Find(y => y.name == x));
+                if (abilities.Any(x => x.EnoughResources(enemy)))
+                {
+                    var a = abilities.First(x => x.EnoughResources(enemy));
+                    a.effects(false);
+                    board.enemy.DetractResources(a.cost);
+                    window.desktop.Rebuild();
+                }
+                else
+                {
+                    var list = board.FloodCount(random.Next(0, field.GetLength(0)), random.Next(0, field.GetLength(1)));
+                    board.FloodDestroy(list);
+                    enemyFinishedMoving = true;
+                }
             }
         }
 
@@ -174,7 +184,6 @@ public class Board
     public int fieldGetCounterY = 0;
 
     public string GetFieldName(int x, int y) => boardNameDictionary[field[x, y]].ToString();
-    public Root.Color GetFieldColor(int x, int y) => boardColorDictionary[field[x, y]];
 
     public string GetFieldButton()
     {
@@ -187,14 +196,16 @@ public class Board
         return r;
     }
 
+    //DESTROYS A SINGLE TARGETED ELEMENT ON THE BOARD FOR THE CURRENT PLAYER
     public void SelectDestroy(int x, int y)
     {
         window.PlaySound(collectSoundDictionary[field[x, y]].ToString(), 0.3f);
         SpawnShatter(1, 0.5, window.LBRegionGroup.regions[y].bigButtons[x].transform.position + new Vector3(-17.5f, -17.5f), boardButtonDictionary[field[x, y]]);
         field[x, y] = 0;
-        StartAnimations();
+        CDesktop.LockScreen();
     }
 
+    //DESTROYS ALL ELEMENTS OF THE SAME KIND THAT ARE NEARBY OF THE TARGETED ONE
     public void FloodDestroy(List<(int, int, int)> list)
     {
         window.PlaySound(collectSoundDictionary[list[0].Item3].ToString(), 0.3f);
@@ -224,7 +235,7 @@ public class Board
             else enemy.resources[element]++;
             field[a.Item1, a.Item2] = 0;
         }
-        StartAnimations();
+        CDesktop.LockScreen();
     }
 
     public List<(int, int, int)> FloodCount(int x, int y)
@@ -280,41 +291,6 @@ public class Board
         { 28, "Soul of Arcane" },
         { 29, "Soul of Order" },
         { 30, "Soul of Shadow" },
-    };
-
-    public static Dictionary<int, Root.Color> boardColorDictionary = new()
-    {
-        { 00, Black },
-        { 01, LightGray },
-        { 02, LightGray },
-        { 03, LightGray },
-        { 04, LightGray },
-        { 05, LightGray },
-        { 06, LightGray },
-        { 07, LightGray },
-        { 08, LightGray },
-        { 09, LightGray },
-        { 10, LightGray },
-        { 11, LightGray },
-        { 12, LightGray },
-        { 13, LightGray },
-        { 14, LightGray },
-        { 15, LightGray },
-        { 16, LightGray },
-        { 17, LightGray },
-        { 18, LightGray },
-        { 19, LightGray },
-        { 20, LightGray },
-        { 21, LightGray },
-        { 22, LightGray },
-        { 23, LightGray },
-        { 24, LightGray },
-        { 25, LightGray },
-        { 26, LightGray },
-        { 27, LightGray },
-        { 28, LightGray },
-        { 29, LightGray },
-        { 30, LightGray },
     };
 
     public static Dictionary<int, string> boardButtonDictionary = new()

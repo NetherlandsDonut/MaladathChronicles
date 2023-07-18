@@ -173,7 +173,7 @@ public class Ability
                 Board.board.window.PlaySound("AbilityFrostboltImpact");
             });
             Board.board.playerFinishedMoving = true;
-            Board.board.StartAnimations();
+            CDesktop.LockScreen();
         }),
         new Ability("Ice Lance", 0, new()
         {
@@ -214,7 +214,7 @@ public class Ability
                 target.health -= 6;
                 Board.board.window.PlaySound("AbilityIceLanceImpact");
             });
-            Board.board.StartAnimations();
+            CDesktop.LockScreen();
         }),
         new Ability("Freezing Nova", 1, new()
         {
@@ -273,7 +273,7 @@ public class Ability
                 animationTime += frameTime * 15;
             });
             Board.board.playerFinishedMoving = true;
-            Board.board.StartAnimations();
+            CDesktop.LockScreen();
         }),
         new Ability("Blizzard", 4, new()
         {
@@ -370,7 +370,136 @@ public class Ability
                 animationTime += frameTime * 15;
             });
             Board.board.playerFinishedMoving = true;
-            Board.board.StartAnimations();
+            CDesktop.LockScreen();
+        }),
+        new Ability("Shadowflame Breath", 3, new()
+        {
+            { "Air", 10 },
+            { "Fire", 5 },
+            { "Shadow", 5 },
+        },
+        () =>
+        {
+            AddPaddingRegion(() =>
+            {
+                AddLine("Casting Shadowflame Breath will breath", Gray);
+                AddLine("fire at the board burning the elements.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+                AddLine("Turns 20 random elements on the board into", Gray);
+                AddLine("fire or shadow elements randomly chosen.", Gray);
+            });
+        },
+        (p) =>
+        {
+            Board.board.actions.Add(() =>
+            {
+                Board.board.window.PlaySound("AbilityShadowflameBreathCast");
+            });
+            var list = new List<(int, int)>();
+            while (list.Count < 20)
+            {
+                var x = random.Next(0, Board.board.field.GetLength(0));
+                var y = random.Next(0, Board.board.field.GetLength(1));
+                if (Board.board.field[x, y] != 12 && Board.board.field[x, y] != 20 && !list.Contains((x, y)))
+                    list.Add((x, y));
+            }
+            foreach (var e in list)
+                Board.board.actions.Add(() =>
+                {
+                    Board.board.field[e.Item1, e.Item2] = random.Next(0, 2) == 0 ? 12 : 20;
+                    SpawnShatter(2, 0.8, Board.board.window.LBRegionGroup.regions[e.Item2].bigButtons[e.Item1].transform.position + new Vector3(-17.5f, -17.5f), Board.boardButtonDictionary[Board.board.field[e.Item1, e.Item2]], false);
+                });
+            Board.board.actions.Add(() =>
+            {
+                animationTime += frameTime * 15;
+            });
+            Board.board.enemyFinishedMoving = true;
+            CDesktop.LockScreen();
+        }),
+        new Ability("Veil of Shadow", 0, new()
+        {
+            { "Air", 2 },
+            { "Shadow", 6 }
+        },
+        () =>
+        {
+            AddPaddingRegion(() =>
+            {
+                AddLine("Casting Ice Lance will hurl an ice spike", Gray);
+                AddLine("at the target dealing damage.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Deals 6 damage times caster's intelligence.", Gray);
+                AddLine("Does not end the caster's turn.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+                AddLine("Each point in Frost Mastery adds 1% chance", Gray);
+                AddLine("to turn a random non frost element on the", Gray);
+                AddLine("board into a frost element.", Gray);
+            });
+        },
+        (p) =>
+        {
+            var caster = p ? Board.board.player : Board.board.enemy;
+            var target = p ? Board.board.enemy : Board.board.player;
+            Board.board.actions.Add(() =>
+            {
+                Board.board.window.PlaySound("AbilityIceLanceCast");
+                animationTime += frameTime * 3;
+            });
+            Board.board.actions.Add(() =>
+            {
+                target.health -= 4;
+                Board.board.window.PlaySound("AbilityIceLanceImpact");
+            });
+            CDesktop.LockScreen();
+        }),
+        new Ability("Bellowing Roar", 0, new()
+        {
+            { "Fire", 4 },
+            { "Shadow", 4 }
+        },
+        () =>
+        {
+            AddPaddingRegion(() =>
+            {
+                AddLine("Casting Ice Lance will hurl an ice spike", Gray);
+                AddLine("at the target dealing damage.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Deals 6 damage times caster's intelligence.", Gray);
+                AddLine("Does not end the caster's turn.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+                AddLine("Each point in Frost Mastery adds 1% chance", Gray);
+                AddLine("to turn a random non frost element on the", Gray);
+                AddLine("board into a frost element.", Gray);
+            });
+        },
+        (p) =>
+        {
+            var caster = p ? Board.board.player : Board.board.enemy;
+            var target = p ? Board.board.enemy : Board.board.player;
+            Board.board.actions.Add(() =>
+            {
+                Board.board.window.PlaySound("AbilityIceLanceCast");
+                animationTime += frameTime * 3;
+            });
+            Board.board.actions.Add(() =>
+            {
+                target.health -= 4;
+                Board.board.window.PlaySound("AbilityIceLanceImpact");
+            });
+            CDesktop.LockScreen();
         })
     };
 }

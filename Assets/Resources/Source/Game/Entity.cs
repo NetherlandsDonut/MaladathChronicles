@@ -7,12 +7,12 @@ public class Entity
     public Entity(string name, Race race, Class spec, List<string> items)
     {
         this.name = name;
-        this.spec = spec;
         inventory = new Inventory(items);
         equipment = new Dictionary<string, string>();
         AutoEquip();
 
         this.race = race.name;
+        this.spec = spec.name;
         stats = new Stats(race.stats.stats.ToDictionary(x => x.Key, x => x.Value));
         level = race.level;
         abilities = race.abilities.Select(x => x).Concat(spec.abilities.FindAll(x => x.Item2 <= level).Select(x => x.Item1)).Distinct().ToList();
@@ -34,6 +34,8 @@ public class Entity
             return Item.GetItem(equipment[slot]);
         else return null;
     }
+
+    public Class GetClass() => Class.classes.Find(x => x.name == spec);
 
     public void AutoEquip()
     {
@@ -82,11 +84,10 @@ public class Entity
     }
 
     public int health, level;
-    public string name, race;
+    public string name, race, spec;
     public Dictionary<string, int> resources;
     public List<string> abilities;
     public Stats stats;
     public Inventory inventory;
     public Dictionary<string, string> equipment;
-    public Class spec;
 }
