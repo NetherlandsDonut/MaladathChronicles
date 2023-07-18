@@ -15,7 +15,7 @@ public class Entity
         this.spec = spec.name;
         stats = new Stats(race.stats.stats.ToDictionary(x => x.Key, x => x.Value));
         level = race.level;
-        abilities = race.abilities.Select(x => x).Concat(spec.abilities.FindAll(x => x.Item2 <= level).Select(x => x.Item1)).Distinct().ToList();
+        abilities = race.abilities.Select(x => x).Concat(spec.abilities.FindAll(x => x.Item2 <= level).Select(x => x.Item1)).Concat(spec.talentTrees.SelectMany(x => x.talents.FindAll(y => y.defaultTaken)).Select(x => x.ability)).Distinct().ToList();
         Initialise();
     }
 
@@ -26,6 +26,20 @@ public class Entity
         level = race.level;
         abilities = race.abilities.Select(x => x).Distinct().ToList();
         Initialise();
+    }
+
+    public bool CanPickTalent(int spec, Talent talent)
+    {
+        var talentTree = GetClass().talentTrees[spec];
+        if (talent.row > talentTree.talents.FindAll(x => abilities.Contains(x.ability)).Max(x => x.row) + 1) return false;
+        if (talent.inherited) if (!abilities.Contains(PreviousTalent(spec, talent).ability)) return false;
+        return true;
+    }
+
+    public Talent PreviousTalent(int spec, Talent talent)
+    {
+        var temp = GetClass().talentTrees[spec].talents.OrderByDescending(x => x.row).ToList().FindAll(x => x.col == talent.col);
+        return temp.Find(x => x.row < talent.row);
     }
 
     public Item GetSlot(string slot)

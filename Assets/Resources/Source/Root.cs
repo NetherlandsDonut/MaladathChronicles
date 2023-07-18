@@ -7,6 +7,7 @@ using static Blueprint;
 
 using static Root.Color;
 using static Root.RegionBackgroundType;
+using System.Linq;
 
 public static class Root
 {
@@ -89,6 +90,67 @@ public static class Root
 
     #endregion
 
+    #region Talent
+
+    public static void PrintTalent(int spec, int row, int col)
+    {
+        SetAnchor(25 + (spec == 1 ? 213 : (spec == 2 ? 425 : 0)) + 62 * col, -62 * row - 23);
+        AddRegionGroup();
+        AddPaddingRegion(() =>
+        {
+            var playerClass = currentSave.player.GetClass();
+            var talent = playerClass.talentTrees[spec].talents.Find(x => x.row == row && x.col == col);
+            var previousTalent = currentSave.player.PreviousTalent(spec, talent);
+            var previousTalentDistance = previousTalent == null ? 0 : talent.row - previousTalent.row;
+            AddBigButton("Ability" + talent.ability.Replace(" ", ""),
+                (h) =>
+                {
+                    var canPick = currentSave.player.CanPickTalent(spec, talent);
+                    if (!currentSave.player.abilities.Contains(talent.ability) && currentSave.player.CanPickTalent(spec, talent))
+                    {
+                        AnyActiveWindow().PlaySound("DesktopTalentAcquired", 0.2f);
+                        currentSave.player.abilities.Add(talent.ability);
+                        CDesktop.Rebuild();
+                    }
+                },
+                (h) => () =>
+                {
+
+                }
+            );
+            if (currentSave.player.abilities.Contains(talent.ability))
+                AddBigButtonOverlay("OtherGlowLearned");
+            else
+            {
+                var canPick = currentSave.player.CanPickTalent(spec, talent);
+                if (currentSave.player.CanPickTalent(spec, talent)) AddBigButtonOverlay("OtherGlowLearnable");
+                else
+                {
+                    CDesktop.LBWindow.LBRegionGroup.LBRegion.LBBigButton.GetComponent<SpriteRenderer>().material = Resources.Load<Material>("Shaders/Grayscale");
+                    AddBigButtonOverlay("OtherGridBlurred");
+                }
+            }
+            if (talent.inherited)
+            {
+                GameObject body = null;
+                if (currentSave.player.abilities.Contains(previousTalent.ability))
+                {
+                    body = AddBigButtonOverlay("OtherTalentArrowFillBody");
+                    body.transform.localPosition = new Vector3(0, 26, 0);
+                    body.GetComponent<SpriteRenderer>().sortingOrder = 2;
+                    body.transform.localScale = new Vector3(1, previousTalentDistance * 18 + (previousTalentDistance > 1 ? (previousTalentDistance - 1) * 44 : 0), 1);
+                    AddBigButtonOverlay("OtherTalentArrowFillHead").GetComponent<SpriteRenderer>().sortingOrder = 2;
+                }
+                body = AddBigButtonOverlay("OtherTalentArrowBody");
+                body.transform.localPosition = new Vector3(0, 28, 0);
+                body.transform.localScale = new Vector3(1, previousTalentDistance * 14 + (previousTalentDistance > 1 ? (previousTalentDistance - 1) * 48 : 0), 1);
+                AddBigButtonOverlay("OtherTalentArrowHead");
+            }
+        });
+    }
+
+    #endregion
+
     #region Desktop
 
     public static void SpawnDesktopBlueprint(string blueprintTitle, bool autoSwitch = true)
@@ -121,6 +183,7 @@ public static class Root
         desktops.Add(newDesktop);
         newDesktop.screen = new GameObject("Camera", typeof(Camera)/*, typeof(PixelPerfectCamera)*/, typeof(SpriteRenderer)).GetComponent<Camera>();
         newDesktop.screen.transform.parent = newDesktop.transform;
+        newDesktop.GetComponent<SpriteRenderer>().sortingLayerName = "DesktopBackground";
         newDesktop.screen.GetComponent<SpriteRenderer>().sortingLayerName = "DesktopBackground";
         newDesktop.screen.orthographicSize = 180;
         newDesktop.screen.nearClipPlane = -100;
@@ -164,9 +227,10 @@ public static class Root
         }
     }
 
-    public static void SetDesktopBackground(string texture)
+    public static void SetDesktopBackground(string texture, bool followCamera = true)
     {
-        LBDesktop.screen.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Textures/" + texture);
+        if (followCamera) LBDesktop.screen.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Textures/" + texture);
+        else LBDesktop.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Textures/" + texture);
     }
 
     //Hotkeys can be added only on desktop creation!
@@ -183,6 +247,8 @@ public static class Root
     #endregion
 
     #region Windows
+
+    public static Window AnyActiveWindow() => desktops.SelectMany(x => x.windows).First(x => x.enabled);
 
     public static void SpawnWindowBlueprint(string blueprintTitle) => SpawnWindowBlueprint(windowBlueprints.Find(x => x.title == blueprintTitle));
     public static void SpawnWindowBlueprint(Blueprint blueprint)
@@ -411,13 +477,13 @@ public static class Root
 
     #region SmallButtons
 
-    public static void AddSmallButtonGrid()
+    public static void AddSmallButtonOverlay(string overlay)
     {
         var region = CDesktop.LBWindow.LBRegionGroup.LBRegion;
         var button = region.LBSmallButton.gameObject;
         var newObject = new GameObject("SmallButtonGrid", typeof(SpriteRenderer));
         newObject.transform.parent = button.transform;
-        newObject.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/Buttons/OtherGrid");
+        newObject.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/Buttons/" + overlay);
         newObject.GetComponent<SpriteRenderer>().sortingOrder = 1;
     }
 
@@ -470,6 +536,17 @@ public static class Root
     #endregion
 
     #region BigButtons
+
+    public static GameObject AddBigButtonOverlay(string overlay)
+    {
+        var region = CDesktop.LBWindow.LBRegionGroup.LBRegion;
+        var button = region.LBBigButton.gameObject;
+        var newObject = new GameObject("BigButtonGrid", typeof(SpriteRenderer));
+        newObject.transform.parent = button.transform;
+        newObject.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/BigButtons/" + overlay);
+        newObject.GetComponent<SpriteRenderer>().sortingOrder = 1;
+        return newObject;
+    }
 
     public static void AddBigButton(string type, Action<Highlightable> pressEvent, Func<Highlightable, Action> tooltip = null)
     {

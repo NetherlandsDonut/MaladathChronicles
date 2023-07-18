@@ -16,6 +16,13 @@ public class Starter : MonoBehaviour
         settings = new GameSettings();
         saveGames = new List<SaveGame>();
         SpawnDesktopBlueprint("TitleScreen");
+        for (int i = 0; i < 3; i++)
+            for (int j = 0; j < 12; j++)
+                for (int k = 0; k < 3; k++)
+                {
+                    var spec = i; var row = j; var col = k;
+                    Blueprint.windowBlueprints.Add(new Blueprint("Talent" + spec + row + col, () => PrintTalent(spec, row, col)));
+                }
 
         //Serialize(Data.data, "Data");
 

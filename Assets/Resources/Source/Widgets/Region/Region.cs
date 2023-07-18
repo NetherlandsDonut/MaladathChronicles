@@ -109,6 +109,7 @@ public class Region : MonoBehaviour
         }
         if (pressEvent != null)
         {
+            regionGroup.window.PlaySound("DesktopButtonPress", 0.6f);
             var a = background.GetComponent<Highlightable>();
             pressEvent(a);
             regionGroup.window.Rebuild();
