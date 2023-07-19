@@ -164,13 +164,13 @@ public class Ability
             var target = p ? Board.board.enemy : Board.board.player;
             Board.board.actions.Add(() =>
             {
-                Board.board.window.PlaySound("AbilityFrostboltCast");
+                PlaySound("AbilityFrostboltCast");
                 animationTime += frameTime * 6;
             });
             Board.board.actions.Add(() =>
             {
                 target.health -= 8;
-                Board.board.window.PlaySound("AbilityFrostboltImpact");
+                PlaySound("AbilityFrostboltImpact");
             });
             Board.board.playerFinishedMoving = true;
             CDesktop.LockScreen();
@@ -206,13 +206,13 @@ public class Ability
             var target = p ? Board.board.enemy : Board.board.player;
             Board.board.actions.Add(() =>
             {
-                Board.board.window.PlaySound("AbilityIceLanceCast");
+                PlaySound("AbilityIceLanceCast");
                 animationTime += frameTime * 3;
             });
             Board.board.actions.Add(() =>
             {
                 target.health -= 6;
-                Board.board.window.PlaySound("AbilityIceLanceImpact");
+                PlaySound("AbilityIceLanceImpact");
             });
             CDesktop.LockScreen();
         }),
@@ -249,7 +249,7 @@ public class Ability
         {
             Board.board.actions.Add(() =>
             {
-                Board.board.window.PlaySound("AbilityFreezingNovaCast");
+                PlaySound("AbilityFreezingNovaCast");
             });
             var list = new List<(int, int)>();
             while (list.Count < 5)
@@ -266,7 +266,7 @@ public class Ability
                     Board.board.field[e.Item1, e.Item2] = 16;
                     SpawnShatter(4, 1.0, Board.board.window.LBRegionGroup.regions[e.Item2].bigButtons[e.Item1].transform.position + new Vector3(-17.5f, -17.5f), Board.boardButtonDictionary[Board.board.field[e.Item1, e.Item2]], false);
                 }
-                Board.board.window.PlaySound("AbilityFreezingNovaImpact");
+                PlaySound("AbilityFreezingNovaImpact");
             });
             Board.board.actions.Add(() =>
             {
@@ -341,7 +341,7 @@ public class Ability
         {
             Board.board.actions.Add(() =>
             {
-                Board.board.window.PlaySound("AbilityDeepFreezeCast");
+                PlaySound("AbilityDeepFreezeCast");
                 animationTime += frameTime * 6;
             });
             var list1 = new List<(int, int)>();
@@ -396,7 +396,7 @@ public class Ability
         {
             Board.board.actions.Add(() =>
             {
-                Board.board.window.PlaySound("AbilityShadowflameBreathCast");
+                PlaySound("AbilityShadowflameBreathCast");
             });
             var list = new List<(int, int)>();
             while (list.Count < 20)
@@ -450,13 +450,13 @@ public class Ability
             var target = p ? Board.board.enemy : Board.board.player;
             Board.board.actions.Add(() =>
             {
-                Board.board.window.PlaySound("AbilityIceLanceCast");
+                PlaySound("AbilityIceLanceCast");
                 animationTime += frameTime * 3;
             });
             Board.board.actions.Add(() =>
             {
                 target.health -= 4;
-                Board.board.window.PlaySound("AbilityIceLanceImpact");
+                PlaySound("AbilityIceLanceImpact");
             });
             CDesktop.LockScreen();
         }),
@@ -491,13 +491,13 @@ public class Ability
             var target = p ? Board.board.enemy : Board.board.player;
             Board.board.actions.Add(() =>
             {
-                Board.board.window.PlaySound("AbilityIceLanceCast");
+                PlaySound("AbilityIceLanceCast");
                 animationTime += frameTime * 3;
             });
             Board.board.actions.Add(() =>
             {
                 target.health -= 4;
-                Board.board.window.PlaySound("AbilityIceLanceImpact");
+                PlaySound("AbilityIceLanceImpact");
             });
             CDesktop.LockScreen();
         })

@@ -10,19 +10,19 @@ using static Root.Anchor;
 using static Root.RegionBackgroundType;
 
 using static UnityEngine.KeyCode;
-using UnityEngine.U2D;
-using System.Xml.Linq;
 
 public class Blueprint
 {
-    public Blueprint(string title, Action actions)
+    public Blueprint(string title, Action actions, bool uppperUI = false)
     {
         this.title = title;
         this.actions = actions;
+        this.upperUI = uppperUI;
     }
 
     public string title;
     public Action actions;
+    public bool upperUI;
 
     public static List<Blueprint> windowBlueprints = new()
     {
@@ -308,38 +308,6 @@ public class Blueprint
             {
                 AddBigButton("Class" + Board.board.player.spec,
                     (h) => { }
-                    //(h) => () =>
-                    //{
-                    //    SetAnchor(BottomRight);
-                    //    AddRegionGroup();
-                    //    AddHeaderRegion(() =>
-                    //    {
-                    //        AddBigButton("ClassRogue", (h) => { });
-                    //        AddLine("Rogue", Gray);
-                    //    });
-                    //    AddHeaderRegion(() =>
-                    //    {
-                    //        AddLine("Main elements:", Gray);
-                    //    });
-                    //    AddPaddingRegion(() =>
-                    //    {
-                    //        AddBigButton("ElementDecayAwakened", (h) => { });
-                    //        AddBigButton("ElementShadowAwakened", (h) => { });
-                    //        AddBigButton("ElementAirAwakened", (h) => { });
-                    //    });
-                    //    AddHeaderRegion(() =>
-                    //    {
-                    //        AddLine("Class description:", Gray);
-                    //    });
-                    //    AddPaddingRegion(() =>
-                    //    {
-                    //        AddLine("Rogues often initiate combat with a surprise attack", DarkGray);
-                    //        AddLine("from the shadows, leading with vicious melee strikes. ", DarkGray);
-                    //        AddLine("When in protracted battles, they utilize a successive ", DarkGray);
-                    //        AddLine("combination of carefully chosen attacks to soften", DarkGray);
-                    //        AddLine("the enemy up for a killing blow.", DarkGray);
-                    //    });
-                    //}
                 );
                 AddLine("Level " + Board.board.player.level, Gray);
                 AddLine("Health: " + Board.board.player.health + "/" + Board.board.player.MaxHealth(), Gray);
@@ -617,6 +585,65 @@ public class Blueprint
                 });
             }
         }),
+        new("MapToolbar", () => {
+            SetAnchor(TopLeft);
+            AddRegionGroup();
+            SetRegionGroupWidth(163);
+            AddButtonRegion(
+                () =>
+                {
+                    AddLine(currentSave.player.name, Black);
+                },
+                (h) =>
+                {
+
+                }
+            );
+            AddHeaderRegion(() =>
+            {
+                AddBigButton("Class" + currentSave.player.spec,
+                    (h) => { }
+                );
+                AddLine("Level " + currentSave.player.level, Gray);
+                AddLine("Health: " + currentSave.player.health + "/" + currentSave.player.MaxHealth(), Gray);
+            });
+            AddButtonRegion(
+                () =>
+                {
+                    AddLine("Inventory", Black);
+                    AddSmallButton("MenuInventory", (h) => { });
+                },
+                (h) =>
+                {
+                    SpawnDesktopBlueprint("CharacterScreen");
+                    SwitchDesktop("CharacterScreen");
+                }
+            );
+            AddButtonRegion(
+                () =>
+                {
+                    AddLine("Spellbook", Black);
+                    AddSmallButton("MenuSpellbook", (h) => { });
+                },
+                (h) =>
+                {
+                    SpawnDesktopBlueprint("SpellbookScreen");
+                    SwitchDesktop("SpellbookScreen");
+                }
+            );
+            AddButtonRegion(
+                () =>
+                {
+                    AddLine("Talents", Black);
+                    AddSmallButton("MenuTalents", (h) => { });
+                },
+                (h) =>
+                {
+                    SpawnDesktopBlueprint("TalentScreen");
+                    SwitchDesktop("TalentScreen");
+                }
+            );
+        }, true),
         new("BattleActionBar", () => {
             SetAnchor(Bottom);
             AddRegionGroup();
@@ -631,9 +658,9 @@ public class Blueprint
                 AddBigButton("ClassRogueSpellEnvenom",
                 (h) =>
                 {
-                    h.window.PlaySound("SpellEnvenomCast");
+                    PlaySound("SpellEnvenomCast");
                     if (random.Next(0, 2) == 1)
-                        h.window.PlaySound("SpellEnvenomImpact");
+                        PlaySound("SpellEnvenomImpact");
                 },
                 (h) => () =>
                 {
@@ -2230,6 +2257,46 @@ public class Blueprint
                 });
             });
         }),
+        new("OnyxiasLair", () => {
+            SetAnchor(1990, -3451);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                AddSmallButton("SiteRaid",
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+                    SetAnchor(TopRight, h.window);
+                    AddRegionGroup();
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Onyxia\'s Lair", Gray);
+                    });
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Nothing:", Gray);
+                    });
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine("There is nothing here yet", Gray);
+                        AddLine("But there will be something soon", Gray);
+                        AddLine("I hope so", Gray);
+                    });
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Very nothing:", Gray);
+                    });
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine("There is nothing here yet", Gray);
+                        AddLine("But there will be something soon", Gray);
+                    });
+                });
+            });
+        }),
         new("SelectedTown", () => {
             SetAnchor(BottomLeft);
             AddRegionGroup();
@@ -2604,12 +2671,78 @@ public class Blueprint
                     AddLine(Board.board.enemy.resources.ToList().Find(x => x.Key == element).Value + "", LightGray);
                 });
         }),
+        new("ReturnToMap", () => {
+            SetAnchor(TopRight);
+            AddRegionGroup();
+            AddHeaderRegion(() =>
+            {
+                AddSmallButton("OtherClose",
+                (h) =>
+                {
+                    var title = CDesktop.title;
+                    SwitchDesktop("Map");
+                    if (title == "TalentScreen")
+                        PlaySound("DesktopTalentScreenClose");
+                    else if (title == "SpellbookScreen")
+                        PlaySound("DesktopSpellbookScreenClose");
+                    CloseDesktop(title);
+                });
+            });
+        }, true),
+        new("TalentHeader", () => {
+            SetAnchor(TopLeft);
+            var a = currentSave.player.GetClass();
+            AddHeaderGroup();
+            AddPaddingRegion(() =>
+            {
+                if (currentSave.player.unspentTalentPoints > 0)
+                {
+                    AddLine("You have ");
+                    AddText(currentSave.player.unspentTalentPoints + "", Green);
+                    AddText(" unspent points!");
+                }
+                else if (currentSave.player.level < 60)
+                    AddLine("Next talent point at level " + currentSave.player.level + (currentSave.player.level % 2 == 0 ? 2 : 1));
+                else
+                    AddLine("Look for orbs of power to gain additional talent points!");
+                AddSmallButton("OtherClose",
+                (h) =>
+                {
+                    var title = CDesktop.title;
+                    SwitchDesktop("Map");
+                    if (title == "TalentScreen")
+                        PlaySound("DesktopTalentScreenClose");
+                    else if (title == "SpellbookScreen")
+                        PlaySound("DesktopSpellbookScreenClose");
+                    CloseDesktop(title);
+                });
+            });
+            AddRegionGroup();
+            AddHeaderRegion(() =>
+            {
+                AddLine(a.talentTrees[0].name + ": " + a.talentTrees[0].talents.Count(x => currentSave.player.abilities.Contains(x.ability)));
+            });
+            SetRegionGroupWidth(203);
+            AddRegionGroup();
+            AddHeaderRegion(() =>
+            {
+                AddLine(a.talentTrees[1].name + ": " + a.talentTrees[1].talents.Count(x => currentSave.player.abilities.Contains(x.ability)));
+            });
+            SetRegionGroupWidth(202);
+            AddRegionGroup();
+            AddHeaderRegion(() =>
+            {
+                AddLine(a.talentTrees[2].name + ": " + a.talentTrees[2].talents.Count(x => currentSave.player.abilities.Contains(x.ability)));
+            });
+            SetRegionGroupWidth(203);
+        },  true),
     };
 
     public static List<Blueprint> desktopBlueprints = new()
     {
         new("Map", () =>
         {
+            SpawnWindowBlueprint("MapToolbar");
             SpawnWindowBlueprint("Crossroads");
             SpawnWindowBlueprint("Ratchet");
             SpawnWindowBlueprint("WailingCaverns");
@@ -2655,6 +2788,7 @@ public class Blueprint
             AddHotkey(D, () => { var amount = new Vector3((float)Math.Round(EuelerGrowth()), 0); CDesktop.screen.transform.position += amount; cursor.transform.position += amount; }, false);
             AddHotkey(C, () => { SpawnDesktopBlueprint("CharacterScreen"); SwitchDesktop("CharacterScreen"); });
             AddHotkey(N, () => { SpawnDesktopBlueprint("TalentScreen"); SwitchDesktop("TalentScreen"); });
+            AddHotkey(P, () => { SpawnDesktopBlueprint("SpellbookScreen"); SwitchDesktop("SpellbookScreen"); });
             AddHotkey(B, () => { SpawnWindowBlueprint("PlayerInventory"); });
         }),
         new("Game", () =>
@@ -2665,7 +2799,6 @@ public class Blueprint
             SpawnWindowBlueprint("EnemyBattleInfo");
             SpawnWindowBlueprint("PlayerResources");
             SpawnWindowBlueprint("EnemyResources");
-            //SpawnWindowBlueprint("LocationInfo");
             Board.board.Reset();
             AddHotkey(Escape, () => { SwitchDesktop("Map"); CloseDesktop("Game"); });
             AddHotkey(PageUp, () => {
@@ -2702,6 +2835,7 @@ public class Blueprint
         new("CharacterScreen", () =>
         {
             SetDesktopBackground("Stone");
+            SpawnWindowBlueprint("ReturnToMap");
             SpawnWindowBlueprint("CharacterNeckSlot");
             SpawnWindowBlueprint("CharacterBackSlot");
             SpawnWindowBlueprint("CharacterRingSlot");
@@ -2725,7 +2859,9 @@ public class Blueprint
         }),
         new("TalentScreen", () =>
         {
+            PlaySound("DesktopTalentScreenOpen");
             SetDesktopBackground("StoneSplitLong", false);
+            SpawnWindowBlueprint("TalentHeader");
             var playerClass = currentSave.player.GetClass();
             for (int spec = 0; spec < 3; spec++)
                 for (int row = 0; row <= playerClass.talentTrees[spec].talents.Max(x => x.row); row++)
@@ -2733,15 +2869,15 @@ public class Blueprint
                         if (windowBlueprints.Exists(x => x.title == "Talent" + spec + row + col))
                             if (playerClass.talentTrees[spec].talents.Exists(x => x.row == row && x.col == col))
                                 SpawnWindowBlueprint("Talent" + spec + row + col);
-            AddHotkey(N, () => { SwitchDesktop("Map"); CloseDesktop("TalentScreen"); });
-            AddHotkey(Escape, () => { SwitchDesktop("Map"); CloseDesktop("TalentScreen"); });
+            AddHotkey(N, () => { SwitchDesktop("Map"); CloseDesktop("TalentScreen"); PlaySound("DesktopTalentScreenClose"); });
+            AddHotkey(Escape, () => { SwitchDesktop("Map"); CloseDesktop("TalentScreen"); PlaySound("DesktopTalentScreenClose"); });
             AddHotkey(W, () =>
             {
                 var amount = new Vector3(0, (float)Math.Round(EuelerGrowth())) / 2;
                 CDesktop.screen.transform.position += amount; cursor.transform.position += amount;
-                if (CDesktop.screen.transform.position.y > -178)
+                if (CDesktop.screen.transform.position.y > -140)
                 {
-                    var off = CDesktop.screen.transform.position.y + 178f;
+                    var off = CDesktop.screen.transform.position.y + 140f;
                     CDesktop.screen.transform.position -= new Vector3(0, off);
                     cursor.transform.position -= new Vector3(0, off);
                 }
@@ -2757,7 +2893,25 @@ public class Blueprint
                     cursor.transform.position -= new Vector3(0, off);
                 }
             },  false);
-            CDesktop.LBWindow.PlaySound("DesktopTalentScreenOpen");
+        }),
+        new("TitleScreen", () =>
+        {
+            SpawnWindowBlueprint("TitleScreenMenu");
+        }),
+        new("SpellbookScreen", () =>
+        {
+            PlaySound("DesktopSpellbookScreenOpen");
+            SetDesktopBackground("StoneSplitLong", false);
+            SpawnWindowBlueprint("ReturnToMap");
+            var playerClass = currentSave.player.GetClass();
+            for (int spec = 0; spec < 3; spec++)
+                for (int row = 0; row <= playerClass.talentTrees[spec].talents.Max(x => x.row); row++)
+                    for (int col = 0; col < 3; col++)
+                        if (windowBlueprints.Exists(x => x.title == "Talent" + spec + row + col))
+                            if (playerClass.talentTrees[spec].talents.Exists(x => x.row == row && x.col == col))
+                                SpawnWindowBlueprint("Talent" + spec + row + col);
+            AddHotkey(P, () => { SwitchDesktop("Map"); CloseDesktop("SpellbookScreen"); PlaySound("DesktopSpellbookScreenClose"); });
+            AddHotkey(Escape, () => { SwitchDesktop("Map"); CloseDesktop("SpellbookScreen"); PlaySound("DesktopSpellbookScreenClose"); });
         }),
         new("TitleScreen", () =>
         {

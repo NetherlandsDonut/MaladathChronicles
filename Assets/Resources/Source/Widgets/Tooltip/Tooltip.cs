@@ -18,7 +18,7 @@ public class Tooltip
     {
         if (CDesktop.windows.Contains(window))
             UnityEngine.Debug.Log(window.name + " is no longer accessible for tooltip");
-        SpawnWindowBlueprint(new Blueprint("Tooltip", tooltip(caller())));
+        SpawnWindowBlueprint(new Blueprint("Tooltip", tooltip(caller()), true));
         window = caller().window.desktop.LBWindow;
         CloseWindowOnLostFocus();
     }

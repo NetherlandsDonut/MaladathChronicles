@@ -3,7 +3,6 @@ using UnityEngine;
 using System.Collections.Generic;
 
 using static Root;
-using UnityEditor;
 
 public class Desktop : MonoBehaviour
 {
@@ -86,7 +85,7 @@ public class Desktop : MonoBehaviour
     public void Start()
     {
         if (CDesktop.name == "Desktop: TalentScreen")
-            screen.transform.localPosition = new Vector3(320, -178);
+            screen.transform.localPosition = new Vector3(320, -159);
         else if (CDesktop.name == "Desktop: Map")
             screen.transform.localPosition = new Vector3(1781, -3768);
     }

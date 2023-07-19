@@ -33,7 +33,7 @@ public class LineBigButton : MonoBehaviour
         if (cursor.render.sprite == null) return;
         if (pressEvent != null)
         {
-            region.regionGroup.window.PlaySound("DesktopButtonPress", 0.6f);
+            PlaySound("DesktopButtonPress", 0.6f);
             pressEvent(GetComponent<Highlightable>());
             region.regionGroup.window.Rebuild();
         }

@@ -70,7 +70,7 @@ public class Board
                     for (int k = 0; k < field.GetLength(0); k++)
                         if (field[k, j] == 0) break;
                         else if (k == field.GetLength(0) - 1)
-                            CDesktop.FocusedWindow().PlaySound("PutDownSmallWood", 0.04f);
+                            PlaySound("PutDownSmallWood", 0.04f);
                 }
 
         //SPAWN NEW ELEMENTS ON TOP OF THE BOARD
@@ -199,7 +199,7 @@ public class Board
     //DESTROYS A SINGLE TARGETED ELEMENT ON THE BOARD FOR THE CURRENT PLAYER
     public void SelectDestroy(int x, int y)
     {
-        window.PlaySound(collectSoundDictionary[field[x, y]].ToString(), 0.3f);
+        PlaySound(collectSoundDictionary[field[x, y]].ToString(), 0.3f);
         SpawnShatter(1, 0.5, window.LBRegionGroup.regions[y].bigButtons[x].transform.position + new Vector3(-17.5f, -17.5f), boardButtonDictionary[field[x, y]]);
         field[x, y] = 0;
         CDesktop.LockScreen();
@@ -208,11 +208,11 @@ public class Board
     //DESTROYS ALL ELEMENTS OF THE SAME KIND THAT ARE NEARBY OF THE TARGETED ONE
     public void FloodDestroy(List<(int, int, int)> list)
     {
-        window.PlaySound(collectSoundDictionary[list[0].Item3].ToString(), 0.3f);
+        PlaySound(collectSoundDictionary[list[0].Item3].ToString(), 0.3f);
         if (list.Count > 3)
         {
             bonusTurnStreak++;
-            window.PlaySound("BonusMove" + (bonusTurnStreak > 4 ? 4 : bonusTurnStreak), 0.4f);
+            PlaySound("BonusMove" + (bonusTurnStreak > 4 ? 4 : bonusTurnStreak), 0.4f);
         }
         foreach (var a in list)
         {

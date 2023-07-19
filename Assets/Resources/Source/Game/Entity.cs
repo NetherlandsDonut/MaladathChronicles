@@ -11,6 +11,7 @@ public class Entity
         equipment = new Dictionary<string, string>();
         AutoEquip();
 
+        unspentTalentPoints = 20;
         this.race = race.name;
         this.spec = spec.name;
         stats = new Stats(race.stats.stats.ToDictionary(x => x.Key, x => x.Value));
@@ -97,7 +98,7 @@ public class Entity
         return stats.stats["Stamina"] * 20;
     }
 
-    public int health, level;
+    public int health, level, unspentTalentPoints;
     public string name, race, spec;
     public Dictionary<string, int> resources;
     public List<string> abilities;

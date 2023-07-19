@@ -46,6 +46,7 @@ public class LineText : MonoBehaviour
         var glyph = GetGlyph(character);
         newCharacter.GetComponent<SpriteRenderer>().sprite = glyph;
         newCharacter.GetComponent<SpriteRenderer>().color = GetColor(color);
+        newCharacter.GetComponent<SpriteRenderer>().sortingLayerName = line.region.regionGroup.window.layer;
         characters.Add(newCharacter);
         return offset + (int)glyph.rect.width + 1;
     }

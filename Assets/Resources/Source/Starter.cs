@@ -23,9 +23,7 @@ public class Starter : MonoBehaviour
                     var spec = i; var row = j; var col = k;
                     Blueprint.windowBlueprints.Add(new Blueprint("Talent" + spec + row + col, () => PrintTalent(spec, row, col)));
                 }
-
         //Serialize(Data.data, "Data");
-
         Destroy(gameObject);
     }
 }

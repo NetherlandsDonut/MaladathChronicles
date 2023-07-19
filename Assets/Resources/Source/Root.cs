@@ -1,13 +1,14 @@
 ﻿using System;
 using UnityEngine;
+using System.Linq;
 using System.Collections.Generic;
 
 using static Font;
 using static Blueprint;
 
 using static Root.Color;
+using static Root.Anchor;
 using static Root.RegionBackgroundType;
-using System.Linq;
 
 public static class Root
 {
@@ -33,6 +34,13 @@ public static class Root
     public static SaveGame currentSave;
     public static List<SaveGame> saveGames;
     public static GameSettings settings;
+
+    public static void PlaySound(string path, float volume = 0.5f)
+    {
+        var temp = Resources.Load<AudioClip>("Sounds/" + path);
+        if (temp == null) return;
+        cursor.GetComponent<AudioSource>().PlayOneShot(temp, volume);
+    }
 
     #region Fonts
 
@@ -102,20 +110,68 @@ public static class Root
             var talent = playerClass.talentTrees[spec].talents.Find(x => x.row == row && x.col == col);
             var previousTalent = currentSave.player.PreviousTalent(spec, talent);
             var previousTalentDistance = previousTalent == null ? 0 : talent.row - previousTalent.row;
+            var abilityObj = Ability.abilities.Find(x => x.name == talent.ability);
             AddBigButton("Ability" + talent.ability.Replace(" ", ""),
                 (h) =>
                 {
                     var canPick = currentSave.player.CanPickTalent(spec, talent);
                     if (!currentSave.player.abilities.Contains(talent.ability) && currentSave.player.CanPickTalent(spec, talent))
                     {
-                        AnyActiveWindow().PlaySound("DesktopTalentAcquired", 0.2f);
+                        PlaySound("DesktopTalentAcquired", 0.2f);
                         currentSave.player.abilities.Add(talent.ability);
                         CDesktop.Rebuild();
                     }
                 },
                 (h) => () =>
                 {
-
+                    SetAnchor(Top, 0, -13);
+                    AddHeaderGroup();
+                    SetRegionGroupWidth(256);
+                    SetRegionGroupHeight(237);
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine(talent.ability, Gray);
+                    });
+                    AddPaddingRegion(() =>
+                    {
+                        AddBigButton("Ability" + talent.ability.Replace(" ", ""), (h) => { });
+                        if (abilityObj != null)
+                        {
+                            AddLine("Required level: ", DarkGray);
+                            AddText(1 + "", Gray);
+                            AddLine("Cooldown: ", DarkGray);
+                            AddText(abilityObj.cooldown == 0 ? "None" : abilityObj.cooldown + (abilityObj.cooldown == 1 ? " turn" : " turns"), Gray);
+                        }
+                    });
+                    if (abilityObj != null)
+                    {
+                        abilityObj.description();
+                        foreach (var cost in abilityObj.cost)
+                        {
+                            AddRegionGroup();
+                            AddHeaderRegion(() =>
+                            {
+                                AddSmallButton("Element" + cost.Key + "Rousing", (h) => { });
+                            });
+                            AddRegionGroup();
+                            SetRegionGroupWidth(15);
+                            AddHeaderRegion(() =>
+                            {
+                                AddLine(cost.Value + "", Board.board != null ? (cost.Value > Board.board.player.resources[cost.Key] ? Red : Green) : Gray);
+                            });
+                        }
+                    }
+                    else AddPaddingRegion(() =>
+                    {
+                        AddLine("Ability wasn't found!", Red);
+                        SetRegionAsGroupExtender();
+                    });
+                    AddRegionGroup();
+                    SetRegionGroupWidth(256 - (abilityObj == null ? 0 : abilityObj.cost.Count) * 44);
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine("", LightGray);
+                    });
                 }
             );
             if (currentSave.player.abilities.Contains(talent.ability))
@@ -248,26 +304,24 @@ public static class Root
 
     #region Windows
 
-    public static Window AnyActiveWindow() => desktops.SelectMany(x => x.windows).First(x => x.enabled);
-
     public static void SpawnWindowBlueprint(string blueprintTitle) => SpawnWindowBlueprint(windowBlueprints.Find(x => x.title == blueprintTitle));
     public static void SpawnWindowBlueprint(Blueprint blueprint)
     {
         if (blueprint == null) return;
-        AddWindow(blueprint.title);
+        AddWindow(blueprint.title, blueprint.upperUI);
         blueprint.actions();
         CDesktop.LBWindow.Rebuild();
         CDesktop.LBWindow.ResetPosition();
     }
 
-    public static void AddWindow(string title)
+    public static void AddWindow(string title, bool upperUI)
     {
         var newObject = new GameObject("Window: " + title, typeof(Window), typeof(AudioSource));
         newObject.transform.parent = CDesktop.transform;
         //I'm spawning it at z = 9999 because I don't want it to
         //cover anything on the screen when it's being built
         newObject.transform.localPosition = new Vector3(0, 0, 9999);
-        newObject.GetComponent<Window>().Initialise(CDesktop, title);
+        newObject.GetComponent<Window>().Initialise(CDesktop, title, upperUI);
     }
 
     public static void CloseWindow(string windowName) => CloseWindow(CDesktop.windows.Find(x => x.title == windowName));
@@ -749,7 +803,7 @@ public static class Root
             { DarkGray, new Color32(114, 114, 114, 255) },
             { Black, new Color32(31, 31, 31, 255) },
             { Red, new Color32(181, 77, 77, 255) },
-            { Green, new Color32(73, 178, 86, 255) },
+            { Green, new Color32(74, 154, 26, 255) },
             { Druid, new Color32(184, 90, 7, 255) },
             { Warrior, new Color32(144, 113, 79, 255) },
             { Rogue, new Color32(184, 177, 76, 255) },

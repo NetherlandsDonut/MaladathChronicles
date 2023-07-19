@@ -6,6 +6,7 @@ using static Root;
 
 using static Root.Anchor;
 using static Root.RegionBackgroundType;
+using UnityEngine.Rendering;
 
 public class Window : MonoBehaviour
 {
@@ -19,14 +20,14 @@ public class Window : MonoBehaviour
 
     //Fields
     public int xOffset;
-    public string title;
+    public string title, layer;
     public Vector2 dragOffset;
     public WindowAnchor anchor;
     public bool closeOnLostFocus;
     public GameObject background;
     public GameObject[] shadows;
 
-    public void Initialise(Desktop desktop, string title)
+    public void Initialise(Desktop desktop, string title, bool upperUI)
     {
         this.title = title;
         if (title == "BattleBoard")
@@ -35,6 +36,8 @@ public class Window : MonoBehaviour
         anchor = new WindowAnchor(Center);
         regionGroups = new();
         shadows = new GameObject[8];
+        if (upperUI) layer = "Upper";
+        else layer = "Default";
 
         desktop.LBWindow = this;
         desktop.windows.Insert(0, this);
@@ -95,13 +98,6 @@ public class Window : MonoBehaviour
         }
     }
 
-    public void PlaySound(string path, float volume = 0.5f)
-    {
-        var temp = Resources.Load<AudioClip>("Sounds/" + path);
-        if (temp == null) return;
-        GetComponent<AudioSource>().PlayOneShot(temp, volume);
-    }
-
     public int Width()
     {
         var head = headerGroup != null ? headerGroup.AutoWidth() : 0;
@@ -132,6 +128,7 @@ public class Window : MonoBehaviour
         background.transform.parent = transform;
         background.GetComponent<WindowBackground>().Initialise(this);
         background.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/Backgrounds/Window");
+        background.GetComponent<SpriteRenderer>().sortingLayerName = layer;
         background.transform.localScale = new Vector3(xOffset + 2, PlannedHeight() + (headerGroup != null ? headerGroup.PlannedHeight() : 0) + 2, 1);
         background.transform.localPosition = new Vector3(0, 0, 0.9f);
         if (background.GetComponent<BoxCollider2D>() == null)
@@ -148,6 +145,7 @@ public class Window : MonoBehaviour
                         shadows[i] = new GameObject("Shadow", typeof(SpriteRenderer));
                         shadows[i].transform.parent = transform;
                         shadows[i].GetComponent<SpriteRenderer>().sprite = shadowSprites[i];
+                        shadows[i].GetComponent<SpriteRenderer>().sortingLayerName = layer;
                     }
                 shadows[1].transform.localScale = shadows[6].transform.localScale = new Vector3(Width() + 2, 1, 1);
                 shadows[3].transform.localScale = shadows[4].transform.localScale = new Vector3(1, PlannedHeight() + 2 + (headerGroup != null ? headerGroup.PlannedHeight() : 0), 1);
@@ -169,6 +167,7 @@ public class Window : MonoBehaviour
                         shadows[i] = new GameObject("Shadow", typeof(SpriteRenderer));
                         shadows[i].transform.parent = transform;
                         shadows[i].GetComponent<SpriteRenderer>().sprite = shadowSprites[i];
+                        shadows[i].GetComponent<SpriteRenderer>().sortingLayerName = layer;
                     }
                 shadows[1].transform.localScale = new Vector3(1, PlannedHeight() - 2 + (headerGroup != null ? (headerGroup.setHeight != 0 ? headerGroup.setHeight + 10 : headerGroup.PlannedHeight()) : 0), 1);
                 shadows[3].transform.localScale = new Vector3(Width() - 2, 1, 1);
@@ -187,6 +186,7 @@ public class Window : MonoBehaviour
                         shadows[i] = new GameObject("Shadow", typeof(SpriteRenderer));
                         shadows[i].transform.parent = transform;
                         shadows[i].GetComponent<SpriteRenderer>().sprite = shadowSprites[i];
+                        shadows[i].GetComponent<SpriteRenderer>().sortingLayerName = layer;
                     }
                 shadows[1].transform.localScale = shadows[6].transform.localScale = new Vector3(Width() + 2, 1, 1);
                 shadows[3].transform.localScale = shadows[4].transform.localScale = new Vector3(1, PlannedHeight() + 2 + (headerGroup != null ? headerGroup.PlannedHeight() : 0), 1);
@@ -266,6 +266,7 @@ public class Window : MonoBehaviour
                 if (region.currentHeight < 15) region.currentHeight = 15;
                 var load = Resources.Load<Sprite>("Sprites/Building/Buttons/" + smallButton.buttonType);
                 smallButton.GetComponent<SpriteRenderer>().sprite = load == null ? Resources.Load<Sprite>("Sprites/Building/Buttons/OtherEmpty") : load;
+                smallButton.GetComponent<SpriteRenderer>().sortingLayerName = layer;
                 smallButton.transform.localPosition = new Vector3(regionGroup.AutoWidth() + region.xExtend + 1.5f - 19 * region.smallButtons.IndexOf(smallButton), -10.5f, 0.1f);
                 if (smallButton.gameObject.GetComponent<BoxCollider2D>() == null)
                     smallButton.gameObject.AddComponent<BoxCollider2D>();
@@ -274,6 +275,7 @@ public class Window : MonoBehaviour
                 if (smallButton.frame == null)
                     smallButton.frame = new GameObject("ButtonFrame", typeof(SpriteRenderer));
                 smallButton.frame.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/Borders/ButtonFrame");
+                smallButton.frame.GetComponent<SpriteRenderer>().sortingLayerName = layer;
                 smallButton.frame.transform.parent = smallButton.transform;
                 smallButton.frame.transform.localPosition = new Vector3();
             }
@@ -286,6 +288,7 @@ public class Window : MonoBehaviour
             {
                 var load = Resources.Load<Sprite>("Sprites/Building/BigButtons/" + bigButton.buttonType);
                 bigButton.GetComponent<SpriteRenderer>().sprite = load == null ? Resources.Load<Sprite>("Sprites/Building/BigButtons/OtherEmpty") : load;
+                bigButton.GetComponent<SpriteRenderer>().sortingLayerName = layer;
                 bigButton.transform.localPosition = new Vector3(region.xExtend + 20 + 38 * region.bigButtons.IndexOf(bigButton), -20f, 0.1f);
                 if (bigButton.gameObject.GetComponent<BoxCollider2D>() == null)
                     bigButton.gameObject.AddComponent<BoxCollider2D>();
@@ -294,6 +297,7 @@ public class Window : MonoBehaviour
                 if (bigButton.frame == null)
                     bigButton.frame = new GameObject("BigButtonFrame", typeof(SpriteRenderer));
                 bigButton.frame.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/Borders/BigButtonFrame");
+                bigButton.frame.GetComponent<SpriteRenderer>().sortingLayerName = layer;
                 bigButton.frame.transform.parent = bigButton.transform;
                 bigButton.frame.transform.localPosition = new Vector3();
             }
@@ -365,6 +369,7 @@ public class Window : MonoBehaviour
             region.background.transform.parent = region.transform;
             region.background.GetComponent<RegionBackground>().Initialise(region);
             region.background.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/Backgrounds/" + region.backgroundType);
+            region.background.GetComponent<SpriteRenderer>().sortingLayerName = layer;
             region.background.transform.localScale = new Vector3(regionGroup.AutoWidth() + 8 + region.xExtend, region.AutoHeight() + 2 + region.yExtend, 1);
             region.background.transform.localPosition = new Vector3(2, -2, 0.8f);
             if (region.backgroundType == Button || region.backgroundType == Handle)
@@ -387,6 +392,7 @@ public class Window : MonoBehaviour
                     region.borders[i] = new GameObject("Border", typeof(SpriteRenderer));
                     region.borders[i].transform.parent = region.transform;
                     region.borders[i].GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/Borders/RegionBorder");
+                    region.borders[i].GetComponent<SpriteRenderer>().sortingLayerName = layer;
                 }
             region.borders[0].transform.localScale = region.borders[3].transform.localScale = new Vector3(regionGroup.AutoWidth() + 12 + region.xExtend, 2, 2);
             region.borders[1].transform.localScale = region.borders[2].transform.localScale = new Vector3(2, region.AutoHeight() + 4 + region.yExtend, 2);
