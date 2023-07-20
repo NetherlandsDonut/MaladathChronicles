@@ -230,6 +230,8 @@ public class Ability
                 SpawnShatter(6, 0.7, new Vector3(p ? 148 : -318, 122), "AbilityCurseOfAgony", true, p ? "1000" : "1001");
                 PlaySound("AbilityCurseOfAgonyCast");
             });
+            if (p) Board.board.playerFinishedMoving = true;
+            else Board.board.enemyFinishedMoving = true;
             CDesktop.LockScreen();
         }),
         new Ability("Demon Skin", 0, new()
@@ -264,6 +266,42 @@ public class Ability
                 SpawnShatter(6, 0.7, new Vector3(!p ? 148 : -318, 122), "AbilityDemonSkin", true, !p ? "1000" : "1001");
                 PlaySound("AbilityDemonSkinCast");
             });
+            CDesktop.LockScreen();
+        }),
+        new Ability("Ice Block", 0, new()
+        {
+            { "Frost", 4 },
+        },
+        () =>
+        {
+            AddPaddingRegion(() =>
+            {
+                AddLine("Casting Frosbolt will channel a frosty", Gray);
+                AddLine("projectile at the target dealing damage.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Deals 8 damage times caster's intelligence.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+                AddLine("Each point in Frost Mastery adds 1% chance", Gray);
+                AddLine("to refund the cost of casting this spell.", Gray);
+            });
+        },
+        (p) =>
+        {
+            var caster = p ? Board.board.player : Board.board.enemy;
+            Board.board.actions.Add(() =>
+            {
+                caster.buffs.Add(("Ice Block", 3, SpawnShatterBuff(2, 0.8, new Vector3(!p ? 148 : -318, 122), "AbilityIceBlock", caster)));
+                SpawnShatter(6, 0.7, new Vector3(!p ? 148 : -318, 122), "AbilityIceBlock", true, !p ? "1000" : "1001");
+                SpawnShatter(6, 0.7, new Vector3(!p ? 148 : -318, 122), "AbilityIceBlock", true, !p ? "1000" : "1001");
+                PlaySound("AbilityIceBlockCast");
+            });
+            if (p) Board.board.playerFinishedMoving = true;
+            else Board.board.enemyFinishedMoving = true;
             CDesktop.LockScreen();
         }),
         new Ability("Fel Armor", 0, new()
@@ -301,6 +339,46 @@ public class Ability
             });
             CDesktop.LockScreen();
         }),
+        new Ability("Hammer Of Justice", 0, new()
+        {
+            { "Order", 8 },
+            { "Air", 2 }
+        },
+        () =>
+        {
+            AddPaddingRegion(() =>
+            {
+                AddLine("Casting Frosbolt will channel a frosty", Gray);
+                AddLine("projectile at the target dealing damage.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Deals 8 damage times caster's intelligence.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+                AddLine("Each point in Frost Mastery adds 1% chance", Gray);
+                AddLine("to refund the cost of casting this spell.", Gray);
+            });
+        },
+        (p) =>
+        {
+            var target = p ? Board.board.enemy : Board.board.player;
+            Board.board.actions.Add(() =>
+            {
+                PlaySound("AbilityHammerOfJusticeCast");
+                animationTime += frameTime * 4;
+            });
+            Board.board.actions.Add(() =>
+            {
+                target.buffs.Add(("Hammer Of Justice", 2, SpawnShatterBuff(2, 0.8, new Vector3(p ? 148 : -318, 122), "AbilityHammerOfJustice", target)));
+                SpawnShatter(6, 0.7, new Vector3(p ? 148 : -318, 122), "AbilityHammerOfJustice", true, p ? "1000" : "1001");
+                SpawnShatter(6, 0.7, new Vector3(p ? 148 : -318, 122), "AbilityHammerOfJustice", true, p ? "1000" : "1001");
+                PlaySound("AbilityHammerOfJusticeImpact");
+            });
+            CDesktop.LockScreen();
+        }),
         new Ability("Corruption", 0, new()
         {
             { "Shadow", 2 },
@@ -326,7 +404,6 @@ public class Ability
         },
         (p) =>
         {
-            var caster = p ? Board.board.player : Board.board.enemy;
             var target = p ? Board.board.enemy : Board.board.player;
             Board.board.actions.Add(() =>
             {
@@ -361,7 +438,6 @@ public class Ability
         },
         (p) =>
         {
-            var caster = p ? Board.board.player : Board.board.enemy;
             var target = p ? Board.board.enemy : Board.board.player;
             Board.board.actions.Add(() =>
             {
@@ -376,7 +452,8 @@ public class Ability
                 SpawnShatter(6, 0.7, new Vector3(p ? 148 : -318, 122), "AbilityShadowbolt", true, p ? "1000" : "1001");
                 PlaySound("AbilityShadowboltImpact");
             });
-            Board.board.playerFinishedMoving = true;
+            if (p) Board.board.playerFinishedMoving = true;
+            else Board.board.enemyFinishedMoving = true;
             CDesktop.LockScreen();
         }),
         new Ability("Fireball", 0, new()
@@ -418,7 +495,8 @@ public class Ability
                 SpawnShatter(6, 0.7, new Vector3(p ? 148 : -318, 122), "AbilityFireball", true, p ? "1000" : "1001");
                 PlaySound("AbilityFireballImpact");
             });
-            Board.board.playerFinishedMoving = true;
+            if (p) Board.board.playerFinishedMoving = true;
+            else Board.board.enemyFinishedMoving = true;
             CDesktop.LockScreen();
         }),
         new Ability("Scorch", 0, new()
@@ -536,7 +614,8 @@ public class Ability
                 SpawnShatter(6, 0.7, new Vector3(p ? 148 : -318, 122), "AbilityFrostbolt", true, p ? "1000" : "1001");
                 PlaySound("AbilityFrostboltImpact");
             });
-            Board.board.playerFinishedMoving = true;
+            if (p) Board.board.playerFinishedMoving = true;
+            else Board.board.enemyFinishedMoving = true;
             CDesktop.LockScreen();
         }),
         new Ability("Ice Lance", 0, new()
@@ -639,7 +718,8 @@ public class Ability
             {
                 animationTime += frameTime * 15;
             });
-            Board.board.playerFinishedMoving = true;
+            if (p) Board.board.playerFinishedMoving = true;
+            else Board.board.enemyFinishedMoving = true;
             CDesktop.LockScreen();
         }),
         new Ability("Blizzard", 4, new()
@@ -659,7 +739,7 @@ public class Ability
             AddHeaderRegion(() =>
             {
                 AddLine("Each frost element collected deals 3 damage ", Gray);
-                AddLine("scaled with caster\'s Intelligence.", Gray);
+                AddLine("scaled with caster's Intelligence.", Gray);
             });
             AddHeaderRegion(() =>
             {
@@ -672,7 +752,15 @@ public class Ability
         },
         (p) =>
         {
-
+            var caster = p ? Board.board.player : Board.board.enemy;
+            Board.board.actions.Add(() =>
+            {
+                caster.buffs.Add(("Blizzard", 7, SpawnShatterBuff(2, 0.8, new Vector3(p ? 148 : -318, 122), "AbilityBlizzard", caster)));
+                SpawnShatter(6, 0.7, new Vector3(p ? 148 : -318, 122), "AbilityBlizzard", true, p ? "1000" : "1001");
+                SpawnShatter(6, 0.7, new Vector3(p ? 148 : -318, 122), "AbilityBlizzard", true, p ? "1000" : "1001");
+                PlaySound("AbilityBlizzardImpact");
+            });
+            CDesktop.LockScreen();
         }),
         new Ability("Deep Freeze", 5, new()
         {
@@ -732,7 +820,8 @@ public class Ability
                     SpawnShatter(4, 1.0, Board.board.window.LBRegionGroup.regions[e.Item2].bigButtons[e.Item1].transform.position + new Vector3(-17.5f, -17.5f), Board.boardButtonDictionary[Board.board.field[e.Item1, e.Item2]]);
                 }
             });
-            Board.board.playerFinishedMoving = true;
+            if (p) Board.board.playerFinishedMoving = true;
+            else Board.board.enemyFinishedMoving = true;
             CDesktop.LockScreen();
         }),
         new Ability("Meteor", 5, new()
@@ -782,7 +871,7 @@ public class Ability
                 foreach (var e in list1)
                 {
                     Board.board.GiveResource(caster, e.Item1, e.Item2);
-                    SpawnShatterElement(5, 0.8, Board.board.window.LBRegionGroup.regions[e.Item2].bigButtons[e.Item1].transform.position + new Vector3(-17.5f, -17.5f), Board.boardButtonDictionary[Board.board.field[e.Item1, e.Item2]]);
+                    SpawnShatterElement(5, 0.8, Board.board.window.LBRegionGroup.regions[e.Item2].bigButtons[e.Item1].transform.position + new Vector3(-17.5f, -17.5f), Board.boardButtonDictionary[Board.board.field[e.Item1, e.Item2]], Board.board.field[e.Item1, e.Item2]);
                     Board.board.field[e.Item1, e.Item2] = 0;
                 }
                 PlaySound("AbilityMeteorImpact");
@@ -791,7 +880,8 @@ public class Ability
             {
                 animationTime += frameTime * 15;
             });
-            Board.board.playerFinishedMoving = true;
+            if (p) Board.board.playerFinishedMoving = true;
+            else Board.board.enemyFinishedMoving = true;
             CDesktop.LockScreen();
         }),
         new Ability("Shadowflame Breath", 3, new()
@@ -838,7 +928,8 @@ public class Ability
             {
                 animationTime += frameTime * 15;
             });
-            Board.board.enemyFinishedMoving = true;
+            if (p) Board.board.playerFinishedMoving = true;
+            else Board.board.enemyFinishedMoving = true;
             CDesktop.LockScreen();
         }),
         new Ability("Veil of Shadow", 0, new()

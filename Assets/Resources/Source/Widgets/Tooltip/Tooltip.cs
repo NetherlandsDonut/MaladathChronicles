@@ -1,5 +1,4 @@
 using System;
-using System.Diagnostics;
 using static Root;
 
 public class Tooltip
@@ -16,10 +15,8 @@ public class Tooltip
 
     public void SpawnTooltip()
     {
-        if (CDesktop.windows.Contains(window))
-            UnityEngine.Debug.Log(window.name + " is no longer accessible for tooltip");
         SpawnWindowBlueprint(new Blueprint("Tooltip", tooltip(caller()), true));
-        window = caller().window.desktop.LBWindow;
+        window = CDesktop.LBWindow;
         CloseWindowOnLostFocus();
     }
 }

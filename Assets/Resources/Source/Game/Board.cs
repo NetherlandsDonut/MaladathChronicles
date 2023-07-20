@@ -33,7 +33,8 @@ public class Board
     public Window window;
     public Entity player, enemy;
     public bool playerTurn, breakForEnemy, breakForCascade, enemyFinishedMoving, playerFinishedMoving;
-    public List<GameObject> temporaryElementsPlayer, temporaryElementsEnemy, temporaryBuffsPlayer, temporaryBuffsEnemy;
+    public List<GameObject> temporaryElementsPlayer, temporaryElementsEnemy;
+    public List<GameObject> temporaryBuffsPlayer, temporaryBuffsEnemy;
     public List<Action> actions;
 
     //ENDS THE CURRENT PLAYER'S TURN
@@ -206,7 +207,7 @@ public class Board
     public void SelectDestroy(int x, int y)
     {
         PlaySound(collectSoundDictionary[field[x, y]].ToString(), 0.3f);
-        SpawnShatterElement(1, 0.5, window.LBRegionGroup.regions[y].bigButtons[x].transform.position + new Vector3(-17.5f, -17.5f), boardButtonDictionary[field[x, y]]);
+        SpawnShatterElement(1, 0.5, window.LBRegionGroup.regions[y].bigButtons[x].transform.position + new Vector3(-17.5f, -17.5f), boardButtonDictionary[field[x, y]], field[x, y]);
         field[x, y] = 0;
         CDesktop.LockScreen();
     }
@@ -222,7 +223,7 @@ public class Board
         }
         foreach (var a in list)
         {
-            SpawnShatterElement(1, 0.5, window.LBRegionGroup.regions[a.Item2].bigButtons[a.Item1].transform.position + new Vector3(-17.5f, -17.5f), boardButtonDictionary[a.Item3]);
+            SpawnShatterElement(1, 0.5, window.LBRegionGroup.regions[a.Item2].bigButtons[a.Item1].transform.position + new Vector3(-17.5f, -17.5f), boardButtonDictionary[a.Item3], a.Item3);
             if (playerTurn) GiveResource(player, a.Item1, a.Item2);
             else GiveResource(enemy, a.Item1, a.Item2);
             field[a.Item1, a.Item2] = 0;

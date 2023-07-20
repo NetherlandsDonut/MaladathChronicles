@@ -19,16 +19,21 @@ public class Highlightable : MonoBehaviour
 
     public Tooltip FindTooltip()
     {
-        if (TryGetComponent<LineSmallButton>(out var smallButton)) return smallButton.tooltip;
-        if (TryGetComponent<LineBigButton>(out var bigButton)) return bigButton.tooltip;
-        return region.tooltip;
+        if (TryGetComponent<LineSmallButton>(out var smallButton))
+            return smallButton.tooltip;
+        if (TryGetComponent<LineBigButton>(out var bigButton))
+            return bigButton.tooltip;
+        if (TryGetComponent<FlyingBuff>(out var flyingBuff))
+            return flyingBuff.tooltip;
+        return region == null ? null : region.tooltip;
     }
 
     public void OnMouseEnter()
     {
         if (cursor.render.sprite == null) return;
         if (FindTooltip() != null)
-            window.desktop.SetTooltip(FindTooltip());
+            if (window == null) transform.parent.GetComponent<Desktop>().SetTooltip(FindTooltip());
+            else window.desktop.SetTooltip(FindTooltip());
         if (GetComponent<InputCharacter>() != null) cursor.SetCursor(Write);
         if (!pressed || !windowHandle)
             render.color -= new UnityEngine.Color(0.1f, 0.1f, 0.1f, 0);
@@ -37,9 +42,14 @@ public class Highlightable : MonoBehaviour
     public void OnMouseExit()
     {
         if (cursor.render.sprite == null) return;
-        if (FindTooltip() != null && window.desktop.tooltip == FindTooltip())
-            if (FindTooltip().window != null) CloseWindow(FindTooltip().window);
-            else window.desktop.tooltip = null;
+        if (FindTooltip() != null)
+        {
+            if ((window == null ? transform.parent.GetComponent<Desktop>() : window.desktop).tooltip == FindTooltip())
+            {
+                if (FindTooltip().window != null) CloseWindow(FindTooltip().window);
+                else (window == null ? transform.parent.GetComponent<Desktop>() : window.desktop).tooltip = null;
+            }
+        }
         if (!pressed && !windowHandle) cursor.SetCursor(Default);
         if (!pressed || !windowHandle) render.color += new UnityEngine.Color(0.1f, 0.1f, 0.1f, 0);
     }
@@ -48,9 +58,13 @@ public class Highlightable : MonoBehaviour
     {
         if (cursor.render.sprite == null) return;
         pressed = true;
-        window.desktop.tooltip = null;
-        if (window.desktop.FocusedWindow() != window)
-            window.desktop.Focus(window);
+        if (window == null) transform.parent.GetComponent<Desktop>().tooltip = null;
+        else
+        {
+            window.desktop.tooltip = null;
+            if (window.desktop.FocusedWindow() != window)
+                window.desktop.Focus(window);
+        }
         if (windowHandle)
         {
             cursor.SetCursor(Click);

@@ -174,6 +174,7 @@ public class Class
                 ("Staff Proficiency", 1),
                 ("Wand Proficiency", 1),
                 ("Cloth Proficiency", 1),
+                ("Hammer Of Justice", 1),
             },
             new List<TalentTree>
             {
@@ -230,8 +231,7 @@ public class Class
                 ("Staff Proficiency", 1),
                 ("Wand Proficiency", 1),
                 ("Cloth Proficiency", 1),
-                ("Shadow Bolt", 1),
-                ("Healing Wave", 1),
+                ("Hammer Of Justice", 1),
             },
             new List<TalentTree>
             {

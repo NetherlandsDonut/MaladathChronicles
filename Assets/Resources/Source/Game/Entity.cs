@@ -2,7 +2,6 @@ using UnityEngine;
 using UnityEditor;
 using System.Linq;
 using System.Collections.Generic;
-using UnityEditor.Playables;
 
 public class Entity
 {
@@ -115,6 +114,7 @@ public class Entity
                 buffs[index] = (buffs[index].Item1, buffs[index].Item2 - 1, buffs[index].Item3);
                 if (buffs[index].Item2 <= 0)
                 {
+                    Buff.buffs.Find(y => y.name == buffs[index].Item1).killEffects(Board.board.enemy == this);
                     var temp = buffs[index].Item3.GetComponent<FlyingBuff>();
                     temp.dyingIndex = temp.Index();
                     (this == Board.board.player ? Board.board.temporaryBuffsPlayer : Board.board.temporaryBuffsEnemy).Remove(buffs[index].Item3);

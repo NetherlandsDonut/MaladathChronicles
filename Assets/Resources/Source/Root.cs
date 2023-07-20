@@ -66,20 +66,47 @@ public static class Root
         buff.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/Buttons/" + sprite);
         buff.transform.parent = Board.board.window.desktop.transform;
         buff.transform.position = position;
-        buff.GetComponent<FlyingBuff>().Initiate(currentSave.player == target);
+        buff.GetComponent<FlyingBuff>().Initiate(currentSave.player == target, (h) => { },
+            (h) => () =>
+            {
+                var fb = h.GetComponent<FlyingBuff>();
+                var buff = (fb.onPlayer ? Board.board.player.buffs : Board.board.enemy.buffs).Find(x => x.Item3 == h.gameObject);
+                var buffObj = Buff.buffs.Find(x => x.name == buff.Item1);
+                SetAnchor(Top, 0, -13);
+                AddHeaderGroup();
+                SetRegionGroupWidth(256);
+                SetRegionGroupHeight(237);
+                AddHeaderRegion(() =>
+                {
+                    AddLine(buff.Item1, Gray);
+                });
+                AddPaddingRegion(() =>
+                {
+                    AddBigButton(buffObj.icon, (h) => { });
+                    AddLine("Dispellable: ", DarkGray);
+                    AddText(buffObj.dispelType != "None" ? "Yes" : "No", Gray);
+                    AddLine("Turns left: ", DarkGray);
+                    AddText(buff.Item2 + "", Gray);
+                });
+                buffObj.description();
+                AddRegionGroup();
+                SetRegionGroupWidth(256);
+                AddPaddingRegion(() => { AddLine(""); });
+            }
+        );
         SpawnShatter(speed, amount, position, sprite, oneDirection, block);
         return buff;
     }
 
-    public static GameObject SpawnShatterElement(double speed, double amount, Vector3 position, string sprite, bool oneDirection = false, string block = "0000")
+    public static GameObject SpawnShatterElement(double speed, double amount, Vector3 position, string sprite, int element, bool oneDirection = false, string block = "0000")
     {
-        var element = UnityEngine.Object.Instantiate(Resources.Load<GameObject>("Prefabs/PrefabElement"));
-        element.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/Buttons/" + sprite);
-        element.transform.parent = Board.board.window.desktop.transform;
-        element.transform.position = position;
-        element.GetComponent<FlyingElement>().Initiate();
+        var el = UnityEngine.Object.Instantiate(Resources.Load<GameObject>("Prefabs/PrefabElement"));
+        el.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/Buttons/" + sprite);
+        el.transform.parent = Board.board.window.desktop.transform;
+        el.transform.position = position;
+        el.GetComponent<FlyingElement>().Initiate(element);
         SpawnShatter(speed, amount, position, sprite, oneDirection, block);
-        return element;
+        return el;
     }
 
     public static void SpawnShatterSmall(double speed, double amount, Vector3 position, string sprite, bool oneDirection = false, string block = "0000")

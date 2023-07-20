@@ -1,19 +1,27 @@
+using System;
 using UnityEngine;
 using System.Linq;
+
+using static Root;
 
 public class FlyingBuff : MonoBehaviour
 {
     public bool onPlayer;
     public int dyingIndex;
     public SpriteRenderer render;
+    public Action<Highlightable> pressEvent;
+    public Tooltip tooltip;
 
     public static int flySpeed = 6;
     public static int rowAmount = 7;
 
-    public void Initiate(bool targettedPlayer)
+    public void Initiate(bool targettedPlayer, Action<Highlightable> pressEvent, Func<Highlightable, Action> tooltip)
     {
         onPlayer = targettedPlayer;
         (onPlayer ? Board.board.temporaryBuffsPlayer : Board.board.temporaryBuffsEnemy).Add(gameObject);
+        this.pressEvent = pressEvent;
+        if (tooltip != null)
+            this.tooltip = new Tooltip(() => GetComponent<Highlightable>(), tooltip);
     }
 
     public void Update()
@@ -26,5 +34,15 @@ public class FlyingBuff : MonoBehaviour
     public int Index() 
     {
         return onPlayer ? Board.board.temporaryBuffsPlayer.IndexOf(gameObject) : Board.board.temporaryBuffsEnemy.IndexOf(gameObject);
+    }
+
+    public void OnMouseUp()
+    {
+        if (cursor.render.sprite == null) return;
+        if (pressEvent != null)
+        {
+            PlaySound("DesktopButtonPress", 0.6f);
+            pressEvent(GetComponent<Highlightable>());
+        }
     }
 }
