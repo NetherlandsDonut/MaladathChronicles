@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEditor;
 using System.Linq;
 using System.Collections.Generic;
+using UnityEditor.Playables;
 
 public class Entity
 {
@@ -80,6 +81,7 @@ public class Entity
         {
             health = MaxHealth();
         }
+        actionBars = Ability.abilities.FindAll(x => abilities.Contains(x.name) && x.cost != null).Select(x => x.name).ToList();
         buffs = new();
         resources = new()
         {
@@ -108,7 +110,6 @@ public class Entity
             var index = i;
             Board.board.actions.Add(() => { Root.AddSmallButtonOverlay(buffs[index].Item3, "OtherGlowFull", 1); });
             Board.board.actions.Add(Buff.buffs.Find(y => y.name == buffs[index].Item1).effects(Board.board.enemy == this));
-            Board.board.actions.Add(() => { Root.animationTime += Root.frameTime * 6; });
             Board.board.actions.Add(() =>
             {
                 buffs[index] = (buffs[index].Item1, buffs[index].Item2 - 1, buffs[index].Item3);
@@ -126,7 +127,7 @@ public class Entity
     public int health, level, unspentTalentPoints;
     public string name, race, spec;
     public Dictionary<string, int> resources;
-    public List<string> abilities;
+    public List<string> abilities, actionBars;
     public Stats stats;
     public Inventory inventory;
     public Dictionary<string, string> equipment;

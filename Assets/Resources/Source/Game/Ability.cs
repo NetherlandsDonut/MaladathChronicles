@@ -232,6 +232,75 @@ public class Ability
             });
             CDesktop.LockScreen();
         }),
+        new Ability("Demon Skin", 0, new()
+        {
+            { "Shadow", 6 },
+        },
+        () =>
+        {
+            AddPaddingRegion(() =>
+            {
+                AddLine("Casting Frosbolt will channel a frosty", Gray);
+                AddLine("projectile at the target dealing damage.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Deals 8 damage times caster's intelligence.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+                AddLine("Each point in Frost Mastery adds 1% chance", Gray);
+                AddLine("to refund the cost of casting this spell.", Gray);
+            });
+        },
+        (p) =>
+        {
+            var caster = p ? Board.board.player : Board.board.enemy;
+            Board.board.actions.Add(() =>
+            {
+                caster.buffs.Add(("Demon Skin", 5, SpawnShatterBuff(2, 0.8, new Vector3(!p ? 148 : -318, 122), "AbilityDemonSkin", caster)));
+                SpawnShatter(6, 0.7, new Vector3(!p ? 148 : -318, 122), "AbilityDemonSkin", true, !p ? "1000" : "1001");
+                SpawnShatter(6, 0.7, new Vector3(!p ? 148 : -318, 122), "AbilityDemonSkin", true, !p ? "1000" : "1001");
+                PlaySound("AbilityDemonSkinCast");
+            });
+            CDesktop.LockScreen();
+        }),
+        new Ability("Fel Armor", 0, new()
+        {
+            { "Shadow", 3 },
+            { "Fire", 3 }
+        },
+        () =>
+        {
+            AddPaddingRegion(() =>
+            {
+                AddLine("Casting Frosbolt will channel a frosty", Gray);
+                AddLine("projectile at the target dealing damage.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Deals 8 damage times caster's intelligence.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+                AddLine("Each point in Frost Mastery adds 1% chance", Gray);
+                AddLine("to refund the cost of casting this spell.", Gray);
+            });
+        },
+        (p) =>
+        {
+            var caster = p ? Board.board.player : Board.board.enemy;
+            Board.board.actions.Add(() =>
+            {
+                caster.buffs.Add(("Fel Armor", 5, SpawnShatterBuff(2, 0.8, new Vector3(!p ? 148 : -318, 122), "AbilityFelArmor", caster)));
+                SpawnShatter(6, 0.7, new Vector3(!p ? 148 : -318, 122), "AbilityFelArmor", true, !p ? "1000" : "1001");
+                SpawnShatter(6, 0.7, new Vector3(!p ? 148 : -318, 122), "AbilityFelArmor", true, !p ? "1000" : "1001");
+                PlaySound("AbilityFelArmorCast");
+            });
+            CDesktop.LockScreen();
+        }),
         new Ability("Corruption", 0, new()
         {
             { "Shadow", 2 },

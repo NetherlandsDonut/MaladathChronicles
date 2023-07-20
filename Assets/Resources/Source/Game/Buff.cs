@@ -45,6 +45,7 @@ public class Buff
             target.health -= 2;
             SpawnShatter(2, 0.8, new Vector3(p ? 148 : -318, 122), "AbilityCorruption");
             PlaySound("AbilityCorruptionFlare");
+            animationTime += frameTime * 3;
         }),
         new Buff("Curse Of Agony", "None", 0, true, "AbilityCurseOfAgony",
         () =>
@@ -66,6 +67,43 @@ public class Buff
             target.health -= 3;
             SpawnShatter(2, 0.8, new Vector3(p ? 148 : -318, 122), "AbilityCurseOfAgony");
             PlaySound("AbilityCurseOfAgonyFlare");
+            animationTime += frameTime * 3;
+        }),
+        new Buff("Fel Armor", "None", 0, true, "AbilityFelArmor",
+        () =>
+        {
+            AddHeaderRegion(() =>
+            {
+                AddLine("Target burns for 3 damage every turn.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+                AddLine("Each point in Frost Mastery adds 1% chance", Gray);
+                AddLine("to refund the cost of casting this spell.", Gray);
+            });
+        },
+        (p) => () =>
+        {
+
+        }),
+        new Buff("Demon Skin", "None", 0, true, "AbilityDemonSkin",
+        () =>
+        {
+            AddHeaderRegion(() =>
+            {
+                AddLine("Target burns for 3 damage every turn.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+                AddLine("Each point in Frost Mastery adds 1% chance", Gray);
+                AddLine("to refund the cost of casting this spell.", Gray);
+            });
+        },
+        (p) => () =>
+        {
+
         }),
     };
 }

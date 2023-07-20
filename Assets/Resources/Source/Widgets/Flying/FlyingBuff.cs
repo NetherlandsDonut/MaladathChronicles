@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Linq;
 
 public class FlyingBuff : MonoBehaviour
 {
@@ -19,7 +20,7 @@ public class FlyingBuff : MonoBehaviour
     {
         if (transform.localPosition.x < -322.5f || transform.localPosition.x > 322.5f) Destroy(gameObject);
         else if (onPlayer && !Board.board.temporaryBuffsPlayer.Contains(gameObject) || !onPlayer && !Board.board.temporaryBuffsEnemy.Contains(gameObject)) transform.position = Vector3.Lerp(transform.position, new Vector3(onPlayer ? -302.5f - (23 * Mathf.Abs(dyingIndex % rowAmount - rowAmount) + 1) : 302.5f + 23 * (Mathf.Abs(dyingIndex % rowAmount - rowAmount) + 1), 67.5f - 23 * (dyingIndex / rowAmount)), Time.deltaTime * flySpeed);
-        else transform.position = Vector3.Lerp(transform.position, onPlayer ? new Vector3(-302.5f + 23 * (Index() % rowAmount), 67.5f - 23 * (Index() / rowAmount)) : new Vector3(302.5f - 23 * (Index() % rowAmount), 67.5f - 23 * (Index() / rowAmount)), Time.deltaTime * flySpeed);
+        else transform.position = Vector3.Lerp(transform.position, onPlayer ? new Vector3(-302.5f + 23 * (Index() % rowAmount), 105.5f - 23 * (Index() / rowAmount) - 19 * Board.board.player.actionBars.Count) : new Vector3(302.5f - 23 * (Index() % rowAmount), 105.5f - 23 * (Index() / rowAmount) - 19 * Board.board.enemy.actionBars.Count), Time.deltaTime * flySpeed);
     }
 
     public int Index() 

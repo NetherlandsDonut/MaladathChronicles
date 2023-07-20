@@ -193,46 +193,6 @@ public class Blueprint
                 () =>
                 {
                     AddLine(Board.board.player.name, Black);
-                    foreach (var buff in Board.board.player.buffs)
-                    {
-                        var buffObj = Buff.buffs.Find(x => x.name == buff.Item1);
-                        if (buffObj == null) continue;
-                        AddButtonRegion(
-                            () =>
-                            {
-                                AddLine(buff.Item1, Black);
-                                AddSmallButton(buffObj.icon, (h) => { });
-                            },
-                            (h) =>
-                            {
-
-                            },
-                            (h) => () =>
-                            {
-                                SetAnchor(Top, 0, -13);
-                                AddHeaderGroup();
-                                SetRegionGroupWidth(256);
-                                SetRegionGroupHeight(237);
-                                AddHeaderRegion(() =>
-                                {
-                                    AddLine(buff.Item1, Gray);
-                                });
-                                AddPaddingRegion(() =>
-                                {
-                                    AddBigButton(buffObj.icon, (h) => { });
-                                    AddLine("Duration left: ", DarkGray);
-                                    AddText(buff.Item2 + "", Gray);
-                                });
-                                buffObj.description();
-                                AddRegionGroup();
-                                SetRegionGroupWidth(256);
-                                AddPaddingRegion(() =>
-                                {
-                                    AddLine("", LightGray);
-                                });
-                            }
-                        );
-                    }
                 },
                 (h) =>
                 {
@@ -247,7 +207,7 @@ public class Blueprint
                 AddLine("Level " + Board.board.player.level, Gray);
                 AddLine("Health: " + Board.board.player.health + "/" + Board.board.player.MaxHealth(), Gray);
             });
-            foreach (var ability in Board.board.player.abilities)
+            foreach (var ability in Board.board.player.actionBars)
             {
                 var abilityObj = Ability.abilities.Find(x => x.name == ability);
                 if (abilityObj == null || abilityObj.cost == null) continue;
@@ -320,46 +280,6 @@ public class Blueprint
                 () =>
                 {
                     AddLine(Board.board.enemy.name, Black);
-                    //foreach (var buff in Board.board.enemy.buffs)
-                    //{
-                    //    var buffObj = Buff.buffs.Find(x => x.name == buff.Item1);
-                    //    if (buffObj == null) continue;
-                    //    AddButtonRegion(
-                    //        () =>
-                    //        {
-                    //            AddLine(buff.Item1, Black);
-                    //            AddSmallButton(buffObj.icon, (h) => { });
-                    //        },
-                    //        (h) =>
-                    //        {
-
-                    //        },
-                    //        (h) => () =>
-                    //        {
-                    //            SetAnchor(Top, 0, -13);
-                    //            AddHeaderGroup();
-                    //            SetRegionGroupWidth(256);
-                    //            SetRegionGroupHeight(237);
-                    //            AddHeaderRegion(() =>
-                    //            {
-                    //                AddLine(buff.Item1, Gray);
-                    //            });
-                    //            AddPaddingRegion(() =>
-                    //            {
-                    //                AddBigButton(buffObj.icon, (h) => { });
-                    //                AddLine("Duration left: ", DarkGray);
-                    //                AddText(buff.Item3 + "", Gray);
-                    //            });
-                    //            buffObj.description();
-                    //            AddRegionGroup();
-                    //            SetRegionGroupWidth(256);
-                    //            AddPaddingRegion(() =>
-                    //            {
-                    //                AddLine("", LightGray);
-                    //            });
-                    //        }
-                    //    );
-                    //}
                 },
                 (h) =>
                 {
@@ -372,7 +292,7 @@ public class Blueprint
                 AddLine("Level " + Board.board.enemy.level, Gray);
                 AddLine("Health: " + Board.board.enemy.health + "/" + Board.board.enemy.MaxHealth(), Gray);
             });
-            foreach (var ability in Board.board.enemy.abilities)
+            foreach (var ability in Board.board.enemy.actionBars)
             {
                 var abilityObj = Ability.abilities.Find(x => x.name == ability);
                 if (abilityObj == null || abilityObj.cost == null) continue;

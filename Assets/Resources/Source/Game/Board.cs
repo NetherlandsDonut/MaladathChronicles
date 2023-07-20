@@ -43,12 +43,14 @@ public class Board
         {
             playerTurn = false;
             playerFinishedMoving = false;
+            board.actions.Add(() => { animationTime += frameTime * 3; });
             enemy.FlareBuffs();
         }
         else
         {
             playerTurn = true;
             enemyFinishedMoving = false;
+            board.actions.Add(() => { animationTime += frameTime * 3; });
             player.FlareBuffs();
         }
     }
@@ -135,7 +137,7 @@ public class Board
             //DO ANIMATION BREAK FOR ENEMY TO GIVE THEM TIME TO THINK
             else if (!breakForEnemy)
             {
-                animationTime = (float)(random.Next(4, 8) / 10.0) + 0.3f;
+                animationTime = (float)(random.Next(3, 5) / 10.0) + 0.3f;
                 breakForEnemy = true;
             }
 
