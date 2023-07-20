@@ -7,17 +7,10 @@ public class SaveGame
         player = new Entity(
             "Gaval",
             Race.races.Find(x => x.name == "Human"),
-            Class.classes.Find(x => x.name == "Mage"),
+            Class.classes.Find(x => x.name == "Warlock"),
             new()
             {
-                "Scaled Silithid Gauntlets",
-                "Carapace Spine Crossbow",
-                "Angerforge's Battle Axe",
-                "Ribbly's Quiver",
-                "Haunting Specter Leggings",
-                "Shadefiend Boots",
-                "Rubicund Armguards",
-                "Carapace of Anub'shiah"
+
             });
     }
 

@@ -60,16 +60,71 @@ public static class Root
 
     #region Shatter
 
-    public static void SpawnShatter(double speed, double amount, Vector3 position, string sprite, bool collected = true)
+    public static GameObject SpawnShatterBuff(double speed, double amount, Vector3 position, string sprite, Entity target, bool oneDirection = false, string block = "0000")
     {
-        if (collected)
+        var buff = UnityEngine.Object.Instantiate(Resources.Load<GameObject>("Prefabs/PrefabBuff"));
+        buff.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/Buttons/" + sprite);
+        buff.transform.parent = Board.board.window.desktop.transform;
+        buff.transform.position = position;
+        buff.GetComponent<FlyingBuff>().Initiate(currentSave.player == target);
+        SpawnShatter(speed, amount, position, sprite, oneDirection, block);
+        return buff;
+    }
+
+    public static GameObject SpawnShatterElement(double speed, double amount, Vector3 position, string sprite, bool oneDirection = false, string block = "0000")
+    {
+        var element = UnityEngine.Object.Instantiate(Resources.Load<GameObject>("Prefabs/PrefabElement"));
+        element.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/Buttons/" + sprite);
+        element.transform.parent = Board.board.window.desktop.transform;
+        element.transform.position = position;
+        element.GetComponent<FlyingElement>().Initiate();
+        SpawnShatter(speed, amount, position, sprite, oneDirection, block);
+        return element;
+    }
+
+    public static void SpawnShatterSmall(double speed, double amount, Vector3 position, string sprite, bool oneDirection = false, string block = "0000")
+    {
+        var shatter = new GameObject("Shatter", typeof(Shatter));
+        shatter.GetComponent<Shatter>().Initiate(3);
+        shatter.transform.parent = Board.board.window.desktop.transform;
+        shatter.transform.position = position - new Vector3(7, 9);
+        shatter.layer = 2;
+        var foo = Resources.Load<Sprite>("Sprites/Building/Buttons/" + sprite);
+        int x = (int)foo.textureRect.width, y = (int)foo.textureRect.height;
+        var dot = Resources.Load<GameObject>("Prefabs/PrefabDot");
+        var direction = RollDirection();
+        if (amount > 1) amount = 1;
+        else if (amount < 0) amount = 0;
+        for (int i = 0; i < x; i++)
+            for (int j = 0; j < y; j++)
+                if (random.Next(0, (int)Math.Abs(amount * 10 - 10)) == 0)
+                    SpawnDot(i, j, foo.texture.GetPixel(i, j));
+
+        void SpawnDot(int c, int v, Color32 color)
         {
-            var mana = UnityEngine.Object.Instantiate(Resources.Load<GameObject>("Prefabs/Button"));
-            mana.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/Buttons/" + sprite);
-            mana.transform.parent = Board.board.window.desktop.transform;
-            mana.transform.position = position;
-            mana.GetComponent<Froop>().Initiate();
+            var newObject = UnityEngine.Object.Instantiate(dot);
+            newObject.GetComponent<Shatter>().Initiate(random.Next(1, 8) / 50.0f);
+            newObject.transform.parent = shatter.transform;
+            newObject.transform.localPosition = new Vector3(c, v);
+            newObject.GetComponent<SpriteRenderer>().color = color;
+            newObject.GetComponent<SpriteRenderer>().sortingOrder = 2;
+            newObject.GetComponent<Rigidbody2D>().AddRelativeForce((direction / 2 + UnityEngine.Random.insideUnitCircle / 2) * (int)(100 * speed));
+            if (!oneDirection) direction = RollDirection();
         }
+
+        Vector2 RollDirection()
+        {
+            var direction = UnityEngine.Random.insideUnitCircle;
+            if (block[0] == '1' && block[2] == '1') direction = new Vector2(direction.x, 0);
+            else if (block[0] == '1' && direction.y > 0 || block[2] == '1' && direction.y < 0) direction = new Vector2(direction.x, -direction.y);
+            if (block[1] == '1' && block[3] == '1') direction = new Vector2(0, direction.y);
+            else if (block[1] == '1' && direction.x > 0 || block[3] == '1' && direction.x < 0) direction = new Vector2(-direction.x, direction.y);
+            return direction;
+        }
+    }
+
+    public static void SpawnShatter(double speed, double amount, Vector3 position, string sprite, bool oneDirection = false, string block = "0000")
+    {
         var shatter = new GameObject("Shatter", typeof(Shatter));
         shatter.GetComponent<Shatter>().Initiate(3);
         shatter.transform.parent = Board.board.window.desktop.transform;
@@ -77,7 +132,8 @@ public static class Root
         shatter.layer = 1;
         var foo = Resources.Load<Sprite>("Sprites/Building/BigButtons/" + sprite);
         int x = (int)foo.textureRect.width, y = (int)foo.textureRect.height;
-        var dot = Resources.Load<GameObject>("Prefabs/Dot");
+        var dot = Resources.Load<GameObject>("Prefabs/PrefabDot");
+        var direction = RollDirection();
         if (amount > 1) amount = 1;
         else if (amount < 0) amount = 0;
         for (int i = 6; i < x - 5; i++)
@@ -92,7 +148,18 @@ public static class Root
             newObject.transform.parent = shatter.transform;
             newObject.transform.localPosition = new Vector3(c, v);
             newObject.GetComponent<SpriteRenderer>().color = color;
-            newObject.GetComponent<Rigidbody2D>().AddRelativeForce(UnityEngine.Random.insideUnitCircle * (int)(100 * speed));
+            newObject.GetComponent<Rigidbody2D>().AddRelativeForce((direction / 2 + UnityEngine.Random.insideUnitCircle / 2) * (int)(100 * speed));
+            if (!oneDirection) direction = RollDirection();
+        }
+
+        Vector2 RollDirection()
+        {
+            var direction = UnityEngine.Random.insideUnitCircle;
+            if (block[0] == '1' && block[2] == '1') direction = new Vector2(direction.x, 0);
+            else if (block[0] == '1' && direction.y > 0 || block[2] == '1' && direction.y < 0) direction = new Vector2(direction.x, -direction.y);
+            if (block[1] == '1' && block[3] == '1') direction = new Vector2(0, direction.y);
+            else if (block[1] == '1' && direction.x > 0 || block[3] == '1' && direction.x < 0) direction = new Vector2(-direction.x, direction.y);
+            return direction;
         }
     }
 
@@ -117,6 +184,7 @@ public static class Root
                     var canPick = currentSave.player.CanPickTalent(spec, talent);
                     if (!currentSave.player.abilities.Contains(talent.ability) && currentSave.player.CanPickTalent(spec, talent))
                     {
+                        currentSave.player.unspentTalentPoints--;
                         PlaySound("DesktopTalentAcquired", 0.2f);
                         currentSave.player.abilities.Add(talent.ability);
                         CDesktop.Rebuild();
@@ -531,14 +599,25 @@ public static class Root
 
     #region SmallButtons
 
-    public static void AddSmallButtonOverlay(string overlay)
+    public static void AddSmallButtonOverlay(string overlay, float time = 0)
     {
         var region = CDesktop.LBWindow.LBRegionGroup.LBRegion;
         var button = region.LBSmallButton.gameObject;
+        AddSmallButtonOverlay(button, overlay, time);
+    }
+
+    public static void AddSmallButtonOverlay(GameObject onWhat, string overlay, float time = 0)
+    {
         var newObject = new GameObject("SmallButtonGrid", typeof(SpriteRenderer));
-        newObject.transform.parent = button.transform;
+        newObject.transform.parent = onWhat.transform;
+        newObject.transform.localPosition = Vector3.zero;
         newObject.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/Buttons/" + overlay);
-        newObject.GetComponent<SpriteRenderer>().sortingOrder = 1;
+        newObject.GetComponent<SpriteRenderer>().sortingOrder = 3;
+        if (time > 0)
+        {
+            newObject.AddComponent<Shatter>().render = newObject.GetComponent<SpriteRenderer>();
+            newObject.GetComponent<Shatter>().Initiate(0.1f);
+        }
     }
 
     public static void AddSmallButton(string type, Action<Highlightable> pressEvent, Func<Highlightable, Action> tooltip = null)

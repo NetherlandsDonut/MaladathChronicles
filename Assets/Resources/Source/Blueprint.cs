@@ -26,111 +26,6 @@ public class Blueprint
 
     public static List<Blueprint> windowBlueprints = new()
     {
-        new("Testing", () => {
-            SetAnchor(BottomRight);
-            AddRegionGroup();
-            AddHandleRegion(() =>
-            {
-                AddLine("Chemical plant", Black);
-                AddSmallButton("OtherNextPage",
-                    (h) =>
-                    {
-                        AddRegionGroup(1);
-                        AddHandleRegion(() =>
-                        {
-                            AddLine("Chemical plant", Black);
-                            AddSmallButton("OtherClose",
-                                (h) =>
-                                {
-                                    CloseRegionGroup(h.region.regionGroup);
-                                }
-                            );
-                        });
-                        AddHeaderRegion(() =>
-                        {
-                            AddLine("General", LightGray);
-                        });
-                        AddPaddingRegion(() =>
-                        {
-                            SetRegionAsGroupExtender();
-                            AddLine("Crafting speed: ", DarkGray);
-                            AddText("1.00", Gray);
-                            AddLine("Products finished: ", DarkGray);
-                            AddText("7406", Gray);
-                            AddLine("Pollution: ", DarkGray);
-                            AddText("4/m", Gray);
-                            AddLine("Health: ", DarkGray);
-                            AddText("300/300", Gray);
-                        });
-                        AddButtonRegion(() =>
-                        {
-                            AddLine("Add to list of abilities", Black);
-                        },
-                        (h) =>
-                        {
-                            h.window.Rebuild();
-                        });
-                    }
-                );
-            });
-            var list = new List<string> { "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight" };
-            AddPaddingRegion(() =>
-            {
-                AddLine("List:", Gray);
-            });
-            AddLineList(6,
-                () => list.Count,
-                (i) =>
-                {
-                    SetRegionBackground(Button);
-                    AddLine(list[i], Black);
-                },
-                (i) =>
-                {
-                    SetRegionBackground(Padding);
-                    AddLine("", Gray);
-                },
-                null
-            );
-            AddPaddingRegion(() =>
-            {
-                AddPaginationLine();
-                AddNextPageButton();
-                AddPreviousPageButton();
-            });
-
-            AddRegionGroup();
-            AddHandleRegion(() =>
-            {
-                AddLine("Chemical plant", Black);
-            });
-            AddButtonRegion(() =>
-            {
-                AddLine("Select", Black);
-            },
-            (h) =>
-            {
-
-            });
-            AddHeaderRegion(() =>
-            {
-                AddLine("General", LightGray);
-            });
-            AddPaddingRegion(() =>
-            {
-                SetRegionAsGroupExtender();
-                AddLine("Crafting speed: ", DarkGray);
-                AddText("1.00", Gray);
-                AddLine("Products finished: ", DarkGray);
-                AddText("7406", Gray);
-                AddLine("Pollution: ", DarkGray);
-                AddText("4/m", Gray);
-                AddLine("Health: ", DarkGray);
-                AddText("300/300", Gray);
-            });
-            AddInputRegion(testText, InputType.Everything, "TestingText");
-            AddInputRegion(testText2, InputType.Everything, "TestingText2");
-        }),
         new("TitleScreenMenu", () => {
             SetAnchor(Center);
             AddHeaderGroup();
@@ -298,6 +193,46 @@ public class Blueprint
                 () =>
                 {
                     AddLine(Board.board.player.name, Black);
+                    foreach (var buff in Board.board.player.buffs)
+                    {
+                        var buffObj = Buff.buffs.Find(x => x.name == buff.Item1);
+                        if (buffObj == null) continue;
+                        AddButtonRegion(
+                            () =>
+                            {
+                                AddLine(buff.Item1, Black);
+                                AddSmallButton(buffObj.icon, (h) => { });
+                            },
+                            (h) =>
+                            {
+
+                            },
+                            (h) => () =>
+                            {
+                                SetAnchor(Top, 0, -13);
+                                AddHeaderGroup();
+                                SetRegionGroupWidth(256);
+                                SetRegionGroupHeight(237);
+                                AddHeaderRegion(() =>
+                                {
+                                    AddLine(buff.Item1, Gray);
+                                });
+                                AddPaddingRegion(() =>
+                                {
+                                    AddBigButton(buffObj.icon, (h) => { });
+                                    AddLine("Duration left: ", DarkGray);
+                                    AddText(buff.Item2 + "", Gray);
+                                });
+                                buffObj.description();
+                                AddRegionGroup();
+                                SetRegionGroupWidth(256);
+                                AddPaddingRegion(() =>
+                                {
+                                    AddLine("", LightGray);
+                                });
+                            }
+                        );
+                    }
                 },
                 (h) =>
                 {
@@ -385,6 +320,46 @@ public class Blueprint
                 () =>
                 {
                     AddLine(Board.board.enemy.name, Black);
+                    //foreach (var buff in Board.board.enemy.buffs)
+                    //{
+                    //    var buffObj = Buff.buffs.Find(x => x.name == buff.Item1);
+                    //    if (buffObj == null) continue;
+                    //    AddButtonRegion(
+                    //        () =>
+                    //        {
+                    //            AddLine(buff.Item1, Black);
+                    //            AddSmallButton(buffObj.icon, (h) => { });
+                    //        },
+                    //        (h) =>
+                    //        {
+
+                    //        },
+                    //        (h) => () =>
+                    //        {
+                    //            SetAnchor(Top, 0, -13);
+                    //            AddHeaderGroup();
+                    //            SetRegionGroupWidth(256);
+                    //            SetRegionGroupHeight(237);
+                    //            AddHeaderRegion(() =>
+                    //            {
+                    //                AddLine(buff.Item1, Gray);
+                    //            });
+                    //            AddPaddingRegion(() =>
+                    //            {
+                    //                AddBigButton(buffObj.icon, (h) => { });
+                    //                AddLine("Duration left: ", DarkGray);
+                    //                AddText(buff.Item3 + "", Gray);
+                    //            });
+                    //            buffObj.description();
+                    //            AddRegionGroup();
+                    //            SetRegionGroupWidth(256);
+                    //            AddPaddingRegion(() =>
+                    //            {
+                    //                AddLine("", LightGray);
+                    //            });
+                    //        }
+                    //    );
+                    //}
                 },
                 (h) =>
                 {
@@ -393,7 +368,7 @@ public class Blueprint
             );
             AddHeaderRegion(() =>
             {
-                AddBigButton("Portrait" + Board.board.enemy.name.Replace(", ", ""), (h) => { });
+                AddBigButton("Portrait" + Race.races.Find(x => x.name == Board.board.enemy.race).portrait, (h) => { });
                 AddLine("Level " + Board.board.enemy.level, Gray);
                 AddLine("Health: " + Board.board.enemy.health + "/" + Board.board.enemy.MaxHealth(), Gray);
             });
@@ -641,6 +616,78 @@ public class Blueprint
                 {
                     SpawnDesktopBlueprint("TalentScreen");
                     SwitchDesktop("TalentScreen");
+                }
+            );
+        }, true),
+        new("ItemDrop", () => {
+            SetAnchor(Center);
+            AddHeaderGroup();
+            SetRegionGroupWidth(256);
+            AddHeaderRegion(() =>
+            {
+                AddLine("Loot from ", Gray);
+                AddText("Chief Ukorz Sandscalp", Gray);
+            });
+            AddPaddingRegion(
+                () =>
+                {
+                    AddBigButton("ItemCrossbow4", (h) => { });
+                    AddLine("Required level: ", DarkGray);
+                    AddText(34 + "", Gray);
+                }
+            );
+            AddButtonRegion(
+                () =>
+                {
+                    AddLine("Accept the item", Black);
+                },
+                (h) =>
+                {
+
+                }
+            );
+            AddRegionGroup();
+            AddPaddingRegion(
+                () =>
+                {
+                    AddSmallButton("ActionReroll",
+                        (h) =>
+                        {
+
+                        }
+                    );
+                }
+            );
+            AddRegionGroup();
+            SetRegionGroupWidth(100);
+            AddPaddingRegion(
+                () =>
+                {
+                    AddLine("You can reroll!");
+                }
+            );
+            AddRegionGroup();
+            AddPaddingRegion(
+                () =>
+                {
+                    AddLine("1", Gold);
+                    AddSmallButton("ItemCoinsGold", (h) => { });
+                }
+            );
+            AddRegionGroup();
+            AddPaddingRegion(
+                () =>
+                {
+                    AddLine("42", Silver);
+                    AddSmallButton("ItemCoinsSilver", (h) => { });
+                }
+            );
+            AddRegionGroup();
+            AddPaddingRegion(
+                () =>
+                {
+                    AddLine("11", Copper);
+                    AddSmallButton("ItemCoinsCopper", (h) => { });
                 }
             );
         }, true),
@@ -2156,7 +2203,7 @@ public class Blueprint
                 AddSmallButton("SiteDungeon",
                 (h) =>
                 {
-                    Board.board = new Board(7, 7, "Nefarian");
+                    Board.board = new Board(7, 7, "Witch Doctor Zum'rah");
                     SpawnDesktopBlueprint("Game");
                     SwitchDesktop("Game");
                 },
@@ -2790,6 +2837,7 @@ public class Blueprint
             AddHotkey(N, () => { SpawnDesktopBlueprint("TalentScreen"); SwitchDesktop("TalentScreen"); });
             AddHotkey(P, () => { SpawnDesktopBlueprint("SpellbookScreen"); SwitchDesktop("SpellbookScreen"); });
             AddHotkey(B, () => { SpawnWindowBlueprint("PlayerInventory"); });
+            AddHotkey(L, () => { SpawnWindowBlueprint("ItemDrop"); });
         }),
         new("Game", () =>
         {

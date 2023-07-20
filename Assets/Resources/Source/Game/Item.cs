@@ -1,9 +1,21 @@
 using UnityEngine;
 using System.Linq;
 using System.Collections.Generic;
+using UnityEditor;
 
 public class Item
 {
+    //Lootbox
+    public Item(string rarity, string name, string icon, string type, List<string> possibleItems, List<string> alternateItems)
+    {
+        this.rarity = rarity;
+        this.name = name;
+        this.icon = icon;
+        this.type = type;
+        this.possibleItems = possibleItems;
+        this.alternateItems = alternateItems;
+    }
+
     //Armour
     public Item(int ilvl, int lvl, string rarity, double price, string name, string icon, string type, string armorClass, int armor, Stats stats)
     {
@@ -80,6 +92,7 @@ public class Item
 
     public string rarity, name, icon, detailedType, type, armorClass;
     public int ilvl, lvl, minDamage, maxDamage, armor, block;
+    public List<string> possibleItems, alternateItems;
     public double price, speed;
     public Stats stats;
 
@@ -135,6 +148,113 @@ public class Item
 
     public static List<Item> items = new()
     {
+        new Item("Rare",
+            "Ukorz Sandscalp Loot",
+            "ItemBag15",
+            "LootBox",
+            new List<string>
+            {
+                "Big Bad Pauldrons",
+                "Ripsaw",
+                "The Chief\'s Enforcer",
+                "Embrace of The Lycan",
+                "Jang\'Thraze",
+            },
+            new List<string>
+            {
+                "Tracker's Headband",
+                "Tracker's Leggins",
+                "Tracker's Shoulderpads",
+                "Brigade Breastplate",
+                "Brigade Leggins",
+                "Warmonger's Belt",
+                "Warmonger's Cloak",
+                "Warmonger's Gauntlets",
+                "Cabalist Helm",
+                "Cabalist Spaulders",
+                "Cabalist Belt",
+                "Cabalist Gloves",
+                "Cabalist Boots",
+                "Royal Headband",
+                "Royal Trousers",
+                "Royal Amice",
+                "Regal Robe",
+                "Regal Armor",
+                "Chieftain's Cloak",
+                "Embossed Plate Armor",
+                "Gossamer Headpiece",
+                "Gossamer Shoulderpads",
+                "Gossamer Pants",
+                "Gossamer Belt",
+                "Gossamer Gloves",
+                "Gossamer Boots",
+                "Shriveled Heart",
+                "Champion's Helmet",
+                "Champion's Pauldrons",
+                "Champion's Greaves",
+                "Champion's Girdle",
+                "Champion's Gauntlets",
+                "Gothic Plate Helmet",
+                "Gothic Plate Spaulders",
+                "Gothic Plate Gauntlets",
+                "Gothic Plate Girdle",
+                "Gothic Plate Leggins",
+                "Gothic Sabatons",
+                "Heraldic Cloak",
+            }
+        ),
+        new Item("Rare",
+            "Witch Doctor Zum'rah Loot",
+            "ItemBag15",
+            "LootBox",
+            new List<string>
+            {
+                "Jumanza Grips",
+                "Zum'Rah's Vexing Cane",
+            },
+            new List<string>
+            {
+                "Tracker's Headband",
+                "Tracker's Leggins",
+                "Tracker's Shoulderpads",
+                "Brigade Breastplate",
+                "Brigade Leggins",
+                "Warmonger's Belt",
+                "Warmonger's Cloak",
+                "Warmonger's Gauntlets",
+                "Cabalist Helm",
+                "Cabalist Spaulders",
+                "Cabalist Belt",
+                "Cabalist Gloves",
+                "Cabalist Boots",
+                "Royal Headband",
+                "Royal Trousers",
+                "Royal Amice",
+                "Regal Robe",
+                "Regal Armor",
+                "Chieftain's Cloak",
+                "Embossed Plate Armor",
+                "Gossamer Headpiece",
+                "Gossamer Shoulderpads",
+                "Gossamer Pants",
+                "Gossamer Belt",
+                "Gossamer Gloves",
+                "Gossamer Boots",
+                "Shriveled Heart",
+                "Champion's Helmet",
+                "Champion's Pauldrons",
+                "Champion's Greaves",
+                "Champion's Girdle",
+                "Champion's Gauntlets",
+                "Gothic Plate Helmet",
+                "Gothic Plate Spaulders",
+                "Gothic Plate Gauntlets",
+                "Gothic Plate Girdle",
+                "Gothic Plate Leggins",
+                "Gothic Sabatons",
+                "Heraldic Cloak",
+            }
+        ),
         new Item(73, 60, "Rare", 2.9523,
             "Scaled Silithid Gauntlets",
             "ItemGauntlets10",

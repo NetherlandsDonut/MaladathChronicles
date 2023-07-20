@@ -3,9 +3,10 @@
 public class Race
 {
     public int level;
-    public string name, faction;
+    public string name, faction, portrait;
     public Stats stats;
     public List<string> abilities;
+    public List<(int, string)> loot;
 
     public static List<Race> races = new()
     {
@@ -296,7 +297,7 @@ public class Race
             }),
             abilities = new()
             {
-                
+
             }
         },
         new Race
@@ -326,6 +327,80 @@ public class Race
             abilities = new()
             {
                 "Shadowflame Breath"
+            },
+            loot = new()
+            {
+                (100, "Nefarian\'s Loot")
+            }
+        },
+        new Race
+        {
+            level = 60,
+            name = "Chief Ukorz Sandscalp",
+            portrait = "ChiefUkorz",
+            faction = "Neutral",
+            stats = new Stats(new()
+            {
+                { "Stamina", 10 },
+
+                { "Strength", 10 },
+                { "Agility", 10 },
+                { "Intellect", 10 },
+
+                { "Earth Mastery", 10 },
+                { "Fire Mastery", 10 },
+                { "Air Mastery", 10 },
+                { "Water Mastery", 10 },
+                { "Frost Mastery", 10 },
+                { "Lightning Mastery", 10 },
+                { "Arcane Mastery", 10 },
+                { "Decay Mastery", 10 },
+                { "Shadow Mastery", 10 },
+                { "Order Mastery", 10 },
+            }),
+            abilities = new()
+            {
+                "Frostbolt",
+                "Scorch"
+            },
+            loot = new()
+            {
+                (100, "Ukorz Sandscalp\'s Loot")
+            }
+        },
+        new Race
+        {
+            level = 46,
+            name = "Witch Doctor Zum'rah",
+            portrait = "SandTroll",
+            faction = "Neutral",
+            stats = new Stats(new()
+            {
+                { "Stamina", 3 },
+
+                { "Strength", 10 },
+                { "Agility", 10 },
+                { "Intellect", 10 },
+
+                { "Earth Mastery", 10 },
+                { "Fire Mastery", 10 },
+                { "Air Mastery", 10 },
+                { "Water Mastery", 10 },
+                { "Frost Mastery", 10 },
+                { "Lightning Mastery", 10 },
+                { "Arcane Mastery", 10 },
+                { "Decay Mastery", 10 },
+                { "Shadow Mastery", 10 },
+                { "Order Mastery", 10 },
+            }),
+            abilities = new()
+            {
+                "Shadow Bolt",
+                "Healing Wave"
+            },
+            loot = new()
+            {
+                (100, "Witch Doctor Zum'rah Loot")
             }
         }
     };

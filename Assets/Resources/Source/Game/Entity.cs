@@ -1,6 +1,7 @@
+using UnityEngine;
+using UnityEditor;
 using System.Linq;
 using System.Collections.Generic;
-using UnityEditor;
 
 public class Entity
 {
@@ -31,6 +32,7 @@ public class Entity
 
     public bool CanPickTalent(int spec, Talent talent)
     {
+        if (unspentTalentPoints == 0) return false;
         var talentTree = GetClass().talentTrees[spec];
         if (talent.row > talentTree.talents.FindAll(x => abilities.Contains(x.ability)).Max(x => x.row) + 1) return false;
         if (talent.inherited) if (!abilities.Contains(PreviousTalent(spec, talent).ability)) return false;
@@ -78,6 +80,7 @@ public class Entity
         {
             health = MaxHealth();
         }
+        buffs = new();
         resources = new()
         {
             { "Earth", 0 },
@@ -98,6 +101,28 @@ public class Entity
         return stats.stats["Stamina"] * 20;
     }
 
+    public void FlareBuffs()
+    {
+        for (int i = buffs.Count - 1; i >= 0; i--)
+        {
+            var index = i;
+            Board.board.actions.Add(() => { Root.AddSmallButtonOverlay(buffs[index].Item3, "OtherGlowFull", 1); });
+            Board.board.actions.Add(Buff.buffs.Find(y => y.name == buffs[index].Item1).effects(Board.board.enemy == this));
+            Board.board.actions.Add(() => { Root.animationTime += Root.frameTime * 6; });
+            Board.board.actions.Add(() =>
+            {
+                buffs[index] = (buffs[index].Item1, buffs[index].Item2 - 1, buffs[index].Item3);
+                if (buffs[index].Item2 <= 0)
+                {
+                    var temp = buffs[index].Item3.GetComponent<FlyingBuff>();
+                    temp.dyingIndex = temp.Index();
+                    (this == Board.board.player ? Board.board.temporaryBuffsPlayer : Board.board.temporaryBuffsEnemy).Remove(buffs[index].Item3);
+                    buffs.RemoveAt(index);
+                }
+            });
+        }
+    }
+
     public int health, level, unspentTalentPoints;
     public string name, race, spec;
     public Dictionary<string, int> resources;
@@ -105,4 +130,5 @@ public class Entity
     public Stats stats;
     public Inventory inventory;
     public Dictionary<string, string> equipment;
+    public List<(string, int, GameObject)> buffs;
 }

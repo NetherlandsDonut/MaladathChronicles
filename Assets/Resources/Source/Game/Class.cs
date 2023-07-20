@@ -177,9 +177,48 @@ public class Class
             },
             new List<TalentTree>
             {
-                new TalentTree("Affliction", new List<Talent> { }),
-                new TalentTree("Demonology", new List<Talent> { }),
-                new TalentTree("Destruction", new List<Talent> { }),
+                new TalentTree("Affliction", new List<Talent>
+                {
+                    new Talent(00, 1, "Corruption", false, true),
+                    new Talent(01, 0, "Curse Of Agony"),
+                    new Talent(01, 2, "Demon Skin"),
+                    new Talent(02, 2, "Curse Of Weakness"),
+                    new Talent(03, 1, "Drain Soul"),
+                    new Talent(04, 1, "Agonizing Corruption"),
+                    new Talent(04, 2, "Haunt"),
+                    new Talent(05, 0, "Curse Of Tongues"),
+                    new Talent(06, 2, "Creeping Death", true),
+                    new Talent(07, 0, "Unstable Affliction"),
+                    new Talent(07, 1, "Nightfall"),
+                    new Talent(08, 2, "Kindled Malice"),
+                    new Talent(08, 1, "Profane Bargain"),
+                    new Talent(10, 0, "Xavius Gambit"),
+                }),
+                new TalentTree("Demonology", new List<Talent>
+                {
+                    new Talent(00, 1, "Summon Imp", false, true),
+                    new Talent(01, 2, "Fel Armor"),
+                    new Talent(02, 0, "Summon Voidwalker"),
+                    new Talent(02, 1, "Health Funnel"),
+                    new Talent(03, 1, "Summon Felhunter"),
+                    new Talent(04, 1, "Demonic Embrace"),
+                    new Talent(06, 1, "Summon Fel Guard"),
+                    new Talent(07, 0, "Master Summoner"),
+                }),
+                new TalentTree("Destruction", new List<Talent>
+                {
+                    new Talent(00, 1, "Shadow Bolt", false, true),
+                    new Talent(01, 0, "Immolate"),
+                    new Talent(03, 0, "Pyrogenics", true),
+                    new Talent(04, 0, "Chaos Bolt"),
+                    new Talent(05, 1, "Rain Of Fire"),
+                    new Talent(06, 1, "Eradication"),
+                    new Talent(07, 1, "Havoc"),
+                    new Talent(07, 2, "Ritual Of Ruin"),
+                    new Talent(08, 1, "Summon Infernal"),
+                    new Talent(09, 1, "Infernal Brand", true),
+                    new Talent(10, 1, "Channel Demonfire"),
+                }),
             }
         ),
         new Class("Mage",
@@ -191,6 +230,8 @@ public class Class
                 ("Staff Proficiency", 1),
                 ("Wand Proficiency", 1),
                 ("Cloth Proficiency", 1),
+                ("Shadow Bolt", 1),
+                ("Healing Wave", 1),
             },
             new List<TalentTree>
             {

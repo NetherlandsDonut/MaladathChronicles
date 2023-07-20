@@ -19,6 +19,8 @@ public class Board
         playerTurn = true;
         temporaryElementsPlayer = new();
         temporaryElementsEnemy = new();
+        temporaryBuffsPlayer = new();
+        temporaryBuffsEnemy = new();
         actions = new List<Action>();
     }
 
@@ -31,7 +33,7 @@ public class Board
     public Window window;
     public Entity player, enemy;
     public bool playerTurn, breakForEnemy, breakForCascade, enemyFinishedMoving, playerFinishedMoving;
-    public List<GameObject> temporaryElementsPlayer, temporaryElementsEnemy;
+    public List<GameObject> temporaryElementsPlayer, temporaryElementsEnemy, temporaryBuffsPlayer, temporaryBuffsEnemy;
     public List<Action> actions;
 
     //ENDS THE CURRENT PLAYER'S TURN
@@ -41,11 +43,13 @@ public class Board
         {
             playerTurn = false;
             playerFinishedMoving = false;
+            enemy.FlareBuffs();
         }
         else
         {
             playerTurn = true;
             enemyFinishedMoving = false;
+            player.FlareBuffs();
         }
     }
 
@@ -200,7 +204,7 @@ public class Board
     public void SelectDestroy(int x, int y)
     {
         PlaySound(collectSoundDictionary[field[x, y]].ToString(), 0.3f);
-        SpawnShatter(1, 0.5, window.LBRegionGroup.regions[y].bigButtons[x].transform.position + new Vector3(-17.5f, -17.5f), boardButtonDictionary[field[x, y]]);
+        SpawnShatterElement(1, 0.5, window.LBRegionGroup.regions[y].bigButtons[x].transform.position + new Vector3(-17.5f, -17.5f), boardButtonDictionary[field[x, y]]);
         field[x, y] = 0;
         CDesktop.LockScreen();
     }
@@ -216,26 +220,31 @@ public class Board
         }
         foreach (var a in list)
         {
-            SpawnShatter(1, 0.5, window.LBRegionGroup.regions[a.Item2].bigButtons[a.Item1].transform.position + new Vector3(-17.5f, -17.5f), boardButtonDictionary[a.Item3]);
-            var element = "";
-            switch (a.Item3 % 10)
-            {
-                case 1: element = "Earth"; break;
-                case 2: element = "Fire"; break;
-                case 3: element = "Water"; break;
-                case 4: element = "Air"; break;
-                case 5: element = "Lightning"; break;
-                case 6: element = "Frost"; break;
-                case 7: element = "Decay"; break;
-                case 8: element = "Arcane"; break;
-                case 9: element = "Order"; break;
-                case 0: element = "Shadow"; break;
-            }
-            if (playerTurn) player.resources[element]++;
-            else enemy.resources[element]++;
+            SpawnShatterElement(1, 0.5, window.LBRegionGroup.regions[a.Item2].bigButtons[a.Item1].transform.position + new Vector3(-17.5f, -17.5f), boardButtonDictionary[a.Item3]);
+            if (playerTurn) GiveResource(player, a.Item1, a.Item2);
+            else GiveResource(enemy, a.Item1, a.Item2);
             field[a.Item1, a.Item2] = 0;
         }
         CDesktop.LockScreen();
+    }
+
+    public void GiveResource(Entity entity, int x, int y)
+    {
+        var element = "";
+        switch (field[x, y] % 10)
+        {
+            case 1: element = "Earth"; break;
+            case 2: element = "Fire"; break;
+            case 3: element = "Water"; break;
+            case 4: element = "Air"; break;
+            case 5: element = "Lightning"; break;
+            case 6: element = "Frost"; break;
+            case 7: element = "Decay"; break;
+            case 8: element = "Arcane"; break;
+            case 9: element = "Order"; break;
+            case 0: element = "Shadow"; break;
+        }
+        entity.resources[element]++;
     }
 
     public List<(int, int, int)> FloodCount(int x, int y)

@@ -54,7 +54,7 @@ public class Highlightable : MonoBehaviour
         if (windowHandle)
         {
             cursor.SetCursor(Click);
-            window.dragOffset = window.transform.position - Camera.main.ScreenToWorldPoint(new Vector2(Input.mousePosition.x, Input.mousePosition.y));
+            window.dragOffset = window.transform.position - window.desktop.screen.ScreenToWorldPoint(new Vector2(Input.mousePosition.x, Input.mousePosition.y)) + window.desktop.transform.position;
         }
         render.color -= new UnityEngine.Color(0.1f, 0.1f, 0.1f, 0);
     }
@@ -74,7 +74,7 @@ public class Highlightable : MonoBehaviour
         {
             cursor.SetCursor(Click);
             var curScreenSpace = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
-            var curPosition = (Vector2)Camera.main.ScreenToWorldPoint(curScreenSpace) + window.dragOffset;
+            var curPosition = (Vector2)CDesktop.screen.ScreenToWorldPoint(curScreenSpace) + window.dragOffset;
             var t = window.transform;
             t.position = new Vector3((int)curPosition.x, (int)curPosition.y, t.position.z);
             if (t.position.x < 2) t.position = new Vector3(2, t.position.y, t.position.z);

@@ -136,6 +136,298 @@ public class Ability
         {
 
         }),
+        new Ability("Arcane Missiles", 0, new()
+        {
+            { "Arcane", 4 }
+        },
+        () =>
+        {
+            AddPaddingRegion(() =>
+            {
+                AddLine("Casting Frosbolt will channel a frosty", Gray);
+                AddLine("projectile at the target dealing damage.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Deals 8 damage times caster's intelligence.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+                AddLine("Each point in Frost Mastery adds 1% chance", Gray);
+                AddLine("to refund the cost of casting this spell.", Gray);
+            });
+        },
+        (p) =>
+        {
+            var caster = p ? Board.board.player : Board.board.enemy;
+            var target = p ? Board.board.enemy : Board.board.player;
+            Board.board.actions.Add(() =>
+            {
+                PlaySound("AbilityArcaneMissilesCast", 0.3f);
+                animationTime += frameTime * 8;
+            });
+            Board.board.actions.Add(() =>
+            {
+                target.health -= 3;
+                SpawnShatter(2, 0.8, new Vector3(p ? 148 : -318, 122), "AbilityArcaneMissiles");
+                SpawnShatter(6, 0.7, new Vector3(p ? 148 : -318, 122), "AbilityArcaneMissiles", true, p ? "1000" : "1001");
+                SpawnShatter(6, 0.7, new Vector3(p ? 148 : -318, 122), "AbilityArcaneMissiles", true, p ? "1000" : "1001");
+                PlaySound("AbilityArcaneMissilesImpact1");
+                animationTime += frameTime * 8;
+            });
+            Board.board.actions.Add(() =>
+            {
+                target.health -= 3;
+                SpawnShatter(2, 0.8, new Vector3(p ? 148 : -318, 122), "AbilityArcaneMissiles");
+                SpawnShatter(6, 0.7, new Vector3(p ? 148 : -318, 122), "AbilityArcaneMissiles", true, p ? "1000" : "1001");
+                SpawnShatter(6, 0.7, new Vector3(p ? 148 : -318, 122), "AbilityArcaneMissiles", true, p ? "1000" : "1001");
+                PlaySound("AbilityArcaneMissilesImpact2");
+                animationTime += frameTime * 8;
+            });
+            Board.board.actions.Add(() =>
+            {
+                target.health -= 3;
+                SpawnShatter(2, 0.8, new Vector3(p ? 148 : -318, 122), "AbilityArcaneMissiles");
+                SpawnShatter(6, 0.7, new Vector3(p ? 148 : -318, 122), "AbilityArcaneMissiles", true, p ? "1000" : "1001");
+                SpawnShatter(6, 0.7, new Vector3(p ? 148 : -318, 122), "AbilityArcaneMissiles", true, p ? "1000" : "1001");
+                PlaySound("AbilityArcaneMissilesImpact3");
+                animationTime += frameTime * 8;
+            });
+            Board.board.playerFinishedMoving = true;
+            CDesktop.LockScreen();
+        }),
+        new Ability("Curse Of Agony", 0, new()
+        {
+            { "Shadow", 7 },
+            { "Fire", 3 }
+        },
+        () =>
+        {
+            AddPaddingRegion(() =>
+            {
+                AddLine("Casting Frosbolt will channel a frosty", Gray);
+                AddLine("projectile at the target dealing damage.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Deals 8 damage times caster's intelligence.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+                AddLine("Each point in Frost Mastery adds 1% chance", Gray);
+                AddLine("to refund the cost of casting this spell.", Gray);
+            });
+        },
+        (p) =>
+        {
+            var target = p ? Board.board.enemy : Board.board.player;
+            Board.board.actions.Add(() =>
+            {
+                target.buffs.Add(("Curse Of Agony", 10, SpawnShatterBuff(2, 0.8, new Vector3(p ? 148 : -318, 122), "AbilityCurseOfAgony", target)));
+                SpawnShatter(6, 0.7, new Vector3(p ? 148 : -318, 122), "AbilityCurseOfAgony", true, p ? "1000" : "1001");
+                SpawnShatter(6, 0.7, new Vector3(p ? 148 : -318, 122), "AbilityCurseOfAgony", true, p ? "1000" : "1001");
+                PlaySound("AbilityCurseOfAgonyCast");
+            });
+            CDesktop.LockScreen();
+        }),
+        new Ability("Corruption", 0, new()
+        {
+            { "Shadow", 2 },
+            { "Decay", 5 }
+        },
+        () =>
+        {
+            AddPaddingRegion(() =>
+            {
+                AddLine("Casting Frosbolt will channel a frosty", Gray);
+                AddLine("projectile at the target dealing damage.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Deals 8 damage times caster's intelligence.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+                AddLine("Each point in Frost Mastery adds 1% chance", Gray);
+                AddLine("to refund the cost of casting this spell.", Gray);
+            });
+        },
+        (p) =>
+        {
+            var caster = p ? Board.board.player : Board.board.enemy;
+            var target = p ? Board.board.enemy : Board.board.player;
+            Board.board.actions.Add(() =>
+            {
+                target.buffs.Add(("Corruption", 5, SpawnShatterBuff(2, 0.8, new Vector3(p ? 148 : -318, 122), "AbilityCorruption", target)));
+                SpawnShatter(6, 0.7, new Vector3(p ? 148 : -318, 122), "AbilityCorruption", true, p ? "1000" : "1001");
+                SpawnShatter(6, 0.7, new Vector3(p ? 148 : -318, 122), "AbilityCorruption", true, p ? "1000" : "1001");
+                PlaySound("AbilityCorruptionImpact");
+            });
+            CDesktop.LockScreen();
+        }),
+        new Ability("Shadow Bolt", 0, new()
+        {
+            { "Shadow", 6 }
+        },
+        () =>
+        {
+            AddPaddingRegion(() =>
+            {
+                AddLine("Casting Frosbolt will channel a frosty", Gray);
+                AddLine("projectile at the target dealing damage.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Deals 8 damage times caster's intelligence.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+                AddLine("Each point in Frost Mastery adds 1% chance", Gray);
+                AddLine("to refund the cost of casting this spell.", Gray);
+            });
+        },
+        (p) =>
+        {
+            var caster = p ? Board.board.player : Board.board.enemy;
+            var target = p ? Board.board.enemy : Board.board.player;
+            Board.board.actions.Add(() =>
+            {
+                PlaySound("AbilityShadowboltCast");
+                animationTime += frameTime * 6;
+            });
+            Board.board.actions.Add(() =>
+            {
+                target.health -= 8;
+                SpawnShatter(2, 0.8, new Vector3(p ? 148 : -318, 122), "AbilityShadowbolt");
+                SpawnShatter(6, 0.7, new Vector3(p ? 148 : -318, 122), "AbilityShadowbolt", true, p ? "1000" : "1001");
+                SpawnShatter(6, 0.7, new Vector3(p ? 148 : -318, 122), "AbilityShadowbolt", true, p ? "1000" : "1001");
+                PlaySound("AbilityShadowboltImpact");
+            });
+            Board.board.playerFinishedMoving = true;
+            CDesktop.LockScreen();
+        }),
+        new Ability("Fireball", 0, new()
+        {
+            { "Fire", 6 }
+        },
+        () =>
+        {
+            AddPaddingRegion(() =>
+            {
+                AddLine("Casting Frosbolt will channel a frosty", Gray);
+                AddLine("projectile at the target dealing damage.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Deals 8 damage times caster's intelligence.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+                AddLine("Each point in Frost Mastery adds 1% chance", Gray);
+                AddLine("to refund the cost of casting this spell.", Gray);
+            });
+        },
+        (p) =>
+        {
+            var caster = p ? Board.board.player : Board.board.enemy;
+            var target = p ? Board.board.enemy : Board.board.player;
+            Board.board.actions.Add(() =>
+            {
+                PlaySound("AbilityFireballCast");
+                animationTime += frameTime * 4;
+            });
+            Board.board.actions.Add(() =>
+            {
+                target.health -= 8;
+                SpawnShatter(2, 0.8, new Vector3(p ? 148 : -318, 122), "AbilityFireball");
+                SpawnShatter(6, 0.7, new Vector3(p ? 148 : -318, 122), "AbilityFireball", true, p ? "1000" : "1001");
+                SpawnShatter(6, 0.7, new Vector3(p ? 148 : -318, 122), "AbilityFireball", true, p ? "1000" : "1001");
+                PlaySound("AbilityFireballImpact");
+            });
+            Board.board.playerFinishedMoving = true;
+            CDesktop.LockScreen();
+        }),
+        new Ability("Scorch", 0, new()
+        {
+            { "Fire", 4 },
+            { "Air", 2 }
+        },
+        () =>
+        {
+            AddPaddingRegion(() =>
+            {
+                AddLine("Casting Frosbolt will channel a frosty", Gray);
+                AddLine("projectile at the target dealing damage.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Deals 10 damage times caster's intelligence.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+                AddLine("Each point in Frost Mastery adds 1% chance", Gray);
+                AddLine("to refund the cost of casting this spell.", Gray);
+            });
+        },
+        (p) =>
+        {
+            var caster = p ? Board.board.player : Board.board.enemy;
+            var target = p ? Board.board.enemy : Board.board.player;
+            Board.board.actions.Add(() =>
+            {
+                target.health -= 10;
+                SpawnShatter(2, 0.8, new Vector3(p ? 148 : -318, 122), "AbilityScorch");
+                SpawnShatter(6, 0.7, new Vector3(p ? 148 : -318, 122), "AbilityScorch", true, p ? "1000" : "1001");
+                SpawnShatter(6, 0.7, new Vector3(p ? 148 : -318, 122), "AbilityScorch", true, p ? "1000" : "1001");
+                PlaySound("AbilityScorchImpact");
+                animationTime += frameTime * 4;
+            });
+            CDesktop.LockScreen();
+        }),
+        new Ability("Healing Wave", 0, new()
+        {
+            { "Water", 6 },
+            { "Air", 2 }
+        },
+        () =>
+        {
+            AddPaddingRegion(() =>
+            {
+                AddLine("Casting Frosbolt will channel a frosty", Gray);
+                AddLine("projectile at the target dealing damage.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Deals 10 damage times caster's intelligence.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+                AddLine("Each point in Frost Mastery adds 1% chance", Gray);
+                AddLine("to refund the cost of casting this spell.", Gray);
+            });
+        },
+        (p) =>
+        {
+            var caster = p ? Board.board.player : Board.board.enemy;
+            var target = p ? Board.board.enemy : Board.board.player;
+            Board.board.actions.Add(() =>
+            {
+                caster.health += 10;
+                SpawnShatter(2, 0.8, new Vector3(p ? -318 : 148, 122), "AbilityHealingWave");
+                SpawnShatter(6, 0.7, new Vector3(p ? -318 : 148, 122), "AbilityHealingWave", true, p ? "1000" : "1001");
+                SpawnShatter(6, 0.7, new Vector3(p ? -318 : 148, 122), "AbilityHealingWave", true, p ? "1000" : "1001");
+                PlaySound("AbilityHealingWaveImpact");
+                animationTime += frameTime * 4;
+            });
+            CDesktop.LockScreen();
+        }),
         new Ability("Frostbolt", 0, new()
         {
             { "Frost", 4 }
@@ -170,6 +462,9 @@ public class Ability
             Board.board.actions.Add(() =>
             {
                 target.health -= 8;
+                SpawnShatter(2, 0.8, new Vector3(p ? 148 : -318, 122), "AbilityFrostbolt");
+                SpawnShatter(6, 0.7, new Vector3(p ? 148 : -318, 122), "AbilityFrostbolt", true, p ? "1000" : "1001");
+                SpawnShatter(6, 0.7, new Vector3(p ? 148 : -318, 122), "AbilityFrostbolt", true, p ? "1000" : "1001");
                 PlaySound("AbilityFrostboltImpact");
             });
             Board.board.playerFinishedMoving = true;
@@ -212,6 +507,9 @@ public class Ability
             Board.board.actions.Add(() =>
             {
                 target.health -= 6;
+                SpawnShatter(2, 0.8, new Vector3(p ? 148 : -318, 122), "AbilityIceLance");
+                SpawnShatter(6, 0.7, new Vector3(p ? 148 : -318, 122), "AbilityIceLance", true, p ? "1000" : "1001");
+                SpawnShatter(6, 0.7, new Vector3(p ? 148 : -318, 122), "AbilityIceLance", true, p ? "1000" : "1001");
                 PlaySound("AbilityIceLanceImpact");
             });
             CDesktop.LockScreen();
@@ -264,7 +562,7 @@ public class Ability
                 foreach (var e in list)
                 {
                     Board.board.field[e.Item1, e.Item2] = 16;
-                    SpawnShatter(4, 1.0, Board.board.window.LBRegionGroup.regions[e.Item2].bigButtons[e.Item1].transform.position + new Vector3(-17.5f, -17.5f), Board.boardButtonDictionary[Board.board.field[e.Item1, e.Item2]], false);
+                    SpawnShatter(4, 1.0, Board.board.window.LBRegionGroup.regions[e.Item2].bigButtons[e.Item1].transform.position + new Vector3(-17.5f, -17.5f), Board.boardButtonDictionary[Board.board.field[e.Item1, e.Item2]]);
                 }
                 PlaySound("AbilityFreezingNovaImpact");
             });
@@ -357,13 +655,68 @@ public class Ability
                 foreach (var e in list1)
                 {
                     Board.board.field[e.Item1, e.Item2] = 14;
-                    SpawnShatter(4, 0.3, Board.board.window.LBRegionGroup.regions[e.Item2].bigButtons[e.Item1].transform.position + new Vector3(-17.5f, -17.5f), Board.boardButtonDictionary[Board.board.field[e.Item1, e.Item2]], false);
+                    SpawnShatter(4, 0.3, Board.board.window.LBRegionGroup.regions[e.Item2].bigButtons[e.Item1].transform.position + new Vector3(-17.5f, -17.5f), Board.boardButtonDictionary[Board.board.field[e.Item1, e.Item2]]);
                 }
                 foreach (var e in list2)
                 {
                     Board.board.field[e.Item1, e.Item2] = 16;
-                    SpawnShatter(4, 1.0, Board.board.window.LBRegionGroup.regions[e.Item2].bigButtons[e.Item1].transform.position + new Vector3(-17.5f, -17.5f), Board.boardButtonDictionary[Board.board.field[e.Item1, e.Item2]], false);
+                    SpawnShatter(4, 1.0, Board.board.window.LBRegionGroup.regions[e.Item2].bigButtons[e.Item1].transform.position + new Vector3(-17.5f, -17.5f), Board.boardButtonDictionary[Board.board.field[e.Item1, e.Item2]]);
                 }
+            });
+            Board.board.playerFinishedMoving = true;
+            CDesktop.LockScreen();
+        }),
+        new Ability("Meteor", 5, new()
+        {
+            { "Fire", 0 },
+        },
+        () =>
+        {
+            AddPaddingRegion(() =>
+            {
+                AddLine("Casting Deep Freeze will freeze the board", Gray);
+                AddLine("turning elements into different ones.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("All fire elements will be turned into", Gray);
+                AddLine("air elements and water and decay elements", Gray);
+                AddLine("into frost elements.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+                AddLine("Each point in Frost Mastery adds 10%", Gray);
+                AddLine("chance to turn a random non water nor", Gray);
+                AddLine("fire element into a frost element.", Gray);
+                AddLine("This effect loops and for example 140%", Gray);
+                AddLine("has a 100% chance to spawn one element", Gray);
+                AddLine("and 40% to spawn another one.", Gray);
+            });
+        },
+        (p) =>
+        {
+            var caster = p ? Board.board.player : Board.board.enemy;
+            var target = p ? Board.board.enemy : Board.board.player;
+            Board.board.actions.Add(() =>
+            {
+                PlaySound("AbilityMeteorCast");
+                animationTime += frameTime * 10;
+            });
+            var list1 = new List<(int, int)>();
+            for (int i = 1; i < Board.board.field.GetLength(0) - 1; i++)
+                for (int j = 1; j < Board.board.field.GetLength(1) - 1; j++)
+                    list1.Add((i, j));
+            //if (Math.Abs(i - 3) + Math.Abs(j - 3) < 4)
+            Board.board.actions.Add(() =>
+            {
+                foreach (var e in list1)
+                {
+                    Board.board.GiveResource(caster, e.Item1, e.Item2);
+                    SpawnShatterElement(5, 0.8, Board.board.window.LBRegionGroup.regions[e.Item2].bigButtons[e.Item1].transform.position + new Vector3(-17.5f, -17.5f), Board.boardButtonDictionary[Board.board.field[e.Item1, e.Item2]]);
+                    Board.board.field[e.Item1, e.Item2] = 0;
+                }
+                PlaySound("AbilityMeteorImpact");
             });
             Board.board.actions.Add(() =>
             {
@@ -410,7 +763,7 @@ public class Ability
                 Board.board.actions.Add(() =>
                 {
                     Board.board.field[e.Item1, e.Item2] = random.Next(0, 2) == 0 ? 12 : 20;
-                    SpawnShatter(2, 0.8, Board.board.window.LBRegionGroup.regions[e.Item2].bigButtons[e.Item1].transform.position + new Vector3(-17.5f, -17.5f), Board.boardButtonDictionary[Board.board.field[e.Item1, e.Item2]], false);
+                    SpawnShatter(2, 0.8, Board.board.window.LBRegionGroup.regions[e.Item2].bigButtons[e.Item1].transform.position + new Vector3(-17.5f, -17.5f), Board.boardButtonDictionary[Board.board.field[e.Item1, e.Item2]]);
                 });
             Board.board.actions.Add(() =>
             {
