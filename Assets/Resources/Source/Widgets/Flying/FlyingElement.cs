@@ -9,7 +9,7 @@ public class FlyingElement : MonoBehaviour
     public static int flySpeed = 6;
     public static int rowAmount = 3;
 
-    public void Initiate(int element)
+    public void Initiate()
     {
         turn = Board.board.playerTurn;
         if (turn) Board.board.temporaryElementsPlayer.Add(gameObject);

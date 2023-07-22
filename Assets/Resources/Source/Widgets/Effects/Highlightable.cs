@@ -58,7 +58,12 @@ public class Highlightable : MonoBehaviour
     {
         if (cursor.render.sprite == null) return;
         pressed = true;
-        if (window == null) transform.parent.GetComponent<Desktop>().tooltip = null;
+        if (window == null)
+        {
+            transform.parent.GetComponent<Desktop>().tooltip = null;
+            if (FindTooltip() != null && FindTooltip().window != null)
+                CloseWindow(FindTooltip().window);
+        }
         else
         {
             window.desktop.tooltip = null;

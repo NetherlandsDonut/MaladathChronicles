@@ -98,15 +98,15 @@ public static class Root
         return buff;
     }
 
-    public static GameObject SpawnShatterElement(double speed, double amount, Vector3 position, string sprite, int element, bool oneDirection = false, string block = "0000")
+    public static GameObject SpawnShatterElement(double speed, double amount, Vector3 position, string sprite, bool oneDirection = false, string block = "0000")
     {
-        var el = UnityEngine.Object.Instantiate(Resources.Load<GameObject>("Prefabs/PrefabElement"));
-        el.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/Buttons/" + sprite);
-        el.transform.parent = Board.board.window.desktop.transform;
-        el.transform.position = position;
-        el.GetComponent<FlyingElement>().Initiate(element);
+        var element = UnityEngine.Object.Instantiate(Resources.Load<GameObject>("Prefabs/PrefabElement"));
+        element.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/Buttons/" + sprite);
+        element.transform.parent = Board.board.window.desktop.transform;
+        element.transform.position = position;
+        element.GetComponent<FlyingElement>().Initiate();
         SpawnShatter(speed, amount, position, sprite, oneDirection, block);
-        return el;
+        return element;
     }
 
     public static void SpawnShatterSmall(double speed, double amount, Vector3 position, string sprite, bool oneDirection = false, string block = "0000")
@@ -205,7 +205,7 @@ public static class Root
             var previousTalent = currentSave.player.PreviousTalent(spec, talent);
             var previousTalentDistance = previousTalent == null ? 0 : talent.row - previousTalent.row;
             var abilityObj = Ability.abilities.Find(x => x.name == talent.ability);
-            AddBigButton("Ability" + talent.ability.Replace(" ", ""),
+            AddBigButton("Ability" + talent.ability.Replace(" ", "").Replace(":", ""),
                 (h) =>
                 {
                     var canPick = currentSave.player.CanPickTalent(spec, talent);
@@ -229,7 +229,7 @@ public static class Root
                     });
                     AddPaddingRegion(() =>
                     {
-                        AddBigButton("Ability" + talent.ability.Replace(" ", ""), (h) => { });
+                        AddBigButton("Ability" + talent.ability.Replace(" ", "").Replace(":", ""), (h) => { });
                         if (abilityObj != null)
                         {
                             AddLine("Required level: ", DarkGray);

@@ -1,23 +1,22 @@
 ﻿using System;
-using System.Linq;
 using UnityEngine;
+using System.Linq;
 using System.Collections.Generic;
 
 using static Root;
 
 using static Root.Color;
 using static Root.Anchor;
-using static Root.RegionBackgroundType;
 
 using static UnityEngine.KeyCode;
 
 public class Blueprint
 {
-    public Blueprint(string title, Action actions, bool uppperUI = false)
+    public Blueprint(string title, Action actions, bool upperUI = false)
     {
         this.title = title;
         this.actions = actions;
-        this.upperUI = uppperUI;
+        this.upperUI = upperUI;
     }
 
     public string title;
@@ -51,6 +50,15 @@ public class Blueprint
             {
                 SpawnWindowBlueprint("TitleScreenSettings");
                 CloseWindow(h.window);
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("Achievments", Black);
+            },
+            (h) =>
+            {
+                //SpawnWindowBlueprint("TitleScreenGraveyard");
+                //CloseWindow(h.window);
             });
             AddButtonRegion(() =>
             {
@@ -215,7 +223,7 @@ public class Blueprint
                     () =>
                     {
                         AddLine(ability, Black);
-                        AddSmallButton("Ability" + ability.Replace(" ", ""), (h) => { });
+                        AddSmallButton("Ability" + ability.Replace(" ", "").Replace(":", ""), (h) => { });
                         if (!abilityObj.EnoughResources(Board.board.player))
                             AddSmallButtonOverlay("OtherGrid");
                     },
@@ -241,7 +249,93 @@ public class Blueprint
                         });
                         AddPaddingRegion(() =>
                         {
-                            AddBigButton("Ability" + ability.Replace(" ", ""), (h) => { });
+                            AddBigButton("Ability" + ability.Replace(" ", "").Replace(":", ""), (h) => { });
+                            AddLine("Required level: ", DarkGray);
+                            AddText(Board.board.player.GetClass().abilities.Find(x => x.Item1 == ability).Item2 + "", Gray);
+                            AddLine("Cooldown: ", DarkGray);
+                            AddText(abilityObj.cooldown == 0 ? "None" : abilityObj.cooldown + (abilityObj.cooldown == 1 ? " turn"  : " turns"), Gray);
+                        });
+                        abilityObj.description();
+                        foreach (var cost in abilityObj.cost)
+                        {
+                            AddRegionGroup();
+                            AddHeaderRegion(() =>
+                            {
+                                AddSmallButton("Element" + cost.Key + "Rousing", (h) => { });
+                            });
+                            AddRegionGroup();
+                            SetRegionGroupWidth(15);
+                            AddHeaderRegion(() =>
+                            {
+                                AddLine(cost.Value + "", cost.Value > Board.board.player.resources[cost.Key] ? Red : Green);
+                            });
+                        }
+                        AddRegionGroup();
+                        SetRegionGroupWidth(256 - abilityObj.cost.Count * 44);
+                        AddPaddingRegion(() =>
+                        {
+                            AddLine("", LightGray);
+                        });
+                    }
+                );
+            }
+        }),
+        new("PlayerSpellbookInfo", () => {
+            SetAnchor(TopLeft);
+            AddRegionGroup();
+            SetRegionGroupWidth(163);
+            AddButtonRegion(
+                () =>
+                {
+                    AddLine(Board.board.player.name, Black);
+                },
+                (h) =>
+                {
+
+                }
+            );
+            AddHeaderRegion(() =>
+            {
+                AddBigButton("Class" + Board.board.player.spec,
+                    (h) => { }
+                );
+                AddLine("Level " + Board.board.player.level, Gray);
+            });
+            foreach (var ability in Board.board.player.actionBars)
+            {
+                var abilityObj = Ability.abilities.Find(x => x.name == ability);
+                if (abilityObj == null || abilityObj.cost == null) continue;
+                AddButtonRegion(
+                    () =>
+                    {
+                        AddLine(ability, Black);
+                        AddSmallButton("Ability" + ability.Replace(" ", "").Replace(":", ""), (h) => { });
+                        if (!abilityObj.EnoughResources(Board.board.player))
+                            AddSmallButtonOverlay("OtherGrid");
+                    },
+                    (h) =>
+                    {
+                        if (abilityObj.EnoughResources(Board.board.player))
+                        {
+                            abilityObj.effects(true);
+                            Board.board.player.DetractResources(abilityObj.cost);
+                            Board.board.temporaryElementsPlayer = new();
+                            h.window.desktop.Rebuild();
+                        }
+                    },
+                    (h) => () =>
+                    {
+                        SetAnchor(Top, 0, -13);
+                        AddHeaderGroup();
+                        SetRegionGroupWidth(256);
+                        SetRegionGroupHeight(237);
+                        AddHeaderRegion(() =>
+                        {
+                            AddLine(ability, Gray);
+                        });
+                        AddPaddingRegion(() =>
+                        {
+                            AddBigButton("Ability" + ability.Replace(" ", "").Replace(":", ""), (h) => { });
                             AddLine("Required level: ", DarkGray);
                             AddText(Board.board.player.GetClass().abilities.Find(x => x.Item1 == ability).Item2 + "", Gray);
                             AddLine("Cooldown: ", DarkGray);
@@ -300,7 +394,7 @@ public class Blueprint
                     () =>
                     {
                         AddLine(ability, Black);
-                        AddSmallButton("Ability" + ability.Replace(" ", ""), (h) => { });
+                        AddSmallButton("Ability" + ability.Replace(" ", "").Replace(":", ""), (h) => { });
                     },
                     (h) =>
                     {
@@ -318,7 +412,7 @@ public class Blueprint
                         });
                         AddPaddingRegion(() =>
                         {
-                            AddBigButton("Ability" + ability.Replace(" ", ""), (h) => { });
+                            AddBigButton("Ability" + ability.Replace(" ", "").Replace(":", ""), (h) => { });
                             //AddLine("Required level: ", DarkGray);
                             //AddText(Board.board.enemy.spec.abilities.Find(x => x.Item1 == ability).Item2 + "", Gray);
                             AddLine("Cooldown: ", DarkGray);
@@ -2761,7 +2855,7 @@ public class Blueprint
         }),
         new("Game", () =>
         {
-            SetDesktopBackground("ZoneStonetalonMountains");
+            SetDesktopBackground("ZoneZulFarrak2");
             SpawnWindowBlueprint("BattleBoard");
             SpawnWindowBlueprint("PlayerBattleInfo");
             SpawnWindowBlueprint("EnemyBattleInfo");
@@ -2871,13 +2965,7 @@ public class Blueprint
             PlaySound("DesktopSpellbookScreenOpen");
             SetDesktopBackground("StoneSplitLong", false);
             SpawnWindowBlueprint("ReturnToMap");
-            var playerClass = currentSave.player.GetClass();
-            for (int spec = 0; spec < 3; spec++)
-                for (int row = 0; row <= playerClass.talentTrees[spec].talents.Max(x => x.row); row++)
-                    for (int col = 0; col < 3; col++)
-                        if (windowBlueprints.Exists(x => x.title == "Talent" + spec + row + col))
-                            if (playerClass.talentTrees[spec].talents.Exists(x => x.row == row && x.col == col))
-                                SpawnWindowBlueprint("Talent" + spec + row + col);
+            SpawnWindowBlueprint("PlayerSpellbookInfo");
             AddHotkey(P, () => { SwitchDesktop("Map"); CloseDesktop("SpellbookScreen"); PlaySound("DesktopSpellbookScreenClose"); });
             AddHotkey(Escape, () => { SwitchDesktop("Map"); CloseDesktop("SpellbookScreen"); PlaySound("DesktopSpellbookScreenClose"); });
         }),

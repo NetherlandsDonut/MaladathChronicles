@@ -100,9 +100,51 @@ public class Class
             },
             new List<TalentTree>
             {
-                new TalentTree("Arms", new List<Talent> { }),
-                new TalentTree("Fury", new List<Talent> { }),
-                new TalentTree("Protection", new List<Talent> { }),
+                new TalentTree("Arms", new List<Talent>
+                {
+                    new Talent(00, 1, "Summon Imp", false, true),
+                    new Talent(01, 2, "Rend"),
+                    new Talent(01, 2, "Thunder Clap"),
+                    new Talent(01, 2, "Overpower"),
+                    new Talent(01, 2, "Deflection"),
+                    new Talent(01, 2, "Sweeping Strikes"),
+                    new Talent(01, 2, "Hamstring"),
+                    new Talent(01, 2, "Deep Wounds"),
+                    new Talent(01, 2, "Bladestorm"),
+                    new Talent(01, 2, "Pain And Gain"),
+                    new Talent(01, 2, "Mortal Strike"),
+
+                }),
+                new TalentTree("Fury", new List<Talent>
+                {
+                    new Talent(00, 1, "Summon Imp", false, true),
+                    new Talent(01, 2, "Cleave"),
+                    new Talent(01, 2, "Berserker Rage"),
+                    new Talent(01, 2, "Whirlwind"),
+                    new Talent(01, 2, "Battle Shout"),
+                    new Talent(01, 2, "Execute"),
+                    new Talent(01, 2, "Raging Blow"),
+                    new Talent(01, 2, "Demoralizing Shout"),
+                    new Talent(01, 2, "Defiance"),
+                    new Talent(01, 2, "Cruelty"),
+                    new Talent(01, 2, "Skullsplitter"),
+                    new Talent(01, 2, "Onslaught"),
+                    new Talent(01, 2, "Rampage"),
+                    new Talent(01, 2, "Enraged Regeneration"),
+                }),
+                new TalentTree("Protection", new List<Talent>
+                {
+                    new Talent(00, 1, "Summon Imp", false, true),
+                    new Talent(01, 2, "Shield Bash"),
+                    new Talent(01, 2, "Shield Wall"),
+                    new Talent(01, 2, "Shield Block"),
+                    new Talent(01, 2, "Shield Slam"),
+                    new Talent(01, 2, "Indomitable"),
+                    new Talent(01, 2, "Anticipation"),
+                    new Talent(01, 2, "Bloodrage"),
+                    new Talent(01, 2, "Last Stand"),
+                    new Talent(01, 2, "Spell Reflection"),
+                }),
             }
         ),
         new Class("Paladin",
@@ -160,9 +202,51 @@ public class Class
             },
             new List<TalentTree>
             {
-                new TalentTree("Holy", new List<Talent> { }),
-                new TalentTree("Discipline", new List<Talent> { }),
-                new TalentTree("Shadow", new List<Talent> { }),
+                new TalentTree("Holy", new List<Talent>
+                {
+                    new Talent(00, 1, "Smite", false, true),
+                    new Talent(00, 2, "Lesser Heal"),
+                    new Talent(01, 2, "Heal", true),
+                    new Talent(01, 0, "Spell Warding"),
+                    new Talent(02, 1, "Spiritual Guidance"),
+                    new Talent(02, 2, "Blessed Recovery", true),
+                    new Talent(03, 0, "Renew"),
+                    new Talent(03, 0, "Holy Nova"),
+                    new Talent(04, 1, "Healing Focus"),
+                    new Talent(05, 0, "Prayer Of Healing"),
+                    new Talent(05, 1, "Spiritual Healing"),
+                    new Talent(06, 1, "Searing Light"),
+                    new Talent(07, 2, "Desperate Prayer"),
+                    new Talent(07, 1, "Divine Fury"),
+                    new Talent(08, 0, "Lightwell"),
+                    new Talent(10, 0, "Spirit Of Redemption"),
+                }),
+                new TalentTree("Discipline", new List<Talent>
+                {
+                    new Talent(00, 1, "Power Word: Shield", false, true),
+                    new Talent(01, 2, "Meditation"),
+                    new Talent(02, 0, "Power Word: Fortitude"),
+                    new Talent(03, 1, "Inner Fire"),
+                    new Talent(03, 2, "Divine Spirit"),
+                    new Talent(04, 2, "Silent Resolve"),
+                    new Talent(05, 2, "Mana Burn"),
+                    new Talent(06, 2, "Unbreakable Will"),
+                    new Talent(08, 1, "Martyrdom"),
+                    new Talent(09, 0, "Force Of Will"),
+                    new Talent(10, 2, "Power Infusion"),
+                }),
+                new TalentTree("Shadow", new List<Talent>
+                {
+                    new Talent(00, 1, "Shadow Word: Pain", false, true),
+                    new Talent(01, 2, "Blackout"),
+                    new Talent(03, 2, "Fade"),
+                    new Talent(04, 2, "Shadow Weaving"),
+                    new Talent(05, 1, "Devouring Plague"),
+                    new Talent(06, 2, "Hex Of Weakness"),
+                    new Talent(06, 0, "Shadow Focus"),
+                    new Talent(07, 1, "Psychic Scream"),
+                    new Talent(10, 2, "Shadowform"),
+                }),
             }
         ),
         new Class("Warlock",
@@ -174,7 +258,7 @@ public class Class
                 ("Staff Proficiency", 1),
                 ("Wand Proficiency", 1),
                 ("Cloth Proficiency", 1),
-                ("Hammer Of Justice", 1),
+                ("Summon Infernal", 1),
             },
             new List<TalentTree>
             {

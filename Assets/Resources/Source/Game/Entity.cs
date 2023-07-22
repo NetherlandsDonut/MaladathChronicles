@@ -18,6 +18,7 @@ public class Entity
         stats = new Stats(race.stats.stats.ToDictionary(x => x.Key, x => x.Value));
         level = race.level;
         abilities = race.abilities.Select(x => x).Concat(spec.abilities.FindAll(x => x.Item2 <= level).Select(x => x.Item1)).Concat(spec.talentTrees.SelectMany(x => x.talents.FindAll(y => y.defaultTaken)).Select(x => x.ability)).Distinct().ToList();
+        actionBarsUnlocked = 7;
         Initialise();
     }
 
@@ -27,6 +28,7 @@ public class Entity
         stats = new Stats(race.stats.stats.ToDictionary(x => x.Key, x => x.Value));
         level = race.level;
         abilities = race.abilities.Select(x => x).Distinct().ToList();
+        actionBarsUnlocked = 7;
         Initialise();
     }
 
@@ -64,8 +66,8 @@ public class Entity
     {
         if (slots == null) equipment = new();
         else foreach (var slot in slots)
-            if (equipment.ContainsKey(slot))
-                equipment.Remove(slot);
+                if (equipment.ContainsKey(slot))
+                    equipment.Remove(slot);
     }
 
     public void DetractResources(Dictionary<string, int> resources)
@@ -97,7 +99,7 @@ public class Entity
         };
     }
 
-    public int MaxHealth() 
+    public int MaxHealth()
     {
         return stats.stats["Stamina"] * 20;
     }
@@ -115,16 +117,33 @@ public class Entity
                 if (buffs[index].Item2 <= 0)
                 {
                     Buff.buffs.Find(y => y.name == buffs[index].Item1).killEffects(Board.board.enemy == this);
-                    var temp = buffs[index].Item3.GetComponent<FlyingBuff>();
-                    temp.dyingIndex = temp.Index();
-                    (this == Board.board.player ? Board.board.temporaryBuffsPlayer : Board.board.temporaryBuffsEnemy).Remove(buffs[index].Item3);
-                    buffs.RemoveAt(index);
+                    RemoveBuff(buffs[index]);
                 }
             });
         }
     }
 
-    public int health, level, unspentTalentPoints;
+    public void AddBuff(string buff, int duration, GameObject buffObject)
+    {
+        var buffObj = Buff.buffs.Find(x => x.name == buff);
+        if (buffs.Exists(x => x.Item1 == buff) && !buffObj.stackable)
+        {
+            var list = buffs.FindAll(x => x.Item1 == buff).ToList();
+            for (int i = list.Count - 1; i >= 0; i--)
+                RemoveBuff(list[i]);
+        }
+        buffs.Add((buff, duration, buffObject));
+    }
+
+    public void RemoveBuff((string, int, GameObject) buff)
+    {
+        var temp = buff.Item3.GetComponent<FlyingBuff>();
+        temp.dyingIndex = temp.Index();
+        (this == Board.board.player ? Board.board.temporaryBuffsPlayer : Board.board.temporaryBuffsEnemy).Remove(buff.Item3);
+        buffs.Remove(buff);
+    }
+
+    public int health, level, unspentTalentPoints, actionBarsUnlocked;
     public string name, race, spec;
     public Dictionary<string, int> resources;
     public List<string> abilities, actionBars;
