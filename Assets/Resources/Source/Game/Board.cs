@@ -1,11 +1,11 @@
 using System;
 using UnityEngine;
+using System.Linq;
 using System.Collections.Generic;
 
 using static Race;
 using static Root;
-using static Root.Color;
-using System.Linq;
+
 
 public class Board
 {
@@ -33,8 +33,7 @@ public class Board
     public Window window;
     public Entity player, enemy;
     public bool playerTurn, breakForEnemy, breakForCascade, enemyFinishedMoving, playerFinishedMoving;
-    public List<GameObject> temporaryElementsPlayer, temporaryElementsEnemy;
-    public List<GameObject> temporaryBuffsPlayer, temporaryBuffsEnemy;
+    public List<GameObject> temporaryElementsPlayer, temporaryElementsEnemy, temporaryBuffsPlayer, temporaryBuffsEnemy;
     public List<Action> actions;
 
     //ENDS THE CURRENT PLAYER'S TURN
@@ -148,20 +147,59 @@ public class Board
                 breakForEnemy = false;
                 bonusTurnStreak = 0;
                 temporaryElementsEnemy = new();
-                var abilities = enemy.abilities.Select(x => Ability.abilities.Find(y => y.name == x));
-                if (abilities.Any(x => x.EnoughResources(enemy)))
+
+                //GET ALL POSSIBLE MOVES AND WHAT HAPPENS AFTER THEM THAT IS PREDICTABLE
+                var differentFloodings = new List<(int, int, List<(int, int, int)>)>();
+                for (int i = 0; i < field.GetLength(0); i++)
+                    for (int j = 0; j < field.GetLength(1); j++)
+                    {
+                        var list2 = board.FloodCount(i, j);
+                        if (!differentFloodings.Exists(x => x.Item3.All(y => list2.Contains((y.Item1, y.Item2, y.Item3)))))
+                            differentFloodings.Add((i, j, list2));
+                    }
+                var possibleMoves = new List<(int, int, FutureBoard, string)>();
+                var abilities = enemy.actionBars.Select(x => Ability.abilities.Find(y => y.name == x));
+                foreach (var ability in abilities)
+                    if (ability.EnoughResources(enemy))
+                    {
+                        var newBoard = new FutureBoard(board);
+                        possibleMoves.Add((-1, -1, newBoard, ability.name));
+                        ability.futureEffects(false, newBoard);
+                        newBoard.enemy.DetractResources(ability.cost);
+                        while (!newBoard.finishedAnimation)
+                            newBoard.AnimateBoard();
+                    }
+                foreach (var flooding in differentFloodings)
                 {
-                    var a = abilities.First(x => x.EnoughResources(enemy));
-                    a.effects(false);
-                    board.enemy.DetractResources(a.cost);
-                    window.desktop.Rebuild();
+                    var newBoard = new FutureBoard(board);
+                    possibleMoves.Add((flooding.Item1, flooding.Item2, newBoard, ""));
+                    newBoard.FloodDestroy(flooding.Item3);
+                    newBoard.enemyFinishedMoving = true;
+                    while (!newBoard.finishedAnimation)
+                        newBoard.AnimateBoard();
+                }
+                possibleMoves = possibleMoves.OrderByDescending(x => x.Item3.Desiredness(x.Item3.enemy, enemy, x.Item3.player, player)).ToList();
+                foreach (var move in possibleMoves)
+                {
+                    var resourceChange = 0;
+                    foreach (var resource in move.Item3.enemy.resources)
+                        resourceChange += resource.Value - board.enemy.resources[resource.Key];
+                    Debug.Log(move + " / " + move.Item3.Desiredness(move.Item3.enemy, enemy, move.Item3.player, player) + (move.Item1 != -1 ? " (" + boardNameDictionary[board.field[move.Item1, move.Item2]] + ")" : "") + (resourceChange >= 0 ? " +" : " ") + resourceChange + " resources");
+                }
+                var bestMove = possibleMoves[0];
+                if (bestMove.Item4 != "")
+                {
+                    var ability = Ability.abilities.Find(x => x.name == bestMove.Item4);
+                    ability.effects(false);
+                    board.enemy.DetractResources(ability.cost);
                 }
                 else
                 {
-                    var list = board.FloodCount(random.Next(0, field.GetLength(0)), random.Next(0, field.GetLength(1)));
-                    board.FloodDestroy(list);
-                    enemyFinishedMoving = true;
+                    var list1 = board.FloodCount(bestMove.Item1, bestMove.Item2);
+                    board.FloodDestroy(list1);
+                    board.enemyFinishedMoving = true;
                 }
+                board.enemyFinishedMoving = true;
             }
         }
 

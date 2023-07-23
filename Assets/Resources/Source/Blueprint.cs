@@ -315,13 +315,7 @@ public class Blueprint
                     },
                     (h) =>
                     {
-                        if (abilityObj.EnoughResources(Board.board.player))
-                        {
-                            abilityObj.effects(true);
-                            Board.board.player.DetractResources(abilityObj.cost);
-                            Board.board.temporaryElementsPlayer = new();
-                            h.window.desktop.Rebuild();
-                        }
+
                     },
                     (h) => () =>
                     {

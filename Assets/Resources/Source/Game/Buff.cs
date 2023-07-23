@@ -8,7 +8,7 @@ using static Root.Color;
 
 public class Buff
 {
-    public Buff(string name, string dispelType, int duration, bool stackable, string icon, Action description, Func<bool, Action> effects, Func<bool, Action> killEffects)
+    public Buff(string name, string dispelType, int duration, bool stackable, string icon, Action description, Func<bool, Action> effects, Func<bool, Action> killEffects, Func<bool, FutureBoard, Action> futureEffects, Func<bool, FutureBoard, Action> futureKillEffects)
     {
         this.name = name;
         this.dispelType = dispelType;
@@ -18,6 +18,8 @@ public class Buff
         this.description = description;
         this.effects = effects;
         this.killEffects = killEffects;
+        this.futureEffects = futureEffects;
+        this.futureKillEffects = futureKillEffects;
     }
 
     public string name, icon, dispelType;
@@ -25,6 +27,7 @@ public class Buff
     public bool stackable;
     public Action description;
     public Func<bool, Action> effects, killEffects;
+    public Func<bool, FutureBoard, Action> futureEffects, futureKillEffects;
 
     public static List<Buff> buffs = new()
     {
@@ -56,6 +59,21 @@ public class Buff
         (p) => () =>
         {
 
+        },
+        (p, board) => () =>
+        {
+            //var target = p ? Board.board.player : Board.board.enemy;
+            //var count = (p ? Board.board.temporaryElementsEnemy : Board.board.temporaryElementsPlayer).Count(x => x.Item2 == 16);
+            //if (count > 0)
+            //{
+            //    target.health -= count;
+            //    SpawnShatter(2, 0.8, new Vector3(!p ? 148 : -318, 122), "AbilityBlizzard");
+            //    PlaySound("AbilityFrostBoltImpact");
+            //}
+        },
+        (p, board) => () =>
+        {
+
         }),
         new Buff("Ice Block", "None", 0, false, "AbilityIceBlock",
         () =>
@@ -79,6 +97,15 @@ public class Buff
         (p) => () =>
         {
 
+        },
+        (p, board) => () =>
+        {
+            if (p) board.enemyFinishedMoving = true;
+            else board.playerFinishedMoving = true;
+        },
+        (p, board) => () =>
+        {
+
         }),
         new Buff("Hammer Of Justice", "None", 0, false, "AbilityHammerOfJustice",
         () =>
@@ -100,6 +127,15 @@ public class Buff
             else Board.board.playerFinishedMoving = true;
         },
         (p) => () =>
+        {
+
+        },
+        (p, board) => () =>
+        {
+            if (p) board.enemyFinishedMoving = true;
+            else board.playerFinishedMoving = true;
+        },
+        (p, board) => () =>
         {
 
         }),
@@ -128,6 +164,15 @@ public class Buff
         (p) => () =>
         {
 
+        },
+        (p, board) => () =>
+        {
+            var caster = p ? board.enemy : board.player;
+            caster.resources["Fire"] += 3;
+        },
+        (p, board) => () =>
+        {
+
         }),
         new Buff("Summoned Felhunter", "None", 0, true, "AbilitySummonFelhunter",
         () =>
@@ -151,6 +196,15 @@ public class Buff
             SpawnShatterElement(2, 0.8, new Vector3(p ? 148 : -318, 122), "ElementArcaneRousing");
         },
         (p) => () =>
+        {
+
+        },
+        (p, board) => () =>
+        {
+            var caster = p ? board.enemy : board.player;
+            caster.resources["Arcane"] += 2;
+        },
+        (p, board) => () =>
         {
 
         }),
@@ -178,6 +232,15 @@ public class Buff
         (p) => () =>
         {
 
+        },
+        (p, board) => () =>
+        {
+            var caster = p ? board.enemy : board.player;
+            caster.resources["Shadow"] += 2;
+        },
+        (p, board) => () =>
+        {
+
         }),
         new Buff("Summoned Imp", "None", 0, true, "AbilitySummonImp",
         () =>
@@ -200,6 +263,15 @@ public class Buff
             SpawnShatterElement(2, 0.8, new Vector3(p ? 148 : -318, 122), "ElementFireRousing");
         },
         (p) => () =>
+        {
+
+        },
+        (p, board) => () =>
+        {
+            var caster = p ? board.enemy : board.player;
+            caster.resources["Fire"]++;
+        },
+        (p, board) => () =>
         {
 
         }),
@@ -228,6 +300,15 @@ public class Buff
         (p) => () =>
         {
 
+        },
+        (p, board) => () =>
+        {
+            var target = p ? board.enemy : board.player;
+            target.health -= 3;
+        },
+        (p, board) => () =>
+        {
+
         }),
         new Buff("Corruption", "None", 0, false, "AbilityCorruption",
         () =>
@@ -252,6 +333,15 @@ public class Buff
             animationTime += frameTime * 3;
         },
         (p) => () =>
+        {
+
+        },
+        (p, board) => () =>
+        {
+            var target = p ? board.enemy : board.player;
+            target.health -= 2;
+        },
+        (p, board) => () =>
         {
 
         }),
@@ -280,6 +370,15 @@ public class Buff
         (p) => () =>
         {
 
+        },
+        (p, board) => () =>
+        {
+            var target = p ? board.enemy : board.player;
+            target.health -= 3;
+        },
+        (p, board) => () =>
+        {
+
         }),
         new Buff("Shadow Word: Pain", "None", 0, false, "AbilityShadowWordPain",
         () =>
@@ -306,6 +405,15 @@ public class Buff
         (p) => () =>
         {
 
+        },
+        (p, board) => () =>
+        {
+            var target = p ? board.enemy : board.player;
+            target.health -= 3;
+        },
+        (p, board) => () =>
+        {
+
         }),
         new Buff("Fel Armor", "None", 0, false, "AbilityFelArmor",
         () =>
@@ -326,6 +434,14 @@ public class Buff
 
         },
         (p) => () =>
+        {
+
+        },
+        (p, board) => () =>
+        {
+
+        },
+        (p, board) => () =>
         {
 
         }),
@@ -350,6 +466,14 @@ public class Buff
         (p) => () =>
         {
 
+        },
+        (p, board) => () =>
+        {
+
+        },
+        (p, board) => () =>
+        {
+
         }),
         new Buff("Demon Skin", "None", 0, false, "AbilityDemonSkin",
         () =>
@@ -370,6 +494,14 @@ public class Buff
 
         },
         (p) => () =>
+        {
+
+        },
+        (p, board) => () =>
+        {
+
+        },
+        (p, board) => () =>
         {
 
         }),

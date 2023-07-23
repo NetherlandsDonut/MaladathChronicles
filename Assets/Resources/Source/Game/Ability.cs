@@ -14,13 +14,15 @@ public class Ability
     }
 
     //Active combat ability
-    public Ability(string name, int cooldown, Dictionary<string, int> cost, Action description, Action<bool> effects)
+    public Ability(string name, int cooldown, List<string> tags, Dictionary<string, int> cost, Action description, Action<bool> effects, Action<bool, FutureBoard> futureEffects)
     {
         this.name = name;
         this.cooldown = cooldown;
+        this.tags = tags;
         this.cost = cost;
         this.description = description;
         this.effects = effects;
+        this.futureEffects = futureEffects;
     }
 
     public bool EnoughResources(Entity entity)
@@ -33,9 +35,11 @@ public class Ability
 
     public string name;
     public int cooldown;
+    public List<string> tags;
     public Dictionary<string, int> cost;
     public Action description;
     public Action<bool> effects;
+    public Action<bool, FutureBoard> futureEffects;
 
     public static List<Ability> abilities = new()
     {
@@ -65,7 +69,7 @@ public class Ability
         new Ability("Leather Proficiency"),
         new Ability("Mail Proficiency"),
         new Ability("Plate Proficiency"),
-        new Ability("Envenom", 0, new()
+        new Ability("Envenom", 0, new() { "Damage", "Overtime" }, new()
         {
             { "Order", 1 }
         },
@@ -76,8 +80,12 @@ public class Ability
         (p) =>
         {
 
+        },
+        (p, board) =>
+        {
+
         }),
-        new Ability("Rupture", 0, new()
+        new Ability("Rupture", 0, new() { "Damage", "Overtime" }, new()
         {
             { "Order", 1 }
         },
@@ -88,8 +96,12 @@ public class Ability
         (p) =>
         {
 
+        },
+        (p, board) =>
+        {
+
         }),
-        new Ability("Mutilate", 0, new()
+        new Ability("Mutilate", 0, new() { "Damage" }, new()
         {
             { "Order", 1 }
         },
@@ -100,8 +112,12 @@ public class Ability
         (p) =>
         {
 
+        },
+        (p, board) =>
+        {
+
         }),
-        new Ability("Kidney Shot", 0, new()
+        new Ability("Kidney Shot", 0, new() { "Stun" }, new()
         {
             { "Order", 1 }
         },
@@ -112,8 +128,12 @@ public class Ability
         (p) =>
         {
 
+        },
+        (p, board) =>
+        {
+
         }),
-        new Ability("Evasion", 0, new()
+        new Ability("Evasion", 0, new() { "Defensive", "Emergency" }, new()
         {
             { "Order", 1 }
         },
@@ -124,8 +144,12 @@ public class Ability
         (p) =>
         {
 
+        },
+        (p, board) =>
+        {
+
         }),
-        new Ability("Garrote", 0, new()
+        new Ability("Garrote", 0, new() { "Damage", "Overtime" }, new()
         {
             { "Order", 1 }
         },
@@ -136,8 +160,12 @@ public class Ability
         (p) =>
         {
 
+        },
+        (p, board) =>
+        {
+
         }),
-        new Ability("Arcane Missiles", 0, new()
+        new Ability("Arcane Missiles", 0, new() { "Damage" }, new()
         {
             { "Arcane", 4 }
         },
@@ -197,8 +225,17 @@ public class Ability
             });
             Board.board.playerFinishedMoving = true;
             CDesktop.LockScreen();
+        },
+        (p, board) =>
+        {
+            var target = p ? board.enemy : board.player;
+            target.health -= 3;
+            target.health -= 3;
+            target.health -= 3;
+            if (p) board.playerFinishedMoving = true;
+            else board.enemyFinishedMoving = true;
         }),
-        new Ability("Curse Of Agony", 0, new()
+        new Ability("Curse Of Agony", 0, new() { "Damage", "Overtime" }, new()
         {
             { "Shadow", 7 },
             { "Fire", 3 }
@@ -234,8 +271,15 @@ public class Ability
             if (p) Board.board.playerFinishedMoving = true;
             else Board.board.enemyFinishedMoving = true;
             CDesktop.LockScreen();
+        },
+        (p, board) =>
+        {
+            var target = p ? board.enemy : board.player;
+            target.AddBuff("Curse Of Agony", 10);
+            if (p) board.playerFinishedMoving = true;
+            else board.enemyFinishedMoving = true;
         }),
-        new Ability("Demon Skin", 0, new()
+        new Ability("Demon Skin", 0, new() { "Defensive" }, new()
         {
             { "Shadow", 6 },
         },
@@ -268,8 +312,13 @@ public class Ability
                 PlaySound("AbilityDemonSkinCast");
             });
             CDesktop.LockScreen();
+        },
+        (p, board) =>
+        {
+            var caster = p ? board.player : board.enemy;
+            caster.AddBuff("Demon Skin", 5);
         }),
-        new Ability("Ice Block", 0, new()
+        new Ability("Ice Block", 0, new() { "Defensive", "Emergency" }, new()
         {
             { "Frost", 4 },
         },
@@ -304,8 +353,15 @@ public class Ability
             if (p) Board.board.playerFinishedMoving = true;
             else Board.board.enemyFinishedMoving = true;
             CDesktop.LockScreen();
+        },
+        (p, board) =>
+        {
+            var caster = p ? board.player : board.enemy;
+            caster.AddBuff("Ice Block", 3);
+            if (p) board.playerFinishedMoving = true;
+            else board.enemyFinishedMoving = true;
         }),
-        new Ability("Power Word: Shield", 0, new()
+        new Ability("Power Word: Shield", 0, new() { "Defensive" }, new()
         {
             { "Order", 6 },
         },
@@ -338,8 +394,13 @@ public class Ability
                 //PlaySound("AbilityFelArmorCast");
             });
             CDesktop.LockScreen();
+        },
+        (p, board) =>
+        {
+            var caster = p ? board.player : board.enemy;
+            caster.AddBuff("Power Word: Shield", 5);
         }),
-        new Ability("Fel Armor", 0, new()
+        new Ability("Fel Armor", 0, new() { "Defensive" }, new()
         {
             { "Shadow", 3 },
             { "Fire", 3 }
@@ -373,8 +434,13 @@ public class Ability
                 PlaySound("AbilityFelArmorCast");
             });
             CDesktop.LockScreen();
+        },
+        (p, board) =>
+        {
+            var caster = p ? board.player : board.enemy;
+            caster.AddBuff("Fel Armor", 5);
         }),
-        new Ability("Hammer Of Justice", 0, new()
+        new Ability("Hammer Of Justice", 0, new() { "Stun" }, new()
         {
             { "Order", 8 },
             { "Air", 2 }
@@ -413,8 +479,13 @@ public class Ability
                 PlaySound("AbilityHammerOfJusticeImpact");
             });
             CDesktop.LockScreen();
+        },
+        (p, board) =>
+        {
+            var target = p ? board.enemy : board.player;
+            target.AddBuff("Hammer Of Justice", 2);
         }),
-        new Ability("Shadow Word: Pain", 0, new()
+        new Ability("Shadow Word: Pain", 0, new() { "Damage", "Overtime" }, new()
         {
             { "Shadow", 6 }
         },
@@ -448,8 +519,13 @@ public class Ability
                 animationTime += frameTime * 2;
             });
             CDesktop.LockScreen();
+        },
+        (p, board) =>
+        {
+            var target = p ? board.enemy : board.player;
+            target.AddBuff("Hammer Of Justice", 2);
         }),
-        new Ability("Corruption", 0, new()
+        new Ability("Corruption", 0, new() { "Damage", "Overtime" }, new()
         {
             { "Shadow", 2 },
             { "Decay", 5 }
@@ -484,8 +560,13 @@ public class Ability
                 animationTime += frameTime * 2;
             });
             CDesktop.LockScreen();
+        },
+        (p, board) =>
+        {
+            var target = p ? board.enemy : board.player;
+            target.AddBuff("Corruption", 5);
         }),
-        new Ability("Summon Infernal", 0, new()
+        new Ability("Summon Infernal", 0, new() { "Damage", "Overtime" }, new()
         {
             { "Fire", 20 },
         },
@@ -526,8 +607,15 @@ public class Ability
             if (p) Board.board.playerFinishedMoving = true;
             else Board.board.enemyFinishedMoving = true;
             CDesktop.LockScreen();
+        },
+        (p, board) =>
+        {
+            var caster = p ? board.player : board.enemy;
+            caster.AddBuff("Summoned Infernal", 7);
+            if (p) board.playerFinishedMoving = true;
+            else board.enemyFinishedMoving = true;
         }),
-        new Ability("Summon Felhunter", 0, new()
+        new Ability("Summon Felhunter", 0, new() { "Damage", "Overtime" }, new()
         {
             { "Shadow", 10 },
             { "Fire", 5 },
@@ -569,8 +657,15 @@ public class Ability
             if (p) Board.board.playerFinishedMoving = true;
             else Board.board.enemyFinishedMoving = true;
             CDesktop.LockScreen();
+        },
+        (p, board) =>
+        {
+            var caster = p ? board.player : board.enemy;
+            caster.AddBuff("Summoned Felhunter", 7);
+            if (p) board.playerFinishedMoving = true;
+            else board.enemyFinishedMoving = true;
         }),
-        new Ability("Summon Voidwalker", 0, new()
+        new Ability("Summon Voidwalker", 0, new() { "Damage", "Overtime" }, new()
         {
             { "Shadow", 12 },
         },
@@ -611,8 +706,15 @@ public class Ability
             if (p) Board.board.playerFinishedMoving = true;
             else Board.board.enemyFinishedMoving = true;
             CDesktop.LockScreen();
+        },
+        (p, board) =>
+        {
+            var caster = p ? board.player : board.enemy;
+            caster.AddBuff("Summoned Voidwalker", 7);
+            if (p) board.playerFinishedMoving = true;
+            else board.enemyFinishedMoving = true;
         }),
-        new Ability("Summon Imp", 0, new()
+        new Ability("Summon Imp", 0, new() { "Damage", "Overtime" }, new()
         {
             { "Shadow", 6 },
             { "Fire", 2 }
@@ -654,8 +756,15 @@ public class Ability
             if (p) Board.board.playerFinishedMoving = true;
             else Board.board.enemyFinishedMoving = true;
             CDesktop.LockScreen();
+        },
+        (p, board) =>
+        {
+            var caster = p ? board.player : board.enemy;
+            caster.AddBuff("Summoned Imp", 7);
+            if (p) board.playerFinishedMoving = true;
+            else board.enemyFinishedMoving = true;
         }),
-        new Ability("Shadow Bolt", 0, new()
+        new Ability("Shadow Bolt", 0, new() { "Damage" }, new()
         {
             { "Shadow", 6 }
         },
@@ -696,8 +805,15 @@ public class Ability
             if (p) Board.board.playerFinishedMoving = true;
             else Board.board.enemyFinishedMoving = true;
             CDesktop.LockScreen();
+        },
+        (p, board) =>
+        {
+            var target = p ? board.enemy : board.player;
+                target.health -= 8;
+            if (p) board.playerFinishedMoving = true;
+            else board.enemyFinishedMoving = true;
         }),
-        new Ability("Fireball", 0, new()
+        new Ability("Fireball", 0, new() { "Damage" }, new()
         {
             { "Fire", 6 }
         },
@@ -739,8 +855,15 @@ public class Ability
             if (p) Board.board.playerFinishedMoving = true;
             else Board.board.enemyFinishedMoving = true;
             CDesktop.LockScreen();
+        },
+        (p, board) =>
+        {
+            var target = p ? board.enemy : board.player;
+            target.health -= 8;
+            if (p) board.playerFinishedMoving = true;
+            else board.enemyFinishedMoving = true;
         }),
-        new Ability("Scorch", 0, new()
+        new Ability("Scorch", 0, new() { "Damage", "Overtime" }, new()
         {
             { "Fire", 4 },
             { "Air", 2 }
@@ -775,8 +898,13 @@ public class Ability
                 animationTime += frameTime * 4;
             });
             CDesktop.LockScreen();
+        },
+        (p, board) =>
+        {
+            var target = p ? board.enemy : board.player;
+            target.AddBuff("Scorch", 4);
         }),
-        new Ability("Healing Wave", 0, new()
+        new Ability("Healing Wave", 0, new() { "Healing" }, new()
         {
             { "Water", 6 },
             { "Air", 2 }
@@ -806,6 +934,8 @@ public class Ability
             Board.board.actions.Add(() =>
             {
                 caster.health += 10;
+                if (caster.health >= caster.MaxHealth())
+                    caster.health = caster.MaxHealth();
                 SpawnShatter(2, 0.8, new Vector3(p ? -318 : 148, 122), "AbilityHealingWave");
                 SpawnShatter(6, 0.7, new Vector3(p ? -318 : 148, 122), "AbilityHealingWave", true, p ? "1000" : "1001");
                 SpawnShatter(6, 0.7, new Vector3(p ? -318 : 148, 122), "AbilityHealingWave", true, p ? "1000" : "1001");
@@ -813,8 +943,15 @@ public class Ability
                 animationTime += frameTime * 4;
             });
             CDesktop.LockScreen();
+        },
+        (p, board) =>
+        {
+            var caster = p ? board.player : board.enemy;
+            caster.health += 10;
+            if (caster.health >= caster.MaxHealth())
+                caster.health = caster.MaxHealth();
         }),
-        new Ability("Frostbolt", 0, new()
+        new Ability("Frostbolt", 0, new() { "Damage" }, new()
         {
             { "Frost", 4 }
         },
@@ -856,8 +993,15 @@ public class Ability
             if (p) Board.board.playerFinishedMoving = true;
             else Board.board.enemyFinishedMoving = true;
             CDesktop.LockScreen();
+        },
+        (p, board) =>
+        {
+            var target = p ? board.enemy : board.player;
+            target.health -= 8;
+            if (p) board.playerFinishedMoving = true;
+            else board.enemyFinishedMoving = true;
         }),
-        new Ability("Ice Lance", 0, new()
+        new Ability("Ice Lance", 0, new() { "Damage" }, new()
         {
             { "Frost", 5 },
             { "Air", 2 }
@@ -900,8 +1044,13 @@ public class Ability
                 PlaySound("AbilityIceLanceImpact");
             });
             CDesktop.LockScreen();
+        },
+        (p, board) =>
+        {
+            var target = p ? board.enemy : board.player;
+            target.health -= 6;
         }),
-        new Ability("Freezing Nova", 1, new()
+        new Ability("Freezing Nova", 1, new() { "Gathering" }, new()
         {
             { "Frost", 2 },
             { "Air", 6 },
@@ -960,8 +1109,23 @@ public class Ability
             if (p) Board.board.playerFinishedMoving = true;
             else Board.board.enemyFinishedMoving = true;
             CDesktop.LockScreen();
+        },
+        (p, board) =>
+        {
+            var list = new List<(int, int)>();
+            while (list.Count < 5)
+            {
+                var x = random.Next(0, board.field.GetLength(0));
+                var y = random.Next(0, board.field.GetLength(1));
+                if (board.field[x, y] != 16 && !list.Contains((x, y)))
+                    list.Add((x, y));
+            }
+            foreach (var e in list)
+                board.field[e.Item1, e.Item2] = 16;
+            if (p) board.playerFinishedMoving = true;
+            else board.enemyFinishedMoving = true;
         }),
-        new Ability("Blizzard", 4, new()
+        new Ability("Blizzard", 4, new() { "Damage", "Overtime" }, new()
         {
             { "Frost", 10 },
             { "Air", 10 }
@@ -1000,8 +1164,13 @@ public class Ability
                 PlaySound("AbilityBlizzardImpact");
             });
             CDesktop.LockScreen();
+        },
+        (p, board) =>
+        {
+            var caster = p ? board.player : board.enemy;
+            caster.AddBuff("Blizzard", 7);
         }),
-        new Ability("Deep Freeze", 5, new()
+        new Ability("Deep Freeze", 5, new() { "Gathering" }, new()
         {
             { "Frost", 5 },
             { "Air", 5 },
@@ -1062,10 +1231,27 @@ public class Ability
             if (p) Board.board.playerFinishedMoving = true;
             else Board.board.enemyFinishedMoving = true;
             CDesktop.LockScreen();
-        }),
-        new Ability("Meteor", 5, new()
+        },
+        (p, board) =>
         {
-            { "Fire", 0 },
+            var list1 = new List<(int, int)>();
+            var list2 = new List<(int, int)>();
+            for (int i = 0; i < board.field.GetLength(0); i++)
+                for (int j = 0; j < board.field.GetLength(1); j++)
+                    if (board.field[i, j] == 12)
+                        list1.Add((i, j));
+                    else if (board.field[i, j] == 13 || board.field[i, j] == 17)
+                        list2.Add((i, j));
+            foreach (var e in list1)
+                board.field[e.Item1, e.Item2] = 14;
+            foreach (var e in list2)
+                board.field[e.Item1, e.Item2] = 16;
+            if (p) board.playerFinishedMoving = true;
+            else board.enemyFinishedMoving = true;
+        }),
+        new Ability("Meteor", 5, new() { "Gathering" }, new()
+        {
+            { "Fire", 10 },
         },
         () =>
         {
@@ -1104,7 +1290,6 @@ public class Ability
             for (int i = 1; i < Board.board.field.GetLength(0) - 1; i++)
                 for (int j = 1; j < Board.board.field.GetLength(1) - 1; j++)
                     list1.Add((i, j));
-            //if (Math.Abs(i - 3) + Math.Abs(j - 3) < 4)
             Board.board.actions.Add(() =>
             {
                 foreach (var e in list1)
@@ -1122,8 +1307,25 @@ public class Ability
             if (p) Board.board.playerFinishedMoving = true;
             else Board.board.enemyFinishedMoving = true;
             CDesktop.LockScreen();
+        },
+        (p, board) =>
+        {
+            var list1 = new List<(int, int)>();
+            var list2 = new List<(int, int)>();
+            for (int i = 0; i < board.field.GetLength(0); i++)
+                for (int j = 0; j < board.field.GetLength(1); j++)
+                    if (board.field[i, j] == 12)
+                        list1.Add((i, j));
+                    else if (board.field[i, j] == 13 || board.field[i, j] == 17)
+                        list2.Add((i, j));
+            foreach (var e in list1)
+                board.field[e.Item1, e.Item2] = 14;
+            foreach (var e in list2)
+                board.field[e.Item1, e.Item2] = 16;
+            if (p) board.playerFinishedMoving = true;
+            else board.enemyFinishedMoving = true;
         }),
-        new Ability("Shadowflame Breath", 3, new()
+        new Ability("Shadowflame Breath", 3, new() { "Damage", "Gathering" }, new()
         {
             { "Air", 10 },
             { "Fire", 5 },
@@ -1170,8 +1372,23 @@ public class Ability
             if (p) Board.board.playerFinishedMoving = true;
             else Board.board.enemyFinishedMoving = true;
             CDesktop.LockScreen();
+        },
+        (p, board) =>
+        {
+            var list = new List<(int, int)>();
+            while (list.Count < 20)
+            {
+                var x = random.Next(0, board.field.GetLength(0));
+                var y = random.Next(0, board.field.GetLength(1));
+                if (board.field[x, y] != 12 && board.field[x, y] != 20 && !list.Contains((x, y)))
+                    list.Add((x, y));
+            }
+            foreach (var e in list)
+                board.field[e.Item1, e.Item2] = random.Next(0, 2) == 0 ? 12 : 20;
+            if (p) board.playerFinishedMoving = true;
+            else board.enemyFinishedMoving = true;
         }),
-        new Ability("Veil of Shadow", 0, new()
+        new Ability("Veil of Shadow", 0, new() { "Gathering" }, new()
         {
             { "Air", 2 },
             { "Shadow", 6 }
@@ -1211,8 +1428,13 @@ public class Ability
                 PlaySound("AbilityIceLanceImpact");
             });
             CDesktop.LockScreen();
+        },
+        (p, board) =>
+        {
+            var target = p ? board.enemy :board.player;
+            target.health -= 4;
         }),
-        new Ability("Bellowing Roar", 0, new()
+        new Ability("Bellowing Roar", 0, new() { "Gathering" }, new()
         {
             { "Fire", 4 },
             { "Shadow", 4 }
@@ -1252,6 +1474,11 @@ public class Ability
                 PlaySound("AbilityIceLanceImpact");
             });
             CDesktop.LockScreen();
+        },
+        (p, board) =>
+        {
+            var target = p ? board.enemy : board.player;
+            target.health -= 4;
         })
     };
 }
