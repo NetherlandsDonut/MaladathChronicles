@@ -157,12 +157,15 @@ public class Board
                         if (!differentFloodings.Exists(x => x.Item3.All(y => list2.Contains((y.Item1, y.Item2, y.Item3)))))
                             differentFloodings.Add((i, j, list2));
                     }
+                var newBoard = new FutureBoard(board);
+                newBoard.enemyFinishedMoving = true;
+                var baseDesiredness = newBoard.Desiredness(newBoard.enemy, enemy, newBoard.player, player);
                 var possibleMoves = new List<(int, int, FutureBoard, string)>();
                 var abilities = enemy.actionBars.Select(x => Ability.abilities.Find(y => y.name == x));
                 foreach (var ability in abilities)
                     if (ability.EnoughResources(enemy))
                     {
-                        var newBoard = new FutureBoard(board);
+                        newBoard = new FutureBoard(board);
                         possibleMoves.Add((-1, -1, newBoard, ability.name));
                         ability.futureEffects(false, newBoard);
                         newBoard.enemy.DetractResources(ability.cost);
@@ -171,20 +174,20 @@ public class Board
                     }
                 foreach (var flooding in differentFloodings)
                 {
-                    var newBoard = new FutureBoard(board);
+                    newBoard = new FutureBoard(board);
                     possibleMoves.Add((flooding.Item1, flooding.Item2, newBoard, ""));
                     newBoard.FloodDestroy(flooding.Item3);
                     newBoard.enemyFinishedMoving = true;
                     while (!newBoard.finishedAnimation)
                         newBoard.AnimateBoard();
                 }
-                possibleMoves = possibleMoves.OrderByDescending(x => x.Item3.Desiredness(x.Item3.enemy, enemy, x.Item3.player, player)).ToList();
+                possibleMoves = possibleMoves.OrderByDescending(x => x.Item3.Desiredness(x.Item3.enemy, enemy, x.Item3.player, player, baseDesiredness)).ToList();
                 foreach (var move in possibleMoves)
                 {
                     var resourceChange = 0;
                     foreach (var resource in move.Item3.enemy.resources)
                         resourceChange += resource.Value - board.enemy.resources[resource.Key];
-                    Debug.Log(move + " / " + move.Item3.Desiredness(move.Item3.enemy, enemy, move.Item3.player, player) + (move.Item1 != -1 ? " (" + boardNameDictionary[board.field[move.Item1, move.Item2]] + ")" : "") + (resourceChange >= 0 ? " +" : " ") + resourceChange + " resources");
+                    Debug.Log(move + " / " + move.Item3.Desiredness(move.Item3.enemy, enemy, move.Item3.player, player, baseDesiredness).ToString("0.000") + (move.Item1 != -1 ? " (" + boardNameDictionary[board.field[move.Item1, move.Item2]] + ")" : "") + (resourceChange >= 0 ? " +" : " ") + resourceChange + " resources");
                 }
                 var bestMove = possibleMoves[0];
                 if (bestMove.Item4 != "")
@@ -199,7 +202,6 @@ public class Board
                     board.FloodDestroy(list1);
                     board.enemyFinishedMoving = true;
                 }
-                board.enemyFinishedMoving = true;
             }
         }
 

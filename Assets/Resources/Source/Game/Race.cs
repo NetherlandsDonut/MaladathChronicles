@@ -395,8 +395,8 @@ public class Race
             }),
             abilities = new()
             {
-                "Shadow Bolt",
-                "Healing Wave"
+                "Corruption",
+                "Curse Of Agony",
             },
             loot = new()
             {

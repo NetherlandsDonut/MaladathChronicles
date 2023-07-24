@@ -809,7 +809,7 @@ public class Ability
         (p, board) =>
         {
             var target = p ? board.enemy : board.player;
-                target.health -= 8;
+            target.health -= 8;
             if (p) board.playerFinishedMoving = true;
             else board.enemyFinishedMoving = true;
         }),

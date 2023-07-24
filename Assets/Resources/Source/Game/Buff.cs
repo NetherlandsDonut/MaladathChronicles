@@ -8,11 +8,12 @@ using static Root.Color;
 
 public class Buff
 {
-    public Buff(string name, string dispelType, int duration, bool stackable, string icon, Action description, Func<bool, Action> effects, Func<bool, Action> killEffects, Func<bool, FutureBoard, Action> futureEffects, Func<bool, FutureBoard, Action> futureKillEffects)
+    public Buff(string name, string dispelType, int duration, List<string> tags, bool stackable, string icon, Action description, Func<bool, Action> effects, Func<bool, Action> killEffects, Func<bool, FutureBoard, Action> futureEffects, Func<bool, FutureBoard, Action> futureKillEffects)
     {
         this.name = name;
         this.dispelType = dispelType;
         this.duration = duration;
+        this.tags = tags;
         this.stackable = stackable;
         this.icon = icon;
         this.description = description;
@@ -23,6 +24,7 @@ public class Buff
     }
 
     public string name, icon, dispelType;
+    public List<string> tags;
     public int duration;
     public bool stackable;
     public Action description;
@@ -31,7 +33,7 @@ public class Buff
 
     public static List<Buff> buffs = new()
     {
-        new Buff("Blizzard", "None", 0, false, "AbilityBlizzard",
+        new Buff("Blizzard", "None", 0, new() { "Damage" }, false, "AbilityBlizzard",
         () =>
         {
             AddHeaderRegion(() =>
@@ -75,7 +77,7 @@ public class Buff
         {
 
         }),
-        new Buff("Ice Block", "None", 0, false, "AbilityIceBlock",
+        new Buff("Ice Block", "None", 0, new() { "Defensive" }, false, "AbilityIceBlock",
         () =>
         {
             AddHeaderRegion(() =>
@@ -107,7 +109,7 @@ public class Buff
         {
 
         }),
-        new Buff("Hammer Of Justice", "None", 0, false, "AbilityHammerOfJustice",
+        new Buff("Hammer Of Justice", "None", 0, new() { "Stun" }, false, "AbilityHammerOfJustice",
         () =>
         {
             AddHeaderRegion(() =>
@@ -139,7 +141,7 @@ public class Buff
         {
 
         }),
-        new Buff("Summoned Infernal", "None", 0, true, "AbilitySummonInfernal",
+        new Buff("Summoned Infernal", "None", 0, new() { }, true, "AbilitySummonInfernal",
         () =>
         {
             AddHeaderRegion(() =>
@@ -174,7 +176,7 @@ public class Buff
         {
 
         }),
-        new Buff("Summoned Felhunter", "None", 0, true, "AbilitySummonFelhunter",
+        new Buff("Summoned Felhunter", "None", 0, new() { }, true, "AbilitySummonFelhunter",
         () =>
         {
             AddHeaderRegion(() =>
@@ -208,7 +210,7 @@ public class Buff
         {
 
         }),
-        new Buff("Summoned Voidwalker", "None", 0, true, "AbilitySummonVoidwalker",
+        new Buff("Summoned Voidwalker", "None", 0, new() { }, true, "AbilitySummonVoidwalker",
         () =>
         {
             AddHeaderRegion(() =>
@@ -242,7 +244,7 @@ public class Buff
         {
 
         }),
-        new Buff("Summoned Imp", "None", 0, true, "AbilitySummonImp",
+        new Buff("Summoned Imp", "None", 0, new() { }, true, "AbilitySummonImp",
         () =>
         {
             AddHeaderRegion(() =>
@@ -275,7 +277,7 @@ public class Buff
         {
 
         }),
-        new Buff("Scorch", "None", 0, false, "AbilityScorch",
+        new Buff("Scorch", "None", 0, new() { "Damage" }, false, "AbilityScorch",
         () =>
         {
             AddHeaderRegion(() =>
@@ -310,7 +312,7 @@ public class Buff
         {
 
         }),
-        new Buff("Corruption", "None", 0, false, "AbilityCorruption",
+        new Buff("Corruption", "None", 0, new() { "Damage" }, false, "AbilityCorruption",
         () =>
         {
             AddHeaderRegion(() =>
@@ -345,7 +347,7 @@ public class Buff
         {
 
         }),
-        new Buff("Curse Of Agony", "None", 0, false, "AbilityCurseOfAgony",
+        new Buff("Curse Of Agony", "None", 0, new() { "Damage" }, false, "AbilityCurseOfAgony",
         () =>
         {
             AddHeaderRegion(() =>
@@ -380,7 +382,7 @@ public class Buff
         {
 
         }),
-        new Buff("Shadow Word: Pain", "None", 0, false, "AbilityShadowWordPain",
+        new Buff("Shadow Word: Pain", "None", 0, new() { "Damage" }, false, "AbilityShadowWordPain",
         () =>
         {
             AddHeaderRegion(() =>
@@ -415,7 +417,7 @@ public class Buff
         {
 
         }),
-        new Buff("Fel Armor", "None", 0, false, "AbilityFelArmor",
+        new Buff("Fel Armor", "None", 0, new() { "Defensive" }, false, "AbilityFelArmor",
         () =>
         {
             AddHeaderRegion(() =>
@@ -445,7 +447,7 @@ public class Buff
         {
 
         }),
-        new Buff("Power Word: Shield", "None", 0, false, "AbilityPowerWordShield",
+        new Buff("Power Word: Shield", "None", 0, new() { "Defensive" }, false, "AbilityPowerWordShield",
         () =>
         {
             AddHeaderRegion(() =>
@@ -475,7 +477,7 @@ public class Buff
         {
 
         }),
-        new Buff("Demon Skin", "None", 0, false, "AbilityDemonSkin",
+        new Buff("Demon Skin", "None", 0, new() { "Defensive" }, false, "AbilityDemonSkin",
         () =>
         {
             AddHeaderRegion(() =>

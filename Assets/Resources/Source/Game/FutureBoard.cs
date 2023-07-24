@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using System.Collections.Generic;
 
 public class FutureBoard
@@ -23,26 +24,43 @@ public class FutureBoard
     public bool playerTurn, enemyFinishedMoving, playerFinishedMoving, finishedAnimation;
     public List<Action> actions;
 
-    public double Desiredness(FutureEntity entity, Entity pastEntity, FutureEntity other, Entity pastOther)
+    public double Desiredness(FutureEntity entity, Entity pastEntity, FutureEntity other, Entity pastOther, double baseDesiredness = 0)
     {
         var elementImportance = entity.ElementImportance(entity.health / pastEntity.MaxHealth(), other.health / pastOther.MaxHealth());
         var otherElementImportance = other.ElementImportance(other.health / pastOther.MaxHealth(), entity.health / pastEntity.MaxHealth());
-        var score = 0.0;
+        foreach (var resource in entity.resources)
+            elementImportance[resource.Key] = elementImportance[resource.Key] > otherElementImportance[resource.Key] / 5 ? elementImportance[resource.Key] : otherElementImportance[resource.Key] / 5;
+        var score = -baseDesiredness;
+        var othrBuffs = (playerTurn ? enemy : player).buffs.Select(x => Buff.buffs.Find(y => x.Item1 == y.name)).ToList();
+        if (othrBuffs.Exists(x => x.tags.Contains("Stun")))
+            score += (othrBuffs.FindAll(x => x.tags.Contains("Stun")).Max(x => x.duration) - 1) * 10;
+        finishedAnimation = false;
+        int flaring = 0;
+        while (!finishedAnimation && flaring < 2)
+        {
+            other.FlareBuffs(this);
+            entity.FlareBuffs(this);
+            flaring++;
+            while (actions.Count > 0)
+                AnimateBoard();
+        }
         foreach (var resource in entity.resources)
         {
             var n = resource.Value - pastEntity.resources[resource.Key];
             var amountMultiplier = entity.AmountModifier(n);
-            score += elementImportance[resource.Key] * amountMultiplier * n;
+            score += elementImportance[resource.Key] * amountMultiplier * (n < 0 ? -1 : 1);
         }
         foreach (var resource in other.resources)
         {
             var n = resource.Value - pastOther.resources[resource.Key];
             if (n == 0) continue;
             var amountMultiplier = other.AmountModifier(n);
-            score -= otherElementImportance[resource.Key] * amountMultiplier * n;
+            score -= otherElementImportance[resource.Key] * amountMultiplier * (n < 0 ? -1 : 1);
         }
         score += entity.health - pastEntity.health;
         score -= other.health - pastOther.health;
+        if (score > 0 && (playerTurn && !playerFinishedMoving || !playerTurn && !enemyFinishedMoving))
+            score += 10;
         return score;
     }
 

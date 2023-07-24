@@ -35,7 +35,7 @@ public class FutureEntity
         double elementCosts = abilities.Sum(x => x.cost.Sum(y => y.Value));
         var sheet = new Dictionary<string, double>();
         foreach (var resource in resources)
-            sheet.Add(resource.Key, abilities.FindAll(x => x.cost.ContainsKey(resource.Key)).Sum(x => x.cost[resource.Key] * AbilityTagModifier(x.tags)) / elementCosts + 0.1);
+            sheet.Add(resource.Key, abilities.FindAll(x => x.cost.ContainsKey(resource.Key)).Sum(x => x.cost[resource.Key] * AbilityTagModifier(x.tags)) / elementCosts + 0.025);
         return sheet;
     }
 
@@ -56,11 +56,9 @@ public class FutureEntity
 
     public double AmountModifier(int n)
     {
-        if (n < 0) return 1.00;
-        if (n == 1) return 0.05;
-        if (n == 2) return 0.30;
-        if (n == 3) return 0.60;
-        return 8 * n;
+        if (n == 0) return 0;
+        if (n == 1) return 0.10;
+        return 0.30 * Mathf.Abs(n - 1);
     }
 
     public int MaxHealth()
@@ -68,24 +66,23 @@ public class FutureEntity
         return stats.stats["Stamina"] * 20;
     }
 
-    //public void FlareBuffs()
-    //{
-    //    for (int i = buffs.Count - 1; i >= 0; i--)
-    //    {
-    //        var index = i;
-    //        Board.board.actions.Add(() => { Root.AddSmallButtonOverlay(buffs[index].Item3, "OtherGlowFull", 1); });
-    //        Board.board.actions.Add(Buff.buffs.Find(y => y.name == buffs[index].Item1).effects(Board.board.enemy == this));
-    //        Board.board.actions.Add(() =>
-    //        {
-    //            buffs[index] = (buffs[index].Item1, buffs[index].Item2 - 1, buffs[index].Item3);
-    //            if (buffs[index].Item2 <= 0)
-    //            {
-    //                Buff.buffs.Find(y => y.name == buffs[index].Item1).killEffects(Board.board.enemy == this);
-    //                RemoveBuff(buffs[index]);
-    //            }
-    //        });
-    //    }
-    //}
+    public void FlareBuffs(FutureBoard board)
+    {
+        for (int i = buffs.Count - 1; i >= 0; i--)
+        {
+            var index = i;
+            board.actions.Add(Buff.buffs.Find(y => y.name == buffs[index].Item1).futureEffects(board.enemy == this, board));
+            board.actions.Add(() =>
+            {
+                buffs[index] = (buffs[index].Item1, buffs[index].Item2 - 1);
+                if (buffs[index].Item2 <= 0)
+                {
+                    Buff.buffs.Find(y => y.name == buffs[index].Item1).futureKillEffects(board.enemy == this, board);
+                    RemoveBuff(buffs[index]);
+                }
+            });
+        }
+    }
 
     public void AddBuff(string buff, int duration)
     {
