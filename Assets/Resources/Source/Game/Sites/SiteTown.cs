@@ -1,8 +1,87 @@
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
 public class SiteTown
 {
-    public string name;
+    public SiteTown(string name, string faction)
+    {
+        this.name = name;
+        this.faction = faction;
+    }
+
+    public string name, faction;
+
+    public static List<SiteTown> towns = new()
+    {
+        new SiteTown("Goldshire", "Alliance"),
+        new SiteTown("Lakeshire", "Alliance"),
+        new SiteTown("Talrendis Point", "Alliance"),
+        new SiteTown("Auberdine", "Alliance"),
+        new SiteTown("Darnassus", "Alliance"),
+        new SiteTown("Talonbranch Glade", "Alliance"),
+        new SiteTown("Rut'theran Village", "Alliance"),
+        new SiteTown("Stormwind", "Alliance"),
+        new SiteTown("Aerie Peak", "Alliance"),
+        new SiteTown("Nijel's Point", "Alliance"),
+        new SiteTown("Southshore", "Alliance"),
+        new SiteTown("Ironforge", "Alliance"),
+        new SiteTown("Stonetalon Peak", "Alliance"),
+        new SiteTown("Feathermoon Stronghold", "Alliance"),
+        new SiteTown("Thalaanar", "Alliance"),
+        new SiteTown("Darkshire", "Alliance"),
+        new SiteTown("Rebel Camp", "Alliance"),
+        new SiteTown("Sentinel Hill", "Alliance"),
+        new SiteTown("Theramore Isle", "Alliance"),
+        new SiteTown("Anvilmar", "Alliance"),
+        new SiteTown("Dun Garok", "Alliance"),
+        new SiteTown("Dun Modr", "Alliance"),
+        new SiteTown("Algaz Station", "Alliance"),
+        new SiteTown("Silverwind Refuge", "Alliance"),
+        new SiteTown("Forest Song", "Alliance"),
+        new SiteTown("Kharanos", "Alliance"),
+        new SiteTown("Dolanaar", "Alliance"),
+        new SiteTown("Shadowglen", "Alliance"),
+        new SiteTown("Faldir's Cove", "Alliance"),
+        new SiteTown("Northshire Abbey", "Alliance"),
+        new SiteTown("Starfall Village", "Alliance"),
+        new SiteTown("Astranaar", "Alliance"),
+        new SiteTown("Menethil Harbor", "Alliance"),
+        new SiteTown("Thelsamar", "Alliance"),
+        new SiteTown("Nethergarde Keep", "Alliance"),
+        new SiteTown("Angor Fortress", "Alliance"),
+        new SiteTown("Orgrimmar", "Horde"),
+        new SiteTown("Razor Hill", "Horde"),
+        new SiteTown("Camp Mojache", "Horde"),
+        new SiteTown("Zoram'gar Outpost", "Horde"),
+        new SiteTown("Crossroads", "Horde"),
+        new SiteTown("Bloodvenom Post", "Horde"),
+        new SiteTown("Brackenwall Village", "Horde"),
+        new SiteTown("Freewind Post", "Horde"),
+        new SiteTown("Thunder Bluff", "Horde"),
+        new SiteTown("Undercity", "Horde"),
+        new SiteTown("Sen'jin Village", "Horde"),
+        new SiteTown("Bloodhoof Village", "Horde"),
+        new SiteTown("The Bulwark", "Horde"),
+        new SiteTown("Deathknell", "Horde"),
+        new SiteTown("Shadowprey Village", "Horde"),
+        new SiteTown("Camp Taurajo", "Horde"),
+        new SiteTown("Brill", "Horde"),
+        new SiteTown("Valormok", "Horde"),
+        new SiteTown("Sunrock Retreat", "Horde"),
+        new SiteTown("Splintertree Post", "Horde"),
+        new SiteTown("Kargath", "Horde"),
+        new SiteTown("Stonard", "Horde"),
+        new SiteTown("Grom'gol Base Camp", "Horde"),
+        new SiteTown("Hammerfall", "Horde"),
+        new SiteTown("Tarren Mill", "Horde"),
+        new SiteTown("Sepulcher", "Horde"),
+        new SiteTown("Cenarion Hold", "Neutral"),
+        new SiteTown("Everlook", "Neutral"),
+        new SiteTown("Gadgetzan", "Neutral"),
+        new SiteTown("Ratchet", "Neutral"),
+        new SiteTown("Timbermaw Hold", "Neutral"),
+        new SiteTown("Nighthaven", "Neutral"),
+        new SiteTown("Thorium Point", "Neutral"),
+        new SiteTown("Light's Hope Chapel", "Neutral"),
+        new SiteTown("Booty Bay", "Neutral"),
+    };
 }

@@ -143,7 +143,16 @@ public class Entity
         buffs.Remove(buff);
     }
 
-    public int health, level, unspentTalentPoints, actionBarsUnlocked;
+    public int ExperienceNeeded() => (int)(System.Math.Pow(1.04, level + 1) * 100 * (level + 1));
+    public int ExperienceNeededOverall()
+    {
+        var sum = 0;
+        for (int i = 1; i < 60; i++)
+            sum += (int)(System.Math.Pow(1.04, i + 1) * 100 * (i + 1));
+        return sum;
+    }
+
+    public int health, level, unspentTalentPoints, actionBarsUnlocked, experience;
     public string name, race, spec;
     public Dictionary<string, int> resources;
     public List<string> abilities, actionBars;

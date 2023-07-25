@@ -3,10 +3,8 @@ using System.Linq;
 using System.Collections.Generic;
 
 using static Root;
-
 using static Root.Anchor;
 using static Root.RegionBackgroundType;
-using UnityEngine.Rendering;
 
 public class Window : MonoBehaviour
 {

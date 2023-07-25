@@ -30,6 +30,7 @@ public static class Root
     public static List<Desktop> desktops;
     public static Desktop CDesktop, LBDesktop;
     public static string markerCharacter = "_", currentInputLine = "";
+    public static List<(string, Vector2)> windowRemoteAnchors;
 
     public static SaveGame currentSave;
     public static List<SaveGame> saveGames;
@@ -193,6 +194,87 @@ public static class Root
     #endregion
 
     #region Talent
+
+    public static void PrintSite(string name, string type, Vector2 anchor)
+    {
+        SetAnchor(anchor.x, anchor.y);
+        AddRegionGroup();
+        AddPaddingRegion(() =>
+        {
+            if (type == "Town")
+            {
+                var town = SiteTown.towns.Find(x => x.name == name);
+                if (town == null) { Debug.LogError("No town named \"" + name + "\" has been found."); return; }
+                AddSmallButton("Faction" + town.faction,
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+                    SetAnchor(TopRight, h.window);
+                    AddRegionGroup();
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine(name, Gray);
+                    });
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Nothing:", Gray);
+                    });
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine("There is nothing here yet", Gray);
+                        AddLine("But there will be something soon", Gray);
+                        AddLine("I hope so", Gray);
+                    });
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Very nothing:", Gray);
+                    });
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine("There is nothing here yet", Gray);
+                        AddLine("But there will be something soon", Gray);
+                    });
+                });
+            }
+            else
+                AddSmallButton("Site" + type,
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+                    SetAnchor(TopRight, h.window);
+                    AddRegionGroup();
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine(name, Gray);
+                    });
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Nothing:", Gray);
+                    });
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine("There is nothing here yet", Gray);
+                        AddLine("But there will be something soon", Gray);
+                        AddLine("I hope so", Gray);
+                    });
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Very nothing:", Gray);
+                    });
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine("There is nothing here yet", Gray);
+                        AddLine("But there will be something soon", Gray);
+                    });
+                });
+        });
+    }
 
     public static void PrintTalent(int spec, int row, int col)
     {
@@ -411,7 +493,7 @@ public static class Root
 
     public static void AddWindow(string title, bool upperUI)
     {
-        var newObject = new GameObject("Window: " + title, typeof(Window), typeof(AudioSource));
+        var newObject = new GameObject("Window: " + title, typeof(Window));
         newObject.transform.parent = CDesktop.transform;
         //I'm spawning it at z = 9999 because I don't want it to
         //cover anything on the screen when it's being built
@@ -436,6 +518,12 @@ public static class Root
         CDesktop.globalWindows.Add(id, CDesktop.LBWindow);
     }
 
+    public static void SetAnchor(string anchor)
+    {
+        var find = windowRemoteAnchors.Find(x => x.Item1 == anchor);
+        SetAnchor(find.Item2.x, find.Item2.y);
+    }
+
     public static void SetAnchor(Anchor anchor, Window magnet)
     {
         CDesktop.LBWindow.anchor = new WindowAnchor(anchor, 0, 0, magnet);
@@ -443,7 +531,7 @@ public static class Root
 
     public static void SetAnchor(float x = 0, float y = 0)
     {
-        CDesktop.LBWindow.anchor = new WindowAnchor(Anchor.None, x, y, null);
+        CDesktop.LBWindow.anchor = new WindowAnchor(None, x, y, null);
     }
 
     public static void SetAnchor(Anchor anchor, float x = 0, float y = 0)
