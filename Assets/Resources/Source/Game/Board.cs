@@ -44,6 +44,7 @@ public class Board
             playerTurn = false;
             playerFinishedMoving = false;
             board.actions.Add(() => { animationTime += frameTime * 3; });
+            enemy.Cooldown();
             enemy.FlareBuffs();
         }
         else
@@ -51,6 +52,7 @@ public class Board
             playerTurn = true;
             enemyFinishedMoving = false;
             board.actions.Add(() => { animationTime += frameTime * 3; });
+            player.Cooldown();
             player.FlareBuffs();
         }
     }
@@ -160,13 +162,14 @@ public class Board
                 var newBoard = new FutureBoard(board);
                 newBoard.enemyFinishedMoving = true;
                 var baseDesiredness = newBoard.Desiredness(newBoard.enemy, enemy, newBoard.player, player);
-                var possibleMoves = new List<(int, int, FutureBoard, string)>();
-                var abilities = enemy.actionBars.Select(x => Ability.abilities.Find(y => y.name == x));
+                var possibleMoves = new List<PossibleMove>();
+                var abilities = enemy.actionBars.Select(x => Ability.abilities.Find(y => y.name == x.ability));
                 foreach (var ability in abilities)
-                    if (ability.EnoughResources(enemy))
+                    if (newBoard.enemy.actionBars.Find(x => x.ability == ability.name).cooldown == 0 && ability.EnoughResources(enemy))
                     {
                         newBoard = new FutureBoard(board);
-                        possibleMoves.Add((-1, -1, newBoard, ability.name));
+                        possibleMoves.Add(new PossibleMove(ability.name, newBoard));
+                        newBoard.enemy.actionBars.Find(x => x.ability == ability.name).cooldown = ability.cooldown;
                         ability.futureEffects(false, newBoard);
                         newBoard.enemy.DetractResources(ability.cost);
                         while (!newBoard.finishedAnimation)
@@ -175,30 +178,33 @@ public class Board
                 foreach (var flooding in differentFloodings)
                 {
                     newBoard = new FutureBoard(board);
-                    possibleMoves.Add((flooding.Item1, flooding.Item2, newBoard, ""));
+                    possibleMoves.Add(new PossibleMove(flooding.Item1, flooding.Item2, newBoard));
                     newBoard.FloodDestroy(flooding.Item3);
                     newBoard.enemyFinishedMoving = true;
                     while (!newBoard.finishedAnimation)
                         newBoard.AnimateBoard();
                 }
-                possibleMoves = possibleMoves.OrderByDescending(x => x.Item3.Desiredness(x.Item3.enemy, enemy, x.Item3.player, player, baseDesiredness)).ToList();
+                possibleMoves = possibleMoves.OrderByDescending(x => x.Desiredness(board, baseDesiredness)).ToList();
+                var message = "";
                 foreach (var move in possibleMoves)
                 {
                     var resourceChange = 0;
-                    foreach (var resource in move.Item3.enemy.resources)
+                    foreach (var resource in move.board.enemy.resources)
                         resourceChange += resource.Value - board.enemy.resources[resource.Key];
-                    Debug.Log(move + " / " + move.Item3.Desiredness(move.Item3.enemy, enemy, move.Item3.player, player, baseDesiredness).ToString("0.000") + (move.Item1 != -1 ? " (" + boardNameDictionary[board.field[move.Item1, move.Item2]] + ")" : "") + (resourceChange >= 0 ? " +" : " ") + resourceChange + " resources");
+                    message += move.desiredness.ToString("0.000") + (move.x != -1 ? " (" + boardNameDictionary[board.field[move.x, move.y]] + ")" : (move.ability != "" ? " <" + move.ability + ">" : "")) + (resourceChange >= 0 ? " +" : " ") + resourceChange + " resources\n";
                 }
+                Debug.Log(message);
                 var bestMove = possibleMoves[0];
-                if (bestMove.Item4 != "")
+                if (bestMove.ability != "")
                 {
-                    var ability = Ability.abilities.Find(x => x.name == bestMove.Item4);
-                    ability.effects(false);
-                    board.enemy.DetractResources(ability.cost);
+                    var abilityObj = Ability.abilities.Find(x => x.name == bestMove.ability);
+                    enemy.actionBars.Find(x => x.ability == bestMove.ability).cooldown = abilityObj.cooldown;
+                    abilityObj.effects(false);
+                    board.enemy.DetractResources(abilityObj.cost);
                 }
                 else
                 {
-                    var list1 = board.FloodCount(bestMove.Item1, bestMove.Item2);
+                    var list1 = board.FloodCount(bestMove.x, bestMove.y);
                     board.FloodDestroy(list1);
                     board.enemyFinishedMoving = true;
                 }

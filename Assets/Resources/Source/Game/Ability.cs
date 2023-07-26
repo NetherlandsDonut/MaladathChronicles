@@ -194,7 +194,7 @@ public class Ability
             Board.board.actions.Add(() =>
             {
                 PlaySound("AbilityArcaneMissilesCast", 0.3f);
-                animationTime += frameTime * 8;
+                animationTime += frameTime * 4;
             });
             Board.board.actions.Add(() =>
             {
@@ -203,7 +203,7 @@ public class Ability
                 SpawnShatter(6, 0.7, new Vector3(p ? 148 : -318, 122), "AbilityArcaneMissiles", true, p ? "1000" : "1001");
                 SpawnShatter(6, 0.7, new Vector3(p ? 148 : -318, 122), "AbilityArcaneMissiles", true, p ? "1000" : "1001");
                 PlaySound("AbilityArcaneMissilesImpact1");
-                animationTime += frameTime * 8;
+                animationTime += frameTime * 5;
             });
             Board.board.actions.Add(() =>
             {
@@ -212,7 +212,7 @@ public class Ability
                 SpawnShatter(6, 0.7, new Vector3(p ? 148 : -318, 122), "AbilityArcaneMissiles", true, p ? "1000" : "1001");
                 SpawnShatter(6, 0.7, new Vector3(p ? 148 : -318, 122), "AbilityArcaneMissiles", true, p ? "1000" : "1001");
                 PlaySound("AbilityArcaneMissilesImpact2");
-                animationTime += frameTime * 8;
+                animationTime += frameTime * 5;
             });
             Board.board.actions.Add(() =>
             {
@@ -221,7 +221,7 @@ public class Ability
                 SpawnShatter(6, 0.7, new Vector3(p ? 148 : -318, 122), "AbilityArcaneMissiles", true, p ? "1000" : "1001");
                 SpawnShatter(6, 0.7, new Vector3(p ? 148 : -318, 122), "AbilityArcaneMissiles", true, p ? "1000" : "1001");
                 PlaySound("AbilityArcaneMissilesImpact3");
-                animationTime += frameTime * 8;
+                animationTime += frameTime * 5;
             });
             Board.board.playerFinishedMoving = true;
             CDesktop.LockScreen();
@@ -278,6 +278,136 @@ public class Ability
             target.AddBuff("Curse Of Agony", 10);
             if (p) board.playerFinishedMoving = true;
             else board.enemyFinishedMoving = true;
+        }),
+        new Ability("Venomous Bite", 0, new() { "Damage", "Overtime" }, new()
+        {
+            { "Decay", 6 },
+        },
+        () =>
+        {
+            AddPaddingRegion(() =>
+            {
+                AddLine("Casting Frosbolt will channel a frosty", Gray);
+                AddLine("projectile at the target dealing damage.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Deals 8 damage times caster's intelligence.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+                AddLine("Each point in Frost Mastery adds 1% chance", Gray);
+                AddLine("to refund the cost of casting this spell.", Gray);
+            });
+        },
+        (p) =>
+        {
+            var target = p ? Board.board.enemy : Board.board.player;
+            Board.board.actions.Add(() =>
+            {
+                target.AddBuff("Venomous Bite", 10, SpawnShatterBuff(2, 0.8, new Vector3(p ? 148 : -318, 122), "AbilityVenomousBite", target));
+                SpawnShatter(6, 0.7, new Vector3(p ? 148 : -318, 122), "AbilityVenomousBite", true, p ? "1000" : "1001");
+                SpawnShatter(6, 0.7, new Vector3(p ? 148 : -318, 122), "AbilityVenomousBite", true, p ? "1000" : "1001");
+                PlaySound("AbilityVenomousBiteImpact");
+            });
+            if (p) Board.board.playerFinishedMoving = true;
+            else Board.board.enemyFinishedMoving = true;
+            CDesktop.LockScreen();
+        },
+        (p, board) =>
+        {
+            var target = p ? board.enemy : board.player;
+            target.AddBuff("Venomous Bite", 10);
+            if (p) board.playerFinishedMoving = true;
+            else board.enemyFinishedMoving = true;
+        }),
+        new Ability("Poison Cloud", 0, new() { "Gathering" }, new()
+        {
+            { "Air", 6 },
+        },
+        () =>
+        {
+            AddPaddingRegion(() =>
+            {
+                AddLine("Casting Poison Cloud will shroud the", Gray);
+                AddLine("board with in a poisonous gas.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Every turn a randomly chosen decay", Gray);
+                AddLine("element on the board will spread itself", Gray);
+                AddLine("and spawn a second one in one", Gray);
+                AddLine("of the neighboring tiles.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+                AddLine("Each point in Decay Mastery adds 1%", Gray);
+                AddLine("to trigger this effect twice.", Gray);
+            });
+        },
+        (p) =>
+        {
+            var caster = p ? Board.board.player : Board.board.enemy;
+            Board.board.actions.Add(() =>
+            {
+                caster.AddBuff("Poison Cloud", 10, SpawnShatterBuff(2, 0.8, new Vector3(!p ? 148 : -318, 122), "AbilityPoisonCloud", caster));
+                SpawnShatter(6, 0.7, new Vector3(!p ? 148 : -318, 122), "AbilityPoisonCloud", true, !p ? "1000" : "1001");
+                SpawnShatter(6, 0.7, new Vector3(!p ? 148 : -318, 122), "AbilityPoisonCloud", true, !p ? "1000" : "1001");
+                PlaySound("AbilityPoisonCloudCast");
+            });
+            CDesktop.LockScreen();
+        },
+        (p, board) =>
+        {
+            var caster = p ? board.player : board.enemy;
+            caster.AddBuff("Poison Cloud", 7);
+        }),
+        new Ability("Web Burst", 3, new() { "Stun" }, new()
+        {
+            { "Shadow", 4 },
+            { "Decay", 4 }
+        },
+        () =>
+        {
+            AddPaddingRegion(() =>
+            {
+                AddLine("Casting Frosbolt will channel a frosty", Gray);
+                AddLine("projectile at the target dealing damage.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Deals 8 damage times caster's intelligence.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+                AddLine("Each point in Frost Mastery adds 1% chance", Gray);
+                AddLine("to refund the cost of casting this spell.", Gray);
+            });
+        },
+        (p) =>
+        {
+            var target = p ? Board.board.enemy : Board.board.player;
+            Board.board.actions.Add(() =>
+            {
+                PlaySound("AbilityWebBurstCast");
+                animationTime += frameTime * 4;
+            });
+            Board.board.actions.Add(() =>
+            {
+                target.AddBuff("Web Burst", 2, SpawnShatterBuff(2, 0.8, new Vector3(p ? 148 : -318, 122), "AbilityWebBurst", target));
+                SpawnShatter(6, 0.7, new Vector3(p ? 148 : -318, 122), "AbilityWebBurst", true, p ? "1000" : "1001");
+                SpawnShatter(6, 0.7, new Vector3(p ? 148 : -318, 122), "AbilityWebBurst", true, p ? "1000" : "1001");
+                PlaySound("AbilityWebBurstImpact");
+            });
+            CDesktop.LockScreen();
+        },
+        (p, board) =>
+        {
+            var target = p ? board.enemy : board.player;
+            target.AddBuff("Web Burst", 2);
         }),
         new Ability("Demon Skin", 0, new() { "Defensive" }, new()
         {

@@ -11,8 +11,7 @@ public class Starter : MonoBehaviour
         random = new System.Random();
         font = new Font("Tahoma Bold");
         desktops = new();
-        testText.Set("Aqualung");
-        testText2.Set("Baby Yoda");
+        String.consoleInput.Set(">");
         cursor = FindObjectOfType<Cursor>();
         settings = new GameSettings();
         saveGames = new List<SaveGame>();

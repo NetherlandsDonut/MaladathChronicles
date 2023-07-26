@@ -14,4 +14,6 @@ public class String
     public void Set(string value) => backupValue = this.value = value;
     public void Confirm() => backupValue = value;
     public void Reset() => value = backupValue;
+
+    public static String consoleInput = new String();
 }

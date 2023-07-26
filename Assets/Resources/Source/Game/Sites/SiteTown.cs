@@ -70,10 +70,13 @@ public class SiteTown
         new SiteTown("Splintertree Post", "Horde"),
         new SiteTown("Kargath", "Horde"),
         new SiteTown("Stonard", "Horde"),
+        new SiteTown("Revantusk Village", "Horde"),
         new SiteTown("Grom'gol Base Camp", "Horde"),
         new SiteTown("Hammerfall", "Horde"),
         new SiteTown("Tarren Mill", "Horde"),
         new SiteTown("Sepulcher", "Horde"),
+        new SiteTown("Camp Narache", "Horde"),
+        new SiteTown("Ghost Walker Post", "Horde"),
         new SiteTown("Cenarion Hold", "Neutral"),
         new SiteTown("Everlook", "Neutral"),
         new SiteTown("Gadgetzan", "Neutral"),
@@ -83,5 +86,6 @@ public class SiteTown
         new SiteTown("Thorium Point", "Neutral"),
         new SiteTown("Light's Hope Chapel", "Neutral"),
         new SiteTown("Booty Bay", "Neutral"),
+        new SiteTown("Marshal's Refuge", "Neutral"),
     };
 }

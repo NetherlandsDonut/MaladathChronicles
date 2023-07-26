@@ -17,6 +17,8 @@ public class SpritesToolsWindow : EditorWindow
 
     private Vector2 m_CommonPivot;
     private string m_Log;
+
+    [System.Obsolete]
     private void OnGUI()
     {
 
@@ -29,6 +31,7 @@ public class SpritesToolsWindow : EditorWindow
         m_Log = EditorGUILayout.TextArea(m_Log);
     }
 
+    [System.Obsolete]
     private void EditSprites()
     {
         if (spritesheet != null)

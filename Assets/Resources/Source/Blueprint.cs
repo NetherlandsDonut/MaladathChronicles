@@ -215,22 +215,23 @@ public class Blueprint
                 AddLine("Level " + Board.board.player.level, Gray);
                 AddLine("Health: " + Board.board.player.health + "/" + Board.board.player.MaxHealth(), Gray);
             });
-            foreach (var ability in Board.board.player.actionBars)
+            foreach (var actionBar in Board.board.player.actionBars)
             {
-                var abilityObj = Ability.abilities.Find(x => x.name == ability);
+                var abilityObj = Ability.abilities.Find(x => x.name == actionBar.ability);
                 if (abilityObj == null || abilityObj.cost == null) continue;
                 AddButtonRegion(
                     () =>
                     {
-                        AddLine(ability, Black);
-                        AddSmallButton("Ability" + ability.Replace(" ", "").Replace(":", ""), (h) => { });
-                        if (!abilityObj.EnoughResources(Board.board.player))
+                        AddLine(actionBar.ability, Black);
+                        AddSmallButton("Ability" + actionBar.ability.Replace(" ", "").Replace(":", ""), (h) => { });
+                        if (actionBar.cooldown > 0 || !abilityObj.EnoughResources(Board.board.player))
                             AddSmallButtonOverlay("OtherGrid");
                     },
                     (h) =>
                     {
                         if (abilityObj.EnoughResources(Board.board.player))
                         {
+                            actionBar.cooldown = abilityObj.cooldown;
                             abilityObj.effects(true);
                             Board.board.player.DetractResources(abilityObj.cost);
                             Board.board.temporaryElementsPlayer = new();
@@ -245,13 +246,13 @@ public class Blueprint
                         SetRegionGroupHeight(237);
                         AddHeaderRegion(() =>
                         {
-                            AddLine(ability, Gray);
+                            AddLine(actionBar.ability, Gray);
                         });
                         AddPaddingRegion(() =>
                         {
-                            AddBigButton("Ability" + ability.Replace(" ", "").Replace(":", ""), (h) => { });
+                            AddBigButton("Ability" + actionBar.ability.Replace(" ", "").Replace(":", ""), (h) => { });
                             AddLine("Required level: ", DarkGray);
-                            AddText(Board.board.player.GetClass().abilities.Find(x => x.Item1 == ability).Item2 + "", Gray);
+                            AddText(Board.board.player.GetClass().abilities.Find(x => x.Item1 == actionBar.ability).Item2 + "", Gray);
                             AddLine("Cooldown: ", DarkGray);
                             AddText(abilityObj.cooldown == 0 ? "None" : abilityObj.cooldown + (abilityObj.cooldown == 1 ? " turn"  : " turns"), Gray);
                         });
@@ -301,17 +302,15 @@ public class Blueprint
                 );
                 AddLine("Level " + Board.board.player.level, Gray);
             });
-            foreach (var ability in Board.board.player.actionBars)
+            foreach (var actionBar in Board.board.player.actionBars)
             {
-                var abilityObj = Ability.abilities.Find(x => x.name == ability);
+                var abilityObj = Ability.abilities.Find(x => x.name == actionBar.ability);
                 if (abilityObj == null || abilityObj.cost == null) continue;
                 AddButtonRegion(
                     () =>
                     {
-                        AddLine(ability, Black);
-                        AddSmallButton("Ability" + ability.Replace(" ", "").Replace(":", ""), (h) => { });
-                        if (!abilityObj.EnoughResources(Board.board.player))
-                            AddSmallButtonOverlay("OtherGrid");
+                        AddLine(actionBar.ability, Black);
+                        AddSmallButton("Ability" + actionBar.ability.Replace(" ", "").Replace(":", ""), (h) => { });
                     },
                     (h) =>
                     {
@@ -325,13 +324,13 @@ public class Blueprint
                         SetRegionGroupHeight(237);
                         AddHeaderRegion(() =>
                         {
-                            AddLine(ability, Gray);
+                            AddLine(actionBar.ability, Gray);
                         });
                         AddPaddingRegion(() =>
                         {
-                            AddBigButton("Ability" + ability.Replace(" ", "").Replace(":", ""), (h) => { });
+                            AddBigButton("Ability" + actionBar.ability.Replace(" ", "").Replace(":", ""), (h) => { });
                             AddLine("Required level: ", DarkGray);
-                            AddText(Board.board.player.GetClass().abilities.Find(x => x.Item1 == ability).Item2 + "", Gray);
+                            AddText(Board.board.player.GetClass().abilities.Find(x => x.Item1 == actionBar.ability).Item2 + "", Gray);
                             AddLine("Cooldown: ", DarkGray);
                             AddText(abilityObj.cooldown == 0 ? "None" : abilityObj.cooldown + (abilityObj.cooldown == 1 ? " turn"  : " turns"), Gray);
                         });
@@ -380,16 +379,16 @@ public class Blueprint
                 AddLine("Level " + Board.board.enemy.level, Gray);
                 AddLine("Health: " + Board.board.enemy.health + "/" + Board.board.enemy.MaxHealth(), Gray);
             });
-            foreach (var ability in Board.board.enemy.actionBars)
+            foreach (var actionBar in Board.board.enemy.actionBars)
             {
-                var abilityObj = Ability.abilities.Find(x => x.name == ability);
+                var abilityObj = Ability.abilities.Find(x => x.name == actionBar.ability);
                 if (abilityObj == null || abilityObj.cost == null) continue;
                 AddButtonRegion(
                     () =>
                     {
-                        AddLine(ability, Black);
-                        AddSmallButton("Ability" + ability.Replace(" ", "").Replace(":", ""), (h) => { });
-                        if (!abilityObj.EnoughResources(Board.board.enemy))
+                        AddLine(actionBar.ability, Black);
+                        AddSmallButton("Ability" + actionBar.ability.Replace(" ", "").Replace(":", ""), (h) => { });
+                        if (actionBar.cooldown > 0 || !abilityObj.EnoughResources(Board.board.enemy))
                             AddSmallButtonOverlay("OtherGrid");
                     },
                     (h) =>
@@ -404,11 +403,11 @@ public class Blueprint
                         SetRegionGroupHeight(237);
                         AddHeaderRegion(() =>
                         {
-                            AddLine(ability, Gray);
+                            AddLine(actionBar.ability, Gray);
                         });
                         AddPaddingRegion(() =>
                         {
-                            AddBigButton("Ability" + ability.Replace(" ", "").Replace(":", ""), (h) => { });
+                            AddBigButton("Ability" + actionBar.ability.Replace(" ", "").Replace(":", ""), (h) => { });
                             //AddLine("Required level: ", DarkGray);
                             //AddText(Board.board.enemy.spec.abilities.Find(x => x.Item1 == ability).Item2 + "", Gray);
                             AddLine("Cooldown: ", DarkGray);
@@ -1200,6 +1199,19 @@ public class Blueprint
             });
             SetRegionGroupWidth(203);
         },  true),
+        new("Console", () => {
+            SetAnchor(TopLeft);
+            AddHeaderGroup();
+            SetRegionGroupWidth(628);
+            AddHeaderRegion(() =>
+            {
+                AddLine("Console");
+                AddSmallButton("OtherClose", (h) => { CloseWindow(h.window); });
+            });
+            AddRegionGroup();
+            SetRegionGroupWidth(628);
+            AddInputRegion(String.consoleInput, InputType.Everything, "Console");
+        },  true),
     };
 
     public static List<Blueprint> desktopBlueprints = new()
@@ -1218,6 +1230,7 @@ public class Blueprint
             AddHotkey(P, () => { SpawnDesktopBlueprint("SpellbookScreen"); SwitchDesktop("SpellbookScreen"); });
             AddHotkey(B, () => { SpawnWindowBlueprint("PlayerInventory"); });
             AddHotkey(L, () => { SpawnWindowBlueprint("ItemDrop"); });
+            AddHotkey(BackQuote, () => { SpawnWindowBlueprint("Console"); });
         }),
         new("Game", () =>
         {
@@ -1259,6 +1272,7 @@ public class Blueprint
                     { "Shadow", 99 },
                 };
             });
+            AddHotkey(BackQuote, () => { SpawnWindowBlueprint("Console"); });
         }),
         new("CharacterScreen", () =>
         {

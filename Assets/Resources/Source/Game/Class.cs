@@ -319,6 +319,7 @@ public class Class
                 ("Wand Proficiency", 1),
                 ("Cloth Proficiency", 1),
                 ("Hammer Of Justice", 1),
+                ("Poison Cloud", 1),
             },
             new List<TalentTree>
             {

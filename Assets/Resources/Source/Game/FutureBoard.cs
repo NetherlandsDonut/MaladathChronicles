@@ -33,16 +33,18 @@ public class FutureBoard
         var score = -baseDesiredness;
         var othrBuffs = (playerTurn ? enemy : player).buffs.Select(x => Buff.buffs.Find(y => x.Item1 == y.name)).ToList();
         if (othrBuffs.Exists(x => x.tags.Contains("Stun")))
-            score += (othrBuffs.FindAll(x => x.tags.Contains("Stun")).Max(x => x.duration) - 1) * 10;
-        finishedAnimation = false;
+            score += ((playerTurn ? enemy : player).buffs.FindAll(y => othrBuffs.FindAll(x => x.tags.Contains("Stun")).Exists(z => z.name == y.Item1)).Max(x => x.Item2) - 1) * 5;
         int flaring = 0;
-        while (!finishedAnimation && flaring < 2)
+        while (flaring < 2)
         {
+            finishedAnimation = false;
+            other.Cooldown();
             other.FlareBuffs(this);
+            entity.Cooldown();
             entity.FlareBuffs(this);
             flaring++;
-            while (actions.Count > 0)
-                AnimateBoard();
+            do AnimateBoard();
+            while (!finishedAnimation);
         }
         foreach (var resource in entity.resources)
         {
@@ -57,8 +59,8 @@ public class FutureBoard
             var amountMultiplier = other.AmountModifier(n);
             score -= otherElementImportance[resource.Key] * amountMultiplier * (n < 0 ? -1 : 1);
         }
-        score += entity.health - pastEntity.health;
-        score -= other.health - pastOther.health;
+        score += (entity.health - pastEntity.health) * 0.85;
+        score -= (other.health - pastOther.health) * 0.85;
         if (score > 0 && (playerTurn && !playerFinishedMoving || !playerTurn && !enemyFinishedMoving))
             score += 10;
         return score;

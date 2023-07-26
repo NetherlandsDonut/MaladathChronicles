@@ -24,9 +24,84 @@ public class SiteHostileArea
 
     public static List<SiteHostileArea> hostileAreas = new()
     {
+        new SiteHostileArea("Corin's Crossing", 54, new()
+        {
+            ("Scourge Warder", "Common"),
+            ("Dark Summoner", "Common"),
+        }),
+        new SiteHostileArea("Blackwood Lake", 54, new()
+        {
+            ("Plaguehound", "Common"),
+            ("Noxious Plaguebat", "Common"),
+        }),
+        new SiteHostileArea("Lake Mereldar", 54, new()
+        {
+            ("Blighted Surge", "Common"),
+            ("Plague Ravager", "Common"),
+        }),
+        new SiteHostileArea("Pestilent Scar", 54, new()
+        {
+            ("Living Decay", "Common"),
+            ("Plaguehound", "Common"),
+            ("Noxious Plaguebat", "Common"),
+            ("Rotting Sludge", "Common"),
+        }),
+        new SiteHostileArea("Plaguewood", 54, new()
+        {
+            ("Scourge Warder", "Common"),
+            ("Putrid Gargoyle", "Common"),
+            ("Necromancer", "Common"),
+            ("Cursed Mage", "Common"),
+            ("Cannibal Ghoul", "Common"),
+            ("Death Cultist", "Common"),
+        }),
+        new SiteHostileArea("Terrordale", 53, new()
+        {
+            ("Cursed Mage", "Common"),
+            ("Cannibal Ghoul", "Common"),
+            ("Scourge Soldier", "Common"),
+            ("Crypt Fiend", "Common"),
+            ("Torn Screamer", "Common"),
+        }),
+        new SiteHostileArea("Terrorweb Tunnel", 55, new()
+        {
+            ("Crypt Fiend", "Common"),
+            ("Crypt Walker", "Common"),
+        }),
+        new SiteHostileArea("Darrowshire", 53, new()
+        {
+            ("Plaguehound Runt", "Common"),
+            ("Scourge Soldier", "Common"),
+        }),
+        new SiteHostileArea("Thondroril River", 53, new()
+        {
+            ("Plaguehound Runt", "Common"),
+            ("Plaguebat", "Common"),
+        }),
+        new SiteHostileArea("Tyr's Hand", 53, new()
+        {
+            ("Scarlet Curate", "Common"),
+            ("Scarlet Warder", "Common"),
+            ("Scarlet Enchanter", "Common"),
+            ("Scarlet Cleric", "Common"),
+        }),
+        new SiteHostileArea("The Marris Stead", 53, new()
+        {
+            ("Putrid Gargoyle", "Common"),
+            ("Plaguebat", "Common"),
+            ("Plaguehound Runt", "Common"),
+        }),
+
+
+
+
+
+
+
+
         new SiteHostileArea("Stonetalon Peak", 23, new()
         {
-            ("Nefarian", "Common")
+            ("Nefarian", "Common"),
         }),
         new SiteHostileArea("Scarab Terrace", 60, new()
         {

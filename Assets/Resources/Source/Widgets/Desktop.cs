@@ -85,9 +85,9 @@ public class Desktop : MonoBehaviour
     public void Start()
     {
         if (CDesktop.name == "Desktop: TalentScreen")
-            screen.transform.localPosition = new Vector3(320, -140);
+            screen.transform.localPosition = new Vector3(320,  -140);
         else if (CDesktop.name == "Desktop: Map")
-            screen.transform.localPosition = new Vector3(1781, -3768);
+            screen.transform.localPosition = new Vector3(5648, -1193);
     }
 
     public void Update()

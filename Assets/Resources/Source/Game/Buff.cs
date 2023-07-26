@@ -8,11 +8,10 @@ using static Root.Color;
 
 public class Buff
 {
-    public Buff(string name, string dispelType, int duration, List<string> tags, bool stackable, string icon, Action description, Func<bool, Action> effects, Func<bool, Action> killEffects, Func<bool, FutureBoard, Action> futureEffects, Func<bool, FutureBoard, Action> futureKillEffects)
+    public Buff(string name, string dispelType, List<string> tags, bool stackable, string icon, Action description, Func<bool, Action> effects, Func<bool, Action> killEffects, Func<bool, FutureBoard, Action> futureEffects, Func<bool, FutureBoard, Action> futureKillEffects)
     {
         this.name = name;
         this.dispelType = dispelType;
-        this.duration = duration;
         this.tags = tags;
         this.stackable = stackable;
         this.icon = icon;
@@ -25,7 +24,6 @@ public class Buff
 
     public string name, icon, dispelType;
     public List<string> tags;
-    public int duration;
     public bool stackable;
     public Action description;
     public Func<bool, Action> effects, killEffects;
@@ -33,7 +31,7 @@ public class Buff
 
     public static List<Buff> buffs = new()
     {
-        new Buff("Blizzard", "None", 0, new() { "Damage" }, false, "AbilityBlizzard",
+        new Buff("Blizzard", "None", new() { "Damage" }, false, "AbilityBlizzard",
         () =>
         {
             AddHeaderRegion(() =>
@@ -77,7 +75,120 @@ public class Buff
         {
 
         }),
-        new Buff("Ice Block", "None", 0, new() { "Defensive" }, false, "AbilityIceBlock",
+        new Buff("Poison Cloud", "None", new() { "Gathering" }, false, "AbilityPoisonCloud",
+        () =>
+        {
+            AddHeaderRegion(() =>
+            {
+                AddLine("Target burns for 3 damage every turn.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+                AddLine("Each point in Frost Mastery adds 1% chance", Gray);
+                AddLine("to refund the cost of casting this spell.", Gray);
+            });
+        },
+        (p) => () =>
+        {
+            Board.board.actions.Add(() => { PlaySound("AbilityPoisonCloudFlare"); });
+            var list = new List<(int, int)>();
+            for (int i = 0; i < Board.board.field.GetLength(0); i++)
+                for (int j = 0; j < Board.board.field.GetLength(1); j++)
+                    if (Board.board.field[i, j] == 17)
+                        list.Add((i, j));
+            var newList = list.Select(x => (x.Item1, x.Item2, Board.board.FloodCount(x.Item1, x.Item2).Count)).ToList();
+            if (newList.Count > 0)
+            {
+                if (newList.Max(x => x.Count > 3))
+                    newList.RemoveAll(x => x.Count != 3);
+                else if (newList.Max(x => x.Count > 2))
+                    newList.RemoveAll(x => x.Count < 3);
+                else if (newList.Max(x => x.Count > 1))
+                    newList.RemoveAll(x => x.Count < 2);
+                while (true)
+                {
+                    var rand1 = list[random.Next(0, newList.Count)];
+                    var rand2 = random.Next(0, 4);
+                    if (rand2 == 0 && rand1.Item1 > 0 && Board.board.field[rand1.Item1 - 1, rand1.Item2] != 17)
+                    {
+                        Board.board.field[rand1.Item1 - 1, rand1.Item2] = 17;
+                        SpawnShatter(4, 1.0, Board.board.window.LBRegionGroup.regions[rand1.Item2].bigButtons[rand1.Item1 - 1].transform.position + new Vector3(-17.5f, -17.5f), Board.boardButtonDictionary[Board.board.field[rand1.Item1 - 1, rand1.Item2]]);
+                        break;
+                    }
+                    else if (rand2 == 1 && rand1.Item2 > 0 && Board.board.field[rand1.Item1, rand1.Item2 - 1] != 17)
+                    {
+                        Board.board.field[rand1.Item1, rand1.Item2 - 1] = 17;
+                        SpawnShatter(4, 1.0, Board.board.window.LBRegionGroup.regions[rand1.Item2 - 1].bigButtons[rand1.Item1].transform.position + new Vector3(-17.5f, -17.5f), Board.boardButtonDictionary[Board.board.field[rand1.Item1, rand1.Item2 - 1]]);
+                        break;
+                    }
+                    else if (rand2 == 2 && rand1.Item1 < Board.board.field.GetLength(0) - 1 && Board.board.field[rand1.Item1 + 1, rand1.Item2] != 17)
+                    {
+                        Board.board.field[rand1.Item1 + 1, rand1.Item2] = 17;
+                        SpawnShatter(4, 1.0, Board.board.window.LBRegionGroup.regions[rand1.Item2].bigButtons[rand1.Item1 + 1].transform.position + new Vector3(-17.5f, -17.5f), Board.boardButtonDictionary[Board.board.field[rand1.Item1 + 1, rand1.Item2]]);
+                        break;
+                    }
+                    else if (rand2 == 3 && rand1.Item2 < Board.board.field.GetLength(1) - 1 && Board.board.field[rand1.Item1, rand1.Item2 + 1] != 17)
+                    {
+                        Board.board.field[rand1.Item1, rand1.Item2 + 1] = 17;
+                        SpawnShatter(4, 1.0, Board.board.window.LBRegionGroup.regions[rand1.Item2 + 1].bigButtons[rand1.Item1].transform.position + new Vector3(-17.5f, -17.5f), Board.boardButtonDictionary[Board.board.field[rand1.Item1, rand1.Item2 + 1]]);
+                        break;
+                    }
+                }
+            }
+        },
+        (p) => () =>
+        {
+
+        },
+        (p, board) => () =>
+        {
+            var list = new List<(int, int)>();
+            for (int i = 0; i < board.field.GetLength(0); i++)
+                for (int j = 0; j < board.field.GetLength(1); j++)
+                    if (board.field[i, j] == 17)
+                        list.Add((i, j));
+            var newList = list.Select(x => (x.Item1, x.Item2, board.FloodCount(x.Item1, x.Item2).Count)).ToList();
+            if (newList.Count > 0)
+            {
+                if (newList.Max(x => x.Count > 3))
+                    newList.RemoveAll(x => x.Count != 3);
+                else if (newList.Max(x => x.Count > 2))
+                    newList.RemoveAll(x => x.Count < 3);
+                else if (newList.Max(x => x.Count > 1))
+                    newList.RemoveAll(x => x.Count < 2);
+                while (true)
+                {
+                    var rand1 = newList[random.Next(0, newList.Count)];
+                    var rand2 = random.Next(0, 4);
+                    if (rand2 == 0 && rand1.Item1 > 0 && board.field[rand1.Item1 - 1, rand1.Item2] != 17)
+                    {
+                        board.field[rand1.Item1 - 1, rand1.Item2] = 17;
+                        break;
+                    }
+                    else if (rand2 == 1 && rand1.Item2 > 0 && board.field[rand1.Item1, rand1.Item2 - 1] != 17)
+                    {
+                        board.field[rand1.Item1, rand1.Item2 - 1] = 17;
+                        break;
+                    }
+                    else if (rand2 == 2 && rand1.Item1 < board.field.GetLength(0) - 1 && board.field[rand1.Item1 + 1, rand1.Item2] != 17)
+                    {
+                        board.field[rand1.Item1 + 1, rand1.Item2] = 17;
+                        break;
+                    }
+                    else if (rand2 == 3 && rand1.Item2 < board.field.GetLength(1) - 1 && board.field[rand1.Item1, rand1.Item2 + 1] != 17)
+                    {
+                        board.field[rand1.Item1, rand1.Item2 + 1] = 17;
+                        break;
+                    }
+                }
+            }
+        },
+        (p, board) => () =>
+        {
+
+        }),
+        new Buff("Ice Block", "None", new() { "Defensive" }, false, "AbilityIceBlock",
         () =>
         {
             AddHeaderRegion(() =>
@@ -109,7 +220,7 @@ public class Buff
         {
 
         }),
-        new Buff("Hammer Of Justice", "None", 0, new() { "Stun" }, false, "AbilityHammerOfJustice",
+        new Buff("Hammer Of Justice", "None", new() { "Stun" }, false, "AbilityHammerOfJustice",
         () =>
         {
             AddHeaderRegion(() =>
@@ -141,7 +252,39 @@ public class Buff
         {
 
         }),
-        new Buff("Summoned Infernal", "None", 0, new() { }, true, "AbilitySummonInfernal",
+        new Buff("Web Burst", "None", new() { "Stun" }, false, "AbilityWebBurst",
+        () =>
+        {
+            AddHeaderRegion(() =>
+            {
+                AddLine("Target is stunned till the debuff runs out.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+                AddLine("Each point in Frost Mastery adds 1% chance", Gray);
+                AddLine("to refund the cost of casting this spell.", Gray);
+            });
+        },
+        (p) => () =>
+        {
+            if (p) Board.board.enemyFinishedMoving = true;
+            else Board.board.playerFinishedMoving = true;
+        },
+        (p) => () =>
+        {
+
+        },
+        (p, board) => () =>
+        {
+            if (p) board.enemyFinishedMoving = true;
+            else board.playerFinishedMoving = true;
+        },
+        (p, board) => () =>
+        {
+
+        }),
+        new Buff("Summoned Infernal", "None", new() { }, true, "AbilitySummonInfernal",
         () =>
         {
             AddHeaderRegion(() =>
@@ -176,7 +319,7 @@ public class Buff
         {
 
         }),
-        new Buff("Summoned Felhunter", "None", 0, new() { }, true, "AbilitySummonFelhunter",
+        new Buff("Summoned Felhunter", "None", new() { }, true, "AbilitySummonFelhunter",
         () =>
         {
             AddHeaderRegion(() =>
@@ -210,7 +353,7 @@ public class Buff
         {
 
         }),
-        new Buff("Summoned Voidwalker", "None", 0, new() { }, true, "AbilitySummonVoidwalker",
+        new Buff("Summoned Voidwalker", "None", new() { }, true, "AbilitySummonVoidwalker",
         () =>
         {
             AddHeaderRegion(() =>
@@ -244,7 +387,7 @@ public class Buff
         {
 
         }),
-        new Buff("Summoned Imp", "None", 0, new() { }, true, "AbilitySummonImp",
+        new Buff("Summoned Imp", "None", new() { }, true, "AbilitySummonImp",
         () =>
         {
             AddHeaderRegion(() =>
@@ -277,7 +420,7 @@ public class Buff
         {
 
         }),
-        new Buff("Scorch", "None", 0, new() { "Damage" }, false, "AbilityScorch",
+        new Buff("Scorch", "None", new() { "Damage" }, false, "AbilityScorch",
         () =>
         {
             AddHeaderRegion(() =>
@@ -312,7 +455,42 @@ public class Buff
         {
 
         }),
-        new Buff("Corruption", "None", 0, new() { "Damage" }, false, "AbilityCorruption",
+        new Buff("Venomous Bite", "None", new() { "Damage" }, false, "AbilityVenomousBite",
+        () =>
+        {
+            AddHeaderRegion(() =>
+            {
+                AddLine("Target burns for 3 damage every turn.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+                AddLine("Each point in Frost Mastery adds 1% chance", Gray);
+                AddLine("to refund the cost of casting this spell.", Gray);
+            });
+        },
+        (p) => () =>
+        {
+            var target = p ? Board.board.enemy : Board.board.player;
+            target.health -= 4;
+            SpawnShatter(2, 0.8, new Vector3(p ? 148 : -318, 122), "AbilityVenomousBite");
+            PlaySound("AbilityVenomousBiteFlare");
+            animationTime += frameTime * 3;
+        },
+        (p) => () =>
+        {
+
+        },
+        (p, board) => () =>
+        {
+            var target = p ? board.enemy : board.player;
+            target.health -= 4;
+        },
+        (p, board) => () =>
+        {
+
+        }),
+        new Buff("Corruption", "None", new() { "Damage" }, false, "AbilityCorruption",
         () =>
         {
             AddHeaderRegion(() =>
@@ -347,7 +525,7 @@ public class Buff
         {
 
         }),
-        new Buff("Curse Of Agony", "None", 0, new() { "Damage" }, false, "AbilityCurseOfAgony",
+        new Buff("Curse Of Agony", "None", new() { "Damage" }, false, "AbilityCurseOfAgony",
         () =>
         {
             AddHeaderRegion(() =>
@@ -382,7 +560,7 @@ public class Buff
         {
 
         }),
-        new Buff("Shadow Word: Pain", "None", 0, new() { "Damage" }, false, "AbilityShadowWordPain",
+        new Buff("Shadow Word: Pain", "None", new() { "Damage" }, false, "AbilityShadowWordPain",
         () =>
         {
             AddHeaderRegion(() =>
@@ -417,7 +595,7 @@ public class Buff
         {
 
         }),
-        new Buff("Fel Armor", "None", 0, new() { "Defensive" }, false, "AbilityFelArmor",
+        new Buff("Fel Armor", "None", new() { "Defensive" }, false, "AbilityFelArmor",
         () =>
         {
             AddHeaderRegion(() =>
@@ -447,7 +625,7 @@ public class Buff
         {
 
         }),
-        new Buff("Power Word: Shield", "None", 0, new() { "Defensive" }, false, "AbilityPowerWordShield",
+        new Buff("Power Word: Shield", "None", new() { "Defensive" }, false, "AbilityPowerWordShield",
         () =>
         {
             AddHeaderRegion(() =>
@@ -477,7 +655,7 @@ public class Buff
         {
 
         }),
-        new Buff("Demon Skin", "None", 0, new() { "Defensive" }, false, "AbilityDemonSkin",
+        new Buff("Demon Skin", "None", new() { "Defensive" }, false, "AbilityDemonSkin",
         () =>
         {
             AddHeaderRegion(() =>

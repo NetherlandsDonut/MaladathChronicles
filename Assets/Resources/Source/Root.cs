@@ -16,9 +16,6 @@ public static class Root
     public static int screenY = 360;
     public static int shadowSystem = 1;
 
-    public static String testText = new String();
-    public static String testText2 = new String();
-
     public static Cursor cursor;
     public static int inputLineMarker;
     public static System.Random random;
@@ -243,7 +240,13 @@ public static class Root
                 AddSmallButton("Site" + type,
                 (h) =>
                 {
-
+                    var find = SiteHostileArea.hostileAreas.Find(x => x.name == name);
+                    if (find != null)
+                    {
+                        Board.board = new Board(7, 7, find.possibleEncounters[random.Next(0, find.possibleEncounters.Count)].Item1);
+                        SpawnDesktopBlueprint("Game");
+                        SwitchDesktop("Game");
+                    }
                 },
                 (h) => () =>
                 {

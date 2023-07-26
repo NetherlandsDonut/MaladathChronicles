@@ -82,7 +82,7 @@ public class Entity
         {
             health = MaxHealth();
         }
-        actionBars = Ability.abilities.FindAll(x => abilities.Contains(x.name) && x.cost != null).Select(x => x.name).ToList();
+        actionBars = Ability.abilities.FindAll(x => abilities.Contains(x.name) && x.cost != null).Select(x => new ActionBar(x.name)).ToList();
         buffs = new();
         resources = new()
         {
@@ -103,6 +103,8 @@ public class Entity
     {
         return stats.stats["Stamina"] * 20;
     }
+
+    public void Cooldown() => actionBars.ForEach(x => x.cooldown -= x.cooldown == 0 ? 0 : 1);
 
     public void FlareBuffs()
     {
@@ -155,7 +157,8 @@ public class Entity
     public int health, level, unspentTalentPoints, actionBarsUnlocked, experience;
     public string name, race, spec;
     public Dictionary<string, int> resources;
-    public List<string> abilities, actionBars;
+    public List<string> abilities;
+    public List<ActionBar> actionBars;
     public Stats stats;
     public Inventory inventory;
     public Dictionary<string, string> equipment;

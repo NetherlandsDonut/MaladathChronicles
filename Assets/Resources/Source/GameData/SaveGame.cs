@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Diagnostics;
 
 public class SaveGame
 {
@@ -13,7 +12,6 @@ public class SaveGame
             {
 
             });
-        UnityEngine.Debug.Log(player.ExperienceNeededOverall());
     }
 
     public Entity player;

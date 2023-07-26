@@ -11,7 +11,9 @@ public class FutureEntity
         inventory = entity.inventory;
         equipment = entity.equipment;
         stats = entity.stats;
-        actionBars = entity.actionBars;
+        actionBars = new();
+        foreach (var actionBar in entity.actionBars)
+            actionBars.Add(new ActionBar(actionBar.ability, actionBar.cooldown));
         buffs = new();
         foreach (var buff in entity.buffs)
             buffs.Add((buff.Item1, buff.Item2));
@@ -23,7 +25,7 @@ public class FutureEntity
     public int health;
     public string name;
     public Dictionary<string, int> resources;
-    public List<string> actionBars;
+    public List<ActionBar> actionBars;
     public Stats stats;
     public Inventory inventory;
     public Dictionary<string, string> equipment;
@@ -31,11 +33,14 @@ public class FutureEntity
 
     public Dictionary<string, double> ElementImportance(double healthPerc, double otherHealthPerc)
     {
-        var abilities = Ability.abilities.FindAll(x => actionBars.Contains(x.name));
+        var abilities = Ability.abilities.FindAll(x => actionBars.Exists(y => y.ability == x.name));
         double elementCosts = abilities.Sum(x => x.cost.Sum(y => y.Value));
         var sheet = new Dictionary<string, double>();
         foreach (var resource in resources)
-            sheet.Add(resource.Key, abilities.FindAll(x => x.cost.ContainsKey(resource.Key)).Sum(x => x.cost[resource.Key] * AbilityTagModifier(x.tags)) / elementCosts + 0.025);
+        {
+            var amount = abilities.FindAll(x => x.cost.ContainsKey(resource.Key)).Sum(x => x.cost[resource.Key] * AbilityTagModifier(x.tags)) / elementCosts + 0.025;
+            sheet.Add(resource.Key, Root.random.Next(5, 13) / 10.0 * amount);
+        }
         return sheet;
     }
 
@@ -47,10 +52,11 @@ public class FutureEntity
 
     public double AbilityTagModifier(List<string> tags)
     {
-        if (tags.Contains("Damage")) return 2.00;
+        if (tags.Contains("Damage"))    return 2.00;
         if (tags.Contains("Defensive")) return 1.50;
-        if (tags.Contains("Healing")) return 0.75;
-        if (tags.Contains("Stun")) return 1.20;
+        if (tags.Contains("Stun"))      return 1.20;
+        if (tags.Contains("Healing"))   return 0.85;
+        if (tags.Contains("Gathering")) return 0.60;
         return 1.00;
     }
 
@@ -65,6 +71,8 @@ public class FutureEntity
     {
         return stats.stats["Stamina"] * 20;
     }
+
+    public void Cooldown() => actionBars.ForEach(x => x.cooldown -= x.cooldown == 0 ? 0 : 1);
 
     public void FlareBuffs(FutureBoard board)
     {

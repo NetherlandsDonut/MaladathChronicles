@@ -3,6 +3,7 @@
 public class Race
 {
     public int level;
+    public double moneyLoot;
     public string name, faction, portrait;
     public Stats stats;
     public List<string> abilities;
@@ -401,6 +402,784 @@ public class Race
             loot = new()
             {
                 (100, "Witch Doctor Zum'rah Loot")
+            }
+        },
+        new Race
+        {
+            level = 54,
+            name = "Cannibal Ghoul",
+            portrait = "Ghoul",
+            faction = "Neutral",
+            moneyLoot = 0.0454,
+            stats = new Stats(new()
+            {
+                { "Stamina", 3 },
+
+                { "Strength", 10 },
+                { "Agility", 10 },
+                { "Intellect", 10 },
+
+                { "Earth Mastery", 10 },
+                { "Fire Mastery", 10 },
+                { "Air Mastery", 10 },
+                { "Water Mastery", 10 },
+                { "Frost Mastery", 10 },
+                { "Lightning Mastery", 10 },
+                { "Arcane Mastery", 10 },
+                { "Decay Mastery", 10 },
+                { "Shadow Mastery", 10 },
+                { "Order Mastery", 10 },
+            }),
+            abilities = new()
+            {
+                "Corruption",
+                "Curse Of Agony",
+            },
+            loot = new()
+            {
+
+            }
+        },
+        new Race
+        {
+            level = 54,
+            name = "Necromancer",
+            portrait = "Ghoul",
+            faction = "Neutral",
+            moneyLoot = 0.0616,
+            stats = new Stats(new()
+            {
+                { "Stamina", 3 },
+
+                { "Strength", 10 },
+                { "Agility", 10 },
+                { "Intellect", 10 },
+
+                { "Earth Mastery", 10 },
+                { "Fire Mastery", 10 },
+                { "Air Mastery", 10 },
+                { "Water Mastery", 10 },
+                { "Frost Mastery", 10 },
+                { "Lightning Mastery", 10 },
+                { "Arcane Mastery", 10 },
+                { "Decay Mastery", 10 },
+                { "Shadow Mastery", 10 },
+                { "Order Mastery", 10 },
+            }),
+            abilities = new()
+            {
+                "Corruption",
+                "Curse Of Agony",
+            },
+            loot = new()
+            {
+
+            }
+        },
+        new Race
+        {
+            level = 54,
+            name = "Cursed Mage",
+            portrait = "Ghoul",
+            faction = "Neutral",
+            moneyLoot = 0.0616,
+            stats = new Stats(new()
+            {
+                { "Stamina", 3 },
+
+                { "Strength", 10 },
+                { "Agility", 10 },
+                { "Intellect", 10 },
+
+                { "Earth Mastery", 10 },
+                { "Fire Mastery", 10 },
+                { "Air Mastery", 10 },
+                { "Water Mastery", 10 },
+                { "Frost Mastery", 10 },
+                { "Lightning Mastery", 10 },
+                { "Arcane Mastery", 10 },
+                { "Decay Mastery", 10 },
+                { "Shadow Mastery", 10 },
+                { "Order Mastery", 10 },
+            }),
+            abilities = new()
+            {
+                "Corruption",
+                "Curse Of Agony",
+            },
+            loot = new()
+            {
+
+            }
+        },
+        new Race
+        {
+            level = 54,
+            name = "Rotting Sludge",
+            portrait = "Ghoul",
+            faction = "Neutral",
+            moneyLoot = 0.0616,
+            stats = new Stats(new()
+            {
+                { "Stamina", 3 },
+
+                { "Strength", 10 },
+                { "Agility", 10 },
+                { "Intellect", 10 },
+
+                { "Earth Mastery", 10 },
+                { "Fire Mastery", 10 },
+                { "Air Mastery", 10 },
+                { "Water Mastery", 10 },
+                { "Frost Mastery", 10 },
+                { "Lightning Mastery", 10 },
+                { "Arcane Mastery", 10 },
+                { "Decay Mastery", 10 },
+                { "Shadow Mastery", 10 },
+                { "Order Mastery", 10 },
+            }),
+            abilities = new()
+            {
+                "Corruption",
+                "Curse Of Agony",
+            },
+            loot = new()
+            {
+
+            }
+        },
+        new Race
+        {
+            level = 54,
+            name = "Scarlet Cleric",
+            portrait = "Ghoul",
+            faction = "Neutral",
+            moneyLoot = 0.1343,
+            stats = new Stats(new()
+            {
+                { "Stamina", 3 },
+
+                { "Strength", 10 },
+                { "Agility", 10 },
+                { "Intellect", 10 },
+
+                { "Earth Mastery", 10 },
+                { "Fire Mastery", 10 },
+                { "Air Mastery", 10 },
+                { "Water Mastery", 10 },
+                { "Frost Mastery", 10 },
+                { "Lightning Mastery", 10 },
+                { "Arcane Mastery", 10 },
+                { "Decay Mastery", 10 },
+                { "Shadow Mastery", 10 },
+                { "Order Mastery", 10 },
+            }),
+            abilities = new()
+            {
+                "Corruption",
+                "Curse Of Agony",
+            },
+            loot = new()
+            {
+
+            }
+        },
+        new Race
+        {
+            level = 53,
+            name = "Scourge Soldier",
+            portrait = "SkeletalWarrior",
+            faction = "Neutral",
+            moneyLoot = 0.0430,
+            stats = new Stats(new()
+            {
+                { "Stamina", 3 },
+
+                { "Strength", 10 },
+                { "Agility", 10 },
+                { "Intellect", 10 },
+
+                { "Earth Mastery", 10 },
+                { "Fire Mastery", 10 },
+                { "Air Mastery", 10 },
+                { "Water Mastery", 10 },
+                { "Frost Mastery", 10 },
+                { "Lightning Mastery", 10 },
+                { "Arcane Mastery", 10 },
+                { "Decay Mastery", 10 },
+                { "Shadow Mastery", 10 },
+                { "Order Mastery", 10 },
+            }),
+            abilities = new()
+            {
+                "Corruption",
+                "Curse Of Agony",
+            },
+            loot = new()
+            {
+
+            }
+        },
+        new Race
+        {
+            level = 54,
+            name = "Putrid Gargoyle",
+            portrait = "Gargoyle",
+            faction = "Neutral",
+            stats = new Stats(new()
+            {
+                { "Stamina", 3 },
+
+                { "Strength", 10 },
+                { "Agility", 10 },
+                { "Intellect", 10 },
+
+                { "Earth Mastery", 10 },
+                { "Fire Mastery", 10 },
+                { "Air Mastery", 10 },
+                { "Water Mastery", 10 },
+                { "Frost Mastery", 10 },
+                { "Lightning Mastery", 10 },
+                { "Arcane Mastery", 10 },
+                { "Decay Mastery", 10 },
+                { "Shadow Mastery", 10 },
+                { "Order Mastery", 10 },
+            }),
+            abilities = new()
+            {
+                "Corruption",
+                "Curse Of Agony",
+            },
+            loot = new()
+            {
+
+            }
+        },
+        new Race
+        {
+            level = 54,
+            name = "Scourge Warder",
+            portrait = "SkeletalWarrior",
+            faction = "Neutral",
+            stats = new Stats(new()
+            {
+                { "Stamina", 3 },
+
+                { "Strength", 10 },
+                { "Agility", 10 },
+                { "Intellect", 10 },
+
+                { "Earth Mastery", 10 },
+                { "Fire Mastery", 10 },
+                { "Air Mastery", 10 },
+                { "Water Mastery", 10 },
+                { "Frost Mastery", 10 },
+                { "Lightning Mastery", 10 },
+                { "Arcane Mastery", 10 },
+                { "Decay Mastery", 10 },
+                { "Shadow Mastery", 10 },
+                { "Order Mastery", 10 },
+            }),
+            abilities = new()
+            {
+                "Corruption",
+                "Curse Of Agony",
+            },
+            loot = new()
+            {
+
+            }
+        },
+        new Race
+        {
+            level = 54,
+            name = "Noxious Plaguebat",
+            portrait = "Plaguebat",
+            faction = "Neutral",
+            stats = new Stats(new()
+            {
+                { "Stamina", 3 },
+
+                { "Strength", 10 },
+                { "Agility", 10 },
+                { "Intellect", 10 },
+
+                { "Earth Mastery", 10 },
+                { "Fire Mastery", 10 },
+                { "Air Mastery", 10 },
+                { "Water Mastery", 10 },
+                { "Frost Mastery", 10 },
+                { "Lightning Mastery", 10 },
+                { "Arcane Mastery", 10 },
+                { "Decay Mastery", 10 },
+                { "Shadow Mastery", 10 },
+                { "Order Mastery", 10 },
+            }),
+            abilities = new()
+            {
+                "Corruption",
+                "Curse Of Agony",
+            },
+            loot = new()
+            {
+
+            }
+        },
+        new Race
+        {
+            level = 53,
+            name = "Death Cultist",
+            portrait = "SkeletalWarrior",
+            faction = "Neutral",
+            stats = new Stats(new()
+            {
+                { "Stamina", 3 },
+
+                { "Strength", 10 },
+                { "Agility", 10 },
+                { "Intellect", 10 },
+
+                { "Earth Mastery", 10 },
+                { "Fire Mastery", 10 },
+                { "Air Mastery", 10 },
+                { "Water Mastery", 10 },
+                { "Frost Mastery", 10 },
+                { "Lightning Mastery", 10 },
+                { "Arcane Mastery", 10 },
+                { "Decay Mastery", 10 },
+                { "Shadow Mastery", 10 },
+                { "Order Mastery", 10 },
+            }),
+            abilities = new()
+            {
+                "Corruption",
+                "Curse Of Agony",
+            },
+            loot = new()
+            {
+
+            }
+        },
+        new Race
+        {
+            level = 53,
+            name = "Plaguehound Runt",
+            portrait = "Plaguehound",
+            faction = "Neutral",
+            stats = new Stats(new()
+            {
+                { "Stamina", 3 },
+
+                { "Strength", 10 },
+                { "Agility", 10 },
+                { "Intellect", 10 },
+
+                { "Earth Mastery", 10 },
+                { "Fire Mastery", 10 },
+                { "Air Mastery", 10 },
+                { "Water Mastery", 10 },
+                { "Frost Mastery", 10 },
+                { "Lightning Mastery", 10 },
+                { "Arcane Mastery", 10 },
+                { "Decay Mastery", 10 },
+                { "Shadow Mastery", 10 },
+                { "Order Mastery", 10 },
+            }),
+            abilities = new()
+            {
+                "Corruption",
+                "Curse Of Agony",
+            },
+            loot = new()
+            {
+
+            }
+        },
+        new Race
+        {
+            level = 53,
+            name = "Torn Screamer",
+            portrait = "Banshee",
+            faction = "Neutral",
+            stats = new Stats(new()
+            {
+                { "Stamina", 3 },
+
+                { "Strength", 10 },
+                { "Agility", 10 },
+                { "Intellect", 10 },
+
+                { "Earth Mastery", 10 },
+                { "Fire Mastery", 10 },
+                { "Air Mastery", 10 },
+                { "Water Mastery", 10 },
+                { "Frost Mastery", 10 },
+                { "Lightning Mastery", 10 },
+                { "Arcane Mastery", 10 },
+                { "Decay Mastery", 10 },
+                { "Shadow Mastery", 10 },
+                { "Order Mastery", 10 },
+            }),
+            abilities = new()
+            {
+                "Corruption",
+                "Curse Of Agony",
+            },
+            loot = new()
+            {
+
+            }
+        },
+        new Race
+        {
+            level = 53,
+            name = "Scarlet Warder",
+            portrait = "Banshee",
+            faction = "Neutral",
+            stats = new Stats(new()
+            {
+                { "Stamina", 3 },
+
+                { "Strength", 10 },
+                { "Agility", 10 },
+                { "Intellect", 10 },
+
+                { "Earth Mastery", 10 },
+                { "Fire Mastery", 10 },
+                { "Air Mastery", 10 },
+                { "Water Mastery", 10 },
+                { "Frost Mastery", 10 },
+                { "Lightning Mastery", 10 },
+                { "Arcane Mastery", 10 },
+                { "Decay Mastery", 10 },
+                { "Shadow Mastery", 10 },
+                { "Order Mastery", 10 },
+            }),
+            abilities = new()
+            {
+                "Corruption",
+                "Curse Of Agony",
+            },
+            loot = new()
+            {
+
+            }
+        },
+        new Race
+        {
+            level = 53,
+            name = "Scarlet Enchanter",
+            portrait = "Banshee",
+            faction = "Neutral",
+            stats = new Stats(new()
+            {
+                { "Stamina", 3 },
+
+                { "Strength", 10 },
+                { "Agility", 10 },
+                { "Intellect", 10 },
+
+                { "Earth Mastery", 10 },
+                { "Fire Mastery", 10 },
+                { "Air Mastery", 10 },
+                { "Water Mastery", 10 },
+                { "Frost Mastery", 10 },
+                { "Lightning Mastery", 10 },
+                { "Arcane Mastery", 10 },
+                { "Decay Mastery", 10 },
+                { "Shadow Mastery", 10 },
+                { "Order Mastery", 10 },
+            }),
+            abilities = new()
+            {
+                "Corruption",
+                "Curse Of Agony",
+            },
+            loot = new()
+            {
+
+            }
+        },
+        new Race
+        {
+            level = 55,
+            name = "Dark Summoner",
+            portrait = "CryptFiend",
+            faction = "Neutral",
+            stats = new Stats(new()
+            {
+                { "Stamina", 3 },
+
+                { "Strength", 10 },
+                { "Agility", 10 },
+                { "Intellect", 10 },
+
+                { "Earth Mastery", 10 },
+                { "Fire Mastery", 10 },
+                { "Air Mastery", 10 },
+                { "Water Mastery", 10 },
+                { "Frost Mastery", 10 },
+                { "Lightning Mastery", 10 },
+                { "Arcane Mastery", 10 },
+                { "Decay Mastery", 10 },
+                { "Shadow Mastery", 10 },
+                { "Order Mastery", 10 },
+            }),
+            abilities = new()
+            {
+                "Corruption",
+                "Curse Of Agony",
+            },
+            loot = new()
+            {
+
+            }
+        },
+        new Race
+        {
+            level = 55,
+            name = "Living Decay",
+            portrait = "CryptFiend",
+            faction = "Neutral",
+            stats = new Stats(new()
+            {
+                { "Stamina", 3 },
+
+                { "Strength", 10 },
+                { "Agility", 10 },
+                { "Intellect", 10 },
+
+                { "Earth Mastery", 10 },
+                { "Fire Mastery", 10 },
+                { "Air Mastery", 10 },
+                { "Water Mastery", 10 },
+                { "Frost Mastery", 10 },
+                { "Lightning Mastery", 10 },
+                { "Arcane Mastery", 10 },
+                { "Decay Mastery", 10 },
+                { "Shadow Mastery", 10 },
+                { "Order Mastery", 10 },
+            }),
+            abilities = new()
+            {
+                "Corruption",
+                "Curse Of Agony",
+            },
+            loot = new()
+            {
+
+            }
+        },
+        new Race
+        {
+            level = 54,
+            name = "Blighted Surge",
+            portrait = "CryptFiend",
+            faction = "Neutral",
+            stats = new Stats(new()
+            {
+                { "Stamina", 3 },
+
+                { "Strength", 10 },
+                { "Agility", 10 },
+                { "Intellect", 10 },
+
+                { "Earth Mastery", 10 },
+                { "Fire Mastery", 10 },
+                { "Air Mastery", 10 },
+                { "Water Mastery", 10 },
+                { "Frost Mastery", 10 },
+                { "Lightning Mastery", 10 },
+                { "Arcane Mastery", 10 },
+                { "Decay Mastery", 10 },
+                { "Shadow Mastery", 10 },
+                { "Order Mastery", 10 },
+            }),
+            abilities = new()
+            {
+                "Corruption",
+                "Curse Of Agony",
+            },
+            loot = new()
+            {
+
+            }
+        },
+        new Race
+        {
+            level = 55,
+            name = "Plague Ravager",
+            portrait = "CryptFiend",
+            faction = "Neutral",
+            stats = new Stats(new()
+            {
+                { "Stamina", 3 },
+
+                { "Strength", 10 },
+                { "Agility", 10 },
+                { "Intellect", 10 },
+
+                { "Earth Mastery", 10 },
+                { "Fire Mastery", 10 },
+                { "Air Mastery", 10 },
+                { "Water Mastery", 10 },
+                { "Frost Mastery", 10 },
+                { "Lightning Mastery", 10 },
+                { "Arcane Mastery", 10 },
+                { "Decay Mastery", 10 },
+                { "Shadow Mastery", 10 },
+                { "Order Mastery", 10 },
+            }),
+            abilities = new()
+            {
+                "Corruption",
+                "Curse Of Agony",
+            },
+            loot = new()
+            {
+
+            }
+        },
+        new Race
+        {
+            level = 53,
+            name = "Crypt Fiend",
+            portrait = "CryptFiend",
+            faction = "Neutral",
+            stats = new Stats(new()
+            {
+                { "Stamina", 3 },
+
+                { "Strength", 10 },
+                { "Agility", 10 },
+                { "Intellect", 10 },
+
+                { "Earth Mastery", 10 },
+                { "Fire Mastery", 10 },
+                { "Air Mastery", 10 },
+                { "Water Mastery", 10 },
+                { "Frost Mastery", 10 },
+                { "Lightning Mastery", 10 },
+                { "Arcane Mastery", 10 },
+                { "Decay Mastery", 10 },
+                { "Shadow Mastery", 10 },
+                { "Order Mastery", 10 },
+            }),
+            abilities = new()
+            {
+                "Venomous Bite",
+                "Poison Cloud",
+                "Web Burst",
+            },
+            loot = new()
+            {
+
+            }
+        },
+        new Race
+        {
+            level = 55,
+            name = "Crypt Walker",
+            portrait = "CryptFiend",
+            faction = "Neutral",
+            stats = new Stats(new()
+            {
+                { "Stamina", 3 },
+
+                { "Strength", 10 },
+                { "Agility", 10 },
+                { "Intellect", 10 },
+
+                { "Earth Mastery", 10 },
+                { "Fire Mastery", 10 },
+                { "Air Mastery", 10 },
+                { "Water Mastery", 10 },
+                { "Frost Mastery", 10 },
+                { "Lightning Mastery", 10 },
+                { "Arcane Mastery", 10 },
+                { "Decay Mastery", 10 },
+                { "Shadow Mastery", 10 },
+                { "Order Mastery", 10 },
+            }),
+            abilities = new()
+            {
+                "Venomous Bite",
+                "Poison Cloud",
+                "Web Burst",
+            },
+            loot = new()
+            {
+
+            }
+        },
+        new Race
+        {
+            level = 55,
+            name = "Plaguehound",
+            portrait = "CryptFiend",
+            faction = "Neutral",
+            stats = new Stats(new()
+            {
+                { "Stamina", 3 },
+
+                { "Strength", 10 },
+                { "Agility", 10 },
+                { "Intellect", 10 },
+
+                { "Earth Mastery", 10 },
+                { "Fire Mastery", 10 },
+                { "Air Mastery", 10 },
+                { "Water Mastery", 10 },
+                { "Frost Mastery", 10 },
+                { "Lightning Mastery", 10 },
+                { "Arcane Mastery", 10 },
+                { "Decay Mastery", 10 },
+                { "Shadow Mastery", 10 },
+                { "Order Mastery", 10 },
+            }),
+            abilities = new()
+            {
+                "Corruption",
+                "Curse Of Agony",
+            },
+            loot = new()
+            {
+
+            }
+        },
+        new Race
+        {
+            level = 53,
+            name = "Plaguebat",
+            portrait = "CryptFiend",
+            faction = "Neutral",
+            stats = new Stats(new()
+            {
+                { "Stamina", 3 },
+
+                { "Strength", 10 },
+                { "Agility", 10 },
+                { "Intellect", 10 },
+
+                { "Earth Mastery", 10 },
+                { "Fire Mastery", 10 },
+                { "Air Mastery", 10 },
+                { "Water Mastery", 10 },
+                { "Frost Mastery", 10 },
+                { "Lightning Mastery", 10 },
+                { "Arcane Mastery", 10 },
+                { "Decay Mastery", 10 },
+                { "Shadow Mastery", 10 },
+                { "Order Mastery", 10 },
+            }),
+            abilities = new()
+            {
+                "Corruption",
+                "Curse Of Agony",
+            },
+            loot = new()
+            {
+
             }
         }
     };

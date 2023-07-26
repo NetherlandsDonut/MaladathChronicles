@@ -39,6 +39,7 @@ public class InputText : MonoBehaviour
         newCharacter.transform.parent = transform;
         newCharacter.transform.localPosition = new Vector3(offset, 0, 0.2f);
         var glyph = GetGlyph(character);
+        newCharacter.GetComponent<SpriteRenderer>().sortingLayerName = inputLine.region.regionGroup.window.layer;
         newCharacter.GetComponent<SpriteRenderer>().sprite = glyph;
         newCharacter.GetComponent<SpriteRenderer>().color = GetColor(character + "" == markerCharacter ? Gray : LightGray);
         if (character + "" == markerCharacter) newCharacter.AddComponent<Blinking>();
