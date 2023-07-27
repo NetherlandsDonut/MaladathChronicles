@@ -352,10 +352,10 @@ public class Ability
             var caster = p ? Board.board.player : Board.board.enemy;
             Board.board.actions.Add(() =>
             {
-                caster.AddBuff("Poison Cloud", 10, SpawnShatterBuff(2, 0.8, new Vector3(!p ? 148 : -318, 122), "AbilityPoisonCloud", caster));
-                SpawnShatter(6, 0.7, new Vector3(!p ? 148 : -318, 122), "AbilityPoisonCloud", true, !p ? "1000" : "1001");
-                SpawnShatter(6, 0.7, new Vector3(!p ? 148 : -318, 122), "AbilityPoisonCloud", true, !p ? "1000" : "1001");
-                PlaySound("AbilityPoisonCloudCast");
+                caster.AddBuff("Poison Cloud", 10, SpawnShatterBuff(2, 0.8, new Vector3(!p ? 148 : -318, 122), "AbilityWitheringCloud", caster));
+                SpawnShatter(6, 0.7, new Vector3(!p ? 148 : -318, 122), "AbilityWitheringCloud", true, !p ? "1000" : "1001");
+                SpawnShatter(6, 0.7, new Vector3(!p ? 148 : -318, 122), "AbilityWitheringCloud", true, !p ? "1000" : "1001");
+                PlaySound("AbilityWitheringCloudCast");
             });
             CDesktop.LockScreen();
         },

@@ -44,7 +44,6 @@ public class Board
             cursorEnemy.fadeIn = true;
             playerTurn = false;
             playerFinishedMoving = false;
-            board.actions.Add(() => { animationTime += frameTime * 3; });
             enemy.Cooldown();
             enemy.FlareBuffs();
         }
@@ -53,7 +52,6 @@ public class Board
             cursorEnemy.fadeOut = true;
             playerTurn = true;
             enemyFinishedMoving = false;
-            board.actions.Add(() => { animationTime += frameTime * 3; });
             player.Cooldown();
             player.FlareBuffs();
         }
@@ -86,7 +84,8 @@ public class Board
         //SPAWN NEW ELEMENTS ON TOP OF THE BOARD
         for (int i = 0; i < field.GetLength(0); i++)
             if (field[i, 0] == 0)
-                field[i, 0] = random.Next(11, 21);
+                do field[i, 0] = random.Next(11, 21);
+                while (FloodCount(i, 0).Count >= 3);
 
         //IF BOARD NEEDS TO FILLED UP DON'T DO ANY FURTHER STEPS AND RETURN TO BEGINNING
         for (int j = field.GetLength(1) - 1; j >= 0; j--)
@@ -203,8 +202,8 @@ public class Board
                     var actionBar = enemy.actionBars.Find(x => x.ability == bestMove.ability);
                     board.actions.Add(() =>
                     {
-                        cursorEnemy.Move(CDesktop.globalRegions["EnemyActionBar" + enemy.actionBars.IndexOf(actionBar)].transform.position + new Vector3(120, -8));
-                        animationTime += frameTime * 8;
+                        cursorEnemy.Move(CDesktop.globalRegions["EnemyActionBar" + enemy.actionBars.IndexOf(actionBar)].transform.position + new Vector3(139, -10));
+                        animationTime += frameTime * 9;
                     });
                     board.actions.Add(() => { cursorEnemy.SetCursor(CursorType.Click); });
                     board.actions.Add(() =>
@@ -219,7 +218,7 @@ public class Board
                 }
                 else
                 {
-                    board.actions.Add(() => { cursorEnemy.Move(window.LBRegionGroup.regions[bestMove.y].bigButtons[bestMove.x].transform.position); animationTime += frameTime * 8; });
+                    board.actions.Add(() => { cursorEnemy.Move(window.LBRegionGroup.regions[bestMove.y].bigButtons[bestMove.x].transform.position); animationTime += frameTime * 9; });
                     board.actions.Add(() => { cursorEnemy.SetCursor(CursorType.Click); });
                     board.actions.Add(() =>
                     {

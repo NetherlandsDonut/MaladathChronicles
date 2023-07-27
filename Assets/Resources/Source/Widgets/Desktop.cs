@@ -99,10 +99,10 @@ public class Desktop : MonoBehaviour
             var amount = new Vector3(titleScreenCameraDirection < 2 ? -1f : 1f, titleScreenCameraDirection > 2 ? -1f : (titleScreenCameraDirection < 1 ? -1f : 1f));
             screen.transform.localPosition += amount;
             cursor.transform.localPosition += amount;
-            if (Math.Abs(screen.transform.localPosition.x - 1500) > 750 && screen.transform.localPosition.x < 3381 || Math.Abs(screen.transform.localPosition.x - 5167) > 750 && screen.transform.localPosition.x > 3381)
+            if (Math.Abs(screen.transform.localPosition.x - 1762) > 750 && screen.transform.localPosition.x < 3774 || Math.Abs(screen.transform.localPosition.x - 5374) > 750 && screen.transform.localPosition.x >= 3774)
             {
                 titleScreenCameraDirection = random.Next(0, 4);
-                screen.transform.localPosition = new Vector3(random.Next(0, 2) == 0 ? 1500 : 5167, random.Next(-3690, -1100));
+                screen.transform.localPosition = new Vector3(random.Next(0, 2) == 0 ? 1762 : 5374, random.Next(-3683, -1567));
             }
         }
         if (screenLocked)

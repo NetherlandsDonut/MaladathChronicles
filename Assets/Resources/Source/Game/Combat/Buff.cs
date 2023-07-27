@@ -75,7 +75,7 @@ public class Buff
         {
 
         }),
-        new Buff("Poison Cloud", "None", new() { "Gathering" }, false, "AbilityPoisonCloud",
+        new Buff("Poison Cloud", "None", new() { "Gathering" }, false, "AbilityWitheringCloud",
         () =>
         {
             AddHeaderRegion(() =>
@@ -99,7 +99,7 @@ public class Buff
             var newList = list.Select(x => (x.Item1, x.Item2, Board.board.FloodCount(x.Item1, x.Item2).Count)).ToList();
             if (newList.Count > 0)
             {
-                Board.board.actions.Add(() => { PlaySound("AbilityPoisonCloudFlare"); });
+                Board.board.actions.Add(() => { PlaySound("AbilityWitheringCloudFlare"); });
                 if (newList.Max(x => x.Count > 3))
                     newList.RemoveAll(x => x.Count != 3);
                 else if (newList.Max(x => x.Count > 2))

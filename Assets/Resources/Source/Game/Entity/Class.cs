@@ -261,7 +261,6 @@ public class Class
                 ("Staff Proficiency", 1),
                 ("Wand Proficiency", 1),
                 ("Cloth Proficiency", 1),
-                ("Summon Infernal", 1),
             },
             new List<TalentTree>
             {
@@ -318,8 +317,6 @@ public class Class
                 ("Staff Proficiency", 1),
                 ("Wand Proficiency", 1),
                 ("Cloth Proficiency", 1),
-                ("Hammer Of Justice", 1),
-                ("Poison Cloud", 1),
             },
             new List<TalentTree>
             {
@@ -338,7 +335,7 @@ public class Class
                     new Talent(04, 2, "Flame Patch", true),
                     new Talent(05, 0, "Pyroclasm", true),
                     new Talent(05, 1, "Firemind"),
-                    new Talent(05, 2, "Dragon\'s Breath"),
+                    new Talent(05, 2, "Dragon's Breath"),
                     new Talent(06, 1, "Blast Wave"),
                     new Talent(06, 2, "Conflagration", true),
                     new Talent(07, 1, "Combustion"),
@@ -349,7 +346,7 @@ public class Class
                     new Talent(09, 1, "Hyperthermia", true),
                     new Talent(10, 0, "Meteor"),
                     new Talent(10, 1, "Deep Impact"),
-                    new Talent(10, 2, "Sun King\'s Blessing", true),
+                    new Talent(10, 2, "Sun King's Blessing", true),
                 }),
                 new TalentTree("Frost", new List<Talent>
                 {
