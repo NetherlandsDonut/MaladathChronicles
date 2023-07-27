@@ -435,7 +435,7 @@ public class Blueprint
                             AddLine("", LightGray);
                         });
                     }
-                );
+                , -1, "EnemyActionBar" + Board.board.enemy.actionBars.IndexOf(actionBar));
             }
         }),
         new("JourneyInfo", () => {

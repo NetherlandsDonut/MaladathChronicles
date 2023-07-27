@@ -13,6 +13,7 @@ public class Starter : MonoBehaviour
         desktops = new();
         String.consoleInput.Set(">");
         cursor = FindObjectOfType<Cursor>();
+        cursorEnemy = FindObjectOfType<CursorRemote>();
         settings = new GameSettings();
         saveGames = new List<SaveGame>();
         var temp = FindObjectsByType<WindowAnchorRemote>(FindObjectsSortMode.None);

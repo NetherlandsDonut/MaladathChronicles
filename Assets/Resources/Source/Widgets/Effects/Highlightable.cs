@@ -35,8 +35,7 @@ public class Highlightable : MonoBehaviour
             if (window == null) transform.parent.GetComponent<Desktop>().SetTooltip(FindTooltip());
             else window.desktop.SetTooltip(FindTooltip());
         if (GetComponent<InputCharacter>() != null) cursor.SetCursor(Write);
-        if (!pressed || !windowHandle)
-            render.color -= new UnityEngine.Color(0.1f, 0.1f, 0.1f, 0);
+        render.color -= new UnityEngine.Color(0.1f, 0.1f, 0.1f, 0);
     }
 
     public void OnMouseExit()
@@ -50,8 +49,8 @@ public class Highlightable : MonoBehaviour
                 else (window == null ? transform.parent.GetComponent<Desktop>() : window.desktop).tooltip = null;
             }
         }
-        if (!pressed && !windowHandle) cursor.SetCursor(Default);
-        if (!pressed || !windowHandle) render.color += new UnityEngine.Color(0.1f, 0.1f, 0.1f, 0);
+        if (!pressed) cursor.SetCursor(Default);
+        render.color += new UnityEngine.Color(0.1f, 0.1f, 0.1f, 0);
     }
 
     public void OnMouseDown()
@@ -70,11 +69,9 @@ public class Highlightable : MonoBehaviour
             if (window.desktop.FocusedWindow() != window)
                 window.desktop.Focus(window);
         }
+        cursor.SetCursor(Click);
         if (windowHandle)
-        {
-            cursor.SetCursor(Click);
             window.dragOffset = window.transform.position - window.desktop.screen.ScreenToWorldPoint(new Vector2(Input.mousePosition.x, Input.mousePosition.y)) + window.desktop.transform.position;
-        }
         render.color -= new UnityEngine.Color(0.1f, 0.1f, 0.1f, 0);
     }
 
@@ -89,9 +86,9 @@ public class Highlightable : MonoBehaviour
     public void OnMouseDrag()
     {
         if (cursor.render.sprite == null) return;
+        cursor.SetCursor(Click);
         if (windowHandle)
         {
-            cursor.SetCursor(Click);
             var curScreenSpace = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
             var curPosition = (Vector2)CDesktop.screen.ScreenToWorldPoint(curScreenSpace) + window.dragOffset;
             var t = window.transform;

@@ -17,6 +17,7 @@ public static class Root
     public static int shadowSystem = 1;
 
     public static Cursor cursor;
+    public static CursorRemote cursorEnemy;
     public static int inputLineMarker;
     public static System.Random random;
     public static int keyStack;
@@ -630,6 +631,20 @@ public static class Root
         if (id != "") MarkRegionGlobal(id);
     }
 
+    public static void AddRegionOverlay(Region onWhat, string overlay, float time = 0)
+    {
+        var newObject = new GameObject("RegionOverlay", typeof(SpriteRenderer));
+        newObject.transform.parent = onWhat.transform;
+        newObject.transform.localPosition = onWhat.background.transform.localPosition - new Vector3(0, 0, 0.1f);
+        newObject.transform.localScale = onWhat.background.transform.localScale - new Vector3(19 * onWhat.smallButtons.Count, 0);
+        newObject.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/Backgrounds/" + overlay);
+        if (time > 0)
+        {
+            newObject.AddComponent<Shatter>().render = newObject.GetComponent<SpriteRenderer>();
+            newObject.GetComponent<Shatter>().Initiate(time);
+        }
+    }
+
     public static void AddHandleRegion(Action draw, int insert = -1, string id = "")
     {
         AddRegion(Handle, draw, (h) => { }, null, insert, id);
@@ -726,7 +741,7 @@ public static class Root
 
     public static void AddSmallButtonOverlay(GameObject onWhat, string overlay, float time = 0)
     {
-        var newObject = new GameObject("SmallButtonGrid", typeof(SpriteRenderer));
+        var newObject = new GameObject("SmallButtonOverlay", typeof(SpriteRenderer));
         newObject.transform.parent = onWhat.transform;
         newObject.transform.localPosition = Vector3.zero;
         newObject.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/Buttons/" + overlay);
