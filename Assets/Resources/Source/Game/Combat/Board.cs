@@ -6,16 +6,15 @@ using System.Collections.Generic;
 using static Race;
 using static Root;
 
-
 public class Board
 {
-    public Board(int x, int y, string enemy)
+    public Board(int x, int y, Entity enemy)
     {
         bonusTurnStreak = 0;
         field = new int[x, y];
         player = currentSave.player;
         player.Initialise(false);
-        this.enemy = new Entity(races.Find(x => x.name == enemy));
+        this.enemy = enemy;
         playerTurn = true;
         temporaryElementsPlayer = new();
         temporaryElementsEnemy = new();
@@ -151,51 +150,65 @@ public class Board
                 bonusTurnStreak = 0;
                 temporaryElementsEnemy = new();
 
-                //GET ALL POSSIBLE MOVES AND WHAT HAPPENS AFTER THEM THAT IS PREDICTABLE
-                var differentFloodings = new List<(int, int, List<(int, int, int)>)>();
-                for (int i = 0; i < field.GetLength(0); i++)
-                    for (int j = 0; j < field.GetLength(1); j++)
-                    {
-                        var list2 = board.FloodCount(i, j);
-                        if (!differentFloodings.Exists(x => x.Item3.All(y => list2.Contains((y.Item1, y.Item2, y.Item3)))))
-                            differentFloodings.Add((i, j, list2));
-                    }
-                var newBoard = new FutureBoard(board);
-                newBoard.enemyFinishedMoving = true;
-                var baseDesiredness = newBoard.Desiredness(newBoard.enemy, enemy, newBoard.player, player);
-                var possibleMoves = new List<FutureMove>();
-                var abilities = enemy.actionBars.Select(x => Ability.abilities.Find(y => y.name == x.ability));
-                foreach (var ability in abilities)
-                    if (newBoard.enemy.actionBars.Find(x => x.ability == ability.name).cooldown == 0 && ability.EnoughResources(enemy))
-                    {
-                        newBoard = new FutureBoard(board);
-                        possibleMoves.Add(new FutureMove(ability.name, newBoard));
-                        newBoard.enemy.actionBars.Find(x => x.ability == ability.name).cooldown = ability.cooldown;
-                        ability.futureEffects(false, newBoard);
-                        newBoard.enemy.DetractResources(ability.cost);
-                        while (!newBoard.finishedAnimation)
-                            newBoard.AnimateBoard();
-                    }
-                foreach (var flooding in differentFloodings)
+                //CALCULATE SOLVINGS
+                var firstLayerBase = new FutureBoard(board);
+                var firstLayer = firstLayerBase.CalculateLayer().OrderByDescending(x => x.MaxDesiredness(firstLayerBase)).ToList();
+                firstLayerBase.enemyFinishedMoving = true;
+                var baseDesiredness = firstLayerBase.Desiredness();
+                firstLayerBase.enemyFinishedMoving = false;
+                var currentLayer = firstLayer;
+                firstLayer.ForEach(x => x.depth = aiDepth);
+                while (true)
                 {
-                    newBoard = new FutureBoard(board);
-                    possibleMoves.Add(new FutureMove(flooding.Item1, flooding.Item2, newBoard));
-                    newBoard.FloodDestroy(flooding.Item3);
-                    newBoard.enemyFinishedMoving = true;
-                    while (!newBoard.finishedAnimation)
-                        newBoard.AnimateBoard();
+                    foreach (var solving in currentLayer)
+                    {
+                        solving.possibleSolves = solving.board.CalculateLayer();
+                        foreach (var innerSolving in solving.possibleSolves)
+                            if (innerSolving.depth > -1)
+                                innerSolving.depth = solving.depth - (solving.board.TurnEnded() ? 1 : 0);
+                    }
+                    currentLayer = currentLayer.SelectMany(x => x.possibleSolves.FindAll(y => y.depth > 0)).ToList();
+                    if (currentLayer.Count == 0) break;
                 }
-                possibleMoves = possibleMoves.OrderByDescending(x => x.Desiredness(board, baseDesiredness)).ToList();
-                var message = "";
-                foreach (var move in possibleMoves)
+                var results = new List<(FutureMove, double)>();
+                foreach (var solving in firstLayer)
+                    results.Add((solving, solving.MaxDesiredness(firstLayerBase, baseDesiredness)));
+                results = results.OrderByDescending(x => x.Item2).ToList();
+
+                var message = ""; 
+                foreach (var solving1 in firstLayer)
                 {
-                    var resourceChange = 0;
-                    foreach (var resource in move.board.enemy.resources)
-                        resourceChange += resource.Value - board.enemy.resources[resource.Key];
-                    message += move.desiredness.ToString("0.000") + (move.x != -1 ? " (" + boardNameDictionary[board.field[move.x, move.y]] + ")" : (move.ability != "" ? " <" + move.ability + ">" : "")) + (resourceChange >= 0 ? " +" : " ") + resourceChange + " resources\n";
+                    message += (solving1.board.playerTurn ? "P: " : "E: ") + solving1.desiredness.ToString("0.000") + " " + (solving1.x != -1 ? "(" + solving1.x + ", " + solving1.y + ") (" + boardNameDictionary[firstLayerBase.field[solving1.x, solving1.y]] + ")" : "") + (solving1.ability == "" ? "" : "<" + solving1.ability + ">") + "\n";
+                    if (solving1.possibleSolves.Count > 0) foreach (var solving2 in solving1.possibleSolves)
+                    {
+                        message += "   " + (solving2.board.playerTurn ? "P: " : "E: ") + solving2.desiredness.ToString("0.000") + " " + (solving2.x != -1 ? "(" + solving2.x + ", " + solving2.y + ") (" + boardNameDictionary[solving1.board.field[solving2.x, solving2.y]] + ")" : "") + (solving2.ability == "" ? "" : "<" + solving2.ability + ">") + "\n";
+                        if (solving2.possibleSolves.Count > 0) foreach (var solving3 in solving2.possibleSolves)
+                        {
+                            message += "      " + (solving3.board.playerTurn ? "P: " : "E: ") + solving3.desiredness.ToString("0.000") + " " + (solving3.x != -1 ? "(" + solving3.x + ", " + solving3.y + ") (" + boardNameDictionary[solving2.board.field[solving3.x, solving3.y]] + ")" : "") + (solving3.ability == "" ? "" : "<" + solving3.ability + ">") + "\n";
+                            if (solving3.possibleSolves.Count > 0) foreach (var solving4 in solving3.possibleSolves)
+                            {
+                                message += "         " + (solving4.board.playerTurn ? "P: " : "E: ") + solving4.desiredness.ToString("0.000") + " " + (solving4.x != -1 ? "(" + solving4.x + ", " + solving4.y + ") (" + boardNameDictionary[solving3.board.field[solving4.x, solving4.y]] + ")" : "") + (solving4.ability == "" ? "" : "<" + solving4.ability + ">") + "\n";
+                                if (solving4.possibleSolves.Count > 0) foreach (var solving5 in solving4.possibleSolves)
+                                {
+                                    message += "            " + (solving5.board.playerTurn ? "P: " : "E: ") + solving5.desiredness.ToString("0.000") + " " + (solving5.x != -1 ? "(" + solving5.x + ", " + solving5.y + ") (" + boardNameDictionary[solving4.board.field[solving5.x, solving5.y]] + ")" : "") + (solving5.ability == "" ? "" : "<" + solving5.ability + ">") + "\n";
+                                    if (solving5.possibleSolves.Count > 0) foreach (var solving6 in solving5.possibleSolves)
+                                    {
+                                        message += "               " + (solving6.board.playerTurn ? "P: " : "E: ") + solving6.desiredness.ToString("0.000") + " " + (solving6.x != -1 ? "(" + solving6.x + ", " + solving6.y + ") (" + boardNameDictionary[solving5.board.field[solving6.x, solving6.y]] + ")" : "") + (solving6.ability == "" ? "" : "<" + solving6.ability + ">") + "\n";
+                                        if (solving6.possibleSolves.Count > 0) foreach (var solving7 in solving6.possibleSolves)
+                                        {
+                                            message += "                  " + (solving7.board.playerTurn ? "P: " : "E: ") + solving7.desiredness.ToString("0.000") + " " + (solving7.x != -1 ? "(" + solving7.x + ", " + solving7.y + ") (" + boardNameDictionary[solving6.board.field[solving7.x, solving7.y]] + ")" : "") + (solving7.ability == "" ? "" : "<" + solving7.ability + ">") + "\n";
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
+                //File.WriteAllText("asd.txt", message);
                 Debug.Log(message);
-                var bestMove = possibleMoves[0];
+
+                //EXECUTE
+                var bestMove = results[0].Item1;
                 if (bestMove.ability != "")
                 {
                     var abilityObj = Ability.abilities.Find(x => x.name == bestMove.ability);
@@ -338,7 +351,7 @@ public class Board
 
     public static Dictionary<int, string> boardNameDictionary = new()
     {
-        { 00, "" },
+        { 00, "Empty" },
         { 01, "Awakened Earth" },
         { 02, "Awakened Fire" },
         { 03, "Awakened Water" },

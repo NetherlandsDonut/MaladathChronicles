@@ -33,6 +33,14 @@ public class Ability
         return true;
     }
 
+    public bool EnoughResources(FutureEntity entity)
+    {
+        foreach (var resource in cost)
+            if (entity.resources[resource.Key] < resource.Value)
+                return false;
+        return true;
+    }
+
     public string name;
     public int cooldown;
     public List<string> tags;
@@ -203,7 +211,7 @@ public class Ability
                 SpawnShatter(6, 0.7, new Vector3(p ? 148 : -318, 122), "AbilityArcaneMissiles", true, p ? "1000" : "1001");
                 SpawnShatter(6, 0.7, new Vector3(p ? 148 : -318, 122), "AbilityArcaneMissiles", true, p ? "1000" : "1001");
                 PlaySound("AbilityArcaneMissilesImpact1");
-                animationTime += frameTime * 5;
+                animationTime += frameTime * 6;
             });
             Board.board.actions.Add(() =>
             {
@@ -212,7 +220,7 @@ public class Ability
                 SpawnShatter(6, 0.7, new Vector3(p ? 148 : -318, 122), "AbilityArcaneMissiles", true, p ? "1000" : "1001");
                 SpawnShatter(6, 0.7, new Vector3(p ? 148 : -318, 122), "AbilityArcaneMissiles", true, p ? "1000" : "1001");
                 PlaySound("AbilityArcaneMissilesImpact2");
-                animationTime += frameTime * 5;
+                animationTime += frameTime * 6;
             });
             Board.board.actions.Add(() =>
             {
@@ -221,7 +229,7 @@ public class Ability
                 SpawnShatter(6, 0.7, new Vector3(p ? 148 : -318, 122), "AbilityArcaneMissiles", true, p ? "1000" : "1001");
                 SpawnShatter(6, 0.7, new Vector3(p ? 148 : -318, 122), "AbilityArcaneMissiles", true, p ? "1000" : "1001");
                 PlaySound("AbilityArcaneMissilesImpact3");
-                animationTime += frameTime * 5;
+                animationTime += frameTime * 6;
             });
             Board.board.playerFinishedMoving = true;
             CDesktop.LockScreen();
@@ -279,7 +287,7 @@ public class Ability
             if (p) board.playerFinishedMoving = true;
             else board.enemyFinishedMoving = true;
         }),
-        new Ability("Venomous Bite", 0, new() { "Damage", "Overtime" }, new()
+        new Ability("Venomous Bite", 3, new() { "Damage", "Overtime" }, new()
         {
             { "Decay", 6 },
         },
@@ -322,7 +330,7 @@ public class Ability
             if (p) board.playerFinishedMoving = true;
             else board.enemyFinishedMoving = true;
         }),
-        new Ability("Poison Cloud", 0, new() { "Gathering" }, new()
+        new Ability("Withering Cloud", 5, new() { "Gathering" }, new()
         {
             { "Air", 6 },
         },
@@ -330,7 +338,7 @@ public class Ability
         {
             AddPaddingRegion(() =>
             {
-                AddLine("Casting Poison Cloud will shroud the", Gray);
+                AddLine("Casting Withering Cloud will shroud the", Gray);
                 AddLine("board with in a poisonous gas.", Gray);
             });
             AddHeaderRegion(() =>
@@ -352,7 +360,7 @@ public class Ability
             var caster = p ? Board.board.player : Board.board.enemy;
             Board.board.actions.Add(() =>
             {
-                caster.AddBuff("Poison Cloud", 10, SpawnShatterBuff(2, 0.8, new Vector3(!p ? 148 : -318, 122), "AbilityWitheringCloud", caster));
+                caster.AddBuff("Withering Cloud", 7, SpawnShatterBuff(2, 0.8, new Vector3(!p ? 148 : -318, 122), "AbilityWitheringCloud", caster));
                 SpawnShatter(6, 0.7, new Vector3(!p ? 148 : -318, 122), "AbilityWitheringCloud", true, !p ? "1000" : "1001");
                 SpawnShatter(6, 0.7, new Vector3(!p ? 148 : -318, 122), "AbilityWitheringCloud", true, !p ? "1000" : "1001");
                 PlaySound("AbilityWitheringCloudCast");
@@ -362,9 +370,9 @@ public class Ability
         (p, board) =>
         {
             var caster = p ? board.player : board.enemy;
-            caster.AddBuff("Poison Cloud", 7);
+            caster.AddBuff("Withering Cloud", 7);
         }),
-        new Ability("Web Burst", 3, new() { "Stun" }, new()
+        new Ability("Web Burst", 4, new() { "Stun" }, new()
         {
             { "Shadow", 4 },
             { "Decay", 4 }
@@ -447,6 +455,46 @@ public class Ability
         {
             var caster = p ? board.player : board.enemy;
             caster.AddBuff("Demon Skin", 5);
+        }),
+        new Ability("Stoneform", 20, new() { "Defensive" }, new()
+        {
+            { "Earth", 4 },
+            { "Lightning", 4 },
+        },
+        () =>
+        {
+            AddPaddingRegion(() =>
+            {
+                AddLine("Casting Frosbolt will channel a frosty", Gray);
+                AddLine("projectile at the target dealing damage.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Deals 8 damage times caster's intelligence.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+                AddLine("Each point in Frost Mastery adds 1% chance", Gray);
+                AddLine("to refund the cost of casting this spell.", Gray);
+            });
+        },
+        (p) =>
+        {
+            var caster = p ? Board.board.player : Board.board.enemy;
+            Board.board.actions.Add(() =>
+            {
+                caster.AddBuff("Stoneform", 4, SpawnShatterBuff(2, 0.8, new Vector3(!p ? 148 : -318, 122), "AbilityStoneform", caster));
+                SpawnShatter(6, 0.7, new Vector3(!p ? 148 : -318, 122), "AbilityStoneform", true, !p ? "1000" : "1001");
+                SpawnShatter(6, 0.7, new Vector3(!p ? 148 : -318, 122), "AbilityStoneform", true, !p ? "1000" : "1001");
+                PlaySound("AbilityStoneformCast");
+            });
+            CDesktop.LockScreen();
+        },
+        (p, board) =>
+        {
+            var caster = p ? board.player : board.enemy;
+            caster.AddBuff("Stoneform", 4);
         }),
         new Ability("Ice Block", 0, new() { "Defensive", "Emergency" }, new()
         {
@@ -654,6 +702,51 @@ public class Ability
         {
             var target = p ? board.enemy : board.player;
             target.AddBuff("Hammer Of Justice", 2);
+        }),
+        new Ability("Putrid Bite", 2, new() { "Damage", "Overtime" }, new()
+        {
+            { "Decay", 4 },
+            { "Air", 2 },
+        },
+        () =>
+        {
+            AddPaddingRegion(() =>
+            {
+                AddLine("Casting Frosbolt will channel a frosty", Gray);
+                AddLine("projectile at the target dealing damage.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Deals 8 damage times caster's intelligence.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+                AddLine("Each point in Frost Mastery adds 1% chance", Gray);
+                AddLine("to refund the cost of casting this spell.", Gray);
+            });
+        },
+        (p) =>
+        {
+            var target = p ? Board.board.enemy : Board.board.player;
+            Board.board.actions.Add(() =>
+            {
+                target.AddBuff("Putrid Bite", 3, SpawnShatterBuff(2, 0.8, new Vector3(p ? 148 : -318, 122), "AbilityPutridBite", target));
+                SpawnShatter(6, 0.7, new Vector3(p ? 148 : -318, 122), "AbilityPutridBite", true, p ? "1000" : "1001");
+                SpawnShatter(6, 0.7, new Vector3(p ? 148 : -318, 122), "AbilityPutridBite", true, p ? "1000" : "1001");
+                PlaySound("AbilityPutridBiteImpact");
+                animationTime += frameTime * 2;
+            });
+            if (p) Board.board.playerFinishedMoving = true;
+            else Board.board.enemyFinishedMoving = true;
+            CDesktop.LockScreen();
+        },
+        (p, board) =>
+        {
+            var target = p ? board.enemy : board.player;
+            target.AddBuff("Putrid Bite", 3);
+            if (p) board.playerFinishedMoving = true;
+            else board.enemyFinishedMoving = true;
         }),
         new Ability("Corruption", 0, new() { "Damage", "Overtime" }, new()
         {
@@ -1080,6 +1173,56 @@ public class Ability
             caster.health += 10;
             if (caster.health >= caster.MaxHealth())
                 caster.health = caster.MaxHealth();
+        }),
+        new Ability("Muscle Tear", 1, new() { "Damage" }, new()
+        {
+            { "Air", 6 }
+        },
+        () =>
+        {
+            AddPaddingRegion(() =>
+            {
+                AddLine("Casting Frosbolt will channel a frosty", Gray);
+                AddLine("projectile at the target dealing damage.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Deals 8 damage times caster's intelligence.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+                AddLine("Each point in Frost Mastery adds 1% chance", Gray);
+                AddLine("to refund the cost of casting this spell.", Gray);
+            });
+        },
+        (p) =>
+        {
+            var caster = p ? Board.board.player : Board.board.enemy;
+            var target = p ? Board.board.enemy : Board.board.player;
+            Board.board.actions.Add(() =>
+            {
+                PlaySound("AbilityMuscleTearCast");
+                animationTime += frameTime * 6;
+            });
+            Board.board.actions.Add(() =>
+            {
+                target.health -= 8;
+                SpawnShatter(2, 0.8, new Vector3(p ? 148 : -318, 122), "AbilityMuscleTear");
+                SpawnShatter(6, 0.7, new Vector3(p ? 148 : -318, 122), "AbilityMuscleTear", true, p ? "1000" : "1001");
+                SpawnShatter(6, 0.7, new Vector3(p ? 148 : -318, 122), "AbilityMuscleTear", true, p ? "1000" : "1001");
+                PlaySound("AbilityMuscleTearImpact");
+            });
+            if (p) Board.board.playerFinishedMoving = true;
+            else Board.board.enemyFinishedMoving = true;
+            CDesktop.LockScreen();
+        },
+        (p, board) =>
+        {
+            var target = p ? board.enemy : board.player;
+            target.health -= 8;
+            if (p) board.playerFinishedMoving = true;
+            else board.enemyFinishedMoving = true;
         }),
         new Ability("Frostbolt", 0, new() { "Damage" }, new()
         {

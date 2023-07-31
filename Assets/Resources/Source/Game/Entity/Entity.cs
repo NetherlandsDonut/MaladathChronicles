@@ -7,29 +7,98 @@ public class Entity
 {
     public Entity(string name, Race race, Class spec, List<string> items)
     {
+        ResetResources();
+        level = 1;
         this.name = name;
         inventory = new Inventory(items);
         equipment = new Dictionary<string, string>();
         AutoEquip();
-
         unspentTalentPoints = 20;
         this.race = race.name;
         this.spec = spec.name;
-        stats = new Stats(race.stats.stats.ToDictionary(x => x.Key, x => x.Value));
-        level = race.level;
         abilities = race.abilities.Select(x => x).Concat(spec.abilities.FindAll(x => x.Item2 <= level).Select(x => x.Item1)).Concat(spec.talentTrees.SelectMany(x => x.talents.FindAll(y => y.defaultTaken)).Select(x => x.ability)).Distinct().ToList();
         actionBarsUnlocked = 7;
+        actionBars = Ability.abilities.FindAll(x => abilities.Contains(x.name) && x.cost != null).Select(x => new ActionBar(x.name)).ToList();
+        stats = new Stats(race.stats.stats.ToDictionary(x => x.Key, x => x.Value));
+        stats.stats["Stamina"] = 3 * level + 5;
         Initialise();
     }
 
-    public Entity(Race race)
+    public Entity(int level, Race race)
     {
+        ResetResources();
+        this.level = level;
         this.race = name = race.name;
-        stats = new Stats(race.stats.stats.ToDictionary(x => x.Key, x => x.Value));
-        level = race.level;
         abilities = race.abilities.Select(x => x).Distinct().ToList();
         actionBarsUnlocked = 7;
+        actionBars = Ability.abilities.FindAll(x => abilities.Contains(x.name) && x.cost != null).Select(x => new ActionBar(x.name)).ToList();
+        var importance = ElementImportance(race.rarity == "Common");
+        stats = new Stats(
+            new()
+            {
+                { "Stamina", (int)(3 * this.level * race.vitality) + 5 },
+
+                { "Strength", 1 },
+                { "Agility", 1 },
+                { "Intellect", 1 },
+
+                { "Earth Mastery", 10 },
+                { "Fire Mastery", 10 },
+                { "Air Mastery", 10 },
+                { "Water Mastery", 10 },
+                { "Frost Mastery", 10 },
+                { "Lightning Mastery", 10 },
+                { "Arcane Mastery", 10 },
+                { "Decay Mastery", 10 },
+                { "Shadow Mastery", 10 },
+                { "Order Mastery", 10 },
+            }
+        );
         Initialise();
+    }
+
+    public Dictionary<string, double> ElementImportance(bool randomised)
+    {
+        var abilities = Ability.abilities.FindAll(x => actionBars.Exists(y => y.ability == x.name));
+        double elementCosts = abilities.Sum(x => x.cost.Sum(y => y.Value));
+        var sheet = new Dictionary<string, double>();
+        foreach (var resource in resources)
+        {
+            var amount = abilities.FindAll(x => x.cost.ContainsKey(resource.Key)).Sum(x => x.cost[resource.Key]) / elementCosts;
+            sheet.Add(resource.Key, (randomised ? Root.random.Next(5, 13) / 10.0 : 1) * amount);
+        }
+        return sheet;
+    }
+
+    public void CapResources()
+    {
+        var temp = resources.ToArray();
+        for (int i = 0; i < temp.Length; i++)
+        {
+            var resource = temp[i];
+            if (resource.Value > MaxResource(resource.Key))
+                resources[resource.Key] = MaxResource(resource.Key);
+            else if (resource.Value < 0) resources[resource.Key] = 0;
+        }
+    }
+
+    public int MaxResource(string resource) => stats.stats[resource + " Mastery"] + 3;
+
+    public void ResetResources()
+    {
+        resources = new()
+        {
+            { "Earth", 0 },
+            { "Fire", 0 },
+            { "Air", 0 },
+            { "Water", 0 },
+            { "Frost", 0 },
+            { "Lightning", 0 },
+            { "Arcane", 0 },
+            { "Decay", 0 },
+            { "Order", 0 },
+            { "Shadow", 0 },
+        };
     }
 
     public bool CanPickTalent(int spec, Talent talent)
@@ -70,38 +139,32 @@ public class Entity
                     equipment.Remove(slot);
     }
 
+    public void AddResource(string resource, int amount) => AddResources(new() { { resource, amount } });
+
+    public void AddResources(Dictionary<string, int> resources)
+    {
+        foreach (var resource in resources)
+            this.resources[resource.Key] += resource.Value;
+        CapResources();
+    }
+
     public void DetractResources(Dictionary<string, int> resources)
     {
         foreach (var resource in resources)
             this.resources[resource.Key] -= resource.Value;
+        CapResources();
     }
 
     public void Initialise(bool fullReset = true)
     {
-        if (fullReset)
-        {
-            health = MaxHealth();
-        }
-        actionBars = Ability.abilities.FindAll(x => abilities.Contains(x.name) && x.cost != null).Select(x => new ActionBar(x.name)).ToList();
+        if (fullReset) { health = MaxHealth(); }
         buffs = new();
-        resources = new()
-        {
-            { "Earth", 0 },
-            { "Fire", 0 },
-            { "Air", 0 },
-            { "Water", 0 },
-            { "Frost", 0 },
-            { "Lightning", 0 },
-            { "Arcane", 0 },
-            { "Decay", 0 },
-            { "Order", 0 },
-            { "Shadow", 0 },
-        };
+        ResetResources();
     }
 
     public int MaxHealth()
     {
-        return stats.stats["Stamina"] * 20;
+        return stats.stats["Stamina"] * 10;
     }
 
     public void Cooldown() => actionBars.ForEach(x => x.cooldown -= x.cooldown == 0 ? 0 : 1);

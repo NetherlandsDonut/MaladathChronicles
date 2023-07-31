@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using System.Collections.Generic;
 
-public class Stats : Dictionary<string, int>
+public class Stats
 {
     public Stats(Dictionary<string, int> stats)
     {

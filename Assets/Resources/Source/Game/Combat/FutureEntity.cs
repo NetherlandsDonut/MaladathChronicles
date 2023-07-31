@@ -4,6 +4,24 @@ using UnityEngine;
 
 public class FutureEntity
 {
+    public FutureEntity(FutureEntity entity)
+    {
+        health = entity.health;
+        name = entity.name;
+        inventory = entity.inventory;
+        equipment = entity.equipment;
+        stats = entity.stats;
+        actionBars = new();
+        foreach (var actionBar in entity.actionBars)
+            actionBars.Add(new ActionBar(actionBar.ability, actionBar.cooldown));
+        buffs = new();
+        foreach (var buff in entity.buffs)
+            buffs.Add((buff.Item1, buff.Item2));
+        resources = new();
+        foreach (var pair in entity.resources)
+            resources.Add(pair.Key, pair.Value);
+    }
+
     public FutureEntity(Entity entity)
     {
         health = entity.health;
@@ -44,10 +62,34 @@ public class FutureEntity
         return sheet;
     }
 
+    public void CapResources()
+    {
+        var temp = resources.ToArray();
+        for (int i = 0; i < temp.Length; i++)
+        {
+            var resource = temp[i];
+            if (resource.Value > MaxResource(resource.Key))
+                resources[resource.Key] = MaxResource(resource.Key);
+            else if (resource.Value < 0) resources[resource.Key] = 0;
+        }
+    }
+
+    public int MaxResource(string resource) => stats.stats[resource + " Mastery"] + 3;
+
+    public void AddResource(string resource, int amount) => AddResources(new() { { resource, amount } });
+
+    public void AddResources(Dictionary<string, int> resources)
+    {
+        foreach (var resource in resources)
+            this.resources[resource.Key] += resource.Value;
+        CapResources();
+    }
+
     public void DetractResources(Dictionary<string, int> resources)
     {
         foreach (var resource in resources)
             this.resources[resource.Key] -= resource.Value;
+        CapResources();
     }
 
     public double AbilityTagModifier(List<string> tags)
@@ -64,7 +106,7 @@ public class FutureEntity
     {
         if (n == 0) return 0;
         if (n == 1) return 0.10;
-        return 0.30 * Mathf.Abs(n - 1);
+        return 0.30 * Mathf.Abs(n - 1) * (n > 3 ? 3 : 1);
     }
 
     public int MaxHealth()
@@ -72,23 +114,26 @@ public class FutureEntity
         return stats.stats["Stamina"] * 20;
     }
 
-    public void Cooldown() => actionBars.ForEach(x => x.cooldown -= x.cooldown == 0 ? 0 : 1);
+    public void Cooldown()
+    {
+        foreach (var actionBar in actionBars)
+            if (actionBar.cooldown > 0)
+                actionBar.cooldown -= 1;
+    }
 
     public void FlareBuffs(FutureBoard board)
     {
         for (int i = buffs.Count - 1; i >= 0; i--)
         {
             var index = i;
-            board.actions.Add(Buff.buffs.Find(y => y.name == buffs[index].Item1).futureEffects(board.enemy == this, board));
-            board.actions.Add(() =>
+            var find = Buff.buffs.Find(y => y.name == buffs[index].Item1);
+            find.futureEffects(board.enemy == this, board)();
+            buffs[index] = (buffs[index].Item1, buffs[index].Item2 - 1);
+            if (buffs[index].Item2 <= 0)
             {
-                buffs[index] = (buffs[index].Item1, buffs[index].Item2 - 1);
-                if (buffs[index].Item2 <= 0)
-                {
-                    Buff.buffs.Find(y => y.name == buffs[index].Item1).futureKillEffects(board.enemy == this, board);
-                    RemoveBuff(buffs[index]);
-                }
-            });
+                Buff.buffs.Find(y => y.name == buffs[index].Item1).futureKillEffects(board.enemy == this, board);
+                RemoveBuff(buffs[index]);
+            }
         }
     }
 

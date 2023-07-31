@@ -1,6 +1,5 @@
 ﻿using System;
 using UnityEngine;
-using System.Linq;
 using System.Collections.Generic;
 
 using static Font;
@@ -15,6 +14,7 @@ public static class Root
     public static int screenX = 640;
     public static int screenY = 360;
     public static int shadowSystem = 1;
+    public static int aiDepth = 6;
 
     public static Cursor cursor;
     public static CursorRemote cursorEnemy;
@@ -244,7 +244,7 @@ public static class Root
                     var find = SiteHostileArea.hostileAreas.Find(x => x.name == name);
                     if (find != null)
                     {
-                        Board.board = new Board(7, 7, find.possibleEncounters[random.Next(0, find.possibleEncounters.Count)].Item1);
+                        Board.board = new Board(7, 7, find.RollEncounter());
                         SpawnDesktopBlueprint("Game");
                         SwitchDesktop("Game");
                     }

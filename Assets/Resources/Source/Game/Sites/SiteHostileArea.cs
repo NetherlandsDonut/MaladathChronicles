@@ -1,148 +1,186 @@
+using System.Linq;
 using System.Collections.Generic;
+
+using static Root;
 
 public class SiteHostileArea
 {
-    public SiteHostileArea(string name, int recommendedLevel, List<(string, string)> possibleEncounters)
+    public SiteHostileArea(string name, List<(string, string)> possibleEncounters)
     {
         this.name = name;
-        this.recommendedLevel = recommendedLevel;
-        this.possibleEncounters = possibleEncounters;
+        this.possibleEncounters = new();
+        foreach (var encounter in possibleEncounters)
+        {
+            var split = encounter.Item1.Split("-");
+            this.possibleEncounters.Add((int.Parse(split[0]), int.Parse(split[split.Length == 1 ? 0 : 1]), encounter.Item2));
+        }
+        recommendedLevel = (int)this.possibleEncounters.Average(x => (x.Item1 + x.Item2) / 2.0);
     }
 
-    public SiteHostileArea(string name, int recommendedLevel, List<(string, string)> possibleEncounters, int length, string bossEncounter)
+    public SiteHostileArea(string name, List<(string, string)> possibleEncounters, int length, (string, string) bossEncounter)
     {
         this.name = name;
-        this.recommendedLevel = recommendedLevel;
-        this.possibleEncounters = possibleEncounters;
+        this.possibleEncounters = new();
+        foreach (var encounter in possibleEncounters)
+        {
+            var split = encounter.Item1.Split("-");
+            this.possibleEncounters.Add((int.Parse(split[0]), int.Parse(split[split.Length == 1 ? 0 : 1]), encounter.Item2));
+        }
         this.length = length;
-        this.bossEncounter = bossEncounter;
+        this.bossEncounter = (int.Parse(bossEncounter.Item1), bossEncounter.Item2);
+        recommendedLevel = this.bossEncounter.Item1;
     }
 
-    public string name, bossEncounter;
+    public Entity RollEncounter()
+    {
+        var encounters = possibleEncounters.Select(x => (random.Next(x.Item1, x.Item2 + 1), Race.races.Find(y => y.name == x.Item3))).ToList();
+        if (random.Next(0, 100) < 1)
+        {
+            var rares = encounters.FindAll(x => x.Item2.rarity == "Rare");
+            rares = rares.FindAll(x => !currentSave.rareKilled.Contains(x.Item2.name));
+            if (rares.Count > 0)
+                encounters = new() { rares[random.Next(0, rares.Count)] };
+        }
+        return new Entity(encounters[0].Item1, encounters[0].Item2);
+    }
+    
+    public Entity RollBoss()
+    {
+        return new Entity(bossEncounter.Item1, Race.races.Find(x => x.name == bossEncounter.Item2));
+    }
+
+    public string name;
     public int recommendedLevel, length;
-    public List<(string, string)> possibleEncounters;
+    public List<(int, int, string)> possibleEncounters;
+    public (int, string) bossEncounter;
 
     public static List<SiteHostileArea> hostileAreas = new()
     {
-        new SiteHostileArea("Corin's Crossing", 54, new()
+        new SiteHostileArea("Deathknell", new()
         {
-            ("Scourge Warder", "Common"),
-            ("Dark Summoner", "Common"),
+            ("01-02", "Duskbat"),
+            ("01-02", "Wretched Zombie"),
+            ("01-02", "Rattlecage Skeleton"),
         }),
-        new SiteHostileArea("Blackwood Lake", 54, new()
+        new SiteHostileArea("Corin's Crossing", new()
         {
-            ("Plaguehound", "Common"),
-            ("Noxious Plaguebat", "Common"),
+            ("53-54", "Scourge Warder"),
+            ("53-54", "Dark Summoner"),
         }),
-        new SiteHostileArea("Lake Mereldar", 54, new()
+        new SiteHostileArea("Blackwood Lake", new()
         {
-            ("Blighted Surge", "Common"),
-            ("Plague Ravager", "Common"),
+            ("53-54", "Plaguehound"),
+            ("53-54", "Noxious Plaguebat"),
         }),
-        new SiteHostileArea("Pestilent Scar", 54, new()
+        new SiteHostileArea("Lake Mereldar", new()
         {
-            ("Living Decay", "Common"),
-            ("Plaguehound", "Common"),
-            ("Noxious Plaguebat", "Common"),
-            ("Rotting Sludge", "Common"),
+            ("53-54", "Blighted Surge"),
+            ("53-54", "Plague Ravager"),
         }),
-        new SiteHostileArea("Plaguewood", 54, new()
+        new SiteHostileArea("Pestilent Scar",  new()
         {
-            ("Scourge Warder", "Common"),
-            ("Putrid Gargoyle", "Common"),
-            ("Necromancer", "Common"),
-            ("Cursed Mage", "Common"),
-            ("Cannibal Ghoul", "Common"),
-            ("Death Cultist", "Common"),
+            ("53-54", "Living Decay"),
+            ("53-54", "Plaguehound"),
+            ("53-54", "Noxious Plaguebat"),
+            ("53-54", "Rotting Sludge"),
         }),
-        new SiteHostileArea("Terrordale", 53, new()
+        new SiteHostileArea("Plaguewood", new()
         {
-            ("Cursed Mage", "Common"),
-            ("Cannibal Ghoul", "Common"),
-            ("Scourge Soldier", "Common"),
-            ("Crypt Fiend", "Common"),
-            ("Torn Screamer", "Common"),
+            ("53-54", "Scourge Warder"),
+            ("53-54", "Putrid Gargoyle"),
+            ("53-54", "Necromancer"),
+            ("53-54", "Cursed Mage"),
+            ("53-54", "Cannibal Ghoul"),
+            ("53-54", "Death Cultist"),
         }),
-        new SiteHostileArea("Terrorweb Tunnel", 55, new()
+        new SiteHostileArea("Terrordale", new()
         {
-            ("Crypt Fiend", "Common"),
-            ("Crypt Walker", "Common"),
+            ("52-53", "Cursed Mage"),
+            ("52-53", "Cannibal Ghoul"),
+            ("52-53", "Scourge Soldier"),
+            ("52-53", "Crypt Fiend"),
+            ("52-53", "Torn Screamer"),
         }),
-        new SiteHostileArea("Darrowshire", 53, new()
+        new SiteHostileArea("Terrorweb Tunnel", new()
         {
-            ("Plaguehound Runt", "Common"),
-            ("Scourge Soldier", "Common"),
+            ("55-56", "Crypt Fiend"),
+            ("55-56", "Crypt Walker"),
         }),
-        new SiteHostileArea("Thondroril River", 53, new()
+        new SiteHostileArea("Darrowshire", new()
         {
-            ("Plaguehound Runt", "Common"),
-            ("Plaguebat", "Common"),
+            ("52-53", "Plaguehound Runt"),
+            ("52-53", "Scourge Soldier"),
         }),
-        new SiteHostileArea("Tyr's Hand", 53, new()
+        new SiteHostileArea("Thondroril River", new()
         {
-            ("Scarlet Curate", "Common"),
-            ("Scarlet Warder", "Common"),
-            ("Scarlet Enchanter", "Common"),
-            ("Scarlet Cleric", "Common"),
+            ("52-53", "Plaguehound Runt"),
+            ("52-53", "Plaguebat"),
         }),
-        new SiteHostileArea("The Marris Stead", 53, new()
+        new SiteHostileArea("Tyr's Hand", new()
         {
-            ("Putrid Gargoyle", "Common"),
-            ("Plaguebat", "Common"),
-            ("Plaguehound Runt", "Common"),
+            ("52-53", "Scarlet Curate"),
+            ("52-53", "Scarlet Warder"),
+            ("52-53", "Scarlet Enchanter"),
+            ("52-53", "Scarlet Cleric"),
         }),
-
-
-
-
-
-
-
-
-        new SiteHostileArea("Stonetalon Peak", 23, new()
+        new SiteHostileArea("The Marris Stead", new()
         {
-            ("Nefarian", "Common"),
+            ("52-53", "Putrid Gargoyle"),
+            ("52-53", "Plaguebat"),
+            ("52-53", "Plaguehound Runt"),
         }),
-        new SiteHostileArea("Scarab Terrace", 60, new()
-        {
-            ("Qiraji Gladiator", "Common"),
-            ("Qiraji Swarmguard", "Common"),
-            ("Hive'Zara Stinger", "Common"),
-            ("Hive'Zara Wasp", "Common"),
-        }, 4, "Kurinnaxx"),
-        new SiteHostileArea("General's Terrace", 60, new()
-        {
-            ("Qiraji Gladiator", "Common"),
-            ("Qiraji Warrior", "Common"),
-            ("Swarmguard Needler", "Common"),
-        }, 4, "General Rajaxx"),
-        new SiteHostileArea("Reservoir", 60, new()
-        {
-            ("Flesh Hunter", "Common"),
-            ("Obsidian Destroyer", "Common"),
-        }, 3, "Moam"),
-        new SiteHostileArea("Hatchery", 60, new()
-        {
-            ("Flesh Hunter", "Common"),
-            ("Hive'Zara Sandstalker", "Common"),
-            ("Hive'Zara Soldier", "Common"),
-        }, 3, "Buru The Gorger"),
-        new SiteHostileArea("Comb", 60, new()
-        {
-            ("Hive'Zara Collector", "Common"),
-            ("Hive'Zara Drone", "Common"),
-            ("Hive'Zara Swarmer", "Common"),
-            ("Hive'Zara Tail Lasher", "Common"),
-            ("Silicate Feeder", "Common"),
-        }, 6, "Ayamiss The Hunter"),
-        new SiteHostileArea("Watchers' Terrace", 60, new()
-        {
-            ("Anubisath Guardian", "Common")
-        }, 2, "Ossirian The Unscarred"),
+        new SiteHostileArea("Stonetalon Peak", new()
+            {
+                ("60", "Nefarian"),
+            }
+        ),
+        new SiteHostileArea("Scarab Terrace", new()
+            {
+                ("60", "Qiraji Gladiator"),
+                ("60", "Qiraji Swarmguard"),
+                ("60", "Hive'Zara Stinger"),
+                ("60", "Hive'Zara Wasp"),
+            },
+            04, ("60", "Kurinnaxx")
+        ),
+        new SiteHostileArea("General's Terrace", new()
+            {
+                ("60", "Qiraji Gladiator"),
+                ("60", "Qiraji Warrior"),
+                ("60", "Swarmguard Needler"),
+            },
+            04, ("60", "General Rajaxx")
+        ),
+        new SiteHostileArea("Reservoir", new()
+            {
+                ("60", "Flesh Hunter"),
+                ("60", "Obsidian Destroyer"),
+            },
+            03, ("60", "Moam")
+        ),
+        new SiteHostileArea("Hatchery", new()
+            {
+                ("60", "Flesh Hunter"),
+                ("60", "Hive'Zara Sandstalker"),
+                ("60", "Hive'Zara Soldier"),
+            },
+            04, ("60", "Buru The Gorger")
+        ),
+        new SiteHostileArea("Comb", new()
+            {
+                ("60", "Hive'Zara Collector"),
+                ("60", "Hive'Zara Drone"),
+                ("60", "Hive'Zara Swarmer"),
+                ("60", "Hive'Zara Tail Lasher"),
+                ("60", "Silicate Feeder"),
+            },
+            06, ("60", "Ayamiss The Hunter")
+        ),
+        new SiteHostileArea("Watchers' Terrace", new()
+            {
+                ("60", "Anubisath Guardian")
+            },
+            02, ("60", "Ossirian The Unscarred")
+        ),
     };
-
-    //Common
-    //Uncommon
-    //Rare
-    //Boss
 }

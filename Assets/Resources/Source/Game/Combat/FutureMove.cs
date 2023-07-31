@@ -1,6 +1,6 @@
-using System.Collections;
+using System.Linq;
 using System.Collections.Generic;
-using UnityEngine;
+using UnityEngine.Rendering;
 
 public class FutureMove
 {
@@ -10,6 +10,7 @@ public class FutureMove
         this.y = y;
         ability = "";
         this.board = board;
+        possibleSolves = new();
     }
 
     public FutureMove(string ability, FutureBoard board)
@@ -17,16 +18,18 @@ public class FutureMove
         x = y = -1;
         this.ability = ability;
         this.board = board;
+        possibleSolves = new();
     }
 
-    public int x, y;
+    public int x, y, depth;
     public string ability;
     public FutureBoard board;
+    public List<FutureMove> possibleSolves;
     public double desiredness;
 
-    public double Desiredness(Board originalBoard, double baseDesiredness)
+    public double MaxDesiredness(FutureBoard baseBoard, double previous = 0)
     {
-        desiredness = board.Desiredness(board.enemy, originalBoard.enemy, board.player, originalBoard.player, baseDesiredness);
-        return desiredness;
+        if (desiredness == 0) desiredness = board.Desiredness(baseBoard);
+        return previous + desiredness + (possibleSolves.Count == 0 ? 0 : possibleSolves.Max(x => x.MaxDesiredness(board, desiredness)));
     }
 }

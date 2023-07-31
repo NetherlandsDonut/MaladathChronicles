@@ -75,7 +75,7 @@ public class Buff
         {
 
         }),
-        new Buff("Poison Cloud", "None", new() { "Gathering" }, false, "AbilityWitheringCloud",
+        new Buff("Withering Cloud", "None", new() { "Gathering" }, false, "AbilityWitheringCloud",
         () =>
         {
             AddHeaderRegion(() =>
@@ -136,6 +136,13 @@ public class Buff
                     }
                 }
             }
+            else
+            {
+                var x = random.Next(0, Board.board.field.GetLength(0));
+                var y = random.Next(0, Board.board.field.GetLength(1));
+                Board.board.field[x, y] = 17;
+                SpawnShatter(4, 1.0, Board.board.window.LBRegionGroup.regions[y].bigButtons[x].transform.position + new Vector3(-17.5f, -17.5f), Board.boardButtonDictionary[Board.board.field[x, y]]);
+            }
         },
         (p) => () =>
         {
@@ -182,11 +189,44 @@ public class Buff
                     }
                 }
             }
+            else
+                board.field[random.Next(0, board.field.GetLength(0)), random.Next(0, board.field.GetLength(1))] = 17;
         },
         (p, board) => () =>
         {
 
         }),
+        new Buff("Stoneform", "None", new() { "Defensive" }, false, "AbilityStoneform",
+            () =>
+            {
+                AddHeaderRegion(() =>
+                {
+                    AddLine("Target burns for 3 damage every turn.", Gray);
+                });
+                AddHeaderRegion(() =>
+                {
+                    SetRegionAsGroupExtender();
+                    AddLine("Each point in Frost Mastery adds 1% chance", Gray);
+                    AddLine("to refund the cost of casting this spell.", Gray);
+                });
+            },
+            (p) => () =>
+            {
+
+            },
+            (p) => () =>
+            {
+
+            },
+            (p, board) => () =>
+            {
+
+            },
+            (p, board) => () =>
+            {
+
+            }
+        ),
         new Buff("Ice Block", "None", new() { "Defensive" }, false, "AbilityIceBlock",
         () =>
         {
@@ -484,6 +524,41 @@ public class Buff
         {
             var target = p ? board.enemy : board.player;
             target.health -= 4;
+        },
+        (p, board) => () =>
+        {
+
+        }),
+        new Buff("Putrid Bite", "None", new() { "Damage" }, false, "AbilityPutridBite",
+        () =>
+        {
+            AddHeaderRegion(() =>
+            {
+                AddLine("Target burns for 3 damage every turn.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+                AddLine("Each point in Frost Mastery adds 1% chance", Gray);
+                AddLine("to refund the cost of casting this spell.", Gray);
+            });
+        },
+        (p) => () =>
+        {
+            var target = p ? Board.board.enemy : Board.board.player;
+            target.health -= 3;
+            SpawnShatter(2, 0.8, new Vector3(p ? 148 : -318, 122), "AbilityPutridBite");
+            PlaySound("AbilityVenomousBiteFlare");
+            animationTime += frameTime * 3;
+        },
+        (p) => () =>
+        {
+
+        },
+        (p, board) => () =>
+        {
+            var target = p ? board.enemy : board.player;
+            target.health -= 3;
         },
         (p, board) => () =>
         {
