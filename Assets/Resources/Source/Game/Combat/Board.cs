@@ -66,6 +66,16 @@ public class Board
         CDesktop.LockScreen();
     }
 
+    public void EndCombat(bool playerWon)
+    {
+        CloseDesktop("Game");
+        if (playerWon)
+            SpawnDesktopBlueprint("Map");
+        else
+            if (currentSave.hardcore) SpawnDesktopBlueprint("GameOver");
+            else SpawnDesktopBlueprint("ReleaseSpirit");
+    }
+
     public void AnimateBoard()
     {
         //MOVE ELEMENTS DOWN WITH GRAVITY
@@ -120,8 +130,16 @@ public class Board
                 }
             }
 
+        //IF PLAYER DIED..
+        if (player.health <= 0)
+            EndCombat(false);
+
+        //IF ENEMY DIED..
+        else if (enemy.health <= 0)
+            EndCombat(true);
+
         //IF IT'S ENEMY'S TURN..
-        if (!playerTurn)
+        else if (!playerTurn)
         {
             //IF ENEMY FINISHED MOVING END THEIR TURN
             if (enemyFinishedMoving)
@@ -165,7 +183,7 @@ public class Board
                         solving.possibleSolves = solving.board.CalculateLayer();
                         foreach (var innerSolving in solving.possibleSolves)
                             if (innerSolving.depth > -1)
-                                innerSolving.depth = solving.depth - (solving.board.TurnEnded() ? 1 : 0);
+                                innerSolving.depth = innerSolving.board.player.health == 0 || innerSolving.board.enemy.health == 0 ? 0 : solving.depth - (solving.board.TurnEnded() ? 1 : 0);
                     }
                     currentLayer = currentLayer.SelectMany(x => x.possibleSolves.FindAll(y => y.depth > 0)).ToList();
                     if (currentLayer.Count == 0) break;
@@ -175,34 +193,34 @@ public class Board
                     results.Add((solving, solving.MaxDesiredness(firstLayerBase, baseDesiredness)));
                 results = results.OrderByDescending(x => x.Item2).ToList();
 
-                var message = ""; 
+                var message = "";
                 foreach (var solving1 in firstLayer)
                 {
                     message += (solving1.board.playerTurn ? "P: " : "E: ") + solving1.desiredness.ToString("0.000") + " " + (solving1.x != -1 ? "(" + solving1.x + ", " + solving1.y + ") (" + boardNameDictionary[firstLayerBase.field[solving1.x, solving1.y]] + ")" : "") + (solving1.ability == "" ? "" : "<" + solving1.ability + ">") + "\n";
                     if (solving1.possibleSolves.Count > 0) foreach (var solving2 in solving1.possibleSolves)
-                    {
-                        message += "   " + (solving2.board.playerTurn ? "P: " : "E: ") + solving2.desiredness.ToString("0.000") + " " + (solving2.x != -1 ? "(" + solving2.x + ", " + solving2.y + ") (" + boardNameDictionary[solving1.board.field[solving2.x, solving2.y]] + ")" : "") + (solving2.ability == "" ? "" : "<" + solving2.ability + ">") + "\n";
-                        if (solving2.possibleSolves.Count > 0) foreach (var solving3 in solving2.possibleSolves)
                         {
-                            message += "      " + (solving3.board.playerTurn ? "P: " : "E: ") + solving3.desiredness.ToString("0.000") + " " + (solving3.x != -1 ? "(" + solving3.x + ", " + solving3.y + ") (" + boardNameDictionary[solving2.board.field[solving3.x, solving3.y]] + ")" : "") + (solving3.ability == "" ? "" : "<" + solving3.ability + ">") + "\n";
-                            if (solving3.possibleSolves.Count > 0) foreach (var solving4 in solving3.possibleSolves)
-                            {
-                                message += "         " + (solving4.board.playerTurn ? "P: " : "E: ") + solving4.desiredness.ToString("0.000") + " " + (solving4.x != -1 ? "(" + solving4.x + ", " + solving4.y + ") (" + boardNameDictionary[solving3.board.field[solving4.x, solving4.y]] + ")" : "") + (solving4.ability == "" ? "" : "<" + solving4.ability + ">") + "\n";
-                                if (solving4.possibleSolves.Count > 0) foreach (var solving5 in solving4.possibleSolves)
+                            message += "   " + (solving2.board.playerTurn ? "P: " : "E: ") + solving2.desiredness.ToString("0.000") + " " + (solving2.x != -1 ? "(" + solving2.x + ", " + solving2.y + ") (" + boardNameDictionary[solving1.board.field[solving2.x, solving2.y]] + ")" : "") + (solving2.ability == "" ? "" : "<" + solving2.ability + ">") + "\n";
+                            if (solving2.possibleSolves.Count > 0) foreach (var solving3 in solving2.possibleSolves)
                                 {
-                                    message += "            " + (solving5.board.playerTurn ? "P: " : "E: ") + solving5.desiredness.ToString("0.000") + " " + (solving5.x != -1 ? "(" + solving5.x + ", " + solving5.y + ") (" + boardNameDictionary[solving4.board.field[solving5.x, solving5.y]] + ")" : "") + (solving5.ability == "" ? "" : "<" + solving5.ability + ">") + "\n";
-                                    if (solving5.possibleSolves.Count > 0) foreach (var solving6 in solving5.possibleSolves)
-                                    {
-                                        message += "               " + (solving6.board.playerTurn ? "P: " : "E: ") + solving6.desiredness.ToString("0.000") + " " + (solving6.x != -1 ? "(" + solving6.x + ", " + solving6.y + ") (" + boardNameDictionary[solving5.board.field[solving6.x, solving6.y]] + ")" : "") + (solving6.ability == "" ? "" : "<" + solving6.ability + ">") + "\n";
-                                        if (solving6.possibleSolves.Count > 0) foreach (var solving7 in solving6.possibleSolves)
+                                    message += "      " + (solving3.board.playerTurn ? "P: " : "E: ") + solving3.desiredness.ToString("0.000") + " " + (solving3.x != -1 ? "(" + solving3.x + ", " + solving3.y + ") (" + boardNameDictionary[solving2.board.field[solving3.x, solving3.y]] + ")" : "") + (solving3.ability == "" ? "" : "<" + solving3.ability + ">") + "\n";
+                                    if (solving3.possibleSolves.Count > 0) foreach (var solving4 in solving3.possibleSolves)
                                         {
-                                            message += "                  " + (solving7.board.playerTurn ? "P: " : "E: ") + solving7.desiredness.ToString("0.000") + " " + (solving7.x != -1 ? "(" + solving7.x + ", " + solving7.y + ") (" + boardNameDictionary[solving6.board.field[solving7.x, solving7.y]] + ")" : "") + (solving7.ability == "" ? "" : "<" + solving7.ability + ">") + "\n";
+                                            message += "         " + (solving4.board.playerTurn ? "P: " : "E: ") + solving4.desiredness.ToString("0.000") + " " + (solving4.x != -1 ? "(" + solving4.x + ", " + solving4.y + ") (" + boardNameDictionary[solving3.board.field[solving4.x, solving4.y]] + ")" : "") + (solving4.ability == "" ? "" : "<" + solving4.ability + ">") + "\n";
+                                            if (solving4.possibleSolves.Count > 0) foreach (var solving5 in solving4.possibleSolves)
+                                                {
+                                                    message += "            " + (solving5.board.playerTurn ? "P: " : "E: ") + solving5.desiredness.ToString("0.000") + " " + (solving5.x != -1 ? "(" + solving5.x + ", " + solving5.y + ") (" + boardNameDictionary[solving4.board.field[solving5.x, solving5.y]] + ")" : "") + (solving5.ability == "" ? "" : "<" + solving5.ability + ">") + "\n";
+                                                    if (solving5.possibleSolves.Count > 0) foreach (var solving6 in solving5.possibleSolves)
+                                                        {
+                                                            message += "               " + (solving6.board.playerTurn ? "P: " : "E: ") + solving6.desiredness.ToString("0.000") + " " + (solving6.x != -1 ? "(" + solving6.x + ", " + solving6.y + ") (" + boardNameDictionary[solving5.board.field[solving6.x, solving6.y]] + ")" : "") + (solving6.ability == "" ? "" : "<" + solving6.ability + ">") + "\n";
+                                                            if (solving6.possibleSolves.Count > 0) foreach (var solving7 in solving6.possibleSolves)
+                                                                {
+                                                                    message += "                  " + (solving7.board.playerTurn ? "P: " : "E: ") + solving7.desiredness.ToString("0.000") + " " + (solving7.x != -1 ? "(" + solving7.x + ", " + solving7.y + ") (" + boardNameDictionary[solving6.board.field[solving7.x, solving7.y]] + ")" : "") + (solving7.ability == "" ? "" : "<" + solving7.ability + ">") + "\n";
+                                                                }
+                                                        }
+                                                }
                                         }
-                                    }
                                 }
-                            }
                         }
-                    }
                 }
                 //File.WriteAllText("asd.txt", message);
                 Debug.Log(message);

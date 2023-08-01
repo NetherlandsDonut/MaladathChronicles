@@ -33,10 +33,10 @@ public class Race
             new Stats(new()
             {
                 { "Stamina", 1 },
-
                 { "Strength", 1 },
                 { "Agility", 1 },
                 { "Intellect", 1 },
+                { "Spirit", 1 },
 
                 { "Earth Mastery", 3 },
                 { "Fire Mastery", 2 },
@@ -58,10 +58,10 @@ public class Race
             new Stats(new()
             {
                 { "Stamina", 1 },
-
                 { "Strength", 1 },
                 { "Agility", 1 },
                 { "Intellect", 1 },
+                { "Spirit", 1 },
 
                 { "Earth Mastery", 1 },
                 { "Fire Mastery", 3 },
@@ -83,10 +83,10 @@ public class Race
             new Stats(new()
             {
                 { "Stamina", 1 },
-
                 { "Strength", 1 },
                 { "Agility", 1 },
                 { "Intellect", 1 },
+                { "Spirit", 1 },
 
                 { "Earth Mastery", 1 },
                 { "Fire Mastery", 3 },
@@ -108,10 +108,10 @@ public class Race
             new Stats(new()
             {
                 { "Stamina", 1 },
-
                 { "Strength", 1 },
                 { "Agility", 1 },
                 { "Intellect", 1 },
+                { "Spirit", 1 },
 
                 { "Earth Mastery", 2 },
                 { "Fire Mastery", 1 },
@@ -133,10 +133,10 @@ public class Race
             new Stats(new()
             {
                 { "Stamina", 1 },
-
                 { "Strength", 1 },
                 { "Agility", 1 },
                 { "Intellect", 1 },
+                { "Spirit", 1 },
 
                 { "Earth Mastery", 3 },
                 { "Fire Mastery", 3 },
@@ -158,10 +158,10 @@ public class Race
             new Stats(new()
             {
                 { "Stamina", 1 },
-
                 { "Strength", 1 },
                 { "Agility", 1 },
                 { "Intellect", 1 },
+                { "Spirit", 1 },
 
                 { "Earth Mastery", 3 },
                 { "Fire Mastery", 2 },
@@ -183,10 +183,10 @@ public class Race
             new Stats(new()
             {
                 { "Stamina", 1 },
-
                 { "Strength", 1 },
                 { "Agility", 1 },
                 { "Intellect", 1 },
+                { "Spirit", 1 },
 
                 { "Earth Mastery", 2 },
                 { "Fire Mastery", 3 },
@@ -208,10 +208,10 @@ public class Race
             new Stats(new()
             {
                 { "Stamina", 1 },
-
                 { "Strength", 1 },
                 { "Agility", 1 },
                 { "Intellect", 1 },
+                { "Spirit", 1 },
 
                 { "Earth Mastery", 2 },
                 { "Fire Mastery", 2 },

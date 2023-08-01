@@ -69,6 +69,8 @@ public class FutureBoard
         }
         score += entity.health - pastEntity.health;
         score -= other.health - pastOther.health;
+        if (entity.health <= 0) score -= 1000;
+        else if (other.health <= 0) score += 1000;
         return score * (playerTurn ? -1 : 1);
     }
 

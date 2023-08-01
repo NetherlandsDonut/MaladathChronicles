@@ -2,20 +2,33 @@ using System.Collections.Generic;
 
 public class Class
 {
-    public Class(string name, List<(string, int)> abilities, List<TalentTree> talentTrees)
+    public Class(string name, Dictionary<string, double> rules, List<(string, int)> abilities, List<TalentTree> talentTrees)
     {
         this.name = name;
+        this.rules = rules;
         this.abilities = abilities;
         this.talentTrees = talentTrees;
     }
 
     public string name;
+    public Dictionary<string, double> rules;
     public List<(string, int)> abilities;
     public List<TalentTree> talentTrees;
 
     public static List<Class> classes = new()
     {
         new Class("Rogue",
+            new Dictionary<string, double>
+            {
+                { "Melee Attack Power per Strength", 2 },
+                { "Ranged Attack Power per Strength", 0 },
+                { "Critical Strike per Strength", 0 },
+                { "Melee Attack Power per Agility", 2 },
+                { "Ranged Attack Power per Agility", 0 },
+                { "Critical Strike per Agility", 0.03 },
+                { "Spell Power per Intellect", 1 },
+                { "Spell Critical per Intellect", 0.03 },
+            },
             new List<(string, int)>
             {
                 ("One Handed Axe Proficiency", 1),
@@ -40,6 +53,17 @@ public class Class
             }
         ),
         new Class("Hunter",
+            new Dictionary<string, double>
+            {
+                { "Melee Attack Power per Strength", 2 },
+                { "Ranged Attack Power per Strength", 0 },
+                { "Critical Strike per Strength", 0 },
+                { "Melee Attack Power per Agility", 2 },
+                { "Ranged Attack Power per Agility", 3 },
+                { "Critical Strike per Agility", 0.03 },
+                { "Spell Power per Intellect", 1 },
+                { "Spell Critical per Intellect", 0.03 },
+            },
             new List<(string, int)>
             {
                 ("Two Handed Axe Proficiency", 1),
@@ -64,6 +88,17 @@ public class Class
             }
         ),
         new Class("Shaman",
+            new Dictionary<string, double>
+            {
+                { "Melee Attack Power per Strength", 2 },
+                { "Ranged Attack Power per Strength", 0 },
+                { "Critical Strike per Strength", 0 },
+                { "Melee Attack Power per Agility", 1 },
+                { "Ranged Attack Power per Agility", 0 },
+                { "Critical Strike per Agility", 0.03 },
+                { "Spell Power per Intellect", 2 },
+                { "Spell Critical per Intellect", 0.03 },
+            },
             new List<(string, int)>
             {
                 ("Two Handed Axe Proficiency", 1),
@@ -83,6 +118,17 @@ public class Class
             }
         ),
         new Class("Warrior",
+            new Dictionary<string, double>
+            {
+                { "Melee Attack Power per Strength", 3 },
+                { "Ranged Attack Power per Strength", 0 },
+                { "Critical Strike per Strength", 0 },
+                { "Melee Attack Power per Agility", 1 },
+                { "Ranged Attack Power per Agility", 0 },
+                { "Critical Strike per Agility", 0.03 },
+                { "Spell Power per Intellect", 1 },
+                { "Spell Critical per Intellect", 0.03 },
+            },
             new List<(string, int)>
             {
                 ("Two Handed Axe Proficiency", 1),
@@ -151,6 +197,17 @@ public class Class
             }
         ),
         new Class("Paladin",
+            new Dictionary<string, double>
+            {
+                { "Melee Attack Power per Strength", 2 },
+                { "Ranged Attack Power per Strength", 0 },
+                { "Critical Strike per Strength", 0 },
+                { "Melee Attack Power per Agility", 1 },
+                { "Ranged Attack Power per Agility", 0 },
+                { "Critical Strike per Agility", 0.03 },
+                { "Spell Power per Intellect", 2 },
+                { "Spell Critical per Intellect", 0.03 },
+            },
             new List<(string, int)>
             {
                 ("Two Handed Axe Proficiency", 1),
@@ -174,6 +231,17 @@ public class Class
             }
         ),
         new Class("Druid",
+            new Dictionary<string, double>
+            {
+                { "Melee Attack Power per Strength", 2 },
+                { "Ranged Attack Power per Strength", 0 },
+                { "Critical Strike per Strength", 0 },
+                { "Melee Attack Power per Agility", 1 },
+                { "Ranged Attack Power per Agility", 0 },
+                { "Critical Strike per Agility", 0.03 },
+                { "Spell Power per Intellect", 2 },
+                { "Spell Critical per Intellect", 0.03 },
+            },
             new List<(string, int)>
             {
                 ("Two Handed Mace Proficiency", 1),
@@ -194,6 +262,17 @@ public class Class
             }
         ),
         new Class("Priest",
+            new Dictionary<string, double>
+            {
+                { "Melee Attack Power per Strength", 1 },
+                { "Ranged Attack Power per Strength", 0 },
+                { "Critical Strike per Strength", 0 },
+                { "Melee Attack Power per Agility", 1 },
+                { "Ranged Attack Power per Agility", 0 },
+                { "Critical Strike per Agility", 0.03 },
+                { "Spell Power per Intellect", 3 },
+                { "Spell Critical per Intellect", 0.03 },
+            },
             new List<(string, int)>
             {
                 ("One Handed Mace Proficiency", 1),
@@ -253,6 +332,17 @@ public class Class
             }
         ),
         new Class("Warlock",
+            new Dictionary<string, double>
+            {
+                { "Melee Attack Power per Strength", 1 },
+                { "Ranged Attack Power per Strength", 0 },
+                { "Critical Strike per Strength", 0 },
+                { "Melee Attack Power per Agility", 1 },
+                { "Ranged Attack Power per Agility", 0 },
+                { "Critical Strike per Agility", 0.03 },
+                { "Spell Power per Intellect", 3 },
+                { "Spell Critical per Intellect", 0.03 },
+            },
             new List<(string, int)>
             {
                 ("One Handed Sword Proficiency", 1),
@@ -309,6 +399,17 @@ public class Class
             }
         ),
         new Class("Mage",
+            new Dictionary<string, double>
+            {
+                { "Melee Attack Power per Strength", 1 },
+                { "Ranged Attack Power per Strength", 0 },
+                { "Critical Strike per Strength", 0 },
+                { "Melee Attack Power per Agility", 1 },
+                { "Ranged Attack Power per Agility", 0 },
+                { "Critical Strike per Agility", 0.03 },
+                { "Spell Power per Intellect", 3 },
+                { "Spell Critical per Intellect", 0.03 },
+            },
             new List<(string, int)>
             {
                 ("One Handed Sword Proficiency", 1),

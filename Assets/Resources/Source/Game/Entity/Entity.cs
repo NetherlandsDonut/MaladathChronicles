@@ -3,6 +3,9 @@ using UnityEditor;
 using System.Linq;
 using System.Collections.Generic;
 
+using static Root;
+using UnityEditor.Experimental.GraphView;
+
 public class Entity
 {
     public Entity(string name, Race race, Class spec, List<string> items)
@@ -37,10 +40,10 @@ public class Entity
             new()
             {
                 { "Stamina", (int)(3 * this.level * race.vitality) + 5 },
-
                 { "Strength", 1 },
                 { "Agility", 1 },
                 { "Intellect", 1 },
+                { "Spirit", 1 },
 
                 { "Earth Mastery", 10 },
                 { "Fire Mastery", 10 },
@@ -82,7 +85,7 @@ public class Entity
         }
     }
 
-    public int MaxResource(string resource) => stats.stats[resource + " Mastery"] + 3;
+    public int MaxResource(string resource) => Stats()[resource + " Mastery"] + 3;
 
     public void ResetResources()
     {
@@ -164,7 +167,96 @@ public class Entity
 
     public int MaxHealth()
     {
-        return stats.stats["Stamina"] * 10;
+        return Stats()["Stamina"] * 10;
+    }
+
+    public (int, int) WeaponDamage()
+    {
+        if (equipment.ContainsKey("TwoHanded"))
+        {
+            var twohanded = inventory.items.Find(x => x.name == equipment["TwoHanded"]);
+            return ((int)(twohanded.minDamage / twohanded.speed), (int)(twohanded.maxDamage / twohanded.speed));
+        }
+        else
+        {
+            double min = 0, max = 0;
+            if (equipment.ContainsKey("MainHand"))
+            {
+                var mainHand = inventory.items.Find(x => x.name == equipment["MainHand"]);
+                min += (int)(mainHand.minDamage / mainHand.speed);
+                max += (int)(mainHand.maxDamage / mainHand.speed);
+            }
+            if (equipment.ContainsKey("OffHand"))
+            {
+                var offHand = inventory.items.Find(x => x.name == equipment["OffHand"]);
+                min /= 1.5;
+                min /= 1.5;
+                min += offHand.minDamage / offHand.speed / 1.5;
+                max += offHand.maxDamage / offHand.speed / 1.5;
+            }
+            return ((int)min, (int)max);
+        }
+    }
+
+    public int RollWeaponDamage()
+    {
+        var damage = WeaponDamage();
+        if (damage.Item2 == 0) return random.Next(2, 5);
+        return random.Next(damage.Item1, damage.Item2 + 1);
+    }
+
+    public Dictionary<string, int> Stats()
+    {
+        var stats = new Dictionary<string, int>();
+        foreach (var stat in this.stats.stats)
+            stats.Add(stat.Key, stat.Value);
+        if (equipment != null)
+        {
+            var itemsEquipped = new List<Item>();
+            foreach (var item in equipment)
+                itemsEquipped.Add(inventory.items.Find(x => x.name == item.Value));
+            foreach (var item in itemsEquipped)
+                foreach (var stat in item.stats.stats)
+                    stats[stat.Key] += stat.Value;
+        }
+        return stats;
+    }
+
+    public double MeleeAttackPower()
+    {
+        var temp = GetClass();
+        var sum = temp.rules["Melee Attack Power per Strength"] * Stats()["Strength"];
+        sum += temp.rules["Melee Attack Power per Agility"] * Stats()["Agility"];
+        return sum;
+    }
+
+    public double RangedAttackPower()
+    {
+        var temp = GetClass();
+        var sum = temp.rules["Ranged Attack Power per Agility"] * Stats()["Agility"];
+        return sum;
+    }
+
+    public double SpellPower()
+    {
+        var temp = GetClass();
+        var sum = temp.rules["Spell Power per Intellect"] * Stats()["Intellect"];
+        return sum;
+    }
+
+    public double CriticalStrike()
+    {
+        var temp = GetClass();
+        var sum = temp.rules["Critical Strike per Strength"] * Stats()["Strength"];
+        sum += temp.rules["Critical Strike per Agility"] * Stats()["Agility"];
+        return sum;
+    }
+
+    public double SpellCritical()
+    {
+        var temp = GetClass();
+        var sum = temp.rules["Spell Critical per Intellect"] * Stats()["Intellect"];
+        return sum;
     }
 
     public void Cooldown() => actionBars.ForEach(x => x.cooldown -= x.cooldown == 0 ? 0 : 1);

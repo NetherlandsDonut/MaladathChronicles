@@ -874,7 +874,7 @@ public class Blueprint
             AddRegionGroup();
             AddPaddingRegion(() =>
             {
-                var item = currentSave.player.GetSlot("Ring");
+                var item = currentSave.player.GetSlot("Finger");
                 AddBigButton(item == null ? "OtherEmpty" : item.icon,
                 (h) =>
                 {
@@ -1078,7 +1078,7 @@ public class Blueprint
             AddRegionGroup();
             AddHeaderRegion(() =>
             {
-                foreach (var foo in currentSave.player.stats.stats)
+                foreach (var foo in currentSave.player.Stats())
                     AddLine(foo.Key + ": " + foo.Value, Gray);
             });
         }),

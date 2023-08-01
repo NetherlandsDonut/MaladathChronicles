@@ -56,6 +56,20 @@ public class Item
         this.stats = stats;
     }
 
+    //Capes
+    public Item(int ilvl, int lvl, string rarity, double price, string name, string icon, string type, int armor, Stats stats)
+    {
+        this.ilvl = ilvl;
+        this.lvl = lvl;
+        this.rarity = rarity;
+        this.price = price;
+        this.name = name;
+        this.icon = icon;
+        this.type = type;
+        this.armor = armor;
+        this.stats = stats;
+    }
+
     //OffHands
     public Item(int ilvl, int lvl, string rarity, double price, string name, string icon, string type, string detailedType, Stats stats)
     {
@@ -252,6 +266,82 @@ public class Item
                 "Heraldic Cloak",
             }
         ),
+        new Item(83, 60, "Epic", 5.8442,
+            "Mish'undare, Circlet of the Mind Flayer",
+            "ItemHelmet52",
+            "Head",
+            "Cloth",
+            102,
+            new Stats(new()
+            {
+                { "Stamina", 15 },
+                { "Intellect", 24 },
+                { "Spirit", 9 },
+            })
+            //Equip: Increases damage and healing done by magical spells and effects by up to 35.
+            //Equip: Improves your chance to get a critical strike with spells by 2%.
+        ),
+        new Item(83, 60, "Epic", 5.9115,
+            "Cloak of the Brood Lord",
+            "ItemCape20",
+            "Back",
+            63,
+            new Stats(new()
+            {
+                { "Stamina", 10 },
+                { "Intellect", 14 },
+            })
+            //Equip: Increases damage and healing done by magical spells and effects by up to 28.
+        ),
+        new Item(83, 60, "Epic", 10.5328,
+            "Prestor's Talisman of Connivery",
+            "ItemNecklace17",
+            "Neck",
+            new Stats(new()
+            {
+                { "Agility", 30 },
+            })
+            //Equip: Improves your chance to hit by 1%.
+        ),
+        new Item(77, 60, "Epic", 14.8714,
+            "Perdition's Blade",
+            "ItemShortblade11",
+            "OneHanded",
+            "Dagger",
+            73, 137,
+            1.80,
+            new Stats(new()
+            {
+
+            })
+            //Chance on hit: Blasts a target for 40 to 56 Fire damage.
+        ),
+        new Item(76, 60, "Epic", 4.5577,
+            "Mantle of Phrenic Power",
+            "ItemShoulder2",
+            "Shoulders",
+            "Cloth",
+            87,
+            new Stats(new()
+            {
+                { "Stamina", 20 },
+                { "Intellect", 20 },
+            })
+            //Equip: Increases damage done by Fire spells and effects by up to 33.
+        ),
+        new Item(73, 60, "Epic", 4.5577,
+            "Mantle of the Blackwing Cabal",
+            "ItemShoulder25",
+            "Shoulders",
+            "Cloth",
+            84,
+            new Stats(new()
+            {
+                { "Stamina", 12 },
+                { "Intellect", 16 },
+            })
+            //Equip: Increases damage and healing done by magical spells and effects by up to 34.
+        ),
         new Item(73, 60, "Rare", 2.9523,
             "Scaled Silithid Gauntlets",
             "ItemGauntlets10",
@@ -266,13 +356,72 @@ public class Item
                 { "Stamina", 18 },
             })
         ),
+        new Item(70, 60, "Epic", 13.8646,
+            "Perdition's Blade",
+            "ItemStaff13",
+            "TwoHanded",
+            "Staff",
+            126, 205,
+            2.90,
+            new Stats(new()
+            {
+                { "Stamina", 16 },
+                { "Intellect", 37 },
+                { "Spirit", 14 },
+            })
+            //Equip: Improves your chance to get a critical strike with spells by 1%.
+            //Equip: Increases damage and healing done by magical spells and effects by up to 40.
+        ),
+        new Item(71, 60, "Epic", 2.2280,
+            "Mana Igniting Cord",
+            "ItemBelt11",
+            "Waist",
+            "Cloth",
+            61,
+            new Stats(new()
+            {
+                { "Stamina", 12 },
+                { "Intellect", 16 },
+            })
+            //Equip: Increases damage and healing done by magical spells and effects by up to 25.
+            //Equip: Improves your chance to get a critical strike with spells by 1%.
+        ),
+        new Item(70, 60, "Epic", 13.5594,
+            "Hyperthermically Insulated Lava Dredger",
+            "ItemGizmo2",
+            "TwoHanded",
+            "Mace",
+            155, 234,
+            2.90,
+            new Stats(new()
+            {
+                { "Stamina", 25 },
+                { "Intellect", 24 },
+                { "Fire Mastery", 2 },
+            })
+            //Equip: Restores 9 mana per 5 sec.
+        ),
+        new Item(65, 60, "Epic", 8.1895,
+            "Fang of Venoxis",
+            "ItemShortblade31",
+            "OneHanded",
+            "Dagger",
+            35, 72,
+            1.30,
+            new Stats(new()
+            {
+                { "Intellect", 8 },
+                { "Spirit", 6 },
+            })
+            //Equip: Increases damage and healing done by magical spells and effects by up to 24.
+            //Equip: Restores 6 mana per 5 sec.
+        ),
         new Item(61, 56, "Rare", 3.7593,
             "Carapace Spine Crossbow",
             "ItemCrossbow6",
             "Crossbow",
             "TwoHanded",
-            82,
-            124,
+            82, 124,
             3.30,
             new Stats(new()
             {
