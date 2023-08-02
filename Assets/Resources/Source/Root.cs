@@ -24,7 +24,7 @@ public static class Root
     public static int titleScreenCameraDirection;
     public static float heldKeyTime;
     public static float animationTime;
-    public static float frameTime = 0.07f;
+    public static float frameTime = 0.09f;
     public static List<Desktop> desktops;
     public static Desktop CDesktop, LBDesktop;
     public static string markerCharacter = "_", currentInputLine = "";
@@ -71,10 +71,10 @@ public static class Root
                 var fb = h.GetComponent<FlyingBuff>();
                 var buff = (fb.onPlayer ? Board.board.player.buffs : Board.board.enemy.buffs).Find(x => x.Item3 == h.gameObject);
                 var buffObj = Buff.buffs.Find(x => x.name == buff.Item1);
-                SetAnchor(Top, 0, -13);
+                SetAnchor(Top, 0, -23);
                 AddHeaderGroup();
-                SetRegionGroupWidth(256);
-                SetRegionGroupHeight(237);
+                SetRegionGroupWidth(226);
+                SetRegionGroupHeight(217);
                 AddHeaderRegion(() =>
                 {
                     AddLine(buff.Item1, Gray);
@@ -89,7 +89,7 @@ public static class Root
                 });
                 buffObj.description();
                 AddRegionGroup();
-                SetRegionGroupWidth(256);
+                SetRegionGroupWidth(236);
                 AddPaddingRegion(() => { AddLine(""); });
             }
         );
@@ -378,7 +378,7 @@ public static class Root
 
     public static Color EntityColoredLevel(int level)
     {
-        if (level - 4 > currentSave.player.level) return Red;
+        if (level - 4 > currentSave.player.level) return DangerousRed;
         else if (level - 2 > currentSave.player.level) return Orange;
         else if (level + 2 < currentSave.player.level && WillGetExperience(level)) return Green;
         else if (!WillGetExperience(level)) return Gray;
@@ -1119,6 +1119,7 @@ public static class Root
             { DarkGray, new Color32(114, 114, 114, 255) },
             { Black, new Color32(31, 31, 31, 255) },
             { Red, new Color32(181, 77, 77, 255) },
+            { DangerousRed, new Color32(219, 48, 48, 255) },
             { Yellow, new Color32(181, 159, 77, 255) },
             { Orange, new Color32(185, 104, 57, 255) },
             { Green, new Color32(81, 181, 77, 255) },
@@ -1163,6 +1164,7 @@ public static class Root
         Black,
         TrueBlack,
         Red,
+        DangerousRed,
         DarkRed,
         Green,
         DarkGreen,

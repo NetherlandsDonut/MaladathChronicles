@@ -31,6 +31,56 @@ public class Buff
 
     public static List<Buff> buffs = new()
     {
+        new Buff("Thunderstorm", "None", new() { "Damage" }, true, "AbilityThunderstorm",
+        () =>
+        {
+            AddHeaderRegion(() =>
+            {
+                AddLine("Target burns for 3 damage every turn.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+                AddLine("Each point in Frost Mastery adds 1% chance", Gray);
+                AddLine("to refund the cost of casting this spell.", Gray);
+            });
+        },
+        (p) => () =>
+        {
+            var caster = p ? Board.board.player : Board.board.enemy;
+            var target = p ? Board.board.enemy : Board.board.player;
+            var list = new List<(int, int)>();
+            var col = random.Next(0, Board.board.field.GetLength(0));
+            for (int j = 0; j < Board.board.field.GetLength(1); j++)
+                list.Add((col, j));
+            PlaySound("AbilityThunderstormImpact" + random.Next(0, 4));
+            PlaySound("AbilityThunderstormImpact4");
+            foreach (var e in list)
+            {
+                SpawnShatter(5, 0.8, Board.board.window.LBRegionGroup.regions[e.Item2].bigButtons[e.Item1].transform.position + new Vector3(-17.5f, -17.5f), Board.boardButtonDictionary[5]);
+                SpawnShatter(3, 0.6, Board.board.window.LBRegionGroup.regions[e.Item2].bigButtons[e.Item1].transform.position + new Vector3(-17.5f, -17.5f), Board.boardButtonDictionary[Board.board.field[e.Item1, e.Item2]]);
+                Board.board.field[e.Item1, e.Item2] = 0;
+            }
+        },
+        (p) => () =>
+        {
+
+        },
+        (p, board) => () =>
+        {
+            //var target = p ? Board.board.player : Board.board.enemy;
+            //var count = (p ? Board.board.temporaryElementsEnemy : Board.board.temporaryElementsPlayer).Count(x => x.Item2 == 16);
+            //if (count > 0)
+            //{
+            //    target.health -= count;
+            //    SpawnShatter(2, 0.8, new Vector3(!p ? 148 : -318, 122), "AbilityBlizzard");
+            //    PlaySound("AbilityFrostBoltImpact");
+            //}
+        },
+        (p, board) => () =>
+        {
+
+        }),
         new Buff("Blizzard", "None", new() { "Damage" }, false, "AbilityBlizzard",
         () =>
         {

@@ -1523,6 +1523,126 @@ public class Ability
             if (p) board.playerFinishedMoving = true;
             else board.enemyFinishedMoving = true;
         }),
+        new Ability("Thunderstorm", 6, new() { "Damage" }, new()
+        {
+            { "Lightning", 10 },
+            { "Air", 2 },
+        },
+        () =>
+        {
+            AddPaddingRegion(() =>
+            {
+                AddLine("Casting Deep Freeze will freeze the board", Gray);
+                AddLine("turning elements into different ones.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("All fire elements will be turned into", Gray);
+                AddLine("air elements and water and decay elements", Gray);
+                AddLine("into frost elements.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+                AddLine("Each point in Frost Mastery adds 10%", Gray);
+                AddLine("chance to turn a random non water nor", Gray);
+                AddLine("fire element into a frost element.", Gray);
+                AddLine("This effect loops and for example 140%", Gray);
+                AddLine("has a 100% chance to spawn one element", Gray);
+                AddLine("and 40% to spawn another one.", Gray);
+            });
+        },
+        (p) =>
+        {
+            var caster = p ? Board.board.player : Board.board.enemy;
+            var target = p ? Board.board.enemy : Board.board.player;
+            Board.board.actions.Add(() =>
+            {
+                PlaySound("AbilityThunderstormCast");
+                animationTime += frameTime * 11;
+            });
+            var columnStriked = new List<int>();
+            var list1 = new List<(int, int)>();
+            var col = random.Next(0, Board.board.field.GetLength(0));
+            columnStriked.Add(col);
+            for (int j = 0; j < Board.board.field.GetLength(1); j++)
+                list1.Add((col, j));
+            Board.board.actions.Add(() =>
+            {
+                foreach (var e in list1)
+                {
+                    SpawnShatter(5, 0.8, Board.board.window.LBRegionGroup.regions[e.Item2].bigButtons[e.Item1].transform.position + new Vector3(-17.5f, -17.5f), Board.boardButtonDictionary[5]);
+                    SpawnShatter(3, 0.6, Board.board.window.LBRegionGroup.regions[e.Item2].bigButtons[e.Item1].transform.position + new Vector3(-17.5f, -17.5f), Board.boardButtonDictionary[Board.board.field[e.Item1, e.Item2]]);
+                    Board.board.field[e.Item1, e.Item2] = 0;
+                }
+                PlaySound("AbilityThunderstormImpact1");
+            });
+            var list2 = new List<(int, int)>();
+            do col = random.Next(0, Board.board.field.GetLength(0));
+            while (columnStriked.Contains(col));
+            columnStriked.Add(col);
+            for (int j = 0; j < Board.board.field.GetLength(1); j++)
+                list2.Add((col, j));
+            Board.board.actions.Add(() =>
+            {
+                foreach (var e in list2)
+                {
+                    SpawnShatter(5, 0.8, Board.board.window.LBRegionGroup.regions[e.Item2].bigButtons[e.Item1].transform.position + new Vector3(-17.5f, -17.5f), Board.boardButtonDictionary[5]);
+                    SpawnShatter(3, 0.6, Board.board.window.LBRegionGroup.regions[e.Item2].bigButtons[e.Item1].transform.position + new Vector3(-17.5f, -17.5f), Board.boardButtonDictionary[Board.board.field[e.Item1, e.Item2]]);
+                    Board.board.field[e.Item1, e.Item2] = 0;
+                }
+                PlaySound("AbilityThunderstormImpact2");
+                PlaySound("AbilityThunderstormImpact3");
+            });
+            columnStriked = new List<int>();
+            var list3 = new List<(int, int)>();
+            do col = random.Next(0, Board.board.field.GetLength(0));
+            while (columnStriked.Contains(col));
+            columnStriked.Add(col);
+            for (int j = 0; j < Board.board.field.GetLength(1); j++)
+                list3.Add((col, j));
+            do col = random.Next(0, Board.board.field.GetLength(0));
+            while (columnStriked.Contains(col));
+            columnStriked.Add(col);
+            for (int j = 0; j < Board.board.field.GetLength(1); j++)
+                list3.Add((col, j));
+            Board.board.actions.Add(() =>
+            {
+                foreach (var e in list3)
+                {
+                    SpawnShatter(5, 0.8, Board.board.window.LBRegionGroup.regions[e.Item2].bigButtons[e.Item1].transform.position + new Vector3(-17.5f, -17.5f), Board.boardButtonDictionary[5]);
+                    SpawnShatter(3, 0.6, Board.board.window.LBRegionGroup.regions[e.Item2].bigButtons[e.Item1].transform.position + new Vector3(-17.5f, -17.5f), Board.boardButtonDictionary[Board.board.field[e.Item1, e.Item2]]);
+                    Board.board.field[e.Item1, e.Item2] = 0;
+                }
+                PlaySound("AbilityThunderstormImpact1");
+                PlaySound("AbilityThunderstormImpact4");
+            });
+            Board.board.actions.Add(() =>
+            {
+                animationTime += frameTime * 2;
+                caster.AddBuff("Thunderstorm", 5, SpawnShatterBuff(2, 0.8, new Vector3(!p ? 148 : -318, 122), "AbilityThunderstorm", caster));
+            });
+            if (p) Board.board.playerFinishedMoving = true;
+            else Board.board.enemyFinishedMoving = true;
+            CDesktop.LockScreen();
+        },
+        (p, board) =>
+        {
+            var list1 = new List<(int, int)>();
+            var list2 = new List<(int, int)>();
+            for (int i = 0; i < board.field.GetLength(0); i++)
+                for (int j = 0; j < board.field.GetLength(1); j++)
+                    if (board.field[i, j] == 12)
+                        list1.Add((i, j));
+                    else if (board.field[i, j] == 13 || board.field[i, j] == 17)
+                        list2.Add((i, j));
+            foreach (var e in list1)
+                board.field[e.Item1, e.Item2] = 14;
+            foreach (var e in list2)
+                board.field[e.Item1, e.Item2] = 16;
+            if (p) board.playerFinishedMoving = true;
+            else board.enemyFinishedMoving = true;
+        }),
         new Ability("Meteor", 5, new() { "Gathering" }, new()
         {
             { "Fire", 10 },

@@ -240,10 +240,10 @@ public class Blueprint
                     },
                     (h) => () =>
                     {
-                        SetAnchor(Top, 0, -13);
+                        SetAnchor(Top, 0, -23);
                         AddHeaderGroup();
-                        SetRegionGroupWidth(256);
-                        SetRegionGroupHeight(237);
+                        SetRegionGroupWidth(236);
+                        SetRegionGroupHeight(217);
                         AddHeaderRegion(() =>
                         {
                             AddLine(actionBar.ability, Gray);
@@ -272,7 +272,7 @@ public class Blueprint
                             });
                         }
                         AddRegionGroup();
-                        SetRegionGroupWidth(256 - abilityObj.cost.Count * 44);
+                        SetRegionGroupWidth(236 - abilityObj.cost.Count * 44);
                         AddPaddingRegion(() =>
                         {
                             AddLine("", LightGray);
@@ -377,7 +377,7 @@ public class Blueprint
             {
                 AddBigButton("Portrait" + Race.races.Find(x => x.name == Board.board.enemy.race).portrait, (h) => { });
                 AddLine("Level: ", Gray);
-                AddText("" + Board.board.enemy.level, EntityColoredLevel(Board.board.enemy.level));
+                AddText(Board.board.enemy.level - 10 > Board.board.player.level ? "??" : "" + Board.board.enemy.level, EntityColoredLevel(Board.board.enemy.level));
                 AddLine("Health: " + Board.board.enemy.health + "/" + Board.board.enemy.MaxHealth(), Gray);
             });
             foreach (var actionBar in Board.board.enemy.actionBars)
@@ -398,10 +398,10 @@ public class Blueprint
                     },
                     (h) => () =>
                     {
-                        SetAnchor(Top, 0, -13);
+                        SetAnchor(Top, 0, -23);
                         AddHeaderGroup();
-                        SetRegionGroupWidth(256);
-                        SetRegionGroupHeight(237);
+                        SetRegionGroupWidth(236);
+                        SetRegionGroupHeight(217);
                         AddHeaderRegion(() =>
                         {
                             AddLine(actionBar.ability, Gray);
@@ -430,7 +430,7 @@ public class Blueprint
                             });
                         }
                         AddRegionGroup();
-                        SetRegionGroupWidth(256 - abilityObj.cost.Count * 44);
+                        SetRegionGroupWidth(236 - abilityObj.cost.Count * 44);
                         AddPaddingRegion(() =>
                         {
                             AddLine("", LightGray);
@@ -576,7 +576,7 @@ public class Blueprint
         }),
         new("MapToolbar", () => {
             SetAnchor(TopLeft);
-            AddRegionGroup();
+            AddHeaderGroup();
             SetRegionGroupWidth(163);
             AddButtonRegion(
                 () =>
@@ -632,6 +632,22 @@ public class Blueprint
                     SwitchDesktop("TalentScreen");
                 }
             );
+            //AddRegionGroup();
+            //SetRegionGroupWidth(123);
+            //AddHeaderRegion(() =>
+            //{
+            //    foreach (var foo in currentSave.player.Stats())
+            //        if (!foo.Key.Contains("Mastery"))
+            //            AddLine(foo.Key + ":", Gray);
+            //});
+            //AddRegionGroup();
+            //SetRegionGroupWidth(40);
+            //AddHeaderRegion(() =>
+            //{
+            //    foreach (var foo in currentSave.player.Stats())
+            //        if (!foo.Key.Contains("Mastery"))
+            //            AddLine(foo.Value + "", foo.Value > currentSave.player.stats.stats[foo.Key] ? Uncommon : (foo.Value < currentSave.player.stats.stats[foo.Key] ? DangerousRed : Gray));
+            //});
         }, true),
         new("ItemDrop", () => {
             SetAnchor(Center);
@@ -902,7 +918,44 @@ public class Blueprint
             AddHeaderRegion(() =>
             {
                 foreach (var foo in currentSave.player.Stats())
-                    AddLine(foo.Key + ": " + foo.Value, Gray);
+                    if (!foo.Key.Contains("Mastery"))
+                        AddLine(foo.Key + ":", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                foreach (var foo in currentSave.player.Stats())
+                    if (foo.Key.Contains("Mastery"))
+                        AddLine(foo.Key + ":", Gray);
+            });
+            AddRegionGroup();
+            AddHeaderRegion(() =>
+            {
+                foreach (var foo in currentSave.player.Stats())
+                    if (!foo.Key.Contains("Mastery"))
+                        AddLine(foo.Value + "", foo.Value > currentSave.player.stats.stats[foo.Key] ? Uncommon : (foo.Value < currentSave.player.stats.stats[foo.Key] ? DangerousRed : Gray));
+            });
+            AddHeaderRegion(() =>
+            {
+                foreach (var foo in currentSave.player.Stats())
+                    if (foo.Key.Contains("Mastery"))
+                        AddLine(foo.Value + "", foo.Value > currentSave.player.stats.stats[foo.Key] ? Uncommon : (foo.Value < currentSave.player.stats.stats[foo.Key] ? DangerousRed : Gray));
+            });
+        }),
+        new("CharacterBaseStats", () => {
+            SetAnchor(BottomLeft);
+            AddRegionGroup();
+            AddHeaderRegion(() =>
+            {
+                foreach (var foo in currentSave.player.Stats())
+                    if (!foo.Key.Contains("Mastery"))
+                        AddLine(foo.Key + ":", Gray);
+            });
+            AddRegionGroup();
+            AddHeaderRegion(() =>
+            {
+                foreach (var foo in currentSave.player.Stats())
+                    if (!foo.Key.Contains("Mastery"))
+                        AddLine(foo.Value + "", foo.Value > currentSave.player.stats.stats[foo.Key] ? Uncommon : (foo.Value < currentSave.player.stats.stats[foo.Key] ? DangerousRed : Gray));
             });
         }),
         new("PlayerResources", () => {

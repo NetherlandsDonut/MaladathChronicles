@@ -419,6 +419,7 @@ public class Class
                 ("Wand Proficiency", 1),
                 ("Cloth Proficiency", 1),
                 ("Meteor", 1),
+                ("Thunderstorm", 1),
             },
             new List<TalentTree>
             {
