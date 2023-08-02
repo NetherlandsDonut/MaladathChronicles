@@ -2,12 +2,16 @@ using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
 
+using static Root;
+using System.Security.Cryptography;
+
 public class FutureEntity
 {
     public FutureEntity(FutureEntity entity)
     {
         health = entity.health;
         name = entity.name;
+        spec = entity.spec;
         inventory = entity.inventory;
         equipment = entity.equipment;
         stats = entity.stats;
@@ -26,6 +30,7 @@ public class FutureEntity
     {
         health = entity.health;
         name = entity.name;
+        spec = entity.spec;
         inventory = entity.inventory;
         equipment = entity.equipment;
         stats = entity.stats;
@@ -41,7 +46,7 @@ public class FutureEntity
     }
 
     public int health;
-    public string name;
+    public string name, spec;
     public Dictionary<string, int> resources;
     public List<ActionBar> actionBars;
     public Stats stats;
@@ -60,6 +65,102 @@ public class FutureEntity
             sheet.Add(resource.Key, Root.random.Next(5, 13) / 10.0 * amount);
         }
         return sheet;
+    }
+
+    public Class GetClass() => Class.classes.Find(x => x.name == spec);
+
+    public int MaxHealth()
+    {
+        return Stats()["Stamina"] * 10;
+    }
+
+    public (int, int) WeaponDamage()
+    {
+        if (equipment.ContainsKey("Two Handed"))
+        {
+            var twohanded = inventory.items.Find(x => x.name == equipment["Two Handed"]);
+            return ((int)(twohanded.minDamage / twohanded.speed), (int)(twohanded.maxDamage / twohanded.speed));
+        }
+        else
+        {
+            double min = 0, max = 0;
+            if (equipment.ContainsKey("MainHand"))
+            {
+                var mainHand = inventory.items.Find(x => x.name == equipment["MainHand"]);
+                min += (int)(mainHand.minDamage / mainHand.speed);
+                max += (int)(mainHand.maxDamage / mainHand.speed);
+            }
+            if (equipment.ContainsKey("Off Hand"))
+            {
+                var offHand = inventory.items.Find(x => x.name == equipment["Off Hand"]);
+                min /= 1.5;
+                min /= 1.5;
+                min += offHand.minDamage / offHand.speed / 1.5;
+                max += offHand.maxDamage / offHand.speed / 1.5;
+            }
+            return ((int)min, (int)max);
+        }
+    }
+
+    public Dictionary<string, int> Stats()
+    {
+        var stats = new Dictionary<string, int>();
+        foreach (var stat in this.stats.stats)
+            stats.Add(stat.Key, stat.Value);
+        if (equipment != null)
+        {
+            var itemsEquipped = new List<Item>();
+            foreach (var item in equipment)
+                itemsEquipped.Add(inventory.items.Find(x => x.name == item.Value));
+            foreach (var item in itemsEquipped)
+                foreach (var stat in item.stats.stats)
+                    stats[stat.Key] += stat.Value;
+        }
+        return stats;
+    }
+
+    public int RollWeaponDamage()
+    {
+        var damage = WeaponDamage();
+        if (damage.Item2 == 0) return random.Next(2, 5);
+        return random.Next(damage.Item1, damage.Item2 + 1);
+    }
+
+    public double MeleeAttackPower()
+    {
+        var temp = GetClass();
+        var sum = temp.rules["Melee Attack Power per Strength"] * Stats()["Strength"];
+        sum += temp.rules["Melee Attack Power per Agility"] * Stats()["Agility"];
+        return sum;
+    }
+
+    public double RangedAttackPower()
+    {
+        var temp = GetClass();
+        var sum = temp.rules["Ranged Attack Power per Agility"] * Stats()["Agility"];
+        return sum;
+    }
+
+    public double SpellPower()
+    {
+        var temp = GetClass();
+        var sum = temp.rules["Spell Power per Intellect"] * Stats()["Intellect"];
+        return sum;
+    }
+
+    public double CriticalStrike()
+    {
+        var temp = GetClass();
+        var sum = temp.rules["Critical Strike per Strength"] * Stats()["Strength"];
+        sum += temp.rules["Critical Strike per Agility"] * Stats()["Agility"];
+        return sum;
+    }
+
+    public double SpellCritical()
+    {
+        var temp = GetClass();
+        var sum = temp.rules["Spell Critical per Intellect"] * Stats()["Intellect"];
+        return sum;
     }
 
     public void CapResources()
@@ -109,16 +210,16 @@ public class FutureEntity
         return 0.30 * Mathf.Abs(n - 1) * (n > 3 ? 3 : 1);
     }
 
-    public int MaxHealth()
-    {
-        return stats.stats["Stamina"] * 20;
-    }
-
     public void Cooldown()
     {
         foreach (var actionBar in actionBars)
             if (actionBar.cooldown > 0)
                 actionBar.cooldown -= 1;
+    }
+
+    public void Damage(double damage)
+    {
+        health -= (int)System.Math.Round(damage);
     }
 
     public void FlareBuffs(FutureBoard board)

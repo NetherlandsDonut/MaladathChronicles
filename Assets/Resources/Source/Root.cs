@@ -14,7 +14,7 @@ public static class Root
     public static int screenX = 640;
     public static int screenY = 360;
     public static int shadowSystem = 1;
-    public static int aiDepth = 6;
+    public static int aiDepth = 5;
 
     public static Cursor cursor;
     public static CursorRemote cursorEnemy;
@@ -193,6 +193,59 @@ public static class Root
 
     #region Talent
 
+    public static void PrintItem(Item item)
+    {
+        AddRegionGroup();
+        AddPaddingRegion(() =>
+        {
+            AddBigButton(item == null ? "OtherEmpty" : item.icon,
+            (h) =>
+            {
+
+            },
+            (h) => () =>
+            {
+                if (item == null) return;
+                SetAnchor(RightTop, h.window);
+                AddRegionGroup();
+                AddHeaderRegion(() =>
+                {
+                    var split = item.name.Split(", ");
+                    AddLine(split[0], Item.rarityColors[item.rarity]);
+                    if (split.Length > 1)
+                        AddLine("\"" + split[1] + "\"", Item.rarityColors[item.rarity]);
+                });
+                AddPaddingRegion(() =>
+                {
+                    if (item.armorClass != null)
+                    {
+                        AddLine(item.armorClass + " " + item.type, Gray);
+                        AddLine(item.armor + " Armor", Gray);
+                    }
+                    else if (item.maxDamage != 0)
+                    {
+                        AddLine(item.type + " " + item.detailedType, Gray);
+                        AddLine(item.minDamage + " - " + item.maxDamage + " Damage", Gray);
+                    }
+                    else
+                        AddLine(item.type, Gray);
+                });
+                if (item.stats.stats.Count > 0)
+                    AddPaddingRegion(() =>
+                    {
+                        foreach (var stat in item.stats.stats)
+                            AddLine("+" + stat.Value + " " + stat.Key, Gray);
+                    });
+                AddHeaderRegion(() =>
+                {
+                    AddLine("Required level: ", DarkGray);
+                    AddText("" + item.lvl, ItemColoredLevel(item.lvl));
+                });
+            });
+            if (item != null) AddBigButtonOverlay("OtherRarity" + item.rarity);
+        });
+    }
+
     public static void PrintSite(string name, string type, Vector2 anchor)
     {
         SetAnchor(anchor.x, anchor.y);
@@ -237,6 +290,41 @@ public static class Root
                     });
                 });
             }
+            else if (type == "HostileArea")
+            {
+                var find = SiteHostileArea.hostileAreas.Find(x => x.name == name);
+                AddSmallButton("SiteHostileArea",
+                (h) =>
+                {
+                    if (find != null)
+                    {
+                        Board.board = new Board(6, 6, find.RollEncounter(), "Areas/Area" + find.name.Replace("\'", "").Replace(" ", ""));
+                        SpawnDesktopBlueprint("Game");
+                        SwitchDesktop("Game");
+                    }
+                },
+                (h) => () =>
+                {
+                    if (find == null) return;
+                    SetAnchor(TopRight, h.window);
+                    AddRegionGroup();
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine(name, Gray);
+                    });
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Recommended level: ", Gray);
+                        AddText(find.recommendedLevel + "", EntityColoredLevel(find.recommendedLevel));
+                    });
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine("Possible encounters:", DarkGray);
+                        foreach (var encounter in find.possibleEncounters)
+                            AddLine("- " + encounter.Item3, DarkGray);
+                    });
+                });
+            }
             else
                 AddSmallButton("Site" + type,
                 (h) =>
@@ -244,7 +332,7 @@ public static class Root
                     var find = SiteHostileArea.hostileAreas.Find(x => x.name == name);
                     if (find != null)
                     {
-                        Board.board = new Board(7, 7, find.RollEncounter());
+                        Board.board = new Board(6, 6, find.RollEncounter(), "");
                         SpawnDesktopBlueprint("Game");
                         SwitchDesktop("Game");
                     }
@@ -278,6 +366,23 @@ public static class Root
                     });
                 });
         });
+    }
+
+    public static bool WillGetExperience(int level) => currentSave.player.level - 5 <= level;
+
+    public static Color ItemColoredLevel(int level)
+    {
+        if (level > currentSave.player.level) return Red;
+        else return Gray;
+    }
+
+    public static Color EntityColoredLevel(int level)
+    {
+        if (level - 4 > currentSave.player.level) return Red;
+        else if (level - 2 > currentSave.player.level) return Orange;
+        else if (level + 2 < currentSave.player.level && WillGetExperience(level)) return Green;
+        else if (!WillGetExperience(level)) return Gray;
+        else return Yellow;
     }
 
     public static void PrintTalent(int spec, int row, int col)
@@ -756,7 +861,7 @@ public static class Root
     public static void AddSmallButton(string type, Action<Highlightable> pressEvent, Func<Highlightable, Action> tooltip = null)
     {
         var region = CDesktop.LBWindow.LBRegionGroup.LBRegion;
-        if (region.lines.Count > 1) return;
+        //if (region.lines.Count > 1) return;
         var newObject = new GameObject("SmallButton: " + type.ToString(), typeof(LineSmallButton), typeof(SpriteRenderer));
         newObject.transform.parent = region.transform;
         newObject.GetComponent<LineSmallButton>().Initialise(region, type, pressEvent, tooltip);
@@ -817,7 +922,6 @@ public static class Root
     public static void AddBigButton(string type, Action<Highlightable> pressEvent, Func<Highlightable, Action> tooltip = null)
     {
         var region = CDesktop.LBWindow.LBRegionGroup.LBRegion;
-        if (region.lines.Count > 1) return;
         var newObject = new GameObject("BigButton: " + type.ToString(), typeof(LineBigButton), typeof(SpriteRenderer));
         newObject.transform.parent = region.transform;
         newObject.GetComponent<LineBigButton>().Initialise(region, type, pressEvent, tooltip);
@@ -1015,7 +1119,9 @@ public static class Root
             { DarkGray, new Color32(114, 114, 114, 255) },
             { Black, new Color32(31, 31, 31, 255) },
             { Red, new Color32(181, 77, 77, 255) },
-            { Green, new Color32(74, 154, 26, 255) },
+            { Yellow, new Color32(181, 159, 77, 255) },
+            { Orange, new Color32(185, 104, 57, 255) },
+            { Green, new Color32(81, 181, 77, 255) },
             { Druid, new Color32(184, 90, 7, 255) },
             { Warrior, new Color32(144, 113, 79, 255) },
             { Rogue, new Color32(184, 177, 76, 255) },
@@ -1027,7 +1133,13 @@ public static class Root
             { Priest, new Color32(184, 184, 184, 255) },
             { Copper, new Color32(184, 80, 41, 255) },
             { Silver, new Color32(170, 188, 210, 255) },
-            { Gold, new Color32(255, 210, 11, 255) }
+            { Gold, new Color32(255, 210, 11, 255) },
+            { Poor, new Color32(114, 114, 114, 255) },
+            { Common, new Color32(183, 183, 183, 255) },
+            { Uncommon, new Color32(26, 201, 0, 255) },
+            { Rare, new Color32(0, 117, 226, 255) },
+            { Epic, new Color32(163, 53, 238, 255) },
+            { Legendary, new Color32(221, 110, 0, 255) }
         },
         new ()
         {
@@ -1074,7 +1186,14 @@ public static class Root
 
         Copper,
         Silver,
-        Gold
+        Gold,
+
+        Poor,
+        Common,
+        Uncommon,
+        Rare,
+        Epic,
+        Legendary
     }
 
     public enum CursorType

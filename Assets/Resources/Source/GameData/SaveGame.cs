@@ -6,21 +6,25 @@ public class SaveGame
 {
     public SaveGame()
     {
-        player = new Entity(
+        player = new Entity
+        (
             "Ji'nta",
-            Race.races.Find(x => x.name == "Troll"),
+            Race.races.Find(x => x.name == "Forsaken"),
             Class.classes.Find(x => x.name == "Mage"),
             new()
             {
-                "Fang of Venoxis",
-                "Enthralled Sphere",
+                "Staff of Dominance",
+                "Apprentice's Robe",
+                "Apprentice's Pants",
+                "Apprentice's Boots",
                 "Band of Flesh",
-                "Haunting Specter Leggings",
                 "Mantle of Phrenic Power",
-                "Mish'undare, Circlet of the Mind Flayer",
                 "Cloak of the Brood Lord",
                 "Prestor's Talisman of Connivery",
-            });
+                "Mish'undare, Circlet of the Mind Flayer",
+                "Gossamer Belt",
+            }
+        );
         siteProgress = new Dictionary<string, int>();
         date = DateTime.Now;
     }

@@ -460,40 +460,43 @@ public class Buff
 
         }),
         new Buff("Scorch", "None", new() { "Damage" }, false, "AbilityScorch",
-        () =>
-        {
-            AddHeaderRegion(() =>
+            () =>
             {
-                AddLine("Target burns for 3 damage every turn.", Gray);
-            });
-            AddHeaderRegion(() =>
+                AddHeaderRegion(() =>
+                {
+                    AddLine("Target burns for 3 damage every turn.", Gray);
+                });
+                AddHeaderRegion(() =>
+                {
+                    SetRegionAsGroupExtender();
+                    AddLine("Each point in Frost Mastery adds 1% chance", Gray);
+                    AddLine("to refund the cost of casting this spell.", Gray);
+                });
+            },
+            (p) => () =>
             {
-                SetRegionAsGroupExtender();
-                AddLine("Each point in Frost Mastery adds 1% chance", Gray);
-                AddLine("to refund the cost of casting this spell.", Gray);
-            });
-        },
-        (p) => () =>
-        {
-            var target = p ? Board.board.enemy : Board.board.player;
-            target.health -= 3;
-            SpawnShatter(2, 0.8, new Vector3(p ? 148 : -318, 122), "AbilityScorch");
-            PlaySound("AbilityScorchFlare");
-            animationTime += frameTime * 3;
-        },
-        (p) => () =>
-        {
+                var caster = p ? Board.board.player : Board.board.enemy;
+                var target = p ? Board.board.enemy : Board.board.player;
+                target.Damage(caster.RollWeaponDamage() * (caster.SpellPower() / 100.0 + 1));
+                SpawnShatter(2, 0.8, new Vector3(p ? 148 : -318, 122), "AbilityScorch");
+                PlaySound("AbilityScorchFlare");
+                animationTime += frameTime * 3;
+            },
+            (p) => () =>
+            {
 
-        },
-        (p, board) => () =>
-        {
-            var target = p ? board.enemy : board.player;
-            target.health -= 3;
-        },
-        (p, board) => () =>
-        {
+            },
+            (p, board) => () =>
+            {
+                var caster = p ? board.player : board.enemy;
+                var target = p ? board.enemy : board.player;
+                target.Damage(caster.RollWeaponDamage() * (caster.SpellPower() / 100.0 + 1));
+            },
+            (p, board) => () =>
+            {
 
-        }),
+            }
+        ),
         new Buff("Venomous Bite", "None", new() { "Damage" }, false, "AbilityVenomousBite",
         () =>
         {

@@ -107,6 +107,16 @@ public class Item
     public double price, speed;
     public Stats stats;
 
+    public static Dictionary<string, Root.Color> rarityColors = new()
+    {
+        { "Poor", Root.Color.Poor },
+        { "Common", Root.Color.Common },
+        { "Uncommon", Root.Color.Uncommon },
+        { "Rare", Root.Color.Rare },
+        { "Epic", Root.Color.Epic },
+        { "Legendary", Root.Color.Legendary },
+    };
+    
     public bool CanEquip(Entity entity)
     {
         if (armorClass != null)
@@ -119,28 +129,28 @@ public class Item
 
     public void Equip(Entity entity, bool secondSlot = false)
     {
-        if (type == "TwoHanded")
+        if (type == "Two Handed")
         {
-            entity.Unequip(new() { "OffHand", "MainHand" });
-            entity.equipment["TwoHand"] = name;
+            entity.Unequip(new() { "Off Hand", "MainHand" });
+            entity.equipment["MainHand"] = name;
         }
-        else if (type == "OffHand")
+        else if (type == "Off Hand")
         {
             var mainHand = entity.GetSlot("MainHand");
-            if (mainHand != null && mainHand.type == "TwoHanded")
+            if (mainHand != null && mainHand.type == "Two Handed")
                 entity.Unequip(new() { "MainHand" });
-            entity.Unequip(new() { "OffHand" });
-            entity.equipment["OffHand"] = name;
+            entity.Unequip(new() { "Off Hand" });
+            entity.equipment["Off Hand"] = name;
         }
-        else if (type == "OneHanded")
+        else if (type == "One Handed")
         {
             if (secondSlot)
             {
                 var mainHand = entity.GetSlot("MainHand");
-                if (mainHand != null && mainHand.type == "TwoHanded")
+                if (mainHand != null && mainHand.type == "Two Handed")
                     entity.Unequip(new() { "MainHand" });
-                entity.Unequip(new() { "OffHand" });
-                entity.equipment["OffHand"] = name;
+                entity.Unequip(new() { "Off Hand" });
+                entity.equipment["Off Hand"] = name;
             }
             else
             {
@@ -306,7 +316,7 @@ public class Item
         new Item(77, 60, "Epic", 14.8714,
             "Perdition's Blade",
             "ItemShortblade11",
-            "OneHanded",
+            "One Handed",
             "Dagger",
             73, 137,
             1.80,
@@ -357,9 +367,9 @@ public class Item
             })
         ),
         new Item(70, 60, "Epic", 13.8646,
-            "Perdition's Blade",
+            "Staff of Dominance",
             "ItemStaff13",
-            "TwoHanded",
+            "Two Handed",
             "Staff",
             126, 205,
             2.90,
@@ -389,7 +399,7 @@ public class Item
         new Item(70, 60, "Epic", 13.5594,
             "Hyperthermically Insulated Lava Dredger",
             "ItemGizmo2",
-            "TwoHanded",
+            "Two Handed",
             "Mace",
             155, 234,
             2.90,
@@ -404,7 +414,7 @@ public class Item
         new Item(65, 60, "Epic", 8.1895,
             "Fang of Venoxis",
             "ItemShortblade31",
-            "OneHanded",
+            "One Handed",
             "Dagger",
             35, 72,
             1.30,
@@ -420,13 +430,13 @@ public class Item
             "Carapace Spine Crossbow",
             "ItemCrossbow6",
             "Crossbow",
-            "TwoHanded",
+            "Two Handed",
             82, 124,
             3.30,
             new Stats(new()
             {
-                { "Agility", 4 },
                 { "Stamina", 9 },
+                { "Agility", 4 },
             })
         ),
         new Item(61, 56, "Rare", 3.5031,
@@ -447,9 +457,9 @@ public class Item
             "Finger",
             new Stats(new()
             {
-                { "Agility", 3 },
-                { "Strength", 6 },
                 { "Stamina", 16 },
+                { "Strength", 6 },
+                { "Agility", 3 },
             })
         ),
         new Item(59, 54, "Rare", 1.4368,
@@ -460,9 +470,9 @@ public class Item
             553,
             new Stats(new()
             {
-                { "Agility", 7 },
-                { "Strength", 6 },
                 { "Stamina", 16 },
+                { "Strength", 6 },
+                { "Agility", 7 },
             })
         ),
         new Item(58, 53, "Uncommon", 0.7530,
@@ -471,9 +481,9 @@ public class Item
             "Finger",
             new Stats(new()
             {
-                { "Agility", 7 },
-                { "Strength", 8 },
                 { "Stamina", 7 },
+                { "Strength", 8 },
+                { "Agility", 7 },
             })
         ),
         new Item(57, 52, "Rare", 1.6581,
@@ -491,15 +501,15 @@ public class Item
         new Item(56, 51, "Rare", 4.8882,
             "Angerforge's Battle Axe",
             "ItemHalberd6",
-            "TwoHanded",
+            "Two Handed",
             "Axe",
             100,
             150,
             2.60,
             new Stats(new()
             {
-                { "Strength", 27 },
                 { "Stamina", 11 },
+                { "Strength", 27 },
             })
         ),
         new Item(55, 50, "Uncommon", 0.8750,
@@ -520,8 +530,8 @@ public class Item
             143,
             new Stats(new()
             {
-                { "Agility", 8 },
                 { "Stamina", 14 },
+                { "Agility", 8 },
             })
         ),
         new Item(55, 50, "Rare", 1.4464,
@@ -532,9 +542,9 @@ public class Item
             109,
             new Stats(new()
             {
-                { "Agility", 11 },
-                { "Strength", 10 },
                 { "Stamina", 13 },
+                { "Strength", 10 },
+                { "Agility", 11 },
             })
         ),
         new Item(55, 50, "Rare", 1.5596,
@@ -545,47 +555,102 @@ public class Item
             577,
             new Stats(new()
             {
-                { "Agility", 11 },
-                { "Strength", 11 },
                 { "Stamina", 22 },
+                { "Strength", 11 },
+                { "Agility", 11 },
             })
         ),
         new Item(55, 50, "Rare", 3.6752,
             "Grizzle's Skinner\r\n",
             "ItemAxe12",
-            "OneHanded",
+            "One Handed",
             "Axe",
             61,
             114,
             2.40,
             new Stats(new()
             {
-                { "Agility", 6 },
-                { "Strength", 8 },
                 { "Stamina", 5 },
+                { "Strength", 8 },
+                { "Agility", 6 },
             })
         ),
         new Item(53, 48, "Rare", 0.9698,
             "Blackveil Cape",
             "ItemCape18",
-            "Shoulders",
-            "Plate",
-            38,
+            "Back",
             new Stats(new()
             {
-                { "Agility", 14 },
                 { "Strength", 6 },
+                { "Agility", 14 },
             })
         ),
         new Item(53, 48, "Rare", 1.0452,
             "Enthralled Sphere",
             "ItemOrb3",
-            "OffHand",
+            "Off Hand",
             "Orb",
             new Stats(new()
             {
-                { "Spirit", 5 },
                 { "Stamina", 3 },
+                { "Spirit", 5 },
+            })
+        ),
+        new Item(46, 41, "Uncommon", 0.3367,
+            "Gossamer Belt",
+            "ItemBelt7",
+            "Waist",
+            "Cloth",
+            34,
+            new Stats(new()
+            {
+                { "Stamina", 9 },
+                { "Intellect", 10 },
+            })
+        ),
+        new Item(2, 1, "Common", 0.0009,
+            "Bent Staff",
+            "ItemStaff8",
+            "Two Handed",
+            "Staff",
+            3, 5,
+            2.90,
+            new Stats(new()
+            {
+
+            })
+        ),
+        new Item(1, 1, "Common", 0.0001,
+            "Apprentice's Robe",
+            "ItemRobe23",
+            "Chest",
+            "Cloth",
+            3,
+            new Stats(new()
+            {
+
+            })
+        ),
+        new Item(1, 1, "Common", 0.0001,
+            "Apprentice's Pants",
+            "ItemPants1",
+            "Legs",
+            "Cloth",
+            2,
+            new Stats(new()
+            {
+
+            })
+        ),
+        new Item(1, 1, "Poor", 0.0001,
+            "Apprentice's Boots",
+            "ItemBoots9",
+            "Feet",
+            "Cloth",
+            0,
+            new Stats(new()
+            {
+
             })
         ),
     };

@@ -8,13 +8,14 @@ using static Root;
 
 public class Board
 {
-    public Board(int x, int y, Entity enemy)
+    public Board(int x, int y, Entity enemy, string background)
     {
         bonusTurnStreak = 0;
         field = new int[x, y];
         player = currentSave.player;
         player.Initialise(false);
         this.enemy = enemy;
+        this.background = background;
         playerTurn = true;
         temporaryElementsPlayer = new();
         temporaryElementsEnemy = new();
@@ -34,6 +35,7 @@ public class Board
     public bool playerTurn, breakForEnemy, breakForCascade, enemyFinishedMoving, playerFinishedMoving;
     public List<GameObject> temporaryElementsPlayer, temporaryElementsEnemy, temporaryBuffsPlayer, temporaryBuffsEnemy;
     public List<Action> actions;
+    public string background;
 
     //ENDS THE CURRENT PLAYER'S TURN
     public void EndTurn()

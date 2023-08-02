@@ -206,7 +206,7 @@ public class Ability
             });
             Board.board.actions.Add(() =>
             {
-                target.health -= 3;
+                target.Damage(caster.RollWeaponDamage() * (caster.SpellPower() / 100.0 + 1));
                 SpawnShatter(2, 0.8, new Vector3(p ? 148 : -318, 122), "AbilityArcaneMissiles");
                 SpawnShatter(6, 0.7, new Vector3(p ? 148 : -318, 122), "AbilityArcaneMissiles", true, p ? "1000" : "1001");
                 SpawnShatter(6, 0.7, new Vector3(p ? 148 : -318, 122), "AbilityArcaneMissiles", true, p ? "1000" : "1001");
@@ -215,7 +215,7 @@ public class Ability
             });
             Board.board.actions.Add(() =>
             {
-                target.health -= 3;
+                target.Damage(caster.RollWeaponDamage() * (caster.SpellPower() / 100.0 + 1));
                 SpawnShatter(2, 0.8, new Vector3(p ? 148 : -318, 122), "AbilityArcaneMissiles");
                 SpawnShatter(6, 0.7, new Vector3(p ? 148 : -318, 122), "AbilityArcaneMissiles", true, p ? "1000" : "1001");
                 SpawnShatter(6, 0.7, new Vector3(p ? 148 : -318, 122), "AbilityArcaneMissiles", true, p ? "1000" : "1001");
@@ -224,7 +224,7 @@ public class Ability
             });
             Board.board.actions.Add(() =>
             {
-                target.health -= 3;
+                target.Damage(caster.RollWeaponDamage() * (caster.SpellPower() / 100.0 + 1));
                 SpawnShatter(2, 0.8, new Vector3(p ? 148 : -318, 122), "AbilityArcaneMissiles");
                 SpawnShatter(6, 0.7, new Vector3(p ? 148 : -318, 122), "AbilityArcaneMissiles", true, p ? "1000" : "1001");
                 SpawnShatter(6, 0.7, new Vector3(p ? 148 : -318, 122), "AbilityArcaneMissiles", true, p ? "1000" : "1001");
@@ -236,14 +236,15 @@ public class Ability
         },
         (p, board) =>
         {
+            var caster = p ? board.player : board.enemy;
             var target = p ? board.enemy : board.player;
-            target.health -= 3;
-            target.health -= 3;
-            target.health -= 3;
+            target.Damage(caster.RollWeaponDamage() * (caster.SpellPower() / 100.0 + 1));
+            target.Damage(caster.RollWeaponDamage() * (caster.SpellPower() / 100.0 + 1));
+            target.Damage(caster.RollWeaponDamage() * (caster.SpellPower() / 100.0 + 1));
             if (p) board.playerFinishedMoving = true;
             else board.enemyFinishedMoving = true;
         }),
-        new Ability("Curse Of Agony", 0, new() { "Damage", "Overtime" }, new()
+        new Ability("Curse Of Agony", 4, new() { "Damage", "Overtime" }, new()
         {
             { "Shadow", 7 },
             { "Fire", 3 }
@@ -748,10 +749,10 @@ public class Ability
             if (p) board.playerFinishedMoving = true;
             else board.enemyFinishedMoving = true;
         }),
-        new Ability("Corruption", 0, new() { "Damage", "Overtime" }, new()
+        new Ability("Corruption", 1, new() { "Damage", "Overtime" }, new()
         {
             { "Shadow", 2 },
-            { "Decay", 5 }
+            { "Decay", 5 },
         },
         () =>
         {

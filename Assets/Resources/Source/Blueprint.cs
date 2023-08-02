@@ -212,7 +212,7 @@ public class Blueprint
                 AddBigButton("Class" + Board.board.player.spec,
                     (h) => { }
                 );
-                AddLine("Level " + Board.board.player.level, Gray);
+                AddLine("Level: " + Board.board.player.level, Gray);
                 AddLine("Health: " + Board.board.player.health + "/" + Board.board.player.MaxHealth(), Gray);
             });
             foreach (var actionBar in Board.board.player.actionBars)
@@ -376,7 +376,8 @@ public class Blueprint
             AddHeaderRegion(() =>
             {
                 AddBigButton("Portrait" + Race.races.Find(x => x.name == Board.board.enemy.race).portrait, (h) => { });
-                AddLine("Level " + Board.board.enemy.level, Gray);
+                AddLine("Level: ", Gray);
+                AddText("" + Board.board.enemy.level, EntityColoredLevel(Board.board.enemy.level));
                 AddLine("Health: " + Board.board.enemy.health + "/" + Board.board.enemy.MaxHealth(), Gray);
             });
             foreach (var actionBar in Board.board.enemy.actionBars)
@@ -535,7 +536,11 @@ public class Blueprint
             );
         }),
         new("BattleBoard", () => {
-            SetAnchor(Top, 0, -13);
+            SetAnchor(Top, 0, -32);
+            var boardBackground = new GameObject("BoardBackground", typeof(SpriteRenderer));
+            boardBackground.transform.parent = CDesktop.LBWindow.transform;
+            boardBackground.transform.localPosition = new Vector2(-17, 17);
+            boardBackground.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Textures/BoardBackground");
             AddRegionGroup();
             for (int i = 0; i < Board.board.field.GetLength(1); i++)
             {
@@ -837,241 +842,59 @@ public class Blueprint
         }),
         new("CharacterNeckSlot", () => {
             SetAnchor(-98, 74);
-            AddRegionGroup();
-            AddPaddingRegion(() =>
-            {
-                var item = currentSave.player.GetSlot("Neck");
-                AddBigButton(item == null ? "OtherEmpty" : item.icon,
-                (h) =>
-                {
-
-                },
-                (h) => () =>
-                {
-
-                });
-            });
+            PrintItem(currentSave.player.GetSlot("Neck"));
         }),
         new("CharacterBackSlot", () => {
             SetAnchor(-98, 22);
-            AddRegionGroup();
-            AddPaddingRegion(() =>
-            {
-                var item = currentSave.player.GetSlot("Back");
-                AddBigButton(item == null ? "OtherEmpty" : item.icon,
-                (h) =>
-                {
-
-                },
-                (h) => () =>
-                {
-
-                });
-            });
+            PrintItem(currentSave.player.GetSlot("Back"));
         }),
         new("CharacterRingSlot", () => {
             SetAnchor(-98, -30);
-            AddRegionGroup();
-            AddPaddingRegion(() =>
-            {
-                var item = currentSave.player.GetSlot("Finger");
-                AddBigButton(item == null ? "OtherEmpty" : item.icon,
-                (h) =>
-                {
-
-                },
-                (h) => () =>
-                {
-
-                });
-            });
+            PrintItem(currentSave.player.GetSlot("Finger"));
         }),
         new("CharacterHeadSlot", () => {
             SetAnchor(-46, 100);
-            AddRegionGroup();
-            AddPaddingRegion(() =>
-            {
-                var item = currentSave.player.GetSlot("Head");
-                AddBigButton(item == null ? "OtherEmpty" : item.icon,
-                (h) =>
-                {
-
-                },
-                (h) => () =>
-                {
-
-                });
-            });
+            PrintItem(currentSave.player.GetSlot("Head"));
         }),
         new("CharacterChestSlot", () => {
             SetAnchor(-46, 48);
-            AddRegionGroup();
-            AddPaddingRegion(() =>
-            {
-                var item = currentSave.player.GetSlot("Chest");
-                AddBigButton(item == null ? "OtherEmpty" : item.icon,
-                (h) =>
-                {
-
-                },
-                (h) => () =>
-                {
-
-                });
-            });
+            PrintItem(currentSave.player.GetSlot("Chest"));
         }),
         new("CharacterLegsSlot", () => {
             SetAnchor(-46, -4);
-            AddRegionGroup();
-            AddPaddingRegion(() =>
-            {
-                var item = currentSave.player.GetSlot("Legs");
-                AddBigButton(item == null ? "OtherEmpty" : item.icon,
-                (h) =>
-                {
-
-                },
-                (h) => () =>
-                {
-
-                });
-            });
+            PrintItem(currentSave.player.GetSlot("Legs"));
         }),
         new("CharacterFeetSlot", () => {
             SetAnchor(-46, -56);
-            AddRegionGroup();
-            AddPaddingRegion(() =>
-            {
-                var item = currentSave.player.GetSlot("Feet");
-                AddBigButton(item == null ? "OtherEmpty" : item.icon,
-                (h) =>
-                {
-
-                },
-                (h) => () =>
-                {
-
-                });
-            });
+            PrintItem(currentSave.player.GetSlot("Feet"));
         }),
         new("CharacterShouldersSlot", () => {
             SetAnchor(6, 100);
-            AddRegionGroup();
-            AddPaddingRegion(() =>
-            {
-                var item = currentSave.player.GetSlot("Shoulders");
-                AddBigButton(item == null ? "OtherEmpty" : item.icon,
-                (h) =>
-                {
-
-                },
-                (h) => () =>
-                {
-
-                });
-            });
+            PrintItem(currentSave.player.GetSlot("Shoulders"));
         }),
         new("CharacterHandsSlot", () => {
             SetAnchor(6, 48);
-            AddRegionGroup();
-            AddPaddingRegion(() =>
-            {
-                var item = currentSave.player.GetSlot("Hands");
-                AddBigButton(item == null ? "OtherEmpty" : item.icon,
-                (h) =>
-                {
-
-                },
-                (h) => () =>
-                {
-
-                });
-            });
+            PrintItem(currentSave.player.GetSlot("Hands"));
         }),
         new("CharacterWaistSlot", () => {
             SetAnchor(6, -4);
-            AddRegionGroup();
-            AddPaddingRegion(() =>
-            {
-                var item = currentSave.player.GetSlot("Waist");
-                AddBigButton(item == null ? "OtherEmpty" : item.icon,
-                (h) =>
-                {
-
-                },
-                (h) => () =>
-                {
-
-                });
-            });
+            PrintItem(currentSave.player.GetSlot("Waist"));
         }),
         new("CharacterSpecialSlot", () => {
             SetAnchor(6, -56);
-            AddRegionGroup();
-            AddPaddingRegion(() =>
-            {
-                var item = currentSave.player.GetSlot("Special");
-                AddBigButton(item == null ? "OtherEmpty" : item.icon,
-                (h) =>
-                {
-
-                },
-                (h) => () =>
-                {
-
-                });
-            });
+            PrintItem(currentSave.player.GetSlot("Special"));
         }),
         new("CharacterMainHandSlot", () => {
             SetAnchor(58, 74);
-            AddRegionGroup();
-            AddPaddingRegion(() =>
-            {
-                var item = currentSave.player.GetSlot("MainHand");
-                AddBigButton(item == null ? "OtherEmpty" : item.icon,
-                (h) =>
-                {
-
-                },
-                (h) => () =>
-                {
-
-                });
-            });
+            PrintItem(currentSave.player.GetSlot("MainHand"));
         }),
         new("CharacterOffHandSlot", () => {
             SetAnchor(58, 22);
-            AddRegionGroup();
-            AddPaddingRegion(() =>
-            {
-                var item = currentSave.player.GetSlot("OffHand");
-                AddBigButton(item == null ? "OtherEmpty" : item.icon,
-                (h) =>
-                {
-
-                },
-                (h) => () =>
-                {
-
-                });
-            });
+            PrintItem(currentSave.player.GetSlot("Off Hand"));
         }),
         new("CharacterTrinketSlot", () => {
             SetAnchor(58, -30);
-            AddRegionGroup();
-            AddPaddingRegion(() =>
-            {
-                var item = currentSave.player.GetSlot("Trinket");
-                AddBigButton(item == null ? "OtherEmpty" : item.icon,
-                (h) =>
-                {
-
-                },
-                (h) => () =>
-                {
-
-                });
-            });
+            PrintItem(currentSave.player.GetSlot("Trinket"));
         }),
         new("CharacterStats", () => {
             SetAnchor(BottomLeft);
@@ -1090,22 +913,56 @@ public class Blueprint
             foreach (var element in elements1)
                 AddHeaderRegion(() =>
                 {
-                    AddSmallButton("Element" + element + "Rousing", (h) => { });
+                    AddSmallButton("Element" + element + "Rousing",
+                        (h) => { },
+                        (h) => () =>
+                        {
+                            SetAnchor(Top, h.window);
+                            AddRegionGroup();
+                            SetRegionGroupWidth(78);
+                            AddHeaderRegion(() =>
+                            {
+                                AddLine(element + ":", Gray);
+                            });
+                            AddPaddingRegion(() =>
+                            {
+                                AddLine(Board.board.player.resources.ToList().Find(x => x.Key == element).Value + " / " + Board.board.player.MaxResource(element), Gray);
+                            });
+                        }
+                    );
                 });
             AddRegionGroup();
             SetRegionGroupWidth(34);
             foreach (var element in elements1)
                 AddHeaderRegion(() =>
                 {
-                    AddLine(Board.board.player.resources.ToList().Find(x => x.Key == element).Value + "", LightGray);
-                    AddSmallButton("Element" + elements2[elements1.IndexOf(element)] + "Rousing", (h) => { });
+                    var value = Board.board.player.resources.ToList().Find(x => x.Key == element).Value;
+                    AddLine(value + "", value == 0 ? DarkGray : (value < Board.board.player.MaxResource(element) ? Gray : Green));
+                    AddSmallButton("Element" + elements2[elements1.IndexOf(element)] + "Rousing",
+                        (h) => { },
+                        (h) => () =>
+                        {
+                            SetAnchor(Top, h.window);
+                            AddRegionGroup();
+                            SetRegionGroupWidth(78);
+                            AddHeaderRegion(() =>
+                            {
+                                AddLine(elements2[elements1.IndexOf(element)] + ":", Gray);
+                            });
+                            AddPaddingRegion(() =>
+                            {
+                                AddLine(Board.board.player.resources.ToList().Find(x => x.Key == elements2[elements1.IndexOf(element)]).Value + " / " + Board.board.player.MaxResource(elements2[elements1.IndexOf(element)]), Gray);
+                            });
+                        }
+                    );
                 });
             AddRegionGroup();
             SetRegionGroupWidth(15);
             foreach (var element in elements2)
                 AddHeaderRegion(() =>
                 {
-                    AddLine(Board.board.player.resources.ToList().Find(x => x.Key == element).Value + "", LightGray);
+                    var value = Board.board.player.resources.ToList().Find(x => x.Key == element).Value;
+                    AddLine(value + "", value == 0 ? DarkGray : (value < Board.board.player.MaxResource(element) ? Gray : Green));
                 });
         }),
         new("EnemyResources", () => {
@@ -1116,22 +973,56 @@ public class Blueprint
             foreach (var element in elements1)
                 AddHeaderRegion(() =>
                 {
-                    AddSmallButton("Element" + element + "Rousing", (h) => { });
+                    AddSmallButton("Element" + element + "Rousing",
+                        (h) => { },
+                        (h) => () =>
+                        {
+                            SetAnchor(Top, h.window);
+                            AddRegionGroup();
+                            SetRegionGroupWidth(78);
+                            AddHeaderRegion(() =>
+                            {
+                                AddLine(element + ":", Gray);
+                            });
+                            AddPaddingRegion(() =>
+                            {
+                                AddLine(Board.board.enemy.resources.ToList().Find(x => x.Key == element).Value + " / " + Board.board.enemy.MaxResource(element), Gray);
+                            });
+                        }
+                    );
                 });
             AddRegionGroup();
             SetRegionGroupWidth(34);
             foreach (var element in elements1)
                 AddHeaderRegion(() =>
                 {
-                    AddLine(Board.board.enemy.resources.ToList().Find(x => x.Key == element).Value + "", LightGray);
-                    AddSmallButton("Element" + elements2[elements1.IndexOf(element)] + "Rousing", (h) => { });
+                    var value = Board.board.enemy.resources.ToList().Find(x => x.Key == element).Value;
+                    AddLine(value + "", value == 0 ? DarkGray : (value < Board.board.enemy.MaxResource(element) ? Gray : Green));
+                    AddSmallButton("Element" + elements2[elements1.IndexOf(element)] + "Rousing",
+                        (h) => { },
+                        (h) => () =>
+                        {
+                            SetAnchor(Top, h.window);
+                            AddRegionGroup();
+                            SetRegionGroupWidth(78);
+                            AddHeaderRegion(() =>
+                            {
+                                AddLine(elements2[elements1.IndexOf(element)] + ":", Gray);
+                            });
+                            AddPaddingRegion(() =>
+                            {
+                                AddLine(Board.board.enemy.resources.ToList().Find(x => x.Key == elements2[elements1.IndexOf(element)]).Value + " / " + Board.board.enemy.MaxResource(elements2[elements1.IndexOf(element)]), Gray);
+                            });
+                        }
+                    );
                 });
             AddRegionGroup();
             SetRegionGroupWidth(15);
             foreach (var element in elements2)
                 AddHeaderRegion(() =>
                 {
-                    AddLine(Board.board.enemy.resources.ToList().Find(x => x.Key == element).Value + "", LightGray);
+                    var value = Board.board.enemy.resources.ToList().Find(x => x.Key == element).Value;
+                    AddLine(value + "", value == 0 ? DarkGray : (value < Board.board.enemy.MaxResource(element) ? Gray : Green));
                 });
         }),
         new("ReturnToMap", () => {
@@ -1234,7 +1125,7 @@ public class Blueprint
         }),
         new("Game", () =>
         {
-            SetDesktopBackground("ZoneZulFarrak2");
+            SetDesktopBackground(Board.board.background);
             SpawnWindowBlueprint("BattleBoard");
             SpawnWindowBlueprint("PlayerBattleInfo");
             SpawnWindowBlueprint("EnemyBattleInfo");

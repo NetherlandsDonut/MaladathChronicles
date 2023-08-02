@@ -4,7 +4,6 @@ using System.Linq;
 using System.Collections.Generic;
 
 using static Root;
-using UnityEditor.Experimental.GraphView;
 
 public class Entity
 {
@@ -172,9 +171,9 @@ public class Entity
 
     public (int, int) WeaponDamage()
     {
-        if (equipment.ContainsKey("TwoHanded"))
+        if (equipment.ContainsKey("Two Handed"))
         {
-            var twohanded = inventory.items.Find(x => x.name == equipment["TwoHanded"]);
+            var twohanded = inventory.items.Find(x => x.name == equipment["Two Handed"]);
             return ((int)(twohanded.minDamage / twohanded.speed), (int)(twohanded.maxDamage / twohanded.speed));
         }
         else
@@ -186,9 +185,9 @@ public class Entity
                 min += (int)(mainHand.minDamage / mainHand.speed);
                 max += (int)(mainHand.maxDamage / mainHand.speed);
             }
-            if (equipment.ContainsKey("OffHand"))
+            if (equipment.ContainsKey("Off Hand"))
             {
-                var offHand = inventory.items.Find(x => x.name == equipment["OffHand"]);
+                var offHand = inventory.items.Find(x => x.name == equipment["Off Hand"]);
                 min /= 1.5;
                 min /= 1.5;
                 min += offHand.minDamage / offHand.speed / 1.5;
@@ -261,12 +260,23 @@ public class Entity
 
     public void Cooldown() => actionBars.ForEach(x => x.cooldown -= x.cooldown == 0 ? 0 : 1);
 
+    public void Damage(double damage)
+    {
+        health -= (int)System.Math.Round(damage);
+    }
+
+    public void Heal(double heal)
+    {
+        health += (int)System.Math.Round(heal);
+        if (health > MaxHealth()) health = MaxHealth();
+    }
+
     public void FlareBuffs()
     {
         for (int i = buffs.Count - 1; i >= 0; i--)
         {
             var index = i;
-            Board.board.actions.Add(() => { Root.AddSmallButtonOverlay(buffs[index].Item3, "OtherGlowFull", 1); });
+            Board.board.actions.Add(() => { AddSmallButtonOverlay(buffs[index].Item3, "OtherGlowFull", 1); });
             Board.board.actions.Add(Buff.buffs.Find(y => y.name == buffs[index].Item1).effects(Board.board.enemy == this));
             Board.board.actions.Add(() =>
             {

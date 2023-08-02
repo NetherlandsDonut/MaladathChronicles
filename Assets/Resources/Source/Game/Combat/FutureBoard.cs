@@ -124,7 +124,7 @@ public class FutureBoard
         }
         list = list.OrderBy(x => (list[0].board.playerTurn ? 1 : -1) * x.board.Desiredness(this)).ToList();
         bool oneBoardMove = false;
-        for (int i = 0; i < list.Count; i++)
+        for (int i = 1; i < list.Count; i++)
             if (list[i].ability == "" && oneBoardMove)
                 list[i].depth = -1;
             else if (list[i].ability == "")
