@@ -23,6 +23,8 @@ public class SaveGame
                 "Prestor's Talisman of Connivery",
                 "Mish'undare, Circlet of the Mind Flayer",
                 "Gossamer Belt",
+                "Grizzle's Skinner",
+                "Perdition's Blade"
             }
         );
         siteProgress = new Dictionary<string, int>();

@@ -4,11 +4,13 @@ using System.Linq;
 using System.Collections.Generic;
 
 using static Root;
+using static SiteInstance;
 
 using static Root.Color;
 using static Root.Anchor;
 
 using static UnityEngine.KeyCode;
+using UnityEngine.UI;
 
 public class Blueprint
 {
@@ -302,62 +304,62 @@ public class Blueprint
                 );
                 AddLine("Level " + Board.board.player.level, Gray);
             });
-            foreach (var actionBar in Board.board.player.actionBars)
-            {
-                var abilityObj = Ability.abilities.Find(x => x.name == actionBar.ability);
-                if (abilityObj == null || abilityObj.cost == null) continue;
-                AddButtonRegion(
-                    () =>
-                    {
-                        AddLine(actionBar.ability, Black);
-                        AddSmallButton("Ability" + actionBar.ability.Replace(" ", "").Replace(":", ""), (h) => { });
-                    },
-                    (h) =>
-                    {
+            //foreach (var actionBar in Board.board.player.actionBars)
+            //{
+            //    var abilityObj = Ability.abilities.Find(x => x.name == actionBar.ability);
+            //    if (abilityObj == null || abilityObj.cost == null) continue;
+            //    AddButtonRegion(
+            //        () =>
+            //        {
+            //            AddLine(actionBar.ability, Black);
+            //            AddSmallButton("Ability" + actionBar.ability.Replace(" ", "").Replace(":", ""), (h) => { });
+            //        },
+            //        (h) =>
+            //        {
 
-                    },
-                    (h) => () =>
-                    {
-                        SetAnchor(Top, 0, -13);
-                        AddHeaderGroup();
-                        SetRegionGroupWidth(256);
-                        SetRegionGroupHeight(237);
-                        AddHeaderRegion(() =>
-                        {
-                            AddLine(actionBar.ability, Gray);
-                        });
-                        AddPaddingRegion(() =>
-                        {
-                            AddBigButton("Ability" + actionBar.ability.Replace(" ", "").Replace(":", ""), (h) => { });
-                            AddLine("Required level: ", DarkGray);
-                            AddText(Board.board.player.GetClass().abilities.Find(x => x.Item1 == actionBar.ability).Item2 + "", Gray);
-                            AddLine("Cooldown: ", DarkGray);
-                            AddText(abilityObj.cooldown == 0 ? "None" : abilityObj.cooldown + (abilityObj.cooldown == 1 ? " turn"  : " turns"), Gray);
-                        });
-                        abilityObj.description();
-                        foreach (var cost in abilityObj.cost)
-                        {
-                            AddRegionGroup();
-                            AddHeaderRegion(() =>
-                            {
-                                AddSmallButton("Element" + cost.Key + "Rousing", (h) => { });
-                            });
-                            AddRegionGroup();
-                            SetRegionGroupWidth(15);
-                            AddHeaderRegion(() =>
-                            {
-                                AddLine(cost.Value + "", cost.Value > Board.board.player.resources[cost.Key] ? Red : Green);
-                            });
-                        }
-                        AddRegionGroup();
-                        SetRegionGroupWidth(256 - abilityObj.cost.Count * 44);
-                        AddPaddingRegion(() =>
-                        {
-                            AddLine("", LightGray);
-                        });
-                    }
-                );
-            }
+            //        },
+            //        (h) => () =>
+            //        {
+            //            SetAnchor(Top, 0, -13);
+            //            AddHeaderGroup();
+            //            SetRegionGroupWidth(256);
+            //            SetRegionGroupHeight(237);
+            //            AddHeaderRegion(() =>
+            //            {
+            //                AddLine(actionBar.ability, Gray);
+            //            });
+            //            AddPaddingRegion(() =>
+            //            {
+            //                AddBigButton("Ability" + actionBar.ability.Replace(" ", "").Replace(":", ""), (h) => { });
+            //                AddLine("Required level: ", DarkGray);
+            //                AddText(Board.board.player.GetClass().abilities.Find(x => x.Item1 == actionBar.ability).Item2 + "", Gray);
+            //                AddLine("Cooldown: ", DarkGray);
+            //                AddText(abilityObj.cooldown == 0 ? "None" : abilityObj.cooldown + (abilityObj.cooldown == 1 ? " turn"  : " turns"), Gray);
+            //            });
+            //            abilityObj.description();
+            //            foreach (var cost in abilityObj.cost)
+            //            {
+            //                AddRegionGroup();
+            //                AddHeaderRegion(() =>
+            //                {
+            //                    AddSmallButton("Element" + cost.Key + "Rousing", (h) => { });
+            //                });
+            //                AddRegionGroup();
+            //                SetRegionGroupWidth(15);
+            //                AddHeaderRegion(() =>
+            //                {
+            //                    AddLine(cost.Value + "", cost.Value > Board.board.player.resources[cost.Key] ? Red : Green);
+            //                });
+            //            }
+            //            AddRegionGroup();
+            //            SetRegionGroupWidth(256 - abilityObj.cost.Count * 44);
+            //            AddPaddingRegion(() =>
+            //            {
+            //                AddLine("", LightGray);
+            //            });
+            //        }
+            //    );
+            //}
         }),
         new("EnemyBattleInfo", () => {
             SetAnchor(TopRight);
@@ -576,7 +578,7 @@ public class Blueprint
         }),
         new("MapToolbar", () => {
             SetAnchor(TopLeft);
-            AddHeaderGroup();
+            AddRegionGroup();
             SetRegionGroupWidth(161);
             AddButtonRegion(
                 () =>
@@ -593,21 +595,46 @@ public class Blueprint
                 AddBigButton("Class" + currentSave.player.spec,
                     (h) => { }
                 );
-                AddLine("Level " + currentSave.player.level, Gray);
+                AddLine("Level: " + currentSave.player.level, Gray);
                 AddLine("Health: " + currentSave.player.health + "/" + currentSave.player.MaxHealth(), Gray);
             });
             AddButtonRegion(
                 () =>
                 {
-                    AddLine("Equipment", Black);
-                    AddSmallButton("MenuInventory", (h) => { });
+                    AddLine("Character Sheet", Black);
+                    AddSmallButton("MenuCharacterSheet", (h) => { });
                 },
                 (h) =>
                 {
-                    SpawnDesktopBlueprint("CharacterScreen");
-                    SwitchDesktop("CharacterScreen");
+                    SpawnDesktopBlueprint("CharacterSheet");
+                    SwitchDesktop("CharacterSheet");
+                    PlaySound("DesktopCharacterSheetOpen");
                 }
             );
+            if (CDesktop.windows.Exists(x => x.title == "Inventory"))
+                AddHeaderRegion(
+                    () =>
+                    {
+                        AddLine("Inventory", DarkGray);
+                        AddSmallButton("MenuInventory", (h) => { });
+                        AddSmallButtonOverlay("OtherGrid");
+                    }
+                );
+            else
+                AddButtonRegion(
+                    () =>
+                    {
+                        AddLine("Inventory", Black);
+                        AddSmallButton("MenuInventory", (h) => { });
+                    },
+                    (h) =>
+                    {
+                        SpawnWindowBlueprint("Inventory");
+                        CloseWindow("MapToolbar");
+                        SpawnWindowBlueprint("MapToolbar");
+                        PlaySound("DesktopInventoryOpen");
+                    }
+                );
             AddButtonRegion(
                 () =>
                 {
@@ -632,20 +659,6 @@ public class Blueprint
                     SwitchDesktop("TalentScreen");
                 }
             );
-            var items = currentSave.player.inventory.items;
-            AddHeaderRegion(() => { AddLine("Inventory:"); });
-            for (int i = 0; i < 4; i++)
-            {
-                var index = i;
-                AddPaddingRegion(
-                    () =>
-                    {
-                        for (int j = 0; j < 9; j++)
-                            if (items.Count > index * 9 + 8 - j) PrintInventoryItem(items[index * 9 + 8 - j]);
-                            else AddSmallButton("OtherEmpty", (h) => { });
-                    }
-                );
-            }
             //AddRegionGroup();
             //SetRegionGroupWidth(123);
             //AddHeaderRegion(() =>
@@ -662,6 +675,40 @@ public class Blueprint
             //        if (!foo.Key.Contains("Mastery"))
             //            AddLine(foo.Value + "", foo.Value > currentSave.player.stats.stats[foo.Key] ? Uncommon : (foo.Value < currentSave.player.stats.stats[foo.Key] ? DangerousRed : Gray));
             //});
+        }, true),
+        new("Inventory", () => {
+            SetAnchor(TopRight);
+            AddRegionGroup();
+            //SetRegionGroupHeight(358);
+            var items = currentSave.player.inventory.items;
+            AddHeaderRegion(() =>
+            {
+                AddLine("Inventory:");
+                AddSmallButton("OtherClose", (h) =>
+                {
+                    CloseWindow("Inventory");
+                    CloseWindow("MapToolbar");
+                    SpawnWindowBlueprint("MapToolbar");
+                    PlaySound("DesktopInventoryClose");
+                });
+            });
+            for (int i = 0; i < 8; i++)
+            {
+                var index = i;
+                AddPaddingRegion(
+                    () =>
+                    {
+                        for (int j = 0; j < 5; j++)
+                            if (items.Count > index * 5 + j) PrintInventoryItem(items[index * 5 + j]);
+                            else AddBigButton("OtherEmpty", (h) => { });
+                    }
+                );
+            }
+            AddHeaderRegion(() =>
+            {
+                AddLine("Currencies:");
+                AddLine("");
+            });
         }, true),
         new("ItemDrop", () => {
             SetAnchor(Center);
@@ -1183,12 +1230,50 @@ public class Blueprint
             AddHotkey(A, () => { var amount = new Vector3(-(float)Math.Round(EuelerGrowth()), 0); CDesktop.screen.transform.position += amount; cursor.transform.position += amount; }, false);
             AddHotkey(S, () => { var amount = new Vector3(0, -(float)Math.Round(EuelerGrowth())); CDesktop.screen.transform.position += amount; cursor.transform.position += amount; }, false);
             AddHotkey(D, () => { var amount = new Vector3((float)Math.Round(EuelerGrowth()), 0); CDesktop.screen.transform.position += amount; cursor.transform.position += amount; }, false);
-            AddHotkey(C, () => { SpawnDesktopBlueprint("CharacterScreen"); SwitchDesktop("CharacterScreen"); });
+            AddHotkey(C, () =>
+            {
+                SpawnDesktopBlueprint("CharacterSheet");
+                SwitchDesktop("CharacterSheet");
+                PlaySound("DesktopCharacterSheetOpen");
+            });
             AddHotkey(N, () => { SpawnDesktopBlueprint("TalentScreen"); SwitchDesktop("TalentScreen"); });
             AddHotkey(P, () => { SpawnDesktopBlueprint("SpellbookScreen"); SwitchDesktop("SpellbookScreen"); });
-            AddHotkey(B, () => { SpawnWindowBlueprint("PlayerInventory"); });
+            AddHotkey(B, () =>
+            {
+                if (CDesktop.windows.Exists(x => x.title == "Inventory"))
+                {
+                    CloseWindow("Inventory");
+                    CloseWindow("MapToolbar");
+                    SpawnWindowBlueprint("MapToolbar");
+                    PlaySound("DesktopInventoryClose");
+                }
+                else
+                {
+                    SpawnWindowBlueprint("Inventory");
+                    CloseWindow("MapToolbar");
+                    SpawnWindowBlueprint("MapToolbar");
+                    PlaySound("DesktopInventoryOpen");
+                }
+            });
+            AddHotkey(Escape, () =>
+            {
+                if (CDesktop.windows.Exists(x => x.title == "Inventory"))
+                {
+                    CloseWindow("Inventory");
+                    CloseWindow("MapToolbar");
+                    SpawnWindowBlueprint("MapToolbar");
+                    PlaySound("DesktopInventoryClose");
+                }
+            });
             AddHotkey(L, () => { SpawnWindowBlueprint("ItemDrop"); });
             AddHotkey(BackQuote, () => { SpawnWindowBlueprint("Console"); });
+        }),
+        new("DungeonEntrance", () =>
+        {
+            SetDesktopBackground("Areas/Area" + instance.name);
+            SpawnWindowBlueprint("MapToolbar");
+            SpawnWindowBlueprint("ReturnToMap");
+            AddHotkey(Escape, () => { CloseDesktop("DungeonEntrance"); });
         }),
         new("Game", () =>
         {
@@ -1232,7 +1317,7 @@ public class Blueprint
             });
             AddHotkey(BackQuote, () => { SpawnWindowBlueprint("Console"); });
         }),
-        new("CharacterScreen", () =>
+        new("CharacterSheet", () =>
         {
             SetDesktopBackground("Stone");
             SpawnWindowBlueprint("ReturnToMap");
@@ -1251,11 +1336,18 @@ public class Blueprint
             SpawnWindowBlueprint("CharacterOffHandSlot");
             SpawnWindowBlueprint("CharacterTrinketSlot");
             SpawnWindowBlueprint("CharacterStats");
-            //SpawnWindowBlueprint("PlayerBattleInfo");
-            //SpawnWindowBlueprint("EnemyBattleInfo");
-            //SpawnWindowBlueprint("BattleActionBar");
-            AddHotkey(C, () => { SwitchDesktop("Map"); CloseDesktop("CharacterScreen"); });
-            AddHotkey(Escape, () => { SwitchDesktop("Map"); CloseDesktop("CharacterScreen"); });
+            AddHotkey(C, () =>
+            {
+                SwitchDesktop("Map");
+                CloseDesktop("CharacterSheet");
+                PlaySound("DesktopCharacterSheetClose");
+            });
+            AddHotkey(Escape, () =>
+            {
+                SwitchDesktop("Map");
+                CloseDesktop("CharacterSheet");
+                PlaySound("DesktopCharacterSheetClose");
+            });
         }),
         new("TalentScreen", () =>
         {

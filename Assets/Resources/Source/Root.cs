@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 using static Font;
 using static Blueprint;
+using static SiteInstance;
 
 using static Root.Color;
 using static Root.Anchor;
@@ -248,7 +249,7 @@ public static class Root
 
     public static void PrintInventoryItem(Item item)
     {
-        AddSmallButton(item.icon, (h) => { },
+        AddBigButton(item.icon, (h) => { },
         (h) => () =>
         {
             SetAnchor(BottomLeft, h.window);
@@ -287,7 +288,7 @@ public static class Root
                 AddText("" + item.lvl, ItemColoredLevel(item.lvl));
             });
         });
-        AddSmallButtonOverlay("OtherRarity" + item.rarity, 0, 2);
+        AddBigButtonOverlay("OtherRarity" + item.rarity, 2);
     }
 
     public static void PrintSite(string name, string type, Vector2 anchor)
@@ -369,6 +370,46 @@ public static class Root
                     });
                 });
             }
+            else if (type == "Dungeon")
+                AddSmallButton("Site" + type,
+                (h) =>
+                {
+                    instance = dungeons.Find(x => x.name == name);
+                    if (instance != null)
+                    {
+                        SpawnDesktopBlueprint("DungeonEntrance");
+                        SwitchDesktop("DungeonEntrance");
+                    }
+                },
+                (h) => () =>
+                {
+                    SetAnchor(TopRight, h.window);
+                    AddRegionGroup();
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine(name, Gray);
+                    });
+                });
+            else if (type == "Raid")
+                AddSmallButton("Site" + type,
+                (h) =>
+                {
+                    instance = raids.Find(x => x.name == name);
+                    if (instance != null)
+                    {
+                        SpawnDesktopBlueprint("RaidEntrance");
+                        SwitchDesktop("RaidEntrance");
+                    }
+                },
+                (h) => () =>
+                {
+                    SetAnchor(TopRight, h.window);
+                    AddRegionGroup();
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine(name, Gray);
+                    });
+                });
             else
                 AddSmallButton("Site" + type,
                 (h) =>
@@ -610,6 +651,11 @@ public static class Root
             CDesktop.gameObject.SetActive(true);
             desktops.Remove(CDesktop);
             desktops.Insert(0, CDesktop);
+            var transition = new GameObject("CameraTransition", typeof(SpriteRenderer), typeof(Shatter));
+            transition.transform.parent = CDesktop.screen.transform;
+            transition.transform.localPosition = Vector3.zero;
+            transition.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Textures/CameraTransition");
+            transition.GetComponent<Shatter>().Initiate(0.1f, transition.GetComponent<SpriteRenderer>());
         }
     }
 
@@ -954,14 +1000,15 @@ public static class Root
 
     #region BigButtons
 
-    public static GameObject AddBigButtonOverlay(string overlay)
+    public static GameObject AddBigButtonOverlay(string overlay, int sortingOrder = 1)
     {
         var region = CDesktop.LBWindow.LBRegionGroup.LBRegion;
         var button = region.LBBigButton.gameObject;
         var newObject = new GameObject("BigButtonGrid", typeof(SpriteRenderer));
         newObject.transform.parent = button.transform;
         newObject.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/BigButtons/" + overlay);
-        newObject.GetComponent<SpriteRenderer>().sortingOrder = 1;
+        newObject.GetComponent<SpriteRenderer>().sortingOrder = sortingOrder;
+        newObject.GetComponent<SpriteRenderer>().sortingLayerName = button.GetComponent<SpriteRenderer>().sortingLayerName;
         return newObject;
     }
 

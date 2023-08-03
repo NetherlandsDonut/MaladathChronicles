@@ -3,14 +3,13 @@ using System.Collections;
 
 public class Shatter : MonoBehaviour
 {
-    public bool turn;
     public float time;
     public SpriteRenderer render;
 
-    public void Initiate(float time)
+    public void Initiate(float time, SpriteRenderer r = null)
     {
         this.time = time;
-        turn = Board.board.playerTurn;
+        if (r != null) render = r;
         if (render == null) StartCoroutine(SelfDestruct(time));
     }
 

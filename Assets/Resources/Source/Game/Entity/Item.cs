@@ -561,7 +561,7 @@ public class Item
             })
         ),
         new Item(55, 50, "Rare", 3.6752,
-            "Grizzle's Skinner\r\n",
+            "Grizzle's Skinner",
             "ItemAxe12",
             "One Handed",
             "Axe",

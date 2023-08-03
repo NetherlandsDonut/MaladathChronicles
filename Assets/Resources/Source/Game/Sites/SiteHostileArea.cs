@@ -41,7 +41,8 @@ public class SiteHostileArea
             if (rares.Count > 0)
                 encounters = new() { rares[random.Next(0, rares.Count)] };
         }
-        return new Entity(encounters[0].Item1, encounters[0].Item2);
+        var find = encounters[random.Next(0, encounters.Count)];
+        return new Entity(find.Item1, find.Item2);
     }
     
     public Entity RollBoss()
@@ -56,6 +57,12 @@ public class SiteHostileArea
 
     public static List<SiteHostileArea> hostileAreas = new()
     {
+        new SiteHostileArea("Prison Of Immol'Thar", new()
+        {
+            ("01-02", "Duskbat"),
+            ("01-02", "Wretched Zombie"),
+            ("01-02", "Rattlecage Skeleton"),
+        }),
         new SiteHostileArea("Deathknell", new()
         {
             ("01-02", "Duskbat"),
