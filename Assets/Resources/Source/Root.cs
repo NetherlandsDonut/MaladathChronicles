@@ -246,6 +246,50 @@ public static class Root
         });
     }
 
+    public static void PrintInventoryItem(Item item)
+    {
+        AddSmallButton(item.icon, (h) => { },
+        (h) => () =>
+        {
+            SetAnchor(BottomLeft, h.window);
+            AddRegionGroup();
+            AddHeaderRegion(() =>
+            {
+                var split = item.name.Split(", ");
+                AddLine(split[0], Item.rarityColors[item.rarity]);
+                if (split.Length > 1)
+                    AddLine("\"" + split[1] + "\"", Item.rarityColors[item.rarity]);
+            });
+            AddPaddingRegion(() =>
+            {
+                if (item.armorClass != null)
+                {
+                    AddLine(item.armorClass + " " + item.type, Gray);
+                    AddLine(item.armor + " Armor", Gray);
+                }
+                else if (item.maxDamage != 0)
+                {
+                    AddLine(item.type + " " + item.detailedType, Gray);
+                    AddLine(item.minDamage + " - " + item.maxDamage + " Damage", Gray);
+                }
+                else
+                    AddLine(item.type, Gray);
+            });
+            if (item.stats.stats.Count > 0)
+                AddPaddingRegion(() =>
+                {
+                    foreach (var stat in item.stats.stats)
+                        AddLine("+" + stat.Value + " " + stat.Key, Gray);
+                });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Required level: ", DarkGray);
+                AddText("" + item.lvl, ItemColoredLevel(item.lvl));
+            });
+        });
+        AddSmallButtonOverlay("OtherRarity" + item.rarity, 0, 2);
+    }
+
     public static void PrintSite(string name, string type, Vector2 anchor)
     {
         SetAnchor(anchor.x, anchor.y);
@@ -837,20 +881,22 @@ public static class Root
 
     #region SmallButtons
 
-    public static void AddSmallButtonOverlay(string overlay, float time = 0)
+    public static void AddSmallButtonOverlay(string overlay, float time = 0, int sortingOrder = 1)
     {
         var region = CDesktop.LBWindow.LBRegionGroup.LBRegion;
         var button = region.LBSmallButton.gameObject;
-        AddSmallButtonOverlay(button, overlay, time);
+        AddSmallButtonOverlay(button, overlay, time, sortingOrder);
     }
 
-    public static void AddSmallButtonOverlay(GameObject onWhat, string overlay, float time = 0)
+    public static void AddSmallButtonOverlay(GameObject onWhat, string overlay, float time = 0, int sortingOrder = 1)
     {
         var newObject = new GameObject("SmallButtonOverlay", typeof(SpriteRenderer));
         newObject.transform.parent = onWhat.transform;
         newObject.transform.localPosition = Vector3.zero;
         newObject.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/Buttons/" + overlay);
-        newObject.GetComponent<SpriteRenderer>().sortingOrder = 3;
+        newObject.GetComponent<SpriteRenderer>().sortingOrder = sortingOrder;
+        //if (onWhat.GetComponent<SpriteRenderer>() != null)
+        newObject.GetComponent<SpriteRenderer>().sortingLayerName = "Upper";
         if (time > 0)
         {
             newObject.AddComponent<Shatter>().render = newObject.GetComponent<SpriteRenderer>();

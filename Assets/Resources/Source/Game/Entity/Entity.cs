@@ -22,7 +22,6 @@ public class Entity
         actionBarsUnlocked = 7;
         actionBars = Ability.abilities.FindAll(x => abilities.Contains(x.name) && x.cost != null).Select(x => new ActionBar(x.name)).ToList();
         stats = new Stats(race.stats.stats.ToDictionary(x => x.Key, x => x.Value));
-        stats.stats["Stamina"] = 3 * level + 5;
         Initialise();
     }
 
@@ -39,10 +38,9 @@ public class Entity
             new()
             {
                 { "Stamina", (int)(3 * this.level * race.vitality) + 5 },
-                { "Strength", 1 },
-                { "Agility", 1 },
-                { "Intellect", 1 },
-                { "Spirit", 1 },
+                { "Strength", 3 * this.level },
+                { "Agility", 3 * this.level },
+                { "Intellect", 3 * this.level },
 
                 { "Earth Mastery", 10 },
                 { "Fire Mastery", 10 },
@@ -83,6 +81,8 @@ public class Entity
             else if (resource.Value < 0) resources[resource.Key] = 0;
         }
     }
+
+    public bool HasItemEquipped(string item) => equipment.Any(x => x.Value == item);
 
     public int MaxResource(string resource) => Stats()[resource + " Mastery"] + 3;
 
@@ -209,6 +209,14 @@ public class Entity
         var stats = new Dictionary<string, int>();
         foreach (var stat in this.stats.stats)
             stats.Add(stat.Key, stat.Value);
+        var temp = GetClass();
+        if (temp != null)
+        {
+            stats["Stamina"] += (int)(temp.rules["Stamina per Level"] * level);
+            stats["Strength"] += (int)(temp.rules["Strength per Level"] * level);
+            stats["Agility"] += (int)(temp.rules["Agility per Level"] * level);
+            stats["Intellect"] += (int)(temp.rules["Intellect per Level"] * level);
+        }
         if (equipment != null)
         {
             var itemsEquipped = new List<Item>();

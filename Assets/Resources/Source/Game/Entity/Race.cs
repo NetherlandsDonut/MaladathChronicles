@@ -32,11 +32,11 @@ public class Race
         new Race("Dwarf", "Alliance",
             new Stats(new()
             {
-                { "Stamina", 1 },
-                { "Strength", 1 },
-                { "Agility", 1 },
-                { "Intellect", 1 },
-                { "Spirit", 1 },
+                { "Stamina", 7 },
+                { "Strength", 7 },
+                { "Agility", 4 },
+                { "Intellect", 5 },
+                { "Spirit", 0 },
 
                 { "Earth Mastery", 3 },
                 { "Fire Mastery", 2 },
@@ -57,11 +57,11 @@ public class Race
         new Race("Gnome", "Alliance",
             new Stats(new()
             {
-                { "Stamina", 1 },
-                { "Strength", 1 },
-                { "Agility", 1 },
-                { "Intellect", 1 },
-                { "Spirit", 1 },
+                { "Stamina", 3 },
+                { "Strength", 2 },
+                { "Agility", 6 },
+                { "Intellect", 8 },
+                { "Spirit", 0 },
 
                 { "Earth Mastery", 1 },
                 { "Fire Mastery", 3 },
@@ -82,11 +82,11 @@ public class Race
         new Race("Human", "Alliance",
             new Stats(new()
             {
-                { "Stamina", 1 },
-                { "Strength", 1 },
-                { "Agility", 1 },
-                { "Intellect", 1 },
-                { "Spirit", 1 },
+                { "Stamina", 6 },
+                { "Strength", 6 },
+                { "Agility", 6 },
+                { "Intellect", 6 },
+                { "Spirit", 0 },
 
                 { "Earth Mastery", 1 },
                 { "Fire Mastery", 3 },
@@ -107,11 +107,11 @@ public class Race
         new Race("Night Elf", "Alliance",
             new Stats(new()
             {
-                { "Stamina", 1 },
-                { "Strength", 1 },
-                { "Agility", 1 },
-                { "Intellect", 1 },
-                { "Spirit", 1 },
+                { "Stamina", 5 },
+                { "Strength", 4 },
+                { "Agility", 7 },
+                { "Intellect", 8 },
+                { "Spirit", 0 },
 
                 { "Earth Mastery", 2 },
                 { "Fire Mastery", 1 },
@@ -132,11 +132,10 @@ public class Race
         new Race("Orc", "Horde",
             new Stats(new()
             {
-                { "Stamina", 1 },
-                { "Strength", 1 },
-                { "Agility", 1 },
-                { "Intellect", 1 },
-                { "Spirit", 1 },
+                { "Stamina", 7 },
+                { "Strength", 9 },
+                { "Agility", 7 },
+                { "Intellect", 5 },
 
                 { "Earth Mastery", 3 },
                 { "Fire Mastery", 3 },
@@ -157,11 +156,11 @@ public class Race
         new Race("Tauren", "Horde",
             new Stats(new()
             {
-                { "Stamina", 1 },
-                { "Strength", 1 },
-                { "Agility", 1 },
-                { "Intellect", 1 },
-                { "Spirit", 1 },
+                { "Stamina", 8 },
+                { "Strength", 8 },
+                { "Agility", 3 },
+                { "Intellect", 6 },
+                { "Spirit", 0 },
 
                 { "Earth Mastery", 3 },
                 { "Fire Mastery", 2 },
@@ -182,11 +181,11 @@ public class Race
         new Race("Troll", "Horde",
             new Stats(new()
             {
-                { "Stamina", 1 },
-                { "Strength", 1 },
-                { "Agility", 1 },
-                { "Intellect", 1 },
-                { "Spirit", 1 },
+                { "Stamina", 7 },
+                { "Strength", 6 },
+                { "Agility", 7 },
+                { "Intellect", 6 },
+                { "Spirit", 0 },
 
                 { "Earth Mastery", 2 },
                 { "Fire Mastery", 3 },
@@ -207,11 +206,11 @@ public class Race
         new Race("Forsaken", "Horde",
             new Stats(new()
             {
-                { "Stamina", 1 },
-                { "Strength", 1 },
-                { "Agility", 1 },
-                { "Intellect", 1 },
-                { "Spirit", 1 },
+                { "Stamina", 5 },
+                { "Strength", 5 },
+                { "Agility", 6 },
+                { "Intellect", 6 },
+                { "Spirit", 0 },
 
                 { "Earth Mastery", 2 },
                 { "Fire Mastery", 2 },

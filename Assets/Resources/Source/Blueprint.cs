@@ -196,7 +196,7 @@ public class Blueprint
         new("PlayerBattleInfo", () => {
             SetAnchor(TopLeft);
             AddRegionGroup();
-            SetRegionGroupWidth(163);
+            SetRegionGroupWidth(161);
             AddButtonRegion(
                 () =>
                 {
@@ -362,7 +362,7 @@ public class Blueprint
         new("EnemyBattleInfo", () => {
             SetAnchor(TopRight);
             AddRegionGroup();
-            SetRegionGroupWidth(163);
+            SetRegionGroupWidth(161);
             AddButtonRegion(
                 () =>
                 {
@@ -536,7 +536,7 @@ public class Blueprint
             );
         }),
         new("BattleBoard", () => {
-            SetAnchor(Top, 0, -32);
+            SetAnchor(Top, 0, -34);
             var boardBackground = new GameObject("BoardBackground", typeof(SpriteRenderer));
             boardBackground.transform.parent = CDesktop.LBWindow.transform;
             boardBackground.transform.localPosition = new Vector2(-17, 17);
@@ -577,7 +577,7 @@ public class Blueprint
         new("MapToolbar", () => {
             SetAnchor(TopLeft);
             AddHeaderGroup();
-            SetRegionGroupWidth(163);
+            SetRegionGroupWidth(161);
             AddButtonRegion(
                 () =>
                 {
@@ -599,7 +599,7 @@ public class Blueprint
             AddButtonRegion(
                 () =>
                 {
-                    AddLine("Inventory", Black);
+                    AddLine("Equipment", Black);
                     AddSmallButton("MenuInventory", (h) => { });
                 },
                 (h) =>
@@ -632,6 +632,20 @@ public class Blueprint
                     SwitchDesktop("TalentScreen");
                 }
             );
+            var items = currentSave.player.inventory.items;
+            AddHeaderRegion(() => { AddLine("Inventory:"); });
+            for (int i = 0; i < 4; i++)
+            {
+                var index = i;
+                AddPaddingRegion(
+                    () =>
+                    {
+                        for (int j = 0; j < 9; j++)
+                            if (items.Count > index * 9 + 8 - j) PrintInventoryItem(items[index * 9 + 8 - j]);
+                            else AddSmallButton("OtherEmpty", (h) => { });
+                    }
+                );
+            }
             //AddRegionGroup();
             //SetRegionGroupWidth(123);
             //AddHeaderRegion(() =>

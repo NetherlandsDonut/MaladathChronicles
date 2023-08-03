@@ -72,10 +72,15 @@ public class Board
     {
         CloseDesktop("Game");
         if (playerWon)
+        {
+            currentSave.player.experience += 1;
             SpawnDesktopBlueprint("Map");
+        }
         else
+        {
             if (currentSave.hardcore) SpawnDesktopBlueprint("GameOver");
             else SpawnDesktopBlueprint("ReleaseSpirit");
+        }
     }
 
     public void AnimateBoard()

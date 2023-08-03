@@ -28,6 +28,10 @@ public class Class
                 { "Critical Strike per Agility", 0.03 },
                 { "Spell Power per Intellect", 1 },
                 { "Spell Critical per Intellect", 0.03 },
+                { "Stamina per level", 3 },
+                { "Strength per level", 2 },
+                { "Agility per level", 4 },
+                { "Intellect per level", 0 },
             },
             new List<(string, int)>
             {
@@ -63,6 +67,10 @@ public class Class
                 { "Critical Strike per Agility", 0.03 },
                 { "Spell Power per Intellect", 1 },
                 { "Spell Critical per Intellect", 0.03 },
+                { "Stamina per level", 3 },
+                { "Strength per level", 2 },
+                { "Agility per level", 4 },
+                { "Intellect per level", 0 },
             },
             new List<(string, int)>
             {
@@ -98,6 +106,10 @@ public class Class
                 { "Critical Strike per Agility", 0.03 },
                 { "Spell Power per Intellect", 2 },
                 { "Spell Critical per Intellect", 0.03 },
+                { "Stamina per level", 3 },
+                { "Strength per level", 2 },
+                { "Agility per level", 2 },
+                { "Intellect per level", 2 },
             },
             new List<(string, int)>
             {
@@ -128,6 +140,10 @@ public class Class
                 { "Critical Strike per Agility", 0.03 },
                 { "Spell Power per Intellect", 1 },
                 { "Spell Critical per Intellect", 0.03 },
+                { "Stamina per level", 3 },
+                { "Strength per level", 4 },
+                { "Agility per level", 2 },
+                { "Intellect per level", 0 },
             },
             new List<(string, int)>
             {
@@ -207,6 +223,10 @@ public class Class
                 { "Critical Strike per Agility", 0.03 },
                 { "Spell Power per Intellect", 2 },
                 { "Spell Critical per Intellect", 0.03 },
+                { "Stamina per level", 3 },
+                { "Strength per level", 3 },
+                { "Agility per level", 1 },
+                { "Intellect per level", 2 },
             },
             new List<(string, int)>
             {
@@ -241,6 +261,10 @@ public class Class
                 { "Critical Strike per Agility", 0.03 },
                 { "Spell Power per Intellect", 2 },
                 { "Spell Critical per Intellect", 0.03 },
+                { "Stamina per level", 3 },
+                { "Strength per level", 2 },
+                { "Agility per level", 2 },
+                { "Intellect per level", 2 },
             },
             new List<(string, int)>
             {
@@ -272,6 +296,10 @@ public class Class
                 { "Critical Strike per Agility", 0.03 },
                 { "Spell Power per Intellect", 3 },
                 { "Spell Critical per Intellect", 0.03 },
+                { "Stamina per level", 3 },
+                { "Strength per level", 1 },
+                { "Agility per level", 1 },
+                { "Intellect per level", 4 },
             },
             new List<(string, int)>
             {
@@ -342,6 +370,10 @@ public class Class
                 { "Critical Strike per Agility", 0.03 },
                 { "Spell Power per Intellect", 3 },
                 { "Spell Critical per Intellect", 0.03 },
+                { "Stamina per level", 3 },
+                { "Strength per level", 1 },
+                { "Agility per level", 1 },
+                { "Intellect per level", 4 },
             },
             new List<(string, int)>
             {
@@ -409,6 +441,10 @@ public class Class
                 { "Critical Strike per Agility", 0.03 },
                 { "Spell Power per Intellect", 3 },
                 { "Spell Critical per Intellect", 0.03 },
+                { "Stamina per Level", 3 },
+                { "Strength per Level", 1 },
+                { "Agility per Level", 1 },
+                { "Intellect per Level", 4 },
             },
             new List<(string, int)>
             {
