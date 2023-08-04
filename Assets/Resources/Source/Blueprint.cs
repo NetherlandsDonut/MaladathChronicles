@@ -203,6 +203,8 @@ public class Blueprint
                 () =>
                 {
                     AddLine(Board.board.player.name, Black);
+                    AddSmallButton("MenuFlee", (h) => { SwitchDesktop("Map"); CloseDesktop("Game"); });
+                    AddSmallButton("MenuLog", (h) => { });
                 },
                 (h) =>
                 {
@@ -225,7 +227,7 @@ public class Blueprint
                     () =>
                     {
                         AddLine(actionBar.ability, Black);
-                        AddSmallButton("Ability" + actionBar.ability.Replace(" ", "").Replace(":", ""), (h) => { });
+                        AddSmallButton(abilityObj.icon, (h) => { });
                         if (actionBar.cooldown > 0 || !abilityObj.EnoughResources(Board.board.player))
                             AddSmallButtonOverlay("OtherGrid");
                     },
@@ -252,7 +254,7 @@ public class Blueprint
                         });
                         AddPaddingRegion(() =>
                         {
-                            AddBigButton("Ability" + actionBar.ability.Replace(" ", "").Replace(":", ""), (h) => { });
+                            AddBigButton(abilityObj.icon, (h) => { });
                             AddLine("Required level: ", DarkGray);
                             AddText(Board.board.player.GetClass().abilities.Find(x => x.Item1 == actionBar.ability).Item2 + "", Gray);
                             AddLine("Cooldown: ", DarkGray);
@@ -369,6 +371,7 @@ public class Blueprint
                 () =>
                 {
                     AddLine(Board.board.enemy.name, Black);
+                    AddSmallButton("MenuMenu", (h) => { });
                 },
                 (h) =>
                 {
@@ -390,7 +393,7 @@ public class Blueprint
                     () =>
                     {
                         AddLine(actionBar.ability, Black);
-                        AddSmallButton("Ability" + actionBar.ability.Replace(" ", "").Replace(":", ""), (h) => { });
+                        AddSmallButton(abilityObj.icon, (h) => { });
                         if (actionBar.cooldown > 0 || !abilityObj.EnoughResources(Board.board.enemy))
                             AddSmallButtonOverlay("OtherGrid");
                     },
@@ -410,7 +413,7 @@ public class Blueprint
                         });
                         AddPaddingRegion(() =>
                         {
-                            AddBigButton("Ability" + actionBar.ability.Replace(" ", "").Replace(":", ""), (h) => { });
+                            AddBigButton(abilityObj.icon, (h) => { });
                             //AddLine("Required level: ", DarkGray);
                             //AddText(Board.board.enemy.spec.abilities.Find(x => x.Item1 == ability).Item2 + "", Gray);
                             AddLine("Cooldown: ", DarkGray);
@@ -708,6 +711,7 @@ public class Blueprint
             {
                 AddLine("Currencies:");
                 AddLine("");
+                AddLine("");
             });
         }, true),
         new("ItemDrop", () => {
@@ -963,7 +967,7 @@ public class Blueprint
         }),
         new("CharacterMainHandSlot", () => {
             SetAnchor(58, 74);
-            PrintItem(currentSave.player.GetSlot("MainHand"));
+            PrintItem(currentSave.player.GetSlot("Main Hand"));
         }),
         new("CharacterOffHandSlot", () => {
             SetAnchor(58, 22);

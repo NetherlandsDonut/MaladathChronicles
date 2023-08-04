@@ -25,7 +25,7 @@ public static class Root
     public static int titleScreenCameraDirection;
     public static float heldKeyTime;
     public static float animationTime;
-    public static float frameTime = 0.09f;
+    public static float frameTime = 0.08f;
     public static List<Desktop> desktops;
     public static Desktop CDesktop, LBDesktop;
     public static string markerCharacter = "_", currentInputLine = "";

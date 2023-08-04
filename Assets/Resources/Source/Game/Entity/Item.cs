@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 
 public class Item
 {
@@ -14,7 +15,7 @@ public class Item
     }
 
     //Armour
-    public Item(int ilvl, int lvl, string rarity, double price, string name, string icon, string type, string armorClass, int armor, Stats stats)
+    public Item(int ilvl, int lvl, string rarity, double price, string name, string icon, string type, string armorClass, int armor, Stats stats = null, List<string> abilities = null)
     {
         this.ilvl = ilvl;
         this.lvl = lvl;
@@ -26,10 +27,11 @@ public class Item
         this.armorClass = armorClass;
         this.armor = armor;
         this.stats = stats;
+        this.abilities = abilities;
     }
 
     //Shields
-    public Item(int ilvl, int lvl, string rarity, double price, string name, string icon, string type, int armor, int block, Stats stats)
+    public Item(int ilvl, int lvl, string rarity, double price, string name, string icon, string type, int armor, int block, Stats stats = null, List<string> abilities = null)
     {
         this.ilvl = ilvl;
         this.lvl = lvl;
@@ -41,10 +43,11 @@ public class Item
         this.armor = armor;
         this.block = block;
         this.stats = stats;
+        this.abilities = abilities;
     }
 
     //Jewelry, Relics, Quivers, Pouches and Totems
-    public Item(int ilvl, int lvl, string rarity, double price, string name, string icon, string type, Stats stats)
+    public Item(int ilvl, int lvl, string rarity, double price, string name, string icon, string type, Stats stats = null, List<string> abilities = null)
     {
         this.ilvl = ilvl;
         this.lvl = lvl;
@@ -54,10 +57,11 @@ public class Item
         this.icon = icon;
         this.type = type;
         this.stats = stats;
+        this.abilities = abilities;
     }
 
     //Capes
-    public Item(int ilvl, int lvl, string rarity, double price, string name, string icon, string type, int armor, Stats stats)
+    public Item(int ilvl, int lvl, string rarity, double price, string name, string icon, string type, int armor, Stats stats = null, List<string> abilities = null)
     {
         this.ilvl = ilvl;
         this.lvl = lvl;
@@ -68,10 +72,11 @@ public class Item
         this.type = type;
         this.armor = armor;
         this.stats = stats;
+        this.abilities = abilities;
     }
 
     //OffHands
-    public Item(int ilvl, int lvl, string rarity, double price, string name, string icon, string type, string detailedType, Stats stats)
+    public Item(int ilvl, int lvl, string rarity, double price, string name, string icon, string type, string detailedType, Stats stats = null, List<string> abilities = null)
     {
         this.ilvl = ilvl;
         this.lvl = lvl;
@@ -82,10 +87,11 @@ public class Item
         this.type = type;
         this.detailedType = detailedType;
         this.stats = stats;
+        this.abilities = abilities;
     }
 
     //Weapons
-    public Item(int ilvl, int lvl, string rarity, double price, string name, string icon, string type, string detailedType, int minDamage, int maxDamage, double speed, Stats stats)
+    public Item(int ilvl, int lvl, string rarity, double price, string name, string icon, string type, string detailedType, int minDamage, int maxDamage, double speed, Stats stats = null, List<string> abilities = null)
     {
         this.ilvl = ilvl;
         this.lvl = lvl;
@@ -99,11 +105,12 @@ public class Item
         this.maxDamage = maxDamage;
         this.speed = speed;
         this.stats = stats;
+        this.abilities = abilities;
     }
 
     public string rarity, name, icon, detailedType, type, armorClass;
     public int ilvl, lvl, minDamage, maxDamage, armor, block;
-    public List<string> possibleItems, alternateItems;
+    public List<string> possibleItems, alternateItems, abilities;
     public double price, speed;
     public Stats stats;
 
@@ -120,48 +127,54 @@ public class Item
     public bool CanEquip(Entity entity)
     {
         if (armorClass != null)
-        {
             return entity.abilities.Contains(armorClass + " Proficiency");
-        }
         else
             return true;
+    }
+
+    private void Equip(Entity entity, string slot)
+    {
+        entity.equipment[slot] = name;
+        if (abilities == null) return;
+        entity.abilities.AddRange(abilities);
+        entity.abilities = entity.abilities.Distinct().ToList();
     }
 
     public void Equip(Entity entity, bool secondSlot = false)
     {
         if (type == "Two Handed")
         {
-            entity.Unequip(new() { "Off Hand", "MainHand" });
-            entity.equipment["MainHand"] = name;
+            entity.Unequip(new() { "Off Hand", "Main Hand" });
+            Equip(entity, "Main Hand");
         }
         else if (type == "Off Hand")
         {
-            var mainHand = entity.GetSlot("MainHand");
+            var mainHand = entity.GetSlot("Main Hand");
             if (mainHand != null && mainHand.type == "Two Handed")
-                entity.Unequip(new() { "MainHand" });
+                entity.Unequip(new() { "Main Hand" });
             entity.Unequip(new() { "Off Hand" });
-            entity.equipment["Off Hand"] = name;
+            Equip(entity, "Off Hand");
         }
         else if (type == "One Handed")
         {
             if (secondSlot)
             {
-                var mainHand = entity.GetSlot("MainHand");
+                var mainHand = entity.GetSlot("Main Hand");
                 if (mainHand != null && mainHand.type == "Two Handed")
-                    entity.Unequip(new() { "MainHand" });
+                    entity.Unequip(new() { "Main Hand" });
                 entity.Unequip(new() { "Off Hand" });
-                entity.equipment["Off Hand"] = name;
+                Equip(entity, "Off Hand");
             }
             else
             {
-                entity.Unequip(new() { "MainHand" });
-                entity.equipment["MainHand"] = name;
+                entity.Unequip(new() { "Main Hand" });
+                Equip(entity, "Main Hand");
             }
         }
         else
         {
             entity.Unequip(new() { type });
-            entity.equipment[type] = name;
+            Equip(entity, type);
         }
     }
 
@@ -276,6 +289,185 @@ public class Item
                 "Heraldic Cloak",
             }
         ),
+        new Item(88, 60, "Epic", 8.9033,
+            "Ring of the Godslayer",
+            "ItemRingQiraj6",
+            "Finger",
+            new Stats(new()
+            {
+                { "Stamina", 17 },
+                { "Agility", 27 },
+            })
+        ),
+        new Item(88, 60, "Epic", 8.6443,
+            "Mark of C'Thun",
+            "ItemNecklaceQiraj4",
+            "Neck",
+            new Stats(new()
+            {
+                { "Stamina", 24 },
+            })
+            //Equip: Increased Defense +10.
+            //Equip: Increases your chance to dodge an attack by 1%.
+            //Equip: Improves your chance to hit by 1%.
+        ),
+        new Item(88, 60, "Epic", 7.4394,
+            "Belt of Never Ending Agony",
+            "ItemBelt26",
+            "Waist",
+            "Leather",
+            142,
+            new Stats(new()
+            {
+                { "Stamina", 20 },
+            })
+            //Equip: +64 Attack Power.
+            //Equip: Improves your chance to get a critical strike by 1%.
+            //Equip: Improves your chance to hit by 1%.
+        ),
+        new Item(88, 60, "Epic", 9.9463,
+            "Avenger's Breastplate",
+            "ItemChest3",
+            "Chest",
+            "Plate",
+            985,
+            new Stats(new()
+            {
+                { "Stamina", 15 },
+                { "Strength", 23 },
+                { "Agility", 12 },
+                { "Intellect", 24 },
+                { "Spirit", 11 },
+            })
+            //Equip: Increases damage and healing done by magical spells and effects by up to 18.
+            //Equip: Improves your chance to get a critical strike with spells by 1%.
+            //Equip: Improves your chance to get a critical strike by 1%.
+        ),
+        new Item(88, 60, "Epic", 5.0891,
+            "Gauntlets of Annihilation",
+            "ItemGauntlets31",
+            "Hands",
+            "Plate",
+            615,
+            new Stats(new()
+            {
+                { "Stamina", 15 },
+                { "Strength", 35 },
+            })
+            //Equip: Improves your chance to get a critical strike by 1%.
+            //Equip: Improves your chance to hit by 1%.
+        ),
+        new Item(88, 60, "Epic", 7.6906,
+            "Cloak of Clarity",
+            "ItemCape2",
+            "Back",
+            new Stats(new()
+            {
+                { "Stamina", 6 },
+                { "Intellect", 12 },
+                { "Spirit", 7 },
+            })
+            //Equip: Increases healing done by spells and effects by up to 40.
+            //Equip: Restores 8 mana per 5 sec.
+        ),
+        new Item(88, 60, "Epic", 7.4394,
+            "Cloak of the Devoured",
+            "ItemCape18",
+            "Back",
+            new Stats(new()
+            {
+                { "Stamina", 11 },
+                { "Intellect", 10 },
+            })
+            //Equip: Increases damage and healing done by magical spells and effects by up to 30.
+            //Equip: Improves your chance to hit with spells by 1%.
+        ),
+        new Item(88, 60, "Epic", 4.9596,
+            "Eyestalk Waist Cord",
+            "ItemBelt12",
+            "Waist",
+            "Cloth",
+            75,
+            new Stats(new()
+            {
+                { "Stamina", 10 },
+                { "Intellect", 9 },
+            })
+            //Equip: Improves your chance to get a critical strike with spells by 1%.
+            //Equip: Increases damage and healing done by magical spells and effects by up to 41.
+        ),
+        new Item(88, 60, "Epic", 5.1078,
+            "Grasp of the Old God", 
+            "ItemBelt31",
+            "Waist",
+            "Cloth",
+            75,
+            new Stats(new()
+            {
+                { "Stamina", 15 },
+                { "Intellect", 19 },
+            })
+            //Equip: Increases healing done by spells and effects by up to 59.
+            //Equip: Restores 7 mana per 5 sec.
+        ),
+        new Item(88, 60, "Epic", 10.8030,
+            "Vanquished Tentacle of C'Thun",
+            "ItemTrinketQiraj5",
+            "Trinket",
+            new Stats(new()
+            {
+
+            }),
+            new()
+            {
+                "Vanquished Tentacle of C'Thun"
+            }
+            //Use: Summons a Vanquished Tentacle to your aid for 30 sec. (3 Min Cooldown)
+        ),
+        new Item(84, 60, "Epic", 26.6569,
+            "Dark Edge of Insanity",
+            "ItemAxe25",
+            "Two Handed",
+            "Axe",
+            242, 364,
+            3.50,
+            new Stats(new()
+            {
+                { "Stamina", 25 },
+                { "Strength", 35 },
+                { "Agility", 19 },
+            })
+            //Chance on hit: Disorients the target, causing it to wander aimlessly for up to 3 sec.
+        ),
+        new Item(84, 60, "Epic", 22.4399,
+            "Scepter of the False Prophet",
+            "ItemMace22",
+            "One Handed",
+            "Mace",
+            38, 111,
+            1.80,
+            new Stats(new()
+            {
+                { "Stamina", 10 },
+                { "Intellect", 19 },
+            })
+            //Equip: Increases healing done by spells and effects by up to 187.
+            //Equip: Restores 3 mana per 5 sec.
+        ),
+        new Item(84, 60, "Epic", 20.6967,
+            "Death's Sting",
+            "ItemShortblade33",
+            "One Handed",
+            "Dagger",
+            95, 144,
+            1.80,
+            new Stats(new()
+            {
+                { "Stamina", 10 },
+            })
+            //Equip: +38 Attack Power.
+            //Equip: Increased Daggers +3.
+        ),
         new Item(83, 60, "Epic", 5.8442,
             "Mish'undare, Circlet of the Mind Flayer",
             "ItemHelmet52",
@@ -315,7 +507,7 @@ public class Item
         ),
         new Item(77, 60, "Epic", 14.8714,
             "Perdition's Blade",
-            "ItemShortblade11",
+            "ItemSword48",
             "One Handed",
             "Dagger",
             73, 137,

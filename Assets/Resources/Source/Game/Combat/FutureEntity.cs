@@ -84,9 +84,9 @@ public class FutureEntity
         else
         {
             double min = 0, max = 0;
-            if (equipment.ContainsKey("MainHand"))
+            if (equipment.ContainsKey("Main Hand"))
             {
-                var mainHand = inventory.items.Find(x => x.name == equipment["MainHand"]);
+                var mainHand = inventory.items.Find(x => x.name == equipment["Main Hand"]);
                 min += (int)(mainHand.minDamage / mainHand.speed);
                 max += (int)(mainHand.maxDamage / mainHand.speed);
             }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Collections.Generic;
 
 using static Root;
+using static UnityEditor.Progress;
 
 public class Entity
 {
@@ -12,16 +13,15 @@ public class Entity
         ResetResources();
         level = 1;
         this.name = name;
-        inventory = new Inventory(items);
-        equipment = new Dictionary<string, string>();
-        AutoEquip();
         unspentTalentPoints = 20;
         this.race = race.name;
         this.spec = spec.name;
         abilities = race.abilities.Select(x => x).Concat(spec.abilities.FindAll(x => x.Item2 <= level).Select(x => x.Item1)).Concat(spec.talentTrees.SelectMany(x => x.talents.FindAll(y => y.defaultTaken)).Select(x => x.ability)).Distinct().ToList();
         actionBarsUnlocked = 7;
-        actionBars = Ability.abilities.FindAll(x => abilities.Contains(x.name) && x.cost != null).Select(x => new ActionBar(x.name)).ToList();
         stats = new Stats(race.stats.stats.ToDictionary(x => x.Key, x => x.Value));
+        inventory = new Inventory(items);
+        equipment = new Dictionary<string, string>();
+        AutoEquip();
         Initialise();
     }
 
@@ -32,7 +32,7 @@ public class Entity
         this.race = name = race.name;
         abilities = race.abilities.Select(x => x).Distinct().ToList();
         actionBarsUnlocked = 7;
-        actionBars = Ability.abilities.FindAll(x => abilities.Contains(x.name) && x.cost != null).Select(x => new ActionBar(x.name)).ToList();
+        actionBars = Ability.abilities.FindAll(x => abilities.Contains(x.name) && x.cost != null).OrderBy(x => x.cost.Sum(y => y.Value)).OrderBy(x => x.putOnEnd).Select(x => new ActionBar(x.name)).ToList();
         var importance = ElementImportance(race.rarity == "Common");
         stats = new Stats(
             new()
@@ -81,6 +81,8 @@ public class Entity
             else if (resource.Value < 0) resources[resource.Key] = 0;
         }
     }
+
+    public List<string> ItemAbilities() => equipment.SelectMany(x => Item.items.Find(y => y.name == x.Value).abilities).ToList();
 
     public bool HasItemEquipped(string item) => equipment.Any(x => x.Value == item);
 
@@ -138,7 +140,13 @@ public class Entity
         if (slots == null) equipment = new();
         else foreach (var slot in slots)
                 if (equipment.ContainsKey(slot))
+                {
+                    var itemAbilities = Item.items.Find(x => x.name == equipment[slot]).abilities;
+                    if (itemAbilities != null)
+                        foreach (var ability in itemAbilities)
+                            abilities.Remove(ability);
                     equipment.Remove(slot);
+                }
     }
 
     public void AddResource(string resource, int amount) => AddResources(new() { { resource, amount } });
@@ -179,9 +187,9 @@ public class Entity
         else
         {
             double min = 0, max = 0;
-            if (equipment.ContainsKey("MainHand"))
+            if (equipment.ContainsKey("Main Hand"))
             {
-                var mainHand = inventory.items.Find(x => x.name == equipment["MainHand"]);
+                var mainHand = inventory.items.Find(x => x.name == equipment["Main Hand"]);
                 min += (int)(mainHand.minDamage / mainHand.speed);
                 max += (int)(mainHand.maxDamage / mainHand.speed);
             }

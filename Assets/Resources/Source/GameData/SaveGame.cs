@@ -13,18 +13,21 @@ public class SaveGame
             Class.classes.Find(x => x.name == "Mage"),
             new()
             {
-                "Staff of Dominance",
                 "Apprentice's Robe",
                 "Apprentice's Pants",
                 "Apprentice's Boots",
+                "Gossamer Belt",
                 "Band of Flesh",
+                "Grasp of the Old God",
                 "Mantle of Phrenic Power",
                 "Cloak of the Brood Lord",
                 "Prestor's Talisman of Connivery",
                 "Mish'undare, Circlet of the Mind Flayer",
-                "Gossamer Belt",
                 "Grizzle's Skinner",
-                "Perdition's Blade"
+                "Perdition's Blade",
+                "Vanquished Tentacle of C'Thun",
+                "Staff of Dominance",
+                "Ring of the Godslayer",
             }
         );
         siteProgress = new Dictionary<string, int>();

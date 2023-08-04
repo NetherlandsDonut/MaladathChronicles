@@ -14,15 +14,31 @@ public class Ability
     }
 
     //Active combat ability
-    public Ability(string name, int cooldown, List<string> tags, Dictionary<string, int> cost, Action description, Action<bool> effects, Action<bool, FutureBoard> futureEffects)
+    public Ability(string name, int cooldown, List<string> tags, Dictionary<string, int> cost, Action description, Action<bool> effects, Action<bool, FutureBoard> futureEffects, bool putOnEnd = false)
     {
         this.name = name;
+        icon = "Ability" + name.Replace(" ", "").Replace(":", "");
         this.cooldown = cooldown;
         this.tags = tags;
         this.cost = cost;
         this.description = description;
         this.effects = effects;
         this.futureEffects = futureEffects;
+        this.putOnEnd = putOnEnd;
+    }
+
+    //Active combat ability
+    public Ability(string name, string icon, int cooldown, List<string> tags, Dictionary<string, int> cost, Action description, Action<bool> effects, Action<bool, FutureBoard> futureEffects, bool putOnEnd = false)
+    {
+        this.name = name;
+        this.icon = icon;
+        this.cooldown = cooldown;
+        this.tags = tags;
+        this.cost = cost;
+        this.description = description;
+        this.effects = effects;
+        this.futureEffects = futureEffects;
+        this.putOnEnd = putOnEnd;
     }
 
     public bool EnoughResources(Entity entity)
@@ -41,8 +57,9 @@ public class Ability
         return true;
     }
 
-    public string name;
+    public string name, icon;
     public int cooldown;
+    public bool putOnEnd;
     public List<string> tags;
     public Dictionary<string, int> cost;
     public Action description;
@@ -457,6 +474,45 @@ public class Ability
             var caster = p ? board.player : board.enemy;
             caster.AddBuff("Demon Skin", 5);
         }),
+        new Ability("Vanquished Tentacle of C'Thun", "ItemTrinketQiraj5", 20, new() { "Damage" }, new()
+        {
+            { "Shadow", 4 },
+        },
+        () =>
+        {
+            AddPaddingRegion(() =>
+            {
+                AddLine("Casting Frosbolt will channel a frosty", Gray);
+                AddLine("projectile at the target dealing damage.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Deals 8 damage times caster's intelligence.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+                AddLine("Each point in Frost Mastery adds 1% chance", Gray);
+                AddLine("to refund the cost of casting this spell.", Gray);
+            });
+        },
+        (p) =>
+        {
+            var caster = p ? Board.board.player : Board.board.enemy;
+            Board.board.actions.Add(() =>
+            {
+                caster.AddBuff("Vanquished Tentacle of C'Thun", 6, SpawnShatterBuff(2, 0.8, new Vector3(!p ? 148 : -318, 122), "ItemTrinketQiraj5", caster));
+                SpawnShatter(6, 0.7, new Vector3(!p ? 148 : -318, 122), "ItemTrinketQiraj5", true, !p ? "1000" : "1001");
+                SpawnShatter(6, 0.7, new Vector3(!p ? 148 : -318, 122), "ItemTrinketQiraj5", true, !p ? "1000" : "1001");
+                PlaySound("AbilityDemonSkinCast");
+            });
+            CDesktop.LockScreen();
+        },
+        (p, board) =>
+        {
+            var caster = p ? board.player : board.enemy;
+            caster.AddBuff("Vanquished Tentacle of C'Thun", 6);
+        },  true),
         new Ability("Stoneform", 20, new() { "Defensive" }, new()
         {
             { "Earth", 4 },

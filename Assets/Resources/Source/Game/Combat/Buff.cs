@@ -547,6 +547,44 @@ public class Buff
 
             }
         ),
+        new Buff("Vanquished Tentacle of C'Thun", "None", new() { "Damage" }, false, "ItemTrinketQiraj5",
+            () =>
+            {
+                AddHeaderRegion(() =>
+                {
+                    AddLine("Target burns for 3 damage every turn.", Gray);
+                });
+                AddHeaderRegion(() =>
+                {
+                    SetRegionAsGroupExtender();
+                    AddLine("Each point in Frost Mastery adds 1% chance", Gray);
+                    AddLine("to refund the cost of casting this spell.", Gray);
+                });
+            },
+            (p) => () =>
+            {
+                var caster = p ? Board.board.player : Board.board.enemy;
+                var target = p ? Board.board.enemy : Board.board.player;
+                caster.Damage(target.RollWeaponDamage());
+                SpawnShatter(2, 0.8, new Vector3(!p ? 148 : -318, 122), "ItemTrinketQiraj5");
+                PlaySound("AbilityEnvenomImpact");
+                animationTime += frameTime * 3;
+            },
+            (p) => () =>
+            {
+
+            },
+            (p, board) => () =>
+            {
+                var caster = p ? board.player : board.enemy;
+                var target = p ? board.enemy : board.player;
+                caster.Damage(target.RollWeaponDamage());
+            },
+            (p, board) => () =>
+            {
+
+            }
+        ),
         new Buff("Venomous Bite", "None", new() { "Damage" }, false, "AbilityVenomousBite",
         () =>
         {

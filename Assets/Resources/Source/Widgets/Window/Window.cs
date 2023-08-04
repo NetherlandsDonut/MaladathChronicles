@@ -253,7 +253,19 @@ public class Window : MonoBehaviour
                 {
                     text.Erase();
                     foreach (var character in text.text)
-                        length = text.SpawnCharacter(character, length);
+                        if (regionGroup.setWidth == 0)
+                            length = text.SpawnCharacter(character, length);
+                        else
+                        {
+                            if (length + 12 < regionGroup.setWidth - region.smallButtons.Count * 19)
+                                length = text.SpawnCharacter(character, length);
+                            else
+                            {
+                                for (int i = 0; i < 3; i++)
+                                    length = text.SpawnCharacter('.', length);
+                                break;
+                            }
+                        }
                 }
             }
 
@@ -287,7 +299,7 @@ public class Window : MonoBehaviour
                 var load = Resources.Load<Sprite>("Sprites/Building/BigButtons/" + bigButton.buttonType);
                 bigButton.GetComponent<SpriteRenderer>().sprite = load == null ? Resources.Load<Sprite>("Sprites/Building/BigButtons/OtherEmpty") : load;
                 bigButton.GetComponent<SpriteRenderer>().sortingLayerName = layer;
-                bigButton.transform.localPosition = new Vector3(region.xExtend + 20 + 38 * region.bigButtons.IndexOf(bigButton), -20f, 0.1f);
+                bigButton.transform.localPosition = new Vector3(20 + 38 * region.bigButtons.IndexOf(bigButton), -20f, 0.1f);
                 if (bigButton.gameObject.GetComponent<BoxCollider2D>() == null)
                     bigButton.gameObject.AddComponent<BoxCollider2D>();
                 if (bigButton.gameObject.GetComponent<Highlightable>() == null)
