@@ -98,6 +98,7 @@ public class InstanceWing
     {
         this.name = name;
         this.areas = areas;
+        SiteHostileArea.hostileAreas.FindAll(x => areas.Exists(y => y.Item2 == x.name)).ForEach(x => x.instancePart = true);
     }
 
     public string name;

@@ -51,6 +51,7 @@ public class SiteHostileArea
 
     public string name;
     public int recommendedLevel;
+    public bool instancePart;
     public List<(int, int, string)> possibleEncounters;
     public List<(int, int, string)> bossEncounters;
 
@@ -58,7 +59,12 @@ public class SiteHostileArea
     {
         new SiteHostileArea("King's Square", new()
             {
+                ("55-56", "Scourge Warder"),
+                ("55-56", "Putrid Gargoyle"),
+                ("55-56", "Necromancer"),
+                ("55-56", "Cursed Mage"),
                 ("55-56", "Cannibal Ghoul"),
+                ("55-56", "Death Cultist"),
             },
             new()
             {

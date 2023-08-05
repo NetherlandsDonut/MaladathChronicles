@@ -487,7 +487,7 @@ public static class Root
                 {
                     if (find != null)
                     {
-                        Board.board = new Board(6, 6, find.RollEncounter(), "Areas/Area" + find.name.Replace("\'", "").Replace(" ", ""));
+                        Board.board = new Board(6, 6, find.RollEncounter(), find);
                         SpawnDesktopBlueprint("Game");
                         SwitchDesktop("Game");
                     }
@@ -575,7 +575,7 @@ public static class Root
                     var find = SiteHostileArea.hostileAreas.Find(x => x.name == name);
                     if (find != null)
                     {
-                        Board.board = new Board(6, 6, find.RollEncounter(), "");
+                        Board.board = new Board(6, 6, find.RollEncounter(), find);
                         SpawnDesktopBlueprint("Game");
                         SwitchDesktop("Game");
                     }
@@ -626,8 +626,12 @@ public static class Root
         (h) =>
         {
             var window = CDesktop.windows.Find(x => x.title.StartsWith("Area: "));
-            if (window != null) CloseWindow(window);
+            if (window != null)
+                if (window.title == "Area: " + area.name) return;
+                else CloseWindow(window);
             SpawnWindowBlueprint("Area: " + area.name);
+            SetDesktopBackground("Areas/Area" + (instance.name + area.name).Replace("'", "").Replace(" ", ""));
+            SpawnTransition();
         });
     }
 
@@ -637,6 +641,15 @@ public static class Root
     {
         if (level > currentSave.player.level) return Red;
         else return Gray;
+    }
+
+    public static Color ProgressColored(int progress)
+    {
+        if (progress == 0) return DarkGray;
+        else if (progress <= 20) return Red;
+        else if (progress <= 40) return Orange;
+        else if (progress <= 60) return Yellow;
+        else return Green;
     }
 
     public static Color EntityColoredLevel(int level)
@@ -829,18 +842,23 @@ public static class Root
             CDesktop.gameObject.SetActive(true);
             desktops.Remove(CDesktop);
             desktops.Insert(0, CDesktop);
-            var transition = new GameObject("CameraTransition", typeof(SpriteRenderer), typeof(Shatter));
-            transition.transform.parent = CDesktop.screen.transform;
-            transition.transform.localPosition = Vector3.zero;
-            transition.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Textures/CameraTransition");
-            transition.GetComponent<Shatter>().Initiate(0.1f, transition.GetComponent<SpriteRenderer>());
+            SpawnTransition();
         }
+    }
+
+    public static void SpawnTransition()
+    {
+        var transition = new GameObject("CameraTransition", typeof(SpriteRenderer), typeof(Shatter));
+        transition.transform.parent = CDesktop.screen.transform;
+        transition.transform.localPosition = Vector3.zero;
+        transition.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Textures/CameraTransition");
+        transition.GetComponent<Shatter>().Initiate(0.1f, transition.GetComponent<SpriteRenderer>());
     }
 
     public static void SetDesktopBackground(string texture, bool followCamera = true)
     {
-        if (followCamera) LBDesktop.screen.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Textures/" + texture);
-        else LBDesktop.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Textures/" + texture);
+        if (followCamera) CDesktop.screen.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Textures/" + texture);
+        else CDesktop.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Textures/" + texture);
     }
 
     //Hotkeys can be added only on desktop creation!

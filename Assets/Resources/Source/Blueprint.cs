@@ -202,7 +202,16 @@ public class Blueprint
                 () =>
                 {
                     AddLine(Board.board.player.name, Black);
-                    AddSmallButton("MenuFlee", (h) => { SwitchDesktop("Map"); CloseDesktop("Game"); });
+                    AddSmallButton("MenuFlee", (h) =>
+                    {
+                        CloseDesktop("Game");
+                        if (Board.board.area != null && Board.board.area.instancePart)
+                        {
+                            SwitchDesktop("DungeonEntrance");
+                            CDesktop.Rebuild();
+                        }
+                        else SwitchDesktop("Map");
+                    });
                     AddSmallButton("MenuLog", (h) => { });
                 },
                 (h) =>
@@ -1365,7 +1374,7 @@ public class Blueprint
         }),
         new("Game", () =>
         {
-            SetDesktopBackground(Board.board.background);
+            SetDesktopBackground("Areas/Area" + (Board.board.area.instancePart ? instance.name : "") + Board.board.area.name.Replace("'", "").Replace(" ", ""));
             SpawnWindowBlueprint("BattleBoard");
             SpawnWindowBlueprint("PlayerBattleInfo");
             SpawnWindowBlueprint("EnemyBattleInfo");

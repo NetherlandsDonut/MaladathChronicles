@@ -8,7 +8,7 @@ using static Root;
 
 public class Board
 {
-    public Board(int x, int y, Entity enemy, string background)
+    public Board(int x, int y, Entity enemy, SiteHostileArea area = null)
     {
         bonusTurnStreak = 0;
         field = new int[x, y];
@@ -16,8 +16,8 @@ public class Board
         player.Initialise(false);
         player.actionBars = Ability.abilities.FindAll(x => player.abilities.Contains(x.name) && x.cost != null).OrderBy(x => x.cost.Sum(y => y.Value)).OrderBy(x => x.putOnEnd).Select(x => new ActionBar(x.name)).Take(player.actionBarsUnlocked).ToList();
         this.enemy = enemy;
-        this.background = background;
         playerTurn = true;
+        this.area = area;
         temporaryElementsPlayer = new();
         temporaryElementsEnemy = new();
         temporaryBuffsPlayer = new();
@@ -36,7 +36,7 @@ public class Board
     public bool playerTurn, breakForEnemy, breakForCascade, enemyFinishedMoving, playerFinishedMoving;
     public List<GameObject> temporaryElementsPlayer, temporaryElementsEnemy, temporaryBuffsPlayer, temporaryBuffsEnemy;
     public List<Action> actions;
-    public string background;
+    public SiteHostileArea area;
 
     //ENDS THE CURRENT PLAYER'S TURN
     public void EndTurn()
@@ -75,7 +75,18 @@ public class Board
         if (playerWon)
         {
             currentSave.player.experience += 1;
-            SpawnDesktopBlueprint("Map");
+            if (area != null)
+            {
+                if (!currentSave.siteProgress.ContainsKey(area.name))
+                    currentSave.siteProgress.Add(area.name, 1);
+                else currentSave.siteProgress[area.name]++;
+            }
+            if (area != null && area.instancePart)
+            {
+                SwitchDesktop("DungeonEntrance");
+                CDesktop.Rebuild();
+            }
+            else SwitchDesktop("Map");
         }
         else
         {

@@ -92,6 +92,29 @@ public class Starter : MonoBehaviour
                         });
                         foreach (var wing in instance.wings)
                             PrintRaidWing(instance, wing);
+                        AddPaddingRegion(() =>
+                        {
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                        });
                     }
                 )
             );
@@ -114,13 +137,22 @@ public class Starter : MonoBehaviour
                             AddSmallButton("OtherClose",
                             (h) =>
                             {
+                                SpawnTransition();
+                                SetDesktopBackground("Areas/Area" + SiteInstance.instance.name.Replace("'", "").Replace(" ", ""));
                                 CloseWindow(h.window);
                             });
                         });
-                        AddHeaderRegion(() =>
+                        AddPaddingRegion(() =>
                         {
                             AddLine("Recommended level: ", Gray);
                             AddText(area.recommendedLevel + "", EntityColoredLevel(area.recommendedLevel));
+                        });
+                        AddPaddingRegion(() =>
+                        {
+                            AddLine("Exploration progress: ", DarkGray);
+                            var temp = currentSave.siteProgress;
+                            int progress = (int)(currentSave.siteProgress.ContainsKey(area.name) ? (double)currentSave.siteProgress[area.name] / area.bossEncounters.Sum(x => x.Item1) * 100 : 0);
+                            AddText((progress > 100 ? 100 : progress) + "%", ProgressColored(progress));
                         });
                         AddPaddingRegion(() =>
                         {
@@ -134,20 +166,14 @@ public class Starter : MonoBehaviour
                         },
                         (h) =>
                         {
-                            Board.board = new Board(6, 6, area.RollEncounter(), "Areas/Area" + area.name.Replace("\'", "").Replace(" ", ""));
+                            Board.board = new Board(6, 6, area.RollEncounter(), area);
                             SpawnDesktopBlueprint("Game");
                             SwitchDesktop("Game");
                         });
                         AddHeaderRegion(() =>
                         {
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                        });
-                        AddHeaderRegion(() =>
-                        {
                             AddLine("Bosses: ", Gray);
+                            AddSmallButton("OtherBoss", (h) => { });
                         });
                         foreach (var boss in area.bossEncounters)
                         {
@@ -158,19 +184,34 @@ public class Starter : MonoBehaviour
                             },
                             (h) =>
                             {
-                                Board.board = new Board(6, 6, area.RollBoss(boss), "Areas/Area" + area.name.Replace("\'", "").Replace(" ", ""));
+                                Board.board = new Board(6, 6, area.RollBoss(boss), area);
                                 SpawnDesktopBlueprint("Game");
                                 SwitchDesktop("Game");
                             });
-                            AddPaddingRegion(() =>
-                            {
-                                AddLine("?", DarkGray);
-                            });
-                            AddPaddingRegion(() =>
-                            {
-                                AddLine("?", DarkGray);
-                            });
                         }
+                        AddPaddingRegion(() =>
+                        {
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                        });
                     }
                 )
             );
