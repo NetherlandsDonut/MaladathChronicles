@@ -32,7 +32,7 @@ public class LineSmallButton : MonoBehaviour
         if (cursor.render.sprite == null) return;
         if (pressEvent != null)
         {
-            PlaySound("DesktopButtonPress", 0.6f);
+            PlaySound(buttonType != "OtherClose" ? "DesktopButtonPress" : "DesktopButtonClose", 0.6f);
             pressEvent(GetComponent<Highlightable>());
             region.regionGroup.window.Rebuild();
         }

@@ -46,6 +46,7 @@ public class Starter : MonoBehaviour
                         (h) =>
                         {
                             var title = CDesktop.title;
+                            PlaySound("DesktopInstanceClose");
                             CloseDesktop(title);
                             SwitchDesktop("Map");
                         });
@@ -68,7 +69,7 @@ public class Starter : MonoBehaviour
                     {
                         SetAnchor(Anchor.TopRight);
                         AddRegionGroup();
-                        SetRegionGroupWidth(160);
+                        SetRegionGroupWidth(161);
                         SetRegionGroupHeight(344);
                         AddHeaderRegion(() =>
                         {
@@ -77,6 +78,7 @@ public class Starter : MonoBehaviour
                             (h) =>
                             {
                                 var title = CDesktop.title;
+                                PlaySound("DesktopInstanceClose");
                                 CloseDesktop(title);
                                 SwitchDesktop("Map");
                             });
@@ -120,102 +122,175 @@ public class Starter : MonoBehaviour
             );
         }
         for (int i = 0; i < SiteHostileArea.hostileAreas.Count; i++)
-        {
-            var index = i;
-            var area = SiteHostileArea.hostileAreas[index];
-            Blueprint.windowBlueprints.Add(
-                new Blueprint("Area: " + area.name,
-                    () =>
-                    {
-                        SetAnchor(Anchor.TopLeft);
-                        AddRegionGroup();
-                        SetRegionGroupWidth(160);
-                        SetRegionGroupHeight(344);
-                        AddHeaderRegion(() =>
+            if (SiteHostileArea.hostileAreas[i].instancePart)
+            {
+                var index = i;
+                var area = SiteHostileArea.hostileAreas[index];
+                Blueprint.windowBlueprints.Add(
+                    new Blueprint("Area: " + area.name,
+                        () =>
                         {
-                            AddLine(area.name);
-                            AddSmallButton("OtherClose",
-                            (h) =>
+                            SetAnchor(Anchor.TopLeft);
+                            AddRegionGroup();
+                            SetRegionGroupWidth(161);
+                            SetRegionGroupHeight(344);
+                            AddHeaderRegion(() =>
                             {
-                                SpawnTransition();
-                                SetDesktopBackground("Areas/Area" + SiteInstance.instance.name.Replace("'", "").Replace(" ", ""));
-                                CloseWindow(h.window);
+                                AddLine(area.name);
+                                AddSmallButton("OtherClose",
+                                (h) =>
+                                {
+                                    SpawnTransition();
+                                    SetDesktopBackground("Areas/Area" + SiteInstance.instance.name.Replace("'", "").Replace(" ", ""));
+                                    CloseWindow(h.window);
+                                });
                             });
-                        });
-                        AddPaddingRegion(() =>
-                        {
-                            AddLine("Recommended level: ", Gray);
-                            AddText(area.recommendedLevel + "", EntityColoredLevel(area.recommendedLevel));
-                        });
-                        AddPaddingRegion(() =>
-                        {
-                            AddLine("Exploration progress: ", DarkGray);
-                            var temp = currentSave.siteProgress;
-                            int progress = (int)(currentSave.siteProgress.ContainsKey(area.name) ? (double)currentSave.siteProgress[area.name] / area.bossEncounters.Sum(x => x.Item1) * 100 : 0);
-                            AddText((progress > 100 ? 100 : progress) + "%", ProgressColored(progress));
-                        });
-                        AddPaddingRegion(() =>
-                        {
-                            AddLine("Possible encounters:", DarkGray);
-                            foreach (var encounter in area.possibleEncounters)
-                                AddLine("- " + encounter.Item3, DarkGray);
-                        });
-                        AddButtonRegion(() =>
-                        {
-                            AddLine("Explore", Black);
-                        },
-                        (h) =>
-                        {
-                            Board.board = new Board(6, 6, area.RollEncounter(), area);
-                            SpawnDesktopBlueprint("Game");
-                            SwitchDesktop("Game");
-                        });
-                        AddHeaderRegion(() =>
-                        {
-                            AddLine("Bosses: ", Gray);
-                            AddSmallButton("OtherBoss", (h) => { });
-                        });
-                        foreach (var boss in area.bossEncounters)
-                        {
+                            AddPaddingRegion(() =>
+                            {
+                                AddLine("Recommended level: ", Gray);
+                                AddText(area.recommendedLevel + "", EntityColoredLevel(area.recommendedLevel));
+                            });
+                            AddPaddingRegion(() =>
+                            {
+                                AddLine("Exploration progress: ", DarkGray);
+                                var temp = currentSave.siteProgress;
+                                int progress = (int)(currentSave.siteProgress.ContainsKey(area.name) ? (double)currentSave.siteProgress[area.name] / area.bossEncounters.Sum(x => x.Item1) * 100 : 0);
+                                AddText((progress > 100 ? 100 : progress) + "%", ProgressColored(progress));
+                            });
+                            AddPaddingRegion(() =>
+                            {
+                                AddLine("Possible encounters:", DarkGray);
+                                foreach (var encounter in area.possibleEncounters)
+                                    AddLine("- " + encounter.Item3, DarkGray);
+                            });
                             AddButtonRegion(() =>
                             {
-                                SetRegionBackground(RegionBackgroundType.RedButton);
-                                AddLine(boss.Item3, Black);
+                                AddLine("Explore", Black);
                             },
                             (h) =>
                             {
-                                Board.board = new Board(6, 6, area.RollBoss(boss), area);
+                                Board.board = new Board(6, 6, area.RollEncounter(), area);
                                 SpawnDesktopBlueprint("Game");
                                 SwitchDesktop("Game");
                             });
+                            AddHeaderRegion(() =>
+                            {
+                                AddLine("Bosses: ", Gray);
+                                AddSmallButton("OtherBoss", (h) => { });
+                            });
+                            foreach (var boss in area.bossEncounters)
+                            {
+                                AddButtonRegion(() =>
+                                {
+                                    SetRegionBackground(RegionBackgroundType.RedButton);
+                                    AddLine(boss.Item3, Black);
+                                },
+                                (h) =>
+                                {
+                                    Board.board = new Board(6, 6, area.RollBoss(boss), area);
+                                    SpawnDesktopBlueprint("Game");
+                                    SwitchDesktop("Game");
+                                });
+                            }
+                            AddPaddingRegion(() =>
+                            {
+                                AddLine("", Gray);
+                                AddLine("", Gray);
+                                AddLine("", Gray);
+                                AddLine("", Gray);
+                                AddLine("", Gray);
+                                AddLine("", Gray);
+                                AddLine("", Gray);
+                                AddLine("", Gray);
+                                AddLine("", Gray);
+                                AddLine("", Gray);
+                                AddLine("", Gray);
+                                AddLine("", Gray);
+                                AddLine("", Gray);
+                                AddLine("", Gray);
+                                AddLine("", Gray);
+                                AddLine("", Gray);
+                                AddLine("", Gray);
+                                AddLine("", Gray);
+                                AddLine("", Gray);
+                                AddLine("", Gray);
+                            });
                         }
-                        AddPaddingRegion(() =>
+                    )
+                );
+            }
+            else
+            {
+                var index = i;
+                var area = SiteHostileArea.hostileAreas[index];
+                Blueprint.windowBlueprints.Add(
+                    new Blueprint("Area: " + area.name,
+                        () =>
                         {
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                        });
-                    }
-                )
-            );
-        }
+                            SetAnchor(Anchor.TopRight);
+                            AddRegionGroup();
+                            SetRegionGroupWidth(161);
+                            SetRegionGroupHeight(344);
+                            AddHeaderRegion(() =>
+                            {
+                                AddLine(area.name);
+                                AddSmallButton("OtherClose",
+                                (h) =>
+                                {
+                                    SpawnTransition();
+                                    PlaySound("DesktopInstanceClose");
+                                    SetDesktopBackground("Areas/Area" + SiteInstance.instance.name.Replace("'", "").Replace(" ", ""));
+                                    CloseWindow(h.window);
+                                });
+                            });
+                            AddPaddingRegion(() =>
+                            {
+                                AddLine("Recommended level: ", Gray);
+                                AddText(area.recommendedLevel + "", EntityColoredLevel(area.recommendedLevel));
+                            });
+                            AddPaddingRegion(() =>
+                            {
+                                AddLine("Possible encounters:", DarkGray);
+                                foreach (var encounter in area.possibleEncounters)
+                                    AddLine("- " + encounter.Item3, DarkGray);
+                            });
+                            AddButtonRegion(() =>
+                            {
+                                AddLine("Explore", Black);
+                            },
+                            (h) =>
+                            {
+                                Board.board = new Board(6, 6, area.RollEncounter(), area);
+                                SpawnDesktopBlueprint("Game");
+                                SwitchDesktop("Game");
+                            });
+                            AddPaddingRegion(() =>
+                            {
+                                AddLine("", Gray);
+                                AddLine("", Gray);
+                                AddLine("", Gray);
+                                AddLine("", Gray);
+                                AddLine("", Gray);
+                                AddLine("", Gray);
+                                AddLine("", Gray);
+                                AddLine("", Gray);
+                                AddLine("", Gray);
+                                AddLine("", Gray);
+                                AddLine("", Gray);
+                                AddLine("", Gray);
+                                AddLine("", Gray);
+                                AddLine("", Gray);
+                                AddLine("", Gray);
+                                AddLine("", Gray);
+                                AddLine("", Gray);
+                                AddLine("", Gray);
+                                AddLine("", Gray);
+                                AddLine("", Gray);
+                            });
+                        }
+                    )
+                );
+            }
         for (int i = 0; i < 3; i++)
             for (int j = 0; j < 12; j++)
                 for (int k = 0; k < 3; k++)

@@ -287,14 +287,14 @@ public class Blueprint
                                 AddSmallButton("Element" + cost.Key + "Rousing", (h) => { });
                             });
                             AddRegionGroup();
-                            SetRegionGroupWidth(15);
+                            SetRegionGroupWidth(20);
                             AddHeaderRegion(() =>
                             {
                                 AddLine(cost.Value + "", cost.Value > Board.board.player.resources[cost.Key] ? Red : Green);
                             });
                         }
                         AddRegionGroup();
-                        SetRegionGroupWidth(236 - abilityObj.cost.Count * 44);
+                        SetRegionGroupWidth(236 - abilityObj.cost.Count * 49);
                         AddPaddingRegion(() =>
                         {
                             AddLine("", LightGray);
@@ -451,14 +451,14 @@ public class Blueprint
                                 AddSmallButton("Element" + cost.Key + "Rousing", (h) => { });
                             });
                             AddRegionGroup();
-                            SetRegionGroupWidth(15);
+                            SetRegionGroupWidth(20);
                             AddHeaderRegion(() =>
                             {
                                 AddLine(cost.Value + "", LightGray);
                             });
                         }
                         AddRegionGroup();
-                        SetRegionGroupWidth(236 - abilityObj.cost.Count * 44);
+                        SetRegionGroupWidth(236 - abilityObj.cost.Count * 49);
                         AddPaddingRegion(() =>
                         {
                             AddLine("", LightGray);
@@ -466,92 +466,6 @@ public class Blueprint
                     }
                 , -1, "EnemyActionBar" + Board.board.enemy.actionBars.IndexOf(actionBar));
             }
-        }),
-        new("JourneyInfo", () => {
-            SetAnchor(TopRight);
-            AddRegionGroup();
-            SetRegionGroupWidth(138);
-            AddButtonRegion(
-                () =>
-                {
-                    AddLine("Nefarian", Black);
-                },
-                (h) =>
-                {
-
-                }
-            );
-            AddHeaderRegion(() =>
-            {
-                AddBigButton("PortraitNefarian", (h) => { });
-                AddLine("Level 60", Gray);
-            });
-            AddButtonRegion(
-                () =>
-                {
-                    AddLine("?", Black);
-                    AddSmallButton("OtherUnknown", (h) => { });
-                },
-                (h) =>
-                {
-
-                }
-            );
-            AddButtonRegion(
-                () =>
-                {
-                    AddLine("?", Black);
-                    AddSmallButton("OtherUnknown", (h) => { });
-                },
-                (h) =>
-                {
-
-                }
-            );
-            AddButtonRegion(
-                () =>
-                {
-                    AddLine("?", Black);
-                    AddSmallButton("OtherUnknown", (h) => { });
-                },
-                (h) =>
-                {
-
-                }
-            );
-            AddButtonRegion(
-                () =>
-                {
-                    AddLine("?", Black);
-                    AddSmallButton("OtherUnknown", (h) => { });
-                },
-                (h) =>
-                {
-
-                }
-            );
-            AddButtonRegion(
-                () =>
-                {
-                    AddLine("?", Black);
-                    AddSmallButton("OtherUnknown", (h) => { });
-                },
-                (h) =>
-                {
-
-                }
-            );
-            AddButtonRegion(
-                () =>
-                {
-                    AddLine("?", Black);
-                    AddSmallButton("OtherUnknown", (h) => { });
-                },
-                (h) =>
-                {
-
-                }
-            );
         }),
         new("LocationInfo", () => {
             SetAnchor(Top);
@@ -564,11 +478,11 @@ public class Blueprint
             );
         }),
         new("BattleBoard", () => {
-            SetAnchor(Top, 0, -34);
+            SetAnchor(Top, 0, -15 + 19 * (Board.board.field.GetLength(1) - 7));
             var boardBackground = new GameObject("BoardBackground", typeof(SpriteRenderer));
             boardBackground.transform.parent = CDesktop.LBWindow.transform;
             boardBackground.transform.localPosition = new Vector2(-17, 17);
-            boardBackground.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Textures/BoardBackground");
+            boardBackground.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Textures/BoardBackground" + Board.board.field.GetLength(0) + "x" + Board.board.field.GetLength(1));
             AddRegionGroup();
             for (int i = 0; i < Board.board.field.GetLength(1); i++)
             {
@@ -685,6 +599,29 @@ public class Blueprint
                     SwitchDesktop("TalentScreen");
                 }
             );
+            AddPaddingRegion(() =>
+            {
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+            });
             //AddRegionGroup();
             //SetRegionGroupWidth(123);
             //AddHeaderRegion(() =>
@@ -702,6 +639,41 @@ public class Blueprint
             //            AddLine(foo.Value + "", foo.Value > currentSave.player.stats.stats[foo.Key] ? Uncommon : (foo.Value < currentSave.player.stats.stats[foo.Key] ? DangerousRed : Gray));
             //});
         }, true),
+        new("InstanceLeftSide", () => {
+            SetAnchor(TopLeft);
+            AddRegionGroup();
+            SetRegionGroupWidth(161);
+            AddPaddingRegion(() =>
+            {
+                AddLine("Select area on the right.", DarkGray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+            });
+        }),
         new("Inventory", () => {
             SetAnchor(TopRight);
             AddRegionGroup();
@@ -899,81 +871,6 @@ public class Blueprint
                 (h) => { });
                 AddBigButton("OtherEmpty",
                 (h) => { });
-            });
-        }),
-        new("SelectedTown", () => {
-            SetAnchor(BottomLeft);
-            AddRegionGroup();
-            AddButtonRegion(() =>
-            {
-                AddLine("Bloodvenom Post", Black);
-                AddSmallButton("OtherClose",
-                (h) =>
-                {
-                    CloseWindow(h.window);
-                },
-                (h) => () =>
-                {
-                    SetAnchor(BottomRight);
-                    AddRegionGroup();
-                    AddHeaderRegion(
-                        () =>
-                        {
-                            AddLine("Close this window", Gray);
-                        }
-                    );
-                });
-            },
-            (h) =>
-            {
-            });
-            AddHeaderRegion(() =>
-            {
-                AddBigButton("FactionHorde",
-                (h) =>
-                {
-                },
-                (h) => () =>
-                {
-
-                });
-            });
-            AddHeaderRegion(() =>
-            {
-                AddLine("Nothing:", Gray);
-            });
-            AddPaddingRegion(() =>
-            {
-                AddLine("There is nothing here yet", Gray);
-                AddLine("But there will be something soon", Gray);
-                AddLine("I hope so", Gray);
-            });
-            AddHeaderRegion(() =>
-            {
-                AddLine("Very nothing:", Gray);
-            });
-            AddPaddingRegion(() =>
-            {
-                AddLine("There is nothing here yet", Gray);
-                AddLine("But there will be something soon", Gray);
-            });
-            AddHeaderRegion(() =>
-            {
-                AddLine("Very nothing:", Gray);
-            });
-            AddPaddingRegion(() =>
-            {
-                AddLine("There is nothing here yet", Gray);
-                AddLine("But there will be something soon", Gray);
-            });
-            AddHeaderRegion(() =>
-            {
-                AddLine("Very nothing:", Gray);
-            });
-            AddPaddingRegion(() =>
-            {
-                AddLine("There is nothing here yet", Gray);
-                AddLine("But there will be something soon", Gray);
             });
         }),
         new("CharacterNeckSlot", () => {
@@ -1364,13 +1261,41 @@ public class Blueprint
         {
             SetDesktopBackground("Areas/Area" + instance.name.Replace("'", "").Replace(" ", ""));
             SpawnWindowBlueprint("Dungeon: " + instance.name);
-            AddHotkey(Escape, () => { CloseDesktop("DungeonEntrance"); });
+            SpawnWindowBlueprint("InstanceLeftSide");
+            AddHotkey(Escape, () =>
+            {
+                var window = CDesktop.windows.Find(x => x.title.StartsWith("Area: "));
+                if (window != null)
+                {
+                    PlaySound("DesktopButtonClose");
+                    CloseWindow(window);
+                }
+                else
+                {
+                    PlaySound("DesktopInstanceClose");
+                    CloseDesktop("DungeonEntrance");
+                }
+            });
         }),
         new("RaidEntrance", () =>
         {
             SetDesktopBackground("Areas/Area" + instance.name.Replace("'", "").Replace(" ", ""));
             SpawnWindowBlueprint("Raid: " + instance.name);
-            AddHotkey(Escape, () => { CloseDesktop("RaidEntrance"); });
+            SpawnWindowBlueprint("InstanceLeftSide");
+            AddHotkey(Escape, () =>
+            {
+                var window = CDesktop.windows.Find(x => x.title.StartsWith("Area: "));
+                if (window != null)
+                {
+                    PlaySound("DesktopButtonClose");
+                    CloseWindow(window);
+                }
+                else
+                {
+                    PlaySound("DesktopInstanceClose");
+                    CloseDesktop("RaidEntrance");
+                }
+            });
         }),
         new("Game", () =>
         {
@@ -1482,10 +1407,6 @@ public class Blueprint
                     cursor.transform.position -= new Vector3(0, off);
                 }
             },  false);
-        }),
-        new("TitleScreen", () =>
-        {
-            SpawnWindowBlueprint("TitleScreenMenu");
         }),
         new("SpellbookScreen", () =>
         {

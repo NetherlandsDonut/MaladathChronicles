@@ -521,6 +521,7 @@ public static class Root
                     instance = dungeons.Find(x => x.name == name);
                     if (instance != null)
                     {
+                        PlaySound("DesktopInstanceOpen");
                         SpawnDesktopBlueprint("DungeonEntrance");
                         SwitchDesktop("DungeonEntrance");
                     }
@@ -555,6 +556,7 @@ public static class Root
                     instance = raids.Find(x => x.name == name);
                     if (instance != null)
                     {
+                        PlaySound("DesktopInstanceOpen");
                         SpawnDesktopBlueprint("RaidEntrance");
                         SwitchDesktop("RaidEntrance");
                     }
@@ -716,7 +718,7 @@ public static class Root
                                 AddSmallButton("Element" + cost.Key + "Rousing", (h) => { });
                             });
                             AddRegionGroup();
-                            SetRegionGroupWidth(15);
+                            SetRegionGroupWidth(20);
                             AddHeaderRegion(() =>
                             {
                                 AddLine(cost.Value + "", Board.board != null ? (cost.Value > Board.board.player.resources[cost.Key] ? Red : Green) : Gray);
@@ -729,7 +731,7 @@ public static class Root
                         SetRegionAsGroupExtender();
                     });
                     AddRegionGroup();
-                    SetRegionGroupWidth(256 - (abilityObj == null ? 0 : abilityObj.cost.Count) * 44);
+                    SetRegionGroupWidth(256 - (abilityObj == null ? 0 : abilityObj.cost.Count) * 49);
                     AddPaddingRegion(() =>
                     {
                         AddLine("", LightGray);
