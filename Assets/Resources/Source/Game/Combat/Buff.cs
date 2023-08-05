@@ -8,7 +8,7 @@ using static Root.Color;
 
 public class Buff
 {
-    public Buff(string name, string dispelType, List<string> tags, bool stackable, string icon, Action description, Func<bool, Action> effects, Func<bool, Action> killEffects, Func<bool, FutureBoard, Action> futureEffects, Func<bool, FutureBoard, Action> futureKillEffects)
+    public Buff(string name, string dispelType, List<string> tags, bool stackable, string icon, Func<bool, Action> description, Func<bool, Action> effects, Func<bool, Action> killEffects, Func<bool, FutureBoard, Action> futureEffects, Func<bool, FutureBoard, Action> futureKillEffects)
     {
         this.name = name;
         this.dispelType = dispelType;
@@ -25,14 +25,13 @@ public class Buff
     public string name, icon, dispelType;
     public List<string> tags;
     public bool stackable;
-    public Action description;
-    public Func<bool, Action> effects, killEffects;
+    public Func<bool, Action> description, effects, killEffects;
     public Func<bool, FutureBoard, Action> futureEffects, futureKillEffects;
 
     public static List<Buff> buffs = new()
     {
         new Buff("Thunderstorm", "None", new() { "Damage" }, true, "AbilityThunderstorm",
-        () =>
+        (p) => () =>
         {
             AddHeaderRegion(() =>
             {
@@ -82,7 +81,7 @@ public class Buff
 
         }),
         new Buff("Blizzard", "None", new() { "Damage" }, false, "AbilityBlizzard",
-        () =>
+        (p) => () =>
         {
             AddHeaderRegion(() =>
             {
@@ -126,7 +125,7 @@ public class Buff
 
         }),
         new Buff("Withering Cloud", "None", new() { "Gathering" }, false, "AbilityWitheringCloud",
-        () =>
+        (p) => () =>
         {
             AddHeaderRegion(() =>
             {
@@ -247,7 +246,7 @@ public class Buff
 
         }),
         new Buff("Stoneform", "None", new() { "Defensive" }, false, "AbilityStoneform",
-            () =>
+            (p) => () =>
             {
                 AddHeaderRegion(() =>
                 {
@@ -278,7 +277,7 @@ public class Buff
             }
         ),
         new Buff("Ice Block", "None", new() { "Defensive" }, false, "AbilityIceBlock",
-        () =>
+        (p) => () =>
         {
             AddHeaderRegion(() =>
             {
@@ -310,7 +309,7 @@ public class Buff
 
         }),
         new Buff("Hammer Of Justice", "None", new() { "Stun" }, false, "AbilityHammerOfJustice",
-        () =>
+        (p) => () =>
         {
             AddHeaderRegion(() =>
             {
@@ -342,7 +341,7 @@ public class Buff
 
         }),
         new Buff("Web Burst", "None", new() { "Stun" }, false, "AbilityWebBurst",
-        () =>
+        (p) => () =>
         {
             AddHeaderRegion(() =>
             {
@@ -374,7 +373,7 @@ public class Buff
 
         }),
         new Buff("Summoned Infernal", "None", new() { }, true, "AbilitySummonInfernal",
-        () =>
+        (p) => () =>
         {
             AddHeaderRegion(() =>
             {
@@ -409,7 +408,7 @@ public class Buff
 
         }),
         new Buff("Summoned Felhunter", "None", new() { }, true, "AbilitySummonFelhunter",
-        () =>
+        (p) => () =>
         {
             AddHeaderRegion(() =>
             {
@@ -443,7 +442,7 @@ public class Buff
 
         }),
         new Buff("Summoned Voidwalker", "None", new() { }, true, "AbilitySummonVoidwalker",
-        () =>
+        (p) => () =>
         {
             AddHeaderRegion(() =>
             {
@@ -477,7 +476,7 @@ public class Buff
 
         }),
         new Buff("Summoned Imp", "None", new() { }, true, "AbilitySummonImp",
-        () =>
+        (p) => () =>
         {
             AddHeaderRegion(() =>
             {
@@ -510,24 +509,27 @@ public class Buff
 
         }),
         new Buff("Scorch", "None", new() { "Damage" }, false, "AbilityScorch",
-            () =>
+            (p) => () =>
             {
+                var caster = p ? Board.board.player : Board.board.enemy;
                 AddHeaderRegion(() =>
                 {
-                    AddLine("Target burns for 3 damage every turn.", Gray);
+                    var damage = caster.WeaponDamage();
+                    AddLine("Burn for " + (int)(damage.Item1 * (caster.SpellPower() / 10.0 + 1) * 1.3) + " - " + (int)(damage.Item2 * (caster.SpellPower() / 10.0 + 1) * 1.3), Gray);
+                    AddLine("damage every turn.", Gray);
                 });
                 AddHeaderRegion(() =>
                 {
                     SetRegionAsGroupExtender();
-                    AddLine("Each point in Frost Mastery adds 1% chance", Gray);
-                    AddLine("to refund the cost of casting this spell.", Gray);
+                    AddLine(caster.Stats()["Fire Mastery"] + "% chance on flaring", Gray);
+                    AddLine("to prolong debuff's duration by 1 turn.", Gray);
                 });
             },
             (p) => () =>
             {
                 var caster = p ? Board.board.player : Board.board.enemy;
                 var target = p ? Board.board.enemy : Board.board.player;
-                target.Damage(caster.RollWeaponDamage() * (caster.SpellPower() / 100.0 + 1));
+                target.Damage(caster.RollWeaponDamage() * (caster.SpellPower() / 10.0 + 1) * 1.3);
                 SpawnShatter(2, 0.8, new Vector3(p ? 148 : -318, 122), "AbilityScorch");
                 PlaySound("AbilityScorchFlare");
                 animationTime += frameTime * 3;
@@ -540,7 +542,7 @@ public class Buff
             {
                 var caster = p ? board.player : board.enemy;
                 var target = p ? board.enemy : board.player;
-                target.Damage(caster.RollWeaponDamage() * (caster.SpellPower() / 100.0 + 1));
+                target.Damage(caster.RollWeaponDamage() * (caster.SpellPower() / 10.0 + 1) * 1.3);
             },
             (p, board) => () =>
             {
@@ -548,7 +550,7 @@ public class Buff
             }
         ),
         new Buff("Vanquished Tentacle of C'Thun", "None", new() { "Damage" }, false, "ItemTrinketQiraj5",
-            () =>
+            (p) => () =>
             {
                 AddHeaderRegion(() =>
                 {
@@ -565,7 +567,7 @@ public class Buff
             {
                 var caster = p ? Board.board.player : Board.board.enemy;
                 var target = p ? Board.board.enemy : Board.board.player;
-                caster.Damage(target.RollWeaponDamage());
+                caster.Damage(target.RollWeaponDamage() * target.SpellPower() * 1.0);
                 SpawnShatter(2, 0.8, new Vector3(!p ? 148 : -318, 122), "ItemTrinketQiraj5");
                 PlaySound("AbilityEnvenomImpact");
                 animationTime += frameTime * 3;
@@ -586,7 +588,7 @@ public class Buff
             }
         ),
         new Buff("Venomous Bite", "None", new() { "Damage" }, false, "AbilityVenomousBite",
-        () =>
+        (p) => () =>
         {
             AddHeaderRegion(() =>
             {
@@ -621,7 +623,7 @@ public class Buff
 
         }),
         new Buff("Putrid Bite", "None", new() { "Damage" }, false, "AbilityPutridBite",
-        () =>
+        (p) => () =>
         {
             AddHeaderRegion(() =>
             {
@@ -656,7 +658,7 @@ public class Buff
 
         }),
         new Buff("Corruption", "None", new() { "Damage" }, false, "AbilityCorruption",
-        () =>
+        (p) => () =>
         {
             AddHeaderRegion(() =>
             {
@@ -691,7 +693,7 @@ public class Buff
 
         }),
         new Buff("Curse Of Agony", "None", new() { "Damage" }, false, "AbilityCurseOfAgony",
-        () =>
+        (p) => () =>
         {
             AddHeaderRegion(() =>
             {
@@ -726,7 +728,7 @@ public class Buff
 
         }),
         new Buff("Shadow Word: Pain", "None", new() { "Damage" }, false, "AbilityShadowWordPain",
-        () =>
+        (p) => () =>
         {
             AddHeaderRegion(() =>
             {
@@ -761,7 +763,7 @@ public class Buff
 
         }),
         new Buff("Fel Armor", "None", new() { "Defensive" }, false, "AbilityFelArmor",
-        () =>
+        (p) => () =>
         {
             AddHeaderRegion(() =>
             {
@@ -791,7 +793,7 @@ public class Buff
 
         }),
         new Buff("Power Word: Shield", "None", new() { "Defensive" }, false, "AbilityPowerWordShield",
-        () =>
+        (p) => () =>
         {
             AddHeaderRegion(() =>
             {
@@ -821,7 +823,7 @@ public class Buff
 
         }),
         new Buff("Demon Skin", "None", new() { "Defensive" }, false, "AbilityDemonSkin",
-        () =>
+        (p) => () =>
         {
             AddHeaderRegion(() =>
             {

@@ -10,7 +10,6 @@ using static Root.Color;
 using static Root.Anchor;
 
 using static UnityEngine.KeyCode;
-using UnityEngine.UI;
 
 public class Blueprint
 {
@@ -228,12 +227,17 @@ public class Blueprint
                     {
                         AddLine(actionBar.ability, Black);
                         AddSmallButton(abilityObj.icon, (h) => { });
-                        if (actionBar.cooldown > 0 || !abilityObj.EnoughResources(Board.board.player))
+                        if (!abilityObj.EnoughResources(Board.board.player))
+                        {
+                            CDesktop.LBWindow.LBRegionGroup.LBRegion.LBSmallButton.GetComponent<SpriteRenderer>().material = Resources.Load<Material>("Shaders/Grayscale");
+                            AddSmallButtonOverlay("OtherGridBlurred");
+                        }
+                        if (actionBar.cooldown > 0)
                             AddSmallButtonOverlay("OtherGrid");
                     },
                     (h) =>
                     {
-                        if (abilityObj.EnoughResources(Board.board.player))
+                        if (abilityObj.EnoughResources(Board.board.player) && actionBar.cooldown == 0)
                         {
                             actionBar.cooldown = abilityObj.cooldown;
                             abilityObj.effects(true);
@@ -255,12 +259,17 @@ public class Blueprint
                         AddPaddingRegion(() =>
                         {
                             AddBigButton(abilityObj.icon, (h) => { });
-                            AddLine("Required level: ", DarkGray);
-                            AddText(Board.board.player.GetClass().abilities.Find(x => x.Item1 == actionBar.ability).Item2 + "", Gray);
+                            //AddLine("Required level: ", DarkGray);
+                            //AddText(Board.board.player.GetClass().abilities.Find(x => x.Item1 == actionBar.ability).Item2 + "", Gray);
                             AddLine("Cooldown: ", DarkGray);
                             AddText(abilityObj.cooldown == 0 ? "None" : abilityObj.cooldown + (abilityObj.cooldown == 1 ? " turn"  : " turns"), Gray);
+                            if (actionBar.cooldown > 0)
+                            {
+                                AddLine("Cooldown left: ", DarkGray);
+                                AddText(actionBar.cooldown + (actionBar.cooldown == 1 ? " turn"  : " turns"), Gray);
+                            }
                         });
-                        abilityObj.description();
+                        abilityObj.description(true);
                         foreach (var cost in abilityObj.cost)
                         {
                             AddRegionGroup();
@@ -394,7 +403,12 @@ public class Blueprint
                     {
                         AddLine(actionBar.ability, Black);
                         AddSmallButton(abilityObj.icon, (h) => { });
-                        if (actionBar.cooldown > 0 || !abilityObj.EnoughResources(Board.board.enemy))
+                        if (!abilityObj.EnoughResources(Board.board.enemy))
+                        {
+                            CDesktop.LBWindow.LBRegionGroup.LBRegion.LBSmallButton.GetComponent<SpriteRenderer>().material = Resources.Load<Material>("Shaders/Grayscale");
+                            AddSmallButtonOverlay("OtherGridBlurred");
+                        }
+                        if (actionBar.cooldown > 0)
                             AddSmallButtonOverlay("OtherGrid");
                     },
                     (h) =>
@@ -419,7 +433,7 @@ public class Blueprint
                             AddLine("Cooldown: ", DarkGray);
                             AddText(abilityObj.cooldown == 0 ? "None" : abilityObj.cooldown + (abilityObj.cooldown == 1 ? " turn"  : " turns"), Gray);
                         });
-                        abilityObj.description();
+                        abilityObj.description(false);
                         foreach (var cost in abilityObj.cost)
                         {
                             AddRegionGroup();
@@ -709,8 +723,8 @@ public class Blueprint
             }
             AddHeaderRegion(() =>
             {
-                AddLine("Currencies:");
-                AddLine("");
+                AddLine("Money: ");
+                AddLine("Honor: ");
                 AddLine("");
             });
         }, true),
@@ -723,12 +737,44 @@ public class Blueprint
                 AddLine("Loot from ", Gray);
                 AddText("Chief Ukorz Sandscalp", Gray);
             });
+            var item = Item.items[random.Next(Item.items.Count)];
+            AddHeaderRegion(() =>
+            {
+                AddBigButton(item.icon, (h) => { });
+                var split = item.name.Split(", ");
+                AddLine(split[0], Item.rarityColors[item.rarity]);
+                if (split.Length > 1)
+                    AddLine("\"" + split[1] + "\"", Item.rarityColors[item.rarity]);
+            });
+            AddPaddingRegion(() =>
+            {
+                if (item.armorClass != null)
+                {
+                    AddLine(item.armorClass + " " + item.type, Gray);
+                    AddLine(item.armor + " Armor", Gray);
+                }
+                else if (item.maxDamage != 0)
+                {
+                    AddLine(item.type + " " + item.detailedType, Gray);
+                    AddLine(item.minDamage + " - " + item.maxDamage + " Damage", Gray);
+                }
+                else
+                    AddLine(item.type, Gray);
+            });
+            if (item.stats.stats.Count > 0)
+                AddPaddingRegion(() =>
+                {
+                    foreach (var stat in item.stats.stats)
+                        AddLine("+" + stat.Value + " " + stat.Key, Gray);
+                });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Required level: ", DarkGray);
+                AddText("" + item.lvl, ItemColoredLevel(item.lvl));
+            });
             AddPaddingRegion(
                 () =>
                 {
-                    AddBigButton("ItemCrossbow4", (h) => { });
-                    AddLine("Required level: ", DarkGray);
-                    AddText(34 + "", Gray);
                 }
             );
             AddButtonRegion(
@@ -765,7 +811,7 @@ public class Blueprint
             AddPaddingRegion(
                 () =>
                 {
-                    AddLine("1", Gold);
+                    AddLine((int)item.price + "", Gold);
                     AddSmallButton("ItemCoinsGold", (h) => { });
                 }
             );
@@ -773,7 +819,7 @@ public class Blueprint
             AddPaddingRegion(
                 () =>
                 {
-                    AddLine("42", Silver);
+                    AddLine((int)(item.price * 100 % 100) + ""  + "", Silver);
                     AddSmallButton("ItemCoinsSilver", (h) => { });
                 }
             );
@@ -781,7 +827,7 @@ public class Blueprint
             AddPaddingRegion(
                 () =>
                 {
-                    AddLine("11", Copper);
+                    AddLine((int)(item.price * 10000 % 100) + "", Copper);
                     AddSmallButton("ItemCoinsCopper", (h) => { });
                 }
             );
@@ -980,30 +1026,47 @@ public class Blueprint
         new("CharacterStats", () => {
             SetAnchor(BottomLeft);
             AddRegionGroup();
+            var stats = currentSave.player.Stats();
             AddHeaderRegion(() =>
             {
-                foreach (var foo in currentSave.player.Stats())
+                foreach (var foo in stats)
                     if (!foo.Key.Contains("Mastery"))
                         AddLine(foo.Key + ":", Gray);
             });
             AddHeaderRegion(() =>
             {
-                foreach (var foo in currentSave.player.Stats())
+                foreach (var foo in stats)
                     if (foo.Key.Contains("Mastery"))
                         AddLine(foo.Key + ":", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Melee Attack Power:", Gray);
+                AddLine("Ranged Attack Power:", Gray);
+                AddLine("Spell Power:", Gray);
+                AddLine("Critical Strike:", Gray);
+                AddLine("Spell Critical:", Gray);
             });
             AddRegionGroup();
             AddHeaderRegion(() =>
             {
-                foreach (var foo in currentSave.player.Stats())
+                foreach (var foo in stats)
                     if (!foo.Key.Contains("Mastery"))
                         AddLine(foo.Value + "", foo.Value > currentSave.player.stats.stats[foo.Key] ? Uncommon : (foo.Value < currentSave.player.stats.stats[foo.Key] ? DangerousRed : Gray));
             });
             AddHeaderRegion(() =>
             {
-                foreach (var foo in currentSave.player.Stats())
+                foreach (var foo in stats)
                     if (foo.Key.Contains("Mastery"))
                         AddLine(foo.Value + "", foo.Value > currentSave.player.stats.stats[foo.Key] ? Uncommon : (foo.Value < currentSave.player.stats.stats[foo.Key] ? DangerousRed : Gray));
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine(currentSave.player.MeleeAttackPower() + "", Gray);
+                AddLine(currentSave.player.RangedAttackPower() + "", Gray);
+                AddLine(currentSave.player.SpellPower() + "", Gray);
+                AddLine(currentSave.player.CriticalStrike().ToString("0.00") + "%", Gray);
+                AddLine(currentSave.player.SpellCritical().ToString("0.00") + "%", Gray);
             });
         }),
         new("CharacterBaseStats", () => {
@@ -1037,7 +1100,7 @@ public class Blueprint
                         {
                             SetAnchor(Top, h.window);
                             AddRegionGroup();
-                            SetRegionGroupWidth(78);
+                            SetRegionGroupWidth(83);
                             AddHeaderRegion(() =>
                             {
                                 AddLine(element + ":", Gray);
@@ -1050,7 +1113,7 @@ public class Blueprint
                     );
                 });
             AddRegionGroup();
-            SetRegionGroupWidth(34);
+            SetRegionGroupWidth(39);
             foreach (var element in elements1)
                 AddHeaderRegion(() =>
                 {
@@ -1062,7 +1125,7 @@ public class Blueprint
                         {
                             SetAnchor(Top, h.window);
                             AddRegionGroup();
-                            SetRegionGroupWidth(78);
+                            SetRegionGroupWidth(83);
                             AddHeaderRegion(() =>
                             {
                                 AddLine(elements2[elements1.IndexOf(element)] + ":", Gray);
@@ -1075,7 +1138,7 @@ public class Blueprint
                     );
                 });
             AddRegionGroup();
-            SetRegionGroupWidth(15);
+            SetRegionGroupWidth(20);
             foreach (var element in elements2)
                 AddHeaderRegion(() =>
                 {
@@ -1097,7 +1160,7 @@ public class Blueprint
                         {
                             SetAnchor(Top, h.window);
                             AddRegionGroup();
-                            SetRegionGroupWidth(78);
+                            SetRegionGroupWidth(83);
                             AddHeaderRegion(() =>
                             {
                                 AddLine(element + ":", Gray);
@@ -1110,7 +1173,7 @@ public class Blueprint
                     );
                 });
             AddRegionGroup();
-            SetRegionGroupWidth(34);
+            SetRegionGroupWidth(39);
             foreach (var element in elements1)
                 AddHeaderRegion(() =>
                 {
@@ -1122,7 +1185,7 @@ public class Blueprint
                         {
                             SetAnchor(Top, h.window);
                             AddRegionGroup();
-                            SetRegionGroupWidth(78);
+                            SetRegionGroupWidth(83);
                             AddHeaderRegion(() =>
                             {
                                 AddLine(elements2[elements1.IndexOf(element)] + ":", Gray);
@@ -1135,7 +1198,7 @@ public class Blueprint
                     );
                 });
             AddRegionGroup();
-            SetRegionGroupWidth(15);
+            SetRegionGroupWidth(20);
             foreach (var element in elements2)
                 AddHeaderRegion(() =>
                 {
@@ -1207,7 +1270,23 @@ public class Blueprint
                 AddLine(a.talentTrees[2].name + ": " + a.talentTrees[2].talents.Count(x => currentSave.player.abilities.Contains(x.ability)));
             });
             SetRegionGroupWidth(203);
-        },  true),
+        }, true),
+        new("InstanceHeader", () => {
+            SetAnchor(TopLeft);
+            AddRegionGroup();
+            SetRegionGroupWidth(628);
+            AddPaddingRegion(() =>
+            {
+                AddLine(instance.name);
+                AddSmallButton("OtherClose",
+                (h) =>
+                {
+                    var title = CDesktop.title;
+                    CloseDesktop(title);
+                    SwitchDesktop("Map");
+                });
+            });
+        }, true),
         new("Console", () => {
             SetAnchor(TopLeft);
             AddHeaderGroup();
@@ -1274,10 +1353,15 @@ public class Blueprint
         }),
         new("DungeonEntrance", () =>
         {
-            SetDesktopBackground("Areas/Area" + instance.name);
-            SpawnWindowBlueprint("MapToolbar");
-            SpawnWindowBlueprint("ReturnToMap");
+            SetDesktopBackground("Areas/Area" + instance.name.Replace("'", "").Replace(" ", ""));
+            SpawnWindowBlueprint("Dungeon: " + instance.name);
             AddHotkey(Escape, () => { CloseDesktop("DungeonEntrance"); });
+        }),
+        new("RaidEntrance", () =>
+        {
+            SetDesktopBackground("Areas/Area" + instance.name.Replace("'", "").Replace(" ", ""));
+            SpawnWindowBlueprint("Raid: " + instance.name);
+            AddHotkey(Escape, () => { CloseDesktop("RaidEntrance"); });
         }),
         new("Game", () =>
         {

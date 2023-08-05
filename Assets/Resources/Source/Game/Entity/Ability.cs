@@ -14,7 +14,7 @@ public class Ability
     }
 
     //Active combat ability
-    public Ability(string name, int cooldown, List<string> tags, Dictionary<string, int> cost, Action description, Action<bool> effects, Action<bool, FutureBoard> futureEffects, bool putOnEnd = false)
+    public Ability(string name, int cooldown, List<string> tags, Dictionary<string, int> cost, Action<bool> description, Action<bool> effects, Action<bool, FutureBoard> futureEffects, bool putOnEnd = false)
     {
         this.name = name;
         icon = "Ability" + name.Replace(" ", "").Replace(":", "");
@@ -28,7 +28,7 @@ public class Ability
     }
 
     //Active combat ability
-    public Ability(string name, string icon, int cooldown, List<string> tags, Dictionary<string, int> cost, Action description, Action<bool> effects, Action<bool, FutureBoard> futureEffects, bool putOnEnd = false)
+    public Ability(string name, string icon, int cooldown, List<string> tags, Dictionary<string, int> cost, Action<bool> description, Action<bool> effects, Action<bool, FutureBoard> futureEffects, bool putOnEnd = false)
     {
         this.name = name;
         this.icon = icon;
@@ -62,8 +62,7 @@ public class Ability
     public bool putOnEnd;
     public List<string> tags;
     public Dictionary<string, int> cost;
-    public Action description;
-    public Action<bool> effects;
+    public Action<bool> description, effects;
     public Action<bool, FutureBoard> futureEffects;
 
     public static List<Ability> abilities = new()
@@ -98,7 +97,7 @@ public class Ability
         {
             { "Order", 1 }
         },
-        () =>
+        (p) =>
         {
 
         },
@@ -114,7 +113,7 @@ public class Ability
         {
             { "Order", 1 }
         },
-        () =>
+        (p) =>
         {
 
         },
@@ -130,7 +129,7 @@ public class Ability
         {
             { "Order", 1 }
         },
-        () =>
+        (p) =>
         {
 
         },
@@ -146,7 +145,7 @@ public class Ability
         {
             { "Order", 1 }
         },
-        () =>
+        (p) =>
         {
 
         },
@@ -162,7 +161,7 @@ public class Ability
         {
             { "Order", 1 }
         },
-        () =>
+        (p) =>
         {
 
         },
@@ -178,7 +177,7 @@ public class Ability
         {
             { "Order", 1 }
         },
-        () =>
+        (p) =>
         {
 
         },
@@ -192,24 +191,22 @@ public class Ability
         }),
         new Ability("Arcane Missiles", 0, new() { "Damage" }, new()
         {
-            { "Arcane", 4 }
+            { "Arcane", 6 }
         },
-        () =>
+        (p) =>
         {
-            AddPaddingRegion(() =>
-            {
-                AddLine("Casting Frosbolt will channel a frosty", Gray);
-                AddLine("projectile at the target dealing damage.", Gray);
-            });
+            var caster = p ? Board.board.player : Board.board.enemy;
             AddHeaderRegion(() =>
             {
-                AddLine("Deals 8 damage times caster's intelligence.", Gray);
+                var damage = caster.WeaponDamage();
+                AddLine("Target is instantly damaged for " + (int)(damage.Item1 * (caster.SpellPower() / 10.0 + 1) * 1.3) * 3 + " - " + (int)(damage.Item2 * (caster.SpellPower() / 10.0 + 1) * 1.3) * 3 + " ", Gray);
+                AddLine("damage. This ability ends caster's turn.", Gray);
             });
             AddHeaderRegion(() =>
             {
                 SetRegionAsGroupExtender();
-                AddLine("Each point in Frost Mastery adds 1% chance", Gray);
-                AddLine("to refund the cost of casting this spell.", Gray);
+                AddLine(caster.Stats()["Arcane Mastery"] + "% chance on cast to", Gray);
+                AddLine("refund cost of casting this spell.", Gray);
             });
         },
         (p) =>
@@ -223,7 +220,7 @@ public class Ability
             });
             Board.board.actions.Add(() =>
             {
-                target.Damage(caster.RollWeaponDamage() * (caster.SpellPower() / 100.0 + 1));
+                target.Damage(caster.RollWeaponDamage() * (caster.SpellPower() / 10.0 + 1) * 1.3);
                 SpawnShatter(2, 0.8, new Vector3(p ? 148 : -318, 122), "AbilityArcaneMissiles");
                 SpawnShatter(6, 0.7, new Vector3(p ? 148 : -318, 122), "AbilityArcaneMissiles", true, p ? "1000" : "1001");
                 SpawnShatter(6, 0.7, new Vector3(p ? 148 : -318, 122), "AbilityArcaneMissiles", true, p ? "1000" : "1001");
@@ -232,7 +229,7 @@ public class Ability
             });
             Board.board.actions.Add(() =>
             {
-                target.Damage(caster.RollWeaponDamage() * (caster.SpellPower() / 100.0 + 1));
+                target.Damage(caster.RollWeaponDamage() * (caster.SpellPower() / 10.0 + 1) * 1.3);
                 SpawnShatter(2, 0.8, new Vector3(p ? 148 : -318, 122), "AbilityArcaneMissiles");
                 SpawnShatter(6, 0.7, new Vector3(p ? 148 : -318, 122), "AbilityArcaneMissiles", true, p ? "1000" : "1001");
                 SpawnShatter(6, 0.7, new Vector3(p ? 148 : -318, 122), "AbilityArcaneMissiles", true, p ? "1000" : "1001");
@@ -241,7 +238,7 @@ public class Ability
             });
             Board.board.actions.Add(() =>
             {
-                target.Damage(caster.RollWeaponDamage() * (caster.SpellPower() / 100.0 + 1));
+                target.Damage(caster.RollWeaponDamage() * (caster.SpellPower() / 10.0 + 1) * 1.3);
                 SpawnShatter(2, 0.8, new Vector3(p ? 148 : -318, 122), "AbilityArcaneMissiles");
                 SpawnShatter(6, 0.7, new Vector3(p ? 148 : -318, 122), "AbilityArcaneMissiles", true, p ? "1000" : "1001");
                 SpawnShatter(6, 0.7, new Vector3(p ? 148 : -318, 122), "AbilityArcaneMissiles", true, p ? "1000" : "1001");
@@ -255,9 +252,9 @@ public class Ability
         {
             var caster = p ? board.player : board.enemy;
             var target = p ? board.enemy : board.player;
-            target.Damage(caster.RollWeaponDamage() * (caster.SpellPower() / 100.0 + 1));
-            target.Damage(caster.RollWeaponDamage() * (caster.SpellPower() / 100.0 + 1));
-            target.Damage(caster.RollWeaponDamage() * (caster.SpellPower() / 100.0 + 1));
+            target.Damage(caster.RollWeaponDamage() * (caster.SpellPower() / 10.0 + 1) * 1.3);
+            target.Damage(caster.RollWeaponDamage() * (caster.SpellPower() / 10.0 + 1) * 1.3);
+            target.Damage(caster.RollWeaponDamage() * (caster.SpellPower() / 10.0 + 1) * 1.3);
             if (p) board.playerFinishedMoving = true;
             else board.enemyFinishedMoving = true;
         }),
@@ -266,7 +263,7 @@ public class Ability
             { "Shadow", 7 },
             { "Fire", 3 }
         },
-        () =>
+        (p) =>
         {
             AddPaddingRegion(() =>
             {
@@ -309,7 +306,7 @@ public class Ability
         {
             { "Decay", 6 },
         },
-        () =>
+        (p) =>
         {
             AddPaddingRegion(() =>
             {
@@ -352,7 +349,7 @@ public class Ability
         {
             { "Air", 6 },
         },
-        () =>
+        (p) =>
         {
             AddPaddingRegion(() =>
             {
@@ -395,7 +392,7 @@ public class Ability
             { "Shadow", 4 },
             { "Decay", 4 }
         },
-        () =>
+        (p) =>
         {
             AddPaddingRegion(() =>
             {
@@ -439,7 +436,7 @@ public class Ability
         {
             { "Shadow", 6 },
         },
-        () =>
+        (p) =>
         {
             AddPaddingRegion(() =>
             {
@@ -478,7 +475,7 @@ public class Ability
         {
             { "Shadow", 4 },
         },
-        () =>
+        (p) =>
         {
             AddPaddingRegion(() =>
             {
@@ -518,7 +515,7 @@ public class Ability
             { "Earth", 4 },
             { "Lightning", 4 },
         },
-        () =>
+        (p) =>
         {
             AddPaddingRegion(() =>
             {
@@ -557,7 +554,7 @@ public class Ability
         {
             { "Frost", 4 },
         },
-        () =>
+        (p) =>
         {
             AddPaddingRegion(() =>
             {
@@ -600,7 +597,7 @@ public class Ability
         {
             { "Order", 6 },
         },
-        () =>
+        (p) =>
         {
             AddPaddingRegion(() =>
             {
@@ -640,7 +637,7 @@ public class Ability
             { "Shadow", 3 },
             { "Fire", 3 }
         },
-        () =>
+        (p) =>
         {
             AddPaddingRegion(() =>
             {
@@ -680,7 +677,7 @@ public class Ability
             { "Order", 8 },
             { "Air", 2 }
         },
-        () =>
+        (p) =>
         {
             AddPaddingRegion(() =>
             {
@@ -724,7 +721,7 @@ public class Ability
         {
             { "Shadow", 6 }
         },
-        () =>
+        (p) =>
         {
             AddPaddingRegion(() =>
             {
@@ -765,7 +762,7 @@ public class Ability
             { "Decay", 4 },
             { "Air", 2 },
         },
-        () =>
+        (p) =>
         {
             AddPaddingRegion(() =>
             {
@@ -810,7 +807,7 @@ public class Ability
             { "Shadow", 2 },
             { "Decay", 5 },
         },
-        () =>
+        (p) =>
         {
             AddPaddingRegion(() =>
             {
@@ -850,7 +847,7 @@ public class Ability
         {
             { "Fire", 20 },
         },
-        () =>
+        (p) =>
         {
             AddPaddingRegion(() =>
             {
@@ -900,7 +897,7 @@ public class Ability
             { "Shadow", 10 },
             { "Fire", 5 },
         },
-        () =>
+        (p) =>
         {
             AddPaddingRegion(() =>
             {
@@ -949,7 +946,7 @@ public class Ability
         {
             { "Shadow", 12 },
         },
-        () =>
+        (p) =>
         {
             AddPaddingRegion(() =>
             {
@@ -999,7 +996,7 @@ public class Ability
             { "Shadow", 6 },
             { "Fire", 2 }
         },
-        () =>
+        (p) =>
         {
             AddPaddingRegion(() =>
             {
@@ -1046,28 +1043,27 @@ public class Ability
         }),
         new Ability("Shadow Bolt", 0, new() { "Damage" }, new()
         {
-            { "Shadow", 6 }
+            { "Shadow", 4 }
         },
-        () =>
+        (p) =>
         {
-            AddPaddingRegion(() =>
-            {
-                AddLine("Casting Frosbolt will channel a frosty", Gray);
-                AddLine("projectile at the target dealing damage.", Gray);
-            });
+            var caster = p ? Board.board.player : Board.board.enemy;
             AddHeaderRegion(() =>
             {
-                AddLine("Deals 8 damage times caster's intelligence.", Gray);
+                var damage = caster.WeaponDamage();
+                AddLine("Target is instantly damaged for " + (int)(damage.Item1 * (caster.SpellPower() / 10.0 + 1) * 2.9) + " - " + (int)(damage.Item2 * (caster.SpellPower() / 10.0 + 1) * 2.9) + " ", Gray);
+                AddLine("damage. This ability ends caster's turn.", Gray);
             });
             AddHeaderRegion(() =>
             {
                 SetRegionAsGroupExtender();
-                AddLine("Each point in Frost Mastery adds 1% chance", Gray);
-                AddLine("to refund the cost of casting this spell.", Gray);
+                AddLine(caster.Stats()["Shadow Mastery"] + "% chance on cast to", Gray);
+                AddLine("refund cost of casting this spell.", Gray);
             });
         },
         (p) =>
         {
+            var caster = p ? Board.board.player : Board.board.enemy;
             var target = p ? Board.board.enemy : Board.board.player;
             Board.board.actions.Add(() =>
             {
@@ -1076,7 +1072,7 @@ public class Ability
             });
             Board.board.actions.Add(() =>
             {
-                target.health -= 8;
+                target.Damage(caster.RollWeaponDamage() * (caster.SpellPower() / 10.0 + 1) * 2.9);
                 SpawnShatter(2, 0.8, new Vector3(p ? 148 : -318, 122), "AbilityShadowbolt");
                 SpawnShatter(6, 0.7, new Vector3(p ? 148 : -318, 122), "AbilityShadowbolt", true, p ? "1000" : "1001");
                 SpawnShatter(6, 0.7, new Vector3(p ? 148 : -318, 122), "AbilityShadowbolt", true, p ? "1000" : "1001");
@@ -1088,31 +1084,30 @@ public class Ability
         },
         (p, board) =>
         {
+            var caster = p ? board.player : board.enemy;
             var target = p ? board.enemy : board.player;
-            target.health -= 8;
+            target.Damage(caster.RollWeaponDamage() * (caster.SpellPower() / 10.0 + 1) * 2.9);
             if (p) board.playerFinishedMoving = true;
             else board.enemyFinishedMoving = true;
         }),
         new Ability("Fireball", 0, new() { "Damage" }, new()
         {
-            { "Fire", 6 }
+            { "Fire", 4 }
         },
-        () =>
+        (p) =>
         {
-            AddPaddingRegion(() =>
-            {
-                AddLine("Casting Frosbolt will channel a frosty", Gray);
-                AddLine("projectile at the target dealing damage.", Gray);
-            });
+            var caster = p ? Board.board.player : Board.board.enemy;
             AddHeaderRegion(() =>
             {
-                AddLine("Deals 8 damage times caster's intelligence.", Gray);
+                var damage = caster.WeaponDamage();
+                AddLine("Target instantly burns for " + (int)(damage.Item1 * (caster.SpellPower() / 10.0 + 1) * 2.9) + " - " + (int)(damage.Item2 * (caster.SpellPower() / 10.0 + 1) * 2.9) + " ", Gray);
+                AddLine("damage. This ability ends caster's turn.", Gray);
             });
             AddHeaderRegion(() =>
             {
                 SetRegionAsGroupExtender();
-                AddLine("Each point in Frost Mastery adds 1% chance", Gray);
-                AddLine("to refund the cost of casting this spell.", Gray);
+                AddLine(caster.Stats()["Fire Mastery"] + "% chance on cast to", Gray);
+                AddLine("refund cost of casting this spell.", Gray);
             });
         },
         (p) =>
@@ -1126,7 +1121,7 @@ public class Ability
             });
             Board.board.actions.Add(() =>
             {
-                target.health -= 8;
+                target.Damage(caster.RollWeaponDamage() * (caster.SpellPower() / 10.0 + 1) * 2.9);
                 SpawnShatter(2, 0.8, new Vector3(p ? 148 : -318, 122), "AbilityFireball");
                 SpawnShatter(6, 0.7, new Vector3(p ? 148 : -318, 122), "AbilityFireball", true, p ? "1000" : "1001");
                 SpawnShatter(6, 0.7, new Vector3(p ? 148 : -318, 122), "AbilityFireball", true, p ? "1000" : "1001");
@@ -1138,32 +1133,31 @@ public class Ability
         },
         (p, board) =>
         {
+            var caster = p ? board.player : board.enemy;
             var target = p ? board.enemy : board.player;
-            target.health -= 8;
+            target.Damage(caster.RollWeaponDamage() * (caster.SpellPower() / 10.0 + 1) * 2.9);
             if (p) board.playerFinishedMoving = true;
             else board.enemyFinishedMoving = true;
         }),
-        new Ability("Scorch", 0, new() { "Damage", "Overtime" }, new()
+        new Ability("Scorch", 2, new() { "Damage", "Overtime" }, new()
         {
             { "Fire", 4 },
             { "Air", 2 }
         },
-        () =>
+        (p) =>
         {
-            AddPaddingRegion(() =>
-            {
-                AddLine("Casting Frosbolt will channel a frosty", Gray);
-                AddLine("projectile at the target dealing damage.", Gray);
-            });
+            var caster = p ? Board.board.player : Board.board.enemy;
             AddHeaderRegion(() =>
             {
-                AddLine("Deals 10 damage times caster's intelligence.", Gray);
+                var damage = caster.WeaponDamage();
+                AddLine("Target burns for " + (int)(damage.Item1 * (caster.SpellPower() / 10.0 + 1) * 1.3) + " - " + (int)(damage.Item2 * (caster.SpellPower() / 10.0 + 1) * 1.3) + " damage", Gray);
+                AddLine("every turn. Lasts for 3 turns.", Gray);
             });
             AddHeaderRegion(() =>
             {
                 SetRegionAsGroupExtender();
-                AddLine("Each point in Frost Mastery adds 1% chance", Gray);
-                AddLine("to refund the cost of casting this spell.", Gray);
+                AddLine(caster.Stats()["Fire Mastery"] + "% chance on flaring", Gray);
+                AddLine("to prolong debuff's duration by 1 turn.", Gray);
             });
         },
         (p) =>
@@ -1171,7 +1165,7 @@ public class Ability
             var target = p ? Board.board.enemy : Board.board.player;
             Board.board.actions.Add(() =>
             {
-                target.AddBuff("Scorch", 4, SpawnShatterBuff(2, 0.8, new Vector3(p ? 148 : -318, 122), "AbilityScorch", target));
+                target.AddBuff("Scorch", 3, SpawnShatterBuff(2, 0.8, new Vector3(p ? 148 : -318, 122), "AbilityScorch", target));
                 SpawnShatter(6, 0.7, new Vector3(p ? 148 : -318, 122), "AbilityScorch", true, p ? "1000" : "1001");
                 SpawnShatter(6, 0.7, new Vector3(p ? 148 : -318, 122), "AbilityScorch", true, p ? "1000" : "1001");
                 PlaySound("AbilityScorchImpact");
@@ -1182,14 +1176,14 @@ public class Ability
         (p, board) =>
         {
             var target = p ? board.enemy : board.player;
-            target.AddBuff("Scorch", 4);
+            target.AddBuff("Scorch", 3);
         }),
         new Ability("Healing Wave", 0, new() { "Healing" }, new()
         {
             { "Water", 6 },
             { "Air", 2 }
         },
-        () =>
+        (p) =>
         {
             AddPaddingRegion(() =>
             {
@@ -1235,7 +1229,7 @@ public class Ability
         {
             { "Air", 6 }
         },
-        () =>
+        (p) =>
         {
             AddPaddingRegion(() =>
             {
@@ -1285,22 +1279,20 @@ public class Ability
         {
             { "Frost", 4 }
         },
-        () =>
+        (p) =>
         {
-            AddPaddingRegion(() =>
-            {
-                AddLine("Casting Frosbolt will channel a frosty", Gray);
-                AddLine("projectile at the target dealing damage.", Gray);
-            });
+            var caster = p ? Board.board.player : Board.board.enemy;
             AddHeaderRegion(() =>
             {
-                AddLine("Deals 8 damage times caster's intelligence.", Gray);
+                var damage = caster.WeaponDamage();
+                AddLine("Target is instantly chilled for " + (int)(damage.Item1 * (caster.SpellPower() / 10.0 + 1) * 2.9) + " - " + (int)(damage.Item2 * (caster.SpellPower() / 10.0 + 1) * 2.9) + " ", Gray);
+                AddLine("damage. This ability ends caster's turn.", Gray);
             });
             AddHeaderRegion(() =>
             {
                 SetRegionAsGroupExtender();
-                AddLine("Each point in Frost Mastery adds 1% chance", Gray);
-                AddLine("to refund the cost of casting this spell.", Gray);
+                AddLine(caster.Stats()["Frost Mastery"] + "% chance on cast to", Gray);
+                AddLine("refund cost of casting this spell.", Gray);
             });
         },
         (p) =>
@@ -1314,7 +1306,7 @@ public class Ability
             });
             Board.board.actions.Add(() =>
             {
-                target.health -= 8;
+                target.Damage(caster.RollWeaponDamage() * (caster.SpellPower() / 10.0 + 1) * 2.9);
                 SpawnShatter(2, 0.8, new Vector3(p ? 148 : -318, 122), "AbilityFrostbolt");
                 SpawnShatter(6, 0.7, new Vector3(p ? 148 : -318, 122), "AbilityFrostbolt", true, p ? "1000" : "1001");
                 SpawnShatter(6, 0.7, new Vector3(p ? 148 : -318, 122), "AbilityFrostbolt", true, p ? "1000" : "1001");
@@ -1326,8 +1318,9 @@ public class Ability
         },
         (p, board) =>
         {
+            var caster = p ? board.player : board.enemy;
             var target = p ? board.enemy : board.player;
-            target.health -= 8;
+            target.Damage(caster.RollWeaponDamage() * (caster.SpellPower() / 10.0 + 1) * 2.9);
             if (p) board.playerFinishedMoving = true;
             else board.enemyFinishedMoving = true;
         }),
@@ -1336,7 +1329,7 @@ public class Ability
             { "Frost", 5 },
             { "Air", 2 }
         },
-        () =>
+        (p) =>
         {
             AddPaddingRegion(() =>
             {
@@ -1386,7 +1379,7 @@ public class Ability
             { "Air", 6 },
             { "Water", 2 }
         },
-        () =>
+        (p) =>
         {
             AddPaddingRegion(() =>
             {
@@ -1460,7 +1453,7 @@ public class Ability
             { "Frost", 10 },
             { "Air", 10 }
         },
-        () =>
+        (p) =>
         {
             AddPaddingRegion(() =>
             {
@@ -1506,7 +1499,7 @@ public class Ability
             { "Air", 5 },
             { "Earth", 10 },
         },
-        () =>
+        (p) =>
         {
             AddPaddingRegion(() =>
             {
@@ -1584,7 +1577,7 @@ public class Ability
             { "Lightning", 10 },
             { "Air", 2 },
         },
-        () =>
+        (p) =>
         {
             AddPaddingRegion(() =>
             {
@@ -1703,7 +1696,7 @@ public class Ability
         {
             { "Fire", 10 },
         },
-        () =>
+        (p) =>
         {
             AddPaddingRegion(() =>
             {
@@ -1781,7 +1774,7 @@ public class Ability
             { "Fire", 5 },
             { "Shadow", 5 },
         },
-        () =>
+        (p) =>
         {
             AddPaddingRegion(() =>
             {
@@ -1843,7 +1836,7 @@ public class Ability
             { "Air", 2 },
             { "Shadow", 6 }
         },
-        () =>
+        (p) =>
         {
             AddPaddingRegion(() =>
             {
@@ -1889,7 +1882,7 @@ public class Ability
             { "Fire", 4 },
             { "Shadow", 4 }
         },
-        () =>
+        (p) =>
         {
             AddPaddingRegion(() =>
             {

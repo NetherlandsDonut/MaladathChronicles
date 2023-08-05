@@ -1,7 +1,9 @@
 ﻿using System;
 using UnityEngine;
+using System.Collections.Generic;
 
 using static Root;
+using System.Linq;
 
 public class LineBigButton : MonoBehaviour
 {
@@ -15,12 +17,14 @@ public class LineBigButton : MonoBehaviour
     public Tooltip tooltip;
     public Action<Highlightable> pressEvent;
     public string buttonType;
+    //public List<GameObject> overlays;
 
     public void Initialise(Region region, string buttonType, Action<Highlightable> pressEvent, Func<Highlightable, Action> tooltip)
     {
         this.region = region;
         this.buttonType = buttonType;
         this.pressEvent = pressEvent;
+        //overlays = new List<GameObject>();
         if (tooltip != null && gameObject != null)
             this.tooltip = new Tooltip(() => GetComponent<Highlightable>(), tooltip);
 
@@ -38,4 +42,25 @@ public class LineBigButton : MonoBehaviour
             region.regionGroup.window.Rebuild();
         }
     }
+
+    //public void OnMouseEnter()
+    //{
+    //    if (name.Contains("Element") && region.regionGroup.window.title == "BattleBoard")
+    //    {
+    //        var x = region.bigButtons.IndexOf(this);
+    //        var y = region.regionGroup.regions.IndexOf(region);
+    //        var list = Board.board.FloodCount(x, y);
+    //        foreach (var button in list.Select(x => region.regionGroup.regions[x.Item2].bigButtons[x.Item1]))
+    //            overlays.Add(AddBigButtonOverlay(button.gameObject, "OtherCross"));
+    //    }
+    //}
+
+    //public void OnMouseExit()
+    //{
+    //    if (name.Contains("Element") && region.regionGroup.window.title == "BattleBoard")
+    //    {
+    //        overlays.ForEach(x => x.AddComponent<Shatter>().Initiate(0));
+    //        overlays = new List<GameObject>();
+    //    }
+    //}
 }

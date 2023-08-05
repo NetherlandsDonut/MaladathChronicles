@@ -1,8 +1,9 @@
 using UnityEngine;
+using System.Linq;
 using System.Collections.Generic;
 
 using static Root;
-using System.Linq;
+using static Root.Color;
 
 public class Starter : MonoBehaviour
 {
@@ -29,6 +30,150 @@ public class Starter : MonoBehaviour
             var name = split[1];
             var type = split[0].Substring(4);
             Blueprint.windowBlueprints.Add(new Blueprint("Site: " + name, () => PrintSite(name, type, windowRemoteAnchors[index].Item2)));
+        }
+        for (int i = 0; i < SiteInstance.raids.Count; i++)
+        {
+            var index = i;
+            var instance = SiteInstance.raids[index];
+            Blueprint.windowBlueprints.Add(
+                new Blueprint("Raid: " + instance.name,
+                    () =>
+                    {
+                        SetAnchor(Anchor.TopRight);
+                        AddHeaderGroup();
+                        AddLine(instance.name);
+                        AddSmallButton("OtherClose",
+                        (h) =>
+                        {
+                            var title = CDesktop.title;
+                            CloseDesktop(title);
+                            SwitchDesktop("Map");
+                        });
+                        AddRegionGroup();
+                        SetRegionGroupHeight(400);
+                        foreach (var wing in instance.wings)
+                            PrintRaidWing(instance, wing);
+                        AddPaddingRegion(() => { SetRegionAsGroupExtender(); });
+                    }
+                )
+            );
+        }
+        for (int i = 0; i < SiteInstance.dungeons.Count; i++)
+        {
+            var index = i;
+            var instance = SiteInstance.dungeons[index];
+            Blueprint.windowBlueprints.Add(
+                new Blueprint("Dungeon: " + instance.name,
+                    () =>
+                    {
+                        SetAnchor(Anchor.TopRight);
+                        AddRegionGroup();
+                        SetRegionGroupWidth(160);
+                        SetRegionGroupHeight(344);
+                        AddHeaderRegion(() =>
+                        {
+                            AddLine(instance.name);
+                            AddSmallButton("OtherClose",
+                            (h) =>
+                            {
+                                var title = CDesktop.title;
+                                CloseDesktop(title);
+                                SwitchDesktop("Map");
+                            });
+                        });
+                        AddPaddingRegion(() =>
+                        {
+                            SetRegionAsGroupExtender();
+                            AddLine("Level range: ", Gray);
+                            var range = instance.LevelRange();
+                            AddText(range.Item1 + "", EntityColoredLevel(range.Item1));
+                            AddText(" - ", Gray);
+                            AddText(range.Item2 + "", EntityColoredLevel(range.Item2));
+                        });
+                        foreach (var wing in instance.wings)
+                            PrintRaidWing(instance, wing);
+                    }
+                )
+            );
+        }
+        for (int i = 0; i < SiteHostileArea.hostileAreas.Count; i++)
+        {
+            var index = i;
+            var area = SiteHostileArea.hostileAreas[index];
+            Blueprint.windowBlueprints.Add(
+                new Blueprint("Area: " + area.name,
+                    () =>
+                    {
+                        SetAnchor(Anchor.TopLeft);
+                        AddRegionGroup();
+                        SetRegionGroupWidth(160);
+                        SetRegionGroupHeight(344);
+                        AddHeaderRegion(() =>
+                        {
+                            AddLine(area.name);
+                            AddSmallButton("OtherClose",
+                            (h) =>
+                            {
+                                CloseWindow(h.window);
+                            });
+                        });
+                        AddHeaderRegion(() =>
+                        {
+                            AddLine("Recommended level: ", Gray);
+                            AddText(area.recommendedLevel + "", EntityColoredLevel(area.recommendedLevel));
+                        });
+                        AddPaddingRegion(() =>
+                        {
+                            AddLine("Possible encounters:", DarkGray);
+                            foreach (var encounter in area.possibleEncounters)
+                                AddLine("- " + encounter.Item3, DarkGray);
+                        });
+                        AddButtonRegion(() =>
+                        {
+                            AddLine("Explore", Black);
+                        },
+                        (h) =>
+                        {
+                            Board.board = new Board(6, 6, area.RollEncounter(), "Areas/Area" + area.name.Replace("\'", "").Replace(" ", ""));
+                            SpawnDesktopBlueprint("Game");
+                            SwitchDesktop("Game");
+                        });
+                        AddHeaderRegion(() =>
+                        {
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                        });
+                        AddHeaderRegion(() =>
+                        {
+                            AddLine("Bosses: ", Gray);
+                        });
+                        foreach (var boss in area.bossEncounters)
+                        {
+                            AddButtonRegion(() =>
+                            {
+                                SetRegionBackground(RegionBackgroundType.RedButton);
+                                AddLine(boss.Item3, Black);
+                            },
+                            (h) =>
+                            {
+                                Board.board = new Board(6, 6, area.RollBoss(boss), "Areas/Area" + area.name.Replace("\'", "").Replace(" ", ""));
+                                SpawnDesktopBlueprint("Game");
+                                SwitchDesktop("Game");
+                            });
+                            AddPaddingRegion(() =>
+                            {
+                                AddLine("?", DarkGray);
+                            });
+                            AddPaddingRegion(() =>
+                            {
+                                AddLine("?", DarkGray);
+                            });
+                        }
+                    }
+                )
+            );
         }
         for (int i = 0; i < 3; i++)
             for (int j = 0; j < 12; j++)

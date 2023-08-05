@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 using static Root;
 using static Race;
+using System.Linq;
 
 public class SiteInstance
 {
@@ -15,71 +16,77 @@ public class SiteInstance
     public string name;
     public List<InstanceWing> wings;
 
+    public (int, int) LevelRange()
+    {
+        var areas = wings.SelectMany(x => SiteHostileArea.hostileAreas.FindAll(y => x.areas.Exists(z => z.Item2 == y.name)));
+        return (areas.Min(x => x.recommendedLevel), areas.Max(x => x.recommendedLevel));
+    }
+
     public static SiteInstance instance;
 
     public static List<SiteInstance> dungeons = new()
     {
         new SiteInstance("Stratholme", new()
         {
-            new InstanceWing("Undead Side", new()
+            new InstanceWing("Main Gate", new()
             {
-                "King's Square",
-                "Market Row",
-                "Crusaders' Square",
-                "The Scarlet Bastion",
-                "The Crimson Throne"
+                ("None", "King's Square"),
+                ("Boss", "Market Row"),
+                ("Boss", "Crusaders' Square"),
+                ("Boss", "The Scarlet Bastion"),
+                ("Boss", "The Crimson Throne")
             }),
-            new InstanceWing("Living Side", new()
+            new InstanceWing("Service Gate", new()
             {
-                "Elder's Square",
-                "The Gauntlet",
-                "Slaughter Square",
-                "The Slaughter House"
+                ("None", "Elder's Square"),
+                ("Boss", "The Gauntlet"),
+                ("Boss", "Slaughter Square"),
+                ("Boss", "The Slaughter House")
             })
         }),
         new SiteInstance("Dire Maul", new()
         {
             new InstanceWing("Eastern Wing", new()
             {
-                "Warpwood Quarter",
-                "The Conservatory",
-                "The Shrine of Eldre'Tharr"
+                ("None", "Warpwood Quarter"),
+                ("Boss", "The Conservatory"),
+                ("Boss", "The Shrine of Eldre'Tharr")
             }),
             new InstanceWing("Northern Wing", new()
             {
-                "Gordok Commons",
-                "Halls Of Destruction",
-                "Gordok's Seat"
+                ("None", "Gordok Commons"),
+                ("Boss", "Halls Of Destruction"),
+                ("Boss", "Gordok's Seat")
             }),
             new InstanceWing("Western Wing", new()
             {
-                "Capital Gardens",
-                "Court Of The Highborne",
-                "Prison Of Immol'Thar",
-                "The Athenaeum",
+                ("None", "Capital Gardens"),
+                ("Boss", "Court Of The Highborne"),
+                ("Boss", "Prison Of Immol'Thar"),
+                ("Boss", "The Athenaeum")
             }),
         }),
         new SiteInstance("Zul'Farrak", new()
         {
             new InstanceWing("Zul'Farrak", new()
             {
-                "Ass",
+                ("None", "Ass"),
             })
         }),
     };
 
     public static List<SiteInstance> raids = new()
     {
-        new SiteInstance("Ruins of Ahn'Qiraj", new()
+        new SiteInstance("Ruins Of Ahn'Qiraj", new()
         {
-            new InstanceWing("Ruins of Ahn'Qiraj", new()
+            new InstanceWing("Ruins Of Ahn'Qiraj", new()
             {
-                "Scarab Terrace",
-                "General's Terrace",
-                "Reservoir",
-                "Hatchery",
-                "Comb",
-                "Watcher's Terrace"
+                ("None", "Scarab Terrace"),
+                ("Boss", "General's Terrace"),
+                ("Boss", "Reservoir"),
+                ("Boss", "Hatchery"),
+                ("Boss", "Comb"),
+                ("Boss", "Watcher's Terrace")
             })
         })
     };
@@ -87,12 +94,12 @@ public class SiteInstance
 
 public class InstanceWing
 {
-    public InstanceWing(string name, List<string> areas)
+    public InstanceWing(string name, List<(string, string)> areas)
     {
         this.name = name;
         this.areas = areas;
     }
 
     public string name;
-    public List<string> areas;
+    public List<(string, string)> areas;
 }

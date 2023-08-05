@@ -16,7 +16,6 @@ public class SaveGame
                 "Apprentice's Robe",
                 "Apprentice's Pants",
                 "Apprentice's Boots",
-                "Gossamer Belt",
                 "Band of Flesh",
                 "Grasp of the Old God",
                 "Mantle of Phrenic Power",
@@ -27,7 +26,9 @@ public class SaveGame
                 "Perdition's Blade",
                 "Vanquished Tentacle of C'Thun",
                 "Staff of Dominance",
+                "Bent Staff",
                 "Ring of the Godslayer",
+                "Gossamer Belt",
             }
         );
         siteProgress = new Dictionary<string, int>();

@@ -17,7 +17,7 @@ public class SiteHostileArea
         recommendedLevel = (int)this.possibleEncounters.Average(x => (x.Item1 + x.Item2) / 2.0);
     }
 
-    public SiteHostileArea(string name, List<(string, string)> possibleEncounters, int length, (string, string) bossEncounter)
+    public SiteHostileArea(string name, List<(string, string)> possibleEncounters, List<(int, string, string)> bossEncounters)
     {
         this.name = name;
         this.possibleEncounters = new();
@@ -26,9 +26,8 @@ public class SiteHostileArea
             var split = encounter.Item1.Split("-");
             this.possibleEncounters.Add((int.Parse(split[0]), int.Parse(split[split.Length == 1 ? 0 : 1]), encounter.Item2));
         }
-        this.length = length;
-        this.bossEncounter = (int.Parse(bossEncounter.Item1), bossEncounter.Item2);
-        recommendedLevel = this.bossEncounter.Item1;
+        this.bossEncounters = bossEncounters.Select(x => (x.Item1, int.Parse(x.Item2), x.Item3)).ToList();
+        recommendedLevel = (int)this.bossEncounters.Average(x => x.Item2);
     }
 
     public Entity RollEncounter()
@@ -45,18 +44,99 @@ public class SiteHostileArea
         return new Entity(find.Item1, find.Item2);
     }
     
-    public Entity RollBoss()
+    public Entity RollBoss((int, int, string) data)
     {
-        return new Entity(bossEncounter.Item1, Race.races.Find(x => x.name == bossEncounter.Item2));
+        return new Entity(data.Item2, Race.races.Find(x => x.name == data.Item3));
     }
 
     public string name;
-    public int recommendedLevel, length;
+    public int recommendedLevel;
     public List<(int, int, string)> possibleEncounters;
-    public (int, string) bossEncounter;
+    public List<(int, int, string)> bossEncounters;
 
     public static List<SiteHostileArea> hostileAreas = new()
     {
+        new SiteHostileArea("King's Square", new()
+            {
+                ("55-56", "Cannibal Ghoul"),
+            },
+            new()
+            {
+                (04, "56", "Postmaster Malown")
+            }
+        ),
+        new SiteHostileArea("Market Row", new()
+            {
+                ("56-57", "Cannibal Ghoul"),
+            },
+            new()
+            {
+                (04, "57", "The Unforgiven")
+            }
+        ),
+        new SiteHostileArea("Crusaders' Square", new()
+            {
+                ("56", "Cannibal Ghoul"),
+            },
+            new()
+            {
+                (04, "58", "Timmy the Cruel")
+            }
+        ),
+        new SiteHostileArea("The Scarlet Bastion", new()
+            {
+                ("59-60", "Cannibal Ghoul"),
+            },
+            new()
+            {
+                (04, "60", "Malor the Zealous")
+            }
+        ),
+        new SiteHostileArea("The Crimson Throne", new()
+            {
+                ("59-60", "Cannibal Ghoul"),
+            },
+            new()
+            {
+                (04, "62", "Balnazzar")
+            }
+        ),
+        new SiteHostileArea("Elder's Square", new()
+            {
+                ("59-60", "Cannibal Ghoul"),
+            },
+            new()
+            {
+                (04, "60", "Magistrate Barthilas")
+            }
+        ),
+        new SiteHostileArea("The Gauntlet", new()
+            {
+                ("59-60", "Cannibal Ghoul"),
+            },
+            new()
+            {
+                (04, "60", "Nerub'enkan")
+            }
+        ),
+        new SiteHostileArea("Slaughter Square", new()
+            {
+                ("59-60", "Cannibal Ghoul"),
+            },
+            new()
+            {
+                (04, "61", "Ramstein the Gorger")
+            }
+        ),
+        new SiteHostileArea("The Slaughter House", new()
+            {
+                ("59-60", "Cannibal Ghoul"),
+            },
+            new()
+            {
+                (04, "62", "Baron Rivendare")
+            }
+        ),
         new SiteHostileArea("Prison Of Immol'Thar", new()
         {
             ("01-02", "Duskbat"),
@@ -148,7 +228,10 @@ public class SiteHostileArea
                 ("60", "Hive'Zara Stinger"),
                 ("60", "Hive'Zara Wasp"),
             },
-            04, ("60", "Kurinnaxx")
+            new()
+            {
+                (04, "60", "Kurinnaxx")
+            }
         ),
         new SiteHostileArea("General's Terrace", new()
             {
@@ -156,14 +239,20 @@ public class SiteHostileArea
                 ("60", "Qiraji Warrior"),
                 ("60", "Swarmguard Needler"),
             },
-            04, ("60", "General Rajaxx")
+            new()
+            {
+                (04, "60", "General Rajaxx")
+            }
         ),
         new SiteHostileArea("Reservoir", new()
             {
                 ("60", "Flesh Hunter"),
                 ("60", "Obsidian Destroyer"),
             },
-            03, ("60", "Moam")
+            new()
+            {
+                (03, "60", "Moam")
+            }
         ),
         new SiteHostileArea("Hatchery", new()
             {
@@ -171,7 +260,10 @@ public class SiteHostileArea
                 ("60", "Hive'Zara Sandstalker"),
                 ("60", "Hive'Zara Soldier"),
             },
-            04, ("60", "Buru The Gorger")
+            new()
+            {
+                (04, "60", "Buru The Gorger")
+            }
         ),
         new SiteHostileArea("Comb", new()
             {
@@ -181,13 +273,19 @@ public class SiteHostileArea
                 ("60", "Hive'Zara Tail Lasher"),
                 ("60", "Silicate Feeder"),
             },
-            06, ("60", "Ayamiss The Hunter")
+            new()
+            {
+                (06, "60", "Ayamiss The Hunter")
+            }
         ),
-        new SiteHostileArea("Watchers' Terrace", new()
+        new SiteHostileArea("Watcher's Terrace", new()
             {
                 ("60", "Anubisath Guardian")
             },
-            02, ("60", "Ossirian The Unscarred")
+            new()
+            {
+                (02, "60", "Ossirian The Unscarred")
+            }
         ),
     };
 }

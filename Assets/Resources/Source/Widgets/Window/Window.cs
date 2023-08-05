@@ -67,9 +67,9 @@ public class Window : MonoBehaviour
         {
             switch (anchor.anchor)
             {
-                case Bottom: return new Vector2(screenX / 2 - Width() / 2 - 1, 2 - screenY + PlannedHeight());
-                case BottomRight: return new Vector2(screenX - 2 - Width(), 2 - screenY + PlannedHeight());
-                case BottomLeft: return new Vector2(0, 2 - screenY + PlannedHeight());
+                case Bottom: return new Vector2(screenX / 2 - Width() / 2 - 1, 2 - screenY + PlannedHeight(true));
+                case BottomRight: return new Vector2(screenX - 2 - Width(), 2 - screenY + PlannedHeight(true));
+                case BottomLeft: return new Vector2(0, 2 - screenY + PlannedHeight(true));
                 case Top: return new Vector2(screenX / 2 - Width() / 2 - 1, 0);
                 case TopRight: return new Vector2(screenX - 2 - Width(), 0);
                 case TopLeft: return new Vector2(0, 0);
@@ -382,7 +382,7 @@ public class Window : MonoBehaviour
             region.background.GetComponent<SpriteRenderer>().sortingLayerName = layer;
             region.background.transform.localScale = new Vector3(regionGroup.AutoWidth() + 8 + region.xExtend, region.AutoHeight() + 2 + region.yExtend, 1);
             region.background.transform.localPosition = new Vector3(2, -2, 0.8f);
-            if (region.backgroundType == Button || region.backgroundType == Handle)
+            if (region.backgroundType == Button || region.backgroundType == Handle || region.backgroundType == RedButton)
             {
                 if (region.background.GetComponent<BoxCollider2D>() == null)
                     region.background.AddComponent<BoxCollider2D>();

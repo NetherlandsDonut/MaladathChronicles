@@ -4,14 +4,13 @@ using System.Linq;
 using System.Collections.Generic;
 
 using static Root;
-using static UnityEditor.Progress;
 
 public class Entity
 {
     public Entity(string name, Race race, Class spec, List<string> items)
     {
         ResetResources();
-        level = 1;
+        level = 56;
         this.name = name;
         unspentTalentPoints = 20;
         this.race = race.name;
@@ -37,7 +36,7 @@ public class Entity
         stats = new Stats(
             new()
             {
-                { "Stamina", (int)(3 * this.level * race.vitality) + 5 },
+                { "Stamina", (int)(5 * this.level * race.vitality) + 5 },
                 { "Strength", 3 * this.level },
                 { "Agility", 3 * this.level },
                 { "Intellect", 3 * this.level },
@@ -177,12 +176,13 @@ public class Entity
         return Stats()["Stamina"] * 10;
     }
 
-    public (int, int) WeaponDamage()
+    public (double, double) WeaponDamage()
     {
-        if (equipment.ContainsKey("Two Handed"))
+        if (equipment == null) return (1, 2);
+        else if (equipment.ContainsKey("Two Handed"))
         {
             var twohanded = inventory.items.Find(x => x.name == equipment["Two Handed"]);
-            return ((int)(twohanded.minDamage / twohanded.speed), (int)(twohanded.maxDamage / twohanded.speed));
+            return (twohanded.minDamage / twohanded.speed, twohanded.maxDamage / twohanded.speed);
         }
         else
         {
@@ -190,8 +190,8 @@ public class Entity
             if (equipment.ContainsKey("Main Hand"))
             {
                 var mainHand = inventory.items.Find(x => x.name == equipment["Main Hand"]);
-                min += (int)(mainHand.minDamage / mainHand.speed);
-                max += (int)(mainHand.maxDamage / mainHand.speed);
+                min += mainHand.minDamage / mainHand.speed;
+                max += mainHand.maxDamage / mainHand.speed;
             }
             if (equipment.ContainsKey("Off Hand"))
             {
@@ -201,15 +201,15 @@ public class Entity
                 min += offHand.minDamage / offHand.speed / 1.5;
                 max += offHand.maxDamage / offHand.speed / 1.5;
             }
-            return ((int)min, (int)max);
+            return (min, max);
         }
     }
 
-    public int RollWeaponDamage()
+    public double RollWeaponDamage()
     {
         var damage = WeaponDamage();
         if (damage.Item2 == 0) return random.Next(2, 5);
-        return random.Next(damage.Item1, damage.Item2 + 1);
+        return random.Next((int)(damage.Item1 * 100), (int)(damage.Item2 * 100) + 1) / 100.0;
     }
 
     public Dictionary<string, int> Stats()
@@ -240,6 +240,7 @@ public class Entity
     public double MeleeAttackPower()
     {
         var temp = GetClass();
+        if (temp == null) return Stats()["Strength"] * 2 + Stats()["Agility"] * 2;
         var sum = temp.rules["Melee Attack Power per Strength"] * Stats()["Strength"];
         sum += temp.rules["Melee Attack Power per Agility"] * Stats()["Agility"];
         return sum;
@@ -248,6 +249,7 @@ public class Entity
     public double RangedAttackPower()
     {
         var temp = GetClass();
+        if (temp == null) return Stats()["Agility"] * 3;
         var sum = temp.rules["Ranged Attack Power per Agility"] * Stats()["Agility"];
         return sum;
     }
@@ -255,6 +257,7 @@ public class Entity
     public double SpellPower()
     {
         var temp = GetClass();
+        if (temp == null) return Stats()["Intellect"] * 3;
         var sum = temp.rules["Spell Power per Intellect"] * Stats()["Intellect"];
         return sum;
     }
@@ -262,6 +265,7 @@ public class Entity
     public double CriticalStrike()
     {
         var temp = GetClass();
+        if (temp == null) return Stats()["Agility"] * 0.03;
         var sum = temp.rules["Critical Strike per Strength"] * Stats()["Strength"];
         sum += temp.rules["Critical Strike per Agility"] * Stats()["Agility"];
         return sum;
@@ -270,6 +274,7 @@ public class Entity
     public double SpellCritical()
     {
         var temp = GetClass();
+        if (temp == null) return Stats()["Intellect"] * 0.03;
         var sum = temp.rules["Spell Critical per Intellect"] * Stats()["Intellect"];
         return sum;
     }

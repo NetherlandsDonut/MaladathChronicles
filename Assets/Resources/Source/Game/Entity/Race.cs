@@ -586,6 +586,18 @@ public class Race
             {
 
             }
+        ),
+        new Race("Golemagg the Incinerator", "Elite", "MoltenGiant",
+            3.00,
+            new()
+            {
+                "Magma Splash",
+                "Earthquake",
+            },
+            new()
+            {
+
+            }
         )
     };
 }
