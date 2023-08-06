@@ -40,21 +40,60 @@ public class Starter : MonoBehaviour
                     () =>
                     {
                         SetAnchor(Anchor.TopRight);
-                        AddHeaderGroup();
-                        AddLine(instance.name);
-                        AddSmallButton("OtherClose",
-                        (h) =>
-                        {
-                            var title = CDesktop.title;
-                            PlaySound("DesktopInstanceClose");
-                            CloseDesktop(title);
-                            SwitchDesktop("Map");
-                        });
                         AddRegionGroup();
-                        SetRegionGroupHeight(400);
+                        SetRegionGroupWidth(161);
+                        SetRegionGroupHeight(344);
+                        AddHeaderRegion(() =>
+                        {
+                            AddLine(instance.name);
+                            AddSmallButton("OtherClose",
+                            (h) =>
+                            {
+                                var title = CDesktop.title;
+                                CloseDesktop(title);
+                                if (instance.complexPart)
+                                    SpawnDesktopBlueprint("ComplexEntrance");
+                                else
+                                {
+                                    PlaySound("DesktopInstanceClose");
+                                    SwitchDesktop("Map");
+                                }
+                            });
+                        });
+                        AddPaddingRegion(() =>
+                        {
+                            SetRegionAsGroupExtender();
+                            AddLine("Level range: ", Gray);
+                            var range = instance.LevelRange();
+                            AddText(range.Item1 + "", EntityColoredLevel(range.Item1));
+                            AddText(" - ", Gray);
+                            AddText(range.Item2 + "", EntityColoredLevel(range.Item2));
+                        });
                         foreach (var wing in instance.wings)
                             PrintRaidWing(instance, wing);
-                        AddPaddingRegion(() => { SetRegionAsGroupExtender(); });
+                        AddPaddingRegion(() =>
+                        {
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                        });
                     }
                 )
             );
@@ -78,9 +117,14 @@ public class Starter : MonoBehaviour
                             (h) =>
                             {
                                 var title = CDesktop.title;
-                                PlaySound("DesktopInstanceClose");
                                 CloseDesktop(title);
-                                SwitchDesktop("Map");
+                                if (instance.complexPart)
+                                    SpawnDesktopBlueprint("ComplexEntrance");
+                                else
+                                {
+                                    PlaySound("DesktopInstanceClose");
+                                    SwitchDesktop("Map");
+                                }
                             });
                         });
                         AddPaddingRegion(() =>
@@ -94,6 +138,63 @@ public class Starter : MonoBehaviour
                         });
                         foreach (var wing in instance.wings)
                             PrintRaidWing(instance, wing);
+                        AddPaddingRegion(() =>
+                        {
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                        });
+                    }
+                )
+            );
+        }
+        for (int i = 0; i < SiteComplex.complexes.Count; i++)
+        {
+            var index = i;
+            var complex = SiteComplex.complexes[index];
+            Blueprint.windowBlueprints.Add(
+                new Blueprint("Complex: " + complex.name,
+                    () =>
+                    {
+                        SetAnchor(Anchor.TopRight);
+                        AddRegionGroup();
+                        SetRegionGroupWidth(161);
+                        SetRegionGroupHeight(344);
+                        AddHeaderRegion(() =>
+                        {
+                            AddLine(complex.name);
+                            AddSmallButton("OtherClose",
+                            (h) =>
+                            {
+                                var title = CDesktop.title;
+                                PlaySound("DesktopInstanceClose");
+                                CloseDesktop(title);
+                                SwitchDesktop("Map");
+                            });
+                        });
+                        AddPaddingRegion(() =>
+                        {
+                            AddLine("Sites: ", Gray);
+                        });
+                        foreach (var site in complex.sites)
+                            PrintComplexSite(complex, site);
                         AddPaddingRegion(() =>
                         {
                             AddLine("", Gray);

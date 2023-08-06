@@ -57,104 +57,346 @@ public class SiteHostileArea
 
     public static List<SiteHostileArea> hostileAreas = new()
     {
+        #region Stratholme
+
         new SiteHostileArea("King's Square", new()
-            {
-                ("55-56", "Scourge Warder"),
-                ("55-56", "Putrid Gargoyle"),
-                ("55-56", "Necromancer"),
-                ("55-56", "Cursed Mage"),
-                ("55-56", "Cannibal Ghoul"),
-                ("55-56", "Death Cultist"),
-            },
-            new()
-            {
-                (04, "56", "Postmaster Malown")
-            }
-        ),
+        {
+            ("55-56", "Scourge Warder"),
+            ("55-56", "Putrid Gargoyle"),
+            ("55-56", "Necromancer"),
+            ("55-56", "Cursed Mage"),
+            ("55-56", "Cannibal Ghoul"),
+            ("55-56", "Death Cultist"),
+        },
+        new()
+        {
+            (04, "56", "Postmaster Malown")
+        }),
         new SiteHostileArea("Market Row", new()
-            {
-                ("56-57", "Cannibal Ghoul"),
-            },
-            new()
-            {
-                (04, "57", "The Unforgiven")
-            }
-        ),
+        {
+            ("56-57", "Cannibal Ghoul"),
+        },
+        new()
+        {
+            (04, "57", "The Unforgiven")
+        }),
         new SiteHostileArea("Crusaders' Square", new()
-            {
-                ("56", "Cannibal Ghoul"),
-            },
-            new()
-            {
-                (04, "58", "Timmy the Cruel")
-            }
-        ),
+        {
+            ("56", "Cannibal Ghoul"),
+        },
+        new()
+        {
+            (04, "58", "Timmy the Cruel")
+        }),
         new SiteHostileArea("The Scarlet Bastion", new()
-            {
-                ("59-60", "Cannibal Ghoul"),
-            },
-            new()
-            {
-                (04, "60", "Malor the Zealous")
-            }
-        ),
+        {
+            ("59-60", "Cannibal Ghoul"),
+        },
+        new()
+        {
+            (04, "60", "Malor the Zealous")
+        }),
         new SiteHostileArea("The Crimson Throne", new()
-            {
-                ("59-60", "Cannibal Ghoul"),
-            },
-            new()
-            {
-                (04, "62", "Balnazzar")
-            }
-        ),
+        {
+            ("59-60", "Cannibal Ghoul"),
+        },
+        new()
+        {
+            (04, "62", "Balnazzar")
+        }),
         new SiteHostileArea("Elder's Square", new()
-            {
-                ("59-60", "Cannibal Ghoul"),
-            },
-            new()
-            {
-                (04, "60", "Magistrate Barthilas")
-            }
-        ),
+        {
+            ("59-60", "Cannibal Ghoul"),
+        },
+        new()
+        {
+            (04, "60", "Magistrate Barthilas")
+        }),
         new SiteHostileArea("The Gauntlet", new()
-            {
-                ("59-60", "Cannibal Ghoul"),
-            },
-            new()
-            {
-                (04, "60", "Nerub'enkan")
-            }
-        ),
+        {
+            ("59-60", "Cannibal Ghoul"),
+        },
+        new()
+        {
+            (04, "60", "Nerub'enkan")
+        }),
         new SiteHostileArea("Slaughter Square", new()
-            {
-                ("59-60", "Cannibal Ghoul"),
-            },
-            new()
-            {
-                (04, "61", "Ramstein the Gorger")
-            }
-        ),
+        {
+            ("59-60", "Cannibal Ghoul"),
+        },
+        new()
+        {
+            (04, "61", "Ramstein the Gorger")
+        }),
         new SiteHostileArea("The Slaughter House", new()
-            {
-                ("59-60", "Cannibal Ghoul"),
-            },
-            new()
-            {
-                (04, "62", "Baron Rivendare")
-            }
-        ),
+        {
+            ("59-60", "Cannibal Ghoul"),
+        },
+        new()
+        {
+            (04, "62", "Baron Rivendare")
+        }),
+
+        #endregion
+
+        #region Blackrock Depths
+
+        new SiteHostileArea("Detention Block", new()
+        {
+            ("56-57", "Cannibal Ghoul"),
+        },
+        new()
+        {
+            (04, "52", "High Interrogator Gerstahn")
+        }),
+        new SiteHostileArea("Halls of the Law", new()
+        {
+            ("56-57", "Cannibal Ghoul"),
+        },
+        new()
+        {
+            (04, "53", "Houndmaster Grebmar"),
+            (04, "53", "Lord Roccor")
+        }),
+        new SiteHostileArea("Ring of Law", new()
+        {
+            ("56-57", "Cannibal Ghoul"),
+        },
+        new()
+        {
+            (04, "54", "Anub'shiah"),
+            (04, "54", "Eviscerator"),
+            (04, "54", "Gorosh the Dervish"),
+            (04, "54", "Grizzle"),
+            (04, "54", "Hedrum the Creeper"),
+            (04, "54", "Ok'thor the Breaker"),
+        }),
+        new SiteHostileArea("Shrine of Thaurissan", new()
+        {
+            ("56-57", "Cannibal Ghoul"),
+        },
+        new()
+        {
+            (04, "57", "Pyromancer Loregrain")
+        }),
+        new SiteHostileArea("The Black Vault", new()
+        {
+            ("56-57", "Cannibal Ghoul"),
+        },
+        new()
+        {
+            (04, "57", "Warder Stilgiss")
+        }),
+        new SiteHostileArea("Dark Iron Highway", new()
+        {
+            ("56-57", "Cannibal Ghoul"),
+        },
+        new()
+        {
+            (04, "55", "Bael'Gar")
+        }),
+        new SiteHostileArea("The Black Anvil", new()
+        {
+            ("56-57", "Cannibal Ghoul"),
+        },
+        new()
+        {
+            (04, "56", "Lord Incendius")
+        }),
+        new SiteHostileArea("Hall of Crafting", new()
+        {
+            ("56-57", "Cannibal Ghoul"),
+        },
+        new()
+        {
+            (04, "56", "Fineous Darkvire")
+        }),
+        new SiteHostileArea("West Garrison", new()
+        {
+            ("56-57", "Cannibal Ghoul"),
+        },
+        new()
+        {
+            (04, "57", "General Angerforge")
+        }),
+        new SiteHostileArea("The Manufactory", new()
+        {
+            ("56-57", "Cannibal Ghoul"),
+        },
+        new()
+        {
+            (04, "57", "Golem Lord Argelmach")
+        }),
+        new SiteHostileArea("The Grim Guzzler", new()
+        {
+            ("56-57", "Cannibal Ghoul"),
+        },
+        new()
+        {
+            (04, "57", "Golem Lord Argelmach")
+        }),
+        new SiteHostileArea("Chamber of Enchantment", new()
+        {
+            ("56-57", "Cannibal Ghoul"),
+        },
+        new()
+        {
+            (04, "57", "Ambassador Flamelash")
+        }),
+        new SiteHostileArea("Mold Foundry", new()
+        {
+            ("56-57", "Cannibal Ghoul"),
+        },
+        new()
+        {
+            (04, "57", "Panzor the Invincible")
+        }),
+        new SiteHostileArea("Summoners' Tomb", new()
+        {
+            ("56-57", "Cannibal Ghoul"),
+        },
+        new()
+        {
+            (04, "58", "The Seven")
+        }),
+        new SiteHostileArea("The Lyceum", new()
+        {
+            ("56-57", "Cannibal Ghoul"),
+        }),
+        new SiteHostileArea("The Iron Hall", new()
+        {
+            ("56-57", "Cannibal Ghoul"),
+        },
+        new()
+        {
+            (04, "58", "Magmus")
+        }),
+        new SiteHostileArea("The Imperial Seat", new()
+        {
+            ("56-57", "Cannibal Ghoul"),
+        },
+        new()
+        {
+            (04, "59", "Emperor Dagran Thaurissan")
+        }),
+
+        #endregion
+        
+        #region Blackwing Lair
+
+        new SiteHostileArea("Dragonmaw Garrison", new()
+        {
+            ("56-57", "Cannibal Ghoul"),
+        },
+        new()
+        {
+            (04, "60", "Razorgore the Untamed")
+        }),
+        new SiteHostileArea("Shadow Wing Lair", new()
+        {
+            ("56-57", "Cannibal Ghoul"),
+        },
+        new()
+        {
+            (04, "60", "Vaelastrasz the Corrupt"),
+        }),
+        new SiteHostileArea("Halls of Strife", new()
+        {
+            ("56-57", "Cannibal Ghoul"),
+        },
+        new()
+        {
+            (04, "60", "Broodlord Lashlayer"),
+        }),
+        new SiteHostileArea("Crimson Laboratories", new()
+        {
+            ("56-57", "Cannibal Ghoul"),
+        },
+        new()
+        {
+            (04, "60", "Firemaw"),
+            (04, "60", "Ebonroc"),
+            (04, "60", "Flamegor")
+        }),
+        new SiteHostileArea("Chromaggus' Lair", new()
+        {
+            ("56-57", "Cannibal Ghoul"),
+        },
+        new()
+        {
+            (04, "60", "Chromaggus")
+        }),
+        new SiteHostileArea("Nefarian's Lair", new()
+        {
+            ("56-57", "Cannibal Ghoul"),
+        },
+        new()
+        {
+            (04, "60", "Nefarian")
+        }),
+
+        #endregion
+        
+        #region Molten Core
+
+        new SiteHostileArea("Magmadar Cavern", new()
+        {
+            ("56-57", "Cannibal Ghoul"),
+        },
+        new()
+        {
+            (04, "60", "Lucifron"),
+            (04, "60", "Magmadar")
+        }),
+        new SiteHostileArea("The Lavafalls", new()
+        {
+            ("56-57", "Cannibal Ghoul"),
+        },
+        new()
+        {
+            (04, "60", "Gehennas"),
+            (04, "60", "Garr"),
+            (04, "60", "Baron Geddon"),
+            (04, "60", "Shazzrah"),
+            (04, "60", "Sulfuron Harbringer"),
+            (04, "60", "Golemagg The Incinerator"),
+            (04, "60", "Majordomo Executus"),
+        }),
+        new SiteHostileArea("Ragnaros' Lair", new()
+        {
+            ("56-57", "Cannibal Ghoul"),
+        },
+        new()
+        {
+            (04, "60", "Ragnaros"),
+        }),
+
+        #endregion
+
+        #region Dire Maul
+
         new SiteHostileArea("Prison Of Immol'Thar", new()
         {
             ("01-02", "Duskbat"),
             ("01-02", "Wretched Zombie"),
             ("01-02", "Rattlecage Skeleton"),
         }),
+
+        #endregion
+
+        #region Tirisfal Glades
+
         new SiteHostileArea("Deathknell", new()
         {
             ("01-02", "Duskbat"),
             ("01-02", "Wretched Zombie"),
             ("01-02", "Rattlecage Skeleton"),
         }),
+
+        #endregion
+
+        #region Eastern Plaguelands
+
         new SiteHostileArea("Corin's Crossing", new()
         {
             ("53-54", "Scourge Warder"),
@@ -222,76 +464,72 @@ public class SiteHostileArea
             ("52-53", "Plaguebat"),
             ("52-53", "Plaguehound Runt"),
         }),
-        new SiteHostileArea("Stonetalon Peak", new()
-            {
-                ("60", "Nefarian"),
-            }
-        ),
+
+        #endregion
+
+        #region Ruins of Ahn'Qiraj
+
         new SiteHostileArea("Scarab Terrace", new()
-            {
-                ("60", "Qiraji Gladiator"),
-                ("60", "Qiraji Swarmguard"),
-                ("60", "Hive'Zara Stinger"),
-                ("60", "Hive'Zara Wasp"),
-            },
-            new()
-            {
-                (04, "60", "Kurinnaxx")
-            }
-        ),
+        {
+            ("60", "Qiraji Gladiator"),
+            ("60", "Qiraji Swarmguard"),
+            ("60", "Hive'Zara Stinger"),
+            ("60", "Hive'Zara Wasp"),
+        },
+        new()
+        {
+            (04, "60", "Kurinnaxx")
+        }),
         new SiteHostileArea("General's Terrace", new()
-            {
-                ("60", "Qiraji Gladiator"),
-                ("60", "Qiraji Warrior"),
-                ("60", "Swarmguard Needler"),
-            },
-            new()
-            {
-                (04, "60", "General Rajaxx")
-            }
-        ),
+        {
+            ("60", "Qiraji Gladiator"),
+            ("60", "Qiraji Warrior"),
+            ("60", "Swarmguard Needler"),
+        },
+        new()
+        {
+            (04, "60", "General Rajaxx")
+        }),
         new SiteHostileArea("Reservoir", new()
-            {
-                ("60", "Flesh Hunter"),
-                ("60", "Obsidian Destroyer"),
-            },
-            new()
-            {
-                (03, "60", "Moam")
-            }
-        ),
+        {
+            ("60", "Flesh Hunter"),
+            ("60", "Obsidian Destroyer"),
+        },
+        new()
+        {
+            (03, "60", "Moam")
+        }),
         new SiteHostileArea("Hatchery", new()
-            {
-                ("60", "Flesh Hunter"),
-                ("60", "Hive'Zara Sandstalker"),
-                ("60", "Hive'Zara Soldier"),
-            },
-            new()
-            {
-                (04, "60", "Buru The Gorger")
-            }
-        ),
+        {
+            ("60", "Flesh Hunter"),
+            ("60", "Hive'Zara Sandstalker"),
+            ("60", "Hive'Zara Soldier"),
+        },
+        new()
+        {
+            (04, "60", "Buru The Gorger")
+        }),
         new SiteHostileArea("Comb", new()
-            {
-                ("60", "Hive'Zara Collector"),
-                ("60", "Hive'Zara Drone"),
-                ("60", "Hive'Zara Swarmer"),
-                ("60", "Hive'Zara Tail Lasher"),
-                ("60", "Silicate Feeder"),
-            },
-            new()
-            {
-                (06, "60", "Ayamiss The Hunter")
-            }
-        ),
+        {
+            ("60", "Hive'Zara Collector"),
+            ("60", "Hive'Zara Drone"),
+            ("60", "Hive'Zara Swarmer"),
+            ("60", "Hive'Zara Tail Lasher"),
+            ("60", "Silicate Feeder"),
+        },
+        new()
+        {
+            (06, "60", "Ayamiss The Hunter")
+        }),
         new SiteHostileArea("Watcher's Terrace", new()
-            {
-                ("60", "Anubisath Guardian")
-            },
-            new()
-            {
-                (02, "60", "Ossirian The Unscarred")
-            }
-        ),
+        {
+            ("60", "Anubisath Guardian")
+        },
+        new()
+        {
+            (02, "60", "Ossirian The Unscarred")
+        }),
+
+        #endregion
     };
 }

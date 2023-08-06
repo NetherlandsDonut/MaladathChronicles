@@ -4,6 +4,7 @@ using System.Linq;
 using System.Collections.Generic;
 
 using static Root;
+using static SiteComplex;
 using static SiteInstance;
 
 using static Root.Color;
@@ -645,7 +646,45 @@ public class Blueprint
             SetRegionGroupWidth(161);
             AddPaddingRegion(() =>
             {
-                AddLine("Select area on the right.", DarkGray);
+                foreach (var line in instance.description)
+                    AddLine(line, DarkGray);
+                //AddLine("Select area on the right.", DarkGray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+            });
+        }),
+        new("ComplexLeftSide", () => {
+            SetAnchor(TopLeft);
+            AddRegionGroup();
+            SetRegionGroupWidth(161);
+            AddPaddingRegion(() =>
+            {
+                foreach (var line in complex.description)
+                    AddLine(line, DarkGray);
                 AddLine("", Gray);
                 AddLine("", Gray);
                 AddLine("", Gray);
@@ -1270,6 +1309,11 @@ public class Blueprint
                     PlaySound("DesktopButtonClose");
                     CloseWindow(window);
                 }
+                else if (instance.complexPart)
+                {
+                    CloseDesktop("DungeonEntrance");
+                    SpawnDesktopBlueprint("ComplexEntrance");
+                }
                 else
                 {
                     PlaySound("DesktopInstanceClose");
@@ -1290,11 +1334,27 @@ public class Blueprint
                     PlaySound("DesktopButtonClose");
                     CloseWindow(window);
                 }
+                else if (instance.complexPart)
+                {
+                    CloseDesktop("RaidEntrance");
+                    SpawnDesktopBlueprint("ComplexEntrance");
+                }
                 else
                 {
                     PlaySound("DesktopInstanceClose");
                     CloseDesktop("RaidEntrance");
                 }
+            });
+        }),
+        new("ComplexEntrance", () =>
+        {
+            SetDesktopBackground("Areas/Complex" + complex.name.Replace("'", "").Replace(" ", ""));
+            SpawnWindowBlueprint("Complex: " + complex.name);
+            SpawnWindowBlueprint("ComplexLeftSide");
+            AddHotkey(Escape, () =>
+            {
+                PlaySound("DesktopInstanceClose");
+                CloseDesktop("ComplexEntrance");
             });
         }),
         new("Game", () =>

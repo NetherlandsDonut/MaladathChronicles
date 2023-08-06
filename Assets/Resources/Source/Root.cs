@@ -1,15 +1,16 @@
 ﻿using System;
 using UnityEngine;
+using System.Linq;
 using System.Collections.Generic;
 
 using static Font;
 using static Blueprint;
+using static SiteComplex;
 using static SiteInstance;
 
 using static Root.Color;
 using static Root.Anchor;
 using static Root.RegionBackgroundType;
-using System.Linq;
 
 public static class Root
 {
@@ -569,6 +570,48 @@ public static class Root
                     {
                         AddLine(name, Gray);
                     });
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine("Level range: ", Gray);
+                        instance = raids.Find(x => x.name == name);
+                        if (instance == null)
+                            AddText("??", DarkGray);
+                        else
+                        {
+                            var range = instance.LevelRange();
+                            AddText(range.Item1 + "", EntityColoredLevel(range.Item1));
+                            AddText(" - ", Gray);
+                            AddText(range.Item2 + "", EntityColoredLevel(range.Item2));
+                        }
+                    });
+                });
+            else if (type == "Complex")
+                AddSmallButton("Site" + type,
+                (h) =>
+                {
+                    complex = complexes.Find(x => x.name == name);
+                    if (complex != null)
+                    {
+                        PlaySound("DesktopInstanceOpen");
+                        SpawnDesktopBlueprint("ComplexEntrance");
+                        SwitchDesktop("ComplexEntrance");
+                    }
+                },
+                (h) => () =>
+                {
+                    SetAnchor(TopRight, h.window);
+                    AddRegionGroup();
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine(name, Gray);
+                    });
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine("Sites:", DarkGray);
+                        complex = complexes.Find(x => x.name == name);
+                        foreach (var site in complex.sites)
+                            AddLine("- " + site.Item2, DarkGray);
+                    });
                 });
             else
                 AddSmallButton("Site" + type,
@@ -623,10 +666,12 @@ public static class Root
         foreach (var area in areas)
         AddButtonRegion(() =>
         {
-            AddLine(area.name, Black);
+            var name = area != null ? area.name : "AREA NOT FOUND";
+            AddLine(name, Black);
         },
         (h) =>
         {
+            if (area == null) return;
             var window = CDesktop.windows.Find(x => x.title.StartsWith("Area: "));
             if (window != null)
                 if (window.title == "Area: " + area.name) return;
@@ -635,6 +680,31 @@ public static class Root
             SetDesktopBackground("Areas/Area" + (instance.name + area.name).Replace("'", "").Replace(" ", ""));
             SpawnTransition();
         });
+    }
+
+    public static void PrintComplexSite(SiteComplex complex, (string, string) site)
+    {
+        var instance = site.Item1 == "Dungeon" ? dungeons.Find(x => x.name == site.Item2) : raids.Find(x => x.name == site.Item2);
+        AddButtonRegion(() =>
+        {
+            AddLine(site.Item2, Black);
+            AddSmallButton("Site" + site.Item1, (h) => { });
+        },
+        (h) =>
+        {
+            CloseDesktop("ComplexEntrance");
+            SiteInstance.instance = instance;
+            SpawnDesktopBlueprint(site.Item1 + "Entrance");
+        });
+        //AddPaddingRegion(() =>
+        //{
+        //    SetRegionAsGroupExtender();
+        //    AddLine("Level range: ", Gray);
+        //    var range = instance.LevelRange();
+        //    AddText(range.Item1 + "", EntityColoredLevel(range.Item1));
+        //    AddText(" - ", Gray);
+        //    AddText(range.Item2 + "", EntityColoredLevel(range.Item2));
+        //});
     }
 
     public static bool WillGetExperience(int level) => currentSave.player.level - 5 <= level;
