@@ -1307,6 +1307,7 @@ public class Blueprint
                 if (window != null)
                 {
                     PlaySound("DesktopButtonClose");
+                    SetDesktopBackground("Areas/Area" + instance.name.Replace("'", "").Replace(" ", ""));
                     CloseWindow(window);
                 }
                 else if (instance.complexPart)
@@ -1332,6 +1333,7 @@ public class Blueprint
                 if (window != null)
                 {
                     PlaySound("DesktopButtonClose");
+                    SetDesktopBackground("Areas/Area" + instance.name.Replace("'", "").Replace(" ", ""));
                     CloseWindow(window);
                 }
                 else if (instance.complexPart)

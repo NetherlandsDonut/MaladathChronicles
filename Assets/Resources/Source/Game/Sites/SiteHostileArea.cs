@@ -2,6 +2,7 @@ using System.Linq;
 using System.Collections.Generic;
 
 using static Root;
+using System.Diagnostics;
 
 public class SiteHostileArea
 {
@@ -24,6 +25,7 @@ public class SiteHostileArea
         foreach (var encounter in possibleEncounters)
         {
             var split = encounter.Item1.Split("-");
+            //UnityEngine.Debug.Log(encounter + " " + name);
             this.possibleEncounters.Add((int.Parse(split[0]), int.Parse(split[split.Length == 1 ? 0 : 1]), encounter.Item2));
         }
         this.bossEncounters = bossEncounters.Select(x => (x.Item1, int.Parse(x.Item2), x.Item3)).ToList();
@@ -139,6 +141,337 @@ public class SiteHostileArea
 
         #endregion
 
+        #region Razorfen Downs
+
+        new SiteHostileArea("The Caller's Chamber", new()
+        {
+            ("40", "Ragglesnout"),
+        },
+        new()
+        {
+            (2, "40", "Plaguemaw"),
+            (2, "40", "Tuten'kash")
+        }),
+        new SiteHostileArea("The Bone Pile", new()
+        {
+            ("40", "Ragglesnout"),
+        },
+        new()
+        {
+            (2, "39", "Mordresh Fire Eye"),
+        }),
+        new SiteHostileArea("Spiral of Thorns", new()
+        {
+            ("40", "Ragglesnout"),
+        },
+        new()
+        {
+            (2, "40", "Glutton"),
+            (2, "41", "Amnennar the Coldbringer"),
+        }),
+
+        #endregion
+
+        #region Deadmines
+
+        new SiteHostileArea("Defias Hideout", new()
+        {
+            ("19", "Miner Johnson"),
+            ("17-18", "Defias Evoker"),
+            ("16-17", "Defias Watchman"),
+            ("17-18", "Defias Overseer"),
+            ("17-18", "Defias Miner")
+        },
+        new()
+        {
+            (3, "19", "Rhahk'Zor"),
+        }),
+        new SiteHostileArea("Mast Room", new()
+        {
+            ("18-19", "Defias Taskmaster"),
+            ("18-19", "Defias Wizard"),
+            ("18-19", "Defias Strip Miner")
+        },
+        new()
+        {
+            (3, "19", "Sneed"),
+        }),
+        new SiteHostileArea("Goblin Foundry", new()
+        {
+            ("18-20", "Remote Controlled Golem"),
+            ("18-19", "Goblin Engineer")
+        },
+        new()
+        {
+            (3, "20", "Gilnid"),
+        }),
+        new SiteHostileArea("Ironclad Cove", new()
+        {
+            ("19-20", "Defias Blackguard"),
+            ("19-20", "Defias Squallshaper"),
+            ("19-20", "Defias Pirate")
+        },
+        new()
+        {
+            (2, "20", "Mr. Smite"),
+        }),
+        new SiteHostileArea("The Juggernaut", new()
+        {
+            ("19-20", "Defias Squallshaper"),
+            ("19-20", "Defias Pirate")
+        },
+        new()
+        {
+            (3, "20", "Captain Greenskin"),
+            (2, "21", "Edwin VanCleef"),
+        }),
+
+        #endregion
+
+        #region Maraudon
+
+        new SiteHostileArea("The Noxious Hollow", new()
+        {
+            ("45-46", "Creeping Sludge"),
+            ("45-46", "Spewed Larva"),
+            ("45-46", "Constrictor Vine")
+        },
+        new()
+        {
+            (3, "47", "Noxxion"),
+        }),
+        new SiteHostileArea("Foulspore Cavern", new()
+        {
+            ("46-47", "Barbed Lasher"),
+            ("46-48", "Celebrian Dryad"),
+            ("46-47", "Deeprot Stomper")
+        },
+        new()
+        {
+            (3, "48", "Razorlash"),
+        }),
+        new SiteHostileArea("Wicked Grotto", new()
+        {
+            ("47-48", "Deeprot Stomper"),
+            ("46-47", "Deeprot Tangler"),
+            ("46-47", "Poison Sprite")
+        },
+        new()
+        {
+            (3, "48", "Tinkerer Gizlock"),
+        }),
+        new SiteHostileArea("Vyletongue Seat", new()
+        {
+            ("46-47", "Putridus Satyr"),
+            ("47-48", "Putridus Shadowstalker"),
+            ("46-47", "Putridus Trickster")
+        },
+        new()
+        {
+            (3, "48", "Lord Vyletongue"),
+        }),
+        new SiteHostileArea("Poison Falls", new()
+        {
+            ("48", "Meshlock the Harvester"),
+            ("47-48", "Barbed Lasher"),
+            ("48-49", "Celebrian Dryad"),
+            ("47-48", "Cavern Lurker")
+        },
+        new()
+        {
+            (3, "49", "Celebras the Cursed"),
+        }),
+        new SiteHostileArea("Earth Song Falls", new()
+        {
+            ("50", "Rotgrip"),
+            ("48-49", "Primordial Behemoth"),
+            ("48-49", "Theradrim Guardian")
+        },
+        new()
+        {
+            (3, "50", "Landslide"),
+        }),
+        new SiteHostileArea("Zaetar's Grave", new()
+        {
+            ("48-50", "Primordial Behemoth"),
+            ("49-50", "Thessala Hydra"),
+            ("49-50", "Subterranean Diemetradon"),
+            ("48-50", "Deep Borer")
+        },
+        new()
+        {
+            (3, "51", "Princess Theradras"),
+        }),
+
+        #endregion
+
+        #region Wailing Caverns
+
+        new SiteHostileArea("Screaming Gully", new()
+        {
+            ("18-19", "Deviate Guardian"),
+            ("18-19", "Deviate Ravager"),
+            ("19-20", "Druid of the Fang"),
+            ("18-19", "Evolving Ectoplasm")
+        },
+        new()
+        {
+            (3, "20", "Lady Anacondra"),
+        }),
+        new SiteHostileArea("Pit of Fangs", new()
+        {
+            ("18-19", "Deviate Adder"),
+            ("18-20", "Deviate Python"),
+            ("19-20", "Deviate Viper"),
+            ("20", "Kresh")
+        },
+        new()
+        {
+            (3, "20", "Lord Cobrahn"),
+            (2, "21", "Lord Pythas"),
+        }),
+        new SiteHostileArea("Winding Chasm", new()
+        {
+            ("20-21", "Deviate Dreadfang"),
+            ("19-20", "Deviate Lasher"),
+            ("19-20", "Deviate Shambler"),
+            ("20-21", "Deviate Venomwing"),
+        },
+        new()
+        {
+            (2, "21", "Skum"),
+        }),
+        new SiteHostileArea("Crag of the Everliving", new()
+        {
+            ("20-21", "Deviate Dreadfang"),
+            ("19-20", "Deviate Lasher"),
+            ("19-20", "Deviate Shambler"),
+            ("20-21", "Deviate Venomwing"),
+            ("19-20", "Druid of the Fang"),
+            ("20", "Deviate Faerie Dragon")
+        },
+        new()
+        {
+            (2, "21", "Lord Serpentis"),
+            (1, "21", "Verdan the Everliving")
+        }),
+        new SiteHostileArea("Dreamer's Rock", new()
+        {
+            ("20-21", "Deviate Moccasin"),
+            ("20-21", "Evolving Ectoplasm"),
+            ("20-21", "Nightmare Ectoplasm"),
+        },
+        new()
+        {
+            (3, "22", "Mutantus The Devourer"),
+        }),
+
+        #endregion
+
+        #region Blackfathom Deeps
+        
+        new SiteHostileArea("Pool of Ask'ar", new()
+        {
+            ("23-24", "Blackfathom Myrmidon"),
+            ("23-24", "Blackfathom Sea Witch"),
+            ("23-24", "Mudrock Snapjaw")
+        },
+        new()
+        {
+            (2, "25", "Ghamoo Ra"),
+            (1, "25", "Lady Sarevess")
+        }),
+        new SiteHostileArea("Shrine of Gelihast", new()
+        {
+            ("25-26", "Blindlight Oracle"),
+            ("25-26", "Blindlight Muckdweller")
+        },
+        new()
+        {
+            (2, "26", "Gelihast"),
+        }),
+        new SiteHostileArea("Moonshrine Ruins", new()
+        {
+            ("26", "Aqua Guardian"),
+            ("25-26", "Twilight Acolyte"),
+            ("25-27", "Twilight Aquamancer")
+        },
+        new()
+        {
+            (3, "27", "Baron Aquanis"),
+        }),
+        new SiteHostileArea("Forgotten Pool", new()
+        {
+            ("26-27", "Deep Pool Threshkin"),
+            ("26-27", "Skittering Crustacean")
+        },
+        new()
+        {
+            (2, "27", "Old Serra'kis"),
+        }),
+        new SiteHostileArea("Moonshrine Sanctum", new()
+        {
+            ("27-28", "Twilight Elementalist"),
+            ("27-28", "Twilight Shadowmage")
+        },
+        new()
+        {
+            (2, "28", "Twilight Lord Kelris"),
+        }),
+        new SiteHostileArea("Aku'mai's Lair",
+        new() { },
+        new()
+        {
+            (0, "28", "Aku'mai"),
+        }),
+        
+        #endregion
+
+        #region Scarlet Monastery
+
+        new SiteHostileArea("Chamber of Atonement", new()
+        {
+            ("32-32", "Cannibal Ghoul"),
+        },
+        new()
+        {
+            (04, "32", "Interrogator Vishas")
+        }),
+        new SiteHostileArea("Forlorn Cloister", new()
+        {
+            ("32-32", "Cannibal Ghoul"),
+        },
+        new()
+        {
+            (04, "32", "Bloodmage Thalnos"),
+        }),
+        new SiteHostileArea("Honor's Tomb", new()
+        {
+            ("32-32", "Cannibal Ghoul"),
+        },
+        new()
+        {
+            (04, "32", "Bloodmage Thalnos"),
+        }),
+        new SiteHostileArea("Huntsman's Cloister", new()
+        {
+            ("32-32", "Cannibal Ghoul"),
+        },
+        new()
+        {
+            (04, "32", "Houndmaster Loksey"),
+        }),
+        new SiteHostileArea("Athenaeum", new()
+        {
+            ("32-32", "Cannibal Ghoul"),
+        },
+        new()
+        {
+            (04, "32", "Arcanist Doan"),
+        }),
+
+        #endregion
+        
         #region Blackrock Depths
 
         new SiteHostileArea("Detention Block", new()
@@ -336,7 +669,65 @@ public class SiteHostileArea
         }),
 
         #endregion
-        
+
+        #region Uldaman
+
+        new SiteHostileArea("Hall of the Keepers", new()
+        {
+            ("36-37", "Stonevault Ambusher"),
+            ("37-38", "Stonevault Pillager"),
+            ("37-38", "Stonevault Oracle")
+        },
+        new()
+        {
+            (3, "40", "Revelosh"),
+        }),
+        new SiteHostileArea("Map Chamber", new() { },
+        new()
+        {
+            (0, "40", "Ironaya"),
+        }),
+        new SiteHostileArea("Temple Hall", new()
+        {
+            ("44", "Stone Steward"),
+            ("41-43", "Venomlash Scorpid"),
+            ("42-43", "Earthen Sculptor"),
+        },
+        new()
+        {
+            (3, "44", "Ancient Stone Keeper"),
+        }),
+        new SiteHostileArea("Dig Three", new()
+        {
+            ("42-44", "Shadowforge Darkcaster"),
+            ("42-44", "Shadowforge Sharpshooter")
+        },
+        new()
+        {
+            (3, "45", "Galgann Firehammer"),
+        }),
+        new SiteHostileArea("The Stone Vault", new()
+        {
+            ("42-44", "Jadespine Basilisk"),
+            ("41-43", "Stonevault Geomancer"),
+            ("42-43", "Stonevault Brawler")
+        },
+        new()
+        {
+            (3, "45", "Grimlok"),
+        }),
+        new SiteHostileArea("Khaz'Goroth's Seat", new()
+        {
+            ("44-45", "Vault Warder"),
+            ("45", "Stone Steward")
+        },
+        new()
+        {
+            (2, "47", "Archaedas"),
+        }),
+
+        #endregion
+
         #region Molten Core
 
         new SiteHostileArea("Magmadar Cavern", new()

@@ -30,6 +30,29 @@ public class SiteInstance
 
     public static List<SiteInstance> dungeons = new()
     {
+        new SiteInstance("Maraudon", new()
+        {
+
+        },
+        new()
+        {
+            new InstanceWing("Orange Crystal Caverns", new()
+            {
+                ("None", "The Noxious Hollow"),
+                ("Boss", "Foulspore Cavern")
+            }),
+            new InstanceWing("Purple Crystal Caverns", new()
+            {
+                ("None", "Wicked Grotto"),
+                ("Boss", "Vyletongue Seat")
+            }),
+            new InstanceWing("Inner Maraudon", new()
+            {
+                ("None", "Poison Falls"),
+                ("Boss", "Earth Song Falls"),
+                ("Boss", "Zaetar's Grave")
+            })
+        }),
         new SiteInstance("Stratholme", new()
         {
 
@@ -51,6 +74,81 @@ public class SiteInstance
                 ("Boss", "Slaughter Square"),
                 ("Boss", "The Slaughter House")
             })
+        }),
+        new SiteInstance("Wailing Caverns", new()
+        {
+
+        },
+        new()
+        {
+            new InstanceWing("Wailing Caverns", new()
+            {
+                ("None", "Screaming Gully"),
+                ("Boss", "Pit of Fangs"),
+                ("Boss", "Winding Chasm"),
+                ("Boss", "Crag of the Everliving"),
+                ("Boss", "Dreamer's Rock")
+            }),
+        }),
+        new SiteInstance("Uldaman", new()
+        {
+
+        },
+        new()
+        {
+            new InstanceWing("Uldaman", new()
+            {
+                ("None", "Hall of the Keepers"),
+                ("Boss", "Map Chamber"),
+                ("Boss", "Temple Hall"),
+                ("Boss", "Dig Three"),
+                ("Boss", "The Stone Vault"),
+                ("Boss", "Khaz'Goroth's Seat")
+            }),
+        }),
+        new SiteInstance("Razorfen Downs", new()
+        {
+
+        },
+        new()
+        {
+            new InstanceWing("Razorfen Downs", new()
+            {
+                ("None", "The Caller's Chamber"),
+                ("Boss", "The Bone Pile"),
+                ("Boss", "Spiral of Thorns"),
+            }),
+        }),
+        new SiteInstance("The Deadmines", new()
+        {
+
+        },
+        new()
+        {
+            new InstanceWing("The Deadmines", new()
+            {
+                ("None", "Defias Hideout"),
+                ("Boss", "Mast Room"),
+                ("Boss", "Goblin Foundry"),
+                ("Boss", "Ironclad Cove"),
+                ("Boss", "The Juggernaut"),
+            }),
+        }),
+        new SiteInstance("Blackfathom Deeps", new()
+        {
+
+        },
+        new()
+        {
+            new InstanceWing("Blackfathom Deeps", new()
+            {
+                ("None", "Pool of Ask'ar"),
+                ("Boss", "Shrine of Gelihast"),
+                ("Boss", "Moonshrine Ruins"),
+                ("Boss", "Forgotten Pool"),
+                ("Boss", "Moonshrine Sanctum"),
+                ("Boss", "Aku'mai's Lair")
+            }),
         }),
         new SiteInstance("Dire Maul", new()
         {
@@ -76,6 +174,53 @@ public class SiteInstance
                 ("Boss", "Court Of The Highborne"),
                 ("Boss", "Prison Of Immol'Thar"),
                 ("Boss", "The Athenaeum")
+            }),
+        }),
+        new SiteInstance("Scarlet Monastery", new()
+        {
+            "The smoldering Blackrock",
+            "Depths are home to the",
+            "Dark Iron dwarves and",
+            "their emperor, Dagran",
+            "Thaurissan. Like his",
+            "predecessors, he serves",
+            "under the iron rule of",
+            "Ragnaros the Firelord,",
+            "a merciless being",
+            "summoned into the world",
+            "centuries ago.",
+            "The presence of chaotic",
+            "elementals has attracted",
+            "Twilight's Hammer cultists",
+            "to the mountain domain.",
+            "Along with Ragnaros'",
+            "servants, they have",
+            "pushed the dwarves ",
+            "toward increasingly",
+            "destructive ends that",
+            "could soon spell doom",
+            "for all of Azeroth."
+        },
+        new ()
+        {
+            new InstanceWing("Graveyard", new()
+            {
+                ("None", "Chamer of Atonement"),
+                ("Boss", "Honor's Tomb"),
+            }),
+            new InstanceWing("Library", new()
+            {
+                ("None", "Huntsman's Cloister"),
+                ("Boss", "Athenaeum")
+            }),
+            new InstanceWing("Armory", new()
+            {
+                ("None", "Huntsman's Cloister"),
+                ("Boss", "Hall of Champions")
+            }),
+            new InstanceWing("Cathedral", new()
+            {
+                ("Boss", "The Imperial Seat")
             }),
         }),
         new SiteInstance("Blackrock Depths", new()
