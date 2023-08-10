@@ -71,6 +71,7 @@ public class Board
 
     public void EndCombat(bool playerWon)
     {
+        cursorEnemy.fadeOut = true;
         CloseDesktop("Game");
         if (playerWon)
         {

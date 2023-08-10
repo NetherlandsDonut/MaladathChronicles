@@ -10,7 +10,7 @@ public class Entity
     public Entity(string name, Race race, Class spec, List<string> items)
     {
         ResetResources();
-        level = 56;
+        level = 2;
         this.name = name;
         unspentTalentPoints = 20;
         this.race = race.name;
@@ -178,7 +178,69 @@ public class Entity
 
     public (double, double) WeaponDamage()
     {
-        if (equipment == null) return (1, 2);
+        if (equipment == null)
+        {
+            if (level == 60) return (43, 70);
+            if (level == 59) return (42, 68);
+            if (level == 58) return (41, 67);
+            if (level == 57) return (40, 66);
+            if (level == 56) return (40, 64);
+            if (level == 55) return (39, 63);
+            if (level == 54) return (38, 62);
+            if (level == 53) return (37, 61);
+            if (level == 52) return (36, 59);
+            if (level == 51) return (35, 57);
+            if (level == 50) return (34, 56);
+            if (level == 49) return (33, 55);
+            if (level == 48) return (33, 52);
+            if (level == 47) return (32, 50);
+            if (level == 46) return (31, 48);
+            if (level == 45) return (30, 46);
+            if (level == 44) return (29, 45);
+            if (level == 43) return (29, 44);
+            if (level == 42) return (28, 43);
+            if (level == 41) return (28, 42);
+            if (level == 40) return (27, 41);
+            if (level == 39) return (26, 40);
+            if (level == 38) return (25, 39);
+            if (level == 37) return (24, 38);
+            if (level == 36) return (23, 37);
+            if (level == 35) return (22, 36);
+            if (level == 34) return (22, 35);
+            if (level == 33) return (11, 34);
+            if (level == 32) return (21, 33);
+            if (level == 31) return (20, 32);
+            if (level == 30) return (20, 31);
+            if (level == 29) return (19, 31);
+            if (level == 28) return (18, 30);
+            if (level == 27) return (17, 29);
+            if (level == 26) return (17, 28);
+            if (level == 25) return (16, 27);
+            if (level == 24) return (16, 26);
+            if (level == 23) return (15, 24);
+            if (level == 22) return (15, 23);
+            if (level == 21) return (14, 22);
+            if (level == 20) return (14, 21);
+            if (level == 19) return (13, 20);
+            if (level == 18) return (13, 19);
+            if (level == 17) return (12, 18);
+            if (level == 16) return (12, 17);
+            if (level == 15) return (11, 16);
+            if (level == 14) return (11, 15);
+            if (level == 13) return (10, 14);
+            if (level == 12) return (10, 13);
+            if (level == 11) return (09, 12);
+            if (level == 10) return (09, 11);
+            if (level == 09) return (08, 10);
+            if (level == 08) return (07, 09);
+            if (level == 07) return (06, 08);
+            if (level == 06) return (05, 07);
+            if (level == 05) return (04, 06);
+            if (level == 04) return (03, 05);
+            if (level == 03) return (02, 03);
+            if (level == 02) return (01, 03);
+            else             return (01, 02);
+        }
         else if (equipment.ContainsKey("Two Handed"))
         {
             var twohanded = inventory.items.Find(x => x.name == equipment["Two Handed"]);

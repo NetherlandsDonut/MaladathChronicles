@@ -515,7 +515,7 @@ public class Buff
                 AddHeaderRegion(() =>
                 {
                     var damage = caster.WeaponDamage();
-                    AddLine("Burn for " + (int)(damage.Item1 * (caster.SpellPower() / 10.0 + 1) * 1.3) + " - " + (int)(damage.Item2 * (caster.SpellPower() / 10.0 + 1) * 1.3), Gray);
+                    AddLine("Burn for " + (int)(damage.Item1 * (caster.SpellPower() / 10.0 + 1) * 1.5) + " - " + (int)(damage.Item2 * (caster.SpellPower() / 10.0 + 1) * 1.5), Gray);
                     AddLine("damage every turn.", Gray);
                 });
                 AddHeaderRegion(() =>
@@ -529,7 +529,7 @@ public class Buff
             {
                 var caster = p ? Board.board.player : Board.board.enemy;
                 var target = p ? Board.board.enemy : Board.board.player;
-                target.Damage(caster.RollWeaponDamage() * (caster.SpellPower() / 10.0 + 1) * 1.3);
+                target.Damage(caster.RollWeaponDamage() * (caster.SpellPower() / 10.0 + 1) * 1.5);
                 SpawnShatter(2, 0.8, new Vector3(p ? 148 : -318, 122), "AbilityScorch");
                 PlaySound("AbilityScorchFlare");
                 animationTime += frameTime * 3;
@@ -542,7 +542,7 @@ public class Buff
             {
                 var caster = p ? board.player : board.enemy;
                 var target = p ? board.enemy : board.player;
-                target.Damage(caster.RollWeaponDamage() * (caster.SpellPower() / 10.0 + 1) * 1.3);
+                target.Damage(caster.RollWeaponDamage() * (caster.SpellPower() / 10.0 + 1) * 1.5);
             },
             (p, board) => () =>
             {
@@ -603,8 +603,9 @@ public class Buff
         },
         (p) => () =>
         {
+            var caster = p ? Board.board.player : Board.board.enemy;
             var target = p ? Board.board.enemy : Board.board.player;
-            target.health -= 4;
+            target.Damage(caster.RollWeaponDamage() * (caster.SpellPower() / 10.0 + 1) * 1.175);
             SpawnShatter(2, 0.8, new Vector3(p ? 148 : -318, 122), "AbilityVenomousBite");
             PlaySound("AbilityVenomousBiteFlare");
             animationTime += frameTime * 3;
@@ -615,8 +616,9 @@ public class Buff
         },
         (p, board) => () =>
         {
+            var caster = p ? board.player : board.enemy;
             var target = p ? board.enemy : board.player;
-            target.health -= 4;
+            target.Damage(caster.RollWeaponDamage() * (caster.SpellPower() / 10.0 + 1) * 1.175);
         },
         (p, board) => () =>
         {
@@ -638,8 +640,9 @@ public class Buff
         },
         (p) => () =>
         {
+            var caster = p ? Board.board.player : Board.board.enemy;
             var target = p ? Board.board.enemy : Board.board.player;
-            target.health -= 3;
+            target.Damage(caster.RollWeaponDamage() * (caster.SpellPower() / 10.0 + 1) * 1.35);
             SpawnShatter(2, 0.8, new Vector3(p ? 148 : -318, 122), "AbilityPutridBite");
             PlaySound("AbilityVenomousBiteFlare");
             animationTime += frameTime * 3;
@@ -650,8 +653,9 @@ public class Buff
         },
         (p, board) => () =>
         {
+            var caster = p ? board.player : board.enemy;
             var target = p ? board.enemy : board.player;
-            target.health -= 3;
+            target.Damage(caster.RollWeaponDamage() * (caster.SpellPower() / 10.0 + 1) * 1.35);
         },
         (p, board) => () =>
         {
@@ -673,8 +677,9 @@ public class Buff
         },
         (p) => () =>
         {
+            var caster = p ? Board.board.player : Board.board.enemy;
             var target = p ? Board.board.enemy : Board.board.player;
-            target.health -= 2;
+            target.Damage(caster.RollWeaponDamage() * (caster.SpellPower() / 10.0 + 1) * 0.8);
             SpawnShatter(2, 0.8, new Vector3(p ? 148 : -318, 122), "AbilityCorruption");
             PlaySound("AbilityCorruptionFlare");
             animationTime += frameTime * 3;
@@ -685,8 +690,46 @@ public class Buff
         },
         (p, board) => () =>
         {
+            var caster = p ? board.player : board.enemy;
             var target = p ? board.enemy : board.player;
-            target.health -= 2;
+            target.Damage(caster.RollWeaponDamage() * (caster.SpellPower() / 10.0 + 1) * 0.8);
+        },
+        (p, board) => () =>
+        {
+
+        }),
+        new Buff("Holy Fire", "None", new() { "Damage" }, false, "AbilityHolyFire",
+        (p) => () =>
+        {
+            AddHeaderRegion(() =>
+            {
+                AddLine("Target burns for 3 damage every turn.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+                AddLine("Each point in Frost Mastery adds 1% chance", Gray);
+                AddLine("to refund the cost of casting this spell.", Gray);
+            });
+        },
+        (p) => () =>
+        {
+            var caster = p ? Board.board.player : Board.board.enemy;
+            var target = p ? Board.board.enemy : Board.board.player;
+            target.Damage(caster.RollWeaponDamage() * (caster.SpellPower() / 10.0 + 1) * 1.0);
+            SpawnShatter(2, 0.8, new Vector3(p ? 148 : -318, 122), "AbilityHolyFire");
+            PlaySound("AbilityHolyFireFlare");
+            animationTime += frameTime * 3;
+        },
+        (p) => () =>
+        {
+
+        },
+        (p, board) => () =>
+        {
+            var caster = p ? board.player : board.enemy;
+            var target = p ? board.enemy : board.player;
+            target.Damage(caster.RollWeaponDamage() * (caster.SpellPower() / 10.0 + 1) * 1.0);
         },
         (p, board) => () =>
         {
@@ -708,8 +751,9 @@ public class Buff
         },
         (p) => () =>
         {
+            var caster = p ? Board.board.player : Board.board.enemy;
             var target = p ? Board.board.enemy : Board.board.player;
-            target.health -= 3;
+            target.Damage(caster.RollWeaponDamage() * (caster.SpellPower() / 10.0 + 1) * 0.9);
             SpawnShatter(2, 0.8, new Vector3(p ? 148 : -318, 122), "AbilityCurseOfAgony");
             PlaySound("AbilityCurseOfAgonyFlare");
             animationTime += frameTime * 3;
@@ -720,8 +764,9 @@ public class Buff
         },
         (p, board) => () =>
         {
-            var target = p ? board.enemy : board.player;
-            target.health -= 3;
+            var caster = p ? Board.board.player : Board.board.enemy;
+            var target = p ? Board.board.enemy : Board.board.player;
+            target.Damage(caster.RollWeaponDamage() * (caster.SpellPower() / 10.0 + 1) * 0.9);
         },
         (p, board) => () =>
         {
@@ -743,8 +788,9 @@ public class Buff
         },
         (p) => () =>
         {
+            var caster = p ? Board.board.player : Board.board.enemy;
             var target = p ? Board.board.enemy : Board.board.player;
-            target.health -= 3;
+            target.Damage(caster.RollWeaponDamage() * (caster.SpellPower() / 10.0 + 1) * 0.6);
             SpawnShatter(2, 0.8, new Vector3(p ? 148 : -318, 122), "AbilityShadowWordPain");
             PlaySound("AbilityShadowWordPainImpact");
             animationTime += frameTime * 3;
@@ -755,8 +801,9 @@ public class Buff
         },
         (p, board) => () =>
         {
+            var caster = p ? board.player : board.enemy;
             var target = p ? board.enemy : board.player;
-            target.health -= 3;
+            target.Damage(caster.RollWeaponDamage() * (caster.SpellPower() / 10.0 + 1) * 0.6);
         },
         (p, board) => () =>
         {

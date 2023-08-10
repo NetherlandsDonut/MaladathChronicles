@@ -38,7 +38,7 @@ public class SiteHostileArea
         if (random.Next(0, 100) < 1)
         {
             var rares = encounters.FindAll(x => x.Item2.rarity == "Rare");
-            rares = rares.FindAll(x => !currentSave.rareKilled.Contains(x.Item2.name));
+            rares = rares.FindAll(x => !currentSave.raresKilled.Contains(x.Item2.name));
             if (rares.Count > 0)
                 encounters = new() { rares[random.Next(0, rares.Count)] };
         }

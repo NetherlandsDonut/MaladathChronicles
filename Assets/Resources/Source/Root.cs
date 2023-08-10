@@ -19,6 +19,11 @@ public static class Root
     public static int shadowSystem = 1;
     public static int aiDepth = 5;
 
+    public static string creationFaction;
+    public static string creationGender;
+    public static string creationRace;
+    public static string creationClass;
+
     public static Cursor cursor;
     public static CursorRemote cursorEnemy;
     public static int inputLineMarker;
@@ -816,7 +821,7 @@ public static class Root
                 if (currentSave.player.CanPickTalent(spec, talent)) AddBigButtonOverlay("OtherGlowLearnable");
                 else
                 {
-                    CDesktop.LBWindow.LBRegionGroup.LBRegion.LBBigButton.GetComponent<SpriteRenderer>().material = Resources.Load<Material>("Shaders/Grayscale");
+                    SetBigButtonToGrayscale();
                     AddBigButtonOverlay("OtherGridBlurred");
                 }
             }
@@ -1195,6 +1200,13 @@ public static class Root
 
     #region SmallButtons
 
+    public static void SetSmallButtonToGrayscale()
+    {
+        var region = CDesktop.LBWindow.LBRegionGroup.LBRegion;
+        var button = region.LBSmallButton.gameObject;
+        button.GetComponent<SpriteRenderer>().material = Resources.Load<Material>("Shaders/Grayscale");
+    }
+
     public static void AddSmallButtonOverlay(string overlay, float time = 0, int sortingOrder = 1)
     {
         var region = CDesktop.LBWindow.LBRegionGroup.LBRegion;
@@ -1267,6 +1279,13 @@ public static class Root
     #endregion
 
     #region BigButtons
+
+    public static void SetBigButtonToGrayscale()
+    {
+        var region = CDesktop.LBWindow.LBRegionGroup.LBRegion;
+        var button = region.LBBigButton.gameObject;
+        button.GetComponent<SpriteRenderer>().material = Resources.Load<Material>("Shaders/Grayscale");
+    }
 
     public static GameObject AddBigButtonOverlay(string overlay, float time = 0, int sortingOrder = 1)
     {

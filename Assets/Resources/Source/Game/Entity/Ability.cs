@@ -261,7 +261,7 @@ public class Ability
         new Ability("Curse Of Agony", 4, new() { "Damage", "Overtime" }, new()
         {
             { "Shadow", 7 },
-            { "Fire", 3 }
+            { "Fire", 5 }
         },
         (p) =>
         {
@@ -329,7 +329,7 @@ public class Ability
             var target = p ? Board.board.enemy : Board.board.player;
             Board.board.actions.Add(() =>
             {
-                target.AddBuff("Venomous Bite", 10, SpawnShatterBuff(2, 0.8, new Vector3(p ? 148 : -318, 122), "AbilityVenomousBite", target));
+                target.AddBuff("Venomous Bite", 4, SpawnShatterBuff(2, 0.8, new Vector3(p ? 148 : -318, 122), "AbilityVenomousBite", target));
                 SpawnShatter(6, 0.7, new Vector3(p ? 148 : -318, 122), "AbilityVenomousBite", true, p ? "1000" : "1001");
                 SpawnShatter(6, 0.7, new Vector3(p ? 148 : -318, 122), "AbilityVenomousBite", true, p ? "1000" : "1001");
                 PlaySound("AbilityVenomousBiteImpact");
@@ -341,7 +341,7 @@ public class Ability
         (p, board) =>
         {
             var target = p ? board.enemy : board.player;
-            target.AddBuff("Venomous Bite", 10);
+            target.AddBuff("Venomous Bite", 4);
             if (p) board.playerFinishedMoving = true;
             else board.enemyFinishedMoving = true;
         }),
@@ -498,7 +498,7 @@ public class Ability
             var caster = p ? Board.board.player : Board.board.enemy;
             Board.board.actions.Add(() =>
             {
-                caster.AddBuff("Vanquished Tentacle of C'Thun", 6, SpawnShatterBuff(2, 0.8, new Vector3(!p ? 148 : -318, 122), "ItemTrinketQiraj5", caster));
+                caster.AddBuff("Vanquished Tentacle of C'Thun", 4, SpawnShatterBuff(2, 0.8, new Vector3(!p ? 148 : -318, 122), "ItemTrinketQiraj5", caster));
                 SpawnShatter(6, 0.7, new Vector3(!p ? 148 : -318, 122), "ItemTrinketQiraj5", true, !p ? "1000" : "1001");
                 SpawnShatter(6, 0.7, new Vector3(!p ? 148 : -318, 122), "ItemTrinketQiraj5", true, !p ? "1000" : "1001");
                 PlaySound("AbilityDemonSkinCast");
@@ -508,7 +508,7 @@ public class Ability
         (p, board) =>
         {
             var caster = p ? board.player : board.enemy;
-            caster.AddBuff("Vanquished Tentacle of C'Thun", 6);
+            caster.AddBuff("Vanquished Tentacle of C'Thun", 4);
         },  true),
         new Ability("Stoneform", 20, new() { "Defensive" }, new()
         {
@@ -755,7 +755,7 @@ public class Ability
         (p, board) =>
         {
             var target = p ? board.enemy : board.player;
-            target.AddBuff("Hammer Of Justice", 2);
+            target.AddBuff("Shadow Word: Pain", 5);
         }),
         new Ability("Putrid Bite", 2, new() { "Damage", "Overtime" }, new()
         {
@@ -830,7 +830,7 @@ public class Ability
             var target = p ? Board.board.enemy : Board.board.player;
             Board.board.actions.Add(() =>
             {
-                target.AddBuff("Corruption", 5, SpawnShatterBuff(2, 0.8, new Vector3(p ? 148 : -318, 122), "AbilityCorruption", target));
+                target.AddBuff("Corruption", 6, SpawnShatterBuff(2, 0.8, new Vector3(p ? 148 : -318, 122), "AbilityCorruption", target));
                 SpawnShatter(6, 0.7, new Vector3(p ? 148 : -318, 122), "AbilityCorruption", true, p ? "1000" : "1001");
                 SpawnShatter(6, 0.7, new Vector3(p ? 148 : -318, 122), "AbilityCorruption", true, p ? "1000" : "1001");
                 PlaySound("AbilityCorruptionImpact");
@@ -841,7 +841,7 @@ public class Ability
         (p, board) =>
         {
             var target = p ? board.enemy : board.player;
-            target.AddBuff("Corruption", 5);
+            target.AddBuff("Corruption", 6);
         }),
         new Ability("Summon Infernal", 0, new() { "Damage", "Overtime" }, new()
         {
@@ -1258,7 +1258,7 @@ public class Ability
             });
             Board.board.actions.Add(() =>
             {
-                target.health -= 8;
+                target.Damage(caster.RollWeaponDamage() * (caster.MeleeAttackPower() / 10.0 + 1) * 4.3);
                 SpawnShatter(2, 0.8, new Vector3(p ? 148 : -318, 122), "AbilityMuscleTear");
                 SpawnShatter(6, 0.7, new Vector3(p ? 148 : -318, 122), "AbilityMuscleTear", true, p ? "1000" : "1001");
                 SpawnShatter(6, 0.7, new Vector3(p ? 148 : -318, 122), "AbilityMuscleTear", true, p ? "1000" : "1001");
@@ -1270,10 +1270,105 @@ public class Ability
         },
         (p, board) =>
         {
+            var caster = p ? board.player : board.enemy;
             var target = p ? board.enemy : board.player;
-            target.health -= 8;
+            target.Damage(caster.RollWeaponDamage() * (caster.MeleeAttackPower() / 10.0 + 1) * 4.3);
             if (p) board.playerFinishedMoving = true;
             else board.enemyFinishedMoving = true;
+        }),
+        new Ability("Smite", 0, new() { "Damage" }, new()
+        {
+            { "Order", 4 }
+        },
+        (p) =>
+        {
+            var caster = p ? Board.board.player : Board.board.enemy;
+            AddHeaderRegion(() =>
+            {
+                var damage = caster.WeaponDamage();
+                AddLine("Target is instantly struck for " + (int)(damage.Item1 * (caster.SpellPower() / 10.0 + 1) * 2.9) + " - " + (int)(damage.Item2 * (caster.SpellPower() / 10.0 + 1) * 2.9) + " ", Gray);
+                AddLine("damage. This ability ends caster's turn.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+                AddLine(caster.Stats()["Frost Mastery"] + "% chance on cast to", Gray);
+                AddLine("refund cost of casting this spell.", Gray);
+            });
+        },
+        (p) =>
+        {
+            var caster = p ? Board.board.player : Board.board.enemy;
+            var target = p ? Board.board.enemy : Board.board.player;
+            Board.board.actions.Add(() =>
+            {
+                PlaySound("AbilitySmiteCast");
+                animationTime += frameTime * 2;
+            });
+            Board.board.actions.Add(() =>
+            {
+                target.Damage(caster.RollWeaponDamage() * (caster.SpellPower() / 10.0 + 1) * 2.9);
+                SpawnShatter(2, 0.8, new Vector3(p ? 148 : -318, 122), "AbilitySmite");
+                SpawnShatter(6, 0.7, new Vector3(p ? 148 : -318, 122), "AbilitySmite", true, p ? "1000" : "1001");
+                SpawnShatter(6, 0.7, new Vector3(p ? 148 : -318, 122), "AbilitySmite", true, p ? "1000" : "1001");
+                PlaySound("AbilitySmiteImpact");
+            });
+            if (p) Board.board.playerFinishedMoving = true;
+            else Board.board.enemyFinishedMoving = true;
+            CDesktop.LockScreen();
+        },
+        (p, board) =>
+        {
+            var caster = p ? board.player : board.enemy;
+            var target = p ? board.enemy : board.player;
+            target.Damage(caster.RollWeaponDamage() * (caster.SpellPower() / 10.0 + 1) * 2.9);
+            if (p) board.playerFinishedMoving = true;
+            else board.enemyFinishedMoving = true;
+        }),
+        new Ability("Holy Fire", 4, new() { "Damage", "Overtime" }, new()
+        {
+            { "Order", 4 },
+            { "Fire", 4 },
+        },
+        (p) =>
+        {
+            AddPaddingRegion(() =>
+            {
+                AddLine("Casting Frosbolt will channel a frosty", Gray);
+                AddLine("projectile at the target dealing damage.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Deals 8 damage times caster's intelligence.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+                AddLine("Each point in Frost Mastery adds 1% chance", Gray);
+                AddLine("to refund the cost of casting this spell.", Gray);
+            });
+        },
+        (p) =>
+        {
+            var caster = p ? Board.board.player : Board.board.enemy;
+            var target = p ? Board.board.enemy : Board.board.player;
+            Board.board.actions.Add(() =>
+            {
+                target.Damage(caster.RollWeaponDamage() * (caster.SpellPower() / 10.0 + 1) * 3.8);
+                target.AddBuff("Holy Fire", 2, SpawnShatterBuff(2, 0.8, new Vector3(p ? 148 : -318, 122), "AbilityHolyFire", target));
+                SpawnShatter(6, 0.7, new Vector3(p ? 148 : -318, 122), "AbilityHolyFire", true, p ? "1000" : "1001");
+                SpawnShatter(6, 0.7, new Vector3(p ? 148 : -318, 122), "AbilityHolyFire", true, p ? "1000" : "1001");
+                PlaySound("AbilityHolyFireImpact");
+                animationTime += frameTime * 2;
+            });
+            CDesktop.LockScreen();
+        },
+        (p, board) =>
+        {
+            var caster = p ? board.player : board.enemy;
+            var target = p ? board.enemy : board.player;
+            target.Damage(caster.RollWeaponDamage() * (caster.SpellPower() / 10.0 + 1) * 3.8);
+            target.AddBuff("Holy Fire", 2);
         }),
         new Ability("Frostbolt", 0, new() { "Damage" }, new()
         {
@@ -1360,7 +1455,7 @@ public class Ability
             });
             Board.board.actions.Add(() =>
             {
-                target.health -= 6;
+                target.Damage(caster.RollWeaponDamage() * (caster.SpellPower() / 10.0 + 1) * 4.9);
                 SpawnShatter(2, 0.8, new Vector3(p ? 148 : -318, 122), "AbilityIceLance");
                 SpawnShatter(6, 0.7, new Vector3(p ? 148 : -318, 122), "AbilityIceLance", true, p ? "1000" : "1001");
                 SpawnShatter(6, 0.7, new Vector3(p ? 148 : -318, 122), "AbilityIceLance", true, p ? "1000" : "1001");
@@ -1370,8 +1465,9 @@ public class Ability
         },
         (p, board) =>
         {
+            var caster = p ? board.player : board.enemy;
             var target = p ? board.enemy : board.player;
-            target.health -= 6;
+            target.Damage(caster.RollWeaponDamage() * (caster.SpellPower() / 10.0 + 1) * 4.9);
         }),
         new Ability("Freezing Nova", 1, new() { "Gathering" }, new()
         {

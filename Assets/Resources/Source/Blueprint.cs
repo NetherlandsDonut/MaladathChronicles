@@ -239,7 +239,7 @@ public class Blueprint
                         AddSmallButton(abilityObj.icon, (h) => { });
                         if (!abilityObj.EnoughResources(Board.board.player))
                         {
-                            CDesktop.LBWindow.LBRegionGroup.LBRegion.LBSmallButton.GetComponent<SpriteRenderer>().material = Resources.Load<Material>("Shaders/Grayscale");
+                            SetSmallButtonToGrayscale();
                             AddSmallButtonOverlay("OtherGridBlurred");
                         }
                         if (actionBar.cooldown > 0)
@@ -415,7 +415,7 @@ public class Blueprint
                         AddSmallButton(abilityObj.icon, (h) => { });
                         if (!abilityObj.EnoughResources(Board.board.enemy))
                         {
-                            CDesktop.LBWindow.LBRegionGroup.LBRegion.LBSmallButton.GetComponent<SpriteRenderer>().material = Resources.Load<Material>("Shaders/Grayscale");
+                            SetSmallButtonToGrayscale();
                             AddSmallButtonOverlay("OtherGridBlurred");
                         }
                         if (actionBar.cooldown > 0)
@@ -1015,12 +1015,96 @@ public class Blueprint
             });
         }),
         new("CharacterCreation", () => {
-            SetAnchor(Center);
+            SetAnchor(TopLeft);
             AddRegionGroup();
+            SetRegionGroupWidth(218);
             AddHeaderRegion(() =>
             {
-                foreach (var foo in Class.classes)
-                    AddBigButton("Class" + foo.name, (h) => { });
+                AddLine("Faction: " + creationFaction);
+                AddSmallButton("ActionReroll", (h) =>
+                {
+                    creationFaction = random.Next(2) == 1 ? "Horde" : "Alliance";
+                    creationRace = null;
+                    creationClass = null;
+                });
+            });
+            AddHeaderRegion(() =>
+            {
+                AddBigButton("HonorAlliance", (h) => { creationFaction = "Alliance"; creationRace = null; creationClass = null; });
+                if (creationFaction != "Alliance") { AddBigButtonOverlay("OtherGridBlurred"); SetBigButtonToGrayscale(); }
+                AddBigButton("HonorHorde", (h) => { creationFaction = "Horde"; creationRace = null; creationClass = null; });
+                if (creationFaction != "Horde") { AddBigButtonOverlay("OtherGridBlurred"); SetBigButtonToGrayscale(); }
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Gender: " + creationGender);
+                AddSmallButton("ActionReroll", (h) =>
+                {
+                    creationGender = random.Next(2) == 1 ? "Female" : "Male";
+                });
+            });
+            AddHeaderRegion(() =>
+            {
+                if (creationFaction == null) return;
+                AddBigButton("OtherGenderMale", (h) => { creationGender = "Male"; });
+                if (creationGender != "Male") { AddBigButtonOverlay("OtherGridBlurred"); SetBigButtonToGrayscale(); }
+                AddBigButton("OtherGenderFemale", (h) => { creationGender = "Female"; });
+                if (creationGender != "Female") { AddBigButtonOverlay("OtherGridBlurred"); SetBigButtonToGrayscale(); }
+            });
+            AddHeaderRegion(() =>
+            {
+                var races = Race.races.FindAll(x => x.faction == creationFaction);
+                AddLine("Race: " + creationRace);
+                AddSmallButton("ActionReroll", (h) =>
+                {
+                    creationRace = races[random.Next(races.Count)].name;
+                    creationClass = null;
+                });
+            });
+            AddHeaderRegion(() =>
+            {
+                if (creationGender == null) return;
+                if (creationFaction == "Alliance")
+                {
+                    AddBigButton("PortraitDwarf" + creationGender, (h) => { creationRace = "Dwarf"; creationClass = null; });
+                    if (creationRace != "Dwarf") { AddBigButtonOverlay("OtherGridBlurred"); SetBigButtonToGrayscale(); }
+                    AddBigButton("PortraitGnome" + creationGender, (h) => { creationRace = "Gnome"; creationClass = null; });
+                    if (creationRace != "Gnome") { AddBigButtonOverlay("OtherGridBlurred"); SetBigButtonToGrayscale(); }
+                    AddBigButton("PortraitHuman" + creationGender, (h) => { creationRace = "Human"; creationClass = null; });
+                    if (creationRace != "Human") { AddBigButtonOverlay("OtherGridBlurred"); SetBigButtonToGrayscale(); }
+                    AddBigButton("PortraitNightElf" + creationGender, (h) => { creationRace = "Night Elf"; creationClass = null; });
+                    if (creationRace != "Night Elf") { AddBigButtonOverlay("OtherGridBlurred"); SetBigButtonToGrayscale(); }
+                }
+                else if (creationFaction == "Horde")
+                {
+                    AddBigButton("PortraitOrc" + creationGender, (h) => { creationRace = "Orc"; creationClass = null; });
+                    if (creationRace != "Orc") { AddBigButtonOverlay("OtherGridBlurred"); SetBigButtonToGrayscale(); }
+                    AddBigButton("PortraitTauren" + creationGender, (h) => { creationRace = "Tauren"; creationClass = null; });
+                    if (creationRace != "Tauren") { AddBigButtonOverlay("OtherGridBlurred"); SetBigButtonToGrayscale(); }
+                    AddBigButton("PortraitTroll" + creationGender, (h) => { creationRace = "Troll"; creationClass = null; });
+                    if (creationRace != "Troll") { AddBigButtonOverlay("OtherGridBlurred"); SetBigButtonToGrayscale(); }
+                    AddBigButton("PortraitForsaken" + creationGender, (h) => { creationRace = "Forsaken"; creationClass = null; });
+                    if (creationRace != "Forsaken") { AddBigButtonOverlay("OtherGridBlurred"); SetBigButtonToGrayscale(); }
+                }
+            });
+            AddHeaderRegion(() =>
+            {
+                var classes = Class.classes.FindAll(x => x.possibleRaces.Contains(creationRace));
+                AddLine("Class: " + creationClass);
+                AddSmallButton("ActionReroll", (h) =>
+                {
+                    creationClass = classes[random.Next(classes.Count)].name;
+                });
+            });
+            AddHeaderRegion(() =>
+            {
+                var classes = Class.classes.FindAll(x => x.possibleRaces.Contains(creationRace));
+                if (creationRace != null)
+                    foreach (var foo in classes)
+                    {
+                        AddBigButton("Class" + foo.name, (h) => { creationClass = foo.name; });
+                        if (creationClass != foo.name) { AddBigButtonOverlay("OtherGridBlurred"); SetBigButtonToGrayscale(); }
+                    }
             });
         }),
         new("CharacterBaseStats", () => {

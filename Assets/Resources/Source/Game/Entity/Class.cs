@@ -28,7 +28,7 @@ public class Class
                 "Night Elf",
                 "Orc",
                 "Troll",
-                "Undead"
+                "Forsaken"
             },
             new Dictionary<string, double>
             {
@@ -41,9 +41,9 @@ public class Class
                 { "Spell Power per Intellect", 1 },
                 { "Spell Critical per Intellect", 0.03 },
                 { "Stamina per Level", 3 },
-                { "Strength per level", 2 },
-                { "Agility per level", 4 },
-                { "Intellect per level", 0 },
+                { "Strength per Level", 2 },
+                { "Agility per Level", 4 },
+                { "Intellect per Level", 0 },
             },
             new List<(string, int)>
             {
@@ -88,9 +88,9 @@ public class Class
                 { "Spell Power per Intellect", 1 },
                 { "Spell Critical per Intellect", 0.03 },
                 { "Stamina per Level", 3 },
-                { "Strength per level", 2 },
-                { "Agility per level", 4 },
-                { "Intellect per level", 0 },
+                { "Strength per Level", 2 },
+                { "Agility per Level", 4 },
+                { "Intellect per Level", 0 },
             },
             new List<(string, int)>
             {
@@ -133,9 +133,9 @@ public class Class
                 { "Spell Power per Intellect", 2 },
                 { "Spell Critical per Intellect", 0.03 },
                 { "Stamina per Level", 3 },
-                { "Strength per level", 2 },
-                { "Agility per level", 2 },
-                { "Intellect per level", 2 },
+                { "Strength per Level", 2 },
+                { "Agility per Level", 2 },
+                { "Intellect per Level", 2 },
             },
             new List<(string, int)>
             {
@@ -165,7 +165,7 @@ public class Class
                 "Orc",
                 "Tauren",
                 "Troll",
-                "Undead"
+                "Forsaken"
             },
             new Dictionary<string, double>
             {
@@ -178,9 +178,9 @@ public class Class
                 { "Spell Power per Intellect", 1 },
                 { "Spell Critical per Intellect", 0.03 },
                 { "Stamina per Level", 3 },
-                { "Strength per level", 4 },
-                { "Agility per level", 2 },
-                { "Intellect per level", 0 },
+                { "Strength per Level", 4 },
+                { "Agility per Level", 2 },
+                { "Intellect per Level", 0 },
             },
             new List<(string, int)>
             {
@@ -266,9 +266,9 @@ public class Class
                 { "Spell Power per Intellect", 2 },
                 { "Spell Critical per Intellect", 0.03 },
                 { "Stamina per Level", 3 },
-                { "Strength per level", 3 },
-                { "Agility per level", 1 },
-                { "Intellect per level", 2 },
+                { "Strength per Level", 3 },
+                { "Agility per Level", 1 },
+                { "Intellect per Level", 2 },
             },
             new List<(string, int)>
             {
@@ -309,9 +309,9 @@ public class Class
                 { "Spell Power per Intellect", 2 },
                 { "Spell Critical per Intellect", 0.03 },
                 { "Stamina per Level", 3 },
-                { "Strength per level", 2 },
-                { "Agility per level", 2 },
-                { "Intellect per level", 2 },
+                { "Strength per Level", 2 },
+                { "Agility per Level", 2 },
+                { "Intellect per Level", 2 },
             },
             new List<(string, int)>
             {
@@ -339,7 +339,7 @@ public class Class
                 "Human",
                 "Night Elf",
                 "Troll",
-                "Undead"
+                "Forsaken"
             },
             new Dictionary<string, double>
             {
@@ -352,9 +352,9 @@ public class Class
                 { "Spell Power per Intellect", 3 },
                 { "Spell Critical per Intellect", 0.03 },
                 { "Stamina per Level", 3 },
-                { "Strength per level", 1 },
-                { "Agility per level", 1 },
-                { "Intellect per level", 4 },
+                { "Strength per Level", 1 },
+                { "Agility per Level", 1 },
+                { "Intellect per Level", 4 },
             },
             new List<(string, int)>
             {
@@ -373,6 +373,7 @@ public class Class
                     new Talent(00, 2, "Lesser Heal"),
                     new Talent(01, 2, "Heal", true),
                     new Talent(01, 0, "Spell Warding"),
+                    new Talent(02, 0, "Holy Fire"),
                     new Talent(02, 1, "Spiritual Guidance"),
                     new Talent(02, 2, "Blessed Recovery", true),
                     new Talent(03, 0, "Renew"),
@@ -420,7 +421,7 @@ public class Class
                 "Gnome",
                 "Human",
                 "Orc",
-                "Undead"
+                "Forsaken"
             },
             new Dictionary<string, double>
             {
@@ -433,9 +434,9 @@ public class Class
                 { "Spell Power per Intellect", 3 },
                 { "Spell Critical per Intellect", 0.03 },
                 { "Stamina per Level", 3 },
-                { "Strength per level", 1 },
-                { "Agility per level", 1 },
-                { "Intellect per level", 4 },
+                { "Strength per Level", 1 },
+                { "Agility per Level", 1 },
+                { "Intellect per Level", 4 },
             },
             new List<(string, int)>
             {
@@ -498,7 +499,7 @@ public class Class
                 "Gnome",
                 "Human",
                 "Troll",
-                "Undead"
+                "Forsaken"
             },
             new Dictionary<string, double>
             {
