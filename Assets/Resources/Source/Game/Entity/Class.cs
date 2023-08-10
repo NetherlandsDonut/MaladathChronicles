@@ -2,15 +2,17 @@ using System.Collections.Generic;
 
 public class Class
 {
-    public Class(string name, Dictionary<string, double> rules, List<(string, int)> abilities, List<TalentTree> talentTrees)
+    public Class(string name, List<string> possibleRaces, Dictionary<string, double> rules, List<(string, int)> abilities, List<TalentTree> talentTrees)
     {
         this.name = name;
+        this.possibleRaces = possibleRaces;
         this.rules = rules;
         this.abilities = abilities;
         this.talentTrees = talentTrees;
     }
 
     public string name;
+    public List<string> possibleRaces;
     public Dictionary<string, double> rules;
     public List<(string, int)> abilities;
     public List<TalentTree> talentTrees;
@@ -18,6 +20,16 @@ public class Class
     public static List<Class> classes = new()
     {
         new Class("Rogue",
+            new List<string>
+            {
+                "Dwarf",
+                "Gnome",
+                "Human",
+                "Night Elf",
+                "Orc",
+                "Troll",
+                "Undead"
+            },
             new Dictionary<string, double>
             {
                 { "Melee Attack Power per Strength", 2 },
@@ -57,6 +69,14 @@ public class Class
             }
         ),
         new Class("Hunter",
+            new List<string>
+            {
+                "Dwarf",
+                "Night Elf",
+                "Orc",
+                "Tauren",
+                "Troll"
+            },
             new Dictionary<string, double>
             {
                 { "Melee Attack Power per Strength", 2 },
@@ -96,6 +116,12 @@ public class Class
             }
         ),
         new Class("Shaman",
+            new List<string>
+            {
+                "Orc",
+                "Tauren",
+                "Troll"
+            },
             new Dictionary<string, double>
             {
                 { "Melee Attack Power per Strength", 2 },
@@ -130,6 +156,17 @@ public class Class
             }
         ),
         new Class("Warrior",
+            new List<string>
+            {
+                "Dwarf",
+                "Gnome",
+                "Human",
+                "Night Elf",
+                "Orc",
+                "Tauren",
+                "Troll",
+                "Undead"
+            },
             new Dictionary<string, double>
             {
                 { "Melee Attack Power per Strength", 3 },
@@ -213,6 +250,11 @@ public class Class
             }
         ),
         new Class("Paladin",
+            new List<string>
+            {
+                "Dwarf",
+                "Human"
+            },
             new Dictionary<string, double>
             {
                 { "Melee Attack Power per Strength", 2 },
@@ -251,6 +293,11 @@ public class Class
             }
         ),
         new Class("Druid",
+            new List<string>
+            {
+                "Night Elf",
+                "Tauren"
+            },
             new Dictionary<string, double>
             {
                 { "Melee Attack Power per Strength", 2 },
@@ -286,6 +333,14 @@ public class Class
             }
         ),
         new Class("Priest",
+            new List<string>
+            {
+                "Dwarf",
+                "Human",
+                "Night Elf",
+                "Troll",
+                "Undead"
+            },
             new Dictionary<string, double>
             {
                 { "Melee Attack Power per Strength", 1 },
@@ -360,6 +415,13 @@ public class Class
             }
         ),
         new Class("Warlock",
+            new List<string>
+            {
+                "Gnome",
+                "Human",
+                "Orc",
+                "Undead"
+            },
             new Dictionary<string, double>
             {
                 { "Melee Attack Power per Strength", 1 },
@@ -431,6 +493,13 @@ public class Class
             }
         ),
         new Class("Mage",
+            new List<string>
+            {
+                "Gnome",
+                "Human",
+                "Troll",
+                "Undead"
+            },
             new Dictionary<string, double>
             {
                 { "Melee Attack Power per Strength", 1 },

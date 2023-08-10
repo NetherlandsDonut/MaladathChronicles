@@ -1014,6 +1014,15 @@ public class Blueprint
                 AddLine(currentSave.player.SpellCritical().ToString("0.00") + "%", Gray);
             });
         }),
+        new("CharacterCreation", () => {
+            SetAnchor(Center);
+            AddRegionGroup();
+            AddHeaderRegion(() =>
+            {
+                foreach (var foo in Class.classes)
+                    AddBigButton("Class" + foo.name, (h) => { });
+            });
+        }),
         new("CharacterBaseStats", () => {
             SetAnchor(BottomLeft);
             AddRegionGroup();
@@ -1482,6 +1491,7 @@ public class Blueprint
         new("TitleScreen", () =>
         {
             SpawnWindowBlueprint("TitleScreenMenu");
+            SpawnWindowBlueprint("CharacterCreation");
         }),
     };
 }
