@@ -9,7 +9,6 @@ public class Entity
 {
     public Entity(string name, Race race, Class spec, List<string> items)
     {
-        ResetResources();
         level = 2;
         this.name = name;
         unspentTalentPoints = 20;
@@ -33,13 +32,11 @@ public class Entity
 
     public Entity(int level, Race race)
     {
-        ResetResources();
         this.level = level;
         this.race = name = race.name;
         abilities = race.abilities.Select(x => x).Distinct().ToList();
         actionBarsUnlocked = 7;
         actionBars = Ability.abilities.FindAll(x => abilities.Contains(x.name) && x.cost != null).OrderBy(x => x.cost.Sum(y => y.Value)).OrderBy(x => x.putOnEnd).Select(x => new ActionBar(x.name)).ToList();
-        var importance = ElementImportance(race.rarity == "Common");
         stats = new Stats(
             new()
             {
@@ -47,6 +44,7 @@ public class Entity
                 { "Strength", 3 * this.level },
                 { "Agility", 3 * this.level },
                 { "Intellect", 3 * this.level },
+                { "Spirit", 0 },
 
                 { "Earth Mastery", 10 },
                 { "Fire Mastery", 10 },
@@ -61,6 +59,7 @@ public class Entity
             }
         );
         Initialise();
+        var importance = ElementImportance(race.rarity == "Common");
     }
 
     public Dictionary<string, double> ElementImportance(bool randomised)
@@ -96,18 +95,19 @@ public class Entity
 
     public void ResetResources()
     {
+        var stats = Stats();
         resources = new()
         {
-            { "Earth", 0 },
-            { "Fire", 0 },
-            { "Air", 0 },
-            { "Water", 0 },
-            { "Frost", 0 },
-            { "Lightning", 0 },
-            { "Arcane", 0 },
-            { "Decay", 0 },
-            { "Order", 0 },
-            { "Shadow", 0 },
+            { "Earth", stats["Earth Mastery"] * stats["Spirit"] * stats["Spirit"] / 512 },
+            { "Fire", stats["Fire Mastery"] * stats["Spirit"] * stats["Spirit"] / 512 },
+            { "Air", stats["Air Mastery"] * stats["Spirit"] * stats["Spirit"] / 512 },
+            { "Water", stats["Water Mastery"] * stats["Spirit"] * stats["Spirit"] / 512 },
+            { "Frost", stats["Frost Mastery"] * stats["Spirit"] * stats["Spirit"] / 512 },
+            { "Lightning", stats["Lightning Mastery"] * stats["Spirit"] * stats["Spirit"] / 512 },
+            { "Arcane", stats["Arcane Mastery"] * stats["Spirit"] * stats["Spirit"] / 512 },
+            { "Decay", stats["Decay Mastery"] * stats["Spirit"] * stats["Spirit"] / 512 },
+            { "Order", stats["Order Mastery"] * stats["Spirit"] * stats["Spirit"] / 512 },
+            { "Shadow", stats["Shadow Mastery"] * stats["Spirit"] * stats["Spirit"] / 512 },
         };
     }
 
