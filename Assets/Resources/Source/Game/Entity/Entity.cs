@@ -19,6 +19,13 @@ public class Entity
         actionBarsUnlocked = 7;
         stats = new Stats(race.stats.stats.ToDictionary(x => x.Key, x => x.Value));
         inventory = new Inventory(items);
+        for (int i = 0; i < 10; i++)
+        {
+            Item item;
+            do item = Item.items[random.Next(Item.items.Count)];
+            while (item.type == null);
+            inventory.items.Add(item);
+        }
         equipment = new Dictionary<string, string>();
         AutoEquip();
         Initialise();
