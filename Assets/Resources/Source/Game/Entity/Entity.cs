@@ -9,7 +9,7 @@ public class Entity
 {
     public Entity(string name, Race race, Class spec, List<string> items)
     {
-        level = 2;
+        level = 60;
         this.name = name;
         unspentTalentPoints = 20;
         this.race = race.name;
@@ -18,11 +18,11 @@ public class Entity
         actionBarsUnlocked = 7;
         stats = new Stats(race.stats.stats.ToDictionary(x => x.Key, x => x.Value));
         inventory = new Inventory(items);
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < 36; i++)
         {
             Item item;
             do item = Item.items[random.Next(Item.items.Count)];
-            while (item.type == null);
+            while (!item.CanEquip(this) || item.lvl - level < -5 || item.lvl > level);
             inventory.items.Add(item);
         }
         equipment = new Dictionary<string, string>();
@@ -98,16 +98,16 @@ public class Entity
         var stats = Stats();
         resources = new()
         {
-            { "Earth", stats["Earth Mastery"] * stats["Spirit"] * stats["Spirit"] / 512 },
-            { "Fire", stats["Fire Mastery"] * stats["Spirit"] * stats["Spirit"] / 512 },
-            { "Air", stats["Air Mastery"] * stats["Spirit"] * stats["Spirit"] / 512 },
-            { "Water", stats["Water Mastery"] * stats["Spirit"] * stats["Spirit"] / 512 },
-            { "Frost", stats["Frost Mastery"] * stats["Spirit"] * stats["Spirit"] / 512 },
-            { "Lightning", stats["Lightning Mastery"] * stats["Spirit"] * stats["Spirit"] / 512 },
-            { "Arcane", stats["Arcane Mastery"] * stats["Spirit"] * stats["Spirit"] / 512 },
-            { "Decay", stats["Decay Mastery"] * stats["Spirit"] * stats["Spirit"] / 512 },
-            { "Order", stats["Order Mastery"] * stats["Spirit"] * stats["Spirit"] / 512 },
-            { "Shadow", stats["Shadow Mastery"] * stats["Spirit"] * stats["Spirit"] / 512 },
+            { "Earth", stats["Earth Mastery"] * stats["Spirit"] * stats["Spirit"] / 2048 },
+            { "Fire", stats["Fire Mastery"] * stats["Spirit"] * stats["Spirit"] / 2048 },
+            { "Air", stats["Air Mastery"] * stats["Spirit"] * stats["Spirit"] / 2048 },
+            { "Water", stats["Water Mastery"] * stats["Spirit"] * stats["Spirit"] / 2048 },
+            { "Frost", stats["Frost Mastery"] * stats["Spirit"] * stats["Spirit"] / 2048 },
+            { "Lightning", stats["Lightning Mastery"] * stats["Spirit"] * stats["Spirit"] / 2048 },
+            { "Arcane", stats["Arcane Mastery"] * stats["Spirit"] * stats["Spirit"] / 2048 },
+            { "Decay", stats["Decay Mastery"] * stats["Spirit"] * stats["Spirit"] / 2048 },
+            { "Order", stats["Order Mastery"] * stats["Spirit"] * stats["Spirit"] / 2048 },
+            { "Shadow", stats["Shadow Mastery"] * stats["Spirit"] * stats["Spirit"] / 2048 },
         };
     }
 
@@ -138,7 +138,8 @@ public class Entity
     public void AutoEquip()
     {
         foreach (var item in inventory.items)
-            item.Equip(this);
+            if (item.CanEquip(this))
+                item.Equip(this);
     }
 
     public void Unequip(List<string> slots = null)

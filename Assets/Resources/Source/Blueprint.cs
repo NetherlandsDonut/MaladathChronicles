@@ -269,8 +269,6 @@ public class Blueprint
                         AddPaddingRegion(() =>
                         {
                             AddBigButton(abilityObj.icon, (h) => { });
-                            //AddLine("Required level: ", DarkGray);
-                            //AddText(Board.board.player.GetClass().abilities.Find(x => x.Item1 == actionBar.ability).Item2 + "", Gray);
                             AddLine("Cooldown: ", DarkGray);
                             AddText(abilityObj.cooldown == 0 ? "None" : abilityObj.cooldown + (abilityObj.cooldown == 1 ? " turn"  : " turns"), Gray);
                             if (actionBar.cooldown > 0)
@@ -438,8 +436,6 @@ public class Blueprint
                         AddPaddingRegion(() =>
                         {
                             AddBigButton(abilityObj.icon, (h) => { });
-                            //AddLine("Required level: ", DarkGray);
-                            //AddText(Board.board.enemy.spec.abilities.Find(x => x.Item1 == ability).Item2 + "", Gray);
                             AddLine("Cooldown: ", DarkGray);
                             AddText(abilityObj.cooldown == 0 ? "None" : abilityObj.cooldown + (abilityObj.cooldown == 1 ? " turn"  : " turns"), Gray);
                         });

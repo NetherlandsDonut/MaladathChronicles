@@ -4,7 +4,6 @@ using System.Collections.Generic;
 
 using static Root;
 using static Root.Color;
-using static UnityEditor.Progress;
 
 public class Starter : MonoBehaviour
 {

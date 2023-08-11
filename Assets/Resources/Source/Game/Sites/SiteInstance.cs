@@ -30,6 +30,21 @@ public class SiteInstance
 
     public static List<SiteInstance> dungeons = new()
     {
+        new SiteInstance("Gnomeregan", new()
+        {
+
+        },
+        new()
+        {
+            new InstanceWing("Gnomeregan", new()
+            {
+                ("None", "Trogg Caves"),
+                ("None", "Hall of Gears"),
+                ("Boss", "Launch Bay"),
+                ("Boss", "Engineering Labs"),
+                ("Boss", "Tinkers' Court")
+            })
+        }),
         new SiteInstance("Scholomance", new()
         {
 

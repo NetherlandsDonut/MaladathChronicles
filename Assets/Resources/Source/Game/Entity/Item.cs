@@ -1,118 +1,11 @@
-using System.Collections.Generic;
 using System.Linq;
+using System.Collections.Generic;
 
 public class Item
 {
-    public Item() { }
-
-    //Lootbox
-    public Item(string rarity, string name, string icon, string type, List<string> possibleItems, List<string> alternateItems)
-    {
-        this.rarity = rarity;
-        this.name = name;
-        this.icon = icon;
-        this.type = type;
-        this.possibleItems = possibleItems;
-        this.alternateItems = alternateItems;
-    }
-
-    //Armour
-    public Item(int ilvl, int lvl, string rarity, double price, string name, string icon, string type, string armorClass, int armor, Stats stats = null, List<string> abilities = null)
-    {
-        this.ilvl = ilvl;
-        this.lvl = lvl;
-        this.rarity = rarity;
-        this.price = price;
-        this.name = name;
-        this.icon = icon;
-        this.type = type;
-        this.armorClass = armorClass;
-        this.armor = armor;
-        this.stats = stats;
-        this.abilities = abilities;
-    }
-
-    //Shields
-    public Item(int ilvl, int lvl, string rarity, double price, string name, string icon, string type, int armor, int block, Stats stats = null, List<string> abilities = null)
-    {
-        this.ilvl = ilvl;
-        this.lvl = lvl;
-        this.rarity = rarity;
-        this.price = price;
-        this.name = name;
-        this.icon = icon;
-        this.type = type;
-        this.armor = armor;
-        this.block = block;
-        this.stats = stats;
-        this.abilities = abilities;
-    }
-
-    //Jewelry, Relics, Quivers, Pouches and Totems
-    public Item(int ilvl, int lvl, string rarity, double price, string name, string icon, string type, Stats stats = null, List<string> abilities = null)
-    {
-        this.ilvl = ilvl;
-        this.lvl = lvl;
-        this.rarity = rarity;
-        this.price = price;
-        this.name = name;
-        this.icon = icon;
-        this.type = type;
-        this.stats = stats;
-        this.abilities = abilities;
-    }
-
-    //Capes
-    public Item(int ilvl, int lvl, string rarity, double price, string name, string icon, string type, int armor, Stats stats = null, List<string> abilities = null)
-    {
-        this.ilvl = ilvl;
-        this.lvl = lvl;
-        this.rarity = rarity;
-        this.price = price;
-        this.name = name;
-        this.icon = icon;
-        this.type = type;
-        this.armor = armor;
-        this.stats = stats;
-        this.abilities = abilities;
-    }
-
-    //OffHands
-    public Item(int ilvl, int lvl, string rarity, double price, string name, string icon, string type, string detailedType, Stats stats = null, List<string> abilities = null)
-    {
-        this.ilvl = ilvl;
-        this.lvl = lvl;
-        this.rarity = rarity;
-        this.price = price;
-        this.name = name;
-        this.icon = icon;
-        this.type = type;
-        this.detailedType = detailedType;
-        this.stats = stats;
-        this.abilities = abilities;
-    }
-
-    //Weapons
-    public Item(int ilvl, int lvl, string rarity, double price, string name, string icon, string type, string detailedType, int minDamage, int maxDamage, double speed, Stats stats = null, List<string> abilities = null)
-    {
-        this.ilvl = ilvl;
-        this.lvl = lvl;
-        this.rarity = rarity;
-        this.price = price;
-        this.name = name;
-        this.icon = icon;
-        this.type = type;
-        this.detailedType = detailedType;
-        this.minDamage = minDamage;
-        this.maxDamage = maxDamage;
-        this.speed = speed;
-        this.stats = stats;
-        this.abilities = abilities;
-    }
-
     public string rarity, name, icon, detailedType, type, armorClass;
     public int ilvl, lvl, minDamage, maxDamage, armor, block;
-    public List<string> possibleItems, alternateItems, abilities;
+    public List<string> possibleItems, alternateItems, abilities, classes;
     public double price, speed;
     public Stats stats;
 
@@ -125,11 +18,67 @@ public class Item
         { "Epic", Root.Color.Epic },
         { "Legendary", Root.Color.Legendary },
     };
-    
+
     public bool CanEquip(Entity entity)
     {
+        if (type == "Miscellaneous")
+            return false;
+        if (classes != null && !classes.Contains(entity.spec))
+            return false;
         if (armorClass != null)
             return entity.abilities.Contains(armorClass + " Proficiency");
+        else if (type == "Pouch")
+            return entity.abilities.Contains("Pouch Proficiency");
+        else if (type == "Quiver")
+            return entity.abilities.Contains("Quiver Proficiency");
+        else if (type == "Libram")
+            return entity.abilities.Contains("Libram Proficiency");
+        else if (type == "Totem")
+            return entity.abilities.Contains("Totem Proficiency");
+        else if (type == "Idol")
+            return entity.abilities.Contains("Idol Proficiency");
+        else if (type == "Shield")
+            return entity.abilities.Contains("Shield Proficiency");
+        else if (type == "Two Handed")
+        {
+            if (detailedType == "Sword")
+                return entity.abilities.Contains("Two Handed Sword Proficiency");
+            else if (detailedType == "Axe")
+                return entity.abilities.Contains("Two Handed Axe Proficiency");
+            else if (detailedType == "Mace")
+                return entity.abilities.Contains("Two Handed Mace Proficiency");
+            else if (detailedType == "Polearm")
+                return entity.abilities.Contains("Polearm Proficiency");
+            else if (detailedType == "Staff")
+                return entity.abilities.Contains("Staff Proficiency");
+            else if (detailedType == "Bow")
+                return entity.abilities.Contains("Bow");
+            else if (detailedType == "Crossbow")
+                return entity.abilities.Contains("Crossbow");
+            else if (detailedType == "Gun")
+                return entity.abilities.Contains("Gun");
+            else
+                return true;
+        }
+        else if (detailedType == "Off Hand")
+            return entity.abilities.Contains("Off Hand Proficiency");
+        else if (type == "One Handed")
+        {
+            if (detailedType == "Dagger")
+                return entity.abilities.Contains("Dagger Proficiency");
+            else if (detailedType == "Sword")
+                return entity.abilities.Contains("One Handed Sword Proficiency");
+            else if (detailedType == "Axe")
+                return entity.abilities.Contains("One Handed Axe Proficiency");
+            else if (detailedType == "Mace")
+                return entity.abilities.Contains("One Handed Mace Proficiency");
+            else if (detailedType == "Wand")
+                return entity.abilities.Contains("Wand Proficiency");
+            else if (detailedType == "Fist Weapon")
+                return entity.abilities.Contains("Fist Weapon Proficiency");
+            else
+                return true;
+        }
         else
             return true;
     }
@@ -175,6 +124,7 @@ public class Item
         }
         else
         {
+            if (type == null) UnityEngine.Debug.Log(name);
             entity.Unequip(new() { type });
             Equip(entity, type);
         }

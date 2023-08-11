@@ -248,6 +248,17 @@ public static class Root
                         foreach (var stat in item.stats.stats)
                             AddLine("+" + stat.Value + " " + stat.Key, Gray);
                     });
+                if (item.classes != null)
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Classes: ", DarkGray);
+                        foreach (var spec in item.classes)
+                        {
+                            AddText(spec, ClassColored(spec));
+                            if (spec != item.classes.Last())
+                                AddText(", ", DarkGray);
+                        }
+                    });
                 AddHeaderRegion(() =>
                 {
                     AddLine("Required level: ", DarkGray);
@@ -713,6 +724,20 @@ public static class Root
     }
 
     public static bool WillGetExperience(int level) => currentSave.player.level - 5 <= level;
+
+    public static Color ClassColored(string spec)
+    {
+        if (spec == "Paladin") return Paladin;
+        else if (spec == "Warrior") return Warrior;
+        else if (spec == "Rogue") return Rogue;
+        else if (spec == "Priest") return Priest;
+        else if (spec == "Mage") return Mage;
+        else if (spec == "Druid") return Druid;
+        else if (spec == "Warlock") return Warlock;
+        else if (spec == "Hunter") return Hunter;
+        else if (spec == "Shaman") return Shaman;
+        else return Gray;
+    }
 
     public static Color ItemColoredLevel(int level)
     {

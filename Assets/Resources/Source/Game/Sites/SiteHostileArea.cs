@@ -425,6 +425,58 @@ public class SiteHostileArea
         }),
 
         #endregion
+        
+        #region Gnomeregan
+
+        new SiteHostileArea("Trogg Caves", new()
+        {
+            ("27-28", "Caverndeep Burrower"),
+            ("28-29", "Irradiated Pillager"),
+            ("28-29", "Caverndeep Ambusher")
+        },
+        new()
+        {
+            (3, "30", "Grubbis"),
+        }),
+        new SiteHostileArea("Hall of Gears", new()
+        {
+            ("29-30", "Corrosive Lurker"),
+            ("29-30", "Irradiated Slime"),
+            ("29-31", "Irradiated Horror")
+        },
+        new()
+        {
+            (3, "31", "Viscous Fallout"),
+        }),
+        new SiteHostileArea("Launch Bay", new()
+        {
+            ("30-31", "Leprous Technician"),
+            ("31-32", "Mobile Alert System"),
+            ("31-32", "Mechanized Sentry")
+        },
+        new()
+        {
+            (3, "32", "Electrocutioner 6000"),
+        }),
+        new SiteHostileArea("Engineering Labs", new()
+        {
+            ("32-33", "Mechano Tank"),
+            ("31-33", "Mobile Alert System")
+        },
+        new()
+        {
+            (3, "33", "Crowd Pummeler 9-60"),
+        }),
+        new SiteHostileArea("Tinkers' Court", new()
+        {
+
+        },
+        new()
+        {
+            (0, "34", "Mekgineer Thermaplugg"),
+        }),
+
+        #endregion
 
         #region Wailing Caverns
 

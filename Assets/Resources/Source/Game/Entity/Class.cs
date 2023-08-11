@@ -54,12 +54,6 @@ public class Class
                 ("Off Hand Proficiency", 1),
                 ("Dagger Proficiency", 1),
                 ("Leather Proficiency", 1),
-                ("Envenom", 1),
-                ("Kidney Shot", 1),
-                ("Mutilate", 1),
-                ("Evasion", 1),
-                ("Garrote", 1),
-                ("Rupture", 1)
             },
             new List<TalentTree>
             {
@@ -524,9 +518,6 @@ public class Class
                 ("Staff Proficiency", 1),
                 ("Wand Proficiency", 1),
                 ("Cloth Proficiency", 1),
-                ("Meteor", 1),
-                ("Thunderstorm", 1),
-                ("Scorch", 1),
             },
             new List<TalentTree>
             {
