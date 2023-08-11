@@ -6502,7 +6502,7 @@
   {
     "rarity": "Epic",
     "name": "Sharpened Silithid Femur",
-    "icon": "classicitemsword58",
+    "icon": "itemsword58",
     "detailedType": "Sword",
     "type": "One Handed",
     "ilvl": 78,
@@ -9149,7 +9149,7 @@
   {
     "rarity": "Epic",
     "name": "Aegis of Preservation",
-    "icon": "classicabilityblessingofprotection",
+    "icon": "abilityblessingofprotection",
     "type": "Trinket",
     "ilvl": 76,
     "lvl": 60,
@@ -141560,7 +141560,7 @@
   {
     "rarity": "Common",
     "name": "Heavy Blasting Powder",
-    "icon": "classicitemmiscdust06",
+    "icon": "itemmiscdust06",
     "type": "Miscellaneous",
     "ilvl": 25,
     "lvl": 1,
@@ -182460,7 +182460,7 @@
   {
     "rarity": "Common",
     "name": "Gray Bear Tongue",
-    "icon": "classicabilitydemoralizingroar",
+    "icon": "abilitydemoralizingroar",
     "type": "Miscellaneous",
     "ilvl": 1,
     "lvl": 1,
@@ -212590,7 +212590,7 @@
   {
     "rarity": "Common",
     "name": "Handful of Rose Petals",
-    "icon": "classicitemmiscdust04",
+    "icon": "itemmiscdust04",
     "type": "Miscellaneous",
     "ilvl": 1,
     "lvl": 1,
@@ -212623,7 +212623,7 @@
   {
     "rarity": "Common",
     "name": "Soul Ashes of the Banished",
-    "icon": "classicitemmiscdust03",
+    "icon": "itemmiscdust03",
     "type": "Miscellaneous",
     "ilvl": 1,
     "lvl": 1,

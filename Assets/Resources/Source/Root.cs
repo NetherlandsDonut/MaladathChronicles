@@ -623,10 +623,14 @@ public static class Root
                     });
                     AddPaddingRegion(() =>
                     {
-                        AddLine("Sites:", DarkGray);
-                        complex = complexes.Find(x => x.name == name);
-                        foreach (var site in complex.sites)
-                            AddLine("- " + site.Item2, DarkGray);
+                        AddLine("Contains sites:", DarkGray);
+                    });
+                    complex = complexes.Find(x => x.name == name);
+                    foreach (var site in complex.sites)
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine(site.Item2, DarkGray);
+                        AddSmallButton("Site" + site.Item1, (h) => { });
                     });
                 });
             else
@@ -1548,7 +1552,7 @@ public static class Root
             { Shaman, new Color32(0, 81, 160, 255) },
             { Warlock, new Color32(97, 98, 172, 255) },
             { Paladin, new Color32(177, 101, 134, 255) },
-            { Priest, new Color32(184, 184, 184, 255) },
+            { Priest, new Color32(191, 175, 164, 255) },
             { Copper, new Color32(184, 80, 41, 255) },
             { Silver, new Color32(170, 188, 210, 255) },
             { Gold, new Color32(255, 210, 11, 255) },

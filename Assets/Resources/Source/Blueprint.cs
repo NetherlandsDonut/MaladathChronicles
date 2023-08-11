@@ -1450,7 +1450,7 @@ public class Blueprint
         }),
         new("Game", () =>
         {
-            SetDesktopBackground("Areas/Area" + (Board.board.area.instancePart ? instance.name : "") + Board.board.area.name.Replace("'", "").Replace(" ", ""));
+            SetDesktopBackground("Areas/Area" + (Board.board.area.instancePart ? instance.name.Replace("'", "").Replace(" ", "") : "") + Board.board.area.name.Replace("'", "").Replace(" ", ""));
             SpawnWindowBlueprint("BattleBoard");
             SpawnWindowBlueprint("PlayerBattleInfo");
             SpawnWindowBlueprint("EnemyBattleInfo");
