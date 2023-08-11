@@ -227,6 +227,127 @@ public class SiteHostileArea
         }),
 
         #endregion
+        
+        #region Scholomance
+        
+        new SiteHostileArea("Reliquary", new()
+        {
+            ("19-20", "Defias Squallshaper"),
+            ("19-20", "Defias Pirate")
+        },
+        new()
+        {
+            (3, "59", "Blood Steward of Kirtonos")
+        }),
+        new SiteHostileArea("Chamber of Summoning", new()
+        {
+            ("18-19", "Defias Taskmaster"),
+            ("18-19", "Defias Wizard"),
+            ("18-19", "Defias Strip Miner")
+        },
+        new()
+        {
+            (3, "59", "Kirtonos the Herald"),
+        }),
+        new SiteHostileArea("Great Ossuary", new()
+        {
+            ("18-19", "Defias Taskmaster"),
+            ("18-19", "Defias Wizard"),
+            ("18-19", "Defias Strip Miner")
+        },
+        new()
+        {
+            (3, "61", "Rattlegore"),
+        }),
+        new SiteHostileArea("Hall of Secrets", new()
+        {
+            ("18-20", "Remote Controlled Golem"),
+            ("18-19", "Goblin Engineer")
+        },
+        new()
+        {
+            (3, "60", "Lorekeeper Polkelt"),
+        }),
+        new SiteHostileArea("Hall of the Damned", new()
+        {
+            ("19-20", "Defias Blackguard"),
+            ("19-20", "Defias Squallshaper"),
+            ("19-20", "Defias Pirate")
+        },
+        new()
+        {
+            (2, "60", "Doctor Theolen Krastinov"),
+        }),
+        new SiteHostileArea("Laboratory", new()
+        {
+            ("19-20", "Defias Blackguard"),
+            ("19-20", "Defias Squallshaper"),
+            ("19-20", "Defias Pirate")
+        },
+        new()
+        {
+            (2, "62", "Ras Frostwhisper")
+        }),
+        new SiteHostileArea("Vault of the Ravenian", new()
+        {
+            ("19-20", "Defias Blackguard"),
+            ("19-20", "Defias Squallshaper"),
+            ("19-20", "Defias Pirate")
+        },
+        new()
+        {
+            (2, "60", "The Ravenian")
+        }),
+        new SiteHostileArea("The Coven", new()
+        {
+            ("19-20", "Defias Squallshaper"),
+            ("19-20", "Defias Pirate")
+        },
+        new()
+        {
+            (3, "60", "Instructor Malicia")
+        }),
+        new SiteHostileArea("The Shadow Vault", new()
+        {
+            ("19-20", "Defias Squallshaper"),
+            ("19-20", "Defias Pirate")
+        },
+        new()
+        {
+            (3, "60", "Instructor Malicia")
+        }),
+        new SiteHostileArea("Viewing Room", new()
+        {
+            ("19-20", "Defias Squallshaper"),
+            ("19-20", "Defias Pirate")
+        },
+        new()
+        {
+            (3, "60", "Vectus"),
+        }),
+        new SiteHostileArea("Barov Family Vault", new()
+        {
+            ("19", "Miner Johnson"),
+            ("17-18", "Defias Evoker"),
+            ("16-17", "Defias Watchman"),
+            ("17-18", "Defias Overseer"),
+            ("17-18", "Defias Miner")
+        },
+        new()
+        {
+            (3, "60", "Lord Alexei Barov"),
+        }),
+        new SiteHostileArea("Headmaster's Study", new()
+        {
+            ("19-20", "Defias Squallshaper"),
+            ("19-20", "Defias Pirate")
+        },
+        new()
+        {
+            (2, "61", "Darkmaster Gandling"),
+        }),
+
+        #endregion
 
         #region Maraudon
 

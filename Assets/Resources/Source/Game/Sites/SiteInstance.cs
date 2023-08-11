@@ -30,6 +30,28 @@ public class SiteInstance
 
     public static List<SiteInstance> dungeons = new()
     {
+        new SiteInstance("Scholomance", new()
+        {
+
+        },
+        new()
+        {
+            new InstanceWing("Scholomance", new()
+            {
+                ("None", "Reliquary"),
+                ("Boss", "Chamber of Summoning"),
+                ("Boss", "Great Ossuary"),
+                ("Boss", "Viewing Room"),
+                ("Boss", "Laboratory"),
+                ("Boss", "Hall of Secrets"),
+                ("Boss", "Hall of the Damned"),
+                ("Boss", "The Coven"),
+                ("Boss", "Vault of the Ravenian"),
+                ("Boss", "The Shadow Vault"),
+                ("Boss", "Barov Family Vault"),
+                ("Boss", "Headmaster's Study")
+            })
+        }),
         new SiteInstance("Maraudon", new()
         {
 

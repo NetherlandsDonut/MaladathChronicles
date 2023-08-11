@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 using static Root;
 using static Root.Color;
+using static UnityEditor.Progress;
 
 public class Starter : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class Starter : MonoBehaviour
         cursor = FindObjectOfType<Cursor>();
         cursorEnemy = FindObjectOfType<CursorRemote>();
         settings = new GameSettings();
+        Serialization.Deserialize(ref Item.items, "items");
         saveGames = new List<SaveGame>();
         var temp = FindObjectsByType<WindowAnchorRemote>(FindObjectsSortMode.None);
         windowRemoteAnchors = temp.Select(x => (x.name, new Vector2(x.transform.position.x, x.transform.position.y))).ToList();
