@@ -28,6 +28,27 @@ public class Buff
     public Func<bool, Action> description, effects, killEffects;
     public Func<bool, FutureBoard, Action> futureEffects, futureKillEffects;
 
+    public static Entity Target(bool player)
+    {
+        return !player ? Board.board.player : Board.board.enemy;
+    }
+
+    public static FutureEntity Target(bool player, FutureBoard futureBoard)
+    {
+        return !player ? futureBoard.player : futureBoard.enemy;
+    }
+
+    public static Entity Caster(bool player)
+    {
+        if (Board.board == null) return currentSave.player;
+        return player ? Board.board.player : Board.board.enemy;
+    }
+
+    public static FutureEntity Caster(bool player, FutureBoard futureBoard)
+    {
+        return player ? futureBoard.player : futureBoard.enemy;
+    }
+
     public static List<Buff> buffs = new()
     {
         new Buff("Thunderstorm", "None", new() { "Damage" }, true, "AbilityThunderstorm",
@@ -46,8 +67,8 @@ public class Buff
         },
         (p) => () =>
         {
-            var caster = p ? Board.board.player : Board.board.enemy;
-            var target = p ? Board.board.enemy : Board.board.player;
+            var caster = Caster(p);
+            var target = Target(p);
             var list = new List<(int, int)>();
             var col = random.Next(0, Board.board.field.GetLength(0));
             for (int j = 0; j < Board.board.field.GetLength(1); j++)
@@ -511,7 +532,7 @@ public class Buff
         new Buff("Scorch", "None", new() { "Damage" }, false, "AbilityScorch",
             (p) => () =>
             {
-                var caster = p ? Board.board.player : Board.board.enemy;
+                var caster = Caster(p);
                 AddHeaderRegion(() =>
                 {
                     var damage = caster.WeaponDamage();
@@ -527,8 +548,8 @@ public class Buff
             },
             (p) => () =>
             {
-                var caster = p ? Board.board.player : Board.board.enemy;
-                var target = p ? Board.board.enemy : Board.board.player;
+                var caster = Caster(p);
+                var target = Target(p);
                 target.Damage(caster.RollWeaponDamage() * (caster.SpellPower() / 10.0 + 1) * 1.5);
                 SpawnShatter(2, 0.8, new Vector3(p ? 148 : -318, 122), "AbilityScorch");
                 PlaySound("AbilityScorchFlare");
@@ -540,8 +561,8 @@ public class Buff
             },
             (p, board) => () =>
             {
-                var caster = p ? board.player : board.enemy;
-                var target = p ? board.enemy : board.player;
+                var caster = Caster(p, board);
+                var target = Target(p, board);
                 target.Damage(caster.RollWeaponDamage() * (caster.SpellPower() / 10.0 + 1) * 1.5);
             },
             (p, board) => () =>
@@ -549,7 +570,7 @@ public class Buff
 
             }
         ),
-        new Buff("Vanquished Tentacle of C'Thun", "None", new() { "Damage" }, false, "ItemTrinketQiraj5",
+        new Buff("Vanquished Tentacle of C'Thun", "None", new() { "Damage" }, false, "itemmiscahnqirajtrinket05",
             (p) => () =>
             {
                 AddHeaderRegion(() =>
@@ -565,8 +586,8 @@ public class Buff
             },
             (p) => () =>
             {
-                var caster = p ? Board.board.player : Board.board.enemy;
-                var target = p ? Board.board.enemy : Board.board.player;
+                var caster = Caster(p);
+                var target = Target(p);
                 caster.Damage(target.RollWeaponDamage() * target.SpellPower() * 1.0);
                 SpawnShatter(2, 0.8, new Vector3(!p ? 148 : -318, 122), "ItemTrinketQiraj5");
                 PlaySound("AbilityEnvenomImpact");
@@ -578,8 +599,8 @@ public class Buff
             },
             (p, board) => () =>
             {
-                var caster = p ? board.player : board.enemy;
-                var target = p ? board.enemy : board.player;
+                var caster = Caster(p, board);
+                var target = Target(p, board);
                 caster.Damage(target.RollWeaponDamage());
             },
             (p, board) => () =>
@@ -603,8 +624,8 @@ public class Buff
         },
         (p) => () =>
         {
-            var caster = p ? Board.board.player : Board.board.enemy;
-            var target = p ? Board.board.enemy : Board.board.player;
+            var caster = Caster(p);
+            var target = Target(p);
             target.Damage(caster.RollWeaponDamage() * (caster.SpellPower() / 10.0 + 1) * 1.175);
             SpawnShatter(2, 0.8, new Vector3(p ? 148 : -318, 122), "AbilityVenomousBite");
             PlaySound("AbilityVenomousBiteFlare");
@@ -616,8 +637,8 @@ public class Buff
         },
         (p, board) => () =>
         {
-            var caster = p ? board.player : board.enemy;
-            var target = p ? board.enemy : board.player;
+            var caster = Caster(p, board);
+            var target = Target(p, board);
             target.Damage(caster.RollWeaponDamage() * (caster.SpellPower() / 10.0 + 1) * 1.175);
         },
         (p, board) => () =>
@@ -640,8 +661,8 @@ public class Buff
         },
         (p) => () =>
         {
-            var caster = p ? Board.board.player : Board.board.enemy;
-            var target = p ? Board.board.enemy : Board.board.player;
+            var caster = Caster(p);
+            var target = Target(p);
             target.Damage(caster.RollWeaponDamage() * (caster.SpellPower() / 10.0 + 1) * 1.35);
             SpawnShatter(2, 0.8, new Vector3(p ? 148 : -318, 122), "AbilityPutridBite");
             PlaySound("AbilityVenomousBiteFlare");
@@ -653,8 +674,8 @@ public class Buff
         },
         (p, board) => () =>
         {
-            var caster = p ? board.player : board.enemy;
-            var target = p ? board.enemy : board.player;
+            var caster = Caster(p, board);
+            var target = Target(p, board);
             target.Damage(caster.RollWeaponDamage() * (caster.SpellPower() / 10.0 + 1) * 1.35);
         },
         (p, board) => () =>
@@ -677,8 +698,8 @@ public class Buff
         },
         (p) => () =>
         {
-            var caster = p ? Board.board.player : Board.board.enemy;
-            var target = p ? Board.board.enemy : Board.board.player;
+            var caster = Caster(p);
+            var target = Target(p);
             target.Damage(caster.RollWeaponDamage() * (caster.SpellPower() / 10.0 + 1) * 0.8);
             SpawnShatter(2, 0.8, new Vector3(p ? 148 : -318, 122), "AbilityCorruption");
             PlaySound("AbilityCorruptionFlare");
@@ -690,8 +711,8 @@ public class Buff
         },
         (p, board) => () =>
         {
-            var caster = p ? board.player : board.enemy;
-            var target = p ? board.enemy : board.player;
+            var caster = Caster(p, board);
+            var target = Target(p, board);
             target.Damage(caster.RollWeaponDamage() * (caster.SpellPower() / 10.0 + 1) * 0.8);
         },
         (p, board) => () =>
@@ -714,8 +735,8 @@ public class Buff
         },
         (p) => () =>
         {
-            var caster = p ? Board.board.player : Board.board.enemy;
-            var target = p ? Board.board.enemy : Board.board.player;
+            var caster = Caster(p);
+            var target = Target(p);
             target.Damage(caster.RollWeaponDamage() * (caster.SpellPower() / 10.0 + 1) * 1.0);
             SpawnShatter(2, 0.8, new Vector3(p ? 148 : -318, 122), "AbilityHolyFire");
             PlaySound("AbilityHolyFireFlare");
@@ -727,8 +748,8 @@ public class Buff
         },
         (p, board) => () =>
         {
-            var caster = p ? board.player : board.enemy;
-            var target = p ? board.enemy : board.player;
+            var caster = Caster(p, board);
+            var target = Target(p, board);
             target.Damage(caster.RollWeaponDamage() * (caster.SpellPower() / 10.0 + 1) * 1.0);
         },
         (p, board) => () =>
@@ -751,8 +772,8 @@ public class Buff
         },
         (p) => () =>
         {
-            var caster = p ? Board.board.player : Board.board.enemy;
-            var target = p ? Board.board.enemy : Board.board.player;
+            var caster = Caster(p);
+            var target = Target(p);
             target.Damage(caster.RollWeaponDamage() * (caster.SpellPower() / 10.0 + 1) * 0.9);
             SpawnShatter(2, 0.8, new Vector3(p ? 148 : -318, 122), "AbilityCurseOfAgony");
             PlaySound("AbilityCurseOfAgonyFlare");
@@ -764,8 +785,8 @@ public class Buff
         },
         (p, board) => () =>
         {
-            var caster = p ? Board.board.player : Board.board.enemy;
-            var target = p ? Board.board.enemy : Board.board.player;
+            var caster = Caster(p);
+            var target = Target(p);
             target.Damage(caster.RollWeaponDamage() * (caster.SpellPower() / 10.0 + 1) * 0.9);
         },
         (p, board) => () =>
@@ -788,8 +809,8 @@ public class Buff
         },
         (p) => () =>
         {
-            var caster = p ? Board.board.player : Board.board.enemy;
-            var target = p ? Board.board.enemy : Board.board.player;
+            var caster = Caster(p);
+            var target = Target(p);
             target.Damage(caster.RollWeaponDamage() * (caster.SpellPower() / 10.0 + 1) * 0.6);
             SpawnShatter(2, 0.8, new Vector3(p ? 148 : -318, 122), "AbilityShadowWordPain");
             PlaySound("AbilityShadowWordPainImpact");
@@ -801,8 +822,8 @@ public class Buff
         },
         (p, board) => () =>
         {
-            var caster = p ? board.player : board.enemy;
-            var target = p ? board.enemy : board.player;
+            var caster = Caster(p, board);
+            var target = Target(p, board);
             target.Damage(caster.RollWeaponDamage() * (caster.SpellPower() / 10.0 + 1) * 0.6);
         },
         (p, board) => () =>

@@ -302,14 +302,165 @@ public class Blueprint
                 );
             }
         }),
+        new("SpellbookAbilityList", () => {
+            SetAnchor(147, 0);
+            AddRegionGroup();
+            SetRegionGroupWidth(161);
+            AddHeaderRegion(
+                () =>
+                {
+                    AddLine("Active abilities:", Gray);
+                    AddSmallButton("OtherClose", (h) =>
+                    {
+                        CloseDesktop("SpellbookScreen");
+                        SwitchDesktop("Map");
+                        PlaySound("DesktopSpellbookScreenClose");
+                    });
+                }
+            );
+            var activeAbilities = Ability.abilities.FindAll(x => x.cost != null && currentSave.player.abilities.Contains(x.name)).ToList();
+            var passiveAbilities = Ability.abilities.FindAll(x => x.cost == null && currentSave.player.abilities.Contains(x.name)).ToList();
+            for (int i = 0; i < activeAbilities.Count; i++)
+            {
+                var abilityObj = activeAbilities[i];
+                AddButtonRegion(
+                    () =>
+                    {
+                        AddLine(abilityObj.name, Black);
+                        AddSmallButton(abilityObj.icon,
+                        (h) =>
+                        {
+
+                        });
+                        if (currentSave.player.actionBars.Exists(x => x.ability == abilityObj.name))
+                        {
+                        SetSmallButtonToGrayscale();
+                        AddSmallButtonOverlay("OtherGridBlurred");
+                        }
+                    },
+                    (h) =>
+                    {
+                        if (!currentSave.player.actionBars.Exists(x => x.ability == abilityObj.name) && currentSave.player.actionBars.Count < currentSave.player.actionBarsUnlocked)
+                        {
+                            currentSave.player.actionBars.Add(new ActionBar(abilityObj.name));
+                            CloseWindow("PlayerSpellbookInfo");
+                            CloseWindow(h.window);
+                            SpawnWindowBlueprint("PlayerSpellbookInfo");
+                            SpawnWindowBlueprint("SpellbookAbilityList");
+                        }
+                    },
+                    (h) => () =>
+                    {
+                        SetAnchor(Top, 0, -23);
+                        AddHeaderGroup();
+                        SetRegionGroupWidth(236);
+                        SetRegionGroupHeight(217);
+                        AddHeaderRegion(() =>
+                        {
+                            AddLine(abilityObj.name, Gray);
+                        });
+                        AddPaddingRegion(() =>
+                        {
+                            AddBigButton(abilityObj.icon, (h) => { });
+                            AddLine("Cooldown: ", DarkGray);
+                            AddText(abilityObj.cooldown == 0 ? "None" : abilityObj.cooldown + (abilityObj.cooldown == 1 ? " turn"  : " turns"), Gray);
+                        });
+                        abilityObj.description(true);
+                        foreach (var cost in abilityObj.cost)
+                        {
+                            AddRegionGroup();
+                            AddHeaderRegion(() =>
+                            {
+                                AddSmallButton("Element" + cost.Key + "Rousing", (h) => { });
+                            });
+                            AddRegionGroup();
+                            SetRegionGroupWidth(20);
+                            AddHeaderRegion(() =>
+                            {
+                                AddLine(cost.Value + "", cost.Value > currentSave.player.MaxResource(cost.Key) ? Red : Gray);
+                            });
+                        }
+                        AddRegionGroup();
+                        SetRegionGroupWidth(236 - abilityObj.cost.Count * 49);
+                        AddPaddingRegion(() =>
+                        {
+                            AddLine("", LightGray);
+                        });
+                    }
+                );
+            }
+            if (passiveAbilities.Count(x => x.description != null) > 0)
+                AddHeaderRegion(
+                    () =>
+                    {
+                        AddLine("Passive abilities:", Gray);
+                    }
+                );
+            for (int i = 0; i < passiveAbilities.Count; i++)
+            {
+                var abilityObj = passiveAbilities[i];
+                if (abilityObj.description == null) continue;
+                AddButtonRegion(
+                    () =>
+                    {
+                        AddLine(abilityObj.name, Black);
+                        AddSmallButton(abilityObj.icon,
+                        (h) =>
+                        {
+
+                        });
+                    },
+                    (h) => { },
+                    (h) => () =>
+                    {
+                        SetAnchor(Top, 0, -23);
+                        AddHeaderGroup();
+                        SetRegionGroupWidth(236);
+                        SetRegionGroupHeight(217);
+                        AddHeaderRegion(() =>
+                        {
+                            AddLine(abilityObj.name, Gray);
+                        });
+                        AddPaddingRegion(() =>
+                        {
+                            AddBigButton(abilityObj.icon, (h) => { });
+                            AddLine("Cooldown: ", DarkGray);
+                            AddText(abilityObj.cooldown == 0 ? "None" : abilityObj.cooldown + (abilityObj.cooldown == 1 ? " turn"  : " turns"), Gray);
+                        });
+                        abilityObj.description(true);
+                        if (abilityObj.cost != null)
+                            foreach (var cost in abilityObj.cost)
+                            {
+                                AddRegionGroup();
+                                AddHeaderRegion(() =>
+                                {
+                                    AddSmallButton("Element" + cost.Key + "Rousing", (h) => { });
+                                });
+                                AddRegionGroup();
+                                SetRegionGroupWidth(20);
+                                AddHeaderRegion(() =>
+                                {
+                                    AddLine(cost.Value + "", Gray);
+                                });
+                            }
+                        AddRegionGroup();
+                        SetRegionGroupWidth(236 - (abilityObj.cost == null ? 0 : abilityObj.cost.Count) * 49);
+                        AddPaddingRegion(() =>
+                        {
+                            AddLine("", LightGray);
+                        });
+                    }
+                );
+            }
+        }),
         new("PlayerSpellbookInfo", () => {
             SetAnchor(TopLeft);
             AddRegionGroup();
-            SetRegionGroupWidth(163);
+            SetRegionGroupWidth(161);
             AddButtonRegion(
                 () =>
                 {
-                    AddLine(Board.board.player.name, Black);
+                    AddLine(currentSave.player.name, Black);
                 },
                 (h) =>
                 {
@@ -318,68 +469,174 @@ public class Blueprint
             );
             AddHeaderRegion(() =>
             {
-                AddBigButton("Class" + Board.board.player.spec,
+                AddBigButton("Class" + currentSave.player.spec,
                     (h) => { }
                 );
-                AddLine("Level " + Board.board.player.level, Gray);
+                AddLine("Level: " + currentSave.player.level, Gray);
+                AddLine("Health: " + currentSave.player.health + "/" + currentSave.player.MaxHealth(), Gray);
             });
-            //foreach (var actionBar in Board.board.player.actionBars)
+            for (int i = 0; i < currentSave.player.actionBarsUnlocked; i++)
+            {
+                var index = i;
+                var abilityObj = currentSave.player.actionBars.Count <= index ? null : Ability.abilities.Find(x => x.name == currentSave.player.actionBars[index].ability);
+                if (abilityObj != null)
+                    AddButtonRegion(
+                        () =>
+                        {
+                            AddLine(abilityObj.name, Black);
+                            AddSmallButton(abilityObj.icon, (h) => { });
+                        },
+                        (h) =>
+                        {
+                            currentSave.player.actionBars.RemoveAt(index);
+                            CloseWindow("SpellbookAbilityList");
+                            CloseWindow("PlayerSpellbookInfo");
+                            SpawnWindowBlueprint("SpellbookAbilityList");
+                            SpawnWindowBlueprint("PlayerSpellbookInfo");
+                        },
+                        (h) => () =>
+                        {
+                            SetAnchor(Top, 0, -23);
+                            AddHeaderGroup();
+                            SetRegionGroupWidth(236);
+                            SetRegionGroupHeight(217);
+                            AddHeaderRegion(() =>
+                            {
+                                AddLine(abilityObj.name, Gray);
+                            });
+                            AddPaddingRegion(() =>
+                            {
+                                AddBigButton(abilityObj.icon, (h) => { });
+                                AddLine("Cooldown: ", DarkGray);
+                                AddText(abilityObj.cooldown == 0 ? "None" : abilityObj.cooldown + (abilityObj.cooldown == 1 ? " turn"  : " turns"), Gray);
+                            });
+                            abilityObj.description(true);
+                            foreach (var cost in abilityObj.cost)
+                            {
+                                AddRegionGroup();
+                                AddHeaderRegion(() =>
+                                {
+                                    AddSmallButton("Element" + cost.Key + "Rousing", (h) => { });
+                                });
+                                AddRegionGroup();
+                                SetRegionGroupWidth(20);
+                                AddHeaderRegion(() =>
+                                {
+                                    AddLine(cost.Value + "", cost.Value > currentSave.player.MaxResource(cost.Key) ? Red : Gray);
+                                });
+                            }
+                            AddRegionGroup();
+                            SetRegionGroupWidth(236 - abilityObj.cost.Count * 49);
+                            AddPaddingRegion(() =>
+                            {
+                                AddLine("", LightGray);
+                            });
+                        }
+                    );
+                else
+                    AddHeaderRegion(
+                        () =>
+                        {
+                            AddLine("", Black);
+                            AddSmallButton("OtherEmpty", (h) => { });
+                        }
+                    );
+            }
+            AddPaddingRegion(() =>
+            {
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+            });
+            //AddPaddingRegion(() =>
             //{
-            //    var abilityObj = Ability.abilities.Find(x => x.name == actionBar.ability);
-            //    if (abilityObj == null || abilityObj.cost == null) continue;
-            //    AddButtonRegion(
-            //        () =>
-            //        {
-            //            AddLine(actionBar.ability, Black);
-            //            AddSmallButton("Ability" + actionBar.ability.Replace(" ", "").Replace(":", ""), (h) => { });
-            //        },
-            //        (h) =>
-            //        {
-
-            //        },
-            //        (h) => () =>
-            //        {
-            //            SetAnchor(Top, 0, -13);
-            //            AddHeaderGroup();
-            //            SetRegionGroupWidth(256);
-            //            SetRegionGroupHeight(237);
-            //            AddHeaderRegion(() =>
-            //            {
-            //                AddLine(actionBar.ability, Gray);
-            //            });
-            //            AddPaddingRegion(() =>
-            //            {
-            //                AddBigButton("Ability" + actionBar.ability.Replace(" ", "").Replace(":", ""), (h) => { });
-            //                AddLine("Required level: ", DarkGray);
-            //                AddText(Board.board.player.GetClass().abilities.Find(x => x.Item1 == actionBar.ability).Item2 + "", Gray);
-            //                AddLine("Cooldown: ", DarkGray);
-            //                AddText(abilityObj.cooldown == 0 ? "None" : abilityObj.cooldown + (abilityObj.cooldown == 1 ? " turn"  : " turns"), Gray);
-            //            });
-            //            abilityObj.description();
-            //            foreach (var cost in abilityObj.cost)
-            //            {
-            //                AddRegionGroup();
-            //                AddHeaderRegion(() =>
-            //                {
-            //                    AddSmallButton("Element" + cost.Key + "Rousing", (h) => { });
-            //                });
-            //                AddRegionGroup();
-            //                SetRegionGroupWidth(15);
-            //                AddHeaderRegion(() =>
-            //                {
-            //                    AddLine(cost.Value + "", cost.Value > Board.board.player.resources[cost.Key] ? Red : Green);
-            //                });
-            //            }
-            //            AddRegionGroup();
-            //            SetRegionGroupWidth(256 - abilityObj.cost.Count * 44);
-            //            AddPaddingRegion(() =>
-            //            {
-            //                AddLine("", LightGray);
-            //            });
-            //        }
-            //    );
-            //}
+            //    AddLine("Show activated abilities", Gray);
+            //    AddCheckbox(showActive);
+            //});
+            //AddPaddingRegion(() =>
+            //{
+            //    AddLine("Show passive abilities", Gray);
+            //    AddCheckbox(showPassive);
+            //});
         }),
+        new("SpellbookResources", () => {
+            SetAnchor(BottomLeft);
+            AddHeaderGroup();
+            AddHeaderRegion(() =>
+            {
+                AddLine("Starting resources:");
+            });
+            AddRegionGroup();
+            var elements1 = new List<string> { "Fire", "Water", "Earth", "Air", "Frost" };
+            var elements2 = new List<string> { "Lightning", "Arcane", "Decay", "Order", "Shadow" };
+            foreach (var element in elements1)
+                AddHeaderRegion(() =>
+                {
+                    AddSmallButton("Element" + element + "Rousing",
+                        (h) => { },
+                        (h) => () =>
+                        {
+                            SetAnchor(Top, h.window);
+                            AddRegionGroup();
+                            SetRegionGroupWidth(83);
+                            AddHeaderRegion(() =>
+                            {
+                                AddLine(element + ":", Gray);
+                            });
+                            AddPaddingRegion(() =>
+                            {
+                                AddLine(currentSave.player.resources.ToList().Find(x => x.Key == element).Value + " / " + currentSave.player.MaxResource(element), Gray);
+                            });
+                        }
+                    );
+                });
+            AddRegionGroup();
+            SetRegionGroupWidth(76);
+            foreach (var element in elements1)
+                AddHeaderRegion(() =>
+                {
+                    var value = currentSave.player.resources.ToList().Find(x => x.Key == element).Value;
+                    AddLine(value + "", value == 0 ? DarkGray : (value > currentSave.player.MaxResource(element) ? Red : Green));
+                    AddText(" / " + currentSave.player.MaxResource(element), DarkGray);
+                    AddSmallButton("Element" + elements2[elements1.IndexOf(element)] + "Rousing",
+                        (h) => { },
+                        (h) => () =>
+                        {
+                            SetAnchor(Top, h.window);
+                            AddRegionGroup();
+                            SetRegionGroupWidth(83);
+                            AddHeaderRegion(() =>
+                            {
+                                AddLine(elements2[elements1.IndexOf(element)] + ":", Gray);
+                            });
+                            AddPaddingRegion(() =>
+                            {
+                                AddLine(currentSave.player.resources.ToList().Find(x => x.Key == elements2[elements1.IndexOf(element)]).Value + " / " + currentSave.player.MaxResource(elements2[elements1.IndexOf(element)]), Gray);
+                            });
+                        }
+                    );
+                });
+            AddRegionGroup();
+            SetRegionGroupWidth(56);
+            foreach (var element in elements2)
+                AddHeaderRegion(() =>
+                {
+                    var value = currentSave.player.resources.ToList().Find(x => x.Key == element).Value;
+                    AddLine(value + "", value == 0 ? DarkGray : (value > currentSave.player.MaxResource(element) ? Red : Green));
+                    AddText(" / " + currentSave.player.MaxResource(element), DarkGray);
+                });
+        }, true),
         new("EnemyBattleInfo", () => {
             SetAnchor(TopRight);
             AddRegionGroup();
@@ -1562,11 +1819,34 @@ public class Blueprint
         new("SpellbookScreen", () =>
         {
             PlaySound("DesktopSpellbookScreenOpen");
-            SetDesktopBackground("StoneSplitLong", false);
-            SpawnWindowBlueprint("ReturnToMap");
+            SetDesktopBackground("SkinLong", false);
+            SpawnWindowBlueprint("SpellbookAbilityList");
             SpawnWindowBlueprint("PlayerSpellbookInfo");
+            SpawnWindowBlueprint("SpellbookResources");
             AddHotkey(P, () => { SwitchDesktop("Map"); CloseDesktop("SpellbookScreen"); PlaySound("DesktopSpellbookScreenClose"); });
             AddHotkey(Escape, () => { SwitchDesktop("Map"); CloseDesktop("SpellbookScreen"); PlaySound("DesktopSpellbookScreenClose"); });
+            AddHotkey(W, () =>
+            {
+                var amount = new Vector3(0, (float)Math.Round(EuelerGrowth())) / 2;
+                CDesktop.screen.transform.position += amount; cursor.transform.position += amount;
+                if (CDesktop.screen.transform.position.y > -180)
+                {
+                    var off = CDesktop.screen.transform.position.y + 180f;
+                    CDesktop.screen.transform.position -= new Vector3(0, off);
+                    cursor.transform.position -= new Vector3(0, off);
+                }
+            },  false);
+            AddHotkey(S, () =>
+            {
+                var amount = new Vector3(0, -(float)Math.Round(EuelerGrowth())) / 2;
+                CDesktop.screen.transform.position += amount; cursor.transform.position += amount;
+                if (CDesktop.screen.transform.position.y < -1282)
+                {
+                    var off = CDesktop.screen.transform.position.y + 1282f;
+                    CDesktop.screen.transform.position -= new Vector3(0, off);
+                    cursor.transform.position -= new Vector3(0, off);
+                }
+            },  false);
         }),
         new("TitleScreen", () =>
         {

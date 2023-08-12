@@ -17,6 +17,7 @@ public class SaveGame
                 "Apprentice's Robe",
                 "Apprentice's Pants",
                 "Apprentice's Boots",
+                //"Vanquished Tentacle of C'Thun",
                 "Bent Staff",
             }
         );

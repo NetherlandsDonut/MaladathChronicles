@@ -1,16 +1,18 @@
 using System;
-using System.Collections.Generic;
 using UnityEngine;
+using System.Collections.Generic;
+
 using static Root;
 using static Root.Color;
-using static UnityEngine.GraphicsBuffer;
 
 public class Ability
 {
     //Passive ability
-    public Ability(string name)
+    public Ability(string name, Action<bool> description)
     {
         this.name = name;
+        icon = "Ability" + name.Replace(" ", "").Replace(":", "");
+        this.description = description;
     }
 
     //Active combat ability
@@ -41,6 +43,27 @@ public class Ability
         this.putOnEnd = putOnEnd;
     }
 
+    public static Entity Target(bool player)
+    {
+        return !player ? Board.board.player : Board.board.enemy;
+    }
+
+    public static FutureEntity Target(bool player, FutureBoard futureBoard)
+    {
+        return !player ? futureBoard.player : futureBoard.enemy;
+    }
+
+    public static Entity Caster(bool player)
+    {
+        if (Board.board == null) return currentSave.player;
+        return player ? Board.board.player : Board.board.enemy;
+    }
+
+    public static FutureEntity Caster(bool player, FutureBoard futureBoard)
+    {
+        return player ? futureBoard.player : futureBoard.enemy;
+    }
+
     public bool EnoughResources(Entity entity)
     {
         foreach (var resource in cost)
@@ -67,32 +90,32 @@ public class Ability
 
     public static List<Ability> abilities = new()
     {
-        new Ability("Two Handed Axe Proficiency"),
-        new Ability("Two Handed Mace Proficiency"),
-        new Ability("Two Handed Sword Proficiency"),
-        new Ability("One Handed Axe Proficiency"),
-        new Ability("One Handed Mace Proficiency"),
-        new Ability("One Handed Sword Proficiency"),
-        new Ability("Fist Weapon Proficiency"),
-        new Ability("Off Hand Proficiency"),
-        new Ability("Polearm Proficiency"),
-        new Ability("Dagger Proficiency"),
-        new Ability("Staff Proficiency"),
-        new Ability("Wand Proficiency"),
-        new Ability("Totem Proficiency"),
-        new Ability("Relic Proficiency"),
-        new Ability("Libram Proficiency"),
-        new Ability("Idol Proficiency"),
-        new Ability("Shield Proficiency"),
-        new Ability("Quiver Proficiency"),
-        new Ability("Pouch Proficiency"),
-        new Ability("Bow Proficiency"),
-        new Ability("Crossbow Proficiency"),
-        new Ability("Gun Proficiency"),
-        new Ability("Cloth Proficiency"),
-        new Ability("Leather Proficiency"),
-        new Ability("Mail Proficiency"),
-        new Ability("Plate Proficiency"),
+        new Ability("Two Handed Axe Proficiency", null),
+        new Ability("Two Handed Mace Proficiency", null),
+        new Ability("Two Handed Sword Proficiency", null),
+        new Ability("One Handed Axe Proficiency", null),
+        new Ability("One Handed Mace Proficiency", null),
+        new Ability("One Handed Sword Proficiency", null),
+        new Ability("Fist Weapon Proficiency", null),
+        new Ability("Off Hand Proficiency", null),
+        new Ability("Polearm Proficiency", null),
+        new Ability("Dagger Proficiency", null),
+        new Ability("Staff Proficiency", null),
+        new Ability("Wand Proficiency", null),
+        new Ability("Totem Proficiency", null),
+        new Ability("Relic Proficiency", null),
+        new Ability("Libram Proficiency", null),
+        new Ability("Idol Proficiency", null),
+        new Ability("Shield Proficiency", null),
+        new Ability("Quiver Proficiency", null),
+        new Ability("Pouch Proficiency", null),
+        new Ability("Bow Proficiency", null),
+        new Ability("Crossbow Proficiency", null),
+        new Ability("Gun Proficiency", null),
+        new Ability("Cloth Proficiency", null),
+        new Ability("Leather Proficiency", null),
+        new Ability("Mail Proficiency", null),
+        new Ability("Plate Proficiency", null),
         new Ability("Envenom", 0, new() { "Damage", "Overtime" }, new()
         {
             { "Order", 1 }
@@ -195,7 +218,7 @@ public class Ability
         },
         (p) =>
         {
-            var caster = p ? Board.board.player : Board.board.enemy;
+            var caster = Caster(p);
             AddHeaderRegion(() =>
             {
                 var damage = caster.WeaponDamage();
@@ -211,8 +234,8 @@ public class Ability
         },
         (p) =>
         {
-            var caster = p ? Board.board.player : Board.board.enemy;
-            var target = p ? Board.board.enemy : Board.board.player;
+            var caster = Caster(p);
+            var target = Target(p);
             Board.board.actions.Add(() =>
             {
                 PlaySound("AbilityArcaneMissilesCast", 0.3f);
@@ -250,8 +273,8 @@ public class Ability
         },
         (p, board) =>
         {
-            var caster = p ? board.player : board.enemy;
-            var target = p ? board.enemy : board.player;
+            var caster = Caster(p, board);
+            var target = Target(p, board);
             target.Damage(caster.RollWeaponDamage() * (caster.SpellPower() / 10.0 + 1) * 1.3);
             target.Damage(caster.RollWeaponDamage() * (caster.SpellPower() / 10.0 + 1) * 1.3);
             target.Damage(caster.RollWeaponDamage() * (caster.SpellPower() / 10.0 + 1) * 1.3);
@@ -283,7 +306,7 @@ public class Ability
         },
         (p) =>
         {
-            var target = p ? Board.board.enemy : Board.board.player;
+            var target = Target(p);
             Board.board.actions.Add(() =>
             {
                 target.AddBuff("Curse Of Agony", 10, SpawnShatterBuff(2, 0.8, new Vector3(p ? 148 : -318, 122), "AbilityCurseOfAgony", target));
@@ -297,7 +320,7 @@ public class Ability
         },
         (p, board) =>
         {
-            var target = p ? board.enemy : board.player;
+            var target = Target(p, board);
             target.AddBuff("Curse Of Agony", 10);
             if (p) board.playerFinishedMoving = true;
             else board.enemyFinishedMoving = true;
@@ -326,7 +349,7 @@ public class Ability
         },
         (p) =>
         {
-            var target = p ? Board.board.enemy : Board.board.player;
+            var target = Target(p);
             Board.board.actions.Add(() =>
             {
                 target.AddBuff("Venomous Bite", 4, SpawnShatterBuff(2, 0.8, new Vector3(p ? 148 : -318, 122), "AbilityVenomousBite", target));
@@ -340,7 +363,7 @@ public class Ability
         },
         (p, board) =>
         {
-            var target = p ? board.enemy : board.player;
+            var target = Target(p, board);
             target.AddBuff("Venomous Bite", 4);
             if (p) board.playerFinishedMoving = true;
             else board.enemyFinishedMoving = true;
@@ -372,7 +395,7 @@ public class Ability
         },
         (p) =>
         {
-            var caster = p ? Board.board.player : Board.board.enemy;
+            var caster = Caster(p);
             Board.board.actions.Add(() =>
             {
                 caster.AddBuff("Withering Cloud", 7, SpawnShatterBuff(2, 0.8, new Vector3(!p ? 148 : -318, 122), "AbilityWitheringCloud", caster));
@@ -384,7 +407,7 @@ public class Ability
         },
         (p, board) =>
         {
-            var caster = p ? board.player : board.enemy;
+            var caster = Caster(p, board);
             caster.AddBuff("Withering Cloud", 7);
         }),
         new Ability("Web Burst", 4, new() { "Stun" }, new()
@@ -412,7 +435,7 @@ public class Ability
         },
         (p) =>
         {
-            var target = p ? Board.board.enemy : Board.board.player;
+            var target = Target(p);
             Board.board.actions.Add(() =>
             {
                 PlaySound("AbilityWebBurstCast");
@@ -429,7 +452,7 @@ public class Ability
         },
         (p, board) =>
         {
-            var target = p ? board.enemy : board.player;
+            var target = Target(p, board);
             target.AddBuff("Web Burst", 2);
         }),
         new Ability("Demon Skin", 0, new() { "Defensive" }, new()
@@ -456,7 +479,7 @@ public class Ability
         },
         (p) =>
         {
-            var caster = p ? Board.board.player : Board.board.enemy;
+            var caster = Caster(p);
             Board.board.actions.Add(() =>
             {
                 caster.AddBuff("Demon Skin", 5, SpawnShatterBuff(2, 0.8, new Vector3(!p ? 148 : -318, 122), "AbilityDemonSkin", caster));
@@ -468,10 +491,10 @@ public class Ability
         },
         (p, board) =>
         {
-            var caster = p ? board.player : board.enemy;
+            var caster = Caster(p, board);
             caster.AddBuff("Demon Skin", 5);
         }),
-        new Ability("Vanquished Tentacle of C'Thun", "ItemTrinketQiraj5", 20, new() { "Damage" }, new()
+        new Ability("Vanquished Tentacle of C'Thun", "itemmiscahnqirajtrinket05", 20, new() { "Damage" }, new()
         {
             { "Shadow", 4 },
         },
@@ -495,7 +518,7 @@ public class Ability
         },
         (p) =>
         {
-            var caster = p ? Board.board.player : Board.board.enemy;
+            var caster = Caster(p);
             Board.board.actions.Add(() =>
             {
                 caster.AddBuff("Vanquished Tentacle of C'Thun", 4, SpawnShatterBuff(2, 0.8, new Vector3(!p ? 148 : -318, 122), "ItemTrinketQiraj5", caster));
@@ -507,7 +530,7 @@ public class Ability
         },
         (p, board) =>
         {
-            var caster = p ? board.player : board.enemy;
+            var caster = Caster(p, board);
             caster.AddBuff("Vanquished Tentacle of C'Thun", 4);
         },  true),
         new Ability("Stoneform", 20, new() { "Defensive" }, new()
@@ -535,7 +558,7 @@ public class Ability
         },
         (p) =>
         {
-            var caster = p ? Board.board.player : Board.board.enemy;
+            var caster = Caster(p);
             Board.board.actions.Add(() =>
             {
                 caster.AddBuff("Stoneform", 4, SpawnShatterBuff(2, 0.8, new Vector3(!p ? 148 : -318, 122), "AbilityStoneform", caster));
@@ -547,7 +570,7 @@ public class Ability
         },
         (p, board) =>
         {
-            var caster = p ? board.player : board.enemy;
+            var caster = Caster(p, board);
             caster.AddBuff("Stoneform", 4);
         }),
         new Ability("Ice Block", 0, new() { "Defensive", "Emergency" }, new()
@@ -574,7 +597,7 @@ public class Ability
         },
         (p) =>
         {
-            var caster = p ? Board.board.player : Board.board.enemy;
+            var caster = Caster(p);
             Board.board.actions.Add(() =>
             {
                 caster.AddBuff("Ice Block", 3, SpawnShatterBuff(2, 0.8, new Vector3(!p ? 148 : -318, 122), "AbilityIceBlock", caster));
@@ -588,7 +611,7 @@ public class Ability
         },
         (p, board) =>
         {
-            var caster = p ? board.player : board.enemy;
+            var caster = Caster(p, board);
             caster.AddBuff("Ice Block", 3);
             if (p) board.playerFinishedMoving = true;
             else board.enemyFinishedMoving = true;
@@ -617,7 +640,7 @@ public class Ability
         },
         (p) =>
         {
-            var caster = p ? Board.board.player : Board.board.enemy;
+            var caster = Caster(p);
             Board.board.actions.Add(() =>
             {
                 caster.AddBuff("Power Word: Shield", 5, SpawnShatterBuff(2, 0.8, new Vector3(!p ? 148 : -318, 122), "AbilityPowerWordShield", caster));
@@ -629,7 +652,7 @@ public class Ability
         },
         (p, board) =>
         {
-            var caster = p ? board.player : board.enemy;
+            var caster = Caster(p, board);
             caster.AddBuff("Power Word: Shield", 5);
         }),
         new Ability("Fel Armor", 0, new() { "Defensive" }, new()
@@ -657,7 +680,7 @@ public class Ability
         },
         (p) =>
         {
-            var caster = p ? Board.board.player : Board.board.enemy;
+            var caster = Caster(p);
             Board.board.actions.Add(() =>
             {
                 caster.AddBuff("Fel Armor", 5, SpawnShatterBuff(2, 0.8, new Vector3(!p ? 148 : -318, 122), "AbilityFelArmor", caster));
@@ -669,7 +692,7 @@ public class Ability
         },
         (p, board) =>
         {
-            var caster = p ? board.player : board.enemy;
+            var caster = Caster(p, board);
             caster.AddBuff("Fel Armor", 5);
         }),
         new Ability("Hammer Of Justice", 0, new() { "Stun" }, new()
@@ -697,7 +720,7 @@ public class Ability
         },
         (p) =>
         {
-            var target = p ? Board.board.enemy : Board.board.player;
+            var target = Target(p);
             Board.board.actions.Add(() =>
             {
                 PlaySound("AbilityHammerOfJusticeCast");
@@ -714,7 +737,7 @@ public class Ability
         },
         (p, board) =>
         {
-            var target = p ? board.enemy : board.player;
+            var target = Target(p, board);
             target.AddBuff("Hammer Of Justice", 2);
         }),
         new Ability("Shadow Word: Pain", 0, new() { "Damage", "Overtime" }, new()
@@ -741,7 +764,7 @@ public class Ability
         },
         (p) =>
         {
-            var target = p ? Board.board.enemy : Board.board.player;
+            var target = Target(p);
             Board.board.actions.Add(() =>
             {
                 target.AddBuff("Shadow Word: Pain", 5, SpawnShatterBuff(2, 0.8, new Vector3(p ? 148 : -318, 122), "AbilityShadowWordPain", target));
@@ -754,7 +777,7 @@ public class Ability
         },
         (p, board) =>
         {
-            var target = p ? board.enemy : board.player;
+            var target = Target(p, board);
             target.AddBuff("Shadow Word: Pain", 5);
         }),
         new Ability("Putrid Bite", 2, new() { "Damage", "Overtime" }, new()
@@ -782,7 +805,7 @@ public class Ability
         },
         (p) =>
         {
-            var target = p ? Board.board.enemy : Board.board.player;
+            var target = Target(p);
             Board.board.actions.Add(() =>
             {
                 target.AddBuff("Putrid Bite", 3, SpawnShatterBuff(2, 0.8, new Vector3(p ? 148 : -318, 122), "AbilityPutridBite", target));
@@ -797,7 +820,7 @@ public class Ability
         },
         (p, board) =>
         {
-            var target = p ? board.enemy : board.player;
+            var target = Target(p, board);
             target.AddBuff("Putrid Bite", 3);
             if (p) board.playerFinishedMoving = true;
             else board.enemyFinishedMoving = true;
@@ -827,7 +850,7 @@ public class Ability
         },
         (p) =>
         {
-            var target = p ? Board.board.enemy : Board.board.player;
+            var target = Target(p);
             Board.board.actions.Add(() =>
             {
                 target.AddBuff("Corruption", 6, SpawnShatterBuff(2, 0.8, new Vector3(p ? 148 : -318, 122), "AbilityCorruption", target));
@@ -840,7 +863,7 @@ public class Ability
         },
         (p, board) =>
         {
-            var target = p ? board.enemy : board.player;
+            var target = Target(p, board);
             target.AddBuff("Corruption", 6);
         }),
         new Ability("Summon Infernal", 0, new() { "Damage", "Overtime" }, new()
@@ -867,7 +890,7 @@ public class Ability
         },
         (p) =>
         {
-            var caster = p ? Board.board.player : Board.board.enemy;
+            var caster = Caster(p);
             Board.board.actions.Add(() =>
             {
                 PlaySound("AbilitySummonInfernalCast");
@@ -887,7 +910,7 @@ public class Ability
         },
         (p, board) =>
         {
-            var caster = p ? board.player : board.enemy;
+            var caster = Caster(p, board);
             caster.AddBuff("Summoned Infernal", 7);
             if (p) board.playerFinishedMoving = true;
             else board.enemyFinishedMoving = true;
@@ -917,7 +940,7 @@ public class Ability
         },
         (p) =>
         {
-            var caster = p ? Board.board.player : Board.board.enemy;
+            var caster = Caster(p);
             Board.board.actions.Add(() =>
             {
                 PlaySound("AbilitySummonFelhunterCast");
@@ -937,7 +960,7 @@ public class Ability
         },
         (p, board) =>
         {
-            var caster = p ? board.player : board.enemy;
+            var caster = Caster(p, board);
             caster.AddBuff("Summoned Felhunter", 7);
             if (p) board.playerFinishedMoving = true;
             else board.enemyFinishedMoving = true;
@@ -966,7 +989,7 @@ public class Ability
         },
         (p) =>
         {
-            var caster = p ? Board.board.player : Board.board.enemy;
+            var caster = Caster(p);
             Board.board.actions.Add(() =>
             {
                 PlaySound("AbilitySummonVoidwalkerCast");
@@ -986,7 +1009,7 @@ public class Ability
         },
         (p, board) =>
         {
-            var caster = p ? board.player : board.enemy;
+            var caster = Caster(p, board);
             caster.AddBuff("Summoned Voidwalker", 7);
             if (p) board.playerFinishedMoving = true;
             else board.enemyFinishedMoving = true;
@@ -1016,7 +1039,7 @@ public class Ability
         },
         (p) =>
         {
-            var caster = p ? Board.board.player : Board.board.enemy;
+            var caster = Caster(p);
             Board.board.actions.Add(() =>
             {
                 PlaySound("AbilitySummonImpCast");
@@ -1036,7 +1059,7 @@ public class Ability
         },
         (p, board) =>
         {
-            var caster = p ? board.player : board.enemy;
+            var caster = Caster(p, board);
             caster.AddBuff("Summoned Imp", 7);
             if (p) board.playerFinishedMoving = true;
             else board.enemyFinishedMoving = true;
@@ -1047,7 +1070,7 @@ public class Ability
         },
         (p) =>
         {
-            var caster = p ? Board.board.player : Board.board.enemy;
+            var caster = Caster(p);
             AddHeaderRegion(() =>
             {
                 var damage = caster.WeaponDamage();
@@ -1063,8 +1086,8 @@ public class Ability
         },
         (p) =>
         {
-            var caster = p ? Board.board.player : Board.board.enemy;
-            var target = p ? Board.board.enemy : Board.board.player;
+            var caster = Caster(p);
+            var target = Target(p);
             Board.board.actions.Add(() =>
             {
                 PlaySound("AbilityShadowboltCast");
@@ -1084,8 +1107,8 @@ public class Ability
         },
         (p, board) =>
         {
-            var caster = p ? board.player : board.enemy;
-            var target = p ? board.enemy : board.player;
+            var caster = Caster(p, board);
+            var target = Target(p, board);
             target.Damage(caster.RollWeaponDamage() * (caster.SpellPower() / 10.0 + 1) * 2.9);
             if (p) board.playerFinishedMoving = true;
             else board.enemyFinishedMoving = true;
@@ -1096,7 +1119,7 @@ public class Ability
         },
         (p) =>
         {
-            var caster = p ? Board.board.player : Board.board.enemy;
+            var caster = Caster(p);
             AddHeaderRegion(() =>
             {
                 var damage = caster.WeaponDamage();
@@ -1112,8 +1135,8 @@ public class Ability
         },
         (p) =>
         {
-            var caster = p ? Board.board.player : Board.board.enemy;
-            var target = p ? Board.board.enemy : Board.board.player;
+            var caster = Caster(p);
+            var target = Target(p);
             Board.board.actions.Add(() =>
             {
                 PlaySound("AbilityFireballCast");
@@ -1133,8 +1156,8 @@ public class Ability
         },
         (p, board) =>
         {
-            var caster = p ? board.player : board.enemy;
-            var target = p ? board.enemy : board.player;
+            var caster = Caster(p, board);
+            var target = Target(p, board);
             target.Damage(caster.RollWeaponDamage() * (caster.SpellPower() / 10.0 + 1) * 2.9);
             if (p) board.playerFinishedMoving = true;
             else board.enemyFinishedMoving = true;
@@ -1146,7 +1169,7 @@ public class Ability
         },
         (p) =>
         {
-            var caster = p ? Board.board.player : Board.board.enemy;
+            var caster = Board.board == null ? currentSave.player : p ? Board.board.player : Board.board.enemy;
             AddHeaderRegion(() =>
             {
                 var damage = caster.WeaponDamage();
@@ -1162,7 +1185,7 @@ public class Ability
         },
         (p) =>
         {
-            var target = p ? Board.board.enemy : Board.board.player;
+            var target = Target(p);
             Board.board.actions.Add(() =>
             {
                 target.AddBuff("Scorch", 3, SpawnShatterBuff(2, 0.8, new Vector3(p ? 148 : -318, 122), "AbilityScorch", target));
@@ -1175,7 +1198,7 @@ public class Ability
         },
         (p, board) =>
         {
-            var target = p ? board.enemy : board.player;
+            var target = Target(p, board);
             target.AddBuff("Scorch", 3);
         }),
         new Ability("Healing Wave", 0, new() { "Healing" }, new()
@@ -1203,8 +1226,8 @@ public class Ability
         },
         (p) =>
         {
-            var caster = p ? Board.board.player : Board.board.enemy;
-            var target = p ? Board.board.enemy : Board.board.player;
+            var caster = Caster(p);
+            var target = Target(p);
             Board.board.actions.Add(() =>
             {
                 caster.health += 10;
@@ -1220,7 +1243,7 @@ public class Ability
         },
         (p, board) =>
         {
-            var caster = p ? board.player : board.enemy;
+            var caster = Caster(p, board);
             caster.health += 10;
             if (caster.health >= caster.MaxHealth())
                 caster.health = caster.MaxHealth();
@@ -1249,8 +1272,8 @@ public class Ability
         },
         (p) =>
         {
-            var caster = p ? Board.board.player : Board.board.enemy;
-            var target = p ? Board.board.enemy : Board.board.player;
+            var caster = Caster(p);
+            var target = Target(p);
             Board.board.actions.Add(() =>
             {
                 PlaySound("AbilityMuscleTearCast");
@@ -1270,8 +1293,8 @@ public class Ability
         },
         (p, board) =>
         {
-            var caster = p ? board.player : board.enemy;
-            var target = p ? board.enemy : board.player;
+            var caster = Caster(p, board);
+            var target = Target(p, board);
             target.Damage(caster.RollWeaponDamage() * (caster.MeleeAttackPower() / 10.0 + 1) * 4.3);
             if (p) board.playerFinishedMoving = true;
             else board.enemyFinishedMoving = true;
@@ -1282,7 +1305,7 @@ public class Ability
         },
         (p) =>
         {
-            var caster = p ? Board.board.player : Board.board.enemy;
+            var caster = Caster(p);
             AddHeaderRegion(() =>
             {
                 var damage = caster.WeaponDamage();
@@ -1298,8 +1321,8 @@ public class Ability
         },
         (p) =>
         {
-            var caster = p ? Board.board.player : Board.board.enemy;
-            var target = p ? Board.board.enemy : Board.board.player;
+            var caster = Caster(p);
+            var target = Target(p);
             Board.board.actions.Add(() =>
             {
                 PlaySound("AbilitySmiteCast");
@@ -1319,8 +1342,8 @@ public class Ability
         },
         (p, board) =>
         {
-            var caster = p ? board.player : board.enemy;
-            var target = p ? board.enemy : board.player;
+            var caster = Caster(p, board);
+            var target = Target(p, board);
             target.Damage(caster.RollWeaponDamage() * (caster.SpellPower() / 10.0 + 1) * 2.9);
             if (p) board.playerFinishedMoving = true;
             else board.enemyFinishedMoving = true;
@@ -1350,8 +1373,8 @@ public class Ability
         },
         (p) =>
         {
-            var caster = p ? Board.board.player : Board.board.enemy;
-            var target = p ? Board.board.enemy : Board.board.player;
+            var caster = Caster(p);
+            var target = Target(p);
             Board.board.actions.Add(() =>
             {
                 target.Damage(caster.RollWeaponDamage() * (caster.SpellPower() / 10.0 + 1) * 3.8);
@@ -1365,8 +1388,8 @@ public class Ability
         },
         (p, board) =>
         {
-            var caster = p ? board.player : board.enemy;
-            var target = p ? board.enemy : board.player;
+            var caster = Caster(p, board);
+            var target = Target(p, board);
             target.Damage(caster.RollWeaponDamage() * (caster.SpellPower() / 10.0 + 1) * 3.8);
             target.AddBuff("Holy Fire", 2);
         }),
@@ -1376,7 +1399,7 @@ public class Ability
         },
         (p) =>
         {
-            var caster = p ? Board.board.player : Board.board.enemy;
+            var caster = Caster(p);
             AddHeaderRegion(() =>
             {
                 var damage = caster.WeaponDamage();
@@ -1392,8 +1415,8 @@ public class Ability
         },
         (p) =>
         {
-            var caster = p ? Board.board.player : Board.board.enemy;
-            var target = p ? Board.board.enemy : Board.board.player;
+            var caster = Caster(p);
+            var target = Target(p);
             Board.board.actions.Add(() =>
             {
                 PlaySound("AbilityFrostboltCast");
@@ -1413,8 +1436,8 @@ public class Ability
         },
         (p, board) =>
         {
-            var caster = p ? board.player : board.enemy;
-            var target = p ? board.enemy : board.player;
+            var caster = Caster(p, board);
+            var target = Target(p, board);
             target.Damage(caster.RollWeaponDamage() * (caster.SpellPower() / 10.0 + 1) * 2.9);
             if (p) board.playerFinishedMoving = true;
             else board.enemyFinishedMoving = true;
@@ -1446,8 +1469,8 @@ public class Ability
         },
         (p) =>
         {
-            var caster = p ? Board.board.player : Board.board.enemy;
-            var target = p ? Board.board.enemy : Board.board.player;
+            var caster = Caster(p);
+            var target = Target(p);
             Board.board.actions.Add(() =>
             {
                 PlaySound("AbilityIceLanceCast");
@@ -1465,8 +1488,8 @@ public class Ability
         },
         (p, board) =>
         {
-            var caster = p ? board.player : board.enemy;
-            var target = p ? board.enemy : board.player;
+            var caster = Caster(p, board);
+            var target = Target(p, board);
             target.Damage(caster.RollWeaponDamage() * (caster.SpellPower() / 10.0 + 1) * 4.9);
         }),
         new Ability("Freezing Nova", 1, new() { "Gathering" }, new()
@@ -1574,7 +1597,7 @@ public class Ability
         },
         (p) =>
         {
-            var caster = p ? Board.board.player : Board.board.enemy;
+            var caster = Caster(p);
             Board.board.actions.Add(() =>
             {
                 caster.AddBuff("Blizzard", 7, SpawnShatterBuff(2, 0.8, new Vector3(p ? 148 : -318, 122), "AbilityBlizzard", caster));
@@ -1586,7 +1609,7 @@ public class Ability
         },
         (p, board) =>
         {
-            var caster = p ? board.player : board.enemy;
+            var caster = Caster(p, board);
             caster.AddBuff("Blizzard", 7);
         }),
         new Ability("Deep Freeze", 5, new() { "Gathering" }, new()
@@ -1699,8 +1722,8 @@ public class Ability
         },
         (p) =>
         {
-            var caster = p ? Board.board.player : Board.board.enemy;
-            var target = p ? Board.board.enemy : Board.board.player;
+            var caster = Caster(p);
+            var target = Target(p);
             Board.board.actions.Add(() =>
             {
                 PlaySound("AbilityThunderstormCast");
@@ -1818,8 +1841,8 @@ public class Ability
         },
         (p) =>
         {
-            var caster = p ? Board.board.player : Board.board.enemy;
-            var target = p ? Board.board.enemy : Board.board.player;
+            var caster = Caster(p);
+            var target = Target(p);
             Board.board.actions.Add(() =>
             {
                 PlaySound("AbilityMeteorCast");
@@ -1954,8 +1977,8 @@ public class Ability
         },
         (p) =>
         {
-            var caster = p ? Board.board.player : Board.board.enemy;
-            var target = p ? Board.board.enemy : Board.board.player;
+            var caster = Caster(p);
+            var target = Target(p);
             Board.board.actions.Add(() =>
             {
                 PlaySound("AbilityIceLanceCast");
@@ -2000,8 +2023,8 @@ public class Ability
         },
         (p) =>
         {
-            var caster = p ? Board.board.player : Board.board.enemy;
-            var target = p ? Board.board.enemy : Board.board.player;
+            var caster = Caster(p);
+            var target = Target(p);
             Board.board.actions.Add(() =>
             {
                 PlaySound("AbilityIceLanceCast");
@@ -2016,8 +2039,763 @@ public class Ability
         },
         (p, board) =>
         {
-            var target = p ? board.enemy : board.player;
+            var target = Target(p, board);
             target.health -= 4;
-        })
+        }),
+
+        #region Passive abilities
+
+        new Ability("Hot Streak",
+        (p) =>
+        {
+            AddPaddingRegion(() =>
+            {
+                AddLine("Casting Frosbolt will channel a frosty", Gray);
+                AddLine("projectile at the target dealing damage.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Deals 8 damage times caster's intelligence.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+                AddLine("Each point in Frost Mastery adds 1% chance", Gray);
+                AddLine("to refund the cost of casting this spell.", Gray);
+            });
+        }),
+        new Ability("Harmonic Echo",
+        (p) =>
+        {
+            AddPaddingRegion(() =>
+            {
+                AddLine("Casting Frosbolt will channel a frosty", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Deals 8 damage times caster's intelligence.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+                AddLine("Each point in Frost Mastery adds 1% chance", Gray);
+            });
+        }),
+        new Ability("Harmonic Echo",
+        (p) =>
+        {
+            AddPaddingRegion(() =>
+            {
+                AddLine("Casting Frosbolt will channel a frosty", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Deals 8 damage times caster's intelligence.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+                AddLine("Each point in Frost Mastery adds 1% chance", Gray);
+            });
+        }),
+        new Ability("Arcane Harmony",
+        (p) =>
+        {
+            AddPaddingRegion(() =>
+            {
+                AddLine("Casting Frosbolt will channel a frosty", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Deals 8 damage times caster's intelligence.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+                AddLine("Each point in Frost Mastery adds 1% chance", Gray);
+            });
+        }),
+        new Ability("Nether Precision",
+        (p) =>
+        {
+            AddPaddingRegion(() =>
+            {
+                AddLine("Casting Frosbolt will channel a frosty", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Deals 8 damage times caster's intelligence.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+                AddLine("Each point in Frost Mastery adds 1% chance", Gray);
+            });
+        }),
+        new Ability("Enlightenment",
+        (p) =>
+        {
+            AddPaddingRegion(() =>
+            {
+                AddLine("Casting Frosbolt will channel a frosty", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Deals 8 damage times caster's intelligence.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+                AddLine("Each point in Frost Mastery adds 1% chance", Gray);
+            });
+        }),
+        new Ability("Cascading Power",
+        (p) =>
+        {
+            AddPaddingRegion(() =>
+            {
+                AddLine("Casting Frosbolt will channel a frosty", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Deals 8 damage times caster's intelligence.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+                AddLine("Each point in Frost Mastery adds 1% chance", Gray);
+            });
+        }),
+        new Ability("Arcing Cleaves",
+        (p) =>
+        {
+            AddPaddingRegion(() =>
+            {
+                AddLine("Casting Frosbolt will channel a frosty", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Deals 8 damage times caster's intelligence.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+                AddLine("Each point in Frost Mastery adds 1% chance", Gray);
+            });
+        }),
+        new Ability("Concentrated Power",
+        (p) =>
+        {
+            AddPaddingRegion(() =>
+            {
+                AddLine("Casting Frosbolt will channel a frosty", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Deals 8 damage times caster's intelligence.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+                AddLine("Each point in Frost Mastery adds 1% chance", Gray);
+            });
+        }),
+        new Ability("Resonance",
+        (p) =>
+        {
+            AddPaddingRegion(() =>
+            {
+                AddLine("Casting Frosbolt will channel a frosty", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Deals 8 damage times caster's intelligence.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+                AddLine("Each point in Frost Mastery adds 1% chance", Gray);
+            });
+        }),
+        new Ability("Reverberate",
+        (p) =>
+        {
+            AddPaddingRegion(() =>
+            {
+                AddLine("Casting Frosbolt will channel a frosty", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Deals 8 damage times caster's intelligence.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+                AddLine("Each point in Frost Mastery adds 1% chance", Gray);
+            });
+        }),
+        new Ability("Mana Adept",
+        (p) =>
+        {
+            AddPaddingRegion(() =>
+            {
+                AddLine("Casting Frosbolt will channel a frosty", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Deals 8 damage times caster's intelligence.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+                AddLine("Each point in Frost Mastery adds 1% chance", Gray);
+            });
+        }),
+        new Ability("Amplification",
+        (p) =>
+        {
+            AddPaddingRegion(() =>
+            {
+                AddLine("Casting Frosbolt will channel a frosty", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Deals 8 damage times caster's intelligence.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+                AddLine("Each point in Frost Mastery adds 1% chance", Gray);
+            });
+        }),
+        new Ability("Concentration",
+        (p) =>
+        {
+            AddPaddingRegion(() =>
+            {
+                AddLine("Casting Frosbolt will channel a frosty", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Deals 8 damage times caster's intelligence.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+                AddLine("Each point in Frost Mastery adds 1% chance", Gray);
+            });
+        }),
+        new Ability("Arcane Tempo",
+        (p) =>
+        {
+            AddPaddingRegion(() =>
+            {
+                AddLine("Casting Frosbolt will channel a frosty", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Deals 8 damage times caster's intelligence.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+                AddLine("Each point in Frost Mastery adds 1% chance", Gray);
+            });
+        }),
+        new Ability("Bone Chilling",
+        (p) =>
+        {
+            AddPaddingRegion(() =>
+            {
+                AddLine("Casting Frosbolt will channel a frosty", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Deals 8 damage times caster's intelligence.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+                AddLine("Each point in Frost Mastery adds 1% chance", Gray);
+            });
+        }),
+        new Ability("Deep Shatter",
+        (p) =>
+        {
+            AddPaddingRegion(() =>
+            {
+                AddLine("Casting Frosbolt will channel a frosty", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Deals 8 damage times caster's intelligence.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+                AddLine("Each point in Frost Mastery adds 1% chance", Gray);
+            });
+        }),
+        new Ability("Cruel Winter",
+        (p) =>
+        {
+            AddPaddingRegion(() =>
+            {
+                AddLine("Casting Frosbolt will channel a frosty", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Deals 8 damage times caster's intelligence.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+                AddLine("Each point in Frost Mastery adds 1% chance", Gray);
+            });
+        }),
+        new Ability("Perpetual Winter",
+        (p) =>
+        {
+            AddPaddingRegion(() =>
+            {
+                AddLine("Casting Frosbolt will channel a frosty", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Deals 8 damage times caster's intelligence.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+                AddLine("Each point in Frost Mastery adds 1% chance", Gray);
+            });
+        }),
+        new Ability("Flash Freeze",
+        (p) =>
+        {
+            AddPaddingRegion(() =>
+            {
+                AddLine("Casting Frosbolt will channel a frosty", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Deals 8 damage times caster's intelligence.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+                AddLine("Each point in Frost Mastery adds 1% chance", Gray);
+            });
+        }),
+        new Ability("Piercing Ice",
+        (p) =>
+        {
+            AddPaddingRegion(() =>
+            {
+                AddLine("Casting Frosbolt will channel a frosty", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Deals 8 damage times caster's intelligence.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+                AddLine("Each point in Frost Mastery adds 1% chance", Gray);
+            });
+        }),
+        new Ability("Frost Channeling",
+        (p) =>
+        {
+            AddPaddingRegion(() =>
+            {
+                AddLine("Casting Frosbolt will channel a frosty", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Deals 8 damage times caster's intelligence.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+                AddLine("Each point in Frost Mastery adds 1% chance", Gray);
+            });
+        }),
+        new Ability("Permafrost",
+        (p) =>
+        {
+            AddPaddingRegion(() =>
+            {
+                AddLine("Casting Frosbolt will channel a frosty", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Deals 8 damage times caster's intelligence.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+                AddLine("Each point in Frost Mastery adds 1% chance", Gray);
+            });
+        }),
+        new Ability("Hailstones",
+        (p) =>
+        {
+            AddPaddingRegion(() =>
+            {
+                AddLine("Casting Frosbolt will channel a frosty", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Deals 8 damage times caster's intelligence.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+                AddLine("Each point in Frost Mastery adds 1% chance", Gray);
+            });
+        }),
+        new Ability("Frostbite",
+        (p) =>
+        {
+            AddPaddingRegion(() =>
+            {
+                AddLine("Casting Frosbolt will channel a frosty", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Deals 8 damage times caster's intelligence.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+                AddLine("Each point in Frost Mastery adds 1% chance", Gray);
+            });
+        }),
+        new Ability("Splitting Ice",
+        (p) =>
+        {
+            AddPaddingRegion(() =>
+            {
+                AddLine("Casting Frosbolt will channel a frosty", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Deals 8 damage times caster's intelligence.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+                AddLine("Each point in Frost Mastery adds 1% chance", Gray);
+            });
+        }),
+        new Ability("Ice Shards",
+        (p) =>
+        {
+            AddPaddingRegion(() =>
+            {
+                AddLine("Casting Frosbolt will channel a frosty", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Deals 8 damage times caster's intelligence.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+                AddLine("Each point in Frost Mastery adds 1% chance", Gray);
+            });
+        }),
+        new Ability("Fingers Of Frost",
+        (p) =>
+        {
+            AddPaddingRegion(() =>
+            {
+                AddLine("Casting Frosbolt will channel a frosty", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Deals 8 damage times caster's intelligence.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+                AddLine("Each point in Frost Mastery adds 1% chance", Gray);
+            });
+        }),
+        new Ability("Wintertide",
+        (p) =>
+        {
+            AddPaddingRegion(() =>
+            {
+                AddLine("Casting Frosbolt will channel a frosty", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Deals 8 damage times caster's intelligence.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+                AddLine("Each point in Frost Mastery adds 1% chance", Gray);
+            });
+        }),
+        new Ability("Brain Freeze",
+        (p) =>
+        {
+            AddPaddingRegion(() =>
+            {
+                AddLine("Casting Frosbolt will channel a frosty", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Deals 8 damage times caster's intelligence.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+                AddLine("Each point in Frost Mastery adds 1% chance", Gray);
+            });
+        }),
+        new Ability("Sun King's Blessing",
+        (p) =>
+        {
+            AddPaddingRegion(() =>
+            {
+                AddLine("Casting Frosbolt will channel a frosty", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Deals 8 damage times caster's intelligence.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+                AddLine("Each point in Frost Mastery adds 1% chance", Gray);
+            });
+        }),
+        new Ability("Deep Impact",
+        (p) =>
+        {
+            AddPaddingRegion(() =>
+            {
+                AddLine("Casting Frosbolt will channel a frosty", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Deals 8 damage times caster's intelligence.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+                AddLine("Each point in Frost Mastery adds 1% chance", Gray);
+            });
+        }),
+        new Ability("Hyperthermia",
+        (p) =>
+        {
+            AddPaddingRegion(() =>
+            {
+                AddLine("Casting Frosbolt will channel a frosty", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Deals 8 damage times caster's intelligence.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+                AddLine("Each point in Frost Mastery adds 1% chance", Gray);
+            });
+        }),
+        new Ability("Volatile Detonation",
+        (p) =>
+        {
+            AddPaddingRegion(() =>
+            {
+                AddLine("Casting Frosbolt will channel a frosty", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Deals 8 damage times caster's intelligence.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+                AddLine("Each point in Frost Mastery adds 1% chance", Gray);
+            });
+        }),
+        new Ability("Critical Mass",
+        (p) =>
+        {
+            AddPaddingRegion(() =>
+            {
+                AddLine("Casting Frosbolt will channel a frosty", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Deals 8 damage times caster's intelligence.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+                AddLine("Each point in Frost Mastery adds 1% chance", Gray);
+            });
+        }),
+        new Ability("Convection",
+        (p) =>
+        {
+            AddPaddingRegion(() =>
+            {
+                AddLine("Casting Frosbolt will channel a frosty", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Deals 8 damage times caster's intelligence.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+                AddLine("Each point in Frost Mastery adds 1% chance", Gray);
+            });
+        }),
+        new Ability("Pyromaniac",
+        (p) =>
+        {
+            AddPaddingRegion(() =>
+            {
+                AddLine("Casting Frosbolt will channel a frosty", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Deals 8 damage times caster's intelligence.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+                AddLine("Each point in Frost Mastery adds 1% chance", Gray);
+            });
+        }),
+        new Ability("Conflagration",
+        (p) =>
+        {
+            AddPaddingRegion(() =>
+            {
+                AddLine("Casting Frosbolt will channel a frosty", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Deals 8 damage times caster's intelligence.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+                AddLine("Each point in Frost Mastery adds 1% chance", Gray);
+            });
+        }),
+        new Ability("Firemind",
+        (p) =>
+        {
+            AddPaddingRegion(() =>
+            {
+                AddLine("Casting Frosbolt will channel a frosty", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Deals 8 damage times caster's intelligence.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+                AddLine("Each point in Frost Mastery adds 1% chance", Gray);
+            });
+        }),
+        new Ability("Pyroclasm",
+        (p) =>
+        {
+            AddPaddingRegion(() =>
+            {
+                AddLine("Casting Frosbolt will channel a frosty", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Deals 8 damage times caster's intelligence.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+                AddLine("Each point in Frost Mastery adds 1% chance", Gray);
+            });
+        }),
+        new Ability("Flame Patch",
+        (p) =>
+        {
+            AddPaddingRegion(() =>
+            {
+                AddLine("Casting Frosbolt will channel a frosty", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Deals 8 damage times caster's intelligence.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+                AddLine("Each point in Frost Mastery adds 1% chance", Gray);
+            });
+        }),
+        new Ability("Fervent Flickering",
+        (p) =>
+        {
+            AddPaddingRegion(() =>
+            {
+                AddLine("Casting Frosbolt will channel a frosty", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Deals 8 damage times caster's intelligence.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+                AddLine("Each point in Frost Mastery adds 1% chance", Gray);
+            });
+        }),
+        new Ability("Fiery Rush",
+        (p) =>
+        {
+            AddPaddingRegion(() =>
+            {
+                AddLine("Casting Frosbolt will channel a frosty", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Deals 8 damage times caster's intelligence.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+                AddLine("Each point in Frost Mastery adds 1% chance", Gray);
+            });
+        }),
+        new Ability("Searing Touch",
+        (p) =>
+        {
+            AddPaddingRegion(() =>
+            {
+                AddLine("Casting Frosbolt will channel a frosty", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Deals 8 damage times caster's intelligence.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+                AddLine("Each point in Frost Mastery adds 1% chance", Gray);
+            });
+        }),
+
+        #endregion
     };
 }

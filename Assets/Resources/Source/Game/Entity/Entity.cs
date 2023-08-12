@@ -27,6 +27,7 @@ public class Entity
         }
         equipment = new Dictionary<string, string>();
         AutoEquip();
+        actionBars = Ability.abilities.FindAll(x => abilities.Contains(x.name) && x.cost != null).OrderBy(x => x.cost.Sum(y => y.Value)).OrderBy(x => x.putOnEnd).Select(x => new ActionBar(x.name)).Take(actionBarsUnlocked).ToList();
         Initialise();
     }
 

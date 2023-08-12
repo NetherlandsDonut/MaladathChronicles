@@ -814,20 +814,21 @@ public static class Root
                     if (abilityObj != null)
                     {
                         abilityObj.description(true);
-                        foreach (var cost in abilityObj.cost)
-                        {
-                            AddRegionGroup();
-                            AddHeaderRegion(() =>
+                        if (abilityObj.cost != null)
+                            foreach (var cost in abilityObj.cost)
                             {
-                                AddSmallButton("Element" + cost.Key + "Rousing", (h) => { });
-                            });
-                            AddRegionGroup();
-                            SetRegionGroupWidth(20);
-                            AddHeaderRegion(() =>
-                            {
-                                AddLine(cost.Value + "", Board.board != null ? (cost.Value > Board.board.player.resources[cost.Key] ? Red : Green) : Gray);
-                            });
-                        }
+                                AddRegionGroup();
+                                AddHeaderRegion(() =>
+                                {
+                                    AddSmallButton("Element" + cost.Key + "Rousing", (h) => { });
+                                });
+                                AddRegionGroup();
+                                SetRegionGroupWidth(20);
+                                AddHeaderRegion(() =>
+                                {
+                                    AddLine(cost.Value + "", Board.board != null ? (cost.Value > Board.board.player.resources[cost.Key] ? Red : Green) : Gray);
+                                });
+                            }
                     }
                     else AddPaddingRegion(() =>
                     {
@@ -835,7 +836,7 @@ public static class Root
                         SetRegionAsGroupExtender();
                     });
                     AddRegionGroup();
-                    SetRegionGroupWidth(256 - (abilityObj == null ? 0 : abilityObj.cost.Count) * 49);
+                    SetRegionGroupWidth(256 - (abilityObj == null || abilityObj.cost == null ? 0 : abilityObj.cost.Count) * 49);
                     AddPaddingRegion(() =>
                     {
                         AddLine("", LightGray);

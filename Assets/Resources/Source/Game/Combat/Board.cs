@@ -14,7 +14,6 @@ public class Board
         field = new int[x, y];
         player = currentSave.player;
         player.Initialise(false);
-        player.actionBars = Ability.abilities.FindAll(x => player.abilities.Contains(x.name) && x.cost != null).OrderBy(x => x.cost.Sum(y => y.Value)).OrderBy(x => x.putOnEnd).Select(x => new ActionBar(x.name)).Take(player.actionBarsUnlocked).ToList();
         this.enemy = enemy;
         playerTurn = true;
         this.area = area;

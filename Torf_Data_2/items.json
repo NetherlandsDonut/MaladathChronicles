@@ -1047,7 +1047,10 @@
     "price": 10.803,
     "stats": {
       "stats": {}
-    }
+    },
+    "abilities": [
+      "Vanquished Tentacle of C'Thun"
+    ]
   },
   {
     "rarity": "Epic",
