@@ -347,6 +347,7 @@ public class Blueprint
                             CloseWindow(h.window);
                             SpawnWindowBlueprint("PlayerSpellbookInfo");
                             SpawnWindowBlueprint("SpellbookAbilityList");
+                            PlaySound("DesktopActionbarAdd", 0.7f);
                         }
                     },
                     (h) => () =>
@@ -493,6 +494,7 @@ public class Blueprint
                             CloseWindow("PlayerSpellbookInfo");
                             SpawnWindowBlueprint("SpellbookAbilityList");
                             SpawnWindowBlueprint("PlayerSpellbookInfo");
+                            PlaySound("DesktopActionbarRemove", 0.7f);
                         },
                         (h) => () =>
                         {
@@ -572,6 +574,7 @@ public class Blueprint
         }),
         new("SpellbookResources", () => {
             SetAnchor(BottomLeft);
+            DisableShadows();
             AddHeaderGroup();
             AddHeaderRegion(() =>
             {

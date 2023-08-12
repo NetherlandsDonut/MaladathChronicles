@@ -71,7 +71,7 @@ public class Entity
         foreach (var resource in resources)
         {
             var amount = abilities.FindAll(x => x.cost.ContainsKey(resource.Key)).Sum(x => x.cost[resource.Key]) / elementCosts;
-            sheet.Add(resource.Key, (randomised ? Root.random.Next(5, 13) / 10.0 : 1) * amount);
+            sheet.Add(resource.Key, (randomised ? random.Next(5, 13) / 10.0 : 1) * amount);
         }
         return sheet;
     }

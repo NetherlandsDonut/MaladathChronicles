@@ -25,7 +25,6 @@ public class SiteHostileArea
         foreach (var encounter in possibleEncounters)
         {
             var split = encounter.Item1.Split("-");
-            //UnityEngine.Debug.Log(encounter + " " + name);
             this.possibleEncounters.Add((int.Parse(split[0]), int.Parse(split[split.Length == 1 ? 0 : 1]), encounter.Item2));
         }
         this.bossEncounters = bossEncounters.Select(x => (x.Item1, int.Parse(x.Item2), x.Item3)).ToList();
@@ -168,6 +167,63 @@ public class SiteHostileArea
         {
             (2, "40", "Glutton"),
             (2, "41", "Amnennar the Coldbringer"),
+        }),
+
+        #endregion
+        
+        #region Razorfen Kraul
+
+        new SiteHostileArea("Razorfen Kraul1", new()
+        {
+            ("40", "Battle Boar"),
+            ("40", "Razorfen Beast Stalker"),
+            ("40", "Razorfen Huntmaster")
+        },
+        new()
+        {
+            (2, "40", "Kraulshaper Tukaar")
+        }),
+        new SiteHostileArea("Razorfen Kraul2", new()
+        {
+            ("40", "Geomancer Acolyte"),
+            ("40", "Razorfen Beast Stalker"),
+            ("40", "Razorfen Geomagus"),
+        },
+        new()
+        {
+            (2, "40", "Hunter Bonetusk"),
+            (2, "28", "Roogug")
+        }),
+        new SiteHostileArea("Razorfen Kraul3", new()
+        {
+            ("40", "Razorfen Kraulshaper"),
+            ("40", "Razorfen Scarbalde"),
+            ("40", "Razorfen Huntmaster"),
+        },
+        new()
+        {
+            (2, "40", "Warlord Ramtusk")
+        }),
+        new SiteHostileArea("Razorfen Kraul4", new()
+        {
+            ("40", "Kraulshaped Monstrosity"),
+            ("40", "Razorfen Kraulshaper"),
+            ("40", "Vile Bat")
+        },
+        new()
+        {
+            (2, "40", "Groyat, the Blind Hunter")
+        }),
+        new SiteHostileArea("Razorfen Kraul5", new()
+        {
+            ("40", "Enormous Bullfrog"),
+            ("40", "Razorfen Hidecrusher"),
+            ("40", "Razorfen Stonechanter"),
+            ("40", "Razorfen Thornbolt")
+        },
+        new()
+        {
+            (2, "33", "Charlga Razorflank")
         }),
 
         #endregion
@@ -642,6 +698,46 @@ public class SiteHostileArea
         {
             (04, "32", "Arcanist Doan"),
         }),
+        new SiteHostileArea("Training Grounds", new()
+        {
+            ("32-32", "Cannibal Ghoul"),
+        },
+        new()
+        {
+            (04, "32", "Arcanist Doan"),
+        }),
+        new SiteHostileArea("Crusader's Armory", new()
+        {
+            ("32-32", "Cannibal Ghoul"),
+        },
+        new()
+        {
+            (04, "32", "Arcanist Doan"),
+        }),
+        new SiteHostileArea("Hall of Champions", new()
+        {
+            ("32-32", "Cannibal Ghoul"),
+        },
+        new()
+        {
+            (04, "32", "Arcanist Doan"),
+        }),
+        new SiteHostileArea("Chapel Gardens", new()
+        {
+            ("32-32", "Cannibal Ghoul"),
+        },
+        new()
+        {
+            (04, "32", "Arcanist Doan"),
+        }),
+        new SiteHostileArea("Cathedral", new()
+        {
+            ("32-32", "Cannibal Ghoul"),
+        },
+        new()
+        {
+            (04, "32", "Arcanist Doan"),
+        }),
 
         #endregion
         
@@ -938,12 +1034,109 @@ public class SiteHostileArea
         #endregion
 
         #region Dire Maul
-
-        new SiteHostileArea("Prison Of Immol'Thar", new()
+        
+        new SiteHostileArea("Warpwood Quarter", new()
         {
             ("01-02", "Duskbat"),
             ("01-02", "Wretched Zombie"),
             ("01-02", "Rattlecage Skeleton"),
+        },
+        new()
+        {
+            (04, "57", "Lethtendris")
+        }),
+        new SiteHostileArea("The Conservatory", new()
+        {
+            ("01-02", "Duskbat"),
+            ("01-02", "Wretched Zombie"),
+            ("01-02", "Rattlecage Skeleton"),
+        },
+        new()
+        {
+            (04, "58", "Hydrospawn")
+        }),
+        new SiteHostileArea("The Shrine of Eldre'tharr", new()
+        {
+            ("01-02", "Duskbat"),
+            ("01-02", "Wretched Zombie"),
+            ("01-02", "Rattlecage Skeleton"),
+        },
+        new()
+        {
+            (04, "58", "Alzzin the Wildshaper")
+        }),
+        new SiteHostileArea("Capital Gardens", new()
+        {
+            ("01-02", "Duskbat"),
+            ("01-02", "Wretched Zombie"),
+            ("01-02", "Rattlecage Skeleton"),
+        },
+        new()
+        {
+            (04, "60", "Tendris Warpwood")
+        }),
+        new SiteHostileArea("Court of the Highborne", new()
+        {
+            ("01-02", "Duskbat"),
+            ("01-02", "Wretched Zombie"),
+            ("01-02", "Rattlecage Skeleton"),
+        },
+        new()
+        {
+            (04, "60", "Magister Kalendris"),
+            (04, "60", "Illyanna Ravenoak")
+        }),
+        new SiteHostileArea("Prison of Immol'Thar", new()
+        {
+            ("01-02", "Duskbat"),
+            ("01-02", "Wretched Zombie"),
+            ("01-02", "Rattlecage Skeleton"),
+        },
+        new()
+        {
+            (04, "61", "Immol'thar")
+        }),
+        new SiteHostileArea("The Athenaeum", new()
+        {
+            ("01-02", "Duskbat"),
+            ("01-02", "Wretched Zombie"),
+            ("01-02", "Rattlecage Skeleton"),
+        },
+        new()
+        {
+            (04, "61", "Prince Tortheldrin")
+        }),
+        new SiteHostileArea("Gordok Commons", new()
+        {
+            ("01-02", "Duskbat"),
+            ("01-02", "Wretched Zombie"),
+            ("01-02", "Rattlecage Skeleton"),
+        },
+        new()
+        {
+            (04, "60", "Guard Mol'dar"),
+            (04, "60", "Guard Slip'kik"),
+            (04, "61", "Captain Kromcrush")
+        }),
+        new SiteHostileArea("Halls of Destruction", new()
+        {
+            ("01-02", "Duskbat"),
+            ("01-02", "Wretched Zombie"),
+            ("01-02", "Rattlecage Skeleton"),
+        },
+        new()
+        {
+            (04, "61", "Cho'Rush the Observer")
+        }),
+        new SiteHostileArea("Gordok's Seat", new()
+        {
+            ("01-02", "Duskbat"),
+            ("01-02", "Wretched Zombie"),
+            ("01-02", "Rattlecage Skeleton"),
+        },
+        new()
+        {
+            (04, "62", "King Gordok")
         }),
 
         #endregion
@@ -1092,6 +1285,20 @@ public class SiteHostileArea
         new()
         {
             (02, "60", "Ossirian The Unscarred")
+        }),
+
+        #endregion
+
+        #region Onyxia's Lair
+
+        new SiteHostileArea("Onyxia's Lair", new()
+        {
+            ("60", "Onyxian Lair Guard"),
+            ("60", "Onyxian Warder")
+        },
+        new()
+        {
+            (02, "60", "Onyxia")
         }),
 
         #endregion

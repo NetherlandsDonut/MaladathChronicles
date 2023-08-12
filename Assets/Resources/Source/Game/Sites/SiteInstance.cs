@@ -197,20 +197,20 @@ public class SiteInstance
             {
                 ("None", "Warpwood Quarter"),
                 ("Boss", "The Conservatory"),
-                ("Boss", "The Shrine of Eldre'Tharr")
-            }),
-            new InstanceWing("Northern Wing", new()
-            {
-                ("None", "Gordok Commons"),
-                ("Boss", "Halls Of Destruction"),
-                ("Boss", "Gordok's Seat")
+                ("Boss", "The Shrine of Eldre'tharr")
             }),
             new InstanceWing("Western Wing", new()
             {
                 ("None", "Capital Gardens"),
-                ("Boss", "Court Of The Highborne"),
-                ("Boss", "Prison Of Immol'Thar"),
+                ("Boss", "Court of the Highborne"),
+                ("Boss", "Prison of Immol'Thar"),
                 ("Boss", "The Athenaeum")
+            }),
+            new InstanceWing("Northern Wing", new()
+            {
+                ("None", "Gordok Commons"),
+                ("Boss", "Halls of Destruction"),
+                ("Boss", "Gordok's Seat")
             }),
         }),
         new SiteInstance("Scarlet Monastery", new()
@@ -252,12 +252,13 @@ public class SiteInstance
             }),
             new InstanceWing("Armory", new()
             {
-                ("None", "Huntsman's Cloister"),
+                ("None", "Training Grounds"),
                 ("Boss", "Hall of Champions")
             }),
             new InstanceWing("Cathedral", new()
             {
-                ("Boss", "The Imperial Seat")
+                ("None", "Chapel Gardens"),
+                ("Boss", "Crusader's Chapel")
             }),
         }),
         new SiteInstance("Blackrock Depths", new()
@@ -380,6 +381,15 @@ public class SiteInstance
 
     public static List<SiteInstance> raids = new()
     {
+        new SiteInstance("Onyxia's Lair", new()
+        { },
+        new ()
+        {
+            new InstanceWing("Lair", new()
+            {
+                ("None", "Onyxia's Lair"),
+            }),
+        }),
         new SiteInstance("Molten Core", new()
         {
             "The Molten Core lies at",

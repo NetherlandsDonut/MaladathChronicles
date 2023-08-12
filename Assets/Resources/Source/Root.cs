@@ -449,7 +449,7 @@ public static class Root
             SetRegionGroupWidth(188 - (3 - lacking) * 49);
             AddPaddingRegion(() => { AddLine("", Black); });
         });
-        AddBigButtonOverlay("OtherRarity" + item.rarity, 2);
+        AddBigButtonOverlay("OtherRarity" + item.rarity, 0, 2);
     }
 
     public static void PrintSite(string name, string type, Vector2 anchor)
@@ -1041,6 +1041,11 @@ public static class Root
         CDesktop.LBWindow.anchor = new WindowAnchor(anchor, x, y, null);
     }
 
+    public static void DisableShadows()
+    {
+        CDesktop.LBWindow.disabledShadows = true;
+    }
+
     #endregion
 
     #region RegionGroups
@@ -1331,7 +1336,7 @@ public static class Root
         newObject.transform.localPosition = Vector3.zero;
         newObject.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/BigButtons/" + overlay);
         newObject.GetComponent<SpriteRenderer>().sortingOrder = sortingOrder;
-        newObject.GetComponent<SpriteRenderer>().sortingLayerName = onWhat.GetComponent<SpriteRenderer>().sortingLayerName;
+        newObject.GetComponent<SpriteRenderer>().sortingLayerName = "Upper"/*onWhat.GetComponent<SpriteRenderer>().sortingLayerName*/;
         if (time > 0)
         {
             newObject.AddComponent<Shatter>().render = newObject.GetComponent<SpriteRenderer>();

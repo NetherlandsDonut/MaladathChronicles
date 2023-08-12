@@ -21,7 +21,7 @@ public class Window : MonoBehaviour
     public string title, layer;
     public Vector2 dragOffset;
     public WindowAnchor anchor;
-    public bool closeOnLostFocus;
+    public bool closeOnLostFocus, disabledShadows;
     public GameObject background;
     public GameObject[] shadows;
 
@@ -133,7 +133,7 @@ public class Window : MonoBehaviour
             background.AddComponent<BoxCollider2D>();
 
         //Draws window shadows
-        if (settings.shadows.Value())
+        if (!disabledShadows && settings.shadows.Value())
             if (shadowSystem == 0)
             {
                 var shadowSprites = Resources.LoadAll<Sprite>("Sprites/Building/Shadows/First");
