@@ -52,7 +52,7 @@ public class FutureEntity
     public List<ActionBar> actionBars;
     public Stats stats;
     public Inventory inventory;
-    public Dictionary<string, string> equipment;
+    public Dictionary<string, Item> equipment;
     public List<(string, int)> buffs;
 
     public Dictionary<string, double> ElementImportance(double healthPerc, double otherHealthPerc)
@@ -142,7 +142,7 @@ public class FutureEntity
         }
         if (equipment.ContainsKey("Two Handed"))
         {
-            var twohanded = inventory.items.Find(x => x.name == equipment["Two Handed"]);
+            var twohanded = equipment["Two Handed"];
             return ((int)(twohanded.minDamage / twohanded.speed), (int)(twohanded.maxDamage / twohanded.speed));
         }
         else
@@ -150,13 +150,13 @@ public class FutureEntity
             double min = 0, max = 0;
             if (equipment.ContainsKey("Main Hand"))
             {
-                var mainHand = inventory.items.Find(x => x.name == equipment["Main Hand"]);
+                var mainHand = equipment["Main Hand"];
                 min += (int)(mainHand.minDamage / mainHand.speed);
                 max += (int)(mainHand.maxDamage / mainHand.speed);
             }
             if (equipment.ContainsKey("Off Hand"))
             {
-                var offHand = inventory.items.Find(x => x.name == equipment["Off Hand"]);
+                var offHand = equipment["Off Hand"];
                 min /= 1.5;
                 min /= 1.5;
                 min += offHand.minDamage / offHand.speed / 1.5;
@@ -172,14 +172,10 @@ public class FutureEntity
         foreach (var stat in this.stats.stats)
             stats.Add(stat.Key, stat.Value);
         if (equipment != null)
-        {
-            var itemsEquipped = new List<Item>();
-            foreach (var item in equipment)
-                itemsEquipped.Add(inventory.items.Find(x => x.name == item.Value));
-            foreach (var item in itemsEquipped)
-                foreach (var stat in item.stats.stats)
-                    stats[stat.Key] += stat.Value;
-        }
+            foreach (var itemPair in equipment)
+                if (itemPair.Value.stats != null)
+                    foreach (var stat in itemPair.Value.stats.stats)
+                        stats[stat.Key] += stat.Value;
         return stats;
     }
 

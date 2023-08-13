@@ -74,7 +74,8 @@ public class Board
         CloseDesktop("Game");
         if (playerWon)
         {
-            currentSave.player.experience += 1;
+            if (currentSave.player.WillGetExperience(enemy.level))
+                currentSave.player.ReceiveExperience(currentSave.player.ExperienceNeeded());
             if (area != null)
             {
                 if (!currentSave.siteProgress.ContainsKey(area.name))

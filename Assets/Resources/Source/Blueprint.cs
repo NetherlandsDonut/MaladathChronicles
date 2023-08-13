@@ -11,6 +11,7 @@ using static Root.Color;
 using static Root.Anchor;
 
 using static UnityEngine.KeyCode;
+using System.Reflection;
 
 public class Blueprint
 {
@@ -184,6 +185,11 @@ public class Blueprint
                 AddCheckbox(settings.shadows);
                 AddLine("Shadows", Gray);
             });
+            AddPaddingRegion(() =>
+            {
+                AddCheckbox(settings.bigRarityIndicators);
+                AddLine("Big rarity indicators", Gray);
+            });
             AddButtonRegion(() =>
                 {
                     AddLine("Back", Black);
@@ -300,6 +306,93 @@ public class Blueprint
                         });
                     }
                 );
+            }
+        }),
+        new("PlayerEquipmentInfo", () => {
+            SetAnchor(TopLeft);
+            AddRegionGroup();
+            SetRegionGroupWidth(161);
+            AddButtonRegion(
+                () =>
+                {
+                    AddLine(currentSave.player.name, Black);
+                },
+                (h) =>
+                {
+
+                }
+            );
+            AddHeaderRegion(() =>
+            {
+                AddBigButton("Portrait" + currentSave.player.race + currentSave.player.gender,
+                    (h) => { }
+                );
+                AddBigButton("Class" + currentSave.player.spec,
+                    (h) => { }
+                );
+                AddLine("Level: " + currentSave.player.level, Gray);
+            });
+            Foo("Head", currentSave.player.GetItemInSlot("Head"));
+            Foo("Shoulders", currentSave.player.GetItemInSlot("Shoulders"));
+            Foo("Back", currentSave.player.GetItemInSlot("Back"));
+            Foo("Chest", currentSave.player.GetItemInSlot("Chest"));
+            Foo("Wrists", currentSave.player.GetItemInSlot("Wrists"));
+            Foo("Hands", currentSave.player.GetItemInSlot("Hands"));
+            Foo("Waist", currentSave.player.GetItemInSlot("Waist"));
+            Foo("Legs", currentSave.player.GetItemInSlot("Legs"));
+            Foo("Feet", currentSave.player.GetItemInSlot("Feet"));
+            Foo("Main Hand", currentSave.player.GetItemInSlot("Main Hand"));
+            if (currentSave.player.GetItemInSlot("Main Hand") == null || currentSave.player.GetItemInSlot("Main Hand") != null && currentSave.player.GetItemInSlot("Main Hand").type != "Two Handed")
+                Foo("Off Hand", currentSave.player.GetItemInSlot("Off Hand"));
+            Foo("Neck", currentSave.player.GetItemInSlot("Neck"));
+            Foo("Finger", currentSave.player.GetItemInSlot("Finger"));
+            Foo("Trinket", currentSave.player.GetItemInSlot("Trinket"));
+            if (currentSave.player.spec == "Druid")
+                Foo("Idol", currentSave.player.GetItemInSlot("Special"));
+            if (currentSave.player.spec == "Paladin")
+                Foo("Libram", currentSave.player.GetItemInSlot("Special"));
+            if (currentSave.player.spec == "Shaman")
+                Foo("Totem", currentSave.player.GetItemInSlot("Special"));
+            AddPaddingRegion(() =>
+            {
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+            });
+
+            void Foo(string slot, Item item)
+            {
+                if (item != null)
+                    AddButtonRegion(
+                        () =>
+                        {
+                            AddLine(item.name, Black);
+                            AddSmallButton(item.icon, (h) => { });
+                            //AddSmallButtonOverlay("OtherRarity" + item.rarity + (settings.bigRarityIndicators.Value() ? "Big" : ""));
+                        },
+                        (h) =>
+                        {
+                            currentSave.player.Unequip(new() { slot });
+                            CloseWindow(h.window);
+                            SpawnWindowBlueprint("PlayerEquipmentInfo");
+                            CloseWindow("Inventory");
+                            SpawnWindowBlueprint("Inventory");
+                        },
+                        (h) => () =>
+                        {
+                            SetAnchor(Center);
+                            PrintItemTooltip(item);
+                        }
+                    );
+                else
+                    AddHeaderRegion(
+                        () =>
+                        {
+                            AddLine(slot, DarkGray);
+                            AddSmallButton("OtherEmpty", (h) => { });
+                        }
+                    );
             }
         }),
         new("SpellbookAbilityList", () => {
@@ -997,12 +1090,6 @@ public class Blueprint
                     }
                 );
             }
-            AddHeaderRegion(() =>
-            {
-                AddLine("Money: ");
-                AddLine("Honor: ");
-                AddLine("");
-            });
         }, true),
         new("ItemDrop", () => {
             SetAnchor(Center);
@@ -1170,59 +1257,59 @@ public class Blueprint
         }),
         new("CharacterNeckSlot", () => {
             SetAnchor(-98, 74);
-            PrintItem(currentSave.player.GetSlot("Neck"));
+            PrintEquipmentItem(currentSave.player.GetItemInSlot("Neck"));
         }),
         new("CharacterBackSlot", () => {
             SetAnchor(-98, 22);
-            PrintItem(currentSave.player.GetSlot("Back"));
+            PrintEquipmentItem(currentSave.player.GetItemInSlot("Back"));
         }),
         new("CharacterRingSlot", () => {
             SetAnchor(-98, -30);
-            PrintItem(currentSave.player.GetSlot("Finger"));
+            PrintEquipmentItem(currentSave.player.GetItemInSlot("Finger"));
         }),
         new("CharacterHeadSlot", () => {
             SetAnchor(-46, 100);
-            PrintItem(currentSave.player.GetSlot("Head"));
+            PrintEquipmentItem(currentSave.player.GetItemInSlot("Head"));
         }),
         new("CharacterChestSlot", () => {
             SetAnchor(-46, 48);
-            PrintItem(currentSave.player.GetSlot("Chest"));
+            PrintEquipmentItem(currentSave.player.GetItemInSlot("Chest"));
         }),
         new("CharacterLegsSlot", () => {
             SetAnchor(-46, -4);
-            PrintItem(currentSave.player.GetSlot("Legs"));
+            PrintEquipmentItem(currentSave.player.GetItemInSlot("Legs"));
         }),
         new("CharacterFeetSlot", () => {
             SetAnchor(-46, -56);
-            PrintItem(currentSave.player.GetSlot("Feet"));
+            PrintEquipmentItem(currentSave.player.GetItemInSlot("Feet"));
         }),
         new("CharacterShouldersSlot", () => {
             SetAnchor(6, 100);
-            PrintItem(currentSave.player.GetSlot("Shoulders"));
+            PrintEquipmentItem(currentSave.player.GetItemInSlot("Shoulders"));
         }),
         new("CharacterHandsSlot", () => {
             SetAnchor(6, 48);
-            PrintItem(currentSave.player.GetSlot("Hands"));
+            PrintEquipmentItem(currentSave.player.GetItemInSlot("Hands"));
         }),
         new("CharacterWaistSlot", () => {
             SetAnchor(6, -4);
-            PrintItem(currentSave.player.GetSlot("Waist"));
+            PrintEquipmentItem(currentSave.player.GetItemInSlot("Waist"));
         }),
         new("CharacterSpecialSlot", () => {
             SetAnchor(6, -56);
-            PrintItem(currentSave.player.GetSlot("Special"));
+            PrintEquipmentItem(currentSave.player.GetItemInSlot("Special"));
         }),
         new("CharacterMainHandSlot", () => {
             SetAnchor(58, 74);
-            PrintItem(currentSave.player.GetSlot("Main Hand"));
+            PrintEquipmentItem(currentSave.player.GetItemInSlot("Main Hand"));
         }),
         new("CharacterOffHandSlot", () => {
             SetAnchor(58, 22);
-            PrintItem(currentSave.player.GetSlot("Off Hand"));
+            PrintEquipmentItem(currentSave.player.GetItemInSlot("Off Hand"));
         }),
         new("CharacterTrinketSlot", () => {
             SetAnchor(58, -30);
-            PrintItem(currentSave.player.GetSlot("Trinket"));
+            PrintEquipmentItem(currentSave.player.GetItemInSlot("Trinket"));
         }),
         new("CharacterStats", () => {
             SetAnchor(BottomLeft);
@@ -1615,23 +1702,23 @@ public class Blueprint
             });
             AddHotkey(N, () => { SpawnDesktopBlueprint("TalentScreen"); SwitchDesktop("TalentScreen"); });
             AddHotkey(P, () => { SpawnDesktopBlueprint("SpellbookScreen"); SwitchDesktop("SpellbookScreen"); });
-            AddHotkey(B, () =>
-            {
-                if (CDesktop.windows.Exists(x => x.title == "Inventory"))
-                {
-                    CloseWindow("Inventory");
-                    CloseWindow("MapToolbar");
-                    SpawnWindowBlueprint("MapToolbar");
-                    PlaySound("DesktopInventoryClose");
-                }
-                else
-                {
-                    SpawnWindowBlueprint("Inventory");
-                    CloseWindow("MapToolbar");
-                    SpawnWindowBlueprint("MapToolbar");
-                    PlaySound("DesktopInventoryOpen");
-                }
-            });
+            AddHotkey(B, () => { SpawnDesktopBlueprint("EquipmentScreen"); SwitchDesktop("EquipmentScreen"); });
+            //{
+            //    if (CDesktop.windows.Exists(x => x.title == "Inventory"))
+            //    {
+            //        CloseWindow("Inventory");
+            //        CloseWindow("MapToolbar");
+            //        SpawnWindowBlueprint("MapToolbar");
+            //        PlaySound("DesktopInventoryClose");
+            //    }
+            //    else
+            //    {
+            //        SpawnWindowBlueprint("Inventory");
+            //        CloseWindow("MapToolbar");
+            //        SpawnWindowBlueprint("MapToolbar");
+            //        PlaySound("DesktopInventoryOpen");
+            //    }
+            //});
             AddHotkey(Escape, () =>
             {
                 if (CDesktop.windows.Exists(x => x.title == "Inventory"))
@@ -1828,6 +1915,48 @@ public class Blueprint
             SpawnWindowBlueprint("SpellbookResources");
             AddHotkey(P, () => { SwitchDesktop("Map"); CloseDesktop("SpellbookScreen"); PlaySound("DesktopSpellbookScreenClose"); });
             AddHotkey(Escape, () => { SwitchDesktop("Map"); CloseDesktop("SpellbookScreen"); PlaySound("DesktopSpellbookScreenClose"); });
+            AddHotkey(W, () =>
+            {
+                var amount = new Vector3(0, (float)Math.Round(EuelerGrowth())) / 2;
+                CDesktop.screen.transform.position += amount; cursor.transform.position += amount;
+                if (CDesktop.screen.transform.position.y > -180)
+                {
+                    var off = CDesktop.screen.transform.position.y + 180f;
+                    CDesktop.screen.transform.position -= new Vector3(0, off);
+                    cursor.transform.position -= new Vector3(0, off);
+                }
+            },  false);
+            AddHotkey(S, () =>
+            {
+                var amount = new Vector3(0, -(float)Math.Round(EuelerGrowth())) / 2;
+                CDesktop.screen.transform.position += amount; cursor.transform.position += amount;
+                if (CDesktop.screen.transform.position.y < -1282)
+                {
+                    var off = CDesktop.screen.transform.position.y + 1282f;
+                    CDesktop.screen.transform.position -= new Vector3(0, off);
+                    cursor.transform.position -= new Vector3(0, off);
+                }
+            },  false);
+        }),
+        new("EquipmentScreen", () =>
+        {
+            PlaySound("DesktopCharacterSheetOpen");
+            SetDesktopBackground("Leather");
+            SpawnWindowBlueprint("SpellbookAbilityList");
+            SpawnWindowBlueprint("PlayerEquipmentInfo");
+            SpawnWindowBlueprint("Inventory");
+            AddHotkey(C, () =>
+            {
+                SwitchDesktop("Map");
+                CloseDesktop("EquipmentScreen");
+                PlaySound("DesktopCharacterSheetClose");
+            });
+            AddHotkey(Escape, () =>
+            {
+                SwitchDesktop("Map");
+                CloseDesktop("EquipmentScreen");
+                PlaySound("DesktopCharacterSheetClose");
+            });
             AddHotkey(W, () =>
             {
                 var amount = new Vector3(0, (float)Math.Round(EuelerGrowth())) / 2;

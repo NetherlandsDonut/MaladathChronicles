@@ -1,5 +1,6 @@
 using System.Linq;
 using System.Collections.Generic;
+using static UnityEngine.EventSystems.EventTrigger;
 
 public class Item
 {
@@ -85,47 +86,58 @@ public class Item
 
     private void Equip(Entity entity, string slot)
     {
-        entity.equipment[slot] = name;
+        entity.equipment[slot] = this;
+        if (entity.inventory.items.Contains(this))
+            entity.inventory.items.Remove(this);
         if (abilities == null) return;
         entity.abilities.AddRange(abilities);
         entity.abilities = entity.abilities.Distinct().ToList();
     }
 
+    public List<string> PossibleSlots()
+    {
+        if (type == "Two Handed") return new() { "Main Hand" };
+        else if (type == "Off Hand") return new() { "Off Hand" };
+        else if (type == "One Handed") return new() { "Main Hand", "Off Hand" };
+        else return new() { type };
+    }
+
     public void Equip(Entity entity, bool secondSlot = false)
     {
+        var index = entity.inventory.items.IndexOf(this);
         if (type == "Two Handed")
         {
-            entity.Unequip(new() { "Off Hand", "Main Hand" });
+            entity.Unequip(new() { "Off Hand", "Main Hand" }, index);
             Equip(entity, "Main Hand");
         }
-        else if (type == "Off Hand")
+        else if (type == "Shield" || type == "Off Hand")
         {
-            var mainHand = entity.GetSlot("Main Hand");
+            var mainHand = entity.GetItemInSlot("Main Hand");
             if (mainHand != null && mainHand.type == "Two Handed")
-                entity.Unequip(new() { "Main Hand" });
-            entity.Unequip(new() { "Off Hand" });
+                entity.Unequip(new() { "Main Hand" }, index);
+            entity.Unequip(new() { "Off Hand" }, index);
             Equip(entity, "Off Hand");
         }
         else if (type == "One Handed")
         {
             if (secondSlot)
             {
-                var mainHand = entity.GetSlot("Main Hand");
+                var mainHand = entity.GetItemInSlot("Main Hand");
                 if (mainHand != null && mainHand.type == "Two Handed")
-                    entity.Unequip(new() { "Main Hand" });
-                entity.Unequip(new() { "Off Hand" });
+                    entity.Unequip(new() { "Main Hand" }, index);
+                entity.Unequip(new() { "Off Hand" }, index);
                 Equip(entity, "Off Hand");
             }
             else
             {
-                entity.Unequip(new() { "Main Hand" });
+                entity.Unequip(new() { "Main Hand" }, index);
                 Equip(entity, "Main Hand");
             }
         }
         else
         {
             if (type == null) UnityEngine.Debug.Log(name);
-            entity.Unequip(new() { type });
+            entity.Unequip(new() { type }, index);
             Equip(entity, type);
         }
     }

@@ -7,10 +7,12 @@ using static Root;
 
 public class Entity
 {
-    public Entity(string name, Race race, Class spec, List<string> items)
+    //Player constructor
+    public Entity(string name, string creationGender, Race race, Class spec, List<string> items)
     {
-        level = 60;
+        level = 40;
         this.name = name;
+        this.gender = creationGender;
         unspentTalentPoints = 20;
         this.race = race.name;
         this.spec = spec.name;
@@ -25,12 +27,13 @@ public class Entity
             while (!item.CanEquip(this) || item.lvl - level < -5 || item.lvl > level);
             inventory.items.Add(item);
         }
-        equipment = new Dictionary<string, string>();
-        AutoEquip();
+        equipment = new Dictionary<string, Item>();
+        EquipAllItems();
         actionBars = Ability.abilities.FindAll(x => abilities.Contains(x.name) && x.cost != null).OrderBy(x => x.cost.Sum(y => y.Value)).OrderBy(x => x.putOnEnd).Select(x => new ActionBar(x.name)).Take(actionBarsUnlocked).ToList();
         Initialise();
     }
 
+    //Enemy constructor
     public Entity(int level, Race race)
     {
         this.level = level;
@@ -63,19 +66,48 @@ public class Entity
         var importance = ElementImportance(race.rarity == "Common");
     }
 
-    public Dictionary<string, double> ElementImportance(bool randomised)
+    #region Experience & Leveling
+
+    //Tells whether this entity will get experience from
+    //killing an enemy that was at given level
+    public bool WillGetExperience(int level)
     {
-        var abilities = Ability.abilities.FindAll(x => actionBars.Exists(y => y.ability == x.name));
-        double elementCosts = abilities.Sum(x => x.cost.Sum(y => y.Value));
-        var sheet = new Dictionary<string, double>();
-        foreach (var resource in resources)
-        {
-            var amount = abilities.FindAll(x => x.cost.ContainsKey(resource.Key)).Sum(x => x.cost[resource.Key]) / elementCosts;
-            sheet.Add(resource.Key, (randomised ? random.Next(5, 13) / 10.0 : 1) * amount);
-        }
-        return sheet;
+        return this.level - 5 <= level;
     }
 
+    //Grants experience to this entity
+    public void ReceiveExperience(int exp)
+    {
+        experience += exp;
+        if (ExperienceNeeded() <= experience)
+        {
+            experience -= ExperienceNeeded();
+            level += 1;
+            PlaySound("DesktopLevelUp");
+        }
+    }
+
+    //Provides amount of experience needed to level up
+    public int ExperienceNeeded()
+    {
+        return (int)(System.Math.Pow(1.04, level + 1) * 100 * (level + 1));
+    }
+
+    //Provides experience needed to reach max level
+    public int ExperienceNeededOverall()
+    {
+        var sum = 0;
+        for (int i = 1; i < maxPlayerLevel; i++)
+            sum += (int)(System.Math.Pow(1.04, i + 1) * 100 * (i + 1));
+        return sum;
+    }
+
+    #endregion
+
+    #region Resources
+
+    //Checks whether any resources exceed max or min
+    //levels and rounds them to fit in the limit
     public void CapResources()
     {
         var temp = resources.ToArray();
@@ -88,12 +120,37 @@ public class Entity
         }
     }
 
-    public List<string> ItemAbilities() => equipment.SelectMany(x => Item.items.Find(y => y.name == x.Value).abilities).ToList();
+    //Tells max amount of given resource entity can hold at once
+    public int MaxResource(string resource)
+    {
+        return Stats()[resource + " Mastery"] + 3;
+    }
 
-    public bool HasItemEquipped(string item) => equipment.Any(x => x.Value == item);
+    //Gives specific resource in given amount to the entity
+    public void AddResource(string resource, int amount)
+    {
+        AddResources(new() { { resource, amount } });
+    }
 
-    public int MaxResource(string resource) => Stats()[resource + " Mastery"] + 3;
+    //Gives many resources in given amounts to the entity
+    public void AddResources(Dictionary<string, int> resources)
+    {
+        foreach (var resource in resources)
+            this.resources[resource.Key] += resource.Value;
+        CapResources();
+    }
 
+    //Detracts resources in given amounts from the entity
+    public void DetractResources(Dictionary<string, int> resources)
+    {
+        foreach (var resource in resources)
+            this.resources[resource.Key] -= resource.Value;
+        CapResources();
+    }
+
+    //Resets entity's resources to their base amount
+    //This value is 0 at default but grows with spirit stat
+    //which provides starting resources for combat
     public void ResetResources()
     {
         var stats = Stats();
@@ -112,6 +169,113 @@ public class Entity
         };
     }
 
+    #endregion
+
+    #region Inventory & Equipment
+
+    //Provides list of abilities gained from equipped items
+    public List<string> ItemAbilities()
+    {
+        return equipment.SelectMany(x => Item.items.Find(y => y.name == x.Value.name).abilities).ToList();
+    }
+
+    //Checks whether entity has given item equipped in any slot
+    public bool HasItemEquipped(string item)
+    {
+        return equipment.Any(x => x.Value.name == item);
+    }
+
+    //Checks whether given item is filling a currently free spot
+    public bool IsItemNewSlot(Item item)
+    {
+        if (item.type == "Two Handed") return !equipment.ContainsKey("Main Hand") && !equipment.ContainsKey("Off Hand");
+        else if (item.type == "One Handed") return abilities.Contains("Dual Wielding Proficiency") && (!equipment.ContainsKey("Main Hand") || equipment["Main Hand"].type != "Two Handed") && !equipment.ContainsKey("Off Hand") || !equipment.ContainsKey("Main Hand");
+        else if (item.type == "Off Hand") return (!equipment.ContainsKey("Main Hand") || equipment["Main Hand"].type != "Two Handed") && !equipment.ContainsKey("Off Hand");
+        else return !equipment.ContainsKey(item.type);
+    }
+
+    //Checks whether given item is an upgrade for the entity
+    public bool IsItemAnUpgrade(Item item)
+    {
+        if (item.type == "Two Handed")
+        {
+            var item1 = GetItemInSlot("Main Hand");
+            var item2 = GetItemInSlot("Off Hand");
+            if (item1 != null && item2 != null)
+                return item.ilvl > (item1.ilvl + item2.ilvl) / 2;
+            else if (item1 != null)
+                return item.ilvl > item1.ilvl;
+            else
+                return true;
+        }
+        else if (item.type == "One Handed")
+        {
+            var item1 = GetItemInSlot("Main Hand");
+            var item2 = GetItemInSlot("Off Hand");
+            if (item1 != null && item1.type == "Two Handed")
+                return item.ilvl / 2 > item1.ilvl;
+            else
+                if (item1 == null || item2 == null)
+                return true;
+            else if (abilities.Contains("Dual Wielding Proficiency") && item1.ilvl > item2.ilvl)
+                return item.ilvl > item2.ilvl;
+            else
+                return item.ilvl > item1.ilvl;
+        }
+        else if (item.type == "Off Hand")
+        {
+            var item1 = GetItemInSlot("Main Hand");
+            var item2 = GetItemInSlot("Off Hand");
+            if (item1 != null && item2 == null)
+                return item1.type == "Two Handed"/* ? item.ilvl / 2 > item1.ilvl : true*/;
+            else if (item2 != null)
+                return item.ilvl > item2.ilvl;
+            else
+                return true;
+        }
+        else
+            return item.ilvl > GetItemInSlot(item.type).ilvl;
+    }
+
+    //Gets item that is currently equipped in given slot
+    public Item GetItemInSlot(string slot)
+    {
+        if (equipment.ContainsKey(slot))
+            return equipment[slot];
+        else return null;
+    }
+
+    //Automatically equips all items in the
+    //inventory that can be equipped by the entity
+    public void EquipAllItems()
+    {
+        for (int i = inventory.items.Count - 1; i >= 0; i--)
+            if (inventory.items[i].CanEquip(this))
+                inventory.items[i].Equip(this);
+    }
+
+    //Unequips items in given list of slots
+    public void Unequip(List<string> slots = null, int index = -1)
+    {
+        if (slots == null) equipment = new();
+        else foreach (var slot in slots)
+                if (equipment.ContainsKey(slot))
+                {
+                    var itemAbilities = equipment[slot].abilities;
+                    if (itemAbilities != null)
+                        foreach (var ability in itemAbilities)
+                            abilities.Remove(ability);
+                    if (index != -1) inventory.items.Insert(index, equipment[slot]);
+                    else inventory.items.Add(equipment[slot]);
+                    equipment.Remove(slot);
+                }
+    }
+
+    #endregion
+
+    #region Talents & Class
+
+    //Checks whether entity can pick specific talent
     public bool CanPickTalent(int spec, Talent talent)
     {
         if (unspentTalentPoints == 0) return false;
@@ -121,64 +285,22 @@ public class Entity
         return true;
     }
 
+    //Provides a talent that preceeds given talent
     public Talent PreviousTalent(int spec, Talent talent)
     {
         var temp = GetClass().talentTrees[spec].talents.OrderByDescending(x => x.row).ToList().FindAll(x => x.col == talent.col);
         return temp.Find(x => x.row < talent.row);
     }
 
-    public Item GetSlot(string slot)
+    //Provides entity's class
+    public Class GetClass()
     {
-        if (equipment.ContainsKey(slot))
-            return Item.GetItem(equipment[slot]);
-        else return null;
+        return Class.classes.Find(x => x.name == spec);
     }
 
-    public Class GetClass() => Class.classes.Find(x => x.name == spec);
+    #endregion
 
-    public void AutoEquip()
-    {
-        foreach (var item in inventory.items)
-            if (item.CanEquip(this))
-                item.Equip(this);
-    }
-
-    public void Unequip(List<string> slots = null)
-    {
-        if (slots == null) equipment = new();
-        else foreach (var slot in slots)
-                if (equipment.ContainsKey(slot))
-                {
-                    var itemAbilities = Item.items.Find(x => x.name == equipment[slot]).abilities;
-                    if (itemAbilities != null)
-                        foreach (var ability in itemAbilities)
-                            abilities.Remove(ability);
-                    equipment.Remove(slot);
-                }
-    }
-
-    public void AddResource(string resource, int amount) => AddResources(new() { { resource, amount } });
-
-    public void AddResources(Dictionary<string, int> resources)
-    {
-        foreach (var resource in resources)
-            this.resources[resource.Key] += resource.Value;
-        CapResources();
-    }
-
-    public void DetractResources(Dictionary<string, int> resources)
-    {
-        foreach (var resource in resources)
-            this.resources[resource.Key] -= resource.Value;
-        CapResources();
-    }
-
-    public void Initialise(bool fullReset = true)
-    {
-        if (fullReset) { health = MaxHealth(); }
-        buffs = new();
-        ResetResources();
-    }
+    #region Stats
 
     public int MaxHealth()
     {
@@ -248,11 +370,11 @@ public class Entity
             if (level == 04) return (03, 05);
             if (level == 03) return (02, 03);
             if (level == 02) return (01, 03);
-            else             return (01, 02);
+            else return (01, 02);
         }
         else if (equipment.ContainsKey("Two Handed"))
         {
-            var twohanded = inventory.items.Find(x => x.name == equipment["Two Handed"]);
+            var twohanded = equipment["Two Handed"];
             return (twohanded.minDamage / twohanded.speed, twohanded.maxDamage / twohanded.speed);
         }
         else
@@ -260,13 +382,13 @@ public class Entity
             double min = 0, max = 0;
             if (equipment.ContainsKey("Main Hand"))
             {
-                var mainHand = inventory.items.Find(x => x.name == equipment["Main Hand"]);
+                var mainHand = equipment["Main Hand"];
                 min += mainHand.minDamage / mainHand.speed;
                 max += mainHand.maxDamage / mainHand.speed;
             }
             if (equipment.ContainsKey("Off Hand"))
             {
-                var offHand = inventory.items.Find(x => x.name == equipment["Off Hand"]);
+                var offHand = equipment["Off Hand"];
                 min /= 1.5;
                 min /= 1.5;
                 min += offHand.minDamage / offHand.speed / 1.5;
@@ -297,14 +419,10 @@ public class Entity
             stats["Intellect"] += (int)(temp.rules["Intellect per Level"] * level);
         }
         if (equipment != null)
-        {
-            var itemsEquipped = new List<Item>();
-            foreach (var item in equipment)
-                itemsEquipped.Add(inventory.items.Find(x => x.name == item.Value));
-            foreach (var item in itemsEquipped)
-                foreach (var stat in item.stats.stats)
-                    stats[stat.Key] += stat.Value;
-        }
+            foreach (var itemPair in equipment)
+                if (itemPair.Value.stats != null)
+                    foreach (var stat in itemPair.Value.stats.stats)
+                        stats[stat.Key] += stat.Value;
         return stats;
     }
 
@@ -350,19 +468,58 @@ public class Entity
         return sum;
     }
 
-    public void Cooldown() => actionBars.ForEach(x => x.cooldown -= x.cooldown == 0 ? 0 : 1);
+    #endregion
 
+    #region Combat
+
+    //Provides information that tells which elements
+    //are of biggest importance for this entity in combat
+    public Dictionary<string, double> ElementImportance(bool randomised)
+    {
+        var abilities = Ability.abilities.FindAll(x => actionBars.Exists(y => y.ability == x.name));
+        double elementCosts = abilities.Sum(x => x.cost.Sum(y => y.Value));
+        var sheet = new Dictionary<string, double>();
+        foreach (var resource in resources)
+        {
+            var amount = abilities.FindAll(x => x.cost.ContainsKey(resource.Key)).Sum(x => x.cost[resource.Key]) / elementCosts;
+            sheet.Add(resource.Key, (randomised ? random.Next(5, 13) / 10.0 : 1) * amount);
+        }
+        return sheet;
+    }
+
+    //Prepares this entity for combat
+    public void Initialise(bool fullReset = true)
+    {
+        if (fullReset)
+        {
+            health = MaxHealth();
+        }
+        buffs = new();
+        ResetResources();
+    }
+
+    //Cooldowns all action bar abilities by 1 turn
+    public void Cooldown()
+    {
+        actionBars.ForEach(x => x.cooldown -= x.cooldown == 0 ? 0 : 1);
+    }
+
+    //Deals given amount of damage to this entity
     public void Damage(double damage)
     {
         health -= (int)System.Math.Round(damage);
     }
 
+    //Heals this entity by given amount
     public void Heal(double heal)
     {
         health += (int)System.Math.Round(heal);
         if (health > MaxHealth()) health = MaxHealth();
     }
 
+    //Pops all buffs on this entity activating
+    //their effects and reducing duration by 1 turn
+    //If duration reaches 0 it removes the buff
     public void FlareBuffs()
     {
         for (int i = buffs.Count - 1; i >= 0; i--)
@@ -382,6 +539,7 @@ public class Entity
         }
     }
 
+    //Adds a buff to this entity
     public void AddBuff(string buff, int duration, GameObject buffObject)
     {
         var buffObj = Buff.buffs.Find(x => x.name == buff);
@@ -394,6 +552,7 @@ public class Entity
         buffs.Add((buff, duration, buffObject));
     }
 
+    //Removes a buff from this entity
     public void RemoveBuff((string, int, GameObject) buff)
     {
         var temp = buff.Item3.GetComponent<FlyingBuff>();
@@ -402,22 +561,15 @@ public class Entity
         buffs.Remove(buff);
     }
 
-    public int ExperienceNeeded() => (int)(System.Math.Pow(1.04, level + 1) * 100 * (level + 1));
-    public int ExperienceNeededOverall()
-    {
-        var sum = 0;
-        for (int i = 1; i < 60; i++)
-            sum += (int)(System.Math.Pow(1.04, i + 1) * 100 * (i + 1));
-        return sum;
-    }
+    #endregion
 
     public int health, level, unspentTalentPoints, actionBarsUnlocked, experience;
-    public string name, race, spec;
+    public string name, race, spec, gender;
     public Dictionary<string, int> resources;
     public List<string> abilities;
     public List<ActionBar> actionBars;
     public Stats stats;
     public Inventory inventory;
-    public Dictionary<string, string> equipment;
+    public Dictionary<string, Item> equipment;
     public List<(string, int, GameObject)> buffs;
 }

@@ -47,6 +47,7 @@ public class Class
             },
             new List<(string, int)>
             {
+                ("Dual Wielding Proficiency", 1),
                 ("One Handed Axe Proficiency", 1),
                 ("One Handed Mace Proficiency", 1),
                 ("One Handed Sword Proficiency", 1),
@@ -133,6 +134,7 @@ public class Class
             },
             new List<(string, int)>
             {
+                ("Dual Wielding Proficiency", 1),
                 ("Two Handed Axe Proficiency", 1),
                 ("One Handed Axe Proficiency", 1),
                 ("One Handed Mace Proficiency", 1),
@@ -178,6 +180,7 @@ public class Class
             },
             new List<(string, int)>
             {
+                ("Dual Wielding Proficiency", 1),
                 ("Two Handed Axe Proficiency", 1),
                 ("Two Handed Mace Proficiency", 1),
                 ("Two Handed Sword Proficiency", 1),

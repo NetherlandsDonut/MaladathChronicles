@@ -23,6 +23,7 @@ public static class Root
     public static string creationGender;
     public static string creationRace;
     public static string creationClass;
+    public static int maxPlayerLevel;
 
     public static Cursor cursor;
     public static CursorRemote cursorEnemy;
@@ -201,7 +202,7 @@ public static class Root
 
     #region Talent
 
-    public static void PrintItem(Item item)
+    public static void PrintEquipmentItem(Item item)
     {
         AddRegionGroup();
         AddPaddingRegion(() =>
@@ -215,241 +216,159 @@ public static class Root
             {
                 if (item == null) return;
                 SetAnchor(BottomRight);
-                AddHeaderGroup();
-                SetRegionGroupWidth(188);
-                var split = item.name.Split(", ");
-                AddHeaderRegion(() =>
-                {
-                    AddLine(split[0], Item.rarityColors[item.rarity]);
-                });
-                if (split.Length > 1)
-                    AddHeaderRegion(() =>
-                    {
-                        AddLine("\"" + split[1] + "\"", Item.rarityColors[item.rarity]);
-                    });
-                AddPaddingRegion(() =>
-                {
-                    if (item.armorClass != null)
-                    {
-                        AddLine(item.armorClass + " " + item.type, Gray);
-                        AddLine(item.armor + " Armor", Gray);
-                    }
-                    else if (item.maxDamage != 0)
-                    {
-                        AddLine(item.type + " " + item.detailedType, Gray);
-                        AddLine(item.minDamage + " - " + item.maxDamage + " Damage", Gray);
-                    }
-                    else
-                        AddLine(item.type, Gray);
-                });
-                if (item.stats.stats.Count > 0)
-                    AddPaddingRegion(() =>
-                    {
-                        foreach (var stat in item.stats.stats)
-                            AddLine("+" + stat.Value + " " + stat.Key, Gray);
-                    });
-                if (item.classes != null)
-                    AddHeaderRegion(() =>
-                    {
-                        AddLine("Classes: ", DarkGray);
-                        foreach (var spec in item.classes)
-                        {
-                            AddText(spec, ClassColored(spec));
-                            if (spec != item.classes.Last())
-                                AddText(", ", DarkGray);
-                        }
-                    });
-                AddHeaderRegion(() =>
-                {
-                    AddLine("Required level: ", DarkGray);
-                    AddText("" + item.lvl, ItemColoredLevel(item.lvl));
-                });
-                var lacking = 0;
-                if ((int)item.price > 0)
-                {
-                    AddRegionGroup();
-                    AddPaddingRegion(
-                        () =>
-                        {
-                            AddSmallButton("ItemCoinsGold", (h) => { });
-                        }
-
-                    );
-                    AddRegionGroup();
-                    SetRegionGroupWidth(20);
-                    AddPaddingRegion(
-                        () =>
-                        {
-                            AddLine((int)item.price + "", Gold);
-                        }
-
-                    );
-                }
-                else lacking++;
-                if ((int)(item.price * 100 % 100) > 0)
-                {
-                    AddRegionGroup();
-                    AddPaddingRegion(
-                        () =>
-                        {
-                            AddSmallButton("ItemCoinsSilver", (h) => { });
-                        }
-                    );
-                    AddRegionGroup();
-                    SetRegionGroupWidth(20);
-                    AddPaddingRegion(
-                        () =>
-                        {
-                            AddLine((int)(item.price * 100 % 100) + "" + "", Silver);
-                        }
-                    );
-                }
-                else lacking++;
-                if ((int)(item.price * 10000 % 100) > 0)
-                {
-                    AddRegionGroup();
-                    AddPaddingRegion(
-                        () =>
-                        {
-                            AddSmallButton("ItemCoinsCopper", (h) => { });
-                        }
-                    );
-                    AddRegionGroup();
-                    SetRegionGroupWidth(20);
-                    AddPaddingRegion(
-                        () =>
-                        {
-                            AddLine((int)(item.price * 10000 % 100) + "" + "", Copper);
-                        }
-                    );
-                }
-                else lacking++;
-                AddRegionGroup();
-                SetRegionGroupWidth(188 - (3 - lacking) * 49);
-                AddPaddingRegion(() => { AddLine("", Black); });
-                //AddPaddingRegion(() =>
-                //{
-                //    AddLine("Sell price: ", DarkGray);
-                //    var gold = (int)item.price;
-                //    var silver = (int)(item.price * 100 % 100);
-                //    var copper = (int)(item.price * 10000 % 100);
-                //    if (gold > 0) AddText(gold + "", Gold);
-                //    if (silver > 0) AddText(silver + ""  + "", Silver);
-                //    if (copper > 0) AddText(copper + "", Copper);
-                //    if (gold > 0) AddSmallButton("ItemCoinsGold", (h) => { });
-                //    else if (silver > 0) AddSmallButton("ItemCoinsSilver", (h) => { });
-                //    else if (copper > 0) AddSmallButton("ItemCoinsCopper", (h) => { });
-                //});
+                PrintItemTooltip(item);
             });
-            if (item != null) AddBigButtonOverlay("OtherRarity" + item.rarity);
+            if (item != null) AddBigButtonOverlay("OtherRarity" + item.rarity + (settings.bigRarityIndicators.Value() ? "Big" : ""));
         });
+    }
+
+    public static void PrintItemTooltip(Item item)
+    {
+        AddHeaderGroup();
+        SetRegionGroupWidth(188);
+        var split = item.name.Split(", ");
+        AddHeaderRegion(() =>
+        {
+            AddLine(split[0], Item.rarityColors[item.rarity]);
+        });
+        if (split.Length > 1)
+            AddHeaderRegion(() =>
+            {
+                AddLine("\"" + split[1] + "\"", Item.rarityColors[item.rarity]);
+            });
+        AddPaddingRegion(() =>
+        {
+            if (item.armorClass != null)
+            {
+                AddLine(item.armorClass + " " + item.type, Gray);
+                AddLine(item.armor + " Armor", Gray);
+            }
+            else if (item.maxDamage != 0)
+            {
+                AddLine(item.type + " " + item.detailedType, Gray);
+                AddLine(item.minDamage + " - " + item.maxDamage + " Damage", Gray);
+            }
+            else
+                AddLine(item.type, Gray);
+        });
+        if (item.stats.stats.Count > 0)
+            AddPaddingRegion(() =>
+            {
+                foreach (var stat in item.stats.stats)
+                    AddLine("+" + stat.Value + " " + stat.Key, Gray);
+            });
+        if (item.classes != null)
+            AddHeaderRegion(() =>
+            {
+                AddLine("Classes: ", DarkGray);
+                foreach (var spec in item.classes)
+                {
+                    AddText(spec, ClassColored(spec));
+                    if (spec != item.classes.Last())
+                        AddText(", ", DarkGray);
+                }
+            });
+        AddHeaderRegion(() =>
+        {
+            AddLine("Required level: ", DarkGray);
+            AddText("" + item.lvl, ItemColoredLevel(item.lvl));
+        });
+        var lacking = 0;
+        if ((int)item.price > 0)
+        {
+            AddRegionGroup();
+            AddPaddingRegion(
+                () =>
+                {
+                    AddSmallButton("ItemCoinsGold", (h) => { });
+                }
+
+            );
+            AddRegionGroup();
+            SetRegionGroupWidth(20);
+            AddPaddingRegion(
+                () =>
+                {
+                    AddLine((int)item.price + "", Gold);
+                }
+
+            );
+        }
+        else lacking++;
+        if ((int)(item.price * 100 % 100) > 0)
+        {
+            AddRegionGroup();
+            AddPaddingRegion(
+                () =>
+                {
+                    AddSmallButton("ItemCoinsSilver", (h) => { });
+                }
+            );
+            AddRegionGroup();
+            SetRegionGroupWidth(20);
+            AddPaddingRegion(
+                () =>
+                {
+                    AddLine((int)(item.price * 100 % 100) + "" + "", Silver);
+                }
+            );
+        }
+        else lacking++;
+        if ((int)(item.price * 10000 % 100) > 0)
+        {
+            AddRegionGroup();
+            AddPaddingRegion(
+                () =>
+                {
+                    AddSmallButton("ItemCoinsCopper", (h) => { });
+                }
+            );
+            AddRegionGroup();
+            SetRegionGroupWidth(20);
+            AddPaddingRegion(
+                () =>
+                {
+                    AddLine((int)(item.price * 10000 % 100) + "" + "", Copper);
+                }
+            );
+        }
+        else lacking++;
+        AddRegionGroup();
+        SetRegionGroupWidth(188 - (3 - lacking) * 49);
+        AddPaddingRegion(() => { AddLine("", Black); });
     }
 
     public static void PrintInventoryItem(Item item)
     {
-        AddBigButton(item.icon, (h) => { },
-        (h) => () =>
-        {
-            SetAnchor(BottomLeft, h.window);
-            AddRegionGroup();
-            AddHeaderRegion(() =>
+        AddBigButton(item.icon,
+            (h) =>
             {
-                var split = item.name.Split(", ");
-                AddLine(split[0], Item.rarityColors[item.rarity]);
-                if (split.Length > 1)
-                    AddLine("\"" + split[1] + "\"", Item.rarityColors[item.rarity]);
-            });
-            AddPaddingRegion(() =>
-            {
-                if (item.armorClass != null)
+                if (item.CanEquip(currentSave.player))
                 {
-                    AddLine(item.armorClass + " " + item.type, Gray);
-                    AddLine(item.armor + " Armor", Gray);
+                    item.Equip(currentSave.player);
+                    CloseWindow(h.window);
+                    SpawnWindowBlueprint("Inventory");
+                    CloseWindow("PlayerEquipmentInfo");
+                    SpawnWindowBlueprint("PlayerEquipmentInfo");
                 }
-                else if (item.maxDamage != 0)
-                {
-                    AddLine(item.type + " " + item.detailedType, Gray);
-                    AddLine(item.minDamage + " - " + item.maxDamage + " Damage", Gray);
-                }
-                else
-                    AddLine(item.type, Gray);
-            });
-            if (item.stats.stats.Count > 0)
-                AddPaddingRegion(() =>
-                {
-                    foreach (var stat in item.stats.stats)
-                        AddLine("+" + stat.Value + " " + stat.Key, Gray);
-                });
-            AddHeaderRegion(() =>
+            },
+            (h) => () =>
             {
-                AddLine("Required level: ", DarkGray);
-                AddText("" + item.lvl, ItemColoredLevel(item.lvl));
-            });
-            var lacking = 0;
-            if ((int)item.price > 0)
-            {
-                AddRegionGroup();
-                AddPaddingRegion(
-                    () =>
-                    {
-                        AddSmallButton("ItemCoinsGold", (h) => { });
-                    }
-
-                );
-                AddRegionGroup();
-                SetRegionGroupWidth(20);
-                AddPaddingRegion(
-                    () =>
-                    {
-                        AddLine((int)item.price + "", Gold);
-                    }
-
-                );
+                if (item == null) return;
+                SetAnchor(Center);
+                PrintItemTooltip(item);
             }
-            else lacking++;
-            if ((int)(item.price * 100 % 100) > 0)
-            {
-                AddRegionGroup();
-                AddPaddingRegion(
-                    () =>
-                    {
-                        AddSmallButton("ItemCoinsSilver", (h) => { });
-                    }
-                );
-                AddRegionGroup();
-                SetRegionGroupWidth(20);
-                AddPaddingRegion(
-                    () =>
-                    {
-                        AddLine((int)(item.price * 100 % 100) + "" + "", Silver);
-                    }
-                );
-            }
-            else lacking++;
-            if ((int)(item.price * 10000 % 100) > 0)
-            {
-                AddRegionGroup();
-                AddPaddingRegion(
-                    () =>
-                    {
-                        AddSmallButton("ItemCoinsCopper", (h) => { });
-                    }
-                );
-                AddRegionGroup();
-                SetRegionGroupWidth(20);
-                AddPaddingRegion(
-                    () =>
-                    {
-                        AddLine((int)(item.price * 10000 % 100) + "" + "", Copper);
-                    }
-                );
-            }
-            else lacking++;
-            AddRegionGroup();
-            SetRegionGroupWidth(188 - (3 - lacking) * 49);
-            AddPaddingRegion(() => { AddLine("", Black); });
-        });
-        AddBigButtonOverlay("OtherRarity" + item.rarity, 0, 2);
+        );
+        //AddBigButtonOverlay("OtherRarity" + item.rarity + (settings.bigRarityIndicators.Value() ? "Big" : ""), 0, 2);
+        //if (currentSave.player.HasItemEquipped(item.name))
+        //{
+        //    SetBigButtonToGrayscale();
+        //    AddBigButtonOverlay("OtherGridBlurred", 0, 2);
+        //}
+        if (item.CanEquip(currentSave.player) && currentSave.player.IsItemNewSlot(item))
+            AddBigButtonOverlay("OtherItemNewSlot", 0, 2);
+        else if (item.CanEquip(currentSave.player) && currentSave.player.IsItemAnUpgrade(item))
+            AddBigButtonOverlay("OtherItemUpgrade", 0, 2);
     }
 
     public static void PrintSite(string name, string type, Vector2 anchor)
@@ -727,8 +646,6 @@ public static class Root
         //});
     }
 
-    public static bool WillGetExperience(int level) => currentSave.player.level - 5 <= level;
-
     public static Color ClassColored(string spec)
     {
         if (spec == "Paladin") return Paladin;
@@ -762,8 +679,8 @@ public static class Root
     {
         if (level - 4 > currentSave.player.level) return DangerousRed;
         else if (level - 2 > currentSave.player.level) return Orange;
-        else if (level + 2 < currentSave.player.level && WillGetExperience(level)) return Green;
-        else if (!WillGetExperience(level)) return DarkGray;
+        else if (level + 2 < currentSave.player.level && currentSave.player.WillGetExperience(level)) return Green;
+        else if (!currentSave.player.WillGetExperience(level)) return DarkGray;
         else return Yellow;
     }
 
