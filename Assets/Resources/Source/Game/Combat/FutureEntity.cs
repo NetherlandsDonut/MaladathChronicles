@@ -63,18 +63,20 @@ public class FutureEntity
         foreach (var resource in resources)
         {
             var amount = abilities.FindAll(x => x.cost.ContainsKey(resource.Key)).Sum(x => x.cost[resource.Key] * AbilityTagModifier(x.tags)) / elementCosts + 0.025;
-            sheet.Add(resource.Key, Root.random.Next(5, 13) / 10.0 * amount);
+            sheet.Add(resource.Key, random.Next(5, 13) / 10.0 * amount);
         }
         return sheet;
     }
 
     public Class GetClass() => Class.classes.Find(x => x.name == spec);
 
+    //Calculates max health for the entity
     public int MaxHealth()
     {
         return Stats()["Stamina"] * 10;
     }
 
+    //Returns range of weapon damage entity has
     public (double, double) WeaponDamage()
     {
         if (equipment == null)

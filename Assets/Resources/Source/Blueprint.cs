@@ -6,12 +6,12 @@ using System.Collections.Generic;
 using static Root;
 using static SiteComplex;
 using static SiteInstance;
+using static SiteHostileArea;
 
 using static Root.Color;
 using static Root.Anchor;
 
 using static UnityEngine.KeyCode;
-using System.Reflection;
 
 public class Blueprint
 {
@@ -212,9 +212,10 @@ public class Blueprint
                     AddSmallButton("MenuFlee", (h) =>
                     {
                         CloseDesktop("Game");
-                        if (Board.board.area != null && Board.board.area.instancePart)
+                        if (Board.board.area != null)
                         {
-                            SwitchDesktop("DungeonEntrance");
+                            if (Board.board.area.instancePart)
+                            SwitchDesktop("InstanceEntrance");
                             CDesktop.Rebuild();
                         }
                         else SwitchDesktop("Map");
@@ -1026,6 +1027,43 @@ public class Blueprint
                 AddLine("", Gray);
             });
         }),
+        new("HostileAreaLeftSide", () => {
+            SetAnchor(TopLeft);
+            AddRegionGroup();
+            SetRegionGroupWidth(161);
+            AddPaddingRegion(() =>
+            {
+                //foreach (var line in instance.description)
+                //    AddLine(line, DarkGray);
+                //AddLine("Select area on the right.", DarkGray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+            });
+        }),
         new("ComplexLeftSide", () => {
             SetAnchor(TopLeft);
             AddRegionGroup();
@@ -1732,55 +1770,41 @@ public class Blueprint
             AddHotkey(L, () => { SpawnWindowBlueprint("ItemDrop"); });
             AddHotkey(BackQuote, () => { SpawnWindowBlueprint("Console"); });
         }),
-        new("DungeonEntrance", () =>
+        new("HostileAreaEntrance", () =>
         {
-            SetDesktopBackground("Areas/Area" + instance.name.Replace("'", "").Replace(" ", ""));
-            SpawnWindowBlueprint("Dungeon: " + instance.name);
-            SpawnWindowBlueprint("InstanceLeftSide");
+            SetDesktopBackground("Areas/Area" + (area.zone + area.name).Replace("'", "").Replace(" ", ""));
+            SpawnWindowBlueprint("Area: " + area.name);
+            SpawnWindowBlueprint("HostileAreaLeftSide");
             AddHotkey(Escape, () =>
             {
-                var window = CDesktop.windows.Find(x => x.title.StartsWith("Area: "));
-                if (window != null)
-                {
-                    PlaySound("DesktopButtonClose");
-                    SetDesktopBackground("Areas/Area" + instance.name.Replace("'", "").Replace(" ", ""));
-                    CloseWindow(window);
-                }
-                else if (instance.complexPart)
-                {
-                    CloseDesktop("DungeonEntrance");
-                    SpawnDesktopBlueprint("ComplexEntrance");
-                }
-                else
-                {
-                    PlaySound("DesktopInstanceClose");
-                    CloseDesktop("DungeonEntrance");
-                }
+                PlaySound("DesktopInstanceClose");
+                CloseDesktop("HostileAreaEntrance");
             });
         }),
-        new("RaidEntrance", () =>
+        new("InstanceEntrance", () =>
         {
             SetDesktopBackground("Areas/Area" + instance.name.Replace("'", "").Replace(" ", ""));
-            SpawnWindowBlueprint("Raid: " + instance.name);
+            SpawnWindowBlueprint(instance.type + ": " + instance.name);
             SpawnWindowBlueprint("InstanceLeftSide");
             AddHotkey(Escape, () =>
             {
                 var window = CDesktop.windows.Find(x => x.title.StartsWith("Area: "));
                 if (window != null)
                 {
+                    SpawnTransition();
                     PlaySound("DesktopButtonClose");
                     SetDesktopBackground("Areas/Area" + instance.name.Replace("'", "").Replace(" ", ""));
                     CloseWindow(window);
                 }
                 else if (instance.complexPart)
                 {
-                    CloseDesktop("RaidEntrance");
+                    CloseDesktop("InstanceEntrance");
                     SpawnDesktopBlueprint("ComplexEntrance");
                 }
                 else
                 {
                     PlaySound("DesktopInstanceClose");
-                    CloseDesktop("RaidEntrance");
+                    CloseDesktop("InstanceEntrance");
                 }
             });
         }),
@@ -1797,14 +1821,14 @@ public class Blueprint
         }),
         new("Game", () =>
         {
-            SetDesktopBackground("Areas/Area" + (Board.board.area.instancePart ? instance.name.Replace("'", "").Replace(" ", "") : "") + Board.board.area.name.Replace("'", "").Replace(" ", ""));
+            SetDesktopBackground("Areas/Area" + (Board.board.area.zone + Board.board.area.name).Replace("'", "").Replace(" ", ""));
             SpawnWindowBlueprint("BattleBoard");
             SpawnWindowBlueprint("PlayerBattleInfo");
             SpawnWindowBlueprint("EnemyBattleInfo");
             SpawnWindowBlueprint("PlayerResources");
             SpawnWindowBlueprint("EnemyResources");
             Board.board.Reset();
-            AddHotkey(Escape, () => { SwitchDesktop("Map"); CloseDesktop("Game"); });
+            //AddHotkey(Escape, () => { SwitchDesktop("Map"); CloseDesktop("Game"); });
             AddHotkey(PageUp, () => {
                 Board.board.player.resources = new Dictionary<string, int>
                 {

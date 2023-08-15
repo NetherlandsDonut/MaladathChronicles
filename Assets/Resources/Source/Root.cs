@@ -7,6 +7,7 @@ using static Font;
 using static Blueprint;
 using static SiteComplex;
 using static SiteInstance;
+using static SiteHostileArea;
 
 using static Root.Color;
 using static Root.Anchor;
@@ -417,49 +418,58 @@ public static class Root
             }
             else if (type == "HostileArea")
             {
-                var find = SiteHostileArea.hostileAreas.Find(x => x.name == name);
+                var find = hostileAreas.Find(x => x.name == name);
                 AddSmallButton("SiteHostileArea",
                 (h) =>
                 {
-                    if (find != null)
+                    area = hostileAreas.Find(x => x.name == name);
+                    if (area != null)
                     {
-                        Board.board = new Board(6, 6, find.RollEncounter(), find);
-                        SpawnDesktopBlueprint("Game");
-                        SwitchDesktop("Game");
+                        PlaySound("DesktopInstanceOpen");
+                        SpawnDesktopBlueprint("HostileAreaEntrance");
+                        SwitchDesktop("HostileAreaEntrance");
                     }
+                    //if (find != null)
+                    //{
+                    //    Board.board = new Board(6, 6, find.RollEncounter(), find);
+                    //    SpawnDesktopBlueprint("Game");
+                    //    SwitchDesktop("Game");
+                    //}
                 },
                 (h) => () =>
                 {
-                    if (find == null) return;
                     SetAnchor(TopRight, h.window);
                     AddRegionGroup();
                     AddHeaderRegion(() =>
                     {
                         AddLine(name, Gray);
                     });
-                    AddHeaderRegion(() =>
+                    if (find != null)
                     {
-                        AddLine("Recommended level: ", Gray);
-                        AddText(find.recommendedLevel + "", EntityColoredLevel(find.recommendedLevel));
-                    });
-                    AddPaddingRegion(() =>
-                    {
-                        AddLine("Possible encounters:", DarkGray);
-                        foreach (var encounter in find.possibleEncounters)
-                            AddLine("- " + encounter.Item3, DarkGray);
-                    });
+                        AddHeaderRegion(() =>
+                        {
+                            AddLine("Recommended level: ", Gray);
+                            AddText(find.recommendedLevel + "", EntityColoredLevel(find.recommendedLevel));
+                        });
+                        AddPaddingRegion(() =>
+                        {
+                            AddLine("Possible encounters:", DarkGray);
+                            foreach (var encounter in find.possibleEncounters)
+                                AddLine("- " + encounter.Item3, DarkGray);
+                        });
+                    }
                 });
             }
             else if (type == "Dungeon")
                 AddSmallButton("Site" + type,
                 (h) =>
                 {
-                    instance = dungeons.Find(x => x.name == name);
+                    instance = instances.Find(x => x.name == name);
                     if (instance != null)
                     {
                         PlaySound("DesktopInstanceOpen");
-                        SpawnDesktopBlueprint("DungeonEntrance");
-                        SwitchDesktop("DungeonEntrance");
+                        SpawnDesktopBlueprint("InstanceEntrance");
+                        SwitchDesktop("InstanceEntrance");
                     }
                 },
                 (h) => () =>
@@ -473,7 +483,7 @@ public static class Root
                     AddPaddingRegion(() =>
                     {
                         AddLine("Level range: ", Gray);
-                        instance = dungeons.Find(x => x.name == name);
+                        instance = instances.Find(x => x.name == name);
                         if (instance == null)
                             AddText("??", DarkGray);
                         else
@@ -489,12 +499,12 @@ public static class Root
                 AddSmallButton("Site" + type,
                 (h) =>
                 {
-                    instance = raids.Find(x => x.name == name);
+                    instance = instances.Find(x => x.name == name);
                     if (instance != null)
                     {
                         PlaySound("DesktopInstanceOpen");
-                        SpawnDesktopBlueprint("RaidEntrance");
-                        SwitchDesktop("RaidEntrance");
+                        SpawnDesktopBlueprint("InstanceEntrance");
+                        SwitchDesktop("InstanceEntrance");
                     }
                 },
                 (h) => () =>
@@ -508,7 +518,7 @@ public static class Root
                     AddPaddingRegion(() =>
                     {
                         AddLine("Level range: ", Gray);
-                        instance = raids.Find(x => x.name == name);
+                        instance = instances.Find(x => x.name == name);
                         if (instance == null)
                             AddText("??", DarkGray);
                         else
@@ -556,7 +566,7 @@ public static class Root
                 AddSmallButton("Site" + type,
                 (h) =>
                 {
-                    var find = SiteHostileArea.hostileAreas.Find(x => x.name == name);
+                    var find = hostileAreas.Find(x => x.name == name);
                     if (find != null)
                     {
                         Board.board = new Board(6, 6, find.RollEncounter(), find);
@@ -623,7 +633,7 @@ public static class Root
 
     public static void PrintComplexSite(SiteComplex complex, (string, string) site)
     {
-        var instance = site.Item1 == "Dungeon" ? dungeons.Find(x => x.name == site.Item2) : raids.Find(x => x.name == site.Item2);
+        var instance = instances.Find(x => x.name == site.Item2);
         AddButtonRegion(() =>
         {
             AddLine(site.Item2, Black);
@@ -633,17 +643,8 @@ public static class Root
         {
             CloseDesktop("ComplexEntrance");
             SiteInstance.instance = instance;
-            SpawnDesktopBlueprint(site.Item1 + "Entrance");
+            SpawnDesktopBlueprint("InstanceEntrance");
         });
-        //AddPaddingRegion(() =>
-        //{
-        //    SetRegionAsGroupExtender();
-        //    AddLine("Level range: ", Gray);
-        //    var range = instance.LevelRange();
-        //    AddText(range.Item1 + "", EntityColoredLevel(range.Item1));
-        //    AddText(" - ", Gray);
-        //    AddText(range.Item2 + "", EntityColoredLevel(range.Item2));
-        //});
     }
 
     public static Color ClassColored(string spec)

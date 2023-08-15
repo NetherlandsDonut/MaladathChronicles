@@ -7,8 +7,7 @@ public class SiteComplex
         this.name = name;
         this.description = description;
         this.sites = sites;
-        SiteInstance.dungeons.FindAll(x => sites.Exists(y => y.Item2 == x.name)).ForEach(x => x.complexPart = true);
-        SiteInstance.raids.FindAll(x => sites.Exists(y => y.Item2 == x.name)).ForEach(x => x.complexPart = true);
+        SiteInstance.instances.FindAll(x => sites.Exists(y => y.Item2 == x.name)).ForEach(x => x.complexPart = true);
     }
 
     public string name;

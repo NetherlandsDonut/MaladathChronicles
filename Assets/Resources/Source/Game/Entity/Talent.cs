@@ -1,7 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 public class Talent
 {
     public Talent(int row, int col, string ability, bool inherited = false, bool defaultTaken = false)

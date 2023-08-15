@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 using static Root;
 using static Root.Color;
+using UnityEngine.Rendering;
 
 public class Starter : MonoBehaviour
 {
@@ -32,79 +33,12 @@ public class Starter : MonoBehaviour
             var type = split[0].Substring(4);
             Blueprint.windowBlueprints.Add(new Blueprint("Site: " + name, () => PrintSite(name, type, windowRemoteAnchors[index].Item2)));
         }
-        for (int i = 0; i < SiteInstance.raids.Count; i++)
+        for (int i = 0; i < SiteInstance.instances.Count; i++)
         {
             var index = i;
-            var instance = SiteInstance.raids[index];
+            var instance = SiteInstance.instances[index];
             Blueprint.windowBlueprints.Add(
-                new Blueprint("Raid: " + instance.name,
-                    () =>
-                    {
-                        SetAnchor(Anchor.TopRight);
-                        AddRegionGroup();
-                        SetRegionGroupWidth(161);
-                        SetRegionGroupHeight(344);
-                        AddHeaderRegion(() =>
-                        {
-                            AddLine(instance.name);
-                            AddSmallButton("OtherClose",
-                            (h) =>
-                            {
-                                var title = CDesktop.title;
-                                CloseDesktop(title);
-                                if (instance.complexPart)
-                                    SpawnDesktopBlueprint("ComplexEntrance");
-                                else
-                                {
-                                    PlaySound("DesktopInstanceClose");
-                                    SwitchDesktop("Map");
-                                }
-                            });
-                        });
-                        AddPaddingRegion(() =>
-                        {
-                            SetRegionAsGroupExtender();
-                            AddLine("Level range: ", Gray);
-                            var range = instance.LevelRange();
-                            AddText(range.Item1 + "", EntityColoredLevel(range.Item1));
-                            AddText(" - ", Gray);
-                            AddText(range.Item2 + "", EntityColoredLevel(range.Item2));
-                        });
-                        foreach (var wing in instance.wings)
-                            PrintRaidWing(instance, wing);
-                        AddPaddingRegion(() =>
-                        {
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                        });
-                    }
-                )
-            );
-        }
-        for (int i = 0; i < SiteInstance.dungeons.Count; i++)
-        {
-            var index = i;
-            var instance = SiteInstance.dungeons[index];
-            Blueprint.windowBlueprints.Add(
-                new Blueprint("Dungeon: " + instance.name,
+                new Blueprint(instance.type + ": " + instance.name,
                     () =>
                     {
                         SetAnchor(Anchor.TopRight);
@@ -339,10 +273,18 @@ public class Starter : MonoBehaviour
                                 AddSmallButton("OtherClose",
                                 (h) =>
                                 {
-                                    SpawnTransition();
-                                    PlaySound("DesktopInstanceClose");
-                                    SetDesktopBackground("Areas/Area" + SiteInstance.instance.name.Replace("'", "").Replace(" ", ""));
-                                    CloseWindow(h.window);
+                                    if (area.instancePart)
+                                    {
+                                        SpawnTransition();
+                                        PlaySound("DesktopInstanceClose");
+                                        SetDesktopBackground("Areas/Area" + SiteInstance.instance.name.Replace("'", "").Replace(" ", ""));
+                                        CloseWindow(h.window);
+                                    }
+                                    else
+                                    {
+                                        PlaySound("DesktopInstanceClose");
+                                        CloseDesktop("HostileAreaEntrance");
+                                    }
                                 });
                             });
                             AddPaddingRegion(() =>

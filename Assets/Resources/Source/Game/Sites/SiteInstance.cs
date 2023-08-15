@@ -7,14 +7,15 @@ using System.Linq;
 
 public class SiteInstance
 {
-    public SiteInstance(string name, List<string> description, List<InstanceWing> wings)
+    public SiteInstance(string name, string type, List<string> description, List<InstanceWing> wings)
     {
         this.name = name;
+        this.type = type != "Dungeon" && type != "Raid" ? "Dungeon" : type;
         this.description = description;
         this.wings = wings;
     }
 
-    public string name;
+    public string name, type;
     public bool complexPart;
     public List<string> description;
     public List<InstanceWing> wings;
@@ -28,9 +29,9 @@ public class SiteInstance
 
     public static SiteInstance instance;
 
-    public static List<SiteInstance> dungeons = new()
+    public static List<SiteInstance> instances = new()
     {
-        new SiteInstance("Gnomeregan", new()
+        new SiteInstance("Gnomeregan", "Dungeon", new()
         {
 
         },
@@ -45,7 +46,7 @@ public class SiteInstance
                 ("Boss", "Tinkers' Court")
             })
         }),
-        new SiteInstance("Scholomance", new()
+        new SiteInstance("Scholomance", "Dungeon", new()
         {
 
         },
@@ -67,7 +68,7 @@ public class SiteInstance
                 ("Boss", "Headmaster's Study")
             })
         }),
-        new SiteInstance("Maraudon", new()
+        new SiteInstance("Maraudon", "Dungeon", new()
         {
 
         },
@@ -90,7 +91,7 @@ public class SiteInstance
                 ("Boss", "Zaetar's Grave")
             })
         }),
-        new SiteInstance("Stratholme", new()
+        new SiteInstance("Stratholme", "Dungeon", new()
         {
 
         },
@@ -112,7 +113,7 @@ public class SiteInstance
                 ("Boss", "The Slaughter House")
             })
         }),
-        new SiteInstance("Wailing Caverns", new()
+        new SiteInstance("Wailing Caverns", "Dungeon", new()
         {
 
         },
@@ -127,7 +128,7 @@ public class SiteInstance
                 ("Boss", "Dreamer's Rock")
             }),
         }),
-        new SiteInstance("Uldaman", new()
+        new SiteInstance("Uldaman", "Dungeon", new()
         {
 
         },
@@ -143,7 +144,7 @@ public class SiteInstance
                 ("Boss", "Khaz'Goroth's Seat")
             }),
         }),
-        new SiteInstance("Razorfen Downs", new()
+        new SiteInstance("Razorfen Downs", "Dungeon", new()
         {
 
         },
@@ -156,7 +157,22 @@ public class SiteInstance
                 ("Boss", "Spiral of Thorns"),
             }),
         }),
-        new SiteInstance("The Deadmines", new()
+        new SiteInstance("Razorfen Kraul", "Dungeon", new()
+        {
+
+        },
+        new()
+        {
+            new InstanceWing("Razorfen Kraul", new()
+            {
+                ("None", "Razorfen Kraul1"),
+                ("Boss", "Razorfen Kraul2"),
+                ("Boss", "Razorfen Kraul3"),
+                ("Boss", "Razorfen Kraul4"),
+                ("Boss", "Razorfen Kraul5"),
+            }),
+        }),
+        new SiteInstance("The Deadmines", "Dungeon", new()
         {
 
         },
@@ -171,7 +187,7 @@ public class SiteInstance
                 ("Boss", "The Juggernaut"),
             }),
         }),
-        new SiteInstance("Blackfathom Deeps", new()
+        new SiteInstance("Blackfathom Deeps", "Dungeon", new()
         {
 
         },
@@ -187,7 +203,7 @@ public class SiteInstance
                 ("Boss", "Aku'mai's Lair")
             }),
         }),
-        new SiteInstance("Dire Maul", new()
+        new SiteInstance("Dire Maul", "Dungeon", new()
         {
 
         },
@@ -213,7 +229,7 @@ public class SiteInstance
                 ("Boss", "Gordok's Seat")
             }),
         }),
-        new SiteInstance("Scarlet Monastery", new()
+        new SiteInstance("Scarlet Monastery", "Dungeon", new()
         {
             "The smoldering Blackrock",
             "Depths are home to the",
@@ -261,7 +277,7 @@ public class SiteInstance
                 ("Boss", "Crusader's Chapel")
             }),
         }),
-        new SiteInstance("Blackrock Depths", new()
+        new SiteInstance("Blackrock Depths", "Dungeon", new()
         {
             "The smoldering Blackrock",
             "Depths are home to the",
@@ -313,7 +329,7 @@ public class SiteInstance
                 ("Boss", "The Imperial Seat")
             }),
         }),
-        new SiteInstance("Lower Blackrock Spire", new()
+        new SiteInstance("Lower Blackrock Spire", "Dungeon", new()
         {
             "The majority of Rend's",
             "Dark Horde reside in",
@@ -341,7 +357,7 @@ public class SiteInstance
                 ("Boss", "Chamber of Battle"),
             }),
         }),
-        new SiteInstance("Upper Blackrock Spire", new()
+        new SiteInstance("Upper Blackrock Spire", "Dungeon", new()
         {
             "The smoldering Blackrock",
             "The history of this",
@@ -366,7 +382,7 @@ public class SiteInstance
                 ("Boss", "Spire Throne")
             }),
         }),
-        new SiteInstance("Zul'Farrak", new()
+        new SiteInstance("Zul'Farrak", "Dungeon", new()
         {
 
         },
@@ -377,20 +393,17 @@ public class SiteInstance
                 ("None", "Ass"),
             })
         }),
-    };
-
-    public static List<SiteInstance> raids = new()
-    {
-        new SiteInstance("Onyxia's Lair", new()
+        new SiteInstance("Onyxia's Lair", "Raid", new()
         { },
         new ()
         {
-            new InstanceWing("Lair", new()
+            new InstanceWing("Onyxia's Lair", new()
             {
-                ("None", "Onyxia's Lair"),
+                ("None", "Lair Tunnels"),
+                ("Boss", "The Lair"),
             }),
         }),
-        new SiteInstance("Molten Core", new()
+        new SiteInstance("Molten Core", "Raid", new()
         {
             "The Molten Core lies at",
             "the very bottom of",
@@ -421,7 +434,45 @@ public class SiteInstance
                 ("Boss", "Ragnaros' Lair"),
             }),
         }),
-        new SiteInstance("Blackwing Lair", new()
+        new SiteInstance("Zul'Gurub", "Raid", new()
+        {
+            "The Molten Core lies at",
+            "the very bottom of",
+            "Blackrock Depths.",
+            "It is the heart of",
+            "Blackrock Mountain and",
+            "the exact spot where,",
+            "long ago in a desperate",
+            "bid to turn the tide of",
+            "the dwarven civil war,",
+            "Emperor Thaurissan",
+            "summoned the elemental",
+            "Firelord, Ragnaros, into",
+            "the world. The burning",
+            "lake where Ragnaros lies",
+            "sleeping acts as a rift",
+            "connecting to the plane",
+            "of fire, allowing the",
+            "malicious elementals to",
+            "pass through."
+        },
+        new ()
+        {
+            new InstanceWing("Lower", new()
+            {
+                ("None", "Altar of Hir'eek"),
+                ("Boss", "The Coil"),
+                ("Boss", "Shadra'zaar"),
+                ("Boss", "Hakkari Grounds"),
+                ("Boss", "Edge of Madness"),
+                ("Boss", "Naze of Shirvallah"),
+                ("Boss", "Pagle's Pointe"),
+                ("Boss", "Temple of Bethekk"),
+                ("Boss", "The Bloodfire Pit"),
+                ("Boss", "Altar of the Blood God"),
+            }),
+        }),
+        new SiteInstance("Blackwing Lair", "Raid", new()
         {
             "In the dark recesses of",
             "the mountain's peak,",
@@ -451,7 +502,7 @@ public class SiteInstance
                 ("Boss", "Nefarian's Lair"),
             }),
         }),
-        new SiteInstance("Ruins Of Ahn'Qiraj", new()
+        new SiteInstance("Ruins Of Ahn'Qiraj", "Raid", new()
         {
 
         },

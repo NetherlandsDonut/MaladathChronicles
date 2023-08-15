@@ -10,7 +10,7 @@ public class Entity
     //Player constructor
     public Entity(string name, string creationGender, Race race, Class spec, List<string> items)
     {
-        level = 40;
+        level = 60;
         this.name = name;
         this.gender = creationGender;
         unspentTalentPoints = 20;

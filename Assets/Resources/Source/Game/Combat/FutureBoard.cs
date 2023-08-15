@@ -1,8 +1,5 @@
 using System.Linq;
 using System.Collections.Generic;
-using System.Diagnostics;
-using static UnityEngine.EventSystems.EventTrigger;
-using UnityEngine.Pool;
 
 public class FutureBoard
 {
