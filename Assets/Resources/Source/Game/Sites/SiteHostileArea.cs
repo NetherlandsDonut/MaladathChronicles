@@ -44,7 +44,7 @@ public class SiteHostileArea
         var find = encounters[random.Next(0, encounters.Count)];
         return new Entity(find.Item1, find.Item2);
     }
-    
+
     public Entity RollBoss((int, int, string) data)
     {
         return new Entity(data.Item2, Race.races.Find(x => x.name == data.Item3));
@@ -1196,6 +1196,454 @@ public class SiteHostileArea
 
         #endregion
         
+        #region Searing Gorge
+
+        new SiteHostileArea("The Slag Pit", "Searing Gorge", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("The Cauldron", "Searing Gorge", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Firewatch Ridge", "Searing Gorge", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Grimesilt Digsite", "Searing Gorge", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Dustfire Valley", "Searing Gorge", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Stonewrought Pass", "Searing Gorge", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Blackchar Cave", "Searing Gorge", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+
+        #endregion
+        
+        #region Wetlands
+
+        new SiteHostileArea("Dun Algaz", "Wetlands", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Dragonmaw Gates", "Wetlands", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Grim Batol", "Wetlands", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Sundown Marsh", "Wetlands", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Whelgar's Excavation Site", "Wetlands", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Ironbeard's Tomb", "Wetlands", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Thelgen Rock", "Wetlands", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Mosshide Fen", "Wetlands", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("The Green Belt", "Wetlands", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Saltspray Glen", "Wetlands", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Sundown Marsh", "Wetlands", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Bluegill Marsh", "Wetlands", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Black Channel Marsh", "Wetlands", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Angerfang Encampment", "Wetlands", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Raptor Ridge", "Wetlands", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Direforge Hill", "Wetlands", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+
+        #endregion
+        
+        #region Felwood
+
+        new SiteHostileArea("Deadmaw Village", "Felwood", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Irontree Woods", "Felwood", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Irontree Cavern", "Felwood", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Bloodvenom Falls", "Felwood", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Jaedenar", "Felwood", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Morlos'Aran", "Felwood", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Shatter Scar Vale", "Felwood", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Jadefire Run", "Felwood", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+
+        #endregion
+        
+        #region Winterspring
+
+        new SiteHostileArea("The Ruins of Kel'Theril", "Winterspring", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Hidden Grove", "Winterspring", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Frostsaber Rock", "Winterspring", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Darkwhisper Gorge", "Winterspring", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Frostwhisper Gorge", "Winterspring", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Mazthoril", "Winterspring", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Ice Thistle Hills", "Winterspring", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Frostfire Hot Springs", "Winterspring", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Winterfall Village", "Winterspring", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Timbermaw Post", "Winterspring", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Owl Wing Thicket", "Winterspring", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+
+        #endregion
+        
+        #region Deadwind Pass
+
+        new SiteHostileArea("The Vice", "Deadwind Pass", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Deadman's Crossing", "Deadwind Pass", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+
+        #endregion
+        
+        #region The Barrens
+
+        new SiteHostileArea("Lushwater Oasis", "The Barrens", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("The Stagnant Oasis", "The Barrens", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Field of Giants", "The Barrens", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Thorn Hill", "The Barrens", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Agama'gor", "The Barrens", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Southfury River", "The Barrens", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Bramblescar", "The Barrens", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Bael Modan", "The Barrens", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("The Dry Hills", "The Barrens", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("The Sludge Fen", "The Barrens", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Raptor Grounds", "The Barrens", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Northwatch Hold", "The Barrens", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("The Forgotten Pools", "The Barrens", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Boulder Lode Mine", "The Barrens", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("The Forgotten Pools", "The Barrens", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+
+        #endregion
+        
+        #region Mulgore
+
+        new SiteHostileArea("The Ravaged Caravan", "Mulgore", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Palemane Rock", "Mulgore", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Baeldun Digsite", "Mulgore", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Brambleblade Ravine", "Mulgore", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Red Cloud Mesa", "Mulgore", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("The Golden Plains", "Mulgore", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Red Rocks", "Mulgore", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Windfury Ridge", "Mulgore", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("The Venture Co. Mine", "Mulgore", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("The Rolling Plains", "Mulgore", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+
+        #endregion
+        
+        #region Loch Modan
+
+        new SiteHostileArea("Valley of Kings", "Loch Modan", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Ironband's Excavation Site", "Loch Modan", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Stonesplinter Valley", "Loch Modan", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Mogrosh Stronghold", "Loch Modan", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Silver Stream Mine", "Loch Modan", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+
+        #endregion
+        
+        #region Durotar
+
+        new SiteHostileArea("Skull Rock", "Durotar", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Scuttle Coast", "Durotar", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Tiragarde Keep", "Durotar", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Thunder Ridge", "Durotar", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Bladefist Bay", "Durotar", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Echo Isles", "Durotar", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Drygulch Ravine", "Durotar", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Burning Blade Coven", "Durotar", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+
+        #endregion
+        
+        #region Stonetalon Mountains
+
+        new SiteHostileArea("The Talondeep Pass", "Stonetalon Mountains", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+
+        #endregion
+        
+        #region Ashenvale
+
+        new SiteHostileArea("Demon Fall Canyon", "Ashenvale", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Satyrnaar", "Ashenvale", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Felfire Hill", "Ashenvale", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Fallen Sky Lake", "Ashenvale", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Bloodtooth Camp", "Ashenvale", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Mystral Lake", "Ashenvale", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("The Dor'Danil Barrow Den", "Ashenvale", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+
+        #endregion
+        
+        #region Burning Steppes
+
+        new SiteHostileArea("The Pillar of Ash", "Burning Steppes", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Slither Rock", "Burning Steppes", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Terror Wing Path", "Burning Steppes", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Dreadmaul Rock", "Burning Steppes", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Draco'dar", "Burning Steppes", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Blackrock Stronghold", "Burning Steppes", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Ruins of Thaurissan", "Burning Steppes", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+
+        #endregion
+        
         #region Desolace
 
         new SiteHostileArea("Bolgan's Hole", "Desolace", new()
@@ -1203,6 +1651,54 @@ public class SiteHostileArea
             ("01-02", "Duskbat"),
         }),
         new SiteHostileArea("Gelkis Village", "Desolace", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Ethel Rethor", "Desolace", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Sargeron", "Desolace", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Valley of Bones", "Desolace", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Valley of Spears", "Desolace", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Sar'theris Strand", "Desolace", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Magram Village", "Desolace", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Thunder Axe Fortress", "Desolace", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Kodo Graveyard", "Desolace", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Shadowbreak Ravine", "Desolace", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Ranazjar Isle", "Desolace", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Kolkar Post", "Desolace", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Mannoroc Coven", "Desolace", new()
         {
             ("01-02", "Duskbat"),
         }),

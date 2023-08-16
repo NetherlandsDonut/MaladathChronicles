@@ -423,18 +423,10 @@ public static class Root
                 (h) =>
                 {
                     area = hostileAreas.Find(x => x.name == name);
-                    if (area != null)
-                    {
-                        PlaySound("DesktopInstanceOpen");
-                        SpawnDesktopBlueprint("HostileAreaEntrance");
-                        SwitchDesktop("HostileAreaEntrance");
-                    }
-                    //if (find != null)
-                    //{
-                    //    Board.board = new Board(6, 6, find.RollEncounter(), find);
-                    //    SpawnDesktopBlueprint("Game");
-                    //    SwitchDesktop("Game");
-                    //}
+                    if (area == null) return;
+                    PlaySound("DesktopInstanceOpen");
+                    SpawnDesktopBlueprint("HostileAreaEntrance");
+                    SwitchDesktop("HostileAreaEntrance");
                 },
                 (h) => () =>
                 {
@@ -562,46 +554,6 @@ public static class Root
                         AddSmallButton("Site" + site.Item1, (h) => { });
                     });
                 });
-            else
-                AddSmallButton("Site" + type,
-                (h) =>
-                {
-                    var find = hostileAreas.Find(x => x.name == name);
-                    if (find != null)
-                    {
-                        Board.board = new Board(6, 6, find.RollEncounter(), find);
-                        SpawnDesktopBlueprint("Game");
-                        SwitchDesktop("Game");
-                    }
-                },
-                (h) => () =>
-                {
-                    SetAnchor(TopRight, h.window);
-                    AddRegionGroup();
-                    AddHeaderRegion(() =>
-                    {
-                        AddLine(name, Gray);
-                    });
-                    AddHeaderRegion(() =>
-                    {
-                        AddLine("Nothing:", Gray);
-                    });
-                    AddPaddingRegion(() =>
-                    {
-                        AddLine("There is nothing here yet", Gray);
-                        AddLine("But there will be something soon", Gray);
-                        AddLine("I hope so", Gray);
-                    });
-                    AddHeaderRegion(() =>
-                    {
-                        AddLine("Very nothing:", Gray);
-                    });
-                    AddPaddingRegion(() =>
-                    {
-                        AddLine("There is nothing here yet", Gray);
-                        AddLine("But there will be something soon", Gray);
-                    });
-                });
         });
     }
 
@@ -611,7 +563,7 @@ public static class Root
         {
             AddLine(wing.name, Gray);
         });
-        var areas = wing.areas.Select(x => SiteHostileArea.hostileAreas.Find(y => y.name == x.Item2)).ToList();
+        var areas = wing.areas.Select(x => hostileAreas.Find(y => y.name == x.Item2)).ToList();
         foreach (var area in areas)
         AddButtonRegion(() =>
         {

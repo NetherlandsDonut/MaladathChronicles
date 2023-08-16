@@ -47,6 +47,7 @@ public class SiteTown
         new SiteTown("Menethil Harbor", "Alliance"),
         new SiteTown("Thelsamar", "Alliance"),
         new SiteTown("Nethergarde Keep", "Alliance"),
+        new SiteTown("Morgan's Vigil", "Alliance"),
         new SiteTown("Angor Fortress", "Alliance"),
         new SiteTown("North Gate Outpost", "Alliance"),
         new SiteTown("South Gate Outpost", "Alliance"),
