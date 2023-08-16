@@ -1,6 +1,5 @@
-using System.Linq;
 using System.Collections.Generic;
-
+using System.Linq;
 using static Root;
 
 public class SiteHostileArea
@@ -942,64 +941,6 @@ public class SiteHostileArea
 
         #endregion
 
-        #region Uldaman
-
-        new SiteHostileArea("Hall of the Keepers", "Uldaman", new()
-        {
-            ("36-37", "Stonevault Ambusher"),
-            ("37-38", "Stonevault Pillager"),
-            ("37-38", "Stonevault Oracle")
-        },
-        new()
-        {
-            (3, "40", "Revelosh"),
-        }),
-        new SiteHostileArea("Map Chamber", "Uldaman", new() { },
-        new()
-        {
-            (0, "40", "Ironaya"),
-        }),
-        new SiteHostileArea("Temple Hall", "Uldaman", new()
-        {
-            ("44", "Stone Steward"),
-            ("41-43", "Venomlash Scorpid"),
-            ("42-43", "Earthen Sculptor"),
-        },
-        new()
-        {
-            (3, "44", "Ancient Stone Keeper"),
-        }),
-        new SiteHostileArea("Dig Three", "Uldaman", new()
-        {
-            ("42-44", "Shadowforge Darkcaster"),
-            ("42-44", "Shadowforge Sharpshooter")
-        },
-        new()
-        {
-            (3, "45", "Galgann Firehammer"),
-        }),
-        new SiteHostileArea("The Stone Vault", "Uldaman", new()
-        {
-            ("42-44", "Jadespine Basilisk"),
-            ("41-43", "Stonevault Geomancer"),
-            ("42-43", "Stonevault Brawler")
-        },
-        new()
-        {
-            (3, "45", "Grimlok"),
-        }),
-        new SiteHostileArea("Khaz'Goroth's Seat", "Uldaman", new()
-        {
-            ("44-45", "Vault Warder"),
-            ("45", "Stone Steward")
-        },
-        new()
-        {
-            (2, "47", "Archaedas"),
-        }),
-
-        #endregion
-
         #region Molten Core
 
         new SiteHostileArea("Magmadar Cavern", "Molten Core", new()
@@ -1032,6 +973,106 @@ public class SiteHostileArea
         new()
         {
             (04, "60", "Ragnaros"),
+        }),
+
+        #endregion
+        
+        #region Feralas
+        
+        new SiteHostileArea("High Wilderness", "Feralas", new()
+        {
+            ("43-44", "Longtooth Howler"),
+            ("44-45", "Grizzled Ironfur Bear"),
+            ("45-46", "Rogue Vale Screecher"),
+        }),
+        new SiteHostileArea("The Writhing Deep", "Feralas", new()
+        {
+            ("44-45", "Zukk'ash Wasp"),
+            ("44-45", "Zukk'ash Worker"),
+            ("45-46", "Zukk'ash Stinger"),
+            ("45-46", "Zukk'ash Tunneler"),
+        }),
+        new SiteHostileArea("Woodpaw Hills", "Feralas", new()
+        {
+            ("40-41", "Woodpaw Mongrel"),
+            ("41-42", "Woodpaw Trapper"),
+            ("42-43", "Woodpaw Mystic"),
+            ("42-43", "Woodpaw Alpha"),
+            ("42-43", "Woodpaw Reaver"),
+        }),
+        new SiteHostileArea("Gordunni Outpost", "Feralas", new()
+        {
+            ("40-41", "Gordunni Ogre"),
+            ("41-42", "Gordunni Ogre Mage"),
+            ("42-43", "Gordunni Brute"),
+        }),
+        new SiteHostileArea("Lower Wilds", "Feralas", new()
+        {
+            ("40-41", "Longtooth Runner"),
+            ("41-42", "Ironfur Bear"),
+            ("43-44", "Grimtotem Shaman"),
+        }),
+        new SiteHostileArea("Grimtotem Compound", "Feralas", new()
+        {
+            ("41-42", "Grimtotem Raider"),
+            ("41-42", "Grimtotem Naturalist"),
+            ("43-44", "Grimtotem Shaman"),
+        }),
+        new SiteHostileArea("Frayfeather Highlands", "Feralas", new()
+        {
+            ("44-45", "Frayfeather Stagwing"),
+            ("45-46", "Frayfeather Skystormer"),
+            ("46-47", "Frayfeather Patriarch"),
+            ("48", "Antillus the Soarer"),
+        }),
+        new SiteHostileArea("Ruins of Isildien", "Feralas", new()
+        {
+            ("43-44", "Gordunni Mauler"),
+            ("43-44", "Gordunni Warlock"),
+            ("44-46", "Gordunni Battlemaster"),
+            ("44-46", "Gordunni Shaman"),
+            ("46-47", "Gordunni Warlord"),
+        }),
+        new SiteHostileArea("Ruins of Solarsal", "Feralas", new()
+        {
+            ("41-43", "Hatecrest Wave Rider"),
+            ("43-45", "Hatecrest Siren"),
+            ("42-43", "Hatecrest Screamer"),
+        }),
+        new SiteHostileArea("Shalzaru's Lair", "Feralas", new()
+        {
+            ("44-45", "Hatecrest Serpent Guard"),
+            ("43-45", "Hatecrest Sorceress"),
+            ("43-44", "Hatecrest Myrmidon"),
+            ("47", "Lord Shalzaru"),
+        }),
+        new SiteHostileArea("The Twin Colossals", "Feralas", new()
+        {
+            ("47-48", "Sea Elemental"),
+            ("48-49", "Shore Strider"),
+        }),
+        new SiteHostileArea("Ruins of Ravenwind", "Feralas", new()
+        {
+            ("48-49", "Northspring Roguefeather"),
+            ("48-49", "Northspring Slayer"),
+            ("49-50", "Northspring Windcaller"),
+        }),
+        new SiteHostileArea("Oneiros", "Feralas", new()
+        {
+            ("60-61", "Jademir Oracle"),
+            ("60-61", "Jademir Tree Watcher"),
+            ("60-61", "Jademir Boughguard"),
+        }),
+        new SiteHostileArea("The Forgotten Coast", "Feralas", new()
+        {
+            ("47-48", "Sea Elemental"),
+            ("48-49", "Shore Strider"),
+        }),
+        new SiteHostileArea("Isle of Dread", "Feralas", new()
+        {
+            ("61-62", "Arcane Chimaerok"),
+            ("60-61", "Chimaerok Devourer"),
+            ("62", "Lord Lakmaeran"),
         }),
 
         #endregion
@@ -1151,6 +1192,258 @@ public class SiteHostileArea
             ("01-02", "Duskbat"),
             ("01-02", "Wretched Zombie"),
             ("01-02", "Rattlecage Skeleton"),
+        }),
+
+        #endregion
+        
+        #region Desolace
+
+        new SiteHostileArea("Bolgan's Hole", "Desolace", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Gelkis Village", "Desolace", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+
+        #endregion
+        
+        #region Silithus
+
+        new SiteHostileArea("The Swarming Pillar", "Silithus", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("The Scarab Wall", "Silithus", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Hive'Zara", "Silithus", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Hive'Ashi", "Silithus", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Hive'Regal", "Silithus", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Southwind Village", "Silithus", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("The Crystal Vale", "Silithus", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+
+        #endregion
+
+        #region Uldaman
+
+        new SiteHostileArea("Hall of the Keepers", "Uldaman", new()
+        {
+            ("36-37", "Stonevault Ambusher"),
+            ("37-38", "Stonevault Pillager"),
+            ("37-38", "Stonevault Oracle")
+        },
+        new()
+        {
+            (3, "40", "Revelosh"),
+        }),
+        new SiteHostileArea("Map Chamber", "Uldaman", new() { },
+        new()
+        {
+            (0, "40", "Ironaya"),
+        }),
+        new SiteHostileArea("Temple Hall", "Uldaman", new()
+        {
+            ("44", "Stone Steward"),
+            ("41-43", "Venomlash Scorpid"),
+            ("42-43", "Earthen Sculptor"),
+        },
+        new()
+        {
+            (3, "44", "Ancient Stone Keeper"),
+        }),
+        new SiteHostileArea("Dig Three", "Uldaman", new()
+        {
+            ("42-44", "Shadowforge Darkcaster"),
+            ("42-44", "Shadowforge Sharpshooter")
+        },
+        new()
+        {
+            (3, "45", "Galgann Firehammer"),
+        }),
+        new SiteHostileArea("The Stone Vault", "Uldaman", new()
+        {
+            ("42-44", "Jadespine Basilisk"),
+            ("41-43", "Stonevault Geomancer"),
+            ("42-43", "Stonevault Brawler")
+        },
+        new()
+        {
+            (3, "45", "Grimlok"),
+        }),
+        new SiteHostileArea("Khaz'Goroth's Seat", "Uldaman", new()
+        {
+            ("44-45", "Vault Warder"),
+            ("45", "Stone Steward")
+        },
+        new()
+        {
+            (2, "47", "Archaedas"),
+        }),
+
+        #endregion
+
+        #region Badlands
+        
+        new SiteHostileArea("Camp Kosh", "Badlands", new()
+        {
+            ("35-37", "Dustbelcher Warrior"),
+            ("36-37", "Dustbelcher Mystic"),
+        }),
+        new SiteHostileArea("Camp Boff", "Badlands", new()
+        {
+            ("38-39", "Dustbelcher Ogre"),
+            ("39-40", "Dustbelcher Brute"),
+        }),
+        new SiteHostileArea("Valley of Fangs", "Badlands", new()
+        {
+            ("35-36", "Crag Coyote"),
+            ("38-39", "Ridge Huntress"),
+        }),
+        new SiteHostileArea("The Dustbowl", "Badlands", new()
+        {
+            ("38-39", "Ridge Huntress"),
+            ("39-40", "Elder Crag Coyote"),
+            ("39-40", "Giant Buzzard"),
+            ("40-41", "Ridge Stalker Patriarch"),
+        }),
+        new SiteHostileArea("Dustwing Gulch", "Badlands", new()
+        {
+            ("37-38", "Ridge Stalker"),
+            ("40-42", "Rabid Crag Coyote"),
+        }),
+        new SiteHostileArea("Apocryphan's Rest", "Badlands", new()
+        {
+            ("39-41", "Giant Buzzard"),
+            ("40-41", "Ridge Stalker Patriarch"),
+            ("45", "Anathemus"),
+        }),
+        new SiteHostileArea("Mirage Flats", "Badlands", new()
+        {
+            ("38-39", "Ridge Huntress"),
+            ("39-40", "Elder Crag Coyote"),
+            ("39-40", "Giant Buzzard"),
+            ("40-41", "Ridge Stalker Patriarch"),
+        }),
+        new SiteHostileArea("Dustbelch Grotto", "Badlands", new()
+        {
+            ("41-42", "Dustbelcher Wyrmhunter"),
+            ("41-42", "Dustbelcher Shaman"),
+            ("41-42", "Dustbelcher Mauler"),
+            ("43-44", "Dustbelcher Ogre Mage"),
+            ("44-45", "Dustbelcher Lord"),
+        }),
+        new SiteHostileArea("The Maker's Terrace", "Badlands", new()
+        {
+            ("35-36", "Shadowforge Surveyor"),
+            ("35-36", "Shadowforge Digger"),
+            ("36-37", "Shadowforge Ruffian"),
+            ("42", "Ambassador Infernus"),
+        }),
+        new SiteHostileArea("Hammertoe's Digsite", "Badlands", new()
+        {
+            ("35-36", "Shadowforge Tunneler"),
+            ("36-37", "Shadowforge Darkweaver"),
+            ("39-40", "Stone Golem"),
+            ("42", "Ambassador Infernus"),
+        }),
+        new SiteHostileArea("Angor Fortress", "Badlands", new()
+        {
+            ("38-39", "Shadowforge Warrior"),
+            ("38-39", "Shadowforge Chanter"),
+            ("39-40", "Stone Golem"),
+            ("42", "Ambassador Infernus"),
+        }),
+        new SiteHostileArea("Agmond's End", "Badlands", new()
+        {
+            ("39-40", "Stonevault Bonesnapper"),
+            ("40-41", "Stonevault Shaman"),
+            ("42", "Murdaloc"),
+        }),
+        new SiteHostileArea("Lethlor Ravine", "Badlands", new()
+        {
+            ("41-43", "Scalding Whelp"),
+            ("43-46", "Scorched Guardian"),
+        }),
+
+        #endregion
+
+        #region Dun Morogh
+
+        new SiteHostileArea("Coldrigde Valley", "Dun Morogh", new()
+        {
+            ("01-02", "Rockjaw Trogg"),
+            ("01-02", "Ragged Young Wolf"),
+            ("01-03", "Small Crag Boar"),
+            ("02-03", "Burly Rockjaw Trogg"),
+        }),
+        new SiteHostileArea("Coldrigde Pass", "Dun Morogh", new()
+        {
+            ("02-03", "Burly Rockjaw Trogg"),
+            ("03-04", "Rockjaw Raider"),
+        }),
+        new SiteHostileArea("The Grizzled Den", "Dun Morogh", new()
+        {
+            ("05-06", "Young Wendigo"),
+            ("06-07", "Wendigo"),
+        }),
+        new SiteHostileArea("Chill Breeze Valley", "Dun Morogh", new()
+        {
+            ("06-07", "Large Crag Boar"),
+            ("06-07", "Wendigo"),
+            ("11", "Old Icebeard"),
+        }),
+        new SiteHostileArea("Ice Flow Lake", "Dun Morogh", new()
+        {
+            ("07-08", "Winter Wolf"),
+            ("10", "Timber"),
+        }),
+        new SiteHostileArea("Frostmane Hold", "Dun Morogh", new()
+        {
+            ("08-09", "Frostmane Headhunter"),
+            ("08-09", "Frostmane Snowstrider"),
+            ("08-10", "Frostmane Shadowcaster"),
+            ("09-10", "Frostmane Hideskinner"),
+        }),
+        new SiteHostileArea("Shimmer Ridge", "Dun Morogh", new()
+        {
+            ("08-09", "Frostmane Headhunter"),
+            ("08-09", "Frostmane Snowstrider"),
+            ("08-09", "Frostmane Seer"),
+        }),
+        new SiteHostileArea("The Tundrid Hills", "Dun Morogh", new()
+        {
+            ("06-07", "Elder Crag Boar"),
+            ("07-08", "Snow Leopard"),
+            ("07-08", "Ice Claw Bear"),
+        }),
+        new SiteHostileArea("Gol'Bolar Quarry", "Dun Morogh", new()
+        {
+            ("08-09", "Rockjaw Skullthumper"),
+            ("08-10", "Rockjaw Bonesnapper"),
+        }),
+        new SiteHostileArea("Helm's Bed Lake", "Dun Morogh", new()
+        {
+            ("09-10", "Scarred Crag Boar"),
+            ("09-11", "Rockjaw Bonesnapper"),
+            ("11-12", "Rockjaw Backbreaker"),
         }),
 
         #endregion
@@ -1294,14 +1587,10 @@ public class SiteHostileArea
 
         #region Onyxia's Lair
         
-        new SiteHostileArea("Lair Tunnels", "Onyxia's Lair", new()
+        new SiteHostileArea("Onyxia's Lair", "Onyxia's Lair", new()
         {
             ("60", "Onyxian Lair Guard"),
             ("60", "Onyxian Warder")
-        }),
-        new SiteHostileArea("The Lair", "Onyxia's Lair", new()
-        {
-
         },
         new()
         {
@@ -1314,35 +1603,45 @@ public class SiteHostileArea
         
         new SiteHostileArea("Altar of Hir'eek", "Zul'Gurub", new()
         {
-            ("60", "Cannibal Ghoul"),
+            ("60", "Bloodseeker Bat"),
+            ("60", "Gurubashi Bat Rider"),
+            ("60", "Gurubashi Headhunter"),
         },
         new()
         {
-            (00, "60", "High Priestess Jeklik")
+            (03, "60", "High Priestess Jeklik")
         }),
         new SiteHostileArea("The Coil", "Zul'Gurub", new()
         {
-            ("60", "Cannibal Ghoul"),
+            ("60", "Gurubashi Axe Thrower"),
+            ("60", "Razzashi Cobra"),
+            ("60", "Razzashi Serpent"),
         },
         new()
         {
-            (00, "60", "High Priest Venoxis")
+            (03, "60", "High Priest Venoxis")
         }),
         new SiteHostileArea("Shadra'zaar", "Zul'Gurub", new()
         {
-            ("60", "Cannibal Ghoul"),
+            ("60", "Hakkari Shadowcaster"),
+            ("60", "Razzashi Broodwidow"),
+            ("60", "Razzashi Skitterer"),
+            ("60", "Razzashi Venombrood"),
         },
         new()
         {
-            (00, "60", "High Priestess Mar'li")
+            (03, "60", "High Priestess Mar'li")
         }),
         new SiteHostileArea("Hakkari Grounds", "Zul'Gurub", new()
         {
-            ("60", "Cannibal Ghoul"),
+            ("60", "Gurubashi Champion"),
+            ("60", "Hakkari Priest"),
+            ("60", "Razzashi Raptor"),
+            ("60", "Gurubashi Blood Drinker"),
         },
         new()
         {
-            (00, "60", "Bloodlord Mandokir")
+            (03, "60", "Bloodlord Mandokir")
         }),
         new SiteHostileArea("Edge of Madness", "Zul'Gurub", new()
         {
@@ -1360,10 +1659,12 @@ public class SiteHostileArea
         new SiteHostileArea("Naze of Shirvallah", "Zul'Gurub", new()
         {
             ("60", "Gurubashi Axe Thrower"),
+            ("60", "Zulian Tiger"),
+            ("60", "Gurubashi Berserker"),
         },
         new()
         {
-            (00, "60", "High Priest Thekal")
+            (03, "60", "High Priest Thekal")
         }),
         new SiteHostileArea("Pagle's Pointe", "Zul'Gurub", new()
         {
@@ -1371,11 +1672,13 @@ public class SiteHostileArea
         },
         new()
         {
-            (00, "60", "Gahz'ranka")
+            (02, "60", "Gahz'ranka")
         }),
         new SiteHostileArea("Temple of Bethekk", "Zul'Gurub", new()
         {
-            ("60", "Cannibal Ghoul"),
+            ("60", "Zulian Panther"),
+            ("60", "Gurubashi Blood Drinker"),
+            ("60", "Hakkari Shadow Hunter"),
         },
         new()
         {
@@ -1383,7 +1686,9 @@ public class SiteHostileArea
         }),
         new SiteHostileArea("The Bloodfire Pit", "Zul'Gurub", new()
         {
-            ("60", "Cannibal Ghoul"),
+            ("60", "Voodoo Slave"),
+            ("60", "Withered Mistress"),
+            ("60", "Atal'ai Mistress"),
         },
         new()
         {

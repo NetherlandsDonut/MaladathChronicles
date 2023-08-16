@@ -399,8 +399,7 @@ public class SiteInstance
         {
             new InstanceWing("Onyxia's Lair", new()
             {
-                ("None", "Lair Tunnels"),
-                ("Boss", "The Lair"),
+                ("None", "Onyxia's Lair"),
             }),
         }),
         new SiteInstance("Molten Core", "Raid", new()
@@ -464,7 +463,7 @@ public class SiteInstance
                 ("Boss", "The Coil"),
                 ("Boss", "Shadra'zaar"),
                 ("Boss", "Hakkari Grounds"),
-                ("Boss", "Edge of Madness"),
+                //("Boss", "Edge of Madness"),
                 ("Boss", "Naze of Shirvallah"),
                 ("Boss", "Pagle's Pointe"),
                 ("Boss", "Temple of Bethekk"),
