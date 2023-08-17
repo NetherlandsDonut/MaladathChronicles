@@ -228,6 +228,17 @@ public class Race
 
             }
         ),
+        new Race("Dumb Kobold", "Common", "Kobold",
+            1.00,
+            new()
+            {
+                "Shadowbolt"
+            },
+            new()
+            {
+
+            }
+        ),
         new Race("Kobold Digger", "Common", "Kobold",
             1.00,
             new()

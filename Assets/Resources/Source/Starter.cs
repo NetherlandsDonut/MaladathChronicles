@@ -4,7 +4,6 @@ using System.Collections.Generic;
 
 using static Root;
 using static Root.Color;
-using UnityEngine.Rendering;
 
 public class Starter : MonoBehaviour
 {
@@ -75,6 +74,61 @@ public class Starter : MonoBehaviour
                             PrintRaidWing(instance, wing);
                         AddPaddingRegion(() =>
                         {
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                        });
+                    }
+                )
+            );
+        }
+        for (int i = 0; i < SiteTown.towns.Count; i++)
+        {
+            var index = i;
+            var town = SiteTown.towns[index];
+            Blueprint.windowBlueprints.Add(
+                new Blueprint("Town: " + town.name,
+                    () =>
+                    {
+                        SetAnchor(Anchor.TopRight);
+                        AddRegionGroup();
+                        SetRegionGroupWidth(161);
+                        SetRegionGroupHeight(344);
+                        AddHeaderRegion(() =>
+                        {
+                            AddLine(town.name);
+                            AddSmallButton("OtherClose",
+                            (h) =>
+                            {
+                                var title = CDesktop.title;
+                                CloseDesktop(title);
+                                PlaySound("DesktopInstanceClose");
+                                SwitchDesktop("Map");
+                            });
+                        });
+                        AddPaddingRegion(() =>
+                        {
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
                             AddLine("", Gray);
                             AddLine("", Gray);
                             AddLine("", Gray);

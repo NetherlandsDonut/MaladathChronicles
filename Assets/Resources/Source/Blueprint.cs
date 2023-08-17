@@ -7,6 +7,7 @@ using static Root;
 using static SiteComplex;
 using static SiteInstance;
 using static SiteHostileArea;
+using static SiteTown;
 
 using static Root.Color;
 using static Root.Anchor;
@@ -1100,6 +1101,42 @@ public class Blueprint
                 AddLine("", Gray);
             });
         }),
+        new("TownLeftSide", () => {
+            SetAnchor(TopLeft);
+            AddRegionGroup();
+            SetRegionGroupWidth(161);
+            AddPaddingRegion(() =>
+            {
+                //foreach (var line in complex.description)
+                //    AddLine(line, DarkGray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+            });
+        }),
         new("Inventory", () => {
             SetAnchor(TopRight);
             AddRegionGroup();
@@ -1789,6 +1826,17 @@ public class Blueprint
                 }
             });
         }),
+        new("TownEntrance", () =>
+        {
+            SetDesktopBackground("Areas/Area" + (town.zone + town.name).Replace("'", "").Replace(" ", ""));
+            SpawnWindowBlueprint("Town: " + town.name);
+            SpawnWindowBlueprint("TownLeftSide");
+            AddHotkey(Escape, () =>
+            {
+                PlaySound("DesktopInstanceClose");
+                CloseDesktop("TownEntrance");
+            });
+        }),
         new("InstanceEntrance", () =>
         {
             SetDesktopBackground("Areas/Area" + instance.name.Replace("'", "").Replace(" ", ""));
@@ -1977,7 +2025,7 @@ public class Blueprint
             SpawnWindowBlueprint("SpellbookAbilityList");
             SpawnWindowBlueprint("PlayerEquipmentInfo");
             SpawnWindowBlueprint("Inventory");
-            AddHotkey(C, () =>
+            AddHotkey(B, () =>
             {
                 SwitchDesktop("Map");
                 CloseDesktop("EquipmentScreen");

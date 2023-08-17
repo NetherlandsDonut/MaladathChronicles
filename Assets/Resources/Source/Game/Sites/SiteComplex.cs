@@ -40,6 +40,15 @@ public class SiteComplex
             ("HostileArea", "Jaedenar"),
             ("HostileArea", "Shrine of the Deceiver"),
             ("Dungeon", "Shadow Hold"),
+        }),
+        new SiteComplex("Alcaz Island", new()
+        {
+            ""
+        },
+        new()
+        {
+            ("HostileArea", "Alcaz Island"),
+            ("HostileArea", "Alcaz Dungeon"),
         })
     };
 }

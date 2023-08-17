@@ -1,8 +1,5 @@
-using System;
 using System.Collections.Generic;
 
-using static Root;
-using static Race;
 using System.Linq;
 
 public class SiteInstance
@@ -180,11 +177,11 @@ public class SiteInstance
         {
             new InstanceWing("Razorfen Kraul", new()
             {
-                ("None", "Razorfen Kraul1"),
-                ("Boss", "Razorfen Kraul2"),
-                ("Boss", "Razorfen Kraul3"),
-                ("Boss", "Razorfen Kraul4"),
-                ("Boss", "Razorfen Kraul5"),
+                //("Boss", "Kraul Drain"),
+                ("None", "Kraul Commons"),
+                ("Boss", "Central Grounds"),
+                ("Boss", "Bat Caves"),
+                ("Boss", "Charlga's Seat"),
             }),
         }),
         new SiteInstance("The Deadmines", "Dungeon", new()
@@ -444,7 +441,8 @@ public class SiteInstance
             new InstanceWing("Lower", new()
             {
                 ("None", "Magmadar Cavern"),
-                ("Boss", "The Lavafalls"),
+                ("Boss", "Western Lavafalls"),
+                ("Boss", "Eastern Lavafalls"),
                 ("Boss", "Ragnaros' Lair"),
             }),
         }),
@@ -516,20 +514,36 @@ public class SiteInstance
                 ("Boss", "Nefarian's Lair"),
             }),
         }),
-        new SiteInstance("Ruins Of Ahn'Qiraj", "Raid", new()
+        new SiteInstance("Ruins of Ahn'Qiraj", "Raid", new()
         {
 
         },
         new()
         {
-            new InstanceWing("Ruins Of Ahn'Qiraj", new()
+            new InstanceWing("Ruins of Ahn'Qiraj", new()
             {
                 ("None", "Scarab Terrace"),
                 ("Boss", "General's Terrace"),
-                ("Boss", "Reservoir"),
-                ("Boss", "Hatchery"),
-                ("Boss", "Comb"),
+                ("Boss", "The Hatchery"),
+                ("Boss", "The Comb"),
+                ("Boss", "The Reservoir"),
                 ("Boss", "Watcher's Terrace")
+            })
+        }),
+        new SiteInstance("Temple of Ahn'Qiraj", "Raid", new()
+        {
+
+        },
+        new()
+        {
+            new InstanceWing("Temple of Ahn'Qiraj", new()
+            {
+                ("None", "The Temple Gates"),
+                ("Boss", "The Hive Undergrounds"),
+                ("Boss", "Abandoned Tunnel"),
+                ("Boss", "Ouro's Lair"),
+                ("Boss", "Qiraji Imperial Seat"),
+                ("Boss", "Vault of C'Thun")
             })
         })
     };

@@ -8,6 +8,7 @@ using static Blueprint;
 using static SiteComplex;
 using static SiteInstance;
 using static SiteHostileArea;
+using static SiteTown;
 
 using static Root.Color;
 using static Root.Anchor;
@@ -380,12 +381,15 @@ public static class Root
         {
             if (type == "Town")
             {
-                var town = SiteTown.towns.Find(x => x.name == name);
-                if (town == null) { Debug.LogError("No town named \"" + name + "\" has been found."); return; }
-                AddSmallButton("Faction" + town.faction,
+                var find = towns.Find(x => x.name == name);
+                if (find == null) { Debug.LogError("No town named \"" + name + "\" has been found."); return; }
+                AddSmallButton("Faction" + find.faction,
                 (h) =>
                 {
-
+                    town = find;
+                    PlaySound("DesktopInstanceOpen");
+                    SpawnDesktopBlueprint("TownEntrance");
+                    SwitchDesktop("TownEntrance");
                 },
                 (h) => () =>
                 {
@@ -394,25 +398,6 @@ public static class Root
                     AddHeaderRegion(() =>
                     {
                         AddLine(name, Gray);
-                    });
-                    AddHeaderRegion(() =>
-                    {
-                        AddLine("Nothing:", Gray);
-                    });
-                    AddPaddingRegion(() =>
-                    {
-                        AddLine("There is nothing here yet", Gray);
-                        AddLine("But there will be something soon", Gray);
-                        AddLine("I hope so", Gray);
-                    });
-                    AddHeaderRegion(() =>
-                    {
-                        AddLine("Very nothing:", Gray);
-                    });
-                    AddPaddingRegion(() =>
-                    {
-                        AddLine("There is nothing here yet", Gray);
-                        AddLine("But there will be something soon", Gray);
                     });
                 });
             }
