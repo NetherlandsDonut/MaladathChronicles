@@ -52,6 +52,8 @@ public class SiteTown
         new SiteTown("North Gate Outpost", "Alliance"),
         new SiteTown("South Gate Outpost", "Alliance"),
         new SiteTown("Amberstill Ranch", "Alliance"),
+        new SiteTown("Aldrassil", "Alliance"),
+        new SiteTown("Star Breeze Village", "Alliance"),
         new SiteTown("Orgrimmar", "Horde"),
         new SiteTown("Razor Hill", "Horde"),
         new SiteTown("Camp Mojache", "Horde"),
@@ -91,5 +93,6 @@ public class SiteTown
         new SiteTown("Light's Hope Chapel", "Neutral"),
         new SiteTown("Booty Bay", "Neutral"),
         new SiteTown("Marshal's Refuge", "Neutral"),
+        new SiteTown("Emerald Sanctuary", "Neutral"),
     };
 }

@@ -1777,8 +1777,16 @@ public class Blueprint
             SpawnWindowBlueprint("HostileAreaLeftSide");
             AddHotkey(Escape, () =>
             {
-                PlaySound("DesktopInstanceClose");
-                CloseDesktop("HostileAreaEntrance");
+                if (area.complexPart)
+                {
+                    CloseDesktop("HostileAreaEntrance");
+                    SpawnDesktopBlueprint("ComplexEntrance");
+                }
+                else
+                {
+                    PlaySound("DesktopInstanceClose");
+                    CloseDesktop("HostileAreaEntrance");
+                }
             });
         }),
         new("InstanceEntrance", () =>

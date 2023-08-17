@@ -7,7 +7,8 @@ public class SiteComplex
         this.name = name;
         this.description = description;
         this.sites = sites;
-        SiteInstance.instances.FindAll(x => sites.Exists(y => y.Item2 == x.name)).ForEach(x => x.complexPart = true);
+        SiteInstance.instances.FindAll(x => sites.Exists(y => (y.Item1 == "Raid" || y.Item1 == "Dungeon") && y.Item2 == x.name)).ForEach(x => x.complexPart = true);
+        SiteHostileArea.hostileAreas.FindAll(x => sites.Exists(y => y.Item1 == "HostileArea" && y.Item2 == x.name)).ForEach(x => x.complexPart = true);
     }
 
     public string name;
@@ -29,6 +30,16 @@ public class SiteComplex
             ("Dungeon", "Lower Blackrock Spire"),
             ("Dungeon", "Upper Blackrock Spire"),
             ("Raid", "Blackwing Lair")
+        }),
+        new SiteComplex("Jaedenar", new()
+        {
+            ""
+        },
+        new()
+        {
+            ("HostileArea", "Jaedenar"),
+            ("HostileArea", "Shrine of the Deceiver"),
+            ("Dungeon", "Shadow Hold"),
         })
     };
 }

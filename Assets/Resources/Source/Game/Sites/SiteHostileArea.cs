@@ -52,7 +52,7 @@ public class SiteHostileArea
 
     public string name, zone;
     public int recommendedLevel;
-    public bool instancePart;
+    public bool instancePart, complexPart;
     public List<(int, int, string)> possibleEncounters;
     public List<(int, int, string)> bossEncounters;
 
@@ -1298,6 +1298,61 @@ public class SiteHostileArea
 
         #endregion
         
+        #region Shadow Hold
+        
+        new SiteHostileArea("Upper Tunnels", "Shadow Hold", new()
+        {
+            ("52-53", "Jaedenar Enforcer"),
+            ("52-53", "Jaedenar Warlock"),
+            ("52-53", "Jaedenar Darkweaver"),
+        },
+        new()
+        {
+            (02, "54", "Ulathek")
+        }),
+        new SiteHostileArea("Council Camp", "Shadow Hold", new()
+        {
+            ("53-54", "Jadefire Trickster"),
+            ("53-54", "Jadefire Hellcaller"),
+            ("53-54", "Vile Ooze"),
+        },
+        new()
+        {
+            (03, "55", "Prince Xavalis")
+        }),
+        new SiteHostileArea("Altar Room", "Shadow Hold", new()
+        {
+            ("53-54", "Jaedenar Warlock"),
+            ("54-55", "Jaedenar Hunter"),
+            ("55-56", "Jaedenar Sayaad"),
+        },
+        new()
+        {
+            (03, "56", "Rakaiah")
+        }),
+        new SiteHostileArea("Inner Sanctum", "Shadow Hold", new()
+        {
+            ("53-54", "Jaedenar Enforcer"),
+            ("53-54", "Jaedenar Warlock"),
+            ("54-55", "Jaedenar Darkweaver"),
+            ("55", "Jaedenar Legionnaire"),
+        },
+        new()
+        {
+            (03, "56", "Shadow Lord Fel'Dan")
+        }),
+        new SiteHostileArea("Banehollow Shrine", "Shadow Hold", new()
+        {
+            ("54-55", "Jaedenar Hunter"),
+            ("55-56", "Jaedenar Legionnaire"),
+        },
+        new()
+        {
+            (02, "57", "Lord Banehollow")
+        }),
+
+        #endregion
+        
         #region Felwood
 
         new SiteHostileArea("Deadmaw Village", "Felwood", new()
@@ -1312,11 +1367,27 @@ public class SiteHostileArea
         {
             ("01-02", "Duskbat"),
         }),
+        new SiteHostileArea("Bloodvenom River", "Felwood", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
         new SiteHostileArea("Bloodvenom Falls", "Felwood", new()
         {
             ("01-02", "Duskbat"),
         }),
         new SiteHostileArea("Jaedenar", "Felwood", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Shrine of the Deceiver", "Felwood", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Deadwood Village", "Felwood", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Felpaw Village", "Felwood", new()
         {
             ("01-02", "Duskbat"),
         }),

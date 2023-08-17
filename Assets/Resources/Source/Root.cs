@@ -585,7 +585,6 @@ public static class Root
 
     public static void PrintComplexSite(SiteComplex complex, (string, string) site)
     {
-        var instance = instances.Find(x => x.name == site.Item2);
         AddButtonRegion(() =>
         {
             AddLine(site.Item2, Black);
@@ -594,8 +593,16 @@ public static class Root
         (h) =>
         {
             CloseDesktop("ComplexEntrance");
-            SiteInstance.instance = instance;
-            SpawnDesktopBlueprint("InstanceEntrance");
+            if (site.Item1 == "HostileArea")
+            {
+                area = hostileAreas.Find(x => x.name == site.Item2);
+                SpawnDesktopBlueprint("HostileAreaEntrance");
+            }
+            else
+            {
+                instance = instances.Find(x => x.name == site.Item2);
+                SpawnDesktopBlueprint("InstanceEntrance");
+            }
         });
     }
 

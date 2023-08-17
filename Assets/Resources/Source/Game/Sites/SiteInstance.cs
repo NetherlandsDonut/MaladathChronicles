@@ -46,6 +46,21 @@ public class SiteInstance
                 ("Boss", "Tinkers' Court")
             })
         }),
+        new SiteInstance("Shadow Hold", "Dungeon", new()
+        {
+
+        },
+        new()
+        {
+            new InstanceWing("Shadow Hold", new()
+            {
+                ("None", "Upper Tunnels"),
+                ("Boss", "Council Camp"),
+                ("Boss", "Altar Room"),
+                ("Boss", "Inner Sanctum"),
+                ("Boss", "Banehollow Shrine")
+            })
+        }),
         new SiteInstance("Scholomance", "Dungeon", new()
         {
 
