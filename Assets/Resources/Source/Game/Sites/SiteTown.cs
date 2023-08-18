@@ -29,6 +29,7 @@ public class SiteTown
         new SiteTown("Nethergarde Keep",        "Blasted Lands", 	    "Alliance"),
         new SiteTown("Morgan's Vigil",          "Burning Steppes", 		"Alliance"),
         new SiteTown("Faldir's Cove",           "Arathi Highlands",     "Alliance"),
+        new SiteTown("Refuge Pointe",           "Arathi Highlands",     "Alliance"),
 
         //KALDOREI
         new SiteTown("Darnassus",               "Teldrassil",           "Alliance"),

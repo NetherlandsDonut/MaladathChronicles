@@ -1814,31 +1814,31 @@ public class SiteHostileArea
         
         #region Alterac Mountains
         
-        new SiteHostileArea("Ruins of Strahnbrad", "Hillsbrad Foothills", new()
+        new SiteHostileArea("Ruins of Strahnbrad", "Alterac Mountains", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Headland", "Hillsbrad Foothills", new()
+        new SiteHostileArea("Headland", "Alterac Mountains", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Slaughter Hollow", "Hillsbrad Foothills", new()
+        new SiteHostileArea("Slaughter Hollow", "Alterac Mountains", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Dalaran", "Hillsbrad Foothills", new()
+        new SiteHostileArea("Dalaran", "Alterac Mountains", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Lordamere Internment Camp", "Hillsbrad Foothills", new()
+        new SiteHostileArea("Lordamere Internment Camp", "Alterac Mountains", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Crushridge Hold", "Hillsbrad Foothills", new()
+        new SiteHostileArea("Crushridge Hold", "Alterac Mountains", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Growless Cave", "Hillsbrad Foothills", new()
+        new SiteHostileArea("Growless Cave", "Alterac Mountains", new()
         {
             ("01-02", "Duskbat"),
         }),
@@ -1880,6 +1880,10 @@ public class SiteHostileArea
             ("01-02", "Duskbat"),
         }),
         new SiteHostileArea("Azurelode Mine", "Hillsbrad Foothills", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Hillsbrad", "Hillsbrad Foothills", new()
         {
             ("01-02", "Duskbat"),
         }),
@@ -1925,6 +1929,10 @@ public class SiteHostileArea
             ("01-02", "Duskbat"),
         }),
         new SiteHostileArea("Boulderfist Hall", "Arathi Highlands", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Witherbark Village", "Arathi Highlands", new()
         {
             ("01-02", "Duskbat"),
         }),
