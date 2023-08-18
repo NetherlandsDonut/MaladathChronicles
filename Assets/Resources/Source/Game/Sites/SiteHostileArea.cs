@@ -658,8 +658,76 @@ public class SiteHostileArea
         }),
         
         #endregion
+        
+        #region Ruins of Stromgarde
+        
+        new SiteHostileArea("North Town", "Ruins of Stromgarde", new()
+        {
+            ("32-32", "Cannibal Ghoul"),
+        }),
+        new SiteHostileArea("The Sanctum", "Ruins of Stromgarde", new()
+        {
+            ("32-32", "Cannibal Ghoul"),
+        }),
+        new SiteHostileArea("Western Town", "Ruins of Stromgarde", new()
+        {
+            ("32-32", "Cannibal Ghoul"),
+        }),
+        new SiteHostileArea("Tower of Arathor", "Ruins of Stromgarde", new()
+        {
+            ("32-32", "Cannibal Ghoul"),
+        }),
+        new SiteHostileArea("Stromgarde Keep", "Ruins of Stromgarde", new()
+        {
+            ("32-32", "Cannibal Ghoul"),
+        }),
 
-        #region Scarlet Monastery
+        #endregion
+
+        #region Ruins of Alterac
+        
+        new SiteHostileArea("Town Center", "Ruins of Alterac", new()
+        {
+            ("32-32", "Cannibal Ghoul"),
+        }),
+        new SiteHostileArea("Alterac Chapel", "Ruins of Alterac", new()
+        {
+            ("32-32", "Cannibal Ghoul"),
+        }),
+        new SiteHostileArea("Alterac Keep", "Ruins of Alterac", new()
+        {
+            ("32-32", "Cannibal Ghoul"),
+        }),
+
+        #endregion
+
+        #region Purgation Isle
+        
+        new SiteHostileArea("Isle Landing", "Purgation Isle", new()
+        {
+            ("32-32", "Cannibal Ghoul"),
+        }),
+        new SiteHostileArea("Mountain Peak", "Purgation Isle", new()
+        {
+            ("32-32", "Cannibal Ghoul"),
+        }),
+
+        #endregion
+
+        #region Scarlet Monastery Grounds
+
+        new SiteHostileArea("Whispering Gardens", "Scarlet Monastery Grounds", new()
+        {
+            ("32-32", "Cannibal Ghoul"),
+        }),
+        new SiteHostileArea("Terrace of Repose", "Scarlet Monastery Grounds", new()
+        {
+            ("32-32", "Cannibal Ghoul"),
+        }),
+        new SiteHostileArea("The Grand Vestibule", "Scarlet Monastery Grounds", new()
+        {
+            ("32-32", "Cannibal Ghoul"),
+        }),
 
         new SiteHostileArea("Chamber of Atonement", "Scarlet Monastery", new()
         {
@@ -693,6 +761,14 @@ public class SiteHostileArea
         {
             (04, "32", "Houndmaster Loksey"),
         }),
+        new SiteHostileArea("Gallery of Treasures", "Scarlet Monastery", new()
+        {
+            ("32-32", "Cannibal Ghoul"),
+        },
+        new()
+        {
+
+        }),
         new SiteHostileArea("Athenaeum", "Scarlet Monastery", new()
         {
             ("32-32", "Cannibal Ghoul"),
@@ -723,23 +799,28 @@ public class SiteHostileArea
         },
         new()
         {
-            (04, "32", "Arcanist Doan"),
+            (04, "40", "Herod"),
         }),
         new SiteHostileArea("Chapel Gardens", "Scarlet Monastery", new()
         {
-            ("32-32", "Cannibal Ghoul"),
+            ("39-40", "Scarlet Myrmidon"),
+            ("39-40", "Scarlet Defender"),
+            ("39-40", "Scarlet Wizard"),
         },
         new()
         {
-            (04, "32", "Arcanist Doan"),
+
         }),
-        new SiteHostileArea("Cathedral", "Scarlet Monastery", new()
+        new SiteHostileArea("Crusader's Chapel", "Scarlet Monastery", new()
         {
-            ("32-32", "Cannibal Ghoul"),
+            ("39-40", "Scarlet Monk"),
+            ("39-40", "Scarlet Champion"),
+            ("39-40", "Scarlet Centurion"),
         },
         new()
         {
-            (04, "32", "Arcanist Doan"),
+            (04, "42", "Scarlet Commander Mograine"),
+            (04, "42", "High Inquisitor Whitemane"),
         }),
 
         #endregion
@@ -1209,6 +1290,62 @@ public class SiteHostileArea
             ("01-02", "Wretched Zombie"),
             ("01-02", "Rattlecage Skeleton"),
         }),
+        new SiteHostileArea("Venomweb Vale", "Tirisfal Glades", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Balnir Farmstead", "Tirisfal Glades", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Brightwater Lake", "Tirisfal Glades", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Crusader's Outpost", "Tirisfal Glades", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Cold Hearth Manor", "Tirisfal Glades", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Agamand Mills", "Tirisfal Glades", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Agamand Family Crypt", "Tirisfal Glades", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Whispering Shore", "Tirisfal Glades", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Solliden Farmstead", "Tirisfal Glades", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Night Web's Hollow", "Tirisfal Glades", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Nightmare Vale", "Tirisfal Glades", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("The North Coast", "Tirisfal Glades", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Garren's Haunt", "Tirisfal Glades", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("The Ruins of Lordaeron", "Tirisfal Glades", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
 
         #endregion
         
@@ -1603,7 +1740,11 @@ public class SiteHostileArea
         #endregion
         
         #region Wetlands
-
+        
+        new SiteHostileArea("Dun Modr", "Wetlands", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
         new SiteHostileArea("Dun Algaz", "Wetlands", new()
         {
             ("01-02", "Duskbat"),
@@ -1665,6 +1806,125 @@ public class SiteHostileArea
             ("01-02", "Duskbat"),
         }),
         new SiteHostileArea("Direforge Hill", "Wetlands", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+
+        #endregion
+        
+        #region Alterac Mountains
+        
+        new SiteHostileArea("Ruins of Strahnbrad", "Hillsbrad Foothills", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Headland", "Hillsbrad Foothills", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Slaughter Hollow", "Hillsbrad Foothills", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Dalaran", "Hillsbrad Foothills", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Lordamere Internment Camp", "Hillsbrad Foothills", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Crushridge Hold", "Hillsbrad Foothills", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Growless Cave", "Hillsbrad Foothills", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+
+        #endregion
+        
+        #region Hillsbrad Foothills
+        
+        new SiteHostileArea("Durnholde Keep", "Hillsbrad Foothills", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Ravenholdt Manor", "Hillsbrad Foothills", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Darrow Hill", "Hillsbrad Foothills", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Eastern Strand", "Hillsbrad Foothills", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Western Strand", "Hillsbrad Foothills", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Nethander Stead", "Hillsbrad Foothills", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Southpoint Tower", "Hillsbrad Foothills", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Chillwind Point", "Hillsbrad Foothills", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Azurelode Mine", "Hillsbrad Foothills", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+
+        #endregion
+        
+        #region Arathi Highlands
+        
+        new SiteHostileArea("Go'Shek Farm", "Arathi Highlands", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Circle of West Binding", "Arathi Highlands", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Circle of Inner Binding", "Arathi Highlands", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Circle of East Binding", "Arathi Highlands", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Circle of Outer Binding", "Arathi Highlands", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Dabyrie's Farmstead", "Arathi Highlands", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Drywhisker Gorge", "Arathi Highlands", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Northfold Manor", "Arathi Highlands", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Boulder'gor", "Arathi Highlands", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Boulderfist Hall", "Arathi Highlands", new()
         {
             ("01-02", "Duskbat"),
         }),
@@ -2022,6 +2282,67 @@ public class SiteHostileArea
             ("01-02", "Duskbat"),
         }),
         new SiteHostileArea("The Rolling Plains", "Mulgore", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+
+        #endregion
+        
+        #region Silverpine Forest
+        
+        new SiteHostileArea("Deep Elem Mine", "Silverpine Forest", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("The Graymane Wall", "Silverpine Forest", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Fenris Keep", "Silverpine Forest", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("The Dawning Isles", "Silverpine Forest", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("The Dead Field", "Silverpine Forest", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Pyrewood Village", "Silverpine Forest", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Ambermill", "Silverpine Forest", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("The Shining Strand", "Silverpine Forest", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("The Skittering Dark", "Silverpine Forest", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Olsen's Farthing", "Silverpine Forest", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Ivar Patch", "Silverpine Forest", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Malden's Orchard", "Silverpine Forest", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Beren's Peril", "Silverpine Forest", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("North Tide's Run", "Silverpine Forest", new()
         {
             ("01-02", "Duskbat"),
         }),

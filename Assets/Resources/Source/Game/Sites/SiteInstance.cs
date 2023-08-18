@@ -43,6 +43,24 @@ public class SiteInstance
                 ("Boss", "Tinkers' Court")
             })
         }),
+        new SiteInstance("Shadowfang Keep", "Dungeon", new()
+        {
+
+        },
+        new()
+        {
+            new InstanceWing("Shadowfang Keep", new()
+            {
+                ("None", "Jail"),
+                ("Boss", "The Courtyard"),
+                ("Boss", "Kitchen"),
+                ("Boss", "Dining Hall"),
+                ("Boss", "Perimeter Wall"),
+                ("Boss", "The Laboratory"),
+                ("Boss", "Tower Summit"),
+                ("Boss", "Argual Chamber")
+            })
+        }),
         new SiteInstance("Shadow Hold", "Dungeon", new()
         {
 
@@ -270,17 +288,20 @@ public class SiteInstance
         {
             new InstanceWing("Graveyard", new()
             {
-                ("None", "Chamer of Atonement"),
+                ("None", "Chamber of Atonement"),
+                ("Boss", "Forlorn Cloister"),
                 ("Boss", "Honor's Tomb"),
             }),
             new InstanceWing("Library", new()
             {
                 ("None", "Huntsman's Cloister"),
+                ("Boss", "Gallery of Treasures"),
                 ("Boss", "Athenaeum")
             }),
             new InstanceWing("Armory", new()
             {
                 ("None", "Training Grounds"),
+                ("Boss", "Crusader's Armory"),
                 ("Boss", "Hall of Champions")
             }),
             new InstanceWing("Cathedral", new()

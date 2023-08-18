@@ -31,6 +31,58 @@ public class SiteComplex
             ("Dungeon", "Upper Blackrock Spire"),
             ("Raid", "Blackwing Lair")
         }),
+        new SiteComplex("Ruins of Alterac", new()
+        {
+            ""
+        },
+        new()
+        {
+            ("HostileArea", "Town Center"),
+            ("HostileArea", "Alterac Chapel"),
+            ("HostileArea", "Alterac Keep"),
+        }),
+        new SiteComplex("Purgation Isle", new()
+        {
+            ""
+        },
+        new()
+        {
+            ("HostileArea", "Isle Landing"),
+            ("HostileArea", "Mountain Peak"),
+        }),
+        new SiteComplex("Ruins of Stromgarde", new()
+        {
+            ""
+        },
+        new()
+        {
+            ("HostileArea", "North Town"),
+            ("HostileArea", "The Sanctum"),
+            ("HostileArea", "Western Town"),
+            ("HostileArea", "Tower of Arathor"),
+            ("HostileArea", "Stromgarde Keep"),
+        }),
+        new SiteComplex("Ruins of Alterac", new()
+        {
+            ""
+        },
+        new()
+        {
+            ("HostileArea", "Town Center"),
+            ("HostileArea", "Alterac Chapel"),
+            ("HostileArea", "Alterac Keep"),
+        }),
+        new SiteComplex("Scarlet Monastery Grounds", new()
+        {
+            ""
+        },
+        new()
+        {
+            ("HostileArea", "Whispering Gardens"),
+            ("HostileArea", "Terrace of Repose"),
+            ("HostileArea", "The Grand Vestibule"),
+            ("Dungeon", "Scarlet Monastery"),
+        }),
         new SiteComplex("Jaedenar", new()
         {
             ""

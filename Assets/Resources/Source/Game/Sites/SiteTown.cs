@@ -103,7 +103,7 @@ public class SiteTown
         new SiteTown("Brill",                   "Tirisfal Glades", 		"Horde"),
         new SiteTown("Hammerfall",              "Arathi Highlands", 	"Horde"),
         new SiteTown("Tarren Mill",             "Hillsbrad Foothills", 	"Horde"),
-        new SiteTown("Sepulcher",               "Silverpine Forest", 	"Horde"),
+        new SiteTown("The Sepulcher",           "Silverpine Forest", 	"Horde"),
 
         //CENARION CIRCLE
         new SiteTown("Cenarion Hold",           "Silithus",             "Neutral"),
