@@ -41,15 +41,15 @@ public class SiteComplex
             ("HostileArea", "Alterac Chapel"),
             ("HostileArea", "Alterac Keep"),
         }),
-        new SiteComplex("Purgation Isle", new()
-        {
-            ""
-        },
-        new()
-        {
-            ("HostileArea", "Isle Landing"),
-            ("HostileArea", "Mountain Peak"),
-        }),
+        //new SiteComplex("Purgation Isle", new()
+        //{
+        //    ""
+        //},
+        //new()
+        //{
+        //    ("HostileArea", "Isle Landing"),
+        //    ("HostileArea", "Mountain Peak"),
+        //}),
         new SiteComplex("Ruins of Stromgarde", new()
         {
             ""

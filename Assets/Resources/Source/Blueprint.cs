@@ -1028,8 +1028,8 @@ public class Blueprint
                 AddLine("", Gray);
             });
         }),
-        new("HostileAreaLeftSide", () => {
-            SetAnchor(TopLeft);
+        new("HostileAreaRightSide", () => {
+            SetAnchor(TopRight);
             AddRegionGroup();
             SetRegionGroupWidth(161);
             AddPaddingRegion(() =>
@@ -1809,9 +1809,9 @@ public class Blueprint
         }),
         new("HostileAreaEntrance", () =>
         {
-            SetDesktopBackground("Areas/Area" + (area.zone + area.name).Replace("'", "").Replace(" ", ""));
+            SetDesktopBackground("Areas/Area" + (area.zone + area.name).Replace("'", "").Replace(".", "").Replace(" ", ""));
             SpawnWindowBlueprint("Area: " + area.name);
-            SpawnWindowBlueprint("HostileAreaLeftSide");
+            SpawnWindowBlueprint("HostileAreaRightSide");
             AddHotkey(Escape, () =>
             {
                 if (area.complexPart)
@@ -1828,7 +1828,7 @@ public class Blueprint
         }),
         new("TownEntrance", () =>
         {
-            SetDesktopBackground("Areas/Area" + (town.zone + town.name).Replace("'", "").Replace(" ", ""));
+            SetDesktopBackground("Areas/Area" + (town.zone + town.name).Replace("'", "").Replace(".", "").Replace(" ", ""));
             SpawnWindowBlueprint("Town: " + town.name);
             SpawnWindowBlueprint("TownLeftSide");
             AddHotkey(Escape, () =>
@@ -1839,7 +1839,7 @@ public class Blueprint
         }),
         new("InstanceEntrance", () =>
         {
-            SetDesktopBackground("Areas/Area" + instance.name.Replace("'", "").Replace(" ", ""));
+            SetDesktopBackground("Areas/Area" + instance.name.Replace("'", "").Replace(".", "").Replace(" ", ""));
             SpawnWindowBlueprint(instance.type + ": " + instance.name);
             SpawnWindowBlueprint("InstanceLeftSide");
             AddHotkey(Escape, () =>
@@ -1849,7 +1849,7 @@ public class Blueprint
                 {
                     SpawnTransition();
                     PlaySound("DesktopButtonClose");
-                    SetDesktopBackground("Areas/Area" + instance.name.Replace("'", "").Replace(" ", ""));
+                    SetDesktopBackground("Areas/Area" + instance.name.Replace("'", "").Replace(".", "").Replace(" ", ""));
                     CloseWindow(window);
                 }
                 else if (instance.complexPart)
@@ -1866,18 +1866,29 @@ public class Blueprint
         }),
         new("ComplexEntrance", () =>
         {
-            SetDesktopBackground("Areas/Complex" + complex.name.Replace("'", "").Replace(" ", ""));
+            SetDesktopBackground("Areas/Complex" + complex.name.Replace("'", "").Replace(".", "").Replace(" ", ""));
             SpawnWindowBlueprint("Complex: " + complex.name);
             SpawnWindowBlueprint("ComplexLeftSide");
             AddHotkey(Escape, () =>
             {
-                PlaySound("DesktopInstanceClose");
-                CloseDesktop("ComplexEntrance");
+                var window = CDesktop.windows.Find(x => x.title.StartsWith("Area: "));
+                if (window != null)
+                {
+                    SpawnTransition();
+                    PlaySound("DesktopButtonClose");
+                    SetDesktopBackground("Areas/Area" + complex.name.Replace("'", "").Replace(".", "").Replace(" ", ""));
+                    CloseWindow(window);
+                }
+                else
+                {
+                    PlaySound("DesktopInstanceClose");
+                    CloseDesktop("ComplexEntrance");
+                }
             });
         }),
         new("Game", () =>
         {
-            SetDesktopBackground("Areas/Area" + (Board.board.area.zone + Board.board.area.name).Replace("'", "").Replace(" ", ""));
+            SetDesktopBackground("Areas/Area" + (Board.board.area.zone + Board.board.area.name).Replace("'", "").Replace(".", "").Replace(" ", ""));
             SpawnWindowBlueprint("BattleBoard");
             SpawnWindowBlueprint("PlayerBattleInfo");
             SpawnWindowBlueprint("EnemyBattleInfo");

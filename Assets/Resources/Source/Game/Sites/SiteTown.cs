@@ -76,6 +76,7 @@ public class SiteTown
         new SiteTown("Splintertree Post",       "Ashenvale",            "Horde"),
         new SiteTown("Kargath",                 "Badlands",             "Horde"),
         new SiteTown("Stonard",                 "Swamp of Sorrows",     "Horde"),
+        //new SiteTown("Misty Reed Post",         "Swamp of Sorrows",     "Horde"),
 
         //OGRES
         new SiteTown("Brackenwall Village",     "Dustwallow Marsh",     "Horde"),
@@ -126,5 +127,7 @@ public class SiteTown
         //NEUTRAL
         new SiteTown("Marshal's Refuge",        "Un'Goro Crater",       "Neutral"),
         new SiteTown("Timbermaw Hold",          "Felwood",       	    "Neutral"),
+        new SiteTown("Bronzebeard Encampment",  "Silithus",       	    "Neutral"),
+        new SiteTown("The Harborage",           "Swamp of Sorrows",     "Neutral"),
     };
 }

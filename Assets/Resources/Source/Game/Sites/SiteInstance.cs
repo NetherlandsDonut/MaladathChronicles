@@ -28,6 +28,30 @@ public class SiteInstance
 
     public static List<SiteInstance> instances = new()
     {
+        new SiteInstance("Temple of Atal'Hakkar", "Dungeon", new()
+        {
+
+        },
+        new()
+        {
+            new InstanceWing("Temple of Atal'Hakkar", new()
+            {
+                ("None", "The Broken Hall"),
+                ("Boss", "The Butchery"),
+                ("Boss", "Chamber of Blood"),
+                ("Boss", "Den of the Caller"),
+                ("Boss", "Hall of Masks"),
+                ("Boss", "Hall of Ritual"),
+                ("Boss", "Hall of Bones"),
+                ("Boss", "Hall of Serpents"),
+                ("Boss", "Hall of The Cursed"),
+                ("Boss", "Sanctum of the Fallen God"),
+                ("Boss", "The Pit of Sacrafice"),
+                ("Boss", "Pit of Refuse"),
+                ("Boss", "Lair of the Chosen"),
+                ("Boss", "Chamber of the Dreamer")
+            })
+        }),
         new SiteInstance("Gnomeregan", "Dungeon", new()
         {
 

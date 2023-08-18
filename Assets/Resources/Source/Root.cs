@@ -563,7 +563,7 @@ public static class Root
                 if (window.title == "Area: " + area.name) return;
                 else CloseWindow(window);
             SpawnWindowBlueprint("Area: " + area.name);
-            SetDesktopBackground("Areas/Area" + (instance.name + area.name).Replace("'", "").Replace(" ", ""));
+            SetDesktopBackground("Areas/Area" + (instance.name + area.name).Replace("'", "").Replace(".", "").Replace(" ", ""));
             SpawnTransition();
         });
     }
@@ -577,14 +577,16 @@ public static class Root
         },
         (h) =>
         {
-            CloseDesktop("ComplexEntrance");
             if (site.Item1 == "HostileArea")
             {
                 area = hostileAreas.Find(x => x.name == site.Item2);
-                SpawnDesktopBlueprint("HostileAreaEntrance");
+                SpawnTransition();
+                SetDesktopBackground("Areas/Area" + (area.zone + area.name).Replace("'", "").Replace(".", "").Replace(" ", ""));
+                SpawnWindowBlueprint("Area: " + area.name);
             }
             else
             {
+                CloseDesktop("ComplexEntrance");
                 instance = instances.Find(x => x.name == site.Item2);
                 SpawnDesktopBlueprint("InstanceEntrance");
             }

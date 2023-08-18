@@ -231,7 +231,7 @@ public class Starter : MonoBehaviour
                                 (h) =>
                                 {
                                     SpawnTransition();
-                                    SetDesktopBackground("Areas/Area" + SiteInstance.instance.name.Replace("'", "").Replace(" ", ""));
+                                    SetDesktopBackground("Areas/Area" + SiteInstance.instance.name.Replace("'", "").Replace(".", "").Replace(" ", ""));
                                     CloseWindow(h.window);
                                 });
                             });
@@ -317,7 +317,7 @@ public class Starter : MonoBehaviour
                     new Blueprint("Area: " + area.name,
                         () =>
                         {
-                            SetAnchor(Anchor.TopRight);
+                            SetAnchor(Anchor.TopLeft);
                             AddRegionGroup();
                             SetRegionGroupWidth(161);
                             SetRegionGroupHeight(344);
@@ -327,11 +327,11 @@ public class Starter : MonoBehaviour
                                 AddSmallButton("OtherClose",
                                 (h) =>
                                 {
-                                    if (area.instancePart)
+                                    if (area.instancePart || area.complexPart)
                                     {
                                         SpawnTransition();
                                         PlaySound("DesktopInstanceClose");
-                                        SetDesktopBackground("Areas/Area" + SiteInstance.instance.name.Replace("'", "").Replace(" ", ""));
+                                        SetDesktopBackground("Areas/Area" + (area.instancePart ? SiteInstance.instance.name : SiteComplex.complex.name).Replace("'", "").Replace(".", "").Replace(" ", ""));
                                         CloseWindow(h.window);
                                     }
                                     else
