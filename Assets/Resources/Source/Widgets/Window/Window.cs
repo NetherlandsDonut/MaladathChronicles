@@ -73,7 +73,7 @@ public class Window : MonoBehaviour
                 case Top: return new Vector2(screenX / 2 - Width() / 2 - 1, 0);
                 case TopRight: return new Vector2(screenX - 2 - Width(), 0);
                 case TopLeft: return new Vector2(0, 0);
-                case Center: return new Vector2(screenX / 2 - Width() / 2 - 1, screenY / -2 + PlannedHeight() / 2);
+                case Center: return new Vector2(screenX / 2 - Width() / 2 - 1, screenY / -2 + PlannedHeight(true) / 2);
                 default: return new Vector2(0, 0);
             }
         }

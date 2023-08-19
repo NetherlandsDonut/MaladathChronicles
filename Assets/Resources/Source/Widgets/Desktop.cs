@@ -125,7 +125,7 @@ public class Desktop : MonoBehaviour
         {
             //if (1.0f / Time.smoothDeltaTime < 60)
             //    Debug.LogError("FPS: " + (int)(1.0f / Time.smoothDeltaTime));
-            if (CDesktop.name == "Desktop: TitleScreen")
+            if (CDesktop.title == "TitleScreen")
             {
                 var amount = new Vector3(titleScreenCameraDirection < 2 ? -1f : 1f, titleScreenCameraDirection > 2 ? -1f : (titleScreenCameraDirection < 1 ? -1f : 1f));
                 screen.transform.localPosition += amount;
@@ -135,6 +135,9 @@ public class Desktop : MonoBehaviour
                     titleScreenCameraDirection = random.Next(0, 4);
                     screen.transform.localPosition = new Vector3(random.Next(0, 2) == 0 ? 1762 : 5374, random.Next(-3683, -1567));
                 }
+            }
+            else if (CDesktop.title == "Map")
+            {
             }
             if (screenLocked)
             {

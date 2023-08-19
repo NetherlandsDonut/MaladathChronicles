@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 using static Root;
 using static Root.Color;
+using static Root.Anchor;
 
 public class Starter : MonoBehaviour
 {
@@ -128,21 +129,34 @@ public class Starter : MonoBehaviour
                             });
                         });
                         if (town.transport != null)
+                        {
+                            AddHeaderRegion(() =>
+                            {
+                                AddLine("Transportation:", Gray);
+                            });
                             foreach (var transport in town.transport)
                             {
                                 AddButtonRegion(() =>
                                 {
-                                    AddLine(transport.Item1 + " to " + transport.Item2, Black);
-                                    AddSmallButton("Transport" + transport.Item1, (h) => { });
+                                    AddLine(transport.destination, Black);
+                                    AddSmallButton("Transport" + transport.means, (h) => { });
                                 },
                                 (h) =>
                                 {
                                     CloseDesktop("TownEntrance");
                                     SwitchDesktop("Map");
                                     CDesktop.LockScreen();
-                                    fastTravelCamera = CDesktop.windows.Find(x => x.title == "Site: " + transport.Item2).gameObject;
+                                    if (transport.price > 0)
+                                        PlaySound("DesktopTransportPay");
+                                    fastTravelCamera = CDesktop.windows.Find(x => x.title == "Site: " + transport.destination).gameObject;
+                                },
+                                (h) => () =>
+                                {
+                                    SetAnchor(Center);
+                                    PrintTransportTooltip(transport);
                                 });
                             }
+                        }
                         AddPaddingRegion(() =>
                         {
                             AddLine("", Gray);

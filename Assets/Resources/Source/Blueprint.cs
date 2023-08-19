@@ -1772,10 +1772,10 @@ public class Blueprint
             loadingBar[1].transform.position = new Vector3(-1178, 863);
             SetDesktopBackground("LoadingScreens/LoadingScreenKalimdor");
             OrderLoadingMap();
-            AddHotkey(W, () => { var amount = new Vector3(0, (float)Math.Round(EuelerGrowth())); CDesktop.screen.transform.position += amount; cursor.transform.position += amount; }, false);
-            AddHotkey(A, () => { var amount = new Vector3(-(float)Math.Round(EuelerGrowth()), 0); CDesktop.screen.transform.position += amount; cursor.transform.position += amount; }, false);
-            AddHotkey(S, () => { var amount = new Vector3(0, -(float)Math.Round(EuelerGrowth())); CDesktop.screen.transform.position += amount; cursor.transform.position += amount; }, false);
-            AddHotkey(D, () => { var amount = new Vector3((float)Math.Round(EuelerGrowth()), 0); CDesktop.screen.transform.position += amount; cursor.transform.position += amount; }, false);
+            AddHotkey(W, () => { CheckPosition(new Vector3(0, (float)Math.Round(EuelerGrowth()))); }, false);
+            AddHotkey(A, () => { CheckPosition(new Vector3(-(float)Math.Round(EuelerGrowth()), 0)); }, false);
+            AddHotkey(S, () => { CheckPosition(new Vector3(0, -(float)Math.Round(EuelerGrowth()))); }, false);
+            AddHotkey(D, () => { CheckPosition(new Vector3((float)Math.Round(EuelerGrowth()), 0)); }, false);
             AddHotkey(C, () =>
             {
                 SpawnDesktopBlueprint("CharacterSheet");
@@ -1813,6 +1813,37 @@ public class Blueprint
             });
             AddHotkey(L, () => { SpawnWindowBlueprint("ItemDrop"); });
             AddHotkey(BackQuote, () => { SpawnWindowBlueprint("Console"); });
+
+            void CheckPosition(Vector3 amount)
+            {
+                var temp = CDesktop.screen.transform.position;
+                var continent = "";
+                if (temp.x <= 3000) continent = "Kalimdor";
+                else if (temp.x >= 3000) continent = "Eastern Kingdoms";
+                if (continent == "Kalimdor" && (temp + amount).x > 2867)
+                {
+                    CDesktop.screen.transform.position = new Vector3(2867, temp.y + amount.y, temp.z);
+                    cursor.transform.position += temp - CDesktop.screen.transform.position;
+                }
+                else if (continent == "Eastern Kingdoms" && (temp + amount).x < 4572)
+                {
+                    CDesktop.screen.transform.position = new Vector3(4572, temp.y + amount.y, temp.z);
+                    cursor.transform.position += temp - CDesktop.screen.transform.position;
+                }
+                else
+                {
+                    CDesktop.screen.transform.position += amount;
+                    cursor.transform.position += amount;
+                }
+                if (temp.x < 750)
+                    CDesktop.screen.transform.position = new Vector3(750, temp.y);
+                else if (temp.x > 6295)
+                    CDesktop.screen.transform.position = new Vector3(6295, temp.y);
+                if (temp.y < -4686)
+                    CDesktop.screen.transform.position = new Vector3(temp.x, -4686);
+                else if (temp.y > -288)
+                    CDesktop.screen.transform.position = new Vector3(temp.x, -288);
+            }
         }),
         new("HostileAreaEntrance", () =>
         {

@@ -347,6 +347,92 @@ public static class Root
         AddPaddingRegion(() => { AddLine("", Black); });
     }
 
+    public static void PrintTransportTooltip(Transport transport)
+    {
+        AddHeaderGroup();
+        SetRegionGroupWidth(188);
+        AddHeaderRegion(() =>
+        {
+            AddLine(transport.means, Gray);
+        });
+        AddPaddingRegion(() =>
+        {
+            AddLine("To " + transport.destination, Gray);
+        });
+        if (transport.price > 0)
+        {
+            var lacking = 0;
+            if ((int)transport.price > 0)
+            {
+                AddRegionGroup();
+                AddPaddingRegion(
+                    () =>
+                    {
+                        AddSmallButton("ItemCoinsGold", (h) => { });
+                    }
+
+                );
+                AddRegionGroup();
+                SetRegionGroupWidth(20);
+                AddPaddingRegion(
+                    () =>
+                    {
+                        AddLine((int)transport.price + "", Gold);
+                    }
+
+                );
+            }
+            else lacking++;
+            if ((int)(transport.price * 100 % 100) > 0)
+            {
+                AddRegionGroup();
+                AddPaddingRegion(
+                    () =>
+                    {
+                        AddSmallButton("ItemCoinsSilver", (h) => { });
+                    }
+                );
+                AddRegionGroup();
+                SetRegionGroupWidth(20);
+                AddPaddingRegion(
+                    () =>
+                    {
+                        AddLine((int)(transport.price * 100 % 100) + "" + "", Silver);
+                    }
+                );
+            }
+            else lacking++;
+            if ((int)(transport.price * 10000 % 100) > 0)
+            {
+                AddRegionGroup();
+                AddPaddingRegion(
+                    () =>
+                    {
+                        AddSmallButton("ItemCoinsCopper", (h) => { });
+                    }
+                );
+                AddRegionGroup();
+                SetRegionGroupWidth(20);
+                AddPaddingRegion(
+                    () =>
+                    {
+                        AddLine((int)(transport.price * 10000 % 100) + "" + "", Copper);
+                    }
+                );
+            }
+            else lacking++;
+            AddRegionGroup();
+            SetRegionGroupWidth(188 - (3 - lacking) * 49);
+            AddPaddingRegion(() => { AddLine("", Black); });
+        }
+        else
+            AddHeaderRegion(() =>
+            {
+                AddLine("Travel free of charge", Gray);
+            });
+    }
+
+
     public static void PrintInventoryItem(Item item)
     {
         AddBigButton(item.icon,

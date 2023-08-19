@@ -9,7 +9,7 @@ public class SiteTown
         this.faction = faction;
     }
 
-    public SiteTown(string name, string zone, string faction, List<(string, string)> transport)
+    public SiteTown(string name, string zone, string faction, List<Transport> transport)
     {
         this.name = name;
         this.zone = zone;
@@ -18,7 +18,7 @@ public class SiteTown
     }
 
     public string name, zone, faction;
-    public List<(string, string)> transport;
+    public List<Transport> transport;
 
     public static SiteTown town;
 
@@ -26,7 +26,7 @@ public class SiteTown
     {
         //HUMAN NATION OF STORMWIND
         new SiteTown("Stormwind",               "Elwynn Forest",        "Alliance",
-            new () { ("Tram", "Ironforge") }),
+            new () { new Transport("Tram", "Ironforge", 1.5) }),
         new SiteTown("Goldshire",               "Elwynn Forest",        "Alliance"),
         new SiteTown("Lakeshire",               "Elwynn Forest",        "Alliance"),
         new SiteTown("Northshire Abbey",        "Elwynn Forest", 	    "Alliance"),
@@ -36,7 +36,7 @@ public class SiteTown
         new SiteTown("Sentinel Hill",           "Westfall",       	    "Alliance"),
         new SiteTown("Theramore Isle",          "Dustwallow Marsh",   	"Alliance"),
         new SiteTown("Menethil Harbor",         "Wetlands", 		    "Alliance",
-            new () { ("Ship", "Auberdine") }),
+            new () { new Transport("Ship", "Auberdine") }),
         new SiteTown("Nethergarde Keep",        "Blasted Lands", 	    "Alliance"),
         new SiteTown("Morgan's Vigil",          "Burning Steppes", 		"Alliance"),
         new SiteTown("Faldir's Cove",           "Arathi Highlands",     "Alliance"),
@@ -47,14 +47,15 @@ public class SiteTown
         new SiteTown("Aldrassil",               "Teldrassil",           "Alliance"),
         new SiteTown("Star Breeze Village",     "Teldrassil",           "Alliance"),
         new SiteTown("Rut'theran Village",      "Teldrassil",           "Alliance",
-            new () { ("Ship", "Auberdine") }),
+            new () { new Transport("Ship", "Auberdine") }),
         new SiteTown("Dolanaar",                "Teldrassil",           "Alliance"),
         new SiteTown("Astranaar",               "Ashenvale",            "Alliance"),
         new SiteTown("Starfall Village",        "Winterspring",         "Alliance"),
         new SiteTown("Silverwind Refuge",       "Ashenvale",            "Alliance"),
         new SiteTown("Forest Song",             "Ashenvale",            "Alliance"),
         new SiteTown("Auberdine",               "Darkshore",            "Alliance",
-            new () { ("Ship", "Rut'theran Village"), ("Ship", "Menethil Harbor") }),
+            new () { new Transport("Ship", "Rut'theran Village"),
+                     new Transport("Ship", "Menethil Harbor") }),
         new SiteTown("Talrendis Point",         "Azshara",              "Alliance"),
         new SiteTown("Talonbranch Glade",       "Felwood",              "Alliance"),
         new SiteTown("Feathermoon Stronghold",  "Feralas",              "Alliance"),
@@ -67,7 +68,7 @@ public class SiteTown
 
         //IRONFORGE DWARFS
         new SiteTown("Ironforge",               "Dun Morogh",       	"Alliance",
-            new () { ("Tram", "Stormwind") }),
+            new () { new Transport("Tram", "Stormwind", 1.5) }),
         new SiteTown("Thelsamar",               "Loch Modan", 			"Alliance"),
         new SiteTown("Dun Garok",               "Hillsbrad Foothills",  "Alliance"),
         new SiteTown("Dun Modr",                "Wetlands", 			"Alliance"),
@@ -81,14 +82,15 @@ public class SiteTown
 
         //ORCS
         new SiteTown("Orgrimmar",               "Durotar", 			    "Horde",
-            new () { ("Zeppelin", "Undercity"), ("Zeppelin", "Grom'gol Base Camp") }),
+            new () { new Transport("Zeppelin", "Undercity"),
+                     new Transport("Zeppelin", "Grom'gol Base Camp") }),
         new SiteTown("Razor Hill",              "Durotar", 			    "Horde"),
         new SiteTown("Zoram'gar Outpost",       "Ashenvale", 		    "Horde"),
         new SiteTown("Crossroads",              "The Barrens", 		    "Horde"),
         new SiteTown("Bloodvenom Post",         "Felwood",              "Horde"),
         new SiteTown("Valormok",                "Azshara",              "Horde"),
         new SiteTown("Grom'gol Base Camp",      "Stranglethorn Valley", "Horde",
-            new () { ("Zeppelin", "Orgrimmar") }),
+            new () { new Transport("Zeppelin", "Orgrimmar") }),
         new SiteTown("Splintertree Post",       "Ashenvale",            "Horde"),
         new SiteTown("Kargath",                 "Badlands",             "Horde"),
         new SiteTown("Stonard",                 "Swamp of Sorrows",     "Horde"),
@@ -116,7 +118,7 @@ public class SiteTown
 
         //FORSAKEN
         new SiteTown("Undercity",               "Tirisfal Glades", 		"Horde",
-            new () { ("Zeppelin", "Orgrimmar") }),
+            new () { new Transport("Zeppelin", "Orgrimmar") }),
         new SiteTown("The Bulwark",             "Tirisfal Glades", 		"Horde"),
         new SiteTown("Deathknell",              "Tirisfal Glades", 		"Horde"),
         new SiteTown("Brill",                   "Tirisfal Glades", 		"Horde"),
@@ -140,9 +142,9 @@ public class SiteTown
         new SiteTown("Everlook",                "Winterspring",       	"Neutral"),
         new SiteTown("Gadgetzan",               "Tanaris",       	    "Neutral"),
         new SiteTown("Ratchet",                 "The Barrens",       	"Neutral",
-            new () { ("Ship", "Booty Bay") }),
+            new () { new Transport("Ship", "Booty Bay") }),
         new SiteTown("Booty Bay",               "Stranglethorn Valley", "Neutral",
-            new () { ("Ship", "Ratchet") }),
+            new () { new Transport("Ship", "Ratchet") }),
 
         //NEUTRAL
         new SiteTown("Marshal's Refuge",        "Un'Goro Crater",       "Neutral"),
