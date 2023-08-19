@@ -1012,9 +1012,19 @@ public static class Root
         CDesktop.LBWindow.anchor = new WindowAnchor(anchor, x, y, null);
     }
 
+    public static void DisableGeneralSprites()
+    {
+        CDesktop.LBWindow.disabledGeneralSprites = true;
+    }
+
     public static void DisableShadows()
     {
         CDesktop.LBWindow.disabledShadows = true;
+    }
+
+    public static void MaskWindow()
+    {
+        CDesktop.LBWindow.masked = true;
     }
 
     #endregion
@@ -1307,7 +1317,7 @@ public static class Root
         newObject.transform.localPosition = Vector3.zero;
         newObject.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/BigButtons/" + overlay);
         newObject.GetComponent<SpriteRenderer>().sortingOrder = sortingOrder;
-        newObject.GetComponent<SpriteRenderer>().sortingLayerName = "Upper"/*onWhat.GetComponent<SpriteRenderer>().sortingLayerName*/;
+        newObject.GetComponent<SpriteRenderer>().sortingLayerName = "Upper";
         if (time > 0)
         {
             newObject.AddComponent<Shatter>().render = newObject.GetComponent<SpriteRenderer>();
@@ -1319,7 +1329,7 @@ public static class Root
     public static void AddBigButton(string type, Action<Highlightable> pressEvent, Func<Highlightable, Action> tooltip = null)
     {
         var region = CDesktop.LBWindow.LBRegionGroup.LBRegion;
-        var newObject = new GameObject("BigButton: " + type.ToString(), typeof(LineBigButton), typeof(SpriteRenderer));
+        var newObject = new GameObject("BigButton: " + (type == null ? "Empty" : type.ToString()), typeof(LineBigButton), typeof(SpriteRenderer));
         newObject.transform.parent = region.transform;
         newObject.GetComponent<LineBigButton>().Initialise(region, type, pressEvent, tooltip);
     }

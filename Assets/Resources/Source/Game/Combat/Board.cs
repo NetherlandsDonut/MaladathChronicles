@@ -3,8 +3,8 @@ using UnityEngine;
 using System.Linq;
 using System.Collections.Generic;
 
-using static Race;
 using static Root;
+using static BufferBoard;
 
 public class Board
 {
@@ -22,6 +22,7 @@ public class Board
         temporaryBuffsPlayer = new();
         temporaryBuffsEnemy = new();
         actions = new List<Action>();
+        bufferBoard = new BufferBoard(this);
     }
 
     //STATIC REFERENCE TO THE BOARD
@@ -345,6 +346,7 @@ public class Board
             else GiveResource(enemy, a.Item1, a.Item2);
             field[a.Item1, a.Item2] = 0;
         }
+        bufferBoard = new BufferBoard(this);
         CDesktop.LockScreen();
     }
 

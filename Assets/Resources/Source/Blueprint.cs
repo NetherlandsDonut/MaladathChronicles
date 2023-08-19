@@ -831,10 +831,11 @@ public class Blueprint
         }),
         new("BattleBoard", () => {
             SetAnchor(Top, 0, -15 + 19 * (Board.board.field.GetLength(1) - 7));
-            var boardBackground = new GameObject("BoardBackground", typeof(SpriteRenderer));
+            var boardBackground = new GameObject("BoardBackground", typeof(SpriteRenderer), typeof(SpriteMask));
             boardBackground.transform.parent = CDesktop.LBWindow.transform;
             boardBackground.transform.localPosition = new Vector2(-17, 17);
             boardBackground.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Textures/BoardBackground" + Board.board.field.GetLength(0) + "x" + Board.board.field.GetLength(1));
+            boardBackground.GetComponent<SpriteMask>().sprite = Resources.Load<Sprite>("Sprites/Textures/BoardMask" + Board.board.field.GetLength(0) + "x" + Board.board.field.GetLength(1));
             AddRegionGroup();
             for (int i = 0; i < Board.board.field.GetLength(1); i++)
             {
@@ -862,12 +863,32 @@ public class Blueprint
                         //            AddLine("x" + count + " ", LightGray);
                         //            AddText(Board.board.GetFieldName(coords.Item1, coords.Item2), Board.board.GetFieldColor(coords.Item1, coords.Item2));
                         //        }
-                        //    );
+                        //    );s
                         //});
                     }
                 });
             }
         }),
+        new("BufferBoard", () => {
+            SetAnchor(Top, 0, 213 + 19 * (BufferBoard.bufferBoard.field.GetLength(1) - 7));
+            MaskWindow();
+            DisableGeneralSprites();
+            AddRegionGroup();
+            for (int i = 0; i < BufferBoard.bufferBoard.field.GetLength(1); i++)
+            {
+                AddPaddingRegion(() =>
+                {
+                    for (int j = 0; j < BufferBoard.bufferBoard.field.GetLength(0); j++)
+                    {
+                        AddBigButton(BufferBoard.bufferBoard.GetFieldButton(),
+                        (h) =>
+                        {
+
+                        });
+                    }
+                });
+            }
+        }, true),
         new("MapToolbar", () => {
             SetAnchor(TopLeft);
             AddRegionGroup();
@@ -1929,6 +1950,7 @@ public class Blueprint
             PlaySound("DesktopEnterCombat");
             SetDesktopBackground("Areas/Area" + (Board.board.area.zone + Board.board.area.name).Replace("'", "").Replace(".", "").Replace(" ", ""));
             SpawnWindowBlueprint("BattleBoard");
+            SpawnWindowBlueprint("BufferBoard");
             SpawnWindowBlueprint("PlayerBattleInfo");
             SpawnWindowBlueprint("EnemyBattleInfo");
             SpawnWindowBlueprint("PlayerResources");
