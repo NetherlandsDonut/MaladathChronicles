@@ -82,7 +82,7 @@ public class SiteInstance
                 ("Boss", "Perimeter Wall"),
                 ("Boss", "The Laboratory"),
                 ("Boss", "Tower Summit"),
-                ("Boss", "Argual Chamber")
+                ("Boss", "Arugal Chamber")
             })
         }),
         new SiteInstance("Shadow Hold", "Dungeon", new()
@@ -156,6 +156,8 @@ public class SiteInstance
                 ("None", "King's Square"),
                 ("Boss", "Market Row"),
                 ("Boss", "Crusaders' Square"),
+                ("Boss", "The Hoard"),
+                ("Boss", "The Hall of Lights"),
                 ("Boss", "The Scarlet Bastion"),
                 ("Boss", "The Crimson Throne")
             }),

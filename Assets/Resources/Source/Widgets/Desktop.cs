@@ -89,144 +89,173 @@ public class Desktop : MonoBehaviour
         else if (CDesktop.name == "Desktop: SpellbookScreen")
             screen.transform.localPosition = new Vector3(0, -180);
         else if (CDesktop.name == "Desktop: Map")
-            screen.transform.localPosition = new Vector3(2248, -2193);
+            screen.transform.localPosition = new Vector3(-1000, 1000);
         //screen.transform.localPosition = new Vector3(5648, -1193);
     }
 
     public void Update()
     {
-        //if (1.0f / Time.smoothDeltaTime < 60)
-        //    Debug.LogError("FPS: " + (int)(1.0f / Time.smoothDeltaTime));
-        if (CDesktop.name == "Desktop: TitleScreen")
-        {
-            var amount = new Vector3(titleScreenCameraDirection < 2 ? -1f : 1f, titleScreenCameraDirection > 2 ? -1f : (titleScreenCameraDirection < 1 ? -1f : 1f));
-            screen.transform.localPosition += amount;
-            cursor.transform.localPosition += amount;
-            if (Math.Abs(screen.transform.localPosition.x - 1762) > 750 && screen.transform.localPosition.x < 3774 || Math.Abs(screen.transform.localPosition.x - 5374) > 750 && screen.transform.localPosition.x >= 3774)
+        if (loadSites != null && loadSites.Count > 0)
+            for (int i = 0; i < 4; i++)
             {
-                titleScreenCameraDirection = random.Next(0, 4);
-                screen.transform.localPosition = new Vector3(random.Next(0, 2) == 0 ? 1762 : 5374, random.Next(-3683, -1567));
-            }
-        }
-        if (screenLocked)
-        {
-            if (title == "Game")
-            {
-                if (animationTime > 0)
-                    animationTime -= Time.deltaTime;
-                if (animationTime <= 0)
+                var site = loadSites[0];
+                loadingScreenObjectLoad++;
+                SpawnWindowBlueprint(site);
+                loadSites.RemoveAt(0);
+                loadingBar[1].transform.localScale = new Vector3((int)(357.0 / loadingScreenObjectLoadAim * loadingScreenObjectLoad), 1, 1);
+                if (loadSites.Count == 0)
                 {
-                    animationTime = frameTime;
-                    Board.board.AnimateBoard();
-                    Rebuild();
+                    RemoveDesktopBackground();
+                    screen.transform.localPosition = new Vector3(2248, -2193);
+                    SpawnWindowBlueprint("MapToolbar");
+                    SpawnTransition(0.1f);
+                    SpawnTransition(0.1f);
+                    SpawnTransition(0.1f);
+                    SpawnTransition(0.1f);
+                    SpawnTransition(0.1f);
+                    SpawnTransition(0.1f);
+                    Destroy(loadingBar[0]);
+                    Destroy(loadingBar[1]);
+                    loadingBar = null;
+                    PlaySound("DesktopLoadSuccess");
+                    break;
                 }
             }
-        }
         else
         {
-            if (tooltip != null && tooltipChanneling > 0)
+            //if (1.0f / Time.smoothDeltaTime < 60)
+            //    Debug.LogError("FPS: " + (int)(1.0f / Time.smoothDeltaTime));
+            if (CDesktop.name == "Desktop: TitleScreen")
             {
-                tooltipChanneling -= Time.deltaTime;
-                if (tooltipChanneling <= 0 && tooltip.caller != null && tooltip.caller() != null)
-                    tooltip.SpawnTooltip();
+                var amount = new Vector3(titleScreenCameraDirection < 2 ? -1f : 1f, titleScreenCameraDirection > 2 ? -1f : (titleScreenCameraDirection < 1 ? -1f : 1f));
+                screen.transform.localPosition += amount;
+                cursor.transform.localPosition += amount;
+                if (Math.Abs(screen.transform.localPosition.x - 1762) > 750 && screen.transform.localPosition.x < 3774 || Math.Abs(screen.transform.localPosition.x - 5374) > 750 && screen.transform.localPosition.x >= 3774)
+                {
+                    titleScreenCameraDirection = random.Next(0, 4);
+                    screen.transform.localPosition = new Vector3(random.Next(0, 2) == 0 ? 1762 : 5374, random.Next(-3683, -1567));
+                }
             }
-            if (heldKeyTime > 0) heldKeyTime -= Time.deltaTime;
-            if (currentInputLine != "" && globalInputLines.ContainsKey(currentInputLine))
+            if (screenLocked)
             {
-                var didSomething = false;
-                var CIL = globalInputLines[currentInputLine];
-                var length = CIL.text.text.Value().Length;
-                if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Return))
+                if (title == "Game")
                 {
-                    currentInputLine = "";
-                    cursor.SetCursor(CursorType.Default);
-                    UnityEngine.Cursor.lockState = CursorLockMode.None;
-                    if (Input.GetKeyDown(KeyCode.Return))
+                    if (animationTime > 0)
+                        animationTime -= Time.deltaTime;
+                    if (animationTime <= 0)
                     {
-                        CIL.text.text.Confirm();
-                        windows.ForEach(x => x.Rebuild());
-                    }
-                    else
-                    {
-                        CIL.text.text.Reset();
-                        didSomething = true;
+                        animationTime = frameTime;
+                        Board.board.AnimateBoard();
+                        Rebuild();
                     }
                 }
-                //else if (Input.GetKeyDown(KeyCode.Delete) && inputLineMarker < )
-                //{
-                //    heldArrowKeyTime = 0.4f;
-                //    Debug.Log(Input.inputString);
-                //    inputLineMarker--;
-                //    didSomething = true;
-                //}
-                else if (Input.GetKeyDown(KeyCode.Delete) && inputLineMarker < length)
-                {
-                    heldKeyTime = 0.4f;
-                    CIL.text.text.RemoveNextOne(inputLineMarker);
-                    didSomething = true;
-                }
-                else if (Input.GetKey(KeyCode.Delete) && inputLineMarker < length && heldKeyTime <= 0)
-                {
-                    heldKeyTime = 0.0245f;
-                    CIL.text.text.RemoveNextOne(inputLineMarker);
-                    didSomething = true;
-                }
-                else if (Input.GetKeyDown(KeyCode.LeftArrow) && inputLineMarker > 0)
-                {
-                    heldKeyTime = 0.4f;
-                    inputLineMarker--;
-                    didSomething = true;
-                }
-                else if (Input.GetKey(KeyCode.LeftArrow) && inputLineMarker > 0 && heldKeyTime <= 0)
-                {
-                    heldKeyTime = 0.0245f;
-                    inputLineMarker--;
-                    didSomething = true;
-                }
-                else if (Input.GetKeyDown(KeyCode.RightArrow) && inputLineMarker < length)
-                {
-                    heldKeyTime = 0.4f;
-                    inputLineMarker++;
-                    didSomething = true;
-                }
-                else if (Input.GetKey(KeyCode.RightArrow) && inputLineMarker < length && heldKeyTime <= 0)
-                {
-                    heldKeyTime = 0.0245f;
-                    inputLineMarker++;
-                    didSomething = true;
-                }
-                else foreach (char c in Input.inputString)
-                    {
-                        var a = inputLineMarker;
-                        if (c == '\b')
-                        {
-                            if (inputLineMarker > 0 && length > 0)
-                                CIL.text.text.RemovePreviousOne(inputLineMarker--);
-                        }
-                        else if (c != '\n' && c != '\r' && CIL.CheckInput(c))
-                        {
-                            CIL.text.text.Insert(inputLineMarker, c);
-                            inputLineMarker++;
-                        }
-                        if (length == CIL.text.text.Value().Length)
-                            inputLineMarker = a;
-                        didSomething = true;
-                    }
-                if (didSomething)
-                    CIL.region.regionGroup.window.Rebuild();
             }
             else
             {
-                int downs = 0, helds = 0;
-                foreach (var hotkey in hotkeys)
-                    if (Input.GetKeyDown(hotkey.key) && hotkey.keyDown || Input.GetKey(hotkey.key) && !hotkey.keyDown)
+                if (tooltip != null && tooltipChanneling > 0)
+                {
+                    tooltipChanneling -= Time.deltaTime;
+                    if (tooltipChanneling <= 0 && tooltip.caller != null && tooltip.caller() != null)
+                        tooltip.SpawnTooltip();
+                }
+                if (heldKeyTime > 0) heldKeyTime -= Time.deltaTime;
+                if (currentInputLine != "" && globalInputLines.ContainsKey(currentInputLine))
+                {
+                    var didSomething = false;
+                    var CIL = globalInputLines[currentInputLine];
+                    var length = CIL.text.text.Value().Length;
+                    if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Return))
                     {
-                        if (Input.GetKeyDown(hotkey.key)) downs++;
-                        else helds++;
-                        hotkey.action();
+                        currentInputLine = "";
+                        cursor.SetCursor(CursorType.Default);
+                        UnityEngine.Cursor.lockState = CursorLockMode.None;
+                        if (Input.GetKeyDown(KeyCode.Return))
+                        {
+                            CIL.text.text.Confirm();
+                            windows.ForEach(x => x.Rebuild());
+                        }
+                        else
+                        {
+                            CIL.text.text.Reset();
+                            didSomething = true;
+                        }
                     }
-                if (downs > 0) keyStack = 0;
-                if (helds > 0 && keyStack < 100) keyStack++;
+                    //else if (Input.GetKeyDown(KeyCode.Delete) && inputLineMarker < )
+                    //{
+                    //    heldArrowKeyTime = 0.4f;
+                    //    Debug.Log(Input.inputString);
+                    //    inputLineMarker--;
+                    //    didSomething = true;
+                    //}
+                    else if (Input.GetKeyDown(KeyCode.Delete) && inputLineMarker < length)
+                    {
+                        heldKeyTime = 0.4f;
+                        CIL.text.text.RemoveNextOne(inputLineMarker);
+                        didSomething = true;
+                    }
+                    else if (Input.GetKey(KeyCode.Delete) && inputLineMarker < length && heldKeyTime <= 0)
+                    {
+                        heldKeyTime = 0.0245f;
+                        CIL.text.text.RemoveNextOne(inputLineMarker);
+                        didSomething = true;
+                    }
+                    else if (Input.GetKeyDown(KeyCode.LeftArrow) && inputLineMarker > 0)
+                    {
+                        heldKeyTime = 0.4f;
+                        inputLineMarker--;
+                        didSomething = true;
+                    }
+                    else if (Input.GetKey(KeyCode.LeftArrow) && inputLineMarker > 0 && heldKeyTime <= 0)
+                    {
+                        heldKeyTime = 0.0245f;
+                        inputLineMarker--;
+                        didSomething = true;
+                    }
+                    else if (Input.GetKeyDown(KeyCode.RightArrow) && inputLineMarker < length)
+                    {
+                        heldKeyTime = 0.4f;
+                        inputLineMarker++;
+                        didSomething = true;
+                    }
+                    else if (Input.GetKey(KeyCode.RightArrow) && inputLineMarker < length && heldKeyTime <= 0)
+                    {
+                        heldKeyTime = 0.0245f;
+                        inputLineMarker++;
+                        didSomething = true;
+                    }
+                    else foreach (char c in Input.inputString)
+                        {
+                            var a = inputLineMarker;
+                            if (c == '\b')
+                            {
+                                if (inputLineMarker > 0 && length > 0)
+                                    CIL.text.text.RemovePreviousOne(inputLineMarker--);
+                            }
+                            else if (c != '\n' && c != '\r' && CIL.CheckInput(c))
+                            {
+                                CIL.text.text.Insert(inputLineMarker, c);
+                                inputLineMarker++;
+                            }
+                            if (length == CIL.text.text.Value().Length)
+                                inputLineMarker = a;
+                            didSomething = true;
+                        }
+                    if (didSomething)
+                        CIL.region.regionGroup.window.Rebuild();
+                }
+                else
+                {
+                    int downs = 0, helds = 0;
+                    foreach (var hotkey in hotkeys)
+                        if (Input.GetKeyDown(hotkey.key) && hotkey.keyDown || Input.GetKey(hotkey.key) && !hotkey.keyDown)
+                        {
+                            if (Input.GetKeyDown(hotkey.key)) downs++;
+                            else helds++;
+                            hotkey.action();
+                        }
+                    if (downs > 0) keyStack = 0;
+                    if (helds > 0 && keyStack < 100) keyStack++;
+                }
             }
         }
     }

@@ -50,6 +50,27 @@ public class SiteComplex
         //    ("HostileArea", "Isle Landing"),
         //    ("HostileArea", "Mountain Peak"),
         //}),
+        new SiteComplex("Tyr's Hand", new()
+        {
+            ""
+        },
+        new()
+        {
+            ("HostileArea", "Town Square"),
+            ("HostileArea", "Tyr's Hand Abbey"),
+            ("HostileArea", "Tyr's Hand Keep"),
+            ("HostileArea", "Scarlet Basilica"),
+        }),
+        new SiteComplex("Hearthglen", new()
+        {
+            ""
+        },
+        new()
+        {
+            ("HostileArea", "Central Town"),
+            ("HostileArea", "Hearthglen Mine"),
+            ("HostileArea", "Mardenholde Keep"),
+        }),
         new SiteComplex("Ruins of Stromgarde", new()
         {
             ""

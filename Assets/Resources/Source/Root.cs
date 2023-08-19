@@ -27,6 +27,11 @@ public static class Root
     public static string creationClass;
     public static int maxPlayerLevel;
 
+    public static GameObject[] loadingBar;
+    public static int loadingScreenObjectLoad;
+    public static int loadingScreenObjectLoadAim;
+    public static List<Blueprint> loadSites;
+
     public static Cursor cursor;
     public static CursorRemote cursorEnemy;
     public static int inputLineMarker;
@@ -544,10 +549,11 @@ public static class Root
 
     public static void PrintRaidWing(SiteInstance instance, InstanceWing wing)
     {
-        AddHeaderRegion(() =>
-        {
-            AddLine(wing.name, Gray);
-        });
+        if (instance.wings.Count > 1)
+            AddHeaderRegion(() =>
+            {
+                AddLine(wing.name, Gray);
+            });
         var areas = wing.areas.Select(x => hostileAreas.Find(y => y.name == x.Item2)).ToList();
         foreach (var area in areas)
         AddButtonRegion(() =>
@@ -817,13 +823,26 @@ public static class Root
         }
     }
 
-    public static void SpawnTransition()
+    public static void OrderLoadingMap()
+    {
+        loadSites = windowBlueprints.FindAll(x => x.title.StartsWith("Site: "));
+        loadingScreenObjectLoad = 0;
+        loadingScreenObjectLoadAim = loadSites.Count;
+    }
+
+    public static void SpawnTransition(float time = 0.1f)
     {
         var transition = new GameObject("CameraTransition", typeof(SpriteRenderer), typeof(Shatter));
         transition.transform.parent = CDesktop.screen.transform;
         transition.transform.localPosition = Vector3.zero;
         transition.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Textures/CameraTransition");
-        transition.GetComponent<Shatter>().Initiate(0.1f, transition.GetComponent<SpriteRenderer>());
+        transition.GetComponent<Shatter>().Initiate(time, transition.GetComponent<SpriteRenderer>());
+    }
+
+    public static void RemoveDesktopBackground(bool followCamera = true)
+    {
+        if (followCamera) CDesktop.screen.GetComponent<SpriteRenderer>().sprite = null;
+        else CDesktop.GetComponent<SpriteRenderer>().sprite = null;
     }
 
     public static void SetDesktopBackground(string texture, bool followCamera = true)

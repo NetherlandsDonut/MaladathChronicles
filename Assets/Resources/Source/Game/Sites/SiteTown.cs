@@ -114,6 +114,7 @@ public class SiteTown
 
         //ARGENT DAWN
         new SiteTown("Light's Hope Chapel",     "Eastern Plaguelands",  "Neutral"),
+        new SiteTown("Chillwind Camp",          "Western Plaguelands",  "Neutral"),
 
         //THORIUM BROTHERHOOD
         new SiteTown("Thorium Point",           "Searing Gorge",        "Neutral"),
@@ -129,5 +130,6 @@ public class SiteTown
         new SiteTown("Timbermaw Hold",          "Felwood",       	    "Neutral"),
         new SiteTown("Bronzebeard Encampment",  "Silithus",       	    "Neutral"),
         new SiteTown("The Harborage",           "Swamp of Sorrows",     "Neutral"),
+        new SiteTown("Nesingwary's Expedition", "Stranglethorn Valley", "Neutral"),
     };
 }

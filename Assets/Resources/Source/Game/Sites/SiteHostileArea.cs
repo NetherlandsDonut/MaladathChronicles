@@ -94,6 +94,22 @@ public class SiteHostileArea
         {
             (04, "58", "Timmy the Cruel")
         }),
+        new SiteHostileArea("The Hoard", "Stratholme", new()
+        {
+            ("59-60", "Cannibal Ghoul"),
+        },
+        new()
+        {
+            (04, "60", "Malor the Zealous")
+        }),
+        new SiteHostileArea("The Hall of Lights", "Stratholme", new()
+        {
+            ("59-60", "Cannibal Ghoul"),
+        },
+        new()
+        {
+            (04, "60", "Malor the Zealous")
+        }),
         new SiteHostileArea("The Scarlet Bastion", "Stratholme", new()
         {
             ("59-60", "Cannibal Ghoul"),
@@ -1996,6 +2012,116 @@ public class SiteHostileArea
 
         #endregion
         
+        #region Hinterlands
+        
+        new SiteHostileArea("Jintha'Alor", "Hinterlands", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Skulk Rock", "Hinterlands", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Seradane", "Hinterlands", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Shandra'Alor", "Hinterlands", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Plaguemist Ravine", "Hinterlands", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Valorwind Lake", "Hinterlands", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("The Creeping Ruin", "Hinterlands", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("The Overlook Cliffs", "Hinterlands", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Agol'watha", "Hinterlands", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Shaol'watha", "Hinterlands", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Hiri'watha", "Hinterlands", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Altar of Zul", "Hinterlands", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Bogen's Ledge", "Hinterlands", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Quel'Danil Lodge", "Hinterlands", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+
+        #endregion
+        
+        #region Redridge Mountains
+        
+        new SiteHostileArea("Redridge Canyons", "Redridge Mountains", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Render's Valley", "Redridge Mountains", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Render's Camp", "Redridge Mountains", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Stonewatch", "Redridge Mountains", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Alther's Mill", "Redridge Mountains", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Rethban Caverns", "Redridge Mountains", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Lakeridge Highway", "Redridge Mountains", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Lake Everstill", "Redridge Mountains", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Tower of Ilgalar", "Redridge Mountains", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Galardell Valley", "Redridge Mountains", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Three Corners", "Redridge Mountains", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+
+        #endregion
+        
         #region Felwood
         
         new SiteHostileArea("Ruins of Constellas", "Felwood", new()
@@ -2822,6 +2948,75 @@ public class SiteHostileArea
         }),
 
         #endregion
+        
+        #region Shadowfang Keep
+
+        new SiteHostileArea("Jail", "Shadowfang Keep", new()
+        {
+            ("36-37", "Stonevault Ambusher"),
+        },
+        new()
+        {
+            (3, "40", "Revelosh"),
+        }),
+        new SiteHostileArea("The Courtyard", "Shadowfang Keep", new()
+        {
+            ("36-37", "Stonevault Ambusher"),
+        },
+        new()
+        {
+            (3, "40", "Revelosh"),
+        }),
+        new SiteHostileArea("Kitchen", "Shadowfang Keep", new()
+        {
+            ("36-37", "Stonevault Ambusher"),
+        },
+        new()
+        {
+            (3, "40", "Revelosh"),
+        }),
+        new SiteHostileArea("Dining Hall", "Shadowfang Keep", new()
+        {
+            ("36-37", "Stonevault Ambusher"),
+        },
+        new()
+        {
+            (3, "40", "Revelosh"),
+        }),
+        new SiteHostileArea("Perimeter Wall", "Shadowfang Keep", new()
+        {
+            ("36-37", "Stonevault Ambusher"),
+        },
+        new()
+        {
+            (3, "40", "Revelosh"),
+        }),
+        new SiteHostileArea("The Laboratory", "Shadowfang Keep", new()
+        {
+            ("36-37", "Stonevault Ambusher"),
+        },
+        new()
+        {
+            (3, "40", "Revelosh"),
+        }),
+        new SiteHostileArea("Tower Summit", "Shadowfang Keep", new()
+        {
+            ("36-37", "Stonevault Ambusher"),
+        },
+        new()
+        {
+            (3, "40", "Revelosh"),
+        }),
+        new SiteHostileArea("Arugal Chamber", "Shadowfang Keep", new()
+        {
+            ("36-37", "Stonevault Ambusher"),
+        },
+        new()
+        {
+            (3, "40", "Revelosh"),
+        }),
+
+        #endregion
 
         #region Badlands
         
@@ -2974,6 +3169,59 @@ public class SiteHostileArea
         }),
 
         #endregion
+        
+        #region Western Plaguelands
+
+        new SiteHostileArea("Uther's Tomb", "Western Plaguelands", new()
+        {
+            ("53-54", "Scourge Warder"),
+        }),
+        new SiteHostileArea("Dalson's Tears", "Western Plaguelands", new()
+        {
+            ("53-54", "Scourge Warder"),
+        }),
+        new SiteHostileArea("Ruins of Andorhal", "Western Plaguelands", new()
+        {
+            ("53-54", "Scourge Warder"),
+        }),
+        new SiteHostileArea("Caer Darrow", "Western Plaguelands", new()
+        {
+            ("53-54", "Scourge Warder"),
+        }),
+        new SiteHostileArea("Felstone Field", "Western Plaguelands", new()
+        {
+            ("53-54", "Scourge Warder"),
+        }),
+        new SiteHostileArea("The Writhing Haunt", "Western Plaguelands", new()
+        {
+            ("53-54", "Scourge Warder"),
+        }),
+        new SiteHostileArea("Northridge Lumber Camp", "Western Plaguelands", new()
+        {
+            ("53-54", "Scourge Warder"),
+        }),
+        new SiteHostileArea("Gahrron's Withering", "Western Plaguelands", new()
+        {
+            ("53-54", "Scourge Warder"),
+        }),
+        new SiteHostileArea("The Weeping Cave", "Western Plaguelands", new()
+        {
+            ("53-54", "Scourge Warder"),
+        }),
+        new SiteHostileArea("Central Town", "Hearthglen", new()
+        {
+            ("53-54", "Scourge Warder"),
+        }),
+        new SiteHostileArea("Hearthglen Mine", "Hearthglen", new()
+        {
+            ("53-54", "Scourge Warder"),
+        }),
+        new SiteHostileArea("Mardenholde Keep", "Hearthglen", new()
+        {
+            ("53-54", "Scourge Warder"),
+        }),
+
+        #endregion
 
         #region Eastern Plaguelands
 
@@ -3031,18 +3279,64 @@ public class SiteHostileArea
             ("52-53", "Plaguehound Runt"),
             ("52-53", "Plaguebat"),
         }),
-        new SiteHostileArea("Tyr's Hand", "Eastern Plaguelands", new()
-        {
-            ("52-53", "Scarlet Curate"),
-            ("52-53", "Scarlet Warder"),
-            ("52-53", "Scarlet Enchanter"),
-            ("52-53", "Scarlet Cleric"),
-        }),
         new SiteHostileArea("The Marris Stead", "Eastern Plaguelands", new()
         {
             ("52-53", "Putrid Gargoyle"),
             ("52-53", "Plaguebat"),
             ("52-53", "Plaguehound Runt"),
+        }),
+        new SiteHostileArea("Crown Guard Tower", "Eastern Plaguelands", new()
+        {
+            ("52-53", "Plaguebat"),
+        }),
+        new SiteHostileArea("Eastwall Tower", "Eastern Plaguelands", new()
+        {
+            ("52-53", "Plaguebat"),
+        }),
+        new SiteHostileArea("Eastwall Gate", "Eastern Plaguelands", new()
+        {
+            ("52-53", "Plaguebat"),
+        }),
+        new SiteHostileArea("Northdale", "Eastern Plaguelands", new()
+        {
+            ("52-53", "Plaguebat"),
+        }),
+        new SiteHostileArea("The Infectis Scar", "Eastern Plaguelands", new()
+        {
+            ("52-53", "Plaguebat"),
+        }),
+        new SiteHostileArea("Quel'Lithien Lodge", "Eastern Plaguelands", new()
+        {
+            ("52-53", "Plaguebat"),
+        }),
+        new SiteHostileArea("Plaguewood Tower", "Eastern Plaguelands", new()
+        {
+            ("52-53", "Plaguebat"),
+        }),
+        new SiteHostileArea("Northpass Tower", "Eastern Plaguelands", new()
+        {
+            ("52-53", "Plaguebat"),
+        }),
+        new SiteHostileArea("Town Square", "Tyr's Hand", new()
+        {
+            ("52-53", "Scarlet Curate"),
+            ("52-53", "Scarlet Warder"),
+        }),
+        new SiteHostileArea("Tyr's Hand Abbey", "Tyr's Hand", new()
+        {
+            ("52-53", "Scarlet Warder"),
+            ("52-53", "Scarlet Cleric"),
+        }),
+        new SiteHostileArea("Tyr's Hand Keep", "Tyr's Hand", new()
+        {
+            ("52-53", "Scarlet Curate"),
+            ("52-53", "Scarlet Warder"),
+        }),
+        new SiteHostileArea("Scarlet Basilica", "Tyr's Hand", new()
+        {
+            ("52-53", "Scarlet Curate"),
+            ("52-53", "Scarlet Enchanter"),
+            ("52-53", "Scarlet Cleric"),
         }),
 
         #endregion

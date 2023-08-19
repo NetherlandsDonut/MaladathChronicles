@@ -23,8 +23,10 @@ public class Starter : MonoBehaviour
         for (int i = temp.Length - 1; i >= 0; i--)
             Destroy(temp[i].gameObject);
         SpawnDesktopBlueprint("TitleScreen");
+        loadingScreenObjectLoadAim = windowRemoteAnchors.Count + SiteInstance.instances.Count + SiteTown.towns.Count + SiteComplex.complexes.Count + SiteHostileArea.hostileAreas.Count;
         for (int i = 0; i < windowRemoteAnchors.Count; i++)
         {
+            loadingScreenObjectLoad++;
             var index = i;
             if (!windowRemoteAnchors[index].Item1.Contains(": ")) continue;
             var split = windowRemoteAnchors[index].Item1.Split(": ");
@@ -34,6 +36,7 @@ public class Starter : MonoBehaviour
         }
         for (int i = 0; i < SiteInstance.instances.Count; i++)
         {
+            loadingScreenObjectLoad++;
             var index = i;
             var instance = SiteInstance.instances[index];
             Blueprint.windowBlueprints.Add(
@@ -101,6 +104,7 @@ public class Starter : MonoBehaviour
         }
         for (int i = 0; i < SiteTown.towns.Count; i++)
         {
+            loadingScreenObjectLoad++;
             var index = i;
             var town = SiteTown.towns[index];
             Blueprint.windowBlueprints.Add(
@@ -156,6 +160,7 @@ public class Starter : MonoBehaviour
         }
         for (int i = 0; i < SiteComplex.complexes.Count; i++)
         {
+            loadingScreenObjectLoad++;
             var index = i;
             var complex = SiteComplex.complexes[index];
             Blueprint.windowBlueprints.Add(
@@ -212,6 +217,8 @@ public class Starter : MonoBehaviour
             );
         }
         for (int i = 0; i < SiteHostileArea.hostileAreas.Count; i++)
+        {
+            loadingScreenObjectLoad++;
             if (SiteHostileArea.hostileAreas[i].instancePart)
             {
                 var index = i;
@@ -389,6 +396,7 @@ public class Starter : MonoBehaviour
                     )
                 );
             }
+        }
         for (int i = 0; i < 3; i++)
             for (int j = 0; j < 12; j++)
                 for (int k = 0; k < 3; k++)

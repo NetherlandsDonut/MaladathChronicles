@@ -1762,9 +1762,16 @@ public class Blueprint
     {
         new("Map", () =>
         {
-            SpawnWindowBlueprint("MapToolbar");
-            var findSites = windowBlueprints.FindAll(x => x.title.StartsWith("Site: "));
-            foreach (var site in findSites) SpawnWindowBlueprint(site);
+            PlaySound("DesktopOpenSave");
+            loadingBar = new GameObject[2]; 
+            loadingBar[0] = new GameObject("LoadingBarBegin", typeof(SpriteRenderer));
+            loadingBar[0].GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Textures/LoadingBarEnd");
+            loadingBar[0].transform.position = new Vector3(-1181, 863);
+            loadingBar[1] = new GameObject("LoadingBar", typeof(SpriteRenderer));
+            loadingBar[1].GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Textures/LoadingBarStretch");
+            loadingBar[1].transform.position = new Vector3(-1178, 863);
+            SetDesktopBackground("LoadingScreens/LoadingScreenKalimdor");
+            OrderLoadingMap();
             AddHotkey(W, () => { var amount = new Vector3(0, (float)Math.Round(EuelerGrowth())); CDesktop.screen.transform.position += amount; cursor.transform.position += amount; }, false);
             AddHotkey(A, () => { var amount = new Vector3(-(float)Math.Round(EuelerGrowth()), 0); CDesktop.screen.transform.position += amount; cursor.transform.position += amount; }, false);
             AddHotkey(S, () => { var amount = new Vector3(0, -(float)Math.Round(EuelerGrowth())); CDesktop.screen.transform.position += amount; cursor.transform.position += amount; }, false);
@@ -1888,6 +1895,7 @@ public class Blueprint
         }),
         new("Game", () =>
         {
+            PlaySound("DesktopEnterCombat");
             SetDesktopBackground("Areas/Area" + (Board.board.area.zone + Board.board.area.name).Replace("'", "").Replace(".", "").Replace(" ", ""));
             SpawnWindowBlueprint("BattleBoard");
             SpawnWindowBlueprint("PlayerBattleInfo");
