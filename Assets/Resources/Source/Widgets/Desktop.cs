@@ -138,7 +138,21 @@ public class Desktop : MonoBehaviour
             }
             if (screenLocked)
             {
-                if (title == "Game")
+                if (fastTravelCamera != null)
+                {
+                    var dest = fastTravelCamera.transform.position - new Vector3(66, 0);
+                    var lerp = Vector3.zero;
+                    if (Math.Abs(screen.transform.position.x - dest.x) + Math.Abs(screen.transform.position.y - dest.y) > 500)
+                        lerp = Vector3.Lerp(screen.transform.position, dest, 0.02f);
+                    else lerp = Vector3.LerpUnclamped(screen.transform.position, dest, 0.02f);
+                    screen.transform.position = new Vector3(lerp.x, lerp.y, screen.transform.position.z);
+                    if (Math.Abs(screen.transform.position.x - dest.x) + Math.Abs(screen.transform.position.y - dest.y) < 5)
+                    {
+                        fastTravelCamera = null;
+                        UnlockScreen();
+                    }
+                }
+                else if (title == "Game")
                 {
                     if (animationTime > 0)
                         animationTime -= Time.deltaTime;

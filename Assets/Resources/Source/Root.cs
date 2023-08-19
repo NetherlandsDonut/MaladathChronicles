@@ -21,6 +21,8 @@ public static class Root
     public static int shadowSystem = 1;
     public static int aiDepth = 5;
 
+    public static GameObject fastTravelCamera;
+
     public static string creationFaction;
     public static string creationGender;
     public static string creationRace;
@@ -803,7 +805,7 @@ public static class Root
         newDesktop.screenlock.GetComponent<SpriteRenderer>().sortingLayerName = "DesktopBackground";
         newDesktop.screenlock.GetComponent<SpriteRenderer>().sortingOrder = 1;
         newDesktop.screenlock.GetComponent<BoxCollider2D>().size = new Vector2(640, 360);
-        newDesktop.screenlock.transform.parent = newObject.transform;
+        newDesktop.screenlock.transform.parent = newDesktop.screen.transform;
         newDesktop.UnlockScreen();
         newObject.SetActive(false);
     }

@@ -127,6 +127,22 @@ public class Starter : MonoBehaviour
                                 SwitchDesktop("Map");
                             });
                         });
+                        if (town.transport != null)
+                            foreach (var transport in town.transport)
+                            {
+                                AddButtonRegion(() =>
+                                {
+                                    AddLine(transport.Item1 + " to " + transport.Item2, Black);
+                                    AddSmallButton("Transport" + transport.Item1, (h) => { });
+                                },
+                                (h) =>
+                                {
+                                    CloseDesktop("TownEntrance");
+                                    SwitchDesktop("Map");
+                                    CDesktop.LockScreen();
+                                    fastTravelCamera = CDesktop.windows.Find(x => x.title == "Site: " + transport.Item2).gameObject;
+                                });
+                            }
                         AddPaddingRegion(() =>
                         {
                             AddLine("", Gray);
