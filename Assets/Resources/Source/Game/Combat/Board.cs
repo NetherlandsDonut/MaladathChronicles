@@ -112,7 +112,7 @@ public class Board
                     for (int q = 0; q + j < field.GetLength(1); q++)
                         if (field[i, j + q] == 0) zeroes++;
                     (field[i, j], field[i, j + zeroes]) = (0, field[i, j]);
-                    window.LBRegionGroup.regions[j].bigButtons[i].gameObject.AddComponent<FallingElement>().Initiate(zeroes);
+                    if (zeroes > 0) window.LBRegionGroup.regions[j].bigButtons[i].gameObject.AddComponent<FallingElement>().Initiate(zeroes);
                 }
 
         //IF BOARD IS NOT YET FULL RETURN AND DO PREVIOUS STEPS AGAIN

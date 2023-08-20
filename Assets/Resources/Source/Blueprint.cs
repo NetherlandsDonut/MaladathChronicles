@@ -375,6 +375,7 @@ public class Blueprint
                         },
                         (h) =>
                         {
+                            PlaySound(item.PutDownSound());
                             currentSave.player.Unequip(new() { slot });
                             CloseWindow(h.window);
                             SpawnWindowBlueprint("PlayerEquipmentInfo");
@@ -1962,7 +1963,6 @@ public class Blueprint
             SpawnWindowBlueprint("PlayerResources");
             SpawnWindowBlueprint("EnemyResources");
             Board.board.Reset();
-            //AddHotkey(Escape, () => { SwitchDesktop("Map"); CloseDesktop("Game"); });
             AddHotkey(PageUp, () => {
                 Board.board.player.resources = new Dictionary<string, int>
                 {
@@ -2143,7 +2143,7 @@ public class Blueprint
         new("TitleScreen", () =>
         {
             SpawnWindowBlueprint("TitleScreenMenu");
-            SpawnWindowBlueprint("CharacterCreation");
+            //SpawnWindowBlueprint("CharacterCreation");
         }),
     };
 }

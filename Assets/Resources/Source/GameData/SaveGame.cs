@@ -9,7 +9,7 @@ public class SaveGame
     {
         player = new Entity
         (
-            "Ji'nta",
+            creationName,
             creationGender,
             Race.races.Find(x => x.name == creationRace),
             Class.classes.Find(x => x.name == creationClass),

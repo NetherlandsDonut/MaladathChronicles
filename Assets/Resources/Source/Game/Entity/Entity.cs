@@ -12,7 +12,7 @@ public class Entity
     {
         level = 60;
         this.name = name;
-        this.gender = creationGender;
+        gender = creationGender;
         unspentTalentPoints = 20;
         this.race = race.name;
         this.spec = spec.name;

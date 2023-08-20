@@ -2,12 +2,14 @@
 
 public class Race
 {
-    public Race(string name, string faction, Stats stats, List<string> abilities)
+    public Race(string name, string faction, Stats stats, List<string> abilities, List<string> maleNames, List<string> femaleNames)
     {
         this.name = name;
         this.faction = faction;
         this.stats = stats;
         this.abilities = abilities;
+        this.maleNames = maleNames;
+        this.femaleNames = femaleNames;
     }
 
     public Race(string name, string rarity, string portrait, double vitality, List<string> abilities, List<(int, string)> loot)
@@ -24,7 +26,7 @@ public class Race
     public string name, faction, rarity, portrait;
     public double vitality;
     public Stats stats;
-    public List<string> abilities;
+    public List<string> abilities, maleNames, femaleNames;
     public List<(int, string)> loot;
 
     public static List<Race> races = new()
@@ -52,6 +54,42 @@ public class Race
             new()
             {
                 "Stoneform"
+            },
+            new()
+            {
+                "Alfer",
+                "Bhorduggs",
+                "Gourimmon",
+                "Jindagg",
+                "Thegneharn",
+                "Brudriak",
+                "Ringend",
+                "Dulfak",
+                "Irgam",
+                "Suram",
+                "Turrhum",
+                "Imdiharm",
+                "Drorth",
+                "Ulokus",
+                "Irrunil",
+            },
+            new()
+            {
+                "Twome",
+                "Leni",
+                "Thumen",
+                "Dulgu",
+                "Brehudi",
+                "Ohdol",
+                "Gedullun",
+                "Sahge",
+                "Teshia",
+                "Brishua",
+                "Nommy",
+                "Myle",
+                "Immil",
+                "Jehdana",
+                "Azahva",
             }
         ),
         new Race("Gnome", "Alliance",
@@ -77,6 +115,42 @@ public class Race
             new()
             {
 
+            },
+            new()
+            {
+                "Leekaz",
+                "Thitlin",
+                "Metkin",
+                "Cebun",
+                "Ibokin",
+                "Danec",
+                "Phibis",
+                "Hindic",
+                "Gneenbazz",
+                "Gneerkic",
+                "Oldeeck",
+                "Ceecleez",
+                "Gnalkafik",
+                "Heeklorin",
+                "Cencisosh",
+            },
+            new()
+            {
+                "Uttlee",
+                "Suttlilizz",
+                "Nittluk",
+                "Gnybrelko",
+                "Finklebrell",
+                "Myfina",
+                "Dotkikeck",
+                "Minkabrock",
+                "Ulillink",
+                "Tholock",
+                "Sibezz",
+                "Sinky",
+                "Hyllin",
+                "Sossubles",
+                "Pinki",
             }
         ),
         new Race("Human", "Alliance",
@@ -102,6 +176,42 @@ public class Race
             new()
             {
 
+            },
+            new()
+            {
+                "Harv",
+                "Zavier",
+                "Raoul",
+                "Rodman",
+                "Maurice",
+                "Petrus",
+                "Byrne",
+                "Torge",
+                "Roger",
+                "Marsh",
+                "Otger",
+                "Radbert",
+                "Ranier",
+                "Wulf",
+                "Valentin",
+            },
+            new()
+            {
+                "Eliane",
+                "Christine",
+                "Tine",
+                "Ember",
+                "Delaney",
+                "Abbigail",
+                "Delilah",
+                "Arlissa",
+                "Lisette",
+                "Brandi",
+                "Valerie",
+                "Jennine",
+                "Allesha",
+                "Nicollete",
+                "Celie",
             }
         ),
         new Race("Night Elf", "Alliance",
@@ -127,6 +237,42 @@ public class Race
             new()
             {
 
+            },
+            new()
+            {
+                "Shyl'las",
+                "Halnol",
+                "Aladoral",
+                "Kellor",
+                "Fagorm",
+                "Alendilad",
+                "Ereran",
+                "Halaess",
+                "Fadries",
+                "Sedas",
+                "Kellorn",
+                "Nytanelle",
+                "Seanul",
+                "Madearn",
+                "Fahdron",
+            },
+            new()
+            {
+                "Kylyia",
+                "Nheryn",
+                "Emysa",
+                "Esadya",
+                "Ariase",
+                "Faenai",
+                "Alae",
+                "Wyna",
+                "Deyell",
+                "Amanaya",
+                "A'thae",
+                "Telvana",
+                "Tesdia",
+                "Telania",
+                "Lenea",
             }
         ),
         new Race("Orc", "Horde",
@@ -151,6 +297,42 @@ public class Race
             new()
             {
 
+            },
+            new()
+            {
+                "Drosh",
+                "Zorl",
+                "Ikzok",
+                "Engus",
+                "Horn",
+                "Thurzath",
+                "Em'gor",
+                "Muggoth",
+                "Rahlrigg",
+                "Balguz",
+                "Drurn",
+                "Kul",
+                "Bodush",
+                "Uzul",
+                "Kemgorm",
+            },
+            new()
+            {
+                "Alda",
+                "Gohkiga",
+                "Inkoret",
+                "Melder",
+                "Odam",
+                "Masdu'ra",
+                "Erzi",
+                "Gunerldi",
+                "Tergir",
+                "Toram",
+                "Zalda",
+                "Tera",
+                "Sherga",
+                "Zahgu",
+                "Grenomta",
             }
         ),
         new Race("Tauren", "Horde",
@@ -176,6 +358,42 @@ public class Race
             new()
             {
 
+            },
+            new()
+            {
+                "Taru",
+                "Alsoomse",
+                "Agmar",
+                "Agasham",
+                "Hurlon",
+                "Orox",
+                "Gellhorn",
+                "Harnor",
+                "Gullem",
+                "Luron",
+                "Jo'hsu",
+                "Kamar",
+                "Mawago",
+                "Montarr",
+                "Kuruk",
+            },
+            new()
+            {
+                "Chianna",
+                "Quana",
+                "Wauza",
+                "Nascha",
+                "Adsila",
+                "Hannaya",
+                "Kaya",
+                "Meyo",
+                "Lutte",
+                "Blomee",
+                "Neena",
+                "Memdi",
+                "Urimu",
+                "Takala",
+                "Tikke",
             }
         ),
         new Race("Troll", "Horde",
@@ -201,6 +419,42 @@ public class Race
             new()
             {
 
+            },
+            new()
+            {
+                "Luh'daihen",
+                "Jin'ta",
+                "Jir'sike",
+                "Jo'do",
+                "Wal'talak",
+                "Mul'nakal",
+                "Zuxujen",
+                "Zas'niaz",
+                "Sum'kur",
+                "Lo'ghohn",
+                "Ikjuz",
+                "Tze'sha",
+                "Moz'kil",
+                "Koshu",
+                "Xas'na",
+            },
+            new()
+            {
+                "Shazi",
+                "Kha'ma",
+                "Az'math",
+                "Fu'me",
+                "Jooz'dilo",
+                "Seajeti",
+                "Lilmene",
+                "Jishin",
+                "Eahde",
+                "Xinwu",
+                "Shalra",
+                "Yol'ku",
+                "Vuzundah",
+                "Sharla",
+                "Eho",
             }
         ),
         new Race("Forsaken", "Horde",
@@ -226,6 +480,42 @@ public class Race
             new()
             {
 
+            },
+            new()
+            {
+                "Martius",
+                "Keagan",
+                "Trever",
+                "Terrence",
+                "Merrick",
+                "Tyree",
+                "Elton",
+                "Raghnall",
+                "Hadley",
+                "Gere",
+                "Neville",
+                "Armond",
+                "Cornelius",
+                "Arney",
+                "Martin",
+            },
+            new()
+            {
+                "Fontanne",
+                "Linda",
+                "Allesha",
+                "Madisen",
+                "Loraina",
+                "Syndony",
+                "Courtney",
+                "Salva",
+                "Ivona",
+                "Bryana",
+                "Clarice",
+                "Genevie",
+                "Steffi",
+                "Fleta",
+                "Florette",
             }
         ),
         new Race("Dumb Kobold", "Common", "Kobold",

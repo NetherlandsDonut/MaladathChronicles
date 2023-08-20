@@ -1,6 +1,5 @@
 using System.Linq;
 using System.Collections.Generic;
-using static UnityEngine.EventSystems.EventTrigger;
 
 public class Item
 {
@@ -19,6 +18,55 @@ public class Item
         { "Epic", Root.Color.Epic },
         { "Legendary", Root.Color.Legendary },
     };
+
+    public string PickUpSound()
+    {
+        string result;
+        if (detailedType == "Staff") result = "WoodLarge";
+        else if (detailedType == "Wand") result = "Wand";
+        else if (detailedType == "Shield") result = "MetalLarge";
+        else if (detailedType == "Totem") result = "WoodLarge";
+        else if (detailedType == "Libram") result = "Ring";
+        else if (detailedType == "Idol") result = "Ring";
+        else if (detailedType == "Quiver") result = "ClothLeather";
+        else if (type == "Neck") result = "Ring";
+        else if (type == "Finger") result = "Ring";
+        else if (type == "Trinket") result = "Ring";
+        else if (type == "Back") result = "ClothLeather";
+        else if (type == "Off Hand") result = "Book";
+        else if (type == "One Handed") result = "MetalSmall";
+        else if (type == "Two Handed") result = "MetalLarge";
+        else if (armorClass == "Cloth") result = "ClothLeather";
+        else if (armorClass == "Leather") result = "ClothLeather";
+        else if (armorClass == "Mail") result = "ChainLarge";
+        else if (armorClass == "Plate") result = "MetalLarge";
+        else result = "RocksOre";
+        return "PickUp" + result;
+    }
+
+    public string PutDownSound()
+    {
+        string result;
+        if (detailedType == "Staff") result = "WoodLarge";
+        else if (detailedType == "Wand") result = "Wand";
+        else if (detailedType == "Shield") result = "MetalLarge";
+        else if (detailedType == "Neck") result = "Ring";
+        else if (detailedType == "Finger") result = "Ring";
+        else if (detailedType == "Trinket") result = "Ring";
+        else if (detailedType == "Totem") result = "WoodLarge";
+        else if (detailedType == "Libram") result = "Ring";
+        else if (detailedType == "Idol") result = "Ring";
+        else if (detailedType == "Quiver") result = "ClothLeather";
+        else if (type == "Off Hand") result = "Book";
+        else if (type == "One Handed") result = "MetalSmall";
+        else if (type == "Two Handed") result = "MetalLarge";
+        else if (armorClass == "Cloth") result = "ClothLeather";
+        else if (armorClass == "Leather") result = "ClothLeather";
+        else if (armorClass == "Mail") result = "ChainLarge";
+        else if (armorClass == "Plate") result = "MetalLarge";
+        else result = "RocksOre";
+        return "PickUp" + result;
+    }
 
     public bool CanEquip(Entity entity)
     {

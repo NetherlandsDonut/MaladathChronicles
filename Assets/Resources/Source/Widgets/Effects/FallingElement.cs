@@ -21,9 +21,10 @@ public class FallingElement : MonoBehaviour
     public void Update()
     {
         timeAlive += Time.deltaTime;
-        transform.position = Vector3.Lerp(transform.position, destination, timeAlive * fallSpeed / (float)System.Math.Sqrt(howFar));
+        transform.position = Vector3.Lerp(transform.position, destination, timeAlive * fallSpeed / (float)System.Math.Sqrt(howFar) * 0.9f);
         if (Mathf.Abs(transform.position.x - destination.x) + Mathf.Abs(transform.position.y - destination.y) < 0.3f)
         {
+            Root.PlaySound("PutDownWoodSmall", 0.6f);
             Root.fallingElements.Remove(this);
             Destroy(this);
         }

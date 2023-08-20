@@ -25,6 +25,7 @@ public static class Root
     public static List<FallingElement> fallingElements;
     public static bool canUnlockScreen;
 
+    public static string creationName = "Lisette";
     public static string creationFaction = "Alliance";
     public static string creationGender = "Female";
     public static string creationRace = "Human";
@@ -49,6 +50,7 @@ public static class Root
     public static Desktop CDesktop, LBDesktop;
     public static string markerCharacter = "_", currentInputLine = "";
     public static List<(string, Vector2)> windowRemoteAnchors;
+    public static int soundsPlayedThisFrame;
 
     public static SaveGame currentSave;
     public static List<SaveGame> saveGames;
@@ -56,6 +58,8 @@ public static class Root
 
     public static void PlaySound(string path, float volume = 0.5f)
     {
+        if (soundsPlayedThisFrame > 2) return;
+        soundsPlayedThisFrame++;
         var temp = Resources.Load<AudioClip>("Sounds/" + path);
         if (temp == null) return;
         cursor.GetComponent<AudioSource>().PlayOneShot(temp, volume);
@@ -182,8 +186,8 @@ public static class Root
         var direction = RollDirection();
         if (amount > 1) amount = 1;
         else if (amount < 0) amount = 0;
-        for (int i = 6; i < x - 5; i++)
-            for (int j = 6; j < y - 5; j++)
+        for (int i = 3; i < x - 2; i++)
+            for (int j = 3; j < y - 2; j++)
                 if (random.Next(0, (int)Math.Abs(amount * 10 - 10)) == 0)
                     SpawnDot(i, j, foo.texture.GetPixel(i, j));
 
@@ -442,6 +446,7 @@ public static class Root
             {
                 if (item.CanEquip(currentSave.player))
                 {
+                    PlaySound(item.PickUpSound());
                     item.Equip(currentSave.player);
                     CloseWindow(h.window);
                     SpawnWindowBlueprint("Inventory");

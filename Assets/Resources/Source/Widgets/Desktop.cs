@@ -96,6 +96,7 @@ public class Desktop : MonoBehaviour
 
     public void Update()
     {
+        soundsPlayedThisFrame = 0;
         if (loadSites != null && loadSites.Count > 0)
             for (int i = 0; i < 6; i++)
             {
