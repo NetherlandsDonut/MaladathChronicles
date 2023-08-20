@@ -50,7 +50,7 @@ public static class Root
     public static Desktop CDesktop, LBDesktop;
     public static string markerCharacter = "_", currentInputLine = "";
     public static List<(string, Vector2)> windowRemoteAnchors;
-    public static int soundsPlayedThisFrame;
+    public static int fallingSoundsPlayedThisFrame;
 
     public static SaveGame currentSave;
     public static List<SaveGame> saveGames;
@@ -58,8 +58,6 @@ public static class Root
 
     public static void PlaySound(string path, float volume = 0.5f)
     {
-        if (soundsPlayedThisFrame > 2) return;
-        soundsPlayedThisFrame++;
         var temp = Resources.Load<AudioClip>("Sounds/" + path);
         if (temp == null) return;
         cursor.GetComponent<AudioSource>().PlayOneShot(temp, volume);
@@ -504,7 +502,7 @@ public static class Root
             else if (type == "HostileArea")
             {
                 var find = hostileAreas.Find(x => x.name == name);
-                AddSmallButton("SiteHostileArea",
+                AddSmallButton(find == null ? "OtherUnknown" : "Site" + find.subType,
                 (h) =>
                 {
                     area = hostileAreas.Find(x => x.name == name);

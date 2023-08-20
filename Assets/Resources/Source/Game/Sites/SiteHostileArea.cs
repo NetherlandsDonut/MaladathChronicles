@@ -5,10 +5,11 @@ using static Root;
 
 public class SiteHostileArea
 {
-    public SiteHostileArea(string name, string zone, List<(string, string)> possibleEncounters)
+    public SiteHostileArea(string name, string zone, string subType, List<(string, string)> possibleEncounters)
     {
         this.name = name;
         this.zone = zone;
+        this.subType = subType;
         this.possibleEncounters = new();
         foreach (var encounter in possibleEncounters)
         {
@@ -19,10 +20,11 @@ public class SiteHostileArea
             recommendedLevel = (int)this.possibleEncounters.Average(x => (x.Item1 + x.Item2) / 2.0);
     }
 
-    public SiteHostileArea(string name, string zone, List<(string, string)> possibleEncounters, List<(int, string, string)> bossEncounters)
+    public SiteHostileArea(string name, string zone, string subType, List<(string, string)> possibleEncounters, List<(int, string, string)> bossEncounters)
     {
         this.name = name;
         this.zone = zone;
+        this.subType = subType;
         this.possibleEncounters = new();
         foreach (var encounter in possibleEncounters)
         {
@@ -53,7 +55,7 @@ public class SiteHostileArea
         return new Entity(data.Item2, Race.races.Find(x => x.name == data.Item3));
     }
 
-    public string name, zone;
+    public string name, zone, subType;
     public int recommendedLevel;
     public bool instancePart, complexPart;
     public List<(int, int, string)> possibleEncounters;
@@ -65,7 +67,7 @@ public class SiteHostileArea
     {
         #region Stratholme
 
-        new SiteHostileArea("King's Square", "Stratholme", new()
+        new SiteHostileArea("King's Square", "Stratholme", "HostileArea", new()
         {
             ("55-56", "Scourge Warder"),
             ("55-56", "Putrid Gargoyle"),
@@ -78,7 +80,7 @@ public class SiteHostileArea
         {
             (04, "56", "Postmaster Malown")
         }),
-        new SiteHostileArea("Market Row", "Stratholme", new()
+        new SiteHostileArea("Market Row", "Stratholme", "HostileArea", new()
         {
             ("56-57", "Cannibal Ghoul"),
         },
@@ -86,7 +88,7 @@ public class SiteHostileArea
         {
             (04, "57", "The Unforgiven")
         }),
-        new SiteHostileArea("Crusaders' Square", "Stratholme", new()
+        new SiteHostileArea("Crusaders' Square", "Stratholme", "HostileArea", new()
         {
             ("56", "Cannibal Ghoul"),
         },
@@ -94,7 +96,7 @@ public class SiteHostileArea
         {
             (04, "58", "Timmy the Cruel")
         }),
-        new SiteHostileArea("The Hoard", "Stratholme", new()
+        new SiteHostileArea("The Hoard", "Stratholme", "HostileArea", new()
         {
             ("59-60", "Cannibal Ghoul"),
         },
@@ -102,7 +104,7 @@ public class SiteHostileArea
         {
             (04, "60", "Malor the Zealous")
         }),
-        new SiteHostileArea("The Hall of Lights", "Stratholme", new()
+        new SiteHostileArea("The Hall of Lights", "Stratholme", "HostileArea", new()
         {
             ("59-60", "Cannibal Ghoul"),
         },
@@ -110,7 +112,7 @@ public class SiteHostileArea
         {
             (04, "60", "Malor the Zealous")
         }),
-        new SiteHostileArea("The Scarlet Bastion", "Stratholme", new()
+        new SiteHostileArea("The Scarlet Bastion", "Stratholme", "HostileArea", new()
         {
             ("59-60", "Cannibal Ghoul"),
         },
@@ -118,7 +120,7 @@ public class SiteHostileArea
         {
             (04, "60", "Malor the Zealous")
         }),
-        new SiteHostileArea("The Crimson Throne", "Stratholme", new()
+        new SiteHostileArea("The Crimson Throne", "Stratholme", "HostileArea", new()
         {
             ("59-60", "Cannibal Ghoul"),
         },
@@ -126,7 +128,7 @@ public class SiteHostileArea
         {
             (04, "62", "Balnazzar")
         }),
-        new SiteHostileArea("Elder's Square", "Stratholme", new()
+        new SiteHostileArea("Elder's Square", "Stratholme", "HostileArea", new()
         {
             ("59-60", "Cannibal Ghoul"),
         },
@@ -134,7 +136,7 @@ public class SiteHostileArea
         {
             (04, "60", "Magistrate Barthilas")
         }),
-        new SiteHostileArea("The Gauntlet", "Stratholme", new()
+        new SiteHostileArea("The Gauntlet", "Stratholme", "HostileArea", new()
         {
             ("59-60", "Cannibal Ghoul"),
         },
@@ -142,7 +144,7 @@ public class SiteHostileArea
         {
             (04, "60", "Nerub'enkan")
         }),
-        new SiteHostileArea("Slaughter Square", "Stratholme", new()
+        new SiteHostileArea("Slaughter Square", "Stratholme", "HostileArea", new()
         {
             ("59-60", "Cannibal Ghoul"),
         },
@@ -150,7 +152,7 @@ public class SiteHostileArea
         {
             (04, "61", "Ramstein the Gorger")
         }),
-        new SiteHostileArea("The Slaughter House", "Stratholme", new()
+        new SiteHostileArea("The Slaughter House", "Stratholme", "HostileArea", new()
         {
             ("59-60", "Cannibal Ghoul"),
         },
@@ -163,7 +165,7 @@ public class SiteHostileArea
 
         #region Razorfen Downs
 
-        new SiteHostileArea("The Caller's Chamber", "Razorfen Downs", new()
+        new SiteHostileArea("The Caller's Chamber", "Razorfen Downs", "HostileArea", new()
         {
             ("40", "Ragglesnout"),
         },
@@ -172,7 +174,7 @@ public class SiteHostileArea
             (2, "40", "Plaguemaw"),
             (2, "40", "Tuten'kash")
         }),
-        new SiteHostileArea("The Bone Pile", "Razorfen Downs", new()
+        new SiteHostileArea("The Bone Pile", "Razorfen Downs", "HostileArea", new()
         {
             ("40", "Ragglesnout"),
         },
@@ -180,7 +182,7 @@ public class SiteHostileArea
         {
             (2, "39", "Mordresh Fire Eye"),
         }),
-        new SiteHostileArea("Spiral of Thorns", "Razorfen Downs", new()
+        new SiteHostileArea("Spiral of Thorns", "Razorfen Downs", "HostileArea", new()
         {
             ("40", "Ragglesnout"),
         },
@@ -194,7 +196,7 @@ public class SiteHostileArea
         
         #region Razorfen Kraul
 
-        new SiteHostileArea("Kraul Commons", "Razorfen Kraul", new()
+        new SiteHostileArea("Kraul Commons", "Razorfen Kraul", "HostileArea", new()
         {
             ("40", "Geomancer Acolyte"),
             ("40", "Razorfen Beast Stalker"),
@@ -205,7 +207,7 @@ public class SiteHostileArea
             (2, "40", "Hunter Bonetusk"),
             (2, "28", "Roogug")
         }),
-        new SiteHostileArea("Kraul Drain", "Razorfen Kraul", new()
+        new SiteHostileArea("Kraul Drain", "Razorfen Kraul", "HostileArea", new()
         {
 
         },
@@ -213,7 +215,7 @@ public class SiteHostileArea
         {
 
         }),
-        new SiteHostileArea("Central Grounds", "Razorfen Kraul", new()
+        new SiteHostileArea("Central Grounds", "Razorfen Kraul", "HostileArea", new()
         {
             ("40", "Razorfen Kraulshaper"),
             ("40", "Razorfen Scarbalde"),
@@ -223,7 +225,7 @@ public class SiteHostileArea
         {
             (2, "40", "Warlord Ramtusk")
         }),
-        new SiteHostileArea("Bat Caves", "Razorfen Kraul", new()
+        new SiteHostileArea("Bat Caves", "Razorfen Kraul", "HostileArea", new()
         {
             ("40", "Kraulshaped Monstrosity"),
             ("40", "Razorfen Kraulshaper"),
@@ -233,7 +235,7 @@ public class SiteHostileArea
         {
             (2, "40", "Groyat, the Blind Hunter")
         }),
-        new SiteHostileArea("Charlga's Seat", "Razorfen Kraul", new()
+        new SiteHostileArea("Charlga's Seat", "Razorfen Kraul", "HostileArea", new()
         {
             ("40", "Enormous Bullfrog"),
             ("40", "Razorfen Hidecrusher"),
@@ -249,7 +251,7 @@ public class SiteHostileArea
 
         #region The Deadmines
 
-        new SiteHostileArea("Defias Hideout", "The Deadmines", new()
+        new SiteHostileArea("Defias Hideout", "The Deadmines", "HostileArea", new()
         {
             ("19", "Miner Johnson"),
             ("17-18", "Defias Evoker"),
@@ -261,7 +263,7 @@ public class SiteHostileArea
         {
             (3, "19", "Rhahk'Zor"),
         }),
-        new SiteHostileArea("Mast Room", "The Deadmines", new()
+        new SiteHostileArea("Mast Room", "The Deadmines", "HostileArea", new()
         {
             ("18-19", "Defias Taskmaster"),
             ("18-19", "Defias Wizard"),
@@ -271,7 +273,7 @@ public class SiteHostileArea
         {
             (3, "19", "Sneed"),
         }),
-        new SiteHostileArea("Goblin Foundry", "The Deadmines", new()
+        new SiteHostileArea("Goblin Foundry", "The Deadmines", "HostileArea", new()
         {
             ("18-20", "Remote Controlled Golem"),
             ("18-19", "Goblin Engineer")
@@ -280,7 +282,7 @@ public class SiteHostileArea
         {
             (3, "20", "Gilnid"),
         }),
-        new SiteHostileArea("Ironclad Cove", "The Deadmines", new()
+        new SiteHostileArea("Ironclad Cove", "The Deadmines", "HostileArea", new()
         {
             ("19-20", "Defias Blackguard"),
             ("19-20", "Defias Squallshaper"),
@@ -290,7 +292,7 @@ public class SiteHostileArea
         {
             (2, "20", "Mr. Smite"),
         }),
-        new SiteHostileArea("The Juggernaut", "The Deadmines", new()
+        new SiteHostileArea("The Juggernaut", "The Deadmines", "HostileArea", new()
         {
             ("19-20", "Defias Squallshaper"),
             ("19-20", "Defias Pirate")
@@ -305,7 +307,7 @@ public class SiteHostileArea
         
         #region Scholomance
         
-        new SiteHostileArea("Reliquary", "Scholomance", new()
+        new SiteHostileArea("Reliquary", "Scholomance", "HostileArea", new()
         {
             ("19-20", "Defias Squallshaper"),
             ("19-20", "Defias Pirate")
@@ -314,7 +316,7 @@ public class SiteHostileArea
         {
             (3, "59", "Blood Steward of Kirtonos")
         }),
-        new SiteHostileArea("Chamber of Summoning", "Scholomance", new()
+        new SiteHostileArea("Chamber of Summoning", "Scholomance", "HostileArea", new()
         {
             ("18-19", "Defias Taskmaster"),
             ("18-19", "Defias Wizard"),
@@ -324,7 +326,7 @@ public class SiteHostileArea
         {
             (3, "59", "Kirtonos the Herald"),
         }),
-        new SiteHostileArea("Great Ossuary", "Scholomance", new()
+        new SiteHostileArea("Great Ossuary", "Scholomance", "HostileArea", new()
         {
             ("18-19", "Defias Taskmaster"),
             ("18-19", "Defias Wizard"),
@@ -334,7 +336,7 @@ public class SiteHostileArea
         {
             (3, "61", "Rattlegore"),
         }),
-        new SiteHostileArea("Hall of Secrets", "Scholomance", new()
+        new SiteHostileArea("Hall of Secrets", "Scholomance", "HostileArea", new()
         {
             ("18-20", "Remote Controlled Golem"),
             ("18-19", "Goblin Engineer")
@@ -343,7 +345,7 @@ public class SiteHostileArea
         {
             (3, "60", "Lorekeeper Polkelt"),
         }),
-        new SiteHostileArea("Hall of the Damned", "Scholomance", new()
+        new SiteHostileArea("Hall of the Damned", "Scholomance", "HostileArea", new()
         {
             ("19-20", "Defias Blackguard"),
             ("19-20", "Defias Squallshaper"),
@@ -353,7 +355,7 @@ public class SiteHostileArea
         {
             (2, "60", "Doctor Theolen Krastinov"),
         }),
-        new SiteHostileArea("Laboratory", "Scholomance", new()
+        new SiteHostileArea("Laboratory", "Scholomance", "HostileArea", new()
         {
             ("19-20", "Defias Blackguard"),
             ("19-20", "Defias Squallshaper"),
@@ -363,7 +365,7 @@ public class SiteHostileArea
         {
             (2, "62", "Ras Frostwhisper")
         }),
-        new SiteHostileArea("Vault of the Ravenian", "Scholomance", new()
+        new SiteHostileArea("Vault of the Ravenian", "Scholomance", "HostileArea", new()
         {
             ("19-20", "Defias Blackguard"),
             ("19-20", "Defias Squallshaper"),
@@ -373,7 +375,7 @@ public class SiteHostileArea
         {
             (2, "60", "The Ravenian")
         }),
-        new SiteHostileArea("The Coven", "Scholomance", new()
+        new SiteHostileArea("The Coven", "Scholomance", "HostileArea", new()
         {
             ("19-20", "Defias Squallshaper"),
             ("19-20", "Defias Pirate")
@@ -382,7 +384,7 @@ public class SiteHostileArea
         {
             (3, "60", "Instructor Malicia")
         }),
-        new SiteHostileArea("The Shadow Vault", "Scholomance", new()
+        new SiteHostileArea("The Shadow Vault", "Scholomance", "HostileArea", new()
         {
             ("19-20", "Defias Squallshaper"),
             ("19-20", "Defias Pirate")
@@ -391,7 +393,7 @@ public class SiteHostileArea
         {
             (3, "60", "Instructor Malicia")
         }),
-        new SiteHostileArea("Viewing Room", "Scholomance", new()
+        new SiteHostileArea("Viewing Room", "Scholomance", "HostileArea", new()
         {
             ("19-20", "Defias Squallshaper"),
             ("19-20", "Defias Pirate")
@@ -400,7 +402,7 @@ public class SiteHostileArea
         {
             (3, "60", "Vectus"),
         }),
-        new SiteHostileArea("Barov Family Vault", "Scholomance", new()
+        new SiteHostileArea("Barov Family Vault", "Scholomance", "HostileArea", new()
         {
             ("19", "Miner Johnson"),
             ("17-18", "Defias Evoker"),
@@ -412,7 +414,7 @@ public class SiteHostileArea
         {
             (3, "60", "Lord Alexei Barov"),
         }),
-        new SiteHostileArea("Headmaster's Study", "Scholomance", new()
+        new SiteHostileArea("Headmaster's Study", "Scholomance", "HostileArea", new()
         {
             ("19-20", "Defias Squallshaper"),
             ("19-20", "Defias Pirate")
@@ -426,7 +428,7 @@ public class SiteHostileArea
 
         #region Maraudon
 
-        new SiteHostileArea("The Noxious Hollow", "Maraudon", new()
+        new SiteHostileArea("The Noxious Hollow", "Maraudon", "HostileArea", new()
         {
             ("45-46", "Creeping Sludge"),
             ("45-46", "Spewed Larva"),
@@ -436,7 +438,7 @@ public class SiteHostileArea
         {
             (3, "47", "Noxxion"),
         }),
-        new SiteHostileArea("Foulspore Cavern", "Maraudon", new()
+        new SiteHostileArea("Foulspore Cavern", "Maraudon", "HostileArea", new()
         {
             ("46-47", "Barbed Lasher"),
             ("46-48", "Celebrian Dryad"),
@@ -446,7 +448,7 @@ public class SiteHostileArea
         {
             (3, "48", "Razorlash"),
         }),
-        new SiteHostileArea("Wicked Grotto", "Maraudon", new()
+        new SiteHostileArea("Wicked Grotto", "Maraudon", "HostileArea", new()
         {
             ("47-48", "Deeprot Stomper"),
             ("46-47", "Deeprot Tangler"),
@@ -456,7 +458,7 @@ public class SiteHostileArea
         {
             (3, "48", "Tinkerer Gizlock"),
         }),
-        new SiteHostileArea("Vyletongue Seat", "Maraudon", new()
+        new SiteHostileArea("Vyletongue Seat", "Maraudon", "HostileArea", new()
         {
             ("46-47", "Putridus Satyr"),
             ("47-48", "Putridus Shadowstalker"),
@@ -466,7 +468,7 @@ public class SiteHostileArea
         {
             (3, "48", "Lord Vyletongue"),
         }),
-        new SiteHostileArea("Poison Falls", "Maraudon", new()
+        new SiteHostileArea("Poison Falls", "Maraudon", "HostileArea", new()
         {
             ("48", "Meshlock the Harvester"),
             ("47-48", "Barbed Lasher"),
@@ -477,7 +479,7 @@ public class SiteHostileArea
         {
             (3, "49", "Celebras the Cursed"),
         }),
-        new SiteHostileArea("Earth Song Falls", "Maraudon", new()
+        new SiteHostileArea("Earth Song Falls", "Maraudon", "HostileArea", new()
         {
             ("50", "Rotgrip"),
             ("48-49", "Primordial Behemoth"),
@@ -487,7 +489,7 @@ public class SiteHostileArea
         {
             (3, "50", "Landslide"),
         }),
-        new SiteHostileArea("Zaetar's Grave", "Maraudon", new()
+        new SiteHostileArea("Zaetar's Grave", "Maraudon", "HostileArea", new()
         {
             ("48-50", "Primordial Behemoth"),
             ("49-50", "Thessala Hydra"),
@@ -503,7 +505,7 @@ public class SiteHostileArea
         
         #region Gnomeregan
 
-        new SiteHostileArea("Trogg Caves", "Gnomeregan", new()
+        new SiteHostileArea("Trogg Caves", "Gnomeregan", "HostileArea", new()
         {
             ("27-28", "Caverndeep Burrower"),
             ("28-29", "Irradiated Pillager"),
@@ -513,7 +515,7 @@ public class SiteHostileArea
         {
             (3, "30", "Grubbis"),
         }),
-        new SiteHostileArea("Hall of Gears", "Gnomeregan", new()
+        new SiteHostileArea("Hall of Gears", "Gnomeregan", "HostileArea", new()
         {
             ("29-30", "Corrosive Lurker"),
             ("29-30", "Irradiated Slime"),
@@ -523,7 +525,7 @@ public class SiteHostileArea
         {
             (3, "31", "Viscous Fallout"),
         }),
-        new SiteHostileArea("Launch Bay", "Gnomeregan", new()
+        new SiteHostileArea("Launch Bay", "Gnomeregan", "HostileArea", new()
         {
             ("30-31", "Leprous Technician"),
             ("31-32", "Mobile Alert System"),
@@ -533,7 +535,7 @@ public class SiteHostileArea
         {
             (3, "32", "Electrocutioner 6000"),
         }),
-        new SiteHostileArea("Engineering Labs", "Gnomeregan", new()
+        new SiteHostileArea("Engineering Labs", "Gnomeregan", "HostileArea", new()
         {
             ("32-33", "Mechano Tank"),
             ("31-33", "Mobile Alert System")
@@ -542,7 +544,7 @@ public class SiteHostileArea
         {
             (3, "33", "Crowd Pummeler 9-60"),
         }),
-        new SiteHostileArea("Tinkers' Court", "Gnomeregan", new()
+        new SiteHostileArea("Tinkers' Court", "Gnomeregan", "HostileArea", new()
         {
 
         },
@@ -555,7 +557,7 @@ public class SiteHostileArea
 
         #region Wailing Caverns
 
-        new SiteHostileArea("Screaming Gully", "Wailing Caverns", new()
+        new SiteHostileArea("Screaming Gully", "Wailing Caverns", "HostileArea", new()
         {
             ("18-19", "Deviate Guardian"),
             ("18-19", "Deviate Ravager"),
@@ -566,7 +568,7 @@ public class SiteHostileArea
         {
             (3, "20", "Lady Anacondra"),
         }),
-        new SiteHostileArea("Pit of Fangs", "Wailing Caverns", new()
+        new SiteHostileArea("Pit of Fangs", "Wailing Caverns", "HostileArea", new()
         {
             ("18-19", "Deviate Adder"),
             ("18-20", "Deviate Python"),
@@ -578,7 +580,7 @@ public class SiteHostileArea
             (3, "20", "Lord Cobrahn"),
             (2, "21", "Lord Pythas"),
         }),
-        new SiteHostileArea("Winding Chasm", "Wailing Caverns", new()
+        new SiteHostileArea("Winding Chasm", "Wailing Caverns", "HostileArea", new()
         {
             ("20-21", "Deviate Dreadfang"),
             ("19-20", "Deviate Lasher"),
@@ -589,7 +591,7 @@ public class SiteHostileArea
         {
             (2, "21", "Skum"),
         }),
-        new SiteHostileArea("Crag of the Everliving", "Wailing Caverns", new()
+        new SiteHostileArea("Crag of the Everliving", "Wailing Caverns", "HostileArea", new()
         {
             ("20-21", "Deviate Dreadfang"),
             ("19-20", "Deviate Lasher"),
@@ -603,7 +605,7 @@ public class SiteHostileArea
             (2, "21", "Lord Serpentis"),
             (1, "21", "Verdan the Everliving")
         }),
-        new SiteHostileArea("Dreamer's Rock", "Wailing Caverns", new()
+        new SiteHostileArea("Dreamer's Rock", "Wailing Caverns", "HostileArea", new()
         {
             ("20-21", "Deviate Moccasin"),
             ("20-21", "Evolving Ectoplasm"),
@@ -618,7 +620,7 @@ public class SiteHostileArea
 
         #region Blackfathom Deeps
         
-        new SiteHostileArea("Pool of Ask'ar", "Blackfathom Deeps", new()
+        new SiteHostileArea("Pool of Ask'ar", "Blackfathom Deeps", "HostileArea", new()
         {
             ("23-24", "Blackfathom Myrmidon"),
             ("23-24", "Blackfathom Sea Witch"),
@@ -629,7 +631,7 @@ public class SiteHostileArea
             (2, "25", "Ghamoo Ra"),
             (1, "25", "Lady Sarevess")
         }),
-        new SiteHostileArea("Shrine of Gelihast", "Blackfathom Deeps", new()
+        new SiteHostileArea("Shrine of Gelihast", "Blackfathom Deeps", "HostileArea", new()
         {
             ("25-26", "Blindlight Oracle"),
             ("25-26", "Blindlight Muckdweller")
@@ -638,7 +640,7 @@ public class SiteHostileArea
         {
             (2, "26", "Gelihast"),
         }),
-        new SiteHostileArea("Moonshrine Ruins", "Blackfathom Deeps", new()
+        new SiteHostileArea("Moonshrine Ruins", "Blackfathom Deeps", "HostileArea", new()
         {
             ("26", "Aqua Guardian"),
             ("25-26", "Twilight Acolyte"),
@@ -648,7 +650,7 @@ public class SiteHostileArea
         {
             (3, "27", "Baron Aquanis"),
         }),
-        new SiteHostileArea("Forgotten Pool", "Blackfathom Deeps", new()
+        new SiteHostileArea("Forgotten Pool", "Blackfathom Deeps", "HostileArea", new()
         {
             ("26-27", "Deep Pool Threshkin"),
             ("26-27", "Skittering Crustacean")
@@ -657,7 +659,7 @@ public class SiteHostileArea
         {
             (2, "27", "Old Serra'kis"),
         }),
-        new SiteHostileArea("Moonshrine Sanctum", "Blackfathom Deeps", new()
+        new SiteHostileArea("Moonshrine Sanctum", "Blackfathom Deeps", "HostileArea", new()
         {
             ("27-28", "Twilight Elementalist"),
             ("27-28", "Twilight Shadowmage")
@@ -666,8 +668,7 @@ public class SiteHostileArea
         {
             (2, "28", "Twilight Lord Kelris"),
         }),
-        new SiteHostileArea("Aku'mai's Lair", "Blackfathom Deeps",
-        new() { },
+        new SiteHostileArea("Aku'mai's Lair", "Blackfathom Deeps", "HostileArea", new() { },
         new()
         {
             (0, "28", "Aku'mai"),
@@ -677,23 +678,23 @@ public class SiteHostileArea
         
         #region Ruins of Stromgarde
         
-        new SiteHostileArea("North Town", "Ruins of Stromgarde", new()
+        new SiteHostileArea("North Town", "Ruins of Stromgarde", "HostileArea", new()
         {
             ("32-32", "Cannibal Ghoul"),
         }),
-        new SiteHostileArea("The Sanctum", "Ruins of Stromgarde", new()
+        new SiteHostileArea("The Sanctum", "Ruins of Stromgarde", "HostileArea", new()
         {
             ("32-32", "Cannibal Ghoul"),
         }),
-        new SiteHostileArea("Western Town", "Ruins of Stromgarde", new()
+        new SiteHostileArea("Western Town", "Ruins of Stromgarde", "HostileArea", new()
         {
             ("32-32", "Cannibal Ghoul"),
         }),
-        new SiteHostileArea("Tower of Arathor", "Ruins of Stromgarde", new()
+        new SiteHostileArea("Tower of Arathor", "Ruins of Stromgarde", "HostileArea", new()
         {
             ("32-32", "Cannibal Ghoul"),
         }),
-        new SiteHostileArea("Stromgarde Keep", "Ruins of Stromgarde", new()
+        new SiteHostileArea("Stromgarde Keep", "Ruins of Stromgarde", "HostileArea", new()
         {
             ("32-32", "Cannibal Ghoul"),
         }),
@@ -702,15 +703,15 @@ public class SiteHostileArea
 
         #region Ruins of Alterac
         
-        new SiteHostileArea("Town Center", "Ruins of Alterac", new()
+        new SiteHostileArea("Town Center", "Ruins of Alterac", "HostileArea", new()
         {
             ("32-32", "Cannibal Ghoul"),
         }),
-        new SiteHostileArea("Alterac Chapel", "Ruins of Alterac", new()
+        new SiteHostileArea("Alterac Chapel", "Ruins of Alterac", "HostileArea", new()
         {
             ("32-32", "Cannibal Ghoul"),
         }),
-        new SiteHostileArea("Alterac Keep", "Ruins of Alterac", new()
+        new SiteHostileArea("Alterac Keep", "Ruins of Alterac", "HostileArea", new()
         {
             ("32-32", "Cannibal Ghoul"),
         }),
@@ -719,11 +720,11 @@ public class SiteHostileArea
 
         #region Purgation Isle
         
-        new SiteHostileArea("Isle Landing", "Purgation Isle", new()
+        new SiteHostileArea("Isle Landing", "Purgation Isle", "HostileArea", new()
         {
             ("32-32", "Cannibal Ghoul"),
         }),
-        new SiteHostileArea("Mountain Peak", "Purgation Isle", new()
+        new SiteHostileArea("Mountain Peak", "Purgation Isle", "HostileArea", new()
         {
             ("32-32", "Cannibal Ghoul"),
         }),
@@ -732,20 +733,20 @@ public class SiteHostileArea
 
         #region Scarlet Monastery Grounds
 
-        new SiteHostileArea("Whispering Gardens", "Scarlet Monastery Grounds", new()
+        new SiteHostileArea("Whispering Gardens", "Scarlet Monastery Grounds", "HostileArea", new()
         {
             ("32-32", "Cannibal Ghoul"),
         }),
-        new SiteHostileArea("Terrace of Repose", "Scarlet Monastery Grounds", new()
+        new SiteHostileArea("Terrace of Repose", "Scarlet Monastery Grounds", "HostileArea", new()
         {
             ("32-32", "Cannibal Ghoul"),
         }),
-        new SiteHostileArea("The Grand Vestibule", "Scarlet Monastery Grounds", new()
+        new SiteHostileArea("The Grand Vestibule", "Scarlet Monastery Grounds", "HostileArea", new()
         {
             ("32-32", "Cannibal Ghoul"),
         }),
 
-        new SiteHostileArea("Chamber of Atonement", "Scarlet Monastery", new()
+        new SiteHostileArea("Chamber of Atonement", "Scarlet Monastery", "HostileArea", new()
         {
             ("32-32", "Cannibal Ghoul"),
         },
@@ -753,7 +754,7 @@ public class SiteHostileArea
         {
             (04, "32", "Interrogator Vishas")
         }),
-        new SiteHostileArea("Forlorn Cloister", "Scarlet Monastery", new()
+        new SiteHostileArea("Forlorn Cloister", "Scarlet Monastery", "HostileArea", new()
         {
             ("32-32", "Cannibal Ghoul"),
         },
@@ -761,7 +762,7 @@ public class SiteHostileArea
         {
             (04, "32", "Bloodmage Thalnos"),
         }),
-        new SiteHostileArea("Honor's Tomb", "Scarlet Monastery", new()
+        new SiteHostileArea("Honor's Tomb", "Scarlet Monastery", "HostileArea", new()
         {
             ("32-32", "Cannibal Ghoul"),
         },
@@ -769,7 +770,7 @@ public class SiteHostileArea
         {
             (04, "32", "Bloodmage Thalnos"),
         }),
-        new SiteHostileArea("Huntsman's Cloister", "Scarlet Monastery", new()
+        new SiteHostileArea("Huntsman's Cloister", "Scarlet Monastery", "HostileArea", new()
         {
             ("32-32", "Cannibal Ghoul"),
         },
@@ -777,7 +778,7 @@ public class SiteHostileArea
         {
             (04, "32", "Houndmaster Loksey"),
         }),
-        new SiteHostileArea("Gallery of Treasures", "Scarlet Monastery", new()
+        new SiteHostileArea("Gallery of Treasures", "Scarlet Monastery", "HostileArea", new()
         {
             ("32-32", "Cannibal Ghoul"),
         },
@@ -785,7 +786,7 @@ public class SiteHostileArea
         {
 
         }),
-        new SiteHostileArea("Athenaeum", "Scarlet Monastery", new()
+        new SiteHostileArea("Athenaeum", "Scarlet Monastery", "HostileArea", new()
         {
             ("32-32", "Cannibal Ghoul"),
         },
@@ -793,7 +794,7 @@ public class SiteHostileArea
         {
             (04, "32", "Arcanist Doan"),
         }),
-        new SiteHostileArea("Training Grounds", "Scarlet Monastery", new()
+        new SiteHostileArea("Training Grounds", "Scarlet Monastery", "HostileArea", new()
         {
             ("32-32", "Cannibal Ghoul"),
         },
@@ -801,7 +802,7 @@ public class SiteHostileArea
         {
             (04, "32", "Arcanist Doan"),
         }),
-        new SiteHostileArea("Crusader's Armory", "Scarlet Monastery", new()
+        new SiteHostileArea("Crusader's Armory", "Scarlet Monastery", "HostileArea", new()
         {
             ("32-32", "Cannibal Ghoul"),
         },
@@ -809,7 +810,7 @@ public class SiteHostileArea
         {
             (04, "32", "Arcanist Doan"),
         }),
-        new SiteHostileArea("Hall of Champions", "Scarlet Monastery", new()
+        new SiteHostileArea("Hall of Champions", "Scarlet Monastery", "HostileArea", new()
         {
             ("32-32", "Cannibal Ghoul"),
         },
@@ -817,7 +818,7 @@ public class SiteHostileArea
         {
             (04, "40", "Herod"),
         }),
-        new SiteHostileArea("Chapel Gardens", "Scarlet Monastery", new()
+        new SiteHostileArea("Chapel Gardens", "Scarlet Monastery", "HostileArea", new()
         {
             ("39-40", "Scarlet Myrmidon"),
             ("39-40", "Scarlet Defender"),
@@ -827,7 +828,7 @@ public class SiteHostileArea
         {
 
         }),
-        new SiteHostileArea("Crusader's Chapel", "Scarlet Monastery", new()
+        new SiteHostileArea("Crusader's Chapel", "Scarlet Monastery", "HostileArea", new()
         {
             ("39-40", "Scarlet Monk"),
             ("39-40", "Scarlet Champion"),
@@ -843,7 +844,7 @@ public class SiteHostileArea
         
         #region Blackrock Depths
 
-        new SiteHostileArea("Detention Block", "Blackrock Depths", new()
+        new SiteHostileArea("Detention Block", "Blackrock Depths", "HostileArea", new()
         {
             ("56-57", "Cannibal Ghoul"),
         },
@@ -851,7 +852,7 @@ public class SiteHostileArea
         {
             (04, "52", "High Interrogator Gerstahn")
         }),
-        new SiteHostileArea("Halls of the Law", "Blackrock Depths", new()
+        new SiteHostileArea("Halls of the Law", "Blackrock Depths", "HostileArea", new()
         {
             ("56-57", "Cannibal Ghoul"),
         },
@@ -860,7 +861,7 @@ public class SiteHostileArea
             (04, "53", "Houndmaster Grebmar"),
             (04, "53", "Lord Roccor")
         }),
-        new SiteHostileArea("Ring of Law", "Blackrock Depths", new()
+        new SiteHostileArea("Ring of Law", "Blackrock Depths", "HostileArea", new()
         {
             ("56-57", "Cannibal Ghoul"),
         },
@@ -873,7 +874,7 @@ public class SiteHostileArea
             (04, "54", "Hedrum the Creeper"),
             (04, "54", "Ok'thor the Breaker"),
         }),
-        new SiteHostileArea("Shrine of Thaurissan", "Blackrock Depths", new()
+        new SiteHostileArea("Shrine of Thaurissan", "Blackrock Depths", "HostileArea", new()
         {
             ("56-57", "Cannibal Ghoul"),
         },
@@ -881,7 +882,7 @@ public class SiteHostileArea
         {
             (04, "57", "Pyromancer Loregrain")
         }),
-        new SiteHostileArea("The Black Vault", "Blackrock Depths", new()
+        new SiteHostileArea("The Black Vault", "Blackrock Depths", "HostileArea", new()
         {
             ("56-57", "Cannibal Ghoul"),
         },
@@ -889,7 +890,7 @@ public class SiteHostileArea
         {
             (04, "57", "Warder Stilgiss")
         }),
-        new SiteHostileArea("Dark Iron Highway", "Blackrock Depths", new()
+        new SiteHostileArea("Dark Iron Highway", "Blackrock Depths", "HostileArea", new()
         {
             ("56-57", "Cannibal Ghoul"),
         },
@@ -897,7 +898,7 @@ public class SiteHostileArea
         {
             (04, "55", "Bael'Gar")
         }),
-        new SiteHostileArea("The Black Anvil", "Blackrock Depths", new()
+        new SiteHostileArea("The Black Anvil", "Blackrock Depths", "HostileArea", new()
         {
             ("56-57", "Cannibal Ghoul"),
         },
@@ -905,7 +906,7 @@ public class SiteHostileArea
         {
             (04, "56", "Lord Incendius")
         }),
-        new SiteHostileArea("Hall of Crafting", "Blackrock Depths", new()
+        new SiteHostileArea("Hall of Crafting", "Blackrock Depths", "HostileArea", new()
         {
             ("56-57", "Cannibal Ghoul"),
         },
@@ -913,7 +914,7 @@ public class SiteHostileArea
         {
             (04, "56", "Fineous Darkvire")
         }),
-        new SiteHostileArea("West Garrison", "Blackrock Depths", new()
+        new SiteHostileArea("West Garrison", "Blackrock Depths", "HostileArea", new()
         {
             ("56-57", "Cannibal Ghoul"),
         },
@@ -921,7 +922,7 @@ public class SiteHostileArea
         {
             (04, "57", "General Angerforge")
         }),
-        new SiteHostileArea("The Manufactory", "Blackrock Depths", new()
+        new SiteHostileArea("The Manufactory", "Blackrock Depths", "HostileArea", new()
         {
             ("56-57", "Cannibal Ghoul"),
         },
@@ -929,7 +930,7 @@ public class SiteHostileArea
         {
             (04, "57", "Golem Lord Argelmach")
         }),
-        new SiteHostileArea("The Grim Guzzler", "Blackrock Depths", new()
+        new SiteHostileArea("The Grim Guzzler", "Blackrock Depths", "HostileArea", new()
         {
             ("56-57", "Cannibal Ghoul"),
         },
@@ -937,7 +938,7 @@ public class SiteHostileArea
         {
             (04, "57", "Golem Lord Argelmach")
         }),
-        new SiteHostileArea("Chamber of Enchantment", "Blackrock Depths", new()
+        new SiteHostileArea("Chamber of Enchantment", "Blackrock Depths", "HostileArea", new()
         {
             ("56-57", "Cannibal Ghoul"),
         },
@@ -945,7 +946,7 @@ public class SiteHostileArea
         {
             (04, "57", "Ambassador Flamelash")
         }),
-        new SiteHostileArea("Mold Foundry", "Blackrock Depths", new()
+        new SiteHostileArea("Mold Foundry", "Blackrock Depths", "HostileArea", new()
         {
             ("56-57", "Cannibal Ghoul"),
         },
@@ -953,7 +954,7 @@ public class SiteHostileArea
         {
             (04, "57", "Panzor the Invincible")
         }),
-        new SiteHostileArea("Summoners' Tomb", "Blackrock Depths", new()
+        new SiteHostileArea("Summoners' Tomb", "Blackrock Depths", "HostileArea", new()
         {
             ("56-57", "Cannibal Ghoul"),
         },
@@ -961,11 +962,11 @@ public class SiteHostileArea
         {
             (04, "58", "The Seven")
         }),
-        new SiteHostileArea("The Lyceum", "Blackrock Depths", new()
+        new SiteHostileArea("The Lyceum", "Blackrock Depths", "HostileArea", new()
         {
             ("56-57", "Cannibal Ghoul"),
         }),
-        new SiteHostileArea("The Iron Hall", "Blackrock Depths", new()
+        new SiteHostileArea("The Iron Hall", "Blackrock Depths", "HostileArea", new()
         {
             ("56-57", "Cannibal Ghoul"),
         },
@@ -973,7 +974,7 @@ public class SiteHostileArea
         {
             (04, "58", "Magmus")
         }),
-        new SiteHostileArea("The Imperial Seat", "Blackrock Depths", new()
+        new SiteHostileArea("The Imperial Seat", "Blackrock Depths", "HostileArea", new()
         {
             ("56-57", "Cannibal Ghoul"),
         },
@@ -986,7 +987,7 @@ public class SiteHostileArea
         
         #region Blackwing Lair
 
-        new SiteHostileArea("Dragonmaw Garrison", "Blackwing Lair", new()
+        new SiteHostileArea("Dragonmaw Garrison", "Blackwing Lair", "HostileArea", new()
         {
             ("56-57", "Cannibal Ghoul"),
         },
@@ -994,7 +995,7 @@ public class SiteHostileArea
         {
             (04, "60", "Razorgore the Untamed")
         }),
-        new SiteHostileArea("Shadow Wing Lair", "Blackwing Lair", new()
+        new SiteHostileArea("Shadow Wing Lair", "Blackwing Lair", "HostileArea", new()
         {
             ("56-57", "Cannibal Ghoul"),
         },
@@ -1002,7 +1003,7 @@ public class SiteHostileArea
         {
             (04, "60", "Vaelastrasz the Corrupt"),
         }),
-        new SiteHostileArea("Halls of Strife", "Blackwing Lair", new()
+        new SiteHostileArea("Halls of Strife", "Blackwing Lair", "HostileArea", new()
         {
             ("56-57", "Cannibal Ghoul"),
         },
@@ -1010,7 +1011,7 @@ public class SiteHostileArea
         {
             (04, "60", "Broodlord Lashlayer"),
         }),
-        new SiteHostileArea("Crimson Laboratories", "Blackwing Lair", new()
+        new SiteHostileArea("Crimson Laboratories", "Blackwing Lair", "HostileArea", new()
         {
             ("56-57", "Cannibal Ghoul"),
         },
@@ -1020,7 +1021,7 @@ public class SiteHostileArea
             (04, "60", "Ebonroc"),
             (04, "60", "Flamegor")
         }),
-        new SiteHostileArea("Chromaggus' Lair", "Blackwing Lair", new()
+        new SiteHostileArea("Chromaggus' Lair", "Blackwing Lair", "HostileArea", new()
         {
             ("56-57", "Cannibal Ghoul"),
         },
@@ -1028,7 +1029,7 @@ public class SiteHostileArea
         {
             (04, "60", "Chromaggus")
         }),
-        new SiteHostileArea("Nefarian's Lair", "Blackwing Lair", new()
+        new SiteHostileArea("Nefarian's Lair", "Blackwing Lair", "HostileArea", new()
         {
             ("56-57", "Cannibal Ghoul"),
         },
@@ -1041,7 +1042,7 @@ public class SiteHostileArea
 
         #region Molten Core
 
-        new SiteHostileArea("Magmadar Cavern", "Molten Core", new()
+        new SiteHostileArea("Magmadar Cavern", "Molten Core", "HostileArea", new()
         {
             ("56-57", "Cannibal Ghoul"),
         },
@@ -1050,7 +1051,7 @@ public class SiteHostileArea
             (04, "60", "Lucifron"),
             (04, "60", "Magmadar")
         }),
-        new SiteHostileArea("Western Lavafalls", "Molten Core", new()
+        new SiteHostileArea("Western Lavafalls", "Molten Core", "HostileArea", new()
         {
             ("56-57", "Cannibal Ghoul"),
         },
@@ -1061,7 +1062,7 @@ public class SiteHostileArea
             (04, "60", "Baron Geddon"),
             (04, "60", "Shazzrah"),
         }),
-        new SiteHostileArea("Eastern Lavafalls", "Molten Core", new()
+        new SiteHostileArea("Eastern Lavafalls", "Molten Core", "HostileArea", new()
         {
             ("56-57", "Cannibal Ghoul"),
         },
@@ -1071,7 +1072,7 @@ public class SiteHostileArea
             (04, "60", "Golemagg The Incinerator"),
             (04, "60", "Majordomo Executus"),
         }),
-        new SiteHostileArea("Ragnaros' Lair", "Molten Core", new()
+        new SiteHostileArea("Ragnaros' Lair", "Molten Core", "HostileArea", new()
         {
             ("56-57", "Cannibal Ghoul"),
         },
@@ -1084,20 +1085,20 @@ public class SiteHostileArea
         
         #region Feralas
         
-        new SiteHostileArea("High Wilderness", "Feralas", new()
+        new SiteHostileArea("High Wilderness", "Feralas", "HostileArea", new()
         {
             ("43-44", "Longtooth Howler"),
             ("44-45", "Grizzled Ironfur Bear"),
             ("45-46", "Rogue Vale Screecher"),
         }),
-        new SiteHostileArea("The Writhing Deep", "Feralas", new()
+        new SiteHostileArea("The Writhing Deep", "Feralas", "HostileArea", new()
         {
             ("44-45", "Zukk'ash Wasp"),
             ("44-45", "Zukk'ash Worker"),
             ("45-46", "Zukk'ash Stinger"),
             ("45-46", "Zukk'ash Tunneler"),
         }),
-        new SiteHostileArea("Woodpaw Hills", "Feralas", new()
+        new SiteHostileArea("Woodpaw Hills", "Feralas", "HostileArea", new()
         {
             ("40-41", "Woodpaw Mongrel"),
             ("41-42", "Woodpaw Trapper"),
@@ -1105,32 +1106,32 @@ public class SiteHostileArea
             ("42-43", "Woodpaw Alpha"),
             ("42-43", "Woodpaw Reaver"),
         }),
-        new SiteHostileArea("Gordunni Outpost", "Feralas", new()
+        new SiteHostileArea("Gordunni Outpost", "Feralas", "HostileArea", new()
         {
             ("40-41", "Gordunni Ogre"),
             ("41-42", "Gordunni Ogre Mage"),
             ("42-43", "Gordunni Brute"),
         }),
-        new SiteHostileArea("Lower Wilds", "Feralas", new()
+        new SiteHostileArea("Lower Wilds", "Feralas", "HostileArea", new()
         {
             ("40-41", "Longtooth Runner"),
             ("41-42", "Ironfur Bear"),
             ("43-44", "Grimtotem Shaman"),
         }),
-        new SiteHostileArea("Grimtotem Compound", "Feralas", new()
+        new SiteHostileArea("Grimtotem Compound", "Feralas", "HostileArea", new()
         {
             ("41-42", "Grimtotem Raider"),
             ("41-42", "Grimtotem Naturalist"),
             ("43-44", "Grimtotem Shaman"),
         }),
-        new SiteHostileArea("Frayfeather Highlands", "Feralas", new()
+        new SiteHostileArea("Frayfeather Highlands", "Feralas", "HostileArea", new()
         {
             ("44-45", "Frayfeather Stagwing"),
             ("45-46", "Frayfeather Skystormer"),
             ("46-47", "Frayfeather Patriarch"),
             ("48", "Antillus the Soarer"),
         }),
-        new SiteHostileArea("Ruins of Isildien", "Feralas", new()
+        new SiteHostileArea("Ruins of Isildien", "Feralas", "HostileArea", new()
         {
             ("43-44", "Gordunni Mauler"),
             ("43-44", "Gordunni Warlock"),
@@ -1138,50 +1139,54 @@ public class SiteHostileArea
             ("44-46", "Gordunni Shaman"),
             ("46-47", "Gordunni Warlord"),
         }),
-        new SiteHostileArea("Ruins of Solarsal", "Feralas", new()
+        new SiteHostileArea("Ruins of Solarsal", "Feralas", "HostileArea", new()
         {
             ("41-43", "Hatecrest Wave Rider"),
             ("43-45", "Hatecrest Siren"),
             ("42-43", "Hatecrest Screamer"),
         }),
-        new SiteHostileArea("Shalzaru's Lair", "Feralas", new()
+        new SiteHostileArea("Shalzaru's Lair", "Feralas", "HostileArea", new()
         {
             ("44-45", "Hatecrest Serpent Guard"),
             ("43-45", "Hatecrest Sorceress"),
             ("43-44", "Hatecrest Myrmidon"),
             ("47", "Lord Shalzaru"),
         }),
-        new SiteHostileArea("The Twin Colossals", "Feralas", new()
+        new SiteHostileArea("The Twin Colossals", "Feralas", "HostileArea", new()
         {
             ("47-48", "Sea Elemental"),
             ("48-49", "Shore Strider"),
         }),
-        new SiteHostileArea("Ruins of Ravenwind", "Feralas", new()
+        new SiteHostileArea("Ruins of Ravenwind", "Feralas", "HostileArea", new()
         {
             ("48-49", "Northspring Roguefeather"),
             ("48-49", "Northspring Slayer"),
             ("49-50", "Northspring Windcaller"),
         }),
-        new SiteHostileArea("Oneiros", "Feralas", new()
+        new SiteHostileArea("Oneiros", "Feralas", "HostileArea", new()
         {
             ("60-61", "Jademir Oracle"),
             ("60-61", "Jademir Tree Watcher"),
             ("60-61", "Jademir Boughguard"),
         }),
-        new SiteHostileArea("The Forgotten Coast", "Feralas", new()
+        new SiteHostileArea("Dream Bough", "Feralas", "EmeraldBough", new()
+        {
+
+        }),
+        new SiteHostileArea("The Forgotten Coast", "Feralas", "HostileArea", new()
         {
             ("47-48", "Sea Elemental"),
             ("48-49", "Shore Strider"),
         }),
-        new SiteHostileArea("Lariss Pavillion", "Feralas", new()
+        new SiteHostileArea("Lariss Pavillion", "Feralas", "HostileArea", new()
         {
 
         }),
-        new SiteHostileArea("Wildwind Lake", "Feralas", new()
+        new SiteHostileArea("Wildwind Lake", "Feralas", "HostileArea", new()
         {
 
         }),
-        new SiteHostileArea("Isle of Dread", "Feralas", new()
+        new SiteHostileArea("Isle of Dread", "Feralas", "HostileArea", new()
         {
             ("61-62", "Arcane Chimaerok"),
             ("60-61", "Chimaerok Devourer"),
@@ -1192,7 +1197,7 @@ public class SiteHostileArea
 
         #region Dire Maul
         
-        new SiteHostileArea("Warpwood Quarter", "Dire Maul", new()
+        new SiteHostileArea("Warpwood Quarter", "Dire Maul", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
             ("01-02", "Wretched Zombie"),
@@ -1202,7 +1207,7 @@ public class SiteHostileArea
         {
             (04, "57", "Lethtendris")
         }),
-        new SiteHostileArea("The Conservatory", "Dire Maul", new()
+        new SiteHostileArea("The Conservatory", "Dire Maul", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
             ("01-02", "Wretched Zombie"),
@@ -1212,7 +1217,7 @@ public class SiteHostileArea
         {
             (04, "58", "Hydrospawn")
         }),
-        new SiteHostileArea("The Shrine of Eldre'tharr", "Dire Maul", new()
+        new SiteHostileArea("The Shrine of Eldre'tharr", "Dire Maul", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
             ("01-02", "Wretched Zombie"),
@@ -1222,7 +1227,7 @@ public class SiteHostileArea
         {
             (04, "58", "Alzzin the Wildshaper")
         }),
-        new SiteHostileArea("Capital Gardens", "Dire Maul", new()
+        new SiteHostileArea("Capital Gardens", "Dire Maul", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
             ("01-02", "Wretched Zombie"),
@@ -1232,7 +1237,7 @@ public class SiteHostileArea
         {
             (04, "60", "Tendris Warpwood")
         }),
-        new SiteHostileArea("Court of the Highborne", "Dire Maul", new()
+        new SiteHostileArea("Court of the Highborne", "Dire Maul", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
             ("01-02", "Wretched Zombie"),
@@ -1243,7 +1248,7 @@ public class SiteHostileArea
             (04, "60", "Magister Kalendris"),
             (04, "60", "Illyanna Ravenoak")
         }),
-        new SiteHostileArea("Prison of Immol'Thar", "Dire Maul", new()
+        new SiteHostileArea("Prison of Immol'Thar", "Dire Maul", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
             ("01-02", "Wretched Zombie"),
@@ -1253,7 +1258,7 @@ public class SiteHostileArea
         {
             (04, "61", "Immol'thar")
         }),
-        new SiteHostileArea("The Athenaeum", "Dire Maul", new()
+        new SiteHostileArea("The Athenaeum", "Dire Maul", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
             ("01-02", "Wretched Zombie"),
@@ -1263,7 +1268,7 @@ public class SiteHostileArea
         {
             (04, "61", "Prince Tortheldrin")
         }),
-        new SiteHostileArea("Gordok Commons", "Dire Maul", new()
+        new SiteHostileArea("Gordok Commons", "Dire Maul", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
             ("01-02", "Wretched Zombie"),
@@ -1275,7 +1280,7 @@ public class SiteHostileArea
             (04, "60", "Guard Slip'kik"),
             (04, "61", "Captain Kromcrush")
         }),
-        new SiteHostileArea("Halls of Destruction", "Dire Maul", new()
+        new SiteHostileArea("Halls of Destruction", "Dire Maul", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
             ("01-02", "Wretched Zombie"),
@@ -1285,7 +1290,7 @@ public class SiteHostileArea
         {
             (04, "61", "Cho'Rush the Observer")
         }),
-        new SiteHostileArea("Gordok's Seat", "Dire Maul", new()
+        new SiteHostileArea("Gordok's Seat", "Dire Maul", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
             ("01-02", "Wretched Zombie"),
@@ -1300,65 +1305,65 @@ public class SiteHostileArea
 
         #region Tirisfal Glades
 
-        new SiteHostileArea("Deathknell", "Tirisfal Glades", new()
+        new SiteHostileArea("Deathknell", "Tirisfal Glades", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
             ("01-02", "Wretched Zombie"),
             ("01-02", "Rattlecage Skeleton"),
         }),
-        new SiteHostileArea("Venomweb Vale", "Tirisfal Glades", new()
+        new SiteHostileArea("Venomweb Vale", "Tirisfal Glades", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Balnir Farmstead", "Tirisfal Glades", new()
+        new SiteHostileArea("Balnir Farmstead", "Tirisfal Glades", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Brightwater Lake", "Tirisfal Glades", new()
+        new SiteHostileArea("Brightwater Lake", "Tirisfal Glades", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Crusader's Outpost", "Tirisfal Glades", new()
+        new SiteHostileArea("Crusader's Outpost", "Tirisfal Glades", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Cold Hearth Manor", "Tirisfal Glades", new()
+        new SiteHostileArea("Cold Hearth Manor", "Tirisfal Glades", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Agamand Mills", "Tirisfal Glades", new()
+        new SiteHostileArea("Agamand Mills", "Tirisfal Glades", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Agamand Family Crypt", "Tirisfal Glades", new()
+        new SiteHostileArea("Agamand Family Crypt", "Tirisfal Glades", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Whispering Shore", "Tirisfal Glades", new()
+        new SiteHostileArea("Whispering Shore", "Tirisfal Glades", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Solliden Farmstead", "Tirisfal Glades", new()
+        new SiteHostileArea("Solliden Farmstead", "Tirisfal Glades", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Night Web's Hollow", "Tirisfal Glades", new()
+        new SiteHostileArea("Night Web's Hollow", "Tirisfal Glades", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Nightmare Vale", "Tirisfal Glades", new()
+        new SiteHostileArea("Nightmare Vale", "Tirisfal Glades", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("The North Coast", "Tirisfal Glades", new()
+        new SiteHostileArea("The North Coast", "Tirisfal Glades", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Garren's Haunt", "Tirisfal Glades", new()
+        new SiteHostileArea("Garren's Haunt", "Tirisfal Glades", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("The Ruins of Lordaeron", "Tirisfal Glades", new()
+        new SiteHostileArea("The Ruins of Lordaeron", "Tirisfal Glades", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
@@ -1367,11 +1372,11 @@ public class SiteHostileArea
         
         #region Moonglade
         
-        new SiteHostileArea("Shrine of Remulos", "Moonglade", new()
+        new SiteHostileArea("Shrine of Remulos", "Moonglade", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Stormrage Barrow Dens", "Moonglade", new()
+        new SiteHostileArea("Stormrage Barrow Dens", "Moonglade", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
@@ -1380,75 +1385,75 @@ public class SiteHostileArea
         
         #region Azshara
 
-        new SiteHostileArea("The Ruined Reaches", "Azshara", new()
+        new SiteHostileArea("The Ruined Reaches", "Azshara", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Lake Mennar", "Azshara", new()
+        new SiteHostileArea("Lake Mennar", "Azshara", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Hetaera's Clutch", "Azshara", new()
+        new SiteHostileArea("Hetaera's Clutch", "Azshara", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Ruins of Eldarath", "Azshara", new()
+        new SiteHostileArea("Ruins of Eldarath", "Azshara", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Shadowsong Shrine", "Azshara", new()
+        new SiteHostileArea("Shadowsong Shrine", "Azshara", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Ursolan", "Azshara", new()
+        new SiteHostileArea("Ursolan", "Azshara", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Bitter Reaches", "Azshara", new()
+        new SiteHostileArea("Bitter Reaches", "Azshara", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Temple of Arkkoran", "Azshara", new()
+        new SiteHostileArea("Temple of Arkkoran", "Azshara", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Jagged Reef", "Azshara", new()
+        new SiteHostileArea("Jagged Reef", "Azshara", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Tower of Eldara", "Azshara", new()
+        new SiteHostileArea("Tower of Eldara", "Azshara", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Bay of Storms", "Azshara", new()
+        new SiteHostileArea("Bay of Storms", "Azshara", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Southridge Beach", "Azshara", new()
+        new SiteHostileArea("Southridge Beach", "Azshara", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Ravencrest Monument", "Azshara", new()
+        new SiteHostileArea("Ravencrest Monument", "Azshara", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Thalassian Base Camp", "Azshara", new()
+        new SiteHostileArea("Thalassian Base Camp", "Azshara", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("The Shattered Strand", "Azshara", new()
+        new SiteHostileArea("The Shattered Strand", "Azshara", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Legash Encampment", "Azshara", new()
+        new SiteHostileArea("Legash Encampment", "Azshara", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Haldarr Encampment", "Azshara", new()
+        new SiteHostileArea("Haldarr Encampment", "Azshara", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Forlorn Ridge", "Azshara", new()
+        new SiteHostileArea("Forlorn Ridge", "Azshara", "HostileArea", new()
         {
 
         }),
@@ -1457,71 +1462,71 @@ public class SiteHostileArea
         
         #region Dustwallow Marsh
 
-        new SiteHostileArea("Witch Hill", "Dustwallow Marsh", new()
+        new SiteHostileArea("Witch Hill", "Dustwallow Marsh", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Tidefury Cove", "Dustwallow Marsh", new()
+        new SiteHostileArea("Tidefury Cove", "Dustwallow Marsh", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("The Quagmire", "Dustwallow Marsh", new()
+        new SiteHostileArea("The Quagmire", "Dustwallow Marsh", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("The Den of Flame", "Dustwallow Marsh", new()
+        new SiteHostileArea("The Den of Flame", "Dustwallow Marsh", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Stonemaul Ruins", "Dustwallow Marsh", new()
+        new SiteHostileArea("Stonemaul Ruins", "Dustwallow Marsh", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Shady Rest Inn", "Dustwallow Marsh", new()
+        new SiteHostileArea("Shady Rest Inn", "Dustwallow Marsh", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Sentry Point", "Dustwallow Marsh", new()
+        new SiteHostileArea("Sentry Point", "Dustwallow Marsh", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Lost Point", "Dustwallow Marsh", new()
+        new SiteHostileArea("Lost Point", "Dustwallow Marsh", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Northpoint Tower", "Dustwallow Marsh", new()
+        new SiteHostileArea("Northpoint Tower", "Dustwallow Marsh", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Emberstrife's Den", "Dustwallow Marsh", new()
+        new SiteHostileArea("Emberstrife's Den", "Dustwallow Marsh", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Dreadmurk Shore", "Dustwallow Marsh", new()
+        new SiteHostileArea("Dreadmurk Shore", "Dustwallow Marsh", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Darkmist Cavern", "Dustwallow Marsh", new()
+        new SiteHostileArea("Darkmist Cavern", "Dustwallow Marsh", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Bluefen", "Dustwallow Marsh", new()
+        new SiteHostileArea("Bluefen", "Dustwallow Marsh", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Bloodfen Burrow", "Dustwallow Marsh", new()
+        new SiteHostileArea("Bloodfen Burrow", "Dustwallow Marsh", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Beezil's Wreck", "Dustwallow Marsh", new()
+        new SiteHostileArea("Beezil's Wreck", "Dustwallow Marsh", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Alcaz Island", "Dustwallow Marsh", new()
+        new SiteHostileArea("Alcaz Island", "Dustwallow Marsh", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Alcaz Dungeon", "Dustwallow Marsh", new()
+        new SiteHostileArea("Alcaz Dungeon", "Dustwallow Marsh", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
@@ -1530,7 +1535,7 @@ public class SiteHostileArea
         
         #region Onyxia's Lair
         
-        new SiteHostileArea("Onyxia's Lair", "Onyxia's Lair", new()
+        new SiteHostileArea("Onyxia's Lair", "Onyxia's Lair", "HostileArea", new()
         {
             ("60", "Onyxian Lair Guard"),
             ("60", "Onyxian Warder")
@@ -1544,39 +1549,39 @@ public class SiteHostileArea
         
         #region Thousand Needles
 
-        new SiteHostileArea("Tahonda Ruins", "Thousand Needles", new()
+        new SiteHostileArea("Tahonda Ruins", "Thousand Needles", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Rustmaul Digsite", "Thousand Needles", new()
+        new SiteHostileArea("Rustmaul Digsite", "Thousand Needles", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Splithoof Crag", "Thousand Needles", new()
+        new SiteHostileArea("Splithoof Crag", "Thousand Needles", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Camp Ethok", "Thousand Needles", new()
+        new SiteHostileArea("Camp Ethok", "Thousand Needles", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Darkcloud Pinnacle", "Thousand Needles", new()
+        new SiteHostileArea("Darkcloud Pinnacle", "Thousand Needles", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Shimmering Flats", "Thousand Needles", new()
+        new SiteHostileArea("Shimmering Flats", "Thousand Needles", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Roguefeather Den", "Thousand Needles", new()
+        new SiteHostileArea("Roguefeather Den", "Thousand Needles", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Highperch", "Thousand Needles", new()
+        new SiteHostileArea("Highperch", "Thousand Needles", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Tahonda Ruins", "Thousand Needles", new()
+        new SiteHostileArea("Tahonda Ruins", "Thousand Needles", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
@@ -1585,47 +1590,47 @@ public class SiteHostileArea
         
         #region Tanaris
 
-        new SiteHostileArea("The Noxious Lair", "Tanaris", new()
+        new SiteHostileArea("The Noxious Lair", "Tanaris", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Abyssal Sands", "Tanaris", new()
+        new SiteHostileArea("Abyssal Sands", "Tanaris", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Lost Rigger Cove", "Tanaris", new()
+        new SiteHostileArea("Lost Rigger Cove", "Tanaris", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("The Gaping Chasm", "Tanaris", new()
+        new SiteHostileArea("The Gaping Chasm", "Tanaris", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Dunemaul Compound", "Tanaris", new()
+        new SiteHostileArea("Dunemaul Compound", "Tanaris", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Southmoon Ruins", "Tanaris", new()
+        new SiteHostileArea("Southmoon Ruins", "Tanaris", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Eastmoon Ruins", "Tanaris", new()
+        new SiteHostileArea("Eastmoon Ruins", "Tanaris", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Sandsorrow Watch", "Tanaris", new()
+        new SiteHostileArea("Sandsorrow Watch", "Tanaris", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Thistleshrub Valley", "Tanaris", new()
+        new SiteHostileArea("Thistleshrub Valley", "Tanaris", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Noonshade Ruins", "Tanaris", new()
+        new SiteHostileArea("Noonshade Ruins", "Tanaris", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Land's End Beach", "Tanaris", new()
+        new SiteHostileArea("Land's End Beach", "Tanaris", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
@@ -1634,31 +1639,31 @@ public class SiteHostileArea
         
         #region Un'Goro Crater
 
-        new SiteHostileArea("Lakkari Tar Pits", "Un'Goro Crater", new()
+        new SiteHostileArea("Lakkari Tar Pits", "Un'Goro Crater", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Fire Plume Ridge", "Un'Goro Crater", new()
+        new SiteHostileArea("Fire Plume Ridge", "Un'Goro Crater", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("The Marshlands", "Un'Goro Crater", new()
+        new SiteHostileArea("The Marshlands", "Un'Goro Crater", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Fungal Rock", "Un'Goro Crater", new()
+        new SiteHostileArea("Fungal Rock", "Un'Goro Crater", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Terror Run", "Un'Goro Crater", new()
+        new SiteHostileArea("Terror Run", "Un'Goro Crater", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("The Slithering Scar", "Un'Goro Crater", new()
+        new SiteHostileArea("The Slithering Scar", "Un'Goro Crater", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Golakka Hot Springs", "Un'Goro Crater", new()
+        new SiteHostileArea("Golakka Hot Springs", "Un'Goro Crater", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
@@ -1667,55 +1672,55 @@ public class SiteHostileArea
         
         #region Darkshore
 
-        new SiteHostileArea("Cliffspring River", "Darkshore", new()
+        new SiteHostileArea("Cliffspring River", "Darkshore", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Twilight Vale", "Darkshore", new()
+        new SiteHostileArea("Twilight Vale", "Darkshore", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Twilight Shore", "Darkshore", new()
+        new SiteHostileArea("Twilight Shore", "Darkshore", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Mist's Edge", "Darkshore", new()
+        new SiteHostileArea("Mist's Edge", "Darkshore", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Bashal'Aran", "Darkshore", new()
+        new SiteHostileArea("Bashal'Aran", "Darkshore", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Ameth'Aran", "Darkshore", new()
+        new SiteHostileArea("Ameth'Aran", "Darkshore", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Ruins of Mathystra", "Darkshore", new()
+        new SiteHostileArea("Ruins of Mathystra", "Darkshore", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Tower of Althalaxx", "Darkshore", new()
+        new SiteHostileArea("Tower of Althalaxx", "Darkshore", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("The Master's Glaive", "Darkshore", new()
+        new SiteHostileArea("The Master's Glaive", "Darkshore", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Moonkin Caves", "Darkshore", new()
+        new SiteHostileArea("Moonkin Caves", "Darkshore", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Remtravel's Excavation", "Darkshore", new()
+        new SiteHostileArea("Remtravel's Excavation", "Darkshore", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Blackwood Den", "Darkshore", new()
+        new SiteHostileArea("Blackwood Den", "Darkshore", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Grove of the Ancients", "Darkshore", new()
+        new SiteHostileArea("Grove of the Ancients", "Darkshore", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
@@ -1724,47 +1729,47 @@ public class SiteHostileArea
         
         #region Teldrassil
 
-        new SiteHostileArea("Shadowglen", "Teldrassil", new()
+        new SiteHostileArea("Shadowglen", "Teldrassil", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Wellspring Lake", "Teldrassil", new()
+        new SiteHostileArea("Wellspring Lake", "Teldrassil", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Wellspring River", "Teldrassil", new()
+        new SiteHostileArea("Wellspring River", "Teldrassil", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Shadowthread Cave", "Teldrassil", new()
+        new SiteHostileArea("Shadowthread Cave", "Teldrassil", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("The Oracle Glade", "Teldrassil", new()
+        new SiteHostileArea("The Oracle Glade", "Teldrassil", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Shadowglen", "Teldrassil", new()
+        new SiteHostileArea("Shadowglen", "Teldrassil", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Ban'ethil Hollow", "Teldrassil", new()
+        new SiteHostileArea("Ban'ethil Hollow", "Teldrassil", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Fel Rock", "Teldrassil", new()
+        new SiteHostileArea("Fel Rock", "Teldrassil", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Gnarlpine Hold", "Teldrassil", new()
+        new SiteHostileArea("Gnarlpine Hold", "Teldrassil", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Lake Al'Ameth", "Teldrassil", new()
+        new SiteHostileArea("Lake Al'Ameth", "Teldrassil", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Pools of Arlithrien", "Teldrassil", new()
+        new SiteHostileArea("Pools of Arlithrien", "Teldrassil", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
@@ -1773,31 +1778,31 @@ public class SiteHostileArea
         
         #region Searing Gorge
 
-        new SiteHostileArea("The Slag Pit", "Searing Gorge", new()
+        new SiteHostileArea("The Slag Pit", "Searing Gorge", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("The Cauldron", "Searing Gorge", new()
+        new SiteHostileArea("The Cauldron", "Searing Gorge", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Firewatch Ridge", "Searing Gorge", new()
+        new SiteHostileArea("Firewatch Ridge", "Searing Gorge", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Grimesilt Digsite", "Searing Gorge", new()
+        new SiteHostileArea("Grimesilt Digsite", "Searing Gorge", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Dustfire Valley", "Searing Gorge", new()
+        new SiteHostileArea("Dustfire Valley", "Searing Gorge", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Stonewrought Pass", "Searing Gorge", new()
+        new SiteHostileArea("Stonewrought Pass", "Searing Gorge", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Blackchar Cave", "Searing Gorge", new()
+        new SiteHostileArea("Blackchar Cave", "Searing Gorge", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
@@ -1806,71 +1811,71 @@ public class SiteHostileArea
         
         #region Wetlands
         
-        new SiteHostileArea("Dun Modr", "Wetlands", new()
+        new SiteHostileArea("Dun Modr", "Wetlands", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Dun Algaz", "Wetlands", new()
+        new SiteHostileArea("Dun Algaz", "Wetlands", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Dragonmaw Gates", "Wetlands", new()
+        new SiteHostileArea("Dragonmaw Gates", "Wetlands", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Grim Batol", "Wetlands", new()
+        new SiteHostileArea("Grim Batol", "Wetlands", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Sundown Marsh", "Wetlands", new()
+        new SiteHostileArea("Sundown Marsh", "Wetlands", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Whelgar's Excavation Site", "Wetlands", new()
+        new SiteHostileArea("Whelgar's Excavation Site", "Wetlands", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Ironbeard's Tomb", "Wetlands", new()
+        new SiteHostileArea("Ironbeard's Tomb", "Wetlands", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Thelgen Rock", "Wetlands", new()
+        new SiteHostileArea("Thelgen Rock", "Wetlands", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Mosshide Fen", "Wetlands", new()
+        new SiteHostileArea("Mosshide Fen", "Wetlands", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("The Green Belt", "Wetlands", new()
+        new SiteHostileArea("The Green Belt", "Wetlands", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Saltspray Glen", "Wetlands", new()
+        new SiteHostileArea("Saltspray Glen", "Wetlands", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Sundown Marsh", "Wetlands", new()
+        new SiteHostileArea("Sundown Marsh", "Wetlands", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Bluegill Marsh", "Wetlands", new()
+        new SiteHostileArea("Bluegill Marsh", "Wetlands", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Black Channel Marsh", "Wetlands", new()
+        new SiteHostileArea("Black Channel Marsh", "Wetlands", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Angerfang Encampment", "Wetlands", new()
+        new SiteHostileArea("Angerfang Encampment", "Wetlands", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Raptor Ridge", "Wetlands", new()
+        new SiteHostileArea("Raptor Ridge", "Wetlands", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Direforge Hill", "Wetlands", new()
+        new SiteHostileArea("Direforge Hill", "Wetlands", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
@@ -1879,31 +1884,31 @@ public class SiteHostileArea
         
         #region Alterac Mountains
         
-        new SiteHostileArea("Ruins of Strahnbrad", "Alterac Mountains", new()
+        new SiteHostileArea("Ruins of Strahnbrad", "Alterac Mountains", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Headland", "Alterac Mountains", new()
+        new SiteHostileArea("Headland", "Alterac Mountains", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Slaughter Hollow", "Alterac Mountains", new()
+        new SiteHostileArea("Slaughter Hollow", "Alterac Mountains", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Dalaran", "Alterac Mountains", new()
+        new SiteHostileArea("Dalaran", "Alterac Mountains", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Lordamere Internment Camp", "Alterac Mountains", new()
+        new SiteHostileArea("Lordamere Internment Camp", "Alterac Mountains", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Crushridge Hold", "Alterac Mountains", new()
+        new SiteHostileArea("Crushridge Hold", "Alterac Mountains", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Growless Cave", "Alterac Mountains", new()
+        new SiteHostileArea("Growless Cave", "Alterac Mountains", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
@@ -1912,47 +1917,47 @@ public class SiteHostileArea
         
         #region Hillsbrad Foothills
         
-        new SiteHostileArea("Durnholde Keep", "Hillsbrad Foothills", new()
+        new SiteHostileArea("Durnholde Keep", "Hillsbrad Foothills", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Ravenholdt Manor", "Hillsbrad Foothills", new()
+        new SiteHostileArea("Ravenholdt Manor", "Hillsbrad Foothills", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Darrow Hill", "Hillsbrad Foothills", new()
+        new SiteHostileArea("Darrow Hill", "Hillsbrad Foothills", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Eastern Strand", "Hillsbrad Foothills", new()
+        new SiteHostileArea("Eastern Strand", "Hillsbrad Foothills", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Western Strand", "Hillsbrad Foothills", new()
+        new SiteHostileArea("Western Strand", "Hillsbrad Foothills", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Nethander Stead", "Hillsbrad Foothills", new()
+        new SiteHostileArea("Nethander Stead", "Hillsbrad Foothills", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Southpoint Tower", "Hillsbrad Foothills", new()
+        new SiteHostileArea("Southpoint Tower", "Hillsbrad Foothills", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Chillwind Point", "Hillsbrad Foothills", new()
+        new SiteHostileArea("Chillwind Point", "Hillsbrad Foothills", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Azurelode Mine", "Hillsbrad Foothills", new()
+        new SiteHostileArea("Azurelode Mine", "Hillsbrad Foothills", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Hillsbrad", "Hillsbrad Foothills", new()
+        new SiteHostileArea("Hillsbrad", "Hillsbrad Foothills", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Purgation Isle", "Hillsbrad Foothills", new()
+        new SiteHostileArea("Purgation Isle", "Hillsbrad Foothills", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
@@ -1961,51 +1966,112 @@ public class SiteHostileArea
         
         #region Arathi Highlands
         
-        new SiteHostileArea("Thandol Span", "Arathi Highlands", new()
+        new SiteHostileArea("Thandol Span", "Arathi Highlands", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Go'Shek Farm", "Arathi Highlands", new()
+        new SiteHostileArea("Go'Shek Farm", "Arathi Highlands", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Circle of West Binding", "Arathi Highlands", new()
+        new SiteHostileArea("Circle of West Binding", "Arathi Highlands", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Circle of Inner Binding", "Arathi Highlands", new()
+        new SiteHostileArea("Circle of Inner Binding", "Arathi Highlands", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Circle of East Binding", "Arathi Highlands", new()
+        new SiteHostileArea("Circle of East Binding", "Arathi Highlands", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Circle of Outer Binding", "Arathi Highlands", new()
+        new SiteHostileArea("Circle of Outer Binding", "Arathi Highlands", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Dabyrie's Farmstead", "Arathi Highlands", new()
+        new SiteHostileArea("Dabyrie's Farmstead", "Arathi Highlands", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Drywhisker Gorge", "Arathi Highlands", new()
+        new SiteHostileArea("Drywhisker Gorge", "Arathi Highlands", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Northfold Manor", "Arathi Highlands", new()
+        new SiteHostileArea("Northfold Manor", "Arathi Highlands", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Boulder'gor", "Arathi Highlands", new()
+        new SiteHostileArea("Boulder'gor", "Arathi Highlands", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Boulderfist Hall", "Arathi Highlands", new()
+        new SiteHostileArea("Boulderfist Hall", "Arathi Highlands", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Witherbark Village", "Arathi Highlands", new()
+        new SiteHostileArea("Witherbark Village", "Arathi Highlands", "HostileArea", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+
+        #endregion
+        
+        #region Duskwood
+        
+        new SiteHostileArea("Tranquil Gardens Cemetery", "Duskwood", "HostileArea", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Twilight Grove", "Duskwood", "EmeraldBough", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Raven Hill Cemetery", "Duskwood", "HostileArea", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Raven Hill", "Duskwood", "HostileArea", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Addle's Stead", "Duskwood", "HostileArea", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Yorgen's Farmstead", "Duskwood", "HostileArea", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Brightwood Grove", "Duskwood", "HostileArea", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Vul'Gol Ogre Mound", "Duskwood", "HostileArea", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Dawning Wood Catacombs", "Duskwood", "HostileArea", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Forlorn Rowe", "Duskwood", "HostileArea", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Manor Mistmantle", "Duskwood", "HostileArea", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("The Darkened Bank", "Duskwood", "HostileArea", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("The Rotting Orchard", "Duskwood", "HostileArea", new()
+        {
+            ("01-02", "Duskbat"),
+        }),
+        new SiteHostileArea("Roland's Doom", "Duskwood", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
@@ -2014,59 +2080,59 @@ public class SiteHostileArea
         
         #region Hinterlands
         
-        new SiteHostileArea("Jintha'Alor", "Hinterlands", new()
+        new SiteHostileArea("Jintha'Alor", "Hinterlands", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Skulk Rock", "Hinterlands", new()
+        new SiteHostileArea("Skulk Rock", "Hinterlands", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Seradane", "Hinterlands", new()
+        new SiteHostileArea("Seradane", "Hinterlands", "EmeraldBough", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Shandra'Alor", "Hinterlands", new()
+        new SiteHostileArea("Shandra'Alor", "Hinterlands", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Plaguemist Ravine", "Hinterlands", new()
+        new SiteHostileArea("Plaguemist Ravine", "Hinterlands", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Valorwind Lake", "Hinterlands", new()
+        new SiteHostileArea("Valorwind Lake", "Hinterlands", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("The Creeping Ruin", "Hinterlands", new()
+        new SiteHostileArea("The Creeping Ruin", "Hinterlands", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("The Overlook Cliffs", "Hinterlands", new()
+        new SiteHostileArea("The Overlook Cliffs", "Hinterlands", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Agol'watha", "Hinterlands", new()
+        new SiteHostileArea("Agol'watha", "Hinterlands", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Shaol'watha", "Hinterlands", new()
+        new SiteHostileArea("Shaol'watha", "Hinterlands", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Hiri'watha", "Hinterlands", new()
+        new SiteHostileArea("Hiri'watha", "Hinterlands", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Altar of Zul", "Hinterlands", new()
+        new SiteHostileArea("Altar of Zul", "Hinterlands", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Bogen's Ledge", "Hinterlands", new()
+        new SiteHostileArea("Bogen's Ledge", "Hinterlands", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Quel'Danil Lodge", "Hinterlands", new()
+        new SiteHostileArea("Quel'Danil Lodge", "Hinterlands", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
@@ -2075,47 +2141,47 @@ public class SiteHostileArea
         
         #region Redridge Mountains
         
-        new SiteHostileArea("Redridge Canyons", "Redridge Mountains", new()
+        new SiteHostileArea("Redridge Canyons", "Redridge Mountains", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Render's Valley", "Redridge Mountains", new()
+        new SiteHostileArea("Render's Valley", "Redridge Mountains", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Render's Camp", "Redridge Mountains", new()
+        new SiteHostileArea("Render's Camp", "Redridge Mountains", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Stonewatch", "Redridge Mountains", new()
+        new SiteHostileArea("Stonewatch", "Redridge Mountains", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Alther's Mill", "Redridge Mountains", new()
+        new SiteHostileArea("Alther's Mill", "Redridge Mountains", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Rethban Caverns", "Redridge Mountains", new()
+        new SiteHostileArea("Rethban Caverns", "Redridge Mountains", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Lakeridge Highway", "Redridge Mountains", new()
+        new SiteHostileArea("Lakeridge Highway", "Redridge Mountains", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Lake Everstill", "Redridge Mountains", new()
+        new SiteHostileArea("Lake Everstill", "Redridge Mountains", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Tower of Ilgalar", "Redridge Mountains", new()
+        new SiteHostileArea("Tower of Ilgalar", "Redridge Mountains", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Galardell Valley", "Redridge Mountains", new()
+        new SiteHostileArea("Galardell Valley", "Redridge Mountains", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Three Corners", "Redridge Mountains", new()
+        new SiteHostileArea("Three Corners", "Redridge Mountains", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
@@ -2124,55 +2190,55 @@ public class SiteHostileArea
         
         #region Felwood
         
-        new SiteHostileArea("Ruins of Constellas", "Felwood", new()
+        new SiteHostileArea("Ruins of Constellas", "Felwood", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Deadmaw Village", "Felwood", new()
+        new SiteHostileArea("Deadmaw Village", "Felwood", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Irontree Woods", "Felwood", new()
+        new SiteHostileArea("Irontree Woods", "Felwood", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Irontree Cavern", "Felwood", new()
+        new SiteHostileArea("Irontree Cavern", "Felwood", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Bloodvenom River", "Felwood", new()
+        new SiteHostileArea("Bloodvenom River", "Felwood", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Bloodvenom Falls", "Felwood", new()
+        new SiteHostileArea("Bloodvenom Falls", "Felwood", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Jaedenar", "Felwood", new()
+        new SiteHostileArea("Jaedenar", "Felwood", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Shrine of the Deceiver", "Felwood", new()
+        new SiteHostileArea("Shrine of the Deceiver", "Felwood", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Deadwood Village", "Felwood", new()
+        new SiteHostileArea("Deadwood Village", "Felwood", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Felpaw Village", "Felwood", new()
+        new SiteHostileArea("Felpaw Village", "Felwood", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Morlos'Aran", "Felwood", new()
+        new SiteHostileArea("Morlos'Aran", "Felwood", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Shatter Scar Vale", "Felwood", new()
+        new SiteHostileArea("Shatter Scar Vale", "Felwood", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Jadefire Run", "Felwood", new()
+        new SiteHostileArea("Jadefire Run", "Felwood", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
@@ -2181,7 +2247,7 @@ public class SiteHostileArea
         
         #region Shadow Hold
         
-        new SiteHostileArea("Upper Tunnels", "Shadow Hold", new()
+        new SiteHostileArea("Upper Tunnels", "Shadow Hold", "HostileArea", new()
         {
             ("52-53", "Jaedenar Enforcer"),
             ("52-53", "Jaedenar Warlock"),
@@ -2191,7 +2257,7 @@ public class SiteHostileArea
         {
             (02, "54", "Ulathek")
         }),
-        new SiteHostileArea("Council Camp", "Shadow Hold", new()
+        new SiteHostileArea("Council Camp", "Shadow Hold", "HostileArea", new()
         {
             ("53-54", "Jadefire Trickster"),
             ("53-54", "Jadefire Hellcaller"),
@@ -2201,7 +2267,7 @@ public class SiteHostileArea
         {
             (03, "55", "Prince Xavalis")
         }),
-        new SiteHostileArea("Altar Room", "Shadow Hold", new()
+        new SiteHostileArea("Altar Room", "Shadow Hold", "HostileArea", new()
         {
             ("53-54", "Jaedenar Warlock"),
             ("54-55", "Jaedenar Hunter"),
@@ -2211,7 +2277,7 @@ public class SiteHostileArea
         {
             (03, "56", "Rakaiah")
         }),
-        new SiteHostileArea("Inner Sanctum", "Shadow Hold", new()
+        new SiteHostileArea("Inner Sanctum", "Shadow Hold", "HostileArea", new()
         {
             ("53-54", "Jaedenar Enforcer"),
             ("53-54", "Jaedenar Warlock"),
@@ -2222,7 +2288,7 @@ public class SiteHostileArea
         {
             (03, "56", "Shadow Lord Fel'Dan")
         }),
-        new SiteHostileArea("Banehollow Shrine", "Shadow Hold", new()
+        new SiteHostileArea("Banehollow Shrine", "Shadow Hold", "HostileArea", new()
         {
             ("54-55", "Jaedenar Hunter"),
             ("55-56", "Jaedenar Legionnaire"),
@@ -2236,47 +2302,47 @@ public class SiteHostileArea
         
         #region Winterspring
 
-        new SiteHostileArea("Ruins of Kel'Theril", "Winterspring", new()
+        new SiteHostileArea("Ruins of Kel'Theril", "Winterspring", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Hidden Grove", "Winterspring", new()
+        new SiteHostileArea("Hidden Grove", "Winterspring", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Frostsaber Rock", "Winterspring", new()
+        new SiteHostileArea("Frostsaber Rock", "Winterspring", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Darkwhisper Gorge", "Winterspring", new()
+        new SiteHostileArea("Darkwhisper Gorge", "Winterspring", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Frostwhisper Gorge", "Winterspring", new()
+        new SiteHostileArea("Frostwhisper Gorge", "Winterspring", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Mazthoril", "Winterspring", new()
+        new SiteHostileArea("Mazthoril", "Winterspring", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Ice Thistle Hills", "Winterspring", new()
+        new SiteHostileArea("Ice Thistle Hills", "Winterspring", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Frostfire Hot Springs", "Winterspring", new()
+        new SiteHostileArea("Frostfire Hot Springs", "Winterspring", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Winterfall Village", "Winterspring", new()
+        new SiteHostileArea("Winterfall Village", "Winterspring", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Timbermaw Post", "Winterspring", new()
+        new SiteHostileArea("Timbermaw Post", "Winterspring", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Owl Wing Thicket", "Winterspring", new()
+        new SiteHostileArea("Owl Wing Thicket", "Winterspring", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
@@ -2285,23 +2351,23 @@ public class SiteHostileArea
         
         #region Deadwind Pass
 
-        new SiteHostileArea("The Vice", "Deadwind Pass", new()
+        new SiteHostileArea("The Vice", "Deadwind Pass", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Deadman's Crossing", "Deadwind Pass", new()
+        new SiteHostileArea("Deadman's Crossing", "Deadwind Pass", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Karazhan", "Deadwind Pass", new()
+        new SiteHostileArea("Karazhan", "Deadwind Pass", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Sleeping Gorge", "Deadwind Pass", new()
+        new SiteHostileArea("Sleeping Gorge", "Deadwind Pass", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Ariden's Camp", "Deadwind Pass", new()
+        new SiteHostileArea("Ariden's Camp", "Deadwind Pass", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
@@ -2310,27 +2376,27 @@ public class SiteHostileArea
         
         #region Blasted Lands
 
-        new SiteHostileArea("The Dark Portal", "Blasted Lands", new()
+        new SiteHostileArea("The Dark Portal", "Blasted Lands", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Serpent's Coil", "Blasted Lands", new()
+        new SiteHostileArea("Serpent's Coil", "Blasted Lands", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Dreadmaul Hold", "Blasted Lands", new()
+        new SiteHostileArea("Dreadmaul Hold", "Blasted Lands", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Dreadmaul Post", "Blasted Lands", new()
+        new SiteHostileArea("Dreadmaul Post", "Blasted Lands", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("The Tainted Scar", "Blasted Lands", new()
+        new SiteHostileArea("The Tainted Scar", "Blasted Lands", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("The Altar of Storms", "Blasted Lands", new()
+        new SiteHostileArea("The Altar of Storms", "Blasted Lands", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
@@ -2339,51 +2405,51 @@ public class SiteHostileArea
         
         #region Stonetalon Mountains
 
-        new SiteHostileArea("Talondeep Path", "Stonetalon Mountains", new()
+        new SiteHostileArea("Talondeep Path", "Stonetalon Mountains", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("The Talon Den", "Stonetalon Mountains", new()
+        new SiteHostileArea("The Talon Den", "Stonetalon Mountains", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Webwinder Path", "Stonetalon Mountains", new()
+        new SiteHostileArea("Webwinder Path", "Stonetalon Mountains", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("The Charred Vale", "Stonetalon Mountains", new()
+        new SiteHostileArea("The Charred Vale", "Stonetalon Mountains", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Windshear Mine", "Stonetalon Mountains", new()
+        new SiteHostileArea("Windshear Mine", "Stonetalon Mountains", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Windshear Crag", "Stonetalon Mountains", new()
+        new SiteHostileArea("Windshear Crag", "Stonetalon Mountains", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Sishir Canyon", "Stonetalon Mountains", new()
+        new SiteHostileArea("Sishir Canyon", "Stonetalon Mountains", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Mirkfallon Lake", "Stonetalon Mountains", new()
+        new SiteHostileArea("Mirkfallon Lake", "Stonetalon Mountains", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Camp Aparaje", "Stonetalon Mountains", new()
+        new SiteHostileArea("Camp Aparaje", "Stonetalon Mountains", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Grimtotem Post", "Stonetalon Mountains", new()
+        new SiteHostileArea("Grimtotem Post", "Stonetalon Mountains", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Cragpool Lake", "Stonetalon Mountains", new()
+        new SiteHostileArea("Cragpool Lake", "Stonetalon Mountains", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Boulderslide Ravine", "Stonetalon Mountains", new()
+        new SiteHostileArea("Boulderslide Ravine", "Stonetalon Mountains", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
@@ -2392,91 +2458,137 @@ public class SiteHostileArea
         
         #region The Barrens
 
-        new SiteHostileArea("Lushwater Oasis", "The Barrens", new()
+        new SiteHostileArea("Lushwater Oasis", "The Barrens", "HostileArea", new()
         {
-            ("01-02", "Duskbat"),
+            ("12-13", "Kolkar Wrangler"),
+            ("14-15", "Kolkar Stormer"),
+            ("15-16", "Oasis Snapjaw"),
+            ("20", "Gesharahan"),
         }),
-        new SiteHostileArea("The Stagnant Oasis", "The Barrens", new()
+        new SiteHostileArea("Raptor Grounds", "The Barrens", "HostileArea", new()
         {
-            ("01-02", "Duskbat"),
+            ("16-17", "Sunscale Scytheclaw"),
         }),
-        new SiteHostileArea("Field of Giants", "The Barrens", new()
+        new SiteHostileArea("The Stagnant Oasis", "The Barrens", "HostileArea", new()
         {
-            ("01-02", "Duskbat"),
+            ("14-15", "Kolkar Pack Runner"),
+            ("15-16", "Oasis Snapjaw"),
+            ("15-16", "Kolkar Bloodcharger"),
         }),
-        new SiteHostileArea("Thorn Hill", "The Barrens", new()
+        new SiteHostileArea("Field of Giants", "The Barrens", "HostileArea", new()
         {
-            ("01-02", "Duskbat"),
+            ("21-22", "Silithid Swarmer"),
+            ("24", "Silithid Harvester"),
         }),
-        new SiteHostileArea("Agama'gor", "The Barrens", new()
+        new SiteHostileArea("Thorn Hill", "The Barrens", "HostileArea", new()
         {
-            ("01-02", "Duskbat"),
+            ("11-12", "Razormane Hunter"),
+            ("12-13", "Razormane Geomancer"),
+            ("12-13", "Razormane Defender"),
+            ("13-14", "Razormane Mystic"),
+            ("15", "Kreenig Snarlsnout"),
         }),
-        new SiteHostileArea("Southfury River", "The Barrens", new()
+        new SiteHostileArea("Agama'gor", "The Barrens", "HostileArea", new()
         {
-            ("01-02", "Duskbat"),
+            ("16-17", "Bristleback Water Seeker"),
+            ("17-18", "Bristleback Hunter"),
+            ("18-19", "Bristleback Geomancer"),
+            ("22", "Swinegart Spearhide"),
         }),
-        new SiteHostileArea("Bramblescar", "The Barrens", new()
+        new SiteHostileArea("Southfury River", "The Barrens", "HostileArea", new()
         {
-            ("01-02", "Duskbat"),
+            ("11-12", "Dreadmaw Crocolisk"),
         }),
-        new SiteHostileArea("Bael Modan", "The Barrens", new()
+        new SiteHostileArea("Bramblescar", "The Barrens", "HostileArea", new()
         {
-            ("01-02", "Duskbat"),
+            ("16-17", "Bristleback Water Seeker"),
+            ("17-18", "Bristleback Hunter"),
+            ("18-19", "Bristleback Thornweaver"),
+            ("19-20", "Bristleback Geomancer"),
         }),
-        new SiteHostileArea("The Dry Hills", "The Barrens", new()
+        new SiteHostileArea("Bael Modan", "The Barrens", "HostileArea", new()
         {
-            ("01-02", "Duskbat"),
+            ("21-22", "Bael'dun Excavator"),
+            ("21-22", "Bael'dun Foreman"),
+            ("24", "Digger Flameforge"),
         }),
-        new SiteHostileArea("The Sludge Fen", "The Barrens", new()
+        new SiteHostileArea("The Dry Hills", "The Barrens", "HostileArea", new()
         {
-            ("01-02", "Duskbat"),
+            ("16-17", "Witchwing Slayer"),
+            ("17-18", "Witchwing Windcaller"),
+            ("20", "Serena Bloodfeather"),
         }),
-        new SiteHostileArea("Raptor Grounds", "The Barrens", new()
+        new SiteHostileArea("The Sludge Fen", "The Barrens", "HostileArea", new()
         {
-            ("01-02", "Duskbat"),
+            ("14-15", "Venture Co. Drudger"),
+            ("15-16", "Venture Co. Mercenary"),
+            ("18", "Supervisor Lugwizzle"),
+            ("19", "Engineer Whirleygig"),
         }),
-        new SiteHostileArea("Northwatch Hold", "The Barrens", new()
+        new SiteHostileArea("The Merchant Coast", "The Barrens", "HostileArea", new()
         {
-            ("01-02", "Duskbat"),
+            ("12-13", "Southsea Brigand"),
+            ("13-14", "Southsea Canonneer"),
         }),
-        new SiteHostileArea("The Forgotten Pools", "The Barrens", new()
+        new SiteHostileArea("Northwatch Hold", "The Barrens", "HostileArea", new()
         {
-            ("01-02", "Duskbat"),
+            ("15-16", "Theramore Marine"),
+            ("16-17", "Theramore Preserver"),
+            ("19", "Cannoneer Smythe"),
+            ("20", "Captain Fairmount"),
         }),
-        new SiteHostileArea("Boulder Lode Mine", "The Barrens", new()
+        new SiteHostileArea("The Forgotten Pools", "The Barrens", "HostileArea", new()
         {
-            ("01-02", "Duskbat"),
+            ("12-13", "Kolkar Wrangler"),
+            ("14-15", "Kolkar Stormer"),
+            ("16", "Barak Kodobane"),
         }),
-        new SiteHostileArea("The Forgotten Pools", "The Barrens", new()
+        new SiteHostileArea("Boulder Lode Mine", "The Barrens", "HostileArea", new()
         {
-            ("01-02", "Duskbat"),
+            ("16-17", "Venture Co. Enforcer"),
+            ("17-18", "Venture Co. Overseer"),
+            ("19", "Boss Copperplug"),
         }),
-        new SiteHostileArea("Fray Island", "The Barrens", new()
+        new SiteHostileArea("Gold Road", "The Barrens", "HostileArea", new()
         {
-            ("01-02", "Duskbat"),
+            ("12-13", "Fleeting Plainstrider"),
+            ("12-13", "Savannah Huntress"),
+            ("13-14", "Zhevra Runner"),
         }),
-        new SiteHostileArea("Gold Road", "The Barrens", new()
+        new SiteHostileArea("Southern Gold Road", "The Barrens", "HostileArea", new()
         {
-            ("01-02", "Duskbat"),
+            ("19-20", "Zhevra Courser"),
+            ("20-21", "Thunderhead"),
+            ("21-22", "Thunderhawk Cloudscraper"),
         }),
-        new SiteHostileArea("Southern Gold Road", "The Barrens", new()
+        new SiteHostileArea("Dreadmist Peak", "The Barrens", "HostileArea", new()
         {
-            ("01-02", "Duskbat"),
+            ("10-11", "Burning Blade Bruiser"),
+            ("11-12", "Burning Blade Acolyte"),
+            ("15", "Rathorian"),
         }),
-        new SiteHostileArea("Dreadmist Peak", "The Barrens", new()
+        new SiteHostileArea("Honor's Stand", "The Barrens", "HostileArea", new()
         {
-            ("01-02", "Duskbat"),
+            ("14-15", "Barrens Giraffe"),
+            ("14-15", "Sunscale Screecher"),
+            ("15-16", "Hacklefang Hyena"),
         }),
-        new SiteHostileArea("Honor's Stand", "The Barrens", new()
+        new SiteHostileArea("Blackthorn Ridge", "The Barrens", "HostileArea", new()
         {
-            ("01-02", "Duskbat"),
+            ("21-22", "Razormane Pathfinder"),
+            ("21-22", "Razormane Stalker"),
+            ("23-24", "Razormane Seer"),
+            ("23-25", "Razormane Warfrenzy"),
+            ("26", "Hagg Taurenbane"),
         }),
-        new SiteHostileArea("Blackthorn Ridge", "The Barrens", new()
+        new SiteHostileArea("Baeldun Keep", "The Barrens", "HostileArea", new()
         {
-            ("01-02", "Duskbat"),
+            ("24-25", "Bael'dun Soldier"),
+            ("24-25", "Bael'dun Rifleman"),
+            ("26", "Bael'dun Officer"),
+            ("30", "General Twinbraid"),
         }),
-        new SiteHostileArea("Baeldun Keep", "The Barrens", new()
+        new SiteHostileArea("Fray Island", "The Barrens", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
@@ -2485,43 +2597,43 @@ public class SiteHostileArea
         
         #region Mulgore
 
-        new SiteHostileArea("The Ravaged Caravan", "Mulgore", new()
+        new SiteHostileArea("The Ravaged Caravan", "Mulgore", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Palemane Rock", "Mulgore", new()
+        new SiteHostileArea("Palemane Rock", "Mulgore", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Baeldun Digsite", "Mulgore", new()
+        new SiteHostileArea("Baeldun Digsite", "Mulgore", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Brambleblade Ravine", "Mulgore", new()
+        new SiteHostileArea("Brambleblade Ravine", "Mulgore", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Red Cloud Mesa", "Mulgore", new()
+        new SiteHostileArea("Red Cloud Mesa", "Mulgore", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("The Golden Plains", "Mulgore", new()
+        new SiteHostileArea("The Golden Plains", "Mulgore", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Red Rocks", "Mulgore", new()
+        new SiteHostileArea("Red Rocks", "Mulgore", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Windfury Ridge", "Mulgore", new()
+        new SiteHostileArea("Windfury Ridge", "Mulgore", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("The Venture Co. Mine", "Mulgore", new()
+        new SiteHostileArea("The Venture Co. Mine", "Mulgore", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("The Rolling Plains", "Mulgore", new()
+        new SiteHostileArea("The Rolling Plains", "Mulgore", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
@@ -2530,59 +2642,59 @@ public class SiteHostileArea
         
         #region Silverpine Forest
         
-        new SiteHostileArea("Deep Elem Mine", "Silverpine Forest", new()
+        new SiteHostileArea("Deep Elem Mine", "Silverpine Forest", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("The Graymane Wall", "Silverpine Forest", new()
+        new SiteHostileArea("The Graymane Wall", "Silverpine Forest", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Fenris Keep", "Silverpine Forest", new()
+        new SiteHostileArea("Fenris Keep", "Silverpine Forest", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("The Dawning Isles", "Silverpine Forest", new()
+        new SiteHostileArea("The Dawning Isles", "Silverpine Forest", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("The Dead Field", "Silverpine Forest", new()
+        new SiteHostileArea("The Dead Field", "Silverpine Forest", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Pyrewood Village", "Silverpine Forest", new()
+        new SiteHostileArea("Pyrewood Village", "Silverpine Forest", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Ambermill", "Silverpine Forest", new()
+        new SiteHostileArea("Ambermill", "Silverpine Forest", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("The Shining Strand", "Silverpine Forest", new()
+        new SiteHostileArea("The Shining Strand", "Silverpine Forest", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("The Skittering Dark", "Silverpine Forest", new()
+        new SiteHostileArea("The Skittering Dark", "Silverpine Forest", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Olsen's Farthing", "Silverpine Forest", new()
+        new SiteHostileArea("Olsen's Farthing", "Silverpine Forest", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Ivar Patch", "Silverpine Forest", new()
+        new SiteHostileArea("Ivar Patch", "Silverpine Forest", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Malden's Orchard", "Silverpine Forest", new()
+        new SiteHostileArea("Malden's Orchard", "Silverpine Forest", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Beren's Peril", "Silverpine Forest", new()
+        new SiteHostileArea("Beren's Peril", "Silverpine Forest", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("North Tide's Run", "Silverpine Forest", new()
+        new SiteHostileArea("North Tide's Run", "Silverpine Forest", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
@@ -2591,23 +2703,23 @@ public class SiteHostileArea
         
         #region Loch Modan
 
-        new SiteHostileArea("Valley of Kings", "Loch Modan", new()
+        new SiteHostileArea("Valley of Kings", "Loch Modan", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Ironband's Excavation Site", "Loch Modan", new()
+        new SiteHostileArea("Ironband's Excavation Site", "Loch Modan", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Stonesplinter Valley", "Loch Modan", new()
+        new SiteHostileArea("Stonesplinter Valley", "Loch Modan", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Mo'grosh Stronghold", "Loch Modan", new()
+        new SiteHostileArea("Mo'grosh Stronghold", "Loch Modan", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Silver Stream Mine", "Loch Modan", new()
+        new SiteHostileArea("Silver Stream Mine", "Loch Modan", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
@@ -2616,132 +2728,164 @@ public class SiteHostileArea
         
         #region Durotar
 
-        new SiteHostileArea("Skull Rock", "Durotar", new()
+        new SiteHostileArea("Valley of Trials", "Durotar", "HostileArea", new()
         {
-            ("01-02", "Duskbat"),
+            ("01-02", "Mottled Boar"),
+            ("02-03", "Scorpid Worker"),
         }),
-        new SiteHostileArea("Scuttle Coast", "Durotar", new()
+        new SiteHostileArea("Skull Rock", "Durotar", "HostileArea", new()
         {
-            ("01-02", "Duskbat"),
+            ("09-10", "Burning Blade Fanatic"),
+            ("10-11", "Burning Blade Apprentice"),
+            ("14", "Gazz'uz"),
         }),
-        new SiteHostileArea("Tiragarde Keep", "Durotar", new()
+        new SiteHostileArea("Scuttle Coast", "Durotar", "HostileArea", new()
         {
-            ("01-02", "Duskbat"),
+            ("05-06", "Pygmy Surf Crawler"),
+            ("06-07", "Makrura Shellhide"),
+            ("06-07", "Makrura Clacker"),
         }),
-        new SiteHostileArea("Thunder Ridge", "Durotar", new()
+        new SiteHostileArea("Tiragarde Keep", "Durotar", "HostileArea", new()
         {
-            ("01-02", "Duskbat"),
+            ("05-06", "Kul'Tiras Sailor"),
+            ("06-07", "Kul'Tiras Marine"),
+            ("08", "Lieutenant Benedict"),
         }),
-        new SiteHostileArea("Bladefist Bay", "Durotar", new()
+        new SiteHostileArea("Thunder Ridge", "Durotar", "HostileArea", new()
         {
-            ("01-02", "Duskbat"),
+            ("09-10", "Thunder Lizard"),
+            ("10-11", "Lightning Hide"),
+            ("12", "Fizzle Darkstorm"),
         }),
-        new SiteHostileArea("Echo Isles", "Durotar", new()
+        new SiteHostileArea("Bladefist Bay", "Durotar", "HostileArea", new()
         {
-            ("01-02", "Duskbat"),
+            ("08-09", "Elder Mottled Boar"),
+            ("08-10", "Bloodtalon Scythemaw"),
+            ("09-10", "Venomtail Scorpid"),
         }),
-        new SiteHostileArea("Drygulch Ravine", "Durotar", new()
+        new SiteHostileArea("Darkspear Strand", "Durotar", "HostileArea", new()
         {
-            ("01-02", "Duskbat"),
+            ("05-06", "Pygmy Surf Crawler"),
+            ("05-06", "Clattering Scorpid"),
+            ("06-07", "Makrura Clacker"),
         }),
-        new SiteHostileArea("Burning Blade Coven", "Durotar", new()
+        new SiteHostileArea("Echo Isles", "Durotar", "HostileArea", new()
         {
-            ("01-02", "Duskbat"),
+            ("08-09", "Bloodtalon Taillasher"),
+            ("08-09", "Voodoo Troll"),
+            ("08-09", "Hexed Troll"),
+            ("10", "Zalazane"),
         }),
-        new SiteHostileArea("Kolkar Crag", "Durotar", new()
+        new SiteHostileArea("Burning Blade Coven", "Durotar", "HostileArea", new()
         {
-            ("01-02", "Duskbat"),
+            ("03-04", "Vile Familiar"),
+            ("04-05", "Burning Blade Novice"),
         }),
-        new SiteHostileArea("Razormane Grounds", "Durotar", new()
+        new SiteHostileArea("Kolkar Crag", "Durotar", "HostileArea", new()
         {
-            ("01-02", "Duskbat"),
+            ("06-07", "Kolkar Drudge"),
+            ("07-08", "Kolkar Outrunner"),
+            ("09", "Warlord Kolkanis"),
         }),
-        new SiteHostileArea("Razorwind Canyon", "Durotar", new()
+        new SiteHostileArea("Razormane Grounds", "Durotar", "HostileArea", new()
         {
-            ("01-02", "Duskbat"),
+            ("07-08", "Razormane Scout"),
+            ("08-09", "Razormane Dustrunner"),
+            ("09-10", "Razormane Battleguard"),
+            ("09", "Geolord Mottle"),
+        }),
+        new SiteHostileArea("Razorwind Canyon", "Durotar", "HostileArea", new()
+        {
+            ("07-08", "Dustwind Pillager"),
+            ("07-08", "Dustwind Harpy"),
+        }),
+        new SiteHostileArea("Drygulch Ravine", "Durotar", "HostileArea", new()
+        {
+            ("09", "Dustwind Savage"),
+            ("10-11", "Dustwind Storm Witch"),
         }),
 
         #endregion
         
         #region Ashenvale
         
-        new SiteHostileArea("The Howling Vale", "Ashenvale", new()
+        new SiteHostileArea("The Howling Vale", "Ashenvale", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Demon Fall Canyon", "Ashenvale", new()
+        new SiteHostileArea("Demon Fall Canyon", "Ashenvale", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Satyrnaar", "Ashenvale", new()
+        new SiteHostileArea("Satyrnaar", "Ashenvale", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Felfire Hill", "Ashenvale", new()
+        new SiteHostileArea("Felfire Hill", "Ashenvale", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Iris Lake", "Ashenvale", new()
+        new SiteHostileArea("Iris Lake", "Ashenvale", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Fallen Sky Lake", "Ashenvale", new()
+        new SiteHostileArea("Fallen Sky Lake", "Ashenvale", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Bloodtooth Camp", "Ashenvale", new()
+        new SiteHostileArea("Bloodtooth Camp", "Ashenvale", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Ruins of Stardust", "Ashenvale", new()
+        new SiteHostileArea("Ruins of Stardust", "Ashenvale", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Fire Scar Shrine", "Ashenvale", new()
+        new SiteHostileArea("Fire Scar Shrine", "Ashenvale", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Xavian", "Ashenvale", new()
+        new SiteHostileArea("Xavian", "Ashenvale", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("The Zoram Strand", "Ashenvale", new()
+        new SiteHostileArea("The Zoram Strand", "Ashenvale", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Lake Falathim", "Ashenvale", new()
+        new SiteHostileArea("Lake Falathim", "Ashenvale", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("The Shrine of Aessina", "Ashenvale", new()
+        new SiteHostileArea("The Shrine of Aessina", "Ashenvale", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Thistlefur Village", "Ashenvale", new()
+        new SiteHostileArea("Thistlefur Village", "Ashenvale", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Nightsong Woods", "Ashenvale", new()
+        new SiteHostileArea("Nightsong Woods", "Ashenvale", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Ruins of Ordil'Aran", "Ashenvale", new()
+        new SiteHostileArea("Ruins of Ordil'Aran", "Ashenvale", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Mystral Lake", "Ashenvale", new()
+        new SiteHostileArea("Mystral Lake", "Ashenvale", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("The Dor'Danil Barrow Den", "Ashenvale", new()
+        new SiteHostileArea("The Dor'Danil Barrow Den", "Ashenvale", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Bough Shadow", "Ashenvale", new()
+        new SiteHostileArea("Bough Shadow", "Ashenvale", "EmeraldBough", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Bathran's Haunt", "Ashenvale", new()
+        new SiteHostileArea("Bathran's Haunt", "Ashenvale", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
@@ -2750,35 +2894,35 @@ public class SiteHostileArea
         
         #region Burning Steppes
 
-        new SiteHostileArea("The Pillar of Ash", "Burning Steppes", new()
+        new SiteHostileArea("The Pillar of Ash", "Burning Steppes", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Slither Rock", "Burning Steppes", new()
+        new SiteHostileArea("Slither Rock", "Burning Steppes", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Terror Wing Path", "Burning Steppes", new()
+        new SiteHostileArea("Terror Wing Path", "Burning Steppes", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Dreadmaul Rock", "Burning Steppes", new()
+        new SiteHostileArea("Dreadmaul Rock", "Burning Steppes", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Draco'dar", "Burning Steppes", new()
+        new SiteHostileArea("Draco'dar", "Burning Steppes", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Blackrock Stronghold", "Burning Steppes", new()
+        new SiteHostileArea("Blackrock Stronghold", "Burning Steppes", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Ruins of Thaurissan", "Burning Steppes", new()
+        new SiteHostileArea("Ruins of Thaurissan", "Burning Steppes", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Blackrock Pass", "Burning Steppes", new()
+        new SiteHostileArea("Blackrock Pass", "Burning Steppes", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
@@ -2787,63 +2931,63 @@ public class SiteHostileArea
         
         #region Desolace
 
-        new SiteHostileArea("Bolgan's Hole", "Desolace", new()
+        new SiteHostileArea("Bolgan's Hole", "Desolace", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Gelkis Village", "Desolace", new()
+        new SiteHostileArea("Gelkis Village", "Desolace", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Ethel Rethor", "Desolace", new()
+        new SiteHostileArea("Ethel Rethor", "Desolace", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Sargeron", "Desolace", new()
+        new SiteHostileArea("Sargeron", "Desolace", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Valley of Bones", "Desolace", new()
+        new SiteHostileArea("Valley of Bones", "Desolace", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Valley of Spears", "Desolace", new()
+        new SiteHostileArea("Valley of Spears", "Desolace", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Sar'theris Strand", "Desolace", new()
+        new SiteHostileArea("Sar'theris Strand", "Desolace", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Magram Village", "Desolace", new()
+        new SiteHostileArea("Magram Village", "Desolace", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Thunder Axe Fortress", "Desolace", new()
+        new SiteHostileArea("Thunder Axe Fortress", "Desolace", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Kodo Graveyard", "Desolace", new()
+        new SiteHostileArea("Kodo Graveyard", "Desolace", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Shadowbreak Ravine", "Desolace", new()
+        new SiteHostileArea("Shadowbreak Ravine", "Desolace", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Ranazjar Isle", "Desolace", new()
+        new SiteHostileArea("Ranazjar Isle", "Desolace", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Kolkar Village", "Desolace", new()
+        new SiteHostileArea("Kolkar Village", "Desolace", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Mannoroc Coven", "Desolace", new()
+        new SiteHostileArea("Mannoroc Coven", "Desolace", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Tethris Aran", "Desolace", new()
+        new SiteHostileArea("Tethris Aran", "Desolace", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
@@ -2852,39 +2996,39 @@ public class SiteHostileArea
         
         #region Elwynn Froest
 
-        new SiteHostileArea("Jasperlode Mine", "Elwynn Forest", new()
+        new SiteHostileArea("Jasperlode Mine", "Elwynn Forest", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Forest's Edge", "Elwynn Forest", new()
+        new SiteHostileArea("Forest's Edge", "Elwynn Forest", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Echo Ridge Mine", "Elwynn Forest", new()
+        new SiteHostileArea("Echo Ridge Mine", "Elwynn Forest", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Mirror Lake", "Elwynn Forest", new()
+        new SiteHostileArea("Mirror Lake", "Elwynn Forest", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Mirror Lake Orchard", "Elwynn Forest", new()
+        new SiteHostileArea("Mirror Lake Orchard", "Elwynn Forest", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Hero's Vigil", "Elwynn Forest", new()
+        new SiteHostileArea("Hero's Vigil", "Elwynn Forest", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Northshire Vineyards", "Elwynn Forest", new()
+        new SiteHostileArea("Northshire Vineyards", "Elwynn Forest", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Stonefield Farm", "Elwynn Forest", new()
+        new SiteHostileArea("Stonefield Farm", "Elwynn Forest", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Fargodeep Mine", "Elwynn Forest", new()
+        new SiteHostileArea("Fargodeep Mine", "Elwynn Forest", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
@@ -2893,7 +3037,7 @@ public class SiteHostileArea
         
         #region Uldaman
 
-        new SiteHostileArea("Hall of the Keepers", "Uldaman", new()
+        new SiteHostileArea("Hall of the Keepers", "Uldaman", "HostileArea", new()
         {
             ("36-37", "Stonevault Ambusher"),
             ("37-38", "Stonevault Pillager"),
@@ -2903,12 +3047,12 @@ public class SiteHostileArea
         {
             (3, "40", "Revelosh"),
         }),
-        new SiteHostileArea("Map Chamber", "Uldaman", new() { },
+        new SiteHostileArea("Map Chamber", "Uldaman", "HostileArea", new() { },
         new()
         {
             (0, "40", "Ironaya"),
         }),
-        new SiteHostileArea("Temple Hall", "Uldaman", new()
+        new SiteHostileArea("Temple Hall", "Uldaman", "HostileArea", new()
         {
             ("44", "Stone Steward"),
             ("41-43", "Venomlash Scorpid"),
@@ -2918,7 +3062,7 @@ public class SiteHostileArea
         {
             (3, "44", "Ancient Stone Keeper"),
         }),
-        new SiteHostileArea("Dig Three", "Uldaman", new()
+        new SiteHostileArea("Dig Three", "Uldaman", "HostileArea", new()
         {
             ("42-44", "Shadowforge Darkcaster"),
             ("42-44", "Shadowforge Sharpshooter")
@@ -2927,7 +3071,7 @@ public class SiteHostileArea
         {
             (3, "45", "Galgann Firehammer"),
         }),
-        new SiteHostileArea("The Stone Vault", "Uldaman", new()
+        new SiteHostileArea("The Stone Vault", "Uldaman", "HostileArea", new()
         {
             ("42-44", "Jadespine Basilisk"),
             ("41-43", "Stonevault Geomancer"),
@@ -2937,7 +3081,7 @@ public class SiteHostileArea
         {
             (3, "45", "Grimlok"),
         }),
-        new SiteHostileArea("Khaz'Goroth's Seat", "Uldaman", new()
+        new SiteHostileArea("Khaz'Goroth's Seat", "Uldaman", "HostileArea", new()
         {
             ("44-45", "Vault Warder"),
             ("45", "Stone Steward")
@@ -2951,7 +3095,7 @@ public class SiteHostileArea
         
         #region Shadowfang Keep
 
-        new SiteHostileArea("Jail", "Shadowfang Keep", new()
+        new SiteHostileArea("Jail", "Shadowfang Keep", "HostileArea", new()
         {
             ("36-37", "Stonevault Ambusher"),
         },
@@ -2959,7 +3103,7 @@ public class SiteHostileArea
         {
             (3, "40", "Revelosh"),
         }),
-        new SiteHostileArea("The Courtyard", "Shadowfang Keep", new()
+        new SiteHostileArea("The Courtyard", "Shadowfang Keep", "HostileArea", new()
         {
             ("36-37", "Stonevault Ambusher"),
         },
@@ -2967,7 +3111,7 @@ public class SiteHostileArea
         {
             (3, "40", "Revelosh"),
         }),
-        new SiteHostileArea("Kitchen", "Shadowfang Keep", new()
+        new SiteHostileArea("Kitchen", "Shadowfang Keep", "HostileArea", new()
         {
             ("36-37", "Stonevault Ambusher"),
         },
@@ -2975,7 +3119,7 @@ public class SiteHostileArea
         {
             (3, "40", "Revelosh"),
         }),
-        new SiteHostileArea("Dining Hall", "Shadowfang Keep", new()
+        new SiteHostileArea("Dining Hall", "Shadowfang Keep", "HostileArea", new()
         {
             ("36-37", "Stonevault Ambusher"),
         },
@@ -2983,7 +3127,7 @@ public class SiteHostileArea
         {
             (3, "40", "Revelosh"),
         }),
-        new SiteHostileArea("Perimeter Wall", "Shadowfang Keep", new()
+        new SiteHostileArea("Perimeter Wall", "Shadowfang Keep", "HostileArea", new()
         {
             ("36-37", "Stonevault Ambusher"),
         },
@@ -2991,7 +3135,7 @@ public class SiteHostileArea
         {
             (3, "40", "Revelosh"),
         }),
-        new SiteHostileArea("The Laboratory", "Shadowfang Keep", new()
+        new SiteHostileArea("The Laboratory", "Shadowfang Keep", "HostileArea", new()
         {
             ("36-37", "Stonevault Ambusher"),
         },
@@ -2999,7 +3143,7 @@ public class SiteHostileArea
         {
             (3, "40", "Revelosh"),
         }),
-        new SiteHostileArea("Tower Summit", "Shadowfang Keep", new()
+        new SiteHostileArea("Tower Summit", "Shadowfang Keep", "HostileArea", new()
         {
             ("36-37", "Stonevault Ambusher"),
         },
@@ -3007,7 +3151,7 @@ public class SiteHostileArea
         {
             (3, "40", "Revelosh"),
         }),
-        new SiteHostileArea("Arugal Chamber", "Shadowfang Keep", new()
+        new SiteHostileArea("Arugal Chamber", "Shadowfang Keep", "HostileArea", new()
         {
             ("36-37", "Stonevault Ambusher"),
         },
@@ -3020,47 +3164,47 @@ public class SiteHostileArea
 
         #region Badlands
         
-        new SiteHostileArea("Camp Kosh", "Badlands", new()
+        new SiteHostileArea("Camp Kosh", "Badlands", "HostileArea", new()
         {
             ("35-37", "Dustbelcher Warrior"),
             ("36-37", "Dustbelcher Mystic"),
         }),
-        new SiteHostileArea("Camp Boff", "Badlands", new()
+        new SiteHostileArea("Camp Boff", "Badlands", "HostileArea", new()
         {
             ("38-39", "Dustbelcher Ogre"),
             ("39-40", "Dustbelcher Brute"),
         }),
-        new SiteHostileArea("Valley of Fangs", "Badlands", new()
+        new SiteHostileArea("Valley of Fangs", "Badlands", "HostileArea", new()
         {
             ("35-36", "Crag Coyote"),
             ("38-39", "Ridge Huntress"),
         }),
-        new SiteHostileArea("The Dustbowl", "Badlands", new()
+        new SiteHostileArea("The Dustbowl", "Badlands", "HostileArea", new()
         {
             ("38-39", "Ridge Huntress"),
             ("39-40", "Elder Crag Coyote"),
             ("39-40", "Giant Buzzard"),
             ("40-41", "Ridge Stalker Patriarch"),
         }),
-        new SiteHostileArea("Dustwing Gulch", "Badlands", new()
+        new SiteHostileArea("Dustwing Gulch", "Badlands", "HostileArea", new()
         {
             ("37-38", "Ridge Stalker"),
             ("40-42", "Rabid Crag Coyote"),
         }),
-        new SiteHostileArea("Apocryphan's Rest", "Badlands", new()
+        new SiteHostileArea("Apocryphan's Rest", "Badlands", "HostileArea", new()
         {
             ("39-41", "Giant Buzzard"),
             ("40-41", "Ridge Stalker Patriarch"),
             ("45", "Anathemus"),
         }),
-        new SiteHostileArea("Mirage Flats", "Badlands", new()
+        new SiteHostileArea("Mirage Flats", "Badlands", "HostileArea", new()
         {
             ("38-39", "Ridge Huntress"),
             ("39-40", "Elder Crag Coyote"),
             ("39-40", "Giant Buzzard"),
             ("40-41", "Ridge Stalker Patriarch"),
         }),
-        new SiteHostileArea("Dustbelch Grotto", "Badlands", new()
+        new SiteHostileArea("Dustbelch Grotto", "Badlands", "HostileArea", new()
         {
             ("41-42", "Dustbelcher Wyrmhunter"),
             ("41-42", "Dustbelcher Shaman"),
@@ -3068,34 +3212,34 @@ public class SiteHostileArea
             ("43-44", "Dustbelcher Ogre Mage"),
             ("44-45", "Dustbelcher Lord"),
         }),
-        new SiteHostileArea("The Maker's Terrace", "Badlands", new()
+        new SiteHostileArea("The Maker's Terrace", "Badlands", "HostileArea", new()
         {
             ("35-36", "Shadowforge Surveyor"),
             ("35-36", "Shadowforge Digger"),
             ("36-37", "Shadowforge Ruffian"),
             ("42", "Ambassador Infernus"),
         }),
-        new SiteHostileArea("Hammertoe's Digsite", "Badlands", new()
+        new SiteHostileArea("Hammertoe's Digsite", "Badlands", "HostileArea", new()
         {
             ("35-36", "Shadowforge Tunneler"),
             ("36-37", "Shadowforge Darkweaver"),
             ("39-40", "Stone Golem"),
             ("42", "Ambassador Infernus"),
         }),
-        new SiteHostileArea("Angor Fortress", "Badlands", new()
+        new SiteHostileArea("Angor Fortress", "Badlands", "HostileArea", new()
         {
             ("38-39", "Shadowforge Warrior"),
             ("38-39", "Shadowforge Chanter"),
             ("39-40", "Stone Golem"),
             ("42", "Ambassador Infernus"),
         }),
-        new SiteHostileArea("Agmond's End", "Badlands", new()
+        new SiteHostileArea("Agmond's End", "Badlands", "HostileArea", new()
         {
             ("39-40", "Stonevault Bonesnapper"),
             ("40-41", "Stonevault Shaman"),
             ("42", "Murdaloc"),
         }),
-        new SiteHostileArea("Lethlor Ravine", "Badlands", new()
+        new SiteHostileArea("Lethlor Ravine", "Badlands", "HostileArea", new()
         {
             ("41-43", "Scalding Whelp"),
             ("43-46", "Scorched Guardian"),
@@ -3105,65 +3249,65 @@ public class SiteHostileArea
 
         #region Dun Morogh
 
-        new SiteHostileArea("Coldridge Valley", "Dun Morogh", new()
+        new SiteHostileArea("Coldridge Valley", "Dun Morogh", "HostileArea", new()
         {
             ("01-02", "Rockjaw Trogg"),
             ("01-02", "Ragged Young Wolf"),
             ("01-03", "Small Crag Boar"),
             ("02-03", "Burly Rockjaw Trogg"),
         }),
-        new SiteHostileArea("Coldridge Pass", "Dun Morogh", new()
+        new SiteHostileArea("Coldridge Pass", "Dun Morogh", "HostileArea", new()
         {
             ("02-03", "Burly Rockjaw Trogg"),
             ("03-04", "Rockjaw Raider"),
         }),
-        new SiteHostileArea("The Grizzled Den", "Dun Morogh", new()
+        new SiteHostileArea("The Grizzled Den", "Dun Morogh", "HostileArea", new()
         {
             ("05-06", "Young Wendigo"),
             ("06-07", "Wendigo"),
         }),
-        new SiteHostileArea("Chill Breeze Valley", "Dun Morogh", new()
+        new SiteHostileArea("Chill Breeze Valley", "Dun Morogh", "HostileArea", new()
         {
             ("06-07", "Large Crag Boar"),
             ("06-07", "Wendigo"),
             ("11", "Old Icebeard"),
         }),
-        new SiteHostileArea("Ice Flow Lake", "Dun Morogh", new()
+        new SiteHostileArea("Ice Flow Lake", "Dun Morogh", "HostileArea", new()
         {
             ("07-08", "Winter Wolf"),
             ("10", "Timber"),
         }),
-        new SiteHostileArea("Frostmane Hold", "Dun Morogh", new()
+        new SiteHostileArea("Frostmane Hold", "Dun Morogh", "HostileArea", new()
         {
             ("08-09", "Frostmane Headhunter"),
             ("08-09", "Frostmane Snowstrider"),
             ("08-10", "Frostmane Shadowcaster"),
             ("09-10", "Frostmane Hideskinner"),
         }),
-        new SiteHostileArea("Shimmer Ridge", "Dun Morogh", new()
+        new SiteHostileArea("Shimmer Ridge", "Dun Morogh", "HostileArea", new()
         {
             ("08-09", "Frostmane Headhunter"),
             ("08-09", "Frostmane Snowstrider"),
             ("08-09", "Frostmane Seer"),
         }),
-        new SiteHostileArea("The Tundrid Hills", "Dun Morogh", new()
+        new SiteHostileArea("The Tundrid Hills", "Dun Morogh", "HostileArea", new()
         {
             ("06-07", "Elder Crag Boar"),
             ("07-08", "Snow Leopard"),
             ("07-08", "Ice Claw Bear"),
         }),
-        new SiteHostileArea("Gol'Bolar Quarry", "Dun Morogh", new()
+        new SiteHostileArea("Gol'Bolar Quarry", "Dun Morogh", "HostileArea", new()
         {
             ("08-09", "Rockjaw Skullthumper"),
             ("08-10", "Rockjaw Bonesnapper"),
         }),
-        new SiteHostileArea("Helm's Bed Lake", "Dun Morogh", new()
+        new SiteHostileArea("Helm's Bed Lake", "Dun Morogh", "HostileArea", new()
         {
             ("09-10", "Scarred Crag Boar"),
             ("09-11", "Rockjaw Bonesnapper"),
             ("11-12", "Rockjaw Backbreaker"),
         }),
-        new SiteHostileArea("Misty Pine Refuge", "Dun Morogh", new()
+        new SiteHostileArea("Misty Pine Refuge", "Dun Morogh", "HostileArea", new()
         {
 
         }),
@@ -3172,51 +3316,51 @@ public class SiteHostileArea
         
         #region Western Plaguelands
 
-        new SiteHostileArea("Uther's Tomb", "Western Plaguelands", new()
+        new SiteHostileArea("Uther's Tomb", "Western Plaguelands", "HostileArea", new()
         {
             ("53-54", "Scourge Warder"),
         }),
-        new SiteHostileArea("Dalson's Tears", "Western Plaguelands", new()
+        new SiteHostileArea("Dalson's Tears", "Western Plaguelands", "HostileArea", new()
         {
             ("53-54", "Scourge Warder"),
         }),
-        new SiteHostileArea("Ruins of Andorhal", "Western Plaguelands", new()
+        new SiteHostileArea("Ruins of Andorhal", "Western Plaguelands", "HostileArea", new()
         {
             ("53-54", "Scourge Warder"),
         }),
-        new SiteHostileArea("Caer Darrow", "Western Plaguelands", new()
+        new SiteHostileArea("Caer Darrow", "Western Plaguelands", "HostileArea", new()
         {
             ("53-54", "Scourge Warder"),
         }),
-        new SiteHostileArea("Felstone Field", "Western Plaguelands", new()
+        new SiteHostileArea("Felstone Field", "Western Plaguelands", "HostileArea", new()
         {
             ("53-54", "Scourge Warder"),
         }),
-        new SiteHostileArea("The Writhing Haunt", "Western Plaguelands", new()
+        new SiteHostileArea("The Writhing Haunt", "Western Plaguelands", "HostileArea", new()
         {
             ("53-54", "Scourge Warder"),
         }),
-        new SiteHostileArea("Northridge Lumber Camp", "Western Plaguelands", new()
+        new SiteHostileArea("Northridge Lumber Camp", "Western Plaguelands", "HostileArea", new()
         {
             ("53-54", "Scourge Warder"),
         }),
-        new SiteHostileArea("Gahrron's Withering", "Western Plaguelands", new()
+        new SiteHostileArea("Gahrron's Withering", "Western Plaguelands", "HostileArea", new()
         {
             ("53-54", "Scourge Warder"),
         }),
-        new SiteHostileArea("The Weeping Cave", "Western Plaguelands", new()
+        new SiteHostileArea("The Weeping Cave", "Western Plaguelands", "HostileArea", new()
         {
             ("53-54", "Scourge Warder"),
         }),
-        new SiteHostileArea("Central Town", "Hearthglen", new()
+        new SiteHostileArea("Central Town", "Hearthglen", "HostileArea", new()
         {
             ("53-54", "Scourge Warder"),
         }),
-        new SiteHostileArea("Hearthglen Mine", "Hearthglen", new()
+        new SiteHostileArea("Hearthglen Mine", "Hearthglen", "HostileArea", new()
         {
             ("53-54", "Scourge Warder"),
         }),
-        new SiteHostileArea("Mardenholde Keep", "Hearthglen", new()
+        new SiteHostileArea("Mardenholde Keep", "Hearthglen", "HostileArea", new()
         {
             ("53-54", "Scourge Warder"),
         }),
@@ -3225,29 +3369,29 @@ public class SiteHostileArea
 
         #region Eastern Plaguelands
 
-        new SiteHostileArea("Corin's Crossing", "Eastern Plaguelands", new()
+        new SiteHostileArea("Corin's Crossing", "Eastern Plaguelands", "HostileArea", new()
         {
             ("53-54", "Scourge Warder"),
             ("53-54", "Dark Summoner"),
         }),
-        new SiteHostileArea("Blackwood Lake", "Eastern Plaguelands", new()
+        new SiteHostileArea("Blackwood Lake", "Eastern Plaguelands", "HostileArea", new()
         {
             ("53-54", "Plaguehound"),
             ("53-54", "Noxious Plaguebat"),
         }),
-        new SiteHostileArea("Lake Mereldar", "Eastern Plaguelands", new()
+        new SiteHostileArea("Lake Mereldar", "Eastern Plaguelands", "HostileArea", new()
         {
             ("53-54", "Blighted Surge"),
             ("53-54", "Plague Ravager"),
         }),
-        new SiteHostileArea("Pestilent Scar", "Eastern Plaguelands",  new()
+        new SiteHostileArea("Pestilent Scar", "Eastern Plaguelands", "HostileArea", new()
         {
             ("53-54", "Living Decay"),
             ("53-54", "Plaguehound"),
             ("53-54", "Noxious Plaguebat"),
             ("53-54", "Rotting Sludge"),
         }),
-        new SiteHostileArea("Plaguewood", "Eastern Plaguelands", new()
+        new SiteHostileArea("Plaguewood", "Eastern Plaguelands", "HostileArea", new()
         {
             ("53-54", "Scourge Warder"),
             ("53-54", "Putrid Gargoyle"),
@@ -3256,7 +3400,7 @@ public class SiteHostileArea
             ("53-54", "Cannibal Ghoul"),
             ("53-54", "Death Cultist"),
         }),
-        new SiteHostileArea("Terrordale", "Eastern Plaguelands", new()
+        new SiteHostileArea("Terrordale", "Eastern Plaguelands", "HostileArea", new()
         {
             ("52-53", "Cursed Mage"),
             ("52-53", "Cannibal Ghoul"),
@@ -3264,75 +3408,75 @@ public class SiteHostileArea
             ("52-53", "Crypt Fiend"),
             ("52-53", "Torn Screamer"),
         }),
-        new SiteHostileArea("Terrorweb Tunnel", "Eastern Plaguelands", new()
+        new SiteHostileArea("Terrorweb Tunnel", "Eastern Plaguelands", "HostileArea", new()
         {
             ("55-56", "Crypt Fiend"),
             ("55-56", "Crypt Walker"),
         }),
-        new SiteHostileArea("Darrowshire", "Eastern Plaguelands", new()
+        new SiteHostileArea("Darrowshire", "Eastern Plaguelands", "HostileArea", new()
         {
             ("52-53", "Plaguehound Runt"),
             ("52-53", "Scourge Soldier"),
         }),
-        new SiteHostileArea("Thondroril River", "Eastern Plaguelands", new()
+        new SiteHostileArea("Thondroril River", "Eastern Plaguelands", "HostileArea", new()
         {
             ("52-53", "Plaguehound Runt"),
             ("52-53", "Plaguebat"),
         }),
-        new SiteHostileArea("The Marris Stead", "Eastern Plaguelands", new()
+        new SiteHostileArea("The Marris Stead", "Eastern Plaguelands", "HostileArea", new()
         {
             ("52-53", "Putrid Gargoyle"),
             ("52-53", "Plaguebat"),
             ("52-53", "Plaguehound Runt"),
         }),
-        new SiteHostileArea("Crown Guard Tower", "Eastern Plaguelands", new()
+        new SiteHostileArea("Crown Guard Tower", "Eastern Plaguelands", "HostileArea", new()
         {
             ("52-53", "Plaguebat"),
         }),
-        new SiteHostileArea("Eastwall Tower", "Eastern Plaguelands", new()
+        new SiteHostileArea("Eastwall Tower", "Eastern Plaguelands", "HostileArea", new()
         {
             ("52-53", "Plaguebat"),
         }),
-        new SiteHostileArea("Eastwall Gate", "Eastern Plaguelands", new()
+        new SiteHostileArea("Eastwall Gate", "Eastern Plaguelands", "HostileArea", new()
         {
             ("52-53", "Plaguebat"),
         }),
-        new SiteHostileArea("Northdale", "Eastern Plaguelands", new()
+        new SiteHostileArea("Northdale", "Eastern Plaguelands", "HostileArea", new()
         {
             ("52-53", "Plaguebat"),
         }),
-        new SiteHostileArea("The Infectis Scar", "Eastern Plaguelands", new()
+        new SiteHostileArea("The Infectis Scar", "Eastern Plaguelands", "HostileArea", new()
         {
             ("52-53", "Plaguebat"),
         }),
-        new SiteHostileArea("Quel'Lithien Lodge", "Eastern Plaguelands", new()
+        new SiteHostileArea("Quel'Lithien Lodge", "Eastern Plaguelands", "HostileArea", new()
         {
             ("52-53", "Plaguebat"),
         }),
-        new SiteHostileArea("Plaguewood Tower", "Eastern Plaguelands", new()
+        new SiteHostileArea("Plaguewood Tower", "Eastern Plaguelands", "HostileArea", new()
         {
             ("52-53", "Plaguebat"),
         }),
-        new SiteHostileArea("Northpass Tower", "Eastern Plaguelands", new()
+        new SiteHostileArea("Northpass Tower", "Eastern Plaguelands", "HostileArea", new()
         {
             ("52-53", "Plaguebat"),
         }),
-        new SiteHostileArea("Town Square", "Tyr's Hand", new()
+        new SiteHostileArea("Town Square", "Tyr's Hand", "HostileArea", new()
         {
             ("52-53", "Scarlet Curate"),
             ("52-53", "Scarlet Warder"),
         }),
-        new SiteHostileArea("Tyr's Hand Abbey", "Tyr's Hand", new()
+        new SiteHostileArea("Tyr's Hand Abbey", "Tyr's Hand", "HostileArea", new()
         {
             ("52-53", "Scarlet Warder"),
             ("52-53", "Scarlet Cleric"),
         }),
-        new SiteHostileArea("Tyr's Hand Keep", "Tyr's Hand", new()
+        new SiteHostileArea("Tyr's Hand Keep", "Tyr's Hand", "HostileArea", new()
         {
             ("52-53", "Scarlet Curate"),
             ("52-53", "Scarlet Warder"),
         }),
-        new SiteHostileArea("Scarlet Basilica", "Tyr's Hand", new()
+        new SiteHostileArea("Scarlet Basilica", "Tyr's Hand", "HostileArea", new()
         {
             ("52-53", "Scarlet Curate"),
             ("52-53", "Scarlet Enchanter"),
@@ -3343,47 +3487,47 @@ public class SiteHostileArea
 
         #region Silithus
         
-        new SiteHostileArea("Bones of Grakkarond", "Silithus", new()
+        new SiteHostileArea("Bones of Grakkarond", "Silithus", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("The Swarming Pillar", "Silithus", new()
+        new SiteHostileArea("The Swarming Pillar", "Silithus", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("The Scarab Wall", "Silithus", new()
+        new SiteHostileArea("The Scarab Wall", "Silithus", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Hive'Zora", "Silithus", new()
+        new SiteHostileArea("Hive'Zora", "Silithus", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Hive'Ashi", "Silithus", new()
+        new SiteHostileArea("Hive'Ashi", "Silithus", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Hive'Regal", "Silithus", new()
+        new SiteHostileArea("Hive'Regal", "Silithus", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Southwind Village", "Silithus", new()
+        new SiteHostileArea("Southwind Village", "Silithus", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("The Crystal Vale", "Silithus", new()
+        new SiteHostileArea("The Crystal Vale", "Silithus", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Twilight Outpost", "Silithus", new()
+        new SiteHostileArea("Twilight Outpost", "Silithus", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Twilight Post", "Silithus", new()
+        new SiteHostileArea("Twilight Post", "Silithus", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Twilight Base Camp", "Silithus", new()
+        new SiteHostileArea("Twilight Base Camp", "Silithus", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
@@ -3392,7 +3536,7 @@ public class SiteHostileArea
 
         #region Ruins of Ahn'Qiraj
 
-        new SiteHostileArea("Scarab Terrace", "Ruins of Ahn'Qiraj", new()
+        new SiteHostileArea("Scarab Terrace", "Ruins of Ahn'Qiraj", "HostileArea", new()
         {
             ("60", "Qiraji Gladiator"),
             ("60", "Qiraji Swarmguard"),
@@ -3403,7 +3547,7 @@ public class SiteHostileArea
         {
             (04, "60", "Kurinnaxx")
         }),
-        new SiteHostileArea("General's Terrace", "Ruins of Ahn'Qiraj", new()
+        new SiteHostileArea("General's Terrace", "Ruins of Ahn'Qiraj", "HostileArea", new()
         {
             ("60", "Qiraji Gladiator"),
             ("60", "Qiraji Warrior"),
@@ -3413,7 +3557,7 @@ public class SiteHostileArea
         {
             (04, "60", "General Rajaxx")
         }),
-        new SiteHostileArea("The Reservoir", "Ruins of Ahn'Qiraj", new()
+        new SiteHostileArea("The Reservoir", "Ruins of Ahn'Qiraj", "HostileArea", new()
         {
             ("60", "Flesh Hunter"),
             ("60", "Obsidian Destroyer"),
@@ -3422,7 +3566,7 @@ public class SiteHostileArea
         {
             (03, "60", "Moam")
         }),
-        new SiteHostileArea("The Hatchery", "Ruins of Ahn'Qiraj", new()
+        new SiteHostileArea("The Hatchery", "Ruins of Ahn'Qiraj", "HostileArea", new()
         {
             ("60", "Flesh Hunter"),
             ("60", "Hive'Zara Sandstalker"),
@@ -3432,7 +3576,7 @@ public class SiteHostileArea
         {
             (04, "60", "Buru The Gorger")
         }),
-        new SiteHostileArea("The Comb", "Ruins of Ahn'Qiraj", new()
+        new SiteHostileArea("The Comb", "Ruins of Ahn'Qiraj", "HostileArea", new()
         {
             ("60", "Hive'Zara Collector"),
             ("60", "Hive'Zara Drone"),
@@ -3444,7 +3588,7 @@ public class SiteHostileArea
         {
             (06, "60", "Ayamiss The Hunter")
         }),
-        new SiteHostileArea("Watcher's Terrace", "Ruins of Ahn'Qiraj", new()
+        new SiteHostileArea("Watcher's Terrace", "Ruins of Ahn'Qiraj", "HostileArea", new()
         {
             ("60", "Anubisath Guardian")
         },
@@ -3457,7 +3601,7 @@ public class SiteHostileArea
         
         #region Temple of Ahn'Qiraj
 
-        new SiteHostileArea("The Temple Gates", "Temple of Ahn'Qiraj", new()
+        new SiteHostileArea("The Temple Gates", "Temple of Ahn'Qiraj", "HostileArea", new()
         {
             ("60", "Anubisath Sentinel"),
             ("60", "Obsidian Eradicator")
@@ -3466,7 +3610,7 @@ public class SiteHostileArea
         {
             (02, "60", "The Prophet Skeram")
         }),
-        new SiteHostileArea("The Hive Undergrounds", "Temple of Ahn'Qiraj", new()
+        new SiteHostileArea("The Hive Undergrounds", "Temple of Ahn'Qiraj", "HostileArea", new()
         {
             ("60", "Qiraji Champion"),
             ("60", "Qiraji Lasher"),
@@ -3478,7 +3622,7 @@ public class SiteHostileArea
             (02, "60", "Battleguard Sartura"),
             (02, "60", "Fankriss the Unyielding"),
         }),
-        new SiteHostileArea("Abandoned Tunnel", "Temple of Ahn'Qiraj", new()
+        new SiteHostileArea("Abandoned Tunnel", "Temple of Ahn'Qiraj", "HostileArea", new()
         {
 
         },
@@ -3486,7 +3630,7 @@ public class SiteHostileArea
         {
             (00, "60", "Viscidus")
         }),
-        new SiteHostileArea("Princess Chambers", "Temple of Ahn'Qiraj", new()
+        new SiteHostileArea("Princess Chambers", "Temple of Ahn'Qiraj", "HostileArea", new()
         {
             ("60", "Vekniss Borer"),
             ("60", "Vekniss Guardian"),
@@ -3496,7 +3640,7 @@ public class SiteHostileArea
         {
             (02, "60", "Princess Huhuran")
         }),
-        new SiteHostileArea("Qiraji Imperial Seat", "Temple of Ahn'Qiraj", new()
+        new SiteHostileArea("Qiraji Imperial Seat", "Temple of Ahn'Qiraj", "HostileArea", new()
         {
             ("60", "Anubisath Sentinel"),
             ("60", "Obsidian Eradicator")
@@ -3505,7 +3649,7 @@ public class SiteHostileArea
         {
             (02, "60", "Twin Emperors")
         }),
-        new SiteHostileArea("Ouro's Lair", "Temple of Ahn'Qiraj", new()
+        new SiteHostileArea("Ouro's Lair", "Temple of Ahn'Qiraj", "HostileArea", new()
         {
             ("60", "Vekniss Borer"),
             ("60", "Vekniss Guardian"),
@@ -3515,7 +3659,7 @@ public class SiteHostileArea
         {
             (02, "60", "Ouro")
         }),
-        new SiteHostileArea("Vault of C'Thun", "Temple of Ahn'Qiraj", new()
+        new SiteHostileArea("Vault of C'Thun", "Temple of Ahn'Qiraj", "HostileArea", new()
         {
             ("60", "Anubisath Sentinel"),
             ("60", "Obsidian Eradicator")
@@ -3529,35 +3673,35 @@ public class SiteHostileArea
         
         #region Swamp of Sorrows
         
-        new SiteHostileArea("Stagalbog", "Swamp of Sorrows", new()
+        new SiteHostileArea("Stagalbog", "Swamp of Sorrows", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Sorrowmurk", "Swamp of Sorrows", new()
+        new SiteHostileArea("Sorrowmurk", "Swamp of Sorrows", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Pool of Tears", "Swamp of Sorrows", new()
+        new SiteHostileArea("Pool of Tears", "Swamp of Sorrows", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Misty Valley", "Swamp of Sorrows", new()
+        new SiteHostileArea("Misty Valley", "Swamp of Sorrows", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("The Shifting Marsh", "Swamp of Sorrows", new()
+        new SiteHostileArea("The Shifting Marsh", "Swamp of Sorrows", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Splinterspear Junction", "Swamp of Sorrows", new()
+        new SiteHostileArea("Splinterspear Junction", "Swamp of Sorrows", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Misty Reed Strand", "Swamp of Sorrows", new()
+        new SiteHostileArea("Misty Reed Strand", "Swamp of Sorrows", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Itharius's Cave", "Swamp of Sorrows", new()
+        new SiteHostileArea("Itharius's Cave", "Swamp of Sorrows", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
@@ -3566,59 +3710,59 @@ public class SiteHostileArea
         
         #region Temple of Atal'Hakkar
         
-        new SiteHostileArea("The Pit of Sacrafice", "Temple of Atal'Hakkar", new()
+        new SiteHostileArea("The Pit of Sacrafice", "Temple of Atal'Hakkar", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("The Butchery", "Temple of Atal'Hakkar", new()
+        new SiteHostileArea("The Butchery", "Temple of Atal'Hakkar", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("The Broken Hall", "Temple of Atal'Hakkar", new()
+        new SiteHostileArea("The Broken Hall", "Temple of Atal'Hakkar", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Hall of Serpents", "Temple of Atal'Hakkar", new()
+        new SiteHostileArea("Hall of Serpents", "Temple of Atal'Hakkar", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Hall of the Cursed", "Temple of Atal'Hakkar", new()
+        new SiteHostileArea("Hall of the Cursed", "Temple of Atal'Hakkar", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Pit of Refuse", "Temple of Atal'Hakkar", new()
+        new SiteHostileArea("Pit of Refuse", "Temple of Atal'Hakkar", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Lair of the Chosen", "Temple of Atal'Hakkar", new()
+        new SiteHostileArea("Lair of the Chosen", "Temple of Atal'Hakkar", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Hall of Masks", "Temple of Atal'Hakkar", new()
+        new SiteHostileArea("Hall of Masks", "Temple of Atal'Hakkar", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Hall of Ritual", "Temple of Atal'Hakkar", new()
+        new SiteHostileArea("Hall of Ritual", "Temple of Atal'Hakkar", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Hall of Bones", "Temple of Atal'Hakkar", new()
+        new SiteHostileArea("Hall of Bones", "Temple of Atal'Hakkar", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Den of the Caller", "Temple of Atal'Hakkar", new()
+        new SiteHostileArea("Den of the Caller", "Temple of Atal'Hakkar", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Chamber of Blood", "Temple of Atal'Hakkar", new()
+        new SiteHostileArea("Chamber of Blood", "Temple of Atal'Hakkar", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Chamber of the Dreamer", "Temple of Atal'Hakkar", new()
+        new SiteHostileArea("Chamber of the Dreamer", "Temple of Atal'Hakkar", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
-        new SiteHostileArea("Sanctum of the Fallen God", "Temple of Atal'Hakkar", new()
+        new SiteHostileArea("Sanctum of the Fallen God", "Temple of Atal'Hakkar", "HostileArea", new()
         {
             ("01-02", "Duskbat"),
         }),
@@ -3627,79 +3771,79 @@ public class SiteHostileArea
 
         #region Stranglethorn Valley
         
-        new SiteHostileArea("Gurubashi Arena", "Stranglethorn Valley", new()
+        new SiteHostileArea("Gurubashi Arena", "Stranglethorn Valley", "HostileArea", new()
         {
             ("35-37", "Dustbelcher Warrior"),
         }),
-        new SiteHostileArea("Crystal Shore", "Stranglethorn Valley", new()
+        new SiteHostileArea("Crystal Shore", "Stranglethorn Valley", "HostileArea", new()
         {
             ("35-37", "Dustbelcher Warrior"),
         }),
-        new SiteHostileArea("Zuuldaia Ruins", "Stranglethorn Valley", new()
+        new SiteHostileArea("Zuuldaia Ruins", "Stranglethorn Valley", "HostileArea", new()
         {
             ("35-37", "Dustbelcher Warrior"),
         }),
-        new SiteHostileArea("Ruins of Zul'Kunda", "Stranglethorn Valley", new()
+        new SiteHostileArea("Ruins of Zul'Kunda", "Stranglethorn Valley", "HostileArea", new()
         {
             ("35-37", "Dustbelcher Warrior"),
         }),
-        new SiteHostileArea("Wild Shore", "Stranglethorn Valley", new()
+        new SiteHostileArea("Wild Shore", "Stranglethorn Valley", "HostileArea", new()
         {
             ("35-37", "Dustbelcher Warrior"),
         }),
-        new SiteHostileArea("Nek'mani Wellspring", "Stranglethorn Valley", new()
+        new SiteHostileArea("Nek'mani Wellspring", "Stranglethorn Valley", "HostileArea", new()
         {
             ("35-37", "Dustbelcher Warrior"),
         }),
-        new SiteHostileArea("Bloodsail Compound", "Stranglethorn Valley", new()
+        new SiteHostileArea("Bloodsail Compound", "Stranglethorn Valley", "HostileArea", new()
         {
             ("35-37", "Dustbelcher Warrior"),
         }),
-        new SiteHostileArea("Tkashi Ruins", "Stranglethorn Valley", new()
+        new SiteHostileArea("Tkashi Ruins", "Stranglethorn Valley", "HostileArea", new()
         {
             ("35-37", "Dustbelcher Warrior"),
         }),
-        new SiteHostileArea("Venture Co. Base Camp", "Stranglethorn Valley", new()
+        new SiteHostileArea("Venture Co. Base Camp", "Stranglethorn Valley", "HostileArea", new()
         {
             ("35-37", "Dustbelcher Warrior"),
         }),
-        new SiteHostileArea("The Savage Coast", "Stranglethorn Valley", new()
+        new SiteHostileArea("The Savage Coast", "Stranglethorn Valley", "HostileArea", new()
         {
             ("35-37", "Dustbelcher Warrior"),
         }),
-        new SiteHostileArea("Mizjah Ruins", "Stranglethorn Valley", new()
+        new SiteHostileArea("Mizjah Ruins", "Stranglethorn Valley", "HostileArea", new()
         {
             ("35-37", "Dustbelcher Warrior"),
         }),
-        new SiteHostileArea("Balia'mah Ruins", "Stranglethorn Valley", new()
+        new SiteHostileArea("Balia'mah Ruins", "Stranglethorn Valley", "HostileArea", new()
         {
             ("35-37", "Dustbelcher Warrior"),
         }),
-        new SiteHostileArea("Mosh'Ogg Ogre Mound", "Stranglethorn Valley", new()
+        new SiteHostileArea("Mosh'Ogg Ogre Mound", "Stranglethorn Valley", "HostileArea", new()
         {
             ("35-37", "Dustbelcher Warrior"),
         }),
-        new SiteHostileArea("Jaguero Isle", "Stranglethorn Valley", new()
+        new SiteHostileArea("Jaguero Isle", "Stranglethorn Valley", "HostileArea", new()
         {
             ("35-37", "Dustbelcher Warrior"),
         }),
-        new SiteHostileArea("Ruins of Aboraz", "Stranglethorn Valley", new()
+        new SiteHostileArea("Ruins of Aboraz", "Stranglethorn Valley", "HostileArea", new()
         {
             ("35-37", "Dustbelcher Warrior"),
         }),
-        new SiteHostileArea("Mistvale Valley", "Stranglethorn Valley", new()
+        new SiteHostileArea("Mistvale Valley", "Stranglethorn Valley", "HostileArea", new()
         {
             ("35-37", "Dustbelcher Warrior"),
         }),
-        new SiteHostileArea("Ruins of Zul'Mamwe", "Stranglethorn Valley", new()
+        new SiteHostileArea("Ruins of Zul'Mamwe", "Stranglethorn Valley", "HostileArea", new()
         {
             ("35-37", "Dustbelcher Warrior"),
         }),
-        new SiteHostileArea("Kurzen's Compound", "Stranglethorn Valley", new()
+        new SiteHostileArea("Kurzen's Compound", "Stranglethorn Valley", "HostileArea", new()
         {
             ("35-37", "Dustbelcher Warrior"),
         }),
-        new SiteHostileArea("Crystalvein Mine", "Stranglethorn Valley", new()
+        new SiteHostileArea("Crystalvein Mine", "Stranglethorn Valley", "HostileArea", new()
         {
             ("35-37", "Dustbelcher Warrior"),
         }),
@@ -3708,7 +3852,7 @@ public class SiteHostileArea
 
         #region Zul'Gurub
         
-        new SiteHostileArea("Altar of Hir'eek", "Zul'Gurub", new()
+        new SiteHostileArea("Altar of Hir'eek", "Zul'Gurub", "HostileArea", new()
         {
             ("60", "Bloodseeker Bat"),
             ("60", "Gurubashi Bat Rider"),
@@ -3718,7 +3862,7 @@ public class SiteHostileArea
         {
             (03, "60", "High Priestess Jeklik")
         }),
-        new SiteHostileArea("The Coil", "Zul'Gurub", new()
+        new SiteHostileArea("The Coil", "Zul'Gurub", "HostileArea", new()
         {
             ("60", "Gurubashi Axe Thrower"),
             ("60", "Razzashi Cobra"),
@@ -3728,7 +3872,7 @@ public class SiteHostileArea
         {
             (03, "60", "High Priest Venoxis")
         }),
-        new SiteHostileArea("Shadra'zaar", "Zul'Gurub", new()
+        new SiteHostileArea("Shadra'zaar", "Zul'Gurub", "HostileArea", new()
         {
             ("60", "Hakkari Shadowcaster"),
             ("60", "Razzashi Broodwidow"),
@@ -3739,7 +3883,7 @@ public class SiteHostileArea
         {
             (03, "60", "High Priestess Mar'li")
         }),
-        new SiteHostileArea("Hakkari Grounds", "Zul'Gurub", new()
+        new SiteHostileArea("Hakkari Grounds", "Zul'Gurub", "HostileArea", new()
         {
             ("60", "Gurubashi Champion"),
             ("60", "Hakkari Priest"),
@@ -3750,7 +3894,7 @@ public class SiteHostileArea
         {
             (03, "60", "Bloodlord Mandokir")
         }),
-        new SiteHostileArea("Edge of Madness", "Zul'Gurub", new()
+        new SiteHostileArea("Edge of Madness", "Zul'Gurub", "HostileArea", new()
         {
             ("60", "Gurubashi Berserker"),
             ("60", "Hakkari Blood Priest"),
@@ -3763,7 +3907,7 @@ public class SiteHostileArea
             (00, "60", "Renataki"),
             (00, "60", "Wushoolay")
         }),
-        new SiteHostileArea("Naze of Shirvallah", "Zul'Gurub", new()
+        new SiteHostileArea("Naze of Shirvallah", "Zul'Gurub", "HostileArea", new()
         {
             ("60", "Gurubashi Axe Thrower"),
             ("60", "Zulian Tiger"),
@@ -3773,7 +3917,7 @@ public class SiteHostileArea
         {
             (03, "60", "High Priest Thekal")
         }),
-        new SiteHostileArea("Pagle's Pointe", "Zul'Gurub", new()
+        new SiteHostileArea("Pagle's Pointe", "Zul'Gurub", "HostileArea", new()
         {
             ("60", "Hooktooth Frenzy"),
         },
@@ -3781,7 +3925,7 @@ public class SiteHostileArea
         {
             (02, "60", "Gahz'ranka")
         }),
-        new SiteHostileArea("Temple of Bethekk", "Zul'Gurub", new()
+        new SiteHostileArea("Temple of Bethekk", "Zul'Gurub", "HostileArea", new()
         {
             ("60", "Zulian Panther"),
             ("60", "Gurubashi Blood Drinker"),
@@ -3791,7 +3935,7 @@ public class SiteHostileArea
         {
             (00, "60", "High Priestess Arlokk")
         }),
-        new SiteHostileArea("The Bloodfire Pit", "Zul'Gurub", new()
+        new SiteHostileArea("The Bloodfire Pit", "Zul'Gurub", "HostileArea", new()
         {
             ("60", "Voodoo Slave"),
             ("60", "Withered Mistress"),
@@ -3801,7 +3945,7 @@ public class SiteHostileArea
         {
             (00, "60", "Jin'do the Hexxer")
         }),
-        new SiteHostileArea("Altar of the Blood God", "Zul'Gurub", new()
+        new SiteHostileArea("Altar of the Blood God", "Zul'Gurub", "HostileArea", new()
         {
             ("60", "Gurubashi Champion"),
             ("60", "Son of Hakkar"),

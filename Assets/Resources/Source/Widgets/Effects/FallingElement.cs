@@ -1,5 +1,7 @@
 using UnityEngine;
 
+using static Root;
+
 public class FallingElement : MonoBehaviour
 {
     public int howFar;
@@ -13,7 +15,7 @@ public class FallingElement : MonoBehaviour
     {
         timeAlive = 0;
         this.howFar = howFar;
-        Root.fallingElements.Add(this);
+        fallingElements.Add(this);
         start = transform.position;
         destination = transform.position + new Vector3(0, -38 * howFar);
     }
@@ -24,8 +26,12 @@ public class FallingElement : MonoBehaviour
         transform.position = Vector3.Lerp(transform.position, destination, timeAlive * fallSpeed / (float)System.Math.Sqrt(howFar) * 0.9f);
         if (Mathf.Abs(transform.position.x - destination.x) + Mathf.Abs(transform.position.y - destination.y) < 0.3f)
         {
-            Root.PlaySound("PutDownWoodSmall", 0.6f);
-            Root.fallingElements.Remove(this);
+            if (fallingSoundsPlayedThisFrame == 0)
+            {
+                fallingSoundsPlayedThisFrame++;
+                PlaySound("PutDownWoodSmall", 0.8f);
+            }
+            fallingElements.Remove(this);
             Destroy(this);
         }
     }

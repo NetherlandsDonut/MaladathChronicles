@@ -51,6 +51,7 @@ public class SiteTown
         new SiteTown("Dolanaar",                "Teldrassil",           "Alliance"),
         new SiteTown("Astranaar",               "Ashenvale",            "Alliance"),
         new SiteTown("Starfall Village",        "Winterspring",         "Alliance"),
+        new SiteTown("Silverwind Outpost",      "Ashenvale",            "Alliance"),
         new SiteTown("Silverwind Refuge",       "Ashenvale",            "Alliance"),
         new SiteTown("Forest Song",             "Ashenvale",            "Alliance"),
         new SiteTown("Auberdine",               "Darkshore",            "Alliance",

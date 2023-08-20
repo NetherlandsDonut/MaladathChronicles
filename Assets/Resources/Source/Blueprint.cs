@@ -371,7 +371,6 @@ public class Blueprint
                         {
                             AddLine(item.name, Black);
                             AddSmallButton(item.icon, (h) => { });
-                            //AddSmallButtonOverlay("OtherRarity" + item.rarity + (settings.bigRarityIndicators.Value() ? "Big" : ""));
                         },
                         (h) =>
                         {
