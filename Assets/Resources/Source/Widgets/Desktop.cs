@@ -78,6 +78,7 @@ public class Desktop : MonoBehaviour
 
     public void UnlockScreen()
     {
+        canUnlockScreen = false;
         screenLocked = false;
         screenlock.SetActive(false);
     }
@@ -96,7 +97,7 @@ public class Desktop : MonoBehaviour
     public void Update()
     {
         if (loadSites != null && loadSites.Count > 0)
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < 6; i++)
             {
                 var site = loadSites[0];
                 loadingScreenObjectLoad++;
@@ -159,11 +160,12 @@ public class Desktop : MonoBehaviour
                 {
                     if (animationTime > 0)
                         animationTime -= Time.deltaTime;
-                    if (animationTime <= 0)
+                    if (animationTime <= 0 && fallingElements.Count == 0)
                     {
                         animationTime = frameTime;
-                        Board.board.AnimateBoard();
                         Rebuild();
+                        if (canUnlockScreen) CDesktop.UnlockScreen();
+                        else Board.board.AnimateBoard();
                     }
                 }
             }

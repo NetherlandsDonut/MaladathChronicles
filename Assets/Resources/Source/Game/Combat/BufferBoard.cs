@@ -1,24 +1,30 @@
 using System.Collections.Generic;
 
 using static Root;
-using static Board;
 
 public class BufferBoard
 {
     public BufferBoard()
     {
-        field = new int[0, 0];
+        fallingElements = new();
+        field = new int[Board.board.field.GetLength(0), Board.board.field.GetLength(1)];
+        Reset(true);
     }
 
-    public BufferBoard(Board board)
+    public void Reset(bool noCascade = false)
     {
-        field = new int[board.field.GetLength(0), board.field.GetLength(1)];
+        field = new int[Board.board.field.GetLength(0), Board.board.field.GetLength(1)];
         for (int i = 0; i < field.GetLength(0); i++)
         {
             var column = new List<int>();
             for (int j = 0; j < field.GetLength(1); j++)
-                if (board.field[i, j] == 0)
-                    column.Add(random.Next(11, 21));
+                if (Board.board.field[i, j] == 0)
+                {
+                    int newElement;
+                    do newElement = random.Next(11, 21);
+                    while (noCascade && ((j > 0 && column[j - 1] == newElement) || (i > 0 && field[i - 1, field.GetLength(1) - 1 - j] == newElement)));
+                    column.Add(newElement);
+                }
             for (int j = 0; j < column.Count; j++)
                 field[i, field.GetLength(1) - 1 - j] = column[j];
         }
@@ -36,6 +42,21 @@ public class BufferBoard
         if (fieldGetCounterY == field.GetLength(1))
             fieldGetCounterY = 0;
         return r;
+    }
+
+    public void FillBoard(int[,] field)
+    {
+        for (int i = 0; i < field.GetLength(0); i++)
+        {
+            var zeroes = 0;
+            for (int q = 0; q < field.GetLength(1); q++)
+                if (field[i, q] == 0) zeroes++;
+            for (int j = 0; j < zeroes; j++)
+            {
+                field[i, j] = this.field[i, j + field.GetLength(1) - zeroes];
+                window.LBRegionGroup.regions[j + field.GetLength(1) - zeroes].bigButtons[i].gameObject.AddComponent<FallingElement>().Initiate(zeroes);
+            }
+        }
     }
 
     public static BufferBoard bufferBoard;

@@ -81,6 +81,7 @@ public class Buff
                 SpawnShatter(3, 0.6, Board.board.window.LBRegionGroup.regions[e.Item2].bigButtons[e.Item1].transform.position + new Vector3(-17.5f, -17.5f), Board.boardButtonDictionary[Board.board.field[e.Item1, e.Item2]]);
                 Board.board.field[e.Item1, e.Item2] = 0;
             }
+            BufferBoard.bufferBoard.Reset();
         },
         (p) => () =>
         {

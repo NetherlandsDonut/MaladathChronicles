@@ -22,11 +22,13 @@ public static class Root
     public static int aiDepth = 5;
 
     public static GameObject fastTravelCamera;
+    public static List<FallingElement> fallingElements;
+    public static bool canUnlockScreen;
 
-    public static string creationFaction;
-    public static string creationGender;
-    public static string creationRace;
-    public static string creationClass;
+    public static string creationFaction = "Alliance";
+    public static string creationGender = "Female";
+    public static string creationRace = "Human";
+    public static string creationClass = "Mage";
     public static int maxPlayerLevel;
 
     public static GameObject[] loadingBar;

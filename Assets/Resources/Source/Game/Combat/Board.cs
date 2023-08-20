@@ -13,7 +13,7 @@ public class Board
         bonusTurnStreak = 0;
         field = new int[x, y];
         player = currentSave.player;
-        player.Initialise(false);
+        player.Initialise();
         this.enemy = enemy;
         playerTurn = true;
         this.area = area;
@@ -22,7 +22,6 @@ public class Board
         temporaryBuffsPlayer = new();
         temporaryBuffsEnemy = new();
         actions = new List<Action>();
-        bufferBoard = new BufferBoard(this);
     }
 
     //STATIC REFERENCE TO THE BOARD
@@ -83,7 +82,12 @@ public class Board
                     currentSave.siteProgress.Add(area.name, 1);
                 else currentSave.siteProgress[area.name]++;
             }
-            if (area != null && area.instancePart)
+            if (area != null && !area.instancePart)
+            {
+                SwitchDesktop("HostileAreaEntrance");
+                CDesktop.Rebuild();
+            }
+            else if (area != null && area.instancePart)
             {
                 SwitchDesktop("DungeonEntrance");
                 CDesktop.Rebuild();
@@ -100,27 +104,25 @@ public class Board
     public void AnimateBoard()
     {
         //MOVE ELEMENTS DOWN WITH GRAVITY
-        for (int j = field.GetLength(1) - 1; j > 0; j--)
+        for (int j = field.GetLength(1) - 2; j >= 0; j--)
             for (int i = field.GetLength(0) - 1; i >= 0; i--)
-                if (field[i, j] == 0 && field[i, j - 1] != 0)
+                if (field[i, j] != 0)
                 {
-                    (field[i, j], field[i, j - 1]) = (field[i, j - 1], 0);
-                    for (int k = 0; k < field.GetLength(0); k++)
-                        if (field[k, j] == 0) break;
-                        else if (k == field.GetLength(0) - 1)
-                            PlaySound("PutDownSmallWood", 0.04f);
+                    var zeroes = 0;
+                    for (int q = 0; q + j < field.GetLength(1); q++)
+                        if (field[i, j + q] == 0) zeroes++;
+                    (field[i, j], field[i, j + zeroes]) = (0, field[i, j]);
+                    window.LBRegionGroup.regions[j].bigButtons[i].gameObject.AddComponent<FallingElement>().Initiate(zeroes);
                 }
 
-        //SPAWN NEW ELEMENTS ON TOP OF THE BOARD
-        for (int i = 0; i < field.GetLength(0); i++)
-            if (field[i, 0] == 0)
-                do field[i, 0] = random.Next(11, 21);
-                while (FloodCount(i, 0).Count >= 3);
-
-        //IF BOARD NEEDS TO FILLED UP DON'T DO ANY FURTHER STEPS AND RETURN TO BEGINNING
+        //IF BOARD IS NOT YET FULL RETURN AND DO PREVIOUS STEPS AGAIN
         for (int j = field.GetLength(1) - 1; j >= 0; j--)
             for (int i = field.GetLength(0) - 1; i >= 0; i--)
-                if (field[i, j] == 0) return;
+                if (field[i, j] == 0)
+                {
+                    bufferBoard.FillBoard(field);
+                    return;
+                }
 
         //DO ONE SCHEDULED ACTION AND RETURN AFTER TO DO ONE AT A TIME
         if (actions.Count > 0)
@@ -294,14 +296,14 @@ public class Board
                 {
                     bonusTurnStreak = 0;
                     playerFinishedMoving = false;
-                    CDesktop.UnlockScreen();
+                    canUnlockScreen = true;
                 }
                 else
                     EndTurn();
             }
 
             //IF PLAYER IS STILL GOING TO MOVE UNLOCK THE SCREEN
-            else CDesktop.UnlockScreen();
+            else canUnlockScreen = true;
         }
     }
 
@@ -327,6 +329,7 @@ public class Board
         PlaySound(collectSoundDictionary[field[x, y]].ToString(), 0.3f);
         SpawnShatterElement(1, 0.5, window.LBRegionGroup.regions[y].bigButtons[x].transform.position + new Vector3(-17.5f, -17.5f), boardButtonDictionary[field[x, y]]);
         field[x, y] = 0;
+        bufferBoard.Reset();
         CDesktop.LockScreen();
     }
 
@@ -346,7 +349,7 @@ public class Board
             else GiveResource(enemy, a.Item1, a.Item2);
             field[a.Item1, a.Item2] = 0;
         }
-        bufferBoard = new BufferBoard(this);
+        bufferBoard.Reset();
         CDesktop.LockScreen();
     }
 
@@ -426,7 +429,7 @@ public class Board
 
     public static Dictionary<int, string> boardButtonDictionary = new()
     {
-        { 00, "OtherEmpty" },
+        { 00, null },
         { 01, "ElementEarthAwakened" },
         { 02, "ElementFireAwakened" },
         { 03, "ElementWaterAwakened" },

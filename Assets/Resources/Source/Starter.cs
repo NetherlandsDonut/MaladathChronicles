@@ -24,6 +24,7 @@ public class Starter : MonoBehaviour
         for (int i = temp.Length - 1; i >= 0; i--)
             Destroy(temp[i].gameObject);
         SpawnDesktopBlueprint("TitleScreen");
+        fallingElements = new List<FallingElement>();
         loadingScreenObjectLoadAim = windowRemoteAnchors.Count + SiteInstance.instances.Count + SiteTown.towns.Count + SiteComplex.complexes.Count + SiteHostileArea.hostileAreas.Count;
         for (int i = 0; i < windowRemoteAnchors.Count; i++)
         {
@@ -257,7 +258,7 @@ public class Starter : MonoBehaviour
                     new Blueprint("Area: " + area.name,
                         () =>
                         {
-                            SetAnchor(Anchor.TopLeft);
+                            SetAnchor(TopLeft);
                             AddRegionGroup();
                             SetRegionGroupWidth(161);
                             SetRegionGroupHeight(344);
@@ -297,6 +298,7 @@ public class Starter : MonoBehaviour
                             (h) =>
                             {
                                 Board.board = new Board(6, 6, area.RollEncounter(), area);
+                                BufferBoard.bufferBoard = new BufferBoard();
                                 SpawnDesktopBlueprint("Game");
                                 SwitchDesktop("Game");
                             });
@@ -315,6 +317,7 @@ public class Starter : MonoBehaviour
                                 (h) =>
                                 {
                                     Board.board = new Board(6, 6, area.RollBoss(boss), area);
+                                    BufferBoard.bufferBoard = new BufferBoard();
                                     SpawnDesktopBlueprint("Game");
                                     SwitchDesktop("Game");
                                 });
@@ -396,6 +399,7 @@ public class Starter : MonoBehaviour
                             (h) =>
                             {
                                 Board.board = new Board(6, 6, area.RollEncounter(), area);
+                                BufferBoard.bufferBoard = new BufferBoard();
                                 SpawnDesktopBlueprint("Game");
                                 SwitchDesktop("Game");
                             });

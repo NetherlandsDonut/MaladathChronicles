@@ -1744,6 +1744,7 @@ public class Ability
                     Board.board.field[e.Item1, e.Item2] = 0;
                 }
                 PlaySound("AbilityThunderstormImpact1");
+                BufferBoard.bufferBoard.Reset();
             });
             var list2 = new List<(int, int)>();
             do col = random.Next(0, Board.board.field.GetLength(0));
@@ -1761,6 +1762,7 @@ public class Ability
                 }
                 PlaySound("AbilityThunderstormImpact2");
                 PlaySound("AbilityThunderstormImpact3");
+                BufferBoard.bufferBoard.Reset();
             });
             columnStriked = new List<int>();
             var list3 = new List<(int, int)>();
@@ -1784,6 +1786,7 @@ public class Ability
                 }
                 PlaySound("AbilityThunderstormImpact1");
                 PlaySound("AbilityThunderstormImpact4");
+                BufferBoard.bufferBoard.Reset();
             });
             Board.board.actions.Add(() =>
             {

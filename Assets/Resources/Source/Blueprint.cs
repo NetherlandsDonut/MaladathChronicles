@@ -836,6 +836,12 @@ public class Blueprint
             boardBackground.transform.localPosition = new Vector2(-17, 17);
             boardBackground.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Textures/BoardBackground" + Board.board.field.GetLength(0) + "x" + Board.board.field.GetLength(1));
             boardBackground.GetComponent<SpriteMask>().sprite = Resources.Load<Sprite>("Sprites/Textures/BoardMask" + Board.board.field.GetLength(0) + "x" + Board.board.field.GetLength(1));
+            boardBackground = new GameObject("BoardInShadow", typeof(SpriteRenderer));
+            boardBackground.transform.parent = CDesktop.LBWindow.transform;
+            boardBackground.transform.localPosition = new Vector2(-17, 17);
+            boardBackground.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Textures/BoardShadow" + Board.board.field.GetLength(0) + "x" + Board.board.field.GetLength(1));
+            boardBackground.GetComponent<SpriteRenderer>().sortingLayerName = "CameraShadow";
+            DisableGeneralSprites();
             AddRegionGroup();
             for (int i = 0; i < Board.board.field.GetLength(1); i++)
             {
@@ -1988,6 +1994,8 @@ public class Blueprint
                 };
             });
             AddHotkey(BackQuote, () => { SpawnWindowBlueprint("Console"); });
+            //AddHotkey(KeypadPlus, () => { FallingElement.fallSpeed++; });
+            //AddHotkey(KeypadMinus, () => { if (FallingElement.fallSpeed > 1) FallingElement.fallSpeed--; });
         }),
         new("CharacterSheet", () =>
         {
