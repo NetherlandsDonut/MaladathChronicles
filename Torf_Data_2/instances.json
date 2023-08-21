@@ -1,0 +1,1164 @@
+[
+  {
+    "name": "Temple of Atal'Hakkar",
+    "type": "Dungeon",
+    "description": [],
+    "wings": [
+      {
+        "name": "Temple of Atal'Hakkar",
+        "areas": [
+          {
+            "Item1": "None",
+            "Item2": "The Broken Hall"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "The Butchery"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Chamber of Blood"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Den of the Caller"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Hall of Masks"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Hall of Ritual"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Hall of Bones"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Hall of Serpents"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Hall of The Cursed"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Sanctum of the Fallen God"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "The Pit of Sacrafice"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Pit of Refuse"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Lair of the Chosen"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Chamber of the Dreamer"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Gnomeregan",
+    "type": "Dungeon",
+    "description": [],
+    "wings": [
+      {
+        "name": "Gnomeregan",
+        "areas": [
+          {
+            "Item1": "None",
+            "Item2": "Trogg Caves"
+          },
+          {
+            "Item1": "None",
+            "Item2": "Hall of Gears"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Launch Bay"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Engineering Labs"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Tinkers' Court"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Shadowfang Keep",
+    "type": "Dungeon",
+    "description": [],
+    "wings": [
+      {
+        "name": "Shadowfang Keep",
+        "areas": [
+          {
+            "Item1": "None",
+            "Item2": "Jail"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "The Courtyard"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Kitchen"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Dining Hall"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Perimeter Wall"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "The Laboratory"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Tower Summit"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Arugal Chamber"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Shadow Hold",
+    "type": "Dungeon",
+    "complexPart": true,
+    "description": [],
+    "wings": [
+      {
+        "name": "Shadow Hold",
+        "areas": [
+          {
+            "Item1": "None",
+            "Item2": "Upper Tunnels"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Council Camp"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Altar Room"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Inner Sanctum"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Banehollow Shrine"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Scholomance",
+    "type": "Dungeon",
+    "description": [],
+    "wings": [
+      {
+        "name": "Scholomance",
+        "areas": [
+          {
+            "Item1": "None",
+            "Item2": "Reliquary"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Chamber of Summoning"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Great Ossuary"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Viewing Room"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Laboratory"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Hall of Secrets"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Hall of the Damned"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "The Coven"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Vault of the Ravenian"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "The Shadow Vault"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Barov Family Vault"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Headmaster's Study"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Maraudon",
+    "type": "Dungeon",
+    "description": [],
+    "wings": [
+      {
+        "name": "Orange Crystal Caverns",
+        "areas": [
+          {
+            "Item1": "None",
+            "Item2": "The Noxious Hollow"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Foulspore Cavern"
+          }
+        ]
+      },
+      {
+        "name": "Purple Crystal Caverns",
+        "areas": [
+          {
+            "Item1": "None",
+            "Item2": "Wicked Grotto"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Vyletongue Seat"
+          }
+        ]
+      },
+      {
+        "name": "Inner Maraudon",
+        "areas": [
+          {
+            "Item1": "None",
+            "Item2": "Poison Falls"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Earth Song Falls"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Zaetar's Grave"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Stratholme",
+    "type": "Dungeon",
+    "description": [],
+    "wings": [
+      {
+        "name": "Main Gate",
+        "areas": [
+          {
+            "Item1": "None",
+            "Item2": "King's Square"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Market Row"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Crusaders' Square"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "The Hoard"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "The Hall of Lights"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "The Scarlet Bastion"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "The Crimson Throne"
+          }
+        ]
+      },
+      {
+        "name": "Service Gate",
+        "areas": [
+          {
+            "Item1": "None",
+            "Item2": "Elder's Square"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "The Gauntlet"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Slaughter Square"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "The Slaughter House"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Wailing Caverns",
+    "type": "Dungeon",
+    "description": [],
+    "wings": [
+      {
+        "name": "Wailing Caverns",
+        "areas": [
+          {
+            "Item1": "None",
+            "Item2": "Screaming Gully"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Pit of Fangs"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Winding Chasm"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Crag of the Everliving"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Dreamer's Rock"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Uldaman",
+    "type": "Dungeon",
+    "description": [],
+    "wings": [
+      {
+        "name": "Uldaman",
+        "areas": [
+          {
+            "Item1": "None",
+            "Item2": "Hall of the Keepers"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Map Chamber"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Temple Hall"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Dig Three"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "The Stone Vault"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Khaz'Goroth's Seat"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Razorfen Downs",
+    "type": "Dungeon",
+    "description": [],
+    "wings": [
+      {
+        "name": "Razorfen Downs",
+        "areas": [
+          {
+            "Item1": "None",
+            "Item2": "The Caller's Chamber"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "The Bone Pile"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Spiral of Thorns"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Razorfen Kraul",
+    "type": "Dungeon",
+    "description": [],
+    "wings": [
+      {
+        "name": "Razorfen Kraul",
+        "areas": [
+          {
+            "Item1": "None",
+            "Item2": "Kraul Commons"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Central Grounds"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Bat Caves"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Charlga's Seat"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "The Deadmines",
+    "type": "Dungeon",
+    "description": [],
+    "wings": [
+      {
+        "name": "The Deadmines",
+        "areas": [
+          {
+            "Item1": "None",
+            "Item2": "Defias Hideout"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Mast Room"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Goblin Foundry"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Ironclad Cove"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "The Juggernaut"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Blackfathom Deeps",
+    "type": "Dungeon",
+    "description": [],
+    "wings": [
+      {
+        "name": "Blackfathom Deeps",
+        "areas": [
+          {
+            "Item1": "None",
+            "Item2": "Pool of Ask'ar"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Shrine of Gelihast"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Moonshrine Ruins"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Forgotten Pool"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Moonshrine Sanctum"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Aku'mai's Lair"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Dire Maul",
+    "type": "Dungeon",
+    "description": [],
+    "wings": [
+      {
+        "name": "Eastern Wing",
+        "areas": [
+          {
+            "Item1": "None",
+            "Item2": "Warpwood Quarter"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "The Conservatory"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "The Shrine of Eldre'tharr"
+          }
+        ]
+      },
+      {
+        "name": "Western Wing",
+        "areas": [
+          {
+            "Item1": "None",
+            "Item2": "Capital Gardens"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Court of the Highborne"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Prison of Immol'Thar"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "The Athenaeum"
+          }
+        ]
+      },
+      {
+        "name": "Northern Wing",
+        "areas": [
+          {
+            "Item1": "None",
+            "Item2": "Gordok Commons"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Halls of Destruction"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Gordok's Seat"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Scarlet Monastery",
+    "type": "Dungeon",
+    "complexPart": true,
+    "description": [
+      "The smoldering Blackrock",
+      "Depths are home to the",
+      "Dark Iron dwarves and",
+      "their emperor, Dagran",
+      "Thaurissan. Like his",
+      "predecessors, he serves",
+      "under the iron rule of",
+      "Ragnaros the Firelord,",
+      "a merciless being",
+      "summoned into the world",
+      "centuries ago.",
+      "The presence of chaotic",
+      "elementals has attracted",
+      "Twilight's Hammer cultists",
+      "to the mountain domain.",
+      "Along with Ragnaros'",
+      "servants, they have",
+      "pushed the dwarves ",
+      "toward increasingly",
+      "destructive ends that",
+      "could soon spell doom",
+      "for all of Azeroth."
+    ],
+    "wings": [
+      {
+        "name": "Graveyard",
+        "areas": [
+          {
+            "Item1": "None",
+            "Item2": "Chamber of Atonement"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Forlorn Cloister"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Honor's Tomb"
+          }
+        ]
+      },
+      {
+        "name": "Library",
+        "areas": [
+          {
+            "Item1": "None",
+            "Item2": "Huntsman's Cloister"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Gallery of Treasures"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Athenaeum"
+          }
+        ]
+      },
+      {
+        "name": "Armory",
+        "areas": [
+          {
+            "Item1": "None",
+            "Item2": "Training Grounds"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Crusader's Armory"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Hall of Champions"
+          }
+        ]
+      },
+      {
+        "name": "Cathedral",
+        "areas": [
+          {
+            "Item1": "None",
+            "Item2": "Chapel Gardens"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Crusader's Chapel"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Blackrock Depths",
+    "type": "Dungeon",
+    "complexPart": true,
+    "description": [
+      "The smoldering Blackrock",
+      "Depths are home to the",
+      "Dark Iron dwarves and",
+      "their emperor, Dagran",
+      "Thaurissan. Like his",
+      "predecessors, he serves",
+      "under the iron rule of",
+      "Ragnaros the Firelord,",
+      "a merciless being",
+      "summoned into the world",
+      "centuries ago.",
+      "The presence of chaotic",
+      "elementals has attracted",
+      "Twilight's Hammer cultists",
+      "to the mountain domain.",
+      "Along with Ragnaros'",
+      "servants, they have",
+      "pushed the dwarves ",
+      "toward increasingly",
+      "destructive ends that",
+      "could soon spell doom",
+      "for all of Azeroth."
+    ],
+    "wings": [
+      {
+        "name": "Outer Depths",
+        "areas": [
+          {
+            "Item1": "None",
+            "Item2": "Detention Block"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Halls of the Law"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Ring of Law"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Dark Iron Highway"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "The Black Anvil"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Hall of Crafting"
+          }
+        ]
+      },
+      {
+        "name": "Inner City",
+        "areas": [
+          {
+            "Item1": "Boss",
+            "Item2": "West Garrison"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "The Manufactory"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Chamber of Enchantment"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Mold Foundry"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Summoners' Tomb"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "The Iron Hall"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "The Imperial Seat"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Lower Blackrock Spire",
+    "type": "Dungeon",
+    "complexPart": true,
+    "description": [
+      "The majority of Rend's",
+      "Dark Horde reside in",
+      "Lower Blackrock Spire,",
+      "making the city a sort of",
+      "sprawling barracks.",
+      "Only the elite members of",
+      "the Dark Horde are allowed",
+      "to live in the upper",
+      "reaches of the city.",
+      "Overlord Wyrmthalak acts as",
+      "the ruler and taskmaster",
+      "of these soldiers."
+    ],
+    "wings": [
+      {
+        "name": "Lower",
+        "areas": [
+          {
+            "Item1": "None",
+            "Item2": "Hordemar City"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Mok'Doom"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Tazz'Alor"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Skitterweb Tunnels"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "The Storehouse"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Halycon's Lair"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Chamber of Battle"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Upper Blackrock Spire",
+    "type": "Dungeon",
+    "complexPart": true,
+    "description": [
+      "The smoldering Blackrock",
+      "The history of this",
+      "fortress is long and",
+      "complex. Carved into the",
+      "fiery core of Blackrock",
+      "Mountain by the Dark Iron",
+      "clan centuries ago, and",
+      "eventually taken by",
+      "the black dragon Nefarian",
+      "and his brood"
+    ],
+    "wings": [
+      {
+        "name": "Upper",
+        "areas": [
+          {
+            "Item1": "Boss",
+            "Item2": "Hall of Binding"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "The Rookery"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Hall of Blackhand"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Blackrock Stadium"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "The Furnace"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Spire Throne"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Zul'Farrak",
+    "type": "Dungeon",
+    "description": [],
+    "wings": [
+      {
+        "name": "Zul'Farrak",
+        "areas": [
+          {
+            "Item1": "None",
+            "Item2": "Ass"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Onyxia's Lair",
+    "type": "Raid",
+    "description": [],
+    "wings": [
+      {
+        "name": "Onyxia's Lair",
+        "areas": [
+          {
+            "Item1": "None",
+            "Item2": "Onyxia's Lair"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Molten Core",
+    "type": "Raid",
+    "complexPart": true,
+    "description": [
+      "The Molten Core lies at",
+      "the very bottom of",
+      "Blackrock Depths.",
+      "It is the heart of",
+      "Blackrock Mountain and",
+      "the exact spot where,",
+      "long ago in a desperate",
+      "bid to turn the tide of",
+      "the dwarven civil war,",
+      "Emperor Thaurissan",
+      "summoned the elemental",
+      "Firelord, Ragnaros, into",
+      "the world. The burning",
+      "lake where Ragnaros lies",
+      "sleeping acts as a rift",
+      "connecting to the plane",
+      "of fire, allowing the",
+      "malicious elementals to",
+      "pass through."
+    ],
+    "wings": [
+      {
+        "name": "Lower",
+        "areas": [
+          {
+            "Item1": "None",
+            "Item2": "Magmadar Cavern"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Western Lavafalls"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Eastern Lavafalls"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Ragnaros' Lair"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Zul'Gurub",
+    "type": "Raid",
+    "description": [
+      "The Molten Core lies at",
+      "the very bottom of",
+      "Blackrock Depths.",
+      "It is the heart of",
+      "Blackrock Mountain and",
+      "the exact spot where,",
+      "long ago in a desperate",
+      "bid to turn the tide of",
+      "the dwarven civil war,",
+      "Emperor Thaurissan",
+      "summoned the elemental",
+      "Firelord, Ragnaros, into",
+      "the world. The burning",
+      "lake where Ragnaros lies",
+      "sleeping acts as a rift",
+      "connecting to the plane",
+      "of fire, allowing the",
+      "malicious elementals to",
+      "pass through."
+    ],
+    "wings": [
+      {
+        "name": "Lower",
+        "areas": [
+          {
+            "Item1": "None",
+            "Item2": "Altar of Hir'eek"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "The Coil"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Shadra'zaar"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Hakkari Grounds"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Naze of Shirvallah"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Pagle's Pointe"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Temple of Bethekk"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "The Bloodfire Pit"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Altar of the Blood God"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Blackwing Lair",
+    "type": "Raid",
+    "complexPart": true,
+    "description": [
+      "In the dark recesses of",
+      "the mountain's peak,",
+      "Nefarian, the eldest son",
+      "of Deathwing, conducts",
+      "some of his most awful",
+      "experimentation,",
+      "controlling mighty beings",
+      "like puppets and combining",
+      "the eggs of different",
+      "dragonflights with",
+      "horrific results.",
+      "Should he prove",
+      "successful, even darker",
+      "pursuits rest",
+      "on the horizon."
+    ],
+    "wings": [
+      {
+        "name": "Lower",
+        "areas": [
+          {
+            "Item1": "None",
+            "Item2": "Dragonmaw Garrison"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Shadow Wing Lair"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Halls of Strife"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Crimson Laboratories"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Chromaggus' Lair"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Nefarian's Lair"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Ruins of Ahn'Qiraj",
+    "type": "Raid",
+    "description": [],
+    "wings": [
+      {
+        "name": "Ruins of Ahn'Qiraj",
+        "areas": [
+          {
+            "Item1": "None",
+            "Item2": "Scarab Terrace"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "General's Terrace"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "The Hatchery"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "The Comb"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "The Reservoir"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Watcher's Terrace"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Temple of Ahn'Qiraj",
+    "type": "Raid",
+    "description": [],
+    "wings": [
+      {
+        "name": "Temple of Ahn'Qiraj",
+        "areas": [
+          {
+            "Item1": "None",
+            "Item2": "The Temple Gates"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "The Hive Undergrounds"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Abandoned Tunnel"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Ouro's Lair"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Qiraji Imperial Seat"
+          },
+          {
+            "Item1": "Boss",
+            "Item2": "Vault of C'Thun"
+          }
+        ]
+      }
+    ]
+  }
+]

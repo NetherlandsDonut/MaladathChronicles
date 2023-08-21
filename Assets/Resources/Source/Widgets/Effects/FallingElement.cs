@@ -6,8 +6,7 @@ public class FallingElement : MonoBehaviour
 {
     public int howFar;
     public float timeAlive;
-    public Vector3 start;
-    public Vector3 destination;
+    public Vector3 start, destination;
 
     public static int fallSpeed = 1;
 

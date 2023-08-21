@@ -1,0 +1,1806 @@
+[
+  {
+    "name": "Rogue",
+    "startingEquipment": {
+      "Dwarf": [
+        "Footpad's Shirt",
+        "Footpad's Pants",
+        "Footpad's Shoes",
+        "Worn Dagger",
+        "Worn Dagger"
+      ],
+      "Gnome": [
+        "Footpad's Shirt",
+        "Footpad's Pants",
+        "Footpad's Shoes",
+        "Worn Dagger",
+        "Worn Dagger"
+      ],
+      "Human": [
+        "Footpad's Shirt",
+        "Footpad's Pants",
+        "Footpad's Shoes",
+        "Worn Dagger",
+        "Worn Dagger"
+      ],
+      "NightElf": [
+        "Footpad's Shirt",
+        "Footpad's Pants",
+        "Footpad's Shoes",
+        "Worn Dagger",
+        "Worn Dagger"
+      ],
+      "Orc": [
+        "Thug Shirt",
+        "Thug Pants",
+        "Thug Shoes",
+        "Worn Dagger",
+        "Worn Dagger"
+      ],
+      "Troll": [
+        "Thug Shirt",
+        "Thug Pants",
+        "Thug Shoes",
+        "Worn Dagger",
+        "Worn Dagger"
+      ],
+      "Forsaken": [
+        "Thug Shirt",
+        "Thug Pants",
+        "Thug Shoes",
+        "Worn Dagger",
+        "Worn Dagger"
+      ]
+    },
+    "rules": {
+      "Melee Attack Power per Strength": 2.0,
+      "Ranged Attack Power per Strength": 0.0,
+      "Critical Strike per Strength": 0.0,
+      "Melee Attack Power per Agility": 2.0,
+      "Ranged Attack Power per Agility": 0.0,
+      "Critical Strike per Agility": 0.03,
+      "Spell Power per Intellect": 1.0,
+      "Spell Critical per Intellect": 0.03,
+      "Stamina per Level": 3.0,
+      "Strength per Level": 2.0,
+      "Agility per Level": 4.0,
+      "Intellect per Level": 0.0
+    },
+    "abilities": [
+      {
+        "Item1": "Dual Wielding Proficiency",
+        "Item2": 1
+      },
+      {
+        "Item1": "One Handed Axe Proficiency",
+        "Item2": 1
+      },
+      {
+        "Item1": "One Handed Mace Proficiency",
+        "Item2": 1
+      },
+      {
+        "Item1": "One Handed Sword Proficiency",
+        "Item2": 1
+      },
+      {
+        "Item1": "Fist Weapon Proficiency",
+        "Item2": 1
+      },
+      {
+        "Item1": "Off Hand Proficiency",
+        "Item2": 1
+      },
+      {
+        "Item1": "Dagger Proficiency",
+        "Item2": 1
+      },
+      {
+        "Item1": "Leather Proficiency",
+        "Item2": 1
+      }
+    ],
+    "talentTrees": [
+      {
+        "name": "Assassination",
+        "talents": []
+      },
+      {
+        "name": "Subtlety",
+        "talents": []
+      },
+      {
+        "name": "Outlaw",
+        "talents": []
+      }
+    ]
+  },
+  {
+    "name": "Hunter",
+    "startingEquipment": {
+      "Dwarf": [
+        "Rugged Trapper's Shirt",
+        "Rugged Trapper's Pants",
+        "Rugged Trapper's Boots",
+        "Worn Axe",
+        "Old Blunderbuss"
+      ],
+      "NightElf": [
+        "Rugged Trapper's Shirt",
+        "Rugged Trapper's Pants",
+        "Rugged Trapper's Boots",
+        "Worn Dagger",
+        "Worn Shortbow"
+      ],
+      "Orc": [
+        "Trapper's Shirt",
+        "Trapper's Pants",
+        "Trapper's Boots",
+        "Worn Axe",
+        "Worn Shortbow"
+      ],
+      "Tauren": [
+        "Trapper's Shirt",
+        "Trapper's Pants",
+        "Worn Axe",
+        "Old Blunderbuss"
+      ],
+      "Troll": [
+        "Trapper's Shirt",
+        "Trapper's Pants",
+        "Worn Axe",
+        "Worn Shortbow"
+      ]
+    },
+    "rules": {
+      "Melee Attack Power per Strength": 2.0,
+      "Ranged Attack Power per Strength": 0.0,
+      "Critical Strike per Strength": 0.0,
+      "Melee Attack Power per Agility": 2.0,
+      "Ranged Attack Power per Agility": 3.0,
+      "Critical Strike per Agility": 0.03,
+      "Spell Power per Intellect": 1.0,
+      "Spell Critical per Intellect": 0.03,
+      "Stamina per Level": 3.0,
+      "Strength per Level": 2.0,
+      "Agility per Level": 4.0,
+      "Intellect per Level": 0.0
+    },
+    "abilities": [
+      {
+        "Item1": "Two Handed Axe Proficiency",
+        "Item2": 1
+      },
+      {
+        "Item1": "Two Handed Sword Proficiency",
+        "Item2": 1
+      },
+      {
+        "Item1": "One Handed Axe Proficiency",
+        "Item2": 1
+      },
+      {
+        "Item1": "One Handed Sword Proficiency",
+        "Item2": 1
+      },
+      {
+        "Item1": "Polearm Proficiency",
+        "Item2": 1
+      },
+      {
+        "Item1": "Off Hand Proficiency",
+        "Item2": 1
+      },
+      {
+        "Item1": "Quiver Proficiency",
+        "Item2": 1
+      },
+      {
+        "Item1": "Pouch Proficiency",
+        "Item2": 1
+      },
+      {
+        "Item1": "Bow Proficiency",
+        "Item2": 1
+      },
+      {
+        "Item1": "Crossbow Proficiency",
+        "Item2": 1
+      },
+      {
+        "Item1": "Gun Proficiency",
+        "Item2": 1
+      },
+      {
+        "Item1": "Leather Proficiency",
+        "Item2": 1
+      },
+      {
+        "Item1": "Mail Proficiency",
+        "Item2": 40
+      }
+    ],
+    "talentTrees": [
+      {
+        "name": "Marksmanship",
+        "talents": []
+      },
+      {
+        "name": "Beast Mastery",
+        "talents": []
+      },
+      {
+        "name": "Survival",
+        "talents": []
+      }
+    ]
+  },
+  {
+    "name": "Shaman",
+    "startingEquipment": {
+      "Orc": [
+        "Primitive Mantle",
+        "Primitive Kilt",
+        "Worn Mace"
+      ],
+      "Tauren": [
+        "Primitive Mantle",
+        "Primitive Kilt",
+        "Worn Mace"
+      ],
+      "Troll": [
+        "Primitive Mantle",
+        "Primitive Kilt",
+        "Worn Mace"
+      ]
+    },
+    "rules": {
+      "Melee Attack Power per Strength": 2.0,
+      "Ranged Attack Power per Strength": 0.0,
+      "Critical Strike per Strength": 0.0,
+      "Melee Attack Power per Agility": 1.0,
+      "Ranged Attack Power per Agility": 0.0,
+      "Critical Strike per Agility": 0.03,
+      "Spell Power per Intellect": 2.0,
+      "Spell Critical per Intellect": 0.03,
+      "Stamina per Level": 3.0,
+      "Strength per Level": 2.0,
+      "Agility per Level": 2.0,
+      "Intellect per Level": 2.0
+    },
+    "abilities": [
+      {
+        "Item1": "Dual Wielding Proficiency",
+        "Item2": 1
+      },
+      {
+        "Item1": "Two Handed Axe Proficiency",
+        "Item2": 1
+      },
+      {
+        "Item1": "One Handed Axe Proficiency",
+        "Item2": 1
+      },
+      {
+        "Item1": "One Handed Mace Proficiency",
+        "Item2": 1
+      },
+      {
+        "Item1": "Polearm Proficiency",
+        "Item2": 1
+      },
+      {
+        "Item1": "Off Hand Proficiency",
+        "Item2": 1
+      },
+      {
+        "Item1": "Totem Proficiency",
+        "Item2": 1
+      },
+      {
+        "Item1": "Leather Proficiency",
+        "Item2": 1
+      },
+      {
+        "Item1": "Mail Proficiency",
+        "Item2": 40
+      }
+    ],
+    "talentTrees": [
+      {
+        "name": "Elemental",
+        "talents": []
+      },
+      {
+        "name": "Enhancement",
+        "talents": []
+      },
+      {
+        "name": "Restoration",
+        "talents": []
+      }
+    ]
+  },
+  {
+    "name": "Warrior",
+    "startingEquipment": {
+      "Dwarf": [
+        "Recruit's Shirt",
+        "Recruit's Pants",
+        "Recruit's Boots",
+        "Worn Battleaxe"
+      ],
+      "Gnome": [
+        "Recruit's Shirt",
+        "Recruit's Pants",
+        "Recruit's Boots",
+        "Worn Shortsword",
+        "Worn Wooden Shield"
+      ],
+      "Human": [
+        "Recruit's Shirt",
+        "Recruit's Pants",
+        "Recruit's Boots",
+        "Worn Shortsword",
+        "Worn Wooden Shield"
+      ],
+      "NightElf": [
+        "Recruit's Shirt",
+        "Recruit's Pants",
+        "Recruit's Boots",
+        "Worn Shortsword",
+        "Worn Wooden Shield"
+      ],
+      "Orc": [
+        "Brawler's Harness",
+        "Brawler's Pants",
+        "Brawler's Boots",
+        "Worn Battleaxe"
+      ],
+      "Tauren": [
+        "Brawler's Harness",
+        "Brawler's Pants",
+        "Battleworn Hammer"
+      ],
+      "Troll": [
+        "Brawler's Harness",
+        "Brawler's Pants",
+        "Worn Axe",
+        "Worn Wooden Shield"
+      ],
+      "Forsaken": [
+        "Brawler's Harness",
+        "Brawler's Pants",
+        "Brawler's Boots",
+        "Worn Shortsword",
+        "Worn Wooden Shield"
+      ]
+    },
+    "rules": {
+      "Melee Attack Power per Strength": 3.0,
+      "Ranged Attack Power per Strength": 0.0,
+      "Critical Strike per Strength": 0.0,
+      "Melee Attack Power per Agility": 1.0,
+      "Ranged Attack Power per Agility": 0.0,
+      "Critical Strike per Agility": 0.03,
+      "Spell Power per Intellect": 1.0,
+      "Spell Critical per Intellect": 0.03,
+      "Stamina per Level": 3.0,
+      "Strength per Level": 4.0,
+      "Agility per Level": 2.0,
+      "Intellect per Level": 0.0
+    },
+    "abilities": [
+      {
+        "Item1": "Dual Wielding Proficiency",
+        "Item2": 1
+      },
+      {
+        "Item1": "Two Handed Axe Proficiency",
+        "Item2": 1
+      },
+      {
+        "Item1": "Two Handed Mace Proficiency",
+        "Item2": 1
+      },
+      {
+        "Item1": "Two Handed Sword Proficiency",
+        "Item2": 1
+      },
+      {
+        "Item1": "One Handed Axe Proficiency",
+        "Item2": 1
+      },
+      {
+        "Item1": "One Handed Mace Proficiency",
+        "Item2": 1
+      },
+      {
+        "Item1": "One Handed Sword Proficiency",
+        "Item2": 1
+      },
+      {
+        "Item1": "Fist Weapon Proficiency",
+        "Item2": 1
+      },
+      {
+        "Item1": "Off Hand Proficiency",
+        "Item2": 1
+      },
+      {
+        "Item1": "Polearm Proficiency",
+        "Item2": 1
+      },
+      {
+        "Item1": "Shield Proficiency",
+        "Item2": 1
+      },
+      {
+        "Item1": "Mail Proficiency",
+        "Item2": 1
+      },
+      {
+        "Item1": "Plate Proficiency",
+        "Item2": 40
+      }
+    ],
+    "talentTrees": [
+      {
+        "name": "Arms",
+        "talents": [
+          {
+            "col": 1,
+            "ability": "Heroic Strike",
+            "defaultTaken": true
+          },
+          {
+            "row": 1,
+            "col": 2,
+            "ability": "Charge"
+          },
+          {
+            "row": 2,
+            "col": 2,
+            "ability": "Deflection"
+          },
+          {
+            "row": 3,
+            "col": 1,
+            "ability": "Overpower"
+          },
+          {
+            "row": 3,
+            "col": 2,
+            "ability": "Rend"
+          },
+          {
+            "row": 4,
+            "col": 1,
+            "ability": "Thunder Clap"
+          },
+          {
+            "row": 4,
+            "col": 2,
+            "ability": "Hamstring"
+          },
+          {
+            "row": 5,
+            "col": 2,
+            "ability": "Cleave"
+          },
+          {
+            "row": 6,
+            "col": 2,
+            "ability": "Deep Wounds"
+          },
+          {
+            "row": 6,
+            "col": 2,
+            "ability": "Sweeping Strikes"
+          },
+          {
+            "row": 7,
+            "col": 1,
+            "ability": "Mortal Strike"
+          },
+          {
+            "row": 8,
+            "ability": "Retaliation"
+          },
+          {
+            "row": 8,
+            "col": 2,
+            "ability": "Pain And Gain"
+          },
+          {
+            "row": 9,
+            "ability": "Bladestorm"
+          }
+        ]
+      },
+      {
+        "name": "Fury",
+        "talents": [
+          {
+            "col": 1,
+            "ability": "Battle Shout",
+            "defaultTaken": true
+          },
+          {
+            "row": 1,
+            "ability": "Bloodthirst",
+            "defaultTaken": true
+          },
+          {
+            "row": 2,
+            "col": 1,
+            "ability": "Cruelty"
+          },
+          {
+            "row": 3,
+            "col": 2,
+            "ability": "Raging Blow"
+          },
+          {
+            "row": 4,
+            "col": 2,
+            "ability": "Whirlwind"
+          },
+          {
+            "row": 5,
+            "col": 1,
+            "ability": "Demoralizing Shout"
+          },
+          {
+            "row": 5,
+            "col": 2,
+            "ability": "Skullsplitter"
+          },
+          {
+            "row": 6,
+            "col": 1,
+            "ability": "Execute"
+          },
+          {
+            "row": 7,
+            "col": 2,
+            "ability": "Onslaught"
+          },
+          {
+            "row": 7,
+            "col": 1,
+            "ability": "Berserker Rage"
+          },
+          {
+            "row": 8,
+            "col": 2,
+            "ability": "Enraged Regeneration"
+          },
+          {
+            "row": 9,
+            "col": 1,
+            "ability": "Rampage"
+          },
+          {
+            "row": 10,
+            "ability": "Defiance"
+          },
+          {
+            "row": 10,
+            "col": 1,
+            "ability": "Recklessness",
+            "inherited": true
+          }
+        ]
+      },
+      {
+        "name": "Protection",
+        "talents": [
+          {
+            "col": 1,
+            "ability": "Revenge",
+            "defaultTaken": true
+          },
+          {
+            "row": 2,
+            "ability": "Shield Slam"
+          },
+          {
+            "row": 3,
+            "col": 2,
+            "ability": "Bloodrage"
+          },
+          {
+            "row": 4,
+            "col": 2,
+            "ability": "Spell Reflection"
+          },
+          {
+            "row": 4,
+            "col": 1,
+            "ability": "Shield Bash"
+          },
+          {
+            "row": 5,
+            "col": 2,
+            "ability": "Shield Block"
+          },
+          {
+            "row": 5,
+            "col": 1,
+            "ability": "Anticipation"
+          },
+          {
+            "row": 7,
+            "col": 2,
+            "ability": "Shield Wall"
+          },
+          {
+            "row": 8,
+            "ability": "Indomitable"
+          },
+          {
+            "row": 9,
+            "col": 2,
+            "ability": "Last Stand"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Paladin",
+    "startingEquipment": {
+      "Dwarf": [
+        "Squire's Shirt",
+        "Squire's Pants",
+        "Squire's Boots",
+        "Battleworn Hammer"
+      ],
+      "Human": [
+        "Squire's Shirt",
+        "Squire's Pants",
+        "Squire's Boots",
+        "Battleworn Hammer"
+      ]
+    },
+    "rules": {
+      "Melee Attack Power per Strength": 2.0,
+      "Ranged Attack Power per Strength": 0.0,
+      "Critical Strike per Strength": 0.0,
+      "Melee Attack Power per Agility": 1.0,
+      "Ranged Attack Power per Agility": 0.0,
+      "Critical Strike per Agility": 0.03,
+      "Spell Power per Intellect": 2.0,
+      "Spell Critical per Intellect": 0.03,
+      "Stamina per Level": 3.0,
+      "Strength per Level": 3.0,
+      "Agility per Level": 1.0,
+      "Intellect per Level": 2.0
+    },
+    "abilities": [
+      {
+        "Item1": "Two Handed Axe Proficiency",
+        "Item2": 1
+      },
+      {
+        "Item1": "Two Handed Mace Proficiency",
+        "Item2": 1
+      },
+      {
+        "Item1": "Two Handed Sword Proficiency",
+        "Item2": 1
+      },
+      {
+        "Item1": "One Handed Axe Proficiency",
+        "Item2": 1
+      },
+      {
+        "Item1": "One Handed Mace Proficiency",
+        "Item2": 1
+      },
+      {
+        "Item1": "One Handed Sword Proficiency",
+        "Item2": 1
+      },
+      {
+        "Item1": "Off Hand Proficiency",
+        "Item2": 1
+      },
+      {
+        "Item1": "Polearm Proficiency",
+        "Item2": 1
+      },
+      {
+        "Item1": "Libram Proficiency",
+        "Item2": 1
+      },
+      {
+        "Item1": "Shield Proficiency",
+        "Item2": 1
+      },
+      {
+        "Item1": "Mail Proficiency",
+        "Item2": 1
+      },
+      {
+        "Item1": "Plate Proficiency",
+        "Item2": 40
+      }
+    ],
+    "talentTrees": [
+      {
+        "name": "Holy",
+        "talents": []
+      },
+      {
+        "name": "Retribution",
+        "talents": []
+      },
+      {
+        "name": "Protection",
+        "talents": []
+      }
+    ]
+  },
+  {
+    "name": "Druid",
+    "startingEquipment": {
+      "NightElf": [
+        "Novice's Robe",
+        "Novice's Pants",
+        "Handcrafted Staff"
+      ],
+      "Tauren": [
+        "Novice's Robe",
+        "Novice's Pants",
+        "Bent Staff"
+      ]
+    },
+    "rules": {
+      "Melee Attack Power per Strength": 2.0,
+      "Ranged Attack Power per Strength": 0.0,
+      "Critical Strike per Strength": 0.0,
+      "Melee Attack Power per Agility": 1.0,
+      "Ranged Attack Power per Agility": 0.0,
+      "Critical Strike per Agility": 0.03,
+      "Spell Power per Intellect": 2.0,
+      "Spell Critical per Intellect": 0.03,
+      "Stamina per Level": 3.0,
+      "Strength per Level": 2.0,
+      "Agility per Level": 2.0,
+      "Intellect per Level": 2.0
+    },
+    "abilities": [
+      {
+        "Item1": "Two Handed Mace Proficiency",
+        "Item2": 1
+      },
+      {
+        "Item1": "One Handed Mace Proficiency",
+        "Item2": 1
+      },
+      {
+        "Item1": "Fist Weapon Proficiency",
+        "Item2": 1
+      },
+      {
+        "Item1": "Off Hand Proficiency",
+        "Item2": 1
+      },
+      {
+        "Item1": "Polearm Proficiency",
+        "Item2": 1
+      },
+      {
+        "Item1": "Dagger Proficiency",
+        "Item2": 1
+      },
+      {
+        "Item1": "Staff Proficiency",
+        "Item2": 1
+      },
+      {
+        "Item1": "Idol Proficiency",
+        "Item2": 1
+      },
+      {
+        "Item1": "Leather Proficiency",
+        "Item2": 1
+      }
+    ],
+    "talentTrees": [
+      {
+        "name": "Feral",
+        "talents": []
+      },
+      {
+        "name": "Balance",
+        "talents": []
+      },
+      {
+        "name": "Restoration",
+        "talents": []
+      }
+    ]
+  },
+  {
+    "name": "Priest",
+    "startingEquipment": {
+      "Dwarf": [
+        "Neophyte's Robe",
+        "Neophyte's Pants",
+        "Neophyte's Boots",
+        "Worn Mace"
+      ],
+      "Human": [
+        "Neophyte's Robe",
+        "Neophyte's Pants",
+        "Neophyte's Boots",
+        "Worn Mace"
+      ],
+      "NightElf": [
+        "Neophyte's Robe",
+        "Neophyte's Pants",
+        "Neophyte's Boots",
+        "Worn Mace"
+      ],
+      "Troll": [
+        "Neophyte's Robe",
+        "Neophyte's Pants",
+        "Neophyte's Boots",
+        "Worn Mace"
+      ],
+      "Forsaken": [
+        "Neophyte's Robe",
+        "Neophyte's Pants",
+        "Neophyte's Boots",
+        "Worn Mace"
+      ]
+    },
+    "rules": {
+      "Melee Attack Power per Strength": 1.0,
+      "Ranged Attack Power per Strength": 0.0,
+      "Critical Strike per Strength": 0.0,
+      "Melee Attack Power per Agility": 1.0,
+      "Ranged Attack Power per Agility": 0.0,
+      "Critical Strike per Agility": 0.03,
+      "Spell Power per Intellect": 3.0,
+      "Spell Critical per Intellect": 0.03,
+      "Stamina per Level": 3.0,
+      "Strength per Level": 1.0,
+      "Agility per Level": 1.0,
+      "Intellect per Level": 4.0
+    },
+    "abilities": [
+      {
+        "Item1": "One Handed Mace Proficiency",
+        "Item2": 1
+      },
+      {
+        "Item1": "Off Hand Proficiency",
+        "Item2": 1
+      },
+      {
+        "Item1": "Dagger Proficiency",
+        "Item2": 1
+      },
+      {
+        "Item1": "Staff Proficiency",
+        "Item2": 1
+      },
+      {
+        "Item1": "Wand Proficiency",
+        "Item2": 1
+      },
+      {
+        "Item1": "Cloth Proficiency",
+        "Item2": 1
+      }
+    ],
+    "talentTrees": [
+      {
+        "name": "Holy",
+        "talents": [
+          {
+            "col": 1,
+            "ability": "Smite",
+            "defaultTaken": true
+          },
+          {
+            "col": 2,
+            "ability": "Lesser Heal"
+          },
+          {
+            "row": 1,
+            "col": 2,
+            "ability": "Heal",
+            "inherited": true
+          },
+          {
+            "row": 1,
+            "ability": "Spell Warding"
+          },
+          {
+            "row": 2,
+            "ability": "Holy Fire"
+          },
+          {
+            "row": 2,
+            "col": 1,
+            "ability": "Spiritual Guidance"
+          },
+          {
+            "row": 2,
+            "col": 2,
+            "ability": "Blessed Recovery",
+            "inherited": true
+          },
+          {
+            "row": 3,
+            "ability": "Renew"
+          },
+          {
+            "row": 3,
+            "ability": "Holy Nova"
+          },
+          {
+            "row": 4,
+            "col": 1,
+            "ability": "Healing Focus"
+          },
+          {
+            "row": 5,
+            "ability": "Prayer Of Healing"
+          },
+          {
+            "row": 5,
+            "col": 1,
+            "ability": "Spiritual Healing"
+          },
+          {
+            "row": 6,
+            "col": 1,
+            "ability": "Searing Light"
+          },
+          {
+            "row": 7,
+            "col": 2,
+            "ability": "Desperate Prayer"
+          },
+          {
+            "row": 7,
+            "col": 1,
+            "ability": "Divine Fury"
+          },
+          {
+            "row": 8,
+            "ability": "Lightwell"
+          },
+          {
+            "row": 10,
+            "ability": "Spirit Of Redemption"
+          }
+        ]
+      },
+      {
+        "name": "Discipline",
+        "talents": [
+          {
+            "col": 1,
+            "ability": "Power Word: Shield",
+            "defaultTaken": true
+          },
+          {
+            "row": 1,
+            "col": 2,
+            "ability": "Meditation"
+          },
+          {
+            "row": 2,
+            "ability": "Power Word: Fortitude"
+          },
+          {
+            "row": 3,
+            "col": 1,
+            "ability": "Inner Fire"
+          },
+          {
+            "row": 3,
+            "col": 2,
+            "ability": "Divine Spirit"
+          },
+          {
+            "row": 4,
+            "col": 2,
+            "ability": "Silent Resolve"
+          },
+          {
+            "row": 5,
+            "col": 2,
+            "ability": "Mana Burn"
+          },
+          {
+            "row": 6,
+            "col": 2,
+            "ability": "Unbreakable Will"
+          },
+          {
+            "row": 8,
+            "col": 1,
+            "ability": "Martyrdom"
+          },
+          {
+            "row": 9,
+            "ability": "Force Of Will"
+          },
+          {
+            "row": 10,
+            "col": 2,
+            "ability": "Power Infusion"
+          }
+        ]
+      },
+      {
+        "name": "Shadow",
+        "talents": [
+          {
+            "col": 1,
+            "ability": "Shadow Word: Pain",
+            "defaultTaken": true
+          },
+          {
+            "row": 1,
+            "col": 2,
+            "ability": "Blackout"
+          },
+          {
+            "row": 3,
+            "col": 2,
+            "ability": "Fade"
+          },
+          {
+            "row": 4,
+            "col": 2,
+            "ability": "Shadow Weaving"
+          },
+          {
+            "row": 5,
+            "col": 1,
+            "ability": "Devouring Plague"
+          },
+          {
+            "row": 6,
+            "col": 2,
+            "ability": "Hex Of Weakness"
+          },
+          {
+            "row": 6,
+            "ability": "Shadow Focus"
+          },
+          {
+            "row": 7,
+            "col": 1,
+            "ability": "Psychic Scream"
+          },
+          {
+            "row": 10,
+            "col": 2,
+            "ability": "Shadowform"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Warlock",
+    "startingEquipment": {
+      "Gnome": [
+        "Acolyte's Robe",
+        "Acolyte's Pants",
+        "Acolyte's Shoes",
+        "Worn Dagger"
+      ],
+      "Human": [
+        "Acolyte's Robe",
+        "Acolyte's Pants",
+        "Acolyte's Shoes",
+        "Worn Dagger"
+      ],
+      "Orc": [
+        "Acolyte's Robe",
+        "Acolyte's Pants",
+        "Acolyte's Shoes",
+        "Worn Dagger"
+      ],
+      "Forsaken": [
+        "Acolyte's Robe",
+        "Acolyte's Pants",
+        "Acolyte's Shoes",
+        "Worn Dagger"
+      ]
+    },
+    "rules": {
+      "Melee Attack Power per Strength": 1.0,
+      "Ranged Attack Power per Strength": 0.0,
+      "Critical Strike per Strength": 0.0,
+      "Melee Attack Power per Agility": 1.0,
+      "Ranged Attack Power per Agility": 0.0,
+      "Critical Strike per Agility": 0.03,
+      "Spell Power per Intellect": 3.0,
+      "Spell Critical per Intellect": 0.03,
+      "Stamina per Level": 3.0,
+      "Strength per Level": 1.0,
+      "Agility per Level": 1.0,
+      "Intellect per Level": 4.0
+    },
+    "abilities": [
+      {
+        "Item1": "One Handed Sword Proficiency",
+        "Item2": 1
+      },
+      {
+        "Item1": "Off Hand Proficiency",
+        "Item2": 1
+      },
+      {
+        "Item1": "Dagger Proficiency",
+        "Item2": 1
+      },
+      {
+        "Item1": "Staff Proficiency",
+        "Item2": 1
+      },
+      {
+        "Item1": "Wand Proficiency",
+        "Item2": 1
+      },
+      {
+        "Item1": "Cloth Proficiency",
+        "Item2": 1
+      }
+    ],
+    "talentTrees": [
+      {
+        "name": "Affliction",
+        "talents": [
+          {
+            "col": 1,
+            "ability": "Corruption",
+            "defaultTaken": true
+          },
+          {
+            "row": 1,
+            "ability": "Curse Of Agony"
+          },
+          {
+            "row": 1,
+            "col": 2,
+            "ability": "Demon Skin"
+          },
+          {
+            "row": 2,
+            "col": 2,
+            "ability": "Curse Of Weakness"
+          },
+          {
+            "row": 3,
+            "col": 1,
+            "ability": "Drain Soul"
+          },
+          {
+            "row": 4,
+            "col": 1,
+            "ability": "Agonizing Corruption"
+          },
+          {
+            "row": 4,
+            "col": 2,
+            "ability": "Haunt"
+          },
+          {
+            "row": 5,
+            "ability": "Curse Of Tongues"
+          },
+          {
+            "row": 6,
+            "col": 2,
+            "ability": "Creeping Death",
+            "inherited": true
+          },
+          {
+            "row": 7,
+            "ability": "Unstable Affliction"
+          },
+          {
+            "row": 7,
+            "col": 1,
+            "ability": "Nightfall"
+          },
+          {
+            "row": 8,
+            "col": 2,
+            "ability": "Kindled Malice"
+          },
+          {
+            "row": 8,
+            "col": 1,
+            "ability": "Profane Bargain"
+          },
+          {
+            "row": 10,
+            "ability": "Xavius Gambit"
+          }
+        ]
+      },
+      {
+        "name": "Demonology",
+        "talents": [
+          {
+            "col": 1,
+            "ability": "Summon Imp",
+            "defaultTaken": true
+          },
+          {
+            "row": 1,
+            "col": 2,
+            "ability": "Fel Armor"
+          },
+          {
+            "row": 2,
+            "ability": "Summon Voidwalker"
+          },
+          {
+            "row": 2,
+            "col": 1,
+            "ability": "Health Funnel"
+          },
+          {
+            "row": 3,
+            "col": 1,
+            "ability": "Summon Felhunter"
+          },
+          {
+            "row": 4,
+            "col": 1,
+            "ability": "Demonic Embrace"
+          },
+          {
+            "row": 6,
+            "col": 1,
+            "ability": "Summon Fel Guard"
+          },
+          {
+            "row": 7,
+            "ability": "Master Summoner"
+          }
+        ]
+      },
+      {
+        "name": "Destruction",
+        "talents": [
+          {
+            "col": 1,
+            "ability": "Shadow Bolt",
+            "defaultTaken": true
+          },
+          {
+            "row": 1,
+            "ability": "Immolate"
+          },
+          {
+            "row": 3,
+            "ability": "Pyrogenics",
+            "inherited": true
+          },
+          {
+            "row": 4,
+            "ability": "Chaos Bolt"
+          },
+          {
+            "row": 5,
+            "col": 1,
+            "ability": "Rain Of Fire"
+          },
+          {
+            "row": 6,
+            "col": 1,
+            "ability": "Eradication"
+          },
+          {
+            "row": 7,
+            "col": 1,
+            "ability": "Havoc"
+          },
+          {
+            "row": 7,
+            "col": 2,
+            "ability": "Ritual Of Ruin"
+          },
+          {
+            "row": 8,
+            "col": 1,
+            "ability": "Summon Infernal"
+          },
+          {
+            "row": 9,
+            "col": 1,
+            "ability": "Infernal Brand",
+            "inherited": true
+          },
+          {
+            "row": 10,
+            "col": 1,
+            "ability": "Channel Demonfire"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Mage",
+    "startingEquipment": {
+      "Gnome": [
+        "Apprentice's Robe",
+        "Apprentice's Pants",
+        "Apprentice's Boots",
+        "Bent Staff"
+      ],
+      "Human": [
+        "Apprentice's Robe",
+        "Apprentice's Pants",
+        "Apprentice's Boots",
+        "Bent Staff"
+      ],
+      "Troll": [
+        "Apprentice's Robe",
+        "Apprentice's Pants",
+        "Apprentice's Boots",
+        "Bent Staff"
+      ],
+      "Forsaken": [
+        "Apprentice's Robe",
+        "Apprentice's Pants",
+        "Apprentice's Boots",
+        "Bent Staff"
+      ]
+    },
+    "rules": {
+      "Melee Attack Power per Strength": 1.0,
+      "Ranged Attack Power per Strength": 0.0,
+      "Critical Strike per Strength": 0.0,
+      "Melee Attack Power per Agility": 1.0,
+      "Ranged Attack Power per Agility": 0.0,
+      "Critical Strike per Agility": 0.03,
+      "Spell Power per Intellect": 3.0,
+      "Spell Critical per Intellect": 0.03,
+      "Stamina per Level": 3.0,
+      "Strength per Level": 1.0,
+      "Agility per Level": 1.0,
+      "Intellect per Level": 4.0
+    },
+    "abilities": [
+      {
+        "Item1": "One Handed Sword Proficiency",
+        "Item2": 1
+      },
+      {
+        "Item1": "Off Hand Proficiency",
+        "Item2": 1
+      },
+      {
+        "Item1": "Dagger Proficiency",
+        "Item2": 1
+      },
+      {
+        "Item1": "Staff Proficiency",
+        "Item2": 1
+      },
+      {
+        "Item1": "Wand Proficiency",
+        "Item2": 1
+      },
+      {
+        "Item1": "Cloth Proficiency",
+        "Item2": 1
+      },
+      {
+        "Item1": "Thunderstorm",
+        "Item2": 1
+      },
+      {
+        "Item1": "Spore Cloud",
+        "Item2": 1
+      },
+      {
+        "Item1": "Volatile Infection",
+        "Item2": 1
+      }
+    ],
+    "talentTrees": [
+      {
+        "name": "Fire",
+        "talents": [
+          {
+            "col": 1,
+            "ability": "Fireball",
+            "defaultTaken": true
+          },
+          {
+            "row": 1,
+            "ability": "Scorch"
+          },
+          {
+            "row": 1,
+            "col": 1,
+            "ability": "Hot Streak",
+            "inherited": true
+          },
+          {
+            "row": 1,
+            "col": 2,
+            "ability": "Blazing Barrier"
+          },
+          {
+            "row": 2,
+            "ability": "Searing Touch",
+            "inherited": true
+          },
+          {
+            "row": 2,
+            "col": 1,
+            "ability": "Fire Blast"
+          },
+          {
+            "row": 2,
+            "col": 2,
+            "ability": "Flamestrike"
+          },
+          {
+            "row": 3,
+            "ability": "Fiery Rush"
+          },
+          {
+            "row": 3,
+            "col": 1,
+            "ability": "Fervent Flickering",
+            "inherited": true
+          },
+          {
+            "row": 4,
+            "ability": "Pyroblast"
+          },
+          {
+            "row": 4,
+            "col": 2,
+            "ability": "Flame Patch",
+            "inherited": true
+          },
+          {
+            "row": 5,
+            "ability": "Pyroclasm",
+            "inherited": true
+          },
+          {
+            "row": 5,
+            "col": 1,
+            "ability": "Firemind"
+          },
+          {
+            "row": 5,
+            "col": 2,
+            "ability": "Dragon's Breath"
+          },
+          {
+            "row": 6,
+            "col": 1,
+            "ability": "Blast Wave"
+          },
+          {
+            "row": 6,
+            "col": 2,
+            "ability": "Conflagration",
+            "inherited": true
+          },
+          {
+            "row": 7,
+            "col": 1,
+            "ability": "Combustion"
+          },
+          {
+            "row": 7,
+            "col": 2,
+            "ability": "Pyromaniac"
+          },
+          {
+            "row": 8,
+            "ability": "Convection"
+          },
+          {
+            "row": 8,
+            "col": 2,
+            "ability": "Critical Mass"
+          },
+          {
+            "row": 9,
+            "ability": "Volatile Detonation"
+          },
+          {
+            "row": 9,
+            "col": 1,
+            "ability": "Hyperthermia",
+            "inherited": true
+          },
+          {
+            "row": 10,
+            "ability": "Meteor"
+          },
+          {
+            "row": 10,
+            "col": 1,
+            "ability": "Deep Impact"
+          },
+          {
+            "row": 10,
+            "col": 2,
+            "ability": "Sun King's Blessing",
+            "inherited": true
+          }
+        ]
+      },
+      {
+        "name": "Frost",
+        "talents": [
+          {
+            "col": 1,
+            "ability": "Frostbolt",
+            "defaultTaken": true
+          },
+          {
+            "row": 1,
+            "ability": "Brain Freeze"
+          },
+          {
+            "row": 1,
+            "col": 1,
+            "ability": "Freezing Nova"
+          },
+          {
+            "row": 1,
+            "col": 2,
+            "ability": "Frost Ward"
+          },
+          {
+            "row": 2,
+            "ability": "Ice Lance"
+          },
+          {
+            "row": 2,
+            "col": 1,
+            "ability": "Wintertide",
+            "inherited": true
+          },
+          {
+            "row": 2,
+            "col": 2,
+            "ability": "Fingers Of Frost"
+          },
+          {
+            "row": 3,
+            "ability": "Ice Shards",
+            "inherited": true
+          },
+          {
+            "row": 3,
+            "col": 2,
+            "ability": "Blizzard"
+          },
+          {
+            "row": 4,
+            "ability": "Splitting Ice",
+            "inherited": true
+          },
+          {
+            "row": 4,
+            "col": 1,
+            "ability": "Frostbite"
+          },
+          {
+            "row": 4,
+            "col": 2,
+            "ability": "Hailstones",
+            "inherited": true
+          },
+          {
+            "row": 5,
+            "ability": "Icy Flows"
+          },
+          {
+            "row": 5,
+            "col": 1,
+            "ability": "Permafrost"
+          },
+          {
+            "row": 5,
+            "col": 2,
+            "ability": "Frost Channeling"
+          },
+          {
+            "row": 6,
+            "col": 1,
+            "ability": "Piercing Ice"
+          },
+          {
+            "row": 6,
+            "col": 2,
+            "ability": "Ice Block"
+          },
+          {
+            "row": 7,
+            "ability": "Deep Freeze"
+          },
+          {
+            "row": 7,
+            "col": 2,
+            "ability": "Flash Freeze",
+            "inherited": true
+          },
+          {
+            "row": 8,
+            "col": 1,
+            "ability": "Icy Veins"
+          },
+          {
+            "row": 8,
+            "col": 2,
+            "ability": "Perpetual Winter"
+          },
+          {
+            "row": 9,
+            "ability": "Cruel Winter",
+            "inherited": true
+          },
+          {
+            "row": 9,
+            "col": 1,
+            "ability": "Deep Shatter"
+          },
+          {
+            "row": 10,
+            "ability": "Bone Chilling"
+          },
+          {
+            "row": 10,
+            "col": 1,
+            "ability": "Cryopathy",
+            "inherited": true
+          }
+        ]
+      },
+      {
+        "name": "Arcane",
+        "talents": [
+          {
+            "col": 1,
+            "ability": "Arcane Missiles",
+            "defaultTaken": true
+          },
+          {
+            "row": 1,
+            "ability": "Arcane Tempo"
+          },
+          {
+            "row": 1,
+            "col": 1,
+            "ability": "Concetration"
+          },
+          {
+            "row": 1,
+            "col": 2,
+            "ability": "Prismatic Barrier"
+          },
+          {
+            "row": 2,
+            "ability": "Amplification"
+          },
+          {
+            "row": 2,
+            "col": 2,
+            "ability": "Arcane Barrage"
+          },
+          {
+            "row": 3,
+            "ability": "Foresight"
+          },
+          {
+            "row": 3,
+            "col": 1,
+            "ability": "Mana Adept"
+          },
+          {
+            "row": 3,
+            "col": 2,
+            "ability": "Reverberate",
+            "inherited": true
+          },
+          {
+            "row": 4,
+            "ability": "Slipstream"
+          },
+          {
+            "row": 4,
+            "col": 2,
+            "ability": "Presence of Mind"
+          },
+          {
+            "row": 5,
+            "ability": "Resonance",
+            "inherited": true
+          },
+          {
+            "row": 5,
+            "col": 2,
+            "ability": "Prodigious Savant"
+          },
+          {
+            "row": 6,
+            "ability": "Concentrated Power"
+          },
+          {
+            "row": 6,
+            "col": 1,
+            "ability": "Arcing Cleaves"
+          },
+          {
+            "row": 6,
+            "col": 2,
+            "ability": "Evocation"
+          },
+          {
+            "row": 7,
+            "col": 1,
+            "ability": "Cascading Power"
+          },
+          {
+            "row": 7,
+            "col": 2,
+            "ability": "Enlightenment",
+            "inherited": true
+          },
+          {
+            "row": 8,
+            "col": 1,
+            "ability": "Arcane Bombardment"
+          },
+          {
+            "row": 9,
+            "ability": "Nether Precision",
+            "inherited": true
+          },
+          {
+            "row": 9,
+            "col": 1,
+            "ability": "Supernova"
+          },
+          {
+            "row": 9,
+            "col": 2,
+            "ability": "Arcane Harmony",
+            "inherited": true
+          },
+          {
+            "row": 10,
+            "col": 1,
+            "ability": "Time Warp"
+          },
+          {
+            "row": 10,
+            "col": 2,
+            "ability": "Harmonic Echo",
+            "inherited": true
+          }
+        ]
+      }
+    ]
+  }
+]

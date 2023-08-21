@@ -1,0 +1,202 @@
+[
+  {
+    "name": "Blackrock Mountain",
+    "description": [
+      ""
+    ],
+    "sites": [
+      {
+        "Item1": "Dungeon",
+        "Item2": "Blackrock Depths"
+      },
+      {
+        "Item1": "Raid",
+        "Item2": "Molten Core"
+      },
+      {
+        "Item1": "Dungeon",
+        "Item2": "Lower Blackrock Spire"
+      },
+      {
+        "Item1": "Dungeon",
+        "Item2": "Upper Blackrock Spire"
+      },
+      {
+        "Item1": "Raid",
+        "Item2": "Blackwing Lair"
+      }
+    ]
+  },
+  {
+    "name": "Ruins of Alterac",
+    "description": [
+      ""
+    ],
+    "sites": [
+      {
+        "Item1": "HostileArea",
+        "Item2": "Town Center"
+      },
+      {
+        "Item1": "HostileArea",
+        "Item2": "Alterac Chapel"
+      },
+      {
+        "Item1": "HostileArea",
+        "Item2": "Alterac Keep"
+      }
+    ]
+  },
+  {
+    "name": "Tyr's Hand",
+    "description": [
+      ""
+    ],
+    "sites": [
+      {
+        "Item1": "HostileArea",
+        "Item2": "Town Square"
+      },
+      {
+        "Item1": "HostileArea",
+        "Item2": "Tyr's Hand Abbey"
+      },
+      {
+        "Item1": "HostileArea",
+        "Item2": "Tyr's Hand Keep"
+      },
+      {
+        "Item1": "HostileArea",
+        "Item2": "Scarlet Basilica"
+      }
+    ]
+  },
+  {
+    "name": "Hearthglen",
+    "description": [
+      ""
+    ],
+    "sites": [
+      {
+        "Item1": "HostileArea",
+        "Item2": "Central Town"
+      },
+      {
+        "Item1": "HostileArea",
+        "Item2": "Hearthglen Mine"
+      },
+      {
+        "Item1": "HostileArea",
+        "Item2": "Mardenholde Keep"
+      }
+    ]
+  },
+  {
+    "name": "Ruins of Stromgarde",
+    "description": [
+      ""
+    ],
+    "sites": [
+      {
+        "Item1": "HostileArea",
+        "Item2": "North Town"
+      },
+      {
+        "Item1": "HostileArea",
+        "Item2": "The Sanctum"
+      },
+      {
+        "Item1": "HostileArea",
+        "Item2": "Western Town"
+      },
+      {
+        "Item1": "HostileArea",
+        "Item2": "Tower of Arathor"
+      },
+      {
+        "Item1": "HostileArea",
+        "Item2": "Stromgarde Keep"
+      }
+    ]
+  },
+  {
+    "name": "Ruins of Alterac",
+    "description": [
+      ""
+    ],
+    "sites": [
+      {
+        "Item1": "HostileArea",
+        "Item2": "Town Center"
+      },
+      {
+        "Item1": "HostileArea",
+        "Item2": "Alterac Chapel"
+      },
+      {
+        "Item1": "HostileArea",
+        "Item2": "Alterac Keep"
+      }
+    ]
+  },
+  {
+    "name": "Scarlet Monastery Grounds",
+    "description": [
+      ""
+    ],
+    "sites": [
+      {
+        "Item1": "HostileArea",
+        "Item2": "Whispering Gardens"
+      },
+      {
+        "Item1": "HostileArea",
+        "Item2": "Terrace of Repose"
+      },
+      {
+        "Item1": "HostileArea",
+        "Item2": "The Grand Vestibule"
+      },
+      {
+        "Item1": "Dungeon",
+        "Item2": "Scarlet Monastery"
+      }
+    ]
+  },
+  {
+    "name": "Jaedenar",
+    "description": [
+      ""
+    ],
+    "sites": [
+      {
+        "Item1": "HostileArea",
+        "Item2": "Jaedenar"
+      },
+      {
+        "Item1": "HostileArea",
+        "Item2": "Shrine of the Deceiver"
+      },
+      {
+        "Item1": "Dungeon",
+        "Item2": "Shadow Hold"
+      }
+    ]
+  },
+  {
+    "name": "Alcaz Island",
+    "description": [
+      ""
+    ],
+    "sites": [
+      {
+        "Item1": "HostileArea",
+        "Item2": "Alcaz Island"
+      },
+      {
+        "Item1": "HostileArea",
+        "Item2": "Alcaz Dungeon"
+      }
+    ]
+  }
+]

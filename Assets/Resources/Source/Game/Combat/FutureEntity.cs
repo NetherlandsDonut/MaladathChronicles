@@ -1,6 +1,7 @@
+using System;
+using UnityEngine;
 using System.Linq;
 using System.Collections.Generic;
-using UnityEngine;
 
 using static Root;
 
@@ -283,9 +284,16 @@ public class FutureEntity
                 actionBar.cooldown -= 1;
     }
 
-    public void Damage(double damage)
+    public void Damage(FutureBoard board, double damage, bool dontPrompt = false)
     {
-        health -= (int)System.Math.Round(damage);
+        var p = board.player == this;
+        health -= (int)Math.Ceiling(damage);
+        if (dontPrompt) return;
+        foreach (var buff in buffs)
+            if (buff.Item1 == "Volatile Infection")
+            {
+                Damage(board, damage / 10, true);
+            }
     }
 
     public void FlareBuffs(FutureBoard board)

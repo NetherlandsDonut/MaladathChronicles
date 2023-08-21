@@ -91,7 +91,6 @@ public class Desktop : MonoBehaviour
             screen.transform.localPosition = new Vector3(0, -180);
         else if (CDesktop.name == "Desktop: Map")
             screen.transform.localPosition = new Vector3(-1000, 1000);
-        //screen.transform.localPosition = new Vector3(5648, -1193);
     }
 
     public void Update()
@@ -119,6 +118,7 @@ public class Desktop : MonoBehaviour
                     Destroy(loadingBar[0]);
                     Destroy(loadingBar[1]);
                     loadingBar = null;
+                    mapLoaded = true;
                     PlaySound("DesktopLoadSuccess");
                     break;
                 }
@@ -164,9 +164,10 @@ public class Desktop : MonoBehaviour
                     if (animationTime <= 0 && fallingElements.Count == 0)
                     {
                         animationTime = frameTime;
-                        Rebuild();
                         if (canUnlockScreen) CDesktop.UnlockScreen();
                         else Board.board.AnimateBoard();
+                        if (fallingElements.Count == 0)
+                            Rebuild();
                     }
                 }
             }

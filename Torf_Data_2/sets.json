@@ -1,0 +1,2513 @@
+[
+  {
+    "name": "Field Marshal's Aegis",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Lieutenant Commander's Redoubt",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Redemption Armor",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Avenger's Battlegear",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Judgement Armor",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Freethinker's Armor",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Lawbringer Armor",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Soulforge Armor",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Lightforge Armor",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Field Marshal's Battlegear",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Lieutenant Commander's Battlearmor",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Warlord's Battlegear",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Champion's Battlearmor",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Dreadnaught's Battlegear",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Conqueror's Battlegear",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Battlegear of Wrath",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Vindicator's Battlegear",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Battlegear of Might",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Battlegear of Heroism",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Battlegear of Valor",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Warlord's Earthshaker",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Champion's Stormcaller",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "The Earthshatterer",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Stormcaller's Garb",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "The Ten Storms",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Augur's Regalia",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "The Earthfury",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "The Five Thunders",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "The Elements",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Field Marshal's Pursuit",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Lieutenant Commander's Pursuance",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Lieutenant Commander's Pursuit",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Warlord's Pursuit",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Champion's Pursuance",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Champion's Pursuit",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Cryptstalker Armor",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Striker's Garb",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Dragonstalker Armor",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Predator's Armor",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Giantstalker Armor",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Beastmaster Armor",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Beaststalker Armor",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Field Marshal's Vestments",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Lieutenant Commander's Guard",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Lieutenant Commander's Vestments",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Warlord's Vestments",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Champion's Guard",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Champion's Vestments",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Bonescythe Armor",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Deathdealer's Embrace",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Bloodfang Armor",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Madcap's Outfit",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Nightslayer Armor",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Darkmantle Armor",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Shadowcraft Armor",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Field Marshal's Sanctuary",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Lieutenant Commander's Refuge",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Lieutenant Commander's Sanctuary",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Warlord's Sanctuary",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Champion's Refuge",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Champion's Sanctuary",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Dreamwalker Raiment",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Genesis Raiment",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Stormrage Raiment",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Haruspex's Garb",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Cenarion Raiment",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Feralheart Raiment",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Wildheart Raiment",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Field Marshal's Regalia",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Lieutenant Commander's Arcanum",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Lieutenant Commander's Regalia",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Warlord's Regalia",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Champion's Arcanum",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Champion's Regalia",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Frostfire Regalia",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Enigma Vestments",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Netherwind Regalia",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Illusionist's Attire",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Arcanist Regalia",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Sorcerer's Regalia",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Magister's Regalia",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Field Marshal's Threads",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Lieutenant Commander's Dreadgear",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Lieutenant Commander's Threads",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Warlord's Threads",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Champion's Dreadgear",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Champion's Threads",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Plagueheart Raiment",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Doomcaller's Attire",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Nemesis Raiment",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Demoniac's Threads",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Felheart Raiment",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Deathmist Raiment",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Dreadmist Raiment",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Field Marshal's Raiment",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Lieutenant Commander's Investiture",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Lieutenant Commander's Raiment",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Warlord's Raiment",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Champion's Investiture",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Champion's Raiment",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Vestments of Faith",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Garments of the Oracle",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Vestments of Transcendence",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Confessor's Raiment",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Vestments of Prophecy",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Vestments of the Virtuous",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Vestments of the Devout",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Imperial Plate",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Deathbone Guardian",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Chain of the Scarlet Crusade",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Battlegear of Undead Slaying",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "The Gladiator",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Bloodmail Regalia",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Bloodsoul Embrace",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Black Dragon Mail",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Blue Dragon Mail",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Green Dragon Mail",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Garb of the Undead Slayer",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Cadaverous Garb",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Stormshroud Armor",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Devilsaur Armor",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Volcanic Armor",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Ironfeather Armor",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Blood Tiger Harness",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Defias Leather",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Embrace of the Viper",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Undead Slayer's Armor",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Ironweave Battlesuit",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Necropile Raiment",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "The Postmaster",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Regalia of Undead Cleansing",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      },
+      {
+        "requiredPieces": 5,
+        "description": [
+          "+15 Spirit"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Shard of the Gods",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "The Twin Blades of Hakkari",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Spider's Kiss",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  }
+]

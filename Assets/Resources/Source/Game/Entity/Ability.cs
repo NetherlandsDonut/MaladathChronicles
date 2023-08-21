@@ -275,9 +275,9 @@ public class Ability
         {
             var caster = Caster(p, board);
             var target = Target(p, board);
-            target.Damage(caster.RollWeaponDamage() * (caster.SpellPower() / 10.0 + 1) * 1.3);
-            target.Damage(caster.RollWeaponDamage() * (caster.SpellPower() / 10.0 + 1) * 1.3);
-            target.Damage(caster.RollWeaponDamage() * (caster.SpellPower() / 10.0 + 1) * 1.3);
+            target.Damage(board, caster.RollWeaponDamage() * (caster.SpellPower() / 10.0 + 1) * 1.3);
+            target.Damage(board, caster.RollWeaponDamage() * (caster.SpellPower() / 10.0 + 1) * 1.3);
+            target.Damage(board, caster.RollWeaponDamage() * (caster.SpellPower() / 10.0 + 1) * 1.3);
             if (p) board.playerFinishedMoving = true;
             else board.enemyFinishedMoving = true;
         }),
@@ -367,6 +367,92 @@ public class Ability
             target.AddBuff("Venomous Bite", 4);
             if (p) board.playerFinishedMoving = true;
             else board.enemyFinishedMoving = true;
+        }),
+        new Ability("Volatile Infection", "AbilityDeathPact", 5, new() { "Damage" }, new()
+        {
+            { "Air", 2 },
+            { "Decay", 4 },
+        },
+        (p) =>
+        {
+            AddPaddingRegion(() =>
+            {
+                AddLine("Casting Withering Cloud will shroud the", Gray);
+                AddLine("board with in a poisonous gas.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Every turn a randomly chosen decay", Gray);
+                AddLine("element on the board will spread itself", Gray);
+                AddLine("and spawn a second one in one", Gray);
+                AddLine("of the neighboring tiles.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+                AddLine("Each point in Decay Mastery adds 1%", Gray);
+                AddLine("to trigger this effect twice.", Gray);
+            });
+        },
+        (p) =>
+        {
+            var target = Target(p);
+            Board.board.actions.Add(() =>
+            {
+                target.AddBuff("Volatile Infection", 6, SpawnShatterBuff(2, 0.8, new Vector3(p ? 148 : -318, 122), "AbilityDeathPact", target));
+                SpawnShatter(6, 0.7, new Vector3(p ? 148 : -318, 122), "AbilityDeathPact", true, !p ? "1000" : "1001");
+                SpawnShatter(6, 0.7, new Vector3(p ? 148 : -318, 122), "AbilityDeathPact", true, !p ? "1000" : "1001");
+                PlaySound("AbilityWitheringCloudCast");
+            });
+            CDesktop.LockScreen();
+        },
+        (p, board) =>
+        {
+            var caster = Caster(p, board);
+            caster.AddBuff("Volatile Infection", 6);
+        }),
+        new Ability("Spore Cloud", "AbilityDetectInvisibility", 5, new() { "Damage" }, new()
+        {
+            { "Air", 2 },
+            { "Decay", 4 },
+        },
+        (p) =>
+        {
+            AddPaddingRegion(() =>
+            {
+                AddLine("Casting Withering Cloud will shroud the", Gray);
+                AddLine("board with in a poisonous gas.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Every turn a randomly chosen decay", Gray);
+                AddLine("element on the board will spread itself", Gray);
+                AddLine("and spawn a second one in one", Gray);
+                AddLine("of the neighboring tiles.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+                AddLine("Each point in Decay Mastery adds 1%", Gray);
+                AddLine("to trigger this effect twice.", Gray);
+            });
+        },
+        (p) =>
+        {
+            var caster = Caster(p);
+            Board.board.actions.Add(() =>
+            {
+                caster.AddBuff("Spore Cloud", 6, SpawnShatterBuff(2, 0.8, new Vector3(!p ? 148 : -318, 122), "AbilityDetectInvisibility", caster));
+                SpawnShatter(6, 0.7, new Vector3(!p ? 148 : -318, 122), "AbilityDetectInvisibility", true, !p ? "1000" : "1001");
+                SpawnShatter(6, 0.7, new Vector3(!p ? 148 : -318, 122), "AbilityDetectInvisibility", true, !p ? "1000" : "1001");
+                PlaySound("AbilityWitheringCloudCast");
+            });
+            CDesktop.LockScreen();
+        },
+        (p, board) =>
+        {
+            var caster = Caster(p, board);
+            caster.AddBuff("Spore Cloud", 6);
         }),
         new Ability("Withering Cloud", 5, new() { "Gathering" }, new()
         {
@@ -1109,7 +1195,7 @@ public class Ability
         {
             var caster = Caster(p, board);
             var target = Target(p, board);
-            target.Damage(caster.RollWeaponDamage() * (caster.SpellPower() / 10.0 + 1) * 2.9);
+            target.Damage(board, caster.RollWeaponDamage() * (caster.SpellPower() / 10.0 + 1) * 2.9);
             if (p) board.playerFinishedMoving = true;
             else board.enemyFinishedMoving = true;
         }),
@@ -1158,7 +1244,7 @@ public class Ability
         {
             var caster = Caster(p, board);
             var target = Target(p, board);
-            target.Damage(caster.RollWeaponDamage() * (caster.SpellPower() / 10.0 + 1) * 2.9);
+            target.Damage(board, caster.RollWeaponDamage() * (caster.SpellPower() / 10.0 + 1) * 2.9);
             if (p) board.playerFinishedMoving = true;
             else board.enemyFinishedMoving = true;
         }),
@@ -1295,7 +1381,7 @@ public class Ability
         {
             var caster = Caster(p, board);
             var target = Target(p, board);
-            target.Damage(caster.RollWeaponDamage() * (caster.MeleeAttackPower() / 10.0 + 1) * 4.3);
+            target.Damage(board, caster.RollWeaponDamage() * (caster.MeleeAttackPower() / 10.0 + 1) * 4.3);
             if (p) board.playerFinishedMoving = true;
             else board.enemyFinishedMoving = true;
         }),
@@ -1344,7 +1430,7 @@ public class Ability
         {
             var caster = Caster(p, board);
             var target = Target(p, board);
-            target.Damage(caster.RollWeaponDamage() * (caster.SpellPower() / 10.0 + 1) * 2.9);
+            target.Damage(board, caster.RollWeaponDamage() * (caster.SpellPower() / 10.0 + 1) * 2.9);
             if (p) board.playerFinishedMoving = true;
             else board.enemyFinishedMoving = true;
         }),
@@ -1390,7 +1476,7 @@ public class Ability
         {
             var caster = Caster(p, board);
             var target = Target(p, board);
-            target.Damage(caster.RollWeaponDamage() * (caster.SpellPower() / 10.0 + 1) * 3.8);
+            target.Damage(board, caster.RollWeaponDamage() * (caster.SpellPower() / 10.0 + 1) * 3.8);
             target.AddBuff("Holy Fire", 2);
         }),
         new Ability("Frostbolt", 0, new() { "Damage" }, new()
@@ -1438,7 +1524,7 @@ public class Ability
         {
             var caster = Caster(p, board);
             var target = Target(p, board);
-            target.Damage(caster.RollWeaponDamage() * (caster.SpellPower() / 10.0 + 1) * 2.9);
+            target.Damage(board, caster.RollWeaponDamage() * (caster.SpellPower() / 10.0 + 1) * 2.9);
             if (p) board.playerFinishedMoving = true;
             else board.enemyFinishedMoving = true;
         }),
@@ -1490,7 +1576,7 @@ public class Ability
         {
             var caster = Caster(p, board);
             var target = Target(p, board);
-            target.Damage(caster.RollWeaponDamage() * (caster.SpellPower() / 10.0 + 1) * 4.9);
+            target.Damage(board, caster.RollWeaponDamage() * (caster.SpellPower() / 10.0 + 1) * 4.9);
         }),
         new Ability("Freezing Nova", 1, new() { "Gathering" }, new()
         {

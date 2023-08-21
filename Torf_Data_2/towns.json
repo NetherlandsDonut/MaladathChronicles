@@ -1,0 +1,507 @@
+[
+  {
+    "name": "Stormwind",
+    "zone": "Elwynn Forest",
+    "faction": "Alliance",
+    "transport": [
+      {
+        "means": "Tram",
+        "destination": "Ironforge",
+        "price": 1.5
+      }
+    ]
+  },
+  {
+    "name": "Goldshire",
+    "zone": "Elwynn Forest",
+    "faction": "Alliance"
+  },
+  {
+    "name": "Lakeshire",
+    "zone": "Elwynn Forest",
+    "faction": "Alliance"
+  },
+  {
+    "name": "Northshire Abbey",
+    "zone": "Elwynn Forest",
+    "faction": "Alliance"
+  },
+  {
+    "name": "Southshore",
+    "zone": "Hillsbrad Foothills",
+    "faction": "Alliance"
+  },
+  {
+    "name": "Darkshire",
+    "zone": "Duskwood",
+    "faction": "Alliance"
+  },
+  {
+    "name": "Rebel Camp",
+    "zone": "Stranglethorn Valley",
+    "faction": "Alliance"
+  },
+  {
+    "name": "Sentinel Hill",
+    "zone": "Westfall",
+    "faction": "Alliance"
+  },
+  {
+    "name": "Theramore Isle",
+    "zone": "Dustwallow Marsh",
+    "faction": "Alliance"
+  },
+  {
+    "name": "Menethil Harbor",
+    "zone": "Wetlands",
+    "faction": "Alliance",
+    "transport": [
+      {
+        "means": "Ship",
+        "destination": "Auberdine",
+        "price": 1.5
+      }
+    ]
+  },
+  {
+    "name": "Nethergarde Keep",
+    "zone": "Blasted Lands",
+    "faction": "Alliance"
+  },
+  {
+    "name": "Morgan's Vigil",
+    "zone": "Burning Steppes",
+    "faction": "Alliance"
+  },
+  {
+    "name": "Faldir's Cove",
+    "zone": "Arathi Highlands",
+    "faction": "Alliance"
+  },
+  {
+    "name": "Refuge Pointe",
+    "zone": "Arathi Highlands",
+    "faction": "Alliance"
+  },
+  {
+    "name": "Darnassus",
+    "zone": "Teldrassil",
+    "faction": "Alliance"
+  },
+  {
+    "name": "Aldrassil",
+    "zone": "Teldrassil",
+    "faction": "Alliance"
+  },
+  {
+    "name": "Star Breeze Village",
+    "zone": "Teldrassil",
+    "faction": "Alliance"
+  },
+  {
+    "name": "Rut'theran Village",
+    "zone": "Teldrassil",
+    "faction": "Alliance",
+    "transport": [
+      {
+        "means": "Ship",
+        "destination": "Auberdine",
+        "price": 1.5
+      }
+    ]
+  },
+  {
+    "name": "Dolanaar",
+    "zone": "Teldrassil",
+    "faction": "Alliance"
+  },
+  {
+    "name": "Astranaar",
+    "zone": "Ashenvale",
+    "faction": "Alliance"
+  },
+  {
+    "name": "Starfall Village",
+    "zone": "Winterspring",
+    "faction": "Alliance"
+  },
+  {
+    "name": "Silverwind Outpost",
+    "zone": "Ashenvale",
+    "faction": "Alliance"
+  },
+  {
+    "name": "Silverwind Refuge",
+    "zone": "Ashenvale",
+    "faction": "Alliance"
+  },
+  {
+    "name": "Silverwing Grove",
+    "zone": "Ashenvale",
+    "faction": "Alliance"
+  },
+  {
+    "name": "Forest Song",
+    "zone": "Ashenvale",
+    "faction": "Alliance"
+  },
+  {
+    "name": "Auberdine",
+    "zone": "Darkshore",
+    "faction": "Alliance",
+    "transport": [
+      {
+        "means": "Ship",
+        "destination": "Rut'theran Village",
+        "price": 1.5
+      },
+      {
+        "means": "Ship",
+        "destination": "Menethil Harbor",
+        "price": 1.5
+      }
+    ]
+  },
+  {
+    "name": "Talrendis Point",
+    "zone": "Azshara",
+    "faction": "Alliance"
+  },
+  {
+    "name": "Talonbranch Glade",
+    "zone": "Felwood",
+    "faction": "Alliance"
+  },
+  {
+    "name": "Feathermoon Stronghold",
+    "zone": "Feralas",
+    "faction": "Alliance"
+  },
+  {
+    "name": "Nijel's Point",
+    "zone": "Desolace",
+    "faction": "Alliance"
+  },
+  {
+    "name": "Thalaanar",
+    "zone": "Thousand Needles",
+    "faction": "Alliance"
+  },
+  {
+    "name": "Stonetalon Peak",
+    "zone": "Stonetalon Mountains",
+    "faction": "Alliance"
+  },
+  {
+    "name": "Aerie Peak",
+    "zone": "Hinterlands",
+    "faction": "Alliance"
+  },
+  {
+    "name": "Ironforge",
+    "zone": "Dun Morogh",
+    "faction": "Alliance",
+    "transport": [
+      {
+        "means": "Tram",
+        "destination": "Stormwind",
+        "price": 1.5
+      }
+    ]
+  },
+  {
+    "name": "Thelsamar",
+    "zone": "Loch Modan",
+    "faction": "Alliance"
+  },
+  {
+    "name": "Dun Garok",
+    "zone": "Hillsbrad Foothills",
+    "faction": "Alliance"
+  },
+  {
+    "name": "Dun Modr",
+    "zone": "Wetlands",
+    "faction": "Alliance"
+  },
+  {
+    "name": "Kharanos",
+    "zone": "Dun Morogh",
+    "faction": "Alliance"
+  },
+  {
+    "name": "Anvilmar",
+    "zone": "Dun Morogh",
+    "faction": "Alliance"
+  },
+  {
+    "name": "Algaz Station",
+    "zone": "Loch Modan",
+    "faction": "Alliance"
+  },
+  {
+    "name": "Orgrimmar",
+    "zone": "Durotar",
+    "faction": "Horde",
+    "transport": [
+      {
+        "means": "Zeppelin",
+        "destination": "Undercity",
+        "price": 1.5
+      },
+      {
+        "means": "Zeppelin",
+        "destination": "Grom'gol Base Camp",
+        "price": 1.5
+      }
+    ]
+  },
+  {
+    "name": "Razor Hill",
+    "zone": "Durotar",
+    "faction": "Horde"
+  },
+  {
+    "name": "Zoram'gar Outpost",
+    "zone": "Ashenvale",
+    "faction": "Horde"
+  },
+  {
+    "name": "Crossroads",
+    "zone": "The Barrens",
+    "faction": "Horde"
+  },
+  {
+    "name": "Bloodvenom Post",
+    "zone": "Felwood",
+    "faction": "Horde"
+  },
+  {
+    "name": "Valormok",
+    "zone": "Azshara",
+    "faction": "Horde"
+  },
+  {
+    "name": "The Mor'shan Rampart",
+    "zone": "The Barrens",
+    "faction": "Horde"
+  },
+  {
+    "name": "Grom'gol Base Camp",
+    "zone": "Stranglethorn Valley",
+    "faction": "Horde",
+    "transport": [
+      {
+        "means": "Zeppelin",
+        "destination": "Orgrimmar",
+        "price": 1.5
+      }
+    ]
+  },
+  {
+    "name": "Splintertree Post",
+    "zone": "Ashenvale",
+    "faction": "Horde"
+  },
+  {
+    "name": "Kargath",
+    "zone": "Badlands",
+    "faction": "Horde"
+  },
+  {
+    "name": "Stonard",
+    "zone": "Swamp of Sorrows",
+    "faction": "Horde"
+  },
+  {
+    "name": "Brackenwall Village",
+    "zone": "Dustwallow Marsh",
+    "faction": "Horde"
+  },
+  {
+    "name": "Sen'jin Village",
+    "zone": "Durotar",
+    "faction": "Horde"
+  },
+  {
+    "name": "Shadowprey Village",
+    "zone": "Desolace",
+    "faction": "Horde"
+  },
+  {
+    "name": "Revantusk Village",
+    "zone": "Hinterlands",
+    "faction": "Horde"
+  },
+  {
+    "name": "Thunder Bluff",
+    "zone": "Mulgore",
+    "faction": "Horde"
+  },
+  {
+    "name": "Bloodhoof Village",
+    "zone": "Mulgore",
+    "faction": "Horde"
+  },
+  {
+    "name": "Camp Narache",
+    "zone": "Mulgore",
+    "faction": "Horde"
+  },
+  {
+    "name": "Camp Mojache",
+    "zone": "Feralas",
+    "faction": "Horde"
+  },
+  {
+    "name": "Camp Taurajo",
+    "zone": "The Barrens",
+    "faction": "Horde"
+  },
+  {
+    "name": "Freewind Post",
+    "zone": "Thousand Needles",
+    "faction": "Horde"
+  },
+  {
+    "name": "Sun Rock Retreat",
+    "zone": "Stonetalon Mountains",
+    "faction": "Horde"
+  },
+  {
+    "name": "Ghost Walker Post",
+    "zone": "Desolace",
+    "faction": "Horde"
+  },
+  {
+    "name": "Undercity",
+    "zone": "Tirisfal Glades",
+    "faction": "Horde",
+    "transport": [
+      {
+        "means": "Zeppelin",
+        "destination": "Orgrimmar",
+        "price": 1.5
+      }
+    ]
+  },
+  {
+    "name": "The Bulwark",
+    "zone": "Tirisfal Glades",
+    "faction": "Horde"
+  },
+  {
+    "name": "Deathknell",
+    "zone": "Tirisfal Glades",
+    "faction": "Horde"
+  },
+  {
+    "name": "Brill",
+    "zone": "Tirisfal Glades",
+    "faction": "Horde"
+  },
+  {
+    "name": "Hammerfall",
+    "zone": "Arathi Highlands",
+    "faction": "Horde"
+  },
+  {
+    "name": "Tarren Mill",
+    "zone": "Hillsbrad Foothills",
+    "faction": "Horde"
+  },
+  {
+    "name": "The Sepulcher",
+    "zone": "Silverpine Forest",
+    "faction": "Horde"
+  },
+  {
+    "name": "Cenarion Hold",
+    "zone": "Silithus",
+    "faction": "Neutral"
+  },
+  {
+    "name": "Emerald Sanctuary",
+    "zone": "Felwood",
+    "faction": "Neutral"
+  },
+  {
+    "name": "Nighthaven",
+    "zone": "Moonglade",
+    "faction": "Neutral"
+  },
+  {
+    "name": "Light's Hope Chapel",
+    "zone": "Eastern Plaguelands",
+    "faction": "Neutral"
+  },
+  {
+    "name": "Chillwind Camp",
+    "zone": "Western Plaguelands",
+    "faction": "Neutral"
+  },
+  {
+    "name": "Thorium Point",
+    "zone": "Searing Gorge",
+    "faction": "Neutral"
+  },
+  {
+    "name": "Everlook",
+    "zone": "Winterspring",
+    "faction": "Neutral"
+  },
+  {
+    "name": "Gadgetzan",
+    "zone": "Tanaris",
+    "faction": "Neutral"
+  },
+  {
+    "name": "Ratchet",
+    "zone": "The Barrens",
+    "faction": "Neutral",
+    "transport": [
+      {
+        "means": "Ship",
+        "destination": "Booty Bay",
+        "price": 1.5
+      }
+    ]
+  },
+  {
+    "name": "Booty Bay",
+    "zone": "Stranglethorn Valley",
+    "faction": "Neutral",
+    "transport": [
+      {
+        "means": "Ship",
+        "destination": "Ratchet",
+        "price": 1.5
+      }
+    ]
+  },
+  {
+    "name": "Marshal's Refuge",
+    "zone": "Un'Goro Crater",
+    "faction": "Neutral"
+  },
+  {
+    "name": "Timbermaw Hold",
+    "zone": "Felwood",
+    "faction": "Neutral"
+  },
+  {
+    "name": "Bronzebeard Encampment",
+    "zone": "Silithus",
+    "faction": "Neutral"
+  },
+  {
+    "name": "The Harborage",
+    "zone": "Swamp of Sorrows",
+    "faction": "Neutral"
+  },
+  {
+    "name": "Nesingwary's Expedition",
+    "zone": "Stranglethorn Valley",
+    "faction": "Neutral"
+  }
+]

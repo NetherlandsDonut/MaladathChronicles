@@ -24,6 +24,7 @@ public static class Root
     public static GameObject fastTravelCamera;
     public static List<FallingElement> fallingElements;
     public static bool canUnlockScreen;
+    public static bool mapLoaded;
 
     public static string creationName = "Lisette";
     public static string creationFaction = "Alliance";
@@ -471,7 +472,7 @@ public static class Root
             {
                 if (item.CanEquip(currentSave.player))
                 {
-                    PlaySound(item.PickUpSound());
+                    PlaySound(item.ItemSound("PickUp"));
                     item.Equip(currentSave.player);
                     CloseWindow(h.window);
                     SpawnWindowBlueprint("Inventory");
@@ -533,11 +534,11 @@ public static class Root
             }
             else if (type == "HostileArea")
             {
-                var find = hostileAreas.Find(x => x.name == name);
-                AddSmallButton(find == null ? "OtherUnknown" : "Site" + find.subType,
+                var find = areas.Find(x => x.name == name);
+                AddSmallButton(find == null ? "OtherUnknown" : "Site" + find.type,
                 (h) =>
                 {
-                    area = hostileAreas.Find(x => x.name == name);
+                    area = areas.Find(x => x.name == name);
                     if (area == null) return;
                     PlaySound("DesktopInstanceOpen");
                     SpawnDesktopBlueprint("HostileAreaEntrance");
@@ -562,7 +563,7 @@ public static class Root
                         {
                             AddLine("Possible encounters:", DarkGray);
                             foreach (var encounter in find.possibleEncounters)
-                                AddLine("- " + encounter.Item3, DarkGray);
+                                AddLine("- " + encounter.who, DarkGray);
                         });
                     }
                 });
@@ -679,8 +680,8 @@ public static class Root
             {
                 AddLine(wing.name, Gray);
             });
-        var areas = wing.areas.Select(x => hostileAreas.Find(y => y.name == x.Item2)).ToList();
-        foreach (var area in areas)
+        var temp = wing.areas.Select(x => areas.Find(y => y.name == x.Item2)).ToList();
+        foreach (var area in temp)
         AddButtonRegion(() =>
         {
             var name = area != null ? area.name : "AREA NOT FOUND";
@@ -710,10 +711,14 @@ public static class Root
         {
             if (site.Item1 == "HostileArea")
             {
-                area = hostileAreas.Find(x => x.name == site.Item2);
-                SpawnTransition();
-                SetDesktopBackground("Areas/Area" + (area.zone + area.name).Replace("'", "").Replace(".", "").Replace(" ", ""));
+                area = areas.Find(x => x.name == site.Item2);
+                var window = CDesktop.windows.Find(x => x.title.StartsWith("Area: "));
+                if (window != null)
+                    if (window.title == "Area: " + area.name) return;
+                    else CloseWindow(window);
                 SpawnWindowBlueprint("Area: " + area.name);
+                SetDesktopBackground("Areas/Area" + (area.zone + area.name).Replace("'", "").Replace(".", "").Replace(" ", ""));
+                SpawnTransition();
             }
             else
             {

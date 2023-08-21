@@ -22,7 +22,7 @@ class Serialization
     {
         if (!Directory.Exists("Torf_Data_2"))
             Directory.CreateDirectory("Torf_Data_2");
-        var sett = new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore };
+        var sett = new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore, DefaultValueHandling = DefaultValueHandling.Ignore };
         var data = SerializeObject(what, encoded ? None : Indented, sett);
         if (encoded) data = Encrypt(data);
         File.WriteAllText("Torf_Data_2\\" + where + (encoded ? ".TORF" : ".json"), data);

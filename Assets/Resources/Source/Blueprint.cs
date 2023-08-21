@@ -369,7 +369,7 @@ public class Blueprint
                         },
                         (h) =>
                         {
-                            PlaySound(item.PutDownSound());
+                            PlaySound(item.ItemSound("PutDown"));
                             currentSave.player.Unequip(new() { slot });
                             CloseWindow(h.window);
                             SpawnWindowBlueprint("PlayerEquipmentInfo");
@@ -1222,6 +1222,7 @@ public class Blueprint
         new("InventorySort", () => {
             SetAnchor(Center);
             AddRegionGroup();
+            SetRegionGroupWidth(152);
             AddHeaderRegion(() =>
             {
                 AddLine("Sort inventory:");
@@ -1284,6 +1285,7 @@ public class Blueprint
         new("InventorySettings", () => {
             SetAnchor(Center);
             AddRegionGroup();
+            SetRegionGroupWidth(152);
             AddHeaderRegion(() =>
             {
                 AddLine("Inventory settings:");
@@ -1937,13 +1939,16 @@ public class Blueprint
         new("Map", () =>
         {
             PlaySound("DesktopOpenSave", 0.2f);
-            loadingBar = new GameObject[2]; 
-            loadingBar[0] = new GameObject("LoadingBarBegin", typeof(SpriteRenderer));
-            loadingBar[0].GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Textures/LoadingBarEnd");
-            loadingBar[0].transform.position = new Vector3(-1181, 863);
-            loadingBar[1] = new GameObject("LoadingBar", typeof(SpriteRenderer));
-            loadingBar[1].GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Textures/LoadingBarStretch");
-            loadingBar[1].transform.position = new Vector3(-1178, 863);
+            if (!mapLoaded)
+            {
+                loadingBar = new GameObject[2];
+                loadingBar[0] = new GameObject("LoadingBarBegin", typeof(SpriteRenderer));
+                loadingBar[0].GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Textures/LoadingBarEnd");
+                loadingBar[0].transform.position = new Vector3(-1181, 863);
+                loadingBar[1] = new GameObject("LoadingBar", typeof(SpriteRenderer));
+                loadingBar[1].GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Textures/LoadingBarStretch");
+                loadingBar[1].transform.position = new Vector3(-1178, 863);
+            }
             SetDesktopBackground("LoadingScreens/LoadingScreenKalimdor");
             OrderLoadingMap();
             AddHotkey(W, () => { CheckPosition(new Vector3(0, (float)Math.Round(EuelerGrowth()))); }, false);
@@ -2088,7 +2093,7 @@ public class Blueprint
                 {
                     SpawnTransition();
                     PlaySound("DesktopButtonClose");
-                    SetDesktopBackground("Areas/Area" + complex.name.Replace("'", "").Replace(".", "").Replace(" ", ""));
+                    SetDesktopBackground("Areas/Complex" + complex.name.Replace("'", "").Replace(".", "").Replace(" ", ""));
                     CloseWindow(window);
                 }
                 else

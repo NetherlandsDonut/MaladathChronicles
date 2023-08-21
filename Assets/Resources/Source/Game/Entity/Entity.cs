@@ -4,6 +4,8 @@ using System.Linq;
 using System.Collections.Generic;
 
 using static Root;
+using System;
+using System.Reflection;
 
 public class Entity
 {
@@ -137,7 +139,11 @@ public class Entity
     public void AddResources(Dictionary<string, int> resources)
     {
         foreach (var resource in resources)
+        {
+            if (resource.Key == "Decay" && buffs.Exists(x => x.Item1 == "Spore Cloud"))
+                Board.board.actions.Add(() => (Board.board.enemy == this ? Board.board.player : Board.board.enemy).Damage(RollWeaponDamage() * (SpellPower() / 10.0 + 1) * 1.1 * resource.Value));
             this.resources[resource.Key] += resource.Value;
+        }
         CapResources();
     }
 
@@ -510,6 +516,7 @@ public class Entity
         {
             health = MaxHealth();
         }
+        actionBars.ForEach(x => x.cooldown = 0);
         buffs = new();
         ResetResources();
     }
@@ -521,15 +528,31 @@ public class Entity
     }
 
     //Deals given amount of damage to this entity
-    public void Damage(double damage)
+    public void Damage(double damage, bool dontPrompt = false)
     {
-        health -= (int)System.Math.Round(damage);
+        var p = Board.board.player == this;
+        health -= (int)Math.Ceiling(damage);
+        if (dontPrompt) return;
+        foreach (var buff in buffs)
+            if (buff.Item1 == "Volatile Infection")
+            {
+                Board.board.actions.Add(() => animationTime += frameTime * 3);
+                Board.board.actions.Add(() =>
+                {
+                    AddSmallButtonOverlay(buff.Item3, "OtherGlowFull", 1);
+                    Damage(damage / 10, true);
+                    SpawnShatter(6, 0.7, new Vector3(!p ? 148 : -318, 122), "AbilityDeathPact", true, !p ? "1000" : "1001");
+                    SpawnShatter(6, 0.7, new Vector3(!p ? 148 : -318, 122), "AbilityDeathPact", true, !p ? "1000" : "1001");
+                    PlaySound("AbilityVenomousBiteFlare");
+                    animationTime += frameTime * 3;
+                });
+            }
     }
 
     //Heals this entity by given amount
     public void Heal(double heal)
     {
-        health += (int)System.Math.Round(heal);
+        health += (int)Math.Round(heal);
         if (health > MaxHealth()) health = MaxHealth();
     }
 

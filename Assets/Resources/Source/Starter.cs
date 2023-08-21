@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using static Root;
 using static Root.Color;
 using static Root.Anchor;
+using static Serialization;
 
 public class Starter : MonoBehaviour
 {
@@ -13,22 +14,25 @@ public class Starter : MonoBehaviour
         random = new System.Random();
         font = new Font("Tahoma Bold");
         desktops = new();
-        String.consoleInput.Set(">");
-        cursor = FindObjectOfType<Cursor>();
-        cursorEnemy = FindObjectOfType<CursorRemote>();
         settings = new GameSettings();
-        Serialization.Deserialize(ref Item.items, "items");
         saveGames = new List<SaveGame>();
+        fallingElements = new List<FallingElement>();
+        Deserialize(ref SiteHostileArea.areas, "areas");
+        Deserialize(ref SiteInstance.instances, "instances");
+        Deserialize(ref SiteComplex.complexes, "complexes");
+        Deserialize(ref SiteTown.towns, "towns");
+        Deserialize(ref Class.classes, "classes");
+        Deserialize(ref Race.races, "races");
+        Deserialize(ref ItemSet.itemSets, "sets");
+        Deserialize(ref Item.items, "items");
+        SiteHostileArea.areas.ForEach(x => x.Initialise());
+        SiteInstance.instances.ForEach(x => x.Initialise());
+        SiteComplex.complexes.ForEach(x => x.Initialise());
         var temp = FindObjectsByType<WindowAnchorRemote>(FindObjectsSortMode.None);
         windowRemoteAnchors = temp.Select(x => (x.name, new Vector2(x.transform.position.x, x.transform.position.y))).ToList();
-        for (int i = temp.Length - 1; i >= 0; i--)
-            Destroy(temp[i].gameObject);
-        SpawnDesktopBlueprint("TitleScreen");
-        fallingElements = new List<FallingElement>();
-        loadingScreenObjectLoadAim = windowRemoteAnchors.Count + SiteInstance.instances.Count + SiteTown.towns.Count + SiteComplex.complexes.Count + SiteHostileArea.hostileAreas.Count;
+        for (int i = temp.Length - 1; i >= 0; i--) Destroy(temp[i].gameObject);
         for (int i = 0; i < windowRemoteAnchors.Count; i++)
         {
-            loadingScreenObjectLoad++;
             var index = i;
             if (!windowRemoteAnchors[index].Item1.Contains(": ")) continue;
             var split = windowRemoteAnchors[index].Item1.Split(": ");
@@ -38,14 +42,13 @@ public class Starter : MonoBehaviour
         }
         for (int i = 0; i < SiteInstance.instances.Count; i++)
         {
-            loadingScreenObjectLoad++;
             var index = i;
             var instance = SiteInstance.instances[index];
             Blueprint.windowBlueprints.Add(
                 new Blueprint(instance.type + ": " + instance.name,
                     () =>
                     {
-                        SetAnchor(Anchor.TopRight);
+                        SetAnchor(TopRight);
                         AddRegionGroup();
                         SetRegionGroupWidth(161);
                         SetRegionGroupHeight(344);
@@ -106,14 +109,13 @@ public class Starter : MonoBehaviour
         }
         for (int i = 0; i < SiteTown.towns.Count; i++)
         {
-            loadingScreenObjectLoad++;
             var index = i;
             var town = SiteTown.towns[index];
             Blueprint.windowBlueprints.Add(
                 new Blueprint("Town: " + town.name,
                     () =>
                     {
-                        SetAnchor(Anchor.TopRight);
+                        SetAnchor(TopRight);
                         AddRegionGroup();
                         SetRegionGroupWidth(161);
                         SetRegionGroupHeight(344);
@@ -191,14 +193,13 @@ public class Starter : MonoBehaviour
         }
         for (int i = 0; i < SiteComplex.complexes.Count; i++)
         {
-            loadingScreenObjectLoad++;
             var index = i;
             var complex = SiteComplex.complexes[index];
             Blueprint.windowBlueprints.Add(
                 new Blueprint("Complex: " + complex.name,
                     () =>
                     {
-                        SetAnchor(Anchor.TopRight);
+                        SetAnchor(TopRight);
                         AddRegionGroup();
                         SetRegionGroupWidth(161);
                         SetRegionGroupHeight(344);
@@ -247,13 +248,12 @@ public class Starter : MonoBehaviour
                 )
             );
         }
-        for (int i = 0; i < SiteHostileArea.hostileAreas.Count; i++)
+        for (int i = 0; i < SiteHostileArea.areas.Count; i++)
         {
-            loadingScreenObjectLoad++;
-            if (SiteHostileArea.hostileAreas[i].instancePart)
+            if (SiteHostileArea.areas[i].instancePart)
             {
                 var index = i;
-                var area = SiteHostileArea.hostileAreas[index];
+                var area = SiteHostileArea.areas[index];
                 Blueprint.windowBlueprints.Add(
                     new Blueprint("Area: " + area.name,
                         () =>
@@ -282,14 +282,14 @@ public class Starter : MonoBehaviour
                             {
                                 AddLine("Exploration progress: ", DarkGray);
                                 var temp = currentSave.siteProgress;
-                                int progress = (int)(currentSave.siteProgress.ContainsKey(area.name) ? (double)currentSave.siteProgress[area.name] / area.bossEncounters.Sum(x => x.Item1) * 100 : 0);
+                                int progress = (int)(currentSave.siteProgress.ContainsKey(area.name) ? (double)currentSave.siteProgress[area.name] / area.bossEncounters.Sum(x => x.requiredProgress) * 100 : 0);
                                 AddText((progress > 100 ? 100 : progress) + "%", ProgressColored(progress));
                             });
                             AddPaddingRegion(() =>
                             {
                                 AddLine("Possible encounters:", DarkGray);
                                 foreach (var encounter in area.possibleEncounters)
-                                    AddLine("- " + encounter.Item3, DarkGray);
+                                    AddLine("- " + encounter.who, DarkGray);
                             });
                             AddButtonRegion(() =>
                             {
@@ -312,7 +312,7 @@ public class Starter : MonoBehaviour
                                 AddButtonRegion(() =>
                                 {
                                     SetRegionBackground(RegionBackgroundType.RedButton);
-                                    AddLine(boss.Item3, Black);
+                                    AddLine(boss.who, Black);
                                 },
                                 (h) =>
                                 {
@@ -352,12 +352,12 @@ public class Starter : MonoBehaviour
             else
             {
                 var index = i;
-                var area = SiteHostileArea.hostileAreas[index];
+                var area = SiteHostileArea.areas[index];
                 Blueprint.windowBlueprints.Add(
                     new Blueprint("Area: " + area.name,
                         () =>
                         {
-                            SetAnchor(Anchor.TopLeft);
+                            SetAnchor(TopLeft);
                             AddRegionGroup();
                             SetRegionGroupWidth(161);
                             SetRegionGroupHeight(344);
@@ -386,23 +386,57 @@ public class Starter : MonoBehaviour
                                 AddLine("Recommended level: ", Gray);
                                 AddText(area.recommendedLevel + "", EntityColoredLevel(area.recommendedLevel));
                             });
-                            AddPaddingRegion(() =>
+                            if (area.bossEncounters != null && area.bossEncounters.Count > 0 && area.bossEncounters.Sum(x => x.requiredProgress) > 0)
+                                AddPaddingRegion(() =>
+                                {
+                                    AddLine("Exploration progress: ", DarkGray);
+                                    var temp = currentSave.siteProgress;
+                                    int progress = (int)(currentSave.siteProgress.ContainsKey(area.name) ? (double)currentSave.siteProgress[area.name] / area.bossEncounters.Sum(x => x.requiredProgress) * 100 : 0);
+                                    AddText((progress > 100 ? 100 : progress) + "%", ProgressColored(progress));
+                                });
+                            if (area.possibleEncounters != null && area.possibleEncounters.Count > 0)
                             {
-                                AddLine("Possible encounters:", DarkGray);
-                                foreach (var encounter in area.possibleEncounters)
-                                    AddLine("- " + encounter.Item3, DarkGray);
-                            });
-                            AddButtonRegion(() =>
+                                AddPaddingRegion(() =>
+                                {
+                                    AddLine("Possible encounters:", DarkGray);
+                                    foreach (var encounter in area.possibleEncounters)
+                                        AddLine("- " + encounter.who, DarkGray);
+                                });
+                                AddButtonRegion(() =>
+                                {
+                                    AddLine("Explore", Black);
+                                },
+                                (h) =>
+                                {
+                                    Board.board = new Board(6, 6, area.RollEncounter(), area);
+                                    BufferBoard.bufferBoard = new BufferBoard();
+                                    SpawnDesktopBlueprint("Game");
+                                    SwitchDesktop("Game");
+                                });
+                            }
+                            if (area.bossEncounters != null && area.bossEncounters.Count > 0)
                             {
-                                AddLine("Explore", Black);
-                            },
-                            (h) =>
-                            {
-                                Board.board = new Board(6, 6, area.RollEncounter(), area);
-                                BufferBoard.bufferBoard = new BufferBoard();
-                                SpawnDesktopBlueprint("Game");
-                                SwitchDesktop("Game");
-                            });
+                                AddHeaderRegion(() =>
+                                {
+                                    AddLine("Bosses: ", Gray);
+                                    AddSmallButton("OtherBoss", (h) => { });
+                                });
+                                foreach (var boss in area.bossEncounters)
+                                {
+                                    AddButtonRegion(() =>
+                                    {
+                                        SetRegionBackground(RegionBackgroundType.RedButton);
+                                        AddLine(boss.who, Black);
+                                    },
+                                    (h) =>
+                                    {
+                                        Board.board = new Board(6, 6, area.RollBoss(boss), area);
+                                        BufferBoard.bufferBoard = new BufferBoard();
+                                        SpawnDesktopBlueprint("Game");
+                                        SwitchDesktop("Game");
+                                    });
+                                }
+                            }
                             AddPaddingRegion(() =>
                             {
                                 AddLine("", Gray);
@@ -438,7 +472,17 @@ public class Starter : MonoBehaviour
                     var spec = i; var row = j; var col = k;
                     Blueprint.windowBlueprints.Add(new Blueprint("Talent" + spec + row + col, () => PrintTalent(spec, row, col)));
                 }
-        //Serialize(Data.data, "Data");
+        //Serialization.Serialize(Race.races, "races");
+        //Serialization.Serialize(Class.classes, "classes");
+        Serialize(SiteHostileArea.areas, "hostile areas");
+        //Serialization.Serialize(Race.races, "races");
+        //Serialization.Serialize(SiteTown.towns, "towns");
+        //Serialization.Serialize(SiteInstance.instances, "instances");
+        //Serialization.Serialize(SiteComplex.complexes, "complexes");
+        //Serialization.Serialize(ItemSet.itemSets, "item sets");
+        cursor = FindObjectOfType<Cursor>();
+        cursorEnemy = FindObjectOfType<CursorRemote>();
+        SpawnDesktopBlueprint("TitleScreen");
         Destroy(gameObject);
     }
 }

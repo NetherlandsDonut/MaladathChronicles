@@ -146,6 +146,66 @@ public class Buff
         {
 
         }),
+        new Buff("Spore Cloud", "None", new() { "Damage" }, false, "AbilityDetectInvisibility",
+        (p) => () =>
+        {
+            AddHeaderRegion(() =>
+            {
+                AddLine("Target burns for 3 damage every turn.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+                AddLine("Each point in Frost Mastery adds 1% chance", Gray);
+                AddLine("to refund the cost of casting this spell.", Gray);
+            });
+        },
+        (p) => () =>
+        {
+
+        },
+        (p) => () =>
+        {
+
+        },
+        (p, board) => () =>
+        {
+
+        },
+        (p, board) => () =>
+        {
+
+        }),
+        new Buff("Volatile Infection", "None", new() { "Damage" }, false, "AbilityDeathPact",
+        (p) => () =>
+        {
+            AddHeaderRegion(() =>
+            {
+                AddLine("Target burns for 3 damage every turn.", Gray);
+            });
+            AddHeaderRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+                AddLine("Each point in Frost Mastery adds 1% chance", Gray);
+                AddLine("to refund the cost of casting this spell.", Gray);
+            });
+        },
+        (p) => () =>
+        {
+
+        },
+        (p) => () =>
+        {
+
+        },
+        (p, board) => () =>
+        {
+
+        },
+        (p, board) => () =>
+        {
+
+        }),
         new Buff("Withering Cloud", "None", new() { "Gathering" }, false, "AbilityWitheringCloud",
         (p) => () =>
         {
@@ -564,7 +624,7 @@ public class Buff
             {
                 var caster = Caster(p, board);
                 var target = Target(p, board);
-                target.Damage(caster.RollWeaponDamage() * (caster.SpellPower() / 10.0 + 1) * 1.5);
+                target.Damage(board, caster.RollWeaponDamage() * (caster.SpellPower() / 10.0 + 1) * 1.5);
             },
             (p, board) => () =>
             {
@@ -602,7 +662,7 @@ public class Buff
             {
                 var caster = Caster(p, board);
                 var target = Target(p, board);
-                caster.Damage(target.RollWeaponDamage());
+                caster.Damage(board, target.RollWeaponDamage());
             },
             (p, board) => () =>
             {
@@ -640,7 +700,7 @@ public class Buff
         {
             var caster = Caster(p, board);
             var target = Target(p, board);
-            target.Damage(caster.RollWeaponDamage() * (caster.SpellPower() / 10.0 + 1) * 1.175);
+            target.Damage(board, caster.RollWeaponDamage() * (caster.SpellPower() / 10.0 + 1) * 1.175);
         },
         (p, board) => () =>
         {
@@ -677,7 +737,7 @@ public class Buff
         {
             var caster = Caster(p, board);
             var target = Target(p, board);
-            target.Damage(caster.RollWeaponDamage() * (caster.SpellPower() / 10.0 + 1) * 1.35);
+            target.Damage(board, caster.RollWeaponDamage() * (caster.SpellPower() / 10.0 + 1) * 1.35);
         },
         (p, board) => () =>
         {
@@ -714,7 +774,7 @@ public class Buff
         {
             var caster = Caster(p, board);
             var target = Target(p, board);
-            target.Damage(caster.RollWeaponDamage() * (caster.SpellPower() / 10.0 + 1) * 0.8);
+            target.Damage(board, caster.RollWeaponDamage() * (caster.SpellPower() / 10.0 + 1) * 0.8);
         },
         (p, board) => () =>
         {
@@ -751,7 +811,7 @@ public class Buff
         {
             var caster = Caster(p, board);
             var target = Target(p, board);
-            target.Damage(caster.RollWeaponDamage() * (caster.SpellPower() / 10.0 + 1) * 1.0);
+            target.Damage(board, caster.RollWeaponDamage() * (caster.SpellPower() / 10.0 + 1) * 1.0);
         },
         (p, board) => () =>
         {
@@ -825,7 +885,7 @@ public class Buff
         {
             var caster = Caster(p, board);
             var target = Target(p, board);
-            target.Damage(caster.RollWeaponDamage() * (caster.SpellPower() / 10.0 + 1) * 0.6);
+            target.Damage(board, caster.RollWeaponDamage() * (caster.SpellPower() / 10.0 + 1) * 0.6);
         },
         (p, board) => () =>
         {
