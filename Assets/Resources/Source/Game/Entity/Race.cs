@@ -899,6 +899,68 @@ public class Race
             {
 
             }
+        ),
+        new Race("Taerar", "Elite", "Taerar",
+            3.00,
+            new()
+            {
+                "Tail Sweep",
+                "Noxious Breath",
+                "Dream Fog",
+                "Arcane Blast",
+                "Bellowing Roar",
+            },
+            new()
+            {
+
+            }
+        ),
+        new Race("Emeriss", "Elite", "Emeriss",
+            3.00,
+            new()
+            {
+                "Tail Sweep",
+                "Noxious Breath",
+                "Dream Fog",
+                "Spore Cloud",
+                "Volatile Infection",
+                "Corruption of the Earth",
+            },
+            new()
+            {
+
+            }
+        ),
+        new Race("Lethon", "Elite", "Lethon",
+            3.00,
+            new()
+            {
+                "Tail Sweep",
+                "Noxious Breath",
+                "Dream Fog",
+                "Shadow Bolt Whirl",
+                "Draw Spirit",
+            },
+            new()
+            {
+
+            }
+        ),
+        new Race("Ysondre", "Elite", "Ysondre",
+            3.00,
+            new()
+            {
+                "Tail Sweep",
+                "Noxious Breath",
+                "Dream Fog",
+                "Lightning Wave",
+                "Moonfire",
+                "Curse of Thorns",
+            },
+            new()
+            {
+
+            }
         )
     };
 }

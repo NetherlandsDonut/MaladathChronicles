@@ -29,7 +29,7 @@ public static class Root
     public static string creationFaction = "Alliance";
     public static string creationGender = "Female";
     public static string creationRace = "Human";
-    public static string creationClass = "Mage";
+    public static string creationClass = "Warrior";
     public static int maxPlayerLevel;
 
     public static GameObject[] loadingBar;

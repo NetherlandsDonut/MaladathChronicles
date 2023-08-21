@@ -2,17 +2,17 @@ using System.Collections.Generic;
 
 public class Class
 {
-    public Class(string name, List<string> possibleRaces, Dictionary<string, double> rules, List<(string, int)> abilities, List<TalentTree> talentTrees)
+    public Class(string name, Dictionary<string, List<string>> startingEquipment, Dictionary<string, double> rules, List<(string, int)> abilities, List<TalentTree> talentTrees)
     {
         this.name = name;
-        this.possibleRaces = possibleRaces;
+        this.startingEquipment = startingEquipment;
         this.rules = rules;
         this.abilities = abilities;
         this.talentTrees = talentTrees;
     }
 
     public string name;
-    public List<string> possibleRaces;
+    public Dictionary<string, List<string>> startingEquipment;
     public Dictionary<string, double> rules;
     public List<(string, int)> abilities;
     public List<TalentTree> talentTrees;
@@ -20,15 +20,15 @@ public class Class
     public static List<Class> classes = new()
     {
         new Class("Rogue",
-            new List<string>
+            new()
             {
-                "Dwarf",
-                "Gnome",
-                "Human",
-                "Night Elf",
-                "Orc",
-                "Troll",
-                "Forsaken"
+                { "Dwarf", new() { "Footpad's Shirt", "Footpad's Pants", "Footpad's Shoes", "Worn Dagger", "Worn Dagger" } },
+                { "Gnome", new() { "Footpad's Shirt", "Footpad's Pants", "Footpad's Shoes", "Worn Dagger", "Worn Dagger" } },
+                { "Human", new() { "Footpad's Shirt", "Footpad's Pants", "Footpad's Shoes", "Worn Dagger", "Worn Dagger" } },
+                { "NightElf", new() { "Footpad's Shirt", "Footpad's Pants", "Footpad's Shoes", "Worn Dagger", "Worn Dagger" } },
+                { "Orc", new() { "Thug Shirt", "Thug Pants", "Thug Shoes", "Worn Dagger", "Worn Dagger" } },
+                { "Troll", new() { "Thug Shirt", "Thug Pants", "Thug Shoes", "Worn Dagger", "Worn Dagger" } },
+                { "Forsaken", new() { "Thug Shirt", "Thug Pants", "Thug Shoes", "Worn Dagger", "Worn Dagger" } },
             },
             new Dictionary<string, double>
             {
@@ -64,13 +64,13 @@ public class Class
             }
         ),
         new Class("Hunter",
-            new List<string>
+            new()
             {
-                "Dwarf",
-                "Night Elf",
-                "Orc",
-                "Tauren",
-                "Troll"
+                { "Dwarf", new() { "Rugged Trapper's Shirt", "Rugged Trapper's Pants", "Rugged Trapper's Boots", "Worn Axe", "Old Blunderbuss" } },
+                { "NightElf", new() { "Rugged Trapper's Shirt", "Rugged Trapper's Pants", "Rugged Trapper's Boots", "Worn Dagger", "Worn Shortbow" } },
+                { "Orc", new() { "Trapper's Shirt", "Trapper's Pants", "Trapper's Boots", "Worn Axe", "Worn Shortbow" } },
+                { "Tauren", new() { "Trapper's Shirt", "Trapper's Pants", "Worn Axe", "Old Blunderbuss" } },
+                { "Troll", new() { "Trapper's Shirt", "Trapper's Pants", "Worn Axe", "Worn Shortbow" } },
             },
             new Dictionary<string, double>
             {
@@ -111,11 +111,11 @@ public class Class
             }
         ),
         new Class("Shaman",
-            new List<string>
+            new()
             {
-                "Orc",
-                "Tauren",
-                "Troll"
+                { "Orc", new() { "Primitive Mantle", "Primitive Kilt", "Worn Mace" } },
+                { "Tauren", new() { "Primitive Mantle", "Primitive Kilt", "Worn Mace" } },
+                { "Troll", new() { "Primitive Mantle", "Primitive Kilt", "Worn Mace" } },
             },
             new Dictionary<string, double>
             {
@@ -152,16 +152,16 @@ public class Class
             }
         ),
         new Class("Warrior",
-            new List<string>
+            new()
             {
-                "Dwarf",
-                "Gnome",
-                "Human",
-                "Night Elf",
-                "Orc",
-                "Tauren",
-                "Troll",
-                "Forsaken"
+                { "Dwarf", new() { "Recruit's Shirt", "Recruit's Pants", "Recruit's Boots", "Worn Battleaxe" } },
+                { "Gnome", new() { "Recruit's Shirt", "Recruit's Pants", "Recruit's Boots", "Worn Shortsword", "Worn Wooden Shield" } },
+                { "Human", new() { "Recruit's Shirt", "Recruit's Pants", "Recruit's Boots", "Worn Shortsword", "Worn Wooden Shield" } },
+                { "NightElf", new() { "Recruit's Shirt", "Recruit's Pants", "Recruit's Boots", "Worn Shortsword", "Worn Wooden Shield" } },
+                { "Orc", new() { "Brawler's Harness", "Brawler's Pants", "Brawler's Boots", "Worn Battleaxe" } },
+                { "Tauren", new() { "Brawler's Harness", "Brawler's Pants", "Battleworn Hammer" } },
+                { "Troll", new() { "Brawler's Harness", "Brawler's Pants", "Worn Axe", "Worn Wooden Shield" } },
+                { "Forsaken", new() { "Brawler's Harness", "Brawler's Pants", "Brawler's Boots", "Worn Shortsword", "Worn Wooden Shield" } },
             },
             new Dictionary<string, double>
             {
@@ -247,10 +247,10 @@ public class Class
             }
         ),
         new Class("Paladin",
-            new List<string>
+            new()
             {
-                "Dwarf",
-                "Human"
+                { "Dwarf", new() { "Squire's Shirt", "Squire's Pants", "Squire's Boots", "Battleworn Hammer" } },
+                { "Human", new() { "Squire's Shirt", "Squire's Pants", "Squire's Boots", "Battleworn Hammer" } },
             },
             new Dictionary<string, double>
             {
@@ -290,10 +290,10 @@ public class Class
             }
         ),
         new Class("Druid",
-            new List<string>
+            new()
             {
-                "Night Elf",
-                "Tauren"
+                { "NightElf", new() { "Novice's Robe", "Novice's Pants", "Handcrafted Staff" } },
+                { "Tauren", new() { "Novice's Robe", "Novice's Pants", "Bent Staff" } },
             },
             new Dictionary<string, double>
             {
@@ -330,13 +330,13 @@ public class Class
             }
         ),
         new Class("Priest",
-            new List<string>
+            new()
             {
-                "Dwarf",
-                "Human",
-                "Night Elf",
-                "Troll",
-                "Forsaken"
+                { "Dwarf", new() { "Neophyte's Robe", "Neophyte's Pants", "Neophyte's Boots", "Worm Mace" } },
+                { "Human", new() { "Neophyte's Robe", "Neophyte's Pants", "Neophyte's Boots", "Worm Mace" } },
+                { "NightElf", new() { "Neophyte's Robe", "Neophyte's Pants", "Neophyte's Boots", "Worm Mace" } },
+                { "Troll", new() { "Neophyte's Robe", "Neophyte's Pants", "Neophyte's Boots", "Worm Mace" } },
+                { "Forsaken", new() { "Neophyte's Robe", "Neophyte's Pants", "Neophyte's Boots", "Worm Mace" } },
             },
             new Dictionary<string, double>
             {
@@ -413,12 +413,12 @@ public class Class
             }
         ),
         new Class("Warlock",
-            new List<string>
+            new()
             {
-                "Gnome",
-                "Human",
-                "Orc",
-                "Forsaken"
+                { "Gnome", new() { "Acolyte's Robe", "Acolyte's Pants", "Acolyte's Shoes", "Worn Dagger" } },
+                { "Human", new() { "Acolyte's Robe", "Acolyte's Pants", "Acolyte's Shoes", "Worn Dagger" } },
+                { "Orc", new() { "Acolyte's Robe", "Acolyte's Pants", "Acolyte's Shoes", "Worn Dagger" } },
+                { "Forsaken", new() { "Acolyte's Robe", "Acolyte's Pants", "Acolyte's Shoes", "Worn Dagger" } },
             },
             new Dictionary<string, double>
             {
@@ -491,12 +491,12 @@ public class Class
             }
         ),
         new Class("Mage",
-            new List<string>
+            new()
             {
-                "Gnome",
-                "Human",
-                "Troll",
-                "Forsaken"
+                { "Gnome", new() { "Apprentice's Robe", "Apprentice's Pants", "Apprentice's Boots", "Bent Staff" } },
+                { "Human", new() { "Apprentice's Robe", "Apprentice's Pants", "Apprentice's Boots", "Bent Staff" } },
+                { "Troll", new() { "Apprentice's Robe", "Apprentice's Pants", "Apprentice's Boots", "Bent Staff" } },
+                { "Forsaken", new() { "Apprentice's Robe", "Apprentice's Pants", "Apprentice's Boots", "Bent Staff" } },
             },
             new Dictionary<string, double>
             {

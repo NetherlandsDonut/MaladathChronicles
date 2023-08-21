@@ -1534,7 +1534,7 @@ public class Blueprint
             });
             AddHeaderRegion(() =>
             {
-                var classes = Class.classes.FindAll(x => x.possibleRaces.Contains(creationRace));
+                var classes = Class.classes.FindAll(x => x.startingEquipment.ContainsKey(creationRace));
                 AddLine("Class: " + creationClass);
                 AddSmallButton("ActionReroll", (h) =>
                 {
@@ -1543,7 +1543,7 @@ public class Blueprint
             });
             AddHeaderRegion(() =>
             {
-                var classes = Class.classes.FindAll(x => x.possibleRaces.Contains(creationRace));
+                var classes = Class.classes.FindAll(x => x.startingEquipment.ContainsKey(creationRace));
                 if (creationRace != null)
                     foreach (var foo in classes)
                     {

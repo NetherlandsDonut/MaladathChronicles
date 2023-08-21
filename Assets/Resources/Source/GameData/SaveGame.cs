@@ -7,20 +7,15 @@ public class SaveGame
 {
     public SaveGame()
     {
+        raresKilled = new();
+        bossesKilled = new();
         player = new Entity
         (
             creationName,
             creationGender,
             Race.races.Find(x => x.name == creationRace),
             Class.classes.Find(x => x.name == creationClass),
-            new()
-            {
-                "Apprentice's Robe",
-                "Apprentice's Pants",
-                "Apprentice's Boots",
-                //"Vanquished Tentacle of C'Thun",
-                "Bent Staff",
-            }
+            Class.classes.Find(x => x.name == creationClass).startingEquipment[creationRace]
         );
         siteProgress = new Dictionary<string, int>();
         date = DateTime.Now;
@@ -28,7 +23,7 @@ public class SaveGame
 
     public Entity player;
     public Dictionary<string, int> siteProgress;
-    public List<string> raresKilled;
+    public List<string> raresKilled, bossesKilled;
     public DateTime date;
     public bool hardcore;
 }
