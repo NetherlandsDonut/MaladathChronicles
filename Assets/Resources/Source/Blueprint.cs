@@ -116,7 +116,7 @@ public class Blueprint
                     }
                 );
             });
-        }),
+        }, true),
         new("TitleScreenSingleplayer", () => {
             SetAnchor(Center);
             AddHeaderGroup();
@@ -172,7 +172,7 @@ public class Blueprint
                     }
                 );
             });
-        }),
+        }, true),
         new("TitleScreenSettings", () => {
             SetAnchor(Center);
             AddHeaderGroup();
@@ -186,11 +186,6 @@ public class Blueprint
                 AddCheckbox(settings.shadows);
                 AddLine("Shadows", Gray);
             });
-            AddPaddingRegion(() =>
-            {
-                AddCheckbox(settings.bigRarityIndicators);
-                AddLine("Big rarity indicators", Gray);
-            });
             AddButtonRegion(() =>
                 {
                     AddLine("Back", Black);
@@ -201,7 +196,7 @@ public class Blueprint
                     CloseWindow(h.window);
                 }
             );
-        }),
+        }, true),
         new("PlayerBattleInfo", () => {
             SetAnchor(TopLeft);
             AddRegionGroup();
@@ -743,7 +738,7 @@ public class Blueprint
                 () =>
                 {
                     AddLine(Board.board.enemy.name, Black);
-                    AddSmallButton("MenuMenu", (h) => { });
+                    AddSmallButton("OtherSettings", (h) => { SpawnWindowBlueprint("TitleScreenMenu"); });
                 },
                 (h) =>
                 {
@@ -1174,11 +1169,35 @@ public class Blueprint
                 AddLine("Inventory:");
                 AddSmallButton("OtherClose", (h) =>
                 {
-                    CloseWindow("Inventory");
-                    CloseWindow("MapToolbar");
-                    SpawnWindowBlueprint("MapToolbar");
+                    CloseDesktop("EquipmentScreen");
+                    SwitchDesktop("Map");
                     PlaySound("DesktopInventoryClose");
                 });
+                AddSmallButton("OtherReverse", (h) =>
+                {
+                    currentSave.player.inventory.items.Reverse();
+                    CloseWindow("Inventory");
+                    SpawnWindowBlueprint("Inventory");
+                    PlaySound("DesktopInventorySort");
+                });
+                if (!CDesktop.windows.Exists(x => x.title == "InventorySettings") && !CDesktop.windows.Exists(x => x.title == "InventorySort"))
+                    AddSmallButton("OtherSort", (h) =>
+                    {
+                        SpawnWindowBlueprint("InventorySort");
+                        CloseWindow("Inventory");
+                        SpawnWindowBlueprint("Inventory");
+                    });
+                else
+                    AddSmallButton("OtherSortOff", (h) => { });
+                if (!CDesktop.windows.Exists(x => x.title == "InventorySettings") && !CDesktop.windows.Exists(x => x.title == "InventorySort"))
+                    AddSmallButton("OtherSettings", (h) =>
+                    {
+                        SpawnWindowBlueprint("InventorySettings");
+                        CloseWindow("Inventory");
+                        SpawnWindowBlueprint("Inventory");
+                    });
+                else
+                    AddSmallButton("OtherSettingsOff", (h) => { });
             });
             for (int i = 0; i < 8; i++)
             {
@@ -1192,7 +1211,133 @@ public class Blueprint
                     }
                 );
             }
+            AddPaddingRegion(() =>
+            {
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+                AddLine("", Gray);
+            });
         }, true),
+        new("InventorySort", () => {
+            SetAnchor(Center);
+            AddRegionGroup();
+            AddHeaderRegion(() =>
+            {
+                AddLine("Sort inventory:");
+                AddSmallButton("OtherClose", (h) =>
+                {
+                    CloseWindow("InventorySort");
+                    CloseWindow("Inventory");
+                    SpawnWindowBlueprint("Inventory");
+                });
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("By name", Black);
+            },
+            (h) =>
+            {
+                currentSave.player.inventory.items = currentSave.player.inventory.items.OrderBy(x => x.name).ToList();
+                CloseWindow("Inventory");
+                CloseWindow("InventorySort");
+                SpawnWindowBlueprint("Inventory");
+                PlaySound("DesktopInventorySort");
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("By item power", Black);
+            },
+            (h) =>
+            {
+                currentSave.player.inventory.items = currentSave.player.inventory.items.OrderByDescending(x => x.ilvl).ToList();
+                CloseWindow("Inventory");
+                CloseWindow("InventorySort");
+                SpawnWindowBlueprint("Inventory");
+                PlaySound("DesktopInventorySort");
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("By price", Black);
+            },
+            (h) =>
+            {
+                currentSave.player.inventory.items = currentSave.player.inventory.items.OrderByDescending(x => x.price).ToList();
+                CloseWindow("Inventory");
+                CloseWindow("InventorySort");
+                SpawnWindowBlueprint("Inventory");
+                PlaySound("DesktopInventorySort");
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("By type", Black);
+            },
+            (h) =>
+            {
+                currentSave.player.inventory.items = currentSave.player.inventory.items.OrderByDescending(x => x.type).ToList();
+                CloseWindow("Inventory");
+                CloseWindow("InventorySort");
+                SpawnWindowBlueprint("Inventory");
+                PlaySound("DesktopInventorySort");
+            });
+        }),
+        new("InventorySettings", () => {
+            SetAnchor(Center);
+            AddRegionGroup();
+            AddHeaderRegion(() =>
+            {
+                AddLine("Inventory settings:");
+                AddSmallButton("OtherClose", (h) =>
+                {
+                    CloseWindow("InventorySettings");
+                    CloseWindow("Inventory");
+                    SpawnWindowBlueprint("Inventory");
+                });
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("Rarity indicators", Black);
+                AddCheckbox(settings.rarityIndicators);
+            },
+            (h) =>
+            {
+                CloseWindow("Inventory");
+                SpawnWindowBlueprint("Inventory");
+                CloseWindow("InventorySettings");
+                SpawnWindowBlueprint("InventorySettings");
+            });
+            if (settings.rarityIndicators.Value())
+                AddButtonRegion(() =>
+                {
+                    AddLine("Big Rarity indicators", Black);
+                    AddCheckbox(settings.bigRarityIndicators);
+                },
+                (h) =>
+                {
+                    CloseWindow("Inventory");
+                    SpawnWindowBlueprint("Inventory");
+                });
+            AddButtonRegion(() =>
+            {
+                AddLine("Upgrade indicators", Black);
+                AddCheckbox(settings.upgradeIndicators);
+            },
+            (h) =>
+            {
+                CloseWindow("Inventory");
+                SpawnWindowBlueprint("Inventory");
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("New slot indicators", Black);
+                AddCheckbox(settings.newSlotIndicators);
+            },
+            (h) =>
+            {
+                CloseWindow("Inventory");
+                SpawnWindowBlueprint("Inventory");
+            });
+        }),
         new("ItemDrop", () => {
             SetAnchor(Center);
             AddHeaderGroup();
@@ -1534,22 +1679,24 @@ public class Blueprint
             });
             AddHeaderRegion(() =>
             {
-                var classes = Class.classes.FindAll(x => x.startingEquipment.ContainsKey(creationRace));
                 AddLine("Class: " + creationClass);
                 AddSmallButton("ActionReroll", (h) =>
                 {
+                    var classes = Class.classes.FindAll(x => x.startingEquipment.ContainsKey(creationRace));
                     creationClass = classes[random.Next(classes.Count)].name;
                 });
             });
             AddHeaderRegion(() =>
             {
-                var classes = Class.classes.FindAll(x => x.startingEquipment.ContainsKey(creationRace));
                 if (creationRace != null)
+                {
+                    var classes = Class.classes.FindAll(x => x.startingEquipment.ContainsKey(creationRace));
                     foreach (var foo in classes)
                     {
                         AddBigButton("Class" + foo.name, (h) => { creationClass = foo.name; });
                         if (creationClass != foo.name) { AddBigButtonOverlay("OtherGridBlurred"); SetBigButtonToGrayscale(); }
                     }
+                }
             });
         }),
         new("CharacterBaseStats", () => {
@@ -1789,7 +1936,7 @@ public class Blueprint
     {
         new("Map", () =>
         {
-            PlaySound("DesktopOpenSave");
+            PlaySound("DesktopOpenSave", 0.2f);
             loadingBar = new GameObject[2]; 
             loadingBar[0] = new GameObject("LoadingBarBegin", typeof(SpriteRenderer));
             loadingBar[0].GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Textures/LoadingBarEnd");
@@ -2099,7 +2246,7 @@ public class Blueprint
         }),
         new("EquipmentScreen", () =>
         {
-            PlaySound("DesktopCharacterSheetOpen");
+            PlaySound("DesktopInventoryOpen");
             SetDesktopBackground("Leather");
             SpawnWindowBlueprint("SpellbookAbilityList");
             SpawnWindowBlueprint("PlayerEquipmentInfo");
@@ -2108,13 +2255,13 @@ public class Blueprint
             {
                 SwitchDesktop("Map");
                 CloseDesktop("EquipmentScreen");
-                PlaySound("DesktopCharacterSheetClose");
+                PlaySound("DesktopInventoryClose");
             });
             AddHotkey(Escape, () =>
             {
                 SwitchDesktop("Map");
                 CloseDesktop("EquipmentScreen");
-                PlaySound("DesktopCharacterSheetClose");
+                PlaySound("DesktopInventoryClose");
             });
             AddHotkey(W, () =>
             {
@@ -2142,7 +2289,7 @@ public class Blueprint
         new("TitleScreen", () =>
         {
             SpawnWindowBlueprint("TitleScreenMenu");
-            //SpawnWindowBlueprint("CharacterCreation");
+            SpawnWindowBlueprint("CharacterCreation");
         }),
     };
 }

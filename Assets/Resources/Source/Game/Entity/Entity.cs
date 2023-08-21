@@ -20,7 +20,7 @@ public class Entity
         actionBarsUnlocked = 7;
         stats = new Stats(race.stats.stats.ToDictionary(x => x.Key, x => x.Value));
         inventory = new Inventory(items);
-        for (int i = 0; i < 36; i++)
+        for (int i = 0; i < 40; i++)
         {
             Item item;
             do item = Item.items[random.Next(Item.items.Count)];
@@ -177,7 +177,16 @@ public class Entity
     //Provides list of abilities gained from equipped items
     public List<string> ItemAbilities()
     {
-        return equipment.SelectMany(x => Item.items.Find(y => y.name == x.Value.name).abilities).ToList();
+        var list = equipment.SelectMany(x => x.Value.abilities).ToList();
+        var sets = equipment.ToList().FindAll(x => x.Value.set != null).Select(x => ItemSet.itemSets.Find(y => y.name == x.Value.set)).Distinct();
+        foreach (var set in sets)
+        {
+            var temp = set.EquippedPieces(this);
+            foreach (var bonus in set.setBonuses)
+                if (temp >= bonus.requiredPieces)
+                    list.AddRange(bonus.abilitiesProvided);
+        }
+        return list;
     }
 
     //Checks whether entity has given item equipped in any slot
@@ -235,7 +244,13 @@ public class Entity
                 return true;
         }
         else
+        {
+            if (GetItemInSlot(item.type) == null)
+            {
+                Debug.Log("ERROR 003: wtf " + item.type);
+            }
             return item.ilvl > GetItemInSlot(item.type).ilvl;
+        }
     }
 
     //Gets item that is currently equipped in given slot

@@ -332,11 +332,11 @@ public class Class
         new Class("Priest",
             new()
             {
-                { "Dwarf", new() { "Neophyte's Robe", "Neophyte's Pants", "Neophyte's Boots", "Worm Mace" } },
-                { "Human", new() { "Neophyte's Robe", "Neophyte's Pants", "Neophyte's Boots", "Worm Mace" } },
-                { "NightElf", new() { "Neophyte's Robe", "Neophyte's Pants", "Neophyte's Boots", "Worm Mace" } },
-                { "Troll", new() { "Neophyte's Robe", "Neophyte's Pants", "Neophyte's Boots", "Worm Mace" } },
-                { "Forsaken", new() { "Neophyte's Robe", "Neophyte's Pants", "Neophyte's Boots", "Worm Mace" } },
+                { "Dwarf", new() { "Neophyte's Robe", "Neophyte's Pants", "Neophyte's Boots", "Worn Mace" } },
+                { "Human", new() { "Neophyte's Robe", "Neophyte's Pants", "Neophyte's Boots", "Worn Mace" } },
+                { "NightElf", new() { "Neophyte's Robe", "Neophyte's Pants", "Neophyte's Boots", "Worn Mace" } },
+                { "Troll", new() { "Neophyte's Robe", "Neophyte's Pants", "Neophyte's Boots", "Worn Mace" } },
+                { "Forsaken", new() { "Neophyte's Robe", "Neophyte's Pants", "Neophyte's Boots", "Worn Mace" } },
             },
             new Dictionary<string, double>
             {

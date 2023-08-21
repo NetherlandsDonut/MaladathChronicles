@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 public class Item
 {
-    public string rarity, name, icon, detailedType, type, armorClass;
+    public string rarity, name, icon, detailedType, type, armorClass, set;
     public int ilvl, lvl, minDamage, maxDamage, armor, block;
     public List<string> possibleItems, alternateItems, abilities, classes;
     public double price, speed;
@@ -24,15 +24,15 @@ public class Item
         string result;
         if (detailedType == "Staff") result = "WoodLarge";
         else if (detailedType == "Wand") result = "Wand";
-        else if (detailedType == "Shield") result = "MetalLarge";
         else if (detailedType == "Totem") result = "WoodLarge";
         else if (detailedType == "Libram") result = "Ring";
         else if (detailedType == "Idol") result = "Ring";
         else if (detailedType == "Quiver") result = "ClothLeather";
+        else if (detailedType == "Shield") result = "MetalLarge";
+        else if (type == "Back") result = "ClothLeather";
         else if (type == "Neck") result = "Ring";
         else if (type == "Finger") result = "Ring";
         else if (type == "Trinket") result = "Ring";
-        else if (type == "Back") result = "ClothLeather";
         else if (type == "Off Hand") result = "Book";
         else if (type == "One Handed") result = "MetalSmall";
         else if (type == "Two Handed") result = "MetalLarge";
@@ -40,7 +40,7 @@ public class Item
         else if (armorClass == "Leather") result = "ClothLeather";
         else if (armorClass == "Mail") result = "ChainLarge";
         else if (armorClass == "Plate") result = "MetalLarge";
-        else result = "RocksOre";
+        else result = "ClothLeather";
         return "PickUp" + result;
     }
 
@@ -49,14 +49,15 @@ public class Item
         string result;
         if (detailedType == "Staff") result = "WoodLarge";
         else if (detailedType == "Wand") result = "Wand";
-        else if (detailedType == "Shield") result = "MetalLarge";
-        else if (detailedType == "Neck") result = "Ring";
-        else if (detailedType == "Finger") result = "Ring";
-        else if (detailedType == "Trinket") result = "Ring";
         else if (detailedType == "Totem") result = "WoodLarge";
         else if (detailedType == "Libram") result = "Ring";
         else if (detailedType == "Idol") result = "Ring";
         else if (detailedType == "Quiver") result = "ClothLeather";
+        else if (detailedType == "Shield") result = "MetalLarge";
+        else if (type == "Back") result = "ClothLeather";
+        else if (type == "Neck") result = "Ring";
+        else if (type == "Finger") result = "Ring";
+        else if (type == "Trinket") result = "Ring";
         else if (type == "Off Hand") result = "Book";
         else if (type == "One Handed") result = "MetalSmall";
         else if (type == "Two Handed") result = "MetalLarge";
@@ -64,7 +65,7 @@ public class Item
         else if (armorClass == "Leather") result = "ClothLeather";
         else if (armorClass == "Mail") result = "ChainLarge";
         else if (armorClass == "Plate") result = "MetalLarge";
-        else result = "RocksOre";
+        else result = "ClothLeather";
         return "PickUp" + result;
     }
 
@@ -86,8 +87,6 @@ public class Item
             return entity.abilities.Contains("Totem Proficiency");
         else if (type == "Idol")
             return entity.abilities.Contains("Idol Proficiency");
-        else if (type == "Shield")
-            return entity.abilities.Contains("Shield Proficiency");
         else if (type == "Two Handed")
         {
             if (detailedType == "Sword")
@@ -109,8 +108,13 @@ public class Item
             else
                 return true;
         }
-        else if (detailedType == "Off Hand")
-            return entity.abilities.Contains("Off Hand Proficiency");
+        else if (type == "Off Hand")
+        {
+            if (detailedType == "Shield")
+                return entity.abilities.Contains("Shield Proficiency");
+            else
+                return entity.abilities.Contains("Off Hand Proficiency");
+        }
         else if (type == "One Handed")
         {
             if (detailedType == "Dagger")
@@ -158,7 +162,7 @@ public class Item
             entity.Unequip(new() { "Off Hand", "Main Hand" }, index);
             Equip(entity, "Main Hand");
         }
-        else if (type == "Shield" || type == "Off Hand")
+        else if (type == "Off Hand")
         {
             var mainHand = entity.GetItemInSlot("Main Hand");
             if (mainHand != null && mainHand.type == "Two Handed")

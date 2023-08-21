@@ -281,6 +281,33 @@ public static class Root
                         AddText(", ", DarkGray);
                 }
             });
+        if (item.set != null)
+        {
+            AddHeaderRegion(() =>
+            {
+                AddLine("Part of ", DarkGray);
+                AddText(item.set, Gray);
+            });
+            var set = ItemSet.itemSets.Find(x => x.name == item.set);
+            if (set == null)
+            {
+                Debug.Log("ERROR 002: Set not found \"" + item.set + "\"");
+                return;
+            }
+            AddPaddingRegion(() =>
+            {
+                foreach (var bonus in set.setBonuses)
+                {
+                    var howMuch = set.EquippedPieces(currentSave.player);
+                    bool has = howMuch >= bonus.requiredPieces;
+                    AddLine((has ? bonus.requiredPieces : howMuch) + "/" + bonus.requiredPieces + " Set: ", has ? Uncommon : DarkGray);
+                    if (bonus.description.Count > 0)
+                        AddText(bonus.description[0], has ? Uncommon : DarkGray);
+                    for (int i = 0; i < bonus.description.Count - 1; i++)
+                        AddLine(bonus.description[0], has ? Uncommon : DarkGray);
+                }
+            });
+        }
         AddHeaderRegion(() =>
         {
             AddLine("Required level: ", DarkGray);
@@ -459,15 +486,16 @@ public static class Root
                 PrintItemTooltip(item);
             }
         );
-        //AddBigButtonOverlay("OtherRarity" + item.rarity + (settings.bigRarityIndicators.Value() ? "Big" : ""), 0, 2);
-        //if (currentSave.player.HasItemEquipped(item.name))
-        //{
-        //    SetBigButtonToGrayscale();
-        //    AddBigButtonOverlay("OtherGridBlurred", 0, 2);
-        //}
-        if (item.CanEquip(currentSave.player) && currentSave.player.IsItemNewSlot(item))
-            AddBigButtonOverlay("OtherItemNewSlot", 0, 2);
-        else if (item.CanEquip(currentSave.player) && currentSave.player.IsItemAnUpgrade(item))
+        if (settings.rarityIndicators.Value())
+            AddBigButtonOverlay("OtherRarity" + item.rarity + (settings.bigRarityIndicators.Value() ? "Big" : ""), 0, 2);
+        if (currentSave.player.HasItemEquipped(item.name))
+        {
+            SetBigButtonToGrayscale();
+            AddBigButtonOverlay("OtherGridBlurred", 0, 2);
+        }
+        if (item.CanEquip(currentSave.player) && currentSave.player.IsItemNewSlot(item) && (settings.upgradeIndicators.Value() || settings.newSlotIndicators.Value()))
+            AddBigButtonOverlay(settings.newSlotIndicators.Value() ? "OtherItemNewSlot" : "OtherItemUpgrade", 0, 2);
+        else if (settings.upgradeIndicators.Value() && item.CanEquip(currentSave.player) && currentSave.player.IsItemAnUpgrade(item))
             AddBigButtonOverlay("OtherItemUpgrade", 0, 2);
     }
 
@@ -480,7 +508,11 @@ public static class Root
             if (type == "Town")
             {
                 var find = towns.Find(x => x.name == name);
-                if (find == null) { Debug.LogError("No town named \"" + name + "\" has been found."); return; }
+                if (find == null)
+                {
+                    Debug.LogError("ERROR 001: No town named \"" + name + "\" has been found.");
+                    return;
+                }
                 AddSmallButton("Faction" + find.faction,
                 (h) =>
                 {
