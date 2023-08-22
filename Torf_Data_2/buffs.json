@@ -1,0 +1,732 @@
+[
+  {
+    "name": "Thunderstorm",
+    "icon": "AbilityThunderstorm",
+    "dispelType": "None",
+    "tags": [
+      "Damage"
+    ],
+    "stackable": true,
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerScaling": "SpellPower",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          },
+          {
+            "Effect": "EndTurn",
+            "Affect": "Caster"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Legendary",
+              "Text": "Japierdole"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Blizzard",
+    "icon": "AbilityBlizzard",
+    "dispelType": "None",
+    "tags": [
+      "Damage"
+    ],
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerScaling": "SpellPower",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          },
+          {
+            "Effect": "EndTurn",
+            "Affect": "Caster"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Spore Cloud",
+    "icon": "AbilityDetectInvisibility",
+    "dispelType": "None",
+    "tags": [
+      "Damage"
+    ],
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerScaling": "SpellPower",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          },
+          {
+            "Effect": "EndTurn",
+            "Affect": "Caster"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Volatile Infection",
+    "icon": "AbilityDeathPact",
+    "dispelType": "None",
+    "tags": [
+      "Damage"
+    ],
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerScaling": "SpellPower",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          },
+          {
+            "Effect": "EndTurn",
+            "Affect": "Caster"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Withering Cloud",
+    "icon": "AbilityWitheringCloud",
+    "dispelType": "None",
+    "tags": [
+      "Gathering"
+    ],
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerScaling": "SpellPower",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          },
+          {
+            "Effect": "EndTurn",
+            "Affect": "Caster"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Stoneform",
+    "icon": "AbilityStoneform",
+    "dispelType": "None",
+    "tags": [
+      "Defensive"
+    ],
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerScaling": "SpellPower",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          },
+          {
+            "Effect": "EndTurn",
+            "Affect": "Caster"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Ice Block",
+    "icon": "AbilityIceBlock",
+    "dispelType": "None",
+    "tags": [
+      "Defensive"
+    ],
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerScaling": "SpellPower",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          },
+          {
+            "Effect": "EndTurn",
+            "Affect": "Caster"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Hammer Of Justice",
+    "icon": "AbilityHammerOfJustice",
+    "dispelType": "None",
+    "tags": [
+      "Stun"
+    ],
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerScaling": "SpellPower",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          },
+          {
+            "Effect": "EndTurn",
+            "Affect": "Caster"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Web Burst",
+    "icon": "AbilityWebBurst",
+    "dispelType": "None",
+    "tags": [
+      "Stun"
+    ],
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerScaling": "SpellPower",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          },
+          {
+            "Effect": "EndTurn",
+            "Affect": "Caster"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Summoned Infernal",
+    "icon": "AbilitySummonInfernal",
+    "dispelType": "None",
+    "tags": [],
+    "stackable": true,
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerScaling": "SpellPower",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          },
+          {
+            "Effect": "EndTurn",
+            "Affect": "Caster"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Summoned Felhunter",
+    "icon": "AbilitySummonFelhunter",
+    "dispelType": "None",
+    "tags": [],
+    "stackable": true,
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerScaling": "SpellPower",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          },
+          {
+            "Effect": "EndTurn",
+            "Affect": "Caster"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Summoned Voidwalker",
+    "icon": "AbilitySummonVoidwalker",
+    "dispelType": "None",
+    "tags": [],
+    "stackable": true,
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerScaling": "SpellPower",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          },
+          {
+            "Effect": "EndTurn",
+            "Affect": "Caster"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Summoned Imp",
+    "icon": "AbilitySummonImp",
+    "dispelType": "None",
+    "tags": [],
+    "stackable": true,
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerScaling": "SpellPower",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          },
+          {
+            "Effect": "EndTurn",
+            "Affect": "Caster"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Scorch",
+    "icon": "AbilityScorch",
+    "dispelType": "None",
+    "tags": [
+      "Damage"
+    ],
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerScaling": "SpellPower",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          },
+          {
+            "Effect": "EndTurn",
+            "Affect": "Caster"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Vanquished Tentacle of C'Thun",
+    "icon": "itemmiscahnqirajtrinket05",
+    "dispelType": "None",
+    "tags": [
+      "Damage"
+    ],
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerScaling": "SpellPower",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          },
+          {
+            "Effect": "EndTurn",
+            "Affect": "Caster"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Venomous Bite",
+    "icon": "AbilityVenomousBite",
+    "dispelType": "None",
+    "tags": [
+      "Damage"
+    ],
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerScaling": "SpellPower",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          },
+          {
+            "Effect": "EndTurn",
+            "Affect": "Caster"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Putrid Bite",
+    "icon": "AbilityPutridBite",
+    "dispelType": "None",
+    "tags": [
+      "Damage"
+    ],
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerScaling": "SpellPower",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          },
+          {
+            "Effect": "EndTurn",
+            "Affect": "Caster"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Corruption",
+    "icon": "AbilityCorruption",
+    "dispelType": "None",
+    "tags": [
+      "Damage"
+    ],
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerScaling": "SpellPower",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          },
+          {
+            "Effect": "EndTurn",
+            "Affect": "Caster"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Holy Fire",
+    "icon": "AbilityHolyFire",
+    "dispelType": "None",
+    "tags": [
+      "Damage"
+    ],
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerScaling": "SpellPower",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          },
+          {
+            "Effect": "EndTurn",
+            "Affect": "Caster"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Curse Of Agony",
+    "icon": "AbilityCurseOfAgony",
+    "dispelType": "None",
+    "tags": [
+      "Damage"
+    ],
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerScaling": "SpellPower",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          },
+          {
+            "Effect": "EndTurn",
+            "Affect": "Caster"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Shadow Word: Pain",
+    "icon": "AbilityShadowWordPain",
+    "dispelType": "None",
+    "tags": [
+      "Damage"
+    ],
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerScaling": "SpellPower",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          },
+          {
+            "Effect": "EndTurn",
+            "Affect": "Caster"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Fel Armor",
+    "icon": "AbilityFelArmor",
+    "dispelType": "None",
+    "tags": [
+      "Defensive"
+    ],
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerScaling": "SpellPower",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          },
+          {
+            "Effect": "EndTurn",
+            "Affect": "Caster"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Power Word: Shield",
+    "icon": "AbilityPowerWordShield",
+    "dispelType": "None",
+    "tags": [
+      "Defensive"
+    ],
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerScaling": "SpellPower",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          },
+          {
+            "Effect": "EndTurn",
+            "Affect": "Caster"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Demon Skin",
+    "icon": "AbilityDemonSkin",
+    "dispelType": "None",
+    "tags": [
+      "Defensive"
+    ],
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerScaling": "SpellPower",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          },
+          {
+            "Effect": "EndTurn",
+            "Affect": "Caster"
+          }
+        ]
+      }
+    ]
+  }
+]

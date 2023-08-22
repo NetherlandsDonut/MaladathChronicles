@@ -8,7 +8,7 @@ using static BufferBoard;
 
 public class Board
 {
-    public Board(int x, int y, Entity enemy, SiteHostileArea area = null)
+    public Board(int x, int y, Entity enemy, SiteArea area = null)
     {
         bonusTurnStreak = 0;
         field = new int[x, y];
@@ -35,7 +35,7 @@ public class Board
     public bool playerTurn, breakForEnemy, breakForCascade, enemyFinishedMoving, playerFinishedMoving;
     public List<GameObject> temporaryElementsPlayer, temporaryElementsEnemy, temporaryBuffsPlayer, temporaryBuffsEnemy;
     public List<Action> actions;
-    public SiteHostileArea area;
+    public SiteArea area;
 
     //ENDS THE CURRENT PLAYER'S TURN
     public void EndTurn()
@@ -266,7 +266,7 @@ public class Board
                         AddRegionOverlay(CDesktop.globalRegions["EnemyActionBar" + enemy.actionBars.IndexOf(actionBar)], "Black", 0.1f);
                         animationTime += frameTime;
                         actionBar.cooldown = abilityObj.cooldown;
-                        abilityObj.effects(false);
+                        abilityObj.ExecuteEvents("AbilityCast");
                         board.enemy.DetractResources(abilityObj.cost);
                     });
                 }

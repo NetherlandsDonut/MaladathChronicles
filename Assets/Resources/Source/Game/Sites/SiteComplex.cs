@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 
 using static SiteInstance;
-using static SiteHostileArea;
+using static SiteArea;
 
 public class SiteComplex
 {

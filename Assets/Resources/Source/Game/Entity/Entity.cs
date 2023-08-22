@@ -533,20 +533,20 @@ public class Entity
         var p = Board.board.player == this;
         health -= (int)Math.Ceiling(damage);
         if (dontPrompt) return;
-        foreach (var buff in buffs)
-            if (buff.Item1 == "Volatile Infection")
-            {
-                Board.board.actions.Add(() => animationTime += frameTime * 3);
-                Board.board.actions.Add(() =>
-                {
-                    AddSmallButtonOverlay(buff.Item3, "OtherGlowFull", 1);
-                    Damage(damage / 10, true);
-                    SpawnShatter(6, 0.7, new Vector3(!p ? 148 : -318, 122), "AbilityDeathPact", true, !p ? "1000" : "1001");
-                    SpawnShatter(6, 0.7, new Vector3(!p ? 148 : -318, 122), "AbilityDeathPact", true, !p ? "1000" : "1001");
-                    PlaySound("AbilityVenomousBiteFlare");
-                    animationTime += frameTime * 3;
-                });
-            }
+        //foreach (var buff in buffs)
+        //    if (buff.Item1 == "Volatile Infection")
+        //    {
+        //        Board.board.actions.Add(() => animationTime += frameTime * 3);
+        //        Board.board.actions.Add(() =>
+        //        {
+        //            AddSmallButtonOverlay(buff.Item3, "OtherGlowFull", 1);
+        //            Damage(damage / 10, true);
+        //            SpawnShatter(6, 0.7, new Vector3(!p ? 148 : -318, 122), "AbilityDeathPact", true, !p ? "1000" : "1001");
+        //            SpawnShatter(6, 0.7, new Vector3(!p ? 148 : -318, 122), "AbilityDeathPact", true, !p ? "1000" : "1001");
+        //            PlaySound("AbilityVenomousBiteFlare");
+        //            animationTime += frameTime * 3;
+        //        });
+        //    }
     }
 
     //Heals this entity by given amount
@@ -565,13 +565,14 @@ public class Entity
         {
             var index = i;
             Board.board.actions.Add(() => { AddSmallButtonOverlay(buffs[index].Item3, "OtherGlowFull", 1); });
-            Board.board.actions.Add(Buff.buffs.Find(y => y.name == buffs[index].Item1).effects(Board.board.enemy == this));
+            var buffObj = Buff.buffs.Find(y => y.name == buffs[index].Item1);
+            buffObj.ExecuteEvents("TurnEnd");
             Board.board.actions.Add(() =>
             {
                 buffs[index] = (buffs[index].Item1, buffs[index].Item2 - 1, buffs[index].Item3);
                 if (buffs[index].Item2 <= 0)
                 {
-                    Buff.buffs.Find(y => y.name == buffs[index].Item1).killEffects(Board.board.enemy == this);
+                    buffObj.ExecuteEvents("BuffRemoval");
                     RemoveBuff(buffs[index]);
                 }
             });

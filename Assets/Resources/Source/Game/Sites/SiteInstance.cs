@@ -1,7 +1,7 @@
 using System.Linq;
 using System.Collections.Generic;
 
-using static SiteHostileArea;
+using static SiteArea;
 
 public class SiteInstance
 {

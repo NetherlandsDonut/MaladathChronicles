@@ -284,16 +284,15 @@ public class FutureEntity
                 actionBar.cooldown -= 1;
     }
 
-    public void Damage(FutureBoard board, double damage, bool dontPrompt = false)
+    public void Heal(double heal)
     {
-        var p = board.player == this;
+        health += (int)Math.Round(heal);
+        if (health > MaxHealth()) health = MaxHealth();
+    }
+
+    public void Damage(double damage)
+    {
         health -= (int)Math.Ceiling(damage);
-        if (dontPrompt) return;
-        foreach (var buff in buffs)
-            if (buff.Item1 == "Volatile Infection")
-            {
-                Damage(board, damage / 10, true);
-            }
     }
 
     public void FlareBuffs(FutureBoard board)
@@ -302,11 +301,11 @@ public class FutureEntity
         {
             var index = i;
             var find = Buff.buffs.Find(y => y.name == buffs[index].Item1);
-            find.futureEffects(board.enemy == this, board)();
+            //find.futureEffects(board.enemy == this, board)();
             buffs[index] = (buffs[index].Item1, buffs[index].Item2 - 1);
             if (buffs[index].Item2 <= 0)
             {
-                Buff.buffs.Find(y => y.name == buffs[index].Item1).futureKillEffects(board.enemy == this, board);
+                //Buff.buffs.Find(y => y.name == buffs[index].Item1).futureKillEffects(board.enemy == this, board);
                 RemoveBuff(buffs[index]);
             }
         }

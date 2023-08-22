@@ -1,0 +1,2537 @@
+[
+  {
+    "name": "Two Handed Axe Proficiency",
+    "icon": "AbilityTwoHandedAxeProficiency"
+  },
+  {
+    "name": "Two Handed Mace Proficiency",
+    "icon": "AbilityTwoHandedMaceProficiency"
+  },
+  {
+    "name": "Two Handed Sword Proficiency",
+    "icon": "AbilityTwoHandedSwordProficiency"
+  },
+  {
+    "name": "One Handed Axe Proficiency",
+    "icon": "AbilityOneHandedAxeProficiency"
+  },
+  {
+    "name": "One Handed Mace Proficiency",
+    "icon": "AbilityOneHandedMaceProficiency"
+  },
+  {
+    "name": "One Handed Sword Proficiency",
+    "icon": "AbilityOneHandedSwordProficiency"
+  },
+  {
+    "name": "Fist Weapon Proficiency",
+    "icon": "AbilityFistWeaponProficiency"
+  },
+  {
+    "name": "Off Hand Proficiency",
+    "icon": "AbilityOffHandProficiency"
+  },
+  {
+    "name": "Polearm Proficiency",
+    "icon": "AbilityPolearmProficiency"
+  },
+  {
+    "name": "Dagger Proficiency",
+    "icon": "AbilityDaggerProficiency"
+  },
+  {
+    "name": "Staff Proficiency",
+    "icon": "AbilityStaffProficiency"
+  },
+  {
+    "name": "Wand Proficiency",
+    "icon": "AbilityWandProficiency"
+  },
+  {
+    "name": "Totem Proficiency",
+    "icon": "AbilityTotemProficiency"
+  },
+  {
+    "name": "Relic Proficiency",
+    "icon": "AbilityRelicProficiency"
+  },
+  {
+    "name": "Libram Proficiency",
+    "icon": "AbilityLibramProficiency"
+  },
+  {
+    "name": "Idol Proficiency",
+    "icon": "AbilityIdolProficiency"
+  },
+  {
+    "name": "Shield Proficiency",
+    "icon": "AbilityShieldProficiency"
+  },
+  {
+    "name": "Quiver Proficiency",
+    "icon": "AbilityQuiverProficiency"
+  },
+  {
+    "name": "Pouch Proficiency",
+    "icon": "AbilityPouchProficiency"
+  },
+  {
+    "name": "Bow Proficiency",
+    "icon": "AbilityBowProficiency"
+  },
+  {
+    "name": "Crossbow Proficiency",
+    "icon": "AbilityCrossbowProficiency"
+  },
+  {
+    "name": "Gun Proficiency",
+    "icon": "AbilityGunProficiency"
+  },
+  {
+    "name": "Cloth Proficiency",
+    "icon": "AbilityClothProficiency"
+  },
+  {
+    "name": "Leather Proficiency",
+    "icon": "AbilityLeatherProficiency"
+  },
+  {
+    "name": "Mail Proficiency",
+    "icon": "AbilityMailProficiency"
+  },
+  {
+    "name": "Plate Proficiency",
+    "icon": "AbilityPlateProficiency"
+  },
+  {
+    "name": "Arcane Missiles",
+    "icon": "AbilityArcaneMissiles",
+    "tags": [
+      "Damage"
+    ],
+    "cost": {
+      "Arcane": 6
+    },
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "SoundEffect": "AbilityArcaneMissilesCast",
+            "Await": "4"
+          },
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerType": "Spell",
+            "PowerSource": "Effector",
+            "PowerScale": "1.3",
+            "ShatterTarget": "Other",
+            "ShatterType": "Directional",
+            "ShatterDensity": "2",
+            "ShatterDegree": "0.7",
+            "SoundEffect": "AbilityArcaneMissilesImpact1",
+            "Await": "4"
+          },
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerType": "Spell",
+            "PowerSource": "Effector",
+            "PowerScale": "1.3",
+            "ShatterTarget": "Other",
+            "ShatterType": "Directional",
+            "ShatterDensity": "2",
+            "ShatterDegree": "0.7",
+            "SoundEffect": "AbilityArcaneMissilesImpact2",
+            "Await": "4"
+          },
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerType": "Spell",
+            "PowerSource": "Effector",
+            "PowerScale": "1.3",
+            "ShatterTarget": "Other",
+            "ShatterType": "Directional",
+            "ShatterDensity": "2",
+            "ShatterDegree": "0.7",
+            "SoundEffect": "AbilityArcaneMissilesImpact3",
+          },
+          {
+            "Effect": "EndTurn"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Legendary",
+              "Text": "Japierdole"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Curse of Agony",
+    "icon": "AbilityCurseOfAgony",
+    "cooldown": 4,
+    "tags": [
+      "Damage",
+      "Overtime"
+    ],
+    "cost": {
+      "Shadow": 7,
+      "Fire": 5
+    },
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddBuff",
+            "Affect": "Other",
+            "BuffName": "Curse of Agony",
+            "BuffDuration": "10",
+            "ShatterTarget": "Other",
+            "ShatterType": "Directional",
+            "ShatterDensity": "2",
+            "SoundEffect": "AbilityCurseOfAgonyCast"
+          },
+          {
+            "Effect": "EndTurn"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Venomous Bite",
+    "icon": "AbilityVenomousBite",
+    "cooldown": 3,
+    "tags": [
+      "Damage",
+      "Overtime"
+    ],
+    "cost": {
+      "Decay": 6
+    },
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddBuff",
+            "Affect": "Other",
+            "BuffName": "Venomous Bite",
+            "BuffDuration": "4",
+            "ShatterTarget": "Other",
+            "ShatterType": "Directional",
+            "ShatterDensity": "2",
+            "SoundEffect": "AbilityVenomousBiteImpact"
+          },
+          {
+            "Effect": "EndTurn"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Volatile Infection",
+    "icon": "AbilityDeathPact",
+    "cooldown": 5,
+    "tags": [
+      "Damage"
+    ],
+    "cost": {
+      "Air": 2,
+      "Decay": 4
+    },
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddBuff",
+            "BuffName": "Volatile Infection",
+            "BuffDuration": "6",
+            "Affect": "Other",
+            "ShatterTarget": "Other",
+            "ShatterType": "Directional",
+            "ShatterDensity": "2",
+            "SoundEffect": "AbilityWitheringCloudCast"
+          },
+          {
+            "Effect": "EndTurn"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Spore Cloud",
+    "icon": "AbilityDetectInvisibility",
+    "cooldown": 5,
+    "tags": [
+      "Damage"
+    ],
+    "cost": {
+      "Air": 2,
+      "Decay": 4
+    },
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddBuff",
+            "BuffName": "Spore Cloud",
+            "BuffDuration": "6",
+            "Affect": "Effector",
+            "ShatterTarget": "Effector",
+            "ShatterType": "Directional",
+            "ShatterDensity": "2",
+            "SoundEffect": "AbilityWitheringCloudCast"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Withering Cloud",
+    "icon": "AbilityWitheringCloud",
+    "cooldown": 5,
+    "tags": [
+      "Gathering"
+    ],
+    "cost": {
+      "Air": 6
+    },
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddBuff",
+            "BuffName": "Withering Cloud",
+            "BuffDuration": "7",
+            "Affect": "Effector",
+            "ShatterTarget": "Effector",
+            "ShatterType": "Central",
+            "ShatterDensity": "2",
+            "SoundEffect": "AbilityWitheringCloudCast"
+          },
+          {
+            "Effect": "EndTurn"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Web Burst",
+    "icon": "AbilityWebBurst",
+    "cooldown": 4,
+    "tags": [
+      "Stun"
+    ],
+    "cost": {
+      "Shadow": 4,
+      "Decay": 4
+    },
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddBuff",
+            "BuffName": "Web Burst",
+            "BuffDuration": "2",
+            "Affect": "Other",
+            "ShatterTarget": "Other",
+            "ShatterType": "Directional",
+            "ShatterDensity": "2",
+            "SoundEffect": "AbilityWebBurstImpact"
+          },
+          {
+            "Effect": "EndTurn"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Demon Skin",
+    "icon": "AbilityDemonSkin",
+    "tags": [
+      "Defensive"
+    ],
+    "cost": {
+      "Shadow": 6
+    },
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddBuff",
+            "BuffName": "Demon Skin",
+            "BuffDuration": "10",
+            "Affect": "Effector",
+            "ShatterTarget": "Effector",
+            "ShatterType": "Central",
+            "ShatterDensity": "2",
+            "SoundEffect": "AbilityDemonSkinCast"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Vanquished Tentacle of C'Thun",
+    "icon": "itemmiscahnqirajtrinket05",
+    "cooldown": 20,
+    "putOnEnd": true,
+    "tags": [
+      "Damage"
+    ],
+    "cost": {
+      "Shadow": 4
+    },
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddBuff",
+            "BuffName": "Vanquished Tentacle of C'Thun",
+            "BuffDuration": "4",
+            "Affect": "Other",
+            "ShatterTarget": "Other",
+            "ShatterType": "Central",
+            "ShatterDensity": "2",
+            "SoundEffect": "AbilityDemonSkinCast"
+          },
+          {
+            "Effect": "EndTurn"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Stoneform",
+    "icon": "AbilityStoneform",
+    "cooldown": 20,
+    "tags": [
+      "Defensive"
+    ],
+    "cost": {
+      "Earth": 4,
+      "Lightning": 4
+    },
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerType": "Spell",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          },
+          {
+            "Effect": "EndTurn"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Ice Block",
+    "icon": "AbilityIceBlock",
+    "tags": [
+      "Defensive",
+      "Emergency"
+    ],
+    "cost": {
+      "Frost": 4
+    },
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerType": "Spell",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          },
+          {
+            "Effect": "EndTurn"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Power Word: Shield",
+    "icon": "AbilityPowerWordShield",
+    "tags": [
+      "Defensive"
+    ],
+    "cost": {
+      "Order": 6
+    },
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerType": "Spell",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          },
+          {
+            "Effect": "EndTurn"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Fel Armor",
+    "icon": "AbilityFelArmor",
+    "tags": [
+      "Defensive"
+    ],
+    "cost": {
+      "Shadow": 3,
+      "Fire": 3
+    },
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerType": "Spell",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          },
+          {
+            "Effect": "EndTurn"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Hammer Of Justice",
+    "icon": "AbilityHammerOfJustice",
+    "tags": [
+      "Stun"
+    ],
+    "cost": {
+      "Order": 8,
+      "Air": 2
+    },
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerType": "Spell",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          },
+          {
+            "Effect": "EndTurn"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Shadow Word: Pain",
+    "icon": "AbilityShadowWordPain",
+    "tags": [
+      "Damage",
+      "Overtime"
+    ],
+    "cost": {
+      "Shadow": 6
+    },
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerType": "Spell",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          },
+          {
+            "Effect": "EndTurn"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Putrid Bite",
+    "icon": "AbilityPutridBite",
+    "cooldown": 2,
+    "tags": [
+      "Damage",
+      "Overtime"
+    ],
+    "cost": {
+      "Decay": 4,
+      "Air": 2
+    },
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerType": "Spell",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          },
+          {
+            "Effect": "EndTurn"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Corruption",
+    "icon": "AbilityCorruption",
+    "cooldown": 1,
+    "tags": [
+      "Damage",
+      "Overtime"
+    ],
+    "cost": {
+      "Shadow": 2,
+      "Decay": 5
+    },
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerType": "Spell",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          },
+          {
+            "Effect": "EndTurn"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Summon Infernal",
+    "icon": "AbilitySummonInfernal",
+    "tags": [
+      "Damage",
+      "Overtime"
+    ],
+    "cost": {
+      "Fire": 20
+    },
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerType": "Spell",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          },
+          {
+            "Effect": "EndTurn"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Summon Felhunter",
+    "icon": "AbilitySummonFelhunter",
+    "tags": [
+      "Damage",
+      "Overtime"
+    ],
+    "cost": {
+      "Shadow": 10,
+      "Fire": 5
+    },
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerType": "Spell",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          },
+          {
+            "Effect": "EndTurn"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Summon Voidwalker",
+    "icon": "AbilitySummonVoidwalker",
+    "tags": [
+      "Damage",
+      "Overtime"
+    ],
+    "cost": {
+      "Shadow": 12
+    },
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerType": "Spell",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          },
+          {
+            "Effect": "EndTurn"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Summon Imp",
+    "icon": "AbilitySummonImp",
+    "tags": [
+      "Damage",
+      "Overtime"
+    ],
+    "cost": {
+      "Shadow": 6,
+      "Fire": 2
+    },
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerType": "Spell",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          },
+          {
+            "Effect": "EndTurn"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Shadow Bolt",
+    "icon": "AbilityShadowBolt",
+    "tags": [
+      "Damage"
+    ],
+    "cost": {
+      "Shadow": 4
+    },
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "SoundEffect": "AbilityShadowboltCast",
+            "Await": "4"
+          },
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerType": "Spell",
+            "PowerSource": "Effector",
+            "PowerScale": "2.9",
+            "ShatterTarget": "Other",
+            "ShatterType": "Directional",
+            "ShatterDensity": "2",
+            "ShatterDegree": "0.7",
+            "SoundEffect": "AbilityShadowboltImpact"
+          },
+          {
+            "Effect": "EndTurn"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Fireball",
+    "icon": "AbilityFireball",
+    "tags": [
+      "Damage"
+    ],
+    "cost": {
+      "Fire": 4
+    },
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "SoundEffect": "AbilityFireballCast",
+            "Await": "4"
+          },
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerType": "Spell",
+            "PowerSource": "Effector",
+            "PowerScale": "2.9",
+            "ShatterTarget": "Other",
+            "ShatterType": "Directional",
+            "ShatterDensity": "2",
+            "ShatterDegree": "0.7",
+            "SoundEffect": "AbilityFireballImpact"
+          },
+          {
+            "Effect": "EndTurn"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Scorch",
+    "icon": "AbilityScorch",
+    "cooldown": 2,
+    "tags": [
+      "Damage",
+      "Overtime"
+    ],
+    "cost": {
+      "Fire": 4,
+      "Air": 2
+    },
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddBuff",
+            "Affect": "Other",
+            "BuffName": "Scorch",
+            "BuffDuration": "3",
+            "ShatterTarget": "Other",
+            "ShatterType": "Central",
+            "ShatterDensity": "2",
+            "ShatterDegree": "0.7",
+            "SoundEffect": "AbilityScorchImpact"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Healing Wave",
+    "icon": "AbilityHealingWave",
+    "tags": [
+      "Healing"
+    ],
+    "cost": {
+      "Water": 6,
+      "Air": 2
+    },
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Heal",
+            "Affect": "Other",
+            "PowerType": "Spell",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          },
+          {
+            "Effect": "EndTurn"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Muscle Tear",
+    "icon": "AbilityMuscleTear",
+    "cooldown": 1,
+    "tags": [
+      "Damage"
+    ],
+    "cost": {
+      "Air": 6
+    },
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerType": "Spell",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          },
+          {
+            "Effect": "EndTurn"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Smite",
+    "icon": "AbilitySmite",
+    "tags": [
+      "Damage"
+    ],
+    "cost": {
+      "Order": 4
+    },
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerType": "Spell",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          },
+          {
+            "Effect": "EndTurn"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Holy Fire",
+    "icon": "AbilityHolyFire",
+    "cooldown": 4,
+    "tags": [
+      "Damage",
+      "Overtime"
+    ],
+    "cost": {
+      "Order": 4,
+      "Fire": 4
+    },
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerType": "Spell",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          },
+          {
+            "Effect": "EndTurn"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Frostbolt",
+    "icon": "AbilityFrostbolt",
+    "tags": [
+      "Damage"
+    ],
+    "cost": {
+      "Frost": 4
+    },
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "SoundEffect": "AbilityFrostboltCast",
+            "Await": "4"
+          },
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerType": "Spell",
+            "PowerSource": "Effector",
+            "PowerScale": "2.9",
+            "ShatterTarget": "Other",
+            "ShatterType": "Directional",
+            "ShatterDensity": "2",
+            "ShatterDegree": "0.7",
+            "SoundEffect": "AbilityFrostboltImpact"
+          },
+          {
+            "Effect": "EndTurn"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Ice Lance",
+    "icon": "AbilityIceLance",
+    "tags": [
+      "Damage"
+    ],
+    "cost": {
+      "Frost": 5,
+      "Air": 2
+    },
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerType": "Spell",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          },
+          {
+            "Effect": "EndTurn"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Freezing Nova",
+    "icon": "AbilityFreezingNova",
+    "cooldown": 1,
+    "tags": [
+      "Gathering"
+    ],
+    "cost": {
+      "Frost": 2,
+      "Air": 6,
+      "Water": 2
+    },
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerType": "Spell",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          },
+          {
+            "Effect": "EndTurn"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Blizzard",
+    "icon": "AbilityBlizzard",
+    "cooldown": 4,
+    "tags": [
+      "Damage",
+      "Overtime"
+    ],
+    "cost": {
+      "Frost": 10,
+      "Air": 10
+    },
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerType": "Spell",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          },
+          {
+            "Effect": "EndTurn"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Deep Freeze",
+    "icon": "AbilityDeepFreeze",
+    "cooldown": 5,
+    "tags": [
+      "Gathering"
+    ],
+    "cost": {
+      "Frost": 5,
+      "Air": 5,
+      "Earth": 10
+    },
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerType": "Spell",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          },
+          {
+            "Effect": "EndTurn"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Thunderstorm",
+    "icon": "AbilityThunderstorm",
+    "cooldown": 6,
+    "tags": [
+      "Damage"
+    ],
+    "cost": {
+      "Lightning": 10,
+      "Air": 2
+    },
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerType": "Spell",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          },
+          {
+            "Effect": "EndTurn"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Meteor",
+    "icon": "AbilityMeteor",
+    "cooldown": 5,
+    "tags": [
+      "Gathering"
+    ],
+    "cost": {
+      "Fire": 10
+    },
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerType": "Spell",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          },
+          {
+            "Effect": "EndTurn"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Shadowflame Breath",
+    "icon": "AbilityShadowflameBreath",
+    "cooldown": 3,
+    "tags": [
+      "Damage",
+      "Gathering"
+    ],
+    "cost": {
+      "Air": 10,
+      "Fire": 5,
+      "Shadow": 5
+    },
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerType": "Spell",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          },
+          {
+            "Effect": "EndTurn"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Veil of Shadow",
+    "icon": "AbilityVeilofShadow",
+    "tags": [
+      "Gathering"
+    ],
+    "cost": {
+      "Air": 2,
+      "Shadow": 6
+    },
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerType": "Spell",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          },
+          {
+            "Effect": "EndTurn"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Bellowing Roar",
+    "icon": "AbilityBellowingRoar",
+    "tags": [
+      "Gathering"
+    ],
+    "cost": {
+      "Fire": 4,
+      "Shadow": 4
+    },
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerType": "Spell",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          },
+          {
+            "Effect": "EndTurn"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Hot Streak",
+    "icon": "AbilityHotStreak",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerType": "Spell",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          },
+          {
+            "Effect": "EndTurn"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Harmonic Echo",
+    "icon": "AbilityHarmonicEcho",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerType": "Spell",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          },
+          {
+            "Effect": "EndTurn"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Harmonic Echo",
+    "icon": "AbilityHarmonicEcho",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerType": "Spell",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          },
+          {
+            "Effect": "EndTurn"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Arcane Harmony",
+    "icon": "AbilityArcaneHarmony",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerType": "Spell",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          },
+          {
+            "Effect": "EndTurn"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Nether Precision",
+    "icon": "AbilityNetherPrecision",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerType": "Spell",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          },
+          {
+            "Effect": "EndTurn"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Enlightenment",
+    "icon": "AbilityEnlightenment",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerType": "Spell",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          },
+          {
+            "Effect": "EndTurn"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Cascading Power",
+    "icon": "AbilityCascadingPower",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerType": "Spell",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          },
+          {
+            "Effect": "EndTurn"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Arcing Cleaves",
+    "icon": "AbilityArcingCleaves",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerType": "Spell",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          },
+          {
+            "Effect": "EndTurn"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Concentrated Power",
+    "icon": "AbilityConcentratedPower",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerType": "Spell",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          },
+          {
+            "Effect": "EndTurn"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Resonance",
+    "icon": "AbilityResonance",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerType": "Spell",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          },
+          {
+            "Effect": "EndTurn"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Reverberate",
+    "icon": "AbilityReverberate",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerType": "Spell",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          },
+          {
+            "Effect": "EndTurn"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Mana Adept",
+    "icon": "AbilityManaAdept",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerType": "Spell",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          },
+          {
+            "Effect": "EndTurn"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Amplification",
+    "icon": "AbilityAmplification",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerType": "Spell",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          },
+          {
+            "Effect": "EndTurn"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Concentration",
+    "icon": "AbilityConcentration",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerType": "Spell",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          },
+          {
+            "Effect": "EndTurn"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Arcane Tempo",
+    "icon": "AbilityArcaneTempo",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerType": "Spell",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          },
+          {
+            "Effect": "EndTurn"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Bone Chilling",
+    "icon": "AbilityBoneChilling",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerType": "Spell",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          },
+          {
+            "Effect": "EndTurn"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Deep Shatter",
+    "icon": "AbilityDeepShatter",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerType": "Spell",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          },
+          {
+            "Effect": "EndTurn"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Cruel Winter",
+    "icon": "AbilityCruelWinter",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerType": "Spell",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          },
+          {
+            "Effect": "EndTurn"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Perpetual Winter",
+    "icon": "AbilityPerpetualWinter",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerType": "Spell",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          },
+          {
+            "Effect": "EndTurn"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Flash Freeze",
+    "icon": "AbilityFlashFreeze",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerType": "Spell",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          },
+          {
+            "Effect": "EndTurn"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Piercing Ice",
+    "icon": "AbilityPiercingIce",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerType": "Spell",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          },
+          {
+            "Effect": "EndTurn"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Frost Channeling",
+    "icon": "AbilityFrostChanneling",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerType": "Spell",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          },
+          {
+            "Effect": "EndTurn"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Permafrost",
+    "icon": "AbilityPermafrost",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerType": "Spell",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          },
+          {
+            "Effect": "EndTurn"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Hailstones",
+    "icon": "AbilityHailstones",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerType": "Spell",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          },
+          {
+            "Effect": "EndTurn"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Frostbite",
+    "icon": "AbilityFrostbite",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerType": "Spell",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          },
+          {
+            "Effect": "EndTurn"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Splitting Ice",
+    "icon": "AbilitySplittingIce",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerType": "Spell",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          },
+          {
+            "Effect": "EndTurn"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Ice Shards",
+    "icon": "AbilityIceShards",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerType": "Spell",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          },
+          {
+            "Effect": "EndTurn"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Fingers Of Frost",
+    "icon": "AbilityFingersOfFrost",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerType": "Spell",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          },
+          {
+            "Effect": "EndTurn"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Wintertide",
+    "icon": "AbilityWintertide",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerType": "Spell",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          },
+          {
+            "Effect": "EndTurn"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Brain Freeze",
+    "icon": "AbilityBrainFreeze",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerType": "Spell",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          },
+          {
+            "Effect": "EndTurn"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Sun King's Blessing",
+    "icon": "AbilitySunKing'sBlessing",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerType": "Spell",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          },
+          {
+            "Effect": "EndTurn"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Deep Impact",
+    "icon": "AbilityDeepImpact",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerType": "Spell",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          },
+          {
+            "Effect": "EndTurn"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Hyperthermia",
+    "icon": "AbilityHyperthermia",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerType": "Spell",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          },
+          {
+            "Effect": "EndTurn"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Volatile Detonation",
+    "icon": "AbilityVolatileDetonation",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerType": "Spell",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          },
+          {
+            "Effect": "EndTurn"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Critical Mass",
+    "icon": "AbilityCriticalMass",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerType": "Spell",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          },
+          {
+            "Effect": "EndTurn"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Convection",
+    "icon": "AbilityConvection",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerType": "Spell",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          },
+          {
+            "Effect": "EndTurn"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Pyromaniac",
+    "icon": "AbilityPyromaniac",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerType": "Spell",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          },
+          {
+            "Effect": "EndTurn"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Conflagration",
+    "icon": "AbilityConflagration",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerType": "Spell",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          },
+          {
+            "Effect": "EndTurn"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Firemind",
+    "icon": "AbilityFiremind",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerType": "Spell",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          },
+          {
+            "Effect": "EndTurn"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Pyroclasm",
+    "icon": "AbilityPyroclasm",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerType": "Spell",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          },
+          {
+            "Effect": "EndTurn"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Flame Patch",
+    "icon": "AbilityFlamePatch",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerType": "Spell",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          },
+          {
+            "Effect": "EndTurn"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Fervent Flickering",
+    "icon": "AbilityFerventFlickering",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerType": "Spell",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          },
+          {
+            "Effect": "EndTurn"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Fiery Rush",
+    "icon": "AbilityFieryRush",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerType": "Spell",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          },
+          {
+            "Effect": "EndTurn"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Searing Touch",
+    "icon": "AbilitySearingTouch",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerType": "Spell",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          },
+          {
+            "Effect": "EndTurn"
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -102,7 +102,7 @@ public class FutureBoard
                     entity = board.playerTurn ? board.player : board.enemy;
                     list.Add(new FutureMove(ability.Item2.name, board));
                     entity.actionBars.Find(x => x.ability == ability.Item2.name).cooldown = ability.Item2.cooldown;
-                    ability.Item2.futureEffects(board.playerTurn, board);
+                    ability.Item2.ExecuteFutureEvents(board, "AbilityCast");
                     entity.DetractResources(ability.Item2.cost);
                     while (!board.finishedAnimation)
                         board.AnimateBoard();

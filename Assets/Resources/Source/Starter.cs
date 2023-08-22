@@ -17,7 +17,7 @@ public class Starter : MonoBehaviour
         settings = new GameSettings();
         saveGames = new List<SaveGame>();
         fallingElements = new List<FallingElement>();
-        Deserialize(ref SiteHostileArea.areas, "areas");
+        Deserialize(ref SiteArea.areas, "areas");
         Deserialize(ref SiteInstance.instances, "instances");
         Deserialize(ref SiteComplex.complexes, "complexes");
         Deserialize(ref SiteTown.towns, "towns");
@@ -25,7 +25,9 @@ public class Starter : MonoBehaviour
         Deserialize(ref Race.races, "races");
         Deserialize(ref ItemSet.itemSets, "sets");
         Deserialize(ref Item.items, "items");
-        SiteHostileArea.areas.ForEach(x => x.Initialise());
+        Deserialize(ref Ability.abilities, "abilities");
+        Deserialize(ref Buff.buffs, "buffs");
+        SiteArea.areas.ForEach(x => x.Initialise());
         SiteInstance.instances.ForEach(x => x.Initialise());
         SiteComplex.complexes.ForEach(x => x.Initialise());
         var temp = FindObjectsByType<WindowAnchorRemote>(FindObjectsSortMode.None);
@@ -248,12 +250,12 @@ public class Starter : MonoBehaviour
                 )
             );
         }
-        for (int i = 0; i < SiteHostileArea.areas.Count; i++)
+        for (int i = 0; i < SiteArea.areas.Count; i++)
         {
-            if (SiteHostileArea.areas[i].instancePart)
+            if (SiteArea.areas[i].instancePart)
             {
                 var index = i;
-                var area = SiteHostileArea.areas[index];
+                var area = SiteArea.areas[index];
                 Blueprint.windowBlueprints.Add(
                     new Blueprint("Area: " + area.name,
                         () =>
@@ -352,7 +354,7 @@ public class Starter : MonoBehaviour
             else
             {
                 var index = i;
-                var area = SiteHostileArea.areas[index];
+                var area = SiteArea.areas[index];
                 Blueprint.windowBlueprints.Add(
                     new Blueprint("Area: " + area.name,
                         () =>
@@ -472,14 +474,15 @@ public class Starter : MonoBehaviour
                     var spec = i; var row = j; var col = k;
                     Blueprint.windowBlueprints.Add(new Blueprint("Talent" + spec + row + col, () => PrintTalent(spec, row, col)));
                 }
-        //Serialization.Serialize(Race.races, "races");
-        //Serialization.Serialize(Class.classes, "classes");
-        Serialize(SiteHostileArea.areas, "hostile areas");
-        //Serialization.Serialize(Race.races, "races");
-        //Serialization.Serialize(SiteTown.towns, "towns");
-        //Serialization.Serialize(SiteInstance.instances, "instances");
-        //Serialization.Serialize(SiteComplex.complexes, "complexes");
-        //Serialization.Serialize(ItemSet.itemSets, "item sets");
+        //Serialize(Race.races, "races 2");
+        //Serialize(Class.classes, "classes 2");
+        //Serialize(Ability.abilities, "abilities 2");
+        //Serialize(Buff.buffs, "buffs 2");
+        //Serialize(Race.races, "races 2");
+        //Serialize(SiteTown.towns, "towns 2");
+        //Serialize(SiteInstance.instances, "instances 2");
+        //Serialize(SiteComplex.complexes, "complexes 2");
+        //Serialize(ItemSet.itemSets, "sets 2");
         cursor = FindObjectOfType<Cursor>();
         cursorEnemy = FindObjectOfType<CursorRemote>();
         SpawnDesktopBlueprint("TitleScreen");

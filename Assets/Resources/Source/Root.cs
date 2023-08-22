@@ -7,7 +7,7 @@ using static Font;
 using static Blueprint;
 using static SiteComplex;
 using static SiteInstance;
-using static SiteHostileArea;
+using static SiteArea;
 using static SiteTown;
 
 using static Root.Color;
@@ -82,10 +82,10 @@ public static class Root
 
     #region Shatter
 
-    public static GameObject SpawnShatterBuff(double speed, double amount, Vector3 position, string sprite, Entity target, bool oneDirection = false, string block = "0000")
+    public static GameObject SpawnBuff(Vector3 position, string icon, Entity target)
     {
         var buff = UnityEngine.Object.Instantiate(Resources.Load<GameObject>("Prefabs/PrefabBuff"));
-        buff.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/Buttons/" + sprite);
+        buff.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/Buttons/" + icon);
         buff.transform.parent = Board.board.window.desktop.transform;
         buff.transform.position = position;
         buff.GetComponent<FlyingBuff>().Initiate(currentSave.player == target, (h) => { },
@@ -110,13 +110,12 @@ public static class Root
                     AddLine("Turns left: ", DarkGray);
                     AddText(buff.Item2 + "", Gray);
                 });
-                buffObj.description(!fb.onPlayer)();
+                buffObj.PrintDescription(target, Board.board.player == target ? Board.board.enemy : Board.board.player);
                 AddRegionGroup();
                 SetRegionGroupWidth(236);
                 AddPaddingRegion(() => { AddLine(""); });
             }
         );
-        SpawnShatter(speed, amount, position, sprite, oneDirection, block);
         return buff;
     }
 
@@ -277,7 +276,7 @@ public static class Root
                 AddLine("Classes: ", DarkGray);
                 foreach (var spec in item.classes)
                 {
-                    AddText(spec, ClassColored(spec));
+                    AddText(spec, ColorFromText(spec));
                     if (spec != item.classes.Last())
                         AddText(", ", DarkGray);
                 }
@@ -729,17 +728,30 @@ public static class Root
         });
     }
 
-    public static Color ClassColored(string spec)
+    public static Color ColorFromText(string color)
     {
-        if (spec == "Paladin") return Paladin;
-        else if (spec == "Warrior") return Warrior;
-        else if (spec == "Rogue") return Rogue;
-        else if (spec == "Priest") return Priest;
-        else if (spec == "Mage") return Mage;
-        else if (spec == "Druid") return Druid;
-        else if (spec == "Warlock") return Warlock;
-        else if (spec == "Hunter") return Hunter;
-        else if (spec == "Shaman") return Shaman;
+        if (color == "Black") return Black;
+        else if (color == "DarkGray") return DarkGray;
+        else if (color == "Gray") return Gray;
+        else if (color == "LightGray") return LightGray;
+        else if (color == "White") return White;
+        else if (color == "Red") return Red;
+        else if (color == "DangerousRed") return DangerousRed;
+        else if(color == "Poor") return Poor;
+        else if(color == "Common") return Common;
+        else if(color == "Uncommon") return Uncommon;
+        else if(color == "Rare") return Rare;
+        else if(color == "Epic") return Epic;
+        else if(color == "Legendary") return Legendary;
+        else if (color == "Paladin") return Paladin;
+        else if (color == "Warrior") return Warrior;
+        else if (color == "Rogue") return Rogue;
+        else if (color == "Priest") return Priest;
+        else if (color == "Mage") return Mage;
+        else if (color == "Druid") return Druid;
+        else if (color == "Warlock") return Warlock;
+        else if (color == "Hunter") return Hunter;
+        else if (color == "Shaman") return Shaman;
         else return Gray;
     }
 
@@ -813,7 +825,7 @@ public static class Root
                     });
                     if (abilityObj != null)
                     {
-                        abilityObj.description(true);
+                        abilityObj.PrintDescription(currentSave.player, null);
                         if (abilityObj.cost != null)
                             foreach (var cost in abilityObj.cost)
                             {

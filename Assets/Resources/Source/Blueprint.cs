@@ -6,13 +6,14 @@ using System.Collections.Generic;
 using static Root;
 using static SiteComplex;
 using static SiteInstance;
-using static SiteHostileArea;
+using static SiteArea;
 using static SiteTown;
 
 using static Root.Color;
 using static Root.Anchor;
 
 using static UnityEngine.KeyCode;
+using System.Xml.Schema;
 
 public class Blueprint
 {
@@ -253,7 +254,7 @@ public class Blueprint
                         if (abilityObj.EnoughResources(Board.board.player) && actionBar.cooldown == 0)
                         {
                             actionBar.cooldown = abilityObj.cooldown;
-                            abilityObj.effects(true);
+                            abilityObj.ExecuteEvents("AbilityCast");
                             Board.board.player.DetractResources(abilityObj.cost);
                             Board.board.temporaryElementsPlayer = new();
                             h.window.desktop.Rebuild();
@@ -280,7 +281,7 @@ public class Blueprint
                                 AddText(actionBar.cooldown + (actionBar.cooldown == 1 ? " turn"  : " turns"), Gray);
                             }
                         });
-                        abilityObj.description(true);
+                        abilityObj.PrintDescription(Board.board.player, Board.board.enemy);
                         foreach (var cost in abilityObj.cost)
                         {
                             AddRegionGroup();
@@ -456,7 +457,7 @@ public class Blueprint
                             AddLine("Cooldown: ", DarkGray);
                             AddText(abilityObj.cooldown == 0 ? "None" : abilityObj.cooldown + (abilityObj.cooldown == 1 ? " turn"  : " turns"), Gray);
                         });
-                        abilityObj.description(true);
+                        abilityObj.PrintDescription(currentSave.player, null);
                         foreach (var cost in abilityObj.cost)
                         {
                             AddRegionGroup();
@@ -518,7 +519,7 @@ public class Blueprint
                             AddLine("Cooldown: ", DarkGray);
                             AddText(abilityObj.cooldown == 0 ? "None" : abilityObj.cooldown + (abilityObj.cooldown == 1 ? " turn"  : " turns"), Gray);
                         });
-                        abilityObj.description(true);
+                        abilityObj.PrintDescription(currentSave.player, null);
                         if (abilityObj.cost != null)
                             foreach (var cost in abilityObj.cost)
                             {
@@ -602,7 +603,7 @@ public class Blueprint
                                 AddLine("Cooldown: ", DarkGray);
                                 AddText(abilityObj.cooldown == 0 ? "None" : abilityObj.cooldown + (abilityObj.cooldown == 1 ? " turn"  : " turns"), Gray);
                             });
-                            abilityObj.description(true);
+                            abilityObj.PrintDescription(currentSave.player, null);
                             foreach (var cost in abilityObj.cost)
                             {
                                 AddRegionGroup();
@@ -789,7 +790,7 @@ public class Blueprint
                             AddLine("Cooldown: ", DarkGray);
                             AddText(abilityObj.cooldown == 0 ? "None" : abilityObj.cooldown + (abilityObj.cooldown == 1 ? " turn"  : " turns"), Gray);
                         });
-                        abilityObj.description(false);
+                        abilityObj.PrintDescription(Board.board.player, Board.board.enemy);
                         foreach (var cost in abilityObj.cost)
                         {
                             AddRegionGroup();
