@@ -54,7 +54,7 @@ public class FutureEntity
     public Stats stats;
     public Inventory inventory;
     public Dictionary<string, Item> equipment;
-    public List<(string, int)> buffs;
+    public List<(Buff, int)> buffs;
 
     public Dictionary<string, double> ElementImportance(double healthPerc, double otherHealthPerc)
     {
@@ -253,6 +253,8 @@ public class FutureEntity
         CapResources();
     }
 
+    public void DetractResource(string resource, int amount) => DetractResources(new() { { resource, amount } });
+
     public void DetractResources(Dictionary<string, int> resources)
     {
         foreach (var resource in resources)
@@ -300,21 +302,16 @@ public class FutureEntity
         for (int i = buffs.Count - 1; i >= 0; i--)
         {
             var index = i;
-            var find = Buff.buffs.Find(y => y.name == buffs[index].Item1);
-            //find.futureEffects(board.enemy == this, board)();
+            if (buffs[index].Item2 == 1)
+                buffs[index].Item1.ExecuteFutureEvents(board, "BuffRemove");
             buffs[index] = (buffs[index].Item1, buffs[index].Item2 - 1);
-            if (buffs[index].Item2 <= 0)
-            {
-                //Buff.buffs.Find(y => y.name == buffs[index].Item1).futureKillEffects(board.enemy == this, board);
-                RemoveBuff(buffs[index]);
-            }
+            if (buffs[index].Item2 <= 0) RemoveBuff(buffs[index]);
         }
     }
 
-    public void AddBuff(string buff, int duration)
+    public void AddBuff(Buff buff, int duration)
     {
-        var buffObj = Buff.buffs.Find(x => x.name == buff);
-        if (buffs.Exists(x => x.Item1 == buff) && !buffObj.stackable)
+        if (!buff.stackable)
         {
             var list = buffs.FindAll(x => x.Item1 == buff).ToList();
             for (int i = list.Count - 1; i >= 0; i--)
@@ -323,7 +320,7 @@ public class FutureEntity
         buffs.Add((buff, duration));
     }
 
-    public void RemoveBuff((string, int) buff)
+    public void RemoveBuff((Buff, int) buff)
     {
         buffs.Remove(buff);
     }

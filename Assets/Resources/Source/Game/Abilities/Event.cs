@@ -46,12 +46,34 @@ public class Event
                         target.Heal(source.RollWeaponDamage() * ((powerType == "Melee" ? source.MeleeAttackPower() : (powerType == "Spell" ? source.SpellPower() : (powerType == "Ranged" ? source.RangedAttackPower() : 1))) / 10.0 + 1) * powerScale);
                     }
                 }
+                else if (type == "DetractResource")
+                {
+                    if (affect == "Effector" || affect == "Other")
+                    {
+                        var target = affect == "Effector" ? futureEffector : futureOther;
+                        string resourceType = effect.ContainsKey("ResourceType") ? effect["ResourceType"] : "None";
+                        int resourceAmount = effect.ContainsKey("ResourceAmount") ? int.Parse(effect["ResourceAmount"]) : 0;
+                        if (resourceType != "None")
+                            target.DetractResource(resourceType, resourceAmount);
+                    }
+                }
+                else if (type == "GiveResource")
+                {
+                    if (affect == "Effector" || affect == "Other")
+                    {
+                        var target = affect == "Effector" ? futureEffector : futureOther;
+                        string resourceType = effect.ContainsKey("ResourceType") ? effect["ResourceType"] : "None";
+                        int resourceAmount = effect.ContainsKey("ResourceAmount") ? int.Parse(effect["ResourceAmount"]) : 0;
+                        if (resourceType != "None")
+                            target.AddResource(resourceType, resourceAmount);
+                    }
+                }
                 else if (type == "AddBuff")
                 {
                     if (affect == "Effector" || affect == "Other")
                     {
                         var target = affect == "Effector" ? futureEffector : futureOther;
-                        target.AddBuff(buffName, buffDuration);
+                        target.AddBuff(Buff.buffs.Find(x => x.name == buffName), buffDuration);
                     }
                 }
                 else if (type == "RemoveBuff")
@@ -59,7 +81,7 @@ public class Event
                     if (affect == "Effector" || affect == "Other")
                     {
                         var target = affect == "Effector" ? futureEffector : futureOther;
-                        target.RemoveBuff(target.buffs.Find(x => x.Item1 == buffName));
+                        target.RemoveBuff(target.buffs.Find(x => x.Item1.name == buffName));
                     }
                 }
                 else if (type == "ResetBoard")
@@ -94,12 +116,34 @@ public class Event
                             target.Heal(source.RollWeaponDamage() * ((powerType == "Melee" ? source.MeleeAttackPower() : (powerType == "Spell" ? source.SpellPower() : (powerType == "Ranged" ? source.RangedAttackPower() : 1))) / 10.0 + 1) * powerScale);
                         }
                     }
+                    else if (type == "DetractResource")
+                    {
+                        if (affect == "Effector" || affect == "Other")
+                        {
+                            var target = affect == "Effector" ? effector : other;
+                            string resourceType = effect.ContainsKey("ResourceType") ? effect["ResourceType"] : "None";
+                            int resourceAmount = effect.ContainsKey("ResourceAmount") ? int.Parse(effect["ResourceAmount"]) : 0;
+                            if (resourceType != "None")
+                                target.DetractResource(resourceType, resourceAmount);
+                        }
+                    }
+                    else if (type == "GiveResource")
+                    {
+                        if (affect == "Effector" || affect == "Other")
+                        {
+                            var target = affect == "Effector" ? effector : other;
+                            string resourceType = effect.ContainsKey("ResourceType") ? effect["ResourceType"] : "None";
+                            int resourceAmount = effect.ContainsKey("ResourceAmount") ? int.Parse(effect["ResourceAmount"]) : 0;
+                            if (resourceType != "None")
+                                target.AddResource(resourceType, resourceAmount);
+                        }
+                    }
                     else if (type == "AddBuff")
                     {
                         if (affect == "Effector" || affect == "Other")
                         {
                             var target = affect == "Effector" ? effector : other;
-                            target.AddBuff(buffName, buffDuration, SpawnBuff(new Vector3(affect == "Effector" ? (board.playerTurn ? 148 : -318) : (board.playerTurn ? -318 : 148), 122), icon, target));
+                            target.AddBuff(Buff.buffs.Find(x => x.name == buffName), buffDuration, SpawnBuff(new Vector3(affect == "Effector" ? (board.playerTurn ? 148 : -318) : (board.playerTurn ? -318 : 148), 122), icon, target));
                         }
                     }
                     else if (type == "RemoveBuff")
@@ -107,7 +151,7 @@ public class Event
                         if (affect == "Effector" || affect == "Other")
                         {
                             var target = affect == "Effector" ? effector : other;
-                            target.RemoveBuff(target.buffs.Find(x => x.Item1 == buffName));
+                            target.RemoveBuff(target.buffs.Find(x => x.Item1 == Buff.buffs.Find(x => x.name == buffName)));
                         }
                     }
                     else if (type == "ResetBoard")

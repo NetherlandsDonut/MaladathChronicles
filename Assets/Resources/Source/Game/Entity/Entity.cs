@@ -5,7 +5,6 @@ using System.Collections.Generic;
 
 using static Root;
 using System;
-using System.Reflection;
 
 public class Entity
 {
@@ -140,11 +139,17 @@ public class Entity
     {
         foreach (var resource in resources)
         {
-            if (resource.Key == "Decay" && buffs.Exists(x => x.Item1 == "Spore Cloud"))
-                Board.board.actions.Add(() => (Board.board.enemy == this ? Board.board.player : Board.board.enemy).Damage(RollWeaponDamage() * (SpellPower() / 10.0 + 1) * 1.1 * resource.Value));
+            //if (resource.Key == "Decay" && buffs.Exists(x => x.Item1.name == "Spore Cloud"))
+            //    Board.board.actions.Add(() => (Board.board.enemy == this ? Board.board.player : Board.board.enemy).Damage(RollWeaponDamage() * (SpellPower() / 10.0 + 1) * 1.1 * resource.Value));
             this.resources[resource.Key] += resource.Value;
         }
         CapResources();
+    }
+
+    //Detracts specific resource in given amount from the entity
+    public void DetractResource(string resource, int amount)
+    {
+        DetractResources(new() { { resource, amount } });
     }
 
     //Detracts resources in given amounts from the entity
@@ -556,6 +561,8 @@ public class Entity
         if (health > MaxHealth()) health = MaxHealth();
     }
 
+    public List<Ability> AbilitiesInCombat() => Ability.abilities.FindAll(x => abilities.Contains(x.name) && (x.cost == null || actionBars.Exists(y => y.ability == x.name)));
+
     //Pops all buffs on this entity activating
     //their effects and reducing duration by 1 turn
     //If duration reaches 0 it removes the buff
@@ -564,36 +571,29 @@ public class Entity
         for (int i = buffs.Count - 1; i >= 0; i--)
         {
             var index = i;
-            Board.board.actions.Add(() => { AddSmallButtonOverlay(buffs[index].Item3, "OtherGlowFull", 1); });
-            var buffObj = Buff.buffs.Find(y => y.name == buffs[index].Item1);
-            buffObj.ExecuteEvents("TurnEnd");
+            if (buffs[index].Item2 == 1)
+                buffs[index].Item1.ExecuteEvents(buffs[index].Item3, "BuffRemove");
             Board.board.actions.Add(() =>
             {
                 buffs[index] = (buffs[index].Item1, buffs[index].Item2 - 1, buffs[index].Item3);
-                if (buffs[index].Item2 <= 0)
-                {
-                    buffObj.ExecuteEvents("BuffRemoval");
-                    RemoveBuff(buffs[index]);
-                }
+                if (buffs[index].Item2 <= 0) RemoveBuff(buffs[index]);
             });
         }
     }
 
     //Adds a buff to this entity
-    public void AddBuff(string buff, int duration, GameObject buffObject)
+    public void AddBuff(Buff buff, int duration, GameObject buffObject)
     {
-        var buffObj = Buff.buffs.Find(x => x.name == buff);
-        if (buffs.Exists(x => x.Item1 == buff) && !buffObj.stackable)
+        if (!buff.stackable)
         {
             var list = buffs.FindAll(x => x.Item1 == buff).ToList();
-            for (int i = list.Count - 1; i >= 0; i--)
-                RemoveBuff(list[i]);
+            for (int i = list.Count - 1; i >= 0; i--) RemoveBuff(list[i]);
         }
         buffs.Add((buff, duration, buffObject));
     }
 
     //Removes a buff from this entity
-    public void RemoveBuff((string, int, GameObject) buff)
+    public void RemoveBuff((Buff, int, GameObject) buff)
     {
         var temp = buff.Item3.GetComponent<FlyingBuff>();
         temp.dyingIndex = temp.Index();
@@ -611,5 +611,5 @@ public class Entity
     public Stats stats;
     public Inventory inventory;
     public Dictionary<string, Item> equipment;
-    public List<(string, int, GameObject)> buffs;
+    public List<(Buff, int, GameObject)> buffs;
 }

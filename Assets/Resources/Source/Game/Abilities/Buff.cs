@@ -1,3 +1,4 @@
+using UnityEngine;
 using System.Collections.Generic;
 
 using static Root;
@@ -34,18 +35,24 @@ public class Buff
 
     public void ExecuteFutureEvents(FutureBoard board, string trigger)
     {
+        if (events == null) return;
         foreach (var foo in events)
             foreach (var woo in foo.triggers)
                 if (woo.ContainsKey("Trigger") && woo["Trigger"] == trigger)
                     foo.ExecuteEffects(null, board, icon);
     }
 
-    public void ExecuteEvents(string trigger)
+    public void ExecuteEvents(GameObject buffObject, string trigger)
     {
+        if (events == null) return;
         foreach (var foo in events)
             foreach (var woo in foo.triggers)
                 if (woo.ContainsKey("Trigger") && woo["Trigger"] == trigger)
+                {
+                    if (buffObject != null)
+                        Board.board.actions.Add(() => { AddSmallButtonOverlay(buffObject, "OtherGlowFull", 1); });
                     foo.ExecuteEffects(Board.board, null, icon);
+                }
     }
 
     public void PrintDescription(Entity effector, Entity other)

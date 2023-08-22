@@ -30,7 +30,7 @@ public static class Root
     public static string creationFaction = "Alliance";
     public static string creationGender = "Female";
     public static string creationRace = "Human";
-    public static string creationClass = "Warrior";
+    public static string creationClass = "Mage";
     public static int maxPlayerLevel;
 
     public static GameObject[] loadingBar;
@@ -93,24 +93,23 @@ public static class Root
             {
                 var fb = h.GetComponent<FlyingBuff>();
                 var buff = (fb.onPlayer ? Board.board.player.buffs : Board.board.enemy.buffs).Find(x => x.Item3 == h.gameObject);
-                var buffObj = Buff.buffs.Find(x => x.name == buff.Item1);
                 SetAnchor(Top, 0, -23);
                 AddHeaderGroup();
                 SetRegionGroupWidth(226);
                 SetRegionGroupHeight(217);
                 AddHeaderRegion(() =>
                 {
-                    AddLine(buff.Item1, Gray);
+                    AddLine(buff.Item1.name, Gray);
                 });
                 AddPaddingRegion(() =>
                 {
-                    AddBigButton(buffObj.icon, (h) => { });
+                    AddBigButton(buff.Item1.icon, (h) => { });
                     AddLine("Dispellable: ", DarkGray);
-                    AddText(buffObj.dispelType != "None" ? "Yes" : "No", Gray);
+                    AddText(buff.Item1.dispelType != "None" ? "Yes" : "No", Gray);
                     AddLine("Turns left: ", DarkGray);
                     AddText(buff.Item2 + "", Gray);
                 });
-                buffObj.PrintDescription(target, Board.board.player == target ? Board.board.enemy : Board.board.player);
+                buff.Item1.PrintDescription(target, Board.board.player == target ? Board.board.enemy : Board.board.player);
                 AddRegionGroup();
                 SetRegionGroupWidth(236);
                 AddPaddingRegion(() => { AddLine(""); });

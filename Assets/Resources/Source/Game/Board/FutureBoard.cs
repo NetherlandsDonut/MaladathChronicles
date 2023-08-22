@@ -134,16 +134,32 @@ public class FutureBoard
     {
         if (playerTurn)
         {
+            foreach (var ability in Board.board.playerCombatAbilities)
+                ability.ExecuteFutureEvents(this, "TurnEnd");
+            foreach (var buff in player.buffs)
+                buff.Item1.ExecuteFutureEvents(this, "TurnEnd");
             playerTurn = false;
             playerFinishedMoving = false;
             enemy.Cooldown();
+            foreach (var ability in Board.board.enemyCombatAbilities)
+                ability.ExecuteFutureEvents(this, "TurnBegin");
+            foreach (var buff in enemy.buffs)
+                buff.Item1.ExecuteFutureEvents(this, "TurnBegin");
             enemy.FlareBuffs(this);
         }
         else
         {
+            foreach (var ability in Board.board.enemyCombatAbilities)
+                ability.ExecuteFutureEvents(this, "TurnEnd");
+            foreach (var buff in enemy.buffs)
+                buff.Item1.ExecuteFutureEvents(this, "TurnEnd");
             playerTurn = true;
             enemyFinishedMoving = false;
             player.Cooldown();
+            foreach (var ability in Board.board.playerCombatAbilities)
+                ability.ExecuteFutureEvents(this, "TurnBegin");
+            foreach (var buff in player.buffs)
+                buff.Item1.ExecuteFutureEvents(this, "TurnBegin");
             player.FlareBuffs(this);
         }
     }

@@ -24,6 +24,7 @@ public class Ability
 
     public void ExecuteFutureEvents(FutureBoard board, string trigger)
     {
+        if (events == null) return;
         foreach (var foo in events)
             foreach (var woo in foo.triggers)
                 if (woo.ContainsKey("Trigger") && woo["Trigger"] == trigger)
@@ -32,6 +33,7 @@ public class Ability
 
     public void ExecuteEvents(string trigger)
     {
+        if (events == null) return;
         foreach (var foo in events)
             foreach (var woo in foo.triggers)
                 if (woo.ContainsKey("Trigger") && woo["Trigger"] == trigger)

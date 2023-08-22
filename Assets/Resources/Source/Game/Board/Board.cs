@@ -17,6 +17,8 @@ public class Board
         this.enemy = enemy;
         playerTurn = true;
         this.area = area;
+        playerCombatAbilities = player.AbilitiesInCombat();
+        enemyCombatAbilities = this.enemy.AbilitiesInCombat();
         temporaryElementsPlayer = new();
         temporaryElementsEnemy = new();
         temporaryBuffsPlayer = new();
@@ -34,6 +36,7 @@ public class Board
     public Entity player, enemy;
     public bool playerTurn, breakForEnemy, breakForCascade, enemyFinishedMoving, playerFinishedMoving;
     public List<GameObject> temporaryElementsPlayer, temporaryElementsEnemy, temporaryBuffsPlayer, temporaryBuffsEnemy;
+    public List<Ability> playerCombatAbilities, enemyCombatAbilities;
     public List<Action> actions;
     public SiteArea area;
 
@@ -42,18 +45,34 @@ public class Board
     {
         if (playerTurn)
         {
+            foreach (var ability in playerCombatAbilities)
+                ability.ExecuteEvents("TurnEnd");
+            foreach (var buff in player.buffs)
+                buff.Item1.ExecuteEvents(buff.Item3, "TurnEnd");
             cursorEnemy.fadeIn = true;
             playerTurn = false;
             playerFinishedMoving = false;
             enemy.Cooldown();
+            foreach (var ability in enemyCombatAbilities)
+                ability.ExecuteEvents("TurnBegin");
+            foreach (var buff in enemy.buffs)
+                buff.Item1.ExecuteEvents(buff.Item3, "TurnBegin");
             enemy.FlareBuffs();
         }
         else
         {
+            foreach (var ability in enemyCombatAbilities)
+                ability.ExecuteEvents("TurnEnd");
+            foreach (var buff in enemy.buffs)
+                buff.Item1.ExecuteEvents(buff.Item3, "TurnEnd");
             cursorEnemy.fadeOut = true;
             playerTurn = true;
             enemyFinishedMoving = false;
             player.Cooldown();
+            foreach (var ability in playerCombatAbilities)
+                ability.ExecuteEvents("TurnBegin");
+            foreach (var buff in player.buffs)
+                buff.Item1.ExecuteEvents(buff.Item3, "TurnBegin");
             player.FlareBuffs();
         }
     }

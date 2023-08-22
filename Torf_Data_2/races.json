@@ -467,10 +467,10 @@
   {
     "name": "Dumb Kobold",
     "rarity": "Common",
-    "portrait": "Kobold",
-    "vitality": 1.0,
+    "portrait": "ItemMiscHeadKobold01",
+    "vitality": 2.0,
     "abilities": [
-      "Shadowbolt"
+      "Shadow Bolt"
     ],
     "loot": []
   },
