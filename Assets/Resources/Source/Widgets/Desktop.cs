@@ -164,10 +164,10 @@ public class Desktop : MonoBehaviour
                     if (animationTime <= 0 && fallingElements.Count == 0)
                     {
                         animationTime = frameTime;
+                        if (fallingElements.Count == 0) Rebuild();
                         if (canUnlockScreen) CDesktop.UnlockScreen();
                         else Board.board.AnimateBoard();
-                        if (fallingElements.Count == 0)
-                            Rebuild();
+                        if (fallingElements.Count == 0) Rebuild();
                     }
                 }
             }

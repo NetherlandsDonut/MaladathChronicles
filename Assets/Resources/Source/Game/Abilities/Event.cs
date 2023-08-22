@@ -143,7 +143,7 @@ public class Event
                         if (affect == "Effector" || affect == "Other")
                         {
                             var target = affect == "Effector" ? effector : other;
-                            target.AddBuff(Buff.buffs.Find(x => x.name == buffName), buffDuration, SpawnBuff(new Vector3(affect == "Effector" ? (board.playerTurn ? 148 : -318) : (board.playerTurn ? -318 : 148), 122), icon, target));
+                            target.AddBuff(Buff.buffs.Find(x => x.name == buffName), buffDuration, SpawnBuff(new Vector3(affect == "Other" ? (board.playerTurn ? 166 : -302) : (board.playerTurn ? -302 : 166), 142), icon, target));
                         }
                     }
                     else if (type == "RemoveBuff")
@@ -165,7 +165,7 @@ public class Event
                     }
                     if (shatterTarget != "None")
                         for (int i = 0; i < shatterDensity; i++)
-                            SpawnShatter(shatterSpeed, shatterDegree, new Vector3(shatterTarget == "Other" ? (board.playerTurn ? 148 : -318) : (board.playerTurn ? -318 : 148), 122), icon, shatterDirectional, shatterTarget == "Other" ? (board.playerTurn ? "1000" : "1001") : (board.playerTurn ? "1001" : "1000"));
+                            SpawnShatter(shatterSpeed, shatterDegree, new Vector3(shatterTarget == "Other" ? (board.playerTurn ? 150 : -318) : (board.playerTurn ? -318 : 150), 122), icon, shatterDirectional, shatterTarget == "Other" ? (board.playerTurn ? "1000" : "1001") : (board.playerTurn ? "1001" : "1000"));
                     if (effect.ContainsKey("SoundEffect"))
                         PlaySound(effect["SoundEffect"]);
                 });

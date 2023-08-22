@@ -13,7 +13,6 @@ using static Root.Color;
 using static Root.Anchor;
 
 using static UnityEngine.KeyCode;
-using System.Xml.Schema;
 
 public class Blueprint
 {
@@ -2129,6 +2128,7 @@ public class Blueprint
                     { "Order", 99 },
                     { "Shadow", 99 },
                 };
+                CDesktop.Rebuild();
             });
             AddHotkey(PageDown, () => {
                 Board.board.enemy.resources = new Dictionary<string, int>
@@ -2144,10 +2144,9 @@ public class Blueprint
                     { "Order", 99 },
                     { "Shadow", 99 },
                 };
+                CDesktop.Rebuild();
             });
             AddHotkey(BackQuote, () => { SpawnWindowBlueprint("Console"); });
-            //AddHotkey(KeypadPlus, () => { FallingElement.fallSpeed++; });
-            //AddHotkey(KeypadMinus, () => { if (FallingElement.fallSpeed > 1) FallingElement.fallSpeed--; });
         }),
         new("CharacterSheet", () =>
         {
