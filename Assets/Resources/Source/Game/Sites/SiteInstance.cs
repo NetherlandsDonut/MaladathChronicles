@@ -1,13 +1,13 @@
 using System.Linq;
 using System.Collections.Generic;
 
-using static SiteArea;
+using static SiteHostileArea;
 
 public class SiteInstance
 {
     public void Initialise()
     {
-        var temp = areas.FindAll(x => wings.Any(y => y.areas.Exists(z => z.Item1 == y.name)));
+        var temp = areas.FindAll(x => wings.Any(y => y.areas.Exists(z => z.ContainsKey("AreaName") && z["AreaName"] == x.name)));
         temp.ForEach(x => x.instancePart = true);
     }
 
@@ -18,7 +18,7 @@ public class SiteInstance
 
     public (int, int) LevelRange()
     {
-        var temp = wings.SelectMany(x => areas.FindAll(y => x.areas.Exists(z => z.Item2 == y.name)));
+        var temp = wings.SelectMany(x => areas.FindAll(y => x.areas.Exists(z => z.ContainsKey("AreaName") && z["AreaName"] == x.name)));
         if (temp.Count() == 0) return (0, 0);
         return (temp.Min(x => x.recommendedLevel), temp.Max(x => x.recommendedLevel));
     }
@@ -30,5 +30,5 @@ public class SiteInstance
 public class InstanceWing
 {
     public string name;
-    public List<(string, string)> areas;
+    public List<Dictionary<string, string>> areas;
 }

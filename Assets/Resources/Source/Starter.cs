@@ -17,7 +17,7 @@ public class Starter : MonoBehaviour
         settings = new GameSettings();
         saveGames = new List<SaveGame>();
         fallingElements = new List<FallingElement>();
-        Deserialize(ref SiteArea.areas, "areas");
+        Deserialize(ref SiteHostileArea.areas, "areas");
         Deserialize(ref SiteInstance.instances, "instances");
         Deserialize(ref SiteComplex.complexes, "complexes");
         Deserialize(ref SiteTown.towns, "towns");
@@ -27,7 +27,7 @@ public class Starter : MonoBehaviour
         Deserialize(ref Item.items, "items");
         Deserialize(ref Ability.abilities, "abilities");
         Deserialize(ref Buff.buffs, "buffs");
-        SiteArea.areas.ForEach(x => x.Initialise());
+        SiteHostileArea.areas.ForEach(x => x.Initialise());
         SiteInstance.instances.ForEach(x => x.Initialise());
         SiteComplex.complexes.ForEach(x => x.Initialise());
         var temp = FindObjectsByType<WindowAnchorRemote>(FindObjectsSortMode.None);
@@ -250,36 +250,44 @@ public class Starter : MonoBehaviour
                 )
             );
         }
-        for (int i = 0; i < SiteArea.areas.Count; i++)
+        for (int i = 0; i < SiteHostileArea.areas.Count; i++)
         {
-            if (SiteArea.areas[i].instancePart)
-            {
-                var index = i;
-                var area = SiteArea.areas[index];
-                Blueprint.windowBlueprints.Add(
-                    new Blueprint("Area: " + area.name,
-                        () =>
+            var index = i;
+            var area = SiteHostileArea.areas[index];
+            Blueprint.windowBlueprints.Add(
+                new Blueprint("HostileArea: " + area.name,
+                    () =>
+                    {
+                        SetAnchor(TopLeft);
+                        AddRegionGroup();
+                        SetRegionGroupWidth(161);
+                        SetRegionGroupHeight(344);
+                        AddHeaderRegion(() =>
                         {
-                            SetAnchor(TopLeft);
-                            AddRegionGroup();
-                            SetRegionGroupWidth(161);
-                            SetRegionGroupHeight(344);
-                            AddHeaderRegion(() =>
+                            AddLine(area.name);
+                            AddSmallButton("OtherClose",
+                            (h) =>
                             {
-                                AddLine(area.name);
-                                AddSmallButton("OtherClose",
-                                (h) =>
+                                if (area.instancePart || area.complexPart)
                                 {
                                     SpawnTransition();
-                                    SetDesktopBackground("Areas/Area" + SiteInstance.instance.name.Replace("'", "").Replace(".", "").Replace(" ", ""));
+                                    PlaySound("DesktopInstanceClose");
+                                    SetDesktopBackground("Areas/Area" + (area.instancePart ? SiteInstance.instance.name : SiteComplex.complex.name).Replace("'", "").Replace(".", "").Replace(" ", ""));
                                     CloseWindow(h.window);
-                                });
+                                }
+                                else
+                                {
+                                    PlaySound("DesktopInstanceClose");
+                                    CloseDesktop("HostileAreaEntrance");
+                                }
                             });
-                            AddPaddingRegion(() =>
-                            {
-                                AddLine("Recommended level: ", Gray);
-                                AddText(area.recommendedLevel + "", EntityColoredLevel(area.recommendedLevel));
-                            });
+                        });
+                        AddPaddingRegion(() =>
+                        {
+                            AddLine("Recommended level: ", Gray);
+                            AddText(area.recommendedLevel + "", EntityColoredLevel(area.recommendedLevel));
+                        });
+                        if (area.bossEncounters != null && area.bossEncounters.Count > 0 && area.bossEncounters.Sum(x => x.requiredProgress) > 0)
                             AddPaddingRegion(() =>
                             {
                                 AddLine("Exploration progress: ", DarkGray);
@@ -287,6 +295,8 @@ public class Starter : MonoBehaviour
                                 int progress = (int)(currentSave.siteProgress.ContainsKey(area.name) ? (double)currentSave.siteProgress[area.name] / area.bossEncounters.Sum(x => x.requiredProgress) * 100 : 0);
                                 AddText((progress > 100 ? 100 : progress) + "%", ProgressColored(progress));
                             });
+                        if (area.possibleEncounters != null && area.possibleEncounters.Count > 0)
+                        {
                             AddPaddingRegion(() =>
                             {
                                 AddLine("Possible encounters:", DarkGray);
@@ -304,6 +314,9 @@ public class Starter : MonoBehaviour
                                 SpawnDesktopBlueprint("Game");
                                 SwitchDesktop("Game");
                             });
+                        }
+                        if (area.bossEncounters != null && area.bossEncounters.Count > 0)
+                        {
                             AddHeaderRegion(() =>
                             {
                                 AddLine("Bosses: ", Gray);
@@ -324,148 +337,33 @@ public class Starter : MonoBehaviour
                                     SwitchDesktop("Game");
                                 });
                             }
-                            AddPaddingRegion(() =>
-                            {
-                                AddLine("", Gray);
-                                AddLine("", Gray);
-                                AddLine("", Gray);
-                                AddLine("", Gray);
-                                AddLine("", Gray);
-                                AddLine("", Gray);
-                                AddLine("", Gray);
-                                AddLine("", Gray);
-                                AddLine("", Gray);
-                                AddLine("", Gray);
-                                AddLine("", Gray);
-                                AddLine("", Gray);
-                                AddLine("", Gray);
-                                AddLine("", Gray);
-                                AddLine("", Gray);
-                                AddLine("", Gray);
-                                AddLine("", Gray);
-                                AddLine("", Gray);
-                                AddLine("", Gray);
-                                AddLine("", Gray);
-                            });
                         }
-                    )
-                );
-            }
-            else
-            {
-                var index = i;
-                var area = SiteArea.areas[index];
-                Blueprint.windowBlueprints.Add(
-                    new Blueprint("Area: " + area.name,
-                        () =>
+                        AddPaddingRegion(() =>
                         {
-                            SetAnchor(TopLeft);
-                            AddRegionGroup();
-                            SetRegionGroupWidth(161);
-                            SetRegionGroupHeight(344);
-                            AddHeaderRegion(() =>
-                            {
-                                AddLine(area.name);
-                                AddSmallButton("OtherClose",
-                                (h) =>
-                                {
-                                    if (area.instancePart || area.complexPart)
-                                    {
-                                        SpawnTransition();
-                                        PlaySound("DesktopInstanceClose");
-                                        SetDesktopBackground("Areas/Area" + (area.instancePart ? SiteInstance.instance.name : SiteComplex.complex.name).Replace("'", "").Replace(".", "").Replace(" ", ""));
-                                        CloseWindow(h.window);
-                                    }
-                                    else
-                                    {
-                                        PlaySound("DesktopInstanceClose");
-                                        CloseDesktop("HostileAreaEntrance");
-                                    }
-                                });
-                            });
-                            AddPaddingRegion(() =>
-                            {
-                                AddLine("Recommended level: ", Gray);
-                                AddText(area.recommendedLevel + "", EntityColoredLevel(area.recommendedLevel));
-                            });
-                            if (area.bossEncounters != null && area.bossEncounters.Count > 0 && area.bossEncounters.Sum(x => x.requiredProgress) > 0)
-                                AddPaddingRegion(() =>
-                                {
-                                    AddLine("Exploration progress: ", DarkGray);
-                                    var temp = currentSave.siteProgress;
-                                    int progress = (int)(currentSave.siteProgress.ContainsKey(area.name) ? (double)currentSave.siteProgress[area.name] / area.bossEncounters.Sum(x => x.requiredProgress) * 100 : 0);
-                                    AddText((progress > 100 ? 100 : progress) + "%", ProgressColored(progress));
-                                });
-                            if (area.possibleEncounters != null && area.possibleEncounters.Count > 0)
-                            {
-                                AddPaddingRegion(() =>
-                                {
-                                    AddLine("Possible encounters:", DarkGray);
-                                    foreach (var encounter in area.possibleEncounters)
-                                        AddLine("- " + encounter.who, DarkGray);
-                                });
-                                AddButtonRegion(() =>
-                                {
-                                    AddLine("Explore", Black);
-                                },
-                                (h) =>
-                                {
-                                    Board.board = new Board(6, 6, area.RollEncounter(), area);
-                                    BufferBoard.bufferBoard = new BufferBoard();
-                                    SpawnDesktopBlueprint("Game");
-                                    SwitchDesktop("Game");
-                                });
-                            }
-                            if (area.bossEncounters != null && area.bossEncounters.Count > 0)
-                            {
-                                AddHeaderRegion(() =>
-                                {
-                                    AddLine("Bosses: ", Gray);
-                                    AddSmallButton("OtherBoss", (h) => { });
-                                });
-                                foreach (var boss in area.bossEncounters)
-                                {
-                                    AddButtonRegion(() =>
-                                    {
-                                        SetRegionBackground(RegionBackgroundType.RedButton);
-                                        AddLine(boss.who, Black);
-                                    },
-                                    (h) =>
-                                    {
-                                        Board.board = new Board(6, 6, area.RollBoss(boss), area);
-                                        BufferBoard.bufferBoard = new BufferBoard();
-                                        SpawnDesktopBlueprint("Game");
-                                        SwitchDesktop("Game");
-                                    });
-                                }
-                            }
-                            AddPaddingRegion(() =>
-                            {
-                                AddLine("", Gray);
-                                AddLine("", Gray);
-                                AddLine("", Gray);
-                                AddLine("", Gray);
-                                AddLine("", Gray);
-                                AddLine("", Gray);
-                                AddLine("", Gray);
-                                AddLine("", Gray);
-                                AddLine("", Gray);
-                                AddLine("", Gray);
-                                AddLine("", Gray);
-                                AddLine("", Gray);
-                                AddLine("", Gray);
-                                AddLine("", Gray);
-                                AddLine("", Gray);
-                                AddLine("", Gray);
-                                AddLine("", Gray);
-                                AddLine("", Gray);
-                                AddLine("", Gray);
-                                AddLine("", Gray);
-                            });
-                        }
-                    )
-                );
-            }
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                            AddLine("", Gray);
+                        });
+                    }
+                )
+            );
         }
         for (int i = 0; i < 3; i++)
             for (int j = 0; j < 12; j++)

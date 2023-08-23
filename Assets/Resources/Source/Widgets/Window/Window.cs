@@ -283,7 +283,7 @@ public class Window : MonoBehaviour
                 var load = Resources.Load<Sprite>("Sprites/Building/Buttons/" + smallButton.buttonType);
                 smallButton.GetComponent<SpriteRenderer>().sprite = load == null ? Resources.Load<Sprite>("Sprites/Building/Buttons/OtherEmpty") : load;
                 smallButton.GetComponent<SpriteRenderer>().sortingLayerName = layer;
-                if (load == null) smallButton.GetComponent<SpriteRenderer>().sortingOrder = -1;
+                //if (load == null) smallButton.GetComponent<SpriteRenderer>().sortingOrder = -1;
                 smallButton.transform.localPosition = new Vector3(regionGroup.AutoWidth() + region.xExtend + 1.5f - 19 * region.smallButtons.IndexOf(smallButton), -10.5f, 0.1f);
                 if (smallButton.gameObject.GetComponent<BoxCollider2D>() == null)
                     smallButton.gameObject.AddComponent<BoxCollider2D>();
@@ -293,7 +293,7 @@ public class Window : MonoBehaviour
                     smallButton.frame = new GameObject("ButtonFrame", typeof(SpriteRenderer));
                 smallButton.frame.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/Borders/ButtonFrame");
                 smallButton.frame.GetComponent<SpriteRenderer>().sortingLayerName = layer;
-                if (load == null) smallButton.frame.GetComponent<SpriteRenderer>().sortingOrder = -1;
+                //if (load == null) smallButton.frame.GetComponent<SpriteRenderer>().sortingOrder = -1;
                 smallButton.frame.transform.parent = smallButton.transform;
                 smallButton.frame.transform.localPosition = new Vector3();
             }
@@ -308,7 +308,7 @@ public class Window : MonoBehaviour
                 var load = Resources.Load<Sprite>("Sprites/Building/BigButtons/" + bigButton.buttonType);
                 bigButton.GetComponent<SpriteRenderer>().sprite = load == null ? Resources.Load<Sprite>("Sprites/Building/BigButtons/OtherEmpty") : load;
                 bigButton.GetComponent<SpriteRenderer>().sortingLayerName = layer;
-                if (load == null) bigButton.GetComponent<SpriteRenderer>().sortingOrder = -1;
+                //if (load == null) bigButton.GetComponent<SpriteRenderer>().sortingOrder = -1;
                 bigButton.transform.localPosition = new Vector3(20 + 38 * region.bigButtons.IndexOf(bigButton), -20f, 0.1f);
                 if (bigButton.gameObject.GetComponent<BoxCollider2D>() == null)
                     bigButton.gameObject.AddComponent<BoxCollider2D>();
@@ -318,7 +318,7 @@ public class Window : MonoBehaviour
                     bigButton.frame = new GameObject("BigButtonFrame", typeof(SpriteRenderer));
                 bigButton.frame.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/Borders/BigButtonFrame");
                 bigButton.frame.GetComponent<SpriteRenderer>().sortingLayerName = layer;
-                if (load == null) bigButton.frame.GetComponent<SpriteRenderer>().sortingOrder = -1;
+                //if (load == null) bigButton.frame.GetComponent<SpriteRenderer>().sortingOrder = -1;
                 bigButton.frame.transform.parent = bigButton.transform;
                 bigButton.frame.transform.localPosition = new Vector3();
             }
@@ -392,7 +392,7 @@ public class Window : MonoBehaviour
                 region.background.GetComponent<RegionBackground>().Initialise(region);
                 region.background.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/Backgrounds/" + region.backgroundType);
                 region.background.GetComponent<SpriteRenderer>().sortingLayerName = layer;
-                region.background.GetComponent<SpriteRenderer>().sortingOrder = -5;
+                //region.background.GetComponent<SpriteRenderer>().sortingOrder = -5;
                 region.background.transform.localScale = new Vector3(regionGroup.AutoWidth() + 8 + region.xExtend, region.AutoHeight() + 2 + region.yExtend, 1);
                 region.background.transform.localPosition = new Vector3(2, -2, 0.8f);
                 if (region.backgroundType == Button || region.backgroundType == Handle || region.backgroundType == RedButton)

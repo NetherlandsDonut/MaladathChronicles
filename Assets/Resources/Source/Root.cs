@@ -7,7 +7,7 @@ using static Font;
 using static Blueprint;
 using static SiteComplex;
 using static SiteInstance;
-using static SiteArea;
+using static SiteHostileArea;
 using static SiteTown;
 
 using static Root.Color;
@@ -109,7 +109,7 @@ public static class Root
                     AddLine("Turns left: ", DarkGray);
                     AddText(buff.Item2 + "", Gray);
                 });
-                buff.Item1.PrintDescription(target, Board.board.player == target ? Board.board.enemy : Board.board.player);
+                buff.Item1.PrintDescription(target, Board.board.player == target ? Board.board.enemy : Board.board.player, 226);
                 AddRegionGroup();
                 SetRegionGroupWidth(236);
                 AddPaddingRegion(() => { AddLine(""); });
@@ -664,8 +664,8 @@ public static class Root
                     foreach (var site in complex.sites)
                     AddHeaderRegion(() =>
                     {
-                        AddLine(site.Item2, DarkGray);
-                        AddSmallButton("Site" + site.Item1, (h) => { });
+                        AddLine(site["SiteName"], DarkGray);
+                        AddSmallButton("Site" + site["SiteType"], (h) => { });
                     });
                 });
         });
@@ -678,7 +678,7 @@ public static class Root
             {
                 AddLine(wing.name, Gray);
             });
-        var temp = wing.areas.Select(x => areas.Find(y => y.name == x.Item2)).ToList();
+        var temp = wing.areas.Select(x => areas.Find(y => x.ContainsKey("AreaName") && y.name == x["AreaName"])).ToList();
         foreach (var area in temp)
         AddButtonRegion(() =>
         {
@@ -688,40 +688,40 @@ public static class Root
         (h) =>
         {
             if (area == null) return;
-            var window = CDesktop.windows.Find(x => x.title.StartsWith("Area: "));
+            var window = CDesktop.windows.Find(x => x.title.StartsWith("HostileArea: "));
             if (window != null)
-                if (window.title == "Area: " + area.name) return;
+                if (window.title == "HostileArea: " + area.name) return;
                 else CloseWindow(window);
-            SpawnWindowBlueprint("Area: " + area.name);
+            SpawnWindowBlueprint("HostileArea: " + area.name);
             SetDesktopBackground("Areas/Area" + (instance.name + area.name).Replace("'", "").Replace(".", "").Replace(" ", ""));
             SpawnTransition();
         });
     }
 
-    public static void PrintComplexSite(SiteComplex complex, (string, string) site)
+    public static void PrintComplexSite(SiteComplex complex, Dictionary<string, string> site)
     {
         AddButtonRegion(() =>
         {
-            AddLine(site.Item2, Black);
-            AddSmallButton("Site" + site.Item1, (h) => { });
+            AddLine(site["SiteName"], Black);
+            AddSmallButton("Site" + site["SiteType"], (h) => { });
         },
         (h) =>
         {
-            if (site.Item1 == "HostileArea")
+            if (site["SiteType"] == "HostileArea")
             {
-                area = areas.Find(x => x.name == site.Item2);
-                var window = CDesktop.windows.Find(x => x.title.StartsWith("Area: "));
+                area = areas.Find(x => x.name == site["SiteName"]);
+                var window = CDesktop.windows.Find(x => x.title.StartsWith("HostileArea: "));
                 if (window != null)
-                    if (window.title == "Area: " + area.name) return;
+                    if (window.title == "HostileArea: " + area.name) return;
                     else CloseWindow(window);
-                SpawnWindowBlueprint("Area: " + area.name);
+                SpawnWindowBlueprint("HostileArea: " + area.name);
                 SetDesktopBackground("Areas/Area" + (area.zone + area.name).Replace("'", "").Replace(".", "").Replace(" ", ""));
                 SpawnTransition();
             }
             else
             {
                 CloseDesktop("ComplexEntrance");
-                instance = instances.Find(x => x.name == site.Item2);
+                instance = instances.Find(x => x.name == site["SiteName"]);
                 SpawnDesktopBlueprint("InstanceEntrance");
             }
         });
@@ -824,7 +824,7 @@ public static class Root
                     });
                     if (abilityObj != null)
                     {
-                        abilityObj.PrintDescription(currentSave.player, null);
+                        abilityObj.PrintDescription(currentSave.player, null, 256);
                         if (abilityObj.cost != null)
                             foreach (var cost in abilityObj.cost)
                             {
@@ -897,7 +897,6 @@ public static class Root
         if (autoSwitch)
             SwitchDesktop(blueprintTitle);
         blueprint.actions();
-        //currentDesktop.Rebuild();
     }
 
     public static void CloseDesktop(string desktopName)

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 using static Root;
 
-public class SiteArea
+public class SiteHostileArea
 {
     public void Initialise()
     {
@@ -40,8 +40,8 @@ public class SiteArea
     [NonSerialized] public int recommendedLevel;
     [NonSerialized] public bool instancePart, complexPart;
 
-    public static SiteArea area;
-    public static List<SiteArea> areas;
+    public static SiteHostileArea area;
+    public static List<SiteHostileArea> areas;
 }
 
 public class Encounter

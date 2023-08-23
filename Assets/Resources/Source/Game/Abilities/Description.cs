@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using System.Collections.Generic;
 
@@ -5,7 +6,7 @@ using static Root;
 
 public class Description
 {
-    public void Print(Entity effector, Entity other, List<Event> events)
+    public void Print(Entity effector, Entity other, int width)
     {
         if (regions.Count(x => x.isExtender) != 1)
         {
@@ -13,7 +14,7 @@ public class Description
             regions.Last().isExtender = true;
         }
         foreach (var region in regions)
-            region.PrintRegion(effector, other);
+            region.PrintRegion(effector, other, width);
     }
 
     public List<DescriptionRegion> regions;
@@ -25,20 +26,47 @@ public class DescriptionRegion
     public bool isExtender;
     public List<Dictionary<string, string>> contents;
 
-    public void PrintRegion(Entity effector, Entity other)
+    public void PrintRegion(Entity effector, Entity other, int width)
     {
         if (regionType == "Header")
-            AddHeaderRegion(() => PrintContents(effector, other));
+            AddHeaderRegion(() => PrintContents(effector, other, width));
         else if (regionType == "Padding")
-            AddPaddingRegion(() => PrintContents(effector, other));
+            AddPaddingRegion(() => PrintContents(effector, other, width));
     }
 
-    public void PrintContents(Entity effector, Entity other)
+    public void PrintContents(Entity effector, Entity other, int width)
     {
-        if (isExtender)
-            SetRegionAsGroupExtender();
-        AddLine("");
-        foreach (var text in contents)
-            AddText(text["Text"], ColorFromText(text["Color"]));
+        var list = contents.Select(x => (Process(x["Text"]), ColorFromText(x["Color"]), x.ContainsKey("Split") ? x["Split"] : "Yes")).SelectMany(x => x.Item3 == "No" ? new() { (x.Item1 + " ", x.Item2) } : x.Item1.Split(" ").Select(y => (y + " ", x.Item2)).ToList()).Select(x => (x.Item1, x.Item2, font.Length(x.Item1))).ToList();
+        if (isExtender) SetRegionAsGroupExtender();
+        var sum = width;
+        while (list.Count > 0)
+        {
+            if (sum + list[0].Item3 >= width - 30)
+            {
+                sum = 0;
+                AddLine("");
+            }
+            AddText(list[0].Item1, list[0].Item2);
+            sum += list[0].Item3;
+            list.RemoveAt(0);
+        }
+
+        string Process(string text)
+        {
+            if (text.StartsWith("PowerRange"))
+            {
+                var split = text.Split("(").Last().Split(",").Select(x => x.Trim().Replace(")", "")).ToArray();
+                if (split.Length == 4)
+                    if (double.TryParse(split[2].Replace(".", ","), out double powerScale))
+                        if (int.TryParse(split[3], out int multiplier))
+                        {
+                            var source = split[0] == "Effector" ? effector : other;
+                            var weaponPower = source.WeaponDamage();
+                            var scaler = (split[1] == "Melee" ? source.MeleeAttackPower() : (split[1] == "Spell" ? source.SpellPower() : (split[1] == "Ranged" ? source.RangedAttackPower() : 1))) / 10.0 + 1;
+                            return Math.Ceiling(weaponPower.Item1 * scaler * powerScale) + " - " + Math.Ceiling(weaponPower.Item2 * scaler * powerScale);
+                        }
+            }
+            return text;
+        }
     }
 }

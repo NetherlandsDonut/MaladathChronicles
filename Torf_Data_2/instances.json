@@ -8,60 +8,60 @@
         "name": "Temple of Atal'Hakkar",
         "areas": [
           {
-            "Item1": "None",
-            "Item2": "The Broken Hall"
+            "Requisite": "None",
+            "AreaName": "The Broken Hall"
           },
           {
-            "Item1": "Boss",
-            "Item2": "The Butchery"
+            "Requisite": "Boss",
+            "AreaName": "The Butchery"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Chamber of Blood"
+            "Requisite": "Boss",
+            "AreaName": "Chamber of Blood"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Den of the Caller"
+            "Requisite": "Boss",
+            "AreaName": "Den of the Caller"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Hall of Masks"
+            "Requisite": "Boss",
+            "AreaName": "Hall of Masks"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Hall of Ritual"
+            "Requisite": "Boss",
+            "AreaName": "Hall of Ritual"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Hall of Bones"
+            "Requisite": "Boss",
+            "AreaName": "Hall of Bones"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Hall of Serpents"
+            "Requisite": "Boss",
+            "AreaName": "Hall of Serpents"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Hall of The Cursed"
+            "Requisite": "Boss",
+            "AreaName": "Hall of The Cursed"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Sanctum of the Fallen God"
+            "Requisite": "Boss",
+            "AreaName": "Sanctum of the Fallen God"
           },
           {
-            "Item1": "Boss",
-            "Item2": "The Pit of Sacrafice"
+            "Requisite": "Boss",
+            "AreaName": "The Pit of Sacrafice"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Pit of Refuse"
+            "Requisite": "Boss",
+            "AreaName": "Pit of Refuse"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Lair of the Chosen"
+            "Requisite": "Boss",
+            "AreaName": "Lair of the Chosen"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Chamber of the Dreamer"
+            "Requisite": "Boss",
+            "AreaName": "Chamber of the Dreamer"
           }
         ]
       }
@@ -76,24 +76,24 @@
         "name": "Gnomeregan",
         "areas": [
           {
-            "Item1": "None",
-            "Item2": "Trogg Caves"
+            "Requisite": "None",
+            "AreaName": "Trogg Caves"
           },
           {
-            "Item1": "None",
-            "Item2": "Hall of Gears"
+            "Requisite": "None",
+            "AreaName": "Hall of Gears"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Launch Bay"
+            "Requisite": "Boss",
+            "AreaName": "Launch Bay"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Engineering Labs"
+            "Requisite": "Boss",
+            "AreaName": "Engineering Labs"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Tinkers' Court"
+            "Requisite": "Boss",
+            "AreaName": "Tinkers' Court"
           }
         ]
       }
@@ -108,36 +108,36 @@
         "name": "Shadowfang Keep",
         "areas": [
           {
-            "Item1": "None",
-            "Item2": "Jail"
+            "Requisite": "None",
+            "AreaName": "Jail"
           },
           {
-            "Item1": "Boss",
-            "Item2": "The Courtyard"
+            "Requisite": "Boss",
+            "AreaName": "The Courtyard"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Kitchen"
+            "Requisite": "Boss",
+            "AreaName": "Kitchen"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Dining Hall"
+            "Requisite": "Boss",
+            "AreaName": "Dining Hall"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Perimeter Wall"
+            "Requisite": "Boss",
+            "AreaName": "Perimeter Wall"
           },
           {
-            "Item1": "Boss",
-            "Item2": "The Laboratory"
+            "Requisite": "Boss",
+            "AreaName": "The Laboratory"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Tower Summit"
+            "Requisite": "Boss",
+            "AreaName": "Tower Summit"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Arugal Chamber"
+            "Requisite": "Boss",
+            "AreaName": "Arugal Chamber"
           }
         ]
       }
@@ -153,24 +153,24 @@
         "name": "Shadow Hold",
         "areas": [
           {
-            "Item1": "None",
-            "Item2": "Upper Tunnels"
+            "Requisite": "None",
+            "AreaName": "Upper Tunnels"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Council Camp"
+            "Requisite": "Boss",
+            "AreaName": "Council Camp"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Altar Room"
+            "Requisite": "Boss",
+            "AreaName": "Altar Room"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Inner Sanctum"
+            "Requisite": "Boss",
+            "AreaName": "Inner Sanctum"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Banehollow Shrine"
+            "Requisite": "Boss",
+            "AreaName": "Banehollow Shrine"
           }
         ]
       }
@@ -185,52 +185,52 @@
         "name": "Scholomance",
         "areas": [
           {
-            "Item1": "None",
-            "Item2": "Reliquary"
+            "Requisite": "None",
+            "AreaName": "Reliquary"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Chamber of Summoning"
+            "Requisite": "Boss",
+            "AreaName": "Chamber of Summoning"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Great Ossuary"
+            "Requisite": "Boss",
+            "AreaName": "Great Ossuary"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Viewing Room"
+            "Requisite": "Boss",
+            "AreaName": "Viewing Room"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Laboratory"
+            "Requisite": "Boss",
+            "AreaName": "Laboratory"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Hall of Secrets"
+            "Requisite": "Boss",
+            "AreaName": "Hall of Secrets"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Hall of the Damned"
+            "Requisite": "Boss",
+            "AreaName": "Hall of the Damned"
           },
           {
-            "Item1": "Boss",
-            "Item2": "The Coven"
+            "Requisite": "Boss",
+            "AreaName": "The Coven"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Vault of the Ravenian"
+            "Requisite": "Boss",
+            "AreaName": "Vault of the Ravenian"
           },
           {
-            "Item1": "Boss",
-            "Item2": "The Shadow Vault"
+            "Requisite": "Boss",
+            "AreaName": "The Shadow Vault"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Barov Family Vault"
+            "Requisite": "Boss",
+            "AreaName": "Barov Family Vault"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Headmaster's Study"
+            "Requisite": "Boss",
+            "AreaName": "Headmaster's Study"
           }
         ]
       }
@@ -245,12 +245,12 @@
         "name": "Orange Crystal Caverns",
         "areas": [
           {
-            "Item1": "None",
-            "Item2": "The Noxious Hollow"
+            "Requisite": "None",
+            "AreaName": "The Noxious Hollow"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Foulspore Cavern"
+            "Requisite": "Boss",
+            "AreaName": "Foulspore Cavern"
           }
         ]
       },
@@ -258,12 +258,12 @@
         "name": "Purple Crystal Caverns",
         "areas": [
           {
-            "Item1": "None",
-            "Item2": "Wicked Grotto"
+            "Requisite": "None",
+            "AreaName": "Wicked Grotto"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Vyletongue Seat"
+            "Requisite": "Boss",
+            "AreaName": "Vyletongue Seat"
           }
         ]
       },
@@ -271,16 +271,16 @@
         "name": "Inner Maraudon",
         "areas": [
           {
-            "Item1": "None",
-            "Item2": "Poison Falls"
+            "Requisite": "None",
+            "AreaName": "Poison Falls"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Earth Song Falls"
+            "Requisite": "Boss",
+            "AreaName": "Earth Song Falls"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Zaetar's Grave"
+            "Requisite": "Boss",
+            "AreaName": "Zaetar's Grave"
           }
         ]
       }
@@ -295,32 +295,32 @@
         "name": "Main Gate",
         "areas": [
           {
-            "Item1": "None",
-            "Item2": "King's Square"
+            "Requisite": "None",
+            "AreaName": "King's Square"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Market Row"
+            "Requisite": "Boss",
+            "AreaName": "Market Row"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Crusaders' Square"
+            "Requisite": "Boss",
+            "AreaName": "Crusaders' Square"
           },
           {
-            "Item1": "Boss",
-            "Item2": "The Hoard"
+            "Requisite": "Boss",
+            "AreaName": "The Hoard"
           },
           {
-            "Item1": "Boss",
-            "Item2": "The Hall of Lights"
+            "Requisite": "Boss",
+            "AreaName": "The Hall of Lights"
           },
           {
-            "Item1": "Boss",
-            "Item2": "The Scarlet Bastion"
+            "Requisite": "Boss",
+            "AreaName": "The Scarlet Bastion"
           },
           {
-            "Item1": "Boss",
-            "Item2": "The Crimson Throne"
+            "Requisite": "Boss",
+            "AreaName": "The Crimson Throne"
           }
         ]
       },
@@ -328,20 +328,20 @@
         "name": "Service Gate",
         "areas": [
           {
-            "Item1": "None",
-            "Item2": "Elder's Square"
+            "Requisite": "None",
+            "AreaName": "Elder's Square"
           },
           {
-            "Item1": "Boss",
-            "Item2": "The Gauntlet"
+            "Requisite": "Boss",
+            "AreaName": "The Gauntlet"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Slaughter Square"
+            "Requisite": "Boss",
+            "AreaName": "Slaughter Square"
           },
           {
-            "Item1": "Boss",
-            "Item2": "The Slaughter House"
+            "Requisite": "Boss",
+            "AreaName": "The Slaughter House"
           }
         ]
       }
@@ -356,24 +356,24 @@
         "name": "Wailing Caverns",
         "areas": [
           {
-            "Item1": "None",
-            "Item2": "Screaming Gully"
+            "Requisite": "None",
+            "AreaName": "Screaming Gully"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Pit of Fangs"
+            "Requisite": "Boss",
+            "AreaName": "Pit of Fangs"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Winding Chasm"
+            "Requisite": "Boss",
+            "AreaName": "Winding Chasm"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Crag of the Everliving"
+            "Requisite": "Boss",
+            "AreaName": "Crag of the Everliving"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Dreamer's Rock"
+            "Requisite": "Boss",
+            "AreaName": "Dreamer's Rock"
           }
         ]
       }
@@ -388,28 +388,28 @@
         "name": "Uldaman",
         "areas": [
           {
-            "Item1": "None",
-            "Item2": "Hall of the Keepers"
+            "Requisite": "None",
+            "AreaName": "Hall of the Keepers"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Map Chamber"
+            "Requisite": "Boss",
+            "AreaName": "Map Chamber"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Temple Hall"
+            "Requisite": "Boss",
+            "AreaName": "Temple Hall"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Dig Three"
+            "Requisite": "Boss",
+            "AreaName": "Dig Three"
           },
           {
-            "Item1": "Boss",
-            "Item2": "The Stone Vault"
+            "Requisite": "Boss",
+            "AreaName": "The Stone Vault"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Khaz'Goroth's Seat"
+            "Requisite": "Boss",
+            "AreaName": "Khaz'Goroth's Seat"
           }
         ]
       }
@@ -424,16 +424,16 @@
         "name": "Razorfen Downs",
         "areas": [
           {
-            "Item1": "None",
-            "Item2": "The Caller's Chamber"
+            "Requisite": "None",
+            "AreaName": "The Caller's Chamber"
           },
           {
-            "Item1": "Boss",
-            "Item2": "The Bone Pile"
+            "Requisite": "Boss",
+            "AreaName": "The Bone Pile"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Spiral of Thorns"
+            "Requisite": "Boss",
+            "AreaName": "Spiral of Thorns"
           }
         ]
       }
@@ -448,20 +448,20 @@
         "name": "Razorfen Kraul",
         "areas": [
           {
-            "Item1": "None",
-            "Item2": "Kraul Commons"
+            "Requisite": "None",
+            "AreaName": "Kraul Commons"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Central Grounds"
+            "Requisite": "Boss",
+            "AreaName": "Central Grounds"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Bat Caves"
+            "Requisite": "Boss",
+            "AreaName": "Bat Caves"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Charlga's Seat"
+            "Requisite": "Boss",
+            "AreaName": "Charlga's Seat"
           }
         ]
       }
@@ -476,24 +476,24 @@
         "name": "The Deadmines",
         "areas": [
           {
-            "Item1": "None",
-            "Item2": "Defias Hideout"
+            "Requisite": "None",
+            "AreaName": "Defias Hideout"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Mast Room"
+            "Requisite": "Boss",
+            "AreaName": "Mast Room"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Goblin Foundry"
+            "Requisite": "Boss",
+            "AreaName": "Goblin Foundry"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Ironclad Cove"
+            "Requisite": "Boss",
+            "AreaName": "Ironclad Cove"
           },
           {
-            "Item1": "Boss",
-            "Item2": "The Juggernaut"
+            "Requisite": "Boss",
+            "AreaName": "The Juggernaut"
           }
         ]
       }
@@ -508,28 +508,28 @@
         "name": "Blackfathom Deeps",
         "areas": [
           {
-            "Item1": "None",
-            "Item2": "Pool of Ask'ar"
+            "Requisite": "None",
+            "AreaName": "Pool of Ask'ar"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Shrine of Gelihast"
+            "Requisite": "Boss",
+            "AreaName": "Shrine of Gelihast"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Moonshrine Ruins"
+            "Requisite": "Boss",
+            "AreaName": "Moonshrine Ruins"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Forgotten Pool"
+            "Requisite": "Boss",
+            "AreaName": "Forgotten Pool"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Moonshrine Sanctum"
+            "Requisite": "Boss",
+            "AreaName": "Moonshrine Sanctum"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Aku'mai's Lair"
+            "Requisite": "Boss",
+            "AreaName": "Aku'mai's Lair"
           }
         ]
       }
@@ -544,16 +544,16 @@
         "name": "Eastern Wing",
         "areas": [
           {
-            "Item1": "None",
-            "Item2": "Warpwood Quarter"
+            "Requisite": "None",
+            "AreaName": "Warpwood Quarter"
           },
           {
-            "Item1": "Boss",
-            "Item2": "The Conservatory"
+            "Requisite": "Boss",
+            "AreaName": "The Conservatory"
           },
           {
-            "Item1": "Boss",
-            "Item2": "The Shrine of Eldre'tharr"
+            "Requisite": "Boss",
+            "AreaName": "The Shrine of Eldre'tharr"
           }
         ]
       },
@@ -561,20 +561,20 @@
         "name": "Western Wing",
         "areas": [
           {
-            "Item1": "None",
-            "Item2": "Capital Gardens"
+            "Requisite": "None",
+            "AreaName": "Capital Gardens"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Court of the Highborne"
+            "Requisite": "Boss",
+            "AreaName": "Court of the Highborne"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Prison of Immol'Thar"
+            "Requisite": "Boss",
+            "AreaName": "Prison of Immol'Thar"
           },
           {
-            "Item1": "Boss",
-            "Item2": "The Athenaeum"
+            "Requisite": "Boss",
+            "AreaName": "The Athenaeum"
           }
         ]
       },
@@ -582,16 +582,16 @@
         "name": "Northern Wing",
         "areas": [
           {
-            "Item1": "None",
-            "Item2": "Gordok Commons"
+            "Requisite": "None",
+            "AreaName": "Gordok Commons"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Halls of Destruction"
+            "Requisite": "Boss",
+            "AreaName": "Halls of Destruction"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Gordok's Seat"
+            "Requisite": "Boss",
+            "AreaName": "Gordok's Seat"
           }
         ]
       }
@@ -630,16 +630,16 @@
         "name": "Graveyard",
         "areas": [
           {
-            "Item1": "None",
-            "Item2": "Chamber of Atonement"
+            "Requisite": "None",
+            "AreaName": "Chamber of Atonement"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Forlorn Cloister"
+            "Requisite": "Boss",
+            "AreaName": "Forlorn Cloister"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Honor's Tomb"
+            "Requisite": "Boss",
+            "AreaName": "Honor's Tomb"
           }
         ]
       },
@@ -647,16 +647,16 @@
         "name": "Library",
         "areas": [
           {
-            "Item1": "None",
-            "Item2": "Huntsman's Cloister"
+            "Requisite": "None",
+            "AreaName": "Huntsman's Cloister"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Gallery of Treasures"
+            "Requisite": "Boss",
+            "AreaName": "Gallery of Treasures"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Athenaeum"
+            "Requisite": "Boss",
+            "AreaName": "Athenaeum"
           }
         ]
       },
@@ -664,16 +664,16 @@
         "name": "Armory",
         "areas": [
           {
-            "Item1": "None",
-            "Item2": "Training Grounds"
+            "Requisite": "None",
+            "AreaName": "Training Grounds"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Crusader's Armory"
+            "Requisite": "Boss",
+            "AreaName": "Crusader's Armory"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Hall of Champions"
+            "Requisite": "Boss",
+            "AreaName": "Hall of Champions"
           }
         ]
       },
@@ -681,12 +681,12 @@
         "name": "Cathedral",
         "areas": [
           {
-            "Item1": "None",
-            "Item2": "Chapel Gardens"
+            "Requisite": "None",
+            "AreaName": "Chapel Gardens"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Crusader's Chapel"
+            "Requisite": "Boss",
+            "AreaName": "Crusader's Chapel"
           }
         ]
       }
@@ -725,28 +725,28 @@
         "name": "Outer Depths",
         "areas": [
           {
-            "Item1": "None",
-            "Item2": "Detention Block"
+            "Requisite": "None",
+            "AreaName": "Detention Block"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Halls of the Law"
+            "Requisite": "Boss",
+            "AreaName": "Halls of the Law"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Ring of Law"
+            "Requisite": "Boss",
+            "AreaName": "Ring of Law"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Dark Iron Highway"
+            "Requisite": "Boss",
+            "AreaName": "Dark Iron Highway"
           },
           {
-            "Item1": "Boss",
-            "Item2": "The Black Anvil"
+            "Requisite": "Boss",
+            "AreaName": "The Black Anvil"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Hall of Crafting"
+            "Requisite": "Boss",
+            "AreaName": "Hall of Crafting"
           }
         ]
       },
@@ -754,32 +754,32 @@
         "name": "Inner City",
         "areas": [
           {
-            "Item1": "Boss",
-            "Item2": "West Garrison"
+            "Requisite": "Boss",
+            "AreaName": "West Garrison"
           },
           {
-            "Item1": "Boss",
-            "Item2": "The Manufactory"
+            "Requisite": "Boss",
+            "AreaName": "The Manufactory"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Chamber of Enchantment"
+            "Requisite": "Boss",
+            "AreaName": "Chamber of Enchantment"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Mold Foundry"
+            "Requisite": "Boss",
+            "AreaName": "Mold Foundry"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Summoners' Tomb"
+            "Requisite": "Boss",
+            "AreaName": "Summoners' Tomb"
           },
           {
-            "Item1": "Boss",
-            "Item2": "The Iron Hall"
+            "Requisite": "Boss",
+            "AreaName": "The Iron Hall"
           },
           {
-            "Item1": "Boss",
-            "Item2": "The Imperial Seat"
+            "Requisite": "Boss",
+            "AreaName": "The Imperial Seat"
           }
         ]
       }
@@ -808,32 +808,32 @@
         "name": "Lower",
         "areas": [
           {
-            "Item1": "None",
-            "Item2": "Hordemar City"
+            "Requisite": "None",
+            "AreaName": "Hordemar City"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Mok'Doom"
+            "Requisite": "Boss",
+            "AreaName": "Mok'Doom"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Tazz'Alor"
+            "Requisite": "Boss",
+            "AreaName": "Tazz'Alor"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Skitterweb Tunnels"
+            "Requisite": "Boss",
+            "AreaName": "Skitterweb Tunnels"
           },
           {
-            "Item1": "Boss",
-            "Item2": "The Storehouse"
+            "Requisite": "Boss",
+            "AreaName": "The Storehouse"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Halycon's Lair"
+            "Requisite": "Boss",
+            "AreaName": "Halycon's Lair"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Chamber of Battle"
+            "Requisite": "Boss",
+            "AreaName": "Chamber of Battle"
           }
         ]
       }
@@ -860,28 +860,28 @@
         "name": "Upper",
         "areas": [
           {
-            "Item1": "Boss",
-            "Item2": "Hall of Binding"
+            "Requisite": "Boss",
+            "AreaName": "Hall of Binding"
           },
           {
-            "Item1": "Boss",
-            "Item2": "The Rookery"
+            "Requisite": "Boss",
+            "AreaName": "The Rookery"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Hall of Blackhand"
+            "Requisite": "Boss",
+            "AreaName": "Hall of Blackhand"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Blackrock Stadium"
+            "Requisite": "Boss",
+            "AreaName": "Blackrock Stadium"
           },
           {
-            "Item1": "Boss",
-            "Item2": "The Furnace"
+            "Requisite": "Boss",
+            "AreaName": "The Furnace"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Spire Throne"
+            "Requisite": "Boss",
+            "AreaName": "Spire Throne"
           }
         ]
       }
@@ -896,8 +896,8 @@
         "name": "Zul'Farrak",
         "areas": [
           {
-            "Item1": "None",
-            "Item2": "Ass"
+            "Requisite": "None",
+            "AreaName": "Ass"
           }
         ]
       }
@@ -912,8 +912,8 @@
         "name": "Onyxia's Lair",
         "areas": [
           {
-            "Item1": "None",
-            "Item2": "Onyxia's Lair"
+            "Requisite": "None",
+            "AreaName": "Onyxia's Lair"
           }
         ]
       }
@@ -949,20 +949,20 @@
         "name": "Lower",
         "areas": [
           {
-            "Item1": "None",
-            "Item2": "Magmadar Cavern"
+            "Requisite": "None",
+            "AreaName": "Magmadar Cavern"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Western Lavafalls"
+            "Requisite": "Boss",
+            "AreaName": "Western Lavafalls"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Eastern Lavafalls"
+            "Requisite": "Boss",
+            "AreaName": "Eastern Lavafalls"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Ragnaros' Lair"
+            "Requisite": "Boss",
+            "AreaName": "Ragnaros' Lair"
           }
         ]
       }
@@ -997,40 +997,40 @@
         "name": "Lower",
         "areas": [
           {
-            "Item1": "None",
-            "Item2": "Altar of Hir'eek"
+            "Requisite": "None",
+            "AreaName": "Altar of Hir'eek"
           },
           {
-            "Item1": "Boss",
-            "Item2": "The Coil"
+            "Requisite": "Boss",
+            "AreaName": "The Coil"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Shadra'zaar"
+            "Requisite": "Boss",
+            "AreaName": "Shadra'zaar"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Hakkari Grounds"
+            "Requisite": "Boss",
+            "AreaName": "Hakkari Grounds"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Naze of Shirvallah"
+            "Requisite": "Boss",
+            "AreaName": "Naze of Shirvallah"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Pagle's Pointe"
+            "Requisite": "Boss",
+            "AreaName": "Pagle's Pointe"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Temple of Bethekk"
+            "Requisite": "Boss",
+            "AreaName": "Temple of Bethekk"
           },
           {
-            "Item1": "Boss",
-            "Item2": "The Bloodfire Pit"
+            "Requisite": "Boss",
+            "AreaName": "The Bloodfire Pit"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Altar of the Blood God"
+            "Requisite": "Boss",
+            "AreaName": "Altar of the Blood God"
           }
         ]
       }
@@ -1062,28 +1062,28 @@
         "name": "Lower",
         "areas": [
           {
-            "Item1": "None",
-            "Item2": "Dragonmaw Garrison"
+            "Requisite": "None",
+            "AreaName": "Dragonmaw Garrison"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Shadow Wing Lair"
+            "Requisite": "Boss",
+            "AreaName": "Shadow Wing Lair"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Halls of Strife"
+            "Requisite": "Boss",
+            "AreaName": "Halls of Strife"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Crimson Laboratories"
+            "Requisite": "Boss",
+            "AreaName": "Crimson Laboratories"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Chromaggus' Lair"
+            "Requisite": "Boss",
+            "AreaName": "Chromaggus' Lair"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Nefarian's Lair"
+            "Requisite": "Boss",
+            "AreaName": "Nefarian's Lair"
           }
         ]
       }
@@ -1098,28 +1098,28 @@
         "name": "Ruins of Ahn'Qiraj",
         "areas": [
           {
-            "Item1": "None",
-            "Item2": "Scarab Terrace"
+            "Requisite": "None",
+            "AreaName": "Scarab Terrace"
           },
           {
-            "Item1": "Boss",
-            "Item2": "General's Terrace"
+            "Requisite": "Boss",
+            "AreaName": "General's Terrace"
           },
           {
-            "Item1": "Boss",
-            "Item2": "The Hatchery"
+            "Requisite": "Boss",
+            "AreaName": "The Hatchery"
           },
           {
-            "Item1": "Boss",
-            "Item2": "The Comb"
+            "Requisite": "Boss",
+            "AreaName": "The Comb"
           },
           {
-            "Item1": "Boss",
-            "Item2": "The Reservoir"
+            "Requisite": "Boss",
+            "AreaName": "The Reservoir"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Watcher's Terrace"
+            "Requisite": "Boss",
+            "AreaName": "Watcher's Terrace"
           }
         ]
       }
@@ -1134,28 +1134,28 @@
         "name": "Temple of Ahn'Qiraj",
         "areas": [
           {
-            "Item1": "None",
-            "Item2": "The Temple Gates"
+            "Requisite": "None",
+            "AreaName": "The Temple Gates"
           },
           {
-            "Item1": "Boss",
-            "Item2": "The Hive Undergrounds"
+            "Requisite": "Boss",
+            "AreaName": "The Hive Undergrounds"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Abandoned Tunnel"
+            "Requisite": "Boss",
+            "AreaName": "Abandoned Tunnel"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Ouro's Lair"
+            "Requisite": "Boss",
+            "AreaName": "Ouro's Lair"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Qiraji Imperial Seat"
+            "Requisite": "Boss",
+            "AreaName": "Qiraji Imperial Seat"
           },
           {
-            "Item1": "Boss",
-            "Item2": "Vault of C'Thun"
+            "Requisite": "Boss",
+            "AreaName": "Vault of C'Thun"
           }
         ]
       }

@@ -6,24 +6,24 @@
     ],
     "sites": [
       {
-        "Item1": "Dungeon",
-        "Item2": "Blackrock Depths"
+        "SiteType": "Dungeon",
+        "SiteName": "Blackrock Depths"
       },
       {
-        "Item1": "Raid",
-        "Item2": "Molten Core"
+        "SiteType": "Raid",
+        "SiteName": "Molten Core"
       },
       {
-        "Item1": "Dungeon",
-        "Item2": "Lower Blackrock Spire"
+        "SiteType": "Dungeon",
+        "SiteName": "Lower Blackrock Spire"
       },
       {
-        "Item1": "Dungeon",
-        "Item2": "Upper Blackrock Spire"
+        "SiteType": "Dungeon",
+        "SiteName": "Upper Blackrock Spire"
       },
       {
-        "Item1": "Raid",
-        "Item2": "Blackwing Lair"
+        "SiteType": "Raid",
+        "SiteName": "Blackwing Lair"
       }
     ]
   },
@@ -34,16 +34,16 @@
     ],
     "sites": [
       {
-        "Item1": "HostileArea",
-        "Item2": "Town Center"
+        "SiteType": "HostileArea",
+        "SiteName": "Town Center"
       },
       {
-        "Item1": "HostileArea",
-        "Item2": "Alterac Chapel"
+        "SiteType": "HostileArea",
+        "SiteName": "Alterac Chapel"
       },
       {
-        "Item1": "HostileArea",
-        "Item2": "Alterac Keep"
+        "SiteType": "HostileArea",
+        "SiteName": "Alterac Keep"
       }
     ]
   },
@@ -54,20 +54,20 @@
     ],
     "sites": [
       {
-        "Item1": "HostileArea",
-        "Item2": "Town Square"
+        "SiteType": "HostileArea",
+        "SiteName": "Town Square"
       },
       {
-        "Item1": "HostileArea",
-        "Item2": "Tyr's Hand Abbey"
+        "SiteType": "HostileArea",
+        "SiteName": "Tyr's Hand Abbey"
       },
       {
-        "Item1": "HostileArea",
-        "Item2": "Tyr's Hand Keep"
+        "SiteType": "HostileArea",
+        "SiteName": "Tyr's Hand Keep"
       },
       {
-        "Item1": "HostileArea",
-        "Item2": "Scarlet Basilica"
+        "SiteType": "HostileArea",
+        "SiteName": "Scarlet Basilica"
       }
     ]
   },
@@ -78,16 +78,16 @@
     ],
     "sites": [
       {
-        "Item1": "HostileArea",
-        "Item2": "Central Town"
+        "SiteType": "HostileArea",
+        "SiteName": "Central Town"
       },
       {
-        "Item1": "HostileArea",
-        "Item2": "Hearthglen Mine"
+        "SiteType": "HostileArea",
+        "SiteName": "Hearthglen Mine"
       },
       {
-        "Item1": "HostileArea",
-        "Item2": "Mardenholde Keep"
+        "SiteType": "HostileArea",
+        "SiteName": "Mardenholde Keep"
       }
     ]
   },
@@ -98,24 +98,24 @@
     ],
     "sites": [
       {
-        "Item1": "HostileArea",
-        "Item2": "North Town"
+        "SiteType": "HostileArea",
+        "SiteName": "North Town"
       },
       {
-        "Item1": "HostileArea",
-        "Item2": "The Sanctum"
+        "SiteType": "HostileArea",
+        "SiteName": "The Sanctum"
       },
       {
-        "Item1": "HostileArea",
-        "Item2": "Western Town"
+        "SiteType": "HostileArea",
+        "SiteName": "Western Town"
       },
       {
-        "Item1": "HostileArea",
-        "Item2": "Tower of Arathor"
+        "SiteType": "HostileArea",
+        "SiteName": "Tower of Arathor"
       },
       {
-        "Item1": "HostileArea",
-        "Item2": "Stromgarde Keep"
+        "SiteType": "HostileArea",
+        "SiteName": "Stromgarde Keep"
       }
     ]
   },
@@ -126,16 +126,16 @@
     ],
     "sites": [
       {
-        "Item1": "HostileArea",
-        "Item2": "Town Center"
+        "SiteType": "HostileArea",
+        "SiteName": "Town Center"
       },
       {
-        "Item1": "HostileArea",
-        "Item2": "Alterac Chapel"
+        "SiteType": "HostileArea",
+        "SiteName": "Alterac Chapel"
       },
       {
-        "Item1": "HostileArea",
-        "Item2": "Alterac Keep"
+        "SiteType": "HostileArea",
+        "SiteName": "Alterac Keep"
       }
     ]
   },
@@ -146,20 +146,20 @@
     ],
     "sites": [
       {
-        "Item1": "HostileArea",
-        "Item2": "Whispering Gardens"
+        "SiteType": "HostileArea",
+        "SiteName": "Whispering Gardens"
       },
       {
-        "Item1": "HostileArea",
-        "Item2": "Terrace of Repose"
+        "SiteType": "HostileArea",
+        "SiteName": "Terrace of Repose"
       },
       {
-        "Item1": "HostileArea",
-        "Item2": "The Grand Vestibule"
+        "SiteType": "HostileArea",
+        "SiteName": "The Grand Vestibule"
       },
       {
-        "Item1": "Dungeon",
-        "Item2": "Scarlet Monastery"
+        "SiteType": "Dungeon",
+        "SiteName": "Scarlet Monastery"
       }
     ]
   },
@@ -170,16 +170,16 @@
     ],
     "sites": [
       {
-        "Item1": "HostileArea",
-        "Item2": "Jaedenar"
+        "SiteType": "HostileArea",
+        "SiteName": "Jaedenar"
       },
       {
-        "Item1": "HostileArea",
-        "Item2": "Shrine of the Deceiver"
+        "SiteType": "HostileArea",
+        "SiteName": "Shrine of the Deceiver"
       },
       {
-        "Item1": "Dungeon",
-        "Item2": "Shadow Hold"
+        "SiteType": "Dungeon",
+        "SiteName": "Shadow Hold"
       }
     ]
   },
@@ -190,12 +190,12 @@
     ],
     "sites": [
       {
-        "Item1": "HostileArea",
-        "Item2": "Alcaz Island"
+        "SiteType": "HostileArea",
+        "SiteName": "Alcaz Island"
       },
       {
-        "Item1": "HostileArea",
-        "Item2": "Alcaz Dungeon"
+        "SiteType": "HostileArea",
+        "SiteName": "Alcaz Dungeon"
       }
     ]
   }

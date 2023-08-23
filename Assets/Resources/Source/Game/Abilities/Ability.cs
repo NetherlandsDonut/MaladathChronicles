@@ -44,9 +44,9 @@ public class Ability
 
     #region Description
 
-    public void PrintDescription(Entity effector, Entity other)
+    public void PrintDescription(Entity effector, Entity other, int width)
     {
-        if (description != null) description.Print(effector, other, events);
+        if (description != null) description.Print(effector, other, width);
         else AddHeaderRegion(() =>
         {
             SetRegionAsGroupExtender();

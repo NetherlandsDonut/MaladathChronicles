@@ -467,7 +467,7 @@
   {
     "name": "Dumb Kobold",
     "rarity": "Common",
-    "portrait": "ItemMiscHeadKobold01",
+    "portrait": "Kobold",
     "vitality": 2.0,
     "abilities": [
       "Shadow Bolt"
@@ -530,7 +530,7 @@
     "vitality": 1.8,
     "abilities": [
       "Corruption",
-      "Curse Of Agony"
+      "Curse of Agony"
     ],
     "loot": [
       {
@@ -546,7 +546,7 @@
     "vitality": 1.0,
     "abilities": [
       "Corruption",
-      "Curse Of Agony"
+      "Curse of Agony"
     ],
     "loot": []
   },
@@ -557,7 +557,7 @@
     "vitality": 0.9,
     "abilities": [
       "Corruption",
-      "Curse Of Agony"
+      "Curse of Agony"
     ],
     "loot": []
   },
@@ -568,7 +568,7 @@
     "vitality": 0.9,
     "abilities": [
       "Corruption",
-      "Curse Of Agony"
+      "Curse of Agony"
     ],
     "loot": []
   },
@@ -579,7 +579,7 @@
     "vitality": 1.0,
     "abilities": [
       "Corruption",
-      "Curse Of Agony"
+      "Curse of Agony"
     ],
     "loot": []
   },
@@ -590,7 +590,7 @@
     "vitality": 1.0,
     "abilities": [
       "Corruption",
-      "Curse Of Agony"
+      "Curse of Agony"
     ],
     "loot": []
   },
@@ -601,7 +601,7 @@
     "vitality": 1.0,
     "abilities": [
       "Corruption",
-      "Curse Of Agony"
+      "Curse of Agony"
     ],
     "loot": []
   },
@@ -612,7 +612,7 @@
     "vitality": 1.0,
     "abilities": [
       "Corruption",
-      "Curse Of Agony"
+      "Curse of Agony"
     ],
     "loot": []
   },
@@ -623,7 +623,7 @@
     "vitality": 1.0,
     "abilities": [
       "Corruption",
-      "Curse Of Agony"
+      "Curse of Agony"
     ],
     "loot": []
   },
@@ -634,7 +634,7 @@
     "vitality": 1.0,
     "abilities": [
       "Corruption",
-      "Curse Of Agony"
+      "Curse of Agony"
     ],
     "loot": []
   },
@@ -645,7 +645,7 @@
     "vitality": 0.9,
     "abilities": [
       "Corruption",
-      "Curse Of Agony"
+      "Curse of Agony"
     ],
     "loot": []
   },
@@ -656,7 +656,7 @@
     "vitality": 0.9,
     "abilities": [
       "Corruption",
-      "Curse Of Agony"
+      "Curse of Agony"
     ],
     "loot": []
   },
@@ -667,7 +667,7 @@
     "vitality": 1.0,
     "abilities": [
       "Corruption",
-      "Curse Of Agony"
+      "Curse of Agony"
     ],
     "loot": []
   },
@@ -678,7 +678,7 @@
     "vitality": 1.0,
     "abilities": [
       "Corruption",
-      "Curse Of Agony"
+      "Curse of Agony"
     ],
     "loot": []
   },
@@ -689,7 +689,7 @@
     "vitality": 1.0,
     "abilities": [
       "Corruption",
-      "Curse Of Agony"
+      "Curse of Agony"
     ],
     "loot": []
   },
@@ -700,7 +700,7 @@
     "vitality": 1.0,
     "abilities": [
       "Corruption",
-      "Curse Of Agony"
+      "Curse of Agony"
     ],
     "loot": []
   },
@@ -711,7 +711,7 @@
     "vitality": 1.0,
     "abilities": [
       "Corruption",
-      "Curse Of Agony"
+      "Curse of Agony"
     ],
     "loot": []
   },
@@ -722,7 +722,7 @@
     "vitality": 1.0,
     "abilities": [
       "Corruption",
-      "Curse Of Agony"
+      "Curse of Agony"
     ],
     "loot": []
   },
@@ -733,7 +733,7 @@
     "vitality": 1.0,
     "abilities": [
       "Corruption",
-      "Curse Of Agony"
+      "Curse of Agony"
     ],
     "loot": []
   },
@@ -768,7 +768,7 @@
     "vitality": 1.0,
     "abilities": [
       "Corruption",
-      "Curse Of Agony"
+      "Curse of Agony"
     ],
     "loot": []
   },
@@ -779,7 +779,7 @@
     "vitality": 0.8,
     "abilities": [
       "Corruption",
-      "Curse Of Agony"
+      "Curse of Agony"
     ],
     "loot": []
   },

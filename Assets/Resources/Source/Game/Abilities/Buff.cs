@@ -12,27 +12,6 @@ public class Buff
     public List<Event> events;
     public Description description;
 
-    public static Entity Target(bool player)
-    {
-        return !player ? Board.board.player : Board.board.enemy;
-    }
-
-    public static FutureEntity Target(bool player, FutureBoard futureBoard)
-    {
-        return !player ? futureBoard.player : futureBoard.enemy;
-    }
-
-    public static Entity Caster(bool player)
-    {
-        if (Board.board == null) return currentSave.player;
-        return player ? Board.board.player : Board.board.enemy;
-    }
-
-    public static FutureEntity Caster(bool player, FutureBoard futureBoard)
-    {
-        return player ? futureBoard.player : futureBoard.enemy;
-    }
-
     public void ExecuteFutureEvents(FutureBoard board, string trigger)
     {
         if (events == null) return;
@@ -55,9 +34,9 @@ public class Buff
                 }
     }
 
-    public void PrintDescription(Entity effector, Entity other)
+    public void PrintDescription(Entity effector, Entity other, int width)
     {
-        if (description != null) description.Print(effector, other, events);
+        if (description != null) description.Print(effector, other, width);
         else AddHeaderRegion(() =>
         {
             SetRegionAsGroupExtender();

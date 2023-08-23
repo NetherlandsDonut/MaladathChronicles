@@ -416,10 +416,13 @@ public class Entity
             if (equipment.ContainsKey("Off Hand"))
             {
                 var offHand = equipment["Off Hand"];
-                min /= 1.5;
-                min /= 1.5;
-                min += offHand.minDamage / offHand.speed / 1.5;
-                max += offHand.maxDamage / offHand.speed / 1.5;
+                if (offHand.maxDamage > 0)
+                {
+                    min /= 1.5;
+                    min /= 1.5;
+                    min += offHand.minDamage / offHand.speed / 1.5;
+                    max += offHand.maxDamage / offHand.speed / 1.5;
+                }
             }
             return (min, max);
         }

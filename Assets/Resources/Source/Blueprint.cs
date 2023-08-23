@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using static Root;
 using static SiteComplex;
 using static SiteInstance;
-using static SiteArea;
+using static SiteHostileArea;
 using static SiteTown;
 
 using static Root.Color;
@@ -280,7 +280,7 @@ public class Blueprint
                                 AddText(actionBar.cooldown + (actionBar.cooldown == 1 ? " turn"  : " turns"), Gray);
                             }
                         });
-                        abilityObj.PrintDescription(Board.board.player, Board.board.enemy);
+                        abilityObj.PrintDescription(Board.board.player, Board.board.enemy, 236);
                         foreach (var cost in abilityObj.cost)
                         {
                             AddRegionGroup();
@@ -456,7 +456,7 @@ public class Blueprint
                             AddLine("Cooldown: ", DarkGray);
                             AddText(abilityObj.cooldown == 0 ? "None" : abilityObj.cooldown + (abilityObj.cooldown == 1 ? " turn"  : " turns"), Gray);
                         });
-                        abilityObj.PrintDescription(currentSave.player, null);
+                        abilityObj.PrintDescription(currentSave.player, null, 236);
                         foreach (var cost in abilityObj.cost)
                         {
                             AddRegionGroup();
@@ -518,7 +518,7 @@ public class Blueprint
                             AddLine("Cooldown: ", DarkGray);
                             AddText(abilityObj.cooldown == 0 ? "None" : abilityObj.cooldown + (abilityObj.cooldown == 1 ? " turn"  : " turns"), Gray);
                         });
-                        abilityObj.PrintDescription(currentSave.player, null);
+                        abilityObj.PrintDescription(currentSave.player, null, 236);
                         if (abilityObj.cost != null)
                             foreach (var cost in abilityObj.cost)
                             {
@@ -602,7 +602,7 @@ public class Blueprint
                                 AddLine("Cooldown: ", DarkGray);
                                 AddText(abilityObj.cooldown == 0 ? "None" : abilityObj.cooldown + (abilityObj.cooldown == 1 ? " turn"  : " turns"), Gray);
                             });
-                            abilityObj.PrintDescription(currentSave.player, null);
+                            abilityObj.PrintDescription(currentSave.player, null, 236);
                             foreach (var cost in abilityObj.cost)
                             {
                                 AddRegionGroup();
@@ -789,7 +789,7 @@ public class Blueprint
                             AddLine("Cooldown: ", DarkGray);
                             AddText(abilityObj.cooldown == 0 ? "None" : abilityObj.cooldown + (abilityObj.cooldown == 1 ? " turn"  : " turns"), Gray);
                         });
-                        abilityObj.PrintDescription(Board.board.player, Board.board.enemy);
+                        abilityObj.PrintDescription(Board.board.enemy, Board.board.player, 236);
                         foreach (var cost in abilityObj.cost)
                         {
                             AddRegionGroup();
@@ -2027,7 +2027,7 @@ public class Blueprint
         new("HostileAreaEntrance", () =>
         {
             SetDesktopBackground("Areas/Area" + (area.zone + area.name).Replace("'", "").Replace(".", "").Replace(" ", ""));
-            SpawnWindowBlueprint("Area: " + area.name);
+            SpawnWindowBlueprint("HostileArea: " + area.name);
             SpawnWindowBlueprint("HostileAreaRightSide");
             AddHotkey(Escape, () =>
             {
@@ -2061,7 +2061,7 @@ public class Blueprint
             SpawnWindowBlueprint("InstanceLeftSide");
             AddHotkey(Escape, () =>
             {
-                var window = CDesktop.windows.Find(x => x.title.StartsWith("Area: "));
+                var window = CDesktop.windows.Find(x => x.title.StartsWith("HostileArea: "));
                 if (window != null)
                 {
                     SpawnTransition();
@@ -2088,7 +2088,7 @@ public class Blueprint
             SpawnWindowBlueprint("ComplexLeftSide");
             AddHotkey(Escape, () =>
             {
-                var window = CDesktop.windows.Find(x => x.title.StartsWith("Area: "));
+                var window = CDesktop.windows.Find(x => x.title.StartsWith("HostileArea: "));
                 if (window != null)
                 {
                     SpawnTransition();
