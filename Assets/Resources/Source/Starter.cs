@@ -309,8 +309,7 @@ public class Starter : MonoBehaviour
                             },
                             (h) =>
                             {
-                                Board.board = new Board(6, 6, area.RollEncounter(), area);
-                                BufferBoard.bufferBoard = new BufferBoard();
+                                Board.NewBoard(area.RollEncounter(), area);
                                 SpawnDesktopBlueprint("Game");
                                 SwitchDesktop("Game");
                             });
@@ -331,8 +330,7 @@ public class Starter : MonoBehaviour
                                 },
                                 (h) =>
                                 {
-                                    Board.board = new Board(6, 6, area.RollBoss(boss), area);
-                                    BufferBoard.bufferBoard = new BufferBoard();
+                                    Board.NewBoard(area.RollBoss(boss), area);
                                     SpawnDesktopBlueprint("Game");
                                     SwitchDesktop("Game");
                                 });

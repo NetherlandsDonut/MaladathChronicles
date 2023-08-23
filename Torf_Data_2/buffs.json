@@ -76,7 +76,7 @@
       {
         "triggers": [
           {
-            "Trigger": "TurnBegin"
+            "Trigger": "BuffAdd"
           }
         ],
         "effects": [
@@ -493,10 +493,17 @@
         "effects": [
           {
             "Effect": "Damage",
-            "Affect": "Other",
+            "Affect": "Effector",
             "PowerType": "Spell",
-            "PowerSource": "Effector",
-            "PowerScale": "1.5"
+            "PowerSource": "Other",
+            "PowerScale": "0.8",
+            "ShatterTarget": "Effector",
+            "ShatterType": "Central",
+            "ShatterDensity": "2",
+            "ShatterSpeed": "5",
+            "ShatterDegree": "0.7",
+            "SoundEffect": "AbilityCorruptionFlare",
+            "Await": "4"
           }
         ]
       }
@@ -548,10 +555,11 @@
             "Affect": "Effector",
             "PowerType": "Spell",
             "PowerSource": "Other",
-            "PowerScale": "1.5",
+            "PowerScale": "0.9",
             "ShatterTarget": "Effector",
             "ShatterType": "Central",
             "ShatterDensity": "2",
+            "ShatterSpeed": "5",
             "ShatterDegree": "0.7",
             "SoundEffect": "AbilityCurseOfAgonyFlare",
             "Await": "4"
@@ -577,10 +585,17 @@
         "effects": [
           {
             "Effect": "Damage",
-            "Affect": "Other",
+            "Affect": "Effector",
             "PowerType": "Spell",
-            "PowerSource": "Effector",
-            "PowerScale": "1.5"
+            "PowerSource": "Other",
+            "PowerScale": "0.6",
+            "ShatterTarget": "Effector",
+            "ShatterType": "Central",
+            "ShatterDensity": "2",
+            "ShatterSpeed": "5",
+            "ShatterDegree": "0.7",
+            "SoundEffect": "AbilityShadowWordPainFlare",
+            "Await": "4"
           }
         ]
       }

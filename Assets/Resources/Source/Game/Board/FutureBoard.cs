@@ -102,7 +102,8 @@ public class FutureBoard
                     entity = board.playerTurn ? board.player : board.enemy;
                     list.Add(new FutureMove(ability.Item2.name, board));
                     entity.actionBars.Find(x => x.ability == ability.Item2.name).cooldown = ability.Item2.cooldown;
-                    ability.Item2.ExecuteFutureEvents(board, "AbilityCast");
+                    CallEvents(entity, board, new() { { "Trigger", "AbilityCast" }, { "Triggerer", "Effector" }, { "AbilityName", ability.Item2.name } });
+                    CallEvents(entity == player ? enemy : player, board, new() { { "Trigger", "AbilityCast" }, { "Triggerer", "Effector" }, { "AbilityName", ability.Item2.name } });
                     entity.DetractResources(ability.Item2.cost);
                     while (!board.finishedAnimation)
                         board.AnimateBoard();
@@ -130,36 +131,32 @@ public class FutureBoard
         return list;
     }
 
+    public void CallEvents(FutureEntity entity, FutureBoard board, Dictionary<string, string> triggerData)
+    {
+        foreach (var ability in entity == player ? Board.board.playerCombatAbilities : Board.board.enemyCombatAbilities)
+            ability.ExecuteEvents(null, board, triggerData);
+        foreach (var buff in entity.buffs)
+            buff.Item1.ExecuteEvents(null, board, triggerData);
+    }
+
     public void EndTurn()
     {
         if (playerTurn)
         {
-            foreach (var ability in Board.board.playerCombatAbilities)
-                ability.ExecuteFutureEvents(this, "TurnEnd");
-            foreach (var buff in player.buffs)
-                buff.Item1.ExecuteFutureEvents(this, "TurnEnd");
+            CallEvents(player, this, new() { { "Trigger", "TurnEnd" } });
             playerTurn = false;
             playerFinishedMoving = false;
             enemy.Cooldown();
-            foreach (var ability in Board.board.enemyCombatAbilities)
-                ability.ExecuteFutureEvents(this, "TurnBegin");
-            foreach (var buff in enemy.buffs)
-                buff.Item1.ExecuteFutureEvents(this, "TurnBegin");
+            CallEvents(enemy, this, new() { { "Trigger", "TurnBegin" } });
             enemy.FlareBuffs(this);
         }
         else
         {
-            foreach (var ability in Board.board.enemyCombatAbilities)
-                ability.ExecuteFutureEvents(this, "TurnEnd");
-            foreach (var buff in enemy.buffs)
-                buff.Item1.ExecuteFutureEvents(this, "TurnEnd");
+            CallEvents(enemy, this, new() { { "Trigger", "TurnEnd" } });
             playerTurn = true;
             enemyFinishedMoving = false;
             player.Cooldown();
-            foreach (var ability in Board.board.playerCombatAbilities)
-                ability.ExecuteFutureEvents(this, "TurnBegin");
-            foreach (var buff in player.buffs)
-                buff.Item1.ExecuteFutureEvents(this, "TurnBegin");
+            CallEvents(player, this, new() { { "Trigger", "TurnBegin" } });
             player.FlareBuffs(this);
         }
     }

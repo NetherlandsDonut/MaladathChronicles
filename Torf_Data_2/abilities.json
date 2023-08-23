@@ -311,12 +311,12 @@
             },
             {
               "Color": "Shadow",
-              "Text": "PowerRange(Effector, Spell, 1.5, 3)",
+              "Text": "PowerRange(Effector, Spell, 0.9, 1)",
               "Split": "No"
             },
             {
               "Color": "Gray",
-              "Text": "damage on beginnings of their turns for 10 turns."
+              "Text": "damage each turn for 10 turns."
             }
           ]
         },
@@ -359,7 +359,8 @@
             "ShatterTarget": "Other",
             "ShatterType": "Directional",
             "ShatterDensity": "2",
-            "SoundEffect": "AbilityVenomousBiteImpact"
+            "SoundEffect": "AbilityVenomousBiteImpact",
+            "Await": "4"
           },
           {
             "Effect": "EndTurn"
@@ -499,7 +500,8 @@
             "ShatterTarget": "Other",
             "ShatterType": "Directional",
             "ShatterDensity": "2",
-            "SoundEffect": "AbilityWebBurstImpact"
+            "SoundEffect": "AbilityWebBurstImpact",
+            "Await": "4"
           },
           {
             "Effect": "EndTurn"
@@ -754,18 +756,42 @@
         ],
         "effects": [
           {
-            "Effect": "Damage",
+            "Effect": "AddBuff",
             "Affect": "Other",
-            "PowerType": "Spell",
-            "PowerSource": "Effector",
-            "PowerScale": "1.5"
-          },
-          {
-            "Effect": "EndTurn"
+            "BuffName": "Shadow Word: Pain",
+            "BuffDuration": "5",
+            "ShatterTarget": "Other",
+            "ShatterType": "Central",
+            "ShatterDensity": "2",
+            "ShatterSpeed": "5",
+            "SoundEffect": "AbilityShadowWordPainImpact",
+            "Await": "4"
           }
         ]
       }
-    ]
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Gray",
+              "Text": "A word of darkness that causes 510 Shadow "
+            },
+            {
+              "Color": "Shadow",
+              "Text": "PowerRange(Effector, Spell, 0.6, 1)",
+              "Split": "No"
+            },
+            {
+              "Color": "Gray",
+              "Text": "damage each turn for 5 turns."
+            }
+          ]
+        }
+      ]
+    }
   },
   {
     "name": "Putrid Bite",
@@ -822,18 +848,42 @@
         ],
         "effects": [
           {
-            "Effect": "Damage",
+            "Effect": "AddBuff",
             "Affect": "Other",
-            "PowerType": "Spell",
-            "PowerSource": "Effector",
-            "PowerScale": "1.5"
-          },
-          {
-            "Effect": "EndTurn"
+            "BuffName": "Corruption",
+            "BuffDuration": "6",
+            "ShatterTarget": "Other",
+            "ShatterType": "Central",
+            "ShatterDensity": "2",
+            "ShatterSpeed": "5",
+            "SoundEffect": "AbilityCorruptionImpact",
+            "Await": "4"
           }
         ]
       }
-    ]
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Gray",
+              "Text": "Corrupts the target, causing"
+            },
+            {
+              "Color": "Shadow",
+              "Text": "PowerRange(Effector, Spell, 0.8, 1)",
+              "Split": "No"
+            },
+            {
+              "Color": "Gray",
+              "Text": "damage each turn for 5 turns."
+            }
+          ]
+        }
+      ]
+    }
   },
   {
     "name": "Summon Infernal",
@@ -997,7 +1047,8 @@
             "ShatterDensity": "2",
             "ShatterSpeed": "5",
             "ShatterDegree": "0.7",
-            "SoundEffect": "AbilityShadowboltImpact"
+            "SoundEffect": "AbilityShadowboltImpact",
+            "Await": "4"
           },
           {
             "Effect": "EndTurn"
@@ -1069,7 +1120,8 @@
             "ShatterDensity": "2",
             "ShatterSpeed": "5",
             "ShatterDegree": "0.7",
-            "SoundEffect": "AbilityFireballImpact"
+            "SoundEffect": "AbilityFireballImpact",
+            "Await": "4"
           },
           {
             "Effect": "EndTurn"
@@ -1125,6 +1177,29 @@
       {
         "triggers": [
           {
+            "Trigger": "BuffAdd",
+            "Triggerer": "Effector",
+            "BuffName": "Any"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddBuff",
+            "Affect": "Other",
+            "BuffName": "Scorch",
+            "BuffDuration": "3",
+            "ShatterTarget": "Other",
+            "ShatterType": "Central",
+            "ShatterDensity": "2",
+            "ShatterDegree": "0.7",
+            "SoundEffect": "AbilityScorchImpact",
+            "Await": "4"
+          }
+        ]
+      },
+      {
+        "triggers": [
+          {
             "Trigger": "AbilityCast"
           }
         ],
@@ -1138,7 +1213,8 @@
             "ShatterType": "Central",
             "ShatterDensity": "2",
             "ShatterDegree": "0.7",
-            "SoundEffect": "AbilityScorchImpact"
+            "SoundEffect": "AbilityScorchImpact",
+            "Await": "4"
           }
         ]
       }
@@ -1327,7 +1403,8 @@
             "ShatterDensity": "2",
             "ShatterSpeed": "5",
             "ShatterDegree": "0.7",
-            "SoundEffect": "AbilityFrostboltImpact"
+            "SoundEffect": "AbilityFrostboltImpact",
+            "Await": "4"
           },
           {
             "Effect": "EndTurn"
@@ -1672,7 +1749,9 @@
       {
         "triggers": [
           {
-            "Trigger": "AbilityCast"
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector",
+            "AbilityName": "Fireball"
           }
         ],
         "effects": [
@@ -1681,14 +1760,40 @@
             "Affect": "Other",
             "PowerType": "Spell",
             "PowerSource": "Effector",
-            "PowerScale": "1.5"
-          },
-          {
-            "Effect": "EndTurn"
+            "PowerScale": "2.9",
+            "ShatterTarget": "Other",
+            "ShatterType": "Directional",
+            "ShatterDensity": "2",
+            "ShatterSpeed": "5",
+            "ShatterDegree": "0.7",
+            "SoundEffect": "AbilityFireballImpact",
+            "Await": "4"
           }
         ]
       }
-    ]
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Gray",
+              "Text": "Whenever Fireball is casted Hot Streak makes the caster hurl another one for free dealing"
+            },
+            {
+              "Color": "Fire",
+              "Text": "PowerRange(Effector, Spell, 2.9, 1)",
+              "Split": "No"
+            },
+            {
+              "Color": "Gray",
+              "Text": "damage."
+            }
+          ]
+        }
+      ]
+    }
   },
   {
     "name": "Harmonic Echo",
@@ -2391,31 +2496,6 @@
     ]
   },
   {
-    "name": "Brain Freeze",
-    "icon": "AbilityBrainFreeze",
-    "events": [
-      {
-        "triggers": [
-          {
-            "Trigger": "AbilityCast"
-          }
-        ],
-        "effects": [
-          {
-            "Effect": "Damage",
-            "Affect": "Other",
-            "PowerType": "Spell",
-            "PowerSource": "Effector",
-            "PowerScale": "1.5"
-          },
-          {
-            "Effect": "EndTurn"
-          }
-        ]
-      }
-    ]
-  },
-  {
     "name": "Sun King's Blessing",
     "icon": "AbilitySunKing'sBlessing",
     "events": [
@@ -2622,23 +2702,53 @@
       {
         "triggers": [
           {
-            "Trigger": "AbilityCast"
+            "Trigger": "CombatBegin"
           }
         ],
         "effects": [
+          {
+            "SoundEffect": "AbilityFireballCast",
+            "Await": "4"
+          },
           {
             "Effect": "Damage",
             "Affect": "Other",
             "PowerType": "Spell",
             "PowerSource": "Effector",
-            "PowerScale": "1.5"
-          },
-          {
-            "Effect": "EndTurn"
+            "PowerScale": "2.0",
+            "ShatterTarget": "Other",
+            "ShatterType": "Directional",
+            "ShatterDensity": "2",
+            "ShatterSpeed": "5",
+            "ShatterDegree": "0.7",
+            "SoundEffect": "AbilityFireballImpact",
+            "Await": "4"
           }
         ]
-      }
-    ]
+      },
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Gray",
+              "Text": "At the beginning of the combat, hurls a fiery ball at the enemy that causes"
+            },
+            {
+              "Color": "Fire",
+              "Text": "PowerRange(Effector, Spell, 2.0, 1)",
+              "Split": "No"
+            },
+            {
+              "Color": "Gray",
+              "Text": "damage."
+            }
+          ]
+        }
+      ]
+    }
   },
   {
     "name": "Pyroclasm",
@@ -2764,5 +2874,62 @@
         ]
       }
     ]
+  },
+  {
+    "name": "Brain Freeze",
+    "icon": "AbilityBrainFreeze",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast",
+            "Triggerer": "Other",
+            "AbilityName": "Any"
+          }
+        ],
+        "effects": [
+          {
+            "SoundEffect": "AbilityFrostboltCast",
+            "Await": "4"
+          },
+          {
+            "Effect": "Damage",
+            "Affect": "Effector",
+            "PowerType": "Spell",
+            "PowerSource": "Other",
+            "PowerScale": "2.9",
+            "ShatterTarget": "Effector",
+            "ShatterType": "Directional",
+            "ShatterDensity": "2",
+            "ShatterSpeed": "5",
+            "ShatterDegree": "0.7",
+            "SoundEffect": "AbilityFrostboltImpact",
+            "Await": "4"
+          }
+        ]
+      },
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Gray",
+              "Text": "Every time the enemy casts an ability you retaliate with a bolt of frost, causing"
+            },
+            {
+              "Color": "Frost",
+              "Text": "PowerRange(Effector, Spell, 2.9, 1)",
+              "Split": "No"
+            },
+            {
+              "Color": "Gray",
+              "Text": "damage."
+            }
+          ]
+        }
+      ]
+    }
   }
 ]

@@ -303,7 +303,10 @@ public class FutureEntity
         {
             var index = i;
             if (buffs[index].Item2 == 1)
-                buffs[index].Item1.ExecuteFutureEvents(board, "BuffRemove");
+            {
+                board.CallEvents(this, board, new() { { "Trigger", "BuffRemove" }, { "Triggerer", "Effector" }, { "BuffName", buffs[index].Item1.name } });
+                board.CallEvents(board.player == this ? board.enemy : board.player, board, new() { { "Trigger", "BuffRemove" }, { "Triggerer", "Other" }, { "BuffName", buffs[index].Item1.name } });
+            }
             buffs[index] = (buffs[index].Item1, buffs[index].Item2 - 1);
             if (buffs[index].Item2 <= 0) RemoveBuff(buffs[index]);
         }

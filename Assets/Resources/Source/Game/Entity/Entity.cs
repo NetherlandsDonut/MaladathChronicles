@@ -575,7 +575,10 @@ public class Entity
         {
             var index = i;
             if (buffs[index].Item2 == 1)
-                buffs[index].Item1.ExecuteEvents(buffs[index].Item3, "BuffRemove");
+            {
+                Board.board.CallEvents(this, new() { { "Trigger", "BuffRemove" }, {"Triggerer", "Effector" }, { "BuffName", buffs[index].Item1.name } });
+                Board.board.CallEvents(Board.board.player == this ? Board.board.enemy : Board.board.player, new() { { "Trigger", "BuffRemove" }, {"Triggerer", "Other" }, { "BuffName", buffs[index].Item1.name } });
+            }
             Board.board.actions.Add(() =>
             {
                 buffs[index] = (buffs[index].Item1, buffs[index].Item2 - 1, buffs[index].Item3);

@@ -26,6 +26,14 @@ public class Board
         actions = new List<Action>();
     }
 
+    public static void NewBoard(Entity entity, SiteHostileArea area)
+    {
+        board = new Board(6, 6, entity, area);
+        bufferBoard = new BufferBoard();
+        board.CallEvents(board.player, new() { { "Trigger", "CombatBegin" } });
+        board.CallEvents(board.enemy, new() { { "Trigger", "CombatBegin" } });
+    }
+
     //STATIC REFERENCE TO THE BOARD
     //THERE CAN BE ONLY ONE AT A TIME THANKS TO STATIC REF
     public static Board board;
@@ -40,39 +48,35 @@ public class Board
     public List<Action> actions;
     public SiteHostileArea area;
 
+    public void CallEvents(Entity entity, Dictionary<string, string> trigger)
+    {
+        foreach (var ability in entity == player ? playerCombatAbilities : enemyCombatAbilities)
+            ability.ExecuteEvents(board, null, trigger);
+        foreach (var buff in entity.buffs)
+            buff.Item1.ExecuteEvents(board, null, trigger);
+    }
+
     //ENDS THE CURRENT PLAYER'S TURN
     public void EndTurn()
     {
         if (playerTurn)
         {
-            foreach (var ability in playerCombatAbilities)
-                ability.ExecuteEvents("TurnEnd");
-            foreach (var buff in player.buffs)
-                buff.Item1.ExecuteEvents(buff.Item3, "TurnEnd");
+            CallEvents(player, new() { { "Trigger", "TurnEnd" } });
             cursorEnemy.fadeIn = true;
             playerTurn = false;
             playerFinishedMoving = false;
             enemy.Cooldown();
-            foreach (var ability in enemyCombatAbilities)
-                ability.ExecuteEvents("TurnBegin");
-            foreach (var buff in enemy.buffs)
-                buff.Item1.ExecuteEvents(buff.Item3, "TurnBegin");
+            CallEvents(enemy, new() { { "Trigger", "TurnBegin" } });
             enemy.FlareBuffs();
         }
         else
         {
-            foreach (var ability in enemyCombatAbilities)
-                ability.ExecuteEvents("TurnEnd");
-            foreach (var buff in enemy.buffs)
-                buff.Item1.ExecuteEvents(buff.Item3, "TurnEnd");
+            CallEvents(enemy, new() { { "Trigger", "TurnEnd" } });
             cursorEnemy.fadeOut = true;
             playerTurn = true;
             enemyFinishedMoving = false;
             player.Cooldown();
-            foreach (var ability in playerCombatAbilities)
-                ability.ExecuteEvents("TurnBegin");
-            foreach (var buff in player.buffs)
-                buff.Item1.ExecuteEvents(buff.Item3, "TurnBegin");
+            CallEvents(player, new() { { "Trigger", "TurnBegin" } });
             player.FlareBuffs();
         }
     }
@@ -285,7 +289,8 @@ public class Board
                         AddRegionOverlay(CDesktop.globalRegions["EnemyActionBar" + enemy.actionBars.IndexOf(actionBar)], "Black", 0.1f);
                         animationTime += frameTime;
                         actionBar.cooldown = abilityObj.cooldown;
-                        abilityObj.ExecuteEvents("AbilityCast");
+                        board.CallEvents(board.enemy, new() { { "Trigger", "AbilityCast" }, {"Triggerer", "Effector" }, { "AbilityName", abilityObj.name } });
+                        board.CallEvents(board.player, new() { { "Trigger", "AbilityCast" }, { "Triggerer", "Other" }, { "AbilityName", abilityObj.name } });
                         board.enemy.DetractResources(abilityObj.cost);
                     });
                 }

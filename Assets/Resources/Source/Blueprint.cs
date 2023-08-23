@@ -216,7 +216,7 @@ public class Blueprint
                         }
                         else SwitchDesktop("Map");
                     });
-                    AddSmallButton("MenuLog", (h) => { });
+                    //AddSmallButton("MenuLog", (h) => { });
                 },
                 (h) =>
                 {
@@ -253,7 +253,8 @@ public class Blueprint
                         if (abilityObj.EnoughResources(Board.board.player) && actionBar.cooldown == 0)
                         {
                             actionBar.cooldown = abilityObj.cooldown;
-                            abilityObj.ExecuteEvents("AbilityCast");
+                            Board.board.CallEvents(Board.board.player, new() { { "Trigger", "AbilityCast" }, {"Triggerer", "Effector" }, { "AbilityName", abilityObj.name } });
+                            Board.board.CallEvents(Board.board.enemy, new() { { "Trigger", "AbilityCast" }, {"Triggerer", "Other" }, { "AbilityName", abilityObj.name } });
                             Board.board.player.DetractResources(abilityObj.cost);
                             Board.board.temporaryElementsPlayer = new();
                             h.window.desktop.Rebuild();

@@ -30,7 +30,8 @@ public class Event
             double shatterDegree = effect.ContainsKey("ShatterDegree") ? double.Parse(effect["ShatterDegree"].Replace(".", ",")) : 0.5;
             double shatterSpeed = effect.ContainsKey("shatterSpeed") ? double.Parse(effect["shatterSpeed"].Replace(".", ",")) : 2;
             float await = effect.ContainsKey("Await") ? float.Parse(effect["Await"]) : 0;
-            if (random.Next(0, 100) >= chanceBase + chance * (chanceScale == "None" ? 1 : (chanceSource != "None" ? (futureBoard == null ? (chanceSource == "Effector" ? effector : other).Stats()[chanceScale] : (chanceSource == "Effector" ? futureEffector : futureOther).Stats()[chanceScale]) : 1))) continue;
+            var rand = random.Next(0, 100);
+            if (rand >= chanceBase + chance * (chanceScale == "None" ? 1 : (chanceSource != "None" ? (futureBoard == null ? (chanceSource == "Effector" ? effector : other).Stats()[chanceScale] : (chanceSource == "Effector" ? futureEffector : futureOther).Stats()[chanceScale]) : 1))) continue;
             if (futureBoard != null)
             {
                 if (type == "Damage")
@@ -79,6 +80,8 @@ public class Event
                     {
                         var target = affect == "Effector" ? futureEffector : futureOther;
                         target.AddBuff(Buff.buffs.Find(x => x.name == buffName), buffDuration);
+                        futureBoard.CallEvents(target, futureBoard, new() { { "Trigger", "BuffAdd" }, { "Triggerer", "Effector" }, { "BuffName", buffName } });
+                        futureBoard.CallEvents(target == futureEffector ? futureOther : futureEffector, futureBoard, new() { { "Trigger", "BuffAdd" }, { "Triggerer", "Other" }, { "BuffName", buffName } });
                     }
                 }
                 else if (type == "RemoveBuff")
@@ -87,6 +90,8 @@ public class Event
                     {
                         var target = affect == "Effector" ? futureEffector : futureOther;
                         target.RemoveBuff(target.buffs.Find(x => x.Item1.name == buffName));
+                        futureBoard.CallEvents(target, futureBoard, new() { { "Trigger", "BuffRemove" }, { "Triggerer", "Effector" }, { "BuffName", buffName } });
+                        futureBoard.CallEvents(target == futureEffector ? futureOther : futureEffector, futureBoard, new() { { "Trigger", "BuffRemove" }, { "Triggerer", "Other" }, { "BuffName", buffName } });
                     }
                 }
                 else if (type == "ResetBoard")
@@ -149,6 +154,8 @@ public class Event
                         {
                             var target = affect == "Effector" ? effector : other;
                             target.AddBuff(Buff.buffs.Find(x => x.name == buffName), buffDuration, SpawnBuff(new Vector3(affect == "Other" ? (board.playerTurn ? 166 : -302) : (board.playerTurn ? -302 : 166), 142), icon, target));
+                            board.CallEvents(target, new() { { "Trigger", "BuffAdd" }, { "Triggerer", "Effector" }, { "BuffName", buffName } });
+                            board.CallEvents(target == effector ? other : effector, new() { { "Trigger", "BuffAdd" }, { "Triggerer", "Other" }, { "BuffName", buffName } });
                         }
                     }
                     else if (type == "RemoveBuff")
@@ -157,6 +164,8 @@ public class Event
                         {
                             var target = affect == "Effector" ? effector : other;
                             target.RemoveBuff(target.buffs.Find(x => x.Item1 == Buff.buffs.Find(x => x.name == buffName)));
+                            board.CallEvents(target, new() { { "Trigger", "BuffRemove" }, { "Triggerer", "Effector" }, { "BuffName", buffName } });
+                            board.CallEvents(target == effector ? other : effector, new() { { "Trigger", "BuffRemove" }, { "Triggerer", "Other" }, { "BuffName", buffName } });
                         }
                     }
                     else if (type == "ResetBoard")
