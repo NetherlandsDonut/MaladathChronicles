@@ -20,12 +20,17 @@ public class Event
             string powerSource = effect.ContainsKey("PowerSource") ? effect["PowerSource"] : "Effector";
             string powerType = effect.ContainsKey("PowerType") ? effect["PowerType"] : "None";
             double powerScale = effect.ContainsKey("PowerScale") ? double.Parse(effect["PowerScale"].Replace(".", ",")) : 1;
+            double chance = effect.ContainsKey("Chance") ? double.Parse(effect["Chance"].Replace(".", ",")) : 100;
+            double chanceBase = effect.ContainsKey("ChanceBase") ? double.Parse(effect["ChanceBase"].Replace(".", ",")) : 0;
+            string chanceSource = effect.ContainsKey("ChanceSource") ? effect["ChanceSource"] : powerSource;
+            string chanceScale = effect.ContainsKey("ChanceScale") ? effect["ChanceScale"] : "None";
             string shatterTarget = effect.ContainsKey("ShatterTarget") ? effect["ShatterTarget"] : "None";
             bool shatterDirectional = effect.ContainsKey("ShatterType") && effect["ShatterType"] == "Directional";
             int shatterDensity = effect.ContainsKey("ShatterDensity") ? int.Parse(effect["ShatterDensity"]) : 0;
             double shatterDegree = effect.ContainsKey("ShatterDegree") ? double.Parse(effect["ShatterDegree"].Replace(".", ",")) : 0.5;
             double shatterSpeed = effect.ContainsKey("shatterSpeed") ? double.Parse(effect["shatterSpeed"].Replace(".", ",")) : 2;
             float await = effect.ContainsKey("Await") ? float.Parse(effect["Await"]) : 0;
+            if (random.Next(0, 100) >= chanceBase + chance * (chanceScale == "None" ? 1 : (chanceSource != "None" ? (futureBoard == null ? (chanceSource == "Effector" ? effector : other).Stats()[chanceScale] : (chanceSource == "Effector" ? futureEffector : futureOther).Stats()[chanceScale]) : 1))) continue;
             if (futureBoard != null)
             {
                 if (type == "Damage")

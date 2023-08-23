@@ -736,12 +736,12 @@ public static class Root
         else if (color == "White") return White;
         else if (color == "Red") return Red;
         else if (color == "DangerousRed") return DangerousRed;
-        else if(color == "Poor") return Poor;
-        else if(color == "Common") return Common;
-        else if(color == "Uncommon") return Uncommon;
-        else if(color == "Rare") return Rare;
-        else if(color == "Epic") return Epic;
-        else if(color == "Legendary") return Legendary;
+        else if (color == "Poor") return Poor;
+        else if (color == "Common") return Common;
+        else if (color == "Uncommon") return Uncommon;
+        else if (color == "Rare") return Rare;
+        else if (color == "Epic") return Epic;
+        else if (color == "Legendary") return Legendary;
         else if (color == "Paladin") return Paladin;
         else if (color == "Warrior") return Warrior;
         else if (color == "Rogue") return Rogue;
@@ -751,6 +751,16 @@ public static class Root
         else if (color == "Warlock") return Warlock;
         else if (color == "Hunter") return Hunter;
         else if (color == "Shaman") return Shaman;
+        else if (color == "Fire") return Fire;
+        else if (color == "Water") return Water;
+        else if (color == "Earth") return Earth;
+        else if (color == "Lightning") return Lightning;
+        else if (color == "Arcane") return Arcane;
+        else if (color == "Order") return Order;
+        else if (color == "Frost") return Frost;
+        else if (color == "Shadow") return Shadow;
+        else if (color == "Air") return Air;
+        else if (color == "Decay") return Decay;
         else return Gray;
     }
 
@@ -1600,7 +1610,17 @@ public static class Root
             { Uncommon, new Color32(26, 201, 0, 255) },
             { Rare, new Color32(0, 117, 226, 255) },
             { Epic, new Color32(163, 53, 238, 255) },
-            { Legendary, new Color32(221, 110, 0, 255) }
+            { Legendary, new Color32(221, 110, 0, 255) },
+            { Fire, new Color32(227, 99, 50, 255) },
+            { Water, new Color32(66, 169, 167, 255) },
+            { Earth, new Color32(128, 94, 68, 255) },
+            { Shadow, new Color32(169, 63, 219, 255) },
+            { Lightning, new Color32(63, 158, 245, 255) },
+            { Order, new Color32(241, 229, 125, 255) },
+            { Frost, new Color32(110, 211, 235, 255) },
+            { Decay, new Color32(201, 208, 19, 255) },
+            { Arcane, new Color32(204, 101, 221, 255) },
+            { Air, new Color32(175, 190, 202, 255) },
         },
         new ()
         {
@@ -1655,7 +1675,18 @@ public static class Root
         Uncommon,
         Rare,
         Epic,
-        Legendary
+        Legendary,
+
+        Earth,
+        Fire,
+        Water,
+        Air,
+        Frost,
+        Lightning,
+        Decay,
+        Shadow,
+        Order,
+        Arcane,
     }
 
     public enum CursorType

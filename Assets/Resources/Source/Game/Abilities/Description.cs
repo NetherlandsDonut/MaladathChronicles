@@ -53,7 +53,7 @@ public class DescriptionRegion
 
         string Process(string text)
         {
-            if (text.StartsWith("PowerRange"))
+            if (text.StartsWith("PowerRange("))
             {
                 var split = text.Split("(").Last().Split(",").Select(x => x.Trim().Replace(")", "")).ToArray();
                 if (split.Length == 4)
@@ -63,8 +63,20 @@ public class DescriptionRegion
                             var source = split[0] == "Effector" ? effector : other;
                             var weaponPower = source.WeaponDamage();
                             var scaler = (split[1] == "Melee" ? source.MeleeAttackPower() : (split[1] == "Spell" ? source.SpellPower() : (split[1] == "Ranged" ? source.RangedAttackPower() : 1))) / 10.0 + 1;
-                            return Math.Ceiling(weaponPower.Item1 * scaler * powerScale) + " - " + Math.Ceiling(weaponPower.Item2 * scaler * powerScale);
+                            return Math.Ceiling(weaponPower.Item1 * scaler * powerScale * multiplier) + " - " + Math.Ceiling(weaponPower.Item2 * scaler * powerScale * multiplier);
                         }
+            }
+            else if (text.StartsWith("Chance("))
+            {
+                var split = text.Split("(").Last().Split(",").Select(x => x.Trim().Replace(")", "")).ToArray();
+                if (split.Length == 3)
+                    if (double.TryParse(split[2].Replace(".", ","), out double multiplier))
+                    {
+                        var source = split[0] == "Effector" ? effector : other;
+                        var stats = source.Stats();
+                        var stat = stats.ContainsKey(split[1]) ? stats[split[1]] : 1;
+                        return stat * multiplier + "%";
+                    }
             }
             return text;
         }

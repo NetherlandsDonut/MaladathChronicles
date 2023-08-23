@@ -133,6 +133,7 @@
             "ShatterTarget": "Other",
             "ShatterType": "Directional",
             "ShatterDensity": "2",
+            "ShatterSpeed": "5",
             "ShatterDegree": "0.7",
             "SoundEffect": "AbilityArcaneMissilesImpact1",
             "Await": "4"
@@ -146,6 +147,7 @@
             "ShatterTarget": "Other",
             "ShatterType": "Directional",
             "ShatterDensity": "2",
+            "ShatterSpeed": "5",
             "ShatterDegree": "0.7",
             "SoundEffect": "AbilityArcaneMissilesImpact2",
             "Await": "4"
@@ -159,8 +161,43 @@
             "ShatterTarget": "Other",
             "ShatterType": "Directional",
             "ShatterDensity": "2",
+            "ShatterSpeed": "5",
             "ShatterDegree": "0.7",
             "SoundEffect": "AbilityArcaneMissilesImpact3",
+            "Await": "4"
+          },
+          {
+            "Effect": "Damage",
+            "Chance": "10",
+            "ChanceScale": "Arcane Mastery",
+            "Affect": "Other",
+            "PowerType": "Spell",
+            "PowerSource": "Effector",
+            "PowerScale": "1.3",
+            "ShatterTarget": "Other",
+            "ShatterType": "Directional",
+            "ShatterDensity": "2",
+            "ShatterSpeed": "5",
+            "ShatterDegree": "0.7",
+            "SoundEffect": "AbilityArcaneMissilesImpact2",
+            "Await": "4"
+          },
+          {
+            "Effect": "Damage",
+            "Chance": "10",
+            "ChanceBase": "-100",
+            "ChanceScale": "Arcane Mastery",
+            "Affect": "Other",
+            "PowerType": "Spell",
+            "PowerSource": "Effector",
+            "PowerScale": "1.3",
+            "ShatterTarget": "Other",
+            "ShatterType": "Directional",
+            "ShatterDensity": "2",
+            "ShatterSpeed": "5",
+            "ShatterDegree": "0.7",
+            "SoundEffect": "AbilityArcaneMissilesImpact3",
+            "Await": "4"
           },
           {
             "Effect": "EndTurn"
@@ -175,16 +212,43 @@
           "contents": [
             {
               "Color": "Gray",
-              "Text": "Launches Arcane Missiles at the enemy, causing"
+              "Text": "Launches three Arcane Missiles at the enemy, causing"
+            },
+            {
+              "Color": "Arcane",
+              "Text": "PowerRange(Effector, Spell, 1.3, 1)",
+              "Split": "No"
             },
             {
               "Color": "Gray",
+              "Text": "damage with each one of them totalling to"
+            },
+            {
+              "Color": "Arcane",
               "Text": "PowerRange(Effector, Spell, 1.3, 3)",
               "Split": "No"
             },
             {
               "Color": "Gray",
               "Text": "damage."
+            }
+          ]
+        },
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Gray",
+              "Text": "Caster's Arcane Mastery provides"
+            },
+            {
+              "Color": "Arcane",
+              "Text": "Chance(Effector, Arcane Mastery, 10)",
+              "Split": "No"
+            },
+            {
+              "Color": "Gray",
+              "Text": "chance to launch additional Arcane Missiles."
             }
           ]
         },
@@ -246,7 +310,7 @@
               "Text": "Curses the target with agony, causing"
             },
             {
-              "Color": "Gray",
+              "Color": "Shadow",
               "Text": "PowerRange(Effector, Spell, 1.5, 3)",
               "Split": "No"
             },
@@ -951,7 +1015,7 @@
               "Text": "Sends a shadowy bolt at the enemy, causing"
             },
             {
-              "Color": "Gray",
+              "Color": "Shadow",
               "Text": "PowerRange(Effector, Spell, 2.9, 1)",
               "Split": "No"
             },
@@ -1023,7 +1087,7 @@
               "Text": "Hurls a fiery ball that causes"
             },
             {
-              "Color": "Gray",
+              "Color": "Fire",
               "Text": "PowerRange(Effector, Spell, 2.9, 1)",
               "Split": "No"
             },
@@ -1089,7 +1153,7 @@
               "Text": "Scorches the enemy, making them burn for"
             },
             {
-              "Color": "Gray",
+              "Color": "Fire",
               "Text": "PowerRange(Effector, Spell, 1.3, 1)",
               "Split": "No"
             },
@@ -1278,10 +1342,10 @@
           "contents": [
             {
               "Color": "Gray",
-              "Text": "Launches a bolt of frost at the enemy, causing "
+              "Text": "Launches a bolt of frost at the enemy, causing"
             },
             {
-              "Color": "Gray",
+              "Color": "Frost",
               "Text": "PowerRange(Effector, Spell, 2.9, 1)",
               "Split": "No"
             },
