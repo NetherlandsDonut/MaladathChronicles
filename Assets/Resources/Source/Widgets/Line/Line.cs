@@ -3,6 +3,7 @@ using System.Linq;
 using System.Collections.Generic;
 
 using static Root;
+using static Font;
 
 public class Line : MonoBehaviour
 {

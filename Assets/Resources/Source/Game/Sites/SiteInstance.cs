@@ -1,6 +1,7 @@
 using System.Linq;
 using System.Collections.Generic;
 
+using static Root;
 using static SiteHostileArea;
 
 public class SiteInstance
@@ -25,6 +26,33 @@ public class SiteInstance
 
     public static SiteInstance instance;
     public static List<SiteInstance> instances;
+    
+    public static void PrintInstanceWing(SiteInstance instance, InstanceWing wing)
+    {
+        if (instance.wings.Count > 1)
+            AddHeaderRegion(() =>
+            {
+                AddLine(wing.name, "Gray");
+            });
+        var temp = wing.areas.Select(x => areas.Find(y => x.ContainsKey("AreaName") && y.name == x["AreaName"])).ToList();
+        foreach (var area in temp)
+            AddButtonRegion(() =>
+            {
+                var name = area != null ? area.name : "AREA NOT FOUND";
+                AddLine(name, "Black");
+            },
+            (h) =>
+            {
+                if (area == null) return;
+                var window = CDesktop.windows.Find(x => x.title.StartsWith("HostileArea: "));
+                if (window != null)
+                    if (window.title == "HostileArea: " + area.name) return;
+                    else CloseWindow(window);
+                SpawnWindowBlueprint("HostileArea: " + area.name);
+                SetDesktopBackground("Areas/Area" + (instance.name + area.name).Replace("'", "").Replace(".", "").Replace(" ", ""));
+                SpawnTransition();
+            });
+    }
 }
 
 public class InstanceWing

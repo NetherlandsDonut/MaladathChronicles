@@ -9,6 +9,4 @@ public class Stats
     }
 
     public Dictionary<string, int> stats;
-
-    public Dictionary<string, int> Copy() => stats.ToDictionary(x => x.Key, x => x.Value);
 }

@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 
 using static Root;
-using static Root.Color;
 
 public class Ability
 {
@@ -116,7 +115,7 @@ public class Ability
         else AddHeaderRegion(() =>
         {
             SetRegionAsGroupExtender();
-            AddLine("No description", DarkGray);
+            AddLine("No description", "DarkGray");
         });
     }
 

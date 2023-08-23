@@ -3,9 +3,19 @@ using System.Linq;
 using System.Collections.Generic;
 
 using static Root;
-using static Root.Color;
 using static Root.Anchor;
+
+using static Site;
+using static Font;
+using static Sound;
+using static Cursor;
+using static Talent;
+using static Coloring;
+using static Transport;
+using static CursorRemote;
 using static Serialization;
+using static SiteInstance;
+using static SiteComplex;
 
 public class Starter : MonoBehaviour
 {
@@ -18,8 +28,8 @@ public class Starter : MonoBehaviour
         saveGames = new List<SaveGame>();
         fallingElements = new List<FallingElement>();
         Deserialize(ref SiteHostileArea.areas, "areas");
-        Deserialize(ref SiteInstance.instances, "instances");
-        Deserialize(ref SiteComplex.complexes, "complexes");
+        Deserialize(ref instances, "instances");
+        Deserialize(ref complexes, "complexes");
         Deserialize(ref SiteTown.towns, "towns");
         Deserialize(ref Class.classes, "classes");
         Deserialize(ref Race.races, "races");
@@ -28,8 +38,8 @@ public class Starter : MonoBehaviour
         Deserialize(ref Ability.abilities, "abilities");
         Deserialize(ref Buff.buffs, "buffs");
         SiteHostileArea.areas.ForEach(x => x.Initialise());
-        SiteInstance.instances.ForEach(x => x.Initialise());
-        SiteComplex.complexes.ForEach(x => x.Initialise());
+        instances.ForEach(x => x.Initialise());
+        complexes.ForEach(x => x.Initialise());
         var temp = FindObjectsByType<WindowAnchorRemote>(FindObjectsSortMode.None);
         windowRemoteAnchors = temp.Select(x => (x.name, new Vector2(x.transform.position.x, x.transform.position.y))).ToList();
         for (int i = temp.Length - 1; i >= 0; i--) Destroy(temp[i].gameObject);
@@ -42,10 +52,10 @@ public class Starter : MonoBehaviour
             var type = split[0].Substring(4);
             Blueprint.windowBlueprints.Add(new Blueprint("Site: " + name, () => PrintSite(name, type, windowRemoteAnchors[index].Item2)));
         }
-        for (int i = 0; i < SiteInstance.instances.Count; i++)
+        for (int i = 0; i < instances.Count; i++)
         {
             var index = i;
-            var instance = SiteInstance.instances[index];
+            var instance = instances[index];
             Blueprint.windowBlueprints.Add(
                 new Blueprint(instance.type + ": " + instance.name,
                     () =>
@@ -74,36 +84,36 @@ public class Starter : MonoBehaviour
                         AddPaddingRegion(() =>
                         {
                             SetRegionAsGroupExtender();
-                            AddLine("Level range: ", Gray);
+                            AddLine("Level range: ", "Gray");
                             var range = instance.LevelRange();
-                            AddText(range.Item1 + "", EntityColoredLevel(range.Item1));
-                            AddText(" - ", Gray);
-                            AddText(range.Item2 + "", EntityColoredLevel(range.Item2));
+                            AddText(range.Item1 + "", ColorEntityLevel(range.Item1));
+                            AddText(" - ", "Gray");
+                            AddText(range.Item2 + "", ColorEntityLevel(range.Item2));
                         });
                         foreach (var wing in instance.wings)
-                            PrintRaidWing(instance, wing);
+                            PrintInstanceWing(instance, wing);
                         AddPaddingRegion(() =>
                         {
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
+                            AddLine();
+                            AddLine();
+                            AddLine();
+                            AddLine();
+                            AddLine();
+                            AddLine();
+                            AddLine();
+                            AddLine();
+                            AddLine();
+                            AddLine();
+                            AddLine();
+                            AddLine();
+                            AddLine();
+                            AddLine();
+                            AddLine();
+                            AddLine();
+                            AddLine();
+                            AddLine();
+                            AddLine();
+                            AddLine();
                         });
                     }
                 )
@@ -135,15 +145,12 @@ public class Starter : MonoBehaviour
                         });
                         if (town.transport != null)
                         {
-                            AddHeaderRegion(() =>
-                            {
-                                AddLine("Transportation:", Gray);
-                            });
+                            AddHeaderRegion(() => { AddLine("Transportation:"); });
                             foreach (var transport in town.transport)
                             {
                                 AddButtonRegion(() =>
                                 {
-                                    AddLine(transport.destination, Black);
+                                    AddLine(transport.destination, "Black");
                                     AddSmallButton("Transport" + transport.means, (h) => { });
                                 },
                                 (h) =>
@@ -155,48 +162,44 @@ public class Starter : MonoBehaviour
                                         PlaySound("DesktopTransportPay");
                                     fastTravelCamera = CDesktop.windows.Find(x => x.title == "Site: " + transport.destination).gameObject;
                                 },
-                                (h) => () =>
-                                {
-                                    SetAnchor(Center);
-                                    PrintTransportTooltip(transport);
-                                });
+                                (h) => () => { PrintTransportTooltip(transport); });
                             }
                         }
                         AddPaddingRegion(() =>
                         {
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
+                            AddLine();
+                            AddLine();
+                            AddLine();
+                            AddLine();
+                            AddLine();
+                            AddLine();
+                            AddLine();
+                            AddLine();
+                            AddLine();
+                            AddLine();
+                            AddLine();
+                            AddLine();
+                            AddLine();
+                            AddLine();
+                            AddLine();
+                            AddLine();
+                            AddLine();
+                            AddLine();
+                            AddLine();
+                            AddLine();
+                            AddLine();
+                            AddLine();
+                            AddLine();
+                            AddLine();
                         });
                     }
                 )
             );
         }
-        for (int i = 0; i < SiteComplex.complexes.Count; i++)
+        for (int i = 0; i < complexes.Count; i++)
         {
             var index = i;
-            var complex = SiteComplex.complexes[index];
+            var complex = complexes[index];
             Blueprint.windowBlueprints.Add(
                 new Blueprint("Complex: " + complex.name,
                     () =>
@@ -217,34 +220,31 @@ public class Starter : MonoBehaviour
                                 SwitchDesktop("Map");
                             });
                         });
-                        AddPaddingRegion(() =>
-                        {
-                            AddLine("Sites: ", Gray);
-                        });
+                        AddPaddingRegion(() => { AddLine("Sites: "); });
                         foreach (var site in complex.sites)
-                            PrintComplexSite(complex, site);
+                            PrintComplexSite(site);
                         AddPaddingRegion(() =>
                         {
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
+                            AddLine();
+                            AddLine();
+                            AddLine();
+                            AddLine();
+                            AddLine();
+                            AddLine();
+                            AddLine();
+                            AddLine();
+                            AddLine();
+                            AddLine();
+                            AddLine();
+                            AddLine();
+                            AddLine();
+                            AddLine();
+                            AddLine();
+                            AddLine();
+                            AddLine();
+                            AddLine();
+                            AddLine();
+                            AddLine();
                         });
                     }
                 )
@@ -284,29 +284,26 @@ public class Starter : MonoBehaviour
                         });
                         AddPaddingRegion(() =>
                         {
-                            AddLine("Recommended level: ", Gray);
-                            AddText(area.recommendedLevel + "", EntityColoredLevel(area.recommendedLevel));
+                            AddLine("Recommended level: ", "Gray");
+                            AddText(area.recommendedLevel + "", ColorEntityLevel(area.recommendedLevel));
                         });
                         if (area.bossEncounters != null && area.bossEncounters.Count > 0 && area.bossEncounters.Sum(x => x.requiredProgress) > 0)
                             AddPaddingRegion(() =>
                             {
-                                AddLine("Exploration progress: ", DarkGray);
+                                AddLine("Exploration progress: ", "DarkGray");
                                 var temp = currentSave.siteProgress;
                                 int progress = (int)(currentSave.siteProgress.ContainsKey(area.name) ? (double)currentSave.siteProgress[area.name] / area.bossEncounters.Sum(x => x.requiredProgress) * 100 : 0);
-                                AddText((progress > 100 ? 100 : progress) + "%", ProgressColored(progress));
+                                AddText((progress > 100 ? 100 : progress) + "%", ColorProgress(progress));
                             });
                         if (area.possibleEncounters != null && area.possibleEncounters.Count > 0)
                         {
                             AddPaddingRegion(() =>
                             {
-                                AddLine("Possible encounters:", DarkGray);
+                                AddLine("Possible encounters:", "DarkGray");
                                 foreach (var encounter in area.possibleEncounters)
-                                    AddLine("- " + encounter.who, DarkGray);
+                                    AddLine("- " + encounter.who, "DarkGray");
                             });
-                            AddButtonRegion(() =>
-                            {
-                                AddLine("Explore", Black);
-                            },
+                            AddButtonRegion(() => { AddLine("Explore", "Black"); },
                             (h) =>
                             {
                                 Board.NewBoard(area.RollEncounter(), area);
@@ -318,7 +315,7 @@ public class Starter : MonoBehaviour
                         {
                             AddHeaderRegion(() =>
                             {
-                                AddLine("Bosses: ", Gray);
+                                AddLine("Bosses: ", "Gray");
                                 AddSmallButton("OtherBoss", (h) => { });
                             });
                             foreach (var boss in area.bossEncounters)
@@ -326,7 +323,7 @@ public class Starter : MonoBehaviour
                                 AddButtonRegion(() =>
                                 {
                                     SetRegionBackground(RegionBackgroundType.RedButton);
-                                    AddLine(boss.who, Black);
+                                    AddLine(boss.who, "Black");
                                 },
                                 (h) =>
                                 {
@@ -338,26 +335,26 @@ public class Starter : MonoBehaviour
                         }
                         AddPaddingRegion(() =>
                         {
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
-                            AddLine("", Gray);
+                            AddLine();
+                            AddLine();
+                            AddLine();
+                            AddLine();
+                            AddLine();
+                            AddLine();
+                            AddLine();
+                            AddLine();
+                            AddLine();
+                            AddLine();
+                            AddLine();
+                            AddLine();
+                            AddLine();
+                            AddLine();
+                            AddLine();
+                            AddLine();
+                            AddLine();
+                            AddLine();
+                            AddLine();
+                            AddLine();
                         });
                     }
                 )
@@ -382,6 +379,12 @@ public class Starter : MonoBehaviour
         cursor = FindObjectOfType<Cursor>();
         cursorEnemy = FindObjectOfType<CursorRemote>();
         SpawnDesktopBlueprint("TitleScreen");
+        SpawnTransition(0.1f);
+        SpawnTransition(0.1f);
+        SpawnTransition(0.1f);
+        SpawnTransition(0.1f);
+        SpawnTransition(0.1f);
+        SpawnTransition(0.1f);
         Destroy(gameObject);
     }
 }

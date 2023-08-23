@@ -15,13 +15,13 @@ public class CursorRemote : MonoBehaviour
     {
         if (fadeOut)
         {
-            render.color = new UnityEngine.Color(render.color.r, render.color.g, render.color.b, render.color.a - 0.04f);
-            if (render.color.a <= 0) { render.color = new UnityEngine.Color(render.color.r, render.color.g, render.color.b, 0); fadeOut = false; }
+            render.color = new Color(render.color.r, render.color.g, render.color.b, render.color.a - 0.04f);
+            if (render.color.a <= 0) { render.color = new Color(render.color.r, render.color.g, render.color.b, 0); fadeOut = false; }
         }
         else if (fadeIn)
         {
-            render.color = new UnityEngine.Color(render.color.r, render.color.g, render.color.b, render.color.a + 0.04f);
-            if (render.color.a >= 1) { render.color = new UnityEngine.Color(render.color.r, render.color.g, render.color.b, 1); fadeIn = false; }
+            render.color = new Color(render.color.r, render.color.g, render.color.b, render.color.a + 0.04f);
+            if (render.color.a >= 1) { render.color = new Color(render.color.r, render.color.g, render.color.b, 1); fadeIn = false; }
         }
         if (target == Vector3.zero) return;
         transform.position = Vector3.Lerp(transform.position, target, Time.deltaTime * 7);
@@ -37,4 +37,6 @@ public class CursorRemote : MonoBehaviour
     }
 
     public void Move(Vector3 where) => target = where;
+
+    public static CursorRemote cursorEnemy;
 }

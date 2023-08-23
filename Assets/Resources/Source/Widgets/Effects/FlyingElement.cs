@@ -1,5 +1,7 @@
 using UnityEngine;
 
+using static Shatter;
+
 public class FlyingElement : MonoBehaviour
 {
     public bool turn;
@@ -24,5 +26,16 @@ public class FlyingElement : MonoBehaviour
         else if (turn && !Board.board.temporaryElementsPlayer.Contains(gameObject) || !turn && !Board.board.temporaryElementsEnemy.Contains(gameObject))
             transform.position = Vector3.Lerp(transform.position, new Vector3(transform.position.x, -162.5f - 10 - 23 * Mathf.Abs(index % rowAmount - rowAmount)), Time.deltaTime * flySpeed);
         else transform.position = Vector3.Lerp(transform.position, turn ? new Vector3(-204.5f + 23 * (index / rowAmount), -162.5f + 23 * (index % rowAmount)) : new Vector3(204.5f - 23 * (index / rowAmount), -162.5f + 23 * (index % rowAmount)), Time.deltaTime * flySpeed);
+    }
+
+    public static GameObject SpawnFlyingElement(double speed, double amount, Vector3 position, string sprite, string block = "0000")
+    {
+        var element = Instantiate(Resources.Load<GameObject>("Prefabs/PrefabElement"));
+        element.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/Buttons/" + sprite);
+        element.transform.parent = Board.board.window.desktop.transform;
+        element.transform.position = position;
+        element.GetComponent<FlyingElement>().Initiate();
+        SpawnShatter(speed, amount, position, sprite, block);
+        return element;
     }
 }

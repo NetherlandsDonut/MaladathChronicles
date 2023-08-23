@@ -2,7 +2,8 @@ using UnityEngine;
 using System.Collections.Generic;
 
 using static Root;
-using static Root.Color;
+using static Font;
+using static Coloring;
 
 public class InputText : MonoBehaviour
 {
@@ -41,7 +42,7 @@ public class InputText : MonoBehaviour
         var glyph = GetGlyph(character);
         newCharacter.GetComponent<SpriteRenderer>().sortingLayerName = inputLine.region.regionGroup.window.layer;
         newCharacter.GetComponent<SpriteRenderer>().sprite = glyph;
-        newCharacter.GetComponent<SpriteRenderer>().color = GetColor(character + "" == markerCharacter ? Gray : LightGray);
+        newCharacter.GetComponent<SpriteRenderer>().color = colors[character + "" == markerCharacter ? "Gray" : "LightGray"];
         if (character + "" == markerCharacter) newCharacter.AddComponent<Blinking>();
         else
         {

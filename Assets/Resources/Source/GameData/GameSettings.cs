@@ -4,13 +4,17 @@ public class GameSettings
     public GameSettings()
     {
         shadows = new Bool(true);
+        pixelPerfectVision = new Bool(false);
+
         rarityIndicators = new Bool(true);
         bigRarityIndicators = new Bool(true);
-        upgradeIndicators = new Bool(true);
-        newSlotIndicators = new Bool(true);
+        upgradeIndicators = new Bool(false);
+        newSlotIndicators = new Bool(false);
     }
 
     public Bool shadows;
+    public Bool pixelPerfectVision;
+
     public Bool rarityIndicators;
     public Bool bigRarityIndicators;
     public Bool upgradeIndicators;

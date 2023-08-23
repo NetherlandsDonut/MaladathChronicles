@@ -8,32 +8,19 @@ public class RegionGroup : MonoBehaviour
     public Window window;
 
     //Children
-    public RegionList regionList;
     public List<Region> regions;
     public Region LBRegion, EXTRegion;
 
     //Fields
-    public int setWidth, setHeight, currentHeight, pagination;
+    public int setWidth, setHeight, currentHeight;
 
-    //For header group
-    public void Initialise(Window window)
+    public void Initialise(Window window, bool header)
     {
         regions = new();
         this.window = window;
-
-        window.headerGroup = this;
+        if (header) window.headerGroup = this;
+        else window.regionGroups.Add(this);
         window.LBRegionGroup = this;
-    }
-
-    //For normal groups
-    public void Initialise(Window window, int insert)
-    {
-        regions = new();
-        this.window = window;
-
-        window.LBRegionGroup = this;
-        if (insert == -1) window.regionGroups.Add(this);
-        else window.regionGroups.Insert(insert, this);
     }
 
     public int PlannedHeight()

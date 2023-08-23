@@ -2475,6 +2475,18 @@
     ]
   },
   {
+    "name": "Twilight Trappings",
+    "setBonuses": [
+      {
+        "requiredPieces": 3,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
     "name": "Shard of the Gods",
     "setBonuses": [
       {
@@ -2488,6 +2500,30 @@
   },
   {
     "name": "The Twin Blades of Hakkari",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },
+  {
+    "name": "Prayer of the Primal",
+    "setBonuses": [
+      {
+        "requiredPieces": 2,
+        "description": [
+          "+10 Stamina and many different stats"
+        ],
+        "abilitiesProvided": []
+      }
+    ]
+  },,
+  {
+    "name": "Major Mojo Infusion",
     "setBonuses": [
       {
         "requiredPieces": 2,

@@ -2,6 +2,9 @@ using UnityEngine;
 using System.Collections.Generic;
 
 using static Root;
+using static Buff;
+using static Sound;
+using static Shatter;
 
 public class Event
 {
@@ -27,7 +30,7 @@ public class Event
             string shatterTarget = effect.ContainsKey("ShatterTarget") ? effect["ShatterTarget"] : "None";
             bool shatterDirectional = effect.ContainsKey("ShatterType") && effect["ShatterType"] == "Directional";
             int shatterDensity = effect.ContainsKey("ShatterDensity") ? int.Parse(effect["ShatterDensity"]) : 0;
-            double shatterDegree = effect.ContainsKey("ShatterDegree") ? double.Parse(effect["ShatterDegree"].Replace(".", ",")) : 0.5;
+            double shatterDegree = effect.ContainsKey("ShatterDegree") ? 1 : 1;
             double shatterSpeed = effect.ContainsKey("shatterSpeed") ? double.Parse(effect["shatterSpeed"].Replace(".", ",")) : 2;
             float await = effect.ContainsKey("Await") ? float.Parse(effect["Await"]) : 0;
             var rand = random.Next(0, 100);
@@ -79,7 +82,7 @@ public class Event
                     if (affect == "Effector" || affect == "Other")
                     {
                         var target = affect == "Effector" ? futureEffector : futureOther;
-                        target.AddBuff(Buff.buffs.Find(x => x.name == buffName), buffDuration);
+                        target.AddBuff(buffs.Find(x => x.name == buffName), buffDuration);
                         futureBoard.CallEvents(target, futureBoard, new() { { "Trigger", "BuffAdd" }, { "Triggerer", "Effector" }, { "BuffName", buffName } });
                         futureBoard.CallEvents(target == futureEffector ? futureOther : futureEffector, futureBoard, new() { { "Trigger", "BuffAdd" }, { "Triggerer", "Other" }, { "BuffName", buffName } });
                     }
@@ -153,7 +156,7 @@ public class Event
                         if (affect == "Effector" || affect == "Other")
                         {
                             var target = affect == "Effector" ? effector : other;
-                            target.AddBuff(Buff.buffs.Find(x => x.name == buffName), buffDuration, SpawnBuff(new Vector3(affect == "Other" ? (board.playerTurn ? 166 : -302) : (board.playerTurn ? -302 : 166), 142), icon, target));
+                            target.AddBuff(buffs.Find(x => x.name == buffName), buffDuration, SpawnBuffObject(new Vector3(affect == "Other" ? (board.playerTurn ? 166 : -302) : (board.playerTurn ? -302 : 166), 142), icon, target));
                             board.CallEvents(target, new() { { "Trigger", "BuffAdd" }, { "Triggerer", "Effector" }, { "BuffName", buffName } });
                             board.CallEvents(target == effector ? other : effector, new() { { "Trigger", "BuffAdd" }, { "Triggerer", "Other" }, { "BuffName", buffName } });
                         }
@@ -163,7 +166,7 @@ public class Event
                         if (affect == "Effector" || affect == "Other")
                         {
                             var target = affect == "Effector" ? effector : other;
-                            target.RemoveBuff(target.buffs.Find(x => x.Item1 == Buff.buffs.Find(x => x.name == buffName)));
+                            target.RemoveBuff(target.buffs.Find(x => x.Item1 == buffs.Find(x => x.name == buffName)));
                             board.CallEvents(target, new() { { "Trigger", "BuffRemove" }, { "Triggerer", "Effector" }, { "BuffName", buffName } });
                             board.CallEvents(target == effector ? other : effector, new() { { "Trigger", "BuffRemove" }, { "Triggerer", "Other" }, { "BuffName", buffName } });
                         }
@@ -179,7 +182,7 @@ public class Event
                     }
                     if (shatterTarget != "None")
                         for (int i = 0; i < shatterDensity; i++)
-                            SpawnShatter(shatterSpeed, shatterDegree, new Vector3(shatterTarget == "Other" ? (board.playerTurn ? 150 : -318) : (board.playerTurn ? -318 : 150), 122), icon, shatterDirectional, shatterTarget == "Other" ? (board.playerTurn ? "1000" : "1001") : (board.playerTurn ? "1001" : "1000"));
+                            SpawnShatter(shatterSpeed, shatterDegree, new Vector3(shatterTarget == "Other" ? (board.playerTurn ? 150 : -318) : (board.playerTurn ? -318 : 150), 122), icon, shatterDirectional ? shatterTarget == "Other" ? (board.playerTurn ? "1000" : "1001") : (board.playerTurn ? "1001" : "1000") : "0000");
                     if (effect.ContainsKey("SoundEffect"))
                         PlaySound(effect["SoundEffect"]);
                 });

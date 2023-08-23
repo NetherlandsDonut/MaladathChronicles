@@ -1,5 +1,9 @@
 using UnityEngine;
 
+using static Root;
+using static Cursor;
+using static InputLine;
+
 public class InputCharacter : MonoBehaviour
 {
     //Parent
@@ -14,10 +18,10 @@ public class InputCharacter : MonoBehaviour
     {
         var desktop = inputText.inputLine.region.regionGroup.window.desktop;
         var newMarker = inputText.characters.IndexOf(gameObject) + 1;
-        Root.cursor.SetCursor(Root.CursorType.None);
+        cursor.SetCursor(CursorType.None);
         UnityEngine.Cursor.lockState = CursorLockMode.Locked;
-        Root.inputLineMarker = newMarker > Root.inputLineMarker && Root.currentInputLine != "" ? newMarker - 1 : newMarker;
-        Root.currentInputLine = inputText.inputLine.FindID();
+        inputLineMarker = newMarker > inputLineMarker && inputLine != null ? newMarker - 1 : newMarker;
+        inputLine = inputText.inputLine;
         desktop.windows.ForEach(x => x.Rebuild());
     }
 }

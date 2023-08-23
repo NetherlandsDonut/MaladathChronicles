@@ -13,13 +13,6 @@ public class ItemSet
 
 public class SetBonus
 {
-    public SetBonus(int requiredPieces, List<string> description, List<string> abilitiesProvided)
-    {
-        this.requiredPieces = requiredPieces;
-        this.description = description;
-        this.abilitiesProvided = abilitiesProvided;
-    }
-
     public int requiredPieces;
     public List<string> description;
     public List<string> abilitiesProvided;

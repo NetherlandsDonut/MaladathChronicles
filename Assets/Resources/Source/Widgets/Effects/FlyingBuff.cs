@@ -1,8 +1,8 @@
 using System;
 using UnityEngine;
-using System.Linq;
 
-using static Root;
+using static Sound;
+using static Cursor;
 
 public class FlyingBuff : MonoBehaviour
 {

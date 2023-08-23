@@ -1,5 +1,12 @@
+using UnityEngine;
 using System.Linq;
 using System.Collections.Generic;
+
+using static Root;
+using static Root.Anchor;
+
+using static Sound;
+using static Coloring;
 
 public class Item
 {
@@ -8,16 +15,6 @@ public class Item
     public List<string> possibleItems, alternateItems, abilities, classes;
     public double price, speed;
     public Stats stats;
-
-    public static Dictionary<string, Root.Color> rarityColors = new()
-    {
-        { "Poor", Root.Color.Poor },
-        { "Common", Root.Color.Common },
-        { "Uncommon", Root.Color.Uncommon },
-        { "Rare", Root.Color.Rare },
-        { "Epic", Root.Color.Epic },
-        { "Legendary", Root.Color.Legendary },
-    };
 
     public string ItemSound(string soundType)
     {
@@ -121,14 +118,6 @@ public class Item
         entity.abilities = entity.abilities.Distinct().ToList();
     }
 
-    public List<string> PossibleSlots()
-    {
-        if (type == "Two Handed") return new() { "Main Hand" };
-        else if (type == "Off Hand") return new() { "Off Hand" };
-        else if (type == "One Handed") return new() { "Main Hand", "Off Hand" };
-        else return new() { type };
-    }
-
     public void Equip(Entity entity, bool secondSlot = false)
     {
         var index = entity.inventory.items.IndexOf(this);
@@ -163,124 +152,142 @@ public class Item
         }
         else
         {
-            if (type == null) UnityEngine.Debug.Log(name);
+            if (type == null) Debug.Log(name);
             entity.Unequip(new() { type }, index);
             Equip(entity, type);
         }
     }
 
+    public static void PrintEquipmentItem(Item item)
+    {
+        AddRegionGroup();
+        AddPaddingRegion(() =>
+        {
+            AddBigButton(item == null ? "OtherEmpty" : item.icon,
+            (h) =>
+            {
+
+            },
+            (h) => () =>
+            {
+                if (item == null) return;
+                SetAnchor(BottomRight);
+                PrintItemTooltip(item);
+            });
+            if (item != null) AddBigButtonOverlay("OtherRarity" + item.rarity + (settings.bigRarityIndicators.Value() ? "Big" : ""));
+        });
+    }
+
+    public static void PrintInventoryItem(Item item)
+    {
+        AddBigButton(item.icon,
+            (h) =>
+            {
+                if (item.CanEquip(currentSave.player))
+                {
+                    PlaySound(item.ItemSound("PickUp"));
+                    item.Equip(currentSave.player);
+                    CloseWindow(h.window);
+                    SpawnWindowBlueprint("Inventory");
+                    CloseWindow("PlayerEquipmentInfo");
+                    SpawnWindowBlueprint("PlayerEquipmentInfo");
+                }
+            },
+            (h) => () =>
+            {
+                if (item == null) return;
+                SetAnchor(Center);
+                PrintItemTooltip(item);
+            }
+        );
+        if (settings.rarityIndicators.Value())
+            AddBigButtonOverlay("OtherRarity" + item.rarity + (settings.bigRarityIndicators.Value() ? "Big" : ""), 0, 2);
+        if (currentSave.player.HasItemEquipped(item.name))
+        {
+            SetBigButtonToGrayscale();
+            AddBigButtonOverlay("OtherGridBlurred", 0, 2);
+        }
+        if (item.CanEquip(currentSave.player) && currentSave.player.IsItemNewSlot(item) && (settings.upgradeIndicators.Value() || settings.newSlotIndicators.Value()))
+            AddBigButtonOverlay(settings.newSlotIndicators.Value() ? "OtherItemNewSlot" : "OtherItemUpgrade", 0, 2);
+        else if (settings.upgradeIndicators.Value() && item.CanEquip(currentSave.player) && currentSave.player.IsItemAnUpgrade(item))
+            AddBigButtonOverlay("OtherItemUpgrade", 0, 2);
+    }
+
+    public static void PrintItemTooltip(Item item)
+    {
+        AddHeaderGroup();
+        SetRegionGroupWidth(188);
+        var split = item.name.Split(", ");
+        AddHeaderRegion(() => { AddLine(split[0], item.rarity); });
+        if (split.Length > 1) AddHeaderRegion(() => { AddLine("\"" + split[1] + "\"", item.rarity); });
+        AddPaddingRegion(() =>
+        {
+            if (item.armorClass != null)
+            {
+                AddLine(item.armorClass + " " + item.type);
+                AddLine(item.armor + " Armor");
+            }
+            else if (item.maxDamage != 0)
+            {
+                AddLine(item.type + " " + item.detailedType);
+                AddLine(item.minDamage + " - " + item.maxDamage + " Damage");
+            }
+            else
+                AddLine(item.type);
+        });
+        if (item.stats.stats.Count > 0)
+            AddPaddingRegion(() =>
+            {
+                foreach (var stat in item.stats.stats)
+                    AddLine("+" + stat.Value + " " + stat.Key);
+            });
+        if (item.classes != null)
+            AddHeaderRegion(() =>
+            {
+                AddLine("Classes: ", "DarkGray");
+                foreach (var spec in item.classes)
+                {
+                    AddText(spec, spec);
+                    if (spec != item.classes.Last())
+                        AddText(", ", "DarkGray");
+                }
+            });
+        if (item.set != null)
+        {
+            AddHeaderRegion(() =>
+            {
+                AddLine("Part of ", "DarkGray");
+                AddText(item.set, "Gray");
+            });
+            var set = ItemSet.itemSets.Find(x => x.name == item.set);
+            if (set == null)
+            {
+                Debug.Log("ERROR 002: Set not found \"" + item.set + "\"");
+                return;
+            }
+            AddPaddingRegion(() =>
+            {
+                foreach (var bonus in set.setBonuses)
+                {
+                    var howMuch = set.EquippedPieces(currentSave.player);
+                    bool has = howMuch >= bonus.requiredPieces;
+                    AddLine((has ? bonus.requiredPieces : howMuch) + "/" + bonus.requiredPieces + " Set: ", has ? "Uncommon" : "DarkGray");
+                    if (bonus.description.Count > 0)
+                        AddText(bonus.description[0], has ? "Uncommon" : "DarkGray");
+                    for (int i = 0; i < bonus.description.Count - 1; i++)
+                        AddLine(bonus.description[0], has ? "Uncommon" : "DarkGray");
+                }
+            });
+        }
+        AddHeaderRegion(() =>
+        {
+            AddLine("Required level: ", "DarkGray");
+            AddText(item.lvl + "", ColorItemRequiredLevel(item.lvl));
+        });
+        PrintPriceRegion(item.price);
+    }
+
     public static Item GetItem(string name) => items.Find(x => x.name == name);
 
     public static List<Item> items;
-
-    //public static List<Item> items = new()
-    //{
-    //    new Item("Rare",
-    //        "Ukorz Sandscalp Loot",
-    //        "ItemBag15",
-    //        "LootBox",
-    //        new List<string>
-    //        {
-    //            "Big Bad Pauldrons",
-    //            "Ripsaw",
-    //            "The Chief\'s Enforcer",
-    //            "Embrace of The Lycan",
-    //            "Jang\'Thraze",
-    //        },
-    //        new List<string>
-    //        {
-    //            "Tracker's Headband",
-    //            "Tracker's Leggins",
-    //            "Tracker's Shoulderpads",
-    //            "Brigade Breastplate",
-    //            "Brigade Leggins",
-    //            "Warmonger's Belt",
-    //            "Warmonger's Cloak",
-    //            "Warmonger's Gauntlets",
-    //            "Cabalist Helm",
-    //            "Cabalist Spaulders",
-    //            "Cabalist Belt",
-    //            "Cabalist Gloves",
-    //            "Cabalist Boots",
-    //            "Royal Headband",
-    //            "Royal Trousers",
-    //            "Royal Amice",
-    //            "Regal Robe",
-    //            "Regal Armor",
-    //            "Chieftain's Cloak",
-    //            "Embossed Plate Armor",
-    //            "Gossamer Headpiece",
-    //            "Gossamer Shoulderpads",
-    //            "Gossamer Pants",
-    //            "Gossamer Belt",
-    //            "Gossamer Gloves",
-    //            "Gossamer Boots",
-    //            "Shriveled Heart",
-    //            "Champion's Helmet",
-    //            "Champion's Pauldrons",
-    //            "Champion's Greaves",
-    //            "Champion's Girdle",
-    //            "Champion's Gauntlets",
-    //            "Gothic Plate Helmet",
-    //            "Gothic Plate Spaulders",
-    //            "Gothic Plate Gauntlets",
-    //            "Gothic Plate Girdle",
-    //            "Gothic Plate Leggins",
-    //            "Gothic Sabatons",
-    //            "Heraldic Cloak",
-    //        }
-    //    ),
-    //    new Item("Rare",
-    //        "Witch Doctor Zum'rah Loot",
-    //        "ItemBag15",
-    //        "LootBox",
-    //        new List<string>
-    //        {
-    //            "Jumanza Grips",
-    //            "Zum'Rah's Vexing Cane",
-    //        },
-    //        new List<string>
-    //        {
-    //            "Tracker's Headband",
-    //            "Tracker's Leggins",
-    //            "Tracker's Shoulderpads",
-    //            "Brigade Breastplate",
-    //            "Brigade Leggins",
-    //            "Warmonger's Belt",
-    //            "Warmonger's Cloak",
-    //            "Warmonger's Gauntlets",
-    //            "Cabalist Helm",
-    //            "Cabalist Spaulders",
-    //            "Cabalist Belt",
-    //            "Cabalist Gloves",
-    //            "Cabalist Boots",
-    //            "Royal Headband",
-    //            "Royal Trousers",
-    //            "Royal Amice",
-    //            "Regal Robe",
-    //            "Regal Armor",
-    //            "Chieftain's Cloak",
-    //            "Embossed Plate Armor",
-    //            "Gossamer Headpiece",
-    //            "Gossamer Shoulderpads",
-    //            "Gossamer Pants",
-    //            "Gossamer Belt",
-    //            "Gossamer Gloves",
-    //            "Gossamer Boots",
-    //            "Shriveled Heart",
-    //            "Champion's Helmet",
-    //            "Champion's Pauldrons",
-    //            "Champion's Greaves",
-    //            "Champion's Girdle",
-    //            "Champion's Gauntlets",
-    //            "Gothic Plate Helmet",
-    //            "Gothic Plate Spaulders",
-    //            "Gothic Plate Gauntlets",
-    //            "Gothic Plate Girdle",
-    //            "Gothic Plate Leggins",
-    //            "Gothic Sabatons",
-    //            "Heraldic Cloak",
-    //        }
-    //    )
-    //};
 }

@@ -2,6 +2,7 @@ using System.Linq;
 using UnityEngine;
 
 using static Root;
+using static Font;
 
 public class InputLine : MonoBehaviour
 {
@@ -36,7 +37,7 @@ public class InputLine : MonoBehaviour
         this.region.inputLine = this;
     }
 
-    public string FindID() => CDesktop.globalInputLines.ToList().Find(x => x.Value == this).Key;
-
     public int Length() => font.Length(text.text.Value());
+
+    public static InputLine inputLine;
 }

@@ -3,6 +3,8 @@ using UnityEngine;
 using static Root;
 using static Root.CursorType;
 
+using static Cursor;
+
 public class Highlightable : MonoBehaviour
 {
     public Region region;

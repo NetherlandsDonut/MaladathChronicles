@@ -3,6 +3,9 @@ using UnityEngine;
 using System.Collections.Generic;
 
 using static Root;
+using static Sound;
+using static Cursor;
+using static InputLine;
 
 public class Desktop : MonoBehaviour
 {
@@ -19,25 +22,11 @@ public class Desktop : MonoBehaviour
     public GameObject screenlock;
     public bool screenLocked;
 
-    //Global markers
-    public Dictionary<string, Window> globalWindows;
-    public Dictionary<string, RegionGroup> globalRegionGroups;
-    public Dictionary<string, Region> globalRegions;
-    public Dictionary<string, Line> globalLines;
-    public Dictionary<string, LineText> globalTexts;
-    public Dictionary<string, InputLine> globalInputLines;
-
     public void Initialise(string title)
     {
         this.title = title;
         windows = new();
         hotkeys = new();
-        globalWindows = new();
-        globalRegionGroups = new();
-        globalRegions = new();
-        globalLines = new();
-        globalTexts = new();
-        globalInputLines = new();
     }
 
     public Window FocusedWindow() => windows.Count < 1 ? null : windows[0];
@@ -180,44 +169,36 @@ public class Desktop : MonoBehaviour
                         tooltip.SpawnTooltip();
                 }
                 if (heldKeyTime > 0) heldKeyTime -= Time.deltaTime;
-                if (currentInputLine != "" && globalInputLines.ContainsKey(currentInputLine))
+                if (inputLine != null)
                 {
                     var didSomething = false;
-                    var CIL = globalInputLines[currentInputLine];
-                    var length = CIL.text.text.Value().Length;
+                    var length = inputLine.text.text.Value().Length;
                     if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Return))
                     {
-                        currentInputLine = "";
+                        inputLine = null;
                         cursor.SetCursor(CursorType.Default);
                         UnityEngine.Cursor.lockState = CursorLockMode.None;
                         if (Input.GetKeyDown(KeyCode.Return))
                         {
-                            CIL.text.text.Confirm();
+                            inputLine.text.text.Confirm();
                             windows.ForEach(x => x.Rebuild());
                         }
                         else
                         {
-                            CIL.text.text.Reset();
+                            inputLine.text.text.Reset();
                             didSomething = true;
                         }
                     }
-                    //else if (Input.GetKeyDown(KeyCode.Delete) && inputLineMarker < )
-                    //{
-                    //    heldArrowKeyTime = 0.4f;
-                    //    Debug.Log(Input.inputString);
-                    //    inputLineMarker--;
-                    //    didSomething = true;
-                    //}
                     else if (Input.GetKeyDown(KeyCode.Delete) && inputLineMarker < length)
                     {
                         heldKeyTime = 0.4f;
-                        CIL.text.text.RemoveNextOne(inputLineMarker);
+                        inputLine.text.text.RemoveNextOne(inputLineMarker);
                         didSomething = true;
                     }
                     else if (Input.GetKey(KeyCode.Delete) && inputLineMarker < length && heldKeyTime <= 0)
                     {
                         heldKeyTime = 0.0245f;
-                        CIL.text.text.RemoveNextOne(inputLineMarker);
+                        inputLine.text.text.RemoveNextOne(inputLineMarker);
                         didSomething = true;
                     }
                     else if (Input.GetKeyDown(KeyCode.LeftArrow) && inputLineMarker > 0)
@@ -245,24 +226,24 @@ public class Desktop : MonoBehaviour
                         didSomething = true;
                     }
                     else foreach (char c in Input.inputString)
+                    {
+                        var a = inputLineMarker;
+                        if (c == '\b')
                         {
-                            var a = inputLineMarker;
-                            if (c == '\b')
-                            {
-                                if (inputLineMarker > 0 && length > 0)
-                                    CIL.text.text.RemovePreviousOne(inputLineMarker--);
-                            }
-                            else if (c != '\n' && c != '\r' && CIL.CheckInput(c))
-                            {
-                                CIL.text.text.Insert(inputLineMarker, c);
-                                inputLineMarker++;
-                            }
-                            if (length == CIL.text.text.Value().Length)
-                                inputLineMarker = a;
-                            didSomething = true;
+                            if (inputLineMarker > 0 && length > 0)
+                                inputLine.text.text.RemovePreviousOne(inputLineMarker--);
                         }
+                        else if (c != '\n' && c != '\r' && inputLine.CheckInput(c))
+                        {
+                            inputLine.text.text.Insert(inputLineMarker, c);
+                            inputLineMarker++;
+                        }
+                        if (length == inputLine.text.text.Value().Length)
+                            inputLineMarker = a;
+                        didSomething = true;
+                    }
                     if (didSomething)
-                        CIL.region.regionGroup.window.Rebuild();
+                        inputLine.region.regionGroup.window.Rebuild();
                 }
                 else
                 {

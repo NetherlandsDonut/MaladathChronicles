@@ -1,14 +1,13 @@
 using UnityEngine;
 
 using static Root;
+using static Sound;
 
 public class FallingElement : MonoBehaviour
 {
     public int howFar;
     public float timeAlive;
     public Vector3 start, destination;
-
-    public static int fallSpeed = 1;
 
     public void Initiate(int howFar)
     {
@@ -34,4 +33,6 @@ public class FallingElement : MonoBehaviour
             Destroy(this);
         }
     }
+
+    public static int fallSpeed = 1;
 }

@@ -6,6 +6,8 @@ using static Root;
 using static Root.Anchor;
 using static Root.RegionBackgroundType;
 
+using static InputLine;
+
 public class Window : MonoBehaviour
 {
     //Parent
@@ -41,15 +43,6 @@ public class Window : MonoBehaviour
         desktop.windows.Insert(0, this);
         desktop.Reindex();
     }
-
-    //public void MaxRowWidth()
-    //{
-    //    var rows = new List<List<RegionGroup>>() { new List<RegionGroup> { highestGroup } };
-    //    for (int i = 1; rows[i - 1].Sum(x => x.attachedGroup.Count) > 0; i++)
-    //        rows.Add(rows[i - 1].SelectMany(x => x.attachedGroup).ToList());
-    //    var allofthem = rows.Select(x => x.Sum(y => y.regions.Max(z => z.AutoWidth()))).ToList();
-    //    highestGroup.SetWidths(rows.Max(x => x.Sum(y => y.regions.Max(z => z.AutoWidth()))));
-    //}
 
     public int PlannedHeight(bool includeHeader = false)
     {
@@ -213,17 +206,6 @@ public class Window : MonoBehaviour
 
         #region CREATING REGIONS
 
-        //Draw all regions in the regionlist
-        if (regionGroup.regionList != null)
-            for (int i = 0; i < regionGroup.regionList.regions.Count; i++)
-            {
-                regionGroup.LBRegion = regionGroup.regionList.regions[i];
-                regionGroup.LBRegion.ResetContent();
-                var index = i + regionGroup.pagination * regionGroup.regionList.regions.Count;
-                if (index < regionGroup.regionList.count()) regionGroup.regionList.inDraw(index);
-                else regionGroup.regionList.outDraw(index);
-            }
-
         //Draw all the regions
         foreach (var region in regionGroup.regions)
         {
@@ -240,11 +222,6 @@ public class Window : MonoBehaviour
         #endregion
 
         #region DRAWING REGION CONTENTS
-
-        //Update dropdown contents
-        foreach (var region in regionGroup.regions)
-            if (region.dropdown != null)
-                region.lines[0].texts[0].SetText(region.dropdown.headerChange(region.dropdown.currentChoice));
 
         //Draws region lines and text
         foreach (var region in regionGroup.regions)
@@ -283,7 +260,6 @@ public class Window : MonoBehaviour
                 var load = Resources.Load<Sprite>("Sprites/Building/Buttons/" + smallButton.buttonType);
                 smallButton.GetComponent<SpriteRenderer>().sprite = load == null ? Resources.Load<Sprite>("Sprites/Building/Buttons/OtherEmpty") : load;
                 smallButton.GetComponent<SpriteRenderer>().sortingLayerName = layer;
-                //if (load == null) smallButton.GetComponent<SpriteRenderer>().sortingOrder = -1;
                 smallButton.transform.localPosition = new Vector3(regionGroup.AutoWidth() + region.xExtend + 1.5f - 19 * region.smallButtons.IndexOf(smallButton), -10.5f, 0.1f);
                 if (smallButton.gameObject.GetComponent<BoxCollider2D>() == null)
                     smallButton.gameObject.AddComponent<BoxCollider2D>();
@@ -293,7 +269,6 @@ public class Window : MonoBehaviour
                     smallButton.frame = new GameObject("ButtonFrame", typeof(SpriteRenderer));
                 smallButton.frame.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/Borders/ButtonFrame");
                 smallButton.frame.GetComponent<SpriteRenderer>().sortingLayerName = layer;
-                //if (load == null) smallButton.frame.GetComponent<SpriteRenderer>().sortingOrder = -1;
                 smallButton.frame.transform.parent = smallButton.transform;
                 smallButton.frame.transform.localPosition = new Vector3();
             }
@@ -308,7 +283,6 @@ public class Window : MonoBehaviour
                 var load = Resources.Load<Sprite>("Sprites/Building/BigButtons/" + bigButton.buttonType);
                 bigButton.GetComponent<SpriteRenderer>().sprite = load == null ? Resources.Load<Sprite>("Sprites/Building/BigButtons/OtherEmpty") : load;
                 bigButton.GetComponent<SpriteRenderer>().sortingLayerName = layer;
-                //if (load == null) bigButton.GetComponent<SpriteRenderer>().sortingOrder = -1;
                 bigButton.transform.localPosition = new Vector3(20 + 38 * region.bigButtons.IndexOf(bigButton), -20f, 0.1f);
                 if (bigButton.gameObject.GetComponent<BoxCollider2D>() == null)
                     bigButton.gameObject.AddComponent<BoxCollider2D>();
@@ -318,7 +292,6 @@ public class Window : MonoBehaviour
                     bigButton.frame = new GameObject("BigButtonFrame", typeof(SpriteRenderer));
                 bigButton.frame.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/Borders/BigButtonFrame");
                 bigButton.frame.GetComponent<SpriteRenderer>().sortingLayerName = layer;
-                //if (load == null) bigButton.frame.GetComponent<SpriteRenderer>().sortingOrder = -1;
                 bigButton.frame.transform.parent = bigButton.transform;
                 bigButton.frame.transform.localPosition = new Vector3();
             }
@@ -329,6 +302,7 @@ public class Window : MonoBehaviour
             if (region.checkbox != null)
             {
                 region.checkbox.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/Checkboxes/" + (region.backgroundType == Handle || region.backgroundType == Button ? "Dark" : "Bright") + (region.checkbox.value.Value() ? "On" : "Off"));
+                region.checkbox.GetComponent<SpriteRenderer>().sortingLayerName = layer;
                 region.checkbox.transform.localPosition = new Vector3(10.5f, -10.5f, 0.1f);
                 if (region.checkbox.gameObject.GetComponent<BoxCollider2D>() == null)
                     region.checkbox.gameObject.AddComponent<BoxCollider2D>();
@@ -337,11 +311,12 @@ public class Window : MonoBehaviour
                 if (region.checkbox.frame == null)
                     region.checkbox.frame = new GameObject("CheckboxFrame", typeof(SpriteRenderer));
                 region.checkbox.frame.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/Borders/CheckboxFrame");
+                region.checkbox.frame.GetComponent<SpriteRenderer>().sortingLayerName = layer;
                 region.checkbox.frame.transform.parent = region.checkbox.transform;
                 region.checkbox.frame.transform.localPosition = new Vector3();
             }
 
-        //Draws ipnutLines for the regions
+        //Draws inputLines for the regions
         foreach (var region in regionGroup.regions)
             if (region.inputLine != null)
             {
@@ -350,7 +325,7 @@ public class Window : MonoBehaviour
                 int length = 0;
                 region.inputLine.text.Erase();
                 var print = region.inputLine.text.text.Value();
-                if (currentInputLine == region.inputLine.FindID())
+                if (inputLine == region.inputLine)
                     print = print.Insert(inputLineMarker > print.Length ? print.Length : inputLineMarker, markerCharacter);
                 else if (print.Length == 0) print += " ";
                 foreach (var character in print)

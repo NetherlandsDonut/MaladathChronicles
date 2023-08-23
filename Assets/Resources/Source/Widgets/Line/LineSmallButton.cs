@@ -1,6 +1,9 @@
 using System;
 using UnityEngine;
+
 using static Root;
+using static Sound;
+using static Cursor;
 
 public class LineSmallButton : MonoBehaviour
 {

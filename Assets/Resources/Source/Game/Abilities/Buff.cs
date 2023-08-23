@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections.Generic;
 
 using static Root;
-using static Root.Color;
+using static Root.Anchor;
 
 public class Buff
 {
@@ -96,15 +96,50 @@ public class Buff
         return false;
     }
 
-    public void PrintDescription(Entity effector, Entity other, int width)
+    public void PrintDescription(Entity effector, Entity other)
     {
+        int width = CDesktop.LBWindow.LBRegionGroup.setWidth;
         if (description != null) description.Print(effector, other, width);
         else AddHeaderRegion(() =>
         {
             SetRegionAsGroupExtender();
-            AddLine("No description", DarkGray);
+            AddLine("No description", "DarkGray");
         });
     }
+
+    public static GameObject SpawnBuffObject(Vector3 position, string icon, Entity target)
+    {
+        var buff = Object.Instantiate(Resources.Load<GameObject>("Prefabs/PrefabBuff"));
+        buff.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/Buttons/" + icon);
+        buff.transform.parent = Board.board.window.desktop.transform;
+        buff.transform.position = position;
+        buff.GetComponent<FlyingBuff>().Initiate(currentSave.player == target, (h) => { },
+            (h) => () =>
+            {
+                var fb = h.GetComponent<FlyingBuff>();
+                var buff = (fb.onPlayer ? Board.board.player.buffs : Board.board.enemy.buffs).Find(x => x.Item3 == h.gameObject);
+                SetAnchor(Top, 0, -23);
+                AddHeaderGroup();
+                SetRegionGroupWidth(226);
+                SetRegionGroupHeight(217);
+                AddHeaderRegion(() => { AddLine(buff.Item1.name); });
+                AddPaddingRegion(() =>
+                {
+                    AddBigButton(buff.Item1.icon, (h) => { });
+                    AddLine("Dispellable: ", "DarkGray");
+                    AddText(buff.Item1.dispelType != "None" ? "Yes" : "No");
+                    AddLine("Turns left: ", "DarkGray");
+                    AddText(buff.Item2 + "");
+                });
+                buff.Item1.PrintDescription(target, Board.board.player == target ? Board.board.enemy : Board.board.player);
+                AddRegionGroup();
+                SetRegionGroupWidth(236);
+                AddPaddingRegion(() => { AddLine(); });
+            }
+        );
+        return buff;
+    }
+
 
     public static List<Buff> buffs;
 }

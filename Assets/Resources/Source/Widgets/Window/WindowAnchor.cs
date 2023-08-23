@@ -4,12 +4,6 @@ using static Root;
 
 public class WindowAnchor
 {
-    public WindowAnchor(float x = 0, float y = 0)
-    {
-        anchor = Anchor.None;
-        offset = new Vector2(x, y);
-    }
-
     public WindowAnchor(Anchor anchor, float x = 0, float y = 0, Window magnet = null)
     {
         this.anchor = anchor;

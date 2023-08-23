@@ -23,4 +23,6 @@ public class Cursor : MonoBehaviour
         if (cursor == CursorType.None) render.sprite = null;
         else render.sprite = Resources.Load<Sprite>("Sprites/Cursors/" + cursor);
     }
+
+    public static Cursor cursor;
 }

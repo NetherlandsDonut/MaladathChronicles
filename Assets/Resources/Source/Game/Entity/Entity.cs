@@ -1,10 +1,12 @@
-using UnityEngine;
-using UnityEditor;
+using System;
 using System.Linq;
 using System.Collections.Generic;
 
+using UnityEngine;
+using UnityEditor;
+
 using static Root;
-using System;
+using static Sound;
 
 public class Entity
 {
@@ -567,7 +569,7 @@ public class Entity
     public List<Ability> AbilitiesInCombat() => Ability.abilities.FindAll(x => abilities.Contains(x.name) && (x.cost == null || actionBars.Exists(y => y.ability == x.name)));
 
     //Pops all buffs on this entity activating
-    //their effects and reducing duration by 1 turn
+    //their effects and "Red"ucing duration by 1 turn
     //If duration reaches 0 it removes the buff
     public void FlareBuffs()
     {

@@ -4,7 +4,8 @@ using System.Linq;
 using System.Collections.Generic;
 
 using static Root;
-using UnityEngine.AI;
+using static Font;
+using static Sound;
 
 public class Region : MonoBehaviour
 {
@@ -15,7 +16,6 @@ public class Region : MonoBehaviour
     public Line LBLine;
     public List<Line> lines;
     public InputLine inputLine;
-    public LineDropdown dropdown;
     public LineCheckbox checkbox;
     public LineSmallButton LBSmallButton;
     public List<LineSmallButton> smallButtons;
@@ -31,7 +31,7 @@ public class Region : MonoBehaviour
     public GameObject background;
     public GameObject[] borders;
 
-    public void Initialise(RegionGroup regionGroup, RegionBackgroundType backgroundType, Action draw, Action<Highlightable> pressEvent, Func<Highlightable, Action> tooltip, int insert)
+    public void Initialise(RegionGroup regionGroup, RegionBackgroundType backgroundType, Action draw, Action<Highlightable> pressEvent, Func<Highlightable, Action> tooltip)
     {
         lines = new();
         smallButtons = new();
@@ -45,8 +45,7 @@ public class Region : MonoBehaviour
         this.backgroundType = backgroundType;
 
         regionGroup.LBRegion = this;
-        if (insert == -1) regionGroup.regions.Add(this);
-        else regionGroup.regions.Insert(insert, this);
+        regionGroup.regions.Add(this);
     }
 
     public int PlannedHeight()
@@ -67,7 +66,7 @@ public class Region : MonoBehaviour
         //Number "12" is simply additional free space to not clamp the
         //window borders tightly on region content, the "19" is the button sprite width
         //and the "15" is the checkbox width that fills the line
-        return (lines.Count > 0 && lines.Max(x => x.Length()) > 0 ? lines.Max(x => x.Length()) + 12 : -10) + 38 * bigButtons.Count + 19 * smallButtons.Count + (checkbox != null ? 15 : 0) + (inputLine != null ? (inputLine.Length() > 0 ? inputLine.Length() : 4) + (inputLine.FindID() == currentInputLine ? font.Length(markerCharacter) : 0) : 0);
+        return (lines.Count > 0 && lines.Max(x => x.Length()) > 0 ? lines.Max(x => x.Length()) + 12 : -10) + 38 * bigButtons.Count + 19 * smallButtons.Count + (checkbox != null ? 15 : 0) + (inputLine != null ? (inputLine.Length() > 0 ? inputLine.Length() : 4) + (inputLine == InputLine.inputLine ? font.Length(markerCharacter) : 0) : 0);
     }
 
     public void ResetContent()
@@ -102,10 +101,6 @@ public class Region : MonoBehaviour
         {
             checkbox.value.Invert();
             regionGroup.window.Rebuild();
-        }
-        else if (dropdown != null)
-        {
-            dropdown.Unwind();
         }
         if (pressEvent != null)
         {
