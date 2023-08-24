@@ -12,7 +12,7 @@ public class SiteComplex
         areas.FindAll(x => sites.Exists(y => y["SiteType"] == "HostileArea" && y["SiteName"] == x.name)).ForEach(x => x.complexPart = true);
     }
 
-    public string name;
+    public string name, zone, ambience;
     public List<string> description;
     public List<Dictionary<string, string>> sites;
 
@@ -23,7 +23,7 @@ public class SiteComplex
     {
         AddButtonRegion(() =>
         {
-            AddLine(site["SiteName"], "Black");
+            AddLine(site["SiteName"], "", "Right");
             AddSmallButton("Site" + site["SiteType"], (h) => { });
         },
         (h) =>

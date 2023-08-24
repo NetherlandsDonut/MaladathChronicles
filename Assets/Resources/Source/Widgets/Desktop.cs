@@ -44,7 +44,6 @@ public class Desktop : MonoBehaviour
         {
             var savewindowsfromclosingbecauseoftooltip = i == 1 && windows[0].closeOnLostFocus;
             if (i > 0 && windows[i].closeOnLostFocus && !savewindowsfromclosingbecauseoftooltip) CloseWindow(windows[i--].title);
-            else windows[i].transform.position = new Vector3(windows[i].transform.position.x, windows[i].transform.position.y, i);
         }
     }
 
@@ -84,6 +83,25 @@ public class Desktop : MonoBehaviour
 
     public void Update()
     {
+        if (queuedAmbience.Item1 != null)
+        {
+            if (queuedAmbience.Item1 == ambience.clip)
+            {
+                if (queuedAmbience.Item3) ambience.volume = queuedAmbience.Item2;
+                else ambience.volume += 0.002f;
+                if (ambience.volume >= queuedAmbience.Item2)
+                    queuedAmbience = (null, 0, false);
+            }
+            else
+            {
+                if (ambience.volume > 0) ambience.volume -= 0.002f;
+                else
+                {
+                    ambience.clip = queuedAmbience.Item1;
+                    ambience.Play();
+                }
+            }
+        }
         fallingSoundsPlayedThisFrame = 0;
         if (loadSites != null && loadSites.Count > 0)
             for (int i = 0; i < 6; i++)
@@ -171,6 +189,7 @@ public class Desktop : MonoBehaviour
                 if (heldKeyTime > 0) heldKeyTime -= Time.deltaTime;
                 if (inputLine != null)
                 {
+                    var temp = inputLine;
                     var didSomething = false;
                     var length = inputLine.text.text.Value().Length;
                     if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Return))
@@ -180,25 +199,26 @@ public class Desktop : MonoBehaviour
                         UnityEngine.Cursor.lockState = CursorLockMode.None;
                         if (Input.GetKeyDown(KeyCode.Return))
                         {
-                            inputLine.text.text.Confirm();
-                            windows.ForEach(x => x.Rebuild());
+                            temp.text.text.Confirm();
+                            ExecuteChange(temp.text.text);
+                            didSomething = true;
                         }
                         else
                         {
-                            inputLine.text.text.Reset();
+                            temp.text.text.Reset();
                             didSomething = true;
                         }
                     }
                     else if (Input.GetKeyDown(KeyCode.Delete) && inputLineMarker < length)
                     {
                         heldKeyTime = 0.4f;
-                        inputLine.text.text.RemoveNextOne(inputLineMarker);
+                        temp.text.text.RemoveNextOne(inputLineMarker);
                         didSomething = true;
                     }
                     else if (Input.GetKey(KeyCode.Delete) && inputLineMarker < length && heldKeyTime <= 0)
                     {
                         heldKeyTime = 0.0245f;
-                        inputLine.text.text.RemoveNextOne(inputLineMarker);
+                        temp.text.text.RemoveNextOne(inputLineMarker);
                         didSomething = true;
                     }
                     else if (Input.GetKeyDown(KeyCode.LeftArrow) && inputLineMarker > 0)
@@ -231,19 +251,19 @@ public class Desktop : MonoBehaviour
                         if (c == '\b')
                         {
                             if (inputLineMarker > 0 && length > 0)
-                                inputLine.text.text.RemovePreviousOne(inputLineMarker--);
+                                temp.text.text.RemovePreviousOne(inputLineMarker--);
                         }
-                        else if (c != '\n' && c != '\r' && inputLine.CheckInput(c))
+                        else if (c != '\n' && c != '\r' && temp.CheckInput(c))
                         {
                             inputLine.text.text.Insert(inputLineMarker, c);
                             inputLineMarker++;
                         }
-                        if (length == inputLine.text.text.Value().Length)
+                        if (length == temp.text.text.Value().Length)
                             inputLineMarker = a;
                         didSomething = true;
                     }
                     if (didSomething)
-                        inputLine.region.regionGroup.window.Rebuild();
+                        temp.region.regionGroup.window.Rebuild();
                 }
                 else
                 {

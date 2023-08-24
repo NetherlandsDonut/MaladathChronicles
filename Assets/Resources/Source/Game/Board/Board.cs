@@ -31,6 +31,7 @@ public class Board
 
     public static void NewBoard(Entity entity, SiteHostileArea area)
     {
+        SiteHostileArea.area = area;
         board = new Board(6, 6, entity, area);
         bufferBoard = new BufferBoard();
         board.CallEvents(board.player, new() { { "Trigger", "CombatBegin" } });
@@ -122,6 +123,7 @@ public class Board
         }
         else
         {
+            PlaySound("Death");
             if (currentSave.hardcore) SpawnDesktopBlueprint("GameOver");
             else SpawnDesktopBlueprint("ReleaseSpirit");
         }
@@ -359,7 +361,8 @@ public class Board
             bonusTurnStreak++;
             PlaySound("BonusMove" + (bonusTurnStreak > 4 ? 4 : bonusTurnStreak), 0.4f);
         }
-        var foo = list.ToDictionary(x => Resource(x.Item1, x.Item2), x => list.Sum(y => y.Item3 == x.Item3 ? 1 : 0));
+        var types = list.Select(x => x.Item3).Distinct();
+        var foo = types.ToDictionary(x => Resource(x), x => list.Sum(y => y.Item3 == x ? 1 : 0));
         foreach (var a in list)
         {
             SpawnFlyingElement(1, 0.5, window.LBRegionGroup.regions[a.Item2].bigButtons[a.Item1].transform.position + new Vector3(-17.5f, -17.5f), boardButtonDictionary[a.Item3]);
@@ -371,19 +374,18 @@ public class Board
         CDesktop.LockScreen();
     }
 
-
-    public string Resource(int x, int y)
+    public string Resource(int id)
     {
-        if (field[x, y] == 11) return "Earth";
-        else if (field[x, y] == 12) return "Fire";
-        else if (field[x, y] == 13) return "Water";
-        else if (field[x, y] == 14) return "Air";
-        else if (field[x, y] == 15) return "Lightning";
-        else if (field[x, y] == 16) return "Frost";
-        else if (field[x, y] == 17) return "Decay";
-        else if (field[x, y] == 18) return "Arcane";
-        else if (field[x, y] == 19) return "Order";
-        else if (field[x, y] == 20) return "Shadow";
+        if (id == 11) return "Earth";
+        else if (id == 12) return "Fire";
+        else if (id == 13) return "Water";
+        else if (id == 14) return "Air";
+        else if (id == 15) return "Lightning";
+        else if (id == 16) return "Frost";
+        else if (id == 17) return "Decay";
+        else if (id == 18) return "Arcane";
+        else if (id == 19) return "Order";
+        else if (id == 20) return "Shadow";
         else return "None";
     }
 

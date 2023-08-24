@@ -42,7 +42,7 @@ public class DescriptionRegion
         var sum = width;
         while (list.Count > 0)
         {
-            if (sum + list[0].Item3 >= width - 30)
+            if (sum + list[0].Item3 >= width - 15)
             {
                 sum = 0;
                 AddLine();

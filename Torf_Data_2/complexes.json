@@ -1,6 +1,8 @@
 [
   {
     "name": "Blackrock Mountain",
+    "zone": "Burning Steppes",
+    "ambience": "AmbienceBlackrock",
     "description": [
       ""
     ],
@@ -28,27 +30,9 @@
     ]
   },
   {
-    "name": "Ruins of Alterac",
-    "description": [
-      ""
-    ],
-    "sites": [
-      {
-        "SiteType": "HostileArea",
-        "SiteName": "Town Center"
-      },
-      {
-        "SiteType": "HostileArea",
-        "SiteName": "Alterac Chapel"
-      },
-      {
-        "SiteType": "HostileArea",
-        "SiteName": "Alterac Keep"
-      }
-    ]
-  },
-  {
     "name": "Tyr's Hand",
+    "zone": "Eastern Plaguelands",
+    "ambience": "AmbienceScary",
     "description": [
       ""
     ],
@@ -73,6 +57,8 @@
   },
   {
     "name": "Hearthglen",
+    "zone": "Western Plaguelands",
+    "ambience": "AmbienceScary",
     "description": [
       ""
     ],
@@ -93,6 +79,8 @@
   },
   {
     "name": "Ruins of Stromgarde",
+    "zone": "Arathi Highlands",
+    "ambience": "AmbienceScary",
     "description": [
       ""
     ],
@@ -121,6 +109,8 @@
   },
   {
     "name": "Ruins of Alterac",
+    "zone": "Alterac Mountains",
+    "ambience": "AmbienceScary",
     "description": [
       ""
     ],
@@ -141,6 +131,8 @@
   },
   {
     "name": "Scarlet Monastery Grounds",
+    "zone": "Tirisfal Glades",
+    "ambience": "AmbienceScary",
     "description": [
       ""
     ],
@@ -165,6 +157,8 @@
   },
   {
     "name": "Jaedenar",
+    "zone": "Felwood",
+    "ambience": "AmbienceScary",
     "description": [
       ""
     ],
@@ -185,6 +179,8 @@
   },
   {
     "name": "Alcaz Island",
+    "zone": "Dustwallow Marsh",
+    "ambience": "AmbienceScary",
     "description": [
       ""
     ],

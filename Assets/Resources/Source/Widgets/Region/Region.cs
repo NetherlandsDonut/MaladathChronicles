@@ -25,6 +25,7 @@ public class Region : MonoBehaviour
     //Fields
     public Action draw;
     public Tooltip tooltip;
+    public bool resetInputFieldSet;
     public Action<Highlightable> pressEvent;
     public int currentHeight, xExtend, yExtend;
     public RegionBackgroundType backgroundType;
@@ -74,6 +75,8 @@ public class Region : MonoBehaviour
         for (int i = 0; i < lines.Count; i++)
             Destroy(lines[i].gameObject);
         lines = new();
+        if (inputLine != null && InputLine.inputLine == inputLine)
+            resetInputFieldSet = true;
         if (inputLine != null)
             Destroy(inputLine.gameObject);
         inputLine = null;

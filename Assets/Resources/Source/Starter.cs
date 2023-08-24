@@ -60,10 +60,11 @@ public class Starter : MonoBehaviour
                 new Blueprint(instance.type + ": " + instance.name,
                     () =>
                     {
+                        PlayAmbience(instance.ambience);
                         SetAnchor(TopRight);
                         AddRegionGroup();
                         SetRegionGroupWidth(161);
-                        SetRegionGroupHeight(344);
+                        SetRegionGroupHeight(354);
                         AddHeaderRegion(() =>
                         {
                             AddLine(instance.name);
@@ -83,7 +84,6 @@ public class Starter : MonoBehaviour
                         });
                         AddPaddingRegion(() =>
                         {
-                            SetRegionAsGroupExtender();
                             AddLine("Level range: ", "Gray");
                             var range = instance.LevelRange();
                             AddText(range.Item1 + "", ColorEntityLevel(range.Item1));
@@ -92,29 +92,7 @@ public class Starter : MonoBehaviour
                         });
                         foreach (var wing in instance.wings)
                             PrintInstanceWing(instance, wing);
-                        AddPaddingRegion(() =>
-                        {
-                            AddLine();
-                            AddLine();
-                            AddLine();
-                            AddLine();
-                            AddLine();
-                            AddLine();
-                            AddLine();
-                            AddLine();
-                            AddLine();
-                            AddLine();
-                            AddLine();
-                            AddLine();
-                            AddLine();
-                            AddLine();
-                            AddLine();
-                            AddLine();
-                            AddLine();
-                            AddLine();
-                            AddLine();
-                            AddLine();
-                        });
+                        AddPaddingRegion(() => { });
                     }
                 )
             );
@@ -127,10 +105,11 @@ public class Starter : MonoBehaviour
                 new Blueprint("Town: " + town.name,
                     () =>
                     {
+                        PlayAmbience(town.ambience);
                         SetAnchor(TopRight);
                         AddRegionGroup();
                         SetRegionGroupWidth(161);
-                        SetRegionGroupHeight(344);
+                        SetRegionGroupHeight(354);
                         AddHeaderRegion(() =>
                         {
                             AddLine(town.name);
@@ -165,33 +144,7 @@ public class Starter : MonoBehaviour
                                 (h) => () => { PrintTransportTooltip(transport); });
                             }
                         }
-                        AddPaddingRegion(() =>
-                        {
-                            AddLine();
-                            AddLine();
-                            AddLine();
-                            AddLine();
-                            AddLine();
-                            AddLine();
-                            AddLine();
-                            AddLine();
-                            AddLine();
-                            AddLine();
-                            AddLine();
-                            AddLine();
-                            AddLine();
-                            AddLine();
-                            AddLine();
-                            AddLine();
-                            AddLine();
-                            AddLine();
-                            AddLine();
-                            AddLine();
-                            AddLine();
-                            AddLine();
-                            AddLine();
-                            AddLine();
-                        });
+                        AddPaddingRegion(() => { });
                     }
                 )
             );
@@ -204,10 +157,11 @@ public class Starter : MonoBehaviour
                 new Blueprint("Complex: " + complex.name,
                     () =>
                     {
+                        PlayAmbience(complex.ambience);
                         SetAnchor(TopRight);
                         AddRegionGroup();
                         SetRegionGroupWidth(161);
-                        SetRegionGroupHeight(344);
+                        SetRegionGroupHeight(354);
                         AddHeaderRegion(() =>
                         {
                             AddLine(complex.name);
@@ -223,29 +177,7 @@ public class Starter : MonoBehaviour
                         AddPaddingRegion(() => { AddLine("Sites: "); });
                         foreach (var site in complex.sites)
                             PrintComplexSite(site);
-                        AddPaddingRegion(() =>
-                        {
-                            AddLine();
-                            AddLine();
-                            AddLine();
-                            AddLine();
-                            AddLine();
-                            AddLine();
-                            AddLine();
-                            AddLine();
-                            AddLine();
-                            AddLine();
-                            AddLine();
-                            AddLine();
-                            AddLine();
-                            AddLine();
-                            AddLine();
-                            AddLine();
-                            AddLine();
-                            AddLine();
-                            AddLine();
-                            AddLine();
-                        });
+                        AddPaddingRegion(() => { });
                     }
                 )
             );
@@ -258,10 +190,11 @@ public class Starter : MonoBehaviour
                 new Blueprint("HostileArea: " + area.name,
                     () =>
                     {
+                        PlayAmbience(area.ambience);
                         SetAnchor(TopLeft);
                         AddRegionGroup();
                         SetRegionGroupWidth(161);
-                        SetRegionGroupHeight(344);
+                        SetRegionGroupHeight(354);
                         AddHeaderRegion(() =>
                         {
                             AddLine(area.name);
@@ -272,7 +205,7 @@ public class Starter : MonoBehaviour
                                 {
                                     SpawnTransition();
                                     PlaySound("DesktopInstanceClose");
-                                    SetDesktopBackground("Areas/Area" + (area.instancePart ? SiteInstance.instance.name : SiteComplex.complex.name).Replace("'", "").Replace(".", "").Replace(" ", ""));
+                                    SetDesktopBackground("Areas/Area" + (area.instancePart ? instance.name : complex.name).Replace("'", "").Replace(".", "").Replace(" ", ""));
                                     CloseWindow(h.window);
                                 }
                                 else
@@ -284,7 +217,7 @@ public class Starter : MonoBehaviour
                         });
                         AddPaddingRegion(() =>
                         {
-                            AddLine("Recommended level: ", "Gray");
+                            AddLine("Recommended level: ");
                             AddText(area.recommendedLevel + "", ColorEntityLevel(area.recommendedLevel));
                         });
                         if (area.bossEncounters != null && area.bossEncounters.Count > 0 && area.bossEncounters.Sum(x => x.requiredProgress) > 0)
@@ -295,14 +228,20 @@ public class Starter : MonoBehaviour
                                 int progress = (int)(currentSave.siteProgress.ContainsKey(area.name) ? (double)currentSave.siteProgress[area.name] / area.bossEncounters.Sum(x => x.requiredProgress) * 100 : 0);
                                 AddText((progress > 100 ? 100 : progress) + "%", ColorProgress(progress));
                             });
+                        AddPaddingRegion(() =>
+                        {
+                            SetRegionAsGroupExtender();
+                        });
                         if (area.possibleEncounters != null && area.possibleEncounters.Count > 0)
                         {
-                            AddPaddingRegion(() =>
-                            {
-                                AddLine("Possible encounters:", "DarkGray");
-                                foreach (var encounter in area.possibleEncounters)
-                                    AddLine("- " + encounter.who, "DarkGray");
-                            });
+                            AddHeaderRegion(() => { AddLine("Possible encounters:", "DarkGray"); });
+                            foreach (var encounter in area.possibleEncounters)
+                                AddPaddingRegion(() =>
+                                {
+                                    AddLine(encounter.who, "DarkGray", "Right");
+                                    var race = Race.races.Find(x => x.name == encounter.who);
+                                    AddSmallButton(race == null ? "OtherUnknown" : race.portrait, (h) => { });
+                                });
                             AddButtonRegion(() => { AddLine("Explore", "Black"); },
                             (h) =>
                             {
@@ -316,14 +255,16 @@ public class Starter : MonoBehaviour
                             AddHeaderRegion(() =>
                             {
                                 AddLine("Bosses: ", "Gray");
-                                AddSmallButton("OtherBoss", (h) => { });
+                                //AddSmallButton("OtherBoss", (h) => { });
                             });
                             foreach (var boss in area.bossEncounters)
                             {
                                 AddButtonRegion(() =>
                                 {
                                     SetRegionBackground(RegionBackgroundType.RedButton);
-                                    AddLine(boss.who, "Black");
+                                    AddLine(boss.who, "", "Right");
+                                    var race = Race.races.Find(x => x.name == boss.who);
+                                    AddSmallButton(race == null ? "OtherUnknown" : race.portrait, (h) => { });
                                 },
                                 (h) =>
                                 {
@@ -333,29 +274,6 @@ public class Starter : MonoBehaviour
                                 });
                             }
                         }
-                        AddPaddingRegion(() =>
-                        {
-                            AddLine();
-                            AddLine();
-                            AddLine();
-                            AddLine();
-                            AddLine();
-                            AddLine();
-                            AddLine();
-                            AddLine();
-                            AddLine();
-                            AddLine();
-                            AddLine();
-                            AddLine();
-                            AddLine();
-                            AddLine();
-                            AddLine();
-                            AddLine();
-                            AddLine();
-                            AddLine();
-                            AddLine();
-                            AddLine();
-                        });
                     }
                 )
             );
@@ -378,13 +296,8 @@ public class Starter : MonoBehaviour
         //Serialize(ItemSet.itemSets, "sets 2");
         cursor = FindObjectOfType<Cursor>();
         cursorEnemy = FindObjectOfType<CursorRemote>();
+        ambience = FindObjectsOfType<AudioSource>().First(x => x.name == "Ambience");
         SpawnDesktopBlueprint("TitleScreen");
-        SpawnTransition(0.1f);
-        SpawnTransition(0.1f);
-        SpawnTransition(0.1f);
-        SpawnTransition(0.1f);
-        SpawnTransition(0.1f);
-        SpawnTransition(0.1f);
         Destroy(gameObject);
     }
 }

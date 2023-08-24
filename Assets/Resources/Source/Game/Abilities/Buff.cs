@@ -118,7 +118,7 @@ public class Buff
             {
                 var fb = h.GetComponent<FlyingBuff>();
                 var buff = (fb.onPlayer ? Board.board.player.buffs : Board.board.enemy.buffs).Find(x => x.Item3 == h.gameObject);
-                SetAnchor(Top, 0, -23);
+                SetAnchor(Top, 0, -42);
                 AddHeaderGroup();
                 SetRegionGroupWidth(226);
                 SetRegionGroupHeight(217);

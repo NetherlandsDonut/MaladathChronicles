@@ -12,7 +12,7 @@ public class SiteInstance
         temp.ForEach(x => x.instancePart = true);
     }
 
-    public string name, type;
+    public string name, zone, type, ambience;
     public bool complexPart;
     public List<string> description;
     public List<InstanceWing> wings;
@@ -30,16 +30,13 @@ public class SiteInstance
     public static void PrintInstanceWing(SiteInstance instance, InstanceWing wing)
     {
         if (instance.wings.Count > 1)
-            AddHeaderRegion(() =>
-            {
-                AddLine(wing.name, "Gray");
-            });
+            AddHeaderRegion(() => { AddLine(wing.name); });
         var temp = wing.areas.Select(x => areas.Find(y => x.ContainsKey("AreaName") && y.name == x["AreaName"])).ToList();
         foreach (var area in temp)
             AddButtonRegion(() =>
             {
                 var name = area != null ? area.name : "AREA NOT FOUND";
-                AddLine(name, "Black");
+                AddLine(name, "", "Right");
             },
             (h) =>
             {

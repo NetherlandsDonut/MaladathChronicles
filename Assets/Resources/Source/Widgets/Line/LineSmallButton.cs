@@ -24,7 +24,12 @@ public class LineSmallButton : MonoBehaviour
         this.buttonType = buttonType;
         this.pressEvent = pressEvent;
         if (tooltip != null)
-            this.tooltip = new Tooltip(() => GetComponent<Highlightable>(), tooltip);
+            this.tooltip = new Tooltip(() =>
+            {
+                if (gameObject != null)
+                    return GetComponent<Highlightable>();
+                else return null;
+            }, tooltip);
 
         region.LBSmallButton = this;
         region.smallButtons.Add(this);

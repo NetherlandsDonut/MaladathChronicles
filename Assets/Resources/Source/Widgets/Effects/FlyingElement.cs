@@ -9,7 +9,7 @@ public class FlyingElement : MonoBehaviour
     public SpriteRenderer render;
 
     public static int flySpeed = 6;
-    public static int rowAmount = 3;
+    public static int rowAmount = 2;
 
     public void Initiate()
     {

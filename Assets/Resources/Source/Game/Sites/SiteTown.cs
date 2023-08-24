@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 public class SiteTown
 {
-    public string name, zone, faction;
+    public string name, zone, faction, ambience;
     public List<Transport> transport;
 
     public static SiteTown town;

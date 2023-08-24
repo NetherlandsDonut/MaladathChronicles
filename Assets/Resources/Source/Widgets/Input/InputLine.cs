@@ -1,15 +1,12 @@
-using System.Linq;
 using UnityEngine;
 
 using static Root;
 using static Font;
+using static String;
 
 public class InputLine : MonoBehaviour
 {
-    //Parent
     public Region region;
-
-    //Children
     public InputText text;
     public InputType inputType;
 
@@ -40,4 +37,21 @@ public class InputLine : MonoBehaviour
     public int Length() => font.Length(text.text.Value());
 
     public static InputLine inputLine;
+
+    public static void ExecuteChange(String foo)
+    {
+        if (foo == objectName)
+        {
+            //if (CDesktop.title == "ObjectManagerComplexes")
+                
+        }
+        else if (foo == consoleInput)
+        {
+            CloseWindow(CDesktop.windows.Find(x => x.title == "Console"));
+            if (foo.Value() == "DevPanel")
+            {
+                SpawnDesktopBlueprint("DevPanel");
+            }
+        }
+    }
 }

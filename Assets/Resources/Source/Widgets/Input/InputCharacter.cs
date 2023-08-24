@@ -17,7 +17,7 @@ public class InputCharacter : MonoBehaviour
     public void OnMouseUp()
     {
         var desktop = inputText.inputLine.region.regionGroup.window.desktop;
-        var newMarker = inputText.characters.IndexOf(gameObject) + 1;
+        var newMarker = inputText.characters.IndexOf(gameObject);
         cursor.SetCursor(CursorType.None);
         UnityEngine.Cursor.lockState = CursorLockMode.Locked;
         inputLineMarker = newMarker > inputLineMarker && inputLine != null ? newMarker - 1 : newMarker;

@@ -1,7 +1,9 @@
 [
   {
     "name": "Temple of Atal'Hakkar",
+    "zone": "Swamp of Sorrows",
     "type": "Dungeon",
+    "ambience": "AmbienceSunkenTemple",
     "description": [],
     "wings": [
       {
@@ -69,7 +71,9 @@
   },
   {
     "name": "Gnomeregan",
+    "zone": "Dun Morogh",
     "type": "Dungeon",
+    "ambience": "AmbienceGnomeregan",
     "description": [],
     "wings": [
       {
@@ -101,7 +105,9 @@
   },
   {
     "name": "Shadowfang Keep",
+    "zone": "Silverpine Forest",
     "type": "Dungeon",
+    "ambience": "AmbienceShadowfangKeep",
     "description": [],
     "wings": [
       {
@@ -145,7 +151,9 @@
   },
   {
     "name": "Shadow Hold",
+    "zone": "Jaedenar",
     "type": "Dungeon",
+    "ambience": "AmbienceScary",
     "complexPart": true,
     "description": [],
     "wings": [
@@ -178,7 +186,9 @@
   },
   {
     "name": "Scholomance",
+    "zone": "Western Plaguelands",
     "type": "Dungeon",
+    "ambience": "AmbienceSpooky",
     "description": [],
     "wings": [
       {
@@ -238,6 +248,7 @@
   },
   {
     "name": "Maraudon",
+    "zone": "Desolace",
     "type": "Dungeon",
     "description": [],
     "wings": [
@@ -288,7 +299,9 @@
   },
   {
     "name": "Stratholme",
+    "zone": "Eastern Plaguelands",
     "type": "Dungeon",
+    "ambience": "AmbienceStratholme",
     "description": [],
     "wings": [
       {
@@ -349,7 +362,9 @@
   },
   {
     "name": "Wailing Caverns",
+    "zone": "The Barrens",
     "type": "Dungeon",
+    "ambience": "AmbienceWailingCaverns",
     "description": [],
     "wings": [
       {
@@ -381,7 +396,9 @@
   },
   {
     "name": "Uldaman",
+    "zone": "Badlands",
     "type": "Dungeon",
+    "ambience": "AmbienceUldaman",
     "description": [],
     "wings": [
       {
@@ -417,7 +434,9 @@
   },
   {
     "name": "Razorfen Downs",
+    "zone": "The Barrens",
     "type": "Dungeon",
+    "ambience": "AmbienceRazorfenKraul",
     "description": [],
     "wings": [
       {
@@ -441,7 +460,9 @@
   },
   {
     "name": "Razorfen Kraul",
+    "zone": "The Barrens",
     "type": "Dungeon",
+    "ambience": "AmbienceRazorfenKraul",
     "description": [],
     "wings": [
       {
@@ -469,7 +490,9 @@
   },
   {
     "name": "The Deadmines",
+    "zone": "Westfall",
     "type": "Dungeon",
+    "ambience": "AmbienceDeadmines",
     "description": [],
     "wings": [
       {
@@ -501,7 +524,9 @@
   },
   {
     "name": "Blackfathom Deeps",
+    "zone": "Ashenvale",
     "type": "Dungeon",
+    "ambience": "AmbienceBlackfathom",
     "description": [],
     "wings": [
       {
@@ -537,7 +562,9 @@
   },
   {
     "name": "Dire Maul",
+    "zone": "Feralas",
     "type": "Dungeon",
+    "ambience": "AmbienceDireMaul",
     "description": [],
     "wings": [
       {
@@ -599,7 +626,9 @@
   },
   {
     "name": "Scarlet Monastery",
+    "zone": "Scarlet Monastery Grounds",
     "type": "Dungeon",
+    "ambience": "AmbienceScary",
     "complexPart": true,
     "description": [
       "The smoldering Blackrock",
@@ -694,7 +723,9 @@
   },
   {
     "name": "Blackrock Depths",
+    "zone": "Blackrock Mountain",
     "type": "Dungeon",
+    "ambience": "AmbienceBlackrock",
     "complexPart": true,
     "description": [
       "The smoldering Blackrock",
@@ -787,7 +818,9 @@
   },
   {
     "name": "Lower Blackrock Spire",
+    "zone": "Blackrock Mountain",
     "type": "Dungeon",
+    "ambience": "AmbienceBlackrock",
     "complexPart": true,
     "description": [
       "The majority of Rend's",
@@ -841,7 +874,9 @@
   },
   {
     "name": "Upper Blackrock Spire",
+    "zone": "Blackrock Mountain",
     "type": "Dungeon",
+    "ambience": "AmbienceBlackrock",
     "complexPart": true,
     "description": [
       "The smoldering Blackrock",
@@ -889,6 +924,7 @@
   },
   {
     "name": "Zul'Farrak",
+    "zone": "Tanaris",
     "type": "Dungeon",
     "description": [],
     "wings": [
@@ -905,7 +941,9 @@
   },
   {
     "name": "Onyxia's Lair",
+    "zone": "Dustwallow Marsh",
     "type": "Raid",
+    "ambience": "AmbienceOnyxia",
     "description": [],
     "wings": [
       {
@@ -921,7 +959,9 @@
   },
   {
     "name": "Molten Core",
+    "zone": "Blackrock Mountain",
     "type": "Raid",
+    "ambience": "AmbienceMoltenCore",
     "complexPart": true,
     "description": [
       "The Molten Core lies at",
@@ -970,7 +1010,9 @@
   },
   {
     "name": "Zul'Gurub",
+    "zone": "Stranglethorn Vale",
     "type": "Raid",
+    "ambience": "AmbienceJungleDay",
     "description": [
       "The Molten Core lies at",
       "the very bottom of",
@@ -1038,7 +1080,9 @@
   },
   {
     "name": "Blackwing Lair",
+    "zone": "Blackrock Mountain",
     "type": "Raid",
+    "ambience": "AmbienceBlackwingLair",
     "complexPart": true,
     "description": [
       "In the dark recesses of",
@@ -1091,7 +1135,9 @@
   },
   {
     "name": "Ruins of Ahn'Qiraj",
+    "zone": "Silithus",
     "type": "Raid",
+    "ambience": "AmbienceAnhQirajExterior",
     "description": [],
     "wings": [
       {
@@ -1127,7 +1173,9 @@
   },
   {
     "name": "Temple of Ahn'Qiraj",
+    "zone": "Silithus",
     "type": "Raid",
+    "ambience": "AmbienceAnhQirajExterior",
     "description": [],
     "wings": [
       {

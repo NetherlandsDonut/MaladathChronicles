@@ -12,7 +12,7 @@ public class Cursor : MonoBehaviour
     void Update()
     {
         if (CDesktop.screenLocked) SetCursor(CursorType.Await);
-        else if (render.sprite.texture.name.Contains("Await")) SetCursor(CursorType.Default);
+        else if (render.sprite != null && render.sprite.texture.name.Contains("Await")) SetCursor(CursorType.Default);
         var curScreenSpace = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
         var curPosition = (Vector2)CDesktop.screen.ScreenToWorldPoint(curScreenSpace);
         transform.position = new Vector3((int)System.Math.Round(curPosition.x), (int)System.Math.Round(curPosition.y), transform.position.z);

@@ -83,7 +83,7 @@ public static class Root
         newDesktop.GetComponent<SpriteRenderer>().sortingLayerName = "DesktopBackground";
         newDesktop.screen.GetComponent<SpriteRenderer>().sortingLayerName = "DesktopBackground";
         newDesktop.screen.orthographicSize = 180;
-        newDesktop.screen.nearClipPlane = -128;
+        newDesktop.screen.nearClipPlane = -1024;
         newDesktop.screen.farClipPlane = 1024;
         newDesktop.screen.clearFlags = CameraClearFlags.SolidColor;
         newDesktop.screen.backgroundColor = Color.black;
@@ -182,10 +182,6 @@ public static class Root
     {
         var newObject = new GameObject("Window: " + title, typeof(Window));
         newObject.transform.parent = CDesktop.transform;
-        //I'm spawning it at z = 9999 because I don't want it to
-        //cover anything on the screen when it's being built
-        //DOESNT WORK ANYWAY????????????
-        newObject.transform.localPosition = new Vector3(0, 0, 9999);
         newObject.GetComponent<Window>().Initialise(CDesktop, title, upperUI);
     }
 
@@ -196,6 +192,7 @@ public static class Root
 
     public static void CloseWindow(Window window)
     {
+        if (window == null) return;
         CDesktop.windows.Remove(window);
         UnityEngine.Object.Destroy(window.gameObject);
         CDesktop.Reindex();
@@ -224,6 +221,11 @@ public static class Root
     public static void DisableGeneralSprites()
     {
         CDesktop.LBWindow.disabledGeneralSprites = true;
+    }
+
+    public static void DisableCollisions()
+    {
+        CDesktop.LBWindow.disabledCollisions = true;
     }
 
     public static void DisableShadows()
@@ -360,7 +362,7 @@ public static class Root
             Foo("ItemCoinsCopper", (int)(price * 10000 % 100) + "", "Copper");
         else lacking++;
         AddRegionGroup();
-        SetRegionGroupWidth(width - (3 - lacking) * 49);
+        SetRegionGroupWidth(width - (3 - lacking) * 52);
         AddPaddingRegion(() => { AddLine("", "Black"); });
 
         void Foo(string icon, string text, string color)
@@ -368,7 +370,7 @@ public static class Root
             AddRegionGroup();
             AddPaddingRegion(() => { AddSmallButton(icon, (h) => { }); });
             AddRegionGroup();
-            SetRegionGroupWidth(20);
+            SetRegionGroupWidth(23);
             AddPaddingRegion(() => { AddLine(text, color); });
         }
     }
@@ -377,13 +379,13 @@ public static class Root
 
     #region Lines
 
-    public static void AddLine(string text = "", string color = "")
+    public static void AddLine(string text = "", string color = "", string align = "Left")
     {
         var region = CDesktop.LBWindow.LBRegionGroup.LBRegion;
         if (region.lines.Count > 0 && region.smallButtons.Count > 0) return;
         var newObject = new GameObject("Line", typeof(Line));
         newObject.transform.parent = region.transform;
-        newObject.GetComponent<Line>().Initialise(region);
+        newObject.GetComponent<Line>().Initialise(region, align);
         AddText(text, color == "" ? DefaultTextColorForRegion(region.backgroundType) : color);
     }
 

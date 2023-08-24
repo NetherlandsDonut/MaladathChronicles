@@ -1,24 +1,23 @@
 using UnityEngine;
+
 using System.Linq;
 using System.Collections.Generic;
 
-using static Root;
 using static Font;
 
 public class Line : MonoBehaviour
 {
-    //Parent
     public Region region;
-
-    //Children
     public LineText LBText;
     public List<LineText> texts;
+    public string align;
 
-    public void Initialise(Region region)
+    public void Initialise(Region region, string align)
     {
         this.region = region;
         texts = new();
 
+        this.align = align;
         this.region.LBLine = this;
         region.lines.Add(this);
     }

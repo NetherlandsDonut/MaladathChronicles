@@ -3,6 +3,7 @@
     "name": "King's Square",
     "zone": "Stratholme",
     "type": "HostileArea",
+    "ambience": "AmbienceStratholme",
     "possibleEncounters": [
       {
         "who": "Scourge Warder",
@@ -10839,7 +10840,7 @@
   },
   {
     "name": "Lake Nazferiti",
-    "zone": "Stranglethorn Valley",
+    "zone": "Stranglethorn Vale",
     "type": "HostileArea",
     "possibleEncounters": [
       {
@@ -10851,7 +10852,7 @@
   },
   {
     "name": "Kal'ai Ruins",
-    "zone": "Stranglethorn Valley",
+    "zone": "Stranglethorn Vale",
     "type": "HostileArea",
     "possibleEncounters": [
       {
@@ -10863,7 +10864,7 @@
   },
   {
     "name": "Ruins of Jubuwal",
-    "zone": "Stranglethorn Valley",
+    "zone": "Stranglethorn Vale",
     "type": "HostileArea",
     "possibleEncounters": [
       {
@@ -10875,7 +10876,7 @@
   },
   {
     "name": "Ziata'jai Ruins",
-    "zone": "Stranglethorn Valley",
+    "zone": "Stranglethorn Vale",
     "type": "HostileArea",
     "possibleEncounters": [
       {
@@ -10887,7 +10888,7 @@
   },
   {
     "name": "Gurubashi Arena",
-    "zone": "Stranglethorn Valley",
+    "zone": "Stranglethorn Vale",
     "type": "HostileArea",
     "possibleEncounters": [
       {
@@ -10899,7 +10900,7 @@
   },
   {
     "name": "Crystal Shore",
-    "zone": "Stranglethorn Valley",
+    "zone": "Stranglethorn Vale",
     "type": "HostileArea",
     "possibleEncounters": [
       {
@@ -10911,7 +10912,7 @@
   },
   {
     "name": "Zuuldaia Ruins",
-    "zone": "Stranglethorn Valley",
+    "zone": "Stranglethorn Vale",
     "type": "HostileArea",
     "possibleEncounters": [
       {
@@ -10923,7 +10924,7 @@
   },
   {
     "name": "Ruins of Zul'Kunda",
-    "zone": "Stranglethorn Valley",
+    "zone": "Stranglethorn Vale",
     "type": "HostileArea",
     "possibleEncounters": [
       {
@@ -10935,7 +10936,7 @@
   },
   {
     "name": "Wild Shore",
-    "zone": "Stranglethorn Valley",
+    "zone": "Stranglethorn Vale",
     "type": "HostileArea",
     "possibleEncounters": [
       {
@@ -10947,7 +10948,7 @@
   },
   {
     "name": "Nek'mani Wellspring",
-    "zone": "Stranglethorn Valley",
+    "zone": "Stranglethorn Vale",
     "type": "HostileArea",
     "possibleEncounters": [
       {
@@ -10959,7 +10960,7 @@
   },
   {
     "name": "Bloodsail Compound",
-    "zone": "Stranglethorn Valley",
+    "zone": "Stranglethorn Vale",
     "type": "HostileArea",
     "possibleEncounters": [
       {
@@ -10971,7 +10972,7 @@
   },
   {
     "name": "Tkashi Ruins",
-    "zone": "Stranglethorn Valley",
+    "zone": "Stranglethorn Vale",
     "type": "HostileArea",
     "possibleEncounters": [
       {
@@ -10983,7 +10984,7 @@
   },
   {
     "name": "Venture Co. Base Camp",
-    "zone": "Stranglethorn Valley",
+    "zone": "Stranglethorn Vale",
     "type": "HostileArea",
     "possibleEncounters": [
       {
@@ -10995,7 +10996,7 @@
   },
   {
     "name": "The Savage Coast",
-    "zone": "Stranglethorn Valley",
+    "zone": "Stranglethorn Vale",
     "type": "HostileArea",
     "possibleEncounters": [
       {
@@ -11007,7 +11008,7 @@
   },
   {
     "name": "Mizjah Ruins",
-    "zone": "Stranglethorn Valley",
+    "zone": "Stranglethorn Vale",
     "type": "HostileArea",
     "possibleEncounters": [
       {
@@ -11019,7 +11020,7 @@
   },
   {
     "name": "Balia'mah Ruins",
-    "zone": "Stranglethorn Valley",
+    "zone": "Stranglethorn Vale",
     "type": "HostileArea",
     "possibleEncounters": [
       {
@@ -11031,7 +11032,7 @@
   },
   {
     "name": "Mosh'Ogg Ogre Mound",
-    "zone": "Stranglethorn Valley",
+    "zone": "Stranglethorn Vale",
     "type": "HostileArea",
     "possibleEncounters": [
       {
@@ -11043,7 +11044,7 @@
   },
   {
     "name": "Jaguero Isle",
-    "zone": "Stranglethorn Valley",
+    "zone": "Stranglethorn Vale",
     "type": "HostileArea",
     "possibleEncounters": [
       {
@@ -11055,7 +11056,7 @@
   },
   {
     "name": "Ruins of Aboraz",
-    "zone": "Stranglethorn Valley",
+    "zone": "Stranglethorn Vale",
     "type": "HostileArea",
     "possibleEncounters": [
       {
@@ -11067,7 +11068,7 @@
   },
   {
     "name": "Mistvale Valley",
-    "zone": "Stranglethorn Valley",
+    "zone": "Stranglethorn Vale",
     "type": "HostileArea",
     "possibleEncounters": [
       {
@@ -11079,7 +11080,7 @@
   },
   {
     "name": "Ruins of Zul'Mamwe",
-    "zone": "Stranglethorn Valley",
+    "zone": "Stranglethorn Vale",
     "type": "HostileArea",
     "possibleEncounters": [
       {
@@ -11091,7 +11092,7 @@
   },
   {
     "name": "Kurzen's Compound",
-    "zone": "Stranglethorn Valley",
+    "zone": "Stranglethorn Vale",
     "type": "HostileArea",
     "possibleEncounters": [
       {
@@ -11103,7 +11104,7 @@
   },
   {
     "name": "Crystalvein Mine",
-    "zone": "Stranglethorn Valley",
+    "zone": "Stranglethorn Vale",
     "type": "HostileArea",
     "possibleEncounters": [
       {

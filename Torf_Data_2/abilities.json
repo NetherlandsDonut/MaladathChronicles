@@ -265,6 +265,90 @@
     }
   },
   {
+    "name": "Naralex's Nightmare",
+    "icon": "AbilitySleep",
+    "tags": [
+      "Stun"
+    ],
+    "cost": {
+      "Water": 4,
+      "Air": 4
+    },
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddBuff",
+            "Affect": "Other",
+            "BuffName": "Sleep",
+            "BuffDuration": "2",
+            "ShatterTarget": "Other",
+            "ShatterType": "Central",
+            "ShatterDensity": "2",
+            "ShatterSpeed": "5",
+            "ShatterDegree": "0.7",
+            "SoundEffect": "AbilitySleepImpact",
+            "Await": "4"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Gray",
+              "Text": "Launches three Arcane Missiles at the enemy, causing"
+            },
+            {
+              "Color": "Arcane",
+              "Text": "PowerRange(Effector, Spell, 1.3, 1)",
+              "Split": "No"
+            },
+            {
+              "Color": "Gray",
+              "Text": "damage with each one of them totalling to"
+            },
+            {
+              "Color": "Arcane",
+              "Text": "PowerRange(Effector, Spell, 1.3, 3)",
+              "Split": "No"
+            },
+            {
+              "Color": "Gray",
+              "Text": "damage."
+            }
+          ]
+        },
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Gray",
+              "Text": "Caster's Arcane Mastery provides"
+            },
+            {
+              "Color": "Arcane",
+              "Text": "Chance(Effector, Arcane Mastery, 10)",
+              "Split": "No"
+            },
+            {
+              "Color": "Gray",
+              "Text": "chance to launch additional Arcane Missiles."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
     "name": "Curse of Agony",
     "icon": "AbilityCurseOfAgony",
     "cooldown": 4,

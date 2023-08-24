@@ -11,5 +11,15 @@ public static class Sound
         cursor.GetComponent<AudioSource>().PlayOneShot(temp, volume);
     }
 
+    public static void PlayAmbience(string path, float volume = 0.5f, bool instant = false)
+    {
+        var temp = Resources.Load<AudioClip>("Ambience/" + path);
+        if (temp == null) return;
+        if (ambience.clip == temp) return;
+        queuedAmbience = (temp, volume, instant);
+    }
+
+    public static AudioSource ambience;
     public static int fallingSoundsPlayedThisFrame;
+    public static (AudioClip, float, bool) queuedAmbience;
 }

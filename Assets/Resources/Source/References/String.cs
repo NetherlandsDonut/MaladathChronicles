@@ -1,7 +1,5 @@
-
 public class String
 {
-    //Fields
     private string value = "";
     private string backupValue = "";
 
@@ -15,5 +13,6 @@ public class String
     public void Confirm() => backupValue = value;
     public void Reset() => value = backupValue;
 
-    public static String consoleInput = new String();
+    public static String consoleInput = new();
+    public static String objectName = new();
 }

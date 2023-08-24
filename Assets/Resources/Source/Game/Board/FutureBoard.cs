@@ -200,7 +200,8 @@ public class FutureBoard
     public void FloodDestroy(List<(int, int, int)> list)
     {
         if (list.Count > 3) bonusTurnStreak++;
-        var foo = list.ToDictionary(x => Resource(x.Item3), x => list.Sum(y => y.Item3 == x.Item3 ? 1 : 0));
+        var types = list.Select(x => x.Item3).Distinct();
+        var foo = types.ToDictionary(x => Resource(x), x => list.Sum(y => y.Item3 == x ? 1 : 0));
         foreach (var a in list)
             field[a.Item1, a.Item2] = 0;
         if (playerTurn) player.AddResources(this, foo);

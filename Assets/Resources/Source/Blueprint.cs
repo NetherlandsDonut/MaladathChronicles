@@ -8,14 +8,15 @@ using static Root;
 using static Sound;
 using static Cursor;
 using static Coloring;
-using static SiteComplex;
-using static SiteInstance;
 using static SiteHostileArea;
+using static SiteInstance;
+using static SiteComplex;
 using static SiteTown;
 
 using static Root.Anchor;
 
 using static UnityEngine.KeyCode;
+using UnityEditor;
 
 public class Blueprint
 {
@@ -247,7 +248,7 @@ public class Blueprint
                 AddButtonRegion(
                     () =>
                     {
-                        AddLine(actionBar.ability, "Black");
+                        AddLine(actionBar.ability, "", "Right");
                         AddSmallButton(abilityObj.icon, (h) => { });
                         if (!abilityObj.EnoughResources(Board.board.player))
                         {
@@ -271,7 +272,7 @@ public class Blueprint
                     },
                     (h) => () =>
                     {
-                        SetAnchor(Top, 0, -23);
+                        SetAnchor(Top, 0, -42);
                         AddHeaderGroup();
                         SetRegionGroupWidth(236);
                         SetRegionGroupHeight(217);
@@ -374,7 +375,7 @@ public class Blueprint
                     AddButtonRegion(
                         () =>
                         {
-                            AddLine(item.name, "Black");
+                            AddLine(item.name, "", "Right");
                             AddSmallButton(item.icon, (h) => { });
                         },
                         (h) =>
@@ -396,20 +397,21 @@ public class Blueprint
                     AddHeaderRegion(
                         () =>
                         {
-                            AddLine(slot, "DarkGray");
+                            AddLine(slot, "DarkGray", "Right");
                             AddSmallButton("OtherEmpty", (h) => { });
                         }
                     );
             }
         }),
-        new("SpellbookAbilityList", () => {
-            SetAnchor(147, 0);
+        new("SpellbookAbilityListHeader", () => {
+            SetAnchor(TopRight);
+            DisableShadows();
             AddRegionGroup();
             SetRegionGroupWidth(161);
             AddHeaderRegion(
                 () =>
                 {
-                    AddLine("Active abilities:", "Gray");
+                    AddLine("Spellbook:");
                     AddSmallButton("OtherClose", (h) =>
                     {
                         CloseDesktop("SpellbookScreen");
@@ -418,6 +420,14 @@ public class Blueprint
                     });
                 }
             );
+        }, true),
+        new("SpellbookAbilityList", () => {
+            SetAnchor(147, 0);
+            AddRegionGroup();
+            SetRegionGroupWidth(161);
+            SetRegionGroupHeight(1460);
+            AddHeaderRegion(() => { AddLine(); });
+            AddPaddingRegion(() => { AddLine("Active abilities:", "DarkGray"); });
             var activeAbilities = Ability.abilities.FindAll(x => x.cost != null && currentSave.player.abilities.Contains(x.name)).ToList();
             var passiveAbilities = Ability.abilities.FindAll(x => x.cost == null && currentSave.player.abilities.Contains(x.name)).ToList();
             for (int i = 0; i < activeAbilities.Count; i++)
@@ -426,7 +436,7 @@ public class Blueprint
                 AddButtonRegion(
                     () =>
                     {
-                        AddLine(abilityObj.name, "Black");
+                        AddLine(abilityObj.name, "", "Right");
                         AddSmallButton(abilityObj.icon,
                         (h) =>
                         {
@@ -452,7 +462,7 @@ public class Blueprint
                     },
                     (h) => () =>
                     {
-                        SetAnchor(Top, 0, -23);
+                        SetAnchor(Top, 0, -42);
                         AddHeaderGroup();
                         SetRegionGroupWidth(236);
                         SetRegionGroupHeight(217);
@@ -483,20 +493,12 @@ public class Blueprint
                         }
                         AddRegionGroup();
                         SetRegionGroupWidth(236 - abilityObj.cost.Count * 49);
-                        AddPaddingRegion(() =>
-                        {
-                            AddLine();
-                        });
+                        AddPaddingRegion(() => { AddLine(); });
                     }
                 );
             }
             if (passiveAbilities.Count(x => x.description != null) > 0)
-                AddHeaderRegion(
-                    () =>
-                    {
-                        AddLine("Passive abilities:", "Gray");
-                    }
-                );
+                AddPaddingRegion(() => { AddLine("Passive abilities:", "DarkGray"); });
             for (int i = 0; i < passiveAbilities.Count; i++)
             {
                 var abilityObj = passiveAbilities[i];
@@ -514,7 +516,7 @@ public class Blueprint
                     (h) => { },
                     (h) => () =>
                     {
-                        SetAnchor(Top, 0, -23);
+                        SetAnchor(Top, 0, -42);
                         AddHeaderGroup();
                         SetRegionGroupWidth(236);
                         SetRegionGroupHeight(217);
@@ -546,18 +548,17 @@ public class Blueprint
                             }
                         AddRegionGroup();
                         SetRegionGroupWidth(236 - (abilityObj.cost == null ? 0 : abilityObj.cost.Count) * 49);
-                        AddPaddingRegion(() =>
-                        {
-                            AddLine();
-                        });
+                        AddPaddingRegion(() => { AddLine(); });
                     }
                 );
             }
+            AddPaddingRegion(() => { });
         }),
         new("PlayerSpellbookInfo", () => {
             SetAnchor(TopLeft);
             AddRegionGroup();
             SetRegionGroupWidth(161);
+            SetRegionGroupHeight(354);
             AddButtonRegion(
                 () =>
                 {
@@ -584,7 +585,7 @@ public class Blueprint
                     AddButtonRegion(
                         () =>
                         {
-                            AddLine(abilityObj.name, "Black");
+                            AddLine(abilityObj.name, "", "Right");
                             AddSmallButton(abilityObj.icon, (h) => { });
                         },
                         (h) =>
@@ -598,7 +599,7 @@ public class Blueprint
                         },
                         (h) => () =>
                         {
-                            SetAnchor(Top, 0, -23);
+                            SetAnchor(Top, 0, -42);
                             AddHeaderGroup();
                             SetRegionGroupWidth(236);
                             SetRegionGroupHeight(217);
@@ -641,32 +642,13 @@ public class Blueprint
                         }
                     );
             }
-            AddPaddingRegion(() =>
-            {
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-            });
+            AddPaddingRegion(() => SetRegionAsGroupExtender());
         }),
         new("SpellbookResources", () => {
             SetAnchor(BottomLeft);
             DisableShadows();
             AddHeaderGroup();
-            AddHeaderRegion(() =>
-            {
-                AddLine("Starting resources:", "DarkGray");
-            });
+            AddHeaderRegion(() => { AddLine("Starting resources:", "DarkGray"); });
             AddRegionGroup();
             var elements1 = new List<string> { "Fire", "Water", "Earth", "Air", "Frost" };
             var elements2 = new List<string> { "Lightning", "Arcane", "Decay", "Order", "Shadow" };
@@ -680,14 +662,8 @@ public class Blueprint
                             SetAnchor(Top, h.window);
                             AddRegionGroup();
                             SetRegionGroupWidth(83);
-                            AddHeaderRegion(() =>
-                            {
-                                AddLine(element + ":", "Gray");
-                            });
-                            AddPaddingRegion(() =>
-                            {
-                                AddLine(currentSave.player.resources.ToList().Find(x => x.Key == element).Value + "/" + currentSave.player.MaxResource(element), "Gray");
-                            });
+                            AddHeaderRegion(() => { AddLine(element + ":", "Gray"); });
+                            AddPaddingRegion(() => { AddLine(currentSave.player.resources.ToList().Find(x => x.Key == element).Value + "/" + currentSave.player.MaxResource(element), "Gray"); });
                         }
                     );
                 });
@@ -744,7 +720,8 @@ public class Blueprint
             );
             AddHeaderRegion(() =>
             {
-                AddBigButton("Portrait" + Race.races.Find(x => x.name == Board.board.enemy.race).portrait, (h) => { });
+                var race = Race.races.Find(x => x.name == Board.board.enemy.race);
+                AddBigButton(race.portrait == "" ? "OtherUnknown" : race.portrait, (h) => { });
                 AddLine("Level: ", "Gray");
                 AddText(Board.board.enemy.level - 10 > Board.board.player.level ? "??" : "" + Board.board.enemy.level, ColorEntityLevel(Board.board.enemy.level));
                 AddLine("Health: " + Board.board.enemy.health + "/" + Board.board.enemy.MaxHealth(), "Gray");
@@ -756,7 +733,7 @@ public class Blueprint
                 AddButtonRegion(
                     () =>
                     {
-                        AddLine(actionBar.ability);
+                        AddLine(actionBar.ability, "", "Right");
                         AddSmallButton(abilityObj.icon, (h) => { });
                         if (!abilityObj.EnoughResources(Board.board.enemy))
                         {
@@ -772,7 +749,7 @@ public class Blueprint
                     },
                     (h) => () =>
                     {
-                        SetAnchor(Top, 0, -23);
+                        SetAnchor(Top, 0, -42);
                         AddHeaderGroup();
                         SetRegionGroupWidth(236);
                         SetRegionGroupHeight(217);
@@ -814,15 +791,16 @@ public class Blueprint
         new("LocationInfo", () => {
             SetAnchor(Top);
             AddRegionGroup();
+            SetRegionGroupWidth(286);
             AddHeaderRegion(
                 () =>
                 {
-                    AddLine("Blackwing Lair");
+                    AddLine(area.name, "", "Center");
                 }
             );
         }),
         new("BattleBoard", () => {
-            SetAnchor(Top, 0, -15 + 19 * (Board.board.field.GetLength(1) - 7));
+            SetAnchor(Top, 0, -34 + 19 * (Board.board.field.GetLength(1) - 7));
             var boardBackground = new GameObject("BoardBackground", typeof(SpriteRenderer), typeof(SpriteMask));
             boardBackground.transform.parent = CDesktop.LBWindow.transform;
             boardBackground.transform.localPosition = new Vector2(-17, 17);
@@ -868,9 +846,10 @@ public class Blueprint
             }
         }),
         new("BufferBoard", () => {
-            SetAnchor(Top, 0, 213 + 19 * (BufferBoard.bufferBoard.field.GetLength(1) - 7));
+            SetAnchor(Top, 0, 194 + 19 * (BufferBoard.bufferBoard.field.GetLength(1) - 7));
             MaskWindow();
             DisableGeneralSprites();
+            DisableCollisions();
             AddRegionGroup();
             for (int i = 0; i < BufferBoard.bufferBoard.field.GetLength(1); i++)
             {
@@ -912,7 +891,7 @@ public class Blueprint
             AddButtonRegion(
                 () =>
                 {
-                    AddLine("Character Sheet", "Black");
+                    AddLine("Character Sheet", "", "Right");
                     AddSmallButton("MenuCharacterSheet", (h) => { });
                 },
                 (h) =>
@@ -922,34 +901,22 @@ public class Blueprint
                     PlaySound("DesktopCharacterSheetOpen");
                 }
             );
-            if (CDesktop.windows.Exists(x => x.title == "Inventory"))
-                AddHeaderRegion(
-                    () =>
-                    {
-                        AddLine("Inventory", "DarkGray");
-                        AddSmallButton("MenuInventory", (h) => { });
-                        AddSmallButtonOverlay("OtherGrid");
-                    }
-                );
-            else
-                AddButtonRegion(
-                    () =>
-                    {
-                        AddLine("Inventory", "Black");
-                        AddSmallButton("MenuInventory", (h) => { });
-                    },
-                    (h) =>
-                    {
-                        SpawnWindowBlueprint("Inventory");
-                        CloseWindow("MapToolbar");
-                        SpawnWindowBlueprint("MapToolbar");
-                        PlaySound("DesktopInventoryOpen");
-                    }
-                );
             AddButtonRegion(
                 () =>
                 {
-                    AddLine("Spellbook", "Black");
+                    AddLine("Inventory", "", "Right");
+                    AddSmallButton("MenuInventory", (h) => { });
+                },
+                (h) =>
+                {
+                    SpawnDesktopBlueprint("EquipmentScreen");
+                    SwitchDesktop("EquipmentScreen");
+                }
+            );
+            AddButtonRegion(
+                () =>
+                {
+                    AddLine("Spellbook", "", "Right");
                     AddSmallButton("MenuSpellbook", (h) => { });
                 },
                 (h) =>
@@ -961,7 +928,7 @@ public class Blueprint
             AddButtonRegion(
                 () =>
                 {
-                    AddLine("Talents", "Black");
+                    AddLine("Talents", "", "Right");
                     AddSmallButton("MenuTalents", (h) => { });
                 },
                 (h) =>
@@ -1051,109 +1018,33 @@ public class Blueprint
             SetAnchor(TopRight);
             AddRegionGroup();
             SetRegionGroupWidth(161);
+            SetRegionGroupHeight(354);
             AddPaddingRegion(() =>
             {
                 //foreach (var line in instance.description)
                 //    AddLine(line, "DarkGray");
                 //AddLine("Select area on the right.", "DarkGray");
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
             });
         }),
         new("ComplexLeftSide", () => {
             SetAnchor(TopLeft);
             AddRegionGroup();
             SetRegionGroupWidth(161);
+            SetRegionGroupHeight(354);
             AddPaddingRegion(() =>
             {
                 foreach (var line in complex.description)
                     AddLine(line, "DarkGray");
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
             });
         }),
         new("TownLeftSide", () => {
             SetAnchor(TopLeft);
             AddRegionGroup();
-            SetRegionGroupWidth(161);
+            SetRegionGroupHeight(354);
             AddPaddingRegion(() =>
             {
                 //foreach (var line in complex.description)
                 //    AddLine(line, "DarkGray");
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
             });
         }),
         new("Inventory", () => {
@@ -1565,21 +1456,21 @@ public class Blueprint
             {
                 foreach (var foo in stats)
                     if (!foo.Key.Contains("Mastery"))
-                        AddLine(foo.Key + ":", "Gray");
+                        AddLine(foo.Key + ":", "Gray", "Right");
             });
             AddHeaderRegion(() =>
             {
                 foreach (var foo in stats)
                     if (foo.Key.Contains("Mastery"))
-                        AddLine(foo.Key + ":", "Gray");
+                        AddLine(foo.Key + ":", "Gray", "Right");
             });
             AddHeaderRegion(() =>
             {
-                AddLine("Melee Attack Power:", "Gray");
-                AddLine("Ranged Attack Power:", "Gray");
-                AddLine("Spell Power:", "Gray");
-                AddLine("Critical Strike:", "Gray");
-                AddLine("Spell Critical:", "Gray");
+                AddLine("Melee Attack Power:", "Gray", "Right");
+                AddLine("Ranged Attack Power:", "Gray", "Right");
+                AddLine("Spell Power:", "Gray", "Right");
+                AddLine("Critical Strike:", "Gray", "Right");
+                AddLine("Spell Critical:", "Gray", "Right");
             });
             AddRegionGroup();
             AddHeaderRegion(() =>
@@ -1917,18 +1808,253 @@ public class Blueprint
             });
         }, true),
         new("Console", () => {
-            SetAnchor(TopLeft);
-            AddHeaderGroup();
-            SetRegionGroupWidth(628);
-            AddHeaderRegion(() =>
-            {
-                AddLine("Console");
-                AddSmallButton("OtherClose", (h) => { CloseWindow(h.window); });
-            });
+            SetAnchor(Top);
             AddRegionGroup();
             SetRegionGroupWidth(628);
             AddInputRegion(String.consoleInput, InputType.Everything);
+            AddSmallButton("OtherClose", (h) => { CloseWindow(h.window); });
         },  true),
+        new("ObjectManagerTypes", () => {
+            SetAnchor(TopLeft);
+            AddRegionGroup();
+            SetRegionGroupWidth(161);
+            SetRegionGroupHeight(354);
+            AddHeaderRegion(() => { AddLine("Object types:"); });
+            AddButtonRegion(() => { AddLine("Hostile areas"); }, (h) => { SpawnDesktopBlueprint("ObjectManagerHostileAreas"); });
+            AddButtonRegion(() => { AddLine("Instances"); }, (h) => { SpawnDesktopBlueprint("ObjectManagerInstances"); });
+            AddButtonRegion(() => { AddLine("Complexes"); }, (h) => { SpawnDesktopBlueprint("ObjectManagerComplexes"); });
+            AddButtonRegion(() => { AddLine("Races"); }, (h) => { SpawnDesktopBlueprint("ObjectManagerRaces"); });
+            AddButtonRegion(() => { AddLine("Classes"); }, (h) => { SpawnDesktopBlueprint("ObjectManagerClasses"); });
+            AddButtonRegion(() => { AddLine("Abilities"); }, (h) => { SpawnDesktopBlueprint("ObjectManagerAbilities"); });
+            AddButtonRegion(() => { AddLine("Buffs"); }, (h) => { SpawnDesktopBlueprint("ObjectManagerBuffs"); });
+            AddButtonRegion(() => { AddLine("Items"); }, (h) => { SpawnDesktopBlueprint("ObjectManagerItems"); });
+            AddButtonRegion(() => { AddLine("Item sets"); }, (h) => { SpawnDesktopBlueprint("ObjectManagerItemSets"); });
+            AddPaddingRegion(() => { });
+        }),
+        new("ObjectManagerHostileAreas", () => {
+            SetAnchor(TopLeft);
+            AddRegionGroup();
+            SetRegionGroupWidth(161);
+            SetRegionGroupHeight(354);
+            AddHeaderRegion(() => { AddLine("Hostile areas:"); });
+            foreach (var foo in areas)
+            AddButtonRegion(() =>
+            {
+                AddLine(foo.name);
+            },
+            (h) =>
+            {
+                area = foo;
+                SetDesktopBackground("Areas/Area" + foo.zone + foo.name.Replace(".", "").Replace(" ", "").Replace("\'", ""));
+                CloseWindow("ObjectManagerHostileArea");
+                SpawnWindowBlueprint("ObjectManagerHostileArea");
+            });
+            AddPaddingRegion(() => { });
+        }),
+        new("ObjectManagerHostileArea", () => {
+            SetAnchor(TopRight);
+            AddRegionGroup();
+            SetRegionGroupWidth(161);
+            SetRegionGroupHeight(354);
+            AddPaddingRegion(() => { AddLine("Hostile area:", "DarkGray"); });
+            AddHeaderRegion(() => { AddLine(area.name); });
+            AddPaddingRegion(() => { AddLine("Zone:", "DarkGray"); });
+            AddHeaderRegion(() => { AddLine(area.zone); });
+            AddPaddingRegion(() => { AddLine("Type:", "DarkGray"); });
+            AddButtonRegion(() =>
+            {
+                AddLine(area.type);
+                AddSmallButton("Site" + area.type, (h) => { });
+            },
+            (h) =>
+            {
+                CloseWindow("ObjectManagerAmbienceList");
+                if (!CDesktop.windows.Exists(x => x.title == "ObjectManagerHostileAreaTypeList"))
+                    SpawnWindowBlueprint("ObjectManagerHostileAreaTypeList");
+            });
+            AddPaddingRegion(() => { AddLine("Ambience:", "DarkGray"); });
+            AddButtonRegion(() =>
+            {
+                AddLine(area.ambience == null ? "None" : area.ambience.Replace("Ambience", "") + ".ogg");
+                if (area.ambience != "None")
+                    AddSmallButton("OtherSound", (h) => { PlayAmbience(area.ambience); });
+            },
+            (h) =>
+            {
+                CloseWindow("ObjectManagerHostileAreaTypeList");
+                if (!CDesktop.windows.Exists(x => x.title == "ObjectManagerAmbienceList"))
+                    SpawnWindowBlueprint("ObjectManagerAmbienceList");
+            });
+            AddPaddingRegion(() => { });
+        }),
+        new("ObjectManagerInstances", () => {
+            SetAnchor(TopLeft);
+            AddRegionGroup();
+            SetRegionGroupWidth(161);
+            SetRegionGroupHeight(354);
+            AddHeaderRegion(() => { AddLine("Instances:"); });
+            foreach (var foo in instances)
+            AddButtonRegion(() =>
+            {
+                AddLine(foo.name);
+            },
+            (h) =>
+            {
+                instance = foo;
+                SetDesktopBackground("Areas/Area" + foo.name.Replace(".", "").Replace(" ", "").Replace("\'", ""));
+                CloseWindow("ObjectManagerInstance");
+                SpawnWindowBlueprint("ObjectManagerInstance");
+            });
+            AddPaddingRegion(() => { });
+        }),
+        new("ObjectManagerInstance", () => {
+            SetAnchor(TopRight);
+            AddRegionGroup();
+            SetRegionGroupWidth(161);
+            SetRegionGroupHeight(354);
+            AddPaddingRegion(() => { AddLine("Instance:", "DarkGray"); });
+            AddHeaderRegion(() => { AddLine(instance.name); });
+            AddPaddingRegion(() => { AddLine("Zone:", "DarkGray"); });
+            AddHeaderRegion(() => { AddLine(instance.zone); });
+            AddPaddingRegion(() => { AddLine("Ambience:", "DarkGray"); });
+            AddButtonRegion(() =>
+            {
+                AddLine(instance.ambience == null ? "None" : instance.ambience.Replace("Ambience", "") + ".ogg");
+                if (instance.ambience != "None")
+                    AddSmallButton("OtherSound", (h) => { PlayAmbience(instance.ambience); });
+            },
+            (h) =>
+            {
+                if (!CDesktop.windows.Exists(x => x.title == "ObjectManagerAmbienceList"))
+                    SpawnWindowBlueprint("ObjectManagerAmbienceList");
+            });
+            AddPaddingRegion(() => { });
+        }),
+        new("ObjectManagerComplexes", () => {
+            SetAnchor(TopLeft);
+            AddRegionGroup();
+            SetRegionGroupWidth(161);
+            SetRegionGroupHeight(354);
+            AddHeaderRegion(() => { AddLine("Complexes:"); });
+            foreach (var foo in complexes)
+                AddButtonRegion(() =>
+                {
+                    AddLine(foo.name);
+                },
+                (h) =>
+                {
+                    complex = foo;
+                    SetDesktopBackground("Areas/Complex" + foo.name.Replace(".", "").Replace(" ", "").Replace("\'", ""));
+                    CloseWindow("ObjectManagerComplex");
+                    SpawnWindowBlueprint("ObjectManagerComplex");
+                });
+            AddPaddingRegion(() => { });
+        }),
+        new("ObjectManagerComplex", () => {
+            SetAnchor(TopRight);
+            AddRegionGroup();
+            SetRegionGroupWidth(161);
+            SetRegionGroupHeight(354);
+            AddPaddingRegion(() => { AddLine("Complex:", "DarkGray"); });
+            AddHeaderRegion(() => { AddLine(complex.name); });
+            AddPaddingRegion(() => { AddLine("Zone:", "DarkGray"); });
+            AddHeaderRegion(() => { AddLine(complex.zone); });
+            AddPaddingRegion(() => { AddLine("Ambience:", "DarkGray"); });
+            AddButtonRegion(() =>
+            {
+                AddLine(complex.ambience == null ? "None" : complex.ambience.Replace("Ambience", "") + ".ogg");
+                if (complex.ambience != "None")
+                    AddSmallButton("OtherSound", (h) => { PlayAmbience(complex.ambience); });
+            },
+            (h) =>
+            {
+                if (!CDesktop.windows.Exists(x => x.title == "ObjectManagerAmbienceList"))
+                    SpawnWindowBlueprint("ObjectManagerAmbienceList");
+            });
+            AddPaddingRegion(() => { });
+        }),
+        new("ObjectManagerAmbienceList", () => {
+            SetAnchor(TopLeft);
+            DisableShadows();
+            AddRegionGroup();
+            SetRegionGroupWidth(161);
+            AddHeaderRegion(() =>
+            {
+                AddLine("Ambience tracks:");
+                AddSmallButton("OtherClose", (h) => { CloseWindow(h.window); });
+            });
+            foreach (var foo in AssetDatabase.FindAssets("t:AudioClip Ambience", new[] { "Assets/Resources/Ambience" }).Select(x => AssetDatabase.GUIDToAssetPath(x).Replace("Assets/Resources/Ambience/Ambience", "")))
+                AddButtonRegion(() =>
+                {
+                    AddLine(foo);
+                    AddSmallButton("OtherSound", (h) => { PlayAmbience("Ambience" + foo.Replace(".ogg", "")); });
+                },
+                (h) =>
+                {
+                    CloseWindow("ObjectManagerAmbience");
+                    if (area != null)
+                    {
+                        area.ambience = "Ambience" + foo.Replace(".ogg", "");
+                        CloseWindow("ObjectManagerArea");
+                        SpawnWindowBlueprint("ObjectManagerArea");
+                    }
+                    else if (instance != null)
+                    {
+                        instance.ambience = "Ambience" + foo.Replace(".ogg", "");
+                        CloseWindow("ObjectManagerInstance");
+                        SpawnWindowBlueprint("ObjectManagerInstance");
+                    }
+                    else if (complex != null)
+                    {
+                        complex.ambience = "Ambience" + foo.Replace(".ogg", "");
+                        CloseWindow("ObjectManagerComplex");
+                        SpawnWindowBlueprint("ObjectManagerComplex");
+                    }
+                });
+        }),
+        new("ObjectManagerHostileAreaTypeList", () => {
+            SetAnchor(TopLeft);
+            DisableShadows();
+            AddRegionGroup();
+            SetRegionGroupWidth(161);
+            SetRegionGroupHeight(354);
+            AddHeaderRegion(() =>
+            {
+                AddLine("Area types:");
+                AddSmallButton("OtherClose", (h) => { CloseWindow(h.window); });
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("HostileArea");
+                AddSmallButton("SiteHostileArea", (h) => { });
+            },
+            (h) =>
+            {
+                CloseWindow("ObjectManagerHostileAreaTypeList");
+                if (area != null)
+                {
+                    area.type = "HostileArea";
+                    CloseWindow("ObjectManagerArea");
+                    SpawnWindowBlueprint("ObjectManagerArea");
+                }
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("EmeraldBough");
+                AddSmallButton("SiteEmeraldBough", (h) => { });
+            },
+            (h) =>
+            {
+                CloseWindow("ObjectManagerHostileAreaTypeList");
+                if (area != null)
+                {
+                    area.type = "EmeraldBough";
+                    CloseWindow("ObjectManagerArea");
+                    SpawnWindowBlueprint("ObjectManagerArea");
+                }
+            });
+            AddPaddingRegion(() => { });
+        })
     };
 
     public static List<Blueprint> desktopBlueprints = new()
@@ -1961,34 +2087,17 @@ public class Blueprint
             AddHotkey(N, () => { SpawnDesktopBlueprint("TalentScreen"); SwitchDesktop("TalentScreen"); });
             AddHotkey(P, () => { SpawnDesktopBlueprint("SpellbookScreen"); SwitchDesktop("SpellbookScreen"); });
             AddHotkey(B, () => { SpawnDesktopBlueprint("EquipmentScreen"); SwitchDesktop("EquipmentScreen"); });
-            //{
-            //    if (CDesktop.windows.Exists(x => x.title == "Inventory"))
-            //    {
-            //        CloseWindow("Inventory");
-            //        CloseWindow("MapToolbar");
-            //        SpawnWindowBlueprint("MapToolbar");
-            //        PlaySound("DesktopInventoryClose");
-            //    }
-            //    else
-            //    {
-            //        SpawnWindowBlueprint("Inventory");
-            //        CloseWindow("MapToolbar");
-            //        SpawnWindowBlueprint("MapToolbar");
-            //        PlaySound("DesktopInventoryOpen");
-            //    }
-            //});
             AddHotkey(Escape, () =>
             {
-                if (CDesktop.windows.Exists(x => x.title == "Inventory"))
-                {
-                    CloseWindow("Inventory");
-                    CloseWindow("MapToolbar");
-                    SpawnWindowBlueprint("MapToolbar");
-                    PlaySound("DesktopInventoryClose");
-                }
+                //if (CDesktop.windows.Exists(x => x.title == "Inventory"))
+                //{
+                //    CloseWindow("Inventory");
+                //    CloseWindow("MapToolbar");
+                //    SpawnWindowBlueprint("MapToolbar");
+                //    PlaySound("DesktopInventoryClose");
+                //}
             });
             AddHotkey(L, () => { SpawnWindowBlueprint("ItemDrop"); });
-            AddHotkey(BackQuote, () => { SpawnWindowBlueprint("Console"); });
 
             void CheckPosition(Vector3 amount)
             {
@@ -2107,10 +2216,10 @@ public class Blueprint
             SpawnWindowBlueprint("BattleBoard");
             SpawnWindowBlueprint("BufferBoard");
             SpawnWindowBlueprint("PlayerBattleInfo");
+            SpawnWindowBlueprint("LocationInfo");
             SpawnWindowBlueprint("EnemyBattleInfo");
             SpawnWindowBlueprint("PlayerResources");
             SpawnWindowBlueprint("EnemyResources");
-            SpawnWindowBlueprint("LocationInfo");
             Board.board.Reset();
             AddHotkey(PageUp, () => {
                 Board.board.player.resources = new Dictionary<string, int>
@@ -2220,8 +2329,9 @@ public class Blueprint
         new("SpellbookScreen", () =>
         {
             PlaySound("DesktopSpellbookScreenOpen");
-            SetDesktopBackground("SkinLong", false);
+            SetDesktopBackground("Skin");
             SpawnWindowBlueprint("SpellbookAbilityList");
+            SpawnWindowBlueprint("SpellbookAbilityListHeader");
             SpawnWindowBlueprint("PlayerSpellbookInfo");
             SpawnWindowBlueprint("SpellbookResources");
             AddHotkey(P, () => { SwitchDesktop("Map"); CloseDesktop("SpellbookScreen"); PlaySound("DesktopSpellbookScreenClose"); });
@@ -2295,6 +2405,68 @@ public class Blueprint
         {
             SpawnWindowBlueprint("TitleScreenMenu");
             SpawnWindowBlueprint("CharacterCreation");
+            AddHotkey(BackQuote, () => { SpawnDesktopBlueprint("DevPanel"); });
+        }),
+        new("DevPanel", () =>
+        {
+            PlayAmbience("AmbienceSholazarBasin", 0.5f, true);
+            SetDesktopBackground("Areas/AreaTheCelestialPlanetarium");
+            SpawnWindowBlueprint("ObjectManagerTypes");
+            AddHotkey(Escape, () => { CloseDesktop("DevPanel"); });
+        }),
+        new("ObjectManagerHostileAreas", () =>
+        {
+            SetDesktopBackground("Areas/AreaTheCelestialPlanetarium");
+            SpawnWindowBlueprint("ObjectManagerHostileAreas");
+            AddHotkey(Escape, () => { area = null; CloseDesktop("ObjectManagerHostileAreas"); });
+        }),
+        new("ObjectManagerInstances", () =>
+        {
+            SetDesktopBackground("Areas/AreaTheCelestialPlanetarium");
+            SpawnWindowBlueprint("ObjectManagerInstances");
+            AddHotkey(Escape, () => { instance = null; CloseDesktop("ObjectManagerInstances"); });
+        }),
+        new("ObjectManagerComplexes", () =>
+        {
+            SetDesktopBackground("Areas/AreaTheCelestialPlanetarium");
+            SpawnWindowBlueprint("ObjectManagerComplexes");
+            AddHotkey(Escape, () => { complex = null; CloseDesktop("ObjectManagerComplexes"); });
+        }),
+        new("ObjectManagerRaces", () =>
+        {
+            SetDesktopBackground("Areas/AreaTheCelestialPlanetarium");
+            SpawnWindowBlueprint("ObjectManagerRaces");
+            AddHotkey(Escape, () => { CloseDesktop("ObjectManagerRaces"); });
+        }),
+        new("ObjectManagerClasses", () =>
+        {
+            SetDesktopBackground("Areas/AreaTheCelestialPlanetarium");
+            SpawnWindowBlueprint("ObjectManagerClasses");
+            AddHotkey(Escape, () => { CloseDesktop("ObjectManagerClasses"); });
+        }),
+        new("ObjectManagerAbilities", () =>
+        {
+            SetDesktopBackground("Areas/AreaTheCelestialPlanetarium");
+            SpawnWindowBlueprint("ObjectManagerAbilities");
+            AddHotkey(Escape, () => { CloseDesktop("ObjectManagerAbilities"); });
+        }),
+        new("ObjectManagerBuffs", () =>
+        {
+            SetDesktopBackground("Areas/AreaTheCelestialPlanetarium");
+            SpawnWindowBlueprint("ObjectManagerBuffs");
+            AddHotkey(Escape, () => { CloseDesktop("ObjectManagerBuffs"); });
+        }),
+        new("ObjectManagerItems", () =>
+        {
+            SetDesktopBackground("Areas/AreaTheCelestialPlanetarium");
+            SpawnWindowBlueprint("ObjectManagerItems");
+            AddHotkey(Escape, () => { CloseDesktop("ObjectManagerItems"); });
+        }),
+        new("ObjectManagerItemSets", () =>
+        {
+            SetDesktopBackground("Areas/AreaTheCelestialPlanetarium");
+            SpawnWindowBlueprint("ObjectManagerItemSets");
+            AddHotkey(Escape, () => { CloseDesktop("ObjectManagerItemSets"); });
         }),
     };
 }

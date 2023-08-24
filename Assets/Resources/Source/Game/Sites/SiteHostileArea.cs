@@ -34,7 +34,7 @@ public class SiteHostileArea
         return new Entity(boss.levelMax != 0 ? random.Next(boss.levelMin, boss.levelMax + 1) : boss.levelMin, Race.races.Find(x => x.name == boss.who));
     }
 
-    public string name, zone, type;
+    public string name, zone, type, ambience;
     public List<Encounter> possibleEncounters, bossEncounters;
 
     [NonSerialized] public int recommendedLevel;
