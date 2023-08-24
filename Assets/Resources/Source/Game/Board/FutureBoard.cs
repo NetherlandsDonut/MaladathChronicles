@@ -104,7 +104,7 @@ public class FutureBoard
                     entity.actionBars.Find(x => x.ability == ability.Item2.name).cooldown = ability.Item2.cooldown;
                     CallEvents(entity, board, new() { { "Trigger", "AbilityCast" }, { "Triggerer", "Effector" }, { "AbilityName", ability.Item2.name } });
                     CallEvents(entity == player ? enemy : player, board, new() { { "Trigger", "AbilityCast" }, { "Triggerer", "Effector" }, { "AbilityName", ability.Item2.name } });
-                    entity.DetractResources(ability.Item2.cost);
+                    entity.DetractResources(board, ability.Item2.cost);
                     while (!board.finishedAnimation)
                         board.AnimateBoard();
                 }
@@ -146,7 +146,7 @@ public class FutureBoard
             CallEvents(player, this, new() { { "Trigger", "TurnEnd" } });
             playerTurn = false;
             playerFinishedMoving = false;
-            enemy.Cooldown();
+            enemy.Cooldown(this);
             CallEvents(enemy, this, new() { { "Trigger", "TurnBegin" } });
             enemy.FlareBuffs(this);
         }
@@ -155,7 +155,7 @@ public class FutureBoard
             CallEvents(enemy, this, new() { { "Trigger", "TurnEnd" } });
             playerTurn = true;
             enemyFinishedMoving = false;
-            player.Cooldown();
+            player.Cooldown(this);
             CallEvents(player, this, new() { { "Trigger", "TurnBegin" } });
             player.FlareBuffs(this);
         }
@@ -199,14 +199,12 @@ public class FutureBoard
     //DESTROYS ALL ELEMENTS OF THE SAME KIND THAT ARE NEARBY OF THE TARGETED ONE
     public void FloodDestroy(List<(int, int, int)> list)
     {
-        if (list.Count > 3)
-            bonusTurnStreak++;
+        if (list.Count > 3) bonusTurnStreak++;
+        var foo = list.ToDictionary(x => Resource(x.Item3), x => list.Sum(y => y.Item3 == x.Item3 ? 1 : 0));
         foreach (var a in list)
-        {
-            if (playerTurn) GiveResource(player, a.Item1, a.Item2);
-            else GiveResource(enemy, a.Item1, a.Item2);
             field[a.Item1, a.Item2] = 0;
-        }
+        if (playerTurn) player.AddResources(this, foo);
+        else enemy.AddResources(this, foo);
     }
 
     public List<(int, int, int)> FloodCount(int x, int y)
@@ -229,27 +227,18 @@ public class FutureBoard
         }
     }
 
-    public void GiveResource(FutureEntity entity, int x, int y)
+    public string Resource(int id)
     {
-        if (field[x, y] % 10 == 1)
-            entity.AddResource("Earth", 1);
-        else if (field[x, y] % 10 == 2)
-            entity.AddResource("Fire", 1);
-        else if (field[x, y] % 10 == 3)
-            entity.AddResource("Water", 1);
-        else if (field[x, y] % 10 == 4)
-            entity.AddResource("Air", 1);
-        else if (field[x, y] % 10 == 5)
-            entity.AddResource("Lightning", 1);
-        else if (field[x, y] % 10 == 6)
-            entity.AddResource("Frost", 1);
-        else if (field[x, y] % 10 == 7)
-            entity.AddResource("Decay", 1);
-        else if (field[x, y] % 10 == 8)
-            entity.AddResource("Arcane", 1);
-        else if (field[x, y] % 10 == 9)
-            entity.AddResource("Order", 1);
-        else if (field[x, y] % 10 == 0)
-            entity.AddResource("Shadow", 1);
+        if (id == 11) return "Earth";
+        else if (id == 12) return "Fire";
+        else if (id == 13) return "Water";
+        else if (id == 14) return "Air";
+        else if (id == 15) return "Lightning";
+        else if (id == 16) return "Frost";
+        else if (id == 17) return "Decay";
+        else if (id == 18) return "Arcane";
+        else if (id == 19) return "Order";
+        else if (id == 20) return "Shadow";
+        else return "None";
     }
 }

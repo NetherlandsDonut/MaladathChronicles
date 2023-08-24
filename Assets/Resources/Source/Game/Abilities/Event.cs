@@ -8,7 +8,7 @@ using static Shatter;
 
 public class Event
 {
-    public void ExecuteEffects(Board board, FutureBoard futureBoard, string icon)
+    public void ExecuteEffects(Board board, FutureBoard futureBoard, string icon, Dictionary<string, string> trigger)
     {
         var effector = board == null ? null : (board.playerTurn ? board.player : board.enemy);
         var other = board == null ? null : (board.playerTurn ? board.enemy : board.player);
@@ -43,7 +43,7 @@ public class Event
                     {
                         var source = powerSource == "Effector" ? futureEffector : futureOther;
                         var target = affect == "Effector" ? futureEffector : futureOther;
-                        target.Damage(source.RollWeaponDamage() * ((powerType == "Melee" ? source.MeleeAttackPower() : (powerType == "Spell" ? source.SpellPower() : (powerType == "Ranged" ? source.RangedAttackPower() : 1))) / 10.0 + 1) * powerScale);
+                        target.Damage(futureBoard, source.RollWeaponDamage() * ((powerType == "Melee" ? source.MeleeAttackPower() : (powerType == "Spell" ? source.SpellPower() : (powerType == "Ranged" ? source.RangedAttackPower() : 1))) / 10.0 + 1) * powerScale, trigger["Trigger"] == "Damage");
                     }
                 }
                 else if (type == "Heal")
@@ -52,7 +52,7 @@ public class Event
                     {
                         var source = powerSource == "Effector" ? futureEffector : futureOther;
                         var target = affect == "Effector" ? futureEffector : futureOther;
-                        target.Heal(source.RollWeaponDamage() * ((powerType == "Melee" ? source.MeleeAttackPower() : (powerType == "Spell" ? source.SpellPower() : (powerType == "Ranged" ? source.RangedAttackPower() : 1))) / 10.0 + 1) * powerScale);
+                        target.Heal(futureBoard, source.RollWeaponDamage() * ((powerType == "Melee" ? source.MeleeAttackPower() : (powerType == "Spell" ? source.SpellPower() : (powerType == "Ranged" ? source.RangedAttackPower() : 1))) / 10.0 + 1) * powerScale, trigger["Trigger"] == "Heal");
                     }
                 }
                 else if (type == "DetractResource")
@@ -61,9 +61,8 @@ public class Event
                     {
                         var target = affect == "Effector" ? futureEffector : futureOther;
                         string resourceType = effect.ContainsKey("ResourceType") ? effect["ResourceType"] : "None";
-                        int resourceAmount = effect.ContainsKey("ResourceAmount") ? int.Parse(effect["ResourceAmount"]) : 0;
-                        if (resourceType != "None")
-                            target.DetractResource(resourceType, resourceAmount);
+                        int resourceAmount = effect.ContainsKey("ResourceAmount") ? int.Parse(effect["ResourceAmount"]) : 1;
+                        if (resourceType != "None") target.DetractResource(futureBoard, resourceType, resourceAmount);
                     }
                 }
                 else if (type == "GiveResource")
@@ -72,9 +71,8 @@ public class Event
                     {
                         var target = affect == "Effector" ? futureEffector : futureOther;
                         string resourceType = effect.ContainsKey("ResourceType") ? effect["ResourceType"] : "None";
-                        int resourceAmount = effect.ContainsKey("ResourceAmount") ? int.Parse(effect["ResourceAmount"]) : 0;
-                        if (resourceType != "None")
-                            target.AddResource(resourceType, resourceAmount);
+                        int resourceAmount = effect.ContainsKey("ResourceAmount") ? int.Parse(effect["ResourceAmount"]) : 1;
+                        if (resourceType != "None") target.AddResource(futureBoard, resourceType, resourceAmount);
                     }
                 }
                 else if (type == "AddBuff")
@@ -117,7 +115,7 @@ public class Event
                         {
                             var source = powerSource == "Effector" ? effector : other;
                             var target = affect == "Effector" ? effector : other;
-                            target.Damage(source.RollWeaponDamage() * ((powerType == "Melee" ? source.MeleeAttackPower() : (powerType == "Spell" ? source.SpellPower() : (powerType == "Ranged" ? source.RangedAttackPower() : 1))) / 10.0 + 1) * powerScale);
+                            target.Damage(source.RollWeaponDamage() * ((powerType == "Melee" ? source.MeleeAttackPower() : (powerType == "Spell" ? source.SpellPower() : (powerType == "Ranged" ? source.RangedAttackPower() : 1))) / 10.0 + 1) * powerScale, trigger["Trigger"] == "Damage");
                         }
                     }
                     else if (type == "Heal")
@@ -126,7 +124,7 @@ public class Event
                         {
                             var source = powerSource == "Effector" ? effector : other;
                             var target = affect == "Effector" ? effector : other;
-                            target.Heal(source.RollWeaponDamage() * ((powerType == "Melee" ? source.MeleeAttackPower() : (powerType == "Spell" ? source.SpellPower() : (powerType == "Ranged" ? source.RangedAttackPower() : 1))) / 10.0 + 1) * powerScale);
+                            target.Heal(source.RollWeaponDamage() * ((powerType == "Melee" ? source.MeleeAttackPower() : (powerType == "Spell" ? source.SpellPower() : (powerType == "Ranged" ? source.RangedAttackPower() : 1))) / 10.0 + 1) * powerScale, trigger["Trigger"] == "Heal");
                         }
                     }
                     else if (type == "DetractResource")
@@ -135,9 +133,8 @@ public class Event
                         {
                             var target = affect == "Effector" ? effector : other;
                             string resourceType = effect.ContainsKey("ResourceType") ? effect["ResourceType"] : "None";
-                            int resourceAmount = effect.ContainsKey("ResourceAmount") ? int.Parse(effect["ResourceAmount"]) : 0;
-                            if (resourceType != "None")
-                                target.DetractResource(resourceType, resourceAmount);
+                            int resourceAmount = effect.ContainsKey("ResourceAmount") ? int.Parse(effect["ResourceAmount"]) : 1;
+                            if (resourceType != "None") target.DetractResource(resourceType, resourceAmount);
                         }
                     }
                     else if (type == "GiveResource")
@@ -146,9 +143,8 @@ public class Event
                         {
                             var target = affect == "Effector" ? effector : other;
                             string resourceType = effect.ContainsKey("ResourceType") ? effect["ResourceType"] : "None";
-                            int resourceAmount = effect.ContainsKey("ResourceAmount") ? int.Parse(effect["ResourceAmount"]) : 0;
-                            if (resourceType != "None")
-                                target.AddResource(resourceType, resourceAmount);
+                            int resourceAmount = effect.ContainsKey("ResourceAmount") ? int.Parse(effect["ResourceAmount"]) : 1;
+                            if (resourceType != "None") target.AddResource(resourceType, resourceAmount);
                         }
                     }
                     else if (type == "AddBuff")

@@ -82,7 +82,7 @@ public class Buff
                     else if (trigger["Trigger"] == "CombatBegin") execute = true;
                     else if (trigger["Trigger"] == "TurnBegin") execute = true;
                     else if (trigger["Trigger"] == "TurnEnd") execute = true;
-                    if (execute) eve.ExecuteEffects(board, futureBoard, icon);
+                    if (execute) eve.ExecuteEffects(board, futureBoard, icon, trigger);
                 }
     }
 

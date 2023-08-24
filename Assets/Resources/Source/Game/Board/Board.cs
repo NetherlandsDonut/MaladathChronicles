@@ -359,34 +359,32 @@ public class Board
             bonusTurnStreak++;
             PlaySound("BonusMove" + (bonusTurnStreak > 4 ? 4 : bonusTurnStreak), 0.4f);
         }
+        var foo = list.ToDictionary(x => Resource(x.Item1, x.Item2), x => list.Sum(y => y.Item3 == x.Item3 ? 1 : 0));
         foreach (var a in list)
         {
             SpawnFlyingElement(1, 0.5, window.LBRegionGroup.regions[a.Item2].bigButtons[a.Item1].transform.position + new Vector3(-17.5f, -17.5f), boardButtonDictionary[a.Item3]);
-            if (playerTurn) GiveResource(player, a.Item1, a.Item2);
-            else GiveResource(enemy, a.Item1, a.Item2);
             field[a.Item1, a.Item2] = 0;
         }
+        if (playerTurn) player.AddResources(foo);
+        else enemy.AddResources(foo);
         bufferBoard.Reset();
         CDesktop.LockScreen();
     }
 
-    public void GiveResource(Entity entity, int x, int y)
+
+    public string Resource(int x, int y)
     {
-        var element = "";
-        switch (field[x, y] % 10)
-        {
-            case 1: element = "Earth"; break;
-            case 2: element = "Fire"; break;
-            case 3: element = "Water"; break;
-            case 4: element = "Air"; break;
-            case 5: element = "Lightning"; break;
-            case 6: element = "Frost"; break;
-            case 7: element = "Decay"; break;
-            case 8: element = "Arcane"; break;
-            case 9: element = "Order"; break;
-            case 0: element = "Shadow"; break;
-        }
-        entity.resources[element]++;
+        if (field[x, y] == 11) return "Earth";
+        else if (field[x, y] == 12) return "Fire";
+        else if (field[x, y] == 13) return "Water";
+        else if (field[x, y] == 14) return "Air";
+        else if (field[x, y] == 15) return "Lightning";
+        else if (field[x, y] == 16) return "Frost";
+        else if (field[x, y] == 17) return "Decay";
+        else if (field[x, y] == 18) return "Arcane";
+        else if (field[x, y] == 19) return "Order";
+        else if (field[x, y] == 20) return "Shadow";
+        else return "None";
     }
 
     public List<(int, int, int)> FloodCount(int x, int y)

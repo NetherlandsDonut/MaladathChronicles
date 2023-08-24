@@ -56,7 +56,7 @@ public class Ability
                         string triggererData = triggerData.ContainsKey("Triggerer") ? triggerData["Triggerer"] : "None";
                         execute = resourceType == resourceTypeData && triggerer == triggererData;
                     }
-                    else if (trigger["Trigger"] == "AbilityCast" || trigger["Trigger"] == "CooldownEnd")
+                    else if (trigger["Trigger"] == "AbilityCast" || trigger["Trigger"] == "Cooldown")
                     {
                         string abilityName = trigger.ContainsKey("AbilityName") ? trigger["AbilityName"] : "None";
                         string abilityNameData = triggerData.ContainsKey("AbilityName") ? triggerData["AbilityName"] : name;
@@ -91,7 +91,7 @@ public class Ability
                     else if (trigger["Trigger"] == "CombatBegin") execute = true;
                     else if (trigger["Trigger"] == "TurnBegin") execute = true;
                     else if (trigger["Trigger"] == "TurnEnd") execute = true;
-                    if (execute) eve.ExecuteEffects(board, futureBoard, icon);
+                    if (execute) eve.ExecuteEffects(board, futureBoard, icon, trigger);
                 }
     }
 

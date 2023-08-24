@@ -7,6 +7,7 @@ using UnityEditor;
 
 using static Root;
 using static Sound;
+using static UnityEngine.GraphicsBuffer;
 
 public class Entity
 {
@@ -94,7 +95,7 @@ public class Entity
     //Provides amount of experience needed to level up
     public int ExperienceNeeded()
     {
-        return (int)(System.Math.Pow(1.04, level + 1) * 100 * (level + 1));
+        return (int)(Math.Pow(1.04, level + 1) * 100 * (level + 1));
     }
 
     //Provides experience needed to reach max level
@@ -102,7 +103,7 @@ public class Entity
     {
         var sum = 0;
         for (int i = 1; i < maxPlayerLevel; i++)
-            sum += (int)(System.Math.Pow(1.04, i + 1) * 100 * (i + 1));
+            sum += (int)(Math.Pow(1.04, i + 1) * 100 * (i + 1));
         return sum;
     }
 
@@ -110,24 +111,10 @@ public class Entity
 
     #region Resources
 
-    //Checks whether any resources exceed max or min
-    //levels and rounds them to fit in the limit
-    public void CapResources()
-    {
-        var temp = resources.ToArray();
-        for (int i = 0; i < temp.Length; i++)
-        {
-            var resource = temp[i];
-            if (resource.Value > MaxResource(resource.Key))
-                resources[resource.Key] = MaxResource(resource.Key);
-            else if (resource.Value < 0) resources[resource.Key] = 0;
-        }
-    }
-
     //Tells max amount of given resource entity can hold at once
     public int MaxResource(string resource)
     {
-        return Stats()[resource + " Mastery"] + 3;
+        return Stats()[resource + " Mastery"] + 5;
     }
 
     //Gives specific resource in given amount to the entity
@@ -140,12 +127,14 @@ public class Entity
     public void AddResources(Dictionary<string, int> resources)
     {
         foreach (var resource in resources)
-        {
-            //if (resource.Key == "Decay" && buffs.Exists(x => x.Item1.name == "Spore Cloud"))
-            //    Board.board.actions.Add(() => (Board.board.enemy == this ? Board.board.player : Board.board.enemy).Damage(RollWeaponDamage() * (SpellPower() / 10.0 + 1) * 1.1 * resource.Value));
-            this.resources[resource.Key] += resource.Value;
-        }
-        CapResources();
+            if (resource.Value > 0)
+            {
+                this.resources[resource.Key] += resource.Value;
+                if (this.resources[resource.Key] > MaxResource(resource.Key))
+                    this.resources[resource.Key] = MaxResource(resource.Key);
+                Board.board.CallEvents(this, new() { { "Trigger", "ResourceCollected" }, { "Triggerer", "Effector" }, { "ResourceType", resource.Key }, { "ResourceAmount", resource.Value + "" } });
+                Board.board.CallEvents(this == Board.board.player ? Board.board.enemy : Board.board.player, new() { { "Trigger", "ResourceCollected" }, { "Triggerer", "Other" }, { "ResourceType", resource.Key }, { "ResourceAmount", resource.Value + "" } });
+            }
     }
 
     //Detracts specific resource in given amount from the entity
@@ -158,8 +147,14 @@ public class Entity
     public void DetractResources(Dictionary<string, int> resources)
     {
         foreach (var resource in resources)
-            this.resources[resource.Key] -= resource.Value;
-        CapResources();
+            if (resource.Value > 0)
+            {
+                this.resources[resource.Key] -= resource.Value;
+                if (this.resources[resource.Key] < 0)
+                    this.resources[resource.Key] = 0;
+                Board.board.CallEvents(this, new() { { "Trigger", "ResourceLost" }, { "Triggerer", "Effector" }, { "ResourceType", resource.Key }, { "ResourceAmount", resource.Value + "" } });
+                Board.board.CallEvents(this == Board.board.player ? Board.board.enemy : Board.board.player, new() { { "Trigger", "ResourceLost" }, { "Triggerer", "Other" }, { "ResourceType", resource.Key }, { "ResourceAmount", resource.Value + "" } });
+            }
     }
 
     //Resets entity's resources to their base amount
@@ -523,9 +518,7 @@ public class Entity
     public void Initialise(bool fullReset = true)
     {
         if (fullReset)
-        {
             health = MaxHealth();
-        }
         actionBars.ForEach(x => x.cooldown = 0);
         buffs = new();
         ResetResources();
@@ -534,36 +527,49 @@ public class Entity
     //Cooldowns all action bar abilities by 1 turn
     public void Cooldown()
     {
-        actionBars.ForEach(x => x.cooldown -= x.cooldown == 0 ? 0 : 1);
+        foreach (var actionBar in actionBars)
+            if (actionBar.cooldown > 0)
+            {
+                actionBar.cooldown -= 1;
+                if (actionBar.cooldown == 0)
+                    Board.board.CallEvents(this, new() { { "Trigger", "Cooldown" }, { "Triggerer", "Effector" }, { "AbilityName", actionBar.ability } });
+            }
     }
 
     //Deals given amount of damage to this entity
-    public void Damage(double damage, bool dontPrompt = false)
+    public void Damage(double damage, bool dontCall)
     {
-        var p = Board.board.player == this;
+        var before = health;
         health -= (int)Math.Ceiling(damage);
-        if (dontPrompt) return;
-        //foreach (var buff in buffs)
-        //    if (buff.Item1 == "Volatile Infection")
-        //    {
-        //        Board.board.actions.Add(() => animationTime += frameTime * 3);
-        //        Board.board.actions.Add(() =>
-        //        {
-        //            AddSmallButtonOverlay(buff.Item3, "OtherGlowFull", 1);
-        //            Damage(damage / 10, true);
-        //            SpawnShatter(6, 0.7, new Vector3(!p ? 148 : -318, 122), "AbilityDeathPact", true, !p ? "1000" : "1001");
-        //            SpawnShatter(6, 0.7, new Vector3(!p ? 148 : -318, 122), "AbilityDeathPact", true, !p ? "1000" : "1001");
-        //            PlaySound("AbilityVenomousBiteFlare");
-        //            animationTime += frameTime * 3;
-        //        });
-        //    }
+        if (!dontCall)
+        {
+            Board.board.CallEvents(this, new() { { "Trigger", "Damage" }, { "Triggerer", "Effector" }, { "DamageAmount", damage + "" } });
+            Board.board.CallEvents(this == Board.board.player ? Board.board.enemy : Board.board.player, new() { { "Trigger", "Damage" }, { "Triggerer", "Other" }, { "DamageAmount", damage + "" } });
+        }
+        if (health <= 0 && before > 0)
+        {
+            Board.board.CallEvents(this, new() { { "Trigger", "HealthDeplated" }, { "Triggerer", "Effector" } });
+            Board.board.CallEvents(this == Board.board.player ? Board.board.enemy : Board.board.player, new() { { "Trigger", "HealthDeplated" }, { "Triggerer", "Other" } });
+        }
     }
 
     //Heals this entity by given amount
-    public void Heal(double heal)
+    public void Heal(double heal, bool dontCall)
     {
+        var before = health;
         health += (int)Math.Round(heal);
-        if (health > MaxHealth()) health = MaxHealth();
+        if (health > MaxHealth())
+            health = MaxHealth();
+        if (!dontCall)
+        {
+            Board.board.CallEvents(this, new() { { "Trigger", "Heal" }, { "Triggerer", "Effector" }, { "HealAmount", heal + "" } });
+            Board.board.CallEvents(this == Board.board.player ? Board.board.enemy : Board.board.player, new() { { "Trigger", "Heal" }, { "Triggerer", "Other" }, { "HealAmount", heal + "" } });
+        }
+        if (health == MaxHealth() && before != health)
+        {
+            Board.board.CallEvents(this, new() { { "Trigger", "HealthMaxed" }, { "Triggerer", "Effector" } });
+            Board.board.CallEvents(this == Board.board.player ? Board.board.enemy : Board.board.player, new() { { "Trigger", "HealthMaxed" }, { "Triggerer", "Other" } });
+        }
     }
 
     public List<Ability> AbilitiesInCombat() => Ability.abilities.FindAll(x => abilities.Contains(x.name) && (x.cost == null || actionBars.Exists(y => y.ability == x.name)));
