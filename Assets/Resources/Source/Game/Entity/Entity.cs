@@ -68,7 +68,7 @@ public class Entity
             }
         );
         Initialise();
-        var importance = ElementImportance(race.rarity == "Common");
+        var importance = ElementImportance(race.kind == "Common");
     }
 
     #region Experience & Leveling
@@ -319,7 +319,7 @@ public class Entity
     //Provides entity's class
     public Class GetClass()
     {
-        return Class.classes.Find(x => x.name == spec);
+        return Class.specs.Find(x => x.name == spec);
     }
 
     #endregion

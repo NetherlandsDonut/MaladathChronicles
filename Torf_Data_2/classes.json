@@ -1,6 +1,7 @@
 [
   {
     "name": "Rogue",
+    "icon": "ClassRogue",
     "startingEquipment": {
       "Dwarf": [
         "Footpad's Shirt",
@@ -117,6 +118,7 @@
   },
   {
     "name": "Hunter",
+    "icon": "ClassHunter",
     "startingEquipment": {
       "Dwarf": [
         "Rugged Trapper's Shirt",
@@ -237,6 +239,7 @@
   },
   {
     "name": "Shaman",
+    "icon": "ClassShaman",
     "startingEquipment": {
       "Orc": [
         "Primitive Mantle",
@@ -323,6 +326,7 @@
   },
   {
     "name": "Warrior",
+    "icon": "ClassWarrior",
     "startingEquipment": {
       "Dwarf": [
         "Recruit's Shirt",
@@ -650,6 +654,7 @@
   },
   {
     "name": "Paladin",
+    "icon": "ClassPaladin",
     "startingEquipment": {
       "Dwarf": [
         "Squire's Shirt",
@@ -745,6 +750,7 @@
   },
   {
     "name": "Druid",
+    "icon": "ClassDruid",
     "startingEquipment": {
       "NightElf": [
         "Novice's Robe",
@@ -826,6 +832,7 @@
   },
   {
     "name": "Priest",
+    "icon": "ClassPriest",
     "startingEquipment": {
       "Dwarf": [
         "Neophyte's Robe",
@@ -1094,6 +1101,7 @@
   },
   {
     "name": "Warlock",
+    "icon": "ClassWarlock",
     "startingEquipment": {
       "Gnome": [
         "Acolyte's Robe",
@@ -1339,6 +1347,7 @@
   },
   {
     "name": "Mage",
+    "icon": "ClassMage",
     "startingEquipment": {
       "Gnome": [
         "Apprentice's Robe",

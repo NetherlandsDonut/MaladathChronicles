@@ -16,6 +16,7 @@ using static CursorRemote;
 using static Serialization;
 using static SiteInstance;
 using static SiteComplex;
+using UnityEditor;
 
 public class Starter : MonoBehaviour
 {
@@ -31,7 +32,7 @@ public class Starter : MonoBehaviour
         Deserialize(ref instances, "instances");
         Deserialize(ref complexes, "complexes");
         Deserialize(ref SiteTown.towns, "towns");
-        Deserialize(ref Class.classes, "classes");
+        Deserialize(ref Class.specs, "classes");
         Deserialize(ref Race.races, "races");
         Deserialize(ref ItemSet.itemSets, "sets");
         Deserialize(ref Item.items, "items");
@@ -285,15 +286,17 @@ public class Starter : MonoBehaviour
                     var spec = i; var row = j; var col = k;
                     Blueprint.windowBlueprints.Add(new Blueprint("Talent" + spec + row + col, () => PrintTalent(spec, row, col)));
                 }
-        //Serialize(Race.races, "races 2");
-        //Serialize(Class.classes, "classes 2");
-        //Serialize(Ability.abilities, "abilities 2");
-        //Serialize(Buff.buffs, "buffs 2");
-        //Serialize(Race.races, "races 2");
-        //Serialize(SiteTown.towns, "towns 2");
-        //Serialize(SiteInstance.instances, "instances 2");
-        //Serialize(SiteComplex.complexes, "complexes 2");
-        //Serialize(ItemSet.itemSets, "sets 2");
+        #if (UNITY_EDITOR)
+        var ambienceList = AssetDatabase.FindAssets("t:AudioClip Ambience", new[] { "Assets/Resources/Ambience" }).Select(x => AssetDatabase.GUIDToAssetPath(x).Replace("Assets/Resources/Ambience/Ambience", "")).ToList();
+        var soundList = AssetDatabase.FindAssets("t:AudioClip", new[] { "Assets/Resources/Sounds" }).Select(x => AssetDatabase.GUIDToAssetPath(x).Replace("Assets/Resources/Sounds/", "")).ToList();
+        var iconList = AssetDatabase.FindAssets("t:Texture", new[] { "Assets/Resources/Sprites/Building/BigButtons" }).Select(x => AssetDatabase.GUIDToAssetPath(x).Replace("Assets/Resources/Sprites/Building/BigButtons/", "")).ToList();
+        var portraitList = AssetDatabase.FindAssets("t:Texture Portrait", new[] { "Assets/Resources/Sprites/Building/BigButtons" }).Select(x => AssetDatabase.GUIDToAssetPath(x).Replace("Assets/Resources/Sprites/Building/BigButtons/", "")).ToList();
+        iconList.RemoveAll(x => x.StartsWith("Other"));
+        Assets.assets = new Assets(ambienceList, soundList, iconList, portraitList);
+        Serialize(Assets.assets, "assets");
+        #else
+        Deserialize(ref Assets.assets, "assets");
+        #endif
         cursor = FindObjectOfType<Cursor>();
         cursorEnemy = FindObjectOfType<CursorRemote>();
         ambience = FindObjectsOfType<AudioSource>().First(x => x.name == "Ambience");

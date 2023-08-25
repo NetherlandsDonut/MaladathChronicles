@@ -1,7 +1,7 @@
 using UnityEngine;
 
 using static Root;
-using static Root.Anchor;
+using static Ability;
 
 using static Sound;
 
@@ -36,52 +36,7 @@ public class Talent
                 },
                 (h) => () =>
                 {
-                    SetAnchor(Top, 0, -13);
-                    AddHeaderGroup();
-                    SetRegionGroupWidth(256);
-                    SetRegionGroupHeight(237);
-                    AddHeaderRegion(() =>
-                    {
-                        AddLine(talent.ability, "Gray");
-                    });
-                    AddPaddingRegion(() =>
-                    {
-                        AddBigButton("Ability" + talent.ability.Replace(" ", "").Replace(":", ""), (h) => { });
-                        if (abilityObj != null)
-                        {
-                            AddLine("Required level: ", "DarkGray");
-                            AddText(1 + "", "Gray");
-                            AddLine("Cooldown: ", "DarkGray");
-                            AddText(abilityObj.cooldown == 0 ? "None" : abilityObj.cooldown + (abilityObj.cooldown == 1 ? " turn" : " turns"), "Gray");
-                        }
-                    });
-                    if (abilityObj != null)
-                    {
-                        abilityObj.PrintDescription(currentSave.player, null, 256);
-                        if (abilityObj.cost != null)
-                            foreach (var cost in abilityObj.cost)
-                            {
-                                AddRegionGroup();
-                                AddHeaderRegion(() =>
-                                {
-                                    AddSmallButton("Element" + cost.Key + "Rousing", (h) => { });
-                                });
-                                AddRegionGroup();
-                                SetRegionGroupWidth(20);
-                                AddHeaderRegion(() =>
-                                {
-                                    AddLine(cost.Value + "", Board.board != null ? (cost.Value > Board.board.player.resources[cost.Key] ? "Red" : "Green") : "Gray");
-                                });
-                            }
-                    }
-                    else AddPaddingRegion(() =>
-                    {
-                        AddLine("Ability wasn't found!", "Red");
-                        SetRegionAsGroupExtender();
-                    });
-                    AddRegionGroup();
-                    SetRegionGroupWidth(256 - (abilityObj == null || abilityObj.cost == null ? 0 : abilityObj.cost.Count) * 49);
-                    AddPaddingRegion(() => { AddLine(); });
+                    PrintAbilityTooltip(currentSave.player, null, abilities.Find(x => x.name == talent.ability));
                 }
             );
             if (currentSave.player.abilities.Contains(talent.ability))

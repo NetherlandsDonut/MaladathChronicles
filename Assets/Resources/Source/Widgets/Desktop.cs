@@ -6,6 +6,7 @@ using static Root;
 using static Sound;
 using static Cursor;
 using static InputLine;
+using System.Linq;
 
 public class Desktop : MonoBehaviour
 {
@@ -267,16 +268,15 @@ public class Desktop : MonoBehaviour
                 }
                 else
                 {
-                    int downs = 0, helds = 0;
-                    foreach (var hotkey in hotkeys)
+                    int helds = 0;
+                    foreach (var hotkey in hotkeys.OrderByDescending(x => x.keyDown))
                         if (Input.GetKeyDown(hotkey.key) && hotkey.keyDown || Input.GetKey(hotkey.key) && !hotkey.keyDown)
                         {
-                            if (Input.GetKeyDown(hotkey.key)) downs++;
+                            if (Input.GetKeyDown(hotkey.key)) keyStack = 0;
                             else helds++;
                             hotkey.action();
                         }
-                    if (downs > 0) keyStack = 0;
-                    if (helds > 0 && keyStack < 100) keyStack++;
+                    if (helds > 0 && keyStack < 500) keyStack++;
                 }
             }
         }

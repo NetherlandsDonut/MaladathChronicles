@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 
 using static Root;
+using static Root.Anchor;
 
 public class Ability
 {
@@ -109,6 +110,65 @@ public class Ability
 
     #region Description
 
+    public static void PrintAbilityTooltip(Entity effector, Entity other, Ability ability)
+    {
+        SetAnchor(Top, 0, -39);
+        AddHeaderGroup();
+        SetRegionGroupWidth(246);
+        SetRegionGroupHeight(227);
+        if (ability == null)
+        {
+            AddHeaderRegion(() =>
+            {
+                AddLine("Ability not found.", "Red");
+            });
+            AddRegionGroup();
+            SetRegionGroupWidth(246);
+            AddPaddingRegion(() => { AddLine(); });
+        }
+        else
+        {
+            AddHeaderRegion(() =>
+            {
+                AddLine(ability.name, "Gray");
+            });
+            AddPaddingRegion(() =>
+            {
+                AddBigButton(ability.icon, (h) => { });
+                AddLine("Cooldown: ", "DarkGray");
+                AddText(ability.cooldown == 0 ? "None" : ability.cooldown + (ability.cooldown == 1 ? " turn" : " turns"), "Gray");
+                if (effector != null && effector.actionBars != null)
+                {
+                    var find = effector.actionBars.Find(x => x.ability == ability.name);
+                    if (find != null && find.cooldown > 0)
+                    {
+                        AddLine("Cooldown left: ", "DarkGray");
+                        AddText(find.cooldown + (find.cooldown == 1 ? " turn" : " turns"), "Gray");
+                    }
+                }
+            });
+            ability.PrintDescription(effector, other, 246);
+            if (ability.cost != null)
+                foreach (var cost in ability.cost)
+                {
+                    AddRegionGroup();
+                    AddHeaderRegion(() =>
+                    {
+                        AddSmallButton("Element" + cost.Key + "Rousing", (h) => { });
+                    });
+                    AddRegionGroup();
+                    SetRegionGroupWidth(20);
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine(cost.Value + "", effector != null ? cost.Value > effector.resources[cost.Key] ? "Red" : "Green" : "Gray");
+                    });
+                }
+            AddRegionGroup();
+            SetRegionGroupWidth(246 - (ability.cost == null ? 0 : ability.cost.Count) * 49);
+            AddPaddingRegion(() => { AddLine(); });
+        }
+    }
+
     public void PrintDescription(Entity effector, Entity other, int width)
     {
         if (description != null) description.Print(effector, other, width);
@@ -129,5 +189,6 @@ public class Ability
     public List<Event> events;
     public Description description;
 
+    public static Ability ability;
     public static List<Ability> abilities;
 }

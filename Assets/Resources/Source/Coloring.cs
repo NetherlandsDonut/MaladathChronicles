@@ -7,7 +7,7 @@ public static class Coloring
 {
     public static string ColorItemRequiredLevel(int level)
     {
-        if (level > currentSave.player.level) return "Red";
+        if (currentSave != null && currentSave.player != null && level > currentSave.player.level) return "Red";
         else return "Gray";
     }
 

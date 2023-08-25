@@ -14,5 +14,11 @@ public class String
     public void Reset() => value = backupValue;
 
     public static String consoleInput = new();
+    public static String search = new();
     public static String objectName = new();
+    public static String vitality = new();
+    public static String price = new();
+    public static String itemPower = new();
+    public static String cooldown = new();
+    public static String requiredLevel = new();
 }

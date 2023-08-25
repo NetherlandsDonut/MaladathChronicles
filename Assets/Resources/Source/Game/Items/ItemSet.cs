@@ -8,6 +8,7 @@ public class ItemSet
 
     public int EquippedPieces(Entity entity) => entity.equipment.Count(x => x.Value.set == name);
 
+    public static ItemSet itemSet;
     public static List<ItemSet> itemSets;
 }
 

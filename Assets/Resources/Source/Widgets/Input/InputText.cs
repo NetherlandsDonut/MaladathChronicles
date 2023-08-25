@@ -7,13 +7,8 @@ using static Coloring;
 
 public class InputText : MonoBehaviour
 {
-    //Parent
     public InputLine inputLine;
-
-    //Children
     public List<GameObject> characters;
-
-    //Fields
     public String text;
 
     public void Initialise(InputLine inputLine, String text)
@@ -34,7 +29,7 @@ public class InputText : MonoBehaviour
         }
     }
 
-    public int SpawnCharacter(char character, int offset)
+    public int SpawnCharacter(char character, int offset, string color = "")
     {
         var newCharacter = new GameObject("Character", typeof(SpriteRenderer));
         newCharacter.transform.parent = transform;
@@ -42,7 +37,7 @@ public class InputText : MonoBehaviour
         var glyph = GetGlyph(character);
         newCharacter.GetComponent<SpriteRenderer>().sortingLayerName = inputLine.region.regionGroup.window.layer;
         newCharacter.GetComponent<SpriteRenderer>().sprite = glyph;
-        newCharacter.GetComponent<SpriteRenderer>().color = colors[character + "" == markerCharacter ? "Gray" : "LightGray"];
+        newCharacter.GetComponent<SpriteRenderer>().color = colors[character + "" == markerCharacter ? "Gray" : (color != "" ? color : "LightGray")];
         if (character + "" == markerCharacter) newCharacter.AddComponent<Blinking>();
         else
         {

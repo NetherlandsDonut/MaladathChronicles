@@ -69,7 +69,7 @@ public class FutureEntity
         return sheet;
     }
 
-    public Class GetClass() => Class.classes.Find(x => x.name == spec);
+    public Class GetClass() => Class.specs.Find(x => x.name == spec);
 
     //Calculates max health for the entity
     public int MaxHealth()

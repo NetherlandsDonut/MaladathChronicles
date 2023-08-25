@@ -4,15 +4,10 @@ using System.Collections.Generic;
 
 public class RegionGroup : MonoBehaviour
 {
-    //Parent
     public Window window;
-
-    //Children
     public List<Region> regions;
     public Region LBRegion, EXTRegion;
-
-    //Fields
-    public int setWidth, setHeight, currentHeight;
+    public int setWidth, setHeight, currentHeight, pagination;
 
     public void Initialise(Window window, bool header)
     {

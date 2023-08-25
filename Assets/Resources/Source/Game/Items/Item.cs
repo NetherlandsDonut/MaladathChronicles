@@ -269,7 +269,7 @@ public class Item
             {
                 foreach (var bonus in set.setBonuses)
                 {
-                    var howMuch = set.EquippedPieces(currentSave.player);
+                    var howMuch = currentSave != null && currentSave.player != null ? set.EquippedPieces(currentSave.player) : 0;
                     bool has = howMuch >= bonus.requiredPieces;
                     AddLine((has ? bonus.requiredPieces : howMuch) + "/" + bonus.requiredPieces + " Set: ", has ? "Uncommon" : "DarkGray");
                     if (bonus.description.Count > 0)
@@ -279,15 +279,17 @@ public class Item
                 }
             });
         }
-        AddHeaderRegion(() =>
-        {
-            AddLine("Required level: ", "DarkGray");
-            AddText(item.lvl + "", ColorItemRequiredLevel(item.lvl));
-        });
+        if (item.lvl > 0)
+            AddHeaderRegion(() =>
+            {
+                AddLine("Required level: ", "DarkGray");
+                AddText(item.lvl + "", ColorItemRequiredLevel(item.lvl));
+            });
         PrintPriceRegion(item.price);
     }
 
     public static Item GetItem(string name) => items.Find(x => x.name == name);
 
+    public static Item item;
     public static List<Item> items;
 }

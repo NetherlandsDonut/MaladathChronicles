@@ -2,6 +2,7 @@
   {
     "name": "Dwarf",
     "faction": "Alliance",
+    "portrait": "PortraitDwarf",
     "stats": {
       "stats": {
         "Stamina": 7,
@@ -62,6 +63,7 @@
   {
     "name": "Gnome",
     "faction": "Alliance",
+    "portrait": "PortraitGnome",
     "stats": {
       "stats": {
         "Stamina": 3,
@@ -120,6 +122,7 @@
   {
     "name": "Human",
     "faction": "Alliance",
+    "portrait": "PortraitHuman",
     "stats": {
       "stats": {
         "Stamina": 6,
@@ -178,6 +181,7 @@
   {
     "name": "Night Elf",
     "faction": "Alliance",
+    "portrait": "PortraitNightElf",
     "stats": {
       "stats": {
         "Stamina": 5,
@@ -236,6 +240,7 @@
   {
     "name": "Orc",
     "faction": "Horde",
+    "portrait": "PortraitOrc",
     "stats": {
       "stats": {
         "Stamina": 7,
@@ -293,6 +298,7 @@
   {
     "name": "Tauren",
     "faction": "Horde",
+    "portrait": "PortraitTauren",
     "stats": {
       "stats": {
         "Stamina": 8,
@@ -351,6 +357,7 @@
   {
     "name": "Troll",
     "faction": "Horde",
+    "portrait": "PortraitTroll",
     "stats": {
       "stats": {
         "Stamina": 7,
@@ -409,6 +416,7 @@
   {
     "name": "Forsaken",
     "faction": "Horde",
+    "portrait": "PortraitForsaken",
     "stats": {
       "stats": {
         "Stamina": 5,
@@ -466,7 +474,7 @@
   },
   {
     "name": "Dumb Kobold",
-    "rarity": "Common",
+    "kind": "Common",
     "portrait": "PortraitKobold",
     "vitality": 2.0,
     "abilities": [
@@ -476,7 +484,7 @@
   },
   {
     "name": "Kobold Digger",
-    "rarity": "Common",
+    "kind": "Common",
     "portrait": "PortraitKobold",
     "vitality": 1.0,
     "abilities": [
@@ -486,7 +494,7 @@
   },
   {
     "name": "Lord Victor Nefarius",
-    "rarity": "Elite",
+    "kind": "Elite",
     "portrait": "PortraitLordVictorNefarius",
     "vitality": 3.0,
     "abilities": [],
@@ -494,7 +502,7 @@
   },
   {
     "name": "Nefarian",
-    "rarity": "Elite",
+    "kind": "Elite",
     "portrait": "PortraitNefarian",
     "vitality": 4.0,
     "abilities": [
@@ -509,7 +517,7 @@
   },
   {
     "name": "Chief Ukorz Sandscalp",
-    "rarity": "Elite",
+    "kind": "Elite",
     "portrait": "PortraitChiefUkorz",
     "vitality": 2.2,
     "abilities": [
@@ -525,7 +533,7 @@
   },
   {
     "name": "Witch Doctor Zum'rah",
-    "rarity": "Elite",
+    "kind": "Elite",
     "portrait": "PortraitSandTroll",
     "vitality": 1.8,
     "abilities": [
@@ -541,7 +549,7 @@
   },
   {
     "name": "Cannibal Ghoul",
-    "rarity": "Common",
+    "kind": "Common",
     "portrait": "PortraitGhoul",
     "vitality": 1.0,
     "abilities": [
@@ -552,7 +560,7 @@
   },
   {
     "name": "Necromancer",
-    "rarity": "Common",
+    "kind": "Common",
     "portrait": "PortraitGhoul",
     "vitality": 0.9,
     "abilities": [
@@ -563,7 +571,7 @@
   },
   {
     "name": "Cursed Mage",
-    "rarity": "Common",
+    "kind": "Common",
     "portrait": "PortraitGhoul",
     "vitality": 0.9,
     "abilities": [
@@ -574,7 +582,7 @@
   },
   {
     "name": "Rotting Sludge",
-    "rarity": "Common",
+    "kind": "Common",
     "portrait": "PortraitGhoul",
     "vitality": 1.0,
     "abilities": [
@@ -585,7 +593,7 @@
   },
   {
     "name": "Scarlet Cleric",
-    "rarity": "Common",
+    "kind": "Common",
     "portrait": "PortraitGhoul",
     "vitality": 1.0,
     "abilities": [
@@ -596,7 +604,7 @@
   },
   {
     "name": "Scourge Soldier",
-    "rarity": "Common",
+    "kind": "Common",
     "portrait": "PortraitSkeletalWarrior",
     "vitality": 1.0,
     "abilities": [
@@ -607,7 +615,7 @@
   },
   {
     "name": "Putrid Gargoyle",
-    "rarity": "Common",
+    "kind": "Common",
     "portrait": "PortraitGargoyle",
     "vitality": 1.0,
     "abilities": [
@@ -618,7 +626,7 @@
   },
   {
     "name": "Scourge Warder",
-    "rarity": "Common",
+    "kind": "Common",
     "portrait": "PortraitSkeletalWarrior",
     "vitality": 1.0,
     "abilities": [
@@ -629,7 +637,7 @@
   },
   {
     "name": "Noxious Plaguebat",
-    "rarity": "Common",
+    "kind": "Common",
     "portrait": "PortraitPlaguebat",
     "vitality": 1.0,
     "abilities": [
@@ -640,7 +648,7 @@
   },
   {
     "name": "Death Cultist",
-    "rarity": "Common",
+    "kind": "Common",
     "portrait": "PortraitSkeletalWarrior",
     "vitality": 0.9,
     "abilities": [
@@ -651,7 +659,7 @@
   },
   {
     "name": "Plaguehound Runt",
-    "rarity": "Common",
+    "kind": "Common",
     "portrait": "PortraitPlaguehound",
     "vitality": 0.9,
     "abilities": [
@@ -662,7 +670,7 @@
   },
   {
     "name": "Torn Screamer",
-    "rarity": "Common",
+    "kind": "Common",
     "portrait": "PortraitBanshee",
     "vitality": 1.0,
     "abilities": [
@@ -673,7 +681,7 @@
   },
   {
     "name": "Scarlet Warder",
-    "rarity": "Common",
+    "kind": "Common",
     "portrait": "PortraitBanshee",
     "vitality": 1.0,
     "abilities": [
@@ -684,7 +692,7 @@
   },
   {
     "name": "Scarlet Enchanter",
-    "rarity": "Common",
+    "kind": "Common",
     "portrait": "PortraitBanshee",
     "vitality": 1.0,
     "abilities": [
@@ -695,7 +703,7 @@
   },
   {
     "name": "Dark Summoner",
-    "rarity": "Common",
+    "kind": "Common",
     "portrait": "PortraitCryptFiend",
     "vitality": 1.0,
     "abilities": [
@@ -706,7 +714,7 @@
   },
   {
     "name": "Living Decay",
-    "rarity": "Common",
+    "kind": "Common",
     "portrait": "PortraitCryptFiend",
     "vitality": 1.0,
     "abilities": [
@@ -717,7 +725,7 @@
   },
   {
     "name": "Blighted Surge",
-    "rarity": "Common",
+    "kind": "Common",
     "portrait": "PortraitCryptFiend",
     "vitality": 1.0,
     "abilities": [
@@ -728,7 +736,7 @@
   },
   {
     "name": "Plague Ravager",
-    "rarity": "Common",
+    "kind": "Common",
     "portrait": "PortraitCryptFiend",
     "vitality": 1.0,
     "abilities": [
@@ -739,7 +747,7 @@
   },
   {
     "name": "Crypt Fiend",
-    "rarity": "Common",
+    "kind": "Common",
     "portrait": "PortraitCryptFiend",
     "vitality": 1.1,
     "abilities": [
@@ -751,7 +759,7 @@
   },
   {
     "name": "Crypt Walker",
-    "rarity": "Common",
+    "kind": "Common",
     "portrait": "PortraitCryptFiend",
     "vitality": 1.1,
     "abilities": [
@@ -763,7 +771,7 @@
   },
   {
     "name": "Plaguehound",
-    "rarity": "Common",
+    "kind": "Common",
     "portrait": "PortraitCryptFiend",
     "vitality": 1.0,
     "abilities": [
@@ -774,7 +782,7 @@
   },
   {
     "name": "Plaguebat",
-    "rarity": "Common",
+    "kind": "Common",
     "portrait": "PortraitCryptFiend",
     "vitality": 0.8,
     "abilities": [
@@ -785,7 +793,7 @@
   },
   {
     "name": "Duskbat",
-    "rarity": "Common",
+    "kind": "Common",
     "portrait": "PortraitDuskwing",
     "vitality": 0.9,
     "abilities": [
@@ -796,7 +804,7 @@
   },
   {
     "name": "Wretched Zombie",
-    "rarity": "Common",
+    "kind": "Common",
     "portrait": "PortraitDuskwing",
     "vitality": 1.0,
     "abilities": [
@@ -807,7 +815,7 @@
   },
   {
     "name": "Rattlecage Skeleton",
-    "rarity": "Common",
+    "kind": "Common",
     "portrait": "PortraitSkeleton",
     "vitality": 1.0,
     "abilities": [
@@ -818,7 +826,7 @@
   },
   {
     "name": "Golemagg the Incinerator",
-    "rarity": "Elite",
+    "kind": "Elite",
     "portrait": "PortraitMoltenGiant",
     "vitality": 3.0,
     "abilities": [
@@ -829,7 +837,7 @@
   },
   {
     "name": "Taerar",
-    "rarity": "Elite",
+    "kind": "Elite",
     "portrait": "PortraitTaerar",
     "vitality": 3.0,
     "abilities": [
@@ -843,7 +851,7 @@
   },
   {
     "name": "Emeriss",
-    "rarity": "Elite",
+    "kind": "Elite",
     "portrait": "PortraitEmeriss",
     "vitality": 3.0,
     "abilities": [
@@ -858,7 +866,7 @@
   },
   {
     "name": "Lethon",
-    "rarity": "Elite",
+    "kind": "Elite",
     "portrait": "PortraitLethon",
     "vitality": 3.0,
     "abilities": [
@@ -872,7 +880,7 @@
   },
   {
     "name": "Ysondre",
-    "rarity": "Elite",
+    "kind": "Elite",
     "portrait": "PortraitYsondre",
     "vitality": 3.0,
     "abilities": [

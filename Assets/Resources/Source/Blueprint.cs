@@ -5,9 +5,15 @@ using System.Collections.Generic;
 
 using static Item;
 using static Root;
+using static Buff;
+using static Race;
+using static Class;
 using static Sound;
 using static Cursor;
+using static ItemSet;
+using static Ability;
 using static Coloring;
+using static Serialization;
 using static SiteHostileArea;
 using static SiteInstance;
 using static SiteComplex;
@@ -16,7 +22,6 @@ using static SiteTown;
 using static Root.Anchor;
 
 using static UnityEngine.KeyCode;
-using UnityEditor;
 
 public class Blueprint
 {
@@ -235,7 +240,7 @@ public class Blueprint
             );
             AddHeaderRegion(() =>
             {
-                AddBigButton("Class" + Board.board.player.spec,
+                AddBigButton(Board.board.player.GetClass().icon,
                     (h) => { }
                 );
                 AddLine("Level: " + Board.board.player.level, "Gray");
@@ -243,7 +248,7 @@ public class Blueprint
             });
             foreach (var actionBar in Board.board.player.actionBars)
             {
-                var abilityObj = Ability.abilities.Find(x => x.name == actionBar.ability);
+                var abilityObj = abilities.Find(x => x.name == actionBar.ability);
                 if (abilityObj == null || abilityObj.cost == null) continue;
                 AddButtonRegion(
                     () =>
@@ -272,46 +277,7 @@ public class Blueprint
                     },
                     (h) => () =>
                     {
-                        SetAnchor(Top, 0, -42);
-                        AddHeaderGroup();
-                        SetRegionGroupWidth(236);
-                        SetRegionGroupHeight(217);
-                        AddHeaderRegion(() =>
-                        {
-                            AddLine(actionBar.ability, "Gray");
-                        });
-                        AddPaddingRegion(() =>
-                        {
-                            AddBigButton(abilityObj.icon, (h) => { });
-                            AddLine("Cooldown: ", "DarkGray");
-                            AddText(abilityObj.cooldown == 0 ? "None" : abilityObj.cooldown + (abilityObj.cooldown == 1 ? " turn"  : " turns"), "Gray");
-                            if (actionBar.cooldown > 0)
-                            {
-                                AddLine("Cooldown left: ", "DarkGray");
-                                AddText(actionBar.cooldown + (actionBar.cooldown == 1 ? " turn"  : " turns"), "Gray");
-                            }
-                        });
-                        abilityObj.PrintDescription(Board.board.player, Board.board.enemy, 236);
-                        foreach (var cost in abilityObj.cost)
-                        {
-                            AddRegionGroup();
-                            AddHeaderRegion(() =>
-                            {
-                                AddSmallButton("Element" + cost.Key + "Rousing", (h) => { });
-                            });
-                            AddRegionGroup();
-                            SetRegionGroupWidth(20);
-                            AddHeaderRegion(() =>
-                            {
-                                AddLine(cost.Value + "", cost.Value > Board.board.player.resources[cost.Key] ? "Red" : "Green");
-                            });
-                        }
-                        AddRegionGroup();
-                        SetRegionGroupWidth(236 - abilityObj.cost.Count * 49);
-                        AddPaddingRegion(() =>
-                        {
-                            AddLine();
-                        });
+                        PrintAbilityTooltip(Board.board.player, Board.board.enemy, abilityObj);
                     }
                 );
             }
@@ -335,7 +301,7 @@ public class Blueprint
                 AddBigButton("Portrait" + currentSave.player.race + currentSave.player.gender,
                     (h) => { }
                 );
-                AddBigButton("Class" + currentSave.player.spec,
+                AddBigButton(currentSave.player.GetClass().icon,
                     (h) => { }
                 );
                 AddLine("Level: " + currentSave.player.level, "Gray");
@@ -516,39 +482,7 @@ public class Blueprint
                     (h) => { },
                     (h) => () =>
                     {
-                        SetAnchor(Top, 0, -42);
-                        AddHeaderGroup();
-                        SetRegionGroupWidth(236);
-                        SetRegionGroupHeight(217);
-                        AddHeaderRegion(() =>
-                        {
-                            AddLine(abilityObj.name, "Gray");
-                        });
-                        AddPaddingRegion(() =>
-                        {
-                            AddBigButton(abilityObj.icon, (h) => { });
-                            AddLine("Cooldown: ", "DarkGray");
-                            AddText(abilityObj.cooldown == 0 ? "None" : abilityObj.cooldown + (abilityObj.cooldown == 1 ? " turn"  : " turns"), "Gray");
-                        });
-                        abilityObj.PrintDescription(currentSave.player, null, 236);
-                        if (abilityObj.cost != null)
-                            foreach (var cost in abilityObj.cost)
-                            {
-                                AddRegionGroup();
-                                AddHeaderRegion(() =>
-                                {
-                                    AddSmallButton("Element" + cost.Key + "Rousing", (h) => { });
-                                });
-                                AddRegionGroup();
-                                SetRegionGroupWidth(20);
-                                AddHeaderRegion(() =>
-                                {
-                                    AddLine(cost.Value + "", "Gray");
-                                });
-                            }
-                        AddRegionGroup();
-                        SetRegionGroupWidth(236 - (abilityObj.cost == null ? 0 : abilityObj.cost.Count) * 49);
-                        AddPaddingRegion(() => { AddLine(); });
+                        PrintAbilityTooltip(currentSave.player, null, abilityObj);
                     }
                 );
             }
@@ -571,7 +505,7 @@ public class Blueprint
             );
             AddHeaderRegion(() =>
             {
-                AddBigButton("Class" + currentSave.player.spec,
+                AddBigButton(currentSave.player.GetClass().icon,
                     (h) => { }
                 );
                 AddLine("Level: " + currentSave.player.level, "Gray");
@@ -599,38 +533,7 @@ public class Blueprint
                         },
                         (h) => () =>
                         {
-                            SetAnchor(Top, 0, -42);
-                            AddHeaderGroup();
-                            SetRegionGroupWidth(236);
-                            SetRegionGroupHeight(217);
-                            AddHeaderRegion(() =>
-                            {
-                                AddLine(abilityObj.name, "Gray");
-                            });
-                            AddPaddingRegion(() =>
-                            {
-                                AddBigButton(abilityObj.icon, (h) => { });
-                                AddLine("Cooldown: ", "DarkGray");
-                                AddText(abilityObj.cooldown == 0 ? "None" : abilityObj.cooldown + (abilityObj.cooldown == 1 ? " turn"  : " turns"), "Gray");
-                            });
-                            abilityObj.PrintDescription(currentSave.player, null, 236);
-                            foreach (var cost in abilityObj.cost)
-                            {
-                                AddRegionGroup();
-                                AddHeaderRegion(() =>
-                                {
-                                    AddSmallButton("Element" + cost.Key + "Rousing", (h) => { });
-                                });
-                                AddRegionGroup();
-                                SetRegionGroupWidth(20);
-                                AddHeaderRegion(() =>
-                                {
-                                    AddLine(cost.Value + "", cost.Value > currentSave.player.MaxResource(cost.Key) ? "Red" : "Gray");
-                                });
-                            }
-                            AddRegionGroup();
-                            SetRegionGroupWidth(236 - abilityObj.cost.Count * 49);
-                            AddPaddingRegion(() => { AddLine(); });
+                            PrintAbilityTooltip(currentSave.player, null, abilityObj);
                         }
                     );
                 else
@@ -720,7 +623,7 @@ public class Blueprint
             );
             AddHeaderRegion(() =>
             {
-                var race = Race.races.Find(x => x.name == Board.board.enemy.race);
+                var race = races.Find(x => x.name == Board.board.enemy.race);
                 AddBigButton(race.portrait == "" ? "OtherUnknown" : race.portrait, (h) => { });
                 AddLine("Level: ", "Gray");
                 AddText(Board.board.enemy.level - 10 > Board.board.player.level ? "??" : "" + Board.board.enemy.level, ColorEntityLevel(Board.board.enemy.level));
@@ -728,7 +631,7 @@ public class Blueprint
             });
             foreach (var actionBar in Board.board.enemy.actionBars)
             {
-                var abilityObj = Ability.abilities.Find(x => x.name == actionBar.ability);
+                var abilityObj = abilities.Find(x => x.name == actionBar.ability);
                 if (abilityObj == null || abilityObj.cost == null) continue;
                 AddButtonRegion(
                     () =>
@@ -749,41 +652,7 @@ public class Blueprint
                     },
                     (h) => () =>
                     {
-                        SetAnchor(Top, 0, -42);
-                        AddHeaderGroup();
-                        SetRegionGroupWidth(236);
-                        SetRegionGroupHeight(217);
-                        AddHeaderRegion(() =>
-                        {
-                            AddLine(actionBar.ability);
-                        });
-                        AddPaddingRegion(() =>
-                        {
-                            AddBigButton(abilityObj.icon, (h) => { });
-                            AddLine("Cooldown: ", "DarkGray");
-                            AddText(abilityObj.cooldown == 0 ? "None" : abilityObj.cooldown + (abilityObj.cooldown == 1 ? " turn"  : " turns"), "Gray");
-                        });
-                        abilityObj.PrintDescription(Board.board.enemy, Board.board.player, 236);
-                        foreach (var cost in abilityObj.cost)
-                        {
-                            AddRegionGroup();
-                            AddHeaderRegion(() =>
-                            {
-                                AddSmallButton("Element" + cost.Key + "Rousing", (h) => { });
-                            });
-                            AddRegionGroup();
-                            SetRegionGroupWidth(20);
-                            AddHeaderRegion(() =>
-                            {
-                                AddLine(cost.Value + "");
-                            });
-                        }
-                        AddRegionGroup();
-                        SetRegionGroupWidth(236 - abilityObj.cost.Count * 49);
-                        AddPaddingRegion(() =>
-                        {
-                            AddLine();
-                        });
+                        PrintAbilityTooltip(Board.board.enemy, Board.board.player, abilityObj);
                     }
                 );
             }
@@ -882,7 +751,7 @@ public class Blueprint
             );
             AddHeaderRegion(() =>
             {
-                AddBigButton("Class" + currentSave.player.spec,
+                AddBigButton(currentSave.player.GetClass().icon,
                     (h) => { }
                 );
                 AddLine("Level: " + currentSave.player.level, "Gray");
@@ -1572,7 +1441,7 @@ public class Blueprint
                 AddLine("Class: " + creationClass);
                 AddSmallButton("ActionReroll", (h) =>
                 {
-                    var classes = Class.classes.FindAll(x => x.startingEquipment.ContainsKey(creationRace));
+                    var classes = specs.FindAll(x => x.startingEquipment.ContainsKey(creationRace));
                     creationClass = classes[random.Next(classes.Count)].name;
                 });
             });
@@ -1580,10 +1449,10 @@ public class Blueprint
             {
                 if (creationRace != null)
                 {
-                    var classes = Class.classes.FindAll(x => x.startingEquipment.ContainsKey(creationRace));
+                    var classes = specs.FindAll(x => x.startingEquipment.ContainsKey(creationRace));
                     foreach (var foo in classes)
                     {
-                        AddBigButton("Class" + foo.name, (h) => { creationClass = foo.name; });
+                        AddBigButton(foo.icon, (h) => { creationClass = foo.name; });
                         if (creationClass != foo.name) { AddBigButtonOverlay("OtherGridBlurred"); SetBigButtonToGrayscale(); }
                     }
                 }
@@ -1829,27 +1698,162 @@ public class Blueprint
             AddButtonRegion(() => { AddLine("Buffs"); }, (h) => { SpawnDesktopBlueprint("ObjectManagerBuffs"); });
             AddButtonRegion(() => { AddLine("Items"); }, (h) => { SpawnDesktopBlueprint("ObjectManagerItems"); });
             AddButtonRegion(() => { AddLine("Item sets"); }, (h) => { SpawnDesktopBlueprint("ObjectManagerItemSets"); });
+            AddPaddingRegion(() => { AddLine("Actions:"); });
+            AddButtonRegion(() => { AddLine("Save data"); }, (h) =>
+            {
+                Serialize(races, "new races");
+                Serialize(specs, "new classes");
+                Serialize(abilities, "new abilities");
+                Serialize(buffs, "new buffs");
+                Serialize(races, "new races");
+                Serialize(towns, "new towns");
+                Serialize(instances, "new instances");
+                Serialize(complexes, "new complexes");
+                Serialize(itemSets, "new sets");
+            });
             AddPaddingRegion(() => { });
+        }),
+        new("HostileAreasSort", () => {
+            SetAnchor(Center);
+            AddRegionGroup();
+            SetRegionGroupWidth(152);
+            AddHeaderRegion(() =>
+            {
+                AddLine("Sort hostile areas:");
+                AddSmallButton("OtherClose", (h) =>
+                {
+                    CloseWindow("HostileAreasSort");
+                    CloseWindow("ObjectManagerHostileAreas");
+                    SpawnWindowBlueprint("ObjectManagerHostileAreas");
+                });
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("By name", "Black");
+            },
+            (h) =>
+            {
+                areas = areas.OrderBy(x => x.name).ToList();
+                CloseWindow("HostileAreasSort");
+                CloseWindow("ObjectManagerHostileAreas");
+                SpawnWindowBlueprint("ObjectManagerHostileAreas");
+                PlaySound("DesktopInventorySort");
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("By zone", "Black");
+            },
+            (h) =>
+            {
+                areas = areas.OrderBy(x => x.zone).ToList();
+                CloseWindow("HostileAreasSort");
+                CloseWindow("ObjectManagerHostileAreas");
+                SpawnWindowBlueprint("ObjectManagerHostileAreas");
+                PlaySound("DesktopInventorySort");
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("By type", "Black");
+            },
+            (h) =>
+            {
+                areas = areas.OrderBy(x => x.type).ToList();
+                CloseWindow("HostileAreasSort");
+                CloseWindow("ObjectManagerHostileAreas");
+                SpawnWindowBlueprint("ObjectManagerHostileAreas");
+                PlaySound("DesktopInventorySort");
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("By encounter amount", "Black");
+            },
+            (h) =>
+            {
+                areas = areas.OrderByDescending(x => x.possibleEncounters == null ? -1 : x.possibleEncounters.Count).ToList();
+                CloseWindow("HostileAreasSort");
+                CloseWindow("ObjectManagerHostileAreas");
+                SpawnWindowBlueprint("ObjectManagerHostileAreas");
+                PlaySound("DesktopInventorySort");
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("By boss amount", "Black");
+            },
+            (h) =>
+            {
+                areas = areas.OrderByDescending(x => x.bossEncounters == null ? -1 : x.bossEncounters.Count).ToList();
+                CloseWindow("HostileAreasSort");
+                CloseWindow("ObjectManagerHostileAreas");
+                SpawnWindowBlueprint("ObjectManagerHostileAreas");
+                PlaySound("DesktopInventorySort");
+            });
         }),
         new("ObjectManagerHostileAreas", () => {
             SetAnchor(TopLeft);
             AddRegionGroup();
             SetRegionGroupWidth(161);
-            SetRegionGroupHeight(354);
-            AddHeaderRegion(() => { AddLine("Hostile areas:"); });
-            foreach (var foo in areas)
-            AddButtonRegion(() =>
+            SetRegionGroupHeight(358);
+            AddHeaderRegion(() =>
             {
-                AddLine(foo.name);
-            },
-            (h) =>
-            {
-                area = foo;
-                SetDesktopBackground("Areas/Area" + foo.zone + foo.name.Replace(".", "").Replace(" ", "").Replace("\'", ""));
-                CloseWindow("ObjectManagerHostileArea");
-                SpawnWindowBlueprint("ObjectManagerHostileArea");
+                AddLine("Areas:");
+                AddSmallButton("OtherClose", (h) => { CloseDesktop("ObjectManagerHostileAreas"); });
+                AddSmallButton("OtherReverse", (h) =>
+                {
+                    areas.Reverse();
+                    CloseWindow("ObjectManagerHostileAreas");
+                    SpawnWindowBlueprint("ObjectManagerHostileAreas");
+                    PlaySound("DesktopInventorySort");
+                });
+                if (!CDesktop.windows.Exists(x => x.title == "HostileAreasSort"))
+                    AddSmallButton("OtherSort", (h) =>
+                    {
+                        SpawnWindowBlueprint("HostileAreasSort");
+                        CloseWindow("ObjectManagerHostileAreas");
+                        SpawnWindowBlueprint("ObjectManagerHostileAreas");
+                    });
+                else
+                    AddSmallButton("OtherSortOff", (h) => { });
             });
-            AddPaddingRegion(() => { });
+            AddPaddingRegion(() =>
+            {
+                AddLine("Search:", "DarkGray");
+                AddInputLine(String.search, InputType.Everything);
+            });
+            var regionGroup = CDesktop.LBWindow.LBRegionGroup;
+            var max = Math.Ceiling(areas.Count / 10.0);
+            AddPaginationLine(regionGroup, max);
+            for (int i = 0; i < 10; i++)
+            {
+                var index = i;
+                AddButtonRegion(() =>
+                {
+                    if (areas.Count > index + 10 * regionGroup.pagination)
+                    {
+                        SetRegionBackground(RegionBackgroundType.Button);
+                        var foo = areas[index + 10 * regionGroup.pagination];
+                        AddLine(foo.name);
+                        AddSmallButton("Site" + foo.type, (h) => { });
+                    }
+                    else
+                    {
+                        SetRegionBackground(RegionBackgroundType.Padding);
+                        AddLine();
+                    }
+                },
+                (h) =>
+                {
+                    area = areas[index + 10 * regionGroup.pagination];
+                    instance = null;
+                    complex = null;
+                    SetDesktopBackground("Areas/Area" + area.zone + area.name.Replace(".", "").Replace(" ", "").Replace("\'", ""));
+                    CloseWindow("ObjectManagerHostileArea");
+                    SpawnWindowBlueprint("ObjectManagerHostileArea");
+                });
+            }
+            AddPaddingRegion(() =>
+            {
+                AddLine(areas.Count + " hostile areas", "DarkGray");
+            });
         }),
         new("ObjectManagerHostileArea", () => {
             SetAnchor(TopRight);
@@ -1870,7 +1874,10 @@ public class Blueprint
             {
                 CloseWindow("ObjectManagerAmbienceList");
                 if (!CDesktop.windows.Exists(x => x.title == "ObjectManagerHostileAreaTypeList"))
+                {
+                    CloseWindow("ObjectManagerHostileAreas");
                     SpawnWindowBlueprint("ObjectManagerHostileAreaTypeList");
+                }
             });
             AddPaddingRegion(() => { AddLine("Ambience:", "DarkGray"); });
             AddButtonRegion(() =>
@@ -1883,29 +1890,154 @@ public class Blueprint
             {
                 CloseWindow("ObjectManagerHostileAreaTypeList");
                 if (!CDesktop.windows.Exists(x => x.title == "ObjectManagerAmbienceList"))
+                {
+                    CloseWindow("ObjectManagerHostileAreas");
                     SpawnWindowBlueprint("ObjectManagerAmbienceList");
+                }
             });
             AddPaddingRegion(() => { });
+        }),
+        new("InstancesSort", () => {
+            SetAnchor(Center);
+            AddRegionGroup();
+            SetRegionGroupWidth(152);
+            AddHeaderRegion(() =>
+            {
+                AddLine("Sort instances:");
+                AddSmallButton("OtherClose", (h) =>
+                {
+                    CloseWindow("InstancesSort");
+                    CloseWindow("ObjectManagerInstances");
+                    SpawnWindowBlueprint("ObjectManagerInstances");
+                });
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("By name", "Black");
+            },
+            (h) =>
+            {
+                instances = instances.OrderBy(x => x.name).ToList();
+                CloseWindow("InstancesSort");
+                CloseWindow("ObjectManagerInstances");
+                SpawnWindowBlueprint("ObjectManagerInstances");
+                PlaySound("DesktopInventorySort");
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("By zone", "Black");
+            },
+            (h) =>
+            {
+                instances = instances.OrderBy(x => x.zone).ToList();
+                CloseWindow("InstancesSort");
+                CloseWindow("ObjectManagerInstances");
+                SpawnWindowBlueprint("ObjectManagerInstances");
+                PlaySound("DesktopInventorySort");
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("By type", "Black");
+            },
+            (h) =>
+            {
+                instances = instances.OrderBy(x => x.type).ToList();
+                CloseWindow("InstancesSort");
+                CloseWindow("ObjectManagerInstances");
+                SpawnWindowBlueprint("ObjectManagerInstances");
+                PlaySound("DesktopInventorySort");
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("By area amount", "Black");
+            },
+            (h) =>
+            {
+                instances = instances.OrderByDescending(x => x.wings.Sum(y => y.areas.Count)).ToList();
+                CloseWindow("InstancesSort");
+                CloseWindow("ObjectManagerInstances");
+                SpawnWindowBlueprint("ObjectManagerInstances");
+                PlaySound("DesktopInventorySort");
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("By wing amount", "Black");
+            },
+            (h) =>
+            {
+                instances = instances.OrderByDescending(x => x.wings.Count).ToList();
+                CloseWindow("InstancesSort");
+                CloseWindow("ObjectManagerInstances");
+                SpawnWindowBlueprint("ObjectManagerInstances");
+                PlaySound("DesktopInventorySort");
+            });
         }),
         new("ObjectManagerInstances", () => {
             SetAnchor(TopLeft);
             AddRegionGroup();
             SetRegionGroupWidth(161);
-            SetRegionGroupHeight(354);
-            AddHeaderRegion(() => { AddLine("Instances:"); });
-            foreach (var foo in instances)
-            AddButtonRegion(() =>
+            SetRegionGroupHeight(358);
+            AddHeaderRegion(() =>
             {
-                AddLine(foo.name);
-            },
-            (h) =>
-            {
-                instance = foo;
-                SetDesktopBackground("Areas/Area" + foo.name.Replace(".", "").Replace(" ", "").Replace("\'", ""));
-                CloseWindow("ObjectManagerInstance");
-                SpawnWindowBlueprint("ObjectManagerInstance");
+                AddLine("Instances:");
+                AddSmallButton("OtherClose", (h) => { CloseDesktop("ObjectManagerInstances"); });
+                AddSmallButton("OtherReverse", (h) =>
+                {
+                    instances.Reverse();
+                    CloseWindow("ObjectManagerInstances");
+                    SpawnWindowBlueprint("ObjectManagerInstances");
+                    PlaySound("DesktopInventorySort");
+                });
+                if (!CDesktop.windows.Exists(x => x.title == "InstancesSort"))
+                    AddSmallButton("OtherSort", (h) =>
+                    {
+                        SpawnWindowBlueprint("InstancesSort");
+                        CloseWindow("ObjectManagerInstances");
+                        SpawnWindowBlueprint("ObjectManagerInstances");
+                    });
+                else
+                    AddSmallButton("OtherSortOff", (h) => { });
             });
-            AddPaddingRegion(() => { });
+            AddPaddingRegion(() =>
+            {
+                AddLine("Search:", "DarkGray");
+                AddInputLine(String.search, InputType.Everything);
+            });
+            var regionGroup = CDesktop.LBWindow.LBRegionGroup;
+            var max = Math.Ceiling(instances.Count / 10.0);
+            AddPaginationLine(regionGroup, max);
+            for (int i = 0; i < 10; i++)
+            {
+                var index = i;
+                AddButtonRegion(() =>
+                {
+                    if (instances.Count > index + 10 * regionGroup.pagination)
+                    {
+                        SetRegionBackground(RegionBackgroundType.Button);
+                        var foo = instances[index + 10 * regionGroup.pagination];
+                        AddLine(foo.name);
+                        AddSmallButton("Site" + foo.type, (h) => { });
+                    }
+                    else
+                    {
+                        SetRegionBackground(RegionBackgroundType.Padding);
+                        AddLine();
+                    }
+                },
+                (h) =>
+                {
+                    area = null;
+                    instance = instances[index + 10 * regionGroup.pagination];
+                    complex = null;
+                    SetDesktopBackground("Areas/Area" + instance.name.Replace(".", "").Replace(" ", "").Replace("\'", ""));
+                    CloseWindow("ObjectManagerInstance");
+                    SpawnWindowBlueprint("ObjectManagerInstance");
+                });
+            }
+            AddPaddingRegion(() =>
+            {
+                AddLine(instances.Count + " instances", "DarkGray");
+            });
         }),
         new("ObjectManagerInstance", () => {
             SetAnchor(TopRight);
@@ -1926,29 +2058,130 @@ public class Blueprint
             (h) =>
             {
                 if (!CDesktop.windows.Exists(x => x.title == "ObjectManagerAmbienceList"))
+                {
+                    CloseWindow("ObjectManagerInstances");
                     SpawnWindowBlueprint("ObjectManagerAmbienceList");
+                }
             });
             AddPaddingRegion(() => { });
+        }),
+        new("ComplexesSort", () => {
+            SetAnchor(Center);
+            AddRegionGroup();
+            SetRegionGroupWidth(152);
+            AddHeaderRegion(() =>
+            {
+                AddLine("Sort complexes:");
+                AddSmallButton("OtherClose", (h) =>
+                {
+                    CloseWindow("ComplexesSort");
+                    CloseWindow("ObjectManagerComplexes");
+                    SpawnWindowBlueprint("ObjectManagerComplexes");
+                });
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("By name", "Black");
+            },
+            (h) =>
+            {
+                complexes = complexes.OrderBy(x => x.name).ToList();
+                CloseWindow("ComplexesSort");
+                CloseWindow("ObjectManagerComplexes");
+                SpawnWindowBlueprint("ObjectManagerComplexes");
+                PlaySound("DesktopInventorySort");
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("By zone", "Black");
+            },
+            (h) =>
+            {
+                complexes = complexes.OrderBy(x => x.zone).ToList();
+                CloseWindow("ComplexesSort");
+                CloseWindow("ObjectManagerComplexes");
+                SpawnWindowBlueprint("ObjectManagerComplexes");
+                PlaySound("DesktopInventorySort");
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("By site amount", "Black");
+            },
+            (h) =>
+            {
+                complexes = complexes.OrderByDescending(x => x.sites.Count).ToList();
+                CloseWindow("ComplexesSort");
+                CloseWindow("ObjectManagerComplexes");
+                SpawnWindowBlueprint("ObjectManagerComplexes");
+                PlaySound("DesktopInventorySort");
+            });
         }),
         new("ObjectManagerComplexes", () => {
             SetAnchor(TopLeft);
             AddRegionGroup();
             SetRegionGroupWidth(161);
-            SetRegionGroupHeight(354);
-            AddHeaderRegion(() => { AddLine("Complexes:"); });
-            foreach (var foo in complexes)
+            SetRegionGroupHeight(358);
+            AddHeaderRegion(() =>
+            {
+                AddLine("Complexes:");
+                AddSmallButton("OtherClose", (h) => { CloseDesktop("ObjectManagerComplexes"); });
+                AddSmallButton("OtherReverse", (h) =>
+                {
+                    complexes.Reverse();
+                    CloseWindow("ObjectManagerComplexes");
+                    SpawnWindowBlueprint("ObjectManagerComplexes");
+                    PlaySound("DesktopInventorySort");
+                });
+                if (!CDesktop.windows.Exists(x => x.title == "ComplexesSort"))
+                    AddSmallButton("OtherSort", (h) =>
+                    {
+                        SpawnWindowBlueprint("ComplexesSort");
+                        CloseWindow("ObjectManagerComplexes");
+                        SpawnWindowBlueprint("ObjectManagerComplexes");
+                    });
+                else
+                    AddSmallButton("OtherSortOff", (h) => { });
+            });
+            AddPaddingRegion(() =>
+            {
+                AddLine("Search:", "DarkGray");
+                AddInputLine(String.search, InputType.Everything);
+            });
+            var regionGroup = CDesktop.LBWindow.LBRegionGroup;
+            var max = Math.Ceiling(complexes.Count / 10.0);
+            AddPaginationLine(regionGroup, max);
+            for (int i = 0; i < 10; i++)
+            {
+                var index = i;
                 AddButtonRegion(() =>
                 {
-                    AddLine(foo.name);
+                    if (complexes.Count > index + 10 * regionGroup.pagination)
+                    {
+                        SetRegionBackground(RegionBackgroundType.Button);
+                        var foo = complexes[index + 10 * regionGroup.pagination];
+                        AddLine(foo.name);
+                        AddSmallButton("SiteComplex", (h) => { });
+                    }
+                    else
+                    {
+                        SetRegionBackground(RegionBackgroundType.Padding);
+                        AddLine();
+                    }
                 },
                 (h) =>
                 {
-                    complex = foo;
-                    SetDesktopBackground("Areas/Complex" + foo.name.Replace(".", "").Replace(" ", "").Replace("\'", ""));
+                    area = null;
+                    instance = null;
+                    complex = complexes[index + 10 * regionGroup.pagination];
+                    SetDesktopBackground("Areas/Complex" + complex.name.Replace(".", "").Replace(" ", "").Replace("\'", ""));
                     CloseWindow("ObjectManagerComplex");
                     SpawnWindowBlueprint("ObjectManagerComplex");
                 });
-            AddPaddingRegion(() => { });
+            }
+            AddPaddingRegion(() =>
+            {
+                AddLine(complexes.Count + " complexes", "DarkGray");
+            });
         }),
         new("ObjectManagerComplex", () => {
             SetAnchor(TopRight);
@@ -1969,60 +2202,267 @@ public class Blueprint
             (h) =>
             {
                 if (!CDesktop.windows.Exists(x => x.title == "ObjectManagerAmbienceList"))
+                {
+                    CloseWindow("ObjectManagerComplexes");
                     SpawnWindowBlueprint("ObjectManagerAmbienceList");
+                }
             });
             AddPaddingRegion(() => { });
         }),
         new("ObjectManagerAmbienceList", () => {
             SetAnchor(TopLeft);
-            DisableShadows();
             AddRegionGroup();
             SetRegionGroupWidth(161);
+            SetRegionGroupHeight(358);
             AddHeaderRegion(() =>
             {
                 AddLine("Ambience tracks:");
-                AddSmallButton("OtherClose", (h) => { CloseWindow(h.window); });
+                AddSmallButton("OtherClose", (h) =>
+                {
+                    CloseWindow(h.window);
+                    if (area != null)
+                        SpawnWindowBlueprint("ObjectManagerHostileAreas");
+                    else if (instance != null)
+                        SpawnWindowBlueprint("ObjectManagerInstances");
+                    else if (complex != null)
+                        SpawnWindowBlueprint("ObjectManagerComplexes");
+                });
+                AddSmallButton("OtherReverse", (h) =>
+                {
+                    Assets.assets.ambience.Reverse();
+                    CloseWindow("ObjectManagerAmbienceList");
+                    SpawnWindowBlueprint("ObjectManagerAmbienceList");
+                    PlaySound("DesktopInventorySort");
+                });
             });
-            foreach (var foo in AssetDatabase.FindAssets("t:AudioClip Ambience", new[] { "Assets/Resources/Ambience" }).Select(x => AssetDatabase.GUIDToAssetPath(x).Replace("Assets/Resources/Ambience/Ambience", "")))
+            AddPaddingRegion(() =>
+            {
+                AddLine("Search:", "DarkGray");
+                AddInputLine(String.search, InputType.Everything);
+            });
+            var regionGroup = CDesktop.LBWindow.LBRegionGroup;
+            var max = Math.Ceiling(Assets.assets.ambience.Count / 10.0);
+            AddPaginationLine(regionGroup, max);
+            for (int i = 0; i < 10; i++)
+            {
+                var index = i;
                 AddButtonRegion(() =>
                 {
-                    AddLine(foo);
-                    AddSmallButton("OtherSound", (h) => { PlayAmbience("Ambience" + foo.Replace(".ogg", "")); });
+                    if (Assets.assets.ambience.Count > index + 10 * regionGroup.pagination)
+                    {
+                        SetRegionBackground(RegionBackgroundType.Button);
+                        var foo = Assets.assets.ambience[index + 10 * regionGroup.pagination];
+                        AddLine(foo);
+                        AddSmallButton("OtherSound", (h) => { PlayAmbience("Ambience" + foo.Replace(".ogg", "")); });
+                    }
+                    else
+                    {
+                        SetRegionBackground(RegionBackgroundType.Padding);
+                        AddLine();
+                    }
                 },
                 (h) =>
                 {
-                    CloseWindow("ObjectManagerAmbience");
+                    var foo = Assets.assets.ambience[index + 10 * regionGroup.pagination];
+                    CloseWindow("ObjectManagerAmbienceList");
                     if (area != null)
                     {
                         area.ambience = "Ambience" + foo.Replace(".ogg", "");
-                        CloseWindow("ObjectManagerArea");
-                        SpawnWindowBlueprint("ObjectManagerArea");
+                        CloseWindow("ObjectManagerHostileArea");
+                        SpawnWindowBlueprint("ObjectManagerHostileArea");
+                        SpawnWindowBlueprint("ObjectManagerHostileAreas");
                     }
                     else if (instance != null)
                     {
                         instance.ambience = "Ambience" + foo.Replace(".ogg", "");
                         CloseWindow("ObjectManagerInstance");
                         SpawnWindowBlueprint("ObjectManagerInstance");
+                        SpawnWindowBlueprint("ObjectManagerInstances");
                     }
                     else if (complex != null)
                     {
                         complex.ambience = "Ambience" + foo.Replace(".ogg", "");
                         CloseWindow("ObjectManagerComplex");
                         SpawnWindowBlueprint("ObjectManagerComplex");
+                        SpawnWindowBlueprint("ObjectManagerComplexes");
                     }
                 });
+            }
+            AddPaddingRegion(() =>
+            {
+                AddLine(Assets.assets.ambience.Count + " ambience tracks", "DarkGray");
+            });
+        }),
+        new("ObjectManagerIconList", () => {
+            SetAnchor(TopLeft);
+            AddRegionGroup();
+            SetRegionGroupWidth(161);
+            SetRegionGroupHeight(358);
+            AddHeaderRegion(() =>
+            {
+                AddLine("Icons:");
+                AddSmallButton("OtherClose", (h) =>
+                {
+                    CloseWindow(h.window);
+                    if (item != null)
+                        SpawnWindowBlueprint("ObjectManagerItems");
+                    else if (ability != null)
+                        SpawnWindowBlueprint("ObjectManagerAbilities");
+                    else if (buff != null)
+                        SpawnWindowBlueprint("ObjectManagerBuffs");
+                    else if (spec != null)
+                        SpawnWindowBlueprint("ObjectManagerClasses");
+                });
+                AddSmallButton("OtherReverse", (h) =>
+                {
+                    Assets.assets.icons.Reverse();
+                    CloseWindow("ObjectManagerIconList");
+                    SpawnWindowBlueprint("ObjectManagerIconList");
+                    PlaySound("DesktopInventorySort");
+                });
+            });
+            var regionGroup = CDesktop.LBWindow.LBRegionGroup;
+            var max = Math.Ceiling(Assets.assets.icons.Count / 10.0);
+            AddPaginationLine(regionGroup, max);
+            for (int i = 0; i < 10; i++)
+            {
+                var index = i;
+                AddButtonRegion(() =>
+                {
+                    if (Assets.assets.icons.Count > index + 10 * regionGroup.pagination)
+                    {
+                        SetRegionBackground(RegionBackgroundType.Button);
+                        var foo = Assets.assets.icons[index + 10 * regionGroup.pagination];
+                        AddLine(foo);
+                        AddSmallButton(Assets.assets.icons[index + 10 * regionGroup.pagination].Replace(".png", ""), (h) => { });
+                    }
+                    else
+                    {
+                        SetRegionBackground(RegionBackgroundType.Padding);
+                        AddLine();
+                    }
+                },
+                (h) =>
+                {
+                    var foo = Assets.assets.icons[index + 10 * regionGroup.pagination];
+                    CloseWindow("ObjectManagerIconList");
+                    if (item != null)
+                    {
+                        item.icon = foo.Replace(".png", "");
+                        CloseWindow("ObjectManagerItem");
+                        SpawnWindowBlueprint("ObjectManagerItem");
+                        SpawnWindowBlueprint("ObjectManagerItems");
+                    }
+                    else if (ability != null)
+                    {
+                        ability.icon = foo.Replace(".png", "");
+                        CloseWindow("ObjectManagerAbility");
+                        SpawnWindowBlueprint("ObjectManagerAbility");
+                        SpawnWindowBlueprint("ObjectManagerAbilities");
+                    }
+                    else if (buff != null)
+                    {
+                        buff.icon = foo.Replace(".png", "");
+                        CloseWindow("ObjectManagerBuff");
+                        SpawnWindowBlueprint("ObjectManagerBuff");
+                        SpawnWindowBlueprint("ObjectManagerBuffs");
+                    }
+                    else if (spec != null)
+                    {
+                        spec.icon = foo.Replace(".png", "");
+                        CloseWindow("ObjectManagerClass");
+                        SpawnWindowBlueprint("ObjectManagerClass");
+                        SpawnWindowBlueprint("ObjectManagerClasses");
+                    }
+                });
+            }
+            AddPaddingRegion(() =>
+            {
+                AddLine(Assets.assets.icons.Count + " icons", "DarkGray");
+            });
+        }),
+        new("ObjectManagerPortraitList", () => {
+            SetAnchor(TopLeft);
+            AddRegionGroup();
+            SetRegionGroupWidth(161);
+            SetRegionGroupHeight(358);
+            AddHeaderRegion(() =>
+            {
+                AddLine("Portraits:");
+                AddSmallButton("OtherClose", (h) =>
+                {
+                    CloseWindow(h.window);
+                    SpawnWindowBlueprint("ObjectManagerRaces");
+                });
+                AddSmallButton("OtherReverse", (h) =>
+                {
+                    Assets.assets.portraits.Reverse();
+                    CloseWindow("ObjectManagerPortraitList");
+                    SpawnWindowBlueprint("ObjectManagerPortraitList");
+                    PlaySound("DesktopInventorySort");
+                });
+            });
+            AddPaddingRegion(() =>
+            {
+                AddLine("Search:", "DarkGray");
+                AddInputLine(String.search, InputType.Everything);
+            });
+            var regionGroup = CDesktop.LBWindow.LBRegionGroup;
+            var max = Math.Ceiling(Assets.assets.portraits.Count / 10.0);
+            AddPaginationLine(regionGroup, max);
+            for (int i = 0; i < 10; i++)
+            {
+                var index = i;
+                AddButtonRegion(() =>
+                {
+                    if (Assets.assets.portraits.Count > index + 10 * regionGroup.pagination)
+                    {
+                        SetRegionBackground(RegionBackgroundType.Button);
+                        var foo = Assets.assets.portraits[index + 10 * regionGroup.pagination];
+                        AddLine(foo);
+                        AddSmallButton(Assets.assets.portraits[index + 10 * regionGroup.pagination].Replace(".png", ""), (h) => { });
+                    }
+                    else
+                    {
+                        SetRegionBackground(RegionBackgroundType.Padding);
+                        AddLine();
+                    }
+                },
+                (h) =>
+                {
+                    var foo = Assets.assets.portraits[index + 10 * regionGroup.pagination];
+                    CloseWindow("ObjectManagerPortraitList");
+                    if (race != null)
+                    {
+                        race.portrait = foo.Replace(".png", "");
+                        CloseWindow("ObjectManagerRace");
+                        SpawnWindowBlueprint("ObjectManagerRace");
+                        SpawnWindowBlueprint("ObjectManagerRaces");
+                    }
+                });
+            }
+            AddPaddingRegion(() =>
+            {
+                AddLine(Assets.assets.portraits.Count + " portraits", "DarkGray");
+            });
         }),
         new("ObjectManagerHostileAreaTypeList", () => {
             SetAnchor(TopLeft);
-            DisableShadows();
             AddRegionGroup();
             SetRegionGroupWidth(161);
-            SetRegionGroupHeight(354);
+            SetRegionGroupHeight(358);
             AddHeaderRegion(() =>
             {
                 AddLine("Area types:");
-                AddSmallButton("OtherClose", (h) => { CloseWindow(h.window); });
+                AddSmallButton("OtherClose", (h) =>
+                {
+                    CloseWindow(h.window);
+                    SpawnWindowBlueprint("ObjectManagerHostileAreas");
+                });
             });
+            var regionGroup = CDesktop.LBWindow.LBRegionGroup;
+            var max = 1;
+            AddPaginationLine(regionGroup, max);
             AddButtonRegion(() =>
             {
                 AddLine("HostileArea");
@@ -2034,8 +2474,10 @@ public class Blueprint
                 if (area != null)
                 {
                     area.type = "HostileArea";
-                    CloseWindow("ObjectManagerArea");
-                    SpawnWindowBlueprint("ObjectManagerArea");
+                    CloseWindow("ObjectManagerHostileArea");
+                    SpawnWindowBlueprint("ObjectManagerHostileArea");
+                    CloseWindow("ObjectManagerHostileAreas");
+                    SpawnWindowBlueprint("ObjectManagerHostileAreas");
                 }
             });
             AddButtonRegion(() =>
@@ -2049,12 +2491,1005 @@ public class Blueprint
                 if (area != null)
                 {
                     area.type = "EmeraldBough";
-                    CloseWindow("ObjectManagerArea");
-                    SpawnWindowBlueprint("ObjectManagerArea");
+                    CloseWindow("ObjectManagerHostileArea");
+                    SpawnWindowBlueprint("ObjectManagerHostileArea");
+                    CloseWindow("ObjectManagerHostileAreas");
+                    SpawnWindowBlueprint("ObjectManagerHostileAreas");
+                }
+            });
+            for (int i = 2; i < 10; i++)
+                AddPaddingRegion(() => { AddLine(); });
+            AddPaddingRegion(() =>
+            {
+                AddLine("2 hostile area types", "DarkGray");
+            });
+        }),
+        new("ObjectManagerRarityList", () => {
+            SetAnchor(TopLeft);
+            AddRegionGroup();
+            SetRegionGroupWidth(161);
+            SetRegionGroupHeight(358);
+            AddHeaderRegion(() =>
+            {
+                AddLine("Rarities:");
+                AddSmallButton("OtherClose", (h) =>
+                {
+                    CloseWindow(h.window);
+                    SpawnWindowBlueprint("ObjectManagerItems");
+                });
+            });
+            var regionGroup = CDesktop.LBWindow.LBRegionGroup;
+            var max = 1;
+            AddPaginationLine(regionGroup, max);
+            AddButtonRegion(() =>
+            {
+                AddLine("Poor");
+            },
+            (h) =>
+            {
+                CloseWindow("ObjectManagerRarityList");
+                if (item != null)
+                {
+                    item.rarity = "Poor";
+                    CloseWindow("ObjectManagerItem");
+                    SpawnWindowBlueprint("ObjectManagerItem");
+                    CloseWindow("ObjectManagerItems");
+                    SpawnWindowBlueprint("ObjectManagerItems");
+                }
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("Common");
+            },
+            (h) =>
+            {
+                CloseWindow("ObjectManagerRarityList");
+                if (item != null)
+                {
+                    item.rarity = "Common";
+                    CloseWindow("ObjectManagerItem");
+                    SpawnWindowBlueprint("ObjectManagerItem");
+                    CloseWindow("ObjectManagerItems");
+                    SpawnWindowBlueprint("ObjectManagerItems");
+                }
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("Uncommon");
+            },
+            (h) =>
+            {
+                CloseWindow("ObjectManagerRarityList");
+                if (item != null)
+                {
+                    item.rarity = "Uncommon";
+                    CloseWindow("ObjectManagerItem");
+                    SpawnWindowBlueprint("ObjectManagerItem");
+                    CloseWindow("ObjectManagerItems");
+                    SpawnWindowBlueprint("ObjectManagerItems");
+                }
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("Rare");
+            },
+            (h) =>
+            {
+                CloseWindow("ObjectManagerRarityList");
+                if (item != null)
+                {
+                    item.rarity = "Rare";
+                    CloseWindow("ObjectManagerItem");
+                    SpawnWindowBlueprint("ObjectManagerItem");
+                    CloseWindow("ObjectManagerItems");
+                    SpawnWindowBlueprint("ObjectManagerItems");
+                }
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("Epic");
+            },
+            (h) =>
+            {
+                CloseWindow("ObjectManagerRarityList");
+                if (item != null)
+                {
+                    item.rarity = "Epic";
+                    CloseWindow("ObjectManagerItem");
+                    SpawnWindowBlueprint("ObjectManagerItem");
+                    CloseWindow("ObjectManagerItems");
+                    SpawnWindowBlueprint("ObjectManagerItems");
+                }
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("Legendary");
+            },
+            (h) =>
+            {
+                CloseWindow("ObjectManagerRarityList");
+                if (item != null)
+                {
+                    item.rarity = "Legendary";
+                    CloseWindow("ObjectManagerItem");
+                    SpawnWindowBlueprint("ObjectManagerItem");
+                    CloseWindow("ObjectManagerItems");
+                    SpawnWindowBlueprint("ObjectManagerItems");
+                }
+            });
+            for (int i = 6; i < 10; i++)
+                AddPaddingRegion(() => { AddLine(); });
+            AddPaddingRegion(() =>
+            {
+                AddLine("6 rarities", "DarkGray");
+            });
+        }),
+        new("ItemsSort", () => {
+            SetAnchor(Center);
+            AddRegionGroup();
+            SetRegionGroupWidth(152);
+            AddHeaderRegion(() =>
+            {
+                AddLine("Sort items:");
+                AddSmallButton("OtherClose", (h) =>
+                {
+                    CloseWindow("ItemsSort");
+                    CloseWindow("ObjectManagerItems");
+                    SpawnWindowBlueprint("ObjectManagerItems");
+                });
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("By name", "Black");
+            },
+            (h) =>
+            {
+                items = items.OrderBy(x => x.name).ToList();
+                CloseWindow("ItemsSort");
+                CloseWindow("ObjectManagerItems");
+                SpawnWindowBlueprint("ObjectManagerItems");
+                PlaySound("DesktopInventorySort");
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("By item power", "Black");
+            },
+            (h) =>
+            {
+                items = items.OrderByDescending(x => x.ilvl).ToList();
+                CloseWindow("ItemsSort");
+                CloseWindow("ObjectManagerItems");
+                SpawnWindowBlueprint("ObjectManagerItems");
+                PlaySound("DesktopInventorySort");
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("By price", "Black");
+            },
+            (h) =>
+            {
+                items = items.OrderByDescending(x => x.price).ToList();
+                CloseWindow("ItemsSort");
+                CloseWindow("ObjectManagerItems");
+                SpawnWindowBlueprint("ObjectManagerItems");
+                PlaySound("DesktopInventorySort");
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("By type", "Black");
+            },
+            (h) =>
+            {
+                items = items.OrderByDescending(x => x.type).ToList();
+                CloseWindow("ItemsSort");
+                CloseWindow("ObjectManagerItems");
+                SpawnWindowBlueprint("ObjectManagerItems");
+                PlaySound("DesktopInventorySort");
+            });
+        }),
+        new("ObjectManagerItems", () => {
+            SetAnchor(TopLeft);
+            AddRegionGroup();
+            SetRegionGroupWidth(161);
+            SetRegionGroupHeight(358);
+            AddHeaderRegion(() =>
+            {
+                AddLine("Items:");
+                AddSmallButton("OtherClose", (h) => { CloseDesktop("ObjectManagerItems"); });
+                AddSmallButton("OtherReverse", (h) =>
+                {
+                    items.Reverse();
+                    CloseWindow("ObjectManagerItems");
+                    SpawnWindowBlueprint("ObjectManagerItems");
+                    PlaySound("DesktopInventorySort");
+                });
+                if (!CDesktop.windows.Exists(x => x.title == "ItemsSort"))
+                    AddSmallButton("OtherSort", (h) =>
+                    {
+                        SpawnWindowBlueprint("ItemsSort");
+                        CloseWindow("ObjectManagerItems");
+                        SpawnWindowBlueprint("ObjectManagerItems");
+                    });
+                else
+                    AddSmallButton("OtherSortOff", (h) => { });
+            });
+            AddPaddingRegion(() =>
+            {
+                AddLine("Search:", "DarkGray");
+                AddInputLine(String.search, InputType.Everything);
+            });
+            var regionGroup = CDesktop.LBWindow.LBRegionGroup;
+            var max = Math.Ceiling(items.Count / 10.0);
+            AddPaginationLine(regionGroup, max);
+            for (int i = 0; i < 10; i++)
+            {
+                var index = i;
+                AddButtonRegion(() =>
+                {
+                    if (items.Count > index + 10 * regionGroup.pagination)
+                    {
+                        SetRegionBackground(RegionBackgroundType.Button);
+                        var foo = items[index + 10 * regionGroup.pagination];
+                        AddLine(foo.name);
+                        AddSmallButton(foo.icon, (h) => { });
+                        AddSmallButtonOverlay("OtherRarity" + foo.rarity + "Big");
+                    }
+                    else
+                    {
+                        SetRegionBackground(RegionBackgroundType.Padding);
+                        AddLine();
+                    }
+                },
+                (h) =>
+                {
+                    item = items[index + 10 * regionGroup.pagination];
+                    String.objectName.Set(item.name);
+                    String.price.Set(item.price + "");
+                    String.itemPower.Set(item.ilvl + "");
+                    String.requiredLevel.Set(item.lvl + "");
+                    CloseWindow("ObjectManagerItem");
+                    SpawnWindowBlueprint("ObjectManagerItem");
+                },
+                (h) => () =>
+                {
+                    SetAnchor(Center);
+                    PrintItemTooltip(items[index + 10 * regionGroup.pagination]);
+                });
+            }
+            AddPaddingRegion(() =>
+            {
+                AddLine(items.Count + " items", "DarkGray");
+            });
+        }),
+        new("ObjectManagerItem", () => {
+            SetAnchor(TopRight);
+            AddRegionGroup();
+            SetRegionGroupWidth(161);
+            SetRegionGroupHeight(354);
+            AddPaddingRegion(() => { AddLine("Item:", "DarkGray"); });
+            AddInputRegion(String.objectName, InputType.Everything, item.rarity);
+            AddPaddingRegion(() => { AddLine("Icon:", "DarkGray"); });
+            AddButtonRegion(() =>
+            {
+                AddLine(item.icon + ".png");
+                AddSmallButton(item.icon, (h) => { });
+            },
+            (h) =>
+            {
+                if (!CDesktop.windows.Exists(x => x.title == "ObjectManagerIconList"))
+                {
+                    CloseWindow("ObjectManagerItems");
+                    SpawnWindowBlueprint("ObjectManagerIconList");
+                }
+            });
+            AddPaddingRegion(() => { AddLine("Rarity:", "DarkGray"); });
+            AddButtonRegion(() =>
+            {
+                AddLine(item.rarity);
+            },
+            (h) =>
+            {
+                if (!CDesktop.windows.Exists(x => x.title == "ObjectManagerRarityList"))
+                {
+                    CloseWindow("ObjectManagerItems");
+                    SpawnWindowBlueprint("ObjectManagerRarityList");
+                }
+            });
+            AddPaddingRegion(() => { AddLine("Price:", "DarkGray"); });
+            AddInputRegion(String.price, InputType.Decimal);
+            AddPaddingRegion(() => { AddLine("Item power:", "DarkGray"); });
+            AddInputRegion(String.itemPower, InputType.Numbers);
+            AddPaddingRegion(() => { AddLine("Required level:", "DarkGray"); });
+            AddInputRegion(String.requiredLevel, InputType.Numbers);
+            AddPaddingRegion(() => { });
+        }),
+        new("ItemSetsSort", () => {
+            SetAnchor(Center);
+            AddRegionGroup();
+            SetRegionGroupWidth(152);
+            AddHeaderRegion(() =>
+            {
+                AddLine("Sort item sets:");
+                AddSmallButton("OtherClose", (h) =>
+                {
+                    CloseWindow("ItemsSort");
+                    CloseWindow("ObjectManagerItemSets");
+                    SpawnWindowBlueprint("ObjectManagerItemSets");
+                });
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("By name", "Black");
+            },
+            (h) =>
+            {
+                ItemSet.itemSets = ItemSet.itemSets.OrderBy(x => x.name).ToList();
+                CloseWindow("ItemSetsSort");
+                CloseWindow("ObjectManagerItemSets");
+                SpawnWindowBlueprint("ObjectManagerItemSets");
+                PlaySound("DesktopInventorySort");
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("By amount of tiers", "Black");
+            },
+            (h) =>
+            {
+                ItemSet.itemSets = ItemSet.itemSets.OrderByDescending(x => x.setBonuses.Count).ToList();
+                CloseWindow("ItemSetsSort");
+                CloseWindow("ObjectManagerItemSets");
+                SpawnWindowBlueprint("ObjectManagerItemSets");
+                PlaySound("DesktopInventorySort");
+            });
+        }),
+        new("ObjectManagerItemSets", () => {
+            SetAnchor(TopLeft);
+            AddRegionGroup();
+            SetRegionGroupWidth(161);
+            SetRegionGroupHeight(358);
+            AddHeaderRegion(() =>
+            {
+                AddLine("Item sets:");
+                AddSmallButton("OtherClose", (h) => { CloseDesktop("ObjectManagerItemSets"); });
+                AddSmallButton("OtherReverse", (h) =>
+                {
+                    itemSets.Reverse();
+                    CloseWindow("ObjectManagerItemSets");
+                    SpawnWindowBlueprint("ObjectManagerItemSets");
+                    PlaySound("DesktopInventorySort");
+                });
+                if (!CDesktop.windows.Exists(x => x.title == "ItemSetsSort"))
+                    AddSmallButton("OtherSort", (h) =>
+                    {
+                        SpawnWindowBlueprint("ItemSetsSort");
+                        CloseWindow("ObjectManagerItemSets");
+                        SpawnWindowBlueprint("ObjectManagerItemSets");
+                    });
+                else
+                    AddSmallButton("OtherSortOff", (h) => { });
+            });
+            AddPaddingRegion(() =>
+            {
+                AddLine("Search:", "DarkGray");
+                AddInputLine(String.search, InputType.Everything);
+            });
+            var regionGroup = CDesktop.LBWindow.LBRegionGroup;
+            var max = Math.Ceiling(itemSets.Count / 5.0);
+            AddPaginationLine(regionGroup, max);
+            for (int i = 0; i < 5; i++)
+            {
+                var index = i;
+                AddButtonRegion(() =>
+                {
+                    if (itemSets.Count > index + 5 * regionGroup.pagination)
+                    {
+                        SetRegionBackground(RegionBackgroundType.Button);
+                        var foo = itemSets[index + 5 * regionGroup.pagination];
+                        AddLine(foo.name);
+                    }
+                    else
+                    {
+                        SetRegionBackground(RegionBackgroundType.Padding);
+                        AddLine();
+                    }
+                },
+                (h) =>
+                {
+                    itemSet = itemSets[index + 5 * regionGroup.pagination];
+                    String.objectName.Set(itemSet.name);
+                    CloseWindow("ObjectManagerItemSet");
+                    SpawnWindowBlueprint("ObjectManagerItemSet");
+                });
+                AddPaddingRegion(() =>
+                {
+                    if (itemSets.Count > index + 5 * regionGroup.pagination)
+                    {
+                        var foo = itemSets[index + 5 * regionGroup.pagination];
+                        var setItems = items.FindAll(x => x.set == foo.name);
+                        for (var j = 0; j < setItems.Count && j < 9; j++)
+                        {
+                            var J = j;
+                            AddSmallButton(setItems[J].icon, (h) => { });
+                            AddSmallButtonOverlay("OtherRarity" + setItems[J].rarity + "Big");
+                        }
+                    }
+                    else AddLine();
+                });
+            }
+            AddPaddingRegion(() =>
+            {
+                AddLine(itemSets.Count + " item sets", "DarkGray");
+            });
+        }),
+        new("ObjectManagerItemSet", () => {
+            SetAnchor(TopRight);
+            AddRegionGroup();
+            SetRegionGroupWidth(161);
+            SetRegionGroupHeight(354);
+            AddPaddingRegion(() => { AddLine("Item set:", "DarkGray"); });
+            AddInputRegion(String.objectName, InputType.Everything);
+            AddPaddingRegion(() => { });
+        }),
+        new("AbilitiesSort", () => {
+            SetAnchor(Center);
+            AddRegionGroup();
+            SetRegionGroupWidth(152);
+            AddHeaderRegion(() =>
+            {
+                AddLine("Sort abilities:");
+                AddSmallButton("OtherClose", (h) =>
+                {
+                    CloseWindow("AbilitiesSort");
+                    CloseWindow("ObjectManagerAbilities");
+                    SpawnWindowBlueprint("ObjectManagerAbilities");
+                });
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("By name", "Black");
+            },
+            (h) =>
+            {
+                abilities = abilities.OrderBy(x => x.name).ToList();
+                CloseWindow("AbilitiesSort");
+                CloseWindow("ObjectManagerAbilities");
+                SpawnWindowBlueprint("ObjectManagerAbilities");
+                PlaySound("DesktopInventorySort");
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("By cost", "Black");
+            },
+            (h) =>
+            {
+                abilities = abilities.OrderByDescending(x => x.cost.Sum(y => y.Value)).ToList();
+                CloseWindow("AbilitiesSort");
+                CloseWindow("ObjectManagerAbilities");
+                SpawnWindowBlueprint("ObjectManagerAbilities");
+                PlaySound("DesktopInventorySort");
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("By cooldown", "Black");
+            },
+            (h) =>
+            {
+                abilities = abilities.OrderByDescending(x => x.cooldown).ToList();
+                CloseWindow("AbilitiesSort");
+                CloseWindow("ObjectManagerAbilities");
+                SpawnWindowBlueprint("ObjectManagerAbilities");
+                PlaySound("DesktopInventorySort");
+            });
+        }),
+        new("ObjectManagerAbilities", () => {
+            SetAnchor(TopLeft);
+            AddRegionGroup();
+            SetRegionGroupWidth(161);
+            SetRegionGroupHeight(358);
+            AddHeaderRegion(() =>
+            {
+                AddLine("Abilities:");
+                AddSmallButton("OtherClose", (h) => { CloseDesktop("ObjectManagerAbilities"); });
+                AddSmallButton("OtherReverse", (h) =>
+                {
+                    abilities.Reverse();
+                    CloseWindow("ObjectManagerAbilities");
+                    SpawnWindowBlueprint("ObjectManagerAbilities");
+                    PlaySound("DesktopInventorySort");
+                });
+                if (!CDesktop.windows.Exists(x => x.title == "AbilitiesSort"))
+                    AddSmallButton("OtherSort", (h) =>
+                    {
+                        SpawnWindowBlueprint("AbilitiesSort");
+                        CloseWindow("ObjectManagerAbilities");
+                        SpawnWindowBlueprint("ObjectManagerAbilities");
+                    });
+                else
+                    AddSmallButton("OtherSortOff", (h) => { });
+            });
+            AddPaddingRegion(() =>
+            {
+                AddLine("Search:", "DarkGray");
+                AddInputLine(String.search, InputType.Everything);
+            });
+            var regionGroup = CDesktop.LBWindow.LBRegionGroup;
+            var max = Math.Ceiling(abilities.Count / 10.0);
+            AddPaginationLine(regionGroup, max);
+            for (int i = 0; i < 10; i++)
+            {
+                var index = i;
+                AddButtonRegion(() =>
+                {
+                    if (abilities.Count > index + 10 * regionGroup.pagination)
+                    {
+                        SetRegionBackground(RegionBackgroundType.Button);
+                        var foo = abilities[index + 10 * regionGroup.pagination];
+                        AddLine(foo.name);
+                        AddSmallButton(foo.icon, (h) => { });
+                    }
+                    else
+                    {
+                        SetRegionBackground(RegionBackgroundType.Padding);
+                        AddLine();
+                    }
+                },
+                (h) =>
+                {
+                    ability = abilities[index + 10 * regionGroup.pagination];
+                    String.objectName.Set(ability.name);
+                    String.cooldown.Set(ability.cooldown + "");
+                    CloseWindow("ObjectManagerAbility");
+                    SpawnWindowBlueprint("ObjectManagerAbility");
+                },
+                (h) => () =>
+                {
+                    SetAnchor(Center);
+                    PrintAbilityTooltip(null, null, abilities[index + 10 * regionGroup.pagination]);
+                });
+            }
+            AddPaddingRegion(() =>
+            {
+                AddLine(abilities.Count + " abilities", "DarkGray");
+            });
+        }),
+        new("ObjectManagerAbility", () => {
+            SetAnchor(TopRight);
+            AddRegionGroup();
+            SetRegionGroupWidth(161);
+            SetRegionGroupHeight(354);
+            AddPaddingRegion(() => { AddLine("Ability:", "DarkGray"); });
+            AddInputRegion(String.objectName, InputType.Everything, ability.name);
+            AddPaddingRegion(() => { AddLine("Icon:", "DarkGray"); });
+            AddButtonRegion(() =>
+            {
+                AddLine(ability.icon + ".png");
+                AddSmallButton(ability.icon, (h) => { });
+            },
+            (h) =>
+            {
+                if (!CDesktop.windows.Exists(x => x.title == "ObjectManagerIconList"))
+                {
+                    CloseWindow("ObjectManagerAbilities");
+                    SpawnWindowBlueprint("ObjectManagerIconList");
                 }
             });
             AddPaddingRegion(() => { });
-        })
+        }),
+        new("BuffsSort", () => {
+            SetAnchor(Center);
+            AddRegionGroup();
+            SetRegionGroupWidth(152);
+            AddHeaderRegion(() =>
+            {
+                AddLine("Sort buffs:");
+                AddSmallButton("OtherClose", (h) =>
+                {
+                    CloseWindow("BuffsSort");
+                    CloseWindow("ObjectManagerBuffs");
+                    SpawnWindowBlueprint("ObjectManagerBuffs");
+                });
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("By name", "Black");
+            },
+            (h) =>
+            {
+                buffs = buffs.OrderBy(x => x.name).ToList();
+                CloseWindow("BuffsSort");
+                CloseWindow("ObjectManagerBuffs");
+                SpawnWindowBlueprint("ObjectManagerBuffs");
+                PlaySound("DesktopInventorySort");
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("By dispel type", "Black");
+            },
+            (h) =>
+            {
+                buffs = buffs.OrderByDescending(x => x.dispelType).ToList();
+                CloseWindow("BuffsSort");
+                CloseWindow("ObjectManagerBuffs");
+                SpawnWindowBlueprint("ObjectManagerBuffs");
+                PlaySound("DesktopInventorySort");
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("By stackable property", "Black");
+            },
+            (h) =>
+            {
+                buffs = buffs.OrderByDescending(x => x.stackable).ToList();
+                CloseWindow("BuffsSort");
+                CloseWindow("ObjectManagerBuffs");
+                SpawnWindowBlueprint("ObjectManagerBuffs");
+                PlaySound("DesktopInventorySort");
+            });
+        }),
+        new("ObjectManagerBuffs", () => {
+            SetAnchor(TopLeft);
+            AddRegionGroup();
+            SetRegionGroupWidth(161);
+            SetRegionGroupHeight(358);
+            AddHeaderRegion(() =>
+            {
+                AddLine("Buffs:");
+                AddSmallButton("OtherClose", (h) => { CloseDesktop("ObjectManagerBuffs"); });
+                AddSmallButton("OtherReverse", (h) =>
+                {
+                    buffs.Reverse();
+                    CloseWindow("ObjectManagerBuffs");
+                    SpawnWindowBlueprint("ObjectManagerBuffs");
+                    PlaySound("DesktopInventorySort");
+                });
+                if (!CDesktop.windows.Exists(x => x.title == "BuffsSort"))
+                    AddSmallButton("OtherSort", (h) =>
+                    {
+                        SpawnWindowBlueprint("BuffsSort");
+                        CloseWindow("ObjectManagerBuffs");
+                        SpawnWindowBlueprint("ObjectManagerBuffs");
+                    });
+                else
+                    AddSmallButton("OtherSortOff", (h) => { });
+            });
+            AddPaddingRegion(() =>
+            {
+                AddLine("Search:", "DarkGray");
+                AddInputLine(String.search, InputType.Everything);
+            });
+            var regionGroup = CDesktop.LBWindow.LBRegionGroup;
+            var max = Math.Ceiling(buffs.Count / 10.0);
+            AddPaginationLine(regionGroup, max);
+            for (int i = 0; i < 10; i++)
+            {
+                var index = i;
+                AddButtonRegion(() =>
+                {
+                    if (buffs.Count > index + 10 * regionGroup.pagination)
+                    {
+                        SetRegionBackground(RegionBackgroundType.Button);
+                        var foo = buffs[index + 10 * regionGroup.pagination];
+                        AddLine(foo.name);
+                        AddSmallButton(foo.icon, (h) => { });
+                    }
+                    else
+                    {
+                        SetRegionBackground(RegionBackgroundType.Padding);
+                        AddLine();
+                    }
+                },
+                (h) =>
+                {
+                    buff = buffs[index + 10 * regionGroup.pagination];
+                    String.objectName.Set(buff.name);
+                    CloseWindow("ObjectManagerBuff");
+                    SpawnWindowBlueprint("ObjectManagerBuff");
+                },
+                (h) => () =>
+                {
+                    SetAnchor(Center);
+                    PrintBuffTooltip(null, null, (buffs[index + 10 * regionGroup.pagination], 0, null));
+                });
+            }
+            AddPaddingRegion(() =>
+            {
+                AddLine(buffs.Count + " buffs", "DarkGray");
+            });
+        }),
+        new("ObjectManagerBuff", () => {
+            SetAnchor(TopRight);
+            AddRegionGroup();
+            SetRegionGroupWidth(161);
+            SetRegionGroupHeight(354);
+            AddPaddingRegion(() => { AddLine("Buff:", "DarkGray"); });
+            AddInputRegion(String.objectName, InputType.Everything);
+            AddPaddingRegion(() => { AddLine("Icon:", "DarkGray"); });
+            AddButtonRegion(() =>
+            {
+                AddLine(buff.icon + ".png");
+                AddSmallButton(buff.icon, (h) => { });
+            },
+            (h) =>
+            {
+                if (!CDesktop.windows.Exists(x => x.title == "ObjectManagerIconList"))
+                {
+                    CloseWindow("ObjectManagerBuffs");
+                    SpawnWindowBlueprint("ObjectManagerIconList");
+                }
+            });
+            AddPaddingRegion(() => { AddLine("Stackable:", "DarkGray"); });
+            AddButtonRegion(() =>
+            {
+                AddLine(buff.stackable ? "Yes" : "No");
+            },
+            (h) =>
+            {
+                buff.stackable ^= true;
+            });
+            AddPaddingRegion(() => { });
+        }),
+        new("RacesSort", () => {
+            SetAnchor(Center);
+            AddRegionGroup();
+            SetRegionGroupWidth(152);
+            AddHeaderRegion(() =>
+            {
+                AddLine("Sort races:");
+                AddSmallButton("OtherClose", (h) =>
+                {
+                    CloseWindow("RacesSort");
+                    CloseWindow("ObjectManagerRaces");
+                    SpawnWindowBlueprint("ObjectManagerRaces");
+                });
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("By name", "Black");
+            },
+            (h) =>
+            {
+                races = races.OrderBy(x => x.name).ToList();
+                CloseWindow("RacesSort");
+                CloseWindow("ObjectManagerRaces");
+                SpawnWindowBlueprint("ObjectManagerRaces");
+                PlaySound("DesktopInventorySort");
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("By faction", "Black");
+            },
+            (h) =>
+            {
+                races = races.OrderByDescending(x => x.faction).ToList();
+                CloseWindow("RacesSort");
+                CloseWindow("ObjectManagerRaces");
+                SpawnWindowBlueprint("ObjectManagerRaces");
+                PlaySound("DesktopInventorySort");
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("By kind", "Black");
+            },
+            (h) =>
+            {
+                races = races.OrderBy(x => x.kind == "Elite" ? 0 : (x.kind == "Rare" ? 1 : 2)).ToList();
+                CloseWindow("RacesSort");
+                CloseWindow("ObjectManagerRaces");
+                SpawnWindowBlueprint("ObjectManagerRaces");
+                PlaySound("DesktopInventorySort");
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("By vitality", "Black");
+            },
+            (h) =>
+            {
+                races = races.OrderByDescending(x => x.vitality).ToList();
+                CloseWindow("RacesSort");
+                CloseWindow("ObjectManagerRaces");
+                SpawnWindowBlueprint("ObjectManagerRaces");
+                PlaySound("DesktopInventorySort");
+            });
+        }),
+        new("ObjectManagerRaces", () => {
+            SetAnchor(TopLeft);
+            AddRegionGroup();
+            SetRegionGroupWidth(161);
+            SetRegionGroupHeight(358);
+            AddHeaderRegion(() =>
+            {
+                AddLine("Races:");
+                AddSmallButton("OtherClose", (h) => { CloseDesktop("ObjectManagerRaces"); });
+                AddSmallButton("OtherReverse", (h) =>
+                {
+                    races.Reverse();
+                    CloseWindow("ObjectManagerRaces");
+                    SpawnWindowBlueprint("ObjectManagerRaces");
+                    PlaySound("DesktopInventorySort");
+                });
+                if (!CDesktop.windows.Exists(x => x.title == "RacesSort"))
+                    AddSmallButton("OtherSort", (h) =>
+                    {
+                        SpawnWindowBlueprint("RacesSort");
+                        CloseWindow("ObjectManagerRaces");
+                        SpawnWindowBlueprint("ObjectManagerRaces");
+                    });
+                else
+                    AddSmallButton("OtherSortOff", (h) => { });
+            });
+            AddPaddingRegion(() =>
+            {
+                AddLine("Search:", "DarkGray");
+                AddInputLine(String.search, InputType.Everything);
+            });
+            var regionGroup = CDesktop.LBWindow.LBRegionGroup;
+            var max = Math.Ceiling(races.Count / 10.0);
+            AddPaginationLine(regionGroup, max);
+            for (int i = 0; i < 10; i++)
+            {
+                var index = i;
+                AddButtonRegion(() =>
+                {
+                    if (races.Count > index + 10 * regionGroup.pagination)
+                    {
+                        SetRegionBackground(RegionBackgroundType.Button);
+                        var foo = races[index + 10 * regionGroup.pagination];
+                        AddLine(foo.name);
+                        AddSmallButton(foo.portrait, (h) => { });
+                    }
+                    else
+                    {
+                        SetRegionBackground(RegionBackgroundType.Padding);
+                        AddLine();
+                    }
+                },
+                (h) =>
+                {
+                    race = races[index + 10 * regionGroup.pagination];
+                    String.objectName.Set(race.name);
+                    String.vitality.Set(race.vitality + "");
+                    CloseWindow("ObjectManagerRace");
+                    SpawnWindowBlueprint("ObjectManagerRace");
+                });
+            }
+            AddPaddingRegion(() =>
+            {
+                AddLine(races.Count + " races", "DarkGray");
+            });
+        }),
+        new("ObjectManagerRace", () => {
+            SetAnchor(TopRight);
+            AddRegionGroup();
+            SetRegionGroupWidth(161);
+            SetRegionGroupHeight(354);
+            AddPaddingRegion(() => { AddLine("Race:", "DarkGray"); });
+            AddInputRegion(String.objectName, InputType.Everything);
+            if (race.faction != null)
+            {
+                AddPaddingRegion(() => { AddLine("Portraits:", "DarkGray"); });
+                AddHeaderRegion(() =>
+                {
+                    AddLine(race.portrait + ".png");
+                    AddSmallButton(race.portrait + "Female", (h) => { });
+                    AddSmallButton(race.portrait + "Male", (h) => { });
+                });
+                AddPaddingRegion(() => { AddLine("Faction:", "DarkGray"); });
+                AddHeaderRegion(() => { AddLine(race.faction); });
+            }
+            else if (race.faction == null)
+            {
+                AddPaddingRegion(() => { AddLine("Portrait:", "DarkGray"); });
+                AddButtonRegion(() =>
+                {
+                    AddLine(race.portrait + ".png");
+                    AddSmallButton(race.portrait, (h) => { });
+                },
+                (h) =>
+                {
+                    if (!CDesktop.windows.Exists(x => x.title == "ObjectManagerPortraitList"))
+                    {
+                        CloseWindow("ObjectManagerRaces");
+                        SpawnWindowBlueprint("ObjectManagerPortraitList");
+                    }
+                });
+                AddPaddingRegion(() => { AddLine("Kind:", "DarkGray"); });
+                AddButtonRegion(() =>
+                {
+                    AddLine(race.kind);
+                },
+                (h) =>
+                {
+                    if (race.kind == "Common")
+                        race.kind = "Rare";
+                    else if (race.kind == "Rare")
+                        race.kind = "Elite";
+                    else if (race.kind == "Elite")
+                        race.kind = "Common";
+                });
+                AddPaddingRegion(() => { AddLine("Vitality:", "DarkGray"); });
+                AddInputRegion(String.vitality, InputType.Decimal);
+            }
+            AddPaddingRegion(() => { });
+        }),
+        new("ObjectManagerClasses", () => {
+            SetAnchor(TopLeft);
+            AddRegionGroup();
+            SetRegionGroupWidth(161);
+            SetRegionGroupHeight(358);
+            AddHeaderRegion(() =>
+            {
+                AddLine("Classes:");
+                AddSmallButton("OtherClose", (h) => { CloseDesktop("ObjectManagerClasses"); });
+                AddSmallButton("OtherReverse", (h) =>
+                {
+                    specs.Reverse();
+                    CloseWindow("ObjectManagerClasses");
+                    SpawnWindowBlueprint("ObjectManagerClasses");
+                    PlaySound("DesktopInventorySort");
+                });
+            });
+            AddPaddingRegion(() =>
+            {
+                AddLine("Search:", "DarkGray");
+                AddInputLine(String.search, InputType.Everything);
+            });
+            var regionGroup = CDesktop.LBWindow.LBRegionGroup;
+            var max = Math.Ceiling(specs.Count / 10.0);
+            AddPaginationLine(regionGroup, max);
+            for (int i = 0; i < 10; i++)
+            {
+                var index = i;
+                AddButtonRegion(() =>
+                {
+                    if (specs.Count > index + 10 * regionGroup.pagination)
+                    {
+                        SetRegionBackground(RegionBackgroundType.Button);
+                        var foo = specs[index + 10 * regionGroup.pagination];
+                        AddLine(foo.name);
+                        AddSmallButton(foo.icon, (h) => { });
+                    }
+                    else
+                    {
+                        SetRegionBackground(RegionBackgroundType.Padding);
+                        AddLine();
+                    }
+                },
+                (h) =>
+                {
+                    spec = specs[index + 10 * regionGroup.pagination];
+                    String.objectName.Set(spec.name);
+                    CloseWindow("ObjectManagerClass");
+                    SpawnWindowBlueprint("ObjectManagerClass");
+                });
+            }
+            AddPaddingRegion(() =>
+            {
+                AddLine(specs.Count + " classes", "DarkGray");
+            });
+        }),
+        new("ObjectManagerClass", () => {
+            SetAnchor(TopRight);
+            AddRegionGroup();
+            SetRegionGroupWidth(161);
+            SetRegionGroupHeight(354);
+            AddPaddingRegion(() => { AddLine("Class:", "DarkGray"); });
+            AddInputRegion(String.objectName, InputType.Everything, spec.name);
+            AddPaddingRegion(() => { AddLine("Icon:", "DarkGray"); });
+            AddButtonRegion(() =>
+            {
+                AddLine(spec.icon + ".png");
+                AddSmallButton(spec.icon, (h) => { });
+            },
+            (h) =>
+            {
+                if (!CDesktop.windows.Exists(x => x.title == "ObjectManagerIconList"))
+                {
+                    CloseWindow("ObjectManagerClasses");
+                    SpawnWindowBlueprint("ObjectManagerIconList");
+                }
+            });
+            AddPaddingRegion(() => { });
+        }),
     };
 
     public static List<Blueprint> desktopBlueprints = new()
@@ -2419,54 +3854,426 @@ public class Blueprint
             SetDesktopBackground("Areas/AreaTheCelestialPlanetarium");
             SpawnWindowBlueprint("ObjectManagerHostileAreas");
             AddHotkey(Escape, () => { area = null; CloseDesktop("ObjectManagerHostileAreas"); });
+            AddHotkey(D, () =>
+            {
+                var window = CDesktop.windows.Find(x => x.title == "ObjectManagerHostileAreas");
+                if (window == null) window = CDesktop.windows.Find(x => x.title == "ObjectManagerAmbienceList");
+                if (window == null) return;
+                window.regionGroups[0].pagination += 1;
+                var max = Math.Ceiling((window.title == "ObjectManagerAmbienceList" ? Assets.assets.ambience.Count : areas.Count) / 10.0);
+                if (window.regionGroups[0].pagination >= max)
+                    window.regionGroups[0].pagination = (int)max - 1;
+                window.Rebuild();
+            });
+            AddHotkey(D, () =>
+            {
+                var window = CDesktop.windows.Find(x => x.title == "ObjectManagerHostileAreas");
+                if (window == null) window = CDesktop.windows.Find(x => x.title == "ObjectManagerAmbienceList");
+                if (window == null) return;
+                window.regionGroups[0].pagination += (int)Math.Round(EuelerGrowth()) / 2;
+                var max = Math.Ceiling((window.title == "ObjectManagerAmbienceList" ? Assets.assets.ambience.Count : areas.Count) / 10.0);
+                if (window.regionGroups[0].pagination >= max)
+                    window.regionGroups[0].pagination = (int)max - 1;
+                window.Rebuild();
+            }, false);
+            AddHotkey(A, () =>
+            {
+                var window = CDesktop.windows.Find(x => x.title == "ObjectManagerHostileAreas");
+                if (window == null) window = CDesktop.windows.Find(x => x.title == "ObjectManagerAmbienceList");
+                if (window == null) return;
+                window.regionGroups[0].pagination -= 1;
+                if (window.regionGroups[0].pagination < 0)
+                    window.regionGroups[0].pagination = 0;
+                window.Rebuild();
+            });
+            AddHotkey(A, () =>
+            {
+                var window = CDesktop.windows.Find(x => x.title == "ObjectManagerHostileAreas");
+                if (window == null) window = CDesktop.windows.Find(x => x.title == "ObjectManagerAmbienceList");
+                if (window == null) return;
+                window.regionGroups[0].pagination -= (int)Math.Round(EuelerGrowth()) / 2;
+                if (window.regionGroups[0].pagination < 0)
+                    window.regionGroups[0].pagination = 0;
+                window.Rebuild();
+            }, false);
         }),
         new("ObjectManagerInstances", () =>
         {
             SetDesktopBackground("Areas/AreaTheCelestialPlanetarium");
             SpawnWindowBlueprint("ObjectManagerInstances");
             AddHotkey(Escape, () => { instance = null; CloseDesktop("ObjectManagerInstances"); });
+            AddHotkey(D, () =>
+            {
+                var window = CDesktop.windows.Find(x => x.title == "ObjectManagerInstances");
+                if (window == null) window = CDesktop.windows.Find(x => x.title == "ObjectManagerAmbienceList");
+                if (window == null) return;
+                window.regionGroups[0].pagination += 1;
+                var max = Math.Ceiling((window.title == "ObjectManagerAmbienceList" ? Assets.assets.ambience.Count : instances.Count) / 10.0);
+                if (window.regionGroups[0].pagination >= max)
+                    window.regionGroups[0].pagination = (int)max - 1;
+                window.Rebuild();
+            });
+            AddHotkey(D, () =>
+            {
+                var window = CDesktop.windows.Find(x => x.title == "ObjectManagerInstances");
+                if (window == null) window = CDesktop.windows.Find(x => x.title == "ObjectManagerAmbienceList");
+                if (window == null) return;
+                window.regionGroups[0].pagination += (int)Math.Round(EuelerGrowth()) / 2;
+                var max = Math.Ceiling((window.title == "ObjectManagerAmbienceList" ? Assets.assets.ambience.Count : instances.Count) / 10.0);
+                if (window.regionGroups[0].pagination >= max)
+                    window.regionGroups[0].pagination = (int)max - 1;
+                window.Rebuild();
+            }, false);
+            AddHotkey(A, () =>
+            {
+                var window = CDesktop.windows.Find(x => x.title == "ObjectManagerInstances");
+                if (window == null) window = CDesktop.windows.Find(x => x.title == "ObjectManagerAmbienceList");
+                if (window == null) return;
+                window.regionGroups[0].pagination -= 1;
+                if (window.regionGroups[0].pagination < 0)
+                    window.regionGroups[0].pagination = 0;
+                window.Rebuild();
+            });
+            AddHotkey(A, () =>
+            {
+                var window = CDesktop.windows.Find(x => x.title == "ObjectManagerInstances");
+                if (window == null) window = CDesktop.windows.Find(x => x.title == "ObjectManagerAmbienceList");
+                if (window == null) return;
+                window.regionGroups[0].pagination -= (int)Math.Round(EuelerGrowth()) / 2;
+                if (window.regionGroups[0].pagination < 0)
+                    window.regionGroups[0].pagination = 0;
+                window.Rebuild();
+            }, false);
         }),
         new("ObjectManagerComplexes", () =>
         {
             SetDesktopBackground("Areas/AreaTheCelestialPlanetarium");
             SpawnWindowBlueprint("ObjectManagerComplexes");
             AddHotkey(Escape, () => { complex = null; CloseDesktop("ObjectManagerComplexes"); });
+            AddHotkey(D, () =>
+            {
+                var window = CDesktop.windows.Find(x => x.title == "ObjectManagerComplexes");
+                if (window == null) window = CDesktop.windows.Find(x => x.title == "ObjectManagerAmbienceList");
+                if (window == null) return;
+                window.regionGroups[0].pagination += 1;
+                var max = Math.Ceiling((window.title == "ObjectManagerAmbienceList" ? Assets.assets.ambience.Count : complexes.Count) / 10.0);
+                if (window.regionGroups[0].pagination >= max)
+                    window.regionGroups[0].pagination = (int)max - 1;
+                window.Rebuild();
+            });
+            AddHotkey(D, () =>
+            {
+                var window = CDesktop.windows.Find(x => x.title == "ObjectManagerComplexes");
+                if (window == null) window = CDesktop.windows.Find(x => x.title == "ObjectManagerAmbienceList");
+                if (window == null) return;
+                window.regionGroups[0].pagination += (int)Math.Round(EuelerGrowth()) / 2;
+                var max = Math.Ceiling((window.title == "ObjectManagerAmbienceList" ? Assets.assets.ambience.Count : complexes.Count) / 10.0);
+                if (window.regionGroups[0].pagination >= max)
+                    window.regionGroups[0].pagination = (int)max - 1;
+                window.Rebuild();
+            }, false);
+            AddHotkey(A, () =>
+            {
+                var window = CDesktop.windows.Find(x => x.title == "ObjectManagerComplexes");
+                if (window == null) window = CDesktop.windows.Find(x => x.title == "ObjectManagerAmbienceList");
+                if (window == null) return;
+                window.regionGroups[0].pagination -= 1;
+                if (window.regionGroups[0].pagination < 0)
+                    window.regionGroups[0].pagination = 0;
+                window.Rebuild();
+            });
+            AddHotkey(A, () =>
+            {
+                var window = CDesktop.windows.Find(x => x.title == "ObjectManagerComplexes");
+                if (window == null) window = CDesktop.windows.Find(x => x.title == "ObjectManagerAmbienceList");
+                if (window == null) return;
+                window.regionGroups[0].pagination -= (int)Math.Round(EuelerGrowth()) / 2;
+                if (window.regionGroups[0].pagination < 0)
+                    window.regionGroups[0].pagination = 0;
+                window.Rebuild();
+            }, false);
         }),
         new("ObjectManagerRaces", () =>
         {
             SetDesktopBackground("Areas/AreaTheCelestialPlanetarium");
             SpawnWindowBlueprint("ObjectManagerRaces");
-            AddHotkey(Escape, () => { CloseDesktop("ObjectManagerRaces"); });
+            AddHotkey(Escape, () => { race = null; CloseDesktop("ObjectManagerRaces"); });
+            AddHotkey(D, () =>
+            {
+                var window = CDesktop.windows.Find(x => x.title == "ObjectManagerRaces");
+                if (window == null) window = CDesktop.windows.Find(x => x.title == "ObjectManagerPortraitList");
+                if (window == null) return;
+                window.regionGroups[0].pagination += 1;
+                var max = Math.Ceiling((window.title == "ObjectManagerPortraitList" ? Assets.assets.portraits.Count : races.Count) / 10.0);
+                if (window.regionGroups[0].pagination >= max)
+                    window.regionGroups[0].pagination = (int)max - 1;
+                window.Rebuild();
+            });
+            AddHotkey(D, () =>
+            {
+                var window = CDesktop.windows.Find(x => x.title == "ObjectManagerRaces");
+                if (window == null) window = CDesktop.windows.Find(x => x.title == "ObjectManagerPortraitList");
+                if (window == null) return;
+                window.regionGroups[0].pagination += (int)Math.Round(EuelerGrowth()) / 2;
+                var max = Math.Ceiling((window.title == "ObjectManagerPortraitList" ? Assets.assets.portraits.Count : races.Count) / 10.0);
+                if (window.regionGroups[0].pagination >= max)
+                    window.regionGroups[0].pagination = (int)max - 1;
+                window.Rebuild();
+            }, false);
+            AddHotkey(A, () =>
+            {
+                var window = CDesktop.windows.Find(x => x.title == "ObjectManagerRaces");
+                if (window == null) window = CDesktop.windows.Find(x => x.title == "ObjectManagerPortraitList");
+                if (window == null) return;
+                window.regionGroups[0].pagination -= 1;
+                if (window.regionGroups[0].pagination < 0)
+                    window.regionGroups[0].pagination = 0;
+                window.Rebuild();
+            });
+            AddHotkey(A, () =>
+            {
+                var window = CDesktop.windows.Find(x => x.title == "ObjectManagerRaces");
+                if (window == null) window = CDesktop.windows.Find(x => x.title == "ObjectManagerPortraitList");
+                if (window == null) return;
+                window.regionGroups[0].pagination -= (int)Math.Round(EuelerGrowth()) / 2;
+                if (window.regionGroups[0].pagination < 0)
+                    window.regionGroups[0].pagination = 0;
+                window.Rebuild();
+            }, false);
         }),
         new("ObjectManagerClasses", () =>
         {
             SetDesktopBackground("Areas/AreaTheCelestialPlanetarium");
             SpawnWindowBlueprint("ObjectManagerClasses");
-            AddHotkey(Escape, () => { CloseDesktop("ObjectManagerClasses"); });
+            AddHotkey(Escape, () => { spec = null; CloseDesktop("ObjectManagerClasses"); });
+            AddHotkey(D, () =>
+            {
+                var window = CDesktop.windows.Find(x => x.title == "ObjectManagerClasses");
+                if (window == null) window = CDesktop.windows.Find(x => x.title == "ObjectManagerIconList");
+                if (window == null) return;
+                window.regionGroups[0].pagination += 1;
+                var max = Math.Ceiling((window.title == "ObjectManagerIconList" ? Assets.assets.icons.Count : specs.Count) / 10.0);
+                if (window.regionGroups[0].pagination >= max)
+                    window.regionGroups[0].pagination = (int)max - 1;
+                window.Rebuild();
+            });
+            AddHotkey(D, () =>
+            {
+                var window = CDesktop.windows.Find(x => x.title == "ObjectManagerClasses");
+                if (window == null) window = CDesktop.windows.Find(x => x.title == "ObjectManagerIconList");
+                if (window == null) return;
+                window.regionGroups[0].pagination += (int)Math.Round(EuelerGrowth()) / 2;
+                var max = Math.Ceiling((window.title == "ObjectManagerIconList" ? Assets.assets.icons.Count : specs.Count) / 10.0);
+                if (window.regionGroups[0].pagination >= max)
+                    window.regionGroups[0].pagination = (int)max - 1;
+                window.Rebuild();
+            }, false);
+            AddHotkey(A, () =>
+            {
+                var window = CDesktop.windows.Find(x => x.title == "ObjectManagerClasses");
+                if (window == null) window = CDesktop.windows.Find(x => x.title == "ObjectManagerIconList");
+                if (window == null) return;
+                window.regionGroups[0].pagination -= 1;
+                if (window.regionGroups[0].pagination < 0)
+                    window.regionGroups[0].pagination = 0;
+                window.Rebuild();
+            });
+            AddHotkey(A, () =>
+            {
+                var window = CDesktop.windows.Find(x => x.title == "ObjectManagerClasses");
+                if (window == null) window = CDesktop.windows.Find(x => x.title == "ObjectManagerIconList");
+                if (window == null) return;
+                window.regionGroups[0].pagination -= (int)Math.Round(EuelerGrowth()) / 2;
+                if (window.regionGroups[0].pagination < 0)
+                    window.regionGroups[0].pagination = 0;
+                window.Rebuild();
+            }, false);
         }),
         new("ObjectManagerAbilities", () =>
         {
             SetDesktopBackground("Areas/AreaTheCelestialPlanetarium");
             SpawnWindowBlueprint("ObjectManagerAbilities");
-            AddHotkey(Escape, () => { CloseDesktop("ObjectManagerAbilities"); });
+            AddHotkey(Escape, () => { ability = null; CloseDesktop("ObjectManagerAbilities"); });
+            AddHotkey(D, () =>
+            {
+                var window = CDesktop.windows.Find(x => x.title == "ObjectManagerAbilities");
+                if (window == null) window = CDesktop.windows.Find(x => x.title == "ObjectManagerIconList");
+                if (window == null) return;
+                window.regionGroups[0].pagination += 1;
+                var max = Math.Ceiling((window.title == "ObjectManagerIconList" ? Assets.assets.icons.Count : abilities.Count) / 10.0);
+                if (window.regionGroups[0].pagination >= max)
+                    window.regionGroups[0].pagination = (int)max - 1;
+                window.Rebuild();
+            });
+            AddHotkey(D, () =>
+            {
+                var window = CDesktop.windows.Find(x => x.title == "ObjectManagerAbilities");
+                if (window == null) window = CDesktop.windows.Find(x => x.title == "ObjectManagerIconList");
+                if (window == null) return;
+                window.regionGroups[0].pagination += (int)Math.Round(EuelerGrowth()) / 2;
+                var max = Math.Ceiling((window.title == "ObjectManagerIconList" ? Assets.assets.icons.Count : abilities.Count) / 10.0);
+                if (window.regionGroups[0].pagination >= max)
+                    window.regionGroups[0].pagination = (int)max - 1;
+                window.Rebuild();
+            }, false);
+            AddHotkey(A, () =>
+            {
+                var window = CDesktop.windows.Find(x => x.title == "ObjectManagerAbilities");
+                if (window == null) window = CDesktop.windows.Find(x => x.title == "ObjectManagerIconList");
+                if (window == null) return;
+                window.regionGroups[0].pagination -= 1;
+                if (window.regionGroups[0].pagination < 0)
+                    window.regionGroups[0].pagination = 0;
+                window.Rebuild();
+            });
+            AddHotkey(A, () =>
+            {
+                var window = CDesktop.windows.Find(x => x.title == "ObjectManagerAbilities");
+                if (window == null) window = CDesktop.windows.Find(x => x.title == "ObjectManagerIconList");
+                if (window == null) return;
+                window.regionGroups[0].pagination -= (int)Math.Round(EuelerGrowth()) / 2;
+                if (window.regionGroups[0].pagination < 0)
+                    window.regionGroups[0].pagination = 0;
+                window.Rebuild();
+            }, false);
         }),
         new("ObjectManagerBuffs", () =>
         {
             SetDesktopBackground("Areas/AreaTheCelestialPlanetarium");
             SpawnWindowBlueprint("ObjectManagerBuffs");
-            AddHotkey(Escape, () => { CloseDesktop("ObjectManagerBuffs"); });
+            AddHotkey(Escape, () => { buff = null; CloseDesktop("ObjectManagerBuffs"); });
+            AddHotkey(D, () =>
+            {
+                var window = CDesktop.windows.Find(x => x.title == "ObjectManagerBuffs");
+                if (window == null) window = CDesktop.windows.Find(x => x.title == "ObjectManagerIconList");
+                if (window == null) return;
+                window.regionGroups[0].pagination += 1;
+                var max = Math.Ceiling((window.title == "ObjectManagerIconList" ? Assets.assets.icons.Count : buffs.Count) / 10.0);
+                if (window.regionGroups[0].pagination >= max)
+                    window.regionGroups[0].pagination = (int)max - 1;
+                window.Rebuild();
+            });
+            AddHotkey(D, () =>
+            {
+                var window = CDesktop.windows.Find(x => x.title == "ObjectManagerBuffs");
+                if (window == null) window = CDesktop.windows.Find(x => x.title == "ObjectManagerIconList");
+                if (window == null) return;
+                window.regionGroups[0].pagination += (int)Math.Round(EuelerGrowth()) / 2;
+                var max = Math.Ceiling((window.title == "ObjectManagerIconList" ? Assets.assets.icons.Count : buffs.Count) / 10.0);
+                if (window.regionGroups[0].pagination >= max)
+                    window.regionGroups[0].pagination = (int)max - 1;
+                window.Rebuild();
+            }, false);
+            AddHotkey(A, () =>
+            {
+                var window = CDesktop.windows.Find(x => x.title == "ObjectManagerBuffs");
+                if (window == null) window = CDesktop.windows.Find(x => x.title == "ObjectManagerIconList");
+                if (window == null) return;
+                window.regionGroups[0].pagination -= 1;
+                if (window.regionGroups[0].pagination < 0)
+                    window.regionGroups[0].pagination = 0;
+                window.Rebuild();
+            });
+            AddHotkey(A, () =>
+            {
+                var window = CDesktop.windows.Find(x => x.title == "ObjectManagerBuffs");
+                if (window == null) window = CDesktop.windows.Find(x => x.title == "ObjectManagerIconList");
+                if (window == null) return;
+                window.regionGroups[0].pagination -= (int)Math.Round(EuelerGrowth()) / 2;
+                if (window.regionGroups[0].pagination < 0)
+                    window.regionGroups[0].pagination = 0;
+                window.Rebuild();
+            }, false);
         }),
         new("ObjectManagerItems", () =>
         {
             SetDesktopBackground("Areas/AreaTheCelestialPlanetarium");
             SpawnWindowBlueprint("ObjectManagerItems");
-            AddHotkey(Escape, () => { CloseDesktop("ObjectManagerItems"); });
+            AddHotkey(Escape, () => { item = null; CloseDesktop("ObjectManagerItems"); });
+            AddHotkey(D, () =>
+            {
+                var window = CDesktop.windows.Find(x => x.title == "ObjectManagerItems");
+                if (window == null) window = CDesktop.windows.Find(x => x.title == "ObjectManagerIconList");
+                if (window == null) return;
+                window.regionGroups[0].pagination += 1;
+                var max = Math.Ceiling((window.title == "ObjectManagerIconList" ? Assets.assets.icons.Count : items.Count) / 10.0);
+                if (window.regionGroups[0].pagination >= max)
+                    window.regionGroups[0].pagination = (int)max - 1;
+                window.Rebuild();
+            });
+            AddHotkey(D, () =>
+            {
+                var window = CDesktop.windows.Find(x => x.title == "ObjectManagerItems");
+                if (window == null) window = CDesktop.windows.Find(x => x.title == "ObjectManagerIconList");
+                if (window == null) return;
+                window.regionGroups[0].pagination += (int)Math.Round(EuelerGrowth()) / 2;
+                var max = Math.Ceiling((window.title == "ObjectManagerIconList" ? Assets.assets.icons.Count : items.Count) / 10.0);
+                if (window.regionGroups[0].pagination >= max)
+                    window.regionGroups[0].pagination = (int)max - 1;
+                window.Rebuild();
+            }, false);
+            AddHotkey(A, () =>
+            {
+                var window = CDesktop.windows.Find(x => x.title == "ObjectManagerItems");
+                if (window == null) window = CDesktop.windows.Find(x => x.title == "ObjectManagerIconList");
+                if (window == null) return;
+                window.regionGroups[0].pagination -= 1;
+                if (window.regionGroups[0].pagination < 0)
+                    window.regionGroups[0].pagination = 0;
+                window.Rebuild();
+            });
+            AddHotkey(A, () =>
+            {
+                var window = CDesktop.windows.Find(x => x.title == "ObjectManagerItems");
+                if (window == null) window = CDesktop.windows.Find(x => x.title == "ObjectManagerIconList");
+                if (window == null) return;
+                window.regionGroups[0].pagination -= (int)Math.Round(EuelerGrowth()) / 2;
+                if (window.regionGroups[0].pagination < 0)
+                    window.regionGroups[0].pagination = 0;
+                window.Rebuild();
+            }, false);
         }),
         new("ObjectManagerItemSets", () =>
         {
             SetDesktopBackground("Areas/AreaTheCelestialPlanetarium");
             SpawnWindowBlueprint("ObjectManagerItemSets");
-            AddHotkey(Escape, () => { CloseDesktop("ObjectManagerItemSets"); });
+            AddHotkey(Escape, () => { itemSet = null; CloseDesktop("ObjectManagerItemSets"); });
+            AddHotkey(D, () =>
+            {
+                var window = CDesktop.windows.Find(x => x.title == "ObjectManagerItemSets");
+                if (window == null) return;
+                window.regionGroups[0].pagination += 1;
+                if (window.regionGroups[0].pagination >= Math.Ceiling(itemSets.Count / 5.0))
+                    window.regionGroups[0].pagination = (int)Math.Ceiling(itemSets.Count / 5.0) - 1;
+                window.Rebuild();
+            });
+            AddHotkey(D, () =>
+            {
+                var window = CDesktop.windows.Find(x => x.title == "ObjectManagerItemSets");
+                if (window == null) return;
+                window.regionGroups[0].pagination += (int)Math.Round(EuelerGrowth()) / 2;
+                if (window.regionGroups[0].pagination >= Math.Ceiling(itemSets.Count / 5.0))
+                    window.regionGroups[0].pagination = (int)Math.Ceiling(itemSets.Count / 5.0) - 1;
+                window.Rebuild();
+            }, false);
+            AddHotkey(A, () =>
+            {
+                var window = CDesktop.windows.Find(x => x.title == "ObjectManagerItemSets");
+                if (window == null) return;
+                window.regionGroups[0].pagination -= 1;
+                if (window.regionGroups[0].pagination < 0)
+                    window.regionGroups[0].pagination = 0;
+                window.Rebuild();
+            });
+            AddHotkey(A, () =>
+            {
+                var window = CDesktop.windows.Find(x => x.title == "ObjectManagerItemSets");
+                if (window == null) return;
+                window.regionGroups[0].pagination -= (int)Math.Round(EuelerGrowth()) / 2;
+                if (window.regionGroups[0].pagination < 0)
+                    window.regionGroups[0].pagination = 0;
+                window.Rebuild();
+            }, false);
         }),
     };
 }

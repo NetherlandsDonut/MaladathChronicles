@@ -332,8 +332,13 @@ public class Window : MonoBehaviour
         foreach (var region in regionGroup.regions)
             if (region.inputLine != null)
             {
-                region.inputLine.transform.localPosition = new Vector3(6, -region.currentHeight - 3, 0);
-                region.currentHeight += 15;
+                if (region.lines.Count > 0)
+                    region.inputLine.transform.localPosition = new Vector3(11 + region.lines[0].Length(), -region.currentHeight + 12, 0);
+                else
+                {
+                    region.inputLine.transform.localPosition = new Vector3(6, -region.currentHeight - 3, 0);
+                    region.currentHeight += 15;
+                }
                 int length = 0;
                 region.inputLine.text.Erase();
                 var print = region.inputLine.text.text.Value();
@@ -345,7 +350,7 @@ public class Window : MonoBehaviour
                 }
                 else print += " ";
                 foreach (var character in print)
-                    length = region.inputLine.text.SpawnCharacter(character, length);
+                    length = region.inputLine.text.SpawnCharacter(character, length, region.inputLine.color);
             }
 
         #endregion

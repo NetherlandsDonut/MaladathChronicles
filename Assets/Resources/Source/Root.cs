@@ -157,7 +157,7 @@ public static class Root
 
     public static float EuelerGrowth()
     {
-        return (float)Math.Pow(keyStack / 100.0 + 1.0, Math.E);
+        return (float)Math.Pow(keyStack / 150.0 + 1.0, Math.E);
     }
 
     #endregion
@@ -319,11 +319,11 @@ public static class Root
         AddRegion(Padding, draw, (h) => { }, null);
     }
 
-    public static void AddInputRegion(String refText, InputType inputType)
+    public static void AddInputRegion(String refText, InputType inputType, string color = "")
     {
         AddRegion(Padding, () =>
         {
-            AddInputLine(refText, inputType);
+            AddInputLine(refText, inputType, color);
         }, 
         (h) =>
         {
@@ -332,6 +332,29 @@ public static class Root
         null);
     }
 
+
+    public static void AddPaginationLine(RegionGroup group, double pages)
+    {
+        AddPaddingRegion(() =>
+        {
+            AddLine("Page: ", "DarkGray");
+            AddText(group.pagination + 1 + "");
+            AddText(" / ", "DarkGray");
+            AddText(pages + "");
+            AddSmallButton("OtherNextPage", (h) =>
+            {
+                if (group.pagination < pages - 1)
+                    group.pagination++;
+                h.window.Rebuild();
+            });
+            AddSmallButton("OtherPreviousPage", (h) =>
+            {
+                if (group.pagination > 0)
+                    group.pagination--;
+                h.window.Rebuild();
+            });
+        });
+    }
 
     //When other region groups are lenghier than the
     //one this region is in then the unique extender will
@@ -512,13 +535,13 @@ public static class Root
 
     #region InputLines
 
-    public static void AddInputLine(String refText, InputType inputType)
+    public static void AddInputLine(String refText, InputType inputType, string color = "")
     {
         var region = CDesktop.LBWindow.LBRegionGroup.LBRegion;
         if (region.lines.Count > 0 && region.checkbox != null) return;
         var newObject = new GameObject("InputLine", typeof(InputLine));
         newObject.transform.parent = region.transform;
-        newObject.GetComponent<InputLine>().Initialise(region, refText, inputType);
+        newObject.GetComponent<InputLine>().Initialise(region, refText, inputType, color);
     }
     
     #endregion
@@ -529,7 +552,8 @@ public static class Root
     {
         Everything,
         Letters,
-        Numbers
+        Numbers,
+        Decimal
     }
 
     public enum RegionBackgroundType

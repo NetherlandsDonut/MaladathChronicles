@@ -56,6 +56,7 @@ public class DescriptionRegion
         {
             if (text.StartsWith("PowerRange("))
             {
+                if (effector == null) return "? - ?";
                 var split = text.Split("(").Last().Split(",").Select(x => x.Trim().Replace(")", "")).ToArray();
                 if (split.Length == 4)
                     if (double.TryParse(split[2].Replace(".", ","), out double powerScale))
@@ -69,6 +70,7 @@ public class DescriptionRegion
             }
             else if (text.StartsWith("Chance("))
             {
+                if (effector == null) return "?";
                 var split = text.Split("(").Last().Split(",").Select(x => x.Trim().Replace(")", "")).ToArray();
                 if (split.Length == 3)
                     if (double.TryParse(split[2].Replace(".", ","), out double multiplier))

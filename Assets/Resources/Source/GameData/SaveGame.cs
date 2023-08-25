@@ -14,8 +14,8 @@ public class SaveGame
             creationName,
             creationGender,
             Race.races.Find(x => x.name == creationRace),
-            Class.classes.Find(x => x.name == creationClass),
-            Class.classes.Find(x => x.name == creationClass).startingEquipment[creationRace]
+            Class.specs.Find(x => x.name == creationClass),
+            Class.specs.Find(x => x.name == creationClass).startingEquipment[creationRace]
         );
         siteProgress = new Dictionary<string, int>();
         date = DateTime.Now;

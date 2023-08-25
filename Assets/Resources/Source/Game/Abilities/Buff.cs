@@ -3,6 +3,8 @@ using System.Collections.Generic;
 
 using static Root;
 using static Root.Anchor;
+using static UnityEngine.GraphicsBuffer;
+using UnityEngine.UIElements;
 
 public class Buff
 {
@@ -96,6 +98,30 @@ public class Buff
         return false;
     }
 
+    public static void PrintBuffTooltip(Entity Effector, Entity other, (Buff, int, GameObject) buff)
+    {
+        SetAnchor(Top, 0, -39);
+        AddHeaderGroup();
+        SetRegionGroupWidth(246);
+        SetRegionGroupHeight(227);
+        AddHeaderRegion(() => { AddLine(buff.Item1.name); });
+        AddPaddingRegion(() =>
+        {
+            AddBigButton(buff.Item1.icon, (h) => { });
+            AddLine("Dispellable: ", "DarkGray");
+            AddText(buff.Item1.dispelType != "None" ? "Yes" : "No");
+            if (buff.Item3 != null)
+            {
+                AddLine("Turns left: ", "DarkGray");
+                AddText(buff.Item2 + "");
+            }
+        });
+        buff.Item1.PrintDescription(Effector, other);
+        AddRegionGroup();
+        SetRegionGroupWidth(246);
+        AddPaddingRegion(() => { AddLine(); });
+    }
+
     public void PrintDescription(Entity effector, Entity other)
     {
         int width = CDesktop.LBWindow.LBRegionGroup.setWidth;
@@ -118,28 +144,12 @@ public class Buff
             {
                 var fb = h.GetComponent<FlyingBuff>();
                 var buff = (fb.onPlayer ? Board.board.player.buffs : Board.board.enemy.buffs).Find(x => x.Item3 == h.gameObject);
-                SetAnchor(Top, 0, -42);
-                AddHeaderGroup();
-                SetRegionGroupWidth(226);
-                SetRegionGroupHeight(217);
-                AddHeaderRegion(() => { AddLine(buff.Item1.name); });
-                AddPaddingRegion(() =>
-                {
-                    AddBigButton(buff.Item1.icon, (h) => { });
-                    AddLine("Dispellable: ", "DarkGray");
-                    AddText(buff.Item1.dispelType != "None" ? "Yes" : "No");
-                    AddLine("Turns left: ", "DarkGray");
-                    AddText(buff.Item2 + "");
-                });
-                buff.Item1.PrintDescription(target, Board.board.player == target ? Board.board.enemy : Board.board.player);
-                AddRegionGroup();
-                SetRegionGroupWidth(236);
-                AddPaddingRegion(() => { AddLine(); });
+                PrintBuffTooltip(target, target == Board.board.player ? Board.board.enemy : Board.board.player, buff);
             }
         );
         return buff;
     }
 
-
+    public static Buff buff;
     public static List<Buff> buffs;
 }

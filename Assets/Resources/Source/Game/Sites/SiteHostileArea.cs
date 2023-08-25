@@ -20,7 +20,7 @@ public class SiteHostileArea
         var encounters = possibleEncounters.Select(x => (x.levelMax != 0 ? random.Next(x.levelMin, x.levelMax + 1) : x.levelMin, Race.races.Find(y => y.name == x.who))).ToList();
         if (random.Next(0, 100) < 1)
         {
-            var rares = encounters.FindAll(x => x.Item2.rarity == "Rare");
+            var rares = encounters.FindAll(x => x.Item2.kind == "Rare");
             rares = rares.FindAll(x => !currentSave.raresKilled.Contains(x.Item2.name));
             if (rares.Count > 0)
                 encounters = new() { rares[random.Next(0, rares.Count)] };
