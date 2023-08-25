@@ -3,6 +3,13 @@
     "name": "Rogue",
     "icon": "ClassRogue",
     "startingEquipment": {
+      "Pandaren": [
+        "Footpad's Shirt",
+        "Footpad's Pants",
+        "Footpad's Shoes",
+        "Worn Dagger",
+        "Worn Dagger"
+      ],
       "Dwarf": [
         "Footpad's Shirt",
         "Footpad's Pants",
@@ -24,7 +31,7 @@
         "Worn Dagger",
         "Worn Dagger"
       ],
-      "NightElf": [
+      "Night Elf": [
         "Footpad's Shirt",
         "Footpad's Pants",
         "Footpad's Shoes",
@@ -120,6 +127,13 @@
     "name": "Hunter",
     "icon": "ClassHunter",
     "startingEquipment": {
+      "Pandaren": [
+        "Rugged Trapper's Shirt",
+        "Rugged Trapper's Pants",
+        "Rugged Trapper's Boots",
+        "Worn Dagger",
+        "Worn Shortbow"
+      ],
       "Dwarf": [
         "Rugged Trapper's Shirt",
         "Rugged Trapper's Pants",
@@ -127,7 +141,7 @@
         "Worn Axe",
         "Old Blunderbuss"
       ],
-      "NightElf": [
+      "Night Elf": [
         "Rugged Trapper's Shirt",
         "Rugged Trapper's Pants",
         "Rugged Trapper's Boots",
@@ -328,6 +342,11 @@
     "name": "Warrior",
     "icon": "ClassWarrior",
     "startingEquipment": {
+      "Pandaren": [
+        "Recruit's Shirt",
+        "Recruit's Pants",
+        "Battleworn Hammer"
+      ],
       "Dwarf": [
         "Recruit's Shirt",
         "Recruit's Pants",
@@ -348,7 +367,7 @@
         "Worn Shortsword",
         "Worn Wooden Shield"
       ],
-      "NightElf": [
+      "Night Elf": [
         "Recruit's Shirt",
         "Recruit's Pants",
         "Recruit's Boots",
@@ -752,7 +771,7 @@
     "name": "Druid",
     "icon": "ClassDruid",
     "startingEquipment": {
-      "NightElf": [
+      "Night Elf": [
         "Novice's Robe",
         "Novice's Pants",
         "Handcrafted Staff"
@@ -846,7 +865,7 @@
         "Neophyte's Boots",
         "Worn Mace"
       ],
-      "NightElf": [
+      "Night Elf": [
         "Neophyte's Robe",
         "Neophyte's Pants",
         "Neophyte's Boots",
@@ -1349,6 +1368,12 @@
     "name": "Mage",
     "icon": "ClassMage",
     "startingEquipment": {
+      "Pandaren": [
+        "Apprentice's Robe",
+        "Apprentice's Pants",
+        "Apprentice's Boots",
+        "Bent Staff"
+      ],
       "Gnome": [
         "Apprentice's Robe",
         "Apprentice's Pants",

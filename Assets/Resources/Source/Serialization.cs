@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Text;
 using Newtonsoft.Json;
 using System.Security.Cryptography;
@@ -18,14 +19,23 @@ class Serialization
         target = DeserializeObject<T>(content);
     }
 
-    public static void Serialize(object what, string where, bool encoded = false)
+    public static void Serialize(object what, string where, bool backup = false, bool encoded = false)
     {
         if (!Directory.Exists("Torf_Data_2"))
             Directory.CreateDirectory("Torf_Data_2");
+        var date = DateTime.Now.ToString("dd.MM.yyyy - HH.mm");
+        if (backup)
+        {
+            if (backup && !Directory.Exists("Torf_Data_2\\Backup"))
+                Directory.CreateDirectory("Torf_Data_2\\Backup");
+            if (backup && !Directory.Exists("Torf_Data_2\\Backup\\" + date))
+                Directory.CreateDirectory("Torf_Data_2\\Backup\\" + date);
+        }
+        if (backup && File.Exists("Torf_Data_2\\" + (backup ? "Backup\\" + date + "\\" : "") + where + (encoded ? ".TORF" : ".json"))) return;
         var sett = new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore, DefaultValueHandling = DefaultValueHandling.Ignore };
         var data = SerializeObject(what, encoded ? None : Indented, sett);
         if (encoded) data = Encrypt(data);
-        File.WriteAllText("Torf_Data_2\\" + where + (encoded ? ".TORF" : ".json"), data);
+        File.WriteAllText("Torf_Data_2\\" + (backup ? "Backup\\" + date + "\\" : "") + where + (encoded ? ".TORF" : ".json"), data);
     }
 
     public static string IV = "1a1a1a1a1a1a1a1a";

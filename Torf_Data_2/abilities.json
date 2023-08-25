@@ -1235,6 +1235,7 @@
         },
         {
           "regionType": "Padding",
+          "isExtender": true,
           "contents": [
             {
               "Color": "Gray",
@@ -2809,7 +2810,7 @@
             "Await": "4"
           }
         ]
-      },
+      }
     ],
     "description": {
       "regions": [
@@ -2991,7 +2992,7 @@
             "Await": "4"
           }
         ]
-      },
+      }
     ],
     "description": {
       "regions": [

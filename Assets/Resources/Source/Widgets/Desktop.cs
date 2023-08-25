@@ -246,6 +246,18 @@ public class Desktop : MonoBehaviour
                         inputLineMarker++;
                         didSomething = true;
                     }
+                    else if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.LeftControl))
+                    {
+                        inputLine.text.text.Set("");
+                        inputLineMarker = 0;
+                        didSomething = true;
+                    }
+                    else if (Input.GetKey(KeyCode.V) && Input.GetKey(KeyCode.LeftControl))
+                    {
+                        inputLine.text.text.Set(GUIUtility.systemCopyBuffer);
+                        inputLineMarker = inputLine.text.text.Value().Length;
+                        didSomething = true;
+                    }
                     else foreach (char c in Input.inputString)
                     {
                         var a = inputLineMarker;

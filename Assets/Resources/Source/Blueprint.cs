@@ -739,6 +739,7 @@ public class Blueprint
             SetAnchor(TopLeft);
             AddRegionGroup();
             SetRegionGroupWidth(161);
+            SetRegionGroupHeight(354);
             AddButtonRegion(
                 () =>
                 {
@@ -806,81 +807,17 @@ public class Blueprint
                     SwitchDesktop("TalentScreen");
                 }
             );
-            AddPaddingRegion(() =>
-            {
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-            });
-            //AddRegionGroup();
-            //SetRegionGroupWidth(123);
-            //AddHeaderRegion(() =>
-            //{
-            //    foreach (var foo in currentSave.player.Stats())
-            //        if (!foo.Key.Contains("Mastery"))
-            //            AddLine(foo.Key + ":", "Gray");
-            //});
-            //AddRegionGroup();
-            //SetRegionGroupWidth(40);
-            //AddHeaderRegion(() =>
-            //{
-            //    foreach (var foo in currentSave.player.Stats())
-            //        if (!foo.Key.Contains("Mastery"))
-            //            AddLine(foo.Value + "", foo.Value > currentSave.player.stats.stats[foo.Key] ? "Uncommon" : (foo.Value < currentSave.player.stats.stats[foo.Key] ? DangerousRed : "Gray"));
-            //});
+            AddPaddingRegion(() => { });
         }, true),
         new("InstanceLeftSide", () => {
             SetAnchor(TopLeft);
             AddRegionGroup();
             SetRegionGroupWidth(161);
+            SetRegionGroupHeight(354);
             AddPaddingRegion(() =>
             {
                 foreach (var line in instance.description)
                     AddLine(line, "DarkGray");
-                //AddLine("Select area on the right.", "DarkGray");
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
             });
         }),
         new("HostileAreaRightSide", () => {
@@ -909,6 +846,7 @@ public class Blueprint
         new("TownLeftSide", () => {
             SetAnchor(TopLeft);
             AddRegionGroup();
+            SetRegionGroupWidth(161);
             SetRegionGroupHeight(354);
             AddPaddingRegion(() =>
             {
@@ -919,7 +857,7 @@ public class Blueprint
         new("Inventory", () => {
             SetAnchor(TopRight);
             AddRegionGroup();
-            //SetRegionGroupHeight(358);
+            SetRegionGroupHeight(354);
             var items = currentSave.player.inventory.items;
             AddHeaderRegion(() =>
             {
@@ -968,13 +906,7 @@ public class Blueprint
                     }
                 );
             }
-            AddPaddingRegion(() =>
-            {
-                AddLine();
-                AddLine();
-                AddLine();
-                AddLine();
-            });
+            AddPaddingRegion(() => { AddLine(); });
         }, true),
         new("InventorySort", () => {
             SetAnchor(Center);
@@ -1402,7 +1334,7 @@ public class Blueprint
             });
             AddHeaderRegion(() =>
             {
-                var races = Race.races.FindAll(x => x.faction == creationFaction);
+                var races = Race.races.FindAll(x => x.faction == creationFaction || x.faction == "Both");
                 AddLine("Race: " + creationRace);
                 AddSmallButton("ActionReroll", (h) =>
                 {
@@ -1423,6 +1355,8 @@ public class Blueprint
                     if (creationRace != "Human") { AddBigButtonOverlay("OtherGridBlurred"); SetBigButtonToGrayscale(); }
                     AddBigButton("PortraitNightElf" + creationGender, (h) => { creationRace = "Night Elf"; creationClass = null; });
                     if (creationRace != "Night Elf") { AddBigButtonOverlay("OtherGridBlurred"); SetBigButtonToGrayscale(); }
+                    AddBigButton("PortraitPandaren" + creationGender, (h) => { creationRace = "Pandaren"; creationClass = null; });
+                    if (creationRace != "Pandaren") { AddBigButtonOverlay("OtherGridBlurred"); SetBigButtonToGrayscale(); }
                 }
                 else if (creationFaction == "Horde")
                 {
@@ -1434,6 +1368,8 @@ public class Blueprint
                     if (creationRace != "Troll") { AddBigButtonOverlay("OtherGridBlurred"); SetBigButtonToGrayscale(); }
                     AddBigButton("PortraitForsaken" + creationGender, (h) => { creationRace = "Forsaken"; creationClass = null; });
                     if (creationRace != "Forsaken") { AddBigButtonOverlay("OtherGridBlurred"); SetBigButtonToGrayscale(); }
+                    AddBigButton("PortraitPandaren" + creationGender, (h) => { creationRace = "Pandaren"; creationClass = null; });
+                    if (creationRace != "Pandaren") { AddBigButtonOverlay("OtherGridBlurred"); SetBigButtonToGrayscale(); }
                 }
             });
             AddHeaderRegion(() =>
@@ -1683,7 +1619,10 @@ public class Blueprint
             AddInputRegion(String.consoleInput, InputType.Everything);
             AddSmallButton("OtherClose", (h) => { CloseWindow(h.window); });
         },  true),
-        new("ObjectManagerTypes", () => {
+
+        #region Dev Panel
+
+        new("ObjectManagerLobby", () => {
             SetAnchor(TopLeft);
             AddRegionGroup();
             SetRegionGroupWidth(161);
@@ -1701,15 +1640,16 @@ public class Blueprint
             AddPaddingRegion(() => { AddLine("Actions:"); });
             AddButtonRegion(() => { AddLine("Save data"); }, (h) =>
             {
-                Serialize(races, "new races");
-                Serialize(specs, "new classes");
-                Serialize(abilities, "new abilities");
-                Serialize(buffs, "new buffs");
-                Serialize(races, "new races");
-                Serialize(towns, "new towns");
-                Serialize(instances, "new instances");
-                Serialize(complexes, "new complexes");
-                Serialize(itemSets, "new sets");
+                Serialize(races, "races");
+                Serialize(specs, "classes");
+                Serialize(abilities, "abilities");
+                Serialize(buffs, "buffs");
+                Serialize(areas, "areas");
+                Serialize(instances, "instances");
+                Serialize(complexes, "complexes");
+                Serialize(towns, "towns");
+                Serialize(items, "items");
+                Serialize(itemSets, "sets");
             });
             AddPaddingRegion(() => { });
         }),
@@ -2758,7 +2698,33 @@ public class Blueprint
             }
             AddPaddingRegion(() =>
             {
+                SetRegionAsGroupExtender();
                 AddLine(items.Count + " items", "DarkGray");
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("Create a new item");
+            },
+            (h) =>
+            {
+                item = new Item()
+                {
+                    name = "Item #" + items.Count,
+                    abilities = new(),
+                    classes = new(),
+                    icon = "ItemEgg03",
+                    type = "Miscellaneous",
+                    rarity = "Common",
+                    price = 0.0001
+                };
+                items.Add(item);
+                String.objectName.Set(item.name);
+                String.price.Set(item.price + "");
+                String.itemPower.Set(item.ilvl + "");
+                String.requiredLevel.Set(item.lvl + "");
+                CloseWindow("ObjectManagerItem");
+                SpawnWindowBlueprint("ObjectManagerItem");
+                h.window.Rebuild();
             });
         }),
         new("ObjectManagerItem", () => {
@@ -2902,6 +2868,7 @@ public class Blueprint
                 });
                 AddPaddingRegion(() =>
                 {
+                    AddLine();
                     if (itemSets.Count > index + 5 * regionGroup.pagination)
                     {
                         var foo = itemSets[index + 5 * regionGroup.pagination];
@@ -2913,12 +2880,29 @@ public class Blueprint
                             AddSmallButtonOverlay("OtherRarity" + setItems[J].rarity + "Big");
                         }
                     }
-                    else AddLine();
                 });
             }
             AddPaddingRegion(() =>
             {
+                SetRegionAsGroupExtender();
                 AddLine(itemSets.Count + " item sets", "DarkGray");
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("Create a new item set");
+            },
+            (h) =>
+            {
+                itemSet = new ItemSet()
+                {
+                    name = "Item set #" + itemSets.Count,
+                    setBonuses = new List<SetBonus>()
+                };
+                itemSets.Add(itemSet);
+                String.objectName.Set(itemSet.name);
+                CloseWindow("ObjectManagerItemSet");
+                SpawnWindowBlueprint("ObjectManagerItemSet");
+                h.window.Rebuild();
             });
         }),
         new("ObjectManagerItemSet", () => {
@@ -3049,7 +3033,27 @@ public class Blueprint
             }
             AddPaddingRegion(() =>
             {
+                SetRegionAsGroupExtender();
                 AddLine(abilities.Count + " abilities", "DarkGray");
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("Create a new ability");
+            },
+            (h) =>
+            {
+                ability = new Ability()
+                {
+                    name = "Ability #" + abilities.Count,
+                    events = new(),
+                    tags = new()
+                };
+                abilities.Add(ability);
+                String.objectName.Set(ability.name);
+                String.cooldown.Set(ability.cooldown + "");
+                CloseWindow("ObjectManagerAbility");
+                SpawnWindowBlueprint("ObjectManagerAbility");
+                h.window.Rebuild();
             });
         }),
         new("ObjectManagerAbility", () => {
@@ -3193,7 +3197,26 @@ public class Blueprint
             }
             AddPaddingRegion(() =>
             {
+                SetRegionAsGroupExtender();
                 AddLine(buffs.Count + " buffs", "DarkGray");
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("Create a new buff");
+            },
+            (h) =>
+            {
+                buff = new Buff()
+                {
+                    name = "Buff #" + buffs.Count,
+                    events = new(),
+                    tags = new()
+                };
+                buffs.Add(buff);
+                String.objectName.Set(buff.name);
+                CloseWindow("ObjectManagerBuff");
+                SpawnWindowBlueprint("ObjectManagerBuff");
+                h.window.Rebuild();
             });
         }),
         new("ObjectManagerBuff", () => {
@@ -3249,6 +3272,18 @@ public class Blueprint
             (h) =>
             {
                 races = races.OrderBy(x => x.name).ToList();
+                CloseWindow("RacesSort");
+                CloseWindow("ObjectManagerRaces");
+                SpawnWindowBlueprint("ObjectManagerRaces");
+                PlaySound("DesktopInventorySort");
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("By portrait", "Black");
+            },
+            (h) =>
+            {
+                races = races.OrderBy(x => x.portrait).ToList();
                 CloseWindow("RacesSort");
                 CloseWindow("ObjectManagerRaces");
                 SpawnWindowBlueprint("ObjectManagerRaces");
@@ -3335,7 +3370,7 @@ public class Blueprint
                         SetRegionBackground(RegionBackgroundType.Button);
                         var foo = races[index + 10 * regionGroup.pagination];
                         AddLine(foo.name);
-                        AddSmallButton(foo.portrait, (h) => { });
+                        AddSmallButton(foo.faction != null ? foo.portrait + "Female" : foo.portrait, (h) => { });
                     }
                     else
                     {
@@ -3354,7 +3389,29 @@ public class Blueprint
             }
             AddPaddingRegion(() =>
             {
+                SetRegionAsGroupExtender();
                 AddLine(races.Count + " races", "DarkGray");
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("Create a new race");
+            },
+            (h) =>
+            {
+                race = new Race()
+                {
+                    name = "Race #" + races.Count,
+                    abilities = new(),
+                    kind = "Common",
+                    portrait = "PortraitChicken",
+                    vitality = 1.0,
+                };
+                races.Add(race);
+                String.objectName.Set(race.name);
+                String.vitality.Set(race.vitality + "");
+                CloseWindow("ObjectManagerRace");
+                SpawnWindowBlueprint("ObjectManagerRace");
+                h.window.Rebuild();
             });
         }),
         new("ObjectManagerRace", () => {
@@ -3490,10 +3547,14 @@ public class Blueprint
             });
             AddPaddingRegion(() => { });
         }),
+
+        #endregion
     };
 
     public static List<Blueprint> desktopBlueprints = new()
     {
+        #region Game
+
         new("Map", () =>
         {
             PlaySound("DesktopOpenSave", 0.2f);
@@ -3531,7 +3592,9 @@ public class Blueprint
                 //    SpawnWindowBlueprint("MapToolbar");
                 //    PlaySound("DesktopInventoryClose");
                 //}
+            AddHotkey(L, () => { SpawnWindowBlueprint("ItemDrop"); });
             });
+            AddHotkey(BackQuote, () => { SpawnDesktopBlueprint("DevPanel"); });
             AddHotkey(L, () => { SpawnWindowBlueprint("ItemDrop"); });
 
             void CheckPosition(Vector3 amount)
@@ -3688,7 +3751,7 @@ public class Blueprint
                 };
                 CDesktop.Rebuild();
             });
-            AddHotkey(BackQuote, () => { SpawnWindowBlueprint("Console"); });
+            AddHotkey(BackQuote, () => { SpawnDesktopBlueprint("DevPanel"); });
         }),
         new("CharacterSheet", () =>
         {
@@ -3842,11 +3905,26 @@ public class Blueprint
             SpawnWindowBlueprint("CharacterCreation");
             AddHotkey(BackQuote, () => { SpawnDesktopBlueprint("DevPanel"); });
         }),
+
+        #endregion
+
+        #region Dev Panel
+
         new("DevPanel", () =>
         {
+            Serialize(races, "races", true);
+            Serialize(specs, "classes", true);
+            Serialize(abilities, "abilities", true);
+            Serialize(buffs, "buffs", true);
+            Serialize(areas, "areas", true);
+            Serialize(instances, "instances", true);
+            Serialize(complexes, "complexes", true);
+            Serialize(towns, "towns", true);
+            Serialize(items, "items", true);
+            Serialize(itemSets, "sets", true);
             PlayAmbience("AmbienceSholazarBasin", 0.5f, true);
             SetDesktopBackground("Areas/AreaTheCelestialPlanetarium");
-            SpawnWindowBlueprint("ObjectManagerTypes");
+            SpawnWindowBlueprint("ObjectManagerLobby");
             AddHotkey(Escape, () => { CloseDesktop("DevPanel"); });
         }),
         new("ObjectManagerHostileAreas", () =>
@@ -4275,5 +4353,7 @@ public class Blueprint
                 window.Rebuild();
             }, false);
         }),
+
+        #endregion
     };
 }
