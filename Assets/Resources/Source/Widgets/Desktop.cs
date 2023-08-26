@@ -1,12 +1,13 @@
 using System;
-using UnityEngine;
+using System.Linq;
 using System.Collections.Generic;
+
+using UnityEngine;
 
 using static Root;
 using static Sound;
 using static Cursor;
 using static InputLine;
-using System.Linq;
 
 public class Desktop : MonoBehaviour
 {
@@ -133,8 +134,6 @@ public class Desktop : MonoBehaviour
             }
         else
         {
-            //if (1.0f / Time.smoothDeltaTime < 60)
-            //    Debug.LogError("FPS: " + (int)(1.0f / Time.smoothDeltaTime));
             if (CDesktop.title == "TitleScreen")
             {
                 var amount = new Vector3(titleScreenCameraDirection < 2 ? -1f : 1f, titleScreenCameraDirection > 2 ? -1f : (titleScreenCameraDirection < 1 ? -1f : 1f));
@@ -248,13 +247,13 @@ public class Desktop : MonoBehaviour
                     }
                     else if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.LeftControl))
                     {
-                        inputLine.text.text.Set("");
+                        inputLine.text.text.Clear();
                         inputLineMarker = 0;
                         didSomething = true;
                     }
                     else if (Input.GetKey(KeyCode.V) && Input.GetKey(KeyCode.LeftControl))
                     {
-                        inputLine.text.text.Set(GUIUtility.systemCopyBuffer);
+                        inputLine.text.text.Paste();
                         inputLineMarker = inputLine.text.text.Value().Length;
                         didSomething = true;
                     }
@@ -276,7 +275,49 @@ public class Desktop : MonoBehaviour
                         didSomething = true;
                     }
                     if (didSomething)
+                    {
+                        if (temp.text.text == String.search)
+                        {
+                            var val = temp.text.text.Value().ToLower();
+                            if (CDesktop.title == "ObjectManagerItems")
+                            {
+                                Item.itemsSearch = Item.items.FindAll(x => x.name.ToLower().Contains(val));
+                            }
+                            else if (CDesktop.title == "ObjectManagerItemSets")
+                            {
+                                ItemSet.itemSetsSearch = ItemSet.itemSets.FindAll(x => x.name.ToLower().Contains(val));
+                            }
+                            else if (CDesktop.title == "ObjectManagerAbilities")
+                            {
+                                Ability.abilitiesSearch = Ability.abilities.FindAll(x => x.name.ToLower().Contains(val));
+                            }
+                            else if (CDesktop.title == "ObjectManagerBuffs")
+                            {
+                                Buff.buffsSearch = Buff.buffs.FindAll(x => x.name.ToLower().Contains(val));
+                            }
+                            else if (CDesktop.title == "ObjectManagerRaces")
+                            {
+                                Race.racesSearch = Race.races.FindAll(x => x.name.ToLower().Contains(val));
+                            }
+                            else if (CDesktop.title == "ObjectManagerClasses")
+                            {
+                                Class.specsSearch = Class.specs.FindAll(x => x.name.ToLower().Contains(val));
+                            }
+                            else if (CDesktop.title == "ObjectManagerHostileAreas")
+                            {
+                                SiteHostileArea.areasSearch = SiteHostileArea.areas.FindAll(x => x.name.ToLower().Contains(val));
+                            }
+                            else if (CDesktop.title == "ObjectManagerInstances")
+                            {
+                                SiteInstance.instancesSearch = SiteInstance.instances.FindAll(x => x.name.ToLower().Contains(val));
+                            }
+                            else if (CDesktop.title == "ObjectManagerComplexes")
+                            {
+                                SiteComplex.complexesSearch = SiteComplex.complexes.FindAll(x => x.name.ToLower().Contains(val));
+                            }
+                        }
                         temp.region.regionGroup.window.Rebuild();
+                    }
                 }
                 else
                 {

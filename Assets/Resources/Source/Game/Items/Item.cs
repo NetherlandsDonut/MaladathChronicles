@@ -291,5 +291,5 @@ public class Item
     public static Item GetItem(string name) => items.Find(x => x.name == name);
 
     public static Item item;
-    public static List<Item> items;
+    public static List<Item> items, itemsSearch;
 }

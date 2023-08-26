@@ -9,5 +9,5 @@ public class Class
     public List<TalentTree> talentTrees;
 
     public static Class spec;
-    public static List<Class> specs;
+    public static List<Class> specs, specsSearch;
 }

@@ -10,5 +10,5 @@ public class Race
     public List<(int, string)> loot;
 
     public static Race race;
-    public static List<Race> races;
+    public static List<Race> races, racesSearch;
 }

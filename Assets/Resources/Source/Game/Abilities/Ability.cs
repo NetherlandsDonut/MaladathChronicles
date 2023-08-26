@@ -190,5 +190,5 @@ public class Ability
     public Description description;
 
     public static Ability ability;
-    public static List<Ability> abilities;
+    public static List<Ability> abilities, abilitiesSearch;
 }

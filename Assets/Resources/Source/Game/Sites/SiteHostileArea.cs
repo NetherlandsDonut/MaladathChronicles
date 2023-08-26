@@ -41,7 +41,7 @@ public class SiteHostileArea
     [NonSerialized] public bool instancePart, complexPart;
 
     public static SiteHostileArea area;
-    public static List<SiteHostileArea> areas;
+    public static List<SiteHostileArea> areas, areasSearch;
 }
 
 public class Encounter

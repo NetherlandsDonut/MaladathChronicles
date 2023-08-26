@@ -25,7 +25,7 @@ public class SiteInstance
     }
 
     public static SiteInstance instance;
-    public static List<SiteInstance> instances;
+    public static List<SiteInstance> instances, instancesSearch;
     
     public static void PrintInstanceWing(SiteInstance instance, InstanceWing wing)
     {

@@ -44,7 +44,55 @@ public class InputLine : MonoBehaviour
 
     public static void ExecuteChange(String foo)
     {
-        if (foo == objectName)
+        if (foo == search)
+        {
+            if (CDesktop.title == "ObjectManagerItems")
+            {
+                CloseWindow("ObjectManagerItems");
+                SpawnWindowBlueprint("ObjectManagerItems");
+            }
+            else if (CDesktop.title == "ObjectManagerItemSets")
+            {
+                CloseWindow("ObjectManagerItemSets");
+                SpawnWindowBlueprint("ObjectManagerItemSets");
+            }
+            else if (CDesktop.title == "ObjectManagerAbilities")
+            {
+                CloseWindow("ObjectManagerAbilities");
+                SpawnWindowBlueprint("ObjectManagerAbilities");
+            }
+            else if (CDesktop.title == "ObjectManagerBuffs")
+            {
+                CloseWindow("ObjectManagerBuffs");
+                SpawnWindowBlueprint("ObjectManagerBuffs");
+            }
+            else if (CDesktop.title == "ObjectManagerRaces")
+            {
+                CloseWindow("ObjectManagerRaces");
+                SpawnWindowBlueprint("ObjectManagerRaces");
+            }
+            else if (CDesktop.title == "ObjectManagerClasses")
+            {
+                CloseWindow("ObjectManagerClasses");
+                SpawnWindowBlueprint("ObjectManagerClasses");
+            }
+            else if (CDesktop.title == "ObjectManagerHostileAreas")
+            {
+                CloseWindow("ObjectManagerHostileAreas");
+                SpawnWindowBlueprint("ObjectManagerHostileAreas");
+            }
+            else if (CDesktop.title == "ObjectManagerInstances")
+            {
+                CloseWindow("ObjectManagerInstances");
+                SpawnWindowBlueprint("ObjectManagerInstances");
+            }
+            else if (CDesktop.title == "ObjectManagerComplexes")
+            {
+                CloseWindow("ObjectManagerComplexes");
+                SpawnWindowBlueprint("ObjectManagerComplexes");
+            }
+        }
+        else if (foo == objectName)
         {
             if (CDesktop.title == "ObjectManagerItems")
             {

@@ -17,7 +17,7 @@ public class SiteComplex
     public List<Dictionary<string, string>> sites;
 
     public static SiteComplex complex;
-    public static List<SiteComplex> complexes;
+    public static List<SiteComplex> complexes, complexesSearch;
 
     public static void PrintComplexSite(Dictionary<string, string> site)
     {

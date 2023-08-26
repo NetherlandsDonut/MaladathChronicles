@@ -1628,15 +1628,60 @@ public class Blueprint
             SetRegionGroupWidth(161);
             SetRegionGroupHeight(354);
             AddHeaderRegion(() => { AddLine("Object types:"); });
-            AddButtonRegion(() => { AddLine("Hostile areas"); }, (h) => { SpawnDesktopBlueprint("ObjectManagerHostileAreas"); });
-            AddButtonRegion(() => { AddLine("Instances"); }, (h) => { SpawnDesktopBlueprint("ObjectManagerInstances"); });
-            AddButtonRegion(() => { AddLine("Complexes"); }, (h) => { SpawnDesktopBlueprint("ObjectManagerComplexes"); });
-            AddButtonRegion(() => { AddLine("Races"); }, (h) => { SpawnDesktopBlueprint("ObjectManagerRaces"); });
-            AddButtonRegion(() => { AddLine("Classes"); }, (h) => { SpawnDesktopBlueprint("ObjectManagerClasses"); });
-            AddButtonRegion(() => { AddLine("Abilities"); }, (h) => { SpawnDesktopBlueprint("ObjectManagerAbilities"); });
-            AddButtonRegion(() => { AddLine("Buffs"); }, (h) => { SpawnDesktopBlueprint("ObjectManagerBuffs"); });
-            AddButtonRegion(() => { AddLine("Items"); }, (h) => { SpawnDesktopBlueprint("ObjectManagerItems"); });
-            AddButtonRegion(() => { AddLine("Item sets"); }, (h) => { SpawnDesktopBlueprint("ObjectManagerItemSets"); });
+            AddButtonRegion(() => { AddLine("Hostile areas"); }, (h) =>
+            {
+                String.search.Set("");
+                areasSearch = areas;
+                SpawnDesktopBlueprint("ObjectManagerHostileAreas");
+            });
+            AddButtonRegion(() => { AddLine("Instances"); }, (h) =>
+            {
+                String.search.Set("");
+                instancesSearch = instances;
+                SpawnDesktopBlueprint("ObjectManagerInstances");
+            });
+            AddButtonRegion(() => { AddLine("Complexes"); }, (h) =>
+            {
+                String.search.Set("");
+                complexesSearch = complexes;
+                SpawnDesktopBlueprint("ObjectManagerComplexes");
+            });
+            AddButtonRegion(() => { AddLine("Races"); }, (h) =>
+            {
+                String.search.Set("");
+                racesSearch = races;
+                SpawnDesktopBlueprint("ObjectManagerRaces");
+            });
+            AddButtonRegion(() => { AddLine("Classes"); }, (h) =>
+            {
+                String.search.Set("");
+                specsSearch = specs;
+                SpawnDesktopBlueprint("ObjectManagerClasses");
+            });
+            AddButtonRegion(() => { AddLine("Abilities"); }, (h) =>
+            {
+                String.search.Set("");
+                abilitiesSearch = abilities;
+                SpawnDesktopBlueprint("ObjectManagerAbilities");
+            });
+            AddButtonRegion(() => { AddLine("Buffs"); }, (h) =>
+            {
+                String.search.Set("");
+                buffsSearch = buffs;
+                SpawnDesktopBlueprint("ObjectManagerBuffs");
+            });
+            AddButtonRegion(() => { AddLine("Items"); }, (h) =>
+            {
+                String.search.Set("");
+                itemsSearch = items;
+                SpawnDesktopBlueprint("ObjectManagerItems");
+            });
+            AddButtonRegion(() => { AddLine("Item sets"); }, (h) =>
+            {
+                String.search.Set("");
+                itemSetsSearch = itemSets;
+                SpawnDesktopBlueprint("ObjectManagerItemSets");
+            });
             AddPaddingRegion(() => { AddLine("Actions:"); });
             AddButtonRegion(() => { AddLine("Save data"); }, (h) =>
             {
@@ -1674,6 +1719,7 @@ public class Blueprint
             (h) =>
             {
                 areas = areas.OrderBy(x => x.name).ToList();
+                areasSearch = areasSearch.OrderBy(x => x.name).ToList();
                 CloseWindow("HostileAreasSort");
                 CloseWindow("ObjectManagerHostileAreas");
                 SpawnWindowBlueprint("ObjectManagerHostileAreas");
@@ -1686,6 +1732,7 @@ public class Blueprint
             (h) =>
             {
                 areas = areas.OrderBy(x => x.zone).ToList();
+                areasSearch = areasSearch.OrderBy(x => x.zone).ToList();
                 CloseWindow("HostileAreasSort");
                 CloseWindow("ObjectManagerHostileAreas");
                 SpawnWindowBlueprint("ObjectManagerHostileAreas");
@@ -1698,6 +1745,7 @@ public class Blueprint
             (h) =>
             {
                 areas = areas.OrderBy(x => x.type).ToList();
+                areasSearch = areasSearch.OrderBy(x => x.type).ToList();
                 CloseWindow("HostileAreasSort");
                 CloseWindow("ObjectManagerHostileAreas");
                 SpawnWindowBlueprint("ObjectManagerHostileAreas");
@@ -1710,6 +1758,7 @@ public class Blueprint
             (h) =>
             {
                 areas = areas.OrderByDescending(x => x.possibleEncounters == null ? -1 : x.possibleEncounters.Count).ToList();
+                areasSearch = areasSearch.OrderByDescending(x => x.possibleEncounters == null ? -1 : x.possibleEncounters.Count).ToList();
                 CloseWindow("HostileAreasSort");
                 CloseWindow("ObjectManagerHostileAreas");
                 SpawnWindowBlueprint("ObjectManagerHostileAreas");
@@ -1722,6 +1771,7 @@ public class Blueprint
             (h) =>
             {
                 areas = areas.OrderByDescending(x => x.bossEncounters == null ? -1 : x.bossEncounters.Count).ToList();
+                areasSearch = areasSearch.OrderByDescending(x => x.bossEncounters == null ? -1 : x.bossEncounters.Count).ToList();
                 CloseWindow("HostileAreasSort");
                 CloseWindow("ObjectManagerHostileAreas");
                 SpawnWindowBlueprint("ObjectManagerHostileAreas");
@@ -1740,6 +1790,7 @@ public class Blueprint
                 AddSmallButton("OtherReverse", (h) =>
                 {
                     areas.Reverse();
+                    areasSearch.Reverse();
                     CloseWindow("ObjectManagerHostileAreas");
                     SpawnWindowBlueprint("ObjectManagerHostileAreas");
                     PlaySound("DesktopInventorySort");
@@ -1760,17 +1811,18 @@ public class Blueprint
                 AddInputLine(String.search, InputType.Everything);
             });
             var regionGroup = CDesktop.LBWindow.LBRegionGroup;
-            var max = Math.Ceiling(areas.Count / 10.0);
+            var max = Math.Ceiling(areasSearch.Count / 10.0);
+            if (max < 1) max = 1;
             AddPaginationLine(regionGroup, max);
             for (int i = 0; i < 10; i++)
             {
                 var index = i;
                 AddButtonRegion(() =>
                 {
-                    if (areas.Count > index + 10 * regionGroup.pagination)
+                    if (areasSearch.Count > index + 10 * regionGroup.pagination)
                     {
                         SetRegionBackground(RegionBackgroundType.Button);
-                        var foo = areas[index + 10 * regionGroup.pagination];
+                        var foo = areasSearch[index + 10 * regionGroup.pagination];
                         AddLine(foo.name);
                         AddSmallButton("Site" + foo.type, (h) => { });
                     }
@@ -1782,10 +1834,10 @@ public class Blueprint
                 },
                 (h) =>
                 {
-                    area = areas[index + 10 * regionGroup.pagination];
+                    area = areasSearch[index + 10 * regionGroup.pagination];
                     instance = null;
                     complex = null;
-                    SetDesktopBackground("Areas/Area" + area.zone + area.name.Replace(".", "").Replace(" ", "").Replace("\'", ""));
+                    SetDesktopBackground("Areas/Area" + (area.zone + area.name).Replace("'", "").Replace(".", "").Replace(" ", ""));
                     CloseWindow("ObjectManagerHostileArea");
                     SpawnWindowBlueprint("ObjectManagerHostileArea");
                 });
@@ -1793,6 +1845,8 @@ public class Blueprint
             AddPaddingRegion(() =>
             {
                 AddLine(areas.Count + " hostile areas", "DarkGray");
+                if (areas.Count != areasSearch.Count)
+                    AddLine(areasSearch.Count + " found in search", "DarkGray");
             });
         }),
         new("ObjectManagerHostileArea", () => {
@@ -1858,6 +1912,7 @@ public class Blueprint
             (h) =>
             {
                 instances = instances.OrderBy(x => x.name).ToList();
+                instancesSearch = instancesSearch.OrderBy(x => x.name).ToList();
                 CloseWindow("InstancesSort");
                 CloseWindow("ObjectManagerInstances");
                 SpawnWindowBlueprint("ObjectManagerInstances");
@@ -1870,6 +1925,7 @@ public class Blueprint
             (h) =>
             {
                 instances = instances.OrderBy(x => x.zone).ToList();
+                instancesSearch = instancesSearch.OrderBy(x => x.zone).ToList();
                 CloseWindow("InstancesSort");
                 CloseWindow("ObjectManagerInstances");
                 SpawnWindowBlueprint("ObjectManagerInstances");
@@ -1882,6 +1938,7 @@ public class Blueprint
             (h) =>
             {
                 instances = instances.OrderBy(x => x.type).ToList();
+                instancesSearch = instancesSearch.OrderBy(x => x.type).ToList();
                 CloseWindow("InstancesSort");
                 CloseWindow("ObjectManagerInstances");
                 SpawnWindowBlueprint("ObjectManagerInstances");
@@ -1894,6 +1951,7 @@ public class Blueprint
             (h) =>
             {
                 instances = instances.OrderByDescending(x => x.wings.Sum(y => y.areas.Count)).ToList();
+                instancesSearch = instancesSearch.OrderByDescending(x => x.wings.Sum(y => y.areas.Count)).ToList();
                 CloseWindow("InstancesSort");
                 CloseWindow("ObjectManagerInstances");
                 SpawnWindowBlueprint("ObjectManagerInstances");
@@ -1906,6 +1964,7 @@ public class Blueprint
             (h) =>
             {
                 instances = instances.OrderByDescending(x => x.wings.Count).ToList();
+                instancesSearch = instancesSearch.OrderByDescending(x => x.wings.Count).ToList();
                 CloseWindow("InstancesSort");
                 CloseWindow("ObjectManagerInstances");
                 SpawnWindowBlueprint("ObjectManagerInstances");
@@ -1924,6 +1983,7 @@ public class Blueprint
                 AddSmallButton("OtherReverse", (h) =>
                 {
                     instances.Reverse();
+                    instancesSearch.Reverse();
                     CloseWindow("ObjectManagerInstances");
                     SpawnWindowBlueprint("ObjectManagerInstances");
                     PlaySound("DesktopInventorySort");
@@ -1944,17 +2004,18 @@ public class Blueprint
                 AddInputLine(String.search, InputType.Everything);
             });
             var regionGroup = CDesktop.LBWindow.LBRegionGroup;
-            var max = Math.Ceiling(instances.Count / 10.0);
+            var max = Math.Ceiling(instancesSearch.Count / 10.0);
+            if (max < 1) max = 1;
             AddPaginationLine(regionGroup, max);
             for (int i = 0; i < 10; i++)
             {
                 var index = i;
                 AddButtonRegion(() =>
                 {
-                    if (instances.Count > index + 10 * regionGroup.pagination)
+                    if (instancesSearch.Count > index + 10 * regionGroup.pagination)
                     {
                         SetRegionBackground(RegionBackgroundType.Button);
-                        var foo = instances[index + 10 * regionGroup.pagination];
+                        var foo = instancesSearch[index + 10 * regionGroup.pagination];
                         AddLine(foo.name);
                         AddSmallButton("Site" + foo.type, (h) => { });
                     }
@@ -1967,9 +2028,9 @@ public class Blueprint
                 (h) =>
                 {
                     area = null;
-                    instance = instances[index + 10 * regionGroup.pagination];
+                    instance = instancesSearch[index + 10 * regionGroup.pagination];
                     complex = null;
-                    SetDesktopBackground("Areas/Area" + instance.name.Replace(".", "").Replace(" ", "").Replace("\'", ""));
+                    SetDesktopBackground("Areas/Area" + instance.name.Replace("'", "").Replace(".", "").Replace(" ", ""));
                     CloseWindow("ObjectManagerInstance");
                     SpawnWindowBlueprint("ObjectManagerInstance");
                 });
@@ -1977,6 +2038,8 @@ public class Blueprint
             AddPaddingRegion(() =>
             {
                 AddLine(instances.Count + " instances", "DarkGray");
+                if (instances.Count != instancesSearch.Count)
+                    AddLine(instancesSearch.Count + " found in search", "DarkGray");
             });
         }),
         new("ObjectManagerInstance", () => {
@@ -2026,6 +2089,7 @@ public class Blueprint
             (h) =>
             {
                 complexes = complexes.OrderBy(x => x.name).ToList();
+                complexesSearch = complexesSearch.OrderBy(x => x.name).ToList();
                 CloseWindow("ComplexesSort");
                 CloseWindow("ObjectManagerComplexes");
                 SpawnWindowBlueprint("ObjectManagerComplexes");
@@ -2038,6 +2102,7 @@ public class Blueprint
             (h) =>
             {
                 complexes = complexes.OrderBy(x => x.zone).ToList();
+                complexesSearch = complexesSearch.OrderBy(x => x.zone).ToList();
                 CloseWindow("ComplexesSort");
                 CloseWindow("ObjectManagerComplexes");
                 SpawnWindowBlueprint("ObjectManagerComplexes");
@@ -2050,6 +2115,7 @@ public class Blueprint
             (h) =>
             {
                 complexes = complexes.OrderByDescending(x => x.sites.Count).ToList();
+                complexesSearch = complexesSearch.OrderByDescending(x => x.sites.Count).ToList();
                 CloseWindow("ComplexesSort");
                 CloseWindow("ObjectManagerComplexes");
                 SpawnWindowBlueprint("ObjectManagerComplexes");
@@ -2068,6 +2134,7 @@ public class Blueprint
                 AddSmallButton("OtherReverse", (h) =>
                 {
                     complexes.Reverse();
+                    complexesSearch.Reverse();
                     CloseWindow("ObjectManagerComplexes");
                     SpawnWindowBlueprint("ObjectManagerComplexes");
                     PlaySound("DesktopInventorySort");
@@ -2088,17 +2155,18 @@ public class Blueprint
                 AddInputLine(String.search, InputType.Everything);
             });
             var regionGroup = CDesktop.LBWindow.LBRegionGroup;
-            var max = Math.Ceiling(complexes.Count / 10.0);
+            var max = Math.Ceiling(complexesSearch.Count / 10.0);
+            if (max < 1) max = 1;
             AddPaginationLine(regionGroup, max);
             for (int i = 0; i < 10; i++)
             {
                 var index = i;
                 AddButtonRegion(() =>
                 {
-                    if (complexes.Count > index + 10 * regionGroup.pagination)
+                    if (complexesSearch.Count > index + 10 * regionGroup.pagination)
                     {
                         SetRegionBackground(RegionBackgroundType.Button);
-                        var foo = complexes[index + 10 * regionGroup.pagination];
+                        var foo = complexesSearch[index + 10 * regionGroup.pagination];
                         AddLine(foo.name);
                         AddSmallButton("SiteComplex", (h) => { });
                     }
@@ -2112,8 +2180,8 @@ public class Blueprint
                 {
                     area = null;
                     instance = null;
-                    complex = complexes[index + 10 * regionGroup.pagination];
-                    SetDesktopBackground("Areas/Complex" + complex.name.Replace(".", "").Replace(" ", "").Replace("\'", ""));
+                    complex = complexesSearch[index + 10 * regionGroup.pagination];
+                    SetDesktopBackground("Areas/Complex" + complex.name.Replace("'", "").Replace(".", "").Replace(" ", ""));
                     CloseWindow("ObjectManagerComplex");
                     SpawnWindowBlueprint("ObjectManagerComplex");
                 });
@@ -2121,6 +2189,8 @@ public class Blueprint
             AddPaddingRegion(() =>
             {
                 AddLine(complexes.Count + " complexes", "DarkGray");
+                if (complexes.Count != complexesSearch.Count)
+                    AddLine(complexesSearch.Count + " found in search", "DarkGray");
             });
         }),
         new("ObjectManagerComplex", () => {
@@ -2182,6 +2252,7 @@ public class Blueprint
             });
             var regionGroup = CDesktop.LBWindow.LBRegionGroup;
             var max = Math.Ceiling(Assets.assets.ambience.Count / 10.0);
+            if (max < 1) max = 1;
             AddPaginationLine(regionGroup, max);
             for (int i = 0; i < 10; i++)
             {
@@ -2263,6 +2334,7 @@ public class Blueprint
             });
             var regionGroup = CDesktop.LBWindow.LBRegionGroup;
             var max = Math.Ceiling(Assets.assets.icons.Count / 10.0);
+            if (max < 1) max = 1;
             AddPaginationLine(regionGroup, max);
             for (int i = 0; i < 10; i++)
             {
@@ -2349,6 +2421,7 @@ public class Blueprint
             });
             var regionGroup = CDesktop.LBWindow.LBRegionGroup;
             var max = Math.Ceiling(Assets.assets.portraits.Count / 10.0);
+            if (max < 1) max = 1;
             AddPaginationLine(regionGroup, max);
             for (int i = 0; i < 10; i++)
             {
@@ -2585,6 +2658,7 @@ public class Blueprint
             (h) =>
             {
                 items = items.OrderBy(x => x.name).ToList();
+                itemsSearch = itemsSearch.OrderBy(x => x.name).ToList();
                 CloseWindow("ItemsSort");
                 CloseWindow("ObjectManagerItems");
                 SpawnWindowBlueprint("ObjectManagerItems");
@@ -2597,6 +2671,7 @@ public class Blueprint
             (h) =>
             {
                 items = items.OrderByDescending(x => x.ilvl).ToList();
+                itemsSearch = itemsSearch.OrderByDescending(x => x.ilvl).ToList();
                 CloseWindow("ItemsSort");
                 CloseWindow("ObjectManagerItems");
                 SpawnWindowBlueprint("ObjectManagerItems");
@@ -2609,6 +2684,7 @@ public class Blueprint
             (h) =>
             {
                 items = items.OrderByDescending(x => x.price).ToList();
+                itemsSearch = itemsSearch.OrderByDescending(x => x.price).ToList();
                 CloseWindow("ItemsSort");
                 CloseWindow("ObjectManagerItems");
                 SpawnWindowBlueprint("ObjectManagerItems");
@@ -2621,6 +2697,7 @@ public class Blueprint
             (h) =>
             {
                 items = items.OrderByDescending(x => x.type).ToList();
+                itemsSearch = itemsSearch.OrderByDescending(x => x.type).ToList();
                 CloseWindow("ItemsSort");
                 CloseWindow("ObjectManagerItems");
                 SpawnWindowBlueprint("ObjectManagerItems");
@@ -2639,6 +2716,7 @@ public class Blueprint
                 AddSmallButton("OtherReverse", (h) =>
                 {
                     items.Reverse();
+                    itemsSearch.Reverse();
                     CloseWindow("ObjectManagerItems");
                     SpawnWindowBlueprint("ObjectManagerItems");
                     PlaySound("DesktopInventorySort");
@@ -2659,17 +2737,18 @@ public class Blueprint
                 AddInputLine(String.search, InputType.Everything);
             });
             var regionGroup = CDesktop.LBWindow.LBRegionGroup;
-            var max = Math.Ceiling(items.Count / 10.0);
+            var max = Math.Ceiling(itemsSearch.Count / 10.0);
+            if (max < 1) max = 1;
             AddPaginationLine(regionGroup, max);
             for (int i = 0; i < 10; i++)
             {
                 var index = i;
                 AddButtonRegion(() =>
                 {
-                    if (items.Count > index + 10 * regionGroup.pagination)
+                    if (itemsSearch.Count > index + 10 * regionGroup.pagination)
                     {
                         SetRegionBackground(RegionBackgroundType.Button);
-                        var foo = items[index + 10 * regionGroup.pagination];
+                        var foo = itemsSearch[index + 10 * regionGroup.pagination];
                         AddLine(foo.name);
                         AddSmallButton(foo.icon, (h) => { });
                         AddSmallButtonOverlay("OtherRarity" + foo.rarity + "Big");
@@ -2682,7 +2761,7 @@ public class Blueprint
                 },
                 (h) =>
                 {
-                    item = items[index + 10 * regionGroup.pagination];
+                    item = itemsSearch[index + 10 * regionGroup.pagination];
                     String.objectName.Set(item.name);
                     String.price.Set(item.price + "");
                     String.itemPower.Set(item.ilvl + "");
@@ -2700,6 +2779,8 @@ public class Blueprint
             {
                 SetRegionAsGroupExtender();
                 AddLine(items.Count + " items", "DarkGray");
+                if (items.Count != itemsSearch.Count)
+                    AddLine(itemsSearch.Count + " found in search", "DarkGray");
             });
             AddButtonRegion(() =>
             {
@@ -2718,6 +2799,7 @@ public class Blueprint
                     price = 0.0001
                 };
                 items.Add(item);
+                itemsSearch = items.FindAll(x => x.name.ToLower().Contains(String.search.Value().ToLower()));
                 String.objectName.Set(item.name);
                 String.price.Set(item.price + "");
                 String.itemPower.Set(item.ilvl + "");
@@ -2790,6 +2872,7 @@ public class Blueprint
             (h) =>
             {
                 ItemSet.itemSets = ItemSet.itemSets.OrderBy(x => x.name).ToList();
+                ItemSet.itemSetsSearch = ItemSet.itemSetsSearch.OrderBy(x => x.name).ToList();
                 CloseWindow("ItemSetsSort");
                 CloseWindow("ObjectManagerItemSets");
                 SpawnWindowBlueprint("ObjectManagerItemSets");
@@ -2802,6 +2885,7 @@ public class Blueprint
             (h) =>
             {
                 ItemSet.itemSets = ItemSet.itemSets.OrderByDescending(x => x.setBonuses.Count).ToList();
+                ItemSet.itemSetsSearch = ItemSet.itemSetsSearch.OrderByDescending(x => x.setBonuses.Count).ToList();
                 CloseWindow("ItemSetsSort");
                 CloseWindow("ObjectManagerItemSets");
                 SpawnWindowBlueprint("ObjectManagerItemSets");
@@ -2820,6 +2904,7 @@ public class Blueprint
                 AddSmallButton("OtherReverse", (h) =>
                 {
                     itemSets.Reverse();
+                    itemSetsSearch.Reverse();
                     CloseWindow("ObjectManagerItemSets");
                     SpawnWindowBlueprint("ObjectManagerItemSets");
                     PlaySound("DesktopInventorySort");
@@ -2840,17 +2925,18 @@ public class Blueprint
                 AddInputLine(String.search, InputType.Everything);
             });
             var regionGroup = CDesktop.LBWindow.LBRegionGroup;
-            var max = Math.Ceiling(itemSets.Count / 5.0);
+            var max = Math.Ceiling(itemSetsSearch.Count / 5.0);
+            if (max < 1) max = 1;
             AddPaginationLine(regionGroup, max);
             for (int i = 0; i < 5; i++)
             {
                 var index = i;
                 AddButtonRegion(() =>
                 {
-                    if (itemSets.Count > index + 5 * regionGroup.pagination)
+                    if (itemSetsSearch.Count > index + 5 * regionGroup.pagination)
                     {
                         SetRegionBackground(RegionBackgroundType.Button);
-                        var foo = itemSets[index + 5 * regionGroup.pagination];
+                        var foo = itemSetsSearch[index + 5 * regionGroup.pagination];
                         AddLine(foo.name);
                     }
                     else
@@ -2861,7 +2947,7 @@ public class Blueprint
                 },
                 (h) =>
                 {
-                    itemSet = itemSets[index + 5 * regionGroup.pagination];
+                    itemSet = itemSetsSearch[index + 5 * regionGroup.pagination];
                     String.objectName.Set(itemSet.name);
                     CloseWindow("ObjectManagerItemSet");
                     SpawnWindowBlueprint("ObjectManagerItemSet");
@@ -2869,9 +2955,9 @@ public class Blueprint
                 AddPaddingRegion(() =>
                 {
                     AddLine();
-                    if (itemSets.Count > index + 5 * regionGroup.pagination)
+                    if (itemSetsSearch.Count > index + 5 * regionGroup.pagination)
                     {
-                        var foo = itemSets[index + 5 * regionGroup.pagination];
+                        var foo = itemSetsSearch[index + 5 * regionGroup.pagination];
                         var setItems = items.FindAll(x => x.set == foo.name);
                         for (var j = 0; j < setItems.Count && j < 9; j++)
                         {
@@ -2886,6 +2972,8 @@ public class Blueprint
             {
                 SetRegionAsGroupExtender();
                 AddLine(itemSets.Count + " item sets", "DarkGray");
+                if (itemSets.Count != itemSetsSearch.Count)
+                    AddLine(itemSetsSearch.Count + " found in search", "DarkGray");
             });
             AddButtonRegion(() =>
             {
@@ -2899,6 +2987,7 @@ public class Blueprint
                     setBonuses = new List<SetBonus>()
                 };
                 itemSets.Add(itemSet);
+                itemSetsSearch = itemSets.FindAll(x => x.name.ToLower().Contains(String.search.Value().ToLower()));
                 String.objectName.Set(itemSet.name);
                 CloseWindow("ObjectManagerItemSet");
                 SpawnWindowBlueprint("ObjectManagerItemSet");
@@ -2935,6 +3024,7 @@ public class Blueprint
             (h) =>
             {
                 abilities = abilities.OrderBy(x => x.name).ToList();
+                abilitiesSearch = abilitiesSearch.OrderBy(x => x.name).ToList();
                 CloseWindow("AbilitiesSort");
                 CloseWindow("ObjectManagerAbilities");
                 SpawnWindowBlueprint("ObjectManagerAbilities");
@@ -2947,6 +3037,7 @@ public class Blueprint
             (h) =>
             {
                 abilities = abilities.OrderByDescending(x => x.cost.Sum(y => y.Value)).ToList();
+                abilitiesSearch = abilitiesSearch.OrderByDescending(x => x.cost.Sum(y => y.Value)).ToList();
                 CloseWindow("AbilitiesSort");
                 CloseWindow("ObjectManagerAbilities");
                 SpawnWindowBlueprint("ObjectManagerAbilities");
@@ -2959,6 +3050,7 @@ public class Blueprint
             (h) =>
             {
                 abilities = abilities.OrderByDescending(x => x.cooldown).ToList();
+                abilitiesSearch = abilitiesSearch.OrderByDescending(x => x.cooldown).ToList();
                 CloseWindow("AbilitiesSort");
                 CloseWindow("ObjectManagerAbilities");
                 SpawnWindowBlueprint("ObjectManagerAbilities");
@@ -2977,6 +3069,7 @@ public class Blueprint
                 AddSmallButton("OtherReverse", (h) =>
                 {
                     abilities.Reverse();
+                    abilitiesSearch.Reverse();
                     CloseWindow("ObjectManagerAbilities");
                     SpawnWindowBlueprint("ObjectManagerAbilities");
                     PlaySound("DesktopInventorySort");
@@ -2997,17 +3090,18 @@ public class Blueprint
                 AddInputLine(String.search, InputType.Everything);
             });
             var regionGroup = CDesktop.LBWindow.LBRegionGroup;
-            var max = Math.Ceiling(abilities.Count / 10.0);
+            var max = Math.Ceiling(abilitiesSearch.Count / 10.0);
+            if (max < 1) max = 1;
             AddPaginationLine(regionGroup, max);
             for (int i = 0; i < 10; i++)
             {
                 var index = i;
                 AddButtonRegion(() =>
                 {
-                    if (abilities.Count > index + 10 * regionGroup.pagination)
+                    if (abilitiesSearch.Count > index + 10 * regionGroup.pagination)
                     {
                         SetRegionBackground(RegionBackgroundType.Button);
-                        var foo = abilities[index + 10 * regionGroup.pagination];
+                        var foo = abilitiesSearch[index + 10 * regionGroup.pagination];
                         AddLine(foo.name);
                         AddSmallButton(foo.icon, (h) => { });
                     }
@@ -3019,7 +3113,7 @@ public class Blueprint
                 },
                 (h) =>
                 {
-                    ability = abilities[index + 10 * regionGroup.pagination];
+                    ability = abilitiesSearch[index + 10 * regionGroup.pagination];
                     String.objectName.Set(ability.name);
                     String.cooldown.Set(ability.cooldown + "");
                     CloseWindow("ObjectManagerAbility");
@@ -3028,13 +3122,15 @@ public class Blueprint
                 (h) => () =>
                 {
                     SetAnchor(Center);
-                    PrintAbilityTooltip(null, null, abilities[index + 10 * regionGroup.pagination]);
+                    PrintAbilityTooltip(null, null, abilitiesSearch[index + 10 * regionGroup.pagination]);
                 });
             }
             AddPaddingRegion(() =>
             {
                 SetRegionAsGroupExtender();
                 AddLine(abilities.Count + " abilities", "DarkGray");
+                if (abilities.Count != abilitiesSearch.Count)
+                    AddLine(abilitiesSearch.Count + " found in search", "DarkGray");
             });
             AddButtonRegion(() =>
             {
@@ -3049,6 +3145,7 @@ public class Blueprint
                     tags = new()
                 };
                 abilities.Add(ability);
+                abilitiesSearch = abilities.FindAll(x => x.name.ToLower().Contains(String.search.Value().ToLower()));
                 String.objectName.Set(ability.name);
                 String.cooldown.Set(ability.cooldown + "");
                 CloseWindow("ObjectManagerAbility");
@@ -3100,6 +3197,7 @@ public class Blueprint
             (h) =>
             {
                 buffs = buffs.OrderBy(x => x.name).ToList();
+                buffsSearch = buffsSearch.OrderBy(x => x.name).ToList();
                 CloseWindow("BuffsSort");
                 CloseWindow("ObjectManagerBuffs");
                 SpawnWindowBlueprint("ObjectManagerBuffs");
@@ -3112,6 +3210,7 @@ public class Blueprint
             (h) =>
             {
                 buffs = buffs.OrderByDescending(x => x.dispelType).ToList();
+                buffsSearch = buffsSearch.OrderByDescending(x => x.dispelType).ToList();
                 CloseWindow("BuffsSort");
                 CloseWindow("ObjectManagerBuffs");
                 SpawnWindowBlueprint("ObjectManagerBuffs");
@@ -3124,6 +3223,7 @@ public class Blueprint
             (h) =>
             {
                 buffs = buffs.OrderByDescending(x => x.stackable).ToList();
+                buffsSearch = buffsSearch.OrderByDescending(x => x.stackable).ToList();
                 CloseWindow("BuffsSort");
                 CloseWindow("ObjectManagerBuffs");
                 SpawnWindowBlueprint("ObjectManagerBuffs");
@@ -3142,6 +3242,7 @@ public class Blueprint
                 AddSmallButton("OtherReverse", (h) =>
                 {
                     buffs.Reverse();
+                    buffsSearch.Reverse();
                     CloseWindow("ObjectManagerBuffs");
                     SpawnWindowBlueprint("ObjectManagerBuffs");
                     PlaySound("DesktopInventorySort");
@@ -3162,17 +3263,18 @@ public class Blueprint
                 AddInputLine(String.search, InputType.Everything);
             });
             var regionGroup = CDesktop.LBWindow.LBRegionGroup;
-            var max = Math.Ceiling(buffs.Count / 10.0);
+            var max = Math.Ceiling(buffsSearch.Count / 10.0);
+            if (max < 1) max = 1;
             AddPaginationLine(regionGroup, max);
             for (int i = 0; i < 10; i++)
             {
                 var index = i;
                 AddButtonRegion(() =>
                 {
-                    if (buffs.Count > index + 10 * regionGroup.pagination)
+                    if (buffsSearch.Count > index + 10 * regionGroup.pagination)
                     {
                         SetRegionBackground(RegionBackgroundType.Button);
-                        var foo = buffs[index + 10 * regionGroup.pagination];
+                        var foo = buffsSearch[index + 10 * regionGroup.pagination];
                         AddLine(foo.name);
                         AddSmallButton(foo.icon, (h) => { });
                     }
@@ -3184,7 +3286,7 @@ public class Blueprint
                 },
                 (h) =>
                 {
-                    buff = buffs[index + 10 * regionGroup.pagination];
+                    buff = buffsSearch[index + 10 * regionGroup.pagination];
                     String.objectName.Set(buff.name);
                     CloseWindow("ObjectManagerBuff");
                     SpawnWindowBlueprint("ObjectManagerBuff");
@@ -3192,13 +3294,15 @@ public class Blueprint
                 (h) => () =>
                 {
                     SetAnchor(Center);
-                    PrintBuffTooltip(null, null, (buffs[index + 10 * regionGroup.pagination], 0, null));
+                    PrintBuffTooltip(null, null, (buffsSearch[index + 10 * regionGroup.pagination], 0, null));
                 });
             }
             AddPaddingRegion(() =>
             {
                 SetRegionAsGroupExtender();
                 AddLine(buffs.Count + " buffs", "DarkGray");
+                if (buffs.Count != buffsSearch.Count)
+                    AddLine(buffsSearch.Count + " found in search", "DarkGray");
             });
             AddButtonRegion(() =>
             {
@@ -3213,6 +3317,7 @@ public class Blueprint
                     tags = new()
                 };
                 buffs.Add(buff);
+                buffsSearch = buffs.FindAll(x => x.name.ToLower().Contains(String.search.Value().ToLower()));
                 String.objectName.Set(buff.name);
                 CloseWindow("ObjectManagerBuff");
                 SpawnWindowBlueprint("ObjectManagerBuff");
@@ -3272,6 +3377,7 @@ public class Blueprint
             (h) =>
             {
                 races = races.OrderBy(x => x.name).ToList();
+                racesSearch = racesSearch.OrderBy(x => x.name).ToList();
                 CloseWindow("RacesSort");
                 CloseWindow("ObjectManagerRaces");
                 SpawnWindowBlueprint("ObjectManagerRaces");
@@ -3284,6 +3390,7 @@ public class Blueprint
             (h) =>
             {
                 races = races.OrderBy(x => x.portrait).ToList();
+                racesSearch = racesSearch.OrderBy(x => x.portrait).ToList();
                 CloseWindow("RacesSort");
                 CloseWindow("ObjectManagerRaces");
                 SpawnWindowBlueprint("ObjectManagerRaces");
@@ -3296,6 +3403,7 @@ public class Blueprint
             (h) =>
             {
                 races = races.OrderByDescending(x => x.faction).ToList();
+                racesSearch = racesSearch.OrderByDescending(x => x.faction).ToList();
                 CloseWindow("RacesSort");
                 CloseWindow("ObjectManagerRaces");
                 SpawnWindowBlueprint("ObjectManagerRaces");
@@ -3308,6 +3416,7 @@ public class Blueprint
             (h) =>
             {
                 races = races.OrderBy(x => x.kind == "Elite" ? 0 : (x.kind == "Rare" ? 1 : 2)).ToList();
+                racesSearch = racesSearch.OrderBy(x => x.kind == "Elite" ? 0 : (x.kind == "Rare" ? 1 : 2)).ToList();
                 CloseWindow("RacesSort");
                 CloseWindow("ObjectManagerRaces");
                 SpawnWindowBlueprint("ObjectManagerRaces");
@@ -3320,6 +3429,7 @@ public class Blueprint
             (h) =>
             {
                 races = races.OrderByDescending(x => x.vitality).ToList();
+                racesSearch = racesSearch.OrderByDescending(x => x.vitality).ToList();
                 CloseWindow("RacesSort");
                 CloseWindow("ObjectManagerRaces");
                 SpawnWindowBlueprint("ObjectManagerRaces");
@@ -3338,6 +3448,7 @@ public class Blueprint
                 AddSmallButton("OtherReverse", (h) =>
                 {
                     races.Reverse();
+                    racesSearch.Reverse();
                     CloseWindow("ObjectManagerRaces");
                     SpawnWindowBlueprint("ObjectManagerRaces");
                     PlaySound("DesktopInventorySort");
@@ -3358,17 +3469,18 @@ public class Blueprint
                 AddInputLine(String.search, InputType.Everything);
             });
             var regionGroup = CDesktop.LBWindow.LBRegionGroup;
-            var max = Math.Ceiling(races.Count / 10.0);
+            var max = Math.Ceiling(racesSearch.Count / 10.0);
+            if (max < 1) max = 1;
             AddPaginationLine(regionGroup, max);
             for (int i = 0; i < 10; i++)
             {
                 var index = i;
                 AddButtonRegion(() =>
                 {
-                    if (races.Count > index + 10 * regionGroup.pagination)
+                    if (racesSearch.Count > index + 10 * regionGroup.pagination)
                     {
                         SetRegionBackground(RegionBackgroundType.Button);
-                        var foo = races[index + 10 * regionGroup.pagination];
+                        var foo = racesSearch[index + 10 * regionGroup.pagination];
                         AddLine(foo.name);
                         AddSmallButton(foo.faction != null ? foo.portrait + "Female" : foo.portrait, (h) => { });
                     }
@@ -3380,7 +3492,7 @@ public class Blueprint
                 },
                 (h) =>
                 {
-                    race = races[index + 10 * regionGroup.pagination];
+                    race = racesSearch[index + 10 * regionGroup.pagination];
                     String.objectName.Set(race.name);
                     String.vitality.Set(race.vitality + "");
                     CloseWindow("ObjectManagerRace");
@@ -3391,6 +3503,8 @@ public class Blueprint
             {
                 SetRegionAsGroupExtender();
                 AddLine(races.Count + " races", "DarkGray");
+                if (races.Count != racesSearch.Count)
+                    AddLine(racesSearch.Count + " found in search", "DarkGray");
             });
             AddButtonRegion(() =>
             {
@@ -3407,6 +3521,7 @@ public class Blueprint
                     vitality = 1.0,
                 };
                 races.Add(race);
+                racesSearch = races.FindAll(x => x.name.ToLower().Contains(String.search.Value().ToLower()));
                 String.objectName.Set(race.name);
                 String.vitality.Set(race.vitality + "");
                 CloseWindow("ObjectManagerRace");
@@ -3480,6 +3595,7 @@ public class Blueprint
                 AddSmallButton("OtherReverse", (h) =>
                 {
                     specs.Reverse();
+                    specsSearch.Reverse();
                     CloseWindow("ObjectManagerClasses");
                     SpawnWindowBlueprint("ObjectManagerClasses");
                     PlaySound("DesktopInventorySort");
@@ -3491,17 +3607,18 @@ public class Blueprint
                 AddInputLine(String.search, InputType.Everything);
             });
             var regionGroup = CDesktop.LBWindow.LBRegionGroup;
-            var max = Math.Ceiling(specs.Count / 10.0);
+            var max = Math.Ceiling(specsSearch.Count / 10.0);
+            if (max < 1) max = 1;
             AddPaginationLine(regionGroup, max);
             for (int i = 0; i < 10; i++)
             {
                 var index = i;
                 AddButtonRegion(() =>
                 {
-                    if (specs.Count > index + 10 * regionGroup.pagination)
+                    if (specsSearch.Count > index + 10 * regionGroup.pagination)
                     {
                         SetRegionBackground(RegionBackgroundType.Button);
-                        var foo = specs[index + 10 * regionGroup.pagination];
+                        var foo = specsSearch[index + 10 * regionGroup.pagination];
                         AddLine(foo.name);
                         AddSmallButton(foo.icon, (h) => { });
                     }
@@ -3513,7 +3630,7 @@ public class Blueprint
                 },
                 (h) =>
                 {
-                    spec = specs[index + 10 * regionGroup.pagination];
+                    spec = specsSearch[index + 10 * regionGroup.pagination];
                     String.objectName.Set(spec.name);
                     CloseWindow("ObjectManagerClass");
                     SpawnWindowBlueprint("ObjectManagerClass");
@@ -3521,7 +3638,46 @@ public class Blueprint
             }
             AddPaddingRegion(() =>
             {
+                SetRegionAsGroupExtender();
                 AddLine(specs.Count + " classes", "DarkGray");
+                if (specs.Count != specsSearch.Count)
+                    AddLine(specsSearch.Count + " found in search", "DarkGray");
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("Create a new class");
+            },
+            (h) =>
+            {
+                spec = new Class()
+                {
+                    name = "Class #" + specs.Count,
+                    icon = "PortraitChicken",
+                    startingEquipment = new(),
+                    abilities = new(),
+                    rules = new()
+                    {
+                        { "Melee Attack Power per Strength", 2.0 },
+                        { "Ranged Attack Power per Strength", 0.0 },
+                        { "Critical Strike per Strength", 0.0 },
+                        { "Melee Attack Power per Agility", 2.0 },
+                        { "Ranged Attack Power per Agility", 0.0 },
+                        { "Critical Strike per Agility", 0.03 },
+                        { "Spell Power per Intellect", 1.0 },
+                        { "Spell Critical per Intellect", 0.03 },
+                        { "Stamina per Level", 3.0 },
+                        { "Strength per Level", 3.0 },
+                        { "Agility per Level", 3.0 },
+                        { "Intellect per Level", 0.0 }
+                    },
+                    talentTrees = new()
+                };
+                specs.Add(spec);
+                specsSearch = specs.FindAll(x => x.name.ToLower().Contains(String.search.Value().ToLower()));
+                String.objectName.Set(spec.name);
+                CloseWindow("ObjectManagerClass");
+                SpawnWindowBlueprint("ObjectManagerClass");
+                h.window.Rebuild();
             });
         }),
         new("ObjectManagerClass", () => {
@@ -3931,14 +4087,14 @@ public class Blueprint
         {
             SetDesktopBackground("Areas/AreaTheCelestialPlanetarium");
             SpawnWindowBlueprint("ObjectManagerHostileAreas");
-            AddHotkey(Escape, () => { area = null; CloseDesktop("ObjectManagerHostileAreas"); });
+            AddHotkey(Escape, () => { area = null; areasSearch = null; CloseDesktop("ObjectManagerHostileAreas"); });
             AddHotkey(D, () =>
             {
                 var window = CDesktop.windows.Find(x => x.title == "ObjectManagerHostileAreas");
                 if (window == null) window = CDesktop.windows.Find(x => x.title == "ObjectManagerAmbienceList");
                 if (window == null) return;
                 window.regionGroups[0].pagination += 1;
-                var max = Math.Ceiling((window.title == "ObjectManagerAmbienceList" ? Assets.assets.ambience.Count : areas.Count) / 10.0);
+                var max = Math.Ceiling((window.title == "ObjectManagerAmbienceList" ? Assets.assets.ambience.Count : areasSearch.Count) / 10.0);
                 if (window.regionGroups[0].pagination >= max)
                     window.regionGroups[0].pagination = (int)max - 1;
                 window.Rebuild();
@@ -3949,7 +4105,7 @@ public class Blueprint
                 if (window == null) window = CDesktop.windows.Find(x => x.title == "ObjectManagerAmbienceList");
                 if (window == null) return;
                 window.regionGroups[0].pagination += (int)Math.Round(EuelerGrowth()) / 2;
-                var max = Math.Ceiling((window.title == "ObjectManagerAmbienceList" ? Assets.assets.ambience.Count : areas.Count) / 10.0);
+                var max = Math.Ceiling((window.title == "ObjectManagerAmbienceList" ? Assets.assets.ambience.Count : areasSearch.Count) / 10.0);
                 if (window.regionGroups[0].pagination >= max)
                     window.regionGroups[0].pagination = (int)max - 1;
                 window.Rebuild();
@@ -3979,14 +4135,14 @@ public class Blueprint
         {
             SetDesktopBackground("Areas/AreaTheCelestialPlanetarium");
             SpawnWindowBlueprint("ObjectManagerInstances");
-            AddHotkey(Escape, () => { instance = null; CloseDesktop("ObjectManagerInstances"); });
+            AddHotkey(Escape, () => { instance = null; instancesSearch = null; CloseDesktop("ObjectManagerInstances"); });
             AddHotkey(D, () =>
             {
                 var window = CDesktop.windows.Find(x => x.title == "ObjectManagerInstances");
                 if (window == null) window = CDesktop.windows.Find(x => x.title == "ObjectManagerAmbienceList");
                 if (window == null) return;
                 window.regionGroups[0].pagination += 1;
-                var max = Math.Ceiling((window.title == "ObjectManagerAmbienceList" ? Assets.assets.ambience.Count : instances.Count) / 10.0);
+                var max = Math.Ceiling((window.title == "ObjectManagerAmbienceList" ? Assets.assets.ambience.Count : instancesSearch.Count) / 10.0);
                 if (window.regionGroups[0].pagination >= max)
                     window.regionGroups[0].pagination = (int)max - 1;
                 window.Rebuild();
@@ -3997,7 +4153,7 @@ public class Blueprint
                 if (window == null) window = CDesktop.windows.Find(x => x.title == "ObjectManagerAmbienceList");
                 if (window == null) return;
                 window.regionGroups[0].pagination += (int)Math.Round(EuelerGrowth()) / 2;
-                var max = Math.Ceiling((window.title == "ObjectManagerAmbienceList" ? Assets.assets.ambience.Count : instances.Count) / 10.0);
+                var max = Math.Ceiling((window.title == "ObjectManagerAmbienceList" ? Assets.assets.ambience.Count : instancesSearch.Count) / 10.0);
                 if (window.regionGroups[0].pagination >= max)
                     window.regionGroups[0].pagination = (int)max - 1;
                 window.Rebuild();
@@ -4027,14 +4183,14 @@ public class Blueprint
         {
             SetDesktopBackground("Areas/AreaTheCelestialPlanetarium");
             SpawnWindowBlueprint("ObjectManagerComplexes");
-            AddHotkey(Escape, () => { complex = null; CloseDesktop("ObjectManagerComplexes"); });
+            AddHotkey(Escape, () => { complex = null; complexesSearch = null; CloseDesktop("ObjectManagerComplexes"); });
             AddHotkey(D, () =>
             {
                 var window = CDesktop.windows.Find(x => x.title == "ObjectManagerComplexes");
                 if (window == null) window = CDesktop.windows.Find(x => x.title == "ObjectManagerAmbienceList");
                 if (window == null) return;
                 window.regionGroups[0].pagination += 1;
-                var max = Math.Ceiling((window.title == "ObjectManagerAmbienceList" ? Assets.assets.ambience.Count : complexes.Count) / 10.0);
+                var max = Math.Ceiling((window.title == "ObjectManagerAmbienceList" ? Assets.assets.ambience.Count : complexesSearch.Count) / 10.0);
                 if (window.regionGroups[0].pagination >= max)
                     window.regionGroups[0].pagination = (int)max - 1;
                 window.Rebuild();
@@ -4045,7 +4201,7 @@ public class Blueprint
                 if (window == null) window = CDesktop.windows.Find(x => x.title == "ObjectManagerAmbienceList");
                 if (window == null) return;
                 window.regionGroups[0].pagination += (int)Math.Round(EuelerGrowth()) / 2;
-                var max = Math.Ceiling((window.title == "ObjectManagerAmbienceList" ? Assets.assets.ambience.Count : complexes.Count) / 10.0);
+                var max = Math.Ceiling((window.title == "ObjectManagerAmbienceList" ? Assets.assets.ambience.Count : complexesSearch.Count) / 10.0);
                 if (window.regionGroups[0].pagination >= max)
                     window.regionGroups[0].pagination = (int)max - 1;
                 window.Rebuild();
@@ -4075,14 +4231,14 @@ public class Blueprint
         {
             SetDesktopBackground("Areas/AreaTheCelestialPlanetarium");
             SpawnWindowBlueprint("ObjectManagerRaces");
-            AddHotkey(Escape, () => { race = null; CloseDesktop("ObjectManagerRaces"); });
+            AddHotkey(Escape, () => { race = null; racesSearch = null; CloseDesktop("ObjectManagerRaces"); });
             AddHotkey(D, () =>
             {
                 var window = CDesktop.windows.Find(x => x.title == "ObjectManagerRaces");
                 if (window == null) window = CDesktop.windows.Find(x => x.title == "ObjectManagerPortraitList");
                 if (window == null) return;
                 window.regionGroups[0].pagination += 1;
-                var max = Math.Ceiling((window.title == "ObjectManagerPortraitList" ? Assets.assets.portraits.Count : races.Count) / 10.0);
+                var max = Math.Ceiling((window.title == "ObjectManagerPortraitList" ? Assets.assets.portraits.Count : racesSearch.Count) / 10.0);
                 if (window.regionGroups[0].pagination >= max)
                     window.regionGroups[0].pagination = (int)max - 1;
                 window.Rebuild();
@@ -4093,7 +4249,7 @@ public class Blueprint
                 if (window == null) window = CDesktop.windows.Find(x => x.title == "ObjectManagerPortraitList");
                 if (window == null) return;
                 window.regionGroups[0].pagination += (int)Math.Round(EuelerGrowth()) / 2;
-                var max = Math.Ceiling((window.title == "ObjectManagerPortraitList" ? Assets.assets.portraits.Count : races.Count) / 10.0);
+                var max = Math.Ceiling((window.title == "ObjectManagerPortraitList" ? Assets.assets.portraits.Count : racesSearch.Count) / 10.0);
                 if (window.regionGroups[0].pagination >= max)
                     window.regionGroups[0].pagination = (int)max - 1;
                 window.Rebuild();
@@ -4123,14 +4279,14 @@ public class Blueprint
         {
             SetDesktopBackground("Areas/AreaTheCelestialPlanetarium");
             SpawnWindowBlueprint("ObjectManagerClasses");
-            AddHotkey(Escape, () => { spec = null; CloseDesktop("ObjectManagerClasses"); });
+            AddHotkey(Escape, () => { spec = null; specsSearch = null; CloseDesktop("ObjectManagerClasses"); });
             AddHotkey(D, () =>
             {
                 var window = CDesktop.windows.Find(x => x.title == "ObjectManagerClasses");
                 if (window == null) window = CDesktop.windows.Find(x => x.title == "ObjectManagerIconList");
                 if (window == null) return;
                 window.regionGroups[0].pagination += 1;
-                var max = Math.Ceiling((window.title == "ObjectManagerIconList" ? Assets.assets.icons.Count : specs.Count) / 10.0);
+                var max = Math.Ceiling((window.title == "ObjectManagerIconList" ? Assets.assets.icons.Count : specsSearch.Count) / 10.0);
                 if (window.regionGroups[0].pagination >= max)
                     window.regionGroups[0].pagination = (int)max - 1;
                 window.Rebuild();
@@ -4141,7 +4297,7 @@ public class Blueprint
                 if (window == null) window = CDesktop.windows.Find(x => x.title == "ObjectManagerIconList");
                 if (window == null) return;
                 window.regionGroups[0].pagination += (int)Math.Round(EuelerGrowth()) / 2;
-                var max = Math.Ceiling((window.title == "ObjectManagerIconList" ? Assets.assets.icons.Count : specs.Count) / 10.0);
+                var max = Math.Ceiling((window.title == "ObjectManagerIconList" ? Assets.assets.icons.Count : specsSearch.Count) / 10.0);
                 if (window.regionGroups[0].pagination >= max)
                     window.regionGroups[0].pagination = (int)max - 1;
                 window.Rebuild();
@@ -4171,14 +4327,14 @@ public class Blueprint
         {
             SetDesktopBackground("Areas/AreaTheCelestialPlanetarium");
             SpawnWindowBlueprint("ObjectManagerAbilities");
-            AddHotkey(Escape, () => { ability = null; CloseDesktop("ObjectManagerAbilities"); });
+            AddHotkey(Escape, () => { ability = null; abilitiesSearch = null; CloseDesktop("ObjectManagerAbilities"); });
             AddHotkey(D, () =>
             {
                 var window = CDesktop.windows.Find(x => x.title == "ObjectManagerAbilities");
                 if (window == null) window = CDesktop.windows.Find(x => x.title == "ObjectManagerIconList");
                 if (window == null) return;
                 window.regionGroups[0].pagination += 1;
-                var max = Math.Ceiling((window.title == "ObjectManagerIconList" ? Assets.assets.icons.Count : abilities.Count) / 10.0);
+                var max = Math.Ceiling((window.title == "ObjectManagerIconList" ? Assets.assets.icons.Count : abilitiesSearch.Count) / 10.0);
                 if (window.regionGroups[0].pagination >= max)
                     window.regionGroups[0].pagination = (int)max - 1;
                 window.Rebuild();
@@ -4189,7 +4345,7 @@ public class Blueprint
                 if (window == null) window = CDesktop.windows.Find(x => x.title == "ObjectManagerIconList");
                 if (window == null) return;
                 window.regionGroups[0].pagination += (int)Math.Round(EuelerGrowth()) / 2;
-                var max = Math.Ceiling((window.title == "ObjectManagerIconList" ? Assets.assets.icons.Count : abilities.Count) / 10.0);
+                var max = Math.Ceiling((window.title == "ObjectManagerIconList" ? Assets.assets.icons.Count : abilitiesSearch.Count) / 10.0);
                 if (window.regionGroups[0].pagination >= max)
                     window.regionGroups[0].pagination = (int)max - 1;
                 window.Rebuild();
@@ -4219,14 +4375,14 @@ public class Blueprint
         {
             SetDesktopBackground("Areas/AreaTheCelestialPlanetarium");
             SpawnWindowBlueprint("ObjectManagerBuffs");
-            AddHotkey(Escape, () => { buff = null; CloseDesktop("ObjectManagerBuffs"); });
+            AddHotkey(Escape, () => { buff = null; buffsSearch = null; CloseDesktop("ObjectManagerBuffs"); });
             AddHotkey(D, () =>
             {
                 var window = CDesktop.windows.Find(x => x.title == "ObjectManagerBuffs");
                 if (window == null) window = CDesktop.windows.Find(x => x.title == "ObjectManagerIconList");
                 if (window == null) return;
                 window.regionGroups[0].pagination += 1;
-                var max = Math.Ceiling((window.title == "ObjectManagerIconList" ? Assets.assets.icons.Count : buffs.Count) / 10.0);
+                var max = Math.Ceiling((window.title == "ObjectManagerIconList" ? Assets.assets.icons.Count : buffsSearch.Count) / 10.0);
                 if (window.regionGroups[0].pagination >= max)
                     window.regionGroups[0].pagination = (int)max - 1;
                 window.Rebuild();
@@ -4237,7 +4393,7 @@ public class Blueprint
                 if (window == null) window = CDesktop.windows.Find(x => x.title == "ObjectManagerIconList");
                 if (window == null) return;
                 window.regionGroups[0].pagination += (int)Math.Round(EuelerGrowth()) / 2;
-                var max = Math.Ceiling((window.title == "ObjectManagerIconList" ? Assets.assets.icons.Count : buffs.Count) / 10.0);
+                var max = Math.Ceiling((window.title == "ObjectManagerIconList" ? Assets.assets.icons.Count : buffsSearch.Count) / 10.0);
                 if (window.regionGroups[0].pagination >= max)
                     window.regionGroups[0].pagination = (int)max - 1;
                 window.Rebuild();
@@ -4267,14 +4423,14 @@ public class Blueprint
         {
             SetDesktopBackground("Areas/AreaTheCelestialPlanetarium");
             SpawnWindowBlueprint("ObjectManagerItems");
-            AddHotkey(Escape, () => { item = null; CloseDesktop("ObjectManagerItems"); });
+            AddHotkey(Escape, () => { item = null; itemsSearch = null; CloseDesktop("ObjectManagerItems"); });
             AddHotkey(D, () =>
             {
                 var window = CDesktop.windows.Find(x => x.title == "ObjectManagerItems");
                 if (window == null) window = CDesktop.windows.Find(x => x.title == "ObjectManagerIconList");
                 if (window == null) return;
                 window.regionGroups[0].pagination += 1;
-                var max = Math.Ceiling((window.title == "ObjectManagerIconList" ? Assets.assets.icons.Count : items.Count) / 10.0);
+                var max = Math.Ceiling((window.title == "ObjectManagerIconList" ? Assets.assets.icons.Count : itemsSearch.Count) / 10.0);
                 if (window.regionGroups[0].pagination >= max)
                     window.regionGroups[0].pagination = (int)max - 1;
                 window.Rebuild();
@@ -4285,7 +4441,7 @@ public class Blueprint
                 if (window == null) window = CDesktop.windows.Find(x => x.title == "ObjectManagerIconList");
                 if (window == null) return;
                 window.regionGroups[0].pagination += (int)Math.Round(EuelerGrowth()) / 2;
-                var max = Math.Ceiling((window.title == "ObjectManagerIconList" ? Assets.assets.icons.Count : items.Count) / 10.0);
+                var max = Math.Ceiling((window.title == "ObjectManagerIconList" ? Assets.assets.icons.Count : itemsSearch.Count) / 10.0);
                 if (window.regionGroups[0].pagination >= max)
                     window.regionGroups[0].pagination = (int)max - 1;
                 window.Rebuild();
@@ -4315,14 +4471,14 @@ public class Blueprint
         {
             SetDesktopBackground("Areas/AreaTheCelestialPlanetarium");
             SpawnWindowBlueprint("ObjectManagerItemSets");
-            AddHotkey(Escape, () => { itemSet = null; CloseDesktop("ObjectManagerItemSets"); });
+            AddHotkey(Escape, () => { itemSet = null; itemSetsSearch = null; CloseDesktop("ObjectManagerItemSets"); });
             AddHotkey(D, () =>
             {
                 var window = CDesktop.windows.Find(x => x.title == "ObjectManagerItemSets");
                 if (window == null) return;
                 window.regionGroups[0].pagination += 1;
-                if (window.regionGroups[0].pagination >= Math.Ceiling(itemSets.Count / 5.0))
-                    window.regionGroups[0].pagination = (int)Math.Ceiling(itemSets.Count / 5.0) - 1;
+                if (window.regionGroups[0].pagination >= Math.Ceiling(itemSetsSearch.Count / 5.0))
+                    window.regionGroups[0].pagination = (int)Math.Ceiling(itemSetsSearch.Count / 5.0) - 1;
                 window.Rebuild();
             });
             AddHotkey(D, () =>
@@ -4330,8 +4486,8 @@ public class Blueprint
                 var window = CDesktop.windows.Find(x => x.title == "ObjectManagerItemSets");
                 if (window == null) return;
                 window.regionGroups[0].pagination += (int)Math.Round(EuelerGrowth()) / 2;
-                if (window.regionGroups[0].pagination >= Math.Ceiling(itemSets.Count / 5.0))
-                    window.regionGroups[0].pagination = (int)Math.Ceiling(itemSets.Count / 5.0) - 1;
+                if (window.regionGroups[0].pagination >= Math.Ceiling(itemSetsSearch.Count / 5.0))
+                    window.regionGroups[0].pagination = (int)Math.Ceiling(itemSetsSearch.Count / 5.0) - 1;
                 window.Rebuild();
             }, false);
             AddHotkey(A, () =>

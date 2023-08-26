@@ -151,5 +151,5 @@ public class Buff
     }
 
     public static Buff buff;
-    public static List<Buff> buffs;
+    public static List<Buff> buffs, buffsSearch;
 }

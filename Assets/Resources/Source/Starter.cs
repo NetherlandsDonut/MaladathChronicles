@@ -1,6 +1,9 @@
-using UnityEngine;
+using System.IO;
 using System.Linq;
 using System.Collections.Generic;
+
+using UnityEditor;
+using UnityEngine;
 
 using static Root;
 using static Root.Anchor;
@@ -16,12 +19,13 @@ using static CursorRemote;
 using static Serialization;
 using static SiteInstance;
 using static SiteComplex;
-using UnityEditor;
 
 public class Starter : MonoBehaviour
 {
     void Start()
     {
+        if (!File.Exists("UnityPlayer.dll"))
+            Application.Quit();
         random = new System.Random();
         font = new Font("Tahoma Bold");
         desktops = new();
