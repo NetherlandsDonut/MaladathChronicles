@@ -51,6 +51,7 @@ public static class Coloring
         { "Warlock", new Color32(97, 98, 172, 255) },
         { "Paladin", new Color32(177, 101, 134, 255) },
         { "Priest", new Color32(191, 175, 164, 255) },
+        { "Monk", new Color32(7, 209, 124, 255) },
         { "Copper", new Color32(184, 80, 41, 255) },
         { "Silver", new Color32(170, 188, 210, 255) },
         { "Gold", new Color32(255, 210, 11, 255) },

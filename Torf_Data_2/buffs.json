@@ -678,5 +678,39 @@
         ]
       }
     ]
+  },
+  {
+    "name": "Foresight",
+    "icon": "AbilityForesight",
+    "dispelType": "Magic",
+    "tags": [
+      "Gathering"
+    ],
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ResourceCollected",
+            "Triggerer": "Other",
+            "ResourceType": "Any"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "GiveResource",
+            "Affect": "Other",
+            "ResourceAmount": "1",
+            "ShatterTarget": "Other",
+            "ShatterType": "Central",
+            "ShatterDensity": "1",
+            "ShatterSpeed": "4",
+            "ShatterDegree": "0.6",
+            "FlyingResources": "Yes",
+            "SoundEffect": "AbilityForesightFlare",
+            "Await": "4"
+          }
+        ]
+      }
+    ]
   }
 ]

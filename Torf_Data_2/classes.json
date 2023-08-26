@@ -1836,5 +1836,50 @@
         ]
       }
     ]
+  },
+  {
+    "name": "Monk",
+    "icon": "ClassMonk",
+    "startingEquipment": {
+      "Pandaren": [
+        "Footpad's Shirt",
+        "Footpad's Pants",
+        "Footpad's Shoes",
+        "Bent Staff"
+      ]
+    },
+    "rules": {
+      "Melee Attack Power per Strength": 2.0,
+      "Ranged Attack Power per Strength": 0.0,
+      "Critical Strike per Strength": 0.0,
+      "Melee Attack Power per Agility": 2.0,
+      "Ranged Attack Power per Agility": 0.0,
+      "Critical Strike per Agility": 0.03,
+      "Spell Power per Intellect": 1.0,
+      "Spell Critical per Intellect": 0.03,
+      "Stamina per Level": 3.0,
+      "Strength per Level": 3.0,
+      "Agility per Level": 3.0,
+      "Intellect per Level": 0.0
+    },
+    "abilities": [
+      {
+        "Item1": "Off Hand Proficiency",
+        "Item2": 1
+      },
+      {
+        "Item1": "One Handed Mace Proficiency",
+        "Item2": 1
+      },
+      {
+        "Item1": "Staff Proficiency",
+        "Item2": 1
+      },
+      {
+        "Item1": "Leather Proficiency",
+        "Item2": 1
+      }
+    ],
+    "talentTrees": []
   }
 ]

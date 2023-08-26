@@ -1,10 +1,14 @@
-using UnityEngine;
+using System.Linq;
 using System.Collections.Generic;
+
+using UnityEngine;
 
 using static Root;
 using static Buff;
 using static Sound;
 using static Shatter;
+using static FlyingElement;
+
 
 public class Event
 {
@@ -61,6 +65,8 @@ public class Event
                     {
                         var target = affect == "Effector" ? futureEffector : futureOther;
                         string resourceType = effect.ContainsKey("ResourceType") ? effect["ResourceType"] : "None";
+                        if (resourceType == "None" && trigger.ContainsKey("ResourceDetracted"))
+                            resourceType = trigger["ResourceType"];
                         int resourceAmount = effect.ContainsKey("ResourceAmount") ? int.Parse(effect["ResourceAmount"]) : 1;
                         if (resourceType != "None") target.DetractResource(futureBoard, resourceType, resourceAmount);
                     }
@@ -71,6 +77,8 @@ public class Event
                     {
                         var target = affect == "Effector" ? futureEffector : futureOther;
                         string resourceType = effect.ContainsKey("ResourceType") ? effect["ResourceType"] : "None";
+                        if (resourceType == "None" && trigger.ContainsKey("ResourceCollected"))
+                            resourceType = trigger["ResourceType"];
                         int resourceAmount = effect.ContainsKey("ResourceAmount") ? int.Parse(effect["ResourceAmount"]) : 1;
                         if (resourceType != "None") target.AddResource(futureBoard, resourceType, resourceAmount);
                     }
@@ -107,6 +115,7 @@ public class Event
             }
             else if (board != null)
             {
+                var triggerCopy = trigger.ToDictionary(x => x.Key, x => x.Value);
                 board.actions.Add(() =>
                 {
                     if (type == "Damage")
@@ -115,7 +124,7 @@ public class Event
                         {
                             var source = powerSource == "Effector" ? effector : other;
                             var target = affect == "Effector" ? effector : other;
-                            target.Damage(source.RollWeaponDamage() * ((powerType == "Melee" ? source.MeleeAttackPower() : (powerType == "Spell" ? source.SpellPower() : (powerType == "Ranged" ? source.RangedAttackPower() : 1))) / 10.0 + 1) * powerScale, trigger["Trigger"] == "Damage");
+                            target.Damage(source.RollWeaponDamage() * ((powerType == "Melee" ? source.MeleeAttackPower() : (powerType == "Spell" ? source.SpellPower() : (powerType == "Ranged" ? source.RangedAttackPower() : 1))) / 10.0 + 1) * powerScale, triggerCopy["Trigger"] == "Damage");
                         }
                     }
                     else if (type == "Heal")
@@ -124,7 +133,7 @@ public class Event
                         {
                             var source = powerSource == "Effector" ? effector : other;
                             var target = affect == "Effector" ? effector : other;
-                            target.Heal(source.RollWeaponDamage() * ((powerType == "Melee" ? source.MeleeAttackPower() : (powerType == "Spell" ? source.SpellPower() : (powerType == "Ranged" ? source.RangedAttackPower() : 1))) / 10.0 + 1) * powerScale, trigger["Trigger"] == "Heal");
+                            target.Heal(source.RollWeaponDamage() * ((powerType == "Melee" ? source.MeleeAttackPower() : (powerType == "Spell" ? source.SpellPower() : (powerType == "Ranged" ? source.RangedAttackPower() : 1))) / 10.0 + 1) * powerScale, triggerCopy["Trigger"] == "Heal");
                         }
                     }
                     else if (type == "DetractResource")
@@ -133,6 +142,8 @@ public class Event
                         {
                             var target = affect == "Effector" ? effector : other;
                             string resourceType = effect.ContainsKey("ResourceType") ? effect["ResourceType"] : "None";
+                            if (resourceType == "None" && triggerCopy.ContainsKey("ResourceDetracted"))
+                                resourceType = triggerCopy["ResourceType"];
                             int resourceAmount = effect.ContainsKey("ResourceAmount") ? int.Parse(effect["ResourceAmount"]) : 1;
                             if (resourceType != "None") target.DetractResource(resourceType, resourceAmount);
                         }
@@ -143,8 +154,14 @@ public class Event
                         {
                             var target = affect == "Effector" ? effector : other;
                             string resourceType = effect.ContainsKey("ResourceType") ? effect["ResourceType"] : "None";
+                            string flyingResources = effect.ContainsKey("FlyingResources") ? effect["FlyingResources"] : "No";
+                            if (resourceType == "None" && triggerCopy.ContainsKey("ResourceType"))
+                                resourceType = triggerCopy["ResourceType"];
                             int resourceAmount = effect.ContainsKey("ResourceAmount") ? int.Parse(effect["ResourceAmount"]) : 1;
                             if (resourceType != "None") target.AddResource(resourceType, resourceAmount);
+                            if (flyingResources == "Yes")
+                                for (int i = 0; i < resourceAmount; i++)
+                                    SpawnFlyingElement(new Vector3(affect == "Other" ? (board.playerTurn ? 166 : -302) : (board.playerTurn ? -302 : 166), 142), "Element" + resourceType + "Rousing", affect == "Other" ? !board.playerTurn : board.playerTurn);
                         }
                     }
                     else if (type == "AddBuff")

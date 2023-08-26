@@ -2432,7 +2432,7 @@ public class Blueprint
                     {
                         SetRegionBackground(RegionBackgroundType.Button);
                         var foo = Assets.assets.portraits[index + 10 * regionGroup.pagination];
-                        AddLine(foo);
+                        AddLine(foo.Replace("Portrait", ""));
                         AddSmallButton(Assets.assets.portraits[index + 10 * regionGroup.pagination].Replace(".png", ""), (h) => { });
                     }
                     else
@@ -3141,6 +3141,7 @@ public class Blueprint
                 ability = new Ability()
                 {
                     name = "Ability #" + abilities.Count,
+                    icon = "AbilityAbolishMagic",
                     events = new(),
                     tags = new()
                 };
@@ -3313,6 +3314,7 @@ public class Blueprint
                 buff = new Buff()
                 {
                     name = "Buff #" + buffs.Count,
+                    icon = "AbilityAbolishMagic",
                     events = new(),
                     tags = new()
                 };
@@ -3541,7 +3543,7 @@ public class Blueprint
                 AddPaddingRegion(() => { AddLine("Portraits:", "DarkGray"); });
                 AddHeaderRegion(() =>
                 {
-                    AddLine(race.portrait + ".png");
+                    AddLine(race.portrait.Replace("Portrait", "") + ".png");
                     AddSmallButton(race.portrait + "Female", (h) => { });
                     AddSmallButton(race.portrait + "Male", (h) => { });
                 });
@@ -3553,7 +3555,7 @@ public class Blueprint
                 AddPaddingRegion(() => { AddLine("Portrait:", "DarkGray"); });
                 AddButtonRegion(() =>
                 {
-                    AddLine(race.portrait + ".png");
+                    AddLine(race.portrait.Replace("Portrait", "") + ".png");
                     AddSmallButton(race.portrait, (h) => { });
                 },
                 (h) =>
@@ -3580,6 +3582,21 @@ public class Blueprint
                 });
                 AddPaddingRegion(() => { AddLine("Vitality:", "DarkGray"); });
                 AddInputRegion(String.vitality, InputType.Decimal);
+                //AddPaddingRegion(() => { AddLine("Abilities:", "DarkGray"); });
+                //for (int)
+                //AddButtonRegion(() =>
+                //{
+                //    AddLine(race.kind);
+                //},
+                //(h) =>
+                //{
+                //    if (race.kind == "Common")
+                //        race.kind = "Rare";
+                //    else if (race.kind == "Rare")
+                //        race.kind = "Elite";
+                //    else if (race.kind == "Elite")
+                //        race.kind = "Common";
+                //});
             }
             AddPaddingRegion(() => { });
         }),

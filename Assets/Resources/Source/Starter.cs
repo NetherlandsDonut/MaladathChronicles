@@ -295,7 +295,7 @@ public class Starter : MonoBehaviour
         var soundList = AssetDatabase.FindAssets("t:AudioClip", new[] { "Assets/Resources/Sounds" }).Select(x => AssetDatabase.GUIDToAssetPath(x).Replace("Assets/Resources/Sounds/", "")).ToList();
         var iconList = AssetDatabase.FindAssets("t:Texture", new[] { "Assets/Resources/Sprites/Building/BigButtons" }).Select(x => AssetDatabase.GUIDToAssetPath(x).Replace("Assets/Resources/Sprites/Building/BigButtons/", "")).ToList();
         var portraitList = AssetDatabase.FindAssets("t:Texture Portrait", new[] { "Assets/Resources/Sprites/Building/BigButtons" }).Select(x => AssetDatabase.GUIDToAssetPath(x).Replace("Assets/Resources/Sprites/Building/BigButtons/", "")).ToList();
-        iconList.RemoveAll(x => x.StartsWith("Other"));
+        iconList.RemoveAll(x => x.StartsWith("Other") || x.StartsWith("Portrait"));
         Assets.assets = new Assets(ambienceList, soundList, iconList, portraitList);
         Serialize(Assets.assets, "assets");
         #else

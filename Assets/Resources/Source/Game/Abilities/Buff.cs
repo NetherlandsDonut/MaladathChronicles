@@ -30,7 +30,7 @@ public class Buff
                         string triggererData = triggerData.ContainsKey("Triggerer") ? triggerData["Triggerer"] : "Effector";
                         execute = (buffName == buffNameData || buffNameData == "Any") && triggerer == triggererData;
                     }
-                    else if (trigger["Trigger"] == "ResourceCollected")
+                    else if (trigger["Trigger"] == "ResourceCollected" || trigger["Trigger"] == "ResourceDetracted")
                     {
                         string resourceType = trigger.ContainsKey("ResourceType") ? trigger["ResourceType"] : "None";
                         string resourceTypeData = triggerData.ContainsKey("ResourceType") ? triggerData["ResourceType"] : "None";
@@ -39,7 +39,7 @@ public class Buff
                         int resourceAmountData = triggerData.ContainsKey("ResourceAmount") ? int.Parse(triggerData["ResourceAmount"]) : 1;
                         string triggerer = trigger.ContainsKey("Triggerer") ? trigger["Triggerer"] : "None";
                         string triggererData = triggerData.ContainsKey("Triggerer") ? triggerData["Triggerer"] : "None";
-                        execute = resourceType == resourceTypeData && CompareValues(resourceAmount, resourceAmountData, compareData) && triggerer == triggererData;
+                        execute = (resourceType == resourceTypeData || resourceTypeData == "Any") && CompareValues(resourceAmount, resourceAmountData, compareData) && triggerer == triggererData;
                     }
                     else if (trigger["Trigger"] == "ResourceMaxed" || trigger["Trigger"] == "ResourceDeplated")
                     {
@@ -47,7 +47,7 @@ public class Buff
                         string resourceTypeData = triggerData.ContainsKey("ResourceType") ? triggerData["ResourceType"] : "None";
                         string triggerer = trigger.ContainsKey("Triggerer") ? trigger["Triggerer"] : "None";
                         string triggererData = triggerData.ContainsKey("Triggerer") ? triggerData["Triggerer"] : "None";
-                        execute = resourceType == resourceTypeData && triggerer == triggererData;
+                        execute = (resourceType == resourceTypeData || resourceTypeData == "Any") && triggerer == triggererData;
                     }
                     else if (trigger["Trigger"] == "AbilityCast" || trigger["Trigger"] == "CooldownEnd")
                     {

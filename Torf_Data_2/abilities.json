@@ -3016,5 +3016,173 @@
         }
       ]
     }
+  },
+  {
+    "name": "Foresight",
+    "icon": "AbilityForesight",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ResourceCollected",
+            "Triggerer": "Effector",
+            "ResourceType": "Any",
+            "ResourceAmount": "3"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddBuff",
+            "Affect": "Effector",
+            "BuffName": "Foresight",
+            "BuffDuration": "3",
+            "ShatterTarget": "Effector",
+            "ShatterType": "Central",
+            "ShatterDensity": "1",
+            "ShatterSpeed": "4",
+            "ShatterDegree": "0.6",
+            "FlyingResources": "Yes",
+            "SoundEffect": "AbilityForesightCast",
+            "Await": "4"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Gray",
+              "Text": "After collecting at least 3 of any resource gain the Foresight buff for 3 turns. Every time the enemy collects at least a single resource you gain 1 unit of the resource that the enemy collected."
+            }
+          ]
+        },
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Gray",
+              "Text": "Buff received does not stack."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Lightning Bolt",
+    "icon": "AbilityLightning",
+    "tags": [],
+    "events": []
+  },
+  {
+    "name": "Chain Lightning",
+    "icon": "AbilityLightningBolt",
+    "tags": [],
+    "events": []
+  },
+  {
+    "name": "Earth Shock",
+    "icon": "AbilityEarthShock",
+    "tags": [],
+    "events": []
+  },
+  {
+    "name": "Flame Shock",
+    "icon": "AbilityFlameShock",
+    "tags": [],
+    "events": []
+  },
+  {
+    "name": "Lava Burst",
+    "icon": "AbilityFireBolt",
+    "tags": [],
+    "events": []
+  },
+  {
+    "name": "Lightning Shield",
+    "icon": "AbilityLightningShield",
+    "tags": [],
+    "events": []
+  },
+  {
+    "name": "Earthquake",
+    "icon": "AbilityEarthquake",
+    "tags": [],
+    "events": []
+  },
+  {
+    "name": "Liquid Magma Totem",
+    "icon": "AbilityFireResistanceTotem",
+    "tags": [],
+    "events": []
+  },
+  {
+    "name": "Capacitor Totem",
+    "icon": "AbilityBrilliance",
+    "tags": [],
+    "events": []
+  },
+  {
+    "name": "Frostbrand Weapon",
+    "icon": "AbilityFrostBrand",
+    "tags": [],
+    "events": []
+  },
+  {
+    "name": "Flametongue Weapon",
+    "icon": "AbilityFlameTounge",
+    "tags": [],
+    "events": []
+  },
+  {
+    "name": "Windfury Weapon",
+    "icon": "AbilityWindfury",
+    "tags": [],
+    "events": []
+  },
+  {
+    "name": "Feral Spirit",
+    "icon": "AbilityWisp",
+    "tags": [],
+    "events": []
+  },
+  {
+    "name": "Lava Lash",
+    "icon": "AbilityLavaSpawn",
+    "tags": [],
+    "events": []
+  },
+  {
+    "name": "Frost Shock",
+    "icon": "AbilityFrostShock",
+    "tags": [],
+    "events": []
+  },
+  {
+    "name": "Water Shield",
+    "icon": "AbilityWisp",
+    "tags": [],
+    "events": []
+  },
+  {
+    "name": "Mana Spring Totem",
+    "icon": "AbilityManaRegenTotem",
+    "tags": [],
+    "events": []
+  },
+  {
+    "name": "Healing Stream Totem",
+    "icon": "ItemMiscRoot02",
+    "tags": [],
+    "events": []
+  },
+  {
+    "name": "Acid Rain",
+    "icon": "AbilityAcid",
+    "tags": [],
+    "events": []
   }
 ]
