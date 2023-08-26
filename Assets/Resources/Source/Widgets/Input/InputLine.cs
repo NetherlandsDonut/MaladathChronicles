@@ -97,32 +97,38 @@ public class InputLine : MonoBehaviour
             if (CDesktop.title == "ObjectManagerItems")
             {
                 Item.item.name = foo.Value();
-                CDesktop.windows.Find(x => x.title == "ObjectManagerItems").Rebuild();
+                var find = CDesktop.windows.Find(x => x.title == "ObjectManagerItems");
+                if (find != null) find.Rebuild();
             }
             else if (CDesktop.title == "ObjectManagerItemSets")
             {
                 ItemSet.itemSet.name = foo.Value();
-                CDesktop.windows.Find(x => x.title == "ObjectManagerItemSets").Rebuild();
+                var find = CDesktop.windows.Find(x => x.title == "ObjectManagerItemSets");
+                if (find != null) find.Rebuild();
             }
             else if (CDesktop.title == "ObjectManagerAbilities")
             {
                 Ability.ability.name = foo.Value();
-                CDesktop.windows.Find(x => x.title == "ObjectManagerAbilities").Rebuild();
+                var find = CDesktop.windows.Find(x => x.title == "ObjectManagerAbilities");
+                if (find != null) find.Rebuild();
             }
             else if (CDesktop.title == "ObjectManagerBuffs")
             {
                 Buff.buff.name = foo.Value();
-                CDesktop.windows.Find(x => x.title == "ObjectManagerBuffs").Rebuild();
+                var find = CDesktop.windows.Find(x => x.title == "ObjectManagerBuffs");
+                if (find != null) find.Rebuild();
             }
             else if (CDesktop.title == "ObjectManagerRaces")
             {
                 Race.race.name = foo.Value();
-                CDesktop.windows.Find(x => x.title == "ObjectManagerRaces").Rebuild();
+                var find = CDesktop.windows.Find(x => x.title == "ObjectManagerRaces");
+                if (find != null) find.Rebuild();
             }
             else if (CDesktop.title == "ObjectManagerClasses")
             {
                 Class.spec.name = foo.Value();
-                CDesktop.windows.Find(x => x.title == "ObjectManagerClasses").Rebuild();
+                var find = CDesktop.windows.Find(x => x.title == "ObjectManagerClasses");
+                if (find != null) find.Rebuild();
             }
         }
         else if (foo == vitality)

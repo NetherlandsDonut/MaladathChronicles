@@ -19,7 +19,7 @@ class Serialization
         target = DeserializeObject<T>(content);
     }
 
-    public static void Serialize(object what, string where, bool backup = false, bool encoded = false)
+    public static void Serialize(object what, string where, bool backup = false, bool encoded = false, string prefix = "")
     {
         if (!Directory.Exists("Torf_Data_2"))
             Directory.CreateDirectory("Torf_Data_2");
@@ -35,7 +35,7 @@ class Serialization
         var sett = new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore, DefaultValueHandling = DefaultValueHandling.Ignore };
         var data = SerializeObject(what, encoded ? None : Indented, sett);
         if (encoded) data = Encrypt(data);
-        File.WriteAllText("Torf_Data_2\\" + (backup ? "Backup\\" + date + "\\" : "") + where + (encoded ? ".TORF" : ".json"), data);
+        File.WriteAllText(prefix + "Torf_Data_2\\" + (backup ? "Backup\\" + date + "\\" : "") + where + (encoded ? ".TORF" : ".json"), data);
     }
 
     public static string IV = "1a1a1a1a1a1a1a1a";

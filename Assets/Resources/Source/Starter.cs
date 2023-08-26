@@ -302,6 +302,7 @@ public class Starter : MonoBehaviour
         portraitList.RemoveAll(x => !x.StartsWith("Portrait"));
         Assets.assets = new Assets(ambienceList, soundList, itemIconList, abilityIconList, portraitList);
         Serialize(Assets.assets, "assets");
+        Serialize(Assets.assets, "assets", false, false, "D:\\Games\\Torf\\");
         #else
         Deserialize(ref Assets.assets, "assets");
         #endif

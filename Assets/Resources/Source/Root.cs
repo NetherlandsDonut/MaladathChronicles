@@ -164,18 +164,19 @@ public static class Root
 
     #region Windows
 
-    public static void SpawnWindowBlueprint(string blueprintTitle)
+    public static Window SpawnWindowBlueprint(string blueprintTitle)
     {
-        SpawnWindowBlueprint(windowBlueprints.Find(x => x.title == blueprintTitle));
+        return SpawnWindowBlueprint(windowBlueprints.Find(x => x.title == blueprintTitle));
     }
 
-    public static void SpawnWindowBlueprint(Blueprint blueprint)
+    public static Window SpawnWindowBlueprint(Blueprint blueprint)
     {
-        if (blueprint == null) return;
+        if (blueprint == null) return null;
         AddWindow(blueprint.title, blueprint.upperUI);
         blueprint.actions();
         CDesktop.LBWindow.Rebuild();
         CDesktop.LBWindow.ResetPosition();
+        return CDesktop.LBWindow;
     }
 
     public static void AddWindow(string title, bool upperUI)

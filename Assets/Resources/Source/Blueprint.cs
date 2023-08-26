@@ -2874,10 +2874,17 @@ public class Blueprint
             },
             (h) =>
             {
-                if (!CDesktop.windows.Exists(x => x.title == "ObjectManagerItemIconList"))
+                var list = CDesktop.windows.Find(x => x.title == "ObjectManagerItemIconList");
+                if (list == null)
                 {
                     CloseWindow("ObjectManagerItems");
-                    SpawnWindowBlueprint("ObjectManagerItemIconList");
+                    list = SpawnWindowBlueprint("ObjectManagerItemIconList");
+                }
+                var index = Assets.assets.itemIcons.FindIndex(x => x.ToLower() == item.icon.ToLower() + ".png");
+                if (index >= 10)
+                {
+                    CDesktop.LBWindow.LBRegionGroup.pagination = index / 10;
+                    list.Rebuild();
                 }
             });
             AddPaddingRegion(() => { AddLine("Rarity:", "DarkGray"); });
@@ -3219,10 +3226,17 @@ public class Blueprint
             },
             (h) =>
             {
-                if (!CDesktop.windows.Exists(x => x.title == "ObjectManagerAbilityIconList"))
+                var list = CDesktop.windows.Find(x => x.title == "ObjectManagerAbilityIconList");
+                if (list == null)
                 {
                     CloseWindow("ObjectManagerAbilities");
-                    SpawnWindowBlueprint("ObjectManagerAbilityIconList");
+                    list = SpawnWindowBlueprint("ObjectManagerAbilityIconList");
+                }
+                var index = Assets.assets.abilityIcons.FindIndex(x => x.ToLower() == ability.icon.ToLower() + ".png");
+                if (index >= 10)
+                {
+                    CDesktop.LBWindow.LBRegionGroup.pagination = index / 10;
+                    list.Rebuild();
                 }
             });
             AddPaddingRegion(() => { });
@@ -3391,10 +3405,17 @@ public class Blueprint
             },
             (h) =>
             {
-                if (!CDesktop.windows.Exists(x => x.title == "ObjectManagerAbilityIconList"))
+                var list = CDesktop.windows.Find(x => x.title == "ObjectManagerAbilityIconList");
+                if (list == null)
                 {
                     CloseWindow("ObjectManagerBuffs");
-                    SpawnWindowBlueprint("ObjectManagerAbilityIconList");
+                    list = SpawnWindowBlueprint("ObjectManagerAbilityIconList");
+                }
+                var index = Assets.assets.abilityIcons.FindIndex(x => x.ToLower() == buff.icon.ToLower() + ".png");
+                if (index >= 10)
+                {
+                    CDesktop.LBWindow.LBRegionGroup.pagination = index / 10;
+                    list.Rebuild();
                 }
             });
             AddPaddingRegion(() => { AddLine("Stackable:", "DarkGray"); });
@@ -3610,10 +3631,17 @@ public class Blueprint
                 },
                 (h) =>
                 {
-                    if (!CDesktop.windows.Exists(x => x.title == "ObjectManagerPortraitList"))
+                    var list = CDesktop.windows.Find(x => x.title == "ObjectManagerPortraitList");
+                    if (list == null)
                     {
                         CloseWindow("ObjectManagerRaces");
-                        SpawnWindowBlueprint("ObjectManagerPortraitList");
+                        list = SpawnWindowBlueprint("ObjectManagerPortraitList");
+                    }
+                    var index = Assets.assets.portraits.FindIndex(x => x.ToLower() == race.portrait.ToLower() + ".png");
+                    if (index >= 10)
+                    {
+                        CDesktop.LBWindow.LBRegionGroup.pagination = index / 10;
+                        list.Rebuild();
                     }
                 });
                 AddPaddingRegion(() => { AddLine("Kind:", "DarkGray"); });
