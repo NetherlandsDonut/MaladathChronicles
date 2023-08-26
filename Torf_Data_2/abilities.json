@@ -3184,5 +3184,323 @@
     "icon": "AbilityAcid",
     "tags": [],
     "events": []
+  },
+  {
+    "name": "Resonant Waters",
+    "icon": "AbilityAcid",
+    "tags": [],
+    "events": []
+  },
+  {
+    "name": "Tidal Mastery",
+    "icon": "AbilityTidalWaves",
+    "tags": [],
+    "events": []
+  },
+  {
+    "name": "Healing Grace",
+    "icon": "AbilityAcid",
+    "tags": [],
+    "events": []
+  },
+  {
+    "name": "Resurgence",
+    "icon": "AbilityAcid",
+    "tags": [],
+    "events": []
+  },
+  {
+    "name": "Ancestral Vigor",
+    "icon": "AbilityAncestralAwakening",
+    "tags": [],
+    "events": []
+  },
+  {
+    "name": "Undercurrent",
+    "icon": "AbilityAcid",
+    "tags": [],
+    "events": []
+  },
+  {
+    "name": "Earthen Harmony",
+    "icon": "AbilityAcid",
+    "tags": [],
+    "events": []
+  },
+  {
+    "name": "Tidebringer",
+    "icon": "AbilityAcid",
+    "tags": [],
+    "events": []
+  },
+  {
+    "name": "Continuous Waves",
+    "icon": "AbilityAcid",
+    "tags": [],
+    "events": []
+  },
+  {
+    "name": "Refreshing Waters",
+    "icon": "AbilityAcid",
+    "tags": [],
+    "events": []
+  },
+  {
+    "name": "Deluge",
+    "icon": "AbilityAcid",
+    "tags": [],
+    "events": []
+  },
+  {
+    "name": "Flash Flood",
+    "icon": "AbilityAcid",
+    "tags": [],
+    "events": []
+  },
+  {
+    "name": "Elemental Warding",
+    "icon": "AbilityManaTree",
+    "tags": [],
+    "events": []
+  },
+  {
+    "name": "Totemic Focus",
+    "icon": "AbilityAcid",
+    "tags": [],
+    "events": []
+  },
+  {
+    "name": "Nature's Guardian",
+    "icon": "AbilityNatureGuardian",
+    "tags": [],
+    "events": []
+  },
+  {
+    "name": "Downpour",
+    "icon": "AbilityAcid",
+    "tags": [],
+    "events": []
+  },
+  {
+    "name": "Healing Rain",
+    "icon": "AbilityAcid",
+    "tags": [],
+    "events": []
+  },
+  {
+    "name": "Riptide",
+    "icon": "AbilityAcid",
+    "tags": [],
+    "events": []
+  },
+  {
+    "name": "Ancestral Guidance",
+    "icon": "AbilityAcid",
+    "tags": [],
+    "events": []
+  },
+  {
+    "name": "Thorim's Invocation",
+    "icon": "AbilityAcid",
+    "tags": [],
+    "events": []
+  },
+  {
+    "name": "Thundering Strikes",
+    "icon": "AbilityAcid",
+    "tags": [],
+    "events": []
+  },
+  {
+    "name": "Call of Thunder",
+    "icon": "AbilityAcid",
+    "tags": [],
+    "events": []
+  },
+  {
+    "name": "Storm's Wrath",
+    "icon": "AbilityAcid",
+    "tags": [],
+    "events": []
+  },
+  {
+    "name": "Forceful Winds",
+    "icon": "AbilityAcid",
+    "tags": [],
+    "events": []
+  },
+  {
+    "name": "Molten Assault",
+    "icon": "AbilityMoltenCore",
+    "tags": [],
+    "events": []
+  },
+  {
+    "name": "Ashen Catalyst",
+    "icon": "AbilityAcid",
+    "tags": [],
+    "events": []
+  },
+  {
+    "name": "Converging Storms",
+    "icon": "AbilityAcid",
+    "tags": [],
+    "events": []
+  },
+  {
+    "name": "Splintered Elements",
+    "icon": "AbilityAcid",
+    "tags": [],
+    "events": []
+  },
+  {
+    "name": "Elemental Assault",
+    "icon": "AbilityElementalPrecision2",
+    "tags": [],
+    "events": []
+  },
+  {
+    "name": "Static Accumulation",
+    "icon": "AbilityStormReach",
+    "tags": [],
+    "events": []
+  },
+  {
+    "name": "Stormblast",
+    "icon": "AbilityAcid",
+    "tags": [],
+    "events": []
+  },
+  {
+    "name": "Unruly Winds",
+    "icon": "AbilityAcid",
+    "tags": [],
+    "events": []
+  },
+  {
+    "name": "Stormflurry",
+    "icon": "AbilityLightningBolt2",
+    "tags": [],
+    "events": []
+  },
+  {
+    "name": "Doom Winds",
+    "icon": "AbilitySkyreachFourWind",
+    "tags": [],
+    "events": []
+  },
+  {
+    "name": "Crash Lightning",
+    "icon": "AbilityCrashLightning",
+    "tags": [],
+    "events": []
+  },
+  {
+    "name": "Ice Strike",
+    "icon": "AbilityAcid",
+    "tags": [],
+    "events": []
+  },
+  {
+    "name": "Stormstrike",
+    "icon": "AbilityStormstrike",
+    "tags": [],
+    "events": []
+  },
+  {
+    "name": "Sundering",
+    "icon": "AbilityAcid",
+    "tags": [],
+    "events": []
+  },
+  {
+    "name": "Primordial Fury",
+    "icon": "AbilityAcid",
+    "tags": [],
+    "events": []
+  },
+  {
+    "name": "Flow of Power",
+    "icon": "AbilityAcid",
+    "tags": [],
+    "events": []
+  },
+  {
+    "name": "Stormkeeper",
+    "icon": "AbilityThunderKingLightningWhip",
+    "tags": [],
+    "events": []
+  },
+  {
+    "name": "Echo of the Elements",
+    "icon": "AbilityAcid",
+    "tags": [],
+    "events": []
+  },
+  {
+    "name": "Flash of Lightning",
+    "icon": "AbilityLightningOverload",
+    "tags": [],
+    "events": []
+  },
+  {
+    "name": "Eye of The Storm",
+    "icon": "AbilityEyeOfTheStorm",
+    "tags": [],
+    "events": []
+  },
+  {
+    "name": "Master of the Elements",
+    "icon": "AbilityMasterOfElements",
+    "tags": [],
+    "events": []
+  },
+  {
+    "name": "Magma Chamber",
+    "icon": "AbilityMagmaFlowWave",
+    "tags": [],
+    "events": []
+  },
+  {
+    "name": "Elemental Equilibrium",
+    "icon": "AbilityElementalAbsorption",
+    "tags": [],
+    "events": []
+  },
+  {
+    "name": "Further Beyond",
+    "icon": "AbilityAcid",
+    "tags": [],
+    "events": []
+  },
+  {
+    "name": "Rolling Magma",
+    "icon": "AbilityAcid",
+    "tags": [],
+    "events": []
+  },
+  {
+    "name": "Searing Flames",
+    "icon": "AbilityShadowandFlame",
+    "tags": [],
+    "events": []
+  },
+  {
+    "name": "Oath of the Far Seer",
+    "icon": "AbilityElementalOath",
+    "tags": [],
+    "events": []
+  },
+  {
+    "name": "Unrelenting Calamity",
+    "icon": "AbilityAcid",
+    "tags": [],
+    "events": []
+  },
+  {
+    "name": "Echoes of Great Sundering",
+    "icon": "AbilityAcid",
+    "tags": [],
+    "events": []
   }
 ]

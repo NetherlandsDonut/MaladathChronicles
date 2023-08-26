@@ -326,15 +326,366 @@
     "talentTrees": [
       {
         "name": "Elemental",
-        "talents": []
+        "talents": [
+          {
+            "col": 1,
+            "ability": "Lightning Bolt",
+            "defaultTaken": true
+          },
+          {
+            "row": 1,
+            "ability": "Flame Shock"
+          },
+          {
+            "row": 1,
+            "col": 1,
+            "ability": "Flash of Lightning"
+          },
+          {
+            "row": 1,
+            "col": 2,
+            "ability": "Lightning Shield"
+          },
+          {
+            "row": 2,
+            "ability": "Oath of the Far Seer"
+          },
+          {
+            "row": 2,
+            "col": 1,
+            "ability": "Lava Burst"
+          },
+          {
+            "row": 2,
+            "col": 2,
+            "ability": "Liquid Magma Totem"
+          },
+          {
+            "row": 3,
+            "ability": "Searing Flames"
+          },
+          {
+            "row": 3,
+            "col": 1,
+            "ability": "Earth Shock"
+          },
+          {
+            "row": 4,
+            "ability": "Rolling Magma"
+          },
+          {
+            "row": 4,
+            "col": 2,
+            "ability": "Capacitor Totem"
+          },
+          {
+            "row": 5,
+            "ability": "Echo of the Elements"
+          },
+          {
+            "row": 5,
+            "col": 1,
+            "ability": "Unrelenting Calamity"
+          },
+          {
+            "row": 5,
+            "col": 2,
+            "ability": "Primordial Fury"
+          },
+          {
+            "row": 6,
+            "col": 1,
+            "ability": "Magma Chamber"
+          },
+          {
+            "row": 6,
+            "col": 2,
+            "ability": "Stormkeeper"
+          },
+          {
+            "row": 7,
+            "col": 1,
+            "ability": "Elemental Equilibrium"
+          },
+          {
+            "row": 7,
+            "col": 2,
+            "ability": "Earthquake"
+          },
+          {
+            "row": 8,
+            "ability": "Eye of The Storm"
+          },
+          {
+            "row": 8,
+            "col": 2,
+            "ability": "Chain Lightning"
+          },
+          {
+            "row": 9,
+            "ability": "Flow of Power"
+          },
+          {
+            "row": 9,
+            "col": 1,
+            "ability": "Further Beyond"
+          },
+          {
+            "row": 10,
+            "ability": "Echoes of Great Sundering"
+          },
+          {
+            "row": 10,
+            "col": 1,
+            "ability": "Master of the Elements"
+          },
+          {
+            "row": 10,
+            "col": 2,
+            "ability": "Thunderstorm"
+          }
+        ]
       },
       {
         "name": "Enhancement",
-        "talents": []
+        "talents": [
+          {
+            "col": 1,
+            "ability": "Stormstrike",
+            "defaultTaken": true
+          },
+          {
+            "row": 1,
+            "ability": "Ice Strike"
+          },
+          {
+            "row": 1,
+            "col": 1,
+            "ability": "Flametongue Weapon"
+          },
+          {
+            "row": 1,
+            "col": 2,
+            "ability": "Stormblast"
+          },
+          {
+            "row": 2,
+            "ability": "Lava Lash"
+          },
+          {
+            "row": 2,
+            "col": 1,
+            "ability": "Frostbrand Weapon"
+          },
+          {
+            "row": 2,
+            "col": 2,
+            "ability": "Stormflurry"
+          },
+          {
+            "row": 3,
+            "ability": "Ashen Catalyst"
+          },
+          {
+            "row": 3,
+            "col": 2,
+            "ability": "Forceful Winds"
+          },
+          {
+            "row": 4,
+            "ability": "Splintered Elements"
+          },
+          {
+            "row": 4,
+            "col": 1,
+            "ability": "Frost Shock"
+          },
+          {
+            "row": 4,
+            "col": 2,
+            "ability": "Crash Lightning"
+          },
+          {
+            "row": 5,
+            "ability": "Molten Assault"
+          },
+          {
+            "row": 5,
+            "col": 1,
+            "ability": "Windfury Weapon"
+          },
+          {
+            "row": 5,
+            "col": 2,
+            "ability": "Thundering Strikes"
+          },
+          {
+            "row": 6,
+            "col": 1,
+            "ability": "Call of Thunder"
+          },
+          {
+            "row": 6,
+            "col": 2,
+            "ability": "Elemental Assault"
+          },
+          {
+            "row": 7,
+            "ability": "Storm's Wrath"
+          },
+          {
+            "row": 7,
+            "col": 2,
+            "ability": "Doom Winds"
+          },
+          {
+            "row": 8,
+            "col": 1,
+            "ability": "Feral Spirit"
+          },
+          {
+            "row": 8,
+            "col": 2,
+            "ability": "Unruly Winds"
+          },
+          {
+            "row": 9,
+            "ability": "Thorim's Invocation"
+          },
+          {
+            "row": 9,
+            "col": 1,
+            "ability": "Converging Storms"
+          },
+          {
+            "row": 10,
+            "ability": "Sundering"
+          },
+          {
+            "row": 10,
+            "col": 1,
+            "ability": "Static Accumulation"
+          }
+        ]
       },
       {
         "name": "Restoration",
-        "talents": []
+        "talents": [
+          {
+            "col": 1,
+            "ability": "Healing Wave",
+            "defaultTaken": true
+          },
+          {
+            "row": 1,
+            "ability": "Arcane Tempo"
+          },
+          {
+            "row": 1,
+            "col": 1,
+            "ability": "Water Shield"
+          },
+          {
+            "row": 1,
+            "col": 2,
+            "ability": "Refreshing Waters"
+          },
+          {
+            "row": 2,
+            "ability": "Flash Flood"
+          },
+          {
+            "row": 2,
+            "col": 2,
+            "ability": "Acid Rain"
+          },
+          {
+            "row": 3,
+            "ability": "Earth Shield"
+          },
+          {
+            "row": 3,
+            "col": 1,
+            "ability": "Elemental Warding"
+          },
+          {
+            "row": 3,
+            "col": 2,
+            "ability": "Healing Stream Totem"
+          },
+          {
+            "row": 4,
+            "ability": "Healing Rain"
+          },
+          {
+            "row": 4,
+            "col": 2,
+            "ability": "Mana Spring Totem"
+          },
+          {
+            "row": 5,
+            "ability": "Earthen Harmony"
+          },
+          {
+            "row": 5,
+            "col": 2,
+            "ability": "Nature's Guardian"
+          },
+          {
+            "row": 6,
+            "ability": "Ancestral Vigor"
+          },
+          {
+            "row": 6,
+            "col": 1,
+            "ability": "Totemic Focus"
+          },
+          {
+            "row": 6,
+            "col": 2,
+            "ability": "Tidebringer"
+          },
+          {
+            "row": 7,
+            "col": 1,
+            "ability": "Riptide"
+          },
+          {
+            "row": 7,
+            "col": 2,
+            "ability": "Undercurrent",
+            "inherited": true
+          },
+          {
+            "row": 8,
+            "col": 1,
+            "ability": "Downpour"
+          },
+          {
+            "row": 8,
+            "col": 2,
+            "ability": "Healing Grace"
+          },
+          {
+            "row": 9,
+            "ability": "Continuous Waves"
+          },
+          {
+            "row": 9,
+            "col": 1,
+            "ability": "Resurgence"
+          },
+          {
+            "row": 9,
+            "col": 2,
+            "ability": "Ancestral Guidance"
+          },
+          {
+            "row": 10,
+            "col": 1,
+            "ability": "Time Warp"
+          }
+        ]
       }
     ]
   },
