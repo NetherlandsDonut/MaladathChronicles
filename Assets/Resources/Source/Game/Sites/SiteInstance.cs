@@ -41,6 +41,7 @@ public class SiteInstance
             (h) =>
             {
                 if (area == null) return;
+                SiteHostileArea.area = area;
                 var window = CDesktop.windows.Find(x => x.title.StartsWith("HostileArea: "));
                 if (window != null)
                     if (window.title == "HostileArea: " + area.name) return;

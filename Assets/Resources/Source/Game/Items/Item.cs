@@ -233,9 +233,9 @@ public class Item
                 AddLine(item.minDamage + " - " + item.maxDamage + " Damage");
             }
             else
-                AddLine(item.type);
+                AddLine(item.type == null ? "" : item.type);
         });
-        if (item.stats.stats.Count > 0)
+        if (item.stats != null && item.stats.stats.Count > 0)
             AddPaddingRegion(() =>
             {
                 foreach (var stat in item.stats.stats)

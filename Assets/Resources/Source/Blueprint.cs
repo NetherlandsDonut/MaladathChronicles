@@ -1757,8 +1757,8 @@ public class Blueprint
             },
             (h) =>
             {
-                areas = areas.OrderByDescending(x => x.possibleEncounters == null ? -1 : x.possibleEncounters.Count).ToList();
-                areasSearch = areasSearch.OrderByDescending(x => x.possibleEncounters == null ? -1 : x.possibleEncounters.Count).ToList();
+                areas = areas.OrderByDescending(x => x.commonEncounters == null ? -1 : x.commonEncounters.Count).ToList();
+                areasSearch = areasSearch.OrderByDescending(x => x.commonEncounters == null ? -1 : x.commonEncounters.Count).ToList();
                 CloseWindow("HostileAreasSort");
                 CloseWindow("ObjectManagerHostileAreas");
                 SpawnWindowBlueprint("ObjectManagerHostileAreas");
@@ -1770,8 +1770,8 @@ public class Blueprint
             },
             (h) =>
             {
-                areas = areas.OrderByDescending(x => x.bossEncounters == null ? -1 : x.bossEncounters.Count).ToList();
-                areasSearch = areasSearch.OrderByDescending(x => x.bossEncounters == null ? -1 : x.bossEncounters.Count).ToList();
+                areas = areas.OrderByDescending(x => x.eliteEncounters == null ? -1 : x.eliteEncounters.Count).ToList();
+                areasSearch = areasSearch.OrderByDescending(x => x.eliteEncounters == null ? -1 : x.eliteEncounters.Count).ToList();
                 CloseWindow("HostileAreasSort");
                 CloseWindow("ObjectManagerHostileAreas");
                 SpawnWindowBlueprint("ObjectManagerHostileAreas");
@@ -3924,6 +3924,7 @@ public class Blueprint
                 var window = CDesktop.windows.Find(x => x.title.StartsWith("HostileArea: "));
                 if (window != null)
                 {
+                    area = null;
                     SpawnTransition();
                     PlaySound("DesktopButtonClose");
                     SetDesktopBackground("Areas/Area" + instance.name.Replace("'", "").Replace(".", "").Replace(" ", ""));
@@ -3940,6 +3941,34 @@ public class Blueprint
                     CloseDesktop("InstanceEntrance");
                 }
             });
+            AddHotkey(BackQuote, () =>
+            {
+                if (area == null) return;
+                if (area.commonEncounters != null)
+                    foreach (var encounter in area.commonEncounters)
+                        if (!races.Exists(x => x.name == encounter.who))
+                            races.Insert(0, new Race()
+                            {
+                                name = encounter.who,
+                                abilities = new(),
+                                kind = "Common",
+                                portrait = "PortraitChicken",
+                                vitality = 1.0,
+                            });
+                if (area.eliteEncounters != null)
+                    foreach (var encounter in area.eliteEncounters)
+                        if (!races.Exists(x => x.name == encounter.who))
+                            races.Insert(0, new Race()
+                            {
+                                name = encounter.who,
+                                abilities = new(),
+                                kind = "Elite",
+                                portrait = "PortraitCow",
+                                vitality = 1.0,
+                            });
+                racesSearch = races;
+                SpawnDesktopBlueprint("ObjectManagerRaces");
+            });
         }),
         new("ComplexEntrance", () =>
         {
@@ -3951,6 +3980,7 @@ public class Blueprint
                 var window = CDesktop.windows.Find(x => x.title.StartsWith("HostileArea: "));
                 if (window != null)
                 {
+                    area = null;
                     SpawnTransition();
                     PlaySound("DesktopButtonClose");
                     SetDesktopBackground("Areas/Complex" + complex.name.Replace("'", "").Replace(".", "").Replace(" ", ""));
@@ -4188,428 +4218,200 @@ public class Blueprint
             SetDesktopBackground("Areas/AreaTheCelestialPlanetarium");
             SpawnWindowBlueprint("ObjectManagerHostileAreas");
             AddHotkey(Escape, () => { area = null; areasSearch = null; CloseDesktop("ObjectManagerHostileAreas"); });
-            AddHotkey(D, () =>
-            {
-                var window = CDesktop.windows.Find(x => x.title == "ObjectManagerHostileAreas");
-                if (window == null) window = CDesktop.windows.Find(x => x.title == "ObjectManagerAmbienceList");
-                if (window == null) return;
-                window.regionGroups[0].pagination += 1;
-                var max = Math.Ceiling((window.title == "ObjectManagerAmbienceList" ? Assets.assets.ambience.Count : areasSearch.Count) / 10.0);
-                if (window.regionGroups[0].pagination >= max)
-                    window.regionGroups[0].pagination = (int)max - 1;
-                window.Rebuild();
-            });
-            AddHotkey(D, () =>
-            {
-                var window = CDesktop.windows.Find(x => x.title == "ObjectManagerHostileAreas");
-                if (window == null) window = CDesktop.windows.Find(x => x.title == "ObjectManagerAmbienceList");
-                if (window == null) return;
-                window.regionGroups[0].pagination += (int)Math.Round(EuelerGrowth()) / 2;
-                var max = Math.Ceiling((window.title == "ObjectManagerAmbienceList" ? Assets.assets.ambience.Count : areasSearch.Count) / 10.0);
-                if (window.regionGroups[0].pagination >= max)
-                    window.regionGroups[0].pagination = (int)max - 1;
-                window.Rebuild();
-            }, false);
-            AddHotkey(A, () =>
-            {
-                var window = CDesktop.windows.Find(x => x.title == "ObjectManagerHostileAreas");
-                if (window == null) window = CDesktop.windows.Find(x => x.title == "ObjectManagerAmbienceList");
-                if (window == null) return;
-                window.regionGroups[0].pagination -= 1;
-                if (window.regionGroups[0].pagination < 0)
-                    window.regionGroups[0].pagination = 0;
-                window.Rebuild();
-            });
-            AddHotkey(A, () =>
-            {
-                var window = CDesktop.windows.Find(x => x.title == "ObjectManagerHostileAreas");
-                if (window == null) window = CDesktop.windows.Find(x => x.title == "ObjectManagerAmbienceList");
-                if (window == null) return;
-                window.regionGroups[0].pagination -= (int)Math.Round(EuelerGrowth()) / 2;
-                if (window.regionGroups[0].pagination < 0)
-                    window.regionGroups[0].pagination = 0;
-                window.Rebuild();
-            }, false);
+            AddPaginationHotkeys("ObjectManagerHostileAreas", areasSearch.Count, 10);
         }),
         new("ObjectManagerInstances", () =>
         {
             SetDesktopBackground("Areas/AreaTheCelestialPlanetarium");
             SpawnWindowBlueprint("ObjectManagerInstances");
             AddHotkey(Escape, () => { instance = null; instancesSearch = null; CloseDesktop("ObjectManagerInstances"); });
-            AddHotkey(D, () =>
-            {
-                var window = CDesktop.windows.Find(x => x.title == "ObjectManagerInstances");
-                if (window == null) window = CDesktop.windows.Find(x => x.title == "ObjectManagerAmbienceList");
-                if (window == null) return;
-                window.regionGroups[0].pagination += 1;
-                var max = Math.Ceiling((window.title == "ObjectManagerAmbienceList" ? Assets.assets.ambience.Count : instancesSearch.Count) / 10.0);
-                if (window.regionGroups[0].pagination >= max)
-                    window.regionGroups[0].pagination = (int)max - 1;
-                window.Rebuild();
-            });
-            AddHotkey(D, () =>
-            {
-                var window = CDesktop.windows.Find(x => x.title == "ObjectManagerInstances");
-                if (window == null) window = CDesktop.windows.Find(x => x.title == "ObjectManagerAmbienceList");
-                if (window == null) return;
-                window.regionGroups[0].pagination += (int)Math.Round(EuelerGrowth()) / 2;
-                var max = Math.Ceiling((window.title == "ObjectManagerAmbienceList" ? Assets.assets.ambience.Count : instancesSearch.Count) / 10.0);
-                if (window.regionGroups[0].pagination >= max)
-                    window.regionGroups[0].pagination = (int)max - 1;
-                window.Rebuild();
-            }, false);
-            AddHotkey(A, () =>
-            {
-                var window = CDesktop.windows.Find(x => x.title == "ObjectManagerInstances");
-                if (window == null) window = CDesktop.windows.Find(x => x.title == "ObjectManagerAmbienceList");
-                if (window == null) return;
-                window.regionGroups[0].pagination -= 1;
-                if (window.regionGroups[0].pagination < 0)
-                    window.regionGroups[0].pagination = 0;
-                window.Rebuild();
-            });
-            AddHotkey(A, () =>
-            {
-                var window = CDesktop.windows.Find(x => x.title == "ObjectManagerInstances");
-                if (window == null) window = CDesktop.windows.Find(x => x.title == "ObjectManagerAmbienceList");
-                if (window == null) return;
-                window.regionGroups[0].pagination -= (int)Math.Round(EuelerGrowth()) / 2;
-                if (window.regionGroups[0].pagination < 0)
-                    window.regionGroups[0].pagination = 0;
-                window.Rebuild();
-            }, false);
+            AddPaginationHotkeys("ObjectManagerInstances", instancesSearch.Count, 10);
         }),
         new("ObjectManagerComplexes", () =>
         {
             SetDesktopBackground("Areas/AreaTheCelestialPlanetarium");
             SpawnWindowBlueprint("ObjectManagerComplexes");
             AddHotkey(Escape, () => { complex = null; complexesSearch = null; CloseDesktop("ObjectManagerComplexes"); });
-            AddHotkey(D, () =>
-            {
-                var window = CDesktop.windows.Find(x => x.title == "ObjectManagerComplexes");
-                if (window == null) window = CDesktop.windows.Find(x => x.title == "ObjectManagerAmbienceList");
-                if (window == null) return;
-                window.regionGroups[0].pagination += 1;
-                var max = Math.Ceiling((window.title == "ObjectManagerAmbienceList" ? Assets.assets.ambience.Count : complexesSearch.Count) / 10.0);
-                if (window.regionGroups[0].pagination >= max)
-                    window.regionGroups[0].pagination = (int)max - 1;
-                window.Rebuild();
-            });
-            AddHotkey(D, () =>
-            {
-                var window = CDesktop.windows.Find(x => x.title == "ObjectManagerComplexes");
-                if (window == null) window = CDesktop.windows.Find(x => x.title == "ObjectManagerAmbienceList");
-                if (window == null) return;
-                window.regionGroups[0].pagination += (int)Math.Round(EuelerGrowth()) / 2;
-                var max = Math.Ceiling((window.title == "ObjectManagerAmbienceList" ? Assets.assets.ambience.Count : complexesSearch.Count) / 10.0);
-                if (window.regionGroups[0].pagination >= max)
-                    window.regionGroups[0].pagination = (int)max - 1;
-                window.Rebuild();
-            }, false);
-            AddHotkey(A, () =>
-            {
-                var window = CDesktop.windows.Find(x => x.title == "ObjectManagerComplexes");
-                if (window == null) window = CDesktop.windows.Find(x => x.title == "ObjectManagerAmbienceList");
-                if (window == null) return;
-                window.regionGroups[0].pagination -= 1;
-                if (window.regionGroups[0].pagination < 0)
-                    window.regionGroups[0].pagination = 0;
-                window.Rebuild();
-            });
-            AddHotkey(A, () =>
-            {
-                var window = CDesktop.windows.Find(x => x.title == "ObjectManagerComplexes");
-                if (window == null) window = CDesktop.windows.Find(x => x.title == "ObjectManagerAmbienceList");
-                if (window == null) return;
-                window.regionGroups[0].pagination -= (int)Math.Round(EuelerGrowth()) / 2;
-                if (window.regionGroups[0].pagination < 0)
-                    window.regionGroups[0].pagination = 0;
-                window.Rebuild();
-            }, false);
+            AddPaginationHotkeys("ObjectManagerComplexes", complexesSearch.Count, 10);
         }),
         new("ObjectManagerRaces", () =>
         {
             SetDesktopBackground("Areas/AreaTheCelestialPlanetarium");
             SpawnWindowBlueprint("ObjectManagerRaces");
             AddHotkey(Escape, () => { race = null; racesSearch = null; CloseDesktop("ObjectManagerRaces"); });
-            AddHotkey(D, () =>
-            {
-                var window = CDesktop.windows.Find(x => x.title == "ObjectManagerRaces");
-                if (window == null) window = CDesktop.windows.Find(x => x.title == "ObjectManagerPortraitList");
-                if (window == null) return;
-                window.regionGroups[0].pagination += 1;
-                var max = Math.Ceiling((window.title == "ObjectManagerPortraitList" ? Assets.assets.portraits.Count : racesSearch.Count) / 10.0);
-                if (window.regionGroups[0].pagination >= max)
-                    window.regionGroups[0].pagination = (int)max - 1;
-                window.Rebuild();
-            });
-            AddHotkey(D, () =>
-            {
-                var window = CDesktop.windows.Find(x => x.title == "ObjectManagerRaces");
-                if (window == null) window = CDesktop.windows.Find(x => x.title == "ObjectManagerPortraitList");
-                if (window == null) return;
-                window.regionGroups[0].pagination += (int)Math.Round(EuelerGrowth()) / 2;
-                var max = Math.Ceiling((window.title == "ObjectManagerPortraitList" ? Assets.assets.portraits.Count : racesSearch.Count) / 10.0);
-                if (window.regionGroups[0].pagination >= max)
-                    window.regionGroups[0].pagination = (int)max - 1;
-                window.Rebuild();
-            }, false);
-            AddHotkey(A, () =>
-            {
-                var window = CDesktop.windows.Find(x => x.title == "ObjectManagerRaces");
-                if (window == null) window = CDesktop.windows.Find(x => x.title == "ObjectManagerPortraitList");
-                if (window == null) return;
-                window.regionGroups[0].pagination -= 1;
-                if (window.regionGroups[0].pagination < 0)
-                    window.regionGroups[0].pagination = 0;
-                window.Rebuild();
-            });
-            AddHotkey(A, () =>
-            {
-                var window = CDesktop.windows.Find(x => x.title == "ObjectManagerRaces");
-                if (window == null) window = CDesktop.windows.Find(x => x.title == "ObjectManagerPortraitList");
-                if (window == null) return;
-                window.regionGroups[0].pagination -= (int)Math.Round(EuelerGrowth()) / 2;
-                if (window.regionGroups[0].pagination < 0)
-                    window.regionGroups[0].pagination = 0;
-                window.Rebuild();
-            }, false);
+            AddPaginationHotkeys("ObjectManagerRaces", racesSearch.Count, 10, "ObjectManagerPortraitList", Assets.assets.portraits.Count);
         }),
         new("ObjectManagerClasses", () =>
         {
             SetDesktopBackground("Areas/AreaTheCelestialPlanetarium");
             SpawnWindowBlueprint("ObjectManagerClasses");
             AddHotkey(Escape, () => { spec = null; specsSearch = null; CloseDesktop("ObjectManagerClasses"); });
-            AddHotkey(D, () =>
-            {
-                var window = CDesktop.windows.Find(x => x.title == "ObjectManagerClasses");
-                //if (window == null) window = CDesktop.windows.Find(x => x.title == "ObjectManagerIconList");
-                if (window == null) return;
-                window.regionGroups[0].pagination += 1;
-                var max = Math.Ceiling((/*window.title == "ObjectManagerIconList" ? Assets.assets.icons.Count : */specsSearch.Count) / 10.0);
-                if (window.regionGroups[0].pagination >= max)
-                    window.regionGroups[0].pagination = (int)max - 1;
-                window.Rebuild();
-            });
-            AddHotkey(D, () =>
-            {
-                var window = CDesktop.windows.Find(x => x.title == "ObjectManagerClasses");
-                //if (window == null) window = CDesktop.windows.Find(x => x.title == "ObjectManagerIconList");
-                if (window == null) return;
-                window.regionGroups[0].pagination += (int)Math.Round(EuelerGrowth()) / 2;
-                var max = Math.Ceiling((/*window.title == "ObjectManagerIconList" ? Assets.assets.icons.Count : */specsSearch.Count) / 10.0);
-                if (window.regionGroups[0].pagination >= max)
-                    window.regionGroups[0].pagination = (int)max - 1;
-                window.Rebuild();
-            }, false);
-            AddHotkey(A, () =>
-            {
-                var window = CDesktop.windows.Find(x => x.title == "ObjectManagerClasses");
-                //if (window == null) window = CDesktop.windows.Find(x => x.title == "ObjectManagerIconList");
-                if (window == null) return;
-                window.regionGroups[0].pagination -= 1;
-                if (window.regionGroups[0].pagination < 0)
-                    window.regionGroups[0].pagination = 0;
-                window.Rebuild();
-            });
-            AddHotkey(A, () =>
-            {
-                var window = CDesktop.windows.Find(x => x.title == "ObjectManagerClasses");
-                //if (window == null) window = CDesktop.windows.Find(x => x.title == "ObjectManagerIconList");
-                if (window == null) return;
-                window.regionGroups[0].pagination -= (int)Math.Round(EuelerGrowth()) / 2;
-                if (window.regionGroups[0].pagination < 0)
-                    window.regionGroups[0].pagination = 0;
-                window.Rebuild();
-            }, false);
+            AddPaginationHotkeys("ObjectManagerClasses", specsSearch.Count, 10);
         }),
         new("ObjectManagerAbilities", () =>
         {
             SetDesktopBackground("Areas/AreaTheCelestialPlanetarium");
             SpawnWindowBlueprint("ObjectManagerAbilities");
             AddHotkey(Escape, () => { ability = null; abilitiesSearch = null; CloseDesktop("ObjectManagerAbilities"); });
-            AddHotkey(D, () =>
-            {
-                var window = CDesktop.windows.Find(x => x.title == "ObjectManagerAbilities");
-                if (window == null) window = CDesktop.windows.Find(x => x.title == "ObjectManagerAbilityIconList");
-                if (window == null) return;
-                window.regionGroups[0].pagination += 1;
-                var max = Math.Ceiling((window.title == "ObjectManagerAbilityIconList" ? Assets.assets.abilityIcons.Count : abilitiesSearch.Count) / 10.0);
-                if (window.regionGroups[0].pagination >= max)
-                    window.regionGroups[0].pagination = (int)max - 1;
-                window.Rebuild();
-            });
-            AddHotkey(D, () =>
-            {
-                var window = CDesktop.windows.Find(x => x.title == "ObjectManagerAbilities");
-                if (window == null) window = CDesktop.windows.Find(x => x.title == "ObjectManagerAbilityIconList");
-                if (window == null) return;
-                window.regionGroups[0].pagination += (int)Math.Round(EuelerGrowth()) / 2;
-                var max = Math.Ceiling((window.title == "ObjectManagerAbilityIconList" ? Assets.assets.abilityIcons.Count : abilitiesSearch.Count) / 10.0);
-                if (window.regionGroups[0].pagination >= max)
-                    window.regionGroups[0].pagination = (int)max - 1;
-                window.Rebuild();
-            }, false);
-            AddHotkey(A, () =>
-            {
-                var window = CDesktop.windows.Find(x => x.title == "ObjectManagerAbilities");
-                if (window == null) window = CDesktop.windows.Find(x => x.title == "ObjectManagerAbilityIconList");
-                if (window == null) return;
-                window.regionGroups[0].pagination -= 1;
-                if (window.regionGroups[0].pagination < 0)
-                    window.regionGroups[0].pagination = 0;
-                window.Rebuild();
-            });
-            AddHotkey(A, () =>
-            {
-                var window = CDesktop.windows.Find(x => x.title == "ObjectManagerAbilities");
-                if (window == null) window = CDesktop.windows.Find(x => x.title == "ObjectManagerAbilityIconList");
-                if (window == null) return;
-                window.regionGroups[0].pagination -= (int)Math.Round(EuelerGrowth()) / 2;
-                if (window.regionGroups[0].pagination < 0)
-                    window.regionGroups[0].pagination = 0;
-                window.Rebuild();
-            }, false);
+            AddPaginationHotkeys("ObjectManagerAbilities", abilitiesSearch.Count, 10, "ObjectManagerAbilityIconList", Assets.assets.abilityIcons.Count);
         }),
         new("ObjectManagerBuffs", () =>
         {
             SetDesktopBackground("Areas/AreaTheCelestialPlanetarium");
             SpawnWindowBlueprint("ObjectManagerBuffs");
             AddHotkey(Escape, () => { buff = null; buffsSearch = null; CloseDesktop("ObjectManagerBuffs"); });
-            AddHotkey(D, () =>
-            {
-                var window = CDesktop.windows.Find(x => x.title == "ObjectManagerBuffs");
-                if (window == null) window = CDesktop.windows.Find(x => x.title == "ObjectManagerAbilityIconList");
-                if (window == null) return;
-                window.regionGroups[0].pagination += 1;
-                var max = Math.Ceiling((window.title == "ObjectManagerAbilityIconList" ? Assets.assets.abilityIcons.Count : buffsSearch.Count) / 10.0);
-                if (window.regionGroups[0].pagination >= max)
-                    window.regionGroups[0].pagination = (int)max - 1;
-                window.Rebuild();
-            });
-            AddHotkey(D, () =>
-            {
-                var window = CDesktop.windows.Find(x => x.title == "ObjectManagerBuffs");
-                if (window == null) window = CDesktop.windows.Find(x => x.title == "ObjectManagerAbilityIconList");
-                if (window == null) return;
-                window.regionGroups[0].pagination += (int)Math.Round(EuelerGrowth()) / 2;
-                var max = Math.Ceiling((window.title == "ObjectManagerAbilityIconList" ? Assets.assets.abilityIcons.Count : buffsSearch.Count) / 10.0);
-                if (window.regionGroups[0].pagination >= max)
-                    window.regionGroups[0].pagination = (int)max - 1;
-                window.Rebuild();
-            }, false);
-            AddHotkey(A, () =>
-            {
-                var window = CDesktop.windows.Find(x => x.title == "ObjectManagerBuffs");
-                if (window == null) window = CDesktop.windows.Find(x => x.title == "ObjectManagerAbilityIconList");
-                if (window == null) return;
-                window.regionGroups[0].pagination -= 1;
-                if (window.regionGroups[0].pagination < 0)
-                    window.regionGroups[0].pagination = 0;
-                window.Rebuild();
-            });
-            AddHotkey(A, () =>
-            {
-                var window = CDesktop.windows.Find(x => x.title == "ObjectManagerBuffs");
-                if (window == null) window = CDesktop.windows.Find(x => x.title == "ObjectManagerAbilityIconList");
-                if (window == null) return;
-                window.regionGroups[0].pagination -= (int)Math.Round(EuelerGrowth()) / 2;
-                if (window.regionGroups[0].pagination < 0)
-                    window.regionGroups[0].pagination = 0;
-                window.Rebuild();
-            }, false);
+            AddPaginationHotkeys("ObjectManagerBuffs", buffsSearch.Count, 10, "ObjectManagerAbilityIconList", Assets.assets.abilityIcons.Count);
         }),
         new("ObjectManagerItems", () =>
         {
             SetDesktopBackground("Areas/AreaTheCelestialPlanetarium");
             SpawnWindowBlueprint("ObjectManagerItems");
             AddHotkey(Escape, () => { item = null; itemsSearch = null; CloseDesktop("ObjectManagerItems"); });
-            AddHotkey(D, () =>
-            {
-                var window = CDesktop.windows.Find(x => x.title == "ObjectManagerItems");
-                if (window == null) window = CDesktop.windows.Find(x => x.title == "ObjectManagerItemIconList");
-                if (window == null) return;
-                window.regionGroups[0].pagination += 1;
-                var max = Math.Ceiling((window.title == "ObjectManagerItemIconList" ? Assets.assets.itemIcons.Count : itemsSearch.Count) / 10.0);
-                if (window.regionGroups[0].pagination >= max)
-                    window.regionGroups[0].pagination = (int)max - 1;
-                window.Rebuild();
-            });
-            AddHotkey(D, () =>
-            {
-                var window = CDesktop.windows.Find(x => x.title == "ObjectManagerItems");
-                if (window == null) window = CDesktop.windows.Find(x => x.title == "ObjectManagerItemIconList");
-                if (window == null) return;
-                window.regionGroups[0].pagination += (int)Math.Round(EuelerGrowth()) / 2;
-                var max = Math.Ceiling((window.title == "ObjectManagerItemIconList" ? Assets.assets.itemIcons.Count : itemsSearch.Count) / 10.0);
-                if (window.regionGroups[0].pagination >= max)
-                    window.regionGroups[0].pagination = (int)max - 1;
-                window.Rebuild();
-            }, false);
-            AddHotkey(A, () =>
-            {
-                var window = CDesktop.windows.Find(x => x.title == "ObjectManagerItems");
-                if (window == null) window = CDesktop.windows.Find(x => x.title == "ObjectManagerItemIconList");
-                if (window == null) return;
-                window.regionGroups[0].pagination -= 1;
-                if (window.regionGroups[0].pagination < 0)
-                    window.regionGroups[0].pagination = 0;
-                window.Rebuild();
-            });
-            AddHotkey(A, () =>
-            {
-                var window = CDesktop.windows.Find(x => x.title == "ObjectManagerItems");
-                if (window == null) window = CDesktop.windows.Find(x => x.title == "ObjectManagerItemIconList");
-                if (window == null) return;
-                window.regionGroups[0].pagination -= (int)Math.Round(EuelerGrowth()) / 2;
-                if (window.regionGroups[0].pagination < 0)
-                    window.regionGroups[0].pagination = 0;
-                window.Rebuild();
-            }, false);
+            AddPaginationHotkeys("ObjectManagerItems", itemsSearch.Count, 10, "ObjectManagerAbilityIconList", Assets.assets.abilityIcons.Count);
         }),
         new("ObjectManagerItemSets", () =>
         {
             SetDesktopBackground("Areas/AreaTheCelestialPlanetarium");
             SpawnWindowBlueprint("ObjectManagerItemSets");
             AddHotkey(Escape, () => { itemSet = null; itemSetsSearch = null; CloseDesktop("ObjectManagerItemSets"); });
-            AddHotkey(D, () =>
-            {
-                var window = CDesktop.windows.Find(x => x.title == "ObjectManagerItemSets");
-                if (window == null) return;
-                window.regionGroups[0].pagination += 1;
-                if (window.regionGroups[0].pagination >= Math.Ceiling(itemSetsSearch.Count / 5.0))
-                    window.regionGroups[0].pagination = (int)Math.Ceiling(itemSetsSearch.Count / 5.0) - 1;
-                window.Rebuild();
-            });
-            AddHotkey(D, () =>
-            {
-                var window = CDesktop.windows.Find(x => x.title == "ObjectManagerItemSets");
-                if (window == null) return;
-                window.regionGroups[0].pagination += (int)Math.Round(EuelerGrowth()) / 2;
-                if (window.regionGroups[0].pagination >= Math.Ceiling(itemSetsSearch.Count / 5.0))
-                    window.regionGroups[0].pagination = (int)Math.Ceiling(itemSetsSearch.Count / 5.0) - 1;
-                window.Rebuild();
-            }, false);
-            AddHotkey(A, () =>
-            {
-                var window = CDesktop.windows.Find(x => x.title == "ObjectManagerItemSets");
-                if (window == null) return;
-                window.regionGroups[0].pagination -= 1;
-                if (window.regionGroups[0].pagination < 0)
-                    window.regionGroups[0].pagination = 0;
-                window.Rebuild();
-            });
-            AddHotkey(A, () =>
-            {
-                var window = CDesktop.windows.Find(x => x.title == "ObjectManagerItemSets");
-                if (window == null) return;
-                window.regionGroups[0].pagination -= (int)Math.Round(EuelerGrowth()) / 2;
-                if (window.regionGroups[0].pagination < 0)
-                    window.regionGroups[0].pagination = 0;
-                window.Rebuild();
-            }, false);
+            AddPaginationHotkeys("ObjectManagerItemSets", itemSetsSearch.Count, 5);
         }),
 
         #endregion
     };
+
+    public static void AddPaginationHotkeys(string window1, int listLength1, int elementsPerPage, string window2 = "NONE", int listLength2 = 0)
+    {
+        AddHotkey(D, () =>
+        {
+            var window = CDesktop.windows.Find(x => x.title == window1);
+            if (window == null) window = CDesktop.windows.Find(x => x.title == window2);
+            if (window == null) return;
+            window.regionGroups[0].pagination += 1;
+            var max = Math.Ceiling((window.title == window2 ? listLength2 : listLength1) / (double)elementsPerPage);
+            if (window.regionGroups[0].pagination >= max)
+                window.regionGroups[0].pagination = (int)max - 1;
+            window.Rebuild();
+        });
+        AddHotkey(D, () =>
+        {
+            var window = CDesktop.windows.Find(x => x.title == window1);
+            if (window == null) window = CDesktop.windows.Find(x => x.title == window2);
+            if (window == null) return;
+            window.regionGroups[0].pagination += (int)Math.Round(EuelerGrowth()) / 2;
+            var max = Math.Ceiling((window.title == window2 ? listLength2 : listLength1) / (double)elementsPerPage);
+            if (window.regionGroups[0].pagination >= max)
+                window.regionGroups[0].pagination = (int)max - 1;
+            window.Rebuild();
+        }, false);
+        AddHotkey(A, () =>
+        {
+            var window = CDesktop.windows.Find(x => x.title == window1);
+            if (window == null) window = CDesktop.windows.Find(x => x.title == window2);
+            if (window == null) return;
+            window.regionGroups[0].pagination -= 1;
+            if (window.regionGroups[0].pagination < 0)
+                window.regionGroups[0].pagination = 0;
+            window.Rebuild();
+        });
+        AddHotkey(A, () =>
+        {
+            var window = CDesktop.windows.Find(x => x.title == window1);
+            if (window == null) window = CDesktop.windows.Find(x => x.title == window2);
+            if (window == null) return;
+            window.regionGroups[0].pagination -= (int)Math.Round(EuelerGrowth()) / 2;
+            if (window.regionGroups[0].pagination < 0)
+                window.regionGroups[0].pagination = 0;
+            window.Rebuild();
+        }, false);
+        AddHotkey(Alpha1, () =>
+        {
+            var window = CDesktop.windows.Find(x => x.title == window1);
+            if (window == null) window = CDesktop.windows.Find(x => x.title == window2);
+            if (window == null) return;
+            window.regionGroups[0].pagination = 0;
+            window.Rebuild();
+        });
+        AddHotkey(Alpha2, () =>
+        {
+            var window = CDesktop.windows.Find(x => x.title == window1);
+            if (window == null) window = CDesktop.windows.Find(x => x.title == window2);
+            if (window == null) return;
+            var max = Math.Ceiling((window.title == window2 ? listLength2 : listLength1) / (double)elementsPerPage);
+            window.regionGroups[0].pagination = (int)(max / 10 * 1.1);
+            window.Rebuild();
+        });
+        AddHotkey(Alpha3, () =>
+        {
+            var window = CDesktop.windows.Find(x => x.title == window1);
+            if (window == null) window = CDesktop.windows.Find(x => x.title == window2);
+            if (window == null) return;
+            var max = Math.Ceiling((window.title == window2 ? listLength2 : listLength1) / (double)elementsPerPage);
+            window.regionGroups[0].pagination = (int)(max / 10 * 2.2);
+            window.Rebuild();
+        });
+        AddHotkey(Alpha4, () =>
+        {
+            var window = CDesktop.windows.Find(x => x.title == window1);
+            if (window == null) window = CDesktop.windows.Find(x => x.title == window2);
+            if (window == null) return;
+            var max = Math.Ceiling((window.title == window2 ? listLength2 : listLength1) / (double)elementsPerPage);
+            window.regionGroups[0].pagination = (int)(max / 10 * 3.3);
+            window.Rebuild();
+        });
+        AddHotkey(Alpha5, () =>
+        {
+            var window = CDesktop.windows.Find(x => x.title == window1);
+            if (window == null) window = CDesktop.windows.Find(x => x.title == window2);
+            if (window == null) return;
+            var max = Math.Ceiling((window.title == window2 ? listLength2 : listLength1) / (double)elementsPerPage);
+            window.regionGroups[0].pagination = (int)(max / 10 * 4.4);
+            window.Rebuild();
+        });
+        AddHotkey(Alpha6, () =>
+        {
+            var window = CDesktop.windows.Find(x => x.title == window1);
+            if (window == null) window = CDesktop.windows.Find(x => x.title == window2);
+            if (window == null) return;
+            var max = Math.Ceiling((window.title == window2 ? listLength2 : listLength1) / (double)elementsPerPage);
+            window.regionGroups[0].pagination = (int)(max / 10 * 5.5);
+            window.Rebuild();
+        });
+        AddHotkey(Alpha7, () =>
+        {
+            var window = CDesktop.windows.Find(x => x.title == window1);
+            if (window == null) window = CDesktop.windows.Find(x => x.title == window2);
+            if (window == null) return;
+            var max = Math.Ceiling((window.title == window2 ? listLength2 : listLength1) / (double)elementsPerPage);
+            window.regionGroups[0].pagination = (int)(max / 10 * 6.6);
+            window.Rebuild();
+        });
+        AddHotkey(Alpha8, () =>
+        {
+            var window = CDesktop.windows.Find(x => x.title == window1);
+            if (window == null) window = CDesktop.windows.Find(x => x.title == window2);
+            if (window == null) return;
+            var max = Math.Ceiling((window.title == window2 ? listLength2 : listLength1) / (double)elementsPerPage);
+            window.regionGroups[0].pagination = (int)(max / 10 * 7.7);
+            window.Rebuild();
+        });
+        AddHotkey(Alpha9, () =>
+        {
+            var window = CDesktop.windows.Find(x => x.title == window1);
+            if (window == null) window = CDesktop.windows.Find(x => x.title == window2);
+            if (window == null) return;
+            var max = Math.Ceiling((window.title == window2 ? listLength2 : listLength1) / (double)elementsPerPage);
+            window.regionGroups[0].pagination = (int)(max / 10 * 8.8);
+            window.Rebuild();
+        });
+        AddHotkey(Alpha0, () =>
+        {
+            var window = CDesktop.windows.Find(x => x.title == window1);
+            if (window == null) window = CDesktop.windows.Find(x => x.title == window2);
+            if (window == null) return;
+            var max = Math.Ceiling((window.title == window2 ? listLength2 : listLength1) / (double)elementsPerPage);
+            window.regionGroups[0].pagination = (int)(max - 1);
+            window.Rebuild();
+        });
+    }
 }

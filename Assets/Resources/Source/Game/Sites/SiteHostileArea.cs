@@ -9,21 +9,22 @@ public class SiteHostileArea
     public void Initialise()
     {
         if (type == null) type = "HostileArea";
-        if (bossEncounters != null && bossEncounters.Count > 0)
-            recommendedLevel = (int)bossEncounters.Average(x => x.levelMax != 0 ? (x.levelMin + x.levelMax) / 2.0 : x.levelMin);
-        else if (possibleEncounters != null && possibleEncounters.Count > 0)
-            recommendedLevel = (int)possibleEncounters.Average(x => x.levelMax != 0 ? (x.levelMin + x.levelMax) / 2.0 : x.levelMin);
+        if (eliteEncounters != null && eliteEncounters.Count > 0)
+            recommendedLevel = (int)eliteEncounters.Average(x => x.levelMax != 0 ? (x.levelMin + x.levelMax) / 2.0 : x.levelMin);
+        else if (commonEncounters != null && commonEncounters.Count > 0)
+            recommendedLevel = (int)commonEncounters.Average(x => x.levelMax != 0 ? (x.levelMin + x.levelMax) / 2.0 : x.levelMin);
+        if (eliteEncounters != null && eliteEncounters.Count == 0) eliteEncounters = null;
+        if (rareEncounters != null && rareEncounters.Count == 0) rareEncounters = null;
+        if (commonEncounters != null && commonEncounters.Count == 0) commonEncounters = null;
     }
 
     public Entity RollEncounter()
     {
-        var encounters = possibleEncounters.Select(x => (x.levelMax != 0 ? random.Next(x.levelMin, x.levelMax + 1) : x.levelMin, Race.races.Find(y => y.name == x.who))).ToList();
+        var encounters = commonEncounters.Select(x => (x.levelMax != 0 ? random.Next(x.levelMin, x.levelMax + 1) : x.levelMin, Race.races.Find(y => y.name == x.who))).ToList();
         if (random.Next(0, 100) < 1)
         {
-            var rares = encounters.FindAll(x => x.Item2.kind == "Rare");
-            rares = rares.FindAll(x => !currentSave.raresKilled.Contains(x.Item2.name));
-            if (rares.Count > 0)
-                encounters = new() { rares[random.Next(0, rares.Count)] };
+            var rares = rareEncounters.FindAll(x => !currentSave.raresKilled.Contains(x.who));
+            if (rares.Count > 0) encounters = rares.Select(x => (x.levelMax != 0 ? random.Next(x.levelMin, x.levelMax + 1) : x.levelMin, Race.races.Find(y => y.name == x.who))).ToList();
         }
         var find = encounters[random.Next(0, encounters.Count)];
         return new Entity(find.Item1, find.Item2);
@@ -35,7 +36,7 @@ public class SiteHostileArea
     }
 
     public string name, zone, type, ambience;
-    public List<Encounter> possibleEncounters, bossEncounters;
+    public List<Encounter> commonEncounters, rareEncounters, eliteEncounters;
 
     [NonSerialized] public int recommendedLevel;
     [NonSerialized] public bool instancePart, complexPart;

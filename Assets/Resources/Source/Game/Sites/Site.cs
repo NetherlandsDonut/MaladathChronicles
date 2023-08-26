@@ -74,7 +74,7 @@ public static class Site
                         AddPaddingRegion(() =>
                         {
                             AddLine("Possible encounters:", "DarkGray");
-                            foreach (var encounter in find.possibleEncounters)
+                            foreach (var encounter in find.commonEncounters)
                                 AddLine("- " + encounter.who, "DarkGray");
                         });
                     }

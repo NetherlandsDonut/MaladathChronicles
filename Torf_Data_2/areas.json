@@ -3,7 +3,7 @@
     "name": "Crushridge Hold",
     "zone": "Alterac Mountains",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -15,7 +15,7 @@
     "name": "Dalaran",
     "zone": "Alterac Mountains",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -27,7 +27,7 @@
     "name": "Growless Cave",
     "zone": "Alterac Mountains",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -39,7 +39,7 @@
     "name": "Headland",
     "zone": "Alterac Mountains",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -51,7 +51,7 @@
     "name": "Lordamere Internment Camp",
     "zone": "Alterac Mountains",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -63,7 +63,7 @@
     "name": "Ruins of Strahnbrad",
     "zone": "Alterac Mountains",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -75,7 +75,7 @@
     "name": "Slaughter Hollow",
     "zone": "Alterac Mountains",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -87,7 +87,7 @@
     "name": "Boulderfist Hall",
     "zone": "Arathi Highlands",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -99,7 +99,7 @@
     "name": "Boulder'gor",
     "zone": "Arathi Highlands",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -111,7 +111,7 @@
     "name": "Circle of East Binding",
     "zone": "Arathi Highlands",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -123,7 +123,7 @@
     "name": "Circle of Inner Binding",
     "zone": "Arathi Highlands",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -135,7 +135,7 @@
     "name": "Circle of Outer Binding",
     "zone": "Arathi Highlands",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -147,7 +147,7 @@
     "name": "Circle of West Binding",
     "zone": "Arathi Highlands",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -159,7 +159,7 @@
     "name": "Dabyrie's Farmstead",
     "zone": "Arathi Highlands",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -171,7 +171,7 @@
     "name": "Drywhisker Gorge",
     "zone": "Arathi Highlands",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -183,7 +183,7 @@
     "name": "Go'Shek Farm",
     "zone": "Arathi Highlands",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -195,7 +195,7 @@
     "name": "Northfold Manor",
     "zone": "Arathi Highlands",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -207,7 +207,7 @@
     "name": "Thandol Span",
     "zone": "Arathi Highlands",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -219,7 +219,7 @@
     "name": "Witherbark Village",
     "zone": "Arathi Highlands",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -231,7 +231,7 @@
     "name": "Bathran's Haunt",
     "zone": "Ashenvale",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -243,7 +243,7 @@
     "name": "Bloodtooth Camp",
     "zone": "Ashenvale",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -255,8 +255,8 @@
     "name": "Bough Shadow",
     "zone": "Ashenvale",
     "type": "EmeraldBough",
-    "possibleEncounters": [],
-    "bossEncounters": [
+    "commonEncounters": [],
+    "eliteEncounters": [
       {
         "who": "Taerar",
         "levelMin": 60
@@ -267,7 +267,7 @@
     "name": "Demon Fall Canyon",
     "zone": "Ashenvale",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -279,7 +279,7 @@
     "name": "Falfarren River",
     "zone": "Ashenvale",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -291,7 +291,7 @@
     "name": "Fallen Sky Lake",
     "zone": "Ashenvale",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -303,7 +303,7 @@
     "name": "Felfire Hill",
     "zone": "Ashenvale",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -315,7 +315,7 @@
     "name": "Fire Scar Shrine",
     "zone": "Ashenvale",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -327,7 +327,7 @@
     "name": "Greenpaw Village",
     "zone": "Ashenvale",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -339,7 +339,7 @@
     "name": "Iris Lake",
     "zone": "Ashenvale",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -351,7 +351,7 @@
     "name": "Lake Falathim",
     "zone": "Ashenvale",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -363,7 +363,7 @@
     "name": "Mystral Lake",
     "zone": "Ashenvale",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -375,7 +375,7 @@
     "name": "Night Run",
     "zone": "Ashenvale",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -387,7 +387,7 @@
     "name": "Nightsong Woods",
     "zone": "Ashenvale",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -399,7 +399,7 @@
     "name": "Raynewood Retreat",
     "zone": "Ashenvale",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -411,7 +411,7 @@
     "name": "Ruins of Ordil'Aran",
     "zone": "Ashenvale",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -423,7 +423,7 @@
     "name": "Ruins of Stardust",
     "zone": "Ashenvale",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -435,7 +435,7 @@
     "name": "Satyrnaar",
     "zone": "Ashenvale",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -447,7 +447,7 @@
     "name": "The Dor'Danil Barrow Den",
     "zone": "Ashenvale",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -459,7 +459,7 @@
     "name": "The Howling Vale",
     "zone": "Ashenvale",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -471,7 +471,7 @@
     "name": "The Shrine of Aessina",
     "zone": "Ashenvale",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -483,7 +483,7 @@
     "name": "The Zoram Strand",
     "zone": "Ashenvale",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -495,7 +495,7 @@
     "name": "Thistlefur Village",
     "zone": "Ashenvale",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -507,7 +507,7 @@
     "name": "Warsong Labor Camp",
     "zone": "Ashenvale",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -519,7 +519,7 @@
     "name": "Warsong Lumber Camp",
     "zone": "Ashenvale",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -531,7 +531,7 @@
     "name": "Xavian",
     "zone": "Ashenvale",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -543,7 +543,7 @@
     "name": "Bay of Storms",
     "zone": "Azshara",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -555,7 +555,7 @@
     "name": "Bitter Reaches",
     "zone": "Azshara",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -567,13 +567,13 @@
     "name": "Forlorn Ridge",
     "zone": "Azshara",
     "type": "HostileArea",
-    "possibleEncounters": []
+    "commonEncounters": []
   },
   {
     "name": "Haldarr Encampment",
     "zone": "Azshara",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -585,7 +585,7 @@
     "name": "Hetaera's Clutch",
     "zone": "Azshara",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -597,7 +597,7 @@
     "name": "Jagged Reef",
     "zone": "Azshara",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -609,7 +609,7 @@
     "name": "Lake Mennar",
     "zone": "Azshara",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -621,7 +621,7 @@
     "name": "Legash Encampment",
     "zone": "Azshara",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -633,7 +633,7 @@
     "name": "Ravencrest Monument",
     "zone": "Azshara",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -645,7 +645,7 @@
     "name": "Rethress Sanctum",
     "zone": "Azshara",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -657,7 +657,7 @@
     "name": "Ruins of Eldarath",
     "zone": "Azshara",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -669,7 +669,7 @@
     "name": "Shadowsong Shrine",
     "zone": "Azshara",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -681,7 +681,7 @@
     "name": "Southridge Beach",
     "zone": "Azshara",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -693,7 +693,7 @@
     "name": "Temple of Arkkoran",
     "zone": "Azshara",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -705,7 +705,7 @@
     "name": "Thalassian Base Camp",
     "zone": "Azshara",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -717,7 +717,7 @@
     "name": "The Ruined Reaches",
     "zone": "Azshara",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -729,7 +729,7 @@
     "name": "The Shattered Strand",
     "zone": "Azshara",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -741,7 +741,7 @@
     "name": "Tower of Eldara",
     "zone": "Azshara",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -753,7 +753,7 @@
     "name": "Ursolan",
     "zone": "Azshara",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -765,7 +765,7 @@
     "name": "Agmond's End",
     "zone": "Badlands",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Stonevault Bonesnapper",
         "levelMin": 39,
@@ -787,7 +787,7 @@
     "name": "Angor Fortress",
     "zone": "Badlands",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Shadowforge Warrior",
         "levelMin": 38,
@@ -814,7 +814,7 @@
     "name": "Apocryphan's Rest",
     "zone": "Badlands",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Giant Buzzard",
         "levelMin": 39,
@@ -836,7 +836,7 @@
     "name": "Camp Boff",
     "zone": "Badlands",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Dustbelcher Ogre",
         "levelMin": 38,
@@ -853,7 +853,7 @@
     "name": "Camp Kosh",
     "zone": "Badlands",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Dustbelcher Warrior",
         "levelMin": 35,
@@ -870,7 +870,7 @@
     "name": "Dustbelch Grotto",
     "zone": "Badlands",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Dustbelcher Wyrmhunter",
         "levelMin": 41,
@@ -902,7 +902,7 @@
     "name": "Dustwing Gulch",
     "zone": "Badlands",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Ridge Stalker",
         "levelMin": 37,
@@ -919,7 +919,7 @@
     "name": "Hammertoe's Digsite",
     "zone": "Badlands",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Shadowforge Tunneler",
         "levelMin": 35,
@@ -946,7 +946,7 @@
     "name": "Lethlor Ravine",
     "zone": "Badlands",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Scalding Whelp",
         "levelMin": 41,
@@ -963,7 +963,7 @@
     "name": "Mirage Flats",
     "zone": "Badlands",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Ridge Huntress",
         "levelMin": 38,
@@ -990,7 +990,7 @@
     "name": "The Dustbowl",
     "zone": "Badlands",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Ridge Huntress",
         "levelMin": 38,
@@ -1017,7 +1017,7 @@
     "name": "The Maker's Terrace",
     "zone": "Badlands",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Shadowforge Surveyor",
         "levelMin": 35,
@@ -1044,7 +1044,7 @@
     "name": "Valley of Fangs",
     "zone": "Badlands",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Crag Coyote",
         "levelMin": 35,
@@ -1061,8 +1061,8 @@
     "name": "Aku'mai's Lair",
     "zone": "Blackfathom Deeps",
     "type": "HostileArea",
-    "possibleEncounters": [],
-    "bossEncounters": [
+    "commonEncounters": [],
+    "eliteEncounters": [
       {
         "who": "Aku'mai",
         "levelMin": 28
@@ -1073,7 +1073,7 @@
     "name": "Forgotten Pool",
     "zone": "Blackfathom Deeps",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Deep Pool Threshkin",
         "levelMin": 26,
@@ -1085,7 +1085,7 @@
         "levelMax": 27
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Old Serra'kis",
         "levelMin": 27,
@@ -1097,7 +1097,7 @@
     "name": "Moonshrine Ruins",
     "zone": "Blackfathom Deeps",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Aqua Guardian",
         "levelMin": 26,
@@ -1114,7 +1114,7 @@
         "levelMax": 27
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Baron Aquanis",
         "levelMin": 27,
@@ -1126,7 +1126,7 @@
     "name": "Moonshrine Sanctum",
     "zone": "Blackfathom Deeps",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Twilight Elementalist",
         "levelMin": 27,
@@ -1138,7 +1138,7 @@
         "levelMax": 28
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Twilight Lord Kelris",
         "levelMin": 28,
@@ -1150,7 +1150,7 @@
     "name": "Pool of Ask'ar",
     "zone": "Blackfathom Deeps",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Blackfathom Myrmidon",
         "levelMin": 23,
@@ -1167,7 +1167,7 @@
         "levelMax": 24
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Ghamoo Ra",
         "levelMin": 25,
@@ -1184,7 +1184,7 @@
     "name": "Shrine of Gelihast",
     "zone": "Blackfathom Deeps",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Blindlight Oracle",
         "levelMin": 25,
@@ -1196,7 +1196,7 @@
         "levelMax": 26
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Gelihast",
         "levelMin": 26,
@@ -1208,14 +1208,14 @@
     "name": "Chamber of Enchantment",
     "zone": "Blackrock Depths",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Cannibal Ghoul",
         "levelMin": 56,
         "levelMax": 57
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Ambassador Flamelash",
         "levelMin": 57,
@@ -1227,14 +1227,14 @@
     "name": "Dark Iron Highway",
     "zone": "Blackrock Depths",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Cannibal Ghoul",
         "levelMin": 56,
         "levelMax": 57
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Bael'Gar",
         "levelMin": 55,
@@ -1246,14 +1246,14 @@
     "name": "Detention Block",
     "zone": "Blackrock Depths",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Cannibal Ghoul",
         "levelMin": 56,
         "levelMax": 57
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "High Interrogator Gerstahn",
         "levelMin": 52,
@@ -1265,14 +1265,14 @@
     "name": "Hall of Crafting",
     "zone": "Blackrock Depths",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Cannibal Ghoul",
         "levelMin": 56,
         "levelMax": 57
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Fineous Darkvire",
         "levelMin": 56,
@@ -1284,14 +1284,14 @@
     "name": "Halls of the Law",
     "zone": "Blackrock Depths",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Cannibal Ghoul",
         "levelMin": 56,
         "levelMax": 57
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Houndmaster Grebmar",
         "levelMin": 53,
@@ -1308,14 +1308,14 @@
     "name": "Mold Foundry",
     "zone": "Blackrock Depths",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Cannibal Ghoul",
         "levelMin": 56,
         "levelMax": 57
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Panzor the Invincible",
         "levelMin": 57,
@@ -1327,14 +1327,14 @@
     "name": "Ring of Law",
     "zone": "Blackrock Depths",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Cannibal Ghoul",
         "levelMin": 56,
         "levelMax": 57
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Anub'shiah",
         "levelMin": 54,
@@ -1371,14 +1371,14 @@
     "name": "Shrine of Thaurissan",
     "zone": "Blackrock Depths",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Cannibal Ghoul",
         "levelMin": 56,
         "levelMax": 57
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Pyromancer Loregrain",
         "levelMin": 57,
@@ -1390,14 +1390,14 @@
     "name": "Summoners' Tomb",
     "zone": "Blackrock Depths",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Cannibal Ghoul",
         "levelMin": 56,
         "levelMax": 57
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "The Seven",
         "levelMin": 58,
@@ -1409,14 +1409,14 @@
     "name": "The Black Anvil",
     "zone": "Blackrock Depths",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Cannibal Ghoul",
         "levelMin": 56,
         "levelMax": 57
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Lord Incendius",
         "levelMin": 56,
@@ -1428,14 +1428,14 @@
     "name": "The Black Vault",
     "zone": "Blackrock Depths",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Cannibal Ghoul",
         "levelMin": 56,
         "levelMax": 57
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Warder Stilgiss",
         "levelMin": 57,
@@ -1447,14 +1447,14 @@
     "name": "The Grim Guzzler",
     "zone": "Blackrock Depths",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Cannibal Ghoul",
         "levelMin": 56,
         "levelMax": 57
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Golem Lord Argelmach",
         "levelMin": 57,
@@ -1466,14 +1466,14 @@
     "name": "The Imperial Seat",
     "zone": "Blackrock Depths",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Cannibal Ghoul",
         "levelMin": 56,
         "levelMax": 57
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Emperor Dagran Thaurissan",
         "levelMin": 59,
@@ -1485,14 +1485,14 @@
     "name": "The Iron Hall",
     "zone": "Blackrock Depths",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Cannibal Ghoul",
         "levelMin": 56,
         "levelMax": 57
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Magmus",
         "levelMin": 58,
@@ -1504,7 +1504,7 @@
     "name": "The Lyceum",
     "zone": "Blackrock Depths",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Cannibal Ghoul",
         "levelMin": 56,
@@ -1516,14 +1516,14 @@
     "name": "The Manufactory",
     "zone": "Blackrock Depths",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Cannibal Ghoul",
         "levelMin": 56,
         "levelMax": 57
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Golem Lord Argelmach",
         "levelMin": 57,
@@ -1535,14 +1535,14 @@
     "name": "West Garrison",
     "zone": "Blackrock Depths",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Cannibal Ghoul",
         "levelMin": 56,
         "levelMax": 57
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "General Angerforge",
         "levelMin": 57,
@@ -1554,14 +1554,14 @@
     "name": "Chromaggus' Lair",
     "zone": "Blackwing Lair",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Cannibal Ghoul",
         "levelMin": 56,
         "levelMax": 57
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Chromaggus",
         "levelMin": 60,
@@ -1573,14 +1573,14 @@
     "name": "Crimson Laboratories",
     "zone": "Blackwing Lair",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Cannibal Ghoul",
         "levelMin": 56,
         "levelMax": 57
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Firemaw",
         "levelMin": 60,
@@ -1602,14 +1602,14 @@
     "name": "Dragonmaw Garrison",
     "zone": "Blackwing Lair",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Cannibal Ghoul",
         "levelMin": 56,
         "levelMax": 57
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Razorgore the Untamed",
         "levelMin": 60,
@@ -1621,14 +1621,14 @@
     "name": "Halls of Strife",
     "zone": "Blackwing Lair",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Cannibal Ghoul",
         "levelMin": 56,
         "levelMax": 57
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Broodlord Lashlayer",
         "levelMin": 60,
@@ -1640,14 +1640,14 @@
     "name": "Nefarian's Lair",
     "zone": "Blackwing Lair",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Cannibal Ghoul",
         "levelMin": 56,
         "levelMax": 57
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Nefarian",
         "levelMin": 60,
@@ -1659,14 +1659,14 @@
     "name": "Shadow Wing Lair",
     "zone": "Blackwing Lair",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Cannibal Ghoul",
         "levelMin": 56,
         "levelMax": 57
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Vaelastrasz the Corrupt",
         "levelMin": 60,
@@ -1678,7 +1678,7 @@
     "name": "Dreadmaul Hold",
     "zone": "Blasted Lands",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -1690,7 +1690,7 @@
     "name": "Dreadmaul Post",
     "zone": "Blasted Lands",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -1702,7 +1702,7 @@
     "name": "Serpent's Coil",
     "zone": "Blasted Lands",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -1714,7 +1714,7 @@
     "name": "The Altar of Storms",
     "zone": "Blasted Lands",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -1726,7 +1726,7 @@
     "name": "The Dark Portal",
     "zone": "Blasted Lands",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -1738,7 +1738,7 @@
     "name": "The Tainted Scar",
     "zone": "Blasted Lands",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -1750,7 +1750,7 @@
     "name": "Altar of Storms",
     "zone": "Burning Steppes",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -1762,7 +1762,7 @@
     "name": "Blackrock Pass",
     "zone": "Burning Steppes",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -1774,7 +1774,7 @@
     "name": "Blackrock Stronghold",
     "zone": "Burning Steppes",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -1786,7 +1786,7 @@
     "name": "Draco'dar",
     "zone": "Burning Steppes",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -1798,7 +1798,7 @@
     "name": "Dreadmaul Rock",
     "zone": "Burning Steppes",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -1810,7 +1810,7 @@
     "name": "Ruins of Thaurissan",
     "zone": "Burning Steppes",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -1822,7 +1822,7 @@
     "name": "Slither Rock",
     "zone": "Burning Steppes",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -1834,7 +1834,7 @@
     "name": "Terror Wing Path",
     "zone": "Burning Steppes",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -1846,7 +1846,7 @@
     "name": "The Pillar of Ash",
     "zone": "Burning Steppes",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -1858,7 +1858,7 @@
     "name": "Ameth'Aran",
     "zone": "Darkshore",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -1870,7 +1870,7 @@
     "name": "Bashal'Aran",
     "zone": "Darkshore",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -1882,7 +1882,7 @@
     "name": "Blackwood Den",
     "zone": "Darkshore",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -1894,7 +1894,7 @@
     "name": "Cliffspring River",
     "zone": "Darkshore",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -1906,7 +1906,7 @@
     "name": "Grove of the Ancients",
     "zone": "Darkshore",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -1918,7 +1918,7 @@
     "name": "Mist's Edge",
     "zone": "Darkshore",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -1930,7 +1930,7 @@
     "name": "Moonkin Caves",
     "zone": "Darkshore",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -1942,7 +1942,7 @@
     "name": "Remtravel's Excavation",
     "zone": "Darkshore",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -1954,7 +1954,7 @@
     "name": "Ruins of Mathystra",
     "zone": "Darkshore",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -1966,7 +1966,7 @@
     "name": "The Long Wash",
     "zone": "Darkshore",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -1978,7 +1978,7 @@
     "name": "The Master's Glaive",
     "zone": "Darkshore",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -1990,7 +1990,7 @@
     "name": "Tower of Althalaxx",
     "zone": "Darkshore",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -2002,7 +2002,7 @@
     "name": "Twilight Shore",
     "zone": "Darkshore",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -2014,7 +2014,7 @@
     "name": "Twilight Vale",
     "zone": "Darkshore",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -2026,7 +2026,7 @@
     "name": "Ariden's Camp",
     "zone": "Deadwind Pass",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -2038,7 +2038,7 @@
     "name": "Deadman's Crossing",
     "zone": "Deadwind Pass",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -2050,7 +2050,7 @@
     "name": "Karazhan",
     "zone": "Deadwind Pass",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -2062,7 +2062,7 @@
     "name": "Sleeping Gorge",
     "zone": "Deadwind Pass",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -2074,7 +2074,7 @@
     "name": "The Vice",
     "zone": "Deadwind Pass",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -2086,7 +2086,7 @@
     "name": "Bolgan's Hole",
     "zone": "Desolace",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -2098,7 +2098,7 @@
     "name": "Ethel Rethor",
     "zone": "Desolace",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -2110,7 +2110,7 @@
     "name": "Gelkis Village",
     "zone": "Desolace",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -2122,7 +2122,7 @@
     "name": "Kodo Graveyard",
     "zone": "Desolace",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -2134,7 +2134,7 @@
     "name": "Kolkar Village",
     "zone": "Desolace",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -2146,7 +2146,7 @@
     "name": "Magram Village",
     "zone": "Desolace",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -2158,7 +2158,7 @@
     "name": "Mannoroc Coven",
     "zone": "Desolace",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -2170,7 +2170,7 @@
     "name": "Ranazjar Isle",
     "zone": "Desolace",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -2182,7 +2182,7 @@
     "name": "Sargeron",
     "zone": "Desolace",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -2194,7 +2194,7 @@
     "name": "Sar'theris Strand",
     "zone": "Desolace",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -2206,7 +2206,7 @@
     "name": "Shadowbreak Ravine",
     "zone": "Desolace",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -2218,7 +2218,7 @@
     "name": "Tethris Aran",
     "zone": "Desolace",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -2230,7 +2230,7 @@
     "name": "Thunder Axe Fortress",
     "zone": "Desolace",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -2242,7 +2242,7 @@
     "name": "Valley of Bones",
     "zone": "Desolace",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -2254,7 +2254,7 @@
     "name": "Valley of Spears",
     "zone": "Desolace",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -2266,7 +2266,7 @@
     "name": "Capital Gardens",
     "zone": "Dire Maul",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -2283,7 +2283,7 @@
         "levelMax": 2
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Tendris Warpwood",
         "levelMin": 60,
@@ -2295,7 +2295,7 @@
     "name": "Court of the Highborne",
     "zone": "Dire Maul",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -2312,7 +2312,7 @@
         "levelMax": 2
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Magister Kalendris",
         "levelMin": 60,
@@ -2329,7 +2329,7 @@
     "name": "Gordok Commons",
     "zone": "Dire Maul",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -2346,7 +2346,7 @@
         "levelMax": 2
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Guard Mol'dar",
         "levelMin": 60,
@@ -2368,7 +2368,7 @@
     "name": "Gordok's Seat",
     "zone": "Dire Maul",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -2385,7 +2385,7 @@
         "levelMax": 2
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "King Gordok",
         "levelMin": 62,
@@ -2397,7 +2397,7 @@
     "name": "Halls of Destruction",
     "zone": "Dire Maul",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -2414,7 +2414,7 @@
         "levelMax": 2
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Cho'Rush the Observer",
         "levelMin": 61,
@@ -2426,7 +2426,7 @@
     "name": "Prison of Immol'Thar",
     "zone": "Dire Maul",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -2443,7 +2443,7 @@
         "levelMax": 2
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Immol'thar",
         "levelMin": 61,
@@ -2455,7 +2455,7 @@
     "name": "The Athenaeum",
     "zone": "Dire Maul",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -2472,7 +2472,7 @@
         "levelMax": 2
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Prince Tortheldrin",
         "levelMin": 61,
@@ -2484,7 +2484,7 @@
     "name": "The Conservatory",
     "zone": "Dire Maul",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -2501,7 +2501,7 @@
         "levelMax": 2
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Hydrospawn",
         "levelMin": 58,
@@ -2513,7 +2513,7 @@
     "name": "The Shrine of Eldre'tharr",
     "zone": "Dire Maul",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -2530,7 +2530,7 @@
         "levelMax": 2
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Alzzin the Wildshaper",
         "levelMin": 58,
@@ -2542,7 +2542,7 @@
     "name": "Warpwood Quarter",
     "zone": "Dire Maul",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -2559,7 +2559,7 @@
         "levelMax": 2
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Lethtendris",
         "levelMin": 57,
@@ -2571,7 +2571,7 @@
     "name": "Chill Breeze Valley",
     "zone": "Dun Morogh",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Large Crag Boar",
         "levelMin": 6,
@@ -2593,7 +2593,7 @@
     "name": "Coldridge Pass",
     "zone": "Dun Morogh",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Burly Rockjaw Trogg",
         "levelMin": 2,
@@ -2610,7 +2610,7 @@
     "name": "Coldridge Valley",
     "zone": "Dun Morogh",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Rockjaw Trogg",
         "levelMin": 1,
@@ -2637,7 +2637,7 @@
     "name": "Frostmane Hold",
     "zone": "Dun Morogh",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Frostmane Headhunter",
         "levelMin": 8,
@@ -2664,7 +2664,7 @@
     "name": "Gol'Bolar Quarry",
     "zone": "Dun Morogh",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Rockjaw Skullthumper",
         "levelMin": 8,
@@ -2681,7 +2681,7 @@
     "name": "Helm's Bed Lake",
     "zone": "Dun Morogh",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Scarred Crag Boar",
         "levelMin": 9,
@@ -2703,7 +2703,7 @@
     "name": "Ice Flow Lake",
     "zone": "Dun Morogh",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Winter Wolf",
         "levelMin": 7,
@@ -2720,13 +2720,13 @@
     "name": "Misty Pine Refuge",
     "zone": "Dun Morogh",
     "type": "HostileArea",
-    "possibleEncounters": []
+    "commonEncounters": []
   },
   {
     "name": "Shimmer Ridge",
     "zone": "Dun Morogh",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Frostmane Headhunter",
         "levelMin": 8,
@@ -2748,7 +2748,7 @@
     "name": "The Grizzled Den",
     "zone": "Dun Morogh",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Young Wendigo",
         "levelMin": 5,
@@ -2765,7 +2765,7 @@
     "name": "The Tundrid Hills",
     "zone": "Dun Morogh",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Elder Crag Boar",
         "levelMin": 6,
@@ -2787,7 +2787,7 @@
     "name": "Bladefist Bay",
     "zone": "Durotar",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Elder Mottled Boar",
         "levelMin": 8,
@@ -2809,7 +2809,7 @@
     "name": "Burning Blade Coven",
     "zone": "Durotar",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Vile Familiar",
         "levelMin": 3,
@@ -2826,7 +2826,7 @@
     "name": "Darkspear Strand",
     "zone": "Durotar",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Pygmy Surf Crawler",
         "levelMin": 5,
@@ -2848,7 +2848,7 @@
     "name": "Drygulch Ravine",
     "zone": "Durotar",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Dustwind Savage",
         "levelMin": 9,
@@ -2865,7 +2865,7 @@
     "name": "Echo Isles",
     "zone": "Durotar",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Bloodtalon Taillasher",
         "levelMin": 8,
@@ -2892,7 +2892,7 @@
     "name": "Kolkar Crag",
     "zone": "Durotar",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Kolkar Drudge",
         "levelMin": 6,
@@ -2914,7 +2914,7 @@
     "name": "Razormane Grounds",
     "zone": "Durotar",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Razormane Scout",
         "levelMin": 7,
@@ -2941,7 +2941,7 @@
     "name": "Razorwind Canyon",
     "zone": "Durotar",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Dustwind Pillager",
         "levelMin": 7,
@@ -2958,7 +2958,7 @@
     "name": "Scuttle Coast",
     "zone": "Durotar",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Pygmy Surf Crawler",
         "levelMin": 5,
@@ -2980,7 +2980,7 @@
     "name": "Skull Rock",
     "zone": "Durotar",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Burning Blade Fanatic",
         "levelMin": 9,
@@ -3002,7 +3002,7 @@
     "name": "Thunder Ridge",
     "zone": "Durotar",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Thunder Lizard",
         "levelMin": 9,
@@ -3024,7 +3024,7 @@
     "name": "Tiragarde Keep",
     "zone": "Durotar",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Kul'Tiras Sailor",
         "levelMin": 5,
@@ -3046,7 +3046,7 @@
     "name": "Valley of Trials",
     "zone": "Durotar",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Mottled Boar",
         "levelMin": 1,
@@ -3063,7 +3063,7 @@
     "name": "Addle's Stead",
     "zone": "Duskwood",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -3075,7 +3075,7 @@
     "name": "Brightwood Grove",
     "zone": "Duskwood",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -3087,7 +3087,7 @@
     "name": "Dawning Wood Catacombs",
     "zone": "Duskwood",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -3099,7 +3099,7 @@
     "name": "Forlorn Rowe",
     "zone": "Duskwood",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -3111,7 +3111,7 @@
     "name": "Manor Mistmantle",
     "zone": "Duskwood",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -3123,7 +3123,7 @@
     "name": "Raven Hill",
     "zone": "Duskwood",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -3135,7 +3135,7 @@
     "name": "Raven Hill Cemetery",
     "zone": "Duskwood",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -3147,7 +3147,7 @@
     "name": "Roland's Doom",
     "zone": "Duskwood",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -3159,7 +3159,7 @@
     "name": "The Darkened Bank",
     "zone": "Duskwood",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -3171,7 +3171,7 @@
     "name": "The Rotting Orchard",
     "zone": "Duskwood",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -3183,7 +3183,7 @@
     "name": "Tranquil Gardens Cemetery",
     "zone": "Duskwood",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -3195,8 +3195,8 @@
     "name": "Twilight Grove",
     "zone": "Duskwood",
     "type": "EmeraldBough",
-    "possibleEncounters": [],
-    "bossEncounters": [
+    "commonEncounters": [],
+    "eliteEncounters": [
       {
         "who": "Emeriss",
         "levelMin": 60
@@ -3207,7 +3207,7 @@
     "name": "Vul'Gol Ogre Mound",
     "zone": "Duskwood",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -3219,7 +3219,7 @@
     "name": "Yorgen's Farmstead",
     "zone": "Duskwood",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -3231,7 +3231,7 @@
     "name": "Alcaz Dungeon",
     "zone": "Dustwallow Marsh",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -3243,7 +3243,7 @@
     "name": "Alcaz Island",
     "zone": "Dustwallow Marsh",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -3255,7 +3255,7 @@
     "name": "Beezil's Wreck",
     "zone": "Dustwallow Marsh",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -3267,7 +3267,7 @@
     "name": "Bloodfen Burrow",
     "zone": "Dustwallow Marsh",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -3279,7 +3279,7 @@
     "name": "Bluefen",
     "zone": "Dustwallow Marsh",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -3291,7 +3291,7 @@
     "name": "Darkmist Cavern",
     "zone": "Dustwallow Marsh",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -3303,7 +3303,7 @@
     "name": "Dreadmurk Shore",
     "zone": "Dustwallow Marsh",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -3315,7 +3315,7 @@
     "name": "Emberstrife's Den",
     "zone": "Dustwallow Marsh",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -3327,7 +3327,7 @@
     "name": "Lost Point",
     "zone": "Dustwallow Marsh",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -3339,7 +3339,7 @@
     "name": "Northpoint Tower",
     "zone": "Dustwallow Marsh",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -3351,7 +3351,7 @@
     "name": "Sentry Point",
     "zone": "Dustwallow Marsh",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -3363,7 +3363,7 @@
     "name": "Shady Rest Inn",
     "zone": "Dustwallow Marsh",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -3375,7 +3375,7 @@
     "name": "Stonemaul Ruins",
     "zone": "Dustwallow Marsh",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -3387,7 +3387,7 @@
     "name": "The Den of Flame",
     "zone": "Dustwallow Marsh",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -3399,7 +3399,7 @@
     "name": "The Quagmire",
     "zone": "Dustwallow Marsh",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -3411,7 +3411,7 @@
     "name": "Tidefury Cove",
     "zone": "Dustwallow Marsh",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -3423,7 +3423,7 @@
     "name": "Witch Hill",
     "zone": "Dustwallow Marsh",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -3435,7 +3435,7 @@
     "name": "Blackwood Lake",
     "zone": "Eastern Plaguelands",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Plaguehound",
         "levelMin": 53,
@@ -3452,7 +3452,7 @@
     "name": "Corin's Crossing",
     "zone": "Eastern Plaguelands",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Scourge Warder",
         "levelMin": 53,
@@ -3469,7 +3469,7 @@
     "name": "Crown Guard Tower",
     "zone": "Eastern Plaguelands",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Plaguebat",
         "levelMin": 52,
@@ -3481,7 +3481,7 @@
     "name": "Darrowshire",
     "zone": "Eastern Plaguelands",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Plaguehound Runt",
         "levelMin": 52,
@@ -3498,7 +3498,7 @@
     "name": "Eastwall Gate",
     "zone": "Eastern Plaguelands",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Plaguebat",
         "levelMin": 52,
@@ -3510,7 +3510,7 @@
     "name": "Eastwall Tower",
     "zone": "Eastern Plaguelands",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Plaguebat",
         "levelMin": 52,
@@ -3522,13 +3522,13 @@
     "name": "Fungal Vale",
     "zone": "Eastern Plaguelands",
     "type": "HostileArea",
-    "possibleEncounters": []
+    "commonEncounters": []
   },
   {
     "name": "Lake Mereldar",
     "zone": "Eastern Plaguelands",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Blighted Surge",
         "levelMin": 53,
@@ -3545,7 +3545,7 @@
     "name": "Northdale",
     "zone": "Eastern Plaguelands",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Plaguebat",
         "levelMin": 52,
@@ -3557,7 +3557,7 @@
     "name": "Northpass Tower",
     "zone": "Eastern Plaguelands",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Plaguebat",
         "levelMin": 52,
@@ -3569,7 +3569,7 @@
     "name": "Pestilent Scar",
     "zone": "Eastern Plaguelands",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Living Decay",
         "levelMin": 53,
@@ -3596,7 +3596,7 @@
     "name": "Plaguewood",
     "zone": "Eastern Plaguelands",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Scourge Warder",
         "levelMin": 53,
@@ -3633,7 +3633,7 @@
     "name": "Plaguewood Tower",
     "zone": "Eastern Plaguelands",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Plaguebat",
         "levelMin": 52,
@@ -3645,13 +3645,13 @@
     "name": "Quel'Lithien Lodge",
     "zone": "Eastern Plaguelands",
     "type": "HostileArea",
-    "possibleEncounters": []
+    "commonEncounters": []
   },
   {
     "name": "Quel'Lithien Lodge",
     "zone": "Eastern Plaguelands",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Plaguebat",
         "levelMin": 52,
@@ -3663,7 +3663,7 @@
     "name": "Terrordale",
     "zone": "Eastern Plaguelands",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Cursed Mage",
         "levelMin": 52,
@@ -3695,7 +3695,7 @@
     "name": "Terrorweb Tunnel",
     "zone": "Eastern Plaguelands",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Crypt Fiend",
         "levelMin": 55,
@@ -3712,7 +3712,7 @@
     "name": "The Infectis Scar",
     "zone": "Eastern Plaguelands",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Plaguebat",
         "levelMin": 52,
@@ -3724,7 +3724,7 @@
     "name": "The Marris Stead",
     "zone": "Eastern Plaguelands",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Putrid Gargoyle",
         "levelMin": 52,
@@ -3746,13 +3746,13 @@
     "name": "The Noxious Glade",
     "zone": "Eastern Plaguelands",
     "type": "HostileArea",
-    "possibleEncounters": []
+    "commonEncounters": []
   },
   {
     "name": "Thondroril River",
     "zone": "Eastern Plaguelands",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Plaguehound Runt",
         "levelMin": 52,
@@ -3769,13 +3769,13 @@
     "name": "Zul'Mashar",
     "zone": "Eastern Plaguelands",
     "type": "HostileArea",
-    "possibleEncounters": []
+    "commonEncounters": []
   },
   {
     "name": "Brackwell Pumpkin Patch",
     "zone": "Elwynn Forest",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -3787,7 +3787,7 @@
     "name": "Eastvale Logging Camp",
     "zone": "Elwynn Forest",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -3799,7 +3799,7 @@
     "name": "Echo Ridge Mine",
     "zone": "Elwynn Forest",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -3811,7 +3811,7 @@
     "name": "Fargodeep Mine",
     "zone": "Elwynn Forest",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -3823,7 +3823,7 @@
     "name": "Forest's Edge",
     "zone": "Elwynn Forest",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -3835,7 +3835,7 @@
     "name": "Heroes Vigil",
     "zone": "Elwynn Forest",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -3847,7 +3847,7 @@
     "name": "Jasperlode Mine",
     "zone": "Elwynn Forest",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -3859,7 +3859,7 @@
     "name": "Mirror Lake",
     "zone": "Elwynn Forest",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -3871,7 +3871,7 @@
     "name": "Mirror Lake Orchard",
     "zone": "Elwynn Forest",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -3883,7 +3883,7 @@
     "name": "Northshire Vineyards",
     "zone": "Elwynn Forest",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -3895,7 +3895,7 @@
     "name": "Ridgepoint Tower",
     "zone": "Elwynn Forest",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -3907,7 +3907,7 @@
     "name": "Stonefield Farm",
     "zone": "Elwynn Forest",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -3919,7 +3919,7 @@
     "name": "The Maclure Vineyards",
     "zone": "Elwynn Forest",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -3931,7 +3931,7 @@
     "name": "Tower of Azora",
     "zone": "Elwynn Forest",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -3943,7 +3943,7 @@
     "name": "Bloodvenom Falls",
     "zone": "Felwood",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -3955,7 +3955,7 @@
     "name": "Bloodvenom River",
     "zone": "Felwood",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -3967,7 +3967,7 @@
     "name": "Deadmaw Village",
     "zone": "Felwood",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -3979,7 +3979,7 @@
     "name": "Deadwood Village",
     "zone": "Felwood",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -3991,7 +3991,7 @@
     "name": "Felpaw Village",
     "zone": "Felwood",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -4003,7 +4003,7 @@
     "name": "Irontree Cavern",
     "zone": "Felwood",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -4015,7 +4015,7 @@
     "name": "Irontree Woods",
     "zone": "Felwood",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -4027,7 +4027,7 @@
     "name": "Jadefire Run",
     "zone": "Felwood",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -4039,7 +4039,7 @@
     "name": "Jaedenar",
     "zone": "Felwood",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -4051,7 +4051,7 @@
     "name": "Morlos'Aran",
     "zone": "Felwood",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -4063,7 +4063,7 @@
     "name": "Ruins of Constellas",
     "zone": "Felwood",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -4075,7 +4075,7 @@
     "name": "Shatter Scar Vale",
     "zone": "Felwood",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -4087,7 +4087,7 @@
     "name": "Shrine of the Deceiver",
     "zone": "Felwood",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -4099,8 +4099,8 @@
     "name": "Dream Bough",
     "zone": "Feralas",
     "type": "EmeraldBough",
-    "possibleEncounters": [],
-    "bossEncounters": [
+    "commonEncounters": [],
+    "eliteEncounters": [
       {
         "who": "Lethon",
         "levelMin": 60
@@ -4111,13 +4111,13 @@
     "name": "Feral Scar Vale",
     "zone": "Feralas",
     "type": "HostileArea",
-    "possibleEncounters": []
+    "commonEncounters": []
   },
   {
     "name": "Frayfeather Highlands",
     "zone": "Feralas",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Frayfeather Stagwing",
         "levelMin": 44,
@@ -4144,7 +4144,7 @@
     "name": "Gordunni Outpost",
     "zone": "Feralas",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Gordunni Ogre",
         "levelMin": 40,
@@ -4166,7 +4166,7 @@
     "name": "Grimtotem Compound",
     "zone": "Feralas",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Grimtotem Raider",
         "levelMin": 41,
@@ -4188,7 +4188,7 @@
     "name": "High Wilderness",
     "zone": "Feralas",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Longtooth Howler",
         "levelMin": 43,
@@ -4210,7 +4210,7 @@
     "name": "Isle of Dread",
     "zone": "Feralas",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Arcane Chimaerok",
         "levelMin": 61,
@@ -4232,13 +4232,13 @@
     "name": "Lariss Pavillion",
     "zone": "Feralas",
     "type": "HostileArea",
-    "possibleEncounters": []
+    "commonEncounters": []
   },
   {
     "name": "Lower Wilds",
     "zone": "Feralas",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Longtooth Runner",
         "levelMin": 40,
@@ -4260,7 +4260,7 @@
     "name": "Oneiros",
     "zone": "Feralas",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Jademir Oracle",
         "levelMin": 60,
@@ -4282,7 +4282,7 @@
     "name": "Rage Scar Hold",
     "zone": "Feralas",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Jademir Oracle",
         "levelMin": 60,
@@ -4294,7 +4294,7 @@
     "name": "Ruins of Isildien",
     "zone": "Feralas",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Gordunni Mauler",
         "levelMin": 43,
@@ -4326,7 +4326,7 @@
     "name": "Ruins of Ravenwind",
     "zone": "Feralas",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Northspring Roguefeather",
         "levelMin": 48,
@@ -4348,7 +4348,7 @@
     "name": "Ruins of Solarsal",
     "zone": "Feralas",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Hatecrest Wave Rider",
         "levelMin": 41,
@@ -4370,7 +4370,7 @@
     "name": "Shalzaru's Lair",
     "zone": "Feralas",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Hatecrest Serpent Guard",
         "levelMin": 44,
@@ -4397,7 +4397,7 @@
     "name": "The Forgotten Coast",
     "zone": "Feralas",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Sea Elemental",
         "levelMin": 47,
@@ -4414,7 +4414,7 @@
     "name": "The Twin Colossals",
     "zone": "Feralas",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Sea Elemental",
         "levelMin": 47,
@@ -4431,7 +4431,7 @@
     "name": "The Writhing Deep",
     "zone": "Feralas",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Zukk'ash Wasp",
         "levelMin": 44,
@@ -4458,19 +4458,19 @@
     "name": "Verdantis River",
     "zone": "Feralas",
     "type": "HostileArea",
-    "possibleEncounters": []
+    "commonEncounters": []
   },
   {
     "name": "Wildwind Lake",
     "zone": "Feralas",
     "type": "HostileArea",
-    "possibleEncounters": []
+    "commonEncounters": []
   },
   {
     "name": "Woodpaw Hills",
     "zone": "Feralas",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Woodpaw Mongrel",
         "levelMin": 40,
@@ -4502,7 +4502,7 @@
     "name": "Engineering Labs",
     "zone": "Gnomeregan",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Mechano Tank",
         "levelMin": 32,
@@ -4514,7 +4514,7 @@
         "levelMax": 33
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Crowd Pummeler 9-60",
         "levelMin": 33,
@@ -4526,7 +4526,7 @@
     "name": "Hall of Gears",
     "zone": "Gnomeregan",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Corrosive Lurker",
         "levelMin": 29,
@@ -4543,7 +4543,7 @@
         "levelMax": 31
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Viscous Fallout",
         "levelMin": 31,
@@ -4555,7 +4555,7 @@
     "name": "Launch Bay",
     "zone": "Gnomeregan",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Leprous Technician",
         "levelMin": 30,
@@ -4572,7 +4572,7 @@
         "levelMax": 32
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Electrocutioner 6000",
         "levelMin": 32,
@@ -4584,8 +4584,8 @@
     "name": "Tinkers' Court",
     "zone": "Gnomeregan",
     "type": "HostileArea",
-    "possibleEncounters": [],
-    "bossEncounters": [
+    "commonEncounters": [],
+    "eliteEncounters": [
       {
         "who": "Mekgineer Thermaplugg",
         "levelMin": 34
@@ -4596,7 +4596,7 @@
     "name": "Trogg Caves",
     "zone": "Gnomeregan",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Caverndeep Burrower",
         "levelMin": 27,
@@ -4613,7 +4613,7 @@
         "levelMax": 29
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Grubbis",
         "levelMin": 30,
@@ -4625,7 +4625,7 @@
     "name": "Central Town",
     "zone": "Hearthglen",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Scourge Warder",
         "levelMin": 53,
@@ -4637,7 +4637,7 @@
     "name": "Hearthglen Mine",
     "zone": "Hearthglen",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Scourge Warder",
         "levelMin": 53,
@@ -4649,7 +4649,7 @@
     "name": "Mardenholde Keep",
     "zone": "Hearthglen",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Scourge Warder",
         "levelMin": 53,
@@ -4661,7 +4661,7 @@
     "name": "Azurelode Mine",
     "zone": "Hillsbrad Foothills",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -4673,7 +4673,7 @@
     "name": "Chillwind Point",
     "zone": "Hillsbrad Foothills",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -4685,7 +4685,7 @@
     "name": "Darrow Hill",
     "zone": "Hillsbrad Foothills",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -4697,7 +4697,7 @@
     "name": "Durnholde Keep",
     "zone": "Hillsbrad Foothills",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -4709,7 +4709,7 @@
     "name": "Eastern Strand",
     "zone": "Hillsbrad Foothills",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -4721,7 +4721,7 @@
     "name": "Hillsbrad",
     "zone": "Hillsbrad Foothills",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -4733,7 +4733,7 @@
     "name": "Nethander Stead",
     "zone": "Hillsbrad Foothills",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -4745,7 +4745,7 @@
     "name": "Purgation Isle",
     "zone": "Hillsbrad Foothills",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -4757,7 +4757,7 @@
     "name": "Ravenholdt Manor",
     "zone": "Hillsbrad Foothills",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -4769,7 +4769,7 @@
     "name": "Southpoint Tower",
     "zone": "Hillsbrad Foothills",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -4781,7 +4781,7 @@
     "name": "Western Strand",
     "zone": "Hillsbrad Foothills",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -4793,7 +4793,7 @@
     "name": "Agol'watha",
     "zone": "Hinterlands",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -4805,7 +4805,7 @@
     "name": "Altar of Zul",
     "zone": "Hinterlands",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -4817,7 +4817,7 @@
     "name": "Bogen's Ledge",
     "zone": "Hinterlands",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -4829,7 +4829,7 @@
     "name": "Hiri'watha",
     "zone": "Hinterlands",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -4841,7 +4841,7 @@
     "name": "Jintha'Alor",
     "zone": "Hinterlands",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -4853,7 +4853,7 @@
     "name": "Plaguemist Ravine",
     "zone": "Hinterlands",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -4865,7 +4865,7 @@
     "name": "Quel'Danil Lodge",
     "zone": "Hinterlands",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -4877,8 +4877,8 @@
     "name": "Seradane",
     "zone": "Hinterlands",
     "type": "EmeraldBough",
-    "possibleEncounters": [],
-    "bossEncounters": [
+    "commonEncounters": [],
+    "eliteEncounters": [
       {
         "who": "Ysondre",
         "levelMin": 60
@@ -4889,7 +4889,7 @@
     "name": "Shadra'Alor",
     "zone": "Hinterlands",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -4901,7 +4901,7 @@
     "name": "Shaol'watha",
     "zone": "Hinterlands",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -4913,7 +4913,7 @@
     "name": "Skulk Rock",
     "zone": "Hinterlands",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -4925,7 +4925,7 @@
     "name": "The Creeping Ruin",
     "zone": "Hinterlands",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -4937,7 +4937,7 @@
     "name": "The Overlook Cliffs",
     "zone": "Hinterlands",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -4949,7 +4949,7 @@
     "name": "Valorwind Lake",
     "zone": "Hinterlands",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -4961,7 +4961,7 @@
     "name": "Ironband's Excavation Site",
     "zone": "Loch Modan",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -4973,7 +4973,7 @@
     "name": "Mo'grosh Stronghold",
     "zone": "Loch Modan",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -4985,7 +4985,7 @@
     "name": "Silver Stream Mine",
     "zone": "Loch Modan",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -4997,7 +4997,7 @@
     "name": "Stonesplinter Valley",
     "zone": "Loch Modan",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -5009,7 +5009,7 @@
     "name": "Valley of Kings",
     "zone": "Loch Modan",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -5021,7 +5021,7 @@
     "name": "Earth Song Falls",
     "zone": "Maraudon",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Rotgrip",
         "levelMin": 50,
@@ -5038,7 +5038,7 @@
         "levelMax": 49
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Landslide",
         "levelMin": 50,
@@ -5050,7 +5050,7 @@
     "name": "Foulspore Cavern",
     "zone": "Maraudon",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Barbed Lasher",
         "levelMin": 46,
@@ -5067,7 +5067,7 @@
         "levelMax": 47
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Razorlash",
         "levelMin": 48,
@@ -5079,7 +5079,7 @@
     "name": "Poison Falls",
     "zone": "Maraudon",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Meshlock the Harvester",
         "levelMin": 48,
@@ -5101,7 +5101,7 @@
         "levelMax": 48
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Celebras the Cursed",
         "levelMin": 49,
@@ -5113,7 +5113,7 @@
     "name": "The Noxious Hollow",
     "zone": "Maraudon",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Creeping Sludge",
         "levelMin": 45,
@@ -5130,7 +5130,7 @@
         "levelMax": 46
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Noxxion",
         "levelMin": 47,
@@ -5142,7 +5142,7 @@
     "name": "Vyletongue Seat",
     "zone": "Maraudon",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Putridus Satyr",
         "levelMin": 46,
@@ -5159,7 +5159,7 @@
         "levelMax": 47
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Lord Vyletongue",
         "levelMin": 48,
@@ -5171,7 +5171,7 @@
     "name": "Wicked Grotto",
     "zone": "Maraudon",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Deeprot Stomper",
         "levelMin": 47,
@@ -5188,7 +5188,7 @@
         "levelMax": 47
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Tinkerer Gizlock",
         "levelMin": 48,
@@ -5200,7 +5200,7 @@
     "name": "Zaetar's Grave",
     "zone": "Maraudon",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Primordial Behemoth",
         "levelMin": 48,
@@ -5222,7 +5222,7 @@
         "levelMax": 50
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Princess Theradras",
         "levelMin": 51,
@@ -5234,14 +5234,14 @@
     "name": "Eastern Lavafalls",
     "zone": "Molten Core",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Cannibal Ghoul",
         "levelMin": 56,
         "levelMax": 57
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Sulfuron Harbringer",
         "levelMin": 60,
@@ -5263,14 +5263,14 @@
     "name": "Magmadar Cavern",
     "zone": "Molten Core",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Cannibal Ghoul",
         "levelMin": 56,
         "levelMax": 57
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Lucifron",
         "levelMin": 60,
@@ -5287,14 +5287,14 @@
     "name": "Ragnaros' Lair",
     "zone": "Molten Core",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Cannibal Ghoul",
         "levelMin": 56,
         "levelMax": 57
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Ragnaros",
         "levelMin": 60,
@@ -5306,14 +5306,14 @@
     "name": "Western Lavafalls",
     "zone": "Molten Core",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Cannibal Ghoul",
         "levelMin": 56,
         "levelMax": 57
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Gehennas",
         "levelMin": 60,
@@ -5340,7 +5340,7 @@
     "name": "Shrine of Remulos",
     "zone": "Moonglade",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -5352,7 +5352,7 @@
     "name": "Stormrage Barrow Dens",
     "zone": "Moonglade",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -5364,7 +5364,7 @@
     "name": "Baeldun Digsite",
     "zone": "Mulgore",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -5376,7 +5376,7 @@
     "name": "Brambleblade Ravine",
     "zone": "Mulgore",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -5388,7 +5388,7 @@
     "name": "Palemane Rock",
     "zone": "Mulgore",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -5400,7 +5400,7 @@
     "name": "Red Cloud Mesa",
     "zone": "Mulgore",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -5412,7 +5412,7 @@
     "name": "Red Rocks",
     "zone": "Mulgore",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -5424,7 +5424,7 @@
     "name": "The Golden Plains",
     "zone": "Mulgore",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -5436,7 +5436,7 @@
     "name": "The Ravaged Caravan",
     "zone": "Mulgore",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -5448,7 +5448,7 @@
     "name": "The Rolling Plains",
     "zone": "Mulgore",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -5460,7 +5460,7 @@
     "name": "The Venture Co. Mine",
     "zone": "Mulgore",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -5472,7 +5472,7 @@
     "name": "Windfury Ridge",
     "zone": "Mulgore",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -5484,7 +5484,7 @@
     "name": "Onyxia's Lair",
     "zone": "Onyxia's Lair",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Onyxian Lair Guard",
         "levelMin": 60,
@@ -5496,7 +5496,7 @@
         "levelMax": 60
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Onyxia",
         "levelMin": 60
@@ -5507,7 +5507,7 @@
     "name": "Isle Landing",
     "zone": "Purgation Isle",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Cannibal Ghoul",
         "levelMin": 32,
@@ -5519,7 +5519,7 @@
     "name": "Mountain Peak",
     "zone": "Purgation Isle",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Cannibal Ghoul",
         "levelMin": 32,
@@ -5531,14 +5531,14 @@
     "name": "Spiral of Thorns",
     "zone": "Razorfen Downs",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Ragglesnout",
         "levelMin": 40,
         "levelMax": 40
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Glutton",
         "levelMin": 40,
@@ -5555,14 +5555,14 @@
     "name": "The Bone Pile",
     "zone": "Razorfen Downs",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Ragglesnout",
         "levelMin": 40,
         "levelMax": 40
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Mordresh Fire Eye",
         "levelMin": 39,
@@ -5574,14 +5574,14 @@
     "name": "The Caller's Chamber",
     "zone": "Razorfen Downs",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Ragglesnout",
         "levelMin": 40,
         "levelMax": 40
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Plaguemaw",
         "levelMin": 40,
@@ -5598,7 +5598,7 @@
     "name": "Bat Caves",
     "zone": "Razorfen Kraul",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Kraulshaped Monstrosity",
         "levelMin": 40,
@@ -5615,7 +5615,7 @@
         "levelMax": 40
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Groyat, the Blind Hunter",
         "levelMin": 40,
@@ -5627,7 +5627,7 @@
     "name": "Central Grounds",
     "zone": "Razorfen Kraul",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Razorfen Kraulshaper",
         "levelMin": 40,
@@ -5644,7 +5644,7 @@
         "levelMax": 40
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Warlord Ramtusk",
         "levelMin": 40,
@@ -5656,7 +5656,7 @@
     "name": "Charlga's Seat",
     "zone": "Razorfen Kraul",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Enormous Bullfrog",
         "levelMin": 40,
@@ -5678,7 +5678,7 @@
         "levelMax": 40
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Charlga Razorflank",
         "levelMin": 33,
@@ -5690,7 +5690,7 @@
     "name": "Kraul Commons",
     "zone": "Razorfen Kraul",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Geomancer Acolyte",
         "levelMin": 40,
@@ -5707,7 +5707,7 @@
         "levelMax": 40
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Hunter Bonetusk",
         "levelMin": 40,
@@ -5724,14 +5724,14 @@
     "name": "Kraul Drain",
     "zone": "Razorfen Kraul",
     "type": "HostileArea",
-    "possibleEncounters": [],
-    "bossEncounters": []
+    "commonEncounters": [],
+    "eliteEncounters": []
   },
   {
     "name": "Alther's Mill",
     "zone": "Redridge Mountains",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -5743,7 +5743,7 @@
     "name": "Galardell Valley",
     "zone": "Redridge Mountains",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -5755,7 +5755,7 @@
     "name": "Lake Everstill",
     "zone": "Redridge Mountains",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -5767,7 +5767,7 @@
     "name": "Lakeridge Highway",
     "zone": "Redridge Mountains",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -5779,7 +5779,7 @@
     "name": "Redridge Canyons",
     "zone": "Redridge Mountains",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -5791,7 +5791,7 @@
     "name": "Render's Camp",
     "zone": "Redridge Mountains",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -5803,7 +5803,7 @@
     "name": "Render's Valley",
     "zone": "Redridge Mountains",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -5815,7 +5815,7 @@
     "name": "Rethban Caverns",
     "zone": "Redridge Mountains",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -5827,7 +5827,7 @@
     "name": "Stonewatch",
     "zone": "Redridge Mountains",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -5839,7 +5839,7 @@
     "name": "Three Corners",
     "zone": "Redridge Mountains",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -5851,7 +5851,7 @@
     "name": "Tower of Ilgalar",
     "zone": "Redridge Mountains",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -5863,7 +5863,7 @@
     "name": "General's Terrace",
     "zone": "Ruins of Ahn'Qiraj",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Qiraji Gladiator",
         "levelMin": 60,
@@ -5880,7 +5880,7 @@
         "levelMax": 60
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "General Rajaxx",
         "levelMin": 60,
@@ -5892,7 +5892,7 @@
     "name": "Scarab Terrace",
     "zone": "Ruins of Ahn'Qiraj",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Qiraji Gladiator",
         "levelMin": 60,
@@ -5914,7 +5914,7 @@
         "levelMax": 60
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Kurinnaxx",
         "levelMin": 60,
@@ -5926,7 +5926,7 @@
     "name": "The Comb",
     "zone": "Ruins of Ahn'Qiraj",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Hive'Zara Collector",
         "levelMin": 60,
@@ -5953,7 +5953,7 @@
         "levelMax": 60
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Ayamiss The Hunter",
         "levelMin": 60,
@@ -5965,7 +5965,7 @@
     "name": "The Hatchery",
     "zone": "Ruins of Ahn'Qiraj",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Flesh Hunter",
         "levelMin": 60,
@@ -5982,7 +5982,7 @@
         "levelMax": 60
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Buru The Gorger",
         "levelMin": 60,
@@ -5994,7 +5994,7 @@
     "name": "The Reservoir",
     "zone": "Ruins of Ahn'Qiraj",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Flesh Hunter",
         "levelMin": 60,
@@ -6006,7 +6006,7 @@
         "levelMax": 60
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Moam",
         "levelMin": 60,
@@ -6018,14 +6018,14 @@
     "name": "Watcher's Terrace",
     "zone": "Ruins of Ahn'Qiraj",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Anubisath Guardian",
         "levelMin": 60,
         "levelMax": 60
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Ossirian The Unscarred",
         "levelMin": 60,
@@ -6037,7 +6037,7 @@
     "name": "Alterac Chapel",
     "zone": "Ruins of Alterac",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Cannibal Ghoul",
         "levelMin": 32,
@@ -6049,7 +6049,7 @@
     "name": "Alterac Keep",
     "zone": "Ruins of Alterac",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Cannibal Ghoul",
         "levelMin": 32,
@@ -6061,7 +6061,7 @@
     "name": "Town Center",
     "zone": "Ruins of Alterac",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Cannibal Ghoul",
         "levelMin": 32,
@@ -6073,7 +6073,7 @@
     "name": "North Town",
     "zone": "Ruins of Stromgarde",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Cannibal Ghoul",
         "levelMin": 32,
@@ -6085,7 +6085,7 @@
     "name": "Stromgarde Keep",
     "zone": "Ruins of Stromgarde",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Cannibal Ghoul",
         "levelMin": 32,
@@ -6097,7 +6097,7 @@
     "name": "The Sanctum",
     "zone": "Ruins of Stromgarde",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Cannibal Ghoul",
         "levelMin": 32,
@@ -6109,7 +6109,7 @@
     "name": "Tower of Arathor",
     "zone": "Ruins of Stromgarde",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Cannibal Ghoul",
         "levelMin": 32,
@@ -6121,7 +6121,7 @@
     "name": "Western Town",
     "zone": "Ruins of Stromgarde",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Cannibal Ghoul",
         "levelMin": 32,
@@ -6133,14 +6133,14 @@
     "name": "Athenaeum",
     "zone": "Scarlet Monastery",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Cannibal Ghoul",
         "levelMin": 32,
         "levelMax": 32
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Arcanist Doan",
         "levelMin": 32,
@@ -6152,14 +6152,14 @@
     "name": "Chamber of Atonement",
     "zone": "Scarlet Monastery",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Cannibal Ghoul",
         "levelMin": 32,
         "levelMax": 32
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Interrogator Vishas",
         "levelMin": 32,
@@ -6171,7 +6171,7 @@
     "name": "Chapel Gardens",
     "zone": "Scarlet Monastery",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Scarlet Myrmidon",
         "levelMin": 39,
@@ -6188,20 +6188,20 @@
         "levelMax": 40
       }
     ],
-    "bossEncounters": []
+    "eliteEncounters": []
   },
   {
     "name": "Crusader's Armory",
     "zone": "Scarlet Monastery",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Cannibal Ghoul",
         "levelMin": 32,
         "levelMax": 32
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Arcanist Doan",
         "levelMin": 32,
@@ -6213,7 +6213,7 @@
     "name": "Crusader's Chapel",
     "zone": "Scarlet Monastery",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Scarlet Monk",
         "levelMin": 39,
@@ -6230,7 +6230,7 @@
         "levelMax": 40
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Scarlet Commander Mograine",
         "levelMin": 42,
@@ -6247,14 +6247,14 @@
     "name": "Forlorn Cloister",
     "zone": "Scarlet Monastery",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Cannibal Ghoul",
         "levelMin": 32,
         "levelMax": 32
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Bloodmage Thalnos",
         "levelMin": 32,
@@ -6266,27 +6266,27 @@
     "name": "Gallery of Treasures",
     "zone": "Scarlet Monastery",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Cannibal Ghoul",
         "levelMin": 32,
         "levelMax": 32
       }
     ],
-    "bossEncounters": []
+    "eliteEncounters": []
   },
   {
     "name": "Hall of Champions",
     "zone": "Scarlet Monastery",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Cannibal Ghoul",
         "levelMin": 32,
         "levelMax": 32
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Herod",
         "levelMin": 40,
@@ -6298,14 +6298,14 @@
     "name": "Honor's Tomb",
     "zone": "Scarlet Monastery",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Cannibal Ghoul",
         "levelMin": 32,
         "levelMax": 32
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Bloodmage Thalnos",
         "levelMin": 32,
@@ -6317,14 +6317,14 @@
     "name": "Huntsman's Cloister",
     "zone": "Scarlet Monastery",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Cannibal Ghoul",
         "levelMin": 32,
         "levelMax": 32
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Houndmaster Loksey",
         "levelMin": 32,
@@ -6336,14 +6336,14 @@
     "name": "Training Grounds",
     "zone": "Scarlet Monastery",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Cannibal Ghoul",
         "levelMin": 32,
         "levelMax": 32
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Arcanist Doan",
         "levelMin": 32,
@@ -6355,7 +6355,7 @@
     "name": "Terrace of Repose",
     "zone": "Scarlet Monastery Grounds",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Cannibal Ghoul",
         "levelMin": 32,
@@ -6367,7 +6367,7 @@
     "name": "The Grand Vestibule",
     "zone": "Scarlet Monastery Grounds",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Cannibal Ghoul",
         "levelMin": 32,
@@ -6379,7 +6379,7 @@
     "name": "Whispering Gardens",
     "zone": "Scarlet Monastery Grounds",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Cannibal Ghoul",
         "levelMin": 32,
@@ -6391,7 +6391,7 @@
     "name": "Barov Family Vault",
     "zone": "Scholomance",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Miner Johnson",
         "levelMin": 19,
@@ -6418,7 +6418,7 @@
         "levelMax": 18
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Lord Alexei Barov",
         "levelMin": 60,
@@ -6430,7 +6430,7 @@
     "name": "Chamber of Summoning",
     "zone": "Scholomance",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Defias Taskmaster",
         "levelMin": 18,
@@ -6447,7 +6447,7 @@
         "levelMax": 19
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Kirtonos the Herald",
         "levelMin": 59,
@@ -6459,7 +6459,7 @@
     "name": "Great Ossuary",
     "zone": "Scholomance",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Defias Taskmaster",
         "levelMin": 18,
@@ -6476,7 +6476,7 @@
         "levelMax": 19
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Rattlegore",
         "levelMin": 61,
@@ -6488,7 +6488,7 @@
     "name": "Hall of Secrets",
     "zone": "Scholomance",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Remote Controlled Golem",
         "levelMin": 18,
@@ -6500,7 +6500,7 @@
         "levelMax": 19
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Lorekeeper Polkelt",
         "levelMin": 60,
@@ -6512,7 +6512,7 @@
     "name": "Hall of the Damned",
     "zone": "Scholomance",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Defias Blackguard",
         "levelMin": 19,
@@ -6529,7 +6529,7 @@
         "levelMax": 20
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Doctor Theolen Krastinov",
         "levelMin": 60,
@@ -6541,7 +6541,7 @@
     "name": "Headmaster's Study",
     "zone": "Scholomance",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Defias Squallshaper",
         "levelMin": 19,
@@ -6553,7 +6553,7 @@
         "levelMax": 20
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Darkmaster Gandling",
         "levelMin": 61,
@@ -6565,7 +6565,7 @@
     "name": "Laboratory",
     "zone": "Scholomance",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Defias Blackguard",
         "levelMin": 19,
@@ -6582,7 +6582,7 @@
         "levelMax": 20
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Ras Frostwhisper",
         "levelMin": 62,
@@ -6594,7 +6594,7 @@
     "name": "Reliquary",
     "zone": "Scholomance",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Defias Squallshaper",
         "levelMin": 19,
@@ -6606,7 +6606,7 @@
         "levelMax": 20
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Blood Steward of Kirtonos",
         "levelMin": 59,
@@ -6618,7 +6618,7 @@
     "name": "The Coven",
     "zone": "Scholomance",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Defias Squallshaper",
         "levelMin": 19,
@@ -6630,7 +6630,7 @@
         "levelMax": 20
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Instructor Malicia",
         "levelMin": 60,
@@ -6642,7 +6642,7 @@
     "name": "The Shadow Vault",
     "zone": "Scholomance",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Defias Squallshaper",
         "levelMin": 19,
@@ -6654,7 +6654,7 @@
         "levelMax": 20
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Instructor Malicia",
         "levelMin": 60,
@@ -6666,7 +6666,7 @@
     "name": "Vault of the Ravenian",
     "zone": "Scholomance",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Defias Blackguard",
         "levelMin": 19,
@@ -6683,7 +6683,7 @@
         "levelMax": 20
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "The Ravenian",
         "levelMin": 60,
@@ -6695,7 +6695,7 @@
     "name": "Viewing Room",
     "zone": "Scholomance",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Defias Squallshaper",
         "levelMin": 19,
@@ -6707,7 +6707,7 @@
         "levelMax": 20
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Vectus",
         "levelMin": 60,
@@ -6719,7 +6719,7 @@
     "name": "Blackchar Cave",
     "zone": "Searing Gorge",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -6731,7 +6731,7 @@
     "name": "Dustfire Valley",
     "zone": "Searing Gorge",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -6743,7 +6743,7 @@
     "name": "Firewatch Ridge",
     "zone": "Searing Gorge",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -6755,7 +6755,7 @@
     "name": "Grimesilt Digsite",
     "zone": "Searing Gorge",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -6767,7 +6767,7 @@
     "name": "Stonewrought Pass",
     "zone": "Searing Gorge",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -6779,7 +6779,7 @@
     "name": "The Cauldron",
     "zone": "Searing Gorge",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -6791,7 +6791,7 @@
     "name": "The Slag Pit",
     "zone": "Searing Gorge",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -6803,7 +6803,7 @@
     "name": "Altar Room",
     "zone": "Shadow Hold",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Jaedenar Warlock",
         "levelMin": 53,
@@ -6820,7 +6820,7 @@
         "levelMax": 56
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Rakaiah",
         "levelMin": 56,
@@ -6832,7 +6832,7 @@
     "name": "Banehollow Shrine",
     "zone": "Shadow Hold",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Jaedenar Hunter",
         "levelMin": 54,
@@ -6844,7 +6844,7 @@
         "levelMax": 56
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Lord Banehollow",
         "levelMin": 57,
@@ -6856,7 +6856,7 @@
     "name": "Council Camp",
     "zone": "Shadow Hold",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Jadefire Trickster",
         "levelMin": 53,
@@ -6873,7 +6873,7 @@
         "levelMax": 54
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Prince Xavalis",
         "levelMin": 55,
@@ -6885,7 +6885,7 @@
     "name": "Inner Sanctum",
     "zone": "Shadow Hold",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Jaedenar Enforcer",
         "levelMin": 53,
@@ -6907,7 +6907,7 @@
         "levelMax": 55
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Shadow Lord Fel'Dan",
         "levelMin": 56,
@@ -6919,7 +6919,7 @@
     "name": "Upper Tunnels",
     "zone": "Shadow Hold",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Jaedenar Enforcer",
         "levelMin": 52,
@@ -6936,7 +6936,7 @@
         "levelMax": 53
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Ulathek",
         "levelMin": 54,
@@ -6948,14 +6948,14 @@
     "name": "Arugal Chamber",
     "zone": "Shadowfang Keep",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Stonevault Ambusher",
         "levelMin": 36,
         "levelMax": 37
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Revelosh",
         "levelMin": 40,
@@ -6967,14 +6967,14 @@
     "name": "Dining Hall",
     "zone": "Shadowfang Keep",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Stonevault Ambusher",
         "levelMin": 36,
         "levelMax": 37
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Revelosh",
         "levelMin": 40,
@@ -6986,14 +6986,14 @@
     "name": "Jail",
     "zone": "Shadowfang Keep",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Stonevault Ambusher",
         "levelMin": 36,
         "levelMax": 37
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Revelosh",
         "levelMin": 40,
@@ -7005,14 +7005,14 @@
     "name": "Kitchen",
     "zone": "Shadowfang Keep",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Stonevault Ambusher",
         "levelMin": 36,
         "levelMax": 37
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Revelosh",
         "levelMin": 40,
@@ -7024,14 +7024,14 @@
     "name": "Perimeter Wall",
     "zone": "Shadowfang Keep",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Stonevault Ambusher",
         "levelMin": 36,
         "levelMax": 37
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Revelosh",
         "levelMin": 40,
@@ -7043,14 +7043,14 @@
     "name": "The Courtyard",
     "zone": "Shadowfang Keep",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Stonevault Ambusher",
         "levelMin": 36,
         "levelMax": 37
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Revelosh",
         "levelMin": 40,
@@ -7062,14 +7062,14 @@
     "name": "The Laboratory",
     "zone": "Shadowfang Keep",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Stonevault Ambusher",
         "levelMin": 36,
         "levelMax": 37
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Revelosh",
         "levelMin": 40,
@@ -7081,14 +7081,14 @@
     "name": "Tower Summit",
     "zone": "Shadowfang Keep",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Stonevault Ambusher",
         "levelMin": 36,
         "levelMax": 37
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Revelosh",
         "levelMin": 40,
@@ -7100,7 +7100,7 @@
     "name": "Bones of Grakkarond",
     "zone": "Silithus",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -7112,7 +7112,7 @@
     "name": "Hive'Ashi",
     "zone": "Silithus",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -7124,7 +7124,7 @@
     "name": "Hive'Regal",
     "zone": "Silithus",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -7136,7 +7136,7 @@
     "name": "Hive'Zora",
     "zone": "Silithus",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -7148,7 +7148,7 @@
     "name": "Pincer Sands",
     "zone": "Silithus",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -7160,7 +7160,7 @@
     "name": "Southwind Village",
     "zone": "Silithus",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -7172,7 +7172,7 @@
     "name": "The Crystal Vale",
     "zone": "Silithus",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -7184,7 +7184,7 @@
     "name": "The Scarab Wall",
     "zone": "Silithus",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -7196,7 +7196,7 @@
     "name": "The Swarming Pillar",
     "zone": "Silithus",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -7208,7 +7208,7 @@
     "name": "Twilight Base Camp",
     "zone": "Silithus",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -7220,7 +7220,7 @@
     "name": "Twilight Outpost",
     "zone": "Silithus",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -7232,7 +7232,7 @@
     "name": "Twilight Post",
     "zone": "Silithus",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -7244,7 +7244,7 @@
     "name": "Ambermill",
     "zone": "Silverpine Forest",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -7256,7 +7256,7 @@
     "name": "Beren's Peril",
     "zone": "Silverpine Forest",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -7268,7 +7268,7 @@
     "name": "Deep Elem Mine",
     "zone": "Silverpine Forest",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -7280,7 +7280,7 @@
     "name": "Fenris Keep",
     "zone": "Silverpine Forest",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -7292,7 +7292,7 @@
     "name": "Ivar Patch",
     "zone": "Silverpine Forest",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -7304,7 +7304,7 @@
     "name": "Malden's Orchard",
     "zone": "Silverpine Forest",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -7316,7 +7316,7 @@
     "name": "North Tide's Run",
     "zone": "Silverpine Forest",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -7328,7 +7328,7 @@
     "name": "Olsen's Farthing",
     "zone": "Silverpine Forest",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -7340,7 +7340,7 @@
     "name": "Pyrewood Village",
     "zone": "Silverpine Forest",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -7352,7 +7352,7 @@
     "name": "The Dawning Isles",
     "zone": "Silverpine Forest",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -7364,7 +7364,7 @@
     "name": "The Dead Field",
     "zone": "Silverpine Forest",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -7376,7 +7376,7 @@
     "name": "The Graymane Wall",
     "zone": "Silverpine Forest",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -7388,7 +7388,7 @@
     "name": "The Shining Strand",
     "zone": "Silverpine Forest",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -7400,7 +7400,7 @@
     "name": "The Skittering Dark",
     "zone": "Silverpine Forest",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -7412,7 +7412,7 @@
     "name": "Boulderslide Ravine",
     "zone": "Stonetalon Mountains",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -7424,7 +7424,7 @@
     "name": "Camp Aparaje",
     "zone": "Stonetalon Mountains",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -7436,7 +7436,7 @@
     "name": "Cragpool Lake",
     "zone": "Stonetalon Mountains",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -7448,7 +7448,7 @@
     "name": "Greatwood Vale",
     "zone": "Stonetalon Mountains",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -7460,7 +7460,7 @@
     "name": "Grimtotem Post",
     "zone": "Stonetalon Mountains",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -7472,7 +7472,7 @@
     "name": "Mirkfallon Lake",
     "zone": "Stonetalon Mountains",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -7484,7 +7484,7 @@
     "name": "Sishir Canyon",
     "zone": "Stonetalon Mountains",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -7496,7 +7496,7 @@
     "name": "Talondeep Path",
     "zone": "Stonetalon Mountains",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -7508,7 +7508,7 @@
     "name": "The Charred Vale",
     "zone": "Stonetalon Mountains",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -7520,7 +7520,7 @@
     "name": "The Talon Den",
     "zone": "Stonetalon Mountains",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -7532,7 +7532,7 @@
     "name": "Webwinder Path",
     "zone": "Stonetalon Mountains",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -7544,7 +7544,7 @@
     "name": "Windshear Crag",
     "zone": "Stonetalon Mountains",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -7556,7 +7556,7 @@
     "name": "Windshear Mine",
     "zone": "Stonetalon Mountains",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -7568,7 +7568,7 @@
     "name": "Balia'mah Ruins",
     "zone": "Stranglethorn Vale",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Dustbelcher Warrior",
         "levelMin": 35,
@@ -7580,7 +7580,7 @@
     "name": "Bloodsail Compound",
     "zone": "Stranglethorn Vale",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Dustbelcher Warrior",
         "levelMin": 35,
@@ -7592,7 +7592,7 @@
     "name": "Crystal Shore",
     "zone": "Stranglethorn Vale",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Dustbelcher Warrior",
         "levelMin": 35,
@@ -7604,7 +7604,7 @@
     "name": "Crystalvein Mine",
     "zone": "Stranglethorn Vale",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Dustbelcher Warrior",
         "levelMin": 35,
@@ -7616,7 +7616,7 @@
     "name": "Gurubashi Arena",
     "zone": "Stranglethorn Vale",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Dustbelcher Warrior",
         "levelMin": 35,
@@ -7628,7 +7628,7 @@
     "name": "Jaguero Isle",
     "zone": "Stranglethorn Vale",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Dustbelcher Warrior",
         "levelMin": 35,
@@ -7640,7 +7640,7 @@
     "name": "Kal'ai Ruins",
     "zone": "Stranglethorn Vale",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Dustbelcher Warrior",
         "levelMin": 35,
@@ -7652,7 +7652,7 @@
     "name": "Kurzen's Compound",
     "zone": "Stranglethorn Vale",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Dustbelcher Warrior",
         "levelMin": 35,
@@ -7664,7 +7664,7 @@
     "name": "Lake Nazferiti",
     "zone": "Stranglethorn Vale",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Dustbelcher Warrior",
         "levelMin": 35,
@@ -7676,7 +7676,7 @@
     "name": "Mistvale Valley",
     "zone": "Stranglethorn Vale",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Dustbelcher Warrior",
         "levelMin": 35,
@@ -7688,7 +7688,7 @@
     "name": "Mizjah Ruins",
     "zone": "Stranglethorn Vale",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Dustbelcher Warrior",
         "levelMin": 35,
@@ -7700,7 +7700,7 @@
     "name": "Mosh'Ogg Ogre Mound",
     "zone": "Stranglethorn Vale",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Dustbelcher Warrior",
         "levelMin": 35,
@@ -7712,7 +7712,7 @@
     "name": "Nek'mani Wellspring",
     "zone": "Stranglethorn Vale",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Dustbelcher Warrior",
         "levelMin": 35,
@@ -7724,7 +7724,7 @@
     "name": "Ruins of Aboraz",
     "zone": "Stranglethorn Vale",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Dustbelcher Warrior",
         "levelMin": 35,
@@ -7736,7 +7736,7 @@
     "name": "Ruins of Jubuwal",
     "zone": "Stranglethorn Vale",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Dustbelcher Warrior",
         "levelMin": 35,
@@ -7748,7 +7748,7 @@
     "name": "Ruins of Zul'Kunda",
     "zone": "Stranglethorn Vale",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Dustbelcher Warrior",
         "levelMin": 35,
@@ -7760,7 +7760,7 @@
     "name": "Ruins of Zul'Mamwe",
     "zone": "Stranglethorn Vale",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Dustbelcher Warrior",
         "levelMin": 35,
@@ -7772,7 +7772,7 @@
     "name": "The Savage Coast",
     "zone": "Stranglethorn Vale",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Dustbelcher Warrior",
         "levelMin": 35,
@@ -7784,7 +7784,7 @@
     "name": "Tkashi Ruins",
     "zone": "Stranglethorn Vale",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Dustbelcher Warrior",
         "levelMin": 35,
@@ -7796,7 +7796,7 @@
     "name": "Venture Co. Base Camp",
     "zone": "Stranglethorn Vale",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Dustbelcher Warrior",
         "levelMin": 35,
@@ -7808,7 +7808,7 @@
     "name": "Wild Shore",
     "zone": "Stranglethorn Vale",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Dustbelcher Warrior",
         "levelMin": 35,
@@ -7820,7 +7820,7 @@
     "name": "Ziata'jai Ruins",
     "zone": "Stranglethorn Vale",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Dustbelcher Warrior",
         "levelMin": 35,
@@ -7832,7 +7832,7 @@
     "name": "Zuuldaia Ruins",
     "zone": "Stranglethorn Vale",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Dustbelcher Warrior",
         "levelMin": 35,
@@ -7844,14 +7844,14 @@
     "name": "Crusaders' Square",
     "zone": "Stratholme",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Cannibal Ghoul",
         "levelMin": 56,
         "levelMax": 56
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Timmy the Cruel",
         "levelMin": 58,
@@ -7863,14 +7863,14 @@
     "name": "Elder's Square",
     "zone": "Stratholme",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Cannibal Ghoul",
         "levelMin": 59,
         "levelMax": 60
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Magistrate Barthilas",
         "levelMin": 60,
@@ -7883,7 +7883,7 @@
     "zone": "Stratholme",
     "type": "HostileArea",
     "ambience": "AmbienceStratholme",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Scourge Warder",
         "levelMin": 55,
@@ -7915,7 +7915,7 @@
         "levelMax": 56
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Postmaster Malown",
         "levelMin": 56,
@@ -7927,14 +7927,14 @@
     "name": "Market Row",
     "zone": "Stratholme",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Cannibal Ghoul",
         "levelMin": 56,
         "levelMax": 57
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "The Unforgiven",
         "levelMin": 57,
@@ -7946,14 +7946,14 @@
     "name": "Slaughter Square",
     "zone": "Stratholme",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Cannibal Ghoul",
         "levelMin": 59,
         "levelMax": 60
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Ramstein the Gorger",
         "levelMin": 61,
@@ -7965,14 +7965,14 @@
     "name": "The Crimson Throne",
     "zone": "Stratholme",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Cannibal Ghoul",
         "levelMin": 59,
         "levelMax": 60
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Balnazzar",
         "levelMin": 62,
@@ -7984,14 +7984,14 @@
     "name": "The Gauntlet",
     "zone": "Stratholme",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Cannibal Ghoul",
         "levelMin": 59,
         "levelMax": 60
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Nerub'enkan",
         "levelMin": 60,
@@ -8003,14 +8003,14 @@
     "name": "The Hall of Lights",
     "zone": "Stratholme",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Cannibal Ghoul",
         "levelMin": 59,
         "levelMax": 60
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Malor the Zealous",
         "levelMin": 60,
@@ -8022,14 +8022,14 @@
     "name": "The Hoard",
     "zone": "Stratholme",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Cannibal Ghoul",
         "levelMin": 59,
         "levelMax": 60
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Malor the Zealous",
         "levelMin": 60,
@@ -8041,14 +8041,14 @@
     "name": "The Scarlet Bastion",
     "zone": "Stratholme",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Cannibal Ghoul",
         "levelMin": 59,
         "levelMax": 60
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Malor the Zealous",
         "levelMin": 60,
@@ -8060,14 +8060,14 @@
     "name": "The Slaughter House",
     "zone": "Stratholme",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Cannibal Ghoul",
         "levelMin": 59,
         "levelMax": 60
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Baron Rivendare",
         "levelMin": 62,
@@ -8079,7 +8079,7 @@
     "name": "Itharius's Cave",
     "zone": "Swamp of Sorrows",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -8091,7 +8091,7 @@
     "name": "Misty Reed Strand",
     "zone": "Swamp of Sorrows",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -8103,7 +8103,7 @@
     "name": "Misty Valley",
     "zone": "Swamp of Sorrows",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -8115,7 +8115,7 @@
     "name": "Pool of Tears",
     "zone": "Swamp of Sorrows",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -8127,7 +8127,7 @@
     "name": "Sorrowmurk",
     "zone": "Swamp of Sorrows",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -8139,7 +8139,7 @@
     "name": "Splinterspear Junction",
     "zone": "Swamp of Sorrows",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -8151,7 +8151,7 @@
     "name": "Stagalbog",
     "zone": "Swamp of Sorrows",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -8163,7 +8163,7 @@
     "name": "The Shifting Marsh",
     "zone": "Swamp of Sorrows",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -8175,7 +8175,7 @@
     "name": "Abyssal Sands",
     "zone": "Tanaris",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -8187,7 +8187,7 @@
     "name": "Broken Pillar",
     "zone": "Tanaris",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -8199,7 +8199,7 @@
     "name": "Dunemaul Compound",
     "zone": "Tanaris",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -8211,7 +8211,7 @@
     "name": "Eastmoon Ruins",
     "zone": "Tanaris",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -8223,7 +8223,7 @@
     "name": "Land's End Beach",
     "zone": "Tanaris",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -8235,7 +8235,7 @@
     "name": "Lost Rigger Cove",
     "zone": "Tanaris",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -8247,7 +8247,7 @@
     "name": "Noonshade Ruins",
     "zone": "Tanaris",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -8259,7 +8259,7 @@
     "name": "Sandsorrow Watch",
     "zone": "Tanaris",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -8271,7 +8271,7 @@
     "name": "Southbreak Shore",
     "zone": "Tanaris",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -8283,7 +8283,7 @@
     "name": "Southmoon Ruins",
     "zone": "Tanaris",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -8295,7 +8295,7 @@
     "name": "Steamwheedle Port",
     "zone": "Tanaris",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -8307,7 +8307,7 @@
     "name": "The Gaping Chasm",
     "zone": "Tanaris",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -8319,7 +8319,7 @@
     "name": "The Noxious Lair",
     "zone": "Tanaris",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -8331,7 +8331,7 @@
     "name": "Thistleshrub Valley",
     "zone": "Tanaris",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -8343,7 +8343,7 @@
     "name": "Waterspring Field",
     "zone": "Tanaris",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -8355,7 +8355,7 @@
     "name": "Wavestrider Beach",
     "zone": "Tanaris",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -8367,7 +8367,7 @@
     "name": "Ban'ethil Hollow",
     "zone": "Teldrassil",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -8379,7 +8379,7 @@
     "name": "Fel Rock",
     "zone": "Teldrassil",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -8391,7 +8391,7 @@
     "name": "Gnarlpine Hold",
     "zone": "Teldrassil",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -8403,7 +8403,7 @@
     "name": "Lake Al'Ameth",
     "zone": "Teldrassil",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -8415,7 +8415,7 @@
     "name": "Pools of Arlithrien",
     "zone": "Teldrassil",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -8427,7 +8427,7 @@
     "name": "Shadowglen",
     "zone": "Teldrassil",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -8439,7 +8439,7 @@
     "name": "Shadowglen",
     "zone": "Teldrassil",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -8451,7 +8451,7 @@
     "name": "Shadowthread Cave",
     "zone": "Teldrassil",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -8463,7 +8463,7 @@
     "name": "The Oracle Glade",
     "zone": "Teldrassil",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -8475,7 +8475,7 @@
     "name": "Wellspring Lake",
     "zone": "Teldrassil",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -8487,7 +8487,7 @@
     "name": "Wellspring River",
     "zone": "Teldrassil",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -8499,8 +8499,8 @@
     "name": "Abandoned Tunnel",
     "zone": "Temple of Ahn'Qiraj",
     "type": "HostileArea",
-    "possibleEncounters": [],
-    "bossEncounters": [
+    "commonEncounters": [],
+    "eliteEncounters": [
       {
         "who": "Viscidus",
         "levelMin": 60
@@ -8511,7 +8511,7 @@
     "name": "Ouro's Lair",
     "zone": "Temple of Ahn'Qiraj",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Vekniss Borer",
         "levelMin": 60,
@@ -8528,7 +8528,7 @@
         "levelMax": 60
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Ouro",
         "levelMin": 60,
@@ -8540,7 +8540,7 @@
     "name": "Princess Chambers",
     "zone": "Temple of Ahn'Qiraj",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Vekniss Borer",
         "levelMin": 60,
@@ -8557,7 +8557,7 @@
         "levelMax": 60
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Princess Huhuran",
         "levelMin": 60,
@@ -8569,7 +8569,7 @@
     "name": "Qiraji Imperial Seat",
     "zone": "Temple of Ahn'Qiraj",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Anubisath Sentinel",
         "levelMin": 60,
@@ -8581,7 +8581,7 @@
         "levelMax": 60
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Twin Emperors",
         "levelMin": 60,
@@ -8593,7 +8593,7 @@
     "name": "The Hive Undergrounds",
     "zone": "Temple of Ahn'Qiraj",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Qiraji Champion",
         "levelMin": 60,
@@ -8615,7 +8615,7 @@
         "levelMax": 60
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Battleguard Sartura",
         "levelMin": 60,
@@ -8632,7 +8632,7 @@
     "name": "The Temple Gates",
     "zone": "Temple of Ahn'Qiraj",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Anubisath Sentinel",
         "levelMin": 60,
@@ -8644,7 +8644,7 @@
         "levelMax": 60
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "The Prophet Skeram",
         "levelMin": 60,
@@ -8656,7 +8656,7 @@
     "name": "Vault of C'Thun",
     "zone": "Temple of Ahn'Qiraj",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Anubisath Sentinel",
         "levelMin": 60,
@@ -8668,7 +8668,7 @@
         "levelMax": 60
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "C'Thun",
         "levelMin": 60,
@@ -8680,7 +8680,7 @@
     "name": "Chamber of Blood",
     "zone": "Temple of Atal'Hakkar",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -8692,7 +8692,7 @@
     "name": "Chamber of the Dreamer",
     "zone": "Temple of Atal'Hakkar",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -8704,7 +8704,7 @@
     "name": "Den of the Caller",
     "zone": "Temple of Atal'Hakkar",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -8716,7 +8716,7 @@
     "name": "Hall of Bones",
     "zone": "Temple of Atal'Hakkar",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -8728,7 +8728,7 @@
     "name": "Hall of Masks",
     "zone": "Temple of Atal'Hakkar",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -8740,7 +8740,7 @@
     "name": "Hall of Ritual",
     "zone": "Temple of Atal'Hakkar",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -8752,7 +8752,7 @@
     "name": "Hall of Serpents",
     "zone": "Temple of Atal'Hakkar",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -8764,7 +8764,7 @@
     "name": "Hall of the Cursed",
     "zone": "Temple of Atal'Hakkar",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -8776,7 +8776,7 @@
     "name": "Lair of the Chosen",
     "zone": "Temple of Atal'Hakkar",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -8788,7 +8788,7 @@
     "name": "Pit of Refuse",
     "zone": "Temple of Atal'Hakkar",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -8800,7 +8800,7 @@
     "name": "Sanctum of the Fallen God",
     "zone": "Temple of Atal'Hakkar",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -8812,7 +8812,7 @@
     "name": "The Broken Hall",
     "zone": "Temple of Atal'Hakkar",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -8824,7 +8824,7 @@
     "name": "The Butchery",
     "zone": "Temple of Atal'Hakkar",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -8836,7 +8836,7 @@
     "name": "The Pit of Sacrafice",
     "zone": "Temple of Atal'Hakkar",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -8848,7 +8848,7 @@
     "name": "Agama'gor",
     "zone": "The Barrens",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Bristleback Water Seeker",
         "levelMin": 16,
@@ -8875,7 +8875,7 @@
     "name": "Bael Modan",
     "zone": "The Barrens",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Bael'dun Excavator",
         "levelMin": 21,
@@ -8897,7 +8897,7 @@
     "name": "Baeldun Keep",
     "zone": "The Barrens",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Bael'dun Soldier",
         "levelMin": 24,
@@ -8924,7 +8924,7 @@
     "name": "Blackthorn Ridge",
     "zone": "The Barrens",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Razormane Pathfinder",
         "levelMin": 21,
@@ -8956,7 +8956,7 @@
     "name": "Boulder Lode Mine",
     "zone": "The Barrens",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Venture Co. Enforcer",
         "levelMin": 16,
@@ -8978,7 +8978,7 @@
     "name": "Bramblescar",
     "zone": "The Barrens",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Bristleback Water Seeker",
         "levelMin": 16,
@@ -9005,7 +9005,7 @@
     "name": "Dreadmist Peak",
     "zone": "The Barrens",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Burning Blade Bruiser",
         "levelMin": 10,
@@ -9027,7 +9027,7 @@
     "name": "Field of Giants",
     "zone": "The Barrens",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Silithid Swarmer",
         "levelMin": 21,
@@ -9044,7 +9044,7 @@
     "name": "Fray Island",
     "zone": "The Barrens",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -9056,7 +9056,7 @@
     "name": "Gold Road",
     "zone": "The Barrens",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Fleeting Plainstrider",
         "levelMin": 12,
@@ -9078,7 +9078,7 @@
     "name": "Honor's Stand",
     "zone": "The Barrens",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Barrens Giraffe",
         "levelMin": 14,
@@ -9100,7 +9100,7 @@
     "name": "Lushwater Oasis",
     "zone": "The Barrens",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Kolkar Wrangler",
         "levelMin": 12,
@@ -9127,7 +9127,7 @@
     "name": "Northwatch Hold",
     "zone": "The Barrens",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Theramore Marine",
         "levelMin": 15,
@@ -9154,7 +9154,7 @@
     "name": "Raptor Grounds",
     "zone": "The Barrens",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Sunscale Scytheclaw",
         "levelMin": 16,
@@ -9166,7 +9166,7 @@
     "name": "Southern Gold Road",
     "zone": "The Barrens",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Zhevra Courser",
         "levelMin": 19,
@@ -9188,7 +9188,7 @@
     "name": "Southfury River",
     "zone": "The Barrens",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Dreadmaw Crocolisk",
         "levelMin": 11,
@@ -9200,7 +9200,7 @@
     "name": "The Dry Hills",
     "zone": "The Barrens",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Witchwing Slayer",
         "levelMin": 16,
@@ -9222,7 +9222,7 @@
     "name": "The Forgotten Pools",
     "zone": "The Barrens",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Kolkar Wrangler",
         "levelMin": 12,
@@ -9244,7 +9244,7 @@
     "name": "The Merchant Coast",
     "zone": "The Barrens",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Southsea Brigand",
         "levelMin": 12,
@@ -9261,7 +9261,7 @@
     "name": "The Sludge Fen",
     "zone": "The Barrens",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Venture Co. Drudger",
         "levelMin": 14,
@@ -9288,7 +9288,7 @@
     "name": "The Stagnant Oasis",
     "zone": "The Barrens",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Kolkar Pack Runner",
         "levelMin": 14,
@@ -9310,7 +9310,7 @@
     "name": "Thorn Hill",
     "zone": "The Barrens",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Razormane Hunter",
         "levelMin": 11,
@@ -9342,7 +9342,7 @@
     "name": "Defias Hideout",
     "zone": "The Deadmines",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Miner Johnson",
         "levelMin": 19,
@@ -9369,7 +9369,7 @@
         "levelMax": 18
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Rhahk'Zor",
         "levelMin": 19,
@@ -9381,7 +9381,7 @@
     "name": "Goblin Foundry",
     "zone": "The Deadmines",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Remote Controlled Golem",
         "levelMin": 18,
@@ -9393,7 +9393,7 @@
         "levelMax": 19
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Gilnid",
         "levelMin": 20,
@@ -9405,7 +9405,7 @@
     "name": "Ironclad Cove",
     "zone": "The Deadmines",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Defias Blackguard",
         "levelMin": 19,
@@ -9422,7 +9422,7 @@
         "levelMax": 20
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Mr. Smite",
         "levelMin": 20,
@@ -9434,7 +9434,7 @@
     "name": "Mast Room",
     "zone": "The Deadmines",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Defias Taskmaster",
         "levelMin": 18,
@@ -9451,7 +9451,7 @@
         "levelMax": 19
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Sneed",
         "levelMin": 19,
@@ -9463,7 +9463,7 @@
     "name": "The Juggernaut",
     "zone": "The Deadmines",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Defias Squallshaper",
         "levelMin": 19,
@@ -9475,7 +9475,7 @@
         "levelMax": 20
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Captain Greenskin",
         "levelMin": 20,
@@ -9492,7 +9492,7 @@
     "name": "Camp Ethok",
     "zone": "Thousand Needles",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -9504,7 +9504,7 @@
     "name": "Darkcloud Pinnacle",
     "zone": "Thousand Needles",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -9516,7 +9516,7 @@
     "name": "Highperch",
     "zone": "Thousand Needles",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -9528,7 +9528,7 @@
     "name": "Mirage Raceway",
     "zone": "Thousand Needles",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -9540,7 +9540,7 @@
     "name": "Roguefeather Den",
     "zone": "Thousand Needles",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -9552,7 +9552,7 @@
     "name": "Rustmaul Dig Site",
     "zone": "Thousand Needles",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -9564,7 +9564,7 @@
     "name": "Shimmering Flats",
     "zone": "Thousand Needles",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -9576,7 +9576,7 @@
     "name": "Splithoof Crag",
     "zone": "Thousand Needles",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -9588,7 +9588,7 @@
     "name": "Tahonda Ruins",
     "zone": "Thousand Needles",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -9600,7 +9600,7 @@
     "name": "Tahonda Ruins",
     "zone": "Thousand Needles",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -9612,7 +9612,7 @@
     "name": "The Great Lift",
     "zone": "Thousand Needles",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -9624,7 +9624,7 @@
     "name": "Weazel's Crater",
     "zone": "Thousand Needles",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -9636,7 +9636,7 @@
     "name": "Windbreak Canyon",
     "zone": "Thousand Needles",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -9648,7 +9648,7 @@
     "name": "Agamand Family Crypt",
     "zone": "Tirisfal Glades",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -9660,7 +9660,7 @@
     "name": "Agamand Mills",
     "zone": "Tirisfal Glades",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -9672,7 +9672,7 @@
     "name": "Balnir Farmstead",
     "zone": "Tirisfal Glades",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -9684,7 +9684,7 @@
     "name": "Brightwater Lake",
     "zone": "Tirisfal Glades",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -9696,7 +9696,7 @@
     "name": "Cold Hearth Manor",
     "zone": "Tirisfal Glades",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -9708,7 +9708,7 @@
     "name": "Crusader's Outpost",
     "zone": "Tirisfal Glades",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -9720,7 +9720,7 @@
     "name": "Deathknell",
     "zone": "Tirisfal Glades",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -9742,7 +9742,7 @@
     "name": "Garren's Haunt",
     "zone": "Tirisfal Glades",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -9754,7 +9754,7 @@
     "name": "Night Web's Hollow",
     "zone": "Tirisfal Glades",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -9766,7 +9766,7 @@
     "name": "Nightmare Vale",
     "zone": "Tirisfal Glades",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -9778,7 +9778,7 @@
     "name": "Solliden Farmstead",
     "zone": "Tirisfal Glades",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -9790,7 +9790,7 @@
     "name": "The North Coast",
     "zone": "Tirisfal Glades",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -9802,7 +9802,7 @@
     "name": "The Ruins of Lordaeron",
     "zone": "Tirisfal Glades",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -9814,7 +9814,7 @@
     "name": "Venomweb Vale",
     "zone": "Tirisfal Glades",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -9826,7 +9826,7 @@
     "name": "Whispering Shore",
     "zone": "Tirisfal Glades",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -9838,7 +9838,7 @@
     "name": "Scarlet Basilica",
     "zone": "Tyr's Hand",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Scarlet Curate",
         "levelMin": 52,
@@ -9860,7 +9860,7 @@
     "name": "Town Square",
     "zone": "Tyr's Hand",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Scarlet Curate",
         "levelMin": 52,
@@ -9877,7 +9877,7 @@
     "name": "Tyr's Hand Abbey",
     "zone": "Tyr's Hand",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Scarlet Warder",
         "levelMin": 52,
@@ -9894,7 +9894,7 @@
     "name": "Tyr's Hand Keep",
     "zone": "Tyr's Hand",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Scarlet Curate",
         "levelMin": 52,
@@ -9911,7 +9911,7 @@
     "name": "Dig Three",
     "zone": "Uldaman",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Shadowforge Darkcaster",
         "levelMin": 42,
@@ -9923,7 +9923,7 @@
         "levelMax": 44
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Galgann Firehammer",
         "levelMin": 45,
@@ -9935,7 +9935,7 @@
     "name": "Hall of the Keepers",
     "zone": "Uldaman",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Stonevault Ambusher",
         "levelMin": 36,
@@ -9952,7 +9952,7 @@
         "levelMax": 38
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Revelosh",
         "levelMin": 40,
@@ -9964,7 +9964,7 @@
     "name": "Khaz'Goroth's Seat",
     "zone": "Uldaman",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Vault Warder",
         "levelMin": 44,
@@ -9976,7 +9976,7 @@
         "levelMax": 45
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Archaedas",
         "levelMin": 47,
@@ -9988,8 +9988,8 @@
     "name": "Map Chamber",
     "zone": "Uldaman",
     "type": "HostileArea",
-    "possibleEncounters": [],
-    "bossEncounters": [
+    "commonEncounters": [],
+    "eliteEncounters": [
       {
         "who": "Ironaya",
         "levelMin": 40
@@ -10000,7 +10000,7 @@
     "name": "Temple Hall",
     "zone": "Uldaman",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Stone Steward",
         "levelMin": 44,
@@ -10017,7 +10017,7 @@
         "levelMax": 43
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Ancient Stone Keeper",
         "levelMin": 44,
@@ -10029,7 +10029,7 @@
     "name": "The Stone Vault",
     "zone": "Uldaman",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Jadespine Basilisk",
         "levelMin": 42,
@@ -10046,7 +10046,7 @@
         "levelMax": 43
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Grimlok",
         "levelMin": 45,
@@ -10058,7 +10058,7 @@
     "name": "Fire Plume Ridge",
     "zone": "Un'Goro Crater",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -10070,7 +10070,7 @@
     "name": "Fungal Rock",
     "zone": "Un'Goro Crater",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -10082,7 +10082,7 @@
     "name": "Golakka Hot Springs",
     "zone": "Un'Goro Crater",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -10094,7 +10094,7 @@
     "name": "Lakkari Tar Pits",
     "zone": "Un'Goro Crater",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -10106,7 +10106,7 @@
     "name": "Terror Run",
     "zone": "Un'Goro Crater",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -10118,7 +10118,7 @@
     "name": "The Marshlands",
     "zone": "Un'Goro Crater",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -10130,7 +10130,7 @@
     "name": "The Slithering Scar",
     "zone": "Un'Goro Crater",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -10142,7 +10142,7 @@
     "name": "Crag of the Everliving",
     "zone": "Wailing Caverns",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Deviate Dreadfang",
         "levelMin": 20,
@@ -10174,7 +10174,7 @@
         "levelMax": 20
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Lord Serpentis",
         "levelMin": 21,
@@ -10191,7 +10191,7 @@
     "name": "Dreamer's Rock",
     "zone": "Wailing Caverns",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Deviate Moccasin",
         "levelMin": 20,
@@ -10208,7 +10208,7 @@
         "levelMax": 21
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Mutantus The Devourer",
         "levelMin": 22,
@@ -10220,7 +10220,7 @@
     "name": "Pit of Fangs",
     "zone": "Wailing Caverns",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Deviate Adder",
         "levelMin": 18,
@@ -10242,7 +10242,7 @@
         "levelMax": 20
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Lord Cobrahn",
         "levelMin": 20,
@@ -10259,7 +10259,7 @@
     "name": "Screaming Gully",
     "zone": "Wailing Caverns",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Deviate Guardian",
         "levelMin": 18,
@@ -10281,7 +10281,7 @@
         "levelMax": 19
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Lady Anacondra",
         "levelMin": 20,
@@ -10293,7 +10293,7 @@
     "name": "Winding Chasm",
     "zone": "Wailing Caverns",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Deviate Dreadfang",
         "levelMin": 20,
@@ -10315,7 +10315,7 @@
         "levelMax": 21
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Skum",
         "levelMin": 21,
@@ -10327,7 +10327,7 @@
     "name": "Caer Darrow",
     "zone": "Western Plaguelands",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Scourge Warder",
         "levelMin": 53,
@@ -10339,7 +10339,7 @@
     "name": "Dalson's Tears",
     "zone": "Western Plaguelands",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Scourge Warder",
         "levelMin": 53,
@@ -10351,7 +10351,7 @@
     "name": "Felstone Field",
     "zone": "Western Plaguelands",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Scourge Warder",
         "levelMin": 53,
@@ -10363,7 +10363,7 @@
     "name": "Gahrron's Withering",
     "zone": "Western Plaguelands",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Scourge Warder",
         "levelMin": 53,
@@ -10375,7 +10375,7 @@
     "name": "Northridge Lumber Camp",
     "zone": "Western Plaguelands",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Scourge Warder",
         "levelMin": 53,
@@ -10387,7 +10387,7 @@
     "name": "Ruins of Andorhal",
     "zone": "Western Plaguelands",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Scourge Warder",
         "levelMin": 53,
@@ -10399,7 +10399,7 @@
     "name": "The Weeping Cave",
     "zone": "Western Plaguelands",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Scourge Warder",
         "levelMin": 53,
@@ -10411,7 +10411,7 @@
     "name": "The Writhing Haunt",
     "zone": "Western Plaguelands",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Scourge Warder",
         "levelMin": 53,
@@ -10423,7 +10423,7 @@
     "name": "Uther's Tomb",
     "zone": "Western Plaguelands",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Scourge Warder",
         "levelMin": 53,
@@ -10435,7 +10435,7 @@
     "name": "Furlbrow's Pumpkin Farm",
     "zone": "Westfall",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Dustbelcher Warrior",
         "levelMin": 35,
@@ -10447,7 +10447,7 @@
     "name": "Gold Coast Quarry",
     "zone": "Westfall",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Dustbelcher Warrior",
         "levelMin": 35,
@@ -10459,7 +10459,7 @@
     "name": "Jangolode Mine",
     "zone": "Westfall",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Dustbelcher Warrior",
         "levelMin": 35,
@@ -10471,7 +10471,7 @@
     "name": "Jansen Stead",
     "zone": "Westfall",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Dustbelcher Warrior",
         "levelMin": 35,
@@ -10483,7 +10483,7 @@
     "name": "Longshore",
     "zone": "Westfall",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Dustbelcher Warrior",
         "levelMin": 35,
@@ -10495,7 +10495,7 @@
     "name": "Molsen Farm",
     "zone": "Westfall",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Dustbelcher Warrior",
         "levelMin": 35,
@@ -10507,7 +10507,7 @@
     "name": "Moonbrook",
     "zone": "Westfall",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Dustbelcher Warrior",
         "levelMin": 35,
@@ -10519,7 +10519,7 @@
     "name": "Saldean's Farm",
     "zone": "Westfall",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Dustbelcher Warrior",
         "levelMin": 35,
@@ -10531,7 +10531,7 @@
     "name": "The Dagger Hills",
     "zone": "Westfall",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Dustbelcher Warrior",
         "levelMin": 35,
@@ -10543,7 +10543,7 @@
     "name": "The Dead Acre",
     "zone": "Westfall",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Dustbelcher Warrior",
         "levelMin": 35,
@@ -10555,7 +10555,7 @@
     "name": "The Dust Plains",
     "zone": "Westfall",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Dustbelcher Warrior",
         "levelMin": 35,
@@ -10567,7 +10567,7 @@
     "name": "Westfall Lighthouse",
     "zone": "Westfall",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Dustbelcher Warrior",
         "levelMin": 35,
@@ -10579,7 +10579,7 @@
     "name": "Angerfang Encampment",
     "zone": "Wetlands",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -10591,7 +10591,7 @@
     "name": "Black Channel Marsh",
     "zone": "Wetlands",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -10603,7 +10603,7 @@
     "name": "Bluegill Marsh",
     "zone": "Wetlands",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -10615,7 +10615,7 @@
     "name": "Direforge Hill",
     "zone": "Wetlands",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -10627,7 +10627,7 @@
     "name": "Dragonmaw Gates",
     "zone": "Wetlands",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -10639,7 +10639,7 @@
     "name": "Dun Algaz",
     "zone": "Wetlands",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -10651,7 +10651,7 @@
     "name": "Dun Modr",
     "zone": "Wetlands",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -10663,7 +10663,7 @@
     "name": "Grim Batol",
     "zone": "Wetlands",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -10675,7 +10675,7 @@
     "name": "Ironbeard's Tomb",
     "zone": "Wetlands",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -10687,7 +10687,7 @@
     "name": "Mosshide Fen",
     "zone": "Wetlands",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -10699,7 +10699,7 @@
     "name": "Raptor Ridge",
     "zone": "Wetlands",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -10711,7 +10711,7 @@
     "name": "Saltspray Glen",
     "zone": "Wetlands",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -10723,7 +10723,7 @@
     "name": "Sundown Marsh",
     "zone": "Wetlands",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -10735,7 +10735,7 @@
     "name": "Sundown Marsh",
     "zone": "Wetlands",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -10747,7 +10747,7 @@
     "name": "The Green Belt",
     "zone": "Wetlands",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -10759,7 +10759,7 @@
     "name": "Thelgen Rock",
     "zone": "Wetlands",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -10771,7 +10771,7 @@
     "name": "Whelgar's Excavation Site",
     "zone": "Wetlands",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Duskbat",
         "levelMin": 1,
@@ -10783,7 +10783,7 @@
     "name": "Darkwhisper Gorge",
     "zone": "Winterspring",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Hederine Initiate",
         "levelMin": 59,
@@ -10805,7 +10805,7 @@
     "name": "Dun Mandarr",
     "zone": "Winterspring",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Winterspring Screecher",
         "levelMin": 56,
@@ -10832,7 +10832,7 @@
     "name": "Frostfire Hot Springs",
     "zone": "Winterspring",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Shardtooth Bear",
         "levelMin": 53,
@@ -10854,7 +10854,7 @@
     "name": "Frostsaber Rock",
     "zone": "Winterspring",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Frostsaber Huntress",
         "levelMin": 58,
@@ -10876,7 +10876,7 @@
     "name": "Frostwhisper Gorge",
     "zone": "Winterspring",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Frostmaul Giant",
         "levelMin": 59,
@@ -10898,7 +10898,7 @@
     "name": "Hidden Grove",
     "zone": "Winterspring",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Crazed Owlbeast",
         "levelMin": 56,
@@ -10915,7 +10915,7 @@
     "name": "Ice Thistle Hills",
     "zone": "Winterspring",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Ice Thistle Yeti",
         "levelMin": 55,
@@ -10937,7 +10937,7 @@
     "name": "Mazthoril",
     "zone": "Winterspring",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Cobalt Scalebane",
         "levelMin": 56,
@@ -10964,7 +10964,7 @@
     "name": "Moon Horror Den",
     "zone": "Winterspring",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Winterspring Owl",
         "levelMin": 54,
@@ -10981,7 +10981,7 @@
     "name": "Northern Vale",
     "zone": "Winterspring",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Elder Shardtooth",
         "levelMin": 57,
@@ -11003,7 +11003,7 @@
     "name": "Owl Wing Thicket",
     "zone": "Winterspring",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Crazed Owlbeast",
         "levelMin": 56,
@@ -11025,7 +11025,7 @@
     "name": "Ruins of Kel'Theril",
     "zone": "Winterspring",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Suffering Highborne",
         "levelMin": 54,
@@ -11047,7 +11047,7 @@
     "name": "Timbermaw Post",
     "zone": "Winterspring",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Winterfall Pathfinder",
         "levelMin": 53,
@@ -11069,7 +11069,7 @@
     "name": "Winterfall Village",
     "zone": "Winterspring",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Winterfall Den Watcher",
         "levelMin": 55,
@@ -11096,7 +11096,7 @@
     "name": "Yeti Caverns",
     "zone": "Winterspring",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Ice Thistle Yeti",
         "levelMin": 56,
@@ -11118,7 +11118,7 @@
     "name": "Altar of Hir'eek",
     "zone": "Zul'Gurub",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Bloodseeker Bat",
         "levelMin": 60,
@@ -11135,7 +11135,7 @@
         "levelMax": 60
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "High Priestess Jeklik",
         "levelMin": 60,
@@ -11147,7 +11147,7 @@
     "name": "Altar of the Blood God",
     "zone": "Zul'Gurub",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Gurubashi Champion",
         "levelMin": 60,
@@ -11174,7 +11174,7 @@
         "levelMax": 60
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Hakkar the Soulflayer",
         "levelMin": 60,
@@ -11186,7 +11186,7 @@
     "name": "Edge of Madness",
     "zone": "Zul'Gurub",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Gurubashi Berserker",
         "levelMin": 60,
@@ -11203,7 +11203,7 @@
         "levelMax": 60
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Gri'lek",
         "levelMin": 60
@@ -11226,7 +11226,7 @@
     "name": "Hakkari Grounds",
     "zone": "Zul'Gurub",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Gurubashi Champion",
         "levelMin": 60,
@@ -11248,7 +11248,7 @@
         "levelMax": 60
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Bloodlord Mandokir",
         "levelMin": 60,
@@ -11260,7 +11260,7 @@
     "name": "Naze of Shirvallah",
     "zone": "Zul'Gurub",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Gurubashi Axe Thrower",
         "levelMin": 60,
@@ -11277,7 +11277,7 @@
         "levelMax": 60
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "High Priest Thekal",
         "levelMin": 60,
@@ -11289,14 +11289,14 @@
     "name": "Pagle's Pointe",
     "zone": "Zul'Gurub",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Hooktooth Frenzy",
         "levelMin": 60,
         "levelMax": 60
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Gahz'ranka",
         "levelMin": 60,
@@ -11308,7 +11308,7 @@
     "name": "Shadra'zaar",
     "zone": "Zul'Gurub",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Hakkari Shadowcaster",
         "levelMin": 60,
@@ -11330,7 +11330,7 @@
         "levelMax": 60
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "High Priestess Mar'li",
         "levelMin": 60,
@@ -11342,7 +11342,7 @@
     "name": "Temple of Bethekk",
     "zone": "Zul'Gurub",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Zulian Panther",
         "levelMin": 60,
@@ -11359,7 +11359,7 @@
         "levelMax": 60
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "High Priestess Arlokk",
         "levelMin": 60
@@ -11370,7 +11370,7 @@
     "name": "The Bloodfire Pit",
     "zone": "Zul'Gurub",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Voodoo Slave",
         "levelMin": 60,
@@ -11387,7 +11387,7 @@
         "levelMax": 60
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "Jin'do the Hexxer",
         "levelMin": 60
@@ -11398,7 +11398,7 @@
     "name": "The Coil",
     "zone": "Zul'Gurub",
     "type": "HostileArea",
-    "possibleEncounters": [
+    "commonEncounters": [
       {
         "who": "Gurubashi Axe Thrower",
         "levelMin": 60,
@@ -11415,7 +11415,7 @@
         "levelMax": 60
       }
     ],
-    "bossEncounters": [
+    "eliteEncounters": [
       {
         "who": "High Priest Venoxis",
         "levelMin": 60,

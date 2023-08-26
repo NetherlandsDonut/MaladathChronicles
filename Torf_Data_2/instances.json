@@ -14,55 +14,55 @@
             "AreaName": "The Broken Hall"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "The Butchery"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Chamber of Blood"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Den of the Caller"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Hall of Masks"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Hall of Ritual"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Hall of Bones"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Hall of Serpents"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Hall of The Cursed"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Sanctum of the Fallen God"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "The Pit of Sacrafice"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Pit of Refuse"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Lair of the Chosen"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Chamber of the Dreamer"
           }
         ]
@@ -88,15 +88,15 @@
             "AreaName": "Hall of Gears"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Launch Bay"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Engineering Labs"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Tinkers' Court"
           }
         ]
@@ -118,31 +118,31 @@
             "AreaName": "Jail"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "The Courtyard"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Kitchen"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Dining Hall"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Perimeter Wall"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "The Laboratory"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Tower Summit"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Arugal Chamber"
           }
         ]
@@ -165,19 +165,19 @@
             "AreaName": "Upper Tunnels"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Council Camp"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Altar Room"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Inner Sanctum"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Banehollow Shrine"
           }
         ]
@@ -199,47 +199,47 @@
             "AreaName": "Reliquary"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Chamber of Summoning"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Great Ossuary"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Viewing Room"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Laboratory"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Hall of Secrets"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Hall of the Damned"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "The Coven"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Vault of the Ravenian"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "The Shadow Vault"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Barov Family Vault"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Headmaster's Study"
           }
         ]
@@ -260,7 +260,7 @@
             "AreaName": "The Noxious Hollow"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Foulspore Cavern"
           }
         ]
@@ -273,7 +273,7 @@
             "AreaName": "Wicked Grotto"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Vyletongue Seat"
           }
         ]
@@ -286,11 +286,11 @@
             "AreaName": "Poison Falls"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Earth Song Falls"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Zaetar's Grave"
           }
         ]
@@ -312,27 +312,27 @@
             "AreaName": "King's Square"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Market Row"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Crusaders' Square"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "The Hoard"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "The Hall of Lights"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "The Scarlet Bastion"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "The Crimson Throne"
           }
         ]
@@ -345,15 +345,15 @@
             "AreaName": "Elder's Square"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "The Gauntlet"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Slaughter Square"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "The Slaughter House"
           }
         ]
@@ -375,19 +375,19 @@
             "AreaName": "Screaming Gully"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Pit of Fangs"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Winding Chasm"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Crag of the Everliving"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Dreamer's Rock"
           }
         ]
@@ -409,23 +409,23 @@
             "AreaName": "Hall of the Keepers"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Map Chamber"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Temple Hall"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Dig Three"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "The Stone Vault"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Khaz'Goroth's Seat"
           }
         ]
@@ -447,11 +447,11 @@
             "AreaName": "The Caller's Chamber"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "The Bone Pile"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Spiral of Thorns"
           }
         ]
@@ -473,15 +473,15 @@
             "AreaName": "Kraul Commons"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Central Grounds"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Bat Caves"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Charlga's Seat"
           }
         ]
@@ -503,19 +503,19 @@
             "AreaName": "Defias Hideout"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Mast Room"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Goblin Foundry"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Ironclad Cove"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "The Juggernaut"
           }
         ]
@@ -537,23 +537,23 @@
             "AreaName": "Pool of Ask'ar"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Shrine of Gelihast"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Moonshrine Ruins"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Forgotten Pool"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Moonshrine Sanctum"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Aku'mai's Lair"
           }
         ]
@@ -575,11 +575,11 @@
             "AreaName": "Warpwood Quarter"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "The Conservatory"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "The Shrine of Eldre'tharr"
           }
         ]
@@ -592,15 +592,15 @@
             "AreaName": "Capital Gardens"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Court of the Highborne"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Prison of Immol'Thar"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "The Athenaeum"
           }
         ]
@@ -613,11 +613,11 @@
             "AreaName": "Gordok Commons"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Halls of Destruction"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Gordok's Seat"
           }
         ]
@@ -663,11 +663,11 @@
             "AreaName": "Chamber of Atonement"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Forlorn Cloister"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Honor's Tomb"
           }
         ]
@@ -680,11 +680,11 @@
             "AreaName": "Huntsman's Cloister"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Gallery of Treasures"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Athenaeum"
           }
         ]
@@ -697,11 +697,11 @@
             "AreaName": "Training Grounds"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Crusader's Armory"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Hall of Champions"
           }
         ]
@@ -714,7 +714,7 @@
             "AreaName": "Chapel Gardens"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Crusader's Chapel"
           }
         ]
@@ -760,23 +760,23 @@
             "AreaName": "Detention Block"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Halls of the Law"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Ring of Law"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Dark Iron Highway"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "The Black Anvil"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Hall of Crafting"
           }
         ]
@@ -785,31 +785,31 @@
         "name": "Inner City",
         "areas": [
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "West Garrison"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "The Manufactory"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Chamber of Enchantment"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Mold Foundry"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Summoners' Tomb"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "The Iron Hall"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "The Imperial Seat"
           }
         ]
@@ -845,27 +845,27 @@
             "AreaName": "Hordemar City"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Mok'Doom"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Tazz'Alor"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Skitterweb Tunnels"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "The Storehouse"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Halycon's Lair"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Chamber of Battle"
           }
         ]
@@ -895,27 +895,27 @@
         "name": "Upper",
         "areas": [
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Hall of Binding"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "The Rookery"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Hall of Blackhand"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Blackrock Stadium"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "The Furnace"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Spire Throne"
           }
         ]
@@ -993,15 +993,15 @@
             "AreaName": "Magmadar Cavern"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Western Lavafalls"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Eastern Lavafalls"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Ragnaros' Lair"
           }
         ]
@@ -1043,35 +1043,35 @@
             "AreaName": "Altar of Hir'eek"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "The Coil"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Shadra'zaar"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Hakkari Grounds"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Naze of Shirvallah"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Pagle's Pointe"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Temple of Bethekk"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "The Bloodfire Pit"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Altar of the Blood God"
           }
         ]
@@ -1110,23 +1110,23 @@
             "AreaName": "Dragonmaw Garrison"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Shadow Wing Lair"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Halls of Strife"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Crimson Laboratories"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Chromaggus' Lair"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Nefarian's Lair"
           }
         ]
@@ -1148,23 +1148,23 @@
             "AreaName": "Scarab Terrace"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "General's Terrace"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "The Hatchery"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "The Comb"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "The Reservoir"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Watcher's Terrace"
           }
         ]
@@ -1186,23 +1186,23 @@
             "AreaName": "The Temple Gates"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "The Hive Undergrounds"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Abandoned Tunnel"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Ouro's Lair"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Qiraji Imperial Seat"
           },
           {
-            "Requisite": "Boss",
+            "Requisite": "EliteKilled",
             "AreaName": "Vault of C'Thun"
           }
         ]

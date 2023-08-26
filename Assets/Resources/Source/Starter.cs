@@ -225,22 +225,22 @@ public class Starter : MonoBehaviour
                             AddLine("Recommended level: ");
                             AddText(area.recommendedLevel + "", ColorEntityLevel(area.recommendedLevel));
                         });
-                        if (area.bossEncounters != null && area.bossEncounters.Count > 0 && area.bossEncounters.Sum(x => x.requiredProgress) > 0)
+                        if (area.eliteEncounters != null && area.eliteEncounters.Count > 0 && area.eliteEncounters.Sum(x => x.requiredProgress) > 0)
                             AddPaddingRegion(() =>
                             {
                                 AddLine("Exploration progress: ", "DarkGray");
                                 var temp = currentSave.siteProgress;
-                                int progress = (int)(currentSave.siteProgress.ContainsKey(area.name) ? (double)currentSave.siteProgress[area.name] / area.bossEncounters.Sum(x => x.requiredProgress) * 100 : 0);
+                                int progress = (int)(currentSave.siteProgress.ContainsKey(area.name) ? (double)currentSave.siteProgress[area.name] / area.eliteEncounters.Sum(x => x.requiredProgress) * 100 : 0);
                                 AddText((progress > 100 ? 100 : progress) + "%", ColorProgress(progress));
                             });
                         AddPaddingRegion(() =>
                         {
                             SetRegionAsGroupExtender();
                         });
-                        if (area.possibleEncounters != null && area.possibleEncounters.Count > 0)
+                        if (area.commonEncounters != null && area.commonEncounters.Count > 0)
                         {
                             AddHeaderRegion(() => { AddLine("Possible encounters:", "DarkGray"); });
-                            foreach (var encounter in area.possibleEncounters)
+                            foreach (var encounter in area.commonEncounters)
                                 AddPaddingRegion(() =>
                                 {
                                     AddLine(encounter.who, "DarkGray", "Right");
@@ -255,14 +255,14 @@ public class Starter : MonoBehaviour
                                 SwitchDesktop("Game");
                             });
                         }
-                        if (area.bossEncounters != null && area.bossEncounters.Count > 0)
+                        if (area.eliteEncounters != null && area.eliteEncounters.Count > 0)
                         {
                             AddHeaderRegion(() =>
                             {
                                 AddLine("Bosses: ", "Gray");
                                 //AddSmallButton("OtherBoss", (h) => { });
                             });
-                            foreach (var boss in area.bossEncounters)
+                            foreach (var boss in area.eliteEncounters)
                             {
                                 AddButtonRegion(() =>
                                 {
@@ -306,6 +306,32 @@ public class Starter : MonoBehaviour
         #else
         Deserialize(ref Assets.assets, "assets");
         #endif
+        for (int i = 0; i < SiteHostileArea.areas.Count; i++)
+        {
+            var area = SiteHostileArea.areas[i];
+            if (area.commonEncounters != null)
+                foreach (var encounter in area.commonEncounters)
+                    if (!Race.races.Exists(x => x.name == encounter.who))
+                        Race.races.Insert(0, new Race()
+                        {
+                            name = encounter.who,
+                            abilities = new(),
+                            kind = "Common",
+                            portrait = "PortraitChicken",
+                            vitality = 1.0,
+                        });
+            if (area.eliteEncounters != null)
+                foreach (var encounter in area.eliteEncounters)
+                    if (!Race.races.Exists(x => x.name == encounter.who))
+                        Race.races.Insert(0, new Race()
+                        {
+                            name = encounter.who,
+                            abilities = new(),
+                            kind = "Elite",
+                            portrait = "PortraitCow",
+                            vitality = 1.0,
+                        });
+        }
         cursor = FindObjectOfType<Cursor>();
         cursorEnemy = FindObjectOfType<CursorRemote>();
         ambience = FindObjectsOfType<AudioSource>().First(x => x.name == "Ambience");
