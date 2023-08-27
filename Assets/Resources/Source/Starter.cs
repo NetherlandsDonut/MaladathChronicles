@@ -306,6 +306,72 @@ public class Starter : MonoBehaviour
         #else
         Deserialize(ref Assets.assets, "assets");
         #endif
+        var countHA = SiteHostileArea.areas.Count;
+        var countI = instances.Count;
+        var countR = Race.races.Count;
+        var countA = Ability.abilities.Count;
+        var countIS = ItemSet.itemSets.Count;
+        for (int i = 0; i < complexes.Count; i++)
+        {
+            var complex = complexes[i];
+            if (complex.sites != null)
+                foreach (var site in complex.sites)
+                    if (site != null && site.ContainsKey("SiteType") && site.ContainsKey("SiteName"))
+                        if (site["SiteType"] == "HostileArea")
+                        {
+                            if (!SiteHostileArea.areas.Exists(x => x.name == site["SiteName"]))
+                                SiteHostileArea.areas.Insert(0, new SiteHostileArea()
+                                {
+                                    name = site["SiteName"],
+                                    commonEncounters = new(),
+                                    rareEncounters = new(),
+                                    eliteEncounters = new(),
+                                    type = "HostileArea",
+                                    complexPart = true
+                                });
+                        }
+                        else if (site["SiteType"] == "Dungeon")
+                        {
+                            if (!instances.Exists(x => x.name == site["SiteName"]))
+                                instances.Insert(0, new SiteInstance()
+                                {
+                                    name = site["SiteName"],
+                                    wings = new(),
+                                    type = "Dungeon",
+                                    complexPart = true
+                                });
+                        }
+                        else if (site["SiteType"] == "Raid")
+                        {
+                            if (!instances.Exists(x => x.name == site["SiteName"]))
+                                instances.Insert(0, new SiteInstance()
+                                {
+                                    name = site["SiteName"],
+                                    wings = new(),
+                                    type = "Raid",
+                                    complexPart = true
+                                });
+                        }
+        }
+        for (int i = 0; i < instances.Count; i++)
+        {
+            var instance = instances[i];
+            if (instance.wings != null)
+                foreach (var wing in instance.wings)
+                    if (wing.areas != null)
+                        foreach (var area in wing.areas)
+                            if (!area.ContainsKey("AreaName"))
+                                if (!SiteHostileArea.areas.Exists(x => x.name == area["AreaName"]))
+                                    SiteHostileArea.areas.Insert(0, new SiteHostileArea()
+                                    {
+                                        name = area["AreaName"],
+                                        commonEncounters = new(),
+                                        rareEncounters = new(),
+                                        eliteEncounters = new(),
+                                        type = "HostileArea",
+                                        instancePart = true
+                                    });
+        }
         for (int i = 0; i < SiteHostileArea.areas.Count; i++)
         {
             var area = SiteHostileArea.areas[i];
@@ -320,6 +386,17 @@ public class Starter : MonoBehaviour
                             portrait = "PortraitChicken",
                             vitality = 1.0,
                         });
+            if (area.rareEncounters != null)
+                foreach (var encounter in area.rareEncounters)
+                    if (!Race.races.Exists(x => x.name == encounter.who))
+                        Race.races.Insert(0, new Race()
+                        {
+                            name = encounter.who,
+                            abilities = new(),
+                            kind = "Rare",
+                            portrait = "PortraitParrot",
+                            vitality = 2.0,
+                        });
             if (area.eliteEncounters != null)
                 foreach (var encounter in area.eliteEncounters)
                     if (!Race.races.Exists(x => x.name == encounter.who))
@@ -329,9 +406,54 @@ public class Starter : MonoBehaviour
                             abilities = new(),
                             kind = "Elite",
                             portrait = "PortraitCow",
-                            vitality = 1.0,
+                            vitality = 3.0,
                         });
         }
+        for (int i = 0; i < Class.specs.Count; i++)
+        {
+            var spec = Class.specs[i];
+            if (spec.abilities != null)
+                foreach (var ability in spec.abilities)
+                    if (!Ability.abilities.Exists(x => x.name == ability.Item1))
+                        Ability.abilities.Insert(0, new Ability()
+                        {
+                            name = ability.Item1,
+                            icon = "AbilityAbolishMagic"
+                        });
+            if (spec.talentTrees != null)
+                foreach (var tree in spec.talentTrees)
+                    foreach (var talent in tree.talents)
+                        if (!Ability.abilities.Exists(x => x.name == talent.ability))
+                            Ability.abilities.Insert(0, new Ability()
+                            {
+                                name = talent.ability,
+                                icon = Assets.assets.abilityIcons.Contains("Ability" + talent.ability.Replace(" ", "") + ".png") ? "Ability" + talent.ability.Replace(" ", "") : "AbilityAbolishMagic"
+                            });
+        }
+        for (int i = 0; i < Item.items.Count; i++)
+        {
+            var item = Item.items[i];
+            if (item.set != null)
+                if (!ItemSet.itemSets.Exists(x => x.name == item.set))
+                    ItemSet.itemSets.Insert(0, new ItemSet()
+                    {
+                        name = item.set,
+                        setBonuses = new()
+                    });
+            if (item.abilities != null)
+                foreach (var ability in item.abilities)
+                    if (!Ability.abilities.Exists(x => x.name == ability))
+                        Ability.abilities.Insert(0, new Ability()
+                        {
+                            name = ability,
+                            icon = Assets.assets.abilityIcons.Contains("Ability" + ability + ".png") ? "Ability" + ability : "AbilityAbolishMagic"
+                        });
+        }
+        if (countHA != SiteHostileArea.areas.Count) Debug.Log("Added " + (SiteHostileArea.areas.Count - countHA) + " lacking areas.");
+        if (countI != instances.Count) Debug.Log("Added " + (instances.Count - countI) + " lacking instances.");
+        if (countR != Race.races.Count) Debug.Log("Added " + (Race.races.Count - countR) + " lacking races.");
+        if (countA != Ability.abilities.Count) Debug.Log("Added " + (Ability.abilities.Count - countA) + " lacking abilities.");
+        if (countIS != ItemSet.itemSets.Count) Debug.Log("Added " + (ItemSet.itemSets.Count - countIS) + " lacking item sets.");
         cursor = FindObjectOfType<Cursor>();
         cursorEnemy = FindObjectOfType<CursorRemote>();
         ambience = FindObjectsOfType<AudioSource>().First(x => x.name == "Ambience");

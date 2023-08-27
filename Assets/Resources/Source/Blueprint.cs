@@ -2917,7 +2917,7 @@ public class Blueprint
                 AddLine("Sort item sets:");
                 AddSmallButton("OtherClose", (h) =>
                 {
-                    CloseWindow("ItemsSort");
+                    CloseWindow("ItemSetsSort");
                     CloseWindow("ObjectManagerItemSets");
                     SpawnWindowBlueprint("ObjectManagerItemSets");
                 });
@@ -2928,8 +2928,21 @@ public class Blueprint
             },
             (h) =>
             {
-                ItemSet.itemSets = ItemSet.itemSets.OrderBy(x => x.name).ToList();
-                ItemSet.itemSetsSearch = ItemSet.itemSetsSearch.OrderBy(x => x.name).ToList();
+                itemSets = itemSets.OrderBy(x => x.name).ToList();
+                itemSetsSearch = itemSetsSearch.OrderBy(x => x.name).ToList();
+                CloseWindow("ItemSetsSort");
+                CloseWindow("ObjectManagerItemSets");
+                SpawnWindowBlueprint("ObjectManagerItemSets");
+                PlaySound("DesktopInventorySort");
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("By average item power", "Black");
+            },
+            (h) =>
+            {
+                itemSets = itemSets.OrderByDescending(x => items.FindAll(y => y.set == x.name).Average(y => y.ilvl)).ToList();
+                itemSetsSearch = itemSetsSearch.OrderByDescending(x => items.FindAll(y => y.set == x.name).Average(y => y.ilvl)).ToList();
                 CloseWindow("ItemSetsSort");
                 CloseWindow("ObjectManagerItemSets");
                 SpawnWindowBlueprint("ObjectManagerItemSets");
@@ -2941,8 +2954,8 @@ public class Blueprint
             },
             (h) =>
             {
-                ItemSet.itemSets = ItemSet.itemSets.OrderByDescending(x => x.setBonuses.Count).ToList();
-                ItemSet.itemSetsSearch = ItemSet.itemSetsSearch.OrderByDescending(x => x.setBonuses.Count).ToList();
+                itemSets = itemSets.OrderByDescending(x => x.setBonuses.Count).ToList();
+                itemSetsSearch = itemSetsSearch.OrderByDescending(x => x.setBonuses.Count).ToList();
                 CloseWindow("ItemSetsSort");
                 CloseWindow("ObjectManagerItemSets");
                 SpawnWindowBlueprint("ObjectManagerItemSets");
