@@ -4,7 +4,6 @@ public class Bool
     public Bool() { }
     public Bool(bool value) => Set(value);
 
-    //Fields
     private int value = 0;
 
     public bool Value() => value == 1;

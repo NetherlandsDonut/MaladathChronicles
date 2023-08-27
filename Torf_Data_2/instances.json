@@ -838,8 +838,12 @@
     ],
     "wings": [
       {
-        "name": "Lower",
+        "name": "Lower Wing",
         "areas": [
+          {
+            "Requisite": "None",
+            "AreaName": "Lower Hall of Blackhand"
+          },
           {
             "Requisite": "None",
             "AreaName": "Hordemar City"
@@ -892,8 +896,12 @@
     ],
     "wings": [
       {
-        "name": "Upper",
+        "name": "Upper Wing",
         "areas": [
+          {
+            "Requisite": "None",
+            "AreaName": "Dragonspire Hall"
+          },
           {
             "Requisite": "EliteKilled",
             "AreaName": "Hall of Binding"
@@ -904,7 +912,7 @@
           },
           {
             "Requisite": "EliteKilled",
-            "AreaName": "Hall of Blackhand"
+            "AreaName": "Upper Hall of Blackhand"
           },
           {
             "Requisite": "EliteKilled",

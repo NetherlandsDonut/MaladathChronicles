@@ -1,6 +1,8 @@
 
 public class ActionBar
 {
+    public ActionBar() { }
+
     public ActionBar(string ability)
     {
         this.ability = ability;

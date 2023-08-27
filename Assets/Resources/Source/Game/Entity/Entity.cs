@@ -7,23 +7,25 @@ using UnityEditor;
 
 using static Root;
 using static Sound;
-using static UnityEngine.GraphicsBuffer;
 
 public class Entity
 {
-    //Player constructor
+    public Entity() { }
+    
     public Entity(string name, string creationGender, Race race, Class spec, List<string> items)
     {
         level = 60;
-        this.name = name;
         gender = creationGender;
         unspentTalentPoints = 20;
         this.race = race.name;
+        if (name != "") this.name = name;
+        else this.name = gender == "Female" ? race.femaleNames[random.Next(race.femaleNames.Count)] : race.maleNames[random.Next(race.maleNames.Count)];
         this.spec = spec.name;
         abilities = race.abilities.Select(x => x).Concat(spec.abilities.FindAll(x => x.Item2 <= level).Select(x => x.Item1)).Concat(spec.talentTrees.SelectMany(x => x.talents.FindAll(y => y.defaultTaken)).Select(x => x.ability)).Distinct().ToList();
         actionBarsUnlocked = 7;
         stats = new Stats(race.stats.stats.ToDictionary(x => x.Key, x => x.Value));
         inventory = new Inventory(items);
+        inventory.items.RemoveAll(x => x == null);
         for (int i = 0; i < 40; i++)
         {
             Item item;
@@ -37,10 +39,10 @@ public class Entity
         Initialise();
     }
 
-    //Enemy constructor
     public Entity(int level, Race race)
     {
         this.level = level;
+        kind = race.kind;
         race ??= Race.races.Find(x => x.name == "Dumb Kobold");
         this.race = name = race.name;
         abilities = race.abilities.Select(x => x).Distinct().ToList();
@@ -444,6 +446,7 @@ public class Entity
             stats["Strength"] += (int)(temp.rules["Strength per Level"] * level);
             stats["Agility"] += (int)(temp.rules["Agility per Level"] * level);
             stats["Intellect"] += (int)(temp.rules["Intellect per Level"] * level);
+            stats["Spirit"] += (int)(temp.rules["Spirit per Level"] * level);
         }
         if (equipment != null)
             foreach (var itemPair in equipment)
@@ -618,7 +621,7 @@ public class Entity
     #endregion
 
     public int health, level, unspentTalentPoints, actionBarsUnlocked, experience;
-    public string name, race, spec, gender;
+    public string name, race, spec, gender, kind;
     public Dictionary<string, int> resources;
     public List<string> abilities;
     public List<ActionBar> actionBars;

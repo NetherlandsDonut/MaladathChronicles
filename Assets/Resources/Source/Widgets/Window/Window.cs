@@ -6,19 +6,16 @@ using static Root;
 using static Root.Anchor;
 using static Root.RegionBackgroundType;
 
+using static GameSettings;
+
 using static InputLine;
 
 public class Window : MonoBehaviour
 {
-    //Parent
     public Desktop desktop;
-
-    //Children
     public GameObject groupGrouping;
     public List<RegionGroup> regionGroups;
     public RegionGroup LBRegionGroup, headerGroup;
-
-    //Fields
     public int xOffset, yOffset;
     public string title, layer;
     public Vector2 dragOffset;
@@ -96,6 +93,28 @@ public class Window : MonoBehaviour
         return head > xOffset ? head : xOffset;
     }
 
+    public void Respawn()
+    {
+        var paginations = regionGroups.Select(x => x.pagination).ToList();
+        var inputFieldDestination = (-1, -1);
+        for (int i = 0; i < regionGroups.Count && inputFieldDestination.Item1 == -1; i++)
+            for (int j = 0; j < regionGroups[i].regions.Count && inputFieldDestination.Item1 == -1; j++)
+                if (regionGroups[i].regions[j].inputLine == inputLine)
+                    inputFieldDestination = (i, j);
+        CloseWindow(this);
+        SpawnWindowBlueprint(title);
+        for (int i = 0; i < paginations.Count && i < CDesktop.LBWindow.regionGroups.Count; i++)
+            CDesktop.LBWindow.regionGroups[i].pagination = paginations[i];
+        if (inputFieldDestination.Item1 != -1)
+        {
+            if (CDesktop.LBWindow.regionGroups.Count <= inputFieldDestination.Item1) return;
+            var group = CDesktop.LBWindow.regionGroups[inputFieldDestination.Item1];
+            if (group.regions.Count <= inputFieldDestination.Item2 || group.regions[inputFieldDestination.Item2].inputLine == null) return;
+            inputLine = group.regions[inputFieldDestination.Item2].inputLine;
+        }
+        Rebuild();
+    }
+
     public void Rebuild()
     {
         CDesktop.LBWindow = this;
@@ -112,7 +131,7 @@ public class Window : MonoBehaviour
             BuildRegionGroup(regionGroup);
         }
         if (headerGroup != null) BuildRegionGroup(headerGroup);
-        yOffset = regionGroups.Max(x => x.currentHeight) + (headerGroup != null ? headerGroup.currentHeight : 0);
+        yOffset = (regionGroups.Count > 0 ? regionGroups.Max(x => x.currentHeight) : 0) + (headerGroup != null ? headerGroup.currentHeight : 0);
         groupGrouping.transform.localPosition = new Vector3(0, headerGroup != null ? -headerGroup.currentHeight : 0, 0);
 
         //Draws window background

@@ -127,7 +127,6 @@ public class Desktop : MonoBehaviour
                     Destroy(loadingBar[0]);
                     Destroy(loadingBar[1]);
                     loadingBar = null;
-                    mapLoaded = true;
                     PlaySound("DesktopLoadSuccess");
                     break;
                 }
@@ -282,38 +281,47 @@ public class Desktop : MonoBehaviour
                             if (CDesktop.title == "ObjectManagerItems")
                             {
                                 Item.itemsSearch = Item.items.FindAll(x => x.name.ToLower().Contains(val));
+                                Respawn("ObjectManagerItems");
                             }
                             else if (CDesktop.title == "ObjectManagerItemSets")
                             {
                                 ItemSet.itemSetsSearch = ItemSet.itemSets.FindAll(x => x.name.ToLower().Contains(val));
+                                Respawn("ObjectManagerItemSets");
                             }
                             else if (CDesktop.title == "ObjectManagerAbilities")
                             {
                                 Ability.abilitiesSearch = Ability.abilities.FindAll(x => x.name.ToLower().Contains(val));
+                                Respawn("ObjectManagerAbilities");
                             }
                             else if (CDesktop.title == "ObjectManagerBuffs")
                             {
                                 Buff.buffsSearch = Buff.buffs.FindAll(x => x.name.ToLower().Contains(val));
+                                Respawn("ObjectManagerBuffs");
                             }
                             else if (CDesktop.title == "ObjectManagerRaces")
                             {
                                 Race.racesSearch = Race.races.FindAll(x => x.name.ToLower().Contains(val));
+                                Respawn("ObjectManagerRaces");
                             }
                             else if (CDesktop.title == "ObjectManagerClasses")
                             {
                                 Class.specsSearch = Class.specs.FindAll(x => x.name.ToLower().Contains(val));
+                                Respawn("ObjectManagerClasses");
                             }
                             else if (CDesktop.title == "ObjectManagerHostileAreas")
                             {
                                 SiteHostileArea.areasSearch = SiteHostileArea.areas.FindAll(x => x.name.ToLower().Contains(val));
+                                Respawn("ObjectManagerHostileAreas");
                             }
                             else if (CDesktop.title == "ObjectManagerInstances")
                             {
                                 SiteInstance.instancesSearch = SiteInstance.instances.FindAll(x => x.name.ToLower().Contains(val));
+                                Respawn("ObjectManagerInstances");
                             }
                             else if (CDesktop.title == "ObjectManagerComplexes")
                             {
                                 SiteComplex.complexesSearch = SiteComplex.complexes.FindAll(x => x.name.ToLower().Contains(val));
+                                Respawn("ObjectManagerComplexes");
                             }
                         }
                         temp.region.regionGroup.window.Rebuild();

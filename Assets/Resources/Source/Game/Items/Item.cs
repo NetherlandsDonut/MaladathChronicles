@@ -1,12 +1,15 @@
-using UnityEngine;
 using System.Linq;
 using System.Collections.Generic;
+
+using UnityEngine;
 
 using static Root;
 using static Root.Anchor;
 
 using static Sound;
+using static SaveSlot;
 using static Coloring;
+using static GameSettings;
 
 public class Item
 {
@@ -183,10 +186,10 @@ public class Item
         AddBigButton(item.icon,
             (h) =>
             {
-                if (item.CanEquip(currentSave.player))
+                if (item.CanEquip(currentSlot.player))
                 {
                     PlaySound(item.ItemSound("PickUp"));
-                    item.Equip(currentSave.player);
+                    item.Equip(currentSlot.player);
                     CloseWindow(h.window);
                     SpawnWindowBlueprint("Inventory");
                     CloseWindow("PlayerEquipmentInfo");
@@ -202,14 +205,14 @@ public class Item
         );
         if (settings.rarityIndicators.Value())
             AddBigButtonOverlay("OtherRarity" + item.rarity + (settings.bigRarityIndicators.Value() ? "Big" : ""), 0, 2);
-        if (currentSave.player.HasItemEquipped(item.name))
+        if (currentSlot.player.HasItemEquipped(item.name))
         {
             SetBigButtonToGrayscale();
             AddBigButtonOverlay("OtherGridBlurred", 0, 2);
         }
-        if (item.CanEquip(currentSave.player) && currentSave.player.IsItemNewSlot(item) && (settings.upgradeIndicators.Value() || settings.newSlotIndicators.Value()))
+        if (item.CanEquip(currentSlot.player) && currentSlot.player.IsItemNewSlot(item) && (settings.upgradeIndicators.Value() || settings.newSlotIndicators.Value()))
             AddBigButtonOverlay(settings.newSlotIndicators.Value() ? "OtherItemNewSlot" : "OtherItemUpgrade", 0, 2);
-        else if (settings.upgradeIndicators.Value() && item.CanEquip(currentSave.player) && currentSave.player.IsItemAnUpgrade(item))
+        else if (settings.upgradeIndicators.Value() && item.CanEquip(currentSlot.player) && currentSlot.player.IsItemAnUpgrade(item))
             AddBigButtonOverlay("OtherItemUpgrade", 0, 2);
     }
 
@@ -254,30 +257,28 @@ public class Item
             });
         if (item.set != null)
         {
-            AddHeaderRegion(() =>
-            {
-                AddLine("Part of ", "DarkGray");
-                AddText(item.set, "Gray");
-            });
             var set = ItemSet.itemSets.Find(x => x.name == item.set);
-            if (set == null)
+            if (set != null)
             {
-                Debug.Log("ERROR 002: Set not found \"" + item.set + "\"");
-                return;
-            }
-            AddPaddingRegion(() =>
-            {
-                foreach (var bonus in set.setBonuses)
+                AddHeaderRegion(() =>
                 {
-                    var howMuch = currentSave != null && currentSave.player != null ? set.EquippedPieces(currentSave.player) : 0;
-                    bool has = howMuch >= bonus.requiredPieces;
-                    AddLine((has ? bonus.requiredPieces : howMuch) + "/" + bonus.requiredPieces + " Set: ", has ? "Uncommon" : "DarkGray");
-                    if (bonus.description.Count > 0)
-                        AddText(bonus.description[0], has ? "Uncommon" : "DarkGray");
-                    for (int i = 0; i < bonus.description.Count - 1; i++)
-                        AddLine(bonus.description[0], has ? "Uncommon" : "DarkGray");
-                }
-            });
+                    AddLine("Part of ", "DarkGray");
+                    AddText(item.set, "Gray");
+                });
+                AddPaddingRegion(() =>
+                {
+                    foreach (var bonus in set.setBonuses)
+                    {
+                        var howMuch = currentSlot != null && currentSlot.player != null ? set.EquippedPieces(currentSlot.player) : 0;
+                        bool has = howMuch >= bonus.requiredPieces;
+                        AddLine((has ? bonus.requiredPieces : howMuch) + "/" + bonus.requiredPieces + " Set: ", has ? "Uncommon" : "DarkGray");
+                        if (bonus.description.Count > 0)
+                            AddText(bonus.description[0], has ? "Uncommon" : "DarkGray");
+                        for (int i = 0; i < bonus.description.Count - 1; i++)
+                            AddLine(bonus.description[0], has ? "Uncommon" : "DarkGray");
+                    }
+                });
+            }
         }
         if (item.lvl > 0)
             AddHeaderRegion(() =>

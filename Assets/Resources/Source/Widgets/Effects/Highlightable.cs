@@ -37,7 +37,7 @@ public class Highlightable : MonoBehaviour
             if (window == null) transform.parent.GetComponent<Desktop>().SetTooltip(FindTooltip());
             else window.desktop.SetTooltip(FindTooltip());
         if (GetComponent<InputCharacter>() != null) cursor.SetCursor(Write);
-        render.color -= new UnityEngine.Color(0.1f, 0.1f, 0.1f, 0);
+        render.color -= new Color(0.1f, 0.1f, 0.1f, 0);
     }
 
     public void OnMouseExit()
@@ -52,7 +52,7 @@ public class Highlightable : MonoBehaviour
             }
         }
         if (!pressed) cursor.SetCursor(Default);
-        render.color += new UnityEngine.Color(0.1f, 0.1f, 0.1f, 0);
+        render.color += new Color(0.1f, 0.1f, 0.1f, 0);
     }
 
     public void OnMouseDown()
@@ -74,14 +74,14 @@ public class Highlightable : MonoBehaviour
         cursor.SetCursor(Click);
         if (windowHandle)
             window.dragOffset = window.transform.position - window.desktop.screen.ScreenToWorldPoint(new Vector2(Input.mousePosition.x, Input.mousePosition.y)) + window.desktop.transform.position;
-        render.color -= new UnityEngine.Color(0.1f, 0.1f, 0.1f, 0);
+        render.color -= new Color(0.1f, 0.1f, 0.1f, 0);
     }
 
     public void OnMouseUp()
     {
         if (cursor.render.sprite == null) return;
         cursor.SetCursor(Default);
-        if (pressed) render.color += new UnityEngine.Color(0.1f, 0.1f, 0.1f, 0);
+        if (pressed) render.color += new Color(0.1f, 0.1f, 0.1f, 0);
         pressed = false;
     }
 

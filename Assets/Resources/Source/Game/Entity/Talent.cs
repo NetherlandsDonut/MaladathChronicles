@@ -2,6 +2,7 @@ using UnityEngine;
 
 using static Root;
 using static Ability;
+using static SaveSlot;
 
 using static Sound;
 
@@ -17,34 +18,34 @@ public class Talent
         AddRegionGroup();
         AddPaddingRegion(() =>
         {
-            var playerClass = currentSave.player.GetClass();
+            var playerClass = currentSlot.player.GetClass();
             var talent = playerClass.talentTrees[spec].talents.Find(x => x.row == row && x.col == col);
-            var previousTalent = currentSave.player.PreviousTalent(spec, talent);
+            var previousTalent = currentSlot.player.PreviousTalent(spec, talent);
             var previousTalentDistance = previousTalent == null ? 0 : talent.row - previousTalent.row;
-            var abilityObj = Ability.abilities.Find(x => x.name == talent.ability);
+            var abilityObj = abilities.Find(x => x.name == talent.ability);
             AddBigButton("Ability" + talent.ability.Replace(" ", "").Replace(":", ""),
                 (h) =>
                 {
-                    var canPick = currentSave.player.CanPickTalent(spec, talent);
-                    if (!currentSave.player.abilities.Contains(talent.ability) && currentSave.player.CanPickTalent(spec, talent))
+                    var canPick = currentSlot.player.CanPickTalent(spec, talent);
+                    if (!currentSlot.player.abilities.Contains(talent.ability) && currentSlot.player.CanPickTalent(spec, talent))
                     {
-                        currentSave.player.unspentTalentPoints--;
+                        currentSlot.player.unspentTalentPoints--;
                         PlaySound("DesktopTalentAcquired", 0.2f);
-                        currentSave.player.abilities.Add(talent.ability);
+                        currentSlot.player.abilities.Add(talent.ability);
                         CDesktop.Rebuild();
                     }
                 },
                 (h) => () =>
                 {
-                    PrintAbilityTooltip(currentSave.player, null, abilities.Find(x => x.name == talent.ability));
+                    PrintAbilityTooltip(currentSlot.player, null, abilities.Find(x => x.name == talent.ability));
                 }
             );
-            if (currentSave.player.abilities.Contains(talent.ability))
+            if (currentSlot.player.abilities.Contains(talent.ability))
                 AddBigButtonOverlay("OtherGlowLearned");
             else
             {
-                var canPick = currentSave.player.CanPickTalent(spec, talent);
-                if (currentSave.player.CanPickTalent(spec, talent)) AddBigButtonOverlay("OtherGlowLearnable");
+                var canPick = currentSlot.player.CanPickTalent(spec, talent);
+                if (currentSlot.player.CanPickTalent(spec, talent)) AddBigButtonOverlay("OtherGlowLearnable");
                 else
                 {
                     SetBigButtonToGrayscale();
@@ -54,7 +55,7 @@ public class Talent
             if (talent.inherited)
             {
                 GameObject body = null;
-                if (currentSave.player.abilities.Contains(previousTalent.ability))
+                if (currentSlot.player.abilities.Contains(previousTalent.ability))
                 {
                     body = AddBigButtonOverlay("OtherTalentArrowFillBody");
                     body.transform.localPosition = new Vector3(0, 26, 0);

@@ -1,8 +1,9 @@
-
 public class GameSettings
 {
     public GameSettings()
     {
+        selectedRealm = "";
+        selectedCharacter = "";
         shadows = new Bool(true);
         pixelPerfectVision = new Bool(false);
 
@@ -12,6 +13,8 @@ public class GameSettings
         newSlotIndicators = new Bool(false);
     }
 
+    public string selectedRealm = "Firemaw", selectedCharacter;
+
     public Bool shadows;
     public Bool pixelPerfectVision;
 
@@ -19,4 +22,6 @@ public class GameSettings
     public Bool bigRarityIndicators;
     public Bool upgradeIndicators;
     public Bool newSlotIndicators;
+
+    public static GameSettings settings;
 }

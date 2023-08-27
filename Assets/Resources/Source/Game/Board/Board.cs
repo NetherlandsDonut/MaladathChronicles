@@ -5,6 +5,7 @@ using System.Collections.Generic;
 
 using static Root;
 using static Sound;
+using static SaveSlot;
 using static BufferBoard;
 using static CursorRemote;
 using static FlyingElement;
@@ -15,7 +16,7 @@ public class Board
     {
         bonusTurnStreak = 0;
         field = new int[x, y];
-        player = currentSave.player;
+        player = currentSlot.player;
         player.Initialise();
         this.enemy = enemy;
         playerTurn = true;
@@ -101,13 +102,31 @@ public class Board
         CloseDesktop("Game");
         if (playerWon)
         {
-            if (currentSave.player.WillGetExperience(enemy.level))
-                currentSave.player.ReceiveExperience(currentSave.player.ExperienceNeeded());
-            if (area != null)
+            if (currentSlot.player.WillGetExperience(enemy.level))
+                currentSlot.player.ReceiveExperience(currentSlot.player.ExperienceNeeded());
+            if (area != null && enemy.kind != "Elite")
             {
-                if (!currentSave.siteProgress.ContainsKey(area.name))
-                    currentSave.siteProgress.Add(area.name, 1);
-                else currentSave.siteProgress[area.name]++;
+                if (!currentSlot.siteProgress.ContainsKey(area.name))
+                    currentSlot.siteProgress.Add(area.name, 1);
+                else currentSlot.siteProgress[area.name]++;
+            }
+            if (enemy.kind == "Common")
+            {
+                if (!currentSlot.commonsKilled.ContainsKey(enemy.name))
+                    currentSlot.commonsKilled.Add(enemy.name, 1);
+                else currentSlot.commonsKilled[enemy.name]++;
+            }
+            else if (enemy.kind == "Rare")
+            {
+                if (!currentSlot.raresKilled.ContainsKey(enemy.name))
+                    currentSlot.raresKilled.Add(enemy.name, 1);
+                else currentSlot.raresKilled[enemy.name]++;
+            }
+            else if (enemy.kind == "Elite")
+            {
+                if (!currentSlot.elitesKilled.ContainsKey(enemy.name))
+                    currentSlot.elitesKilled.Add(enemy.name, 1);
+                else currentSlot.elitesKilled[enemy.name]++;
             }
             if (area != null && !area.instancePart)
             {
@@ -124,7 +143,7 @@ public class Board
         else
         {
             PlaySound("Death");
-            if (currentSave.hardcore) SpawnDesktopBlueprint("GameOver");
+            if (currentSlot.GetRealm().hardcore) SpawnDesktopBlueprint("GameOver");
             else SpawnDesktopBlueprint("ReleaseSpirit");
         }
     }

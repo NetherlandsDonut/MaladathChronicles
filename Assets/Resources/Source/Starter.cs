@@ -13,8 +13,10 @@ using static Font;
 using static Sound;
 using static Cursor;
 using static Talent;
+using static SaveSlot;
 using static Coloring;
 using static Transport;
+using static GameSettings;
 using static CursorRemote;
 using static Serialization;
 using static SiteInstance;
@@ -24,27 +26,31 @@ public class Starter : MonoBehaviour
 {
     void Start()
     {
-        if (!File.Exists("UnityPlayer.dll"))
-            Application.Quit();
         random = new System.Random();
         font = new Font("Tahoma Bold");
         desktops = new();
         settings = new GameSettings();
-        saveGames = new List<SaveGame>();
+        slots = new List<SaveSlot>();
         fallingElements = new List<FallingElement>();
-        Deserialize(ref SiteHostileArea.areas, "areas");
-        Deserialize(ref instances, "instances");
-        Deserialize(ref complexes, "complexes");
-        Deserialize(ref SiteTown.towns, "towns");
-        Deserialize(ref Class.specs, "classes");
-        Deserialize(ref Race.races, "races");
-        Deserialize(ref ItemSet.itemSets, "sets");
-        Deserialize(ref Item.items, "items");
-        Deserialize(ref Ability.abilities, "abilities");
-        Deserialize(ref Buff.buffs, "buffs");
-        SiteHostileArea.areas.ForEach(x => x.Initialise());
-        instances.ForEach(x => x.Initialise());
-        complexes.ForEach(x => x.Initialise());
+        var prefix = "";
+        #if (!UNITY_EDITOR)
+        prefix = "D:\\Games\\Torf\\";
+        #endif
+        Deserialize(ref slots, "characters", false, prefix);
+        if (slots == null) slots = new();
+        Deserialize(ref settings, "settings", false, prefix);
+        if (settings == null) settings = new();
+        Deserialize(ref Realm.realms, "realms", false, prefix);
+        Deserialize(ref SiteHostileArea.areas, "areas", false, prefix);
+        Deserialize(ref instances, "instances", false, prefix);
+        Deserialize(ref complexes, "complexes", false, prefix);
+        Deserialize(ref SiteTown.towns, "towns", false, prefix);
+        Deserialize(ref Class.specs, "classes", false, prefix);
+        Deserialize(ref Race.races, "races", false, prefix);
+        Deserialize(ref ItemSet.itemSets, "sets", false, prefix);
+        Deserialize(ref Item.items, "items", false, prefix);
+        Deserialize(ref Ability.abilities, "abilities", false, prefix);
+        Deserialize(ref Buff.buffs, "buffs", false, prefix);
         var temp = FindObjectsByType<WindowAnchorRemote>(FindObjectsSortMode.None);
         windowRemoteAnchors = temp.Select(x => (x.name, new Vector2(x.transform.position.x, x.transform.position.y))).ToList();
         for (int i = temp.Length - 1; i >= 0; i--) Destroy(temp[i].gameObject);
@@ -57,6 +63,178 @@ public class Starter : MonoBehaviour
             var type = split[0].Substring(4);
             Blueprint.windowBlueprints.Add(new Blueprint("Site: " + name, () => PrintSite(name, type, windowRemoteAnchors[index].Item2)));
         }
+        #if (UNITY_EDITOR)
+        var ambienceList = AssetDatabase.FindAssets("t:AudioClip Ambience", new[] { "Assets/Resources/Ambience/" }).Select(x => AssetDatabase.GUIDToAssetPath(x).Replace("Assets/Resources/Ambience/", "")).ToList();
+        var soundList = AssetDatabase.FindAssets("t:AudioClip", new[] { "Assets/Resources/Sounds/" }).Select(x => AssetDatabase.GUIDToAssetPath(x).Replace("Assets/Resources/Sounds", "")).ToList();
+        var itemIconList = AssetDatabase.FindAssets("t:Texture Item", new[] { "Assets/Resources/Sprites/Building/BigButtons/" }).Select(x => AssetDatabase.GUIDToAssetPath(x).Replace("Assets/Resources/Sprites/Building/BigButtons/", "")).ToList();
+        var abilityIconList = AssetDatabase.FindAssets("t:Texture Ability", new[] { "Assets/Resources/Sprites/Building/BigButtons/" }).Select(x => AssetDatabase.GUIDToAssetPath(x).Replace("Assets/Resources/Sprites/Building/BigButtons/", "")).ToList();
+        var portraitList = AssetDatabase.FindAssets("t:Texture Portrait", new[] { "Assets/Resources/Sprites/Building/BigButtons/" }).Select(x => AssetDatabase.GUIDToAssetPath(x).Replace("Assets/Resources/Sprites/Building/BigButtons/", "")).ToList();
+        ambienceList.RemoveAll(x => !x.StartsWith("Ambience"));
+        itemIconList.RemoveAll(x => !x.StartsWith("Item"));
+        abilityIconList.RemoveAll(x => !x.StartsWith("Ability"));
+        portraitList.RemoveAll(x => !x.StartsWith("Portrait"));
+        Assets.assets = new Assets(ambienceList, soundList, itemIconList, abilityIconList, portraitList);
+        Serialize(Assets.assets, "assets");
+        Serialize(Assets.assets, "assets", false, false, "D:\\Games\\Torf\\");
+        #else
+        Deserialize(ref Assets.assets, "assets");
+        #endif
+        var countHA = SiteHostileArea.areas.Count;
+        var countI = instances.Count;
+        var countR = Race.races.Count;
+        var countA = Ability.abilities.Count;
+        var countIS = ItemSet.itemSets.Count;
+        for (int i = 0; i < complexes.Count; i++)
+        {
+            var complex = complexes[i];
+            if (complex.sites != null)
+                foreach (var site in complex.sites)
+                    if (site != null && site.ContainsKey("SiteType") && site.ContainsKey("SiteName"))
+                        if (site["SiteType"] == "HostileArea")
+                        {
+                            if (!SiteHostileArea.areas.Exists(x => x.name == site["SiteName"]))
+                                SiteHostileArea.areas.Insert(0, new SiteHostileArea()
+                                {
+                                    name = site["SiteName"],
+                                    commonEncounters = new(),
+                                    rareEncounters = new(),
+                                    eliteEncounters = new(),
+                                    type = "HostileArea"
+                                });
+                        }
+                        else if (site["SiteType"] == "Dungeon")
+                        {
+                            if (!instances.Exists(x => x.name == site["SiteName"]))
+                                instances.Insert(0, new SiteInstance()
+                                {
+                                    name = site["SiteName"],
+                                    wings = new(),
+                                    type = "Dungeon"
+                                });
+                        }
+                        else if (site["SiteType"] == "Raid")
+                        {
+                            if (!instances.Exists(x => x.name == site["SiteName"]))
+                                instances.Insert(0, new SiteInstance()
+                                {
+                                    name = site["SiteName"],
+                                    wings = new(),
+                                    type = "Raid"
+                                });
+                        }
+        }
+        for (int i = 0; i < instances.Count; i++)
+        {
+            var instance = instances[i];
+            if (instance.wings != null)
+                foreach (var wing in instance.wings)
+                    if (wing.areas != null)
+                        foreach (var area in wing.areas)
+                            if (area.ContainsKey("AreaName"))
+                                if (!SiteHostileArea.areas.Exists(x => x.name == area["AreaName"]))
+                                    SiteHostileArea.areas.Insert(0, new SiteHostileArea()
+                                    {
+                                        name = area["AreaName"],
+                                        commonEncounters = new(),
+                                        rareEncounters = new(),
+                                        eliteEncounters = new(),
+                                        type = "HostileArea"
+                                    });
+        }
+        for (int i = 0; i < SiteHostileArea.areas.Count; i++)
+        {
+            var area = SiteHostileArea.areas[i];
+            if (area.commonEncounters != null)
+                foreach (var encounter in area.commonEncounters)
+                    if (!Race.races.Exists(x => x.name == encounter.who))
+                        Race.races.Insert(0, new Race()
+                        {
+                            name = encounter.who,
+                            abilities = new(),
+                            kind = "Common",
+                            portrait = "PortraitChicken",
+                            vitality = 1.0,
+                        });
+            if (area.rareEncounters != null)
+                foreach (var encounter in area.rareEncounters)
+                    if (!Race.races.Exists(x => x.name == encounter.who))
+                        Race.races.Insert(0, new Race()
+                        {
+                            name = encounter.who,
+                            abilities = new(),
+                            kind = "Rare",
+                            portrait = "PortraitParrot",
+                            vitality = 2.0,
+                        });
+            if (area.eliteEncounters != null)
+                foreach (var encounter in area.eliteEncounters)
+                    if (!Race.races.Exists(x => x.name == encounter.who))
+                        Race.races.Insert(0, new Race()
+                        {
+                            name = encounter.who,
+                            abilities = new(),
+                            kind = "Elite",
+                            portrait = "PortraitCow",
+                            vitality = 3.0,
+                        });
+        }
+        for (int i = 0; i < Class.specs.Count; i++)
+        {
+            var spec = Class.specs[i];
+            if (spec.abilities != null)
+                foreach (var ability in spec.abilities)
+                    if (!Ability.abilities.Exists(x => x.name == ability.Item1))
+                        Ability.abilities.Insert(0, new Ability()
+                        {
+                            name = ability.Item1,
+                            icon = "Ability" + ability.Item1.Replace(" ", "")
+                        });
+            if (spec.talentTrees != null)
+                foreach (var tree in spec.talentTrees)
+                    foreach (var talent in tree.talents)
+                        if (!Ability.abilities.Exists(x => x.name == talent.ability))
+                            Ability.abilities.Insert(0, new Ability()
+                            {
+                                name = talent.ability,
+                                icon = "Ability" + talent.ability.Replace(" ", "")
+                            });
+        }
+        for (int i = 0; i < Item.items.Count; i++)
+        {
+            var item = Item.items[i];
+            if (item.set != null)
+                if (!ItemSet.itemSets.Exists(x => x.name == item.set))
+                    ItemSet.itemSets.Insert(0, new ItemSet()
+                    {
+                        name = item.set,
+                        setBonuses = new()
+                    });
+            if (item.abilities != null)
+                foreach (var ability in item.abilities)
+                    if (!Ability.abilities.Exists(x => x.name == ability))
+                        Ability.abilities.Insert(0, new Ability()
+                        {
+                            name = ability,
+                            icon = "Ability" + ability
+                        });
+        }
+        for (int i = 0; i < Race.races.Count; i++)
+        {
+            var race = Race.races[i];
+            if (race.abilities != null)
+                foreach (var ability in race.abilities)
+                    if (!Ability.abilities.Exists(x => x.name == ability))
+                        Ability.abilities.Insert(0, new Ability()
+                        {
+                            name = ability,
+                            icon = "Ability" + ability.Replace(" ", "")
+                        });
+            if (race.faction != null && race.background == null || race.background == "")
+                race.background = "AreaElwynnForestNorthshireAbbey";
+        }
+        SiteHostileArea.areas.ForEach(x => x.Initialise());
+        instances.ForEach(x => x.Initialise());
+        complexes.ForEach(x => x.Initialise());
         for (int i = 0; i < instances.Count; i++)
         {
             var index = i;
@@ -229,8 +407,8 @@ public class Starter : MonoBehaviour
                             AddPaddingRegion(() =>
                             {
                                 AddLine("Exploration progress: ", "DarkGray");
-                                var temp = currentSave.siteProgress;
-                                int progress = (int)(currentSave.siteProgress.ContainsKey(area.name) ? (double)currentSave.siteProgress[area.name] / area.eliteEncounters.Sum(x => x.requiredProgress) * 100 : 0);
+                                var temp = currentSlot.siteProgress;
+                                int progress = (int)(currentSlot.siteProgress.ContainsKey(area.name) ? (double)currentSlot.siteProgress[area.name] / area.eliteEncounters.Sum(x => x.requiredProgress) * 100 : 0);
                                 AddText((progress > 100 ? 100 : progress) + "%", ColorProgress(progress));
                             });
                         AddPaddingRegion(() =>
@@ -290,165 +468,6 @@ public class Starter : MonoBehaviour
                     var spec = i; var row = j; var col = k;
                     Blueprint.windowBlueprints.Add(new Blueprint("Talent" + spec + row + col, () => PrintTalent(spec, row, col)));
                 }
-        #if (UNITY_EDITOR)
-        var ambienceList = AssetDatabase.FindAssets("t:AudioClip Ambience", new[] { "Assets/Resources/Ambience/" }).Select(x => AssetDatabase.GUIDToAssetPath(x).Replace("Assets/Resources/Ambience/", "")).ToList();
-        var soundList = AssetDatabase.FindAssets("t:AudioClip", new[] { "Assets/Resources/Sounds/" }).Select(x => AssetDatabase.GUIDToAssetPath(x).Replace("Assets/Resources/Sounds", "")).ToList();
-        var itemIconList = AssetDatabase.FindAssets("t:Texture Item", new[] { "Assets/Resources/Sprites/Building/BigButtons/" }).Select(x => AssetDatabase.GUIDToAssetPath(x).Replace("Assets/Resources/Sprites/Building/BigButtons/", "")).ToList();
-        var abilityIconList = AssetDatabase.FindAssets("t:Texture Ability", new[] { "Assets/Resources/Sprites/Building/BigButtons/" }).Select(x => AssetDatabase.GUIDToAssetPath(x).Replace("Assets/Resources/Sprites/Building/BigButtons/", "")).ToList();
-        var portraitList = AssetDatabase.FindAssets("t:Texture Portrait", new[] { "Assets/Resources/Sprites/Building/BigButtons/" }).Select(x => AssetDatabase.GUIDToAssetPath(x).Replace("Assets/Resources/Sprites/Building/BigButtons/", "")).ToList();
-        ambienceList.RemoveAll(x => !x.StartsWith("Ambience"));
-        itemIconList.RemoveAll(x => !x.StartsWith("Item"));
-        abilityIconList.RemoveAll(x => !x.StartsWith("Ability"));
-        portraitList.RemoveAll(x => !x.StartsWith("Portrait"));
-        Assets.assets = new Assets(ambienceList, soundList, itemIconList, abilityIconList, portraitList);
-        Serialize(Assets.assets, "assets");
-        Serialize(Assets.assets, "assets", false, false, "D:\\Games\\Torf\\");
-        #else
-        Deserialize(ref Assets.assets, "assets");
-        #endif
-        var countHA = SiteHostileArea.areas.Count;
-        var countI = instances.Count;
-        var countR = Race.races.Count;
-        var countA = Ability.abilities.Count;
-        var countIS = ItemSet.itemSets.Count;
-        for (int i = 0; i < complexes.Count; i++)
-        {
-            var complex = complexes[i];
-            if (complex.sites != null)
-                foreach (var site in complex.sites)
-                    if (site != null && site.ContainsKey("SiteType") && site.ContainsKey("SiteName"))
-                        if (site["SiteType"] == "HostileArea")
-                        {
-                            if (!SiteHostileArea.areas.Exists(x => x.name == site["SiteName"]))
-                                SiteHostileArea.areas.Insert(0, new SiteHostileArea()
-                                {
-                                    name = site["SiteName"],
-                                    commonEncounters = new(),
-                                    rareEncounters = new(),
-                                    eliteEncounters = new(),
-                                    type = "HostileArea",
-                                    complexPart = true
-                                });
-                        }
-                        else if (site["SiteType"] == "Dungeon")
-                        {
-                            if (!instances.Exists(x => x.name == site["SiteName"]))
-                                instances.Insert(0, new SiteInstance()
-                                {
-                                    name = site["SiteName"],
-                                    wings = new(),
-                                    type = "Dungeon",
-                                    complexPart = true
-                                });
-                        }
-                        else if (site["SiteType"] == "Raid")
-                        {
-                            if (!instances.Exists(x => x.name == site["SiteName"]))
-                                instances.Insert(0, new SiteInstance()
-                                {
-                                    name = site["SiteName"],
-                                    wings = new(),
-                                    type = "Raid",
-                                    complexPart = true
-                                });
-                        }
-        }
-        for (int i = 0; i < instances.Count; i++)
-        {
-            var instance = instances[i];
-            if (instance.wings != null)
-                foreach (var wing in instance.wings)
-                    if (wing.areas != null)
-                        foreach (var area in wing.areas)
-                            if (!area.ContainsKey("AreaName"))
-                                if (!SiteHostileArea.areas.Exists(x => x.name == area["AreaName"]))
-                                    SiteHostileArea.areas.Insert(0, new SiteHostileArea()
-                                    {
-                                        name = area["AreaName"],
-                                        commonEncounters = new(),
-                                        rareEncounters = new(),
-                                        eliteEncounters = new(),
-                                        type = "HostileArea",
-                                        instancePart = true
-                                    });
-        }
-        for (int i = 0; i < SiteHostileArea.areas.Count; i++)
-        {
-            var area = SiteHostileArea.areas[i];
-            if (area.commonEncounters != null)
-                foreach (var encounter in area.commonEncounters)
-                    if (!Race.races.Exists(x => x.name == encounter.who))
-                        Race.races.Insert(0, new Race()
-                        {
-                            name = encounter.who,
-                            abilities = new(),
-                            kind = "Common",
-                            portrait = "PortraitChicken",
-                            vitality = 1.0,
-                        });
-            if (area.rareEncounters != null)
-                foreach (var encounter in area.rareEncounters)
-                    if (!Race.races.Exists(x => x.name == encounter.who))
-                        Race.races.Insert(0, new Race()
-                        {
-                            name = encounter.who,
-                            abilities = new(),
-                            kind = "Rare",
-                            portrait = "PortraitParrot",
-                            vitality = 2.0,
-                        });
-            if (area.eliteEncounters != null)
-                foreach (var encounter in area.eliteEncounters)
-                    if (!Race.races.Exists(x => x.name == encounter.who))
-                        Race.races.Insert(0, new Race()
-                        {
-                            name = encounter.who,
-                            abilities = new(),
-                            kind = "Elite",
-                            portrait = "PortraitCow",
-                            vitality = 3.0,
-                        });
-        }
-        for (int i = 0; i < Class.specs.Count; i++)
-        {
-            var spec = Class.specs[i];
-            if (spec.abilities != null)
-                foreach (var ability in spec.abilities)
-                    if (!Ability.abilities.Exists(x => x.name == ability.Item1))
-                        Ability.abilities.Insert(0, new Ability()
-                        {
-                            name = ability.Item1,
-                            icon = "AbilityAbolishMagic"
-                        });
-            if (spec.talentTrees != null)
-                foreach (var tree in spec.talentTrees)
-                    foreach (var talent in tree.talents)
-                        if (!Ability.abilities.Exists(x => x.name == talent.ability))
-                            Ability.abilities.Insert(0, new Ability()
-                            {
-                                name = talent.ability,
-                                icon = Assets.assets.abilityIcons.Contains("Ability" + talent.ability.Replace(" ", "") + ".png") ? "Ability" + talent.ability.Replace(" ", "") : "AbilityAbolishMagic"
-                            });
-        }
-        for (int i = 0; i < Item.items.Count; i++)
-        {
-            var item = Item.items[i];
-            if (item.set != null)
-                if (!ItemSet.itemSets.Exists(x => x.name == item.set))
-                    ItemSet.itemSets.Insert(0, new ItemSet()
-                    {
-                        name = item.set,
-                        setBonuses = new()
-                    });
-            if (item.abilities != null)
-                foreach (var ability in item.abilities)
-                    if (!Ability.abilities.Exists(x => x.name == ability))
-                        Ability.abilities.Insert(0, new Ability()
-                        {
-                            name = ability,
-                            icon = Assets.assets.abilityIcons.Contains("Ability" + ability + ".png") ? "Ability" + ability : "AbilityAbolishMagic"
-                        });
-        }
         if (countHA != SiteHostileArea.areas.Count) Debug.Log("Added " + (SiteHostileArea.areas.Count - countHA) + " lacking areas.");
         if (countI != instances.Count) Debug.Log("Added " + (instances.Count - countI) + " lacking instances.");
         if (countR != Race.races.Count) Debug.Log("Added " + (Race.races.Count - countR) + " lacking races.");
@@ -457,6 +476,17 @@ public class Starter : MonoBehaviour
         cursor = FindObjectOfType<Cursor>();
         cursorEnemy = FindObjectOfType<CursorRemote>();
         ambience = FindObjectsOfType<AudioSource>().First(x => x.name == "Ambience");
+        if (slots.Count > 0)
+        {
+            if (settings.selectedCharacter == "")
+                if (settings.selectedRealm != "")
+                    settings.selectedCharacter = slots.Find(x => x.realm == settings.selectedRealm).player.name;
+        }
+        else
+        {
+            settings.selectedRealm = "";
+            settings.selectedCharacter = "";
+        }
         SpawnDesktopBlueprint("TitleScreen");
         Destroy(gameObject);
     }

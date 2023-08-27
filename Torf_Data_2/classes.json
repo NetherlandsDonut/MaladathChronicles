@@ -41,21 +41,21 @@
       "Orc": [
         "Thug Shirt",
         "Thug Pants",
-        "Thug Shoes",
+        "Thug Boots",
         "Worn Dagger",
         "Worn Dagger"
       ],
       "Troll": [
         "Thug Shirt",
         "Thug Pants",
-        "Thug Shoes",
+        "Thug Boots",
         "Worn Dagger",
         "Worn Dagger"
       ],
       "Forsaken": [
         "Thug Shirt",
         "Thug Pants",
-        "Thug Shoes",
+        "Thug Boots",
         "Worn Dagger",
         "Worn Dagger"
       ]
@@ -72,7 +72,8 @@
       "Stamina per Level": 3.0,
       "Strength per Level": 2.0,
       "Agility per Level": 4.0,
-      "Intellect per Level": 0.0
+      "Intellect per Level": 0.0,
+      "Spirit per Level": 0.0
     },
     "abilities": [
       {
@@ -180,7 +181,8 @@
       "Stamina per Level": 3.0,
       "Strength per Level": 2.0,
       "Agility per Level": 4.0,
-      "Intellect per Level": 0.0
+      "Intellect per Level": 0.0,
+      "Spirit per Level": 0.0
     },
     "abilities": [
       {
@@ -283,7 +285,8 @@
       "Stamina per Level": 3.0,
       "Strength per Level": 2.0,
       "Agility per Level": 2.0,
-      "Intellect per Level": 2.0
+      "Intellect per Level": 2.0,
+      "Spirit per Level": 0.0
     },
     "abilities": [
       {
@@ -762,7 +765,8 @@
       "Stamina per Level": 3.0,
       "Strength per Level": 4.0,
       "Agility per Level": 2.0,
-      "Intellect per Level": 0.0
+      "Intellect per Level": 0.0,
+      "Spirit per Level": 0.0
     },
     "abilities": [
       {
@@ -1051,7 +1055,8 @@
       "Stamina per Level": 3.0,
       "Strength per Level": 3.0,
       "Agility per Level": 1.0,
-      "Intellect per Level": 2.0
+      "Intellect per Level": 2.0,
+      "Spirit per Level": 0.0
     },
     "abilities": [
       {
@@ -1145,7 +1150,8 @@
       "Stamina per Level": 3.0,
       "Strength per Level": 2.0,
       "Agility per Level": 2.0,
-      "Intellect per Level": 2.0
+      "Intellect per Level": 2.0,
+      "Spirit per Level": 0.0
     },
     "abilities": [
       {
@@ -1187,16 +1193,372 @@
     ],
     "talentTrees": [
       {
-        "name": "Feral",
-        "talents": []
+        "name": "Balance",
+        "talents": [
+          {
+            "col": 1,
+            "ability": "Wrath",
+            "defaultTaken": true
+          },
+          {
+            "row": 1,
+            "ability": "Moonfire"
+          },
+          {
+            "row": 1,
+            "col": 1,
+            "ability": "Starweaver"
+          },
+          {
+            "row": 2,
+            "ability": "Sunfire"
+          },
+          {
+            "row": 2,
+            "col": 1,
+            "ability": "Light of the Sun"
+          },
+          {
+            "row": 2,
+            "col": 2,
+            "ability": "Eclipse"
+          },
+          {
+            "row": 3,
+            "ability": "Shooting Stars"
+          },
+          {
+            "row": 3,
+            "col": 1,
+            "ability": "Star Surge"
+          },
+          {
+            "row": 3,
+            "col": 2,
+            "ability": "Lunar Shrapnel"
+          },
+          {
+            "row": 4,
+            "ability": "Faerie Fire"
+          },
+          {
+            "row": 4,
+            "col": 2,
+            "ability": "Cosmic Rapidity"
+          },
+          {
+            "row": 5,
+            "ability": "Cyclone"
+          },
+          {
+            "row": 5,
+            "col": 1,
+            "ability": "Astral Communion"
+          },
+          {
+            "row": 5,
+            "col": 2,
+            "ability": "Stellar Innervation"
+          },
+          {
+            "row": 6,
+            "col": 1,
+            "ability": "Solar Beam"
+          },
+          {
+            "row": 6,
+            "col": 2,
+            "ability": "Moonkin Form"
+          },
+          {
+            "row": 7,
+            "ability": "Starfall"
+          },
+          {
+            "row": 7,
+            "col": 1,
+            "ability": "Solstice"
+          },
+          {
+            "row": 7,
+            "col": 2,
+            "ability": "Umbral Intensity"
+          },
+          {
+            "row": 8,
+            "ability": "Orbit Breaker"
+          },
+          {
+            "row": 8,
+            "col": 2,
+            "ability": "Aetherial Kindling"
+          },
+          {
+            "row": 9,
+            "ability": "Twin Moons"
+          },
+          {
+            "row": 9,
+            "col": 1,
+            "ability": "Astral Invocation"
+          },
+          {
+            "row": 10,
+            "ability": "Sundered Firmament"
+          },
+          {
+            "row": 10,
+            "col": 2,
+            "ability": "Convoke the Spirits"
+          }
+        ]
       },
       {
-        "name": "Balance",
-        "talents": []
+        "name": "Feral",
+        "talents": [
+          {
+            "col": 1,
+            "ability": "Rake",
+            "defaultTaken": true
+          },
+          {
+            "row": 1,
+            "ability": "Maim"
+          },
+          {
+            "row": 1,
+            "col": 1,
+            "ability": "Verdant Heart"
+          },
+          {
+            "row": 1,
+            "col": 2,
+            "ability": "Barkskin"
+          },
+          {
+            "row": 2,
+            "ability": "Infected Wounds"
+          },
+          {
+            "row": 2,
+            "col": 1,
+            "ability": "Thrash"
+          },
+          {
+            "row": 2,
+            "col": 2,
+            "ability": "Feline Swiftness"
+          },
+          {
+            "row": 3,
+            "ability": "Thick Hide"
+          },
+          {
+            "row": 3,
+            "col": 2,
+            "ability": "Ferocious Bite"
+          },
+          {
+            "row": 4,
+            "ability": "Swipe"
+          },
+          {
+            "row": 4,
+            "col": 1,
+            "ability": "Growl"
+          },
+          {
+            "row": 4,
+            "col": 2,
+            "ability": "Vein Ripper"
+          },
+          {
+            "row": 5,
+            "ability": "Dash"
+          },
+          {
+            "row": 5,
+            "col": 1,
+            "ability": "Honed Instincts"
+          },
+          {
+            "row": 5,
+            "col": 2,
+            "ability": "Dire Fixation"
+          },
+          {
+            "row": 6,
+            "col": 1,
+            "ability": "Frantic Momentum"
+          },
+          {
+            "row": 6,
+            "col": 2,
+            "ability": "Berserk"
+          },
+          {
+            "row": 7,
+            "ability": "Tireless Pursuit"
+          },
+          {
+            "row": 7,
+            "col": 2,
+            "ability": "Incapacitating Roar"
+          },
+          {
+            "row": 8,
+            "col": 1,
+            "ability": "Predator"
+          },
+          {
+            "row": 8,
+            "col": 2,
+            "ability": "Protector of the Pack"
+          },
+          {
+            "row": 9,
+            "ability": "Primal Fury"
+          },
+          {
+            "row": 9,
+            "col": 2,
+            "ability": "Taste for Blood"
+          },
+          {
+            "row": 10,
+            "ability": "Killer Instinct"
+          },
+          {
+            "row": 10,
+            "col": 1,
+            "ability": "Apex Predator",
+            "inherited": true
+          }
+        ]
       },
       {
         "name": "Restoration",
-        "talents": []
+        "talents": [
+          {
+            "col": 1,
+            "ability": "Regrowth",
+            "defaultTaken": true
+          },
+          {
+            "row": 1,
+            "ability": "Natural Recovery"
+          },
+          {
+            "row": 1,
+            "col": 1,
+            "ability": "Lifebloom"
+          },
+          {
+            "row": 1,
+            "col": 2,
+            "ability": "Nature's Grace"
+          },
+          {
+            "row": 2,
+            "col": 1,
+            "ability": "Harmonious Blooming",
+            "inherited": true
+          },
+          {
+            "row": 2,
+            "col": 2,
+            "ability": "Wild Growth"
+          },
+          {
+            "row": 3,
+            "ability": "Rejuvenation"
+          },
+          {
+            "row": 3,
+            "col": 1,
+            "ability": "Cultivation"
+          },
+          {
+            "row": 3,
+            "col": 2,
+            "ability": "Nature's Balance",
+            "inherited": true
+          },
+          {
+            "row": 4,
+            "ability": "Luxuriant Soil"
+          },
+          {
+            "row": 4,
+            "col": 2,
+            "ability": "Flourish"
+          },
+          {
+            "row": 5,
+            "ability": "Renewal",
+            "inherited": true
+          },
+          {
+            "row": 5,
+            "col": 2,
+            "ability": "Innervate"
+          },
+          {
+            "row": 6,
+            "ability": "Waking Dream"
+          },
+          {
+            "row": 6,
+            "col": 1,
+            "ability": "Hibernate"
+          },
+          {
+            "row": 6,
+            "col": 2,
+            "ability": "Nurturing Instinct"
+          },
+          {
+            "row": 7,
+            "col": 1,
+            "ability": "Efflorescence"
+          },
+          {
+            "row": 7,
+            "col": 2,
+            "ability": "Ysera's Gift",
+            "inherited": true
+          },
+          {
+            "row": 8,
+            "col": 1,
+            "ability": "Tranquility"
+          },
+          {
+            "row": 9,
+            "ability": "Tranquil Mind",
+            "inherited": true
+          },
+          {
+            "row": 9,
+            "col": 1,
+            "ability": "Verdancy"
+          },
+          {
+            "row": 9,
+            "col": 2,
+            "ability": "Unstoppable Growth"
+          },
+          {
+            "row": 10,
+            "col": 1,
+            "ability": "Embrace of the Dream"
+          },
+          {
+            "row": 10,
+            "col": 2,
+            "ability": "Power of the Archdruid"
+          }
+        ]
       }
     ]
   },
@@ -1247,7 +1609,8 @@
       "Stamina per Level": 3.0,
       "Strength per Level": 1.0,
       "Agility per Level": 1.0,
-      "Intellect per Level": 4.0
+      "Intellect per Level": 4.0,
+      "Spirit per Level": 0.0
     },
     "abilities": [
       {
@@ -1510,7 +1873,8 @@
       "Stamina per Level": 3.0,
       "Strength per Level": 1.0,
       "Agility per Level": 1.0,
-      "Intellect per Level": 4.0
+      "Intellect per Level": 4.0,
+      "Spirit per Level": 0.0
     },
     "abilities": [
       {
@@ -1762,7 +2126,8 @@
       "Stamina per Level": 3.0,
       "Strength per Level": 1.0,
       "Agility per Level": 1.0,
-      "Intellect per Level": 4.0
+      "Intellect per Level": 4.0,
+      "Spirit per Level": 0.0
     },
     "abilities": [
       {
@@ -2211,7 +2576,8 @@
       "Stamina per Level": 3.0,
       "Strength per Level": 3.0,
       "Agility per Level": 3.0,
-      "Intellect per Level": 0.0
+      "Intellect per Level": 0.0,
+      "Spirit per Level": 0.0
     },
     "abilities": [
       {

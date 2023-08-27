@@ -1,13 +1,13 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-using static Root;
+using static SaveSlot;
 
 public static class Coloring
 {
     public static string ColorItemRequiredLevel(int level)
     {
-        if (currentSave != null && currentSave.player != null && level > currentSave.player.level) return "Red";
+        if (currentSlot != null && currentSlot.player != null && level > currentSlot.player.level) return "Red";
         else return "Gray";
     }
 
@@ -22,10 +22,10 @@ public static class Coloring
 
     public static string ColorEntityLevel(int level)
     {
-        if (level - 4 > currentSave.player.level) return "DangerousRed";
-        else if (level - 2 > currentSave.player.level) return "Orange";
-        else if (level + 2 < currentSave.player.level && currentSave.player.WillGetExperience(level)) return "Green";
-        else if (!currentSave.player.WillGetExperience(level)) return "DarkGray";
+        if (level - 4 > currentSlot.player.level) return "DangerousRed";
+        else if (level - 2 > currentSlot.player.level) return "Orange";
+        else if (level + 2 < currentSlot.player.level && currentSlot.player.WillGetExperience(level)) return "Green";
+        else if (!currentSlot.player.WillGetExperience(level)) return "DarkGray";
         else return "Yellow";
     }
 

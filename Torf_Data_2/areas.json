@@ -1,5 +1,73 @@
 [
   {
+    "name": "Ass",
+    "type": "HostileArea"
+  },
+  {
+    "name": "Spire Throne",
+    "type": "HostileArea"
+  },
+  {
+    "name": "The Furnace",
+    "type": "HostileArea"
+  },
+  {
+    "name": "Blackrock Stadium",
+    "type": "HostileArea"
+  },
+  {
+    "name": "Upper Hall of Blackhand",
+    "type": "HostileArea"
+  },
+  {
+    "name": "The Rookery",
+    "type": "HostileArea"
+  },
+  {
+    "name": "Hall of Binding",
+    "type": "HostileArea"
+  },
+  {
+    "name": "Dragonspire Hall",
+    "type": "HostileArea"
+  },
+  {
+    "name": "Chamber of Battle",
+    "type": "HostileArea"
+  },
+  {
+    "name": "Halycon's Lair",
+    "type": "HostileArea"
+  },
+  {
+    "name": "The Storehouse",
+    "type": "HostileArea"
+  },
+  {
+    "name": "Skitterweb Tunnels",
+    "type": "HostileArea"
+  },
+  {
+    "name": "Tazz'Alor",
+    "type": "HostileArea"
+  },
+  {
+    "name": "Mok'Doom",
+    "type": "HostileArea"
+  },
+  {
+    "name": "Hordemar City",
+    "type": "HostileArea"
+  },
+  {
+    "name": "Lower Hall of Blackhand",
+    "type": "HostileArea"
+  },
+  {
+    "name": "Hall of The Cursed",
+    "type": "HostileArea"
+  },
+  {
     "name": "Crushridge Hold",
     "zone": "Alterac Mountains",
     "type": "HostileArea",
@@ -255,7 +323,6 @@
     "name": "Bough Shadow",
     "zone": "Ashenvale",
     "type": "EmeraldBough",
-    "commonEncounters": [],
     "eliteEncounters": [
       {
         "who": "Taerar",
@@ -566,8 +633,7 @@
   {
     "name": "Forlorn Ridge",
     "zone": "Azshara",
-    "type": "HostileArea",
-    "commonEncounters": []
+    "type": "HostileArea"
   },
   {
     "name": "Haldarr Encampment",
@@ -802,7 +868,9 @@
         "who": "Stone Golem",
         "levelMin": 39,
         "levelMax": 40
-      },
+      }
+    ],
+    "eliteEncounters": [
       {
         "who": "Ambassador Infernus",
         "levelMin": 42,
@@ -824,7 +892,9 @@
         "who": "Ridge Stalker Patriarch",
         "levelMin": 40,
         "levelMax": 41
-      },
+      }
+    ],
+    "rareEncounters": [
       {
         "who": "Anathemus",
         "levelMin": 45,
@@ -934,11 +1004,6 @@
         "who": "Stone Golem",
         "levelMin": 39,
         "levelMax": 40
-      },
-      {
-        "who": "Ambassador Infernus",
-        "levelMin": 42,
-        "levelMax": 42
       }
     ]
   },
@@ -1032,11 +1097,6 @@
         "who": "Shadowforge Ruffian",
         "levelMin": 36,
         "levelMax": 37
-      },
-      {
-        "who": "Ambassador Infernus",
-        "levelMin": 42,
-        "levelMax": 42
       }
     ]
   },
@@ -1061,7 +1121,6 @@
     "name": "Aku'mai's Lair",
     "zone": "Blackfathom Deeps",
     "type": "HostileArea",
-    "commonEncounters": [],
     "eliteEncounters": [
       {
         "who": "Aku'mai",
@@ -2581,7 +2640,9 @@
         "who": "Wendigo",
         "levelMin": 6,
         "levelMax": 7
-      },
+      }
+    ],
+    "eliteEncounters": [
       {
         "who": "Old Icebeard",
         "levelMin": 11,
@@ -2708,7 +2769,9 @@
         "who": "Winter Wolf",
         "levelMin": 7,
         "levelMax": 8
-      },
+      }
+    ],
+    "rareEncounters": [
       {
         "who": "Timber",
         "levelMin": 10,
@@ -2719,8 +2782,7 @@
   {
     "name": "Misty Pine Refuge",
     "zone": "Dun Morogh",
-    "type": "HostileArea",
-    "commonEncounters": []
+    "type": "HostileArea"
   },
   {
     "name": "Shimmer Ridge",
@@ -2902,7 +2964,9 @@
         "who": "Kolkar Outrunner",
         "levelMin": 7,
         "levelMax": 8
-      },
+      }
+    ],
+    "rareEncounters": [
       {
         "who": "Warlord Kolkanis",
         "levelMin": 9,
@@ -3012,7 +3076,9 @@
         "who": "Lightning Hide",
         "levelMin": 10,
         "levelMax": 11
-      },
+      }
+    ],
+    "eliteEncounters": [
       {
         "who": "Fizzle Darkstorm",
         "levelMin": 12,
@@ -3195,7 +3261,6 @@
     "name": "Twilight Grove",
     "zone": "Duskwood",
     "type": "EmeraldBough",
-    "commonEncounters": [],
     "eliteEncounters": [
       {
         "who": "Emeriss",
@@ -3521,8 +3586,7 @@
   {
     "name": "Fungal Vale",
     "zone": "Eastern Plaguelands",
-    "type": "HostileArea",
-    "commonEncounters": []
+    "type": "HostileArea"
   },
   {
     "name": "Lake Mereldar",
@@ -3644,8 +3708,7 @@
   {
     "name": "Quel'Lithien Lodge",
     "zone": "Eastern Plaguelands",
-    "type": "HostileArea",
-    "commonEncounters": []
+    "type": "HostileArea"
   },
   {
     "name": "Quel'Lithien Lodge",
@@ -3745,8 +3808,7 @@
   {
     "name": "The Noxious Glade",
     "zone": "Eastern Plaguelands",
-    "type": "HostileArea",
-    "commonEncounters": []
+    "type": "HostileArea"
   },
   {
     "name": "Thondroril River",
@@ -3768,8 +3830,7 @@
   {
     "name": "Zul'Mashar",
     "zone": "Eastern Plaguelands",
-    "type": "HostileArea",
-    "commonEncounters": []
+    "type": "HostileArea"
   },
   {
     "name": "Brackwell Pumpkin Patch",
@@ -4099,7 +4160,6 @@
     "name": "Dream Bough",
     "zone": "Feralas",
     "type": "EmeraldBough",
-    "commonEncounters": [],
     "eliteEncounters": [
       {
         "who": "Lethon",
@@ -4110,8 +4170,7 @@
   {
     "name": "Feral Scar Vale",
     "zone": "Feralas",
-    "type": "HostileArea",
-    "commonEncounters": []
+    "type": "HostileArea"
   },
   {
     "name": "Frayfeather Highlands",
@@ -4132,7 +4191,9 @@
         "who": "Frayfeather Patriarch",
         "levelMin": 46,
         "levelMax": 47
-      },
+      }
+    ],
+    "rareEncounters": [
       {
         "who": "Antillus the Soarer",
         "levelMin": 48,
@@ -4220,7 +4281,9 @@
         "who": "Chimaerok Devourer",
         "levelMin": 60,
         "levelMax": 61
-      },
+      }
+    ],
+    "eliteEncounters": [
       {
         "who": "Lord Lakmaeran",
         "levelMin": 62,
@@ -4231,8 +4294,7 @@
   {
     "name": "Lariss Pavillion",
     "zone": "Feralas",
-    "type": "HostileArea",
-    "commonEncounters": []
+    "type": "HostileArea"
   },
   {
     "name": "Lower Wilds",
@@ -4385,7 +4447,9 @@
         "who": "Hatecrest Myrmidon",
         "levelMin": 43,
         "levelMax": 44
-      },
+      }
+    ],
+    "eliteEncounters": [
       {
         "who": "Lord Shalzaru",
         "levelMin": 47,
@@ -4457,14 +4521,12 @@
   {
     "name": "Verdantis River",
     "zone": "Feralas",
-    "type": "HostileArea",
-    "commonEncounters": []
+    "type": "HostileArea"
   },
   {
     "name": "Wildwind Lake",
     "zone": "Feralas",
-    "type": "HostileArea",
-    "commonEncounters": []
+    "type": "HostileArea"
   },
   {
     "name": "Woodpaw Hills",
@@ -4584,7 +4646,6 @@
     "name": "Tinkers' Court",
     "zone": "Gnomeregan",
     "type": "HostileArea",
-    "commonEncounters": [],
     "eliteEncounters": [
       {
         "who": "Mekgineer Thermaplugg",
@@ -4877,7 +4938,6 @@
     "name": "Seradane",
     "zone": "Hinterlands",
     "type": "EmeraldBough",
-    "commonEncounters": [],
     "eliteEncounters": [
       {
         "who": "Ysondre",
@@ -5023,11 +5083,6 @@
     "type": "HostileArea",
     "commonEncounters": [
       {
-        "who": "Rotgrip",
-        "levelMin": 50,
-        "levelMax": 50
-      },
-      {
         "who": "Primordial Behemoth",
         "levelMin": 48,
         "levelMax": 49
@@ -5036,6 +5091,13 @@
         "who": "Theradrim Guardian",
         "levelMin": 48,
         "levelMax": 49
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Rotgrip",
+        "levelMin": 50,
+        "levelMax": 50
       }
     ],
     "eliteEncounters": [
@@ -5081,11 +5143,6 @@
     "type": "HostileArea",
     "commonEncounters": [
       {
-        "who": "Meshlock the Harvester",
-        "levelMin": 48,
-        "levelMax": 48
-      },
-      {
         "who": "Barbed Lasher",
         "levelMin": 47,
         "levelMax": 48
@@ -5098,6 +5155,13 @@
       {
         "who": "Cavern Lurker",
         "levelMin": 47,
+        "levelMax": 48
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Meshlock the Harvester",
+        "levelMin": 48,
         "levelMax": 48
       }
     ],
@@ -5248,7 +5312,7 @@
         "requiredProgress": 4
       },
       {
-        "who": "Golemagg The Incinerator",
+        "who": "Golemagg the Incinerator",
         "levelMin": 60,
         "requiredProgress": 4
       },
@@ -5723,9 +5787,7 @@
   {
     "name": "Kraul Drain",
     "zone": "Razorfen Kraul",
-    "type": "HostileArea",
-    "commonEncounters": [],
-    "eliteEncounters": []
+    "type": "HostileArea"
   },
   {
     "name": "Alther's Mill",
@@ -6187,8 +6249,7 @@
         "levelMin": 39,
         "levelMax": 40
       }
-    ],
-    "eliteEncounters": []
+    ]
   },
   {
     "name": "Crusader's Armory",
@@ -6272,8 +6333,7 @@
         "levelMin": 32,
         "levelMax": 32
       }
-    ],
-    "eliteEncounters": []
+    ]
   },
   {
     "name": "Hall of Champions",
@@ -7634,6 +7694,13 @@
         "levelMin": 35,
         "levelMax": 37
       }
+    ],
+    "eliteEncounters": [
+      {
+        "who": "King Mukla",
+        "levelMin": 50,
+        "levelMax": 51
+      }
     ]
   },
   {
@@ -8499,7 +8566,6 @@
     "name": "Abandoned Tunnel",
     "zone": "Temple of Ahn'Qiraj",
     "type": "HostileArea",
-    "commonEncounters": [],
     "eliteEncounters": [
       {
         "who": "Viscidus",
@@ -8885,7 +8951,9 @@
         "who": "Bael'dun Foreman",
         "levelMin": 21,
         "levelMax": 22
-      },
+      }
+    ],
+    "rareEncounters": [
       {
         "who": "Digger Flameforge",
         "levelMin": 24,
@@ -8912,7 +8980,9 @@
         "who": "Bael'dun Officer",
         "levelMin": 26,
         "levelMax": 26
-      },
+      }
+    ],
+    "eliteEncounters": [
       {
         "who": "General Twinbraid",
         "levelMin": 30,
@@ -8966,7 +9036,9 @@
         "who": "Venture Co. Overseer",
         "levelMin": 17,
         "levelMax": 18
-      },
+      }
+    ],
+    "eliteEncounters": [
       {
         "who": "Boss Copperplug",
         "levelMin": 19,
@@ -9033,6 +9105,13 @@
         "levelMin": 21,
         "levelMax": 22
       },
+      {
+        "who": "Silithid Larva",
+        "levelMin": 20,
+        "levelMax": 21
+      }
+    ],
+    "rareEncounters": [
       {
         "who": "Silithid Harvester",
         "levelMin": 24,
@@ -9115,7 +9194,9 @@
         "who": "Oasis Snapjaw",
         "levelMin": 15,
         "levelMax": 16
-      },
+      }
+    ],
+    "rareEncounters": [
       {
         "who": "Gesharahan",
         "levelMin": 20,
@@ -9137,12 +9218,16 @@
         "who": "Theramore Preserver",
         "levelMin": 16,
         "levelMax": 17
-      },
+      }
+    ],
+    "rareEncounters": [
       {
         "who": "Cannoneer Smythe",
         "levelMin": 19,
         "levelMax": 19
-      },
+      }
+    ],
+    "eliteEncounters": [
       {
         "who": "Captain Fairmount",
         "levelMin": 20,
@@ -9210,7 +9295,9 @@
         "who": "Witchwing Windcaller",
         "levelMin": 17,
         "levelMax": 18
-      },
+      }
+    ],
+    "eliteEncounters": [
       {
         "who": "Serena Bloodfeather",
         "levelMin": 20,
@@ -9232,7 +9319,9 @@
         "who": "Kolkar Stormer",
         "levelMin": 14,
         "levelMax": 15
-      },
+      }
+    ],
+    "rareEncounters": [
       {
         "who": "Barak Kodobane",
         "levelMin": 16,
@@ -9271,16 +9360,20 @@
         "who": "Venture Co. Mercenary",
         "levelMin": 15,
         "levelMax": 16
-      },
-      {
-        "who": "Supervisor Lugwizzle",
-        "levelMin": 18,
-        "levelMax": 18
-      },
+      }
+    ],
+    "rareEncounters": [
       {
         "who": "Engineer Whirleygig",
         "levelMin": 19,
         "levelMax": 19
+      }
+    ],
+    "eliteEncounters": [
+      {
+        "who": "Supervisor Lugwizzle",
+        "levelMin": 18,
+        "levelMax": 18
       }
     ]
   },
@@ -9330,7 +9423,9 @@
         "who": "Razormane Mystic",
         "levelMin": 13,
         "levelMax": 14
-      },
+      }
+    ],
+    "rareEncounters": [
       {
         "who": "Kreenig Snarlsnout",
         "levelMin": 15,
@@ -9343,11 +9438,6 @@
     "zone": "The Deadmines",
     "type": "HostileArea",
     "commonEncounters": [
-      {
-        "who": "Miner Johnson",
-        "levelMin": 19,
-        "levelMax": 19
-      },
       {
         "who": "Defias Evoker",
         "levelMin": 17,
@@ -9367,6 +9457,13 @@
         "who": "Defias Miner",
         "levelMin": 17,
         "levelMax": 18
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Miner Johnson",
+        "levelMin": 19,
+        "levelMax": 19
       }
     ],
     "eliteEncounters": [
@@ -9988,7 +10085,6 @@
     "name": "Map Chamber",
     "zone": "Uldaman",
     "type": "HostileArea",
-    "commonEncounters": [],
     "eliteEncounters": [
       {
         "who": "Ironaya",
@@ -10864,7 +10960,9 @@
         "who": "Frostsaber Stalker",
         "levelMin": 58,
         "levelMax": 60
-      },
+      }
+    ],
+    "rareEncounters": [
       {
         "who": "Rak'shiri",
         "levelMin": 59,
@@ -10886,7 +10984,9 @@
         "who": "Frostmaul Preserver",
         "levelMin": 59,
         "levelMax": 60
-      },
+      }
+    ],
+    "rareEncounters": [
       {
         "who": "Kashoch the Reaver",
         "levelMin": 60,
@@ -10947,7 +11047,9 @@
         "who": "Cobalt Wyrmkin",
         "levelMin": 56,
         "levelMax": 57
-      },
+      }
+    ],
+    "eliteEncounters": [
       {
         "who": "Manaclaw",
         "levelMin": 58,
@@ -11084,7 +11186,9 @@
         "who": "Winterfall Ursa",
         "levelMin": 58,
         "levelMax": 58
-      },
+      }
+    ],
+    "eliteEncounters": [
       {
         "who": "High Chief Winterfall",
         "levelMin": 59,

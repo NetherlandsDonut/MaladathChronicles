@@ -48,48 +48,39 @@ public class InputLine : MonoBehaviour
         {
             if (CDesktop.title == "ObjectManagerItems")
             {
-                CloseWindow("ObjectManagerItems");
-                SpawnWindowBlueprint("ObjectManagerItems");
+                Respawn("ObjectManagerItems");
             }
             else if (CDesktop.title == "ObjectManagerItemSets")
             {
-                CloseWindow("ObjectManagerItemSets");
-                SpawnWindowBlueprint("ObjectManagerItemSets");
+                Respawn("ObjectManagerItemSets");
             }
             else if (CDesktop.title == "ObjectManagerAbilities")
             {
-                CloseWindow("ObjectManagerAbilities");
-                SpawnWindowBlueprint("ObjectManagerAbilities");
+                Respawn("ObjectManagerAbilities");
             }
             else if (CDesktop.title == "ObjectManagerBuffs")
             {
-                CloseWindow("ObjectManagerBuffs");
-                SpawnWindowBlueprint("ObjectManagerBuffs");
+                Respawn("ObjectManagerBuffs");
             }
             else if (CDesktop.title == "ObjectManagerRaces")
             {
-                CloseWindow("ObjectManagerRaces");
-                SpawnWindowBlueprint("ObjectManagerRaces");
+                Respawn("ObjectManagerRaces");
             }
             else if (CDesktop.title == "ObjectManagerClasses")
             {
-                CloseWindow("ObjectManagerClasses");
-                SpawnWindowBlueprint("ObjectManagerClasses");
+                Respawn("ObjectManagerClasses");
             }
             else if (CDesktop.title == "ObjectManagerHostileAreas")
             {
-                CloseWindow("ObjectManagerHostileAreas");
-                SpawnWindowBlueprint("ObjectManagerHostileAreas");
+                Respawn("ObjectManagerHostileAreas");
             }
             else if (CDesktop.title == "ObjectManagerInstances")
             {
-                CloseWindow("ObjectManagerInstances");
-                SpawnWindowBlueprint("ObjectManagerInstances");
+                Respawn("ObjectManagerInstances");
             }
             else if (CDesktop.title == "ObjectManagerComplexes")
             {
-                CloseWindow("ObjectManagerComplexes");
-                SpawnWindowBlueprint("ObjectManagerComplexes");
+                Respawn("ObjectManagerComplexes");
             }
         }
         else if (foo == objectName)

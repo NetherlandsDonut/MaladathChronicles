@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 
 using UnityEngine;
-using UnityEngine.U2D;
 
 using static Blueprint;
 
@@ -21,14 +20,13 @@ public static class Root
     public static GameObject fastTravelCamera;
     public static List<FallingElement> fallingElements;
     public static bool canUnlockScreen;
-    public static bool mapLoaded;
 
-    public static string creationName = "Lisette";
-    public static string creationFaction = "Alliance";
-    public static string creationGender = "Female";
-    public static string creationRace = "Human";
-    public static string creationClass = "Mage";
-    public static int maxPlayerLevel;
+    public static string creationName;
+    public static string creationFaction;
+    public static string creationGender;
+    public static string creationRace;
+    public static string creationClass;
+    public static int maxPlayerLevel = 60;
 
     public static GameObject[] loadingBar;
     public static int loadingScreenObjectLoad;
@@ -44,10 +42,6 @@ public static class Root
     public static List<Desktop> desktops;
     public static Desktop CDesktop, LBDesktop;
     public static List<(string, Vector2)> windowRemoteAnchors;
-
-    public static SaveGame currentSave;
-    public static List<SaveGame> saveGames;
-    public static GameSettings settings;
 
     #region Desktop
 
@@ -88,7 +82,7 @@ public static class Root
         newDesktop.screen.clearFlags = CameraClearFlags.SolidColor;
         newDesktop.screen.backgroundColor = Color.black;
         newDesktop.screen.orthographic = true;
-        if (settings.pixelPerfectVision.Value()) newDesktop.screen.gameObject.AddComponent<PixelCamera>();
+        if (GameSettings.settings.pixelPerfectVision.Value()) newDesktop.screen.gameObject.AddComponent<PixelCamera>();
         var cameraBorder = new GameObject("CameraBorder", typeof(SpriteRenderer));
         var cameraShadow = new GameObject("CameraShadow", typeof(SpriteRenderer));
         cameraShadow.transform.parent = cameraBorder.transform.parent = newDesktop.screen.transform;
@@ -184,6 +178,13 @@ public static class Root
         var newObject = new GameObject("Window: " + title, typeof(Window));
         newObject.transform.parent = CDesktop.transform;
         newObject.GetComponent<Window>().Initialise(CDesktop, title, upperUI);
+    }
+
+    public static void Respawn(string windowName)
+    {
+        var window = CDesktop.windows.Find(x => x.title == windowName);
+        if (window != null) window.Respawn();
+        else SpawnWindowBlueprint(windowName);
     }
 
     public static void CloseWindow(string windowName)

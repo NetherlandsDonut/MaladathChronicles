@@ -1,45 +1,5 @@
 [
   {
-    "name": "Thunderstorm",
-    "icon": "AbilityThunderstorm",
-    "dispelType": "None",
-    "tags": [
-      "Damage"
-    ],
-    "stackable": true,
-    "events": [
-      {
-        "triggers": [
-          {
-            "Trigger": "TurnBegin"
-          }
-        ],
-        "effects": [
-          {
-            "Effect": "Damage",
-            "Affect": "Other",
-            "PowerType": "Spell",
-            "PowerSource": "Effector",
-            "PowerScale": "1.5"
-          }
-        ]
-      }
-    ],
-    "description": {
-      "regions": [
-        {
-          "regionType": "Padding",
-          "contents": [
-            {
-              "Color": "Legendary",
-              "Text": "Japierdole"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
     "name": "Blizzard",
     "icon": "AbilityBlizzard",
     "dispelType": "None",
@@ -66,8 +26,8 @@
     ]
   },
   {
-    "name": "Spore Cloud",
-    "icon": "AbilityDetectInvisibility",
+    "name": "Corruption",
+    "icon": "AbilityCorruption",
     "dispelType": "None",
     "tags": [
       "Damage"
@@ -76,27 +36,67 @@
       {
         "triggers": [
           {
-            "Trigger": "BuffAdd"
+            "Trigger": "TurnBegin"
           }
         ],
         "effects": [
           {
             "Effect": "Damage",
-            "Affect": "Other",
+            "Affect": "Effector",
             "PowerType": "Spell",
-            "PowerSource": "Effector",
-            "PowerScale": "1.5"
+            "PowerSource": "Other",
+            "PowerScale": "0.8",
+            "ShatterTarget": "Effector",
+            "ShatterType": "Central",
+            "ShatterDensity": "2",
+            "ShatterSpeed": "5",
+            "ShatterDegree": "0.7",
+            "SoundEffect": "AbilityCorruptionFlare",
+            "Await": "4"
           }
         ]
       }
     ]
   },
   {
-    "name": "Volatile Infection",
-    "icon": "AbilityDeathPact",
+    "name": "Curse of Agony",
+    "icon": "AbilityCurseOfAgony",
     "dispelType": "None",
     "tags": [
       "Damage"
+    ],
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "TurnBegin"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Effector",
+            "PowerType": "Spell",
+            "PowerSource": "Other",
+            "PowerScale": "0.9",
+            "ShatterTarget": "Effector",
+            "ShatterType": "Central",
+            "ShatterDensity": "2",
+            "ShatterSpeed": "5",
+            "ShatterDegree": "0.7",
+            "SoundEffect": "AbilityCurseOfAgonyFlare",
+            "Await": "4"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Demon Skin",
+    "icon": "AbilityDemonSkin",
+    "dispelType": "None",
+    "tags": [
+      "Defensive"
     ],
     "events": [
       {
@@ -118,9 +118,35 @@
     ]
   },
   {
-    "name": "Withering Cloud",
-    "icon": "AbilityWitheringCloud",
+    "name": "Fel Armor",
+    "icon": "AbilityFelArmor",
     "dispelType": "None",
+    "tags": [
+      "Defensive"
+    ],
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "TurnBegin"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerType": "Spell",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Foresight",
+    "icon": "AbilityForesight",
+    "dispelType": "Magic",
     "tags": [
       "Gathering"
     ],
@@ -128,6 +154,40 @@
       {
         "triggers": [
           {
+            "Trigger": "ResourceCollected",
+            "Triggerer": "Other",
+            "ResourceType": "Any"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "GiveResource",
+            "Affect": "Other",
+            "ResourceAmount": "1",
+            "ShatterTarget": "Other",
+            "ShatterType": "Central",
+            "ShatterDensity": "1",
+            "ShatterSpeed": "4",
+            "ShatterDegree": "0.6",
+            "FlyingResources": "Yes",
+            "SoundEffect": "AbilityForesightFlare",
+            "Await": "4"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Hammer Of Justice",
+    "icon": "AbilityHammerOfJustice",
+    "dispelType": "None",
+    "tags": [
+      "Stun"
+    ],
+    "events": [
+      {
+        "triggers": [
+          {
             "Trigger": "TurnBegin"
           }
         ],
@@ -144,11 +204,11 @@
     ]
   },
   {
-    "name": "Stoneform",
-    "icon": "AbilityStoneform",
+    "name": "Holy Fire",
+    "icon": "AbilityHolyFire",
     "dispelType": "None",
     "tags": [
-      "Defensive"
+      "Damage"
     ],
     "events": [
       {
@@ -196,11 +256,11 @@
     ]
   },
   {
-    "name": "Hammer Of Justice",
-    "icon": "AbilityHammerOfJustice",
+    "name": "Power Word: Shield",
+    "icon": "AbilityPowerWordShield",
     "dispelType": "None",
     "tags": [
-      "Stun"
+      "Defensive"
     ],
     "events": [
       {
@@ -222,112 +282,12 @@
     ]
   },
   {
-    "name": "Web Burst",
-    "icon": "AbilityWebBurst",
+    "name": "Putrid Bite",
+    "icon": "AbilityPutridBite",
     "dispelType": "None",
     "tags": [
-      "Stun"
+      "Damage"
     ],
-    "events": [
-      {
-        "triggers": [
-          {
-            "Trigger": "TurnBegin"
-          }
-        ],
-        "effects": [
-          {
-            "Effect": "Damage",
-            "Affect": "Other",
-            "PowerType": "Spell",
-            "PowerSource": "Effector",
-            "PowerScale": "1.5"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "name": "Summoned Infernal",
-    "icon": "AbilitySummonInfernal",
-    "dispelType": "None",
-    "tags": [],
-    "stackable": true,
-    "events": [
-      {
-        "triggers": [
-          {
-            "Trigger": "TurnBegin"
-          }
-        ],
-        "effects": [
-          {
-            "Effect": "Damage",
-            "Affect": "Other",
-            "PowerType": "Spell",
-            "PowerSource": "Effector",
-            "PowerScale": "1.5"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "name": "Summoned Felhunter",
-    "icon": "AbilitySummonFelhunter",
-    "dispelType": "None",
-    "tags": [],
-    "stackable": true,
-    "events": [
-      {
-        "triggers": [
-          {
-            "Trigger": "TurnBegin"
-          }
-        ],
-        "effects": [
-          {
-            "Effect": "Damage",
-            "Affect": "Other",
-            "PowerType": "Spell",
-            "PowerSource": "Effector",
-            "PowerScale": "1.5"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "name": "Summoned Voidwalker",
-    "icon": "AbilitySummonVoidwalker",
-    "dispelType": "None",
-    "tags": [],
-    "stackable": true,
-    "events": [
-      {
-        "triggers": [
-          {
-            "Trigger": "TurnBegin"
-          }
-        ],
-        "effects": [
-          {
-            "Effect": "Damage",
-            "Affect": "Other",
-            "PowerType": "Spell",
-            "PowerSource": "Effector",
-            "PowerScale": "1.5"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "name": "Summoned Imp",
-    "icon": "AbilitySummonImp",
-    "dispelType": "None",
-    "tags": [],
-    "stackable": true,
     "events": [
       {
         "triggers": [
@@ -399,6 +359,232 @@
     ]
   },
   {
+    "name": "Shadow Word: Pain",
+    "icon": "AbilityShadowWordPain",
+    "dispelType": "None",
+    "tags": [
+      "Damage"
+    ],
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "TurnBegin"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Effector",
+            "PowerType": "Spell",
+            "PowerSource": "Other",
+            "PowerScale": "0.6",
+            "ShatterTarget": "Effector",
+            "ShatterType": "Central",
+            "ShatterDensity": "2",
+            "ShatterSpeed": "5",
+            "ShatterDegree": "0.7",
+            "SoundEffect": "AbilityShadowWordPainFlare",
+            "Await": "4"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Spore Cloud",
+    "icon": "AbilityDetectInvisibility",
+    "dispelType": "None",
+    "tags": [
+      "Damage"
+    ],
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "BuffAdd"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerType": "Spell",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Stoneform",
+    "icon": "AbilityStoneform",
+    "dispelType": "None",
+    "tags": [
+      "Defensive"
+    ],
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "TurnBegin"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerType": "Spell",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Summoned Felhunter",
+    "icon": "AbilitySummonFelhunter",
+    "dispelType": "None",
+    "tags": [],
+    "stackable": true,
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "TurnBegin"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerType": "Spell",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Summoned Imp",
+    "icon": "AbilitySummonImp",
+    "dispelType": "None",
+    "tags": [],
+    "stackable": true,
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "TurnBegin"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerType": "Spell",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Summoned Infernal",
+    "icon": "AbilitySummonInfernal",
+    "dispelType": "None",
+    "tags": [],
+    "stackable": true,
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "TurnBegin"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerType": "Spell",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Summoned Voidwalker",
+    "icon": "AbilitySummonVoidwalker",
+    "dispelType": "None",
+    "tags": [],
+    "stackable": true,
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "TurnBegin"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerType": "Spell",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Thunderstorm",
+    "icon": "AbilityThunderstorm",
+    "dispelType": "None",
+    "tags": [
+      "Damage"
+    ],
+    "stackable": true,
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "TurnBegin"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerType": "Spell",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "isExtender": true,
+          "contents": [
+            {
+              "Color": "Legendary",
+              "Text": "Japierdole"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
     "name": "Vanquished Tentacle of C'Thun",
     "icon": "itemmiscahnqirajtrinket05",
     "dispelType": "None",
@@ -451,8 +637,8 @@
     ]
   },
   {
-    "name": "Putrid Bite",
-    "icon": "AbilityPutridBite",
+    "name": "Volatile Infection",
+    "icon": "AbilityDeathPact",
     "dispelType": "None",
     "tags": [
       "Damage"
@@ -477,44 +663,11 @@
     ]
   },
   {
-    "name": "Corruption",
-    "icon": "AbilityCorruption",
+    "name": "Web Burst",
+    "icon": "AbilityWebBurst",
     "dispelType": "None",
     "tags": [
-      "Damage"
-    ],
-    "events": [
-      {
-        "triggers": [
-          {
-            "Trigger": "TurnBegin"
-          }
-        ],
-        "effects": [
-          {
-            "Effect": "Damage",
-            "Affect": "Effector",
-            "PowerType": "Spell",
-            "PowerSource": "Other",
-            "PowerScale": "0.8",
-            "ShatterTarget": "Effector",
-            "ShatterType": "Central",
-            "ShatterDensity": "2",
-            "ShatterSpeed": "5",
-            "ShatterDegree": "0.7",
-            "SoundEffect": "AbilityCorruptionFlare",
-            "Await": "4"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "name": "Holy Fire",
-    "icon": "AbilityHolyFire",
-    "dispelType": "None",
-    "tags": [
-      "Damage"
+      "Stun"
     ],
     "events": [
       {
@@ -536,153 +689,9 @@
     ]
   },
   {
-    "name": "Curse of Agony",
-    "icon": "AbilityCurseOfAgony",
+    "name": "Withering Cloud",
+    "icon": "AbilityWitheringCloud",
     "dispelType": "None",
-    "tags": [
-      "Damage"
-    ],
-    "events": [
-      {
-        "triggers": [
-          {
-            "Trigger": "TurnBegin"
-          }
-        ],
-        "effects": [
-          {
-            "Effect": "Damage",
-            "Affect": "Effector",
-            "PowerType": "Spell",
-            "PowerSource": "Other",
-            "PowerScale": "0.9",
-            "ShatterTarget": "Effector",
-            "ShatterType": "Central",
-            "ShatterDensity": "2",
-            "ShatterSpeed": "5",
-            "ShatterDegree": "0.7",
-            "SoundEffect": "AbilityCurseOfAgonyFlare",
-            "Await": "4"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "name": "Shadow Word: Pain",
-    "icon": "AbilityShadowWordPain",
-    "dispelType": "None",
-    "tags": [
-      "Damage"
-    ],
-    "events": [
-      {
-        "triggers": [
-          {
-            "Trigger": "TurnBegin"
-          }
-        ],
-        "effects": [
-          {
-            "Effect": "Damage",
-            "Affect": "Effector",
-            "PowerType": "Spell",
-            "PowerSource": "Other",
-            "PowerScale": "0.6",
-            "ShatterTarget": "Effector",
-            "ShatterType": "Central",
-            "ShatterDensity": "2",
-            "ShatterSpeed": "5",
-            "ShatterDegree": "0.7",
-            "SoundEffect": "AbilityShadowWordPainFlare",
-            "Await": "4"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "name": "Fel Armor",
-    "icon": "AbilityFelArmor",
-    "dispelType": "None",
-    "tags": [
-      "Defensive"
-    ],
-    "events": [
-      {
-        "triggers": [
-          {
-            "Trigger": "TurnBegin"
-          }
-        ],
-        "effects": [
-          {
-            "Effect": "Damage",
-            "Affect": "Other",
-            "PowerType": "Spell",
-            "PowerSource": "Effector",
-            "PowerScale": "1.5"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "name": "Power Word: Shield",
-    "icon": "AbilityPowerWordShield",
-    "dispelType": "None",
-    "tags": [
-      "Defensive"
-    ],
-    "events": [
-      {
-        "triggers": [
-          {
-            "Trigger": "TurnBegin"
-          }
-        ],
-        "effects": [
-          {
-            "Effect": "Damage",
-            "Affect": "Other",
-            "PowerType": "Spell",
-            "PowerSource": "Effector",
-            "PowerScale": "1.5"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "name": "Demon Skin",
-    "icon": "AbilityDemonSkin",
-    "dispelType": "None",
-    "tags": [
-      "Defensive"
-    ],
-    "events": [
-      {
-        "triggers": [
-          {
-            "Trigger": "TurnBegin"
-          }
-        ],
-        "effects": [
-          {
-            "Effect": "Damage",
-            "Affect": "Other",
-            "PowerType": "Spell",
-            "PowerSource": "Effector",
-            "PowerScale": "1.5"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "name": "Foresight",
-    "icon": "AbilityForesight",
-    "dispelType": "Magic",
     "tags": [
       "Gathering"
     ],
@@ -690,24 +699,16 @@
       {
         "triggers": [
           {
-            "Trigger": "ResourceCollected",
-            "Triggerer": "Other",
-            "ResourceType": "Any"
+            "Trigger": "TurnBegin"
           }
         ],
         "effects": [
           {
-            "Effect": "GiveResource",
+            "Effect": "Damage",
             "Affect": "Other",
-            "ResourceAmount": "1",
-            "ShatterTarget": "Other",
-            "ShatterType": "Central",
-            "ShatterDensity": "1",
-            "ShatterSpeed": "4",
-            "ShatterDegree": "0.6",
-            "FlyingResources": "Yes",
-            "SoundEffect": "AbilityForesightFlare",
-            "Await": "4"
+            "PowerType": "Spell",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5"
           }
         ]
       }

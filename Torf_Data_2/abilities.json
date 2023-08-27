@@ -1,5 +1,821 @@
 [
   {
+    "name": "Curse of Thorns",
+    "icon": "AbilityCurseofThorns"
+  },
+  {
+    "name": "Lightning Wave",
+    "icon": "AbilityLightningWave"
+  },
+  {
+    "name": "Arcane Blast",
+    "icon": "AbilityArcaneBlast"
+  },
+  {
+    "name": "Magma Splash",
+    "icon": "AbilityMagmaSplash"
+  },
+  {
+    "name": "Draw Spirit",
+    "icon": "AbilityDrawSpirit"
+  },
+  {
+    "name": "Shadow Bolt Whirl",
+    "icon": "AbilityShadowBoltWhirl"
+  },
+  {
+    "name": "Corruption of the Earth",
+    "icon": "AbilityCorruptionoftheEarth"
+  },
+  {
+    "name": "Dream Fog",
+    "icon": "AbilityDreamFog"
+  },
+  {
+    "name": "Noxious Breath",
+    "icon": "AbilityNoxiousBreath"
+  },
+  {
+    "name": "Tail Sweep",
+    "icon": "AbilityTailSweep"
+  },
+  {
+    "name": "Supernova",
+    "icon": "AbilitySupernova"
+  },
+  {
+    "name": "Arcane Bombardment",
+    "icon": "AbilityArcaneBombardment"
+  },
+  {
+    "name": "Evocation",
+    "icon": "AbilityEvocation"
+  },
+  {
+    "name": "Prodigious Savant",
+    "icon": "AbilityProdigiousSavant"
+  },
+  {
+    "name": "Presence of Mind",
+    "icon": "AbilityPresenceofMind"
+  },
+  {
+    "name": "Slipstream",
+    "icon": "AbilitySlipstream"
+  },
+  {
+    "name": "Arcane Barrage",
+    "icon": "AbilityArcaneBarrage"
+  },
+  {
+    "name": "Prismatic Barrier",
+    "icon": "AbilityPrismaticBarrier"
+  },
+  {
+    "name": "Concetration",
+    "icon": "AbilityConcetration"
+  },
+  {
+    "name": "Cryopathy",
+    "icon": "AbilityCryopathy"
+  },
+  {
+    "name": "Icy Veins",
+    "icon": "AbilityIcyVeins"
+  },
+  {
+    "name": "Icy Flows",
+    "icon": "AbilityIcyFlows"
+  },
+  {
+    "name": "Fingers of Frost",
+    "icon": "AbilityFingersofFrost"
+  },
+  {
+    "name": "Frost Ward",
+    "icon": "AbilityFrostWard"
+  },
+  {
+    "name": "Combustion",
+    "icon": "AbilityCombustion"
+  },
+  {
+    "name": "Blast Wave",
+    "icon": "AbilityBlastWave"
+  },
+  {
+    "name": "Dragon's Breath",
+    "icon": "AbilityDragon'sBreath"
+  },
+  {
+    "name": "Pyroblast",
+    "icon": "AbilityPyroblast"
+  },
+  {
+    "name": "Flamestrike",
+    "icon": "AbilityFlamestrike"
+  },
+  {
+    "name": "Fire Blast",
+    "icon": "AbilityFireBlast"
+  },
+  {
+    "name": "Blazing Barrier",
+    "icon": "AbilityBlazingBarrier"
+  },
+  {
+    "name": "Channel Demonfire",
+    "icon": "AbilityChannelDemonfire"
+  },
+  {
+    "name": "Infernal Brand",
+    "icon": "AbilityInfernalBrand"
+  },
+  {
+    "name": "Ritual of Ruin",
+    "icon": "AbilityRitualofRuin"
+  },
+  {
+    "name": "Havoc",
+    "icon": "AbilityHavoc"
+  },
+  {
+    "name": "Eradication",
+    "icon": "AbilityEradication"
+  },
+  {
+    "name": "Rain of Fire",
+    "icon": "AbilityRainofFire"
+  },
+  {
+    "name": "Chaos Bolt",
+    "icon": "AbilityChaosBolt"
+  },
+  {
+    "name": "Pyrogenics",
+    "icon": "AbilityPyrogenics"
+  },
+  {
+    "name": "Immolate",
+    "icon": "AbilityImmolate"
+  },
+  {
+    "name": "Master Summoner",
+    "icon": "AbilityMasterSummoner"
+  },
+  {
+    "name": "Summon Fel Guard",
+    "icon": "AbilitySummonFelGuard"
+  },
+  {
+    "name": "Demonic Embrace",
+    "icon": "AbilityDemonicEmbrace"
+  },
+  {
+    "name": "Health Funnel",
+    "icon": "AbilityHealthFunnel"
+  },
+  {
+    "name": "Xavius Gambit",
+    "icon": "AbilityXaviusGambit"
+  },
+  {
+    "name": "Profane Bargain",
+    "icon": "AbilityProfaneBargain"
+  },
+  {
+    "name": "Kindled Malice",
+    "icon": "AbilityKindledMalice"
+  },
+  {
+    "name": "Nightfall",
+    "icon": "AbilityNightfall"
+  },
+  {
+    "name": "Unstable Affliction",
+    "icon": "AbilityUnstableAffliction"
+  },
+  {
+    "name": "Creeping Death",
+    "icon": "AbilityCreepingDeath"
+  },
+  {
+    "name": "Curse of Tongues",
+    "icon": "AbilityCurseofTongues"
+  },
+  {
+    "name": "Haunt",
+    "icon": "AbilityHaunt"
+  },
+  {
+    "name": "Agonizing Corruption",
+    "icon": "AbilityAgonizingCorruption"
+  },
+  {
+    "name": "Drain Soul",
+    "icon": "AbilityDrainSoul"
+  },
+  {
+    "name": "Curse of Weakness",
+    "icon": "AbilityCurseofWeakness"
+  },
+  {
+    "name": "Shadowform",
+    "icon": "AbilityShadowform"
+  },
+  {
+    "name": "Psychic Scream",
+    "icon": "AbilityPsychicScream"
+  },
+  {
+    "name": "Shadow Focus",
+    "icon": "AbilityShadowFocus"
+  },
+  {
+    "name": "Hex of Weakness",
+    "icon": "AbilityHexofWeakness"
+  },
+  {
+    "name": "Devouring Plague",
+    "icon": "AbilityDevouringPlague"
+  },
+  {
+    "name": "Shadow Weaving",
+    "icon": "AbilityShadowWeaving"
+  },
+  {
+    "name": "Fade",
+    "icon": "AbilityFade"
+  },
+  {
+    "name": "Blackout",
+    "icon": "AbilityBlackout"
+  },
+  {
+    "name": "Power Infusion",
+    "icon": "AbilityPowerInfusion"
+  },
+  {
+    "name": "Force of Will",
+    "icon": "AbilityForceofWill"
+  },
+  {
+    "name": "Martyrdom",
+    "icon": "AbilityMartyrdom"
+  },
+  {
+    "name": "Unbreakable Will",
+    "icon": "AbilityUnbreakableWill"
+  },
+  {
+    "name": "Mana Burn",
+    "icon": "AbilityManaBurn"
+  },
+  {
+    "name": "Silent Resolve",
+    "icon": "AbilitySilentResolve"
+  },
+  {
+    "name": "Divine Spirit",
+    "icon": "AbilityDivineSpirit"
+  },
+  {
+    "name": "Inner Fire",
+    "icon": "AbilityInnerFire"
+  },
+  {
+    "name": "Power Word: Fortitude",
+    "icon": "AbilityPowerWord:Fortitude"
+  },
+  {
+    "name": "Meditation",
+    "icon": "AbilityMeditation"
+  },
+  {
+    "name": "Spirit of Redemption",
+    "icon": "AbilitySpiritofRedemption"
+  },
+  {
+    "name": "Lightwell",
+    "icon": "AbilityLightwell"
+  },
+  {
+    "name": "Divine Fury",
+    "icon": "AbilityDivineFury"
+  },
+  {
+    "name": "Desperate Prayer",
+    "icon": "AbilityDesperatePrayer"
+  },
+  {
+    "name": "Searing Light",
+    "icon": "AbilitySearingLight"
+  },
+  {
+    "name": "Spiritual Healing",
+    "icon": "AbilitySpiritualHealing"
+  },
+  {
+    "name": "Prayer of Healing",
+    "icon": "AbilityPrayerofHealing"
+  },
+  {
+    "name": "Healing Focus",
+    "icon": "AbilityHealingFocus"
+  },
+  {
+    "name": "Holy Nova",
+    "icon": "AbilityHolyNova"
+  },
+  {
+    "name": "Renew",
+    "icon": "AbilityRenew"
+  },
+  {
+    "name": "Blessed Recovery",
+    "icon": "AbilityBlessedRecovery"
+  },
+  {
+    "name": "Spiritual Guidance",
+    "icon": "AbilitySpiritualGuidance"
+  },
+  {
+    "name": "Spell Warding",
+    "icon": "AbilitySpellWarding"
+  },
+  {
+    "name": "Heal",
+    "icon": "AbilityHeal"
+  },
+  {
+    "name": "Lesser Heal",
+    "icon": "AbilityLesserHeal"
+  },
+  {
+    "name": "Power of the Archdruid",
+    "icon": "AbilityPoweroftheArchdruid"
+  },
+  {
+    "name": "Embrace of the Dream",
+    "icon": "AbilityEmbraceoftheDream"
+  },
+  {
+    "name": "Unstoppable Growth",
+    "icon": "AbilityUnstoppableGrowth"
+  },
+  {
+    "name": "Verdancy",
+    "icon": "AbilityVerdancy"
+  },
+  {
+    "name": "Tranquil Mind",
+    "icon": "AbilityTranquilMind"
+  },
+  {
+    "name": "Tranquility",
+    "icon": "AbilityTranquility"
+  },
+  {
+    "name": "Ysera's Gift",
+    "icon": "AbilityYsera'sGift"
+  },
+  {
+    "name": "Efflorescence",
+    "icon": "AbilityEfflorescence"
+  },
+  {
+    "name": "Nurturing Instinct",
+    "icon": "AbilityNurturingInstinct"
+  },
+  {
+    "name": "Hibernate",
+    "icon": "AbilityHibernate"
+  },
+  {
+    "name": "Waking Dream",
+    "icon": "AbilityWakingDream"
+  },
+  {
+    "name": "Innervate",
+    "icon": "AbilityInnervate"
+  },
+  {
+    "name": "Renewal",
+    "icon": "AbilityRenewal"
+  },
+  {
+    "name": "Flourish",
+    "icon": "AbilityFlourish"
+  },
+  {
+    "name": "Luxuriant Soil",
+    "icon": "AbilityLuxuriantSoil"
+  },
+  {
+    "name": "Nature's Balance",
+    "icon": "AbilityNature'sBalance"
+  },
+  {
+    "name": "Cultivation",
+    "icon": "AbilityCultivation"
+  },
+  {
+    "name": "Rejuvenation",
+    "icon": "AbilityRejuvenation"
+  },
+  {
+    "name": "Wild Growth",
+    "icon": "AbilityWildGrowth"
+  },
+  {
+    "name": "Harmonious Blooming",
+    "icon": "AbilityHarmoniousBlooming"
+  },
+  {
+    "name": "Nature's Grace",
+    "icon": "AbilityNature'sGrace"
+  },
+  {
+    "name": "Lifebloom",
+    "icon": "AbilityLifebloom"
+  },
+  {
+    "name": "Natural Recovery",
+    "icon": "AbilityNaturalRecovery"
+  },
+  {
+    "name": "Regrowth",
+    "icon": "AbilityRegrowth"
+  },
+  {
+    "name": "Apex Predator",
+    "icon": "AbilityApexPredator"
+  },
+  {
+    "name": "Killer Instinct",
+    "icon": "AbilityKillerInstinct"
+  },
+  {
+    "name": "Taste for Blood",
+    "icon": "AbilityTasteforBlood"
+  },
+  {
+    "name": "Primal Fury",
+    "icon": "AbilityPrimalFury"
+  },
+  {
+    "name": "Protector of the Pack",
+    "icon": "AbilityProtectorofthePack"
+  },
+  {
+    "name": "Predator",
+    "icon": "AbilityPredator"
+  },
+  {
+    "name": "Incapacitating Roar",
+    "icon": "AbilityIncapacitatingRoar"
+  },
+  {
+    "name": "Tireless Pursuit",
+    "icon": "AbilityTirelessPursuit"
+  },
+  {
+    "name": "Berserk",
+    "icon": "AbilityBerserk"
+  },
+  {
+    "name": "Frantic Momentum",
+    "icon": "AbilityFranticMomentum"
+  },
+  {
+    "name": "Dire Fixation",
+    "icon": "AbilityDireFixation"
+  },
+  {
+    "name": "Honed Instincts",
+    "icon": "AbilityHonedInstincts"
+  },
+  {
+    "name": "Dash",
+    "icon": "AbilityDash"
+  },
+  {
+    "name": "Vein Ripper",
+    "icon": "AbilityVeinRipper"
+  },
+  {
+    "name": "Growl",
+    "icon": "AbilityGrowl"
+  },
+  {
+    "name": "Swipe",
+    "icon": "AbilitySwipe"
+  },
+  {
+    "name": "Ferocious Bite",
+    "icon": "AbilityFerociousBite"
+  },
+  {
+    "name": "Thick Hide",
+    "icon": "AbilityThickHide"
+  },
+  {
+    "name": "Feline Swiftness",
+    "icon": "AbilityFelineSwiftness"
+  },
+  {
+    "name": "Thrash",
+    "icon": "AbilityThrash"
+  },
+  {
+    "name": "Infected Wounds",
+    "icon": "AbilityInfectedWounds"
+  },
+  {
+    "name": "Barkskin",
+    "icon": "AbilityBarkskin"
+  },
+  {
+    "name": "Verdant Heart",
+    "icon": "AbilityVerdantHeart"
+  },
+  {
+    "name": "Maim",
+    "icon": "AbilityMaim"
+  },
+  {
+    "name": "Rake",
+    "icon": "AbilityRake"
+  },
+  {
+    "name": "Convoke the Spirits",
+    "icon": "AbilityConvoketheSpirits"
+  },
+  {
+    "name": "Sundered Firmament",
+    "icon": "AbilitySunderedFirmament"
+  },
+  {
+    "name": "Astral Invocation",
+    "icon": "AbilityAstralInvocation"
+  },
+  {
+    "name": "Twin Moons",
+    "icon": "AbilityTwinMoons"
+  },
+  {
+    "name": "Aetherial Kindling",
+    "icon": "AbilityAetherialKindling"
+  },
+  {
+    "name": "Orbit Breaker",
+    "icon": "AbilityOrbitBreaker"
+  },
+  {
+    "name": "Umbral Intensity",
+    "icon": "AbilityUmbralIntensity"
+  },
+  {
+    "name": "Solstice",
+    "icon": "AbilitySolstice"
+  },
+  {
+    "name": "Starfall",
+    "icon": "AbilityStarfall"
+  },
+  {
+    "name": "Moonkin Form",
+    "icon": "AbilityMoonkinForm"
+  },
+  {
+    "name": "Solar Beam",
+    "icon": "AbilitySolarBeam"
+  },
+  {
+    "name": "Stellar Innervation",
+    "icon": "AbilityStellarInnervation"
+  },
+  {
+    "name": "Astral Communion",
+    "icon": "AbilityAstralCommunion"
+  },
+  {
+    "name": "Cyclone",
+    "icon": "AbilityCyclone"
+  },
+  {
+    "name": "Cosmic Rapidity",
+    "icon": "AbilityCosmicRapidity"
+  },
+  {
+    "name": "Faerie Fire",
+    "icon": "AbilityFaerieFire"
+  },
+  {
+    "name": "Lunar Shrapnel",
+    "icon": "AbilityLunarShrapnel"
+  },
+  {
+    "name": "Star Surge",
+    "icon": "AbilityStarSurge"
+  },
+  {
+    "name": "Shooting Stars",
+    "icon": "AbilityShootingStars"
+  },
+  {
+    "name": "Eclipse",
+    "icon": "AbilityEclipse"
+  },
+  {
+    "name": "Light of the Sun",
+    "icon": "AbilityLightoftheSun"
+  },
+  {
+    "name": "Sunfire",
+    "icon": "AbilitySunfire"
+  },
+  {
+    "name": "Starweaver",
+    "icon": "AbilityStarweaver"
+  },
+  {
+    "name": "Moonfire",
+    "icon": "AbilityMoonfire"
+  },
+  {
+    "name": "Wrath",
+    "icon": "AbilityWrath"
+  },
+  {
+    "name": "Last Stand",
+    "icon": "AbilityLastStand"
+  },
+  {
+    "name": "Indomitable",
+    "icon": "AbilityIndomitable"
+  },
+  {
+    "name": "Shield Wall",
+    "icon": "AbilityShieldWall"
+  },
+  {
+    "name": "Anticipation",
+    "icon": "AbilityAnticipation"
+  },
+  {
+    "name": "Shield Block",
+    "icon": "AbilityShieldBlock"
+  },
+  {
+    "name": "Shield Bash",
+    "icon": "AbilityShieldBash"
+  },
+  {
+    "name": "Spell Reflection",
+    "icon": "AbilitySpellReflection"
+  },
+  {
+    "name": "Bloodrage",
+    "icon": "AbilityBloodrage"
+  },
+  {
+    "name": "Shield Slam",
+    "icon": "AbilityShieldSlam"
+  },
+  {
+    "name": "Revenge",
+    "icon": "AbilityRevenge"
+  },
+  {
+    "name": "Recklessness",
+    "icon": "AbilityRecklessness"
+  },
+  {
+    "name": "Defiance",
+    "icon": "AbilityDefiance"
+  },
+  {
+    "name": "Rampage",
+    "icon": "AbilityRampage"
+  },
+  {
+    "name": "Enraged Regeneration",
+    "icon": "AbilityEnragedRegeneration"
+  },
+  {
+    "name": "Berserker Rage",
+    "icon": "AbilityBerserkerRage"
+  },
+  {
+    "name": "Onslaught",
+    "icon": "AbilityOnslaught"
+  },
+  {
+    "name": "Execute",
+    "icon": "AbilityExecute"
+  },
+  {
+    "name": "Skullsplitter",
+    "icon": "AbilitySkullsplitter"
+  },
+  {
+    "name": "Demoralizing Shout",
+    "icon": "AbilityDemoralizingShout"
+  },
+  {
+    "name": "Whirlwind",
+    "icon": "AbilityWhirlwind"
+  },
+  {
+    "name": "Raging Blow",
+    "icon": "AbilityRagingBlow"
+  },
+  {
+    "name": "Cruelty",
+    "icon": "AbilityCruelty"
+  },
+  {
+    "name": "Bloodthirst",
+    "icon": "AbilityBloodthirst"
+  },
+  {
+    "name": "Battle Shout",
+    "icon": "AbilityBattleShout"
+  },
+  {
+    "name": "Bladestorm",
+    "icon": "AbilityBladestorm"
+  },
+  {
+    "name": "Pain And Gain",
+    "icon": "AbilityPainAndGain"
+  },
+  {
+    "name": "Retaliation",
+    "icon": "AbilityRetaliation"
+  },
+  {
+    "name": "Mortal Strike",
+    "icon": "AbilityMortalStrike"
+  },
+  {
+    "name": "Sweeping Strikes",
+    "icon": "AbilitySweepingStrikes"
+  },
+  {
+    "name": "Deep Wounds",
+    "icon": "AbilityDeepWounds"
+  },
+  {
+    "name": "Cleave",
+    "icon": "AbilityCleave"
+  },
+  {
+    "name": "Hamstring",
+    "icon": "AbilityHamstring"
+  },
+  {
+    "name": "Thunder Clap",
+    "icon": "AbilityThunderClap"
+  },
+  {
+    "name": "Rend",
+    "icon": "AbilityRend"
+  },
+  {
+    "name": "Overpower",
+    "icon": "AbilityOverpower"
+  },
+  {
+    "name": "Deflection",
+    "icon": "AbilityDeflection"
+  },
+  {
+    "name": "Charge",
+    "icon": "AbilityCharge"
+  },
+  {
+    "name": "Heroic Strike",
+    "icon": "AbilityHeroicStrike"
+  },
+  {
+    "name": "Time Warp",
+    "icon": "AbilityTimeWarp"
+  },
+  {
+    "name": "Earth Shield",
+    "icon": "AbilityEarthShield"
+  },
+  {
+    "name": "Further Beyond",
+    "icon": "AbilityFurtherBeyond"
+  },
+  {
+    "name": "Dual Wielding Proficiency",
+    "icon": "AbilityAbolishMagic"
+  },
+  {
     "name": "Two Handed Axe Proficiency",
     "icon": "AbilityTwoHandedAxeProficiency"
   },
@@ -3409,7 +4225,7 @@
   },
   {
     "name": "Sundering",
-    "icon": "AbilityAcid",
+    "icon": "AbilitySundering",
     "tags": [],
     "events": []
   },
@@ -3457,7 +4273,7 @@
   },
   {
     "name": "Magma Chamber",
-    "icon": "AbilityMagmaFlowWave",
+    "icon": "AbilityMagmaFlowWhole",
     "tags": [],
     "events": []
   },
@@ -3468,7 +4284,7 @@
     "events": []
   },
   {
-    "name": "Further Beyond",
+    "name": "Hot Hand",
     "icon": "AbilityAcid",
     "tags": [],
     "events": []
@@ -3481,7 +4297,7 @@
   },
   {
     "name": "Searing Flames",
-    "icon": "AbilityShadowandFlame",
+    "icon": "AbilitySearingFlames",
     "tags": [],
     "events": []
   },
