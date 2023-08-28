@@ -431,7 +431,7 @@ public class Starter : MonoBehaviour
                         });
                         if (area.commonEncounters != null && area.commonEncounters.Count > 0)
                         {
-                            if (currentSave.siteProgress.ContainsKey(area.name) && area.eliteEncounters.Sum(x => x.requiredProgress) <= currentSave.siteProgress[area.name])
+                            if (currentSave.siteProgress.ContainsKey(area.name) && area.eliteEncounters != null && area.eliteEncounters.Count > 0 && area.eliteEncounters.Sum(x => x.requiredProgress) <= currentSave.siteProgress[area.name])
                                 foreach (var encounter in area.commonEncounters)
                                     AddButtonRegion(() =>
                                     {

@@ -22,7 +22,7 @@ public class SiteHostileArea
     public Entity RollEncounter()
     {
         var encounters = commonEncounters.Select(x => (x.levelMax != 0 ? random.Next(x.levelMin, x.levelMax + 1) : x.levelMin, Race.races.Find(y => y.name == x.who))).ToList();
-        if (random.Next(0, 100) < 1)
+        if (random.Next(0, 100) < 1 && rareEncounters != null)
         {
             var rares = rareEncounters.FindAll(x => !currentSave.raresKilled.ContainsKey(x.who));
             if (rares.Count > 0) encounters = rares.Select(x => (x.levelMax != 0 ? random.Next(x.levelMin, x.levelMax + 1) : x.levelMin, Race.races.Find(y => y.name == x.who))).ToList();

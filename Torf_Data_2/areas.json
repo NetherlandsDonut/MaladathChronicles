@@ -1,8 +1,204 @@
 [
   {
-    "name": "Ass",
+    "name": "Central Village",
     "zone": "Zul'Farrak",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "commonEncounters": [
+      {
+        "who": "Sandfury Witch Doctor",
+        "levelMin": 44,
+        "levelMax": 45
+      },
+      {
+        "who": "Sandfury Blood Drinker",
+        "levelMin": 44,
+        "levelMax": 45
+      },
+      {
+        "who": "Sandfury Shadowhunter",
+        "levelMin": 44,
+        "levelMax": 45
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Dustwraith",
+        "levelMin": 45,
+        "levelMax": 46
+      }
+    ],
+    "eliteEncounters": [
+      {
+        "who": "Theka the Martyr",
+        "levelMin": 46,
+        "requiredProgress": 2
+      }
+    ]
+  },
+  {
+    "name": "Cave of Sul",
+    "zone": "Zul'Farrak",
+    "type": "HostileArea",
+    "commonEncounters": [
+      {
+        "who": "Sandfury Witch Doctor",
+        "levelMin": 44,
+        "levelMax": 45
+      },
+      {
+        "who": "Sandfury Blood Drinker",
+        "levelMin": 44,
+        "levelMax": 45
+      },
+      {
+        "who": "Sandfury Shadowhunter",
+        "levelMin": 44,
+        "levelMax": 45
+      },
+      {
+        "who": "Sul'lithuz Sandcrawler",
+        "levelMin": 46,
+        "levelMax": 47
+      }
+    ],
+    "eliteEncounters": [
+      {
+        "who": "Antu'sul",
+        "levelMin": 47,
+        "requiredProgress": 2
+      }
+    ]
+  },
+  {
+    "name": "Graveyard",
+    "zone": "Zul'Farrak",
+    "type": "HostileArea",
+    "commonEncounters": [
+      {
+        "who": "Zul'Farrak Dead Hero",
+        "levelMin": 44,
+        "levelMax": 45
+      },
+      {
+        "who": "Zul'Farrak Zombie",
+        "levelMin": 44,
+        "levelMax": 45
+      }
+    ],
+    "eliteEncounters": [
+      {
+        "who": "Witch Doctor Zum'rah",
+        "levelMin": 47,
+        "requiredProgress": 2
+      }
+    ]
+  },
+  {
+    "name": "Gahz'rilla Pond",
+    "zone": "Zul'Farrak",
+    "type": "HostileArea",
+    "commonEncounters": [
+      {
+        "who": "Sandfury Witch Doctor",
+        "levelMin": 44,
+        "levelMax": 45
+      },
+      {
+        "who": "Sandfury Blood Drinker",
+        "levelMin": 44,
+        "levelMax": 45
+      },
+      {
+        "who": "Sandfury Shadowhunter",
+        "levelMin": 44,
+        "levelMax": 45
+      },
+      {
+        "who": "Sul'lithuz Sandcrawler",
+        "levelMin": 46,
+        "levelMax": 47
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Zerillis",
+        "levelMin": 46,
+        "levelMax": 47
+      }
+    ],
+    "eliteEncounters": [
+      {
+        "who": "Hydromancer Velratha",
+        "levelMin": 46,
+        "requiredProgress": 2
+      },
+      {
+        "who": "Gahz'rilla",
+        "levelMin": 47,
+        "requiredProgress": 1
+      }
+    ]
+  },
+  {
+    "name": "The Pyramid",
+    "zone": "Zul'Farrak",
+    "type": "HostileArea",
+    "commonEncounters": [
+      {
+        "who": "Sandfury Witch Doctor",
+        "levelMin": 44,
+        "levelMax": 45
+      },
+      {
+        "who": "Sandfury Blood Drinker",
+        "levelMin": 44,
+        "levelMax": 45
+      },
+      {
+        "who": "Sandfury Shadowhunter",
+        "levelMin": 44,
+        "levelMax": 45
+      }
+    ],
+    "eliteEncounters": [
+      {
+        "who": "Nekrum Gutchewer",
+        "levelMin": 47,
+        "requiredProgress": 2
+      },
+      {
+        "who": "Shadowpriest Sezz'ziz",
+        "levelMin": 47,
+        "requiredProgress": 1
+      }
+    ]
+  },
+  {
+    "name": "Throne of the Sandfury",
+    "zone": "Zul'Farrak",
+    "type": "HostileArea",
+    "commonEncounters": [
+      {
+        "who": "Sandfury Guardian",
+        "levelMin": 46
+      },
+      {
+        "who": "Sandfury Shadowhunter",
+        "levelMin": 45,
+        "levelMax": 46
+      }
+    ],
+    "eliteEncounters": [
+      {
+        "who": "Ruuzlu",
+        "levelMin": 47,
+        "requiredProgress": 2
+      },
+      {
+        "who": "Chief Ukorz Sandscalp",
+        "levelMin": 48
+      }
+    ]
   },
   {
     "name": "Spire Throne",

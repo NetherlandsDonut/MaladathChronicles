@@ -147,6 +147,8 @@ public class Board
             if (Realm.realms.Find(x => x.name == settings.selectedRealm).hardcore) SpawnDesktopBlueprint("GameOver");
             else SpawnDesktopBlueprint("ReleaseSpirit");
         }
+        if (CDesktop.screenLocked)
+            CDesktop.UnlockScreen();
     }
 
     public void AnimateBoard()

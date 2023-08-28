@@ -934,6 +934,7 @@
     "name": "Zul'Farrak",
     "zone": "Tanaris",
     "type": "Dungeon",
+    "ambience": "AmbienceDesert",
     "description": [],
     "wings": [
       {
@@ -941,7 +942,27 @@
         "areas": [
           {
             "Requisite": "None",
-            "AreaName": "Ass"
+            "AreaName": "Central Village"
+          },
+          {
+            "Requisite": "EliteKilled",
+            "AreaName": "Cave of Sul"
+          },
+          {
+            "Requisite": "EliteKilled",
+            "AreaName": "Graveyard"
+          },
+          {
+            "Requisite": "EliteKilled",
+            "AreaName": "Gahz'rilla Pond"
+          },
+          {
+            "Requisite": "EliteKilled",
+            "AreaName": "The Pyramid"
+          },
+          {
+            "Requisite": "EliteKilled",
+            "AreaName": "Throne of the Sandfury"
           }
         ]
       }

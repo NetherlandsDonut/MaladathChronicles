@@ -321,10 +321,13 @@ public class Blueprint
                 {
                     AddBigButton("Portrait" + slot.player.race.Replace("'", "").Replace(".", "").Replace(" ", "") + slot.player.gender, (h) =>
                     {
-                        settings.selectedCharacter = slot.player.name;
-                        SetDesktopBackground("Areas/" + races.Find(x => x.name == slot.player.race).background, true);
-                        SpawnTransition();
-                        Respawn("CharacterInfo");
+                        if (settings.selectedCharacter != slot.player.name)
+                        {
+                            settings.selectedCharacter = slot.player.name;
+                            SetDesktopBackground("Areas/" + races.Find(x => x.name == slot.player.race).background, true);
+                            SpawnTransition();
+                            Respawn("CharacterInfo");
+                        }
                     });
                     if (settings.selectedCharacter != slot.player.name)
                     {
