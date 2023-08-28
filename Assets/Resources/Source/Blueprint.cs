@@ -266,6 +266,7 @@ public class Blueprint
                 },
                 (h) =>
                 {
+                    String.promptConfirm.Set("");
                     SpawnWindowBlueprint("ConfirmDeleteCharacter");
                     CDesktop.LBWindow.LBRegionGroup.LBRegion.inputLine.Activate();
                 });

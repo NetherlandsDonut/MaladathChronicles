@@ -951,7 +951,7 @@
     "name": "Onyxia's Lair",
     "zone": "Dustwallow Marsh",
     "type": "Raid",
-    "ambience": "AmbienceOnyxia",
+    "ambience": "AmbienceOnyxiasLair",
     "description": [],
     "wings": [
       {

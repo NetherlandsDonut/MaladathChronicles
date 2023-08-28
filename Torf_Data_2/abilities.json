@@ -105,7 +105,7 @@
   },
   {
     "name": "Dragon's Breath",
-    "icon": "AbilityDragon'sBreath"
+    "icon": "AbilityDragonsBreath"
   },
   {
     "name": "Pyroblast",
@@ -377,7 +377,7 @@
   },
   {
     "name": "Ysera's Gift",
-    "icon": "AbilityYsera'sGift"
+    "icon": "AbilityYserasGift"
   },
   {
     "name": "Efflorescence",
@@ -413,7 +413,7 @@
   },
   {
     "name": "Nature's Balance",
-    "icon": "AbilityNature'sBalance"
+    "icon": "AbilityNaturesBalance"
   },
   {
     "name": "Cultivation",
@@ -433,7 +433,7 @@
   },
   {
     "name": "Nature's Grace",
-    "icon": "AbilityNature'sGrace"
+    "icon": "AbilityNaturesGrace"
   },
   {
     "name": "Lifebloom",
@@ -468,8 +468,8 @@
     "icon": "AbilityProtectorofthePack"
   },
   {
-    "name": "Predator",
-    "icon": "AbilityPredator"
+    "name": "Brutal Swipes",
+    "icon": "AbilityBrutalSwipes"
   },
   {
     "name": "Incapacitating Roar",
@@ -540,8 +540,8 @@
     "icon": "AbilityVerdantHeart"
   },
   {
-    "name": "Maim",
-    "icon": "AbilityMaim"
+    "name": "Mangle",
+    "icon": "AbilityMangle"
   },
   {
     "name": "Rake",
@@ -3398,7 +3398,7 @@
   },
   {
     "name": "Sun King's Blessing",
-    "icon": "AbilitySunKing'sBlessing",
+    "icon": "AbilitySunKingsBlessing",
     "events": [
       {
         "triggers": [
