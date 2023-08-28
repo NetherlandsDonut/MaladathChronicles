@@ -98,7 +98,8 @@ public class Starter : MonoBehaviour
                                     commonEncounters = new(),
                                     rareEncounters = new(),
                                     eliteEncounters = new(),
-                                    type = "HostileArea"
+                                    type = "HostileArea",
+                                    zone = complex.name
                                 });
                         }
                         else if (site["SiteType"] == "Dungeon")
@@ -137,7 +138,8 @@ public class Starter : MonoBehaviour
                                         commonEncounters = new(),
                                         rareEncounters = new(),
                                         eliteEncounters = new(),
-                                        type = "HostileArea"
+                                        type = "HostileArea",
+                                        zone = instance.name
                                     });
         }
         for (int i = 0; i < SiteHostileArea.areas.Count; i++)

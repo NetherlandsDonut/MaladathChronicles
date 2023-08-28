@@ -55,6 +55,7 @@ public class Blueprint
             },
             (h) =>
             {
+                SpawnTransition();
                 SpawnWindowBlueprint("CharacterRoster");
                 SpawnWindowBlueprint("CharacterInfo");
                 SpawnWindowBlueprint("TitleScreenSingleplayer");
@@ -152,6 +153,7 @@ public class Blueprint
                     {
                         settings.selectedRealm = realm.name;
                         settings.selectedCharacter = "";
+                        SpawnTransition();
                         h.window.Respawn();
                         Respawn("CharacterRoster");
                         Respawn("CharacterInfo");
@@ -199,23 +201,65 @@ public class Blueprint
                 AddText("to confirm deletion");
             });
             AddInputRegion(String.promptConfirm, InputType.Capitals, "DangerousRed");
-        }),
+        }, true),
         new("CharacterInfo", () => {
             SetAnchor(TopLeft);
             AddRegionGroup();
             SetRegionGroupWidth(161);
-            SetRegionGroupHeight(354);
-            AddHeaderRegion(() => { AddLine("Character:"); });
+            SetRegionGroupHeight(358);
             if (settings.selectedCharacter != "")
             {
-                var save = saves[settings.selectedRealm].Find(x => x.player.name == settings.selectedCharacter);
+                var slot = saves[settings.selectedRealm].Find(x => x.player.name == settings.selectedCharacter);
+                var spec = slot.player.GetClass();
+                AddHeaderRegion(() => { AddLine(slot.player.name); });
                 AddHeaderRegion(() =>
                 {
-                    AddBigButton(save.player.GetClass().icon, (h) => { });
-                    AddLine("Level: " + save.player.level, "Gray");
-                    AddLine("Health: " + save.player.MaxHealth(), "Gray");
+                    AddBigButton("Portrait" + slot.player.race.Replace("'", "").Replace(".", "").Replace(" ", "") + slot.player.gender, (h) => { });
+                    AddBigButton(slot.player.GetClass().icon, (h) => { });
+                    AddLine("Level: " + slot.player.level, "Gray");
+                    AddLine(spec.name, "Gray");
                 });
-                AddPaddingRegion(() => { SetRegionAsGroupExtender(); });
+                AddHeaderRegion(() => { AddLine("Stats:"); });
+                var stats = slot.player.Stats();
+                AddPaddingRegion(() =>
+                {
+                    AddLine("Stamina: ", "DarkGray");
+                    AddText(stats["Stamina"] + "");
+                    AddLine("Strength: ", "DarkGray");
+                    AddText(stats["Strength"] + "");
+                    AddLine("Agility: ", "DarkGray");
+                    AddText(stats["Agility"] + "");
+                    AddLine("Intellect: ", "DarkGray");
+                    AddText(stats["Intellect"] + "");
+                    AddLine("Spirit: ", "DarkGray");
+                    AddText(stats["Spirit"] + "");
+                });
+                AddHeaderRegion(() => { AddLine("Talents:"); });
+                AddPaddingRegion(() =>
+                {
+                    AddLine(spec.talentTrees[0].name + ": ", "DarkGray");
+                    AddText(spec.talentTrees[0].talents.Count(x => slot.player.abilities.Contains(x.ability)) + "");
+                    AddLine(spec.talentTrees[1].name + ": ", "DarkGray");
+                    AddText(spec.talentTrees[1].talents.Count(x => slot.player.abilities.Contains(x.ability)) + "");
+                    AddLine(spec.talentTrees[2].name + ": ", "DarkGray");
+                    AddText(spec.talentTrees[2].talents.Count(x => slot.player.abilities.Contains(x.ability)) + "");
+                });
+                AddHeaderRegion(() => { AddLine("Enemies defeated:"); });
+                AddPaddingRegion(() =>
+                {
+                    AddLine("Common: ", "DarkGray");
+                    AddText("" + (slot.commonsKilled.Count > 0 ? slot.commonsKilled.Sum(x => x.Value) : 0));
+                    AddLine("Rares: ", "DarkGray");
+                    AddText("" + (slot.raresKilled.Count > 0 ? slot.raresKilled.Sum(x => x.Value) : 0));
+                    AddLine("Elites: ", "DarkGray");
+                    AddText("" + (slot.elitesKilled.Count > 0 ? slot.elitesKilled.Sum(x => x.Value) : 0));
+                });
+                AddHeaderRegion(() => { AddLine("Total time played:"); });
+                AddPaddingRegion(() =>
+                {
+                    SetRegionAsGroupExtender();
+                    AddLine(slot.timePlayed.TotalHours + "h "  + slot.timePlayed.Minutes + "m", "DarkGray");
+                });
                 AddButtonRegion(() =>
                 {
                     AddLine("Delete character", "Black");
@@ -228,10 +272,11 @@ public class Blueprint
             }
             else
             {
-                AddPaddingRegion(() => { SetRegionAsGroupExtender(); });
+                AddHeaderRegion(() => { AddLine("Character:"); });
+                AddPaddingRegion(() => { AddLine("No character selected", "DarkGray"); SetRegionAsGroupExtender(); });
                 AddPaddingRegion(() => AddLine("Delete a character", "DarkGray"));
             }
-        }),
+        }, true),
         new("CharacterRoster", () =>
         {
             if (settings.selectedCharacter == "")
@@ -277,6 +322,7 @@ public class Blueprint
                     {
                         settings.selectedCharacter = slot.player.name;
                         SetDesktopBackground("Areas/" + races.Find(x => x.name == slot.player.race).background, true);
+                        SpawnTransition();
                         Respawn("CharacterInfo");
                     });
                     if (settings.selectedCharacter != slot.player.name)
@@ -285,7 +331,7 @@ public class Blueprint
                         AddBigButtonOverlay("OtherGridBlurred");
                     }
                     AddLine(slot.player.name);
-                    AddLine("Level " + slot.player.level + " ");
+                    AddLine("Level: " + slot.player.level + " ");
                     AddText(slot.player.spec, slot.player.spec);
                 });
             }
@@ -299,6 +345,7 @@ public class Blueprint
                 {
                     CloseWindow(h.window);
                     CloseWindow("RealmRoster");
+                    CloseWindow("CharacterInfo");
                     CloseWindow("TitleScreenSingleplayer");
                     creationName = "";
                     creationFaction = "";
@@ -310,91 +357,6 @@ public class Blueprint
                 });
             else
                 AddPaddingRegion(() => AddLine("Create a new character", "DarkGray"));
-        }, true),
-        new("LoadGame", () =>
-        {
-            //SetAnchor(Center);
-            //AddHeaderGroup();
-            //AddHeaderRegion(() =>
-            //{
-            //    AddLine("Characters:", "Gray");
-            //    AddSmallButton("OtherClose", (h) =>
-            //    {
-            //        CloseWindow(h.window);
-            //        SpawnWindowBlueprint("TitleScreenSingleplayer");
-            //    });
-            //});
-            //AddRegionGroup();
-            //for (int i = 0; i < 10; i++)
-            //{
-            //    var index = i;
-            //    if (slots.Count > i)
-            //        AddPaddingRegion(() =>
-            //        {
-            //            AddLine(slots[index].hardcore ? "Hardcore" : "Softcore", slots[index].hardcore ? "Red" : "Gray");
-            //        });
-            //    else AddPaddingRegion(() => AddLine());
-            //}
-            //AddRegionGroup();
-            //for (int i = 0; i < 10; i++)
-            //{
-            //    var index = i;
-            //    if (slots.Count > i)
-            //        AddButtonRegion(() =>
-            //        {
-            //            AddLine(slots[index].player.name);
-            //        },
-            //        (h) =>
-            //        {
-            //            settings.selectedCharacter = slots[index].player.name;
-            //        });
-            //    else AddPaddingRegion(() => AddLine());
-            //}
-            //AddRegionGroup();
-            //for (int i = 0; i < 10; i++)
-            //{
-            //    var index = i;
-            //    if (slots.Count > i)
-            //        AddPaddingRegion(() =>
-            //        {
-            //            AddSmallButton(slots[index].player.GetClass().icon, (h) => { });
-            //            AddSmallButton("Portrait" + slots[index].player.race.Replace("'", "").Replace(".", "").Replace(" ", "") + slots[index].player.gender, (h) => { });
-            //        });
-            //    else AddPaddingRegion(() => AddLine());
-            //}
-            //AddRegionGroup();
-            //for (int i = 0; i < 10; i++)
-            //{
-            //    var index = i;
-            //    if (slots.Count > i)
-            //        AddPaddingRegion(() =>
-            //        {
-            //            AddLine("Level " + slots[index].player.level, "Gray");
-            //        });
-            //    else AddPaddingRegion(() => AddLine());
-            //}
-            //AddRegionGroup();
-            //for (int i = 0; i < 10; i++)
-            //{
-            //    var index = i;
-            //    if (slots.Count > i)
-            //        AddPaddingRegion(() =>
-            //        {
-            //            AddLine(slots[index].timePlayed.TotalHours + "h " + slots[index].timePlayed.Minutes + "m", "Gray");
-            //        });
-            //    else AddPaddingRegion(() => AddLine());
-            //}
-            //AddRegionGroup();
-            //for (int i = 0; i < 10; i++)
-            //{
-            //    var index = i;
-            //    if (slots.Count > i)
-            //        AddPaddingRegion(() =>
-            //        {
-            //            AddLine(slots[index].lastPlayed.ToShortDateString(), "Gray");
-            //        });
-            //    else AddPaddingRegion(() => AddLine());
-            //}
         }, true),
         new("GameSettings", () =>
         {
@@ -2186,9 +2148,12 @@ public class Blueprint
             AddPaddingRegion(() => { AddLine("Ambience:", "DarkGray"); });
             AddButtonRegion(() =>
             {
-                AddLine(area.ambience == null ? "None" : area.ambience.Replace("Ambience", "") + ".ogg");
+                AddLine(area.ambience == null ? "None" : area.ambience.Substring(8) + ".ogg");
                 if (area.ambience != "None")
-                    AddSmallButton("OtherSound", (h) => { PlayAmbience(area.ambience); });
+                    AddSmallButton("OtherSound", (h) =>
+                    {
+                        PlayAmbience(area.ambience);
+                    });
             },
             (h) =>
             {
@@ -2361,9 +2326,12 @@ public class Blueprint
             AddPaddingRegion(() => { AddLine("Ambience:", "DarkGray"); });
             AddButtonRegion(() =>
             {
-                AddLine(instance.ambience == null ? "None" : instance.ambience.Replace("Ambience", "") + ".ogg");
+                AddLine(instance.ambience == null ? "None" : instance.ambience.Substring(8) + ".ogg");
                 if (instance.ambience != "None")
-                    AddSmallButton("OtherSound", (h) => { PlayAmbience(instance.ambience); });
+                    AddSmallButton("OtherSound", (h) =>
+                    {
+                        PlayAmbience(instance.ambience);
+                    });
             },
             (h) =>
             {
@@ -2518,9 +2486,12 @@ public class Blueprint
             AddPaddingRegion(() => { AddLine("Ambience:", "DarkGray"); });
             AddButtonRegion(() =>
             {
-                AddLine(complex.ambience == null ? "None" : complex.ambience.Replace("Ambience", "") + ".ogg");
+                AddLine(complex.ambience == null ? "None" : complex.ambience.Substring(8) + ".ogg");
                 if (complex.ambience != "None")
-                    AddSmallButton("OtherSound", (h) => { PlayAmbience(complex.ambience); });
+                    AddSmallButton("OtherSound", (h) =>
+                    {
+                        PlayAmbience(complex.ambience);
+                    });
             },
             (h) =>
             {
@@ -2575,8 +2546,11 @@ public class Blueprint
                     {
                         SetRegionBackground(RegionBackgroundType.Button);
                         var foo = Assets.assets.ambience[index + 10 * regionGroup.pagination];
-                        AddLine(foo);
-                        AddSmallButton("OtherSound", (h) => { PlayAmbience("Ambience" + foo.Replace(".ogg", "")); });
+                        AddLine(foo.Substring(8));
+                        AddSmallButton("OtherSound", (h) =>
+                        {
+                            PlayAmbience(foo.Replace(".ogg", ""));
+                        });
                     }
                     else
                     {
@@ -2590,19 +2564,19 @@ public class Blueprint
                     CloseWindow("ObjectManagerAmbienceList");
                     if (area != null)
                     {
-                        area.ambience = "Ambience" + foo.Replace(".ogg", "");
+                        area.ambience = foo.Replace(".ogg", "");
                         Respawn("ObjectManagerHostileArea");
                         SpawnWindowBlueprint("ObjectManagerHostileAreas");
                     }
                     else if (instance != null)
                     {
-                        instance.ambience = "Ambience" + foo.Replace(".ogg", "");
+                        instance.ambience = foo.Replace(".ogg", "");
                         Respawn("ObjectManagerInstance");
                         SpawnWindowBlueprint("ObjectManagerInstances");
                     }
                     else if (complex != null)
                     {
-                        complex.ambience = "Ambience" + foo.Replace(".ogg", "");
+                        complex.ambience = foo.Replace(".ogg", "");
                         Respawn("ObjectManagerComplex");
                         SpawnWindowBlueprint("ObjectManagerComplexes");
                     }

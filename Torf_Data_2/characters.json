@@ -17,10 +17,10 @@
           "Earth": 0,
           "Fire": 1,
           "Air": 0,
-          "Water": 1,
+          "Water": 0,
           "Frost": 0,
           "Lightning": 0,
-          "Arcane": 2,
+          "Arcane": 1,
           "Decay": 0,
           "Order": 1,
           "Shadow": 0
@@ -798,8 +798,8 @@
       "raresKilled": {},
       "elitesKilled": {},
       "startDate": "2023-08-28T00:19:28.6964565+02:00",
-      "lastLoaded": "2023-08-28T00:36:51.4328666+02:00",
-      "lastPlayed": "2023-08-28T00:39:50.7415368+02:00"
+      "lastLoaded": "2023-08-28T11:53:24.3074187+02:00",
+      "lastPlayed": "2023-08-28T12:14:43.0238294+02:00"
     },
     {
       "player": {

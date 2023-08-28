@@ -1,70 +1,507 @@
 [
   {
     "name": "Ass",
+    "zone": "Zul'Farrak",
     "type": "HostileArea"
   },
   {
     "name": "Spire Throne",
-    "type": "HostileArea"
+    "zone": "Upper Blackrock Spire",
+    "type": "HostileArea",
+    "commonEncounters": [
+      {
+        "who": "Chromatic Elite Guard",
+        "levelMin": 60,
+        "levelMax": 61
+      },
+      {
+        "who": "Rage Talon Fire Tongue",
+        "levelMin": 60,
+        "levelMax": 61
+      },
+      {
+        "who": "Rage Talon Captain",
+        "levelMin": 61,
+        "levelMax": 62
+      }
+    ],
+    "eliteEncounters": [
+      {
+        "who": "General Drakkisath",
+        "levelMin": 62,
+        "requiredProgress": 3
+      }
+    ]
   },
   {
     "name": "The Furnace",
-    "type": "HostileArea"
+    "zone": "Upper Blackrock Spire",
+    "type": "HostileArea",
+    "commonEncounters": [
+      {
+        "who": "Blackhand Elite",
+        "levelMin": 60,
+        "levelMax": 61
+      },
+      {
+        "who": "Blackhand Iron Guard",
+        "levelMin": 60,
+        "levelMax": 61
+      },
+      {
+        "who": "Blackhand Assassin",
+        "levelMin": 60,
+        "levelMax": 61
+      },
+      {
+        "who": "Rage Talon Dragon Guard",
+        "levelMin": 60,
+        "levelMax": 61
+      },
+      {
+        "who": "Rage Talon Fire Tongue",
+        "levelMin": 60,
+        "levelMax": 61
+      },
+      {
+        "who": "Rage Talon Captain",
+        "levelMin": 61,
+        "levelMax": 62
+      }
+    ],
+    "eliteEncounters": [
+      {
+        "who": "The Beast",
+        "levelMin": 62,
+        "requiredProgress": 4
+      }
+    ]
   },
   {
     "name": "Blackrock Stadium",
-    "type": "HostileArea"
+    "zone": "Upper Blackrock Spire",
+    "type": "HostileArea",
+    "commonEncounters": [
+      {
+        "who": "Chromatic Dragonspawn",
+        "levelMin": 60,
+        "levelMax": 61
+      },
+      {
+        "who": "Rage Talon Fire Tongue",
+        "levelMin": 60,
+        "levelMax": 61
+      },
+      {
+        "who": "Rage Talon Flamescale",
+        "levelMin": 61,
+        "levelMax": 62
+      },
+      {
+        "who": "Blackhand Elite",
+        "levelMin": 61,
+        "levelMax": 62
+      },
+      {
+        "who": "Blackhand Dreadweaver",
+        "levelMin": 61,
+        "levelMax": 62
+      },
+      {
+        "who": "Blackhand Assassin",
+        "levelMin": 61,
+        "levelMax": 62
+      }
+    ],
+    "eliteEncounters": [
+      {
+        "who": "Gyth",
+        "levelMin": 62,
+        "requiredProgress": 3
+      },
+      {
+        "who": "Warchief Rend Blackhand",
+        "levelMin": 62,
+        "requiredProgress": 3
+      }
+    ]
   },
   {
     "name": "Upper Hall of Blackhand",
-    "type": "HostileArea"
+    "zone": "Upper Blackrock Spire",
+    "type": "HostileArea",
+    "commonEncounters": [
+      {
+        "who": "Blackhand Dreadweaver",
+        "levelMin": 59,
+        "levelMax": 60
+      },
+      {
+        "who": "Blackhand Summoner",
+        "levelMin": 59,
+        "levelMax": 60
+      },
+      {
+        "who": "Blackhand Veteran",
+        "levelMin": 59,
+        "levelMax": 60
+      },
+      {
+        "who": "Rage Talon Dragonspawn",
+        "levelMin": 59,
+        "levelMax": 60
+      },
+      {
+        "who": "Rage Talon Flamescale",
+        "levelMin": 59,
+        "levelMax": 60
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Jed Runewatcher",
+        "levelMin": 59,
+        "levelMax": 60
+      }
+    ],
+    "eliteEncounters": [
+      {
+        "who": "Goraluk Anvilcrack",
+        "levelMin": 60,
+        "requiredProgress": 3
+      }
+    ]
   },
   {
     "name": "The Rookery",
-    "type": "HostileArea"
+    "zone": "Upper Blackrock Spire",
+    "type": "HostileArea",
+    "commonEncounters": [
+      {
+        "who": "Rage Talon Flamescale",
+        "levelMin": 58,
+        "levelMax": 59
+      },
+      {
+        "who": "Rage Talon Dragonspawn",
+        "levelMin": 58,
+        "levelMax": 59
+      },
+      {
+        "who": "Rookery Whelp",
+        "levelMin": 58,
+        "levelMax": 59
+      }
+    ],
+    "eliteEncounters": [
+      {
+        "who": "Solakar Flamewreath",
+        "levelMin": 59,
+        "requiredProgress": 3
+      }
+    ]
   },
   {
     "name": "Hall of Binding",
-    "type": "HostileArea"
+    "zone": "Upper Blackrock Spire",
+    "type": "HostileArea",
+    "commonEncounters": [
+      {
+        "who": "Blackhand Incarcerator",
+        "levelMin": 59,
+        "levelMax": 60
+      },
+      {
+        "who": "Blackhand Veteran",
+        "levelMin": 59,
+        "levelMax": 60
+      }
+    ],
+    "eliteEncounters": [
+      {
+        "who": "Pyroguard Emberseer",
+        "levelMin": 61,
+        "requiredProgress": 2
+      }
+    ]
   },
   {
     "name": "Dragonspire Hall",
-    "type": "HostileArea"
+    "zone": "Upper Blackrock Spire",
+    "type": "HostileArea",
+    "commonEncounters": [
+      {
+        "who": "Blackhand Dreadweaver",
+        "levelMin": 59,
+        "levelMax": 60
+      },
+      {
+        "who": "Blackhand Summoner",
+        "levelMin": 59,
+        "levelMax": 60
+      },
+      {
+        "who": "Blackhand Veteran",
+        "levelMin": 59,
+        "levelMax": 60
+      },
+      {
+        "who": "Rage Talon Dragonspawn",
+        "levelMin": 59,
+        "levelMax": 60
+      }
+    ]
   },
   {
     "name": "Chamber of Battle",
-    "type": "HostileArea"
+    "zone": "Lower Blackrock Spire",
+    "type": "HostileArea",
+    "commonEncounters": [
+      {
+        "who": "Bloodaxe Veteran",
+        "levelMin": 58,
+        "levelMax": 59
+      },
+      {
+        "who": "Spirestone Warlord",
+        "levelMin": 58,
+        "levelMax": 59
+      },
+      {
+        "who": "Smolderthorn Berserker",
+        "levelMin": 58,
+        "levelMax": 59
+      }
+    ],
+    "eliteEncounters": [
+      {
+        "who": "Overlord Wyrmthalak",
+        "levelMin": 60,
+        "requiredProgress": 2
+      }
+    ]
   },
   {
     "name": "Halycon's Lair",
-    "type": "HostileArea"
+    "zone": "Lower Blackrock Spire",
+    "type": "HostileArea",
+    "commonEncounters": [
+      {
+        "who": "Bloodaxe Evoker",
+        "levelMin": 57,
+        "levelMax": 58
+      },
+      {
+        "who": "Bloodaxe Warmonger",
+        "levelMin": 57,
+        "levelMax": 58
+      },
+      {
+        "who": "Bloodaxe Veteran",
+        "levelMin": 58,
+        "levelMax": 59
+      }
+    ],
+    "eliteEncounters": [
+      {
+        "who": "Halycon",
+        "levelMin": 59,
+        "requiredProgress": 2
+      }
+    ]
   },
   {
     "name": "The Storehouse",
-    "type": "HostileArea"
+    "zone": "Lower Blackrock Spire",
+    "type": "HostileArea",
+    "commonEncounters": [
+      {
+        "who": "Bloodaxe Summoner",
+        "levelMin": 57,
+        "levelMax": 58
+      },
+      {
+        "who": "Bloodaxe Warmonger",
+        "levelMin": 57,
+        "levelMax": 58
+      },
+      {
+        "who": "Bloodaxe Veteran",
+        "levelMin": 58,
+        "levelMax": 59
+      }
+    ],
+    "eliteEncounters": [
+      {
+        "who": "Quartermaster Zigris",
+        "levelMin": 59,
+        "requiredProgress": 2
+      }
+    ]
   },
   {
     "name": "Skitterweb Tunnels",
-    "type": "HostileArea"
+    "zone": "Lower Blackrock Spire",
+    "type": "HostileArea",
+    "commonEncounters": [
+      {
+        "who": "Spire Spider",
+        "levelMin": 57,
+        "levelMax": 58
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Crystal Fang",
+        "levelMin": 58,
+        "levelMax": 59
+      }
+    ],
+    "eliteEncounters": [
+      {
+        "who": "Mother Smolderweb",
+        "levelMin": 59,
+        "requiredProgress": 2
+      }
+    ]
   },
   {
     "name": "Tazz'Alor",
-    "type": "HostileArea"
+    "zone": "Lower Blackrock Spire",
+    "type": "HostileArea",
+    "commonEncounters": [
+      {
+        "who": "Smolderthorn Shadow Hunter",
+        "levelMin": 57,
+        "levelMax": 58
+      },
+      {
+        "who": "Smolderthorn Headhunter",
+        "levelMin": 57,
+        "levelMax": 58
+      },
+      {
+        "who": "Smolderthorn Mystic",
+        "levelMin": 57,
+        "levelMax": 58
+      },
+      {
+        "who": "Smolderthorn Seer",
+        "levelMin": 57,
+        "levelMax": 58
+      },
+      {
+        "who": "Smolderthorn Berserker",
+        "levelMin": 57,
+        "levelMax": 58
+      }
+    ],
+    "eliteEncounters": [
+      {
+        "who": "Shadow Hunter Vosh'Gajin",
+        "levelMin": 58,
+        "requiredProgress": 2
+      },
+      {
+        "who": "War Master Voone",
+        "levelMin": 59,
+        "requiredProgress": 2
+      }
+    ]
   },
   {
     "name": "Mok'Doom",
-    "type": "HostileArea"
+    "zone": "Lower Blackrock Spire",
+    "type": "HostileArea",
+    "commonEncounters": [
+      {
+        "who": "Spirestone Ogre Magus",
+        "levelMin": 54,
+        "levelMax": 55
+      },
+      {
+        "who": "Spirestone Reaver",
+        "levelMin": 55,
+        "levelMax": 56
+      },
+      {
+        "who": "Spirestone Mystic",
+        "levelMin": 54,
+        "levelMax": 55
+      },
+      {
+        "who": "Spirestone Warlord",
+        "levelMin": 56,
+        "levelMax": 57
+      }
+    ],
+    "eliteEncounters": [
+      {
+        "who": "Highlord Omokk",
+        "levelMin": 59,
+        "requiredProgress": 3
+      }
+    ]
   },
   {
     "name": "Hordemar City",
-    "type": "HostileArea"
+    "zone": "Lower Blackrock Spire",
+    "type": "HostileArea",
+    "commonEncounters": [
+      {
+        "who": "Scarshield Warlock",
+        "levelMin": 54,
+        "levelMax": 55
+      },
+      {
+        "who": "Scarshield Legionnaire",
+        "levelMin": 55,
+        "levelMax": 56
+      },
+      {
+        "who": "Scarshield Worg",
+        "levelMin": 54,
+        "levelMax": 55
+      },
+      {
+        "who": "Scarshield Spellbinder",
+        "levelMin": 55,
+        "levelMax": 56
+      }
+    ],
+    "eliteEncounters": [
+      {
+        "who": "Urok Doomhowl",
+        "levelMin": 60,
+        "requiredProgress": 3
+      }
+    ]
   },
   {
     "name": "Lower Hall of Blackhand",
-    "type": "HostileArea"
+    "zone": "Lower Blackrock Spire",
+    "type": "HostileArea",
+    "commonEncounters": [
+      {
+        "who": "Scarshield Legionnaire",
+        "levelMin": 54,
+        "levelMax": 55
+      },
+      {
+        "who": "Scarshield Spellbinder",
+        "levelMin": 54,
+        "levelMax": 55
+      },
+      {
+        "who": "Scarshield Acolyte",
+        "levelMin": 54,
+        "levelMax": 55
+      }
+    ]
   },
   {
     "name": "Hall of The Cursed",
+    "zone": "Temple of Atal'Hakkar",
     "type": "HostileArea"
   },
   {
@@ -4632,6 +5069,13 @@
         "who": "Mechanized Sentry",
         "levelMin": 31,
         "levelMax": 32
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Dark Iron Ambassador",
+        "levelMin": 32,
+        "levelMax": 33
       }
     ],
     "eliteEncounters": [
