@@ -2,7 +2,7 @@ using System.Linq;
 using System.Collections.Generic;
 
 using static Root;
-using static SaveSlot;
+using static SaveGame;
 using static SiteInstance;
 using static SiteHostileArea;
 
@@ -37,8 +37,8 @@ public class SiteComplex
                 if (window != null)
                     if (window.title == "HostileArea: " + area.name) return;
                     else CloseWindow(window);
-                SpawnWindowBlueprint("HostileArea: " + area.name + (area.specialClearBackground && area.eliteEncounters.All(x => currentSlot.elitesKilled.ContainsKey(x.who)) ? "Cleared" : ""));
-                SetDesktopBackground("Areas/Area" + (area.zone + area.name).Replace("'", "").Replace(".", "").Replace(" ", ""));
+                SpawnWindowBlueprint("HostileArea: " + area.name);
+                SetDesktopBackground("Areas/Area" + (area.zone + area.name).Replace("'", "").Replace(".", "").Replace(" ", "") + (area.specialClearBackground && area.eliteEncounters.All(x => currentSave.elitesKilled.ContainsKey(x.who)) ? "Cleared" : ""));
                 SpawnTransition();
             }
             else

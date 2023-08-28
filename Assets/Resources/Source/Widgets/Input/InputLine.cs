@@ -2,6 +2,7 @@ using UnityEngine;
 
 using static Root;
 using static Font;
+using static Cursor;
 using static String;
 
 public class InputLine : MonoBehaviour
@@ -16,6 +17,8 @@ public class InputLine : MonoBehaviour
         switch (inputType)
         {
             case InputType.Letters:
+                return char.IsLetter(letter);
+            case InputType.Capitals:
                 return char.IsLetter(letter);
             case InputType.Numbers:
                 return char.IsDigit(letter);
@@ -38,13 +41,50 @@ public class InputLine : MonoBehaviour
         this.region.inputLine = this;
     }
 
+    public void Activate()
+    {
+        var desktop = text.inputLine.region.regionGroup.window.desktop;
+        cursor.SetCursor(CursorType.None);
+        UnityEngine.Cursor.lockState = CursorLockMode.Locked;
+        inputLineMarker = 0;
+        inputLine = text.inputLine;
+        desktop.windows.ForEach(x => x.Rebuild());
+    }
+
     public int Length() => font.Length(text.text.Value());
 
     public static InputLine inputLine;
 
+    public static void ExecuteQuit(String foo)
+    {
+        if (foo == promptConfirm)
+        {
+            if (CDesktop.windows.Exists(x => x.title == "ConfirmDeleteCharacter"))
+                CloseWindow("ConfirmDeleteCharacter");
+        }
+    }
+
     public static void ExecuteChange(String foo)
     {
-        if (foo == search)
+        if (foo == promptConfirm)
+        {
+            if (CDesktop.windows.Exists(x => x.title == "ConfirmDeleteCharacter"))
+            {
+                if (foo.Value() == "DELETE")
+                {
+                    SaveGame.saves[GameSettings.settings.selectedRealm].RemoveAll(x => x.player.name == GameSettings.settings.selectedCharacter);
+                    GameSettings.settings.selectedCharacter = "";
+                    CloseWindow("ConfirmDeleteCharacter");
+                    RemoveDesktopBackground();
+                    Respawn("CharacterInfo");
+                    Respawn("CharacterRoster");
+                    Respawn("TitleScreenSingleplayer");
+                }
+                else
+                    CloseWindow("ConfirmDeleteCharacter");
+            }
+        }
+        else if (foo == search)
         {
             if (CDesktop.title == "ObjectManagerItems")
             {

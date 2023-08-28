@@ -260,11 +260,11 @@ public class Window : MonoBehaviour
                             length = text.SpawnCharacter(character, length);
                         else
                         {
-                            if (length + 9 + Font.font.Length(character + "") + objectOffset < regionGroup.setWidth - region.smallButtons.Count * 19)
+                            if (length + 4 + Font.font.Length(character + "") + objectOffset < regionGroup.setWidth - region.smallButtons.Count * 19)
                                 length = text.SpawnCharacter(character, length);
                             else
                             {
-                                for (int i = 0; i < 3; i++)
+                                for (int i = 0; i < 2; i++)
                                     length = text.SpawnCharacter('.', length);
                                 break;
                             }

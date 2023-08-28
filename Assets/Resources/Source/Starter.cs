@@ -13,7 +13,7 @@ using static Font;
 using static Sound;
 using static Cursor;
 using static Talent;
-using static SaveSlot;
+using static SaveGame;
 using static Coloring;
 using static Transport;
 using static GameSettings;
@@ -30,14 +30,13 @@ public class Starter : MonoBehaviour
         font = new Font("Tahoma Bold");
         desktops = new();
         settings = new GameSettings();
-        slots = new List<SaveSlot>();
         fallingElements = new List<FallingElement>();
         var prefix = "";
         #if (!UNITY_EDITOR)
         prefix = "D:\\Games\\Torf\\";
         #endif
-        Deserialize(ref slots, "characters", false, prefix);
-        if (slots == null) slots = new();
+        Deserialize(ref saves, "characters", false, prefix);
+        if (saves == null) saves = new();
         Deserialize(ref settings, "settings", false, prefix);
         if (settings == null) settings = new();
         Deserialize(ref Realm.realms, "realms", false, prefix);
@@ -232,6 +231,12 @@ public class Starter : MonoBehaviour
             if (race.faction != null && race.background == null || race.background == "")
                 race.background = "AreaElwynnForestNorthshireAbbey";
         }
+        for (int i = 0; i < Realm.realms.Count; i++)
+        {
+            var realm = Realm.realms[i];
+            if (!saves.ContainsKey(realm.name))
+                saves.Add(realm.name, new());
+        }
         SiteHostileArea.areas.ForEach(x => x.Initialise());
         instances.ForEach(x => x.Initialise());
         complexes.ForEach(x => x.Initialise());
@@ -407,54 +412,75 @@ public class Starter : MonoBehaviour
                             AddPaddingRegion(() =>
                             {
                                 AddLine("Exploration progress: ", "DarkGray");
-                                var temp = currentSlot.siteProgress;
-                                int progress = (int)(currentSlot.siteProgress.ContainsKey(area.name) ? (double)currentSlot.siteProgress[area.name] / area.eliteEncounters.Sum(x => x.requiredProgress) * 100 : 0);
+                                var temp = currentSave.siteProgress;
+                                int progress = (int)(currentSave.siteProgress.ContainsKey(area.name) ? (double)currentSave.siteProgress[area.name] / area.eliteEncounters.Sum(x => x.requiredProgress) * 100 : 0);
                                 AddText((progress > 100 ? 100 : progress) + "%", ColorProgress(progress));
                             });
+                        AddButtonRegion(() => { AddLine("Explore", "Black"); },
+                        (h) =>
+                        {
+                            Board.NewBoard(area.RollEncounter(), area);
+                            SpawnDesktopBlueprint("Game");
+                            SwitchDesktop("Game");
+                        });
                         AddPaddingRegion(() =>
                         {
                             SetRegionAsGroupExtender();
                         });
                         if (area.commonEncounters != null && area.commonEncounters.Count > 0)
                         {
-                            AddHeaderRegion(() => { AddLine("Possible encounters:", "DarkGray"); });
-                            foreach (var encounter in area.commonEncounters)
-                                AddPaddingRegion(() =>
-                                {
-                                    AddLine(encounter.who, "DarkGray", "Right");
-                                    var race = Race.races.Find(x => x.name == encounter.who);
-                                    AddSmallButton(race == null ? "OtherUnknown" : race.portrait, (h) => { });
-                                });
-                            AddButtonRegion(() => { AddLine("Explore", "Black"); },
-                            (h) =>
-                            {
-                                Board.NewBoard(area.RollEncounter(), area);
-                                SpawnDesktopBlueprint("Game");
-                                SwitchDesktop("Game");
-                            });
+                            if (currentSave.siteProgress.ContainsKey(area.name) && area.eliteEncounters.Sum(x => x.requiredProgress) <= currentSave.siteProgress[area.name])
+                                foreach (var encounter in area.commonEncounters)
+                                    AddButtonRegion(() =>
+                                    {
+                                        AddLine(encounter.who, "", "Right");
+                                        var race = Race.races.Find(x => x.name == encounter.who);
+                                        AddSmallButton(race == null ? "OtherUnknown" : race.portrait, (h) => { });
+                                    }, 
+                                    (h) =>
+                                    {
+                                        Board.NewBoard(area.RollEncounter(encounter), area);
+                                        SpawnDesktopBlueprint("Game");
+                                        SwitchDesktop("Game");
+                                    });
+                            else
+                                foreach (var encounter in area.commonEncounters)
+                                    AddPaddingRegion(() =>
+                                    {
+                                        AddLine(encounter.who, "DarkGray", "Right");
+                                        var race = Race.races.Find(x => x.name == encounter.who);
+                                        AddSmallButton(race == null ? "OtherUnknown" : race.portrait, (h) => { });
+                                    });
                         }
                         if (area.eliteEncounters != null && area.eliteEncounters.Count > 0)
                         {
-                            AddHeaderRegion(() =>
-                            {
-                                AddLine("Bosses: ", "Gray");
-                                //AddSmallButton("OtherBoss", (h) => { });
-                            });
+                            //AddHeaderRegion(() =>
+                            //{
+                            //    AddLine("Bosses: ", "Gray");
+                            //});
                             foreach (var boss in area.eliteEncounters)
                             {
-                                AddButtonRegion(() =>
-                                {
-                                    SetRegionBackground(RegionBackgroundType.RedButton);
-                                    AddLine(boss.who, "", "Right");
-                                    var race = Race.races.Find(x => x.name == boss.who);
-                                    AddSmallButton(race == null ? "OtherUnknown" : race.portrait, (h) => { });
-                                },
-                                (h) =>
-                                {
-                                    Board.NewBoard(area.RollBoss(boss), area);
-                                    SpawnDesktopBlueprint("Game");
-                                    SwitchDesktop("Game");
-                                });
+                                if (currentSave.siteProgress.ContainsKey(area.name) && boss.requiredProgress <= currentSave.siteProgress[area.name])
+                                    AddButtonRegion(() =>
+                                    {
+                                        SetRegionBackground(RegionBackgroundType.RedButton);
+                                        AddLine(boss.who, "", "Right");
+                                        var race = Race.races.Find(x => x.name == boss.who);
+                                        AddSmallButton(race == null ? "OtherUnknown" : race.portrait, (h) => { });
+                                    },
+                                    (h) =>
+                                    {
+                                        Board.NewBoard(area.RollEncounter(boss), area);
+                                        SpawnDesktopBlueprint("Game");
+                                        SwitchDesktop("Game");
+                                    });
+                                else
+                                    AddPaddingRegion(() =>
+                                    {
+                                        AddLine(boss.who, "DangerousRed", "Right");
+                                        var race = Race.races.Find(x => x.name == boss.who);
+                                        AddSmallButton(race == null ? "OtherUnknown" : race.portrait, (h) => { });
+                                    });
                             }
                         }
                     }
@@ -476,17 +502,6 @@ public class Starter : MonoBehaviour
         cursor = FindObjectOfType<Cursor>();
         cursorEnemy = FindObjectOfType<CursorRemote>();
         ambience = FindObjectsOfType<AudioSource>().First(x => x.name == "Ambience");
-        if (slots.Count > 0)
-        {
-            if (settings.selectedCharacter == "")
-                if (settings.selectedRealm != "")
-                    settings.selectedCharacter = slots.Find(x => x.realm == settings.selectedRealm).player.name;
-        }
-        else
-        {
-            settings.selectedRealm = "";
-            settings.selectedCharacter = "";
-        }
         SpawnDesktopBlueprint("TitleScreen");
         Destroy(gameObject);
     }

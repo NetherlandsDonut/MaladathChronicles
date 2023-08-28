@@ -1,13 +1,13 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-using static SaveSlot;
+using static SaveGame;
 
 public static class Coloring
 {
     public static string ColorItemRequiredLevel(int level)
     {
-        if (currentSlot != null && currentSlot.player != null && level > currentSlot.player.level) return "Red";
+        if (currentSave != null && currentSave.player != null && level > currentSave.player.level) return "Red";
         else return "Gray";
     }
 
@@ -22,10 +22,10 @@ public static class Coloring
 
     public static string ColorEntityLevel(int level)
     {
-        if (level - 4 > currentSlot.player.level) return "DangerousRed";
-        else if (level - 2 > currentSlot.player.level) return "Orange";
-        else if (level + 2 < currentSlot.player.level && currentSlot.player.WillGetExperience(level)) return "Green";
-        else if (!currentSlot.player.WillGetExperience(level)) return "DarkGray";
+        if (level - 4 > currentSave.player.level) return "DangerousRed";
+        else if (level - 2 > currentSave.player.level) return "Orange";
+        else if (level + 2 < currentSave.player.level && currentSave.player.WillGetExperience(level)) return "Green";
+        else if (!currentSave.player.WillGetExperience(level)) return "DarkGray";
         else return "Yellow";
     }
 
@@ -38,9 +38,10 @@ public static class Coloring
         { "DarkGray", new Color32(114, 114, 114, 255) },
         { "Black", new Color32(31, 31, 31, 255) },
         { "Red", new Color32(181, 77, 77, 255) },
-        { "DangerousRed", new Color32(219, 48, 48, 255) },
+        { "DangerousRed", new Color32(173, 36, 45, 255) },
         { "Yellow", new Color32(181, 159, 77, 255) },
         { "Orange", new Color32(185, 104, 57, 255) },
+        { "LightOrange", new Color32(168, 110, 38, 255) },
         { "Green", new Color32(81, 181, 77, 255) },
         { "Druid", new Color32(184, 90, 7, 255) },
         { "Warrior", new Color32(144, 113, 79, 255) },

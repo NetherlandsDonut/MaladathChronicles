@@ -554,6 +554,7 @@ public static class Root
     {
         Everything,
         Letters,
+        Capitals,
         Numbers,
         Decimal
     }

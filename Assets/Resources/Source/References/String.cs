@@ -17,6 +17,7 @@ public class String
     public void Confirm() => backupValue = value;
     public void Reset() => value = backupValue;
 
+    public static String promptConfirm = new();
     public static String consoleInput = new();
     public static String search = new();
     public static String objectName = new();

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using static Root;
 using static Root.Anchor;
 
-using static SaveSlot;
+using static SaveGame;
 
 public class Buff
 {
@@ -139,7 +139,7 @@ public class Buff
         buff.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/Buttons/" + icon);
         buff.transform.parent = Board.board.window.desktop.transform;
         buff.transform.position = position;
-        buff.GetComponent<FlyingBuff>().Initiate(currentSlot.player == target, (h) => { },
+        buff.GetComponent<FlyingBuff>().Initiate(currentSave.player == target, (h) => { },
             (h) => () =>
             {
                 var fb = h.GetComponent<FlyingBuff>();

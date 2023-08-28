@@ -3,7 +3,7 @@ using System.Linq;
 using System.Collections.Generic;
 
 using static Root;
-using static SaveSlot;
+using static SaveGame;
 
 public class SiteHostileArea
 {
@@ -24,14 +24,14 @@ public class SiteHostileArea
         var encounters = commonEncounters.Select(x => (x.levelMax != 0 ? random.Next(x.levelMin, x.levelMax + 1) : x.levelMin, Race.races.Find(y => y.name == x.who))).ToList();
         if (random.Next(0, 100) < 1)
         {
-            var rares = rareEncounters.FindAll(x => !currentSlot.raresKilled.ContainsKey(x.who));
+            var rares = rareEncounters.FindAll(x => !currentSave.raresKilled.ContainsKey(x.who));
             if (rares.Count > 0) encounters = rares.Select(x => (x.levelMax != 0 ? random.Next(x.levelMin, x.levelMax + 1) : x.levelMin, Race.races.Find(y => y.name == x.who))).ToList();
         }
         var find = encounters[random.Next(0, encounters.Count)];
         return new Entity(find.Item1, find.Item2);
     }
 
-    public Entity RollBoss(Encounter boss)
+    public Entity RollEncounter(Encounter boss)
     {
         return new Entity(boss.levelMax != 0 ? random.Next(boss.levelMin, boss.levelMax + 1) : boss.levelMin, Race.races.Find(x => x.name == boss.who));
     }

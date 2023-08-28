@@ -7,7 +7,7 @@ using static Root;
 using static Root.Anchor;
 
 using static Sound;
-using static SaveSlot;
+using static SaveGame;
 using static Coloring;
 using static GameSettings;
 
@@ -186,10 +186,10 @@ public class Item
         AddBigButton(item.icon,
             (h) =>
             {
-                if (item.CanEquip(currentSlot.player))
+                if (item.CanEquip(currentSave.player))
                 {
                     PlaySound(item.ItemSound("PickUp"));
-                    item.Equip(currentSlot.player);
+                    item.Equip(currentSave.player);
                     CloseWindow(h.window);
                     SpawnWindowBlueprint("Inventory");
                     CloseWindow("PlayerEquipmentInfo");
@@ -205,14 +205,14 @@ public class Item
         );
         if (settings.rarityIndicators.Value())
             AddBigButtonOverlay("OtherRarity" + item.rarity + (settings.bigRarityIndicators.Value() ? "Big" : ""), 0, 2);
-        if (currentSlot.player.HasItemEquipped(item.name))
+        if (currentSave.player.HasItemEquipped(item.name))
         {
             SetBigButtonToGrayscale();
             AddBigButtonOverlay("OtherGridBlurred", 0, 2);
         }
-        if (item.CanEquip(currentSlot.player) && currentSlot.player.IsItemNewSlot(item) && (settings.upgradeIndicators.Value() || settings.newSlotIndicators.Value()))
+        if (item.CanEquip(currentSave.player) && currentSave.player.IsItemNewSlot(item) && (settings.upgradeIndicators.Value() || settings.newSlotIndicators.Value()))
             AddBigButtonOverlay(settings.newSlotIndicators.Value() ? "OtherItemNewSlot" : "OtherItemUpgrade", 0, 2);
-        else if (settings.upgradeIndicators.Value() && item.CanEquip(currentSlot.player) && currentSlot.player.IsItemAnUpgrade(item))
+        else if (settings.upgradeIndicators.Value() && item.CanEquip(currentSave.player) && currentSave.player.IsItemAnUpgrade(item))
             AddBigButtonOverlay("OtherItemUpgrade", 0, 2);
     }
 
@@ -269,7 +269,7 @@ public class Item
                 {
                     foreach (var bonus in set.setBonuses)
                     {
-                        var howMuch = currentSlot != null && currentSlot.player != null ? set.EquippedPieces(currentSlot.player) : 0;
+                        var howMuch = currentSave != null && currentSave.player != null ? set.EquippedPieces(currentSave.player) : 0;
                         bool has = howMuch >= bonus.requiredPieces;
                         AddLine((has ? bonus.requiredPieces : howMuch) + "/" + bonus.requiredPieces + " Set: ", has ? "Uncommon" : "DarkGray");
                         if (bonus.description.Count > 0)

@@ -2153,18 +2153,6 @@
       {
         "Item1": "Cloth Proficiency",
         "Item2": 1
-      },
-      {
-        "Item1": "Thunderstorm",
-        "Item2": 1
-      },
-      {
-        "Item1": "Spore Cloud",
-        "Item2": 1
-      },
-      {
-        "Item1": "Volatile Infection",
-        "Item2": 1
       }
     ],
     "talentTrees": [

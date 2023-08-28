@@ -2,25 +2,19 @@
 using System.Collections.Generic;
 
 using static Root;
+using static GameSettings;
 
-public class SaveSlot
+public class SaveGame
 {
-    public string realm;
     public Entity player;
     public Dictionary<string, int> siteProgress, commonsKilled, raresKilled, elitesKilled;
     public DateTime startDate, lastLoaded, lastPlayed;
     public TimeSpan timePlayed;
 
-    public Realm GetRealm()
-    {
-        return Realm.realms.Find(x => x.name == realm);
-    }
-
     public static void AddNewSave()
     {
-        var newSlot = new SaveSlot
+        var newSlot = new SaveGame
         {
-            realm = GameSettings.settings.selectedRealm,
             siteProgress = new(),
             commonsKilled = new(),
             raresKilled = new(),
@@ -35,35 +29,33 @@ public class SaveSlot
                 Class.specs.Find(x => x.name == creationClass).startingEquipment[creationRace]
             )
         };
-        slots.Add(newSlot);
-        if (slots.Count == 1)
-            GameSettings.settings.selectedCharacter = slots[0].player.name;
+        saves[settings.selectedRealm].Add(newSlot);
     }
 
     public static void CloseSave()
     {
-        currentSlot.lastPlayed = DateTime.Now;
-        currentSlot.timePlayed.Add(DateTime.Now - currentSlot.lastLoaded);
-        currentSlot = null;
+        currentSave.lastPlayed = DateTime.Now;
+        currentSave.timePlayed.Add(DateTime.Now - currentSave.lastLoaded);
+        currentSave = null;
     }
 
     public static void Login()
     {
-        currentSlot = slots.Find(x => x.player.name == GameSettings.settings.selectedCharacter);
-        currentSlot.lastLoaded = DateTime.Now;
+        currentSave = saves[settings.selectedRealm].Find(x => x.player.name == settings.selectedCharacter);
+        currentSave.lastLoaded = DateTime.Now;
     }
 
     public static void SaveGames()
     {
-        if (currentSlot != null)
+        if (currentSave != null)
         {
-            currentSlot.lastPlayed = DateTime.Now;
-            currentSlot.timePlayed.Add(DateTime.Now - currentSlot.lastLoaded);
+            currentSave.lastPlayed = DateTime.Now;
+            currentSave.timePlayed.Add(DateTime.Now - currentSave.lastLoaded);
         }
-        Serialization.Serialize(slots, "characters");
-        Serialization.Serialize(GameSettings.settings, "settings");
+        Serialization.Serialize(saves, "characters");
+        Serialization.Serialize(settings, "settings");
     }
 
-    public static SaveSlot currentSlot;
-    public static List<SaveSlot> slots;
+    public static SaveGame currentSave;
+    public static Dictionary<string, List<SaveGame>> saves;
 }

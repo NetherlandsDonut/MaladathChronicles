@@ -205,6 +205,7 @@ public class Desktop : MonoBehaviour
                         else
                         {
                             temp.text.text.Reset();
+                            ExecuteQuit(temp.text.text);
                             didSomething = true;
                         }
                     }
@@ -266,7 +267,7 @@ public class Desktop : MonoBehaviour
                         }
                         else if (c != '\n' && c != '\r' && temp.CheckInput(c))
                         {
-                            inputLine.text.text.Insert(inputLineMarker, c);
+                            inputLine.text.text.Insert(inputLineMarker, temp.inputType == InputType.Capitals ? char.ToUpper(c) : c);
                             inputLineMarker++;
                         }
                         if (length == temp.text.text.Value().Length)
