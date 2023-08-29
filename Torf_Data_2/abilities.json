@@ -285,7 +285,7 @@
   },
   {
     "name": "Power Word: Fortitude",
-    "icon": "AbilityPowerWord:Fortitude"
+    "icon": "AbilityPrayerofFortitude"
   },
   {
     "name": "Meditation",
@@ -1222,6 +1222,7 @@
         },
         {
           "regionType": "Padding",
+          "isExtender": true,
           "contents": [
             {
               "Color": "Gray",
@@ -3632,6 +3633,7 @@
       "regions": [
         {
           "regionType": "Padding",
+          "isExtender": true,
           "contents": [
             {
               "Color": "Gray",
@@ -3889,13 +3891,13 @@
   },
   {
     "name": "Lightning Bolt",
-    "icon": "AbilityLightning",
+    "icon": "AbilityLightningBolt",
     "tags": [],
     "events": []
   },
   {
     "name": "Chain Lightning",
-    "icon": "AbilityLightningBolt",
+    "icon": "AbilityChainLightning",
     "tags": [],
     "events": []
   },
@@ -3913,7 +3915,7 @@
   },
   {
     "name": "Lava Burst",
-    "icon": "AbilityFireBolt",
+    "icon": "AbilityLavaBurst",
     "tags": [],
     "events": []
   },
@@ -3931,7 +3933,7 @@
   },
   {
     "name": "Liquid Magma Totem",
-    "icon": "AbilityFireResistanceTotem",
+    "icon": "AbilityTotemFireResistance",
     "tags": [],
     "events": []
   },
@@ -3985,7 +3987,7 @@
   },
   {
     "name": "Mana Spring Totem",
-    "icon": "AbilityManaRegenTotem",
+    "icon": "AbilityTotemManaRegen",
     "tags": [],
     "events": []
   },
@@ -4081,7 +4083,7 @@
   },
   {
     "name": "Totemic Focus",
-    "icon": "AbilityAcid",
+    "icon": "AbilityTotemTranquilMind",
     "tags": [],
     "events": []
   },
@@ -4099,7 +4101,7 @@
   },
   {
     "name": "Healing Rain",
-    "icon": "AbilityAcid",
+    "icon": "AbilityHealingRain",
     "tags": [],
     "events": []
   },
@@ -4111,7 +4113,7 @@
   },
   {
     "name": "Ancestral Guidance",
-    "icon": "AbilityAcid",
+    "icon": "AbilityAncestralGuidance",
     "tags": [],
     "events": []
   },
@@ -4177,13 +4179,13 @@
   },
   {
     "name": "Static Accumulation",
-    "icon": "AbilityStormReach",
+    "icon": "AbilityStaticAccumulation",
     "tags": [],
     "events": []
   },
   {
     "name": "Stormblast",
-    "icon": "AbilityAcid",
+    "icon": "AbilityStormReach",
     "tags": [],
     "events": []
   },
@@ -4213,7 +4215,7 @@
   },
   {
     "name": "Ice Strike",
-    "icon": "AbilityAcid",
+    "icon": "AbilityFrostStrike",
     "tags": [],
     "events": []
   },
@@ -4285,7 +4287,7 @@
   },
   {
     "name": "Hot Hand",
-    "icon": "AbilityAcid",
+    "icon": "AbilityFieryRush",
     "tags": [],
     "events": []
   },

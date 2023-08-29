@@ -514,7 +514,7 @@ public class Blueprint
         new("PlayerEquipmentInfo", () => {
             SetAnchor(TopLeft);
             AddRegionGroup();
-            SetRegionGroupWidth(171);
+            SetRegionGroupWidth(190);
             AddButtonRegion(
                 () =>
                 {
@@ -963,78 +963,40 @@ public class Blueprint
             }
         }, true),
         new("MapToolbar", () => {
-            SetAnchor(TopLeft);
+            SetAnchor(Bottom);
             AddRegionGroup();
-            SetRegionGroupWidth(171);
-            SetRegionGroupHeight(354);
-            AddButtonRegion(
-                () =>
-                {
-                    AddLine(currentSave.player.name, "Black");
-                },
-                (h) =>
-                {
-
-                }
-            );
             AddHeaderRegion(() =>
             {
-                AddBigButton(currentSave.player.GetClass().icon,
-                    (h) => { }
-                );
-                AddLine("Level: " + currentSave.player.level, "Gray");
-                AddLine("Health: " + currentSave.player.health + "/" + currentSave.player.MaxHealth(), "Gray");
+                AddLine("Map", "DarkGray", "Center");
             });
-            AddButtonRegion(
-                () =>
-                {
-                    AddLine("Character Sheet", "", "Right");
-                    AddSmallButton("MenuCharacterSheet", (h) => { });
-                },
-                (h) =>
-                {
-                    SpawnDesktopBlueprint("CharacterSheet");
-                    SwitchDesktop("CharacterSheet");
-                    PlaySound("DesktopCharacterSheetOpen");
-                }
-            );
-            AddButtonRegion(
-                () =>
-                {
-                    AddLine("Inventory", "", "Right");
-                    AddSmallButton("MenuInventory", (h) => { });
-                },
-                (h) =>
-                {
-                    SpawnDesktopBlueprint("EquipmentScreen");
-                    SwitchDesktop("EquipmentScreen");
-                }
-            );
-            AddButtonRegion(
-                () =>
-                {
-                    AddLine("Spellbook", "", "Right");
-                    AddSmallButton("MenuSpellbook", (h) => { });
-                },
-                (h) =>
-                {
-                    SpawnDesktopBlueprint("SpellbookScreen");
-                    SwitchDesktop("SpellbookScreen");
-                }
-            );
-            AddButtonRegion(
-                () =>
-                {
-                    AddLine("Talents", "", "Right");
-                    AddSmallButton("MenuTalents", (h) => { });
-                },
-                (h) =>
+            AddPaddingRegion(() =>
+            {
+                AddBigButton("MenuCompletion", (h) =>
                 {
                     SpawnDesktopBlueprint("TalentScreen");
                     SwitchDesktop("TalentScreen");
-                }
-            );
-            AddPaddingRegion(() => { });
+                });
+                AddBigButton("MenuClasses", (h) =>
+                {
+                    SpawnDesktopBlueprint("TalentScreen");
+                    SwitchDesktop("TalentScreen");
+                });
+                AddBigButton("MenuSpellbook", (h) =>
+                {
+                    SpawnDesktopBlueprint("SpellbookScreen");
+                    SwitchDesktop("SpellbookScreen");
+                });
+                AddBigButton("MenuInventory", (h) =>
+                {
+                    SpawnDesktopBlueprint("EquipmentScreen");
+                    SwitchDesktop("EquipmentScreen");
+                });
+                AddBigButton("MenuCharacterSheet", (h) =>
+                {
+                    SpawnDesktopBlueprint("CharacterSheet");
+                    SwitchDesktop("CharacterSheet");
+                });
+            });
         }, true),
         new("InstanceLeftSide", () => {
             SetAnchor(TopLeft);
@@ -1084,7 +1046,7 @@ public class Blueprint
         new("Inventory", () => {
             SetAnchor(TopRight);
             AddRegionGroup();
-            SetRegionGroupHeight(354);
+            SetRegionGroupHeight(358);
             var items = currentSave.player.inventory.items;
             AddHeaderRegion(() =>
             {
@@ -3299,7 +3261,11 @@ public class Blueprint
                         for (var j = 0; j < setItems.Count && j < 9; j++)
                         {
                             var J = j;
-                            AddSmallButton(setItems[J].icon, (h) => { });
+                            AddSmallButton(setItems[J].icon, (h) => { }, (h) => () =>
+                            {
+                                SetAnchor(Center);
+                                PrintItemTooltip(setItems[J]);
+                            });
                             AddSmallButtonOverlay("OtherRarity" + setItems[J].rarity + "Big");
                         }
                     }

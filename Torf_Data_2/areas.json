@@ -1,5 +1,144 @@
 [
   {
+    "name": "Searing Blade Hideout",
+    "zone": "Ragefire Chasm",
+    "type": "HostileArea",
+    "commonEncounters": [
+      {
+        "who": "Searing Blade Cultist",
+        "levelMin": 14,
+        "levelMax": 15
+      },
+      {
+        "who": "Searing Blade Warlock",
+        "levelMin": 13,
+        "levelMax": 14
+      }
+    ],
+    "eliteEncounters": [
+      {
+        "who": "Jergosh the Invoker",
+        "levelMin": 16,
+        "requiredProgress": 2
+      },
+      {
+        "who": "Bazzalan",
+        "levelMin": 16,
+        "requiredProgress": 2
+      }
+    ]
+  },
+  {
+    "name": "Main Chamber",
+    "zone": "Ragefire Chasm",
+    "type": "HostileArea",
+    "commonEncounters": [
+      {
+        "who": "Searing Blade Cultist",
+        "levelMin": 14,
+        "levelMax": 15
+      },
+      {
+        "who": "Searing Blade Enforcer",
+        "levelMin": 14,
+        "levelMax": 15
+      }
+    ],
+    "eliteEncounters": [
+      {
+        "who": "Taragaman the Hungerer",
+        "levelMin": 16,
+        "requiredProgress": 2
+      }
+    ]
+  },
+  {
+    "name": "Charred Tunnels",
+    "zone": "Ragefire Chasm",
+    "type": "HostileArea",
+    "commonEncounters": [
+      {
+        "who": "Molten Elemental",
+        "levelMin": 14,
+        "levelMax": 15
+      },
+      {
+        "who": "Earthborer",
+        "levelMin": 13,
+        "levelMax": 14
+      },
+      {
+        "who": "Ragefire Trogg",
+        "levelMin": 13,
+        "levelMax": 14
+      }
+    ],
+    "eliteEncounters": [
+      {
+        "who": "Oggleflint",
+        "levelMin": 15,
+        "requiredProgress": 2
+      }
+    ]
+  },
+  {
+    "name": "East Section",
+    "zone": "The Stockade",
+    "type": "HostileArea",
+    "commonEncounters": [
+      {
+        "who": "Dustwraith",
+        "levelMin": 44,
+        "levelMax": 45
+      }
+    ],
+    "eliteEncounters": [
+      {
+        "who": "Dustwraith",
+        "levelMin": 47,
+        "requiredProgress": 2
+      }
+    ]
+  },
+  {
+    "name": "Western Cells",
+    "zone": "The Stockade",
+    "type": "HostileArea",
+    "commonEncounters": [
+      {
+        "who": "Dustwraith",
+        "levelMin": 44,
+        "levelMax": 45
+      }
+    ],
+    "eliteEncounters": [
+      {
+        "who": "Dustwraith",
+        "levelMin": 47,
+        "requiredProgress": 2
+      }
+    ]
+  },
+  {
+    "name": "Central Corridor",
+    "zone": "The Stockade",
+    "type": "HostileArea",
+    "commonEncounters": [
+      {
+        "who": "Dustwraith",
+        "levelMin": 44,
+        "levelMax": 45
+      }
+    ],
+    "eliteEncounters": [
+      {
+        "who": "Dustwraith",
+        "levelMin": 47,
+        "requiredProgress": 2
+      }
+    ]
+  },
+  {
     "name": "Central Village",
     "zone": "Zul'Farrak",
     "type": "HostileArea",
@@ -2960,19 +3099,19 @@
     "type": "HostileArea",
     "commonEncounters": [
       {
-        "who": "Duskbat",
-        "levelMin": 1,
-        "levelMax": 2
+        "who": "Ironbark Protector",
+        "levelMin": 58,
+        "levelMax": 59
       },
       {
-        "who": "Wretched Zombie",
-        "levelMin": 1,
-        "levelMax": 2
+        "who": "Petrified Treant",
+        "levelMin": 54,
+        "levelMax": 55
       },
       {
-        "who": "Rattlecage Skeleton",
-        "levelMin": 1,
-        "levelMax": 2
+        "who": "Petrified Guardian",
+        "levelMin": 57,
+        "levelMax": 58
       }
     ],
     "eliteEncounters": [
@@ -2989,19 +3128,24 @@
     "type": "HostileArea",
     "commonEncounters": [
       {
-        "who": "Duskbat",
-        "levelMin": 1,
-        "levelMax": 2
+        "who": "Eldreth Darter",
+        "levelMin": 58,
+        "levelMax": 59
       },
       {
-        "who": "Wretched Zombie",
-        "levelMin": 1,
-        "levelMax": 2
+        "who": "Eldreth Seether",
+        "levelMin": 58,
+        "levelMax": 59
       },
       {
-        "who": "Rattlecage Skeleton",
-        "levelMin": 1,
-        "levelMax": 2
+        "who": "Eldreth Sorcerer",
+        "levelMin": 58,
+        "levelMax": 59
+      },
+      {
+        "who": "Eldreth Phantasm",
+        "levelMin": 58,
+        "levelMax": 59
       }
     ],
     "eliteEncounters": [
@@ -3023,19 +3167,19 @@
     "type": "HostileArea",
     "commonEncounters": [
       {
-        "who": "Duskbat",
-        "levelMin": 1,
-        "levelMax": 2
+        "who": "Gordok Mage Lord",
+        "levelMin": 57,
+        "levelMax": 58
       },
       {
-        "who": "Wretched Zombie",
-        "levelMin": 1,
-        "levelMax": 2
+        "who": "Gordok Brute",
+        "levelMin": 57,
+        "levelMax": 58
       },
       {
-        "who": "Rattlecage Skeleton",
-        "levelMin": 1,
-        "levelMax": 2
+        "who": "Gordok Mastiff",
+        "levelMin": 57,
+        "levelMax": 58
       }
     ],
     "eliteEncounters": [
@@ -3062,26 +3206,15 @@
     "type": "HostileArea",
     "commonEncounters": [
       {
-        "who": "Duskbat",
-        "levelMin": 1,
-        "levelMax": 2
-      },
-      {
-        "who": "Wretched Zombie",
-        "levelMin": 1,
-        "levelMax": 2
-      },
-      {
-        "who": "Rattlecage Skeleton",
-        "levelMin": 1,
-        "levelMax": 2
+        "who": "Gordok Captain",
+        "levelMin": 60
       }
     ],
     "eliteEncounters": [
       {
         "who": "King Gordok",
         "levelMin": 62,
-        "requiredProgress": 4
+        "requiredProgress": 2
       }
     ]
   },
@@ -3091,19 +3224,14 @@
     "type": "HostileArea",
     "commonEncounters": [
       {
-        "who": "Duskbat",
-        "levelMin": 1,
-        "levelMax": 2
+        "who": "Gordok Warlock",
+        "levelMin": 59,
+        "levelMax": 60
       },
       {
-        "who": "Wretched Zombie",
-        "levelMin": 1,
-        "levelMax": 2
-      },
-      {
-        "who": "Rattlecage Skeleton",
-        "levelMin": 1,
-        "levelMax": 2
+        "who": "Gordok Reaver",
+        "levelMin": 59,
+        "levelMax": 60
       }
     ],
     "eliteEncounters": [
@@ -3120,19 +3248,24 @@
     "type": "HostileArea",
     "commonEncounters": [
       {
-        "who": "Duskbat",
-        "levelMin": 1,
-        "levelMax": 2
+        "who": "Arcane Torrent",
+        "levelMin": 59,
+        "levelMax": 60
       },
       {
-        "who": "Wretched Zombie",
-        "levelMin": 1,
-        "levelMax": 2
+        "who": "Residual Monstrosity",
+        "levelMin": 58,
+        "levelMax": 59
       },
       {
-        "who": "Rattlecage Skeleton",
-        "levelMin": 1,
-        "levelMax": 2
+        "who": "Arcane Aberration",
+        "levelMin": 59,
+        "levelMax": 60
+      },
+      {
+        "who": "Eldreth Phantasm",
+        "levelMin": 58,
+        "levelMax": 59
       }
     ],
     "eliteEncounters": [
@@ -3149,25 +3282,48 @@
     "type": "HostileArea",
     "commonEncounters": [
       {
-        "who": "Duskbat",
-        "levelMin": 1,
-        "levelMax": 2
-      },
-      {
-        "who": "Wretched Zombie",
-        "levelMin": 1,
-        "levelMax": 2
-      },
-      {
-        "who": "Rattlecage Skeleton",
-        "levelMin": 1,
-        "levelMax": 2
+        "who": "Highborne Summoner",
+        "levelMin": 60
       }
     ],
     "eliteEncounters": [
       {
         "who": "Prince Tortheldrin",
         "levelMin": 61,
+        "requiredProgress": 2
+      }
+    ]
+  },
+  {
+    "name": "Warpwood Vestibule",
+    "zone": "Dire Maul",
+    "type": "HostileArea",
+    "commonEncounters": [
+      {
+        "who": "Wildspawn Shadowstalker",
+        "levelMin": 55,
+        "levelMax": 56
+      },
+      {
+        "who": "Wildspawn Felsworn",
+        "levelMin": 55,
+        "levelMax": 56
+      },
+      {
+        "who": "Wildspawn Betrayer",
+        "levelMin": 55,
+        "levelMax": 56
+      },
+      {
+        "who": "Phase Lasher",
+        "levelMin": 55,
+        "levelMax": 56
+      }
+    ],
+    "eliteEncounters": [
+      {
+        "who": "Zevrim Thornhoof",
+        "levelMin": 58,
         "requiredProgress": 4
       }
     ]
@@ -3178,19 +3334,19 @@
     "type": "HostileArea",
     "commonEncounters": [
       {
-        "who": "Duskbat",
-        "levelMin": 1,
-        "levelMax": 2
+        "who": "Warpwood Guardian",
+        "levelMin": 57,
+        "levelMax": 58
       },
       {
-        "who": "Wretched Zombie",
-        "levelMin": 1,
-        "levelMax": 2
+        "who": "Warpwood Stomper",
+        "levelMin": 57,
+        "levelMax": 58
       },
       {
-        "who": "Rattlecage Skeleton",
-        "levelMin": 1,
-        "levelMax": 2
+        "who": "Death Lash",
+        "levelMin": 57,
+        "levelMax": 58
       }
     ],
     "eliteEncounters": [
@@ -3207,19 +3363,19 @@
     "type": "HostileArea",
     "commonEncounters": [
       {
-        "who": "Duskbat",
-        "levelMin": 1,
-        "levelMax": 2
+        "who": "Warpwood Crusher",
+        "levelMin": 57,
+        "levelMax": 58
       },
       {
-        "who": "Wretched Zombie",
-        "levelMin": 1,
-        "levelMax": 2
+        "who": "Death Lash",
+        "levelMin": 57,
+        "levelMax": 58
       },
       {
-        "who": "Rattlecage Skeleton",
-        "levelMin": 1,
-        "levelMax": 2
+        "who": "Fel Lash",
+        "levelMin": 57,
+        "levelMax": 58
       }
     ],
     "eliteEncounters": [
@@ -3236,19 +3392,24 @@
     "type": "HostileArea",
     "commonEncounters": [
       {
-        "who": "Duskbat",
-        "levelMin": 1,
-        "levelMax": 2
+        "who": "Warpwood Stomper",
+        "levelMin": 55,
+        "levelMax": 56
       },
       {
-        "who": "Wretched Zombie",
-        "levelMin": 1,
-        "levelMax": 2
+        "who": "Warpwood Crusher",
+        "levelMin": 55,
+        "levelMax": 56
       },
       {
-        "who": "Rattlecage Skeleton",
-        "levelMin": 1,
-        "levelMax": 2
+        "who": "Warpwood Tangler",
+        "levelMin": 55,
+        "levelMax": 56
+      },
+      {
+        "who": "Phase Lasher",
+        "levelMin": 54,
+        "levelMax": 55
       }
     ],
     "eliteEncounters": [

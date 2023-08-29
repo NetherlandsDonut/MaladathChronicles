@@ -114,7 +114,7 @@ public class Desktop : MonoBehaviour
             }
         else
         {
-            if (CDesktop.title == "TitleScreen")
+            if (CDesktop.title == "TitleScreen" && CDesktop.screen.GetComponent<SpriteRenderer>().sprite == null && !windows.Exists(x => x.name == "CharacterCreation"))
             {
                 var amount = new Vector3(titleScreenCameraDirection < 2 ? -1f : 1f, titleScreenCameraDirection > 2 ? -1f : (titleScreenCameraDirection < 1 ? -1f : 1f));
                 screen.transform.localPosition += amount;
