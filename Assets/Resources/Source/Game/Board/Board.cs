@@ -97,11 +97,11 @@ public class Board
         CDesktop.LockScreen();
     }
 
-    public void EndCombat(bool playerWon)
+    public void EndCombat(string result)
     {
         cursorEnemy.fadeOut = true;
         CloseDesktop("Game");
-        if (playerWon)
+        if (result == "PlayerWon")
         {
             if (currentSave.player.WillGetExperience(enemy.level))
                 currentSave.player.ReceiveExperience(currentSave.player.ExperienceNeeded());
@@ -129,23 +129,30 @@ public class Board
                     currentSave.elitesKilled.Add(enemy.name, 1);
                 else currentSave.elitesKilled[enemy.name]++;
             }
-            if (area != null && !area.instancePart)
-            {
-                SwitchDesktop("HostileAreaEntrance");
-                CDesktop.Rebuild();
-            }
-            else if (area != null && area.instancePart)
-            {
+            if (area != null && area.instancePart)
                 SwitchDesktop("InstanceEntrance");
-                CDesktop.Rebuild();
-            }
-            else SwitchDesktop("Map");
+            else if (area != null && area.complexPart)
+                SwitchDesktop("ComplexEntrance");
+            else
+                SwitchDesktop("HostileAreaEntrance");
+            CDesktop.Rebuild();
         }
-        else
+        else if (result == "PlayerLost")
         {
             PlaySound("Death");
             if (Realm.realms.Find(x => x.name == settings.selectedRealm).hardcore) SpawnDesktopBlueprint("GameOver");
             else SpawnDesktopBlueprint("ReleaseSpirit");
+        }
+        else if (result == "PlayerFled")
+        {
+            PlaySound("RunAwayBitch");
+            if (area != null && area.instancePart)
+                SwitchDesktop("InstanceEntrance");
+            else if (area != null && area.complexPart)
+                SwitchDesktop("ComplexEntrance");
+            else
+                SwitchDesktop("HostileAreaEntrance");
+            CDesktop.Rebuild();
         }
         if (CDesktop.screenLocked)
             CDesktop.UnlockScreen();
@@ -205,11 +212,11 @@ public class Board
 
         //IF PLAYER DIED..
         if (player.health <= 0)
-            EndCombat(false);
+            EndCombat("PlayerLost");
 
         //IF ENEMY DIED..
         else if (enemy.health <= 0)
-            EndCombat(true);
+            EndCombat("PlayerWon");
 
         //IF IT'S ENEMY'S TURN..
         else if (!playerTurn)

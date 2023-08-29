@@ -219,7 +219,7 @@ public class Item
     public static void PrintItemTooltip(Item item)
     {
         AddHeaderGroup();
-        SetRegionGroupWidth(188);
+        SetRegionGroupWidth(190);
         var split = item.name.Split(", ");
         AddHeaderRegion(() => { AddLine(split[0], item.rarity); });
         if (split.Length > 1) AddHeaderRegion(() => { AddLine("\"" + split[1] + "\"", item.rarity); });

@@ -253,7 +253,7 @@ public class Starter : MonoBehaviour
                         PlayAmbience(instance.ambience);
                         SetAnchor(TopRight);
                         AddRegionGroup();
-                        SetRegionGroupWidth(161);
+                        SetRegionGroupWidth(171);
                         SetRegionGroupHeight(354);
                         AddHeaderRegion(() =>
                         {
@@ -298,7 +298,7 @@ public class Starter : MonoBehaviour
                         PlayAmbience(town.ambience);
                         SetAnchor(TopRight);
                         AddRegionGroup();
-                        SetRegionGroupWidth(161);
+                        SetRegionGroupWidth(171);
                         SetRegionGroupHeight(354);
                         AddHeaderRegion(() =>
                         {
@@ -350,7 +350,7 @@ public class Starter : MonoBehaviour
                         PlayAmbience(complex.ambience);
                         SetAnchor(TopRight);
                         AddRegionGroup();
-                        SetRegionGroupWidth(161);
+                        SetRegionGroupWidth(171);
                         SetRegionGroupHeight(354);
                         AddHeaderRegion(() =>
                         {
@@ -383,7 +383,7 @@ public class Starter : MonoBehaviour
                         PlayAmbience(area.ambience);
                         SetAnchor(TopLeft);
                         AddRegionGroup();
-                        SetRegionGroupWidth(161);
+                        SetRegionGroupWidth(171);
                         SetRegionGroupHeight(354);
                         AddHeaderRegion(() =>
                         {

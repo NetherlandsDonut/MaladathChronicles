@@ -1,12 +1,13 @@
 using System.Linq;
-using UnityEngine;
 using System.Collections.Generic;
+
+using UnityEngine;
 
 public class RegionGroup : MonoBehaviour
 {
     public Window window;
     public List<Region> regions;
-    public Region LBRegion, EXTRegion;
+    public Region LBRegion, stretchRegion;
     public int setWidth, setHeight, currentHeight, pagination;
 
     public void Initialise(Window window, bool header)

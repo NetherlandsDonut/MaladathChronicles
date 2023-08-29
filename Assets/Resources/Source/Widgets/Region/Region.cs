@@ -39,7 +39,7 @@ public class Region : MonoBehaviour
         bigButtons = new();
         borders = new GameObject[4];
         this.draw = draw;
-        if (tooltip != null)
+        if (tooltip != null && regionGroup.window != null)
             this.tooltip = new Tooltip(() => background.GetComponent<Highlightable>(), tooltip);
         this.pressEvent = pressEvent;
         this.regionGroup = regionGroup;
@@ -67,7 +67,12 @@ public class Region : MonoBehaviour
         //Number "12" is simply additional free space to not clamp the
         //window borders tightly on region content, the "19" is the button sprite width
         //and the "15" is the checkbox width that fills the line
-        return (lines.Count > 0 && lines.Max(x => x.Length()) > 0 ? lines.Max(x => x.Length()) + 12 : -10) + 38 * bigButtons.Count + 19 * smallButtons.Count + (checkbox != null ? 15 : 0) + (inputLine != null ? (inputLine.Length() > 0 ? inputLine.Length() : 4) + (inputLine == InputLine.inputLine ? font.Length(markerCharacter) : 0) : 0);
+        var lineX = lines.Count > 0 && lines.Max(x => x.Length()) > 0 ? lines.Max(x => x.Length()) + 2 + textPaddingLeft + textPaddingRight : 0;
+        var bigButtonX = 38 * bigButtons.Count;
+        var smallButtonX = 19 * smallButtons.Count;
+        var checkboxX = checkbox != null ? 15 : 0;
+        var inputLineX = inputLine != null ? (inputLine.Length() > 0 ? inputLine.Length() : 0) + (inputLine == InputLine.inputLine ? font.Length(markerCharacter) : 0) : 0;
+        return lineX + bigButtonX + smallButtonX + checkboxX + inputLineX;
     }
 
     public void ResetContent()

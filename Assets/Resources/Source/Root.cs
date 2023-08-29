@@ -12,10 +12,13 @@ public static class Root
 {
     public static int screenX = 640;
     public static int screenY = 360;
+    public static int textPaddingLeft = 4;
+    public static int textPaddingRight = 12;
     public static int shadowSystem = 1;
     public static int aiDepth = 5;
     public static float frameTime = 0.08f;
     public static string markerCharacter = "_";
+    public static string textWrapEnding = "...";
 
     public static GameObject fastTravelCamera;
     public static List<FallingElement> fallingElements;
@@ -197,12 +200,6 @@ public static class Root
         if (window == null) return;
         CDesktop.windows.Remove(window);
         UnityEngine.Object.Destroy(window.gameObject);
-        CDesktop.Reindex();
-    }
-
-    public static void CloseWindowOnLostFocus()
-    {
-        CDesktop.LBWindow.closeOnLostFocus = true;
     }
 
     public static void SetAnchor(Anchor anchor, Window magnet)
@@ -301,11 +298,6 @@ public static class Root
         }
     }
 
-    public static void AddHandleRegion(Action draw)
-    {
-        AddRegion(Handle, draw, (h) => { }, null);
-    }
-
     public static void AddButtonRegion(Action draw, Action<Highlightable> pressEvent, Func<Highlightable, Action> tooltip = null)
     {
         AddRegion(Button, draw, pressEvent, tooltip);
@@ -364,7 +356,7 @@ public static class Root
     public static void SetRegionAsGroupExtender()
     {
         var temp = CDesktop.LBWindow.LBRegionGroup;
-        temp.EXTRegion = temp.LBRegion;
+        temp.stretchRegion = temp.LBRegion;
     }
 
     public static void SetRegionBackground(RegionBackgroundType backgroundType)
@@ -388,14 +380,14 @@ public static class Root
         else lacking++;
         AddRegionGroup();
         SetRegionGroupWidth(width - (3 - lacking) * 52);
-        AddPaddingRegion(() => { AddLine("", "Black"); });
+        AddPaddingRegion(() => { AddLine(""); });
 
         void Foo(string icon, string text, string color)
         {
             AddRegionGroup();
             AddPaddingRegion(() => { AddSmallButton(icon, (h) => { }); });
             AddRegionGroup();
-            SetRegionGroupWidth(23);
+            SetRegionGroupWidth(33);
             AddPaddingRegion(() => { AddLine(text, color); });
         }
     }
@@ -419,7 +411,6 @@ public static class Root
         if (type == Header) return "LightGray";
         if (type == Padding) return "Gray";
         if (type == Button) return "Black";
-        if (type == Handle) return "Black";
         if (type == RedButton) return "Black";
         else return "Gray";
     }
@@ -561,7 +552,6 @@ public static class Root
 
     public enum RegionBackgroundType
     {
-        Handle,
         Button,
         Header,
         Padding,

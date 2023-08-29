@@ -6,6 +6,8 @@ public class GameSettings
         selectedCharacter = "";
         shadows = new Bool(true);
         pixelPerfectVision = new Bool(false);
+        music = new Bool(true);
+        soundEffects = new Bool(true);
 
         rarityIndicators = new Bool(true);
         bigRarityIndicators = new Bool(true);
@@ -17,6 +19,8 @@ public class GameSettings
 
     public Bool shadows;
     public Bool pixelPerfectVision;
+    public Bool music;
+    public Bool soundEffects;
 
     public Bool rarityIndicators;
     public Bool bigRarityIndicators;

@@ -11,12 +11,9 @@ using static InputLine;
 
 public class Desktop : MonoBehaviour
 {
-    //Children
     public Window LBWindow;
     public List<Window> windows;
     public Camera screen;
-
-    //Fields
     public string title;
     public Tooltip tooltip;
     public float tooltipChanneling;
@@ -29,24 +26,6 @@ public class Desktop : MonoBehaviour
         this.title = title;
         windows = new();
         hotkeys = new();
-    }
-
-    public Window FocusedWindow() => windows.Count < 1 ? null : windows[0];
-
-    public void Focus(Window window)
-    {
-        windows.Remove(window);
-        windows.Insert(0, window);
-        Reindex();
-    }
-
-    public void Reindex()
-    {
-        for (int i = 0; i < windows.Count; i++)
-        {
-            var savewindowsfromclosingbecauseoftooltip = i == 1 && windows[0].closeOnLostFocus;
-            if (i > 0 && windows[i].closeOnLostFocus && !savewindowsfromclosingbecauseoftooltip) CloseWindow(windows[i--].title);
-        }
     }
 
     public void Rebuild()
@@ -85,16 +64,18 @@ public class Desktop : MonoBehaviour
 
     public void Update()
     {
-        if (queuedAmbience.Item1 != null)
+        if (queuedAmbience.Item1 != null || !GameSettings.settings.music.Value() && ambience.volume > 0)
         {
-            if (queuedAmbience.Item1 == ambience.clip)
+            if (!GameSettings.settings.music.Value())
             {
-                if (queuedAmbience.Item3) ambience.volume = queuedAmbience.Item2;
-                else ambience.volume += 0.002f;
-                if (ambience.volume >= queuedAmbience.Item2)
-                    queuedAmbience = (null, 0, false);
+                if (ambience.volume > 0) ambience.volume -= 0.002f;
             }
-            else
+            else if (queuedAmbience.Item1 == ambience.clip && ambience.volume < queuedAmbience.Item2)
+            {
+                if (queuedAmbience.Item3 && ambience.clip != queuedAmbience.Item1) ambience.volume = queuedAmbience.Item2;
+                else ambience.volume += 0.002f;
+            }
+            else if (queuedAmbience.Item1 != ambience.clip)
             {
                 if (ambience.volume > 0) ambience.volume -= 0.002f;
                 else

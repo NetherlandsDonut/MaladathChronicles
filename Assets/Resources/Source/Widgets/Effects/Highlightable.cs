@@ -10,7 +10,7 @@ public class Highlightable : MonoBehaviour
     public Region region;
     public Window window;
     public SpriteRenderer render;
-    public bool over, pressed, windowHandle;
+    public bool over, pressed;
 
     public void Initialise(Window window, Region region)
     {
@@ -47,7 +47,11 @@ public class Highlightable : MonoBehaviour
         {
             if ((window == null ? transform.parent.GetComponent<Desktop>() : window.desktop).tooltip == FindTooltip())
             {
-                if (FindTooltip().window != null) CloseWindow(FindTooltip().window);
+                if (FindTooltip().window != null)
+                {
+                    //Sound.PlaySound("DesktopTooltipHide", 0.1f); 
+                    CloseWindow(FindTooltip().window);
+                }
                 else (window == null ? transform.parent.GetComponent<Desktop>() : window.desktop).tooltip = null;
             }
         }
@@ -59,21 +63,21 @@ public class Highlightable : MonoBehaviour
     {
         if (cursor.render.sprite == null) return;
         pressed = true;
-        if (window == null)
+        if (FindTooltip() != null)
         {
-            transform.parent.GetComponent<Desktop>().tooltip = null;
-            if (FindTooltip() != null && FindTooltip().window != null)
-                CloseWindow(FindTooltip().window);
+            if ((window == null ? transform.parent.GetComponent<Desktop>() : window.desktop).tooltip == FindTooltip())
+            {
+                if (FindTooltip().window != null)
+                {
+                    //Sound.PlaySound("DesktopTooltipHide", 0.1f);
+                    CloseWindow(FindTooltip().window);
+                }
+                else (window == null ? transform.parent.GetComponent<Desktop>() : window.desktop).tooltip = null;
+            }
         }
-        else
-        {
-            window.desktop.tooltip = null;
-            if (window.desktop.FocusedWindow() != window)
-                window.desktop.Focus(window);
-        }
+        if (window == null) transform.parent.GetComponent<Desktop>().tooltip = null;
+        else window.desktop.tooltip = null;
         cursor.SetCursor(Click);
-        if (windowHandle)
-            window.dragOffset = window.transform.position - window.desktop.screen.ScreenToWorldPoint(new Vector2(Input.mousePosition.x, Input.mousePosition.y)) + window.desktop.transform.position;
         render.color -= new Color(0.1f, 0.1f, 0.1f, 0);
     }
 
@@ -83,22 +87,5 @@ public class Highlightable : MonoBehaviour
         cursor.SetCursor(Default);
         if (pressed) render.color += new Color(0.1f, 0.1f, 0.1f, 0);
         pressed = false;
-    }
-
-    public void OnMouseDrag()
-    {
-        if (cursor.render.sprite == null) return;
-        cursor.SetCursor(Click);
-        if (windowHandle)
-        {
-            var curScreenSpace = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
-            var curPosition = (Vector2)CDesktop.screen.ScreenToWorldPoint(curScreenSpace) + window.dragOffset;
-            var t = window.transform;
-            t.position = new Vector3((int)curPosition.x, (int)curPosition.y, t.position.z);
-            if (t.position.x < 2) t.position = new Vector3(2, t.position.y, t.position.z);
-            if (t.position.x > screenX - 4 - window.xOffset) t.position = new Vector3(screenX - 4 - window.xOffset, t.position.y, t.position.z);
-            if (t.position.y > -2) t.position = new Vector3(t.position.x, -2, t.position.z);
-            if (t.position.y < 4 - screenY + window.PlannedHeight(true)) t.position = new Vector3(t.position.x, 4 - screenY + window.PlannedHeight(true), t.position.z);
-        }
     }
 }

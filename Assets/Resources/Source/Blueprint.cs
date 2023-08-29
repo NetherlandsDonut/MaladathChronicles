@@ -1,11 +1,15 @@
 ﻿using System;
-using UnityEngine;
 using System.Linq;
 using System.Collections.Generic;
 
-using static Item;
+using UnityEngine;
+
+using static UnityEngine.KeyCode;
+
 using static Root;
-using static Bool;
+using static Root.Anchor;
+
+using static Item;
 using static Buff;
 using static Race;
 using static Class;
@@ -22,9 +26,6 @@ using static SiteInstance;
 using static SiteComplex;
 using static SiteTown;
 
-using static Root.Anchor;
-
-using static UnityEngine.KeyCode;
 
 public class Blueprint
 {
@@ -107,7 +108,7 @@ public class Blueprint
             SetAnchor(Bottom);
             DisableShadows();
             AddRegionGroup();
-            SetRegionGroupWidth(286);
+            SetRegionGroupWidth(296);
             if (saves.Count > 0)
             {
                 AddButtonRegion(() =>
@@ -126,7 +127,7 @@ public class Blueprint
         }, true),
         new("RealmRoster", () =>
         {
-            SetAnchor(Center, 0, 125);
+            SetAnchor(Center, 0, 117);
             AddHeaderGroup();
             AddHeaderRegion(() =>
             {
@@ -205,7 +206,7 @@ public class Blueprint
         new("CharacterInfo", () => {
             SetAnchor(TopLeft);
             AddRegionGroup();
-            SetRegionGroupWidth(161);
+            SetRegionGroupWidth(171);
             SetRegionGroupHeight(358);
             if (settings.selectedCharacter != "")
             {
@@ -288,7 +289,7 @@ public class Blueprint
             else RemoveDesktopBackground();
             SetAnchor(TopRight);
             AddRegionGroup();
-            SetRegionGroupWidth(161);
+            SetRegionGroupWidth(171);
             SetRegionGroupHeight(354);
             AddHeaderRegion(() =>
             {
@@ -386,6 +387,16 @@ public class Blueprint
                 AddCheckbox(settings.pixelPerfectVision);
                 AddLine("Pixel perfect vision", "Gray");
             });
+            AddPaddingRegion(() =>
+            {
+                AddCheckbox(settings.music);
+                AddLine("Music", "Gray");
+            });
+            AddPaddingRegion(() =>
+            {
+                AddCheckbox(settings.soundEffects);
+                AddLine("Sound effects", "Gray");
+            });
         }, true),
         new("GameMenu", () => {
             SetAnchor(Center);
@@ -443,23 +454,15 @@ public class Blueprint
         new("PlayerBattleInfo", () => {
             SetAnchor(TopLeft);
             AddRegionGroup();
-            SetRegionGroupWidth(161);
+            SetRegionGroupWidth(171);
             AddButtonRegion(
                 () =>
                 {
                     AddLine(Board.board.player.name, "Black");
                     AddSmallButton("MenuFlee", (h) =>
                     {
-                        CloseDesktop("Game");
-                        if (Board.board.area != null)
-                        {
-                            if (Board.board.area.instancePart)
-                            SwitchDesktop("InstanceEntrance");
-                            CDesktop.Rebuild();
-                        }
-                        else SwitchDesktop("Map");
+                        Board.board.EndCombat("PlayerFled");
                     });
-                    //AddSmallButton("MenuLog", (h) => { });
                 },
                 (h) =>
                 {
@@ -513,7 +516,7 @@ public class Blueprint
         new("PlayerEquipmentInfo", () => {
             SetAnchor(TopLeft);
             AddRegionGroup();
-            SetRegionGroupWidth(161);
+            SetRegionGroupWidth(171);
             AddButtonRegion(
                 () =>
                 {
@@ -599,7 +602,7 @@ public class Blueprint
             SetAnchor(TopRight);
             DisableShadows();
             AddRegionGroup();
-            SetRegionGroupWidth(161);
+            SetRegionGroupWidth(171);
             AddHeaderRegion(
                 () =>
                 {
@@ -616,12 +619,12 @@ public class Blueprint
         new("SpellbookAbilityList", () => {
             SetAnchor(147, 0);
             AddRegionGroup();
-            SetRegionGroupWidth(161);
+            SetRegionGroupWidth(171);
             SetRegionGroupHeight(1460);
             AddHeaderRegion(() => { AddLine(); });
             AddPaddingRegion(() => { AddLine("Active abilities:", "DarkGray"); });
-            var activeAbilities = Ability.abilities.FindAll(x => x.cost != null && currentSave.player.abilities.Contains(x.name)).ToList();
-            var passiveAbilities = Ability.abilities.FindAll(x => x.cost == null && currentSave.player.abilities.Contains(x.name)).ToList();
+            var activeAbilities = abilities.FindAll(x => x.cost != null && currentSave.player.abilities.Contains(x.name)).ToList();
+            var passiveAbilities = abilities.FindAll(x => x.cost == null && currentSave.player.abilities.Contains(x.name)).ToList();
             for (int i = 0; i < activeAbilities.Count; i++)
             {
                 var abilityObj = activeAbilities[i];
@@ -656,7 +659,7 @@ public class Blueprint
                     {
                         SetAnchor(Top, 0, -42);
                         AddHeaderGroup();
-                        SetRegionGroupWidth(236);
+                        SetRegionGroupWidth(246);
                         SetRegionGroupHeight(217);
                         AddHeaderRegion(() =>
                         {
@@ -668,7 +671,7 @@ public class Blueprint
                             AddLine("Cooldown: ", "DarkGray");
                             AddText(abilityObj.cooldown == 0 ? "None" : abilityObj.cooldown + (abilityObj.cooldown == 1 ? " turn"  : " turns"), "Gray");
                         });
-                        abilityObj.PrintDescription(currentSave.player, null, 236);
+                        abilityObj.PrintDescription(currentSave.player, null, 246);
                         foreach (var cost in abilityObj.cost)
                         {
                             AddRegionGroup();
@@ -677,14 +680,14 @@ public class Blueprint
                                 AddSmallButton("Element" + cost.Key + "Rousing", (h) => { });
                             });
                             AddRegionGroup();
-                            SetRegionGroupWidth(20);
+                            SetRegionGroupWidth(30);
                             AddHeaderRegion(() =>
                             {
                                 AddLine(cost.Value + "", cost.Value > currentSave.player.MaxResource(cost.Key) ? "Red" : "Gray");
                             });
                         }
                         AddRegionGroup();
-                        SetRegionGroupWidth(236 - abilityObj.cost.Count * 49);
+                        SetRegionGroupWidth(246 - abilityObj.cost.Count * 49);
                         AddPaddingRegion(() => { AddLine(); });
                     }
                 );
@@ -698,7 +701,7 @@ public class Blueprint
                 AddButtonRegion(
                     () =>
                     {
-                        AddLine(abilityObj.name, "Black");
+                        AddLine(abilityObj.name, "", "Right");
                         AddSmallButton(abilityObj.icon,
                         (h) =>
                         {
@@ -717,7 +720,7 @@ public class Blueprint
         new("PlayerSpellbookInfo", () => {
             SetAnchor(TopLeft);
             AddRegionGroup();
-            SetRegionGroupWidth(161);
+            SetRegionGroupWidth(171);
             SetRegionGroupHeight(354);
             AddButtonRegion(
                 () =>
@@ -790,14 +793,14 @@ public class Blueprint
                         {
                             SetAnchor(Top, h.window);
                             AddRegionGroup();
-                            SetRegionGroupWidth(83);
+                            SetRegionGroupWidth(93);
                             AddHeaderRegion(() => { AddLine(element + ":", "Gray"); });
                             AddPaddingRegion(() => { AddLine(currentSave.player.resources.ToList().Find(x => x.Key == element).Value + "/" + currentSave.player.MaxResource(element), "Gray"); });
                         }
                     );
                 });
             AddRegionGroup();
-            SetRegionGroupWidth(76);
+            SetRegionGroupWidth(86);
             foreach (var element in elements1)
                 AddHeaderRegion(() =>
                 {
@@ -810,7 +813,7 @@ public class Blueprint
                         {
                             SetAnchor(Top, h.window);
                             AddRegionGroup();
-                            SetRegionGroupWidth(83);
+                            SetRegionGroupWidth(93);
                             AddHeaderRegion(() =>
                             {
                                 AddLine(elements2[elements1.IndexOf(element)] + ":", "Gray");
@@ -823,7 +826,7 @@ public class Blueprint
                     );
                 });
             AddRegionGroup();
-            SetRegionGroupWidth(56);
+            SetRegionGroupWidth(66);
             foreach (var element in elements2)
                 AddHeaderRegion(() =>
                 {
@@ -835,7 +838,7 @@ public class Blueprint
         new("EnemyBattleInfo", () => {
             SetAnchor(TopRight);
             AddRegionGroup();
-            SetRegionGroupWidth(161);
+            SetRegionGroupWidth(171);
             AddButtonRegion(
                 () =>
                 {
@@ -886,7 +889,7 @@ public class Blueprint
         new("LocationInfo", () => {
             SetAnchor(Top);
             AddRegionGroup();
-            SetRegionGroupWidth(286);
+            SetRegionGroupWidth(296);
             AddHeaderRegion(
                 () =>
                 {
@@ -964,7 +967,7 @@ public class Blueprint
         new("MapToolbar", () => {
             SetAnchor(TopLeft);
             AddRegionGroup();
-            SetRegionGroupWidth(161);
+            SetRegionGroupWidth(171);
             SetRegionGroupHeight(354);
             AddButtonRegion(
                 () =>
@@ -1038,7 +1041,7 @@ public class Blueprint
         new("InstanceLeftSide", () => {
             SetAnchor(TopLeft);
             AddRegionGroup();
-            SetRegionGroupWidth(161);
+            SetRegionGroupWidth(171);
             SetRegionGroupHeight(354);
             AddPaddingRegion(() =>
             {
@@ -1049,7 +1052,7 @@ public class Blueprint
         new("HostileAreaRightSide", () => {
             SetAnchor(TopRight);
             AddRegionGroup();
-            SetRegionGroupWidth(161);
+            SetRegionGroupWidth(171);
             SetRegionGroupHeight(354);
             AddPaddingRegion(() =>
             {
@@ -1061,7 +1064,7 @@ public class Blueprint
         new("ComplexLeftSide", () => {
             SetAnchor(TopLeft);
             AddRegionGroup();
-            SetRegionGroupWidth(161);
+            SetRegionGroupWidth(171);
             SetRegionGroupHeight(354);
             AddPaddingRegion(() =>
             {
@@ -1072,7 +1075,7 @@ public class Blueprint
         new("TownLeftSide", () => {
             SetAnchor(TopLeft);
             AddRegionGroup();
-            SetRegionGroupWidth(161);
+            SetRegionGroupWidth(171);
             SetRegionGroupHeight(354);
             AddPaddingRegion(() =>
             {
@@ -1137,7 +1140,7 @@ public class Blueprint
         new("InventorySort", () => {
             SetAnchor(Center);
             AddRegionGroup();
-            SetRegionGroupWidth(152);
+            SetRegionGroupWidth(162);
             AddHeaderRegion(() =>
             {
                 AddLine("Sort inventory:");
@@ -1200,7 +1203,7 @@ public class Blueprint
         new("InventorySettings", () => {
             SetAnchor(Center);
             AddRegionGroup();
-            SetRegionGroupWidth(152);
+            SetRegionGroupWidth(162);
             AddHeaderRegion(() =>
             {
                 AddLine("Inventory settings:");
@@ -1258,13 +1261,13 @@ public class Blueprint
         new("ItemDrop", () => {
             SetAnchor(Center);
             AddHeaderGroup();
-            SetRegionGroupWidth(256);
+            SetRegionGroupWidth(266);
             AddHeaderRegion(() =>
             {
                 AddLine("Loot from ", "Gray");
                 AddText("Chief Ukorz Sandscalp", "Gray");
             });
-            var item = Item.items[random.Next(Item.items.Count)];
+            var item = items[random.Next(items.Count)];
             AddHeaderRegion(() =>
             {
                 AddBigButton(item.icon, (h) => { });
@@ -1327,7 +1330,7 @@ public class Blueprint
                 }
             );
             AddRegionGroup();
-            SetRegionGroupWidth(100);
+            SetRegionGroupWidth(110);
             AddPaddingRegion(
                 () =>
                 {
@@ -1525,7 +1528,7 @@ public class Blueprint
             SetAnchor(TopLeft);
             DisableShadows();
             AddRegionGroup();
-            SetRegionGroupWidth(218);
+            SetRegionGroupWidth(228);
             SetRegionGroupHeight(358);
             AddHeaderRegion(() =>
             {
@@ -1632,7 +1635,7 @@ public class Blueprint
             SetAnchor(TopRight);
             DisableShadows();
             AddRegionGroup();
-            SetRegionGroupWidth(400);
+            SetRegionGroupWidth(410);
             SetRegionGroupHeight(354);
             AddHeaderRegion(() =>
             {
@@ -1665,6 +1668,7 @@ public class Blueprint
             },
             (h) =>
             {
+                PlaySound("DesktopCreateCharacter");
                 AddNewSave();
                 CloseWindow("CharacterCreation");
                 CloseWindow("CharacterCreationRightSide");
@@ -1704,7 +1708,7 @@ public class Blueprint
                         {
                             SetAnchor(Top, h.window);
                             AddRegionGroup();
-                            SetRegionGroupWidth(83);
+                            SetRegionGroupWidth(93);
                             AddHeaderRegion(() =>
                             {
                                 AddLine(element + ":", "Gray");
@@ -1717,7 +1721,7 @@ public class Blueprint
                     );
                 });
             AddRegionGroup();
-            SetRegionGroupWidth(39);
+            SetRegionGroupWidth(49);
             foreach (var element in elements1)
                 AddHeaderRegion(() =>
                 {
@@ -1729,7 +1733,7 @@ public class Blueprint
                         {
                             SetAnchor(Top, h.window);
                             AddRegionGroup();
-                            SetRegionGroupWidth(83);
+                            SetRegionGroupWidth(93);
                             AddHeaderRegion(() =>
                             {
                                 AddLine(elements2[elements1.IndexOf(element)] + ":", "Gray");
@@ -1742,7 +1746,7 @@ public class Blueprint
                     );
                 });
             AddRegionGroup();
-            SetRegionGroupWidth(20);
+            SetRegionGroupWidth(30);
             foreach (var element in elements2)
                 AddHeaderRegion(() =>
                 {
@@ -1764,7 +1768,7 @@ public class Blueprint
                         {
                             SetAnchor(Top, h.window);
                             AddRegionGroup();
-                            SetRegionGroupWidth(83);
+                            SetRegionGroupWidth(93);
                             AddHeaderRegion(() =>
                             {
                                 AddLine(element + ":", "Gray");
@@ -1777,7 +1781,7 @@ public class Blueprint
                     );
                 });
             AddRegionGroup();
-            SetRegionGroupWidth(39);
+            SetRegionGroupWidth(49);
             foreach (var element in elements1)
                 AddHeaderRegion(() =>
                 {
@@ -1789,7 +1793,7 @@ public class Blueprint
                         {
                             SetAnchor(Top, h.window);
                             AddRegionGroup();
-                            SetRegionGroupWidth(83);
+                            SetRegionGroupWidth(93);
                             AddHeaderRegion(() =>
                             {
                                 AddLine(elements2[elements1.IndexOf(element)] + ":", "Gray");
@@ -1802,7 +1806,7 @@ public class Blueprint
                     );
                 });
             AddRegionGroup();
-            SetRegionGroupWidth(20);
+            SetRegionGroupWidth(30);
             foreach (var element in elements2)
                 AddHeaderRegion(() =>
                 {
@@ -1861,24 +1865,24 @@ public class Blueprint
             {
                 AddLine(a.talentTrees[0].name + ": " + a.talentTrees[0].talents.Count(x => currentSave.player.abilities.Contains(x.ability)));
             });
-            SetRegionGroupWidth(203);
+            SetRegionGroupWidth(213);
             AddRegionGroup();
             AddHeaderRegion(() =>
             {
                 AddLine(a.talentTrees[1].name + ": " + a.talentTrees[1].talents.Count(x => currentSave.player.abilities.Contains(x.ability)));
             });
-            SetRegionGroupWidth(202);
+            SetRegionGroupWidth(212);
             AddRegionGroup();
             AddHeaderRegion(() =>
             {
                 AddLine(a.talentTrees[2].name + ": " + a.talentTrees[2].talents.Count(x => currentSave.player.abilities.Contains(x.ability)));
             });
-            SetRegionGroupWidth(203);
+            SetRegionGroupWidth(213);
         }, true),
         new("InstanceHeader", () => {
             SetAnchor(TopLeft);
             AddRegionGroup();
-            SetRegionGroupWidth(628);
+            SetRegionGroupWidth(638);
             AddPaddingRegion(() =>
             {
                 AddLine(instance.name);
@@ -1894,7 +1898,7 @@ public class Blueprint
         new("Console", () => {
             SetAnchor(Top);
             AddRegionGroup();
-            SetRegionGroupWidth(628);
+            SetRegionGroupWidth(638);
             AddInputRegion(String.consoleInput, InputType.Everything);
             AddSmallButton("OtherClose", (h) => { CloseWindow(h.window); });
         },  true),
@@ -1904,7 +1908,7 @@ public class Blueprint
         new("ObjectManagerLobby", () => {
             SetAnchor(TopLeft);
             AddRegionGroup();
-            SetRegionGroupWidth(161);
+            SetRegionGroupWidth(171);
             SetRegionGroupHeight(354);
             AddHeaderRegion(() => { AddLine("Object types:"); });
             AddButtonRegion(() => { AddLine("Hostile areas"); }, (h) =>
@@ -1980,7 +1984,7 @@ public class Blueprint
         new("HostileAreasSort", () => {
             SetAnchor(Center);
             AddRegionGroup();
-            SetRegionGroupWidth(152);
+            SetRegionGroupWidth(162);
             AddHeaderRegion(() =>
             {
                 AddLine("Sort hostile areas:");
@@ -2054,7 +2058,7 @@ public class Blueprint
         new("ObjectManagerHostileAreas", () => {
             SetAnchor(TopLeft);
             AddRegionGroup();
-            SetRegionGroupWidth(161);
+            SetRegionGroupWidth(171);
             SetRegionGroupHeight(358);
             if (area != null)
             {
@@ -2128,7 +2132,7 @@ public class Blueprint
         new("ObjectManagerHostileArea", () => {
             SetAnchor(TopRight);
             AddRegionGroup();
-            SetRegionGroupWidth(161);
+            SetRegionGroupWidth(171);
             SetRegionGroupHeight(354);
             AddPaddingRegion(() => { AddLine("Hostile area:", "DarkGray"); });
             AddHeaderRegion(() => { AddLine(area.name); });
@@ -2173,7 +2177,7 @@ public class Blueprint
         new("InstancesSort", () => {
             SetAnchor(Center);
             AddRegionGroup();
-            SetRegionGroupWidth(152);
+            SetRegionGroupWidth(162);
             AddHeaderRegion(() =>
             {
                 AddLine("Sort instances:");
@@ -2247,7 +2251,7 @@ public class Blueprint
         new("ObjectManagerInstances", () => {
             SetAnchor(TopLeft);
             AddRegionGroup();
-            SetRegionGroupWidth(161);
+            SetRegionGroupWidth(171);
             SetRegionGroupHeight(358);
             if (instance != null)
             {
@@ -2321,7 +2325,7 @@ public class Blueprint
         new("ObjectManagerInstance", () => {
             SetAnchor(TopRight);
             AddRegionGroup();
-            SetRegionGroupWidth(161);
+            SetRegionGroupWidth(171);
             SetRegionGroupHeight(354);
             AddPaddingRegion(() => { AddLine("Instance:", "DarkGray"); });
             AddHeaderRegion(() => { AddLine(instance.name); });
@@ -2350,7 +2354,7 @@ public class Blueprint
         new("ComplexesSort", () => {
             SetAnchor(Center);
             AddRegionGroup();
-            SetRegionGroupWidth(152);
+            SetRegionGroupWidth(162);
             AddHeaderRegion(() =>
             {
                 AddLine("Sort complexes:");
@@ -2404,7 +2408,7 @@ public class Blueprint
         new("ObjectManagerComplexes", () => {
             SetAnchor(TopLeft);
             AddRegionGroup();
-            SetRegionGroupWidth(161);
+            SetRegionGroupWidth(171);
             SetRegionGroupHeight(358);
             if (complex != null)
             {
@@ -2481,7 +2485,7 @@ public class Blueprint
         new("ObjectManagerComplex", () => {
             SetAnchor(TopRight);
             AddRegionGroup();
-            SetRegionGroupWidth(161);
+            SetRegionGroupWidth(171);
             SetRegionGroupHeight(354);
             AddPaddingRegion(() => { AddLine("Complex:", "DarkGray"); });
             AddHeaderRegion(() => { AddLine(complex.name); });
@@ -2510,7 +2514,7 @@ public class Blueprint
         new("ObjectManagerAmbienceList", () => {
             SetAnchor(TopLeft);
             AddRegionGroup();
-            SetRegionGroupWidth(161);
+            SetRegionGroupWidth(171);
             SetRegionGroupHeight(358);
             AddHeaderRegion(() =>
             {
@@ -2594,7 +2598,7 @@ public class Blueprint
         new("ObjectManagerItemIconList", () => {
             SetAnchor(TopLeft);
             AddRegionGroup();
-            SetRegionGroupWidth(161);
+            SetRegionGroupWidth(171);
             SetRegionGroupHeight(358);
             AddHeaderRegion(() =>
             {
@@ -2660,7 +2664,7 @@ public class Blueprint
         new("ObjectManagerAbilityIconList", () => {
             SetAnchor(TopLeft);
             AddRegionGroup();
-            SetRegionGroupWidth(161);
+            SetRegionGroupWidth(171);
             SetRegionGroupHeight(358);
             AddHeaderRegion(() =>
             {
@@ -2728,7 +2732,7 @@ public class Blueprint
         new("ObjectManagerPortraitList", () => {
             SetAnchor(TopLeft);
             AddRegionGroup();
-            SetRegionGroupWidth(161);
+            SetRegionGroupWidth(171);
             SetRegionGroupHeight(358);
             AddHeaderRegion(() =>
             {
@@ -2792,7 +2796,7 @@ public class Blueprint
         new("ObjectManagerHostileAreaTypeList", () => {
             SetAnchor(TopLeft);
             AddRegionGroup();
-            SetRegionGroupWidth(161);
+            SetRegionGroupWidth(171);
             SetRegionGroupHeight(358);
             AddHeaderRegion(() =>
             {
@@ -2846,7 +2850,7 @@ public class Blueprint
         new("ObjectManagerRarityList", () => {
             SetAnchor(TopLeft);
             AddRegionGroup();
-            SetRegionGroupWidth(161);
+            SetRegionGroupWidth(171);
             SetRegionGroupHeight(358);
             AddHeaderRegion(() =>
             {
@@ -2954,7 +2958,7 @@ public class Blueprint
         new("ItemsSort", () => {
             SetAnchor(Center);
             AddRegionGroup();
-            SetRegionGroupWidth(152);
+            SetRegionGroupWidth(162);
             AddHeaderRegion(() =>
             {
                 AddLine("Sort items:");
@@ -3021,7 +3025,7 @@ public class Blueprint
         new("ObjectManagerItems", () => {
             SetAnchor(TopLeft);
             AddRegionGroup();
-            SetRegionGroupWidth(161);
+            SetRegionGroupWidth(171);
             SetRegionGroupHeight(358);
             if (item != null)
             {
@@ -3129,7 +3133,7 @@ public class Blueprint
         new("ObjectManagerItem", () => {
             SetAnchor(TopRight);
             AddRegionGroup();
-            SetRegionGroupWidth(161);
+            SetRegionGroupWidth(171);
             SetRegionGroupHeight(354);
             AddPaddingRegion(() => { AddLine("Item:", "DarkGray"); });
             AddInputRegion(String.objectName, InputType.Everything, item.rarity);
@@ -3178,7 +3182,7 @@ public class Blueprint
         new("ItemSetsSort", () => {
             SetAnchor(Center);
             AddRegionGroup();
-            SetRegionGroupWidth(152);
+            SetRegionGroupWidth(162);
             AddHeaderRegion(() =>
             {
                 AddLine("Sort item sets:");
@@ -3228,7 +3232,7 @@ public class Blueprint
         new("ObjectManagerItemSets", () => {
             SetAnchor(TopLeft);
             AddRegionGroup();
-            SetRegionGroupWidth(161);
+            SetRegionGroupWidth(171);
             SetRegionGroupHeight(358);
             if (itemSet != null)
             {
@@ -3332,7 +3336,7 @@ public class Blueprint
         new("ObjectManagerItemSet", () => {
             SetAnchor(TopRight);
             AddRegionGroup();
-            SetRegionGroupWidth(161);
+            SetRegionGroupWidth(171);
             SetRegionGroupHeight(354);
             AddPaddingRegion(() => { AddLine("Item set:", "DarkGray"); });
             AddInputRegion(String.objectName, InputType.Everything);
@@ -3341,7 +3345,7 @@ public class Blueprint
         new("AbilitiesSort", () => {
             SetAnchor(Center);
             AddRegionGroup();
-            SetRegionGroupWidth(152);
+            SetRegionGroupWidth(162);
             AddHeaderRegion(() =>
             {
                 AddLine("Sort abilities:");
@@ -3391,7 +3395,7 @@ public class Blueprint
         new("ObjectManagerAbilities", () => {
             SetAnchor(TopLeft);
             AddRegionGroup();
-            SetRegionGroupWidth(161);
+            SetRegionGroupWidth(171);
             SetRegionGroupHeight(358);
             if (ability != null)
             {
@@ -3490,7 +3494,7 @@ public class Blueprint
         new("ObjectManagerAbility", () => {
             SetAnchor(TopRight);
             AddRegionGroup();
-            SetRegionGroupWidth(161);
+            SetRegionGroupWidth(171);
             SetRegionGroupHeight(354);
             AddPaddingRegion(() => { AddLine("Ability:", "DarkGray"); });
             AddInputRegion(String.objectName, InputType.Everything, ability.name);
@@ -3520,7 +3524,7 @@ public class Blueprint
         new("BuffsSort", () => {
             SetAnchor(Center);
             AddRegionGroup();
-            SetRegionGroupWidth(152);
+            SetRegionGroupWidth(162);
             AddHeaderRegion(() =>
             {
                 AddLine("Sort buffs:");
@@ -3570,7 +3574,7 @@ public class Blueprint
         new("ObjectManagerBuffs", () => {
             SetAnchor(TopLeft);
             AddRegionGroup();
-            SetRegionGroupWidth(161);
+            SetRegionGroupWidth(171);
             SetRegionGroupHeight(358);
             if (buff != null)
             {
@@ -3667,7 +3671,7 @@ public class Blueprint
         new("ObjectManagerBuff", () => {
             SetAnchor(TopRight);
             AddRegionGroup();
-            SetRegionGroupWidth(161);
+            SetRegionGroupWidth(171);
             SetRegionGroupHeight(354);
             AddPaddingRegion(() => { AddLine("Buff:", "DarkGray"); });
             AddInputRegion(String.objectName, InputType.Everything);
@@ -3706,7 +3710,7 @@ public class Blueprint
         new("RacesSort", () => {
             SetAnchor(Center);
             AddRegionGroup();
-            SetRegionGroupWidth(152);
+            SetRegionGroupWidth(162);
             AddHeaderRegion(() =>
             {
                 AddLine("Sort races:");
@@ -3780,7 +3784,7 @@ public class Blueprint
         new("ObjectManagerRaces", () => {
             SetAnchor(TopLeft);
             AddRegionGroup();
-            SetRegionGroupWidth(161);
+            SetRegionGroupWidth(171);
             SetRegionGroupHeight(358);
             if (race != null)
             {
@@ -3875,7 +3879,7 @@ public class Blueprint
         new("ObjectManagerRace", () => {
             SetAnchor(TopRight);
             AddRegionGroup();
-            SetRegionGroupWidth(161);
+            SetRegionGroupWidth(171);
             SetRegionGroupHeight(354);
             AddPaddingRegion(() => { AddLine("Race:", "DarkGray"); });
             AddInputRegion(String.objectName, InputType.Everything);
@@ -3951,7 +3955,7 @@ public class Blueprint
         new("ObjectManagerClasses", () => {
             SetAnchor(TopLeft);
             AddRegionGroup();
-            SetRegionGroupWidth(161);
+            SetRegionGroupWidth(171);
             SetRegionGroupHeight(358);
             if (spec != null)
             {
@@ -4052,7 +4056,7 @@ public class Blueprint
         new("ObjectManagerClass", () => {
             SetAnchor(TopRight);
             AddRegionGroup();
-            SetRegionGroupWidth(161);
+            SetRegionGroupWidth(171);
             SetRegionGroupHeight(354);
             AddPaddingRegion(() => { AddLine("Class:", "DarkGray"); });
             AddInputRegion(String.objectName, InputType.Everything, spec.name);

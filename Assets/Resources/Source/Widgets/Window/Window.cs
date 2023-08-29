@@ -9,6 +9,7 @@ using static Root.RegionBackgroundType;
 using static GameSettings;
 
 using static InputLine;
+using UnityEngine.TextCore.Text;
 
 public class Window : MonoBehaviour
 {
@@ -18,11 +19,10 @@ public class Window : MonoBehaviour
     public RegionGroup LBRegionGroup, headerGroup;
     public int xOffset, yOffset;
     public string title, layer;
-    public Vector2 dragOffset;
     public WindowAnchor anchor;
     public GameObject background;
     public GameObject[] shadows;
-    public bool closeOnLostFocus, disabledShadows, disabledGeneralSprites, disabledCollisions, masked;
+    public bool disabledShadows, disabledGeneralSprites, disabledCollisions, masked;
 
     public void Initialise(Desktop desktop, string title, bool upperUI)
     {
@@ -37,8 +37,7 @@ public class Window : MonoBehaviour
         else layer = "Default";
 
         desktop.LBWindow = this;
-        desktop.windows.Insert(0, this);
-        desktop.Reindex();
+        desktop.windows.Add(this);
     }
 
     public int PlannedHeight(bool includeHeader = false)
@@ -138,9 +137,8 @@ public class Window : MonoBehaviour
         if (!disabledGeneralSprites)
         {
             if (background == null)
-                background = new GameObject("Window Background", typeof(SpriteRenderer), typeof(WindowBackground));
+                background = new GameObject("Window Background", typeof(SpriteRenderer));
             background.transform.parent = transform;
-            background.GetComponent<WindowBackground>().Initialise(this);
             background.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/Backgrounds/Window");
             background.GetComponent<SpriteRenderer>().sortingLayerName = layer;
             background.GetComponent<SpriteRenderer>().sortingOrder = -10;
@@ -236,9 +234,8 @@ public class Window : MonoBehaviour
             region.draw();
             if (regionGroup == headerGroup)
             {
-                var temp = xOffset - headerGroup.AutoWidth() - 10;
-                if (region.xExtend < temp)
-                    region.xExtend = temp;
+                var temp = xOffset - headerGroup.AutoWidth();
+                if (region.xExtend < temp) region.xExtend = temp;
             }
         }
 
@@ -255,28 +252,32 @@ public class Window : MonoBehaviour
                 foreach (var text in line.texts)
                 {
                     text.Erase();
+                    var split = new List<string>();
                     foreach (var character in text.text)
+                        if (split.Count > 0 && split[split.Count - 1] == " ")
+                            split[split.Count - 1] += character;
+                        else split.Add(character + "");
+                    foreach (var part in split)
                         if (regionGroup.setWidth == 0)
-                            length = text.SpawnCharacter(character, length);
+                            foreach (var character in part)
+                                length = text.SpawnCharacter(character, length);
+                        else if (textPaddingLeft + 6 + (line.align == "Right" ? 2 : 0) + length + Font.font.Length(part) + (split.Last() == part ? 0 : Font.font.Length(textWrapEnding)) + objectOffset < regionGroup.setWidth - region.smallButtons.Count * 19)
+                            foreach (var character in part)
+                                length = text.SpawnCharacter(character, length);
                         else
                         {
-                            if (length + 4 + Font.font.Length(character + "") + objectOffset < regionGroup.setWidth - region.smallButtons.Count * 19)
-                                length = text.SpawnCharacter(character, length);
-                            else
-                            {
-                                for (int i = 0; i < 2; i++)
-                                    length = text.SpawnCharacter('.', length);
-                                break;
-                            }
+                            for (int i = 0; i < 3; i++)
+                                length = text.SpawnCharacter(textWrapEnding[i], length);
+                            break;
                         }
                 }
                 if (line.align == "Left")
-                    line.transform.localPosition = new Vector3(6 + objectOffset, -region.currentHeight - 3, 0);
+                    line.transform.localPosition = new Vector3(2 + textPaddingLeft + objectOffset, -region.currentHeight - 3, 0);
                 else if (line.align == "Center")
-                    line.transform.localPosition = new Vector3(7 + region.regionGroup.AutoWidth() / 2 - length / 2, -region.currentHeight - 3, 0);
+                    line.transform.localPosition = new Vector3(2 + (region.regionGroup.AutoWidth() / 2) - (length / 2), -region.currentHeight - 3, 0);
                 else if (line.align == "Right")
-                    line.transform.localPosition = new Vector3(6 + region.regionGroup.AutoWidth() - (region.smallButtons.Count * 19) - length, -region.currentHeight - 3, 0);
-                region.currentHeight += 15/* + (region.bigButtons.Count > region.lines.IndexOf(line) ? 4 : 0)*/;
+                    line.transform.localPosition = new Vector3(-textPaddingLeft + region.regionGroup.AutoWidth() - (region.smallButtons.Count * 19) - length, -region.currentHeight - 3, 0);
+                region.currentHeight += 15;
             }
 
         //Draws small buttons for single lined regions
@@ -288,7 +289,7 @@ public class Window : MonoBehaviour
                 var load = Resources.Load<Sprite>("Sprites/Building/Buttons/" + smallButton.buttonType);
                 smallButton.GetComponent<SpriteRenderer>().sprite = load == null ? Resources.Load<Sprite>("Sprites/Building/Buttons/OtherEmpty") : load;
                 smallButton.GetComponent<SpriteRenderer>().sortingLayerName = layer;
-                smallButton.transform.localPosition = new Vector3(regionGroup.AutoWidth() + region.xExtend + 1.5f - 19 * region.smallButtons.IndexOf(smallButton), -10.5f, 0.1f);
+                smallButton.transform.localPosition = new Vector3(regionGroup.AutoWidth() - 10 + region.xExtend + 1.5f - 19 * region.smallButtons.IndexOf(smallButton), -10.5f, 0.1f);
                 if (smallButton.gameObject.GetComponent<BoxCollider2D>() == null)
                     smallButton.gameObject.AddComponent<BoxCollider2D>();
                 if (smallButton.gameObject.GetComponent<Highlightable>() == null)
@@ -331,12 +332,12 @@ public class Window : MonoBehaviour
         foreach (var region in regionGroup.regions)
             if (region.checkbox != null)
             {
-                region.checkbox.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/Checkboxes/" + (region.backgroundType == Handle || region.backgroundType == Button ? "Dark" : "Bright") + (region.checkbox.value.Value() ? "On" : "Off"));
+                region.checkbox.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/Checkboxes/" + (region.backgroundType == RedButton || region.backgroundType == Button ? "Dark" : "Bright") + (region.checkbox.value.Value() ? "On" : "Off"));
                 region.checkbox.GetComponent<SpriteRenderer>().sortingLayerName = layer;
                 region.checkbox.transform.localPosition = new Vector3(10.5f, -10.5f, 0.1f);
                 if (region.checkbox.gameObject.GetComponent<BoxCollider2D>() == null)
                     region.checkbox.gameObject.AddComponent<BoxCollider2D>();
-                if (region.checkbox.gameObject.GetComponent<Highlightable>() == null && region.backgroundType != Handle && region.backgroundType != Button)
+                if (region.checkbox.gameObject.GetComponent<Highlightable>() == null && region.backgroundType != RedButton && region.backgroundType != Button)
                     region.checkbox.gameObject.AddComponent<Highlightable>().Initialise(this, region);
                 if (region.checkbox.frame == null)
                     region.checkbox.frame = new GameObject("CheckboxFrame", typeof(SpriteRenderer));
@@ -355,7 +356,7 @@ public class Window : MonoBehaviour
                     region.inputLine.transform.localPosition = new Vector3(11 + region.lines[0].Length(), -region.currentHeight + 12, 0);
                 else
                 {
-                    region.inputLine.transform.localPosition = new Vector3(6, -region.currentHeight - 3, 0);
+                    region.inputLine.transform.localPosition = new Vector3(2 + textPaddingLeft, -region.currentHeight - 3, 0);
                     region.currentHeight += 15;
                 }
                 int length = 0;
@@ -382,11 +383,11 @@ public class Window : MonoBehaviour
             region.transform.localPosition = new Vector3(0, -regionGroup.currentHeight - extendOffset, 0);
             if (regionGroup == headerGroup)
             {
-                if (regionGroup.EXTRegion == region && regionGroup.setHeight != 0)
+                if (regionGroup.stretchRegion == region && regionGroup.setHeight != 0)
                     region.yExtend = regionGroup.setHeight - regionGroup.PlannedHeight() + 10;
             }
             else if (regionGroup.PlannedHeight() < regionGroup.setHeight)
-                if (regionGroup.EXTRegion == region || regionGroup.EXTRegion == null && region == regionGroup.regions.Last())
+                if (regionGroup.stretchRegion == region || regionGroup.stretchRegion == null && region == regionGroup.regions.Last())
                     region.yExtend = regionGroup.setHeight - regionGroup.PlannedHeight();
             if (region.yExtend > 0) extendOffset += region.yExtend;
             regionGroup.currentHeight += 4 + region.currentHeight;
@@ -406,9 +407,9 @@ public class Window : MonoBehaviour
                 region.background.GetComponent<RegionBackground>().Initialise(region);
                 region.background.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/Backgrounds/" + region.backgroundType);
                 region.background.GetComponent<SpriteRenderer>().sortingLayerName = layer;
-                region.background.transform.localScale = new Vector3(regionGroup.AutoWidth() + 8 + region.xExtend, region.AutoHeight() + 2 + region.yExtend, 1);
+                region.background.transform.localScale = new Vector3(regionGroup.AutoWidth() - 2 + region.xExtend, region.AutoHeight() + 2 + region.yExtend, 1);
                 region.background.transform.localPosition = new Vector3(2, -2, 0.8f);
-                if (region.backgroundType == Button || region.backgroundType == Handle || region.backgroundType == RedButton)
+                if (region.backgroundType == Button || region.backgroundType == RedButton)
                 {
                     if (region.background.GetComponent<BoxCollider2D>() == null)
                         region.background.AddComponent<BoxCollider2D>();
@@ -416,8 +417,6 @@ public class Window : MonoBehaviour
                         region.background.AddComponent<Highlightable>().Initialise(this, region);
                     if (disabledCollisions) Destroy(region.background.GetComponent<BoxCollider2D>());
                 }
-                if (region.background.GetComponent<Highlightable>() != null)
-                    region.background.GetComponent<Highlightable>().windowHandle = region.backgroundType == Handle;
             }
 
         //Draws region borders
@@ -432,10 +431,10 @@ public class Window : MonoBehaviour
                         region.borders[i].GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/Borders/RegionBorder");
                         region.borders[i].GetComponent<SpriteRenderer>().sortingLayerName = layer;
                     }
-                region.borders[0].transform.localScale = region.borders[3].transform.localScale = new Vector3(regionGroup.AutoWidth() + 12 + region.xExtend, 2, 2);
+                region.borders[0].transform.localScale = region.borders[3].transform.localScale = new Vector3(regionGroup.AutoWidth() + 2 + region.xExtend, 2, 2);
                 region.borders[1].transform.localScale = region.borders[2].transform.localScale = new Vector3(2, region.AutoHeight() + 4 + region.yExtend, 2);
                 region.borders[0].transform.localPosition = region.borders[1].transform.localPosition = new Vector3(0, 0, 0.5f);
-                region.borders[2].transform.localPosition = new Vector3(regionGroup.AutoWidth() + 10 + region.xExtend, 0, 0.5f);
+                region.borders[2].transform.localPosition = new Vector3(regionGroup.AutoWidth() + region.xExtend, 0, 0.5f);
                 region.borders[3].transform.localPosition = new Vector3(0, -region.AutoHeight() - 4 - region.yExtend, 0.5f);
             }
 
@@ -468,6 +467,6 @@ public class Window : MonoBehaviour
 
         regionGroup.currentHeight += extendOffset;
         if (headerGroup != regionGroup)
-            xOffset += regionGroup.AutoWidth() + 10; //WHY THE FUCK 10
+            xOffset += regionGroup.AutoWidth();
     }
 }
