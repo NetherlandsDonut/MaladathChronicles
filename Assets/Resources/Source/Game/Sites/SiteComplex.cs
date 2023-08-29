@@ -39,7 +39,6 @@ public class SiteComplex
                     else CloseWindow(window);
                 SpawnWindowBlueprint("HostileArea: " + area.name);
                 SetDesktopBackground("Areas/Area" + (area.zone + area.name).Replace("'", "").Replace(".", "").Replace(" ", "") + (area.specialClearBackground && area.eliteEncounters.All(x => currentSave.elitesKilled.ContainsKey(x.who)) ? "Cleared" : ""));
-                SpawnTransition();
             }
             else
             {

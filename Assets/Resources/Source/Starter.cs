@@ -39,6 +39,7 @@ public class Starter : MonoBehaviour
         if (saves == null) saves = new();
         Deserialize(ref settings, "settings", false, prefix);
         if (settings == null) settings = new();
+        else settings.FillNulls();
         Deserialize(ref Realm.realms, "realms", false, prefix);
         Deserialize(ref SiteHostileArea.areas, "areas", false, prefix);
         Deserialize(ref instances, "instances", false, prefix);
@@ -393,7 +394,6 @@ public class Starter : MonoBehaviour
                             {
                                 if (area.instancePart || area.complexPart)
                                 {
-                                    SpawnTransition();
                                     PlaySound("DesktopInstanceClose");
                                     SetDesktopBackground("Areas/Area" + (area.instancePart ? instance.name : complex.name).Replace("'", "").Replace(".", "").Replace(" ", ""));
                                     CloseWindow(h.window);

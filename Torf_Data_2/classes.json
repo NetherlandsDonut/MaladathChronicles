@@ -7,7 +7,6 @@
         "Footpad's Shirt",
         "Footpad's Pants",
         "Footpad's Shoes",
-        "Worn Dagger",
         "Worn Dagger"
       ],
       "Dwarf": [
@@ -21,21 +20,18 @@
         "Footpad's Shirt",
         "Footpad's Pants",
         "Footpad's Shoes",
-        "Worn Dagger",
         "Worn Dagger"
       ],
       "Human": [
         "Footpad's Shirt",
         "Footpad's Pants",
         "Footpad's Shoes",
-        "Worn Dagger",
         "Worn Dagger"
       ],
       "Night Elf": [
         "Footpad's Shirt",
         "Footpad's Pants",
         "Footpad's Shoes",
-        "Worn Dagger",
         "Worn Dagger"
       ],
       "Orc": [
@@ -49,14 +45,12 @@
         "Thug Shirt",
         "Thug Pants",
         "Thug Boots",
-        "Worn Dagger",
         "Worn Dagger"
       ],
       "Forsaken": [
         "Thug Shirt",
         "Thug Pants",
         "Thug Boots",
-        "Worn Dagger",
         "Worn Dagger"
       ]
     },
@@ -185,6 +179,10 @@
       "Spirit per Level": 0.0
     },
     "abilities": [
+      {
+        "Item1": "Dual Wielding Proficiency",
+        "Item2": 1
+      },
       {
         "Item1": "Two Handed Axe Proficiency",
         "Item2": 1

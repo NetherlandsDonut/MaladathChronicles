@@ -2,17 +2,22 @@ public class GameSettings
 {
     public GameSettings()
     {
-        selectedRealm = "";
-        selectedCharacter = "";
-        shadows = new Bool(true);
-        pixelPerfectVision = new Bool(false);
-        music = new Bool(true);
-        soundEffects = new Bool(true);
+        FillNulls();
+    }
 
-        rarityIndicators = new Bool(true);
-        bigRarityIndicators = new Bool(true);
-        upgradeIndicators = new Bool(false);
-        newSlotIndicators = new Bool(false);
+    public void FillNulls()
+    {
+        selectedRealm ??= "";
+        selectedCharacter ??= "";
+        shadows ??= new Bool(true);
+        pixelPerfectVision ??= new Bool(false);
+        music ??= new Bool(true);
+        soundEffects ??= new Bool(true);
+
+        rarityIndicators ??= new Bool(true);
+        bigRarityIndicators ??= new Bool(true);
+        upgradeIndicators ??= new Bool(false);
+        newSlotIndicators ??= new Bool(false);
     }
 
     public string selectedRealm = "Firemaw", selectedCharacter;

@@ -142,8 +142,13 @@ public static class Root
 
     public static void SetDesktopBackground(string texture, bool followCamera = true)
     {
-        if (followCamera) CDesktop.screen.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Textures/" + texture);
-        else CDesktop.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Textures/" + texture);
+        var sprite = Resources.Load<Sprite>("Sprites/Textures/" + texture);
+        var temp = (followCamera ? CDesktop.screen.gameObject : CDesktop.gameObject).GetComponent<SpriteRenderer>();
+        if (temp.sprite != sprite)
+        {
+            SpawnTransition();
+            temp.sprite = sprite;
+        }
     }
 
     //Hotkeys can be added only on desktop creation!
@@ -338,14 +343,20 @@ public static class Root
             AddSmallButton("OtherNextPage", (h) =>
             {
                 if (group.pagination < pages - 1)
+                {
+                    Sound.PlaySound("DesktopChangePage", 0.4f);
                     group.pagination++;
-                h.window.Rebuild();
+                    h.window.Rebuild();
+                }
             });
             AddSmallButton("OtherPreviousPage", (h) =>
             {
                 if (group.pagination > 0)
+                {
+                    Sound.PlaySound("DesktopChangePage", 0.4f);
                     group.pagination--;
-                h.window.Rebuild();
+                    h.window.Rebuild();
+                }
             });
         });
     }

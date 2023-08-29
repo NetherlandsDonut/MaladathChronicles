@@ -139,9 +139,11 @@ public class Item
         }
         else if (type == "One Handed")
         {
+            var mainHand = entity.GetItemInSlot("Main Hand");
+            var offHand = entity.GetItemInSlot("Off Hand");
+            secondSlot = mainHand != null && mainHand.type != "Two Handed" && (offHand == null || offHand.ilvl <= mainHand.ilvl);
             if (secondSlot)
             {
-                var mainHand = entity.GetItemInSlot("Main Hand");
                 if (mainHand != null && mainHand.type == "Two Handed")
                     entity.Unequip(new() { "Main Hand" }, index);
                 entity.Unequip(new() { "Off Hand" }, index);

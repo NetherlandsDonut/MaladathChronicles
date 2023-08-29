@@ -56,7 +56,6 @@ public class Blueprint
             },
             (h) =>
             {
-                SpawnTransition();
                 SpawnWindowBlueprint("CharacterRoster");
                 SpawnWindowBlueprint("CharacterInfo");
                 SpawnWindowBlueprint("TitleScreenSingleplayer");
@@ -326,7 +325,6 @@ public class Blueprint
                         {
                             settings.selectedCharacter = slot.player.name;
                             SetDesktopBackground("Areas/" + races.Find(x => x.name == slot.player.race).background, true);
-                            SpawnTransition();
                             Respawn("CharacterInfo");
                         }
                     });
@@ -569,29 +567,29 @@ public class Blueprint
             void Foo(string slot, Item item)
             {
                 if (item != null)
-                    AddButtonRegion(
+                    AddHeaderRegion(
                         () =>
                         {
-                            AddLine(item.name, "", "Right");
-                            AddSmallButton(item.icon, (h) => { });
-                        },
-                        (h) =>
-                        {
-                            PlaySound(item.ItemSound("PutDown"));
-                            currentSave.player.Unequip(new() { slot });
-                            CloseWindow(h.window);
-                            SpawnWindowBlueprint("PlayerEquipmentInfo");
-                            CloseWindow("Inventory");
-                            SpawnWindowBlueprint("Inventory");
-                        },
-                        (h) => () =>
-                        {
-                            SetAnchor(Center);
-                            PrintItemTooltip(item);
+                            AddLine(item.name, item.rarity, "Right");
+                            AddSmallButton(item.icon,
+                            (h) =>
+                            {
+                                PlaySound(item.ItemSound("PutDown"));
+                                currentSave.player.Unequip(new() { slot });
+                                Respawn("PlayerEquipmentInfo");
+                                Respawn("Inventory");
+                            },
+                            (h) => () =>
+                            {
+                                SetAnchor(Center);
+                                PrintItemTooltip(item);
+                            });
+                            if (settings.rarityIndicators.Value())
+                                AddSmallButtonOverlay("OtherRarity" + item.rarity + (settings.bigRarityIndicators.Value() ? "Big" : ""), 0, 2);
                         }
                     );
                 else
-                    AddHeaderRegion(() =>
+                    AddPaddingRegion(() =>
                     {
                         AddLine(slot, "DarkGray", "Right");
                         AddSmallButton("OtherEmpty", (h) => { });
@@ -843,7 +841,7 @@ public class Blueprint
                 () =>
                 {
                     AddLine(Board.board.enemy.name, "Black");
-                    AddSmallButton("OtherSettings", (h) => { SpawnWindowBlueprint("TitleScreenMenu"); });
+                    AddSmallButton("OtherSettings", (h) => { SpawnDesktopBlueprint("GameMenu"); });
                 },
                 (h) =>
                 {
@@ -1102,7 +1100,7 @@ public class Blueprint
                     currentSave.player.inventory.items.Reverse();
                     CloseWindow("Inventory");
                     SpawnWindowBlueprint("Inventory");
-                    PlaySound("DesktopInventorySort");
+                    PlaySound("DesktopInventorySort", 0.2f);
                 });
                 if (!CDesktop.windows.Exists(x => x.title == "InventorySettings") && !CDesktop.windows.Exists(x => x.title == "InventorySort"))
                     AddSmallButton("OtherSort", (h) =>
@@ -1161,7 +1159,7 @@ public class Blueprint
                 CloseWindow("Inventory");
                 CloseWindow("InventorySort");
                 SpawnWindowBlueprint("Inventory");
-                PlaySound("DesktopInventorySort");
+                PlaySound("DesktopInventorySort", 0.2f);
             });
             AddButtonRegion(() =>
             {
@@ -1173,7 +1171,7 @@ public class Blueprint
                 CloseWindow("Inventory");
                 CloseWindow("InventorySort");
                 SpawnWindowBlueprint("Inventory");
-                PlaySound("DesktopInventorySort");
+                PlaySound("DesktopInventorySort", 0.2f);
             });
             AddButtonRegion(() =>
             {
@@ -1185,7 +1183,7 @@ public class Blueprint
                 CloseWindow("Inventory");
                 CloseWindow("InventorySort");
                 SpawnWindowBlueprint("Inventory");
-                PlaySound("DesktopInventorySort");
+                PlaySound("DesktopInventorySort", 0.2f);
             });
             AddButtonRegion(() =>
             {
@@ -1197,7 +1195,7 @@ public class Blueprint
                 CloseWindow("Inventory");
                 CloseWindow("InventorySort");
                 SpawnWindowBlueprint("Inventory");
-                PlaySound("DesktopInventorySort");
+                PlaySound("DesktopInventorySort", 0.2f);
             });
         }),
         new("InventorySettings", () => {
@@ -1210,8 +1208,8 @@ public class Blueprint
                 AddSmallButton("OtherClose", (h) =>
                 {
                     CloseWindow("InventorySettings");
-                    CloseWindow("Inventory");
-                    SpawnWindowBlueprint("Inventory");
+                    Respawn("Inventory");
+                    Respawn("PlayerEquipmentInfo");
                 });
             });
             AddButtonRegion(() =>
@@ -1221,10 +1219,9 @@ public class Blueprint
             },
             (h) =>
             {
-                CloseWindow("Inventory");
-                SpawnWindowBlueprint("Inventory");
-                CloseWindow("InventorySettings");
-                SpawnWindowBlueprint("InventorySettings");
+                Respawn("Inventory");
+                Respawn("PlayerEquipmentInfo");
+                Respawn("InventorySettings");
             });
             if (settings.rarityIndicators.Value())
                 AddButtonRegion(() =>
@@ -1234,8 +1231,8 @@ public class Blueprint
                 },
                 (h) =>
                 {
-                    CloseWindow("Inventory");
-                    SpawnWindowBlueprint("Inventory");
+                    Respawn("Inventory");
+                    Respawn("PlayerEquipmentInfo");
                 });
             AddButtonRegion(() =>
             {
@@ -1244,8 +1241,8 @@ public class Blueprint
             },
             (h) =>
             {
-                CloseWindow("Inventory");
-                SpawnWindowBlueprint("Inventory");
+                Respawn("Inventory");
+                Respawn("PlayerEquipmentInfo");
             });
             AddButtonRegion(() =>
             {
@@ -1254,8 +1251,8 @@ public class Blueprint
             },
             (h) =>
             {
-                CloseWindow("Inventory");
-                SpawnWindowBlueprint("Inventory");
+                Respawn("Inventory");
+                Respawn("PlayerEquipmentInfo");
             });
         }),
         new("ItemDrop", () => {
@@ -2004,7 +2001,7 @@ public class Blueprint
                 areasSearch = areasSearch.OrderBy(x => x.name).ToList();
                 CloseWindow("HostileAreasSort");
                 Respawn("ObjectManagerHostileAreas");
-                PlaySound("DesktopInventorySort");
+                PlaySound("DesktopInventorySort", 0.2f);
             });
             AddButtonRegion(() =>
             {
@@ -2016,7 +2013,7 @@ public class Blueprint
                 areasSearch = areasSearch.OrderBy(x => x.zone).ToList();
                 CloseWindow("HostileAreasSort");
                 Respawn("ObjectManagerHostileAreas");
-                PlaySound("DesktopInventorySort");
+                PlaySound("DesktopInventorySort", 0.2f);
             });
             AddButtonRegion(() =>
             {
@@ -2028,7 +2025,7 @@ public class Blueprint
                 areasSearch = areasSearch.OrderBy(x => x.type).ToList();
                 CloseWindow("HostileAreasSort");
                 Respawn("ObjectManagerHostileAreas");
-                PlaySound("DesktopInventorySort");
+                PlaySound("DesktopInventorySort", 0.2f);
             });
             AddButtonRegion(() =>
             {
@@ -2040,7 +2037,7 @@ public class Blueprint
                 areasSearch = areasSearch.OrderByDescending(x => x.commonEncounters == null ? -1 : x.commonEncounters.Count).ToList();
                 CloseWindow("HostileAreasSort");
                 Respawn("ObjectManagerHostileAreas");
-                PlaySound("DesktopInventorySort");
+                PlaySound("DesktopInventorySort", 0.2f);
             });
             AddButtonRegion(() =>
             {
@@ -2052,7 +2049,7 @@ public class Blueprint
                 areasSearch = areasSearch.OrderByDescending(x => x.eliteEncounters == null ? -1 : x.eliteEncounters.Count).ToList();
                 CloseWindow("HostileAreasSort");
                 Respawn("ObjectManagerHostileAreas");
-                PlaySound("DesktopInventorySort");
+                PlaySound("DesktopInventorySort", 0.2f);
             });
         }),
         new("ObjectManagerHostileAreas", () => {
@@ -2075,7 +2072,7 @@ public class Blueprint
                     areas.Reverse();
                     areasSearch.Reverse();
                     Respawn("ObjectManagerHostileAreas");
-                    PlaySound("DesktopInventorySort");
+                    PlaySound("DesktopInventorySort", 0.2f);
                 });
                 if (!CDesktop.windows.Exists(x => x.title == "HostileAreasSort"))
                     AddSmallButton("OtherSort", (h) =>
@@ -2197,7 +2194,7 @@ public class Blueprint
                 instancesSearch = instancesSearch.OrderBy(x => x.name).ToList();
                 CloseWindow("InstancesSort");
                 Respawn("ObjectManagerInstances");
-                PlaySound("DesktopInventorySort");
+                PlaySound("DesktopInventorySort", 0.2f);
             });
             AddButtonRegion(() =>
             {
@@ -2209,7 +2206,7 @@ public class Blueprint
                 instancesSearch = instancesSearch.OrderBy(x => x.zone).ToList();
                 CloseWindow("InstancesSort");
                 Respawn("ObjectManagerInstances");
-                PlaySound("DesktopInventorySort");
+                PlaySound("DesktopInventorySort", 0.2f);
             });
             AddButtonRegion(() =>
             {
@@ -2221,7 +2218,7 @@ public class Blueprint
                 instancesSearch = instancesSearch.OrderBy(x => x.type).ToList();
                 CloseWindow("InstancesSort");
                 Respawn("ObjectManagerInstances");
-                PlaySound("DesktopInventorySort");
+                PlaySound("DesktopInventorySort", 0.2f);
             });
             AddButtonRegion(() =>
             {
@@ -2233,7 +2230,7 @@ public class Blueprint
                 instancesSearch = instancesSearch.OrderByDescending(x => x.wings.Sum(y => y.areas.Count)).ToList();
                 CloseWindow("InstancesSort");
                 Respawn("ObjectManagerInstances");
-                PlaySound("DesktopInventorySort");
+                PlaySound("DesktopInventorySort", 0.2f);
             });
             AddButtonRegion(() =>
             {
@@ -2245,7 +2242,7 @@ public class Blueprint
                 instancesSearch = instancesSearch.OrderByDescending(x => x.wings.Count).ToList();
                 CloseWindow("InstancesSort");
                 Respawn("ObjectManagerInstances");
-                PlaySound("DesktopInventorySort");
+                PlaySound("DesktopInventorySort", 0.2f);
             });
         }),
         new("ObjectManagerInstances", () => {
@@ -2268,7 +2265,7 @@ public class Blueprint
                     instances.Reverse();
                     instancesSearch.Reverse();
                     Respawn("ObjectManagerInstances");
-                    PlaySound("DesktopInventorySort");
+                    PlaySound("DesktopInventorySort", 0.2f);
                 });
                 if (!CDesktop.windows.Exists(x => x.title == "InstancesSort"))
                     AddSmallButton("OtherSort", (h) =>
@@ -2376,7 +2373,7 @@ public class Blueprint
                 CloseWindow("ComplexesSort");
                 CloseWindow("ObjectManagerComplexes");
                 SpawnWindowBlueprint("ObjectManagerComplexes");
-                PlaySound("DesktopInventorySort");
+                PlaySound("DesktopInventorySort", 0.2f);
             });
             AddButtonRegion(() =>
             {
@@ -2389,7 +2386,7 @@ public class Blueprint
                 CloseWindow("ComplexesSort");
                 CloseWindow("ObjectManagerComplexes");
                 SpawnWindowBlueprint("ObjectManagerComplexes");
-                PlaySound("DesktopInventorySort");
+                PlaySound("DesktopInventorySort", 0.2f);
             });
             AddButtonRegion(() =>
             {
@@ -2402,7 +2399,7 @@ public class Blueprint
                 CloseWindow("ComplexesSort");
                 CloseWindow("ObjectManagerComplexes");
                 SpawnWindowBlueprint("ObjectManagerComplexes");
-                PlaySound("DesktopInventorySort");
+                PlaySound("DesktopInventorySort", 0.2f);
             });
         }),
         new("ObjectManagerComplexes", () => {
@@ -2426,7 +2423,7 @@ public class Blueprint
                     complexesSearch.Reverse();
                     CloseWindow("ObjectManagerComplexes");
                     SpawnWindowBlueprint("ObjectManagerComplexes");
-                    PlaySound("DesktopInventorySort");
+                    PlaySound("DesktopInventorySort", 0.2f);
                 });
                 if (!CDesktop.windows.Exists(x => x.title == "ComplexesSort"))
                     AddSmallButton("OtherSort", (h) =>
@@ -2533,7 +2530,7 @@ public class Blueprint
                 {
                     Assets.assets.ambience.Reverse();
                     Respawn("ObjectManagerAmbienceList");
-                    PlaySound("DesktopInventorySort");
+                    PlaySound("DesktopInventorySort", 0.2f);
                 });
             });
             AddPaddingRegion(() =>
@@ -2619,7 +2616,7 @@ public class Blueprint
                 {
                     Assets.assets.itemIcons.Reverse();
                     Respawn("ObjectManagerItemIconList");
-                    PlaySound("DesktopInventorySort");
+                    PlaySound("DesktopInventorySort", 0.2f);
                 });
             });
             var regionGroup = CDesktop.LBWindow.LBRegionGroup;
@@ -2681,7 +2678,7 @@ public class Blueprint
                 {
                     Assets.assets.abilityIcons.Reverse();
                     Respawn("ObjectManagerAbilityIconList");
-                    PlaySound("DesktopInventorySort");
+                    PlaySound("DesktopInventorySort", 0.2f);
                 });
             });
             var regionGroup = CDesktop.LBWindow.LBRegionGroup;
@@ -2746,7 +2743,7 @@ public class Blueprint
                 {
                     Assets.assets.portraits.Reverse();
                     Respawn("ObjectManagerPortraitList");
-                    PlaySound("DesktopInventorySort");
+                    PlaySound("DesktopInventorySort", 0.2f);
                 });
             });
             AddPaddingRegion(() =>
@@ -2980,7 +2977,7 @@ public class Blueprint
                 CloseWindow("ItemsSort");
                 CloseWindow("ObjectManagerItems");
                 SpawnWindowBlueprint("ObjectManagerItems");
-                PlaySound("DesktopInventorySort");
+                PlaySound("DesktopInventorySort", 0.2f);
             });
             AddButtonRegion(() =>
             {
@@ -2993,7 +2990,7 @@ public class Blueprint
                 CloseWindow("ItemsSort");
                 CloseWindow("ObjectManagerItems");
                 SpawnWindowBlueprint("ObjectManagerItems");
-                PlaySound("DesktopInventorySort");
+                PlaySound("DesktopInventorySort", 0.2f);
             });
             AddButtonRegion(() =>
             {
@@ -3006,7 +3003,7 @@ public class Blueprint
                 CloseWindow("ItemsSort");
                 CloseWindow("ObjectManagerItems");
                 SpawnWindowBlueprint("ObjectManagerItems");
-                PlaySound("DesktopInventorySort");
+                PlaySound("DesktopInventorySort", 0.2f);
             });
             AddButtonRegion(() =>
             {
@@ -3019,7 +3016,7 @@ public class Blueprint
                 CloseWindow("ItemsSort");
                 CloseWindow("ObjectManagerItems");
                 SpawnWindowBlueprint("ObjectManagerItems");
-                PlaySound("DesktopInventorySort");
+                PlaySound("DesktopInventorySort", 0.2f);
             });
         }),
         new("ObjectManagerItems", () => {
@@ -3043,7 +3040,7 @@ public class Blueprint
                     itemsSearch.Reverse();
                     CloseWindow("ObjectManagerItems");
                     SpawnWindowBlueprint("ObjectManagerItems");
-                    PlaySound("DesktopInventorySort");
+                    PlaySound("DesktopInventorySort", 0.2f);
                 });
                 if (!CDesktop.windows.Exists(x => x.title == "ItemsSort"))
                     AddSmallButton("OtherSort", (h) =>
@@ -3202,7 +3199,7 @@ public class Blueprint
                 itemSetsSearch = itemSetsSearch.OrderBy(x => x.name).ToList();
                 CloseWindow("ItemSetsSort");
                 Respawn("ObjectManagerItemSets");
-                PlaySound("DesktopInventorySort");
+                PlaySound("DesktopInventorySort", 0.2f);
             });
             AddButtonRegion(() =>
             {
@@ -3214,7 +3211,7 @@ public class Blueprint
                 itemSetsSearch = itemSetsSearch.OrderByDescending(x => items.FindAll(y => y.set == x.name).Average(y => y.ilvl)).ToList();
                 CloseWindow("ItemSetsSort");
                 Respawn("ObjectManagerItemSets");
-                PlaySound("DesktopInventorySort");
+                PlaySound("DesktopInventorySort", 0.2f);
             });
             AddButtonRegion(() =>
             {
@@ -3226,7 +3223,7 @@ public class Blueprint
                 itemSetsSearch = itemSetsSearch.OrderByDescending(x => x.setBonuses.Count).ToList();
                 CloseWindow("ItemSetsSort");
                 Respawn("ObjectManagerItemSets");
-                PlaySound("DesktopInventorySort");
+                PlaySound("DesktopInventorySort", 0.2f);
             });
         }),
         new("ObjectManagerItemSets", () => {
@@ -3249,7 +3246,7 @@ public class Blueprint
                     itemSets.Reverse();
                     itemSetsSearch.Reverse();
                     Respawn("ObjectManagerItemSets");
-                    PlaySound("DesktopInventorySort");
+                    PlaySound("DesktopInventorySort", 0.2f);
                 });
                 if (!CDesktop.windows.Exists(x => x.title == "ItemSetsSort"))
                     AddSmallButton("OtherSort", (h) =>
@@ -3365,7 +3362,7 @@ public class Blueprint
                 abilitiesSearch = abilitiesSearch.OrderBy(x => x.name).ToList();
                 CloseWindow("AbilitiesSort");
                 Respawn("ObjectManagerAbilities");
-                PlaySound("DesktopInventorySort");
+                PlaySound("DesktopInventorySort", 0.2f);
             });
             AddButtonRegion(() =>
             {
@@ -3377,7 +3374,7 @@ public class Blueprint
                 abilitiesSearch = abilitiesSearch.OrderByDescending(x => x.cost.Sum(y => y.Value)).ToList();
                 CloseWindow("AbilitiesSort");
                 Respawn("ObjectManagerAbilities");
-                PlaySound("DesktopInventorySort");
+                PlaySound("DesktopInventorySort", 0.2f);
             });
             AddButtonRegion(() =>
             {
@@ -3389,7 +3386,7 @@ public class Blueprint
                 abilitiesSearch = abilitiesSearch.OrderByDescending(x => x.cooldown).ToList();
                 CloseWindow("AbilitiesSort");
                 Respawn("ObjectManagerAbilities");
-                PlaySound("DesktopInventorySort");
+                PlaySound("DesktopInventorySort", 0.2f);
             });
         }),
         new("ObjectManagerAbilities", () => {
@@ -3412,7 +3409,7 @@ public class Blueprint
                     abilities.Reverse();
                     abilitiesSearch.Reverse();
                     Respawn("ObjectManagerAbilities");
-                    PlaySound("DesktopInventorySort");
+                    PlaySound("DesktopInventorySort", 0.2f);
                 });
                 if (!CDesktop.windows.Exists(x => x.title == "AbilitiesSort"))
                     AddSmallButton("OtherSort", (h) =>
@@ -3544,7 +3541,7 @@ public class Blueprint
                 buffsSearch = buffsSearch.OrderBy(x => x.name).ToList();
                 CloseWindow("BuffsSort");
                 Respawn("ObjectManagerBuffs");
-                PlaySound("DesktopInventorySort");
+                PlaySound("DesktopInventorySort", 0.2f);
             });
             AddButtonRegion(() =>
             {
@@ -3556,7 +3553,7 @@ public class Blueprint
                 buffsSearch = buffsSearch.OrderByDescending(x => x.dispelType).ToList();
                 CloseWindow("BuffsSort");
                 Respawn("ObjectManagerBuffs");
-                PlaySound("DesktopInventorySort");
+                PlaySound("DesktopInventorySort", 0.2f);
             });
             AddButtonRegion(() =>
             {
@@ -3568,7 +3565,7 @@ public class Blueprint
                 buffsSearch = buffsSearch.OrderByDescending(x => x.stackable).ToList();
                 CloseWindow("BuffsSort");
                 Respawn("ObjectManagerBuffs");
-                PlaySound("DesktopInventorySort");
+                PlaySound("DesktopInventorySort", 0.2f);
             });
         }),
         new("ObjectManagerBuffs", () => {
@@ -3591,7 +3588,7 @@ public class Blueprint
                     buffs.Reverse();
                     buffsSearch.Reverse();
                     Respawn("ObjectManagerBuffs");
-                    PlaySound("DesktopInventorySort");
+                    PlaySound("DesktopInventorySort", 0.2f);
                 });
                 if (!CDesktop.windows.Exists(x => x.title == "BuffsSort"))
                     AddSmallButton("OtherSort", (h) =>
@@ -3730,7 +3727,7 @@ public class Blueprint
                 racesSearch = racesSearch.OrderBy(x => x.name).ToList();
                 CloseWindow("RacesSort");
                 Respawn("ObjectManagerRaces");
-                PlaySound("DesktopInventorySort");
+                PlaySound("DesktopInventorySort", 0.2f);
             });
             AddButtonRegion(() =>
             {
@@ -3742,7 +3739,7 @@ public class Blueprint
                 racesSearch = racesSearch.OrderBy(x => x.portrait).ToList();
                 CloseWindow("RacesSort");
                 Respawn("ObjectManagerRaces");
-                PlaySound("DesktopInventorySort");
+                PlaySound("DesktopInventorySort", 0.2f);
             });
             AddButtonRegion(() =>
             {
@@ -3754,7 +3751,7 @@ public class Blueprint
                 racesSearch = racesSearch.OrderByDescending(x => x.faction).ToList();
                 CloseWindow("RacesSort");
                 Respawn("ObjectManagerRaces");
-                PlaySound("DesktopInventorySort");
+                PlaySound("DesktopInventorySort", 0.2f);
             });
             AddButtonRegion(() =>
             {
@@ -3766,7 +3763,7 @@ public class Blueprint
                 racesSearch = racesSearch.OrderBy(x => x.kind == "Elite" ? 0 : (x.kind == "Rare" ? 1 : 2)).ToList();
                 CloseWindow("RacesSort");
                 Respawn("ObjectManagerRaces");
-                PlaySound("DesktopInventorySort");
+                PlaySound("DesktopInventorySort", 0.2f);
             });
             AddButtonRegion(() =>
             {
@@ -3778,7 +3775,7 @@ public class Blueprint
                 racesSearch = racesSearch.OrderByDescending(x => x.vitality).ToList();
                 CloseWindow("RacesSort");
                 Respawn("ObjectManagerRaces");
-                PlaySound("DesktopInventorySort");
+                PlaySound("DesktopInventorySort", 0.2f);
             });
         }),
         new("ObjectManagerRaces", () => {
@@ -3801,7 +3798,7 @@ public class Blueprint
                     races.Reverse();
                     racesSearch.Reverse();
                     Respawn("ObjectManagerRaces");
-                    PlaySound("DesktopInventorySort");
+                    PlaySound("DesktopInventorySort", 0.2f);
                 });
                 if (!CDesktop.windows.Exists(x => x.title == "RacesSort"))
                     AddSmallButton("OtherSort", (h) =>
@@ -3972,7 +3969,7 @@ public class Blueprint
                     specs.Reverse();
                     specsSearch.Reverse();
                     Respawn("ObjectManagerClasses");
-                    PlaySound("DesktopInventorySort");
+                    PlaySound("DesktopInventorySort", 0.2f);
                 });
             });
             AddPaddingRegion(() =>
@@ -4194,7 +4191,6 @@ public class Blueprint
                 if (window != null)
                 {
                     area = null;
-                    SpawnTransition();
                     PlaySound("DesktopButtonClose");
                     SetDesktopBackground("Areas/Area" + instance.name.Replace("'", "").Replace(".", "").Replace(" ", ""));
                     CloseWindow(window);
@@ -4250,7 +4246,6 @@ public class Blueprint
                 if (window != null)
                 {
                     area = null;
-                    SpawnTransition();
                     PlaySound("DesktopButtonClose");
                     SetDesktopBackground("Areas/Complex" + complex.name.Replace("'", "").Replace(".", "").Replace(" ", ""));
                     CloseWindow(window);

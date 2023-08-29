@@ -51,7 +51,6 @@ public class SiteInstance
                     else CloseWindow(window);
                 SpawnWindowBlueprint("HostileArea: " + area.name);
                 SetDesktopBackground("Areas/Area" + (instance.name + area.name).Replace("'", "").Replace(".", "").Replace(" ", "") + (area.specialClearBackground && area.eliteEncounters.All(x => currentSave.elitesKilled.ContainsKey(x.who)) ? "Cleared" : ""));
-                SpawnTransition();
             });
     }
 }

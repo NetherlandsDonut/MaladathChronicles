@@ -123,6 +123,7 @@ public class Desktop : MonoBehaviour
                 {
                     titleScreenCameraDirection = random.Next(0, 4);
                     screen.transform.localPosition = new Vector3(random.Next(0, 2) == 0 ? 1762 : 5374, random.Next(-3683, -1567));
+                    SpawnTransition();
                 }
             }
             else if (CDesktop.title == "Map")
