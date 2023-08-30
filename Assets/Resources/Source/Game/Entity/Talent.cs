@@ -23,7 +23,7 @@ public class Talent
             var previousTalent = currentSave.player.PreviousTalent(spec, talent);
             var previousTalentDistance = previousTalent == null ? 0 : talent.row - previousTalent.row;
             var abilityObj = abilities.Find(x => x.name == talent.ability);
-            AddBigButton("Ability" + talent.ability.Replace(" ", "").Replace(":", ""),
+            AddBigButton(abilities.Find(x => x.name == talent.ability).icon,
                 (h) =>
                 {
                     var canPick = currentSave.player.CanPickTalent(spec, talent);

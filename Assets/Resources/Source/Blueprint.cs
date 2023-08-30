@@ -432,8 +432,8 @@ public class Blueprint
             },
             (h) =>
             {
-                SaveGames();
                 CloseSave();
+                SaveGames();
                 CloseDesktop("GameMenu");
                 CloseDesktop("TitleScreen");
                 SpawnDesktopBlueprint("TitleScreen");
@@ -445,6 +445,7 @@ public class Blueprint
             },
             (h) =>
             {
+                CloseSave();
                 SaveGames();
                 Application.Quit();
             });
