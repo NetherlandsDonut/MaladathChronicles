@@ -64,6 +64,16 @@ public class Desktop : MonoBehaviour
 
     public void Update()
     {
+        if (Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.Tab) && Input.GetKeyDown(KeyCode.LeftAlt))
+        {
+            Starter.LoadData();
+            if (Board.board != null)
+            {
+                Board.board.playerCombatAbilities = Board.board.playerCombatAbilities.Select(x => Ability.abilities.Find(y => x.name == y.name)).ToList();
+                Board.board.enemyCombatAbilities = Board.board.enemyCombatAbilities.Select(x => Ability.abilities.Find(y => x.name == y.name)).ToList();
+            }
+            PlaySound("DesktopMagicClick");
+        }
         if (queuedAmbience.Item1 != null || !GameSettings.settings.music.Value() && ambience.volume > 0)
         {
             if (!GameSettings.settings.music.Value())

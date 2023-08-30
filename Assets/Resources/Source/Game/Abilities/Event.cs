@@ -34,8 +34,8 @@ public class Event
             string shatterTarget = effect.ContainsKey("ShatterTarget") ? effect["ShatterTarget"] : "None";
             bool shatterDirectional = effect.ContainsKey("ShatterType") && effect["ShatterType"] == "Directional";
             int shatterDensity = effect.ContainsKey("ShatterDensity") ? int.Parse(effect["ShatterDensity"]) : 0;
-            double shatterDegree = effect.ContainsKey("ShatterDegree") ? 1 : 1;
-            double shatterSpeed = effect.ContainsKey("shatterSpeed") ? double.Parse(effect["shatterSpeed"].Replace(".", ",")) : 2;
+            double shatterDegree = effect.ContainsKey("ShatterDegree") ? double.Parse(effect["ShatterDegree"].Replace(".", ",")) : 0.4;
+            double shatterSpeed = effect.ContainsKey("ShatterSpeed") ? double.Parse(effect["ShatterSpeed"].Replace(".", ",")) : 2;
             float await = effect.ContainsKey("Await") ? float.Parse(effect["Await"]) : 0;
             var rand = random.Next(0, 100);
             if (rand >= chanceBase + chance * (chanceScale == "None" ? 1 : (chanceSource != "None" ? (futureBoard == null ? (chanceSource == "Effector" ? effector : other).Stats()[chanceScale] : (chanceSource == "Effector" ? futureEffector : futureOther).Stats()[chanceScale]) : 1))) continue;

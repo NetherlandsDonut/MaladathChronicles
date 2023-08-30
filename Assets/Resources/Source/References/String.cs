@@ -1,8 +1,9 @@
 using UnityEngine;
+using Newtonsoft.Json;
 
 public class String
 {
-    private string value = "";
+    public string value = "";
     private string backupValue = "";
 
     public string Value() => value;

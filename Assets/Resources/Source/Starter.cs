@@ -40,17 +40,6 @@ public class Starter : MonoBehaviour
         Deserialize(ref settings, "settings", false, prefix);
         if (settings == null) settings = new();
         else settings.FillNulls();
-        Deserialize(ref Realm.realms, "realms", false, prefix);
-        Deserialize(ref SiteHostileArea.areas, "areas", false, prefix);
-        Deserialize(ref instances, "instances", false, prefix);
-        Deserialize(ref complexes, "complexes", false, prefix);
-        Deserialize(ref SiteTown.towns, "towns", false, prefix);
-        Deserialize(ref Class.specs, "classes", false, prefix);
-        Deserialize(ref Race.races, "races", false, prefix);
-        Deserialize(ref ItemSet.itemSets, "sets", false, prefix);
-        Deserialize(ref Item.items, "items", false, prefix);
-        Deserialize(ref Ability.abilities, "abilities", false, prefix);
-        Deserialize(ref Buff.buffs, "buffs", false, prefix);
         var temp = FindObjectsByType<WindowAnchorRemote>(FindObjectsSortMode.None);
         windowRemoteAnchors = temp.Select(x => (x.name, new Vector2(x.transform.position.x, x.transform.position.y))).ToList();
         for (int i = temp.Length - 1; i >= 0; i--) Destroy(temp[i].gameObject);
@@ -63,6 +52,32 @@ public class Starter : MonoBehaviour
             var type = split[0].Substring(4);
             Blueprint.windowBlueprints.Add(new Blueprint("Site: " + name, () => PrintSite(name, type, windowRemoteAnchors[index].Item2)));
         }
+        LoadData();
+        cursor = FindObjectOfType<Cursor>();
+        cursorEnemy = FindObjectOfType<CursorRemote>();
+        ambience = FindObjectsOfType<AudioSource>().First(x => x.name == "Ambience");
+        SpawnDesktopBlueprint("TitleScreen");
+        Destroy(gameObject);
+    }
+
+    public static void LoadData()
+    {
+        var prefix = "";
+        #if (!UNITY_EDITOR)
+        prefix = "D:\\Games\\Torf\\";
+        #endif
+        Deserialize(ref SiteHostileArea.areas, "areas", false, prefix);
+        Deserialize(ref instances, "instances", false, prefix);
+        Deserialize(ref complexes, "complexes", false, prefix);
+        Deserialize(ref SiteTown.towns, "towns", false, prefix);
+        Deserialize(ref Realm.realms, "realms", false, prefix);
+        Deserialize(ref VendorType.vendorTypes, "vendortypes", false, prefix);
+        Deserialize(ref Class.specs, "classes", false, prefix);
+        Deserialize(ref Race.races, "races", false, prefix);
+        Deserialize(ref ItemSet.itemSets, "sets", false, prefix);
+        Deserialize(ref Item.items, "items", false, prefix);
+        Deserialize(ref Ability.abilities, "abilities", false, prefix);
+        Deserialize(ref Buff.buffs, "buffs", false, prefix);
         #if (UNITY_EDITOR)
         var ambienceList = AssetDatabase.FindAssets("t:AudioClip Ambience", new[] { "Assets/Resources/Ambience/" }).Select(x => AssetDatabase.GUIDToAssetPath(x).Replace("Assets/Resources/Ambience/", "")).ToList();
         var soundList = AssetDatabase.FindAssets("t:AudioClip", new[] { "Assets/Resources/Sounds/" }).Select(x => AssetDatabase.GUIDToAssetPath(x).Replace("Assets/Resources/Sounds", "")).ToList();
@@ -247,6 +262,7 @@ public class Starter : MonoBehaviour
         {
             var index = i;
             var instance = instances[index];
+            if (Blueprint.windowBlueprints.Exists(x => x.title == instance.type + ": " + instance.name)) continue;
             Blueprint.windowBlueprints.Add(
                 new Blueprint(instance.type + ": " + instance.name,
                     () =>
@@ -292,6 +308,7 @@ public class Starter : MonoBehaviour
         {
             var index = i;
             var town = SiteTown.towns[index];
+            if (Blueprint.windowBlueprints.Exists(x => x.title == "Town: " + town.name)) continue;
             Blueprint.windowBlueprints.Add(
                 new Blueprint("Town: " + town.name,
                     () =>
@@ -335,6 +352,28 @@ public class Starter : MonoBehaviour
                                 (h) => () => { PrintTransportTooltip(transport); });
                             }
                         }
+                        if (town.vendors != null)
+                        {
+                            AddHeaderRegion(() => { AddLine("Vendors:"); });
+                            foreach (var vendor in town.vendors)
+                            {
+                                AddButtonRegion(() =>
+                                {
+                                    AddLine(vendor.name, "Black");
+                                    var vendorType = VendorType.vendorTypes.Find(x => x.name == vendor.type);
+                                    AddSmallButton(vendorType != null ? vendorType.icon : "OtherUnknown", (h) => { });
+                                },
+                                (h) =>
+                                {
+                                    //CloseDesktop("TownEntrance");
+                                    //SwitchDesktop("Map");
+                                    //CDesktop.LockScreen();
+                                    //if (transport.price > 0)
+                                    //    PlaySound("DesktopTransportPay");
+                                    //fastTravelCamera = CDesktop.windows.Find(x => x.title == "Site: " + transport.destination).gameObject;
+                                });
+                            }
+                        }
                         AddPaddingRegion(() => { });
                     }
                 )
@@ -344,6 +383,7 @@ public class Starter : MonoBehaviour
         {
             var index = i;
             var complex = complexes[index];
+            if (Blueprint.windowBlueprints.Exists(x => x.title == "Complex: " + complex.name)) continue;
             Blueprint.windowBlueprints.Add(
                 new Blueprint("Complex: " + complex.name,
                     () =>
@@ -377,6 +417,7 @@ public class Starter : MonoBehaviour
         {
             var index = i;
             var area = SiteHostileArea.areas[index];
+            if (Blueprint.windowBlueprints.Exists(x => x.title == "HostileArea: " + area.name)) continue;
             Blueprint.windowBlueprints.Add(
                 new Blueprint("HostileArea: " + area.name,
                     () =>
@@ -438,7 +479,7 @@ public class Starter : MonoBehaviour
                                         AddLine(encounter.who, "", "Right");
                                         var race = Race.races.Find(x => x.name == encounter.who);
                                         AddSmallButton(race == null ? "OtherUnknown" : race.portrait, (h) => { });
-                                    }, 
+                                    },
                                     (h) =>
                                     {
                                         Board.NewBoard(area.RollEncounter(encounter), area);
@@ -494,6 +535,7 @@ public class Starter : MonoBehaviour
                 for (int k = 0; k < 3; k++)
                 {
                     var spec = i; var row = j; var col = k;
+                    if (Blueprint.windowBlueprints.Exists(x => x.title == "Talent" + spec + row + col)) continue;
                     Blueprint.windowBlueprints.Add(new Blueprint("Talent" + spec + row + col, () => PrintTalent(spec, row, col)));
                 }
         if (countHA != SiteHostileArea.areas.Count) Debug.Log("Added " + (SiteHostileArea.areas.Count - countHA) + " lacking areas.");
@@ -501,10 +543,5 @@ public class Starter : MonoBehaviour
         if (countR != Race.races.Count) Debug.Log("Added " + (Race.races.Count - countR) + " lacking races.");
         if (countA != Ability.abilities.Count) Debug.Log("Added " + (Ability.abilities.Count - countA) + " lacking abilities.");
         if (countIS != ItemSet.itemSets.Count) Debug.Log("Added " + (ItemSet.itemSets.Count - countIS) + " lacking item sets.");
-        cursor = FindObjectOfType<Cursor>();
-        cursorEnemy = FindObjectOfType<CursorRemote>();
-        ambience = FindObjectsOfType<AudioSource>().First(x => x.name == "Ambience");
-        SpawnDesktopBlueprint("TitleScreen");
-        Destroy(gameObject);
     }
 }

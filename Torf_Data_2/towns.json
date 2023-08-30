@@ -254,6 +254,18 @@
         "destination": "Grom'gol Base Camp",
         "price": 1.5
       }
+    ],
+    "vendors": [
+      {
+        "name": "Orc Guy",
+        "race": "Orc",
+        "type": "Butcher"
+      },
+      {
+        "name": "Another Orc Guy",
+        "race": "Orc",
+        "type": "Trade Goods"
+      },
     ]
   },
   {

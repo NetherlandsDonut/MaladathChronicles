@@ -1,12 +1,28 @@
 {
   "selectedRealm": "Firemaw",
   "selectedCharacter": "Neena",
-  "shadows": {},
-  "pixelPerfectVision": {},
-  "music": {},
-  "soundEffects": {},
-  "rarityIndicators": {},
-  "bigRarityIndicators": {},
-  "upgradeIndicators": {},
-  "newSlotIndicators": {}
+  "shadows": {
+    "value": "True"
+  },
+  "pixelPerfectVision": {
+    "value": "True"
+  },
+  "music": {
+    "value": "False"
+  },
+  "soundEffects": {
+    "value": "True"
+  },
+  "rarityIndicators": {
+    "value": "True"
+  },
+  "bigRarityIndicators": {
+    "value": "True"
+  },
+  "upgradeIndicators": {
+    "value": "False"
+  },
+  "newSlotIndicators": {
+    "value": "False"
+  }
 }
