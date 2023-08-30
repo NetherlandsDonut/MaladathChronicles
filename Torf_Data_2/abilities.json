@@ -1,11 +1,11 @@
 [
   {
     "name": "Curse of Thorns",
-    "icon": "AbilityCurseofThorns"
+    "icon": "AbilityThorns"
   },
   {
     "name": "Lightning Wave",
-    "icon": "AbilityLightningWave"
+    "icon": "AbilityCrashingStorm"
   },
   {
     "name": "Arcane Blast",
@@ -21,15 +21,15 @@
   },
   {
     "name": "Shadow Bolt Whirl",
-    "icon": "AbilityShadowBoltWhirl"
+    "icon": "AbilityShadowBolt"
   },
   {
     "name": "Corruption of the Earth",
-    "icon": "AbilityCorruptionoftheEarth"
+    "icon": "AbilityCreatureCursed01"
   },
   {
     "name": "Dream Fog",
-    "icon": "AbilityDreamFog"
+    "icon": "AbilityDeadEye"
   },
   {
     "name": "Noxious Breath",
@@ -937,8 +937,7 @@
         ],
         "effects": [
           {
-            "SoundEffect": "AbilityArcaneMissilesCast",
-            "Await": "4"
+            "SoundEffect": "AbilityArcaneMissilesCast"
           },
           {
             "Effect": "Damage",
@@ -946,13 +945,13 @@
             "PowerType": "Spell",
             "PowerSource": "Effector",
             "PowerScale": "1.3",
+            "AnimationType": "Missile",
             "ShatterTarget": "Other",
             "ShatterType": "Directional",
             "ShatterDensity": "2",
-            "ShatterSpeed": "5",
+            "ShatterSpeed": "4",
             "ShatterDegree": "0.7",
-            "SoundEffect": "AbilityArcaneMissilesImpact1",
-            "Await": "4"
+            "SoundEffect": "AbilityArcaneMissilesImpact1"
           },
           {
             "Effect": "Damage",
@@ -960,13 +959,13 @@
             "PowerType": "Spell",
             "PowerSource": "Effector",
             "PowerScale": "1.3",
+            "AnimationType": "Missile",
             "ShatterTarget": "Other",
             "ShatterType": "Directional",
             "ShatterDensity": "2",
-            "ShatterSpeed": "5",
+            "ShatterSpeed": "4",
             "ShatterDegree": "0.7",
-            "SoundEffect": "AbilityArcaneMissilesImpact2",
-            "Await": "4"
+            "SoundEffect": "AbilityArcaneMissilesImpact2"
           },
           {
             "Effect": "Damage",
@@ -974,13 +973,13 @@
             "PowerType": "Spell",
             "PowerSource": "Effector",
             "PowerScale": "1.3",
+            "AnimationType": "Missile",
             "ShatterTarget": "Other",
             "ShatterType": "Directional",
             "ShatterDensity": "2",
-            "ShatterSpeed": "5",
+            "ShatterSpeed": "4",
             "ShatterDegree": "0.7",
-            "SoundEffect": "AbilityArcaneMissilesImpact3",
-            "Await": "4"
+            "SoundEffect": "AbilityArcaneMissilesImpact3"
           },
           {
             "Effect": "Damage",
@@ -990,13 +989,13 @@
             "PowerType": "Spell",
             "PowerSource": "Effector",
             "PowerScale": "1.3",
+            "AnimationType": "Missile",
             "ShatterTarget": "Other",
             "ShatterType": "Directional",
             "ShatterDensity": "2",
-            "ShatterSpeed": "5",
+            "ShatterSpeed": "4",
             "ShatterDegree": "0.7",
-            "SoundEffect": "AbilityArcaneMissilesImpact2",
-            "Await": "4"
+            "SoundEffect": "AbilityArcaneMissilesImpact2"
           },
           {
             "Effect": "Damage",
@@ -1007,13 +1006,13 @@
             "PowerType": "Spell",
             "PowerSource": "Effector",
             "PowerScale": "1.3",
+            "AnimationType": "Missile",
             "ShatterTarget": "Other",
             "ShatterType": "Directional",
             "ShatterDensity": "2",
-            "ShatterSpeed": "5",
+            "ShatterSpeed": "4",
             "ShatterDegree": "0.7",
-            "SoundEffect": "AbilityArcaneMissilesImpact3",
-            "Await": "4"
+            "SoundEffect": "AbilityArcaneMissilesImpact3"
           },
           {
             "Effect": "EndTurn"
@@ -1106,7 +1105,7 @@
             "ShatterTarget": "Other",
             "ShatterType": "Central",
             "ShatterDensity": "2",
-            "ShatterSpeed": "5",
+            "ShatterSpeed": "4",
             "ShatterDegree": "0.7",
             "SoundEffect": "AbilitySleepImpact",
             "Await": "4"
@@ -1664,7 +1663,7 @@
             "ShatterTarget": "Other",
             "ShatterType": "Central",
             "ShatterDensity": "2",
-            "ShatterSpeed": "5",
+            "ShatterSpeed": "4",
             "SoundEffect": "AbilityShadowWordPainImpact",
             "Await": "4"
           }
@@ -1756,7 +1755,7 @@
             "ShatterTarget": "Other",
             "ShatterType": "Central",
             "ShatterDensity": "2",
-            "ShatterSpeed": "5",
+            "ShatterSpeed": "4",
             "SoundEffect": "AbilityCorruptionImpact",
             "Await": "4"
           }
@@ -1934,8 +1933,7 @@
         ],
         "effects": [
           {
-            "SoundEffect": "AbilityShadowboltCast",
-            "Await": "4"
+            "SoundEffect": "AbilityShadowboltCast"
           },
           {
             "Effect": "Damage",
@@ -1946,7 +1944,7 @@
             "ShatterTarget": "Other",
             "ShatterType": "Directional",
             "ShatterDensity": "2",
-            "ShatterSpeed": "5",
+            "ShatterSpeed": "4",
             "ShatterDegree": "0.7",
             "SoundEffect": "AbilityShadowboltImpact",
             "Await": "4"
@@ -2007,8 +2005,7 @@
         ],
         "effects": [
           {
-            "SoundEffect": "AbilityFireballCast",
-            "Await": "4"
+            "SoundEffect": "AbilityFireballCast"
           },
           {
             "Effect": "Damage",
@@ -2019,7 +2016,7 @@
             "ShatterTarget": "Other",
             "ShatterType": "Directional",
             "ShatterDensity": "2",
-            "ShatterSpeed": "5",
+            "ShatterSpeed": "4",
             "ShatterDegree": "0.7",
             "SoundEffect": "AbilityFireballImpact",
             "Await": "4"
@@ -2291,8 +2288,7 @@
         ],
         "effects": [
           {
-            "SoundEffect": "AbilityFrostboltCast",
-            "Await": "4"
+            "SoundEffect": "AbilityFrostboltCast"
           },
           {
             "Effect": "Damage",
@@ -2303,7 +2299,7 @@
             "ShatterTarget": "Other",
             "ShatterType": "Directional",
             "ShatterDensity": "2",
-            "ShatterSpeed": "5",
+            "ShatterSpeed": "4",
             "ShatterDegree": "0.7",
             "SoundEffect": "AbilityFrostboltImpact",
             "Await": "4"
@@ -2666,7 +2662,7 @@
             "ShatterTarget": "Other",
             "ShatterType": "Directional",
             "ShatterDensity": "2",
-            "ShatterSpeed": "5",
+            "ShatterSpeed": "4",
             "ShatterDegree": "0.7",
             "SoundEffect": "AbilityFireballImpact",
             "Await": "4"
@@ -3609,8 +3605,7 @@
         ],
         "effects": [
           {
-            "SoundEffect": "AbilityFireballCast",
-            "Await": "4"
+            "SoundEffect": "AbilityFireballCast"
           },
           {
             "Effect": "Damage",
@@ -3621,7 +3616,7 @@
             "ShatterTarget": "Other",
             "ShatterType": "Directional",
             "ShatterDensity": "2",
-            "ShatterSpeed": "5",
+            "ShatterSpeed": "4",
             "ShatterDegree": "0.7",
             "SoundEffect": "AbilityFireballImpact",
             "Await": "4"
@@ -3792,8 +3787,7 @@
         ],
         "effects": [
           {
-            "SoundEffect": "AbilityFrostboltCast",
-            "Await": "4"
+            "SoundEffect": "AbilityFrostboltCast"
           },
           {
             "Effect": "Damage",
@@ -3804,7 +3798,7 @@
             "ShatterTarget": "Effector",
             "ShatterType": "Directional",
             "ShatterDensity": "2",
-            "ShatterSpeed": "5",
+            "ShatterSpeed": "4",
             "ShatterDegree": "0.7",
             "SoundEffect": "AbilityFrostboltImpact",
             "Await": "4"
@@ -3963,13 +3957,13 @@
   },
   {
     "name": "Feral Spirit",
-    "icon": "AbilityWisp",
+    "icon": "AbilityFeralSpirit",
     "tags": [],
     "events": []
   },
   {
     "name": "Lava Lash",
-    "icon": "AbilityLavaSpawn",
+    "icon": "AbilityLavalash",
     "tags": [],
     "events": []
   },
@@ -3981,7 +3975,7 @@
   },
   {
     "name": "Water Shield",
-    "icon": "AbilityWisp",
+    "icon": "AbilityWaterShield",
     "tags": [],
     "events": []
   },
@@ -3993,7 +3987,7 @@
   },
   {
     "name": "Healing Stream Totem",
-    "icon": "ItemMiscRoot02",
+    "icon": "AbilityTotemNatureResistance",
     "tags": [],
     "events": []
   },
@@ -4029,19 +4023,19 @@
   },
   {
     "name": "Ancestral Vigor",
-    "icon": "AbilityAncestralAwakening",
+    "icon": "AbilityAncestralVigor",
     "tags": [],
     "events": []
   },
   {
     "name": "Undercurrent",
-    "icon": "AbilityAcid",
+    "icon": "AbilityUndercurrent",
     "tags": [],
     "events": []
   },
   {
     "name": "Earthen Harmony",
-    "icon": "AbilityAcid",
+    "icon": "AbilityEarthenHarmony",
     "tags": [],
     "events": []
   },
@@ -4065,13 +4059,13 @@
   },
   {
     "name": "Deluge",
-    "icon": "AbilityAcid",
+    "icon": "AbilityDeluge",
     "tags": [],
     "events": []
   },
   {
     "name": "Flash Flood",
-    "icon": "AbilityAcid",
+    "icon": "AbilityFlashFlood",
     "tags": [],
     "events": []
   },
@@ -4107,7 +4101,7 @@
   },
   {
     "name": "Riptide",
-    "icon": "AbilityAcid",
+    "icon": "AbilityRiptide",
     "tags": [],
     "events": []
   },
@@ -4119,7 +4113,7 @@
   },
   {
     "name": "Thorim's Invocation",
-    "icon": "AbilityAcid",
+    "icon": "AbilityThorimsInvocation",
     "tags": [],
     "events": []
   },
@@ -4155,7 +4149,7 @@
   },
   {
     "name": "Ashen Catalyst",
-    "icon": "AbilityAcid",
+    "icon": "AbilityAshenCatalyst",
     "tags": [],
     "events": []
   },
@@ -4167,13 +4161,13 @@
   },
   {
     "name": "Splintered Elements",
-    "icon": "AbilityAcid",
+    "icon": "AbilitySplinteredElements",
     "tags": [],
     "events": []
   },
   {
     "name": "Elemental Assault",
-    "icon": "AbilityElementalPrecision2",
+    "icon": "AbilityElementalAssault",
     "tags": [],
     "events": []
   },
@@ -4233,7 +4227,7 @@
   },
   {
     "name": "Primordial Fury",
-    "icon": "AbilityAcid",
+    "icon": "AbilityPrimordialFury",
     "tags": [],
     "events": []
   },
@@ -4251,7 +4245,7 @@
   },
   {
     "name": "Echo of the Elements",
-    "icon": "AbilityAcid",
+    "icon": "AbilityEchooftheElements",
     "tags": [],
     "events": []
   },
@@ -4275,7 +4269,7 @@
   },
   {
     "name": "Magma Chamber",
-    "icon": "AbilityMagmaFlowWhole",
+    "icon": "AbilityMagmaChamber",
     "tags": [],
     "events": []
   },
@@ -4293,7 +4287,7 @@
   },
   {
     "name": "Rolling Magma",
-    "icon": "AbilityAcid",
+    "icon": "AbilityRollingMagma",
     "tags": [],
     "events": []
   },
@@ -4317,7 +4311,7 @@
   },
   {
     "name": "Echoes of Great Sundering",
-    "icon": "AbilityAcid",
+    "icon": "AbilityEchoesofGreatSundering",
     "tags": [],
     "events": []
   }

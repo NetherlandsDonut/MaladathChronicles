@@ -42,8 +42,8 @@ public class Entity
     public Entity(int level, Race race)
     {
         this.level = level;
-        kind = race.kind;
         race ??= Race.races.Find(x => x.name == "Dumb Kobold");
+        kind = race.kind;
         this.race = name = race.name;
         abilities = race.abilities.Select(x => x).Distinct().ToList();
         actionBarsUnlocked = 7;

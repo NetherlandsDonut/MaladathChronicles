@@ -1,11 +1,11 @@
 {
   "selectedRealm": "Firemaw",
-  "selectedCharacter": "Neena",
+  "selectedCharacter": "Ember",
   "shadows": {
     "value": "True"
   },
   "pixelPerfectVision": {
-    "value": "True"
+    "value": "False"
   },
   "music": {
     "value": "False"

@@ -22,6 +22,7 @@ public static class Coloring
 
     public static string ColorEntityLevel(int level)
     {
+        if (currentSave == null) return "Gray";
         if (level - 4 > currentSave.player.level) return "DangerousRed";
         else if (level - 2 > currentSave.player.level) return "Orange";
         else if (level + 2 < currentSave.player.level && currentSave.player.WillGetExperience(level)) return "Green";

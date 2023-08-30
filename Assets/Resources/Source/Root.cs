@@ -22,6 +22,7 @@ public static class Root
 
     public static GameObject fastTravelCamera;
     public static List<FallingElement> fallingElements;
+    public static List<FlyingMissile> flyingMissiles;
     public static bool canUnlockScreen;
 
     public static string creationName;
@@ -330,7 +331,6 @@ public static class Root
         },
         null);
     }
-
 
     public static void AddPaginationLine(RegionGroup group, double pages)
     {

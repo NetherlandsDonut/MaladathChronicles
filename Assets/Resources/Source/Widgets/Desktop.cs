@@ -36,7 +36,7 @@ public class Desktop : MonoBehaviour
     public void SetTooltip(Tooltip tooltip)
     {
         this.tooltip = tooltip;
-        tooltipChanneling = 0.5f;
+        tooltipChanneling = 0.4f;
     }
 
     public void LockScreen()
@@ -155,11 +155,11 @@ public class Desktop : MonoBehaviour
                         UnlockScreen();
                     }
                 }
-                else if (title == "Game")
+                else if (title == "Game" || title == "GameSimulation")
                 {
                     if (animationTime > 0)
                         animationTime -= Time.deltaTime;
-                    if (animationTime <= 0 && fallingElements.Count == 0)
+                    if (flyingMissiles.Count == 0 && animationTime <= 0 && fallingElements.Count == 0)
                     {
                         animationTime = frameTime;
                         if (fallingElements.Count == 0) Rebuild();

@@ -27,4 +27,5 @@ public class String
     public static String itemPower = new();
     public static String cooldown = new();
     public static String requiredLevel = new();
+    public static String await = new();
 }

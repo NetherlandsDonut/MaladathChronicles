@@ -204,7 +204,8 @@ public class Starter : MonoBehaviour
                         Ability.abilities.Insert(0, new Ability()
                         {
                             name = ability.Item1,
-                            icon = "Ability" + ability.Item1.Replace(" ", "")
+                            icon = "Ability" + ability.Item1.Replace(" ", ""),
+                            events = new()
                         });
             if (spec.talentTrees != null)
                 foreach (var tree in spec.talentTrees)
@@ -213,7 +214,8 @@ public class Starter : MonoBehaviour
                             Ability.abilities.Insert(0, new Ability()
                             {
                                 name = talent.ability,
-                                icon = "Ability" + talent.ability.Replace(" ", "")
+                                icon = "Ability" + talent.ability.Replace(" ", ""),
+                                events = new()
                             });
         }
         for (int i = 0; i < Item.items.Count; i++)
@@ -232,7 +234,8 @@ public class Starter : MonoBehaviour
                         Ability.abilities.Insert(0, new Ability()
                         {
                             name = ability,
-                            icon = "Ability" + ability
+                            icon = "Ability" + ability,
+                            events = new()
                         });
         }
         for (int i = 0; i < Race.races.Count; i++)
@@ -244,7 +247,8 @@ public class Starter : MonoBehaviour
                         Ability.abilities.Insert(0, new Ability()
                         {
                             name = ability,
-                            icon = "Ability" + ability.Replace(" ", "")
+                            icon = "Ability" + ability.Replace(" ", ""),
+                            events = new()
                         });
             if (race.faction != null && race.background == null || race.background == "")
                 race.background = "AreaElwynnForestNorthshireAbbey";
@@ -254,6 +258,12 @@ public class Starter : MonoBehaviour
             var realm = Realm.realms[i];
             if (!saves.ContainsKey(realm.name))
                 saves.Add(realm.name, new());
+        }
+        for (int i = 0; i < Ability.abilities.Count; i++)
+        {
+            var ability = Ability.abilities[i];
+            if (ability.events == null)
+                ability.events = new();
         }
         SiteHostileArea.areas.ForEach(x => x.Initialise());
         instances.ForEach(x => x.Initialise());

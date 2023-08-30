@@ -500,6 +500,10 @@
           },
           {
             "Requisite": "EliteKilled",
+            "AreaName": "The Murder Pens"
+          },
+          {
+            "Requisite": "EliteKilled",
             "AreaName": "The Bone Pile"
           },
           {
@@ -1277,6 +1281,10 @@
           {
             "Requisite": "EliteKilled",
             "AreaName": "Abandoned Tunnel"
+          },
+          {
+            "Requisite": "EliteKilled",
+            "AreaName": "Princess Chambers"
           },
           {
             "Requisite": "EliteKilled",

@@ -1,5 +1,10 @@
 [
   {
+    "name": "Alcaz Island",
+    "zone": "Alcaz Island",
+    "type": "HostileArea"
+  },
+  {
     "name": "Searing Blade Hideout",
     "zone": "Ragefire Chasm",
     "type": "HostileArea",
@@ -4088,7 +4093,7 @@
   },
   {
     "name": "Alcaz Dungeon",
-    "zone": "Dustwallow Marsh",
+    "zone": "Alcaz Island",
     "type": "HostileArea",
     "commonEncounters": [
       {
@@ -4099,8 +4104,8 @@
     ]
   },
   {
-    "name": "Alcaz Island",
-    "zone": "Dustwallow Marsh",
+    "name": "Alcaz Compound",
+    "zone": "Alcaz Island",
     "type": "HostileArea",
     "commonEncounters": [
       {
@@ -6393,6 +6398,18 @@
     ]
   },
   {
+    "name": "The Murder Pens",
+    "zone": "Razorfen Downs",
+    "type": "HostileArea",
+    "commonEncounters": [
+      {
+        "who": "Ragglesnout",
+        "levelMin": 40,
+        "levelMax": 40
+      }
+    ]
+  },
+  {
     "name": "Spiral of Thorns",
     "zone": "Razorfen Downs",
     "type": "HostileArea",
@@ -7954,6 +7971,18 @@
         "who": "Revelosh",
         "levelMin": 40,
         "requiredProgress": 3
+      }
+    ]
+  },
+  {
+    "name": "Staghelm Point",
+    "zone": "Silithus",
+    "type": "HostileArea",
+    "commonEncounters": [
+      {
+        "who": "Duskbat",
+        "levelMin": 1,
+        "levelMax": 2
       }
     ]
   },

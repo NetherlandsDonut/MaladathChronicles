@@ -8,7 +8,7 @@ using static Buff;
 using static Sound;
 using static Shatter;
 using static FlyingElement;
-
+using static FlyingMissile;
 
 public class Event
 {
@@ -32,10 +32,11 @@ public class Event
             string chanceSource = effect.ContainsKey("ChanceSource") ? effect["ChanceSource"] : powerSource;
             string chanceScale = effect.ContainsKey("ChanceScale") ? effect["ChanceScale"] : "None";
             string shatterTarget = effect.ContainsKey("ShatterTarget") ? effect["ShatterTarget"] : "None";
+            string animationType = effect.ContainsKey("AnimationType") ? effect["AnimationType"] : "None";
             bool shatterDirectional = effect.ContainsKey("ShatterType") && effect["ShatterType"] == "Directional";
-            int shatterDensity = effect.ContainsKey("ShatterDensity") ? int.Parse(effect["ShatterDensity"]) : 0;
-            double shatterDegree = effect.ContainsKey("ShatterDegree") ? double.Parse(effect["ShatterDegree"].Replace(".", ",")) : 0.4;
-            double shatterSpeed = effect.ContainsKey("ShatterSpeed") ? double.Parse(effect["ShatterSpeed"].Replace(".", ",")) : 2;
+            int shatterDensity = effect.ContainsKey("ShatterDensity") ? int.Parse(effect["ShatterDensity"]) : 2;
+            double shatterDegree = effect.ContainsKey("ShatterDegree") ? double.Parse(effect["ShatterDegree"].Replace(".", ",")) : 0.7;
+            double shatterSpeed = effect.ContainsKey("ShatterSpeed") ? double.Parse(effect["ShatterSpeed"].Replace(".", ",")) : 4;
             float await = effect.ContainsKey("Await") ? float.Parse(effect["Await"]) : 0;
             var rand = random.Next(0, 100);
             if (rand >= chanceBase + chance * (chanceScale == "None" ? 1 : (chanceSource != "None" ? (futureBoard == null ? (chanceSource == "Effector" ? effector : other).Stats()[chanceScale] : (chanceSource == "Effector" ? futureEffector : futureOther).Stats()[chanceScale]) : 1))) continue;
@@ -116,6 +117,8 @@ public class Event
             else if (board != null)
             {
                 var triggerCopy = trigger.ToDictionary(x => x.Key, x => x.Value);
+                if (animationType != "None" || animationType != "Disble" && affect == "Other")
+                    board.actions.Add(() => { SpawnFlyingMissile(icon, (affect == "Effector" ? effector : other) != Board.board.player, 5, 2); });
                 board.actions.Add(() =>
                 {
                     if (type == "Damage")
@@ -206,4 +209,40 @@ public class Event
     }
 
     public List<Dictionary<string, string>> triggers, effects;
+
+    public static Event abilityEvent;
+    public static int selectedEffect, selectedTrigger;
+    public static List<string> possibleTriggers = new()
+    {
+        "BuffAdd",
+        "BuffFlare",
+        "BuffRemove",
+        "ResourceCollected",
+        "ResourceDetracted",
+        "ResourceMaxed",
+        "ResourceDeplated",
+        "AbilityCast",
+        "Cooldown",
+        "Damage",
+        "Heal",
+        "HealthMaxed",
+        "HealthDeplated",
+        "CombatBegin",
+        "TurnBegin",
+        "TurnEnd"
+    };
+    public static List<string> possibleEffects = new()
+    {
+        "Damage",
+        "Heal",
+        "DestroyRows",
+        "DestroyColumns",
+        "DestroyRegion",
+        "EndTurn",
+        "ResetBoard",
+        "GiveResource",
+        "DetractResource",
+        "AddBuff",
+        "RemoveBuff"
+    };
 }

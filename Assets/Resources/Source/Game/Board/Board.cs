@@ -10,12 +10,12 @@ using static BufferBoard;
 using static GameSettings;
 using static CursorRemote;
 using static FlyingElement;
+using static SiteHostileArea;
 
 public class Board
 {
     public Board(int x, int y, Entity enemy, SiteHostileArea area = null)
     {
-        bonusTurnStreak = 0;
         field = new int[x, y];
         player = currentSave.player;
         player.Initialise();
@@ -28,16 +28,43 @@ public class Board
         temporaryElementsEnemy = new();
         temporaryBuffsPlayer = new();
         temporaryBuffsEnemy = new();
+        flyingMissiles = new();
+        actions = new List<Action>();
+    }
+
+    public Board(int x, int y, List<Ability> abilities)
+    {
+        field = new int[x, y];
+        player = new Entity(60, null);
+        player.Initialise();
+        enemy = new Entity(60, null);
+        playerTurn = true;
+        area = areas[random.Next(areas.Count)];
+        playerCombatAbilities = abilities;
+        enemyCombatAbilities = abilities;
+        temporaryElementsPlayer = new();
+        temporaryElementsEnemy = new();
+        temporaryBuffsPlayer = new();
+        temporaryBuffsEnemy = new();
+        flyingMissiles = new();
         actions = new List<Action>();
     }
 
     public static void NewBoard(Entity entity, SiteHostileArea area)
     {
-        SiteHostileArea.area = area;
         board = new Board(6, 6, entity, area);
         bufferBoard = new BufferBoard();
         board.CallEvents(board.player, new() { { "Trigger", "CombatBegin" } });
         board.CallEvents(board.enemy, new() { { "Trigger", "CombatBegin" } });
+    }
+
+    public static void NewBoard(Ability testingAbility)
+    {
+        board = new Board(6, 6, new List<Ability>() { testingAbility });
+        bufferBoard = new BufferBoard();
+        if (testingAbility.events != null)
+            board.CallEvents(board.enemy, new() { { "Trigger", "AbilityCast" }, { "AbilityName", testingAbility.name }, { "Triggerer", "Effector" } });
+        board.actions.Add(() => { CloseDesktop("GameSimulation"); CDesktop.UnlockScreen(); });
     }
 
     //STATIC REFERENCE TO THE BOARD
