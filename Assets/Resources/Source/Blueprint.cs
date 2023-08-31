@@ -26,6 +26,7 @@ using static SiteHostileArea;
 using static SiteInstance;
 using static SiteComplex;
 using static SiteTown;
+using UnityEngine.Rendering.PostProcessing;
 
 public class Blueprint
 {
@@ -2563,6 +2564,77 @@ public class Blueprint
                 AddLine(Assets.assets.ambience.Count + " ambience tracks", "DarkGray");
             });
         }),
+        new("ObjectManagerSoundsList", () => {
+            SetAnchor(TopLeft);
+            AddRegionGroup();
+            SetRegionGroupWidth(171);
+            SetRegionGroupHeight(358);
+            AddHeaderRegion(() =>
+            {
+                AddLine("Sound effects:");
+                AddSmallButton("OtherClose", (h) =>
+                {
+                    CloseWindow(h.window);
+                    if (abilityEvent != null)
+                        SpawnWindowBlueprint("ObjectManagerEventEffects");
+                });
+                AddSmallButton("OtherReverse", (h) =>
+                {
+                    Assets.assets.sounds.Reverse();
+                    Respawn("ObjectManagerSoundsList");
+                    PlaySound("DesktopInventorySort", 0.2f);
+                });
+            });
+            AddPaddingRegion(() =>
+            {
+                AddLine("Search:", "DarkGray");
+                AddInputLine(String.search, InputType.Everything);
+            });
+            var regionGroup = CDesktop.LBWindow.LBRegionGroup;
+            var max = Math.Ceiling(Assets.assets.sounds.Count / 10.0);
+            if (max < 1) max = 1;
+            AddPaginationLine(regionGroup, max);
+            for (int i = 0; i < 10; i++)
+            {
+                var index = i;
+                AddButtonRegion(() =>
+                {
+                    if (Assets.assets.sounds.Count > index + 10 * regionGroup.pagination)
+                    {
+                        SetRegionBackground(RegionBackgroundType.Button);
+                        var foo = Assets.assets.sounds[index + 10 * regionGroup.pagination];
+                        AddLine(foo);
+                        AddSmallButton("OtherSound", (h) =>
+                        {
+                            PlaySound(foo.Replace(".ogg", ""));
+                        });
+                    }
+                    else
+                    {
+                        SetRegionBackground(RegionBackgroundType.Padding);
+                        AddLine();
+                    }
+                },
+                (h) =>
+                {
+                    var foo = Assets.assets.ambience[index + 10 * regionGroup.pagination];
+                    CloseWindow("ObjectManagerAmbienceList");
+                    if (abilityEvent != null)
+                    {
+                        var temp = abilityEvent.effects[selectedEffect];
+                        if (temp.ContainsKey("SoundEffect"))
+                            temp["SoundEffect"] = foo.Replace(".ogg", "");
+                        else temp.Add("SoundEffect", foo.Replace(".ogg", ""));
+                        Respawn("ObjectManagerEventEffect");
+                        Respawn("ObjectManagerEventEffects");
+                    }
+                });
+            }
+            AddPaddingRegion(() =>
+            {
+                AddLine(Assets.assets.sounds.Count + " sound effects", "DarkGray");
+            });
+        }),
         new("ObjectManagerItemIconList", () => {
             SetAnchor(TopLeft);
             AddRegionGroup();
@@ -2958,6 +3030,12 @@ public class Blueprint
                 {
                     CloseWindow(h.window);
                 });
+                AddSmallButton("OtherTrash", (h) =>
+                {
+                    abilityEvent.triggers.RemoveAt(selectedTrigger);
+                    CloseWindow(h.window);
+                    Respawn("ObjectManagerEventTriggers");
+                });
             });
             AddButtonRegion(() =>
             {
@@ -3075,6 +3153,12 @@ public class Blueprint
                 {
                     CloseWindow(h.window);
                 });
+                AddSmallButton("OtherTrash", (h) =>
+                {
+                    abilityEvent.effects.RemoveAt(selectedEffect);
+                    CloseWindow(h.window);
+                    Respawn("ObjectManagerEventEffects");
+                });
             });
             AddButtonRegion(() =>
             {
@@ -3089,35 +3173,339 @@ public class Blueprint
             AddRegionGroup();
             SetRegionGroupWidth(148);
             SetRegionGroupHeight(316);
-            AddPaddingRegion(() => { AddLine("Await frames:", "DarkGray"); });
-            AddInputRegion(String.await, InputType.Numbers);
-            AddPaddingRegion(() => { SetRegionAsGroupExtender(); });
+            AddPaddingRegion(() =>
+            {
+                AddLine("Affect:", "DarkGray");
+                AddSmallButton("OtherOtherReverse", (h) =>
+                {
+                    if (effect.ContainsKey("Affect"))
+                        effect["Affect"] = "None";
+                    h.window.Respawn();
+                });
+            });
             AddButtonRegion(() =>
             {
-                AddLine("Remove this effect");
+                AddLine(effect.ContainsKey("Affect") ? effect["Affect"] : "None");
             },
             (h) =>
             {
-                abilityEvent.effects.RemoveAt(selectedEffect);
-                CloseWindow(h.window);
-                Respawn("ObjectManagerEventEffects");
+                if (!effect.ContainsKey("Affect"))
+                    effect.Add("Affect", "Effector");
+                else if (effect["Affect"] == "Effector")
+                    effect["Affect"] = "Other";
+                else if (effect["Affect"] == "Other")
+                    effect["Affect"] = "None";
+                else if (effect["Affect"] == "None")
+                    effect["Affect"] = "Effector";
+                h.window.Respawn();
             });
+            if (effect.ContainsKey("Affect") && (effect["Affect"] == "Damage" || effect["Affect"] == "Heal"))
+            {
+                AddPaddingRegion(() =>
+                {
+                    AddLine("Power source:", "DarkGray");
+                    AddSmallButton("OtherOtherReverse", (h) =>
+                    {
+                        if (effect.ContainsKey("PowerSource"))
+                            effect["PowerSource"] = "None";
+                        h.window.Respawn();
+                    });
+                });
+                AddButtonRegion(() =>
+                {
+                    AddLine(effect.ContainsKey("PowerSource") ? effect["PowerSource"] : "None");
+                },
+                (h) =>
+                {
+                    if (!effect.ContainsKey("PowerSource"))
+                        effect.Add("PowerSource", "Effector");
+                    else if (effect["PowerSource"] == "Effector")
+                        effect["PowerSource"] = "Other";
+                    else if (effect["PowerSource"] == "Other")
+                        effect["PowerSource"] = "Effector";
+                    h.window.Respawn();
+                });
+                AddPaddingRegion(() =>
+                {
+                    AddLine("Power type:", "DarkGray");
+                    AddSmallButton("OtherOtherReverse", (h) =>
+                    {
+                        if (effect.ContainsKey("PowerType"))
+                            effect["PowerType"] = "None";
+                        h.window.Respawn();
+                    });
+                });
+                AddButtonRegion(() =>
+                {
+                    AddLine(effect.ContainsKey("PowerType") ? effect["PowerType"] : "None");
+                },
+                (h) =>
+                {
+                    if (!effect.ContainsKey("PowerType"))
+                        effect.Add("PowerType", "Spell");
+                    else if (effect["PowerType"] == "Spell")
+                        effect["PowerType"] = "Melee";
+                    else if (effect["PowerType"] == "Melee")
+                        effect["PowerType"] = "Ranged";
+                    else if (effect["PowerType"] == "Ranged")
+                        effect["PowerType"] = "Spell";
+                    h.window.Respawn();
+                });
+                AddPaddingRegion(() =>
+                {
+                    AddLine("Power scale:", "DarkGray");
+                    AddSmallButton("OtherOtherReverse", (h) =>
+                    {
+                        if (effect.ContainsKey("PowerScale"))
+                            effect["PowerScale"] = "1.0";
+                        h.window.Respawn();
+                    });
+                });
+                AddInputRegion(String.powerScale, InputType.Decimal);
+            }
+            else if (effect.ContainsKey("Affect") && (effect["Affect"] == "GiveResource" || effect["Affect"] == "DetractResource"))
+            {
+                AddPaddingRegion(() =>
+                {
+                    AddLine("Resource type:", "DarkGray");
+                    AddSmallButton("OtherOtherReverse", (h) =>
+                    {
+                        if (effect.ContainsKey("ResourceType"))
+                            effect["ResourceType"] = "None";
+                        h.window.Respawn();
+                    });
+                });
+                AddButtonRegion(() =>
+                {
+                    AddLine(effect.ContainsKey("ResourceType") ? effect["ResourceType"] : "None");
+                    if (effect.ContainsKey("ResourceType") && effect["ResourceType"] != "None")
+                        AddSmallButton("Element" + effect["ResourceType"] + "Rousing", (h) => { });
+                },
+                (h) =>
+                {
+                    if (!effect.ContainsKey("ResourceType"))
+                        effect.Add("ResourceType", "Fire");
+                    else if (effect["ResourceType"] == "Fire")
+                        effect["ResourceType"] = "Earth";
+                    else if (effect["ResourceType"] == "Earth")
+                        effect["ResourceType"] = "Water";
+                    else if (effect["ResourceType"] == "Water")
+                        effect["ResourceType"] = "Air";
+                    else if (effect["ResourceType"] == "Air")
+                        effect["ResourceType"] = "Frost";
+                    else if (effect["ResourceType"] == "Frost")
+                        effect["ResourceType"] = "Decay";
+                    else if (effect["ResourceType"] == "Decay")
+                        effect["ResourceType"] = "Shadow";
+                    else if (effect["ResourceType"] == "Shadow")
+                        effect["ResourceType"] = "Order";
+                    else if (effect["ResourceType"] == "Order")
+                        effect["ResourceType"] = "Arcane";
+                    else if (effect["ResourceType"] == "Arcane")
+                        effect["ResourceType"] = "Lightning";
+                    else if (effect["ResourceType"] == "Lightning")
+                        effect["ResourceType"] = "Fire";
+                    h.window.Respawn();
+                });
+                AddPaddingRegion(() =>
+                {
+                    AddLine("Resource amount:", "DarkGray");
+                    AddSmallButton("OtherOtherReverse", (h) =>
+                    {
+                        if (effect.ContainsKey("ResourceAmount"))
+                            effect["ResourceAmount"] = "1";
+                        h.window.Respawn();
+                    });
+                });
+                AddInputRegion(String.resourceAmount, InputType.Numbers);
+            }
+            AddPaddingRegion(() =>
+            {
+                AddLine("Await:", "DarkGray");
+                AddSmallButton("OtherOtherReverse", (h) =>
+                {
+                    if (effect.ContainsKey("Await"))
+                        effect["Await"] = "0";
+                    h.window.Respawn();
+                });
+            });
+            AddInputRegion(String.await, InputType.Numbers);
+            AddPaddingRegion(() => { SetRegionAsGroupExtender(); });
             AddRegionGroup();
             SetRegionGroupWidth(148);
             SetRegionGroupHeight(316);
-            AddPaddingRegion(() => { AddLine("Await frameso:", "DarkGray"); });
-            AddInputRegion(String.await, InputType.Numbers);
-            AddPaddingRegion(() => { SetRegionAsGroupExtender(); });
+            AddPaddingRegion(() =>
+            {
+                AddLine("Sound effect:", "DarkGray");
+                AddSmallButton("OtherReverse", (h) =>
+                {
+                    if (effect.ContainsKey("SoundEffect"))
+                        effect["SoundEffect"] = "None";
+                    h.window.Respawn();
+                });
+            });
             AddButtonRegion(() =>
             {
-                AddLine("Remove this effect");
+                AddLine(!effect.ContainsKey("SoundEffect") ? "None" : effect["SoundEffect"] + ".ogg");
+                if (effect.ContainsKey("SoundEffect"))
+                    AddSmallButton("OtherSound", (h) =>
+                    {
+                        PlaySound(effect["SoundEffect"]);
+                    });
             },
             (h) =>
             {
-                abilityEvent.effects.RemoveAt(selectedEffect);
-                CloseWindow(h.window);
-                Respawn("ObjectManagerEventEffects");
+                if (!CDesktop.windows.Exists(x => x.title == "ObjectManagerSoundsList"))
+                {
+                    CloseWindow("ObjectManagerEventEffects");
+                    Respawn("ObjectManagerSoundsList");
+                }
             });
+            AddPaddingRegion(() =>
+            {
+                AddLine("Animation type:", "DarkGray");
+                AddSmallButton("OtherReverse", (h) =>
+                {
+                    if (effect.ContainsKey("AnimationType"))
+                        effect["AnimationType"] = "None";
+                    h.window.Respawn();
+                });
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine(effect.ContainsKey("AnimationType") ? effect["AnimationType"] : "None");
+            },
+            (h) =>
+            {
+                if (!effect.ContainsKey("AnimationType"))
+                    effect.Add("AnimationType", "Missile");
+                else if (effect["AnimationType"] == "Missile")
+                    effect["AnimationType"] = "None";
+                else if (effect["AnimationType"] == "None")
+                    effect["AnimationType"] = "Missile";
+                h.window.Respawn();
+            });
+            if (effect.ContainsKey("AnimationType") && effect["AnimationType"] != "None")
+            {
+                AddPaddingRegion(() =>
+                {
+                    AddLine("Animation speed:", "DarkGray");
+                    AddSmallButton("OtherReverse", (h) =>
+                    {
+                        if (effect.ContainsKey("AnimationSpeed"))
+                            effect["AnimationSpeed"] = "1.5";
+                        h.window.Respawn();
+                    });
+                });
+                AddInputRegion(String.animationSpeed, InputType.Decimal);
+                AddPaddingRegion(() =>
+                {
+                    AddLine("Animation arc:", "DarkGray");
+                    AddSmallButton("OtherReverse", (h) =>
+                    {
+                        if (effect.ContainsKey("AnimationArc"))
+                            effect["AnimationArc"] = "10";
+                        h.window.Respawn();
+                    });
+                });
+                AddInputRegion(String.animationArc, InputType.Decimal);
+            }
+            AddPaddingRegion(() =>
+            {
+                AddLine("Shatter type:", "DarkGray");
+                AddSmallButton("OtherReverse", (h) =>
+                {
+                    if (effect.ContainsKey("ShatterType"))
+                        effect["ShatterType"] = "None";
+                    h.window.Respawn();
+                });
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine(effect.ContainsKey("ShatterType") ? effect["ShatterType"] : "None");
+            },
+            (h) =>
+            {
+                if (!effect.ContainsKey("ShatterType"))
+                    effect.Add("ShatterType", "Central");
+                else if (effect["ShatterType"] == "Central")
+                    effect["ShatterType"] = "Directional";
+                else if (effect["ShatterType"] == "Directional")
+                    effect["ShatterType"] = "None";
+                else if (effect["ShatterType"] == "None")
+                    effect["ShatterType"] = "Central";
+                h.window.Respawn();
+            });
+            if (effect.ContainsKey("ShatterType") && effect["ShatterType"] != "None")
+            {
+                AddPaddingRegion(() =>
+                {
+                    AddLine("Shatter target:", "DarkGray");
+                    AddSmallButton("OtherReverse", (h) =>
+                    {
+                        if (effect.ContainsKey("ShatterTarget"))
+                            effect["ShatterTarget"] = "Effector";
+                        h.window.Respawn();
+                    });
+                });
+                AddButtonRegion(() =>
+                {
+                    AddLine(effect.ContainsKey("ShatterTarget") ? effect["ShatterTarget"] : "None");
+                },
+                (h) =>
+                {
+                    if (!effect.ContainsKey("ShatterTarget"))
+                        effect.Add("ShatterTarget", "Effector");
+                    else if (effect["ShatterTarget"] == "Effector")
+                        effect["ShatterTarget"] = "Other";
+                    else if (effect["ShatterTarget"] == "Other")
+                        effect["ShatterTarget"] = "Effector";
+                    h.window.Respawn();
+                });
+                AddPaddingRegion(() =>
+                {
+                    AddLine("Shatter degree:", "DarkGray");
+                    AddSmallButton("OtherReverse", (h) =>
+                    {
+                        if (effect.ContainsKey("ShatterDegree"))
+                            effect["ShatterDegree"] = "0.7";
+                        h.window.Respawn();
+                    });
+                });
+                AddPaddingRegion(() =>
+                {
+                    AddInputLine(String.shatterDegree, InputType.Decimal);
+                });
+                AddPaddingRegion(() =>
+                {
+                    AddLine("Shatter density:", "DarkGray");
+                    AddSmallButton("OtherReverse", (h) =>
+                    {
+                        if (effect.ContainsKey("ShatterDensity"))
+                            effect["ShatterDensity"] = "2";
+                        h.window.Respawn();
+                    });
+                });
+                AddPaddingRegion(() =>
+                {
+                    AddInputLine(String.shatterDensity, InputType.Numbers);
+                });
+                AddPaddingRegion(() =>
+                {
+                    AddLine("Shatter speed:", "DarkGray");
+                    AddSmallButton("OtherReverse", (h) =>
+                    {
+                        if (effect.ContainsKey("ShatterSpeed"))
+                            effect["ShatterSpeed"] = "4";
+                        h.window.Respawn();
+                    });
+                });
+                AddPaddingRegion(() =>
+                {
+                    AddInputLine(String.shatterSpeed, InputType.Decimal);
+                });
+            }
+            AddPaddingRegion(() => { SetRegionAsGroupExtender(); });
         }),
         new("ObjectManagerHostileAreaTypeList", () => {
             SetAnchor(TopLeft);

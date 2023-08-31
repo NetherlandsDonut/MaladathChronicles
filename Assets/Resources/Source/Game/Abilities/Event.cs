@@ -33,6 +33,8 @@ public class Event
             string chanceScale = effect.ContainsKey("ChanceScale") ? effect["ChanceScale"] : "None";
             string shatterTarget = effect.ContainsKey("ShatterTarget") ? effect["ShatterTarget"] : "None";
             string animationType = effect.ContainsKey("AnimationType") ? effect["AnimationType"] : "None";
+            double animationArc = effect.ContainsKey("AnimationArc") ? double.Parse(effect["AnimationArc"]) : 10.0;
+            double animationSpeed = effect.ContainsKey("AnimationSpeed") ? double.Parse(effect["AnimationSpeed"]) : 1.5;
             bool shatterDirectional = effect.ContainsKey("ShatterType") && effect["ShatterType"] == "Directional";
             int shatterDensity = effect.ContainsKey("ShatterDensity") ? int.Parse(effect["ShatterDensity"]) : 2;
             double shatterDegree = effect.ContainsKey("ShatterDegree") ? double.Parse(effect["ShatterDegree"].Replace(".", ",")) : 0.7;
@@ -118,7 +120,7 @@ public class Event
             {
                 var triggerCopy = trigger.ToDictionary(x => x.Key, x => x.Value);
                 if (animationType != "None" || animationType != "Disble" && affect == "Other")
-                    board.actions.Add(() => { SpawnFlyingMissile(icon, (affect == "Effector" ? effector : other) != Board.board.player, 5, 2); });
+                    board.actions.Add(() => { SpawnFlyingMissile(icon, (affect == "Effector" ? effector : other) != Board.board.player, animationArc, animationSpeed); });
                 board.actions.Add(() =>
                 {
                     if (type == "Damage")

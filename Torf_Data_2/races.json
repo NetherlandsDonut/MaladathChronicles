@@ -1,5 +1,12 @@
 [
   {
+    "name": "Soulflayer",
+    "kind": "Common",
+    "portrait": "PortraitWindSerpentOnyx",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
     "name": "Aku'mai",
     "kind": "Elite",
     "portrait": "PortraitHydra",
@@ -100,7 +107,7 @@
   {
     "name": "Aqua Guardian",
     "kind": "Common",
-    "portrait": "PortraitChicken",
+    "portrait": "PortraitWaterElemental",
     "vitality": 1.0,
     "abilities": []
   },
@@ -149,7 +156,7 @@
   {
     "name": "Atal'ai Mistress",
     "kind": "Common",
-    "portrait": "PortraitChicken",
+    "portrait": "PortraitWitheredMistress",
     "vitality": 1.0,
     "abilities": []
   },
@@ -240,7 +247,7 @@
   {
     "name": "Baron Aquanis",
     "kind": "Elite",
-    "portrait": "PortraitCow",
+    "portrait": "PortraitWaterElemental",
     "vitality": 3.0,
     "abilities": []
   },
@@ -1245,7 +1252,7 @@
   {
     "name": "Dustwraith",
     "kind": "Rare",
-    "portrait": "PortraitParrot",
+    "portrait": "PortraitDustwraith",
     "vitality": 2.0,
     "abilities": []
   },
@@ -1391,7 +1398,7 @@
   {
     "name": "Eldreth Darter",
     "kind": "Common",
-    "portrait": "PortraitChicken",
+    "portrait": "PortraitFaerieDragon",
     "vitality": 1.0,
     "abilities": []
   },
@@ -2055,7 +2062,7 @@
   {
     "name": "Gri'lek",
     "kind": "Elite",
-    "portrait": "PortraitDireTrollOrange",
+    "portrait": "PortraitDireTrollWhite",
     "vitality": 3.0,
     "abilities": []
   },
@@ -2132,42 +2139,42 @@
   {
     "name": "Gurubashi Axe Thrower",
     "kind": "Common",
-    "portrait": "PortraitChicken",
+    "portrait": "PortraitGurubashiAxeThrower",
     "vitality": 1.0,
     "abilities": []
   },
   {
     "name": "Gurubashi Bat Rider",
     "kind": "Common",
-    "portrait": "PortraitChicken",
+    "portrait": "PortraitGurubashiBatRider",
     "vitality": 1.0,
     "abilities": []
   },
   {
     "name": "Gurubashi Berserker",
     "kind": "Common",
-    "portrait": "PortraitDireTroll",
+    "portrait": "PortraitDireTrollBlue",
     "vitality": 1.0,
     "abilities": []
   },
   {
     "name": "Gurubashi Blood Drinker",
     "kind": "Common",
-    "portrait": "PortraitChicken",
+    "portrait": "PortraitGurubashiBloodDrinker",
     "vitality": 1.0,
     "abilities": []
   },
   {
     "name": "Gurubashi Champion",
     "kind": "Common",
-    "portrait": "PortraitChicken",
+    "portrait": "PortraitGurubashiChampion",
     "vitality": 1.0,
     "abilities": []
   },
   {
     "name": "Gurubashi Headhunter",
     "kind": "Common",
-    "portrait": "PortraitChicken",
+    "portrait": "PortraitGurubashiHeadhunter",
     "vitality": 1.0,
     "abilities": []
   },
@@ -2188,7 +2195,7 @@
   {
     "name": "Hagg Taurenbane",
     "kind": "Common",
-    "portrait": "PortraitChicken",
+    "portrait": "PortraitQuilboarArmored",
     "vitality": 1.0,
     "abilities": []
   },
@@ -2202,28 +2209,28 @@
   {
     "name": "Hakkari Blood Priest",
     "kind": "Common",
-    "portrait": "PortraitChicken",
+    "portrait": "PortraitHakkariBloodPriest",
     "vitality": 1.0,
     "abilities": []
   },
   {
     "name": "Hakkari Priest",
     "kind": "Common",
-    "portrait": "PortraitChicken",
+    "portrait": "PortraitHakkariBloodPriest",
     "vitality": 1.0,
     "abilities": []
   },
   {
     "name": "Hakkari Shadow Hunter",
     "kind": "Common",
-    "portrait": "PortraitChicken",
+    "portrait": "PortraitHakkariShadowcaster",
     "vitality": 1.0,
     "abilities": []
   },
   {
     "name": "Hakkari Shadowcaster",
     "kind": "Common",
-    "portrait": "PortraitChicken",
+    "portrait": "PortraitHakkariShadowcaster",
     "vitality": 1.0,
     "abilities": []
   },
@@ -2279,7 +2286,7 @@
   {
     "name": "Hazza'rah",
     "kind": "Elite",
-    "portrait": "PortraitCow",
+    "portrait": "PortraitHazzarah",
     "vitality": 3.0,
     "abilities": []
   },
@@ -2314,7 +2321,7 @@
   {
     "name": "Hedrum the Creeper",
     "kind": "Elite",
-    "portrait": "PortraitCrystalSpider",
+    "portrait": "PortraitSpiderCrystal",
     "vitality": 1.0,
     "abilities": []
   },
@@ -2542,7 +2549,7 @@
   {
     "name": "Hunter Bonetusk",
     "kind": "Elite",
-    "portrait": "PortraitCow",
+    "portrait": "PortraitQuilboarDark",
     "vitality": 3.0,
     "abilities": []
   },
@@ -2556,7 +2563,7 @@
   {
     "name": "Hydrospawn",
     "kind": "Elite",
-    "portrait": "PortraitCow",
+    "portrait": "PortraitWaterElemental",
     "vitality": 3.0,
     "abilities": []
   },
@@ -3257,7 +3264,7 @@
   {
     "name": "Mordresh Fire Eye",
     "kind": "Elite",
-    "portrait": "PortraitSkeletonBlue",
+    "portrait": "PortraitSkeleton",
     "vitality": 3.0,
     "abilities": []
   },
@@ -3271,7 +3278,7 @@
   {
     "name": "Mother Smolderweb",
     "kind": "Elite",
-    "portrait": "PortraitCrystalSpider",
+    "portrait": "PortraitSpiderCrystal",
     "vitality": 1.0,
     "abilities": []
   },
@@ -3298,8 +3305,8 @@
   },
   {
     "name": "Murdaloc",
-    "kind": "Common",
-    "portrait": "PortraitChicken",
+    "kind": "Rare",
+    "portrait": "PortraitTrogg",
     "vitality": 1.0,
     "abilities": []
   },
@@ -3515,7 +3522,7 @@
   {
     "name": "Old Serra'kis",
     "kind": "Elite",
-    "portrait": "PortraitCow",
+    "portrait": "PortraitOldSerrakis",
     "vitality": 3.0,
     "abilities": []
   },
@@ -3691,7 +3698,7 @@
   {
     "name": "Panzor the Invincible",
     "kind": "Elite",
-    "portrait": "PortraitGolem",
+    "portrait": "PortraitGolemOrange",
     "vitality": 1.0,
     "abilities": []
   },
@@ -3777,7 +3784,7 @@
   {
     "name": "Plaguemaw",
     "kind": "Elite",
-    "portrait": "PortraitCow",
+    "portrait": "PortraitQuilboarDark",
     "vitality": 3.0,
     "abilities": []
   },
@@ -3921,7 +3928,7 @@
   {
     "name": "Qiraji Lasher",
     "kind": "Common",
-    "portrait": "PortraitChicken",
+    "portrait": "PortraitQirajiFemale",
     "vitality": 1.0,
     "abilities": []
   },
@@ -4075,7 +4082,7 @@
   {
     "name": "Rathorian",
     "kind": "Common",
-    "portrait": "PortraitChicken",
+    "portrait": "PortraitTaragaman",
     "vitality": 1.0,
     "abilities": []
   },
@@ -4114,7 +4121,7 @@
   {
     "name": "Razorfen Hidecrusher",
     "kind": "Common",
-    "portrait": "PortraitChicken",
+    "portrait": "PortraitQuilboarDark",
     "vitality": 1.0,
     "abilities": []
   },
@@ -4128,7 +4135,7 @@
   {
     "name": "Razorfen Kraulshaper",
     "kind": "Common",
-    "portrait": "PortraitChicken",
+    "portrait": "PortraitQuilboarMale",
     "vitality": 1.0,
     "abilities": []
   },
@@ -4142,14 +4149,14 @@
   {
     "name": "Razorfen Stonechanter",
     "kind": "Common",
-    "portrait": "PortraitChicken",
+    "portrait": "PortraitQuilboarFemaleAlternate",
     "vitality": 1.0,
     "abilities": []
   },
   {
     "name": "Razorfen Thornbolt",
     "kind": "Common",
-    "portrait": "PortraitChicken",
+    "portrait": "PortraitQuilboarFemale",
     "vitality": 1.0,
     "abilities": []
   },
@@ -4247,7 +4254,7 @@
   {
     "name": "Razzashi Broodwidow",
     "kind": "Common",
-    "portrait": "PortraitChicken",
+    "portrait": "PortraitSpiderBloody",
     "vitality": 1.0,
     "abilities": []
   },
@@ -4275,14 +4282,14 @@
   {
     "name": "Razzashi Skitterer",
     "kind": "Common",
-    "portrait": "PortraitChicken",
+    "portrait": "PortraitSpiderRed",
     "vitality": 1.0,
     "abilities": []
   },
   {
     "name": "Razzashi Venombrood",
     "kind": "Common",
-    "portrait": "PortraitChicken",
+    "portrait": "PortraitSpiderWhite",
     "vitality": 1.0,
     "abilities": []
   },
@@ -4303,7 +4310,7 @@
   {
     "name": "Renataki",
     "kind": "Elite",
-    "portrait": "PortraitCow",
+    "portrait": "PortraitRenataki",
     "vitality": 3.0,
     "abilities": []
   },
@@ -4394,14 +4401,14 @@
   {
     "name": "Rogue Vale Screecher",
     "kind": "Common",
-    "portrait": "PortraitChicken",
+    "portrait": "PortraitWindSerpentRed",
     "vitality": 1.0,
     "abilities": []
   },
   {
     "name": "Roogug",
     "kind": "Elite",
-    "portrait": "PortraitCow",
+    "portrait": "PortraitQuilboarFemaleAlternate",
     "vitality": 3.0,
     "abilities": []
   },
@@ -4656,7 +4663,7 @@
   {
     "name": "Sea Elemental",
     "kind": "Common",
-    "portrait": "PortraitChicken",
+    "portrait": "PortraitWaterElemental",
     "vitality": 1.0,
     "abilities": []
   },
@@ -4712,7 +4719,7 @@
   {
     "name": "Shadow Lord Fel'Dan",
     "kind": "Elite",
-    "portrait": "PortraitCow",
+    "portrait": "PortraitSearingBladeWarlock",
     "vitality": 3.0,
     "abilities": []
   },
@@ -4817,7 +4824,7 @@
   {
     "name": "Silicate Feeder",
     "kind": "Common",
-    "portrait": "PortraitChicken",
+    "portrait": "PortraitLarvaYellow",
     "vitality": 1.0,
     "abilities": []
   },
@@ -4964,7 +4971,7 @@
   {
     "name": "Spire Spider",
     "kind": "Common",
-    "portrait": "PortraitCrystalSpider",
+    "portrait": "PortraitSpiderCrystal",
     "vitality": 1.0,
     "abilities": []
   },
@@ -4999,7 +5006,7 @@
   {
     "name": "Steeljaw Snapper",
     "kind": "Common",
-    "portrait": "PortraitTurtle",
+    "portrait": "PortraitTurtleBlue",
     "vitality": 1.0,
     "abilities": []
   },
@@ -5220,7 +5227,7 @@
   {
     "name": "Tendris Warpwood",
     "kind": "Elite",
-    "portrait": "PortraitCow",
+    "portrait": "PortraitCorruptedAncient",
     "vitality": 3.0,
     "abilities": []
   },
@@ -5501,7 +5508,7 @@
   {
     "name": "Vault Warder",
     "kind": "Common",
-    "portrait": "PortraitChicken",
+    "portrait": "PortraitGolem",
     "vitality": 1.0,
     "abilities": []
   },
@@ -5655,7 +5662,7 @@
   {
     "name": "Warder Stilgiss",
     "kind": "Elite",
-    "portrait": "PortraitCow",
+    "portrait": "PortraitDarkIronSenator",
     "vitality": 3.0,
     "abilities": []
   },
@@ -5704,7 +5711,7 @@
   {
     "name": "Watery Invader",
     "kind": "Common",
-    "portrait": "PortraitChicken",
+    "portrait": "PortraitWaterElemental",
     "vitality": 1.0,
     "abilities": []
   },
@@ -5839,7 +5846,7 @@
   {
     "name": "Withered Mistress",
     "kind": "Common",
-    "portrait": "PortraitChicken",
+    "portrait": "PortraitWitheredMistress",
     "vitality": 1.0,
     "abilities": []
   },
@@ -5892,7 +5899,7 @@
   {
     "name": "Wushoolay",
     "kind": "Elite",
-    "portrait": "PortraitCow",
+    "portrait": "PortraitWushoolay",
     "vitality": 3.0,
     "abilities": []
   },
@@ -5921,7 +5928,7 @@
   {
     "name": "Zalazane",
     "kind": "Common",
-    "portrait": "PortraitTrollMale",
+    "portrait": "PortraitHakariWitchDoctor",
     "vitality": 1.0,
     "abilities": []
   },

@@ -2,6 +2,7 @@ using UnityEngine;
 
 using static Root;
 using static Font;
+using static Event;
 using static Cursor;
 using static String;
 
@@ -82,6 +83,62 @@ public class InputLine : MonoBehaviour
                 }
                 else
                     CloseWindow("ConfirmDeleteCharacter");
+            }
+        }
+        else if (foo == await)
+        {
+            if (CDesktop.windows.Exists(x => x.title == "ObjectManagerEventEffect"))
+            {
+                abilityEvent.effects[selectedEffect]["Await"] = foo.Value();
+                Respawn("ObjectManagerEventEffect");
+            }
+        }
+        else if (foo == powerScale)
+        {
+            if (CDesktop.windows.Exists(x => x.title == "ObjectManagerEventEffect"))
+            {
+                abilityEvent.effects[selectedEffect]["PowerScale"] = foo.Value();
+                Respawn("ObjectManagerEventEffect");
+            }
+        }
+        else if (foo == animationSpeed)
+        {
+            if (CDesktop.windows.Exists(x => x.title == "ObjectManagerEventEffect"))
+            {
+                abilityEvent.effects[selectedEffect]["AnimationSpeed"] = foo.Value();
+                Respawn("ObjectManagerEventEffect");
+            }
+        }
+        else if (foo == animationArc)
+        {
+            if (CDesktop.windows.Exists(x => x.title == "ObjectManagerEventEffect"))
+            {
+                abilityEvent.effects[selectedEffect]["AnimationArc"] = foo.Value();
+                Respawn("ObjectManagerEventEffect");
+            }
+        }
+        else if (foo == shatterDegree)
+        {
+            if (CDesktop.windows.Exists(x => x.title == "ObjectManagerEventEffect"))
+            {
+                abilityEvent.effects[selectedEffect]["ShatterDegree"] = foo.Value();
+                Respawn("ObjectManagerEventEffect");
+            }
+        }
+        else if (foo == shatterDensity)
+        {
+            if (CDesktop.windows.Exists(x => x.title == "ObjectManagerEventEffect"))
+            {
+                abilityEvent.effects[selectedEffect]["ShatterDensity"] = foo.Value();
+                Respawn("ObjectManagerEventEffect");
+            }
+        }
+        else if (foo == shatterSpeed)
+        {
+            if (CDesktop.windows.Exists(x => x.title == "ObjectManagerEventEffect"))
+            {
+                abilityEvent.effects[selectedEffect]["ShatterSpeed"] = foo.Value();
+                Respawn("ObjectManagerEventEffect");
             }
         }
         else if (foo == search)

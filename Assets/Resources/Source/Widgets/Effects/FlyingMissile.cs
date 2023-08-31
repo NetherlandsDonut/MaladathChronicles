@@ -9,7 +9,7 @@ public class FlyingMissile : MonoBehaviour
     public float flySpeed, timeAlive;
     public bool up;
 
-    public void Initiate(bool fromPlayer, int arc, double flySpeed)
+    public void Initiate(bool fromPlayer, float arc, double flySpeed)
     {
         flyingMissiles.Add(this);
         up = random.Next(0, 2) == 0;
@@ -43,12 +43,12 @@ public class FlyingMissile : MonoBehaviour
         else transform.position = Bezier(from, through1, through2, to, timeAlive * flySpeed);
     }
 
-    public static GameObject SpawnFlyingMissile(string sprite, bool fromPlayer, int arc, double flySpeed)
+    public static GameObject SpawnFlyingMissile(string sprite, bool fromPlayer, double arc, double flySpeed)
     {
         var missile = Instantiate(Resources.Load<GameObject>("Prefabs/PrefabMissile"));
         missile.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/Buttons/" + sprite);
         missile.transform.parent = Board.board.window.desktop.transform;
-        missile.GetComponent<FlyingMissile>().Initiate(fromPlayer, arc, flySpeed);
+        missile.GetComponent<FlyingMissile>().Initiate(fromPlayer, (float)arc, flySpeed);
         return missile;
     }
 

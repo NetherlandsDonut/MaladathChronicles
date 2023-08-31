@@ -12084,34 +12084,39 @@
     "commonEncounters": [
       {
         "who": "Gurubashi Champion",
-        "levelMin": 60,
-        "levelMax": 60
+        "levelMin": 61,
+        "levelMax": 62
       },
       {
         "who": "Son of Hakkar",
-        "levelMin": 60,
-        "levelMax": 60
+        "levelMin": 61,
+        "levelMax": 62
       },
       {
         "who": "Hakkari Shadow Hunter",
-        "levelMin": 60,
-        "levelMax": 60
+        "levelMin": 61,
+        "levelMax": 61
       },
       {
         "who": "Hakkari Blood Priest",
-        "levelMin": 60,
-        "levelMax": 60
+        "levelMin": 61,
+        "levelMax": 61
       },
       {
         "who": "Gurubashi Berserker",
-        "levelMin": 60,
-        "levelMax": 60
+        "levelMin": 61,
+        "levelMax": 62
+      },
+      {
+        "who": "Soulflayer",
+        "levelMin": 61,
+        "levelMax": 62
       }
     ],
     "eliteEncounters": [
       {
         "who": "Hakkar the Soulflayer",
-        "levelMin": 60,
+        "levelMin": 63,
         "requiredProgress": 5
       }
     ]

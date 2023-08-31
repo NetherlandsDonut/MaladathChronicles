@@ -1,923 +1,1153 @@
 [
   {
     "name": "Curse of Thorns",
-    "icon": "AbilityThorns"
+    "icon": "AbilityThorns",
+    "events": []
   },
   {
     "name": "Lightning Wave",
-    "icon": "AbilityCrashingStorm"
+    "icon": "AbilityCrashingStorm",
+    "events": []
   },
   {
     "name": "Arcane Blast",
-    "icon": "AbilityArcaneBlast"
+    "icon": "AbilityArcaneBlast",
+    "events": []
   },
   {
     "name": "Magma Splash",
-    "icon": "AbilityMagmaSplash"
+    "icon": "AbilityMagmaSplash",
+    "events": []
   },
   {
     "name": "Draw Spirit",
-    "icon": "AbilityDrawSpirit"
+    "icon": "AbilityDrawSpirit",
+    "events": []
   },
   {
     "name": "Shadow Bolt Whirl",
-    "icon": "AbilityShadowBolt"
+    "icon": "AbilityShadowBolt",
+    "events": []
   },
   {
     "name": "Corruption of the Earth",
-    "icon": "AbilityCreatureCursed01"
+    "icon": "AbilityCreatureCursed01",
+    "events": []
   },
   {
     "name": "Dream Fog",
-    "icon": "AbilityDeadEye"
+    "icon": "AbilityDeadEye",
+    "events": []
   },
   {
     "name": "Noxious Breath",
-    "icon": "AbilityNoxiousBreath"
+    "icon": "AbilityNoxiousBreath",
+    "events": []
   },
   {
     "name": "Tail Sweep",
-    "icon": "AbilityTailSweep"
+    "icon": "AbilityTailSweep",
+    "events": []
   },
   {
     "name": "Supernova",
-    "icon": "AbilitySupernova"
+    "icon": "AbilitySupernova",
+    "events": []
   },
   {
     "name": "Arcane Bombardment",
-    "icon": "AbilityArcaneBombardment"
+    "icon": "AbilityArcaneBombardment",
+    "events": []
   },
   {
     "name": "Evocation",
-    "icon": "AbilityEvocation"
+    "icon": "AbilityEvocation",
+    "events": []
   },
   {
     "name": "Prodigious Savant",
-    "icon": "AbilityProdigiousSavant"
+    "icon": "AbilityProdigiousSavant",
+    "events": []
   },
   {
     "name": "Presence of Mind",
-    "icon": "AbilityPresenceofMind"
+    "icon": "AbilityPresenceofMind",
+    "events": []
   },
   {
     "name": "Slipstream",
-    "icon": "AbilitySlipstream"
+    "icon": "AbilitySlipstream",
+    "events": []
   },
   {
     "name": "Arcane Barrage",
-    "icon": "AbilityArcaneBarrage"
+    "icon": "AbilityArcaneBarrage",
+    "events": []
   },
   {
     "name": "Prismatic Barrier",
-    "icon": "AbilityPrismaticBarrier"
+    "icon": "AbilityPrismaticBarrier",
+    "events": []
   },
   {
     "name": "Concetration",
-    "icon": "AbilityConcetration"
+    "icon": "AbilityConcetration",
+    "events": []
   },
   {
     "name": "Cryopathy",
-    "icon": "AbilityCryopathy"
+    "icon": "AbilityCryopathy",
+    "events": []
   },
   {
     "name": "Icy Veins",
-    "icon": "AbilityIcyVeins"
+    "icon": "AbilityIcyVeins",
+    "events": []
   },
   {
     "name": "Icy Flows",
-    "icon": "AbilityIcyFlows"
+    "icon": "AbilityIcyFlows",
+    "events": []
   },
   {
     "name": "Fingers of Frost",
-    "icon": "AbilityFingersofFrost"
+    "icon": "AbilityFingersofFrost",
+    "events": []
   },
   {
     "name": "Frost Ward",
-    "icon": "AbilityFrostWard"
+    "icon": "AbilityFrostWard",
+    "events": []
   },
   {
     "name": "Combustion",
-    "icon": "AbilityCombustion"
+    "icon": "AbilityCombustion",
+    "events": []
   },
   {
     "name": "Blast Wave",
-    "icon": "AbilityBlastWave"
+    "icon": "AbilityBlastWave",
+    "events": []
   },
   {
     "name": "Dragon's Breath",
-    "icon": "AbilityDragonsBreath"
+    "icon": "AbilityDragonsBreath",
+    "events": []
   },
   {
     "name": "Pyroblast",
-    "icon": "AbilityPyroblast"
+    "icon": "AbilityPyroblast",
+    "events": []
   },
   {
     "name": "Flamestrike",
-    "icon": "AbilityFlamestrike"
+    "icon": "AbilityFlamestrike",
+    "events": []
   },
   {
     "name": "Fire Blast",
-    "icon": "AbilityFireBlast"
+    "icon": "AbilityFireBlast",
+    "events": []
   },
   {
     "name": "Blazing Barrier",
-    "icon": "AbilityBlazingBarrier"
+    "icon": "AbilityBlazingBarrier",
+    "events": []
   },
   {
     "name": "Channel Demonfire",
-    "icon": "AbilityChannelDemonfire"
+    "icon": "AbilityChannelDemonfire",
+    "events": []
   },
   {
     "name": "Infernal Brand",
-    "icon": "AbilityInfernalBrand"
+    "icon": "AbilityInfernalBrand",
+    "events": []
   },
   {
     "name": "Ritual of Ruin",
-    "icon": "AbilityRitualofRuin"
+    "icon": "AbilityRitualofRuin",
+    "events": []
   },
   {
     "name": "Havoc",
-    "icon": "AbilityHavoc"
+    "icon": "AbilityHavoc",
+    "events": []
   },
   {
     "name": "Eradication",
-    "icon": "AbilityEradication"
+    "icon": "AbilityEradication",
+    "events": []
   },
   {
     "name": "Rain of Fire",
-    "icon": "AbilityRainofFire"
+    "icon": "AbilityRainofFire",
+    "events": []
   },
   {
     "name": "Chaos Bolt",
-    "icon": "AbilityChaosBolt"
+    "icon": "AbilityChaosBolt",
+    "events": []
   },
   {
     "name": "Pyrogenics",
-    "icon": "AbilityPyrogenics"
+    "icon": "AbilityPyrogenics",
+    "events": []
   },
   {
     "name": "Immolate",
-    "icon": "AbilityImmolate"
+    "icon": "AbilityImmolate",
+    "events": []
   },
   {
     "name": "Master Summoner",
-    "icon": "AbilityMasterSummoner"
+    "icon": "AbilityMasterSummoner",
+    "events": []
   },
   {
     "name": "Summon Fel Guard",
-    "icon": "AbilitySummonFelGuard"
+    "icon": "AbilitySummonFelGuard",
+    "events": []
   },
   {
     "name": "Demonic Embrace",
-    "icon": "AbilityDemonicEmbrace"
+    "icon": "AbilityDemonicEmbrace",
+    "events": []
   },
   {
     "name": "Health Funnel",
-    "icon": "AbilityHealthFunnel"
+    "icon": "AbilityHealthFunnel",
+    "events": []
   },
   {
     "name": "Xavius Gambit",
-    "icon": "AbilityXaviusGambit"
+    "icon": "AbilityXaviusGambit",
+    "events": []
   },
   {
     "name": "Profane Bargain",
-    "icon": "AbilityProfaneBargain"
+    "icon": "AbilityProfaneBargain",
+    "events": []
   },
   {
     "name": "Kindled Malice",
-    "icon": "AbilityKindledMalice"
+    "icon": "AbilityKindledMalice",
+    "events": []
   },
   {
     "name": "Nightfall",
-    "icon": "AbilityNightfall"
+    "icon": "AbilityNightfall",
+    "events": []
   },
   {
     "name": "Unstable Affliction",
-    "icon": "AbilityUnstableAffliction"
+    "icon": "AbilityUnstableAffliction",
+    "events": []
   },
   {
     "name": "Creeping Death",
-    "icon": "AbilityCreepingDeath"
+    "icon": "AbilityCreepingDeath",
+    "events": []
   },
   {
     "name": "Curse of Tongues",
-    "icon": "AbilityCurseofTongues"
+    "icon": "AbilityCurseofTongues",
+    "events": []
   },
   {
     "name": "Haunt",
-    "icon": "AbilityHaunt"
+    "icon": "AbilityHaunt",
+    "events": []
   },
   {
     "name": "Agonizing Corruption",
-    "icon": "AbilityAgonizingCorruption"
+    "icon": "AbilityAgonizingCorruption",
+    "events": []
   },
   {
     "name": "Drain Soul",
-    "icon": "AbilityDrainSoul"
+    "icon": "AbilityDrainSoul",
+    "events": []
   },
   {
     "name": "Curse of Weakness",
-    "icon": "AbilityCurseofWeakness"
+    "icon": "AbilityCurseofWeakness",
+    "events": []
   },
   {
     "name": "Shadowform",
-    "icon": "AbilityShadowform"
+    "icon": "AbilityShadowform",
+    "events": []
   },
   {
     "name": "Psychic Scream",
-    "icon": "AbilityPsychicScream"
+    "icon": "AbilityPsychicScream",
+    "events": []
   },
   {
     "name": "Shadow Focus",
-    "icon": "AbilityShadowFocus"
+    "icon": "AbilityShadowFocus",
+    "events": []
   },
   {
     "name": "Hex of Weakness",
-    "icon": "AbilityHexofWeakness"
+    "icon": "AbilityHexofWeakness",
+    "events": []
   },
   {
     "name": "Devouring Plague",
-    "icon": "AbilityDevouringPlague"
+    "icon": "AbilityDevouringPlague",
+    "events": []
   },
   {
     "name": "Shadow Weaving",
-    "icon": "AbilityShadowWeaving"
+    "icon": "AbilityShadowWeaving",
+    "events": []
   },
   {
     "name": "Fade",
-    "icon": "AbilityFade"
+    "icon": "AbilityFade",
+    "events": []
   },
   {
     "name": "Blackout",
-    "icon": "AbilityBlackout"
+    "icon": "AbilityBlackout",
+    "events": []
   },
   {
     "name": "Power Infusion",
-    "icon": "AbilityPowerInfusion"
+    "icon": "AbilityPowerInfusion",
+    "events": []
   },
   {
     "name": "Force of Will",
-    "icon": "AbilityForceofWill"
+    "icon": "AbilityForceofWill",
+    "events": []
   },
   {
     "name": "Martyrdom",
-    "icon": "AbilityMartyrdom"
+    "icon": "AbilityMartyrdom",
+    "events": []
   },
   {
     "name": "Unbreakable Will",
-    "icon": "AbilityUnbreakableWill"
+    "icon": "AbilityUnbreakableWill",
+    "events": []
   },
   {
     "name": "Mana Burn",
-    "icon": "AbilityManaBurn"
+    "icon": "AbilityManaBurn",
+    "events": []
   },
   {
     "name": "Silent Resolve",
-    "icon": "AbilitySilentResolve"
+    "icon": "AbilitySilentResolve",
+    "events": []
   },
   {
     "name": "Divine Spirit",
-    "icon": "AbilityDivineSpirit"
+    "icon": "AbilityDivineSpirit",
+    "events": []
   },
   {
     "name": "Inner Fire",
-    "icon": "AbilityInnerFire"
+    "icon": "AbilityInnerFire",
+    "events": []
   },
   {
     "name": "Power Word: Fortitude",
-    "icon": "AbilityPrayerofFortitude"
+    "icon": "AbilityPrayerofFortitude",
+    "events": []
   },
   {
     "name": "Meditation",
-    "icon": "AbilityMeditation"
+    "icon": "AbilityMeditation",
+    "events": []
   },
   {
     "name": "Spirit of Redemption",
-    "icon": "AbilitySpiritofRedemption"
+    "icon": "AbilitySpiritofRedemption",
+    "events": []
   },
   {
     "name": "Lightwell",
-    "icon": "AbilityLightwell"
+    "icon": "AbilityLightwell",
+    "events": []
   },
   {
     "name": "Divine Fury",
-    "icon": "AbilityDivineFury"
+    "icon": "AbilityDivineFury",
+    "events": []
   },
   {
     "name": "Desperate Prayer",
-    "icon": "AbilityDesperatePrayer"
+    "icon": "AbilityDesperatePrayer",
+    "events": []
   },
   {
     "name": "Searing Light",
-    "icon": "AbilitySearingLight"
+    "icon": "AbilitySearingLight",
+    "events": []
   },
   {
     "name": "Spiritual Healing",
-    "icon": "AbilitySpiritualHealing"
+    "icon": "AbilitySpiritualHealing",
+    "events": []
   },
   {
     "name": "Prayer of Healing",
-    "icon": "AbilityPrayerofHealing"
+    "icon": "AbilityPrayerofHealing",
+    "events": []
   },
   {
     "name": "Healing Focus",
-    "icon": "AbilityHealingFocus"
+    "icon": "AbilityHealingFocus",
+    "events": []
   },
   {
     "name": "Holy Nova",
-    "icon": "AbilityHolyNova"
+    "icon": "AbilityHolyNova",
+    "events": []
   },
   {
     "name": "Renew",
-    "icon": "AbilityRenew"
+    "icon": "AbilityRenew",
+    "events": []
   },
   {
     "name": "Blessed Recovery",
-    "icon": "AbilityBlessedRecovery"
+    "icon": "AbilityBlessedRecovery",
+    "events": []
   },
   {
     "name": "Spiritual Guidance",
-    "icon": "AbilitySpiritualGuidance"
+    "icon": "AbilitySpiritualGuidance",
+    "events": []
   },
   {
     "name": "Spell Warding",
-    "icon": "AbilitySpellWarding"
+    "icon": "AbilitySpellWarding",
+    "events": []
   },
   {
     "name": "Heal",
-    "icon": "AbilityHeal"
+    "icon": "AbilityHeal",
+    "events": []
   },
   {
     "name": "Lesser Heal",
-    "icon": "AbilityLesserHeal"
+    "icon": "AbilityLesserHeal",
+    "events": []
   },
   {
     "name": "Power of the Archdruid",
-    "icon": "AbilityPoweroftheArchdruid"
+    "icon": "AbilityPoweroftheArchdruid",
+    "events": []
   },
   {
     "name": "Embrace of the Dream",
-    "icon": "AbilityEmbraceoftheDream"
+    "icon": "AbilityEmbraceoftheDream",
+    "events": []
   },
   {
     "name": "Unstoppable Growth",
-    "icon": "AbilityUnstoppableGrowth"
+    "icon": "AbilityUnstoppableGrowth",
+    "events": []
   },
   {
     "name": "Verdancy",
-    "icon": "AbilityVerdancy"
+    "icon": "AbilityVerdancy",
+    "events": []
   },
   {
     "name": "Tranquil Mind",
-    "icon": "AbilityTranquilMind"
+    "icon": "AbilityTranquilMind",
+    "events": []
   },
   {
     "name": "Tranquility",
-    "icon": "AbilityTranquility"
+    "icon": "AbilityTranquility",
+    "events": []
   },
   {
     "name": "Ysera's Gift",
-    "icon": "AbilityYserasGift"
+    "icon": "AbilityYserasGift",
+    "events": []
   },
   {
     "name": "Efflorescence",
-    "icon": "AbilityEfflorescence"
+    "icon": "AbilityEfflorescence",
+    "events": []
   },
   {
     "name": "Nurturing Instinct",
-    "icon": "AbilityNurturingInstinct"
+    "icon": "AbilityNurturingInstinct",
+    "events": []
   },
   {
     "name": "Hibernate",
-    "icon": "AbilityHibernate"
+    "icon": "AbilityHibernate",
+    "events": []
   },
   {
     "name": "Waking Dream",
-    "icon": "AbilityWakingDream"
+    "icon": "AbilityWakingDream",
+    "events": []
   },
   {
     "name": "Innervate",
-    "icon": "AbilityInnervate"
+    "icon": "AbilityInnervate",
+    "events": []
   },
   {
     "name": "Renewal",
-    "icon": "AbilityRenewal"
+    "icon": "AbilityRenewal",
+    "events": []
   },
   {
     "name": "Flourish",
-    "icon": "AbilityFlourish"
+    "icon": "AbilityFlourish",
+    "events": []
   },
   {
     "name": "Luxuriant Soil",
-    "icon": "AbilityLuxuriantSoil"
+    "icon": "AbilityLuxuriantSoil",
+    "events": []
   },
   {
     "name": "Nature's Balance",
-    "icon": "AbilityNaturesBalance"
+    "icon": "AbilityNaturesBalance",
+    "events": []
   },
   {
     "name": "Cultivation",
-    "icon": "AbilityCultivation"
+    "icon": "AbilityCultivation",
+    "events": []
   },
   {
     "name": "Rejuvenation",
-    "icon": "AbilityRejuvenation"
+    "icon": "AbilityRejuvenation",
+    "events": []
   },
   {
     "name": "Wild Growth",
-    "icon": "AbilityWildGrowth"
+    "icon": "AbilityWildGrowth",
+    "events": []
   },
   {
     "name": "Harmonious Blooming",
-    "icon": "AbilityHarmoniousBlooming"
+    "icon": "AbilityHarmoniousBlooming",
+    "events": []
   },
   {
     "name": "Nature's Grace",
-    "icon": "AbilityNaturesGrace"
+    "icon": "AbilityNaturesGrace",
+    "events": []
   },
   {
     "name": "Lifebloom",
-    "icon": "AbilityLifebloom"
+    "icon": "AbilityLifebloom",
+    "events": []
   },
   {
     "name": "Natural Recovery",
-    "icon": "AbilityNaturalRecovery"
+    "icon": "AbilityNaturalRecovery",
+    "events": []
   },
   {
     "name": "Regrowth",
-    "icon": "AbilityRegrowth"
+    "icon": "AbilityRegrowth",
+    "events": []
   },
   {
     "name": "Apex Predator",
-    "icon": "AbilityApexPredator"
+    "icon": "AbilityApexPredator",
+    "events": []
   },
   {
     "name": "Killer Instinct",
-    "icon": "AbilityKillerInstinct"
+    "icon": "AbilityKillerInstinct",
+    "events": []
   },
   {
     "name": "Taste for Blood",
-    "icon": "AbilityTasteforBlood"
+    "icon": "AbilityTasteforBlood",
+    "events": []
   },
   {
     "name": "Primal Fury",
-    "icon": "AbilityPrimalFury"
+    "icon": "AbilityPrimalFury",
+    "events": []
   },
   {
     "name": "Protector of the Pack",
-    "icon": "AbilityProtectorofthePack"
+    "icon": "AbilityProtectorofthePack",
+    "events": []
   },
   {
     "name": "Brutal Swipes",
-    "icon": "AbilityBrutalSwipes"
+    "icon": "AbilityBrutalSwipes",
+    "events": []
   },
   {
     "name": "Incapacitating Roar",
-    "icon": "AbilityIncapacitatingRoar"
+    "icon": "AbilityIncapacitatingRoar",
+    "events": []
   },
   {
     "name": "Tireless Pursuit",
-    "icon": "AbilityTirelessPursuit"
+    "icon": "AbilityTirelessPursuit",
+    "events": []
   },
   {
     "name": "Berserk",
-    "icon": "AbilityBerserk"
+    "icon": "AbilityBerserk",
+    "events": []
   },
   {
     "name": "Frantic Momentum",
-    "icon": "AbilityFranticMomentum"
+    "icon": "AbilityFranticMomentum",
+    "events": []
   },
   {
     "name": "Dire Fixation",
-    "icon": "AbilityDireFixation"
+    "icon": "AbilityDireFixation",
+    "events": []
   },
   {
     "name": "Honed Instincts",
-    "icon": "AbilityHonedInstincts"
+    "icon": "AbilityHonedInstincts",
+    "events": []
   },
   {
     "name": "Dash",
-    "icon": "AbilityDash"
+    "icon": "AbilityDash",
+    "events": []
   },
   {
     "name": "Vein Ripper",
-    "icon": "AbilityVeinRipper"
+    "icon": "AbilityVeinRipper",
+    "events": []
   },
   {
     "name": "Growl",
-    "icon": "AbilityGrowl"
+    "icon": "AbilityGrowl",
+    "events": []
   },
   {
     "name": "Swipe",
-    "icon": "AbilitySwipe"
+    "icon": "AbilitySwipe",
+    "events": []
   },
   {
     "name": "Ferocious Bite",
-    "icon": "AbilityFerociousBite"
+    "icon": "AbilityFerociousBite",
+    "events": []
   },
   {
     "name": "Thick Hide",
-    "icon": "AbilityThickHide"
+    "icon": "AbilityThickHide",
+    "events": []
   },
   {
     "name": "Feline Swiftness",
-    "icon": "AbilityFelineSwiftness"
+    "icon": "AbilityFelineSwiftness",
+    "events": []
   },
   {
     "name": "Thrash",
-    "icon": "AbilityThrash"
+    "icon": "AbilityThrash",
+    "events": []
   },
   {
     "name": "Infected Wounds",
-    "icon": "AbilityInfectedWounds"
+    "icon": "AbilityInfectedWounds",
+    "events": []
   },
   {
     "name": "Barkskin",
-    "icon": "AbilityBarkskin"
+    "icon": "AbilityBarkskin",
+    "events": []
   },
   {
     "name": "Verdant Heart",
-    "icon": "AbilityVerdantHeart"
+    "icon": "AbilityVerdantHeart",
+    "events": []
   },
   {
     "name": "Mangle",
-    "icon": "AbilityMangle"
+    "icon": "AbilityMangle",
+    "events": []
   },
   {
     "name": "Rake",
-    "icon": "AbilityRake"
+    "icon": "AbilityRake",
+    "events": []
   },
   {
     "name": "Convoke the Spirits",
-    "icon": "AbilityConvoketheSpirits"
+    "icon": "AbilityConvoketheSpirits",
+    "events": []
   },
   {
     "name": "Sundered Firmament",
-    "icon": "AbilitySunderedFirmament"
+    "icon": "AbilitySunderedFirmament",
+    "events": []
   },
   {
     "name": "Astral Invocation",
-    "icon": "AbilityAstralInvocation"
+    "icon": "AbilityAstralInvocation",
+    "events": []
   },
   {
     "name": "Twin Moons",
-    "icon": "AbilityTwinMoons"
+    "icon": "AbilityTwinMoons",
+    "events": []
   },
   {
     "name": "Aetherial Kindling",
-    "icon": "AbilityAetherialKindling"
+    "icon": "AbilityAetherialKindling",
+    "events": []
   },
   {
     "name": "Orbit Breaker",
-    "icon": "AbilityOrbitBreaker"
+    "icon": "AbilityOrbitBreaker",
+    "events": []
   },
   {
     "name": "Umbral Intensity",
-    "icon": "AbilityUmbralIntensity"
+    "icon": "AbilityUmbralIntensity",
+    "events": []
   },
   {
     "name": "Solstice",
-    "icon": "AbilitySolstice"
+    "icon": "AbilitySolstice",
+    "events": []
   },
   {
     "name": "Starfall",
-    "icon": "AbilityStarfall"
+    "icon": "AbilityStarfall",
+    "events": []
   },
   {
     "name": "Moonkin Form",
-    "icon": "AbilityMoonkinForm"
+    "icon": "AbilityMoonkinForm",
+    "events": []
   },
   {
     "name": "Solar Beam",
-    "icon": "AbilitySolarBeam"
+    "icon": "AbilitySolarBeam",
+    "events": []
   },
   {
     "name": "Stellar Innervation",
-    "icon": "AbilityStellarInnervation"
+    "icon": "AbilityStellarInnervation",
+    "events": []
   },
   {
     "name": "Astral Communion",
-    "icon": "AbilityAstralCommunion"
+    "icon": "AbilityAstralCommunion",
+    "events": []
   },
   {
     "name": "Cyclone",
-    "icon": "AbilityCyclone"
+    "icon": "AbilityCyclone",
+    "events": []
   },
   {
     "name": "Cosmic Rapidity",
-    "icon": "AbilityCosmicRapidity"
+    "icon": "AbilityCosmicRapidity",
+    "events": []
   },
   {
     "name": "Faerie Fire",
-    "icon": "AbilityFaerieFire"
+    "icon": "AbilityFaerieFire",
+    "events": []
   },
   {
     "name": "Lunar Shrapnel",
-    "icon": "AbilityLunarShrapnel"
+    "icon": "AbilityLunarShrapnel",
+    "events": []
   },
   {
     "name": "Star Surge",
-    "icon": "AbilityStarSurge"
+    "icon": "AbilityStarSurge",
+    "events": []
   },
   {
     "name": "Shooting Stars",
-    "icon": "AbilityShootingStars"
+    "icon": "AbilityShootingStars",
+    "events": []
   },
   {
     "name": "Eclipse",
-    "icon": "AbilityEclipse"
+    "icon": "AbilityEclipse",
+    "events": []
   },
   {
     "name": "Light of the Sun",
-    "icon": "AbilityLightoftheSun"
+    "icon": "AbilityLightoftheSun",
+    "events": []
   },
   {
     "name": "Sunfire",
-    "icon": "AbilitySunfire"
+    "icon": "AbilitySunfire",
+    "events": []
   },
   {
     "name": "Starweaver",
-    "icon": "AbilityStarweaver"
+    "icon": "AbilityStarweaver",
+    "events": []
   },
   {
     "name": "Moonfire",
-    "icon": "AbilityMoonfire"
+    "icon": "AbilityMoonfire",
+    "events": []
   },
   {
     "name": "Wrath",
-    "icon": "AbilityWrath"
+    "icon": "AbilityWrath",
+    "events": []
   },
   {
     "name": "Last Stand",
-    "icon": "AbilityLastStand"
+    "icon": "AbilityLastStand",
+    "events": []
   },
   {
     "name": "Indomitable",
-    "icon": "AbilityIndomitable"
+    "icon": "AbilityIndomitable",
+    "events": []
   },
   {
     "name": "Shield Wall",
-    "icon": "AbilityShieldWall"
+    "icon": "AbilityShieldWall",
+    "events": []
   },
   {
     "name": "Anticipation",
-    "icon": "AbilityAnticipation"
+    "icon": "AbilityAnticipation",
+    "events": []
   },
   {
     "name": "Shield Block",
-    "icon": "AbilityShieldBlock"
+    "icon": "AbilityShieldBlock",
+    "events": []
   },
   {
     "name": "Shield Bash",
-    "icon": "AbilityShieldBash"
+    "icon": "AbilityShieldBash",
+    "events": []
   },
   {
     "name": "Spell Reflection",
-    "icon": "AbilitySpellReflection"
+    "icon": "AbilitySpellReflection",
+    "events": []
   },
   {
     "name": "Bloodrage",
-    "icon": "AbilityBloodrage"
+    "icon": "AbilityBloodrage",
+    "events": []
   },
   {
     "name": "Shield Slam",
-    "icon": "AbilityShieldSlam"
+    "icon": "AbilityShieldSlam",
+    "events": []
   },
   {
     "name": "Revenge",
-    "icon": "AbilityRevenge"
+    "icon": "AbilityRevenge",
+    "events": []
   },
   {
     "name": "Recklessness",
-    "icon": "AbilityRecklessness"
+    "icon": "AbilityRecklessness",
+    "events": []
   },
   {
     "name": "Defiance",
-    "icon": "AbilityDefiance"
+    "icon": "AbilityDefiance",
+    "events": []
   },
   {
     "name": "Rampage",
-    "icon": "AbilityRampage"
+    "icon": "AbilityRampage",
+    "events": []
   },
   {
     "name": "Enraged Regeneration",
-    "icon": "AbilityEnragedRegeneration"
+    "icon": "AbilityEnragedRegeneration",
+    "events": []
   },
   {
     "name": "Berserker Rage",
-    "icon": "AbilityBerserkerRage"
+    "icon": "AbilityBerserkerRage",
+    "events": []
   },
   {
     "name": "Onslaught",
-    "icon": "AbilityOnslaught"
+    "icon": "AbilityOnslaught",
+    "events": []
   },
   {
     "name": "Execute",
-    "icon": "AbilityExecute"
+    "icon": "AbilityExecute",
+    "events": []
   },
   {
     "name": "Skullsplitter",
-    "icon": "AbilitySkullsplitter"
+    "icon": "AbilitySkullsplitter",
+    "events": []
   },
   {
     "name": "Demoralizing Shout",
-    "icon": "AbilityDemoralizingShout"
+    "icon": "AbilityDemoralizingShout",
+    "events": []
   },
   {
     "name": "Whirlwind",
-    "icon": "AbilityWhirlwind"
+    "icon": "AbilityWhirlwind",
+    "events": []
   },
   {
     "name": "Raging Blow",
-    "icon": "AbilityRagingBlow"
+    "icon": "AbilityRagingBlow",
+    "events": []
   },
   {
     "name": "Cruelty",
-    "icon": "AbilityCruelty"
+    "icon": "AbilityCruelty",
+    "events": []
   },
   {
     "name": "Bloodthirst",
-    "icon": "AbilityBloodthirst"
+    "icon": "AbilityBloodthirst",
+    "events": []
   },
   {
     "name": "Battle Shout",
-    "icon": "AbilityBattleShout"
+    "icon": "AbilityBattleShout",
+    "events": []
   },
   {
     "name": "Bladestorm",
-    "icon": "AbilityBladestorm"
+    "icon": "AbilityBladestorm",
+    "events": []
   },
   {
     "name": "Pain And Gain",
-    "icon": "AbilityPainAndGain"
+    "icon": "AbilityPainAndGain",
+    "events": []
   },
   {
     "name": "Retaliation",
-    "icon": "AbilityRetaliation"
+    "icon": "AbilityRetaliation",
+    "events": []
   },
   {
     "name": "Mortal Strike",
-    "icon": "AbilityMortalStrike"
+    "icon": "AbilityMortalStrike",
+    "events": []
   },
   {
     "name": "Sweeping Strikes",
-    "icon": "AbilitySweepingStrikes"
+    "icon": "AbilitySweepingStrikes",
+    "events": []
   },
   {
     "name": "Deep Wounds",
-    "icon": "AbilityDeepWounds"
+    "icon": "AbilityDeepWounds",
+    "events": []
   },
   {
     "name": "Cleave",
-    "icon": "AbilityCleave"
+    "icon": "AbilityCleave",
+    "events": []
   },
   {
     "name": "Hamstring",
-    "icon": "AbilityHamstring"
+    "icon": "AbilityHamstring",
+    "events": []
   },
   {
     "name": "Thunder Clap",
-    "icon": "AbilityThunderClap"
+    "icon": "AbilityThunderClap",
+    "events": []
   },
   {
     "name": "Rend",
-    "icon": "AbilityRend"
+    "icon": "AbilityRend",
+    "events": []
   },
   {
     "name": "Overpower",
-    "icon": "AbilityOverpower"
+    "icon": "AbilityOverpower",
+    "events": []
   },
   {
     "name": "Deflection",
-    "icon": "AbilityDeflection"
+    "icon": "AbilityDeflection",
+    "events": []
   },
   {
     "name": "Charge",
-    "icon": "AbilityCharge"
+    "icon": "AbilityCharge",
+    "events": []
   },
   {
     "name": "Heroic Strike",
-    "icon": "AbilityHeroicStrike"
+    "icon": "AbilityHeroicStrike",
+    "events": []
   },
   {
     "name": "Time Warp",
-    "icon": "AbilityTimeWarp"
+    "icon": "AbilityTimeWarp",
+    "events": []
   },
   {
     "name": "Earth Shield",
-    "icon": "AbilityEarthShield"
+    "icon": "AbilityEarthShield",
+    "events": []
   },
   {
     "name": "Further Beyond",
-    "icon": "AbilityFurtherBeyond"
+    "icon": "AbilityFurtherBeyond",
+    "events": []
   },
   {
     "name": "Dual Wielding Proficiency",
-    "icon": "AbilityAbolishMagic"
+    "icon": "AbilityAbolishMagic",
+    "events": []
   },
   {
     "name": "Two Handed Axe Proficiency",
-    "icon": "AbilityTwoHandedAxeProficiency"
+    "icon": "AbilityTwoHandedAxeProficiency",
+    "events": []
   },
   {
     "name": "Two Handed Mace Proficiency",
-    "icon": "AbilityTwoHandedMaceProficiency"
+    "icon": "AbilityTwoHandedMaceProficiency",
+    "events": []
   },
   {
     "name": "Two Handed Sword Proficiency",
-    "icon": "AbilityTwoHandedSwordProficiency"
+    "icon": "AbilityTwoHandedSwordProficiency",
+    "events": []
   },
   {
     "name": "One Handed Axe Proficiency",
-    "icon": "AbilityOneHandedAxeProficiency"
+    "icon": "AbilityOneHandedAxeProficiency",
+    "events": []
   },
   {
     "name": "One Handed Mace Proficiency",
-    "icon": "AbilityOneHandedMaceProficiency"
+    "icon": "AbilityOneHandedMaceProficiency",
+    "events": []
   },
   {
     "name": "One Handed Sword Proficiency",
-    "icon": "AbilityOneHandedSwordProficiency"
+    "icon": "AbilityOneHandedSwordProficiency",
+    "events": []
   },
   {
     "name": "Fist Weapon Proficiency",
-    "icon": "AbilityFistWeaponProficiency"
+    "icon": "AbilityFistWeaponProficiency",
+    "events": []
   },
   {
     "name": "Off Hand Proficiency",
-    "icon": "AbilityOffHandProficiency"
+    "icon": "AbilityOffHandProficiency",
+    "events": []
   },
   {
     "name": "Polearm Proficiency",
-    "icon": "AbilityPolearmProficiency"
+    "icon": "AbilityPolearmProficiency",
+    "events": []
   },
   {
     "name": "Dagger Proficiency",
-    "icon": "AbilityDaggerProficiency"
+    "icon": "AbilityDaggerProficiency",
+    "events": []
   },
   {
     "name": "Staff Proficiency",
-    "icon": "AbilityStaffProficiency"
+    "icon": "AbilityStaffProficiency",
+    "events": []
   },
   {
     "name": "Wand Proficiency",
-    "icon": "AbilityWandProficiency"
+    "icon": "AbilityWandProficiency",
+    "events": []
   },
   {
     "name": "Totem Proficiency",
-    "icon": "AbilityTotemProficiency"
+    "icon": "AbilityTotemProficiency",
+    "events": []
   },
   {
     "name": "Relic Proficiency",
-    "icon": "AbilityRelicProficiency"
+    "icon": "AbilityRelicProficiency",
+    "events": []
   },
   {
     "name": "Libram Proficiency",
-    "icon": "AbilityLibramProficiency"
+    "icon": "AbilityLibramProficiency",
+    "events": []
   },
   {
     "name": "Idol Proficiency",
-    "icon": "AbilityIdolProficiency"
+    "icon": "AbilityIdolProficiency",
+    "events": []
   },
   {
     "name": "Shield Proficiency",
-    "icon": "AbilityShieldProficiency"
+    "icon": "AbilityShieldProficiency",
+    "events": []
   },
   {
     "name": "Quiver Proficiency",
-    "icon": "AbilityQuiverProficiency"
+    "icon": "AbilityQuiverProficiency",
+    "events": []
   },
   {
     "name": "Pouch Proficiency",
-    "icon": "AbilityPouchProficiency"
+    "icon": "AbilityPouchProficiency",
+    "events": []
   },
   {
     "name": "Bow Proficiency",
-    "icon": "AbilityBowProficiency"
+    "icon": "AbilityBowProficiency",
+    "events": []
   },
   {
     "name": "Crossbow Proficiency",
-    "icon": "AbilityCrossbowProficiency"
+    "icon": "AbilityCrossbowProficiency",
+    "events": []
   },
   {
     "name": "Gun Proficiency",
-    "icon": "AbilityGunProficiency"
+    "icon": "AbilityGunProficiency",
+    "events": []
   },
   {
     "name": "Cloth Proficiency",
-    "icon": "AbilityClothProficiency"
+    "icon": "AbilityClothProficiency",
+    "events": []
   },
   {
     "name": "Leather Proficiency",
-    "icon": "AbilityLeatherProficiency"
+    "icon": "AbilityLeatherProficiency",
+    "events": []
   },
   {
     "name": "Mail Proficiency",
-    "icon": "AbilityMailProficiency"
+    "icon": "AbilityMailProficiency",
+    "events": []
   },
   {
     "name": "Plate Proficiency",
-    "icon": "AbilityPlateProficiency"
+    "icon": "AbilityPlateProficiency",
+    "events": []
   },
   {
     "name": "Arcane Missiles",
