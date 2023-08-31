@@ -249,14 +249,16 @@ public static class Root
 
     public static void AddHeaderGroup()
     {
-        AddRegionGroup(true);
+        var newObject = new GameObject("RegionGroup", typeof(RegionGroup));
+        newObject.transform.parent = CDesktop.LBWindow.transform;
+        newObject.GetComponent<RegionGroup>().Initialise(CDesktop.LBWindow, true, null, 0);
     }
 
-    public static void AddRegionGroup(bool headerGroup = false)
+    public static void AddRegionGroup(Func<double> maxPagination = null, int perPage = 10)
     {
         var newObject = new GameObject("RegionGroup", typeof(RegionGroup));
         newObject.transform.parent = CDesktop.LBWindow.transform;
-        newObject.GetComponent<RegionGroup>().Initialise(CDesktop.LBWindow, headerGroup);
+        newObject.GetComponent<RegionGroup>().Initialise(CDesktop.LBWindow, false, maxPagination, perPage);
     }
 
     public static void CloseRegionGroup(RegionGroup regionGroup)
@@ -332,17 +334,17 @@ public static class Root
         null);
     }
 
-    public static void AddPaginationLine(RegionGroup group, double pages)
+    public static void AddPaginationLine(RegionGroup group)
     {
         AddPaddingRegion(() =>
         {
             AddLine("Page: ", "DarkGray");
             AddText(group.pagination + 1 + "");
             AddText(" / ", "DarkGray");
-            AddText(pages + "");
+            AddText(group.maxPagination() + "");
             AddSmallButton("OtherNextPage", (h) =>
             {
-                if (group.pagination < pages - 1)
+                if (group.pagination < group.maxPagination() - 1)
                 {
                     Sound.PlaySound("DesktopChangePage", 0.4f);
                     group.pagination++;

@@ -9,7 +9,6 @@ using static Root.RegionBackgroundType;
 using static GameSettings;
 
 using static InputLine;
-using UnityEngine.TextCore.Text;
 
 public class Window : MonoBehaviour
 {

@@ -2478,11 +2478,25 @@
         ],
         "effects": [
           {
+            "SoundEffect": "AbilitySmiteCast",
+            "ShatterType": "Central",
+            "ShatterTarget": "Effector",
+            "ShatterDegree": "0.3",
+            "ShatterDensity": "1",
+            "ShatterSpeed": "2"
+          },
+          {
             "Effect": "Damage",
             "Affect": "Other",
             "PowerType": "Spell",
             "PowerSource": "Effector",
-            "PowerScale": "1.5"
+            "PowerScale": "1.5",
+            "AnimationType": "Missile",
+            "ShatterType": "Directional",
+            "ShatterTarget": "Other",
+            "SoundEffect": "AbilitySmiteImpact",
+            "AnimationSpeed": "1,5",
+            "AnimationArc": "20"
           },
           {
             "Effect": "EndTurn"

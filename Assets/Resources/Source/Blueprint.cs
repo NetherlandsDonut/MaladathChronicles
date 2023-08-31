@@ -26,7 +26,6 @@ using static SiteHostileArea;
 using static SiteInstance;
 using static SiteComplex;
 using static SiteTown;
-using UnityEngine.Rendering.PostProcessing;
 
 public class Blueprint
 {
@@ -911,7 +910,11 @@ public class Blueprint
             boardBackground.transform.parent = CDesktop.LBWindow.transform;
             boardBackground.transform.localPosition = new Vector2(-17, 17);
             boardBackground.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Textures/BoardBackground" + Board.board.field.GetLength(0) + "x" + Board.board.field.GetLength(1));
-            boardBackground.GetComponent<SpriteMask>().sprite = Resources.Load<Sprite>("Sprites/Textures/BoardMask" + Board.board.field.GetLength(0) + "x" + Board.board.field.GetLength(1));
+            var mask = boardBackground.GetComponent<SpriteMask>();
+            mask.sprite = Resources.Load<Sprite>("Sprites/Textures/BoardMask" + Board.board.field.GetLength(0) + "x" + Board.board.field.GetLength(1));
+            mask.isCustomRangeActive = true;
+            mask.frontSortingLayerID = SortingLayer.NameToID("Missile");
+            mask.backSortingLayerID = SortingLayer.NameToID("Default");
             boardBackground = new GameObject("BoardInShadow", typeof(SpriteRenderer));
             boardBackground.transform.parent = CDesktop.LBWindow.transform;
             boardBackground.transform.localPosition = new Vector2(-17, 17);
@@ -2026,7 +2029,7 @@ public class Blueprint
         }),
         new("ObjectManagerHostileAreas", () => {
             SetAnchor(TopLeft);
-            AddRegionGroup();
+            AddRegionGroup(() => areasSearch.Count);
             SetRegionGroupWidth(171);
             SetRegionGroupHeight(358);
             if (area != null)
@@ -2061,9 +2064,7 @@ public class Blueprint
                 AddInputLine(String.search, InputType.Everything);
             });
             var regionGroup = CDesktop.LBWindow.LBRegionGroup;
-            var max = Math.Ceiling(areasSearch.Count / 10.0);
-            if (max < 1) max = 1;
-            AddPaginationLine(regionGroup, max);
+            AddPaginationLine(regionGroup);
             for (int i = 0; i < 10; i++)
             {
                 var index = i;
@@ -2219,7 +2220,7 @@ public class Blueprint
         }),
         new("ObjectManagerInstances", () => {
             SetAnchor(TopLeft);
-            AddRegionGroup();
+            AddRegionGroup(() => instancesSearch.Count);
             SetRegionGroupWidth(171);
             SetRegionGroupHeight(358);
             if (instance != null)
@@ -2254,9 +2255,7 @@ public class Blueprint
                 AddInputLine(String.search, InputType.Everything);
             });
             var regionGroup = CDesktop.LBWindow.LBRegionGroup;
-            var max = Math.Ceiling(instancesSearch.Count / 10.0);
-            if (max < 1) max = 1;
-            AddPaginationLine(regionGroup, max);
+            AddPaginationLine(regionGroup);
             for (int i = 0; i < 10; i++)
             {
                 var index = i;
@@ -2376,7 +2375,7 @@ public class Blueprint
         }),
         new("ObjectManagerComplexes", () => {
             SetAnchor(TopLeft);
-            AddRegionGroup();
+            AddRegionGroup(() => complexesSearch.Count);
             SetRegionGroupWidth(171);
             SetRegionGroupHeight(358);
             if (complex != null)
@@ -2413,15 +2412,13 @@ public class Blueprint
                 AddInputLine(String.search, InputType.Everything);
             });
             var regionGroup = CDesktop.LBWindow.LBRegionGroup;
-            var max = Math.Ceiling(complexesSearch.Count / 10.0);
-            if (max < 1) max = 1;
-            AddPaginationLine(regionGroup, max);
-            for (int i = 0; i < 10; i++)
+            AddPaginationLine(regionGroup);
+            for (int i = 0; i < regionGroup.perPage; i++)
             {
                 var index = i;
                 AddButtonRegion(() =>
                 {
-                    if (complexesSearch.Count > index + 10 * regionGroup.pagination)
+                    if (complexesSearch.Count > index + regionGroup.perPage * regionGroup.pagination)
                     {
                         SetRegionBackground(RegionBackgroundType.Button);
                         var foo = complexesSearch[index + 10 * regionGroup.pagination];
@@ -2438,7 +2435,7 @@ public class Blueprint
                 {
                     area = null;
                     instance = null;
-                    complex = complexesSearch[index + 10 * regionGroup.pagination];
+                    complex = complexesSearch[index + regionGroup.perPage * regionGroup.pagination];
                     SetDesktopBackground("Areas/Complex" + complex.name.Replace("'", "").Replace(".", "").Replace(" ", ""));
                     CloseWindow("ObjectManagerComplex");
                     SpawnWindowBlueprint("ObjectManagerComplex");
@@ -2482,7 +2479,7 @@ public class Blueprint
         }),
         new("ObjectManagerAmbienceList", () => {
             SetAnchor(TopLeft);
-            AddRegionGroup();
+            AddRegionGroup(() => Assets.assets.ambience.Count);
             SetRegionGroupWidth(171);
             SetRegionGroupHeight(358);
             AddHeaderRegion(() =>
@@ -2511,15 +2508,13 @@ public class Blueprint
                 AddInputLine(String.search, InputType.Everything);
             });
             var regionGroup = CDesktop.LBWindow.LBRegionGroup;
-            var max = Math.Ceiling(Assets.assets.ambience.Count / 10.0);
-            if (max < 1) max = 1;
-            AddPaginationLine(regionGroup, max);
-            for (int i = 0; i < 10; i++)
+            AddPaginationLine(regionGroup);
+            for (int i = 0; i < regionGroup.perPage; i++)
             {
                 var index = i;
                 AddButtonRegion(() =>
                 {
-                    if (Assets.assets.ambience.Count > index + 10 * regionGroup.pagination)
+                    if (Assets.assets.ambience.Count > index + regionGroup.perPage * regionGroup.pagination)
                     {
                         SetRegionBackground(RegionBackgroundType.Button);
                         var foo = Assets.assets.ambience[index + 10 * regionGroup.pagination];
@@ -2566,7 +2561,7 @@ public class Blueprint
         }),
         new("ObjectManagerSoundsList", () => {
             SetAnchor(TopLeft);
-            AddRegionGroup();
+            AddRegionGroup(() => Assets.assets.sounds.Count);
             SetRegionGroupWidth(171);
             SetRegionGroupHeight(358);
             AddHeaderRegion(() =>
@@ -2591,18 +2586,16 @@ public class Blueprint
                 AddInputLine(String.search, InputType.Everything);
             });
             var regionGroup = CDesktop.LBWindow.LBRegionGroup;
-            var max = Math.Ceiling(Assets.assets.sounds.Count / 10.0);
-            if (max < 1) max = 1;
-            AddPaginationLine(regionGroup, max);
-            for (int i = 0; i < 10; i++)
+            AddPaginationLine(regionGroup);
+            for (int i = 0; i < regionGroup.perPage; i++)
             {
                 var index = i;
                 AddButtonRegion(() =>
                 {
-                    if (Assets.assets.sounds.Count > index + 10 * regionGroup.pagination)
+                    if (Assets.assets.sounds.Count > index + regionGroup.perPage * regionGroup.pagination)
                     {
                         SetRegionBackground(RegionBackgroundType.Button);
-                        var foo = Assets.assets.sounds[index + 10 * regionGroup.pagination];
+                        var foo = Assets.assets.sounds[index + regionGroup.perPage * regionGroup.pagination];
                         AddLine(foo);
                         AddSmallButton("OtherSound", (h) =>
                         {
@@ -2617,8 +2610,8 @@ public class Blueprint
                 },
                 (h) =>
                 {
-                    var foo = Assets.assets.sounds[index + 10 * regionGroup.pagination];
-                    CloseWindow("ObjectManagerAmbienceList");
+                    var foo = Assets.assets.sounds[index + regionGroup.perPage * regionGroup.pagination];
+                    CloseWindow("ObjectManagerSoundsList");
                     if (abilityEvent != null)
                     {
                         var temp = abilityEvent.effects[selectedEffect];
@@ -2637,7 +2630,7 @@ public class Blueprint
         }),
         new("ObjectManagerItemIconList", () => {
             SetAnchor(TopLeft);
-            AddRegionGroup();
+            AddRegionGroup(() => Assets.assets.itemIcons.Count);
             SetRegionGroupWidth(171);
             SetRegionGroupHeight(358);
             AddHeaderRegion(() =>
@@ -2663,15 +2656,13 @@ public class Blueprint
                 });
             });
             var regionGroup = CDesktop.LBWindow.LBRegionGroup;
-            var max = Math.Ceiling(Assets.assets.itemIcons.Count / 10.0);
-            if (max < 1) max = 1;
-            AddPaginationLine(regionGroup, max);
-            for (int i = 0; i < 10; i++)
+            AddPaginationLine(regionGroup);
+            for (int i = 0; i < regionGroup.perPage; i++)
             {
                 var index = i;
                 AddButtonRegion(() =>
                 {
-                    if (Assets.assets.itemIcons.Count > index + 10 * regionGroup.pagination)
+                    if (Assets.assets.itemIcons.Count > index + regionGroup.perPage * regionGroup.pagination)
                     {
                         SetRegionBackground(RegionBackgroundType.Button);
                         var foo = Assets.assets.itemIcons[index + 10 * regionGroup.pagination];
@@ -2703,7 +2694,7 @@ public class Blueprint
         }),
         new("ObjectManagerAbilityIconList", () => {
             SetAnchor(TopLeft);
-            AddRegionGroup();
+            AddRegionGroup(() => Assets.assets.abilityIcons.Count);
             SetRegionGroupWidth(171);
             SetRegionGroupHeight(358);
             AddHeaderRegion(() =>
@@ -2725,20 +2716,18 @@ public class Blueprint
                 });
             });
             var regionGroup = CDesktop.LBWindow.LBRegionGroup;
-            var max = Math.Ceiling(Assets.assets.abilityIcons.Count / 10.0);
-            if (max < 1) max = 1;
-            AddPaginationLine(regionGroup, max);
-            for (int i = 0; i < 10; i++)
+            AddPaginationLine(regionGroup);
+            for (int i = 0; i < regionGroup.perPage; i++)
             {
                 var index = i;
                 AddButtonRegion(() =>
                 {
-                    if (Assets.assets.abilityIcons.Count > index + 10 * regionGroup.pagination)
+                    if (Assets.assets.abilityIcons.Count > index + regionGroup.perPage * regionGroup.pagination)
                     {
                         SetRegionBackground(RegionBackgroundType.Button);
-                        var foo = Assets.assets.abilityIcons[index + 10 * regionGroup.pagination];
+                        var foo = Assets.assets.abilityIcons[index + regionGroup.perPage * regionGroup.pagination];
                         AddLine(foo.Substring(7));
-                        AddSmallButton(Assets.assets.abilityIcons[index + 10 * regionGroup.pagination].Replace(".png", ""), (h) => { });
+                        AddSmallButton(Assets.assets.abilityIcons[index + regionGroup.perPage * regionGroup.pagination].Replace(".png", ""), (h) => { });
                     }
                     else
                     {
@@ -2748,7 +2737,7 @@ public class Blueprint
                 },
                 (h) =>
                 {
-                    var foo = Assets.assets.abilityIcons[index + 10 * regionGroup.pagination];
+                    var foo = Assets.assets.abilityIcons[index + regionGroup.perPage * regionGroup.pagination];
                     CloseWindow("ObjectManagerAbilityIconList");
                     if (ability != null)
                     {
@@ -2771,7 +2760,7 @@ public class Blueprint
         }),
         new("ObjectManagerPortraitList", () => {
             SetAnchor(TopLeft);
-            AddRegionGroup();
+            AddRegionGroup(() => Assets.assets.portraits.Count);
             SetRegionGroupWidth(171);
             SetRegionGroupHeight(358);
             AddHeaderRegion(() =>
@@ -2795,15 +2784,13 @@ public class Blueprint
                 AddInputLine(String.search, InputType.Everything);
             });
             var regionGroup = CDesktop.LBWindow.LBRegionGroup;
-            var max = Math.Ceiling(Assets.assets.portraits.Count / 10.0);
-            if (max < 1) max = 1;
-            AddPaginationLine(regionGroup, max);
-            for (int i = 0; i < 10; i++)
+            AddPaginationLine(regionGroup);
+            for (int i = 0; i < regionGroup.perPage; i++)
             {
                 var index = i;
                 AddButtonRegion(() =>
                 {
-                    if (Assets.assets.portraits.Count > index + 10 * regionGroup.pagination)
+                    if (Assets.assets.portraits.Count > index + regionGroup.perPage * regionGroup.pagination)
                     {
                         SetRegionBackground(RegionBackgroundType.Button);
                         var foo = Assets.assets.portraits[index + 10 * regionGroup.pagination];
@@ -2818,7 +2805,7 @@ public class Blueprint
                 },
                 (h) =>
                 {
-                    var foo = Assets.assets.portraits[index + 10 * regionGroup.pagination];
+                    var foo = Assets.assets.portraits[index + regionGroup.perPage * regionGroup.pagination];
                     CloseWindow("ObjectManagerPortraitList");
                     if (race != null)
                     {
@@ -2835,7 +2822,7 @@ public class Blueprint
         }),
         new("ObjectManagerEffectList", () => {
             SetAnchor(TopLeft);
-            AddRegionGroup();
+            AddRegionGroup(() => possibleEffects.Count);
             SetRegionGroupWidth(171);
             SetRegionGroupHeight(358);
             AddHeaderRegion(() =>
@@ -2859,20 +2846,17 @@ public class Blueprint
                 AddInputLine(String.search, InputType.Everything);
             });
             var regionGroup = CDesktop.LBWindow.LBRegionGroup;
-            var max = Math.Ceiling(possibleEffects.Count / 10.0);
-            if (max < 1) max = 1;
-            AddPaginationLine(regionGroup, max);
-            for (int i = 0; i < 10; i++)
+            AddPaginationLine(regionGroup);
+            for (int i = 0; i < regionGroup.perPage; i++)
             {
                 var index = i;
                 AddButtonRegion(() =>
                 {
-                    if (possibleEffects.Count > index + 10 * regionGroup.pagination)
+                    if (possibleEffects.Count > index + regionGroup.perPage * regionGroup.pagination)
                     {
                         SetRegionBackground(RegionBackgroundType.Button);
                         var foo = possibleEffects[index + 10 * regionGroup.pagination];
                         AddLine(foo);
-                        AddSmallButton(possibleEffects[index + 10 * regionGroup.pagination], (h) => { });
                     }
                     else
                     {
@@ -2898,7 +2882,7 @@ public class Blueprint
         }),
         new("ObjectManagerTriggerList", () => {
             SetAnchor(TopLeft);
-            AddRegionGroup();
+            AddRegionGroup(() => possibleTriggers.Count);
             SetRegionGroupWidth(171);
             SetRegionGroupHeight(358);
             AddHeaderRegion(() =>
@@ -2922,15 +2906,13 @@ public class Blueprint
                 AddInputLine(String.search, InputType.Everything);
             });
             var regionGroup = CDesktop.LBWindow.LBRegionGroup;
-            var max = Math.Ceiling(possibleTriggers.Count / 10.0);
-            if (max < 1) max = 1;
-            AddPaginationLine(regionGroup, max);
-            for (int i = 0; i < 10; i++)
+            AddPaginationLine(regionGroup);
+            for (int i = 0; i < regionGroup.perPage; i++)
             {
                 var index = i;
                 AddButtonRegion(() =>
                 {
-                    if (possibleTriggers.Count > index + 10 * regionGroup.pagination)
+                    if (possibleTriggers.Count > index + regionGroup.perPage * regionGroup.pagination)
                     {
                         SetRegionBackground(RegionBackgroundType.Button);
                         var foo = possibleTriggers[index + 10 * regionGroup.pagination];
@@ -2984,6 +2966,7 @@ public class Blueprint
                 {
                     PlaySound("DesktopChangePage", 0.4f);
                     SpawnWindowBlueprint("ObjectManagerEventEffects");
+                    CloseWindow("ObjectManagerEventTrigger");
                     CloseWindow(h.window);
                 });
             });
@@ -3106,7 +3089,7 @@ public class Blueprint
                 {
                     PlaySound("DesktopChangePage", 0.4f);
                     SpawnWindowBlueprint("ObjectManagerEventTriggers");
-                    regionGroup.pagination = 0;
+                    CloseWindow("ObjectManagerEventEffects");
                     CloseWindow(h.window);
                 });
             });
@@ -3115,11 +3098,36 @@ public class Blueprint
                 AddButtonRegion(() =>
                 {
                     var type = effect.ContainsKey("Effect") ? effect["Effect"] : ""; 
-                    AddLine("Effect #" + (abilityEvent.effects.IndexOf(effect) + 1) + (type == "" ? "" : ": " + type));
+                    AddLine("Effect #" + (abilityEvent.effects.IndexOf(effect) + 1) + (type == "" ? (effect.ContainsKey("SoundEffect") && effect["SoundEffect"] != "None" ? ": SoundEffect" : "") : ": " + type));
+                    AddSmallButton("OtherCopy", (h) =>
+                    {
+                        abilityEvent.effects.Insert(abilityEvent.effects.IndexOf(effect) + 1, effect.ToDictionary(x => x.Key, x => x.Value));
+                        h.window.Respawn();
+                    });
+                    if (abilityEvent.effects[0] != effect) 
+                        AddSmallButton("OtherMoveUp", (h) =>
+                        {
+                            var index = abilityEvent.effects.IndexOf(effect);
+                            abilityEvent.effects.RemoveAt(index);
+                            abilityEvent.effects.Insert(index - 1, effect);
+                            h.window.Respawn();
+                        });
                 },
                 (h) =>
                 {
                     selectedEffect = abilityEvent.effects.IndexOf(effect);
+                    String.chance.Set(effect.ContainsKey("Chance") ? effect["Chance"] : "0");
+                    String.chanceBase.Set(effect.ContainsKey("ChanceBase") ? effect["ChanceBase"] : "100");
+                    String.chanceScale.Set(effect.ContainsKey("ChanceScale") ? effect["ChanceScale"] : "None");
+                    String.animationArc.Set(effect.ContainsKey("AnimationArc") ? effect["AnimationArc"] : "20");
+                    String.animationSpeed.Set(effect.ContainsKey("AnimationSpeed") ? effect["AnimationSpeed"] : "1");
+                    String.shatterDensity.Set(effect.ContainsKey("ShatterDensity") ? effect["ShatterDensity"] : "2");
+                    String.shatterDegree.Set(effect.ContainsKey("ShatterDegree") ? effect["ShatterDegree"] : "0.7");
+                    String.shatterSpeed.Set(effect.ContainsKey("ShatterSpeed") ? effect["ShatterSpeed"] : "4");
+                    String.await.Set(effect.ContainsKey("Await") ? effect["Await"] : "0");
+                    String.powerScale.Set(effect.ContainsKey("PowerScale") ? effect["PowerScale"] : "1");
+                    String.resourceAmount.Set(effect.ContainsKey("ResourceAmount") ? effect["ResourceAmount"] : "1");
+                    String.buffDuration.Set(effect.ContainsKey("BuffDuration") ? effect["BuffDuration"] : "3");
                     Respawn("ObjectManagerEventEffect");
                 });
             }
@@ -3199,7 +3207,7 @@ public class Blueprint
                     effect["Affect"] = "Effector";
                 h.window.Respawn();
             });
-            if (effect.ContainsKey("Affect") && (effect["Affect"] == "Damage" || effect["Affect"] == "Heal"))
+            if (effect.ContainsKey("Effect") && (effect["Effect"] == "Damage" || effect["Effect"] == "Heal"))
             {
                 AddPaddingRegion(() =>
                 {
@@ -3228,7 +3236,7 @@ public class Blueprint
                 AddPaddingRegion(() =>
                 {
                     AddLine("Power type:", "DarkGray");
-                    AddSmallButton("OtherOtherReverse", (h) =>
+                    AddSmallButton("OtherReverse", (h) =>
                     {
                         if (effect.ContainsKey("PowerType"))
                             effect["PowerType"] = "None";
@@ -3254,21 +3262,94 @@ public class Blueprint
                 AddPaddingRegion(() =>
                 {
                     AddLine("Power scale:", "DarkGray");
-                    AddSmallButton("OtherOtherReverse", (h) =>
+                    AddInputLine(String.powerScale, InputType.Decimal);
+                    AddSmallButton("OtherReverse", (h) =>
                     {
                         if (effect.ContainsKey("PowerScale"))
-                            effect["PowerScale"] = "1.0";
+                            effect["PowerScale"] = "1,0";
+                        String.powerScale.Set("1,0");
                         h.window.Respawn();
                     });
                 });
-                AddInputRegion(String.powerScale, InputType.Decimal);
             }
-            else if (effect.ContainsKey("Affect") && (effect["Affect"] == "GiveResource" || effect["Affect"] == "DetractResource"))
+            else if (effect.ContainsKey("Effect") && effect["Effect"] == "RemoveBuff")
+            {
+                AddPaddingRegion(() =>
+                {
+                    AddLine("Buff:", "DarkGray");
+                    AddSmallButton("OtherReverse", (h) =>
+                    {
+                        if (effect.ContainsKey("BuffName"))
+                            effect["BuffName"] = "None";
+                        h.window.Respawn();
+                    });
+                });
+                AddButtonRegion(() =>
+                {
+                    AddLine(effect.ContainsKey("BuffName") ? effect["BuffName"] : "None");
+                    if (effect.ContainsKey("BuffName") && effect["BuffName"] != "None")
+                        AddSmallButton(buffs.Find(x => x.name == effect["BuffName"]).icon, (h) => { });
+                },
+                (h) =>
+                {
+                    if (!CDesktop.windows.Exists(x => x.title == "ObjectManagerBuffs"))
+                    {
+                        CloseWindow("ObjectManagerEventEffects");
+                        CloseWindow("ObjectManagerSoundsList");
+                        String.search.Set("");
+                        buffsSearch = buffs;
+                        SpawnWindowBlueprint("ObjectManagerBuffs");
+                    }
+                });
+            }
+            else if (effect.ContainsKey("Effect") && effect["Effect"] == "AddBuff")
+            {
+                AddPaddingRegion(() =>
+                {
+                    AddLine("Buff:", "DarkGray");
+                    AddSmallButton("OtherReverse", (h) =>
+                    {
+                        if (effect.ContainsKey("BuffName"))
+                            effect["BuffName"] = "None";
+                        h.window.Respawn();
+                    });
+                });
+                AddButtonRegion(() =>
+                {
+                    AddLine(effect.ContainsKey("BuffName") ? effect["BuffName"] : "None");
+                    if (effect.ContainsKey("BuffName") && effect["BuffName"] != "None")
+                        AddSmallButton(buffs.Find(x => x.name == effect["BuffName"]).icon, (h) => { });
+                },
+                (h) =>
+                {
+                    if (!CDesktop.windows.Exists(x => x.title == "ObjectManagerBuffs"))
+                    {
+                        CloseWindow("ObjectManagerEventEffects");
+                        CloseWindow("ObjectManagerSoundsList");
+                        String.search.Set("");
+                        buffsSearch = buffs;
+                        Respawn("ObjectManagerBuffs");
+                    }
+                });
+                AddPaddingRegion(() =>
+                {
+                    AddLine("Buff duration:", "DarkGray");
+                    AddInputLine(String.buffDuration, InputType.Numbers);
+                    AddSmallButton("OtherReverse", (h) =>
+                    {
+                        if (effect.ContainsKey("PowerScale"))
+                            effect["PowerScale"] = "3";
+                        String.buffDuration.Set("3");
+                        h.window.Respawn();
+                    });
+                });
+            }
+            else if (effect.ContainsKey("Effect") && (effect["Effect"] == "GiveResource" || effect["Effect"] == "DetractResource"))
             {
                 AddPaddingRegion(() =>
                 {
                     AddLine("Resource type:", "DarkGray");
-                    AddSmallButton("OtherOtherReverse", (h) =>
+                    AddSmallButton("OtherReverse", (h) =>
                     {
                         if (effect.ContainsKey("ResourceType"))
                             effect["ResourceType"] = "None";
@@ -3310,26 +3391,98 @@ public class Blueprint
                 AddPaddingRegion(() =>
                 {
                     AddLine("Resource amount:", "DarkGray");
-                    AddSmallButton("OtherOtherReverse", (h) =>
+                    AddInputLine(String.resourceAmount, InputType.Numbers);
+                    AddSmallButton("OtherReverse", (h) =>
                     {
                         if (effect.ContainsKey("ResourceAmount"))
                             effect["ResourceAmount"] = "1";
+                        String.resourceAmount.Set("1");
                         h.window.Respawn();
                     });
                 });
-                AddInputRegion(String.resourceAmount, InputType.Numbers);
             }
             AddPaddingRegion(() =>
             {
                 AddLine("Await:", "DarkGray");
-                AddSmallButton("OtherOtherReverse", (h) =>
+                AddInputLine(String.await, InputType.Numbers);
+                AddSmallButton("OtherReverse", (h) =>
                 {
                     if (effect.ContainsKey("Await"))
                         effect["Await"] = "0";
+                    String.await.Set("0");
                     h.window.Respawn();
                 });
             });
-            AddInputRegion(String.await, InputType.Numbers);
+            AddPaddingRegion(() =>
+            {
+                AddLine("Chance base:", "DarkGray");
+                AddInputLine(String.chanceBase, InputType.Numbers);
+                AddSmallButton("OtherReverse", (h) =>
+                {
+                    if (effect.ContainsKey("ChanceBase"))
+                        effect["ChanceBase"] = "100";
+                    String.chanceBase.Set("100");
+                    h.window.Respawn();
+                });
+            });
+            AddPaddingRegion(() =>
+            {
+                AddLine("Chance:", "DarkGray");
+                AddInputLine(String.chance, InputType.Numbers);
+                AddSmallButton("OtherReverse", (h) =>
+                {
+                    if (effect.ContainsKey("Chance"))
+                        effect["Chance"] = "0";
+                    String.chance.Set("0");
+                    h.window.Respawn();
+                });
+            });
+            AddPaddingRegion(() =>
+            {
+                AddLine("Chance scale:", "DarkGray");
+                AddSmallButton("OtherReverse", (h) =>
+                {
+                    if (effect.ContainsKey("ChanceScale"))
+                        effect["ChanceScale"] = "None";
+                    h.window.Respawn();
+                });
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine(effect.ContainsKey("ChanceScale") ? effect["ChanceScale"] : "None");
+            },
+            (h) =>
+            {
+                if (!effect.ContainsKey("ChanceScale"))
+                    effect.Add("ChanceScale", "Fire Mastery");
+                else if (effect["ChanceScale"] == "Fire Mastery")
+                    effect["ChanceScale"] = "Earth Mastery";
+                else if (effect["ChanceScale"] == "Earth Mastery")
+                    effect["ChanceScale"] = "Water Mastery";
+                else if (effect["ChanceScale"] == "Water Mastery")
+                    effect["ChanceScale"] = "Air Mastery";
+                else if (effect["ChanceScale"] == "Air Mastery")
+                    effect["ChanceScale"] = "Frost Mastery";
+                else if (effect["ChanceScale"] == "Frost Mastery")
+                    effect["ChanceScale"] = "Decay Mastery";
+                else if (effect["ChanceScale"] == "Decay Mastery")
+                    effect["ChanceScale"] = "Shadow Mastery";
+                else if (effect["ChanceScale"] == "Shadow Mastery")
+                    effect["ChanceScale"] = "Order Mastery";
+                else if (effect["ChanceScale"] == "Order Mastery")
+                    effect["ChanceScale"] = "Arcane Mastery";
+                else if (effect["ChanceScale"] == "Arcane Mastery")
+                    effect["ChanceScale"] = "Lightning Mastery";
+                else if (effect["ChanceScale"] == "Lightning Mastery")
+                    effect["ChanceScale"] = "Strength";
+                else if (effect["ChanceScale"] == "Strength")
+                    effect["ChanceScale"] = "Agility";
+                else if (effect["ChanceScale"] == "Agility")
+                    effect["ChanceScale"] = "Intellect";
+                else if (effect["ChanceScale"] == "Intellect")
+                    effect["ChanceScale"] = "Fire Mastery";
+                h.window.Respawn();
+            });
             AddPaddingRegion(() => { SetRegionAsGroupExtender(); });
             AddRegionGroup();
             SetRegionGroupWidth(148);
@@ -3358,6 +3511,7 @@ public class Blueprint
                 if (!CDesktop.windows.Exists(x => x.title == "ObjectManagerSoundsList"))
                 {
                     CloseWindow("ObjectManagerEventEffects");
+                    CloseWindow("ObjectManagerBuffs");
                     Respawn("ObjectManagerSoundsList");
                 }
             });
@@ -3390,25 +3544,27 @@ public class Blueprint
                 AddPaddingRegion(() =>
                 {
                     AddLine("Animation speed:", "DarkGray");
+                    AddInputLine(String.animationSpeed, InputType.Decimal);
                     AddSmallButton("OtherReverse", (h) =>
                     {
                         if (effect.ContainsKey("AnimationSpeed"))
-                            effect["AnimationSpeed"] = "1.5";
+                            effect["AnimationSpeed"] = "1";
+                        String.animationSpeed.Set("1");
                         h.window.Respawn();
                     });
                 });
-                AddInputRegion(String.animationSpeed, InputType.Decimal);
                 AddPaddingRegion(() =>
                 {
                     AddLine("Animation arc:", "DarkGray");
+                    AddInputLine(String.animationArc, InputType.Decimal);
                     AddSmallButton("OtherReverse", (h) =>
                     {
                         if (effect.ContainsKey("AnimationArc"))
-                            effect["AnimationArc"] = "10";
+                            effect["AnimationArc"] = "20";
+                        String.animationArc.Set("20");
                         h.window.Respawn();
                     });
                 });
-                AddInputRegion(String.animationArc, InputType.Decimal);
             }
             AddPaddingRegion(() =>
             {
@@ -3465,44 +3621,38 @@ public class Blueprint
                 AddPaddingRegion(() =>
                 {
                     AddLine("Shatter degree:", "DarkGray");
+                    AddInputLine(String.shatterDegree, InputType.Decimal);
                     AddSmallButton("OtherReverse", (h) =>
                     {
                         if (effect.ContainsKey("ShatterDegree"))
-                            effect["ShatterDegree"] = "0.7";
+                            effect["ShatterDegree"] = "0,7";
+                        String.shatterDegree.Set("0,7");
                         h.window.Respawn();
                     });
-                });
-                AddPaddingRegion(() =>
-                {
-                    AddInputLine(String.shatterDegree, InputType.Decimal);
                 });
                 AddPaddingRegion(() =>
                 {
                     AddLine("Shatter density:", "DarkGray");
+                    AddInputLine(String.shatterDensity, InputType.Numbers);
                     AddSmallButton("OtherReverse", (h) =>
                     {
                         if (effect.ContainsKey("ShatterDensity"))
                             effect["ShatterDensity"] = "2";
+                        String.shatterDensity.Set("2");
                         h.window.Respawn();
                     });
-                });
-                AddPaddingRegion(() =>
-                {
-                    AddInputLine(String.shatterDensity, InputType.Numbers);
                 });
                 AddPaddingRegion(() =>
                 {
                     AddLine("Shatter speed:", "DarkGray");
+                    AddInputLine(String.shatterSpeed, InputType.Decimal);
                     AddSmallButton("OtherReverse", (h) =>
                     {
                         if (effect.ContainsKey("ShatterSpeed"))
                             effect["ShatterSpeed"] = "4";
+                        String.shatterSpeed.Set("4");
                         h.window.Respawn();
                     });
-                });
-                AddPaddingRegion(() =>
-                {
-                    AddInputLine(String.shatterSpeed, InputType.Decimal);
                 });
             }
             AddPaddingRegion(() => { SetRegionAsGroupExtender(); });
@@ -3522,8 +3672,7 @@ public class Blueprint
                 });
             });
             var regionGroup = CDesktop.LBWindow.LBRegionGroup;
-            var max = 1;
-            AddPaginationLine(regionGroup, max);
+            AddPaginationLine(regionGroup);
             AddButtonRegion(() =>
             {
                 AddLine("HostileArea");
@@ -3576,8 +3725,7 @@ public class Blueprint
                 });
             });
             var regionGroup = CDesktop.LBWindow.LBRegionGroup;
-            var max = 1;
-            AddPaginationLine(regionGroup, max);
+            AddPaginationLine(regionGroup);
             AddButtonRegion(() =>
             {
                 AddLine("Poor");
@@ -3738,7 +3886,7 @@ public class Blueprint
         }),
         new("ObjectManagerItems", () => {
             SetAnchor(TopLeft);
-            AddRegionGroup();
+            AddRegionGroup(() => itemsSearch.Count);
             SetRegionGroupWidth(171);
             SetRegionGroupHeight(358);
             if (item != null)
@@ -3774,9 +3922,7 @@ public class Blueprint
                 AddInputLine(String.search, InputType.Everything);
             });
             var regionGroup = CDesktop.LBWindow.LBRegionGroup;
-            var max = Math.Ceiling(itemsSearch.Count / 10.0);
-            if (max < 1) max = 1;
-            AddPaginationLine(regionGroup, max);
+            AddPaginationLine(regionGroup);
             for (int i = 0; i < 10; i++)
             {
                 var index = i;
@@ -3885,12 +4031,21 @@ public class Blueprint
                     SpawnWindowBlueprint("ObjectManagerRarityList");
                 }
             });
-            AddPaddingRegion(() => { AddLine("Price:", "DarkGray"); });
-            AddInputRegion(String.price, InputType.Decimal);
-            AddPaddingRegion(() => { AddLine("Item power:", "DarkGray"); });
-            AddInputRegion(String.itemPower, InputType.Numbers);
-            AddPaddingRegion(() => { AddLine("Required level:", "DarkGray"); });
-            AddInputRegion(String.requiredLevel, InputType.Numbers);
+            AddPaddingRegion(() =>
+            {
+                AddLine("Price:", "DarkGray");
+                AddInputLine(String.price, InputType.Decimal);
+            });
+            AddPaddingRegion(() =>
+            {
+                AddLine("Item power:", "DarkGray");
+                AddInputLine(String.itemPower, InputType.Numbers);
+            });
+            AddPaddingRegion(() =>
+            {
+                AddLine("Required level:", "DarkGray");
+                AddInputLine(String.requiredLevel, InputType.Numbers);
+            });
             AddPaddingRegion(() => { });
         }),
         new("ItemSetsSort", () => {
@@ -3945,7 +4100,7 @@ public class Blueprint
         }),
         new("ObjectManagerItemSets", () => {
             SetAnchor(TopLeft);
-            AddRegionGroup();
+            AddRegionGroup(() => itemSetsSearch.Count, 5);
             SetRegionGroupWidth(171);
             SetRegionGroupHeight(358);
             if (itemSet != null)
@@ -3980,9 +4135,7 @@ public class Blueprint
                 AddInputLine(String.search, InputType.Everything);
             });
             var regionGroup = CDesktop.LBWindow.LBRegionGroup;
-            var max = Math.Ceiling(itemSetsSearch.Count / 5.0);
-            if (max < 1) max = 1;
-            AddPaginationLine(regionGroup, max);
+            AddPaginationLine(regionGroup);
             for (int i = 0; i < 5; i++)
             {
                 var index = i;
@@ -4112,7 +4265,7 @@ public class Blueprint
         }),
         new("ObjectManagerAbilities", () => {
             SetAnchor(TopLeft);
-            AddRegionGroup();
+            AddRegionGroup(() => abilitiesSearch.Count);
             SetRegionGroupWidth(171);
             SetRegionGroupHeight(358);
             if (ability != null)
@@ -4147,9 +4300,7 @@ public class Blueprint
                 AddInputLine(String.search, InputType.Everything);
             });
             var regionGroup = CDesktop.LBWindow.LBRegionGroup;
-            var max = Math.Ceiling(abilitiesSearch.Count / 10.0);
-            if (max < 1) max = 1;
-            AddPaginationLine(regionGroup, max);
+            AddPaginationLine(regionGroup);
             for (int i = 0; i < 10; i++)
             {
                 var index = i;
@@ -4350,7 +4501,7 @@ public class Blueprint
         }),
         new("ObjectManagerBuffs", () => {
             SetAnchor(TopLeft);
-            AddRegionGroup();
+            AddRegionGroup(() => buffsSearch.Count);
             SetRegionGroupWidth(171);
             SetRegionGroupHeight(358);
             if (buff != null)
@@ -4385,9 +4536,7 @@ public class Blueprint
                 AddInputLine(String.search, InputType.Everything);
             });
             var regionGroup = CDesktop.LBWindow.LBRegionGroup;
-            var max = Math.Ceiling(buffsSearch.Count / 10.0);
-            if (max < 1) max = 1;
-            AddPaginationLine(regionGroup, max);
+            AddPaginationLine(regionGroup);
             for (int i = 0; i < 10; i++)
             {
                 var index = i;
@@ -4409,8 +4558,20 @@ public class Blueprint
                 (h) =>
                 {
                     buff = buffsSearch[index + 10 * regionGroup.pagination];
-                    String.objectName.Set(buff.name);
-                    Respawn("ObjectManagerBuff");
+                    if (abilityEvent != null)
+                    {
+                        if (abilityEvent.effects[selectedEffect].ContainsKey("BuffName"))
+                            abilityEvent.effects[selectedEffect]["BuffName"] = buffsSearch[index + 10 * regionGroup.pagination].name;
+                        else abilityEvent.effects[selectedEffect].Add("BuffName", buffsSearch[index + 10 * regionGroup.pagination].name);
+                        CloseWindow(h.window);
+                        Respawn("ObjectManagerEventEffect");
+                        Respawn("ObjectManagerEventEffects");
+                    }
+                    else
+                    {
+                        String.objectName.Set(buff.name);
+                        Respawn("ObjectManagerBuff");
+                    }
                 },
                 (h) => () =>
                 {
@@ -4560,7 +4721,7 @@ public class Blueprint
         }),
         new("ObjectManagerRaces", () => {
             SetAnchor(TopLeft);
-            AddRegionGroup();
+            AddRegionGroup(() => racesSearch.Count);
             SetRegionGroupWidth(171);
             SetRegionGroupHeight(358);
             if (race != null)
@@ -4595,9 +4756,7 @@ public class Blueprint
                 AddInputLine(String.search, InputType.Everything);
             });
             var regionGroup = CDesktop.LBWindow.LBRegionGroup;
-            var max = Math.Ceiling(racesSearch.Count / 10.0);
-            if (max < 1) max = 1;
-            AddPaginationLine(regionGroup, max);
+            AddPaginationLine(regionGroup);
             for (int i = 0; i < 10; i++)
             {
                 var index = i;
@@ -4731,7 +4890,7 @@ public class Blueprint
         }),
         new("ObjectManagerClasses", () => {
             SetAnchor(TopLeft);
-            AddRegionGroup();
+            AddRegionGroup(() => specsSearch.Count);
             SetRegionGroupWidth(171);
             SetRegionGroupHeight(358);
             if (spec != null)
@@ -4758,9 +4917,7 @@ public class Blueprint
                 AddInputLine(String.search, InputType.Everything);
             });
             var regionGroup = CDesktop.LBWindow.LBRegionGroup;
-            var max = Math.Ceiling(specsSearch.Count / 10.0);
-            if (max < 1) max = 1;
-            AddPaginationLine(regionGroup, max);
+            AddPaginationLine(regionGroup);
             for (int i = 0; i < 10; i++)
             {
                 var index = i;
@@ -5358,199 +5515,199 @@ public class Blueprint
             SetDesktopBackground("Areas/AreaTheCelestialPlanetarium");
             SpawnWindowBlueprint("ObjectManagerHostileAreas");
             AddHotkey(Escape, () => { area = null; areasSearch = null; CloseDesktop("ObjectManagerHostileAreas"); });
-            AddPaginationHotkeys("ObjectManagerHostileAreas", () => areasSearch.Count, 10);
+            AddPaginationHotkeys();
         }),
         new("ObjectManagerInstances", () =>
         {
             SetDesktopBackground("Areas/AreaTheCelestialPlanetarium");
             SpawnWindowBlueprint("ObjectManagerInstances");
             AddHotkey(Escape, () => { instance = null; instancesSearch = null; CloseDesktop("ObjectManagerInstances"); });
-            AddPaginationHotkeys("ObjectManagerInstances", () => instancesSearch.Count, 10);
+            AddPaginationHotkeys();
         }),
         new("ObjectManagerComplexes", () =>
         {
             SetDesktopBackground("Areas/AreaTheCelestialPlanetarium");
             SpawnWindowBlueprint("ObjectManagerComplexes");
             AddHotkey(Escape, () => { complex = null; complexesSearch = null; CloseDesktop("ObjectManagerComplexes"); });
-            AddPaginationHotkeys("ObjectManagerComplexes", () => complexesSearch.Count, 10);
+            AddPaginationHotkeys();
         }),
         new("ObjectManagerRaces", () =>
         {
             SetDesktopBackground("Areas/AreaTheCelestialPlanetarium");
             SpawnWindowBlueprint("ObjectManagerRaces");
             AddHotkey(Escape, () => { race = null; racesSearch = null; CloseDesktop("ObjectManagerRaces"); });
-            AddPaginationHotkeys("ObjectManagerRaces", () => racesSearch.Count, 10, "ObjectManagerPortraitList", () => Assets.assets.portraits.Count);
+            AddPaginationHotkeys();
         }),
         new("ObjectManagerClasses", () =>
         {
             SetDesktopBackground("Areas/AreaTheCelestialPlanetarium");
             SpawnWindowBlueprint("ObjectManagerClasses");
             AddHotkey(Escape, () => { spec = null; specsSearch = null; CloseDesktop("ObjectManagerClasses"); });
-            AddPaginationHotkeys("ObjectManagerClasses", () => specsSearch.Count, 10);
+            AddPaginationHotkeys();
         }),
         new("ObjectManagerAbilities", () =>
         {
             SetDesktopBackground("Areas/AreaTheCelestialPlanetarium");
             SpawnWindowBlueprint("ObjectManagerAbilities");
-            AddHotkey(Escape, () => { ability = null; abilitiesSearch = null; CloseDesktop("ObjectManagerAbilities"); });
-            AddPaginationHotkeys("ObjectManagerAbilities", () => abilitiesSearch.Count, 10, "ObjectManagerAbilityIconList", () => Assets.assets.abilityIcons.Count);
+            AddHotkey(Escape, () => { ability = null; abilitiesSearch = null; abilityEvent = null; CloseDesktop("ObjectManagerAbilities"); });
+            AddPaginationHotkeys();
         }),
         new("ObjectManagerBuffs", () =>
         {
             SetDesktopBackground("Areas/AreaTheCelestialPlanetarium");
             SpawnWindowBlueprint("ObjectManagerBuffs");
             AddHotkey(Escape, () => { buff = null; buffsSearch = null; CloseDesktop("ObjectManagerBuffs"); });
-            AddPaginationHotkeys("ObjectManagerBuffs", () => buffsSearch.Count, 10, "ObjectManagerAbilityIconList", () => Assets.assets.abilityIcons.Count);
+            AddPaginationHotkeys();
         }),
         new("ObjectManagerItems", () =>
         {
             SetDesktopBackground("Areas/AreaTheCelestialPlanetarium");
             SpawnWindowBlueprint("ObjectManagerItems");
             AddHotkey(Escape, () => { item = null; itemsSearch = null; CloseDesktop("ObjectManagerItems"); });
-            AddPaginationHotkeys("ObjectManagerItems", () => itemsSearch.Count, 10, "ObjectManagerAbilityIconList", () => Assets.assets.abilityIcons.Count);
+            AddPaginationHotkeys();
         }),
         new("ObjectManagerItemSets", () =>
         {
             SetDesktopBackground("Areas/AreaTheCelestialPlanetarium");
             SpawnWindowBlueprint("ObjectManagerItemSets");
             AddHotkey(Escape, () => { itemSet = null; itemSetsSearch = null; CloseDesktop("ObjectManagerItemSets"); });
-            AddPaginationHotkeys("ObjectManagerItemSets", () => itemSetsSearch.Count, 5);
+            AddPaginationHotkeys();
         }),
 
         #endregion
     };
 
-    public static void AddPaginationHotkeys(string window1, Func<int> listLength1, int elementsPerPage, string window2 = "NONE", Func<int> listLength2 = null)
+    public static void AddPaginationHotkeys()
     {
         AddHotkey(D, () =>
         {
-            var window = CDesktop.windows.Find(x => x.title == window1);
-            if (window == null) window = CDesktop.windows.Find(x => x.title == window2);
+            var window = CDesktop.windows.Find(x => x.regionGroups.Any(y => y.maxPagination != null));
             if (window == null) return;
-            window.regionGroups[0].pagination += 1;
-            var max = Math.Ceiling((window.title == window2 ? listLength2() : listLength1()) / (double)elementsPerPage);
-            if (window.regionGroups[0].pagination >= max)
-                window.regionGroups[0].pagination = (int)max - 1;
+            var group = window.regionGroups.Find(x => x.maxPagination != null);
+            group.pagination += 1;
+            var max = group.maxPagination();
+            if (group.pagination >= max)
+                group.pagination = max - 1;
             window.Rebuild();
         });
         AddHotkey(D, () =>
         {
-            var window = CDesktop.windows.Find(x => x.title == window1);
-            if (window == null) window = CDesktop.windows.Find(x => x.title == window2);
+            var window = CDesktop.windows.Find(x => x.regionGroups.Any(y => y.maxPagination != null));
             if (window == null) return;
-            window.regionGroups[0].pagination += (int)Math.Round(EuelerGrowth()) / 2;
-            var max = Math.Ceiling((window.title == window2 ? listLength2() : listLength1()) / (double)elementsPerPage);
-            if (window.regionGroups[0].pagination >= max)
-                window.regionGroups[0].pagination = (int)max - 1;
+            var group = window.regionGroups.Find(x => x.maxPagination != null);
+            group.pagination += (int)Math.Round(EuelerGrowth()) / 2;
+            var max = group.maxPagination();
+            if (group.pagination >= max)
+                group.pagination = max - 1;
             window.Rebuild();
         }, false);
         AddHotkey(A, () =>
         {
-            var window = CDesktop.windows.Find(x => x.title == window1);
-            if (window == null) window = CDesktop.windows.Find(x => x.title == window2);
+            var window = CDesktop.windows.Find(x => x.regionGroups.Any(y => y.maxPagination != null));
             if (window == null) return;
-            window.regionGroups[0].pagination -= 1;
-            if (window.regionGroups[0].pagination < 0)
-                window.regionGroups[0].pagination = 0;
+            var group = window.regionGroups.Find(x => x.maxPagination != null);
+            group.pagination -= 1;
+            if (group.pagination < 0)
+                group.pagination = 0;
             window.Rebuild();
         });
         AddHotkey(A, () =>
         {
-            var window = CDesktop.windows.Find(x => x.title == window1);
-            if (window == null) window = CDesktop.windows.Find(x => x.title == window2);
+            var window = CDesktop.windows.Find(x => x.regionGroups.Any(y => y.maxPagination != null));
             if (window == null) return;
-            window.regionGroups[0].pagination -= (int)Math.Round(EuelerGrowth()) / 2;
-            if (window.regionGroups[0].pagination < 0)
-                window.regionGroups[0].pagination = 0;
+            var group = window.regionGroups.Find(x => x.maxPagination != null);
+            group.pagination -= (int)Math.Round(EuelerGrowth()) / 2;
+            if (group.pagination < 0)
+                group.pagination = 0;
             window.Rebuild();
         }, false);
         AddHotkey(Alpha1, () =>
         {
-            var window = CDesktop.windows.Find(x => x.title == window1);
-            if (window == null) window = CDesktop.windows.Find(x => x.title == window2);
+            var window = CDesktop.windows.Find(x => x.regionGroups.Any(y => y.maxPagination != null));
             if (window == null) return;
-            window.regionGroups[0].pagination = 0;
+            var group = window.regionGroups.Find(x => x.maxPagination != null);
+            group.pagination = 0;
             window.Rebuild();
         });
         AddHotkey(Alpha2, () =>
         {
-            var window = CDesktop.windows.Find(x => x.title == window1);
-            if (window == null) window = CDesktop.windows.Find(x => x.title == window2);
+            var window = CDesktop.windows.Find(x => x.regionGroups.Any(y => y.maxPagination != null));
             if (window == null) return;
-            var max = Math.Ceiling((window.title == window2 ? listLength2() : listLength1()) / (double)elementsPerPage);
-            window.regionGroups[0].pagination = (int)(max / 10 * 1.1);
+            var group = window.regionGroups.Find(x => x.maxPagination != null);
+            var max = group.maxPagination();
+            group.pagination = (int)(max / 10 * 1.1);
             window.Rebuild();
         });
         AddHotkey(Alpha3, () =>
         {
-            var window = CDesktop.windows.Find(x => x.title == window1);
-            if (window == null) window = CDesktop.windows.Find(x => x.title == window2);
+            var window = CDesktop.windows.Find(x => x.regionGroups.Any(y => y.maxPagination != null));
             if (window == null) return;
-            var max = Math.Ceiling((window.title == window2 ? listLength2() : listLength1()) / (double)elementsPerPage);
-            window.regionGroups[0].pagination = (int)(max / 10 * 2.2);
+            var group = window.regionGroups.Find(x => x.maxPagination != null);
+            var max = group.maxPagination();
+            group.pagination = (int)(max / 10 * 2.2);
             window.Rebuild();
         });
         AddHotkey(Alpha4, () =>
         {
-            var window = CDesktop.windows.Find(x => x.title == window1);
-            if (window == null) window = CDesktop.windows.Find(x => x.title == window2);
+            var window = CDesktop.windows.Find(x => x.regionGroups.Any(y => y.maxPagination != null));
             if (window == null) return;
-            var max = Math.Ceiling((window.title == window2 ? listLength2() : listLength1()) / (double)elementsPerPage);
-            window.regionGroups[0].pagination = (int)(max / 10 * 3.3);
+            var group = window.regionGroups.Find(x => x.maxPagination != null);
+            var max = group.maxPagination();
+            group.pagination = (int)(max / 10 * 3.3);
             window.Rebuild();
         });
         AddHotkey(Alpha5, () =>
         {
-            var window = CDesktop.windows.Find(x => x.title == window1);
-            if (window == null) window = CDesktop.windows.Find(x => x.title == window2);
+            var window = CDesktop.windows.Find(x => x.regionGroups.Any(y => y.maxPagination != null));
             if (window == null) return;
-            var max = Math.Ceiling((window.title == window2 ? listLength2() : listLength1()) / (double)elementsPerPage);
-            window.regionGroups[0].pagination = (int)(max / 10 * 4.4);
+            var group = window.regionGroups.Find(x => x.maxPagination != null);
+            var max = group.maxPagination();
+            group.pagination = (int)(max / 10 * 4.4);
             window.Rebuild();
         });
         AddHotkey(Alpha6, () =>
         {
-            var window = CDesktop.windows.Find(x => x.title == window1);
-            if (window == null) window = CDesktop.windows.Find(x => x.title == window2);
+            var window = CDesktop.windows.Find(x => x.regionGroups.Any(y => y.maxPagination != null));
             if (window == null) return;
-            var max = Math.Ceiling((window.title == window2 ? listLength2() : listLength1()) / (double)elementsPerPage);
-            window.regionGroups[0].pagination = (int)(max / 10 * 5.5);
+            var group = window.regionGroups.Find(x => x.maxPagination != null);
+            var max = group.maxPagination();
+            group.pagination = (int)(max / 10 * 5.5);
             window.Rebuild();
         });
         AddHotkey(Alpha7, () =>
         {
-            var window = CDesktop.windows.Find(x => x.title == window1);
-            if (window == null) window = CDesktop.windows.Find(x => x.title == window2);
+            var window = CDesktop.windows.Find(x => x.regionGroups.Any(y => y.maxPagination != null));
             if (window == null) return;
-            var max = Math.Ceiling((window.title == window2 ? listLength2() : listLength1()) / (double)elementsPerPage);
-            window.regionGroups[0].pagination = (int)(max / 10 * 6.6);
+            var group = window.regionGroups.Find(x => x.maxPagination != null);
+            var max = group.maxPagination();
+            group.pagination = (int)(max / 10 * 6.6);
             window.Rebuild();
         });
         AddHotkey(Alpha8, () =>
         {
-            var window = CDesktop.windows.Find(x => x.title == window1);
-            if (window == null) window = CDesktop.windows.Find(x => x.title == window2);
+            var window = CDesktop.windows.Find(x => x.regionGroups.Any(y => y.maxPagination != null));
             if (window == null) return;
-            var max = Math.Ceiling((window.title == window2 ? listLength2() : listLength1()) / (double)elementsPerPage);
-            window.regionGroups[0].pagination = (int)(max / 10 * 7.7);
+            var group = window.regionGroups.Find(x => x.maxPagination != null);
+            var max = group.maxPagination();
+            group.pagination = (int)(max / 10 * 7.7);
             window.Rebuild();
         });
         AddHotkey(Alpha9, () =>
         {
-            var window = CDesktop.windows.Find(x => x.title == window1);
-            if (window == null) window = CDesktop.windows.Find(x => x.title == window2);
+            var window = CDesktop.windows.Find(x => x.regionGroups.Any(y => y.maxPagination != null));
             if (window == null) return;
-            var max = Math.Ceiling((window.title == window2 ? listLength2() : listLength1()) / (double)elementsPerPage);
-            window.regionGroups[0].pagination = (int)(max / 10 * 8.8);
+            var group = window.regionGroups.Find(x => x.maxPagination != null);
+            var max = group.maxPagination();
+            group.pagination = (int)(max / 10 * 8.8);
             window.Rebuild();
         });
         AddHotkey(Alpha0, () =>
         {
-            var window = CDesktop.windows.Find(x => x.title == window1);
-            if (window == null) window = CDesktop.windows.Find(x => x.title == window2);
+            var window = CDesktop.windows.Find(x => x.regionGroups.Any(y => y.maxPagination != null));
             if (window == null) return;
-            var max = Math.Ceiling((window.title == window2 ? listLength2() : listLength1()) / (double)elementsPerPage);
-            window.regionGroups[0].pagination = (int)(max - 1);
+            var group = window.regionGroups.Find(x => x.maxPagination != null);
+            var max = group.maxPagination();
+            group.pagination = (int)(max - 1);
             window.Rebuild();
         });
     }

@@ -139,7 +139,8 @@ public class Buff
         buff.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/Buttons/" + icon);
         buff.transform.parent = Board.board.window.desktop.transform;
         buff.transform.position = position;
-        buff.GetComponent<FlyingBuff>().Initiate(currentSave.player == target, (h) => { },
+        var fly = buff.GetComponent<FlyingBuff>();
+        fly.Initiate(Board.board.player == target, (h) => { },
             (h) => () =>
             {
                 var fb = h.GetComponent<FlyingBuff>();

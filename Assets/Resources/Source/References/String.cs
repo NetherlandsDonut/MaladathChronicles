@@ -28,11 +28,15 @@ public class String
     public static String cooldown = new();
     public static String requiredLevel = new();
     public static String animationSpeed = new();
+    public static String chance = new();
+    public static String chanceBase = new();
+    public static String chanceScale = new();
     public static String animationArc = new();
     public static String shatterDegree = new();
     public static String shatterDensity = new();
     public static String shatterSpeed = new();
     public static String await = new();
     public static String powerScale = new();
+    public static String buffDuration = new();
     public static String resourceAmount = new();
 }

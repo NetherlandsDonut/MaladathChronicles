@@ -70,8 +70,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 143456597
-  m_SortingLayer: 1
+  m_SortingLayerID: 1043226619
+  m_SortingLayer: 2
   m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 31997a54aa100fd42914e254a0684708, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -159,8 +159,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 143456597
-  m_SortingLayer: 1
+  m_SortingLayerID: 1043226619
+  m_SortingLayer: 2
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 2b71d42d0a0074c46ae576c8376556f8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -191,7 +191,7 @@ MonoBehaviour:
   through2: {x: 0, y: 0, z: 0}
   to: {x: 0, y: 0, z: 0}
   flySpeed: 0
-  duration: 0
+  timeAlive: 0
   up: 0
 --- !u!61 &8660488206885488077
 BoxCollider2D:
@@ -281,13 +281,13 @@ SpriteMask:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 6dbe939e67ad1c24692e162061b17277, type: 3}
   m_MaskAlphaCutoff: 0.2
-  m_FrontSortingLayerID: 0
-  m_BackSortingLayerID: 0
-  m_FrontSortingLayer: 0
-  m_BackSortingLayer: 0
+  m_FrontSortingLayerID: -173235189
+  m_BackSortingLayerID: 143456597
+  m_FrontSortingLayer: 3
+  m_BackSortingLayer: 1
   m_FrontSortingOrder: 0
   m_BackSortingOrder: 0
-  m_IsCustomRangeActive: 0
+  m_IsCustomRangeActive: 1
   m_SpriteSortPoint: 0
 --- !u!1 &8601884573490102197
 GameObject:
@@ -359,8 +359,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 143456597
-  m_SortingLayer: 1
+  m_SortingLayerID: 1043226619
+  m_SortingLayer: 2
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 1d1322d7e5a43164fa546860710e0e86, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

@@ -33,9 +33,9 @@ public class Event
             string chanceScale = effect.ContainsKey("ChanceScale") ? effect["ChanceScale"] : "None";
             string shatterTarget = effect.ContainsKey("ShatterTarget") ? effect["ShatterTarget"] : "None";
             string animationType = effect.ContainsKey("AnimationType") ? effect["AnimationType"] : "None";
-            double animationArc = effect.ContainsKey("AnimationArc") ? double.Parse(effect["AnimationArc"]) : 10.0;
-            double animationSpeed = effect.ContainsKey("AnimationSpeed") ? double.Parse(effect["AnimationSpeed"]) : 1.5;
-            bool shatterDirectional = effect.ContainsKey("ShatterType") && effect["ShatterType"] == "Directional";
+            double animationArc = effect.ContainsKey("AnimationArc") ? double.Parse(effect["AnimationArc"]) : 20.0;
+            double animationSpeed = effect.ContainsKey("AnimationSpeed") ? double.Parse(effect["AnimationSpeed"]) : 1;
+            string shatterType = effect.ContainsKey("ShatterType") ? effect["ShatterType"] : "None";
             int shatterDensity = effect.ContainsKey("ShatterDensity") ? int.Parse(effect["ShatterDensity"]) : 2;
             double shatterDegree = effect.ContainsKey("ShatterDegree") ? double.Parse(effect["ShatterDegree"].Replace(".", ",")) : 0.7;
             double shatterSpeed = effect.ContainsKey("ShatterSpeed") ? double.Parse(effect["ShatterSpeed"].Replace(".", ",")) : 4;
@@ -119,7 +119,7 @@ public class Event
             else if (board != null)
             {
                 var triggerCopy = trigger.ToDictionary(x => x.Key, x => x.Value);
-                if (animationType != "None" || animationType != "Disble" && affect == "Other")
+                if (animationType != "None")
                     board.actions.Add(() => { SpawnFlyingMissile(icon, (affect == "Effector" ? effector : other) != Board.board.player, animationArc, animationSpeed); });
                 board.actions.Add(() =>
                 {
@@ -174,7 +174,8 @@ public class Event
                         if (affect == "Effector" || affect == "Other")
                         {
                             var target = affect == "Effector" ? effector : other;
-                            target.AddBuff(buffs.Find(x => x.name == buffName), buffDuration, SpawnBuffObject(new Vector3(affect == "Other" ? (board.playerTurn ? 166 : -302) : (board.playerTurn ? -302 : 166), 142), icon, target));
+                            var pos = new Vector3(affect == "Other" ? (board.playerTurn ? 166 : -302) : (board.playerTurn ? -302 : 166), 142);
+                            target.AddBuff(buffs.Find(x => x.name == buffName), buffDuration, SpawnBuffObject(pos, icon, target));
                             board.CallEvents(target, new() { { "Trigger", "BuffAdd" }, { "Triggerer", "Effector" }, { "BuffName", buffName } });
                             board.CallEvents(target == effector ? other : effector, new() { { "Trigger", "BuffAdd" }, { "Triggerer", "Other" }, { "BuffName", buffName } });
                         }
@@ -198,9 +199,9 @@ public class Event
                         if (board.playerTurn) board.playerFinishedMoving = true;
                         else board.enemyFinishedMoving = true;
                     }
-                    if (shatterTarget != "None")
+                    if (shatterTarget != "None" && shatterType != "None")
                         for (int i = 0; i < shatterDensity; i++)
-                            SpawnShatter(shatterSpeed, shatterDegree, new Vector3(shatterTarget == "Other" ? (board.playerTurn ? 150 : -318) : (board.playerTurn ? -318 : 150), 122), icon, shatterDirectional ? shatterTarget == "Other" ? (board.playerTurn ? "1000" : "1001") : (board.playerTurn ? "1001" : "1000") : "0000");
+                            SpawnShatter(shatterSpeed, shatterDegree, new Vector3(shatterTarget == "Other" ? (board.playerTurn ? 150 : -318) : (board.playerTurn ? -318 : 150), 122), icon, shatterType == "Directional" ? shatterTarget == "Other" ? (board.playerTurn ? "1000" : "1001") : (board.playerTurn ? "1001" : "1000") : "0000");
                     if (effect.ContainsKey("SoundEffect"))
                         PlaySound(effect["SoundEffect"]);
                 });
@@ -216,6 +217,7 @@ public class Event
     public static int selectedEffect, selectedTrigger;
     public static List<string> possibleTriggers = new()
     {
+        "None",
         "BuffAdd",
         "BuffFlare",
         "BuffRemove",
@@ -235,6 +237,7 @@ public class Event
     };
     public static List<string> possibleEffects = new()
     {
+        "None",
         "Damage",
         "Heal",
         "DestroyRows",
