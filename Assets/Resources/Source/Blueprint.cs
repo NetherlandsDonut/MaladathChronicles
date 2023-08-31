@@ -2617,7 +2617,7 @@ public class Blueprint
                 },
                 (h) =>
                 {
-                    var foo = Assets.assets.ambience[index + 10 * regionGroup.pagination];
+                    var foo = Assets.assets.sounds[index + 10 * regionGroup.pagination];
                     CloseWindow("ObjectManagerAmbienceList");
                     if (abilityEvent != null)
                     {
@@ -3176,7 +3176,7 @@ public class Blueprint
             AddPaddingRegion(() =>
             {
                 AddLine("Affect:", "DarkGray");
-                AddSmallButton("OtherOtherReverse", (h) =>
+                AddSmallButton("OtherReverse", (h) =>
                 {
                     if (effect.ContainsKey("Affect"))
                         effect["Affect"] = "None";
@@ -3204,7 +3204,7 @@ public class Blueprint
                 AddPaddingRegion(() =>
                 {
                     AddLine("Power source:", "DarkGray");
-                    AddSmallButton("OtherOtherReverse", (h) =>
+                    AddSmallButton("OtherReverse", (h) =>
                     {
                         if (effect.ContainsKey("PowerSource"))
                             effect["PowerSource"] = "None";

@@ -82,7 +82,32 @@
   {
     "name": "Arcane Barrage",
     "icon": "AbilityArcaneBarrage",
-    "events": []
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "AnimationType": "Missile",
+            "ShatterType": "Directional",
+            "Affect": "Other",
+            "AnimationSpeed": "1,5",
+            "AnimationArc": "20",
+            "ShatterTarget": "Other",
+            "ShatterDegree": "0,7",
+            "ShatterDensity": "2",
+            "SoundEffect": "AmbienceAhnQirajExterior",
+            "Effect": "Damage"
+          },
+          {
+            "Effect": "EndTurn"
+          }
+        ]
+      }
+    ]
   },
   {
     "name": "Prismatic Barrier",
@@ -2562,6 +2587,7 @@
         },
         {
           "regionType": "Padding",
+          "isExtender": true,
           "contents": [
             {
               "Color": "Gray",
