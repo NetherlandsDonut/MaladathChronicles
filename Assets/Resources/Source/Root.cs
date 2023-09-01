@@ -13,7 +13,7 @@ public static class Root
     public static int screenX = 640;
     public static int screenY = 360;
     public static int textPaddingLeft = 4;
-    public static int textPaddingRight = 12;
+    public static int textPaddingRight = 4;
     public static int shadowSystem = 1;
     public static int aiDepth = 5;
     public static float frameTime = 0.08f;

@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class SpritesToolsWindow : EditorWindow
 {
-
     [MenuItem("Window/My Utilities/Sprites Tools")]
     public static void SpriteTools()
     {
