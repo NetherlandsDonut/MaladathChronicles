@@ -32,6 +32,41 @@ public class Shatter : MonoBehaviour
         Destroy(gameObject);
     }
 
+    public static void SpawnTrailShatter(double speed, double amount, Vector3 position, string sprite)
+    {
+        var shatter = new GameObject("Shatter", typeof(Shatter));
+        shatter.GetComponent<Shatter>().Initiate(3);
+        shatter.transform.parent = Board.board.window.desktop.transform;
+        shatter.transform.position = position + new Vector3(-2, -8);
+        shatter.layer = 1;
+        var foo = Resources.Load<Sprite>("Sprites/Building/Buttons/" + sprite);
+        if (foo == null)
+        {
+            Destroy(shatter);
+            return;
+        }
+        int x = (int)foo.textureRect.width, y = (int)foo.textureRect.height;
+        var dot = Resources.Load<GameObject>("Prefabs/PrefabDot");
+        var direction = UnityEngine.Random.insideUnitCircle;
+        if (amount > 1) amount = 10;
+        else if (amount < 0) amount = 0;
+        for (int i = 3; i < x - 2; i++)
+            for (int j = 3; j < y - 2; j++)
+                if (random.Next(0, (int)Math.Abs(amount * 100 - 100)) == 0)
+                    SpawnDot(i, j, foo.texture.GetPixel(i, j));
+
+        void SpawnDot(int c, int v, Color32 color)
+        {
+            var newObject = Instantiate(dot);
+            newObject.GetComponent<Shatter>().Initiate(random.Next(1, 8) / 50.0f);
+            newObject.transform.parent = shatter.transform;
+            newObject.transform.localPosition = new Vector3(c, v);
+            newObject.GetComponent<SpriteRenderer>().color = color;
+            newObject.GetComponent<Rigidbody2D>().AddRelativeForce((direction / 2 + UnityEngine.Random.insideUnitCircle / 2) * (int)(100 * speed));
+            direction = UnityEngine.Random.insideUnitCircle;
+        }
+    }
+
     public static void SpawnShatter(double speed, double amount, Vector3 position, string sprite, string block = "0000")
     {
         var shatter = new GameObject("Shatter", typeof(Shatter));

@@ -7,13 +7,17 @@ public class FlyingMissile : MonoBehaviour
     public SpriteRenderer render;
     public Vector3 from, through1, through2, to;
     public float flySpeed, timeAlive;
+    public string trailSprite;
+    public double trailStrength;
     public bool up;
 
-    public void Initiate(bool fromPlayer, float arc, double flySpeed)
+    public void Initiate(bool fromPlayer, float arc, double flySpeed, double trailStrength, string trailSprite)
     {
         flyingMissiles.Add(this);
         up = random.Next(0, 2) == 0;
         this.flySpeed = (float)flySpeed;
+        this.trailStrength = trailStrength;
+        this.trailSprite = trailSprite;
         if (fromPlayer)
         {
             from = new Vector3(-300, 141);
@@ -40,15 +44,24 @@ public class FlyingMissile : MonoBehaviour
             flyingMissiles.Remove(this);
             Destroy(gameObject);
         }
-        else transform.position = Bezier(from, through1, through2, to, timeAlive * flySpeed);
+        else
+        {
+            SpawnTrail();
+            transform.position = Bezier(from, through1, through2, to, timeAlive * flySpeed);
+        }
     }
 
-    public static GameObject SpawnFlyingMissile(string sprite, bool fromPlayer, double arc, double flySpeed)
+    public void SpawnTrail()
+    {
+        Shatter.SpawnTrailShatter(1, trailStrength, transform.position, trailSprite);
+    }
+
+    public static GameObject SpawnFlyingMissile(string sprite, bool fromPlayer, double arc, double flySpeed, double trailStrength)
     {
         var missile = Instantiate(Resources.Load<GameObject>("Prefabs/PrefabMissile"));
         missile.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/Buttons/" + sprite);
         missile.transform.parent = Board.board.window.desktop.transform;
-        missile.GetComponent<FlyingMissile>().Initiate(fromPlayer, (float)arc, flySpeed);
+        missile.GetComponent<FlyingMissile>().Initiate(fromPlayer, (float)arc, flySpeed, trailStrength, sprite);
         return missile;
     }
 

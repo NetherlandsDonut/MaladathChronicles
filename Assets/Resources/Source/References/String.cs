@@ -32,6 +32,7 @@ public class String
     public static String chanceBase = new();
     public static String chanceScale = new();
     public static String animationArc = new();
+    public static String trailStrength = new();
     public static String shatterDegree = new();
     public static String shatterDensity = new();
     public static String shatterSpeed = new();

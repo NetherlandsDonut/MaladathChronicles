@@ -117,6 +117,14 @@ public class InputLine : MonoBehaviour
                 Respawn("ObjectManagerEventEffect");
             }
         }
+        else if (foo == trailStrength)
+        {
+            if (CDesktop.windows.Exists(x => x.title == "ObjectManagerEventEffect"))
+            {
+                abilityEvent.effects[selectedEffect]["TrailStrength"] = foo.Value();
+                Respawn("ObjectManagerEventEffect");
+            }
+        }
         else if (foo == shatterDegree)
         {
             if (CDesktop.windows.Exists(x => x.title == "ObjectManagerEventEffect"))

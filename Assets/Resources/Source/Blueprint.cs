@@ -2969,6 +2969,21 @@ public class Blueprint
                     CloseWindow("ObjectManagerEventTrigger");
                     CloseWindow(h.window);
                 });
+                AddSmallButton("OtherSave", (h) =>
+                {
+                    PlaySound("DesktopTooltipHide", 0.4f);
+                    triggersCopy = abilityEvent.triggers.Select(x => x.ToDictionary(y => y.Key, y => y.Value)).ToList();
+                    h.window.Respawn();
+                });
+                AddSmallButton("OtherPaste", (h) =>
+                {
+                    if (effectsCopy != null)
+                    {
+                        PlaySound("DesktopWeirdClick3", 0.4f);
+                        abilityEvent.triggers.AddRange(triggersCopy.Select(x => x.ToDictionary(y => y.Key, y => y.Value)).ToList());
+                        h.window.Respawn();
+                    }
+                });
             });
             foreach (var trigger in abilityEvent.triggers)
             {
@@ -2980,6 +2995,7 @@ public class Blueprint
                 (h) =>
                 {
                     selectedTrigger = abilityEvent.triggers.IndexOf(trigger);
+                    Respawn("ObjectManagerEventTriggers");
                     Respawn("ObjectManagerEventTrigger");
                 });
             }
@@ -3033,8 +3049,6 @@ public class Blueprint
             AddRegionGroup();
             SetRegionGroupWidth(148);
             SetRegionGroupHeight(316);
-            AddPaddingRegion(() => { AddLine("Await frames:", "DarkGray"); });
-            AddInputRegion(String.await, InputType.Numbers);
             AddPaddingRegion(() => { SetRegionAsGroupExtender(); });
             AddButtonRegion(() =>
             {
@@ -3049,8 +3063,6 @@ public class Blueprint
             AddRegionGroup();
             SetRegionGroupWidth(148);
             SetRegionGroupHeight(316);
-            AddPaddingRegion(() => { AddLine("Await frameso:", "DarkGray"); });
-            AddInputRegion(String.await, InputType.Numbers);
             AddPaddingRegion(() => { SetRegionAsGroupExtender(); });
             AddButtonRegion(() =>
             {
@@ -3089,8 +3101,23 @@ public class Blueprint
                 {
                     PlaySound("DesktopChangePage", 0.4f);
                     SpawnWindowBlueprint("ObjectManagerEventTriggers");
-                    CloseWindow("ObjectManagerEventEffects");
+                    CloseWindow("ObjectManagerEventEffect");
                     CloseWindow(h.window);
+                });
+                AddSmallButton("OtherSave", (h) =>
+                {
+                    PlaySound("DesktopTooltipHide", 0.4f);
+                    effectsCopy = abilityEvent.effects.Select(x => x.ToDictionary(y => y.Key, y => y.Value)).ToList();
+                    h.window.Respawn();
+                });
+                AddSmallButton("OtherPaste", (h) =>
+                {
+                    if (effectsCopy != null)
+                    {
+                        PlaySound("DesktopWeirdClick3", 0.4f);
+                        abilityEvent.effects.AddRange(effectsCopy.Select(x => x.ToDictionary(y => y.Key, y => y.Value)).ToList());
+                        h.window.Respawn();
+                    }
                 });
             });
             foreach (var effect in abilityEvent.effects)
@@ -3120,14 +3147,16 @@ public class Blueprint
                     String.chanceBase.Set(effect.ContainsKey("ChanceBase") ? effect["ChanceBase"] : "100");
                     String.chanceScale.Set(effect.ContainsKey("ChanceScale") ? effect["ChanceScale"] : "None");
                     String.animationArc.Set(effect.ContainsKey("AnimationArc") ? effect["AnimationArc"] : "20");
-                    String.animationSpeed.Set(effect.ContainsKey("AnimationSpeed") ? effect["AnimationSpeed"] : "1");
+                    String.trailStrength.Set(effect.ContainsKey("TrailStrength") ? effect["TrailStrength"] : "0,85");
+                    String.animationSpeed.Set(effect.ContainsKey("AnimationSpeed") ? effect["AnimationSpeed"] : "1,5");
                     String.shatterDensity.Set(effect.ContainsKey("ShatterDensity") ? effect["ShatterDensity"] : "2");
-                    String.shatterDegree.Set(effect.ContainsKey("ShatterDegree") ? effect["ShatterDegree"] : "0.7");
+                    String.shatterDegree.Set(effect.ContainsKey("ShatterDegree") ? effect["ShatterDegree"] : "0,7");
                     String.shatterSpeed.Set(effect.ContainsKey("ShatterSpeed") ? effect["ShatterSpeed"] : "4");
                     String.await.Set(effect.ContainsKey("Await") ? effect["Await"] : "0");
                     String.powerScale.Set(effect.ContainsKey("PowerScale") ? effect["PowerScale"] : "1");
                     String.resourceAmount.Set(effect.ContainsKey("ResourceAmount") ? effect["ResourceAmount"] : "1");
                     String.buffDuration.Set(effect.ContainsKey("BuffDuration") ? effect["BuffDuration"] : "3");
+                    Respawn("ObjectManagerEventEffects");
                     Respawn("ObjectManagerEventEffect");
                 });
             }
@@ -3480,6 +3509,8 @@ public class Blueprint
                 else if (effect["ChanceScale"] == "Agility")
                     effect["ChanceScale"] = "Intellect";
                 else if (effect["ChanceScale"] == "Intellect")
+                    effect["ChanceScale"] = "None";
+                else if (effect["ChanceScale"] == "None")
                     effect["ChanceScale"] = "Fire Mastery";
                 h.window.Respawn();
             });
@@ -3548,8 +3579,8 @@ public class Blueprint
                     AddSmallButton("OtherReverse", (h) =>
                     {
                         if (effect.ContainsKey("AnimationSpeed"))
-                            effect["AnimationSpeed"] = "1";
-                        String.animationSpeed.Set("1");
+                            effect["AnimationSpeed"] = "1,5";
+                        String.animationSpeed.Set("1,5");
                         h.window.Respawn();
                     });
                 });
@@ -3562,6 +3593,18 @@ public class Blueprint
                         if (effect.ContainsKey("AnimationArc"))
                             effect["AnimationArc"] = "20";
                         String.animationArc.Set("20");
+                        h.window.Respawn();
+                    });
+                });
+                AddPaddingRegion(() =>
+                {
+                    AddLine("Trail strength:", "DarkGray");
+                    AddInputLine(String.trailStrength, InputType.Decimal);
+                    AddSmallButton("OtherReverse", (h) =>
+                    {
+                        if (effect.ContainsKey("TrailStrength"))
+                            effect["TrailStrength"] = "0,85";
+                        String.trailStrength.Set("0,85");
                         h.window.Respawn();
                     });
                 });

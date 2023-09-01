@@ -55,7 +55,7 @@ public class Desktop : MonoBehaviour
     public void Start()
     {
         if (CDesktop.name == "Desktop: TalentScreen")
-            screen.transform.localPosition = new Vector3(320,  -140);
+            screen.transform.localPosition = new Vector3(320, -140);
         else if (CDesktop.name == "Desktop: SpellbookScreen")
             screen.transform.localPosition = new Vector3(0, -180);
         else if (CDesktop.name == "Desktop: Map")
@@ -64,6 +64,11 @@ public class Desktop : MonoBehaviour
 
     public void Update()
     {
+        if (CDesktop.title == "GameSimulation" && Input.GetKeyDown(KeyCode.Escape))
+        {
+            CloseDesktop("GameSimulation");
+            CDesktop.UnlockScreen();
+        }
         if (Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.Tab) && Input.GetKeyDown(KeyCode.LeftAlt))
         {
             Starter.LoadData();

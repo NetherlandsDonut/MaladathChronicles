@@ -35,6 +35,7 @@ public class Event
             string animationType = effect.ContainsKey("AnimationType") ? effect["AnimationType"] : "None";
             double animationArc = effect.ContainsKey("AnimationArc") ? double.Parse(effect["AnimationArc"]) : 20.0;
             double animationSpeed = effect.ContainsKey("AnimationSpeed") ? double.Parse(effect["AnimationSpeed"]) : 1;
+            double trailStrength = effect.ContainsKey("TrailStrength") ? double.Parse(effect["TrailStrength"]) : 1;
             string shatterType = effect.ContainsKey("ShatterType") ? effect["ShatterType"] : "None";
             int shatterDensity = effect.ContainsKey("ShatterDensity") ? int.Parse(effect["ShatterDensity"]) : 2;
             double shatterDegree = effect.ContainsKey("ShatterDegree") ? double.Parse(effect["ShatterDegree"].Replace(".", ",")) : 0.7;
@@ -120,7 +121,7 @@ public class Event
             {
                 var triggerCopy = trigger.ToDictionary(x => x.Key, x => x.Value);
                 if (animationType != "None")
-                    board.actions.Add(() => { SpawnFlyingMissile(icon, (affect == "Effector" ? effector : other) != Board.board.player, animationArc, animationSpeed); });
+                    board.actions.Add(() => { SpawnFlyingMissile(icon, (affect == "Effector" ? effector : other) != Board.board.player, animationArc, animationSpeed, trailStrength); });
                 board.actions.Add(() =>
                 {
                     if (type == "Damage")
@@ -201,7 +202,7 @@ public class Event
                     }
                     if (shatterTarget != "None" && shatterType != "None")
                         for (int i = 0; i < shatterDensity; i++)
-                            SpawnShatter(shatterSpeed, shatterDegree, new Vector3(shatterTarget == "Other" ? (board.playerTurn ? 150 : -318) : (board.playerTurn ? -318 : 150), 122), icon, shatterType == "Directional" ? shatterTarget == "Other" ? (board.playerTurn ? "1000" : "1001") : (board.playerTurn ? "1001" : "1000") : "0000");
+                            SpawnShatter(shatterSpeed, shatterDegree, new Vector3(shatterTarget == "Other" ? (board.playerTurn ? 150 : -318) : (board.playerTurn ? -318 : 150), 122), icon, shatterType == "Directional" ? shatterTarget == "Other" ? (board.playerTurn ? "1011" : "1110") : (board.playerTurn ? "1011" : "1110") : "0000");
                     if (effect.ContainsKey("SoundEffect"))
                         PlaySound(effect["SoundEffect"]);
                 });

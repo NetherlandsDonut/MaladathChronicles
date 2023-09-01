@@ -46,6 +46,8 @@ public static class Root
     public static List<Desktop> desktops;
     public static Desktop CDesktop, LBDesktop;
     public static List<(string, Vector2)> windowRemoteAnchors;
+    public static List<Dictionary<string, string>> triggersCopy;
+    public static List<Dictionary<string, string>> effectsCopy;
 
     #region Desktop
 

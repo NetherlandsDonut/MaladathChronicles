@@ -1192,7 +1192,11 @@
         ],
         "effects": [
           {
-            "SoundEffect": "AbilityArcaneMissilesCast"
+            "SoundEffect": "AbilityArcaneMissilesCast",
+            "ShatterType": "Directional",
+            "ShatterTarget": "Effector",
+            "ShatterDensity": "1",
+            "ShatterDegree": "0,3"
           },
           {
             "Effect": "Damage",
@@ -1206,7 +1210,16 @@
             "ShatterDensity": "2",
             "ShatterSpeed": "4",
             "ShatterDegree": "0.7",
-            "SoundEffect": "AbilityArcaneMissilesImpact1"
+            "SoundEffect": "AbilityArcaneMissilesImpact1",
+            "TrailStrength": "0,45",
+            "AnimationSpeed": "2"
+          },
+          {
+            "SoundEffect": "None",
+            "ShatterType": "Directional",
+            "ShatterTarget": "Effector",
+            "ShatterDegree": "0,3",
+            "ShatterDensity": "1"
           },
           {
             "Effect": "Damage",
@@ -1220,7 +1233,16 @@
             "ShatterDensity": "2",
             "ShatterSpeed": "4",
             "ShatterDegree": "0.7",
-            "SoundEffect": "AbilityArcaneMissilesImpact2"
+            "SoundEffect": "AbilityArcaneMissilesImpact2",
+            "TrailStrength": "0,45",
+            "AnimationSpeed": "2"
+          },
+          {
+            "SoundEffect": "None",
+            "ShatterType": "Directional",
+            "ShatterTarget": "Effector",
+            "ShatterDegree": "0,3",
+            "ShatterDensity": "1"
           },
           {
             "Effect": "Damage",
@@ -1234,7 +1256,16 @@
             "ShatterDensity": "2",
             "ShatterSpeed": "4",
             "ShatterDegree": "0.7",
-            "SoundEffect": "AbilityArcaneMissilesImpact3"
+            "SoundEffect": "AbilityArcaneMissilesImpact3",
+            "TrailStrength": "0,45",
+            "AnimationSpeed": "2"
+          },
+          {
+            "SoundEffect": "None",
+            "ShatterType": "Directional",
+            "ShatterTarget": "Effector",
+            "ShatterDegree": "0,3",
+            "ShatterDensity": "1"
           },
           {
             "Effect": "Damage",
@@ -1250,7 +1281,16 @@
             "ShatterDensity": "2",
             "ShatterSpeed": "4",
             "ShatterDegree": "0.7",
-            "SoundEffect": "AbilityArcaneMissilesImpact2"
+            "SoundEffect": "AbilityArcaneMissilesImpact2",
+            "TrailStrength": "0,45",
+            "AnimationSpeed": "2"
+          },
+          {
+            "SoundEffect": "None",
+            "ShatterType": "Directional",
+            "ShatterTarget": "Effector",
+            "ShatterDegree": "0,3",
+            "ShatterDensity": "1"
           },
           {
             "Effect": "Damage",
@@ -1267,7 +1307,9 @@
             "ShatterDensity": "2",
             "ShatterSpeed": "4",
             "ShatterDegree": "0.7",
-            "SoundEffect": "AbilityArcaneMissilesImpact3"
+            "SoundEffect": "AbilityArcaneMissilesImpact3",
+            "TrailStrength": "0,45",
+            "AnimationSpeed": "2"
           },
           {
             "Effect": "EndTurn"
@@ -2260,7 +2302,12 @@
         ],
         "effects": [
           {
-            "SoundEffect": "AbilityFireballCast"
+            "SoundEffect": "AbilityFireballCast",
+            "ShatterType": "Directional",
+            "ShatterTarget": "Effector",
+            "ShatterDensity": "1",
+            "ShatterSpeed": "2",
+            "ShatterDegree": "0,1"
           },
           {
             "Effect": "Damage",
@@ -2269,12 +2316,15 @@
             "PowerSource": "Effector",
             "PowerScale": "2.9",
             "ShatterTarget": "Other",
-            "ShatterType": "Directional",
+            "ShatterType": "Central",
             "ShatterDensity": "2",
             "ShatterSpeed": "4",
-            "ShatterDegree": "0.7",
+            "ShatterDegree": "0,6",
             "SoundEffect": "AbilityFireballImpact",
-            "Await": "4"
+            "Await": "4",
+            "AnimationType": "Missile",
+            "TrailStrength": "0,45",
+            "AnimationSpeed": "1,5"
           },
           {
             "Effect": "EndTurn"
@@ -2557,7 +2607,11 @@
         ],
         "effects": [
           {
-            "SoundEffect": "AbilityFrostboltCast"
+            "SoundEffect": "AbilityFrostboltCast",
+            "ShatterType": "Directional",
+            "ShatterTarget": "Effector",
+            "ShatterDegree": "0,1",
+            "ShatterDensity": "1"
           },
           {
             "Effect": "Damage",
@@ -2569,9 +2623,11 @@
             "ShatterType": "Directional",
             "ShatterDensity": "2",
             "ShatterSpeed": "4",
-            "ShatterDegree": "0.7",
+            "ShatterDegree": "0.6",
             "SoundEffect": "AbilityFrostboltImpact",
-            "Await": "4"
+            "Await": "4",
+            "AnimationType": "Missile",
+            "TrailStrength": "0,55"
           },
           {
             "Effect": "EndTurn"
@@ -4143,6 +4199,7 @@
         },
         {
           "regionType": "Padding",
+          "isExtender": true,
           "contents": [
             {
               "Color": "Gray",
@@ -4157,7 +4214,40 @@
     "name": "Lightning Bolt",
     "icon": "AbilityLightningBolt",
     "tags": [],
-    "events": []
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "SoundEffect": "ElementAir",
+            "ShatterType": "Directional",
+            "ShatterTarget": "Effector"
+          },
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "SoundEffect": "ElementLightning",
+            "AnimationType": "Missile",
+            "ShatterType": "Directional",
+            "ShatterTarget": "Other",
+            "PowerSource": "Effector",
+            "PowerType": "Spell",
+            "Await": "4",
+            "TrailStrength": "0,55",
+            "AnimationSpeed": "3",
+            "ShatterSpeed": "1",
+            "AnimationArc": "0"
+          },
+          {
+            "Effect": "EndTurn"
+          }
+        ]
+      }
+    ]
   },
   {
     "name": "Chain Lightning",
