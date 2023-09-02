@@ -1,10 +1,5 @@
 [
   {
-    "name": "Alcaz Island",
-    "zone": "Alcaz Island",
-    "type": "HostileArea"
-  },
-  {
     "name": "Searing Blade Hideout",
     "zone": "Ragefire Chasm",
     "type": "HostileArea",
@@ -1746,7 +1741,7 @@
     ]
   },
   {
-    "name": "Dustwing Gulch",
+    "name": "Dustwind Gulch",
     "zone": "Badlands",
     "type": "HostileArea",
     "commonEncounters": [
@@ -4813,18 +4808,6 @@
   },
   {
     "name": "Bloodvenom River",
-    "zone": "Felwood",
-    "type": "HostileArea",
-    "commonEncounters": [
-      {
-        "who": "Duskbat",
-        "levelMin": 1,
-        "levelMax": 2
-      }
-    ]
-  },
-  {
-    "name": "Deadmaw Village",
     "zone": "Felwood",
     "type": "HostileArea",
     "commonEncounters": [
@@ -10501,18 +10484,6 @@
   },
   {
     "name": "Splithoof Crag",
-    "zone": "Thousand Needles",
-    "type": "HostileArea",
-    "commonEncounters": [
-      {
-        "who": "Duskbat",
-        "levelMin": 1,
-        "levelMax": 2
-      }
-    ]
-  },
-  {
-    "name": "Tahonda Ruins",
     "zone": "Thousand Needles",
     "type": "HostileArea",
     "commonEncounters": [

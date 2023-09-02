@@ -7,7 +7,6 @@ using static Blueprint;
 
 using static Root.Anchor;
 using static Root.RegionBackgroundType;
-using static UnityEditor.Progress;
 
 public static class Root
 {
@@ -180,7 +179,6 @@ public static class Root
     {
         if (blueprint == null) return null;
         if (CDesktop.windows.Exists(x => x.title == blueprint.title)) return null;
-        CDesktop.windows.FindAll(x => x.title == "Tooltip").ForEach(x => CloseWindow(x));
         AddWindow(blueprint.title, blueprint.upperUI);
         blueprint.actions();
         if (resetSearch && CDesktop.LBWindow.regionGroups.Any(x => x.maxPaginationReq != null))

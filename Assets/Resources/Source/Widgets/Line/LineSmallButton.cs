@@ -7,13 +7,8 @@ using static Cursor;
 
 public class LineSmallButton : MonoBehaviour
 {
-    //Parent
     public Region region;
-
-    //Children
     public GameObject frame;
-
-    //Fields
     public Tooltip tooltip;
     public Action<Highlightable> pressEvent;
     public string buttonType;
@@ -38,7 +33,7 @@ public class LineSmallButton : MonoBehaviour
     public void OnMouseUp()
     {
         if (cursor.render.sprite == null) return;
-        if (pressEvent != null)
+        if (pressEvent != null && GetComponent<Highlightable>().over)
         {
             PlaySound(buttonType == "OtherClose" ? "DesktopButtonClose" : (buttonType == "ActionReroll" ? ("DesktopReroll" + random.Next(1, 3)) : "DesktopButtonPress"), 0.6f);
             pressEvent(GetComponent<Highlightable>());

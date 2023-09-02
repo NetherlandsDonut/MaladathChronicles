@@ -20,7 +20,7 @@ public class GameSettings
         newSlotIndicators ??= new Bool(false);
     }
 
-    public string selectedRealm = "Firemaw", selectedCharacter;
+    public string selectedRealm, selectedCharacter;
 
     public Bool shadows;
     public Bool pixelPerfectVision;

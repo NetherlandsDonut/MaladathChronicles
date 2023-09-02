@@ -106,7 +106,7 @@ public class Region : MonoBehaviour
             checkbox.value.Invert();
             regionGroup.window.Rebuild();
         }
-        if (pressEvent != null)
+        if (pressEvent != null && background.GetComponent<Highlightable>().over)
         {
             PlaySound("DesktopButtonPress", 0.6f);
             var a = background.GetComponent<Highlightable>();

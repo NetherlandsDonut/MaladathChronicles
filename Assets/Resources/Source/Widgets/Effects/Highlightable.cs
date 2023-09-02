@@ -4,6 +4,7 @@ using static Root;
 using static Root.CursorType;
 
 using static Cursor;
+using System.Linq.Expressions;
 
 public class Highlightable : MonoBehaviour
 {
@@ -33,50 +34,33 @@ public class Highlightable : MonoBehaviour
     public void OnMouseEnter()
     {
         if (cursor.render.sprite == null) return;
-        if (FindTooltip() != null)
-            if (window == null) transform.parent.GetComponent<Desktop>().SetTooltip(FindTooltip());
-            else window.desktop.SetTooltip(FindTooltip());
-        if (GetComponent<InputCharacter>() != null) cursor.SetCursor(Write);
+        over = true;
+        if (!pressed && FindTooltip() != null)
+            CDesktop.SetTooltip(FindTooltip());
+        if (GetComponent<InputCharacter>() != null)
+            cursor.SetCursor(Write);
+        else if (pressed) cursor.SetCursor(Click);
         render.color -= new Color(0.1f, 0.1f, 0.1f, 0);
+        if (pressed) render.color -= new Color(0.1f, 0.1f, 0.1f, 0);
     }
 
     public void OnMouseExit()
     {
         if (cursor.render.sprite == null) return;
-        if (FindTooltip() != null)
-        {
-            if ((window == null ? transform.parent.GetComponent<Desktop>() : window.desktop).tooltip == FindTooltip())
-            {
-                if (FindTooltip().window != null)
-                {
-                    //Sound.PlaySound("DesktopTooltipHide", 0.1f); 
-                    CloseWindow(FindTooltip().window);
-                }
-                else (window == null ? transform.parent.GetComponent<Desktop>() : window.desktop).tooltip = null;
-            }
-        }
-        if (!pressed) cursor.SetCursor(Default);
+        over = false;
+        CloseWindow("Tooltip");
+        CDesktop.tooltip = null;
+        cursor.SetCursor(Default);
         render.color += new Color(0.1f, 0.1f, 0.1f, 0);
+        if (pressed) render.color += new Color(0.1f, 0.1f, 0.1f, 0);
     }
 
     public void OnMouseDown()
     {
         if (cursor.render.sprite == null) return;
         pressed = true;
-        if (FindTooltip() != null)
-        {
-            if ((window == null ? transform.parent.GetComponent<Desktop>() : window.desktop).tooltip == FindTooltip())
-            {
-                if (FindTooltip().window != null)
-                {
-                    //Sound.PlaySound("DesktopTooltipHide", 0.1f);
-                    CloseWindow(FindTooltip().window);
-                }
-                else (window == null ? transform.parent.GetComponent<Desktop>() : window.desktop).tooltip = null;
-            }
-        }
-        if (window == null) transform.parent.GetComponent<Desktop>().tooltip = null;
-        else window.desktop.tooltip = null;
+        CloseWindow("Tooltip");
+        CDesktop.tooltip = null;
         cursor.SetCursor(Click);
         render.color -= new Color(0.1f, 0.1f, 0.1f, 0);
     }
@@ -85,7 +69,7 @@ public class Highlightable : MonoBehaviour
     {
         if (cursor.render.sprite == null) return;
         cursor.SetCursor(Default);
-        if (pressed) render.color += new Color(0.1f, 0.1f, 0.1f, 0);
+        if (pressed) render.color = new Color(1f, 1f, 1f, 1f);
         pressed = false;
     }
 }

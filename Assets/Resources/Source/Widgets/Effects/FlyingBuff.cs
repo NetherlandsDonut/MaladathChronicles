@@ -39,7 +39,7 @@ public class FlyingBuff : MonoBehaviour
     public void OnMouseUp()
     {
         if (cursor.render.sprite == null) return;
-        if (pressEvent != null)
+        if (pressEvent != null && GetComponent<Highlightable>().over)
         {
             PlaySound("DesktopButtonPress", 0.6f);
             pressEvent(GetComponent<Highlightable>());

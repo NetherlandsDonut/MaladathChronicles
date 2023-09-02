@@ -984,30 +984,30 @@ public class Blueprint
             });
             AddPaddingRegion(() =>
             {
-                AddBigButton("MenuCompletion", (h) =>
+                AddSmallButton("MenuCharacterSheet", (h) =>
                 {
-                    SpawnDesktopBlueprint("TalentScreen");
-                    SwitchDesktop("TalentScreen");
+                    SpawnDesktopBlueprint("CharacterSheet");
+                    SwitchDesktop("CharacterSheet");
                 });
-                AddBigButton("MenuClasses", (h) =>
-                {
-                    SpawnDesktopBlueprint("TalentScreen");
-                    SwitchDesktop("TalentScreen");
-                });
-                AddBigButton("MenuSpellbook", (h) =>
-                {
-                    SpawnDesktopBlueprint("SpellbookScreen");
-                    SwitchDesktop("SpellbookScreen");
-                });
-                AddBigButton("MenuInventory", (h) =>
+                AddSmallButton("MenuInventory", (h) =>
                 {
                     SpawnDesktopBlueprint("EquipmentScreen");
                     SwitchDesktop("EquipmentScreen");
                 });
-                AddBigButton("MenuCharacterSheet", (h) =>
+                AddSmallButton("MenuSpellbook", (h) =>
                 {
-                    SpawnDesktopBlueprint("CharacterSheet");
-                    SwitchDesktop("CharacterSheet");
+                    SpawnDesktopBlueprint("SpellbookScreen");
+                    SwitchDesktop("SpellbookScreen");
+                });
+                AddSmallButton("MenuClasses", (h) =>
+                {
+                    SpawnDesktopBlueprint("TalentScreen");
+                    SwitchDesktop("TalentScreen");
+                });
+                AddSmallButton("MenuCompletion", (h) =>
+                {
+                    SpawnDesktopBlueprint("TalentScreen");
+                    SwitchDesktop("TalentScreen");
                 });
             });
         }, true),
@@ -1885,55 +1885,46 @@ public class Blueprint
             AddHeaderRegion(() => { AddLine("Object types:"); });
             AddButtonRegion(() => { AddLine("Hostile areas"); }, (h) =>
             {
-                String.search.Set("");
                 areasSearch = areas;
                 SpawnDesktopBlueprint("ObjectManagerHostileAreas");
             });
             AddButtonRegion(() => { AddLine("Instances"); }, (h) =>
             {
-                String.search.Set("");
                 instancesSearch = instances;
                 SpawnDesktopBlueprint("ObjectManagerInstances");
             });
             AddButtonRegion(() => { AddLine("Complexes"); }, (h) =>
             {
-                String.search.Set("");
                 complexesSearch = complexes;
                 SpawnDesktopBlueprint("ObjectManagerComplexes");
             });
             AddButtonRegion(() => { AddLine("Races"); }, (h) =>
             {
-                String.search.Set("");
                 racesSearch = races;
                 SpawnDesktopBlueprint("ObjectManagerRaces");
             });
             AddButtonRegion(() => { AddLine("Classes"); }, (h) =>
             {
-                String.search.Set("");
                 specsSearch = specs;
                 SpawnDesktopBlueprint("ObjectManagerClasses");
             });
             AddButtonRegion(() => { AddLine("Abilities"); }, (h) =>
             {
-                String.search.Set("");
                 abilitiesSearch = abilities;
                 SpawnDesktopBlueprint("ObjectManagerAbilities");
             });
             AddButtonRegion(() => { AddLine("Buffs"); }, (h) =>
             {
-                String.search.Set("");
                 buffsSearch = buffs;
                 SpawnDesktopBlueprint("ObjectManagerBuffs");
             });
             AddButtonRegion(() => { AddLine("Items"); }, (h) =>
             {
-                String.search.Set("");
                 itemsSearch = items;
                 SpawnDesktopBlueprint("ObjectManagerItems");
             });
             AddButtonRegion(() => { AddLine("Item sets"); }, (h) =>
             {
-                String.search.Set("");
                 itemSetsSearch = itemSets;
                 SpawnDesktopBlueprint("ObjectManagerItemSets");
             });
@@ -5361,7 +5352,44 @@ public class Blueprint
     public static List<Blueprint> desktopBlueprints = new()
     {
         #region Game
-
+        
+        new("TitleScreen", () =>
+        {
+            PlayAmbience("AmbienceMainScreen", 0.5f, true);
+            SpawnWindowBlueprint("TitleScreenMenu");
+            AddHotkey(BackQuote, () => { SpawnDesktopBlueprint("DevPanel"); });
+            AddHotkey(Escape, () =>
+            {
+                var window1 = CDesktop.windows.Find(x => x.title == "Settings");
+                if (window1 != null)
+                {
+                    PlaySound("DesktopButtonClose");
+                    CloseWindow(window1);
+                    SpawnWindowBlueprint("TitleScreenMenu");
+                }
+                var window2 = CDesktop.windows.Find(x => x.title == "CharacterCreation");
+                if (window2 != null)
+                {
+                    PlaySound("DesktopButtonClose");
+                    CloseWindow("CharacterCreation");
+                    CloseWindow("CharacterCreationRightSide");
+                    SpawnWindowBlueprint("CharacterRoster");
+                    SpawnWindowBlueprint("CharacterInfo");
+                    SpawnWindowBlueprint("TitleScreenSingleplayer");
+                }
+                var window3 = CDesktop.windows.Find(x => x.title == "TitleScreenSingleplayer");
+                if (window3 != null)
+                {
+                    PlaySound("DesktopButtonClose");
+                    CloseWindow("TitleScreenSingleplayer");
+                    CloseWindow("CharacterRoster");
+                    CloseWindow("CharacterInfo");
+                    CloseWindow("RealmRoster");
+                    RemoveDesktopBackground();
+                    SpawnWindowBlueprint("TitleScreenMenu");
+                }
+            });
+        }),
         new("Map", () =>
         {
             PlaySound("DesktopOpenSave", 0.2f);
@@ -5770,43 +5798,6 @@ public class Blueprint
                     cursor.transform.position -= new Vector3(0, off);
                 }
             },  false);
-        }),
-        new("TitleScreen", () =>
-        {
-            PlayAmbience("AmbienceSholazarBasin", 0.5f, true);
-            SpawnWindowBlueprint("TitleScreenMenu");
-            AddHotkey(BackQuote, () => { SpawnDesktopBlueprint("DevPanel"); });
-            AddHotkey(Escape, () =>
-            {
-                var window1 = CDesktop.windows.Find(x => x.title == "Settings");
-                if (window1 != null)
-                {
-                    PlaySound("DesktopButtonClose");
-                    CloseWindow(window1);
-                    SpawnWindowBlueprint("TitleScreenMenu");
-                }
-                var window2 = CDesktop.windows.Find(x => x.title == "CharacterCreation");
-                if (window2 != null)
-                {
-                    PlaySound("DesktopButtonClose");
-                    CloseWindow("CharacterCreation");
-                    CloseWindow("CharacterCreationRightSide");
-                    SpawnWindowBlueprint("CharacterRoster");
-                    SpawnWindowBlueprint("CharacterInfo");
-                    SpawnWindowBlueprint("TitleScreenSingleplayer");
-                }
-                var window3 = CDesktop.windows.Find(x => x.title == "TitleScreenSingleplayer");
-                if (window3 != null)
-                {
-                    PlaySound("DesktopButtonClose");
-                    CloseWindow("TitleScreenSingleplayer");
-                    CloseWindow("CharacterRoster");
-                    CloseWindow("CharacterInfo");
-                    CloseWindow("RealmRoster");
-                    RemoveDesktopBackground();
-                    SpawnWindowBlueprint("TitleScreenMenu");
-                }
-            });
         }),
         new("GameMenu", () =>
         {

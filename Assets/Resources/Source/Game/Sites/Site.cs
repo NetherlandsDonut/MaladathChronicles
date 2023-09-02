@@ -10,6 +10,10 @@ using static SiteHostileArea;
 using static SiteInstance;
 using static SiteComplex;
 
+using System;
+using System.Linq;
+using System.Collections.Generic;
+
 public static class Site
 {
     public static void PrintSite(string name, string type, Vector2 anchor)
@@ -71,12 +75,33 @@ public static class Site
                             AddLine("Recommended level: ", "Gray");
                             AddText(find.recommendedLevel + "", ColorEntityLevel(find.recommendedLevel));
                         });
-                        AddPaddingRegion(() =>
-                        {
-                            AddLine("Possible encounters:", "DarkGray");
-                            foreach (var encounter in find.commonEncounters)
-                                AddLine("- " + encounter.who, "DarkGray");
-                        });
+                        if (find.commonEncounters != null && find.commonEncounters.Count > 0)
+                            AddPaddingRegion(() =>
+                            {
+                                AddLine("Common: ", "Gray");
+                                foreach (var enemy in find.commonEncounters)
+                                {
+                                    var race = Race.races.Find(x => x.name == enemy.who);
+                                    AddSmallButton(race == null ? "OtherUnknown" : race.portrait, (h) => { });
+                                }
+                            });
+                        if (find.eliteEncounters != null && find.eliteEncounters.Count > 0)
+                            AddPaddingRegion(() =>
+                            {
+                                AddLine("Elite: ", "Gray");
+                                foreach (var enemy in find.eliteEncounters)
+                                {
+                                    var race = Race.races.Find(x => x.name == enemy.who);
+                                    AddSmallButton(race == null ? "OtherUnknown" : race.portrait, (h) => { });
+                                }
+                            });
+                        if (find.rareEncounters != null && find.rareEncounters.Count > 0)
+                            AddPaddingRegion(() =>
+                            {
+                                AddLine("Rare: ", "Gray");
+                                foreach (var enemy in find.rareEncounters)
+                                    AddSmallButton("OtherUnknown", (h) => { });
+                            });
                     }
                 });
             }
@@ -96,11 +121,12 @@ public static class Site
                 {
                     SetAnchor(TopRight, h.window);
                     AddRegionGroup();
+                    SetRegionGroupWidth(152);
                     AddHeaderRegion(() => { AddLine(name, "Gray"); });
+                    var instance = instances.Find(x => x.name == name);
                     AddPaddingRegion(() =>
                     {
                         AddLine("Level range: ", "Gray");
-                        instance = instances.Find(x => x.name == name);
                         if (instance == null) AddText("??", "DarkGray");
                         else
                         {
@@ -110,6 +136,24 @@ public static class Site
                             AddText(range.Item2 + "", ColorEntityLevel(range.Item2));
                         }
                     });
+                    var areas = instance.wings.SelectMany(x => x.areas.Select(y => SiteHostileArea.areas.Find(z => z.name == y["AreaName"])));
+                    var total = areas.SelectMany(x => x.commonEncounters ?? new()).Distinct().ToList();
+                    total.AddRange(areas.SelectMany(x => x.eliteEncounters ?? new()).Distinct().ToList());
+                    total.AddRange(areas.SelectMany(x => x.rareEncounters ?? new()).Distinct().ToList());
+                    var races = total.Select(x => Race.races.Find(y => y.name == x.who).portrait).Distinct().ToList();
+                    if (races.Count > 0)
+                        for (int i = 0; i < Math.Ceiling(races.Count / 8.0); i++)
+                        {
+                            var ind = i;
+                            AddPaddingRegion(() =>
+                            {
+                                for (int j = 0; j < 8 && j < races.Count - ind * 8; j++)
+                                {
+                                    var jnd = j;
+                                    AddSmallButton(races[jnd + ind * 8], (h) => { });
+                                }
+                            });
+                        }
                 });
             else if (type == "Complex")
                 AddSmallButton("Site" + type,

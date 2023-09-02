@@ -1,6 +1,7 @@
-﻿using UnityEngine;
-using System.Linq;
+﻿using System.Linq;
 using System.Collections.Generic;
+
+using UnityEngine;
 
 using static Root;
 using static Root.Anchor;
@@ -9,7 +10,6 @@ using static Root.RegionBackgroundType;
 using static GameSettings;
 
 using static InputLine;
-using UnityEditor.PackageManager.UI;
 
 public class Window : MonoBehaviour
 {

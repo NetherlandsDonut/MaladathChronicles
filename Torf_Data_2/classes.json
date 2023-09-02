@@ -1109,15 +1109,365 @@
     "talentTrees": [
       {
         "name": "Holy",
-        "talents": []
+        "talents": [
+          {
+            "col": 1,
+            "ability": "Holy Light",
+            "defaultTaken": true
+          },
+          {
+            "row": 1,
+            "ability": "Blessing of Wisdom"
+          },
+          {
+            "row": 1,
+            "col": 1,
+            "ability": "Illumination"
+          },
+          {
+            "row": 1,
+            "col": 2,
+            "ability": "Divine Favor"
+          },
+          {
+            "row": 2,
+            "ability": "Seal of Sacrafice"
+          },
+          {
+            "row": 2,
+            "col": 1,
+            "ability": "Beacon of the Lightbringer"
+          },
+          {
+            "row": 2,
+            "col": 2,
+            "ability": "Saved by the Light"
+          },
+          {
+            "row": 3,
+            "ability": "Flash of Light"
+          },
+          {
+            "row": 3,
+            "col": 1,
+            "ability": "Imbued Infusions"
+          },
+          {
+            "row": 4,
+            "ability": "Flash of Light"
+          },
+          {
+            "row": 4,
+            "col": 2,
+            "ability": "Benediction"
+          },
+          {
+            "row": 5,
+            "ability": "Cleanse"
+          },
+          {
+            "row": 5,
+            "col": 1,
+            "ability": "Unyielding Faith"
+          },
+          {
+            "row": 5,
+            "col": 2,
+            "ability": "Light's Conviction"
+          },
+          {
+            "row": 6,
+            "col": 1,
+            "ability": "Holy Shock"
+          },
+          {
+            "row": 6,
+            "col": 2,
+            "ability": "Overflowing Light"
+          },
+          {
+            "row": 7,
+            "col": 1,
+            "ability": "Holy Wrath"
+          },
+          {
+            "row": 7,
+            "col": 2,
+            "ability": "Seal of Salvation"
+          },
+          {
+            "row": 8,
+            "ability": "Divine Intervention"
+          },
+          {
+            "row": 8,
+            "col": 2,
+            "ability": "Relentless Inquisitor"
+          },
+          {
+            "row": 9,
+            "ability": "Empyrean Power"
+          },
+          {
+            "row": 9,
+            "col": 1,
+            "ability": "Divine Revelations"
+          },
+          {
+            "row": 10,
+            "ability": "Lay on Hands"
+          },
+          {
+            "row": 10,
+            "col": 1,
+            "ability": "Boundless Salvation"
+          },
+          {
+            "row": 10,
+            "col": 2,
+            "ability": "Inmost Light"
+          }
+        ]
       },
       {
         "name": "Retribution",
-        "talents": []
+        "talents": [
+          {
+            "col": 1,
+            "ability": "Judgement",
+            "defaultTaken": true
+          },
+          {
+            "row": 1,
+            "ability": "Blade of Justice"
+          },
+          {
+            "row": 1,
+            "col": 1,
+            "ability": "Blessing of Might"
+          },
+          {
+            "row": 1,
+            "col": 2,
+            "ability": "Heart of the Crusader"
+          },
+          {
+            "row": 2,
+            "ability": "Swift Justice"
+          },
+          {
+            "row": 2,
+            "col": 1,
+            "ability": "Adjudication"
+          },
+          {
+            "row": 2,
+            "col": 2,
+            "ability": "Executioner's Will"
+          },
+          {
+            "row": 3,
+            "ability": "Pursuit of Justice"
+          },
+          {
+            "row": 3,
+            "col": 2,
+            "ability": "Seal of Fury"
+          },
+          {
+            "row": 4,
+            "ability": "Zealot's Fervor"
+          },
+          {
+            "row": 4,
+            "col": 1,
+            "ability": "Final Verdict"
+          },
+          {
+            "row": 4,
+            "col": 2,
+            "ability": "Divine Storm"
+          },
+          {
+            "row": 5,
+            "ability": "Seething Flames"
+          },
+          {
+            "row": 5,
+            "col": 1,
+            "ability": "Vengeance"
+          },
+          {
+            "row": 5,
+            "col": 2,
+            "ability": "Hammer of Wrath"
+          },
+          {
+            "row": 6,
+            "col": 1,
+            "ability": "Avenging Wrath"
+          },
+          {
+            "row": 6,
+            "col": 2,
+            "ability": "Seal of Righteousness"
+          },
+          {
+            "row": 7,
+            "ability": "Vanguard of Justice"
+          },
+          {
+            "row": 7,
+            "col": 2,
+            "ability": "Wake of Ashes"
+          },
+          {
+            "row": 8,
+            "col": 1,
+            "ability": "Jurisdiction"
+          },
+          {
+            "row": 8,
+            "col": 2,
+            "ability": "Boundless Judgement"
+          },
+          {
+            "row": 9,
+            "ability": "Blades of Light"
+          },
+          {
+            "row": 9,
+            "col": 1,
+            "ability": "Truth's Wake"
+          },
+          {
+            "row": 10,
+            "ability": "Divine Wrath"
+          },
+          {
+            "row": 10,
+            "col": 1,
+            "ability": "Divine Auxiliary"
+          }
+        ]
       },
       {
         "name": "Protection",
-        "talents": []
+        "talents": [
+          {
+            "col": 1,
+            "ability": "Consecration",
+            "defaultTaken": true
+          },
+          {
+            "row": 1,
+            "ability": "Blessing of Kings"
+          },
+          {
+            "row": 1,
+            "col": 1,
+            "ability": "Redoubt"
+          },
+          {
+            "row": 1,
+            "col": 2,
+            "ability": "Avenger's Shield"
+          },
+          {
+            "row": 2,
+            "ability": "Resolute Defender"
+          },
+          {
+            "row": 2,
+            "col": 2,
+            "ability": "Seal of Protection"
+          },
+          {
+            "row": 3,
+            "ability": "Conviction"
+          },
+          {
+            "row": 3,
+            "col": 1,
+            "ability": "Crusader's Resolve"
+          },
+          {
+            "row": 3,
+            "col": 2,
+            "ability": "Barricade of Faith"
+          },
+          {
+            "row": 4,
+            "ability": "Consecrated Ground"
+          },
+          {
+            "row": 4,
+            "col": 2,
+            "ability": "Hammer of Justice"
+          },
+          {
+            "row": 5,
+            "ability": "Hand of the Protector"
+          },
+          {
+            "row": 5,
+            "col": 2,
+            "ability": "Divine Shield"
+          },
+          {
+            "row": 6,
+            "ability": "Righteous Protector"
+          },
+          {
+            "row": 6,
+            "col": 1,
+            "ability": "Repentance"
+          },
+          {
+            "row": 6,
+            "col": 2,
+            "ability": "Sanctuary"
+          },
+          {
+            "row": 7,
+            "col": 1,
+            "ability": "Ardent Defender"
+          },
+          {
+            "row": 7,
+            "col": 2,
+            "ability": "Seal of Blood"
+          },
+          {
+            "row": 8,
+            "col": 1,
+            "ability": "Bulwark of Order"
+          },
+          {
+            "row": 8,
+            "col": 2,
+            "ability": "Glorious Dawn"
+          },
+          {
+            "row": 9,
+            "ability": "Blessed Champion"
+          },
+          {
+            "row": 9,
+            "col": 1,
+            "ability": "Bastion of Light"
+          },
+          {
+            "row": 10,
+            "col": 1,
+            "ability": "Reckoning"
+          },
+          {
+            "row": 10,
+            "col": 2,
+            "ability": "Crusade"
+          }
+        ]
       }
     ]
   },

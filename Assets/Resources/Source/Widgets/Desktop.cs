@@ -85,11 +85,6 @@ public class Desktop : MonoBehaviour
             {
                 if (ambience.volume > 0) ambience.volume -= 0.002f;
             }
-            else if (queuedAmbience.Item1 == ambience.clip && ambience.volume < queuedAmbience.Item2)
-            {
-                if (queuedAmbience.Item3 && ambience.clip != queuedAmbience.Item1) ambience.volume = queuedAmbience.Item2;
-                else ambience.volume += 0.002f;
-            }
             else if (queuedAmbience.Item1 != ambience.clip)
             {
                 if (ambience.volume > 0) ambience.volume -= 0.002f;
@@ -98,6 +93,11 @@ public class Desktop : MonoBehaviour
                     ambience.clip = queuedAmbience.Item1;
                     ambience.Play();
                 }
+            }
+            else if (queuedAmbience.Item1 == ambience.clip && ambience.volume < queuedAmbience.Item2)
+            {
+                if (queuedAmbience.Item3 && ambience.clip != queuedAmbience.Item1) ambience.volume = queuedAmbience.Item2;
+                else ambience.volume += 0.002f;
             }
         }
         fallingSoundsPlayedThisFrame = 0;
@@ -131,7 +131,7 @@ public class Desktop : MonoBehaviour
         {
             if (CDesktop.title == "TitleScreen" && CDesktop.screen.GetComponent<SpriteRenderer>().sprite == null && !windows.Exists(x => x.name == "CharacterCreation"))
             {
-                var amount = new Vector3(titleScreenCameraDirection < 2 ? -1f : 1f, titleScreenCameraDirection > 2 ? -1f : (titleScreenCameraDirection < 1 ? -1f : 1f));
+                var amount = new Vector3(titleScreenCameraDirection < 2 ? -0.3333f : 0.3333f, titleScreenCameraDirection > 2 ? -0.3333f : (titleScreenCameraDirection < 1 ? -0.3333f : 0.3333f));
                 screen.transform.localPosition += amount;
                 cursor.transform.localPosition += amount;
                 if (Math.Abs(screen.transform.localPosition.x - 1762) > 750 && screen.transform.localPosition.x < 3774 || Math.Abs(screen.transform.localPosition.x - 5374) > 750 && screen.transform.localPosition.x >= 3774)

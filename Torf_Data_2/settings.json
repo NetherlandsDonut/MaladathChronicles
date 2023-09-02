@@ -5,10 +5,10 @@
     "value": "True"
   },
   "pixelPerfectVision": {
-    "value": "False"
+    "value": "True"
   },
   "music": {
-    "value": "False"
+    "value": "True"
   },
   "soundEffects": {
     "value": "True"
@@ -20,7 +20,7 @@
     "value": "True"
   },
   "upgradeIndicators": {
-    "value": "False"
+    "value": "True"
   },
   "newSlotIndicators": {
     "value": "False"
