@@ -20,12 +20,16 @@ public class Desktop : MonoBehaviour
     public List<Hotkey> hotkeys;
     public GameObject screenlock;
     public bool screenLocked;
+    public Vector2 cameraDestination;
+    public string queuedSiteOpen;
 
     public void Initialise(string title)
     {
         this.title = title;
         windows = new();
         hotkeys = new();
+        queuedSiteOpen = "";
+        cameraDestination = new Vector2();
     }
 
     public void Rebuild()
@@ -143,24 +147,47 @@ public class Desktop : MonoBehaviour
             }
             else if (CDesktop.title == "Map")
             {
+                var temp = screen.transform.position;
+                if (temp.y != cameraDestination.y || temp.x != cameraDestination.x)
+                {
+                    var rounded = new Vector2((float)Math.Round(cameraDestination.x), (float)Math.Round(cameraDestination.y));
+                    var newPosition = Vector3.Lerp(temp, rounded * 19 + new Vector2(333, -183), Time.deltaTime * 4);
+                    cursor.transform.position += newPosition - temp;
+                    screen.transform.position = newPosition;
+                    if (Vector3.Distance(screen.transform.position, (cameraDestination + new Vector2(17, -9)) * 19 + new Vector2(10, -10)) <= 10)
+                    {
+                        UnlockScreen();
+                        if (queuedSiteOpen == "Instance")
+                        {
+                            PlaySound("DesktopInstanceOpen");
+                            SpawnDesktopBlueprint("InstanceEntrance");
+                            SwitchDesktop("InstanceEntrance");
+                        }
+                        else if (queuedSiteOpen == "Complex")
+                        {
+                            PlaySound("DesktopInstanceOpen");
+                            SpawnDesktopBlueprint("ComplexEntrance");
+                            SwitchDesktop("ComplexEntrance");
+                        }
+                        else if (queuedSiteOpen == "HostileArea")
+                        {
+                            PlaySound("DesktopInstanceOpen");
+                            SpawnDesktopBlueprint("HostileAreaEntrance");
+                            SwitchDesktop("HostileAreaEntrance");
+                        }
+                        else if (queuedSiteOpen == "Town")
+                        {
+                            PlaySound("DesktopInstanceOpen");
+                            SpawnDesktopBlueprint("TownEntrance");
+                            SwitchDesktop("TownEntrance");
+                        }
+                        queuedSiteOpen = "";
+                    }
+                }
             }
             if (screenLocked)
             {
-                if (fastTravelCamera != null)
-                {
-                    var dest = fastTravelCamera.transform.position - new Vector3(66, 0);
-                    var lerp = Vector3.zero;
-                    if (Math.Abs(screen.transform.position.x - dest.x) + Math.Abs(screen.transform.position.y - dest.y) > 500)
-                        lerp = Vector3.Lerp(screen.transform.position, dest, 0.02f);
-                    else lerp = Vector3.LerpUnclamped(screen.transform.position, dest, 0.02f);
-                    screen.transform.position = new Vector3(lerp.x, lerp.y, screen.transform.position.z);
-                    if (Math.Abs(screen.transform.position.x - dest.x) + Math.Abs(screen.transform.position.y - dest.y) < 5)
-                    {
-                        fastTravelCamera = null;
-                        UnlockScreen();
-                    }
-                }
-                else if (title == "Game" || title == "GameSimulation")
+                if (title == "Game" || title == "GameSimulation")
                 {
                     if (animationTime > 0)
                         animationTime -= Time.deltaTime;
@@ -360,7 +387,7 @@ public class Desktop : MonoBehaviour
                             else helds++;
                             hotkey.action();
                         }
-                    if (helds > 0 && keyStack < 500) keyStack++;
+                    if (helds > 0 && keyStack < 100) keyStack++;
                 }
             }
         }

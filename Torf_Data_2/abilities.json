@@ -1,5 +1,370 @@
 [
   {
+    "name": "Crusade",
+    "icon": "AbilityCrusade",
+    "events": []
+  },
+  {
+    "name": "Reckoning",
+    "icon": "AbilityReckoning",
+    "events": []
+  },
+  {
+    "name": "Bastion of Light",
+    "icon": "AbilityBastionofLight",
+    "events": []
+  },
+  {
+    "name": "Blessed Champion",
+    "icon": "AbilityBlessedChampion",
+    "events": []
+  },
+  {
+    "name": "Glorious Dawn",
+    "icon": "AbilityGloriousDawn",
+    "events": []
+  },
+  {
+    "name": "Bulwark of Order",
+    "icon": "AbilityBulwarkofOrder",
+    "events": []
+  },
+  {
+    "name": "Seal of Blood",
+    "icon": "AbilitySealofBlood",
+    "events": []
+  },
+  {
+    "name": "Ardent Defender",
+    "icon": "AbilityArdentDefender",
+    "events": []
+  },
+  {
+    "name": "Sanctuary",
+    "icon": "AbilitySanctuary",
+    "events": []
+  },
+  {
+    "name": "Repentance",
+    "icon": "AbilityRepentance",
+    "events": []
+  },
+  {
+    "name": "Righteous Protector",
+    "icon": "AbilityRighteousProtector",
+    "events": []
+  },
+  {
+    "name": "Divine Shield",
+    "icon": "AbilityDivineShield",
+    "events": []
+  },
+  {
+    "name": "Hand of the Protector",
+    "icon": "AbilityHandoftheProtector",
+    "events": []
+  },
+  {
+    "name": "Hammer of Justice",
+    "icon": "AbilityHammerofJustice",
+    "events": []
+  },
+  {
+    "name": "Consecrated Ground",
+    "icon": "AbilityConsecratedGround",
+    "events": []
+  },
+  {
+    "name": "Barricade of Faith",
+    "icon": "AbilityBarricadeofFaith",
+    "events": []
+  },
+  {
+    "name": "Crusader's Resolve",
+    "icon": "AbilityCrusader'sResolve",
+    "events": []
+  },
+  {
+    "name": "Conviction",
+    "icon": "AbilityConviction",
+    "events": []
+  },
+  {
+    "name": "Seal of Protection",
+    "icon": "AbilitySealofProtection",
+    "events": []
+  },
+  {
+    "name": "Resolute Defender",
+    "icon": "AbilityResoluteDefender",
+    "events": []
+  },
+  {
+    "name": "Avenger's Shield",
+    "icon": "AbilityAvenger'sShield",
+    "events": []
+  },
+  {
+    "name": "Redoubt",
+    "icon": "AbilityRedoubt",
+    "events": []
+  },
+  {
+    "name": "Blessing of Kings",
+    "icon": "AbilityBlessingofKings",
+    "events": []
+  },
+  {
+    "name": "Consecration",
+    "icon": "AbilityConsecration",
+    "events": []
+  },
+  {
+    "name": "Divine Auxiliary",
+    "icon": "AbilityDivineAuxiliary",
+    "events": []
+  },
+  {
+    "name": "Divine Wrath",
+    "icon": "AbilityDivineWrath",
+    "events": []
+  },
+  {
+    "name": "Truth's Wake",
+    "icon": "AbilityTruth'sWake",
+    "events": []
+  },
+  {
+    "name": "Blades of Light",
+    "icon": "AbilityBladesofLight",
+    "events": []
+  },
+  {
+    "name": "Boundless Judgement",
+    "icon": "AbilityBoundlessJudgement",
+    "events": []
+  },
+  {
+    "name": "Jurisdiction",
+    "icon": "AbilityJurisdiction",
+    "events": []
+  },
+  {
+    "name": "Wake of Ashes",
+    "icon": "AbilityWakeofAshes",
+    "events": []
+  },
+  {
+    "name": "Vanguard of Justice",
+    "icon": "AbilityVanguardofJustice",
+    "events": []
+  },
+  {
+    "name": "Seal of Righteousness",
+    "icon": "AbilitySealofRighteousness",
+    "events": []
+  },
+  {
+    "name": "Avenging Wrath",
+    "icon": "AbilityAvengingWrath",
+    "events": []
+  },
+  {
+    "name": "Hammer of Wrath",
+    "icon": "AbilityHammerofWrath",
+    "events": []
+  },
+  {
+    "name": "Vengeance",
+    "icon": "AbilityVengeance",
+    "events": []
+  },
+  {
+    "name": "Seething Flames",
+    "icon": "AbilitySeethingFlames",
+    "events": []
+  },
+  {
+    "name": "Divine Storm",
+    "icon": "AbilityDivineStorm",
+    "events": []
+  },
+  {
+    "name": "Final Verdict",
+    "icon": "AbilityFinalVerdict",
+    "events": []
+  },
+  {
+    "name": "Zealot's Fervor",
+    "icon": "AbilityZealot'sFervor",
+    "events": []
+  },
+  {
+    "name": "Seal of Fury",
+    "icon": "AbilitySealofFury",
+    "events": []
+  },
+  {
+    "name": "Pursuit of Justice",
+    "icon": "AbilityPursuitofJustice",
+    "events": []
+  },
+  {
+    "name": "Executioner's Will",
+    "icon": "AbilityExecutioner'sWill",
+    "events": []
+  },
+  {
+    "name": "Adjudication",
+    "icon": "AbilityAdjudication",
+    "events": []
+  },
+  {
+    "name": "Swift Justice",
+    "icon": "AbilitySwiftJustice",
+    "events": []
+  },
+  {
+    "name": "Heart of the Crusader",
+    "icon": "AbilityHeartoftheCrusader",
+    "events": []
+  },
+  {
+    "name": "Blessing of Might",
+    "icon": "AbilityBlessingofMight",
+    "events": []
+  },
+  {
+    "name": "Blade of Justice",
+    "icon": "AbilityBladeofJustice",
+    "events": []
+  },
+  {
+    "name": "Judgement",
+    "icon": "AbilityJudgement",
+    "events": []
+  },
+  {
+    "name": "Inmost Light",
+    "icon": "AbilityInmostLight",
+    "events": []
+  },
+  {
+    "name": "Boundless Salvation",
+    "icon": "AbilityBoundlessSalvation",
+    "events": []
+  },
+  {
+    "name": "Lay on Hands",
+    "icon": "AbilityLayonHands",
+    "events": []
+  },
+  {
+    "name": "Divine Revelations",
+    "icon": "AbilityDivineRevelations",
+    "events": []
+  },
+  {
+    "name": "Empyrean Power",
+    "icon": "AbilityEmpyreanPower",
+    "events": []
+  },
+  {
+    "name": "Relentless Inquisitor",
+    "icon": "AbilityRelentlessInquisitor",
+    "events": []
+  },
+  {
+    "name": "Divine Intervention",
+    "icon": "AbilityDivineIntervention",
+    "events": []
+  },
+  {
+    "name": "Seal of Salvation",
+    "icon": "AbilitySealofSalvation",
+    "events": []
+  },
+  {
+    "name": "Holy Wrath",
+    "icon": "AbilityHolyWrath",
+    "events": []
+  },
+  {
+    "name": "Overflowing Light",
+    "icon": "AbilityOverflowingLight",
+    "events": []
+  },
+  {
+    "name": "Holy Shock",
+    "icon": "AbilityHolyShock",
+    "events": []
+  },
+  {
+    "name": "Light's Conviction",
+    "icon": "AbilityLight'sConviction",
+    "events": []
+  },
+  {
+    "name": "Unyielding Faith",
+    "icon": "AbilityUnyieldingFaith",
+    "events": []
+  },
+  {
+    "name": "Cleanse",
+    "icon": "AbilityCleanse",
+    "events": []
+  },
+  {
+    "name": "Benediction",
+    "icon": "AbilityBenediction",
+    "events": []
+  },
+  {
+    "name": "Imbued Infusions",
+    "icon": "AbilityImbuedInfusions",
+    "events": []
+  },
+  {
+    "name": "Flash of Light",
+    "icon": "AbilityFlashofLight",
+    "events": []
+  },
+  {
+    "name": "Saved by the Light",
+    "icon": "AbilitySavedbytheLight",
+    "events": []
+  },
+  {
+    "name": "Beacon of the Lightbringer",
+    "icon": "AbilityBeaconoftheLightbringer",
+    "events": []
+  },
+  {
+    "name": "Seal of Sacrafice",
+    "icon": "AbilitySealofSacrafice",
+    "events": []
+  },
+  {
+    "name": "Divine Favor",
+    "icon": "AbilityDivineFavor",
+    "events": []
+  },
+  {
+    "name": "Illumination",
+    "icon": "AbilityIllumination",
+    "events": []
+  },
+  {
+    "name": "Blessing of Wisdom",
+    "icon": "AbilityBlessingofWisdom",
+    "events": []
+  },
+  {
+    "name": "Holy Light",
+    "icon": "AbilityHolyLight",
+    "events": []
+  },
+  {
     "name": "Curse of Thorns",
     "icon": "AbilityThorns",
     "events": []

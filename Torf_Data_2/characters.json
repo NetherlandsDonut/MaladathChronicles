@@ -1540,25 +1540,25 @@
     },
     {
       "player": {
-        "health": 2980,
+        "health": 2750,
         "level": 60,
-        "unspentTalentPoints": 14,
+        "unspentTalentPoints": 19,
         "actionBarsUnlocked": 7,
         "name": "Ember",
         "race": "Human",
         "spec": "Mage",
         "gender": "Female",
         "resources": {
-          "Earth": 0,
-          "Fire": 0,
-          "Air": 0,
-          "Water": 0,
-          "Frost": 0,
-          "Lightning": 0,
-          "Arcane": 0,
-          "Decay": 0,
-          "Order": 0,
-          "Shadow": 0
+          "Earth": 99,
+          "Fire": 95,
+          "Air": 99,
+          "Water": 99,
+          "Frost": 95,
+          "Lightning": 99,
+          "Arcane": 93,
+          "Decay": 99,
+          "Order": 99,
+          "Shadow": 99
         },
         "abilities": [
           "One Handed Sword Proficiency",
@@ -1570,12 +1570,7 @@
           "Fireball",
           "Frostbolt",
           "Arcane Missiles",
-          "Scorch",
-          "Searing Touch",
-          "Fiery Rush",
-          "Pyroblast",
-          "Firemind",
-          "Blast Wave"
+          "Scorch"
         ],
         "actionBars": [
           {
@@ -2041,36 +2036,36 @@
               }
             },
             {
-              "rarity": "Epic",
-              "name": "Shackles of the Unscarred",
-              "icon": "itembracer07",
+              "rarity": "Poor",
+              "name": "Mesh Bracers",
+              "icon": "itembracer05",
               "type": "Wrists",
               "armorClass": "Cloth",
-              "ilvl": 72,
+              "ilvl": 65,
               "lvl": 60,
-              "armor": 48,
-              "price": 2.2963,
+              "armor": 33,
+              "price": 0.4133,
               "stats": {
-                "stats": {
-                  "Intellect": 12,
-                  "Stamina": 9
-                }
+                "stats": {}
               }
             },
             {
-              "rarity": "Common",
-              "name": "Bent Staff",
-              "icon": "itemstaff08",
+              "rarity": "Epic",
+              "name": "Brimstone Staff",
+              "icon": "itemstaff13",
               "detailedType": "Staff",
               "type": "Two Handed",
-              "ilvl": 2,
-              "lvl": 1,
-              "minDamage": 3,
-              "maxDamage": 5,
-              "price": 0.0009,
-              "speed": 2.9,
+              "ilvl": 83,
+              "lvl": 60,
+              "minDamage": 141,
+              "maxDamage": 251,
+              "price": 24.5498,
+              "speed": 3.2,
               "stats": {
-                "stats": {}
+                "stats": {
+                  "Intellect": 30,
+                  "Stamina": 31
+                }
               }
             },
             {
@@ -2108,31 +2103,32 @@
               }
             },
             {
-              "rarity": "Poor",
-              "name": "Apprentice's Pants",
-              "icon": "itempants01",
+              "rarity": "Rare",
+              "name": "Runed Stygian Leggings",
+              "icon": "itempantscloth05",
               "type": "Legs",
               "armorClass": "Cloth",
-              "ilvl": 1,
-              "lvl": 1,
-              "armor": 2,
-              "price": 0.0001,
+              "ilvl": 63,
+              "lvl": 58,
+              "armor": 78,
+              "price": 2.3733,
               "stats": {
-                "stats": {}
+                "stats": {
+                  "Stamina": 13
+                }
               }
             },
             {
               "rarity": "Epic",
-              "name": "Master Dragonslayer's Medallion",
-              "icon": "itemjewelrynecklace18",
+              "name": "Amulet of Foul Warding",
+              "icon": "itemjewelrynecklace12",
               "type": "Neck",
-              "ilvl": 83,
+              "ilvl": 73,
               "lvl": 60,
-              "price": 12.8862,
+              "price": 7.863,
               "stats": {
                 "stats": {
-                  "Agility": 14,
-                  "Stamina": 24
+                  "Stamina": 12
                 }
               }
             },
@@ -2188,19 +2184,17 @@
         },
         "equipment": {
           "Legs": {
-            "rarity": "Rare",
-            "name": "Runed Stygian Leggings",
-            "icon": "itempantscloth05",
+            "rarity": "Poor",
+            "name": "Apprentice's Pants",
+            "icon": "itempants01",
             "type": "Legs",
             "armorClass": "Cloth",
-            "ilvl": 63,
-            "lvl": 58,
-            "armor": 78,
-            "price": 2.3733,
+            "ilvl": 1,
+            "lvl": 1,
+            "armor": 2,
+            "price": 0.0001,
             "stats": {
-              "stats": {
-                "Stamina": 13
-              }
+              "stats": {}
             }
           },
           "Feet": {
@@ -2217,15 +2211,16 @@
           },
           "Neck": {
             "rarity": "Epic",
-            "name": "Amulet of Foul Warding",
-            "icon": "itemjewelrynecklace12",
+            "name": "Master Dragonslayer's Medallion",
+            "icon": "itemjewelrynecklace18",
             "type": "Neck",
-            "ilvl": 73,
+            "ilvl": 83,
             "lvl": 60,
-            "price": 7.863,
+            "price": 12.8862,
             "stats": {
               "stats": {
-                "Stamina": 12
+                "Agility": 14,
+                "Stamina": 24
               }
             }
           },
@@ -2244,17 +2239,20 @@
             }
           },
           "Wrists": {
-            "rarity": "Poor",
-            "name": "Mesh Bracers",
-            "icon": "itembracer05",
+            "rarity": "Epic",
+            "name": "Shackles of the Unscarred",
+            "icon": "itembracer07",
             "type": "Wrists",
             "armorClass": "Cloth",
-            "ilvl": 65,
+            "ilvl": 72,
             "lvl": 60,
-            "armor": 33,
-            "price": 0.4133,
+            "armor": 48,
+            "price": 2.2963,
             "stats": {
-              "stats": {}
+              "stats": {
+                "Intellect": 12,
+                "Stamina": 9
+              }
             }
           },
           "Back": {
@@ -2272,22 +2270,19 @@
             }
           },
           "Main Hand": {
-            "rarity": "Epic",
-            "name": "Brimstone Staff",
-            "icon": "itemstaff13",
+            "rarity": "Common",
+            "name": "Bent Staff",
+            "icon": "itemstaff08",
             "detailedType": "Staff",
             "type": "Two Handed",
-            "ilvl": 83,
-            "lvl": 60,
-            "minDamage": 141,
-            "maxDamage": 251,
-            "price": 24.5498,
-            "speed": 3.2,
+            "ilvl": 2,
+            "lvl": 1,
+            "minDamage": 3,
+            "maxDamage": 5,
+            "price": 0.0009,
+            "speed": 2.9,
             "stats": {
-              "stats": {
-                "Intellect": 30,
-                "Stamina": 31
-              }
+              "stats": {}
             }
           },
           "Finger": {
@@ -2343,20 +2338,17 @@
         "buffs": []
       },
       "siteProgress": {
-        "Boulder Lode Mine": 13,
-        "Felfire Hill": 2,
-        "Warsong Lumber Camp": 1
+        "Boulder Lode Mine": 12
       },
       "commonsKilled": {
-        "Venture Co. Enforcer": 7,
-        "Venture Co. Overseer": 6,
-        "Duskbat": 3
+        "Venture Co. Enforcer": 6,
+        "Venture Co. Overseer": 6
       },
       "raresKilled": {},
       "elitesKilled": {},
       "startDate": "2023-08-30T12:17:54.1404892+02:00",
-      "lastLoaded": "2023-09-02T10:11:09.0222529+02:00",
-      "lastPlayed": "2023-09-02T10:25:16.8428402+02:00"
+      "lastLoaded": "2023-09-02T21:53:57.8032112+02:00",
+      "lastPlayed": "2023-09-02T21:54:05.1196705+02:00"
     }
   ],
   "Mograine": [],

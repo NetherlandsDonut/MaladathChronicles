@@ -8,7 +8,6 @@ using UnityEngine;
 using static Root;
 using static Root.Anchor;
 
-using static Site;
 using static Font;
 using static Sound;
 using static Cursor;
@@ -40,18 +39,6 @@ public class Starter : MonoBehaviour
         Deserialize(ref settings, "settings", false, prefix);
         if (settings == null) settings = new();
         else settings.FillNulls();
-        var temp = FindObjectsByType<WindowAnchorRemote>(FindObjectsSortMode.None);
-        windowRemoteAnchors = temp.Select(x => (x.name, new Vector2(x.transform.position.x, x.transform.position.y))).ToList();
-        for (int i = temp.Length - 1; i >= 0; i--) Destroy(temp[i].gameObject);
-        for (int i = 0; i < windowRemoteAnchors.Count; i++)
-        {
-            var index = i;
-            if (!windowRemoteAnchors[index].Item1.Contains(": ")) continue;
-            var split = windowRemoteAnchors[index].Item1.Split(": ");
-            var name = split[1];
-            var type = split[0].Substring(4);
-            Blueprint.windowBlueprints.Add(new Blueprint("Site: " + name, () => PrintSite(name, type, windowRemoteAnchors[index].Item2)));
-        }
         LoadData();
         cursor = FindObjectOfType<Cursor>();
         cursorEnemy = FindObjectOfType<CursorRemote>();
@@ -357,7 +344,8 @@ public class Starter : MonoBehaviour
                                     CDesktop.LockScreen();
                                     if (transport.price > 0)
                                         PlaySound("DesktopTransportPay");
-                                    fastTravelCamera = CDesktop.windows.Find(x => x.title == "Site: " + transport.destination).gameObject;
+                                    var town = SiteTown.towns.Find(x => x.name == transport.destination);
+                                    CDesktop.cameraDestination = new Vector2(town.x - 17, town.y + 9);
                                 },
                                 (h) => () => { PrintTransportTooltip(transport); });
                             }
@@ -539,6 +527,30 @@ public class Starter : MonoBehaviour
                     }
                 )
             );
+        }
+        for (int i = 0; i < SiteHostileArea.areas.Count; i++)
+        {
+            var index = i;
+            if (SiteHostileArea.areas[index].x != 0)
+                Blueprint.windowBlueprints.Add(new Blueprint("Site: " + SiteHostileArea.areas[index].name, () => SiteHostileArea.areas[index].PrintSite()));
+        }
+        for (int i = 0; i < instances.Count; i++)
+        {
+            var index = i;
+            if (instances[index].x != 0)
+                Blueprint.windowBlueprints.Add(new Blueprint("Site: " + instances[index].name, () => instances[index].PrintSite()));
+        }
+        for (int i = 0; i < complexes.Count; i++)
+        {
+            var index = i;
+            if (complexes[index].x != 0)
+                Blueprint.windowBlueprints.Add(new Blueprint("Site: " + complexes[index].name, () => complexes[index].PrintSite()));
+        }
+        for (int i = 0; i < SiteTown.towns.Count; i++)
+        {
+            var index = i;
+            if (SiteTown.towns[index].x != 0)
+                Blueprint.windowBlueprints.Add(new Blueprint("Site: " + SiteTown.towns[index].name, () => SiteTown.towns[index].PrintSite()));
         }
         for (int i = 0; i < 3; i++)
             for (int j = 0; j < 12; j++)

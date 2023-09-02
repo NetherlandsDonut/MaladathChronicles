@@ -1,6 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
+using System.Collections.Generic;
+
 using UnityEngine;
 
 using static Blueprint;
@@ -20,7 +21,6 @@ public static class Root
     public static string markerCharacter = "_";
     public static string textWrapEnding = "...";
 
-    public static GameObject fastTravelCamera;
     public static List<FallingElement> fallingElements;
     public static List<FlyingMissile> flyingMissiles;
     public static bool canUnlockScreen;
@@ -45,9 +45,7 @@ public static class Root
     public static float animationTime;
     public static List<Desktop> desktops;
     public static Desktop CDesktop, LBDesktop;
-    public static List<(string, Vector2)> windowRemoteAnchors;
-    public static List<Dictionary<string, string>> triggersCopy;
-    public static List<Dictionary<string, string>> effectsCopy;
+    public static List<Dictionary<string, string>> triggersCopy, effectsCopy;
 
     #region Desktop
 
@@ -118,6 +116,14 @@ public static class Root
             desktops.Remove(CDesktop);
             desktops.Insert(0, CDesktop);
             SpawnTransition();
+        }
+        if (CDesktop.cameraDestination != Vector2.zero)
+        {
+            var temp = CDesktop.screen.transform.position;
+            var rounded = new Vector2((float)Math.Round(CDesktop.cameraDestination.x), (float)Math.Round(CDesktop.cameraDestination.y));
+            var newPosition = rounded * 19 + new Vector2(333, -183);
+            Cursor.cursor.transform.position += (Vector3)newPosition - temp;
+            CDesktop.screen.transform.position = newPosition;
         }
     }
 

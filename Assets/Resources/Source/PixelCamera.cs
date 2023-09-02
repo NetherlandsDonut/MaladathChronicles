@@ -35,6 +35,7 @@ public class PixelCamera : MonoBehaviour
 	
 	void OnRenderImage(RenderTexture source, RenderTexture destination)
 	{
+		if (renderWidth <= 0) return;
 		RenderTexture buffer = RenderTexture.GetTemporary(renderWidth, renderHeight, -1);
 		buffer.filterMode = FilterMode.Point;
 		source.filterMode = FilterMode.Point;

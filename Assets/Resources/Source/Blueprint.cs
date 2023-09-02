@@ -5402,10 +5402,10 @@ public class Blueprint
             loadingBar[1].transform.position = new Vector3(-1178, 863);
             SetDesktopBackground("LoadingScreens/LoadingScreenKalimdor");
             OrderLoadingMap();
-            AddHotkey(W, () => { CheckPosition(new Vector3(0, (float)Math.Round(EuelerGrowth()))); }, false);
-            AddHotkey(A, () => { CheckPosition(new Vector3(-(float)Math.Round(EuelerGrowth()), 0)); }, false);
-            AddHotkey(S, () => { CheckPosition(new Vector3(0, -(float)Math.Round(EuelerGrowth()))); }, false);
-            AddHotkey(D, () => { CheckPosition(new Vector3((float)Math.Round(EuelerGrowth()), 0)); }, false);
+            AddHotkey(W, () => { CheckPosition(new Vector3(0, EuelerGrowth())); }, false);
+            AddHotkey(A, () => { CheckPosition(new Vector3(-EuelerGrowth(), 0)); }, false);
+            AddHotkey(S, () => { CheckPosition(new Vector3(0, -EuelerGrowth())); }, false);
+            AddHotkey(D, () => { CheckPosition(new Vector3(EuelerGrowth(), 0)); }, false);
             AddHotkey(C, () =>
             {
                 SpawnDesktopBlueprint("CharacterSheet");
@@ -5425,33 +5425,19 @@ public class Blueprint
 
             void CheckPosition(Vector3 amount)
             {
-                var temp = CDesktop.screen.transform.position;
-                var continent = "";
-                if (temp.x <= 3000) continent = "Kalimdor";
-                else if (temp.x >= 3000) continent = "Eastern Kingdoms";
-                if (continent == "Kalimdor" && (temp + amount).x > 2867)
-                {
-                    CDesktop.screen.transform.position = new Vector3(2867, temp.y + amount.y, temp.z);
-                    cursor.transform.position += temp - CDesktop.screen.transform.position;
-                }
-                else if (continent == "Eastern Kingdoms" && (temp + amount).x < 4572)
-                {
-                    CDesktop.screen.transform.position = new Vector3(4572, temp.y + amount.y, temp.z);
-                    cursor.transform.position += temp - CDesktop.screen.transform.position;
-                }
-                else
-                {
-                    CDesktop.screen.transform.position += amount;
-                    cursor.transform.position += amount;
-                }
-                if (temp.x < 750)
-                    CDesktop.screen.transform.position = new Vector3(750, temp.y);
-                else if (temp.x > 6295)
-                    CDesktop.screen.transform.position = new Vector3(6295, temp.y);
-                if (temp.y < -4686)
-                    CDesktop.screen.transform.position = new Vector3(temp.x, -4686);
-                else if (temp.y > -288)
-                    CDesktop.screen.transform.position = new Vector3(temp.x, -288);
+                CDesktop.cameraDestination += new Vector2(amount.x, amount.y) / 5;
+                if (CDesktop.cameraDestination.x < 0)
+                    CDesktop.cameraDestination = new Vector2(0, CDesktop.cameraDestination.y);
+                if (CDesktop.cameraDestination.x > 376)
+                    CDesktop.cameraDestination = new Vector2(376, CDesktop.cameraDestination.y);
+                if (CDesktop.cameraDestination.x > 130 && CDesktop.cameraDestination.x < 180)
+                    CDesktop.cameraDestination = new Vector2(130, CDesktop.cameraDestination.y);
+                if (CDesktop.cameraDestination.x < 225 && CDesktop.cameraDestination.x > 180)
+                    CDesktop.cameraDestination = new Vector2(225, CDesktop.cameraDestination.y);
+                if (CDesktop.cameraDestination.y > 0)
+                    CDesktop.cameraDestination = new Vector2(CDesktop.cameraDestination.x, 0);
+                if (CDesktop.cameraDestination.y < -240)
+                    CDesktop.cameraDestination = new Vector2(CDesktop.cameraDestination.x, -240);
             }
         }),
         new("HostileAreaEntrance", () =>

@@ -1,5 +1,7 @@
 [
   {
+    "x": 307,
+    "y": -199,
     "name": "Temple of Atal'Hakkar",
     "zone": "Swamp of Sorrows",
     "type": "Dungeon",
@@ -70,6 +72,8 @@
     ]
   },
   {
+    "x": 257,
+    "y": -182,
     "name": "The Stockade",
     "zone": "Elwynn Forest",
     "type": "Dungeon",
@@ -96,6 +100,8 @@
     ]
   },
   {
+    "x": 122,
+    "y": -113,
     "name": "Ragefire Chasm",
     "zone": "Durotar",
     "type": "Dungeon",
@@ -122,6 +128,8 @@
     ]
   },
   {
+    "x": 260,
+    "y": -143,
     "name": "Gnomeregan",
     "zone": "Dun Morogh",
     "type": "Dungeon",
@@ -156,6 +164,8 @@
     ]
   },
   {
+    "x": 248,
+    "y": -90,
     "name": "Shadowfang Keep",
     "zone": "Silverpine Forest",
     "type": "Dungeon",
@@ -237,6 +247,8 @@
     ]
   },
   {
+    "x": 294,
+    "y": -74,
     "name": "Scholomance",
     "zone": "Western Plaguelands",
     "type": "Dungeon",
@@ -299,6 +311,8 @@
     ]
   },
   {
+    "x": 45,
+    "y": -148,
     "name": "Maraudon",
     "zone": "Desolace",
     "type": "Dungeon",
@@ -350,6 +364,8 @@
     ]
   },
   {
+    "x": 303,
+    "y": -48,
     "name": "Stratholme",
     "zone": "Eastern Plaguelands",
     "type": "Dungeon",
@@ -413,6 +429,8 @@
     ]
   },
   {
+    "x": 98,
+    "y": -142,
     "name": "Wailing Caverns",
     "zone": "The Barrens",
     "type": "Dungeon",
@@ -447,6 +465,8 @@
     ]
   },
   {
+    "x": 300,
+    "y": -152,
     "name": "Uldaman",
     "zone": "Badlands",
     "type": "Dungeon",
@@ -485,6 +505,8 @@
     ]
   },
   {
+    "x": 104,
+    "y": -184,
     "name": "Razorfen Downs",
     "zone": "The Barrens",
     "type": "Dungeon",
@@ -515,6 +537,8 @@
     ]
   },
   {
+    "x": 94,
+    "y": -180,
     "name": "Razorfen Kraul",
     "zone": "The Barrens",
     "type": "Dungeon",
@@ -545,6 +569,8 @@
     ]
   },
   {
+    "x": 250,
+    "y": -207,
     "name": "The Deadmines",
     "zone": "Westfall",
     "type": "Dungeon",
@@ -579,6 +605,8 @@
     ]
   },
   {
+    "x": 67,
+    "y": -88,
     "name": "Blackfathom Deeps",
     "zone": "Ashenvale",
     "type": "Dungeon",
@@ -617,6 +645,8 @@
     ]
   },
   {
+    "x": 62,
+    "y": -181,
     "name": "Dire Maul",
     "zone": "Feralas",
     "type": "Dungeon",
@@ -991,6 +1021,8 @@
     ]
   },
   {
+    "x": 105,
+    "y": -200,
     "name": "Zul'Farrak",
     "zone": "Tanaris",
     "type": "Dungeon",
@@ -1029,6 +1061,8 @@
     ]
   },
   {
+    "x": 116,
+    "y": -183,
     "name": "Onyxia's Lair",
     "zone": "Dustwallow Marsh",
     "type": "Raid",
@@ -1098,6 +1132,8 @@
     ]
   },
   {
+    "x": 278,
+    "y": -216,
     "name": "Zul'Gurub",
     "zone": "Stranglethorn Vale",
     "type": "Raid",
@@ -1223,6 +1259,8 @@
     ]
   },
   {
+    "x": 56,
+    "y": -233,
     "name": "Ruins of Ahn'Qiraj",
     "zone": "Silithus",
     "type": "Raid",
@@ -1261,6 +1299,8 @@
     ]
   },
   {
+    "x": 55,
+    "y": -225,
     "name": "Temple of Ahn'Qiraj",
     "zone": "Silithus",
     "type": "Raid",

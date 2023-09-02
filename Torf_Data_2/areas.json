@@ -840,6 +840,8 @@
     "type": "HostileArea"
   },
   {
+    "x": 272,
+    "y": -81,
     "name": "Crushridge Hold",
     "zone": "Alterac Mountains",
     "type": "HostileArea",
@@ -852,6 +854,8 @@
     ]
   },
   {
+    "x": 262,
+    "y": -85,
     "name": "Dalaran",
     "zone": "Alterac Mountains",
     "type": "HostileArea",
@@ -864,6 +868,8 @@
     ]
   },
   {
+    "x": 271,
+    "y": -85,
     "name": "Growless Cave",
     "zone": "Alterac Mountains",
     "type": "HostileArea",
@@ -876,6 +882,8 @@
     ]
   },
   {
+    "x": 268,
+    "y": -89,
     "name": "Headland",
     "zone": "Alterac Mountains",
     "type": "HostileArea",
@@ -888,6 +896,8 @@
     ]
   },
   {
+    "x": 264,
+    "y": -89,
     "name": "Lordamere Internment Camp",
     "zone": "Alterac Mountains",
     "type": "HostileArea",
@@ -900,6 +910,8 @@
     ]
   },
   {
+    "x": 276,
+    "y": -80,
     "name": "Ruins of Strahnbrad",
     "zone": "Alterac Mountains",
     "type": "HostileArea",
@@ -912,6 +924,8 @@
     ]
   },
   {
+    "x": 272,
+    "y": -78,
     "name": "Slaughter Hollow",
     "zone": "Alterac Mountains",
     "type": "HostileArea",
@@ -924,6 +938,8 @@
     ]
   },
   {
+    "x": 296,
+    "y": -108,
     "name": "Boulderfist Hall",
     "zone": "Arathi Highlands",
     "type": "HostileArea",
@@ -936,6 +952,8 @@
     ]
   },
   {
+    "x": 289,
+    "y": -100,
     "name": "Boulder'gor",
     "zone": "Arathi Highlands",
     "type": "HostileArea",
@@ -948,6 +966,8 @@
     ]
   },
   {
+    "x": 301,
+    "y": -97,
     "name": "Circle of East Binding",
     "zone": "Arathi Highlands",
     "type": "HostileArea",
@@ -960,6 +980,8 @@
     ]
   },
   {
+    "x": 289,
+    "y": -104,
     "name": "Circle of Inner Binding",
     "zone": "Arathi Highlands",
     "type": "HostileArea",
@@ -972,6 +994,8 @@
     ]
   },
   {
+    "x": 296,
+    "y": -102,
     "name": "Circle of Outer Binding",
     "zone": "Arathi Highlands",
     "type": "HostileArea",
@@ -984,6 +1008,8 @@
     ]
   },
   {
+    "x": 288,
+    "y": -96,
     "name": "Circle of West Binding",
     "zone": "Arathi Highlands",
     "type": "HostileArea",
@@ -996,6 +1022,8 @@
     ]
   },
   {
+    "x": 297,
+    "y": -99,
     "name": "Dabyrie's Farmstead",
     "zone": "Arathi Highlands",
     "type": "HostileArea",
@@ -1008,6 +1036,8 @@
     ]
   },
   {
+    "x": 306,
+    "y": -100,
     "name": "Drywhisker Gorge",
     "zone": "Arathi Highlands",
     "type": "HostileArea",
@@ -1020,6 +1050,8 @@
     ]
   },
   {
+    "x": 299,
+    "y": -104,
     "name": "Go'Shek Farm",
     "zone": "Arathi Highlands",
     "type": "HostileArea",
@@ -1044,6 +1076,8 @@
     ]
   },
   {
+    "x": 293,
+    "y": -112,
     "name": "Thandol Span",
     "zone": "Arathi Highlands",
     "type": "HostileArea",
@@ -1056,6 +1090,8 @@
     ]
   },
   {
+    "x": 301,
+    "y": -106,
     "name": "Witherbark Village",
     "zone": "Arathi Highlands",
     "type": "HostileArea",
@@ -1068,6 +1104,8 @@
     ]
   },
   {
+    "x": 77,
+    "y": -92,
     "name": "Bathran's Haunt",
     "zone": "Ashenvale",
     "type": "HostileArea",
@@ -1080,6 +1118,8 @@
     ]
   },
   {
+    "x": 93,
+    "y": -115,
     "name": "Bloodtooth Camp",
     "zone": "Ashenvale",
     "type": "HostileArea",
@@ -1092,6 +1132,8 @@
     ]
   },
   {
+    "x": 116,
+    "y": -98,
     "name": "Bough Shadow",
     "zone": "Ashenvale",
     "type": "EmeraldBough",
@@ -1103,6 +1145,8 @@
     ]
   },
   {
+    "x": 110,
+    "y": -115,
     "name": "Demon Fall Canyon",
     "zone": "Ashenvale",
     "type": "HostileArea",
@@ -1115,6 +1159,8 @@
     ]
   },
   {
+    "x": 99,
+    "y": -109,
     "name": "Falfarren River",
     "zone": "Ashenvale",
     "type": "HostileArea",
@@ -1127,6 +1173,8 @@
     ]
   },
   {
+    "x": 99,
+    "y": -116,
     "name": "Fallen Sky Lake",
     "zone": "Ashenvale",
     "type": "HostileArea",
@@ -1139,6 +1187,8 @@
     ]
   },
   {
+    "x": 109,
+    "y": -111,
     "name": "Felfire Hill",
     "zone": "Ashenvale",
     "type": "HostileArea",
@@ -1151,6 +1201,8 @@
     ]
   },
   {
+    "x": 75,
+    "y": -109,
     "name": "Fire Scar Shrine",
     "zone": "Ashenvale",
     "type": "HostileArea",
@@ -1163,6 +1215,8 @@
     ]
   },
   {
+    "x": 96,
+    "y": -109,
     "name": "Greenpaw Village",
     "zone": "Ashenvale",
     "type": "HostileArea",
@@ -1175,6 +1229,8 @@
     ]
   },
   {
+    "x": 86,
+    "y": -102,
     "name": "Iris Lake",
     "zone": "Ashenvale",
     "type": "HostileArea",
@@ -1187,6 +1243,8 @@
     ]
   },
   {
+    "x": 70,
+    "y": -100,
     "name": "Lake Falathim",
     "zone": "Ashenvale",
     "type": "HostileArea",
@@ -1199,6 +1257,8 @@
     ]
   },
   {
+    "x": 88,
+    "y": -112,
     "name": "Mystral Lake",
     "zone": "Ashenvale",
     "type": "HostileArea",
@@ -1211,6 +1271,8 @@
     ]
   },
   {
+    "x": 99,
+    "y": -105,
     "name": "Night Run",
     "zone": "Ashenvale",
     "type": "HostileArea",
@@ -1223,6 +1285,8 @@
     ]
   },
   {
+    "x": 90,
+    "y": -106,
     "name": "Nightsong Woods",
     "zone": "Ashenvale",
     "type": "HostileArea",
@@ -1235,6 +1299,8 @@
     ]
   },
   {
+    "x": 95,
+    "y": -104,
     "name": "Raynewood Retreat",
     "zone": "Ashenvale",
     "type": "HostileArea",
@@ -1247,6 +1313,8 @@
     ]
   },
   {
+    "x": 77,
+    "y": -95,
     "name": "Ruins of Ordil'Aran",
     "zone": "Ashenvale",
     "type": "HostileArea",
@@ -1259,6 +1327,8 @@
     ]
   },
   {
+    "x": 79,
+    "y": -111,
     "name": "Ruins of Stardust",
     "zone": "Ashenvale",
     "type": "HostileArea",
@@ -1271,6 +1341,8 @@
     ]
   },
   {
+    "x": 108,
+    "y": -103,
     "name": "Satyrnaar",
     "zone": "Ashenvale",
     "type": "HostileArea",
@@ -1283,6 +1355,8 @@
     ]
   },
   {
+    "x": 105,
+    "y": -114,
     "name": "The Dor'Danil Barrow Den",
     "zone": "Ashenvale",
     "type": "HostileArea",
@@ -1295,6 +1369,8 @@
     ]
   },
   {
+    "x": 89,
+    "y": -99,
     "name": "The Howling Vale",
     "zone": "Ashenvale",
     "type": "HostileArea",
@@ -1307,6 +1383,8 @@
     ]
   },
   {
+    "x": 71,
+    "y": -104,
     "name": "The Shrine of Aessina",
     "zone": "Ashenvale",
     "type": "HostileArea",
@@ -1319,6 +1397,8 @@
     ]
   },
   {
+    "x": 66,
+    "y": -92,
     "name": "The Zoram Strand",
     "zone": "Ashenvale",
     "type": "HostileArea",
@@ -1331,6 +1411,8 @@
     ]
   },
   {
+    "x": 80,
+    "y": -97,
     "name": "Thistlefur Village",
     "zone": "Ashenvale",
     "type": "HostileArea",
@@ -1343,6 +1425,8 @@
     ]
   },
   {
+    "x": 103,
+    "y": -116,
     "name": "Warsong Labor Camp",
     "zone": "Ashenvale",
     "type": "HostileArea",
@@ -1355,6 +1439,8 @@
     ]
   },
   {
+    "x": 114,
+    "y": -107,
     "name": "Warsong Lumber Camp",
     "zone": "Ashenvale",
     "type": "HostileArea",
@@ -1367,6 +1453,8 @@
     ]
   },
   {
+    "x": 106,
+    "y": -102,
     "name": "Xavian",
     "zone": "Ashenvale",
     "type": "HostileArea",
@@ -1379,6 +1467,8 @@
     ]
   },
   {
+    "x": 144,
+    "y": -100,
     "name": "Bay of Storms",
     "zone": "Azshara",
     "type": "HostileArea",
@@ -1391,6 +1481,8 @@
     ]
   },
   {
+    "x": 151,
+    "y": -83,
     "name": "Bitter Reaches",
     "zone": "Azshara",
     "type": "HostileArea",
@@ -1408,6 +1500,8 @@
     "type": "HostileArea"
   },
   {
+    "x": 123,
+    "y": -98,
     "name": "Haldarr Encampment",
     "zone": "Azshara",
     "type": "HostileArea",
@@ -1420,6 +1514,8 @@
     ]
   },
   {
+    "x": 143,
+    "y": -95,
     "name": "Hetaera's Clutch",
     "zone": "Azshara",
     "type": "HostileArea",
@@ -1432,6 +1528,8 @@
     ]
   },
   {
+    "x": 158,
+    "y": -80,
     "name": "Jagged Reef",
     "zone": "Azshara",
     "type": "HostileArea",
@@ -1444,6 +1542,8 @@
     ]
   },
   {
+    "x": 134,
+    "y": -104,
     "name": "Lake Mennar",
     "zone": "Azshara",
     "type": "HostileArea",
@@ -1456,6 +1556,8 @@
     ]
   },
   {
+    "x": 147,
+    "y": -82,
     "name": "Legash Encampment",
     "zone": "Azshara",
     "type": "HostileArea",
@@ -1468,6 +1570,8 @@
     ]
   },
   {
+    "x": 150,
+    "y": -107,
     "name": "Ravencrest Monument",
     "zone": "Azshara",
     "type": "HostileArea",
@@ -1480,6 +1584,8 @@
     ]
   },
   {
+    "x": 145,
+    "y": -110,
     "name": "Rethress Sanctum",
     "zone": "Azshara",
     "type": "HostileArea",
@@ -1492,6 +1598,8 @@
     ]
   },
   {
+    "x": 132,
+    "y": -95,
     "name": "Ruins of Eldarath",
     "zone": "Azshara",
     "type": "HostileArea",
@@ -1504,6 +1612,8 @@
     ]
   },
   {
+    "x": 120,
+    "y": -102,
     "name": "Shadowsong Shrine",
     "zone": "Azshara",
     "type": "HostileArea",
@@ -1516,6 +1626,8 @@
     ]
   },
   {
+    "x": 138,
+    "y": -98,
     "name": "Southridge Beach",
     "zone": "Azshara",
     "type": "HostileArea",
@@ -1528,6 +1640,8 @@
     ]
   },
   {
+    "x": 153,
+    "y": -92,
     "name": "Temple of Arkkoran",
     "zone": "Azshara",
     "type": "HostileArea",
@@ -1540,6 +1654,8 @@
     ]
   },
   {
+    "x": 142,
+    "y": -86,
     "name": "Thalassian Base Camp",
     "zone": "Azshara",
     "type": "HostileArea",
@@ -1552,6 +1668,8 @@
     ]
   },
   {
+    "x": 141,
+    "y": -108,
     "name": "The Ruined Reaches",
     "zone": "Azshara",
     "type": "HostileArea",
@@ -1564,6 +1682,8 @@
     ]
   },
   {
+    "x": 137,
+    "y": -93,
     "name": "The Shattered Strand",
     "zone": "Azshara",
     "type": "HostileArea",
@@ -1576,6 +1696,8 @@
     ]
   },
   {
+    "x": 160,
+    "y": -88,
     "name": "Tower of Eldara",
     "zone": "Azshara",
     "type": "HostileArea",
@@ -1588,6 +1710,8 @@
     ]
   },
   {
+    "x": 135,
+    "y": -84,
     "name": "Ursolan",
     "zone": "Azshara",
     "type": "HostileArea",
@@ -1600,6 +1724,8 @@
     ]
   },
   {
+    "x": 301,
+    "y": -163,
     "name": "Agmond's End",
     "zone": "Badlands",
     "type": "HostileArea",
@@ -1622,6 +1748,8 @@
     ]
   },
   {
+    "x": 300,
+    "y": -157,
     "name": "Angor Fortress",
     "zone": "Badlands",
     "type": "HostileArea",
@@ -1651,6 +1779,8 @@
     ]
   },
   {
+    "x": 292,
+    "y": -162,
     "name": "Apocryphan's Rest",
     "zone": "Badlands",
     "type": "HostileArea",
@@ -1675,6 +1805,8 @@
     ]
   },
   {
+    "x": 305,
+    "y": -163,
     "name": "Camp Boff",
     "zone": "Badlands",
     "type": "HostileArea",
@@ -1692,6 +1824,8 @@
     ]
   },
   {
+    "x": 306,
+    "y": -155,
     "name": "Camp Kosh",
     "zone": "Badlands",
     "type": "HostileArea",
@@ -1709,6 +1843,8 @@
     ]
   },
   {
+    "x": 291,
+    "y": -165,
     "name": "Dustbelch Grotto",
     "zone": "Badlands",
     "type": "HostileArea",
@@ -1741,6 +1877,8 @@
     ]
   },
   {
+    "x": 307,
+    "y": -157,
     "name": "Dustwind Gulch",
     "zone": "Badlands",
     "type": "HostileArea",
@@ -1758,6 +1896,8 @@
     ]
   },
   {
+    "x": 303,
+    "y": -157,
     "name": "Hammertoe's Digsite",
     "zone": "Badlands",
     "type": "HostileArea",
@@ -1780,6 +1920,8 @@
     ]
   },
   {
+    "x": 310,
+    "y": -159,
     "name": "Lethlor Ravine",
     "zone": "Badlands",
     "type": "HostileArea",
@@ -1797,6 +1939,8 @@
     ]
   },
   {
+    "x": 297,
+    "y": -163,
     "name": "Mirage Flats",
     "zone": "Badlands",
     "type": "HostileArea",
@@ -1824,6 +1968,8 @@
     ]
   },
   {
+    "x": 296,
+    "y": -160,
     "name": "The Dustbowl",
     "zone": "Badlands",
     "type": "HostileArea",
@@ -1851,6 +1997,8 @@
     ]
   },
   {
+    "x": 302,
+    "y": -154,
     "name": "The Maker's Terrace",
     "zone": "Badlands",
     "type": "HostileArea",
@@ -1873,6 +2021,8 @@
     ]
   },
   {
+    "x": 303,
+    "y": -161,
     "name": "Valley of Fangs",
     "zone": "Badlands",
     "type": "HostileArea",
@@ -2506,6 +2656,8 @@
     ]
   },
   {
+    "x": 295,
+    "y": -205,
     "name": "Dreadmaul Hold",
     "zone": "Blasted Lands",
     "type": "HostileArea",
@@ -2518,6 +2670,8 @@
     ]
   },
   {
+    "x": 297,
+    "y": -211,
     "name": "Dreadmaul Post",
     "zone": "Blasted Lands",
     "type": "HostileArea",
@@ -2530,6 +2684,8 @@
     ]
   },
   {
+    "x": 302,
+    "y": -209,
     "name": "Serpent's Coil",
     "zone": "Blasted Lands",
     "type": "HostileArea",
@@ -2542,6 +2698,8 @@
     ]
   },
   {
+    "x": 294,
+    "y": -209,
     "name": "The Altar of Storms",
     "zone": "Blasted Lands",
     "type": "HostileArea",
@@ -2554,6 +2712,8 @@
     ]
   },
   {
+    "x": 300,
+    "y": -215,
     "name": "The Dark Portal",
     "zone": "Blasted Lands",
     "type": "HostileArea",
@@ -2566,6 +2726,8 @@
     ]
   },
   {
+    "x": 293,
+    "y": -219,
     "name": "The Tainted Scar",
     "zone": "Blasted Lands",
     "type": "HostileArea",
@@ -2578,6 +2740,8 @@
     ]
   },
   {
+    "x": 274,
+    "y": -170,
     "name": "Altar of Storms",
     "zone": "Burning Steppes",
     "type": "HostileArea",
@@ -2590,6 +2754,8 @@
     ]
   },
   {
+    "x": 294,
+    "y": -180,
     "name": "Blackrock Pass",
     "zone": "Burning Steppes",
     "type": "HostileArea",
@@ -2602,6 +2768,8 @@
     ]
   },
   {
+    "x": 282,
+    "y": -170,
     "name": "Blackrock Stronghold",
     "zone": "Burning Steppes",
     "type": "HostileArea",
@@ -2614,6 +2782,8 @@
     ]
   },
   {
+    "x": 277,
+    "y": -175,
     "name": "Draco'dar",
     "zone": "Burning Steppes",
     "type": "HostileArea",
@@ -2626,6 +2796,8 @@
     ]
   },
   {
+    "x": 294,
+    "y": -172,
     "name": "Dreadmaul Rock",
     "zone": "Burning Steppes",
     "type": "HostileArea",
@@ -2638,6 +2810,8 @@
     ]
   },
   {
+    "x": 289,
+    "y": -171,
     "name": "Ruins of Thaurissan",
     "zone": "Burning Steppes",
     "type": "HostileArea",
@@ -2650,6 +2824,8 @@
     ]
   },
   {
+    "x": 297,
+    "y": -170,
     "name": "Slither Rock",
     "zone": "Burning Steppes",
     "type": "HostileArea",
@@ -2662,6 +2838,8 @@
     ]
   },
   {
+    "x": 297,
+    "y": -174,
     "name": "Terror Wing Path",
     "zone": "Burning Steppes",
     "type": "HostileArea",
@@ -2674,6 +2852,8 @@
     ]
   },
   {
+    "x": 285,
+    "y": -175,
     "name": "The Pillar of Ash",
     "zone": "Burning Steppes",
     "type": "HostileArea",
@@ -2686,6 +2866,8 @@
     ]
   },
   {
+    "x": 74,
+    "y": -72,
     "name": "Ameth'Aran",
     "zone": "Darkshore",
     "type": "HostileArea",
@@ -2698,6 +2880,8 @@
     ]
   },
   {
+    "x": 77,
+    "y": -61,
     "name": "Bashal'Aran",
     "zone": "Darkshore",
     "type": "HostileArea",
@@ -2710,6 +2894,8 @@
     ]
   },
   {
+    "x": 75,
+    "y": -83,
     "name": "Blackwood Den",
     "zone": "Darkshore",
     "type": "HostileArea",
@@ -2722,6 +2908,8 @@
     ]
   },
   {
+    "x": 81,
+    "y": -57,
     "name": "Cliffspring River",
     "zone": "Darkshore",
     "type": "HostileArea",
@@ -2734,6 +2922,8 @@
     ]
   },
   {
+    "x": 72,
+    "y": -80,
     "name": "Grove of the Ancients",
     "zone": "Darkshore",
     "type": "HostileArea",
@@ -2746,6 +2936,8 @@
     ]
   },
   {
+    "x": 86,
+    "y": -48,
     "name": "Mist's Edge",
     "zone": "Darkshore",
     "type": "HostileArea",
@@ -2758,6 +2950,8 @@
     ]
   },
   {
+    "x": 76,
+    "y": -67,
     "name": "Moonkin Caves",
     "zone": "Darkshore",
     "type": "HostileArea",
@@ -2770,6 +2964,8 @@
     ]
   },
   {
+    "x": 70,
+    "y": -84,
     "name": "Remtravel's Excavation",
     "zone": "Darkshore",
     "type": "HostileArea",
@@ -2782,6 +2978,8 @@
     ]
   },
   {
+    "x": 87,
+    "y": -54,
     "name": "Ruins of Mathystra",
     "zone": "Darkshore",
     "type": "HostileArea",
@@ -2794,6 +2992,8 @@
     ]
   },
   {
+    "x": 71,
+    "y": -68,
     "name": "The Long Wash",
     "zone": "Darkshore",
     "type": "HostileArea",
@@ -2806,6 +3006,8 @@
     ]
   },
   {
+    "x": 72,
+    "y": -84,
     "name": "The Master's Glaive",
     "zone": "Darkshore",
     "type": "HostileArea",
@@ -2818,6 +3020,8 @@
     ]
   },
   {
+    "x": 84,
+    "y": -56,
     "name": "Tower of Althalaxx",
     "zone": "Darkshore",
     "type": "HostileArea",
@@ -2830,6 +3034,8 @@
     ]
   },
   {
+    "x": 70,
+    "y": -76,
     "name": "Twilight Shore",
     "zone": "Darkshore",
     "type": "HostileArea",
@@ -2842,6 +3048,8 @@
     ]
   },
   {
+    "x": 74,
+    "y": -75,
     "name": "Twilight Vale",
     "zone": "Darkshore",
     "type": "HostileArea",
@@ -2854,6 +3062,8 @@
     ]
   },
   {
+    "x": 289,
+    "y": -200,
     "name": "Ariden's Camp",
     "zone": "Deadwind Pass",
     "type": "HostileArea",
@@ -2866,6 +3076,8 @@
     ]
   },
   {
+    "x": 285,
+    "y": -200,
     "name": "Deadman's Crossing",
     "zone": "Deadwind Pass",
     "type": "HostileArea",
@@ -2878,6 +3090,8 @@
     ]
   },
   {
+    "x": 287,
+    "y": -207,
     "name": "Karazhan",
     "zone": "Deadwind Pass",
     "type": "HostileArea",
@@ -2890,6 +3104,8 @@
     ]
   },
   {
+    "x": 288,
+    "y": -203,
     "name": "Sleeping Gorge",
     "zone": "Deadwind Pass",
     "type": "HostileArea",
@@ -2902,6 +3118,8 @@
     ]
   },
   {
+    "x": 290,
+    "y": -205,
     "name": "The Vice",
     "zone": "Deadwind Pass",
     "type": "HostileArea",
@@ -2914,6 +3132,8 @@
     ]
   },
   {
+    "x": 48,
+    "y": -157,
     "name": "Bolgan's Hole",
     "zone": "Desolace",
     "type": "HostileArea",
@@ -2926,6 +3146,8 @@
     ]
   },
   {
+    "x": 49,
+    "y": -138,
     "name": "Ethel Rethor",
     "zone": "Desolace",
     "type": "HostileArea",
@@ -2938,6 +3160,8 @@
     ]
   },
   {
+    "x": 49,
+    "y": -155,
     "name": "Gelkis Village",
     "zone": "Desolace",
     "type": "HostileArea",
@@ -2950,6 +3174,8 @@
     ]
   },
   {
+    "x": 55,
+    "y": -148,
     "name": "Kodo Graveyard",
     "zone": "Desolace",
     "type": "HostileArea",
@@ -2962,6 +3188,8 @@
     ]
   },
   {
+    "x": 65,
+    "y": -143,
     "name": "Kolkar Village",
     "zone": "Desolace",
     "type": "HostileArea",
@@ -2974,6 +3202,8 @@
     ]
   },
   {
+    "x": 64,
+    "y": -152,
     "name": "Magram Village",
     "zone": "Desolace",
     "type": "HostileArea",
@@ -2986,6 +3216,8 @@
     ]
   },
   {
+    "x": 55,
+    "y": -153,
     "name": "Mannoroc Coven",
     "zone": "Desolace",
     "type": "HostileArea",
@@ -2998,6 +3230,8 @@
     ]
   },
   {
+    "x": 45,
+    "y": -131,
     "name": "Ranazjar Isle",
     "zone": "Desolace",
     "type": "HostileArea",
@@ -3010,6 +3244,8 @@
     ]
   },
   {
+    "x": 67,
+    "y": -135,
     "name": "Sargeron",
     "zone": "Desolace",
     "type": "HostileArea",
@@ -3022,6 +3258,8 @@
     ]
   },
   {
+    "x": 44,
+    "y": -154,
     "name": "Sar'theris Strand",
     "zone": "Desolace",
     "type": "HostileArea",
@@ -3034,6 +3272,8 @@
     ]
   },
   {
+    "x": 70,
+    "y": -154,
     "name": "Shadowbreak Ravine",
     "zone": "Desolace",
     "type": "HostileArea",
@@ -3046,6 +3286,8 @@
     ]
   },
   {
+    "x": 57,
+    "y": -132,
     "name": "Tethris Aran",
     "zone": "Desolace",
     "type": "HostileArea",
@@ -3058,6 +3300,8 @@
     ]
   },
   {
+    "x": 57,
+    "y": -137,
     "name": "Thunder Axe Fortress",
     "zone": "Desolace",
     "type": "HostileArea",
@@ -3082,6 +3326,8 @@
     ]
   },
   {
+    "x": 47,
+    "y": -146,
     "name": "Valley of Spears",
     "zone": "Desolace",
     "type": "HostileArea",
@@ -3421,6 +3667,8 @@
     ]
   },
   {
+    "x": 266,
+    "y": -148,
     "name": "Chill Breeze Valley",
     "zone": "Dun Morogh",
     "type": "HostileArea",
@@ -3445,6 +3693,8 @@
     ]
   },
   {
+    "x": 265,
+    "y": -153,
     "name": "Coldridge Pass",
     "zone": "Dun Morogh",
     "type": "HostileArea",
@@ -3462,6 +3712,8 @@
     ]
   },
   {
+    "x": 260,
+    "y": -156,
     "name": "Coldridge Valley",
     "zone": "Dun Morogh",
     "type": "HostileArea",
@@ -3489,6 +3741,8 @@
     ]
   },
   {
+    "x": 261,
+    "y": -147,
     "name": "Frostmane Hold",
     "zone": "Dun Morogh",
     "type": "HostileArea",
@@ -3516,6 +3770,8 @@
     ]
   },
   {
+    "x": 283,
+    "y": -150,
     "name": "Gol'Bolar Quarry",
     "zone": "Dun Morogh",
     "type": "HostileArea",
@@ -3533,6 +3789,8 @@
     ]
   },
   {
+    "x": 287,
+    "y": -148,
     "name": "Helm's Bed Lake",
     "zone": "Dun Morogh",
     "type": "HostileArea",
@@ -3555,6 +3813,8 @@
     ]
   },
   {
+    "x": 265,
+    "y": -144,
     "name": "Ice Flow Lake",
     "zone": "Dun Morogh",
     "type": "HostileArea",
@@ -3574,11 +3834,15 @@
     ]
   },
   {
+    "x": 277,
+    "y": -145,
     "name": "Misty Pine Refuge",
     "zone": "Dun Morogh",
     "type": "HostileArea"
   },
   {
+    "x": 268,
+    "y": -143,
     "name": "Shimmer Ridge",
     "zone": "Dun Morogh",
     "type": "HostileArea",
@@ -3601,6 +3865,8 @@
     ]
   },
   {
+    "x": 269,
+    "y": -149,
     "name": "The Grizzled Den",
     "zone": "Dun Morogh",
     "type": "HostileArea",
@@ -3618,6 +3884,8 @@
     ]
   },
   {
+    "x": 278,
+    "y": -150,
     "name": "The Tundrid Hills",
     "zone": "Dun Morogh",
     "type": "HostileArea",
@@ -3640,6 +3908,8 @@
     ]
   },
   {
+    "x": 130,
+    "y": -124,
     "name": "Bladefist Bay",
     "zone": "Durotar",
     "type": "HostileArea",
@@ -3662,6 +3932,8 @@
     ]
   },
   {
+    "x": 123,
+    "y": -135,
     "name": "Burning Blade Coven",
     "zone": "Durotar",
     "type": "HostileArea",
@@ -3679,6 +3951,8 @@
     ]
   },
   {
+    "x": 128,
+    "y": -144,
     "name": "Darkspear Strand",
     "zone": "Durotar",
     "type": "HostileArea",
@@ -3701,6 +3975,8 @@
     ]
   },
   {
+    "x": 127,
+    "y": -122,
     "name": "Drygulch Ravine",
     "zone": "Durotar",
     "type": "HostileArea",
@@ -3718,6 +3994,8 @@
     ]
   },
   {
+    "x": 135,
+    "y": -146,
     "name": "Echo Isles",
     "zone": "Durotar",
     "type": "HostileArea",
@@ -3745,6 +4023,8 @@
     ]
   },
   {
+    "x": 125,
+    "y": -143,
     "name": "Kolkar Crag",
     "zone": "Durotar",
     "type": "HostileArea",
@@ -3769,6 +4049,8 @@
     ]
   },
   {
+    "x": 122,
+    "y": -131,
     "name": "Razormane Grounds",
     "zone": "Durotar",
     "type": "HostileArea",
@@ -3796,6 +4078,8 @@
     ]
   },
   {
+    "x": 124,
+    "y": -126,
     "name": "Razorwind Canyon",
     "zone": "Durotar",
     "type": "HostileArea",
@@ -3813,6 +4097,8 @@
     ]
   },
   {
+    "x": 132,
+    "y": -131,
     "name": "Scuttle Coast",
     "zone": "Durotar",
     "type": "HostileArea",
@@ -3835,6 +4121,8 @@
     ]
   },
   {
+    "x": 128,
+    "y": -118,
     "name": "Skull Rock",
     "zone": "Durotar",
     "type": "HostileArea",
@@ -3857,6 +4145,8 @@
     ]
   },
   {
+    "x": 120,
+    "y": -123,
     "name": "Thunder Ridge",
     "zone": "Durotar",
     "type": "HostileArea",
@@ -3881,6 +4171,8 @@
     ]
   },
   {
+    "x": 130,
+    "y": -135,
     "name": "Tiragarde Keep",
     "zone": "Durotar",
     "type": "HostileArea",
@@ -3903,6 +4195,8 @@
     ]
   },
   {
+    "x": 122,
+    "y": -138,
     "name": "Valley of Trials",
     "zone": "Durotar",
     "type": "HostileArea",
@@ -3920,6 +4214,8 @@
     ]
   },
   {
+    "x": 263,
+    "y": -205,
     "name": "Addle's Stead",
     "zone": "Duskwood",
     "type": "HostileArea",
@@ -3932,6 +4228,8 @@
     ]
   },
   {
+    "x": 275,
+    "y": -201,
     "name": "Brightwood Grove",
     "zone": "Duskwood",
     "type": "HostileArea",
@@ -3944,6 +4242,8 @@
     ]
   },
   {
+    "x": 264,
+    "y": -199,
     "name": "Dawning Wood Catacombs",
     "zone": "Duskwood",
     "type": "HostileArea",
@@ -3956,6 +4256,8 @@
     ]
   },
   {
+    "x": 262,
+    "y": -198,
     "name": "Forlorn Rowe",
     "zone": "Duskwood",
     "type": "HostileArea",
@@ -3968,6 +4270,8 @@
     ]
   },
   {
+    "x": 280,
+    "y": -198,
     "name": "Manor Mistmantle",
     "zone": "Duskwood",
     "type": "HostileArea",
@@ -3980,6 +4284,8 @@
     ]
   },
   {
+    "x": 262,
+    "y": -202,
     "name": "Raven Hill",
     "zone": "Duskwood",
     "type": "HostileArea",
@@ -3992,6 +4298,8 @@
     ]
   },
   {
+    "x": 264,
+    "y": -201,
     "name": "Raven Hill Cemetery",
     "zone": "Duskwood",
     "type": "HostileArea",
@@ -4004,6 +4312,8 @@
     ]
   },
   {
+    "x": 278,
+    "y": -206,
     "name": "Roland's Doom",
     "zone": "Duskwood",
     "type": "HostileArea",
@@ -4016,6 +4326,8 @@
     ]
   },
   {
+    "x": 276,
+    "y": -196,
     "name": "The Darkened Bank",
     "zone": "Duskwood",
     "type": "HostileArea",
@@ -4028,6 +4340,8 @@
     ]
   },
   {
+    "x": 275,
+    "y": -206,
     "name": "The Rotting Orchard",
     "zone": "Duskwood",
     "type": "HostileArea",
@@ -4040,6 +4354,8 @@
     ]
   },
   {
+    "x": 280,
+    "y": -205,
     "name": "Tranquil Gardens Cemetery",
     "zone": "Duskwood",
     "type": "HostileArea",
@@ -4052,6 +4368,8 @@
     ]
   },
   {
+    "x": 271,
+    "y": -200,
     "name": "Twilight Grove",
     "zone": "Duskwood",
     "type": "EmeraldBough",
@@ -4063,6 +4381,8 @@
     ]
   },
   {
+    "x": 268,
+    "y": -206,
     "name": "Vul'Gol Ogre Mound",
     "zone": "Duskwood",
     "type": "HostileArea",
@@ -4075,6 +4395,8 @@
     ]
   },
   {
+    "x": 272,
+    "y": -206,
     "name": "Yorgen's Farmstead",
     "zone": "Duskwood",
     "type": "HostileArea",
@@ -4111,6 +4433,8 @@
     ]
   },
   {
+    "x": 113,
+    "y": -172,
     "name": "Beezil's Wreck",
     "zone": "Dustwallow Marsh",
     "type": "HostileArea",
@@ -4123,6 +4447,8 @@
     ]
   },
   {
+    "x": 107,
+    "y": -181,
     "name": "Bloodfen Burrow",
     "zone": "Dustwallow Marsh",
     "type": "HostileArea",
@@ -4135,6 +4461,8 @@
     ]
   },
   {
+    "x": 110,
+    "y": -162,
     "name": "Bluefen",
     "zone": "Dustwallow Marsh",
     "type": "HostileArea",
@@ -4147,6 +4475,8 @@
     ]
   },
   {
+    "x": 106,
+    "y": -163,
     "name": "Darkmist Cavern",
     "zone": "Dustwallow Marsh",
     "type": "HostileArea",
@@ -4159,6 +4489,8 @@
     ]
   },
   {
+    "x": 121,
+    "y": -160,
     "name": "Dreadmurk Shore",
     "zone": "Dustwallow Marsh",
     "type": "HostileArea",
@@ -4171,6 +4503,8 @@
     ]
   },
   {
+    "x": 117,
+    "y": -186,
     "name": "Emberstrife's Den",
     "zone": "Dustwallow Marsh",
     "type": "HostileArea",
@@ -4183,6 +4517,8 @@
     ]
   },
   {
+    "x": 107,
+    "y": -175,
     "name": "Lost Point",
     "zone": "Dustwallow Marsh",
     "type": "HostileArea",
@@ -4195,6 +4531,8 @@
     ]
   },
   {
+    "x": 113,
+    "y": -164,
     "name": "Northpoint Tower",
     "zone": "Dustwallow Marsh",
     "type": "HostileArea",
@@ -4207,6 +4545,8 @@
     ]
   },
   {
+    "x": 120,
+    "y": -170,
     "name": "Sentry Point",
     "zone": "Dustwallow Marsh",
     "type": "HostileArea",
@@ -4219,6 +4559,8 @@
     ]
   },
   {
+    "x": 103,
+    "y": -172,
     "name": "Shady Rest Inn",
     "zone": "Dustwallow Marsh",
     "type": "HostileArea",
@@ -4231,6 +4573,8 @@
     ]
   },
   {
+    "x": 112,
+    "y": -179,
     "name": "Stonemaul Ruins",
     "zone": "Dustwallow Marsh",
     "type": "HostileArea",
@@ -4243,6 +4587,8 @@
     ]
   },
   {
+    "x": 109,
+    "y": -179,
     "name": "The Den of Flame",
     "zone": "Dustwallow Marsh",
     "type": "HostileArea",
@@ -4255,6 +4601,8 @@
     ]
   },
   {
+    "x": 109,
+    "y": -174,
     "name": "The Quagmire",
     "zone": "Dustwallow Marsh",
     "type": "HostileArea",
@@ -4267,6 +4615,8 @@
     ]
   },
   {
+    "x": 121,
+    "y": -180,
     "name": "Tidefury Cove",
     "zone": "Dustwallow Marsh",
     "type": "HostileArea",
@@ -4279,6 +4629,8 @@
     ]
   },
   {
+    "x": 117,
+    "y": -164,
     "name": "Witch Hill",
     "zone": "Dustwallow Marsh",
     "type": "HostileArea",
@@ -4291,6 +4643,8 @@
     ]
   },
   {
+    "x": 311,
+    "y": -60,
     "name": "Blackwood Lake",
     "zone": "Eastern Plaguelands",
     "type": "HostileArea",
@@ -4308,6 +4662,8 @@
     ]
   },
   {
+    "x": 315,
+    "y": -66,
     "name": "Corin's Crossing",
     "zone": "Eastern Plaguelands",
     "type": "HostileArea",
@@ -4325,6 +4681,8 @@
     ]
   },
   {
+    "x": 306,
+    "y": -68,
     "name": "Crown Guard Tower",
     "zone": "Eastern Plaguelands",
     "type": "HostileArea",
@@ -4337,6 +4695,8 @@
     ]
   },
   {
+    "x": 306,
+    "y": -72,
     "name": "Darrowshire",
     "zone": "Eastern Plaguelands",
     "type": "HostileArea",
@@ -4354,6 +4714,8 @@
     ]
   },
   {
+    "x": 309,
+    "y": -54,
     "name": "Eastwall Gate",
     "zone": "Eastern Plaguelands",
     "type": "HostileArea",
@@ -4366,6 +4728,8 @@
     ]
   },
   {
+    "x": 318,
+    "y": -60,
     "name": "Eastwall Tower",
     "zone": "Eastern Plaguelands",
     "type": "HostileArea",
@@ -4378,11 +4742,15 @@
     ]
   },
   {
+    "x": 306,
+    "y": -61,
     "name": "Fungal Vale",
     "zone": "Eastern Plaguelands",
     "type": "HostileArea"
   },
   {
+    "x": 316,
+    "y": -69,
     "name": "Lake Mereldar",
     "zone": "Eastern Plaguelands",
     "type": "HostileArea",
@@ -4400,6 +4768,8 @@
     ]
   },
   {
+    "x": 319,
+    "y": -55,
     "name": "Northdale",
     "zone": "Eastern Plaguelands",
     "type": "HostileArea",
@@ -4412,6 +4782,8 @@
     ]
   },
   {
+    "x": 313,
+    "y": -54,
     "name": "Northpass Tower",
     "zone": "Eastern Plaguelands",
     "type": "HostileArea",
@@ -4424,6 +4796,8 @@
     ]
   },
   {
+    "x": 321,
+    "y": -64,
     "name": "Pestilent Scar",
     "zone": "Eastern Plaguelands",
     "type": "HostileArea",
@@ -4451,6 +4825,8 @@
     ]
   },
   {
+    "x": 303,
+    "y": -55,
     "name": "Plaguewood",
     "zone": "Eastern Plaguelands",
     "type": "HostileArea",
@@ -4488,6 +4864,8 @@
     ]
   },
   {
+    "x": 299,
+    "y": -57,
     "name": "Plaguewood Tower",
     "zone": "Eastern Plaguelands",
     "type": "HostileArea",
@@ -4500,11 +4878,8 @@
     ]
   },
   {
-    "name": "Quel'Lithien Lodge",
-    "zone": "Eastern Plaguelands",
-    "type": "HostileArea"
-  },
-  {
+    "x": 312,
+    "y": -52,
     "name": "Quel'Lithien Lodge",
     "zone": "Eastern Plaguelands",
     "type": "HostileArea",
@@ -4517,6 +4892,8 @@
     ]
   },
   {
+    "x": 297,
+    "y": -55,
     "name": "Terrordale",
     "zone": "Eastern Plaguelands",
     "type": "HostileArea",
@@ -4549,6 +4926,8 @@
     ]
   },
   {
+    "x": 294,
+    "y": -57,
     "name": "Terrorweb Tunnel",
     "zone": "Eastern Plaguelands",
     "type": "HostileArea",
@@ -4566,6 +4945,8 @@
     ]
   },
   {
+    "x": 312,
+    "y": -66,
     "name": "The Infectis Scar",
     "zone": "Eastern Plaguelands",
     "type": "HostileArea",
@@ -4578,6 +4959,8 @@
     ]
   },
   {
+    "x": 300,
+    "y": -68,
     "name": "The Marris Stead",
     "zone": "Eastern Plaguelands",
     "type": "HostileArea",
@@ -4600,11 +4983,15 @@
     ]
   },
   {
+    "x": 324,
+    "y": -59,
     "name": "The Noxious Glade",
     "zone": "Eastern Plaguelands",
     "type": "HostileArea"
   },
   {
+    "x": 295,
+    "y": -67,
     "name": "Thondroril River",
     "zone": "Eastern Plaguelands",
     "type": "HostileArea",
@@ -4622,11 +5009,15 @@
     ]
   },
   {
+    "x": 319,
+    "y": -51,
     "name": "Zul'Mashar",
     "zone": "Eastern Plaguelands",
     "type": "HostileArea"
   },
   {
+    "x": 275,
+    "y": -192,
     "name": "Brackwell Pumpkin Patch",
     "zone": "Elwynn Forest",
     "type": "HostileArea",
@@ -4639,6 +5030,8 @@
     ]
   },
   {
+    "x": 280,
+    "y": -189,
     "name": "Eastvale Logging Camp",
     "zone": "Elwynn Forest",
     "type": "HostileArea",
@@ -4651,6 +5044,8 @@
     ]
   },
   {
+    "x": 267,
+    "y": -181,
     "name": "Echo Ridge Mine",
     "zone": "Elwynn Forest",
     "type": "HostileArea",
@@ -4663,6 +5058,8 @@
     ]
   },
   {
+    "x": 264,
+    "y": -193,
     "name": "Fargodeep Mine",
     "zone": "Elwynn Forest",
     "type": "HostileArea",
@@ -4675,6 +5072,8 @@
     ]
   },
   {
+    "x": 259,
+    "y": -196,
     "name": "Forest's Edge",
     "zone": "Elwynn Forest",
     "type": "HostileArea",
@@ -4687,6 +5086,8 @@
     ]
   },
   {
+    "x": 277,
+    "y": -186,
     "name": "Heroes Vigil",
     "zone": "Elwynn Forest",
     "type": "HostileArea",
@@ -4699,6 +5100,8 @@
     ]
   },
   {
+    "x": 273,
+    "y": -186,
     "name": "Jasperlode Mine",
     "zone": "Elwynn Forest",
     "type": "HostileArea",
@@ -4711,6 +5114,8 @@
     ]
   },
   {
+    "x": 262,
+    "y": -188,
     "name": "Mirror Lake",
     "zone": "Elwynn Forest",
     "type": "HostileArea",
@@ -4723,6 +5128,8 @@
     ]
   },
   {
+    "x": 261,
+    "y": -190,
     "name": "Mirror Lake Orchard",
     "zone": "Elwynn Forest",
     "type": "HostileArea",
@@ -4735,6 +5142,8 @@
     ]
   },
   {
+    "x": 270,
+    "y": -185,
     "name": "Northshire Vineyards",
     "zone": "Elwynn Forest",
     "type": "HostileArea",
@@ -4747,6 +5156,8 @@
     ]
   },
   {
+    "x": 281,
+    "y": -193,
     "name": "Ridgepoint Tower",
     "zone": "Elwynn Forest",
     "type": "HostileArea",
@@ -4759,6 +5170,8 @@
     ]
   },
   {
+    "x": 262,
+    "y": -194,
     "name": "Stonefield Farm",
     "zone": "Elwynn Forest",
     "type": "HostileArea",
@@ -4771,6 +5184,8 @@
     ]
   },
   {
+    "x": 266,
+    "y": -194,
     "name": "The Maclure Vineyards",
     "zone": "Elwynn Forest",
     "type": "HostileArea",
@@ -4783,6 +5198,8 @@
     ]
   },
   {
+    "x": 274,
+    "y": -190,
     "name": "Tower of Azora",
     "zone": "Elwynn Forest",
     "type": "HostileArea",
@@ -4795,6 +5212,8 @@
     ]
   },
   {
+    "x": 86,
+    "y": -78,
     "name": "Bloodvenom Falls",
     "zone": "Felwood",
     "type": "HostileArea",
@@ -4807,6 +5226,8 @@
     ]
   },
   {
+    "x": 83,
+    "y": -76,
     "name": "Bloodvenom River",
     "zone": "Felwood",
     "type": "HostileArea",
@@ -4819,6 +5240,8 @@
     ]
   },
   {
+    "x": 88,
+    "y": -94,
     "name": "Deadwood Village",
     "zone": "Felwood",
     "type": "HostileArea",
@@ -4831,6 +5254,8 @@
     ]
   },
   {
+    "x": 97,
+    "y": -60,
     "name": "Felpaw Village",
     "zone": "Felwood",
     "type": "HostileArea",
@@ -4843,6 +5268,8 @@
     ]
   },
   {
+    "x": 93,
+    "y": -64,
     "name": "Irontree Cavern",
     "zone": "Felwood",
     "type": "HostileArea",
@@ -4855,6 +5282,8 @@
     ]
   },
   {
+    "x": 90,
+    "y": -66,
     "name": "Irontree Woods",
     "zone": "Felwood",
     "type": "HostileArea",
@@ -4867,6 +5296,8 @@
     ]
   },
   {
+    "x": 85,
+    "y": -63,
     "name": "Jadefire Run",
     "zone": "Felwood",
     "type": "HostileArea",
@@ -4891,6 +5322,8 @@
     ]
   },
   {
+    "x": 93,
+    "y": -92,
     "name": "Morlos'Aran",
     "zone": "Felwood",
     "type": "HostileArea",
@@ -4903,6 +5336,8 @@
     ]
   },
   {
+    "x": 82,
+    "y": -85,
     "name": "Ruins of Constellas",
     "zone": "Felwood",
     "type": "HostileArea",
@@ -4915,6 +5350,8 @@
     ]
   },
   {
+    "x": 85,
+    "y": -73,
     "name": "Shatter Scar Vale",
     "zone": "Felwood",
     "type": "HostileArea",
@@ -4939,6 +5376,8 @@
     ]
   },
   {
+    "x": 56,
+    "y": -163,
     "name": "Dream Bough",
     "zone": "Feralas",
     "type": "EmeraldBough",
@@ -4950,11 +5389,15 @@
     ]
   },
   {
+    "x": 58,
+    "y": -186,
     "name": "Feral Scar Vale",
     "zone": "Feralas",
     "type": "HostileArea"
   },
   {
+    "x": 59,
+    "y": -194,
     "name": "Frayfeather Highlands",
     "zone": "Feralas",
     "type": "HostileArea",
@@ -4984,6 +5427,8 @@
     ]
   },
   {
+    "x": 74,
+    "y": -173,
     "name": "Gordunni Outpost",
     "zone": "Feralas",
     "type": "HostileArea",
@@ -5006,6 +5451,8 @@
     ]
   },
   {
+    "x": 70,
+    "y": -177,
     "name": "Grimtotem Compound",
     "zone": "Feralas",
     "type": "HostileArea",
@@ -5028,6 +5475,8 @@
     ]
   },
   {
+    "x": 57,
+    "y": -183,
     "name": "High Wilderness",
     "zone": "Feralas",
     "type": "HostileArea",
@@ -5050,6 +5499,8 @@
     ]
   },
   {
+    "x": 40,
+    "y": -196,
     "name": "Isle of Dread",
     "zone": "Feralas",
     "type": "HostileArea",
@@ -5074,11 +5525,15 @@
     ]
   },
   {
+    "x": 76,
+    "y": -177,
     "name": "Lariss Pavillion",
     "zone": "Feralas",
     "type": "HostileArea"
   },
   {
+    "x": 80,
+    "y": -180,
     "name": "Lower Wilds",
     "zone": "Feralas",
     "type": "HostileArea",
@@ -5101,6 +5556,8 @@
     ]
   },
   {
+    "x": 57,
+    "y": -166,
     "name": "Oneiros",
     "zone": "Feralas",
     "type": "HostileArea",
@@ -5123,6 +5580,8 @@
     ]
   },
   {
+    "x": 56,
+    "y": -175,
     "name": "Rage Scar Hold",
     "zone": "Feralas",
     "type": "HostileArea",
@@ -5135,6 +5594,8 @@
     ]
   },
   {
+    "x": 63,
+    "y": -193,
     "name": "Ruins of Isildien",
     "zone": "Feralas",
     "type": "HostileArea",
@@ -5167,6 +5628,8 @@
     ]
   },
   {
+    "x": 47,
+    "y": -164,
     "name": "Ruins of Ravenwind",
     "zone": "Feralas",
     "type": "HostileArea",
@@ -5189,6 +5652,8 @@
     ]
   },
   {
+    "x": 38,
+    "y": -185,
     "name": "Ruins of Solarsal",
     "zone": "Feralas",
     "type": "HostileArea",
@@ -5211,6 +5676,8 @@
     ]
   },
   {
+    "x": 37,
+    "y": -191,
     "name": "Shalzaru's Lair",
     "zone": "Feralas",
     "type": "HostileArea",
@@ -5240,6 +5707,8 @@
     ]
   },
   {
+    "x": 51,
+    "y": -179,
     "name": "The Forgotten Coast",
     "zone": "Feralas",
     "type": "HostileArea",
@@ -5257,6 +5726,8 @@
     ]
   },
   {
+    "x": 52,
+    "y": -168,
     "name": "The Twin Colossals",
     "zone": "Feralas",
     "type": "HostileArea",
@@ -5274,6 +5745,8 @@
     ]
   },
   {
+    "x": 74,
+    "y": -189,
     "name": "The Writhing Deep",
     "zone": "Feralas",
     "type": "HostileArea",
@@ -5301,16 +5774,22 @@
     ]
   },
   {
+    "x": 64,
+    "y": -184,
     "name": "Verdantis River",
     "zone": "Feralas",
     "type": "HostileArea"
   },
   {
+    "x": 72,
+    "y": -183,
     "name": "Wildwind Lake",
     "zone": "Feralas",
     "type": "HostileArea"
   },
   {
+    "x": 70,
+    "y": -187,
     "name": "Woodpaw Hills",
     "zone": "Feralas",
     "type": "HostileArea",
@@ -5508,6 +5987,8 @@
     ]
   },
   {
+    "x": 264,
+    "y": -97,
     "name": "Azurelode Mine",
     "zone": "Hillsbrad Foothills",
     "type": "HostileArea",
@@ -5520,6 +6001,8 @@
     ]
   },
   {
+    "x": 282,
+    "y": -84,
     "name": "Chillwind Point",
     "zone": "Hillsbrad Foothills",
     "type": "HostileArea",
@@ -5532,6 +6015,8 @@
     ]
   },
   {
+    "x": 271,
+    "y": -91,
     "name": "Darrow Hill",
     "zone": "Hillsbrad Foothills",
     "type": "HostileArea",
@@ -5544,6 +6029,8 @@
     ]
   },
   {
+    "x": 282,
+    "y": -93,
     "name": "Durnholde Keep",
     "zone": "Hillsbrad Foothills",
     "type": "HostileArea",
@@ -5556,6 +6043,8 @@
     ]
   },
   {
+    "x": 275,
+    "y": -99,
     "name": "Eastern Strand",
     "zone": "Hillsbrad Foothills",
     "type": "HostileArea",
@@ -5568,6 +6057,8 @@
     ]
   },
   {
+    "x": 266,
+    "y": -93,
     "name": "Hillsbrad",
     "zone": "Hillsbrad Foothills",
     "type": "HostileArea",
@@ -5580,6 +6071,8 @@
     ]
   },
   {
+    "x": 276,
+    "y": -97,
     "name": "Nethander Stead",
     "zone": "Hillsbrad Foothills",
     "type": "HostileArea",
@@ -5592,6 +6085,8 @@
     ]
   },
   {
+    "x": 260,
+    "y": -102,
     "name": "Purgation Isle",
     "zone": "Hillsbrad Foothills",
     "type": "HostileArea",
@@ -5604,6 +6099,8 @@
     ]
   },
   {
+    "x": 283,
+    "y": -87,
     "name": "Ravenholdt Manor",
     "zone": "Hillsbrad Foothills",
     "type": "HostileArea",
@@ -5616,6 +6113,8 @@
     ]
   },
   {
+    "x": 262,
+    "y": -95,
     "name": "Southpoint Tower",
     "zone": "Hillsbrad Foothills",
     "type": "HostileArea",
@@ -5628,6 +6127,8 @@
     ]
   },
   {
+    "x": 268,
+    "y": -99,
     "name": "Western Strand",
     "zone": "Hillsbrad Foothills",
     "type": "HostileArea",
@@ -5640,6 +6141,8 @@
     ]
   },
   {
+    "x": 302,
+    "y": -83,
     "name": "Agol'watha",
     "zone": "Hinterlands",
     "type": "HostileArea",
@@ -5652,6 +6155,8 @@
     ]
   },
   {
+    "x": 302,
+    "y": -90,
     "name": "Altar of Zul",
     "zone": "Hinterlands",
     "type": "HostileArea",
@@ -5664,6 +6169,8 @@
     ]
   },
   {
+    "x": 294,
+    "y": -90,
     "name": "Bogen's Ledge",
     "zone": "Hinterlands",
     "type": "HostileArea",
@@ -5676,6 +6183,8 @@
     ]
   },
   {
+    "x": 296,
+    "y": -88,
     "name": "Hiri'watha",
     "zone": "Hinterlands",
     "type": "HostileArea",
@@ -5688,6 +6197,8 @@
     ]
   },
   {
+    "x": 309,
+    "y": -92,
     "name": "Jintha'Alor",
     "zone": "Hinterlands",
     "type": "HostileArea",
@@ -5700,6 +6211,8 @@
     ]
   },
   {
+    "x": 293,
+    "y": -81,
     "name": "Plaguemist Ravine",
     "zone": "Hinterlands",
     "type": "HostileArea",
@@ -5712,6 +6225,8 @@
     ]
   },
   {
+    "x": 296,
+    "y": -85,
     "name": "Quel'Danil Lodge",
     "zone": "Hinterlands",
     "type": "HostileArea",
@@ -5724,6 +6239,8 @@
     ]
   },
   {
+    "x": 309,
+    "y": -78,
     "name": "Seradane",
     "zone": "Hinterlands",
     "type": "EmeraldBough",
@@ -5735,6 +6252,8 @@
     ]
   },
   {
+    "x": 297,
+    "y": -92,
     "name": "Shadra'Alor",
     "zone": "Hinterlands",
     "type": "HostileArea",
@@ -5747,6 +6266,8 @@
     ]
   },
   {
+    "x": 313,
+    "y": -86,
     "name": "Shaol'watha",
     "zone": "Hinterlands",
     "type": "HostileArea",
@@ -5759,6 +6280,8 @@
     ]
   },
   {
+    "x": 307,
+    "y": -84,
     "name": "Skulk Rock",
     "zone": "Hinterlands",
     "type": "HostileArea",
@@ -5771,6 +6294,8 @@
     ]
   },
   {
+    "x": 303,
+    "y": -87,
     "name": "The Creeping Ruin",
     "zone": "Hinterlands",
     "type": "HostileArea",
@@ -5783,6 +6308,8 @@
     ]
   },
   {
+    "x": 316,
+    "y": -90,
     "name": "The Overlook Cliffs",
     "zone": "Hinterlands",
     "type": "HostileArea",
@@ -5795,6 +6322,8 @@
     ]
   },
   {
+    "x": 300,
+    "y": -88,
     "name": "Valorwind Lake",
     "zone": "Hinterlands",
     "type": "HostileArea",
@@ -5807,6 +6336,8 @@
     ]
   },
   {
+    "x": 308,
+    "y": -149,
     "name": "Ironband's Excavation Site",
     "zone": "Loch Modan",
     "type": "HostileArea",
@@ -5819,6 +6350,8 @@
     ]
   },
   {
+    "x": 308,
+    "y": -141,
     "name": "Mo'grosh Stronghold",
     "zone": "Loch Modan",
     "type": "HostileArea",
@@ -5831,6 +6364,8 @@
     ]
   },
   {
+    "x": 298,
+    "y": -140,
     "name": "Silver Stream Mine",
     "zone": "Loch Modan",
     "type": "HostileArea",
@@ -5843,6 +6378,8 @@
     ]
   },
   {
+    "x": 297,
+    "y": -151,
     "name": "Stonesplinter Valley",
     "zone": "Loch Modan",
     "type": "HostileArea",
@@ -6190,6 +6727,8 @@
     ]
   },
   {
+    "x": 100,
+    "y": -49,
     "name": "Shrine of Remulos",
     "zone": "Moonglade",
     "type": "HostileArea",
@@ -6202,6 +6741,8 @@
     ]
   },
   {
+    "x": 108,
+    "y": -52,
     "name": "Stormrage Barrow Dens",
     "zone": "Moonglade",
     "type": "HostileArea",
@@ -6214,6 +6755,8 @@
     ]
   },
   {
+    "x": 73,
+    "y": -152,
     "name": "Baeldun Digsite",
     "zone": "Mulgore",
     "type": "HostileArea",
@@ -6226,6 +6769,8 @@
     ]
   },
   {
+    "x": 88,
+    "y": -165,
     "name": "Brambleblade Ravine",
     "zone": "Mulgore",
     "type": "HostileArea",
@@ -6238,6 +6783,8 @@
     ]
   },
   {
+    "x": 74,
+    "y": -157,
     "name": "Palemane Rock",
     "zone": "Mulgore",
     "type": "HostileArea",
@@ -6250,6 +6797,8 @@
     ]
   },
   {
+    "x": 82,
+    "y": -166,
     "name": "Red Cloud Mesa",
     "zone": "Mulgore",
     "type": "HostileArea",
@@ -6262,6 +6811,8 @@
     ]
   },
   {
+    "x": 87,
+    "y": -143,
     "name": "Red Rocks",
     "zone": "Mulgore",
     "type": "HostileArea",
@@ -6274,6 +6825,8 @@
     ]
   },
   {
+    "x": 82,
+    "y": -149,
     "name": "The Golden Plains",
     "zone": "Mulgore",
     "type": "HostileArea",
@@ -6286,6 +6839,8 @@
     ]
   },
   {
+    "x": 84,
+    "y": -154,
     "name": "The Ravaged Caravan",
     "zone": "Mulgore",
     "type": "HostileArea",
@@ -6298,6 +6853,8 @@
     ]
   },
   {
+    "x": 85,
+    "y": -161,
     "name": "The Rolling Plains",
     "zone": "Mulgore",
     "type": "HostileArea",
@@ -6310,6 +6867,8 @@
     ]
   },
   {
+    "x": 87,
+    "y": -153,
     "name": "The Venture Co. Mine",
     "zone": "Mulgore",
     "type": "HostileArea",
@@ -6322,6 +6881,8 @@
     ]
   },
   {
+    "x": 83,
+    "y": -139,
     "name": "Windfury Ridge",
     "zone": "Mulgore",
     "type": "HostileArea",
@@ -6591,6 +7152,8 @@
     "type": "HostileArea"
   },
   {
+    "x": 295,
+    "y": -186,
     "name": "Alther's Mill",
     "zone": "Redridge Mountains",
     "type": "HostileArea",
@@ -6603,6 +7166,8 @@
     ]
   },
   {
+    "x": 301,
+    "y": -185,
     "name": "Galardell Valley",
     "zone": "Redridge Mountains",
     "type": "HostileArea",
@@ -6615,6 +7180,8 @@
     ]
   },
   {
+    "x": 291,
+    "y": -190,
     "name": "Lake Everstill",
     "zone": "Redridge Mountains",
     "type": "HostileArea",
@@ -6627,6 +7194,8 @@
     ]
   },
   {
+    "x": 293,
+    "y": -191,
     "name": "Lakeridge Highway",
     "zone": "Redridge Mountains",
     "type": "HostileArea",
@@ -6639,6 +7208,8 @@
     ]
   },
   {
+    "x": 291,
+    "y": -184,
     "name": "Redridge Canyons",
     "zone": "Redridge Mountains",
     "type": "HostileArea",
@@ -6651,6 +7222,8 @@
     ]
   },
   {
+    "x": 291,
+    "y": -181,
     "name": "Render's Camp",
     "zone": "Redridge Mountains",
     "type": "HostileArea",
@@ -6663,6 +7236,8 @@
     ]
   },
   {
+    "x": 300,
+    "y": -192,
     "name": "Render's Valley",
     "zone": "Redridge Mountains",
     "type": "HostileArea",
@@ -6675,6 +7250,8 @@
     ]
   },
   {
+    "x": 288,
+    "y": -184,
     "name": "Rethban Caverns",
     "zone": "Redridge Mountains",
     "type": "HostileArea",
@@ -6687,6 +7264,8 @@
     ]
   },
   {
+    "x": 298,
+    "y": -188,
     "name": "Stonewatch",
     "zone": "Redridge Mountains",
     "type": "HostileArea",
@@ -6699,6 +7278,8 @@
     ]
   },
   {
+    "x": 287,
+    "y": -191,
     "name": "Three Corners",
     "zone": "Redridge Mountains",
     "type": "HostileArea",
@@ -6711,6 +7292,8 @@
     ]
   },
   {
+    "x": 302,
+    "y": -187,
     "name": "Tower of Ilgalar",
     "zone": "Redridge Mountains",
     "type": "HostileArea",
@@ -7577,6 +8160,8 @@
     ]
   },
   {
+    "x": 276,
+    "y": -166,
     "name": "Blackchar Cave",
     "zone": "Searing Gorge",
     "type": "HostileArea",
@@ -7589,6 +8174,8 @@
     ]
   },
   {
+    "x": 285,
+    "y": -160,
     "name": "Dustfire Valley",
     "zone": "Searing Gorge",
     "type": "HostileArea",
@@ -7601,6 +8188,8 @@
     ]
   },
   {
+    "x": 276,
+    "y": -160,
     "name": "Firewatch Ridge",
     "zone": "Searing Gorge",
     "type": "HostileArea",
@@ -7613,6 +8202,8 @@
     ]
   },
   {
+    "x": 285,
+    "y": -163,
     "name": "Grimesilt Digsite",
     "zone": "Searing Gorge",
     "type": "HostileArea",
@@ -7625,6 +8216,8 @@
     ]
   },
   {
+    "x": 288,
+    "y": -156,
     "name": "Stonewrought Pass",
     "zone": "Searing Gorge",
     "type": "HostileArea",
@@ -7637,6 +8230,8 @@
     ]
   },
   {
+    "x": 281,
+    "y": -162,
     "name": "The Cauldron",
     "zone": "Searing Gorge",
     "type": "HostileArea",
@@ -7649,6 +8244,8 @@
     ]
   },
   {
+    "x": 278,
+    "y": -161,
     "name": "The Slag Pit",
     "zone": "Searing Gorge",
     "type": "HostileArea",
@@ -7958,6 +8555,8 @@
     ]
   },
   {
+    "x": 75,
+    "y": -203,
     "name": "Staghelm Point",
     "zone": "Silithus",
     "type": "HostileArea",
@@ -7982,6 +8581,8 @@
     ]
   },
   {
+    "x": 65,
+    "y": -202,
     "name": "Hive'Ashi",
     "zone": "Silithus",
     "type": "HostileArea",
@@ -7994,6 +8595,8 @@
     ]
   },
   {
+    "x": 71,
+    "y": -218,
     "name": "Hive'Regal",
     "zone": "Silithus",
     "type": "HostileArea",
@@ -8006,6 +8609,8 @@
     ]
   },
   {
+    "x": 58,
+    "y": -212,
     "name": "Hive'Zora",
     "zone": "Silithus",
     "type": "HostileArea",
@@ -8018,6 +8623,8 @@
     ]
   },
   {
+    "x": 65,
+    "y": -213,
     "name": "Pincer Sands",
     "zone": "Silithus",
     "type": "HostileArea",
@@ -8030,6 +8637,8 @@
     ]
   },
   {
+    "x": 72,
+    "y": -210,
     "name": "Southwind Village",
     "zone": "Silithus",
     "type": "HostileArea",
@@ -8042,6 +8651,8 @@
     ]
   },
   {
+    "x": 58,
+    "y": -200,
     "name": "The Crystal Vale",
     "zone": "Silithus",
     "type": "HostileArea",
@@ -8054,6 +8665,8 @@
     ]
   },
   {
+    "x": 59,
+    "y": -219,
     "name": "The Scarab Wall",
     "zone": "Silithus",
     "type": "HostileArea",
@@ -8066,6 +8679,8 @@
     ]
   },
   {
+    "x": 68,
+    "y": -209,
     "name": "The Swarming Pillar",
     "zone": "Silithus",
     "type": "HostileArea",
@@ -8078,6 +8693,8 @@
     ]
   },
   {
+    "x": 63,
+    "y": -208,
     "name": "Twilight Base Camp",
     "zone": "Silithus",
     "type": "HostileArea",
@@ -8090,6 +8707,8 @@
     ]
   },
   {
+    "x": 56,
+    "y": -218,
     "name": "Twilight Outpost",
     "zone": "Silithus",
     "type": "HostileArea",
@@ -8102,6 +8721,8 @@
     ]
   },
   {
+    "x": 59,
+    "y": -205,
     "name": "Twilight Post",
     "zone": "Silithus",
     "type": "HostileArea",
@@ -8114,6 +8735,8 @@
     ]
   },
   {
+    "x": 257,
+    "y": -89,
     "name": "Ambermill",
     "zone": "Silverpine Forest",
     "type": "HostileArea",
@@ -8126,6 +8749,8 @@
     ]
   },
   {
+    "x": 256,
+    "y": -92,
     "name": "Beren's Peril",
     "zone": "Silverpine Forest",
     "type": "HostileArea",
@@ -8138,6 +8763,8 @@
     ]
   },
   {
+    "x": 255,
+    "y": -84,
     "name": "Deep Elem Mine",
     "zone": "Silverpine Forest",
     "type": "HostileArea",
@@ -8150,6 +8777,8 @@
     ]
   },
   {
+    "x": 259,
+    "y": -79,
     "name": "Fenris Keep",
     "zone": "Silverpine Forest",
     "type": "HostileArea",
@@ -8162,6 +8791,8 @@
     ]
   },
   {
+    "x": 252,
+    "y": -74,
     "name": "Ivar Patch",
     "zone": "Silverpine Forest",
     "type": "HostileArea",
@@ -8174,6 +8805,8 @@
     ]
   },
   {
+    "x": 255,
+    "y": -73,
     "name": "Malden's Orchard",
     "zone": "Silverpine Forest",
     "type": "HostileArea",
@@ -8186,6 +8819,8 @@
     ]
   },
   {
+    "x": 245,
+    "y": -78,
     "name": "North Tide's Run",
     "zone": "Silverpine Forest",
     "type": "HostileArea",
@@ -8198,6 +8833,8 @@
     ]
   },
   {
+    "x": 250,
+    "y": -86,
     "name": "Olsen's Farthing",
     "zone": "Silverpine Forest",
     "type": "HostileArea",
@@ -8210,6 +8847,8 @@
     ]
   },
   {
+    "x": 250,
+    "y": -92,
     "name": "Pyrewood Village",
     "zone": "Silverpine Forest",
     "type": "HostileArea",
@@ -8222,6 +8861,8 @@
     ]
   },
   {
+    "x": 264,
+    "y": -79,
     "name": "The Dawning Isles",
     "zone": "Silverpine Forest",
     "type": "HostileArea",
@@ -8234,6 +8875,8 @@
     ]
   },
   {
+    "x": 249,
+    "y": -76,
     "name": "The Dead Field",
     "zone": "Silverpine Forest",
     "type": "HostileArea",
@@ -8246,6 +8889,8 @@
     ]
   },
   {
+    "x": 250,
+    "y": -95,
     "name": "The Graymane Wall",
     "zone": "Silverpine Forest",
     "type": "HostileArea",
@@ -8258,6 +8903,8 @@
     ]
   },
   {
+    "x": 255,
+    "y": -76,
     "name": "The Shining Strand",
     "zone": "Silverpine Forest",
     "type": "HostileArea",
@@ -8270,6 +8917,8 @@
     ]
   },
   {
+    "x": 245,
+    "y": -74,
     "name": "The Skittering Dark",
     "zone": "Silverpine Forest",
     "type": "HostileArea",
@@ -8282,6 +8931,8 @@
     ]
   },
   {
+    "x": 75,
+    "y": -135,
     "name": "Boulderslide Ravine",
     "zone": "Stonetalon Mountains",
     "type": "HostileArea",
@@ -8294,6 +8945,8 @@
     ]
   },
   {
+    "x": 81,
+    "y": -134,
     "name": "Camp Aparaje",
     "zone": "Stonetalon Mountains",
     "type": "HostileArea",
@@ -8306,6 +8959,8 @@
     ]
   },
   {
+    "x": 75,
+    "y": -116,
     "name": "Cragpool Lake",
     "zone": "Stonetalon Mountains",
     "type": "HostileArea",
@@ -8318,6 +8973,8 @@
     ]
   },
   {
+    "x": 78,
+    "y": -133,
     "name": "Greatwood Vale",
     "zone": "Stonetalon Mountains",
     "type": "HostileArea",
@@ -8330,6 +8987,8 @@
     ]
   },
   {
+    "x": 82,
+    "y": -132,
     "name": "Grimtotem Post",
     "zone": "Stonetalon Mountains",
     "type": "HostileArea",
@@ -8342,6 +9001,8 @@
     ]
   },
   {
+    "x": 67,
+    "y": -116,
     "name": "Mirkfallon Lake",
     "zone": "Stonetalon Mountains",
     "type": "HostileArea",
@@ -8354,6 +9015,8 @@
     ]
   },
   {
+    "x": 69,
+    "y": -127,
     "name": "Sishir Canyon",
     "zone": "Stonetalon Mountains",
     "type": "HostileArea",
@@ -8366,6 +9029,8 @@
     ]
   },
   {
+    "x": 83,
+    "y": -115,
     "name": "Talondeep Path",
     "zone": "Stonetalon Mountains",
     "type": "HostileArea",
@@ -8378,6 +9043,8 @@
     ]
   },
   {
+    "x": 58,
+    "y": -125,
     "name": "The Charred Vale",
     "zone": "Stonetalon Mountains",
     "type": "HostileArea",
@@ -8390,6 +9057,8 @@
     ]
   },
   {
+    "x": 57,
+    "y": -107,
     "name": "The Talon Den",
     "zone": "Stonetalon Mountains",
     "type": "HostileArea",
@@ -8402,6 +9071,8 @@
     ]
   },
   {
+    "x": 73,
+    "y": -126,
     "name": "Webwinder Path",
     "zone": "Stonetalon Mountains",
     "type": "HostileArea",
@@ -8414,6 +9085,8 @@
     ]
   },
   {
+    "x": 76,
+    "y": -120,
     "name": "Windshear Crag",
     "zone": "Stonetalon Mountains",
     "type": "HostileArea",
@@ -8426,6 +9099,8 @@
     ]
   },
   {
+    "x": 81,
+    "y": -122,
     "name": "Windshear Mine",
     "zone": "Stonetalon Mountains",
     "type": "HostileArea",
@@ -8438,6 +9113,8 @@
     ]
   },
   {
+    "x": 274,
+    "y": -222,
     "name": "Balia'mah Ruins",
     "zone": "Stranglethorn Vale",
     "type": "HostileArea",
@@ -8450,6 +9127,8 @@
     ]
   },
   {
+    "x": 258,
+    "y": -232,
     "name": "Bloodsail Compound",
     "zone": "Stranglethorn Vale",
     "type": "HostileArea",
@@ -8462,6 +9141,8 @@
     ]
   },
   {
+    "x": 268,
+    "y": -237,
     "name": "Crystal Shore",
     "zone": "Stranglethorn Vale",
     "type": "HostileArea",
@@ -8474,6 +9155,8 @@
     ]
   },
   {
+    "x": 271,
+    "y": -230,
     "name": "Crystalvein Mine",
     "zone": "Stranglethorn Vale",
     "type": "HostileArea",
@@ -8486,6 +9169,8 @@
     ]
   },
   {
+    "x": 263,
+    "y": -229,
     "name": "Gurubashi Arena",
     "zone": "Stranglethorn Vale",
     "type": "HostileArea",
@@ -8498,6 +9183,8 @@
     ]
   },
   {
+    "x": 269,
+    "y": -245,
     "name": "Jaguero Isle",
     "zone": "Stranglethorn Vale",
     "type": "HostileArea",
@@ -8517,6 +9204,8 @@
     ]
   },
   {
+    "x": 266,
+    "y": -218,
     "name": "Kal'ai Ruins",
     "zone": "Stranglethorn Vale",
     "type": "HostileArea",
@@ -8529,6 +9218,8 @@
     ]
   },
   {
+    "x": 273,
+    "y": -212,
     "name": "Kurzen's Compound",
     "zone": "Stranglethorn Vale",
     "type": "HostileArea",
@@ -8541,6 +9232,8 @@
     ]
   },
   {
+    "x": 269,
+    "y": -216,
     "name": "Lake Nazferiti",
     "zone": "Stranglethorn Vale",
     "type": "HostileArea",
@@ -8553,6 +9246,8 @@
     ]
   },
   {
+    "x": 265,
+    "y": -237,
     "name": "Mistvale Valley",
     "zone": "Stranglethorn Vale",
     "type": "HostileArea",
@@ -8565,6 +9260,8 @@
     ]
   },
   {
+    "x": 267,
+    "y": -221,
     "name": "Mizjah Ruins",
     "zone": "Stranglethorn Vale",
     "type": "HostileArea",
@@ -8577,6 +9274,8 @@
     ]
   },
   {
+    "x": 276,
+    "y": -220,
     "name": "Mosh'Ogg Ogre Mound",
     "zone": "Stranglethorn Vale",
     "type": "HostileArea",
@@ -8589,6 +9288,8 @@
     ]
   },
   {
+    "x": 260,
+    "y": -236,
     "name": "Nek'mani Wellspring",
     "zone": "Stranglethorn Vale",
     "type": "HostileArea",
@@ -8601,6 +9302,8 @@
     ]
   },
   {
+    "x": 270,
+    "y": -234,
     "name": "Ruins of Aboraz",
     "zone": "Stranglethorn Vale",
     "type": "HostileArea",
@@ -8613,6 +9316,8 @@
     ]
   },
   {
+    "x": 266,
+    "y": -231,
     "name": "Ruins of Jubuwal",
     "zone": "Stranglethorn Vale",
     "type": "HostileArea",
@@ -8625,6 +9330,8 @@
     ]
   },
   {
+    "x": 259,
+    "y": -212,
     "name": "Ruins of Zul'Kunda",
     "zone": "Stranglethorn Vale",
     "type": "HostileArea",
@@ -8637,6 +9344,8 @@
     ]
   },
   {
+    "x": 274,
+    "y": -227,
     "name": "Ruins of Zul'Mamwe",
     "zone": "Stranglethorn Vale",
     "type": "HostileArea",
@@ -8649,6 +9358,8 @@
     ]
   },
   {
+    "x": 256,
+    "y": -214,
     "name": "The Savage Coast",
     "zone": "Stranglethorn Vale",
     "type": "HostileArea",
@@ -8661,6 +9372,8 @@
     ]
   },
   {
+    "x": 265,
+    "y": -214,
     "name": "Tkashi Ruins",
     "zone": "Stranglethorn Vale",
     "type": "HostileArea",
@@ -8673,6 +9386,8 @@
     ]
   },
   {
+    "x": 271,
+    "y": -215,
     "name": "Venture Co. Base Camp",
     "zone": "Stranglethorn Vale",
     "type": "HostileArea",
@@ -8685,6 +9400,8 @@
     ]
   },
   {
+    "x": 263,
+    "y": -245,
     "name": "Wild Shore",
     "zone": "Stranglethorn Vale",
     "type": "HostileArea",
@@ -8697,6 +9414,8 @@
     ]
   },
   {
+    "x": 271,
+    "y": -224,
     "name": "Ziata'jai Ruins",
     "zone": "Stranglethorn Vale",
     "type": "HostileArea",
@@ -8709,6 +9428,8 @@
     ]
   },
   {
+    "x": 262,
+    "y": -216,
     "name": "Zuuldaia Ruins",
     "zone": "Stranglethorn Vale",
     "type": "HostileArea",
@@ -8956,6 +9677,8 @@
     ]
   },
   {
+    "x": 293,
+    "y": -202,
     "name": "Itharius's Cave",
     "zone": "Swamp of Sorrows",
     "type": "HostileArea",
@@ -8968,6 +9691,8 @@
     ]
   },
   {
+    "x": 313,
+    "y": -196,
     "name": "Misty Reed Strand",
     "zone": "Swamp of Sorrows",
     "type": "HostileArea",
@@ -8980,6 +9705,8 @@
     ]
   },
   {
+    "x": 293,
+    "y": -197,
     "name": "Misty Valley",
     "zone": "Swamp of Sorrows",
     "type": "HostileArea",
@@ -8992,6 +9719,8 @@
     ]
   },
   {
+    "x": 305,
+    "y": -200,
     "name": "Pool of Tears",
     "zone": "Swamp of Sorrows",
     "type": "HostileArea",
@@ -9004,6 +9733,8 @@
     ]
   },
   {
+    "x": 310,
+    "y": -197,
     "name": "Sorrowmurk",
     "zone": "Swamp of Sorrows",
     "type": "HostileArea",
@@ -9016,6 +9747,8 @@
     ]
   },
   {
+    "x": 296,
+    "y": -198,
     "name": "Splinterspear Junction",
     "zone": "Swamp of Sorrows",
     "type": "HostileArea",
@@ -9028,6 +9761,8 @@
     ]
   },
   {
+    "x": 307,
+    "y": -203,
     "name": "Stagalbog",
     "zone": "Swamp of Sorrows",
     "type": "HostileArea",
@@ -9040,6 +9775,8 @@
     ]
   },
   {
+    "x": 306,
+    "y": -196,
     "name": "The Shifting Marsh",
     "zone": "Swamp of Sorrows",
     "type": "HostileArea",
@@ -9052,6 +9789,8 @@
     ]
   },
   {
+    "x": 113,
+    "y": -217,
     "name": "Abyssal Sands",
     "zone": "Tanaris",
     "type": "HostileArea",
@@ -9064,6 +9803,8 @@
     ]
   },
   {
+    "x": 118,
+    "y": -219,
     "name": "Broken Pillar",
     "zone": "Tanaris",
     "type": "HostileArea",
@@ -9076,6 +9817,8 @@
     ]
   },
   {
+    "x": 109,
+    "y": -223,
     "name": "Dunemaul Compound",
     "zone": "Tanaris",
     "type": "HostileArea",
@@ -9088,6 +9831,8 @@
     ]
   },
   {
+    "x": 113,
+    "y": -228,
     "name": "Eastmoon Ruins",
     "zone": "Tanaris",
     "type": "HostileArea",
@@ -9100,6 +9845,8 @@
     ]
   },
   {
+    "x": 122,
+    "y": -241,
     "name": "Land's End Beach",
     "zone": "Tanaris",
     "type": "HostileArea",
@@ -9112,6 +9859,8 @@
     ]
   },
   {
+    "x": 133,
+    "y": -218,
     "name": "Lost Rigger Cove",
     "zone": "Tanaris",
     "type": "HostileArea",
@@ -9124,6 +9873,8 @@
     ]
   },
   {
+    "x": 123,
+    "y": -207,
     "name": "Noonshade Ruins",
     "zone": "Tanaris",
     "type": "HostileArea",
@@ -9136,6 +9887,8 @@
     ]
   },
   {
+    "x": 108,
+    "y": -209,
     "name": "Sandsorrow Watch",
     "zone": "Tanaris",
     "type": "HostileArea",
@@ -9148,6 +9901,8 @@
     ]
   },
   {
+    "x": 127,
+    "y": -226,
     "name": "Southbreak Shore",
     "zone": "Tanaris",
     "type": "HostileArea",
@@ -9160,6 +9915,8 @@
     ]
   },
   {
+    "x": 108,
+    "y": -231,
     "name": "Southmoon Ruins",
     "zone": "Tanaris",
     "type": "HostileArea",
@@ -9172,6 +9929,8 @@
     ]
   },
   {
+    "x": 128,
+    "y": -207,
     "name": "Steamwheedle Port",
     "zone": "Tanaris",
     "type": "HostileArea",
@@ -9184,6 +9943,8 @@
     ]
   },
   {
+    "x": 119,
+    "y": -230,
     "name": "The Gaping Chasm",
     "zone": "Tanaris",
     "type": "HostileArea",
@@ -9196,6 +9957,8 @@
     ]
   },
   {
+    "x": 104,
+    "y": -219,
     "name": "The Noxious Lair",
     "zone": "Tanaris",
     "type": "HostileArea",
@@ -9208,6 +9971,8 @@
     ]
   },
   {
+    "x": 100,
+    "y": -228,
     "name": "Thistleshrub Valley",
     "zone": "Tanaris",
     "type": "HostileArea",
@@ -9220,6 +9985,8 @@
     ]
   },
   {
+    "x": 123,
+    "y": -215,
     "name": "Waterspring Field",
     "zone": "Tanaris",
     "type": "HostileArea",
@@ -9232,6 +9999,8 @@
     ]
   },
   {
+    "x": 129,
+    "y": -210,
     "name": "Wavestrider Beach",
     "zone": "Tanaris",
     "type": "HostileArea",
@@ -9244,6 +10013,8 @@
     ]
   },
   {
+    "x": 59,
+    "y": -27,
     "name": "Ban'ethil Hollow",
     "zone": "Teldrassil",
     "type": "HostileArea",
@@ -9256,6 +10027,8 @@
     ]
   },
   {
+    "x": 65,
+    "y": -25,
     "name": "Fel Rock",
     "zone": "Teldrassil",
     "type": "HostileArea",
@@ -9268,6 +10041,8 @@
     ]
   },
   {
+    "x": 58,
+    "y": -34,
     "name": "Gnarlpine Hold",
     "zone": "Teldrassil",
     "type": "HostileArea",
@@ -9280,6 +10055,8 @@
     ]
   },
   {
+    "x": 68,
+    "y": -31,
     "name": "Lake Al'Ameth",
     "zone": "Teldrassil",
     "type": "HostileArea",
@@ -9292,6 +10069,8 @@
     ]
   },
   {
+    "x": 57,
+    "y": -30,
     "name": "Pools of Arlithrien",
     "zone": "Teldrassil",
     "type": "HostileArea",
@@ -9304,6 +10083,8 @@
     ]
   },
   {
+    "x": 65,
+    "y": -22,
     "name": "Shadowglen",
     "zone": "Teldrassil",
     "type": "HostileArea",
@@ -9328,6 +10109,8 @@
     ]
   },
   {
+    "x": 66,
+    "y": -18,
     "name": "Shadowthread Cave",
     "zone": "Teldrassil",
     "type": "HostileArea",
@@ -9340,6 +10123,8 @@
     ]
   },
   {
+    "x": 56,
+    "y": -17,
     "name": "The Oracle Glade",
     "zone": "Teldrassil",
     "type": "HostileArea",
@@ -9352,6 +10137,8 @@
     ]
   },
   {
+    "x": 59,
+    "y": -22,
     "name": "Wellspring Lake",
     "zone": "Teldrassil",
     "type": "HostileArea",
@@ -9364,6 +10151,8 @@
     ]
   },
   {
+    "x": 59,
+    "y": -18,
     "name": "Wellspring River",
     "zone": "Teldrassil",
     "type": "HostileArea",
@@ -9724,6 +10513,8 @@
     ]
   },
   {
+    "x": 95,
+    "y": -151,
     "name": "Agama'gor",
     "zone": "The Barrens",
     "type": "HostileArea",
@@ -9751,6 +10542,8 @@
     ]
   },
   {
+    "x": 99,
+    "y": -178,
     "name": "Bael Modan",
     "zone": "The Barrens",
     "type": "HostileArea",
@@ -9775,6 +10568,8 @@
     ]
   },
   {
+    "x": 101,
+    "y": -177,
     "name": "Baeldun Keep",
     "zone": "The Barrens",
     "type": "HostileArea",
@@ -9804,6 +10599,8 @@
     ]
   },
   {
+    "x": 94,
+    "y": -174,
     "name": "Blackthorn Ridge",
     "zone": "The Barrens",
     "type": "HostileArea",
@@ -9836,6 +10633,8 @@
     ]
   },
   {
+    "x": 115,
+    "y": -119,
     "name": "Boulder Lode Mine",
     "zone": "The Barrens",
     "type": "HostileArea",
@@ -9860,6 +10659,8 @@
     ]
   },
   {
+    "x": 105,
+    "y": -156,
     "name": "Bramblescar",
     "zone": "The Barrens",
     "type": "HostileArea",
@@ -9887,6 +10688,8 @@
     ]
   },
   {
+    "x": 101,
+    "y": -130,
     "name": "Dreadmist Peak",
     "zone": "The Barrens",
     "type": "HostileArea",
@@ -9909,6 +10712,8 @@
     ]
   },
   {
+    "x": 95,
+    "y": -167,
     "name": "Field of Giants",
     "zone": "The Barrens",
     "type": "HostileArea",
@@ -9945,6 +10750,8 @@
     ]
   },
   {
+    "x": 104,
+    "y": -127,
     "name": "Gold Road",
     "zone": "The Barrens",
     "type": "HostileArea",
@@ -9967,6 +10774,8 @@
     ]
   },
   {
+    "x": 91,
+    "y": -137,
     "name": "Honor's Stand",
     "zone": "The Barrens",
     "type": "HostileArea",
@@ -9989,6 +10798,8 @@
     ]
   },
   {
+    "x": 99,
+    "y": -146,
     "name": "Lushwater Oasis",
     "zone": "The Barrens",
     "type": "HostileArea",
@@ -10018,6 +10829,8 @@
     ]
   },
   {
+    "x": 115,
+    "y": -154,
     "name": "Northwatch Hold",
     "zone": "The Barrens",
     "type": "HostileArea",
@@ -10049,6 +10862,8 @@
     ]
   },
   {
+    "x": 110,
+    "y": -154,
     "name": "Raptor Grounds",
     "zone": "The Barrens",
     "type": "HostileArea",
@@ -10061,6 +10876,8 @@
     ]
   },
   {
+    "x": 98,
+    "y": -172,
     "name": "Southern Gold Road",
     "zone": "The Barrens",
     "type": "HostileArea",
@@ -10083,6 +10900,8 @@
     ]
   },
   {
+    "x": 117,
+    "y": -128,
     "name": "Southfury River",
     "zone": "The Barrens",
     "type": "HostileArea",
@@ -10095,6 +10914,8 @@
     ]
   },
   {
+    "x": 90,
+    "y": -127,
     "name": "The Dry Hills",
     "zone": "The Barrens",
     "type": "HostileArea",
@@ -10119,6 +10940,8 @@
     ]
   },
   {
+    "x": 96,
+    "y": -132,
     "name": "The Forgotten Pools",
     "zone": "The Barrens",
     "type": "HostileArea",
@@ -10143,6 +10966,8 @@
     ]
   },
   {
+    "x": 117,
+    "y": -150,
     "name": "The Merchant Coast",
     "zone": "The Barrens",
     "type": "HostileArea",
@@ -10160,6 +10985,8 @@
     ]
   },
   {
+    "x": 110,
+    "y": -122,
     "name": "The Sludge Fen",
     "zone": "The Barrens",
     "type": "HostileArea",
@@ -10191,6 +11018,8 @@
     ]
   },
   {
+    "x": 108,
+    "y": -146,
     "name": "The Stagnant Oasis",
     "zone": "The Barrens",
     "type": "HostileArea",
@@ -10213,6 +11042,8 @@
     ]
   },
   {
+    "x": 108,
+    "y": -135,
     "name": "Thorn Hill",
     "zone": "The Barrens",
     "type": "HostileArea",
@@ -10399,6 +11230,8 @@
     ]
   },
   {
+    "x": 90,
+    "y": -183,
     "name": "Camp Ethok",
     "zone": "Thousand Needles",
     "type": "HostileArea",
@@ -10411,6 +11244,8 @@
     ]
   },
   {
+    "x": 97,
+    "y": -187,
     "name": "Darkcloud Pinnacle",
     "zone": "Thousand Needles",
     "type": "HostileArea",
@@ -10423,6 +11258,8 @@
     ]
   },
   {
+    "x": 88,
+    "y": -187,
     "name": "Highperch",
     "zone": "Thousand Needles",
     "type": "HostileArea",
@@ -10435,6 +11272,8 @@
     ]
   },
   {
+    "x": 119,
+    "y": -200,
     "name": "Mirage Raceway",
     "zone": "Thousand Needles",
     "type": "HostileArea",
@@ -10447,6 +11286,8 @@
     ]
   },
   {
+    "x": 94,
+    "y": -191,
     "name": "Roguefeather Den",
     "zone": "Thousand Needles",
     "type": "HostileArea",
@@ -10459,6 +11300,8 @@
     ]
   },
   {
+    "x": 113,
+    "y": -202,
     "name": "Rustmaul Dig Site",
     "zone": "Thousand Needles",
     "type": "HostileArea",
@@ -10471,6 +11314,8 @@
     ]
   },
   {
+    "x": 115,
+    "y": -196,
     "name": "Shimmering Flats",
     "zone": "Thousand Needles",
     "type": "HostileArea",
@@ -10483,7 +11328,23 @@
     ]
   },
   {
+    "x": 101,
+    "y": -188,
     "name": "Splithoof Crag",
+    "zone": "Thousand Needles",
+    "type": "HostileArea",
+    "commonEncounters": [
+      {
+        "who": "Duskbat",
+        "levelMin": 1,
+        "levelMax": 2
+      }
+    ]
+  },
+  {
+    "x": 118,
+    "y": -203,
+    "name": "Tahonda Ruins",
     "zone": "Thousand Needles",
     "type": "HostileArea",
     "commonEncounters": [
@@ -10507,6 +11368,8 @@
     ]
   },
   {
+    "x": 96,
+    "y": -183,
     "name": "The Great Lift",
     "zone": "Thousand Needles",
     "type": "HostileArea",
@@ -10519,6 +11382,8 @@
     ]
   },
   {
+    "x": 118,
+    "y": -195,
     "name": "Weazel's Crater",
     "zone": "Thousand Needles",
     "type": "HostileArea",
@@ -10531,6 +11396,8 @@
     ]
   },
   {
+    "x": 107,
+    "y": -191,
     "name": "Windbreak Canyon",
     "zone": "Thousand Needles",
     "type": "HostileArea",
@@ -10543,6 +11410,8 @@
     ]
   },
   {
+    "x": 259,
+    "y": -56,
     "name": "Agamand Family Crypt",
     "zone": "Tirisfal Glades",
     "type": "HostileArea",
@@ -10555,6 +11424,8 @@
     ]
   },
   {
+    "x": 256,
+    "y": -58,
     "name": "Agamand Mills",
     "zone": "Tirisfal Glades",
     "type": "HostileArea",
@@ -10567,6 +11438,8 @@
     ]
   },
   {
+    "x": 271,
+    "y": -66,
     "name": "Balnir Farmstead",
     "zone": "Tirisfal Glades",
     "type": "HostileArea",
@@ -10579,6 +11452,8 @@
     ]
   },
   {
+    "x": 266,
+    "y": -61,
     "name": "Brightwater Lake",
     "zone": "Tirisfal Glades",
     "type": "HostileArea",
@@ -10591,6 +11466,8 @@
     ]
   },
   {
+    "x": 259,
+    "y": -64,
     "name": "Cold Hearth Manor",
     "zone": "Tirisfal Glades",
     "type": "HostileArea",
@@ -10603,6 +11480,8 @@
     ]
   },
   {
+    "x": 249,
+    "y": -61,
     "name": "Crusader's Outpost",
     "zone": "Tirisfal Glades",
     "type": "HostileArea",
@@ -10615,6 +11494,8 @@
     ]
   },
   {
+    "x": 250,
+    "y": -67,
     "name": "Deathknell",
     "zone": "Tirisfal Glades",
     "type": "HostileArea",
@@ -10637,6 +11518,8 @@
     ]
   },
   {
+    "x": 262,
+    "y": -59,
     "name": "Garren's Haunt",
     "zone": "Tirisfal Glades",
     "type": "HostileArea",
@@ -10649,6 +11532,8 @@
     ]
   },
   {
+    "x": 247,
+    "y": -65,
     "name": "Night Web's Hollow",
     "zone": "Tirisfal Glades",
     "type": "HostileArea",
@@ -10661,6 +11546,8 @@
     ]
   },
   {
+    "x": 256,
+    "y": -67,
     "name": "Nightmare Vale",
     "zone": "Tirisfal Glades",
     "type": "HostileArea",
@@ -10673,6 +11560,8 @@
     ]
   },
   {
+    "x": 252,
+    "y": -62,
     "name": "Solliden Farmstead",
     "zone": "Tirisfal Glades",
     "type": "HostileArea",
@@ -10685,6 +11574,8 @@
     ]
   },
   {
+    "x": 265,
+    "y": -57,
     "name": "The North Coast",
     "zone": "Tirisfal Glades",
     "type": "HostileArea",
@@ -10697,6 +11588,8 @@
     ]
   },
   {
+    "x": 263,
+    "y": -69,
     "name": "The Ruins of Lordaeron",
     "zone": "Tirisfal Glades",
     "type": "HostileArea",
@@ -10709,6 +11602,8 @@
     ]
   },
   {
+    "x": 275,
+    "y": -62,
     "name": "Venomweb Vale",
     "zone": "Tirisfal Glades",
     "type": "HostileArea",
@@ -10721,6 +11616,8 @@
     ]
   },
   {
+    "x": 251,
+    "y": -60,
     "name": "Whispering Shore",
     "zone": "Tirisfal Glades",
     "type": "HostileArea",
@@ -10952,6 +11849,8 @@
     ]
   },
   {
+    "x": 91,
+    "y": -209,
     "name": "Fire Plume Ridge",
     "zone": "Un'Goro Crater",
     "type": "HostileArea",
@@ -10964,6 +11863,8 @@
     ]
   },
   {
+    "x": 95,
+    "y": -202,
     "name": "Fungal Rock",
     "zone": "Un'Goro Crater",
     "type": "HostileArea",
@@ -10976,6 +11877,8 @@
     ]
   },
   {
+    "x": 82,
+    "y": -211,
     "name": "Golakka Hot Springs",
     "zone": "Un'Goro Crater",
     "type": "HostileArea",
@@ -10988,6 +11891,8 @@
     ]
   },
   {
+    "x": 91,
+    "y": -204,
     "name": "Lakkari Tar Pits",
     "zone": "Un'Goro Crater",
     "type": "HostileArea",
@@ -11000,6 +11905,8 @@
     ]
   },
   {
+    "x": 86,
+    "y": -216,
     "name": "Terror Run",
     "zone": "Un'Goro Crater",
     "type": "HostileArea",
@@ -11012,6 +11919,8 @@
     ]
   },
   {
+    "x": 98,
+    "y": -212,
     "name": "The Marshlands",
     "zone": "Un'Goro Crater",
     "type": "HostileArea",
@@ -11024,6 +11933,8 @@
     ]
   },
   {
+    "x": 90,
+    "y": -218,
     "name": "The Slithering Scar",
     "zone": "Un'Goro Crater",
     "type": "HostileArea",
@@ -11221,6 +12132,8 @@
     ]
   },
   {
+    "x": 293,
+    "y": -76,
     "name": "Caer Darrow",
     "zone": "Western Plaguelands",
     "type": "HostileArea",
@@ -11233,6 +12146,8 @@
     ]
   },
   {
+    "x": 283,
+    "y": -68,
     "name": "Dalson's Tears",
     "zone": "Western Plaguelands",
     "type": "HostileArea",
@@ -11245,6 +12160,8 @@
     ]
   },
   {
+    "x": 279,
+    "y": -69,
     "name": "Felstone Field",
     "zone": "Western Plaguelands",
     "type": "HostileArea",
@@ -11257,6 +12174,8 @@
     ]
   },
   {
+    "x": 290,
+    "y": -69,
     "name": "Gahrron's Withering",
     "zone": "Western Plaguelands",
     "type": "HostileArea",
@@ -11269,6 +12188,8 @@
     ]
   },
   {
+    "x": 284,
+    "y": -62,
     "name": "Northridge Lumber Camp",
     "zone": "Western Plaguelands",
     "type": "HostileArea",
@@ -11281,6 +12202,8 @@
     ]
   },
   {
+    "x": 282,
+    "y": -73,
     "name": "Ruins of Andorhal",
     "zone": "Western Plaguelands",
     "type": "HostileArea",
@@ -11293,6 +12216,8 @@
     ]
   },
   {
+    "x": 292,
+    "y": -64,
     "name": "The Weeping Cave",
     "zone": "Western Plaguelands",
     "type": "HostileArea",
@@ -11305,6 +12230,8 @@
     ]
   },
   {
+    "x": 286,
+    "y": -72,
     "name": "The Writhing Haunt",
     "zone": "Western Plaguelands",
     "type": "HostileArea",
@@ -11317,6 +12244,8 @@
     ]
   },
   {
+    "x": 285,
+    "y": -76,
     "name": "Uther's Tomb",
     "zone": "Western Plaguelands",
     "type": "HostileArea",
@@ -11329,6 +12258,8 @@
     ]
   },
   {
+    "x": 250,
+    "y": -197,
     "name": "Furlbrow's Pumpkin Farm",
     "zone": "Westfall",
     "type": "HostileArea",
@@ -11341,6 +12272,8 @@
     ]
   },
   {
+    "x": 246,
+    "y": -200,
     "name": "Gold Coast Quarry",
     "zone": "Westfall",
     "type": "HostileArea",
@@ -11353,6 +12286,8 @@
     ]
   },
   {
+    "x": 250,
+    "y": -195,
     "name": "Jangolode Mine",
     "zone": "Westfall",
     "type": "HostileArea",
@@ -11365,6 +12300,8 @@
     ]
   },
   {
+    "x": 252,
+    "y": -194,
     "name": "Jansen Stead",
     "zone": "Westfall",
     "type": "HostileArea",
@@ -11377,6 +12314,8 @@
     ]
   },
   {
+    "x": 243,
+    "y": -202,
     "name": "Longshore",
     "zone": "Westfall",
     "type": "HostileArea",
@@ -11389,6 +12328,8 @@
     ]
   },
   {
+    "x": 254,
+    "y": -197,
     "name": "Molsen Farm",
     "zone": "Westfall",
     "type": "HostileArea",
@@ -11401,6 +12342,8 @@
     ]
   },
   {
+    "x": 250,
+    "y": -205,
     "name": "Moonbrook",
     "zone": "Westfall",
     "type": "HostileArea",
@@ -11413,6 +12356,8 @@
     ]
   },
   {
+    "x": 248,
+    "y": -202,
     "name": "Saldean's Farm",
     "zone": "Westfall",
     "type": "HostileArea",
@@ -11425,6 +12370,8 @@
     ]
   },
   {
+    "x": 252,
+    "y": -207,
     "name": "The Dagger Hills",
     "zone": "Westfall",
     "type": "HostileArea",
@@ -11437,6 +12384,8 @@
     ]
   },
   {
+    "x": 257,
+    "y": -203,
     "name": "The Dead Acre",
     "zone": "Westfall",
     "type": "HostileArea",
@@ -11449,6 +12398,8 @@
     ]
   },
   {
+    "x": 257,
+    "y": -207,
     "name": "The Dust Plains",
     "zone": "Westfall",
     "type": "HostileArea",
@@ -11461,6 +12412,8 @@
     ]
   },
   {
+    "x": 245,
+    "y": -210,
     "name": "Westfall Lighthouse",
     "zone": "Westfall",
     "type": "HostileArea",
@@ -11473,6 +12426,8 @@
     ]
   },
   {
+    "x": 291,
+    "y": -124,
     "name": "Angerfang Encampment",
     "zone": "Wetlands",
     "type": "HostileArea",
@@ -11485,6 +12440,8 @@
     ]
   },
   {
+    "x": 280,
+    "y": -125,
     "name": "Black Channel Marsh",
     "zone": "Wetlands",
     "type": "HostileArea",
@@ -11497,6 +12454,8 @@
     ]
   },
   {
+    "x": 278,
+    "y": -122,
     "name": "Bluegill Marsh",
     "zone": "Wetlands",
     "type": "HostileArea",
@@ -11509,6 +12468,8 @@
     ]
   },
   {
+    "x": 296,
+    "y": -118,
     "name": "Direforge Hill",
     "zone": "Wetlands",
     "type": "HostileArea",
@@ -11521,6 +12482,8 @@
     ]
   },
   {
+    "x": 305,
+    "y": -124,
     "name": "Dragonmaw Gates",
     "zone": "Wetlands",
     "type": "HostileArea",
@@ -11533,6 +12496,8 @@
     ]
   },
   {
+    "x": 293,
+    "y": -135,
     "name": "Dun Algaz",
     "zone": "Wetlands",
     "type": "HostileArea",
@@ -11545,6 +12510,8 @@
     ]
   },
   {
+    "x": 291,
+    "y": -116,
     "name": "Dun Modr",
     "zone": "Wetlands",
     "type": "HostileArea",
@@ -11557,6 +12524,8 @@
     ]
   },
   {
+    "x": 303,
+    "y": -132,
     "name": "Grim Batol",
     "zone": "Wetlands",
     "type": "HostileArea",
@@ -11569,6 +12538,8 @@
     ]
   },
   {
+    "x": 290,
+    "y": -118,
     "name": "Ironbeard's Tomb",
     "zone": "Wetlands",
     "type": "HostileArea",
@@ -11581,6 +12552,8 @@
     ]
   },
   {
+    "x": 297,
+    "y": -127,
     "name": "Mosshide Fen",
     "zone": "Wetlands",
     "type": "HostileArea",
@@ -11593,6 +12566,8 @@
     ]
   },
   {
+    "x": 300,
+    "y": -122,
     "name": "Raptor Ridge",
     "zone": "Wetlands",
     "type": "HostileArea",
@@ -11605,6 +12580,8 @@
     ]
   },
   {
+    "x": 286,
+    "y": -118,
     "name": "Saltspray Glen",
     "zone": "Wetlands",
     "type": "HostileArea",
@@ -11617,6 +12594,8 @@
     ]
   },
   {
+    "x": 285,
+    "y": -121,
     "name": "Sundown Marsh",
     "zone": "Wetlands",
     "type": "HostileArea",
@@ -11641,6 +12620,8 @@
     ]
   },
   {
+    "x": 296,
+    "y": -123,
     "name": "The Green Belt",
     "zone": "Wetlands",
     "type": "HostileArea",
@@ -11653,6 +12634,8 @@
     ]
   },
   {
+    "x": 294,
+    "y": -130,
     "name": "Thelgen Rock",
     "zone": "Wetlands",
     "type": "HostileArea",
@@ -11665,6 +12648,8 @@
     ]
   },
   {
+    "x": 286,
+    "y": -125,
     "name": "Whelgar's Excavation Site",
     "zone": "Wetlands",
     "type": "HostileArea",
@@ -11677,6 +12662,8 @@
     ]
   },
   {
+    "x": 120,
+    "y": -86,
     "name": "Darkwhisper Gorge",
     "zone": "Winterspring",
     "type": "HostileArea",
@@ -11699,6 +12686,8 @@
     ]
   },
   {
+    "x": 125,
+    "y": -72,
     "name": "Dun Mandarr",
     "zone": "Winterspring",
     "type": "HostileArea",
@@ -11726,6 +12715,8 @@
     ]
   },
   {
+    "x": 105,
+    "y": -62,
     "name": "Frostfire Hot Springs",
     "zone": "Winterspring",
     "type": "HostileArea",
@@ -11748,6 +12739,8 @@
     ]
   },
   {
+    "x": 118,
+    "y": -47,
     "name": "Frostsaber Rock",
     "zone": "Winterspring",
     "type": "HostileArea",
@@ -11772,6 +12765,8 @@
     ]
   },
   {
+    "x": 127,
+    "y": -76,
     "name": "Frostwhisper Gorge",
     "zone": "Winterspring",
     "type": "HostileArea",
@@ -11796,6 +12791,8 @@
     ]
   },
   {
+    "x": 129,
+    "y": -50,
     "name": "Hidden Grove",
     "zone": "Winterspring",
     "type": "HostileArea",
@@ -11813,6 +12810,8 @@
     ]
   },
   {
+    "x": 130,
+    "y": -66,
     "name": "Ice Thistle Hills",
     "zone": "Winterspring",
     "type": "HostileArea",
@@ -11835,6 +12834,8 @@
     ]
   },
   {
+    "x": 124,
+    "y": -67,
     "name": "Mazthoril",
     "zone": "Winterspring",
     "type": "HostileArea",
@@ -11864,6 +12865,8 @@
     ]
   },
   {
+    "x": 126,
+    "y": -57,
     "name": "Moon Horror Den",
     "zone": "Winterspring",
     "type": "HostileArea",
@@ -11881,6 +12884,8 @@
     ]
   },
   {
+    "x": 124,
+    "y": -52,
     "name": "Northern Vale",
     "zone": "Winterspring",
     "type": "HostileArea",
@@ -11903,6 +12908,8 @@
     ]
   },
   {
+    "x": 129,
+    "y": -72,
     "name": "Owl Wing Thicket",
     "zone": "Winterspring",
     "type": "HostileArea",
@@ -11925,6 +12932,8 @@
     ]
   },
   {
+    "x": 120,
+    "y": -63,
     "name": "Ruins of Kel'Theril",
     "zone": "Winterspring",
     "type": "HostileArea",
@@ -11947,6 +12956,8 @@
     ]
   },
   {
+    "x": 111,
+    "y": -63,
     "name": "Timbermaw Post",
     "zone": "Winterspring",
     "type": "HostileArea",
@@ -11969,6 +12980,8 @@
     ]
   },
   {
+    "x": 131,
+    "y": -60,
     "name": "Winterfall Village",
     "zone": "Winterspring",
     "type": "HostileArea",
@@ -11998,6 +13011,8 @@
     ]
   },
   {
+    "x": 131,
+    "y": -63,
     "name": "Yeti Caverns",
     "zone": "Winterspring",
     "type": "HostileArea",

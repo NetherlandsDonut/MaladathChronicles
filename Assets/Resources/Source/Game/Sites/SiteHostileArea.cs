@@ -2,14 +2,19 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 
+using UnityEngine;
+
 using static Root;
+using static Root.Anchor;
+
 using static SaveGame;
+using static Coloring;
 
 public class SiteHostileArea
 {
     public void Initialise()
     {
-        if (type == null) type = "HostileArea";
+        type ??= "HostileArea";
         if (eliteEncounters != null && eliteEncounters.Count > 0)
             recommendedLevel = (int)eliteEncounters.Average(x => x.levelMax != 0 ? (x.levelMin + x.levelMax) / 2.0 : x.levelMin);
         else if (commonEncounters != null && commonEncounters.Count > 0)
@@ -17,6 +22,64 @@ public class SiteHostileArea
         if (eliteEncounters != null && eliteEncounters.Count == 0) eliteEncounters = null;
         if (rareEncounters != null && rareEncounters.Count == 0) rareEncounters = null;
         if (commonEncounters != null && commonEncounters.Count == 0) commonEncounters = null;
+    }
+
+    public void PrintSite()
+    {
+        SetAnchor(x * 19, y * 19);
+        AddRegionGroup();
+        AddPaddingRegion(() =>
+        {
+            AddSmallButton("Site" + type,
+            (h) =>
+            {
+                area = this;
+                CDesktop.cameraDestination = new Vector2(x, y) - new Vector2(17, -9);
+                CDesktop.queuedSiteOpen = "HostileArea";
+                CDesktop.LockScreen();
+            },
+            (h) => () =>
+            {
+                SetAnchor(TopRight, h.window);
+                AddRegionGroup();
+                AddHeaderRegion(() =>
+                {
+                    AddLine(name, "Gray");
+                });
+                AddHeaderRegion(() =>
+                {
+                    AddLine("Recommended level: ", "Gray");
+                    AddText(recommendedLevel + "", ColorEntityLevel(recommendedLevel));
+                });
+                if (commonEncounters != null && commonEncounters.Count > 0)
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine("Common: ", "Gray");
+                        foreach (var enemy in commonEncounters)
+                        {
+                            var race = Race.races.Find(x => x.name == enemy.who);
+                            AddSmallButton(race == null ? "OtherUnknown" : race.portrait, (h) => { });
+                        }
+                    });
+                if (eliteEncounters != null && eliteEncounters.Count > 0)
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine("Elite: ", "Gray");
+                        foreach (var enemy in eliteEncounters)
+                        {
+                            var race = Race.races.Find(x => x.name == enemy.who);
+                            AddSmallButton(race == null ? "OtherUnknown" : race.portrait, (h) => { });
+                        }
+                    });
+                if (rareEncounters != null && rareEncounters.Count > 0)
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine("Rare: ", "Gray");
+                        foreach (var enemy in rareEncounters)
+                            AddSmallButton("OtherUnknown", (h) => { });
+                    });
+            });
+        });
     }
 
     public Entity RollEncounter()
@@ -36,6 +99,7 @@ public class SiteHostileArea
         return new Entity(boss.levelMax != 0 ? random.Next(boss.levelMin, boss.levelMax + 1) : boss.levelMin, Race.races.Find(x => x.name == boss.who));
     }
 
+    public int x, y;
     public string name, zone, type, ambience;
     public bool specialClearBackground;
     public List<Encounter> commonEncounters, rareEncounters, eliteEncounters;
