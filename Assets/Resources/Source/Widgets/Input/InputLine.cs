@@ -89,7 +89,7 @@ public class InputLine : MonoBehaviour
         {
             if (CDesktop.windows.Exists(x => x.title == "ObjectManagerEventEffect"))
             {
-                abilityEvent.effects[selectedEffect]["Await"] = foo.Value();
+                eventEdit.effects[selectedEffect]["Await"] = foo.Value();
                 Respawn("ObjectManagerEventEffect");
             }
         }
@@ -97,7 +97,7 @@ public class InputLine : MonoBehaviour
         {
             if (CDesktop.windows.Exists(x => x.title == "ObjectManagerEventEffect"))
             {
-                abilityEvent.effects[selectedEffect]["PowerScale"] = foo.Value();
+                eventEdit.effects[selectedEffect]["PowerScale"] = foo.Value();
                 Respawn("ObjectManagerEventEffect");
             }
         }
@@ -105,7 +105,7 @@ public class InputLine : MonoBehaviour
         {
             if (CDesktop.windows.Exists(x => x.title == "ObjectManagerEventEffect"))
             {
-                abilityEvent.effects[selectedEffect]["AnimationSpeed"] = foo.Value();
+                eventEdit.effects[selectedEffect]["AnimationSpeed"] = foo.Value();
                 Respawn("ObjectManagerEventEffect");
             }
         }
@@ -113,7 +113,7 @@ public class InputLine : MonoBehaviour
         {
             if (CDesktop.windows.Exists(x => x.title == "ObjectManagerEventEffect"))
             {
-                abilityEvent.effects[selectedEffect]["AnimationArc"] = foo.Value();
+                eventEdit.effects[selectedEffect]["AnimationArc"] = foo.Value();
                 Respawn("ObjectManagerEventEffect");
             }
         }
@@ -121,7 +121,7 @@ public class InputLine : MonoBehaviour
         {
             if (CDesktop.windows.Exists(x => x.title == "ObjectManagerEventEffect"))
             {
-                abilityEvent.effects[selectedEffect]["TrailStrength"] = foo.Value();
+                eventEdit.effects[selectedEffect]["TrailStrength"] = foo.Value();
                 Respawn("ObjectManagerEventEffect");
             }
         }
@@ -129,7 +129,7 @@ public class InputLine : MonoBehaviour
         {
             if (CDesktop.windows.Exists(x => x.title == "ObjectManagerEventEffect"))
             {
-                abilityEvent.effects[selectedEffect]["ShatterDegree"] = foo.Value();
+                eventEdit.effects[selectedEffect]["ShatterDegree"] = foo.Value();
                 Respawn("ObjectManagerEventEffect");
             }
         }
@@ -137,7 +137,7 @@ public class InputLine : MonoBehaviour
         {
             if (CDesktop.windows.Exists(x => x.title == "ObjectManagerEventEffect"))
             {
-                abilityEvent.effects[selectedEffect]["ShatterDensity"] = foo.Value();
+                eventEdit.effects[selectedEffect]["ShatterDensity"] = foo.Value();
                 Respawn("ObjectManagerEventEffect");
             }
         }
@@ -145,7 +145,7 @@ public class InputLine : MonoBehaviour
         {
             if (CDesktop.windows.Exists(x => x.title == "ObjectManagerEventEffect"))
             {
-                abilityEvent.effects[selectedEffect]["ShatterSpeed"] = foo.Value();
+                eventEdit.effects[selectedEffect]["ShatterSpeed"] = foo.Value();
                 Respawn("ObjectManagerEventEffect");
             }
         }
@@ -153,15 +153,20 @@ public class InputLine : MonoBehaviour
         {
             if (CDesktop.windows.Exists(x => x.title == "ObjectManagerEventEffect"))
             {
-                abilityEvent.effects[selectedEffect]["ResourceAmount"] = foo.Value();
+                eventEdit.effects[selectedEffect]["ResourceAmount"] = foo.Value();
                 Respawn("ObjectManagerEventEffect");
+            }
+            else if (CDesktop.windows.Exists(x => x.title == "ObjectManagerEventTrigger"))
+            {
+                eventEdit.triggers[selectedTrigger]["ResourceAmount"] = foo.Value();
+                Respawn("ObjectManagerEventTrigger");
             }
         }
         else if (foo == buffDuration)
         {
             if (CDesktop.windows.Exists(x => x.title == "ObjectManagerEventEffect"))
             {
-                abilityEvent.effects[selectedEffect]["BuffDuration"] = foo.Value();
+                eventEdit.effects[selectedEffect]["BuffDuration"] = foo.Value();
                 Respawn("ObjectManagerEventEffect");
             }
         }
@@ -169,63 +174,106 @@ public class InputLine : MonoBehaviour
         {
             if (CDesktop.windows.Exists(x => x.title == "ObjectManagerEventEffect"))
             {
-                abilityEvent.effects[selectedEffect]["Chance"] = foo.Value();
+                eventEdit.effects[selectedEffect]["Chance"] = foo.Value();
                 Respawn("ObjectManagerEventEffect");
+            }
+            else if (CDesktop.windows.Exists(x => x.title == "ObjectManagerEventTrigger"))
+            {
+                eventEdit.triggers[selectedTrigger]["Chance"] = foo.Value();
+                Respawn("ObjectManagerEventTrigger");
             }
         }
         else if (foo == chanceBase)
         {
             if (CDesktop.windows.Exists(x => x.title == "ObjectManagerEventEffect"))
             {
-                abilityEvent.effects[selectedEffect]["ChanceBase"] = foo.Value();
+                eventEdit.effects[selectedEffect]["ChanceBase"] = foo.Value();
                 Respawn("ObjectManagerEventEffect");
+            }
+            else if (CDesktop.windows.Exists(x => x.title == "ObjectManagerEventTrigger"))
+            {
+                eventEdit.triggers[selectedTrigger]["ChanceBase"] = foo.Value();
+                Respawn("ObjectManagerEventTrigger");
             }
         }
         else if (foo == chanceScale)
         {
             if (CDesktop.windows.Exists(x => x.title == "ObjectManagerEventEffect"))
             {
-                abilityEvent.effects[selectedEffect]["ChanceScale"] = foo.Value();
+                eventEdit.effects[selectedEffect]["ChanceScale"] = foo.Value();
                 Respawn("ObjectManagerEventEffect");
+            }
+            else if (CDesktop.windows.Exists(x => x.title == "ObjectManagerEventTrigger"))
+            {
+                eventEdit.triggers[selectedTrigger]["ChanceScale"] = foo.Value();
+                Respawn("ObjectManagerEventTrigger");
             }
         }
         else if (foo == search)
         {
-            if (CDesktop.title == "ObjectManagerItems")
+            if (CDesktop.windows.Exists(x => x.title == "ObjectManagerItems"))
             {
                 Respawn("ObjectManagerItems");
             }
-            else if (CDesktop.title == "ObjectManagerItemSets")
+            else if (CDesktop.windows.Exists(x => x.title == "ObjectManagerItemSets"))
             {
                 Respawn("ObjectManagerItemSets");
             }
-            else if (CDesktop.title == "ObjectManagerAbilities")
+            else if (CDesktop.windows.Exists(x => x.title == "ObjectManagerAbilities"))
             {
                 Respawn("ObjectManagerAbilities");
             }
-            else if (CDesktop.title == "ObjectManagerBuffs")
+            else if (CDesktop.windows.Exists(x => x.title == "ObjectManagerBuffs"))
             {
                 Respawn("ObjectManagerBuffs");
             }
-            else if (CDesktop.title == "ObjectManagerRaces")
+            else if (CDesktop.windows.Exists(x => x.title == "ObjectManagerRaces"))
             {
                 Respawn("ObjectManagerRaces");
             }
-            else if (CDesktop.title == "ObjectManagerClasses")
+            else if (CDesktop.windows.Exists(x => x.title == "ObjectManagerClasses"))
             {
                 Respawn("ObjectManagerClasses");
             }
-            else if (CDesktop.title == "ObjectManagerHostileAreas")
+            else if (CDesktop.windows.Exists(x => x.title == "ObjectManagerHostileAreas"))
             {
                 Respawn("ObjectManagerHostileAreas");
             }
-            else if (CDesktop.title == "ObjectManagerInstances")
+            else if (CDesktop.windows.Exists(x => x.title == "ObjectManagerInstances"))
             {
                 Respawn("ObjectManagerInstances");
             }
-            else if (CDesktop.title == "ObjectManagerComplexes")
+            else if (CDesktop.windows.Exists(x => x.title == "ObjectManagerComplexes"))
             {
                 Respawn("ObjectManagerComplexes");
+            }
+            else if (CDesktop.windows.Exists(x => x.title == "ObjectManagerTriggerList"))
+            {
+                Respawn("ObjectManagerTriggerList");
+            }
+            else if (CDesktop.windows.Exists(x => x.title == "ObjectManagerEffectList"))
+            {
+                Respawn("ObjectManagerEffectList");
+            }
+            else if (CDesktop.windows.Exists(x => x.title == "ObjectManagerPortraitList"))
+            {
+                Respawn("ObjectManagerPortraitList");
+            }
+            else if (CDesktop.windows.Exists(x => x.title == "ObjectManagerAbilityIconList"))
+            {
+                Respawn("ObjectManagerAbilityIconList");
+            }
+            else if (CDesktop.windows.Exists(x => x.title == "ObjectManagerItemIconList"))
+            {
+                Respawn("ObjectManagerItemIconList");
+            }
+            else if (CDesktop.windows.Exists(x => x.title == "ObjectManagerAmbienceList"))
+            {
+                Respawn("ObjectManagerAmbienceList");
+            }
+            else if (CDesktop.windows.Exists(x => x.title == "ObjectManagerSoundsList"))
+            {
+                Respawn("ObjectManagerSoundsList");
             }
         }
         else if (foo == objectName)

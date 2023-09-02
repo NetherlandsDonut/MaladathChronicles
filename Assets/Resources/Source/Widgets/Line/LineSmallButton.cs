@@ -42,7 +42,8 @@ public class LineSmallButton : MonoBehaviour
         {
             PlaySound(buttonType == "OtherClose" ? "DesktopButtonClose" : (buttonType == "ActionReroll" ? ("DesktopReroll" + random.Next(1, 3)) : "DesktopButtonPress"), 0.6f);
             pressEvent(GetComponent<Highlightable>());
-            region.regionGroup.window.Rebuild();
+            if (CDesktop.windows.Contains(region.regionGroup.window))
+                region.regionGroup.window.Rebuild();
         }
     }
 }

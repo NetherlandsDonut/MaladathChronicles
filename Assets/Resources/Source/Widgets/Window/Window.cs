@@ -9,6 +9,7 @@ using static Root.RegionBackgroundType;
 using static GameSettings;
 
 using static InputLine;
+using UnityEditor.PackageManager.UI;
 
 public class Window : MonoBehaviour
 {
@@ -93,6 +94,7 @@ public class Window : MonoBehaviour
 
     public void Respawn()
     {
+        CDesktop.windows.FindAll(x => x.title == "Tooltip").ForEach(x => CloseWindow(x));
         var paginations = regionGroups.Select(x => x.pagination).ToList();
         var inputFieldDestination = (-1, -1);
         for (int i = 0; i < regionGroups.Count && inputFieldDestination.Item1 == -1; i++)
@@ -100,9 +102,14 @@ public class Window : MonoBehaviour
                 if (regionGroups[i].regions[j].inputLine == inputLine)
                     inputFieldDestination = (i, j);
         CloseWindow(this);
-        SpawnWindowBlueprint(title);
+        SpawnWindowBlueprint(title, false);
         for (int i = 0; i < paginations.Count && i < CDesktop.LBWindow.regionGroups.Count; i++)
-            CDesktop.LBWindow.regionGroups[i].pagination = paginations[i];
+        {
+            var temp = CDesktop.LBWindow.regionGroups[i];
+            temp.pagination = paginations[i];
+            if (temp.pagination >= temp.maxPagination())
+                temp.pagination = temp.maxPagination() - 1;
+        }
         if (inputFieldDestination.Item1 != -1)
         {
             if (CDesktop.LBWindow.regionGroups.Count <= inputFieldDestination.Item1) return;
@@ -219,8 +226,10 @@ public class Window : MonoBehaviour
 
     public void BuildRegionGroup(RegionGroup regionGroup)
     {
-        //Reset all regions
         int extendOffset = 0;
+        var paginations = regionGroups.Select(x => x.pagination).ToList();
+        //for (int i = 0; i < paginations.Count && i < CDesktop.LBWindow.regionGroups.Count; i++)
+        //    CDesktop.LBWindow.regionGroups[i].pagination = paginations[i];
         regionGroup.ResetContent();
         CDesktop.LBWindow.LBRegionGroup = regionGroup;
 

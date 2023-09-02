@@ -1,7 +1,8 @@
 using System;
-using UnityEngine;
 using System.Linq;
 using System.Collections.Generic;
+
+using UnityEngine;
 
 using static Root;
 using static Font;
@@ -9,10 +10,7 @@ using static Sound;
 
 public class Region : MonoBehaviour
 {
-    //Parent
     public RegionGroup regionGroup;
-
-    //Children
     public Line LBLine;
     public List<Line> lines;
     public InputLine inputLine;
@@ -21,8 +19,6 @@ public class Region : MonoBehaviour
     public List<LineSmallButton> smallButtons;
     public LineBigButton LBBigButton;
     public List<LineBigButton> bigButtons;
-
-    //Fields
     public Action draw;
     public Tooltip tooltip;
     public bool resetInputFieldSet;

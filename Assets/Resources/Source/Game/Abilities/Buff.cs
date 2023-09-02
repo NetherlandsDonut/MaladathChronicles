@@ -25,10 +25,10 @@ public class Buff
                     if (trigger["Trigger"] == "BuffAdd" || trigger["Trigger"] == "BuffRemove" || trigger["Trigger"] == "BuffFlare")
                     {
                         string buffName = trigger.ContainsKey("BuffName") ? trigger["BuffName"] : "None";
-                        string buffNameData = triggerData.ContainsKey("BuffName") ? triggerData["BuffName"] : name;
+                        string buffNameData = triggerData.ContainsKey("BuffName") ? (triggerData["BuffName"] == "This" ? name : triggerData["BuffName"]) : name;
                         string triggerer = trigger.ContainsKey("Triggerer") ? trigger["Triggerer"] : "None";
                         string triggererData = triggerData.ContainsKey("Triggerer") ? triggerData["Triggerer"] : "Effector";
-                        execute = (buffName == buffNameData || buffNameData == "Any") && triggerer == triggererData;
+                        execute = (buffName == buffNameData || buffNameData == "Any") && (triggerer == triggererData || triggerer == "Any");
                     }
                     else if (trigger["Trigger"] == "ResourceCollected" || trigger["Trigger"] == "ResourceDetracted")
                     {
@@ -39,7 +39,7 @@ public class Buff
                         int resourceAmountData = triggerData.ContainsKey("ResourceAmount") ? int.Parse(triggerData["ResourceAmount"]) : 1;
                         string triggerer = trigger.ContainsKey("Triggerer") ? trigger["Triggerer"] : "None";
                         string triggererData = triggerData.ContainsKey("Triggerer") ? triggerData["Triggerer"] : "None";
-                        execute = (resourceType == resourceTypeData || resourceTypeData == "Any") && CompareValues(resourceAmount, resourceAmountData, compareData) && triggerer == triggererData;
+                        execute = (resourceType == resourceTypeData || resourceTypeData == "Any") && CompareValues(resourceAmount, resourceAmountData, compareData) && (triggerer == triggererData || triggerer == "Any");
                     }
                     else if (trigger["Trigger"] == "ResourceMaxed" || trigger["Trigger"] == "ResourceDeplated")
                     {
@@ -47,7 +47,7 @@ public class Buff
                         string resourceTypeData = triggerData.ContainsKey("ResourceType") ? triggerData["ResourceType"] : "None";
                         string triggerer = trigger.ContainsKey("Triggerer") ? trigger["Triggerer"] : "None";
                         string triggererData = triggerData.ContainsKey("Triggerer") ? triggerData["Triggerer"] : "None";
-                        execute = (resourceType == resourceTypeData || resourceTypeData == "Any") && triggerer == triggererData;
+                        execute = (resourceType == resourceTypeData || resourceTypeData == "Any") && (triggerer == triggererData || triggerer == "Any");
                     }
                     else if (trigger["Trigger"] == "AbilityCast" || trigger["Trigger"] == "CooldownEnd")
                     {
@@ -55,7 +55,7 @@ public class Buff
                         string abilityNameData = triggerData.ContainsKey("AbilityName") ? triggerData["AbilityName"] : "None";
                         string triggerer = trigger.ContainsKey("Triggerer") ? trigger["Triggerer"] : "None";
                         string triggererData = triggerData.ContainsKey("Triggerer") ? triggerData["Triggerer"] : "None";
-                        execute = (abilityName == abilityNameData || abilityNameData == "Any") && triggerer == triggererData;
+                        execute = (abilityName == abilityNameData || abilityNameData == "Any") && (triggerer == triggererData || triggerer == "Any");
                     }
                     else if (trigger["Trigger"] == "Damage")
                     {
@@ -64,7 +64,7 @@ public class Buff
                         string compareData = triggerData.ContainsKey("Compare") ? triggerData["Compare"] : ">=";
                         string triggerer = trigger.ContainsKey("Triggerer") ? trigger["Triggerer"] : "None";
                         string triggererData = triggerData.ContainsKey("Triggerer") ? triggerData["Triggerer"] : "None";
-                        execute = CompareValues(damageAmount, damageAmountData, compareData) && triggerer == triggererData;
+                        execute = CompareValues(damageAmount, damageAmountData, compareData) && (triggerer == triggererData || triggerer == "Any");
                     }
                     else if (trigger["Trigger"] == "Heal")
                     {
@@ -73,13 +73,13 @@ public class Buff
                         string compareData = triggerData.ContainsKey("Compare") ? triggerData["Compare"] : ">=";
                         string triggerer = trigger.ContainsKey("Triggerer") ? trigger["Triggerer"] : "None";
                         string triggererData = triggerData.ContainsKey("Triggerer") ? triggerData["Triggerer"] : "None";
-                        execute = CompareValues(healAmount, healAmountData, compareData) && triggerer == triggererData;
+                        execute = CompareValues(healAmount, healAmountData, compareData) && (triggerer == triggererData || triggerer == "Any");
                     }
                     else if (trigger["Trigger"] == "HealthMaxed" || trigger["Trigger"] == "HealthDeplated")
                     {
                         string triggerer = trigger.ContainsKey("Triggerer") ? trigger["Triggerer"] : "None";
                         string triggererData = triggerData.ContainsKey("Triggerer") ? triggerData["Triggerer"] : "None";
-                        execute = triggerer == triggererData;
+                        execute = triggerer == triggererData || triggerer == "Any";
                     }
                     else if (trigger["Trigger"] == "CombatBegin") execute = true;
                     else if (trigger["Trigger"] == "TurnBegin") execute = true;

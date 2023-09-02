@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 public class Assets
@@ -12,6 +13,7 @@ public class Assets
     }
 
     public List<string> ambience, sounds, itemIcons, abilityIcons, portraits;
+    [NonSerialized] public List<string> ambienceSearch, soundsSearch, itemIconsSearch, abilityIconsSearch, portraitsSearch;
 
     public static Assets assets;
 }

@@ -276,50 +276,75 @@ public class Desktop : MonoBehaviour
                         if (temp.text.text == String.search)
                         {
                             var val = temp.text.text.Value().ToLower();
-                            if (CDesktop.title == "ObjectManagerItems")
+                            if (CDesktop.windows.Exists(x => x.title == "ObjectManagerItems"))
                             {
                                 Item.itemsSearch = Item.items.FindAll(x => x.name.ToLower().Contains(val));
                                 Respawn("ObjectManagerItems");
                             }
-                            else if (CDesktop.title == "ObjectManagerItemSets")
+                            else if (CDesktop.windows.Exists(x => x.title == "ObjectManagerItemSets"))
                             {
                                 ItemSet.itemSetsSearch = ItemSet.itemSets.FindAll(x => x.name.ToLower().Contains(val));
                                 Respawn("ObjectManagerItemSets");
                             }
-                            else if (CDesktop.title == "ObjectManagerAbilities")
+                            else if (CDesktop.windows.Exists(x => x.title == "ObjectManagerAbilities"))
                             {
                                 Ability.abilitiesSearch = Ability.abilities.FindAll(x => x.name.ToLower().Contains(val));
                                 Respawn("ObjectManagerAbilities");
                             }
-                            else if (CDesktop.title == "ObjectManagerBuffs")
+                            else if (CDesktop.windows.Exists(x => x.title == "ObjectManagerBuffs"))
                             {
                                 Buff.buffsSearch = Buff.buffs.FindAll(x => x.name.ToLower().Contains(val));
                                 Respawn("ObjectManagerBuffs");
                             }
-                            else if (CDesktop.title == "ObjectManagerRaces")
+                            else if (CDesktop.windows.Exists(x => x.title == "ObjectManagerRaces"))
                             {
                                 Race.racesSearch = Race.races.FindAll(x => x.name.ToLower().Contains(val));
                                 Respawn("ObjectManagerRaces");
                             }
-                            else if (CDesktop.title == "ObjectManagerClasses")
+                            else if (CDesktop.windows.Exists(x => x.title == "ObjectManagerClasses"))
                             {
                                 Class.specsSearch = Class.specs.FindAll(x => x.name.ToLower().Contains(val));
                                 Respawn("ObjectManagerClasses");
                             }
-                            else if (CDesktop.title == "ObjectManagerHostileAreas")
+                            else if (CDesktop.windows.Exists(x => x.title == "ObjectManagerHostileAreas"))
                             {
                                 SiteHostileArea.areasSearch = SiteHostileArea.areas.FindAll(x => x.name.ToLower().Contains(val));
                                 Respawn("ObjectManagerHostileAreas");
                             }
-                            else if (CDesktop.title == "ObjectManagerInstances")
+                            else if (CDesktop.windows.Exists(x => x.title == "ObjectManagerInstances"))
                             {
                                 SiteInstance.instancesSearch = SiteInstance.instances.FindAll(x => x.name.ToLower().Contains(val));
                                 Respawn("ObjectManagerInstances");
                             }
-                            else if (CDesktop.title == "ObjectManagerComplexes")
+                            else if (CDesktop.windows.Exists(x => x.title == "ObjectManagerComplexes"))
                             {
                                 SiteComplex.complexesSearch = SiteComplex.complexes.FindAll(x => x.name.ToLower().Contains(val));
                                 Respawn("ObjectManagerComplexes");
+                            }
+                            else if (CDesktop.windows.Exists(x => x.title == "ObjectManagerAmbienceList"))
+                            {
+                                Assets.assets.ambienceSearch = Assets.assets.ambience.FindAll(x => x.ToLower().Contains(val));
+                                Respawn("ObjectManagerAmbienceList");
+                            }
+                            else if (CDesktop.windows.Exists(x => x.title == "ObjectManagerPortraitList"))
+                            {
+                                Assets.assets.portraitsSearch = Assets.assets.portraits.FindAll(x => x.ToLower().Contains(val));
+                                Respawn("ObjectManagerPortraitList");
+                            }
+                            else if (CDesktop.windows.Exists(x => x.title == "ObjectManagerSoundsList"))
+                            {
+                                Assets.assets.soundsSearch = Assets.assets.sounds.FindAll(x => x.ToLower().Contains(val));
+                                Respawn("ObjectManagerSoundsList");
+                            }
+                            else if (CDesktop.windows.Exists(x => x.title == "ObjectManagerItemIconList"))
+                            {
+                                Assets.assets.itemIconsSearch = Assets.assets.itemIcons.FindAll(x => x.ToLower().Contains(val));
+                                Respawn("ObjectManagerItemIconList");
+                            }
+                            else if (CDesktop.windows.Exists(x => x.title == "ObjectManagerAbilityIconList"))
+                            {
+                                Assets.assets.abilityIconsSearch = Assets.assets.abilityIcons.FindAll(x => x.ToLower().Contains(val));
+                                Respawn("ObjectManagerAbilityIconList");
                             }
                         }
                         temp.region.regionGroup.window.Rebuild();

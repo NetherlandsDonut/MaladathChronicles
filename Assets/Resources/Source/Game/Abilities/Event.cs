@@ -27,15 +27,15 @@ public class Event
             string powerSource = effect.ContainsKey("PowerSource") ? effect["PowerSource"] : "Effector";
             string powerType = effect.ContainsKey("PowerType") ? effect["PowerType"] : "None";
             double powerScale = effect.ContainsKey("PowerScale") ? double.Parse(effect["PowerScale"].Replace(".", ",")) : 1;
-            double chance = effect.ContainsKey("Chance") ? double.Parse(effect["Chance"].Replace(".", ",")) : 100;
-            double chanceBase = effect.ContainsKey("ChanceBase") ? double.Parse(effect["ChanceBase"].Replace(".", ",")) : 0;
+            double chance = effect.ContainsKey("Chance") ? double.Parse(effect["Chance"].Replace(".", ",")) : 0;
+            double chanceBase = effect.ContainsKey("ChanceBase") ? double.Parse(effect["ChanceBase"].Replace(".", ",")) : 100;
             string chanceSource = effect.ContainsKey("ChanceSource") ? effect["ChanceSource"] : powerSource;
             string chanceScale = effect.ContainsKey("ChanceScale") ? effect["ChanceScale"] : "None";
             string shatterTarget = effect.ContainsKey("ShatterTarget") ? effect["ShatterTarget"] : "None";
             string animationType = effect.ContainsKey("AnimationType") ? effect["AnimationType"] : "None";
-            double animationArc = effect.ContainsKey("AnimationArc") ? double.Parse(effect["AnimationArc"]) : 20.0;
-            double animationSpeed = effect.ContainsKey("AnimationSpeed") ? double.Parse(effect["AnimationSpeed"]) : 1;
-            double trailStrength = effect.ContainsKey("TrailStrength") ? double.Parse(effect["TrailStrength"]) : 1;
+            double animationArc = effect.ContainsKey("AnimationArc") ? double.Parse(effect["AnimationArc"].Replace(".", ",")) : 20.0;
+            double animationSpeed = effect.ContainsKey("AnimationSpeed") ? double.Parse(effect["AnimationSpeed"].Replace(".", ",")) : 1;
+            double trailStrength = effect.ContainsKey("TrailStrength") ? double.Parse(effect["TrailStrength"].Replace(".", ",")) : 1;
             string shatterType = effect.ContainsKey("ShatterType") ? effect["ShatterType"] : "None";
             int shatterDensity = effect.ContainsKey("ShatterDensity") ? int.Parse(effect["ShatterDensity"]) : 2;
             double shatterDegree = effect.ContainsKey("ShatterDegree") ? double.Parse(effect["ShatterDegree"].Replace(".", ",")) : 0.7;
@@ -214,7 +214,8 @@ public class Event
 
     public List<Dictionary<string, string>> triggers, effects;
 
-    public static Event abilityEvent;
+    public static string eventParentType;
+    public static Event eventEdit;
     public static int selectedEffect, selectedTrigger;
     public static List<string> possibleTriggers = new()
     {

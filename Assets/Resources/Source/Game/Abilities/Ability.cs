@@ -60,7 +60,7 @@ public class Ability
                     else if (trigger["Trigger"] == "AbilityCast" || trigger["Trigger"] == "Cooldown")
                     {
                         string abilityName = trigger.ContainsKey("AbilityName") ? trigger["AbilityName"] : "None";
-                        string abilityNameData = triggerData.ContainsKey("AbilityName") ? triggerData["AbilityName"] : name;
+                        string abilityNameData = triggerData.ContainsKey("AbilityName") ? (triggerData["AbilityName"] == "This" ? name : triggerData["AbilityName"]) : name;
                         string triggerer = trigger.ContainsKey("Triggerer") ? trigger["Triggerer"] : "None";
                         string triggererData = triggerData.ContainsKey("Triggerer") ? triggerData["Triggerer"] : "Effector";
                         execute = (abilityName == abilityNameData || abilityNameData == "Any") && triggerer == triggererData;
@@ -157,14 +157,14 @@ public class Ability
                         AddSmallButton("Element" + cost.Key + "Rousing", (h) => { });
                     });
                     AddRegionGroup();
-                    SetRegionGroupWidth(20);
+                    SetRegionGroupWidth(33);
                     AddHeaderRegion(() =>
                     {
                         AddLine(cost.Value + "", effector != null ? cost.Value > effector.resources[cost.Key] ? "Red" : "Green" : "Gray");
                     });
                 }
             AddRegionGroup();
-            SetRegionGroupWidth(246 - (ability.cost == null ? 0 : ability.cost.Count) * 49);
+            SetRegionGroupWidth(246 - (ability.cost == null ? 0 : ability.cost.Count) * 52);
             AddPaddingRegion(() => { AddLine(); });
         }
     }

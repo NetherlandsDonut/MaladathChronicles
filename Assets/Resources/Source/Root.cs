@@ -1,19 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using System.Linq;
 using UnityEngine;
 
 using static Blueprint;
 
 using static Root.Anchor;
 using static Root.RegionBackgroundType;
+using static UnityEditor.Progress;
 
 public static class Root
 {
     public static int screenX = 640;
     public static int screenY = 360;
     public static int textPaddingLeft = 4;
-    public static int textPaddingRight = 4;
+    public static int textPaddingRight = 12;
     public static int shadowSystem = 1;
     public static int aiDepth = 5;
     public static float frameTime = 0.08f;
@@ -147,6 +148,7 @@ public static class Root
     {
         var sprite = Resources.Load<Sprite>("Sprites/Textures/" + texture);
         var temp = (followCamera ? CDesktop.screen.gameObject : CDesktop.gameObject).GetComponent<SpriteRenderer>();
+        if (sprite == null) Debug.Log("ERROR 004: Desktop background not found: \"Sprites/Textures/" + texture + "\"");
         if (temp.sprite != sprite)
         {
             SpawnTransition();
@@ -169,16 +171,20 @@ public static class Root
 
     #region Windows
 
-    public static Window SpawnWindowBlueprint(string blueprintTitle)
+    public static Window SpawnWindowBlueprint(string blueprintTitle, bool resetSearch = true)
     {
-        return SpawnWindowBlueprint(windowBlueprints.Find(x => x.title == blueprintTitle));
+        return SpawnWindowBlueprint(windowBlueprints.Find(x => x.title == blueprintTitle), resetSearch);
     }
 
-    public static Window SpawnWindowBlueprint(Blueprint blueprint)
+    public static Window SpawnWindowBlueprint(Blueprint blueprint, bool resetSearch = true)
     {
         if (blueprint == null) return null;
+        if (CDesktop.windows.Exists(x => x.title == blueprint.title)) return null;
+        CDesktop.windows.FindAll(x => x.title == "Tooltip").ForEach(x => CloseWindow(x));
         AddWindow(blueprint.title, blueprint.upperUI);
         blueprint.actions();
+        if (resetSearch && CDesktop.LBWindow.regionGroups.Any(x => x.maxPaginationReq != null))
+            String.search.Set("");
         CDesktop.LBWindow.Rebuild();
         CDesktop.LBWindow.ResetPosition();
         return CDesktop.LBWindow;
@@ -195,7 +201,7 @@ public static class Root
     {
         var window = CDesktop.windows.Find(x => x.title == windowName);
         if (window != null) window.Respawn();
-        else SpawnWindowBlueprint(windowName);
+        else SpawnWindowBlueprint(windowName, true);
     }
 
     public static void CloseWindow(string windowName)
@@ -251,7 +257,7 @@ public static class Root
 
     public static void AddHeaderGroup()
     {
-        var newObject = new GameObject("RegionGroup", typeof(RegionGroup));
+        var newObject = new GameObject("HeaderGroup", typeof(RegionGroup));
         newObject.transform.parent = CDesktop.LBWindow.transform;
         newObject.GetComponent<RegionGroup>().Initialise(CDesktop.LBWindow, true, null, 0);
     }
@@ -261,15 +267,6 @@ public static class Root
         var newObject = new GameObject("RegionGroup", typeof(RegionGroup));
         newObject.transform.parent = CDesktop.LBWindow.transform;
         newObject.GetComponent<RegionGroup>().Initialise(CDesktop.LBWindow, false, maxPagination, perPage);
-    }
-
-    public static void CloseRegionGroup(RegionGroup regionGroup)
-    {
-        if (regionGroup != null)
-        {
-            regionGroup.window.regionGroups.Remove(regionGroup);
-            UnityEngine.Object.Destroy(regionGroup.gameObject);
-        }
     }
 
     public static void SetRegionGroupWidth(int width)
