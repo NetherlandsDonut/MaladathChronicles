@@ -1474,9 +1474,19 @@
     "type": "HostileArea",
     "commonEncounters": [
       {
-        "who": "Duskbat",
-        "levelMin": 1,
-        "levelMax": 2
+        "who": "Storm Bay Oracle",
+        "levelMin": 51,
+        "levelMax": 52
+      },
+      {
+        "who": "Storm Bay Warrior",
+        "levelMin": 51,
+        "levelMax": 52
+      },
+      {
+        "who": "Makrinni Scrabbler",
+        "levelMin": 51,
+        "levelMax": 52
       }
     ]
   },
@@ -1488,9 +1498,24 @@
     "type": "HostileArea",
     "commonEncounters": [
       {
-        "who": "Duskbat",
-        "levelMin": 1,
-        "levelMax": 2
+        "who": "Thunderhead Stagwing",
+        "levelMin": 52,
+        "levelMax": 53
+      },
+      {
+        "who": "Thunderhead Consort",
+        "levelMin": 52,
+        "levelMax": 53
+      },
+      {
+        "who": "Mosshoof Stag",
+        "levelMin": 50,
+        "levelMax": 51
+      },
+      {
+        "who": "Cliff Breaker",
+        "levelMin": 53,
+        "levelMax": 54
       }
     ]
   },
@@ -1507,9 +1532,19 @@
     "type": "HostileArea",
     "commonEncounters": [
       {
-        "who": "Duskbat",
-        "levelMin": 1,
-        "levelMax": 2
+        "who": "Haldarr Satyr",
+        "levelMin": 45,
+        "levelMax": 46
+      },
+      {
+        "who": "Haldarr Trickster",
+        "levelMin": 45,
+        "levelMax": 46
+      },
+      {
+        "who": "Haldarr Felsworn",
+        "levelMin": 46,
+        "levelMax": 47
       }
     ]
   },
@@ -1521,9 +1556,14 @@
     "type": "HostileArea",
     "commonEncounters": [
       {
-        "who": "Duskbat",
-        "levelMin": 1,
-        "levelMax": 2
+        "who": "Son of Arkkoroc",
+        "levelMin": 54,
+        "levelMax": 55
+      },
+      {
+        "who": "Servant of Arkkoroc",
+        "levelMin": 54,
+        "levelMax": 55
       }
     ]
   },
@@ -1535,9 +1575,24 @@
     "type": "HostileArea",
     "commonEncounters": [
       {
-        "who": "Duskbat",
-        "levelMin": 1,
-        "levelMax": 2
+        "who": "Coralshell Tortoise",
+        "levelMin": 50,
+        "levelMax": 51
+      },
+      {
+        "who": "Makrinni Snapclaw",
+        "levelMin": 50,
+        "levelMax": 51
+      },
+      {
+        "who": "Makrinni Scrabbler",
+        "levelMin": 50,
+        "levelMax": 51
+      },
+      {
+        "who": "Young Wavetrasher",
+        "levelMin": 50,
+        "levelMax": 51
       }
     ]
   },
@@ -1549,9 +1604,19 @@
     "type": "HostileArea",
     "commonEncounters": [
       {
-        "who": "Duskbat",
-        "levelMin": 1,
-        "levelMax": 2
+        "who": "Draconic Mageweaver",
+        "levelMin": 51,
+        "levelMax": 52
+      },
+      {
+        "who": "Blue Scalebane",
+        "levelMin": 52,
+        "levelMax": 53
+      },
+      {
+        "who": "Dragonic Magelord",
+        "levelMin": 52,
+        "levelMax": 53
       }
     ]
   },
@@ -1563,9 +1628,19 @@
     "type": "HostileArea",
     "commonEncounters": [
       {
-        "who": "Duskbat",
-        "levelMin": 1,
-        "levelMax": 2
+        "who": "Legashi Rogue",
+        "levelMin": 51,
+        "levelMax": 52
+      },
+      {
+        "who": "Legashi Satyr",
+        "levelMin": 51,
+        "levelMax": 52
+      },
+      {
+        "who": "Legashi Hellcaller",
+        "levelMin": 52,
+        "levelMax": 53
       }
     ]
   },
@@ -1577,9 +1652,14 @@
     "type": "HostileArea",
     "commonEncounters": [
       {
-        "who": "Duskbat",
-        "levelMin": 1,
-        "levelMax": 2
+        "who": "Spitelash Enchantress",
+        "levelMin": 54,
+        "levelMax": 55
+      },
+      {
+        "who": "Spitelash Battlemaster",
+        "levelMin": 53,
+        "levelMax": 54
       }
     ]
   },
@@ -1591,9 +1671,19 @@
     "type": "HostileArea",
     "commonEncounters": [
       {
-        "who": "Duskbat",
-        "levelMin": 1,
-        "levelMax": 2
+        "who": "Makrinni Razorclaw",
+        "levelMin": 54,
+        "levelMax": 55
+      },
+      {
+        "who": "Coralshell Lurker",
+        "levelMin": 53,
+        "levelMax": 54
+      },
+      {
+        "who": "Great Wavetrasher",
+        "levelMin": 54,
+        "levelMax": 55
       }
     ]
   },
@@ -1605,9 +1695,31 @@
     "type": "HostileArea",
     "commonEncounters": [
       {
-        "who": "Duskbat",
-        "levelMin": 1,
-        "levelMax": 2
+        "who": "Spitelash Serpent Guardian",
+        "levelMin": 50,
+        "levelMax": 51
+      },
+      {
+        "who": "Spitelash Myrmidon",
+        "levelMin": 50,
+        "levelMax": 51
+      },
+      {
+        "who": "Spitelash Siren",
+        "levelMin": 52,
+        "levelMax": 53
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "General Fangterror",
+        "levelMin": 52
+      }
+    ],
+    "eliteEncounters": [
+      {
+        "who": "Warlord Krellian",
+        "levelMin": 55
       }
     ]
   },
@@ -1619,9 +1731,14 @@
     "type": "HostileArea",
     "commonEncounters": [
       {
-        "who": "Duskbat",
-        "levelMin": 1,
-        "levelMax": 2
+        "who": "Highborne Apparition",
+        "levelMin": 45,
+        "levelMax": 46
+      },
+      {
+        "who": "Highborne Lichling",
+        "levelMin": 46,
+        "levelMax": 47
       }
     ]
   },
@@ -1633,9 +1750,19 @@
     "type": "HostileArea",
     "commonEncounters": [
       {
-        "who": "Duskbat",
-        "levelMin": 1,
-        "levelMax": 2
+        "who": "Spitelash Siren",
+        "levelMin": 51,
+        "levelMax": 52
+      },
+      {
+        "who": "Spitelash Myrmidon",
+        "levelMin": 51,
+        "levelMax": 52
+      },
+      {
+        "who": "Coralshell Lurker",
+        "levelMin": 52,
+        "levelMax": 53
       }
     ]
   },
@@ -1647,9 +1774,19 @@
     "type": "HostileArea",
     "commonEncounters": [
       {
-        "who": "Duskbat",
-        "levelMin": 1,
-        "levelMax": 2
+        "who": "Arkkoran Pincer",
+        "levelMin": 54,
+        "levelMax": 55
+      },
+      {
+        "who": "Arkkoran Clacker",
+        "levelMin": 54,
+        "levelMax": 55
+      },
+      {
+        "who": "Arkkoran Oracle",
+        "levelMin": 54,
+        "levelMax": 55
       }
     ]
   },
@@ -1661,9 +1798,14 @@
     "type": "HostileArea",
     "commonEncounters": [
       {
-        "who": "Duskbat",
-        "levelMin": 1,
-        "levelMax": 2
+        "who": "Blood Elf Reclaimer",
+        "levelMin": 52,
+        "levelMax": 53
+      },
+      {
+        "who": "Blood Elf Surveyor",
+        "levelMin": 52,
+        "levelMax": 53
       }
     ]
   },
@@ -1672,14 +1814,7 @@
     "y": -108,
     "name": "The Ruined Reaches",
     "zone": "Azshara",
-    "type": "HostileArea",
-    "commonEncounters": [
-      {
-        "who": "Duskbat",
-        "levelMin": 1,
-        "levelMax": 2
-      }
-    ]
+    "type": "HostileArea"
   },
   {
     "x": 137,
@@ -1689,9 +1824,14 @@
     "type": "HostileArea",
     "commonEncounters": [
       {
-        "who": "Duskbat",
-        "levelMin": 1,
-        "levelMax": 2
+        "who": "Spitelash Siren",
+        "levelMin": 50,
+        "levelMax": 51
+      },
+      {
+        "who": "Spitelash Myrmidon",
+        "levelMin": 50,
+        "levelMax": 51
       }
     ]
   },
@@ -1703,25 +1843,28 @@
     "type": "HostileArea",
     "commonEncounters": [
       {
-        "who": "Duskbat",
-        "levelMin": 1,
-        "levelMax": 2
+        "who": "Makrinni Scrabbler",
+        "levelMin": 53,
+        "levelMax": 54
+      },
+      {
+        "who": "Coralshell Lurker",
+        "levelMin": 53,
+        "levelMax": 54
+      },
+      {
+        "who": "Wavetrasher",
+        "levelMin": 53,
+        "levelMax": 54
       }
     ]
   },
   {
-    "x": 135,
-    "y": -84,
+    "x": 1350,
+    "y": -840,
     "name": "Ursolan",
     "zone": "Azshara",
-    "type": "HostileArea",
-    "commonEncounters": [
-      {
-        "who": "Duskbat",
-        "levelMin": 1,
-        "levelMax": 2
-      }
-    ]
+    "type": "HostileArea"
   },
   {
     "x": 301,
@@ -2656,6 +2799,47 @@
     ]
   },
   {
+    "x": 299,
+    "y": -209,
+    "name": "Red Wasteland",
+    "zone": "Blasted Lands",
+    "type": "HostileArea",
+    "commonEncounters": [
+      {
+        "who": "Redstone Basilisk",
+        "levelMin": 48,
+        "levelMax": 49
+      },
+      {
+        "who": "Hellboar",
+        "levelMin": 50,
+        "levelMax": 51
+      },
+      {
+        "who": "Scorpok Stinger",
+        "levelMin": 49,
+        "levelMax": 50
+      },
+      {
+        "who": "Black Slayer",
+        "levelMin": 46,
+        "levelMax": 47
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Grunter",
+        "levelMin": 51
+      }
+    ],
+    "eliteEncounters": [
+      {
+        "who": "Teremus the Devourer",
+        "levelMin": 61
+      }
+    ]
+  },
+  {
     "x": 295,
     "y": -205,
     "name": "Dreadmaul Hold",
@@ -2663,9 +2847,25 @@
     "type": "HostileArea",
     "commonEncounters": [
       {
-        "who": "Duskbat",
-        "levelMin": 1,
-        "levelMax": 2
+        "who": "Dreadmaul Ogre Mage",
+        "levelMin": 45,
+        "levelMax": 46
+      },
+      {
+        "who": "Dreadmaul Ogre",
+        "levelMin": 45,
+        "levelMax": 46
+      },
+      {
+        "who": "Dreadmaul Brute",
+        "levelMin": 46,
+        "levelMax": 47
+      }
+    ],
+    "eliteEncounters": [
+      {
+        "who": "Grol the Destroyer",
+        "levelMin": 58
       }
     ]
   },
@@ -2677,9 +2877,19 @@
     "type": "HostileArea",
     "commonEncounters": [
       {
-        "who": "Duskbat",
-        "levelMin": 1,
-        "levelMax": 2
+        "who": "Dreadmaul Warlock",
+        "levelMin": 54,
+        "levelMax": 55
+      },
+      {
+        "who": "Dreadmaul Mauler",
+        "levelMin": 53,
+        "levelMax": 54
+      },
+      {
+        "who": "Felbeast",
+        "levelMin": 52,
+        "levelMax": 53
       }
     ]
   },
@@ -2691,9 +2901,29 @@
     "type": "HostileArea",
     "commonEncounters": [
       {
-        "who": "Duskbat",
-        "levelMin": 1,
-        "levelMax": 2
+        "who": "Shadowsworn Adept",
+        "levelMin": 52,
+        "levelMax": 53
+      },
+      {
+        "who": "Shadowsworn Thug",
+        "levelMin": 52,
+        "levelMax": 53
+      },
+      {
+        "who": "Shadowsworn Cultist",
+        "levelMin": 52,
+        "levelMax": 53
+      }
+    ],
+    "eliteEncounters": [
+      {
+        "who": "Kirith the Damned",
+        "levelMin": 55
+      },
+      {
+        "who": "Archmage Allistarj",
+        "levelMin": 58
       }
     ]
   },
@@ -2705,9 +2935,19 @@
     "type": "HostileArea",
     "commonEncounters": [
       {
-        "who": "Duskbat",
-        "levelMin": 1,
-        "levelMax": 2
+        "who": "Shadowsworn Enforcer",
+        "levelMin": 53,
+        "levelMax": 54
+      },
+      {
+        "who": "Shadowsworn Dreadweaver",
+        "levelMin": 54,
+        "levelMax": 55
+      },
+      {
+        "who": "Shadowsworn Warlock",
+        "levelMin": 54,
+        "levelMax": 55
       }
     ]
   },
@@ -2719,9 +2959,19 @@
     "type": "HostileArea",
     "commonEncounters": [
       {
-        "who": "Duskbat",
-        "levelMin": 1,
-        "levelMax": 2
+        "who": "Manahound",
+        "levelMin": 60,
+        "levelMax": 61
+      },
+      {
+        "who": "Felguard Elite",
+        "levelMin": 60,
+        "levelMax": 61
+      },
+      {
+        "who": "Doomguard Commander",
+        "levelMin": 61,
+        "levelMax": 62
       }
     ]
   },
@@ -2733,9 +2983,25 @@
     "type": "HostileArea",
     "commonEncounters": [
       {
-        "who": "Duskbat",
-        "levelMin": 1,
-        "levelMax": 2
+        "who": "Dreadlord",
+        "levelMin": 62,
+        "levelMax": 63
+      },
+      {
+        "who": "Manahound",
+        "levelMin": 60,
+        "levelMax": 61
+      },
+      {
+        "who": "Felguard Elite",
+        "levelMin": 60,
+        "levelMax": 61
+      }
+    ],
+    "eliteEncounters": [
+      {
+        "who": "Lord Kazzak",
+        "levelMin": 64
       }
     ]
   },

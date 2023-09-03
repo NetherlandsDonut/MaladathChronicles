@@ -1,5 +1,446 @@
 [
   {
+    "name": "Dreadlord",
+    "kind": "Common",
+    "portrait": "PortraitNatherezim",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Doomguard Commander",
+    "kind": "Common",
+    "portrait": "PortraitDoomguard",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Felguard Elite",
+    "kind": "Common",
+    "portrait": "PortraitFelGuard",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Shadowsworn Warlock",
+    "kind": "Common",
+    "portrait": "PortraitChicken",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Shadowsworn Dreadweaver",
+    "kind": "Common",
+    "portrait": "PortraitChicken",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Shadowsworn Enforcer",
+    "kind": "Common",
+    "portrait": "PortraitChicken",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Archmage Allistarj",
+    "kind": "Elite",
+    "portrait": "PortraitCow",
+    "vitality": 3.0,
+    "abilities": []
+  },
+  {
+    "name": "Kirith the Damned",
+    "kind": "Elite",
+    "portrait": "PortraitFelhunter",
+    "vitality": 3.0,
+    "abilities": []
+  },
+  {
+    "name": "Shadowsworn Cultist",
+    "kind": "Common",
+    "portrait": "PortraitChicken",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Shadowsworn Thug",
+    "kind": "Common",
+    "portrait": "PortraitChicken",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Shadowsworn Adept",
+    "kind": "Common",
+    "portrait": "PortraitChicken",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Felbeast",
+    "kind": "Common",
+    "portrait": "PortraitFelhunter",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Dreadmaul Mauler",
+    "kind": "Common",
+    "portrait": "PortraitOgreBlue",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Dreadmaul Warlock",
+    "kind": "Common",
+    "portrait": "PortraitOgreBlueTwoheads",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Grol the Destroyer",
+    "kind": "Elite",
+    "portrait": "PortraitOgreArmored",
+    "vitality": 3.0,
+    "abilities": []
+  },
+  {
+    "name": "Dreadmaul Brute",
+    "kind": "Common",
+    "portrait": "PortraitOgreBlue",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Dreadmaul Ogre",
+    "kind": "Common",
+    "portrait": "PortraitOgreBlue",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Dreadmaul Ogre Mage",
+    "kind": "Common",
+    "portrait": "PortraitOgreBlueTwoheads",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Teremus the Devourer",
+    "kind": "Elite",
+    "portrait": "PortraitBlackDrake",
+    "vitality": 3.0,
+    "abilities": []
+  },
+  {
+    "name": "Grunter",
+    "kind": "Rare",
+    "portrait": "PortraitBoarBlack",
+    "vitality": 2.0,
+    "abilities": []
+  },
+  {
+    "name": "Black Slayer",
+    "kind": "Common",
+    "portrait": "PortraitCarrionBird",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Scorpok Stinger",
+    "kind": "Common",
+    "portrait": "PortraitScorpidRed",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Hellboar",
+    "kind": "Common",
+    "portrait": "PortraitBoarBlack",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Redstone Basilisk",
+    "kind": "Common",
+    "portrait": "PortraitBasilisk",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Wavetrasher",
+    "kind": "Common",
+    "portrait": "PortraitHydra",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Blood Elf Surveyor",
+    "kind": "Common",
+    "portrait": "PortraitChicken",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Blood Elf Reclaimer",
+    "kind": "Common",
+    "portrait": "PortraitChicken",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Arkkoran Oracle",
+    "kind": "Common",
+    "portrait": "PortraitMurloc",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Arkkoran Clacker",
+    "kind": "Common",
+    "portrait": "PortraitMakruraBlack",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Arkkoran Pincer",
+    "kind": "Common",
+    "portrait": "PortraitMakruraBlue",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Highborne Lichling",
+    "kind": "Common",
+    "portrait": "PortraitWraith",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Highborne Apparition",
+    "kind": "Common",
+    "portrait": "PortraitBanshee",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Warlord Krellian",
+    "kind": "Elite",
+    "portrait": "PortraitNaga",
+    "vitality": 3.0,
+    "abilities": []
+  },
+  {
+    "name": "General Fangterror",
+    "kind": "Rare",
+    "portrait": "PortraitNaga",
+    "vitality": 2.0,
+    "abilities": []
+  },
+  {
+    "name": "Spitelash Siren",
+    "kind": "Common",
+    "portrait": "PortraitNagaFemale",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Spitelash Myrmidon",
+    "kind": "Common",
+    "portrait": "PortraitNaga",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Spitelash Serpent Guardian",
+    "kind": "Common",
+    "portrait": "PortraitNaga",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Great Wavetrasher",
+    "kind": "Common",
+    "portrait": "PortraitHydra",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Coralshell Lurker",
+    "kind": "Common",
+    "portrait": "PortraitTurtleWhite",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Makrinni Razorclaw",
+    "kind": "Common",
+    "portrait": "PortraitMakruraBlack",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Spitelash Battlemaster",
+    "kind": "Common",
+    "portrait": "PortraitNaga",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Spitelash Enchantress",
+    "kind": "Common",
+    "portrait": "PortraitNagaFemale",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Legashi Hellcaller",
+    "kind": "Common",
+    "portrait": "PortraitSatyr",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Legashi Satyr",
+    "kind": "Common",
+    "portrait": "PortraitSatyr",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Legashi Rogue",
+    "kind": "Common",
+    "portrait": "PortraitSatyr",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Dragonic Magelord",
+    "kind": "Common",
+    "portrait": "PortraitBlueDragonSpawn",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Blue Scalebane",
+    "kind": "Common",
+    "portrait": "PortraitBlueDragonSpawn",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Draconic Mageweaver",
+    "kind": "Common",
+    "portrait": "PortraitBlueDragonSpawnFemale",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Young Wavetrasher",
+    "kind": "Common",
+    "portrait": "PortraitHydra",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Makrinni Snapclaw",
+    "kind": "Common",
+    "portrait": "PortraitMakruraBlack",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Coralshell Tortoise",
+    "kind": "Common",
+    "portrait": "PortraitTurtleWhite",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Servant of Arkkoroc",
+    "kind": "Common",
+    "portrait": "PortraitSeaGiant",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Son of Arkkoroc",
+    "kind": "Common",
+    "portrait": "PortraitSeaGiant",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Haldarr Felsworn",
+    "kind": "Common",
+    "portrait": "PortraitSatyr",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Haldarr Trickster",
+    "kind": "Common",
+    "portrait": "PortraitSatyr",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Haldarr Satyr",
+    "kind": "Common",
+    "portrait": "PortraitSatyr",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Cliff Breaker",
+    "kind": "Common",
+    "portrait": "PortraitMountainGiant",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Mosshoof Stag",
+    "kind": "Common",
+    "portrait": "PortraitStag",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Thunderhead Consort",
+    "kind": "Common",
+    "portrait": "PortraitHippogryph",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Thunderhead Stagwing",
+    "kind": "Common",
+    "portrait": "PortraitHippogryph",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Makrinni Scrabbler",
+    "kind": "Common",
+    "portrait": "PortraitMakruraBlue",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Storm Bay Warrior",
+    "kind": "Common",
+    "portrait": "PortraitMurloc",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Storm Bay Oracle",
+    "kind": "Common",
+    "portrait": "PortraitMurlocFemale",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
     "name": "Soulflayer",
     "kind": "Common",
     "portrait": "PortraitWindSerpentOnyx",
@@ -475,7 +916,7 @@
   {
     "name": "Bloodtalon Taillasher",
     "kind": "Common",
-    "portrait": "PortraitChicken",
+    "portrait": "PortraitRaptorRed",
     "vitality": 1.0,
     "abilities": []
   },
@@ -1258,6 +1699,7 @@
   },
   {
     "name": "Dwarf",
+    "startingSite": "Anvilmar",
     "faction": "Alliance",
     "portrait": "PortraitDwarf",
     "background": "AreaDunMoroghIronforge",
@@ -1574,6 +2016,7 @@
   {
     "name": "Forsaken",
     "faction": "Horde",
+    "startingSite": "Deathknell",
     "portrait": "PortraitForsaken",
     "background": "AreaTirisfalGladesUndercityCentral",
     "stats": {
@@ -1858,6 +2301,7 @@
   {
     "name": "Gnome",
     "faction": "Alliance",
+    "startingSite": "Anvilmar",
     "portrait": "PortraitGnome",
     "background": "AreaDunMoroghGnomeregan",
     "stats": {
@@ -2489,6 +2933,7 @@
   {
     "name": "Human",
     "faction": "Alliance",
+    "startingSite": "Northshire Abbey",
     "portrait": "PortraitHuman",
     "background": "AreaElwynnForestStormwind",
     "stats": {
@@ -3367,6 +3812,7 @@
   {
     "name": "Night Elf",
     "faction": "Alliance",
+    "startingSite": "Aldrassil",
     "portrait": "PortraitNightElf",
     "background": "AreaTeldrassilDarnassus",
     "stats": {
@@ -3550,6 +3996,7 @@
   {
     "name": "Orc",
     "faction": "Horde",
+    "startingSite": "Valley of Trials",
     "portrait": "PortraitOrc",
     "background": "AreaDurotarOrgrimmar",
     "stats": {
@@ -3631,6 +4078,7 @@
   {
     "name": "Pandaren",
     "faction": "Both",
+    "startingSite": "Scuttle Coast",
     "portrait": "PortraitPandaren",
     "background": "AreaMulgoreTheRollingPlains",
     "stats": {
@@ -5167,6 +5615,7 @@
   {
     "name": "Tauren",
     "faction": "Horde",
+    "startingSite": "Camp Narache",
     "portrait": "PortraitTauren",
     "background": "AreaMulgoreThunderBluff",
     "stats": {
@@ -5364,6 +5813,7 @@
   {
     "name": "Troll",
     "faction": "Horde",
+    "startingSite": "Valley of Trials",
     "portrait": "PortraitTroll",
     "background": "AreaDurotarSenjinVillage",
     "stats": {

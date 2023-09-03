@@ -116,9 +116,8 @@ public class Blueprint
                 },
                 (h) =>
                 {
-                    Login();
                     SpawnDesktopBlueprint("Map");
-                    SwitchDesktop("Map");
+                    Login();
                 });
             }
             else

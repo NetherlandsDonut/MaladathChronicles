@@ -3,7 +3,7 @@
 public class Race
 {
     public int level;
-    public string name, faction, kind, portrait, background;
+    public string name, faction, startingSite, kind, portrait, background;
     public double vitality;
     public Stats stats;
     public List<string> abilities, maleNames, femaleNames;

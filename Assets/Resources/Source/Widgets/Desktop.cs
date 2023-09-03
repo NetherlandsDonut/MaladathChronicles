@@ -116,7 +116,10 @@ public class Desktop : MonoBehaviour
                 if (loadSites.Count == 0)
                 {
                     RemoveDesktopBackground();
-                    screen.transform.localPosition = new Vector3(2248, -2193);
+                    var rounded = new Vector2((float)Math.Round(cameraDestination.x), (float)Math.Round(cameraDestination.y));
+                    var newPosition = rounded * 19 + new Vector2(333, -183);
+                    cursor.transform.position += (Vector3)newPosition - screen.transform.position;
+                    screen.transform.position = newPosition;
                     SpawnWindowBlueprint("MapToolbar");
                     SpawnTransition(0.1f);
                     SpawnTransition(0.1f);
@@ -154,7 +157,7 @@ public class Desktop : MonoBehaviour
                     var newPosition = Vector3.Lerp(temp, rounded * 19 + new Vector2(333, -183), Time.deltaTime * 4);
                     cursor.transform.position += newPosition - temp;
                     screen.transform.position = newPosition;
-                    if (Vector3.Distance(screen.transform.position, (cameraDestination + new Vector2(17, -9)) * 19 + new Vector2(10, -10)) <= 10)
+                    if (screenLocked && Vector3.Distance(screen.transform.position, (cameraDestination + new Vector2(17, -9)) * 19 + new Vector2(10, -10)) <= 10)
                     {
                         UnlockScreen();
                         if (queuedSiteOpen == "Instance")

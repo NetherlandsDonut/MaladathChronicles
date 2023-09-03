@@ -5,6 +5,8 @@ using static Font;
 using static Event;
 using static Cursor;
 using static String;
+using System.Linq;
+using UnityEngine.Assertions.Must;
 
 public class InputLine : MonoBehaviour
 {
@@ -74,7 +76,9 @@ public class InputLine : MonoBehaviour
                 if (foo.Value() == "DELETE")
                 {
                     SaveGame.saves[GameSettings.settings.selectedRealm].RemoveAll(x => x.player.name == GameSettings.settings.selectedCharacter);
-                    GameSettings.settings.selectedCharacter = "";
+                    if (SaveGame.saves[GameSettings.settings.selectedRealm].Count > 0)
+                        GameSettings.settings.selectedCharacter = SaveGame.saves[GameSettings.settings.selectedRealm].First().player.name;
+                    else GameSettings.settings.selectedCharacter = "";
                     CloseWindow("ConfirmDeleteCharacter");
                     RemoveDesktopBackground();
                     Respawn("CharacterInfo");
