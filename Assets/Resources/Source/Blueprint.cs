@@ -108,7 +108,7 @@ public class Blueprint
             DisableShadows();
             AddRegionGroup();
             SetRegionGroupWidth(296);
-            if (saves.Count > 0)
+            if (settings.selectedRealm != "" && settings.selectedCharacter != "")
             {
                 AddButtonRegion(() =>
                 {
@@ -118,6 +118,7 @@ public class Blueprint
                 {
                     SpawnDesktopBlueprint("Map");
                     Login();
+                    SetDesktopBackground("LoadingScreens/LoadingScreen" + (CDesktop.cameraDestination.x < 130 ? "Kalimdor" : "EasternKingdoms"));
                 });
             }
             else
@@ -151,9 +152,18 @@ public class Blueprint
                     (h) =>
                     {
                         settings.selectedRealm = realm.name;
-                        settings.selectedCharacter = "";
-                        SpawnTransition();
+                        if (saves[settings.selectedRealm].Count > 0)
+                        {
+                            settings.selectedCharacter = saves[settings.selectedRealm][0].player.name;
+                            SpawnTransition();
+                        }
+                        else if (settings.selectedCharacter != "")
+                        {
+                            settings.selectedCharacter = "";
+                            SpawnTransition();
+                        }
                         h.window.Respawn();
+                        Respawn("TitleScreenSingleplayer");
                         Respawn("CharacterRoster");
                         Respawn("CharacterInfo");
                     });
@@ -279,12 +289,9 @@ public class Blueprint
         }, true),
         new("CharacterRoster", () =>
         {
-            if (settings.selectedCharacter == "")
-                if (settings.selectedRealm != "" && saves[settings.selectedRealm].Count > 0)
-                    settings.selectedCharacter = saves[settings.selectedRealm][0].player.name;
             if (settings.selectedCharacter != "")
                 SetDesktopBackground("Areas/" + races.Find(x => x.name == saves[settings.selectedRealm].Find(x => x.player.name == settings.selectedCharacter).player.race).background, true);
-            else RemoveDesktopBackground();
+            else SetDesktopBackground("Sky", true);
             SetAnchor(TopRight);
             AddRegionGroup();
             SetRegionGroupWidth(171);
@@ -304,7 +311,7 @@ public class Blueprint
             });
             AddButtonRegion(() =>
             {
-                AddLine(settings.selectedRealm);
+                AddLine(settings.selectedRealm == "" ? "None" : settings.selectedRealm);
             },
             (h) =>
             {
@@ -314,49 +321,54 @@ public class Blueprint
             {
                 AddLine("Characters:", "Gray");
             });
-            foreach (var slot in saves[settings.selectedRealm])
+            if (saves.ContainsKey(settings.selectedRealm))
             {
-                AddPaddingRegion(() =>
+                foreach (var slot in saves[settings.selectedRealm])
                 {
-                    AddBigButton("Portrait" + slot.player.race.Replace("'", "").Replace(".", "").Replace(" ", "") + slot.player.gender, (h) =>
+                    AddPaddingRegion(() =>
                     {
+                        AddBigButton("Portrait" + slot.player.race.Replace("'", "").Replace(".", "").Replace(" ", "") + slot.player.gender, (h) =>
+                        {
+                            if (settings.selectedCharacter != slot.player.name)
+                            {
+                                settings.selectedCharacter = slot.player.name;
+                                SetDesktopBackground("Areas/" + races.Find(x => x.name == slot.player.race).background, true);
+                                Respawn("CharacterInfo");
+                            }
+                        });
                         if (settings.selectedCharacter != slot.player.name)
                         {
-                            settings.selectedCharacter = slot.player.name;
-                            SetDesktopBackground("Areas/" + races.Find(x => x.name == slot.player.race).background, true);
-                            Respawn("CharacterInfo");
+                            SetBigButtonToGrayscale();
+                            AddBigButtonOverlay("OtherGridBlurred");
                         }
+                        AddLine(slot.player.name);
+                        AddLine("Level: " + slot.player.level + " ");
+                        AddText(slot.player.spec, slot.player.spec);
                     });
-                    if (settings.selectedCharacter != slot.player.name)
+                }
+                AddPaddingRegion(() => { SetRegionAsGroupExtender(); });
+                if (saves[settings.selectedRealm].Count < 7)
+                    AddButtonRegion(() =>
                     {
-                        SetBigButtonToGrayscale();
-                        AddBigButtonOverlay("OtherGridBlurred");
-                    }
-                    AddLine(slot.player.name);
-                    AddLine("Level: " + slot.player.level + " ");
-                    AddText(slot.player.spec, slot.player.spec);
-                });
+                        AddLine("Create a new character", "Black");
+                    },
+                    (h) =>
+                    {
+                        CloseWindow(h.window);
+                        CloseWindow("RealmRoster");
+                        CloseWindow("CharacterInfo");
+                        CloseWindow("TitleScreenSingleplayer");
+                        creationName = "";
+                        creationFaction = "";
+                        creationGender = "";
+                        creationRace = "";
+                        creationClass = "";
+                        SpawnWindowBlueprint("CharacterCreation");
+                        SpawnWindowBlueprint("CharacterCreationRightSide");
+                    });
+                else
+                    AddPaddingRegion(() => AddLine("Create a new character", "DarkGray"));
             }
-            AddPaddingRegion(() => { SetRegionAsGroupExtender(); });
-            if (saves[settings.selectedRealm].Count < 7)
-                AddButtonRegion(() =>
-                {
-                    AddLine("Create a new character", "Black");
-                },
-                (h) =>
-                {
-                    CloseWindow(h.window);
-                    CloseWindow("RealmRoster");
-                    CloseWindow("CharacterInfo");
-                    CloseWindow("TitleScreenSingleplayer");
-                    creationName = "";
-                    creationFaction = "";
-                    creationGender = "";
-                    creationRace = "";
-                    creationClass = "";
-                    SpawnWindowBlueprint("CharacterCreation");
-                    SpawnWindowBlueprint("CharacterCreationRightSide");
-                });
             else
                 AddPaddingRegion(() => AddLine("Create a new character", "DarkGray"));
         }, true),
@@ -5429,7 +5441,6 @@ public class Blueprint
             loadingBar[1] = new GameObject("LoadingBar", typeof(SpriteRenderer));
             loadingBar[1].GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Textures/LoadingBarStretch");
             loadingBar[1].transform.position = new Vector3(-1178, 863);
-            SetDesktopBackground("LoadingScreens/LoadingScreenKalimdor");
             OrderLoadingMap();
             AddHotkey(W, () => { CheckPosition(new Vector3(0, EuelerGrowth())); }, false);
             AddHotkey(A, () => { CheckPosition(new Vector3(-EuelerGrowth(), 0)); }, false);
@@ -5457,8 +5468,8 @@ public class Blueprint
                 CDesktop.cameraDestination += new Vector2(amount.x, amount.y) / 5;
                 if (CDesktop.cameraDestination.x < 0)
                     CDesktop.cameraDestination = new Vector2(0, CDesktop.cameraDestination.y);
-                if (CDesktop.cameraDestination.x > 376)
-                    CDesktop.cameraDestination = new Vector2(376, CDesktop.cameraDestination.y);
+                if (CDesktop.cameraDestination.x > 350)
+                    CDesktop.cameraDestination = new Vector2(350, CDesktop.cameraDestination.y);
                 if (CDesktop.cameraDestination.x > 130 && CDesktop.cameraDestination.x < 180)
                     CDesktop.cameraDestination = new Vector2(130, CDesktop.cameraDestination.y);
                 if (CDesktop.cameraDestination.x < 225 && CDesktop.cameraDestination.x > 180)

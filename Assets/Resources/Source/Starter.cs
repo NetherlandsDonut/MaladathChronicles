@@ -38,6 +38,11 @@ public class Starter : MonoBehaviour
         Deserialize(ref settings, "settings", false, prefix);
         if (settings == null) settings = new();
         else settings.FillNulls();
+        if (!saves.Any(x => x.Value.Exists(y => y.player.name == settings.selectedCharacter)))
+        {
+            settings.selectedCharacter = "";
+            settings.selectedRealm = "";
+        }
         LoadData();
         cursor = FindObjectOfType<Cursor>();
         cursorEnemy = FindObjectOfType<CursorRemote>();
