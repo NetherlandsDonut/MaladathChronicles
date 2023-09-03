@@ -69,8 +69,8 @@ public class SaveGame
     public static void SaveGames()
     {
         if (currentSave != null) Save();
-        Serialization.Serialize(saves, "characters");
-        Serialization.Serialize(settings, "settings");
+        Serialization.Serialize(saves, "characters", false, false, prefix);
+        Serialization.Serialize(settings, "settings", false, false, prefix);
     }
 
     public static SaveGame currentSave;

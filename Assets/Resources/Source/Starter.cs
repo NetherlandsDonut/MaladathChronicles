@@ -30,9 +30,8 @@ public class Starter : MonoBehaviour
         desktops = new();
         settings = new GameSettings();
         fallingElements = new List<FallingElement>();
-        var prefix = "";
-        #if (!UNITY_EDITOR)
-        prefix = "D:\\Games\\Torf\\";
+        #if (UNITY_EDITOR)
+        prefix = "D:\\Games\\Warcraft Elements\\";
         #endif
         Deserialize(ref saves, "characters", false, prefix);
         if (saves == null) saves = new();
@@ -49,10 +48,6 @@ public class Starter : MonoBehaviour
 
     public static void LoadData()
     {
-        var prefix = "";
-        #if (!UNITY_EDITOR)
-        prefix = "D:\\Games\\Torf\\";
-        #endif
         Deserialize(ref SiteHostileArea.areas, "areas", false, prefix);
         Deserialize(ref instances, "instances", false, prefix);
         Deserialize(ref complexes, "complexes", false, prefix);
@@ -66,6 +61,7 @@ public class Starter : MonoBehaviour
         Deserialize(ref Ability.abilities, "abilities", false, prefix);
         Deserialize(ref Buff.buffs, "buffs", false, prefix);
         #if (UNITY_EDITOR)
+        Application.Quit();
         var ambienceList = AssetDatabase.FindAssets("t:AudioClip Ambience", new[] { "Assets/Resources/Ambience/" }).Select(x => AssetDatabase.GUIDToAssetPath(x).Replace("Assets/Resources/Ambience/", "")).ToList();
         var soundList = AssetDatabase.FindAssets("t:AudioClip", new[] { "Assets/Resources/Sounds/" }).Select(x => AssetDatabase.GUIDToAssetPath(x).Replace("Assets/Resources/Sounds/", "")).ToList();
         var itemIconList = AssetDatabase.FindAssets("t:Texture Item", new[] { "Assets/Resources/Sprites/Building/BigButtons/" }).Select(x => AssetDatabase.GUIDToAssetPath(x).Replace("Assets/Resources/Sprites/Building/BigButtons/", "")).ToList();
@@ -76,10 +72,9 @@ public class Starter : MonoBehaviour
         abilityIconList.RemoveAll(x => !x.StartsWith("Ability"));
         portraitList.RemoveAll(x => !x.StartsWith("Portrait"));
         Assets.assets = new Assets(ambienceList, soundList, itemIconList, abilityIconList, portraitList);
-        Serialize(Assets.assets, "assets");
-        Serialize(Assets.assets, "assets", false, false, "D:\\Games\\Torf\\");
+        Serialize(Assets.assets, "assets", false, false, prefix);
         #else
-        Deserialize(ref Assets.assets, "assets");
+        Deserialize(ref Assets.assets, "assets", false, prefix);
         #endif
         var countHA = SiteHostileArea.areas.Count;
         var countI = instances.Count;

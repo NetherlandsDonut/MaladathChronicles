@@ -11,31 +11,31 @@ class Serialization
 {
     public static void Deserialize<T>(ref T target, string file, bool encoded = false, string prefix = "")
     {
-        if (!Directory.Exists(prefix + "Torf_Data_2"))
-            Directory.CreateDirectory(prefix + "Torf_Data_2");
-        if (!File.Exists(prefix + "Torf_Data_2\\" + file + (encoded ? ".TORF" : ".json"))) return;
-        var content = File.ReadAllText(prefix + "Torf_Data_2\\" + file + (encoded ? ".TORF" : ".json"));
+        if (!Directory.Exists(prefix + "Warcraft Elements_Data_2"))
+            Directory.CreateDirectory(prefix + "Warcraft Elements_Data_2");
+        if (!File.Exists(prefix + "Warcraft Elements_Data_2\\" + file + (encoded ? ".WE" : ".json"))) return;
+        var content = File.ReadAllText(prefix + "Warcraft Elements_Data_2\\" + file + (encoded ? ".WE" : ".json"));
         if (encoded) content = Decrypt(content);
         target = DeserializeObject<T>(content);
     }
 
     public static void Serialize(object what, string where, bool backup = false, bool encoded = false, string prefix = "")
     {
-        if (!Directory.Exists(prefix + "Torf_Data_2"))
-            Directory.CreateDirectory(prefix + "Torf_Data_2");
+        if (!Directory.Exists(prefix + "Warcraft Elements_Data_2"))
+            Directory.CreateDirectory(prefix + "Warcraft Elements_Data_2");
         var date = DateTime.Now.ToString("dd.MM.yyyy - HH.mm");
         if (backup)
         {
-            if (backup && !Directory.Exists(prefix + "Torf_Data_2\\Backup"))
-                Directory.CreateDirectory(prefix + "Torf_Data_2\\Backup");
-            if (backup && !Directory.Exists(prefix + "Torf_Data_2\\Backup\\" + date))
-                Directory.CreateDirectory(prefix + "Torf_Data_2\\Backup\\" + date);
+            if (backup && !Directory.Exists(prefix + "Warcraft Elements_Data_2\\Backup"))
+                Directory.CreateDirectory(prefix + "Warcraft Elements_Data_2\\Backup");
+            if (backup && !Directory.Exists(prefix + "Warcraft Elements_Data_2\\Backup\\" + date))
+                Directory.CreateDirectory(prefix + "Warcraft Elements_Data_2\\Backup\\" + date);
         }
-        if (backup && File.Exists(prefix + "Torf_Data_2\\" + (backup ? "Backup\\" + date + "\\" : "") + where + (encoded ? ".TORF" : ".json"))) return;
+        if (backup && File.Exists(prefix + "Warcraft Elements_Data_2\\" + (backup ? "Backup\\" + date + "\\" : "") + where + (encoded ? ".WE" : ".json"))) return;
         var sett = new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore, DefaultValueHandling = DefaultValueHandling.Ignore };
         var data = SerializeObject(what, encoded ? None : Indented, sett);
         if (encoded) data = Encrypt(data);
-        File.WriteAllText(prefix + "Torf_Data_2\\" + (backup ? "Backup\\" + date + "\\" : "") + where + (encoded ? ".TORF" : ".json"), data);
+        File.WriteAllText(prefix + "Warcraft Elements_Data_2\\" + (backup ? "Backup\\" + date + "\\" : "") + where + (encoded ? ".WE" : ".json"), data);
     }
 
     public static string IV = "1a1a1a1a1a1a1a1a";

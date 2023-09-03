@@ -1930,16 +1930,16 @@ public class Blueprint
             AddPaddingRegion(() => { AddLine("Actions:"); });
             AddButtonRegion(() => { AddLine("Save data"); }, (h) =>
             {
-                Serialize(races, "races");
-                Serialize(specs, "classes");
-                Serialize(abilities, "abilities");
-                Serialize(buffs, "buffs");
-                Serialize(areas, "areas");
-                Serialize(instances, "instances");
-                Serialize(complexes, "complexes");
-                Serialize(towns, "towns");
-                Serialize(items, "items");
-                Serialize(itemSets, "sets");
+                Serialize(races, "races", false, false, prefix);
+                Serialize(specs, "classes", false, false, prefix);
+                Serialize(abilities, "abilities", false, false, prefix);
+                Serialize(buffs, "buffs", false, false, prefix);
+                Serialize(areas, "areas", false, false, prefix);
+                Serialize(instances, "instances", false, false, prefix);
+                Serialize(complexes, "complexes", false, false, prefix);
+                Serialize(towns, "towns", false, false, prefix);
+                Serialize(items, "items", false, false, prefix);
+                Serialize(itemSets, "sets", false, false, prefix);
             });
             AddPaddingRegion(() => { });
         }),
@@ -2477,17 +2477,17 @@ public class Blueprint
             SetRegionGroupHeight(358);
             if (area != null)
             {
-                var index = Assets.assets.ambienceSearch.IndexOf(area.ambience);
+                var index = Assets.assets.ambienceSearch.IndexOf(area.ambience + ".ogg");
                 if (index >= 10) CDesktop.LBWindow.LBRegionGroup.pagination = index / 10;
             }
             else if (instance != null)
             {
-                var index = Assets.assets.ambienceSearch.IndexOf(instance.ambience);
+                var index = Assets.assets.ambienceSearch.IndexOf(instance.ambience + ".ogg");
                 if (index >= 10) CDesktop.LBWindow.LBRegionGroup.pagination = index / 10;
             }
             else if (complex != null)
             {
-                var index = Assets.assets.ambienceSearch.IndexOf(complex.ambience);
+                var index = Assets.assets.ambienceSearch.IndexOf(complex.ambience + ".ogg");
                 if (index >= 10) CDesktop.LBWindow.LBRegionGroup.pagination = index / 10;
             }
             AddHeaderRegion(() =>
@@ -2577,7 +2577,7 @@ public class Blueprint
             if (eventEdit != null)
             {
                 var temp = eventEdit.effects[selectedEffect];
-                var index = temp.ContainsKey("SoundEffect") && temp["SoundEffect"] != "None" ? Assets.assets.soundsSearch.IndexOf(temp["SoundEffect"]) : 0;
+                var index = temp.ContainsKey("SoundEffect") && temp["SoundEffect"] != "None" ? Assets.assets.soundsSearch.IndexOf(temp["SoundEffect"] + ".ogg") : 0;
                 if (index >= 10) CDesktop.LBWindow.LBRegionGroup.pagination = index / 10;
             }
             AddHeaderRegion(() =>
@@ -2658,7 +2658,7 @@ public class Blueprint
             SetRegionGroupHeight(358);
             if (item != null)
             {
-                var index = Assets.assets.itemIconsSearch.IndexOf(item.icon);
+                var index = Assets.assets.itemIconsSearch.IndexOf(item.icon + ".png");
                 if (index >= 10) CDesktop.LBWindow.LBRegionGroup.pagination = index / 10;
             }
             AddHeaderRegion(() =>
@@ -2734,12 +2734,12 @@ public class Blueprint
             SetRegionGroupHeight(358);
             if (ability != null)
             {
-                var index = Assets.assets.abilityIconsSearch.IndexOf(ability.icon);
+                var index = Assets.assets.abilityIconsSearch.IndexOf(ability.icon + ".png");
                 if (index >= 10) CDesktop.LBWindow.LBRegionGroup.pagination = index / 10;
             }
             else if (buff != null)
             {
-                var index = Assets.assets.abilityIconsSearch.IndexOf(buff.icon);
+                var index = Assets.assets.abilityIconsSearch.IndexOf(buff.icon + ".png");
                 if (index >= 10) CDesktop.LBWindow.LBRegionGroup.pagination = index / 10;
             }
             AddHeaderRegion(() =>
@@ -2817,7 +2817,7 @@ public class Blueprint
             SetRegionGroupHeight(358);
             if (race != null)
             {
-                var index = Assets.assets.portraitsSearch.IndexOf(race.portrait);
+                var index = Assets.assets.portraitsSearch.IndexOf(race.portrait + ".png");
                 if (index >= 10) CDesktop.LBWindow.LBRegionGroup.pagination = index / 10;
             }
             AddHeaderRegion(() =>
@@ -3009,6 +3009,7 @@ public class Blueprint
                 AddLine("Event:");
                 AddSmallButton("OtherClose", (h) =>
                 {
+                    eventEdit = null;
                     CloseWindow(h.window);
                     CloseWindow("ObjectManagerEventTrigger");
                     if (eventParentType == "Ability") SpawnWindowBlueprint("ObjectManagerAbilities");
@@ -3290,6 +3291,7 @@ public class Blueprint
                 AddLine("Event:");
                 AddSmallButton("OtherClose", (h) =>
                 {
+                    eventEdit = null;
                     CloseWindow(h.window);
                     CloseWindow("ObjectManagerEventEffect");
                     if (eventParentType == "Ability") SpawnWindowBlueprint("ObjectManagerAbilities");
@@ -4522,6 +4524,20 @@ public class Blueprint
                 var index = abilitiesSearch.IndexOf(ability);
                 if (index >= 10) CDesktop.LBWindow.LBRegionGroup.pagination = index / 10;
             }
+            if (eventEdit != null)
+            {
+                var editingEffects = CDesktop.windows.Exists(x => x.title == "ObjectManagerEventEffect");
+                if (editingEffects)
+                {
+                    var index = abilitiesSearch.IndexOf(eventEdit.effects[selectedEffect].ContainsKey("AbilityName") ? abilities.Find(x => x.name == eventEdit.effects[selectedEffect]["AbilityName"]) : null);
+                    if (index >= 10) CDesktop.LBWindow.LBRegionGroup.pagination = index / 10;
+                }
+                else
+                {
+                    var index = abilitiesSearch.IndexOf(eventEdit.triggers[selectedTrigger].ContainsKey("AbilityName") ? abilities.Find(x => x.name == eventEdit.triggers[selectedTrigger]["AbilityName"]) : null);
+                    if (index >= 10) CDesktop.LBWindow.LBRegionGroup.pagination = index / 10;
+                }
+            }
             AddHeaderRegion(() =>
             {
                 AddLine("Abilities:");
@@ -4583,7 +4599,6 @@ public class Blueprint
                 },
                 (h) =>
                 {
-                    ability = abilitiesSearch[index + 10 * regionGroup.pagination];
                     if (eventEdit != null)
                     {
                         var editingEffects = CDesktop.windows.Exists(x => x.title == "ObjectManagerEventEffect");
@@ -4608,6 +4623,7 @@ public class Blueprint
                     }
                     else
                     {
+                        ability = abilitiesSearch[index + 10 * regionGroup.pagination];
                         String.objectName.Set(ability.name);
                         String.cooldown.Set(ability.cooldown + "");
                         Respawn("ObjectManagerAbility");
@@ -4792,6 +4808,20 @@ public class Blueprint
                 var index = buffsSearch.IndexOf(buff);
                 if (index >= 10) CDesktop.LBWindow.LBRegionGroup.pagination = index / 10;
             }
+            if (eventEdit != null)
+            {
+                var editingEffects = CDesktop.windows.Exists(x => x.title == "ObjectManagerEventEffect");
+                if (editingEffects)
+                {
+                    var index = buffsSearch.IndexOf(eventEdit.effects[selectedEffect].ContainsKey("BuffName") ? buffs.Find(x => x.name == eventEdit.effects[selectedEffect]["BuffName"]) : null);
+                    if (index >= 10) CDesktop.LBWindow.LBRegionGroup.pagination = index / 10;
+                }
+                else
+                {
+                    var index = buffsSearch.IndexOf(eventEdit.triggers[selectedTrigger].ContainsKey("BuffName") ? buffs.Find(x => x.name == eventEdit.triggers[selectedTrigger]["BuffName"]) : null);
+                    if (index >= 10) CDesktop.LBWindow.LBRegionGroup.pagination = index / 10;
+                }
+            }
             AddHeaderRegion(() =>
             {
                 AddLine("Buffs:");
@@ -4853,7 +4883,6 @@ public class Blueprint
                 },
                 (h) =>
                 {
-                    buff = buffsSearch[index + 10 * regionGroup.pagination];
                     if (eventEdit != null)
                     {
                         var editingEffects = CDesktop.windows.Exists(x => x.title == "ObjectManagerEventEffect");
@@ -4878,6 +4907,7 @@ public class Blueprint
                     }
                     else
                     {
+                        buff = buffsSearch[index + 10 * regionGroup.pagination];
                         String.objectName.Set(buff.name);
                         Respawn("ObjectManagerBuff");
                     }
@@ -5811,16 +5841,16 @@ public class Blueprint
 
         new("DevPanel", () =>
         {
-            Serialize(races, "races", true);
-            Serialize(specs, "classes", true);
-            Serialize(abilities, "abilities", true);
-            Serialize(buffs, "buffs", true);
-            Serialize(areas, "areas", true);
-            Serialize(instances, "instances", true);
-            Serialize(complexes, "complexes", true);
-            Serialize(towns, "towns", true);
-            Serialize(items, "items", true);
-            Serialize(itemSets, "sets", true);
+            Serialize(races, "races", true, false, prefix);
+            Serialize(specs, "classes", true, false, prefix);
+            Serialize(abilities, "abilities", true, false, prefix);
+            Serialize(buffs, "buffs", true, false, prefix);
+            Serialize(areas, "areas", true, false, prefix);
+            Serialize(instances, "instances", true, false, prefix);
+            Serialize(complexes, "complexes", true, false, prefix);
+            Serialize(towns, "towns", true, false, prefix);
+            Serialize(items, "items", true, false, prefix);
+            Serialize(itemSets, "sets", true, false, prefix);
             SetDesktopBackground("Areas/AreaTheCelestialPlanetarium");
             SpawnWindowBlueprint("ObjectManagerLobby");
             AddHotkey(Escape, () => { CloseDesktop("DevPanel"); });

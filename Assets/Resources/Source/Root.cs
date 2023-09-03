@@ -20,6 +20,7 @@ public static class Root
     public static float frameTime = 0.08f;
     public static string markerCharacter = "_";
     public static string textWrapEnding = "...";
+    public static string prefix = "";
 
     public static List<FallingElement> fallingElements;
     public static List<FlyingMissile> flyingMissiles;
