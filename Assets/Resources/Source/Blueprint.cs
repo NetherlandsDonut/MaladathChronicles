@@ -3758,6 +3758,7 @@ public class Blueprint
             },
             (h) =>
             {
+                Assets.assets.soundsSearch = Assets.assets.sounds;
                 if (!CDesktop.windows.Exists(x => x.title == "ObjectManagerSoundsList"))
                 {
                     CloseWindow("ObjectManagerEventEffects");

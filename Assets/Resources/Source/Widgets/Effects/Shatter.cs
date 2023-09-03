@@ -69,12 +69,13 @@ public class Shatter : MonoBehaviour
 
     public static void SpawnShatter(double speed, double amount, Vector3 position, string sprite, string block = "0000")
     {
+        var foo = Resources.Load<Sprite>("Sprites/Building/BigButtons/" + sprite);
+        if (foo == null) return;
         var shatter = new GameObject("Shatter", typeof(Shatter));
         shatter.GetComponent<Shatter>().Initiate(3);
         shatter.transform.parent = Board.board.window.desktop.transform;
         shatter.transform.position = position;
         shatter.layer = 1;
-        var foo = Resources.Load<Sprite>("Sprites/Building/BigButtons/" + sprite);
         int x = (int)foo.textureRect.width, y = (int)foo.textureRect.height;
         var dot = Resources.Load<GameObject>("Prefabs/PrefabDot");
         var direction = RollDirection();
