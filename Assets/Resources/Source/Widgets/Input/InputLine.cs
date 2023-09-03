@@ -174,6 +174,90 @@ public class InputLine : MonoBehaviour
                 Respawn("ObjectManagerEventEffect");
             }
         }
+        else if (foo == cooldown)
+        {
+            if (CDesktop.windows.Exists(x => x.title == "ObjectManagerAbility"))
+            {
+                Ability.ability.cooldown = int.Parse(foo.Value());
+            }
+        }
+        else if (foo == fire)
+        {
+            if (Ability.ability != null)
+            {
+                Ability.ability.cost["Fire"] = int.Parse(foo.Value());
+            }
+        }
+        else if (foo == earth)
+        {
+            if (Ability.ability != null)
+            {
+                Ability.ability.cost["Earth"] = int.Parse(foo.Value());
+            }
+        }
+        else if (foo == water)
+        {
+            if (Ability.ability != null)
+            {
+                Ability.ability.cost["Water"] = int.Parse(foo.Value());
+            }
+        }
+        else if (foo == air)
+        {
+            if (Ability.ability != null)
+            {
+                Ability.ability.cost["Air"] = int.Parse(foo.Value());
+            }
+        }
+        else if (foo == frost)
+        {
+            if (Ability.ability != null)
+            {
+                Ability.ability.cost["Frost"] = int.Parse(foo.Value());
+            }
+        }
+        else if (foo == decay)
+        {
+            if (Ability.ability != null)
+            {
+                Ability.ability.cost["Decay"] = int.Parse(foo.Value());
+            }
+        }
+        else if (foo == shadow)
+        {
+            if (Ability.ability != null)
+            {
+                Ability.ability.cost["Shadow"] = int.Parse(foo.Value());
+            }
+        }
+        else if (foo == order)
+        {
+            if (Ability.ability != null)
+            {
+                Ability.ability.cost["Order"] = int.Parse(foo.Value());
+            }
+        }
+        else if (foo == arcane)
+        {
+            if (Ability.ability != null)
+            {
+                Ability.ability.cost["Arcane"] = int.Parse(foo.Value());
+            }
+        }
+        else if (foo == lightning)
+        {
+            if (Ability.ability != null)
+            {
+                Ability.ability.cost["Lightning"] = int.Parse(foo.Value());
+            }
+        }
+        else if (foo == earth)
+        {
+            if (Ability.ability != null)
+            {
+                Ability.ability.cost["Earth"] = int.Parse(foo.Value());
+            }
+        }
         else if (foo == chance)
         {
             if (CDesktop.windows.Exists(x => x.title == "ObjectManagerEventEffect"))

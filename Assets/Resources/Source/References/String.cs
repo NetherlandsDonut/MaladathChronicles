@@ -26,6 +26,16 @@ public class String
     public static String price = new();
     public static String itemPower = new();
     public static String cooldown = new();
+    public static String fire = new();
+    public static String earth = new();
+    public static String water = new();
+    public static String air = new();
+    public static String frost = new();
+    public static String decay = new();
+    public static String shadow = new();
+    public static String order = new();
+    public static String arcane = new();
+    public static String lightning = new();
     public static String requiredLevel = new();
     public static String animationSpeed = new();
     public static String chance = new();

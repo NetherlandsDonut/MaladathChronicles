@@ -53,8 +53,8 @@ public class SaveGame
 
     public static void Save()
     {
-        currentSave.lastPlayed = DateTime.Now;
         currentSave.timePlayed.Add(DateTime.Now - currentSave.lastLoaded);
+        currentSave.lastPlayed = DateTime.Now;
         var temp = desktops.Find(x => x.title == "Map");
         currentSave.cameraX = (int)Math.Round(temp.cameraDestination.x);
         currentSave.cameraY = (int)Math.Round(temp.cameraDestination.y);

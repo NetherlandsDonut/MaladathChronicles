@@ -26,6 +26,7 @@ using static SiteHostileArea;
 using static SiteInstance;
 using static SiteComplex;
 using static SiteTown;
+using UnityEngine.Rendering.PostProcessing;
 
 public class Blueprint
 {
@@ -4527,6 +4528,94 @@ public class Blueprint
                 PlaySound("DesktopInventorySort", 0.2f);
             });
         }),
+        new("ObjectManagerCostManager", () => {
+            SetAnchor(TopLeft);
+            AddRegionGroup();
+            SetRegionGroupWidth(171);
+            SetRegionGroupHeight(358);
+            AddHeaderRegion(() =>
+            {
+                AddLine("Ability cost:", "Gray");
+                AddSmallButton("OtherClose",
+                (h) =>
+                {
+                    if (ability.cost["Fire"] == 0) ability.cost.Remove("Fire");
+                    if (ability.cost["Earth"] == 0) ability.cost.Remove("Earth");
+                    if (ability.cost["Water"] == 0) ability.cost.Remove("Water");
+                    if (ability.cost["Air"] == 0) ability.cost.Remove("Air");
+                    if (ability.cost["Frost"] == 0) ability.cost.Remove("Frost");
+                    if (ability.cost["Decay"] == 0) ability.cost.Remove("Decay");
+                    if (ability.cost["Shadow"] == 0) ability.cost.Remove("Shadow");
+                    if (ability.cost["Order"] == 0) ability.cost.Remove("Order");
+                    if (ability.cost["Arcane"] == 0) ability.cost.Remove("Arcane");
+                    if (ability.cost["Lightning"] == 0) ability.cost.Remove("Lightning");
+                    if (ability.cost.Count == 0) ability.cost = null;
+                    CloseWindow(h.window);
+                    Respawn("ObjectManagerAbilities");
+                });
+            });
+            AddPaddingRegion(() =>
+            {
+                AddLine("Fire: ", "DarkGray");
+                AddInputLine(String.fire, InputType.Numbers, String.fire.Value() == "0" ? "DarkGray" : "Gray");
+                AddSmallButton("ElementFireRousing", (h) => { });
+            });
+            AddPaddingRegion(() =>
+            {
+                AddLine("Earth: ", "DarkGray");
+                AddInputLine(String.earth, InputType.Numbers, String.earth.Value() == "0" ? "DarkGray" : "Gray");
+                AddSmallButton("ElementEarthRousing", (h) => { });
+            });
+            AddPaddingRegion(() =>
+            {
+                AddLine("Water: ", "DarkGray");
+                AddInputLine(String.water, InputType.Numbers, String.water.Value() == "0" ? "DarkGray" : "Gray");
+                AddSmallButton("ElementWaterRousing", (h) => { });
+            });
+            AddPaddingRegion(() =>
+            {
+                AddLine("Air: ", "DarkGray");
+                AddInputLine(String.air, InputType.Numbers, String.air.Value() == "0" ? "DarkGray" : "Gray");
+                AddSmallButton("ElementFireRousing", (h) => { });
+            });
+            AddPaddingRegion(() =>
+            {
+                AddLine("Frost: ", "DarkGray");
+                AddInputLine(String.frost, InputType.Numbers, String.frost.Value() == "0" ? "DarkGray" : "Gray");
+                AddSmallButton("ElementFrostRousing", (h) => { });
+            });
+            AddPaddingRegion(() =>
+            {
+                AddLine("Decay: ", "DarkGray");
+                AddInputLine(String.decay, InputType.Numbers, String.decay.Value() == "0" ? "DarkGray" : "Gray");
+                AddSmallButton("ElementDecayRousing", (h) => { });
+            });
+            AddPaddingRegion(() =>
+            {
+                AddLine("Shadow: ", "DarkGray");
+                AddInputLine(String.shadow, InputType.Numbers, String.shadow.Value() == "0" ? "DarkGray" : "Gray");
+                AddSmallButton("ElementShadowRousing", (h) => { });
+            });
+            AddPaddingRegion(() =>
+            {
+                AddLine("Order: ", "DarkGray");
+                AddInputLine(String.order, InputType.Numbers, String.order.Value() == "0" ? "DarkGray" : "Gray");
+                AddSmallButton("ElementOrderRousing", (h) => { });
+            });
+            AddPaddingRegion(() =>
+            {
+                AddLine("Arcane: ", "DarkGray");
+                AddInputLine(String.arcane, InputType.Numbers, String.arcane.Value() == "0" ? "DarkGray" : "Gray");
+                AddSmallButton("ElementArcaneRousing", (h) => { });
+            });
+            AddPaddingRegion(() =>
+            {
+                AddLine("Lightning: ", "DarkGray");
+                AddInputLine(String.lightning, InputType.Numbers, String.lightning.Value() == "0" ? "DarkGray" : "Gray");
+                AddSmallButton("ElementLightningRousing", (h) => { });
+            });
+            AddPaddingRegion(() => { });
+        }),
         new("ObjectManagerAbilities", () => {
             SetAnchor(TopLeft);
             AddRegionGroup(() => abilitiesSearch.Count);
@@ -4737,8 +4826,41 @@ public class Blueprint
                     }
                 });
             }
-            //COST
-            //COOLDOWN
+            AddButtonRegion(() =>
+            {
+                AddLine("Manage casting cost");
+            },
+            (h) =>
+            {
+                ability.cost ??= new();
+                if (!ability.cost.ContainsKey("Fire")) ability.cost.Add("Fire", 0);
+                if (!ability.cost.ContainsKey("Earth")) ability.cost.Add("Earth", 0);
+                if (!ability.cost.ContainsKey("Water")) ability.cost.Add("Water", 0);
+                if (!ability.cost.ContainsKey("Air")) ability.cost.Add("Air", 0);
+                if (!ability.cost.ContainsKey("Frost")) ability.cost.Add("Frost", 0);
+                if (!ability.cost.ContainsKey("Decay")) ability.cost.Add("Decay", 0);
+                if (!ability.cost.ContainsKey("Shadow")) ability.cost.Add("Shadow", 0);
+                if (!ability.cost.ContainsKey("Order")) ability.cost.Add("Order", 0);
+                if (!ability.cost.ContainsKey("Arcane")) ability.cost.Add("Arcane", 0);
+                if (!ability.cost.ContainsKey("Lightning")) ability.cost.Add("Lightning", 0);
+                String.fire.Set(ability.cost["Fire"] + "");
+                String.earth.Set(ability.cost["Earth"] + "");
+                String.water.Set(ability.cost["Water"] + "");
+                String.air.Set(ability.cost["Air"] + "");
+                String.frost.Set(ability.cost["Frost"] + "");
+                String.decay.Set(ability.cost["Decay"] + "");
+                String.shadow.Set(ability.cost["Shadow"] + "");
+                String.order.Set(ability.cost["Order"] + "");
+                String.arcane.Set(ability.cost["Arcane"] + "");
+                String.lightning.Set(ability.cost["Lightning"] + "");
+                Respawn("ObjectManagerCostManager");
+                CloseWindow("ObjectManagerAbilities");
+            });
+            AddPaddingRegion(() =>
+            {
+                AddLine("Ability cooldown: ", "DarkGray");
+                AddInputLine(String.cooldown, InputType.Numbers);
+            });
             AddPaddingRegion(() => { SetRegionAsGroupExtender(); });
             if (ability.events.Count < 5)
                 AddButtonRegion(() =>
@@ -4938,24 +5060,75 @@ public class Blueprint
                 if (buffs.Count != buffsSearch.Count)
                     AddLine(buffsSearch.Count + " found in search", "DarkGray");
             });
+            if (eventEdit != null && ability != null)
+                AddButtonRegion(() =>
+                {
+                    AddLine("Copy ability into a new buff");
+                },
+                (h) =>
+                {
+                    var buff = new Buff()
+                    {
+                        name = ability.name,
+                        icon = ability.icon,
+                        events = new(),
+                        tags = new()
+                    };
+                    buffs.Add(buff);
+                    buffsSearch = buffs.FindAll(x => x.name.ToLower().Contains(String.search.Value().ToLower()));
+                    CloseWindow(h.window);
+                    var editingEffects = CDesktop.windows.Exists(x => x.title == "ObjectManagerEventEffect");
+                    if (editingEffects)
+                    {
+                        if (eventEdit.effects[selectedEffect].ContainsKey("BuffName"))
+                            eventEdit.effects[selectedEffect]["BuffName"] = buff.name;
+                        else eventEdit.effects[selectedEffect].Add("BuffName", buff.name);
+                        Respawn("ObjectManagerEventEffects");
+                        Respawn("ObjectManagerEventEffect");
+                    }
+                    else
+                    {
+                        if (eventEdit.triggers[selectedTrigger].ContainsKey("BuffName"))
+                            eventEdit.triggers[selectedTrigger]["BuffName"] = buff.name;
+                        else eventEdit.triggers[selectedTrigger].Add("BuffName", buff.name);
+                        Respawn("ObjectManagerEventTriggers");
+                        Respawn("ObjectManagerEventTrigger");
+                    }
+                });
             AddButtonRegion(() =>
             {
                 AddLine("Create a new buff");
             },
             (h) =>
             {
-                buff = new Buff()
+                if (eventEdit != null)
                 {
-                    name = "Buff #" + buffs.Count,
-                    icon = "AbilityAbolishMagic",
-                    events = new(),
-                    tags = new()
-                };
-                buffs.Add(buff);
-                buffsSearch = buffs.FindAll(x => x.name.ToLower().Contains(String.search.Value().ToLower()));
-                String.objectName.Set(buff.name);
-                Respawn("ObjectManagerBuff");
-                h.window.Rebuild();
+                    var buff = new Buff()
+                    {
+                        name = "Buff #" + buffs.Count,
+                        icon = "AbilityAbolishMagic",
+                        events = new(),
+                        tags = new()
+                    };
+                    buffs.Add(buff);
+                    buffsSearch = buffs.FindAll(x => x.name.ToLower().Contains(String.search.Value().ToLower()));
+                    h.window.Rebuild();
+                }
+                else
+                {
+                    buff = new Buff()
+                    {
+                        name = "Buff #" + buffs.Count,
+                        icon = "AbilityAbolishMagic",
+                        events = new(),
+                        tags = new()
+                    };
+                    buffs.Add(buff);
+                    buffsSearch = buffs.FindAll(x => x.name.ToLower().Contains(String.search.Value().ToLower()));
+                    String.objectName.Set(buff.name);
+                    Respawn("ObjectManagerBuff");
+                    h.window.Rebuild();
+                }
             });
         }),
         new("ObjectManagerBuff", () => {
@@ -5013,7 +5186,26 @@ public class Blueprint
                     }
                 });
             }
-            AddPaddingRegion(() => { });
+            AddPaddingRegion(() => SetRegionAsGroupExtender());
+            if (buff.events.Count < 5)
+                AddButtonRegion(() =>
+                {
+                    AddLine("Add new event");
+                },
+                (h) =>
+                {
+                    buff.events.Add(new Event()
+                    {
+                        triggers = new(),
+                        effects = new()
+                    });
+                    Respawn(h.window.title);
+                });
+            else
+                AddPaddingRegion(() =>
+                {
+                    AddLine("Add new event", "DarkGray");
+                });
         }),
         new("RacesSort", () => {
             SetAnchor(Center);
