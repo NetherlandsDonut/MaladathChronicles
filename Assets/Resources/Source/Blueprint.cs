@@ -522,7 +522,7 @@ public class Blueprint
                             Board.board.CallEvents(Board.board.enemy, new() { { "Trigger", "AbilityCast" }, {"Triggerer", "Other" }, { "AbilityName", abilityObj.name } });
                             Board.board.player.DetractResources(abilityObj.cost);
                             Board.board.temporaryElementsPlayer = new();
-                            h.window.desktop.Rebuild();
+                            h.window.desktop.RebuildAll();
                         }
                     },
                     (h) => () =>
@@ -1910,6 +1910,11 @@ public class Blueprint
                 complexesSearch = complexes;
                 SpawnDesktopBlueprint("ObjectManagerComplexes");
             });
+            AddButtonRegion(() => { AddLine("Towns"); }, (h) =>
+            {
+                townsSearch = towns;
+                SpawnDesktopBlueprint("ObjectManagerTowns");
+            });
             AddButtonRegion(() => { AddLine("Races"); }, (h) =>
             {
                 racesSearch = races;
@@ -2142,6 +2147,123 @@ public class Blueprint
                 if (!CDesktop.windows.Exists(x => x.title == "ObjectManagerAmbienceList"))
                 {
                     CloseWindow("ObjectManagerHostileAreas");
+                    Assets.assets.ambienceSearch = Assets.assets.ambience;
+                    SpawnWindowBlueprint("ObjectManagerAmbienceList");
+                }
+            });
+            AddPaddingRegion(() => { });
+        }),
+        new("ObjectManagerTowns", () => {
+            SetAnchor(TopLeft);
+            AddRegionGroup(() => towns.Count);
+            SetRegionGroupWidth(171);
+            SetRegionGroupHeight(358);
+            if (town != null)
+            {
+                var index = towns.IndexOf(town);
+                if (index >= 10) CDesktop.LBWindow.LBRegionGroup.pagination = index / 10;
+            }
+            AddHeaderRegion(() =>
+            {
+                AddLine("Towns:");
+                AddSmallButton("OtherClose", (h) => { CloseDesktop("ObjectManagerTowns"); });
+                AddSmallButton("OtherReverse", (h) =>
+                {
+                    towns.Reverse();
+                    townsSearch.Reverse();
+                    Respawn("ObjectManagerTowns");
+                    PlaySound("DesktopInventorySort", 0.2f);
+                });
+                if (!CDesktop.windows.Exists(x => x.title == "HostileAreasSort"))
+                    AddSmallButton("OtherSort", (h) =>
+                    {
+                        SpawnWindowBlueprint("HostileAreasSort");
+                        Respawn("ObjectManagerHostileAreas");
+                    });
+                else
+                    AddSmallButton("OtherSortOff", (h) => { });
+            });
+            AddPaddingRegion(() =>
+            {
+                AddLine("Search:", "DarkGray");
+                AddInputLine(String.search, InputType.Everything);
+            });
+            var regionGroup = CDesktop.LBWindow.LBRegionGroup;
+            AddPaginationLine(regionGroup);
+            for (int i = 0; i < 10; i++)
+            {
+                var index = i;
+                AddButtonRegion(() =>
+                {
+                    if (townsSearch.Count > index + 10 * regionGroup.pagination)
+                    {
+                        SetRegionBackground(RegionBackgroundType.Button);
+                        var foo = townsSearch[index + 10 * regionGroup.pagination];
+                        AddLine(foo.name);
+                        AddSmallButton("Faction" + foo.faction, (h) => { });
+                    }
+                    else
+                    {
+                        SetRegionBackground(RegionBackgroundType.Padding);
+                        AddLine();
+                    }
+                },
+                (h) =>
+                {
+                    town = townsSearch[index + 10 * regionGroup.pagination];
+                    SetDesktopBackground("Areas/Area" + (town.zone + town.name).Replace("'", "").Replace(".", "").Replace(" ", ""));
+                    Respawn("ObjectManagerTown");
+                });
+            }
+            AddPaddingRegion(() =>
+            {
+                AddLine(towns.Count + " towns", "DarkGray");
+                if (towns.Count != townsSearch.Count)
+                    AddLine(townsSearch.Count + " found in search", "DarkGray");
+            });
+        }),
+        new("ObjectManagerTown", () => {
+            SetAnchor(TopRight);
+            AddRegionGroup();
+            SetRegionGroupWidth(171);
+            SetRegionGroupHeight(354);
+            AddPaddingRegion(() => { AddLine("Town:", "DarkGray"); });
+            AddHeaderRegion(() => { AddLine(town.name); });
+            AddPaddingRegion(() => { AddLine("Zone:", "DarkGray"); });
+            AddHeaderRegion(() => { AddLine(town.zone); });
+            AddPaddingRegion(() => { AddLine("Faction:", "DarkGray"); });
+            AddButtonRegion(() =>
+            {
+                AddLine(town.faction);
+                AddSmallButton("Faction" + town.faction, (h) => { });
+            },
+            (h) =>
+            {
+                if (town.faction == "Horde")
+                    town.faction = "Alliance";
+                else if (town.faction == "Alliance")
+                    town.faction = "Neutral";
+                else if (town.faction == "Neutral")
+                    town.faction = "Horde";
+                h.window.Respawn();
+                CloseWindow("ObjectManagerAmbienceList");
+                Respawn("ObjectManagerTowns");
+            });
+            AddPaddingRegion(() => { AddLine("Ambience:", "DarkGray"); });
+            AddButtonRegion(() =>
+            {
+                AddLine(town.ambience == null ? "None" : town.ambience.Substring(8) + ".ogg");
+                if (town.ambience != "None")
+                    AddSmallButton("OtherSound", (h) =>
+                    {
+                        PlayAmbience(town.ambience);
+                    });
+            },
+            (h) =>
+            {
+                if (!CDesktop.windows.Exists(x => x.title == "ObjectManagerAmbienceList"))
+                {
+                    CloseWindow("ObjectManagerTowns");
                     Assets.assets.ambienceSearch = Assets.assets.ambience;
                     SpawnWindowBlueprint("ObjectManagerAmbienceList");
                 }
@@ -4576,7 +4698,7 @@ public class Blueprint
             {
                 AddLine("Air: ", "DarkGray");
                 AddInputLine(String.air, InputType.Numbers, String.air.Value() == "0" ? "DarkGray" : "Gray");
-                AddSmallButton("ElementFireRousing", (h) => { });
+                AddSmallButton("ElementAirRousing", (h) => { });
             });
             AddPaddingRegion(() =>
             {
@@ -5717,6 +5839,7 @@ public class Blueprint
                     PlaySound("DesktopButtonClose");
                     SetDesktopBackground("Areas/Area" + instance.name.Replace("'", "").Replace(".", "").Replace(" ", ""));
                     CloseWindow(window);
+                    Respawn("InstanceLeftSide");
                 }
                 else if (instance.complexPart)
                 {
@@ -5772,6 +5895,7 @@ public class Blueprint
                     PlaySound("DesktopButtonClose");
                     SetDesktopBackground("Areas/Complex" + complex.name.Replace("'", "").Replace(".", "").Replace(" ", ""));
                     CloseWindow(window);
+                    Respawn("ComplexLeftSide");
                 }
                 else
                 {
@@ -5806,7 +5930,7 @@ public class Blueprint
                     { "Order", 99 },
                     { "Shadow", 99 },
                 };
-                CDesktop.Rebuild();
+                CDesktop.RebuildAll();
             });
             AddHotkey(PageDown, () => {
                 Board.board.enemy.resources = new Dictionary<string, int>
@@ -5822,7 +5946,7 @@ public class Blueprint
                     { "Order", 99 },
                     { "Shadow", 99 },
                 };
-                CDesktop.Rebuild();
+                CDesktop.RebuildAll();
             });
             AddHotkey(BackQuote, () => { SpawnDesktopBlueprint("DevPanel"); });
             AddHotkey(KeypadMultiply, () => { Board.board.enemy.health = 0; });
@@ -5853,7 +5977,7 @@ public class Blueprint
                     { "Order", 99 },
                     { "Shadow", 99 },
                 };
-                CDesktop.Rebuild();
+                CDesktop.RebuildAll();
             });
             AddHotkey(PageDown, () => {
                 Board.board.enemy.resources = new Dictionary<string, int>
@@ -5869,7 +5993,7 @@ public class Blueprint
                     { "Order", 99 },
                     { "Shadow", 99 },
                 };
-                CDesktop.Rebuild();
+                CDesktop.RebuildAll();
             });
         }),
         new("CharacterSheet", () =>
@@ -6078,6 +6202,13 @@ public class Blueprint
             SetDesktopBackground("Areas/AreaTheCelestialPlanetarium");
             SpawnWindowBlueprint("ObjectManagerComplexes");
             AddHotkey(Escape, () => { complex = null; complexesSearch = null; CloseDesktop("ObjectManagerComplexes"); });
+            AddPaginationHotkeys();
+        }),
+        new("ObjectManagerTowns", () =>
+        {
+            SetDesktopBackground("Areas/AreaTheCelestialPlanetarium");
+            SpawnWindowBlueprint("ObjectManagerTowns");
+            AddHotkey(Escape, () => { town = null; townsSearch = null; CloseDesktop("ObjectManagerTowns"); });
             AddPaginationHotkeys();
         }),
         new("ObjectManagerRaces", () =>

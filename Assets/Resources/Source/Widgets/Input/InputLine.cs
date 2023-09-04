@@ -1,3 +1,5 @@
+using System.Linq;
+
 using UnityEngine;
 
 using static Root;
@@ -5,8 +7,6 @@ using static Font;
 using static Event;
 using static Cursor;
 using static String;
-using System.Linq;
-using UnityEngine.Assertions.Must;
 
 public class InputLine : MonoBehaviour
 {
@@ -334,6 +334,10 @@ public class InputLine : MonoBehaviour
             else if (CDesktop.windows.Exists(x => x.title == "ObjectManagerComplexes"))
             {
                 Respawn("ObjectManagerComplexes");
+            }
+            else if (CDesktop.windows.Exists(x => x.title == "ObjectManagerTowns"))
+            {
+                Respawn("ObjectManagerTowns");
             }
             else if (CDesktop.windows.Exists(x => x.title == "ObjectManagerTriggerList"))
             {

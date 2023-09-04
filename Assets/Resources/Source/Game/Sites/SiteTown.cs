@@ -13,7 +13,7 @@ public class SiteTown
     public List<Vendor> vendors;
 
     public static SiteTown town;
-    public static List<SiteTown> towns;
+    public static List<SiteTown> towns, townsSearch;
 
     public void PrintSite()
     {

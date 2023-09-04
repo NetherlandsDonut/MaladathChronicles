@@ -106,6 +106,7 @@ public class SiteInstance
                 if (window != null)
                     if (window.title == "HostileArea: " + area.name) return;
                     else CloseWindow(window);
+                CloseWindow("InstanceLeftSide");
                 SpawnWindowBlueprint("HostileArea: " + area.name);
                 SetDesktopBackground("Areas/Area" + (instance.name + area.name).Replace("'", "").Replace(".", "").Replace(" ", "") + (area.specialClearBackground && area.eliteEncounters.All(x => currentSave.elitesKilled.ContainsKey(x.who)) ? "Cleared" : ""));
             });

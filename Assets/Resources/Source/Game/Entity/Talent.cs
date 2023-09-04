@@ -32,7 +32,7 @@ public class Talent
                         currentSave.player.unspentTalentPoints--;
                         PlaySound("DesktopTalentAcquired", 0.2f);
                         currentSave.player.abilities.Add(talent.ability);
-                        CDesktop.Rebuild();
+                        CDesktop.RebuildAll();
                     }
                 },
                 (h) => () =>

@@ -192,7 +192,8 @@ public class Starter : MonoBehaviour
                         {
                             name = ability.Item1,
                             icon = "Ability" + ability.Item1.Replace(" ", ""),
-                            events = new()
+                            events = new(),
+                            tags = new()
                         });
             if (spec.talentTrees != null)
                 foreach (var tree in spec.talentTrees)
@@ -202,7 +203,8 @@ public class Starter : MonoBehaviour
                             {
                                 name = talent.ability,
                                 icon = "Ability" + talent.ability.Replace(" ", ""),
-                                events = new()
+                                events = new(),
+                                tags = new()
                             });
         }
         for (int i = 0; i < Item.items.Count; i++)
@@ -222,7 +224,8 @@ public class Starter : MonoBehaviour
                         {
                             name = ability,
                             icon = "Ability" + ability,
-                            events = new()
+                            events = new(),
+                            tags = new()
                         });
         }
         for (int i = 0; i < Race.races.Count; i++)
@@ -235,7 +238,8 @@ public class Starter : MonoBehaviour
                         {
                             name = ability,
                             icon = "Ability" + ability.Replace(" ", ""),
-                            events = new()
+                            events = new(),
+                            tags = new()
                         });
             if (race.faction != null && race.background == null || race.background == "")
                 race.background = "AreaElwynnForestNorthshireAbbey";
@@ -251,6 +255,8 @@ public class Starter : MonoBehaviour
             var ability = Ability.abilities[i];
             if (ability.events == null)
                 ability.events = new();
+            if (ability.tags == null)
+                ability.tags = new();
         }
         SiteHostileArea.areas.ForEach(x => x.Initialise());
         instances.ForEach(x => x.Initialise());
@@ -436,6 +442,7 @@ public class Starter : MonoBehaviour
                                     PlaySound("DesktopInstanceClose");
                                     SetDesktopBackground("Areas/Area" + (area.instancePart ? instance.name : complex.name).Replace("'", "").Replace(".", "").Replace(" ", ""));
                                     CloseWindow(h.window);
+                                    Respawn(area.instancePart ? "InstanceLeftSide" : "ComplexLeftSide");
                                 }
                                 else
                                 {

@@ -32,9 +32,16 @@ public class Desktop : MonoBehaviour
         cameraDestination = new Vector2();
     }
 
-    public void Rebuild()
+    public void RespawnAll()
     {
-        windows.ForEach(x => x.Rebuild());
+        for (int i = windows.Count - 1; i >= 0; i--)
+            windows[i].Respawn();
+    }
+
+    public void RebuildAll()
+    {
+        for (int i = windows.Count - 1; i >= 0; i--)
+            windows[i].Rebuild();
     }
 
     public void SetTooltip(Tooltip tooltip)
@@ -197,10 +204,10 @@ public class Desktop : MonoBehaviour
                     if (flyingMissiles.Count == 0 && animationTime <= 0 && fallingElements.Count == 0)
                     {
                         animationTime = frameTime;
-                        if (fallingElements.Count == 0) Rebuild();
+                        if (fallingElements.Count == 0) RebuildAll();
                         if (canUnlockScreen) CDesktop.UnlockScreen();
                         else Board.board.AnimateBoard();
-                        if (fallingElements.Count == 0) Rebuild();
+                        if (fallingElements.Count == 0) RebuildAll();
                     }
                 }
             }
@@ -350,6 +357,11 @@ public class Desktop : MonoBehaviour
                             {
                                 SiteComplex.complexesSearch = SiteComplex.complexes.FindAll(x => x.name.ToLower().Contains(val));
                                 Respawn("ObjectManagerComplexes");
+                            }
+                            else if (CDesktop.windows.Exists(x => x.title == "ObjectManagerTowns"))
+                            {
+                                SiteTown.townsSearch = SiteTown.towns.FindAll(x => x.name.ToLower().Contains(val));
+                                Respawn("ObjectManagerTowns");
                             }
                             else if (CDesktop.windows.Exists(x => x.title == "ObjectManagerAmbienceList"))
                             {

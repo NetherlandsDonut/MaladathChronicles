@@ -73,6 +73,7 @@ public class SiteComplex
                 if (window != null)
                     if (window.title == "HostileArea: " + area.name) return;
                     else CloseWindow(window);
+                CloseWindow("ComplexLeftSide");
                 SpawnWindowBlueprint("HostileArea: " + area.name);
                 SetDesktopBackground("Areas/Area" + (area.zone + area.name).Replace("'", "").Replace(".", "").Replace(" ", "") + (area.specialClearBackground && area.eliteEncounters.All(x => currentSave.elitesKilled.ContainsKey(x.who)) ? "Cleared" : ""));
             }

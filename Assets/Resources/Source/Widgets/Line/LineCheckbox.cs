@@ -21,7 +21,7 @@ public class LineCheckbox : MonoBehaviour
         if (region.backgroundType != Button && region.backgroundType != RedButton)
         {
             value.Invert();
-            region.regionGroup.window.desktop.Rebuild();
+            region.regionGroup.window.desktop.RebuildAll();
         }
     }
 }
