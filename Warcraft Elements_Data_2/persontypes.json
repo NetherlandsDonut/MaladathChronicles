@@ -1,0 +1,102 @@
+[
+  {
+    "name": "Butcher",
+    "icon": "ItemMiscFood13"
+  },
+  {
+    "name": "Food Vendor",
+    "icon": "ItemMiscFood11"
+  },
+  {
+    "name": "General Goods",
+    "icon": "ItemBox01"
+  },
+  {
+    "name": "Trade Goods",
+    "icon": "ItemCrate05"
+  },
+  {
+    "name": "Bag Vendor",
+    "icon": "ItemMiscBag07"
+  },
+  {
+    "name": "Cloth Armor Merchant",
+    "icon": "ItemChestCloth21"
+  },
+  {
+    "name": "Leather Armor Merchant",
+    "icon": "ItemChestLeather02"
+  },
+  {
+    "name": "Heavy Armor Merchant",
+    "icon": "ItemChestPlate04"
+  },
+  {
+    "name": "Weapon Merchant",
+    "icon": "ItemAxe01"
+  },
+  {
+    "name": "Warrior Trainer",
+    "icon": "TradeTrainerClass"
+  },
+  {
+    "name": "Paladin Trainer",
+    "icon": "TradeTrainerClass"
+  },
+  {
+    "name": "Shaman Trainer",
+    "icon": "TradeTrainerClass"
+  },
+  {
+    "name": "Mage Trainer",
+    "icon": "TradeTrainerClass"
+  },
+  {
+    "name": "Warlock Trainer",
+    "icon": "TradeTrainerClass"
+  },
+  {
+    "name": "Priest Trainer",
+    "icon": "TradeTrainerClass"
+  },
+  {
+    "name": "Druid Trainer",
+    "icon": "TradeTrainerClass"
+  },
+  {
+    "name": "Rogue Trainer",
+    "icon": "TradeTrainerClass"
+  },
+  {
+    "name": "Hunter Trainer",
+    "icon": "TradeTrainerClass"
+  },
+  {
+    "name": "Leatherworker",
+    "icon": "TradeLeatherWorking"
+  },
+  {
+    "name": "Blacksmith",
+    "icon": "TradeBlacksmithing"
+  },
+  {
+    "name": "Alchemist",
+    "icon": "TradeAlchemy"
+  },
+  {
+    "name": "Tailor",
+    "icon": "TradeTailoring"
+  },
+  {
+    "name": "Enchanter",
+    "icon": "TradeEnchanting"
+  },
+  {
+    "name": "Engineer",
+    "icon": "TradeEngineering"
+  },
+  {
+    "name": "Portal Trainer",
+    "icon": "TradeTrainerClass"
+  }
+]

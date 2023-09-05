@@ -1,0 +1,1255 @@
+[
+  {
+    "x": 259,
+    "y": -182,
+    "name": "Stormwind",
+    "zone": "Elwynn Forest",
+    "faction": "Alliance",
+    "transport": [
+      {
+        "means": "Tram",
+        "destination": "Ironforge",
+        "price": 1.5
+      }
+    ],
+    "people": [
+      {
+        "name": "Ander Germaine",
+        "gender": "Male",
+        "race": "Human",
+        "type": "Warrior Trainer"
+      },
+      {
+        "name": "Sheldas Moontree",
+        "gender": "Male",
+        "race": "Night Elf",
+        "type": "Druid Trainer"
+      },
+      {
+        "name": "Lord Grayson Shadowbreaker",
+        "gender": "Male",
+        "race": "Human",
+        "type": "Paladin Trainer"
+      },
+      {
+        "name": "Lord Tony Romano",
+        "gender": "Male",
+        "race": "Human",
+        "type": "Rogue Trainer"
+      },
+      {
+        "name": "High Priestess Laurena",
+        "gender": "Female",
+        "race": "Human",
+        "type": "Priest Trainer"
+      },
+      {
+        "name": "Einris Brightspear",
+        "gender": "Female",
+        "race": "Dwarf",
+        "type": "Hunter Trainer"
+      },
+      {
+        "name": "Demisette Cloyce",
+        "gender": "Female",
+        "race": "Human",
+        "type": "Warlock Trainer"
+      },
+      {
+        "name": "Jennea Cannon",
+        "gender": "Female",
+        "race": "Human",
+        "type": "Mage Trainer"
+      },
+      {
+        "name": "Larimaine Purdue",
+        "gender": "Female",
+        "race": "Human",
+        "type": "Portal Trainer"
+      }
+    ]
+  },
+  {
+    "x": 266,
+    "y": -189,
+    "name": "Goldshire",
+    "zone": "Elwynn Forest",
+    "faction": "Alliance",
+    "people": [
+      {
+        "name": "Lyria Du Lac",
+        "gender": "Female",
+        "race": "Human",
+        "type": "Warrior Trainer"
+      },
+      {
+        "name": "Brother Wilhelm",
+        "gender": "Male",
+        "race": "Human",
+        "type": "Paladin Trainer"
+      },
+      {
+        "name": "Keryn Sylvius",
+        "gender": "Female",
+        "race": "Human",
+        "type": "Rogue Trainer"
+      },
+      {
+        "name": "Priestess Josetta",
+        "gender": "Female",
+        "race": "Human",
+        "type": "Priest Trainer"
+      },
+      {
+        "name": "Maximillian Crowe",
+        "gender": "Male",
+        "race": "Human",
+        "type": "Warlock Trainer"
+      },
+      {
+        "name": "Zaldimar Wefhellt",
+        "gender": "Male",
+        "race": "Human",
+        "type": "Mage Trainer"
+      }
+    ]
+  },
+  {
+    "x": 290,
+    "y": -186,
+    "name": "Lakeshire",
+    "zone": "Redridge Mountains",
+    "faction": "Alliance"
+  },
+  {
+    "x": 268,
+    "y": -183,
+    "name": "Northshire Abbey",
+    "zone": "Elwynn Forest",
+    "faction": "Alliance"
+  },
+  {
+    "x": 272,
+    "y": -96,
+    "name": "Southshore",
+    "zone": "Hillsbrad Foothills",
+    "faction": "Alliance"
+  },
+  {
+    "x": 279,
+    "y": -201,
+    "name": "Darkshire",
+    "zone": "Duskwood",
+    "faction": "Alliance"
+  },
+  {
+    "x": 268,
+    "y": -209,
+    "name": "Rebel Camp",
+    "zone": "Stranglethorn Vale",
+    "faction": "Alliance"
+  },
+  {
+    "x": 255,
+    "y": -200,
+    "name": "Sentinel Hill",
+    "zone": "Westfall",
+    "faction": "Alliance"
+  },
+  {
+    "x": 124,
+    "y": -173,
+    "name": "Theramore Isle",
+    "zone": "Dustwallow Marsh",
+    "faction": "Alliance",
+    "people": [
+      {
+        "name": "Captain Evencane",
+        "gender": "Male",
+        "race": "Human",
+        "type": "Warrior Trainer"
+      },
+      {
+        "name": "Brother Karman",
+        "gender": "Male",
+        "race": "Human",
+        "type": "Paladin Trainer"
+      }
+    ]
+  },
+  {
+    "x": 275,
+    "y": -127,
+    "name": "Menethil Harbor",
+    "zone": "Wetlands",
+    "faction": "Alliance",
+    "transport": [
+      {
+        "means": "Ship",
+        "destination": "Auberdine",
+        "price": 1.5
+      }
+    ]
+  },
+  {
+    "x": 303,
+    "y": -205,
+    "name": "Nethergarde Keep",
+    "zone": "Blasted Lands",
+    "faction": "Alliance"
+  },
+  {
+    "x": 295,
+    "y": -177,
+    "name": "Morgan's Vigil",
+    "zone": "Burning Steppes",
+    "faction": "Alliance"
+  },
+  {
+    "x": 287,
+    "y": -109,
+    "name": "Faldir's Cove",
+    "zone": "Arathi Highlands",
+    "faction": "Alliance"
+  },
+  {
+    "x": 293,
+    "y": -101,
+    "name": "Refuge Pointe",
+    "zone": "Arathi Highlands",
+    "faction": "Alliance"
+  },
+  {
+    "x": 51,
+    "y": -27,
+    "name": "Darnassus",
+    "zone": "Teldrassil",
+    "faction": "Alliance",
+    "people": [
+      {
+        "name": "Darnath Bladesinger",
+        "gender": "Male",
+        "race": "Night Elf",
+        "type": "Warrior Trainer"
+      },
+      {
+        "name": "Fylerian Nightwing",
+        "gender": "Male",
+        "race": "Night Elf",
+        "type": "Druid Trainer"
+      },
+      {
+        "name": "Erion Shadewhisper",
+        "gender": "Male",
+        "race": "Night Elf",
+        "type": "Rogue Trainer"
+      },
+      {
+        "name": "Astarii Starseeker",
+        "gender": "Female",
+        "race": "Night Elf",
+        "type": "Priest Trainer"
+      },
+      {
+        "name": "Jeen'ra Nightrunner",
+        "gender": "Female",
+        "race": "Night Elf",
+        "type": "Hunter Trainer"
+      },
+      {
+        "name": "Elissa Dumas",
+        "gender": "Female",
+        "race": "Human",
+        "type": "Portal Trainer"
+      }
+    ]
+  },
+  {
+    "x": 67,
+    "y": -21,
+    "name": "Aldrassil",
+    "zone": "Teldrassil",
+    "faction": "Alliance"
+  },
+  {
+    "x": 72,
+    "y": -27,
+    "name": "Star Breeze Village",
+    "zone": "Teldrassil",
+    "faction": "Alliance"
+  },
+  {
+    "x": 66,
+    "y": -39,
+    "name": "Rut'theran Village",
+    "zone": "Teldrassil",
+    "faction": "Alliance",
+    "transport": [
+      {
+        "means": "Ship",
+        "destination": "Auberdine",
+        "price": 1.5
+      }
+    ]
+  },
+  {
+    "x": 66,
+    "y": -27,
+    "name": "Dolanaar",
+    "zone": "Teldrassil",
+    "faction": "Alliance",
+    "people": [
+      {
+        "name": "Kyra Windblade",
+        "gender": "Female",
+        "race": "Night Elf",
+        "type": "Warrior Trainer"
+      },
+      {
+        "name": "Kal",
+        "gender": "Male",
+        "race": "Night Elf",
+        "type": "Druid Trainer"
+      },
+      {
+        "name": "Jannok Breezesong",
+        "gender": "Male",
+        "race": "Night Elf",
+        "type": "Rogue Trainer"
+      },
+      {
+        "name": "Laurna Morninglight",
+        "gender": "Female",
+        "race": "Night Elf",
+        "type": "Priest Trainer"
+      },
+      {
+        "name": "Dazalar",
+        "gender": "Male",
+        "race": "Night Elf",
+        "type": "Hunter Trainer"
+      }
+    ]
+  },
+  {
+    "x": 80,
+    "y": -103,
+    "name": "Astranaar",
+    "zone": "Ashenvale",
+    "faction": "Alliance"
+  },
+  {
+    "x": 118,
+    "y": -57,
+    "name": "Starfall Village",
+    "zone": "Winterspring",
+    "faction": "Alliance"
+  },
+  {
+    "x": 98,
+    "y": -114,
+    "name": "Silverwind Outpost",
+    "zone": "Ashenvale",
+    "faction": "Alliance"
+  },
+  {
+    "x": 89,
+    "y": -110,
+    "name": "Silverwind Refuge",
+    "zone": "Ashenvale",
+    "faction": "Alliance",
+    "people": [
+      {
+        "name": "Danlaar Nightstride",
+        "gender": "Male",
+        "race": "Night Elf",
+        "type": "Warrior Trainer"
+      }
+    ]
+  },
+  {
+    "x": 96,
+    "y": -117,
+    "name": "Silverwing Grove",
+    "zone": "Ashenvale",
+    "faction": "Alliance"
+  },
+  {
+    "x": 111,
+    "y": -101,
+    "name": "Forest Song",
+    "zone": "Ashenvale",
+    "faction": "Alliance"
+  },
+  {
+    "x": 71,
+    "y": -64,
+    "name": "Auberdine",
+    "zone": "Darkshore",
+    "faction": "Alliance",
+    "transport": [
+      {
+        "means": "Ship",
+        "destination": "Rut'theran Village",
+        "price": 1.5
+      },
+      {
+        "means": "Ship",
+        "destination": "Menethil Harbor",
+        "price": 1.5
+      }
+    ]
+  },
+  {
+    "x": 126,
+    "y": -105,
+    "name": "Talrendis Point",
+    "zone": "Azshara",
+    "faction": "Alliance"
+  },
+  {
+    "x": 97,
+    "y": -66,
+    "name": "Talonbranch Glade",
+    "zone": "Felwood",
+    "faction": "Alliance",
+    "people": [
+      {
+        "name": "Golhing the Hooded",
+        "gender": "Male",
+        "race": "Night Elf",
+        "type": "Druid Trainer"
+      },
+      {
+        "name": "Kaerbrus",
+        "gender": "Male",
+        "race": "Night Elf",
+        "type": "Hunter Trainer"
+      }
+    ]
+  },
+  {
+    "x": 41,
+    "y": -180,
+    "name": "Feathermoon Stronghold",
+    "zone": "Feralas",
+    "faction": "Alliance"
+  },
+  {
+    "x": 63,
+    "y": -131,
+    "name": "Nijel's Point",
+    "zone": "Desolace",
+    "faction": "Alliance"
+  },
+  {
+    "x": 84,
+    "y": -181,
+    "name": "Thalaanar",
+    "zone": "Thousand Needles",
+    "faction": "Alliance"
+  },
+  {
+    "x": 61,
+    "y": -104,
+    "name": "Stonetalon Peak",
+    "zone": "Stonetalon Mountains",
+    "faction": "Alliance"
+  },
+  {
+    "x": 288,
+    "y": -85,
+    "name": "Aerie Peak",
+    "zone": "Hinterlands",
+    "faction": "Alliance"
+  },
+  {
+    "x": 275,
+    "y": -142,
+    "name": "Ironforge",
+    "zone": "Dun Morogh",
+    "faction": "Alliance",
+    "transport": [
+      {
+        "means": "Tram",
+        "destination": "Stormwind",
+        "price": 1.5
+      }
+    ],
+    "people": [
+      {
+        "name": "Kelstrum Stonebreaker",
+        "gender": "Male",
+        "race": "Dwarf",
+        "type": "Warrior Trainer"
+      },
+      {
+        "name": "Valgar Highforge",
+        "gender": "Male",
+        "race": "Dwarf",
+        "type": "Paladin Trainer"
+      },
+      {
+        "name": "Hulfdan Blackbeard",
+        "gender": "Male",
+        "race": "Dwarf",
+        "type": "Rogue Trainer"
+      },
+      {
+        "name": "High Priest Rohan",
+        "gender": "Male",
+        "race": "Dwarf",
+        "type": "Priest Trainer"
+      },
+      {
+        "name": "Olmin Burningbeard",
+        "gender": "Male",
+        "race": "Dwarf",
+        "type": "Hunter Trainer"
+      },
+      {
+        "name": "Alexander Calder",
+        "gender": "Male",
+        "race": "Human",
+        "type": "Warlock Trainer"
+      },
+      {
+        "name": "Bink",
+        "gender": "Female",
+        "race": "Gnome",
+        "type": "Mage Trainer"
+      },
+      {
+        "name": "Milstaff Stormeye",
+        "gender": "Male",
+        "race": "Gnome",
+        "type": "Portal Trainer"
+      }
+    ]
+  },
+  {
+    "x": 298,
+    "y": -145,
+    "name": "Thelsamar",
+    "zone": "Loch Modan",
+    "faction": "Alliance"
+  },
+  {
+    "x": 279,
+    "y": -101,
+    "name": "Dun Garok",
+    "zone": "Hillsbrad Foothills",
+    "faction": "Alliance"
+  },
+  {
+    "name": "Dun Modr",
+    "zone": "Wetlands",
+    "faction": "Alliance"
+  },
+  {
+    "x": 271,
+    "y": -148,
+    "name": "Kharanos",
+    "zone": "Dun Morogh",
+    "faction": "Alliance",
+    "people": [
+      {
+        "name": "Granis Swiftaxe",
+        "gender": "Male",
+        "race": "Dwarf",
+        "type": "Warrior Trainer"
+      },
+      {
+        "name": "Azar Stronghammer",
+        "gender": "Male",
+        "race": "Dwarf",
+        "type": "Paladin Trainer"
+      },
+      {
+        "name": "Hogral Bakkan",
+        "gender": "Male",
+        "race": "Dwarf",
+        "type": "Rogue Trainer"
+      },
+      {
+        "name": "Maxal Anvon",
+        "gender": "Male",
+        "race": "Dwarf",
+        "type": "Priest Trainer"
+      },
+      {
+        "name": "Grif Wildheart",
+        "gender": "Male",
+        "race": "Dwarf",
+        "type": "Hunter Trainer"
+      },
+      {
+        "name": "Gimrizz Shadowcog",
+        "gender": "Male",
+        "race": "Gnome",
+        "type": "Warlock Trainer"
+      },
+      {
+        "name": "Magis Sparkmantle",
+        "gender": "Male",
+        "race": "Gnome",
+        "type": "Mage Trainer"
+      }
+    ]
+  },
+  {
+    "x": 262,
+    "y": -154,
+    "name": "Anvilmar",
+    "zone": "Dun Morogh",
+    "faction": "Alliance"
+  },
+  {
+    "x": 295,
+    "y": -139,
+    "name": "Algaz Station",
+    "zone": "Loch Modan",
+    "faction": "Alliance"
+  },
+  {
+    "x": 121,
+    "y": -116,
+    "name": "Orgrimmar",
+    "zone": "Durotar",
+    "faction": "Horde",
+    "transport": [
+      {
+        "means": "Zeppelin",
+        "destination": "Undercity",
+        "price": 1.5
+      },
+      {
+        "means": "Zeppelin",
+        "destination": "Grom'gol Base Camp",
+        "price": 1.5
+      }
+    ],
+    "people": [
+      {
+        "name": "Grezz Ragefist",
+        "gender": "Male",
+        "race": "Orc",
+        "type": "Warrior Trainer"
+      },
+      {
+        "name": "Ormok",
+        "gender": "Male",
+        "race": "Orc",
+        "type": "Rogue Trainer"
+      },
+      {
+        "name": "Kardris Dreamseeker",
+        "gender": "Female",
+        "race": "Orc",
+        "type": "Shaman Trainer"
+      },
+      {
+        "name": "X'yera",
+        "gender": "Male",
+        "race": "Troll",
+        "type": "Priest Trainer"
+      },
+      {
+        "name": "Ormak Grimshot",
+        "gender": "Male",
+        "race": "Orc",
+        "type": "Hunter Trainer"
+      },
+      {
+        "name": "Grol'dar",
+        "gender": "Male",
+        "race": "Orc",
+        "type": "Warlock Trainer"
+      },
+      {
+        "name": "Deino",
+        "gender": "Male",
+        "race": "Troll",
+        "type": "Mage Trainer"
+      },
+      {
+        "name": "Thuul",
+        "gender": "Male",
+        "race": "Troll",
+        "type": "Portal Trainer"
+      }
+    ]
+  },
+  {
+    "x": 127,
+    "y": -129,
+    "name": "Razor Hill",
+    "zone": "Durotar",
+    "faction": "Horde",
+    "people": [
+      {
+        "name": "Tarshaw Jaggedscar",
+        "gender": "Male",
+        "race": "Orc",
+        "type": "Warrior Trainer"
+      },
+      {
+        "name": "Kaplak",
+        "gender": "Male",
+        "race": "Orc",
+        "type": "Rogue Trainer"
+      },
+      {
+        "name": "Tai'Jin",
+        "gender": "Female",
+        "race": "Troll",
+        "type": "Priest Trainer"
+      },
+      {
+        "name": "Swart",
+        "gender": "Male",
+        "race": "Orc",
+        "type": "Shaman Trainer"
+      },
+      {
+        "name": "Thotar",
+        "gender": "Male",
+        "race": "Orc",
+        "type": "Hunter Trainer"
+      },
+      {
+        "name": "Dhugru Gorelust",
+        "gender": "Male",
+        "race": "Orc",
+        "type": "Warlock Trainer"
+      }
+    ]
+  },
+  {
+    "x": 65,
+    "y": -97,
+    "name": "Zoram'gar Outpost",
+    "zone": "Ashenvale",
+    "faction": "Horde"
+  },
+  {
+    "x": 105,
+    "y": -137,
+    "name": "The Crossroads",
+    "zone": "The Barrens",
+    "faction": "Horde"
+  },
+  {
+    "x": 80,
+    "y": -78,
+    "name": "Bloodvenom Post",
+    "zone": "Felwood",
+    "faction": "Horde"
+  },
+  {
+    "x": 123,
+    "y": -94,
+    "name": "Valormok",
+    "zone": "Azshara",
+    "faction": "Horde"
+  },
+  {
+    "x": 101,
+    "y": -120,
+    "name": "The Mor'shan Rampart",
+    "zone": "The Barrens",
+    "faction": "Horde"
+  },
+  {
+    "x": 264,
+    "y": -220,
+    "name": "Grom'gol Base Camp",
+    "zone": "Stranglethorn Vale",
+    "faction": "Horde",
+    "transport": [
+      {
+        "means": "Zeppelin",
+        "destination": "Orgrimmar",
+        "price": 1.5
+      }
+    ],
+    "people": [
+      {
+        "name": "Kragg",
+        "gender": "Male",
+        "race": "Orc",
+        "type": "Hunter Trainer"
+      }
+    ]
+  },
+  {
+    "x": 103,
+    "y": -109,
+    "name": "Splintertree Post",
+    "zone": "Ashenvale",
+    "faction": "Horde"
+  },
+  {
+    "x": 290,
+    "y": -159,
+    "name": "Kargath",
+    "zone": "Badlands",
+    "faction": "Horde"
+  },
+  {
+    "x": 301,
+    "y": -199,
+    "name": "Stonard",
+    "zone": "Swamp of Sorrows",
+    "faction": "Horde",
+    "people": [
+      {
+        "name": "Malosh",
+        "gender": "Male",
+        "race": "Orc",
+        "type": "Warrior Trainer"
+      },
+      {
+        "name": "Haromm",
+        "gender": "Male",
+        "race": "Orc",
+        "type": "Shaman Trainer"
+      },
+      {
+        "name": "Ogromm",
+        "gender": "Male",
+        "race": "Orc",
+        "type": "Hunter Trainer"
+      },
+      {
+        "name": "Kartosh",
+        "gender": "Male",
+        "race": "Orc",
+        "type": "Warlock Trainer"
+      }
+    ]
+  },
+  {
+    "x": 107,
+    "y": -167,
+    "name": "Brackenwall Village",
+    "zone": "Dustwallow Marsh",
+    "faction": "Horde"
+  },
+  {
+    "x": 129,
+    "y": -142,
+    "name": "Sen'jin Village",
+    "zone": "Durotar",
+    "faction": "Horde",
+    "people": [
+      {
+        "name": "Un'Thuwa",
+        "gender": "Male",
+        "race": "Troll",
+        "type": "Mage Trainer"
+      }
+    ]
+  },
+  {
+    "x": 42,
+    "y": -150,
+    "name": "Shadowprey Village",
+    "zone": "Desolace",
+    "faction": "Horde"
+  },
+  {
+    "x": 316,
+    "y": -94,
+    "name": "Revantusk Village",
+    "zone": "Hinterlands",
+    "faction": "Horde"
+  },
+  {
+    "x": 76,
+    "y": -146,
+    "name": "Thunder Bluff",
+    "zone": "Mulgore",
+    "faction": "Horde",
+    "people": [
+      {
+        "name": "Torm Ragetotem",
+        "gender": "Male",
+        "race": "Tauren",
+        "type": "Warrior Trainer"
+      },
+      {
+        "name": "Kym Wildmane",
+        "gender": "Female",
+        "race": "Tauren",
+        "type": "Druid Trainer"
+      },
+      {
+        "name": "Siln Skychaser",
+        "gender": "Female",
+        "race": "Tauren",
+        "type": "Shaman Trainer"
+      },
+      {
+        "name": "Kary Thunderhorn",
+        "gender": "Female",
+        "race": "Tauren",
+        "type": "Hunter Trainer"
+      },
+      {
+        "name": "Archmage Shymm",
+        "gender": "Male",
+        "race": "Forsaken",
+        "type": "Mage Trainer"
+      },
+      {
+        "name": "Birgitte Cranston",
+        "gender": "Female",
+        "race": "Forsaken",
+        "type": "Portal Trainer"
+      }
+    ]
+  },
+  {
+    "x": 81,
+    "y": -158,
+    "name": "Bloodhoof Village",
+    "zone": "Mulgore",
+    "faction": "Horde",
+    "people": [
+      {
+        "name": "Krang Stonehoof",
+        "gender": "Male",
+        "race": "Tauren",
+        "type": "Warrior Trainer"
+      },
+      {
+        "name": "Gennia Runetotem",
+        "gender": "Female",
+        "race": "Tauren",
+        "type": "Druid Trainer"
+      },
+      {
+        "name": "Narm Skychaser",
+        "gender": "Male",
+        "race": "Tauren",
+        "type": "Shaman Trainer"
+      },
+      {
+        "name": "Reban Freerunner",
+        "gender": "Male",
+        "race": "Tauren",
+        "type": "Hunter Trainer"
+      }
+    ]
+  },
+  {
+    "x": 79,
+    "y": -164,
+    "name": "Camp Narache",
+    "zone": "Mulgore",
+    "faction": "Horde"
+  },
+  {
+    "x": 73,
+    "y": -179,
+    "name": "Camp Mojache",
+    "zone": "Feralas",
+    "faction": "Horde",
+    "people": [
+      {
+        "name": "Jannos Lighthoof",
+        "gender": "Male",
+        "race": "Tauren",
+        "type": "Druid Trainer"
+      }
+    ]
+  },
+  {
+    "x": 98,
+    "y": -158,
+    "name": "Camp Taurajo",
+    "zone": "The Barrens",
+    "faction": "Horde"
+  },
+  {
+    "x": 102,
+    "y": -191,
+    "name": "Freewind Post",
+    "zone": "Thousand Needles",
+    "faction": "Horde"
+  },
+  {
+    "x": 66,
+    "y": -123,
+    "name": "Sun Rock Retreat",
+    "zone": "Stonetalon Mountains",
+    "faction": "Horde"
+  },
+  {
+    "x": 57,
+    "y": -146,
+    "name": "Ghost Walker Post",
+    "zone": "Desolace",
+    "faction": "Horde"
+  },
+  {
+    "x": 263,
+    "y": -71,
+    "name": "Undercity",
+    "zone": "Tirisfal Glades",
+    "faction": "Horde",
+    "transport": [
+      {
+        "means": "Zeppelin",
+        "destination": "Orgrimmar",
+        "price": 1.5
+      }
+    ],
+    "people": [
+      {
+        "name": "Cristoph Walker",
+        "gender": "Male",
+        "race": "Forsaken",
+        "type": "Warrior Trainer"
+      },
+      {
+        "name": "Gregory Charles",
+        "gender": "Male",
+        "race": "Forsaken",
+        "type": "Rogue Trainer"
+      },
+      {
+        "name": "Father Cobb",
+        "gender": "Male",
+        "race": "Forsaken",
+        "type": "Priest Trainer"
+      },
+      {
+        "name": "Richard Kerwin",
+        "gender": "Male",
+        "race": "Forsaken",
+        "type": "Warlock Trainer"
+      },
+      {
+        "name": "Anastasia Hartwell",
+        "gender": "Female",
+        "race": "Forsaken",
+        "type": "Mage Trainer"
+      },
+      {
+        "name": "Lexington Mortaim",
+        "gender": "Male",
+        "race": "Forsaken",
+        "type": "Portal Trainer"
+      }
+    ]
+  },
+  {
+    "x": 273,
+    "y": -69,
+    "name": "The Bulwark",
+    "zone": "Tirisfal Glades",
+    "faction": "Horde"
+  },
+  {
+    "name": "Deathknell",
+    "zone": "Tirisfal Glades",
+    "faction": "Horde"
+  },
+  {
+    "x": 262,
+    "y": -63,
+    "name": "Brill",
+    "zone": "Tirisfal Glades",
+    "faction": "Horde",
+    "people": [
+      {
+        "name": "Austil de Mon",
+        "gender": "Male",
+        "race": "Forsaken",
+        "type": "Warrior Trainer"
+      },
+      {
+        "name": "Marion Call",
+        "gender": "Female",
+        "race": "Forsaken",
+        "type": "Rogue Trainer"
+      },
+      {
+        "name": "Dark Cleric Beryl",
+        "gender": "Male",
+        "race": "Forsaken",
+        "type": "Priest Trainer"
+      },
+      {
+        "name": "Rupert Boch",
+        "gender": "Male",
+        "race": "Forsaken",
+        "type": "Warlock Trainer"
+      },
+      {
+        "name": "Cain Firesong",
+        "gender": "Male",
+        "race": "Forsaken",
+        "type": "Mage Trainer"
+      }
+    ]
+  },
+  {
+    "x": 303,
+    "y": -98,
+    "name": "Hammerfall",
+    "zone": "Arathi Highlands",
+    "faction": "Horde"
+  },
+  {
+    "x": 275,
+    "y": -88,
+    "name": "Tarren Mill",
+    "zone": "Hillsbrad Foothills",
+    "faction": "Horde"
+  },
+  {
+    "x": 248,
+    "y": -82,
+    "name": "The Sepulcher",
+    "zone": "Silverpine Forest",
+    "faction": "Horde"
+  },
+  {
+    "x": 68,
+    "y": -206,
+    "name": "Cenarion Hold",
+    "zone": "Silithus",
+    "faction": "Neutral"
+  },
+  {
+    "x": 87,
+    "y": -87,
+    "name": "Emerald Sanctuary",
+    "zone": "Felwood",
+    "faction": "Neutral"
+  },
+  {
+    "x": 103,
+    "y": -48,
+    "name": "Nighthaven",
+    "zone": "Moonglade",
+    "faction": "Neutral",
+    "people": [
+      {
+        "name": "Loganaar",
+        "gender": "Male",
+        "race": "Night Elf",
+        "type": "Druid Trainer"
+      }
+    ]
+  },
+  {
+    "x": 323,
+    "y": -63,
+    "name": "Light's Hope Chapel",
+    "zone": "Eastern Plaguelands",
+    "faction": "Neutral"
+  },
+  {
+    "x": 282,
+    "y": -78,
+    "name": "Chillwind Camp",
+    "zone": "Western Plaguelands",
+    "faction": "Neutral"
+  },
+  {
+    "x": 279,
+    "y": -158,
+    "name": "Thorium Point",
+    "zone": "Searing Gorge",
+    "faction": "Neutral"
+  },
+  {
+    "x": 127,
+    "y": -61,
+    "name": "Everlook",
+    "zone": "Winterspring",
+    "faction": "Neutral"
+  },
+  {
+    "x": 117,
+    "y": -209,
+    "name": "Gadgetzan",
+    "zone": "Tanaris",
+    "faction": "Neutral"
+  },
+  {
+    "x": 116,
+    "y": -143,
+    "name": "Ratchet",
+    "zone": "The Barrens",
+    "faction": "Neutral",
+    "transport": [
+      {
+        "means": "Ship",
+        "destination": "Booty Bay",
+        "price": 1.5
+      }
+    ]
+  },
+  {
+    "x": 261,
+    "y": -241,
+    "name": "Booty Bay",
+    "zone": "Stranglethorn Vale",
+    "faction": "Neutral",
+    "transport": [
+      {
+        "means": "Ship",
+        "destination": "Ratchet",
+        "price": 1.5
+      }
+    ],
+    "people": [
+      {
+        "name": "Ian Strom",
+        "gender": "Male",
+        "race": "Human",
+        "type": "Rogue Trainer"
+      }
+    ]
+  },
+  {
+    "x": 90,
+    "y": -199,
+    "name": "Marshal's Refuge",
+    "zone": "Un'Goro Crater",
+    "faction": "Neutral"
+  },
+  {
+    "x": 99,
+    "y": -58,
+    "name": "Timbermaw Hold",
+    "zone": "Felwood",
+    "faction": "Neutral"
+  },
+  {
+    "x": 64,
+    "y": -218,
+    "name": "Bronzebeard Encampment",
+    "zone": "Silithus",
+    "faction": "Neutral"
+  },
+  {
+    "x": 296,
+    "y": -196,
+    "name": "The Harborage",
+    "zone": "Swamp of Sorrows",
+    "faction": "Neutral"
+  },
+  {
+    "x": 267,
+    "y": -212,
+    "name": "Nesingwary's Expedition",
+    "zone": "Stranglethorn Vale",
+    "faction": "Neutral"
+  }
+]

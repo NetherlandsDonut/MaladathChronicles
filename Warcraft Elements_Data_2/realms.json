@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Firemaw",
+    "hardcore": false,
+    "pvp": false
+  },
+  {
+    "name": "Mograine",
+    "hardcore": false,
+    "pvp": true
+  },
+  {
+    "name": "Gehennas",
+    "hardcore": true,
+    "pvp": false
+  },
+  {
+    "name": "Whitemane",
+    "hardcore": true,
+    "pvp": true
+  }
+]

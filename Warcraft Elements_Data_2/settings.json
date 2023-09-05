@@ -1,0 +1,28 @@
+{
+  "selectedRealm": "Whitemane",
+  "selectedCharacter": "Brandi",
+  "shadows": {
+    "value": "True"
+  },
+  "pixelPerfectVision": {
+    "value": "True"
+  },
+  "music": {
+    "value": "False"
+  },
+  "soundEffects": {
+    "value": "True"
+  },
+  "rarityIndicators": {
+    "value": "True"
+  },
+  "bigRarityIndicators": {
+    "value": "True"
+  },
+  "upgradeIndicators": {
+    "value": "False"
+  },
+  "newSlotIndicators": {
+    "value": "False"
+  }
+}
