@@ -58,7 +58,7 @@ public class Starter : MonoBehaviour
         Deserialize(ref complexes, "complexes", false, prefix);
         Deserialize(ref SiteTown.towns, "towns", false, prefix);
         Deserialize(ref Realm.realms, "realms", false, prefix);
-        Deserialize(ref VendorType.vendorTypes, "vendortypes", false, prefix);
+        Deserialize(ref PersonType.personTypes, "persontypes", false, prefix);
         Deserialize(ref Class.specs, "classes", false, prefix);
         Deserialize(ref Race.races, "races", false, prefix);
         Deserialize(ref ItemSet.itemSets, "sets", false, prefix);
@@ -356,16 +356,16 @@ public class Starter : MonoBehaviour
                                 (h) => () => { PrintTransportTooltip(transport); });
                             }
                         }
-                        if (town.vendors != null)
+                        if (town.people != null)
                         {
-                            AddHeaderRegion(() => { AddLine("Vendors:"); });
-                            foreach (var vendor in town.vendors)
+                            AddHeaderRegion(() => { AddLine("Points of interest:"); });
+                            foreach (var person in town.people)
                             {
                                 AddButtonRegion(() =>
                                 {
-                                    AddLine(vendor.name, "Black");
-                                    var vendorType = VendorType.vendorTypes.Find(x => x.name == vendor.type);
-                                    AddSmallButton(vendorType != null ? vendorType.icon : "OtherUnknown", (h) => { });
+                                    AddLine(person.name, "Black");
+                                    var personType = PersonType.personTypes.Find(x => x.name == person.type);
+                                    AddSmallButton(personType != null ? personType.icon : "OtherUnknown", (h) => { });
                                 },
                                 (h) =>
                                 {

@@ -1,21 +1,21 @@
 using System.Collections.Generic;
 
-public class Vendor
+public class Person
 {
-    public string name, race, type, welcomeSound, goodbyeSound;
+    public string name, gender, race, type;
 
     public string VendorSound(bool welcome)
     {
         //BASE IT ON RACE AND BOOL
         return "nosound";
     }
-
+    
     public List<string> itemsSold;
 }
 
-public class VendorType
+public class PersonType
 {
-    public string name, icon;
+    public string name, icon, classRestriction;
 
-    public static List<VendorType> vendorTypes;
+    public static List<PersonType> personTypes;
 }
