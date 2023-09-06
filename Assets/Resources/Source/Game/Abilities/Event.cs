@@ -54,6 +54,7 @@ public class Event
             {
                 ExecuteAnimation();
                 board.actions.Add(() => ExecuteEffect());
+                board.actions.Add(() => ExecuteAwait());
                 CDesktop.LockScreen();
             }
 
@@ -78,6 +79,13 @@ public class Event
                 });
             }
 
+            //Prolongs wait time after effect
+            void ExecuteAwait()
+            {
+                if (await == 0) return;
+                animationTime += frameTime * await;
+            }
+
             //Executes a single effect from the list
             void ExecuteEffect()
             {
@@ -92,7 +100,6 @@ public class Event
 
                 ExecuteShatter();
                 ExecuteSoundEffect();
-                ExecuteAwait();
 
                 //Spawns a shatter effect if it was specified in the effect
                 void ExecuteShatter()
@@ -112,13 +119,6 @@ public class Event
                 {
                     if (board == null || !effect.ContainsKey("SoundEffect")) return;
                     PlaySound(effect["SoundEffect"]);
-                }
-
-                //Prolongs wait time after effect
-                void ExecuteAwait()
-                {
-                    if (await != 0) return;
-                    animationTime += frameTime * await;
                 }
             }
 

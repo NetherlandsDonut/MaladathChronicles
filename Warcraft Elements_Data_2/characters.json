@@ -1565,16 +1565,16 @@
         "spec": "Paladin",
         "gender": "Female",
         "resources": {
-          "Earth": 99,
-          "Fire": 99,
-          "Air": 95,
-          "Water": 99,
-          "Frost": 99,
-          "Lightning": 99,
-          "Arcane": 99,
-          "Decay": 99,
-          "Order": 91,
-          "Shadow": 99
+          "Earth": 0,
+          "Fire": 0,
+          "Air": 0,
+          "Water": 6,
+          "Frost": 2,
+          "Lightning": 4,
+          "Arcane": 3,
+          "Decay": 0,
+          "Order": 1,
+          "Shadow": 6
         },
         "abilities": [
           "Two Handed Axe Proficiency",
@@ -1603,6 +1603,9 @@
           },
           {
             "ability": "Seal of Fury"
+          },
+          {
+            "ability": "Blade of Justice"
           }
         ],
         "stats": {
@@ -2322,21 +2325,24 @@
         },
         "buffs": []
       },
-      "cameraX": 96,
-      "cameraY": -123,
+      "cameraX": 72,
+      "cameraY": -90,
       "siteProgress": {
         "Ragnaros' Lair": 2,
-        "Echo Ridge Mine": 1
+        "Echo Ridge Mine": 1,
+        "Thorn Hill": 1,
+        "The Howling Vale": 1
       },
       "commonsKilled": {
         "Cannibal Ghoul": 2,
-        "Duskbat": 1
+        "Duskbat": 2,
+        "Razormane Defender": 1
       },
       "raresKilled": {},
       "elitesKilled": {},
       "startDate": "2023-09-03T22:15:59.6109763+02:00",
-      "lastLoaded": "2023-09-05T04:26:23.1500257+02:00",
-      "lastPlayed": "2023-09-05T04:45:14.5509784+02:00"
+      "lastLoaded": "2023-09-07T00:03:20.8627928+02:00",
+      "lastPlayed": "2023-09-07T00:05:31.5247535+02:00"
     }
   ]
 }

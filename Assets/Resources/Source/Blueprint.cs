@@ -3575,6 +3575,8 @@ public class Blueprint
                     else if (trigger["ResourceType"] == "Arcane")
                         trigger["ResourceType"] = "Lightning";
                     else if (trigger["ResourceType"] == "Lightning")
+                        trigger["ResourceType"] = "Any";
+                    else if (trigger["ResourceType"] == "Any")
                         trigger["ResourceType"] = "Fire";
                     h.window.Respawn();
                 });
