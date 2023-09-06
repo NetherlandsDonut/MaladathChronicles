@@ -67,8 +67,6 @@ public class Desktop : MonoBehaviour
     {
         if (CDesktop.name == "Desktop: TalentScreen")
             screen.transform.localPosition = new Vector3(320, -140);
-        else if (CDesktop.name == "Desktop: SpellbookScreen")
-            screen.transform.localPosition = new Vector3(0, -180);
         else if (CDesktop.name == "Desktop: Map")
             screen.transform.localPosition = new Vector3(-1000, 1000);
     }
@@ -145,7 +143,7 @@ public class Desktop : MonoBehaviour
         {
             if (CDesktop.title == "TitleScreen" && CDesktop.screen.GetComponent<SpriteRenderer>().sprite == null && !windows.Exists(x => x.name == "CharacterCreation"))
             {
-                var amount = new Vector3(titleScreenCameraDirection < 2 ? -0.3333f : 0.3333f, titleScreenCameraDirection > 2 ? -0.3333f : (titleScreenCameraDirection < 1 ? -0.3333f : 0.3333f));
+                var amount = new Vector3(titleScreenCameraDirection < 2 ? -1 / 3f : 1 / 3f, titleScreenCameraDirection > 2 ? -0.3333f : (titleScreenCameraDirection < 1 ? -0.3333f : 0.3333f));
                 screen.transform.localPosition += amount;
                 cursor.transform.localPosition += amount;
                 if (Math.Abs(screen.transform.localPosition.x - 1762) > 750 && screen.transform.localPosition.x < 3774 || Math.Abs(screen.transform.localPosition.x - 5374) > 750 && screen.transform.localPosition.x >= 3774)

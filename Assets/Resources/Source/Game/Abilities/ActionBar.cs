@@ -1,4 +1,3 @@
-
 public class ActionBar
 {
     public ActionBar() { }
@@ -15,6 +14,9 @@ public class ActionBar
         this.cooldown = cooldown;
     }
 
+    //Name of the ability in this action bar slot
     public string ability;
-    public int cooldown;
+
+    //Duration of the cooldown that is left
+    [NonSerialized] public int cooldown;
 }

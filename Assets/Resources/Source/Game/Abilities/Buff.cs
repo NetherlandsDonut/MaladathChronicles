@@ -1,5 +1,6 @@
-using UnityEngine;
 using System.Collections.Generic;
+
+using UnityEngine;
 
 using static Root;
 using static Root.Anchor;
@@ -14,8 +15,11 @@ public class Buff
     public List<Event> events;
     public Description description;
 
+    #region Execution
+
     public void ExecuteEvents(Board board, FutureBoard futureBoard, Dictionary<string, string> trigger)
     {
+        //In case of this buff having no events just return
         if (events == null) return;
         foreach (var eve in events)
             foreach (var triggerData in eve.triggers)
@@ -88,15 +92,9 @@ public class Buff
                 }
     }
 
-    public bool CompareValues(double x, double y, string compare)
-    {
-        if (compare == ">=") return x >= y;
-        if (compare == ">") return x > y;
-        if (compare == "<=") return x <= y;
-        if (compare == "<") return x < y;
-        if (compare == "==") return x == y;
-        return false;
-    }
+    #endregion
+
+    #region Description
 
     public static void PrintBuffTooltip(Entity Effector, Entity other, (Buff, int, GameObject) buff)
     {
@@ -133,23 +131,7 @@ public class Buff
         });
     }
 
-    public static GameObject SpawnBuffObject(Vector3 position, string icon, Entity target)
-    {
-        var buff = Object.Instantiate(Resources.Load<GameObject>("Prefabs/PrefabBuff"));
-        buff.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/Buttons/" + icon);
-        buff.transform.parent = Board.board.window.desktop.transform;
-        buff.transform.position = position;
-        var fly = buff.GetComponent<FlyingBuff>();
-        fly.Initiate(Board.board.player == target, (h) => { },
-            (h) => () =>
-            {
-                var fb = h.GetComponent<FlyingBuff>();
-                var buff = (fb.onPlayer ? Board.board.player.buffs : Board.board.enemy.buffs).Find(x => x.Item3 == h.gameObject);
-                PrintBuffTooltip(target, target == Board.board.player ? Board.board.enemy : Board.board.player, buff);
-            }
-        );
-        return buff;
-    }
+    #endregion
 
     public static Buff buff;
     public static List<Buff> buffs, buffsSearch;

@@ -558,6 +558,27 @@ public static class Root
 
     #region Enumerations
 
+    #region General
+
+    public static Vector3 Bezier(Vector3 p0, Vector3 p1, Vector3 p2, Vector3 p3, float t)
+    {
+        return (((-p0 + 3 * (p1 - p2) + p3) * t + (3 * (p0 + p2) - 6 * p1)) * t + 3 * (p1 - p0)) * t + p0;
+    }
+
+    public static bool CompareValues(double x, double y, string compare)
+    {
+        if (compare == ">=") return x >= y;
+        if (compare == ">") return x > y;
+        if (compare == "<=") return x <= y;
+        if (compare == "<") return x < y;
+        if (compare == "==") return x == y;
+        if (compare == "!=") return x != y;
+        if (compare == "<>") return x != y;
+        return false;
+    }
+
+    #endregion
+
     public enum InputType
     {
         Everything,

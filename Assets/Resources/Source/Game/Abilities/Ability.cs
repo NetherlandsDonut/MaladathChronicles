@@ -9,14 +9,7 @@ public class Ability
 
     public bool EnoughResources(Entity entity) => EnoughResources(entity.resources);
     public bool EnoughResources(FutureEntity entity) => EnoughResources(entity.resources);
-
-    private bool EnoughResources(Dictionary<string, int> resources)
-    {
-        foreach (var resource in cost)
-            if (resources[resource.Key] < resource.Value)
-                return false;
-        return true;
-    }
+    public bool EnoughResources(Dictionary<string, int> resources) => cost.Any(x => x.Value > resources[x.Key]);
 
     #endregion
 
@@ -24,8 +17,8 @@ public class Ability
 
     public void ExecuteEvents(Board board, FutureBoard futureBoard, Dictionary<string, string> trigger)
     {
+        //In case of this ability having no events just return
         if (events == null) return;
-        foreach (var eve in events)
             foreach (var triggerData in eve.triggers)
                 if (triggerData.ContainsKey("Trigger") && triggerData["Trigger"] == trigger["Trigger"])
                 {
@@ -94,16 +87,6 @@ public class Ability
                     else if (trigger["Trigger"] == "TurnEnd") execute = true;
                     if (execute) eve.ExecuteEffects(board, futureBoard, icon, trigger);
                 }
-    }
-
-    public bool CompareValues(double x, double y, string compare)
-    {
-        if (compare == ">=") return x >= y;
-        if (compare == ">") return x > y;
-        if (compare == "<=") return x <= y;
-        if (compare == "<") return x < y;
-        if (compare == "==") return x == y;
-        return false;
     }
 
     #endregion
