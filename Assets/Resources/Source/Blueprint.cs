@@ -1681,7 +1681,7 @@ public class Blueprint
             {
                 AddHeaderRegion(() =>
                 {
-                    var races = Race.races.FindAll(x => x.Faction().side == creationSide);
+                    var races = Race.races.FindAll(x => x.Faction() != null && x.Faction().side == creationSide);
                     AddLine("Race: " + creationRace);
                     AddSmallButton("ActionReroll", (h) =>
                     {

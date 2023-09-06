@@ -41,7 +41,7 @@ public class Event
             float await = effect.ContainsKey("Await") ? float.Parse(effect["Await"]) : 0;
 
             //On a failed chance check of an effect program continues to the next one
-            if (!CheckChance()) continue;
+            if (CheckFailChance()) continue;
 
             //Copy trigger base to make unique object for each effect
             var trigger = triggerBase.ToDictionary(x => x.Key, x => x.Value);
@@ -54,10 +54,11 @@ public class Event
             {
                 ExecuteAnimation();
                 board.actions.Add(() => ExecuteEffect());
+                CDesktop.LockScreen();
             }
 
 
-            bool CheckChance()
+            bool CheckFailChance()
             {
                 var randomRange = random.Next(0, 100);
                 return randomRange >= chanceBase + chance * (chanceScale == "None" ? 1 : (chanceSource != "None" ? (futureBoard == null ? (chanceSource == "Effector" ? effector : other).Stats()[chanceScale] : (chanceSource == "Effector" ? futureEffector : futureOther).Stats()[chanceScale]) : 1));
@@ -92,10 +93,6 @@ public class Event
                 ExecuteShatter();
                 ExecuteSoundEffect();
                 ExecuteAwait();
-
-                //Lock screen if effects are played out real time
-                if (board != null)
-                    CDesktop.LockScreen();
 
                 //Spawns a shatter effect if it was specified in the effect
                 void ExecuteShatter()

@@ -13,6 +13,7 @@ public class Race
 
     public Faction Faction()
     {
+        if (faction == null) return null;
         return factions.Find(x => x.name == faction);
     }
 
