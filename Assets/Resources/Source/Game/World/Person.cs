@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 public class Person
 {
-    public string name, gender, race, type;
+    public string name, gender, race, faction, type;
 
     public string VendorSound(bool welcome)
     {

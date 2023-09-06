@@ -3,6 +3,8 @@ using System.Collections.Generic;
 
 public class Assets
 {
+    public Assets() { }
+
     public Assets(List<string> ambience, List<string> sounds, List<string> itemIcons, List<string> abilityIcons, List<string> portraits)
     {
         this.ambience = ambience;

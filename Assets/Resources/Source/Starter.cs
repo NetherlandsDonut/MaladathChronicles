@@ -54,19 +54,30 @@ public class Starter : MonoBehaviour
     public static void LoadData()
     {
         Deserialize(ref SiteHostileArea.areas, "areas", false, prefix);
+        SiteHostileArea.areas ??= new();
         Deserialize(ref instances, "instances", false, prefix);
+        instances ??= new();
         Deserialize(ref complexes, "complexes", false, prefix);
+        complexes ??= new();
         Deserialize(ref SiteTown.towns, "towns", false, prefix);
+        SiteTown.towns ??= new();
         Deserialize(ref Realm.realms, "realms", false, prefix);
+        Realm.realms ??= new();
         Deserialize(ref PersonType.personTypes, "persontypes", false, prefix);
+        PersonType.personTypes ??= new();
         Deserialize(ref Class.specs, "classes", false, prefix);
+        Class.specs ??= new();
         Deserialize(ref Race.races, "races", false, prefix);
+        Race.races ??= new();
         Deserialize(ref ItemSet.itemSets, "sets", false, prefix);
+        ItemSet.itemSets ??= new();
         Deserialize(ref Item.items, "items", false, prefix);
+        Item.items ??= new();
         Deserialize(ref Ability.abilities, "abilities", false, prefix);
+        Ability.abilities ??= new();
         Deserialize(ref Buff.buffs, "buffs", false, prefix);
+        Buff.buffs ??= new();
         #if (UNITY_EDITOR)
-        Application.Quit();
         var ambienceList = AssetDatabase.FindAssets("t:AudioClip Ambience", new[] { "Assets/Resources/Ambience/" }).Select(x => AssetDatabase.GUIDToAssetPath(x).Replace("Assets/Resources/Ambience/", "")).ToList();
         var soundList = AssetDatabase.FindAssets("t:AudioClip", new[] { "Assets/Resources/Sounds/" }).Select(x => AssetDatabase.GUIDToAssetPath(x).Replace("Assets/Resources/Sounds/", "")).ToList();
         var itemIconList = AssetDatabase.FindAssets("t:Texture Item", new[] { "Assets/Resources/Sprites/Building/BigButtons/" }).Select(x => AssetDatabase.GUIDToAssetPath(x).Replace("Assets/Resources/Sprites/Building/BigButtons/", "")).ToList();
@@ -80,6 +91,14 @@ public class Starter : MonoBehaviour
         Serialize(Assets.assets, "assets", false, false, prefix);
         #else
         Deserialize(ref Assets.assets, "assets", false, prefix);
+        Assets.assets ??= new()
+        {
+            ambience = new(),
+            sounds = new(),
+            itemIcons = new(),
+            abilityIcons = new(),
+            portraits = new()
+        };
         #endif
         var countHA = SiteHostileArea.areas.Count;
         var countI = instances.Count;

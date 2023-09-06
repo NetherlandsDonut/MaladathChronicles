@@ -89,6 +89,14 @@ public class Blueprint
             });
             AddButtonRegion(() =>
             {
+                AddLine("Dev panel", "Black");
+            },
+            (h) =>
+            {
+                SpawnDesktopBlueprint("DevPanel");
+            });
+            AddButtonRegion(() =>
+            {
                 AddLine("Credits", "Black");
             },
             (h) =>
@@ -360,7 +368,7 @@ public class Blueprint
                         CloseWindow("CharacterInfo");
                         CloseWindow("TitleScreenSingleplayer");
                         creationName = "";
-                        creationFaction = "";
+                        creationSide = "";
                         creationGender = "";
                         creationRace = "";
                         creationClass = "";
@@ -1516,10 +1524,10 @@ public class Blueprint
             SetRegionGroupHeight(358);
             AddHeaderRegion(() =>
             {
-                AddLine("Faction: " + creationFaction);
+                AddLine("Conflict side: " + creationSide);
                 AddSmallButton("ActionReroll", (h) =>
                 {
-                    creationFaction = random.Next(2) == 1 ? "Horde" : "Alliance";
+                    creationSide = random.Next(2) == 1 ? "Horde" : "Alliance";
                     creationRace = "";
                     creationClass = "";
                     h.window.Respawn();
@@ -1527,10 +1535,10 @@ public class Blueprint
             });
             AddHeaderRegion(() =>
             {
-                AddBigButton("HonorAlliance", (h) => { creationFaction = "Alliance"; h.window.Respawn(); creationRace = ""; creationClass = ""; });
-                if (creationFaction != "Alliance") { AddBigButtonOverlay("OtherGridBlurred"); SetBigButtonToGrayscale(); }
-                AddBigButton("HonorHorde", (h) => { creationFaction = "Horde"; h.window.Respawn(); creationRace = ""; creationClass = ""; });
-                if (creationFaction != "Horde") { AddBigButtonOverlay("OtherGridBlurred"); SetBigButtonToGrayscale(); }
+                AddBigButton("HonorAlliance", (h) => { creationSide = "Alliance"; h.window.Respawn(); creationRace = ""; creationClass = ""; });
+                if (creationSide != "Alliance") { AddBigButtonOverlay("OtherGridBlurred"); SetBigButtonToGrayscale(); }
+                AddBigButton("HonorHorde", (h) => { creationSide = "Horde"; h.window.Respawn(); creationRace = ""; creationClass = ""; });
+                if (creationSide != "Horde") { AddBigButtonOverlay("OtherGridBlurred"); SetBigButtonToGrayscale(); }
             });
             AddHeaderRegion(() =>
             {
@@ -1548,11 +1556,11 @@ public class Blueprint
                 AddBigButton("OtherGenderFemale", (h) => { creationGender = "Female"; h.window.Respawn(); });
                 if (creationGender != "Female") { AddBigButtonOverlay("OtherGridBlurred"); SetBigButtonToGrayscale(); }
             });
-            if (creationFaction != "" && creationGender != "")
+            if (creationSide != "" && creationGender != "")
             {
                 AddHeaderRegion(() =>
                 {
-                    var races = Race.races.FindAll(x => x.faction == creationFaction || x.faction == "Both");
+                    var races = Race.races.FindAll(x => x.Faction().side == creationSide);
                     AddLine("Race: " + creationRace);
                     AddSmallButton("ActionReroll", (h) =>
                     {
@@ -1563,7 +1571,7 @@ public class Blueprint
                 });
                 AddHeaderRegion(() =>
                 {
-                    if (creationFaction == "Alliance")
+                    if (creationSide == "Alliance")
                     {
                         AddBigButton("PortraitDwarf" + creationGender, (h) => { creationRace = "Dwarf"; creationClass = ""; h.window.Respawn(); });
                         if (creationRace != "Dwarf") { AddBigButtonOverlay("OtherGridBlurred"); SetBigButtonToGrayscale(); }
@@ -1576,7 +1584,7 @@ public class Blueprint
                         AddBigButton("PortraitPandaren" + creationGender, (h) => { creationRace = "Pandaren"; creationClass = ""; h.window.Respawn(); });
                         if (creationRace != "Pandaren") { AddBigButtonOverlay("OtherGridBlurred"); SetBigButtonToGrayscale(); }
                     }
-                    else if (creationFaction == "Horde")
+                    else if (creationSide == "Horde")
                     {
                         AddBigButton("PortraitOrc" + creationGender, (h) => { creationRace = "Orc"; creationClass = ""; h.window.Respawn(); });
                         if (creationRace != "Orc") { AddBigButtonOverlay("OtherGridBlurred"); SetBigButtonToGrayscale(); }
@@ -1623,7 +1631,7 @@ public class Blueprint
             SetRegionGroupHeight(354);
             AddHeaderRegion(() =>
             {
-                AddLine("Character creation: " + creationFaction);
+                AddLine("Character creation: " + creationSide);
                 AddSmallButton("OtherClose", (h) =>
                 {
                     CloseWindow("CharacterCreation");
@@ -1634,9 +1642,9 @@ public class Blueprint
                 });
                 AddSmallButton("ActionReroll", (h) =>
                 {
-                    creationFaction = random.Next(2) == 1 ? "Horde" : "Alliance";
+                    creationSide = random.Next(2) == 1 ? "Horde" : "Alliance";
                     creationGender = random.Next(2) == 1 ? "Male" : "Female";
-                    var races = Race.races.FindAll(x => x.faction == creationFaction || x.faction == "Both");
+                    var races = Race.races.FindAll(x => x.faction == creationSide || x.faction == "Both");
                     var race = races[random.Next(races.Count)];
                     creationRace = race.name;
                     var classes = specs.FindAll(x => x.startingEquipment.ContainsKey(creationRace));
@@ -1894,7 +1902,7 @@ public class Blueprint
             AddRegionGroup();
             SetRegionGroupWidth(171);
             SetRegionGroupHeight(354);
-            AddHeaderRegion(() => { AddLine("Object types:"); });
+            AddHeaderRegion(() => { AddLine("Object types:"); AddSmallButton("OtherClose", (h) => { CloseDesktop("DevPanel"); }); });
             AddButtonRegion(() => { AddLine("Hostile areas"); }, (h) =>
             {
                 areasSearch = areas;

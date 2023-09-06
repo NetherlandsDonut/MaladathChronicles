@@ -27,7 +27,7 @@ public static class Root
     public static bool canUnlockScreen;
 
     public static string creationName;
-    public static string creationFaction;
+    public static string creationSide;
     public static string creationGender;
     public static string creationRace;
     public static string creationClass;
@@ -83,7 +83,7 @@ public static class Root
         newDesktop.screen.GetComponent<SpriteRenderer>().sortingLayerName = "DesktopBackground";
         newDesktop.screen.orthographicSize = 180;
         newDesktop.screen.nearClipPlane = -1024;
-        newDesktop.screen.farClipPlane = 1024;
+        newDesktop.screen.farClipPlane = 4096;
         newDesktop.screen.clearFlags = CameraClearFlags.SolidColor;
         newDesktop.screen.backgroundColor = Color.black;
         newDesktop.screen.orthographic = true;
