@@ -10,7 +10,7 @@ public static class Sound
         if (!settings.soundEffects.Value()) return;
         var temp = Resources.Load<AudioClip>("Sounds/" + path);
         if (temp == null) return;
-        cursor.GetComponent<AudioSource>().PlayOneShot(temp, volume);
+        soundEffects.PlayOneShot(temp, volume);
     }
 
     public static void PlayAmbience(string path, float volume = 0.5f, bool instant = false)
@@ -21,7 +21,7 @@ public static class Sound
         queuedAmbience = (temp, volume, instant);
     }
 
-    public static AudioSource ambience;
+    public static AudioSource ambience, soundEffects;
     public static int fallingSoundsPlayedThisFrame;
     public static (AudioClip, float, bool) queuedAmbience;
 }

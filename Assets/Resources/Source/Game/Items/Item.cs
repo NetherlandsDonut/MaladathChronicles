@@ -13,7 +13,7 @@ using static GameSettings;
 
 public class Item
 {
-    public string rarity, name, icon, detailedType, type, armorClass, set;
+    public string rarity, name, icon, detailedType, type, armorClass, set, faction, reputationRequired;
     public int ilvl, lvl, minDamage, maxDamage, armor, block;
     public List<string> possibleItems, alternateItems, abilities, classes;
     public double price, speed;
@@ -42,6 +42,11 @@ public class Item
         else if (armorClass == "Plate") result = "MetalLarge";
         else result = "ClothLeather";
         return soundType + result;
+    }
+
+    public bool CanBuy(Entity entity)
+    {
+        return entity.money >= price && (faction == null || REPENOUGH);
     }
 
     public bool CanEquip(Entity entity)
@@ -190,7 +195,7 @@ public class Item
             {
                 if (item.CanEquip(currentSave.player))
                 {
-                    PlaySound(item.ItemSound("PickUp"));
+                    PlaySound(item.ItemSound("PickUp"), 0.6f);
                     item.Equip(currentSave.player);
                     CloseWindow(h.window);
                     SpawnWindowBlueprint("Inventory");

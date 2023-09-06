@@ -3,6 +3,7 @@ using System.Linq;
 using System.Collections.Generic;
 
 using UnityEngine;
+using UnityEngine.Rendering.PostProcessing;
 
 using static UnityEngine.KeyCode;
 
@@ -26,7 +27,6 @@ using static SiteHostileArea;
 using static SiteInstance;
 using static SiteComplex;
 using static SiteTown;
-using UnityEngine.Rendering.PostProcessing;
 
 public class Blueprint
 {
@@ -93,7 +93,10 @@ public class Blueprint
             },
             (h) =>
             {
-
+                //BLIZZARD: MUSIC, SOUNDS AND TEXTURES
+                //POOH: PROGRAMMING AND DESIGNING
+                //RYVED: CONSULTATION AND BRAINSTORMING
+                //LEKRIS: CONSULTATION AND BRAINSTORMING
             });
             AddButtonRegion(() =>
             {
@@ -595,7 +598,7 @@ public class Blueprint
                             AddSmallButton(item.icon,
                             (h) =>
                             {
-                                PlaySound(item.ItemSound("PutDown"));
+                                PlaySound(item.ItemSound("PutDown"), 0.6f);
                                 currentSave.player.Unequip(new() { slot });
                                 Respawn("PlayerEquipmentInfo");
                                 Respawn("Inventory");
@@ -1081,6 +1084,60 @@ public class Blueprint
                     CloseDesktop("EquipmentScreen");
                     SwitchDesktop("Map");
                     PlaySound("DesktopInventoryClose");
+                });
+                AddSmallButton("OtherReverse", (h) =>
+                {
+                    currentSave.player.inventory.items.Reverse();
+                    CloseWindow("Inventory");
+                    SpawnWindowBlueprint("Inventory");
+                    PlaySound("DesktopInventorySort", 0.2f);
+                });
+                if (!CDesktop.windows.Exists(x => x.title == "InventorySettings") && !CDesktop.windows.Exists(x => x.title == "InventorySort"))
+                    AddSmallButton("OtherSort", (h) =>
+                    {
+                        SpawnWindowBlueprint("InventorySort");
+                        CloseWindow("Inventory");
+                        SpawnWindowBlueprint("Inventory");
+                    });
+                else
+                    AddSmallButton("OtherSortOff", (h) => { });
+                if (!CDesktop.windows.Exists(x => x.title == "InventorySettings") && !CDesktop.windows.Exists(x => x.title == "InventorySort"))
+                    AddSmallButton("OtherSettings", (h) =>
+                    {
+                        SpawnWindowBlueprint("InventorySettings");
+                        CloseWindow("Inventory");
+                        SpawnWindowBlueprint("Inventory");
+                    });
+                else
+                    AddSmallButton("OtherSettingsOff", (h) => { });
+            });
+            for (int i = 0; i < 8; i++)
+            {
+                var index = i;
+                AddPaddingRegion(
+                    () =>
+                    {
+                        for (int j = 0; j < 5; j++)
+                            if (items.Count > index * 5 + j) PrintInventoryItem(items[index * 5 + j]);
+                            else AddBigButton("OtherEmpty", (h) => { });
+                    }
+                );
+            }
+            AddPaddingRegion(() => { AddLine(); });
+        }, true),
+        new("Bank", () => {
+            SetAnchor(TopLeft);
+            AddRegionGroup();
+            SetRegionGroupHeight(358);
+            var items = currentSave.player.inventory.items;
+            AddHeaderRegion(() =>
+            {
+                AddLine("Bank of " + town.name + ":");
+                AddSmallButton("OtherClose", (h) =>
+                {
+                    CloseDesktop("BankScreen");
+                    SwitchDesktop("TownEntrance");
+                    PlaySound("DesktopBankClose");
                 });
                 AddSmallButton("OtherReverse", (h) =>
                 {
@@ -2945,6 +3002,76 @@ public class Blueprint
                     AddLine(Assets.assets.abilityIconsSearch.Count + " found in search", "DarkGray");
             });
         }),
+        new("ObjectManagerFactionIconList", () => {
+            SetAnchor(TopLeft);
+            AddRegionGroup(() => Assets.assets.factionIconsSearch.Count);
+            SetRegionGroupWidth(171);
+            SetRegionGroupHeight(358);
+            if (faction != null)
+            {
+                var index = Assets.assets.factionIconsSearch.IndexOf(faction.icon + ".png");
+                if (index >= 10) CDesktop.LBWindow.LBRegionGroup.pagination = index / 10;
+            }
+            AddHeaderRegion(() =>
+            {
+                AddLine("Faction icons:");
+                AddSmallButton("OtherClose", (h) =>
+                {
+                    CloseWindow(h.window);
+                    if (faction != null)
+                        SpawnWindowBlueprint("ObjectManagerFactions");
+                });
+                AddSmallButton("OtherReverse", (h) =>
+                {
+                    Assets.assets.factionIcons.Reverse();
+                    Respawn("ObjectManagerFactionIconList");
+                    PlaySound("DesktopInventorySort", 0.2f);
+                });
+            });
+            AddPaddingRegion(() =>
+            {
+                AddLine("Search:", "DarkGray");
+                AddInputLine(String.search, InputType.Everything);
+            });
+            var regionGroup = CDesktop.LBWindow.LBRegionGroup;
+            AddPaginationLine(regionGroup);
+            for (int i = 0; i < regionGroup.perPage; i++)
+            {
+                var index = i;
+                AddButtonRegion(() =>
+                {
+                    if (Assets.assets.factionIconsSearch.Count > index + regionGroup.perPage * regionGroup.pagination)
+                    {
+                        SetRegionBackground(RegionBackgroundType.Button);
+                        var foo = Assets.assets.factionIconsSearch[index + regionGroup.perPage * regionGroup.pagination];
+                        AddLine(foo.Substring(7));
+                        AddSmallButton(Assets.assets.factionIconsSearch[index + regionGroup.perPage * regionGroup.pagination].Replace(".png", ""), (h) => { });
+                    }
+                    else
+                    {
+                        SetRegionBackground(RegionBackgroundType.Padding);
+                        AddLine();
+                    }
+                },
+                (h) =>
+                {
+                    var foo = Assets.assets.factionIconsSearch[index + regionGroup.perPage * regionGroup.pagination];
+                    CloseWindow("ObjectManagerFactionIconList");
+                    if (faction != null)
+                    {
+                        faction.icon = foo.Replace(".png", "");
+                        Respawn("ObjectManagerFaction");
+                        SpawnWindowBlueprint("ObjectManagerFactions");
+                    }
+                });
+            }
+            AddPaddingRegion(() =>
+            {
+                AddLine(Assets.assets.factionIcons.Count + " faction icons", "DarkGray");
+                if (Assets.assets.factionIcons.Count != Assets.assets.factionIconsSearch.Count)
+                    AddLine(Assets.assets.factionIconsSearch.Count + " found in search", "DarkGray");
+            });
+        }),
         new("ObjectManagerPortraitList", () => {
             SetAnchor(TopLeft);
             AddRegionGroup(() => Assets.assets.portraitsSearch.Count);
@@ -3281,14 +3408,14 @@ public class Blueprint
                     AddSmallButton("OtherReverse", (h) =>
                     {
                         if (trigger.ContainsKey("AbilityName"))
-                            trigger["AbilityName"] = eventParentType == "Ability" ? "This" : "None";
+                            trigger["AbilityName"] = eventParentType == "Ability" ? "This" : "Any";
                         h.window.Respawn();
                     });
                 });
                 AddButtonRegion(() =>
                 {
-                    AddLine(trigger.ContainsKey("AbilityName") ? trigger["AbilityName"] : (eventParentType == "Ability" ? "This" : "None"));
-                    if (trigger.ContainsKey("AbilityName") && trigger["AbilityName"] != (eventParentType == "Ability" ? "This" : "None"))
+                    AddLine(trigger.ContainsKey("AbilityName") ? trigger["AbilityName"] : (eventParentType == "Ability" ? "This" : "Any"));
+                    if (trigger.ContainsKey("AbilityName") && trigger["AbilityName"] != (eventParentType == "Ability" ? "This" : "Any"))
                         AddSmallButton(abilities.Find(x => x.name == trigger["AbilityName"]).icon, (h) => { });
                 },
                 (h) =>
@@ -3310,14 +3437,14 @@ public class Blueprint
                     AddSmallButton("OtherReverse", (h) =>
                     {
                         if (trigger.ContainsKey("BuffName"))
-                            trigger["BuffName"] = eventParentType == "Buff" ? "This" : "None";
+                            trigger["BuffName"] = eventParentType == "Buff" ? "This" : "Any";
                         h.window.Respawn();
                     });
                 });
                 AddButtonRegion(() =>
                 {
-                    AddLine(trigger.ContainsKey("BuffName") ? trigger["BuffName"] : (eventParentType == "Buff" ? "This" : "None"));
-                    if (trigger.ContainsKey("BuffName") && trigger["BuffName"] != (eventParentType == "Buff" ? "This" : "None"))
+                    AddLine(trigger.ContainsKey("BuffName") ? trigger["BuffName"] : (eventParentType == "Buff" ? "This" : "Any"));
+                    if (trigger.ContainsKey("BuffName") && trigger["BuffName"] != (eventParentType == "Buff" ? "This" : "Any"))
                         AddSmallButton(buffs.Find(x => x.name == trigger["BuffName"]).icon, (h) => { });
                 },
                 (h) =>
@@ -5570,6 +5697,175 @@ public class Blueprint
             }
             AddPaddingRegion(() => { });
         }),
+        new("FactionsSort", () => {
+            SetAnchor(Center);
+            AddRegionGroup();
+            SetRegionGroupWidth(162);
+            AddHeaderRegion(() =>
+            {
+                AddLine("Sort factions:");
+                AddSmallButton("OtherClose", (h) =>
+                {
+                    CloseWindow("FactionsSort");
+                    Respawn("ObjectManagerFactions");
+                });
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("By name", "Black");
+            },
+            (h) =>
+            {
+                factions = factions.OrderBy(x => x.name).ToList();
+                factionsSearch = factionsSearch.OrderBy(x => x.name).ToList();
+                CloseWindow("FactionsSort");
+                Respawn("ObjectManagerFactions");
+                PlaySound("DesktopInventorySort", 0.2f);
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("By side", "Black");
+            },
+            (h) =>
+            {
+                factions = factions.OrderByDescending(x => x.side).ToList();
+                factionsSearch = factionsSearch.OrderByDescending(x => x.side).ToList();
+                CloseWindow("FactionsSort");
+                Respawn("ObjectManagerFactions");
+                PlaySound("DesktopInventorySort", 0.2f);
+            });
+        }),
+        new("ObjectManagerFactions", () => {
+            SetAnchor(TopLeft);
+            AddRegionGroup(() => factionsSearch.Count);
+            SetRegionGroupWidth(171);
+            SetRegionGroupHeight(358);
+            if (faction != null)
+            {
+                var index = factionsSearch.IndexOf(faction);
+                if (index >= 10) CDesktop.LBWindow.LBRegionGroup.pagination = index / 10;
+            }
+            AddHeaderRegion(() =>
+            {
+                AddLine("Factions:");
+                AddSmallButton("OtherClose", (h) =>
+                {
+                    faction = null; factionsSearch = null;
+                    CloseDesktop("ObjectManagerFactions");
+                });
+                AddSmallButton("OtherReverse", (h) =>
+                {
+                    factions.Reverse();
+                    factionsSearch.Reverse();
+                    Respawn("ObjectManagerFactions");
+                    PlaySound("DesktopInventorySort", 0.2f);
+                });
+                if (!CDesktop.windows.Exists(x => x.title == "FactionsSort"))
+                    AddSmallButton("OtherSort", (h) =>
+                    {
+                        SpawnWindowBlueprint("FactionsSort");
+                        Respawn("ObjectManagerFactions");
+                    });
+                else
+                    AddSmallButton("OtherSortOff", (h) => { });
+            });
+            AddPaddingRegion(() =>
+            {
+                AddLine("Search:", "DarkGray");
+                AddInputLine(String.search, InputType.Everything);
+            });
+            var regionGroup = CDesktop.LBWindow.LBRegionGroup;
+            AddPaginationLine(regionGroup);
+            for (int i = 0; i < 10; i++)
+            {
+                var index = i;
+                AddButtonRegion(() =>
+                {
+                    if (factionsSearch.Count > index + 10 * regionGroup.pagination)
+                    {
+                        SetRegionBackground(RegionBackgroundType.Button);
+                        var foo = factionsSearch[index + 10 * regionGroup.pagination];
+                        AddLine(foo.name);
+                        AddSmallButton(foo.icon, (h) => { });
+                    }
+                    else
+                    {
+                        SetRegionBackground(RegionBackgroundType.Padding);
+                        AddLine();
+                    }
+                },
+                (h) =>
+                {
+                    faction = factionsSearch[index + 10 * regionGroup.pagination];
+                    String.objectName.Set(faction.name);
+                    Respawn("ObjectManagerFaction");
+                });
+            }
+            AddPaddingRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+                AddLine(factions.Count + " factions", "DarkGray");
+                if (factions.Count != factionsSearch.Count)
+                    AddLine(factionsSearch.Count + " found in search", "DarkGray");
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("Create a new faction");
+            },
+            (h) =>
+            {
+                faction = new Faction()
+                {
+                    name = "Faction #" + factions.Count,
+                    icon = "None",
+                    side = "Neutral"
+                };
+                factions.Add(faction);
+                factionsSearch = factions.FindAll(x => x.name.ToLower().Contains(String.search.Value().ToLower()));
+                String.objectName.Set(faction.name);
+                Respawn("ObjectManagerFaction");
+                h.window.Rebuild();
+            });
+        }),
+        new("ObjectManagerFaction", () => {
+            SetAnchor(TopRight);
+            AddRegionGroup();
+            SetRegionGroupWidth(171);
+            SetRegionGroupHeight(354);
+            AddPaddingRegion(() => { AddLine("Faction:", "DarkGray"); });
+            AddInputRegion(String.objectName, InputType.Everything);
+            AddPaddingRegion(() => { AddLine("Icon:", "DarkGray"); });
+            AddButtonRegion(() =>
+            {
+                AddLine(faction.icon.Replace("Faction", "") + ".png");
+                AddSmallButton(faction.icon, (h) => { });
+            },
+            (h) =>
+            {
+                var list = CDesktop.windows.Find(x => x.title == "ObjectManagerFactionIconList");
+                if (list == null)
+                {
+                    CloseWindow("ObjectManagerFactions");
+                    Assets.assets.factionIconsSearch = Assets.assets.factionIcons;
+                    list = SpawnWindowBlueprint("ObjectManagerFactionIconList");
+                }
+            });
+            AddPaddingRegion(() => { AddLine("Side:", "DarkGray"); });
+            AddButtonRegion(() =>
+            {
+                AddLine(faction.side);
+            },
+            (h) =>
+            {
+                if (faction.side == "Neutral")
+                    faction.side = "Alliance";
+                else if (faction.side == "Alliance")
+                    faction.side = "Horde";
+                else if (faction.side == "Horde")
+                    faction.side = "Neutral";
+            });
+            AddPaddingRegion(() => { });
+        }),
         new("ObjectManagerClasses", () => {
             SetAnchor(TopLeft);
             AddRegionGroup(() => specsSearch.Count);
@@ -6104,7 +6400,6 @@ public class Blueprint
         {
             PlaySound("DesktopInventoryOpen");
             SetDesktopBackground("Leather");
-            SpawnWindowBlueprint("SpellbookAbilityList");
             SpawnWindowBlueprint("PlayerEquipmentInfo");
             SpawnWindowBlueprint("Inventory");
             AddHotkey(B, () =>
@@ -6119,28 +6414,19 @@ public class Blueprint
                 CloseDesktop("EquipmentScreen");
                 PlaySound("DesktopInventoryClose");
             });
-            AddHotkey(W, () =>
+        }),
+        new("BankScreen", () =>
+        {
+            PlaySound("DesktopBankOpen");
+            SetDesktopBackground("Leather");
+            SpawnWindowBlueprint("Bank");
+            SpawnWindowBlueprint("Inventory");
+            AddHotkey(Escape, () =>
             {
-                var amount = new Vector3(0, (float)Math.Round(EuelerGrowth())) / 2;
-                CDesktop.screen.transform.position += amount; cursor.transform.position += amount;
-                if (CDesktop.screen.transform.position.y > -180)
-                {
-                    var off = CDesktop.screen.transform.position.y + 180f;
-                    CDesktop.screen.transform.position -= new Vector3(0, off);
-                    cursor.transform.position -= new Vector3(0, off);
-                }
-            },  false);
-            AddHotkey(S, () =>
-            {
-                var amount = new Vector3(0, -(float)Math.Round(EuelerGrowth())) / 2;
-                CDesktop.screen.transform.position += amount; cursor.transform.position += amount;
-                if (CDesktop.screen.transform.position.y < -1282)
-                {
-                    var off = CDesktop.screen.transform.position.y + 1282f;
-                    CDesktop.screen.transform.position -= new Vector3(0, off);
-                    cursor.transform.position -= new Vector3(0, off);
-                }
-            },  false);
+                SwitchDesktop("Map");
+                CloseDesktop("EquipmentScreen");
+                PlaySound("DesktopInventoryClose");
+            });
         }),
         new("GameMenu", () =>
         {
@@ -6179,6 +6465,7 @@ public class Blueprint
             Serialize(towns, "towns", true, false, prefix);
             Serialize(items, "items", true, false, prefix);
             Serialize(itemSets, "sets", true, false, prefix);
+            Serialize(factions, "factions", true, false, prefix);
             SetDesktopBackground("Areas/AreaTheCelestialPlanetarium");
             SpawnWindowBlueprint("ObjectManagerLobby");
             AddHotkey(Escape, () => { CloseDesktop("DevPanel"); });
@@ -6251,6 +6538,13 @@ public class Blueprint
             SetDesktopBackground("Areas/AreaTheCelestialPlanetarium");
             SpawnWindowBlueprint("ObjectManagerItemSets");
             AddHotkey(Escape, () => { itemSet = null; itemSetsSearch = null; CloseDesktop("ObjectManagerItemSets"); });
+            AddPaginationHotkeys();
+        }),
+        new("ObjectManagerFactions", () =>
+        {
+            SetDesktopBackground("Areas/AreaTheCelestialPlanetarium");
+            SpawnWindowBlueprint("ObjectManagerFactions");
+            AddHotkey(Escape, () => { faction = null; factionsSearch = null; CloseDesktop("ObjectManagerFactions"); });
             AddPaginationHotkeys();
         }),
 

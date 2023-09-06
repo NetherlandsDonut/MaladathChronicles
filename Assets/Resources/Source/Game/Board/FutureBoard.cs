@@ -44,14 +44,25 @@ public class FutureBoard
 
     public double Desiredness(FutureBoard baseBoard = null)
     {
+        //In case of not basing the future on any different future then just set this one as the base
+        baseBoard ??= this;
+
+        //Set entities properly based on who's turn it is right now
         var entity = playerTurn ? player : enemy;
         var other = playerTurn ? enemy : player;
-        baseBoard ??= this;
         var pastEntity = playerTurn ? baseBoard.player : baseBoard.enemy;
         var pastOther = playerTurn ? baseBoard.enemy : baseBoard.player;
+        
+        //Base score setting
+        //Score higher than zero means it's good for the player
+        //and score lower than zero means it's good for the opponent
         var score = 0.0;
+
+        //Information about which elements are of biggest importance to each entity
         var entityElementImportance = playerTurn ? baseBoard.PlayerElementImportance() : baseBoard.EnemyElementImportance();
         var otherElementImportance = playerTurn ? baseBoard.EnemyElementImportance() : baseBoard.PlayerElementImportance();
+        
+        //Based on each entity's priorities in resources calculate how happy are they after recent resource changes
         foreach (var resource in entity.resources)
         {
             var n = resource.Value - pastEntity.resources[resource.Key];
@@ -64,13 +75,21 @@ public class FutureBoard
             var amountMultiplier = entity.AmountModifier(n);
             score -= otherElementImportance[resource.Key] * amountMultiplier * (n < 0 ? -1 : 1);
         }
+
+        //Modify score by the difference in entity health
         score += entity.health - pastEntity.health;
         score -= other.health - pastOther.health;
+
+        //Impact score heavily when one of the entities die in the prediction
         if (entity.health <= 0) score -= 1000;
         else if (other.health <= 0) score += 1000;
+
+        //Reverse the score if the prediction was being made for player and not AI
         return score * (playerTurn ? -1 : 1);
     }
 
+    //Returns a list of all possible moves on the board and it's effects
+    //The returned list doesn't contain any duplicates
     public List<(int, int, List<(int, int, int)>)> PossibleFloodings()
     {
         var differentFloodings = new List<(int, int, List<(int, int, int)>)>();
@@ -85,6 +104,7 @@ public class FutureBoard
         return differentFloodings;
     }
 
+    //Returns a list of all possible moves for the current entity
     public List<FutureMove> CalculateLayer()
     {
         var list = new List<FutureMove>();
@@ -131,6 +151,7 @@ public class FutureBoard
         return list;
     }
 
+    //Call all events in combat that can be triggered by a specified trigger
     public void CallEvents(FutureEntity entity, FutureBoard board, Dictionary<string, string> triggerData)
     {
         foreach (var ability in entity == player ? Board.board.playerCombatAbilities : Board.board.enemyCombatAbilities)

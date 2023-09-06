@@ -45,4 +45,22 @@ public class FlyingBuff : MonoBehaviour
             pressEvent(GetComponent<Highlightable>());
         }
     }
+    
+    public static GameObject SpawnBuffObject(Vector3 position, string icon, Entity target)
+    {
+        var buff = Object.Instantiate(Resources.Load<GameObject>("Prefabs/PrefabBuff"));
+        buff.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/Buttons/" + icon);
+        buff.transform.parent = Board.board.window.desktop.transform;
+        buff.transform.position = position;
+        var fly = buff.GetComponent<FlyingBuff>();
+        fly.Initiate(Board.board.player == target, (h) => { },
+            (h) => () =>
+            {
+                var fb = h.GetComponent<FlyingBuff>();
+                var buff = (fb.onPlayer ? Board.board.player.buffs : Board.board.enemy.buffs).Find(x => x.Item3 == h.gameObject);
+                PrintBuffTooltip(target, target == Board.board.player ? Board.board.enemy : Board.board.player, buff);
+            }
+        );
+        return buff;
+    }
 }

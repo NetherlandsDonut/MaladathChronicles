@@ -65,18 +65,21 @@ public class Starter : MonoBehaviour
         Deserialize(ref Item.items, "items", false, prefix);
         Deserialize(ref Ability.abilities, "abilities", false, prefix);
         Deserialize(ref Buff.buffs, "buffs", false, prefix);
+        Deserialize(ref Faction.factions, "factions", false, prefix);
         #if (UNITY_EDITOR)
         Application.Quit();
         var ambienceList = AssetDatabase.FindAssets("t:AudioClip Ambience", new[] { "Assets/Resources/Ambience/" }).Select(x => AssetDatabase.GUIDToAssetPath(x).Replace("Assets/Resources/Ambience/", "")).ToList();
         var soundList = AssetDatabase.FindAssets("t:AudioClip", new[] { "Assets/Resources/Sounds/" }).Select(x => AssetDatabase.GUIDToAssetPath(x).Replace("Assets/Resources/Sounds/", "")).ToList();
         var itemIconList = AssetDatabase.FindAssets("t:Texture Item", new[] { "Assets/Resources/Sprites/Building/BigButtons/" }).Select(x => AssetDatabase.GUIDToAssetPath(x).Replace("Assets/Resources/Sprites/Building/BigButtons/", "")).ToList();
         var abilityIconList = AssetDatabase.FindAssets("t:Texture Ability", new[] { "Assets/Resources/Sprites/Building/BigButtons/" }).Select(x => AssetDatabase.GUIDToAssetPath(x).Replace("Assets/Resources/Sprites/Building/BigButtons/", "")).ToList();
+        var factionIconList = AssetDatabase.FindAssets("t:Texture Faction", new[] { "Assets/Resources/Sprites/Building/BigButtons/" }).Select(x => AssetDatabase.GUIDToAssetPath(x).Replace("Assets/Resources/Sprites/Building/BigButtons/", "")).ToList();
         var portraitList = AssetDatabase.FindAssets("t:Texture Portrait", new[] { "Assets/Resources/Sprites/Building/BigButtons/" }).Select(x => AssetDatabase.GUIDToAssetPath(x).Replace("Assets/Resources/Sprites/Building/BigButtons/", "")).ToList();
         ambienceList.RemoveAll(x => !x.StartsWith("Ambience"));
         itemIconList.RemoveAll(x => !x.StartsWith("Item"));
         abilityIconList.RemoveAll(x => !x.StartsWith("Ability"));
+        factionIconList.RemoveAll(x => !x.StartsWith("Faction"));
         portraitList.RemoveAll(x => !x.StartsWith("Portrait"));
-        Assets.assets = new Assets(ambienceList, soundList, itemIconList, abilityIconList, portraitList);
+        Assets.assets = new Assets(ambienceList, soundList, itemIconList, abilityIconList, factionIconList, portraitList);
         Serialize(Assets.assets, "assets", false, false, prefix);
         #else
         Deserialize(ref Assets.assets, "assets", false, prefix);
@@ -369,12 +372,8 @@ public class Starter : MonoBehaviour
                                 },
                                 (h) =>
                                 {
-                                    //CloseDesktop("TownEntrance");
-                                    //SwitchDesktop("Map");
-                                    //CDesktop.LockScreen();
-                                    //if (transport.price > 0)
-                                    //    PlaySound("DesktopTransportPay");
-                                    //fastTravelCamera = CDesktop.windows.Find(x => x.title == "Site: " + transport.destination).gameObject;
+                                    if (person.type == "Banker")
+                                        SpawnDesktopBlueprint("BankScreen");
                                 });
                             }
                         }
