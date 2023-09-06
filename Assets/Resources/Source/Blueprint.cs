@@ -670,10 +670,8 @@ public class Blueprint
                         if (!currentSave.player.actionBars.Exists(x => x.ability == abilityObj.name) && currentSave.player.actionBars.Count < currentSave.player.actionBarsUnlocked)
                         {
                             currentSave.player.actionBars.Add(new ActionBar(abilityObj.name));
-                            CloseWindow("PlayerSpellbookInfo");
-                            CloseWindow(h.window);
-                            SpawnWindowBlueprint("PlayerSpellbookInfo");
-                            SpawnWindowBlueprint("SpellbookAbilityList");
+                            Respawn("PlayerSpellbookInfo");
+                            Respawn("SpellbookAbilityList");
                             PlaySound("DesktopActionbarAdd", 0.7f);
                         }
                     },
@@ -1092,7 +1090,7 @@ public class Blueprint
                     SpawnWindowBlueprint("Inventory");
                     PlaySound("DesktopInventorySort", 0.2f);
                 });
-                if (!CDesktop.windows.Exists(x => x.title == "InventorySettings") && !CDesktop.windows.Exists(x => x.title == "InventorySort"))
+                if (!CDesktop.windows.Exists(x => x.title == "InventorySettings") && !CDesktop.windows.Exists(x => x.title == "BankSort"))
                     AddSmallButton("OtherSort", (h) =>
                     {
                         SpawnWindowBlueprint("InventorySort");
@@ -1101,7 +1099,7 @@ public class Blueprint
                     });
                 else
                     AddSmallButton("OtherSortOff", (h) => { });
-                if (!CDesktop.windows.Exists(x => x.title == "InventorySettings") && !CDesktop.windows.Exists(x => x.title == "InventorySort"))
+                if (!CDesktop.windows.Exists(x => x.title == "InventorySettings") && !CDesktop.windows.Exists(x => x.title == "BankSort"))
                     AddSmallButton("OtherSettings", (h) =>
                     {
                         SpawnWindowBlueprint("InventorySettings");
@@ -1142,16 +1140,14 @@ public class Blueprint
                 AddSmallButton("OtherReverse", (h) =>
                 {
                     currentSave.player.inventory.items.Reverse();
-                    CloseWindow("Inventory");
-                    SpawnWindowBlueprint("Inventory");
+                    Respawn("Bank");
                     PlaySound("DesktopInventorySort", 0.2f);
                 });
                 if (!CDesktop.windows.Exists(x => x.title == "InventorySettings") && !CDesktop.windows.Exists(x => x.title == "InventorySort"))
                     AddSmallButton("OtherSort", (h) =>
                     {
-                        SpawnWindowBlueprint("InventorySort");
-                        CloseWindow("Inventory");
-                        SpawnWindowBlueprint("Inventory");
+                        SpawnWindowBlueprint("BankSort");
+                        Respawn("Bank");
                     });
                 else
                     AddSmallButton("OtherSortOff", (h) => { });
@@ -1179,18 +1175,17 @@ public class Blueprint
             }
             AddPaddingRegion(() => { AddLine(); });
         }, true),
-        new("InventorySort", () => {
+        new("BankSort", () => {
             SetAnchor(Center);
             AddRegionGroup();
             SetRegionGroupWidth(162);
             AddHeaderRegion(() =>
             {
-                AddLine("Sort inventory:");
+                AddLine("Sort bank inventory:");
                 AddSmallButton("OtherClose", (h) =>
                 {
-                    CloseWindow("InventorySort");
-                    CloseWindow("Inventory");
-                    SpawnWindowBlueprint("Inventory");
+                    CloseWindow("BankSort");
+                    Respawn("Bank");
                 });
             });
             AddButtonRegion(() =>
@@ -1200,9 +1195,8 @@ public class Blueprint
             (h) =>
             {
                 currentSave.player.inventory.items = currentSave.player.inventory.items.OrderBy(x => x.name).ToList();
-                CloseWindow("Inventory");
-                CloseWindow("InventorySort");
-                SpawnWindowBlueprint("Inventory");
+                CloseWindow("BankSort");
+                Respawn("Bank");
                 PlaySound("DesktopInventorySort", 0.2f);
             });
             AddButtonRegion(() =>
@@ -1236,9 +1230,67 @@ public class Blueprint
             (h) =>
             {
                 currentSave.player.inventory.items = currentSave.player.inventory.items.OrderByDescending(x => x.type).ToList();
-                CloseWindow("Inventory");
-                CloseWindow("InventorySort");
-                SpawnWindowBlueprint("Inventory");
+                CloseWindow("BankSort");
+                Respawn("Bank");
+                PlaySound("DesktopInventorySort", 0.2f);
+            });
+        }),
+        new("InventorySort", () => {
+            SetAnchor(Center);
+            AddRegionGroup();
+            SetRegionGroupWidth(162);
+            AddHeaderRegion(() =>
+            {
+                AddLine("Sort inventory:");
+                AddSmallButton("OtherClose", (h) =>
+                {
+                    CloseWindow("InventorySort");
+                    CloseWindow("Inventory");
+                    SpawnWindowBlueprint("Inventory");
+                });
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("By name", "Black");
+            },
+            (h) =>
+            {
+                currentSave.player.inventory.items = currentSave.player.inventory.items.OrderBy(x => x.name).ToList();
+                CloseWindow("BankSort");
+                Respawn("Bank");
+                PlaySound("DesktopInventorySort", 0.2f);
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("By item power", "Black");
+            },
+            (h) =>
+            {
+                currentSave.player.inventory.items = currentSave.player.inventory.items.OrderByDescending(x => x.ilvl).ToList();
+                CloseWindow("BankSort");
+                Respawn("Bank");
+                PlaySound("DesktopInventorySort", 0.2f);
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("By price", "Black");
+            },
+            (h) =>
+            {
+                currentSave.player.inventory.items = currentSave.player.inventory.items.OrderByDescending(x => x.price).ToList();
+                CloseWindow("BankSort");
+                Respawn("Bank");
+                PlaySound("DesktopInventorySort", 0.2f);
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("By type", "Black");
+            },
+            (h) =>
+            {
+                currentSave.player.inventory.items = currentSave.player.inventory.items.OrderByDescending(x => x.type).ToList();
+                CloseWindow("BankSort");
+                Respawn("Bank");
                 PlaySound("DesktopInventorySort", 0.2f);
             });
         }),
@@ -2296,15 +2348,12 @@ public class Blueprint
             },
             (h) =>
             {
-                if (town.faction == "Horde")
-                    town.faction = "Alliance";
-                else if (town.faction == "Alliance")
-                    town.faction = "Neutral";
-                else if (town.faction == "Neutral")
-                    town.faction = "Horde";
-                h.window.Respawn();
-                CloseWindow("ObjectManagerAmbienceList");
-                Respawn("ObjectManagerTowns");
+                if (!CDesktop.windows.Exists(x => x.title == "ObjectManagerFactions"))
+                {
+                    factionsSearch = factions;
+                    CloseWindow("ObjectManagerTowns");
+                    SpawnWindowBlueprint("ObjectManagerFactions");
+                }
             });
             AddPaddingRegion(() => { AddLine("Ambience:", "DarkGray"); });
             AddButtonRegion(() =>
@@ -5745,13 +5794,26 @@ public class Blueprint
                 var index = factionsSearch.IndexOf(faction);
                 if (index >= 10) CDesktop.LBWindow.LBRegionGroup.pagination = index / 10;
             }
+            if (town != null)
+            {
+                var index = factionsSearch.FindIndexOf(x => x.name == town.faction);
+                if (index >= 10) CDesktop.LBWindow.LBRegionGroup.pagination = index / 10;
+            }
             AddHeaderRegion(() =>
             {
                 AddLine("Factions:");
                 AddSmallButton("OtherClose", (h) =>
                 {
-                    faction = null; factionsSearch = null;
-                    CloseDesktop("ObjectManagerFactions");
+                    if (town != null)
+                    {
+                        CloseWindow(h.window);
+                        SpawnWindowBlueprint("ObjectManagerTowns");
+                    }
+                    else
+                    {
+                        faction = null; factionsSearch = null;
+                        CloseDesktop("ObjectManagerFactions");
+                    }
                 });
                 AddSmallButton("OtherReverse", (h) =>
                 {
@@ -5796,9 +5858,19 @@ public class Blueprint
                 },
                 (h) =>
                 {
-                    faction = factionsSearch[index + 10 * regionGroup.pagination];
-                    String.objectName.Set(faction.name);
-                    Respawn("ObjectManagerFaction");
+                    if (town != null)
+                    {
+                        town.faction = factionsSearch[index + 10 * regionGroup.pagination]
+                        CloseWindow(h.window);
+                        Respawn("ObjectManagerTown");
+                        Respawn("ObjectManagerTowns");
+                    }
+                    else
+                    {
+                        faction = factionsSearch[index + 10 * regionGroup.pagination];
+                        String.objectName.Set(faction.name);
+                        Respawn("ObjectManagerFaction");
+                    }
                 });
             }
             AddPaddingRegion(() =>
@@ -6373,28 +6445,6 @@ public class Blueprint
             SpawnWindowBlueprint("SpellbookResources");
             AddHotkey(P, () => { SwitchDesktop("Map"); CloseDesktop("SpellbookScreen"); PlaySound("DesktopSpellbookScreenClose"); });
             AddHotkey(Escape, () => { SwitchDesktop("Map"); CloseDesktop("SpellbookScreen"); PlaySound("DesktopSpellbookScreenClose"); });
-            AddHotkey(W, () =>
-            {
-                var amount = new Vector3(0, (float)Math.Round(EuelerGrowth())) / 2;
-                CDesktop.screen.transform.position += amount; cursor.transform.position += amount;
-                if (CDesktop.screen.transform.position.y > -180)
-                {
-                    var off = CDesktop.screen.transform.position.y + 180f;
-                    CDesktop.screen.transform.position -= new Vector3(0, off);
-                    cursor.transform.position -= new Vector3(0, off);
-                }
-            },  false);
-            AddHotkey(S, () =>
-            {
-                var amount = new Vector3(0, -(float)Math.Round(EuelerGrowth())) / 2;
-                CDesktop.screen.transform.position += amount; cursor.transform.position += amount;
-                if (CDesktop.screen.transform.position.y < -1282)
-                {
-                    var off = CDesktop.screen.transform.position.y + 1282f;
-                    CDesktop.screen.transform.position -= new Vector3(0, off);
-                    cursor.transform.position -= new Vector3(0, off);
-                }
-            },  false);
         }),
         new("EquipmentScreen", () =>
         {
@@ -6417,6 +6467,9 @@ public class Blueprint
         }),
         new("BankScreen", () =>
         {
+            if (!currentSave.banks.ContainsKey(town.name))
+                currentSave.banks.Add(town.name, new() { items = new() });
+            SetDesktopBackground("Areas/Area" + (town.zone + town.name).Replace("'", "").Replace(".", "").Replace(" ", ""));
             PlaySound("DesktopBankOpen");
             SetDesktopBackground("Leather");
             SpawnWindowBlueprint("Bank");
