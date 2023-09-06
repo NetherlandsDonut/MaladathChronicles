@@ -8,6 +8,7 @@ using static Root.Anchor;
 
 using static Sound;
 using static SaveGame;
+using static SiteTown;
 using static Coloring;
 using static GameSettings;
 
@@ -46,7 +47,7 @@ public class Item
 
     public bool CanBuy(Entity entity)
     {
-        return entity.money >= price && (faction == null || REPENOUGH);
+        return entity.inventory.money >= price && (faction == null || true); //true = rep
     }
 
     public bool CanEquip(Entity entity)
@@ -197,7 +198,7 @@ public class Item
                 {
                     PlaySound(item.ItemSound("PickUp"), 0.6f);
                     currentSave.player.inventory.items.Add(item);
-                    currentSave.banks[town.name].Remove(item);
+                    currentSave.banks[town.name].items.Remove(item);
                     Respawn("Inventory");
                     Respawn("Bank");
                 }
@@ -233,7 +234,7 @@ public class Item
                     if (currentSave.banks[town.name].items.Count < 40)
                     {
                         PlaySound(item.ItemSound("PutDown"), 0.6f);
-                        currentSave.banks[town.name].Add(item);
+                        currentSave.banks[town.name].items.Add(item);
                         currentSave.player.inventory.items.Remove(item);
                         Respawn("Inventory");
                         Respawn("Bank");

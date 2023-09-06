@@ -1,5 +1,3 @@
-using UnityEngine;
-
 using System.Collections.Generic;
 
 public class Faction
@@ -11,5 +9,6 @@ public class Faction
         return "";
     }
 
-    public static List<Faction> factions;
+    public static Faction faction;
+    public static List<Faction> factions, factionsSearch;
 }

@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 
+using static Buff;
 using static Sound;
 using static Cursor;
 
@@ -48,7 +49,7 @@ public class FlyingBuff : MonoBehaviour
     
     public static GameObject SpawnBuffObject(Vector3 position, string icon, Entity target)
     {
-        var buff = Object.Instantiate(Resources.Load<GameObject>("Prefabs/PrefabBuff"));
+        var buff = Instantiate(Resources.Load<GameObject>("Prefabs/PrefabBuff"));
         buff.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/Buttons/" + icon);
         buff.transform.parent = Board.board.window.desktop.transform;
         buff.transform.position = position;

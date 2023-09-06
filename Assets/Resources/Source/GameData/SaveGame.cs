@@ -11,8 +11,7 @@ public class SaveGame
     public Entity player;
     public int cameraX, cameraY;
     public Dictionary<string, int> siteProgress, commonsKilled, raresKilled, elitesKilled, factionStanding;
-    public Dictionary<string, int> siteProgress, commonsKilled, raresKilled, elitesKilled;
-    public Dictionary<string, List<Inventory>> banks;
+    public Dictionary<string, Inventory> banks;
     public DateTime startDate, lastLoaded, lastPlayed;
     public TimeSpan timePlayed;
 

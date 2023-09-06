@@ -3,7 +3,6 @@ using System.Linq;
 using System.Collections.Generic;
 
 using UnityEngine;
-using UnityEngine.Rendering.PostProcessing;
 
 using static UnityEngine.KeyCode;
 
@@ -17,6 +16,7 @@ using static Class;
 using static Sound;
 using static Event;
 using static Cursor;
+using static Faction;
 using static ItemSet;
 using static Ability;
 using static SaveGame;
@@ -27,6 +27,7 @@ using static SiteHostileArea;
 using static SiteInstance;
 using static SiteComplex;
 using static SiteTown;
+using UnityEngine.UIElements;
 
 public class Blueprint
 {
@@ -1087,9 +1088,18 @@ public class Blueprint
                 AddLine("Inventory:");
                 AddSmallButton("OtherClose", (h) =>
                 {
-                    CloseDesktop("EquipmentScreen");
-                    SwitchDesktop("Map");
-                    PlaySound("DesktopInventoryClose");
+                    if (town != null)
+                    {
+                        CloseDesktop("BankScreen");
+                        SwitchDesktop("TownEntrance");
+                        PlaySound("DesktopBankClose");
+                    }
+                    else
+                    {
+                        CloseDesktop("EquipmentScreen");
+                        SwitchDesktop("Map");
+                        PlaySound("DesktopInventoryClose");
+                    }
                 });
                 AddSmallButton("OtherReverse", (h) =>
                 {
@@ -1102,8 +1112,9 @@ public class Blueprint
                     AddSmallButton("OtherSort", (h) =>
                     {
                         SpawnWindowBlueprint("InventorySort");
-                        CloseWindow("Inventory");
-                        SpawnWindowBlueprint("Inventory");
+                        Respawn("Inventory");
+                        if (town != null)
+                            Respawn("Bank");
                     });
                 else
                     AddSmallButton("OtherSortOff", (h) => { });
@@ -1111,8 +1122,9 @@ public class Blueprint
                     AddSmallButton("OtherSettings", (h) =>
                     {
                         SpawnWindowBlueprint("InventorySettings");
-                        CloseWindow("Inventory");
-                        SpawnWindowBlueprint("Inventory");
+                        Respawn("Inventory");
+                        if (town != null)
+                            Respawn("Bank");
                     });
                 else
                     AddSmallButton("OtherSettingsOff", (h) => { });
@@ -1135,10 +1147,10 @@ public class Blueprint
             SetAnchor(TopLeft);
             AddRegionGroup();
             SetRegionGroupHeight(358);
-            var items = currentSave.player.inventory.items;
+            var items = currentSave.banks[town.name].items;
             AddHeaderRegion(() =>
             {
-                AddLine("Bank of " + town.name + ":");
+                AddLine("Bank:");
                 AddSmallButton("OtherClose", (h) =>
                 {
                     CloseDesktop("BankScreen");
@@ -1147,8 +1159,9 @@ public class Blueprint
                 });
                 AddSmallButton("OtherReverse", (h) =>
                 {
-                    currentSave.player.inventory.items.Reverse();
+                    currentSave.banks[town.name].items.Reverse();
                     Respawn("Bank");
+                    Respawn("Inventory");
                     PlaySound("DesktopInventorySort", 0.2f);
                 });
                 if (!CDesktop.windows.Exists(x => x.title == "InventorySettings") && !CDesktop.windows.Exists(x => x.title == "InventorySort"))
@@ -1156,18 +1169,10 @@ public class Blueprint
                     {
                         SpawnWindowBlueprint("BankSort");
                         Respawn("Bank");
+                        Respawn("Inventory");
                     });
                 else
                     AddSmallButton("OtherSortOff", (h) => { });
-                if (!CDesktop.windows.Exists(x => x.title == "InventorySettings") && !CDesktop.windows.Exists(x => x.title == "InventorySort"))
-                    AddSmallButton("OtherSettings", (h) =>
-                    {
-                        SpawnWindowBlueprint("InventorySettings");
-                        CloseWindow("Inventory");
-                        SpawnWindowBlueprint("Inventory");
-                    });
-                else
-                    AddSmallButton("OtherSettingsOff", (h) => { });
             });
             for (int i = 0; i < 8; i++)
             {
@@ -1194,6 +1199,7 @@ public class Blueprint
                 {
                     CloseWindow("BankSort");
                     Respawn("Bank");
+                    Respawn("Inventory");
                 });
             });
             AddButtonRegion(() =>
@@ -1202,9 +1208,10 @@ public class Blueprint
             },
             (h) =>
             {
-                currentSave.player.inventory.items = currentSave.player.inventory.items.OrderBy(x => x.name).ToList();
+                currentSave.banks[town.name].items = currentSave.banks[town.name].items.OrderBy(x => x.name).ToList();
                 CloseWindow("BankSort");
                 Respawn("Bank");
+                Respawn("Inventory");
                 PlaySound("DesktopInventorySort", 0.2f);
             });
             AddButtonRegion(() =>
@@ -1213,10 +1220,10 @@ public class Blueprint
             },
             (h) =>
             {
-                currentSave.player.inventory.items = currentSave.player.inventory.items.OrderByDescending(x => x.ilvl).ToList();
-                CloseWindow("Inventory");
-                CloseWindow("InventorySort");
-                SpawnWindowBlueprint("Inventory");
+                currentSave.banks[town.name].items = currentSave.banks[town.name].items.OrderByDescending(x => x.ilvl).ToList();
+                CloseWindow("BankSort");
+                Respawn("Bank");
+                Respawn("Inventory");
                 PlaySound("DesktopInventorySort", 0.2f);
             });
             AddButtonRegion(() =>
@@ -1225,10 +1232,10 @@ public class Blueprint
             },
             (h) =>
             {
-                currentSave.player.inventory.items = currentSave.player.inventory.items.OrderByDescending(x => x.price).ToList();
-                CloseWindow("Inventory");
-                CloseWindow("InventorySort");
-                SpawnWindowBlueprint("Inventory");
+                currentSave.banks[town.name].items = currentSave.banks[town.name].items.OrderByDescending(x => x.price).ToList();
+                CloseWindow("BankSort");
+                Respawn("Bank");
+                Respawn("Inventory");
                 PlaySound("DesktopInventorySort", 0.2f);
             });
             AddButtonRegion(() =>
@@ -1237,9 +1244,10 @@ public class Blueprint
             },
             (h) =>
             {
-                currentSave.player.inventory.items = currentSave.player.inventory.items.OrderByDescending(x => x.type).ToList();
+                currentSave.banks[town.name].items = currentSave.banks[town.name].items.OrderByDescending(x => x.type).ToList();
                 CloseWindow("BankSort");
                 Respawn("Bank");
+                Respawn("Inventory");
                 PlaySound("DesktopInventorySort", 0.2f);
             });
         }),
@@ -1253,8 +1261,8 @@ public class Blueprint
                 AddSmallButton("OtherClose", (h) =>
                 {
                     CloseWindow("InventorySort");
-                    CloseWindow("Inventory");
-                    SpawnWindowBlueprint("Inventory");
+                    Respawn("Inventory");
+                    Respawn("Bank");
                 });
             });
             AddButtonRegion(() =>
@@ -1264,7 +1272,8 @@ public class Blueprint
             (h) =>
             {
                 currentSave.player.inventory.items = currentSave.player.inventory.items.OrderBy(x => x.name).ToList();
-                CloseWindow("BankSort");
+                CloseWindow("InventorySort");
+                Respawn("Inventory");
                 Respawn("Bank");
                 PlaySound("DesktopInventorySort", 0.2f);
             });
@@ -1275,7 +1284,8 @@ public class Blueprint
             (h) =>
             {
                 currentSave.player.inventory.items = currentSave.player.inventory.items.OrderByDescending(x => x.ilvl).ToList();
-                CloseWindow("BankSort");
+                CloseWindow("InventorySort");
+                Respawn("Inventory");
                 Respawn("Bank");
                 PlaySound("DesktopInventorySort", 0.2f);
             });
@@ -1286,7 +1296,8 @@ public class Blueprint
             (h) =>
             {
                 currentSave.player.inventory.items = currentSave.player.inventory.items.OrderByDescending(x => x.price).ToList();
-                CloseWindow("BankSort");
+                CloseWindow("InventorySort");
+                Respawn("Inventory");
                 Respawn("Bank");
                 PlaySound("DesktopInventorySort", 0.2f);
             });
@@ -1297,7 +1308,8 @@ public class Blueprint
             (h) =>
             {
                 currentSave.player.inventory.items = currentSave.player.inventory.items.OrderByDescending(x => x.type).ToList();
-                CloseWindow("BankSort");
+                CloseWindow("InventorySort");
+                Respawn("Inventory");
                 Respawn("Bank");
                 PlaySound("DesktopInventorySort", 0.2f);
             });
@@ -2062,6 +2074,11 @@ public class Blueprint
                 itemSetsSearch = itemSets;
                 SpawnDesktopBlueprint("ObjectManagerItemSets");
             });
+            AddButtonRegion(() => { AddLine("Factions"); }, (h) =>
+            {
+                factionsSearch = factions;
+                SpawnDesktopBlueprint("ObjectManagerFactions");
+            });
             AddPaddingRegion(() => { AddLine("Actions:"); });
             AddButtonRegion(() => { AddLine("Save data"); }, (h) =>
             {
@@ -2075,6 +2092,7 @@ public class Blueprint
                 Serialize(towns, "towns", false, false, prefix);
                 Serialize(items, "items", false, false, prefix);
                 Serialize(itemSets, "sets", false, false, prefix);
+                Serialize(factions, "factions", false, false, prefix);
             });
             AddPaddingRegion(() => { });
         }),
@@ -5804,7 +5822,7 @@ public class Blueprint
             }
             if (town != null)
             {
-                var index = factionsSearch.FindIndexOf(x => x.name == town.faction);
+                var index = factionsSearch.FindIndex(x => x.name == town.faction);
                 if (index >= 10) CDesktop.LBWindow.LBRegionGroup.pagination = index / 10;
             }
             AddHeaderRegion(() =>
@@ -5868,7 +5886,7 @@ public class Blueprint
                 {
                     if (town != null)
                     {
-                        town.faction = factionsSearch[index + 10 * regionGroup.pagination]
+                        town.faction = factionsSearch[index + 10 * regionGroup.pagination].name;
                         CloseWindow(h.window);
                         Respawn("ObjectManagerTown");
                         Respawn("ObjectManagerTowns");
@@ -5937,12 +5955,14 @@ public class Blueprint
             },
             (h) =>
             {
-                if (faction.side == "Neutral")
+                if (faction.side == "Hostile")
+                    faction.side = "Neutral";
+                else if (faction.side == "Neutral")
                     faction.side = "Alliance";
                 else if (faction.side == "Alliance")
                     faction.side = "Horde";
                 else if (faction.side == "Horde")
-                    faction.side = "Neutral";
+                    faction.side = "Hostile";
             });
             AddPaddingRegion(() => { });
         }),
@@ -6133,10 +6153,10 @@ public class Blueprint
             loadingBar[1].GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Textures/LoadingBarStretch");
             loadingBar[1].transform.position = new Vector3(-1178, 863);
             OrderLoadingMap();
-            AddHotkey(W, () => { CheckPosition(new Vector3(0, EuelerGrowth())); }, false);
-            AddHotkey(A, () => { CheckPosition(new Vector3(-EuelerGrowth(), 0)); }, false);
-            AddHotkey(S, () => { CheckPosition(new Vector3(0, -EuelerGrowth())); }, false);
-            AddHotkey(D, () => { CheckPosition(new Vector3(EuelerGrowth(), 0)); }, false);
+            AddHotkey(W, () => { MoveCamera(new Vector3(0, EuelerGrowth())); }, false);
+            AddHotkey(A, () => { MoveCamera(new Vector3(-EuelerGrowth(), 0)); }, false);
+            AddHotkey(S, () => { MoveCamera(new Vector3(0, -EuelerGrowth())); }, false);
+            AddHotkey(D, () => { MoveCamera(new Vector3(EuelerGrowth(), 0)); }, false);
             AddHotkey(C, () =>
             {
                 SpawnDesktopBlueprint("CharacterSheet");
@@ -6154,21 +6174,9 @@ public class Blueprint
             AddHotkey(BackQuote, () => { SpawnDesktopBlueprint("DevPanel"); });
             AddHotkey(L, () => { SpawnWindowBlueprint("ItemDrop"); });
 
-            void CheckPosition(Vector3 amount)
+            void MoveCamera(Vector3 amount)
             {
                 CDesktop.cameraDestination += new Vector2(amount.x, amount.y) / 5;
-                if (CDesktop.cameraDestination.x < 0)
-                    CDesktop.cameraDestination = new Vector2(0, CDesktop.cameraDestination.y);
-                if (CDesktop.cameraDestination.x > 350)
-                    CDesktop.cameraDestination = new Vector2(350, CDesktop.cameraDestination.y);
-                if (CDesktop.cameraDestination.x > 130 && CDesktop.cameraDestination.x < 180)
-                    CDesktop.cameraDestination = new Vector2(130, CDesktop.cameraDestination.y);
-                if (CDesktop.cameraDestination.x < 225 && CDesktop.cameraDestination.x > 180)
-                    CDesktop.cameraDestination = new Vector2(225, CDesktop.cameraDestination.y);
-                if (CDesktop.cameraDestination.y > 0)
-                    CDesktop.cameraDestination = new Vector2(CDesktop.cameraDestination.x, 0);
-                if (CDesktop.cameraDestination.y < -240)
-                    CDesktop.cameraDestination = new Vector2(CDesktop.cameraDestination.x, -240);
             }
         }),
         new("HostileAreaEntrance", () =>
@@ -6475,18 +6483,18 @@ public class Blueprint
         }),
         new("BankScreen", () =>
         {
+            currentSave.banks ??= new();
             if (!currentSave.banks.ContainsKey(town.name))
                 currentSave.banks.Add(town.name, new() { items = new() });
-            SetDesktopBackground("Areas/Area" + (town.zone + town.name).Replace("'", "").Replace(".", "").Replace(" ", ""));
-            PlaySound("DesktopBankOpen");
-            SetDesktopBackground("Leather");
+            SetDesktopBackground("Areas/Area" + (town.zone + town.name).Replace("'", "").Replace(".", "").Replace(" ", "") + "Bank");
+            PlaySound("DesktopBankOpen", 0.2f);
             SpawnWindowBlueprint("Bank");
             SpawnWindowBlueprint("Inventory");
             AddHotkey(Escape, () =>
             {
-                SwitchDesktop("Map");
-                CloseDesktop("EquipmentScreen");
-                PlaySound("DesktopInventoryClose");
+                CloseDesktop("BankScreen");
+                SwitchDesktop("TownEntrance");
+                PlaySound("DesktopBankClose");
             });
         }),
         new("GameMenu", () =>

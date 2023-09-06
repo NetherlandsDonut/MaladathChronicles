@@ -22,6 +22,7 @@ public static class Root
     public static string textWrapEnding = "...";
     public static string prefix = "";
 
+    public static List<Transform> sites;
     public static List<FallingElement> fallingElements;
     public static List<FlyingMissile> flyingMissiles;
     public static bool canUnlockScreen;
@@ -173,7 +174,7 @@ public static class Root
         return (float)Math.Pow(keyStack / 150.0 + 1.0, Math.E);
     }
 
-    #endregion
+#endregion
 
     #region Windows
 

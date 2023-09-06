@@ -1,3 +1,4 @@
+using System.Linq;
 using System.Collections.Generic;
 
 using static Root;
@@ -9,7 +10,7 @@ public class Ability
 
     public bool EnoughResources(Entity entity) => EnoughResources(entity.resources);
     public bool EnoughResources(FutureEntity entity) => EnoughResources(entity.resources);
-    public bool EnoughResources(Dictionary<string, int> resources) => cost.Any(x => x.Value > resources[x.Key]);
+    public bool EnoughResources(Dictionary<string, int> resources) => !cost.Any(x => x.Value > resources[x.Key]);
 
     #endregion
 
@@ -19,6 +20,7 @@ public class Ability
     {
         //In case of this ability having no events just return
         if (events == null) return;
+        foreach (var eve in events)
             foreach (var triggerData in eve.triggers)
                 if (triggerData.ContainsKey("Trigger") && triggerData["Trigger"] == trigger["Trigger"])
                 {

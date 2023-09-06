@@ -26,6 +26,7 @@ public class Starter : MonoBehaviour
     void Start()
     {
         random = new System.Random();
+        sites = new();
         font = new Font("Tahoma Bold");
         desktops = new();
         settings = new GameSettings();
@@ -47,6 +48,7 @@ public class Starter : MonoBehaviour
         cursor = FindObjectOfType<Cursor>();
         cursorEnemy = FindObjectOfType<CursorRemote>();
         ambience = FindObjectsOfType<AudioSource>().First(x => x.name == "Ambience");
+        soundEffects = cursor.GetComponent<AudioSource>();
         SpawnDesktopBlueprint("TitleScreen");
         Destroy(gameObject);
     }
