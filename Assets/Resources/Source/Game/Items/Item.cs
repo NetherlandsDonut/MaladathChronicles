@@ -188,19 +188,56 @@ public class Item
         });
     }
 
+    public static void PrintBankItem(Item item)
+    {
+        AddBigButton(item.icon,
+            (h) =>
+            {
+                if (currentSave.player.inventory.items.Count < 40)
+                {
+                    PlaySound(item.ItemSound("PickUp"), 0.6f);
+                    currentSave.player.inventory.items.Add(item);
+                    currentSave.banks[town.name].Remove(item);
+                    Respawn("Inventory");
+                    Respawn("Bank");
+                }
+            },
+            (h) => () =>
+            {
+                if (item == null) return;
+                SetAnchor(Center);
+                PrintItemTooltip(item);
+            }
+        );
+        if (settings.rarityIndicators.Value())
+            AddBigButtonOverlay("OtherRarity" + item.rarity + (settings.bigRarityIndicators.Value() ? "Big" : ""), 0, 2);
+    }
+
     public static void PrintInventoryItem(Item item)
     {
         AddBigButton(item.icon,
             (h) =>
             {
-                if (item.CanEquip(currentSave.player))
+                if (CDesktop.title == "EquipmentScreen")
                 {
-                    PlaySound(item.ItemSound("PickUp"), 0.6f);
-                    item.Equip(currentSave.player);
-                    CloseWindow(h.window);
-                    SpawnWindowBlueprint("Inventory");
-                    CloseWindow("PlayerEquipmentInfo");
-                    SpawnWindowBlueprint("PlayerEquipmentInfo");
+                    if (item.CanEquip(currentSave.player))
+                    {
+                        PlaySound(item.ItemSound("PickUp"), 0.6f);
+                        item.Equip(currentSave.player);
+                        Respawn("Inventory");
+                        Respawn("PlayerEquipmentInfo");
+                    }
+                }
+                else if (CDesktop.title == "BankScreen")
+                {
+                    if (currentSave.banks[town.name].items.Count < 40)
+                    {
+                        PlaySound(item.ItemSound("PutDown"), 0.6f);
+                        currentSave.banks[town.name].Add(item);
+                        currentSave.player.inventory.items.Remove(item);
+                        Respawn("Inventory");
+                        Respawn("Bank");
+                    }
                 }
             },
             (h) => () =>

@@ -1172,7 +1172,7 @@ public class Blueprint
                     () =>
                     {
                         for (int j = 0; j < 5; j++)
-                            if (items.Count > index * 5 + j) PrintInventoryItem(items[index * 5 + j]);
+                            if (items.Count > index * 5 + j) PrintBankItem(items[index * 5 + j]);
                             else AddBigButton("OtherEmpty", (h) => { });
                     }
                 );
