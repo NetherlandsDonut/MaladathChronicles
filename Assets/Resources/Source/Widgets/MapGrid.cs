@@ -15,11 +15,14 @@ public class MapGrid : MonoBehaviour
 
     public static void EnforceBoundary()
     {
-        var cameraDestinationScaled = cameraDestination * 19 + new Vector2(333, -183);
-        var nearbySites = sites.Select(x => (x.position, Vector2.Distance(new Vector2(x.position.x, x.position.y), cameraDestinationScaled))).FindAll(x => x.Item2 < 1000).OrderByDescending(x => x.Item2).ToList();
-        while (Vector2.Distance(new Vector2(nearbySites[0].Item1.x, nearbySites[0].Item1.y), cameraDestinationScaled) > 500)
-            cameraDestinationScaled = Vector3.Lerp(cameraDestinationScaled, nearbySites[0].Item1, 1);
-        cameraDestination = (cameraDestinationScaled - new Vector2(333, -183)) / 19;
+        var cameraDestinationScaled = CDesktop.cameraDestination * 19 + new Vector2(333, -183);
+        var nearbySites = sites.Select(x => (x.position, Vector2.Distance(new Vector2(x.position.x, x.position.y), cameraDestinationScaled))).ToList().FindAll(x => x.Item2 < 700).OrderBy(x => x.Item2).ToList();
+        if (nearbySites.Count > 0)
+        {
+            while (Vector2.Distance(new Vector2(nearbySites[0].Item1.x, nearbySites[0].Item1.y), cameraDestinationScaled) > 250)
+                cameraDestinationScaled = Vector3.Lerp(cameraDestinationScaled, nearbySites[0].Item1, 0.001f);
+            CDesktop.cameraDestination = (cameraDestinationScaled - new Vector2(333, -183)) / 19;
+        }
         
         //var temp = CDesktop.cameraDestination;
         //if (temp.x < 20) CDesktop.cameraDestination = new Vector2(20, temp.y);

@@ -133,7 +133,7 @@ public class Board
             if (currentSave.player.WillGetExperience(enemy.level) && currentSave.player.level < maxPlayerLevel)
             {
                 var enemyRace = Race.races.Find(x => x.name == enemy.race);
-                currentSave.player.ReceiveExperience((enemy.level - currentSave.player.level + 10) * enemyRace.vitality * (enemyRace.kind == "Elite" || enemyRace.kind == "Rare" ? 1.5 : 1) * 100 * enemy.level);
+                currentSave.player.ReceiveExperience((int)((enemy.level - currentSave.player.level + 10) * enemyRace.vitality * (enemyRace.kind == "Elite" || enemyRace.kind == "Rare" ? 1.5 : 1) * 100 * enemy.level));
             }
             if (area != null && enemy.kind != "Elite")
             {

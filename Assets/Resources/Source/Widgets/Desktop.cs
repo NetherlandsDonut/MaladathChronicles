@@ -7,6 +7,7 @@ using UnityEngine;
 using static Root;
 using static Sound;
 using static Cursor;
+using static SaveGame;
 using static InputLine;
 
 public class Desktop : MonoBehaviour

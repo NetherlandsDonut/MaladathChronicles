@@ -217,16 +217,17 @@ public static class Root
         else SpawnWindowBlueprint(windowName, true);
     }
 
-    public static void CloseWindow(string windowName)
+    public static bool CloseWindow(string windowName)
     {
-        CloseWindow(CDesktop.windows.Find(x => x.title == windowName));
+        return CloseWindow(CDesktop.windows.Find(x => x.title == windowName));
     }
 
-    public static void CloseWindow(Window window)
+    public static bool CloseWindow(Window window)
     {
-        if (window == null) return;
+        if (window == null) return false;
         CDesktop.windows.Remove(window);
         UnityEngine.Object.Destroy(window.gameObject);
+        return false;
     }
 
     public static void SetAnchor(Anchor anchor, Window magnet)

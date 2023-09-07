@@ -224,6 +224,10 @@ public class Blueprint
             AddButtonRegion(() =>
             {
                 AddLine("Return to title screen", "", "Center");
+            },
+            (h) =>
+            {
+
             });
         }, true),
         new("ConfirmDeleteCharacter", () => {
@@ -6560,8 +6564,8 @@ public class Blueprint
             {
                 CloseSave();
                 SaveGames();
-                saveGames.Remove(currentSave);
-                graveyard.Add(currentSave);
+                saves[settings.selectedRealm].Remove(currentSave);
+                //graveyard.Add(currentSave);
                 CloseDesktop("GameOver");
                 CloseDesktop("Map");
                 CloseDesktop("TitleScreen");
