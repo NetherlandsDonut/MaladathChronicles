@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 using UnityEngine;
@@ -17,7 +18,7 @@ public class Buff
 
     #region Execution
 
-    public void ExecuteEvents(Board board, FutureBoard futureBoard, Dictionary<string, string> trigger)
+    public void ExecuteEvents(Board board, FutureBoard futureBoard, Dictionary<string, string> trigger, (Buff, int, GameObject) entityBuff)
     {
         //In case of this buff having no events just return
         if (events == null) return;
@@ -88,7 +89,11 @@ public class Buff
                     else if (trigger["Trigger"] == "CombatBegin") execute = true;
                     else if (trigger["Trigger"] == "TurnBegin") execute = true;
                     else if (trigger["Trigger"] == "TurnEnd") execute = true;
-                    if (execute) eve.ExecuteEffects(board, futureBoard, icon, trigger);
+                    if (execute)
+                    {
+                        if (entityBuff.Item3 != null) board.actions.Add(() => { AddSmallButtonOverlay(entityBuff.Item3, "OtherGlowFull", 1, 5); });
+                        eve.ExecuteEffects(board, futureBoard, icon, trigger);
+                    }
                 }
     }
 

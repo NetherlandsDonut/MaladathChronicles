@@ -86,7 +86,7 @@ public class Board
         foreach (var ability in entity == player ? playerCombatAbilities : enemyCombatAbilities)
             ability.ExecuteEvents(board, null, trigger);
         foreach (var buff in entity.buffs)
-            buff.Item1.ExecuteEvents(board, null, trigger);
+            buff.Item1.ExecuteEvents(board, null, trigger, buff);
     }
 
     //ENDS THE CURRENT PLAYER'S TURN

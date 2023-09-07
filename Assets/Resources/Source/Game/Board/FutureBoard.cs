@@ -157,7 +157,7 @@ public class FutureBoard
         foreach (var ability in entity == player ? Board.board.playerCombatAbilities : Board.board.enemyCombatAbilities)
             ability.ExecuteEvents(null, board, triggerData);
         foreach (var buff in entity.buffs)
-            buff.Item1.ExecuteEvents(null, board, triggerData);
+            buff.Item1.ExecuteEvents(null, board, triggerData, (buff.Item1, buff.Item2, null));
     }
 
     public void EndTurn()
