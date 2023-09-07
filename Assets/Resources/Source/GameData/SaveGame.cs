@@ -13,7 +13,20 @@ public class SaveGame
     public Dictionary<string, int> siteProgress, commonsKilled, raresKilled, elitesKilled, factionStanding;
     public Dictionary<string, Inventory> banks;
     public DateTime startDate, lastLoaded, lastPlayed;
+    public DeathInfo deathInfo;
+    public bool playerDead;
     public TimeSpan timePlayed;
+
+    public void RevivePlayer()
+    {
+        if (!playerDead) return;
+        playerDead = false;
+        if (CDesktop.title == "MapDead")
+        {
+            CloseDesktop("MapDead");
+            SwitchDesktop("Map");
+        }
+    }
 
     public static void AddNewSave()
     {

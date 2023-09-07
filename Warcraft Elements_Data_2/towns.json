@@ -66,6 +66,12 @@
         "gender": "Female",
         "race": "Human",
         "type": "Portal Trainer"
+      },
+      {
+        "name": "Lady Hoteshem",
+        "gender": "Female",
+        "race": "Human",
+        "type": "Battlemaster"
       }
     ]
   },
@@ -261,6 +267,12 @@
         "gender": "Female",
         "race": "Human",
         "type": "Portal Trainer"
+      },
+      {
+        "name": "Rissa Shadeleaf",
+        "gender": "Female",
+        "race": "Night Elf",
+        "type": "Battlemaster"
       }
     ]
   },
@@ -524,6 +536,12 @@
         "gender": "Male",
         "race": "Gnome",
         "type": "Portal Trainer"
+      },
+      {
+        "name": "Glordrum Steelbeard",
+        "gender": "Male",
+        "race": "Dwarf",
+        "type": "Battlemaster"
       }
     ]
   },
@@ -677,6 +695,12 @@
         "gender": "Male",
         "race": "Troll",
         "type": "Portal Trainer"
+      },
+      {
+        "name": "Brakgul Deathbringer",
+        "gender": "Male",
+        "race": "Orc",
+        "type": "Battlemaster"
       }
     ]
   },
@@ -907,6 +931,12 @@
         "gender": "Female",
         "race": "Forsaken",
         "type": "Portal Trainer"
+      },
+      {
+        "name": "Taim Ragetotem",
+        "gender": "Male",
+        "race": "Tauren",
+        "type": "Battlemaster"
       }
     ]
   },
@@ -1042,6 +1072,12 @@
         "gender": "Male",
         "race": "Forsaken",
         "type": "Portal Trainer"
+      },
+      {
+        "name": "Sir Malory Wheeler",
+        "gender": "Male",
+        "race": "Tauren",
+        "type": "Battlemaster"
       }
     ]
   },
@@ -1251,5 +1287,20 @@
     "name": "Nesingwary's Expedition",
     "zone": "Stranglethorn Vale",
     "faction": "Neutral"
+  },
+  {
+    "x": 263,
+    "y": -229,
+    "name": "Gurubashi Arena",
+    "zone": "Stranglethorn Vale",
+    "faction": "Neutral",
+    "people": [
+      {
+        "name": "Short John Mithril",
+        "gender": "Male",
+        "race": "Goblin",
+        "type": "Arena Master"
+      }
+    ]
   }
 ]

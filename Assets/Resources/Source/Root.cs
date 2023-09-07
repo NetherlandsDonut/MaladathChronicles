@@ -136,6 +136,13 @@ public static class Root
         loadingScreenObjectLoadAim = loadSites.Count;
     }
 
+    public static void OrderLoadingMapDead()
+    {
+        loadSites = windowBlueprints.FindAll(x => x.title.StartsWith("SiteDead: "));
+        loadingScreenObjectLoad = 0;
+        loadingScreenObjectLoadAim = loadSites.Count;
+    }
+
     public static void SpawnTransition(float time = 0.1f)
     {
         var transition = new GameObject("CameraTransition", typeof(SpriteRenderer), typeof(Shatter));

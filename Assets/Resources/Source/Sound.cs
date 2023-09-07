@@ -13,6 +13,8 @@ public static class Sound
         soundEffects.PlayOneShot(temp, volume);
     }
 
+    //Plays new background ambience, in case of one already playing we queue them.
+    //Then application slowly lowers the volume of the current one and then softly starts the new one
     public static void PlayAmbience(string path, float volume = 0.5f, bool instant = false)
     {
         var temp = Resources.Load<AudioClip>("Ambience/" + path);

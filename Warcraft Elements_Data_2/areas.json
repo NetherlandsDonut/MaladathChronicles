@@ -10019,14 +10019,7 @@
     "y": -229,
     "name": "Gurubashi Arena",
     "zone": "Stranglethorn Vale",
-    "type": "HostileArea",
-    "commonEncounters": [
-      {
-        "who": "Dustbelcher Warrior",
-        "levelMin": 35,
-        "levelMax": 37
-      }
-    ]
+    "type": "HostileArea"
   },
   {
     "x": 269,

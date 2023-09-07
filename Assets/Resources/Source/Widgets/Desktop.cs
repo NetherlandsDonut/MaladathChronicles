@@ -65,9 +65,11 @@ public class Desktop : MonoBehaviour
 
     public void Start()
     {
-        if (CDesktop.name == "Desktop: TalentScreen")
+        if (CDesktop.title == "TalentScreen")
             screen.transform.localPosition = new Vector3(320, -140);
-        else if (CDesktop.name == "Desktop: Map")
+        else if (CDesktop.title == "Map")
+            screen.transform.localPosition = new Vector3(-1000, 1000);
+        else if (CDesktop.title == "MapDead")
             screen.transform.localPosition = new Vector3(-1000, 1000);
     }
 
@@ -190,6 +192,11 @@ public class Desktop : MonoBehaviour
                             PlaySound("DesktopInstanceOpen");
                             SpawnDesktopBlueprint("TownEntrance");
                             SwitchDesktop("TownEntrance");
+                        }
+                        else if (queuedSiteOpen == "SpiritHealer")
+                        {
+                            PlaySound("AbilityRessurection");
+                            currentSave.RevivePlayer();
                         }
                         queuedSiteOpen = "";
                     }

@@ -80,6 +80,9 @@ public class Starter : MonoBehaviour
         Deserialize(ref Buff.buffs, "buffs", false, prefix);
         Buff.buffs ??= new();
         Deserialize(ref Faction.factions, "factions", false, prefix);
+        Faction.factions ??= new();
+        Deserialize(ref SpiritHealer.spiritHealers, "spirithealers", false, prefix);
+        SpiritHealer.spiritHealers ??= new();
         #if (UNITY_EDITOR)
         var ambienceList = AssetDatabase.FindAssets("t:AudioClip Ambience", new[] { "Assets/Resources/Ambience/" }).Select(x => AssetDatabase.GUIDToAssetPath(x).Replace("Assets/Resources/Ambience/", "")).ToList();
         var soundList = AssetDatabase.FindAssets("t:AudioClip", new[] { "Assets/Resources/Sounds/" }).Select(x => AssetDatabase.GUIDToAssetPath(x).Replace("Assets/Resources/Sounds/", "")).ToList();
@@ -560,6 +563,12 @@ public class Starter : MonoBehaviour
             var index = i;
             if (SiteHostileArea.areas[index].x != 0)
                 Blueprint.windowBlueprints.Add(new Blueprint("Site: " + SiteHostileArea.areas[index].name, () => SiteHostileArea.areas[index].PrintSite()));
+        }
+        for (int i = 0; i < SpiritHealer.spiritHealers.Count; i++)
+        {
+            var index = i;
+            if (SpiritHealer.spiritHealers[index].x != 0)
+                Blueprint.windowBlueprints.Add(new Blueprint("SiteDead: " + SpiritHealer.spiritHealers[index].name, () => SpiritHealer.spiritHealers[index].PrintSite()));
         }
         for (int i = 0; i < instances.Count; i++)
         {

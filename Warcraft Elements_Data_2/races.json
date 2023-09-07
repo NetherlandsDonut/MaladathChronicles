@@ -39,6 +39,7 @@
     "kind": "Rare",
     "portrait": "PortraitParrot",
     "vitality": 2.0,
+    "faction": "Mosshide Tribe",
     "abilities": []
   },
   {
@@ -46,6 +47,7 @@
     "kind": "Common",
     "portrait": "PortraitChicken",
     "vitality": 1.0,
+    "faction": "Mosshide Tribe",
     "abilities": []
   },
   {
@@ -53,6 +55,7 @@
     "kind": "Common",
     "portrait": "PortraitChicken",
     "vitality": 1.0,
+    "faction": "Mosshide Tribe",
     "abilities": []
   },
   {
@@ -60,6 +63,7 @@
     "kind": "Common",
     "portrait": "PortraitChicken",
     "vitality": 1.0,
+    "faction": "Mosshide Tribe",
     "abilities": []
   },
   {
@@ -109,6 +113,7 @@
     "kind": "Common",
     "portrait": "PortraitChicken",
     "vitality": 1.0,
+    "faction": "Mosshide Tribe",
     "abilities": []
   },
   {
@@ -116,6 +121,7 @@
     "kind": "Common",
     "portrait": "PortraitChicken",
     "vitality": 1.0,
+    "faction": "Mosshide Tribe",
     "abilities": []
   },
   {
@@ -123,6 +129,7 @@
     "kind": "Common",
     "portrait": "PortraitChicken",
     "vitality": 1.0,
+    "faction": "Mosshide Tribe",
     "abilities": []
   },
   {
@@ -151,6 +158,7 @@
     "kind": "Common",
     "portrait": "PortraitChicken",
     "vitality": 1.0,
+    "faction": "Dark Iron Clan",
     "abilities": []
   },
   {
@@ -158,6 +166,7 @@
     "kind": "Rare",
     "portrait": "PortraitParrot",
     "vitality": 2.0,
+    "faction": "Dragonmaw Clan",
     "abilities": []
   },
   {
@@ -165,6 +174,7 @@
     "kind": "Common",
     "portrait": "PortraitChicken",
     "vitality": 1.0,
+    "faction": "Dragonmaw Clan",
     "abilities": []
   },
   {
@@ -172,6 +182,7 @@
     "kind": "Common",
     "portrait": "PortraitChicken",
     "vitality": 1.0,
+    "faction": "Dragonmaw Clan",
     "abilities": []
   },
   {
@@ -179,6 +190,7 @@
     "kind": "Elite",
     "portrait": "PortraitCow",
     "vitality": 3.0,
+    "faction": "Grim Batol",
     "abilities": []
   },
   {
@@ -186,6 +198,7 @@
     "kind": "Common",
     "portrait": "PortraitChicken",
     "vitality": 1.0,
+    "faction": "Grim Batol",
     "abilities": []
   },
   {
@@ -193,6 +206,7 @@
     "kind": "Common",
     "portrait": "PortraitChicken",
     "vitality": 1.0,
+    "faction": "Grim Batol",
     "abilities": []
   },
   {
@@ -200,6 +214,7 @@
     "kind": "Common",
     "portrait": "PortraitChicken",
     "vitality": 1.0,
+    "faction": "Grim Batol",
     "abilities": []
   },
   {
@@ -207,6 +222,7 @@
     "kind": "Common",
     "portrait": "PortraitChicken",
     "vitality": 1.0,
+    "faction": "Grim Batol",
     "abilities": []
   },
   {
@@ -214,6 +230,7 @@
     "kind": "Common",
     "portrait": "PortraitChicken",
     "vitality": 1.0,
+    "faction": "Dark Iron Clan",
     "abilities": []
   },
   {
@@ -221,6 +238,7 @@
     "kind": "Common",
     "portrait": "PortraitChicken",
     "vitality": 1.0,
+    "faction": "Dark Iron Clan",
     "abilities": []
   },
   {
@@ -228,6 +246,7 @@
     "kind": "Common",
     "portrait": "PortraitChicken",
     "vitality": 1.0,
+    "faction": "Dark Iron Clan",
     "abilities": []
   },
   {
@@ -284,6 +303,7 @@
     "kind": "Common",
     "portrait": "PortraitChicken",
     "vitality": 1.0,
+    "faction": "Dragonmaw Clan",
     "abilities": []
   },
   {
@@ -291,6 +311,7 @@
     "kind": "Common",
     "portrait": "PortraitChicken",
     "vitality": 1.0,
+    "faction": "Dragonmaw Clan",
     "abilities": []
   },
   {
@@ -298,6 +319,7 @@
     "kind": "Common",
     "portrait": "PortraitChicken",
     "vitality": 1.0,
+    "faction": "Dragonmaw Clan",
     "abilities": []
   },
   {
@@ -305,6 +327,7 @@
     "kind": "Common",
     "portrait": "PortraitChicken",
     "vitality": 1.0,
+    "faction": "Dragonmaw Clan",
     "abilities": []
   },
   {
@@ -319,6 +342,7 @@
     "kind": "Common",
     "portrait": "PortraitChicken",
     "vitality": 1.0,
+    "faction": "Scourge",
     "abilities": []
   },
   {
@@ -361,6 +385,7 @@
     "kind": "Elite",
     "portrait": "PortraitCow",
     "vitality": 3.0,
+    "faction": "Scourge",
     "abilities": []
   },
   {
@@ -368,6 +393,7 @@
     "kind": "Rare",
     "portrait": "PortraitParrot",
     "vitality": 2.0,
+    "faction": "Scourge",
     "abilities": []
   },
   {
@@ -375,6 +401,7 @@
     "kind": "Common",
     "portrait": "PortraitChicken",
     "vitality": 1.0,
+    "faction": "Scourge",
     "abilities": []
   },
   {
@@ -382,6 +409,7 @@
     "kind": "Common",
     "portrait": "PortraitChicken",
     "vitality": 1.0,
+    "faction": "Scourge",
     "abilities": []
   },
   {
@@ -389,6 +417,7 @@
     "kind": "Common",
     "portrait": "PortraitChicken",
     "vitality": 1.0,
+    "faction": "Scourge",
     "abilities": []
   },
   {
@@ -396,6 +425,7 @@
     "kind": "Common",
     "portrait": "PortraitChicken",
     "vitality": 1.0,
+    "faction": "Scourge",
     "abilities": []
   },
   {
@@ -403,6 +433,7 @@
     "kind": "Common",
     "portrait": "PortraitChicken",
     "vitality": 1.0,
+    "faction": "Scourge",
     "abilities": []
   },
   {
@@ -410,6 +441,7 @@
     "kind": "Rare",
     "portrait": "PortraitParrot",
     "vitality": 2.0,
+    "faction": "Scarlet Crusade",
     "abilities": []
   },
   {
@@ -417,6 +449,7 @@
     "kind": "Rare",
     "portrait": "PortraitParrot",
     "vitality": 2.0,
+    "faction": "Scarlet Crusade",
     "abilities": []
   },
   {
@@ -424,6 +457,7 @@
     "kind": "Common",
     "portrait": "PortraitChicken",
     "vitality": 1.0,
+    "faction": "Scarlet Crusade",
     "abilities": []
   },
   {
@@ -431,6 +465,7 @@
     "kind": "Common",
     "portrait": "PortraitChicken",
     "vitality": 1.0,
+    "faction": "Scarlet Crusade",
     "abilities": []
   },
   {
@@ -438,6 +473,7 @@
     "kind": "Common",
     "portrait": "PortraitChicken",
     "vitality": 1.0,
+    "faction": "Scourge",
     "abilities": []
   },
   {
@@ -445,6 +481,7 @@
     "kind": "Common",
     "portrait": "PortraitChicken",
     "vitality": 1.0,
+    "faction": "Scourge",
     "abilities": []
   },
   {
@@ -452,6 +489,7 @@
     "kind": "Common",
     "portrait": "PortraitChicken",
     "vitality": 1.0,
+    "faction": "Scourge",
     "abilities": []
   },
   {
@@ -459,6 +497,7 @@
     "kind": "Common",
     "portrait": "PortraitChicken",
     "vitality": 1.0,
+    "faction": "Scourge",
     "abilities": []
   },
   {
@@ -473,6 +512,7 @@
     "kind": "Common",
     "portrait": "PortraitChicken",
     "vitality": 1.0,
+    "faction": "Scourge",
     "abilities": []
   },
   {
@@ -480,6 +520,7 @@
     "kind": "Common",
     "portrait": "PortraitChicken",
     "vitality": 1.0,
+    "faction": "Scourge",
     "abilities": []
   },
   {
@@ -487,6 +528,7 @@
     "kind": "Common",
     "portrait": "PortraitChicken",
     "vitality": 1.0,
+    "faction": "Scourge",
     "abilities": []
   },
   {
@@ -494,6 +536,7 @@
     "kind": "Common",
     "portrait": "PortraitChicken",
     "vitality": 1.0,
+    "faction": "Scourge",
     "abilities": []
   },
   {
@@ -501,6 +544,7 @@
     "kind": "Common",
     "portrait": "PortraitChicken",
     "vitality": 1.0,
+    "faction": "Scourge",
     "abilities": []
   },
   {
@@ -508,6 +552,7 @@
     "kind": "Common",
     "portrait": "PortraitChicken",
     "vitality": 1.0,
+    "faction": "Scourge",
     "abilities": []
   },
   {
@@ -522,6 +567,7 @@
     "kind": "Common",
     "portrait": "PortraitChicken",
     "vitality": 1.0,
+    "faction": "Scourge",
     "abilities": []
   },
   {
@@ -529,6 +575,7 @@
     "kind": "Common",
     "portrait": "PortraitChicken",
     "vitality": 1.0,
+    "faction": "Scourge",
     "abilities": []
   },
   {
@@ -578,6 +625,7 @@
     "kind": "Common",
     "portrait": "PortraitChicken",
     "vitality": 1.0,
+    "faction": "Scourge",
     "abilities": []
   },
   {
@@ -606,6 +654,7 @@
     "kind": "Common",
     "portrait": "PortraitChicken",
     "vitality": 1.0,
+    "faction": "Scarlet Crusade",
     "abilities": []
   },
   {
@@ -613,6 +662,7 @@
     "kind": "Common",
     "portrait": "PortraitChicken",
     "vitality": 1.0,
+    "faction": "Scarlet Crusade",
     "abilities": []
   },
   {
@@ -620,6 +670,7 @@
     "kind": "Common",
     "portrait": "PortraitChicken",
     "vitality": 1.0,
+    "faction": "Scourge",
     "abilities": []
   },
   {
@@ -627,6 +678,7 @@
     "kind": "Common",
     "portrait": "PortraitChicken",
     "vitality": 1.0,
+    "faction": "Scourge",
     "abilities": []
   },
   {
@@ -641,6 +693,7 @@
     "kind": "Common",
     "portrait": "PortraitChicken",
     "vitality": 1.0,
+    "faction": "Scourge",
     "abilities": []
   },
   {
@@ -648,6 +701,7 @@
     "kind": "Common",
     "portrait": "PortraitChicken",
     "vitality": 1.0,
+    "faction": "Scourge",
     "abilities": []
   },
   {
@@ -655,6 +709,7 @@
     "kind": "Common",
     "portrait": "PortraitChicken",
     "vitality": 1.0,
+    "faction": "Scourge",
     "abilities": []
   },
   {
@@ -662,6 +717,7 @@
     "kind": "Rare",
     "portrait": "PortraitParrot",
     "vitality": 2.0,
+    "faction": "Scourge",
     "abilities": []
   },
   {
@@ -669,6 +725,7 @@
     "kind": "Common",
     "portrait": "PortraitChicken",
     "vitality": 1.0,
+    "faction": "Scourge",
     "abilities": []
   },
   {
@@ -676,6 +733,7 @@
     "kind": "Common",
     "portrait": "PortraitChicken",
     "vitality": 1.0,
+    "faction": "Scourge",
     "abilities": []
   },
   {
@@ -683,6 +741,7 @@
     "kind": "Common",
     "portrait": "PortraitChicken",
     "vitality": 1.0,
+    "faction": "Scourge",
     "abilities": []
   },
   {
@@ -690,6 +749,7 @@
     "kind": "Common",
     "portrait": "PortraitChicken",
     "vitality": 1.0,
+    "faction": "Scourge",
     "abilities": []
   },
   {
@@ -697,6 +757,7 @@
     "kind": "Elite",
     "portrait": "PortraitCow",
     "vitality": 3.0,
+    "faction": "Scourge",
     "abilities": []
   },
   {
@@ -704,6 +765,7 @@
     "kind": "Common",
     "portrait": "PortraitChicken",
     "vitality": 1.0,
+    "faction": "Scourge",
     "abilities": []
   },
   {
@@ -711,6 +773,7 @@
     "kind": "Common",
     "portrait": "PortraitChicken",
     "vitality": 1.0,
+    "faction": "Scourge",
     "abilities": []
   },
   {
@@ -823,6 +886,7 @@
     "kind": "Common",
     "portrait": "PortraitChicken",
     "vitality": 1.0,
+    "faction": "Scarlet Crusade",
     "abilities": []
   },
   {
@@ -830,6 +894,7 @@
     "kind": "Common",
     "portrait": "PortraitChicken",
     "vitality": 1.0,
+    "faction": "Scarlet Crusade",
     "abilities": []
   },
   {
@@ -837,6 +902,7 @@
     "kind": "Common",
     "portrait": "PortraitChicken",
     "vitality": 1.0,
+    "faction": "Scarlet Crusade",
     "abilities": []
   },
   {
@@ -844,6 +910,7 @@
     "kind": "Common",
     "portrait": "PortraitChicken",
     "vitality": 1.0,
+    "faction": "Scarlet Crusade",
     "abilities": []
   },
   {
@@ -851,6 +918,7 @@
     "kind": "Common",
     "portrait": "PortraitChicken",
     "vitality": 1.0,
+    "faction": "Scarlet Crusade",
     "abilities": []
   },
   {
@@ -858,6 +926,7 @@
     "kind": "Common",
     "portrait": "PortraitChicken",
     "vitality": 1.0,
+    "faction": "Scarlet Crusade",
     "abilities": []
   },
   {
@@ -1324,9 +1393,9 @@
   },
   {
     "name": "Alzzin the Wildshaper",
-    "kind": "Common",
+    "kind": "Elite",
     "portrait": "PortraitSatyrBlue",
-    "vitality": 1.0,
+    "vitality": 3.0,
     "abilities": []
   },
   {
@@ -1348,6 +1417,7 @@
     "kind": "Elite",
     "portrait": "PortraitLich",
     "vitality": 1.0,
+    "faction": "Scourge",
     "abilities": []
   },
   {
@@ -1368,7 +1438,7 @@
     "name": "Ancient Stone Keeper",
     "kind": "Elite",
     "portrait": "PortraitGolem",
-    "vitality": 1.0,
+    "vitality": 3.0,
     "abilities": []
   },
   {
@@ -1383,6 +1453,7 @@
     "kind": "Common",
     "portrait": "PortraitBanshee",
     "vitality": 1.0,
+    "faction": "Scourge",
     "abilities": []
   },
   {
@@ -1418,6 +1489,7 @@
     "kind": "Elite",
     "portrait": "PortraitCryptFiend",
     "vitality": 1.0,
+    "faction": "Scourge",
     "abilities": []
   },
   {
@@ -1466,7 +1538,7 @@
     "name": "Archaedas",
     "kind": "Elite",
     "portrait": "PortraitStoneWatcher",
-    "vitality": 1.0,
+    "vitality": 3.0,
     "abilities": []
   },
   {
@@ -1530,6 +1602,7 @@
     "kind": "Elite",
     "portrait": "PortraitWaspQueenRed",
     "vitality": 1.0,
+    "faction": "Qiraji Empire",
     "abilities": []
   },
   {
@@ -1537,6 +1610,7 @@
     "kind": "Common",
     "portrait": "PortraitDarkIronRuffian",
     "vitality": 1.0,
+    "faction": "Dark Iron Clan",
     "abilities": []
   },
   {
@@ -1544,6 +1618,7 @@
     "kind": "Common",
     "portrait": "PortraitDarkIronWarrior",
     "vitality": 1.0,
+    "faction": "Dark Iron Clan",
     "abilities": []
   },
   {
@@ -1551,6 +1626,7 @@
     "kind": "Common",
     "portrait": "PortraitDarkIronOfficer",
     "vitality": 1.0,
+    "faction": "Dark Iron Clan",
     "abilities": []
   },
   {
@@ -1558,6 +1634,7 @@
     "kind": "Common",
     "portrait": "PortraitDarkIronRifleman",
     "vitality": 1.0,
+    "faction": "Dark Iron Clan",
     "abilities": []
   },
   {
@@ -1565,6 +1642,7 @@
     "kind": "Common",
     "portrait": "PortraitDarkIronDragoon",
     "vitality": 1.0,
+    "faction": "Dark Iron Clan",
     "abilities": []
   },
   {
@@ -1578,7 +1656,8 @@
     "name": "Balnazzar",
     "kind": "Elite",
     "portrait": "PortraitNatherezim",
-    "vitality": 1.0,
+    "vitality": 3.0,
+    "faction": "Scourge",
     "abilities": []
   },
   {
@@ -1614,6 +1693,7 @@
     "kind": "Elite",
     "portrait": "PortraitDeathKnightThirdWar",
     "vitality": 3.0,
+    "faction": "Scourge",
     "abilities": []
   },
   {
@@ -1627,7 +1707,8 @@
     "name": "Battleguard Sartura",
     "kind": "Elite",
     "portrait": "PortraitQirajiFemale",
-    "vitality": 1.0,
+    "vitality": 3.0,
+    "faction": "Qiraji Empire",
     "abilities": []
   },
   {
@@ -1677,6 +1758,7 @@
     "kind": "Common",
     "portrait": "PortraitBlackhandAssassin",
     "vitality": 1.0,
+    "faction": "Blackrock Clan",
     "abilities": []
   },
   {
@@ -1684,6 +1766,7 @@
     "kind": "Common",
     "portrait": "PortraitBlackhandDreadweaver",
     "vitality": 1.0,
+    "faction": "Blackrock Clan",
     "abilities": []
   },
   {
@@ -1691,6 +1774,7 @@
     "kind": "Common",
     "portrait": "PortraitBlackhandElite",
     "vitality": 1.0,
+    "faction": "Blackrock Clan",
     "abilities": []
   },
   {
@@ -1698,6 +1782,7 @@
     "kind": "Common",
     "portrait": "PortraitBlackhandIncarcerator",
     "vitality": 1.0,
+    "faction": "Blackrock Clan",
     "abilities": []
   },
   {
@@ -1705,6 +1790,7 @@
     "kind": "Common",
     "portrait": "PortraitBlackhandIronGuard",
     "vitality": 1.0,
+    "faction": "Blackrock Clan",
     "abilities": []
   },
   {
@@ -1712,6 +1798,7 @@
     "kind": "Common",
     "portrait": "PortraitBloodaxeSummoner",
     "vitality": 1.0,
+    "faction": "Blackrock Clan",
     "abilities": []
   },
   {
@@ -1719,6 +1806,7 @@
     "kind": "Common",
     "portrait": "PortraitBloodaxeVeteran",
     "vitality": 1.0,
+    "faction": "Blackrock Clan",
     "abilities": []
   },
   {
@@ -1786,6 +1874,7 @@
     "kind": "Elite",
     "portrait": "PortraitCow",
     "vitality": 3.0,
+    "faction": "Scourge",
     "abilities": []
   },
   {
@@ -1793,6 +1882,7 @@
     "kind": "Common",
     "portrait": "PortraitBloodaxeEvoker",
     "vitality": 1.0,
+    "faction": "Blackrock Clan",
     "abilities": []
   },
   {
@@ -1800,6 +1890,7 @@
     "kind": "Common",
     "portrait": "PortraitBloodaxeSummoner",
     "vitality": 1.0,
+    "faction": "Blackrock Clan",
     "abilities": []
   },
   {
@@ -1807,6 +1898,7 @@
     "kind": "Common",
     "portrait": "PortraitBloodaxeVeteran",
     "vitality": 1.0,
+    "faction": "Blackrock Clan",
     "abilities": []
   },
   {
@@ -1814,6 +1906,7 @@
     "kind": "Common",
     "portrait": "PortraitBloodaxeWarmonger",
     "vitality": 1.0,
+    "faction": "Blackrock Clan",
     "abilities": []
   },
   {
@@ -1828,6 +1921,7 @@
     "kind": "Elite",
     "portrait": "PortraitMandokir",
     "vitality": 3.0,
+    "faction": "Gurubashi Tribe",
     "abilities": []
   },
   {
@@ -1835,6 +1929,7 @@
     "kind": "Elite",
     "portrait": "PortraitSkeletalMage",
     "vitality": 1.0,
+    "faction": "Scourge",
     "abilities": []
   },
   {
@@ -1884,6 +1979,7 @@
     "kind": "Common",
     "portrait": "PortraitQuilboarFemale",
     "vitality": 1.0,
+    "faction": "Bristleback Tribe",
     "abilities": []
   },
   {
@@ -1891,6 +1987,7 @@
     "kind": "Common",
     "portrait": "PortraitQuilboarMale",
     "vitality": 1.0,
+    "faction": "Bristleback Tribe",
     "abilities": []
   },
   {
@@ -1898,6 +1995,7 @@
     "kind": "Common",
     "portrait": "PortraitQuilboarFemaleAlternate",
     "vitality": 1.0,
+    "faction": "Bristleback Tribe",
     "abilities": []
   },
   {
@@ -1905,6 +2003,7 @@
     "kind": "Common",
     "portrait": "PortraitQuilboarMale",
     "vitality": 1.0,
+    "faction": "Bristleback Tribe",
     "abilities": []
   },
   {
@@ -1926,6 +2025,7 @@
     "kind": "Common",
     "portrait": "PortraitBurningBladeCultist",
     "vitality": 1.0,
+    "faction": "Burning Blade Clan",
     "abilities": []
   },
   {
@@ -1933,6 +2033,7 @@
     "kind": "Common",
     "portrait": "PortraitBurningBladeCultist",
     "vitality": 1.0,
+    "faction": "Burning Blade Clan",
     "abilities": []
   },
   {
@@ -1940,6 +2041,7 @@
     "kind": "Common",
     "portrait": "PortraitBurningBladeCultist",
     "vitality": 1.0,
+    "faction": "Burning Blade Clan",
     "abilities": []
   },
   {
@@ -1947,6 +2049,7 @@
     "kind": "Common",
     "portrait": "PortraitBurningBladeCultist",
     "vitality": 1.0,
+    "faction": "Burning Blade Clan",
     "abilities": []
   },
   {
@@ -1954,6 +2057,7 @@
     "kind": "Common",
     "portrait": "PortraitBurningBladeCultist",
     "vitality": 1.0,
+    "faction": "Burning Blade Clan",
     "abilities": []
   },
   {
@@ -1968,6 +2072,7 @@
     "kind": "Common",
     "portrait": "PortraitGhoulWhite",
     "vitality": 1.0,
+    "faction": "Scourge",
     "abilities": [
       "Corruption",
       "Curse of Agony"
@@ -1984,7 +2089,7 @@
   {
     "name": "Captain Fairmount",
     "kind": "Elite",
-    "portrait": "PortraitGoblin",
+    "portrait": "PortraitScarletAdept",
     "vitality": 3.0,
     "abilities": []
   },
@@ -1993,6 +2098,7 @@
     "kind": "Elite",
     "portrait": "PortraitGoblin",
     "vitality": 3.0,
+    "faction": "Defias Brotherhood",
     "abilities": []
   },
   {
@@ -2077,6 +2183,7 @@
     "kind": "Elite",
     "portrait": "PortraitQuilboarFemaleAlternate",
     "vitality": 3.0,
+    "faction": "Razorfen Tribe",
     "abilities": []
   },
   {
@@ -2084,6 +2191,7 @@
     "kind": "Elite",
     "portrait": "PortraitChiefUkorz",
     "vitality": 2.2,
+    "faction": "Sandfury Tribe",
     "abilities": [
       "Frostbolt",
       "Scorch"
@@ -2268,6 +2376,7 @@
     "kind": "Common",
     "portrait": "PortraitCryptFiend",
     "vitality": 1.1,
+    "faction": "Scourge",
     "abilities": [
       "Venomous Bite",
       "Withering Cloud",
@@ -2280,6 +2389,7 @@
     "kind": "Common",
     "portrait": "PortraitCryptFiend",
     "vitality": 1.1,
+    "faction": "Scourge",
     "abilities": [
       "Venomous Bite",
       "Withering Cloud",
@@ -2331,6 +2441,7 @@
     "kind": "Rare",
     "portrait": "PortraitDarkIronAmbassador",
     "vitality": 2.0,
+    "faction": "Dark Iron Clan",
     "abilities": []
   },
   {
@@ -2338,6 +2449,7 @@
     "kind": "Common",
     "portrait": "PortraitDarkIronDarkweaver",
     "vitality": 1.0,
+    "faction": "Dark Iron Clan",
     "abilities": []
   },
   {
@@ -2345,6 +2457,7 @@
     "kind": "Common",
     "portrait": "PortraitDarkIronRifleman",
     "vitality": 1.0,
+    "faction": "Dark Iron Clan",
     "abilities": []
   },
   {
@@ -2352,6 +2465,7 @@
     "kind": "Common",
     "portrait": "PortraitDarkIronSteamsmith",
     "vitality": 1.0,
+    "faction": "Dark Iron Clan",
     "abilities": []
   },
   {
@@ -2359,6 +2473,7 @@
     "kind": "Common",
     "portrait": "PortraitDarkIronWarrior",
     "vitality": 1.0,
+    "faction": "Dark Iron Clan",
     "abilities": []
   },
   {
@@ -2366,6 +2481,7 @@
     "kind": "Common",
     "portrait": "PortraitDarkIronAgent",
     "vitality": 1.0,
+    "faction": "Dark Iron Clan",
     "abilities": []
   },
   {
@@ -2373,6 +2489,7 @@
     "kind": "Common",
     "portrait": "PortraitScarletConjuror",
     "vitality": 1.0,
+    "faction": "Scourge",
     "abilities": [
       "Corruption",
       "Curse of Agony"
@@ -2384,6 +2501,7 @@
     "kind": "Elite",
     "portrait": "PortraitDarkmasterGandling",
     "vitality": 3.0,
+    "faction": "Scourge",
     "abilities": []
   },
   {
@@ -2398,6 +2516,7 @@
     "kind": "Common",
     "portrait": "PortraitScarletTorturer",
     "vitality": 0.9,
+    "faction": "Scourge",
     "abilities": [
       "Corruption",
       "Curse of Agony"
@@ -2458,6 +2577,7 @@
     "kind": "Common",
     "portrait": "PortraitDefiasMessenger",
     "vitality": 1.0,
+    "faction": "Defias Brotherhood",
     "abilities": []
   },
   {
@@ -2465,6 +2585,7 @@
     "kind": "Common",
     "portrait": "PortraitDefiasMessenger",
     "vitality": 1.0,
+    "faction": "Defias Brotherhood",
     "abilities": []
   },
   {
@@ -2472,6 +2593,7 @@
     "kind": "Common",
     "portrait": "PortraitDefiasMessenger",
     "vitality": 1.0,
+    "faction": "Defias Brotherhood",
     "abilities": []
   },
   {
@@ -2479,6 +2601,7 @@
     "kind": "Common",
     "portrait": "PortraitDefiasMessenger",
     "vitality": 1.0,
+    "faction": "Defias Brotherhood",
     "abilities": []
   },
   {
@@ -2486,6 +2609,7 @@
     "kind": "Common",
     "portrait": "PortraitDefiasMessenger",
     "vitality": 1.0,
+    "faction": "Defias Brotherhood",
     "abilities": []
   },
   {
@@ -2493,6 +2617,7 @@
     "kind": "Common",
     "portrait": "PortraitDefiasMessenger",
     "vitality": 1.0,
+    "faction": "Defias Brotherhood",
     "abilities": []
   },
   {
@@ -2500,6 +2625,7 @@
     "kind": "Common",
     "portrait": "PortraitDefiasMessenger",
     "vitality": 1.0,
+    "faction": "Defias Brotherhood",
     "abilities": []
   },
   {
@@ -2507,6 +2633,7 @@
     "kind": "Common",
     "portrait": "PortraitDefiasMessenger",
     "vitality": 1.0,
+    "faction": "Defias Brotherhood",
     "abilities": []
   },
   {
@@ -2514,6 +2641,7 @@
     "kind": "Common",
     "portrait": "PortraitDefiasMessenger",
     "vitality": 1.0,
+    "faction": "Defias Brotherhood",
     "abilities": []
   },
   {
@@ -2521,6 +2649,7 @@
     "kind": "Common",
     "portrait": "PortraitDefiasMessenger",
     "vitality": 1.0,
+    "faction": "Defias Brotherhood",
     "abilities": []
   },
   {
@@ -2625,14 +2754,16 @@
     "name": "Digger Flameforge",
     "kind": "Rare",
     "portrait": "PortraitDarkIronTunneler",
-    "vitality": 1.0,
+    "vitality": 2.0,
+    "faction": "Dark Iron Clan",
     "abilities": []
   },
   {
     "name": "Doctor Theolen Krastinov",
     "kind": "Elite",
     "portrait": "PortraitMadScientist",
-    "vitality": 1.0,
+    "vitality": 3.0,
+    "faction": "Scourge",
     "abilities": []
   },
   {
@@ -2640,6 +2771,7 @@
     "kind": "Common",
     "portrait": "PortraitDoomguard",
     "vitality": 1.0,
+    "faction": "The Burning Legion",
     "abilities": []
   },
   {
@@ -2968,14 +3100,15 @@
     "name": "Ebonroc",
     "kind": "Elite",
     "portrait": "PortraitBlackDrake",
-    "vitality": 1.0,
+    "vitality": 3.0,
     "abilities": []
   },
   {
     "name": "Edwin VanCleef",
     "kind": "Common",
     "portrait": "PortraitEdwin",
-    "vitality": 1.0,
+    "vitality": 3.0,
+    "faction": "Defias Brotherhood",
     "abilities": []
   },
   {
@@ -3088,7 +3221,8 @@
     "name": "Emperor Dagran Thaurissan",
     "kind": "Elite",
     "portrait": "PortraitDagranThaurissan",
-    "vitality": 1.0,
+    "vitality": 3.0,
+    "faction": "Dark Iron Clan",
     "abilities": []
   },
   {
@@ -3124,6 +3258,7 @@
     "kind": "Elite",
     "portrait": "PortraitSandReaver",
     "vitality": 1.0,
+    "faction": "Qiraji Empire",
     "abilities": []
   },
   {
@@ -3138,6 +3273,7 @@
     "kind": "Common",
     "portrait": "PortraitFelhunter",
     "vitality": 1.0,
+    "faction": "The Burning Legion",
     "abilities": []
   },
   {
@@ -3145,6 +3281,7 @@
     "kind": "Common",
     "portrait": "PortraitFelGuard",
     "vitality": 1.0,
+    "faction": "The Burning Legion",
     "abilities": []
   },
   {
@@ -3152,6 +3289,7 @@
     "kind": "Elite",
     "portrait": "PortraitFineousDarkvire",
     "vitality": 3.0,
+    "faction": "Dark Iron Clan",
     "abilities": []
   },
   {
@@ -3179,7 +3317,7 @@
     "name": "Firemaw",
     "kind": "Elite",
     "portrait": "PortraitBlackDrake",
-    "vitality": 1.0,
+    "vitality": 3.0,
     "abilities": []
   },
   {
@@ -3325,6 +3463,7 @@
     "kind": "Common",
     "portrait": "PortraitFrostTrollNovice",
     "vitality": 1.0,
+    "faction": "Frostmane Tribe",
     "abilities": []
   },
   {
@@ -3332,6 +3471,7 @@
     "kind": "Common",
     "portrait": "PortraitFrostTroll",
     "vitality": 1.0,
+    "faction": "Frostmane Tribe",
     "abilities": []
   },
   {
@@ -3339,6 +3479,7 @@
     "kind": "Common",
     "portrait": "PortraitFrostTrollSeer",
     "vitality": 1.0,
+    "faction": "Frostmane Tribe",
     "abilities": []
   },
   {
@@ -3346,6 +3487,7 @@
     "kind": "Common",
     "portrait": "PortraitFrostTrollSeer",
     "vitality": 1.0,
+    "faction": "Frostmane Tribe",
     "abilities": []
   },
   {
@@ -3353,6 +3495,7 @@
     "kind": "Common",
     "portrait": "PortraitFrostTroll",
     "vitality": 1.0,
+    "faction": "Frostmane Tribe",
     "abilities": []
   },
   {
@@ -3388,6 +3531,7 @@
     "kind": "Elite",
     "portrait": "PortraitHydraGreen",
     "vitality": 3.0,
+    "faction": "Gurubashi Tribe",
     "abilities": []
   },
   {
@@ -3395,6 +3539,7 @@
     "kind": "Elite",
     "portrait": "PortraitHydraWhite",
     "vitality": 3.0,
+    "faction": "Sandfury Tribe",
     "abilities": []
   },
   {
@@ -3402,13 +3547,14 @@
     "kind": "Elite",
     "portrait": "PortraitDarkIronFlameKeeper",
     "vitality": 3.0,
+    "faction": "Dark Iron Clan",
     "abilities": []
   },
   {
     "name": "Garr",
     "kind": "Elite",
     "portrait": "PortraitLavaElemental",
-    "vitality": 1.0,
+    "vitality": 3.0,
     "abilities": []
   },
   {
@@ -3422,7 +3568,7 @@
     "name": "Gehennas",
     "kind": "Elite",
     "portrait": "PortraitFlamewaker",
-    "vitality": 1.0,
+    "vitality": 3.0,
     "abilities": []
   },
   {
@@ -3437,6 +3583,7 @@
     "kind": "Elite",
     "portrait": "PortraitGeneralAngerforge",
     "vitality": 3.0,
+    "faction": "Dark Iron Clan",
     "abilities": []
   },
   {
@@ -3458,6 +3605,7 @@
     "kind": "Elite",
     "portrait": "PortraitQirajiGeneral",
     "vitality": 3.0,
+    "faction": "Qiraji Empire",
     "abilities": []
   },
   {
@@ -3817,6 +3965,7 @@
     "kind": "Common",
     "portrait": "PortraitGrimtotemGeomancer",
     "vitality": 1.0,
+    "faction": "Grimtotem Tribe",
     "abilities": []
   },
   {
@@ -3824,6 +3973,7 @@
     "kind": "Common",
     "portrait": "PortraitGrimtotemReaver",
     "vitality": 1.0,
+    "faction": "Grimtotem Tribe",
     "abilities": []
   },
   {
@@ -3831,6 +3981,7 @@
     "kind": "Common",
     "portrait": "PortraitGrimtotemGeomancer",
     "vitality": 1.0,
+    "faction": "Grimtotem Tribe",
     "abilities": []
   },
   {
@@ -3894,6 +4045,7 @@
     "kind": "Common",
     "portrait": "PortraitGurubashiAxeThrower",
     "vitality": 1.0,
+    "faction": "Gurubashi Tribe",
     "abilities": []
   },
   {
@@ -3901,6 +4053,7 @@
     "kind": "Common",
     "portrait": "PortraitGurubashiBatRider",
     "vitality": 1.0,
+    "faction": "Gurubashi Tribe",
     "abilities": []
   },
   {
@@ -3908,6 +4061,7 @@
     "kind": "Common",
     "portrait": "PortraitDireTrollBlue",
     "vitality": 1.0,
+    "faction": "Gurubashi Tribe",
     "abilities": []
   },
   {
@@ -3915,6 +4069,7 @@
     "kind": "Common",
     "portrait": "PortraitGurubashiBloodDrinker",
     "vitality": 1.0,
+    "faction": "Gurubashi Tribe",
     "abilities": []
   },
   {
@@ -3922,6 +4077,7 @@
     "kind": "Common",
     "portrait": "PortraitGurubashiChampion",
     "vitality": 1.0,
+    "faction": "Gurubashi Tribe",
     "abilities": []
   },
   {
@@ -3929,6 +4085,7 @@
     "kind": "Common",
     "portrait": "PortraitGurubashiHeadhunter",
     "vitality": 1.0,
+    "faction": "Gurubashi Tribe",
     "abilities": []
   },
   {
@@ -4118,6 +4275,7 @@
     "kind": "Common",
     "portrait": "PortraitSayaad",
     "vitality": 1.0,
+    "faction": "The Burning Legion",
     "abilities": []
   },
   {
@@ -4125,6 +4283,7 @@
     "kind": "Common",
     "portrait": "PortraitFelhunter",
     "vitality": 1.0,
+    "faction": "The Burning Legion",
     "abilities": []
   },
   {
@@ -4132,13 +4291,14 @@
     "kind": "Common",
     "portrait": "PortraitFelGuard",
     "vitality": 1.0,
+    "faction": "The Burning Legion",
     "abilities": []
   },
   {
     "name": "Hedrum the Creeper",
     "kind": "Elite",
     "portrait": "PortraitSpiderCrystal",
-    "vitality": 1.0,
+    "vitality": 3.0,
     "abilities": []
   },
   {
@@ -4152,7 +4312,8 @@
     "name": "Herod",
     "kind": "Elite",
     "portrait": "PortraitScarletChampion",
-    "vitality": 1.0,
+    "vitality": 3.0,
+    "faction": "Scarlet Crusade",
     "abilities": []
   },
   {
@@ -4167,13 +4328,15 @@
     "kind": "Elite",
     "portrait": "PortraitFurbolgWhite",
     "vitality": 3.0,
+    "faction": "Winterfall Tribe",
     "abilities": []
   },
   {
     "name": "High Inquisitor Whitemane",
     "kind": "Elite",
     "portrait": "PortraitWhitemane",
-    "vitality": 1.0,
+    "vitality": 3.0,
+    "faction": "Scarlet Crusade",
     "abilities": []
   },
   {
@@ -4181,6 +4344,7 @@
     "kind": "Elite",
     "portrait": "PortraitInterrogatorGestahn",
     "vitality": 3.0,
+    "faction": "Dark Iron Clan",
     "abilities": []
   },
   {
@@ -4188,6 +4352,7 @@
     "kind": "Elite",
     "portrait": "PortraitPriestThekal",
     "vitality": 3.0,
+    "faction": "Gurubashi Tribe",
     "abilities": []
   },
   {
@@ -4195,6 +4360,7 @@
     "kind": "Elite",
     "portrait": "PortraitPriestVenoxis",
     "vitality": 3.0,
+    "faction": "Gurubashi Tribe",
     "abilities": []
   },
   {
@@ -4202,6 +4368,7 @@
     "kind": "Elite",
     "portrait": "PortraitPriestessArlokk",
     "vitality": 3.0,
+    "faction": "Gurubashi Tribe",
     "abilities": []
   },
   {
@@ -4209,6 +4376,7 @@
     "kind": "Elite",
     "portrait": "PortraitPriestessJeklik",
     "vitality": 3.0,
+    "faction": "Gurubashi Tribe",
     "abilities": []
   },
   {
@@ -4216,6 +4384,7 @@
     "kind": "Elite",
     "portrait": "PortraitPriestessMarli",
     "vitality": 3.0,
+    "faction": "Gurubashi Tribe",
     "abilities": []
   },
   {
@@ -4508,6 +4677,7 @@
     "kind": "Elite",
     "portrait": "PortraitHydromancerVelratha",
     "vitality": 3.0,
+    "faction": "Sandfury Tribe",
     "abilities": []
   },
   {
@@ -4683,6 +4853,7 @@
     "kind": "Common",
     "portrait": "PortraitBurningBladeCultist",
     "vitality": 1.0,
+    "faction": "Shadow Council",
     "abilities": []
   },
   {
@@ -4690,6 +4861,7 @@
     "kind": "Common",
     "portrait": "PortraitBurningBladeCultist",
     "vitality": 1.0,
+    "faction": "Shadow Council",
     "abilities": []
   },
   {
@@ -4697,6 +4869,7 @@
     "kind": "Common",
     "portrait": "PortraitFelhunter",
     "vitality": 1.0,
+    "faction": "Shadow Council",
     "abilities": []
   },
   {
@@ -4704,6 +4877,7 @@
     "kind": "Common",
     "portrait": "PortraitFelGuard",
     "vitality": 1.0,
+    "faction": "Shadow Council",
     "abilities": []
   },
   {
@@ -4711,6 +4885,7 @@
     "kind": "Common",
     "portrait": "PortraitSayaad",
     "vitality": 1.0,
+    "faction": "Shadow Council",
     "abilities": []
   },
   {
@@ -4718,6 +4893,7 @@
     "kind": "Common",
     "portrait": "PortraitBurningBladeCultist",
     "vitality": 1.0,
+    "faction": "Shadow Council",
     "abilities": []
   },
   {
@@ -4739,6 +4915,7 @@
     "kind": "Elite",
     "portrait": "PortraitJindo",
     "vitality": 3.0,
+    "faction": "Gurubashi Tribe",
     "abilities": []
   },
   {
@@ -4781,13 +4958,15 @@
     "kind": "Elite",
     "portrait": "PortraitFelhunter",
     "vitality": 3.0,
+    "faction": "The Burning Legion",
     "abilities": []
   },
   {
     "name": "Kirtonos the Herald",
     "kind": "Elite",
     "portrait": "PortraitGargoyle",
-    "vitality": 1.0,
+    "vitality": 3.0,
+    "faction": "Scourge",
     "abilities": []
   },
   {
@@ -4805,6 +4984,7 @@
     "kind": "Common",
     "portrait": "PortraitCentaurMale",
     "vitality": 1.0,
+    "faction": "Kolkar Clan",
     "abilities": []
   },
   {
@@ -4812,6 +4992,7 @@
     "kind": "Common",
     "portrait": "PortraitCentaurMale",
     "vitality": 1.0,
+    "faction": "Kolkar Clan",
     "abilities": []
   },
   {
@@ -4819,6 +5000,7 @@
     "kind": "Common",
     "portrait": "PortraitCentaurMale",
     "vitality": 1.0,
+    "faction": "Kolkar Clan",
     "abilities": []
   },
   {
@@ -4826,6 +5008,7 @@
     "kind": "Common",
     "portrait": "PortraitCentaurMale",
     "vitality": 1.0,
+    "faction": "Kolkar Clan",
     "abilities": []
   },
   {
@@ -4833,6 +5016,7 @@
     "kind": "Common",
     "portrait": "PortraitCentaurFemale",
     "vitality": 1.0,
+    "faction": "Kolkar Clan",
     "abilities": []
   },
   {
@@ -4840,6 +5024,7 @@
     "kind": "Common",
     "portrait": "PortraitCentaurMale",
     "vitality": 1.0,
+    "faction": "Kolkar Clan",
     "abilities": []
   },
   {
@@ -4889,6 +5074,7 @@
     "kind": "Elite",
     "portrait": "PortraitSandReaver",
     "vitality": 1.0,
+    "faction": "Qiraji Empire",
     "abilities": []
   },
   {
@@ -5019,6 +5205,7 @@
     "kind": "Elite",
     "portrait": "PortraitLordAlexeiBarov",
     "vitality": 3.0,
+    "faction": "Scourge",
     "abilities": []
   },
   {
@@ -5026,6 +5213,7 @@
     "kind": "Elite",
     "portrait": "PortraitNatherezim",
     "vitality": 1.0,
+    "faction": "Shadow Council",
     "abilities": []
   },
   {
@@ -5047,6 +5235,7 @@
     "kind": "Elite",
     "portrait": "PortraitDoomguard",
     "vitality": 6.0,
+    "faction": "The Burning Legion",
     "abilities": []
   },
   {
@@ -5104,6 +5293,7 @@
     "kind": "Elite",
     "portrait": "PortraitZombie",
     "vitality": 1.0,
+    "faction": "Scourge",
     "abilities": []
   },
   {
@@ -5194,7 +5384,8 @@
     "name": "Malor the Zealous",
     "kind": "Elite",
     "portrait": "PortraitMalor",
-    "vitality": 1.0,
+    "vitality": 3.0,
+    "faction": "Scarlet Crusade",
     "abilities": []
   },
   {
@@ -5243,14 +5434,15 @@
     "name": "Miner Johnson",
     "kind": "Rare",
     "portrait": "PortraitDefiasMessenger",
-    "vitality": 1.0,
+    "vitality": 2.0,
     "abilities": []
   },
   {
     "name": "Moam",
     "kind": "Elite",
     "portrait": "PortraitObsidianDestroyer",
-    "vitality": 1.0,
+    "vitality": 3.0,
+    "faction": "Qiraji Empire",
     "abilities": []
   },
   {
@@ -5293,6 +5485,7 @@
     "kind": "Elite",
     "portrait": "PortraitSkeleton",
     "vitality": 3.0,
+    "faction": "Scourge",
     "abilities": []
   },
   {
@@ -5327,7 +5520,8 @@
     "name": "Mr. Smite",
     "kind": "Elite",
     "portrait": "PortraitTaurenMale",
-    "vitality": 1.0,
+    "vitality": 2.0,
+    "faction": "Defias Brotherhood",
     "abilities": []
   },
   {
@@ -5363,6 +5557,7 @@
     "kind": "Common",
     "portrait": "PortraitNecromancer",
     "vitality": 0.9,
+    "faction": "Scourge",
     "abilities": [
       "Corruption",
       "Curse of Agony"
@@ -5403,6 +5598,7 @@
     "kind": "Elite",
     "portrait": "PortraitCryptFiend",
     "vitality": 1.0,
+    "faction": "Scourge",
     "abilities": []
   },
   {
@@ -5524,6 +5720,7 @@
     "kind": "Common",
     "portrait": "PortraitObsidianDestroyer",
     "vitality": 1.0,
+    "faction": "Qiraji Empire",
     "abilities": []
   },
   {
@@ -5531,6 +5728,7 @@
     "kind": "Common",
     "portrait": "PortraitObsidianDestroyer",
     "vitality": 1.0,
+    "faction": "Qiraji Empire",
     "abilities": []
   },
   {
@@ -5538,6 +5736,7 @@
     "kind": "Common",
     "portrait": "PortraitObsidianDestroyer",
     "vitality": 1.0,
+    "faction": "Qiraji Empire",
     "abilities": []
   },
   {
@@ -5545,6 +5744,7 @@
     "kind": "Elite",
     "portrait": "PortraitGolemDark",
     "vitality": 3.0,
+    "faction": "Dark Iron Clan",
     "abilities": []
   },
   {
@@ -5662,6 +5862,7 @@
     "kind": "Elite",
     "portrait": "PortraitOssirian",
     "vitality": 4.0,
+    "faction": "Qiraji Empire",
     "abilities": []
   },
   {
@@ -5751,6 +5952,7 @@
     "kind": "Elite",
     "portrait": "PortraitGolemOrange",
     "vitality": 1.0,
+    "faction": "Dark Iron Clan",
     "abilities": []
   },
   {
@@ -5779,6 +5981,7 @@
     "kind": "Common",
     "portrait": "PortraitNoxiousElemental",
     "vitality": 1.0,
+    "faction": "Scourge",
     "abilities": [
       "Corruption",
       "Curse of Agony"
@@ -5801,6 +6004,7 @@
     "kind": "Common",
     "portrait": "PortraitGhoulBlue",
     "vitality": 1.0,
+    "faction": "Scourge",
     "abilities": []
   },
   {
@@ -5808,6 +6012,7 @@
     "kind": "Common",
     "portrait": "PortraitPlagueDragonWhelp",
     "vitality": 1.0,
+    "faction": "Scourge",
     "abilities": []
   },
   {
@@ -5815,6 +6020,7 @@
     "kind": "Common",
     "portrait": "PortraitPlaguehound",
     "vitality": 1.0,
+    "faction": "Scourge",
     "abilities": [
       "Corruption",
       "Curse of Agony"
@@ -5826,6 +6032,7 @@
     "kind": "Common",
     "portrait": "PortraitPlaguehound",
     "vitality": 0.9,
+    "faction": "Scourge",
     "abilities": [
       "Corruption",
       "Curse of Agony"
@@ -5865,6 +6072,7 @@
     "kind": "Elite",
     "portrait": "PortraitCow",
     "vitality": 3.0,
+    "faction": "Scourge",
     "abilities": []
   },
   {
@@ -5885,21 +6093,22 @@
     "name": "Prince Xavalis",
     "kind": "Elite",
     "portrait": "PortraitSatyrRed",
-    "vitality": 1.0,
+    "vitality": 3.0,
     "abilities": []
   },
   {
     "name": "Princess Huhuran",
     "kind": "Elite",
     "portrait": "PortraitWaspQueen",
-    "vitality": 1.0,
+    "vitality": 3.0,
+    "faction": "Qiraji Empire",
     "abilities": []
   },
   {
     "name": "Princess Theradras",
     "kind": "Elite",
     "portrait": "PortraitPrincessTheradras",
-    "vitality": 1.0,
+    "vitality": 3.0,
     "abilities": []
   },
   {
@@ -5914,6 +6123,7 @@
     "kind": "Common",
     "portrait": "PortraitGargoyle",
     "vitality": 1.0,
+    "faction": "Scourge",
     "abilities": [
       "Corruption",
       "Curse of Agony"
@@ -5967,6 +6177,7 @@
     "kind": "Common",
     "portrait": "PortraitQirajiProphet",
     "vitality": 1.0,
+    "faction": "Qiraji Empire",
     "abilities": []
   },
   {
@@ -5974,6 +6185,7 @@
     "kind": "Common",
     "portrait": "PortraitQirajiGeneral",
     "vitality": 1.0,
+    "faction": "Qiraji Empire",
     "abilities": []
   },
   {
@@ -5981,6 +6193,7 @@
     "kind": "Common",
     "portrait": "PortraitQirajiMale",
     "vitality": 1.0,
+    "faction": "Qiraji Empire",
     "abilities": []
   },
   {
@@ -5988,6 +6201,7 @@
     "kind": "Common",
     "portrait": "PortraitQirajiFemale",
     "vitality": 1.0,
+    "faction": "Qiraji Empire",
     "abilities": []
   },
   {
@@ -5995,6 +6209,7 @@
     "kind": "Common",
     "portrait": "PortraitQirajiProphet",
     "vitality": 1.0,
+    "faction": "Qiraji Empire",
     "abilities": []
   },
   {
@@ -6002,6 +6217,7 @@
     "kind": "Common",
     "portrait": "PortraitQirajiFemale",
     "vitality": 1.0,
+    "faction": "Qiraji Empire",
     "abilities": []
   },
   {
@@ -6009,6 +6225,7 @@
     "kind": "Common",
     "portrait": "PortraitQirajiFemale",
     "vitality": 1.0,
+    "faction": "Qiraji Empire",
     "abilities": []
   },
   {
@@ -6016,6 +6233,7 @@
     "kind": "Common",
     "portrait": "PortraitQirajiMale",
     "vitality": 1.0,
+    "faction": "Qiraji Empire",
     "abilities": []
   },
   {
@@ -6092,7 +6310,7 @@
     "name": "Ragglesnout",
     "kind": "Elite",
     "portrait": "PortraitQuilboarArmored",
-    "vitality": 1.0,
+    "vitality": 3.0,
     "abilities": []
   },
   {
@@ -6113,28 +6331,31 @@
     "name": "Rakaiah",
     "kind": "Elite",
     "portrait": "PortraitSayaad",
-    "vitality": 1.0,
+    "vitality": 3.0,
+    "faction": "Shadow Council",
     "abilities": []
   },
   {
     "name": "Rak'shiri",
     "kind": "Rare",
     "portrait": "PortraitFrostsaber",
-    "vitality": 1.0,
+    "vitality": 2.0,
     "abilities": []
   },
   {
     "name": "Ramstein the Gorger",
     "kind": "Elite",
     "portrait": "PortraitAbomination",
-    "vitality": 1.0,
+    "vitality": 3.0,
+    "faction": "Scourge",
     "abilities": []
   },
   {
     "name": "Ras Frostwhisper",
     "kind": "Elite",
     "portrait": "PortraitLich",
-    "vitality": 1.0,
+    "vitality": 3.0,
+    "faction": "Scourge",
     "abilities": []
   },
   {
@@ -6149,6 +6370,7 @@
     "kind": "Common",
     "portrait": "PortraitSkeleton",
     "vitality": 1.0,
+    "faction": "Scourge",
     "abilities": [
       "Putrid Bite",
       "Muscle Tear"
@@ -6159,7 +6381,8 @@
     "name": "Rattlegore",
     "kind": "Elite",
     "portrait": "PortraitBoneConstruct",
-    "vitality": 1.0,
+    "vitality": 3.0,
+    "faction": "Scourge",
     "abilities": []
   },
   {
@@ -6202,6 +6425,7 @@
     "kind": "Common",
     "portrait": "PortraitQuilboarDark",
     "vitality": 1.0,
+    "faction": "Razorfen Tribe",
     "abilities": []
   },
   {
@@ -6209,6 +6433,7 @@
     "kind": "Common",
     "portrait": "PortraitQuilboarMale",
     "vitality": 1.0,
+    "faction": "Razorfen Tribe",
     "abilities": []
   },
   {
@@ -6216,6 +6441,7 @@
     "kind": "Common",
     "portrait": "PortraitQuilboarDark",
     "vitality": 1.0,
+    "faction": "Razorfen Tribe",
     "abilities": []
   },
   {
@@ -6223,6 +6449,7 @@
     "kind": "Common",
     "portrait": "PortraitQuilboarFemaleAlternate",
     "vitality": 1.0,
+    "faction": "Razorfen Tribe",
     "abilities": []
   },
   {
@@ -6230,13 +6457,14 @@
     "kind": "Common",
     "portrait": "PortraitQuilboarFemale",
     "vitality": 1.0,
+    "faction": "Razorfen Tribe",
     "abilities": []
   },
   {
     "name": "Razorgore the Untamed",
     "kind": "Elite",
     "portrait": "PortraitRazorgore",
-    "vitality": 1.0,
+    "vitality": 3.0,
     "abilities": []
   },
   {
@@ -6251,6 +6479,7 @@
     "kind": "Common",
     "portrait": "PortraitQuilboarMale",
     "vitality": 1.0,
+    "faction": "Razormane Tribe",
     "abilities": []
   },
   {
@@ -6258,6 +6487,7 @@
     "kind": "Common",
     "portrait": "PortraitQuilboarMale",
     "vitality": 1.0,
+    "faction": "Razormane Tribe",
     "abilities": []
   },
   {
@@ -6265,6 +6495,7 @@
     "kind": "Common",
     "portrait": "PortraitQuilboarMale",
     "vitality": 1.0,
+    "faction": "Razormane Tribe",
     "abilities": []
   },
   {
@@ -6272,6 +6503,7 @@
     "kind": "Common",
     "portrait": "PortraitQuilboarFemale",
     "vitality": 1.0,
+    "faction": "Razormane Tribe",
     "abilities": []
   },
   {
@@ -6279,6 +6511,7 @@
     "kind": "Common",
     "portrait": "PortraitQuilboarMale",
     "vitality": 1.0,
+    "faction": "Razormane Tribe",
     "abilities": []
   },
   {
@@ -6286,6 +6519,7 @@
     "kind": "Common",
     "portrait": "PortraitQuilboarFemaleAlternate",
     "vitality": 1.0,
+    "faction": "Razormane Tribe",
     "abilities": []
   },
   {
@@ -6293,6 +6527,7 @@
     "kind": "Common",
     "portrait": "PortraitQuilboarMale",
     "vitality": 1.0,
+    "faction": "Razormane Tribe",
     "abilities": []
   },
   {
@@ -6300,6 +6535,7 @@
     "kind": "Common",
     "portrait": "PortraitQuilboarMale",
     "vitality": 1.0,
+    "faction": "Razormane Tribe",
     "abilities": []
   },
   {
@@ -6307,6 +6543,7 @@
     "kind": "Common",
     "portrait": "PortraitQuilboarFemale",
     "vitality": 1.0,
+    "faction": "Razormane Tribe",
     "abilities": []
   },
   {
@@ -6314,6 +6551,7 @@
     "kind": "Common",
     "portrait": "PortraitQuilboarDark",
     "vitality": 1.0,
+    "faction": "Razormane Tribe",
     "abilities": []
   },
   {
@@ -6321,6 +6559,7 @@
     "kind": "Common",
     "portrait": "PortraitQuilboarDark",
     "vitality": 1.0,
+    "faction": "Razormane Tribe",
     "abilities": []
   },
   {
@@ -6370,6 +6609,7 @@
     "kind": "Common",
     "portrait": "PortraitZombie",
     "vitality": 1.0,
+    "faction": "Scourge",
     "abilities": []
   },
   {
@@ -6440,6 +6680,7 @@
     "kind": "Common",
     "portrait": "PortraitSkeleton",
     "vitality": 1.0,
+    "faction": "Scourge",
     "abilities": []
   },
   {
@@ -6509,7 +6750,7 @@
     "name": "Rotgrip",
     "kind": "Rare",
     "portrait": "PortraitCrocolisk",
-    "vitality": 1.0,
+    "vitality": 2.0,
     "abilities": []
   },
   {
@@ -6535,6 +6776,7 @@
     "kind": "Common",
     "portrait": "PortraitSandfuryBloodDrinker",
     "vitality": 1.0,
+    "faction": "Sandfury Tribe",
     "abilities": []
   },
   {
@@ -6542,6 +6784,7 @@
     "kind": "Common",
     "portrait": "PortraitSandfuryShadowcaster",
     "vitality": 1.0,
+    "faction": "Sandfury Tribe",
     "abilities": []
   },
   {
@@ -6549,6 +6792,7 @@
     "kind": "Common",
     "portrait": "PortraitSandfuryAcolyte",
     "vitality": 1.0,
+    "faction": "Sandfury Tribe",
     "abilities": []
   },
   {
@@ -6556,6 +6800,7 @@
     "kind": "Common",
     "portrait": "PortraitSandfuryAcolyte",
     "vitality": 1.0,
+    "faction": "Sandfury Tribe",
     "abilities": []
   },
   {
@@ -6563,6 +6808,7 @@
     "kind": "Common",
     "portrait": "PortraitSandfuryShadowcaster",
     "vitality": 1.0,
+    "faction": "Sandfury Tribe",
     "abilities": []
   },
   {
@@ -6570,6 +6816,7 @@
     "kind": "Common",
     "portrait": "PortraitSandfuryWitchDoctor",
     "vitality": 1.0,
+    "faction": "Sandfury Tribe",
     "abilities": []
   },
   {
@@ -6591,6 +6838,7 @@
     "kind": "Common",
     "portrait": "PortraitScarletChampion",
     "vitality": 1.0,
+    "faction": "Scarlet Crusade",
     "abilities": []
   },
   {
@@ -6598,6 +6846,7 @@
     "kind": "Common",
     "portrait": "PortraitScarletChampion",
     "vitality": 1.0,
+    "faction": "Scarlet Crusade",
     "abilities": []
   },
   {
@@ -6605,6 +6854,7 @@
     "kind": "Common",
     "portrait": "PortraitScarletChaplain",
     "vitality": 1.0,
+    "faction": "Scarlet Crusade",
     "abilities": [
       "Corruption",
       "Curse of Agony"
@@ -6616,6 +6866,7 @@
     "kind": "Elite",
     "portrait": "PortraitScarletChampion",
     "vitality": 3.0,
+    "faction": "Scarlet Crusade",
     "abilities": []
   },
   {
@@ -6623,6 +6874,7 @@
     "kind": "Common",
     "portrait": "PortraitScarletConjuror",
     "vitality": 1.0,
+    "faction": "Scarlet Crusade",
     "abilities": []
   },
   {
@@ -6630,6 +6882,7 @@
     "kind": "Common",
     "portrait": "PortraitScarletAdept",
     "vitality": 1.0,
+    "faction": "Scarlet Crusade",
     "abilities": []
   },
   {
@@ -6637,6 +6890,7 @@
     "kind": "Common",
     "portrait": "PortraitScarletConjuror",
     "vitality": 1.0,
+    "faction": "Scarlet Crusade",
     "abilities": [
       "Corruption",
       "Curse of Agony"
@@ -6648,6 +6902,7 @@
     "kind": "Common",
     "portrait": "PortraitScarletConjuror",
     "vitality": 1.0,
+    "faction": "Scarlet Crusade",
     "abilities": []
   },
   {
@@ -6655,6 +6910,7 @@
     "kind": "Common",
     "portrait": "PortraitScarletMyrmidon",
     "vitality": 1.0,
+    "faction": "Scarlet Crusade",
     "abilities": []
   },
   {
@@ -6662,6 +6918,7 @@
     "kind": "Common",
     "portrait": "PortraitScarletMyrmidon",
     "vitality": 1.0,
+    "faction": "Scarlet Crusade",
     "abilities": [
       "Corruption",
       "Curse of Agony"
@@ -6673,6 +6930,7 @@
     "kind": "Common",
     "portrait": "PortraitScarletConjuror",
     "vitality": 1.0,
+    "faction": "Scarlet Crusade",
     "abilities": []
   },
   {
@@ -6687,6 +6945,7 @@
     "kind": "Common",
     "portrait": "PortraitScarshieldAcolyte",
     "vitality": 1.0,
+    "faction": "Blackrock Clan",
     "abilities": []
   },
   {
@@ -6694,6 +6953,7 @@
     "kind": "Common",
     "portrait": "PortraitScarshieldLegionnaire",
     "vitality": 1.0,
+    "faction": "Blackrock Clan",
     "abilities": []
   },
   {
@@ -6701,6 +6961,7 @@
     "kind": "Common",
     "portrait": "PortraitScarshieldSpellbinder",
     "vitality": 1.0,
+    "faction": "Blackrock Clan",
     "abilities": []
   },
   {
@@ -6764,6 +7025,7 @@
     "kind": "Common",
     "portrait": "PortraitSkeletalWarrior",
     "vitality": 1.0,
+    "faction": "Scourge",
     "abilities": [
       "Corruption",
       "Curse of Agony"
@@ -6775,6 +7037,7 @@
     "kind": "Common",
     "portrait": "PortraitSkeletalWarrior",
     "vitality": 1.0,
+    "faction": "Scourge",
     "abilities": [
       "Corruption",
       "Curse of Agony"
@@ -6877,6 +7140,7 @@
     "kind": "Common",
     "portrait": "PortraitDarkIronArcanasmith",
     "vitality": 1.0,
+    "faction": "Dark Iron Clan",
     "abilities": []
   },
   {
@@ -6884,6 +7148,7 @@
     "kind": "Common",
     "portrait": "PortraitDarkIronDarkCaster",
     "vitality": 1.0,
+    "faction": "Dark Iron Clan",
     "abilities": []
   },
   {
@@ -6891,6 +7156,7 @@
     "kind": "Common",
     "portrait": "PortraitDarkIronDarkweaver",
     "vitality": 1.0,
+    "faction": "Dark Iron Clan",
     "abilities": []
   },
   {
@@ -6898,6 +7164,7 @@
     "kind": "Common",
     "portrait": "PortraitDarkIronTunneler",
     "vitality": 1.0,
+    "faction": "Dark Iron Clan",
     "abilities": []
   },
   {
@@ -6905,6 +7172,7 @@
     "kind": "Common",
     "portrait": "PortraitDarkIronRuffian",
     "vitality": 1.0,
+    "faction": "Dark Iron Clan",
     "abilities": []
   },
   {
@@ -6912,6 +7180,7 @@
     "kind": "Common",
     "portrait": "PortraitDarkIronSharpshooter",
     "vitality": 1.0,
+    "faction": "Dark Iron Clan",
     "abilities": []
   },
   {
@@ -6919,6 +7188,7 @@
     "kind": "Common",
     "portrait": "PortraitDarkIronDarkCaster",
     "vitality": 1.0,
+    "faction": "Dark Iron Clan",
     "abilities": []
   },
   {
@@ -6926,6 +7196,7 @@
     "kind": "Common",
     "portrait": "PortraitDarkIronTunneler",
     "vitality": 1.0,
+    "faction": "Dark Iron Clan",
     "abilities": []
   },
   {
@@ -6933,6 +7204,7 @@
     "kind": "Common",
     "portrait": "PortraitDarkIronWarrior",
     "vitality": 1.0,
+    "faction": "Dark Iron Clan",
     "abilities": []
   },
   {
@@ -6995,7 +7267,7 @@
     "name": "Shazzrah",
     "kind": "Elite",
     "portrait": "PortraitShazzrah",
-    "vitality": 1.0,
+    "vitality": 3.0,
     "abilities": []
   },
   {
@@ -7080,6 +7352,7 @@
     "kind": "Common",
     "portrait": "PortraitDireTroll",
     "vitality": 1.0,
+    "faction": "Smolderthorn Tribe",
     "abilities": []
   },
   {
@@ -7087,6 +7360,7 @@
     "kind": "Common",
     "portrait": "PortraitSmolderthornHeadhunter",
     "vitality": 1.0,
+    "faction": "Smolderthorn Tribe",
     "abilities": []
   },
   {
@@ -7094,6 +7368,7 @@
     "kind": "Common",
     "portrait": "PortraitSmolderthornMystic",
     "vitality": 1.0,
+    "faction": "Smolderthorn Tribe",
     "abilities": []
   },
   {
@@ -7101,6 +7376,7 @@
     "kind": "Common",
     "portrait": "PortraitSmolderthornSeer",
     "vitality": 1.0,
+    "faction": "Smolderthorn Tribe",
     "abilities": []
   },
   {
@@ -7108,6 +7384,7 @@
     "kind": "Common",
     "portrait": "PortraitSmolderthornShadowHunter",
     "vitality": 1.0,
+    "faction": "Smolderthorn Tribe",
     "abilities": []
   },
   {
@@ -7164,6 +7441,7 @@
     "kind": "Common",
     "portrait": "PortraitSouthseaBrigand",
     "vitality": 1.0,
+    "faction": "Southsea Pirates",
     "abilities": []
   },
   {
@@ -7171,6 +7449,7 @@
     "kind": "Common",
     "portrait": "PortraitSouthseaCannoneer",
     "vitality": 1.0,
+    "faction": "Southsea Pirates",
     "abilities": []
   },
   {
@@ -7178,6 +7457,7 @@
     "kind": "Common",
     "portrait": "PortraitSouthseaBrigand",
     "vitality": 1.0,
+    "faction": "Southsea Pirates",
     "abilities": []
   },
   {
@@ -7185,6 +7465,7 @@
     "kind": "Common",
     "portrait": "PortraitSouthseaBrigand",
     "vitality": 1.0,
+    "faction": "Southsea Pirates",
     "abilities": []
   },
   {
@@ -7192,6 +7473,7 @@
     "kind": "Common",
     "portrait": "PortraitSouthseaBrigand",
     "vitality": 1.0,
+    "faction": "Southsea Pirates",
     "abilities": []
   },
   {
@@ -7493,6 +7775,7 @@
     "kind": "Elite",
     "portrait": "PortraitTaragaman",
     "vitality": 3.0,
+    "faction": "Burning Blade Clan",
     "abilities": []
   },
   {
@@ -7561,6 +7844,7 @@
     "kind": "Common",
     "portrait": "PortraitGolemOrange",
     "vitality": 1.0,
+    "faction": "Dark Iron Clan",
     "abilities": []
   },
   {
@@ -7582,6 +7866,7 @@
     "kind": "Elite",
     "portrait": "PortraitFleshTitan",
     "vitality": 5.0,
+    "faction": "Scourge",
     "abilities": []
   },
   {
@@ -7596,6 +7881,7 @@
     "kind": "Elite",
     "portrait": "PortraitQirajiProphet",
     "vitality": 1.0,
+    "faction": "Qiraji Empire",
     "abilities": []
   },
   {
@@ -7603,6 +7889,7 @@
     "kind": "Elite",
     "portrait": "PortraitWight",
     "vitality": 1.0,
+    "faction": "Scourge",
     "abilities": []
   },
   {
@@ -7610,6 +7897,7 @@
     "kind": "Elite",
     "portrait": "PortraitTheSeven",
     "vitality": 3.0,
+    "faction": "Dark Iron Clan",
     "abilities": []
   },
   {
@@ -7617,6 +7905,7 @@
     "kind": "Elite",
     "portrait": "PortraitWraith",
     "vitality": 1.0,
+    "faction": "Scourge",
     "abilities": []
   },
   {
@@ -7714,7 +8003,8 @@
     "name": "Timmy the Cruel",
     "kind": "Elite",
     "portrait": "PortraitGhoulWhite",
-    "vitality": 1.0,
+    "vitality": 2.0,
+    "faction": "Scourge",
     "abilities": []
   },
   {
@@ -7815,6 +8105,7 @@
     "kind": "Elite",
     "portrait": "PortraitCryptFiend",
     "vitality": 1.0,
+    "faction": "Scourge",
     "abilities": []
   },
   {
@@ -7822,6 +8113,7 @@
     "kind": "Common",
     "portrait": "PortraitBurningBladeCultist",
     "vitality": 1.0,
+    "faction": "Twilight's Hammer",
     "abilities": []
   },
   {
@@ -7829,6 +8121,7 @@
     "kind": "Common",
     "portrait": "PortraitBurningBladeCultist",
     "vitality": 1.0,
+    "faction": "Twilight's Hammer",
     "abilities": []
   },
   {
@@ -7836,6 +8129,7 @@
     "kind": "Common",
     "portrait": "PortraitTwilightThug",
     "vitality": 1.0,
+    "faction": "Twilight's Hammer",
     "abilities": []
   },
   {
@@ -7843,6 +8137,7 @@
     "kind": "Common",
     "portrait": "PortraitTwilightThug",
     "vitality": 1.0,
+    "faction": "Twilight's Hammer",
     "abilities": []
   },
   {
@@ -7850,6 +8145,7 @@
     "kind": "Common",
     "portrait": "PortraitBurningBladeCultist",
     "vitality": 1.0,
+    "faction": "Twilight's Hammer",
     "abilities": []
   },
   {
@@ -7857,6 +8153,7 @@
     "kind": "Common",
     "portrait": "PortraitTwilightThug",
     "vitality": 1.0,
+    "faction": "Twilight's Hammer",
     "abilities": []
   },
   {
@@ -7864,6 +8161,7 @@
     "kind": "Common",
     "portrait": "PortraitTwilightThug",
     "vitality": 1.0,
+    "faction": "Twilight's Hammer",
     "abilities": []
   },
   {
@@ -7871,6 +8169,7 @@
     "kind": "Common",
     "portrait": "PortraitTwilightThug",
     "vitality": 1.0,
+    "faction": "Twilight's Hammer",
     "abilities": []
   },
   {
@@ -7878,6 +8177,7 @@
     "kind": "Common",
     "portrait": "PortraitTwilightThug",
     "vitality": 1.0,
+    "faction": "Twilight's Hammer",
     "abilities": []
   },
   {
@@ -7885,6 +8185,7 @@
     "kind": "Elite",
     "portrait": "PortraitCow",
     "vitality": 3.0,
+    "faction": "Twilight's Hammer",
     "abilities": []
   },
   {
@@ -7892,6 +8193,7 @@
     "kind": "Rare",
     "portrait": "PortraitParrot",
     "vitality": 2.0,
+    "faction": "Twilight's Hammer",
     "abilities": []
   },
   {
@@ -7899,6 +8201,7 @@
     "kind": "Elite",
     "portrait": "PortraitBurningBladeCultist",
     "vitality": 3.0,
+    "faction": "Twilight's Hammer",
     "abilities": []
   },
   {
@@ -7906,6 +8209,7 @@
     "kind": "Elite",
     "portrait": "PortraitCow",
     "vitality": 3.0,
+    "faction": "Twilight's Hammer",
     "abilities": []
   },
   {
@@ -7913,6 +8217,7 @@
     "kind": "Common",
     "portrait": "PortraitTwilightThug",
     "vitality": 1.0,
+    "faction": "Twilight's Hammer",
     "abilities": []
   },
   {
@@ -7920,6 +8225,7 @@
     "kind": "Common",
     "portrait": "PortraitChicken",
     "vitality": 1.0,
+    "faction": "Twilight's Hammer",
     "abilities": []
   },
   {
@@ -7927,6 +8233,7 @@
     "kind": "Common",
     "portrait": "PortraitBurningBladeCultist",
     "vitality": 1.0,
+    "faction": "Twilight's Hammer",
     "abilities": []
   },
   {
@@ -7934,6 +8241,7 @@
     "kind": "Common",
     "portrait": "PortraitTwilightThug",
     "vitality": 1.0,
+    "faction": "Twilight's Hammer",
     "abilities": []
   },
   {
@@ -7941,6 +8249,7 @@
     "kind": "Elite",
     "portrait": "PortraitQirajiEmperor",
     "vitality": 1.0,
+    "faction": "Qiraji Empire",
     "abilities": []
   },
   {
@@ -7962,6 +8271,7 @@
     "kind": "Elite",
     "portrait": "PortraitBurningBladeCultist",
     "vitality": 3.0,
+    "faction": "Shadow Council",
     "abilities": []
   },
   {
@@ -8018,6 +8328,7 @@
     "kind": "Elite",
     "portrait": "PortraitSkeletalMage",
     "vitality": 1.0,
+    "faction": "Scourge",
     "abilities": []
   },
   {
@@ -8060,6 +8371,7 @@
     "kind": "Common",
     "portrait": "PortraitGnollBlue",
     "vitality": 1.0,
+    "faction": "Venture Co.",
     "abilities": []
   },
   {
@@ -8067,6 +8379,7 @@
     "kind": "Common",
     "portrait": "PortraitGoblin",
     "vitality": 1.0,
+    "faction": "Venture Co.",
     "abilities": []
   },
   {
@@ -8074,6 +8387,7 @@
     "kind": "Common",
     "portrait": "PortraitGnollBrown",
     "vitality": 1.0,
+    "faction": "Venture Co.",
     "abilities": []
   },
   {
@@ -8081,6 +8395,7 @@
     "kind": "Common",
     "portrait": "PortraitGoblin",
     "vitality": 1.0,
+    "faction": "Venture Co.",
     "abilities": []
   },
   {
@@ -8319,6 +8634,7 @@
     "kind": "Common",
     "portrait": "PortraitFurbolgWhite",
     "vitality": 1.0,
+    "faction": "Winterfall Tribe",
     "abilities": []
   },
   {
@@ -8326,6 +8642,7 @@
     "kind": "Common",
     "portrait": "PortraitFurbolgWhite",
     "vitality": 1.0,
+    "faction": "Winterfall Tribe",
     "abilities": []
   },
   {
@@ -8333,6 +8650,7 @@
     "kind": "Common",
     "portrait": "PortraitFurbolgWhite",
     "vitality": 1.0,
+    "faction": "Winterfall Tribe",
     "abilities": []
   },
   {
@@ -8340,6 +8658,7 @@
     "kind": "Common",
     "portrait": "PortraitFurbolgWhite",
     "vitality": 1.0,
+    "faction": "Winterfall Tribe",
     "abilities": []
   },
   {
@@ -8347,6 +8666,7 @@
     "kind": "Common",
     "portrait": "PortraitFurbolgWhite",
     "vitality": 1.0,
+    "faction": "Winterfall Tribe",
     "abilities": []
   },
   {
@@ -8375,6 +8695,7 @@
     "kind": "Elite",
     "portrait": "PortraitSandTroll",
     "vitality": 1.8,
+    "faction": "Sandfury Tribe",
     "abilities": [
       "Corruption",
       "Curse of Agony"
@@ -8412,6 +8733,7 @@
     "kind": "Common",
     "portrait": "PortraitGnollBrown",
     "vitality": 1.0,
+    "faction": "Woodpaw Tribe",
     "abilities": []
   },
   {
@@ -8419,6 +8741,7 @@
     "kind": "Common",
     "portrait": "PortraitGnollBrown",
     "vitality": 1.0,
+    "faction": "Woodpaw Tribe",
     "abilities": []
   },
   {
@@ -8426,6 +8749,7 @@
     "kind": "Common",
     "portrait": "PortraitGnollBrown",
     "vitality": 1.0,
+    "faction": "Woodpaw Tribe",
     "abilities": []
   },
   {
@@ -8433,6 +8757,7 @@
     "kind": "Common",
     "portrait": "PortraitGnollBrown",
     "vitality": 1.0,
+    "faction": "Woodpaw Tribe",
     "abilities": []
   },
   {
@@ -8440,6 +8765,7 @@
     "kind": "Common",
     "portrait": "PortraitGnollBrown",
     "vitality": 1.0,
+    "faction": "Woodpaw Tribe",
     "abilities": []
   },
   {
@@ -8557,6 +8883,7 @@
     "kind": "Common",
     "portrait": "PortraitZulFarrakDeadHero",
     "vitality": 1.0,
+    "faction": "Sandfury Tribe",
     "abilities": []
   },
   {
@@ -8564,6 +8891,7 @@
     "kind": "Common",
     "portrait": "PortraitZulFarrakZombie",
     "vitality": 1.0,
+    "faction": "Sandfury Tribe",
     "abilities": []
   },
   {

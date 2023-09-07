@@ -131,7 +131,10 @@ public class Board
         if (result == "PlayerWon")
         {
             if (currentSave.player.WillGetExperience(enemy.level) && currentSave.player.level < maxPlayerLevel)
-                currentSave.player.ReceiveExperience(currentSave.player.ExperienceNeeded());
+            {
+                var enemyRace = Race.races.Find(x => x.name == enemy.race);
+                currentSave.player.ReceiveExperience((enemy.level - currentSave.player.level + 10) * enemyRace.vitality * (enemyRace.kind == "Elite" || enemyRace.kind == "Rare" ? 1.5 : 1) * 100 * enemy.level);
+            }
             if (area != null && enemy.kind != "Elite")
             {
                 if (!currentSave.siteProgress.ContainsKey(area.name))
@@ -166,9 +169,14 @@ public class Board
         }
         else if (result == "PlayerLost")
         {
+            currentSave.playerDead = true;
             PlaySound("Death");
-            if (Realm.realms.Find(x => x.name == settings.selectedRealm).hardcore) SpawnDesktopBlueprint("GameOver");
-            else SpawnDesktopBlueprint("ReleaseSpirit");
+            if (Realm.realms.Find(x => x.name == settings.selectedRealm).hardcore)
+            {
+                currentSave.deathInfo = new();
+                SpawnDesktopBlueprint("GameOver");
+            }
+            else SpawnDesktopBlueprint("MapDead");
         }
         else if (result == "PlayerFled")
         {

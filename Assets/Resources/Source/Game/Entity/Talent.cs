@@ -3,7 +3,6 @@ using UnityEngine;
 using static Root;
 using static Ability;
 using static SaveGame;
-
 using static Sound;
 
 public class Talent
@@ -70,5 +69,4 @@ public class Talent
             }
         });
     }
-
 }

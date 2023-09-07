@@ -209,6 +209,23 @@ public class Blueprint
                 });
             }
         }, true),
+        new("GameOver", () =>
+        {
+            SetAnchor(Center);
+            AddHeaderGroup();
+            AddHeaderRegion(() =>
+            {
+                AddLine("Game over:");
+            });
+            AddPaddingRegion(() =>
+            {
+                AddLine(currentSave.player.name + " died ");
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("Return to title screen", "", "Center");
+            });
+        }, true),
         new("ConfirmDeleteCharacter", () => {
             SetAnchor(Center);
             AddRegionGroup();
@@ -4417,8 +4434,7 @@ public class Blueprint
                 AddSmallButton("OtherClose", (h) =>
                 {
                     CloseWindow("ItemsSort");
-                    CloseWindow("ObjectManagerItems");
-                    SpawnWindowBlueprint("ObjectManagerItems");
+                    Respawn("ObjectManagerItems");
                 });
             });
             AddButtonRegion(() =>
@@ -4429,10 +4445,9 @@ public class Blueprint
             {
                 items = items.OrderBy(x => x.name).ToList();
                 itemsSearch = itemsSearch.OrderBy(x => x.name).ToList();
-                CloseWindow("ItemsSort");
-                CloseWindow("ObjectManagerItems");
-                SpawnWindowBlueprint("ObjectManagerItems");
                 PlaySound("DesktopInventorySort", 0.2f);
+                CloseWindow("ItemsSort");
+                Respawn("ObjectManagerItems");
             });
             AddButtonRegion(() =>
             {
@@ -4442,10 +4457,9 @@ public class Blueprint
             {
                 items = items.OrderByDescending(x => x.ilvl).ToList();
                 itemsSearch = itemsSearch.OrderByDescending(x => x.ilvl).ToList();
-                CloseWindow("ItemsSort");
-                CloseWindow("ObjectManagerItems");
-                SpawnWindowBlueprint("ObjectManagerItems");
                 PlaySound("DesktopInventorySort", 0.2f);
+                CloseWindow("ItemsSort");
+                Respawn("ObjectManagerItems");
             });
             AddButtonRegion(() =>
             {
@@ -4455,10 +4469,9 @@ public class Blueprint
             {
                 items = items.OrderByDescending(x => x.price).ToList();
                 itemsSearch = itemsSearch.OrderByDescending(x => x.price).ToList();
-                CloseWindow("ItemsSort");
-                CloseWindow("ObjectManagerItems");
-                SpawnWindowBlueprint("ObjectManagerItems");
                 PlaySound("DesktopInventorySort", 0.2f);
+                CloseWindow("ItemsSort");
+                Respawn("ObjectManagerItems");
             });
             AddButtonRegion(() =>
             {
@@ -4468,10 +4481,9 @@ public class Blueprint
             {
                 items = items.OrderByDescending(x => x.type).ToList();
                 itemsSearch = itemsSearch.OrderByDescending(x => x.type).ToList();
-                CloseWindow("ItemsSort");
-                CloseWindow("ObjectManagerItems");
-                SpawnWindowBlueprint("ObjectManagerItems");
                 PlaySound("DesktopInventorySort", 0.2f);
+                CloseWindow("ItemsSort");
+                Respawn("ObjectManagerItems");
             });
         }),
         new("ObjectManagerItems", () => {
@@ -4496,9 +4508,8 @@ public class Blueprint
                 {
                     items.Reverse();
                     itemsSearch.Reverse();
-                    CloseWindow("ObjectManagerItems");
-                    SpawnWindowBlueprint("ObjectManagerItems");
                     PlaySound("DesktopInventorySort", 0.2f);
+                    Respawn("ObjectManagerItems");
                 });
                 if (!CDesktop.windows.Exists(x => x.title == "ItemsSort"))
                     AddSmallButton("OtherSort", (h) =>
@@ -4598,12 +4609,11 @@ public class Blueprint
             },
             (h) =>
             {
-                var list = CDesktop.windows.Find(x => x.title == "ObjectManagerItemIconList");
-                if (list == null)
+                if (CDesktop.windows.Find(x => x.title == "ObjectManagerItemIconList") == null)
                 {
                     CloseWindow("ObjectManagerItems");
                     Assets.assets.itemIconsSearch = Assets.assets.itemIcons;
-                    list = SpawnWindowBlueprint("ObjectManagerItemIconList");
+                    SpawnWindowBlueprint("ObjectManagerItemIconList");
                 }
             });
             AddPaddingRegion(() => { AddLine("Rarity:", "DarkGray"); });
@@ -5115,8 +5125,7 @@ public class Blueprint
             },
             (h) =>
             {
-                var list = CDesktop.windows.Find(x => x.title == "ObjectManagerAbilityIconList");
-                if (list == null)
+                if (CDesktop.windows.Find(x => x.title == "ObjectManagerAbilityIconList") == null)
                 {
                     CloseWindow("ObjectManagerAbilities");
                     CloseWindow("ObjectManagerEventTriggers");
@@ -5126,7 +5135,7 @@ public class Blueprint
                     CloseWindow("ObjectManagerEventEffect");
                     CloseWindow("ObjectManagerEventEffectList");
                     Assets.assets.abilityIconsSearch = Assets.assets.abilityIcons;
-                    list = SpawnWindowBlueprint("ObjectManagerAbilityIconList");
+                    SpawnWindowBlueprint("ObjectManagerAbilityIconList");
                 }
             });
             AddPaddingRegion(() => { AddLine("Events:", "DarkGray"); });
@@ -5472,12 +5481,10 @@ public class Blueprint
             },
             (h) =>
             {
-                var list = CDesktop.windows.Find(x => x.title == "ObjectManagerAbilityIconList");
-                if (list == null)
+                if (CloseWindow("ObjectManagerBuffs"))
                 {
-                    CloseWindow("ObjectManagerBuffs");
                     Assets.assets.abilityIconsSearch = Assets.assets.abilityIcons;
-                    list = SpawnWindowBlueprint("ObjectManagerAbilityIconList");
+                    SpawnWindowBlueprint("ObjectManagerAbilityIconList");
                 }
             });
             AddPaddingRegion(() => { AddLine("Stackable:", "DarkGray"); });
@@ -5732,12 +5739,10 @@ public class Blueprint
                 },
                 (h) =>
                 {
-                    var list = CDesktop.windows.Find(x => x.title == "ObjectManagerPortraitList");
-                    if (list == null)
+                    if (CloseWindow("ObjectManagerRaces"))
                     {
-                        CloseWindow("ObjectManagerRaces");
                         Assets.assets.portraitsSearch = Assets.assets.portraits;
-                        list = SpawnWindowBlueprint("ObjectManagerPortraitList");
+                        SpawnWindowBlueprint("ObjectManagerPortraitList");
                     }
                 });
                 AddPaddingRegion(() => { AddLine("Kind:", "DarkGray"); });
@@ -5817,6 +5822,8 @@ public class Blueprint
             AddRegionGroup(() => factionsSearch.Count);
             SetRegionGroupWidth(171);
             SetRegionGroupHeight(358);
+            //AutomaticPagination(() => faction != null, factionsSearch.FindIndex(x => x == faction), 10);
+            //AutomaticPagination(() => town != null, factionsSearch.FindIndex(x => x.name == town.faction), 10);
             if (faction != null)
             {
                 var index = factionsSearch.IndexOf(faction);
@@ -6114,25 +6121,20 @@ public class Blueprint
             AddHotkey(BackQuote, () => { SpawnDesktopBlueprint("DevPanel"); });
             AddHotkey(Escape, () =>
             {
-                var window1 = CDesktop.windows.Find(x => x.title == "Settings");
-                if (window1 != null)
+                if (CloseWindow("Settings"))
                 {
                     PlaySound("DesktopButtonClose");
-                    CloseWindow(window1);
                     SpawnWindowBlueprint("TitleScreenMenu");
                 }
-                var window2 = CDesktop.windows.Find(x => x.title == "CharacterCreation");
-                if (window2 != null)
+                if (CloseWindow("CharacterCreation"))
                 {
                     PlaySound("DesktopButtonClose");
-                    CloseWindow("CharacterCreation");
                     CloseWindow("CharacterCreationRightSide");
                     SpawnWindowBlueprint("CharacterRoster");
                     SpawnWindowBlueprint("CharacterInfo");
                     SpawnWindowBlueprint("TitleScreenSingleplayer");
                 }
-                var window3 = CDesktop.windows.Find(x => x.title == "TitleScreenSingleplayer");
-                if (window3 != null)
+                else
                 {
                     PlaySound("DesktopButtonClose");
                     CloseWindow("TitleScreenSingleplayer");
@@ -6181,6 +6183,43 @@ public class Blueprint
                 CDesktop.cameraDestination += new Vector2(amount.x, amount.y) / 5;
             }
         }),
+        new("MapDead", () =>
+        {
+            //USE POST PROCESSING WITH COLOR GRADING TO MAKE THE GHOST REALM LOOK GOOD
+            PlayAmbience("DEAD");
+            loadingBar = new GameObject[2];
+            loadingBar[0] = new GameObject("LoadingBarBegin", typeof(SpriteRenderer));
+            loadingBar[0].GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Textures/LoadingBarEnd");
+            loadingBar[0].transform.position = new Vector3(-1181, 863);
+            loadingBar[1] = new GameObject("LoadingBar", typeof(SpriteRenderer));
+            loadingBar[1].GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Textures/LoadingBarStretch");
+            loadingBar[1].transform.position = new Vector3(-1178, 863);
+            OrderLoadingMapDead();
+            AddHotkey(W, () => { MoveCamera(new Vector3(0, EuelerGrowth())); }, false);
+            AddHotkey(A, () => { MoveCamera(new Vector3(-EuelerGrowth(), 0)); }, false);
+            AddHotkey(S, () => { MoveCamera(new Vector3(0, -EuelerGrowth())); }, false);
+            AddHotkey(D, () => { MoveCamera(new Vector3(EuelerGrowth(), 0)); }, false);
+            AddHotkey(C, () =>
+            {
+                SpawnDesktopBlueprint("CharacterSheet");
+                SwitchDesktop("CharacterSheet");
+                PlaySound("DesktopCharacterSheetOpen");
+            });
+            AddHotkey(N, () => { SpawnDesktopBlueprint("TalentScreen"); SwitchDesktop("TalentScreen"); });
+            AddHotkey(P, () => { SpawnDesktopBlueprint("SpellbookScreen"); SwitchDesktop("SpellbookScreen"); });
+            AddHotkey(B, () => { SpawnDesktopBlueprint("EquipmentScreen"); SwitchDesktop("EquipmentScreen"); });
+            AddHotkey(Escape, () =>
+            {
+                PlaySound("DesktopMenuOpen");
+                SpawnDesktopBlueprint("GameMenu");
+            });
+            AddHotkey(BackQuote, () => { SpawnDesktopBlueprint("DevPanel"); });
+
+            void MoveCamera(Vector3 amount)
+            {
+                CDesktop.cameraDestination += new Vector2(amount.x, amount.y) / 5;
+            }
+        }),
         new("HostileAreaEntrance", () =>
         {
             SetDesktopBackground("Areas/Area" + (area.zone + area.name).Replace("'", "").Replace(".", "").Replace(" ", "") + (area.specialClearBackground && area.eliteEncounters.All(x => currentSave.elitesKilled.ContainsKey(x.who)) ? "Cleared" : ""));
@@ -6218,13 +6257,11 @@ public class Blueprint
             SpawnWindowBlueprint("InstanceLeftSide");
             AddHotkey(Escape, () =>
             {
-                var window = CDesktop.windows.Find(x => x.title.StartsWith("HostileArea: "));
-                if (window != null)
+                if (CloseWindow("HostileArea: " + area.name))
                 {
                     area = null;
                     PlaySound("DesktopButtonClose");
                     SetDesktopBackground("Areas/Area" + instance.name.Replace("'", "").Replace(".", "").Replace(" ", ""));
-                    CloseWindow(window);
                     Respawn("InstanceLeftSide");
                 }
                 else if (instance.complexPart)
@@ -6274,13 +6311,11 @@ public class Blueprint
             SpawnWindowBlueprint("ComplexLeftSide");
             AddHotkey(Escape, () =>
             {
-                var window = CDesktop.windows.Find(x => x.title.StartsWith("HostileArea: "));
-                if (window != null)
+                if (CloseWindow("HostileArea: " + area.name))
                 {
                     area = null;
                     PlaySound("DesktopButtonClose");
                     SetDesktopBackground("Areas/Complex" + complex.name.Replace("'", "").Replace(".", "").Replace(" ", ""));
-                    CloseWindow(window);
                     Respawn("ComplexLeftSide");
                 }
                 else
@@ -6403,15 +6438,15 @@ public class Blueprint
             SpawnWindowBlueprint("CharacterStats");
             AddHotkey(C, () =>
             {
-                SwitchDesktop("Map");
-                CloseDesktop("CharacterSheet");
                 PlaySound("DesktopCharacterSheetClose");
+                CloseDesktop("CharacterSheet");
+                SwitchDesktop("Map");
             });
             AddHotkey(Escape, () =>
             {
-                SwitchDesktop("Map");
-                CloseDesktop("CharacterSheet");
                 PlaySound("DesktopCharacterSheetClose");
+                CloseDesktop("CharacterSheet");
+                SwitchDesktop("Map");
             });
         }),
         new("TalentScreen", () =>
@@ -6472,15 +6507,15 @@ public class Blueprint
             SpawnWindowBlueprint("Inventory");
             AddHotkey(B, () =>
             {
-                SwitchDesktop("Map");
-                CloseDesktop("EquipmentScreen");
                 PlaySound("DesktopInventoryClose");
+                CloseDesktop("EquipmentScreen");
+                SwitchDesktop("Map");
             });
             AddHotkey(Escape, () =>
             {
-                SwitchDesktop("Map");
-                CloseDesktop("EquipmentScreen");
                 PlaySound("DesktopInventoryClose");
+                CloseDesktop("EquipmentScreen");
+                SwitchDesktop("Map");
             });
         }),
         new("BankScreen", () =>
@@ -6488,15 +6523,15 @@ public class Blueprint
             currentSave.banks ??= new();
             if (!currentSave.banks.ContainsKey(town.name))
                 currentSave.banks.Add(town.name, new() { items = new() });
-            SetDesktopBackground("Areas/Area" + (town.zone + town.name).Replace("'", "").Replace(".", "").Replace(" ", "") + "Bank");
             PlaySound("DesktopBankOpen", 0.2f);
+            SetDesktopBackground("Areas/Area" + (town.zone + town.name).Replace("'", "").Replace(".", "").Replace(" ", "") + "Bank");
             SpawnWindowBlueprint("Bank");
             SpawnWindowBlueprint("Inventory");
             AddHotkey(Escape, () =>
             {
+                PlaySound("DesktopBankClose");
                 CloseDesktop("BankScreen");
                 SwitchDesktop("TownEntrance");
-                PlaySound("DesktopBankClose");
             });
         }),
         new("GameMenu", () =>
@@ -6505,18 +6540,32 @@ public class Blueprint
             SpawnWindowBlueprint("GameMenu");
             AddHotkey(Escape, () =>
             {
-                var window1 = CDesktop.windows.Find(x => x.title == "Settings");
-                if (window1 != null)
+                if (CloseWindow("Settings"))
                 {
                     PlaySound("DesktopButtonClose");
-                    CloseWindow(window1);
                     SpawnWindowBlueprint("GameMenu");
                 }
-                if (window1 == null)
+                else
                 {
                     PlaySound("DesktopMenuClose");
                     CloseDesktop("GameMenu");
                 }
+            });
+        }),
+        new("GameOver", () =>
+        {
+            SetDesktopBackground("Stone");
+            SpawnWindowBlueprint("GameOver");
+            AddHotkey(Escape, () =>
+            {
+                CloseSave();
+                SaveGames();
+                saveGames.Remove(currentSave);
+                graveyard.Add(currentSave);
+                CloseDesktop("GameOver");
+                CloseDesktop("Map");
+                CloseDesktop("TitleScreen");
+                SpawnDesktopBlueprint("TitleScreen");
             });
         }),
 

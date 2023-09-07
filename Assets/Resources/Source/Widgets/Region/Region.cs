@@ -60,9 +60,6 @@ public class Region : MonoBehaviour
 
     public int AutoWidth()
     {
-        //Number "12" is simply additional free space to not clamp the
-        //window borders tightly on region content, the "19" is the button sprite width
-        //and the "15" is the checkbox width that fills the line
         var lineX = lines.Count > 0 && lines.Max(x => x.Length()) > 0 ? lines.Max(x => x.Length()) + 2 + textPaddingLeft + textPaddingRight : 0;
         var bigButtonX = 38 * bigButtons.Count;
         var smallButtonX = 19 * smallButtons.Count;

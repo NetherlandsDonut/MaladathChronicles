@@ -621,9 +621,10 @@ public class Entity
 
     #endregion
 
-    public int health, level, unspentTalentPoints, actionBarsUnlocked, experience;
+    [NonSerialized] public int health;
+    public int level, unspentTalentPoints, actionBarsUnlocked, experience;
     public string name, race, spec, gender, kind;
-    public Dictionary<string, int> resources;
+    [NonSerialized] public Dictionary<string, int> resources;
     public List<string> abilities;
     public List<ActionBar> actionBars;
     public Stats stats;

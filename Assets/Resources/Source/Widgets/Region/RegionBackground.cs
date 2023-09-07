@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class RegionBackground : MonoBehaviour
 {
-    //Parent
+    //The region this background belongs to
     public Region region;
 
     public void OnMouseUp() => region.OnMouseUp();
