@@ -1,8 +1,9 @@
+using System.Linq;
+
 using UnityEngine;
 
 using static Root;
 using static Cursor;
-using System.Linq;
 
 public class MapGrid : MonoBehaviour
 {
@@ -14,13 +15,20 @@ public class MapGrid : MonoBehaviour
 
     public static void EnforceBoundary()
     {
-        var temp = CDesktop.cameraDestination;
-        if (temp.x < 20) CDesktop.cameraDestination = new Vector2(20, temp.y);
-        if (temp.x > 310) CDesktop.cameraDestination = new Vector2(310, temp.y);
-        if (temp.x > 130 && temp.x < 180) CDesktop.cameraDestination = new Vector2(130, temp.y);
-        if (temp.x < 225 && temp.x > 180) CDesktop.cameraDestination = new Vector2(225, temp.y);
-        if (temp.y > 0) CDesktop.cameraDestination = new Vector2(temp.x, 0);
-        if (temp.y < -236) CDesktop.cameraDestination = new Vector2(temp.x, -236);
+        var cameraDestinationScaled = cameraDestination * 19 + new Vector2(333, -183);
+        var nearbySites = sites.Select(x => (x.position, Vector2.Distance(new Vector2(x.position.x, x.position.y), cameraDestinationScaled))).FindAll(x => x.Item2 < 1000).OrderByDescending(x => x.Item2).ToList();
+        while (Vector2.Distance(new Vector2(nearbySites[0].Item1.x, nearbySites[0].Item1.y), cameraDestinationScaled) > 500)
+            cameraDestinationScaled = Vector3.Lerp(cameraDestinationScaled, nearbySites[0].Item1, 1);
+        cameraDestination = (cameraDestinationScaled - new Vector2(333, -183)) / 19;
+        
+        //var temp = CDesktop.cameraDestination;
+        //if (temp.x < 20) CDesktop.cameraDestination = new Vector2(20, temp.y);
+        //if (temp.x > 310) CDesktop.cameraDestination = new Vector2(310, temp.y);
+        //if (temp.x > 130 && temp.x < 180) CDesktop.cameraDestination = new Vector2(130, temp.y);
+        //if (temp.x < 225 && temp.x > 180) CDesktop.cameraDestination = new Vector2(225, temp.y);
+        //if (temp.y > 0) CDesktop.cameraDestination = new Vector2(temp.x, 0);
+        //if (temp.y < -236) CDesktop.cameraDestination = new Vector2(temp.x, -236);
+
         //if (CDesktop.cameraDestination.x > sites.Max(x => x.position.x) > 0) return;
         //if (amount.y > 0 && CDesktop.screen.transform.position.y - sites.Max(x => x.position.y) > 0) return;
         //if (amount.x < 0 && sites.Min(x => x.position.x) - CDesktop.screen.transform.position.x > 0) return;
