@@ -23,8 +23,17 @@ public class SaveGame
         playerDead = false;
         if (CDesktop.title == "MapDead")
         {
+            var camera = CDesktop.cameraDestination;
             CloseDesktop("MapDead");
             SwitchDesktop("Map");
+            CDesktop.cameraDestination = camera;
+            SwitchDesktop("Map");
+            grid.SwitchMapTexture(false);
+            SpawnTransition();
+            SpawnTransition();
+            SpawnTransition();
+            SpawnTransition();
+            SpawnTransition();
         }
     }
 

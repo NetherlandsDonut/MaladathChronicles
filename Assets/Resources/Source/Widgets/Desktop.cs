@@ -118,13 +118,12 @@ public class Desktop : MonoBehaviour
             {
                 var site = loadSites[0];
                 loadingScreenObjectLoad++;
-                sites.Add(SpawnWindowBlueprint(site).transform);
+                cameraBoundaryPoints.Add(SpawnWindowBlueprint(site).transform);
                 loadSites.RemoveAt(0);
                 loadingBar[1].transform.localScale = new Vector3((int)(357.0 / loadingScreenObjectLoadAim * loadingScreenObjectLoad), 1, 1);
                 if (loadSites.Count == 0)
                 {
                     RemoveDesktopBackground();
-                    MapGrid.EnforceBoundary();
                     var rounded = new Vector2((float)Math.Round(cameraDestination.x), (float)Math.Round(cameraDestination.y));
                     var newPosition = rounded * 19 + new Vector2(333, -183);
                     cursor.transform.position += (Vector3)newPosition - screen.transform.position;
@@ -160,7 +159,7 @@ public class Desktop : MonoBehaviour
             else if (CDesktop.title == "Map")
             {
                 var temp = screen.transform.position;
-                if (temp.y != cameraDestination.y || temp.x != cameraDestination.x)
+                if ((float)Math.Round(temp.y / 19) != cameraDestination.y || (float)Math.Round(temp.x / 19) != cameraDestination.x)
                 {
                     MapGrid.EnforceBoundary();
                     var rounded = new Vector2((float)Math.Round(cameraDestination.x), (float)Math.Round(cameraDestination.y));
@@ -194,9 +193,27 @@ public class Desktop : MonoBehaviour
                             SpawnDesktopBlueprint("TownEntrance");
                             SwitchDesktop("TownEntrance");
                         }
-                        else if (queuedSiteOpen == "SpiritHealer")
+                        queuedSiteOpen = "";
+                    }
+                }
+            }
+            else if (CDesktop.title == "MapDead")
+            {
+                var temp = screen.transform.position;
+                if ((float)Math.Round(temp.y / 19) != cameraDestination.y || (float)Math.Round(temp.x / 19) != cameraDestination.x)
+                {
+                    MapGrid.EnforceBoundary();
+                    var rounded = new Vector2((float)Math.Round(cameraDestination.x), (float)Math.Round(cameraDestination.y));
+                    var newPosition = Vector3.Lerp(temp, rounded * 19 + new Vector2(333, -183), Time.deltaTime * 4);
+                    cursor.transform.position += newPosition - temp;
+                    screen.transform.position = newPosition;
+                    if (screenLocked && Vector3.Distance(screen.transform.position, (cameraDestination + new Vector2(17, -9)) * 19 + new Vector2(10, -10)) <= 10)
+                    {
+                        UnlockScreen();
+                        if (queuedSiteOpen == "SpiritHealer")
                         {
-                            PlaySound("AbilityRessurection");
+                            StopAmbience();
+                            PlaySound("DesktopRevive");
                             currentSave.RevivePlayer();
                         }
                         queuedSiteOpen = "";

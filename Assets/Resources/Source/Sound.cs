@@ -23,6 +23,11 @@ public static class Sound
         queuedAmbience = (temp, volume, instant);
     }
 
+    public static void StopAmbience(bool instant = false)
+    {
+        queuedAmbience = (null, 0, instant);
+    }
+
     public static AudioSource ambience, soundEffects;
     public static int fallingSoundsPlayedThisFrame;
     public static (AudioClip, float, bool) queuedAmbience;

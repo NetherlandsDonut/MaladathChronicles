@@ -26,11 +26,11 @@ public class Starter : MonoBehaviour
     void Start()
     {
         random = new System.Random();
-        sites = new();
         font = new Font("Tahoma Bold");
         desktops = new();
         settings = new GameSettings();
         fallingElements = new List<FallingElement>();
+        grid = FindObjectOfType<MapGrid>();
         #if (UNITY_EDITOR)
         prefix = "D:\\Games\\Warcraft Elements\\";
         #endif

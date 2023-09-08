@@ -22,7 +22,8 @@ public static class Root
     public static string textWrapEnding = "...";
     public static string prefix = "";
 
-    public static List<Transform> sites;
+    public static MapGrid grid;
+    public static List<Transform> cameraBoundaryPoints;
     public static List<FallingElement> fallingElements;
     public static List<FlyingMissile> flyingMissiles;
     public static bool canUnlockScreen;
@@ -131,6 +132,7 @@ public static class Root
 
     public static void OrderLoadingMap()
     {
+        cameraBoundaryPoints = new();
         loadSites = windowBlueprints.FindAll(x => x.title.StartsWith("Site: "));
         loadingScreenObjectLoad = 0;
         loadingScreenObjectLoadAim = loadSites.Count;

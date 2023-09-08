@@ -176,7 +176,19 @@ public class Board
                 currentSave.deathInfo = new();
                 SpawnDesktopBlueprint("GameOver");
             }
-            else SpawnDesktopBlueprint("MapDead");
+            else
+            {
+                SwitchDesktop("Map");
+                var camera = CDesktop.cameraDestination;
+                SpawnDesktopBlueprint("MapDead");
+                CDesktop.cameraDestination = camera;
+                SwitchDesktop("MapDead");
+                SpawnTransition();
+                SpawnTransition();
+                SpawnTransition();
+                SpawnTransition();
+                SpawnTransition();
+            }
         }
         else if (result == "PlayerFled")
         {

@@ -227,7 +227,14 @@ public class Blueprint
             },
             (h) =>
             {
-
+                CloseSave();
+                SaveGames();
+                saves[settings.selectedRealm].Remove(currentSave);
+                //graveyard.Add(currentSave);
+                CloseDesktop("GameOver");
+                CloseDesktop("Map");
+                CloseDesktop("TitleScreen");
+                SpawnDesktopBlueprint("TitleScreen");
             });
         }, true),
         new("ConfirmDeleteCharacter", () => {
@@ -6190,7 +6197,8 @@ public class Blueprint
         new("MapDead", () =>
         {
             //USE POST PROCESSING WITH COLOR GRADING TO MAKE THE GHOST REALM LOOK GOOD
-            PlayAmbience("DEAD");
+            grid.SwitchMapTexture(true);
+            PlayAmbience("AmbienceGhost");
             loadingBar = new GameObject[2];
             loadingBar[0] = new GameObject("LoadingBarBegin", typeof(SpriteRenderer));
             loadingBar[0].GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Textures/LoadingBarEnd");
