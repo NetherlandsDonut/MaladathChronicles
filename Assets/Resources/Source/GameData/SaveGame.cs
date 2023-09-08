@@ -63,6 +63,7 @@ public class SaveGame
     public static void CloseSave()
     {
         Save();
+        grid.SwitchMapTexture(false);
         currentSave = null;
     }
 

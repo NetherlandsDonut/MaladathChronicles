@@ -34,11 +34,8 @@ public class MapGrid : MonoBehaviour
     {
         CDesktop.windows.FindAll(x => x.title.StartsWith("Site: ")).ForEach(x => x.gameObject.SetActive(!x.title.Contains("SpiritHealer") ^ deadOn));
         if (deadOn) PlayAmbience("AmbienceGhost");
-        if (ambience.clip != null)
-        {
-            var temp = ambience.clip.name;
-            if (ambience.clip.name == "AmbienceGhost") StopAmbience();
-        }
+        else if (ambience.clip != null && ambience.clip.name == "AmbienceGhost")
+            StopAmbience();
         texture.SetActive(!deadOn);
         textureDead.SetActive(deadOn);
         foreground.SetActive(!deadOn);

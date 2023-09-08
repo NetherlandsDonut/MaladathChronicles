@@ -309,7 +309,7 @@ public class Blueprint
                 AddPaddingRegion(() =>
                 {
                     SetRegionAsGroupExtender();
-                    AddLine(slot.timePlayed.TotalHours + "h "  + slot.timePlayed.Minutes + "m", "DarkGray");
+                    AddLine(slot.timePlayed.Hours + "h "  + slot.timePlayed.Minutes + "m", "DarkGray");
                 });
                 AddButtonRegion(() =>
                 {
@@ -1066,7 +1066,7 @@ public class Blueprint
         new("InstanceLeftSide", () => {
             SetAnchor(TopLeft);
             AddRegionGroup();
-            SetRegionGroupWidth(171);
+            SetRegionGroupWidth(175);
             SetRegionGroupHeight(354);
             AddPaddingRegion(() =>
             {
@@ -1089,7 +1089,7 @@ public class Blueprint
         new("ComplexLeftSide", () => {
             SetAnchor(TopLeft);
             AddRegionGroup();
-            SetRegionGroupWidth(171);
+            SetRegionGroupWidth(175);
             SetRegionGroupHeight(354);
             AddPaddingRegion(() =>
             {
@@ -1100,7 +1100,7 @@ public class Blueprint
         new("TownLeftSide", () => {
             SetAnchor(TopLeft);
             AddRegionGroup();
-            SetRegionGroupWidth(171);
+            SetRegionGroupWidth(175);
             SetRegionGroupHeight(354);
             AddPaddingRegion(() =>
             {
