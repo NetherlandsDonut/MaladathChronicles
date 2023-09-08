@@ -17,7 +17,7 @@ public class SiteHostileArea : Site
     public override void Initialise()
     {
         type ??= "HostileArea";
-        else if (commonEncounters != null)
+        if (commonEncounters != null)
             if (commonEncounters.Count > 0)
                 recommendedLevel = (int)commonEncounters.Average(x => x.levelMax != 0 ? (x.levelMin + x.levelMax) / 2.0 : x.levelMin);
                 else commonEncounters = null;

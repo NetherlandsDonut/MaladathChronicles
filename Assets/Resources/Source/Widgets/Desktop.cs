@@ -125,7 +125,7 @@ public class Desktop : MonoBehaviour
                     var rounded = new Vector2((float)Math.Round(cameraDestination.x), (float)Math.Round(cameraDestination.y));
                     var newPosition = rounded * 19;
                     cursor.transform.position += (Vector3)newPosition - screen.transform.position;
-                    screen.transform.position = newPosition;
+                    screen.transform.position = newPosition + new Vector2(333, -183);
                     SpawnWindowBlueprint("MapToolbar");
                     SpawnTransition(0.1f);
                     SpawnTransition(0.1f);
@@ -161,7 +161,7 @@ public class Desktop : MonoBehaviour
                 {
                     MapGrid.EnforceBoundary();
                     var rounded = new Vector2((float)Math.Round(cameraDestination.x), (float)Math.Round(cameraDestination.y));
-                    var newPosition = Vector3.Lerp(temp, rounded * 19, Time.deltaTime * 4);
+                    var newPosition = Vector3.Lerp(temp, rounded * 19 + new Vector2(333, -183), Time.deltaTime * 4);
                     cursor.transform.position += newPosition - temp;
                     screen.transform.position = newPosition;
                     if (screenLocked && Vector3.Distance(screen.transform.position, (cameraDestination + new Vector2(17, -9)) * 19 + new Vector2(10, -10)) <= 10)
@@ -202,7 +202,7 @@ public class Desktop : MonoBehaviour
                 {
                     MapGrid.EnforceBoundary();
                     var rounded = new Vector2((float)Math.Round(cameraDestination.x), (float)Math.Round(cameraDestination.y));
-                    var newPosition = Vector3.Lerp(temp, rounded * 19, Time.deltaTime * 4);
+                    var newPosition = Vector3.Lerp(temp, rounded * 19 + new Vector2(333, -183), Time.deltaTime * 4);
                     cursor.transform.position += newPosition - temp;
                     screen.transform.position = newPosition;
                     if (screenLocked && Vector3.Distance(screen.transform.position, (cameraDestination + new Vector2(17, -9)) * 19 + new Vector2(10, -10)) <= 10)

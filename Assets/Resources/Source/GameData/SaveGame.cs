@@ -76,6 +76,7 @@ public class SaveGame
 
     public static void Save()
     {
+        if (currentSave.timePlayed == null) currentSave.timePlayed = new TimeSpan();
         currentSave.timePlayed.Add(DateTime.Now - currentSave.lastLoaded);
         currentSave.lastPlayed = DateTime.Now;
         var temp = desktops.Find(x => x.title == "Map");

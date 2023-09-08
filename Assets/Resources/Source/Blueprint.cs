@@ -28,6 +28,7 @@ using static SiteHostileArea;
 using static SiteInstance;
 using static SiteComplex;
 using static SiteTown;
+using UnityEngine.Rendering.PostProcessing;
 
 public class Blueprint
 {
@@ -368,7 +369,7 @@ public class Blueprint
                 {
                     AddPaddingRegion(() =>
                     {
-                        AddBigButton("Portrait" + slot.player.race.Replace("'", "").Replace(".", "").Replace(" ", "") + (Race.races.Find(x => x.name == slot.player.race).genderedPortrait ? slot.player.gender : ""), (h) =>
+                        AddBigButton("Portrait" + slot.player.race.Replace("'", "").Replace(".", "").Replace(" ", "") + (races.Find(x => x.name == slot.player.race).genderedPortrait ? slot.player.gender : ""), (h) =>
                         {
                             CloseWindow("RealmRoster");
                             if (settings.selectedCharacter != slot.player.name)
@@ -2364,7 +2365,7 @@ public class Blueprint
                         SetRegionBackground(RegionBackgroundType.Button);
                         var foo = townsSearch[index + 10 * regionGroup.pagination];
                         AddLine(foo.name);
-                        AddSmallButton("Faction" + foo.faction, (h) => { });
+                        AddSmallButton(factions.Find(x => x.name == foo.faction).Icon(), (h) => { });
                     }
                     else
                     {
@@ -2399,7 +2400,7 @@ public class Blueprint
             AddButtonRegion(() =>
             {
                 AddLine(town.faction);
-                AddSmallButton("Faction" + town.faction, (h) => { });
+                AddSmallButton(factions.Find(x => x.name == town.faction).Icon(), (h) => { });
             },
             (h) =>
             {
@@ -5677,7 +5678,7 @@ public class Blueprint
                         SetRegionBackground(RegionBackgroundType.Button);
                         var foo = racesSearch[index + 10 * regionGroup.pagination];
                         AddLine(foo.name);
-                        AddSmallButton(foo.portrait + (foo.genderedPortraits ? "Female" : ""), (h) => { });
+                        AddSmallButton(foo.portrait + (foo.genderedPortrait ? "Female" : ""), (h) => { });
                     }
                     else
                     {
@@ -5732,14 +5733,14 @@ public class Blueprint
             AddPaddingRegion(() => { AddLine("Gendered portraits:", "DarkGray"); });
             AddButtonRegion(() =>
             {
-                AddLine(race.genderedPortraits ? "True" : "False");
+                AddLine(race.genderedPortrait ? "True" : "False");
             },
             (h) =>
             {
-                race.genderedPortraits ^= true;
+                race.genderedPortrait ^= true;
                 h.window.Respawn();
             });
-            if (race.genderedPortraits)
+            if (race.genderedPortrait)
             {
                 AddPaddingRegion(() => { AddLine("Portraits:", "DarkGray"); });
                 AddHeaderRegion(() =>
@@ -5785,7 +5786,7 @@ public class Blueprint
                 AddButtonRegion(() =>
                 {
                     AddLine(race.faction);
-                    AddSmallButton(race.Faction().icon, (h) => { });
+                    AddSmallButton(race.Faction().Icon(), (h) => { });
                 },
                 (h) =>
                 {
@@ -5993,7 +5994,7 @@ public class Blueprint
             AddButtonRegion(() =>
             {
                 AddLine(faction.icon.Replace("Faction", "") + ".png");
-                AddSmallButton(faction.icon, (h) => { });
+                AddSmallButton(faction.Icon(), (h) => { });
             },
             (h) =>
             {

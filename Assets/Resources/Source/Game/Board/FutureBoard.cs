@@ -1,6 +1,8 @@
 using System.Linq;
 using System.Collections.Generic;
 
+using static Root;
+
 public class FutureBoard
 {
     public FutureBoard(FutureBoard board)

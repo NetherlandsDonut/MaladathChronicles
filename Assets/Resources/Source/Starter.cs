@@ -1,4 +1,3 @@
-using System.IO;
 using System.Linq;
 using System.Collections.Generic;
 
@@ -17,9 +16,11 @@ using static Coloring;
 using static Transport;
 using static GameSettings;
 using static CursorRemote;
+using static SiteSpiritHealer;
 using static Serialization;
 using static SiteInstance;
 using static SiteComplex;
+using static UnityEditor.Experimental.AssetDatabaseExperimental.AssetDatabaseCounters;
 
 public class Starter : MonoBehaviour
 {
@@ -81,9 +82,9 @@ public class Starter : MonoBehaviour
         Buff.buffs ??= new();
         Deserialize(ref Faction.factions, "factions", false, prefix);
         Faction.factions ??= new();
-        Deserialize(ref SpiritHealer.spiritHealers, "spirithealers", false, prefix);
-        SpiritHealer.spiritHealers ??= new();
-        #if (UNITY_EDITOR)
+        Deserialize(ref spiritHealers, "spirithealers", false, prefix);
+        spiritHealers ??= new();
+#if (UNITY_EDITOR)
         var ambienceList = AssetDatabase.FindAssets("t:AudioClip Ambience", new[] { "Assets/Resources/Ambience/" }).Select(x => AssetDatabase.GUIDToAssetPath(x).Replace("Assets/Resources/Ambience/", "")).ToList();
         var soundList = AssetDatabase.FindAssets("t:AudioClip", new[] { "Assets/Resources/Sounds/" }).Select(x => AssetDatabase.GUIDToAssetPath(x).Replace("Assets/Resources/Sounds/", "")).ToList();
         var itemIconList = AssetDatabase.FindAssets("t:Texture Item", new[] { "Assets/Resources/Sprites/Building/BigButtons/" }).Select(x => AssetDatabase.GUIDToAssetPath(x).Replace("Assets/Resources/Sprites/Building/BigButtons/", "")).ToList();
@@ -95,7 +96,15 @@ public class Starter : MonoBehaviour
         abilityIconList.RemoveAll(x => !x.StartsWith("Ability"));
         factionIconList.RemoveAll(x => !x.StartsWith("Faction"));
         portraitList.RemoveAll(x => !x.StartsWith("Portrait"));
-        Assets.assets = new Assets(ambienceList, soundList, itemIconList, abilityIconList, factionIconList, portraitList);
+        Assets.assets = new Assets()
+        {
+            ambience = ambienceList,
+            sounds = soundList,
+            itemIcons = itemIconList,
+            abilityIcons = abilityIconList,
+            factionIcons = factionIconList,
+            portraits = portraitList
+        };
         Serialize(Assets.assets, "assets", false, false, prefix);
         #else
         Deserialize(ref Assets.assets, "assets", false, prefix);
@@ -113,9 +122,30 @@ public class Starter : MonoBehaviour
         var countR = Race.races.Count;
         var countA = Ability.abilities.Count;
         var countIS = ItemSet.itemSets.Count;
+        var countF = Faction.factions.Count;
+        for (int i = 0; i < SiteTown.towns.Count; i++)
+        {
+            var town = SiteTown.towns[i];
+            if (town.faction != null)
+                if (!Faction.factions.Exists(x => x.name == town.faction))
+                    Faction.factions.Insert(0, new Faction()
+                    {
+                        name = town.faction,
+                        icon = "Faction" + town.faction,
+                        side = "Neutral"
+                    });
+        }
         for (int i = 0; i < complexes.Count; i++)
         {
             var complex = complexes[i];
+            if (complex.faction != null)
+                if (!Faction.factions.Exists(x => x.name == complex.faction))
+                    Faction.factions.Insert(0, new Faction()
+                    {
+                        name = complex.faction,
+                        icon = "Faction" + complex.faction,
+                        side = "Neutral"
+                    });
             if (complex.sites != null)
                 foreach (var site in complex.sites)
                     if (site != null && site.ContainsKey("SiteType") && site.ContainsKey("SiteName"))
@@ -156,6 +186,14 @@ public class Starter : MonoBehaviour
         for (int i = 0; i < instances.Count; i++)
         {
             var instance = instances[i];
+            if (instance.faction != null)
+                if (!Faction.factions.Exists(x => x.name == instance.faction))
+                    Faction.factions.Insert(0, new Faction()
+                    {
+                        name = instance.faction,
+                        icon = "Faction" + instance.faction,
+                        side = "Neutral"
+                    });
             if (instance.wings != null)
                 foreach (var wing in instance.wings)
                     if (wing.areas != null)
@@ -175,6 +213,14 @@ public class Starter : MonoBehaviour
         for (int i = 0; i < SiteHostileArea.areas.Count; i++)
         {
             var area = SiteHostileArea.areas[i];
+            if (area.faction != null)
+                if (!Faction.factions.Exists(x => x.name == area.faction))
+                    Faction.factions.Insert(0, new Faction()
+                    {
+                        name = area.faction,
+                        icon = "Faction" + area.faction,
+                        side = "Neutral"
+                    });
             if (area.commonEncounters != null)
                 foreach (var encounter in area.commonEncounters)
                     if (!Race.races.Exists(x => x.name == encounter.who))
@@ -564,11 +610,11 @@ public class Starter : MonoBehaviour
             if (SiteHostileArea.areas[index].x != 0)
                 Blueprint.windowBlueprints.Add(new Blueprint("Site: " + SiteHostileArea.areas[index].name, () => SiteHostileArea.areas[index].PrintSite()));
         }
-        for (int i = 0; i < SpiritHealer.spiritHealers.Count; i++)
+        for (int i = 0; i < spiritHealers.Count; i++)
         {
             var index = i;
-            if (SpiritHealer.spiritHealers[index].x != 0)
-                Blueprint.windowBlueprints.Add(new Blueprint("SiteDead: " + SpiritHealer.spiritHealers[index].name, () => SpiritHealer.spiritHealers[index].PrintSite()));
+            if (spiritHealers[index].x != 0)
+                Blueprint.windowBlueprints.Add(new Blueprint("SiteDead: " + spiritHealers[index].name, () => spiritHealers[index].PrintSite()));
         }
         for (int i = 0; i < instances.Count; i++)
         {
@@ -601,5 +647,6 @@ public class Starter : MonoBehaviour
         if (countR != Race.races.Count) Debug.Log("Added " + (Race.races.Count - countR) + " lacking races.");
         if (countA != Ability.abilities.Count) Debug.Log("Added " + (Ability.abilities.Count - countA) + " lacking abilities.");
         if (countIS != ItemSet.itemSets.Count) Debug.Log("Added " + (ItemSet.itemSets.Count - countIS) + " lacking item sets.");
+        if (countF != Faction.factions.Count) Debug.Log("Added " + (Faction.factions.Count - countF) + " lacking factions.");
     }
 }

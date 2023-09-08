@@ -1,8 +1,6 @@
 using System.Linq;
 using System.Collections.Generic;
 
-using UnityEngine;
-
 using static Root;
 using static Root.Anchor;
 
@@ -10,7 +8,7 @@ using static SaveGame;
 using static SiteInstance;
 using static SiteHostileArea;
 
-public class SiteComplex
+public class SiteComplex : Site
 {
     //Initialisation method to fill automatic values
     //and remove empty collections to avoid serialising them later
