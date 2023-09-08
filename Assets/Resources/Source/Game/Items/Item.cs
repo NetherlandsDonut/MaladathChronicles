@@ -398,6 +398,12 @@ public class Item
 
     public static Item GetItem(string name) => items.Find(x => x.name == name);
 
+    //Currently opened item
     public static Item item;
-    public static List<Item> items, itemsSearch;
+
+    //EXTERNAL FILE: List containing all buffs in-game
+    public static List<Item> items;
+
+    //List of all filtered items by input search
+    public static List<Item> itemsSearch;
 }

@@ -3,6 +3,7 @@ using System.Linq;
 using System.Collections.Generic;
 
 using UnityEngine;
+using UnityEngine.UIElements;
 
 using static UnityEngine.KeyCode;
 
@@ -27,7 +28,6 @@ using static SiteHostileArea;
 using static SiteInstance;
 using static SiteComplex;
 using static SiteTown;
-using UnityEngine.UIElements;
 
 public class Blueprint
 {

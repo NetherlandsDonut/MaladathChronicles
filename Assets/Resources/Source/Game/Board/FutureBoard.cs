@@ -69,6 +69,9 @@ public class FutureBoard
             var amountMultiplier = entity.AmountModifier(n);
             score += entityElementImportance[resource.Key] * amountMultiplier * (n < 0 ? -1 : 1);
         }
+
+        //This may be unnecessary but I am not sure as it still provides valuable insight
+        //In the end if calculations will take exceptionally too long we can I guess get rid of this
         foreach (var resource in other.resources)
         {
             var n = resource.Value - pastOther.resources[resource.Key];
@@ -141,13 +144,12 @@ public class FutureBoard
             }
         }
         list = list.OrderBy(x => (list[0].board.playerTurn ? 1 : -1) * x.board.Desiredness(this)).ToList();
-        bool oneBoardMove = false;
-        for (int i = 1; i < list.Count; i++)
-            if (list[i].ability == "" && oneBoardMove)
-                list[i].depth = -1;
+        var manualMoves = 0;
+        for (int i = list.Count - 1; i >= 0; i--)
+            if (list[i].ability == "" && aiManualBranches <= manualMoves)
+                list.RemoveAt(i);
             else if (list[i].ability == "")
-                oneBoardMove = true;
-        list.RemoveAll(x => x.depth == -1);
+                manualMoves++;
         return list;
     }
 

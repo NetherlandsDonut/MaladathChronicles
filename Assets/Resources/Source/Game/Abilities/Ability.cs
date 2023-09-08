@@ -166,14 +166,40 @@ public class Ability
 
     #endregion
 
-    public string name, icon;
+    //Name of the ability
+    public string name;
+
+    //Icon of the ability in action bars and spellbook
+    public string icon;
+
+    //Provides information on how many turns will the ability be disabled after casting
     public int cooldown;
+
+    //Indicates whether this ability should be always put on the bottom of the action bars in combat
     public bool putOnEnd;
+
+    //Tags to help AI in calculating priorities in combat
     public List<string> tags;
+
+    //Cost of the ability to cast
+    //Keys provide information what type of resource is required
+    //Values provide information how much of that resource entity needs
+    //EXAMPLE: { "Frost": 4, "Decay": 2  } 
     public Dictionary<string, int> cost;
+
+    //List of events this ability has
+    //This is essentially all the ability's effects with it's triggerers that make them happen
     public List<Event> events;
+
+    //Description of the buff to show on hover in the status bar
     public Description description;
 
+    //Currently opened ability
     public static Ability ability;
-    public static List<Ability> abilities, abilitiesSearch;
+
+    //EXTERNAL FILE: List containing all abilities in-game
+    public static List<Ability> abilities;
+
+    //List of all filtered abilities by input search
+    public static List<Ability> abilitiesSearch;
 }

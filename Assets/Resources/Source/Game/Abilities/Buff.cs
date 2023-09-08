@@ -10,10 +10,26 @@ using static SaveGame;
 
 public class Buff
 {
-    public string name, icon, dispelType;
+    //Name of the buff
+    public string name;
+
+    //Icon of the buff in status bar
+    public string icon;
+
+    //Dispel type that let's an entity dispel a buff with proper ability
+    public string dispelType;
+
+    //Tags to help AI in calculating priorities in combat
     public List<string> tags;
+
+    //Indicates whether this buff can be stacked on a target
     public bool stackable;
+
+    //List of events this buff has
+    //This is essentially all the buff's effects with it's triggerers that make them happen
     public List<Event> events;
+
+    //Description of the buff to show on hover in the status bar
     public Description description;
 
     #region Execution
@@ -138,6 +154,12 @@ public class Buff
 
     #endregion
 
+    //Currently opened buff
     public static Buff buff;
-    public static List<Buff> buffs, buffsSearch;
+
+    //EXTERNAL FILE: List containing all buffs in-game
+    public static List<Buff> buffs;
+
+    //List of all filtered buffs by input search
+    public static List<Buff> buffsSearch;
 }
