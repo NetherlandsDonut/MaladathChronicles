@@ -15,12 +15,438 @@
     "x": 121,
     "y": -116,
     "name": "Orgrimmar",
-    "zone": "Durotar",
+    "zone": "Durotar"
   },
   {
     "x": 261,
     "y": -241,
     "name": "Booty Bay",
-    "zone": "Stranglethorn Vale",
+    "zone": "Stranglethorn Vale"
+  },
+  {
+    "x": 267,
+    "y": -212,
+    "name": "Nesingwary's Expedition",
+    "zone": "Stranglethorn Vale"
+  },
+  {
+    "x": 120,
+    "y": -102,
+    "name": "Shadowsong Shrine",
+    "zone": "Azshara"
+  },
+  {
+    "x": 138,
+    "y": -98,
+    "name": "Southridge Beach",
+    "zone": "Azshara"
+  },
+  {
+    "x": 151,
+    "y": -83,
+    "name": "Bitter Reaches",
+    "zone": "Azshara"
+  },
+  {
+    "x": 116,
+    "y": -143,
+    "name": "Ratchet",
+    "zone": "The Barrens"
+  },
+  {
+    "x": 98,
+    "y": -158,
+    "name": "Camp Taurajo",
+    "zone": "The Barrens"
+  },
+  {
+    "x": 105,
+    "y": -137,
+    "name": "The Crossroads",
+    "zone": "The Barrens"
+  },
+  {
+    "x": 41,
+    "y": -180,
+    "name": "Feathermoon Stronghold",
+    "zone": "Feralas"
+  },
+  {
+    "x": 57,
+    "y": -183,
+    "name": "High Wilderness",
+    "zone": "Feralas"
+  },
+  {
+    "x": 271,
+    "y": -148,
+    "name": "Kharanos",
+    "zone": "Dun Morogh"
+  },
+  {
+    "x": 275,
+    "y": -142,
+    "name": "Ironforge",
+    "zone": "Dun Morogh"
+  },
+  {
+    "x": 262,
+    "y": -154,
+    "name": "Anvilmar",
+    "zone": "Dun Morogh"
+  },
+  {
+    "x": 68,
+    "y": -206,
+    "name": "Cenarion Hold",
+    "zone": "Silithus"
+  },
+  {
+    "x": 59,
+    "y": -219,
+    "name": "The Scarab Wall",
+    "zone": "Silithus"
+  },
+  {
+    "x": 268,
+    "y": -183,
+    "name": "Northshire Abbey",
+    "zone": "Elwynn Forest"
+  },
+  {
+    "x": 266,
+    "y": -189,
+    "name": "Goldshire",
+    "zone": "Elwynn Forest"
+  },
+  {
+    "x": 280,
+    "y": -189,
+    "name": "Eastvale Logging Camp",
+    "zone": "Elwynn Forest"
+  },
+  {
+    "x": 306,
+    "y": -72,
+    "name": "Darrowshire",
+    "zone": "Eastern Plaguelands"
+  },
+  {
+    "x": 306,
+    "y": -68,
+    "name": "Crown Guard Tower",
+    "zone": "Eastern Plaguelands"
+  },
+  {
+    "x": 311,
+    "y": -60,
+    "name": "Blackwood Lake",
+    "zone": "Eastern Plaguelands"
+  },
+  {
+    "x": 129,
+    "y": -142,
+    "name": "Sen'jin Village",
+    "zone": "Durotar"
+  },
+  {
+    "x": 127,
+    "y": -129,
+    "name": "Razor Hill",
+    "zone": "Durotar"
+  },
+  {
+    "x": 122,
+    "y": -138,
+    "name": "Valley of Trials",
+    "zone": "Durotar"
+  },
+  {
+    "x": 273,
+    "y": -69,
+    "name": "The Bulwark",
+    "zone": "Tirisfal Glades"
+  },
+  {
+    "x": 263,
+    "y": -69,
+    "name": "The Ruins of Lordaeron",
+    "zone": "Tirisfal Glades"
+  },
+  {
+    "x": 274,
+    "y": -57,
+    "name": "Scarlet Monastery Grounds",
+    "zone": "Tirisfal Glades"
+  },
+  {
+    "x": 250,
+    "y": -67,
+    "name": "Deathknell",
+    "zone": "Tirisfal Glades"
+  },
+  {
+    "x": 262,
+    "y": -202,
+    "name": "Raven Hill",
+    "zone": "Duskwood"
+  },
+  {
+    "x": 279,
+    "y": -201,
+    "name": "Darkshire",
+    "zone": "Duskwood"
+  },
+  {
+    "x": 290,
+    "y": -159,
+    "name": "Kargath",
+    "zone": "Badlands"
+  },
+  {
+    "x": 302,
+    "y": -154,
+    "name": "The Maker's Terrace",
+    "zone": "Badlands"
+  },
+  {
+    "x": 96,
+    "y": -183,
+    "name": "The Great Lift",
+    "zone": "Thousand Needles"
+  },
+  {
+    "x": 115,
+    "y": -196,
+    "name": "Shimmering Flats",
+    "zone": "Thousand Needles"
+  },
+  {
+    "x": 107,
+    "y": -167,
+    "name": "Brackenwall Village",
+    "zone": "Dustwallow Marsh"
+  },
+  {
+    "x": 124,
+    "y": -173,
+    "name": "Theramore Isle",
+    "zone": "Dustwallow Marsh"
+  },
+  {
+    "x": 291,
+    "y": -124,
+    "name": "Angerfang Encampment",
+    "zone": "Wetlands"
+  },
+  {
+    "x": 275,
+    "y": -127,
+    "name": "Menethil Harbor",
+    "zone": "Wetlands"
+  },
+  {
+    "x": 81,
+    "y": -158,
+    "name": "Bloodhoof Village",
+    "zone": "Mulgore"
+  },
+  {
+    "x": 79,
+    "y": -164,
+    "name": "Camp Narache",
+    "zone": "Mulgore"
+  },
+  {
+    "x": 275,
+    "y": -88,
+    "name": "Tarren Mill",
+    "zone": "Hillsbrad Foothills"
+  },
+  {
+    "x": 272,
+    "y": -96,
+    "name": "Southshore",
+    "zone": "Hillsbrad Foothills"
+  },
+  {
+    "x": 288,
+    "y": -85,
+    "name": "Aerie Peak",
+    "zone": "Hinterlands"
+  },
+  {
+    "x": 316,
+    "y": -90,
+    "name": "The Overlook Cliffs",
+    "zone": "Hinterlands"
+  },
+  {
+    "x": 282,
+    "y": -78,
+    "name": "Chillwind Camp",
+    "zone": "Western Plaguelands"
+  },
+  {
+    "x": 293,
+    "y": -76,
+    "name": "Caer Darrow",
+    "zone": "Western Plaguelands"
+  },
+  {
+    "x": 73,
+    "y": -126,
+    "name": "Webwinder Path",
+    "zone": "Stonetalon Mountains"
+  },
+  {
+    "x": 103,
+    "y": -109,
+    "name": "Splintertree Post",
+    "zone": "Ashenvale"
+  },
+  {
+    "x": 80,
+    "y": -103,
+    "name": "Astranaar",
+    "zone": "Ashenvale"
+  },
+  {
+    "x": 90,
+    "y": -66,
+    "name": "Irontree Woods",
+    "zone": "Felwood"
+  },
+  {
+    "x": 87,
+    "y": -87,
+    "name": "Emerald Sanctuary",
+    "zone": "Felwood"
+  },
+  {
+    "x": 77,
+    "y": -61,
+    "name": "Bashal'Aran",
+    "zone": "Darkshore"
+  },
+  {
+    "x": 72,
+    "y": -84,
+    "name": "The Master's Glaive",
+    "zone": "Darkshore"
+  },
+  {
+    "x": 67,
+    "y": -21,
+    "name": "Aldrassil",
+    "zone": "Teldrassil"
+  },
+  {
+    "x": 66,
+    "y": -27,
+    "name": "Dolanaar",
+    "zone": "Teldrassil"
+  },
+  {
+    "x": 287,
+    "y": -207,
+    "name": "Karazhan",
+    "zone": "Deadwind Pass"
+  },
+  {
+    "x": 299,
+    "y": -208,
+    "name": "Red Wasteland",
+    "zone": "Blasted Lands"
+  },
+  {
+    "x": 301,
+    "y": -199,
+    "name": "Stonard",
+    "zone": "Swamp of Sorrows"
+  },
+  {
+    "x": 255,
+    "y": -200,
+    "name": "Sentinel Hill",
+    "zone": "Westfall"
+  },
+  {
+    "x": 291,
+    "y": -190,
+    "name": "Lake Everstill",
+    "zone": "Redridge Mountains"
+  },
+  {
+    "x": 289,
+    "y": -171,
+    "name": "Ruins of Thaurissan",
+    "zone": "Burning Steppes"
+  },
+  {
+    "x": 98,
+    "y": -212,
+    "name": "The Marshlands",
+    "zone": "Un'Goro Crater"
+  },
+  {
+    "x": 117,
+    "y": -209,
+    "name": "Gadgetzan",
+    "zone": "Tanaris"
+  },
+  {
+    "x": 279,
+    "y": -158,
+    "name": "Thorium Point",
+    "zone": "Searing Gorge"
+  },
+  {
+    "x": 298,
+    "y": -145,
+    "name": "Thelsamar",
+    "zone": "Loch Modan"
+  },
+  {
+    "x": 296,
+    "y": -102,
+    "name": "Circle of Outer Binding",
+    "zone": "Arathi Highlands"
+  },
+  {
+    "x": 55,
+    "y": -148,
+    "name": "Kodo Graveyard",
+    "zone": "Desolace"
+  },
+  {
+    "x": 76,
+    "y": -146,
+    "name": "Thunder Bluff",
+    "zone": "Mulgore"
+  },
+  {
+    "x": 248,
+    "y": -82,
+    "name": "The Sepulcher",
+    "zone": "Silverpine Forest"
+  },
+  {
+    "x": 127,
+    "y": -61,
+    "name": "Everlook",
+    "zone": "Winterspring"
+  },
+  {
+    "x": 108,
+    "y": -52,
+    "name": "Stormrage Barrow Dens",
+    "zone": "Moonglade"
+  },
+  {
+    "x": 51,
+    "y": -27,
+    "name": "Darnassus",
+    "zone": "Teldrassil"
   }
 ]

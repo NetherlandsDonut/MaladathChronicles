@@ -4,7 +4,7 @@
     "y": -182,
     "name": "Stormwind",
     "zone": "Elwynn Forest",
-    "faction": "Alliance",
+    "faction": "Stormwind",
     "transport": [
       {
         "means": "Tram",
@@ -80,7 +80,7 @@
     "y": -189,
     "name": "Goldshire",
     "zone": "Elwynn Forest",
-    "faction": "Alliance",
+    "faction": "Stormwind",
     "people": [
       {
         "name": "Lyria Du Lac",
@@ -125,49 +125,49 @@
     "y": -186,
     "name": "Lakeshire",
     "zone": "Redridge Mountains",
-    "faction": "Alliance"
+    "faction": "Stormwind"
   },
   {
     "x": 268,
     "y": -183,
     "name": "Northshire Abbey",
     "zone": "Elwynn Forest",
-    "faction": "Alliance"
+    "faction": "Stormwind"
   },
   {
     "x": 272,
     "y": -96,
     "name": "Southshore",
     "zone": "Hillsbrad Foothills",
-    "faction": "Alliance"
+    "faction": "Stormwind"
   },
   {
     "x": 279,
     "y": -201,
     "name": "Darkshire",
     "zone": "Duskwood",
-    "faction": "Alliance"
+    "faction": "Stormwind"
   },
   {
     "x": 268,
     "y": -209,
     "name": "Rebel Camp",
     "zone": "Stranglethorn Vale",
-    "faction": "Alliance"
+    "faction": "Stormwind"
   },
   {
     "x": 255,
     "y": -200,
     "name": "Sentinel Hill",
     "zone": "Westfall",
-    "faction": "Alliance"
+    "faction": "Stormwind"
   },
   {
     "x": 124,
     "y": -173,
     "name": "Theramore Isle",
     "zone": "Dustwallow Marsh",
-    "faction": "Alliance",
+    "faction": "Stormwind",
     "people": [
       {
         "name": "Captain Evencane",
@@ -188,7 +188,7 @@
     "y": -127,
     "name": "Menethil Harbor",
     "zone": "Wetlands",
-    "faction": "Alliance",
+    "faction": "Stormwind",
     "transport": [
       {
         "means": "Ship",
@@ -202,35 +202,35 @@
     "y": -205,
     "name": "Nethergarde Keep",
     "zone": "Blasted Lands",
-    "faction": "Alliance"
+    "faction": "Stormwind"
   },
   {
     "x": 295,
     "y": -177,
     "name": "Morgan's Vigil",
     "zone": "Burning Steppes",
-    "faction": "Alliance"
+    "faction": "Stormwind"
   },
   {
     "x": 287,
     "y": -109,
     "name": "Faldir's Cove",
     "zone": "Arathi Highlands",
-    "faction": "Alliance"
+    "faction": "Stormwind"
   },
   {
     "x": 293,
     "y": -101,
     "name": "Refuge Pointe",
     "zone": "Arathi Highlands",
-    "faction": "Alliance"
+    "faction": "Stormwind"
   },
   {
     "x": 51,
     "y": -27,
     "name": "Darnassus",
     "zone": "Teldrassil",
-    "faction": "Alliance",
+    "faction": "Darnassus",
     "people": [
       {
         "name": "Darnath Bladesinger",
@@ -281,21 +281,21 @@
     "y": -21,
     "name": "Aldrassil",
     "zone": "Teldrassil",
-    "faction": "Alliance"
+    "faction": "Darnassus"
   },
   {
     "x": 72,
     "y": -27,
     "name": "Star Breeze Village",
     "zone": "Teldrassil",
-    "faction": "Alliance"
+    "faction": "Darnassus"
   },
   {
     "x": 66,
     "y": -39,
     "name": "Rut'theran Village",
     "zone": "Teldrassil",
-    "faction": "Alliance",
+    "faction": "Darnassus",
     "transport": [
       {
         "means": "Ship",
@@ -309,7 +309,7 @@
     "y": -27,
     "name": "Dolanaar",
     "zone": "Teldrassil",
-    "faction": "Alliance",
+    "faction": "Darnassus",
     "people": [
       {
         "name": "Kyra Windblade",
@@ -348,28 +348,28 @@
     "y": -103,
     "name": "Astranaar",
     "zone": "Ashenvale",
-    "faction": "Alliance"
+    "faction": "Darnassus"
   },
   {
     "x": 118,
     "y": -57,
     "name": "Starfall Village",
     "zone": "Winterspring",
-    "faction": "Alliance"
+    "faction": "Darnassus"
   },
   {
     "x": 98,
     "y": -114,
     "name": "Silverwind Outpost",
     "zone": "Ashenvale",
-    "faction": "Alliance"
+    "faction": "Darnassus"
   },
   {
     "x": 89,
     "y": -110,
     "name": "Silverwind Refuge",
     "zone": "Ashenvale",
-    "faction": "Alliance",
+    "faction": "Darnassus",
     "people": [
       {
         "name": "Danlaar Nightstride",
@@ -384,21 +384,21 @@
     "y": -117,
     "name": "Silverwing Grove",
     "zone": "Ashenvale",
-    "faction": "Alliance"
+    "faction": "Darnassus"
   },
   {
     "x": 111,
     "y": -101,
     "name": "Forest Song",
     "zone": "Ashenvale",
-    "faction": "Alliance"
+    "faction": "Darnassus"
   },
   {
     "x": 71,
     "y": -64,
     "name": "Auberdine",
     "zone": "Darkshore",
-    "faction": "Alliance",
+    "faction": "Darnassus",
     "transport": [
       {
         "means": "Ship",
@@ -417,14 +417,14 @@
     "y": -105,
     "name": "Talrendis Point",
     "zone": "Azshara",
-    "faction": "Alliance"
+    "faction": "Darnassus"
   },
   {
     "x": 97,
     "y": -66,
     "name": "Talonbranch Glade",
     "zone": "Felwood",
-    "faction": "Alliance",
+    "faction": "Darnassus",
     "people": [
       {
         "name": "Golhing the Hooded",
@@ -445,42 +445,42 @@
     "y": -180,
     "name": "Feathermoon Stronghold",
     "zone": "Feralas",
-    "faction": "Alliance"
+    "faction": "Darnassus"
   },
   {
     "x": 63,
     "y": -131,
     "name": "Nijel's Point",
     "zone": "Desolace",
-    "faction": "Alliance"
+    "faction": "Darnassus"
   },
   {
     "x": 84,
     "y": -181,
     "name": "Thalaanar",
     "zone": "Thousand Needles",
-    "faction": "Alliance"
+    "faction": "Darnassus"
   },
   {
     "x": 61,
     "y": -104,
     "name": "Stonetalon Peak",
     "zone": "Stonetalon Mountains",
-    "faction": "Alliance"
+    "faction": "Darnassus"
   },
   {
     "x": 288,
     "y": -85,
     "name": "Aerie Peak",
     "zone": "Hinterlands",
-    "faction": "Alliance"
+    "faction": "Wildhammer Clan"
   },
   {
     "x": 275,
     "y": -142,
     "name": "Ironforge",
     "zone": "Dun Morogh",
-    "faction": "Alliance",
+    "faction": "Ironforge",
     "transport": [
       {
         "means": "Tram",
@@ -550,26 +550,21 @@
     "y": -145,
     "name": "Thelsamar",
     "zone": "Loch Modan",
-    "faction": "Alliance"
+    "faction": "Ironforge"
   },
   {
     "x": 279,
     "y": -101,
     "name": "Dun Garok",
     "zone": "Hillsbrad Foothills",
-    "faction": "Alliance"
-  },
-  {
-    "name": "Dun Modr",
-    "zone": "Wetlands",
-    "faction": "Alliance"
+    "faction": "Ironforge"
   },
   {
     "x": 271,
     "y": -148,
     "name": "Kharanos",
     "zone": "Dun Morogh",
-    "faction": "Alliance",
+    "faction": "Ironforge",
     "people": [
       {
         "name": "Granis Swiftaxe",
@@ -620,21 +615,21 @@
     "y": -154,
     "name": "Anvilmar",
     "zone": "Dun Morogh",
-    "faction": "Alliance"
+    "faction": "Ironforge"
   },
   {
     "x": 295,
     "y": -139,
     "name": "Algaz Station",
     "zone": "Loch Modan",
-    "faction": "Alliance"
+    "faction": "Ironforge"
   },
   {
     "x": 121,
     "y": -116,
     "name": "Orgrimmar",
     "zone": "Durotar",
-    "faction": "Horde",
+    "faction": "Orgrimmar",
     "transport": [
       {
         "means": "Zeppelin",
@@ -709,7 +704,7 @@
     "y": -129,
     "name": "Razor Hill",
     "zone": "Durotar",
-    "faction": "Horde",
+    "faction": "Orgrimmar",
     "people": [
       {
         "name": "Tarshaw Jaggedscar",
@@ -754,42 +749,42 @@
     "y": -97,
     "name": "Zoram'gar Outpost",
     "zone": "Ashenvale",
-    "faction": "Horde"
+    "faction": "Orgrimmar"
   },
   {
     "x": 105,
     "y": -137,
     "name": "The Crossroads",
     "zone": "The Barrens",
-    "faction": "Horde"
+    "faction": "Orgrimmar"
   },
   {
     "x": 80,
     "y": -78,
     "name": "Bloodvenom Post",
     "zone": "Felwood",
-    "faction": "Horde"
+    "faction": "Orgrimmar"
   },
   {
     "x": 123,
     "y": -94,
     "name": "Valormok",
     "zone": "Azshara",
-    "faction": "Horde"
+    "faction": "Orgrimmar"
   },
   {
     "x": 101,
     "y": -120,
     "name": "The Mor'shan Rampart",
     "zone": "The Barrens",
-    "faction": "Horde"
+    "faction": "Orgrimmar"
   },
   {
     "x": 264,
     "y": -220,
     "name": "Grom'gol Base Camp",
     "zone": "Stranglethorn Vale",
-    "faction": "Horde",
+    "faction": "Orgrimmar",
     "transport": [
       {
         "means": "Zeppelin",
@@ -811,21 +806,21 @@
     "y": -109,
     "name": "Splintertree Post",
     "zone": "Ashenvale",
-    "faction": "Horde"
+    "faction": "Orgrimmar"
   },
   {
     "x": 290,
     "y": -159,
     "name": "Kargath",
     "zone": "Badlands",
-    "faction": "Horde"
+    "faction": "Orgrimmar"
   },
   {
     "x": 301,
     "y": -199,
     "name": "Stonard",
     "zone": "Swamp of Sorrows",
-    "faction": "Horde",
+    "faction": "Orgrimmar",
     "people": [
       {
         "name": "Malosh",
@@ -858,14 +853,14 @@
     "y": -167,
     "name": "Brackenwall Village",
     "zone": "Dustwallow Marsh",
-    "faction": "Horde"
+    "faction": "Orgrimmar"
   },
   {
     "x": 129,
     "y": -142,
     "name": "Sen'jin Village",
     "zone": "Durotar",
-    "faction": "Horde",
+    "faction": "Darkspear Tribe",
     "people": [
       {
         "name": "Un'Thuwa",
@@ -880,21 +875,21 @@
     "y": -150,
     "name": "Shadowprey Village",
     "zone": "Desolace",
-    "faction": "Horde"
+    "faction": "Darkspear Tribe"
   },
   {
     "x": 316,
     "y": -94,
     "name": "Revantusk Village",
     "zone": "Hinterlands",
-    "faction": "Horde"
+    "faction": "Revantusk Tribe"
   },
   {
     "x": 76,
     "y": -146,
     "name": "Thunder Bluff",
     "zone": "Mulgore",
-    "faction": "Horde",
+    "faction": "Thunder Bluff",
     "people": [
       {
         "name": "Torm Ragetotem",
@@ -945,7 +940,7 @@
     "y": -158,
     "name": "Bloodhoof Village",
     "zone": "Mulgore",
-    "faction": "Horde",
+    "faction": "Thunder Bluff",
     "people": [
       {
         "name": "Krang Stonehoof",
@@ -978,14 +973,14 @@
     "y": -164,
     "name": "Camp Narache",
     "zone": "Mulgore",
-    "faction": "Horde"
+    "faction": "Thunder Bluff"
   },
   {
     "x": 73,
     "y": -179,
     "name": "Camp Mojache",
     "zone": "Feralas",
-    "faction": "Horde",
+    "faction": "Thunder Bluff",
     "people": [
       {
         "name": "Jannos Lighthoof",
@@ -1000,35 +995,35 @@
     "y": -158,
     "name": "Camp Taurajo",
     "zone": "The Barrens",
-    "faction": "Horde"
+    "faction": "Thunder Bluff"
   },
   {
     "x": 102,
     "y": -191,
     "name": "Freewind Post",
     "zone": "Thousand Needles",
-    "faction": "Horde"
+    "faction": "Thunder Bluff"
   },
   {
     "x": 66,
     "y": -123,
     "name": "Sun Rock Retreat",
     "zone": "Stonetalon Mountains",
-    "faction": "Horde"
+    "faction": "Thunder Bluff"
   },
   {
     "x": 57,
     "y": -146,
     "name": "Ghost Walker Post",
     "zone": "Desolace",
-    "faction": "Horde"
+    "faction": "Thunder Bluff"
   },
   {
     "x": 263,
     "y": -71,
     "name": "Undercity",
     "zone": "Tirisfal Glades",
-    "faction": "Horde",
+    "faction": "Undercity",
     "transport": [
       {
         "means": "Zeppelin",
@@ -1086,19 +1081,19 @@
     "y": -69,
     "name": "The Bulwark",
     "zone": "Tirisfal Glades",
-    "faction": "Horde"
+    "faction": "Undercity"
   },
   {
     "name": "Deathknell",
     "zone": "Tirisfal Glades",
-    "faction": "Horde"
+    "faction": "Undercity"
   },
   {
     "x": 262,
     "y": -63,
     "name": "Brill",
     "zone": "Tirisfal Glades",
-    "faction": "Horde",
+    "faction": "Undercity",
     "people": [
       {
         "name": "Austil de Mon",
@@ -1137,42 +1132,42 @@
     "y": -98,
     "name": "Hammerfall",
     "zone": "Arathi Highlands",
-    "faction": "Horde"
+    "faction": "Undercity"
   },
   {
     "x": 275,
     "y": -88,
     "name": "Tarren Mill",
     "zone": "Hillsbrad Foothills",
-    "faction": "Horde"
+    "faction": "Undercity"
   },
   {
     "x": 248,
     "y": -82,
     "name": "The Sepulcher",
     "zone": "Silverpine Forest",
-    "faction": "Horde"
+    "faction": "Undercity"
   },
   {
     "x": 68,
     "y": -206,
     "name": "Cenarion Hold",
     "zone": "Silithus",
-    "faction": "Neutral"
+    "faction": "Cenarion Circle"
   },
   {
     "x": 87,
     "y": -87,
     "name": "Emerald Sanctuary",
     "zone": "Felwood",
-    "faction": "Neutral"
+    "faction": "Cenarion Circle"
   },
   {
     "x": 103,
     "y": -48,
     "name": "Nighthaven",
     "zone": "Moonglade",
-    "faction": "Neutral",
+    "faction": "Cenarion Circle",
     "people": [
       {
         "name": "Loganaar",
@@ -1187,42 +1182,42 @@
     "y": -63,
     "name": "Light's Hope Chapel",
     "zone": "Eastern Plaguelands",
-    "faction": "Neutral"
+    "faction": "Argent Dawn"
   },
   {
     "x": 282,
     "y": -78,
     "name": "Chillwind Camp",
     "zone": "Western Plaguelands",
-    "faction": "Neutral"
+    "faction": "Argent Dawn"
   },
   {
     "x": 279,
     "y": -158,
     "name": "Thorium Point",
     "zone": "Searing Gorge",
-    "faction": "Neutral"
+    "faction": "Thorium Brotherhood"
   },
   {
     "x": 127,
     "y": -61,
     "name": "Everlook",
     "zone": "Winterspring",
-    "faction": "Neutral"
+    "faction": "Steamwheedle Cartel"
   },
   {
     "x": 117,
     "y": -209,
     "name": "Gadgetzan",
     "zone": "Tanaris",
-    "faction": "Neutral"
+    "faction": "Steamwheedle Cartel"
   },
   {
     "x": 116,
     "y": -143,
     "name": "Ratchet",
     "zone": "The Barrens",
-    "faction": "Neutral",
+    "faction": "Steamwheedle Cartel",
     "transport": [
       {
         "means": "Ship",
@@ -1236,7 +1231,7 @@
     "y": -241,
     "name": "Booty Bay",
     "zone": "Stranglethorn Vale",
-    "faction": "Neutral",
+    "faction": "Steamwheedle Cartel",
     "transport": [
       {
         "means": "Ship",
@@ -1265,7 +1260,7 @@
     "y": -58,
     "name": "Timbermaw Hold",
     "zone": "Felwood",
-    "faction": "Neutral"
+    "faction": "Timbermaw Tribe"
   },
   {
     "x": 64,
@@ -1279,7 +1274,7 @@
     "y": -196,
     "name": "The Harborage",
     "zone": "Swamp of Sorrows",
-    "faction": "Neutral"
+    "faction": "Broken"
   },
   {
     "x": 267,

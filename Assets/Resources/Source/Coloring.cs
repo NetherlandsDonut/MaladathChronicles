@@ -30,8 +30,7 @@ public static class Coloring
         else return "Yellow";
     }
 
-    public static Dictionary<string, Color32> colors =
-    new()
+    public static Dictionary<string, Color32> colors = new()
     {
         { "White", new Color32(234, 234, 234, 255) },
         { "LightGray", new Color32(202, 202, 202, 255) },
