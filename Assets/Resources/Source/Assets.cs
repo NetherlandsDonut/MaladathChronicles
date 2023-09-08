@@ -1,22 +1,46 @@
 using System;
 using System.Collections.Generic;
 
+//Assets class is responsible for storing information
+//about usable assets for in-game content such as icons or sounds
 public class Assets
 {
-    public Assets() { }
+    //List of all ambience tracks available in-game
+    public List<string> ambience;
 
-    public Assets(List<string> ambience, List<string> sounds, List<string> itemIcons, List<string> abilityIcons, List<string> factionIcons, List<string> portraits)
-    {
-        this.ambience = ambience;
-        this.sounds = sounds;
-        this.itemIcons = itemIcons;
-        this.abilityIcons = abilityIcons;
-        this.factionIcons = factionIcons;
-        this.portraits = portraits;
-    }
+    //List of filtered ambience tracks by input search
+    [NonSerialized] public List<string> ambienceSearch;
 
-    public List<string> ambience, sounds, itemIcons, abilityIcons, factionIcons, portraits;
-    [NonSerialized] public List<string> ambienceSearch, soundsSearch, itemIconsSearch, abilityIconsSearch, factionIconsSearch, portraitsSearch;
+    //List of all sound effects available in-game
+    public List<string> sounds;
 
+    //List of filtered sound effects by input search
+    [NonSerialized] public List<string> soundsSearch;
+
+    //List of all item icons available in-game
+    public List<string> itemIcons;
+
+    //List of filtered item icons by input search
+    [NonSerialized] public List<string> itemIconsSearch;
+
+    //List of all ability icons available in-game
+    public List<string> abilityIcons;
+
+    //List of filtered ability icons by input search
+    [NonSerialized] public List<string> abilityIconsSearch;
+
+    //List of all faction icons available in-game
+    public List<string> factionIcons;
+
+    //List of filtered faction icons by input search
+    [NonSerialized] public List<string> factionIconsSearch;
+
+    //List of all portraits available in-game
+    public List<string> portraits;
+
+    //List of filtered portraits by input search
+    [NonSerialized] public List<string> portraitsSearch;
+
+    //Assets object that keeps all asset data
     public static Assets assets;
 }
