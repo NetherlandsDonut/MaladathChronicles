@@ -41,6 +41,6 @@ public class Assets
     //List of filtered portraits by input search
     [NonSerialized] public List<string> portraitsSearch;
 
-    //Assets object that keeps all asset data
+    //EXTERNAL FILE: Assets object that keeps all asset data
     public static Assets assets;
 }

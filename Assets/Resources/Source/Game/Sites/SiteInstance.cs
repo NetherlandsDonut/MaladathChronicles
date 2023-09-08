@@ -7,25 +7,32 @@ using UnityEngine;
 using static Root;
 using static Root.Anchor;
 
-using static SaveGame;
 using static Coloring;
+using static SaveGame;
 using static SiteHostileArea;
 
-public class SiteInstance
+public class SiteInstance : Site
 {
-    public void Initialise()
+    //Initialisation method to fill automatic values
+    //and remove empty collections to avoid serialising them later
+    public override void Initialise()
     {
+        type ??= "Dungeon";
         var localAreas = wings.SelectMany(x => x.areas.Select(y => y.ContainsKey("AreaName") ? y["AreaName"] : ""));
         var temp = areas.FindAll(x => localAreas.Contains(x.name));
         temp.ForEach(x => x.instancePart = true);
     }
 
-    public int x, y;
-    public string name, zone, type, ambience;
+    //Determines whether this instance is a part of a complex
     public bool complexPart;
+
+    //Instance description showed in the left side of the screen
     public List<string> description;
+
+    //Instance wings that store all the instance's areas
     public List<InstanceWing> wings;
 
+    //Suggested level range for the player to enter this instance
     public (int, int) LevelRange()
     {
         var localAreas = wings.SelectMany(x => x.areas.Select(y => y.ContainsKey("AreaName") ? y["AreaName"] : ""));
@@ -34,35 +41,36 @@ public class SiteInstance
         return (temp.Min(x => x.recommendedLevel), temp.Max(x => x.recommendedLevel));
     }
 
+    //Currently opened instance
     public static SiteInstance instance;
-    public static List<SiteInstance> instances, instancesSearch;
 
-    public void PrintSite()
+    //EXTERNAL FILE: List containing all instances in-game
+    public static List<SiteInstance> instances;
+
+    //List of all filtered instances by input search
+    public static List<SiteInstance> instancesSearch;
+
+    //Function to print the site onto the map
+    public override void PrintSite()
     {
         SetAnchor(x * 19, y * 19);
         AddRegionGroup();
         AddPaddingRegion(() =>
         {
             AddSmallButton("Site" + type,
-            (h) =>
-            {
-                instance = this;
-                CDesktop.cameraDestination = new Vector2(x, y) - new Vector2(17, -9);
-                CDesktop.queuedSiteOpen = "Instance";
-                CDesktop.LockScreen();
-            },
+            (h) => { QueueSiteOpen("Instance"); },
             (h) => () =>
             {
                 SetAnchor(TopRight, h.window);
                 AddRegionGroup();
                 SetRegionGroupWidth(152);
-                AddHeaderRegion(() => { AddLine(name, "Gray"); });
+                AddHeaderRegion(() => { AddLine(name); });
                 AddPaddingRegion(() =>
                 {
-                    AddLine("Level range: ", "Gray");
+                    AddLine("Level range: ");
                     var range = LevelRange();
                     AddText(range.Item1 + "", ColorEntityLevel(range.Item1));
-                    AddText(" - ", "Gray");
+                    AddText(" - ");
                     AddText(range.Item2 + "", ColorEntityLevel(range.Item2));
                 });
                 var areas = wings.SelectMany(x => x.areas.Select(y => SiteHostileArea.areas.Find(z => z.name == y["AreaName"])));

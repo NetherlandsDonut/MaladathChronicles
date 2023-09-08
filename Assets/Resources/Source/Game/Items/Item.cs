@@ -14,12 +14,74 @@ using static GameSettings;
 
 public class Item
 {
-    public string rarity, name, icon, detailedType, type, armorClass, set, faction, reputationRequired;
-    public int ilvl, lvl, minDamage, maxDamage, armor, block;
-    public List<string> possibleItems, alternateItems, abilities, classes;
-    public double price, speed;
+    //Rarity of this item which can range from Poor to Legendary
+    public string rarity;
+
+    //Name of the item
+    public string name;
+
+    //Icon of the item in the inventory
+    public string icon;
+
+    //Detailed type of the item
+    //EXAMPLE: "Axe" for item of "Two Handed" type
+    public string detailedType;
+
+    //Type of the item
+    public string type;
+
+    //Armor class of the armor piece
+    //Can range from Cloth to Plate
+    public string armorClass;
+
+    //Set that this item is part of
+    public string set;
+
+    //Faction that this item belongs to
+    public string faction;
+
+    //Reputation standing required from the player to use this item
+    public string reputationRequired;
+    
+    //Item power / level of this item, helps in calculating which item is better than other
+    public int ilvl;
+
+    //Minimum required level of the character for it to be able to equip or use this item
+    public int lvl;
+
+    //Minimum damage this weapon can do
+    public int minDamage;
+    
+    //Maximum damage this weapon can do
+    public int maxDamage;
+
+    //Amount of armor provided to the wearer of this item
+    public int armor;
+
+    //Amount of block power provided to the wearer
+    public int block;
+
+    //List of abilities provided to the wearer of this item
+    public List<string> abilities;
+
+    //Class restrictions for this item
+    //Classes listed in it are the classes that exclusively can use this item
+    public List<string> classes;
+    
+    //Price of the item for it to be bought, the sell price is 1/4 of that
+    public double price;
+
+    //Weapon attack speed
+    public double speed;
+    
+    //Stats provided to the wearer like Stamina or Intellect
     public Stats stats;
 
+    //Those two are unused right now but will serve the role of loot
+    public List<string> possibleItems;
+    public List<string> alternateItems;
+
+    //This function returns the type of sound that this item makes when it is being manipulated
     public string ItemSound(string soundType)
     {
         string result;

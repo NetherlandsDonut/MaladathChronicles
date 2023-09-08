@@ -12,34 +12,42 @@ using static SiteHostileArea;
 
 public class SiteComplex
 {
-    public void Initialise()
+    //Initialisation method to fill automatic values
+    //and remove empty collections to avoid serialising them later
+    public override void Initialise()
     {
+        type ??= "Complex";
         instances.FindAll(x => sites.Exists(y => (y["SiteType"] == "Raid" || y["SiteType"] == "Dungeon") && y["SiteName"] == x.name)).ForEach(x => x.complexPart = true);
         areas.FindAll(x => sites.Exists(y => y["SiteType"] == "HostileArea" && y["SiteName"] == x.name)).ForEach(x => x.complexPart = true);
     }
 
-    public int x, y;
-    public string name, zone, ambience;
+    //Complex description showed in the left side of the screen
     public List<string> description;
+
+    //List of all sites that this complex contains
+    //Keys provide information what type of site it is
+    //Values provide information what is the name of the site
+    //EXAMPLE: { "SiteType": "Raid", "SiteName": "Molten Core" } 
     public List<Dictionary<string, string>> sites;
 
+    //Currently opened complex
     public static SiteComplex complex;
-    public static List<SiteComplex> complexes, complexesSearch;
 
-    public void PrintSite()
+    //EXTERNAL FILE: List containing all complexes in-game
+    public static List<SiteComplex> complexes;
+
+    //List of all filtered complexes by input search
+    public static List<SiteComplex> complexesSearch;
+
+    //Function to print the site onto the map
+    public override void PrintSite()
     {
         SetAnchor(x * 19, y * 19);
         AddRegionGroup();
         AddPaddingRegion(() =>
         {
             AddSmallButton("SiteComplex",
-            (h) =>
-            {
-                complex = this;
-                CDesktop.cameraDestination = new Vector2(x, y) - new Vector2(17, -9);
-                CDesktop.queuedSiteOpen = "Complex";
-                CDesktop.LockScreen();
-            },
+            (h) => { QueueSiteOpen("Complex"); },
             (h) => () =>
             {
                 SetAnchor(TopRight, h.window);
@@ -85,6 +93,4 @@ public class SiteComplex
             }
         });
     }
-
-
 }

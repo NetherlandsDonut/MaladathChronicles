@@ -264,7 +264,7 @@ public class Blueprint
                 AddHeaderRegion(() => { AddLine(slot.player.name); });
                 AddHeaderRegion(() =>
                 {
-                    AddBigButton("Portrait" + slot.player.race.Replace("'", "").Replace(".", "").Replace(" ", "") + slot.player.gender, (h) => { });
+                    AddBigButton("Portrait" + slot.player.race.Replace("'", "").Replace(".", "").Replace(" ", "") + (Race.races.Find(x => x.name == slot.player.race).genderedPortrait ? slot.player.gender : ""), (h) => { });
                     AddBigButton(slot.player.GetClass().icon, (h) => { });
                     AddLine("Level: " + slot.player.level, "Gray");
                     AddLine(spec.name, "Gray");
@@ -368,7 +368,7 @@ public class Blueprint
                 {
                     AddPaddingRegion(() =>
                     {
-                        AddBigButton("Portrait" + slot.player.race.Replace("'", "").Replace(".", "").Replace(" ", "") + slot.player.gender, (h) =>
+                        AddBigButton("Portrait" + slot.player.race.Replace("'", "").Replace(".", "").Replace(" ", "") + (Race.races.Find(x => x.name == slot.player.race).genderedPortrait ? slot.player.gender : ""), (h) =>
                         {
                             CloseWindow("RealmRoster");
                             if (settings.selectedCharacter != slot.player.name)
@@ -532,7 +532,7 @@ public class Blueprint
                 else
                 {
                     var race = races.Find(x => x.name == Board.board.enemy.race);
-                    AddBigButton(race.portrait == "" ? "OtherUnknown" : race.portrait, (h) => { });
+                    AddBigButton(race.portrait == "" ? "OtherUnknown" : race.portrait + (race.genderedPortrait ? Board.board.enemy.gender : ""), (h) => { });
                 }
                 AddLine("Level: " + Board.board.player.level, "Gray");
                 AddLine("Health: " + Board.board.player.health + "/" + Board.board.player.MaxHealth(), "Gray");
@@ -589,7 +589,7 @@ public class Blueprint
             );
             AddHeaderRegion(() =>
             {
-                AddBigButton("Portrait" + currentSave.player.race.Replace("'", "").Replace(".", "").Replace(" ", "") + currentSave.player.gender,
+                AddBigButton("Portrait" + currentSave.player.race.Replace("'", "").Replace(".", "").Replace(" ", "") + (Race.races.Find(x => x.name == currentSave.player.race).genderedPortrait ? currentSave.player.gender : ""),
                     (h) => { }
                 );
                 AddBigButton(currentSave.player.GetClass().icon,
@@ -911,7 +911,7 @@ public class Blueprint
             AddHeaderRegion(() =>
             {
                 var race = races.Find(x => x.name == Board.board.enemy.race);
-                AddBigButton(race.portrait == "" ? "OtherUnknown" : race.portrait, (h) => { });
+                AddBigButton(race.portrait == "" ? "OtherUnknown" : race.portrait + (race.genderedPortrait ? Board.board.enemy.gender : ""), (h) => { });
                 AddLine("Level: ", "Gray");
                 AddText(Board.board.enemy.level - 10 > Board.board.player.level ? "??" : "" + Board.board.enemy.level, ColorEntityLevel(Board.board.enemy.level));
                 AddLine("Health: " + Board.board.enemy.health + "/" + Board.board.enemy.MaxHealth(), "Gray");
@@ -5677,7 +5677,7 @@ public class Blueprint
                         SetRegionBackground(RegionBackgroundType.Button);
                         var foo = racesSearch[index + 10 * regionGroup.pagination];
                         AddLine(foo.name);
-                        AddSmallButton(foo.faction != null ? foo.portrait + "Female" : foo.portrait, (h) => { });
+                        AddSmallButton(foo.portrait + (foo.genderedPortraits ? "Female" : ""), (h) => { });
                     }
                     else
                     {
@@ -5729,7 +5729,17 @@ public class Blueprint
             SetRegionGroupHeight(354);
             AddPaddingRegion(() => { AddLine("Race:", "DarkGray"); });
             AddInputRegion(String.objectName, InputType.Everything);
-            if (race.faction != null)
+            AddPaddingRegion(() => { AddLine("Gendered portraits:", "DarkGray"); });
+            AddButtonRegion(() =>
+            {
+                AddLine(race.genderedPortraits ? "True" : "False");
+            },
+            (h) =>
+            {
+                race.genderedPortraits ^= true;
+                h.window.Respawn();
+            });
+            if (race.genderedPortraits)
             {
                 AddPaddingRegion(() => { AddLine("Portraits:", "DarkGray"); });
                 AddHeaderRegion(() =>
@@ -5741,7 +5751,7 @@ public class Blueprint
                 AddPaddingRegion(() => { AddLine("Faction:", "DarkGray"); });
                 AddHeaderRegion(() => { AddLine(race.faction); });
             }
-            else if (race.faction == null)
+            else
             {
                 AddPaddingRegion(() => { AddLine("Portrait:", "DarkGray"); });
                 AddButtonRegion(() =>
@@ -5751,7 +5761,7 @@ public class Blueprint
                 },
                 (h) =>
                 {
-                    if (CloseWindow("ObjectManagerRaces"))
+                    if (CloseWindow("ObjectManagerRaces") || CloseWindow("ObjectManagerFactions"))
                     {
                         Assets.assets.portraitsSearch = Assets.assets.portraits;
                         SpawnWindowBlueprint("ObjectManagerPortraitList");
@@ -5770,6 +5780,20 @@ public class Blueprint
                         race.kind = "Elite";
                     else if (race.kind == "Elite")
                         race.kind = "Common";
+                });
+                AddPaddingRegion(() => { AddLine("Faction:", "DarkGray"); });
+                AddButtonRegion(() =>
+                {
+                    AddLine(race.faction);
+                    AddSmallButton(race.Faction().icon, (h) => { });
+                },
+                (h) =>
+                {
+                    if (CloseWindow("ObjectManagerRaces") || CloseWindow("ObjectManagerPortraitList"))
+                    {
+                        Faction.factionsSearch = Faction.factions;
+                        SpawnWindowBlueprint("ObjectManagerFactions");
+                    }
                 });
                 AddPaddingRegion(() => { AddLine("Vitality:", "DarkGray"); });
                 AddInputRegion(String.vitality, InputType.Decimal);
@@ -5841,9 +5865,14 @@ public class Blueprint
                 var index = factionsSearch.IndexOf(faction);
                 if (index >= 10) CDesktop.LBWindow.LBRegionGroup.pagination = index / 10;
             }
-            if (town != null)
+            else if (town != null)
             {
                 var index = factionsSearch.FindIndex(x => x.name == town.faction);
+                if (index >= 10) CDesktop.LBWindow.LBRegionGroup.pagination = index / 10;
+            }
+            else if (race != null)
+            {
+                var index = factionsSearch.FindIndex(x => x.name == race.faction);
                 if (index >= 10) CDesktop.LBWindow.LBRegionGroup.pagination = index / 10;
             }
             AddHeaderRegion(() =>
@@ -5911,6 +5940,13 @@ public class Blueprint
                         CloseWindow(h.window);
                         Respawn("ObjectManagerTown");
                         Respawn("ObjectManagerTowns");
+                    }
+                    else if (race != null)
+                    {
+                        race.faction = factionsSearch[index + 10 * regionGroup.pagination].name;
+                        CloseWindow(h.window);
+                        Respawn("ObjectManagerRace");
+                        Respawn("ObjectManagerRaces");
                     }
                     else
                     {

@@ -19,6 +19,6 @@ public class ActionBar
     //Name of the ability in this action bar slot
     public string ability;
 
-    //Duration of the cooldown that is left
+    //Duration of the cooldown that is left before the ability can be used again
     [NonSerialized] public int cooldown;
 }

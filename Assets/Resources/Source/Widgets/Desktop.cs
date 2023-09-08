@@ -68,9 +68,7 @@ public class Desktop : MonoBehaviour
     {
         if (CDesktop.title == "TalentScreen")
             screen.transform.localPosition = new Vector3(320, -140);
-        else if (CDesktop.title == "Map")
-            screen.transform.localPosition = new Vector3(-1000, 1000);
-        else if (CDesktop.title == "MapDead")
+        else if (CDesktop.title == "Map" || CDesktop.title == "MapDead")
             screen.transform.localPosition = new Vector3(-1000, 1000);
     }
 
@@ -125,7 +123,7 @@ public class Desktop : MonoBehaviour
                 {
                     RemoveDesktopBackground();
                     var rounded = new Vector2((float)Math.Round(cameraDestination.x), (float)Math.Round(cameraDestination.y));
-                    var newPosition = rounded * 19 + new Vector2(333, -183);
+                    var newPosition = rounded * 19;
                     cursor.transform.position += (Vector3)newPosition - screen.transform.position;
                     screen.transform.position = newPosition;
                     SpawnWindowBlueprint("MapToolbar");
@@ -146,7 +144,7 @@ public class Desktop : MonoBehaviour
         {
             if (CDesktop.title == "TitleScreen" && CDesktop.screen.GetComponent<SpriteRenderer>().sprite == null && !windows.Exists(x => x.name == "CharacterCreation"))
             {
-                var amount = new Vector3(titleScreenCameraDirection < 2 ? -1 / 3f : 1 / 3f, titleScreenCameraDirection > 2 ? -0.3333f : (titleScreenCameraDirection < 1 ? -0.3333f : 0.3333f));
+                var amount = new Vector3(titleScreenCameraDirection < 2 ? -1 / 3f : 1 / 3f, titleScreenCameraDirection > 2 ? -1 / 3f : (titleScreenCameraDirection < 1 ? -1 / 3f : 1 / 3f));
                 screen.transform.localPosition += amount;
                 cursor.transform.localPosition += amount;
                 if (Math.Abs(screen.transform.localPosition.x - 1762) > 750 && screen.transform.localPosition.x < 3774 || Math.Abs(screen.transform.localPosition.x - 5374) > 750 && screen.transform.localPosition.x >= 3774)
@@ -163,7 +161,7 @@ public class Desktop : MonoBehaviour
                 {
                     MapGrid.EnforceBoundary();
                     var rounded = new Vector2((float)Math.Round(cameraDestination.x), (float)Math.Round(cameraDestination.y));
-                    var newPosition = Vector3.Lerp(temp, rounded * 19 + new Vector2(333, -183), Time.deltaTime * 4);
+                    var newPosition = Vector3.Lerp(temp, rounded * 19, Time.deltaTime * 4);
                     cursor.transform.position += newPosition - temp;
                     screen.transform.position = newPosition;
                     if (screenLocked && Vector3.Distance(screen.transform.position, (cameraDestination + new Vector2(17, -9)) * 19 + new Vector2(10, -10)) <= 10)
@@ -204,7 +202,7 @@ public class Desktop : MonoBehaviour
                 {
                     MapGrid.EnforceBoundary();
                     var rounded = new Vector2((float)Math.Round(cameraDestination.x), (float)Math.Round(cameraDestination.y));
-                    var newPosition = Vector3.Lerp(temp, rounded * 19 + new Vector2(333, -183), Time.deltaTime * 4);
+                    var newPosition = Vector3.Lerp(temp, rounded * 19, Time.deltaTime * 4);
                     cursor.transform.position += newPosition - temp;
                     screen.transform.position = newPosition;
                     if (screenLocked && Vector3.Distance(screen.transform.position, (cameraDestination + new Vector2(17, -9)) * 19 + new Vector2(10, -10)) <= 10)

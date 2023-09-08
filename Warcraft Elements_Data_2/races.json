@@ -3021,7 +3021,7 @@
   },
   {
     "name": "Dwarf",
-    "faction": "Alliance",
+    "faction": "Ironforge",
     "startingSite": "Anvilmar",
     "portrait": "PortraitDwarf",
     "background": "AreaDunMoroghIronforge",
@@ -3371,7 +3371,7 @@
   },
   {
     "name": "Forsaken",
-    "faction": "Horde",
+    "faction": "Undercity",
     "startingSite": "Deathknell",
     "portrait": "PortraitForsaken",
     "background": "AreaTirisfalGladesUndercityCentral",
@@ -3701,10 +3701,11 @@
   },
   {
     "name": "Gnome",
-    "faction": "Alliance",
+    "faction": "Gnomeregan",
     "startingSite": "Anvilmar",
     "portrait": "PortraitGnome",
     "background": "AreaDunMoroghGnomeregan",
+    "genderedPortraits": true,
     "stats": {
       "stats": {
         "Stamina": 3,
@@ -4599,10 +4600,11 @@
   },
   {
     "name": "Human",
-    "faction": "Alliance",
+    "faction": "Stormwind",
     "startingSite": "Northshire Abbey",
     "portrait": "PortraitHuman",
     "background": "AreaElwynnForestStormwind",
+    "genderedPortraits": true,
     "stats": {
       "stats": {
         "Stamina": 6,
@@ -5603,10 +5605,11 @@
   },
   {
     "name": "Night Elf",
-    "faction": "Alliance",
+    "faction": "Darnassus",
     "startingSite": "Aldrassil",
     "portrait": "PortraitNightElf",
     "background": "AreaTeldrassilDarnassus",
+    "genderedPortraits": true,
     "stats": {
       "stats": {
         "Stamina": 5,
@@ -5798,10 +5801,11 @@
   },
   {
     "name": "Orc",
-    "faction": "Horde",
+    "faction": "Orgrimmar",
     "startingSite": "Valley of Trials",
     "portrait": "PortraitOrc",
     "background": "AreaDurotarOrgrimmar",
+    "genderedPortraits": true,
     "stats": {
       "stats": {
         "Stamina": 7,
@@ -5881,10 +5885,11 @@
   },
   {
     "name": "Pandaren",
-    "faction": "Both",
+    "faction": "Pandaren",
     "startingSite": "Scuttle Coast",
     "portrait": "PortraitPandaren",
     "background": "AreaMulgoreTheRollingPlains",
+    "genderedPortraits": true,
     "stats": {
       "stats": {
         "Stamina": 6,
@@ -7780,10 +7785,11 @@
   },
   {
     "name": "Tauren",
-    "faction": "Horde",
+    "faction": "Thunder Bluff",
     "startingSite": "Camp Narache",
     "portrait": "PortraitTauren",
     "background": "AreaMulgoreThunderBluff",
+    "genderedPortraits": true,
     "stats": {
       "stats": {
         "Stamina": 8,
@@ -8041,10 +8047,11 @@
   },
   {
     "name": "Troll",
-    "faction": "Horde",
+    "faction": "Darkspear Tribe",
     "startingSite": "Valley of Trials",
     "portrait": "PortraitTroll",
     "background": "AreaDurotarSenjinVillage",
+    "genderedPortraits": true,
     "stats": {
       "stats": {
         "Stamina": 7,

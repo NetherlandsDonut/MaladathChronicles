@@ -5,6 +5,7 @@ using static GameSettings;
 
 public static class Sound
 {
+    //Plays a singular sound effect
     public static void PlaySound(string path, float volume = 0.5f)
     {
         if (!settings.soundEffects.Value()) return;
@@ -23,12 +24,20 @@ public static class Sound
         queuedAmbience = (temp, volume, instant);
     }
 
-    public static void StopAmbience(bool instant = false)
-    {
-        queuedAmbience = (null, 0, instant);
-    }
+    //Stops playing the background ambience
+    public static void StopAmbience(bool instant = false) => queuedAmbience = (null, 0, instant);
 
-    public static AudioSource ambience, soundEffects;
+    //Ambience controller that plays ambience tracks
+    public static AudioSource ambience;
+
+    //Sound effect controller that plays sound effects
+    public static AudioSource soundEffects;
+
+    //Amount of falling element sounds played this frame
+    //It is used to ensure that user's headphones are not
+    //destroyed with a stacked sound of 47 falling sounds played at once
     public static int fallingSoundsPlayedThisFrame;
+
+    //Queued ambience to be played by the ambience controller
     public static (AudioClip, float, bool) queuedAmbience;
 }

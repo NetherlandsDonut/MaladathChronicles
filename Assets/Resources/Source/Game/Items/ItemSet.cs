@@ -3,18 +3,34 @@ using System.Collections.Generic;
 
 public class ItemSet
 {
+    //Set name
     public string name;
+
+    //List of all set bonuses provided by this set
+    //Each set bonus has it's required amount of pieces for it to be activated
     public List<SetBonus> setBonuses;
 
+    //Provides information on how much equipped pieces from this set an entity has
     public int EquippedPieces(Entity entity) => entity.equipment.Count(x => x.Value.set == name);
 
+    //Currently opened item set
     public static ItemSet itemSet;
-    public static List<ItemSet> itemSets, itemSetsSearch;
+
+    //EXTERNAL FILE: List containing all item sets in-game
+    public static List<ItemSet> itemSets;
+
+    //List of all filtered item sets by input search
+    public static List<ItemSet> itemSetsSearch;
 }
 
 public class SetBonus
 {
+    //Amount of required pieces for the abilities to be provided to the wearer
     public int requiredPieces;
+
+    //Description of the set bonus for the set
     public List<string> description;
+
+    //List of all abilities provided when the wearer has at least the required amount of pieces
     public List<string> abilitiesProvided;
 }

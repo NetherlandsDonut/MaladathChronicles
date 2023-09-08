@@ -10,21 +10,26 @@ using static Root.Anchor;
 using static SaveGame;
 using static Coloring;
 
-public class SiteHostileArea
+public class SiteHostileArea : Site
 {
-    public void Initialise()
+    //Initialisation method to fill automatic values
+    //and remove empty collections to avoid serialising them later
+    public override void Initialise()
     {
         type ??= "HostileArea";
-        if (eliteEncounters != null && eliteEncounters.Count > 0)
-            recommendedLevel = (int)eliteEncounters.Average(x => x.levelMax != 0 ? (x.levelMin + x.levelMax) / 2.0 : x.levelMin);
-        else if (commonEncounters != null && commonEncounters.Count > 0)
-            recommendedLevel = (int)commonEncounters.Average(x => x.levelMax != 0 ? (x.levelMin + x.levelMax) / 2.0 : x.levelMin);
-        if (eliteEncounters != null && eliteEncounters.Count == 0) eliteEncounters = null;
+        else if (commonEncounters != null)
+            if (commonEncounters.Count > 0)
+                recommendedLevel = (int)commonEncounters.Average(x => x.levelMax != 0 ? (x.levelMin + x.levelMax) / 2.0 : x.levelMin);
+                else commonEncounters = null;
         if (rareEncounters != null && rareEncounters.Count == 0) rareEncounters = null;
-        if (commonEncounters != null && commonEncounters.Count == 0) commonEncounters = null;
+        if (eliteEncounters != null)
+            if (eliteEncounters.Count > 0)
+                recommendedLevel = (int)eliteEncounters.Average(x => x.levelMax != 0 ? (x.levelMin + x.levelMax) / 2.0 : x.levelMin);
+                else eliteEncounters = null;
     }
 
-    public void PrintSite()
+    //Function to print the site onto the map
+    public override void PrintSite()
     {
         SetAnchor(x * 19, y * 19);
         AddRegionGroup();
@@ -33,10 +38,7 @@ public class SiteHostileArea
             AddSmallButton("Site" + type,
             (h) =>
             {
-                area = this;
-                CDesktop.cameraDestination = new Vector2(x, y) - new Vector2(17, -9);
-                CDesktop.queuedSiteOpen = "HostileArea";
-                CDesktop.LockScreen();
+                QueueSiteOpen("HostileArea");
             },
             (h) => () =>
             {
@@ -44,17 +46,17 @@ public class SiteHostileArea
                 AddRegionGroup();
                 AddHeaderRegion(() =>
                 {
-                    AddLine(name, "Gray");
+                    AddLine(name);
                 });
                 AddHeaderRegion(() =>
                 {
-                    AddLine("Recommended level: ", "Gray");
+                    AddLine("Recommended level: ");
                     AddText(recommendedLevel + "", ColorEntityLevel(recommendedLevel));
                 });
                 if (commonEncounters != null && commonEncounters.Count > 0)
                     AddPaddingRegion(() =>
                     {
-                        AddLine("Common: ", "Gray");
+                        AddLine("Common: ");
                         foreach (var enemy in commonEncounters)
                         {
                             var race = Race.races.Find(x => x.name == enemy.who);
@@ -64,7 +66,7 @@ public class SiteHostileArea
                 if (eliteEncounters != null && eliteEncounters.Count > 0)
                     AddPaddingRegion(() =>
                     {
-                        AddLine("Elite: ", "Gray");
+                        AddLine("Elite: ");
                         foreach (var enemy in eliteEncounters)
                         {
                             var race = Race.races.Find(x => x.name == enemy.who);
@@ -74,7 +76,7 @@ public class SiteHostileArea
                 if (rareEncounters != null && rareEncounters.Count > 0)
                     AddPaddingRegion(() =>
                     {
-                        AddLine("Rare: ", "Gray");
+                        AddLine("Rare: ");
                         foreach (var enemy in rareEncounters)
                             AddSmallButton("OtherUnknown", (h) => { });
                     });
@@ -99,16 +101,37 @@ public class SiteHostileArea
         return new Entity(boss.levelMax != 0 ? random.Next(boss.levelMin, boss.levelMax + 1) : boss.levelMin, Race.races.Find(x => x.name == boss.who));
     }
 
-    public int x, y;
-    public string name, zone, type, ambience;
+    //Tells program whether this area has a special
+    //clear background that is shown only after clearing the area
     public bool specialClearBackground;
-    public List<Encounter> commonEncounters, rareEncounters, eliteEncounters;
 
+    //List of possible common encounters in this area
+    public List<Encounter> commonEncounters;
+
+    //List of possible rare encounters in this area
+    public List<Encounter> rareEncounters;
+
+    //List of special elite encounters in this area
+    public List<Encounter> eliteEncounters;
+
+    //Automatically calculated number that suggests
+    //at which level player should enter this area
     [NonSerialized] public int recommendedLevel;
-    [NonSerialized] public bool instancePart, complexPart;
 
+    //Determines whether this area is part of an instance
+    [NonSerialized] public bool instancePart;
+
+    //Determines whether this area is part of a complex
+    [NonSerialized] public bool complexPart;
+
+    //Currently opened hostile area
     public static SiteHostileArea area;
-    public static List<SiteHostileArea> areas, areasSearch;
+
+    //EXTERNAL FILE: List containing all hostile areas in-game
+    public static List<SiteHostileArea> areas;
+
+    //List of all filtered hostile areas by input search
+    public static List<SiteHostileArea> areasSearch;
 }
 
 public class Encounter

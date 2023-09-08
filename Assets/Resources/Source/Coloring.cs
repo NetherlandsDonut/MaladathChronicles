@@ -74,5 +74,4 @@ public static class Coloring
         { "Arcane", new Color32(204, 101, 221, 255) },
         { "Air", new Color32(175, 190, 202, 255) },
     };
-
 }

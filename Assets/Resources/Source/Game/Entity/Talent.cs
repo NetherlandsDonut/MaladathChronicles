@@ -7,10 +7,24 @@ using static Sound;
 
 public class Talent
 {
+    //Row and column of the talent in the talent tree
+    //There are three columns: 0, 1 and 2
+    //There are eleven rows from 0 to 10 with row 10 being reserved for the most powerful abilities
     public int row, col;
-    public string ability;
-    public bool inherited, defaultTaken;
 
+    //Name of the ability provided by this talent
+    public string ability;
+
+    //Indicates whether the talent requires the previous one in this
+    //talent's column to be picked before this one can be picked also
+    public bool inherited;
+
+    //Indicates whether this talent is picked by defualt
+    //This is generally used for the first talent in every specialisation
+    //to make sure that the player will have at least 3 abilities to start off
+    public bool defaultTaken;
+
+    //Prints the talent on the screen for it to be picked
     public static void PrintTalent(int spec, int row, int col)
     {
         SetAnchor(25 + (spec == 1 ? 213 : (spec == 2 ? 425 : 0)) + 62 * col, -62 * row - 23);
