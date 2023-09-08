@@ -840,7 +840,7 @@
     "type": "HostileArea"
   },
   {
-    "x": 272,
+    "x": 273,
     "y": -81,
     "name": "Crushridge Hold",
     "zone": "Alterac Mountains",
@@ -1159,8 +1159,8 @@
     ]
   },
   {
-    "x": 99,
-    "y": -109,
+    "x": 103,
+    "y": -105,
     "name": "Falfarren River",
     "zone": "Ashenvale",
     "type": "HostileArea",
@@ -1272,7 +1272,7 @@
   },
   {
     "x": 99,
-    "y": -105,
+    "y": -106,
     "name": "Night Run",
     "zone": "Ashenvale",
     "type": "HostileArea",
@@ -1860,8 +1860,8 @@
     ]
   },
   {
-    "x": 1350,
-    "y": -840,
+    "x": 119,
+    "y": -75,
     "name": "Ursolan",
     "zone": "Azshara",
     "type": "HostileArea"
@@ -1987,7 +1987,7 @@
   },
   {
     "x": 291,
-    "y": -165,
+    "y": -166,
     "name": "Dustbelch Grotto",
     "zone": "Badlands",
     "type": "HostileArea",
@@ -2800,7 +2800,7 @@
   },
   {
     "x": 299,
-    "y": -209,
+    "y": -208,
     "name": "Red Wasteland",
     "zone": "Blasted Lands",
     "type": "HostileArea",
@@ -3048,8 +3048,8 @@
     ]
   },
   {
-    "x": 277,
-    "y": -175,
+    "x": 278,
+    "y": -176,
     "name": "Draco'dar",
     "zone": "Burning Steppes",
     "type": "HostileArea",
@@ -4606,8 +4606,8 @@
     ]
   },
   {
-    "x": 275,
-    "y": -206,
+    "x": 276,
+    "y": -207,
     "name": "The Rotting Orchard",
     "zone": "Duskwood",
     "type": "HostileArea",
@@ -4903,8 +4903,8 @@
     ]
   },
   {
-    "x": 112,
-    "y": -180,
+    "x": 110,
+    "y": -182,
     "name": "The Dragonmurk",
     "zone": "Dustwallow Marsh",
     "type": "HostileArea",
@@ -4980,8 +4980,8 @@
     ]
   },
   {
-    "x": 110,
-    "y": -176,
+    "x": 114,
+    "y": -182,
     "name": "Wyrmbog",
     "zone": "Dustwallow Marsh",
     "type": "HostileArea",
@@ -5355,7 +5355,7 @@
   },
   {
     "x": 312,
-    "y": -66,
+    "y": -65,
     "name": "The Infectis Scar",
     "zone": "Eastern Plaguelands",
     "type": "HostileArea",
@@ -9614,7 +9614,7 @@
   },
   {
     "x": 259,
-    "y": -79,
+    "y": -77,
     "name": "Fenris Keep",
     "zone": "Silverpine Forest",
     "type": "HostileArea",
@@ -9655,7 +9655,7 @@
     ]
   },
   {
-    "x": 245,
+    "x": 246,
     "y": -78,
     "name": "North Tide's Run",
     "zone": "Silverpine Forest",
@@ -9683,7 +9683,7 @@
     ]
   },
   {
-    "x": 250,
+    "x": 249,
     "y": -92,
     "name": "Pyrewood Village",
     "zone": "Silverpine Forest",
@@ -9705,7 +9705,7 @@
   },
   {
     "x": 251,
-    "y": -76,
+    "y": -77,
     "name": "Valgan's Field",
     "zone": "Silverpine Forest",
     "type": "HostileArea",
@@ -9988,7 +9988,7 @@
   },
   {
     "x": 268,
-    "y": -237,
+    "y": -238,
     "name": "Crystal Shore",
     "zone": "Stranglethorn Vale",
     "type": "HostileArea",
@@ -10013,13 +10013,6 @@
         "levelMax": 37
       }
     ]
-  },
-  {
-    "x": 263,
-    "y": -229,
-    "name": "Gurubashi Arena",
-    "zone": "Stranglethorn Vale",
-    "type": "HostileArea"
   },
   {
     "x": 269,
@@ -12518,8 +12511,8 @@
     ]
   },
   {
-    "x": 259,
-    "y": -62,
+    "x": 257,
+    "y": -63,
     "name": "Stillwater Pond",
     "zone": "Tirisfal Glades",
     "type": "HostileArea",
@@ -12543,7 +12536,7 @@
   },
   {
     "x": 259,
-    "y": -64,
+    "y": -65,
     "name": "Cold Hearth Manor",
     "zone": "Tirisfal Glades",
     "type": "HostileArea",
@@ -13408,8 +13401,8 @@
     ]
   },
   {
-    "x": 283,
-    "y": -69,
+    "x": 287,
+    "y": -76,
     "name": "Sorrow Hill",
     "zone": "Western Plaguelands",
     "type": "HostileArea",
@@ -13617,14 +13610,14 @@
   },
   {
     "x": 285,
-    "y": -76,
+    "y": -77,
     "name": "Uther's Tomb",
     "zone": "Western Plaguelands",
     "type": "HostileArea"
   },
   {
-    "x": 250,
-    "y": -197,
+    "x": 251,
+    "y": -198,
     "name": "Furlbrow's Pumpkin Farm",
     "zone": "Westfall",
     "type": "HostileArea",
@@ -13665,7 +13658,7 @@
     ]
   },
   {
-    "x": 252,
+    "x": 253,
     "y": -194,
     "name": "Jansen Stead",
     "zone": "Westfall",
@@ -13707,8 +13700,8 @@
     ]
   },
   {
-    "x": 250,
-    "y": -205,
+    "x": 251,
+    "y": -206,
     "name": "Moonbrook",
     "zone": "Westfall",
     "type": "HostileArea",
@@ -13735,8 +13728,8 @@
     ]
   },
   {
-    "x": 252,
-    "y": -207,
+    "x": 253,
+    "y": -208,
     "name": "The Dagger Hills",
     "zone": "Westfall",
     "type": "HostileArea",

@@ -1,0 +1,26 @@
+[
+  {
+    "x": 323,
+    "y": -63,
+    "name": "Light's Hope Chapel",
+    "zone": "Eastern Plaguelands"
+  },
+  {
+    "x": 262,
+    "y": -63,
+    "name": "Brill",
+    "zone": "Tirisfal Glades"
+  },
+  {
+    "x": 121,
+    "y": -116,
+    "name": "Orgrimmar",
+    "zone": "Durotar",
+  },
+  {
+    "x": 261,
+    "y": -241,
+    "name": "Booty Bay",
+    "zone": "Stranglethorn Vale",
+  }
+]

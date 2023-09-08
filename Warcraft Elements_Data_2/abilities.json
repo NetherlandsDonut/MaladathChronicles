@@ -592,7 +592,7 @@
   {
     "name": "Blade of Justice",
     "icon": "AbilityBladeofJustice",
-    "cooldown": 1,
+    "cooldown": 2,
     "tags": [],
     "cost": {
       "Fire": 2,
@@ -1066,8 +1066,39 @@
   {
     "name": "Consecration",
     "icon": "AbilityConsecration",
+    "cooldown": 4,
     "tags": [],
-    "events": []
+    "cost": {
+      "Fire": 2,
+      "Earth": 2,
+      "Order": 2
+    },
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector"
+          }
+        ],
+        "effects": [
+          {
+            "SoundEffect": "AbilityConsecrationCast",
+            "Await": "4"
+          },
+          {
+            "AnimationType": "None",
+            "ShatterType": "Central",
+            "ShatterTarget": "Effector",
+            "Effect": "AddBuff",
+            "Affect": "Effector",
+            "BuffName": "Consecration",
+            "BuffDuration": "10",
+            "Await": "4"
+          }
+        ]
+      }
+    ]
   },
   {
     "name": "Continuous Waves",
@@ -3054,10 +3085,11 @@
   {
     "name": "Judgement",
     "icon": "AbilityJudgement",
+    "cooldown": 1,
     "tags": [],
     "cost": {
       "Air": 2,
-      "Order": 4
+      "Order": 2
     },
     "events": [
       {
@@ -4278,7 +4310,7 @@
             "ShatterSpeed": "1",
             "Await": "4",
             "ShatterDensity": "3",
-            "BuffDuration": "5"
+            "BuffDuration": "15"
           },
           {
             "Effect": "EndTurn"

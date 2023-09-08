@@ -98,5 +98,9 @@
   {
     "name": "Portal Trainer",
     "icon": "TradeTrainerClass"
+  },
+  {
+    "name": "Banker",
+    "icon": "TradeBank"
   }
 ]

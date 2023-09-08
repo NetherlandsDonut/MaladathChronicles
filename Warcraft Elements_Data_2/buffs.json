@@ -765,5 +765,11 @@
     "icon": "AbilityBerserk",
     "tags": [],
     "events": []
+  },
+  {
+    "name": "Consecration",
+    "icon": "AbilityConsecration",
+    "tags": [],
+    "events": []
   }
 ]

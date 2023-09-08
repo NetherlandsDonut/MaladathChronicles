@@ -370,6 +370,7 @@ public class Blueprint
                     {
                         AddBigButton("Portrait" + slot.player.race.Replace("'", "").Replace(".", "").Replace(" ", "") + slot.player.gender, (h) =>
                         {
+                            CloseWindow("RealmRoster");
                             if (settings.selectedCharacter != slot.player.name)
                             {
                                 settings.selectedCharacter = slot.player.name;

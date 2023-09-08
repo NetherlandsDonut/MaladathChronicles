@@ -21,6 +21,7 @@
     "AmbienceForestScaryDay.ogg",
     "AmbienceForestScaryNight.ogg",
     "AmbienceForestSnowDay.ogg",
+    "AmbienceGhost.mp3",
     "AmbienceGnomeregan.ogg",
     "AmbienceGrasslandsDay.ogg",
     "AmbienceHive.ogg",
@@ -142,6 +143,8 @@
     "Death.ogg",
     "DesktopActionBarAdd.ogg",
     "DesktopActionBarRemove.ogg",
+    "DesktopAuctionClose.ogg",
+    "DesktopAuctionOpen.ogg",
     "DesktopBankOpen.ogg",
     "DesktopBossDefeated.ogg",
     "DesktopButtonClose.ogg",
@@ -176,6 +179,7 @@
     "DesktopPVPFoundOpponent.ogg",
     "DesktopReroll1.ogg",
     "DesktopReroll2.ogg",
+    "DesktopRevive.ogg",
     "DesktopSpellbookScreenClose.ogg",
     "DesktopSpellbookScreenOpen.ogg",
     "DesktopTalentAcquired.ogg",
@@ -3928,6 +3932,11 @@
     "AbilityZenFlight.png",
     "AbilityZenMeditation.png",
     "AbilityZenPilgrimage.png"
+  ],
+  "factionIcons": [
+    "FactionAlliance.png",
+    "FactionHorde.png",
+    "FactionNeutral.png"
   ],
   "portraits": [
     "PortraitAbomination.png",
