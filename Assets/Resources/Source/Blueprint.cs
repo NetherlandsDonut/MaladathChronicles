@@ -6232,44 +6232,6 @@ public class Blueprint
                 CDesktop.cameraDestination += new Vector2(amount.x, amount.y) / 5;
             }
         }),
-        new("MapDead", () =>
-        {
-            //USE POST PROCESSING WITH COLOR GRADING TO MAKE THE GHOST REALM LOOK GOOD
-            grid.SwitchMapTexture(true);
-            PlayAmbience("AmbienceGhost");
-            loadingBar = new GameObject[2];
-            loadingBar[0] = new GameObject("LoadingBarBegin", typeof(SpriteRenderer));
-            loadingBar[0].GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Textures/LoadingBarEnd");
-            loadingBar[0].transform.position = new Vector3(-1181, 863);
-            loadingBar[1] = new GameObject("LoadingBar", typeof(SpriteRenderer));
-            loadingBar[1].GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Textures/LoadingBarStretch");
-            loadingBar[1].transform.position = new Vector3(-1178, 863);
-            OrderLoadingMapDead();
-            AddHotkey(W, () => { MoveCamera(new Vector3(0, EuelerGrowth())); }, false);
-            AddHotkey(A, () => { MoveCamera(new Vector3(-EuelerGrowth(), 0)); }, false);
-            AddHotkey(S, () => { MoveCamera(new Vector3(0, -EuelerGrowth())); }, false);
-            AddHotkey(D, () => { MoveCamera(new Vector3(EuelerGrowth(), 0)); }, false);
-            AddHotkey(C, () =>
-            {
-                SpawnDesktopBlueprint("CharacterSheet");
-                SwitchDesktop("CharacterSheet");
-                PlaySound("DesktopCharacterSheetOpen");
-            });
-            AddHotkey(N, () => { SpawnDesktopBlueprint("TalentScreen"); SwitchDesktop("TalentScreen"); });
-            AddHotkey(P, () => { SpawnDesktopBlueprint("SpellbookScreen"); SwitchDesktop("SpellbookScreen"); });
-            AddHotkey(B, () => { SpawnDesktopBlueprint("EquipmentScreen"); SwitchDesktop("EquipmentScreen"); });
-            AddHotkey(Escape, () =>
-            {
-                PlaySound("DesktopMenuOpen");
-                SpawnDesktopBlueprint("GameMenu");
-            });
-            AddHotkey(BackQuote, () => { SpawnDesktopBlueprint("DevPanel"); });
-
-            void MoveCamera(Vector3 amount)
-            {
-                CDesktop.cameraDestination += new Vector2(amount.x, amount.y) / 5;
-            }
-        }),
         new("HostileAreaEntrance", () =>
         {
             SetDesktopBackground("Areas/Area" + (area.zone + area.name).Replace("'", "").Replace(".", "").Replace(" ", "") + (area.specialClearBackground && area.eliteEncounters.All(x => currentSave.elitesKilled.ContainsKey(x.who)) ? "Cleared" : ""));
@@ -6490,13 +6452,11 @@ public class Blueprint
             {
                 PlaySound("DesktopCharacterSheetClose");
                 CloseDesktop("CharacterSheet");
-                SwitchDesktop("Map");
             });
             AddHotkey(Escape, () =>
             {
                 PlaySound("DesktopCharacterSheetClose");
                 CloseDesktop("CharacterSheet");
-                SwitchDesktop("Map");
             });
         }),
         new("TalentScreen", () =>
@@ -6559,13 +6519,11 @@ public class Blueprint
             {
                 PlaySound("DesktopInventoryClose");
                 CloseDesktop("EquipmentScreen");
-                SwitchDesktop("Map");
             });
             AddHotkey(Escape, () =>
             {
                 PlaySound("DesktopInventoryClose");
                 CloseDesktop("EquipmentScreen");
-                SwitchDesktop("Map");
             });
         }),
         new("BankScreen", () =>

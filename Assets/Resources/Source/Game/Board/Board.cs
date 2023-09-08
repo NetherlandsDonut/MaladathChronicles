@@ -171,6 +171,7 @@ public class Board
         {
             currentSave.playerDead = true;
             PlaySound("Death");
+            StopAmbience();
             if (Realm.realms.Find(x => x.name == settings.selectedRealm).hardcore)
             {
                 currentSave.deathInfo = new();
@@ -179,10 +180,7 @@ public class Board
             else
             {
                 SwitchDesktop("Map");
-                var camera = CDesktop.cameraDestination;
-                SpawnDesktopBlueprint("MapDead");
-                CDesktop.cameraDestination = camera;
-                SwitchDesktop("MapDead");
+                grid.SwitchMapTexture(true);
                 SpawnTransition();
                 SpawnTransition();
                 SpawnTransition();

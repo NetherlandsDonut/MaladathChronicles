@@ -630,5 +630,5 @@ public class Entity
     public Stats stats;
     public Inventory inventory;
     public Dictionary<string, Item> equipment;
-    public List<(Buff, int, GameObject)> buffs;
+    [NonSerialized] public List<(Buff, int, GameObject)> buffs;
 }

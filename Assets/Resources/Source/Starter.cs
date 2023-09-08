@@ -20,7 +20,6 @@ using static SiteSpiritHealer;
 using static Serialization;
 using static SiteInstance;
 using static SiteComplex;
-using static UnityEditor.Experimental.AssetDatabaseExperimental.AssetDatabaseCounters;
 
 public class Starter : MonoBehaviour
 {
@@ -614,7 +613,7 @@ public class Starter : MonoBehaviour
         {
             var index = i;
             if (spiritHealers[index].x != 0)
-                Blueprint.windowBlueprints.Add(new Blueprint("SiteDead: " + spiritHealers[index].name, () => spiritHealers[index].PrintSite()));
+                Blueprint.windowBlueprints.Add(new Blueprint("Site: SpiritHealer " + spiritHealers[index].name, () => spiritHealers[index].PrintSite()));
         }
         for (int i = 0; i < instances.Count; i++)
         {

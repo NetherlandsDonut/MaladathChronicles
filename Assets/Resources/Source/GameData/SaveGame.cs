@@ -21,20 +21,12 @@ public class SaveGame
     {
         if (!playerDead) return;
         playerDead = false;
-        if (CDesktop.title == "MapDead")
-        {
-            var camera = CDesktop.cameraDestination;
-            CloseDesktop("MapDead");
-            SwitchDesktop("Map");
-            CDesktop.cameraDestination = camera;
-            SwitchDesktop("Map");
-            grid.SwitchMapTexture(false);
-            SpawnTransition();
-            SpawnTransition();
-            SpawnTransition();
-            SpawnTransition();
-            SpawnTransition();
-        }
+        grid.SwitchMapTexture(false);
+        SpawnTransition();
+        SpawnTransition();
+        SpawnTransition();
+        SpawnTransition();
+        SpawnTransition();
     }
 
     public static void AddNewSave()
@@ -77,9 +69,9 @@ public class SaveGame
     public static void Save()
     {
         if (currentSave.timePlayed == null) currentSave.timePlayed = new TimeSpan();
-        currentSave.timePlayed.Add(DateTime.Now - currentSave.lastLoaded);
+        currentSave.timePlayed = currentSave.timePlayed.Add(DateTime.Now - currentSave.lastLoaded);
         currentSave.lastPlayed = DateTime.Now;
-        var temp = desktops.Find(x => x.title == "Map");
+        var temp = desktops.Find(x => x.title.Contains("Map"));
         currentSave.cameraX = (int)Math.Round(temp.cameraDestination.x);
         currentSave.cameraY = (int)Math.Round(temp.cameraDestination.y);
     }

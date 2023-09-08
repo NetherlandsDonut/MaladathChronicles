@@ -3,6 +3,7 @@ using System.Linq;
 using UnityEngine;
 
 using static Root;
+using static Sound;
 using static Cursor;
 
 //Map grid is a class responsible for direct
@@ -31,6 +32,13 @@ public class MapGrid : MonoBehaviour
     //Switches map textures between ghost realm and normal world map
     public void SwitchMapTexture(bool deadOn)
     {
+        CDesktop.windows.FindAll(x => x.title.StartsWith("Site: ")).ForEach(x => x.gameObject.SetActive(!x.title.Contains("SpiritHealer") ^ deadOn));
+        if (deadOn) PlayAmbience("AmbienceGhost");
+        if (ambience.clip != null)
+        {
+            var temp = ambience.clip.name;
+            if (ambience.clip.name == "AmbienceGhost") StopAmbience();
+        }
         texture.SetActive(!deadOn);
         textureDead.SetActive(deadOn);
         foreground.SetActive(!deadOn);

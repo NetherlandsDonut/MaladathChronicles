@@ -68,7 +68,7 @@ public class Desktop : MonoBehaviour
     {
         if (CDesktop.title == "TalentScreen")
             screen.transform.localPosition = new Vector3(320, -140);
-        else if (CDesktop.title == "Map" || CDesktop.title == "MapDead")
+        else if (CDesktop.title.Contains("Map"))
             screen.transform.localPosition = new Vector3(-1000, 1000);
     }
 
@@ -89,26 +89,23 @@ public class Desktop : MonoBehaviour
             }
             PlaySound("DesktopMagicClick");
         }
-        if (queuedAmbience.Item1 != null || !GameSettings.settings.music.Value() && ambience.volume > 0)
+        if (!GameSettings.settings.music.Value())
         {
-            if (!GameSettings.settings.music.Value())
+            if (ambience.volume > 0) ambience.volume -= 0.002f;
+        }
+        else if (queuedAmbience.Item1 != ambience.clip)
+        {
+            if (ambience.volume > 0) ambience.volume -= 0.002f;
+            else
             {
-                if (ambience.volume > 0) ambience.volume -= 0.002f;
+                ambience.clip = queuedAmbience.Item1;
+                ambience.Play();
             }
-            else if (queuedAmbience.Item1 != ambience.clip)
-            {
-                if (ambience.volume > 0) ambience.volume -= 0.002f;
-                else
-                {
-                    ambience.clip = queuedAmbience.Item1;
-                    ambience.Play();
-                }
-            }
-            else if (queuedAmbience.Item1 == ambience.clip && ambience.volume < queuedAmbience.Item2)
-            {
-                if (queuedAmbience.Item3 && ambience.clip != queuedAmbience.Item1) ambience.volume = queuedAmbience.Item2;
-                else ambience.volume += 0.002f;
-            }
+        }
+        else if (queuedAmbience.Item1 == ambience.clip && ambience.volume < queuedAmbience.Item2)
+        {
+            if (queuedAmbience.Item3 && ambience.clip != queuedAmbience.Item1) ambience.volume = queuedAmbience.Item2;
+            else ambience.volume += 0.002f;
         }
         fallingSoundsPlayedThisFrame = 0;
         if (loadSites != null && loadSites.Count > 0)
@@ -116,7 +113,8 @@ public class Desktop : MonoBehaviour
             {
                 var site = loadSites[0];
                 loadingScreenObjectLoad++;
-                cameraBoundaryPoints.Add(SpawnWindowBlueprint(site).transform);
+                var spawn = SpawnWindowBlueprint(site);
+                if (spawn != null) cameraBoundaryPoints.Add(spawn.transform);
                 loadSites.RemoveAt(0);
                 loadingBar[1].transform.localScale = new Vector3((int)(357.0 / loadingScreenObjectLoadAim * loadingScreenObjectLoad), 1, 1);
                 if (loadSites.Count == 0)
@@ -127,6 +125,7 @@ public class Desktop : MonoBehaviour
                     cursor.transform.position += (Vector3)newPosition - screen.transform.position;
                     screen.transform.position = newPosition + new Vector2(333, -183);
                     SpawnWindowBlueprint("MapToolbar");
+                    grid.SwitchMapTexture(currentSave.playerDead);
                     SpawnTransition(0.1f);
                     SpawnTransition(0.1f);
                     SpawnTransition(0.1f);
@@ -191,23 +190,6 @@ public class Desktop : MonoBehaviour
                             SpawnDesktopBlueprint("TownEntrance");
                             SwitchDesktop("TownEntrance");
                         }
-                        queuedSiteOpen = "";
-                    }
-                }
-            }
-            else if (CDesktop.title == "MapDead")
-            {
-                var temp = screen.transform.position;
-                if ((float)Math.Round(temp.y / 19) != cameraDestination.y || (float)Math.Round(temp.x / 19) != cameraDestination.x)
-                {
-                    MapGrid.EnforceBoundary();
-                    var rounded = new Vector2((float)Math.Round(cameraDestination.x), (float)Math.Round(cameraDestination.y));
-                    var newPosition = Vector3.Lerp(temp, rounded * 19 + new Vector2(333, -183), Time.deltaTime * 4);
-                    cursor.transform.position += newPosition - temp;
-                    screen.transform.position = newPosition;
-                    if (screenLocked && Vector3.Distance(screen.transform.position, (cameraDestination + new Vector2(17, -9)) * 19 + new Vector2(10, -10)) <= 10)
-                    {
-                        UnlockScreen();
                         if (queuedSiteOpen == "SpiritHealer")
                         {
                             StopAmbience();
