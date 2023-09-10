@@ -5188,6 +5188,7 @@ public class Blueprint
                     {
                         SpawnWindowBlueprint("ObjectManagerEventTriggers");
                         CloseWindow("ObjectManagerAbilities");
+                        CloseWindow("ObjectManagerCostManager");
                     }
                 });
             }
@@ -6680,7 +6681,32 @@ public class Blueprint
         {
             SetDesktopBackground("Areas/AreaTheCelestialPlanetarium");
             SpawnWindowBlueprint("ObjectManagerAbilities");
-            AddHotkey(Escape, () => { ability = null; abilitiesSearch = null; eventEdit = null; CloseDesktop("ObjectManagerAbilities"); });
+            AddHotkey(Escape, () =>
+            {
+                if (CloseWindow("ObjectManagerCostManager"))
+                {
+                    PlaySound("DesktopButtonClose");
+                    if (ability.cost["Fire"] == 0) ability.cost.Remove("Fire");
+                    if (ability.cost["Earth"] == 0) ability.cost.Remove("Earth");
+                    if (ability.cost["Water"] == 0) ability.cost.Remove("Water");
+                    if (ability.cost["Air"] == 0) ability.cost.Remove("Air");
+                    if (ability.cost["Frost"] == 0) ability.cost.Remove("Frost");
+                    if (ability.cost["Decay"] == 0) ability.cost.Remove("Decay");
+                    if (ability.cost["Shadow"] == 0) ability.cost.Remove("Shadow");
+                    if (ability.cost["Order"] == 0) ability.cost.Remove("Order");
+                    if (ability.cost["Arcane"] == 0) ability.cost.Remove("Arcane");
+                    if (ability.cost["Lightning"] == 0) ability.cost.Remove("Lightning");
+                    if (ability.cost.Count == 0) ability.cost = null;
+                    SpawnWindowBlueprint("ObjectManagerAbilities");
+                }
+                else
+                {
+                    ability = null;
+                    abilitiesSearch = null;
+                    eventEdit = null;
+                    CloseDesktop("ObjectManagerAbilities");
+                }
+            });
             AddPaginationHotkeys();
         }),
         new("ObjectManagerBuffs", () =>

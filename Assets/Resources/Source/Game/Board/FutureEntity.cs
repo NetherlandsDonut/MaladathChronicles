@@ -64,7 +64,7 @@ public class FutureEntity
         var sheet = new Dictionary<string, double>();
         foreach (var resource in resources)
         {
-            var amount = (abilities.FindAll(x => x.cost.ContainsKey(resource.Key)).Sum(x => x.cost[resource.Key] * AbilityTagModifier(x.tags)) / elementCosts + 0.025) / (elementCostsSeparate.ContainsKey(resource.Key) ? (resource.Value / elementCostsSeparate[resource.Key] + 0.1) : 1.1);
+            var amount = (abilities.FindAll(x => x.cost.ContainsKey(resource.Key)).Sum(x => x.cost[resource.Key] * AbilityTagModifier(x.tags)) / elementCosts + 0.025) / (elementCostsSeparate.ContainsKey(resource.Key) && elementCostsSeparate[resource.Key] > 0 ? (resource.Value / elementCostsSeparate[resource.Key] + 0.1) : 1.1);
             sheet.Add(resource.Key, random.Next(5, 13) / 10.0 * amount);
         }
         return sheet;

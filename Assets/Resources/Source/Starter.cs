@@ -313,7 +313,7 @@ public class Starter : MonoBehaviour
                             events = new(),
                             tags = new()
                         });
-            if (race.faction != null && race.background == null || race.background == "")
+            if ((race.maleNames != null || race.femaleNames != null) && race.background == null || race.background == "")
                 race.background = "AreaElwynnForestNorthshireAbbey";
         }
         for (int i = 0; i < Realm.realms.Count; i++)

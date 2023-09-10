@@ -1171,26 +1171,16 @@
         ],
         "effects": [
           {
-            "SoundEffect": "AbilityCorruptionFlare",
-            "ShatterType": "Directional",
-            "ShatterTarget": "Effector",
-            "ShatterDegree": "0,2",
-            "ShatterSpeed": "2"
-          },
-          {
             "Effect": "AddBuff",
             "Affect": "Other",
             "BuffName": "Corruption",
             "BuffDuration": "6",
             "ShatterTarget": "Other",
-            "ShatterType": "Directional",
+            "ShatterType": "Central",
             "ShatterDensity": "2",
             "ShatterSpeed": "4",
             "SoundEffect": "AbilityCorruptionImpact",
-            "Await": "4",
-            "AnimationType": "Missile",
-            "TrailStrength": "0,65",
-            "AnimationSpeed": "1,45"
+            "Await": "4"
           }
         ]
       }
@@ -1340,15 +1330,7 @@
     ],
     "cost": {
       "Shadow": 7,
-      "Fire": 5,
-      "Earth": 0,
-      "Water": 0,
-      "Air": 0,
-      "Frost": 0,
-      "Decay": 0,
-      "Order": 0,
-      "Arcane": 0,
-      "Lightning": 0
+      "Fire": 5
     },
     "events": [
       {
@@ -1359,13 +1341,6 @@
         ],
         "effects": [
           {
-            "SoundEffect": "AbilityCurseOfAgonyFlare",
-            "ShatterType": "Directional",
-            "ShatterDegree": "0,2",
-            "ShatterSpeed": "2",
-            "ShatterTarget": "Effector"
-          },
-          {
             "Effect": "AddBuff",
             "Affect": "Other",
             "BuffName": "Curse of Agony",
@@ -1373,10 +1348,7 @@
             "ShatterTarget": "Other",
             "ShatterType": "Directional",
             "ShatterDensity": "2",
-            "SoundEffect": "AbilityCurseOfAgonyCast",
-            "AnimationType": "Missile",
-            "AnimationSpeed": "1,4",
-            "TrailStrength": "0,55"
+            "SoundEffect": "AbilityCurseOfAgonyCast"
           },
           {
             "Effect": "EndTurn"

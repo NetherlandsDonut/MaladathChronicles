@@ -3935,8 +3935,12 @@
   ],
   "factionIcons": [
     "FactionAlliance.png",
+    "FactionArgentDawn.png",
+    "FactionBloodsailBuccaneers.png",
     "FactionHorde.png",
-    "FactionNeutral.png"
+    "FactionHostile.png",
+    "FactionNeutral.png",
+    "FactionSouthseaFreebooters.png"
   ],
   "portraits": [
     "PortraitAbomination.png",
@@ -4044,7 +4048,6 @@
     "PortraitCryptFiend.png",
     "PortraitCryptLord.png",
     "PortraitCryptRobber.png",
-    "PortraitCrystalSpider.png",
     "PortraitCyborg.png",
     "PortraitDagranThaurissan.png",
     "PortraitDalaranMage.png",
@@ -4343,7 +4346,7 @@
     "PortraitSaberCat.png",
     "PortraitSaberCatSmall.png",
     "PortraitSaberCheetah.png",
-    "PortraitSacraficedTroll.png",
+    "PortraitSacrificedTroll.png",
     "PortraitSandarrDunereaver.png",
     "PortraitSandfuryAcolyte.png",
     "PortraitSandfuryBloodDrinker.png",

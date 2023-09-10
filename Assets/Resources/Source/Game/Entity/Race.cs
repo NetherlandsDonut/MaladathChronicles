@@ -29,7 +29,7 @@ public class Race
     //Portrait icon of the race
     public string portrait;
 
-    //I dont know what that is
+    //Background texture in logging screen
     public string background;
 
     //Race's vitality which affects how much stamina will the enemy have
