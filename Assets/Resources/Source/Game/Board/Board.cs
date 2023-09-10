@@ -358,14 +358,14 @@ public class Board
                     var actionBar = enemy.actionBars.Find(x => x.ability == bestMove.ability);
                     board.actions.Add(() =>
                     {
-                        //cursorEnemy.Move(CDesktop.globalRegions["EnemyActionBar" + enemy.actionBars.IndexOf(actionBar)].transform.position + new Vector3(139, -10));
+                        cursorEnemy.Move(CDesktop.windows.Find(x => x.title == "EnemyBattleInfo").regionGroups[0].regions[enemy.actionBars.IndexOf(actionBar) + 2].transform.position + new Vector3(139, -10));
                         animationTime += frameTime * 9;
                     });
                     board.actions.Add(() => { cursorEnemy.SetCursor(CursorType.Click); });
                     board.actions.Add(() =>
                     {
                         cursorEnemy.SetCursor(CursorType.Default);
-                        //AddRegionOverlay(CDesktop.globalRegions["EnemyActionBar" + enemy.actionBars.IndexOf(actionBar)], "Black", 0.1f);
+                        AddRegionOverlay(CDesktop.windows.Find(x => x.title == "EnemyBattleInfo").regionGroups[0].regions[enemy.actionBars.IndexOf(actionBar) + 2], "Black", 0.1f);
                         animationTime += frameTime;
                         actionBar.cooldown = abilityObj.cooldown;
                         board.CallEvents(board.enemy, new() { { "Trigger", "AbilityCast" }, {"Triggerer", "Effector" }, { "AbilityName", abilityObj.name } });

@@ -70,7 +70,6 @@ public class Entity
             }
         );
         Initialise();
-        var importance = ElementImportance(race.kind == "Common");
     }
 
     #region Experience & Leveling
@@ -502,21 +501,6 @@ public class Entity
     #endregion
 
     #region Combat
-
-    //Provides information that tells which elements
-    //are of biggest importance for this entity in combat
-    public Dictionary<string, double> ElementImportance(bool randomised)
-    {
-        var abilities = Ability.abilities.FindAll(x => actionBars.Exists(y => y.ability == x.name));
-        double elementCosts = abilities.Sum(x => x.cost.Sum(y => y.Value));
-        var sheet = new Dictionary<string, double>();
-        foreach (var resource in resources)
-        {
-            var amount = abilities.FindAll(x => x.cost.ContainsKey(resource.Key)).Sum(x => x.cost[resource.Key]) / elementCosts;
-            sheet.Add(resource.Key, (randomised ? random.Next(5, 13) / 10.0 : 1) * amount);
-        }
-        return sheet;
-    }
 
     //Prepares this entity for combat
     public void Initialise(bool fullReset = true)

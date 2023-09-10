@@ -73,41 +73,41 @@ public class Blueprint
                 SpawnWindowBlueprint("GameSettings");
                 CloseWindow(h.window);
             });
-            AddButtonRegion(() =>
-            {
-                AddLine("Achievments", "Black");
-            },
-            (h) =>
-            {
+            //AddButtonRegion(() =>
+            //{
+            //    AddLine("Achievments", "Black");
+            //},
+            //(h) =>
+            //{
 
-            });
-            AddButtonRegion(() =>
-            {
-                AddLine("Graveyard", "Black");
-            },
-            (h) =>
-            {
+            //});
+            //AddButtonRegion(() =>
+            //{
+            //    AddLine("Graveyard", "Black");
+            //},
+            //(h) =>
+            //{
 
-            });
-            AddButtonRegion(() =>
-            {
-                AddLine("Dev panel", "Black");
-            },
-            (h) =>
-            {
-                SpawnDesktopBlueprint("DevPanel");
-            });
-            AddButtonRegion(() =>
-            {
-                AddLine("Credits", "Black");
-            },
-            (h) =>
-            {
-                //BLIZZARD: MUSIC, SOUNDS AND TEXTURES
-                //POOH: PROGRAMMING AND DESIGNING
-                //RYVED: CONSULTATION AND BRAINSTORMING
-                //LEKRIS: CONSULTATION AND BRAINSTORMING
-            });
+            //});
+            //AddButtonRegion(() =>
+            //{
+            //    AddLine("Dev panel", "Black");
+            //},
+            //(h) =>
+            //{
+            //    SpawnDesktopBlueprint("DevPanel");
+            //});
+            //AddButtonRegion(() =>
+            //{
+            //    AddLine("Credits", "Black");
+            //},
+            //(h) =>
+            //{
+            //    //BLIZZARD: MUSIC, SOUNDS AND TEXTURES
+            //    //POOH: PROGRAMMING AND DESIGNING
+            //    //RYVED: CONSULTATION AND BRAINSTORMING
+            //    //LEKRIS: CONSULTATION AND BRAINSTORMING
+            //});
             AddButtonRegion(() =>
             {
                 AddLine("Exit", "Black");
@@ -659,122 +659,139 @@ public class Blueprint
                     });
             }
         }),
-        new("SpellbookAbilityListHeader", () => {
-            SetAnchor(TopRight);
-            DisableShadows();
-            AddRegionGroup();
-            SetRegionGroupWidth(171);
-            AddHeaderRegion(
-                () =>
-                {
-                    AddLine("Spellbook:");
-                    AddSmallButton("OtherClose", (h) =>
-                    {
-                        CloseDesktop("SpellbookScreen");
-                        SwitchDesktop("Map");
-                        PlaySound("DesktopSpellbookScreenClose");
-                    });
-                }
-            );
-        }, true),
         new("SpellbookAbilityList", () => {
-            SetAnchor(147, 0);
-            AddRegionGroup();
-            SetRegionGroupWidth(171);
-            SetRegionGroupHeight(1460);
-            AddHeaderRegion(() => { AddLine(); });
-            AddPaddingRegion(() => { AddLine("Active abilities:", "DarkGray"); });
+            SetAnchor(TopRight);
             var activeAbilities = abilities.FindAll(x => x.cost != null && currentSave.player.abilities.Contains(x.name)).ToList();
+            AddHeaderGroup(() => activeAbilities.Count, 7);
+            SetRegionGroupWidth(171);
+            SetRegionGroupHeight(358);
+            AddHeaderRegion(() =>
+            {
+                AddLine("Active abilities:");
+                AddSmallButton("OtherReverse", (h) =>
+                {
+                    abilities.Reverse();
+                    abilitiesSearch.Reverse();
+                    Respawn("ObjectManagerAbilities");
+                    PlaySound("DesktopInventorySort", 0.2f);
+                });
+                if (!CDesktop.windows.Exists(x => x.title == "AbilitiesSort"))
+                    AddSmallButton("OtherSort", (h) =>
+                    {
+                        SpawnWindowBlueprint("AbilitiesSort");
+                        Respawn("ObjectManagerAbilities");
+                    });
+                else
+                    AddSmallButton("OtherSortOff", (h) => { });
+            });
+            var regionGroup = CDesktop.LBWindow.LBRegionGroup;
+            AddPaginationLine(regionGroup);
+            for (int i = 0; i < 7; i++)
+            {
+                var index = i;
+                AddButtonRegion(() =>
+                {
+                    if (activeAbilities.Count > index + 7 * regionGroup.pagination)
+                    {
+                        SetRegionBackground(RegionBackgroundType.Button);
+                        var foo = activeAbilities[index + 7 * regionGroup.pagination];
+                        AddLine(foo.name);
+                        AddSmallButton(foo.icon, (h) => { });
+                        if (currentSave.player.actionBars.Exists(x => x.ability == foo.name))
+                        {
+                            SetSmallButtonToGrayscale();
+                            AddSmallButtonOverlay("OtherGridBlurred");
+                        }
+                    }
+                    else
+                    {
+                        SetRegionBackground(RegionBackgroundType.Padding);
+                        AddLine();
+                    }
+                },
+                (h) =>
+                {
+                    var foo = activeAbilities[index + 7 * regionGroup.pagination];
+                    if (!currentSave.player.actionBars.Exists(x => x.ability == foo.name) && currentSave.player.actionBars.Count < currentSave.player.actionBarsUnlocked)
+                    {
+                        currentSave.player.actionBars.Add(new ActionBar(foo.name));
+                        Respawn("PlayerSpellbookInfo");
+                        Respawn("SpellbookAbilityList");
+                        PlaySound("DesktopActionbarAdd", 0.7f);
+                    }
+                },
+                (h) => () =>
+                {
+                    SetAnchor(Center);
+                    PrintAbilityTooltip(null, null, abilitiesSearch[index + 10 * regionGroup.pagination]);
+                });
+            }
             var passiveAbilities = abilities.FindAll(x => x.cost == null && currentSave.player.abilities.Contains(x.name)).ToList();
-            for (int i = 0; i < activeAbilities.Count; i++)
+            AddRegionGroup(() => passiveAbilities.Count, 7);
+            SetRegionGroupWidth(171);
+            SetRegionGroupHeight(358);
+            AddPaddingRegion(() => SetRegionAsGroupExtender());
+            AddHeaderRegion(() =>
             {
-                var abilityObj = activeAbilities[i];
-                AddButtonRegion(
-                    () =>
+                AddLine("Active abilities:");
+                AddSmallButton("OtherReverse", (h) =>
+                {
+                    abilities.Reverse();
+                    abilitiesSearch.Reverse();
+                    Respawn("ObjectManagerAbilities");
+                    PlaySound("DesktopInventorySort", 0.2f);
+                });
+                if (!CDesktop.windows.Exists(x => x.title == "AbilitiesSort"))
+                    AddSmallButton("OtherSort", (h) =>
                     {
-                        AddLine(abilityObj.name, "", "Right");
-                        AddSmallButton(abilityObj.icon,
-                        (h) =>
-                        {
-
-                        });
-                        if (currentSave.player.actionBars.Exists(x => x.ability == abilityObj.name))
-                        {
-                        SetSmallButtonToGrayscale();
-                        AddSmallButtonOverlay("OtherGridBlurred");
-                        }
-                    },
-                    (h) =>
-                    {
-                        if (!currentSave.player.actionBars.Exists(x => x.ability == abilityObj.name) && currentSave.player.actionBars.Count < currentSave.player.actionBarsUnlocked)
-                        {
-                            currentSave.player.actionBars.Add(new ActionBar(abilityObj.name));
-                            Respawn("PlayerSpellbookInfo");
-                            Respawn("SpellbookAbilityList");
-                            PlaySound("DesktopActionbarAdd", 0.7f);
-                        }
-                    },
-                    (h) => () =>
-                    {
-                        SetAnchor(Top, 0, -42);
-                        AddHeaderGroup();
-                        SetRegionGroupWidth(246);
-                        SetRegionGroupHeight(217);
-                        AddHeaderRegion(() =>
-                        {
-                            AddLine(abilityObj.name, "Gray");
-                        });
-                        AddPaddingRegion(() =>
-                        {
-                            AddBigButton(abilityObj.icon, (h) => { });
-                            AddLine("Cooldown: ", "DarkGray");
-                            AddText(abilityObj.cooldown == 0 ? "None" : abilityObj.cooldown + (abilityObj.cooldown == 1 ? " turn"  : " turns"), "Gray");
-                        });
-                        abilityObj.PrintDescription(currentSave.player, null, 246);
-                        foreach (var cost in abilityObj.cost)
-                        {
-                            AddRegionGroup();
-                            AddHeaderRegion(() =>
-                            {
-                                AddSmallButton("Element" + cost.Key + "Rousing", (h) => { });
-                            });
-                            AddRegionGroup();
-                            SetRegionGroupWidth(30);
-                            AddHeaderRegion(() =>
-                            {
-                                AddLine(cost.Value + "", cost.Value > currentSave.player.MaxResource(cost.Key) ? "Red" : "Gray");
-                            });
-                        }
-                        AddRegionGroup();
-                        SetRegionGroupWidth(246 - abilityObj.cost.Count * 49);
-                        AddPaddingRegion(() => { AddLine(); });
-                    }
-                );
-            }
-            if (passiveAbilities.Count(x => x.description != null) > 0)
-                AddPaddingRegion(() => { AddLine("Passive abilities:", "DarkGray"); });
-            for (int i = 0; i < passiveAbilities.Count; i++)
+                        SpawnWindowBlueprint("AbilitiesSort");
+                        Respawn("ObjectManagerAbilities");
+                    });
+                else
+                    AddSmallButton("OtherSortOff", (h) => { });
+            });
+            regionGroup = CDesktop.LBWindow.LBRegionGroup;
+            AddPaginationLine(regionGroup);
+            for (int i = 0; i < 7; i++)
             {
-                var abilityObj = passiveAbilities[i];
-                if (abilityObj.description == null) continue;
-                AddButtonRegion(
-                    () =>
+                var index = i;
+                AddButtonRegion(() =>
+                {
+                    if (passiveAbilities.Count > index + 7 * regionGroup.pagination)
                     {
-                        AddLine(abilityObj.name, "", "Right");
-                        AddSmallButton(abilityObj.icon,
-                        (h) =>
+                        SetRegionBackground(RegionBackgroundType.Button);
+                        var foo = passiveAbilities[index + 7 * regionGroup.pagination];
+                        AddLine(foo.name);
+                        AddSmallButton(foo.icon, (h) => { });
+                        if (currentSave.player.actionBars.Exists(x => x.ability == foo.name))
                         {
-
-                        });
-                    },
-                    (h) => { },
-                    (h) => () =>
-                    {
-                        PrintAbilityTooltip(currentSave.player, null, abilityObj);
+                            SetSmallButtonToGrayscale();
+                            AddSmallButtonOverlay("OtherGridBlurred");
+                        }
                     }
-                );
+                    else
+                    {
+                        SetRegionBackground(RegionBackgroundType.Padding);
+                        AddLine();
+                    }
+                },
+                (h) =>
+                {
+
+                },
+                (h) => () =>
+                {
+                    SetAnchor(Center);
+                    PrintAbilityTooltip(null, null, abilitiesSearch[index + 10 * regionGroup.pagination]);
+                });
             }
-            AddPaddingRegion(() => { });
+            //AddPaddingRegion(() =>
+            //{
+            //    SetRegionAsGroupExtender();
+            //    AddLine(abilities.Count + " abilities", "DarkGray");
+            //    if (abilities.Count != abilitiesSearch.Count)
+            //        AddLine(abilitiesSearch.Count + " found in search", "DarkGray");
+            //});
         }),
         new("PlayerSpellbookInfo", () => {
             SetAnchor(TopLeft);
@@ -863,7 +880,7 @@ public class Blueprint
             foreach (var element in elements1)
                 AddHeaderRegion(() =>
                 {
-                    var value = currentSave.player.resources.ToList().Find(x => x.Key == element).Value;
+                    var value = 0;
                     AddLine(value + "", value == 0 ? "DarkGray" : (value > currentSave.player.MaxResource(element) ? "Red" : "Green"));
                     AddText("/" + currentSave.player.MaxResource(element), "DarkGray");
                     AddSmallButton("Element" + elements2[elements1.IndexOf(element)] + "Rousing",
@@ -889,7 +906,7 @@ public class Blueprint
             foreach (var element in elements2)
                 AddHeaderRegion(() =>
                 {
-                    var value = currentSave.player.resources.ToList().Find(x => x.Key == element).Value;
+                    var value = 0;
                     AddLine(value + "", value == 0 ? "DarkGray" : (value > currentSave.player.MaxResource(element) ? "Red" : "Green"));
                     AddText("/" + currentSave.player.MaxResource(element), "DarkGray");
                 });
@@ -952,7 +969,7 @@ public class Blueprint
             AddHeaderRegion(
                 () =>
                 {
-                    AddLine(Board.board.area.name, "", "Center");
+                    AddLine(locationName, "", "Center");
                 }
             );
         }),
@@ -1675,7 +1692,7 @@ public class Blueprint
             SetRegionGroupHeight(358);
             AddHeaderRegion(() =>
             {
-                AddLine("Conflict side: " + creationSide);
+                AddLine("Side: " + creationSide);
                 AddSmallButton("ActionReroll", (h) =>
                 {
                     creationSide = random.Next(2) == 1 ? "Horde" : "Alliance";
@@ -1686,9 +1703,9 @@ public class Blueprint
             });
             AddHeaderRegion(() =>
             {
-                AddBigButton("HonorAlliance", (h) => { creationSide = "Alliance"; h.window.Respawn(); creationRace = ""; creationClass = ""; });
+                AddBigButton("HonorAlliance", (h) => { creationSide = "Alliance"; creationRace = ""; creationClass = ""; h.window.Respawn(); });
                 if (creationSide != "Alliance") { AddBigButtonOverlay("OtherGridBlurred"); SetBigButtonToGrayscale(); }
-                AddBigButton("HonorHorde", (h) => { creationSide = "Horde"; h.window.Respawn(); creationRace = ""; creationClass = ""; });
+                AddBigButton("HonorHorde", (h) => { creationSide = "Horde"; creationRace = ""; creationClass = ""; h.window.Respawn(); });
                 if (creationSide != "Horde") { AddBigButtonOverlay("OtherGridBlurred"); SetBigButtonToGrayscale(); }
             });
             AddHeaderRegion(() =>
@@ -5782,17 +5799,26 @@ public class Blueprint
                     else if (race.kind == "Elite")
                         race.kind = "Common";
                 });
-                AddPaddingRegion(() => { AddLine("Faction:", "DarkGray"); });
+                AddPaddingRegion(() =>
+                {
+                    AddLine("Faction:", "DarkGray");
+                    AddSmallButton("OtherReverse", (h) =>
+                    {
+                        race.faction = null;
+                        Respawn("ObjectManagerRace");
+                    });
+                });
                 AddButtonRegion(() =>
                 {
-                    AddLine(race.faction);
-                    AddSmallButton(race.Faction().Icon(), (h) => { });
+                    AddLine(race.faction ?? "None");
+                    if (race.faction != null)
+                        AddSmallButton(race.Faction().Icon(), (h) => { });
                 },
                 (h) =>
                 {
                     if (CloseWindow("ObjectManagerRaces") || CloseWindow("ObjectManagerPortraitList"))
                     {
-                        Faction.factionsSearch = Faction.factions;
+                        factionsSearch = factions;
                         SpawnWindowBlueprint("ObjectManagerFactions");
                     }
                 });
@@ -5859,8 +5885,6 @@ public class Blueprint
             AddRegionGroup(() => factionsSearch.Count);
             SetRegionGroupWidth(171);
             SetRegionGroupHeight(358);
-            //AutomaticPagination(() => faction != null, factionsSearch.FindIndex(x => x == faction), 10);
-            //AutomaticPagination(() => town != null, factionsSearch.FindIndex(x => x.name == town.faction), 10);
             if (faction != null)
             {
                 var index = factionsSearch.IndexOf(faction);
@@ -5885,6 +5909,11 @@ public class Blueprint
                     {
                         CloseWindow(h.window);
                         SpawnWindowBlueprint("ObjectManagerTowns");
+                    }
+                    else if (race != null)
+                    {
+                        CloseWindow(h.window);
+                        SpawnWindowBlueprint("ObjectManagerRaces");
                     }
                     else
                     {
@@ -5925,7 +5954,7 @@ public class Blueprint
                         SetRegionBackground(RegionBackgroundType.Button);
                         var foo = factionsSearch[index + 10 * regionGroup.pagination];
                         AddLine(foo.name);
-                        AddSmallButton(foo.icon, (h) => { });
+                        AddSmallButton(foo.Icon(), (h) => { });
                     }
                     else
                     {
@@ -6269,7 +6298,7 @@ public class Blueprint
             SpawnWindowBlueprint("InstanceLeftSide");
             AddHotkey(Escape, () =>
             {
-                if (CloseWindow("HostileArea: " + area.name))
+                if (CloseWindow("HostileArea: " + area?.name))
                 {
                     area = null;
                     PlaySound("DesktopButtonClose");
@@ -6318,12 +6347,14 @@ public class Blueprint
         }),
         new("ComplexEntrance", () =>
         {
+            //locationName = complex.name;
+            //SpawnWindowBlueprint("LocationInfo");
             SetDesktopBackground("Areas/Complex" + complex.name.Replace("'", "").Replace(".", "").Replace(" ", ""));
             SpawnWindowBlueprint("Complex: " + complex.name);
             SpawnWindowBlueprint("ComplexLeftSide");
             AddHotkey(Escape, () =>
             {
-                if (CloseWindow("HostileArea: " + area.name))
+                if (CloseWindow("HostileArea: " + area?.name))
                 {
                     area = null;
                     PlaySound("DesktopButtonClose");
@@ -6339,6 +6370,7 @@ public class Blueprint
         }),
         new("Game", () =>
         {
+            locationName = Board.board.area.name;
             PlaySound("DesktopEnterCombat");
             SetDesktopBackground("Areas/Area" + (Board.board.area.zone + Board.board.area.name).Replace("'", "").Replace(".", "").Replace(" ", ""));
             SpawnWindowBlueprint("BattleBoard");
@@ -6386,6 +6418,7 @@ public class Blueprint
         }),
         new("GameSimulation", () =>
         {
+            locationName = Board.board.area.name;
             PlaySound("DesktopEnterCombat");
             SetDesktopBackground("Areas/Area" + (Board.board.area.zone + Board.board.area.name).Replace("'", "").Replace(".", "").Replace(" ", ""));
             SpawnWindowBlueprint("BattleBoard");
@@ -6501,9 +6534,10 @@ public class Blueprint
         new("SpellbookScreen", () =>
         {
             PlaySound("DesktopSpellbookScreenOpen");
+            locationName = "Spellbook";
+            SpawnWindowBlueprint("LocationInfo");
             SetDesktopBackground("Skin");
             SpawnWindowBlueprint("SpellbookAbilityList");
-            SpawnWindowBlueprint("SpellbookAbilityListHeader");
             SpawnWindowBlueprint("PlayerSpellbookInfo");
             SpawnWindowBlueprint("SpellbookResources");
             AddHotkey(P, () => { SwitchDesktop("Map"); CloseDesktop("SpellbookScreen"); PlaySound("DesktopSpellbookScreenClose"); });
@@ -6512,6 +6546,8 @@ public class Blueprint
         new("EquipmentScreen", () =>
         {
             PlaySound("DesktopInventoryOpen");
+            locationName = "Inventory";
+            SpawnWindowBlueprint("LocationInfo");
             SetDesktopBackground("Leather");
             SpawnWindowBlueprint("PlayerEquipmentInfo");
             SpawnWindowBlueprint("Inventory");

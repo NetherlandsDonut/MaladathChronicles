@@ -30,6 +30,7 @@ public static class Root
     public static List<FlyingMissile> flyingMissiles;
     public static bool canUnlockScreen;
 
+    public static string locationName;
     public static string creationName;
     public static string creationSide;
     public static string creationGender;
@@ -89,7 +90,7 @@ public static class Root
         newDesktop.screen.nearClipPlane = -1024;
         newDesktop.screen.farClipPlane = 4096;
         newDesktop.screen.clearFlags = CameraClearFlags.SolidColor;
-        newDesktop.screen.backgroundColor = Color.black;
+        newDesktop.screen.backgroundColor = new Color32(0, 29, 41, 255);
         newDesktop.screen.orthographic = true;
         if (GameSettings.settings.pixelPerfectVision.Value()) newDesktop.screen.gameObject.AddComponent<PixelCamera>();
         var cameraBorder = new GameObject("CameraBorder", typeof(SpriteRenderer));
@@ -224,7 +225,7 @@ public static class Root
         if (window == null) return false;
         CDesktop.windows.Remove(window);
         UnityEngine.Object.Destroy(window.gameObject);
-        return false;
+        return true;
     }
 
     public static void SetAnchor(Anchor anchor, Window magnet)
@@ -266,11 +267,11 @@ public static class Root
 
     #region RegionGroups
 
-    public static void AddHeaderGroup()
+    public static void AddHeaderGroup(Func<double> maxPagination = null, int perPage = 10)
     {
         var newObject = new GameObject("HeaderGroup", typeof(RegionGroup));
         newObject.transform.parent = CDesktop.LBWindow.transform;
-        newObject.GetComponent<RegionGroup>().Initialise(CDesktop.LBWindow, true, null, 0);
+        newObject.GetComponent<RegionGroup>().Initialise(CDesktop.LBWindow, true, maxPagination, perPage);
     }
 
     public static void AddRegionGroup(Func<double> maxPagination = null, int perPage = 10)

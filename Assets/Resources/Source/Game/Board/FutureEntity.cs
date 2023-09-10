@@ -59,11 +59,12 @@ public class FutureEntity
     public Dictionary<string, double> ElementImportance(double healthPerc, double otherHealthPerc)
     {
         var abilities = Ability.abilities.FindAll(x => actionBars.Exists(y => y.ability == x.name));
-        double elementCosts = abilities.Sum(x => x.cost.Sum(y => y.Value));
+        var elementCostsSeparate = abilities.SelectMany(x => x.cost.ToList()).GroupBy(x => x.Key, x => x.Value).ToDictionary(x => x.Key, x => x.Sum(x => x));
+        double elementCosts = elementCostsSeparate.Sum(x => x.Value);
         var sheet = new Dictionary<string, double>();
         foreach (var resource in resources)
         {
-            var amount = abilities.FindAll(x => x.cost.ContainsKey(resource.Key)).Sum(x => x.cost[resource.Key] * AbilityTagModifier(x.tags)) / elementCosts + 0.025;
+            var amount = (abilities.FindAll(x => x.cost.ContainsKey(resource.Key)).Sum(x => x.cost[resource.Key] * AbilityTagModifier(x.tags)) / elementCosts + 0.025) / (elementCostsSeparate.ContainsKey(resource.Key) ? (resource.Value / elementCostsSeparate[resource.Key] + 0.1) : 1.1);
             sheet.Add(resource.Key, random.Next(5, 13) / 10.0 * amount);
         }
         return sheet;

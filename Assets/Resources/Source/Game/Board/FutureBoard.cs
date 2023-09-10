@@ -69,7 +69,7 @@ public class FutureBoard
         {
             var n = resource.Value - pastEntity.resources[resource.Key];
             var amountMultiplier = entity.AmountModifier(n);
-            score += entityElementImportance[resource.Key] * amountMultiplier * (n < 0 ? -1 : 1);
+            score += entityElementImportance[resource.Key] * amountMultiplier * (n < 0 ? 1 : -1);
         }
 
         //This may be unnecessary but I am not sure as it still provides valuable insight
@@ -78,7 +78,7 @@ public class FutureBoard
         {
             var n = resource.Value - pastOther.resources[resource.Key];
             var amountMultiplier = entity.AmountModifier(n);
-            score -= otherElementImportance[resource.Key] * amountMultiplier * (n < 0 ? -1 : 1);
+            score -= otherElementImportance[resource.Key] * amountMultiplier * (n < 0 ? 1 : -1);
         }
 
         //Modify score by the difference in entity health
