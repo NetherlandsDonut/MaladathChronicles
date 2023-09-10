@@ -3,7 +3,7 @@
     {
       "player": {
         "level": 60,
-        "unspentTalentPoints": 17,
+        "unspentTalentPoints": 16,
         "actionBarsUnlocked": 7,
         "name": "Nicollete",
         "race": "Human",
@@ -21,7 +21,8 @@
           "Arcane Missiles",
           "Blazing Barrier",
           "Flamestrike",
-          "Fiery Rush"
+          "Fiery Rush",
+          "Fire Blast"
         ],
         "actionBars": [
           {
@@ -32,6 +33,9 @@
           },
           {
             "ability": "Arcane Missiles"
+          },
+          {
+            "ability": "Fire Blast"
           }
         ],
         "stats": {
@@ -722,22 +726,24 @@
           }
         }
       },
-      "cameraX": 306,
-      "cameraY": -54,
+      "cameraX": 275,
+      "cameraY": -65,
       "siteProgress": {
         "Balia'mah Ruins": 1,
-        "The Crimson Throne": 4
+        "The Crimson Throne": 4,
+        "Plaguewood": 1
       },
       "commonsKilled": {
         "Dustbelcher Warrior": 1,
-        "Cannibal Ghoul": 4
+        "Cannibal Ghoul": 4,
+        "Putrid Gargoyle": 1
       },
       "raresKilled": {},
       "elitesKilled": {},
       "startDate": "2023-09-08T02:04:14.0667101+02:00",
-      "lastLoaded": "2023-09-11T01:20:44.8265232+02:00",
-      "lastPlayed": "2023-09-11T01:24:07.4270718+02:00",
-      "timePlayed": "01:54:11.6731998"
+      "lastLoaded": "2023-09-11T01:29:57.2516491+02:00",
+      "lastPlayed": "2023-09-11T01:30:52.0912114+02:00",
+      "timePlayed": "01:51:43.9122135"
     }
   ],
   "Mograine": [],

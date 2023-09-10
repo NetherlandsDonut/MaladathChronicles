@@ -9583,7 +9583,7 @@
     ],
     "eliteEncounters": [
       {
-        "who": "Ayamiss The Hunter",
+        "who": "Ayamiss the Hunter",
         "levelMin": 60,
         "requiredProgress": 6
       }
@@ -9612,7 +9612,7 @@
     ],
     "eliteEncounters": [
       {
-        "who": "Buru The Gorger",
+        "who": "Buru the Gorger",
         "levelMin": 60,
         "requiredProgress": 4
       }
@@ -9655,7 +9655,7 @@
     ],
     "eliteEncounters": [
       {
-        "who": "Ossirian The Unscarred",
+        "who": "Ossirian the Unscarred",
         "levelMin": 60,
         "requiredProgress": 2
       }
@@ -15564,7 +15564,7 @@
     ],
     "eliteEncounters": [
       {
-        "who": "Mutantus The Devourer",
+        "who": "Mutantus the Devourer",
         "levelMin": 22,
         "requiredProgress": 3
       }

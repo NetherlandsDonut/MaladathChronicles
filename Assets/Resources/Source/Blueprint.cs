@@ -3,7 +3,6 @@ using System.Linq;
 using System.Collections.Generic;
 
 using UnityEngine;
-using UnityEngine.UIElements;
 
 using static UnityEngine.KeyCode;
 
@@ -22,13 +21,14 @@ using static ItemSet;
 using static Ability;
 using static SaveGame;
 using static Coloring;
+using static PersonType;
 using static GameSettings;
 using static Serialization;
+using static SiteSpiritHealer;
 using static SiteHostileArea;
 using static SiteInstance;
 using static SiteComplex;
 using static SiteTown;
-using UnityEngine.Rendering.PostProcessing;
 
 public class Blueprint
 {
@@ -6631,6 +6631,8 @@ public class Blueprint
             Serialize(items, "items", true, false, prefix);
             Serialize(itemSets, "sets", true, false, prefix);
             Serialize(factions, "factions", true, false, prefix);
+            Serialize(spiritHealers, "spirithealers", true, false, prefix);
+            Serialize(personTypes, "personTypes", true, false, prefix);
             SetDesktopBackground("Areas/AreaTheCelestialPlanetarium");
             SpawnWindowBlueprint("ObjectManagerLobby");
             AddHotkey(Escape, () => { CloseDesktop("DevPanel"); });
