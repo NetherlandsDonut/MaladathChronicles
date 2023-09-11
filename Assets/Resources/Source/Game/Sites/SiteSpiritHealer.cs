@@ -4,6 +4,14 @@ using static Root;
 
 public class SiteSpiritHealer : Site
 {
+    //Initialisation method to fill automatic values
+    //and remove empty collections to avoid serialising them later
+    public override void Initialise()
+    {
+        if (x != 0 && y != 0)
+            Blueprint.windowBlueprints.Add(new Blueprint("Site: SpiritHealer: " + name, () => PrintSite()));
+    }
+
     //Currently opened spirit healer
     public static SiteSpiritHealer spiritHealer;
 

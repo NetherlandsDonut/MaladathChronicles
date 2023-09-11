@@ -7,6 +7,8 @@ using static Root;
 using static Root.Anchor;
 
 using static Sound;
+using static Ability;
+using static ItemSet;
 using static SaveGame;
 using static SiteTown;
 using static Coloring;
@@ -14,6 +16,29 @@ using static GameSettings;
 
 public class Item
 {
+    //Initialisation method to fill automatic values
+    //and remove empty collections to avoid serialising them later
+    public void Initialise()
+    {
+        if (set != null)
+            if (!itemSets.Exists(x => x.name == set))
+                itemSets.Insert(0, new ItemSet()
+                {
+                    name = set,
+                    setBonuses = new()
+                });
+        if (abilities != null)
+            foreach (var ability in abilities)
+                if (!abilities.Exists(x => x.name == ability))
+                    abilities.Insert(0, new Ability()
+                    {
+                        name = ability,
+                        icon = "Ability" + ability,
+                        events = new(),
+                        tags = new()
+                    });
+    }
+
     //Rarity of this item which can range from Poor to Legendary
     public string rarity;
 

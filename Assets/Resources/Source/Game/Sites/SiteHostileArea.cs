@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using static Root;
 using static Root.Anchor;
 
+using static Race;
+using static Faction;
 using static SaveGame;
 using static Coloring;
 
@@ -15,15 +17,164 @@ public class SiteHostileArea : Site
     public override void Initialise()
     {
         type ??= "HostileArea";
+        if (faction != null)
+            if (!factions.Exists(x => x.name == faction))
+                factions.Insert(0, new Faction()
+                {
+                    name = faction,
+                    icon = "Faction" + faction,
+                    side = "Neutral"
+                });
+        if (commonEncounters != null)
+            foreach (var encounter in commonEncounters)
+                if (!races.Exists(x => x.name == encounter.who))
+                    races.Insert(0, new Race()
+                    {
+                        name = encounter.who,
+                        abilities = new(),
+                        kind = "Common",
+                        portrait = "PortraitChicken",
+                        vitality = 1.0,
+                    });
+        if (rareEncounters != null)
+            foreach (var encounter in rareEncounters)
+                if (!races.Exists(x => x.name == encounter.who))
+                    races.Insert(0, new Race()
+                    {
+                        name = encounter.who,
+                        abilities = new(),
+                        kind = "Rare",
+                        portrait = "PortraitParrot",
+                        vitality = 2.0,
+                    });
+        if (eliteEncounters != null)
+            foreach (var encounter in eliteEncounters)
+                if (!races.Exists(x => x.name == encounter.who))
+                    races.Insert(0, new Race()
+                    {
+                        name = encounter.who,
+                        abilities = new(),
+                        kind = "Elite",
+                        portrait = "PortraitCow",
+                        vitality = 3.0,
+                    });
         if (commonEncounters != null)
             if (commonEncounters.Count > 0)
                 recommendedLevel = (int)commonEncounters.Average(x => x.levelMax != 0 ? (x.levelMin + x.levelMax) / 2.0 : x.levelMin);
                 else commonEncounters = null;
         if (rareEncounters != null && rareEncounters.Count == 0) rareEncounters = null;
-        if (eliteEncounters != null)
-            if (eliteEncounters.Count > 0)
-                recommendedLevel = (int)eliteEncounters.Average(x => x.levelMax != 0 ? (x.levelMin + x.levelMax) / 2.0 : x.levelMin);
-                else eliteEncounters = null;
+        if (eliteEncounters != null && eliteEncounters.Count == 0) eliteEncounters = null;
+        if (!Blueprint.windowBlueprints.Exists(x => x.title == "HostileArea: " + name))
+            Blueprint.windowBlueprints.Add(
+                new Blueprint("HostileArea: " + name,
+                    () =>
+                    {
+                        PlayAmbience(ambience);
+                        SetAnchor(TopLeft);
+                        AddRegionGroup();
+                        SetRegionGroupWidth(171);
+                        SetRegionGroupHeight(354);
+                        AddHeaderRegion(() =>
+                        {
+                            AddLine(name);
+                            AddSmallButton("OtherClose",
+                            (h) =>
+                            {
+                                if (instancePart || complexPart)
+                                {
+                                    PlaySound("DesktopInstanceClose");
+                                    SetDesktopBackground("Areas/Area" + (instancePart ? instance.name : complex.name).Replace("'", "").Replace(".", "").Replace(" ", ""));
+                                    CloseWindow(h.window);
+                                    Respawn(instancePart ? "InstanceLeftSide" : "ComplexLeftSide");
+                                }
+                                else
+                                {
+                                    PlaySound("DesktopInstanceClose");
+                                    CloseDesktop("HostileAreaEntrance");
+                                }
+                            });
+                        });
+                        AddPaddingRegion(() =>
+                        {
+                            AddLine("Recommended level: ");
+                            AddText(recommendedLevel + "", ColorEntityLevel(recommendedLevel));
+                        });
+                        if (eliteEncounters != null && eliteEncounters.Count > 0 && eliteEncounters.Sum(x => x.requiredProgress) > 0)
+                            AddPaddingRegion(() =>
+                            {
+                                AddLine("Exploration progress: ", "DarkGray");
+                                var temp = currentSave.siteProgress;
+                                int progress = (int)(currentSave.siteProgress.ContainsKey(name) ? (double)currentSave.siteProgress[name] / eliteEncounters.Sum(x => x.requiredProgress) * 100 : 0);
+                                AddText((progress > 100 ? 100 : progress) + "%", ColorProgress(progress));
+                            });
+                        AddButtonRegion(() => { AddLine("Explore", "Black"); },
+                        (h) =>
+                        {
+                            Board.NewBoard(RollEncounter(), this);
+                            SpawnDesktopBlueprint("Game");
+                            SwitchDesktop("Game");
+                        });
+                        AddPaddingRegion(() =>
+                        {
+                            SetRegionAsGroupExtender();
+                        });
+                        if (commonEncounters != null && commonEncounters.Count > 0)
+                        {
+                            if (currentSave.siteProgress.ContainsKey(name) && eliteEncounters != null && eliteEncounters.Count > 0 && eliteEncounters.Sum(x => x.requiredProgress) <= currentSave.siteProgress[name])
+                                foreach (var encounter in commonEncounters)
+                                    AddButtonRegion(() =>
+                                    {
+                                        AddLine(encounter.who, "", "Right");
+                                        var race = Race.races.Find(x => x.name == encounter.who);
+                                        AddSmallButton(race == null ? "OtherUnknown" : race.portrait, (h) => { });
+                                    },
+                                    (h) =>
+                                    {
+                                        Board.NewBoard(RollEncounter(encounter), this);
+                                        SpawnDesktopBlueprint("Game");
+                                        SwitchDesktop("Game");
+                                    });
+                            else
+                                foreach (var encounter in commonEncounters)
+                                    AddPaddingRegion(() =>
+                                    {
+                                        AddLine(encounter.who, "DarkGray", "Right");
+                                        var race = Race.races.Find(x => x.name == encounter.who);
+                                        AddSmallButton(race == null ? "OtherUnknown" : race.portrait, (h) => { });
+                                    });
+                        }
+                        if (eliteEncounters != null && eliteEncounters.Count > 0)
+                        {
+                            foreach (var boss in eliteEncounters)
+                            {
+                                if (currentSave.siteProgress.ContainsKey(name) && boss.requiredProgress <= currentSave.siteProgress[name])
+                                    AddButtonRegion(() =>
+                                    {
+                                        SetRegionBackground(RegionBackgroundType.RedButton);
+                                        AddLine(boss.who, "", "Right");
+                                        var race = Race.races.Find(x => x.name == boss.who);
+                                        AddSmallButton(race == null ? "OtherUnknown" : race.portrait, (h) => { });
+                                    },
+                                    (h) =>
+                                    {
+                                        Board.NewBoard(RollEncounter(boss), this);
+                                        SpawnDesktopBlueprint("Game");
+                                        SwitchDesktop("Game");
+                                    });
+                                else
+                                    AddPaddingRegion(() =>
+                                    {
+                                        AddLine(boss.who, "DangerousRed", "Right");
+                                        var race = Race.races.Find(x => x.name == boss.who);
+                                        AddSmallButton(race == null ? "OtherUnknown" : race.portrait, (h) => { });
+                                    });
+                            }
+                        }
+                    }
+                )
+            );
+        if (x != 0 && y != 0)
+            Blueprint.windowBlueprints.Add(new Blueprint("Site: " + name, () => PrintSite()));
     }
 
     //Function to print the site onto the map

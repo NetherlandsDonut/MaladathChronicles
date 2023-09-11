@@ -6,6 +6,16 @@ using static Root.Anchor;
 
 public class Ability
 {
+    //Initialisation method to fill automatic values
+    //and remove empty collections to avoid serialising them later
+    public void Initialise()
+    {
+        if (ability.events == null)
+            ability.events = new();
+        if (ability.tags == null)
+            ability.tags = new();
+    }
+
     #region Resource Check
 
     public bool EnoughResources(Entity entity) => EnoughResources(entity.resources);

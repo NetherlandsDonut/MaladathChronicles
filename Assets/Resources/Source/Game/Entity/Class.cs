@@ -1,7 +1,36 @@
 using System.Collections.Generic;
 
+using static Ability;
+
 public class Class
 {
+    //Initialisation method to fill automatic values
+    //and remove empty collections to avoid serialising them later
+    public void Initialise()
+    {
+        if (abilities != null)
+            foreach (var ability in abilities)
+                if (!abilities.Exists(x => x.name == ability.Item1))
+                    abilities.Insert(0, new Ability()
+                    {
+                        name = ability.Item1,
+                        icon = "Ability" + ability.Item1.Replace(" ", ""),
+                        events = new(),
+                        tags = new()
+                    });
+        if (talentTrees != null)
+            foreach (var tree in talentTrees)
+                foreach (var talent in tree.talents)
+                    if (!abilities.Exists(x => x.name == talent.ability))
+                        abilities.Insert(0, new Ability()
+                        {
+                            name = talent.ability,
+                            icon = "Ability" + talent.ability.Replace(" ", ""),
+                            events = new(),
+                            tags = new()
+                        });
+    }
+
     //Name of the class
     public string name;
 

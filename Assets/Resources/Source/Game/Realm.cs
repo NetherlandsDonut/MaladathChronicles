@@ -1,7 +1,17 @@
 using System.Collections.Generic;
 
+using static SaveGame;
+
 public class Realm
 {
+    //Initialisation method to fill automatic values
+    //and remove empty collections to avoid serialising them later
+    public void Initialise()
+    {
+        if (!saves.ContainsKey(realm.name))
+            saves.Add(realm.name, new());
+    }
+
     //Name of the realm
     public string name;
 

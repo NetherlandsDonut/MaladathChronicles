@@ -3,6 +3,24 @@ using System.Collections.Generic;
 
 public class ItemSet
 {
+    //Initialisation method to fill automatic values
+    //and remove empty collections to avoid serialising them later
+    public void Initialise()
+    {
+        if (setBonuses != null)
+            foreach (var bonus in setBonuses)
+                if (bonus.abilitiesProvided != null)
+                    foreach (var ability in bonus.abilitiesProvided)
+                        if (!abilities.Exists(x => x.name == ability))
+                            abilities.Insert(0, new Ability()
+                            {
+                                name = ability,
+                                icon = "Ability" + ability,
+                                events = new(),
+                                tags = new()
+                            });
+    }
+
     //Set name
     public string name;
 

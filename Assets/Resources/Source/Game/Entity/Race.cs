@@ -1,9 +1,28 @@
 ﻿using System.Collections.Generic;
 
 using static Faction;
+using static Ability;
 
 public class Race
 {
+    //Initialisation method to fill automatic values
+    //and remove empty collections to avoid serialising them later
+    public void Initialise()
+    {
+        if (abilities != null)
+            foreach (var ability in abilities)
+                if (!abilities.Exists(x => x.name == ability))
+                    abilities.Insert(0, new Ability()
+                    {
+                        name = ability,
+                        icon = "Ability" + ability.Replace(" ", ""),
+                        events = new(),
+                        tags = new()
+                    });
+        if ((maleNames != null || femaleNames != null) && background == null || background == "")
+            background = "AreaElwynnForestNorthshireAbbey";
+    }
+
     //Name of the race
     public string name;
 

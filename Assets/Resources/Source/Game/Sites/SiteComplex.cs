@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using static Root;
 using static Root.Anchor;
 
+using static Faction;
 using static SaveGame;
 using static SiteInstance;
 using static SiteHostileArea;
@@ -15,8 +16,83 @@ public class SiteComplex : Site
     public override void Initialise()
     {
         type ??= "Complex";
+        if (faction != null)
+            if (!factions.Exists(x => x.name == faction))
+                factions.Insert(0, new Faction()
+                {
+                    name = faction,
+                    icon = "Faction" + faction,
+                    side = "Neutral"
+                });
+        if (sites != null)
+            foreach (var site in sites)
+                if (site != null && site.ContainsKey("SiteType") && site.ContainsKey("SiteName"))
+                    if (site["SiteType"] == "HostileArea")
+                    {
+                        if (!areas.Exists(x => x.name == site["SiteName"]))
+                            areas.Insert(0, new SiteHostileArea()
+                            {
+                                name = site["SiteName"],
+                                commonEncounters = new(),
+                                rareEncounters = new(),
+                                eliteEncounters = new(),
+                                type = "HostileArea",
+                                zone = this.name
+                            });
+                    }
+                    else if (site["SiteType"] == "Dungeon")
+                    {
+                        if (!instances.Exists(x => x.name == site["SiteName"]))
+                            instances.Insert(0, new SiteInstance()
+                            {
+                                name = site["SiteName"],
+                                wings = new(),
+                                type = "Dungeon"
+                            });
+                    }
+                    else if (site["SiteType"] == "Raid")
+                    {
+                        if (!instances.Exists(x => x.name == site["SiteName"]))
+                            instances.Insert(0, new SiteInstance()
+                            {
+                                name = site["SiteName"],
+                                wings = new(),
+                                type = "Raid"
+                            });
+                    }
         instances.FindAll(x => sites.Exists(y => (y["SiteType"] == "Raid" || y["SiteType"] == "Dungeon") && y["SiteName"] == x.name)).ForEach(x => x.complexPart = true);
         areas.FindAll(x => sites.Exists(y => y["SiteType"] == "HostileArea" && y["SiteName"] == x.name)).ForEach(x => x.complexPart = true);
+        if (Blueprint.windowBlueprints.Exists(x => x.title == "Complex: " + name))
+            Blueprint.windowBlueprints.Add(
+                new Blueprint("Complex: " + name,
+                    () =>
+                    {
+                        PlayAmbience(ambience);
+                        SetAnchor(TopRight);
+                        AddRegionGroup();
+                        SetRegionGroupWidth(171);
+                        SetRegionGroupHeight(354);
+                        AddHeaderRegion(() =>
+                        {
+                            AddLine(name);
+                            AddSmallButton("OtherClose",
+                            (h) =>
+                            {
+                                var title = CDesktop.title;
+                                PlaySound("DesktopInstanceClose");
+                                CloseDesktop(title);
+                                SwitchDesktop("Map");
+                            });
+                        });
+                        AddPaddingRegion(() => { AddLine("Sites: "); });
+                        foreach (var site in sites)
+                            PrintComplexSite(site);
+                        AddPaddingRegion(() => { });
+                    }
+                )
+            );
+        if (x != 0 && y != 0)
+            Blueprint.windowBlueprints.Add(new Blueprint("Site: " + name, () => PrintSite()));
     }
 
     //Complex description showed in the left side of the screen
