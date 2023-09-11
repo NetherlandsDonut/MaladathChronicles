@@ -14516,9 +14516,19 @@
   {
     "commonEncounters": [
       {
-        "who": "Duskbat",
-        "levelMin": 1,
-        "levelMax": 2
+        "who": "Galak Mauler",
+        "levelMin": 26,
+        "levelMax": 27
+      },
+      {
+        "who": "Galak Marauder",
+        "levelMin": 26,
+        "levelMax": 27
+      },
+      {
+        "who": "Galak Stormer",
+        "levelMin": 26,
+        "levelMax": 27
       }
     ],
     "x": 90,
@@ -14530,9 +14540,24 @@
   {
     "commonEncounters": [
       {
-        "who": "Duskbat",
-        "levelMin": 1,
-        "levelMax": 2
+        "who": "Grimtotem Bandit",
+        "levelMin": 26,
+        "levelMax": 27
+      },
+      {
+        "who": "Grimtotem Stomper",
+        "levelMin": 26,
+        "levelMax": 27
+      },
+      {
+        "who": "Grimtotem Geomancer",
+        "levelMin": 26,
+        "levelMax": 27
+      },
+      {
+        "who": "Grimtotem Reaver",
+        "levelMin": 27,
+        "levelMax": 28
       }
     ],
     "x": 97,
@@ -14542,11 +14567,22 @@
     "type": "HostileArea"
   },
   {
+    "rareEncounters": [
+      {
+        "who": "Heartrazor",
+        "levelMin": 32
+      }
+    ],
     "commonEncounters": [
       {
-        "who": "Duskbat",
-        "levelMin": 1,
-        "levelMax": 2
+        "who": "Highperch Consort",
+        "levelMin": 28,
+        "levelMax": 29
+      },
+      {
+        "who": "Highperch Wyvern",
+        "levelMin": 28,
+        "levelMax": 29
       }
     ],
     "x": 88,
@@ -14572,9 +14608,19 @@
   {
     "commonEncounters": [
       {
-        "who": "Duskbat",
-        "levelMin": 1,
-        "levelMax": 2
+        "who": "Screeching Windcaller",
+        "levelMin": 30,
+        "levelMax": 31
+      },
+      {
+        "who": "Screeching Roguefeather",
+        "levelMin": 30,
+        "levelMax": 31
+      },
+      {
+        "who": "Screeching Harpy",
+        "levelMin": 29,
+        "levelMax": 30
       }
     ],
     "x": 94,
@@ -14586,9 +14632,19 @@
   {
     "commonEncounters": [
       {
-        "who": "Duskbat",
-        "levelMin": 1,
-        "levelMax": 2
+        "who": "Silithid Hive Drone",
+        "levelMin": 33,
+        "levelMax": 34
+      },
+      {
+        "who": "Silithid Searcher",
+        "levelMin": 32,
+        "levelMax": 33
+      },
+      {
+        "who": "Silithid Invader",
+        "levelMin": 34,
+        "levelMax": 35
       }
     ],
     "x": 113,
@@ -14600,10 +14656,25 @@
   {
     "commonEncounters": [
       {
-        "who": "Duskbat",
-        "levelMin": 1,
-        "levelMax": 2
-      }
+        "who": "Saltstone Basilisk",
+        "levelMin": 32,
+        "levelMax": 33
+      },
+      {
+        "who": "Saltstone Crystalhide",
+        "levelMin": 32,
+        "levelMax": 33
+      },
+      {
+        "who": "Sparkleshell Snapper",
+        "levelMin": 34,
+        "levelMax": 35
+      },
+      {
+        "who": "Salt Flats Vulture",
+        "levelMin": 34,
+        "levelMax": 35
+      },
     ],
     "x": 115,
     "y": -196,
@@ -14614,9 +14685,19 @@
   {
     "commonEncounters": [
       {
-        "who": "Duskbat",
-        "levelMin": 1,
-        "levelMax": 2
+        "who": "Galak Windchaser",
+        "levelMin": 25,
+        "levelMax": 26
+      },
+      {
+        "who": "Galak Scout",
+        "levelMin": 24,
+        "levelMax": 25
+      },
+      {
+        "who": "Galak Wrangler",
+        "levelMin": 25,
+        "levelMax": 26
       }
     ],
     "x": 101,
@@ -14628,10 +14709,25 @@
   {
     "commonEncounters": [
       {
-        "who": "Duskbat",
-        "levelMin": 1,
-        "levelMax": 2
-      }
+        "who": "Saltstone Gazer",
+        "levelMin": 34,
+        "levelMax": 35
+      },
+      {
+        "who": "Saltstone Crystalhide",
+        "levelMin": 34,
+        "levelMax": 35
+      },
+      {
+        "who": "Sparkleshell Borer",
+        "levelMin": 33,
+        "levelMax": 34
+      },
+      {
+        "who": "Salt Flats Vulture",
+        "levelMin": 34,
+        "levelMax": 35
+      },
     ],
     "x": 118,
     "y": -203,
@@ -14654,9 +14750,14 @@
   {
     "commonEncounters": [
       {
-        "who": "Duskbat",
-        "levelMin": 1,
-        "levelMax": 2
+        "who": "Gravelsnout Vermin",
+        "levelMin": 26,
+        "levelMax": 27
+      },
+      {
+        "who": "Pesterhide Hyena",
+        "levelMin": 26,
+        "levelMax": 27
       }
     ],
     "x": 96,
