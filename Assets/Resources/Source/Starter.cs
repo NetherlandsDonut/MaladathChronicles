@@ -25,36 +25,103 @@ public class Starter : MonoBehaviour
 {
     void Start()
     {
+        //Sets the initial values for the base variables
+        //of the program such as list of desktops or cursor handle
+        #region Initial Variables
+
         random = new System.Random();
+
+        //This is the font that will be used
+        //by the game's UI system and is the basis of the program
         font = new Font("Tahoma Bold");
+
+        //List of active desktops
+        //Thanks to this list the user can switch between screens while 
+        //retaining their data as the desktops are disabled only temporarily
+        //unless you call CloseDesktop() which will remove it from the list and wipe it's data
         desktops = new();
+
+        //List of in-game settings that describe visual style of the game,
+        //control how the audio works and other things for personalisation and user info storage
         settings = new GameSettings();
+
+        //List of animated falling elements on the board
+        //This list needs to be empty for user to be able to perform actions
+        //Every time elements on the board are collected new ones will fall
+        //from the top to fill the board. When they begin their fall they are
+        //added to this list and after landing they are removed.
         fallingElements = new List<FallingElement>();
+
+        //This object contains data on the map grid on which the camera
+        //will be moving around. The map grid size is set to the size of icons
+        //of sites on it so in this example game it's 19px
         grid = FindObjectOfType<MapGrid>();
+
+        //This is the player cursor that follows the hidden system cursor
+        cursor = FindObjectOfType<Cursor>();
+
+        //This is the enemy cursor that indicates what actions the enemy is performing in their turn
+        cursorEnemy = FindObjectOfType<CursorRemote>();
+
+        //This is audio source for all quick and single sound effects.
+        //Audio played through this medium cannot be stopped or changed in volume
+        soundEffects = cursor.GetComponent<AudioSource>();
+
+        //This is audio source for all music or ambience played in the background.
+        //Tracks played through this medium are looped and can be changed in volume during playing
+        //Whenever a new track is ought to be played throught these means it is first queued.
+        //Queued track will force the current one to be smoothly silenced.
+        //After that the queued track will starting playing again, smoothly increased in volume
+        ambience = FindObjectsOfType<AudioSource>().First(x => x.name == "Ambience");
+
+        //In case of Unity debugging set data directory
+        //to that of the build so we don't have to store game data in two places
         #if (UNITY_EDITOR)
         prefix = "D:\\Games\\Warcraft Elements\\";
         #endif
+
+        #endregion
+
+        //Gets the user characters and settings into the game
+        #region User Data Deserialization
+
+        //Get all characters..
         Deserialize(ref saves, "characters", false, prefix);
         if (saves == null) saves = new();
+
+        //Get user settings..
         Deserialize(ref settings, "settings", false, prefix);
         if (settings == null) settings = new();
         else settings.FillNulls();
+
+        //Settings file contains last selected character and it's realm.
+        //If the game content doesn't posses either the realm or the character that is supposed
+        //to be on that realm, program will reset those values to default so the user
+        //won't have a non existant character selected in the logging screen
         if (!saves.Any(x => x.Value.Exists(y => y.player.name == settings.selectedCharacter)))
         {
             settings.selectedCharacter = "";
             settings.selectedRealm = "";
         }
+
+        #endregion
+
+        //Loads the game content data from the game directory
         LoadData();
-        cursor = FindObjectOfType<Cursor>();
-        cursorEnemy = FindObjectOfType<CursorRemote>();
-        ambience = FindObjectsOfType<AudioSource>().First(x => x.name == "Ambience");
-        soundEffects = cursor.GetComponent<AudioSource>();
+
+        //Spawn the initial desktop so the user can perform all actions from there
         SpawnDesktopBlueprint("TitleScreen");
+
+        //Destroy this object as it's only used for program initialization
         Destroy(gameObject);
     }
 
     public static void LoadData()
     {
+        //This region is responsible for deserializing the game content
+        //into the game. By game content I mean Classes, Abilities, Instances etc
+        #region Data Deserialization
+
         Deserialize(ref SiteHostileArea.areas, "areas", false, prefix);
         SiteHostileArea.areas ??= new();
         Deserialize(ref instances, "instances", false, prefix);
@@ -83,7 +150,15 @@ public class Starter : MonoBehaviour
         Faction.factions ??= new();
         Deserialize(ref spiritHealers, "spirithealers", false, prefix);
         spiritHealers ??= new();
+
+        #endregion
+
+        //This region is responsible for serializing and deserializing
+        //asset base information for in-game content to use such as music or textures
+        #region Asset Database
+
         #if (UNITY_EDITOR)
+
         var ambienceList = AssetDatabase.FindAssets("t:AudioClip Ambience", new[] { "Assets/Resources/Ambience/" }).Select(x => AssetDatabase.GUIDToAssetPath(x).Replace("Assets/Resources/Ambience/", "")).ToList();
         var soundList = AssetDatabase.FindAssets("t:AudioClip", new[] { "Assets/Resources/Sounds/" }).Select(x => AssetDatabase.GUIDToAssetPath(x).Replace("Assets/Resources/Sounds/", "")).ToList();
         var itemIconList = AssetDatabase.FindAssets("t:Texture Item", new[] { "Assets/Resources/Sprites/Building/BigButtons/" }).Select(x => AssetDatabase.GUIDToAssetPath(x).Replace("Assets/Resources/Sprites/Building/BigButtons/", "")).ToList();
@@ -105,7 +180,9 @@ public class Starter : MonoBehaviour
             portraits = portraitList
         };
         Serialize(Assets.assets, "assets", false, false, prefix);
+
         #else
+
         Deserialize(ref Assets.assets, "assets", false, prefix);
         Assets.assets ??= new()
         {
@@ -115,13 +192,15 @@ public class Starter : MonoBehaviour
             abilityIcons = new(),
             portraits = new()
         };
+
         #endif
-        var countHA = SiteHostileArea.areas.Count;
-        var countI = instances.Count;
-        var countR = Race.races.Count;
-        var countA = Ability.abilities.Count;
-        var countIS = ItemSet.itemSets.Count;
-        var countF = Faction.factions.Count;
+
+        #endregion
+
+        //Would be amazing to have this in a separate loading screen to load up
+        //Because this will increase in size with time and will require more time to process
+        #region Initialise Objects
+
         for (int i = 0; i < SiteTown.towns.Count; i++)
             SiteTown.towns[i].Initialise();
         for (int i = 0; i < complexes.Count; i++)
@@ -142,6 +221,8 @@ public class Starter : MonoBehaviour
             Realm.realms[i].Initialise();
         for (int i = 0; i < Ability.abilities.Count; i++)
             Ability.abilities[i].Initialise();
+        for (int i = 0; i < SiteSpiritHealer.spiritHealers.Count; i++)
+            SiteSpiritHealer.spiritHealers[i].Initialise();
         for (int i = 0; i < 3; i++)
             for (int j = 0; j < 12; j++)
                 for (int k = 0; k < 3; k++)
@@ -150,11 +231,7 @@ public class Starter : MonoBehaviour
                     if (Blueprint.windowBlueprints.Exists(x => x.title == "Talent" + spec + row + col)) continue;
                     Blueprint.windowBlueprints.Add(new Blueprint("Talent" + spec + row + col, () => PrintTalent(spec, row, col)));
                 }
-        if (countHA != SiteHostileArea.areas.Count) Debug.Log("Added " + (SiteHostileArea.areas.Count - countHA) + " lacking areas.");
-        if (countI != instances.Count) Debug.Log("Added " + (instances.Count - countI) + " lacking instances.");
-        if (countR != Race.races.Count) Debug.Log("Added " + (Race.races.Count - countR) + " lacking races.");
-        if (countA != Ability.abilities.Count) Debug.Log("Added " + (Ability.abilities.Count - countA) + " lacking abilities.");
-        if (countIS != ItemSet.itemSets.Count) Debug.Log("Added " + (ItemSet.itemSets.Count - countIS) + " lacking item sets.");
-        if (countF != Faction.factions.Count) Debug.Log("Added " + (Faction.factions.Count - countF) + " lacking factions.");
+
+        #endregion
     }
 }
