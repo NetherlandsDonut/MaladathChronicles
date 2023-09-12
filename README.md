@@ -5,7 +5,7 @@
 
 <details>
   
-<summary>Version history for <b>v0.0</b></summary>
+<summary>Version history for <b>0.0 #Argus</b></summary>
 
 ```
 v0.0.1
@@ -146,7 +146,7 @@ v0.0.37
     
 <details>
 
-<summary>Version history for <b>v0.1</b></summary>
+<summary>Version history for <b>0.1 #Antarctica</b></summary>
 
 ```
 v0.1.0
@@ -199,7 +199,7 @@ v0.1.10
 
 <details>
 
-<summary>Version history for <b>v0.2</b></summary>
+<summary>Version history for <b>0.2 #Unicorn</b></summary>
 
 ```
 v0.2.0
@@ -255,7 +255,7 @@ v0.2.9
 
 <details>
 
-<summary>Version history for <b>v0.3</b></summary>
+<summary>Version history for <b>0.3 #Mercy</b></summary>
 
 ```
 v0.3.0
