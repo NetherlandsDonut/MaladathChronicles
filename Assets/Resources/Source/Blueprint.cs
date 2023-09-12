@@ -6197,7 +6197,11 @@ public class Blueprint
         {
             PlayAmbience("AmbienceMainScreen", 0.5f, true);
             SpawnWindowBlueprint("TitleScreenMenu");
-            AddHotkey(BackQuote, () => { SpawnDesktopBlueprint("DevPanel"); });
+            AddHotkey(BackQuote, () =>
+            {
+                SpawnWindowBlueprint("Console");
+                CDesktop.LBWindow.LBRegionGroup.LBRegion.inputLine.Activate();
+            });
             AddHotkey(Escape, () =>
             {
                 if (CloseWindow("Settings"))

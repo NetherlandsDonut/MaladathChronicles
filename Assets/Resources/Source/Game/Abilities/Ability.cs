@@ -10,10 +10,8 @@ public class Ability
     //and remove empty collections to avoid serialising them later
     public void Initialise()
     {
-        if (ability.events == null)
-            ability.events = new();
-        if (ability.tags == null)
-            ability.tags = new();
+        events ??= new();
+        tags ??= new();
     }
 
     #region Resource Check

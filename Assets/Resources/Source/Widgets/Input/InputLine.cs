@@ -438,10 +438,15 @@ public class InputLine : MonoBehaviour
         else if (foo == consoleInput)
         {
             CloseWindow(CDesktop.windows.Find(x => x.title == "Console"));
-            if (foo.Value() == "DevPanel")
+            if (foo.Value() == "d")
             {
                 SpawnDesktopBlueprint("DevPanel");
             }
+            else if (foo.Value() == "avglvl")
+            {
+                Debug.Log(string.Join('\n', SiteHostileArea.areas.FindAll(x => x.recommendedLevel > 0).GroupBy(x => x.zone).Select(x => (x.Key, x.Average(y => y.recommendedLevel))).OrderBy(x => x.Item2).Select(x => x.Key + ": " + System.Math.Round(x.Item2))));
+            }
+            foo.Set("");
         }
     }
 }

@@ -10,8 +10,8 @@ public class Class
     {
         if (abilities != null)
             foreach (var ability in abilities)
-                if (!abilities.Exists(x => x.name == ability.Item1))
-                    abilities.Insert(0, new Ability()
+                if (!Ability.abilities.Exists(x => x.name == ability.Item1))
+                    Ability.abilities.Insert(0, new Ability()
                     {
                         name = ability.Item1,
                         icon = "Ability" + ability.Item1.Replace(" ", ""),
@@ -21,8 +21,8 @@ public class Class
         if (talentTrees != null)
             foreach (var tree in talentTrees)
                 foreach (var talent in tree.talents)
-                    if (!abilities.Exists(x => x.name == talent.ability))
-                        abilities.Insert(0, new Ability()
+                    if (!Ability.abilities.Exists(x => x.name == talent.ability))
+                        Ability.abilities.Insert(0, new Ability()
                         {
                             name = talent.ability,
                             icon = "Ability" + talent.ability.Replace(" ", ""),

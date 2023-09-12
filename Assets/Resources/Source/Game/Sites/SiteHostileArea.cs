@@ -6,9 +6,12 @@ using static Root;
 using static Root.Anchor;
 
 using static Race;
+using static Sound;
 using static Faction;
 using static SaveGame;
 using static Coloring;
+using static SiteComplex;
+using static SiteInstance;
 
 public class SiteHostileArea : Site
 {
@@ -125,7 +128,7 @@ public class SiteHostileArea : Site
                                     AddButtonRegion(() =>
                                     {
                                         AddLine(encounter.who, "", "Right");
-                                        var race = Race.races.Find(x => x.name == encounter.who);
+                                        var race = races.Find(x => x.name == encounter.who);
                                         AddSmallButton(race == null ? "OtherUnknown" : race.portrait, (h) => { });
                                     },
                                     (h) =>
@@ -139,7 +142,7 @@ public class SiteHostileArea : Site
                                     AddPaddingRegion(() =>
                                     {
                                         AddLine(encounter.who, "DarkGray", "Right");
-                                        var race = Race.races.Find(x => x.name == encounter.who);
+                                        var race = races.Find(x => x.name == encounter.who);
                                         AddSmallButton(race == null ? "OtherUnknown" : race.portrait, (h) => { });
                                     });
                         }
@@ -152,7 +155,7 @@ public class SiteHostileArea : Site
                                     {
                                         SetRegionBackground(RegionBackgroundType.RedButton);
                                         AddLine(boss.who, "", "Right");
-                                        var race = Race.races.Find(x => x.name == boss.who);
+                                        var race = races.Find(x => x.name == boss.who);
                                         AddSmallButton(race == null ? "OtherUnknown" : race.portrait, (h) => { });
                                     },
                                     (h) =>
@@ -165,7 +168,7 @@ public class SiteHostileArea : Site
                                     AddPaddingRegion(() =>
                                     {
                                         AddLine(boss.who, "DangerousRed", "Right");
-                                        var race = Race.races.Find(x => x.name == boss.who);
+                                        var race = races.Find(x => x.name == boss.who);
                                         AddSmallButton(race == null ? "OtherUnknown" : race.portrait, (h) => { });
                                     });
                             }
@@ -208,7 +211,7 @@ public class SiteHostileArea : Site
                         AddLine("Common: ");
                         foreach (var enemy in commonEncounters)
                         {
-                            var race = Race.races.Find(x => x.name == enemy.who);
+                            var race = races.Find(x => x.name == enemy.who);
                             AddSmallButton(race == null ? "OtherUnknown" : race.portrait, (h) => { });
                         }
                     });
@@ -218,7 +221,7 @@ public class SiteHostileArea : Site
                         AddLine("Elite: ");
                         foreach (var enemy in eliteEncounters)
                         {
-                            var race = Race.races.Find(x => x.name == enemy.who);
+                            var race = races.Find(x => x.name == enemy.who);
                             AddSmallButton(race == null ? "OtherUnknown" : race.portrait, (h) => { });
                         }
                     });

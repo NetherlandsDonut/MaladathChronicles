@@ -368,6 +368,11 @@ public class Desktop : MonoBehaviour
                                 SiteTown.townsSearch = SiteTown.towns.FindAll(x => x.name.ToLower().Contains(val));
                                 Respawn("ObjectManagerTowns");
                             }
+                            else if (CDesktop.windows.Exists(x => x.title == "ObjectManagerFactions"))
+                            {
+                                Faction.factionsSearch = Faction.factions.FindAll(x => x.name.ToLower().Contains(val));
+                                Respawn("ObjectManagerFactions");
+                            }
                             else if (CDesktop.windows.Exists(x => x.title == "ObjectManagerAmbienceList"))
                             {
                                 Assets.assets.ambienceSearch = Assets.assets.ambience.FindAll(x => x.ToLower().Contains(val));

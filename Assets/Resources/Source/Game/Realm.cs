@@ -8,8 +8,8 @@ public class Realm
     //and remove empty collections to avoid serialising them later
     public void Initialise()
     {
-        if (!saves.ContainsKey(realm.name))
-            saves.Add(realm.name, new());
+        if (!saves.ContainsKey(name))
+            saves.Add(name, new());
     }
 
     //Name of the realm

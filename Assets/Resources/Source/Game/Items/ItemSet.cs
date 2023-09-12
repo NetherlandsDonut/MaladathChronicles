@@ -1,6 +1,8 @@
 using System.Linq;
 using System.Collections.Generic;
 
+using static Ability;
+
 public class ItemSet
 {
     //Initialisation method to fill automatic values

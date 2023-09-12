@@ -7,7 +7,6 @@ using static Root;
 using static Root.Anchor;
 
 using static Sound;
-using static Ability;
 using static ItemSet;
 using static SaveGame;
 using static SiteTown;
@@ -29,8 +28,8 @@ public class Item
                 });
         if (abilities != null)
             foreach (var ability in abilities)
-                if (!abilities.Exists(x => x.name == ability))
-                    abilities.Insert(0, new Ability()
+                if (!Ability.abilities.Exists(x => x.name == ability))
+                    Ability.abilities.Insert(0, new Ability()
                     {
                         name = ability,
                         icon = "Ability" + ability,

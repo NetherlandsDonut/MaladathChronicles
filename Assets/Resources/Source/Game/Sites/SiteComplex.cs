@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using static Root;
 using static Root.Anchor;
 
+using static Sound;
 using static Faction;
 using static SaveGame;
 using static SiteInstance;

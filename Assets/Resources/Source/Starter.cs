@@ -5,15 +5,12 @@ using UnityEditor;
 using UnityEngine;
 
 using static Root;
-using static Root.Anchor;
 
 using static Font;
 using static Sound;
 using static Cursor;
 using static Talent;
 using static SaveGame;
-using static Coloring;
-using static Transport;
 using static GameSettings;
 using static CursorRemote;
 using static SiteSpiritHealer;
@@ -55,13 +52,13 @@ public class Starter : MonoBehaviour
         //This object contains data on the map grid on which the camera
         //will be moving around. The map grid size is set to the size of icons
         //of sites on it so in this example game it's 19px
-        grid = FindObjectOfType<MapGrid>();
+        grid = FindAnyObjectByType<MapGrid>();
 
         //This is the player cursor that follows the hidden system cursor
-        cursor = FindObjectOfType<Cursor>();
+        cursor = FindAnyObjectByType<Cursor>();
 
         //This is the enemy cursor that indicates what actions the enemy is performing in their turn
-        cursorEnemy = FindObjectOfType<CursorRemote>();
+        cursorEnemy = FindAnyObjectByType<CursorRemote>();
 
         //This is audio source for all quick and single sound effects.
         //Audio played through this medium cannot be stopped or changed in volume
@@ -72,12 +69,12 @@ public class Starter : MonoBehaviour
         //Whenever a new track is ought to be played throught these means it is first queued.
         //Queued track will force the current one to be smoothly silenced.
         //After that the queued track will starting playing again, smoothly increased in volume
-        ambience = FindObjectsOfType<AudioSource>().First(x => x.name == "Ambience");
+        ambience = FindObjectsByType<AudioSource>(FindObjectsInactive.Include, FindObjectsSortMode.None).First(x => x.name == "Ambience");
 
         //In case of Unity debugging set data directory
         //to that of the build so we don't have to store game data in two places
         #if (UNITY_EDITOR)
-        prefix = "D:\\Games\\Warcraft Elements\\";
+        prefix = "D:/Games/Warcraft Elements/";
         #endif
 
         #endregion
@@ -87,12 +84,12 @@ public class Starter : MonoBehaviour
 
         //Get all characters..
         Deserialize(ref saves, "characters", false, prefix);
-        if (saves == null) saves = new();
+        saves ??= new();
 
         //Get user settings..
         Deserialize(ref settings, "settings", false, prefix);
-        if (settings == null) settings = new();
-        else settings.FillNulls();
+        settings ??= new();
+        settings.FillNulls();
 
         //Settings file contains last selected character and it's realm.
         //If the game content doesn't posses either the realm or the character that is supposed
@@ -221,8 +218,8 @@ public class Starter : MonoBehaviour
             Realm.realms[i].Initialise();
         for (int i = 0; i < Ability.abilities.Count; i++)
             Ability.abilities[i].Initialise();
-        for (int i = 0; i < SiteSpiritHealer.spiritHealers.Count; i++)
-            SiteSpiritHealer.spiritHealers[i].Initialise();
+        for (int i = 0; i < spiritHealers.Count; i++)
+            spiritHealers[i].Initialise();
         for (int i = 0; i < 3; i++)
             for (int j = 0; j < 12; j++)
                 for (int k = 0; k < 3; k++)

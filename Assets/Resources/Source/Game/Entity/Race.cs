@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 
 using static Faction;
-using static Ability;
 
 public class Race
 {
@@ -11,8 +10,8 @@ public class Race
     {
         if (abilities != null)
             foreach (var ability in abilities)
-                if (!abilities.Exists(x => x.name == ability))
-                    abilities.Insert(0, new Ability()
+                if (!Ability.abilities.Exists(x => x.name == ability))
+                    Ability.abilities.Insert(0, new Ability()
                     {
                         name = ability,
                         icon = "Ability" + ability.Replace(" ", ""),
