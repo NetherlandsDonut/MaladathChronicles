@@ -14,7 +14,7 @@ public class LineBigButton : MonoBehaviour
 
     //Fields
     public Tooltip tooltip;
-    public Action<Highlightable> pressEvent;
+    public Action<Highlightable> pressEvent, rightPressEvent;
     public string buttonType;
 
     public void Initialise(Region region, string buttonType, Action<Highlightable> pressEvent, Func<Highlightable, Action> tooltip)
@@ -22,9 +22,9 @@ public class LineBigButton : MonoBehaviour
         this.region = region;
         this.buttonType = buttonType;
         this.pressEvent = pressEvent;
-        if (tooltip != null && gameObject != null)
+        this.rightPressEvent = rightPressEvent;
+        if (tooltip != null)
             this.tooltip = new Tooltip(() => GetComponent<Highlightable>(), tooltip);
-
         region.LBBigButton = this;
         region.bigButtons.Add(this);
     }

@@ -19,9 +19,8 @@ public class LineText : MonoBehaviour
     {
         this.color = color;
         this.text = text;
-        characters = new();
         this.line = line;
-
+        characters = new();
         line.LBText = this;
         line.texts.Add(this);
     }

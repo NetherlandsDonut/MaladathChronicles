@@ -38,6 +38,7 @@ public static class Root
     public static string creationClass;
     public static int maxPlayerLevel = 60;
 
+    public static Highlightable mouseOver;
     public static GameObject[] loadingBar;
     public static int loadingScreenObjectLoad;
     public static int loadingScreenObjectLoadAim;
@@ -473,13 +474,15 @@ public static class Root
         }
     }
 
-    public static void AddSmallButton(string type, Action<Highlightable> pressEvent, Func<Highlightable, Action> tooltip = null)
+    public static void AddSmallButton(string type, Action<Highlightable> pressEvent, Action<Highlightable> rightPressEvent, Func<Highlightable, Action> tooltip = null)
     {
         var region = CDesktop.LBWindow.LBRegionGroup.LBRegion;
         var newObject = new GameObject("SmallButton: " + type.ToString(), typeof(LineSmallButton), typeof(SpriteRenderer));
         newObject.transform.parent = region.transform;
-        newObject.GetComponent<LineSmallButton>().Initialise(region, type, pressEvent, tooltip);
+        newObject.GetComponent<LineSmallButton>().Initialise(region, type, pressEvent, rightPressEvent, tooltip);
     }
+
+    public static void AddSmallButton(string type, Action<Highlightable> pressEvent, Func<Highlightable, Action> tooltip = null) => AddSmallButton(type, pressEvent, (h) => { }, tooltip);
 
     #endregion
 

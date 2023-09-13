@@ -11,7 +11,7 @@ public class Highlightable : MonoBehaviour
     public Region region;
     public Window window;
     public SpriteRenderer render;
-    public bool over, pressed;
+    public bool pressed;
 
     public void Initialise(Window window, Region region)
     {
@@ -34,7 +34,7 @@ public class Highlightable : MonoBehaviour
     public void OnMouseEnter()
     {
         if (cursor.render.sprite == null) return;
-        over = true;
+        mouseOver = this;
         if (!pressed && FindTooltip() != null)
             CDesktop.SetTooltip(FindTooltip());
         if (GetComponent<InputCharacter>() != null)
@@ -46,8 +46,10 @@ public class Highlightable : MonoBehaviour
 
     public void OnMouseExit()
     {
+        //Not sure if this line is needed, check later
         if (cursor.render.sprite == null) return;
-        over = false;
+        SwitchMouseOver(this);
+        if (mouseOver == this) mouseOver = null;
         CloseWindow("Tooltip");
         CDesktop.tooltip = null;
         cursor.SetCursor(Default);

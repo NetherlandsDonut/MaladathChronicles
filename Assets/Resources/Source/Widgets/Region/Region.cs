@@ -22,13 +22,13 @@ public class Region : MonoBehaviour
     public Action draw;
     public Tooltip tooltip;
     public bool resetInputFieldSet;
-    public Action<Highlightable> pressEvent;
+    public Action<Highlightable> pressEvent, rightPressEvent;
     public int currentHeight, xExtend, yExtend;
     public RegionBackgroundType backgroundType;
     public GameObject background;
     public GameObject[] borders;
 
-    public void Initialise(RegionGroup regionGroup, RegionBackgroundType backgroundType, Action draw, Action<Highlightable> pressEvent, Func<Highlightable, Action> tooltip)
+    public void Initialise(RegionGroup regionGroup, RegionBackgroundType backgroundType, Action draw, Action<Highlightable> pressEvent, Action<Highlightable> rightPressEvent, Func<Highlightable, Action> tooltip)
     {
         lines = new();
         smallButtons = new();
@@ -38,6 +38,7 @@ public class Region : MonoBehaviour
         if (tooltip != null && regionGroup.window != null)
             this.tooltip = new Tooltip(() => background.GetComponent<Highlightable>(), tooltip);
         this.pressEvent = pressEvent;
+        this.rightPressEvent = rightPressEvent;
         this.regionGroup = regionGroup;
         this.backgroundType = backgroundType;
 

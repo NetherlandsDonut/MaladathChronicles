@@ -74,6 +74,10 @@ public class Desktop : MonoBehaviour
 
     public void Update()
     {
+        if (Input.GetMouseDown(1) && mouseOver != null)
+        {
+            mouseOver.
+        }
         if (title == "GameSimulation" && Input.GetKeyDown(KeyCode.Escape))
         {
             CloseDesktop("GameSimulation");

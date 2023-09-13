@@ -15,10 +15,9 @@ public class Line : MonoBehaviour
     public void Initialise(Region region, string align)
     {
         this.region = region;
-        texts = new();
-
         this.align = align;
-        this.region.LBLine = this;
+        texts = new();
+        region.LBLine = this;
         region.lines.Add(this);
     }
 
