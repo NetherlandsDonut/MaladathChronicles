@@ -43,11 +43,11 @@ public class MapGrid : MonoBehaviour
     }
 
     public static int mapGridSize = 19;
-    public static Vector2 mapCenteringOffset = new Vector2(-17, 9);
+    public static Vector2 mapCenteringOffset = new(-17, 9);
 
     //Bounds camera to be in a specified proximity of any sites in reach
     //Whenever camera is close enough to detect sites it will be dragged to their proximity
-    public static void EnforceBoundary(int detectionRange = 700, int maxDistance = 250, float harshness = 0.001f)
+    public static void EnforceBoundary(int detectionRange = 700, int maxDistance = 200, float harshness = 0.001f)
     {
         var cameraDestinationScaled = CDesktop.cameraDestination * 19 + new Vector2(333, -183);
         var nearbySites = cameraBoundaryPoints.Select(x => (x.position, Vector2.Distance(new Vector2(x.position.x, x.position.y), cameraDestinationScaled))).ToList().FindAll(x => x.Item2 < detectionRange).OrderBy(x => x.Item2).ToList();

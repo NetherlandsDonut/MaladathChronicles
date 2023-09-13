@@ -66,28 +66,35 @@ public class Desktop : MonoBehaviour
 
     public void Start()
     {
-        if (CDesktop.title == "TalentScreen")
+        if (title == "TalentScreen")
             screen.transform.localPosition = new Vector3(320, -140);
-        else if (CDesktop.title.Contains("Map"))
+        else if (title.Contains("Map"))
             screen.transform.localPosition = new Vector3(-1000, 1000);
     }
 
     public void Update()
     {
-        if (CDesktop.title == "GameSimulation" && Input.GetKeyDown(KeyCode.Escape))
+        if (title == "GameSimulation" && Input.GetKeyDown(KeyCode.Escape))
         {
             CloseDesktop("GameSimulation");
-            CDesktop.UnlockScreen();
+            UnlockScreen();
         }
         if (Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.Tab) && Input.GetKeyDown(KeyCode.LeftAlt))
         {
+            PlaySound("DesktopMagicClick");
             Starter.LoadData();
             if (Board.board != null)
             {
                 Board.board.playerCombatAbilities = Board.board.playerCombatAbilities.Select(x => Ability.abilities.Find(y => x.name == y.name)).ToList();
                 Board.board.enemyCombatAbilities = Board.board.enemyCombatAbilities.Select(x => Ability.abilities.Find(y => x.name == y.name)).ToList();
             }
-            PlaySound("DesktopMagicClick");
+            if (title == "Map")
+            {
+                var temp = cameraDestination;
+                CloseDesktop(title);
+                SpawnDesktopBlueprint(title);
+                CDesktop.cameraDestination = temp;
+            }
         }
         if (!GameSettings.settings.music.Value())
         {
@@ -141,7 +148,7 @@ public class Desktop : MonoBehaviour
             }
         else
         {
-            if (CDesktop.title == "TitleScreen" && CDesktop.screen.GetComponent<SpriteRenderer>().sprite == null && !windows.Exists(x => x.name == "CharacterCreation"))
+            if (title == "TitleScreen" && screen.GetComponent<SpriteRenderer>().sprite == null && !windows.Exists(x => x.name == "CharacterCreation"))
             {
                 var amount = new Vector3(titleScreenCameraDirection < 2 ? -1 / 3f : 1 / 3f, titleScreenCameraDirection > 2 ? -1 / 3f : (titleScreenCameraDirection < 1 ? -1 / 3f : 1 / 3f));
                 screen.transform.localPosition += amount;
@@ -153,7 +160,7 @@ public class Desktop : MonoBehaviour
                     SpawnTransition();
                 }
             }
-            else if (CDesktop.title == "Map")
+            else if (title == "Map")
             {
                 var temp = screen.transform.position;
                 if ((float)Math.Round(temp.y / 19) != cameraDestination.y || (float)Math.Round(temp.x / 19) != cameraDestination.x)
@@ -210,7 +217,7 @@ public class Desktop : MonoBehaviour
                     {
                         animationTime = frameTime;
                         if (fallingElements.Count == 0) RebuildAll();
-                        if (canUnlockScreen) CDesktop.UnlockScreen();
+                        if (canUnlockScreen) UnlockScreen();
                         else Board.board.AnimateBoard();
                         if (fallingElements.Count == 0) RebuildAll();
                     }
@@ -318,82 +325,82 @@ public class Desktop : MonoBehaviour
                         if (temp.text.text == String.search)
                         {
                             var val = temp.text.text.Value().ToLower();
-                            if (CDesktop.windows.Exists(x => x.title == "ObjectManagerItems"))
+                            if (windows.Exists(x => x.title == "ObjectManagerItems"))
                             {
                                 Item.itemsSearch = Item.items.FindAll(x => x.name.ToLower().Contains(val));
                                 Respawn("ObjectManagerItems");
                             }
-                            else if (CDesktop.windows.Exists(x => x.title == "ObjectManagerItemSets"))
+                            else if (windows.Exists(x => x.title == "ObjectManagerItemSets"))
                             {
                                 ItemSet.itemSetsSearch = ItemSet.itemSets.FindAll(x => x.name.ToLower().Contains(val));
                                 Respawn("ObjectManagerItemSets");
                             }
-                            else if (CDesktop.windows.Exists(x => x.title == "ObjectManagerAbilities"))
+                            else if (windows.Exists(x => x.title == "ObjectManagerAbilities"))
                             {
                                 Ability.abilitiesSearch = Ability.abilities.FindAll(x => x.name.ToLower().Contains(val));
                                 Respawn("ObjectManagerAbilities");
                             }
-                            else if (CDesktop.windows.Exists(x => x.title == "ObjectManagerBuffs"))
+                            else if (windows.Exists(x => x.title == "ObjectManagerBuffs"))
                             {
                                 Buff.buffsSearch = Buff.buffs.FindAll(x => x.name.ToLower().Contains(val));
                                 Respawn("ObjectManagerBuffs");
                             }
-                            else if (CDesktop.windows.Exists(x => x.title == "ObjectManagerRaces"))
+                            else if (windows.Exists(x => x.title == "ObjectManagerRaces"))
                             {
                                 Race.racesSearch = Race.races.FindAll(x => x.name.ToLower().Contains(val));
                                 Respawn("ObjectManagerRaces");
                             }
-                            else if (CDesktop.windows.Exists(x => x.title == "ObjectManagerClasses"))
+                            else if (windows.Exists(x => x.title == "ObjectManagerClasses"))
                             {
                                 Class.specsSearch = Class.specs.FindAll(x => x.name.ToLower().Contains(val));
                                 Respawn("ObjectManagerClasses");
                             }
-                            else if (CDesktop.windows.Exists(x => x.title == "ObjectManagerHostileAreas"))
+                            else if (windows.Exists(x => x.title == "ObjectManagerHostileAreas"))
                             {
                                 SiteHostileArea.areasSearch = SiteHostileArea.areas.FindAll(x => x.name.ToLower().Contains(val));
                                 Respawn("ObjectManagerHostileAreas");
                             }
-                            else if (CDesktop.windows.Exists(x => x.title == "ObjectManagerInstances"))
+                            else if (windows.Exists(x => x.title == "ObjectManagerInstances"))
                             {
                                 SiteInstance.instancesSearch = SiteInstance.instances.FindAll(x => x.name.ToLower().Contains(val));
                                 Respawn("ObjectManagerInstances");
                             }
-                            else if (CDesktop.windows.Exists(x => x.title == "ObjectManagerComplexes"))
+                            else if (windows.Exists(x => x.title == "ObjectManagerComplexes"))
                             {
                                 SiteComplex.complexesSearch = SiteComplex.complexes.FindAll(x => x.name.ToLower().Contains(val));
                                 Respawn("ObjectManagerComplexes");
                             }
-                            else if (CDesktop.windows.Exists(x => x.title == "ObjectManagerTowns"))
+                            else if (windows.Exists(x => x.title == "ObjectManagerTowns"))
                             {
                                 SiteTown.townsSearch = SiteTown.towns.FindAll(x => x.name.ToLower().Contains(val));
                                 Respawn("ObjectManagerTowns");
                             }
-                            else if (CDesktop.windows.Exists(x => x.title == "ObjectManagerFactions"))
+                            else if (windows.Exists(x => x.title == "ObjectManagerFactions"))
                             {
                                 Faction.factionsSearch = Faction.factions.FindAll(x => x.name.ToLower().Contains(val));
                                 Respawn("ObjectManagerFactions");
                             }
-                            else if (CDesktop.windows.Exists(x => x.title == "ObjectManagerAmbienceList"))
+                            else if (windows.Exists(x => x.title == "ObjectManagerAmbienceList"))
                             {
                                 Assets.assets.ambienceSearch = Assets.assets.ambience.FindAll(x => x.ToLower().Contains(val));
                                 Respawn("ObjectManagerAmbienceList");
                             }
-                            else if (CDesktop.windows.Exists(x => x.title == "ObjectManagerPortraitList"))
+                            else if (windows.Exists(x => x.title == "ObjectManagerPortraitList"))
                             {
                                 Assets.assets.portraitsSearch = Assets.assets.portraits.FindAll(x => x.ToLower().Contains(val));
                                 Respawn("ObjectManagerPortraitList");
                             }
-                            else if (CDesktop.windows.Exists(x => x.title == "ObjectManagerSoundsList"))
+                            else if (windows.Exists(x => x.title == "ObjectManagerSoundsList"))
                             {
                                 Assets.assets.soundsSearch = Assets.assets.sounds.FindAll(x => x.ToLower().Contains(val));
                                 Respawn("ObjectManagerSoundsList");
                             }
-                            else if (CDesktop.windows.Exists(x => x.title == "ObjectManagerItemIconList"))
+                            else if (windows.Exists(x => x.title == "ObjectManagerItemIconList"))
                             {
                                 Assets.assets.itemIconsSearch = Assets.assets.itemIcons.FindAll(x => x.ToLower().Contains(val));
                                 Respawn("ObjectManagerItemIconList");
                             }
-                            else if (CDesktop.windows.Exists(x => x.title == "ObjectManagerAbilityIconList"))
+                            else if (windows.Exists(x => x.title == "ObjectManagerAbilityIconList"))
                             {
                                 Assets.assets.abilityIconsSearch = Assets.assets.abilityIcons.FindAll(x => x.ToLower().Contains(val));
                                 Respawn("ObjectManagerAbilityIconList");

@@ -1622,20 +1622,6 @@
   {
     "commonEncounters": [
       {
-        "who": "Duskbat",
-        "levelMin": 1,
-        "levelMax": 2
-      }
-    ],
-    "x": 95,
-    "y": -104,
-    "name": "Raynewood Retreat",
-    "zone": "Ashenvale",
-    "type": "HostileArea"
-  },
-  {
-    "commonEncounters": [
-      {
         "who": "Dark Strand Enforcer",
         "levelMin": 19,
         "levelMax": 20
@@ -1843,9 +1829,14 @@
   {
     "commonEncounters": [
       {
-        "who": "Duskbat",
-        "levelMin": 1,
-        "levelMax": 2
+        "who": "Horde Shaman",
+        "levelMin": 28,
+        "levelMax": 29
+      },
+      {
+        "who": "Horde Grunt",
+        "levelMin": 28,
+        "levelMax": 29
       }
     ],
     "x": 114,
@@ -3577,9 +3568,14 @@
   {
     "commonEncounters": [
       {
-        "who": "Duskbat",
-        "levelMin": 1,
-        "levelMax": 2
+        "who": "Black Broodling",
+        "levelMin": 52,
+        "levelMax": 53
+      },
+      {
+        "who": "Venomtip Scorpid",
+        "levelMin": 52,
+        "levelMax": 53
       }
     ],
     "x": 297,
@@ -6093,14 +6089,19 @@
   {
     "commonEncounters": [
       {
-        "who": "Plaguehound",
-        "levelMin": 53,
-        "levelMax": 54
+        "who": "Plague Monstrosity",
+        "levelMin": 57,
+        "levelMax": 58
+      },
+      {
+        "who": "Blighted Horror",
+        "levelMin": 56,
+        "levelMax": 57
       },
       {
         "who": "Noxious Plaguebat",
-        "levelMin": 53,
-        "levelMax": 54
+        "levelMin": 55,
+        "levelMax": 56
       }
     ],
     "x": 311,
@@ -6112,14 +6113,29 @@
   {
     "commonEncounters": [
       {
-        "who": "Scourge Warder",
-        "levelMin": 53,
-        "levelMax": 54
+        "who": "Vile Tutor",
+        "levelMin": 56,
+        "levelMax": 57
       },
       {
-        "who": "Dark Summoner",
-        "levelMin": 53,
-        "levelMax": 54
+        "who": "Dark Caster",
+        "levelMin": 55,
+        "levelMax": 56
+      },
+      {
+        "who": "Hate Shrieker",
+        "levelMin": 55,
+        "levelMax": 56
+      },
+      {
+        "who": "Gibbering Ghoul",
+        "levelMin": 55,
+        "levelMax": 56
+      },
+      {
+        "who": "Stitched Horror",
+        "levelMin": 56,
+        "levelMax": 57
       }
     ],
     "x": 315,
@@ -6132,8 +6148,13 @@
     "commonEncounters": [
       {
         "who": "Plaguebat",
-        "levelMin": 52,
-        "levelMax": 53
+        "levelMin": 53,
+        "levelMax": 54
+      },
+      {
+        "who": "Putrid Gargoyle",
+        "levelMin": 54,
+        "levelMax": 55
       }
     ],
     "x": 306,
@@ -6146,13 +6167,13 @@
     "commonEncounters": [
       {
         "who": "Plaguehound Runt",
-        "levelMin": 52,
-        "levelMax": 53
+        "levelMin": 54,
+        "levelMax": 55
       },
       {
         "who": "Scourge Soldier",
-        "levelMin": 52,
-        "levelMax": 53
+        "levelMin": 54,
+        "levelMax": 55
       }
     ],
     "x": 306,
@@ -6164,9 +6185,14 @@
   {
     "commonEncounters": [
       {
-        "who": "Plaguebat",
-        "levelMin": 52,
-        "levelMax": 53
+        "who": "Monstrous Plaguebat",
+        "levelMin": 56,
+        "levelMax": 57
+      },
+      {
+        "who": "Carrion Devourer",
+        "levelMin": 56,
+        "levelMax": 57
       }
     ],
     "x": 309,
@@ -6178,14 +6204,48 @@
   {
     "commonEncounters": [
       {
-        "who": "Plaguebat",
-        "levelMin": 52,
-        "levelMax": 53
+        "who": "Monstrous Plaguebat",
+        "levelMin": 56,
+        "levelMax": 57
+      },
+      {
+        "who": "Frenzied Plaguehound",
+        "levelMin": 56,
+        "levelMax": 58
+      },
+      {
+        "who": "Carrion Devourer",
+        "levelMin": 56,
+        "levelMax": 57
       }
     ],
     "x": 318,
     "y": -60,
     "name": "Eastwall Tower",
+    "zone": "Eastern Plaguelands",
+    "type": "HostileArea"
+  },
+  {
+    "commonEncounters": [
+      {
+        "who": "Death Singer",
+        "levelMin": 57,
+        "levelMax": 59
+      },
+      {
+        "who": "Scourge Champion",
+        "levelMin": 59,
+        "levelMax": 60
+      },
+      {
+        "who": "Diseased Flayer",
+        "levelMin": 58,
+        "levelMax": 59
+      }
+    ],
+    "x": 319,
+    "y": -60,
+    "name": "Browman Mill",
     "zone": "Eastern Plaguelands",
     "type": "HostileArea"
   },
@@ -6239,9 +6299,19 @@
   {
     "commonEncounters": [
       {
-        "who": "Plaguebat",
-        "levelMin": 52,
-        "levelMax": 53
+        "who": "Death Singer",
+        "levelMin": 57,
+        "levelMax": 58
+      },
+      {
+        "who": "Eyeless Watcher",
+        "levelMin": 57,
+        "levelMax": 58
+      },
+      {
+        "who": "Blighted Horror",
+        "levelMin": 57,
+        "levelMax": 58
       }
     ],
     "x": 319,
@@ -6253,9 +6323,20 @@
   {
     "commonEncounters": [
       {
-        "who": "Plaguebat",
-        "levelMin": 52,
-        "levelMax": 53
+        "who": "Monstrous Plaguebat",
+        "levelMin": 57,
+        "levelMax": 58
+      },
+      {
+        "who": "Frenzied Plaguehound",
+        "levelMin": 57,
+        "levelMax": 58
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Borelgore",
+        "levelMin": 61
       }
     ],
     "x": 313,
@@ -6268,23 +6349,23 @@
     "commonEncounters": [
       {
         "who": "Living Decay",
-        "levelMin": 53,
-        "levelMax": 54
+        "levelMin": 55,
+        "levelMax": 56
       },
       {
         "who": "Plaguehound",
-        "levelMin": 53,
-        "levelMax": 54
+        "levelMin": 55,
+        "levelMax": 56
       },
       {
         "who": "Noxious Plaguebat",
-        "levelMin": 53,
-        "levelMax": 54
+        "levelMin": 55,
+        "levelMax": 56
       },
       {
         "who": "Rotting Sludge",
-        "levelMin": 53,
-        "levelMax": 54
+        "levelMin": 55,
+        "levelMax": 56
       }
     ],
     "x": 321,
@@ -6362,11 +6443,27 @@
     "type": "HostileArea"
   },
   {
+    "rareEncounters": [
+      {
+        "who": "Ranger Lord Hawkspear",
+        "levelMin": 60
+      }
+    ],
     "commonEncounters": [
       {
-        "who": "Plaguebat",
-        "levelMin": 52,
-        "levelMax": 53
+        "who": "Ranger",
+        "levelMin": 59,
+        "levelMax": 60
+      },
+      {
+        "who": "Pathstrider",
+        "levelMin": 57,
+        "levelMax": 58
+      },
+      {
+        "who": "Quel'Lithien Protector",
+        "levelMin": 58,
+        "levelMax": 59
       }
     ],
     "x": 312,
@@ -6378,29 +6475,24 @@
   {
     "commonEncounters": [
       {
-        "who": "Cursed Mage",
-        "levelMin": 52,
-        "levelMax": 53
-      },
-      {
         "who": "Cannibal Ghoul",
-        "levelMin": 52,
-        "levelMax": 53
+        "levelMin": 53,
+        "levelMax": 54
       },
       {
-        "who": "Scourge Soldier",
-        "levelMin": 52,
-        "levelMax": 53
+        "who": "Crypt Walker",
+        "levelMin": 55,
+        "levelMax": 56
       },
       {
         "who": "Crypt Fiend",
-        "levelMin": 52,
-        "levelMax": 53
+        "levelMin": 54,
+        "levelMax": 55
       },
       {
         "who": "Torn Screamer",
-        "levelMin": 52,
-        "levelMax": 53
+        "levelMin": 55,
+        "levelMax": 56
       }
     ],
     "x": 297,
@@ -6410,6 +6502,12 @@
     "type": "HostileArea"
   },
   {
+    "rareEncounters": [
+      {
+        "who": "Nerubian Overseer",
+        "levelMin": 60
+      }
+    ],
     "commonEncounters": [
       {
         "who": "Crypt Fiend",
@@ -6431,9 +6529,14 @@
   {
     "commonEncounters": [
       {
-        "who": "Plaguebat",
-        "levelMin": 52,
-        "levelMax": 53
+        "who": "Living Decay",
+        "levelMin": 55,
+        "levelMax": 56
+      },
+      {
+        "who": "Rotting Sludge",
+        "levelMin": 54,
+        "levelMax": 55
       }
     ],
     "x": 312,
@@ -6467,6 +6570,58 @@
     "type": "HostileArea"
   },
   {
+    "commonEncounters": [
+      {
+        "who": "Dread Weaver",
+        "levelMin": 58,
+        "levelMax": 59
+      },
+      {
+        "who": "Death Singer",
+        "levelMin": 57,
+        "levelMax": 59
+      },
+      {
+        "who": "Dark Adept",
+        "levelMin": 58,
+        "levelMax": 59
+      },
+      {
+        "who": "Gangled Golem",
+        "levelMin": 58,
+        "levelMax": 59
+      },
+      {
+        "who": "Shadowmage",
+        "levelMin": 60
+      },
+      {
+        "who": "Abomination",
+        "levelMin": 59,
+        "levelMax": 60
+      },
+      {
+        "who": "Scourge Champion",
+        "levelMin": 59,
+        "levelMax": 60
+      },
+      {
+        "who": "Diseased Flayer",
+        "levelMin": 59,
+        "levelMax": 60
+      },
+      {
+        "who": "Crypt Slayer",
+        "levelMin": 58,
+        "levelMax": 59
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Deathspeaker Selendre",
+        "levelMin": 59
+      }
+    ],
     "x": 324,
     "y": -59,
     "name": "The Noxious Glade",
@@ -6484,6 +6639,11 @@
         "who": "Plaguebat",
         "levelMin": 52,
         "levelMax": 53
+      },
+      {
+        "who": "Carrion Grub",
+        "levelMin": 53,
+        "levelMax": 54
       }
     ],
     "x": 295,
@@ -6493,6 +6653,42 @@
     "type": "HostileArea"
   },
   {
+    "commonEncounters": [
+      {
+        "who": "Mossflayer Shadowhunter",
+        "levelMin": 58,
+        "levelMax": 59
+      },
+      {
+        "who": "Mossflayer Scout",
+        "levelMin": 57,
+        "levelMax": 58
+      },
+      {
+        "who": "Mossflayer Cannibal",
+        "levelMin": 58,
+        "levelMax": 59
+      },
+      {
+        "who": "Infected Mossflayer",
+        "levelMin": 58,
+        "levelMax": 59
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Infiltrator Hameya",
+        "levelMin": 60
+      },
+      {
+        "who": "Zul'Brin Warpbranch",
+        "levelMin": 60
+      },
+      {
+        "who": "Warlord Tresh'jin",
+        "levelMin": 60
+      }
+    ],
     "x": 319,
     "y": -51,
     "name": "Zul'Mashar",
@@ -7008,9 +7204,24 @@
   {
     "commonEncounters": [
       {
-        "who": "Duskbat",
-        "levelMin": 1,
-        "levelMax": 2
+        "who": "Jaedenar Warlock",
+        "levelMin": 51,
+        "levelMax": 52
+      },
+      {
+        "who": "Jaedenar Adept",
+        "levelMin": 51,
+        "levelMax": 52
+      },
+      {
+        "who": "Jaedenar Cultist",
+        "levelMin": 51,
+        "levelMax": 52
+      },
+      {
+        "who": "Jaedenar Guardian",
+        "levelMin": 50,
+        "levelMax": 51
       }
     ],
     "name": "Jaedenar",
@@ -7082,9 +7293,24 @@
   {
     "commonEncounters": [
       {
-        "who": "Duskbat",
-        "levelMin": 1,
-        "levelMax": 2
+        "who": "Jaedenar Warlock",
+        "levelMin": 51,
+        "levelMax": 52
+      },
+      {
+        "who": "Jaedenar Cultist",
+        "levelMin": 51,
+        "levelMax": 52
+      },
+      {
+        "who": "Jaedenar Guardian",
+        "levelMin": 51,
+        "levelMax": 52
+      },
+      {
+        "who": "Jaedenar Hound",
+        "levelMin": 51,
+        "levelMax": 52
       }
     ],
     "name": "Shrine of the Deceiver",
@@ -7833,20 +8059,6 @@
     "x": 260,
     "y": -102,
     "name": "Purgation Isle",
-    "zone": "Hillsbrad Foothills",
-    "type": "HostileArea"
-  },
-  {
-    "commonEncounters": [
-      {
-        "who": "Duskbat",
-        "levelMin": 1,
-        "levelMax": 2
-      }
-    ],
-    "x": 283,
-    "y": -87,
-    "name": "Ravenholdt Manor",
     "zone": "Hillsbrad Foothills",
     "type": "HostileArea"
   },
@@ -8784,12 +8996,12 @@
   {
     "commonEncounters": [
       {
-        "who": "Dael'dun Digger",
+        "who": "Bael'dun Digger",
         "levelMin": 7,
         "levelMax": 8
       },
       {
-        "who": "Dael'dun Appraiser",
+        "who": "Bael'dun Appraiser",
         "levelMin": 7,
         "levelMax": 8
       }
@@ -8801,11 +9013,27 @@
     "type": "HostileArea"
   },
   {
+    "rareEncounters": [
+      {
+        "who": "Chief Sharptusk Thornmantle",
+        "levelMin": 5
+      }
+    ],
     "commonEncounters": [
       {
-        "who": "Duskbat",
-        "levelMin": 1,
-        "levelMax": 2
+        "who": "Bristleback Quilboar",
+        "levelMin": 3,
+        "levelMax": 4
+      },
+      {
+        "who": "Bristleback Battleboar",
+        "levelMin": 3,
+        "levelMax": 4
+      },
+      {
+        "who": "Bristleback Shaman",
+        "levelMin": 3,
+        "levelMax": 4
       }
     ],
     "x": 88,
@@ -8817,9 +9045,19 @@
   {
     "commonEncounters": [
       {
-        "who": "Duskbat",
-        "levelMin": 1,
-        "levelMax": 2
+        "who": "Palemane Tanner",
+        "levelMin": 5,
+        "levelMax": 6
+      },
+      {
+        "who": "Palemane Skinner",
+        "levelMin": 5,
+        "levelMax": 6
+      },
+      {
+        "who": "Palemane Poacher",
+        "levelMin": 7,
+        "levelMax": 8
       }
     ],
     "x": 74,
@@ -8831,9 +9069,14 @@
   {
     "commonEncounters": [
       {
-        "who": "Duskbat",
+        "who": "Plainstrider",
         "levelMin": 1,
         "levelMax": 2
+      },
+      {
+        "who": "Mountain Cougar",
+        "levelMin": 1,
+        "levelMax": 3
       }
     ],
     "x": 82,
@@ -8845,9 +9088,14 @@
   {
     "commonEncounters": [
       {
-        "who": "Duskbat",
-        "levelMin": 1,
-        "levelMax": 2
+        "who": "Bristleback Interloper",
+        "levelMin": 9,
+        "levelMax": 10
+      },
+      {
+        "who": "Elder Plainstrider",
+        "levelMin": 9,
+        "levelMax": 10
       }
     ],
     "x": 87,
@@ -8859,9 +9107,19 @@
   {
     "commonEncounters": [
       {
-        "who": "Duskbat",
-        "levelMin": 1,
-        "levelMax": 2
+        "who": "Elder Plainstrider",
+        "levelMin": 7,
+        "levelMax": 8
+      },
+      {
+        "who": "Swoop",
+        "levelMin": 7,
+        "levelMax": 8
+      },
+      {
+        "who": "Flatland Cougar",
+        "levelMin": 7,
+        "levelMax": 8
       }
     ],
     "x": 82,
@@ -8873,9 +9131,14 @@
   {
     "commonEncounters": [
       {
-        "who": "Duskbat",
-        "levelMin": 1,
-        "levelMax": 2
+        "who": "Venture Co. Laborer",
+        "levelMin": 6,
+        "levelMax": 7
+      },
+      {
+        "who": "Venture Co. Taskmaster",
+        "levelMin": 7,
+        "levelMax": 8
       }
     ],
     "x": 84,
@@ -8887,9 +9150,19 @@
   {
     "commonEncounters": [
       {
-        "who": "Duskbat",
-        "levelMin": 1,
-        "levelMax": 2
+        "who": "Prairie Wolf Alpha",
+        "levelMin": 8,
+        "levelMax": 9
+      },
+      {
+        "who": "Prairie Stalker",
+        "levelMin": 7,
+        "levelMax": 8
+      },
+      {
+        "who": "Swoop",
+        "levelMin": 7,
+        "levelMax": 8
       }
     ],
     "x": 85,
@@ -8901,9 +9174,14 @@
   {
     "commonEncounters": [
       {
-        "who": "Duskbat",
-        "levelMin": 1,
-        "levelMax": 2
+        "who": "Venture Co. Supervisor",
+        "levelMin": 8,
+        "levelMax": 9
+      },
+      {
+        "who": "Venture Co. Worker",
+        "levelMin": 8,
+        "levelMax": 9
       }
     ],
     "x": 87,
@@ -8915,9 +9193,14 @@
   {
     "commonEncounters": [
       {
-        "who": "Duskbat",
-        "levelMin": 1,
-        "levelMax": 2
+        "who": "Windfury Matriarch",
+        "levelMin": 10,
+        "levelMax": 11
+      },
+      {
+        "who": "Windfury Sorceress",
+        "levelMin": 9,
+        "levelMax": 10
       }
     ],
     "x": 83,
@@ -10767,15 +11050,15 @@
   {
     "commonEncounters": [
       {
-        "who": "Stonevault Ambusher",
-        "levelMin": 36,
-        "levelMax": 37
+        "who": "Son of Arugal",
+        "levelMin": 25,
+        "levelMax": 26
       }
     ],
     "eliteEncounters": [
       {
-        "who": "Revelosh",
-        "levelMin": 40,
+        "who": "Archmage Arugal",
+        "levelMin": 26,
         "requiredProgress": 3
       }
     ],
@@ -10851,16 +11134,42 @@
     "type": "HostileArea"
   },
   {
+    "rareEncounters": [
+      {
+        "who": "Deathsworn Captain",
+        "levelMin": 24
+      }
+    ],
     "commonEncounters": [
       {
         "who": "Wailing Guardsman",
-        "levelMin": 21,
-        "levelMax": 22
+        "levelMin": 22,
+        "levelMax": 23
+      },
+      {
+        "who": "Tormented Officer",
+        "levelMin": 23,
+        "levelMax": 24
+      },
+      {
+        "who": "Vile Bat",
+        "levelMin": 23,
+        "levelMax": 24
+      },
+      {
+        "who": "Blood Seeker",
+        "levelMin": 23,
+        "levelMax": 24
       }
     ],
     "eliteEncounters": [
       {
         "who": "Commander Springvale",
+        "levelMin": 24,
+        "requiredProgress": 2
+      },
+      {
+        "who": "Odo the Blindwatcher",
         "levelMin": 24,
         "requiredProgress": 2
       }
@@ -10877,16 +11186,16 @@
         "levelMax": 20
       },
       {
-        "who": "Shadow Charger",
-        "levelMin": 20,
-        "levelMax": 21
+        "who": "Slavering Worg",
+        "levelMin": 19,
+        "levelMax": 20
       }
     ],
     "eliteEncounters": [
       {
-        "who": "Revelosh",
-        "levelMin": 40,
-        "requiredProgress": 3
+        "who": "Shadow Charger",
+        "levelMin": 21,
+        "requiredProgress": 2
       }
     ],
     "name": "The Courtyard",
@@ -10896,16 +11205,26 @@
   {
     "commonEncounters": [
       {
-        "who": "Stonevault Ambusher",
-        "levelMin": 36,
-        "levelMax": 37
+        "who": "Shadowfang Ragetooth",
+        "levelMin": 23,
+        "levelMax": 24
+      },
+      {
+        "who": "Son of Arugal",
+        "levelMin": 24,
+        "levelMax": 25
+      },
+      {
+        "who": "Lupine Horror",
+        "levelMin": 24,
+        "levelMax": 25
       }
     ],
     "eliteEncounters": [
       {
-        "who": "Revelosh",
-        "levelMin": 40,
-        "requiredProgress": 3
+        "who": "Fenrus the Devourer",
+        "levelMin": 25,
+        "requiredProgress": 2
       }
     ],
     "name": "The Laboratory",
@@ -10915,16 +11234,26 @@
   {
     "commonEncounters": [
       {
-        "who": "Stonevault Ambusher",
-        "levelMin": 36,
-        "levelMax": 37
+        "who": "Son of Arugal",
+        "levelMin": 24,
+        "levelMax": 25
+      },
+      {
+        "who": "Lupine Horror",
+        "levelMin": 24,
+        "levelMax": 25
+      },
+      {
+        "who": "Wolfguard Worg",
+        "levelMin": 24,
+        "levelMax": 25
       }
     ],
     "eliteEncounters": [
       {
-        "who": "Revelosh",
-        "levelMin": 40,
-        "requiredProgress": 3
+        "who": "Wolf Master Nandos",
+        "levelMin": 25,
+        "requiredProgress": 2
       }
     ],
     "name": "Tower Summit",
@@ -11938,9 +12267,14 @@
   {
     "commonEncounters": [
       {
-        "who": "Dustbelcher Warrior",
-        "levelMin": 35,
-        "levelMax": 37
+        "who": "Skullsplitter Warrior",
+        "levelMin": 39,
+        "levelMax": 40
+      },
+      {
+        "who": "Skullsplitter Mystic",
+        "levelMin": 39,
+        "levelMax": 40
       }
     ],
     "x": 274,
@@ -11952,9 +12286,14 @@
   {
     "commonEncounters": [
       {
-        "who": "Dustbelcher Warrior",
-        "levelMin": 35,
-        "levelMax": 37
+        "who": "Bloodsail Swashbuckler",
+        "levelMin": 41,
+        "levelMax": 42
+      },
+      {
+        "who": "Bloodsail Warlock",
+        "levelMin": 42,
+        "levelMax": 43
       }
     ],
     "x": 258,
@@ -11964,11 +12303,10 @@
     "type": "HostileArea"
   },
   {
-    "commonEncounters": [
+    "eliteEncounters": [
       {
-        "who": "Dustbelcher Warrior",
-        "levelMin": 35,
-        "levelMax": 37
+        "who": "Gorlash",
+        "levelMin": 47
       }
     ],
     "x": 268,
@@ -11978,11 +12316,22 @@
     "type": "HostileArea"
   },
   {
+    "rareEncounters": [
+      {
+        "who": "Scalebelly",
+        "levelMin": 45
+      }
+    ],
     "commonEncounters": [
       {
-        "who": "Dustbelcher Warrior",
-        "levelMin": 35,
-        "levelMax": 37
+        "who": "Thrashtail Basilisk",
+        "levelMin": 41,
+        "levelMax": 42
+      },
+      {
+        "who": "Ironjaw Basilisk",
+        "levelMin": 43,
+        "levelMax": 44
       }
     ],
     "x": 271,
@@ -11994,16 +12343,19 @@
   {
     "commonEncounters": [
       {
-        "who": "Dustbelcher Warrior",
-        "levelMin": 35,
-        "levelMax": 37
+        "who": "Skymane Gorilla",
+        "levelMin": 49,
+        "levelMax": 50
+      },
+      {
+        "who": "Jaguero Stalker",
+        "levelMin": 50
       }
     ],
     "eliteEncounters": [
       {
         "who": "King Mukla",
-        "levelMin": 50,
-        "levelMax": 51
+        "levelMin": 51
       }
     ],
     "x": 269,
@@ -12015,8 +12367,18 @@
   {
     "commonEncounters": [
       {
-        "who": "Dustbelcher Warrior",
+        "who": "Murkgill Warrior",
         "levelMin": 35,
+        "levelMax": 36
+      },
+      {
+        "who": "Murkgill Forager",
+        "levelMin": 35,
+        "levelMax": 36
+      },
+      {
+        "who": "Murkgill Lord",
+        "levelMin": 36,
         "levelMax": 37
       }
     ],
@@ -12027,10 +12389,37 @@
     "type": "HostileArea"
   },
   {
+    "rareEncounters": [
+      {
+        "who": "Sergeant Malthus",
+        "levelMin": 38
+      }
+    ],
+    "eliteEncounters": [
+      {
+        "who": "Colonel Kurzen",
+        "levelMin": 40
+      }
+    ],
     "commonEncounters": [
       {
-        "who": "Dustbelcher Warrior",
+        "who": "Kurzen Headshrinker",
+        "levelMin": 34,
+        "levelMax": 35
+      },
+      {
+        "who": "Kurzen Commando",
+        "levelMin": 34,
+        "levelMax": 35
+      },
+      {
+        "who": "Kurzen Witch Doctor",
         "levelMin": 35,
+        "levelMax": 36
+      },
+      {
+        "who": "Kurzen Shadow Hunter",
+        "levelMin": 36,
         "levelMax": 37
       }
     ],
@@ -12043,9 +12432,14 @@
   {
     "commonEncounters": [
       {
-        "who": "Dustbelcher Warrior",
+        "who": "Snapjaw Crocolisk",
         "levelMin": 35,
-        "levelMax": 37
+        "levelMax": 36
+      },
+      {
+        "who": "Sharptooth Frenzy",
+        "levelMin": 34,
+        "levelMax": 35
       }
     ],
     "x": 269,
@@ -12057,9 +12451,14 @@
   {
     "commonEncounters": [
       {
-        "who": "Dustbelcher Warrior",
-        "levelMin": 35,
-        "levelMax": 37
+        "who": "Elder Mistvale Gorilla",
+        "levelMin": 40,
+        "levelMax": 41
+      },
+      {
+        "who": "Silverback Patriarch",
+        "levelMin": 41,
+        "levelMax": 42
       }
     ],
     "x": 265,
@@ -12071,8 +12470,13 @@
   {
     "commonEncounters": [
       {
-        "who": "Dustbelcher Warrior",
-        "levelMin": 35,
+        "who": "Mosh'Ogg Brute",
+        "levelMin": 36,
+        "levelMax": 37
+      },
+      {
+        "who": "Mosh'Ogg Witch Doctor",
+        "levelMin": 36,
         "levelMax": 37
       }
     ],
@@ -12083,11 +12487,37 @@
     "type": "HostileArea"
   },
   {
+    "eliteEncounters": [
+      {
+        "who": "Mai'Zoth",
+        "levelMin": 47
+      }
+    ],
     "commonEncounters": [
       {
-        "who": "Dustbelcher Warrior",
-        "levelMin": 35,
-        "levelMax": 37
+        "who": "Mosh'Ogg Warrior",
+        "levelMin": 40,
+        "levelMax": 41
+      },
+      {
+        "who": "Mosh'Ogg Warmonger",
+        "levelMin": 41,
+        "levelMax": 42
+      },
+      {
+        "who": "Mosh'Ogg Shaman",
+        "levelMin": 43,
+        "levelMax": 44
+      },
+      {
+        "who": "Mosh'Ogg Mauler",
+        "levelMin": 43,
+        "levelMax": 44
+      },
+      {
+        "who": "Mosh'Ogg Lord",
+        "levelMin": 44,
+        "levelMax": 45
       }
     ],
     "x": 276,
@@ -12097,11 +12527,17 @@
     "type": "HostileArea"
   },
   {
+    "rareEncounters": [
+      {
+        "who": "Lord Sakrasis",
+        "levelMin": 45
+      }
+    ],
     "commonEncounters": [
       {
-        "who": "Dustbelcher Warrior",
-        "levelMin": 35,
-        "levelMax": 37
+        "who": "Naga Explorer",
+        "levelMin": 43,
+        "levelMax": 44
       }
     ],
     "x": 260,
@@ -12111,11 +12547,32 @@
     "type": "HostileArea"
   },
   {
+    "rareEncounters": [
+      {
+        "who": "Zanzil the Outcast",
+        "levelMin": 46
+      }
+    ],
     "commonEncounters": [
       {
-        "who": "Dustbelcher Warrior",
-        "levelMin": 35,
-        "levelMax": 37
+        "who": "Zanzil Naga",
+        "levelMin": 43,
+        "levelMax": 44
+      },
+      {
+        "who": "Zanzil Hunter",
+        "levelMin": 43,
+        "levelMax": 44
+      },
+      {
+        "who": "Zanzil Zombie",
+        "levelMin": 43,
+        "levelMax": 44
+      },
+      {
+        "who": "Zanzil Witch Doctor",
+        "levelMin": 43,
+        "levelMax": 44
       }
     ],
     "x": 270,
@@ -12125,11 +12582,22 @@
     "type": "HostileArea"
   },
   {
+    "rareEncounters": [
+      {
+        "who": "Jon-Jon the Crow",
+        "levelMin": 44
+      }
+    ],
     "commonEncounters": [
       {
-        "who": "Dustbelcher Warrior",
-        "levelMin": 35,
-        "levelMax": 37
+        "who": "Zanzil Witch Doctor",
+        "levelMin": 43,
+        "levelMax": 44
+      },
+      {
+        "who": "Zanzil Zombie",
+        "levelMin": 43,
+        "levelMax": 44
       }
     ],
     "x": 266,
@@ -12139,11 +12607,67 @@
     "type": "HostileArea"
   },
   {
+    "rareEncounters": [
+      {
+        "who": "Tethis",
+        "levelMin": 43
+      }
+    ],
     "commonEncounters": [
       {
-        "who": "Dustbelcher Warrior",
-        "levelMin": 35,
+        "who": "Jungle Stalker",
+        "levelMin": 40,
+        "levelMax": 41
+      },
+      {
+        "who": "Young Jungle Stalker",
+        "levelMin": 37,
+        "levelMax": 38
+      },
+      {
+        "who": "Stranglethorn Tiger",
+        "levelMin": 37,
+        "levelMax": 38
+      }
+    ],
+    "x": 264,
+    "y": -227,
+    "name": "Gurubashi Arena Grounds",
+    "zone": "Stranglethorn Vale",
+    "type": "HostileArea"
+  },
+  {
+    "eliteEncounters": [
+      {
+        "who": "Gan'zulah",
+        "levelMin": 41
+      }
+    ],
+    "commonEncounters": [
+      {
+        "who": "Bloodscalp Hunter",
+        "levelMin": 34,
+        "levelMax": 35
+      },
+      {
+        "who": "Bloodscalp Mystic",
+        "levelMin": 34,
+        "levelMax": 35
+      },
+      {
+        "who": "Bloodscalp Beastmaster",
+        "levelMin": 34,
+        "levelMax": 35
+      },
+      {
+        "who": "Bloodscalp Headhunter",
+        "levelMin": 36,
         "levelMax": 37
+      },
+      {
+        "who": "Bloodscalp Witch Doctor",
+        "levelMin": 37,
+        "levelMax": 38
       }
     ],
     "x": 259,
@@ -12153,11 +12677,27 @@
     "type": "HostileArea"
   },
   {
+    "rareEncounters": [
+      {
+        "who": "Ana'thek the Cruel",
+        "levelMin": 45
+      }
+    ],
     "commonEncounters": [
       {
-        "who": "Dustbelcher Warrior",
-        "levelMin": 35,
-        "levelMax": 37
+        "who": "Skullsplitter Beastmaster",
+        "levelMin": 41,
+        "levelMax": 42
+      },
+      {
+        "who": "Skullsplitter Mystic",
+        "levelMin": 40,
+        "levelMax": 41
+      },
+      {
+        "who": "Skullsplitter Witch Doctor",
+        "levelMin": 41,
+        "levelMax": 42
       }
     ],
     "x": 274,
@@ -12169,23 +12709,56 @@
   {
     "commonEncounters": [
       {
-        "who": "Dustbelcher Warrior",
-        "levelMin": 35,
-        "levelMax": 37
+        "who": "Jungle Stalker",
+        "levelMin": 40,
+        "levelMax": 41
+      },
+      {
+        "who": "Cold Eye Basilisk",
+        "levelMin": 40,
+        "levelMax": 41
       }
     ],
-    "x": 256,
-    "y": -214,
+    "x": 258,
+    "y": -215,
     "name": "The Savage Coast",
+    "zone": "Stranglethorn Vale",
+    "type": "HostileArea"
+  },
+  {
+    "rareEncounters": [
+      {
+        "who": "\"Pretty Boy\" Duncan",
+        "levelMin": 40
+      }
+    ],
+    "commonEncounters": [
+      {
+        "who": "Bloodsail Mage",
+        "levelMin": 40,
+        "levelMax": 41
+      },
+      {
+        "who": "Bloodsail Raider",
+        "levelMin": 40,
+        "levelMax": 41
+      }
+    ],
+    "name": "Southern Savage Coast",
     "zone": "Stranglethorn Vale",
     "type": "HostileArea"
   },
   {
     "commonEncounters": [
       {
-        "who": "Dustbelcher Warrior",
-        "levelMin": 35,
-        "levelMax": 37
+        "who": "Bloodscalp Shaman",
+        "levelMin": 33,
+        "levelMax": 34
+      },
+      {
+        "who": "Bloodscalp Warrior",
+        "levelMin": 33,
+        "levelMax": 34
       }
     ],
     "x": 265,
@@ -12197,23 +12770,38 @@
   {
     "commonEncounters": [
       {
-        "who": "Dustbelcher Warrior",
+        "who": "Venture Co. Workboss",
         "levelMin": 35,
-        "levelMax": 37
+        "levelMax": 36
+      },
+      {
+        "who": "Venture Co. Mechanic",
+        "levelMin": 34,
+        "levelMax": 35
       }
     ],
     "x": 271,
     "y": -215,
-    "name": "Venture Co. Base Camp",
+    "name": "Venture Co. Operations Center",
     "zone": "Stranglethorn Vale",
     "type": "HostileArea"
   },
   {
     "commonEncounters": [
       {
-        "who": "Dustbelcher Warrior",
-        "levelMin": 35,
-        "levelMax": 37
+        "who": "Southern Strand Crawler",
+        "levelMin": 40,
+        "levelMax": 41
+      },
+      {
+        "who": "Bloodsail Swashbuckler",
+        "levelMin": 40,
+        "levelMax": 41
+      },
+      {
+        "who": "Bloodsail Warlock",
+        "levelMin": 42,
+        "levelMax": 43
       }
     ],
     "x": 263,
@@ -12225,9 +12813,14 @@
   {
     "commonEncounters": [
       {
-        "who": "Dustbelcher Warrior",
-        "levelMin": 35,
-        "levelMax": 37
+        "who": "Skullsplitter Axe Thrower",
+        "levelMin": 39,
+        "levelMax": 40
+      },
+      {
+        "who": "Skullsplitter Mystic",
+        "levelMin": 39,
+        "levelMax": 40
       }
     ],
     "x": 271,
@@ -12239,14 +12832,48 @@
   {
     "commonEncounters": [
       {
-        "who": "Dustbelcher Warrior",
+        "who": "Bloodscalp Berserker",
         "levelMin": 35,
+        "levelMax": 36
+      },
+      {
+        "who": "Bloodscalp Headhunter",
+        "levelMin": 35,
+        "levelMax": 36
+      },
+      {
+        "who": "Bloodscalp Witch Doctor",
+        "levelMin": 36,
         "levelMax": 37
+      }
+    ],
+    "x": 256,
+    "y": -213,
+    "name": "Zuuldaia Ruins",
+    "zone": "Stranglethorn Vale",
+    "type": "HostileArea"
+  },
+  {
+    "commonEncounters": [
+      {
+        "who": "Bloodscalp Warrior",
+        "levelMin": 33,
+        "levelMax": 34
+      },
+      {
+        "who": "Bloodscalp Axe Thrower",
+        "levelMin": 33,
+        "levelMax": 34
+      },
+      {
+        "who": "Bloodscalp Shaman",
+        "levelMin": 33,
+        "levelMax": 34
       }
     ],
     "x": 262,
     "y": -216,
-    "name": "Zuuldaia Ruins",
+    "name": "Bal'lal Ruins",
     "zone": "Stranglethorn Vale",
     "type": "HostileArea"
   },
@@ -13147,11 +13774,27 @@
     "type": "HostileArea"
   },
   {
+    "rareEncounters": [
+      {
+        "who": "Greenpaw",
+        "levelMin": 10
+      }
+    ],
     "commonEncounters": [
       {
-        "who": "Duskbat",
-        "levelMin": 1,
-        "levelMax": 2
+        "who": "Gnarlpine Defender",
+        "levelMin": 7,
+        "levelMax": 8
+      },
+      {
+        "who": "Gnarlpine Shaman",
+        "levelMin": 7,
+        "levelMax": 8
+      },
+      {
+        "who": "Gnarlpine Augur",
+        "levelMin": 7,
+        "levelMax": 8
       }
     ],
     "x": 59,
@@ -13161,11 +13804,32 @@
     "type": "HostileArea"
   },
   {
+    "rareEncounters": [
+      {
+        "who": "Threggil",
+        "levelMin": 7
+      }
+    ],
     "commonEncounters": [
       {
-        "who": "Duskbat",
-        "levelMin": 1,
-        "levelMax": 2
+        "who": "Shadow Sprite",
+        "levelMin": 5,
+        "levelMax": 6
+      },
+      {
+        "who": "Rascal Sprite",
+        "levelMin": 5,
+        "levelMax": 6
+      },
+      {
+        "who": "Vicious Grell",
+        "levelMin": 6,
+        "levelMax": 7
+      },
+      {
+        "who": "Dark Sprite",
+        "levelMin": 6,
+        "levelMax": 7
       }
     ],
     "x": 65,
@@ -13175,11 +13839,27 @@
     "type": "HostileArea"
   },
   {
+    "rareEncounters": [
+      {
+        "who": "Ursal the Mauler",
+        "levelMin": 12
+      }
+    ],
     "commonEncounters": [
       {
-        "who": "Duskbat",
-        "levelMin": 1,
-        "levelMax": 2
+        "who": "Gnarlpine Pathfinder",
+        "levelMin": 9,
+        "levelMax": 10
+      },
+      {
+        "who": "Gnarlpine Avenger",
+        "levelMin": 9,
+        "levelMax": 10
+      },
+      {
+        "who": "Gnarlpine Totemic",
+        "levelMin": 9,
+        "levelMax": 10
       }
     ],
     "x": 58,
@@ -13191,9 +13871,14 @@
   {
     "commonEncounters": [
       {
-        "who": "Duskbat",
-        "levelMin": 1,
-        "levelMax": 2
+        "who": "Timberling",
+        "levelMin": 5,
+        "levelMax": 6
+      },
+      {
+        "who": "Timberling Bark Ripper",
+        "levelMin": 6,
+        "levelMax": 7
       }
     ],
     "x": 68,
@@ -13205,9 +13890,19 @@
   {
     "commonEncounters": [
       {
-        "who": "Duskbat",
-        "levelMin": 1,
-        "levelMax": 2
+        "who": "Strigid Screecher",
+        "levelMin": 7,
+        "levelMax": 8
+      },
+      {
+        "who": "Gnarlpine Defender",
+        "levelMin": 7,
+        "levelMax": 8
+      },
+      {
+        "who": "Webwood Venomfang",
+        "levelMin": 7,
+        "levelMax": 8
       }
     ],
     "x": 57,
@@ -13219,7 +13914,17 @@
   {
     "commonEncounters": [
       {
-        "who": "Duskbat",
+        "who": "Grell",
+        "levelMin": 2,
+        "levelMax": 3
+      },
+      {
+        "who": "Young Thistle Boar",
+        "levelMin": 1,
+        "levelMax": 2
+      },
+      {
+        "who": "Mangy Nightsaber",
         "levelMin": 1,
         "levelMax": 2
       }
@@ -13231,23 +13936,18 @@
     "type": "HostileArea"
   },
   {
-    "commonEncounters": [
+    "rareEncounters": [
       {
-        "who": "Duskbat",
-        "levelMin": 1,
-        "levelMax": 2
+        "who": "Githyiss the Vile",
+        "levelMin": 3,
+        "levelMax": 4
       }
     ],
-    "name": "Shadowglen",
-    "zone": "Teldrassil",
-    "type": "HostileArea"
-  },
-  {
     "commonEncounters": [
       {
-        "who": "Duskbat",
-        "levelMin": 1,
-        "levelMax": 2
+        "who": "Webwood Spider",
+        "levelMin": 3,
+        "levelMax": 4
       }
     ],
     "x": 66,
@@ -13259,9 +13959,19 @@
   {
     "commonEncounters": [
       {
-        "who": "Duskbat",
-        "levelMin": 1,
-        "levelMax": 2
+        "who": "Bloodfeather Fury",
+        "levelMin": 8,
+        "levelMax": 9
+      },
+      {
+        "who": "Bloodfeather Wind Witch",
+        "levelMin": 9,
+        "levelMax": 10
+      },
+      {
+        "who": "Bloodfeather Matriarch",
+        "levelMin": 10,
+        "levelMax": 11
       }
     ],
     "x": 56,
@@ -13273,9 +13983,14 @@
   {
     "commonEncounters": [
       {
-        "who": "Duskbat",
-        "levelMin": 1,
-        "levelMax": 2
+        "who": "Timberling Trampler",
+        "levelMin": 8,
+        "levelMax": 9
+      },
+      {
+        "who": "Webwood Silkspinner",
+        "levelMin": 8,
+        "levelMax": 9
       }
     ],
     "x": 59,
@@ -13285,11 +14000,22 @@
     "type": "HostileArea"
   },
   {
+    "rareEncounters": [
+      {
+        "who": "Lady Sathrah",
+        "levelMin": 12
+      }
+    ],
     "commonEncounters": [
       {
-        "who": "Duskbat",
-        "levelMin": 1,
-        "levelMax": 2
+        "who": "Timberling Mire Beast",
+        "levelMin": 9,
+        "levelMax": 10
+      },
+      {
+        "who": "Elder Timberling",
+        "levelMin": 10,
+        "levelMax": 11
       }
     ],
     "x": 59,
@@ -14594,20 +15320,6 @@
   {
     "commonEncounters": [
       {
-        "who": "Duskbat",
-        "levelMin": 1,
-        "levelMax": 2
-      }
-    ],
-    "x": 119,
-    "y": -200,
-    "name": "Mirage Raceway",
-    "zone": "Thousand Needles",
-    "type": "HostileArea"
-  },
-  {
-    "commonEncounters": [
-      {
         "who": "Screeching Windcaller",
         "levelMin": 30,
         "levelMax": 31
@@ -14674,7 +15386,7 @@
         "who": "Salt Flats Vulture",
         "levelMin": 34,
         "levelMax": 35
-      },
+      }
     ],
     "x": 115,
     "y": -196,
@@ -14727,22 +15439,10 @@
         "who": "Salt Flats Vulture",
         "levelMin": 34,
         "levelMax": 35
-      },
+      }
     ],
     "x": 118,
     "y": -203,
-    "name": "Tahonda Ruins",
-    "zone": "Thousand Needles",
-    "type": "HostileArea"
-  },
-  {
-    "commonEncounters": [
-      {
-        "who": "Duskbat",
-        "levelMin": 1,
-        "levelMax": 2
-      }
-    ],
     "name": "Tahonda Ruins",
     "zone": "Thousand Needles",
     "type": "HostileArea"

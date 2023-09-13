@@ -1,5 +1,19 @@
 [
   {
+    "x": 95,
+    "y": -104,
+    "name": "Raynewood Retreat",
+    "zone": "Ashenvale",
+    "faction": "Darnassus"
+  },
+  {
+    "x": 283,
+    "y": -87,
+    "name": "Ravenholdt Manor",
+    "zone": "Hillsbrad Foothills",
+    "faction": "Assassin's League"
+  },
+  {
     "transport": [
       {
         "means": "Tram",

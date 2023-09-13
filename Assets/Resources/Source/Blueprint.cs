@@ -132,7 +132,6 @@ public class Blueprint
                 {
                     SpawnDesktopBlueprint("Map");
                     Login();
-                    SetDesktopBackground("LoadingScreens/LoadingScreen" + (CDesktop.cameraDestination.x < 130 ? "Kalimdor" : "EasternKingdoms"));
                 });
             }
             else
@@ -6232,6 +6231,7 @@ public class Blueprint
         new("Map", () =>
         {
             PlaySound("DesktopOpenSave", 0.2f);
+            SetDesktopBackground("LoadingScreens/LoadingScreen" + (CDesktop.cameraDestination.x < 130 ? "Kalimdor" : "EasternKingdoms"));
             loadingBar = new GameObject[2];
             loadingBar[0] = new GameObject("LoadingBarBegin", typeof(SpriteRenderer));
             loadingBar[0].GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Textures/LoadingBarEnd");
