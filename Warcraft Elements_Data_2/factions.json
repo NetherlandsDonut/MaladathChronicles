@@ -1,5 +1,10 @@
 [
   {
+    "name": "Assassin's League",
+    "icon": "FactionAssassin's League",
+    "side": "Neutral"
+  },
+  {
     "name": "Neutral",
     "icon": "FactionNeutral",
     "side": "Neutral"

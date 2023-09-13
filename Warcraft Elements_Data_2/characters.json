@@ -726,8 +726,8 @@
           }
         }
       },
-      "cameraX": 275,
-      "cameraY": -65,
+      "cameraX": 262,
+      "cameraY": -178,
       "siteProgress": {
         "Balia'mah Ruins": 1,
         "The Crimson Throne": 4,
@@ -741,9 +741,9 @@
       "raresKilled": {},
       "elitesKilled": {},
       "startDate": "2023-09-08T02:04:14.0667101+02:00",
-      "lastLoaded": "2023-09-11T01:29:57.2516491+02:00",
-      "lastPlayed": "2023-09-11T01:30:52.0912114+02:00",
-      "timePlayed": "01:51:43.9122135"
+      "lastLoaded": "2023-09-13T04:40:43.9976703+02:00",
+      "lastPlayed": "2023-09-13T04:41:11.5510724+02:00",
+      "timePlayed": "01:53:38.1201760"
     }
   ],
   "Mograine": [],

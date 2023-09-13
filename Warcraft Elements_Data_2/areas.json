@@ -6243,9 +6243,9 @@
         "levelMax": 59
       }
     ],
-    "x": 319,
-    "y": -60,
-    "name": "Browman Mill",
+    "x": 322,
+    "y": -61,
+    "name": "Browman's Mill",
     "zone": "Eastern Plaguelands",
     "type": "HostileArea"
   },
@@ -6443,12 +6443,6 @@
     "type": "HostileArea"
   },
   {
-    "rareEncounters": [
-      {
-        "who": "Ranger Lord Hawkspear",
-        "levelMin": 60
-      }
-    ],
     "commonEncounters": [
       {
         "who": "Ranger",
@@ -6464,6 +6458,12 @@
         "who": "Quel'Lithien Protector",
         "levelMin": 58,
         "levelMax": 59
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Ranger Lord Hawkspear",
+        "levelMin": 60
       }
     ],
     "x": 312,
@@ -6502,12 +6502,6 @@
     "type": "HostileArea"
   },
   {
-    "rareEncounters": [
-      {
-        "who": "Nerubian Overseer",
-        "levelMin": 60
-      }
-    ],
     "commonEncounters": [
       {
         "who": "Crypt Fiend",
@@ -6518,6 +6512,12 @@
         "who": "Crypt Walker",
         "levelMin": 55,
         "levelMax": 56
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Nerubian Overseer",
+        "levelMin": 60
       }
     ],
     "x": 294,
@@ -6566,6 +6566,31 @@
     "x": 300,
     "y": -68,
     "name": "The Marris Stead",
+    "zone": "Eastern Plaguelands",
+    "type": "HostileArea"
+  },
+  {
+    "commonEncounters": [
+      {
+        "who": "Mossflayer Zombie",
+        "levelMin": 53,
+        "levelMax": 54
+      },
+      {
+        "who": "Unliving Mossflayer",
+        "levelMin": 54,
+        "levelMax": 55
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Zaeldar the Outcast",
+        "levelMin": 55
+      }
+    ],
+    "x": 301,
+    "y": -71,
+    "name": "The Undercroft",
     "zone": "Eastern Plaguelands",
     "type": "HostileArea"
   },
@@ -9013,12 +9038,6 @@
     "type": "HostileArea"
   },
   {
-    "rareEncounters": [
-      {
-        "who": "Chief Sharptusk Thornmantle",
-        "levelMin": 5
-      }
-    ],
     "commonEncounters": [
       {
         "who": "Bristleback Quilboar",
@@ -9034,6 +9053,12 @@
         "who": "Bristleback Shaman",
         "levelMin": 3,
         "levelMax": 4
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Chief Sharptusk Thornmantle",
+        "levelMin": 5
       }
     ],
     "x": 88,
@@ -11134,12 +11159,6 @@
     "type": "HostileArea"
   },
   {
-    "rareEncounters": [
-      {
-        "who": "Deathsworn Captain",
-        "levelMin": 24
-      }
-    ],
     "commonEncounters": [
       {
         "who": "Wailing Guardsman",
@@ -11160,6 +11179,12 @@
         "who": "Blood Seeker",
         "levelMin": 23,
         "levelMax": 24
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Deathsworn Captain",
+        "levelMin": 24
       }
     ],
     "eliteEncounters": [
@@ -12316,12 +12341,6 @@
     "type": "HostileArea"
   },
   {
-    "rareEncounters": [
-      {
-        "who": "Scalebelly",
-        "levelMin": 45
-      }
-    ],
     "commonEncounters": [
       {
         "who": "Thrashtail Basilisk",
@@ -12332,6 +12351,12 @@
         "who": "Ironjaw Basilisk",
         "levelMin": 43,
         "levelMax": 44
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Scalebelly",
+        "levelMin": 45
       }
     ],
     "x": 271,
@@ -12389,18 +12414,6 @@
     "type": "HostileArea"
   },
   {
-    "rareEncounters": [
-      {
-        "who": "Sergeant Malthus",
-        "levelMin": 38
-      }
-    ],
-    "eliteEncounters": [
-      {
-        "who": "Colonel Kurzen",
-        "levelMin": 40
-      }
-    ],
     "commonEncounters": [
       {
         "who": "Kurzen Headshrinker",
@@ -12421,6 +12434,18 @@
         "who": "Kurzen Shadow Hunter",
         "levelMin": 36,
         "levelMax": 37
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Sergeant Malthus",
+        "levelMin": 38
+      }
+    ],
+    "eliteEncounters": [
+      {
+        "who": "Colonel Kurzen",
+        "levelMin": 40
       }
     ],
     "x": 273,
@@ -12487,12 +12512,6 @@
     "type": "HostileArea"
   },
   {
-    "eliteEncounters": [
-      {
-        "who": "Mai'Zoth",
-        "levelMin": 47
-      }
-    ],
     "commonEncounters": [
       {
         "who": "Mosh'Ogg Warrior",
@@ -12520,6 +12539,12 @@
         "levelMax": 45
       }
     ],
+    "eliteEncounters": [
+      {
+        "who": "Mai'Zoth",
+        "levelMin": 47
+      }
+    ],
     "x": 276,
     "y": -220,
     "name": "Mosh'Ogg Ogre Mound",
@@ -12527,17 +12552,17 @@
     "type": "HostileArea"
   },
   {
-    "rareEncounters": [
-      {
-        "who": "Lord Sakrasis",
-        "levelMin": 45
-      }
-    ],
     "commonEncounters": [
       {
         "who": "Naga Explorer",
         "levelMin": 43,
         "levelMax": 44
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Lord Sakrasis",
+        "levelMin": 45
       }
     ],
     "x": 260,
@@ -12547,12 +12572,6 @@
     "type": "HostileArea"
   },
   {
-    "rareEncounters": [
-      {
-        "who": "Zanzil the Outcast",
-        "levelMin": 46
-      }
-    ],
     "commonEncounters": [
       {
         "who": "Zanzil Naga",
@@ -12575,6 +12594,12 @@
         "levelMax": 44
       }
     ],
+    "rareEncounters": [
+      {
+        "who": "Zanzil the Outcast",
+        "levelMin": 46
+      }
+    ],
     "x": 270,
     "y": -234,
     "name": "Ruins of Aboraz",
@@ -12582,12 +12607,6 @@
     "type": "HostileArea"
   },
   {
-    "rareEncounters": [
-      {
-        "who": "Jon-Jon the Crow",
-        "levelMin": 44
-      }
-    ],
     "commonEncounters": [
       {
         "who": "Zanzil Witch Doctor",
@@ -12600,6 +12619,12 @@
         "levelMax": 44
       }
     ],
+    "rareEncounters": [
+      {
+        "who": "Jon-Jon the Crow",
+        "levelMin": 44
+      }
+    ],
     "x": 266,
     "y": -231,
     "name": "Ruins of Jubuwal",
@@ -12607,12 +12632,6 @@
     "type": "HostileArea"
   },
   {
-    "rareEncounters": [
-      {
-        "who": "Tethis",
-        "levelMin": 43
-      }
-    ],
     "commonEncounters": [
       {
         "who": "Jungle Stalker",
@@ -12630,6 +12649,12 @@
         "levelMax": 38
       }
     ],
+    "rareEncounters": [
+      {
+        "who": "Tethis",
+        "levelMin": 43
+      }
+    ],
     "x": 264,
     "y": -227,
     "name": "Gurubashi Arena Grounds",
@@ -12637,12 +12662,6 @@
     "type": "HostileArea"
   },
   {
-    "eliteEncounters": [
-      {
-        "who": "Gan'zulah",
-        "levelMin": 41
-      }
-    ],
     "commonEncounters": [
       {
         "who": "Bloodscalp Hunter",
@@ -12670,6 +12689,12 @@
         "levelMax": 38
       }
     ],
+    "eliteEncounters": [
+      {
+        "who": "Gan'zulah",
+        "levelMin": 41
+      }
+    ],
     "x": 259,
     "y": -212,
     "name": "Ruins of Zul'Kunda",
@@ -12677,12 +12702,6 @@
     "type": "HostileArea"
   },
   {
-    "rareEncounters": [
-      {
-        "who": "Ana'thek the Cruel",
-        "levelMin": 45
-      }
-    ],
     "commonEncounters": [
       {
         "who": "Skullsplitter Beastmaster",
@@ -12698,6 +12717,12 @@
         "who": "Skullsplitter Witch Doctor",
         "levelMin": 41,
         "levelMax": 42
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Ana'thek the Cruel",
+        "levelMin": 45
       }
     ],
     "x": 274,
@@ -12726,12 +12751,6 @@
     "type": "HostileArea"
   },
   {
-    "rareEncounters": [
-      {
-        "who": "\"Pretty Boy\" Duncan",
-        "levelMin": 40
-      }
-    ],
     "commonEncounters": [
       {
         "who": "Bloodsail Mage",
@@ -12742,6 +12761,12 @@
         "who": "Bloodsail Raider",
         "levelMin": 40,
         "levelMax": 41
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "\"Pretty Boy\" Duncan",
+        "levelMin": 40
       }
     ],
     "name": "Southern Savage Coast",
@@ -13774,12 +13799,6 @@
     "type": "HostileArea"
   },
   {
-    "rareEncounters": [
-      {
-        "who": "Greenpaw",
-        "levelMin": 10
-      }
-    ],
     "commonEncounters": [
       {
         "who": "Gnarlpine Defender",
@@ -13797,6 +13816,12 @@
         "levelMax": 8
       }
     ],
+    "rareEncounters": [
+      {
+        "who": "Greenpaw",
+        "levelMin": 10
+      }
+    ],
     "x": 59,
     "y": -27,
     "name": "Ban'ethil Hollow",
@@ -13804,12 +13829,6 @@
     "type": "HostileArea"
   },
   {
-    "rareEncounters": [
-      {
-        "who": "Threggil",
-        "levelMin": 7
-      }
-    ],
     "commonEncounters": [
       {
         "who": "Shadow Sprite",
@@ -13832,6 +13851,12 @@
         "levelMax": 7
       }
     ],
+    "rareEncounters": [
+      {
+        "who": "Threggil",
+        "levelMin": 7
+      }
+    ],
     "x": 65,
     "y": -25,
     "name": "Fel Rock",
@@ -13839,12 +13864,6 @@
     "type": "HostileArea"
   },
   {
-    "rareEncounters": [
-      {
-        "who": "Ursal the Mauler",
-        "levelMin": 12
-      }
-    ],
     "commonEncounters": [
       {
         "who": "Gnarlpine Pathfinder",
@@ -13860,6 +13879,12 @@
         "who": "Gnarlpine Totemic",
         "levelMin": 9,
         "levelMax": 10
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Ursal the Mauler",
+        "levelMin": 12
       }
     ],
     "x": 58,
@@ -13936,16 +13961,16 @@
     "type": "HostileArea"
   },
   {
-    "rareEncounters": [
+    "commonEncounters": [
       {
-        "who": "Githyiss the Vile",
+        "who": "Webwood Spider",
         "levelMin": 3,
         "levelMax": 4
       }
     ],
-    "commonEncounters": [
+    "rareEncounters": [
       {
-        "who": "Webwood Spider",
+        "who": "Githyiss the Vile",
         "levelMin": 3,
         "levelMax": 4
       }
@@ -14000,12 +14025,6 @@
     "type": "HostileArea"
   },
   {
-    "rareEncounters": [
-      {
-        "who": "Lady Sathrah",
-        "levelMin": 12
-      }
-    ],
     "commonEncounters": [
       {
         "who": "Timberling Mire Beast",
@@ -14016,6 +14035,12 @@
         "who": "Elder Timberling",
         "levelMin": 10,
         "levelMax": 11
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Lady Sathrah",
+        "levelMin": 12
       }
     ],
     "x": 59,
@@ -15293,12 +15318,6 @@
     "type": "HostileArea"
   },
   {
-    "rareEncounters": [
-      {
-        "who": "Heartrazor",
-        "levelMin": 32
-      }
-    ],
     "commonEncounters": [
       {
         "who": "Highperch Consort",
@@ -15309,6 +15328,12 @@
         "who": "Highperch Wyvern",
         "levelMin": 28,
         "levelMax": 29
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Heartrazor",
+        "levelMin": 32
       }
     ],
     "x": 88,

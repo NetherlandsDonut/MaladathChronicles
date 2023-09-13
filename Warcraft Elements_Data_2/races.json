@@ -1,5 +1,19 @@
 [
   {
+    "name": "Abomination",
+    "kind": "Common",
+    "portrait": "PortraitAbomination",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Gangled Golem",
+    "kind": "Common",
+    "portrait": "PortraitAbomination",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
     "name": "Stitched Horror",
     "kind": "Common",
     "portrait": "PortraitAbomination",
@@ -29,6 +43,15 @@
     "portrait": "PortraitAbomination",
     "background": "AreaElwynnForestNorthshireAbbey",
     "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Putridius",
+    "faction": "Scourge",
+    "kind": "Rare",
+    "portrait": "PortraitAbomination",
+    "background": "AreaElwynnForestNorthshireAbbey",
+    "vitality": 2.0,
     "abilities": []
   },
   {
@@ -123,6 +146,20 @@
     "abilities": []
   },
   {
+    "name": "Archmage Arugal",
+    "kind": "Elite",
+    "portrait": "PortraitArugal",
+    "vitality": 3.0,
+    "abilities": []
+  },
+  {
+    "name": "Death Singer",
+    "kind": "Common",
+    "portrait": "PortraitBanshee",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
     "name": "Wailing Highborne",
     "kind": "Common",
     "portrait": "PortraitBanshee",
@@ -203,9 +240,30 @@
     "abilities": []
   },
   {
+    "name": "Ironjaw Basilisk",
+    "kind": "Common",
+    "portrait": "PortraitBasiliskTeal",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Thrashtail Basilisk",
+    "kind": "Common",
+    "portrait": "PortraitBasiliskTeal",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
     "name": "Gritjaw Basilisk",
     "kind": "Common",
     "portrait": "PortraitBasiliskTeal",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Saltstone Gazer",
+    "kind": "Common",
+    "portrait": "PortraitBasiliskWhite",
     "vitality": 1.0,
     "abilities": []
   },
@@ -444,6 +502,13 @@
     "name": "Flamescale Wyrmkin",
     "kind": "Common",
     "portrait": "PortraitBlackDragonSpawnFemale",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Black Broodling",
+    "kind": "Common",
+    "portrait": "PortraitBlackDragonWhelp",
     "vitality": 1.0,
     "abilities": []
   },
@@ -729,16 +794,72 @@
     "abilities": []
   },
   {
+    "name": "Bloodsail Mage",
+    "kind": "Common",
+    "portrait": "PortraitBloodsailMage",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "\"Pretty Boy\" Duncan",
+    "kind": "Rare",
+    "portrait": "PortraitBloodsailSwashbuckler",
+    "vitality": 2.0,
+    "abilities": []
+  },
+  {
+    "name": "Bloodsail Raider",
+    "kind": "Common",
+    "portrait": "PortraitBloodsailSwashbuckler",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Bloodsail Swashbuckler",
+    "kind": "Common",
+    "portrait": "PortraitBloodsailSwashbuckler",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Bloodscalp Axe Thrower",
+    "kind": "Common",
+    "portrait": "PortraitBloodscalpAxeThrower",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Bloodscalp Berserker",
+    "kind": "Common",
+    "portrait": "PortraitBloodscalpAxeThrower",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Bloodscalp Warrior",
+    "kind": "Common",
+    "portrait": "PortraitBloodscalpAxeThrower",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Bloodscalp Shaman",
+    "kind": "Common",
+    "portrait": "PortraitBloodscalpShaman",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
     "name": "Blue Scalebane",
     "kind": "Common",
-    "portrait": "PortraitBlueDragonSpawn",
+    "portrait": "PortraitBlueDragonSpawnArmored",
     "vitality": 1.0,
     "abilities": []
   },
   {
     "name": "Cobalt Scalebane",
     "kind": "Common",
-    "portrait": "PortraitBlueDragonSpawn",
+    "portrait": "PortraitBlueDragonSpawnArmored",
     "vitality": 1.0,
     "abilities": []
   },
@@ -855,6 +976,20 @@
     "abilities": []
   },
   {
+    "name": "Young Thistle Boar",
+    "kind": "Common",
+    "portrait": "PortraitBoarYellow",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Bristleback Battleboar",
+    "kind": "Common",
+    "portrait": "PortraitBoarYellow",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
     "name": "Great Goretusk",
     "kind": "Common",
     "portrait": "PortraitBoarYellow",
@@ -865,6 +1000,27 @@
     "name": "Rockhide Boar",
     "kind": "Common",
     "portrait": "PortraitBoarYellow",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Elder Timberling",
+    "kind": "Common",
+    "portrait": "PortraitBogBeast",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Timberling Trampler",
+    "kind": "Common",
+    "portrait": "PortraitBogBeast",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Timberling",
+    "kind": "Common",
+    "portrait": "PortraitBogBeast",
     "vitality": 1.0,
     "abilities": []
   },
@@ -886,6 +1042,20 @@
     "name": "Kraulshaped Monstrosity",
     "kind": "Common",
     "portrait": "PortraitBogBeast",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Timberling Mire Beast",
+    "kind": "Common",
+    "portrait": "PortraitBogBeastGreen",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Timberling Bark Ripper",
+    "kind": "Common",
+    "portrait": "PortraitBogBeastGreen",
     "vitality": 1.0,
     "abilities": []
   },
@@ -957,6 +1127,13 @@
     "kind": "Common",
     "portrait": "PortraitBogBeastGreen",
     "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "The Husk",
+    "kind": "Rare",
+    "portrait": "PortraitBogBeastGreen",
+    "vitality": 2.0,
     "abilities": []
   },
   {
@@ -1207,6 +1384,13 @@
     "abilities": []
   },
   {
+    "name": "Swoop",
+    "kind": "Common",
+    "portrait": "PortraitCarrionBird",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
     "name": "Crimson Horror",
     "kind": "Common",
     "portrait": "PortraitCarrionBird",
@@ -1238,6 +1422,13 @@
     "name": "Sky Shadow",
     "kind": "Common",
     "portrait": "PortraitCarrionBirdBlue",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Salt Flats Vulture",
+    "kind": "Common",
+    "portrait": "PortraitCarrionBirdBrown",
     "vitality": 1.0,
     "abilities": []
   },
@@ -1280,6 +1471,20 @@
     "name": "Celebrian Dryad",
     "kind": "Common",
     "portrait": "PortraitCenarianFemale",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Galak Windchaser",
+    "kind": "Common",
+    "portrait": "PortraitCentaurFemale",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Galak Stormer",
+    "kind": "Common",
+    "portrait": "PortraitCentaurFemale",
     "vitality": 1.0,
     "abilities": []
   },
@@ -1373,6 +1578,34 @@
     "name": "Warlord Kolkanis",
     "kind": "Rare",
     "portrait": "PortraitCentaurKhan",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Galak Wrangler",
+    "kind": "Common",
+    "portrait": "PortraitCentaurMale",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Galak Scout",
+    "kind": "Common",
+    "portrait": "PortraitCentaurMale",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Galak Marauder",
+    "kind": "Common",
+    "portrait": "PortraitCentaurMale",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Galak Mauler",
+    "kind": "Common",
+    "portrait": "PortraitCentaurMale",
     "vitality": 1.0,
     "abilities": []
   },
@@ -1527,6 +1760,307 @@
     "abilities": []
   },
   {
+    "name": "Bloodscalp Witch Doctor",
+    "kind": "Common",
+    "portrait": "PortraitChicken",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Bloodscalp Headhunter",
+    "kind": "Common",
+    "portrait": "PortraitChicken",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Bloodscalp Beastmaster",
+    "kind": "Common",
+    "portrait": "PortraitChicken",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Bloodscalp Mystic",
+    "kind": "Common",
+    "portrait": "PortraitChicken",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Bloodscalp Hunter",
+    "kind": "Common",
+    "portrait": "PortraitChicken",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Zanzil Witch Doctor",
+    "kind": "Common",
+    "portrait": "PortraitChicken",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Zanzil Hunter",
+    "kind": "Common",
+    "portrait": "PortraitChicken",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Mosh'Ogg Lord",
+    "kind": "Common",
+    "portrait": "PortraitChicken",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Mosh'Ogg Mauler",
+    "kind": "Common",
+    "portrait": "PortraitChicken",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Mosh'Ogg Shaman",
+    "kind": "Common",
+    "portrait": "PortraitChicken",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Mosh'Ogg Warmonger",
+    "kind": "Common",
+    "portrait": "PortraitChicken",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Mosh'Ogg Warrior",
+    "kind": "Common",
+    "portrait": "PortraitChicken",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Mosh'Ogg Witch Doctor",
+    "kind": "Common",
+    "portrait": "PortraitChicken",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Mosh'Ogg Brute",
+    "kind": "Common",
+    "portrait": "PortraitChicken",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Kurzen Shadow Hunter",
+    "kind": "Common",
+    "portrait": "PortraitChicken",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Kurzen Witch Doctor",
+    "kind": "Common",
+    "portrait": "PortraitChicken",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Kurzen Commando",
+    "kind": "Common",
+    "portrait": "PortraitChicken",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Kurzen Headshrinker",
+    "kind": "Common",
+    "portrait": "PortraitChicken",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Murkgill Lord",
+    "kind": "Common",
+    "portrait": "PortraitChicken",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Murkgill Forager",
+    "kind": "Common",
+    "portrait": "PortraitChicken",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Murkgill Warrior",
+    "kind": "Common",
+    "portrait": "PortraitChicken",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Jaguero Stalker",
+    "kind": "Common",
+    "portrait": "PortraitChicken",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Bloodsail Warlock",
+    "kind": "Common",
+    "portrait": "PortraitChicken",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Tormented Officer",
+    "kind": "Common",
+    "portrait": "PortraitChicken",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Palemane Poacher",
+    "kind": "Common",
+    "portrait": "PortraitChicken",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Palemane Skinner",
+    "kind": "Common",
+    "portrait": "PortraitChicken",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Palemane Tanner",
+    "kind": "Common",
+    "portrait": "PortraitChicken",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Bael'dun Appraiser",
+    "kind": "Common",
+    "portrait": "PortraitChicken",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Bael'dun Digger",
+    "kind": "Common",
+    "portrait": "PortraitChicken",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Jaedenar Hound",
+    "kind": "Common",
+    "portrait": "PortraitChicken",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Jaedenar Guardian",
+    "kind": "Common",
+    "portrait": "PortraitChicken",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Jaedenar Cultist",
+    "kind": "Common",
+    "portrait": "PortraitChicken",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Jaedenar Adept",
+    "kind": "Common",
+    "portrait": "PortraitChicken",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Infected Mossflayer",
+    "kind": "Common",
+    "portrait": "PortraitChicken",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Mossflayer Cannibal",
+    "kind": "Common",
+    "portrait": "PortraitChicken",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Mossflayer Scout",
+    "kind": "Common",
+    "portrait": "PortraitChicken",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Mossflayer Shadowhunter",
+    "kind": "Common",
+    "portrait": "PortraitChicken",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Dread Weaver",
+    "kind": "Common",
+    "portrait": "PortraitChicken",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Quel'Lithien Protector",
+    "kind": "Common",
+    "portrait": "PortraitChicken",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Pathstrider",
+    "kind": "Common",
+    "portrait": "PortraitChicken",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Ranger",
+    "kind": "Common",
+    "portrait": "PortraitChicken",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Dark Caster",
+    "kind": "Common",
+    "portrait": "PortraitChicken",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Vile Tutor",
+    "kind": "Common",
+    "portrait": "PortraitChicken",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
     "name": "Elder Cloud Serpent",
     "kind": "Common",
     "portrait": "PortraitChicken",
@@ -1606,20 +2140,6 @@
   },
   {
     "name": "Minor Murloc Tidecaller",
-    "kind": "Common",
-    "portrait": "PortraitChicken",
-    "vitality": 1.0,
-    "abilities": []
-  },
-  {
-    "name": "Dael'dun Appraiser",
-    "kind": "Common",
-    "portrait": "PortraitChicken",
-    "vitality": 1.0,
-    "abilities": []
-  },
-  {
-    "name": "Dael'dun Digger",
     "kind": "Common",
     "portrait": "PortraitChicken",
     "vitality": 1.0,
@@ -1845,14 +2365,14 @@
   {
     "name": "Shadethicket Raincaller",
     "kind": "Common",
-    "portrait": "PortraitChicken",
+    "portrait": "PortraitBogBeastGreen",
     "vitality": 1.0,
     "abilities": []
   },
   {
     "name": "Shadethicket Wood Shaper",
     "kind": "Common",
-    "portrait": "PortraitChicken",
+    "portrait": "PortraitBogBeastGreen",
     "vitality": 1.0,
     "abilities": []
   },
@@ -1929,7 +2449,7 @@
   {
     "name": "Shadethicker Moss Eater",
     "kind": "Common",
-    "portrait": "PortraitChicken",
+    "portrait": "PortraitBogBeastGreen",
     "vitality": 1.0,
     "abilities": []
   },
@@ -1992,35 +2512,35 @@
   {
     "name": "Murloc Tidehunter",
     "kind": "Common",
-    "portrait": "PortraitChicken",
+    "portrait": "PortraitMurlocBlue",
     "vitality": 1.0,
     "abilities": []
   },
   {
     "name": "Riverpaw Overseer",
     "kind": "Common",
-    "portrait": "PortraitChicken",
+    "portrait": "PortraitGnollBrown",
     "vitality": 1.0,
     "abilities": []
   },
   {
     "name": "Riverpaw Taskmaster",
     "kind": "Common",
-    "portrait": "PortraitChicken",
+    "portrait": "PortraitGnollBrown",
     "vitality": 1.0,
     "abilities": []
   },
   {
     "name": "Riverpaw Mystic",
     "kind": "Common",
-    "portrait": "PortraitChicken",
+    "portrait": "PortraitGnollRotMystic",
     "vitality": 1.0,
     "abilities": []
   },
   {
     "name": "Harvest Reaper",
     "kind": "Common",
-    "portrait": "PortraitChicken",
+    "portrait": "PortraitHarvestGolem",
     "vitality": 1.0,
     "abilities": []
   },
@@ -2062,7 +2582,7 @@
   {
     "name": "Riverpaw Brute",
     "kind": "Common",
-    "portrait": "PortraitChicken",
+    "portrait": "PortraitGnollBrown",
     "vitality": 1.0,
     "abilities": []
   },
@@ -2109,13 +2629,6 @@
     "abilities": []
   },
   {
-    "name": "Coyote",
-    "kind": "Common",
-    "portrait": "PortraitChicken",
-    "vitality": 1.0,
-    "abilities": []
-  },
-  {
     "name": "Defias Footpad",
     "kind": "Common",
     "portrait": "PortraitChicken",
@@ -2125,7 +2638,7 @@
   {
     "name": "Rusty Harvest Golem",
     "kind": "Common",
-    "portrait": "PortraitChicken",
+    "portrait": "PortraitHarvestGolem",
     "vitality": 1.0,
     "abilities": []
   },
@@ -2167,14 +2680,14 @@
   {
     "name": "Harvest Watcher",
     "kind": "Common",
-    "portrait": "PortraitChicken",
+    "portrait": "PortraitHarvestGolem",
     "vitality": 1.0,
     "abilities": []
   },
   {
     "name": "Nightmare Scalebane",
     "kind": "Common",
-    "portrait": "PortraitChicken",
+    "portrait": "PortraitGreenDragonSpawnArmored",
     "vitality": 1.0,
     "abilities": []
   },
@@ -3158,14 +3671,14 @@
   {
     "name": "Forest Lurker",
     "kind": "Common",
-    "portrait": "PortraitChicken",
+    "portrait": "PortraitTarantula",
     "vitality": 1.0,
     "abilities": []
   },
   {
     "name": "Elder Black Bear",
     "kind": "Common",
-    "portrait": "PortraitChicken",
+    "portrait": "PortraitBlackBear",
     "vitality": 1.0,
     "abilities": []
   },
@@ -3186,49 +3699,49 @@
   {
     "name": "Stonesplinter Trogg",
     "kind": "Common",
-    "portrait": "PortraitChicken",
+    "portrait": "PortraitTrogg",
     "vitality": 1.0,
     "abilities": []
   },
   {
     "name": "Tunnel Surveyor",
     "kind": "Common",
-    "portrait": "PortraitChicken",
+    "portrait": "PortraitKoboldSurveyor",
     "vitality": 1.0,
     "abilities": []
   },
   {
     "name": "Tunnel Geomancer",
     "kind": "Common",
-    "portrait": "PortraitChicken",
+    "portrait": "PortraitKoboldSurveyor",
     "vitality": 1.0,
     "abilities": []
   },
   {
     "name": "Tunnel Rat Digger",
     "kind": "Common",
-    "portrait": "PortraitChicken",
+    "portrait": "PortraitKoboldSurveyor",
     "vitality": 1.0,
     "abilities": []
   },
   {
     "name": "Mo'grosh Mystic",
     "kind": "Common",
-    "portrait": "PortraitChicken",
+    "portrait": "PortraitOgre",
     "vitality": 1.0,
     "abilities": []
   },
   {
     "name": "Mo'grosh Ogre",
     "kind": "Common",
-    "portrait": "PortraitChicken",
+    "portrait": "PortraitOgre",
     "vitality": 1.0,
     "abilities": []
   },
   {
     "name": "Mo'grosh Enforcer",
     "kind": "Common",
-    "portrait": "PortraitChicken",
+    "portrait": "PortraitOgre",
     "vitality": 1.0,
     "abilities": []
   },
@@ -3243,13 +3756,6 @@
     "name": "Stonesplinter Digger",
     "kind": "Common",
     "portrait": "PortraitChicken",
-    "vitality": 1.0,
-    "abilities": []
-  },
-  {
-    "name": "Berserk Trogg",
-    "kind": "Common",
-    "portrait": "PortraitTrogg",
     "vitality": 1.0,
     "abilities": []
   },
@@ -3289,51 +3795,9 @@
     "abilities": []
   },
   {
-    "name": "Daggerspine Siren",
-    "kind": "Common",
-    "portrait": "PortraitNagaFemale",
-    "vitality": 1.0,
-    "abilities": []
-  },
-  {
-    "name": "Snapjaw",
-    "kind": "Common",
-    "portrait": "PortraitTurtle",
-    "vitality": 1.0,
-    "abilities": []
-  },
-  {
     "name": "Darkfang Venomspitter",
     "kind": "Common",
     "portrait": "PortraitChicken",
-    "vitality": 1.0,
-    "abilities": []
-  },
-  {
-    "name": "Mirefin Murloc",
-    "kind": "Common",
-    "portrait": "PortraitMurlocGreen",
-    "vitality": 1.0,
-    "abilities": []
-  },
-  {
-    "name": "Mirefin Puddlejumper",
-    "kind": "Common",
-    "portrait": "PortraitMurlocGreen",
-    "vitality": 1.0,
-    "abilities": []
-  },
-  {
-    "name": "Muckshell Scrabbler",
-    "kind": "Common",
-    "portrait": "PortraitMakruraBlack",
-    "vitality": 1.0,
-    "abilities": []
-  },
-  {
-    "name": "Muckshell Pincer",
-    "kind": "Common",
-    "portrait": "PortraitMakruraBlue",
     "vitality": 1.0,
     "abilities": []
   },
@@ -3382,7 +3846,7 @@
   {
     "name": "Firemane Scalebane",
     "kind": "Common",
-    "portrait": "PortraitChicken",
+    "portrait": "PortraitRedDragonSpawnArmored",
     "vitality": 1.0,
     "abilities": []
   },
@@ -3396,7 +3860,7 @@
   {
     "name": "Searing Whelp",
     "kind": "Common",
-    "portrait": "PortraitChicken",
+    "portrait": "PortraitBlackDragonWhelp",
     "vitality": 1.0,
     "abilities": []
   },
@@ -3848,6 +4312,20 @@
     "abilities": []
   },
   {
+    "name": "Flatland Cougar",
+    "kind": "Common",
+    "portrait": "PortraitCougar",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Mountain Cougar",
+    "kind": "Common",
+    "portrait": "PortraitCougar",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
     "name": "Mountain Lion",
     "kind": "Common",
     "portrait": "PortraitCougar",
@@ -3866,6 +4344,20 @@
     "kind": "Common",
     "portrait": "PortraitCougar",
     "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Gan'zulah",
+    "kind": "Elite",
+    "portrait": "PortraitCow",
+    "vitality": 3.0,
+    "abilities": []
+  },
+  {
+    "name": "Mai'Zoth",
+    "kind": "Elite",
+    "portrait": "PortraitCow",
+    "vitality": 3.0,
     "abilities": []
   },
   {
@@ -3953,13 +4445,6 @@
     "abilities": []
   },
   {
-    "name": "Swamp Talker",
-    "kind": "Elite",
-    "portrait": "PortraitMurlocPurple",
-    "vitality": 3.0,
-    "abilities": []
-  },
-  {
     "name": "Somnus",
     "kind": "Elite",
     "portrait": "PortraitCow",
@@ -3981,13 +4466,6 @@
     "abilities": []
   },
   {
-    "name": "Hogger",
-    "kind": "Elite",
-    "portrait": "PortraitGnollBrown",
-    "vitality": 3.0,
-    "abilities": []
-  },
-  {
     "name": "Zzarc'Vul",
     "kind": "Elite",
     "portrait": "PortraitCow",
@@ -3998,13 +4476,6 @@
     "name": "Morbent Fel",
     "kind": "Elite",
     "portrait": "PortraitCow",
-    "vitality": 3.0,
-    "abilities": []
-  },
-  {
-    "name": "Mor'Ladim",
-    "kind": "Elite",
-    "portrait": "PortraitSkeletalWarrior",
     "vitality": 3.0,
     "abilities": []
   },
@@ -4267,6 +4738,27 @@
     "abilities": []
   },
   {
+    "name": "Prairie Stalker",
+    "kind": "Common",
+    "portrait": "PortraitCoyote",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Prairie Wolf Alpha",
+    "kind": "Common",
+    "portrait": "PortraitCoyote",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Coyote",
+    "kind": "Common",
+    "portrait": "PortraitCoyote",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
     "name": "Crag Coyote",
     "kind": "Common",
     "portrait": "PortraitCoyote",
@@ -4284,6 +4776,13 @@
     "name": "Rabid Crag Coyote",
     "kind": "Common",
     "portrait": "PortraitCoyote",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Southern Strand Crawler",
+    "kind": "Common",
+    "portrait": "PortraitCrab",
     "vitality": 1.0,
     "abilities": []
   },
@@ -4379,6 +4878,13 @@
     "abilities": []
   },
   {
+    "name": "Snapjaw Crocolisk",
+    "kind": "Common",
+    "portrait": "PortraitCrocoliskBlue",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
     "name": "Elder Razormaw",
     "kind": "Common",
     "portrait": "PortraitCrocoliskDark",
@@ -4390,6 +4896,13 @@
     "kind": "Common",
     "portrait": "PortraitCrocoliskDark",
     "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Nerubian Overseer",
+    "kind": "Rare",
+    "portrait": "PortraitCryptFiend",
+    "vitality": 2.0,
     "abilities": []
   },
   {
@@ -5059,6 +5572,13 @@
     "abilities": []
   },
   {
+    "name": "Zaeldar the Outcast",
+    "kind": "Rare",
+    "portrait": "PortraitDireTrollWhite",
+    "vitality": 2.0,
+    "abilities": []
+  },
+  {
     "name": "Gri'lek",
     "kind": "Elite",
     "portrait": "PortraitDireTrollWhite",
@@ -5091,10 +5611,53 @@
     "abilities": []
   },
   {
+    "name": "Dragonmaw Centurion",
+    "faction": "Dragonmaw Clan",
+    "kind": "Common",
+    "portrait": "PortraitDragonmawBattlemaster",
+    "background": "AreaElwynnForestNorthshireAbbey",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Dragonmaw Shadowwarder",
+    "faction": "Dragonmaw Clan",
+    "kind": "Common",
+    "portrait": "PortraitDragonmawBonewarder",
+    "background": "AreaElwynnForestNorthshireAbbey",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Dragonmaw Bonewarder",
+    "faction": "Dragonmaw Clan",
+    "kind": "Common",
+    "portrait": "PortraitDragonmawBonewarder",
+    "background": "AreaElwynnForestNorthshireAbbey",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Horde Grunt",
+    "kind": "Common",
+    "portrait": "PortraitDragonmawGrunt",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
     "name": "Dragonmaw Grunt",
     "faction": "Dragonmaw Clan",
     "kind": "Common",
-    "portrait": "PortraitDragonmawScout",
+    "portrait": "PortraitDragonmawGrunt",
+    "background": "AreaElwynnForestNorthshireAbbey",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Dragonmaw Raider",
+    "faction": "Dragonmaw Clan",
+    "kind": "Common",
+    "portrait": "PortraitDragonmawGrunt",
     "background": "AreaElwynnForestNorthshireAbbey",
     "vitality": 1.0,
     "abilities": []
@@ -5109,45 +5672,16 @@
     "abilities": []
   },
   {
-    "name": "Dragonmaw Shadowwarder",
-    "faction": "Dragonmaw Clan",
-    "kind": "Common",
-    "portrait": "PortraitDragonmawScout",
-    "background": "AreaElwynnForestNorthshireAbbey",
-    "vitality": 1.0,
-    "abilities": []
-  },
-  {
-    "name": "Dragonmaw Centurion",
-    "faction": "Dragonmaw Clan",
-    "kind": "Common",
-    "portrait": "PortraitDragonmawScout",
-    "background": "AreaElwynnForestNorthshireAbbey",
-    "vitality": 1.0,
-    "abilities": []
-  },
-  {
-    "name": "Dragonmaw Raider",
-    "faction": "Dragonmaw Clan",
-    "kind": "Common",
-    "portrait": "PortraitDragonmawScout",
-    "background": "AreaElwynnForestNorthshireAbbey",
-    "vitality": 1.0,
-    "abilities": []
-  },
-  {
-    "name": "Dragonmaw Bonewarder",
-    "faction": "Dragonmaw Clan",
-    "kind": "Common",
-    "portrait": "PortraitDragonmawScout",
-    "background": "AreaElwynnForestNorthshireAbbey",
-    "vitality": 1.0,
-    "abilities": []
-  },
-  {
     "name": "Druid of the Fang",
     "kind": "Common",
     "portrait": "PortraitDruidoftheFang",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Monstrous Plaguebat",
+    "kind": "Common",
+    "portrait": "PortraitDuskwing",
     "vitality": 1.0,
     "abilities": []
   },
@@ -5216,6 +5750,13 @@
     "name": "Vile Bat",
     "kind": "Common",
     "portrait": "PortraitDuskwing",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Blood Seeker",
+    "kind": "Common",
+    "portrait": "PortraitDuskwingGray",
     "vitality": 1.0,
     "abilities": []
   },
@@ -5730,6 +6271,13 @@
     ]
   },
   {
+    "name": "Sharptooth Frenzy",
+    "kind": "Common",
+    "portrait": "PortraitFrenzy",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
     "name": "Hooktooth Frenzy",
     "kind": "Common",
     "portrait": "PortraitFrenzy",
@@ -5799,6 +6347,62 @@
     "kind": "Common",
     "portrait": "PortraitFrostTrollSeer",
     "background": "AreaElwynnForestNorthshireAbbey",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Ursal the Mauler",
+    "kind": "Rare",
+    "portrait": "PortraitFurbolg",
+    "vitality": 2.0,
+    "abilities": []
+  },
+  {
+    "name": "Gnarlpine Totemic",
+    "kind": "Common",
+    "portrait": "PortraitFurbolg",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Gnarlpine Avenger",
+    "kind": "Common",
+    "portrait": "PortraitFurbolg",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Gnarlpine Pathfinder",
+    "kind": "Common",
+    "portrait": "PortraitFurbolg",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Greenpaw",
+    "kind": "Rare",
+    "portrait": "PortraitFurbolg",
+    "vitality": 2.0,
+    "abilities": []
+  },
+  {
+    "name": "Gnarlpine Augur",
+    "kind": "Common",
+    "portrait": "PortraitFurbolg",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Gnarlpine Shaman",
+    "kind": "Common",
+    "portrait": "PortraitFurbolg",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Gnarlpine Defender",
+    "kind": "Common",
+    "portrait": "PortraitFurbolg",
     "vitality": 1.0,
     "abilities": []
   },
@@ -6032,6 +6636,27 @@
     "abilities": []
   },
   {
+    "name": "Jon-Jon the Crow",
+    "kind": "Rare",
+    "portrait": "PortraitGhoulBlue",
+    "vitality": 2.0,
+    "abilities": []
+  },
+  {
+    "name": "Zanzil Zombie",
+    "kind": "Common",
+    "portrait": "PortraitGhoulBlue",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Gibbering Ghoul",
+    "kind": "Common",
+    "portrait": "PortraitGhoulBlue",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
     "name": "Rotted One",
     "kind": "Common",
     "portrait": "PortraitGhoulBlue",
@@ -6130,6 +6755,20 @@
     "abilities": []
   },
   {
+    "name": "Venture Co. Worker",
+    "kind": "Common",
+    "portrait": "PortraitGnollBrown",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Hogger",
+    "kind": "Elite",
+    "portrait": "PortraitGnollBrown",
+    "vitality": 3.0,
+    "abilities": []
+  },
+  {
     "name": "Redridge Drudger",
     "kind": "Common",
     "portrait": "PortraitGnollBrown",
@@ -6202,7 +6841,7 @@
   {
     "name": "Rot Hide Mystic",
     "kind": "Common",
-    "portrait": "PortraitGnollBrown",
+    "portrait": "PortraitGnollRotMystic",
     "vitality": 1.0,
     "abilities": []
   },
@@ -6434,6 +7073,34 @@
     "abilities": []
   },
   {
+    "name": "Venture Co. Mechanic",
+    "kind": "Common",
+    "portrait": "PortraitGoblinAlternate",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Venture Co. Workboss",
+    "kind": "Common",
+    "portrait": "PortraitGoblinAlternate",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Venture Co. Supervisor",
+    "kind": "Common",
+    "portrait": "PortraitGoblinAlternate",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Venture Co. Taskmaster",
+    "kind": "Common",
+    "portrait": "PortraitGoblinAlternate",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
     "name": "Venture Co. Deforester",
     "kind": "Common",
     "portrait": "PortraitGoblinAlternate",
@@ -6590,6 +7257,20 @@
     "name": "Un'Goro Stomper",
     "kind": "Common",
     "portrait": "PortraitGorilla",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Silverback Patriarch",
+    "kind": "Common",
+    "portrait": "PortraitGorillaWhite",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Skymane Gorilla",
+    "kind": "Common",
+    "portrait": "PortraitGorillaWhite",
     "vitality": 1.0,
     "abilities": []
   },
@@ -6804,9 +7485,23 @@
     "abilities": []
   },
   {
+    "name": "Grimtotem Bandit",
+    "kind": "Common",
+    "portrait": "PortraitGrimtotemBandit",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
     "name": "Grimtotem Brute",
     "kind": "Common",
     "portrait": "PortraitGrimtotemBandit",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Grimtotem Geomancer",
+    "kind": "Common",
+    "portrait": "PortraitGrimtotemGeomancer",
     "vitality": 1.0,
     "abilities": []
   },
@@ -6836,6 +7531,13 @@
     "abilities": []
   },
   {
+    "name": "Grimtotem Reaver",
+    "kind": "Common",
+    "portrait": "PortraitGrimtotemReaver",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
     "name": "Grimtotem Mercenary",
     "kind": "Common",
     "portrait": "PortraitGrimtotemReaver",
@@ -6848,6 +7550,13 @@
     "kind": "Common",
     "portrait": "PortraitGrimtotemReaver",
     "background": "AreaElwynnForestNorthshireAbbey",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Grimtotem Stomper",
+    "kind": "Common",
+    "portrait": "PortraitGrimtotemStomper",
     "vitality": 1.0,
     "abilities": []
   },
@@ -6935,6 +7644,62 @@
     "name": "Hakkari Shadowcaster",
     "kind": "Common",
     "portrait": "PortraitHakkariShadowcaster",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Screeching Harpy",
+    "kind": "Common",
+    "portrait": "PortraitHarpy",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Screeching Roguefeather",
+    "kind": "Common",
+    "portrait": "PortraitHarpy",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Screeching Windcaller",
+    "kind": "Common",
+    "portrait": "PortraitHarpy",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Bloodfeather Matriarch",
+    "kind": "Common",
+    "portrait": "PortraitHarpy",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Bloodfeather Wind Witch",
+    "kind": "Common",
+    "portrait": "PortraitHarpy",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Bloodfeather Fury",
+    "kind": "Common",
+    "portrait": "PortraitHarpy",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Windfury Sorceress",
+    "kind": "Common",
+    "portrait": "PortraitHarpy",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Windfury Matriarch",
+    "kind": "Common",
+    "portrait": "PortraitHarpy",
     "vitality": 1.0,
     "abilities": []
   },
@@ -7231,6 +7996,13 @@
     "abilities": []
   },
   {
+    "name": "Pesterhide Hyena",
+    "kind": "Common",
+    "portrait": "PortraitHyenaPurple",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
     "name": "Blisterpaw Hyena",
     "kind": "Common",
     "portrait": "PortraitHyenaYellow",
@@ -7277,6 +8049,48 @@
     "kind": "Common",
     "portrait": "PortraitImp",
     "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Dark Sprite",
+    "kind": "Common",
+    "portrait": "PortraitImpBlue",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Shadow Sprite",
+    "kind": "Common",
+    "portrait": "PortraitImpBlue",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Rascal Sprite",
+    "kind": "Common",
+    "portrait": "PortraitImpGreen",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Grell",
+    "kind": "Common",
+    "portrait": "PortraitImpYellow",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Vicious Grell",
+    "kind": "Common",
+    "portrait": "PortraitImpYellow",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Threggil",
+    "kind": "Rare",
+    "portrait": "PortraitImpYellowRedEyes",
+    "vitality": 2.0,
     "abilities": []
   },
   {
@@ -7337,6 +8151,13 @@
       "Mortal Strike"
     ],
     "loot": []
+  },
+  {
+    "name": "Gravelsnout Vermin",
+    "kind": "Common",
+    "portrait": "PortraitKoboldSurveyor",
+    "vitality": 1.0,
+    "abilities": []
   },
   {
     "name": "Kobold Vermin",
@@ -7423,6 +8244,13 @@
     "abilities": []
   },
   {
+    "name": "Goldtooth",
+    "kind": "Rare",
+    "portrait": "PortraitKoboldSurveyor",
+    "vitality": 2.0,
+    "abilities": []
+  },
+  {
     "name": "Aged Kodo",
     "kind": "Common",
     "portrait": "PortraitKodo",
@@ -7451,6 +8279,13 @@
     "abilities": []
   },
   {
+    "name": "Colonel Kurzen",
+    "kind": "Elite",
+    "portrait": "PortraitKurzen",
+    "vitality": 3.0,
+    "abilities": []
+  },
+  {
     "name": "Lady Anacondra",
     "kind": "Elite",
     "portrait": "PortraitLadyAnacondra",
@@ -7468,6 +8303,27 @@
     "name": "Spewed Larva",
     "kind": "Common",
     "portrait": "PortraitLarva",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Carrion Grub",
+    "kind": "Common",
+    "portrait": "PortraitLarvaYellow",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Borelgore",
+    "kind": "Rare",
+    "portrait": "PortraitLarvaYellow",
+    "vitality": 2.0,
+    "abilities": []
+  },
+  {
+    "name": "Carrion Devourer",
+    "kind": "Common",
+    "portrait": "PortraitLarvaYellow",
     "vitality": 1.0,
     "abilities": []
   },
@@ -7693,6 +8549,13 @@
     "abilities": []
   },
   {
+    "name": "Muckshell Scrabbler",
+    "kind": "Common",
+    "portrait": "PortraitMakruraBlack",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
     "name": "Arkkoran Clacker",
     "kind": "Common",
     "portrait": "PortraitMakruraBlack",
@@ -7710,6 +8573,13 @@
     "name": "Makrinni Snapclaw",
     "kind": "Common",
     "portrait": "PortraitMakruraBlack",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Muckshell Pincer",
+    "kind": "Common",
+    "portrait": "PortraitMakruraBlue",
     "vitality": 1.0,
     "abilities": []
   },
@@ -7897,6 +8767,20 @@
     "abilities": []
   },
   {
+    "name": "Mirefin Murloc",
+    "kind": "Common",
+    "portrait": "PortraitMurlocGreen",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Mirefin Puddlejumper",
+    "kind": "Common",
+    "portrait": "PortraitMurlocGreen",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
     "name": "Murloc Steamrunner",
     "kind": "Common",
     "portrait": "PortraitMurlocGreen",
@@ -7928,6 +8812,20 @@
     "name": "Gelihast",
     "kind": "Elite",
     "portrait": "PortraitMurlocOrange",
+    "vitality": 3.0,
+    "abilities": []
+  },
+  {
+    "name": "Scargil",
+    "kind": "Rare",
+    "portrait": "PortraitMurlocOrange",
+    "vitality": 2.0,
+    "abilities": []
+  },
+  {
+    "name": "Swamp Talker",
+    "kind": "Elite",
+    "portrait": "PortraitMurlocPurple",
     "vitality": 3.0,
     "abilities": []
   },
@@ -7970,6 +8868,27 @@
     "name": "Mutantus the Devourer",
     "kind": "Elite",
     "portrait": "PortraitMurlocWhite",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Zanzil Naga",
+    "kind": "Common",
+    "portrait": "PortraitNagaBright",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Lord Sakrasis",
+    "kind": "Rare",
+    "portrait": "PortraitNagaBright",
+    "vitality": 2.0,
+    "abilities": []
+  },
+  {
+    "name": "Naga Explorer",
+    "kind": "Common",
+    "portrait": "PortraitNagaBright",
     "vitality": 1.0,
     "abilities": []
   },
@@ -8076,6 +8995,13 @@
     "kind": "Elite",
     "portrait": "PortraitNagaDark",
     "vitality": 3.0,
+    "abilities": []
+  },
+  {
+    "name": "Daggerspine Siren",
+    "kind": "Common",
+    "portrait": "PortraitNagaFemale",
+    "vitality": 1.0,
     "abilities": []
   },
   {
@@ -8278,6 +9204,20 @@
     "abilities": []
   },
   {
+    "name": "Blighted Horror",
+    "kind": "Common",
+    "portrait": "PortraitNoxiousElemental",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Plague Monstrosity",
+    "kind": "Common",
+    "portrait": "PortraitNoxiousElemental",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
     "name": "Blighted Surge",
     "kind": "Common",
     "portrait": "PortraitNoxiousElemental",
@@ -8355,6 +9295,13 @@
     "kind": "Common",
     "portrait": "PortraitObsidianDestroyer",
     "background": "AreaElwynnForestNorthshireAbbey",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Venture Co. Laborer",
+    "kind": "Common",
+    "portrait": "PortraitOgre",
     "vitality": 1.0,
     "abilities": []
   },
@@ -9105,6 +10052,13 @@
     "abilities": []
   },
   {
+    "name": "Strigid Screecher",
+    "kind": "Common",
+    "portrait": "PortraitOwl",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
     "name": "Winterspring Owl",
     "kind": "Common",
     "portrait": "PortraitOwl",
@@ -9188,6 +10142,13 @@
     ]
   },
   {
+    "name": "Young Jungle Stalker",
+    "kind": "Common",
+    "portrait": "PortraitPanther",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
     "name": "Shadow Panther",
     "kind": "Common",
     "portrait": "PortraitPanther",
@@ -9216,6 +10177,83 @@
     "abilities": []
   },
   {
+    "name": "Lady Sathrah",
+    "kind": "Rare",
+    "portrait": "PortraitParrot",
+    "vitality": 2.0,
+    "abilities": []
+  },
+  {
+    "name": "Ana'thek the Cruel",
+    "kind": "Rare",
+    "portrait": "PortraitParrot",
+    "vitality": 2.0,
+    "abilities": []
+  },
+  {
+    "name": "Zanzil the Outcast",
+    "kind": "Rare",
+    "portrait": "PortraitParrot",
+    "vitality": 2.0,
+    "abilities": []
+  },
+  {
+    "name": "Sergeant Malthus",
+    "kind": "Rare",
+    "portrait": "PortraitParrot",
+    "vitality": 2.0,
+    "abilities": []
+  },
+  {
+    "name": "Scalebelly",
+    "kind": "Rare",
+    "portrait": "PortraitParrot",
+    "vitality": 2.0,
+    "abilities": []
+  },
+  {
+    "name": "Deathsworn Captain",
+    "kind": "Rare",
+    "portrait": "PortraitParrot",
+    "vitality": 2.0,
+    "abilities": []
+  },
+  {
+    "name": "Warlord Tresh'jin",
+    "kind": "Rare",
+    "portrait": "PortraitParrot",
+    "vitality": 2.0,
+    "abilities": []
+  },
+  {
+    "name": "Zul'Brin Warpbranch",
+    "kind": "Rare",
+    "portrait": "PortraitParrot",
+    "vitality": 2.0,
+    "abilities": []
+  },
+  {
+    "name": "Infiltrator Hameya",
+    "kind": "Rare",
+    "portrait": "PortraitParrot",
+    "vitality": 2.0,
+    "abilities": []
+  },
+  {
+    "name": "Deathspeaker Selendre",
+    "kind": "Rare",
+    "portrait": "PortraitParrot",
+    "vitality": 2.0,
+    "abilities": []
+  },
+  {
+    "name": "Ranger Lord Hawkspear",
+    "kind": "Rare",
+    "portrait": "PortraitParrot",
+    "vitality": 2.0,
+    "abilities": []
+  },
+  {
     "name": "Foreman Rigger",
     "kind": "Rare",
     "portrait": "PortraitParrot",
@@ -9240,13 +10278,6 @@
     "name": "Geltharis",
     "kind": "Rare",
     "portrait": "PortraitParrot",
-    "vitality": 2.0,
-    "abilities": []
-  },
-  {
-    "name": "Terrorwulf Packlord",
-    "kind": "Rare",
-    "portrait": "PortraitWorgenDark",
     "vitality": 2.0,
     "abilities": []
   },
@@ -9366,13 +10397,6 @@
     "name": "Gruff Swiftbite",
     "kind": "Rare",
     "portrait": "PortraitParrot",
-    "vitality": 2.0,
-    "abilities": []
-  },
-  {
-    "name": "Goldtooth",
-    "kind": "Rare",
-    "portrait": "PortraitKoboldSurveyor",
     "vitality": 2.0,
     "abilities": []
   },
@@ -9514,22 +10538,6 @@
     "abilities": []
   },
   {
-    "name": "The Husk",
-    "kind": "Rare",
-    "portrait": "PortraitBogBeastGreen",
-    "vitality": 2.0,
-    "abilities": []
-  },
-  {
-    "name": "Putridius",
-    "faction": "Scourge",
-    "kind": "Rare",
-    "portrait": "PortraitAbomination",
-    "background": "AreaElwynnForestNorthshireAbbey",
-    "vitality": 2.0,
-    "abilities": []
-  },
-  {
     "name": "Foreman Marcrid",
     "faction": "Scarlet Crusade",
     "kind": "Rare",
@@ -9592,13 +10600,6 @@
     "abilities": []
   },
   {
-    "name": "Scargil",
-    "kind": "Rare",
-    "portrait": "PortraitMurlocOrange",
-    "vitality": 2.0,
-    "abilities": []
-  },
-  {
     "name": "Balos Jacken",
     "kind": "Rare",
     "portrait": "PortraitParrot",
@@ -9648,6 +10649,13 @@
     "kind": "Common",
     "portrait": "PortraitPlagueDragonWhelp",
     "background": "AreaElwynnForestNorthshireAbbey",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Frenzied Plaguehound",
+    "kind": "Common",
+    "portrait": "PortraitPlaguehound",
     "vitality": 1.0,
     "abilities": []
   },
@@ -9915,6 +10923,13 @@
     "abilities": []
   },
   {
+    "name": "Chief Sharptusk Thornmantle",
+    "kind": "Rare",
+    "portrait": "PortraitQuilboarDark",
+    "vitality": 2.0,
+    "abilities": []
+  },
+  {
     "name": "Hunter Bonetusk",
     "kind": "Elite",
     "portrait": "PortraitQuilboarDark",
@@ -9975,6 +10990,13 @@
     "kind": "Common",
     "portrait": "PortraitQuilboarDark",
     "background": "AreaElwynnForestNorthshireAbbey",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Bristleback Shaman",
+    "kind": "Common",
+    "portrait": "PortraitQuilboarFemale",
     "vitality": 1.0,
     "abilities": []
   },
@@ -10076,6 +11098,20 @@
     "kind": "Elite",
     "portrait": "PortraitQuilboarFemaleAlternate",
     "vitality": 3.0,
+    "abilities": []
+  },
+  {
+    "name": "Bristleback Interloper",
+    "kind": "Common",
+    "portrait": "PortraitQuilboarMale",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Bristleback Quilboar",
+    "kind": "Common",
+    "portrait": "PortraitQuilboarMale",
+    "vitality": 1.0,
     "abilities": []
   },
   {
@@ -10279,6 +11315,13 @@
     "abilities": []
   },
   {
+    "name": "Tethis",
+    "kind": "Rare",
+    "portrait": "PortraitRavasaur",
+    "vitality": 2.0,
+    "abilities": []
+  },
+  {
     "name": "Ravasaur Runner",
     "kind": "Common",
     "portrait": "PortraitRavasaur",
@@ -10325,6 +11368,13 @@
     "kind": "Elite",
     "portrait": "PortraitRuuzlu",
     "vitality": 3.0,
+    "abilities": []
+  },
+  {
+    "name": "Mangy Nightsaber",
+    "kind": "Common",
+    "portrait": "PortraitSaberCatSmall",
+    "vitality": 1.0,
     "abilities": []
   },
   {
@@ -10874,6 +11924,13 @@
     "abilities": []
   },
   {
+    "name": "Venomtip Scorpid",
+    "kind": "Common",
+    "portrait": "PortraitScorpid",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
     "name": "Clattering Scorpid",
     "kind": "Common",
     "portrait": "PortraitScorpid",
@@ -10955,6 +12012,13 @@
     "kind": "Common",
     "portrait": "PortraitScorpidTeal",
     "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Gorlash",
+    "kind": "Elite",
+    "portrait": "PortraitSeaGiant",
+    "vitality": 3.0,
     "abilities": []
   },
   {
@@ -11266,6 +12330,27 @@
     "abilities": []
   },
   {
+    "name": "Silithid Invader",
+    "kind": "Common",
+    "portrait": "PortraitSilithidWorkerRed",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Silithid Searcher",
+    "kind": "Common",
+    "portrait": "PortraitSilithidWorkerRed",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Silithid Hive Drone",
+    "kind": "Common",
+    "portrait": "PortraitSilithidWorkerRed",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
     "name": "Centipaar Tunneler",
     "kind": "Common",
     "portrait": "PortraitSilithidWorkerRed",
@@ -11414,6 +12499,13 @@
     "abilities": []
   },
   {
+    "name": "Mor'Ladim",
+    "kind": "Elite",
+    "portrait": "PortraitSkeletalWarrior",
+    "vitality": 3.0,
+    "abilities": []
+  },
+  {
     "name": "Skeletal Warder",
     "kind": "Common",
     "portrait": "PortraitSkeletalWarrior",
@@ -11477,6 +12569,13 @@
       "Curse of Agony"
     ],
     "loot": []
+  },
+  {
+    "name": "Scourge Champion",
+    "kind": "Common",
+    "portrait": "PortraitSkeletalWarriorYellow",
+    "vitality": 1.0,
+    "abilities": []
   },
   {
     "name": "Avatar of Hakkar",
@@ -11552,6 +12651,41 @@
     "kind": "Common",
     "portrait": "PortraitSkeletonBlue",
     "background": "AreaElwynnForestNorthshireAbbey",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Skullsplitter Beastmaster",
+    "kind": "Common",
+    "portrait": "PortraitSkullsplitterHunter",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Skullsplitter Witch Doctor",
+    "kind": "Common",
+    "portrait": "PortraitSkullsplitterMystic",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Skullsplitter Mystic",
+    "kind": "Common",
+    "portrait": "PortraitSkullsplitterMystic",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Skullsplitter Axe Thrower",
+    "kind": "Common",
+    "portrait": "PortraitSkullsplitterWarrior",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Skullsplitter Warrior",
+    "kind": "Common",
+    "portrait": "PortraitSkullsplitterWarrior",
     "vitality": 1.0,
     "abilities": []
   },
@@ -11644,6 +12778,13 @@
     "abilities": []
   },
   {
+    "name": "Lupine Horror",
+    "kind": "Common",
+    "portrait": "PortraitSpectralWolf",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
     "name": "Night Web Spider",
     "kind": "Common",
     "portrait": "PortraitSpiderBlack",
@@ -11682,6 +12823,34 @@
     "name": "Spire Spider",
     "kind": "Common",
     "portrait": "PortraitSpiderCrystal",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Webwood Silkspinner",
+    "kind": "Common",
+    "portrait": "PortraitSpiderGreen",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Githyiss the Vile",
+    "kind": "Rare",
+    "portrait": "PortraitSpiderGreen",
+    "vitality": 2.0,
+    "abilities": []
+  },
+  {
+    "name": "Webwood Spider",
+    "kind": "Common",
+    "portrait": "PortraitSpiderGreen",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Webwood Venomfang",
+    "kind": "Common",
+    "portrait": "PortraitSpiderGreen",
     "vitality": 1.0,
     "abilities": []
   },
@@ -11878,6 +13047,20 @@
     "name": "Fleeting Plainstrider",
     "kind": "Common",
     "portrait": "PortraitTallstrider",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Elder Plainstrider",
+    "kind": "Common",
+    "portrait": "PortraitTallstriderBrown",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Plainstrider",
+    "kind": "Common",
+    "portrait": "PortraitTallstriderBrown",
     "vitality": 1.0,
     "abilities": []
   },
@@ -12188,9 +13371,23 @@
     "abilities": []
   },
   {
+    "name": "Stranglethorn Tiger",
+    "kind": "Common",
+    "portrait": "PortraitTigerSaber",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
     "name": "Zulian Tiger",
     "kind": "Common",
     "portrait": "PortraitTigerSaber",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Berserk Trogg",
+    "kind": "Common",
+    "portrait": "PortraitTrogg",
     "vitality": 1.0,
     "abilities": []
   },
@@ -12411,6 +13608,13 @@
     ]
   },
   {
+    "name": "Snapjaw",
+    "kind": "Common",
+    "portrait": "PortraitTurtle",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
     "name": "Kresh",
     "kind": "Common",
     "portrait": "PortraitTurtle",
@@ -12456,6 +13660,13 @@
     "name": "Mudrock Snapjaw",
     "kind": "Common",
     "portrait": "PortraitTurtleOrange",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Sparkleshell Borer",
+    "kind": "Common",
+    "portrait": "PortraitTurtleWhite",
     "vitality": 1.0,
     "abilities": []
   },
@@ -12855,6 +14066,20 @@
     "abilities": []
   },
   {
+    "name": "Wolfguard Worg",
+    "kind": "Common",
+    "portrait": "PortraitWorg",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Slavering Worg",
+    "kind": "Common",
+    "portrait": "PortraitWorg",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
     "name": "Blackrock Worg",
     "kind": "Common",
     "portrait": "PortraitWorg",
@@ -12981,6 +14206,48 @@
     "abilities": []
   },
   {
+    "name": "Wolf Master Nandos",
+    "kind": "Elite",
+    "portrait": "PortraitWorgenBrown",
+    "vitality": 3.0,
+    "abilities": []
+  },
+  {
+    "name": "Fenrus the Devourer",
+    "kind": "Elite",
+    "portrait": "PortraitWorgenBrown",
+    "vitality": 3.0,
+    "abilities": []
+  },
+  {
+    "name": "Shadowfang Ragetooth",
+    "kind": "Common",
+    "portrait": "PortraitWorgenDark",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Odo the Blindwatcher",
+    "kind": "Elite",
+    "portrait": "PortraitWorgenDark",
+    "vitality": 3.0,
+    "abilities": []
+  },
+  {
+    "name": "Son of Arugal",
+    "kind": "Common",
+    "portrait": "PortraitWorgenDark",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Terrorwulf Packlord",
+    "kind": "Rare",
+    "portrait": "PortraitWorgenDark",
+    "vitality": 2.0,
+    "abilities": []
+  },
+  {
     "name": "Shadowfang Moonwalker",
     "kind": "Common",
     "portrait": "PortraitWorgenDark",
@@ -13026,6 +14293,13 @@
     "name": "Gizrul the Slavener",
     "kind": "Elite",
     "portrait": "PortraitWorgWhite",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Eyeless Watcher",
+    "kind": "Common",
+    "portrait": "PortraitWraith",
     "vitality": 1.0,
     "abilities": []
   },
@@ -13121,6 +14395,27 @@
     "kind": "Elite",
     "portrait": "PortraitWushoolay",
     "vitality": 3.0,
+    "abilities": []
+  },
+  {
+    "name": "Heartrazor",
+    "kind": "Rare",
+    "portrait": "PortraitWyvern",
+    "vitality": 2.0,
+    "abilities": []
+  },
+  {
+    "name": "Highperch Wyvern",
+    "kind": "Common",
+    "portrait": "PortraitWyvern",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Highperch Consort",
+    "kind": "Common",
+    "portrait": "PortraitWyvern",
+    "vitality": 1.0,
     "abilities": []
   },
   {
@@ -13296,6 +14591,20 @@
     "kind": "Common",
     "portrait": "PortraitZulFarrakDeadHero",
     "background": "AreaElwynnForestNorthshireAbbey",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Unliving Mossflayer",
+    "kind": "Common",
+    "portrait": "PortraitZulFarrakZombie",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Mossflayer Zombie",
+    "kind": "Common",
+    "portrait": "PortraitZulFarrakZombie",
     "vitality": 1.0,
     "abilities": []
   },
