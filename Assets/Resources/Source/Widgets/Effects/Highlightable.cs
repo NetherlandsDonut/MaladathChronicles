@@ -9,58 +9,47 @@ using System.Linq.Expressions;
 public class Highlightable : MonoBehaviour
 {
     public Region region;
-    public Window window;
+    public Tooltip tooltip;
     public SpriteRenderer render;
-    public bool pressed;
+    public Action<Highlightable> pressEvent, rightPressEvent;
+    public string pressedState;
 
-    public void Initialise(Window window, Region region)
+    public void Initialise(Region region, Action<Highlightable> pressEvent, Action<Highlightable> rightPressEvent, Func<Highlightable, Action> tooltip)
     {
         render = GetComponent<SpriteRenderer>();
-        this.window = window;
+        pressedState = "None";
+        this.pressEvent = pressEvent;
+        this.rightPressEvent = rightPressEvent;
+        this.tooltip = tooltip;
         this.region = region;
-    }
-
-    public Tooltip FindTooltip()
-    {
-        if (TryGetComponent<LineSmallButton>(out var smallButton))
-            return smallButton.tooltip;
-        if (TryGetComponent<LineBigButton>(out var bigButton))
-            return bigButton.tooltip;
-        if (TryGetComponent<FlyingBuff>(out var flyingBuff))
-            return flyingBuff.tooltip;
-        return region == null ? null : region.tooltip;
     }
 
     public void OnMouseEnter()
     {
-        if (cursor.render.sprite == null) return;
         mouseOver = this;
-        if (!pressed && FindTooltip() != null)
-            CDesktop.SetTooltip(FindTooltip());
+        if (pressed == "None" && tooltip != null)
+            CDesktop.SetTooltip(tooltip);
         if (GetComponent<InputCharacter>() != null)
             cursor.SetCursor(Write);
-        else if (pressed) cursor.SetCursor(Click);
+        else if (pressed != "None") cursor.SetCursor(Click);
         render.color -= new Color(0.1f, 0.1f, 0.1f, 0);
-        if (pressed) render.color -= new Color(0.1f, 0.1f, 0.1f, 0);
+        if (pressed != "None") render.color -= new Color(0.1f, 0.1f, 0.1f, 0);
     }
 
     public void OnMouseExit()
     {
-        //Not sure if this line is needed, check later
-        if (cursor.render.sprite == null) return;
-        SwitchMouseOver(this);
-        if (mouseOver == this) mouseOver = null;
+        if (mouseOver == this)
+            mouseOver = null;
         CloseWindow("Tooltip");
         CDesktop.tooltip = null;
         cursor.SetCursor(Default);
         render.color += new Color(0.1f, 0.1f, 0.1f, 0);
-        if (pressed) render.color += new Color(0.1f, 0.1f, 0.1f, 0);
+        if (pressed != "None") render.color += new Color(0.1f, 0.1f, 0.1f, 0);
     }
-
-    public void OnMouseDown()
+ 
+    public void OnMouseDown(int key = 0)
     {
-        if (cursor.render.sprite == null) return;
-        pressed = true;
+        pressedState = key == 0 ? "Left" : (key == 1 ? "Right" : "Middle");
         CloseWindow("Tooltip");
         CDesktop.tooltip = null;
         cursor.SetCursor(Click);
@@ -69,9 +58,8 @@ public class Highlightable : MonoBehaviour
 
     public void OnMouseUp()
     {
-        if (cursor.render.sprite == null) return;
         cursor.SetCursor(Default);
-        if (pressed) render.color = new Color(1f, 1f, 1f, 1f);
-        pressed = false;
+        render.color = new Color(1f, 1f, 1f, 1f);
+        pressedState = "None";
     }
 }

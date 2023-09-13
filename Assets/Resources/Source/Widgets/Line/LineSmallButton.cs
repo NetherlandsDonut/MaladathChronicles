@@ -9,11 +9,9 @@ public class LineSmallButton : MonoBehaviour
 {
     public Region region;
     public GameObject frame;
-    public Tooltip tooltip;
-    public Action<Highlightable> pressEvent, rightPressEvent;
     public string buttonType;
 
-    public void Initialise(Region region, string buttonType, Action<Highlightable> pressEvent, Action<Highlightable> rightPressEvent, Func<Highlightable, Action> tooltip)
+    public void Initialise(Region region, string buttonType)
     {
         this.region = region;
         this.buttonType = buttonType;

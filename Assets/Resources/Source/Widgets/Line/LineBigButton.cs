@@ -6,15 +6,8 @@ using static Cursor;
 
 public class LineBigButton : MonoBehaviour
 {
-    //Parent
     public Region region;
-
-    //Children
     public GameObject frame;
-
-    //Fields
-    public Tooltip tooltip;
-    public Action<Highlightable> pressEvent, rightPressEvent;
     public string buttonType;
 
     public void Initialise(Region region, string buttonType, Action<Highlightable> pressEvent, Func<Highlightable, Action> tooltip)

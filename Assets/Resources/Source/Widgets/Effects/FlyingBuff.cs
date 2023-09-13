@@ -10,8 +10,6 @@ public class FlyingBuff : MonoBehaviour
     public bool onPlayer;
     public int dyingIndex;
     public SpriteRenderer render;
-    public Action<Highlightable> pressEvent;
-    public Tooltip tooltip;
 
     public static int flySpeed = 6;
     public static int rowAmount = 7;

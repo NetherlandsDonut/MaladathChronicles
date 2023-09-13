@@ -10,19 +10,17 @@ using static Sound;
 
 public class Region : MonoBehaviour
 {
-    public RegionGroup regionGroup;
+    public Action draw;
     public Line LBLine;
     public List<Line> lines;
     public InputLine inputLine;
     public LineCheckbox checkbox;
+    public RegionGroup regionGroup;
     public LineSmallButton LBSmallButton;
     public List<LineSmallButton> smallButtons;
     public LineBigButton LBBigButton;
     public List<LineBigButton> bigButtons;
-    public Action draw;
-    public Tooltip tooltip;
     public bool resetInputFieldSet;
-    public Action<Highlightable> pressEvent, rightPressEvent;
     public int currentHeight, xExtend, yExtend;
     public RegionBackgroundType backgroundType;
     public GameObject background;
@@ -95,21 +93,5 @@ public class Region : MonoBehaviour
             Destroy(borders[i]);
         borders = new GameObject[4];
         currentHeight = xExtend = yExtend = 0;
-    }
-
-    public void OnMouseUp()
-    {
-        if (checkbox != null)
-        {
-            checkbox.value.Invert();
-            regionGroup.window.Rebuild();
-        }
-        if (pressEvent != null && background.GetComponent<Highlightable>().over)
-        {
-            PlaySound("DesktopButtonPress", 0.6f);
-            var a = background.GetComponent<Highlightable>();
-            pressEvent(a);
-            regionGroup.window.Rebuild();
-        }
     }
 }
