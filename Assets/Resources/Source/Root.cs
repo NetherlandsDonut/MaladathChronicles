@@ -54,6 +54,11 @@ public static class Root
     public static Desktop CDesktop, LBDesktop;
     public static List<Dictionary<string, string>> triggersCopy, effectsCopy;
 
+    public static void SetMouseOver(Highlightable highlightable)
+    {
+        mouseOver = highlightable;
+    }
+
     #region Desktop
 
     public static void SpawnDesktopBlueprint(string blueprintTitle, bool autoSwitch = true)
@@ -113,6 +118,8 @@ public static class Root
 
     public static void SwitchDesktop(string name)
     {
+        if (mouseOver != null)
+            mouseOver.OnMouseExit();
         if (CDesktop != null)
             CDesktop.gameObject.SetActive(false);
         var find = desktops.Find(x => x.title == name);
@@ -296,12 +303,15 @@ public static class Root
 
     #region Regions
 
-    private static void AddRegion(RegionBackgroundType backgroundType, Action draw, Action<Highlightable> pressEvent, Func<Highlightable, Action> tooltip)
+    private static void AddRegion(RegionBackgroundType backgroundType, Action draw, Action<Highlightable> pressEvent, Action<Highlightable> rightPressEvent, Func<Highlightable, Action> tooltip)
     {
-        var newObject = new GameObject("Region", typeof(Region));
+        var region = new GameObject("Region", typeof(Region)).GetComponent<Region>();
         var regionGroup = CDesktop.LBWindow.LBRegionGroup;
-        newObject.transform.parent = regionGroup.transform;
-        newObject.GetComponent<Region>().Initialise(regionGroup, backgroundType, draw, pressEvent, tooltip);
+        region.transform.parent = regionGroup.transform;
+        region.background = new GameObject("Background", typeof(SpriteRenderer), typeof(RegionBackground));
+        region.Initialise(regionGroup, backgroundType, draw);
+        if (pressEvent != null || rightPressEvent != null || tooltip != null)
+            region.background.AddComponent<Highlightable>().Initialise(region, pressEvent, rightPressEvent, tooltip);
     }
 
     public static void AddRegionOverlay(Region onWhat, string overlay, float time = 0)
@@ -318,19 +328,19 @@ public static class Root
         }
     }
 
-    public static void AddButtonRegion(Action draw, Action<Highlightable> pressEvent, Func<Highlightable, Action> tooltip = null)
+    public static void AddButtonRegion(Action draw, Action<Highlightable> pressEvent, Action<Highlightable> rightPressEvent = null, Func<Highlightable, Action> tooltip = null)
     {
-        AddRegion(Button, draw, pressEvent, tooltip);
+        AddRegion(Button, draw, pressEvent, rightPressEvent, tooltip);
     }
 
     public static void AddHeaderRegion(Action draw)
     {
-        AddRegion(Header, draw, (h) => { }, null);
+        AddRegion(Header, draw, null, null, null);
     }
 
     public static void AddPaddingRegion(Action draw)
     {
-        AddRegion(Padding, draw, (h) => { }, null);
+        AddRegion(Padding, draw, null, null, null);
     }
 
     public static void AddInputRegion(String refText, InputType inputType, string color = "")
@@ -343,7 +353,7 @@ public static class Root
         {
             inputLineMarker = h.region.inputLine.text.text.Value().Length;
         },
-        null);
+        null, null);
     }
 
     public static void AddPaginationLine(RegionGroup group)
@@ -360,7 +370,7 @@ public static class Root
                 {
                     Sound.PlaySound("DesktopChangePage", 0.4f);
                     group.pagination++;
-                    h.window.Rebuild();
+                    h.window.Respawn();
                 }
             });
             AddSmallButton("OtherPreviousPage", (h) =>
@@ -369,7 +379,7 @@ public static class Root
                 {
                     Sound.PlaySound("DesktopChangePage", 0.4f);
                     group.pagination--;
-                    h.window.Rebuild();
+                    h.window.Respawn();
                 }
             });
         });
@@ -479,7 +489,9 @@ public static class Root
         var region = CDesktop.LBWindow.LBRegionGroup.LBRegion;
         var newObject = new GameObject("SmallButton: " + type.ToString(), typeof(LineSmallButton), typeof(SpriteRenderer));
         newObject.transform.parent = region.transform;
-        newObject.GetComponent<LineSmallButton>().Initialise(region, type, pressEvent, rightPressEvent, tooltip);
+        newObject.GetComponent<LineSmallButton>().Initialise(region, type);
+        if (pressEvent != null || rightPressEvent != null || tooltip != null)
+            newObject.AddComponent<Highlightable>().Initialise(region, pressEvent, rightPressEvent, tooltip);
     }
 
     public static void AddSmallButton(string type, Action<Highlightable> pressEvent, Func<Highlightable, Action> tooltip = null) => AddSmallButton(type, pressEvent, (h) => { }, tooltip);
@@ -518,12 +530,14 @@ public static class Root
         return newObject;
     }
 
-    public static void AddBigButton(string type, Action<Highlightable> pressEvent, Func<Highlightable, Action> tooltip = null)
+    public static void AddBigButton(string type, Action<Highlightable> pressEvent = null, Action<Highlightable> rightPressEvent = null, Func<Highlightable, Action> tooltip = null)
     {
         var region = CDesktop.LBWindow.LBRegionGroup.LBRegion;
         var newObject = new GameObject("BigButton: " + (type == null ? "Empty" : type.ToString()), typeof(LineBigButton), typeof(SpriteRenderer));
         newObject.transform.parent = region.transform;
         newObject.GetComponent<LineBigButton>().Initialise(region, type, pressEvent, tooltip);
+        if (pressEvent != null || rightPressEvent != null || tooltip != null)
+            newObject.AddComponent<Highlightable>().Initialise(region, pressEvent, rightPressEvent, tooltip);
     }
 
     #endregion

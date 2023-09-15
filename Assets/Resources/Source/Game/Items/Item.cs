@@ -265,6 +265,7 @@ public class Item
             {
 
             },
+            null,
             (h) => () =>
             {
                 if (item == null) return;
@@ -278,6 +279,7 @@ public class Item
     public static void PrintBankItem(Item item)
     {
         AddBigButton(item.icon,
+            null,
             (h) =>
             {
                 if (currentSave.player.inventory.items.Count < 40)
@@ -303,6 +305,7 @@ public class Item
     public static void PrintInventoryItem(Item item)
     {
         AddBigButton(item.icon,
+            null,
             (h) =>
             {
                 if (CDesktop.title == "EquipmentScreen")

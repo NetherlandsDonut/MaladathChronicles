@@ -92,8 +92,9 @@ public class Window : MonoBehaviour
         return head > xOffset ? head : xOffset;
     }
 
-    public void Respawn()
+    public void Respawn(bool onlyWhenActive = false)
     {
+        if (CDesktop != desktop || onlyWhenActive && !desktop.windows.Contains(this)) return;
         CDesktop.windows.FindAll(x => x.title == "Tooltip").ForEach(x => CloseWindow(x));
         var paginations = regionGroups.Select(x => x.pagination).ToList();
         var inputFieldDestination = (-1, -1);
@@ -228,9 +229,6 @@ public class Window : MonoBehaviour
     {
         int extendOffset = 0;
         var paginations = regionGroups.Select(x => x.pagination).ToList();
-        //for (int i = 0; i < paginations.Count && i < CDesktop.LBWindow.regionGroups.Count; i++)
-        //    CDesktop.LBWindow.regionGroups[i].pagination = paginations[i];
-        regionGroup.ResetContent();
         CDesktop.LBWindow.LBRegionGroup = regionGroup;
 
         #region CREATING REGIONS
@@ -301,7 +299,7 @@ public class Window : MonoBehaviour
                 if (smallButton.gameObject.GetComponent<BoxCollider2D>() == null)
                     smallButton.gameObject.AddComponent<BoxCollider2D>();
                 if (smallButton.gameObject.GetComponent<Highlightable>() == null)
-                    smallButton.gameObject.AddComponent<Highlightable>().Initialise(this, region);
+                    smallButton.gameObject.AddComponent<Highlightable>().Initialise(region, null, null, null);
                 if (smallButton.frame == null)
                     smallButton.frame = new GameObject("ButtonFrame", typeof(SpriteRenderer));
                 smallButton.frame.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/Borders/ButtonFrame");
@@ -325,7 +323,7 @@ public class Window : MonoBehaviour
                 if (bigButton.gameObject.GetComponent<BoxCollider2D>() == null)
                     bigButton.gameObject.AddComponent<BoxCollider2D>();
                 if (bigButton.gameObject.GetComponent<Highlightable>() == null)
-                    bigButton.gameObject.AddComponent<Highlightable>().Initialise(this, region);
+                    bigButton.gameObject.AddComponent<Highlightable>().Initialise(region, null, null, null);
                 if (bigButton.frame == null)
                     bigButton.frame = new GameObject("BigButtonFrame", typeof(SpriteRenderer));
                 bigButton.frame.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/Borders/BigButtonFrame");
@@ -346,7 +344,7 @@ public class Window : MonoBehaviour
                 if (region.checkbox.gameObject.GetComponent<BoxCollider2D>() == null)
                     region.checkbox.gameObject.AddComponent<BoxCollider2D>();
                 if (region.checkbox.gameObject.GetComponent<Highlightable>() == null && region.backgroundType != RedButton && region.backgroundType != Button)
-                    region.checkbox.gameObject.AddComponent<Highlightable>().Initialise(this, region);
+                    region.checkbox.gameObject.AddComponent<Highlightable>().Initialise(region, null, null, null);
                 if (region.checkbox.frame == null)
                     region.checkbox.frame = new GameObject("CheckboxFrame", typeof(SpriteRenderer));
                 region.checkbox.frame.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/Borders/CheckboxFrame");
@@ -370,13 +368,7 @@ public class Window : MonoBehaviour
                 int length = 0;
                 region.inputLine.text.Erase();
                 var print = region.inputLine.text.text.Value();
-                if (region.resetInputFieldSet)
-                {
-                    region.resetInputFieldSet = false;
-                    inputLine = region.inputLine;
-                    print = print.Insert(inputLineMarker > print.Length ? print.Length : inputLineMarker, markerCharacter);
-                }
-                else print += " ";
+                print += " ";
                 foreach (var character in print)
                     length = region.inputLine.text.SpawnCharacter(character, length, region.inputLine.color);
             }
@@ -409,8 +401,6 @@ public class Window : MonoBehaviour
         if (!disabledGeneralSprites)
             foreach (var region in regionGroup.regions)
             {
-                if (region.background == null)
-                    region.background = new GameObject("Background", typeof(SpriteRenderer), typeof(RegionBackground));
                 region.background.transform.parent = region.transform;
                 region.background.GetComponent<RegionBackground>().Initialise(region);
                 region.background.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/Backgrounds/" + region.backgroundType);
@@ -421,9 +411,7 @@ public class Window : MonoBehaviour
                 {
                     if (region.background.GetComponent<BoxCollider2D>() == null)
                         region.background.AddComponent<BoxCollider2D>();
-                    if (region.background.GetComponent<Highlightable>() == null)
-                        region.background.AddComponent<Highlightable>().Initialise(this, region);
-                    if (disabledCollisions) Destroy(region.background.GetComponent<BoxCollider2D>());
+                    region.background.GetComponent<BoxCollider2D>().enabled = !disabledCollisions;
                 }
             }
 

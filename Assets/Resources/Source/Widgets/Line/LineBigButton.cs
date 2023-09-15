@@ -14,22 +14,22 @@ public class LineBigButton : MonoBehaviour
     {
         this.region = region;
         this.buttonType = buttonType;
-        this.pressEvent = pressEvent;
-        this.rightPressEvent = rightPressEvent;
-        if (tooltip != null)
-            this.tooltip = new Tooltip(() => GetComponent<Highlightable>(), tooltip);
+        //this.pressEvent = pressEvent;
+        //this.rightPressEvent = rightPressEvent;
+        //if (tooltip != null)
+        //    this.tooltip = new Tooltip(() => GetComponent<Highlightable>(), tooltip);
         region.LBBigButton = this;
         region.bigButtons.Add(this);
     }
 
-    public void OnMouseUp()
-    {
-        if (cursor.render.sprite == null) return;
-        if (pressEvent != null && GetComponent<Highlightable>().over)
-        {
-            PlaySound("DesktopButtonPress", 0.6f);
-            pressEvent(GetComponent<Highlightable>());
-            region.regionGroup.window.Rebuild();
-        }
-    }
+    //public void OnMouseUp()
+    //{
+    //    if (cursor.render.sprite == null) return;
+    //    if (pressEvent != null && GetComponent<Highlightable>().over)
+    //    {
+    //        PlaySound("DesktopButtonPress", 0.6f);
+    //        pressEvent(GetComponent<Highlightable>());
+    //        region.regionGroup.window.Rebuild();
+    //    }
+    //}
 }

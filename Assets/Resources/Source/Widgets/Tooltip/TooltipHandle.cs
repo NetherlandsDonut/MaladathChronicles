@@ -6,7 +6,7 @@ public class TooltipHandle : MonoBehaviour
 
     public void ApplyTooltip()
     {
-        tooltip.caller().region.tooltip = tooltip;
+        tooltip.caller().tooltip = tooltip;
         Destroy(this);
     }
 }

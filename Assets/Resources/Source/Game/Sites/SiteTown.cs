@@ -64,6 +64,7 @@ public class SiteTown : Site
                                         PlaySound("DesktopTransportPay");
                                     CDesktop.cameraDestination = new Vector2(x - 17, y + 9);
                                 },
+                                null,
                                 (h) => () => { PrintTransportTooltip(transport); });
                             }
                         }

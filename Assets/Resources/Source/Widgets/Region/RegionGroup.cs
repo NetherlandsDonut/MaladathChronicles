@@ -18,8 +18,7 @@ public class RegionGroup : MonoBehaviour
         regions = new();
         this.window = window;
         this.perPage = perPage;
-        if (maxPaginationReq == null)
-            maxPaginationReq = maxPagination;
+        maxPaginationReq ??= maxPagination;
         if (maxPaginationReq != null)
             this.maxPagination = () =>
             {
@@ -43,11 +42,5 @@ public class RegionGroup : MonoBehaviour
     {
         var regionMax = regions.Max(x => x.AutoWidth());
         return setWidth != 0 ? setWidth : regionMax;
-    }
-
-    public void ResetContent()
-    {
-        currentHeight = 0;
-        regions.ForEach(x => x.ResetContent());
     }
 }

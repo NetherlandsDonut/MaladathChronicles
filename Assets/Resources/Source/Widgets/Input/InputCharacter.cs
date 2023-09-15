@@ -22,6 +22,6 @@ public class InputCharacter : MonoBehaviour
         UnityEngine.Cursor.lockState = CursorLockMode.Locked;
         inputLineMarker = newMarker > inputLineMarker && inputLine != null ? newMarker - 1 : newMarker;
         inputLine = inputText.inputLine;
-        desktop.windows.ForEach(x => x.Rebuild());
+        desktop.windows.ForEach(x => x.Respawn());
     }
 }

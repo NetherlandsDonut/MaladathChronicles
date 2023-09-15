@@ -26,17 +26,13 @@ public class Region : MonoBehaviour
     public GameObject background;
     public GameObject[] borders;
 
-    public void Initialise(RegionGroup regionGroup, RegionBackgroundType backgroundType, Action draw, Action<Highlightable> pressEvent, Action<Highlightable> rightPressEvent, Func<Highlightable, Action> tooltip)
+    public void Initialise(RegionGroup regionGroup, RegionBackgroundType backgroundType, Action draw)
     {
         lines = new();
         smallButtons = new();
         bigButtons = new();
         borders = new GameObject[4];
         this.draw = draw;
-        if (tooltip != null && regionGroup.window != null)
-            this.tooltip = new Tooltip(() => background.GetComponent<Highlightable>(), tooltip);
-        this.pressEvent = pressEvent;
-        this.rightPressEvent = rightPressEvent;
         this.regionGroup = regionGroup;
         this.backgroundType = backgroundType;
 
@@ -65,33 +61,5 @@ public class Region : MonoBehaviour
         var checkboxX = checkbox != null ? 15 : 0;
         var inputLineX = inputLine != null ? (inputLine.Length() > 0 ? inputLine.Length() : 0) + (inputLine == InputLine.inputLine ? font.Length(markerCharacter) : 0) : 0;
         return lineX + bigButtonX + smallButtonX + checkboxX + inputLineX;
-    }
-
-    public void ResetContent()
-    {
-        for (int i = 0; i < lines.Count; i++)
-            Destroy(lines[i].gameObject);
-        lines = new();
-        if (inputLine != null && InputLine.inputLine == inputLine)
-            resetInputFieldSet = true;
-        if (inputLine != null)
-            Destroy(inputLine.gameObject);
-        inputLine = null;
-        for (int i = 0; i < smallButtons.Count; i++)
-            Destroy(smallButtons[i].gameObject);
-        smallButtons = new();
-        for (int i = 0; i < bigButtons.Count; i++)
-            Destroy(bigButtons[i].gameObject);
-        bigButtons = new();
-        if (checkbox != null)
-            Destroy(checkbox.gameObject);
-        checkbox = null;
-        if (background != null)
-            Destroy(background);
-        background = null;
-        for (int i = 0; i < 4; i++)
-            Destroy(borders[i]);
-        borders = new GameObject[4];
-        currentHeight = xExtend = yExtend = 0;
     }
 }

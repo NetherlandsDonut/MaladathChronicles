@@ -566,6 +566,7 @@ public class Blueprint
                             h.window.desktop.RebuildAll();
                         }
                     },
+                    null,
                     (h) => () =>
                     {
                         PrintAbilityTooltip(Board.board.player, Board.board.enemy, abilityObj);
@@ -719,6 +720,7 @@ public class Blueprint
                         PlaySound("DesktopActionbarAdd", 0.7f);
                     }
                 },
+                null,
                 (h) => () =>
                 {
                     SetAnchor(Center);
@@ -778,6 +780,7 @@ public class Blueprint
                 {
 
                 },
+                null,
                 (h) => () =>
                 {
                     SetAnchor(Center);
@@ -835,6 +838,7 @@ public class Blueprint
                             SpawnWindowBlueprint("PlayerSpellbookInfo");
                             PlaySound("DesktopActionbarRemove", 0.7f);
                         },
+                        null,
                         (h) => () =>
                         {
                             PrintAbilityTooltip(currentSave.player, null, abilityObj);
@@ -954,6 +958,7 @@ public class Blueprint
                     {
 
                     },
+                    null,
                     (h) => () =>
                     {
                         PrintAbilityTooltip(Board.board.enemy, Board.board.player, abilityObj);
@@ -1539,6 +1544,7 @@ public class Blueprint
                     if (random.Next(0, 2) == 1)
                         PlaySound("SpellEnvenomImpact");
                 },
+                null,
                 (h) => () =>
                 {
                     SetAnchor(Center);
@@ -4584,6 +4590,7 @@ public class Blueprint
                     String.requiredLevel.Set(item.lvl + "");
                     Respawn("ObjectManagerItem");
                 },
+                null,
                 (h) => () =>
                 {
                     SetAnchor(Center);
@@ -4620,7 +4627,7 @@ public class Blueprint
                 String.itemPower.Set(item.ilvl + "");
                 String.requiredLevel.Set(item.lvl + "");
                 Respawn("ObjectManagerItem");
-                h.window.Rebuild();
+                h.window.Respawn();
             });
         }),
         new("ObjectManagerItem", () => {
@@ -4831,7 +4838,7 @@ public class Blueprint
                 itemSetsSearch = itemSets.FindAll(x => x.name.ToLower().Contains(String.search.Value().ToLower()));
                 String.objectName.Set(itemSet.name);
                 Respawn("ObjectManagerItemSet");
-                h.window.Rebuild();
+                h.window.Respawn();
             });
         }),
         new("ObjectManagerItemSet", () => {
@@ -5096,6 +5103,7 @@ public class Blueprint
                         Respawn("ObjectManagerAbility");
                     }
                 },
+                null,
                 (h) => () =>
                 {
                     SetAnchor(Center);
@@ -5127,7 +5135,7 @@ public class Blueprint
                 String.objectName.Set(ability.name);
                 String.cooldown.Set(ability.cooldown + "");
                 Respawn("ObjectManagerAbility");
-                h.window.Rebuild();
+                h.window.Respawn();
             });
         }),
         new("ObjectManagerAbility", () => {
@@ -5412,6 +5420,7 @@ public class Blueprint
                         Respawn("ObjectManagerBuff");
                     }
                 },
+                null,
                 (h) => () =>
                 {
                     SetAnchor(Center);
@@ -5477,7 +5486,7 @@ public class Blueprint
                     };
                     buffs.Add(buff);
                     buffsSearch = buffs.FindAll(x => x.name.ToLower().Contains(String.search.Value().ToLower()));
-                    h.window.Rebuild();
+                    h.window.Respawn();
                 }
                 else
                 {
@@ -5492,7 +5501,7 @@ public class Blueprint
                     buffsSearch = buffs.FindAll(x => x.name.ToLower().Contains(String.search.Value().ToLower()));
                     String.objectName.Set(buff.name);
                     Respawn("ObjectManagerBuff");
-                    h.window.Rebuild();
+                    h.window.Respawn();
                 }
             });
         }),
@@ -5737,7 +5746,7 @@ public class Blueprint
                 String.objectName.Set(race.name);
                 String.vitality.Set(race.vitality + "");
                 Respawn("ObjectManagerRace");
-                h.window.Rebuild();
+                h.window.Respawn();
             });
         }),
         new("ObjectManagerRace", () => {
@@ -6009,7 +6018,7 @@ public class Blueprint
                 factionsSearch = factions.FindAll(x => x.name.ToLower().Contains(String.search.Value().ToLower()));
                 String.objectName.Set(faction.name);
                 Respawn("ObjectManagerFaction");
-                h.window.Rebuild();
+                h.window.Respawn();
             });
         }),
         new("ObjectManagerFaction", () => {
@@ -6758,7 +6767,7 @@ public class Blueprint
             var max = group.maxPagination();
             if (group.pagination >= max)
                 group.pagination = max - 1;
-            window.Rebuild();
+            window.Respawn();
         });
         AddHotkey(D, () =>
         {
@@ -6769,7 +6778,7 @@ public class Blueprint
             var max = group.maxPagination();
             if (group.pagination >= max)
                 group.pagination = max - 1;
-            window.Rebuild();
+            window.Respawn();
         }, false);
         AddHotkey(A, () =>
         {
@@ -6779,7 +6788,7 @@ public class Blueprint
             group.pagination -= 1;
             if (group.pagination < 0)
                 group.pagination = 0;
-            window.Rebuild();
+            window.Respawn();
         });
         AddHotkey(A, () =>
         {
@@ -6789,7 +6798,7 @@ public class Blueprint
             group.pagination -= (int)Math.Round(EuelerGrowth()) / 2;
             if (group.pagination < 0)
                 group.pagination = 0;
-            window.Rebuild();
+            window.Respawn();
         }, false);
         AddHotkey(Alpha1, () =>
         {
@@ -6797,7 +6806,7 @@ public class Blueprint
             if (window == null) return;
             var group = window.regionGroups.Find(x => x.maxPaginationReq != null);
             group.pagination = 0;
-            window.Rebuild();
+            window.Respawn();
         });
         AddHotkey(Alpha2, () =>
         {
@@ -6806,7 +6815,7 @@ public class Blueprint
             var group = window.regionGroups.Find(x => x.maxPaginationReq != null);
             var max = group.maxPagination();
             group.pagination = (int)(max / 10 * 1.1);
-            window.Rebuild();
+            window.Respawn();
         });
         AddHotkey(Alpha3, () =>
         {
@@ -6815,7 +6824,7 @@ public class Blueprint
             var group = window.regionGroups.Find(x => x.maxPaginationReq != null);
             var max = group.maxPagination();
             group.pagination = (int)(max / 10 * 2.2);
-            window.Rebuild();
+            window.Respawn();
         });
         AddHotkey(Alpha4, () =>
         {
@@ -6824,7 +6833,7 @@ public class Blueprint
             var group = window.regionGroups.Find(x => x.maxPaginationReq != null);
             var max = group.maxPagination();
             group.pagination = (int)(max / 10 * 3.3);
-            window.Rebuild();
+            window.Respawn();
         });
         AddHotkey(Alpha5, () =>
         {
@@ -6833,7 +6842,7 @@ public class Blueprint
             var group = window.regionGroups.Find(x => x.maxPaginationReq != null);
             var max = group.maxPagination();
             group.pagination = (int)(max / 10 * 4.4);
-            window.Rebuild();
+            window.Respawn();
         });
         AddHotkey(Alpha6, () =>
         {
@@ -6842,7 +6851,7 @@ public class Blueprint
             var group = window.regionGroups.Find(x => x.maxPaginationReq != null);
             var max = group.maxPagination();
             group.pagination = (int)(max / 10 * 5.5);
-            window.Rebuild();
+            window.Respawn();
         });
         AddHotkey(Alpha7, () =>
         {
@@ -6851,7 +6860,7 @@ public class Blueprint
             var group = window.regionGroups.Find(x => x.maxPaginationReq != null);
             var max = group.maxPagination();
             group.pagination = (int)(max / 10 * 6.6);
-            window.Rebuild();
+            window.Respawn();
         });
         AddHotkey(Alpha8, () =>
         {
@@ -6860,7 +6869,7 @@ public class Blueprint
             var group = window.regionGroups.Find(x => x.maxPaginationReq != null);
             var max = group.maxPagination();
             group.pagination = (int)(max / 10 * 7.7);
-            window.Rebuild();
+            window.Respawn();
         });
         AddHotkey(Alpha9, () =>
         {
@@ -6869,7 +6878,7 @@ public class Blueprint
             var group = window.regionGroups.Find(x => x.maxPaginationReq != null);
             var max = group.maxPagination();
             group.pagination = (int)(max / 10 * 8.8);
-            window.Rebuild();
+            window.Respawn();
         });
         AddHotkey(Alpha0, () =>
         {
@@ -6878,7 +6887,7 @@ public class Blueprint
             var group = window.regionGroups.Find(x => x.maxPaginationReq != null);
             var max = group.maxPagination();
             group.pagination = (int)(max - 1);
-            window.Rebuild();
+            window.Respawn();
         });
     }
 }

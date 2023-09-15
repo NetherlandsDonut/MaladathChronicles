@@ -24,7 +24,7 @@ public class InputText : MonoBehaviour
     {
         while (characters.Count > 0)
         {
-            Destroy(characters[0].gameObject);
+            Destroy(characters[0]);
             characters.RemoveAt(0);
         }
     }
@@ -41,7 +41,7 @@ public class InputText : MonoBehaviour
         if (character + "" == markerCharacter) newCharacter.AddComponent<Blinking>();
         else
         {
-            newCharacter.AddComponent<Highlightable>().Initialise(inputLine.region.regionGroup.window, inputLine.region);
+            newCharacter.AddComponent<Highlightable>().Initialise(inputLine.region, null, null, null);
             newCharacter.AddComponent<InputCharacter>().Initialise(this);
             newCharacter.AddComponent<BoxCollider2D>().size += new Vector2(1f, 0);
         }

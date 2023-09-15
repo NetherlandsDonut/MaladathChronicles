@@ -18,9 +18,9 @@ public class FlyingBuff : MonoBehaviour
     {
         onPlayer = targettedPlayer;
         (onPlayer ? Board.board.temporaryBuffsPlayer : Board.board.temporaryBuffsEnemy).Add(gameObject);
-        this.pressEvent = pressEvent;
-        if (tooltip != null)
-            this.tooltip = new Tooltip(() => GetComponent<Highlightable>(), tooltip);
+        //this.pressEvent = pressEvent;
+        //if (tooltip != null)
+        //    this.tooltip = new Tooltip(() => GetComponent<Highlightable>(), tooltip);
     }
 
     public void Update()
@@ -35,15 +35,15 @@ public class FlyingBuff : MonoBehaviour
         return onPlayer ? Board.board.temporaryBuffsPlayer.IndexOf(gameObject) : Board.board.temporaryBuffsEnemy.IndexOf(gameObject);
     }
 
-    public void OnMouseUp()
-    {
-        if (cursor.render.sprite == null) return;
-        if (pressEvent != null && GetComponent<Highlightable>().over)
-        {
-            PlaySound("DesktopButtonPress", 0.6f);
-            pressEvent(GetComponent<Highlightable>());
-        }
-    }
+    //public void OnMouseUp()
+    //{
+    //    if (cursor.render.sprite == null) return;
+    //    if (pressEvent != null && GetComponent<Highlightable>().over)
+    //    {
+    //        PlaySound("DesktopButtonPress", 0.6f);
+    //        pressEvent(GetComponent<Highlightable>());
+    //    }
+    //}
     
     public static GameObject SpawnBuffObject(Vector3 position, string icon, Entity target)
     {

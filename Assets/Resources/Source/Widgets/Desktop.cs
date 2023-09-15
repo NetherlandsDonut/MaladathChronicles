@@ -42,7 +42,7 @@ public class Desktop : MonoBehaviour
     public void RebuildAll()
     {
         for (int i = windows.Count - 1; i >= 0; i--)
-            windows[i].Rebuild();
+            windows[i].Respawn();
     }
 
     public void SetTooltip(Tooltip tooltip)
@@ -74,9 +74,19 @@ public class Desktop : MonoBehaviour
 
     public void Update()
     {
-        if (Input.GetMouseDown(1) && mouseOver != null)
+        if (mouseOver != null)
         {
-            mouseOver.
+            if (mouseOver.pressedState == "None")
+            {
+                if (Input.GetMouseButtonDown(0))
+                    mouseOver.MouseDown("Left");
+                if (Input.GetMouseButtonDown(1))
+                    mouseOver.MouseDown("Right");
+                if (Input.GetMouseButtonDown(2))
+                    mouseOver.MouseDown("Middle");
+            }
+            else if (Input.GetMouseButtonUp(0) || Input.GetMouseButtonUp(1) || Input.GetMouseButtonUp(2))
+                mouseOver.MouseUp();
         }
         if (title == "GameSimulation" && Input.GetKeyDown(KeyCode.Escape))
         {
@@ -410,7 +420,7 @@ public class Desktop : MonoBehaviour
                                 Respawn("ObjectManagerAbilityIconList");
                             }
                         }
-                        temp.region.regionGroup.window.Rebuild();
+                        temp.region.regionGroup.window.Respawn();
                     }
                 }
                 else

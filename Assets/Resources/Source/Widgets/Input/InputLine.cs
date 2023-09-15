@@ -51,7 +51,7 @@ public class InputLine : MonoBehaviour
         UnityEngine.Cursor.lockState = CursorLockMode.Locked;
         inputLineMarker = 0;
         inputLine = text.inputLine;
-        desktop.windows.ForEach(x => x.Rebuild());
+        region.regionGroup.window.Respawn();
     }
 
     public int Length() => font.Length(text.text.Value());
@@ -374,37 +374,37 @@ public class InputLine : MonoBehaviour
             {
                 Item.item.name = foo.Value();
                 var find = CDesktop.windows.Find(x => x.title == "ObjectManagerItems");
-                if (find != null) find.Rebuild();
+                if (find != null) find.Respawn();
             }
             else if (CDesktop.title == "ObjectManagerItemSets")
             {
                 ItemSet.itemSet.name = foo.Value();
                 var find = CDesktop.windows.Find(x => x.title == "ObjectManagerItemSets");
-                if (find != null) find.Rebuild();
+                if (find != null) find.Respawn();
             }
             else if (CDesktop.title == "ObjectManagerAbilities")
             {
                 Ability.ability.name = foo.Value();
                 var find = CDesktop.windows.Find(x => x.title == "ObjectManagerAbilities");
-                if (find != null) find.Rebuild();
+                if (find != null) find.Respawn();
             }
             else if (CDesktop.title == "ObjectManagerBuffs")
             {
                 Buff.buff.name = foo.Value();
                 var find = CDesktop.windows.Find(x => x.title == "ObjectManagerBuffs");
-                if (find != null) find.Rebuild();
+                if (find != null) find.Respawn();
             }
             else if (CDesktop.title == "ObjectManagerRaces")
             {
                 Race.race.name = foo.Value();
                 var find = CDesktop.windows.Find(x => x.title == "ObjectManagerRaces");
-                if (find != null) find.Rebuild();
+                if (find != null) find.Respawn();
             }
             else if (CDesktop.title == "ObjectManagerClasses")
             {
                 Class.spec.name = foo.Value();
                 var find = CDesktop.windows.Find(x => x.title == "ObjectManagerClasses");
-                if (find != null) find.Rebuild();
+                if (find != null) find.Respawn();
             }
         }
         else if (foo == vitality)

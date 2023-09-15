@@ -48,6 +48,7 @@ public class Talent
                         CDesktop.RebuildAll();
                     }
                 },
+                null,
                 (h) => () =>
                 {
                     PrintAbilityTooltip(currentSave.player, null, abilities.Find(x => x.name == talent.ability));
