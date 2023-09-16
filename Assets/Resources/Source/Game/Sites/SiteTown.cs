@@ -50,6 +50,7 @@ public class SiteTown : Site
                             AddHeaderRegion(() => { AddLine("Transportation:"); });
                             foreach (var transport in transport)
                             {
+                                var desitnation = towns.Find(x => x.name == transport.destination);
                                 AddButtonRegion(() =>
                                 {
                                     AddLine(transport.destination, "Black");
@@ -62,7 +63,7 @@ public class SiteTown : Site
                                     CDesktop.LockScreen();
                                     if (transport.price > 0)
                                         PlaySound("DesktopTransportPay");
-                                    CDesktop.cameraDestination = new Vector2(x - 17, y + 9);
+                                    CDesktop.cameraDestination = new Vector2(desitnation.x - 17, desitnation.y + 9);
                                 },
                                 null,
                                 (h) => () => { PrintTransportTooltip(transport); });
@@ -118,6 +119,7 @@ public class SiteTown : Site
         {
             AddSmallButton(factions.Find(x => x.name == faction).Icon(),
             (h) => { QueueSiteOpen("Town"); },
+            null,
             (h) => () =>
             {
                 SetAnchor(TopRight, h.window);

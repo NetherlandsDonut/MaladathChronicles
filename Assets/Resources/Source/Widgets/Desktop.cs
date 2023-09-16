@@ -141,7 +141,7 @@ public class Desktop : MonoBehaviour
                 loadingScreenObjectLoad++;
                 var spawn = SpawnWindowBlueprint(site);
                 if (spawn != null && !cameraBoundaryPoints.Contains(spawn.transform.position))
-                    cameraBoundaryPoints.Add(spawn.transform.position);
+                    cameraBoundaryPoints.Add(spawn.transform.position + new Vector3(10, -10));
                 loadSites.RemoveAt(0);
                 loadingBar[1].transform.localScale = new Vector3((int)(357.0 / loadingScreenObjectLoadAim * loadingScreenObjectLoad), 1, 1);
                 if (loadSites.Count == 0)

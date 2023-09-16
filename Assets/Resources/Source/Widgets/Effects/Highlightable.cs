@@ -80,5 +80,6 @@ public class Highlightable : MonoBehaviour
             rightPressEvent(this);
         }
         pressedState = "None";
+        window.Respawn(true);
     }
 }

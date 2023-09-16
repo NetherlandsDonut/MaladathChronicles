@@ -153,7 +153,7 @@ public class Ability
                     SetRegionGroupWidth(33);
                     AddHeaderRegion(() =>
                     {
-                        AddLine(cost.Value + "", effector != null ? cost.Value > effector.resources[cost.Key] ? "Red" : "Green" : "Gray");
+                        AddLine(cost.Value + "", effector != null && effector.resources != null ? cost.Value > effector.resources[cost.Key] ? "Red" : "Green" : "Gray");
                     });
                 }
             AddRegionGroup();

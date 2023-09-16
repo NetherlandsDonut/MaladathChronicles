@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 using static Root;
-using static Font;
 
 public class Region : MonoBehaviour
 {

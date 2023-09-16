@@ -370,7 +370,6 @@ public static class Root
                 {
                     Sound.PlaySound("DesktopChangePage", 0.4f);
                     group.pagination++;
-                    h.window.Respawn();
                 }
             });
             AddSmallButton("OtherPreviousPage", (h) =>
@@ -379,7 +378,6 @@ public static class Root
                 {
                     Sound.PlaySound("DesktopChangePage", 0.4f);
                     group.pagination--;
-                    h.window.Respawn();
                 }
             });
         });
@@ -484,7 +482,7 @@ public static class Root
         }
     }
 
-    public static void AddSmallButton(string type, Action<Highlightable> pressEvent, Action<Highlightable> rightPressEvent, Func<Highlightable, Action> tooltip = null)
+    public static void AddSmallButton(string type, Action<Highlightable> pressEvent, Action<Highlightable> rightPressEvent = null, Func<Highlightable, Action> tooltip = null)
     {
         var region = CDesktop.LBWindow.LBRegionGroup.LBRegion;
         var newObject = new GameObject("SmallButton: " + type.ToString(), typeof(LineSmallButton), typeof(SpriteRenderer));
@@ -493,8 +491,6 @@ public static class Root
         if (pressEvent != null || rightPressEvent != null || tooltip != null)
             newObject.AddComponent<Highlightable>().Initialise(region, pressEvent, rightPressEvent, tooltip);
     }
-
-    public static void AddSmallButton(string type, Action<Highlightable> pressEvent, Func<Highlightable, Action> tooltip = null) => AddSmallButton(type, pressEvent, (h) => { }, tooltip);
 
     #endregion
 

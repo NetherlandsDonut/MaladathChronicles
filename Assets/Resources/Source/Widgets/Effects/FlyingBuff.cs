@@ -1,9 +1,6 @@
-using System;
 using UnityEngine;
 
 using static Buff;
-using static Sound;
-using static Cursor;
 
 public class FlyingBuff : MonoBehaviour
 {
@@ -14,13 +11,10 @@ public class FlyingBuff : MonoBehaviour
     public static int flySpeed = 6;
     public static int rowAmount = 7;
 
-    public void Initiate(bool targettedPlayer, Action<Highlightable> pressEvent, Func<Highlightable, Action> tooltip)
+    public void Initiate(bool targettedPlayer)
     {
         onPlayer = targettedPlayer;
         (onPlayer ? Board.board.temporaryBuffsPlayer : Board.board.temporaryBuffsEnemy).Add(gameObject);
-        //this.pressEvent = pressEvent;
-        //if (tooltip != null)
-        //    this.tooltip = new Tooltip(() => GetComponent<Highlightable>(), tooltip);
     }
 
     public void Update()
@@ -34,16 +28,6 @@ public class FlyingBuff : MonoBehaviour
     {
         return onPlayer ? Board.board.temporaryBuffsPlayer.IndexOf(gameObject) : Board.board.temporaryBuffsEnemy.IndexOf(gameObject);
     }
-
-    //public void OnMouseUp()
-    //{
-    //    if (cursor.render.sprite == null) return;
-    //    if (pressEvent != null && GetComponent<Highlightable>().over)
-    //    {
-    //        PlaySound("DesktopButtonPress", 0.6f);
-    //        pressEvent(GetComponent<Highlightable>());
-    //    }
-    //}
     
     public static GameObject SpawnBuffObject(Vector3 position, string icon, Entity target)
     {
@@ -52,14 +36,20 @@ public class FlyingBuff : MonoBehaviour
         buff.transform.parent = Board.board.window.desktop.transform;
         buff.transform.position = position;
         var fly = buff.GetComponent<FlyingBuff>();
-        fly.Initiate(Board.board.player == target, (h) => { },
+        fly.Initiate(Board.board.player == target);
+        buff.GetComponent<Highlightable>().Initialise(null, null, 
+            (h) =>
+            {
+                var fb = h.GetComponent<FlyingBuff>();
+                var buff = (fb.onPlayer ? Board.board.player.buffs : Board.board.enemy.buffs).Find(x => x.Item3 == h.gameObject);
+                (target == Board.board.player ? Board.board.enemy : Board.board.player).RemoveBuff(buff);
+            },
             (h) => () =>
             {
                 var fb = h.GetComponent<FlyingBuff>();
                 var buff = (fb.onPlayer ? Board.board.player.buffs : Board.board.enemy.buffs).Find(x => x.Item3 == h.gameObject);
                 PrintBuffTooltip(target, target == Board.board.player ? Board.board.enemy : Board.board.player, buff);
-            }
-        );
+            });
         return buff;
     }
 }

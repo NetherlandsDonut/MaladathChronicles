@@ -125,6 +125,7 @@ public class SiteInstance : Site
         {
             AddSmallButton("Site" + type,
             (h) => { QueueSiteOpen("Instance"); },
+            null,
             (h) => () =>
             {
                 SetAnchor(TopRight, h.window);

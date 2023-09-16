@@ -192,6 +192,7 @@ public class SiteHostileArea : Site
             {
                 QueueSiteOpen("HostileArea");
             },
+            null,
             (h) => () =>
             {
                 SetAnchor(TopRight, h.window);

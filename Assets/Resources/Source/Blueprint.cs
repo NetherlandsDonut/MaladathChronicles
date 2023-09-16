@@ -448,6 +448,11 @@ public class Blueprint
                 AddCheckbox(settings.soundEffects);
                 AddLine("Sound effects", "Gray");
             });
+            AddPaddingRegion(() =>
+            {
+                AddCheckbox(settings.snapCamera);
+                AddLine("Snap camera to sites", "Gray");
+            });
         }, true),
         new("GameMenu", () => {
             SetAnchor(Center);
@@ -642,6 +647,7 @@ public class Blueprint
                                 Respawn("PlayerEquipmentInfo");
                                 Respawn("Inventory");
                             },
+                            null,
                             (h) => () =>
                             {
                                 SetAnchor(Center);
@@ -724,7 +730,7 @@ public class Blueprint
                 (h) => () =>
                 {
                     SetAnchor(Center);
-                    PrintAbilityTooltip(null, null, abilitiesSearch[index + 10 * regionGroup.pagination]);
+                    PrintAbilityTooltip(null, null, activeAbilities[index + 7 * regionGroup.pagination]);
                 });
             }
             var passiveAbilities = abilities.FindAll(x => x.cost == null && currentSave.player.abilities.Contains(x.name)).ToList();
@@ -867,7 +873,8 @@ public class Blueprint
                 AddHeaderRegion(() =>
                 {
                     AddSmallButton("Element" + element + "Rousing",
-                        (h) => { },
+                        null,
+                        null,
                         (h) => () =>
                         {
                             SetAnchor(Top, h.window);
@@ -887,7 +894,8 @@ public class Blueprint
                     AddLine(value + "", value == 0 ? "DarkGray" : (value > currentSave.player.MaxResource(element) ? "Red" : "Green"));
                     AddText("/" + currentSave.player.MaxResource(element), "DarkGray");
                     AddSmallButton("Element" + elements2[elements1.IndexOf(element)] + "Rousing",
-                        (h) => { },
+                        null,
+                        null,
                         (h) => () =>
                         {
                             SetAnchor(Top, h.window);
@@ -1868,7 +1876,8 @@ public class Blueprint
                 AddHeaderRegion(() =>
                 {
                     AddSmallButton("Element" + element + "Rousing",
-                        (h) => { },
+                        null,
+                        null,
                         (h) => () =>
                         {
                             SetAnchor(Top, h.window);
@@ -1893,7 +1902,8 @@ public class Blueprint
                     var value = Board.board.player.resources.ToList().Find(x => x.Key == element).Value;
                     AddLine(value + "", value == 0 ? "DarkGray" : (value < Board.board.player.MaxResource(element) ? "Gray" : "Green"));
                     AddSmallButton("Element" + elements2[elements1.IndexOf(element)] + "Rousing",
-                        (h) => { },
+                        null,
+                        null,
                         (h) => () =>
                         {
                             SetAnchor(Top, h.window);
@@ -1928,7 +1938,8 @@ public class Blueprint
                 AddHeaderRegion(() =>
                 {
                     AddSmallButton("Element" + element + "Rousing",
-                        (h) => { },
+                        null,
+                        null,
                         (h) => () =>
                         {
                             SetAnchor(Top, h.window);
@@ -1953,7 +1964,8 @@ public class Blueprint
                     var value = Board.board.enemy.resources.ToList().Find(x => x.Key == element).Value;
                     AddLine(value + "", value == 0 ? "DarkGray" : (value < Board.board.enemy.MaxResource(element) ? "Gray" : "Green"));
                     AddSmallButton("Element" + elements2[elements1.IndexOf(element)] + "Rousing",
-                        (h) => { },
+                        null,
+                        null,
                         (h) => () =>
                         {
                             SetAnchor(Top, h.window);
@@ -4806,7 +4818,7 @@ public class Blueprint
                         for (var j = 0; j < setItems.Count && j < 9; j++)
                         {
                             var J = j;
-                            AddSmallButton(setItems[J].icon, (h) => { }, (h) => () =>
+                            AddSmallButton(setItems[J].icon, null, null, (h) => () =>
                             {
                                 SetAnchor(Center);
                                 PrintItemTooltip(setItems[J]);

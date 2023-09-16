@@ -123,6 +123,7 @@ public class SiteComplex : Site
         {
             AddSmallButton("SiteComplex",
             (h) => { QueueSiteOpen("Complex"); },
+            null,
             (h) => () =>
             {
                 SetAnchor(TopRight, h.window);
