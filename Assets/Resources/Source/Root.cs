@@ -25,7 +25,7 @@ public static class Root
     public static string prefix = "";
 
     public static MapGrid grid;
-    public static List<Transform> cameraBoundaryPoints;
+    public static List<Vector2> cameraBoundaryPoints;
     public static List<FallingElement> fallingElements;
     public static List<FlyingMissile> flyingMissiles;
     public static bool canUnlockScreen;
@@ -187,16 +187,16 @@ public static class Root
         return (float)Math.Pow(keyStack / 150.0 + 1.0, Math.E);
     }
 
-#endregion
+    #endregion
 
     #region Windows
 
-    public static Window SpawnWindowBlueprint(string blueprintTitle, bool resetSearch = true)
+    public static Window SpawnWindowBlueprint(string blueprintTitle, bool resetSearch = true, List<int> paginations = null)
     {
-        return SpawnWindowBlueprint(windowBlueprints.Find(x => x.title == blueprintTitle), resetSearch);
+        return SpawnWindowBlueprint(windowBlueprints.Find(x => x.title == blueprintTitle), resetSearch, paginations);
     }
 
-    public static Window SpawnWindowBlueprint(Blueprint blueprint, bool resetSearch = true)
+    public static Window SpawnWindowBlueprint(Blueprint blueprint, bool resetSearch = true, List<int> paginations = null)
     {
         if (blueprint == null) return null;
         if (CDesktop.windows.Exists(x => x.title == blueprint.title)) return null;
@@ -204,7 +204,7 @@ public static class Root
         blueprint.actions();
         if (resetSearch && CDesktop.LBWindow.regionGroups.Any(x => x.maxPaginationReq != null))
             String.search.Set("");
-        CDesktop.LBWindow.Rebuild();
+        CDesktop.LBWindow.Rebuild(paginations);
         CDesktop.LBWindow.ResetPosition();
         return CDesktop.LBWindow;
     }

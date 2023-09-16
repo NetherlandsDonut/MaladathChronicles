@@ -33,10 +33,11 @@ public class Desktop : MonoBehaviour
         cameraDestination = new Vector2();
     }
 
-    public void RespawnAll()
+    public void RespawnAll(bool onlyThoseWithMatchingInput = false)
     {
         for (int i = windows.Count - 1; i >= 0; i--)
-            windows[i].Respawn();
+            if (!onlyThoseWithMatchingInput || windows[i].regionGroups.Any(x => x.regions.Any(y => y.inputLine != null && y.inputLine.text.text == inputDestination)))
+                windows[i].Respawn();
     }
 
     public void RebuildAll()
@@ -85,8 +86,12 @@ public class Desktop : MonoBehaviour
                 if (Input.GetMouseButtonDown(2))
                     mouseOver.MouseDown("Middle");
             }
-            else if (Input.GetMouseButtonUp(0) || Input.GetMouseButtonUp(1) || Input.GetMouseButtonUp(2))
-                mouseOver.MouseUp();
+            else if (Input.GetMouseButtonUp(0))
+                mouseOver.MouseUp("Left");
+            else if (Input.GetMouseButtonUp(1))
+                mouseOver.MouseUp("Right");
+            else if (Input.GetMouseButtonUp(2))
+                mouseOver.MouseUp("Middle");
         }
         if (title == "GameSimulation" && Input.GetKeyDown(KeyCode.Escape))
         {
@@ -135,7 +140,8 @@ public class Desktop : MonoBehaviour
                 var site = loadSites[0];
                 loadingScreenObjectLoad++;
                 var spawn = SpawnWindowBlueprint(site);
-                if (spawn != null) cameraBoundaryPoints.Add(spawn.transform);
+                if (spawn != null && !cameraBoundaryPoints.Contains(spawn.transform.position))
+                    cameraBoundaryPoints.Add(spawn.transform.position);
                 loadSites.RemoveAt(0);
                 loadingBar[1].transform.localScale = new Vector3((int)(357.0 / loadingScreenObjectLoadAim * loadingScreenObjectLoad), 1, 1);
                 if (loadSites.Count == 0)
@@ -246,39 +252,38 @@ public class Desktop : MonoBehaviour
                         tooltip.SpawnTooltip();
                 }
                 if (heldKeyTime > 0) heldKeyTime -= Time.deltaTime;
-                if (inputLine != null)
+                if (inputLineName != null)
                 {
-                    var temp = inputLine;
                     var didSomething = false;
-                    var length = inputLine.text.text.Value().Length;
+                    var length = inputDestination.Value().Length;
                     if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Return))
                     {
-                        inputLine = null;
-                        cursor.SetCursor(CursorType.Default);
+                        inputLineName = null;
                         UnityEngine.Cursor.lockState = CursorLockMode.None;
+                        cursor.SetCursor(CursorType.Default);
                         if (Input.GetKeyDown(KeyCode.Return))
                         {
-                            temp.text.text.Confirm();
-                            ExecuteChange(temp.text.text);
+                            inputDestination.Confirm();
+                            ExecuteChange(inputDestination);
                             didSomething = true;
                         }
                         else
                         {
-                            temp.text.text.Reset();
-                            ExecuteQuit(temp.text.text);
+                            inputDestination.Reset();
+                            ExecuteQuit(inputDestination);
                             didSomething = true;
                         }
                     }
                     else if (Input.GetKeyDown(KeyCode.Delete) && inputLineMarker < length)
                     {
                         heldKeyTime = 0.4f;
-                        temp.text.text.RemoveNextOne(inputLineMarker);
+                        inputDestination.RemoveNextOne(inputLineMarker);
                         didSomething = true;
                     }
                     else if (Input.GetKey(KeyCode.Delete) && inputLineMarker < length && heldKeyTime <= 0)
                     {
                         heldKeyTime = 0.0245f;
-                        temp.text.text.RemoveNextOne(inputLineMarker);
+                        inputDestination.RemoveNextOne(inputLineMarker);
                         didSomething = true;
                     }
                     else if (Input.GetKeyDown(KeyCode.LeftArrow) && inputLineMarker > 0)
@@ -307,14 +312,14 @@ public class Desktop : MonoBehaviour
                     }
                     else if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.LeftControl))
                     {
-                        inputLine.text.text.Clear();
+                        inputDestination.Clear();
                         inputLineMarker = 0;
                         didSomething = true;
                     }
                     else if (Input.GetKey(KeyCode.V) && Input.GetKey(KeyCode.LeftControl))
                     {
-                        inputLine.text.text.Paste();
-                        inputLineMarker = inputLine.text.text.Value().Length;
+                        inputDestination.Paste();
+                        inputLineMarker = inputDestination.Value().Length;
                         didSomething = true;
                     }
                     else foreach (char c in Input.inputString)
@@ -323,22 +328,22 @@ public class Desktop : MonoBehaviour
                         if (c == '\b')
                         {
                             if (inputLineMarker > 0 && length > 0)
-                                temp.text.text.RemovePreviousOne(inputLineMarker--);
+                                inputDestination.RemovePreviousOne(inputLineMarker--);
                         }
-                        else if (c != '\n' && c != '\r' && temp.CheckInput(c))
+                        else if (c != '\n' && c != '\r' && inputDestination.CheckInput(c))
                         {
-                            inputLine.text.text.Insert(inputLineMarker, temp.inputType == InputType.Capitals ? char.ToUpper(c) : c);
+                                inputDestination.Insert(inputLineMarker, inputDestination.inputType == InputType.Capitals ? char.ToUpper(c) : c);
                             inputLineMarker++;
                         }
-                        if (length == temp.text.text.Value().Length)
+                        if (length == inputDestination.Value().Length)
                             inputLineMarker = a;
                         didSomething = true;
                     }
                     if (didSomething)
                     {
-                        if (temp.text.text == String.search)
+                        if (inputDestination == String.search)
                         {
-                            var val = temp.text.text.Value().ToLower();
+                            var val = inputDestination.Value().ToLower();
                             if (windows.Exists(x => x.title == "ObjectManagerItems"))
                             {
                                 Item.itemsSearch = Item.items.FindAll(x => x.name.ToLower().Contains(val));
@@ -420,7 +425,7 @@ public class Desktop : MonoBehaviour
                                 Respawn("ObjectManagerAbilityIconList");
                             }
                         }
-                        temp.region.regionGroup.window.Respawn();
+                        RespawnAll(true);
                     }
                 }
                 else

@@ -15,23 +15,6 @@ public class InputLine : MonoBehaviour
     public InputType inputType;
     public string color;
 
-    public bool CheckInput(char letter)
-    {
-        switch (inputType)
-        {
-            case InputType.Letters:
-                return char.IsLetter(letter);
-            case InputType.Capitals:
-                return char.IsLetter(letter);
-            case InputType.Numbers:
-                return char.IsDigit(letter);
-            case InputType.Decimal:
-                return char.IsDigit(letter) || letter == ',' && !text.text.Value().Contains(',');
-            default:
-                return true;
-        }
-    }
-
     public void Initialise(Region region, String refText, InputType inputType, string color = "")
     {
         this.region = region;
@@ -46,25 +29,25 @@ public class InputLine : MonoBehaviour
 
     public void Activate()
     {
-        var desktop = text.inputLine.region.regionGroup.window.desktop;
         cursor.SetCursor(CursorType.None);
         UnityEngine.Cursor.lockState = CursorLockMode.Locked;
         inputLineMarker = 0;
-        inputLine = text.inputLine;
+        inputLineName = text.inputLine.name;
+        inputDestination = text.inputLine.text.text;
         region.regionGroup.window.Respawn();
     }
 
     public int Length() => font.Length(text.text.Value());
 
-    public static InputLine inputLine;
+    public static String inputDestination;
+    public static string inputLineName;
 
     public static void ExecuteQuit(String foo)
     {
         if (foo == promptConfirm)
-        {
-            if (CDesktop.windows.Exists(x => x.title == "ConfirmDeleteCharacter"))
-                CloseWindow("ConfirmDeleteCharacter");
-        }
+            CloseWindow("ConfirmDeleteCharacter");
+        else if (foo == consoleInput)
+            CloseWindow("Console");
     }
 
     public static void ExecuteChange(String foo)
@@ -437,7 +420,7 @@ public class InputLine : MonoBehaviour
         }
         else if (foo == consoleInput)
         {
-            CloseWindow(CDesktop.windows.Find(x => x.title == "Console"));
+            CloseWindow("Console");
             if (foo.Value() == "d")
             {
                 SpawnDesktopBlueprint("DevPanel");

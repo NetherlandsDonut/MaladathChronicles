@@ -97,31 +97,11 @@ public class Window : MonoBehaviour
         if (CDesktop != desktop || onlyWhenActive && !desktop.windows.Contains(this)) return;
         CDesktop.windows.FindAll(x => x.title == "Tooltip").ForEach(x => CloseWindow(x));
         var paginations = regionGroups.Select(x => x.pagination).ToList();
-        var inputFieldDestination = (-1, -1);
-        for (int i = 0; i < regionGroups.Count && inputFieldDestination.Item1 == -1; i++)
-            for (int j = 0; j < regionGroups[i].regions.Count && inputFieldDestination.Item1 == -1; j++)
-                if (regionGroups[i].regions[j].inputLine == inputLine)
-                    inputFieldDestination = (i, j);
         CloseWindow(this);
-        SpawnWindowBlueprint(title, false);
-        for (int i = 0; i < paginations.Count && i < CDesktop.LBWindow.regionGroups.Count; i++)
-        {
-            var temp = CDesktop.LBWindow.regionGroups[i];
-            temp.pagination = paginations[i];
-            if (temp.pagination >= temp.maxPagination())
-                temp.pagination = temp.maxPagination() - 1;
-        }
-        if (inputFieldDestination.Item1 != -1)
-        {
-            if (CDesktop.LBWindow.regionGroups.Count <= inputFieldDestination.Item1) return;
-            var group = CDesktop.LBWindow.regionGroups[inputFieldDestination.Item1];
-            if (group.regions.Count <= inputFieldDestination.Item2 || group.regions[inputFieldDestination.Item2].inputLine == null) return;
-            inputLine = group.regions[inputFieldDestination.Item2].inputLine;
-        }
-        Rebuild();
+        SpawnWindowBlueprint(title, false, paginations);
     }
 
-    public void Rebuild()
+    public void Rebuild(List<int> paginations)
     {
         CDesktop.LBWindow = this;
         xOffset = 0;
@@ -223,246 +203,250 @@ public class Window : MonoBehaviour
                 shadows[7].transform.localPosition = new Vector3(Width() + 2, -yOffset - 2, 0.9f);
             }
         if (masked) GetComponentsInChildren<SpriteRenderer>().ToList().ForEach(x => x.maskInteraction = SpriteMaskInteraction.VisibleInsideMask);
-    }
 
-    public void BuildRegionGroup(RegionGroup regionGroup)
-    {
-        int extendOffset = 0;
-        var paginations = regionGroups.Select(x => x.pagination).ToList();
-        CDesktop.LBWindow.LBRegionGroup = regionGroup;
-
-        #region CREATING REGIONS
-
-        //Draw all the regions
-        foreach (var region in regionGroup.regions)
+        void BuildRegionGroup(RegionGroup regionGroup)
         {
-            regionGroup.LBRegion = region;
-            region.draw();
-            if (regionGroup == headerGroup)
+            int extendOffset = 0;
+            CDesktop.LBWindow.LBRegionGroup = regionGroup;
+            int index = CDesktop.LBWindow.regionGroups.IndexOf(regionGroup);
+            if (paginations?.Count > index)
+                regionGroup.pagination = paginations[index];
+
+            #region CREATING REGIONS
+
+            //Draw all the regions
+            foreach (var region in regionGroup.regions)
             {
-                var temp = xOffset - headerGroup.AutoWidth();
-                if (region.xExtend < temp) region.xExtend = temp;
-            }
-        }
-
-        #endregion
-
-        #region DRAWING REGION CONTENTS
-
-        //Draws region lines and text
-        foreach (var region in regionGroup.regions)
-            foreach (var line in region.lines)
-            {
-                var objectOffset = (region.checkbox != null ? 15 : 0) + region.bigButtons.Count * 38;
-                int length = 0;
-                foreach (var text in line.texts)
+                regionGroup.LBRegion = region;
+                region.draw();
+                if (regionGroup == headerGroup)
                 {
-                    text.Erase();
-                    var split = new List<string>();
-                    foreach (var character in text.text)
-                        if (split.Count > 0 && split[split.Count - 1] == " ")
-                            split[split.Count - 1] += character;
-                        else split.Add(character + "");
-                    foreach (var part in split)
-                        if (regionGroup.setWidth == 0)
-                            foreach (var character in part)
-                                length = text.SpawnCharacter(character, length);
-                        else if (textPaddingLeft + 6 + (line.align == "Right" ? 2 : 0) + length + Font.font.Length(part) + (split.Last() == part ? 0 : Font.font.Length(textWrapEnding)) + objectOffset < regionGroup.setWidth - region.smallButtons.Count * 19)
-                            foreach (var character in part)
-                                length = text.SpawnCharacter(character, length);
-                        else
-                        {
-                            for (int i = 0; i < 3; i++)
-                                length = text.SpawnCharacter(textWrapEnding[i], length);
-                            break;
-                        }
+                    var temp = xOffset - headerGroup.AutoWidth();
+                    if (region.xExtend < temp) region.xExtend = temp;
                 }
-                if (line.align == "Left")
-                    line.transform.localPosition = new Vector3(2 + textPaddingLeft + objectOffset, -region.currentHeight - 3, 0);
-                else if (line.align == "Center")
-                    line.transform.localPosition = new Vector3(2 + (region.regionGroup.AutoWidth() / 2) - (length / 2), -region.currentHeight - 3, 0);
-                else if (line.align == "Right")
-                    line.transform.localPosition = new Vector3(-textPaddingLeft + region.regionGroup.AutoWidth() - (region.smallButtons.Count * 19) - length, -region.currentHeight - 3, 0);
-                region.currentHeight += 15;
             }
 
-        //Draws small buttons for single lined regions
-        foreach (var region in regionGroup.regions)
-            foreach (var smallButton in region.smallButtons)
-            {
-                if (region.currentHeight < 15) region.currentHeight = 15;
-                if (smallButton.buttonType == null) continue;
-                var load = Resources.Load<Sprite>("Sprites/Building/Buttons/" + smallButton.buttonType);
-                smallButton.GetComponent<SpriteRenderer>().sprite = load == null ? Resources.Load<Sprite>("Sprites/Building/Buttons/OtherEmpty") : load;
-                smallButton.GetComponent<SpriteRenderer>().sortingLayerName = layer;
-                smallButton.transform.localPosition = new Vector3(regionGroup.AutoWidth() - 10 + region.xExtend + 1.5f - 19 * region.smallButtons.IndexOf(smallButton), -10.5f, 0.1f);
-                if (smallButton.gameObject.GetComponent<BoxCollider2D>() == null)
-                    smallButton.gameObject.AddComponent<BoxCollider2D>();
-                if (smallButton.gameObject.GetComponent<Highlightable>() == null)
-                    smallButton.gameObject.AddComponent<Highlightable>().Initialise(region, null, null, null);
-                if (smallButton.frame == null)
-                    smallButton.frame = new GameObject("ButtonFrame", typeof(SpriteRenderer));
-                smallButton.frame.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/Borders/ButtonFrame");
-                smallButton.frame.GetComponent<SpriteRenderer>().sortingLayerName = layer;
-                smallButton.frame.transform.parent = smallButton.transform;
-                smallButton.frame.transform.localPosition = new Vector3();
-                if (disabledCollisions) Destroy(smallButton.GetComponent<BoxCollider2D>());
-            }
+            #endregion
 
-        //Draws big buttons for single lined regions
-        foreach (var region in regionGroup.regions)
-        {
-            if (region.bigButtons.Count > 0 && region.currentHeight < 34) region.currentHeight = 34;
-            foreach (var bigButton in region.bigButtons)
-            {
-                if (bigButton.buttonType == null) continue;
-                var load = Resources.Load<Sprite>("Sprites/Building/BigButtons/" + bigButton.buttonType);
-                bigButton.GetComponent<SpriteRenderer>().sprite = load == null ? Resources.Load<Sprite>("Sprites/Building/BigButtons/OtherEmpty") : load;
-                bigButton.GetComponent<SpriteRenderer>().sortingLayerName = layer;
-                bigButton.transform.localPosition = new Vector3(20 + 38 * region.bigButtons.IndexOf(bigButton), -20f, 0.1f);
-                if (bigButton.gameObject.GetComponent<BoxCollider2D>() == null)
-                    bigButton.gameObject.AddComponent<BoxCollider2D>();
-                if (bigButton.gameObject.GetComponent<Highlightable>() == null)
-                    bigButton.gameObject.AddComponent<Highlightable>().Initialise(region, null, null, null);
-                if (bigButton.frame == null)
-                    bigButton.frame = new GameObject("BigButtonFrame", typeof(SpriteRenderer));
-                bigButton.frame.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/Borders/BigButtonFrame");
-                bigButton.frame.GetComponent<SpriteRenderer>().sortingLayerName = layer;
-                bigButton.frame.transform.parent = bigButton.transform;
-                bigButton.frame.transform.localPosition = new Vector3();
-                if (disabledCollisions) Destroy(bigButton.GetComponent<BoxCollider2D>());
-            }
-        }
+            #region DRAWING REGION CONTENTS
 
-        //Draws checkbox for the region
-        foreach (var region in regionGroup.regions)
-            if (region.checkbox != null)
-            {
-                region.checkbox.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/Checkboxes/" + (region.backgroundType == RedButton || region.backgroundType == Button ? "Dark" : "Bright") + (region.checkbox.value.Value() ? "On" : "Off"));
-                region.checkbox.GetComponent<SpriteRenderer>().sortingLayerName = layer;
-                region.checkbox.transform.localPosition = new Vector3(10.5f, -10.5f, 0.1f);
-                if (region.checkbox.gameObject.GetComponent<BoxCollider2D>() == null)
-                    region.checkbox.gameObject.AddComponent<BoxCollider2D>();
-                if (region.checkbox.gameObject.GetComponent<Highlightable>() == null && region.backgroundType != RedButton && region.backgroundType != Button)
-                    region.checkbox.gameObject.AddComponent<Highlightable>().Initialise(region, null, null, null);
-                if (region.checkbox.frame == null)
-                    region.checkbox.frame = new GameObject("CheckboxFrame", typeof(SpriteRenderer));
-                region.checkbox.frame.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/Borders/CheckboxFrame");
-                region.checkbox.frame.GetComponent<SpriteRenderer>().sortingLayerName = layer;
-                region.checkbox.frame.transform.parent = region.checkbox.transform;
-                region.checkbox.frame.transform.localPosition = new Vector3();
-                if (disabledCollisions) Destroy(region.checkbox.GetComponent<BoxCollider2D>());
-            }
-
-        //Draws inputLines for the regions
-        foreach (var region in regionGroup.regions)
-            if (region.inputLine != null)
-            {
-                if (region.lines.Count > 0)
-                    region.inputLine.transform.localPosition = new Vector3(11 + region.lines[0].Length(), -region.currentHeight + 12, 0);
-                else
+            //Draws region lines and text
+            foreach (var region in regionGroup.regions)
+                foreach (var line in region.lines)
                 {
-                    region.inputLine.transform.localPosition = new Vector3(2 + textPaddingLeft, -region.currentHeight - 3, 0);
+                    var objectOffset = (region.checkbox != null ? 15 : 0) + region.bigButtons.Count * 38;
+                    int length = 0;
+                    foreach (var text in line.texts)
+                    {
+                        text.Erase();
+                        var split = new List<string>();
+                        foreach (var character in text.text)
+                            if (split.Count > 0 && split[split.Count - 1] == " ")
+                                split[split.Count - 1] += character;
+                            else split.Add(character + "");
+                        foreach (var part in split)
+                            if (regionGroup.setWidth == 0)
+                                foreach (var character in part)
+                                    length = text.SpawnCharacter(character, length);
+                            else if (textPaddingLeft + 6 + (line.align == "Right" ? 2 : 0) + length + Font.font.Length(part) + (split.Last() == part ? 0 : Font.font.Length(textWrapEnding)) + objectOffset < regionGroup.setWidth - region.smallButtons.Count * 19)
+                                foreach (var character in part)
+                                    length = text.SpawnCharacter(character, length);
+                            else
+                            {
+                                for (int i = 0; i < 3; i++)
+                                    length = text.SpawnCharacter(textWrapEnding[i], length);
+                                break;
+                            }
+                    }
+                    if (line.align == "Left")
+                        line.transform.localPosition = new Vector3(2 + textPaddingLeft + objectOffset, -region.currentHeight - 3, 0);
+                    else if (line.align == "Center")
+                        line.transform.localPosition = new Vector3(2 + (region.regionGroup.AutoWidth() / 2) - (length / 2), -region.currentHeight - 3, 0);
+                    else if (line.align == "Right")
+                        line.transform.localPosition = new Vector3(-textPaddingLeft + region.regionGroup.AutoWidth() - (region.smallButtons.Count * 19) - length, -region.currentHeight - 3, 0);
                     region.currentHeight += 15;
                 }
-                int length = 0;
-                region.inputLine.text.Erase();
-                var print = region.inputLine.text.text.Value();
-                print += " ";
-                foreach (var character in print)
-                    length = region.inputLine.text.SpawnCharacter(character, length, region.inputLine.color);
-            }
 
-        #endregion
+            //Draws small buttons for single lined regions
+            foreach (var region in regionGroup.regions)
+                foreach (var smallButton in region.smallButtons)
+                {
+                    if (region.currentHeight < 15) region.currentHeight = 15;
+                    if (smallButton.buttonType == null) continue;
+                    var load = Resources.Load<Sprite>("Sprites/Building/Buttons/" + smallButton.buttonType);
+                    smallButton.GetComponent<SpriteRenderer>().sprite = load == null ? Resources.Load<Sprite>("Sprites/Building/Buttons/OtherEmpty") : load;
+                    smallButton.GetComponent<SpriteRenderer>().sortingLayerName = layer;
+                    smallButton.transform.localPosition = new Vector3(regionGroup.AutoWidth() - 10 + region.xExtend + 1.5f - 19 * region.smallButtons.IndexOf(smallButton), -10.5f, 0.1f);
+                    if (smallButton.gameObject.GetComponent<BoxCollider2D>() == null)
+                        smallButton.gameObject.AddComponent<BoxCollider2D>();
+                    if (smallButton.gameObject.GetComponent<Highlightable>() == null)
+                        smallButton.gameObject.AddComponent<Highlightable>().Initialise(region, null, null, null);
+                    if (smallButton.frame == null)
+                        smallButton.frame = new GameObject("ButtonFrame", typeof(SpriteRenderer));
+                    smallButton.frame.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/Borders/ButtonFrame");
+                    smallButton.frame.GetComponent<SpriteRenderer>().sortingLayerName = layer;
+                    smallButton.frame.transform.parent = smallButton.transform;
+                    smallButton.frame.transform.localPosition = new Vector3();
+                    if (disabledCollisions) Destroy(smallButton.GetComponent<BoxCollider2D>());
+                }
 
-        #region POSITIONING & EXPANDING
-
-        //Position all regions and marks which ones need to be extended
-        foreach (var region in regionGroup.regions)
-        {
-            region.transform.localPosition = new Vector3(0, -regionGroup.currentHeight - extendOffset, 0);
-            if (regionGroup == headerGroup)
-            {
-                if (regionGroup.stretchRegion == region && regionGroup.setHeight != 0)
-                    region.yExtend = regionGroup.setHeight - regionGroup.PlannedHeight() + 10;
-            }
-            else if (regionGroup.PlannedHeight() < regionGroup.setHeight)
-                if (regionGroup.stretchRegion == region || regionGroup.stretchRegion == null && region == regionGroup.regions.Last())
-                    region.yExtend = regionGroup.setHeight - regionGroup.PlannedHeight();
-            if (region.yExtend > 0) extendOffset += region.yExtend;
-            regionGroup.currentHeight += 4 + region.currentHeight;
-        }
-
-        #endregion
-
-        #region BORDERS & BACKGROUNDS
-
-        //Draws region backgrounds
-        if (!disabledGeneralSprites)
+            //Draws big buttons for single lined regions
             foreach (var region in regionGroup.regions)
             {
-                region.background.transform.parent = region.transform;
-                region.background.GetComponent<RegionBackground>().Initialise(region);
-                region.background.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/Backgrounds/" + region.backgroundType);
-                region.background.GetComponent<SpriteRenderer>().sortingLayerName = layer;
-                region.background.transform.localScale = new Vector3(regionGroup.AutoWidth() - 2 + region.xExtend, region.AutoHeight() + 2 + region.yExtend, 1);
-                region.background.transform.localPosition = new Vector3(2, -2, 0.8f);
-                if (region.backgroundType == Button || region.backgroundType == RedButton)
+                if (region.bigButtons.Count > 0 && region.currentHeight < 34) region.currentHeight = 34;
+                foreach (var bigButton in region.bigButtons)
                 {
-                    if (region.background.GetComponent<BoxCollider2D>() == null)
-                        region.background.AddComponent<BoxCollider2D>();
-                    region.background.GetComponent<BoxCollider2D>().enabled = !disabledCollisions;
+                    if (bigButton.buttonType == null) continue;
+                    var load = Resources.Load<Sprite>("Sprites/Building/BigButtons/" + bigButton.buttonType);
+                    bigButton.GetComponent<SpriteRenderer>().sprite = load == null ? Resources.Load<Sprite>("Sprites/Building/BigButtons/OtherEmpty") : load;
+                    bigButton.GetComponent<SpriteRenderer>().sortingLayerName = layer;
+                    bigButton.transform.localPosition = new Vector3(20 + 38 * region.bigButtons.IndexOf(bigButton), -20f, 0.1f);
+                    if (bigButton.gameObject.GetComponent<BoxCollider2D>() == null)
+                        bigButton.gameObject.AddComponent<BoxCollider2D>();
+                    if (bigButton.gameObject.GetComponent<Highlightable>() == null)
+                        bigButton.gameObject.AddComponent<Highlightable>().Initialise(region, null, null, null);
+                    if (bigButton.frame == null)
+                        bigButton.frame = new GameObject("BigButtonFrame", typeof(SpriteRenderer));
+                    bigButton.frame.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/Borders/BigButtonFrame");
+                    bigButton.frame.GetComponent<SpriteRenderer>().sortingLayerName = layer;
+                    bigButton.frame.transform.parent = bigButton.transform;
+                    bigButton.frame.transform.localPosition = new Vector3();
+                    if (disabledCollisions) Destroy(bigButton.GetComponent<BoxCollider2D>());
                 }
             }
 
-        //Draws region borders
-        if (!disabledGeneralSprites)
+            //Draws checkbox for the region
+            foreach (var region in regionGroup.regions)
+                if (region.checkbox != null)
+                {
+                    region.checkbox.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/Checkboxes/" + (region.backgroundType == RedButton || region.backgroundType == Button ? "Dark" : "Bright") + (region.checkbox.value.Value() ? "On" : "Off"));
+                    region.checkbox.GetComponent<SpriteRenderer>().sortingLayerName = layer;
+                    region.checkbox.transform.localPosition = new Vector3(10.5f, -10.5f, 0.1f);
+                    if (region.checkbox.gameObject.GetComponent<BoxCollider2D>() == null)
+                        region.checkbox.gameObject.AddComponent<BoxCollider2D>();
+                    if (region.checkbox.gameObject.GetComponent<Highlightable>() == null && region.backgroundType != RedButton && region.backgroundType != Button)
+                        region.checkbox.gameObject.AddComponent<Highlightable>().Initialise(region, null, null, null);
+                    if (region.checkbox.frame == null)
+                        region.checkbox.frame = new GameObject("CheckboxFrame", typeof(SpriteRenderer));
+                    region.checkbox.frame.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/Borders/CheckboxFrame");
+                    region.checkbox.frame.GetComponent<SpriteRenderer>().sortingLayerName = layer;
+                    region.checkbox.frame.transform.parent = region.checkbox.transform;
+                    region.checkbox.frame.transform.localPosition = new Vector3();
+                    if (disabledCollisions) Destroy(region.checkbox.GetComponent<BoxCollider2D>());
+                }
+
+            //Draws inputLines for the regions
+            foreach (var region in regionGroup.regions)
+                if (region.inputLine != null)
+                {
+                    if (region.lines.Count > 0)
+                        region.inputLine.transform.localPosition = new Vector3(11 + region.lines[0].Length(), -region.currentHeight + 12, 0);
+                    else
+                    {
+                        region.inputLine.transform.localPosition = new Vector3(2 + textPaddingLeft, -region.currentHeight - 3, 0);
+                        region.currentHeight += 15;
+                    }
+                    int length = 0;
+                    region.inputLine.text.Erase();
+                    var print = region.inputLine.text.text.Value();
+                    if (inputDestination == region.inputLine.text.text)
+                        print = print.Insert(inputLineMarker > print.Length ? print.Length : inputLineMarker, markerCharacter);
+                    else print += " ";
+                    foreach (var character in print)
+                        length = region.inputLine.text.SpawnCharacter(character, length, region.inputLine.color);
+                }
+
+            #endregion
+
+            #region POSITIONING & EXPANDING
+
+            //Position all regions and marks which ones need to be extended
             foreach (var region in regionGroup.regions)
             {
-                for (int i = 0; i < 4; i++)
-                    if (region.borders[i] == null)
-                    {
-                        region.borders[i] = new GameObject("Border", typeof(SpriteRenderer));
-                        region.borders[i].transform.parent = region.transform;
-                        region.borders[i].GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/Borders/RegionBorder");
-                        region.borders[i].GetComponent<SpriteRenderer>().sortingLayerName = layer;
-                    }
-                region.borders[0].transform.localScale = region.borders[3].transform.localScale = new Vector3(regionGroup.AutoWidth() + 2 + region.xExtend, 2, 2);
-                region.borders[1].transform.localScale = region.borders[2].transform.localScale = new Vector3(2, region.AutoHeight() + 4 + region.yExtend, 2);
-                region.borders[0].transform.localPosition = region.borders[1].transform.localPosition = new Vector3(0, 0, 0.5f);
-                region.borders[2].transform.localPosition = new Vector3(regionGroup.AutoWidth() + region.xExtend, 0, 0.5f);
-                region.borders[3].transform.localPosition = new Vector3(0, -region.AutoHeight() - 4 - region.yExtend, 0.5f);
+                region.transform.localPosition = new Vector3(0, -regionGroup.currentHeight - extendOffset, 0);
+                if (regionGroup == headerGroup)
+                {
+                    if (regionGroup.stretchRegion == region && regionGroup.setHeight != 0)
+                        region.yExtend = regionGroup.setHeight - regionGroup.PlannedHeight() + 10;
+                }
+                else if (regionGroup.PlannedHeight() < regionGroup.setHeight)
+                    if (regionGroup.stretchRegion == region || regionGroup.stretchRegion == null && region == regionGroup.regions.Last())
+                        region.yExtend = regionGroup.setHeight - regionGroup.PlannedHeight();
+                if (region.yExtend > 0) extendOffset += region.yExtend;
+                regionGroup.currentHeight += 4 + region.currentHeight;
             }
 
-        #endregion
+            #endregion
 
-        #region TOOLTIPS
+            #region BORDERS & BACKGROUNDS
 
-        //Asigning tooltips for regions
-        foreach (var regionHandle in regionGroup.regions.Select(x => x.GetComponent<TooltipHandle>()).ToList().FindAll(x => x != null))
-            regionHandle.ApplyTooltip();
+            //Draws region backgrounds
+            if (!disabledGeneralSprites)
+                foreach (var region in regionGroup.regions)
+                {
+                    region.background.transform.parent = region.transform;
+                    region.background.GetComponent<RegionBackground>().Initialise(region);
+                    region.background.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/Backgrounds/" + region.backgroundType);
+                    region.background.GetComponent<SpriteRenderer>().sortingLayerName = layer;
+                    region.background.transform.localScale = new Vector3(regionGroup.AutoWidth() - 2 + region.xExtend, region.AutoHeight() + 2 + region.yExtend, 1);
+                    region.background.transform.localPosition = new Vector3(2, -2, 0.8f);
+                    if (region.backgroundType == Button || region.backgroundType == RedButton)
+                    {
+                        if (region.background.GetComponent<BoxCollider2D>() == null)
+                            region.background.AddComponent<BoxCollider2D>();
+                        region.background.GetComponent<BoxCollider2D>().enabled = !disabledCollisions;
+                    }
+                }
 
-        //Asigning tooltips for small buttons
-        foreach (var region in regionGroup.regions)
-            if (region.smallButtons.Count > 0)
-                foreach (var smallButtonHandle in region.smallButtons.Select(x => x.GetComponent<TooltipHandle>()).ToList().FindAll(x => x != null))
-                    smallButtonHandle.ApplyTooltip();
+            //Draws region borders
+            if (!disabledGeneralSprites)
+                foreach (var region in regionGroup.regions)
+                {
+                    for (int i = 0; i < 4; i++)
+                        if (region.borders[i] == null)
+                        {
+                            region.borders[i] = new GameObject("Border", typeof(SpriteRenderer));
+                            region.borders[i].transform.parent = region.transform;
+                            region.borders[i].GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/Borders/RegionBorder");
+                            region.borders[i].GetComponent<SpriteRenderer>().sortingLayerName = layer;
+                        }
+                    region.borders[0].transform.localScale = region.borders[3].transform.localScale = new Vector3(regionGroup.AutoWidth() + 2 + region.xExtend, 2, 2);
+                    region.borders[1].transform.localScale = region.borders[2].transform.localScale = new Vector3(2, region.AutoHeight() + 4 + region.yExtend, 2);
+                    region.borders[0].transform.localPosition = region.borders[1].transform.localPosition = new Vector3(0, 0, 0.5f);
+                    region.borders[2].transform.localPosition = new Vector3(regionGroup.AutoWidth() + region.xExtend, 0, 0.5f);
+                    region.borders[3].transform.localPosition = new Vector3(0, -region.AutoHeight() - 4 - region.yExtend, 0.5f);
+                }
 
-        //Asigning tooltips for big buttons
-        foreach (var region in regionGroup.regions)
-            if (region.bigButtons.Count > 0)
-                foreach (var bigButtonHandle in region.bigButtons.Select(x => x.GetComponent<TooltipHandle>()).ToList().FindAll(x => x != null))
-                    bigButtonHandle.ApplyTooltip();
+            #endregion
 
-        //Asigning tooltips for checkboxes
-        foreach (var region in regionGroup.regions)
-            if (region.checkbox != null && region.checkbox.GetComponent<TooltipHandle>() != null)
-                region.checkbox.GetComponent<TooltipHandle>().ApplyTooltip();
+            #region TOOLTIPS
 
-        #endregion
+            //Asigning tooltips for regions
+            foreach (var regionHandle in regionGroup.regions.Select(x => x.GetComponent<TooltipHandle>()).ToList().FindAll(x => x != null))
+                regionHandle.ApplyTooltip();
 
-        regionGroup.currentHeight += extendOffset;
-        if (headerGroup != regionGroup)
-            xOffset += regionGroup.AutoWidth();
+            //Asigning tooltips for small buttons
+            foreach (var region in regionGroup.regions)
+                if (region.smallButtons.Count > 0)
+                    foreach (var smallButtonHandle in region.smallButtons.Select(x => x.GetComponent<TooltipHandle>()).ToList().FindAll(x => x != null))
+                        smallButtonHandle.ApplyTooltip();
+
+            //Asigning tooltips for big buttons
+            foreach (var region in regionGroup.regions)
+                if (region.bigButtons.Count > 0)
+                    foreach (var bigButtonHandle in region.bigButtons.Select(x => x.GetComponent<TooltipHandle>()).ToList().FindAll(x => x != null))
+                        bigButtonHandle.ApplyTooltip();
+
+            //Asigning tooltips for checkboxes
+            foreach (var region in regionGroup.regions)
+                if (region.checkbox != null && region.checkbox.GetComponent<TooltipHandle>() != null)
+                    region.checkbox.GetComponent<TooltipHandle>().ApplyTooltip();
+
+            #endregion
+
+            regionGroup.currentHeight += extendOffset;
+            if (headerGroup != regionGroup)
+                xOffset += regionGroup.AutoWidth();
+        }
     }
 }

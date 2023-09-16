@@ -6,7 +6,6 @@ using static InputLine;
 
 public class InputCharacter : MonoBehaviour
 {
-    //Parent
     public InputText inputText;
 
     public void Initialise(InputText inputText)
@@ -16,12 +15,11 @@ public class InputCharacter : MonoBehaviour
 
     public void OnMouseUp()
     {
-        var desktop = inputText.inputLine.region.regionGroup.window.desktop;
         var newMarker = inputText.characters.IndexOf(gameObject);
         cursor.SetCursor(CursorType.None);
         UnityEngine.Cursor.lockState = CursorLockMode.Locked;
-        inputLineMarker = newMarker > inputLineMarker && inputLine != null ? newMarker - 1 : newMarker;
-        inputLine = inputText.inputLine;
-        desktop.windows.ForEach(x => x.Respawn());
+        inputLineMarker = newMarker > inputLineMarker ? newMarker - 1 : newMarker;
+        inputLineName = inputText.inputLine.name;
+        inputText.inputLine.region.regionGroup.window.Respawn();
     }
 }

@@ -50,11 +50,11 @@ public class MapGrid : MonoBehaviour
     public static void EnforceBoundary(int detectionRange = 700, int maxDistance = 200, float harshness = 0.001f)
     {
         var cameraDestinationScaled = CDesktop.cameraDestination * 19 + new Vector2(333, -183);
-        var nearbySites = cameraBoundaryPoints.Select(x => (x.position, Vector2.Distance(new Vector2(x.position.x, x.position.y), cameraDestinationScaled))).ToList().FindAll(x => x.Item2 < detectionRange).OrderBy(x => x.Item2).ToList();
+        var nearbySites = cameraBoundaryPoints.Select(x => (x, Vector2.Distance(new Vector2(x.x, x.y), cameraDestinationScaled))).ToList().FindAll(x => x.Item2 < detectionRange).OrderBy(x => x.Item2).ToList();
         if (nearbySites.Count > 0)
         {
-            while (Vector2.Distance(new Vector2(nearbySites[0].position.x, nearbySites[0].position.y), cameraDestinationScaled) > maxDistance)
-                cameraDestinationScaled = Vector3.Lerp(cameraDestinationScaled, nearbySites[0].position, harshness);
+            while (Vector2.Distance(new Vector2(nearbySites[0].x.x, nearbySites[0].x.y), cameraDestinationScaled) > maxDistance)
+                cameraDestinationScaled = Vector3.Lerp(cameraDestinationScaled, nearbySites[0].x, harshness);
             CDesktop.cameraDestination = (cameraDestinationScaled - new Vector2(333, -183)) / 19;
         }
     }

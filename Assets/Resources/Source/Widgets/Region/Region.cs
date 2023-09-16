@@ -6,7 +6,6 @@ using UnityEngine;
 
 using static Root;
 using static Font;
-using static Sound;
 
 public class Region : MonoBehaviour
 {
@@ -20,7 +19,6 @@ public class Region : MonoBehaviour
     public List<LineSmallButton> smallButtons;
     public LineBigButton LBBigButton;
     public List<LineBigButton> bigButtons;
-    public bool resetInputFieldSet;
     public int currentHeight, xExtend, yExtend;
     public RegionBackgroundType backgroundType;
     public GameObject background;
@@ -59,7 +57,7 @@ public class Region : MonoBehaviour
         var bigButtonX = 38 * bigButtons.Count;
         var smallButtonX = 19 * smallButtons.Count;
         var checkboxX = checkbox != null ? 15 : 0;
-        var inputLineX = inputLine != null ? (inputLine.Length() > 0 ? inputLine.Length() : 0) + (inputLine == InputLine.inputLine ? font.Length(markerCharacter) : 0) : 0;
+        var inputLineX = inputLine != null ? (inputLine.Length() > 0 ? inputLine.Length() : 0)/* + (inputLine == InputLine.inputLine ? font.Length(markerCharacter) : 0)*/ : 0;
         return lineX + bigButtonX + smallButtonX + checkboxX + inputLineX;
     }
 }

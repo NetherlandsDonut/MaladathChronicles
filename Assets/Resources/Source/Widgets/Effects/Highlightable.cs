@@ -31,6 +31,7 @@ public class Highlightable : MonoBehaviour
 
     public void OnMouseEnter()
     {
+        if (cursor.IsNow("None")) return;
         SetMouseOver(this);
         if (pressedState == "None" && tooltip != null)
             CDesktop.SetTooltip(tooltip);
@@ -42,16 +43,19 @@ public class Highlightable : MonoBehaviour
 
     public void OnMouseExit()
     {
+        if (cursor.IsNow("None")) return;
         SetMouseOver(null);
         CloseWindow("Tooltip");
         CDesktop.tooltip = null;
-        cursor.SetCursor(Default);
+        if (cursor.IsNow("Click") || cursor.IsNow("Write"))
+            cursor.SetCursor(Default);
         render.color = new Color(1f, 1f, 1f);
         pressedState = "None";
     }
 
     public void MouseDown(string key)
     {
+        if (cursor.IsNow("None")) return;
         CloseWindow("Tooltip");
         CDesktop.tooltip = null;
         cursor.SetCursor(Click);
@@ -59,8 +63,10 @@ public class Highlightable : MonoBehaviour
         pressedState = key;
     }
 
-    public void MouseUp()
+    public void MouseUp(string key)
     {
+        if (cursor.IsNow("None")) return;
+        if (pressedState != key) return;
         cursor.SetCursor(Default);
         render.color = mouseOver == this ? new Color(0.9f, 0.9f, 0.9f) : new Color(1f, 1f, 1f);
         if (pressedState == "Left" && pressEvent != null)
@@ -74,6 +80,5 @@ public class Highlightable : MonoBehaviour
             rightPressEvent(this);
         }
         pressedState = "None";
-        window.Respawn(true);
     }
 }

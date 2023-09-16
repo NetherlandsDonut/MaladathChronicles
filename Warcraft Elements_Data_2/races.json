@@ -3038,7 +3038,7 @@
   {
     "name": "Thaurissan Spy",
     "kind": "Common",
-    "portrait": "PortraitChicken",
+    "portrait": "PortraitTroggDark",
     "vitality": 1.0,
     "abilities": []
   },

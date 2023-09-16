@@ -1087,7 +1087,7 @@ public class Blueprint
         new("InstanceLeftSide", () => {
             SetAnchor(TopLeft);
             AddRegionGroup();
-            SetRegionGroupWidth(175);
+            SetRegionGroupWidth(171);
             SetRegionGroupHeight(354);
             AddPaddingRegion(() =>
             {
@@ -1110,7 +1110,7 @@ public class Blueprint
         new("ComplexLeftSide", () => {
             SetAnchor(TopLeft);
             AddRegionGroup();
-            SetRegionGroupWidth(175);
+            SetRegionGroupWidth(171);
             SetRegionGroupHeight(354);
             AddPaddingRegion(() =>
             {
@@ -1121,7 +1121,7 @@ public class Blueprint
         new("TownLeftSide", () => {
             SetAnchor(TopLeft);
             AddRegionGroup();
-            SetRegionGroupWidth(175);
+            SetRegionGroupWidth(171);
             SetRegionGroupHeight(354);
             AddPaddingRegion(() =>
             {
@@ -6207,8 +6207,8 @@ public class Blueprint
             SpawnWindowBlueprint("TitleScreenMenu");
             AddHotkey(BackQuote, () =>
             {
-                SpawnWindowBlueprint("Console");
-                CDesktop.LBWindow.LBRegionGroup.LBRegion.inputLine.Activate();
+                if (SpawnWindowBlueprint("Console") != null)
+                    CDesktop.LBWindow.LBRegionGroup.LBRegion.inputLine.Activate();
             });
             AddHotkey(Escape, () =>
             {
