@@ -163,9 +163,9 @@ public class SiteComplex : Site
             }
             else
             {
-                CloseDesktop("ComplexEntrance");
+                CloseDesktop("Complex");
                 instance = instances.Find(x => x.name == site["SiteName"]);
-                SpawnDesktopBlueprint("InstanceEntrance");
+                SpawnDesktopBlueprint("Instance");
             }
         });
     }

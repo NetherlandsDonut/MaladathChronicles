@@ -11,6 +11,8 @@ public class Person
     }
     
     public List<string> itemsSold;
+
+    public static Person person;
 }
 
 public class PersonType

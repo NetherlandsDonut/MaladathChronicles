@@ -14,6 +14,7 @@ using static SaveGame;
 using static GameSettings;
 using static CursorRemote;
 using static SiteSpiritHealer;
+using static FlightPathGroup;
 using static Serialization;
 using static SiteInstance;
 using static SiteComplex;
@@ -26,6 +27,8 @@ public class Starter : MonoBehaviour
         //of the program such as list of desktops or cursor handle
         #region Initial Variables
 
+        //This variable stores random number generator for
+        //things such as damage / heal rolls or chance for effects to happen
         random = new System.Random();
 
         //This is the font that will be used
@@ -147,6 +150,8 @@ public class Starter : MonoBehaviour
         Faction.factions ??= new();
         Deserialize(ref spiritHealers, "spirithealers", false, prefix);
         spiritHealers ??= new();
+        Deserialize(ref flightPathGroups, "flightpaths", false, prefix);
+        flightPathGroups ??= new();
 
         #endregion
 

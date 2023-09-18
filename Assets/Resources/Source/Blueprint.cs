@@ -104,9 +104,9 @@ public class Blueprint
             //(h) =>
             //{
             //    //BLIZZARD: MUSIC, SOUNDS AND TEXTURES
-            //    //POOH: PROGRAMMING AND DESIGNING
-            //    //RYVED: CONSULTATION AND BRAINSTORMING
-            //    //LEKRIS: CONSULTATION AND BRAINSTORMING
+            //    //POOH: PROGRAMMING, DESIGN, 
+            //    //RYVED & LEKRIS: CONSULTATION AND ADVICE
+            //    //SPECIAL THANKS: ALL OF DISCO ADVANCE FOR BEING THE BEST TEAM EVER
             //});
             AddButtonRegion(() =>
             {
@@ -1137,6 +1137,49 @@ public class Blueprint
                 //    AddLine(line, "DarkGray");
             });
         }),
+        new("FlightMaster", () => {
+            SetAnchor(TopLeft);
+            AddRegionGroup();
+            SetRegionGroupWidth(171);
+            SetRegionGroupHeight(354);
+            AddButtonRegion(
+                () =>
+                {
+                    AddLine(person.name, "Black");
+                },
+                (h) =>
+                {
+
+                }
+            );
+            AddHeaderRegion(() =>
+            {
+                AddBigButton("Portrait" + person.race.Replace("'", "").Replace(".", "").Replace(" ", "") + (Race.races.Find(x => x.name == person.race).genderedPortrait ? person.gender : ""),
+                    (h) => { }
+                );
+            });
+            AddHeaderRegion(() => { AddLine("Flight paths:"); });
+            foreach (var flightPath in town.flightPaths)
+            {
+                var desitnation = towns.Find(x => x.name == flightPath.destination);
+                AddButtonRegion(() =>
+                {
+                    AddLine(flightPath.destination, "Black");
+                    AddSmallButton("Transport" + flightPath.means, (h) => { });
+                },
+                (h) =>
+                {
+                    CloseDesktop("FlightMaster");
+                    SwitchDesktop("Map");
+                    CDesktop.LockScreen();
+                    if (flightPath.price > 0)
+                        PlaySound("DesktopTransportPay");
+                    desitnation.QueueSiteOpen("Town");
+                },
+                null,
+                (h) => () => { PrintTransportTooltip(flightPath); });
+            }
+        }),
         new("Inventory", () => {
             SetAnchor(TopRight);
             AddRegionGroup();
@@ -1149,8 +1192,8 @@ public class Blueprint
                 {
                     if (town != null)
                     {
-                        CloseDesktop("BankScreen");
-                        SwitchDesktop("TownEntrance");
+                        CloseDesktop("Bank");
+                        SwitchDesktop("Town");
                         PlaySound("DesktopBankClose");
                     }
                     else
@@ -1212,8 +1255,8 @@ public class Blueprint
                 AddLine("Bank:");
                 AddSmallButton("OtherClose", (h) =>
                 {
-                    CloseDesktop("BankScreen");
-                    SwitchDesktop("TownEntrance");
+                    CloseDesktop("Bank");
+                    SwitchDesktop("Town");
                     PlaySound("DesktopBankClose");
                 });
                 AddSmallButton("OtherReverse", (h) =>
@@ -1534,67 +1577,6 @@ public class Blueprint
                 }
             );
         }, true),
-        new("BattleActionBar", () => {
-            SetAnchor(Bottom);
-            AddRegionGroup();
-            AddPaddingRegion(() =>
-            {
-                AddBigButton("ClassRogueSpellMutilate",
-                (h) => { });
-                AddBigButton("ClassRogueSpellGarrote",
-                (h) => { });
-                AddBigButton("ClassRogueSpellRupture",
-                (h) => { });
-                AddBigButton("ClassRogueSpellEnvenom",
-                (h) =>
-                {
-                    PlaySound("SpellEnvenomCast");
-                    if (random.Next(0, 2) == 1)
-                        PlaySound("SpellEnvenomImpact");
-                },
-                null,
-                (h) => () =>
-                {
-                    SetAnchor(Center);
-                    AddRegionGroup();
-                    AddHeaderRegion(() =>
-                    {
-                        AddBigButton("ClassRogueSpellEnvenom", (h) => { });
-                        AddLine("Envenom", "Gray");
-                    });
-                    AddHeaderRegion(() =>
-                    {
-                        AddLine("Cast cost:", "Gray");
-                    });
-                    AddPaddingRegion(() =>
-                    {
-                        AddLine("x2 Decay", "Gray");
-                        AddLine("x3 Shadow", "Gray");
-                        AddLine("x1 Air", "Gray");
-                    });
-                    AddHeaderRegion(() =>
-                    {
-                        AddLine("Effects:", "Gray");
-                    });
-                    AddPaddingRegion(() =>
-                    {
-                        AddLine("Strike the target for 24* damage.", "Gray");
-                        AddLine("Additionaly poison the target for 4* damage", "Gray");
-                        AddLine("every time they make move for next 3 turns.", "Gray");
-                    });
-                    AddPaddingRegion(() =>
-                    {
-                        AddLine("* Scaled with Agility and Decay Mastery.", "Gray");
-                    });
-                });
-                AddBigButton("ClassRogueSpellEvasion",
-                (h) => { });
-                AddBigButton("ClassRogueSpellKidneyShot",
-                (h) => { });
-                AddBigButton("OtherEmpty",
-                (h) => { });
-            });
-        }),
         new("CharacterNeckSlot", () => {
             SetAnchor(-98, 74);
             PrintEquipmentItem(currentSave.player.GetItemInSlot("Neck"));
@@ -2055,22 +2037,6 @@ public class Blueprint
                 AddLine(a.talentTrees[2].name + ": " + a.talentTrees[2].talents.Count(x => currentSave.player.abilities.Contains(x.ability)));
             });
             SetRegionGroupWidth(213);
-        }, true),
-        new("InstanceHeader", () => {
-            SetAnchor(TopLeft);
-            AddRegionGroup();
-            SetRegionGroupWidth(638);
-            AddPaddingRegion(() =>
-            {
-                AddLine(instance.name);
-                AddSmallButton("OtherClose",
-                (h) =>
-                {
-                    var title = CDesktop.title;
-                    CloseDesktop(title);
-                    SwitchDesktop("Map");
-                });
-            });
         }, true),
         new("Console", () => {
             SetAnchor(Top);
@@ -6287,7 +6253,7 @@ public class Blueprint
                 CDesktop.cameraDestination += new Vector2(amount.x, amount.y) / 5;
             }
         }),
-        new("HostileAreaEntrance", () =>
+        new("HostileArea", () =>
         {
             SetDesktopBackground("Areas/Area" + (area.zone + area.name).Replace("'", "").Replace(".", "").Replace(" ", "") + (area.specialClearBackground && area.eliteEncounters.All(x => currentSave.elitesKilled.ContainsKey(x.who)) ? "Cleared" : ""));
             SpawnWindowBlueprint("HostileArea: " + area.name);
@@ -6296,17 +6262,17 @@ public class Blueprint
             {
                 if (area.complexPart)
                 {
-                    CloseDesktop("HostileAreaEntrance");
-                    SpawnDesktopBlueprint("ComplexEntrance");
+                    CloseDesktop("HostileArea");
+                    SpawnDesktopBlueprint("Complex");
                 }
                 else
                 {
                     PlaySound("DesktopInstanceClose");
-                    CloseDesktop("HostileAreaEntrance");
+                    CloseDesktop("HostileArea");
                 }
             });
         }),
-        new("TownEntrance", () =>
+        new("Town", () =>
         {
             SetDesktopBackground("Areas/Area" + (town.zone + town.name).Replace("'", "").Replace(".", "").Replace(" ", ""));
             SpawnWindowBlueprint("Town: " + town.name);
@@ -6314,10 +6280,10 @@ public class Blueprint
             AddHotkey(Escape, () =>
             {
                 PlaySound("DesktopInstanceClose");
-                CloseDesktop("TownEntrance");
+                CloseDesktop("Town");
             });
         }),
-        new("InstanceEntrance", () =>
+        new("Instance", () =>
         {
             SetDesktopBackground("Areas/Area" + instance.name.Replace("'", "").Replace(".", "").Replace(" ", ""));
             SpawnWindowBlueprint(instance.type + ": " + instance.name);
@@ -6333,13 +6299,13 @@ public class Blueprint
                 }
                 else if (instance.complexPart)
                 {
-                    CloseDesktop("InstanceEntrance");
-                    SpawnDesktopBlueprint("ComplexEntrance");
+                    CloseDesktop("Instance");
+                    SpawnDesktopBlueprint("Complex");
                 }
                 else
                 {
                     PlaySound("DesktopInstanceClose");
-                    CloseDesktop("InstanceEntrance");
+                    CloseDesktop("Instance");
                 }
             });
             AddHotkey(BackQuote, () =>
@@ -6371,10 +6337,8 @@ public class Blueprint
                 SpawnDesktopBlueprint("ObjectManagerRaces");
             });
         }),
-        new("ComplexEntrance", () =>
+        new("Complex", () =>
         {
-            //locationName = complex.name;
-            //SpawnWindowBlueprint("LocationInfo");
             SetDesktopBackground("Areas/Complex" + complex.name.Replace("'", "").Replace(".", "").Replace(" ", ""));
             SpawnWindowBlueprint("Complex: " + complex.name);
             SpawnWindowBlueprint("ComplexLeftSide");
@@ -6390,7 +6354,7 @@ public class Blueprint
                 else
                 {
                     PlaySound("DesktopInstanceClose");
-                    CloseDesktop("ComplexEntrance");
+                    CloseDesktop("Complex");
                 }
             });
         }),
@@ -6588,7 +6552,7 @@ public class Blueprint
                 CloseDesktop("EquipmentScreen");
             });
         }),
-        new("BankScreen", () =>
+        new("Bank", () =>
         {
             currentSave.banks ??= new();
             if (!currentSave.banks.ContainsKey(town.name))
@@ -6600,8 +6564,20 @@ public class Blueprint
             AddHotkey(Escape, () =>
             {
                 PlaySound("DesktopBankClose");
-                CloseDesktop("BankScreen");
-                SwitchDesktop("TownEntrance");
+                CloseDesktop("Bank");
+                SwitchDesktop("Town");
+            });
+        }),
+        new("FlightMaster", () =>
+        {
+            //PlaySound("DesktopBankOpen", 0.2f);
+            SetDesktopBackground("Areas/Area" + (town.zone + town.name).Replace("'", "").Replace(".", "").Replace(" ", "") + "FlightMaster");
+            SpawnWindowBlueprint("FlightMaster");
+            AddHotkey(Escape, () =>
+            {
+                PlaySound("DesktopBankClose");
+                CloseDesktop("FlightMaster");
+                SwitchDesktop("Town");
             });
         }),
         new("GameMenu", () =>

@@ -81,6 +81,12 @@
         "gender": "Female",
         "race": "Human",
         "type": "Battlemaster"
+      },
+      {
+        "name": "Dungar Longdrink",
+        "gender": "Female",
+        "race": "Human",
+        "type": "Flight Master"
       }
     ],
     "x": 260,
@@ -174,7 +180,15 @@
     "y": -186,
     "name": "Lakeshire",
     "zone": "Redridge Mountains",
-    "faction": "Stormwind"
+    "faction": "Stormwind",
+    "people": [
+      {
+        "name": "Ariena Stormfeather",
+        "gender": "Female",
+        "race": "Human",
+        "type": "Flight Master"
+      }
+    ]
   },
   {
     "x": 268,
@@ -195,7 +209,15 @@
     "y": -201,
     "name": "Darkshire",
     "zone": "Duskwood",
-    "faction": "Stormwind"
+    "faction": "Stormwind",
+    "people": [
+      {
+        "name": "Felicia Maline",
+        "gender": "Female",
+        "race": "Human",
+        "type": "Flight Master"
+      }
+    ]
   },
   {
     "x": 268,
@@ -209,7 +231,15 @@
     "y": -200,
     "name": "Sentinel Hill",
     "zone": "Westfall",
-    "faction": "Stormwind"
+    "faction": "Stormwind",
+    "people": [
+      {
+        "name": "Thor",
+        "gender": "Male",
+        "race": "Human",
+        "type": "Flight Master"
+      }
+    ]
   },
   {
     "people": [
@@ -224,6 +254,12 @@
         "gender": "Male",
         "race": "Human",
         "type": "Paladin Trainer"
+      },
+      {
+        "name": "Baldruc",
+        "gender": "Male",
+        "race": "Human",
+        "type": "Flight Master"
       }
     ],
     "x": 124,
@@ -244,21 +280,60 @@
     "y": -127,
     "name": "Menethil Harbor",
     "zone": "Wetlands",
-    "faction": "Stormwind"
+    "faction": "Stormwind",
+    "people": [
+      {
+        "name": "Shellei Brondil",
+        "gender": "Female",
+        "race": "Human",
+        "type": "Flight Master"
+      }
+    ]
   },
   {
     "x": 303,
     "y": -205,
     "name": "Nethergarde Keep",
     "zone": "Blasted Lands",
-    "faction": "Stormwind"
+    "faction": "Stormwind",
+    "people": [
+      {
+        "name": "Alexandra Constantine",
+        "gender": "Female",
+        "race": "Human",
+        "type": "Flight Master"
+      }
+    ]
   },
   {
     "x": 295,
     "y": -177,
     "name": "Morgan's Vigil",
     "zone": "Burning Steppes",
-    "faction": "Stormwind"
+    "faction": "Stormwind",
+    "people": [
+      {
+        "name": "Borgus Stoutarm",
+        "gender": "Male",
+        "race": "Dwarf",
+        "type": "Flight Master"
+      }
+    ]
+  },
+  {
+    "x": 294,
+    "y": -170,
+    "name": "Flame Crest",
+    "zone": "Burning Steppes",
+    "faction": "Orgrimmar",
+    "people": [
+      {
+        "name": "Vahgruk",
+        "gender": "Male",
+        "race": "Orc",
+        "type": "Flight Master"
+      }
+    ]
   },
   {
     "x": 287,
@@ -272,7 +347,15 @@
     "y": -101,
     "name": "Refuge Pointe",
     "zone": "Arathi Highlands",
-    "faction": "Stormwind"
+    "faction": "Stormwind",
+    "people": [
+      {
+        "name": "Cedrik Prose",
+        "gender": "Male",
+        "race": "Human",
+        "type": "Flight Master"
+      }
+    ]
   },
   {
     "people": [
@@ -347,6 +430,14 @@
         "price": 1.5
       }
     ],
+    "people": [
+      {
+        "name": "Vesprystus",
+        "gender": "Male",
+        "race": "Night Elf",
+        "type": "Flight Master"
+      }
+    ],
     "x": 66,
     "y": -39,
     "name": "Rut'theran Village",
@@ -397,7 +488,15 @@
     "y": -103,
     "name": "Astranaar",
     "zone": "Ashenvale",
-    "faction": "Darnassus"
+    "faction": "Darnassus",
+    "people": [
+      {
+        "name": "Daelyshia",
+        "gender": "Female",
+        "race": "Night Elf",
+        "type": "Flight Master"
+      }
+    ]
   },
   {
     "x": 118,
@@ -459,14 +558,30 @@
     "y": -64,
     "name": "Auberdine",
     "zone": "Darkshore",
-    "faction": "Darnassus"
+    "faction": "Darnassus",
+    "people": [
+      {
+        "name": "Caylais Moonfeather",
+        "gender": "Female",
+        "race": "Night Elf",
+        "type": "Flight Master"
+      }
+    ]
   },
   {
     "x": 126,
     "y": -105,
     "name": "Talrendis Point",
     "zone": "Azshara",
-    "faction": "Darnassus"
+    "faction": "Darnassus",
+    "people": [
+      {
+        "name": "Jarrodenus",
+        "gender": "Male",
+        "race": "Night Elf",
+        "type": "Flight Master"
+      }
+    ]
   },
   {
     "people": [
@@ -481,6 +596,12 @@
         "gender": "Male",
         "race": "Night Elf",
         "type": "Hunter Trainer"
+      },
+      {
+        "name": "Mishellena",
+        "gender": "Female",
+        "race": "Night Elf",
+        "type": "Flight Master"
       }
     ],
     "x": 97,
@@ -494,23 +615,55 @@
     "y": -180,
     "name": "Feathermoon Stronghold",
     "zone": "Feralas",
-    "faction": "Darnassus"
+    "faction": "Darnassus",
+    "people": [
+      {
+        "name": "Fyldren Moonfeather",
+        "gender": "Male",
+        "race": "Night Elf",
+        "type": "Flight Master"
+      }
+    ]
   },
   {
     "x": 63,
     "y": -131,
     "name": "Nijel's Point",
     "zone": "Desolace",
-    "faction": "Darnassus"
+    "faction": "Darnassus",
+    "people": [
+      {
+        "name": "Baritanas Skyriver",
+        "gender": "Male",
+        "race": "Night Elf",
+        "type": "Flight Master"
+      }
+    ]
   },
   {
     "x": 84,
     "y": -181,
     "name": "Thalaanar",
     "zone": "Thousand Needles",
-    "faction": "Darnassus"
+    "faction": "Darnassus",
+    "people": [
+      {
+        "name": "Thyssiana",
+        "gender": "Female",
+        "race": "Night Elf",
+        "type": "Flight Master"
+      }
+    ]
   },
   {
+    "people": [
+      {
+        "name": "Teloren",
+        "gender": "Male",
+        "race": "Night Elf",
+        "type": "Flight Master"
+      }
+    ],
     "x": 61,
     "y": -104,
     "name": "Stonetalon Peak",
@@ -586,6 +739,12 @@
         "gender": "Male",
         "race": "Dwarf",
         "type": "Battlemaster"
+      },
+      {
+        "name": "Gryth Thurden",
+        "gender": "Male",
+        "race": "Dwarf",
+        "type": "Flight Master"
       }
     ],
     "x": 275,
@@ -599,7 +758,15 @@
     "y": -145,
     "name": "Thelsamar",
     "zone": "Loch Modan",
-    "faction": "Ironforge"
+    "faction": "Ironforge",
+    "people": [
+      {
+        "name": "Thorgrum Borrelson",
+        "gender": "Male",
+        "race": "Dwarf",
+        "type": "Flight Master"
+      }
+    ]
   },
   {
     "x": 279,
@@ -740,6 +907,12 @@
         "gender": "Male",
         "race": "Orc",
         "type": "Battlemaster"
+      },
+      {
+        "name": "Doras",
+        "gender": "Male",
+        "race": "Orc",
+        "type": "Flight Master"
       }
     ],
     "x": 121,
@@ -798,28 +971,60 @@
     "y": -97,
     "name": "Zoram'gar Outpost",
     "zone": "Ashenvale",
-    "faction": "Orgrimmar"
+    "faction": "Orgrimmar",
+    "people": [
+      {
+        "name": "Andruk",
+        "gender": "Male",
+        "race": "Orc",
+        "type": "Flight Master"
+      }
+    ]
   },
   {
     "x": 105,
     "y": -137,
     "name": "The Crossroads",
     "zone": "The Barrens",
-    "faction": "Orgrimmar"
+    "faction": "Orgrimmar",
+    "people": [
+      {
+        "name": "Devrak",
+        "gender": "Male",
+        "race": "Orc",
+        "type": "Flight Master"
+      }
+    ]
   },
   {
     "x": 80,
     "y": -78,
     "name": "Bloodvenom Post",
     "zone": "Felwood",
-    "faction": "Orgrimmar"
+    "faction": "Orgrimmar",
+    "people": [
+      {
+        "name": "Brakkar",
+        "gender": "Male",
+        "race": "Orc",
+        "type": "Flight Master"
+      }
+    ]
   },
   {
     "x": 123,
     "y": -94,
     "name": "Valormok",
     "zone": "Azshara",
-    "faction": "Orgrimmar"
+    "faction": "Orgrimmar",
+    "people": [
+      {
+        "name": "Kroum",
+        "gender": "Male",
+        "race": "Orc",
+        "type": "Flight Master"
+      }
+    ]
   },
   {
     "x": 101,
@@ -855,14 +1060,30 @@
     "y": -109,
     "name": "Splintertree Post",
     "zone": "Ashenvale",
-    "faction": "Orgrimmar"
+    "faction": "Orgrimmar",
+    "people": [
+      {
+        "name": "Vhulgra",
+        "gender": "Female",
+        "race": "Orc",
+        "type": "Flight Master"
+      }
+    ]
   },
   {
     "x": 290,
     "y": -159,
     "name": "Kargath",
     "zone": "Badlands",
-    "faction": "Orgrimmar"
+    "faction": "Orgrimmar",
+    "people": [
+      {
+        "name": "Gorrik",
+        "gender": "Male",
+        "race": "Orc",
+        "type": "Flight Master"
+      }
+    ]
   },
   {
     "people": [
@@ -889,6 +1110,12 @@
         "gender": "Male",
         "race": "Orc",
         "type": "Warlock Trainer"
+      },
+      {
+        "name": "Breyk",
+        "gender": "male",
+        "race": "Orc",
+        "type": "Flight Master"
       }
     ],
     "x": 301,
@@ -902,7 +1129,15 @@
     "y": -167,
     "name": "Brackenwall Village",
     "zone": "Dustwallow Marsh",
-    "faction": "Orgrimmar"
+    "faction": "Orgrimmar",
+    "people": [
+      {
+        "name": "Shardi",
+        "gender": "Female",
+        "race": "Orc",
+        "type": "Flight Master"
+      }
+    ]
   },
   {
     "people": [
@@ -924,7 +1159,15 @@
     "y": -150,
     "name": "Shadowprey Village",
     "zone": "Desolace",
-    "faction": "Darkspear Tribe"
+    "faction": "Darkspear Tribe",
+    "people": [
+      {
+        "name": "Thalon",
+        "gender": "Male",
+        "race": "Tauren",
+        "type": "Flight Master"
+      }
+    ]
   },
   {
     "x": 316,
@@ -976,6 +1219,12 @@
         "gender": "Male",
         "race": "Tauren",
         "type": "Battlemaster"
+      },
+      {
+        "name": "Tal",
+        "gender": "Male",
+        "race": "Tauren",
+        "type": "Flight Master"
       }
     ],
     "x": 76,
@@ -1031,6 +1280,12 @@
         "gender": "Male",
         "race": "Tauren",
         "type": "Druid Trainer"
+      },
+      {
+        "name": "Shyn",
+        "gender": "Female",
+        "race": "Tauren",
+        "type": "Flight Master"
       }
     ],
     "x": 73,
@@ -1044,21 +1299,45 @@
     "y": -158,
     "name": "Camp Taurajo",
     "zone": "The Barrens",
-    "faction": "Thunder Bluff"
+    "faction": "Thunder Bluff",
+    "people": [
+      {
+        "name": "Omusa Thunderhorn",
+        "gender": "Female",
+        "race": "Tauren",
+        "type": "Flight Master"
+      }
+    ]
   },
   {
     "x": 102,
     "y": -191,
     "name": "Freewind Post",
     "zone": "Thousand Needles",
-    "faction": "Thunder Bluff"
+    "faction": "Thunder Bluff",
+    "people": [
+      {
+        "name": "Nyse",
+        "gender": "Female",
+        "race": "Tauren",
+        "type": "Flight Master"
+      }
+    ]
   },
   {
     "x": 66,
     "y": -123,
     "name": "Sun Rock Retreat",
     "zone": "Stonetalon Mountains",
-    "faction": "Thunder Bluff"
+    "faction": "Thunder Bluff",
+    "people": [
+      {
+        "name": "Tharm",
+        "gender": "Male",
+        "race": "Tauren",
+        "type": "Flight Master"
+      }
+    ]
   },
   {
     "x": 57,
@@ -1181,23 +1460,61 @@
     "y": -98,
     "name": "Hammerfall",
     "zone": "Arathi Highlands",
-    "faction": "Undercity"
+    "faction": "Undercity",
+    "people": [
+      {
+        "name": "Urda",
+        "gender": "Female",
+        "race": "Orc",
+        "type": "Flight Master"
+      }
+    ]
   },
   {
     "x": 275,
     "y": -88,
     "name": "Tarren Mill",
     "zone": "Hillsbrad Foothills",
-    "faction": "Undercity"
+    "faction": "Undercity",
+    "people": [
+      {
+        "name": "Zarise",
+        "gender": "Female",
+        "race": "Forsaken",
+        "type": "Flight Master"
+      }
+    ]
   },
   {
     "x": 248,
     "y": -82,
     "name": "The Sepulcher",
     "zone": "Silverpine Forest",
-    "faction": "Undercity"
+    "faction": "Undercity",
+    "people": [
+      {
+        "name": "Karos Razok",
+        "gender": "Male",
+        "race": "Forsaken",
+        "type": "Flight Master"
+      }
+    ]
   },
   {
+    "people": [
+      {
+        "name": "Cloud Skydancer",
+        "gender": "Male",
+        "race": "Night Elf",
+        "type": "Flight Master"
+      },
+      {
+        "name": "Runk Windtamer",
+        "gender": "Male",
+        "race": "Tauren",
+        "type": "Flight Master"
+      }
+    ],
     "x": 68,
     "y": -206,
     "name": "Cenarion Hold",
@@ -1218,6 +1535,18 @@
         "gender": "Male",
         "race": "Night Elf",
         "type": "Druid Trainer"
+      },
+      {
+        "name": "Sindrayl",
+        "gender": "Female",
+        "race": "Night Elf",
+        "type": "Flight Master"
+      },
+      {
+        "name": "Faustron",
+        "gender": "Male",
+        "race": "Orc",
+        "type": "Flight Master"
       }
     ],
     "x": 103,
@@ -1231,30 +1560,94 @@
     "y": -63,
     "name": "Light's Hope Chapel",
     "zone": "Eastern Plaguelands",
-    "faction": "Argent Dawn"
+    "faction": "Argent Dawn",
+    "people": [
+      {
+        "name": "Khaelyn Steelwing",
+        "gender": "Female",
+        "race": "Dwarf",
+        "type": "Flight Master"
+      },
+      {
+        "name": "Georgia",
+        "gender": "Female",
+        "race": "Forsaken",
+        "type": "Flight Master"
+      }
+    ]
   },
   {
     "x": 282,
     "y": -78,
     "name": "Chillwind Camp",
     "zone": "Western Plaguelands",
-    "faction": "Argent Dawn"
+    "faction": "Argent Dawn",
+    "people": [
+      {
+        "name": "Bibilfaz Featherwhistle",
+        "gender": "Male",
+        "race": "Gnome",
+        "type": "Flight Master"
+      }
+    ]
   },
   {
     "x": 279,
     "y": -158,
     "name": "Thorium Point",
     "zone": "Searing Gorge",
-    "faction": "Thorium Brotherhood"
+    "faction": "Thorium Brotherhood",
+    "people": [
+      {
+        "name": "Lanie Reed",
+        "gender": "Female",
+        "race": "Dwarf",
+        "type": "Flight Master"
+      },
+      {
+        "name": "Grisha",
+        "gender": "Female",
+        "race": "Orc",
+        "type": "Flight Master"
+      }
+    ]
   },
   {
     "x": 127,
     "y": -61,
     "name": "Everlook",
     "zone": "Winterspring",
-    "faction": "Steamwheedle Cartel"
+    "faction": "Steamwheedle Cartel",
+    "people": [
+      {
+        "name": "Maethrya",
+        "gender": "Female",
+        "race": "Night Elf",
+        "type": "Flight Master"
+      },
+      {
+        "name": "Yugrek",
+        "gender": "Female",
+        "race": "Orc",
+        "type": "Flight Master"
+      }
+    ]
   },
   {
+    "people": [
+      {
+        "name": "Bera Stonehammer",
+        "gender": "Female",
+        "race": "Dwarf",
+        "type": "Flight Master"
+      },
+      {
+        "name": "Bulkrek Ragefist",
+        "gender": "Male",
+        "race": "Orc",
+        "type": "Flight Master"
+      }
+    ],
     "x": 117,
     "y": -209,
     "name": "Gadgetzan",
@@ -1267,6 +1660,14 @@
         "means": "Ship",
         "destination": "Booty Bay",
         "price": 1.5
+      }
+    ],
+    "people": [
+      {
+        "name": "Bragok",
+        "gender": "Male",
+        "race": "Goblin",
+        "type": "Flight Master"
       }
     ],
     "x": 116,
@@ -1289,6 +1690,18 @@
         "gender": "Male",
         "race": "Human",
         "type": "Rogue Trainer"
+      },
+      {
+        "name": "Gringer",
+        "gender": "Male",
+        "race": "Orc",
+        "type": "Flight Master"
+      },
+      {
+        "name": "Gyll",
+        "gender": "Male",
+        "race": "Dwarf",
+        "type": "Flight Master"
       }
     ],
     "x": 261,
@@ -1298,6 +1711,14 @@
     "faction": "Steamwheedle Cartel"
   },
   {
+    "people": [
+      {
+        "name": "Gryfe",
+        "gender": "Male",
+        "race": "Goblin",
+        "type": "Flight Master"
+      }
+    ],
     "x": 90,
     "y": -199,
     "name": "Marshal's Refuge",

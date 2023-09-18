@@ -8,15 +8,53 @@ using static GameSettings;
 
 public class SaveGame
 {
+    //Player character in the save
     public Entity player;
+
+    //Position of the camera saved when logging out
     public int cameraX, cameraY;
-    public Dictionary<string, int> siteProgress, commonsKilled, raresKilled, elitesKilled, factionStanding;
+
+    //Stores progress done while exploring sites in the world
+    public Dictionary<string, int> siteProgress;
+
+    //Stores information about how many common enemies were killed by player
+    public Dictionary<string, int> commonsKilled;
+
+    //Stores information about how many rare enemies were killed by player
+    public Dictionary<string, int> raresKilled;
+
+    //Stores information about how many elite enemies were killed by player
+    public Dictionary<string, int> elitesKilled;
+
+    //Stores all reputation standings with all factions
+    public Dictionary<string, int> factionStanding;
+
+    //Stores amounts of visits to all sites
+    //If one is equal at least to 1 the site is considered to be discovered
+    public Dictionary<string, int> siteVisits;
+    
+    //Stores all bank accounts of this character in towns
     public Dictionary<string, Inventory> banks;
-    public DateTime startDate, lastLoaded, lastPlayed;
+
+    //Date of the character creation
+    public DateTime startDate;
+
+    //Date of the last time this character was logging in
+    public DateTime lastLoaded;
+
+    //Date of the last time this character was logging out
+    public DateTime lastPlayed;
+    
+    //This variable stores information about entity's death
     public DeathInfo deathInfo;
+
+    //Indicates whether the character is dead at the momentt
     public bool playerDead;
+
+    //Overall time player played this character
     public TimeSpan timePlayed;
 
+    //Revives the player
     public void RevivePlayer()
     {
         if (!playerDead) return;
@@ -29,6 +67,7 @@ public class SaveGame
         SpawnTransition();
     }
 
+    //Creates a new character
     public static void AddNewSave()
     {
         var newSlot = new SaveGame
@@ -60,6 +99,7 @@ public class SaveGame
         settings.selectedCharacter = newSlot.player.name;
     }
 
+    //Logs a character out of the world
     public static void CloseSave()
     {
         Save();
@@ -67,6 +107,7 @@ public class SaveGame
         currentSave = null;
     }
 
+    //Saves the character in the database
     public static void Save()
     {
         if (currentSave.timePlayed == null) currentSave.timePlayed = new TimeSpan();
@@ -77,6 +118,8 @@ public class SaveGame
         currentSave.cameraY = (int)Math.Round(temp.cameraDestination.y);
     }
 
+    //Logs the character into the world
+    //Map can now be opened to start playing
     public static void Login()
     {
         currentSave = saves[settings.selectedRealm].Find(x => x.player.name == settings.selectedCharacter);
@@ -84,6 +127,7 @@ public class SaveGame
         CDesktop.cameraDestination = new Vector2(currentSave.cameraX, currentSave.cameraY);
     }
 
+    //Saves all characters on the account
     public static void SaveGames()
     {
         if (currentSave != null) Save();
@@ -91,6 +135,9 @@ public class SaveGame
         Serialization.Serialize(settings, "settings", false, false, prefix);
     }
 
+    //Currently opened save
     public static SaveGame currentSave;
+
+    //EXTERNAL FILE: List containing all account characters
     public static Dictionary<string, List<SaveGame>> saves;
 }

@@ -93,7 +93,7 @@ public class SiteHostileArea : Site
                                 else
                                 {
                                     PlaySound("DesktopInstanceClose");
-                                    CloseDesktop("HostileAreaEntrance");
+                                    CloseDesktop("HostileArea");
                                 }
                             });
                         });

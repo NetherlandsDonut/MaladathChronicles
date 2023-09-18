@@ -8,6 +8,7 @@ using static Root.Anchor;
 using static Sound;
 using static Faction;
 using static Transport;
+using static FlightPathGroup;
 
 public class SiteTown : Site
 {
@@ -15,6 +16,8 @@ public class SiteTown : Site
     //and remove empty collections to avoid serialising them later
     public override void Initialise()
     {
+        if (people.Exists(x => x.type == "Flight Master"))
+            flightPaths = flightPathGroups.FindAll(x => x.Contains(name)).SelectMany(x => x.sitesConnected).Distinct().FindAll(x => x != name).Select(x => new Transport() { means = "Flight", destination = x });
         if (faction != null)
             if (!factions.Exists(x => x.name == faction))
                 factions.Insert(0, new Faction()
@@ -58,12 +61,12 @@ public class SiteTown : Site
                                 },
                                 (h) =>
                                 {
-                                    CloseDesktop("TownEntrance");
+                                    CloseDesktop("Town");
                                     SwitchDesktop("Map");
                                     CDesktop.LockScreen();
                                     if (transport.price > 0)
                                         PlaySound("DesktopTransportPay");
-                                    CDesktop.cameraDestination = new Vector2(desitnation.x - 17, desitnation.y + 9);
+                                    desitnation.QueueSiteOpen("Town");
                                 },
                                 null,
                                 (h) => () => { PrintTransportTooltip(transport); });
@@ -82,8 +85,11 @@ public class SiteTown : Site
                                 },
                                 (h) =>
                                 {
-                                    if (person.type == "Banker")
-                                        SpawnDesktopBlueprint("BankScreen");
+                                    Person.person = person;
+                                    if (person.type == "Flight Master")
+                                        SpawnDesktopBlueprint("FlightMaster");
+                                    else if (person.type == "Banker")
+                                        SpawnDesktopBlueprint("Bank");
                                 });
                             }
                         }
@@ -100,6 +106,9 @@ public class SiteTown : Site
 
     //List of NPC's that are inside of this town
     public List<Person> people;
+
+    //List of town flight paths, these are generated automatically
+    public List<Transport> flightPaths
 
     //Currently opened town
     public static SiteTown town;

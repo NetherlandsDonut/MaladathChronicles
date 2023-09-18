@@ -63,7 +63,7 @@ public class SiteInstance : Site
                                 var title = CDesktop.title;
                                 CloseDesktop(title);
                                 if (complexPart)
-                                    SpawnDesktopBlueprint("ComplexEntrance");
+                                    SpawnDesktopBlueprint("Complex");
                                 else
                                 {
                                     PlaySound("DesktopInstanceClose");

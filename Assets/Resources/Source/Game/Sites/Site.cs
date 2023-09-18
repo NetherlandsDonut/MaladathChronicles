@@ -36,6 +36,10 @@ public class Site
     //will not be interrupted and will continue to play
     public string ambience;
 
+    //List of all sites connected to this one
+    //letting the player travel from this site to any of these directly
+    public List<string> connectedSites;
+
     //Initialisation method to fill automatic values
     //and remove empty collections to avoid serialising them later
     public virtual void Initialise() { }
@@ -48,6 +52,8 @@ public class Site
     //After reaching the site the screen will change accordingly to the site type
     public void QueueSiteOpen(string siteType)
     {
+        if (siteVisits.ContainsKey(name)) siteVisits[name]++;
+        else siteVisits.Add(name, 1);
         if (siteType == "Instance") instance = (SiteInstance)this;
         else if (siteType == "HostileArea") area = (SiteHostileArea)this;
         else if (siteType == "Town") town = (SiteTown)this;

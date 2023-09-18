@@ -49,7 +49,7 @@ public class MapGrid : MonoBehaviour
 
     //Bounds camera to be in a specified proximity of any sites in reach
     //Whenever camera is close enough to detect sites it will be dragged to their proximity
-    public static void EnforceBoundary(int detectionRange = 700, int maxDistance = 9, int maxDistanceWhileMoving = 200, float harshness = 0.0001f)
+    public static void EnforceBoundary(int detectionRange = 700, int maxDistance = 8, int maxDistanceWhileMoving = 200, float harshness = 0.0001f)
     {
         var cameraDestinationScaled = CDesktop.cameraDestination * 19 + new Vector2(333, -183);
         var nearbySites = cameraBoundaryPoints.Select(x => (x, Vector2.Distance(new Vector2(x.x, x.y), cameraDestinationScaled))).ToList().FindAll(x => x.Item2 < detectionRange).OrderBy(x => x.Item2).ToList();
