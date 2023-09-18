@@ -196,26 +196,26 @@ public class Desktop : MonoBehaviour
                         if (queuedSiteOpen == "Instance")
                         {
                             PlaySound("DesktopInstanceOpen");
-                            SpawnDesktopBlueprint("InstanceEntrance");
-                            SwitchDesktop("InstanceEntrance");
+                            SpawnDesktopBlueprint("Instance");
+                            SwitchDesktop("Instance");
                         }
                         else if (queuedSiteOpen == "Complex")
                         {
                             PlaySound("DesktopInstanceOpen");
-                            SpawnDesktopBlueprint("ComplexEntrance");
-                            SwitchDesktop("ComplexEntrance");
+                            SpawnDesktopBlueprint("Complex");
+                            SwitchDesktop("Complex");
                         }
                         else if (queuedSiteOpen == "HostileArea")
                         {
                             PlaySound("DesktopInstanceOpen");
-                            SpawnDesktopBlueprint("HostileAreaEntrance");
-                            SwitchDesktop("HostileAreaEntrance");
+                            SpawnDesktopBlueprint("HostileArea");
+                            SwitchDesktop("HostileArea");
                         }
                         else if (queuedSiteOpen == "Town")
                         {
                             PlaySound("DesktopInstanceOpen");
-                            SpawnDesktopBlueprint("TownEntrance");
-                            SwitchDesktop("TownEntrance");
+                            SpawnDesktopBlueprint("Town");
+                            SwitchDesktop("Town");
                         }
                         if (queuedSiteOpen == "SpiritHealer")
                         {

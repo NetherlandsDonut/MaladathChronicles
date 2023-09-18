@@ -16,6 +16,7 @@ using static Class;
 using static Sound;
 using static Event;
 using static Cursor;
+using static Person;
 using static Faction;
 using static ItemSet;
 using static Ability;
@@ -1177,8 +1178,9 @@ public class Blueprint
                     desitnation.QueueSiteOpen("Town");
                 },
                 null,
-                (h) => () => { PrintTransportTooltip(flightPath); });
+                (h) => () => { Transport.PrintTransportTooltip(flightPath); });
             }
+            AddPaddingRegion(() => { });
         }),
         new("Inventory", () => {
             SetAnchor(TopRight);

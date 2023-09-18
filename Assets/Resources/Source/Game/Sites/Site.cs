@@ -1,8 +1,11 @@
+using System.Collections.Generic;
+
 using UnityEngine;
 
 using static Root;
 using static MapGrid;
 using static SiteTown;
+using static SaveGame;
 using static SiteComplex;
 using static SiteInstance;
 using static SiteHostileArea;
@@ -52,8 +55,9 @@ public class Site
     //After reaching the site the screen will change accordingly to the site type
     public void QueueSiteOpen(string siteType)
     {
-        if (siteVisits.ContainsKey(name)) siteVisits[name]++;
-        else siteVisits.Add(name, 1);
+        if (currentSave.siteVisits == null) currentSave.siteVisits = new();
+        if (currentSave.siteVisits.ContainsKey(name)) currentSave.siteVisits[name]++;
+        else currentSave.siteVisits.Add(name, 1);
         if (siteType == "Instance") instance = (SiteInstance)this;
         else if (siteType == "HostileArea") area = (SiteHostileArea)this;
         else if (siteType == "Town") town = (SiteTown)this;

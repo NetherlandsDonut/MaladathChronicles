@@ -160,11 +160,11 @@ public class Board
                 else currentSave.elitesKilled[enemy.name]++;
             }
             if (area != null && area.instancePart)
-                SwitchDesktop("InstanceEntrance");
+                SwitchDesktop("Instance");
             else if (area != null && area.complexPart)
-                SwitchDesktop("ComplexEntrance");
+                SwitchDesktop("Complex");
             else
-                SwitchDesktop("HostileAreaEntrance");
+                SwitchDesktop("HostileArea");
             CDesktop.RespawnAll();
         }
         else if (result == "PlayerLost")
@@ -192,11 +192,11 @@ public class Board
         {
             PlaySound("RunAwayBitch");
             if (area != null && area.instancePart)
-                SwitchDesktop("InstanceEntrance");
+                SwitchDesktop("Instance");
             else if (area != null && area.complexPart)
-                SwitchDesktop("ComplexEntrance");
+                SwitchDesktop("Complex");
             else
-                SwitchDesktop("HostileAreaEntrance");
+                SwitchDesktop("HostileArea");
             CDesktop.RebuildAll();
         }
         if (CDesktop.screenLocked)
