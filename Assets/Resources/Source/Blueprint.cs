@@ -1132,53 +1132,45 @@ public class Blueprint
             AddRegionGroup();
             SetRegionGroupWidth(171);
             SetRegionGroupHeight(354);
-            AddPaddingRegion(() =>
+            if (town.flightPaths == null || town.flightPaths.Count == 0)
             {
-                //foreach (var line in complex.description)
-                //    AddLine(line, "DarkGray");
-            });
-        }),
-        new("FlightMaster", () => {
-            SetAnchor(TopLeft);
-            AddRegionGroup();
-            SetRegionGroupWidth(171);
-            SetRegionGroupHeight(354);
-            AddButtonRegion(
-                () =>
-                {
-                    AddLine(person.name, "Black");
-                },
-                (h) =>
-                {
 
+            }
+            else
+            {
+                AddHeaderRegion(() => { AddLine("Flight paths:"); });
+                int unknownLocations = 0;
+                foreach (var flightPath in town.flightPaths)
+                {
+                    var desitnation = towns.Find(x => x.name == flightPath.destination);
+                    var faction = factions.Find(x => x.name == desitnation.faction);
+                    if (faction.side == "Neutral" || faction.side == races.Find(x => x.name == currentSave.player.race).Faction().side)
+                        if (currentSave.siteVisits.ContainsKey(desitnation.name))
+                        {
+                                AddButtonRegion(() =>
+                                {
+                                    AddLine(flightPath.destination);
+                                    AddSmallButton(faction.Icon(), (h) => { });
+                                },
+                                (h) =>
+                                {
+                                    CloseDesktop("Town");
+                                    SwitchDesktop("Map");
+                                    CDesktop.LockScreen();
+                                    if (flightPath.price > 0)
+                                        PlaySound("DesktopTransportPay");
+                                    desitnation.QueueSiteOpen("Town");
+                                },
+                                null,
+                                (h) => () => { Transport.PrintTransportTooltip(flightPath); });
+                        }
+                        else unknownLocations++;
                 }
-            );
-            AddHeaderRegion(() =>
-            {
-                AddBigButton("Portrait" + person.race.Replace("'", "").Replace(".", "").Replace(" ", "") + (Race.races.Find(x => x.name == person.race).genderedPortrait ? person.gender : ""),
-                    (h) => { }
-                );
-            });
-            AddHeaderRegion(() => { AddLine("Flight paths:"); });
-            foreach (var flightPath in town.flightPaths)
-            {
-                var desitnation = towns.Find(x => x.name == flightPath.destination);
-                AddButtonRegion(() =>
-                {
-                    AddLine(flightPath.destination, "Black");
-                    AddSmallButton("Transport" + flightPath.means, (h) => { });
-                },
-                (h) =>
-                {
-                    CloseDesktop("FlightMaster");
-                    SwitchDesktop("Map");
-                    CDesktop.LockScreen();
-                    if (flightPath.price > 0)
-                        PlaySound("DesktopTransportPay");
-                    desitnation.QueueSiteOpen("Town");
-                },
-                null,
-                (h) => () => { Transport.PrintTransportTooltip(flightPath); });
+                for (int i = 0; i < unknownLocations; i++)
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine("?", "DarkGray");
+                    });
             }
             AddPaddingRegion(() => { });
         }),
@@ -5755,8 +5747,29 @@ public class Blueprint
                     AddSmallButton(race.portrait + "Female", (h) => { });
                     AddSmallButton(race.portrait + "Male", (h) => { });
                 });
-                AddPaddingRegion(() => { AddLine("Faction:", "DarkGray"); });
-                AddHeaderRegion(() => { AddLine(race.faction); });
+                AddPaddingRegion(() =>
+                {
+                    AddLine("Faction:", "DarkGray");
+                    AddSmallButton("OtherReverse", (h) =>
+                    {
+                        race.faction = null;
+                        Respawn("ObjectManagerRace");
+                    });
+                });
+                AddButtonRegion(() =>
+                {
+                    AddLine(race.faction ?? "None");
+                    if (race.faction != null)
+                        AddSmallButton(race.Faction().Icon(), (h) => { });
+                },
+                (h) =>
+                {
+                    if (CloseWindow("ObjectManagerRaces") || CloseWindow("ObjectManagerPortraitList"))
+                    {
+                        factionsSearch = factions;
+                        SpawnWindowBlueprint("ObjectManagerFactions");
+                    }
+                });
             }
             else
             {
@@ -6567,18 +6580,6 @@ public class Blueprint
             {
                 PlaySound("DesktopBankClose");
                 CloseDesktop("Bank");
-                SwitchDesktop("Town");
-            });
-        }),
-        new("FlightMaster", () =>
-        {
-            //PlaySound("DesktopBankOpen", 0.2f);
-            SetDesktopBackground("Areas/Area" + (town.zone + town.name).Replace("'", "").Replace(".", "").Replace(" ", "") + "FlightMaster");
-            SpawnWindowBlueprint("FlightMaster");
-            AddHotkey(Escape, () =>
-            {
-                PlaySound("DesktopBankClose");
-                CloseDesktop("FlightMaster");
                 SwitchDesktop("Town");
             });
         }),

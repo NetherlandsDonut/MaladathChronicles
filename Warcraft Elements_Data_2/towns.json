@@ -89,9 +89,67 @@
         "type": "Flight Master"
       }
     ],
+    "flightPaths": [
+      {
+        "means": "Flight",
+        "destination": "Aerie Peak"
+      },
+      {
+        "means": "Flight",
+        "destination": "Darkshire"
+      },
+      {
+        "means": "Flight",
+        "destination": "Ironforge"
+      },
+      {
+        "means": "Flight",
+        "destination": "Lakeshire"
+      },
+      {
+        "means": "Flight",
+        "destination": "Menethil Harbor"
+      },
+      {
+        "means": "Flight",
+        "destination": "Nethergarde Keep"
+      },
+      {
+        "means": "Flight",
+        "destination": "Refuge Point"
+      },
+      {
+        "means": "Flight",
+        "destination": "Sentinel Hill"
+      },
+      {
+        "means": "Flight",
+        "destination": "Southshore"
+      },
+      {
+        "means": "Flight",
+        "destination": "Thelsamar"
+      },
+      {
+        "means": "Flight",
+        "destination": "Chillwind Camp"
+      },
+      {
+        "means": "Flight",
+        "destination": "Light's Hope Chapel"
+      },
+      {
+        "means": "Flight",
+        "destination": "Booty Bay"
+      },
+      {
+        "means": "Flight",
+        "destination": "Thorium Point"
+      }
+    ],
     "x": 260,
     "y": -183,
-    "name": "Stormwind",
+    "name": "Stormwind City",
     "zone": "Elwynn Forest",
     "faction": "Stormwind"
   },
@@ -176,11 +234,6 @@
     "faction": "Stormwind"
   },
   {
-    "x": 290,
-    "y": -186,
-    "name": "Lakeshire",
-    "zone": "Redridge Mountains",
-    "faction": "Stormwind",
     "people": [
       {
         "name": "Ariena Stormfeather",
@@ -188,7 +241,70 @@
         "race": "Human",
         "type": "Flight Master"
       }
-    ]
+    ],
+    "flightPaths": [
+      {
+        "means": "Flight",
+        "destination": "Aerie Peak"
+      },
+      {
+        "means": "Flight",
+        "destination": "Darkshire"
+      },
+      {
+        "means": "Flight",
+        "destination": "Ironforge"
+      },
+      {
+        "means": "Flight",
+        "destination": "Menethil Harbor"
+      },
+      {
+        "means": "Flight",
+        "destination": "Nethergarde Keep"
+      },
+      {
+        "means": "Flight",
+        "destination": "Refuge Point"
+      },
+      {
+        "means": "Flight",
+        "destination": "Sentinel Hill"
+      },
+      {
+        "means": "Flight",
+        "destination": "Southshore"
+      },
+      {
+        "means": "Flight",
+        "destination": "Stormwind City"
+      },
+      {
+        "means": "Flight",
+        "destination": "Thelsamar"
+      },
+      {
+        "means": "Flight",
+        "destination": "Chillwind Camp"
+      },
+      {
+        "means": "Flight",
+        "destination": "Light's Hope Chapel"
+      },
+      {
+        "means": "Flight",
+        "destination": "Booty Bay"
+      },
+      {
+        "means": "Flight",
+        "destination": "Thorium Point"
+      }
+    ],
+    "x": 290,
+    "y": -186,
+    "name": "Lakeshire",
+    "zone": "Redridge Mountains",
+    "faction": "Stormwind"
   },
   {
     "x": 268,
@@ -198,6 +314,72 @@
     "faction": "Stormwind"
   },
   {
+    "people": [
+      {
+        "name": "Darla Harris",
+        "gender": "Female",
+        "race": "Human",
+        "type": "Flight Master"
+      }
+    ],
+    "flightPaths": [
+      {
+        "means": "Flight",
+        "destination": "Aerie Peak"
+      },
+      {
+        "means": "Flight",
+        "destination": "Darkshire"
+      },
+      {
+        "means": "Flight",
+        "destination": "Ironforge"
+      },
+      {
+        "means": "Flight",
+        "destination": "Lakeshire"
+      },
+      {
+        "means": "Flight",
+        "destination": "Menethil Harbor"
+      },
+      {
+        "means": "Flight",
+        "destination": "Nethergarde Keep"
+      },
+      {
+        "means": "Flight",
+        "destination": "Refuge Point"
+      },
+      {
+        "means": "Flight",
+        "destination": "Sentinel Hill"
+      },
+      {
+        "means": "Flight",
+        "destination": "Stormwind City"
+      },
+      {
+        "means": "Flight",
+        "destination": "Thelsamar"
+      },
+      {
+        "means": "Flight",
+        "destination": "Chillwind Camp"
+      },
+      {
+        "means": "Flight",
+        "destination": "Light's Hope Chapel"
+      },
+      {
+        "means": "Flight",
+        "destination": "Booty Bay"
+      },
+      {
+        "means": "Flight",
+        "destination": "Thorium Point"
+      }
+    ],
     "x": 272,
     "y": -96,
     "name": "Southshore",
@@ -205,11 +387,6 @@
     "faction": "Stormwind"
   },
   {
-    "x": 279,
-    "y": -201,
-    "name": "Darkshire",
-    "zone": "Duskwood",
-    "faction": "Stormwind",
     "people": [
       {
         "name": "Felicia Maline",
@@ -217,7 +394,70 @@
         "race": "Human",
         "type": "Flight Master"
       }
-    ]
+    ],
+    "flightPaths": [
+      {
+        "means": "Flight",
+        "destination": "Aerie Peak"
+      },
+      {
+        "means": "Flight",
+        "destination": "Ironforge"
+      },
+      {
+        "means": "Flight",
+        "destination": "Lakeshire"
+      },
+      {
+        "means": "Flight",
+        "destination": "Menethil Harbor"
+      },
+      {
+        "means": "Flight",
+        "destination": "Nethergarde Keep"
+      },
+      {
+        "means": "Flight",
+        "destination": "Refuge Point"
+      },
+      {
+        "means": "Flight",
+        "destination": "Sentinel Hill"
+      },
+      {
+        "means": "Flight",
+        "destination": "Southshore"
+      },
+      {
+        "means": "Flight",
+        "destination": "Stormwind City"
+      },
+      {
+        "means": "Flight",
+        "destination": "Thelsamar"
+      },
+      {
+        "means": "Flight",
+        "destination": "Chillwind Camp"
+      },
+      {
+        "means": "Flight",
+        "destination": "Light's Hope Chapel"
+      },
+      {
+        "means": "Flight",
+        "destination": "Booty Bay"
+      },
+      {
+        "means": "Flight",
+        "destination": "Thorium Point"
+      }
+    ],
+    "x": 279,
+    "y": -201,
+    "name": "Darkshire",
+    "zone": "Duskwood",
+    "faction": "Stormwind"
   },
   {
     "x": 268,
@@ -227,11 +467,6 @@
     "faction": "Stormwind"
   },
   {
-    "x": 255,
-    "y": -200,
-    "name": "Sentinel Hill",
-    "zone": "Westfall",
-    "faction": "Stormwind",
     "people": [
       {
         "name": "Thor",
@@ -239,7 +474,70 @@
         "race": "Human",
         "type": "Flight Master"
       }
-    ]
+    ],
+    "flightPaths": [
+      {
+        "means": "Flight",
+        "destination": "Aerie Peak"
+      },
+      {
+        "means": "Flight",
+        "destination": "Darkshire"
+      },
+      {
+        "means": "Flight",
+        "destination": "Ironforge"
+      },
+      {
+        "means": "Flight",
+        "destination": "Lakeshire"
+      },
+      {
+        "means": "Flight",
+        "destination": "Menethil Harbor"
+      },
+      {
+        "means": "Flight",
+        "destination": "Nethergarde Keep"
+      },
+      {
+        "means": "Flight",
+        "destination": "Refuge Point"
+      },
+      {
+        "means": "Flight",
+        "destination": "Southshore"
+      },
+      {
+        "means": "Flight",
+        "destination": "Stormwind City"
+      },
+      {
+        "means": "Flight",
+        "destination": "Thelsamar"
+      },
+      {
+        "means": "Flight",
+        "destination": "Chillwind Camp"
+      },
+      {
+        "means": "Flight",
+        "destination": "Light's Hope Chapel"
+      },
+      {
+        "means": "Flight",
+        "destination": "Booty Bay"
+      },
+      {
+        "means": "Flight",
+        "destination": "Thorium Point"
+      }
+    ],
+    "x": 255,
+    "y": -200,
+    "name": "Sentinel Hill",
+    "zone": "Westfall",
+    "faction": "Stormwind"
   },
   {
     "people": [
@@ -262,6 +560,64 @@
         "type": "Flight Master"
       }
     ],
+    "flightPaths": [
+      {
+        "means": "Flight",
+        "destination": "Astranaar"
+      },
+      {
+        "means": "Flight",
+        "destination": "Auberdine"
+      },
+      {
+        "means": "Flight",
+        "destination": "Nijel's Point"
+      },
+      {
+        "means": "Flight",
+        "destination": "Rut'theran Village"
+      },
+      {
+        "means": "Flight",
+        "destination": "Stonetalon Peak"
+      },
+      {
+        "means": "Flight",
+        "destination": "Talonbranch Glade"
+      },
+      {
+        "means": "Flight",
+        "destination": "Talrendis Point"
+      },
+      {
+        "means": "Flight",
+        "destination": "Thalanaar"
+      },
+      {
+        "means": "Flight",
+        "destination": "Cenarion Hold"
+      },
+      {
+        "means": "Flight",
+        "destination": "Everlook"
+      },
+      {
+        "means": "Flight",
+        "destination": "Gadgetzan"
+      },
+      {
+        "means": "Flight",
+        "destination": "Marshal's Refuge"
+      },
+      {
+        "means": "Flight",
+        "destination": "Nighthaven"
+      },
+      {
+        "means": "Flight",
+        "destination": "Ratchet"
+      }
+    ],
     "x": 124,
     "y": -173,
     "name": "Theramore Isle",
@@ -276,11 +632,6 @@
         "price": 1.5
       }
     ],
-    "x": 275,
-    "y": -127,
-    "name": "Menethil Harbor",
-    "zone": "Wetlands",
-    "faction": "Stormwind",
     "people": [
       {
         "name": "Shellei Brondil",
@@ -288,14 +639,72 @@
         "race": "Human",
         "type": "Flight Master"
       }
-    ]
+    ],
+    "flightPaths": [
+      {
+        "means": "Flight",
+        "destination": "Aerie Peak"
+      },
+      {
+        "means": "Flight",
+        "destination": "Darkshire"
+      },
+      {
+        "means": "Flight",
+        "destination": "Ironforge"
+      },
+      {
+        "means": "Flight",
+        "destination": "Lakeshire"
+      },
+      {
+        "means": "Flight",
+        "destination": "Nethergarde Keep"
+      },
+      {
+        "means": "Flight",
+        "destination": "Refuge Point"
+      },
+      {
+        "means": "Flight",
+        "destination": "Sentinel Hill"
+      },
+      {
+        "means": "Flight",
+        "destination": "Southshore"
+      },
+      {
+        "means": "Flight",
+        "destination": "Stormwind City"
+      },
+      {
+        "means": "Flight",
+        "destination": "Thelsamar"
+      },
+      {
+        "means": "Flight",
+        "destination": "Chillwind Camp"
+      },
+      {
+        "means": "Flight",
+        "destination": "Light's Hope Chapel"
+      },
+      {
+        "means": "Flight",
+        "destination": "Booty Bay"
+      },
+      {
+        "means": "Flight",
+        "destination": "Thorium Point"
+      }
+    ],
+    "x": 275,
+    "y": -127,
+    "name": "Menethil Harbor",
+    "zone": "Wetlands",
+    "faction": "Stormwind"
   },
   {
-    "x": 303,
-    "y": -205,
-    "name": "Nethergarde Keep",
-    "zone": "Blasted Lands",
-    "faction": "Stormwind",
     "people": [
       {
         "name": "Alexandra Constantine",
@@ -303,14 +712,72 @@
         "race": "Human",
         "type": "Flight Master"
       }
-    ]
+    ],
+    "flightPaths": [
+      {
+        "means": "Flight",
+        "destination": "Aerie Peak"
+      },
+      {
+        "means": "Flight",
+        "destination": "Darkshire"
+      },
+      {
+        "means": "Flight",
+        "destination": "Ironforge"
+      },
+      {
+        "means": "Flight",
+        "destination": "Lakeshire"
+      },
+      {
+        "means": "Flight",
+        "destination": "Menethil Harbor"
+      },
+      {
+        "means": "Flight",
+        "destination": "Refuge Point"
+      },
+      {
+        "means": "Flight",
+        "destination": "Sentinel Hill"
+      },
+      {
+        "means": "Flight",
+        "destination": "Southshore"
+      },
+      {
+        "means": "Flight",
+        "destination": "Stormwind City"
+      },
+      {
+        "means": "Flight",
+        "destination": "Thelsamar"
+      },
+      {
+        "means": "Flight",
+        "destination": "Chillwind Camp"
+      },
+      {
+        "means": "Flight",
+        "destination": "Light's Hope Chapel"
+      },
+      {
+        "means": "Flight",
+        "destination": "Booty Bay"
+      },
+      {
+        "means": "Flight",
+        "destination": "Thorium Point"
+      }
+    ],
+    "x": 303,
+    "y": -205,
+    "name": "Nethergarde Keep",
+    "zone": "Blasted Lands",
+    "faction": "Stormwind"
   },
   {
-    "x": 295,
-    "y": -177,
-    "name": "Morgan's Vigil",
-    "zone": "Burning Steppes",
-    "faction": "Stormwind",
     "people": [
       {
         "name": "Borgus Stoutarm",
@@ -318,14 +785,15 @@
         "race": "Dwarf",
         "type": "Flight Master"
       }
-    ]
+    ],
+    "flightPaths": [],
+    "x": 295,
+    "y": -177,
+    "name": "Morgan's Vigil",
+    "zone": "Burning Steppes",
+    "faction": "Stormwind"
   },
   {
-    "x": 294,
-    "y": -170,
-    "name": "Flame Crest",
-    "zone": "Burning Steppes",
-    "faction": "Orgrimmar",
     "people": [
       {
         "name": "Vahgruk",
@@ -333,7 +801,58 @@
         "race": "Orc",
         "type": "Flight Master"
       }
-    ]
+    ],
+    "flightPaths": [
+      {
+        "means": "Flight",
+        "destination": "Light's Hope Chapel"
+      },
+      {
+        "means": "Flight",
+        "destination": "Grom'gol Base Camp"
+      },
+      {
+        "means": "Flight",
+        "destination": "Hammerfall"
+      },
+      {
+        "means": "Flight",
+        "destination": "Kargath"
+      },
+      {
+        "means": "Flight",
+        "destination": "Revantusk Village"
+      },
+      {
+        "means": "Flight",
+        "destination": "Stonard"
+      },
+      {
+        "means": "Flight",
+        "destination": "Tarren Mill"
+      },
+      {
+        "means": "Flight",
+        "destination": "The Sepulcher"
+      },
+      {
+        "means": "Flight",
+        "destination": "Undercity"
+      },
+      {
+        "means": "Flight",
+        "destination": "Booty Bay"
+      },
+      {
+        "means": "Flight",
+        "destination": "Thorium Point"
+      }
+    ],
+    "x": 294,
+    "y": -170,
+    "name": "Flame Crest",
+    "zone": "Burning Steppes",
+    "faction": "Orgrimmar"
   },
   {
     "x": 287,
@@ -343,11 +862,6 @@
     "faction": "Stormwind"
   },
   {
-    "x": 293,
-    "y": -101,
-    "name": "Refuge Pointe",
-    "zone": "Arathi Highlands",
-    "faction": "Stormwind",
     "people": [
       {
         "name": "Cedrik Prose",
@@ -355,7 +869,70 @@
         "race": "Human",
         "type": "Flight Master"
       }
-    ]
+    ],
+    "flightPaths": [
+      {
+        "means": "Flight",
+        "destination": "Aerie Peak"
+      },
+      {
+        "means": "Flight",
+        "destination": "Darkshire"
+      },
+      {
+        "means": "Flight",
+        "destination": "Ironforge"
+      },
+      {
+        "means": "Flight",
+        "destination": "Lakeshire"
+      },
+      {
+        "means": "Flight",
+        "destination": "Menethil Harbor"
+      },
+      {
+        "means": "Flight",
+        "destination": "Nethergarde Keep"
+      },
+      {
+        "means": "Flight",
+        "destination": "Sentinel Hill"
+      },
+      {
+        "means": "Flight",
+        "destination": "Southshore"
+      },
+      {
+        "means": "Flight",
+        "destination": "Stormwind City"
+      },
+      {
+        "means": "Flight",
+        "destination": "Thelsamar"
+      },
+      {
+        "means": "Flight",
+        "destination": "Chillwind Camp"
+      },
+      {
+        "means": "Flight",
+        "destination": "Light's Hope Chapel"
+      },
+      {
+        "means": "Flight",
+        "destination": "Booty Bay"
+      },
+      {
+        "means": "Flight",
+        "destination": "Thorium Point"
+      }
+    ],
+    "x": 293,
+    "y": -101,
+    "name": "Refuge Point",
+    "zone": "Arathi Highlands",
+    "faction": "Stormwind"
   },
   {
     "people": [
@@ -438,6 +1015,64 @@
         "type": "Flight Master"
       }
     ],
+    "flightPaths": [
+      {
+        "means": "Flight",
+        "destination": "Astranaar"
+      },
+      {
+        "means": "Flight",
+        "destination": "Auberdine"
+      },
+      {
+        "means": "Flight",
+        "destination": "Nijel's Point"
+      },
+      {
+        "means": "Flight",
+        "destination": "Stonetalon Peak"
+      },
+      {
+        "means": "Flight",
+        "destination": "Talonbranch Glade"
+      },
+      {
+        "means": "Flight",
+        "destination": "Talrendis Point"
+      },
+      {
+        "means": "Flight",
+        "destination": "Thalanaar"
+      },
+      {
+        "means": "Flight",
+        "destination": "Theramore Isle"
+      },
+      {
+        "means": "Flight",
+        "destination": "Cenarion Hold"
+      },
+      {
+        "means": "Flight",
+        "destination": "Everlook"
+      },
+      {
+        "means": "Flight",
+        "destination": "Gadgetzan"
+      },
+      {
+        "means": "Flight",
+        "destination": "Marshal's Refuge"
+      },
+      {
+        "means": "Flight",
+        "destination": "Nighthaven"
+      },
+      {
+        "means": "Flight",
+        "destination": "Ratchet"
+      }
+    ],
     "x": 66,
     "y": -39,
     "name": "Rut'theran Village",
@@ -484,11 +1119,6 @@
     "faction": "Darnassus"
   },
   {
-    "x": 80,
-    "y": -103,
-    "name": "Astranaar",
-    "zone": "Ashenvale",
-    "faction": "Darnassus",
     "people": [
       {
         "name": "Daelyshia",
@@ -496,7 +1126,70 @@
         "race": "Night Elf",
         "type": "Flight Master"
       }
-    ]
+    ],
+    "flightPaths": [
+      {
+        "means": "Flight",
+        "destination": "Auberdine"
+      },
+      {
+        "means": "Flight",
+        "destination": "Nijel's Point"
+      },
+      {
+        "means": "Flight",
+        "destination": "Rut'theran Village"
+      },
+      {
+        "means": "Flight",
+        "destination": "Stonetalon Peak"
+      },
+      {
+        "means": "Flight",
+        "destination": "Talonbranch Glade"
+      },
+      {
+        "means": "Flight",
+        "destination": "Talrendis Point"
+      },
+      {
+        "means": "Flight",
+        "destination": "Thalanaar"
+      },
+      {
+        "means": "Flight",
+        "destination": "Theramore Isle"
+      },
+      {
+        "means": "Flight",
+        "destination": "Cenarion Hold"
+      },
+      {
+        "means": "Flight",
+        "destination": "Everlook"
+      },
+      {
+        "means": "Flight",
+        "destination": "Gadgetzan"
+      },
+      {
+        "means": "Flight",
+        "destination": "Marshal's Refuge"
+      },
+      {
+        "means": "Flight",
+        "destination": "Nighthaven"
+      },
+      {
+        "means": "Flight",
+        "destination": "Ratchet"
+      }
+    ],
+    "x": 80,
+    "y": -103,
+    "name": "Astranaar",
+    "zone": "Ashenvale",
+    "faction": "Darnassus"
   },
   {
     "x": 118,
@@ -554,11 +1247,6 @@
         "price": 1.5
       }
     ],
-    "x": 71,
-    "y": -64,
-    "name": "Auberdine",
-    "zone": "Darkshore",
-    "faction": "Darnassus",
     "people": [
       {
         "name": "Caylais Moonfeather",
@@ -566,14 +1254,72 @@
         "race": "Night Elf",
         "type": "Flight Master"
       }
-    ]
+    ],
+    "flightPaths": [
+      {
+        "means": "Flight",
+        "destination": "Astranaar"
+      },
+      {
+        "means": "Flight",
+        "destination": "Nijel's Point"
+      },
+      {
+        "means": "Flight",
+        "destination": "Rut'theran Village"
+      },
+      {
+        "means": "Flight",
+        "destination": "Stonetalon Peak"
+      },
+      {
+        "means": "Flight",
+        "destination": "Talonbranch Glade"
+      },
+      {
+        "means": "Flight",
+        "destination": "Talrendis Point"
+      },
+      {
+        "means": "Flight",
+        "destination": "Thalanaar"
+      },
+      {
+        "means": "Flight",
+        "destination": "Theramore Isle"
+      },
+      {
+        "means": "Flight",
+        "destination": "Cenarion Hold"
+      },
+      {
+        "means": "Flight",
+        "destination": "Everlook"
+      },
+      {
+        "means": "Flight",
+        "destination": "Gadgetzan"
+      },
+      {
+        "means": "Flight",
+        "destination": "Marshal's Refuge"
+      },
+      {
+        "means": "Flight",
+        "destination": "Nighthaven"
+      },
+      {
+        "means": "Flight",
+        "destination": "Ratchet"
+      }
+    ],
+    "x": 71,
+    "y": -64,
+    "name": "Auberdine",
+    "zone": "Darkshore",
+    "faction": "Darnassus"
   },
   {
-    "x": 126,
-    "y": -105,
-    "name": "Talrendis Point",
-    "zone": "Azshara",
-    "faction": "Darnassus",
     "people": [
       {
         "name": "Jarrodenus",
@@ -581,7 +1327,70 @@
         "race": "Night Elf",
         "type": "Flight Master"
       }
-    ]
+    ],
+    "flightPaths": [
+      {
+        "means": "Flight",
+        "destination": "Astranaar"
+      },
+      {
+        "means": "Flight",
+        "destination": "Auberdine"
+      },
+      {
+        "means": "Flight",
+        "destination": "Nijel's Point"
+      },
+      {
+        "means": "Flight",
+        "destination": "Rut'theran Village"
+      },
+      {
+        "means": "Flight",
+        "destination": "Stonetalon Peak"
+      },
+      {
+        "means": "Flight",
+        "destination": "Talonbranch Glade"
+      },
+      {
+        "means": "Flight",
+        "destination": "Thalanaar"
+      },
+      {
+        "means": "Flight",
+        "destination": "Theramore Isle"
+      },
+      {
+        "means": "Flight",
+        "destination": "Cenarion Hold"
+      },
+      {
+        "means": "Flight",
+        "destination": "Everlook"
+      },
+      {
+        "means": "Flight",
+        "destination": "Gadgetzan"
+      },
+      {
+        "means": "Flight",
+        "destination": "Marshal's Refuge"
+      },
+      {
+        "means": "Flight",
+        "destination": "Nighthaven"
+      },
+      {
+        "means": "Flight",
+        "destination": "Ratchet"
+      }
+    ],
+    "x": 126,
+    "y": -105,
+    "name": "Talrendis Point",
+    "zone": "Azshara",
+    "faction": "Darnassus"
   },
   {
     "people": [
@@ -604,6 +1413,64 @@
         "type": "Flight Master"
       }
     ],
+    "flightPaths": [
+      {
+        "means": "Flight",
+        "destination": "Astranaar"
+      },
+      {
+        "means": "Flight",
+        "destination": "Auberdine"
+      },
+      {
+        "means": "Flight",
+        "destination": "Nijel's Point"
+      },
+      {
+        "means": "Flight",
+        "destination": "Rut'theran Village"
+      },
+      {
+        "means": "Flight",
+        "destination": "Stonetalon Peak"
+      },
+      {
+        "means": "Flight",
+        "destination": "Talrendis Point"
+      },
+      {
+        "means": "Flight",
+        "destination": "Thalanaar"
+      },
+      {
+        "means": "Flight",
+        "destination": "Theramore Isle"
+      },
+      {
+        "means": "Flight",
+        "destination": "Cenarion Hold"
+      },
+      {
+        "means": "Flight",
+        "destination": "Everlook"
+      },
+      {
+        "means": "Flight",
+        "destination": "Gadgetzan"
+      },
+      {
+        "means": "Flight",
+        "destination": "Marshal's Refuge"
+      },
+      {
+        "means": "Flight",
+        "destination": "Nighthaven"
+      },
+      {
+        "means": "Flight",
+        "destination": "Ratchet"
+      }
+    ],
     "x": 97,
     "y": -66,
     "name": "Talonbranch Glade",
@@ -611,11 +1478,6 @@
     "faction": "Darnassus"
   },
   {
-    "x": 41,
-    "y": -180,
-    "name": "Feathermoon Stronghold",
-    "zone": "Feralas",
-    "faction": "Darnassus",
     "people": [
       {
         "name": "Fyldren Moonfeather",
@@ -623,14 +1485,15 @@
         "race": "Night Elf",
         "type": "Flight Master"
       }
-    ]
+    ],
+    "flightPaths": [],
+    "x": 41,
+    "y": -180,
+    "name": "Feathermoon Stronghold",
+    "zone": "Feralas",
+    "faction": "Darnassus"
   },
   {
-    "x": 63,
-    "y": -131,
-    "name": "Nijel's Point",
-    "zone": "Desolace",
-    "faction": "Darnassus",
     "people": [
       {
         "name": "Baritanas Skyriver",
@@ -638,14 +1501,72 @@
         "race": "Night Elf",
         "type": "Flight Master"
       }
-    ]
+    ],
+    "flightPaths": [
+      {
+        "means": "Flight",
+        "destination": "Astranaar"
+      },
+      {
+        "means": "Flight",
+        "destination": "Auberdine"
+      },
+      {
+        "means": "Flight",
+        "destination": "Rut'theran Village"
+      },
+      {
+        "means": "Flight",
+        "destination": "Stonetalon Peak"
+      },
+      {
+        "means": "Flight",
+        "destination": "Talonbranch Glade"
+      },
+      {
+        "means": "Flight",
+        "destination": "Talrendis Point"
+      },
+      {
+        "means": "Flight",
+        "destination": "Thalanaar"
+      },
+      {
+        "means": "Flight",
+        "destination": "Theramore Isle"
+      },
+      {
+        "means": "Flight",
+        "destination": "Cenarion Hold"
+      },
+      {
+        "means": "Flight",
+        "destination": "Everlook"
+      },
+      {
+        "means": "Flight",
+        "destination": "Gadgetzan"
+      },
+      {
+        "means": "Flight",
+        "destination": "Marshal's Refuge"
+      },
+      {
+        "means": "Flight",
+        "destination": "Nighthaven"
+      },
+      {
+        "means": "Flight",
+        "destination": "Ratchet"
+      }
+    ],
+    "x": 63,
+    "y": -131,
+    "name": "Nijel's Point",
+    "zone": "Desolace",
+    "faction": "Darnassus"
   },
   {
-    "x": 84,
-    "y": -181,
-    "name": "Thalaanar",
-    "zone": "Thousand Needles",
-    "faction": "Darnassus",
     "people": [
       {
         "name": "Thyssiana",
@@ -653,7 +1574,70 @@
         "race": "Night Elf",
         "type": "Flight Master"
       }
-    ]
+    ],
+    "flightPaths": [
+      {
+        "means": "Flight",
+        "destination": "Astranaar"
+      },
+      {
+        "means": "Flight",
+        "destination": "Auberdine"
+      },
+      {
+        "means": "Flight",
+        "destination": "Nijel's Point"
+      },
+      {
+        "means": "Flight",
+        "destination": "Rut'theran Village"
+      },
+      {
+        "means": "Flight",
+        "destination": "Stonetalon Peak"
+      },
+      {
+        "means": "Flight",
+        "destination": "Talonbranch Glade"
+      },
+      {
+        "means": "Flight",
+        "destination": "Talrendis Point"
+      },
+      {
+        "means": "Flight",
+        "destination": "Theramore Isle"
+      },
+      {
+        "means": "Flight",
+        "destination": "Cenarion Hold"
+      },
+      {
+        "means": "Flight",
+        "destination": "Everlook"
+      },
+      {
+        "means": "Flight",
+        "destination": "Gadgetzan"
+      },
+      {
+        "means": "Flight",
+        "destination": "Marshal's Refuge"
+      },
+      {
+        "means": "Flight",
+        "destination": "Nighthaven"
+      },
+      {
+        "means": "Flight",
+        "destination": "Ratchet"
+      }
+    ],
+    "x": 84,
+    "y": -181,
+    "name": "Thalanaar",
+    "zone": "Thousand Needles",
+    "faction": "Darnassus"
   },
   {
     "people": [
@@ -664,6 +1648,64 @@
         "type": "Flight Master"
       }
     ],
+    "flightPaths": [
+      {
+        "means": "Flight",
+        "destination": "Astranaar"
+      },
+      {
+        "means": "Flight",
+        "destination": "Auberdine"
+      },
+      {
+        "means": "Flight",
+        "destination": "Nijel's Point"
+      },
+      {
+        "means": "Flight",
+        "destination": "Rut'theran Village"
+      },
+      {
+        "means": "Flight",
+        "destination": "Talonbranch Glade"
+      },
+      {
+        "means": "Flight",
+        "destination": "Talrendis Point"
+      },
+      {
+        "means": "Flight",
+        "destination": "Thalanaar"
+      },
+      {
+        "means": "Flight",
+        "destination": "Theramore Isle"
+      },
+      {
+        "means": "Flight",
+        "destination": "Cenarion Hold"
+      },
+      {
+        "means": "Flight",
+        "destination": "Everlook"
+      },
+      {
+        "means": "Flight",
+        "destination": "Gadgetzan"
+      },
+      {
+        "means": "Flight",
+        "destination": "Marshal's Refuge"
+      },
+      {
+        "means": "Flight",
+        "destination": "Nighthaven"
+      },
+      {
+        "means": "Flight",
+        "destination": "Ratchet"
+      }
+    ],
     "x": 61,
     "y": -104,
     "name": "Stonetalon Peak",
@@ -671,6 +1713,72 @@
     "faction": "Darnassus"
   },
   {
+    "people": [
+      {
+        "name": "Guthrum Thunderfist",
+        "gender": "Male",
+        "race": "Dwarf",
+        "type": "Flight Master"
+      }
+    ],
+    "flightPaths": [
+      {
+        "means": "Flight",
+        "destination": "Darkshire"
+      },
+      {
+        "means": "Flight",
+        "destination": "Ironforge"
+      },
+      {
+        "means": "Flight",
+        "destination": "Lakeshire"
+      },
+      {
+        "means": "Flight",
+        "destination": "Menethil Harbor"
+      },
+      {
+        "means": "Flight",
+        "destination": "Nethergarde Keep"
+      },
+      {
+        "means": "Flight",
+        "destination": "Refuge Point"
+      },
+      {
+        "means": "Flight",
+        "destination": "Sentinel Hill"
+      },
+      {
+        "means": "Flight",
+        "destination": "Southshore"
+      },
+      {
+        "means": "Flight",
+        "destination": "Stormwind City"
+      },
+      {
+        "means": "Flight",
+        "destination": "Thelsamar"
+      },
+      {
+        "means": "Flight",
+        "destination": "Chillwind Camp"
+      },
+      {
+        "means": "Flight",
+        "destination": "Light's Hope Chapel"
+      },
+      {
+        "means": "Flight",
+        "destination": "Booty Bay"
+      },
+      {
+        "means": "Flight",
+        "destination": "Thorium Point"
+      }
+    ],
     "x": 288,
     "y": -85,
     "name": "Aerie Peak",
@@ -681,7 +1789,7 @@
     "transport": [
       {
         "means": "Tram",
-        "destination": "Stormwind",
+        "destination": "Stormwind City",
         "price": 1.5
       }
     ],
@@ -747,6 +1855,64 @@
         "type": "Flight Master"
       }
     ],
+    "flightPaths": [
+      {
+        "means": "Flight",
+        "destination": "Aerie Peak"
+      },
+      {
+        "means": "Flight",
+        "destination": "Darkshire"
+      },
+      {
+        "means": "Flight",
+        "destination": "Lakeshire"
+      },
+      {
+        "means": "Flight",
+        "destination": "Menethil Harbor"
+      },
+      {
+        "means": "Flight",
+        "destination": "Nethergarde Keep"
+      },
+      {
+        "means": "Flight",
+        "destination": "Refuge Point"
+      },
+      {
+        "means": "Flight",
+        "destination": "Sentinel Hill"
+      },
+      {
+        "means": "Flight",
+        "destination": "Southshore"
+      },
+      {
+        "means": "Flight",
+        "destination": "Stormwind City"
+      },
+      {
+        "means": "Flight",
+        "destination": "Thelsamar"
+      },
+      {
+        "means": "Flight",
+        "destination": "Chillwind Camp"
+      },
+      {
+        "means": "Flight",
+        "destination": "Light's Hope Chapel"
+      },
+      {
+        "means": "Flight",
+        "destination": "Booty Bay"
+      },
+      {
+        "means": "Flight",
+        "destination": "Thorium Point"
+      }
+    ],
     "x": 275,
     "y": -142,
     "name": "Ironforge",
@@ -754,11 +1920,6 @@
     "faction": "Ironforge"
   },
   {
-    "x": 298,
-    "y": -145,
-    "name": "Thelsamar",
-    "zone": "Loch Modan",
-    "faction": "Ironforge",
     "people": [
       {
         "name": "Thorgrum Borrelson",
@@ -766,7 +1927,70 @@
         "race": "Dwarf",
         "type": "Flight Master"
       }
-    ]
+    ],
+    "flightPaths": [
+      {
+        "means": "Flight",
+        "destination": "Aerie Peak"
+      },
+      {
+        "means": "Flight",
+        "destination": "Darkshire"
+      },
+      {
+        "means": "Flight",
+        "destination": "Ironforge"
+      },
+      {
+        "means": "Flight",
+        "destination": "Lakeshire"
+      },
+      {
+        "means": "Flight",
+        "destination": "Menethil Harbor"
+      },
+      {
+        "means": "Flight",
+        "destination": "Nethergarde Keep"
+      },
+      {
+        "means": "Flight",
+        "destination": "Refuge Point"
+      },
+      {
+        "means": "Flight",
+        "destination": "Sentinel Hill"
+      },
+      {
+        "means": "Flight",
+        "destination": "Southshore"
+      },
+      {
+        "means": "Flight",
+        "destination": "Stormwind City"
+      },
+      {
+        "means": "Flight",
+        "destination": "Chillwind Camp"
+      },
+      {
+        "means": "Flight",
+        "destination": "Light's Hope Chapel"
+      },
+      {
+        "means": "Flight",
+        "destination": "Booty Bay"
+      },
+      {
+        "means": "Flight",
+        "destination": "Thorium Point"
+      }
+    ],
+    "x": 298,
+    "y": -145,
+    "name": "Thelsamar",
+    "zone": "Loch Modan",
+    "faction": "Ironforge"
   },
   {
     "x": 279,
@@ -915,6 +2139,76 @@
         "type": "Flight Master"
       }
     ],
+    "flightPaths": [
+      {
+        "means": "Flight",
+        "destination": "Bloodvenom Post"
+      },
+      {
+        "means": "Flight",
+        "destination": "Brackenwall Village"
+      },
+      {
+        "means": "Flight",
+        "destination": "Camp Mojache"
+      },
+      {
+        "means": "Flight",
+        "destination": "Camp Taurajo"
+      },
+      {
+        "means": "Flight",
+        "destination": "Freewind Post"
+      },
+      {
+        "means": "Flight",
+        "destination": "Shadowprey Village"
+      },
+      {
+        "means": "Flight",
+        "destination": "Splintertree Post"
+      },
+      {
+        "means": "Flight",
+        "destination": "Sun Rock Retreat"
+      },
+      {
+        "means": "Flight",
+        "destination": "The Crossroads"
+      },
+      {
+        "means": "Flight",
+        "destination": "Thunder Bluff"
+      },
+      {
+        "means": "Flight",
+        "destination": "Valormok"
+      },
+      {
+        "means": "Flight",
+        "destination": "Zoram'gar Outpost"
+      },
+      {
+        "means": "Flight",
+        "destination": "Cenarion Hold"
+      },
+      {
+        "means": "Flight",
+        "destination": "Everlook"
+      },
+      {
+        "means": "Flight",
+        "destination": "Gadgetzan"
+      },
+      {
+        "means": "Flight",
+        "destination": "Marshal's Refuge"
+      },
+      {
+        "means": "Flight",
+        "destination": "Ratchet"
+      }
+    ],
     "x": 121,
     "y": -116,
     "name": "Orgrimmar",
@@ -967,11 +2261,6 @@
     "faction": "Orgrimmar"
   },
   {
-    "x": 65,
-    "y": -97,
-    "name": "Zoram'gar Outpost",
-    "zone": "Ashenvale",
-    "faction": "Orgrimmar",
     "people": [
       {
         "name": "Andruk",
@@ -979,14 +2268,84 @@
         "race": "Orc",
         "type": "Flight Master"
       }
-    ]
+    ],
+    "flightPaths": [
+      {
+        "means": "Flight",
+        "destination": "Bloodvenom Post"
+      },
+      {
+        "means": "Flight",
+        "destination": "Brackenwall Village"
+      },
+      {
+        "means": "Flight",
+        "destination": "Camp Mojache"
+      },
+      {
+        "means": "Flight",
+        "destination": "Camp Taurajo"
+      },
+      {
+        "means": "Flight",
+        "destination": "Freewind Post"
+      },
+      {
+        "means": "Flight",
+        "destination": "Orgrimmar"
+      },
+      {
+        "means": "Flight",
+        "destination": "Shadowprey Village"
+      },
+      {
+        "means": "Flight",
+        "destination": "Splintertree Post"
+      },
+      {
+        "means": "Flight",
+        "destination": "Sun Rock Retreat"
+      },
+      {
+        "means": "Flight",
+        "destination": "The Crossroads"
+      },
+      {
+        "means": "Flight",
+        "destination": "Thunder Bluff"
+      },
+      {
+        "means": "Flight",
+        "destination": "Valormok"
+      },
+      {
+        "means": "Flight",
+        "destination": "Cenarion Hold"
+      },
+      {
+        "means": "Flight",
+        "destination": "Everlook"
+      },
+      {
+        "means": "Flight",
+        "destination": "Gadgetzan"
+      },
+      {
+        "means": "Flight",
+        "destination": "Marshal's Refuge"
+      },
+      {
+        "means": "Flight",
+        "destination": "Ratchet"
+      }
+    ],
+    "x": 65,
+    "y": -97,
+    "name": "Zoram'gar Outpost",
+    "zone": "Ashenvale",
+    "faction": "Orgrimmar"
   },
   {
-    "x": 105,
-    "y": -137,
-    "name": "The Crossroads",
-    "zone": "The Barrens",
-    "faction": "Orgrimmar",
     "people": [
       {
         "name": "Devrak",
@@ -994,14 +2353,84 @@
         "race": "Orc",
         "type": "Flight Master"
       }
-    ]
+    ],
+    "flightPaths": [
+      {
+        "means": "Flight",
+        "destination": "Bloodvenom Post"
+      },
+      {
+        "means": "Flight",
+        "destination": "Brackenwall Village"
+      },
+      {
+        "means": "Flight",
+        "destination": "Camp Mojache"
+      },
+      {
+        "means": "Flight",
+        "destination": "Camp Taurajo"
+      },
+      {
+        "means": "Flight",
+        "destination": "Freewind Post"
+      },
+      {
+        "means": "Flight",
+        "destination": "Orgrimmar"
+      },
+      {
+        "means": "Flight",
+        "destination": "Shadowprey Village"
+      },
+      {
+        "means": "Flight",
+        "destination": "Splintertree Post"
+      },
+      {
+        "means": "Flight",
+        "destination": "Sun Rock Retreat"
+      },
+      {
+        "means": "Flight",
+        "destination": "Thunder Bluff"
+      },
+      {
+        "means": "Flight",
+        "destination": "Valormok"
+      },
+      {
+        "means": "Flight",
+        "destination": "Zoram'gar Outpost"
+      },
+      {
+        "means": "Flight",
+        "destination": "Cenarion Hold"
+      },
+      {
+        "means": "Flight",
+        "destination": "Everlook"
+      },
+      {
+        "means": "Flight",
+        "destination": "Gadgetzan"
+      },
+      {
+        "means": "Flight",
+        "destination": "Marshal's Refuge"
+      },
+      {
+        "means": "Flight",
+        "destination": "Ratchet"
+      }
+    ],
+    "x": 105,
+    "y": -137,
+    "name": "The Crossroads",
+    "zone": "The Barrens",
+    "faction": "Orgrimmar"
   },
   {
-    "x": 80,
-    "y": -78,
-    "name": "Bloodvenom Post",
-    "zone": "Felwood",
-    "faction": "Orgrimmar",
     "people": [
       {
         "name": "Brakkar",
@@ -1009,14 +2438,84 @@
         "race": "Orc",
         "type": "Flight Master"
       }
-    ]
+    ],
+    "flightPaths": [
+      {
+        "means": "Flight",
+        "destination": "Brackenwall Village"
+      },
+      {
+        "means": "Flight",
+        "destination": "Camp Mojache"
+      },
+      {
+        "means": "Flight",
+        "destination": "Camp Taurajo"
+      },
+      {
+        "means": "Flight",
+        "destination": "Freewind Post"
+      },
+      {
+        "means": "Flight",
+        "destination": "Orgrimmar"
+      },
+      {
+        "means": "Flight",
+        "destination": "Shadowprey Village"
+      },
+      {
+        "means": "Flight",
+        "destination": "Splintertree Post"
+      },
+      {
+        "means": "Flight",
+        "destination": "Sun Rock Retreat"
+      },
+      {
+        "means": "Flight",
+        "destination": "The Crossroads"
+      },
+      {
+        "means": "Flight",
+        "destination": "Thunder Bluff"
+      },
+      {
+        "means": "Flight",
+        "destination": "Valormok"
+      },
+      {
+        "means": "Flight",
+        "destination": "Zoram'gar Outpost"
+      },
+      {
+        "means": "Flight",
+        "destination": "Cenarion Hold"
+      },
+      {
+        "means": "Flight",
+        "destination": "Everlook"
+      },
+      {
+        "means": "Flight",
+        "destination": "Gadgetzan"
+      },
+      {
+        "means": "Flight",
+        "destination": "Marshal's Refuge"
+      },
+      {
+        "means": "Flight",
+        "destination": "Ratchet"
+      }
+    ],
+    "x": 80,
+    "y": -78,
+    "name": "Bloodvenom Post",
+    "zone": "Felwood",
+    "faction": "Orgrimmar"
   },
   {
-    "x": 123,
-    "y": -94,
-    "name": "Valormok",
-    "zone": "Azshara",
-    "faction": "Orgrimmar",
     "people": [
       {
         "name": "Kroum",
@@ -1024,7 +2523,82 @@
         "race": "Orc",
         "type": "Flight Master"
       }
-    ]
+    ],
+    "flightPaths": [
+      {
+        "means": "Flight",
+        "destination": "Bloodvenom Post"
+      },
+      {
+        "means": "Flight",
+        "destination": "Brackenwall Village"
+      },
+      {
+        "means": "Flight",
+        "destination": "Camp Mojache"
+      },
+      {
+        "means": "Flight",
+        "destination": "Camp Taurajo"
+      },
+      {
+        "means": "Flight",
+        "destination": "Freewind Post"
+      },
+      {
+        "means": "Flight",
+        "destination": "Orgrimmar"
+      },
+      {
+        "means": "Flight",
+        "destination": "Shadowprey Village"
+      },
+      {
+        "means": "Flight",
+        "destination": "Splintertree Post"
+      },
+      {
+        "means": "Flight",
+        "destination": "Sun Rock Retreat"
+      },
+      {
+        "means": "Flight",
+        "destination": "The Crossroads"
+      },
+      {
+        "means": "Flight",
+        "destination": "Thunder Bluff"
+      },
+      {
+        "means": "Flight",
+        "destination": "Zoram'gar Outpost"
+      },
+      {
+        "means": "Flight",
+        "destination": "Cenarion Hold"
+      },
+      {
+        "means": "Flight",
+        "destination": "Everlook"
+      },
+      {
+        "means": "Flight",
+        "destination": "Gadgetzan"
+      },
+      {
+        "means": "Flight",
+        "destination": "Marshal's Refuge"
+      },
+      {
+        "means": "Flight",
+        "destination": "Ratchet"
+      }
+    ],
+    "x": 123,
+    "y": -94,
+    "name": "Valormok",
+    "zone": "Azshara",
+    "faction": "Orgrimmar"
   },
   {
     "x": 101,
@@ -1056,11 +2630,6 @@
     "faction": "Orgrimmar"
   },
   {
-    "x": 103,
-    "y": -109,
-    "name": "Splintertree Post",
-    "zone": "Ashenvale",
-    "faction": "Orgrimmar",
     "people": [
       {
         "name": "Vhulgra",
@@ -1068,14 +2637,84 @@
         "race": "Orc",
         "type": "Flight Master"
       }
-    ]
+    ],
+    "flightPaths": [
+      {
+        "means": "Flight",
+        "destination": "Bloodvenom Post"
+      },
+      {
+        "means": "Flight",
+        "destination": "Brackenwall Village"
+      },
+      {
+        "means": "Flight",
+        "destination": "Camp Mojache"
+      },
+      {
+        "means": "Flight",
+        "destination": "Camp Taurajo"
+      },
+      {
+        "means": "Flight",
+        "destination": "Freewind Post"
+      },
+      {
+        "means": "Flight",
+        "destination": "Orgrimmar"
+      },
+      {
+        "means": "Flight",
+        "destination": "Shadowprey Village"
+      },
+      {
+        "means": "Flight",
+        "destination": "Sun Rock Retreat"
+      },
+      {
+        "means": "Flight",
+        "destination": "The Crossroads"
+      },
+      {
+        "means": "Flight",
+        "destination": "Thunder Bluff"
+      },
+      {
+        "means": "Flight",
+        "destination": "Valormok"
+      },
+      {
+        "means": "Flight",
+        "destination": "Zoram'gar Outpost"
+      },
+      {
+        "means": "Flight",
+        "destination": "Cenarion Hold"
+      },
+      {
+        "means": "Flight",
+        "destination": "Everlook"
+      },
+      {
+        "means": "Flight",
+        "destination": "Gadgetzan"
+      },
+      {
+        "means": "Flight",
+        "destination": "Marshal's Refuge"
+      },
+      {
+        "means": "Flight",
+        "destination": "Ratchet"
+      }
+    ],
+    "x": 103,
+    "y": -109,
+    "name": "Splintertree Post",
+    "zone": "Ashenvale",
+    "faction": "Orgrimmar"
   },
   {
-    "x": 290,
-    "y": -159,
-    "name": "Kargath",
-    "zone": "Badlands",
-    "faction": "Orgrimmar",
     "people": [
       {
         "name": "Gorrik",
@@ -1083,7 +2722,58 @@
         "race": "Orc",
         "type": "Flight Master"
       }
-    ]
+    ],
+    "flightPaths": [
+      {
+        "means": "Flight",
+        "destination": "Light's Hope Chapel"
+      },
+      {
+        "means": "Flight",
+        "destination": "Flame Crest"
+      },
+      {
+        "means": "Flight",
+        "destination": "Grom'gol Base Camp"
+      },
+      {
+        "means": "Flight",
+        "destination": "Hammerfall"
+      },
+      {
+        "means": "Flight",
+        "destination": "Revantusk Village"
+      },
+      {
+        "means": "Flight",
+        "destination": "Stonard"
+      },
+      {
+        "means": "Flight",
+        "destination": "Tarren Mill"
+      },
+      {
+        "means": "Flight",
+        "destination": "The Sepulcher"
+      },
+      {
+        "means": "Flight",
+        "destination": "Undercity"
+      },
+      {
+        "means": "Flight",
+        "destination": "Booty Bay"
+      },
+      {
+        "means": "Flight",
+        "destination": "Thorium Point"
+      }
+    ],
+    "x": 290,
+    "y": -159,
+    "name": "Kargath",
+    "zone": "Badlands",
+    "faction": "Orgrimmar"
   },
   {
     "people": [
@@ -1118,6 +2808,52 @@
         "type": "Flight Master"
       }
     ],
+    "flightPaths": [
+      {
+        "means": "Flight",
+        "destination": "Light's Hope Chapel"
+      },
+      {
+        "means": "Flight",
+        "destination": "Flame Crest"
+      },
+      {
+        "means": "Flight",
+        "destination": "Grom'gol Base Camp"
+      },
+      {
+        "means": "Flight",
+        "destination": "Hammerfall"
+      },
+      {
+        "means": "Flight",
+        "destination": "Kargath"
+      },
+      {
+        "means": "Flight",
+        "destination": "Revantusk Village"
+      },
+      {
+        "means": "Flight",
+        "destination": "Tarren Mill"
+      },
+      {
+        "means": "Flight",
+        "destination": "The Sepulcher"
+      },
+      {
+        "means": "Flight",
+        "destination": "Undercity"
+      },
+      {
+        "means": "Flight",
+        "destination": "Booty Bay"
+      },
+      {
+        "means": "Flight",
+        "destination": "Thorium Point"
+      }
+    ],
     "x": 301,
     "y": -199,
     "name": "Stonard",
@@ -1125,11 +2861,6 @@
     "faction": "Orgrimmar"
   },
   {
-    "x": 107,
-    "y": -167,
-    "name": "Brackenwall Village",
-    "zone": "Dustwallow Marsh",
-    "faction": "Orgrimmar",
     "people": [
       {
         "name": "Shardi",
@@ -1137,7 +2868,82 @@
         "race": "Orc",
         "type": "Flight Master"
       }
-    ]
+    ],
+    "flightPaths": [
+      {
+        "means": "Flight",
+        "destination": "Bloodvenom Post"
+      },
+      {
+        "means": "Flight",
+        "destination": "Camp Mojache"
+      },
+      {
+        "means": "Flight",
+        "destination": "Camp Taurajo"
+      },
+      {
+        "means": "Flight",
+        "destination": "Freewind Post"
+      },
+      {
+        "means": "Flight",
+        "destination": "Orgrimmar"
+      },
+      {
+        "means": "Flight",
+        "destination": "Shadowprey Village"
+      },
+      {
+        "means": "Flight",
+        "destination": "Splintertree Post"
+      },
+      {
+        "means": "Flight",
+        "destination": "Sun Rock Retreat"
+      },
+      {
+        "means": "Flight",
+        "destination": "The Crossroads"
+      },
+      {
+        "means": "Flight",
+        "destination": "Thunder Bluff"
+      },
+      {
+        "means": "Flight",
+        "destination": "Valormok"
+      },
+      {
+        "means": "Flight",
+        "destination": "Zoram'gar Outpost"
+      },
+      {
+        "means": "Flight",
+        "destination": "Cenarion Hold"
+      },
+      {
+        "means": "Flight",
+        "destination": "Everlook"
+      },
+      {
+        "means": "Flight",
+        "destination": "Gadgetzan"
+      },
+      {
+        "means": "Flight",
+        "destination": "Marshal's Refuge"
+      },
+      {
+        "means": "Flight",
+        "destination": "Ratchet"
+      }
+    ],
+    "x": 107,
+    "y": -167,
+    "name": "Brackenwall Village",
+    "zone": "Dustwallow Marsh",
+    "faction": "Orgrimmar"
   },
   {
     "people": [
@@ -1155,11 +2961,6 @@
     "faction": "Darkspear Tribe"
   },
   {
-    "x": 42,
-    "y": -150,
-    "name": "Shadowprey Village",
-    "zone": "Desolace",
-    "faction": "Darkspear Tribe",
     "people": [
       {
         "name": "Thalon",
@@ -1167,7 +2968,82 @@
         "race": "Tauren",
         "type": "Flight Master"
       }
-    ]
+    ],
+    "flightPaths": [
+      {
+        "means": "Flight",
+        "destination": "Bloodvenom Post"
+      },
+      {
+        "means": "Flight",
+        "destination": "Brackenwall Village"
+      },
+      {
+        "means": "Flight",
+        "destination": "Camp Mojache"
+      },
+      {
+        "means": "Flight",
+        "destination": "Camp Taurajo"
+      },
+      {
+        "means": "Flight",
+        "destination": "Freewind Post"
+      },
+      {
+        "means": "Flight",
+        "destination": "Orgrimmar"
+      },
+      {
+        "means": "Flight",
+        "destination": "Splintertree Post"
+      },
+      {
+        "means": "Flight",
+        "destination": "Sun Rock Retreat"
+      },
+      {
+        "means": "Flight",
+        "destination": "The Crossroads"
+      },
+      {
+        "means": "Flight",
+        "destination": "Thunder Bluff"
+      },
+      {
+        "means": "Flight",
+        "destination": "Valormok"
+      },
+      {
+        "means": "Flight",
+        "destination": "Zoram'gar Outpost"
+      },
+      {
+        "means": "Flight",
+        "destination": "Cenarion Hold"
+      },
+      {
+        "means": "Flight",
+        "destination": "Everlook"
+      },
+      {
+        "means": "Flight",
+        "destination": "Gadgetzan"
+      },
+      {
+        "means": "Flight",
+        "destination": "Marshal's Refuge"
+      },
+      {
+        "means": "Flight",
+        "destination": "Ratchet"
+      }
+    ],
+    "x": 42,
+    "y": -150,
+    "name": "Shadowprey Village",
+    "zone": "Desolace",
+    "faction": "Darkspear Tribe"
   },
   {
     "x": 316,
@@ -1225,6 +3101,76 @@
         "gender": "Male",
         "race": "Tauren",
         "type": "Flight Master"
+      }
+    ],
+    "flightPaths": [
+      {
+        "means": "Flight",
+        "destination": "Bloodvenom Post"
+      },
+      {
+        "means": "Flight",
+        "destination": "Brackenwall Village"
+      },
+      {
+        "means": "Flight",
+        "destination": "Camp Mojache"
+      },
+      {
+        "means": "Flight",
+        "destination": "Camp Taurajo"
+      },
+      {
+        "means": "Flight",
+        "destination": "Freewind Post"
+      },
+      {
+        "means": "Flight",
+        "destination": "Orgrimmar"
+      },
+      {
+        "means": "Flight",
+        "destination": "Shadowprey Village"
+      },
+      {
+        "means": "Flight",
+        "destination": "Splintertree Post"
+      },
+      {
+        "means": "Flight",
+        "destination": "Sun Rock Retreat"
+      },
+      {
+        "means": "Flight",
+        "destination": "The Crossroads"
+      },
+      {
+        "means": "Flight",
+        "destination": "Valormok"
+      },
+      {
+        "means": "Flight",
+        "destination": "Zoram'gar Outpost"
+      },
+      {
+        "means": "Flight",
+        "destination": "Cenarion Hold"
+      },
+      {
+        "means": "Flight",
+        "destination": "Everlook"
+      },
+      {
+        "means": "Flight",
+        "destination": "Gadgetzan"
+      },
+      {
+        "means": "Flight",
+        "destination": "Marshal's Refuge"
+      },
+      {
+        "means": "Flight",
+        "destination": "Ratchet"
       }
     ],
     "x": 76,
@@ -1288,6 +3234,76 @@
         "type": "Flight Master"
       }
     ],
+    "flightPaths": [
+      {
+        "means": "Flight",
+        "destination": "Bloodvenom Post"
+      },
+      {
+        "means": "Flight",
+        "destination": "Brackenwall Village"
+      },
+      {
+        "means": "Flight",
+        "destination": "Camp Taurajo"
+      },
+      {
+        "means": "Flight",
+        "destination": "Freewind Post"
+      },
+      {
+        "means": "Flight",
+        "destination": "Orgrimmar"
+      },
+      {
+        "means": "Flight",
+        "destination": "Shadowprey Village"
+      },
+      {
+        "means": "Flight",
+        "destination": "Splintertree Post"
+      },
+      {
+        "means": "Flight",
+        "destination": "Sun Rock Retreat"
+      },
+      {
+        "means": "Flight",
+        "destination": "The Crossroads"
+      },
+      {
+        "means": "Flight",
+        "destination": "Thunder Bluff"
+      },
+      {
+        "means": "Flight",
+        "destination": "Valormok"
+      },
+      {
+        "means": "Flight",
+        "destination": "Zoram'gar Outpost"
+      },
+      {
+        "means": "Flight",
+        "destination": "Cenarion Hold"
+      },
+      {
+        "means": "Flight",
+        "destination": "Everlook"
+      },
+      {
+        "means": "Flight",
+        "destination": "Gadgetzan"
+      },
+      {
+        "means": "Flight",
+        "destination": "Marshal's Refuge"
+      },
+      {
+        "means": "Flight",
+        "destination": "Ratchet"
+      }
+    ],
     "x": 73,
     "y": -179,
     "name": "Camp Mojache",
@@ -1295,11 +3311,6 @@
     "faction": "Thunder Bluff"
   },
   {
-    "x": 98,
-    "y": -158,
-    "name": "Camp Taurajo",
-    "zone": "The Barrens",
-    "faction": "Thunder Bluff",
     "people": [
       {
         "name": "Omusa Thunderhorn",
@@ -1307,14 +3318,84 @@
         "race": "Tauren",
         "type": "Flight Master"
       }
-    ]
+    ],
+    "flightPaths": [
+      {
+        "means": "Flight",
+        "destination": "Bloodvenom Post"
+      },
+      {
+        "means": "Flight",
+        "destination": "Brackenwall Village"
+      },
+      {
+        "means": "Flight",
+        "destination": "Camp Mojache"
+      },
+      {
+        "means": "Flight",
+        "destination": "Freewind Post"
+      },
+      {
+        "means": "Flight",
+        "destination": "Orgrimmar"
+      },
+      {
+        "means": "Flight",
+        "destination": "Shadowprey Village"
+      },
+      {
+        "means": "Flight",
+        "destination": "Splintertree Post"
+      },
+      {
+        "means": "Flight",
+        "destination": "Sun Rock Retreat"
+      },
+      {
+        "means": "Flight",
+        "destination": "The Crossroads"
+      },
+      {
+        "means": "Flight",
+        "destination": "Thunder Bluff"
+      },
+      {
+        "means": "Flight",
+        "destination": "Valormok"
+      },
+      {
+        "means": "Flight",
+        "destination": "Zoram'gar Outpost"
+      },
+      {
+        "means": "Flight",
+        "destination": "Cenarion Hold"
+      },
+      {
+        "means": "Flight",
+        "destination": "Everlook"
+      },
+      {
+        "means": "Flight",
+        "destination": "Gadgetzan"
+      },
+      {
+        "means": "Flight",
+        "destination": "Marshal's Refuge"
+      },
+      {
+        "means": "Flight",
+        "destination": "Ratchet"
+      }
+    ],
+    "x": 98,
+    "y": -158,
+    "name": "Camp Taurajo",
+    "zone": "The Barrens",
+    "faction": "Thunder Bluff"
   },
   {
-    "x": 102,
-    "y": -191,
-    "name": "Freewind Post",
-    "zone": "Thousand Needles",
-    "faction": "Thunder Bluff",
     "people": [
       {
         "name": "Nyse",
@@ -1322,14 +3403,84 @@
         "race": "Tauren",
         "type": "Flight Master"
       }
-    ]
+    ],
+    "flightPaths": [
+      {
+        "means": "Flight",
+        "destination": "Bloodvenom Post"
+      },
+      {
+        "means": "Flight",
+        "destination": "Brackenwall Village"
+      },
+      {
+        "means": "Flight",
+        "destination": "Camp Mojache"
+      },
+      {
+        "means": "Flight",
+        "destination": "Camp Taurajo"
+      },
+      {
+        "means": "Flight",
+        "destination": "Orgrimmar"
+      },
+      {
+        "means": "Flight",
+        "destination": "Shadowprey Village"
+      },
+      {
+        "means": "Flight",
+        "destination": "Splintertree Post"
+      },
+      {
+        "means": "Flight",
+        "destination": "Sun Rock Retreat"
+      },
+      {
+        "means": "Flight",
+        "destination": "The Crossroads"
+      },
+      {
+        "means": "Flight",
+        "destination": "Thunder Bluff"
+      },
+      {
+        "means": "Flight",
+        "destination": "Valormok"
+      },
+      {
+        "means": "Flight",
+        "destination": "Zoram'gar Outpost"
+      },
+      {
+        "means": "Flight",
+        "destination": "Cenarion Hold"
+      },
+      {
+        "means": "Flight",
+        "destination": "Everlook"
+      },
+      {
+        "means": "Flight",
+        "destination": "Gadgetzan"
+      },
+      {
+        "means": "Flight",
+        "destination": "Marshal's Refuge"
+      },
+      {
+        "means": "Flight",
+        "destination": "Ratchet"
+      }
+    ],
+    "x": 102,
+    "y": -191,
+    "name": "Freewind Post",
+    "zone": "Thousand Needles",
+    "faction": "Thunder Bluff"
   },
   {
-    "x": 66,
-    "y": -123,
-    "name": "Sun Rock Retreat",
-    "zone": "Stonetalon Mountains",
-    "faction": "Thunder Bluff",
     "people": [
       {
         "name": "Tharm",
@@ -1337,7 +3488,82 @@
         "race": "Tauren",
         "type": "Flight Master"
       }
-    ]
+    ],
+    "flightPaths": [
+      {
+        "means": "Flight",
+        "destination": "Bloodvenom Post"
+      },
+      {
+        "means": "Flight",
+        "destination": "Brackenwall Village"
+      },
+      {
+        "means": "Flight",
+        "destination": "Camp Mojache"
+      },
+      {
+        "means": "Flight",
+        "destination": "Camp Taurajo"
+      },
+      {
+        "means": "Flight",
+        "destination": "Freewind Post"
+      },
+      {
+        "means": "Flight",
+        "destination": "Orgrimmar"
+      },
+      {
+        "means": "Flight",
+        "destination": "Shadowprey Village"
+      },
+      {
+        "means": "Flight",
+        "destination": "Splintertree Post"
+      },
+      {
+        "means": "Flight",
+        "destination": "The Crossroads"
+      },
+      {
+        "means": "Flight",
+        "destination": "Thunder Bluff"
+      },
+      {
+        "means": "Flight",
+        "destination": "Valormok"
+      },
+      {
+        "means": "Flight",
+        "destination": "Zoram'gar Outpost"
+      },
+      {
+        "means": "Flight",
+        "destination": "Cenarion Hold"
+      },
+      {
+        "means": "Flight",
+        "destination": "Everlook"
+      },
+      {
+        "means": "Flight",
+        "destination": "Gadgetzan"
+      },
+      {
+        "means": "Flight",
+        "destination": "Marshal's Refuge"
+      },
+      {
+        "means": "Flight",
+        "destination": "Ratchet"
+      }
+    ],
+    "x": 66,
+    "y": -123,
+    "name": "Sun Rock Retreat",
+    "zone": "Stonetalon Mountains",
+    "faction": "Thunder Bluff"
   },
   {
     "x": 57,
@@ -1396,6 +3622,58 @@
         "gender": "Male",
         "race": "Tauren",
         "type": "Battlemaster"
+      },
+      {
+        "name": "Michael Garrett",
+        "gender": "Male",
+        "race": "Forsaken",
+        "type": "Flight Master"
+      }
+    ],
+    "flightPaths": [
+      {
+        "means": "Flight",
+        "destination": "Light's Hope Chapel"
+      },
+      {
+        "means": "Flight",
+        "destination": "Flame Crest"
+      },
+      {
+        "means": "Flight",
+        "destination": "Grom'gol Base Camp"
+      },
+      {
+        "means": "Flight",
+        "destination": "Hammerfall"
+      },
+      {
+        "means": "Flight",
+        "destination": "Kargath"
+      },
+      {
+        "means": "Flight",
+        "destination": "Revantusk Village"
+      },
+      {
+        "means": "Flight",
+        "destination": "Stonard"
+      },
+      {
+        "means": "Flight",
+        "destination": "Tarren Mill"
+      },
+      {
+        "means": "Flight",
+        "destination": "The Sepulcher"
+      },
+      {
+        "means": "Flight",
+        "destination": "Booty Bay"
+      },
+      {
+        "means": "Flight",
+        "destination": "Thorium Point"
       }
     ],
     "x": 263,
@@ -1456,11 +3734,6 @@
     "faction": "Undercity"
   },
   {
-    "x": 303,
-    "y": -98,
-    "name": "Hammerfall",
-    "zone": "Arathi Highlands",
-    "faction": "Undercity",
     "people": [
       {
         "name": "Urda",
@@ -1468,14 +3741,60 @@
         "race": "Orc",
         "type": "Flight Master"
       }
-    ]
+    ],
+    "flightPaths": [
+      {
+        "means": "Flight",
+        "destination": "Light's Hope Chapel"
+      },
+      {
+        "means": "Flight",
+        "destination": "Flame Crest"
+      },
+      {
+        "means": "Flight",
+        "destination": "Grom'gol Base Camp"
+      },
+      {
+        "means": "Flight",
+        "destination": "Kargath"
+      },
+      {
+        "means": "Flight",
+        "destination": "Revantusk Village"
+      },
+      {
+        "means": "Flight",
+        "destination": "Stonard"
+      },
+      {
+        "means": "Flight",
+        "destination": "Tarren Mill"
+      },
+      {
+        "means": "Flight",
+        "destination": "The Sepulcher"
+      },
+      {
+        "means": "Flight",
+        "destination": "Undercity"
+      },
+      {
+        "means": "Flight",
+        "destination": "Booty Bay"
+      },
+      {
+        "means": "Flight",
+        "destination": "Thorium Point"
+      }
+    ],
+    "x": 303,
+    "y": -98,
+    "name": "Hammerfall",
+    "zone": "Arathi Highlands",
+    "faction": "Undercity"
   },
   {
-    "x": 275,
-    "y": -88,
-    "name": "Tarren Mill",
-    "zone": "Hillsbrad Foothills",
-    "faction": "Undercity",
     "people": [
       {
         "name": "Zarise",
@@ -1483,14 +3802,60 @@
         "race": "Forsaken",
         "type": "Flight Master"
       }
-    ]
+    ],
+    "flightPaths": [
+      {
+        "means": "Flight",
+        "destination": "Light's Hope Chapel"
+      },
+      {
+        "means": "Flight",
+        "destination": "Flame Crest"
+      },
+      {
+        "means": "Flight",
+        "destination": "Grom'gol Base Camp"
+      },
+      {
+        "means": "Flight",
+        "destination": "Hammerfall"
+      },
+      {
+        "means": "Flight",
+        "destination": "Kargath"
+      },
+      {
+        "means": "Flight",
+        "destination": "Revantusk Village"
+      },
+      {
+        "means": "Flight",
+        "destination": "Stonard"
+      },
+      {
+        "means": "Flight",
+        "destination": "The Sepulcher"
+      },
+      {
+        "means": "Flight",
+        "destination": "Undercity"
+      },
+      {
+        "means": "Flight",
+        "destination": "Booty Bay"
+      },
+      {
+        "means": "Flight",
+        "destination": "Thorium Point"
+      }
+    ],
+    "x": 275,
+    "y": -88,
+    "name": "Tarren Mill",
+    "zone": "Hillsbrad Foothills",
+    "faction": "Undercity"
   },
   {
-    "x": 248,
-    "y": -82,
-    "name": "The Sepulcher",
-    "zone": "Silverpine Forest",
-    "faction": "Undercity",
     "people": [
       {
         "name": "Karos Razok",
@@ -1498,7 +3863,58 @@
         "race": "Forsaken",
         "type": "Flight Master"
       }
-    ]
+    ],
+    "flightPaths": [
+      {
+        "means": "Flight",
+        "destination": "Light's Hope Chapel"
+      },
+      {
+        "means": "Flight",
+        "destination": "Flame Crest"
+      },
+      {
+        "means": "Flight",
+        "destination": "Grom'gol Base Camp"
+      },
+      {
+        "means": "Flight",
+        "destination": "Hammerfall"
+      },
+      {
+        "means": "Flight",
+        "destination": "Kargath"
+      },
+      {
+        "means": "Flight",
+        "destination": "Revantusk Village"
+      },
+      {
+        "means": "Flight",
+        "destination": "Stonard"
+      },
+      {
+        "means": "Flight",
+        "destination": "Tarren Mill"
+      },
+      {
+        "means": "Flight",
+        "destination": "Undercity"
+      },
+      {
+        "means": "Flight",
+        "destination": "Booty Bay"
+      },
+      {
+        "means": "Flight",
+        "destination": "Thorium Point"
+      }
+    ],
+    "x": 248,
+    "y": -82,
+    "name": "The Sepulcher",
+    "zone": "Silverpine Forest",
+    "faction": "Undercity"
   },
   {
     "people": [
@@ -1513,6 +3929,116 @@
         "gender": "Male",
         "race": "Tauren",
         "type": "Flight Master"
+      }
+    ],
+    "flightPaths": [
+      {
+        "means": "Flight",
+        "destination": "Astranaar"
+      },
+      {
+        "means": "Flight",
+        "destination": "Auberdine"
+      },
+      {
+        "means": "Flight",
+        "destination": "Nijel's Point"
+      },
+      {
+        "means": "Flight",
+        "destination": "Rut'theran Village"
+      },
+      {
+        "means": "Flight",
+        "destination": "Stonetalon Peak"
+      },
+      {
+        "means": "Flight",
+        "destination": "Talonbranch Glade"
+      },
+      {
+        "means": "Flight",
+        "destination": "Talrendis Point"
+      },
+      {
+        "means": "Flight",
+        "destination": "Thalanaar"
+      },
+      {
+        "means": "Flight",
+        "destination": "Theramore Isle"
+      },
+      {
+        "means": "Flight",
+        "destination": "Bloodvenom Post"
+      },
+      {
+        "means": "Flight",
+        "destination": "Brackenwall Village"
+      },
+      {
+        "means": "Flight",
+        "destination": "Camp Mojache"
+      },
+      {
+        "means": "Flight",
+        "destination": "Camp Taurajo"
+      },
+      {
+        "means": "Flight",
+        "destination": "Freewind Post"
+      },
+      {
+        "means": "Flight",
+        "destination": "Orgrimmar"
+      },
+      {
+        "means": "Flight",
+        "destination": "Shadowprey Village"
+      },
+      {
+        "means": "Flight",
+        "destination": "Splintertree Post"
+      },
+      {
+        "means": "Flight",
+        "destination": "Sun Rock Retreat"
+      },
+      {
+        "means": "Flight",
+        "destination": "The Crossroads"
+      },
+      {
+        "means": "Flight",
+        "destination": "Thunder Bluff"
+      },
+      {
+        "means": "Flight",
+        "destination": "Valormok"
+      },
+      {
+        "means": "Flight",
+        "destination": "Zoram'gar Outpost"
+      },
+      {
+        "means": "Flight",
+        "destination": "Everlook"
+      },
+      {
+        "means": "Flight",
+        "destination": "Gadgetzan"
+      },
+      {
+        "means": "Flight",
+        "destination": "Marshal's Refuge"
+      },
+      {
+        "means": "Flight",
+        "destination": "Nighthaven"
+      },
+      {
+        "means": "Flight",
+        "destination": "Ratchet"
       }
     ],
     "x": 68,
@@ -1549,6 +4075,64 @@
         "type": "Flight Master"
       }
     ],
+    "flightPaths": [
+      {
+        "means": "Flight",
+        "destination": "Astranaar"
+      },
+      {
+        "means": "Flight",
+        "destination": "Auberdine"
+      },
+      {
+        "means": "Flight",
+        "destination": "Nijel's Point"
+      },
+      {
+        "means": "Flight",
+        "destination": "Rut'theran Village"
+      },
+      {
+        "means": "Flight",
+        "destination": "Stonetalon Peak"
+      },
+      {
+        "means": "Flight",
+        "destination": "Talonbranch Glade"
+      },
+      {
+        "means": "Flight",
+        "destination": "Talrendis Point"
+      },
+      {
+        "means": "Flight",
+        "destination": "Thalanaar"
+      },
+      {
+        "means": "Flight",
+        "destination": "Theramore Isle"
+      },
+      {
+        "means": "Flight",
+        "destination": "Cenarion Hold"
+      },
+      {
+        "means": "Flight",
+        "destination": "Everlook"
+      },
+      {
+        "means": "Flight",
+        "destination": "Gadgetzan"
+      },
+      {
+        "means": "Flight",
+        "destination": "Marshal's Refuge"
+      },
+      {
+        "means": "Flight",
+        "destination": "Ratchet"
+      }
+    ],
     "x": 103,
     "y": -48,
     "name": "Nighthaven",
@@ -1556,11 +4140,6 @@
     "faction": "Cenarion Circle"
   },
   {
-    "x": 323,
-    "y": -63,
-    "name": "Light's Hope Chapel",
-    "zone": "Eastern Plaguelands",
-    "faction": "Argent Dawn",
     "people": [
       {
         "name": "Khaelyn Steelwing",
@@ -1574,14 +4153,108 @@
         "race": "Forsaken",
         "type": "Flight Master"
       }
-    ]
+    ],
+    "flightPaths": [
+      {
+        "means": "Flight",
+        "destination": "Aerie Peak"
+      },
+      {
+        "means": "Flight",
+        "destination": "Darkshire"
+      },
+      {
+        "means": "Flight",
+        "destination": "Ironforge"
+      },
+      {
+        "means": "Flight",
+        "destination": "Lakeshire"
+      },
+      {
+        "means": "Flight",
+        "destination": "Menethil Harbor"
+      },
+      {
+        "means": "Flight",
+        "destination": "Nethergarde Keep"
+      },
+      {
+        "means": "Flight",
+        "destination": "Refuge Point"
+      },
+      {
+        "means": "Flight",
+        "destination": "Sentinel Hill"
+      },
+      {
+        "means": "Flight",
+        "destination": "Southshore"
+      },
+      {
+        "means": "Flight",
+        "destination": "Stormwind City"
+      },
+      {
+        "means": "Flight",
+        "destination": "Thelsamar"
+      },
+      {
+        "means": "Flight",
+        "destination": "Chillwind Camp"
+      },
+      {
+        "means": "Flight",
+        "destination": "Flame Crest"
+      },
+      {
+        "means": "Flight",
+        "destination": "Grom'gol Base Camp"
+      },
+      {
+        "means": "Flight",
+        "destination": "Hammerfall"
+      },
+      {
+        "means": "Flight",
+        "destination": "Kargath"
+      },
+      {
+        "means": "Flight",
+        "destination": "Revantusk Village"
+      },
+      {
+        "means": "Flight",
+        "destination": "Stonard"
+      },
+      {
+        "means": "Flight",
+        "destination": "Tarren Mill"
+      },
+      {
+        "means": "Flight",
+        "destination": "The Sepulcher"
+      },
+      {
+        "means": "Flight",
+        "destination": "Undercity"
+      },
+      {
+        "means": "Flight",
+        "destination": "Booty Bay"
+      },
+      {
+        "means": "Flight",
+        "destination": "Thorium Point"
+      }
+    ],
+    "x": 323,
+    "y": -63,
+    "name": "Light's Hope Chapel",
+    "zone": "Eastern Plaguelands",
+    "faction": "Argent Dawn"
   },
   {
-    "x": 282,
-    "y": -78,
-    "name": "Chillwind Camp",
-    "zone": "Western Plaguelands",
-    "faction": "Argent Dawn",
     "people": [
       {
         "name": "Bibilfaz Featherwhistle",
@@ -1589,14 +4262,72 @@
         "race": "Gnome",
         "type": "Flight Master"
       }
-    ]
+    ],
+    "flightPaths": [
+      {
+        "means": "Flight",
+        "destination": "Aerie Peak"
+      },
+      {
+        "means": "Flight",
+        "destination": "Darkshire"
+      },
+      {
+        "means": "Flight",
+        "destination": "Ironforge"
+      },
+      {
+        "means": "Flight",
+        "destination": "Lakeshire"
+      },
+      {
+        "means": "Flight",
+        "destination": "Menethil Harbor"
+      },
+      {
+        "means": "Flight",
+        "destination": "Nethergarde Keep"
+      },
+      {
+        "means": "Flight",
+        "destination": "Refuge Point"
+      },
+      {
+        "means": "Flight",
+        "destination": "Sentinel Hill"
+      },
+      {
+        "means": "Flight",
+        "destination": "Southshore"
+      },
+      {
+        "means": "Flight",
+        "destination": "Stormwind City"
+      },
+      {
+        "means": "Flight",
+        "destination": "Thelsamar"
+      },
+      {
+        "means": "Flight",
+        "destination": "Light's Hope Chapel"
+      },
+      {
+        "means": "Flight",
+        "destination": "Booty Bay"
+      },
+      {
+        "means": "Flight",
+        "destination": "Thorium Point"
+      }
+    ],
+    "x": 282,
+    "y": -78,
+    "name": "Chillwind Camp",
+    "zone": "Western Plaguelands",
+    "faction": "Argent Dawn"
   },
   {
-    "x": 279,
-    "y": -158,
-    "name": "Thorium Point",
-    "zone": "Searing Gorge",
-    "faction": "Thorium Brotherhood",
     "people": [
       {
         "name": "Lanie Reed",
@@ -1610,14 +4341,108 @@
         "race": "Orc",
         "type": "Flight Master"
       }
-    ]
+    ],
+    "flightPaths": [
+      {
+        "means": "Flight",
+        "destination": "Aerie Peak"
+      },
+      {
+        "means": "Flight",
+        "destination": "Darkshire"
+      },
+      {
+        "means": "Flight",
+        "destination": "Ironforge"
+      },
+      {
+        "means": "Flight",
+        "destination": "Lakeshire"
+      },
+      {
+        "means": "Flight",
+        "destination": "Menethil Harbor"
+      },
+      {
+        "means": "Flight",
+        "destination": "Nethergarde Keep"
+      },
+      {
+        "means": "Flight",
+        "destination": "Refuge Point"
+      },
+      {
+        "means": "Flight",
+        "destination": "Sentinel Hill"
+      },
+      {
+        "means": "Flight",
+        "destination": "Southshore"
+      },
+      {
+        "means": "Flight",
+        "destination": "Stormwind City"
+      },
+      {
+        "means": "Flight",
+        "destination": "Thelsamar"
+      },
+      {
+        "means": "Flight",
+        "destination": "Chillwind Camp"
+      },
+      {
+        "means": "Flight",
+        "destination": "Light's Hope Chapel"
+      },
+      {
+        "means": "Flight",
+        "destination": "Flame Crest"
+      },
+      {
+        "means": "Flight",
+        "destination": "Grom'gol Base Camp"
+      },
+      {
+        "means": "Flight",
+        "destination": "Hammerfall"
+      },
+      {
+        "means": "Flight",
+        "destination": "Kargath"
+      },
+      {
+        "means": "Flight",
+        "destination": "Revantusk Village"
+      },
+      {
+        "means": "Flight",
+        "destination": "Stonard"
+      },
+      {
+        "means": "Flight",
+        "destination": "Tarren Mill"
+      },
+      {
+        "means": "Flight",
+        "destination": "The Sepulcher"
+      },
+      {
+        "means": "Flight",
+        "destination": "Undercity"
+      },
+      {
+        "means": "Flight",
+        "destination": "Booty Bay"
+      }
+    ],
+    "x": 279,
+    "y": -158,
+    "name": "Thorium Point",
+    "zone": "Searing Gorge",
+    "faction": "Thorium Brotherhood"
   },
   {
-    "x": 127,
-    "y": -61,
-    "name": "Everlook",
-    "zone": "Winterspring",
-    "faction": "Steamwheedle Cartel",
     "people": [
       {
         "name": "Maethrya",
@@ -1631,7 +4456,122 @@
         "race": "Orc",
         "type": "Flight Master"
       }
-    ]
+    ],
+    "flightPaths": [
+      {
+        "means": "Flight",
+        "destination": "Astranaar"
+      },
+      {
+        "means": "Flight",
+        "destination": "Auberdine"
+      },
+      {
+        "means": "Flight",
+        "destination": "Nijel's Point"
+      },
+      {
+        "means": "Flight",
+        "destination": "Rut'theran Village"
+      },
+      {
+        "means": "Flight",
+        "destination": "Stonetalon Peak"
+      },
+      {
+        "means": "Flight",
+        "destination": "Talonbranch Glade"
+      },
+      {
+        "means": "Flight",
+        "destination": "Talrendis Point"
+      },
+      {
+        "means": "Flight",
+        "destination": "Thalanaar"
+      },
+      {
+        "means": "Flight",
+        "destination": "Theramore Isle"
+      },
+      {
+        "means": "Flight",
+        "destination": "Bloodvenom Post"
+      },
+      {
+        "means": "Flight",
+        "destination": "Brackenwall Village"
+      },
+      {
+        "means": "Flight",
+        "destination": "Camp Mojache"
+      },
+      {
+        "means": "Flight",
+        "destination": "Camp Taurajo"
+      },
+      {
+        "means": "Flight",
+        "destination": "Freewind Post"
+      },
+      {
+        "means": "Flight",
+        "destination": "Orgrimmar"
+      },
+      {
+        "means": "Flight",
+        "destination": "Shadowprey Village"
+      },
+      {
+        "means": "Flight",
+        "destination": "Splintertree Post"
+      },
+      {
+        "means": "Flight",
+        "destination": "Sun Rock Retreat"
+      },
+      {
+        "means": "Flight",
+        "destination": "The Crossroads"
+      },
+      {
+        "means": "Flight",
+        "destination": "Thunder Bluff"
+      },
+      {
+        "means": "Flight",
+        "destination": "Valormok"
+      },
+      {
+        "means": "Flight",
+        "destination": "Zoram'gar Outpost"
+      },
+      {
+        "means": "Flight",
+        "destination": "Cenarion Hold"
+      },
+      {
+        "means": "Flight",
+        "destination": "Gadgetzan"
+      },
+      {
+        "means": "Flight",
+        "destination": "Marshal's Refuge"
+      },
+      {
+        "means": "Flight",
+        "destination": "Nighthaven"
+      },
+      {
+        "means": "Flight",
+        "destination": "Ratchet"
+      }
+    ],
+    "x": 127,
+    "y": -61,
+    "name": "Everlook",
+    "zone": "Winterspring",
+    "faction": "Steamwheedle Cartel"
   },
   {
     "people": [
@@ -1646,6 +4586,116 @@
         "gender": "Male",
         "race": "Orc",
         "type": "Flight Master"
+      }
+    ],
+    "flightPaths": [
+      {
+        "means": "Flight",
+        "destination": "Astranaar"
+      },
+      {
+        "means": "Flight",
+        "destination": "Auberdine"
+      },
+      {
+        "means": "Flight",
+        "destination": "Nijel's Point"
+      },
+      {
+        "means": "Flight",
+        "destination": "Rut'theran Village"
+      },
+      {
+        "means": "Flight",
+        "destination": "Stonetalon Peak"
+      },
+      {
+        "means": "Flight",
+        "destination": "Talonbranch Glade"
+      },
+      {
+        "means": "Flight",
+        "destination": "Talrendis Point"
+      },
+      {
+        "means": "Flight",
+        "destination": "Thalanaar"
+      },
+      {
+        "means": "Flight",
+        "destination": "Theramore Isle"
+      },
+      {
+        "means": "Flight",
+        "destination": "Bloodvenom Post"
+      },
+      {
+        "means": "Flight",
+        "destination": "Brackenwall Village"
+      },
+      {
+        "means": "Flight",
+        "destination": "Camp Mojache"
+      },
+      {
+        "means": "Flight",
+        "destination": "Camp Taurajo"
+      },
+      {
+        "means": "Flight",
+        "destination": "Freewind Post"
+      },
+      {
+        "means": "Flight",
+        "destination": "Orgrimmar"
+      },
+      {
+        "means": "Flight",
+        "destination": "Shadowprey Village"
+      },
+      {
+        "means": "Flight",
+        "destination": "Splintertree Post"
+      },
+      {
+        "means": "Flight",
+        "destination": "Sun Rock Retreat"
+      },
+      {
+        "means": "Flight",
+        "destination": "The Crossroads"
+      },
+      {
+        "means": "Flight",
+        "destination": "Thunder Bluff"
+      },
+      {
+        "means": "Flight",
+        "destination": "Valormok"
+      },
+      {
+        "means": "Flight",
+        "destination": "Zoram'gar Outpost"
+      },
+      {
+        "means": "Flight",
+        "destination": "Cenarion Hold"
+      },
+      {
+        "means": "Flight",
+        "destination": "Everlook"
+      },
+      {
+        "means": "Flight",
+        "destination": "Marshal's Refuge"
+      },
+      {
+        "means": "Flight",
+        "destination": "Nighthaven"
+      },
+      {
+        "means": "Flight",
+        "destination": "Ratchet"
       }
     ],
     "x": 117,
@@ -1668,6 +4718,116 @@
         "gender": "Male",
         "race": "Goblin",
         "type": "Flight Master"
+      }
+    ],
+    "flightPaths": [
+      {
+        "means": "Flight",
+        "destination": "Astranaar"
+      },
+      {
+        "means": "Flight",
+        "destination": "Auberdine"
+      },
+      {
+        "means": "Flight",
+        "destination": "Nijel's Point"
+      },
+      {
+        "means": "Flight",
+        "destination": "Rut'theran Village"
+      },
+      {
+        "means": "Flight",
+        "destination": "Stonetalon Peak"
+      },
+      {
+        "means": "Flight",
+        "destination": "Talonbranch Glade"
+      },
+      {
+        "means": "Flight",
+        "destination": "Talrendis Point"
+      },
+      {
+        "means": "Flight",
+        "destination": "Thalanaar"
+      },
+      {
+        "means": "Flight",
+        "destination": "Theramore Isle"
+      },
+      {
+        "means": "Flight",
+        "destination": "Bloodvenom Post"
+      },
+      {
+        "means": "Flight",
+        "destination": "Brackenwall Village"
+      },
+      {
+        "means": "Flight",
+        "destination": "Camp Mojache"
+      },
+      {
+        "means": "Flight",
+        "destination": "Camp Taurajo"
+      },
+      {
+        "means": "Flight",
+        "destination": "Freewind Post"
+      },
+      {
+        "means": "Flight",
+        "destination": "Orgrimmar"
+      },
+      {
+        "means": "Flight",
+        "destination": "Shadowprey Village"
+      },
+      {
+        "means": "Flight",
+        "destination": "Splintertree Post"
+      },
+      {
+        "means": "Flight",
+        "destination": "Sun Rock Retreat"
+      },
+      {
+        "means": "Flight",
+        "destination": "The Crossroads"
+      },
+      {
+        "means": "Flight",
+        "destination": "Thunder Bluff"
+      },
+      {
+        "means": "Flight",
+        "destination": "Valormok"
+      },
+      {
+        "means": "Flight",
+        "destination": "Zoram'gar Outpost"
+      },
+      {
+        "means": "Flight",
+        "destination": "Cenarion Hold"
+      },
+      {
+        "means": "Flight",
+        "destination": "Everlook"
+      },
+      {
+        "means": "Flight",
+        "destination": "Gadgetzan"
+      },
+      {
+        "means": "Flight",
+        "destination": "Marshal's Refuge"
+      },
+      {
+        "means": "Flight",
+        "destination": "Nighthaven"
       }
     ],
     "x": 116,
@@ -1704,6 +4864,100 @@
         "type": "Flight Master"
       }
     ],
+    "flightPaths": [
+      {
+        "means": "Flight",
+        "destination": "Aerie Peak"
+      },
+      {
+        "means": "Flight",
+        "destination": "Darkshire"
+      },
+      {
+        "means": "Flight",
+        "destination": "Ironforge"
+      },
+      {
+        "means": "Flight",
+        "destination": "Lakeshire"
+      },
+      {
+        "means": "Flight",
+        "destination": "Menethil Harbor"
+      },
+      {
+        "means": "Flight",
+        "destination": "Nethergarde Keep"
+      },
+      {
+        "means": "Flight",
+        "destination": "Refuge Point"
+      },
+      {
+        "means": "Flight",
+        "destination": "Sentinel Hill"
+      },
+      {
+        "means": "Flight",
+        "destination": "Southshore"
+      },
+      {
+        "means": "Flight",
+        "destination": "Stormwind City"
+      },
+      {
+        "means": "Flight",
+        "destination": "Thelsamar"
+      },
+      {
+        "means": "Flight",
+        "destination": "Chillwind Camp"
+      },
+      {
+        "means": "Flight",
+        "destination": "Light's Hope Chapel"
+      },
+      {
+        "means": "Flight",
+        "destination": "Flame Crest"
+      },
+      {
+        "means": "Flight",
+        "destination": "Grom'gol Base Camp"
+      },
+      {
+        "means": "Flight",
+        "destination": "Hammerfall"
+      },
+      {
+        "means": "Flight",
+        "destination": "Kargath"
+      },
+      {
+        "means": "Flight",
+        "destination": "Revantusk Village"
+      },
+      {
+        "means": "Flight",
+        "destination": "Stonard"
+      },
+      {
+        "means": "Flight",
+        "destination": "Tarren Mill"
+      },
+      {
+        "means": "Flight",
+        "destination": "The Sepulcher"
+      },
+      {
+        "means": "Flight",
+        "destination": "Undercity"
+      },
+      {
+        "means": "Flight",
+        "destination": "Thorium Point"
+      }
+    ],
     "x": 261,
     "y": -241,
     "name": "Booty Bay",
@@ -1717,6 +4971,116 @@
         "gender": "Male",
         "race": "Goblin",
         "type": "Flight Master"
+      }
+    ],
+    "flightPaths": [
+      {
+        "means": "Flight",
+        "destination": "Astranaar"
+      },
+      {
+        "means": "Flight",
+        "destination": "Auberdine"
+      },
+      {
+        "means": "Flight",
+        "destination": "Nijel's Point"
+      },
+      {
+        "means": "Flight",
+        "destination": "Rut'theran Village"
+      },
+      {
+        "means": "Flight",
+        "destination": "Stonetalon Peak"
+      },
+      {
+        "means": "Flight",
+        "destination": "Talonbranch Glade"
+      },
+      {
+        "means": "Flight",
+        "destination": "Talrendis Point"
+      },
+      {
+        "means": "Flight",
+        "destination": "Thalanaar"
+      },
+      {
+        "means": "Flight",
+        "destination": "Theramore Isle"
+      },
+      {
+        "means": "Flight",
+        "destination": "Bloodvenom Post"
+      },
+      {
+        "means": "Flight",
+        "destination": "Brackenwall Village"
+      },
+      {
+        "means": "Flight",
+        "destination": "Camp Mojache"
+      },
+      {
+        "means": "Flight",
+        "destination": "Camp Taurajo"
+      },
+      {
+        "means": "Flight",
+        "destination": "Freewind Post"
+      },
+      {
+        "means": "Flight",
+        "destination": "Orgrimmar"
+      },
+      {
+        "means": "Flight",
+        "destination": "Shadowprey Village"
+      },
+      {
+        "means": "Flight",
+        "destination": "Splintertree Post"
+      },
+      {
+        "means": "Flight",
+        "destination": "Sun Rock Retreat"
+      },
+      {
+        "means": "Flight",
+        "destination": "The Crossroads"
+      },
+      {
+        "means": "Flight",
+        "destination": "Thunder Bluff"
+      },
+      {
+        "means": "Flight",
+        "destination": "Valormok"
+      },
+      {
+        "means": "Flight",
+        "destination": "Zoram'gar Outpost"
+      },
+      {
+        "means": "Flight",
+        "destination": "Cenarion Hold"
+      },
+      {
+        "means": "Flight",
+        "destination": "Everlook"
+      },
+      {
+        "means": "Flight",
+        "destination": "Gadgetzan"
+      },
+      {
+        "means": "Flight",
+        "destination": "Nighthaven"
+      },
+      {
+        "means": "Flight",
+        "destination": "Ratchet"
       }
     ],
     "x": 90,

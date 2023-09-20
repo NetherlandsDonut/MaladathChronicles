@@ -8,7 +8,7 @@
     "value": "False"
   },
   "music": {
-    "value": "False"
+    "value": "True"
   },
   "soundEffects": {
     "value": "True"
@@ -24,5 +24,8 @@
   },
   "newSlotIndicators": {
     "value": "False"
+  },
+  "snapCamera": {
+    "value": "True"
   }
 }

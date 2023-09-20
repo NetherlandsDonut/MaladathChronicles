@@ -27,11 +27,11 @@ public class InputLine : MonoBehaviour
         this.region.inputLine = this;
     }
 
-    public void Activate()
+    public void Activate(int marker = 0)
     {
         cursor.SetCursor(CursorType.None);
         UnityEngine.Cursor.lockState = CursorLockMode.Locked;
-        inputLineMarker = 0;
+        inputLineMarker = marker;
         inputLineName = text.inputLine.name;
         inputDestination = text.inputLine.text.text;
         region.regionGroup.window.Respawn();

@@ -3,7 +3,7 @@
     {
       "player": {
         "level": 60,
-        "unspentTalentPoints": 16,
+        "unspentTalentPoints": 14,
         "actionBarsUnlocked": 7,
         "name": "Nicollete",
         "race": "Human",
@@ -22,20 +22,22 @@
           "Blazing Barrier",
           "Flamestrike",
           "Fiery Rush",
-          "Fire Blast"
+          "Fire Blast",
+          "Pyroblast",
+          "Flame Patch"
         ],
         "actionBars": [
-          {
-            "ability": "Fireball"
-          },
-          {
-            "ability": "Frostbolt"
-          },
           {
             "ability": "Arcane Missiles"
           },
           {
             "ability": "Fire Blast"
+          },
+          {
+            "ability": "Fireball"
+          },
+          {
+            "ability": "Frostbolt"
           }
         ],
         "stats": {
@@ -61,28 +63,36 @@
           "items": [
             {
               "rarity": "Epic",
-              "name": "Amulet of the Darkmoon",
-              "icon": "itemjewelrynecklace14",
-              "type": "Neck",
-              "ilvl": 65,
+              "name": "Warmth of Forgiveness",
+              "icon": "itemtrinketnaxxramas01",
+              "type": "Trinket",
+              "ilvl": 85,
               "lvl": 60,
-              "price": 2.5,
+              "price": 9.116,
               "stats": {
-                "stats": {
-                  "Strength": 10,
-                  "Agility": 19,
-                  "Stamina": 10
-                }
+                "stats": {}
               }
             },
             {
-              "rarity": "Uncommon",
-              "name": "Astral Orb",
-              "icon": "itemmiscorb01",
-              "type": "Off Hand",
-              "ilvl": 61,
-              "lvl": 56,
-              "price": 1.0996,
+              "rarity": "Epic",
+              "name": "Kiss of the Spider",
+              "icon": "itemtrinketnaxxramas04",
+              "type": "Trinket",
+              "ilvl": 85,
+              "lvl": 60,
+              "price": 9.116,
+              "stats": {
+                "stats": {}
+              }
+            },
+            {
+              "rarity": "Epic",
+              "name": "Eye of Diminution",
+              "icon": "itemtrinketnaxxramas02",
+              "type": "Trinket",
+              "ilvl": 85,
+              "lvl": 60,
+              "price": 9.116,
               "stats": {
                 "stats": {}
               }
@@ -105,6 +115,65 @@
             },
             {
               "rarity": "Epic",
+              "name": "Cryptfiend Silk Cloak",
+              "icon": "itemmisccapenaxxramas02",
+              "type": "Back",
+              "ilvl": 83,
+              "lvl": 60,
+              "price": 6.1651,
+              "stats": {
+                "stats": {
+                  "Stamina": 14
+                }
+              }
+            },
+            {
+              "rarity": "Epic",
+              "name": "Pure Elementium Band",
+              "icon": "itemjewelryring42",
+              "type": "Finger",
+              "ilvl": 83,
+              "lvl": 60,
+              "price": 12.828,
+              "stats": {
+                "stats": {
+                  "Intellect": 10,
+                  "Stamina": 9,
+                  "Spirit": 10
+                }
+              }
+            },
+            {
+              "rarity": "Epic",
+              "name": "Choker of the Fire Lord",
+              "icon": "itemjewelryamulet05",
+              "type": "Neck",
+              "ilvl": 78,
+              "lvl": 60,
+              "price": 8.9135,
+              "stats": {
+                "stats": {
+                  "Intellect": 7,
+                  "Stamina": 7
+                }
+              }
+            },
+            {
+              "rarity": "Epic",
+              "name": "Elementium Threaded Cloak",
+              "icon": "itemmisccape01",
+              "type": "Back",
+              "ilvl": 77,
+              "lvl": 60,
+              "price": 4.6661,
+              "stats": {
+                "stats": {
+                  "Stamina": 13
+                }
+              }
+            },
+            {
+              "rarity": "Epic",
               "name": "Belt of the Dark Bog",
               "icon": "itembelt15",
               "type": "Waist",
@@ -118,6 +187,58 @@
                   "Intellect": 8,
                   "Stamina": 16
                 }
+              }
+            },
+            {
+              "rarity": "Epic",
+              "name": "Hibernation Crystal",
+              "icon": "itemmiscgemstone01",
+              "type": "Trinket",
+              "ilvl": 71,
+              "lvl": 60,
+              "price": 8.9103,
+              "stats": {
+                "stats": {}
+              }
+            },
+            {
+              "rarity": "Epic",
+              "name": "Signet Ring of the Bronze Dragonflight",
+              "icon": "itemjewelryring40",
+              "type": "Finger",
+              "ilvl": 70,
+              "lvl": 60,
+              "stats": {
+                "stats": {
+                  "Strength": 12,
+                  "Stamina": 21
+                }
+              }
+            },
+            {
+              "rarity": "Epic",
+              "name": "Cloak of Consumption",
+              "icon": "itemmisccape22",
+              "type": "Back",
+              "ilvl": 68,
+              "lvl": 60,
+              "price": 2.9966,
+              "stats": {
+                "stats": {
+                  "Intellect": 10
+                }
+              }
+            },
+            {
+              "rarity": "Epic",
+              "name": "The Eye of Hakkar",
+              "icon": "itemjewelrynecklace22",
+              "type": "Neck",
+              "ilvl": 68,
+              "lvl": 60,
+              "price": 4.8628,
+              "stats": {
+                "stats": {}
               }
             },
             {
@@ -138,78 +259,17 @@
             },
             {
               "rarity": "Epic",
-              "name": "Choker of the Fire Lord",
-              "icon": "itemjewelryamulet05",
+              "name": "Amulet of the Darkmoon",
+              "icon": "itemjewelrynecklace14",
               "type": "Neck",
-              "ilvl": 78,
-              "lvl": 60,
-              "price": 8.9135,
-              "stats": {
-                "stats": {
-                  "Intellect": 7,
-                  "Stamina": 7
-                }
-              }
-            },
-            {
-              "rarity": "Epic",
-              "name": "Cryptfiend Silk Cloak",
-              "icon": "itemmisccapenaxxramas02",
-              "type": "Back",
-              "ilvl": 83,
-              "lvl": 60,
-              "price": 6.1651,
-              "stats": {
-                "stats": {
-                  "Stamina": 14
-                }
-              }
-            },
-            {
-              "rarity": "Rare",
-              "name": "Dark Iron Reaver",
-              "icon": "itemsword48",
-              "detailedType": "Sword",
-              "type": "One Handed",
               "ilvl": 65,
               "lvl": 60,
-              "minDamage": 71,
-              "maxDamage": 134,
-              "price": 6.3738,
-              "speed": 2.4,
+              "price": 2.5,
               "stats": {
                 "stats": {
+                  "Strength": 10,
+                  "Agility": 19,
                   "Stamina": 10
-                }
-              }
-            },
-            {
-              "rarity": "Uncommon",
-              "name": "Dragon Finger",
-              "icon": "itemwand06",
-              "detailedType": "Wand",
-              "type": "One Handed",
-              "ilvl": 60,
-              "lvl": 55,
-              "minDamage": 52,
-              "maxDamage": 97,
-              "price": 3.0628,
-              "speed": 1.4,
-              "stats": {
-                "stats": {}
-              }
-            },
-            {
-              "rarity": "Epic",
-              "name": "Elementium Threaded Cloak",
-              "icon": "itemmisccape01",
-              "type": "Back",
-              "ilvl": 77,
-              "lvl": 60,
-              "price": 4.6661,
-              "stats": {
-                "stats": {
-                  "Stamina": 13
                 }
               }
             },
@@ -228,93 +288,6 @@
               }
             },
             {
-              "rarity": "Epic",
-              "name": "Flarecore Wraps",
-              "icon": "itembracer09",
-              "type": "Wrists",
-              "armorClass": "Cloth",
-              "ilvl": 64,
-              "lvl": 60,
-              "armor": 43,
-              "price": 1.6911,
-              "stats": {
-                "stats": {
-                  "Intellect": 8
-                }
-              }
-            },
-            {
-              "rarity": "Rare",
-              "name": "Force of Will",
-              "icon": "itemjewelryamulet01",
-              "type": "Trinket",
-              "ilvl": 60,
-              "lvl": 55,
-              "price": 1.0,
-              "stats": {
-                "stats": {}
-              }
-            },
-            {
-              "rarity": "Rare",
-              "name": "Frost Runed Headdress",
-              "icon": "itemhelmet61",
-              "type": "Head",
-              "armorClass": "Cloth",
-              "ilvl": 63,
-              "lvl": 58,
-              "armor": 73,
-              "price": 1.754,
-              "stats": {
-                "stats": {
-                  "Intellect": 10,
-                  "Stamina": 10
-                }
-              }
-            },
-            {
-              "rarity": "Rare",
-              "name": "Glacial Blade",
-              "icon": "itemshortblade06",
-              "detailedType": "Dagger",
-              "type": "One Handed",
-              "ilvl": 65,
-              "lvl": 60,
-              "minDamage": 53,
-              "maxDamage": 100,
-              "price": 6.3065,
-              "speed": 1.8,
-              "stats": {
-                "stats": {
-                  "Agility": 10
-                }
-              }
-            },
-            {
-              "rarity": "Rare",
-              "name": "Heart of Wyrmthalak",
-              "icon": "itemmiscgembloodstone01",
-              "type": "Trinket",
-              "ilvl": 61,
-              "lvl": 56,
-              "price": 1.0539,
-              "stats": {
-                "stats": {}
-              }
-            },
-            {
-              "rarity": "Epic",
-              "name": "Hibernation Crystal",
-              "icon": "itemmiscgemstone01",
-              "type": "Trinket",
-              "ilvl": 71,
-              "lvl": 60,
-              "price": 8.9103,
-              "stats": {
-                "stats": {}
-              }
-            },
-            {
               "rarity": "Uncommon",
               "name": "High Councillor's Robe",
               "icon": "itemchestcloth12",
@@ -324,18 +297,6 @@
               "lvl": 59,
               "armor": 82,
               "price": 1.9772,
-              "stats": {
-                "stats": {}
-              }
-            },
-            {
-              "rarity": "Epic",
-              "name": "Kiss of the Spider",
-              "icon": "itemtrinketnaxxramas04",
-              "type": "Trinket",
-              "ilvl": 85,
-              "lvl": 60,
-              "price": 9.116,
               "stats": {
                 "stats": {}
               }
@@ -373,32 +334,35 @@
               }
             },
             {
-              "rarity": "Uncommon",
-              "name": "Petrified Band",
-              "icon": "itemjewelryring14",
-              "type": "Finger",
-              "ilvl": 59,
-              "lvl": 59,
-              "price": 1.4615,
+              "rarity": "Epic",
+              "name": "Flarecore Wraps",
+              "icon": "itembracer09",
+              "type": "Wrists",
+              "armorClass": "Cloth",
+              "ilvl": 64,
+              "lvl": 60,
+              "armor": 43,
+              "price": 1.6911,
               "stats": {
                 "stats": {
-                  "Stamina": 9
+                  "Intellect": 8
                 }
               }
             },
             {
-              "rarity": "Epic",
-              "name": "Pure Elementium Band",
-              "icon": "itemjewelryring42",
-              "type": "Finger",
-              "ilvl": 83,
-              "lvl": 60,
-              "price": 12.828,
+              "rarity": "Rare",
+              "name": "Frost Runed Headdress",
+              "icon": "itemhelmet61",
+              "type": "Head",
+              "armorClass": "Cloth",
+              "ilvl": 63,
+              "lvl": 58,
+              "armor": 73,
+              "price": 1.754,
               "stats": {
                 "stats": {
                   "Intellect": 10,
-                  "Stamina": 9,
-                  "Spirit": 10
+                  "Stamina": 10
                 }
               }
             },
@@ -451,18 +415,43 @@
               }
             },
             {
-              "rarity": "Rare",
-              "name": "Shadow Prowler's Cloak",
-              "icon": "itemmisccape20",
-              "type": "Back",
-              "ilvl": 63,
-              "lvl": 58,
-              "price": 1.6476,
+              "rarity": "Uncommon",
+              "name": "Astral Orb",
+              "icon": "itemmiscorb01",
+              "type": "Off Hand",
+              "ilvl": 61,
+              "lvl": 56,
+              "price": 1.0996,
               "stats": {
-                "stats": {
-                  "Agility": 17,
-                  "Stamina": 7
-                }
+                "stats": {}
+              }
+            },
+            {
+              "rarity": "Rare",
+              "name": "Heart of Wyrmthalak",
+              "icon": "itemmiscgembloodstone01",
+              "type": "Trinket",
+              "ilvl": 61,
+              "lvl": 56,
+              "price": 1.0539,
+              "stats": {
+                "stats": {}
+              }
+            },
+            {
+              "rarity": "Uncommon",
+              "name": "Dragon Finger",
+              "icon": "itemwand06",
+              "detailedType": "Wand",
+              "type": "One Handed",
+              "ilvl": 60,
+              "lvl": 55,
+              "minDamage": 52,
+              "maxDamage": 97,
+              "price": 3.0628,
+              "speed": 1.4,
+              "stats": {
+                "stats": {}
               }
             },
             {
@@ -473,18 +462,6 @@
               "ilvl": 60,
               "lvl": 55,
               "price": 0.9633,
-              "stats": {
-                "stats": {}
-              }
-            },
-            {
-              "rarity": "Epic",
-              "name": "The Eye of Hakkar",
-              "icon": "itemjewelrynecklace22",
-              "type": "Neck",
-              "ilvl": 68,
-              "lvl": 60,
-              "price": 4.8628,
               "stats": {
                 "stats": {}
               }
@@ -506,27 +483,31 @@
               }
             },
             {
-              "rarity": "Epic",
-              "name": "Ukko's Ring of Darkness",
-              "icon": "itemjewelryring24",
+              "rarity": "Uncommon",
+              "name": "Petrified Band",
+              "icon": "itemjewelryring14",
               "type": "Finger",
-              "ilvl": 76,
-              "lvl": 60,
-              "price": 10.2995,
+              "ilvl": 59,
+              "lvl": 59,
+              "price": 1.4615,
               "stats": {
                 "stats": {
-                  "Stamina": 13
+                  "Stamina": 9
                 }
               }
             },
             {
-              "rarity": "Epic",
-              "name": "Warmth of Forgiveness",
-              "icon": "itemtrinketnaxxramas01",
-              "type": "Trinket",
-              "ilvl": 85,
-              "lvl": 60,
-              "price": 9.116,
+              "rarity": "Common",
+              "name": "Bent Staff",
+              "icon": "itemstaff08",
+              "detailedType": "Staff",
+              "type": "Two Handed",
+              "ilvl": 2,
+              "lvl": 1,
+              "minDamage": 3,
+              "maxDamage": 5,
+              "price": 0.0009,
+              "speed": 2.9,
               "stats": {
                 "stats": {}
               }
@@ -536,45 +517,51 @@
         "equipment": {
           "Finger": {
             "rarity": "Epic",
-            "name": "Signet Ring of the Bronze Dragonflight",
-            "icon": "itemjewelryring40",
+            "name": "Ukko's Ring of Darkness",
+            "icon": "itemjewelryring24",
             "type": "Finger",
-            "ilvl": 70,
+            "ilvl": 76,
             "lvl": 60,
+            "price": 10.2995,
             "stats": {
               "stats": {
-                "Strength": 12,
-                "Stamina": 21
+                "Stamina": 13
               }
             }
           },
-          "Main Hand": {
-            "rarity": "Common",
-            "name": "Bent Staff",
-            "icon": "itemstaff08",
-            "detailedType": "Staff",
-            "type": "Two Handed",
-            "ilvl": 2,
-            "lvl": 1,
-            "minDamage": 3,
-            "maxDamage": 5,
-            "price": 0.0009,
-            "speed": 2.9,
+          "Hands": {
+            "rarity": "Rare",
+            "name": "Knight-Lieutenant's Silk Handwraps",
+            "icon": "itemgauntlets06",
+            "type": "Hands",
+            "armorClass": "Cloth",
+            "set": "Lieutenant Commander's Arcanum",
+            "ilvl": 66,
+            "lvl": 60,
+            "armor": 98,
+            "classes": [
+              "Mage"
+            ],
+            "price": 0.6552,
             "stats": {
-              "stats": {}
+              "stats": {
+                "Intellect": 10,
+                "Stamina": 12
+              }
             }
           },
           "Back": {
-            "rarity": "Epic",
-            "name": "Cloak of Consumption",
-            "icon": "itemmisccape22",
+            "rarity": "Rare",
+            "name": "Shadow Prowler's Cloak",
+            "icon": "itemmisccape20",
             "type": "Back",
-            "ilvl": 68,
-            "lvl": 60,
-            "price": 2.9966,
+            "ilvl": 63,
+            "lvl": 58,
+            "price": 1.6476,
             "stats": {
               "stats": {
-                "Intellect": 10
+                "Agility": 17,
+                "Stamina": 7
               }
             }
           },
@@ -691,59 +678,101 @@
               }
             }
           },
-          "Hands": {
+          "Trinket": {
             "rarity": "Rare",
-            "name": "Knight-Lieutenant's Silk Handwraps",
-            "icon": "itemgauntlets06",
-            "type": "Hands",
-            "armorClass": "Cloth",
-            "set": "Lieutenant Commander's Arcanum",
-            "ilvl": 66,
+            "name": "Force of Will",
+            "icon": "itemjewelryamulet01",
+            "type": "Trinket",
+            "ilvl": 60,
+            "lvl": 55,
+            "price": 1.0,
+            "stats": {
+              "stats": {}
+            }
+          },
+          "Main Hand": {
+            "rarity": "Rare",
+            "name": "Dark Iron Reaver",
+            "icon": "itemsword48",
+            "detailedType": "Sword",
+            "type": "One Handed",
+            "ilvl": 65,
             "lvl": 60,
-            "armor": 98,
-            "classes": [
-              "Mage"
-            ],
-            "price": 0.6552,
+            "minDamage": 71,
+            "maxDamage": 134,
+            "price": 6.3738,
+            "speed": 2.4,
             "stats": {
               "stats": {
-                "Intellect": 10,
-                "Stamina": 12
+                "Stamina": 10
               }
             }
           },
-          "Trinket": {
-            "rarity": "Epic",
-            "name": "Eye of Diminution",
-            "icon": "itemtrinketnaxxramas02",
-            "type": "Trinket",
-            "ilvl": 85,
+          "Off Hand": {
+            "rarity": "Rare",
+            "name": "Glacial Blade",
+            "icon": "itemshortblade06",
+            "detailedType": "Dagger",
+            "type": "One Handed",
+            "ilvl": 65,
             "lvl": 60,
-            "price": 9.116,
+            "minDamage": 53,
+            "maxDamage": 100,
+            "price": 6.3065,
+            "speed": 1.8,
             "stats": {
-              "stats": {}
+              "stats": {
+                "Agility": 10
+              }
             }
           }
         }
       },
-      "cameraX": 262,
-      "cameraY": -178,
+      "cameraX": 251,
+      "cameraY": -80,
       "siteProgress": {
         "Balia'mah Ruins": 1,
         "The Crimson Throne": 4,
-        "Plaguewood": 1
+        "Plaguewood": 1,
+        "Coldridge Valley": 1
       },
       "commonsKilled": {
         "Dustbelcher Warrior": 1,
         "Cannibal Ghoul": 4,
-        "Putrid Gargoyle": 1
+        "Putrid Gargoyle": 1,
+        "Ragged Young Wolf": 1
       },
       "raresKilled": {},
       "elitesKilled": {},
+      "siteVisits": {
+        "The Sepulcher": 1,
+        "Southshore": 3,
+        "Menethil Harbor": 2,
+        "Auberdine": 1,
+        "Rut'theran Village": 1,
+        "Darnassus": 1,
+        "Nighthaven": 1,
+        "Talonbranch Glade": 2,
+        "Timbermaw Hold": 1,
+        "Stonetalon Peak": 1,
+        "The Talon Den": 1,
+        "Theramore Isle": 1,
+        "Ratchet": 1,
+        "Booty Bay": 3,
+        "Stratholme": 1,
+        "Jintha'Alor": 1,
+        "Undercity": 1,
+        "Wild Shore": 1,
+        "Jaguero Isle": 1,
+        "Lakeridge Highway": 1,
+        "Lake Everstill": 1,
+        "Morgan's Vigil": 1,
+        "Coldridge Valley": 1
+      },
       "startDate": "2023-09-08T02:04:14.0667101+02:00",
-      "lastLoaded": "2023-09-13T04:40:43.9976703+02:00",
-      "lastPlayed": "2023-09-13T04:41:11.5510724+02:00",
-      "timePlayed": "01:53:38.1201760"
+      "lastLoaded": "2023-09-19T19:53:22.9822771+02:00",
+      "lastPlayed": "2023-09-19T20:01:11.7417933+02:00",
+      "timePlayed": "02:18:26.0433831"
     }
   ],
   "Mograine": [],

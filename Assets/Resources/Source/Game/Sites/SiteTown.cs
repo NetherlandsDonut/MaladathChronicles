@@ -18,7 +18,10 @@ public class SiteTown : Site
     public override void Initialise()
     {
         if (people != null && people.Exists(x => x.type == "Flight Master"))
-            flightPaths = flightPathGroups.FindAll(x => x.sitesConnected.Contains(name)).SelectMany(x => x.sitesConnected).Distinct().ToList().FindAll(x => x != name).Select(x => new Transport() { means = "Flight", destination = x }).ToList();
+        {
+            var sites = flightPathGroups.FindAll(x => x.sitesConnected.Contains(name)).SelectMany(x => x.sitesConnected).Distinct().ToList().FindAll(x => x != name).Select(x => new Transport() { means = "Flight", destination = x }).ToList();
+            flightPaths = sites.Count == 0 ? new() : sites.OrderBy(x => factions.Find(z => z.name == towns.Find(y => y.name == x.destination).faction).Icon()).ThenBy(x => x.destination).ToList();
+        }
         if (faction != null)
             if (!factions.Exists(x => x.name == faction))
                 factions.Insert(0, new Faction()
@@ -78,6 +81,7 @@ public class SiteTown : Site
                             AddHeaderRegion(() => { AddLine("Points of interest:"); });
                             foreach (var person in people)
                             {
+                                if (person.type == "Flight Master") return;
                                 AddButtonRegion(() =>
                                 {
                                     AddLine(person.name, "Black");
@@ -87,14 +91,12 @@ public class SiteTown : Site
                                 (h) =>
                                 {
                                     Person.person = person;
-                                    if (person.type == "Flight Master")
-                                        SpawnDesktopBlueprint("FlightMaster");
-                                    else if (person.type == "Banker")
+                                    if (person.type == "Banker")
                                         SpawnDesktopBlueprint("Bank");
                                 });
                             }
                         }
-                        AddPaddingRegion(() => { });
+                        AddPaddingRegion(() => SetRegionAsGroupExtender());
                     }
                 )
             );

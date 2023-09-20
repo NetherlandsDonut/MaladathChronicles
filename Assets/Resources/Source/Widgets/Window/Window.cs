@@ -349,7 +349,7 @@ public class Window : MonoBehaviour
                     int length = 0;
                     region.inputLine.text.Erase();
                     var print = region.inputLine.text.text.Value();
-                    if (inputDestination == region.inputLine.text.text)
+                    if (inputDestination == region.inputLine.text.text && inputLineName == region.inputLine.name)
                         print = print.Insert(inputLineMarker > print.Length ? print.Length : inputLineMarker, markerCharacter);
                     else print += " ";
                     foreach (var character in print)

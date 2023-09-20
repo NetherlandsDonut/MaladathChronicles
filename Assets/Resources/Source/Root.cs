@@ -555,6 +555,7 @@ public static class Root
 
     public static void AddText(string text = "", string color = "Gray")
     {
+        if (text == null) text = "";
         var newObject = new GameObject("Text", typeof(LineText));
         var line = CDesktop.LBWindow.LBRegionGroup.LBRegion.LBLine;
         newObject.transform.parent = line.transform;

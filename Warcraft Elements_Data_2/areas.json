@@ -13052,9 +13052,19 @@
     ],
     "eliteEncounters": [
       {
+        "who": "Baroness Anastari",
+        "levelMin": 60,
+        "requiredProgress": 2
+      },
+      {
         "who": "Nerub'enkan",
         "levelMin": 60,
-        "requiredProgress": 4
+        "requiredProgress": 2
+      },
+      {
+        "who": "Maleki the Pallid",
+        "levelMin": 61,
+        "requiredProgress": 2
       }
     ],
     "name": "The Gauntlet",
@@ -13090,7 +13100,7 @@
     ],
     "eliteEncounters": [
       {
-        "who": "Malor the Zealous",
+        "who": "Cannon Master Willey",
         "levelMin": 60,
         "requiredProgress": 4
       }
@@ -13105,6 +13115,12 @@
         "who": "Cannibal Ghoul",
         "levelMin": 59,
         "levelMax": 60
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Archivist Galford",
+        "levelMin": 60
       }
     ],
     "eliteEncounters": [
