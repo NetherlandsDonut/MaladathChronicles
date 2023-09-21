@@ -1,5 +1,35 @@
 [
   {
+    "name": "Southsea Pirates",
+    "icon": "FactionSouthsea Pirates",
+    "side": "Hostile"
+  },
+  {
+    "name": "Razormane Tribe",
+    "icon": "FactionRazormane Tribe",
+    "side": "Hostile"
+  },
+  {
+    "name": "Pandaren",
+    "icon": "FactionPandaren",
+    "side": "Hostile"
+  },
+  {
+    "name": "Grimtotem Tribe",
+    "icon": "FactionGrimtotem Tribe",
+    "side": "Hostile"
+  },
+  {
+    "name": "Woodpaw Tribe",
+    "icon": "FactionWoodpaw Tribe",
+    "side": "Hostile"
+  },
+  {
+    "name": "The Burning Legion",
+    "icon": "FactionThe Burning Legion",
+    "side": "Hostile"
+  },
+  {
     "name": "Assassin's League",
     "icon": "FactionAssassin's League",
     "side": "Neutral"
@@ -250,6 +280,11 @@
     "side": "Hostile"
   },
   {
+    "name": "Deadwind Ogres",
+    "icon": "FactionDeadwind",
+    "side": "Hostile"
+  },
+  {
     "name": "Venture Co.",
     "icon": "FactionVentureCo",
     "side": "Hostile"
@@ -300,6 +335,11 @@
     "side": "Hostile"
   },
   {
+    "name": "Bloodscalp Tribe",
+    "icon": "FactionBloodscalp",
+    "side": "Hostile"
+  },
+  {
     "name": "Skullsplitter Tribe",
     "icon": "FactionSkullaplitter",
     "side": "Hostile"
@@ -336,6 +376,11 @@
   },
   {
     "name": "Maraudine Clan",
+    "icon": "FactionMaraudine",
+    "side": "Hostile"
+  },
+  {
+    "name": "Mosshide Tribe",
     "icon": "FactionMosshide",
     "side": "Hostile"
   },

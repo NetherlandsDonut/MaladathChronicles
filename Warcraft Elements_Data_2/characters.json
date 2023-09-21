@@ -728,8 +728,8 @@
           }
         }
       },
-      "cameraX": 251,
-      "cameraY": -80,
+      "cameraX": 93,
+      "cameraY": -113,
       "siteProgress": {
         "Balia'mah Ruins": 1,
         "The Crimson Throne": 4,
@@ -747,8 +747,8 @@
       "siteVisits": {
         "The Sepulcher": 1,
         "Southshore": 3,
-        "Menethil Harbor": 2,
-        "Auberdine": 1,
+        "Menethil Harbor": 3,
+        "Auberdine": 2,
         "Rut'theran Village": 1,
         "Darnassus": 1,
         "Nighthaven": 1,
@@ -767,12 +767,17 @@
         "Lakeridge Highway": 1,
         "Lake Everstill": 1,
         "Morgan's Vigil": 1,
-        "Coldridge Valley": 1
+        "Coldridge Valley": 1,
+        "Ambermill": 1,
+        "Dalaran": 1,
+        "Eastwall Gate": 1,
+        "Longshore": 1,
+        "Balnir Farmstead": 1
       },
       "startDate": "2023-09-08T02:04:14.0667101+02:00",
-      "lastLoaded": "2023-09-19T19:53:22.9822771+02:00",
-      "lastPlayed": "2023-09-19T20:01:11.7417933+02:00",
-      "timePlayed": "02:18:26.0433831"
+      "lastLoaded": "2023-09-21T00:56:01.6444723+02:00",
+      "lastPlayed": "2023-09-21T01:00:01.9915786+02:00",
+      "timePlayed": "04:21:50.3561602"
     }
   ],
   "Mograine": [],

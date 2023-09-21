@@ -15,6 +15,7 @@ public class Highlightable : MonoBehaviour
     public Tooltip tooltip;
     public SpriteRenderer render;
     public Action<Highlightable> pressEvent, rightPressEvent;
+    public Color defaultColor;
     public string pressedState;
 
     public void Initialise(Region region, Action<Highlightable> pressEvent, Action<Highlightable> rightPressEvent, Func<Highlightable, Action> tooltip)
@@ -31,6 +32,7 @@ public class Highlightable : MonoBehaviour
 
     public void OnMouseEnter()
     {
+        if (defaultColor.a == 0) defaultColor = GetComponent<SpriteRenderer>().color;
         if (cursor.IsNow("None")) return;
         SetMouseOver(this);
         if (pressedState == "None" && tooltip != null)
@@ -38,7 +40,7 @@ public class Highlightable : MonoBehaviour
         if (GetComponent<InputCharacter>() != null)
             cursor.SetCursor(Write);
         else if (pressedState != "None") cursor.SetCursor(Click);
-        render.color = new Color(0.9f, 0.9f, 0.9f);
+        render.color = defaultColor - new Color(0.1f, 0.1f, 0.1f, 0);
     }
 
     public void OnMouseExit()
@@ -49,7 +51,7 @@ public class Highlightable : MonoBehaviour
         CDesktop.tooltip = null;
         if (cursor.IsNow("Click") || cursor.IsNow("Write"))
             cursor.SetCursor(Default);
-        render.color = new Color(1f, 1f, 1f);
+        render.color = defaultColor;
         pressedState = "None";
     }
 
@@ -59,7 +61,7 @@ public class Highlightable : MonoBehaviour
         CloseWindow("Tooltip");
         CDesktop.tooltip = null;
         cursor.SetCursor(Click);
-        render.color = new Color(0.8f, 0.8f, 0.8f);
+        render.color = defaultColor - new Color(0.2f, 0.2f, 0.2f, 0);
         pressedState = key;
     }
 
@@ -68,7 +70,7 @@ public class Highlightable : MonoBehaviour
         if (cursor.IsNow("None")) return;
         if (pressedState != key) return;
         cursor.SetCursor(Default);
-        render.color = mouseOver == this ? new Color(0.9f, 0.9f, 0.9f) : new Color(1f, 1f, 1f);
+        render.color = defaultColor - (mouseOver == this ? new Color(0.1f, 0.1f, 0.1f, 0) : new Color(0, 0, 0, 0));
         if (pressedState == "Left" && pressEvent != null)
         {
             PlaySound("DesktopButtonPress", 0.6f);

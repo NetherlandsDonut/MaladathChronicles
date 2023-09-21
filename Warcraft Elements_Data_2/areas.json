@@ -1396,7 +1396,7 @@
         "levelMax": 27
       },
       {
-        "who": "Shadowthicket Stone Mover",
+        "who": "Shadethicket Stone Mover",
         "levelMin": 25,
         "levelMax": 26
       }
@@ -1555,7 +1555,7 @@
   {
     "commonEncounters": [
       {
-        "who": "Befouled water Elemental",
+        "who": "Befouled Water Elemental",
         "levelMin": 24,
         "levelMax": 25
       }
@@ -3998,17 +3998,17 @@
   {
     "commonEncounters": [
       {
-        "who": "Deadwing Ogre Mage",
+        "who": "Deadwind Ogre Mage",
         "levelMin": 55,
         "levelMax": 57
       },
       {
-        "who": "Deadwing Mauler",
+        "who": "Deadwind Mauler",
         "levelMin": 55,
         "levelMax": 57
       },
       {
-        "who": "Deadwing Warlock",
+        "who": "Deadwind Warlock",
         "levelMin": 56,
         "levelMax": 57
       }
@@ -6217,6 +6217,12 @@
         "who": "Carrion Devourer",
         "levelMin": 56,
         "levelMax": 57
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Hed'mush the Rotting",
+        "levelMin": 57
       }
     ],
     "x": 318,
@@ -8761,7 +8767,7 @@
     ],
     "rareEncounters": [
       {
-        "who": "Meshlock the Harvester",
+        "who": "Meshlok the Harvester",
         "levelMin": 48,
         "levelMax": 48
       }
@@ -10106,7 +10112,7 @@
     ],
     "eliteEncounters": [
       {
-        "who": "Raul Onestone",
+        "who": "Ruul Onestone",
         "levelMin": 41
       }
     ],
@@ -13347,7 +13353,7 @@
         "levelMax": 41
       },
       {
-        "who": "Tangled Horrror",
+        "who": "Tangled Horror",
         "levelMin": 40,
         "levelMax": 41
       }
@@ -16647,7 +16653,7 @@
     ],
     "rareEncounters": [
       {
-        "who": "High Protector Jarsen",
+        "who": "High Protector Tarsen",
         "levelMin": 59
       },
       {

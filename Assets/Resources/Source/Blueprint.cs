@@ -1123,8 +1123,8 @@ public class Blueprint
             SetRegionGroupHeight(354);
             AddPaddingRegion(() =>
             {
-                foreach (var line in complex.description)
-                    AddLine(line, "DarkGray");
+                //foreach (var line in complex.description)
+                //    AddLine(line, "DarkGray");
             });
         }),
         new("TownLeftSide", () => {
@@ -5826,21 +5826,6 @@ public class Blueprint
                 });
                 AddPaddingRegion(() => { AddLine("Vitality:", "DarkGray"); });
                 AddInputRegion(String.vitality, InputType.Decimal);
-                //AddPaddingRegion(() => { AddLine("Abilities:", "DarkGray"); });
-                //for (int)
-                //AddButtonRegion(() =>
-                //{
-                //    AddLine(race.kind);
-                //},
-                //(h) =>
-                //{
-                //    if (race.kind == "Common")
-                //        race.kind = "Rare";
-                //    else if (race.kind == "Rare")
-                //        race.kind = "Elite";
-                //    else if (race.kind == "Elite")
-                //        race.kind = "Common";
-                //});
             }
             AddPaddingRegion(() => { });
         }),

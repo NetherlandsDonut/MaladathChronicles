@@ -18,8 +18,18 @@ public class Race
                         events = new(),
                         tags = new()
                     });
-        if ((maleNames != null || femaleNames != null) && background == null || background == "")
+        if (faction != null)
+            if (!factions.Exists(x => x.name == faction))
+                factions.Insert(0, new Faction()
+                {
+                    name = faction,
+                    icon = "Faction" + faction,
+                    side = "Hostile"
+                });
+        if ((maleNames != null || femaleNames != null) && (background == null || background == ""))
             background = "AreaElwynnForestNorthshireAbbey";
+        else if (maleNames == null && femaleNames == null && background != null && background != "")
+            background = null;
     }
 
     //Name of the race

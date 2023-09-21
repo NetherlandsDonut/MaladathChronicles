@@ -83,18 +83,20 @@ public class SiteHostileArea : Site
                             AddSmallButton("OtherClose",
                             (h) =>
                             {
-                                if (instancePart || complexPart)
+                                PlaySound("DesktopInstanceClose");
+                                if (instancePart)
                                 {
-                                    PlaySound("DesktopInstanceClose");
-                                    SetDesktopBackground("Areas/Area" + (instancePart ? instance.name : complex.name).Replace("'", "").Replace(".", "").Replace(" ", ""));
+                                    SetDesktopBackground("Areas/Area" + instance.name.Replace("'", "").Replace(".", "").Replace(" ", ""));
                                     CloseWindow(h.window);
-                                    Respawn(instancePart ? "InstanceLeftSide" : "ComplexLeftSide");
+                                    Respawn("InstanceLeftSide");
                                 }
-                                else
+                                else if (complexPart)
                                 {
-                                    PlaySound("DesktopInstanceClose");
-                                    CloseDesktop("HostileArea");
+                                    SetDesktopBackground("Areas/Complex" + complex.name.Replace("'", "").Replace(".", "").Replace(" ", ""));
+                                    CloseWindow(h.window);
+                                    Respawn("ComplexLeftSide");
                                 }
+                                else CloseDesktop("HostileArea");
                             });
                         });
                         AddPaddingRegion(() =>

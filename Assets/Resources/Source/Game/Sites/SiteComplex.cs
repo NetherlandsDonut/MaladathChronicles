@@ -38,7 +38,7 @@ public class SiteComplex : Site
                                 rareEncounters = new(),
                                 eliteEncounters = new(),
                                 type = "HostileArea",
-                                zone = this.name
+                                zone = name
                             });
                     }
                     else if (site["SiteType"] == "Dungeon")
@@ -63,7 +63,7 @@ public class SiteComplex : Site
                     }
         instances.FindAll(x => sites.Exists(y => (y["SiteType"] == "Raid" || y["SiteType"] == "Dungeon") && y["SiteName"] == x.name)).ForEach(x => x.complexPart = true);
         areas.FindAll(x => sites.Exists(y => y["SiteType"] == "HostileArea" && y["SiteName"] == x.name)).ForEach(x => x.complexPart = true);
-        if (Blueprint.windowBlueprints.Exists(x => x.title == "Complex: " + name))
+        if (!Blueprint.windowBlueprints.Exists(x => x.title == "Complex: " + name))
             Blueprint.windowBlueprints.Add(
                 new Blueprint("Complex: " + name,
                     () =>
