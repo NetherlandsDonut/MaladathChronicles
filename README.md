@@ -261,4 +261,25 @@ v0.2.9
 v0.3.0
     12.09 Aligned shatter effect on portraits properly
           Moved project to Unity 2023
+v0.3.1
+    13.09 Reload map command
+          30 new portraits
+v0.3.2
+    15.09 Right clicks
+          Removed window rebuilding
+v0.3.3
+    16.09 Fixed errors related to traveling from towns
+          Removed unnecessary rebuilds of windows
+          Simplied memory use on grid system
+          Fixed errors regarding right clicking
+v0.3.4
+    18.09 Flight masters
+v0.3.5
+    20.09 Moved flight masters to left side of town screen
+    21.09 Massive portrait update
+          Default texture importer
+          Fixed complexes not loading up
+          Fixed color errors with highlightables after mouse exit
+          Fixed unnecessary assignments to background for races
+          Fixed lack of automatic faction creation from races
 ```
