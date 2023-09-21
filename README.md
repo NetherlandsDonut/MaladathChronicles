@@ -5,7 +5,7 @@
 
 <details>
   
-<summary>Version history for <b>0.0 #Argus</b></summary>
+<summary>Version history for <b>v0.0 "Nefarian"</b></summary>
 
 ```
 v0.0.1
@@ -146,7 +146,7 @@ v0.0.37
     
 <details>
 
-<summary>Version history for <b>0.1 #Antarctica</b></summary>
+<summary>Version history for <b>v0.1 "Emeriss"</b></summary>
 
 ```
 v0.1.0
@@ -192,14 +192,13 @@ v0.1.9
           Many new portraits
 v0.1.10
     01.09 Missile trail effects
-    
 ```
 
 </details>
 
 <details>
 
-<summary>Version history for <b>0.2 #Unicorn</b></summary>
+<summary>Version history for <b>v0.2 "Aku'mai"</b></summary>
 
 ```
 v0.2.0
@@ -243,7 +242,7 @@ v0.2.7
           Fixed bug that made it impossible to save the game while dead
 v0.2.8
     10.09 Reintroduced enemy cursor
-          Changed Jintha'Alot into a complex
+          Changed Jintha'Alor into a complex
           Added around 120 new encounters
           AI will now focus less on collecting elements it already has
 v0.2.9
@@ -255,7 +254,7 @@ v0.2.9
 
 <details>
 
-<summary>Version history for <b>0.3 #Mercy</b></summary>
+<summary>Version history for <b>v0.3 "Hakkar"</b></summary>
 
 ```
 v0.3.0
