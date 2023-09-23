@@ -210,7 +210,8 @@ public class Window : MonoBehaviour
             CDesktop.LBWindow.LBRegionGroup = regionGroup;
             int index = CDesktop.LBWindow.regionGroups.IndexOf(regionGroup);
             if (index != -1 && paginations?.Count > index)
-                regionGroup.pagination = paginations[index];
+                if (regionGroup.maxPagination() < paginations[index]) regionGroup.pagination = regionGroup.maxPagination() - 1;
+                else regionGroup.pagination = paginations[index];
 
             #region CREATING REGIONS
 

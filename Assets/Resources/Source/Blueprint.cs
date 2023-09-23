@@ -1100,8 +1100,8 @@ public class Blueprint
             SetRegionGroupHeight(354);
             AddPaddingRegion(() =>
             {
-                foreach (var line in instance.description)
-                    AddLine(line, "DarkGray");
+                //foreach (var line in instance.description)
+                //    AddLine(line, "DarkGray");
             });
         }),
         new("HostileAreaRightSide", () => {
@@ -5482,7 +5482,16 @@ public class Blueprint
             AddRegionGroup();
             SetRegionGroupWidth(171);
             SetRegionGroupHeight(354);
-            AddPaddingRegion(() => { AddLine("Buff:", "DarkGray"); });
+            AddPaddingRegion(() =>
+            {
+                AddLine("Buff:", "DarkGray");
+                AddSmallButton("OtherTrash", (h) =>
+                {
+                    buffs.Remove(buff);
+                    CloseWindow(h.window);
+                    Respawn("ObjectManagerBuffs");
+                });
+            });
             AddInputRegion(String.objectName, InputType.Everything);
             AddPaddingRegion(() => { AddLine("Icon:", "DarkGray"); });
             AddButtonRegion(() =>
@@ -5726,7 +5735,16 @@ public class Blueprint
             AddRegionGroup();
             SetRegionGroupWidth(171);
             SetRegionGroupHeight(354);
-            AddPaddingRegion(() => { AddLine("Race:", "DarkGray"); });
+            AddPaddingRegion(() =>
+            {
+                AddLine("Race:", "DarkGray");
+                AddSmallButton("OtherTrash", (h) =>
+                {
+                    races.Remove(race);
+                    CloseWindow(h.window);
+                    Respawn("ObjectManagerRaces");
+                });
+            });
             AddInputRegion(String.objectName, InputType.Everything);
             AddPaddingRegion(() => { AddLine("Gendered portraits:", "DarkGray"); });
             AddButtonRegion(() =>

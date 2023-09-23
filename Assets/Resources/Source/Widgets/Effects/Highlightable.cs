@@ -22,12 +22,13 @@ public class Highlightable : MonoBehaviour
     {
         render = GetComponent<SpriteRenderer>();
         pressedState = "None";
-        window = region.regionGroup.window;
         this.pressEvent = pressEvent;
         this.rightPressEvent = rightPressEvent;
         if (tooltip != null)
             this.tooltip = new Tooltip(() => GetComponent<Highlightable>(), tooltip);
         this.region = region;
+        if (region != null)
+            window = region.regionGroup.window;
     }
 
     public void OnMouseEnter()
@@ -82,6 +83,7 @@ public class Highlightable : MonoBehaviour
             rightPressEvent(this);
         }
         pressedState = "None";
-        window.Respawn(true);
+        if (window != null)
+            window.Respawn(true);
     }
 }
