@@ -281,4 +281,7 @@ v0.3.5
           Fixed color errors with highlightables after mouse exit
           Fixed unnecessary assignments to background for races
           Fixed lack of automatic faction creation from races
+v0.3.6
+    23.09 Automatic pagination during search
+          Fixed input fields not having restricted input
 ```
