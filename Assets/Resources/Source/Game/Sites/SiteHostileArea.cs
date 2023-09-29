@@ -86,13 +86,13 @@ public class SiteHostileArea : Site
                                 PlaySound("DesktopInstanceClose");
                                 if (instancePart)
                                 {
-                                    SetDesktopBackground("Areas/Area" + instance.name.Replace("'", "").Replace(".", "").Replace(" ", ""));
+                                    SetDesktopBackground(instance.Background());
                                     CloseWindow(h.window);
                                     Respawn("InstanceLeftSide");
                                 }
                                 else if (complexPart)
                                 {
-                                    SetDesktopBackground("Areas/Complex" + complex.name.Replace("'", "").Replace(".", "").Replace(" ", ""));
+                                    SetDesktopBackground(complex.Background());
                                     CloseWindow(h.window);
                                     Respawn("ComplexLeftSide");
                                 }
@@ -239,13 +239,16 @@ public class SiteHostileArea : Site
         });
     }
 
+    //Returns path to a texture that is the background visual of this site
+    public override string Background() => "Areas/Area" + (zone + name).Replace("'", "").Replace(".", "").Replace(" ", "") + (specialClearBackground && eliteEncounters.All(x => currentSave.elitesKilled.ContainsKey(x.who)) ? "Cleared" : "");
+
     public Entity RollEncounter()
     {
-        var encounters = commonEncounters.Select(x => (x.levelMax != 0 ? random.Next(x.levelMin, x.levelMax + 1) : x.levelMin, Race.races.Find(y => y.name == x.who))).ToList();
+        var encounters = commonEncounters.Select(x => (x.levelMax != 0 ? random.Next(x.levelMin, x.levelMax + 1) : x.levelMin, races.Find(y => y.name == x.who))).ToList();
         if (random.Next(0, 100) < 1 && rareEncounters != null)
         {
             var rares = rareEncounters.FindAll(x => !currentSave.raresKilled.ContainsKey(x.who));
-            if (rares.Count > 0) encounters = rares.Select(x => (x.levelMax != 0 ? random.Next(x.levelMin, x.levelMax + 1) : x.levelMin, Race.races.Find(y => y.name == x.who))).ToList();
+            if (rares.Count > 0) encounters = rares.Select(x => (x.levelMax != 0 ? random.Next(x.levelMin, x.levelMax + 1) : x.levelMin, races.Find(y => y.name == x.who))).ToList();
         }
         var find = encounters[random.Next(0, encounters.Count)];
         return new Entity(find.Item1, find.Item2);
@@ -253,7 +256,7 @@ public class SiteHostileArea : Site
 
     public Entity RollEncounter(Encounter boss)
     {
-        return new Entity(boss.levelMax != 0 ? random.Next(boss.levelMin, boss.levelMax + 1) : boss.levelMin, Race.races.Find(x => x.name == boss.who));
+        return new Entity(boss.levelMax != 0 ? random.Next(boss.levelMin, boss.levelMax + 1) : boss.levelMin, races.Find(x => x.name == boss.who));
     }
 
     //Tells program whether this area has a special

@@ -12,13 +12,11 @@ public class InputLine : MonoBehaviour
 {
     public Region region;
     public InputText text;
-    public InputType inputType;
     public string color;
 
-    public void Initialise(Region region, String refText, InputType inputType, string color = "")
+    public void Initialise(Region region, String refText, string color = "")
     {
         this.region = region;
-        this.inputType = inputType;
         this.color = Coloring.colors.ContainsKey(color) ? color : "";
         text = new GameObject("InputText", typeof(InputText)).GetComponent<InputText>();
         text.transform.parent = transform;

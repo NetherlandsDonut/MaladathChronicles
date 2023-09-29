@@ -71,4 +71,6 @@ public class String
     public static String powerScale = new() { inputType = Decimal };
     public static String buffDuration = new() { inputType = Numbers };
     public static String resourceAmount = new() { inputType = Numbers };
+    public static String minLevel = new() { inputType = Numbers };
+    public static String maxLevel = new() { inputType = Numbers };
 }

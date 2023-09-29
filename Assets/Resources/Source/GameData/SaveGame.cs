@@ -5,6 +5,10 @@ using UnityEngine;
 
 using static Root;
 using static GameSettings;
+using static SiteHostileArea;
+using static SiteInstance;
+using static SiteComplex;
+using static SiteTown;
 
 public class SaveGame
 {
@@ -53,6 +57,21 @@ public class SaveGame
 
     //Overall time player played this character
     public TimeSpan timePlayed;
+
+    //Provides information which background should be used for character
+    //logging screen which will depend on the place of the logout
+    public string LoginBackground()
+    {
+        var area = areas.Find(x => x.x == cameraX + 17 && x.y == cameraY - 9);
+        if (area != null) return area.Background();
+        var town = towns.Find(x => x.x == cameraX + 17 && x.y == cameraY - 9);
+        if (town != null) return town.Background();
+        var instance = instances.Find(x => x.x == cameraX + 17 && x.y == cameraY - 9);
+        if (instance != null) return instance.Background();
+        var complex = complexes.Find(x => x.x == cameraX + 17 && x.y == cameraY - 9);
+        if (complex != null) return complex.Background();
+        return "";
+    }
 
     //Revives the player
     public void RevivePlayer()

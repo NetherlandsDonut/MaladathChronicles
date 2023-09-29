@@ -26,10 +26,6 @@ public class Race
                     icon = "Faction" + faction,
                     side = "Hostile"
                 });
-        if ((maleNames != null || femaleNames != null) && (background == null || background == ""))
-            background = "AreaElwynnForestNorthshireAbbey";
-        else if (maleNames == null && femaleNames == null && background != null && background != "")
-            background = null;
     }
 
     //Name of the race
@@ -56,9 +52,6 @@ public class Race
 
     //Portrait icon of the race
     public string portrait;
-
-    //Background texture in logging screen
-    public string background;
 
     //Race's vitality which affects how much stamina will the enemy have
     //Generally this determines how hard of a fight an enemy is going to put up against the player.

@@ -114,6 +114,9 @@ public class SiteComplex : Site
     //List of all filtered complexes by input search
     public static List<SiteComplex> complexesSearch;
 
+    //Returns path to a texture that is the background visual of this site
+    public override string Background() => "Areas/Complex" + name.Replace("'", "").Replace(".", "").Replace(" ", "");
+
     //Function to print the site onto the map
     public override void PrintSite()
     {
@@ -159,7 +162,7 @@ public class SiteComplex : Site
                     else CloseWindow(window);
                 CloseWindow("ComplexLeftSide");
                 SpawnWindowBlueprint("HostileArea: " + area.name);
-                SetDesktopBackground("Areas/Area" + (area.zone + area.name).Replace("'", "").Replace(".", "").Replace(" ", "") + (area.specialClearBackground && area.eliteEncounters.All(x => currentSave.elitesKilled.ContainsKey(x.who)) ? "Cleared" : ""));
+                SetDesktopBackground(area.Background());
             }
             else
             {

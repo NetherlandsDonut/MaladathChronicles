@@ -50,6 +50,9 @@ public class Site
     //Function to print the site onto the map
     public virtual void PrintSite() { }
 
+    //Returns path to a texture that is the background visual of this site
+    public virtual string Background() => "";
+
     //Queue opening of this site.
     //After calling this the screen is locked and camera will pan there slowly.
     //After reaching the site the screen will change accordingly to the site type

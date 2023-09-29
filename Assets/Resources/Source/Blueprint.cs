@@ -251,7 +251,7 @@ public class Blueprint
                 AddText(" DELETE ", "DangerousRed");
                 AddText("to confirm deletion");
             });
-            AddInputRegion(String.promptConfirm, InputType.Capitals, "DangerousRed");
+            AddInputRegion(String.promptConfirm, "DangerousRed");
         }, true),
         new("CharacterInfo", () => {
             SetAnchor(TopLeft);
@@ -332,7 +332,7 @@ public class Blueprint
         new("CharacterRoster", () =>
         {
             if (settings.selectedCharacter != "")
-                SetDesktopBackground("Areas/" + races.Find(x => x.name == saves[settings.selectedRealm].Find(x => x.player.name == settings.selectedCharacter).player.race).background, true);
+                SetDesktopBackground(saves[settings.selectedRealm].Find(x => x.player.name == settings.selectedCharacter).LoginBackground(), true);
             else SetDesktopBackground("Sky", true);
             SetAnchor(TopRight);
             AddRegionGroup();
@@ -375,7 +375,7 @@ public class Blueprint
                             if (settings.selectedCharacter != slot.player.name)
                             {
                                 settings.selectedCharacter = slot.player.name;
-                                SetDesktopBackground("Areas/" + races.Find(x => x.name == slot.player.race).background, true);
+                                SetDesktopBackground(slot.LoginBackground(), true);
                                 Respawn("CharacterInfo");
                             }
                         });
@@ -2036,7 +2036,7 @@ public class Blueprint
             SetAnchor(Top);
             AddRegionGroup();
             SetRegionGroupWidth(638);
-            AddInputRegion(String.consoleInput, InputType.Everything);
+            AddInputRegion(String.consoleInput);
             AddSmallButton("OtherClose", (h) => { CloseWindow(h.window); });
         },  true),
 
@@ -2228,7 +2228,7 @@ public class Blueprint
             AddPaddingRegion(() =>
             {
                 AddLine("Search:", "DarkGray");
-                AddInputLine(String.search, InputType.Everything);
+                AddInputLine(String.search);
             });
             var regionGroup = CDesktop.LBWindow.LBRegionGroup;
             AddPaginationLine(regionGroup);
@@ -2255,7 +2255,10 @@ public class Blueprint
                     area = areasSearch[index + 10 * regionGroup.pagination];
                     instance = null;
                     complex = null;
-                    SetDesktopBackground("Areas/Area" + (area.zone + area.name).Replace("'", "").Replace(".", "").Replace(" ", ""));
+                    SetDesktopBackground(area.Background());
+                    CloseWindow("ObjectManagerHostileAreaCommonEncounters");
+                    CloseWindow("ObjectManagerHostileAreaRareEncounters");
+                    CloseWindow("ObjectManagerHostileAreaEliteEncounters");
                     Respawn("ObjectManagerHostileArea");
                 });
             }
@@ -2310,6 +2313,31 @@ public class Blueprint
                     SpawnWindowBlueprint("ObjectManagerAmbienceList");
                 }
             });
+            AddPaddingRegion(() => { AddLine("Encounters:", "DarkGray"); });
+            AddButtonRegion(() =>
+            {
+                AddLine("Common encounters");
+            },
+            (h) =>
+            {
+                Respawn("ObjectManagerHostileAreaCommonEncounters");
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("Rare encounters");
+            },
+            (h) =>
+            {
+                Respawn("ObjectManagerHostileAreaCommonEncounters");
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("Elite encounters");
+            },
+            (h) =>
+            {
+                Respawn("ObjectManagerHostileAreaCommonEncounters");
+            });
             AddPaddingRegion(() => { });
         }),
         new("ObjectManagerTowns", () => {
@@ -2345,7 +2373,7 @@ public class Blueprint
             AddPaddingRegion(() =>
             {
                 AddLine("Search:", "DarkGray");
-                AddInputLine(String.search, InputType.Everything);
+                AddInputLine(String.search);
             });
             var regionGroup = CDesktop.LBWindow.LBRegionGroup;
             AddPaginationLine(regionGroup);
@@ -2370,7 +2398,7 @@ public class Blueprint
                 (h) =>
                 {
                     town = townsSearch[index + 10 * regionGroup.pagination];
-                    SetDesktopBackground("Areas/Area" + (town.zone + town.name).Replace("'", "").Replace(".", "").Replace(" ", ""));
+                    SetDesktopBackground(town.Background());
                     Respawn("ObjectManagerTown");
                 });
             }
@@ -2534,7 +2562,7 @@ public class Blueprint
             AddPaddingRegion(() =>
             {
                 AddLine("Search:", "DarkGray");
-                AddInputLine(String.search, InputType.Everything);
+                AddInputLine(String.search);
             });
             var regionGroup = CDesktop.LBWindow.LBRegionGroup;
             AddPaginationLine(regionGroup);
@@ -2561,7 +2589,7 @@ public class Blueprint
                     area = null;
                     instance = instancesSearch[index + 10 * regionGroup.pagination];
                     complex = null;
-                    SetDesktopBackground("Areas/Area" + instance.name.Replace("'", "").Replace(".", "").Replace(" ", ""));
+                    SetDesktopBackground(instance.Background());
                     Respawn("ObjectManagerInstance");
                 });
             }
@@ -2692,7 +2720,7 @@ public class Blueprint
             AddPaddingRegion(() =>
             {
                 AddLine("Search:", "DarkGray");
-                AddInputLine(String.search, InputType.Everything);
+                AddInputLine(String.search);
             });
             var regionGroup = CDesktop.LBWindow.LBRegionGroup;
             AddPaginationLine(regionGroup);
@@ -2719,7 +2747,7 @@ public class Blueprint
                     area = null;
                     instance = null;
                     complex = complexesSearch[index + regionGroup.perPage * regionGroup.pagination];
-                    SetDesktopBackground("Areas/Complex" + complex.name.Replace("'", "").Replace(".", "").Replace(" ", ""));
+                    SetDesktopBackground(complex.Background());
                     CloseWindow("ObjectManagerComplex");
                     SpawnWindowBlueprint("ObjectManagerComplex");
                 });
@@ -2804,7 +2832,7 @@ public class Blueprint
             AddPaddingRegion(() =>
             {
                 AddLine("Search:", "DarkGray");
-                AddInputLine(String.search, InputType.Everything);
+                AddInputLine(String.search);
             });
             var regionGroup = CDesktop.LBWindow.LBRegionGroup;
             AddPaginationLine(regionGroup);
@@ -2890,12 +2918,12 @@ public class Blueprint
             AddPaddingRegion(() =>
             {
                 AddLine("Search:", "DarkGray");
-                AddInputLine(String.search, InputType.Everything);
+                AddInputLine(String.search);
             });
             AddPaddingRegion(() =>
             {
                 AddLine("Search:", "DarkGray");
-                AddInputLine(String.search, InputType.Everything);
+                AddInputLine(String.search);
             });
             var regionGroup = CDesktop.LBWindow.LBRegionGroup;
             AddPaginationLine(regionGroup);
@@ -2977,7 +3005,7 @@ public class Blueprint
             AddPaddingRegion(() =>
             {
                 AddLine("Search:", "DarkGray");
-                AddInputLine(String.search, InputType.Everything);
+                AddInputLine(String.search);
             });
             var regionGroup = CDesktop.LBWindow.LBRegionGroup;
             AddPaginationLine(regionGroup);
@@ -3054,7 +3082,7 @@ public class Blueprint
             AddPaddingRegion(() =>
             {
                 AddLine("Search:", "DarkGray");
-                AddInputLine(String.search, InputType.Everything);
+                AddInputLine(String.search);
             });
             var regionGroup = CDesktop.LBWindow.LBRegionGroup;
             AddPaginationLine(regionGroup);
@@ -3130,7 +3158,7 @@ public class Blueprint
             AddPaddingRegion(() =>
             {
                 AddLine("Search:", "DarkGray");
-                AddInputLine(String.search, InputType.Everything);
+                AddInputLine(String.search);
             });
             var regionGroup = CDesktop.LBWindow.LBRegionGroup;
             AddPaginationLine(regionGroup);
@@ -3199,7 +3227,7 @@ public class Blueprint
             AddPaddingRegion(() =>
             {
                 AddLine("Search:", "DarkGray");
-                AddInputLine(String.search, InputType.Everything);
+                AddInputLine(String.search);
             });
             var regionGroup = CDesktop.LBWindow.LBRegionGroup;
             AddPaginationLine(regionGroup);
@@ -3263,7 +3291,7 @@ public class Blueprint
             AddPaddingRegion(() =>
             {
                 AddLine("Search:", "DarkGray");
-                AddInputLine(String.search, InputType.Everything);
+                AddInputLine(String.search);
             });
             var regionGroup = CDesktop.LBWindow.LBRegionGroup;
             AddPaginationLine(regionGroup);
@@ -3323,7 +3351,7 @@ public class Blueprint
             AddPaddingRegion(() =>
             {
                 AddLine("Search:", "DarkGray");
-                AddInputLine(String.search, InputType.Everything);
+                AddInputLine(String.search);
             });
             var regionGroup = CDesktop.LBWindow.LBRegionGroup;
             AddPaginationLine(regionGroup);
@@ -3608,7 +3636,7 @@ public class Blueprint
                     AddPaddingRegion(() =>
                     {
                         AddLine("Resource amount:", "DarkGray");
-                        AddInputLine(String.resourceAmount, InputType.Numbers);
+                        AddInputLine(String.resourceAmount);
                         AddSmallButton("OtherReverse", (h) =>
                         {
                             if (trigger.ContainsKey("ResourceAmount"))
@@ -3862,7 +3890,7 @@ public class Blueprint
                 AddPaddingRegion(() =>
                 {
                     AddLine("Power scale:", "DarkGray");
-                    AddInputLine(String.powerScale, InputType.Decimal);
+                    AddInputLine(String.powerScale);
                     AddSmallButton("OtherReverse", (h) =>
                     {
                         if (effect.ContainsKey("PowerScale"))
@@ -3933,7 +3961,7 @@ public class Blueprint
                 AddPaddingRegion(() =>
                 {
                     AddLine("Buff duration:", "DarkGray");
-                    AddInputLine(String.buffDuration, InputType.Numbers);
+                    AddInputLine(String.buffDuration);
                     AddSmallButton("OtherReverse", (h) =>
                     {
                         if (effect.ContainsKey("PowerScale"))
@@ -3990,7 +4018,7 @@ public class Blueprint
                 AddPaddingRegion(() =>
                 {
                     AddLine("Resource amount:", "DarkGray");
-                    AddInputLine(String.resourceAmount, InputType.Numbers);
+                    AddInputLine(String.resourceAmount);
                     AddSmallButton("OtherReverse", (h) =>
                     {
                         if (effect.ContainsKey("ResourceAmount"))
@@ -4003,7 +4031,7 @@ public class Blueprint
             AddPaddingRegion(() =>
             {
                 AddLine("Await:", "DarkGray");
-                AddInputLine(String.await, InputType.Numbers);
+                AddInputLine(String.await);
                 AddSmallButton("OtherReverse", (h) =>
                 {
                     if (effect.ContainsKey("Await"))
@@ -4015,7 +4043,7 @@ public class Blueprint
             AddPaddingRegion(() =>
             {
                 AddLine("Chance base:", "DarkGray");
-                AddInputLine(String.chanceBase, InputType.Numbers);
+                AddInputLine(String.chanceBase);
                 AddSmallButton("OtherReverse", (h) =>
                 {
                     if (effect.ContainsKey("ChanceBase"))
@@ -4027,7 +4055,7 @@ public class Blueprint
             AddPaddingRegion(() =>
             {
                 AddLine("Chance:", "DarkGray");
-                AddInputLine(String.chance, InputType.Numbers);
+                AddInputLine(String.chance);
                 AddSmallButton("OtherReverse", (h) =>
                 {
                     if (effect.ContainsKey("Chance"))
@@ -4146,7 +4174,7 @@ public class Blueprint
                 AddPaddingRegion(() =>
                 {
                     AddLine("Animation speed:", "DarkGray");
-                    AddInputLine(String.animationSpeed, InputType.Decimal);
+                    AddInputLine(String.animationSpeed);
                     AddSmallButton("OtherReverse", (h) =>
                     {
                         if (effect.ContainsKey("AnimationSpeed"))
@@ -4158,7 +4186,7 @@ public class Blueprint
                 AddPaddingRegion(() =>
                 {
                     AddLine("Animation arc:", "DarkGray");
-                    AddInputLine(String.animationArc, InputType.Decimal);
+                    AddInputLine(String.animationArc);
                     AddSmallButton("OtherReverse", (h) =>
                     {
                         if (effect.ContainsKey("AnimationArc"))
@@ -4170,7 +4198,7 @@ public class Blueprint
                 AddPaddingRegion(() =>
                 {
                     AddLine("Trail strength:", "DarkGray");
-                    AddInputLine(String.trailStrength, InputType.Decimal);
+                    AddInputLine(String.trailStrength);
                     AddSmallButton("OtherReverse", (h) =>
                     {
                         if (effect.ContainsKey("TrailStrength"))
@@ -4235,7 +4263,7 @@ public class Blueprint
                 AddPaddingRegion(() =>
                 {
                     AddLine("Shatter degree:", "DarkGray");
-                    AddInputLine(String.shatterDegree, InputType.Decimal);
+                    AddInputLine(String.shatterDegree);
                     AddSmallButton("OtherReverse", (h) =>
                     {
                         if (effect.ContainsKey("ShatterDegree"))
@@ -4247,7 +4275,7 @@ public class Blueprint
                 AddPaddingRegion(() =>
                 {
                     AddLine("Shatter density:", "DarkGray");
-                    AddInputLine(String.shatterDensity, InputType.Numbers);
+                    AddInputLine(String.shatterDensity);
                     AddSmallButton("OtherReverse", (h) =>
                     {
                         if (effect.ContainsKey("ShatterDensity"))
@@ -4259,7 +4287,7 @@ public class Blueprint
                 AddPaddingRegion(() =>
                 {
                     AddLine("Shatter speed:", "DarkGray");
-                    AddInputLine(String.shatterSpeed, InputType.Decimal);
+                    AddInputLine(String.shatterSpeed);
                     AddSmallButton("OtherReverse", (h) =>
                     {
                         if (effect.ContainsKey("ShatterSpeed"))
@@ -4269,6 +4297,74 @@ public class Blueprint
                     });
                 });
             }
+            AddPaddingRegion(() => { SetRegionAsGroupExtender(); });
+        }),
+        new("ObjectManagerHostileAreaCommonEncounters", () => {
+            DisableShadows();
+            SetAnchor(Top);
+            AddHeaderGroup();
+            SetRegionGroupWidth(296);
+            AddHeaderRegion(() =>
+            {
+                AddLine("Common encounters:");
+                AddSmallButton("OtherClose", (h) =>
+                {
+                    CloseWindow(h.window);
+                });
+            });
+            AddRegionGroup();
+            SetRegionGroupWidth(148);
+            SetRegionGroupHeight(335);
+            foreach (var ce in area.commonEncounters)
+                AddButtonRegion(() =>
+                {
+                    AddLine(ce.who);
+                    var race = races.Find(x => x.name == ce.who);
+                    AddSmallButton(race == null ? "OtherUnknown" : race.portrait, (h) => { });
+                },
+                (h) =>
+                {
+                    h.window.Respawn();
+                    CloseWindow("ObjectManagerEventEffects");
+                    Respawn("ObjectManagerEffectList");
+                });
+            AddPaddingRegion(() => { SetRegionAsGroupExtender(); });
+            AddRegionGroup();
+            SetRegionGroupWidth(74);
+            SetRegionGroupHeight(335);
+            foreach (var ce in area.commonEncounters)
+                AddPaddingRegion(() =>
+                {
+                    AddLine("");
+                    AddInputLine(String.minLevel);
+                    AddSmallButton("OtherReverse", (h) =>
+                    {
+                        ce.levelMin = 1;
+                        String.minLevel.Set("1");
+                        h.window.Respawn();
+                    });
+                });
+            AddPaddingRegion(() => { SetRegionAsGroupExtender(); });
+            AddRegionGroup();
+            SetRegionGroupWidth(74);
+            SetRegionGroupHeight(335);
+            foreach (var ce in area.commonEncounters)
+                AddPaddingRegion(() =>
+                {
+                    AddLine("");
+                    AddInputLine(String.maxLevel);
+                    AddSmallButton("OtherTrash", (h) =>
+                    {
+                        area.commonEncounters.Remove(ce);
+                        h.window.Respawn();
+                    });
+                    AddSmallButton("OtherReverse", (h) =>
+                    {
+                        ce.levelMax = 0;
+                        String.maxLevel.Set("0");
+                        h.window.Respawn();
+                    });
+                });
             AddPaddingRegion(() => { SetRegionAsGroupExtender(); });
         }),
         new("ObjectManagerHostileAreaTypeList", () => {
@@ -4530,7 +4626,7 @@ public class Blueprint
             AddPaddingRegion(() =>
             {
                 AddLine("Search:", "DarkGray");
-                AddInputLine(String.search, InputType.Everything);
+                AddInputLine(String.search);
             });
             var regionGroup = CDesktop.LBWindow.LBRegionGroup;
             AddPaginationLine(regionGroup);
@@ -4608,7 +4704,7 @@ public class Blueprint
             SetRegionGroupWidth(171);
             SetRegionGroupHeight(354);
             AddPaddingRegion(() => { AddLine("Item:", "DarkGray"); });
-            AddInputRegion(String.objectName, InputType.Everything, item.rarity);
+            AddInputRegion(String.objectName, item.rarity);
             AddPaddingRegion(() => { AddLine("Icon:", "DarkGray"); });
             AddButtonRegion(() =>
             {
@@ -4640,17 +4736,17 @@ public class Blueprint
             AddPaddingRegion(() =>
             {
                 AddLine("Price:", "DarkGray");
-                AddInputLine(String.price, InputType.Decimal);
+                AddInputLine(String.price);
             });
             AddPaddingRegion(() =>
             {
                 AddLine("Item power:", "DarkGray");
-                AddInputLine(String.itemPower, InputType.Numbers);
+                AddInputLine(String.itemPower);
             });
             AddPaddingRegion(() =>
             {
                 AddLine("Required level:", "DarkGray");
-                AddInputLine(String.requiredLevel, InputType.Numbers);
+                AddInputLine(String.requiredLevel);
             });
             AddPaddingRegion(() => { });
         }),
@@ -4741,7 +4837,7 @@ public class Blueprint
             AddPaddingRegion(() =>
             {
                 AddLine("Search:", "DarkGray");
-                AddInputLine(String.search, InputType.Everything);
+                AddInputLine(String.search);
             });
             var regionGroup = CDesktop.LBWindow.LBRegionGroup;
             AddPaginationLine(regionGroup);
@@ -4819,7 +4915,7 @@ public class Blueprint
             SetRegionGroupWidth(171);
             SetRegionGroupHeight(354);
             AddPaddingRegion(() => { AddLine("Item set:", "DarkGray"); });
-            AddInputRegion(String.objectName, InputType.Everything);
+            AddInputRegion(String.objectName);
             AddPaddingRegion(() => { });
         }),
         new("AbilitiesSort", () => {
@@ -4901,61 +4997,61 @@ public class Blueprint
             AddPaddingRegion(() =>
             {
                 AddLine("Fire: ", "DarkGray");
-                AddInputLine(String.fire, InputType.Numbers, String.fire.Value() == "0" ? "DarkGray" : "Gray");
+                AddInputLine(String.fire, String.fire.Value() == "0" ? "DarkGray" : "Gray");
                 AddSmallButton("ElementFireRousing", (h) => { });
             });
             AddPaddingRegion(() =>
             {
                 AddLine("Earth: ", "DarkGray");
-                AddInputLine(String.earth, InputType.Numbers, String.earth.Value() == "0" ? "DarkGray" : "Gray");
+                AddInputLine(String.earth, String.earth.Value() == "0" ? "DarkGray" : "Gray");
                 AddSmallButton("ElementEarthRousing", (h) => { });
             });
             AddPaddingRegion(() =>
             {
                 AddLine("Water: ", "DarkGray");
-                AddInputLine(String.water, InputType.Numbers, String.water.Value() == "0" ? "DarkGray" : "Gray");
+                AddInputLine(String.water, String.water.Value() == "0" ? "DarkGray" : "Gray");
                 AddSmallButton("ElementWaterRousing", (h) => { });
             });
             AddPaddingRegion(() =>
             {
                 AddLine("Air: ", "DarkGray");
-                AddInputLine(String.air, InputType.Numbers, String.air.Value() == "0" ? "DarkGray" : "Gray");
+                AddInputLine(String.air, String.air.Value() == "0" ? "DarkGray" : "Gray");
                 AddSmallButton("ElementAirRousing", (h) => { });
             });
             AddPaddingRegion(() =>
             {
                 AddLine("Frost: ", "DarkGray");
-                AddInputLine(String.frost, InputType.Numbers, String.frost.Value() == "0" ? "DarkGray" : "Gray");
+                AddInputLine(String.frost, String.frost.Value() == "0" ? "DarkGray" : "Gray");
                 AddSmallButton("ElementFrostRousing", (h) => { });
             });
             AddPaddingRegion(() =>
             {
                 AddLine("Decay: ", "DarkGray");
-                AddInputLine(String.decay, InputType.Numbers, String.decay.Value() == "0" ? "DarkGray" : "Gray");
+                AddInputLine(String.decay, String.decay.Value() == "0" ? "DarkGray" : "Gray");
                 AddSmallButton("ElementDecayRousing", (h) => { });
             });
             AddPaddingRegion(() =>
             {
                 AddLine("Shadow: ", "DarkGray");
-                AddInputLine(String.shadow, InputType.Numbers, String.shadow.Value() == "0" ? "DarkGray" : "Gray");
+                AddInputLine(String.shadow, String.shadow.Value() == "0" ? "DarkGray" : "Gray");
                 AddSmallButton("ElementShadowRousing", (h) => { });
             });
             AddPaddingRegion(() =>
             {
                 AddLine("Order: ", "DarkGray");
-                AddInputLine(String.order, InputType.Numbers, String.order.Value() == "0" ? "DarkGray" : "Gray");
+                AddInputLine(String.order, String.order.Value() == "0" ? "DarkGray" : "Gray");
                 AddSmallButton("ElementOrderRousing", (h) => { });
             });
             AddPaddingRegion(() =>
             {
                 AddLine("Arcane: ", "DarkGray");
-                AddInputLine(String.arcane, InputType.Numbers, String.arcane.Value() == "0" ? "DarkGray" : "Gray");
+                AddInputLine(String.arcane, String.arcane.Value() == "0" ? "DarkGray" : "Gray");
                 AddSmallButton("ElementArcaneRousing", (h) => { });
             });
             AddPaddingRegion(() =>
             {
                 AddLine("Lightning: ", "DarkGray");
-                AddInputLine(String.lightning, InputType.Numbers, String.lightning.Value() == "0" ? "DarkGray" : "Gray");
+                AddInputLine(String.lightning, String.lightning.Value() == "0" ? "DarkGray" : "Gray");
                 AddSmallButton("ElementLightningRousing", (h) => { });
             });
             AddPaddingRegion(() => { });
@@ -5021,7 +5117,7 @@ public class Blueprint
             AddPaddingRegion(() =>
             {
                 AddLine("Search:", "DarkGray");
-                AddInputLine(String.search, InputType.Everything);
+                AddInputLine(String.search);
             });
             var regionGroup = CDesktop.LBWindow.LBRegionGroup;
             AddPaginationLine(regionGroup);
@@ -5125,7 +5221,7 @@ public class Blueprint
                     SpawnDesktopBlueprint("GameSimulation");
                 });
             });
-            AddInputRegion(String.objectName, InputType.Everything, ability.name);
+            AddInputRegion(String.objectName, ability.name);
             AddPaddingRegion(() => { AddLine("Icon:", "DarkGray"); });
             AddButtonRegion(() =>
             {
@@ -5204,7 +5300,7 @@ public class Blueprint
             AddPaddingRegion(() =>
             {
                 AddLine("Ability cooldown: ", "DarkGray");
-                AddInputLine(String.cooldown, InputType.Numbers);
+                AddInputLine(String.cooldown);
             });
             AddPaddingRegion(() => { SetRegionAsGroupExtender(); });
             if (ability.events.Count < 5)
@@ -5339,7 +5435,7 @@ public class Blueprint
             AddPaddingRegion(() =>
             {
                 AddLine("Search:", "DarkGray");
-                AddInputLine(String.search, InputType.Everything);
+                AddInputLine(String.search);
             });
             var regionGroup = CDesktop.LBWindow.LBRegionGroup;
             AddPaginationLine(regionGroup);
@@ -5492,7 +5588,7 @@ public class Blueprint
                     Respawn("ObjectManagerBuffs");
                 });
             });
-            AddInputRegion(String.objectName, InputType.Everything);
+            AddInputRegion(String.objectName);
             AddPaddingRegion(() => { AddLine("Icon:", "DarkGray"); });
             AddButtonRegion(() =>
             {
@@ -5671,7 +5767,7 @@ public class Blueprint
             AddPaddingRegion(() =>
             {
                 AddLine("Search:", "DarkGray");
-                AddInputLine(String.search, InputType.Everything);
+                AddInputLine(String.search);
             });
             var regionGroup = CDesktop.LBWindow.LBRegionGroup;
             AddPaginationLine(regionGroup);
@@ -5745,7 +5841,7 @@ public class Blueprint
                     Respawn("ObjectManagerRaces");
                 });
             });
-            AddInputRegion(String.objectName, InputType.Everything);
+            AddInputRegion(String.objectName);
             AddPaddingRegion(() => { AddLine("Gendered portraits:", "DarkGray"); });
             AddButtonRegion(() =>
             {
@@ -5843,7 +5939,7 @@ public class Blueprint
                     }
                 });
                 AddPaddingRegion(() => { AddLine("Vitality:", "DarkGray"); });
-                AddInputRegion(String.vitality, InputType.Decimal);
+                AddInputRegion(String.vitality);
             }
             AddPaddingRegion(() => { });
         }),
@@ -5945,7 +6041,7 @@ public class Blueprint
             AddPaddingRegion(() =>
             {
                 AddLine("Search:", "DarkGray");
-                AddInputLine(String.search, InputType.Everything);
+                AddInputLine(String.search);
             });
             var regionGroup = CDesktop.LBWindow.LBRegionGroup;
             AddPaginationLine(regionGroup);
@@ -6023,7 +6119,7 @@ public class Blueprint
             SetRegionGroupWidth(171);
             SetRegionGroupHeight(354);
             AddPaddingRegion(() => { AddLine("Faction:", "DarkGray"); });
-            AddInputRegion(String.objectName, InputType.Everything);
+            AddInputRegion(String.objectName);
             AddPaddingRegion(() => { AddLine("Icon:", "DarkGray"); });
             AddButtonRegion(() =>
             {
@@ -6088,7 +6184,7 @@ public class Blueprint
             AddPaddingRegion(() =>
             {
                 AddLine("Search:", "DarkGray");
-                AddInputLine(String.search, InputType.Everything);
+                AddInputLine(String.search);
             });
             var regionGroup = CDesktop.LBWindow.LBRegionGroup;
             AddPaginationLine(regionGroup);
@@ -6167,7 +6263,7 @@ public class Blueprint
             SetRegionGroupWidth(171);
             SetRegionGroupHeight(354);
             AddPaddingRegion(() => { AddLine("Class:", "DarkGray"); });
-            AddInputRegion(String.objectName, InputType.Everything, spec.name);
+            AddInputRegion(String.objectName, spec.name);
             AddPaddingRegion(() => { AddLine("Icon:", "DarkGray"); });
             AddHeaderRegion(() =>
             {
@@ -6273,7 +6369,7 @@ public class Blueprint
         }),
         new("HostileArea", () =>
         {
-            SetDesktopBackground("Areas/Area" + (area.zone + area.name).Replace("'", "").Replace(".", "").Replace(" ", "") + (area.specialClearBackground && area.eliteEncounters.All(x => currentSave.elitesKilled.ContainsKey(x.who)) ? "Cleared" : ""));
+            SetDesktopBackground(area.Background());
             SpawnWindowBlueprint("HostileArea: " + area.name);
             SpawnWindowBlueprint("HostileAreaRightSide");
             AddHotkey(Escape, () =>
@@ -6292,7 +6388,7 @@ public class Blueprint
         }),
         new("Town", () =>
         {
-            SetDesktopBackground("Areas/Area" + (town.zone + town.name).Replace("'", "").Replace(".", "").Replace(" ", ""));
+            SetDesktopBackground(town.Background());
             SpawnWindowBlueprint("Town: " + town.name);
             SpawnWindowBlueprint("TownLeftSide");
             AddHotkey(Escape, () =>
@@ -6303,7 +6399,7 @@ public class Blueprint
         }),
         new("Instance", () =>
         {
-            SetDesktopBackground("Areas/Area" + instance.name.Replace("'", "").Replace(".", "").Replace(" ", ""));
+            SetDesktopBackground(instance.Background());
             SpawnWindowBlueprint(instance.type + ": " + instance.name);
             SpawnWindowBlueprint("InstanceLeftSide");
             AddHotkey(Escape, () =>
@@ -6312,7 +6408,7 @@ public class Blueprint
                 {
                     area = null;
                     PlaySound("DesktopButtonClose");
-                    SetDesktopBackground("Areas/Area" + instance.name.Replace("'", "").Replace(".", "").Replace(" ", ""));
+                    SetDesktopBackground(instance.Background());
                     Respawn("InstanceLeftSide");
                 }
                 else if (instance.complexPart)
@@ -6357,7 +6453,7 @@ public class Blueprint
         }),
         new("Complex", () =>
         {
-            SetDesktopBackground("Areas/Complex" + complex.name.Replace("'", "").Replace(".", "").Replace(" ", ""));
+            SetDesktopBackground(complex.Background());
             SpawnWindowBlueprint("Complex: " + complex.name);
             SpawnWindowBlueprint("ComplexLeftSide");
             AddHotkey(Escape, () =>
@@ -6366,7 +6462,7 @@ public class Blueprint
                 {
                     area = null;
                     PlaySound("DesktopButtonClose");
-                    SetDesktopBackground("Areas/Complex" + complex.name.Replace("'", "").Replace(".", "").Replace(" ", ""));
+                    SetDesktopBackground(complex.Background());
                     Respawn("ComplexLeftSide");
                 }
                 else
@@ -6380,7 +6476,7 @@ public class Blueprint
         {
             locationName = Board.board.area.name;
             PlaySound("DesktopEnterCombat");
-            SetDesktopBackground("Areas/Area" + (Board.board.area.zone + Board.board.area.name).Replace("'", "").Replace(".", "").Replace(" ", ""));
+            SetDesktopBackground(Board.board.area.Background());
             SpawnWindowBlueprint("BattleBoard");
             SpawnWindowBlueprint("BufferBoard");
             SpawnWindowBlueprint("PlayerBattleInfo");
@@ -6428,7 +6524,7 @@ public class Blueprint
         {
             locationName = Board.board.area.name;
             PlaySound("DesktopEnterCombat");
-            SetDesktopBackground("Areas/Area" + (Board.board.area.zone + Board.board.area.name).Replace("'", "").Replace(".", "").Replace(" ", ""));
+            SetDesktopBackground(Board.board.area.Background());
             SpawnWindowBlueprint("BattleBoard");
             SpawnWindowBlueprint("BufferBoard");
             SpawnWindowBlueprint("PlayerBattleInfo");
@@ -6576,7 +6672,7 @@ public class Blueprint
             if (!currentSave.banks.ContainsKey(town.name))
                 currentSave.banks.Add(town.name, new() { items = new() });
             PlaySound("DesktopBankOpen", 0.2f);
-            SetDesktopBackground("Areas/Area" + (town.zone + town.name).Replace("'", "").Replace(".", "").Replace(" ", "") + "Bank");
+            SetDesktopBackground(town.Background() + "Bank");
             SpawnWindowBlueprint("Bank");
             SpawnWindowBlueprint("Inventory");
             AddHotkey(Escape, () =>

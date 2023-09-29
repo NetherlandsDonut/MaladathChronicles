@@ -345,7 +345,8 @@ public class Window : MonoBehaviour
                     else
                     {
                         region.inputLine.transform.localPosition = new Vector3(2 + textPaddingLeft, -region.currentHeight - 3, 0);
-                        region.currentHeight += 15;
+                        if (region.currentHeight < 15)
+                            region.currentHeight = 15;
                     }
                     int length = 0;
                     region.inputLine.text.Erase();

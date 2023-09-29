@@ -162,6 +162,9 @@ public class SiteInstance : Site
         });
     }
 
+    //Returns path to a texture that is the background visual of this site
+    public override string Background() => "Areas/Area" + name.Replace("'", "").Replace(".", "").Replace(" ", "");
+
     public static void PrintInstanceWing(SiteInstance instance, InstanceWing wing)
     {
         if (instance.wings.Count > 1)

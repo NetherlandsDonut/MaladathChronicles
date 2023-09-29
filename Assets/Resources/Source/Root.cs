@@ -343,11 +343,11 @@ public static class Root
         AddRegion(Padding, draw, null, null, null);
     }
 
-    public static void AddInputRegion(String refText, InputType inputType, string color = "")
+    public static void AddInputRegion(String refText, string color = "")
     {
         AddRegion(Padding, () =>
         {
-            AddInputLine(refText, inputType, color);
+            AddInputLine(refText, color);
         }, 
         (h) =>
         {
@@ -566,13 +566,13 @@ public static class Root
 
     #region InputLines
 
-    public static void AddInputLine(String refText, InputType inputType, string color = "")
+    public static void AddInputLine(String refText, string color = "")
     {
         var region = CDesktop.LBWindow.LBRegionGroup.LBRegion;
         if (region.lines.Count > 0 && region.checkbox != null) return;
         var newObject = new GameObject("InputLine", typeof(InputLine));
         newObject.transform.parent = region.transform;
-        newObject.GetComponent<InputLine>().Initialise(region, refText, inputType, color);
+        newObject.GetComponent<InputLine>().Initialise(region, refText, color);
     }
     
     #endregion
