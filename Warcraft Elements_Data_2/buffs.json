@@ -771,5 +771,17 @@
     "icon": "AbilityConsecration",
     "tags": [],
     "events": []
+  },
+  {
+    "name": "Blazing Barrier",
+    "icon": "AbilityBlazingBarrier",
+    "tags": [],
+    "events": []
+  },
+  {
+    "name": "Blessing of Might",
+    "icon": "AbilityBlessingofMight",
+    "tags": [],
+    "events": []
   }
 ]

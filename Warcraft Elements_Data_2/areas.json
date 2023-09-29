@@ -1469,7 +1469,7 @@
         "levelMin": 24
       },
       {
-        "who": "Akrillus",
+        "who": "Akkrilus",
         "levelMin": 26
       }
     ],
@@ -3559,7 +3559,7 @@
         "levelMax": 55
       }
     ],
-    "x": 289,
+    "x": 288,
     "y": -171,
     "name": "Ruins of Thaurissan",
     "zone": "Burning Steppes",
@@ -3578,7 +3578,7 @@
         "levelMax": 53
       }
     ],
-    "x": 297,
+    "x": 298,
     "y": -170,
     "name": "Slither Rock",
     "zone": "Burning Steppes",
@@ -3603,7 +3603,7 @@
       }
     ],
     "x": 297,
-    "y": -174,
+    "y": -175,
     "name": "Terror Wing Path",
     "zone": "Burning Steppes",
     "type": "HostileArea"
@@ -9362,7 +9362,7 @@
     ],
     "eliteEncounters": [
       {
-        "who": "Groyat, the Blind Hunter",
+        "who": "Blind Hunter",
         "levelMin": 40,
         "requiredProgress": 2
       }
@@ -12729,6 +12729,10 @@
       {
         "who": "Ana'thek the Cruel",
         "levelMin": 45
+      },
+      {
+        "who": "Mogh the Undying",
+        "levelMin": 44
       }
     ],
     "x": 274,
@@ -15816,7 +15820,7 @@
   {
     "commonEncounters": [
       {
-        "who": "Tirisfal Farmhead",
+        "who": "Tirisfal Farmhand",
         "levelMin": 5,
         "levelMax": 6
       },

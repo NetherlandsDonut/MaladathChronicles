@@ -101,6 +101,9 @@ public class Item
     //Stats provided to the wearer like Stamina or Intellect
     public Stats stats;
 
+    //This is a list of races that are eligible to drop this item
+    public List<string> droppedBy;
+
     //Those two are unused right now but will serve the role of loot
     public List<string> possibleItems;
     public List<string> alternateItems;

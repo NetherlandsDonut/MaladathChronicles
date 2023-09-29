@@ -660,8 +660,35 @@
   {
     "name": "Blazing Barrier",
     "icon": "AbilityBlazingBarrier",
+    "cooldown": 5,
     "tags": [],
-    "events": []
+    "cost": {
+      "Fire": 4,
+      "Earth": 2
+    },
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector"
+          }
+        ],
+        "effects": [
+          {},
+          {
+            "Effect": "AddBuff",
+            "BuffName": "Blazing Barrier",
+            "Affect": "Effector",
+            "ShatterType": "Central",
+            "Await": "4",
+            "ShatterTarget": "Effector",
+            "ShatterSpeed": "2",
+            "BuffDuration": "10"
+          }
+        ]
+      }
+    ]
   },
   {
     "name": "Blessed Champion",
@@ -684,8 +711,38 @@
   {
     "name": "Blessing of Might",
     "icon": "AbilityBlessingofMight",
+    "cooldown": 3,
     "tags": [],
-    "events": []
+    "cost": {
+      "Air": 2,
+      "Lightning": 4
+    },
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector"
+          }
+        ],
+        "effects": [
+          {},
+          {
+            "ShatterType": "Central",
+            "Effect": "AddBuff",
+            "Affect": "Effector",
+            "BuffName": "Blessing of Might",
+            "BuffDuration": "10",
+            "Await": "4",
+            "ShatterTarget": "Effector",
+            "ShatterDegree": "0,4",
+            "ShatterSpeed": "2",
+            "ShatterDensity": "2",
+            "SoundEffect": "AbilitySealCast"
+          }
+        ]
+      }
+    ]
   },
   {
     "name": "Blessing of Wisdom",
@@ -959,8 +1016,51 @@
   {
     "name": "Cleave",
     "icon": "AbilityCleave",
+    "cooldown": 3,
     "tags": [],
-    "events": []
+    "cost": {
+      "Earth": 4,
+      "Air": 4
+    },
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector"
+          }
+        ],
+        "effects": [
+          {},
+          {
+            "AnimationType": "Missile",
+            "ShatterType": "Directional",
+            "ShatterTarget": "Other",
+            "TrailStrength": "0,25",
+            "ShatterDegree": "0,3",
+            "ShatterDensity": "1",
+            "ShatterSpeed": "4",
+            "AnimationSpeed": "1,6",
+            "Await": "0"
+          },
+          {
+            "AnimationType": "Missile",
+            "ShatterType": "Directional",
+            "ShatterTarget": "Other",
+            "TrailStrength": "0,25",
+            "ShatterDegree": "0,8",
+            "ShatterDensity": "1",
+            "ShatterSpeed": "2",
+            "AnimationSpeed": "1,6",
+            "Await": "4"
+          },
+          {
+            "Affect": "None",
+            "Effect": "EndTurn"
+          }
+        ]
+      }
+    ]
   },
   {
     "name": "Cloth Proficiency",
