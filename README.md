@@ -5,7 +5,7 @@
 
 <details>
   
-<summary>Version history for <b>v0.0 "Nefarian"</b></summary>
+<summary>Version history for <b>v0.0</b></summary>
 
 ```
 v0.0.1
@@ -146,7 +146,7 @@ v0.0.37
     
 <details>
 
-<summary>Version history for <b>v0.1 "Emeriss"</b></summary>
+<summary>Version history for <b>v0.1</b></summary>
 
 ```
 v0.1.0
@@ -198,7 +198,7 @@ v0.1.10
 
 <details>
 
-<summary>Version history for <b>v0.2 "Aku'mai"</b></summary>
+<summary>Version history for <b>v0.2</b></summary>
 
 ```
 v0.2.0
@@ -254,7 +254,7 @@ v0.2.9
 
 <details>
 
-<summary>Version history for <b>v0.3 "Hakkar"</b></summary>
+<summary>Version history for <b>v0.3</b></summary>
 
 ```
 v0.3.0
@@ -284,4 +284,9 @@ v0.3.5
 v0.3.6
     23.09 Automatic pagination during search
           Fixed input fields not having restricted input
+v0.3.7
+    29.09 Asigned basic drop information for items
+          Added Defias Brotherhood portraits
+          Login screen background for characters now depend on the site of logging out
+          
 ```
