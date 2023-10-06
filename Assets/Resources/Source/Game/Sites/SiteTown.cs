@@ -81,19 +81,30 @@ public class SiteTown : Site
                             AddHeaderRegion(() => { AddLine("Points of interest:"); });
                             foreach (var person in people)
                             {
-                                if (person.type == "Flight Master") return;
-                                AddButtonRegion(() =>
-                                {
-                                    AddLine(person.name, "Black");
-                                    var personType = PersonType.personTypes.Find(x => x.name == person.type);
-                                    AddSmallButton(personType != null ? personType.icon : "OtherUnknown", (h) => { });
-                                },
-                                (h) =>
-                                {
-                                    Person.person = person;
-                                    if (person.type == "Banker")
-                                        SpawnDesktopBlueprint("Bank");
-                                });
+                                if (person.type == "Battlemaster")
+                                    AddButtonRegion(() =>
+                                    {
+                                        AddLine(person.name, "Black");
+                                        var personType = PersonType.personTypes.Find(x => x.name == person.type);
+                                        AddSmallButton(personType.icon + factions.Find(x => x.name == faction).side, (h) => { });
+                                    },
+                                    (h) =>
+                                    {
+
+                                    });
+                                else if (person.type != "Flight Master")
+                                    AddButtonRegion(() =>
+                                    {
+                                        AddLine(person.name, "Black");
+                                        var personType = PersonType.personTypes.Find(x => x.name == person.type);
+                                        AddSmallButton(personType != null ? personType.icon : "OtherUnknown", (h) => { });
+                                    },
+                                    (h) =>
+                                    {
+                                        Person.person = person;
+                                        if (person.type == "Banker")
+                                            SpawnDesktopBlueprint("Bank");
+                                    });
                             }
                         }
                         AddPaddingRegion(() => SetRegionAsGroupExtender());
