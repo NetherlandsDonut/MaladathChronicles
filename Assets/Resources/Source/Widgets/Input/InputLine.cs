@@ -416,6 +416,41 @@ public class InputLine : MonoBehaviour
                 Item.item.lvl = int.Parse(foo.Value());
             }
         }
+        else if (foo == stamina)
+        {
+            if (CDesktop.title == "ObjectManagerItems")
+            {
+                Item.item.stats.stats["Stamina"] = int.Parse(foo.Value());
+            }
+        }
+        else if (foo == strength)
+        {
+            if (CDesktop.title == "ObjectManagerItems")
+            {
+                Item.item.stats.stats["Strength"] = int.Parse(foo.Value());
+            }
+        }
+        else if (foo == agility)
+        {
+            if (CDesktop.title == "ObjectManagerItems")
+            {
+                Item.item.stats.stats["Agility"] = int.Parse(foo.Value());
+            }
+        }
+        else if (foo == intellect)
+        {
+            if (CDesktop.title == "ObjectManagerItems")
+            {
+                Item.item.stats.stats["Intellect"] = int.Parse(foo.Value());
+            }
+        }
+        else if (foo == spirit)
+        {
+            if (CDesktop.title == "ObjectManagerItems")
+            {
+                Item.item.stats.stats["Spirit"] = int.Parse(foo.Value());
+            }
+        }
         else if (foo == consoleInput)
         {
             CloseWindow("Console");

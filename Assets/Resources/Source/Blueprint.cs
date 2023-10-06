@@ -4937,6 +4937,26 @@ public class Blueprint
                 AddLine("Required level:", "DarkGray");
                 AddInputLine(String.requiredLevel);
             });
+            AddButtonRegion(() =>
+            {
+                AddLine("Manage stats");
+            },
+            (h) =>
+            {
+                item.stats ??= new(new());
+                if (!item.stats.stats.ContainsKey("Stamina")) item.stats.stats.Add("Stamina", 0);
+                if (!item.stats.stats.ContainsKey("Strength")) item.stats.stats.Add("Strength", 0);
+                if (!item.stats.stats.ContainsKey("Agility")) item.stats.stats.Add("Agility", 0);
+                if (!item.stats.stats.ContainsKey("Intellect")) item.stats.stats.Add("Intellect", 0);
+                if (!item.stats.stats.ContainsKey("Spirit")) item.stats.stats.Add("Spirit", 0);
+                String.stamina.Set(item.stats.stats["Stamina"] + "");
+                String.strength.Set(item.stats.stats["Strength"] + "");
+                String.agility.Set(item.stats.stats["Agility"] + "");
+                String.intellect.Set(item.stats.stats["Intellect"] + "");
+                String.spirit.Set(item.stats.stats["Spirit"] + "");
+                Respawn("ObjectManagerItemStatManager");
+                CloseWindow("ObjectManagerItems");
+            });
             AddPaddingRegion(() => { });
         }),
         new("ItemSetsSort", () => {
@@ -5242,6 +5262,54 @@ public class Blueprint
                 AddLine("Lightning: ", "DarkGray");
                 AddInputLine(String.lightning, String.lightning.Value() == "0" ? "DarkGray" : "Gray");
                 AddSmallButton("ElementLightningRousing", (h) => { });
+            });
+            AddPaddingRegion(() => { });
+        }),
+        new("ObjectManagerItemStatManager", () => {
+            SetAnchor(TopLeft);
+            AddRegionGroup();
+            SetRegionGroupWidth(171);
+            SetRegionGroupHeight(358);
+            AddHeaderRegion(() =>
+            {
+                AddLine("Stats:", "Gray");
+                AddSmallButton("OtherClose",
+                (h) =>
+                {
+                    if (item.stats.stats["Stamina"] == 0) item.stats.stats.Remove("Stamina");
+                    if (item.stats.stats["Strength"] == 0) item.stats.stats.Remove("Strength");
+                    if (item.stats.stats["Agility"] == 0) item.stats.stats.Remove("Agility");
+                    if (item.stats.stats["Intellect"] == 0) item.stats.stats.Remove("Intellect");
+                    if (item.stats.stats["Spirit"] == 0) item.stats.stats.Remove("Spirit");
+                    //if (item.stats.stats.Count == 0) item.stats = null;
+                    CloseWindow(h.window);
+                    Respawn("ObjectManagerItems");
+                });
+            });
+            AddPaddingRegion(() =>
+            {
+                AddLine("Stamina: ", "DarkGray");
+                AddInputLine(String.stamina, String.stamina.Value() == "0" ? "DarkGray" : "Gray");
+            });
+            AddPaddingRegion(() =>
+            {
+                AddLine("Strength: ", "DarkGray");
+                AddInputLine(String.strength, String.strength.Value() == "0" ? "DarkGray" : "Gray");
+            });
+            AddPaddingRegion(() =>
+            {
+                AddLine("Agility: ", "DarkGray");
+                AddInputLine(String.agility, String.agility.Value() == "0" ? "DarkGray" : "Gray");
+            });
+            AddPaddingRegion(() =>
+            {
+                AddLine("Intellect: ", "DarkGray");
+                AddInputLine(String.intellect, String.intellect.Value() == "0" ? "DarkGray" : "Gray");
+            });
+            AddPaddingRegion(() =>
+            {
+                AddLine("Spirit: ", "DarkGray");
+                AddInputLine(String.spirit, String.spirit.Value() == "0" ? "DarkGray" : "Gray");
             });
             AddPaddingRegion(() => { });
         }),
@@ -6947,6 +7015,8 @@ public class Blueprint
 
         new("DevPanel", () =>
         {
+            #if (!UNITY_EDITOR)
+
             Serialize(races, "races", true, false, prefix);
             Serialize(specs, "classes", true, false, prefix);
             Serialize(abilities, "abilities", true, false, prefix);
@@ -6960,6 +7030,9 @@ public class Blueprint
             Serialize(factions, "factions", true, false, prefix);
             Serialize(spiritHealers, "spirithealers", true, false, prefix);
             Serialize(personTypes, "personTypes", true, false, prefix);
+
+            #endif
+
             SetDesktopBackground("Areas/AreaTheCelestialPlanetarium");
             SpawnWindowBlueprint("ObjectManagerLobby");
             AddHotkey(Escape, () => { CloseDesktop("DevPanel"); });
@@ -7067,7 +7140,7 @@ public class Blueprint
             AddPaginationHotkeys();
         }),
 
-        #endregion
+#endregion
     };
 
     public static void AddPaginationHotkeys()

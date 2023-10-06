@@ -73,5 +73,10 @@ public class String
     public static String powerScale = new() { inputType = Decimal };
     public static String buffDuration = new() { inputType = Numbers };
     public static String resourceAmount = new() { inputType = Numbers };
+    public static String stamina = new() { inputType = Numbers };
+    public static String strength = new() { inputType = Numbers };
+    public static String agility = new() { inputType = Numbers };
+    public static String intellect = new() { inputType = Numbers };
+    public static String spirit = new() { inputType = Numbers };
     public static Dictionary<Encounter, (String, String)> encounterLevels = new() { };
 }
