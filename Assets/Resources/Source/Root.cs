@@ -343,19 +343,6 @@ public static class Root
         AddRegion(Padding, draw, null, null, null);
     }
 
-    public static void AddInputRegion(String refText, string color = "")
-    {
-        AddRegion(Padding, () =>
-        {
-            AddInputLine(refText, color);
-        }, 
-        (h) =>
-        {
-            inputLineMarker = h.region.inputLine.text.text.Value().Length;
-        },
-        null, null);
-    }
-
     public static void AddPaginationLine(RegionGroup group)
     {
         AddPaddingRegion(() =>

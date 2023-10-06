@@ -1,4 +1,6 @@
 using System.Linq;
+using System.Collections.Generic;
+
 using UnityEngine;
 
 using static Root;
@@ -71,6 +73,5 @@ public class String
     public static String powerScale = new() { inputType = Decimal };
     public static String buffDuration = new() { inputType = Numbers };
     public static String resourceAmount = new() { inputType = Numbers };
-    public static String minLevel = new() { inputType = Numbers };
-    public static String maxLevel = new() { inputType = Numbers };
+    public static Dictionary<Encounter, (String, String)> encounterLevels = new() { };
 }

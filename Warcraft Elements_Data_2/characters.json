@@ -728,14 +728,18 @@
           }
         }
       },
-      "cameraX": 279,
-      "cameraY": -109,
+      "cameraX": 258,
+      "cameraY": -183,
       "siteProgress": {
         "Balia'mah Ruins": 1,
         "The Crimson Throne": 4,
         "Plaguewood": 4,
         "Coldridge Valley": 1,
-        "Chamber of Battle": 1
+        "Chamber of Battle": 1,
+        "Hall of the Keepers": 3,
+        "Khaz'Goroth's Seat": 2,
+        "Gol'Bolar Quarry": 1,
+        "The Rookery": 3
       },
       "commonsKilled": {
         "Dustbelcher Warrior": 1,
@@ -745,10 +749,21 @@
         "Smolderthorn Berserker": 1,
         "Scourge Warder": 1,
         "Death Cultist": 1,
-        "Cursed Mage": 1
+        "Cursed Mage": 1,
+        "Stonevault Pillager": 2,
+        "Stonevault Ambusher": 1,
+        "Vault Warder": 1,
+        "Stone Steward": 1,
+        "Rockjaw Bonesnapper": 1,
+        "Rage Talon Flamescale": 1,
+        "Rage Talon Dragonspawn": 2
       },
       "raresKilled": {},
-      "elitesKilled": {},
+      "elitesKilled": {
+        "Revelosh": 1,
+        "Archaedas": 3,
+        "Solakar Flamewreath": 1
+      },
       "siteVisits": {
         "The Sepulcher": 1,
         "Southshore": 4,
@@ -769,7 +784,7 @@
         "Undercity": 1,
         "Wild Shore": 1,
         "Jaguero Isle": 1,
-        "Lakeridge Highway": 1,
+        "Lakeridge Highway": 2,
         "Lake Everstill": 1,
         "Morgan's Vigil": 1,
         "Coldridge Valley": 1,
@@ -787,17 +802,25 @@
         "Twilight Grove": 2,
         "Zul'Gurub": 2,
         "The Dagger Hills": 1,
-        "Blackrock Mountain": 2,
+        "Blackrock Mountain": 3,
         "Fargodeep Mine": 1,
         "Stonard": 1,
         "Altar of Storms": 1,
         "Plaguewood": 3,
-        "Blackwood Lake": 1
+        "Blackwood Lake": 1,
+        "Uldaman": 2,
+        "Camp Kosh": 1,
+        "Lethlor Ravine": 1,
+        "Camp Boff": 1,
+        "Dustwind Gulch": 1,
+        "Gol'Bolar Quarry": 1,
+        "Ridgepoint Tower": 1,
+        "Brackwell Pumpkin Patch": 2
       },
       "startDate": "2023-09-08T02:04:14.0667101+02:00",
-      "lastLoaded": "2023-09-29T14:01:09.6413528+02:00",
-      "lastPlayed": "2023-09-29T14:23:04.3598487+02:00",
-      "timePlayed": "06:18:05.4672962"
+      "lastLoaded": "2023-10-03T18:05:46.8015642+02:00",
+      "lastPlayed": "2023-10-03T18:23:31.187278+02:00",
+      "timePlayed": "07:20:21.1556993"
     },
     {
       "player": {

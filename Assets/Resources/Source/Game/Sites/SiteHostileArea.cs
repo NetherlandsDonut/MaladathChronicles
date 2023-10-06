@@ -296,4 +296,6 @@ public class Encounter
 {
     public string who;
     public int levelMin, levelMax, requiredProgress;
+
+    public static Encounter encounter;
 }

@@ -1,5 +1,6 @@
-﻿using System.Collections.Generic;
-
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using static Faction;
 
 public class Race
@@ -26,6 +27,7 @@ public class Race
                     icon = "Faction" + faction,
                     side = "Hostile"
                 });
+        droppedItems = Item.items.FindAll(x => x.droppedBy != null && x.droppedBy.Contains(name) && x.type != "Miscellaneous").Select(x => x.name).ToList();
     }
 
     //Name of the race
@@ -67,6 +69,9 @@ public class Race
 
     //List of racial abilities provided to all entities of this race
     public List<string> abilities;
+
+    //List of possible item drops by this race
+    [NonSerialized] public List<string> droppedItems;
 
     //List of male names that are used when creating player characters
     public List<string> maleNames;

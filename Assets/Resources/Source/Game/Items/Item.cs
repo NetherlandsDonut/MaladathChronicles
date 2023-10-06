@@ -431,6 +431,9 @@ public class Item
     //Currently opened item
     public static Item item;
 
+    //Last item dropped in the game
+    public static Item itemDrop;
+
     //EXTERNAL FILE: List containing all buffs in-game
     public static List<Item> items;
 

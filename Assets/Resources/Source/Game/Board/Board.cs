@@ -166,6 +166,12 @@ public class Board
             else
                 SwitchDesktop("HostileArea");
             CDesktop.RespawnAll();
+            var drop = Race.races.Find(x => x.name == enemy.race).droppedItems.Select(x => Item.GetItem(x)).Where(x => x.CanEquip(player)).ToList();
+            if (drop.Count > 0)
+            {
+                Item.itemDrop = drop[random.Next(drop.Count)];
+                SpawnWindowBlueprint("ItemDrop");
+            }
         }
         else if (result == "PlayerLost")
         {

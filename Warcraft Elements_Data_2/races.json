@@ -1,12 +1,5 @@
 [
   {
-    "name": "Mogh the Undying",
-    "kind": "Rare",
-    "portrait": "PortraitMoghtheUndying",
-    "vitality": 2.0,
-    "abilities": []
-  },
-  {
     "name": "Abomination",
     "kind": "Common",
     "portrait": "PortraitAbomination",
@@ -69,13 +62,6 @@
     "name": "Cyclone Warrior",
     "kind": "Common",
     "portrait": "PortraitAirElemental",
-    "vitality": 1.0,
-    "abilities": []
-  },
-  {
-    "name": "Dust Stormer",
-    "kind": "Common",
-    "portrait": "PortraitDustDevil",
     "vitality": 1.0,
     "abilities": []
   },
@@ -2144,20 +2130,6 @@
     "abilities": []
   },
   {
-    "name": "Haunted Servitor",
-    "kind": "Common",
-    "portrait": "PortraitHauntedServitor",
-    "vitality": 1.0,
-    "abilities": []
-  },
-  {
-    "name": "Highborne Summoner",
-    "kind": "Common",
-    "portrait": "PortraitHighborneSummoner",
-    "vitality": 1.0,
-    "abilities": []
-  },
-  {
     "name": "Horde Shaman",
     "kind": "Common",
     "portrait": "PortraitChicken",
@@ -2287,13 +2259,6 @@
     "name": "Theramore Deserter",
     "kind": "Common",
     "portrait": "PortraitChicken",
-    "vitality": 1.0,
-    "abilities": []
-  },
-  {
-    "name": "Unliving Resident",
-    "kind": "Common",
-    "portrait": "PortraitUnlivingResident",
     "vitality": 1.0,
     "abilities": []
   },
@@ -3237,6 +3202,13 @@
     "abilities": []
   },
   {
+    "name": "Deathsworn Captain",
+    "kind": "Rare",
+    "portrait": "PortraitDeathswornCaptain",
+    "vitality": 2.0,
+    "abilities": []
+  },
+  {
     "name": "Defias Bandit",
     "kind": "Common",
     "portrait": "PortraitDefiasBandit",
@@ -3662,6 +3634,13 @@
     "abilities": []
   },
   {
+    "name": "Dust Stormer",
+    "kind": "Common",
+    "portrait": "PortraitDustDevil",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
     "name": "Dustwraith",
     "kind": "Rare",
     "portrait": "PortraitDustwraith",
@@ -3673,7 +3652,6 @@
     "faction": "Ironforge",
     "startingSite": "Anvilmar",
     "portrait": "PortraitDwarf",
-    "background": "AreaDunMoroghIronforge",
     "stats": {
       "stats": {
         "Stamina": 7,
@@ -4134,7 +4112,6 @@
     "startingSite": "Deathknell",
     "genderedPortrait": true,
     "portrait": "PortraitForsaken",
-    "background": "AreaTirisfalGladesUndercityCentral",
     "stats": {
       "stats": {
         "Stamina": 5,
@@ -5085,7 +5062,6 @@
     "startingSite": "Anvilmar",
     "genderedPortrait": true,
     "portrait": "PortraitGnome",
-    "background": "AreaDunMoroghGnomeregan",
     "stats": {
       "stats": {
         "Stamina": 3,
@@ -5969,9 +5945,24 @@
     "abilities": []
   },
   {
+    "name": "Haunted Servitor",
+    "kind": "Common",
+    "portrait": "PortraitHauntedServitor",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
     "name": "Hazza'rah",
     "kind": "Elite",
     "portrait": "PortraitHazzarah",
+    "vitality": 3.0,
+    "abilities": []
+  },
+  {
+    "name": "Herod",
+    "faction": "Scarlet Crusade",
+    "kind": "Elite",
+    "portrait": "PortraitHerod",
     "vitality": 3.0,
     "abilities": []
   },
@@ -5986,6 +5977,13 @@
     "name": "Voodoo Slave",
     "kind": "Common",
     "portrait": "PortraitHexedTroll",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Highborne Summoner",
+    "kind": "Common",
+    "portrait": "PortraitHighborneSummoner",
     "vitality": 1.0,
     "abilities": []
   },
@@ -6129,7 +6127,6 @@
     "startingSite": "Northshire Abbey",
     "genderedPortrait": true,
     "portrait": "PortraitHuman",
-    "background": "AreaElwynnForestStormwindCity",
     "stats": {
       "stats": {
         "Stamina": 6,
@@ -7183,6 +7180,13 @@
     "abilities": []
   },
   {
+    "name": "Mogh the Undying",
+    "kind": "Rare",
+    "portrait": "PortraitMoghtheUndying",
+    "vitality": 2.0,
+    "abilities": []
+  },
+  {
     "name": "Bael'Gar",
     "kind": "Elite",
     "portrait": "PortraitMoltenGiant",
@@ -7296,6 +7300,14 @@
     "kind": "Common",
     "portrait": "PortraitMountainGiantBrown",
     "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Mr. Smite",
+    "faction": "Defias Brotherhood",
+    "kind": "Elite",
+    "portrait": "PortraitMrSmite",
+    "vitality": 2.0,
     "abilities": []
   },
   {
@@ -8033,7 +8045,6 @@
     "startingSite": "Aldrassil",
     "genderedPortrait": true,
     "portrait": "PortraitNightElf",
-    "background": "AreaTeldrassilDarnassus",
     "stats": {
       "stats": {
         "Stamina": 5,
@@ -9097,7 +9108,6 @@
     "startingSite": "Valley of Trials",
     "genderedPortrait": true,
     "portrait": "PortraitOrc",
-    "background": "AreaDurotarOrgrimmar",
     "stats": {
       "stats": {
         "Stamina": 7,
@@ -9202,7 +9212,6 @@
     "startingSite": "Scuttle Coast",
     "genderedPortrait": true,
     "portrait": "PortraitPandaren",
-    "background": "AreaMulgoreTheRollingPlains",
     "stats": {
       "stats": {
         "Stamina": 6,
@@ -9298,13 +9307,6 @@
     "kind": "Common",
     "portrait": "PortraitPanther",
     "vitality": 1.0,
-    "abilities": []
-  },
-  {
-    "name": "Deathsworn Captain",
-    "kind": "Rare",
-    "portrait": "PortraitDeathswornCaptain",
-    "vitality": 2.0,
     "abilities": []
   },
   {
@@ -9441,6 +9443,13 @@
     "kind": "Common",
     "portrait": "PortraitPterrodax",
     "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Pyromancer Loregrain",
+    "kind": "Elite",
+    "portrait": "PortraitPyromancerLoregrain",
+    "vitality": 3.0,
     "abilities": []
   },
   {
@@ -10566,14 +10575,6 @@
     "abilities": []
   },
   {
-    "name": "Herod",
-    "faction": "Scarlet Crusade",
-    "kind": "Elite",
-    "portrait": "PortraitHerod",
-    "vitality": 3.0,
-    "abilities": []
-  },
-  {
     "name": "Scarlet Centurion",
     "faction": "Scarlet Crusade",
     "kind": "Common",
@@ -11628,6 +11629,13 @@
     "abilities": []
   },
   {
+    "name": "Skullsplitter Axe Thrower",
+    "kind": "Common",
+    "portrait": "PortraitSkullsplitterAxeThrower",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
     "name": "Skullsplitter Beastmaster",
     "kind": "Common",
     "portrait": "PortraitSkullsplitterHunter",
@@ -11642,23 +11650,16 @@
     "abilities": []
   },
   {
-    "name": "Skullsplitter Witch Doctor",
-    "kind": "Common",
-    "portrait": "PortraitSkullsplitterWitchDoctor",
-    "vitality": 1.0,
-    "abilities": []
-  },
-  {
-    "name": "Skullsplitter Axe Thrower",
-    "kind": "Common",
-    "portrait": "PortraitSkullsplitterAxeThrower",
-    "vitality": 1.0,
-    "abilities": []
-  },
-  {
     "name": "Skullsplitter Warrior",
     "kind": "Common",
     "portrait": "PortraitSkullsplitterWarrior",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Skullsplitter Witch Doctor",
+    "kind": "Common",
+    "portrait": "PortraitSkullsplitterWitchDoctor",
     "vitality": 1.0,
     "abilities": []
   },
@@ -12301,7 +12302,6 @@
     "startingSite": "Camp Narache",
     "genderedPortrait": true,
     "portrait": "PortraitTauren",
-    "background": "AreaMulgoreThunderBluff",
     "stats": {
       "stats": {
         "Stamina": 8,
@@ -12356,21 +12356,6 @@
       "Takala",
       "Tikke"
     ]
-  },
-  {
-    "name": "Mr. Smite",
-    "faction": "Defias Brotherhood",
-    "kind": "Elite",
-    "portrait": "PortraitMrSmite",
-    "vitality": 2.0,
-    "abilities": []
-  },
-  {
-    "name": "Pyromancer Loregrain",
-    "kind": "Elite",
-    "portrait": "PortraitPyromancerLoregrain",
-    "vitality": 3.0,
-    "abilities": []
   },
   {
     "name": "Theka the Martyr",
@@ -12757,7 +12742,6 @@
     "startingSite": "Valley of Trials",
     "genderedPortrait": true,
     "portrait": "PortraitTroll",
-    "background": "AreaDurotarSenjinVillage",
     "stats": {
       "stats": {
         "Stamina": 7,
@@ -13081,6 +13065,13 @@
     "kind": "Elite",
     "portrait": "PortraitUlathek",
     "vitality": 3.0,
+    "abilities": []
+  },
+  {
+    "name": "Unliving Resident",
+    "kind": "Common",
+    "portrait": "PortraitUnlivingResident",
+    "vitality": 1.0,
     "abilities": []
   },
   {

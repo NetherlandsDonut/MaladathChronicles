@@ -251,7 +251,10 @@ public class Blueprint
                 AddText(" DELETE ", "DangerousRed");
                 AddText("to confirm deletion");
             });
-            AddInputRegion(String.promptConfirm, "DangerousRed");
+            AddPaddingRegion(() =>
+            {
+                AddInputLine(String.promptConfirm, "DangerousRed");
+            });
         }, true),
         new("CharacterInfo", () => {
             SetAnchor(TopLeft);
@@ -1473,10 +1476,9 @@ public class Blueprint
             SetRegionGroupWidth(266);
             AddHeaderRegion(() =>
             {
-                AddLine("Loot from ", "Gray");
-                AddText("Chief Ukorz Sandscalp", "Gray");
+                AddLine("Loot", "Gray");
             });
-            var item = items[random.Next(items.Count)];
+            var item = itemDrop;
             AddHeaderRegion(() =>
             {
                 AddBigButton(item.icon, (h) => { });
@@ -2036,7 +2038,10 @@ public class Blueprint
             SetAnchor(Top);
             AddRegionGroup();
             SetRegionGroupWidth(638);
-            AddInputRegion(String.consoleInput);
+            AddPaddingRegion(() =>
+            {
+                AddInputLine(String.consoleInput);
+            });
             AddSmallButton("OtherClose", (h) => { CloseWindow(h.window); });
         },  true),
 
@@ -2068,11 +2073,7 @@ public class Blueprint
                 townsSearch = towns;
                 SpawnDesktopBlueprint("ObjectManagerTowns");
             });
-            AddButtonRegion(() => { AddLine("Races"); }, (h) =>
-            {
-                racesSearch = races;
-                SpawnDesktopBlueprint("ObjectManagerRaces");
-            });
+            AddButtonRegion(() => { AddLine("Races"); }, (h) => { SpawnDesktopBlueprint("ObjectManagerRaces"); });
             AddButtonRegion(() => { AddLine("Classes"); }, (h) =>
             {
                 specsSearch = specs;
@@ -2320,6 +2321,8 @@ public class Blueprint
             },
             (h) =>
             {
+                CloseWindow("ObjectManagerHostileAreaRareEncounters");
+                CloseWindow("ObjectManagerHostileAreaEliteEncounters");
                 Respawn("ObjectManagerHostileAreaCommonEncounters");
             });
             AddButtonRegion(() =>
@@ -2328,7 +2331,9 @@ public class Blueprint
             },
             (h) =>
             {
-                Respawn("ObjectManagerHostileAreaCommonEncounters");
+                CloseWindow("ObjectManagerHostileAreaCommonEncounters");
+                CloseWindow("ObjectManagerHostileAreaEliteEncounters");
+                Respawn("ObjectManagerHostileAreaRareEncounters");
             });
             AddButtonRegion(() =>
             {
@@ -2336,7 +2341,9 @@ public class Blueprint
             },
             (h) =>
             {
-                Respawn("ObjectManagerHostileAreaCommonEncounters");
+                CloseWindow("ObjectManagerHostileAreaCommonEncounters");
+                CloseWindow("ObjectManagerHostileAreaRareEncounters");
+                Respawn("ObjectManagerHostileAreaEliteEncounters");
             });
             AddPaddingRegion(() => { });
         }),
@@ -3647,30 +3654,10 @@ public class Blueprint
                     });
             }
             AddPaddingRegion(() => { SetRegionAsGroupExtender(); });
-            AddButtonRegion(() =>
-            {
-                AddLine("Remove this trigger");
-            },
-            (h) =>
-            {
-                eventEdit.triggers.RemoveAt(selectedTrigger);
-                CloseWindow(h.window);
-                Respawn("ObjectManagerEventTriggers");
-            });
             AddRegionGroup();
             SetRegionGroupWidth(148);
             SetRegionGroupHeight(316);
             AddPaddingRegion(() => { SetRegionAsGroupExtender(); });
-            AddButtonRegion(() =>
-            {
-                AddLine("Remove this trigger");
-            },
-            (h) =>
-            {
-                eventEdit.triggers.RemoveAt(selectedTrigger);
-                CloseWindow(h.window);
-                Respawn("ObjectManagerEventTriggers");
-            });
         }),
         new("ObjectManagerEventEffects", () => {
             SetAnchor(TopLeft);
@@ -3695,7 +3682,7 @@ public class Blueprint
                 AddLine("Effects: ", "DarkGray");
                 AddText(eventEdit.effects.Count + "", "Gray");
                 AddText(" / ", "DarkGray");
-                AddText("9", "Gray");
+                AddText("15", "Gray");
                 AddSmallButton("OtherPreviousPage", (h) =>
                 {
                     PlaySound("DesktopChangePage", 0.4f);
@@ -3760,7 +3747,7 @@ public class Blueprint
                 });
             }
             AddPaddingRegion(() => { SetRegionAsGroupExtender(); });
-            if (eventEdit.effects.Count < 9)
+            if (eventEdit.effects.Count < 15)
                 AddButtonRegion(() =>
                 {
                     AddLine("Add a new effect");
@@ -4313,9 +4300,13 @@ public class Blueprint
                 });
             });
             AddRegionGroup();
-            SetRegionGroupWidth(148);
+            SetRegionGroupWidth(167);
             SetRegionGroupHeight(335);
+            if (area.commonEncounters == null) area.commonEncounters = new List<Encounter>();
             foreach (var ce in area.commonEncounters)
+            {
+                if (!String.encounterLevels.ContainsKey(ce))
+                    String.encounterLevels.Add(ce, (new String() { value = ce.levelMin + "", inputType = InputType.Numbers }, new String() { value = ce.levelMax + "", inputType = InputType.Numbers }));
                 AddButtonRegion(() =>
                 {
                     AddLine(ce.who);
@@ -4325,43 +4316,241 @@ public class Blueprint
                 (h) =>
                 {
                     h.window.Respawn();
-                    CloseWindow("ObjectManagerEventEffects");
-                    Respawn("ObjectManagerEffectList");
+                    Encounter.encounter = ce;
+                    CloseWindow("ObjectManagerHostileAreas");
+                    Respawn("ObjectManagerRaces");
                 });
+            }
             AddPaddingRegion(() => { SetRegionAsGroupExtender(); });
+            AddButtonRegion(() =>
+            {
+                AddLine("Add new encounter");
+            },
+            (h) =>
+            {
+                h.window.Respawn();
+                CloseWindow("ObjectManagerHostileAreas");
+                Respawn("ObjectManagerRaces");
+            });
             AddRegionGroup();
-            SetRegionGroupWidth(74);
+            SetRegionGroupWidth(55);
             SetRegionGroupHeight(335);
             foreach (var ce in area.commonEncounters)
                 AddPaddingRegion(() =>
                 {
-                    AddLine("");
-                    AddInputLine(String.minLevel);
+                    AddInputLine(String.encounterLevels[ce].Item1);
                     AddSmallButton("OtherReverse", (h) =>
                     {
                         ce.levelMin = 1;
-                        String.minLevel.Set("1");
+                        String.encounterLevels[ce].Item1.Set("1");
                         h.window.Respawn();
                     });
                 });
             AddPaddingRegion(() => { SetRegionAsGroupExtender(); });
             AddRegionGroup();
-            SetRegionGroupWidth(74);
+            SetRegionGroupWidth(55);
             SetRegionGroupHeight(335);
             foreach (var ce in area.commonEncounters)
                 AddPaddingRegion(() =>
                 {
-                    AddLine("");
-                    AddInputLine(String.maxLevel);
+                    AddInputLine(String.encounterLevels[ce].Item2);
+                    AddSmallButton("OtherReverse", (h) =>
+                    {
+                        ce.levelMax = 0;
+                        String.encounterLevels[ce].Item2.Set("0");
+                        h.window.Respawn();
+                    });
+                });
+            AddPaddingRegion(() => { SetRegionAsGroupExtender(); });
+            AddRegionGroup();
+            SetRegionGroupWidth(19);
+            SetRegionGroupHeight(335);
+            foreach (var ce in area.commonEncounters)
+                AddPaddingRegion(() =>
+                {
                     AddSmallButton("OtherTrash", (h) =>
                     {
                         area.commonEncounters.Remove(ce);
                         h.window.Respawn();
                     });
+                });
+            AddPaddingRegion(() => { SetRegionAsGroupExtender(); });
+        }),
+        new("ObjectManagerHostileAreaRareEncounters", () => {
+            DisableShadows();
+            SetAnchor(Top);
+            AddHeaderGroup();
+            SetRegionGroupWidth(296);
+            AddHeaderRegion(() =>
+            {
+                AddLine("Rare encounters:");
+                AddSmallButton("OtherClose", (h) =>
+                {
+                    CloseWindow(h.window);
+                });
+            });
+            AddRegionGroup();
+            SetRegionGroupWidth(167);
+            SetRegionGroupHeight(335);
+            if (area.rareEncounters == null) area.rareEncounters = new List<Encounter>();
+            foreach (var ce in area.rareEncounters)
+            {
+                if (!String.encounterLevels.ContainsKey(ce))
+                    String.encounterLevels.Add(ce, (new String() { value = ce.levelMin + "", inputType = InputType.Numbers }, new String() { value = ce.levelMax + "", inputType = InputType.Numbers }));
+                AddButtonRegion(() =>
+                {
+                    AddLine(ce.who);
+                    var race = races.Find(x => x.name == ce.who);
+                    AddSmallButton(race == null ? "OtherUnknown" : race.portrait, (h) => { });
+                },
+                (h) =>
+                {
+                    h.window.Respawn();
+                    Encounter.encounter = ce;
+                    CloseWindow("ObjectManagerHostileAreas");
+                    Respawn("ObjectManagerRaces");
+                });
+            }
+            AddPaddingRegion(() => { SetRegionAsGroupExtender(); });
+            AddButtonRegion(() =>
+            {
+                AddLine("Add new encounter");
+            },
+            (h) =>
+            {
+                h.window.Respawn();
+                CloseWindow("ObjectManagerHostileAreas");
+                Respawn("ObjectManagerRaces");
+            });
+            AddRegionGroup();
+            SetRegionGroupWidth(55);
+            SetRegionGroupHeight(335);
+            foreach (var ce in area.rareEncounters)
+                AddPaddingRegion(() =>
+                {
+                    AddInputLine(String.encounterLevels[ce].Item1);
+                    AddSmallButton("OtherReverse", (h) =>
+                    {
+                        ce.levelMin = 1;
+                        String.encounterLevels[ce].Item1.Set("1");
+                        h.window.Respawn();
+                    });
+                });
+            AddPaddingRegion(() => { SetRegionAsGroupExtender(); });
+            AddRegionGroup();
+            SetRegionGroupWidth(55);
+            SetRegionGroupHeight(335);
+            foreach (var ce in area.rareEncounters)
+                AddPaddingRegion(() =>
+                {
+                    AddInputLine(String.encounterLevels[ce].Item2);
                     AddSmallButton("OtherReverse", (h) =>
                     {
                         ce.levelMax = 0;
-                        String.maxLevel.Set("0");
+                        String.encounterLevels[ce].Item2.Set("0");
+                        h.window.Respawn();
+                    });
+                });
+            AddPaddingRegion(() => { SetRegionAsGroupExtender(); });
+            AddRegionGroup();
+            SetRegionGroupWidth(19);
+            SetRegionGroupHeight(335);
+            foreach (var ce in area.rareEncounters)
+                AddPaddingRegion(() =>
+                {
+                    AddSmallButton("OtherTrash", (h) =>
+                    {
+                        area.rareEncounters.Remove(ce);
+                        h.window.Respawn();
+                    });
+                });
+            AddPaddingRegion(() => { SetRegionAsGroupExtender(); });
+        }),
+        new("ObjectManagerHostileAreaEliteEncounters", () => {
+            DisableShadows();
+            SetAnchor(Top);
+            AddHeaderGroup();
+            SetRegionGroupWidth(296);
+            AddHeaderRegion(() =>
+            {
+                AddLine("Elite encounters:");
+                AddSmallButton("OtherClose", (h) =>
+                {
+                    CloseWindow(h.window);
+                });
+            });
+            AddRegionGroup();
+            SetRegionGroupWidth(167);
+            SetRegionGroupHeight(335);
+            if (area.eliteEncounters == null) area.eliteEncounters = new List<Encounter>();
+            foreach (var ce in area.eliteEncounters)
+            {
+                if (!String.encounterLevels.ContainsKey(ce))
+                    String.encounterLevels.Add(ce, (new String() { value = ce.levelMin + "", inputType = InputType.Numbers }, new String() { value = ce.levelMax + "", inputType = InputType.Numbers }));
+                AddButtonRegion(() =>
+                {
+                    AddLine(ce.who);
+                    var race = races.Find(x => x.name == ce.who);
+                    AddSmallButton(race == null ? "OtherUnknown" : race.portrait, (h) => { });
+                },
+                (h) =>
+                {
+                    h.window.Respawn();
+                    Encounter.encounter = ce;
+                    CloseWindow("ObjectManagerHostileAreas");
+                    Respawn("ObjectManagerRaces");
+                });
+            }
+            AddPaddingRegion(() => { SetRegionAsGroupExtender(); });
+            AddButtonRegion(() =>
+            {
+                AddLine("Add new encounter");
+            },
+            (h) =>
+            {
+                h.window.Respawn();
+                CloseWindow("ObjectManagerHostileAreas");
+                Respawn("ObjectManagerRaces");
+            });
+            AddRegionGroup();
+            SetRegionGroupWidth(55);
+            SetRegionGroupHeight(335);
+            foreach (var ce in area.eliteEncounters)
+                AddPaddingRegion(() =>
+                {
+                    AddInputLine(String.encounterLevels[ce].Item1);
+                    AddSmallButton("OtherReverse", (h) =>
+                    {
+                        ce.levelMin = 1;
+                        String.encounterLevels[ce].Item1.Set("1");
+                        h.window.Respawn();
+                    });
+                });
+            AddPaddingRegion(() => { SetRegionAsGroupExtender(); });
+            AddRegionGroup();
+            SetRegionGroupWidth(55);
+            SetRegionGroupHeight(335);
+            foreach (var ce in area.eliteEncounters)
+                AddPaddingRegion(() =>
+                {
+                    AddInputLine(String.encounterLevels[ce].Item2);
+                    AddSmallButton("OtherReverse", (h) =>
+                    {
+                        ce.levelMax = 0;
+                        String.encounterLevels[ce].Item2.Set("0");
+                        h.window.Respawn();
+                    });
+                });
+            AddPaddingRegion(() => { SetRegionAsGroupExtender(); });
+            AddRegionGroup();
+            SetRegionGroupWidth(19);
+            SetRegionGroupHeight(335);
+            foreach (var ce in area.eliteEncounters)
+                AddPaddingRegion(() =>
+                {
+                    AddSmallButton("OtherTrash", (h) =>
+                    {
+                        area.eliteEncounters.Remove(ce);
                         h.window.Respawn();
                     });
                 });
@@ -4704,7 +4893,7 @@ public class Blueprint
             SetRegionGroupWidth(171);
             SetRegionGroupHeight(354);
             AddPaddingRegion(() => { AddLine("Item:", "DarkGray"); });
-            AddInputRegion(String.objectName, item.rarity);
+            AddPaddingRegion(() => { AddInputLine(String.objectName, item.rarity); });
             AddPaddingRegion(() => { AddLine("Icon:", "DarkGray"); });
             AddButtonRegion(() =>
             {
@@ -4915,7 +5104,7 @@ public class Blueprint
             SetRegionGroupWidth(171);
             SetRegionGroupHeight(354);
             AddPaddingRegion(() => { AddLine("Item set:", "DarkGray"); });
-            AddInputRegion(String.objectName);
+            AddPaddingRegion(() => { AddInputLine(String.objectName); });
             AddPaddingRegion(() => { });
         }),
         new("AbilitiesSort", () => {
@@ -5221,7 +5410,7 @@ public class Blueprint
                     SpawnDesktopBlueprint("GameSimulation");
                 });
             });
-            AddInputRegion(String.objectName, ability.name);
+            AddPaddingRegion(() => { AddInputLine(String.objectName, ability.name); });
             AddPaddingRegion(() => { AddLine("Icon:", "DarkGray"); });
             AddButtonRegion(() =>
             {
@@ -5588,7 +5777,7 @@ public class Blueprint
                     Respawn("ObjectManagerBuffs");
                 });
             });
-            AddInputRegion(String.objectName);
+            AddPaddingRegion(() => { AddInputLine(String.objectName); });
             AddPaddingRegion(() => { AddLine("Icon:", "DarkGray"); });
             AddButtonRegion(() =>
             {
@@ -5731,6 +5920,7 @@ public class Blueprint
             });
         }),
         new("ObjectManagerRaces", () => {
+            if (racesSearch == null) racesSearch = races;
             SetAnchor(TopLeft);
             AddRegionGroup(() => racesSearch.Count);
             SetRegionGroupWidth(171);
@@ -5745,8 +5935,17 @@ public class Blueprint
                 AddLine("Races:");
                 AddSmallButton("OtherClose", (h) =>
                 {
-                    race = null; racesSearch = null;
-                    CloseDesktop("ObjectManagerRaces");
+                    if (CDesktop.title == "ObjectManagerRaces")
+                    {
+                        race = null; racesSearch = null;
+                        CloseDesktop("ObjectManagerRaces");
+                    }
+                    else
+                    {
+                        Encounter.encounter = null;
+                        CloseWindow(h.window);
+                        SpawnWindowBlueprint("ObjectManagerHostileAreas");
+                    }
                 });
                 AddSmallButton("OtherReverse", (h) =>
                 {
@@ -5791,10 +5990,30 @@ public class Blueprint
                 },
                 (h) =>
                 {
-                    race = racesSearch[index + 10 * regionGroup.pagination];
-                    String.objectName.Set(race.name);
-                    String.vitality.Set(race.vitality + "");
-                    Respawn("ObjectManagerRace");
+                    if (CDesktop.title == "ObjectManagerHostileAreas")
+                    {
+                        if (Encounter.encounter != null) Encounter.encounter.who = racesSearch[index + 10 * regionGroup.pagination].name;
+                        else
+                        {
+                            var enc = new Encounter() { who = racesSearch[index + 10 * regionGroup.pagination].name, levelMin = 1, levelMax = 0 };
+                            if (CDesktop.windows.Exists(x => x.title == "ObjectManagerHostileAreaCommonEncounters"))
+                                area.commonEncounters.Add(enc);
+                            else if (CDesktop.windows.Exists(x => x.title == "ObjectManagerHostileAreaRareEncounters"))
+                                area.rareEncounters.Add(enc);
+                            else if (CDesktop.windows.Exists(x => x.title == "ObjectManagerHostileAreaEliteEncounters"))
+                                area.eliteEncounters.Add(enc);
+                        }
+                        CloseWindow(h.window);
+                        CDesktop.RespawnAll();
+                        SpawnWindowBlueprint("ObjectManagerHostileAreas");
+                    }
+                    else
+                    {
+                        race = racesSearch[index + 10 * regionGroup.pagination];
+                        String.objectName.Set(race.name);
+                        String.vitality.Set(race.vitality + "");
+                        Respawn("ObjectManagerRace");
+                    }
                 });
             }
             AddPaddingRegion(() =>
@@ -5841,7 +6060,7 @@ public class Blueprint
                     Respawn("ObjectManagerRaces");
                 });
             });
-            AddInputRegion(String.objectName);
+            AddPaddingRegion(() => { AddInputLine(String.objectName); });
             AddPaddingRegion(() => { AddLine("Gendered portraits:", "DarkGray"); });
             AddButtonRegion(() =>
             {
@@ -5939,7 +6158,10 @@ public class Blueprint
                     }
                 });
                 AddPaddingRegion(() => { AddLine("Vitality:", "DarkGray"); });
-                AddInputRegion(String.vitality);
+                AddPaddingRegion(() =>
+                {
+                    AddInputLine(String.vitality);
+                });
             }
             AddPaddingRegion(() => { });
         }),
@@ -6119,7 +6341,7 @@ public class Blueprint
             SetRegionGroupWidth(171);
             SetRegionGroupHeight(354);
             AddPaddingRegion(() => { AddLine("Faction:", "DarkGray"); });
-            AddInputRegion(String.objectName);
+            AddPaddingRegion(() => { AddInputLine(String.objectName); });
             AddPaddingRegion(() => { AddLine("Icon:", "DarkGray"); });
             AddButtonRegion(() =>
             {
@@ -6263,7 +6485,10 @@ public class Blueprint
             SetRegionGroupWidth(171);
             SetRegionGroupHeight(354);
             AddPaddingRegion(() => { AddLine("Class:", "DarkGray"); });
-            AddInputRegion(String.objectName, spec.name);
+            AddPaddingRegion(() =>
+            {
+                AddInputLine(String.objectName, spec.name);
+            });
             AddPaddingRegion(() => { AddLine("Icon:", "DarkGray"); });
             AddHeaderRegion(() =>
             {
@@ -6447,7 +6672,6 @@ public class Blueprint
                                 portrait = "PortraitCow",
                                 vitality = 1.0,
                             });
-                racesSearch = races;
                 SpawnDesktopBlueprint("ObjectManagerRaces");
             });
         }),
@@ -6744,7 +6968,7 @@ public class Blueprint
         {
             SetDesktopBackground("Areas/AreaTheCelestialPlanetarium");
             SpawnWindowBlueprint("ObjectManagerHostileAreas");
-            AddHotkey(Escape, () => { area = null; areasSearch = null; CloseDesktop("ObjectManagerHostileAreas"); });
+            AddHotkey(Escape, () => { area = null; areasSearch = null; Encounter.encounter = null; CloseDesktop("ObjectManagerHostileAreas"); });
             AddPaginationHotkeys();
         }),
         new("ObjectManagerInstances", () =>

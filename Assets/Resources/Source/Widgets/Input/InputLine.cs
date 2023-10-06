@@ -429,5 +429,15 @@ public class InputLine : MonoBehaviour
             }
             foo.Set("");
         }
+        else if (encounterLevels.ToList().Exists(x => x.Value.Item1 == foo))
+        {
+            var find = encounterLevels.ToList().Find(x => x.Value.Item1 == foo);
+            find.Key.levelMin = int.Parse(foo.Value());
+        }
+        else if (encounterLevels.ToList().Exists(x => x.Value.Item2 == foo))
+        {
+            var find = encounterLevels.ToList().Find(x => x.Value.Item2 == foo);
+            find.Key.levelMax = int.Parse(foo.Value());
+        }
     }
 }
