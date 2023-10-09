@@ -1770,6 +1770,11 @@
         "who": "Wrathtail Sorceress",
         "levelMin": 18,
         "levelMax": 19
+      },
+      {
+        "who": "Spined Crawler",
+        "levelMin": 17,
+        "levelMax": 18
       }
     ],
     "x": 66,
@@ -4050,6 +4055,13 @@
     "type": "HostileArea"
   },
   {
+    "commonEncounters": [
+      {
+        "who": "Enraged Reef Crawler",
+        "levelMin": 31,
+        "levelMax": 32
+      }
+    ],
     "x": 49,
     "y": -138,
     "name": "Ethel Rethor",
@@ -4987,6 +4999,12 @@
         "levelMax": 8
       }
     ],
+    "rareEncounters": [
+      {
+        "who": "Bjarn",
+        "levelMin": 12
+      }
+    ],
     "x": 278,
     "y": -150,
     "name": "The Tundrid Hills",
@@ -5530,6 +5548,12 @@
         "who": "Starving Dire Wolf",
         "levelMin": 19,
         "levelMax": 20
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Lupos",
+        "levelMin": 23
       }
     ],
     "x": 275,
@@ -8500,6 +8524,10 @@
       {
         "who": "Ironback",
         "levelMin": 51
+      },
+      {
+        "who": "Gammerita",
+        "levelMin": 50
       }
     ],
     "x": 316,
@@ -9153,6 +9181,12 @@
         "levelMax": 8
       }
     ],
+    "rareEncounters": [
+      {
+        "who": "The Rake",
+        "levelMin": 10
+      }
+    ],
     "x": 82,
     "y": -149,
     "name": "The Golden Plains",
@@ -9232,6 +9266,12 @@
         "who": "Windfury Sorceress",
         "levelMin": 9,
         "levelMax": 10
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Ghost Howl",
+        "levelMin": 12
       }
     ],
     "x": 83,
@@ -10835,6 +10875,12 @@
         "who": "Inferno Elemental",
         "levelMin": 48,
         "levelMax": 49
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Margol the Rager",
+        "levelMin": 48
       }
     ],
     "x": 282,
@@ -16902,7 +16948,7 @@
   {
     "commonEncounters": [
       {
-        "who": "Sand Walker",
+        "who": "Sand Crawler",
         "levelMin": 12,
         "levelMax": 13
       },

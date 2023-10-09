@@ -783,5 +783,11 @@
     "icon": "AbilityBlessingofMight",
     "tags": [],
     "events": []
+  },
+  {
+    "name": "Combustion",
+    "icon": "AbilityCombustion",
+    "tags": [],
+    "events": []
   }
 ]

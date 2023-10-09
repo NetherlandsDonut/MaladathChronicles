@@ -674,7 +674,7 @@ public class Blueprint
             var activeAbilities = abilities.FindAll(x => x.cost != null && currentSave.player.abilities.Contains(x.name)).ToList();
             AddHeaderGroup(() => activeAbilities.Count, 7);
             SetRegionGroupWidth(171);
-            SetRegionGroupHeight(358);
+            SetRegionGroupHeight(342);
             AddHeaderRegion(() =>
             {
                 AddLine("Active abilities:");
@@ -740,7 +740,7 @@ public class Blueprint
             var passiveAbilities = abilities.FindAll(x => x.cost == null && currentSave.player.abilities.Contains(x.name)).ToList();
             AddRegionGroup(() => passiveAbilities.Count, 7);
             SetRegionGroupWidth(171);
-            SetRegionGroupHeight(358);
+            SetRegionGroupHeight(342);
             AddPaddingRegion(() => SetRegionAsGroupExtender());
             AddHeaderRegion(() =>
             {
@@ -866,7 +866,7 @@ public class Blueprint
             AddPaddingRegion(() => SetRegionAsGroupExtender());
         }),
         new("SpellbookResources", () => {
-            SetAnchor(BottomLeft);
+            SetAnchor(-320, -48);
             DisableShadows();
             AddHeaderGroup();
             AddHeaderRegion(() => { AddLine("Starting resources:", "DarkGray"); });
@@ -1060,13 +1060,73 @@ public class Blueprint
                 });
             }
         }, true),
-        new("MapToolbar", () => {
-            SetAnchor(Bottom);
+        new("MapToolbarLeft", () => {
+            SetAnchor(TopLeft);
             AddRegionGroup();
-            AddHeaderRegion(() =>
+            AddPaddingRegion(() =>
             {
-                AddLine("Map", "DarkGray", "Center");
+                AddSmallButton("MenuCharacterSheet", (h) =>
+                {
+                    SpawnDesktopBlueprint("CharacterSheet");
+                    SwitchDesktop("CharacterSheet");
+                });
+                AddSmallButton("MenuInventory", (h) =>
+                {
+                    SpawnDesktopBlueprint("EquipmentScreen");
+                    SwitchDesktop("EquipmentScreen");
+                });
+                AddSmallButton("MenuSpellbook", (h) =>
+                {
+                    SpawnDesktopBlueprint("SpellbookScreen");
+                    SwitchDesktop("SpellbookScreen");
+                });
+                AddSmallButton("MenuClasses", (h) =>
+                {
+                    SpawnDesktopBlueprint("TalentScreen");
+                    SwitchDesktop("TalentScreen");
+                });
+                AddSmallButton("MenuCompletion", (h) =>
+                {
+                    SpawnDesktopBlueprint("TalentScreen");
+                    SwitchDesktop("TalentScreen");
+                });
             });
+        }, true),
+        new("MapToolbar", () => {
+            SetAnchor(Top);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                AddSmallButton("MenuCharacterSheet", (h) =>
+                {
+                    SpawnDesktopBlueprint("CharacterSheet");
+                    SwitchDesktop("CharacterSheet");
+                });
+                AddSmallButton("MenuInventory", (h) =>
+                {
+                    SpawnDesktopBlueprint("EquipmentScreen");
+                    SwitchDesktop("EquipmentScreen");
+                });
+                AddSmallButton("MenuSpellbook", (h) =>
+                {
+                    SpawnDesktopBlueprint("SpellbookScreen");
+                    SwitchDesktop("SpellbookScreen");
+                });
+                AddSmallButton("MenuClasses", (h) =>
+                {
+                    SpawnDesktopBlueprint("TalentScreen");
+                    SwitchDesktop("TalentScreen");
+                });
+                AddSmallButton("MenuCompletion", (h) =>
+                {
+                    SpawnDesktopBlueprint("TalentScreen");
+                    SwitchDesktop("TalentScreen");
+                });
+            });
+        }, true),
+        new("MapToolbarRight", () => {
+            SetAnchor(TopRight);
+            AddRegionGroup();
             AddPaddingRegion(() =>
             {
                 AddSmallButton("MenuCharacterSheet", (h) =>
@@ -1100,7 +1160,7 @@ public class Blueprint
             SetAnchor(TopLeft);
             AddRegionGroup();
             SetRegionGroupWidth(171);
-            SetRegionGroupHeight(354);
+            SetRegionGroupHeight(342);
             AddPaddingRegion(() =>
             {
                 //foreach (var line in instance.description)
@@ -1111,7 +1171,7 @@ public class Blueprint
             SetAnchor(TopRight);
             AddRegionGroup();
             SetRegionGroupWidth(171);
-            SetRegionGroupHeight(354);
+            SetRegionGroupHeight(342);
             AddPaddingRegion(() =>
             {
                 //foreach (var line in instance.description)
@@ -1123,7 +1183,7 @@ public class Blueprint
             SetAnchor(TopLeft);
             AddRegionGroup();
             SetRegionGroupWidth(171);
-            SetRegionGroupHeight(354);
+            SetRegionGroupHeight(342);
             AddPaddingRegion(() =>
             {
                 //foreach (var line in complex.description)
@@ -1134,7 +1194,7 @@ public class Blueprint
             SetAnchor(TopLeft);
             AddRegionGroup();
             SetRegionGroupWidth(171);
-            SetRegionGroupHeight(354);
+            SetRegionGroupHeight(342);
             if (town.flightPaths == null || town.flightPaths.Count == 0)
             {
 
@@ -1179,8 +1239,9 @@ public class Blueprint
         }),
         new("Inventory", () => {
             SetAnchor(TopRight);
-            AddRegionGroup();
-            SetRegionGroupHeight(358);
+            AddHeaderGroup();
+            SetRegionGroupWidth(190);
+            SetRegionGroupHeight(342);
             var items = currentSave.player.inventory.items;
             AddHeaderRegion(() =>
             {
@@ -1240,12 +1301,12 @@ public class Blueprint
                     }
                 );
             }
-            AddPaddingRegion(() => { AddLine(); });
+            PrintPriceRegion(currentSave.player.inventory.money);
         }, true),
         new("Bank", () => {
             SetAnchor(TopLeft);
             AddRegionGroup();
-            SetRegionGroupHeight(358);
+            SetRegionGroupHeight(342);
             var items = currentSave.banks[town.name].items;
             AddHeaderRegion(() =>
             {
@@ -1680,7 +1741,7 @@ public class Blueprint
             DisableShadows();
             AddRegionGroup();
             SetRegionGroupWidth(228);
-            SetRegionGroupHeight(358);
+            SetRegionGroupHeight(342);
             AddHeaderRegion(() =>
             {
                 AddLine("Side: " + creationSide);
@@ -2044,6 +2105,18 @@ public class Blueprint
             });
             AddSmallButton("OtherClose", (h) => { CloseWindow(h.window); });
         },  true),
+        new("ExperienceBar", () => {
+            SetAnchor(Bottom);
+            for (int i = 0; i < 58; i++)
+            {
+                AddRegionGroup();
+                SetRegionGroupWidth(11);
+                SetRegionGroupHeight(12);
+                if (currentSave.player.experience > i)
+                    AddPaddingRegion(() => { SetRegionBackground(RegionBackgroundType.Experience); });
+                else AddPaddingRegion(() => { });
+            }
+        },  true),
 
         #region Dev Panel
 
@@ -2199,7 +2272,7 @@ public class Blueprint
             SetAnchor(TopLeft);
             AddRegionGroup(() => areasSearch.Count);
             SetRegionGroupWidth(171);
-            SetRegionGroupHeight(358);
+            SetRegionGroupHeight(342);
             if (area != null)
             {
                 var index = areas.IndexOf(area);
@@ -2351,7 +2424,7 @@ public class Blueprint
             SetAnchor(TopLeft);
             AddRegionGroup(() => towns.Count);
             SetRegionGroupWidth(171);
-            SetRegionGroupHeight(358);
+            SetRegionGroupHeight(342);
             if (town != null)
             {
                 var index = towns.IndexOf(town);
@@ -2539,7 +2612,7 @@ public class Blueprint
             SetAnchor(TopLeft);
             AddRegionGroup(() => instancesSearch.Count);
             SetRegionGroupWidth(171);
-            SetRegionGroupHeight(358);
+            SetRegionGroupHeight(342);
             if (instance != null)
             {
                 var index = instances.IndexOf(instance);
@@ -2695,7 +2768,7 @@ public class Blueprint
             SetAnchor(TopLeft);
             AddRegionGroup(() => complexesSearch.Count);
             SetRegionGroupWidth(171);
-            SetRegionGroupHeight(358);
+            SetRegionGroupHeight(342);
             if (complex != null)
             {
                 var index = complexes.IndexOf(complex);
@@ -2800,7 +2873,7 @@ public class Blueprint
             SetAnchor(TopLeft);
             AddRegionGroup(() => Assets.assets.ambienceSearch.Count);
             SetRegionGroupWidth(171);
-            SetRegionGroupHeight(358);
+            SetRegionGroupHeight(342);
             if (area != null)
             {
                 var index = Assets.assets.ambienceSearch.IndexOf(area.ambience + ".ogg");
@@ -2899,7 +2972,7 @@ public class Blueprint
             SetAnchor(TopLeft);
             AddRegionGroup(() => Assets.assets.soundsSearch.Count);
             SetRegionGroupWidth(171);
-            SetRegionGroupHeight(358);
+            SetRegionGroupHeight(342);
             if (eventEdit != null)
             {
                 var temp = eventEdit.effects[selectedEffect];
@@ -2981,7 +3054,7 @@ public class Blueprint
             SetAnchor(TopLeft);
             AddRegionGroup(() => Assets.assets.itemIconsSearch.Count);
             SetRegionGroupWidth(171);
-            SetRegionGroupHeight(358);
+            SetRegionGroupHeight(342);
             if (item != null)
             {
                 var index = Assets.assets.itemIconsSearch.IndexOf(item.icon + ".png");
@@ -3057,7 +3130,7 @@ public class Blueprint
             SetAnchor(TopLeft);
             AddRegionGroup(() => Assets.assets.abilityIconsSearch.Count);
             SetRegionGroupWidth(171);
-            SetRegionGroupHeight(358);
+            SetRegionGroupHeight(342);
             if (ability != null)
             {
                 var index = Assets.assets.abilityIconsSearch.IndexOf(ability.icon + ".png");
@@ -3140,7 +3213,7 @@ public class Blueprint
             SetAnchor(TopLeft);
             AddRegionGroup(() => Assets.assets.factionIconsSearch.Count);
             SetRegionGroupWidth(171);
-            SetRegionGroupHeight(358);
+            SetRegionGroupHeight(342);
             if (faction != null)
             {
                 var index = Assets.assets.factionIconsSearch.IndexOf(faction.icon + ".png");
@@ -3210,7 +3283,7 @@ public class Blueprint
             SetAnchor(TopLeft);
             AddRegionGroup(() => Assets.assets.portraitsSearch.Count);
             SetRegionGroupWidth(171);
-            SetRegionGroupHeight(358);
+            SetRegionGroupHeight(342);
             if (race != null)
             {
                 var index = Assets.assets.portraitsSearch.IndexOf(race.portrait + ".png");
@@ -3279,7 +3352,7 @@ public class Blueprint
             SetAnchor(TopLeft);
             AddRegionGroup(() => possibleEffects.Count);
             SetRegionGroupWidth(171);
-            SetRegionGroupHeight(358);
+            SetRegionGroupHeight(342);
             AddHeaderRegion(() =>
             {
                 AddLine("Effects:");
@@ -3339,7 +3412,7 @@ public class Blueprint
             SetAnchor(TopLeft);
             AddRegionGroup(() => possibleTriggers.Count);
             SetRegionGroupWidth(171);
-            SetRegionGroupHeight(358);
+            SetRegionGroupHeight(342);
             AddHeaderRegion(() =>
             {
                 AddLine("Triggers:");
@@ -4560,7 +4633,7 @@ public class Blueprint
             SetAnchor(TopLeft);
             AddRegionGroup();
             SetRegionGroupWidth(171);
-            SetRegionGroupHeight(358);
+            SetRegionGroupHeight(342);
             AddHeaderRegion(() =>
             {
                 AddLine("Area types:");
@@ -4613,7 +4686,7 @@ public class Blueprint
             SetAnchor(TopLeft);
             AddRegionGroup();
             SetRegionGroupWidth(171);
-            SetRegionGroupHeight(358);
+            SetRegionGroupHeight(342);
             AddHeaderRegion(() =>
             {
                 AddLine("Rarities:");
@@ -4782,7 +4855,7 @@ public class Blueprint
             SetAnchor(TopLeft);
             AddRegionGroup(() => itemsSearch.Count);
             SetRegionGroupWidth(171);
-            SetRegionGroupHeight(358);
+            SetRegionGroupHeight(342);
             if (item != null)
             {
                 var index = itemsSearch.IndexOf(item);
@@ -5013,7 +5086,7 @@ public class Blueprint
             SetAnchor(TopLeft);
             AddRegionGroup(() => itemSetsSearch.Count, 5);
             SetRegionGroupWidth(171);
-            SetRegionGroupHeight(358);
+            SetRegionGroupHeight(342);
             if (itemSet != null)
             {
                 var index = itemSetsSearch.IndexOf(itemSet);
@@ -5181,7 +5254,7 @@ public class Blueprint
             SetAnchor(TopLeft);
             AddRegionGroup();
             SetRegionGroupWidth(171);
-            SetRegionGroupHeight(358);
+            SetRegionGroupHeight(342);
             AddHeaderRegion(() =>
             {
                 AddLine("Ability cost:", "Gray");
@@ -5269,7 +5342,7 @@ public class Blueprint
             SetAnchor(TopLeft);
             AddRegionGroup();
             SetRegionGroupWidth(171);
-            SetRegionGroupHeight(358);
+            SetRegionGroupHeight(342);
             AddHeaderRegion(() =>
             {
                 AddLine("Stats:", "Gray");
@@ -5317,7 +5390,7 @@ public class Blueprint
             SetAnchor(TopLeft);
             AddRegionGroup(() => abilitiesSearch.Count);
             SetRegionGroupWidth(171);
-            SetRegionGroupHeight(358);
+            SetRegionGroupHeight(342);
             if (ability != null)
             {
                 var index = abilitiesSearch.IndexOf(ability);
@@ -5635,7 +5708,7 @@ public class Blueprint
             SetAnchor(TopLeft);
             AddRegionGroup(() => buffsSearch.Count);
             SetRegionGroupWidth(171);
-            SetRegionGroupHeight(358);
+            SetRegionGroupHeight(342);
             if (buff != null)
             {
                 var index = buffsSearch.IndexOf(buff);
@@ -5992,7 +6065,7 @@ public class Blueprint
             SetAnchor(TopLeft);
             AddRegionGroup(() => racesSearch.Count);
             SetRegionGroupWidth(171);
-            SetRegionGroupHeight(358);
+            SetRegionGroupHeight(342);
             if (race != null)
             {
                 var index = racesSearch.IndexOf(race);
@@ -6275,7 +6348,7 @@ public class Blueprint
             SetAnchor(TopLeft);
             AddRegionGroup(() => factionsSearch.Count);
             SetRegionGroupWidth(171);
-            SetRegionGroupHeight(358);
+            SetRegionGroupHeight(342);
             if (faction != null)
             {
                 var index = factionsSearch.IndexOf(faction);
@@ -6448,7 +6521,7 @@ public class Blueprint
             SetAnchor(TopLeft);
             AddRegionGroup(() => specsSearch.Count);
             SetRegionGroupWidth(171);
-            SetRegionGroupHeight(358);
+            SetRegionGroupHeight(342);
             if (spec != null)
             {
                 var index = specs.IndexOf(spec);
@@ -6665,6 +6738,7 @@ public class Blueprint
             SetDesktopBackground(area.Background());
             SpawnWindowBlueprint("HostileArea: " + area.name);
             SpawnWindowBlueprint("HostileAreaRightSide");
+            SpawnWindowBlueprint("ExperienceBar");
             AddHotkey(Escape, () =>
             {
                 if (area.complexPart)
@@ -6684,6 +6758,7 @@ public class Blueprint
             SetDesktopBackground(town.Background());
             SpawnWindowBlueprint("Town: " + town.name);
             SpawnWindowBlueprint("TownLeftSide");
+            SpawnWindowBlueprint("ExperienceBar");
             AddHotkey(Escape, () =>
             {
                 PlaySound("DesktopInstanceClose");
@@ -6695,6 +6770,7 @@ public class Blueprint
             SetDesktopBackground(instance.Background());
             SpawnWindowBlueprint(instance.type + ": " + instance.name);
             SpawnWindowBlueprint("InstanceLeftSide");
+            SpawnWindowBlueprint("ExperienceBar");
             AddHotkey(Escape, () =>
             {
                 if (CloseWindow("HostileArea: " + area?.name))
@@ -6748,6 +6824,7 @@ public class Blueprint
             SetDesktopBackground(complex.Background());
             SpawnWindowBlueprint("Complex: " + complex.name);
             SpawnWindowBlueprint("ComplexLeftSide");
+            SpawnWindowBlueprint("ExperienceBar");
             AddHotkey(Escape, () =>
             {
                 if (CloseWindow("HostileArea: " + area?.name))
@@ -6877,6 +6954,7 @@ public class Blueprint
             SpawnWindowBlueprint("CharacterOffHandSlot");
             SpawnWindowBlueprint("CharacterTrinketSlot");
             SpawnWindowBlueprint("CharacterStats");
+            SpawnWindowBlueprint("ExperienceBar");
             AddHotkey(C, () =>
             {
                 PlaySound("DesktopCharacterSheetClose");
@@ -6893,6 +6971,7 @@ public class Blueprint
             PlaySound("DesktopTalentScreenOpen");
             SetDesktopBackground("StoneSplitLong", false);
             SpawnWindowBlueprint("TalentHeader");
+            SpawnWindowBlueprint("ExperienceBar");
             var playerClass = currentSave.player.GetClass();
             for (int spec = 0; spec < 3; spec++)
                 for (int row = 0; row <= playerClass.talentTrees[spec].talents.Max(x => x.row); row++)
@@ -6930,23 +7009,21 @@ public class Blueprint
         new("SpellbookScreen", () =>
         {
             PlaySound("DesktopSpellbookScreenOpen");
-            locationName = "Spellbook";
-            SpawnWindowBlueprint("LocationInfo");
             SetDesktopBackground("Skin");
             SpawnWindowBlueprint("SpellbookAbilityList");
             SpawnWindowBlueprint("PlayerSpellbookInfo");
             SpawnWindowBlueprint("SpellbookResources");
+            SpawnWindowBlueprint("ExperienceBar");
             AddHotkey(P, () => { SwitchDesktop("Map"); CloseDesktop("SpellbookScreen"); PlaySound("DesktopSpellbookScreenClose"); });
             AddHotkey(Escape, () => { SwitchDesktop("Map"); CloseDesktop("SpellbookScreen"); PlaySound("DesktopSpellbookScreenClose"); });
         }),
         new("EquipmentScreen", () =>
         {
             PlaySound("DesktopInventoryOpen");
-            locationName = "Inventory";
-            SpawnWindowBlueprint("LocationInfo");
             SetDesktopBackground("Leather");
             SpawnWindowBlueprint("PlayerEquipmentInfo");
             SpawnWindowBlueprint("Inventory");
+            SpawnWindowBlueprint("ExperienceBar");
             AddHotkey(B, () =>
             {
                 PlaySound("DesktopInventoryClose");
@@ -6967,6 +7044,7 @@ public class Blueprint
             SetDesktopBackground(town.Background() + "Bank");
             SpawnWindowBlueprint("Bank");
             SpawnWindowBlueprint("Inventory");
+            SpawnWindowBlueprint("ExperienceBar");
             AddHotkey(Escape, () =>
             {
                 PlaySound("DesktopBankClose");
@@ -7140,7 +7218,7 @@ public class Blueprint
             AddPaginationHotkeys();
         }),
 
-#endregion
+        #endregion
     };
 
     public static void AddPaginationHotkeys()

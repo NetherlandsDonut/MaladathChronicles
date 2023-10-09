@@ -88,7 +88,7 @@ public class Entity
         if (ExperienceNeeded() <= experience)
         {
             experience -= ExperienceNeeded();
-            level += 1;
+            level++;
             PlaySound("DesktopLevelUp");
         }
     }
@@ -96,16 +96,7 @@ public class Entity
     //Provides amount of experience needed to level up
     public int ExperienceNeeded()
     {
-        return (int)(Math.Pow(1.04, level + 1) * 100 * (level + 1));
-    }
-
-    //Provides experience needed to reach max level
-    public int ExperienceNeededOverall()
-    {
-        var sum = 0;
-        for (int i = 1; i < maxPlayerLevel; i++)
-            sum += (int)(Math.Pow(1.04, i + 1) * 100 * (i + 1));
-        return sum;
+        return 58;
     }
 
     #endregion

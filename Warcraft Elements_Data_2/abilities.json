@@ -1072,7 +1072,33 @@
     "name": "Combustion",
     "icon": "AbilityCombustion",
     "tags": [],
-    "events": []
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddBuff",
+            "SoundEffect": "AbilityFireballCast",
+            "BuffName": "Combustion",
+            "ShatterType": "Central",
+            "ShatterTarget": "Effector",
+            "Affect": "Effector",
+            "ShatterSpeed": "1",
+            "ShatterDensity": "2",
+            "Await": "4",
+            "ShatterDegree": "0,5"
+          },
+          {
+            "Effect": "EndTurn"
+          }
+        ]
+      }
+    ]
   },
   {
     "name": "Concentrated Power",
@@ -5135,11 +5161,29 @@
         ],
         "effects": [
           {
-            "Effect": "Damage",
+            "Effect": "None",
             "Affect": "Other",
             "PowerType": "Spell",
             "PowerSource": "Effector",
-            "PowerScale": "1.5"
+            "PowerScale": "1.5",
+            "SoundEffect": "AbilitySummonInfernalCast",
+            "Await": "10",
+            "ShatterType": "Central",
+            "ShatterTarget": "Effector",
+            "ShatterDegree": "0,1",
+            "ShatterDensity": "1",
+            "ShatterSpeed": "1"
+          },
+          {
+            "Effect": "AddBuff",
+            "BuffName": "Summoned Infernal",
+            "SoundEffect": "AbilitySummonInfernalImpact",
+            "Await": "4",
+            "ShatterType": "Central",
+            "ShatterTarget": "Effector",
+            "Affect": "Effector",
+            "ShatterDensity": "1",
+            "ShatterSpeed": "3"
           },
           {
             "Effect": "EndTurn"

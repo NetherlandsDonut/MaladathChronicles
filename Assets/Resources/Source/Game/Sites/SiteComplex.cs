@@ -72,7 +72,7 @@ public class SiteComplex : Site
                         SetAnchor(TopRight);
                         AddRegionGroup();
                         SetRegionGroupWidth(171);
-                        SetRegionGroupHeight(354);
+                        SetRegionGroupHeight(338);
                         AddHeaderRegion(() =>
                         {
                             AddLine(name);

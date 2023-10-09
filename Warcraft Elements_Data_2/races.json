@@ -1,5 +1,61 @@
 [
   {
+    "name": "Margol the Rager",
+    "kind": "Rare",
+    "portrait": "PortraitThunderLizardDark",
+    "vitality": 2.0,
+    "abilities": []
+  },
+  {
+    "name": "Ghost Howl",
+    "kind": "Rare",
+    "portrait": "PortraitWorgWhite",
+    "vitality": 2.0,
+    "abilities": []
+  },
+  {
+    "name": "The Rake",
+    "kind": "Rare",
+    "portrait": "PortraitLion",
+    "vitality": 2.0,
+    "abilities": []
+  },
+  {
+    "name": "Gammerita",
+    "kind": "Rare",
+    "portrait": "PortraitTurtleBlue",
+    "vitality": 2.0,
+    "abilities": []
+  },
+  {
+    "name": "Lupos",
+    "kind": "Rare",
+    "portrait": "PortraitWorg",
+    "vitality": 2.0,
+    "abilities": []
+  },
+  {
+    "name": "Bjarn",
+    "kind": "Rare",
+    "portrait": "PortraitPolarBear",
+    "vitality": 2.0,
+    "abilities": []
+  },
+  {
+    "name": "Enraged Reef Crawler",
+    "kind": "Common",
+    "portrait": "PortraitCrabWhite",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Spined Crawler",
+    "kind": "Common",
+    "portrait": "PortraitCrabWhite",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
     "name": "Abomination",
     "kind": "Common",
     "portrait": "PortraitAbomination",
@@ -2172,13 +2228,6 @@
     "abilities": []
   },
   {
-    "name": "Sand Walker",
-    "kind": "Common",
-    "portrait": "PortraitChicken",
-    "vitality": 1.0,
-    "abilities": []
-  },
-  {
     "name": "Shadowhide Assassin",
     "kind": "Common",
     "portrait": "PortraitChicken",
@@ -2616,23 +2665,30 @@
     "abilities": []
   },
   {
-    "name": "Monstrous Crawler",
+    "name": "Sand Crawler",
     "kind": "Common",
     "portrait": "PortraitCrab",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Monstrous Crawler",
+    "kind": "Common",
+    "portrait": "PortraitCrabWhite",
     "vitality": 1.0,
     "abilities": []
   },
   {
     "name": "Pygmy Surf Crawler",
     "kind": "Common",
-    "portrait": "PortraitCrab",
+    "portrait": "PortraitCrabRed",
     "vitality": 1.0,
     "abilities": []
   },
   {
     "name": "Pygmy Tide Crawler",
     "kind": "Common",
-    "portrait": "PortraitCrab",
+    "portrait": "PortraitCrabBlue",
     "vitality": 1.0,
     "abilities": []
   },
@@ -2653,21 +2709,21 @@
   {
     "name": "Skittering Crustacean",
     "kind": "Common",
-    "portrait": "PortraitCrab",
+    "portrait": "PortraitCrabWhite",
     "vitality": 1.0,
     "abilities": []
   },
   {
     "name": "Southern Strand Crawler",
     "kind": "Common",
-    "portrait": "PortraitCrab",
+    "portrait": "PortraitCrabBlue",
     "vitality": 1.0,
     "abilities": []
   },
   {
     "name": "Tide Crawler",
     "kind": "Common",
-    "portrait": "PortraitCrab",
+    "portrait": "PortraitCrabBlue",
     "vitality": 1.0,
     "abilities": []
   },

@@ -37,6 +37,9 @@
             "ability": "Fireball"
           },
           {
+            "ability": "Blazing Barrier"
+          },
+          {
             "ability": "Frostbolt"
           }
         ],
@@ -60,6 +63,7 @@
           }
         },
         "inventory": {
+          "money": 1.1233,
           "items": [
             {
               "rarity": "Epic",
@@ -728,8 +732,8 @@
           }
         }
       },
-      "cameraX": 258,
-      "cameraY": -183,
+      "cameraX": 32,
+      "cameraY": -129,
       "siteProgress": {
         "Balia'mah Ruins": 1,
         "The Crimson Throne": 4,
@@ -739,7 +743,9 @@
         "Hall of the Keepers": 3,
         "Khaz'Goroth's Seat": 2,
         "Gol'Bolar Quarry": 1,
-        "The Rookery": 3
+        "The Rookery": 3,
+        "Temple Hall": 1,
+        "Dig Three": 1
       },
       "commonsKilled": {
         "Dustbelcher Warrior": 1,
@@ -753,10 +759,11 @@
         "Stonevault Pillager": 2,
         "Stonevault Ambusher": 1,
         "Vault Warder": 1,
-        "Stone Steward": 1,
+        "Stone Steward": 2,
         "Rockjaw Bonesnapper": 1,
         "Rage Talon Flamescale": 1,
-        "Rage Talon Dragonspawn": 2
+        "Rage Talon Dragonspawn": 2,
+        "Shadowforge Sharpshooter": 1
       },
       "raresKilled": {},
       "elitesKilled": {
@@ -774,11 +781,11 @@
         "Nighthaven": 1,
         "Talonbranch Glade": 2,
         "Timbermaw Hold": 1,
-        "Stonetalon Peak": 1,
+        "Stonetalon Peak": 2,
         "The Talon Den": 1,
         "Theramore Isle": 1,
-        "Ratchet": 1,
-        "Booty Bay": 4,
+        "Ratchet": 2,
+        "Booty Bay": 5,
         "Stratholme": 3,
         "Jintha'Alor": 1,
         "Undercity": 1,
@@ -808,19 +815,24 @@
         "Altar of Storms": 1,
         "Plaguewood": 3,
         "Blackwood Lake": 1,
-        "Uldaman": 2,
+        "Uldaman": 3,
         "Camp Kosh": 1,
         "Lethlor Ravine": 1,
         "Camp Boff": 1,
         "Dustwind Gulch": 1,
         "Gol'Bolar Quarry": 1,
         "Ridgepoint Tower": 1,
-        "Brackwell Pumpkin Patch": 2
+        "Brackwell Pumpkin Patch": 2,
+        "Stendel's Pond": 1,
+        "Ethel Rethor": 4,
+        "Thunder Axe Fortress": 1,
+        "Tethris Aran": 1,
+        "Ranazjar Isle": 4
       },
       "startDate": "2023-09-08T02:04:14.0667101+02:00",
-      "lastLoaded": "2023-10-03T18:05:46.8015642+02:00",
-      "lastPlayed": "2023-10-03T18:23:31.187278+02:00",
-      "timePlayed": "07:20:21.1556993"
+      "lastLoaded": "2023-10-09T15:22:35.9775109+02:00",
+      "lastPlayed": "2023-10-09T15:22:43.6648004+02:00",
+      "timePlayed": "07:51:10.5177315"
     },
     {
       "player": {
@@ -2389,6 +2401,873 @@
       "lastLoaded": "2023-09-25T13:33:21.9197771+02:00",
       "lastPlayed": "2023-09-25T13:34:44.0996376+02:00",
       "timePlayed": "00:02:26.9486744"
+    },
+    {
+      "player": {
+        "level": 60,
+        "unspentTalentPoints": 20,
+        "actionBarsUnlocked": 7,
+        "name": "Nascha",
+        "race": "Tauren",
+        "spec": "Shaman",
+        "gender": "Female",
+        "abilities": [
+          "Dual Wielding Proficiency",
+          "Two Handed Axe Proficiency",
+          "One Handed Axe Proficiency",
+          "One Handed Mace Proficiency",
+          "Polearm Proficiency",
+          "Off Hand Proficiency",
+          "Totem Proficiency",
+          "Leather Proficiency",
+          "Mail Proficiency",
+          "Lightning Bolt",
+          "Stormstrike",
+          "Healing Wave"
+        ],
+        "actionBars": [
+          {
+            "ability": "Healing Wave"
+          }
+        ],
+        "stats": {
+          "stats": {
+            "Stamina": 8,
+            "Strength": 8,
+            "Agility": 3,
+            "Intellect": 6,
+            "Spirit": 0,
+            "Earth Mastery": 3,
+            "Fire Mastery": 2,
+            "Air Mastery": 3,
+            "Water Mastery": 3,
+            "Frost Mastery": 1,
+            "Lightning Mastery": 1,
+            "Arcane Mastery": 2,
+            "Decay Mastery": 1,
+            "Shadow Mastery": 1,
+            "Order Mastery": 2
+          }
+        },
+        "inventory": {
+          "items": [
+            {
+              "rarity": "Epic",
+              "name": "Dreamscale Breastplate",
+              "icon": "itemchestplate08",
+              "type": "Chest",
+              "armorClass": "Mail",
+              "ilvl": 68,
+              "lvl": 60,
+              "armor": 434,
+              "price": 5.7958,
+              "stats": {
+                "stats": {
+                  "Agility": 15,
+                  "Intellect": 14,
+                  "Stamina": 15
+                }
+              }
+            },
+            {
+              "rarity": "Epic",
+              "name": "Sentinel's Lizardhide Pants",
+              "icon": "itempants06",
+              "type": "Legs",
+              "armorClass": "Leather",
+              "ilvl": 65,
+              "lvl": 60,
+              "armor": 263,
+              "price": 4.2373,
+              "stats": {
+                "stats": {
+                  "Strength": 22,
+                  "Agility": 10,
+                  "Intellect": 22,
+                  "Stamina": 22,
+                  "Spirit": 9
+                }
+              }
+            },
+            {
+              "rarity": "Epic",
+              "name": "Aurastone Hammer",
+              "icon": "itemhammer05",
+              "detailedType": "Mace",
+              "type": "One Handed",
+              "ilvl": 69,
+              "lvl": 60,
+              "minDamage": 79,
+              "maxDamage": 162,
+              "price": 10.2178,
+              "speed": 2.7,
+              "stats": {
+                "stats": {
+                  "Intellect": 10,
+                  "Stamina": 10
+                }
+              },
+              "droppedBy": [
+                "Garr"
+              ]
+            },
+            {
+              "rarity": "Rare",
+              "name": "Slaghide Gauntlets",
+              "icon": "itemgauntlets22",
+              "type": "Hands",
+              "armorClass": "Leather",
+              "ilvl": 61,
+              "lvl": 56,
+              "armor": 207,
+              "price": 1.3343,
+              "stats": {
+                "stats": {}
+              },
+              "droppedBy": [
+                "Urok Doomhowl"
+              ]
+            },
+            {
+              "rarity": "Epic",
+              "name": "Choker of the Fire Lord",
+              "icon": "itemjewelryamulet05",
+              "type": "Neck",
+              "ilvl": 78,
+              "lvl": 60,
+              "price": 8.9135,
+              "stats": {
+                "stats": {
+                  "Intellect": 7,
+                  "Stamina": 7
+                }
+              },
+              "droppedBy": [
+                "Ragnaros"
+              ]
+            },
+            {
+              "rarity": "Rare",
+              "name": "Sergeant Major's Cape",
+              "icon": "itemmisccape21",
+              "type": "Back",
+              "ilvl": 60,
+              "lvl": 55,
+              "price": 0.7491,
+              "stats": {
+                "stats": {
+                  "Strength": 8,
+                  "Agility": 8,
+                  "Intellect": 8,
+                  "Stamina": 8,
+                  "Spirit": 8
+                }
+              }
+            },
+            {
+              "rarity": "Rare",
+              "name": "Mongoose Boots",
+              "icon": "itemboots08",
+              "type": "Feet",
+              "armorClass": "Leather",
+              "ilvl": 62,
+              "lvl": 57,
+              "armor": 120,
+              "price": 2.134,
+              "stats": {
+                "stats": {
+                  "Agility": 23,
+                  "Stamina": 9
+                }
+              }
+            },
+            {
+              "rarity": "Epic",
+              "name": "Cryptstalker Legguards",
+              "icon": "itempantsmail15",
+              "type": "Legs",
+              "armorClass": "Mail",
+              "set": "Cryptstalker Armor",
+              "ilvl": 88,
+              "lvl": 60,
+              "armor": 484,
+              "price": 15.9599,
+              "stats": {
+                "stats": {
+                  "Agility": 42,
+                  "Intellect": 10,
+                  "Stamina": 26
+                }
+              }
+            },
+            {
+              "rarity": "Epic",
+              "name": "Eye of the Dead",
+              "icon": "itemtrinketnaxxramas01",
+              "type": "Trinket",
+              "ilvl": 90,
+              "lvl": 60,
+              "price": 9.116,
+              "stats": {
+                "stats": {}
+              },
+              "droppedBy": [
+                "Sapphiron"
+              ]
+            },
+            {
+              "rarity": "Uncommon",
+              "name": "Magnificent Greaves",
+              "icon": "itemboots02",
+              "type": "Feet",
+              "armorClass": "Mail",
+              "ilvl": 60,
+              "lvl": 55,
+              "armor": 221,
+              "price": 1.8464,
+              "stats": {
+                "stats": {}
+              }
+            },
+            {
+              "rarity": "Rare",
+              "name": "Dimly Opalescent Ring",
+              "icon": "itemjewelryring15",
+              "type": "Finger",
+              "ilvl": 61,
+              "lvl": 56,
+              "price": 3.6141,
+              "stats": {
+                "stats": {
+                  "Intellect": 7
+                }
+              }
+            },
+            {
+              "rarity": "Epic",
+              "name": "Cryptstalker Girdle",
+              "icon": "itembelt22",
+              "type": "Waist",
+              "armorClass": "Mail",
+              "set": "Cryptstalker Armor",
+              "ilvl": 88,
+              "lvl": 60,
+              "armor": 311,
+              "price": 7.5494,
+              "stats": {
+                "stats": {
+                  "Agility": 23,
+                  "Intellect": 12,
+                  "Stamina": 22
+                }
+              }
+            },
+            {
+              "rarity": "Uncommon",
+              "name": "Indomitable Belt",
+              "icon": "itembelt12",
+              "type": "Waist",
+              "armorClass": "Leather",
+              "ilvl": 60,
+              "lvl": 55,
+              "armor": 87,
+              "price": 1.0477,
+              "stats": {
+                "stats": {
+                  "Intellect": 17,
+                  "Stamina": 6
+                }
+              }
+            },
+            {
+              "rarity": "Uncommon",
+              "name": "Gauntlets of Accuracy",
+              "icon": "itemgauntlets12",
+              "type": "Hands",
+              "armorClass": "Mail",
+              "ilvl": 61,
+              "lvl": 56,
+              "armor": 204,
+              "price": 1.2454,
+              "stats": {
+                "stats": {
+                  "Agility": 15
+                }
+              },
+              "droppedBy": [
+                "Illyanna Ravenoak"
+              ]
+            },
+            {
+              "rarity": "Rare",
+              "name": "Talisman of Evasion",
+              "icon": "itemjewelryamulet04",
+              "type": "Neck",
+              "ilvl": 60,
+              "lvl": 55,
+              "price": 1.6396,
+              "stats": {
+                "stats": {
+                  "Agility": 13
+                }
+              },
+              "droppedBy": [
+                "War Master Voone"
+              ]
+            },
+            {
+              "rarity": "Rare",
+              "name": "Defiler's Chain Girdle",
+              "icon": "itembelt20",
+              "type": "Waist",
+              "armorClass": "Mail",
+              "set": "The Defiler's Determination",
+              "ilvl": 63,
+              "lvl": 58,
+              "armor": 208,
+              "classes": [
+                "Hunter",
+                "Shaman"
+              ],
+              "price": 1.6775,
+              "stats": {
+                "stats": {
+                  "Stamina": 10
+                }
+              }
+            },
+            {
+              "rarity": "Epic",
+              "name": "Slime-coated Leggings",
+              "icon": "itempantsmail11",
+              "type": "Legs",
+              "armorClass": "Mail",
+              "ilvl": 78,
+              "lvl": 60,
+              "armor": 432,
+              "price": 9.7999,
+              "stats": {
+                "stats": {
+                  "Intellect": 16,
+                  "Stamina": 28
+                }
+              },
+              "droppedBy": [
+                "Viscidus"
+              ]
+            },
+            {
+              "rarity": "Rare",
+              "name": "Wildheart Kilt",
+              "icon": "itempants08",
+              "type": "Legs",
+              "armorClass": "Leather",
+              "set": "Wildheart Raiment",
+              "ilvl": 61,
+              "lvl": 56,
+              "armor": 150,
+              "price": 2.7192,
+              "stats": {
+                "stats": {
+                  "Strength": 13,
+                  "Agility": 12,
+                  "Intellect": 14,
+                  "Stamina": 14,
+                  "Spirit": 14
+                }
+              },
+              "droppedBy": [
+                "Baron Rivendare"
+              ]
+            },
+            {
+              "rarity": "Epic",
+              "name": "Breastplate of Ten Storms",
+              "icon": "itemchestchain11",
+              "type": "Chest",
+              "armorClass": "Mail",
+              "set": "The Ten Storms",
+              "ilvl": 76,
+              "lvl": 60,
+              "armor": 482,
+              "classes": [
+                "Shaman"
+              ],
+              "price": 8.3355,
+              "stats": {
+                "stats": {
+                  "Intellect": 31,
+                  "Stamina": 17,
+                  "Spirit": 16
+                }
+              },
+              "droppedBy": [
+                "Nefarian"
+              ]
+            },
+            {
+              "rarity": "Epic",
+              "name": "Sand Polished Hammer",
+              "icon": "itemmace24",
+              "detailedType": "Mace",
+              "type": "One Handed",
+              "ilvl": 72,
+              "lvl": 60,
+              "minDamage": 97,
+              "maxDamage": 181,
+              "price": 12.0142,
+              "speed": 2.6,
+              "stats": {
+                "stats": {
+                  "Stamina": 9
+                }
+              },
+              "droppedBy": [
+                "Ossirian the Unscarred"
+              ]
+            },
+            {
+              "rarity": "Common",
+              "name": "Worn Mace",
+              "icon": "itemmace03",
+              "detailedType": "Mace",
+              "type": "One Handed",
+              "ilvl": 2,
+              "lvl": 1,
+              "minDamage": 1,
+              "maxDamage": 3,
+              "price": 0.0007,
+              "speed": 1.9,
+              "stats": {
+                "stats": {}
+              }
+            },
+            {
+              "rarity": "Epic",
+              "name": "Hammer of the Twisting Nether",
+              "icon": "itemmace27",
+              "detailedType": "Mace",
+              "type": "One Handed",
+              "ilvl": 89,
+              "lvl": 60,
+              "minDamage": 37,
+              "maxDamage": 121,
+              "price": 28.0418,
+              "speed": 1.9,
+              "stats": {
+                "stats": {
+                  "Intellect": 11,
+                  "Stamina": 8
+                }
+              },
+              "droppedBy": [
+                "Kel'Thuzad"
+              ]
+            },
+            {
+              "rarity": "Epic",
+              "name": "Hammer of Bestial Fury",
+              "icon": "itemmace20",
+              "detailedType": "Mace",
+              "type": "One Handed",
+              "ilvl": 71,
+              "lvl": 60,
+              "minDamage": 69,
+              "maxDamage": 130,
+              "armor": 90,
+              "price": 10.9327,
+              "speed": 1.9,
+              "stats": {
+                "stats": {
+                  "Strength": 13,
+                  "Stamina": 12
+                }
+              }
+            },
+            {
+              "rarity": "Rare",
+              "name": "Boots of the Shrieker",
+              "icon": "itemboots08",
+              "type": "Feet",
+              "armorClass": "Leather",
+              "ilvl": 62,
+              "lvl": 57,
+              "armor": 120,
+              "price": 2.0028,
+              "stats": {
+                "stats": {
+                  "Intellect": 10,
+                  "Stamina": 10,
+                  "Spirit": 10
+                }
+              },
+              "droppedBy": [
+                "Darkmaster Gandling"
+              ]
+            },
+            {
+              "rarity": "Uncommon",
+              "name": "Murmuring Ring",
+              "icon": "itemjewelryring15",
+              "type": "Finger",
+              "ilvl": 60,
+              "lvl": 55,
+              "price": 1.4727,
+              "stats": {
+                "stats": {
+                  "Intellect": 10
+                }
+              },
+              "droppedBy": [
+                "Tsu'zee"
+              ]
+            },
+            {
+              "rarity": "Epic",
+              "name": "Doomhide Gauntlets",
+              "icon": "itemgauntlets22",
+              "type": "Hands",
+              "armorClass": "Leather",
+              "ilvl": 71,
+              "lvl": 60,
+              "armor": 133,
+              "price": 2.9212,
+              "stats": {
+                "stats": {
+                  "Agility": 14,
+                  "Stamina": 14
+                }
+              },
+              "droppedBy": [
+                "Lord Kazzak"
+              ]
+            },
+            {
+              "rarity": "Epic",
+              "name": "Stormcaller's Leggings",
+              "icon": "itempantsmail10",
+              "type": "Legs",
+              "armorClass": "Mail",
+              "set": "Stormcaller's Garb",
+              "ilvl": 81,
+              "lvl": 60,
+              "armor": 448,
+              "classes": [
+                "Shaman"
+              ],
+              "price": 10.8479,
+              "stats": {
+                "stats": {
+                  "Strength": 12,
+                  "Agility": 9,
+                  "Intellect": 22,
+                  "Stamina": 22,
+                  "Spirit": 12
+                }
+              }
+            },
+            {
+              "rarity": "Uncommon",
+              "name": "Peerless Armor",
+              "icon": "itemchestleather02",
+              "type": "Chest",
+              "armorClass": "Leather",
+              "ilvl": 61,
+              "lvl": 56,
+              "armor": 156,
+              "price": 2.1849,
+              "stats": {
+                "stats": {}
+              }
+            },
+            {
+              "rarity": "Rare",
+              "name": "Blood Tiger Shoulders",
+              "icon": "itemshoulder23",
+              "type": "Shoulders",
+              "armorClass": "Leather",
+              "set": "Blood Tiger Harness",
+              "ilvl": 65,
+              "lvl": 60,
+              "armor": 136,
+              "price": 2.4082,
+              "stats": {
+                "stats": {
+                  "Strength": 13,
+                  "Intellect": 12,
+                  "Stamina": 13,
+                  "Spirit": 10
+                }
+              }
+            },
+            {
+              "rarity": "Epic",
+              "name": "Mark of the Dragon Lord",
+              "icon": "itemjewelryring17",
+              "type": "Finger",
+              "ilvl": 61,
+              "lvl": 56,
+              "price": 2.1372,
+              "stats": {
+                "stats": {}
+              },
+              "droppedBy": [
+                "Overlord Wyrmthalak"
+              ]
+            }
+          ]
+        },
+        "equipment": {
+          "Finger": {
+            "rarity": "Rare",
+            "name": "Ragnaros Core",
+            "icon": "itemjewelryring25",
+            "type": "Finger",
+            "ilvl": 65,
+            "lvl": 60,
+            "price": 2.3961,
+            "stats": {
+              "stats": {}
+            }
+          },
+          "Waist": {
+            "rarity": "Epic",
+            "name": "Belt of Ten Storms",
+            "icon": "itembelt14",
+            "type": "Waist",
+            "armorClass": "Mail",
+            "set": "The Ten Storms",
+            "ilvl": 76,
+            "lvl": 60,
+            "armor": 271,
+            "classes": [
+              "Shaman"
+            ],
+            "price": 4.5065,
+            "stats": {
+              "stats": {
+                "Intellect": 18,
+                "Stamina": 13,
+                "Spirit": 11
+              }
+            },
+            "droppedBy": [
+              "Vaelastrasz the Corrupt"
+            ]
+          },
+          "Hands": {
+            "rarity": "Rare",
+            "name": "Toughened Silithid Hide Gloves",
+            "icon": "itemgauntlets24",
+            "type": "Hands",
+            "armorClass": "Leather",
+            "ilvl": 71,
+            "lvl": 60,
+            "armor": 182,
+            "price": 2.0262,
+            "stats": {
+              "stats": {
+                "Strength": 11,
+                "Agility": 15,
+                "Stamina": 18
+              }
+            },
+            "droppedBy": [
+              "Kurinnaxx"
+            ]
+          },
+          "Main Hand": {
+            "rarity": "Epic",
+            "name": "Blackfury",
+            "icon": "itemspear08",
+            "detailedType": "Polearm",
+            "type": "Two Handed",
+            "ilvl": 66,
+            "lvl": 60,
+            "minDamage": 105,
+            "maxDamage": 158,
+            "price": 11.6531,
+            "speed": 2.1,
+            "stats": {
+              "stats": {
+                "Strength": 35,
+                "Stamina": 15
+              }
+            }
+          },
+          "Chest": {
+            "rarity": "Common",
+            "name": "Primitive Mantle",
+            "icon": "itemmisccape14",
+            "type": "Chest",
+            "ilvl": 1,
+            "lvl": 1,
+            "price": 0.0001,
+            "stats": {
+              "stats": {}
+            }
+          },
+          "Feet": {
+            "rarity": "Rare",
+            "name": "Cadaverous Walkers",
+            "icon": "itemboots05",
+            "type": "Feet",
+            "armorClass": "Leather",
+            "set": "Cadaverous Garb",
+            "ilvl": 61,
+            "lvl": 56,
+            "armor": 118,
+            "price": 1.9074,
+            "stats": {
+              "stats": {
+                "Stamina": 20
+              }
+            }
+          },
+          "Neck": {
+            "rarity": "Rare",
+            "name": "Tempestria's Frozen Necklace",
+            "icon": "itemjewelrynecklace03",
+            "type": "Neck",
+            "ilvl": 61,
+            "lvl": 56,
+            "price": 2.6635,
+            "stats": {
+              "stats": {
+                "Intellect": 5,
+                "Stamina": 8
+              }
+            },
+            "droppedBy": [
+              "Princess Tempestria"
+            ]
+          },
+          "Head": {
+            "rarity": "Epic",
+            "name": "Deviate Growth Cap",
+            "icon": "itemhelmet43",
+            "type": "Head",
+            "armorClass": "Leather",
+            "ilvl": 72,
+            "lvl": 60,
+            "armor": 175,
+            "price": 4.5535,
+            "stats": {
+              "stats": {
+                "Intellect": 14,
+                "Stamina": 16
+              }
+            },
+            "droppedBy": [
+              "Lethon"
+            ]
+          },
+          "Shoulders": {
+            "rarity": "Uncommon",
+            "name": "Heavy Scorpid Shoulders",
+            "icon": "itemshoulder07",
+            "type": "Shoulders",
+            "armorClass": "Mail",
+            "ilvl": 61,
+            "lvl": 56,
+            "armor": 245,
+            "price": 2.0261,
+            "stats": {
+              "stats": {
+                "Stamina": 14,
+                "Spirit": 13
+              }
+            }
+          },
+          "Legs": {
+            "rarity": "Poor",
+            "name": "Primitive Kilt",
+            "icon": "itempants02",
+            "type": "Legs",
+            "armorClass": "Leather",
+            "ilvl": 1,
+            "lvl": 1,
+            "armor": 14,
+            "price": 0.0001,
+            "stats": {
+              "stats": {}
+            }
+          },
+          "Trinket": {
+            "rarity": "Rare",
+            "name": "Heart of the Scale",
+            "icon": "itemmiscgembloodstone01",
+            "type": "Trinket",
+            "ilvl": 61,
+            "lvl": 56,
+            "price": 1.0539,
+            "stats": {
+              "stats": {}
+            },
+            "droppedBy": [
+              "Overlord Wyrmthalak"
+            ]
+          },
+          "Back": {
+            "rarity": "Epic",
+            "name": "Puissant Cape",
+            "icon": "itemmisccape06",
+            "type": "Back",
+            "ilvl": 70,
+            "lvl": 60,
+            "price": 3.3028,
+            "stats": {
+              "stats": {
+                "Stamina": 12
+              }
+            },
+            "droppedBy": [
+              "Azuregos"
+            ]
+          },
+          "Wrists": {
+            "rarity": "Uncommon",
+            "name": "Twilight Void Bracers",
+            "icon": "itembracer16",
+            "type": "Wrists",
+            "armorClass": "Mail",
+            "ilvl": 62,
+            "lvl": 57,
+            "armor": 145,
+            "price": 1.3198,
+            "stats": {
+              "stats": {}
+            },
+            "droppedBy": [
+              "Maleki the Pallid"
+            ]
+          }
+        }
+      },
+      "cameraX": 261,
+      "cameraY": -207,
+      "siteProgress": {
+        "Hakkari Grounds": 1,
+        "Naze of Shirvallah": 1
+      },
+      "commonsKilled": {
+        "Hakkari Priest": 1,
+        "Zulian Tiger": 1
+      },
+      "raresKilled": {},
+      "elitesKilled": {},
+      "siteVisits": {
+        "Warsong Lumber Camp": 1,
+        "Orgrimmar": 1,
+        "Grom'gol Base Camp": 1,
+        "Kal'ai Ruins": 1,
+        "Mizjah Ruins": 1,
+        "Zul'Gurub": 2
+      },
+      "startDate": "2023-10-09T15:22:48.5166001+02:00",
+      "lastLoaded": "2023-10-09T22:59:02.8344661+02:00",
+      "lastPlayed": "2023-10-09T22:59:06.7186139+02:00",
+      "timePlayed": "00:33:09.2744577"
     }
   ],
   "Mograine": [],

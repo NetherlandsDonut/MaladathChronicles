@@ -130,10 +130,10 @@ public class Board
         CloseDesktop("Game");
         if (result == "PlayerWon")
         {
-            if (currentSave.player.WillGetExperience(enemy.level) && currentSave.player.level < maxPlayerLevel)
+            if (currentSave.player.WillGetExperience(enemy.level)/* && currentSave.player.level < maxPlayerLevel*/)
             {
                 var enemyRace = Race.races.Find(x => x.name == enemy.race);
-                currentSave.player.ReceiveExperience((int)((enemy.level - currentSave.player.level + 10) * enemyRace.vitality * (enemyRace.kind == "Elite" || enemyRace.kind == "Rare" ? 1.5 : 1) * 100 * enemy.level));
+                currentSave.player.ReceiveExperience((Coloring.ColorEntityLevel(enemy.level) == "Green" ? 1 : 3) * (enemyRace.kind == "Elite" || enemyRace.kind == "Rare" ? 2 : 1));
             }
             if (area != null && enemy.kind != "Elite")
             {

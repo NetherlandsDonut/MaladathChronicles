@@ -135,7 +135,7 @@ public static class Root
         {
             var temp = CDesktop.screen.transform.position;
             var rounded = new Vector2((float)Math.Round(CDesktop.cameraDestination.x), (float)Math.Round(CDesktop.cameraDestination.y));
-            var newPosition = rounded * 19 + new Vector2(333, -183);
+            var newPosition = rounded * 19 + new Vector2(333, -180);
             Cursor.cursor.transform.position += (Vector3)newPosition - temp;
             CDesktop.screen.transform.position = newPosition;
         }
@@ -601,7 +601,9 @@ public static class Root
         Button,
         Header,
         Padding,
-        RedButton
+        RedButton,
+        Experience,
+        RestedExperience
     }
 
     public enum Anchor

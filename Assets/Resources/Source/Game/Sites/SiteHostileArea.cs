@@ -76,7 +76,7 @@ public class SiteHostileArea : Site
                         SetAnchor(TopLeft);
                         AddRegionGroup();
                         SetRegionGroupWidth(171);
-                        SetRegionGroupHeight(354);
+                        SetRegionGroupHeight(338);
                         AddHeaderRegion(() =>
                         {
                             AddLine(name);

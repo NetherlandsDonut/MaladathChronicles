@@ -1,6 +1,5 @@
 using UnityEngine;
 
-using static Cursor;
 using static GameSettings;
 
 public static class Sound

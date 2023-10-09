@@ -37,39 +37,39 @@
   },
   {
     "name": "Warrior Trainer",
-    "icon": "TradeTrainerClass"
+    "icon": "ClassWarrior"
   },
   {
     "name": "Paladin Trainer",
-    "icon": "TradeTrainerClass"
+    "icon": "ClassPaladin"
   },
   {
     "name": "Shaman Trainer",
-    "icon": "TradeTrainerClass"
+    "icon": "ClassShaman"
   },
   {
     "name": "Mage Trainer",
-    "icon": "TradeTrainerClass"
+    "icon": "ClassMage"
   },
   {
     "name": "Warlock Trainer",
-    "icon": "TradeTrainerClass"
+    "icon": "ClassWarlock"
   },
   {
     "name": "Priest Trainer",
-    "icon": "TradeTrainerClass"
+    "icon": "ClassPriest"
   },
   {
     "name": "Druid Trainer",
-    "icon": "TradeTrainerClass"
+    "icon": "ClassDruid"
   },
   {
     "name": "Rogue Trainer",
-    "icon": "TradeTrainerClass"
+    "icon": "ClassRogue"
   },
   {
     "name": "Hunter Trainer",
-    "icon": "TradeTrainerClass"
+    "icon": "ClassHunter"
   },
   {
     "name": "Leatherworker",
@@ -106,5 +106,9 @@
   {
     "name": "Flight Master",
     "icon": "TradeFlightMaster"
+  },
+  {
+    "name": "Battlemaster",
+    "icon": "TradeBattlemaster"
   }
 ]
