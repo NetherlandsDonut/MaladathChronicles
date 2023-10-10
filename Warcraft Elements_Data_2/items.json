@@ -188197,7 +188197,21 @@
     "price": 0.1296,
     "stats": {
       "stats": {}
-    }
+    },
+    "droppedBy": [
+      "Sul'lithuz Sandcrawler",
+      "Sul'lithuz Abomination",
+      "Redstone Crystalhide",
+      "Ambereye Reaver",
+      "Deatheye",
+      "Glasshide Petrifier",
+      "Redstone Basilisk",
+      "Glasshide Gazer",
+      "Ironjaw Basilisk",
+      "Scale Belly",
+      "Thrashtail Basilisk",
+      "Glasshide Basilisk"
+    ]
   },
   {
     "rarity": "Poor",
@@ -189949,7 +189963,54 @@
     "price": 0.0046,
     "stats": {
       "stats": {}
-    }
+    },
+    "droppedBy": [
+      "Trigore the Lasher",
+      "Tide Crawler",
+      "Sea Crawler",
+      "Young Reef Crawler",
+      "Clattering Crawler",
+      "Surf Crawler",
+      "Pygmy Tide Crawler",
+      "Muck Frenzy",
+      "Lake Frenzy",
+      "Encrusted Tide Crawler",
+      "Shore Crawler",
+      "Corrupted Surf Crawler",
+      "Raging Reef Crawler",
+      "Slimeshell Makrura",
+      "Reef Frenzy",
+      "Pygmy Surf Crawler",
+      "Sand Shark",
+      "Coastal Frenzy",
+      "Gesharahan",
+      "Encrusted Surf Crawler",
+      "Reef Crawler",
+      "Loch Frenzy",
+      "Makrura Clacker",
+      "Makrura Shellhide",
+      "Gahz'ranka",
+      "Makrura Snapclaw",
+      "Makrura Elder",
+      "Bloodtalon Scythemaw",
+      "Bloodtalon Taillasher",
+      "Rot Hide Mongrel",
+      "Razormane Quilboar",
+      "Venomtail Scorpid",
+      "Durotar Tiger",
+      "Thunder Lizard",
+      "Clattering Scorpid",
+      "Dreadmaw Crocolisk",
+      "Armored Scorpid",
+      "Flatland Cougar",
+      "Prairie Wolf",
+      "Hexed Troll",
+      "Dustwind Pillager",
+      "Voodoo Troll",
+      "Lightning Hide",
+      "Razormane Dustrunner",
+      "Razormane Scout"
+    ]
   },
   {
     "rarity": "Common",
@@ -200193,7 +200254,19 @@
     "price": 0.0142,
     "stats": {
       "stats": {}
-    }
+    },
+    "droppedBy": [
+      "Daggerspine Sorceress",
+      "Mirefin Warrior",
+      "Daggerspine Raider",
+      "Mirefin Coastrunner",
+      "Mirefin Oracle",
+      "Daggerspine Siren",
+      "Mirefin Puddlejumper",
+      "Slitherblade Myrmidon",
+      "Torn Fin Tidehunter",
+      "Mirefin Muckdweller"
+    ]
   },
   {
     "rarity": "Common",
@@ -201699,7 +201772,15 @@
     "price": 0.0205,
     "stats": {
       "stats": {}
-    }
+    },
+    "droppedBy": [
+      "Shrike Bat",
+      "Kraul Bat",
+      "Greater Kraul Bat",
+      "Blind Hunter",
+      "Blood Seeker",
+      "Vile Bat"
+    ]
   },
   {
     "rarity": "Common",
@@ -201754,7 +201835,14 @@
     "price": 0.0145,
     "stats": {
       "stats": {}
-    }
+    },
+    "droppedBy": [
+      "Chomper",
+      "Blackened Basilisk",
+      "Scorched Basilisk",
+      "Singed Basilisk",
+      "Saltstone Basilisk"
+    ]
   },
   {
     "rarity": "Common",
@@ -201785,7 +201873,15 @@
     "price": 0.0403,
     "stats": {
       "stats": {}
-    }
+    },
+    "droppedBy": [
+      "Shrike Bat",
+      "Kraul Bat",
+      "Greater Kraul Bat",
+      "Blind Hunter",
+      "Blood Seeker",
+      "Vile Bat"
+    ]
   },
   {
     "rarity": "Poor",
@@ -201796,7 +201892,11 @@
     "price": 0.008,
     "stats": {
       "stats": {}
-    }
+    },
+    "droppedBy": [
+      "Blood Seeker",
+      "Vile Bat"
+    ]
   },
   {
     "rarity": "Poor",
@@ -201807,7 +201907,21 @@
     "price": 0.1013,
     "stats": {
       "stats": {}
-    }
+    },
+    "droppedBy": [
+      "Sul'lithuz Sandcrawler",
+      "Sul'lithuz Abomination",
+      "Redstone Crystalhide",
+      "Ambereye Reaver",
+      "Deatheye",
+      "Glasshide Petrifier",
+      "Redstone Basilisk",
+      "Glasshide Gazer",
+      "Ironjaw Basilisk",
+      "Scale Belly",
+      "Thrashtail Basilisk",
+      "Glasshide Basilisk"
+    ]
   },
   {
     "rarity": "Poor",
@@ -201818,7 +201932,31 @@
     "price": 0.0676,
     "stats": {
       "stats": {}
-    }
+    },
+    "droppedBy": [
+      "Ironeye the Invincible",
+      "Ambereye Basilisk",
+      "Jadespine Basilisk",
+      "Sul'lithuz Broodling",
+      "Ironjaw Basilisk",
+      "Thrashtail Basilisk",
+      "Sul'lithuz Abomination",
+      "Glasshide Basilisk",
+      "Glasshide Gazer",
+      "Redstone Basilisk",
+      "Glasshide Petrifier",
+      "Ambereye Reaver",
+      "Scale Belly",
+      "Deatheye",
+      "Cold Eye Basilisk",
+      "Hulking Gritjaw Basilisk",
+      "Saltstone Gazer",
+      "Hissperak",
+      "Saltstone Crystalhide",
+      "Gritjaw Basilisk",
+      "Crystal Spine Basilisk",
+      "Stone Maw Basilisk"
+    ]
   },
   {
     "rarity": "Poor",
@@ -201829,7 +201967,14 @@
     "price": 0.007,
     "stats": {
       "stats": {}
-    }
+    },
+    "droppedBy": [
+      "Chomper",
+      "Blackened Basilisk",
+      "Scorched Basilisk",
+      "Singed Basilisk",
+      "Saltstone Basilisk"
+    ]
   },
   {
     "rarity": "Poor",
@@ -201840,7 +201985,13 @@
     "price": 0.078,
     "stats": {
       "stats": {}
-    }
+    },
+    "droppedBy": [
+      "Shrike Bat",
+      "Kraul Bat",
+      "Greater Kraul Bat",
+      "Blind Hunter"
+    ]
   },
   {
     "rarity": "Poor",
@@ -201851,7 +202002,14 @@
     "price": 0.083,
     "stats": {
       "stats": {}
-    }
+    },
+    "droppedBy": [
+      "Monstrous Plaguebat",
+      "Noxious Plaguebat",
+      "Plaguebat",
+      "Duskwing",
+      "Dark Screecher"
+    ]
   },
   {
     "rarity": "Poor",
@@ -201862,7 +202020,31 @@
     "price": 0.0168,
     "stats": {
       "stats": {}
-    }
+    },
+    "droppedBy": [
+      "Ashenvale Bear",
+      "Ol' Sooty",
+      "Vicious Gray Bear",
+      "Gray Bear",
+      "Elder Gray Bear",
+      "Elder Ashenvale Bear",
+      "Giant Ashenvale Bear",
+      "Ursangous",
+      "Mangeclaw",
+      "Den Mother",
+      "Big Samras",
+      "Grizzled Thistle Bear",
+      "Ursol'lok",
+      "Black Bear Patriarch",
+      "Rabid Thistle Bear",
+      "Elder Black Bear",
+      "Thistle Bear",
+      "Giant Grizzled Bear",
+      "Ferocious Grizzled Bear",
+      "Grizzled Black Bear",
+      "Bjarn",
+      "Old Vicejaw"
+    ]
   },
   {
     "rarity": "Common",
@@ -201883,7 +202065,14 @@
     "price": 0.1205,
     "stats": {
       "stats": {}
-    }
+    },
+    "droppedBy": [
+      "Monstrous Plaguebat",
+      "Noxious Plaguebat",
+      "Plaguebat",
+      "Duskwing",
+      "Dark Screecher"
+    ]
   },
   {
     "rarity": "Poor",
@@ -201894,7 +202083,25 @@
     "price": 0.19,
     "stats": {
       "stats": {}
-    }
+    },
+    "droppedBy": [
+      "Zaricotl",
+      "Sky Shadow",
+      "Carrion Vulture",
+      "Moontouched Owlbeast",
+      "Crazed Owlbeast",
+      "Ragged Owlbeast",
+      "Raging Owlbeast",
+      "Berserk Owlbeast",
+      "Thunderhead Consort",
+      "Thunderhead Patriarch",
+      "Winterspring Screecher",
+      "Ironbeak Screecher",
+      "Spiteflayer",
+      "Stormpike Owl",
+      "Winterspring Owl",
+      "Olm the Wise"
+    ]
   },
   {
     "rarity": "Poor",
@@ -201905,7 +202112,13 @@
     "price": 0.058,
     "stats": {
       "stats": {}
-    }
+    },
+    "droppedBy": [
+      "Shrike Bat",
+      "Kraul Bat",
+      "Greater Kraul Bat",
+      "Blind Hunter"
+    ]
   },
   {
     "rarity": "Poor",
@@ -201916,7 +202129,24 @@
     "price": 0.0898,
     "stats": {
       "stats": {}
-    }
+    },
+    "droppedBy": [
+      "Ironfur Bear",
+      "Grizzled Ironfur Bear",
+      "Diseased Grizzly",
+      "Ironfur Patriarch",
+      "Diseased Black Bear",
+      "Angerclaw Bear",
+      "Angerclaw Grizzly",
+      "Shardtooth Bear",
+      "Shardtooth Mauler",
+      "Angerclaw Mauler",
+      "Ursius",
+      "Elder Shardtooth",
+      "Old Grizzlegut",
+      "Rabid Shardtooth",
+      "Mongress"
+    ]
   },
   {
     "rarity": "Common",
@@ -201938,7 +202168,37 @@
     "price": 0.0604,
     "stats": {
       "stats": {}
-    }
+    },
+    "droppedBy": [
+      "Frayfeather Skystormer",
+      "Frayfeather Stagwing",
+      "Frayfeather Patriarch",
+      "Ironbeak Hunter",
+      "Ironbeak Owl",
+      "Antilus the Soarer",
+      "Searing Roc",
+      "Frayfeather Hippogryph",
+      "Fire Roc",
+      "Black Slayer",
+      "Greater Firebird",
+      "Roc",
+      "Thunderhead Skystormer",
+      "Antilos",
+      "Elder Mesa Buzzard",
+      "Giant Buzzard",
+      "Dread Flyer",
+      "Dread Ripper",
+      "Buzzard",
+      "Dread Swoop",
+      "Thunderhead Hippogryph",
+      "Starving Buzzard",
+      "Carrion Horror",
+      "Salt Flats Vulture",
+      "Thunderhead Stagwing",
+      "Mesa Buzzard",
+      "Young Mesa Buzzard",
+      "Sharptalon"
+    ]
   },
   {
     "rarity": "Poor",
@@ -201949,7 +202209,24 @@
     "price": 0.0578,
     "stats": {
       "stats": {}
-    }
+    },
+    "droppedBy": [
+      "Ursius",
+      "Diseased Grizzly",
+      "Ironfur Patriarch",
+      "Angerclaw Bear",
+      "Angerclaw Mauler",
+      "Angerclaw Grizzly",
+      "Shardtooth Bear",
+      "Elder Shardtooth",
+      "Shardtooth Mauler",
+      "Diseased Black Bear",
+      "Mongress",
+      "Rabid Shardtooth",
+      "Grizzled Ironfur Bear",
+      "Ironfur Bear",
+      "Old Grizzlegut"
+    ]
   },
   {
     "rarity": "Poor",
@@ -201960,7 +202237,42 @@
     "price": 0.1204,
     "stats": {
       "stats": {}
-    }
+    },
+    "droppedBy": [
+      "Sky Shadow",
+      "Carrion Vulture",
+      "Spiteflayer",
+      "Ironbeak Screecher",
+      "Zaricotl",
+      "Olm the Wise",
+      "Winterspring Owl",
+      "Winterspring Screecher",
+      "Stormpike Owl",
+      "Frayfeather Skystormer",
+      "Savage Owlbeast",
+      "Frayfeather Hippogryph",
+      "Frayfeather Patriarch",
+      "Marauding Owlbeast",
+      "Thunderhead Patriarch",
+      "Antilus the Soarer",
+      "Thunderhead Consort",
+      "Razortalon",
+      "The Hinterlands",
+      "Frayfeather Stagwing",
+      "Primitive Owlbeast",
+      "Vicious Owlbeast",
+      "Searing Roc",
+      "Ironbeak Hunter",
+      "Ironbeak Owl",
+      "Thunderhead Hippogryph",
+      "Thunderhead Stagwing",
+      "Antilos",
+      "Black Slayer",
+      "Fire Roc",
+      "Roc",
+      "Thunderhead Skystormer",
+      "Greater Firebird"
+    ]
   },
   {
     "rarity": "Common",
@@ -201982,7 +202294,16 @@
     "price": 0.1592,
     "stats": {
       "stats": {}
-    }
+    },
+    "droppedBy": [
+      "Bloodseeker Bat",
+      "Monstrous Plaguebat",
+      "Plaguebat",
+      "Noxious Plaguebat",
+      "Duskwing",
+      "Dark Screecher",
+      "Gurubashi Bat Rider"
+    ]
   },
   {
     "rarity": "Poor",
@@ -201993,7 +202314,23 @@
     "price": 0.0328,
     "stats": {
       "stats": {}
-    }
+    },
+    "droppedBy": [
+      "Elder Mesa Buzzard",
+      "Dread Ripper",
+      "Buzzard",
+      "Carrion Horror",
+      "Salt Flats Vulture",
+      "Mesa Buzzard",
+      "Giant Buzzard",
+      "Salt Flats Scavenger",
+      "Vultros",
+      "Starving Buzzard",
+      "Young Mesa Buzzard",
+      "Sharptalon",
+      "Dread Swoop",
+      "Dread Flyer"
+    ]
   },
   {
     "rarity": "Common",
@@ -202048,7 +202385,24 @@
     "price": 0.0503,
     "stats": {
       "stats": {}
-    }
+    },
+    "droppedBy": [
+      "Ironfur Bear",
+      "Grizzled Ironfur Bear",
+      "Ursius",
+      "Diseased Grizzly",
+      "Angerclaw Grizzly",
+      "Shardtooth Bear",
+      "Ironfur Patriarch",
+      "Diseased Black Bear",
+      "Angerclaw Bear",
+      "Angerclaw Mauler",
+      "Elder Shardtooth",
+      "Shardtooth Mauler",
+      "Rabid Shardtooth",
+      "Mongress",
+      "Old Grizzlegut"
+    ]
   },
   {
     "rarity": "Poor",
@@ -202059,7 +202413,22 @@
     "price": 0.1712,
     "stats": {
       "stats": {}
-    }
+    },
+    "droppedBy": [
+      "Zaricotl",
+      "Sky Shadow",
+      "Carrion Vulture",
+      "Crazed Owlbeast",
+      "Ragged Owlbeast",
+      "Raging Owlbeast",
+      "Moontouched Owlbeast",
+      "Berserk Owlbeast",
+      "Thunderhead Consort",
+      "Thunderhead Patriarch",
+      "Ironbeak Screecher",
+      "Spiteflayer",
+      "Olm the Wise"
+    ]
   },
   {
     "rarity": "Common",
@@ -202694,7 +203063,11 @@
     "price": 0.0389,
     "stats": {
       "stats": {}
-    }
+    },
+    "droppedBy": [
+      "Warder Stilgiss",
+      "Verek"
+    ]
   },
   {
     "rarity": "Poor",
@@ -208207,7 +208580,13 @@
     "price": 0.1728,
     "stats": {
       "stats": {}
-    }
+    },
+    "droppedBy": [
+      "Fel Lash",
+      "Death Lash",
+      "Phase Lasher",
+      "Whip Lasher"
+    ]
   },
   {
     "rarity": "Poor",
@@ -208351,7 +208730,13 @@
     "price": 0.307,
     "stats": {
       "stats": {}
-    }
+    },
+    "droppedBy": [
+      "Fel Lash",
+      "Death Lash",
+      "Phase Lasher",
+      "Whip Lasher"
+    ]
   },
   {
     "rarity": "Poor",
@@ -208387,7 +208772,13 @@
     "price": 0.6142,
     "stats": {
       "stats": {}
-    }
+    },
+    "droppedBy": [
+      "Death Lash",
+      "Fel Lash",
+      "Phase Lasher",
+      "Whip Lasher"
+    ]
   },
   {
     "rarity": "Poor",
@@ -208496,7 +208887,14 @@
     "price": 0.4558,
     "stats": {
       "stats": {}
-    }
+    },
+    "droppedBy": [
+      "Residual Monstrosity",
+      "Arcane Aberration",
+      "Mana Remnant",
+      "Arcane Torrent",
+      "Arcane Feedback"
+    ]
   },
   {
     "rarity": "Uncommon",
@@ -208529,7 +208927,14 @@
     "price": 0.2953,
     "stats": {
       "stats": {}
-    }
+    },
+    "droppedBy": [
+      "Residual Monstrosity",
+      "Arcane Aberration",
+      "Mana Remnant",
+      "Arcane Torrent",
+      "Arcane Feedback"
+    ]
   },
   {
     "rarity": "Poor",
@@ -208567,7 +208972,7 @@
   },
   {
     "rarity": "Poor",
-    "name": "A Thoroughly Read Copy of \\",
+    "name": "A Thoroughly Read Copy of \"Nat Pagle's Extreme' Anglin.\"",
     "icon": "itemmiscbook03",
     "type": "Miscellaneous",
     "ilvl": 1,
@@ -210811,7 +211216,17 @@
     "price": 0.083,
     "stats": {
       "stats": {}
-    }
+    },
+    "droppedBy": [
+      "Scorpid Dunestalker",
+      "Scorpid Duneburrower",
+      "Scorpok Stinger",
+      "Scorpid Hunter",
+      "Venomtip Scorpid",
+      "Scorpid Tail Lasher",
+      "Deep Stinger",
+      "Deadly Cleft Scorpid"
+    ]
   },
   {
     "rarity": "Uncommon",
@@ -210848,7 +211263,17 @@
     "price": 0.083,
     "stats": {
       "stats": {}
-    }
+    },
+    "droppedBy": [
+      "Scorpid Duneburrower",
+      "Scorpid Hunter",
+      "Scorpid Tail Lasher",
+      "Scorpid Dunestalker",
+      "Deadly Cleft Scorpid",
+      "Venomtip Scorpid",
+      "Scorpok Stinger",
+      "Deep Stinger"
+    ]
   },
   {
     "rarity": "Uncommon",
@@ -210872,7 +211297,20 @@
     "price": 0.078,
     "stats": {
       "stats": {}
-    }
+    },
+    "droppedBy": [
+      "Venomlash Scorpid",
+      "Vile Sting",
+      "Scorpashi Venomlash",
+      "Scorpid Hunter",
+      "Scorpid Tail Lasher",
+      "Scorpashi Snapper",
+      "Scorpashi Lasher",
+      "Cleft Scorpid",
+      "Scorpid Terror",
+      "Scorpid Reaver",
+      "Deadly Cleft Scorpid"
+    ]
   },
   {
     "rarity": "Poor",
@@ -210883,7 +211321,20 @@
     "price": 0.14,
     "stats": {
       "stats": {}
-    }
+    },
+    "droppedBy": [
+      "Deathlash Scorpid",
+      "Spire Scorpid",
+      "Stonelash Scorpid",
+      "Clack the Reaver",
+      "Firetail Scorpid",
+      "Krellack",
+      "Stonelash Flayer",
+      "Stonelash Pincer",
+      "Venomtip Scorpid",
+      "Scorpok Stinger",
+      "Deep Stinger"
+    ]
   },
   {
     "rarity": "Rare",
@@ -210926,7 +211377,17 @@
     "price": 0.058,
     "stats": {
       "stats": {}
-    }
+    },
+    "droppedBy": [
+      "Venomlash Scorpid",
+      "Vile Sting",
+      "Scorpashi Lasher",
+      "Scorpashi Snapper",
+      "Scorpid Terror",
+      "Scorpashi Venomlash",
+      "Scorpid Reaver",
+      "Cleft Scorpid"
+    ]
   },
   {
     "rarity": "Common",
@@ -210977,7 +211438,21 @@
     "price": 0.1658,
     "stats": {
       "stats": {}
-    }
+    },
+    "droppedBy": [
+      "Devilsaur",
+      "Ironhide Devilsaur",
+      "Tyrant Devilsaur",
+      "Lar'korwi",
+      "Razzashi Raptor",
+      "Ravasaur",
+      "King Mosh",
+      "Ravasaur Runner",
+      "Venomhide Ravasaur",
+      "Ravasaur Hunter",
+      "Lar'korwi Mate",
+      "Ravasaur Matriarch"
+    ]
   },
   {
     "rarity": "Common",
@@ -211090,7 +211565,14 @@
     "price": 0.3635,
     "stats": {
       "stats": {}
-    }
+    },
+    "droppedBy": [
+      "Ironhide Devilsaur",
+      "Razzashi Raptor",
+      "Devilsaur",
+      "Tyrant Devilsaur",
+      "Lar'korwi"
+    ]
   },
   {
     "rarity": "Common",
@@ -211157,7 +211639,10 @@
     "price": 0.158,
     "stats": {
       "stats": {}
-    }
+    },
+    "droppedBy": [
+      "Timbermaw Shaman"
+    ]
   },
   {
     "rarity": "Common",
@@ -212494,7 +212979,38 @@
     "price": 0.0312,
     "stats": {
       "stats": {}
-    }
+    },
+    "droppedBy": [
+      "The Ongar",
+      "The Reak",
+      "Jade Sludge",
+      "Fungal Ooze",
+      "Jade Ooze",
+      "Emerald Ooze",
+      "Large Vile Slime",
+      "The Rot",
+      "Green Sludge",
+      "Devouring Ooze",
+      "Vile Slime",
+      "Living Decay",
+      "Saturated Ooze",
+      "Rotting Sludge",
+      "Creeping Sludge",
+      "Noxious Slime",
+      "Vile Ooze",
+      "Cloned Ooze",
+      "Bubbling Swamp Ooze",
+      "Cursed Ooze",
+      "Primal Ooze",
+      "Forest Ooze",
+      "Muculent Ooze",
+      "Acidic Swamp Ooze",
+      "Glutinous Ooze",
+      "Tainted Ooze",
+      "Corrosive Swamp Ooze",
+      "Swamp Ooze",
+      "Plague Slime"
+    ]
   },
   {
     "rarity": "Common",
@@ -212515,7 +213031,20 @@
     "price": 0.045,
     "stats": {
       "stats": {}
-    }
+    },
+    "droppedBy": [
+      "The Ongar",
+      "Devouring Ooze",
+      "Vile Slime",
+      "Living Decay",
+      "Rotting Sludge",
+      "Large Vile Slime",
+      "Cloned Ooze",
+      "Vile Ooze",
+      "Tainted Ooze",
+      "Glutinous Ooze",
+      "Primal Ooze"
+    ]
   },
   {
     "rarity": "Uncommon",
@@ -213575,7 +214104,20 @@
     "price": 0.25,
     "stats": {
       "stats": {}
-    }
+    },
+    "droppedBy": [
+      "Hive'Zara Wasp",
+      "Hive'Zara Collector",
+      "Hive'Zara Stinger",
+      "Hive'Zara Drone",
+      "Hive'Zara Soldier",
+      "Hive'Zara Sandstalker",
+      "Vekniss Guardian",
+      "Vekniss Wasp",
+      "Vekniss Warrior",
+      "Vekniss Stinger",
+      "Vekniss Soldier"
+    ]
   },
   {
     "rarity": "Common",
