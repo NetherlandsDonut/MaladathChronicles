@@ -71,6 +71,7 @@ public class Board
     //THERE CAN BE ONLY ONE AT A TIME THANKS TO STATIC REF
     public static Board board;
 
+    public CombatResults results;
     public int bonusTurnStreak;
     public int[,] field;
     public Window window;
@@ -128,12 +129,14 @@ public class Board
     {
         cursorEnemy.fadeOut = true;
         CloseDesktop("Game");
-        if (result == "PlayerWon")
+        results = new CombatResults(result);
+        if (result == "Won")
         {
-            if (currentSave.player.WillGetExperience(enemy.level)/* && currentSave.player.level < maxPlayerLevel*/)
+            if (currentSave.player.WillGetExperience(enemy.level) && currentSave.player.level < maxPlayerLevel)
             {
                 var enemyRace = Race.races.Find(x => x.name == enemy.race);
-                currentSave.player.ReceiveExperience((Coloring.ColorEntityLevel(enemy.level) == "Green" ? 1 : 3) * (enemyRace.kind == "Elite" || enemyRace.kind == "Rare" ? 2 : 1));
+                results.experience = (Coloring.ColorEntityLevel(enemy.level) == "Green" ? 1 : 3) * (enemyRace.kind == "Elite" || enemyRace.kind == "Rare" ? 2 : 1);
+                //currentSave.player.ReceiveExperience((Coloring.ColorEntityLevel(enemy.level) == "Green" ? 1 : 3) * (enemyRace.kind == "Elite" || enemyRace.kind == "Rare" ? 2 : 1));
             }
             if (area != null && enemy.kind != "Elite")
             {
@@ -172,8 +175,9 @@ public class Board
                 Item.itemDrop = drop[random.Next(drop.Count)];
                 SpawnWindowBlueprint("ItemDrop");
             }
+            SpawnDesktopBlueprint("CombatResults");
         }
-        else if (result == "PlayerLost")
+        else if (result == "Lost")
         {
             currentSave.playerDead = true;
             PlaySound("Death");
@@ -181,7 +185,6 @@ public class Board
             if (Realm.realms.Find(x => x.name == settings.selectedRealm).hardcore)
             {
                 currentSave.deathInfo = new();
-                SpawnDesktopBlueprint("GameOver");
             }
             else
             {
@@ -193,8 +196,9 @@ public class Board
                 SpawnTransition();
                 SpawnTransition();
             }
+            SpawnDesktopBlueprint("CombatResults");
         }
-        else if (result == "PlayerFled")
+        else if (result == "Fled")
         {
             PlaySound("RunAwayBitch");
             if (area != null && area.instancePart)
@@ -263,11 +267,11 @@ public class Board
 
         //IF PLAYER DIED..
         if (player.health <= 0)
-            EndCombat("PlayerLost");
+            EndCombat("Lost");
 
         //IF ENEMY DIED..
         else if (enemy.health <= 0)
-            EndCombat("PlayerWon");
+            EndCombat("Won");
 
         //IF IT'S ENEMY'S TURN..
         else if (!playerTurn)

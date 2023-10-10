@@ -134649,7 +134649,25 @@
     "price": 0.0125,
     "stats": {
       "stats": {}
-    }
+    },
+    "droppedBy": [
+      "Plague Spreader",
+      "Skeletal Raider",
+      "Skeletal Fiend",
+      "Cursed Sailor",
+      "Skeletal Warrior",
+      "Skeletal Horror",
+      "Lesser Felguard",
+      "Crimson Ooze",
+      "Twilight Acolyte",
+      "Fetid Corpse",
+      "Flesh Eater",
+      "Malformed Defias Drone",
+      "Twilight Elementalist",
+      "Bone Chewer",
+      "Brain Eater",
+      "Rotting Slime"
+    ]
   },
   {
     "rarity": "Common",
@@ -191006,7 +191024,36 @@
     "price": 0.0096,
     "stats": {
       "stats": {}
-    }
+    },
+    "droppedBy": [
+      "Strider Clutchmother",
+      "Giant Foreststrider",
+      "Salt Flats Scavenger",
+      "Ornery Plainstrider",
+      "Bloodfeather Matriarch",
+      "Witchwing Harpy",
+      "Witchwing Roguefeather",
+      "Foreststrider",
+      "Vultros",
+      "Greater Fleshripper",
+      "Foreststrider Fledgling",
+      "Lunaclaw",
+      "Raging Moonkin",
+      "Moonkin Oracle",
+      "Moonkin",
+      "Young Moonkin",
+      "Fleeting Plainstrider",
+      "Witchwing Windcaller",
+      "Witchwing Ambusher",
+      "Greater Plainstrider",
+      "Witchwing Slayer",
+      "Mountain Buzzard",
+      "Lord Condar",
+      "Dire Condor",
+      "Fleshripper",
+      "Serena Bloodfeather",
+      "Sister Rathtalon"
+    ]
   },
   {
     "rarity": "Common",
@@ -191039,7 +191086,22 @@
     "price": 0.0118,
     "stats": {
       "stats": {}
-    }
+    },
+    "droppedBy": [
+      "Swiftmane",
+      "Mosshoof Runner",
+      "Mosshoof Stag",
+      "Shleipnarr",
+      "Mosshoof Courser",
+      "Alterac Ram",
+      "Zhevra Runner",
+      "Barrens Giraffe",
+      "Zhevra Charger",
+      "Wandering Barrens Giraffe",
+      "Zhevra Courser",
+      "Elder Shadowhorn Stag",
+      "Stabled Alterac Ram"
+    ]
   },
   {
     "rarity": "Poor",
@@ -191050,7 +191112,24 @@
     "price": 0.025,
     "stats": {
       "stats": {}
-    }
+    },
+    "droppedBy": [
+      "Syndicate Thief",
+      "Syndicate Footpad",
+      "Syndicate Assassin",
+      "Syndicate Sentry",
+      "Syndicate Enforcer",
+      "Syndicate Saboteur",
+      "Syndicate Highwayman",
+      "Syndicate Mercenary",
+      "Syndicate Spy",
+      "Syndicate Wizard",
+      "Syndicate Pathstalker",
+      "Syndicate Prowler",
+      "Syndicate Conjuror",
+      "Syndicate Magus",
+      "Gravis Slipknot"
+    ]
   },
   {
     "rarity": "Common",
@@ -191094,7 +191173,16 @@
     "price": 0.0287,
     "stats": {
       "stats": {}
-    }
+    },
+    "droppedBy": [
+      "Brontus",
+      "Dying Kodo",
+      "Ancient Kodo",
+      "Wooly Kodo",
+      "Aged Kodo",
+      "Greater Barrens Kodo",
+      "Lakota'mani"
+    ]
   },
   {
     "rarity": "Common",
@@ -191116,7 +191204,26 @@
     "price": 0.0193,
     "stats": {
       "stats": {}
-    }
+    },
+    "droppedBy": [
+      "Swiftmane",
+      "Mosshoof Runner",
+      "Mosshoof Stag",
+      "Mosshoof Courser",
+      "Alterac Ram",
+      "Barrens Giraffe",
+      "Stabled Alterac Ram",
+      "Zhevra Courser",
+      "Wandering Barrens Giraffe",
+      "Zhevra Charger",
+      "Elder Shadowhorn Stag",
+      "Shleipnarr",
+      "Shadow Charger",
+      "Fel Steed",
+      "Shadowhorn Stag",
+      "Great Courser",
+      "Antlered Courser"
+    ]
   },
   {
     "rarity": "Common",
@@ -191170,7 +191277,18 @@
     "price": 0.0217,
     "stats": {
       "stats": {}
-    }
+    },
+    "droppedBy": [
+      "Highperch Patriarch",
+      "Sorrow Wing",
+      "Needles Cougar",
+      "Highperch Wyvern",
+      "Highperch Consort",
+      "Crag Stalker",
+      "Feral Mountain Lion",
+      "Enraged Panther",
+      "Shadumbra"
+    ]
   },
   {
     "rarity": "Common",
@@ -191254,7 +191372,39 @@
     "price": 0.0101,
     "stats": {
       "stats": {}
-    }
+    },
+    "droppedBy": [
+      "Witchwing Windcaller",
+      "Witchwing Ambusher",
+      "Witchwing Slayer",
+      "Sister Rathtalon",
+      "Serena Bloodfeather",
+      "Strider Clutchmother",
+      "Vultros",
+      "Giant Foreststrider",
+      "Ornery Plainstrider",
+      "Salt Flats Scavenger",
+      "Foreststrider",
+      "Foreststrider Fledgling",
+      "Greater Fleshripper",
+      "Bloodfury Harpy",
+      "Moonkin",
+      "Bloodfury Slayer",
+      "Young Moonkin",
+      "Fleeting Plainstrider",
+      "Bloodfury Ambusher",
+      "Bloodfury Windcaller",
+      "Bloodfury Roguefeather",
+      "Bloodfury Storm Witch",
+      "Raging Moonkin",
+      "Moonkin Oracle",
+      "Lunaclaw",
+      "Greater Plainstrider",
+      "Dire Condor",
+      "Fleshripper",
+      "Mountain Buzzard",
+      "Lord Condar"
+    ]
   },
   {
     "rarity": "Poor",
@@ -191265,7 +191415,26 @@
     "price": 0.0177,
     "stats": {
       "stats": {}
-    }
+    },
+    "droppedBy": [
+      "Humar the Pridelord",
+      "Pridewing Patriarch",
+      "Pridewing Skyhunter",
+      "Pridewing Consort",
+      "Twilight Runner",
+      "Pridewing Wyvern",
+      "Starving Mountain Lion",
+      "Young Pridewing",
+      "Highperch Patriarch",
+      "Sorrow Wing",
+      "Highperch Wyvern",
+      "Highperch Consort",
+      "Needles Cougar",
+      "Crag Stalker",
+      "Feral Mountain Lion",
+      "Shadumbra",
+      "Enraged Panther"
+    ]
   },
   {
     "rarity": "Common",
@@ -191316,7 +191485,23 @@
     "price": 0.0142,
     "stats": {
       "stats": {}
-    }
+    },
+    "droppedBy": [
+      "Moonstalker Matriarch",
+      "Savannah Matriarch",
+      "Moonstalker Sire",
+      "Humar the Pridelord",
+      "Echeyakee",
+      "Ghost Saber",
+      "Pridewing Patriarch",
+      "Stonetalon Mountains",
+      "Pridewing Consort",
+      "Pridewing Skyhunter",
+      "Twilight Runner",
+      "Starving Mountain Lion",
+      "Pridewing Wyvern",
+      "Young Pridewing"
+    ]
   },
   {
     "rarity": "Common",
@@ -191397,7 +191582,7 @@
     "icon": "itemfabricwool01",
     "type": "Miscellaneous",
     "ilvl": 1,
-    "price": 0.0001,
+    "price": 0.0230,
     "stats": {
       "stats": {}
     },
@@ -191467,7 +191652,19 @@
     "price": 0.0218,
     "stats": {
       "stats": {}
-    }
+    },
+    "droppedBy": [
+      "Silithid Protector",
+      "Silithid Grub",
+      "Silithid Swarmer",
+      "Silithid Creeper",
+      "Silithid Harvester",
+      "Silithid Flayer",
+      "Greater Silithid Flayer",
+      "Lesser Silithid Flayer",
+      "Faltering Silithid Flayer",
+      "Minor Silithid Flayer"
+    ]
   },
   {
     "rarity": "Common",
@@ -191511,7 +191708,19 @@
     "price": 0.0095,
     "stats": {
       "stats": {}
-    }
+    },
+    "droppedBy": [
+      "Silithid Protector",
+      "Silithid Grub",
+      "Silithid Swarmer",
+      "Silithid Creeper",
+      "Silithid Harvester",
+      "Silithid Flayer",
+      "Greater Silithid Flayer",
+      "Lesser Silithid Flayer",
+      "Faltering Silithid Flayer",
+      "Minor Silithid Flayer"
+    ]
   },
   {
     "rarity": "Common",
@@ -191638,7 +191847,16 @@
       "stats": {}
     },
     "droppedBy": [
-      "Stonetusk Boar"
+      "Murloc Lurker",
+      "Murloc",
+      "Murloc Forager",
+      "Vile Fin Minor Oracle",
+      "Makrura Clacker",
+      "Murloc Streamrunner",
+      "Makrura Shellhide",
+      "Vile Fin Muckdweller",
+      "Vile Fin Puddlejumper",
+      "Wailing Ancestor"
     ]
   },
   {
@@ -191670,7 +191888,12 @@
     "price": 0.0037,
     "stats": {
       "stats": {}
-    }
+    },
+    "droppedBy": [
+      "Dark Strand Cultist",
+      "Rot Hide Plague Weaver",
+      "Evolving Ectoplasm"
+    ]
   },
   {
     "rarity": "Poor",
@@ -191681,7 +191904,13 @@
     "price": 0.002,
     "stats": {
       "stats": {}
-    }
+    },
+    "droppedBy": [
+      "Scarlet Zealot",
+      "Bael'dun Digger",
+      "Scarlet Warrior",
+      "Defias Thug"
+    ]
   },
   {
     "rarity": "Poor",
@@ -191692,7 +191921,40 @@
     "price": 0.0095,
     "stats": {
       "stats": {}
-    }
+    },
+    "droppedBy": [
+      "Razorfen Earthbreaker",
+      "Razorfen Kraul",
+      "Felmusk Felsworn",
+      "Death's Head Sage",
+      "Irradiated Invader",
+      "Foulweald Totemic",
+      "Quilguard Champion",
+      "Galak Mauler",
+      "Mudsnout Gnoll",
+      "Razorfen Quilguard",
+      "Thistlefur Pathfinder",
+      "Foulweald Shaman",
+      "Mudsnout Shaman",
+      "Galak Scout",
+      "Galak Windchaser",
+      "Galak Wrangler",
+      "Razormane Seer",
+      "Bleakheart Hellcaller",
+      "Bleakheart Satyr",
+      "Bloodfury Harpy",
+      "Foulweald Warrior",
+      "Kolkar Centaur",
+      "Razormane Warfrenzy",
+      "Screeching Roguefeather",
+      "Thistlefur Shaman",
+      "Thistlefur Ursa",
+      "Galak Marauder",
+      "Mosshide Brute",
+      "Caverndeep Ambusher",
+      "Mosshide Fenrunner",
+      "Razormane Stalker"
+    ]
   },
   {
     "rarity": "Poor",
@@ -191703,7 +191965,15 @@
     "price": 0.0022,
     "stats": {
       "stats": {}
-    }
+    },
+    "droppedBy": [
+      "Rockjaw Bonesnapper",
+      "Burning Blade Apprentice",
+      "Burning Blade Fanatic",
+      "Frostmane Novice",
+      "Young Wendigo",
+      "Frostmane Troll Whelp"
+    ]
   },
   {
     "rarity": "Common",
@@ -191724,7 +191994,14 @@
     "ilvl": 1,
     "stats": {
       "stats": {}
-    }
+    },
+    "droppedBy": [
+      "Pygmy Tide Crawler",
+      "Young Reef Crawler",
+      "Tide Crawler",
+      "Raging Reef Crawler",
+      "Reef Crawler"
+    ]
   },
   {
     "rarity": "Poor",
@@ -191735,7 +192012,10 @@
     "price": 0.0087,
     "stats": {
       "stats": {}
-    }
+    },
+    "droppedBy": [
+      "Klaven Mortwake"
+    ]
   },
   {
     "rarity": "Poor",
@@ -191746,7 +192026,18 @@
     "price": 0.0057,
     "stats": {
       "stats": {}
-    }
+    },
+    "droppedBy": [
+      "Daggerspine Screamer",
+      "Bluegill Warrior",
+      "Torn Fin Oracle",
+      "Blackfathom Myrmidon",
+      "Blackfathom Sea Witch",
+      "Daggerspine Shorehunter",
+      "Torn Fin Coastrunner",
+      "Murkshallow Snapclaw",
+      "Bluegill Raider"
+    ]
   },
   {
     "rarity": "Common",
@@ -191777,7 +192068,18 @@
     "price": 0.0048,
     "stats": {
       "stats": {}
-    }
+    },
+    "droppedBy": [
+      "Stormscale Wave Rider",
+      "Saltspittle Muckdweller",
+      "Saltspittle Oracle",
+      "Wrathtail Wave Rider",
+      "Bluegill Murloc",
+      "Murloc Flesheater",
+      "Murloc Shorestriker",
+      "Murloc Coastrunner",
+      "Murloc Warrior"
+    ]
   },
   {
     "rarity": "Common",
@@ -191808,7 +192110,22 @@
     "price": 0.0048,
     "stats": {
       "stats": {}
-    }
+    },
+    "droppedBy": [
+      "Dalaran Mage",
+      "Defias Pirate",
+      "Theramore Marine",
+      "Dark Strand Fanatic",
+      "Dalaran Apprentice",
+      "Defias Looter",
+      "Defias Trapper",
+      "Druid of the Fang",
+      "Defias Miner",
+      "Defias Pillager",
+      "Defias Strip Miner",
+      "Defias Highwayman",
+      "Defias Pathstalker"
+    ]
   },
   {
     "rarity": "Poor",
@@ -191819,7 +192136,15 @@
     "price": 0.0018,
     "stats": {
       "stats": {}
-    }
+    },
+    "droppedBy": [
+      "Ravaged Corpse",
+      "Rattlecage Soldier",
+      "Rot Hide Graverobber",
+      "Rot Hide Gnoll",
+      "Rotting Dead",
+      "Bleeding Horror"
+    ]
   },
   {
     "rarity": "Poor",
@@ -191830,7 +192155,23 @@
     "price": 0.0027,
     "stats": {
       "stats": {}
-    }
+    },
+    "droppedBy": [
+      "Mangeclaw",
+      "Razormane Battleguard",
+      "Tunnel Rat Vermin",
+      "Gnarlpine Shaman",
+      "Kobold Tunneler",
+      "Dustwind Savage",
+      "Elder Crag Boar",
+      "Mangy Wolf",
+      "Murloc Lurker",
+      "Scorpid Worker",
+      "Dustwind Harpy",
+      "Dustwind Pillager",
+      "Kobold Laborer",
+      "Kolkar Drudge"
+    ]
   },
   {
     "rarity": "Common",
@@ -191874,7 +192215,25 @@
     "price": 0.0066,
     "stats": {
       "stats": {}
-    }
+    },
+    "droppedBy": [
+      "Plague Spreader",
+      "Skeletal Raider",
+      "Skeletal Fiend",
+      "Cursed Sailor",
+      "Skeletal Warrior",
+      "Skeletal Horror",
+      "Lesser Felguard",
+      "Crimson Ooze",
+      "Twilight Acolyte",
+      "Fetid Corpse",
+      "Flesh Eater",
+      "Malformed Defias Drone",
+      "Twilight Elementalist",
+      "Bone Chewer",
+      "Brain Eater",
+      "Rotting Slime"
+    ]
   },
   {
     "rarity": "Common",

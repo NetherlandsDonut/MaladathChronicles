@@ -522,7 +522,7 @@ public class Blueprint
                     AddLine(Board.board.player.name, "Black");
                     AddSmallButton("MenuFlee", (h) =>
                     {
-                        Board.board.EndCombat("PlayerFled");
+                        Board.board.EndCombat("Fled");
                     });
                 },
                 (h) =>
@@ -1904,6 +1904,38 @@ public class Blueprint
                 foreach (var foo in currentSave.player.Stats())
                     if (!foo.Key.Contains("Mastery"))
                         AddLine(foo.Value + "", foo.Value > currentSave.player.stats.stats[foo.Key] ? "Uncommon" : (foo.Value < currentSave.player.stats.stats[foo.Key] ? "DangerousRed" : "Gray"));
+            });
+        }),
+        new("CombatResults", () => {
+            SetAnchor(Center);
+            AddRegionGroup();
+            SetRegionGroupWidth(200);
+            SetRegionGroupHeight(150);
+            AddHeaderRegion(() =>
+            {
+                AddLine("Combat Results", "", "Center");
+            });
+            AddPaddingRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+            });
+            AddButtonRegion(() =>
+            {
+                if (Board.board.results.result == "Won")
+                {
+                    AddLine("OK", "", "Center");
+                }
+                else if (Realm.realms.Find(x => x.name == settings.selectedRealm).hardcore)
+                {
+                    SetRegionBackground(RegionBackgroundType.RedButton);
+                    AddLine("Game Over", "", "Center");
+                }
+                else
+                    AddLine("Release Spirit", "", "Center");
+            },
+            (h) =>
+            {
+                CloseDesktop("CombatResults");
             });
         }),
         new("PlayerResources", () => {
@@ -6753,6 +6785,12 @@ public class Blueprint
                 }
             });
         }),
+        new("CombatResults", () =>
+        {
+            SetDesktopBackground(Board.board.area.Background());
+            SpawnWindowBlueprint("CombatResults");
+            SpawnWindowBlueprint("ExperienceBar");
+        }),
         new("Town", () =>
         {
             SetDesktopBackground(town.Background());
@@ -7068,22 +7106,6 @@ public class Blueprint
                     PlaySound("DesktopMenuClose");
                     CloseDesktop("GameMenu");
                 }
-            });
-        }),
-        new("GameOver", () =>
-        {
-            SetDesktopBackground("Stone");
-            SpawnWindowBlueprint("GameOver");
-            AddHotkey(Escape, () =>
-            {
-                CloseSave();
-                SaveGames();
-                saves[settings.selectedRealm].Remove(currentSave);
-                //graveyard.Add(currentSave);
-                CloseDesktop("GameOver");
-                CloseDesktop("Map");
-                CloseDesktop("TitleScreen");
-                SpawnDesktopBlueprint("TitleScreen");
             });
         }),
 

@@ -394,7 +394,7 @@ public class Item
             });
         if (item.set != null)
         {
-            var set = ItemSet.itemSets.Find(x => x.name == item.set);
+            var set = itemSets.Find(x => x.name == item.set);
             if (set != null)
             {
                 AddHeaderRegion(() =>
@@ -423,7 +423,8 @@ public class Item
                 AddLine("Required level: ", "DarkGray");
                 AddText(item.lvl + "", ColorItemRequiredLevel(item.lvl));
             });
-        PrintPriceRegion(item.price);
+        if (item.price > 0)
+            PrintPriceRegion(item.price);
     }
 
     public static Item GetItem(string name) => items.Find(x => x.name == name);

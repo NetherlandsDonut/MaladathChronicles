@@ -387,7 +387,6 @@ public static class Root
     public static void PrintPriceRegion(double price)
     {
         int width = CDesktop.LBWindow.LBRegionGroup.setWidth;
-        if (price <= 0) return;
         var lacking = 0;
         if ((int)price > 0)
             Foo("ItemCoinsGold", (int)price + "", "Gold");
@@ -395,7 +394,7 @@ public static class Root
         if ((int)(price * 100 % 100) > 0)
             Foo("ItemCoinsSilver", (int)(price * 100 % 100) + "", "Silver");
         else lacking++;
-        if ((int)(price * 10000 % 100) > 0)
+        if ((int)(price * 10000 % 100) > 0 || price == 0)
             Foo("ItemCoinsCopper", (int)(price * 10000 % 100) + "", "Copper");
         else lacking++;
         AddRegionGroup();
