@@ -6,6 +6,7 @@ public class CombatResults
     {
         this.result = result;
         items = new();
+        exclusiveItems = new();
     }
 
     public string result;
@@ -15,4 +16,6 @@ public class CombatResults
     public double money;
 
     public List<Item> items;
+
+    public List<string> exclusiveItems;
 }

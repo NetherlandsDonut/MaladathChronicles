@@ -54,6 +54,8 @@ public static class Root
     public static Desktop CDesktop, LBDesktop;
     public static List<Dictionary<string, string>> triggersCopy, effectsCopy;
 
+    public static bool Roll(double chance) => random.Next(0, 100000) < chance * 1000;
+
     public static void SetMouseOver(Highlightable highlightable)
     {
         mouseOver = highlightable;

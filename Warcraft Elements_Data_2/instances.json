@@ -209,7 +209,21 @@
     "name": "Shadowfang Keep",
     "zone": "Silverpine Forest",
     "type": "Dungeon",
-    "ambience": "AmbienceShadowfangKeep"
+    "ambience": "AmbienceShadowfangKeep",
+    "zoneDrop": [
+      "Gloomshroud Armor",
+      "Duskbringer",
+      "Necrology Robes",
+      "Shadowfang",
+      "Assassin's Blade",
+      "Night Reaver",
+      "Guillotine Axe",
+      "Witching Stave",
+      "Mindthrust Bracers",
+      "Face Smasher",
+      "Black Malice",
+      "Eerie Stable Lantern"
+    ]
   },
   {
     "complexPart": true,
@@ -308,7 +322,46 @@
     "name": "Scholomance",
     "zone": "Western Plaguelands",
     "type": "Dungeon",
-    "ambience": "AmbienceSpooky"
+    "ambience": "AmbienceSpooky",
+    "zoneDrop": [
+      "Totem of Sustaining",
+      "Libram of Divinity",
+      "Bonebrace Hauberk",
+      "Bloodmail Hauberk",
+      "Bloodmail Legguards",
+      "Bloodmail Belt",
+      "Bloodmail Gauntlets",
+      "Bloodmail Boots",
+      "Deathbone Girdle",
+      "Deathbone Sabatons",
+      "Deathbone Gauntlets",
+      "Deathbone Legguards",
+      "Deathbone Chestplate",
+      "Necropile Robe",
+      "Necropile Cuffs",
+      "Necropile Boots",
+      "Necropile Leggings",
+      "Necropile Mantle",
+      "Cadaverous Belt",
+      "Cadaverous Armor",
+      "Cadaverous Leggings",
+      "Cadaverous Gloves",
+      "Cadaverous Walkers",
+      "Ancient Bone Bow",
+      "Burial Shawl",
+      "Ghoul Skin Leggings",
+      "Hammer of the Vesper",
+      "Dimly Opalescent Ring",
+      "Belt of the Ordained",
+      "Magister's Gloves",
+      "Dreadmist Wraps",
+      "Innervating Band",
+      "Malefic Bracers",
+      "Lightforge Bracers",
+      "Icy Tomb Spaulders",
+      "Tattered Leather Hood",
+      "Coldstone Slippers"
+    ]
   },
   {
     "description": [],
@@ -426,7 +479,33 @@
     "name": "Stratholme",
     "zone": "Eastern Plaguelands",
     "type": "Dungeon",
-    "ambience": "AmbienceStratholme"
+    "ambience": "AmbienceStratholme",
+    "zoneDrop": [
+      "Star of Mystaria",
+      "Demonshear",
+      "Wyrmtongue Shoulders",
+      "Crown of Tyranny",
+      "Gift of the Elven Magi",
+      "Fire Striders",
+      "Hammer of the Grand Crusader",
+      "Grand Crusader's Helm",
+      "Shroud of the Nathrezim",
+      "Flamescarred Girdle",
+      "Lavawalker Greaves",
+      "Pattern: Truefaith Vestments",
+      "Plaguehound Leggings",
+      "Band of Mending",
+      "Morlune's Bracer",
+      "Recipe: Flask of Distilled Wisdom",
+      "Stratholme Militia Shoulderguard",
+      "Lightforge Boots",
+      "Gracious Cape",
+      "Juno's Shadow",
+      "Plaguebat Fur Gloves",
+      "Devout Bracers",
+      "Sacred Cloth Leggings",
+      "Frayed Abomination Stitching"
+    ]
   },
   {
     "description": [],
@@ -502,7 +581,22 @@
     "name": "Uldaman",
     "zone": "Badlands",
     "type": "Dungeon",
-    "ambience": "AmbienceUldaman"
+    "ambience": "AmbienceUldaman",
+    "zoneDrop": [
+      "The Jackhammer",
+      "Spaulders of a Lost Age",
+      "Digmaster 5000",
+      "Pendulum of Doom",
+      "Miner's Hat of the Deep",
+      "Shadowforge Bushmaster",
+      "Papal Fez",
+      "Stonevault Bonebreaker",
+      "Skullplate Bracers",
+      "Ginn-su Sword",
+      "Monolithic Bow",
+      "Obsidian Cleaver",
+      "Annealed Blade"
+    ]
   },
   {
     "description": [],
@@ -534,7 +628,18 @@
     "name": "Razorfen Downs",
     "zone": "The Barrens",
     "type": "Dungeon",
-    "ambience": "AmbienceRazorfenKraul"
+    "ambience": "AmbienceRazorfenKraul",
+    "zoneDrop": [
+      "Corpseshroud",
+      "Death's Head Vestment",
+      "Manslayer",
+      "Freezing Shard",
+      "Quillward Harness",
+      "Quillshooter",
+      "Thoughtcast Boots",
+      "Ebony Boneclub",
+      "Boneslasher"
+    ]
   },
   {
     "description": [],
@@ -566,7 +671,19 @@
     "name": "Razorfen Kraul",
     "zone": "The Barrens",
     "type": "Dungeon",
-    "ambience": "AmbienceRazorfenKraul"
+    "ambience": "AmbienceRazorfenKraul",
+    "zoneDrop": [
+      "Vendetta",
+      "Avenger's Armor",
+      "Mantle of Thieves",
+      "Pugilist Bracers",
+      "Slaghammer",
+      "Plains Ring",
+      "Sword of Decay",
+      "Pysan's Old Greatsword",
+      "Wolfclaw Gloves",
+      "Staff of the Shade"
+    ]
   },
   {
     "description": [],
@@ -602,7 +719,13 @@
     "name": "The Deadmines",
     "zone": "Westfall",
     "type": "Dungeon",
-    "ambience": "AmbienceDeadmines"
+    "ambience": "AmbienceDeadmines",
+    "zoneDrop": [
+      "Blackwater Cutlass",
+      "Silk-threaded Trousers",
+      "Blackened Defias Leggings",
+      "Blackened Defias Gloves"
+    ]
   },
   {
     "description": [],
@@ -642,7 +765,21 @@
     "name": "Blackfathom Deeps",
     "zone": "Ashenvale",
     "type": "Dungeon",
-    "ambience": "AmbienceBlackfathom"
+    "ambience": "AmbienceBlackfathom",
+    "zoneDrop": [
+      "Axe of the Enforcer",
+      "Crested Scepter",
+      "Martyr's Chain",
+      "Onyx Claymore",
+      "Grimclaw",
+      "Ring of Precision",
+      "Scholarly Robes",
+      "Doomspike",
+      "Tree Bark Jacket",
+      "Staff of the Friar",
+      "Staff of the Blessed Seer",
+      "Evocator's Blade"
+    ]
   },
   {
     "description": [],
@@ -712,7 +849,20 @@
     "name": "Dire Maul",
     "zone": "Feralas",
     "type": "Dungeon",
-    "ambience": "AmbienceDireMaul"
+    "ambience": "AmbienceDireMaul",
+    "zoneDrop": [
+      "Redoubt Cloak",
+      "Gordok Bracers of Power",
+      "Rod of the Ogre Magi",
+      "Counterattack Lodestone",
+      "Barrier Shield",
+      "Ogre Forged Hauberk",
+      "Unyielding Maul",
+      "Mindsurge Robe",
+      "Tarnished Elven Ring",
+      "Cyclone Spaulders",
+      "Elemental Plate Girdle"
+    ]
   },
   {
     "complexPart": true,
@@ -809,7 +959,28 @@
     "name": "Scarlet Monastery",
     "zone": "Scarlet Monastery Grounds",
     "type": "Dungeon",
-    "ambience": "AmbienceScary"
+    "ambience": "AmbienceScary",
+    "zoneDrop": [
+      "Scarlet Leggings",
+      "Fight Club",
+      "Ruthless Shiv",
+      "Warchief Kilt",
+      "Swampchill Fetish",
+      "Flintrock Shoulders",
+      "Archon Chestpiece",
+      "Steelclaw Reaver",
+      "Sliverblade",
+      "Windweaver Staff",
+      "Scarlet Belt",
+      "Mark of Kern",
+      "Tainted Pierce",
+      "Scarlet Wristguards",
+      "Scarlet Boots",
+      "Beguiler Robes",
+      "Chesterfall Musket",
+      "Watchman Pauldrons",
+      "Resplendent Guardian"
+    ]
   },
   {
     "complexPart": true,
@@ -904,7 +1075,41 @@
     "name": "Blackrock Depths",
     "zone": "Blackrock Mountain",
     "type": "Dungeon",
-    "ambience": "AmbienceBlackrock"
+    "ambience": "AmbienceBlackrock",
+    "zoneDrop": [
+      "Ironweave Mantle",
+      "Swiftwalker Boots",
+      "Hands of the Exalted Herald",
+      "High Priestess Boots",
+      "Ebonsteel Spaulders",
+      "Magmus Stone",
+      "Cinderhide Armsplints",
+      "Emberplate Armguards",
+      "Impervious Giant",
+      "Blood-etched Blade",
+      "Ghostshroud",
+      "Deathdealer Breastplate",
+      "Legplates of the Eternal Guardian",
+      "Haunting Specter Leggings",
+      "Coal Miner Boots",
+      "Golem Skull Helm",
+      "Rubidium Hammer",
+      "Wraith Scythe",
+      "Spire of the Stoneshaper",
+      "Mar Alom's Grip",
+      "Stoneshield Cloak",
+      "Plans: Dark Iron Sunderer",
+      "Blisterbane Wrap",
+      "Battlechaser's Greaves",
+      "Doomforged Straightedge",
+      "Aristocratic Cuffs",
+      "Ribsplitter",
+      "Runed Golem Shackles",
+      "The Judge's Gavel",
+      "Braincage",
+      "Searing Needle",
+      "Funeral Pyre Vestment"
+    ]
   },
   {
     "complexPart": true,
@@ -964,7 +1169,24 @@
     "name": "Lower Blackrock Spire",
     "zone": "Blackrock Mountain",
     "type": "Dungeon",
-    "ambience": "AmbienceBlackrock"
+    "ambience": "AmbienceBlackrock",
+    "zoneDrop": [
+      "Draconian Deflector",
+      "Wildfire Cape",
+      "Gyth's Skull",
+      "Tribal War Feathers",
+      "Heart of the Scale",
+      "Slaghide Gauntlets",
+      "Wind Dancer Boots",
+      "Recipe: Greater Fire Protection Potion",
+      "Cord of Elements",
+      "Beaststalker's Belt",
+      "Magister's Bindings",
+      "Devout Belt",
+      "Dreadmist Bracers",
+      "Shadowcraft Belt",
+      "Bracers of Valor"
+    ]
   },
   {
     "complexPart": true,
@@ -1018,7 +1240,24 @@
     "name": "Upper Blackrock Spire",
     "zone": "Blackrock Mountain",
     "type": "Dungeon",
-    "ambience": "AmbienceBlackrock"
+    "ambience": "AmbienceBlackrock",
+    "zoneDrop": [
+      "Draconian Deflector",
+      "Wildfire Cape",
+      "Gyth's Skull",
+      "Tribal War Feathers",
+      "Heart of the Scale",
+      "Slaghide Gauntlets",
+      "Wind Dancer Boots",
+      "Recipe: Greater Fire Protection Potion",
+      "Cord of Elements",
+      "Beaststalker's Belt",
+      "Magister's Bindings",
+      "Devout Belt",
+      "Dreadmist Bracers",
+      "Shadowcraft Belt",
+      "Bracers of Valor"
+    ]
   },
   {
     "description": [],
@@ -1129,7 +1368,27 @@
     "name": "Molten Core",
     "zone": "Blackrock Mountain",
     "type": "Raid",
-    "ambience": "AmbienceMoltenCore"
+    "ambience": "AmbienceMoltenCore",
+    "zoneDrop": [
+      "Arcanist Bindings",
+      "Arcanist Belt",
+      "Felheart Bracers",
+      "Felheart Belt",
+      "Girdle of Prophecy",
+      "Vambraces of Prophecy",
+      "Nightslayer Bracelets",
+      "Nightslayer Belt",
+      "Cenarion Belt",
+      "Cenarion Bracers",
+      "Earthfury Belt",
+      "Earthfury Bracers",
+      "Giantstalker's Bracers",
+      "Giantstalker's Belt",
+      "Lawbringer Bracers",
+      "Lawbringer Belt",
+      "Bracers of Might",
+      "Belt of Might"
+    ]
   },
   {
     "description": [
@@ -1201,7 +1460,25 @@
     "name": "Zul'Gurub",
     "zone": "Stranglethorn Vale",
     "type": "Raid",
-    "ambience": "AmbienceJungleDay"
+    "ambience": "AmbienceJungleDay",
+    "zoneDrop": [
+      "Sceptre of Smiting",
+      "Zulian Hacker",
+      "Zulian Ceremonial Staff",
+      "Shadow Panther Hide Gloves",
+      "Shadow Panther Hide Belt",
+      "Gurubashi Helm",
+      "Cloak of the Hakkari Worshipers",
+      "Might of the Tribe",
+      "Zulian Scepter of Rites",
+      "Sacrificial Gauntlets",
+      "Gloves of the Tormented",
+      "Belt of Untapped Power",
+      "Blooddrenched Mask",
+      "Zulian Headdress",
+      "Band of Servitude",
+      "Seal of the Gurubashi Berserker"
+    ]
   },
   {
     "complexPart": true,
@@ -1256,7 +1533,15 @@
     "name": "Blackwing Lair",
     "zone": "Blackrock Mountain",
     "type": "Raid",
-    "ambience": "AmbienceBlackwingLair"
+    "ambience": "AmbienceBlackwingLair",
+    "zoneDrop": [
+      "Draconic Maul",
+      "Doom's Edge",
+      "Band of Dark Dominion",
+      "Essence Gatherer",
+      "Cloak of Draconic Might",
+      "Boots of Pure Thought"
+    ]
   },
   {
     "description": [],
@@ -1296,7 +1581,18 @@
     "name": "Ruins of Ahn'Qiraj",
     "zone": "Silithus",
     "type": "Raid",
-    "ambience": "AmbienceAnhQirajExterior"
+    "ambience": "AmbienceAnhQirajExterior",
+    "zoneDrop": [
+      "Silithid Husked Launcher",
+      "Antenna of Invigoration",
+      "The Lost Kris of Zedd",
+      "Helm of the Holy Avenger",
+      "Coif of Elemental Fury",
+      "Polished Obsidian Pauldrons",
+      "Gavel of Qiraji Authority",
+      "Fury of the Forgotten Swarm",
+      "Treads of the Wandering Nomad"
+    ]
   },
   {
     "description": [],
@@ -1340,6 +1636,15 @@
     "name": "Temple of Ahn'Qiraj",
     "zone": "Silithus",
     "type": "Raid",
-    "ambience": "AmbienceAnhQirajExterior"
+    "ambience": "AmbienceAnhQirajExterior",
+    "zoneDrop": [
+      "Ritssyn's Ring of Chaos",
+      "Anubisath Warhammer",
+      "Garb of Royal Ascension",
+      "Neretzek, The Blood Drinker",
+      "Gloves of the Immortal",
+      "Gloves of the Redeemed Prophecy",
+      "Shard of the Fallen Star"
+    ]
   }
 ]

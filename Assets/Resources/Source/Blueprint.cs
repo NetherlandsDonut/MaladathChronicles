@@ -989,6 +989,17 @@ public class Blueprint
                 }
             );
         }),
+        new("LootInfo", () => {
+            SetAnchor(-130, -105);
+            AddRegionGroup();
+            SetRegionGroupWidth(258);
+            AddHeaderRegion(
+                () =>
+                {
+                    AddLine(Board.board.enemy.name + "'s Loot", "", "Center");
+                }
+            );
+        }),
         new("BattleBoard", () => {
             SetAnchor(Top, 0, -34 + 19 * (Board.board.field.GetLength(1) - 7));
             var boardBackground = new GameObject("BoardBackground", typeof(SpriteRenderer), typeof(SpriteMask));
@@ -1256,8 +1267,7 @@ public class Blueprint
                     }
                     else
                     {
-                        CloseDesktop("EquipmentScreen");
-                        SwitchDesktop("Map");
+                        CloseDesktop(h.window.desktop.title);
                         PlaySound("DesktopInventoryClose");
                     }
                 });
@@ -1531,109 +1541,6 @@ public class Blueprint
                 Respawn("PlayerEquipmentInfo");
             });
         }),
-        new("ItemDrop", () => {
-            SetAnchor(Center);
-            AddHeaderGroup();
-            SetRegionGroupWidth(266);
-            AddHeaderRegion(() =>
-            {
-                AddLine("Loot", "Gray");
-            });
-            var item = itemDrop;
-            AddHeaderRegion(() =>
-            {
-                AddBigButton(item.icon, (h) => { });
-                var split = item.name.Split(", ");
-                AddLine(split[0], item.rarity);
-                if (split.Length > 1)
-                    AddLine("\"" + split[1] + "\"", item.rarity);
-            });
-            AddPaddingRegion(() =>
-            {
-                if (item.armorClass != null)
-                {
-                    AddLine(item.armorClass + " " + item.type, "Gray");
-                    AddLine(item.armor + " Armor", "Gray");
-                }
-                else if (item.maxDamage != 0)
-                {
-                    AddLine(item.type + " " + item.detailedType, "Gray");
-                    AddLine(item.minDamage + " - " + item.maxDamage + " Damage", "Gray");
-                }
-                else
-                    AddLine(item.type, "Gray");
-            });
-            if (item.stats.stats.Count > 0)
-                AddPaddingRegion(() =>
-                {
-                    foreach (var stat in item.stats.stats)
-                        AddLine("+" + stat.Value + " " + stat.Key, "Gray");
-                });
-            AddHeaderRegion(() =>
-            {
-                AddLine("Required level: ", "DarkGray");
-                AddText("" + item.lvl, ColorItemRequiredLevel(item.lvl));
-            });
-            AddPaddingRegion(
-                () =>
-                {
-                }
-            );
-            AddButtonRegion(
-                () =>
-                {
-                    AddLine("Accept the item", "Black");
-                },
-                (h) =>
-                {
-
-                }
-            );
-            AddRegionGroup();
-            AddPaddingRegion(
-                () =>
-                {
-                    AddSmallButton("ActionReroll",
-                        (h) =>
-                        {
-
-                        }
-                    );
-                }
-            );
-            AddRegionGroup();
-            SetRegionGroupWidth(110);
-            AddPaddingRegion(
-                () =>
-                {
-                    AddLine("You can reroll!");
-                }
-            );
-            AddRegionGroup();
-            AddPaddingRegion(
-                () =>
-                {
-                    AddLine((int)item.price + "", "Gold");
-                    AddSmallButton("ItemCoinsGold", (h) => { });
-                }
-            );
-            AddRegionGroup();
-            AddPaddingRegion(
-                () =>
-                {
-                    AddLine((int)(item.price * 100 % 100) + ""  + "", "Silver");
-                    AddSmallButton("ItemCoinsSilver", (h) => { });
-                }
-            );
-            AddRegionGroup();
-            AddPaddingRegion(
-                () =>
-                {
-                    AddLine((int)(item.price * 10000 % 100) + "", "Copper");
-                    AddSmallButton("ItemCoinsCopper", (h) => { });
-                }
-            );
-        }, true),
         new("CharacterNeckSlot", () => {
             SetAnchor(-98, 74);
             PrintEquipmentItem(currentSave.player.GetItemInSlot("Neck"));
@@ -1923,7 +1830,9 @@ public class Blueprint
             {
                 if (Board.board.results.result == "Won")
                 {
-                    AddLine("OK", "", "Center");
+                    if (Board.board.results.items.Count > 0)
+                        AddLine("Show Loot", "", "Center");
+                    else AddLine("OK", "", "Center");
                 }
                 else if (Realm.realms.Find(x => x.name == settings.selectedRealm).hardcore)
                 {
@@ -1936,7 +1845,24 @@ public class Blueprint
             (h) =>
             {
                 CloseDesktop("CombatResults");
+                if (Board.board.results.items.Count > 0)
+                {
+                    PlaySound("DesktopInventoryOpen");
+                    SpawnDesktopBlueprint("CombatResultsLoot");
+                }
             });
+        }),
+        new("CombatResultsLoot", () => {
+            SetAnchor(-130, -124);
+            AddRegionGroup();
+            SetRegionGroupWidth(258);
+            AddPaddingRegion(
+                () =>
+                {
+                    for (int j = 0; j < 5 && j < Board.board.results.items.Count; j++)
+                        PrintLootItem(Board.board.results.items[j]);
+                }
+            );
         }),
         new("PlayerResources", () => {
             SetAnchor(BottomLeft);
@@ -6789,6 +6715,17 @@ public class Blueprint
         {
             SetDesktopBackground(Board.board.area.Background());
             SpawnWindowBlueprint("CombatResults");
+            SpawnWindowBlueprint("ExperienceBar");
+            currentSave.player.ReceiveExperience(Board.board.results.experience);
+        }),
+        new("CombatResultsLoot", () =>
+        {
+            SetDesktopBackground(Board.board.area.Background());
+            locationName = Board.board.enemy.name + "'s Loot";
+            SpawnWindowBlueprint("PlayerEquipmentInfo");
+            SpawnWindowBlueprint("LootInfo");
+            SpawnWindowBlueprint("CombatResultsLoot");
+            SpawnWindowBlueprint("Inventory");
             SpawnWindowBlueprint("ExperienceBar");
         }),
         new("Town", () =>

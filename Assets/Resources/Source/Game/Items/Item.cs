@@ -311,17 +311,7 @@ public class Item
             null,
             (h) =>
             {
-                if (CDesktop.title == "EquipmentScreen")
-                {
-                    if (item.CanEquip(currentSave.player))
-                    {
-                        PlaySound(item.ItemSound("PickUp"), 0.6f);
-                        item.Equip(currentSave.player);
-                        Respawn("Inventory");
-                        Respawn("PlayerEquipmentInfo");
-                    }
-                }
-                else if (CDesktop.title == "BankScreen")
+                if (CDesktop.title == "BankScreen")
                 {
                     if (currentSave.banks[town.name].items.Count < 40)
                     {
@@ -332,6 +322,16 @@ public class Item
                         Respawn("Bank");
                     }
                 }
+                else
+                {
+                    if (item.CanEquip(currentSave.player))
+                    {
+                        PlaySound(item.ItemSound("PickUp"), 0.6f);
+                        item.Equip(currentSave.player);
+                        Respawn("Inventory");
+                        Respawn("PlayerEquipmentInfo");
+                    }
+                }
             },
             (h) => () =>
             {
@@ -340,6 +340,45 @@ public class Item
                 PrintItemTooltip(item);
             }
         );
+        if (settings.rarityIndicators.Value())
+            AddBigButtonOverlay("OtherRarity" + item.rarity + (settings.bigRarityIndicators.Value() ? "Big" : ""), 0, 2);
+        if (currentSave.player.HasItemEquipped(item.name))
+        {
+            SetBigButtonToGrayscale();
+            AddBigButtonOverlay("OtherGridBlurred", 0, 2);
+        }
+        if (item.CanEquip(currentSave.player) && currentSave.player.IsItemNewSlot(item) && (settings.upgradeIndicators.Value() || settings.newSlotIndicators.Value()))
+            AddBigButtonOverlay(settings.newSlotIndicators.Value() ? "OtherItemNewSlot" : "OtherItemUpgrade", 0, 2);
+        else if (settings.upgradeIndicators.Value() && item.CanEquip(currentSave.player) && currentSave.player.IsItemAnUpgrade(item))
+            AddBigButtonOverlay("OtherItemUpgrade", 0, 2);
+    }
+
+    public static void PrintLootItem(Item item)
+    {
+        AddBigButton(item.icon,
+            (h) =>
+            {
+                if (currentSave.player.inventory.items.Count < 40)
+                {
+                    PlaySound(item.ItemSound("PutDown"), 0.6f);
+                    currentSave.player.inventory.items.Add(item);
+                    Board.board.results.items.Remove(item);
+                    if (Board.board.results.exclusiveItems.Contains(item.name))
+                        Board.board.results.items.RemoveAll(x => Board.board.results.exclusiveItems.Contains(x.name));
+                    Respawn("Inventory");
+                    Respawn("CombatResultsLoot");
+                }
+            },
+            null,
+            (h) => () =>
+            {
+                if (item == null) return;
+                SetAnchor(Center);
+                PrintItemTooltip(item);
+            }
+        );
+        if (Board.board != null && Board.board.results.exclusiveItems.Count > 1 && Board.board.results.exclusiveItems.Contains(item.name))
+            AddBigButtonOverlay("OtherItemExclusive", 0, 2);
         if (settings.rarityIndicators.Value())
             AddBigButtonOverlay("OtherRarity" + item.rarity + (settings.bigRarityIndicators.Value() ? "Big" : ""), 0, 2);
         if (currentSave.player.HasItemEquipped(item.name))
@@ -431,9 +470,6 @@ public class Item
 
     //Currently opened item
     public static Item item;
-
-    //Last item dropped in the game
-    public static Item itemDrop;
 
     //EXTERNAL FILE: List containing all buffs in-game
     public static List<Item> items;

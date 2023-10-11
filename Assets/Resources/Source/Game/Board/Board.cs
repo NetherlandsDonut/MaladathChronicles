@@ -136,7 +136,6 @@ public class Board
             {
                 var enemyRace = Race.races.Find(x => x.name == enemy.race);
                 results.experience = (Coloring.ColorEntityLevel(enemy.level) == "Green" ? 1 : 3) * (enemyRace.kind == "Elite" || enemyRace.kind == "Rare" ? 2 : 1);
-                //currentSave.player.ReceiveExperience((Coloring.ColorEntityLevel(enemy.level) == "Green" ? 1 : 3) * (enemyRace.kind == "Elite" || enemyRace.kind == "Rare" ? 2 : 1));
             }
             if (area != null && enemy.kind != "Elite")
             {
@@ -169,11 +168,41 @@ public class Board
             else
                 SwitchDesktop("HostileArea");
             CDesktop.RespawnAll();
-            var drop = Race.races.Find(x => x.name == enemy.race).droppedItems.Select(x => Item.GetItem(x)).Where(x => x.CanEquip(player)).ToList();
-            if (drop.Count > 0)
+            var directDrop = Race.races.Find(x => x.name == enemy.race).droppedItems.Select(x => Item.GetItem(x)).ToList();
+            if (directDrop.Count == 0)
             {
-                Item.itemDrop = drop[random.Next(drop.Count)];
-                SpawnWindowBlueprint("ItemDrop");
+                var worldDrop = Item.items.FindAll(x => x.lvl >= enemy.level - 6 && x.lvl <= enemy.level && x.type != "Miscellaneous");
+                var instance = area.instancePart ? SiteInstance.instances.Find(x => x.wings.Any(y => y.areas.Any(z => z["AreaName"] == area.name))) : null;
+                var zoneDrop = instance == null ? new() : Item.items.FindAll(x => instance.zoneDrop.Contains(x.name));
+                var everything = zoneDrop.Concat(worldDrop).Where(x => x.CanEquip(currentSave.player));
+                var dropGreen = everything.Where(x => x.rarity == "Uncommon").ToList();
+                var dropBlue = everything.Where(x => x.rarity == "Rare").ToList();
+                var dropPurple = everything.Where(x => x.rarity == "Epic").ToList();
+                if (dropPurple.Count > 0 && Roll(0.05))
+                    results.items.Add(dropPurple[random.Next(dropPurple.Count)]);
+                else if (dropBlue.Count > 0 && Roll(1))
+                    results.items.Add(dropBlue[random.Next(dropBlue.Count)]);
+                else if (dropGreen.Count > 0 && Roll(100))
+                    results.items.Add(dropGreen[random.Next(dropGreen.Count)]);
+            }
+            else
+            {
+                var equippable = directDrop.Where(x => x.CanEquip(currentSave.player)).ToList();
+                var notEquippable = directDrop.Where(x => !equippable.Contains(x)).ToList();
+                var item = equippable[random.Next(equippable.Count)];
+                results.items.Add(item);
+                results.exclusiveItems.Add(item.name);
+                equippable.Remove(item);
+                if (equippable.Count > 0)
+                {
+                    results.items.Add(equippable[random.Next(equippable.Count)]);
+                    results.exclusiveItems.Add(results.items.Last().name);
+                }
+                else if (notEquippable.Count > 0)
+                {
+                    results.items.Add(notEquippable[random.Next(notEquippable.Count)]);
+                    results.exclusiveItems.Add(results.items.Last().name);
+                }
             }
             SpawnDesktopBlueprint("CombatResults");
         }

@@ -98,6 +98,9 @@ public class SiteInstance : Site
     //Instance wings that store all the instance's areas
     public List<InstanceWing> wings;
 
+    //List of items that can drop from enemies in this instance
+    public List<string> zoneDrop;
+
     //Suggested level range for the player to enter this instance
     public (int, int) LevelRange()
     {
