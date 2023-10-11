@@ -8664,7 +8664,7 @@
       }
     ],
     "x": 297,
-    "y": -151,
+    "y": -152,
     "name": "Stonesplinter Valley",
     "zone": "Loch Modan",
     "type": "HostileArea"
@@ -8687,8 +8687,8 @@
         "levelMax": 13
       }
     ],
-    "x": 297,
-    "y": -151,
+    "x": 299,
+    "y": -150,
     "name": "Grizzlepaw Ridge",
     "zone": "Loch Modan",
     "type": "HostileArea"
@@ -16119,6 +16119,23 @@
     "type": "HostileArea"
   },
   {
+    "commonEncounters": [
+      {
+        "who": "Stonevault Cave Lurker",
+        "levelMin": 38,
+        "levelMax": 39
+      },
+      {
+        "who": "Stonevault Oracle",
+        "levelMin": 37,
+        "levelMax": 38
+      },
+      {
+        "who": "Stonevault Rockchewer",
+        "levelMin": 38,
+        "levelMax": 39
+      }
+    ],
     "eliteEncounters": [
       {
         "who": "Ironaya",

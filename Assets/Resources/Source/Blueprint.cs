@@ -990,9 +990,9 @@ public class Blueprint
             );
         }),
         new("LootInfo", () => {
-            SetAnchor(-130, -105);
+            SetAnchor(-115, -90);
             AddRegionGroup();
-            SetRegionGroupWidth(258);
+            SetRegionGroupWidth(228);
             AddHeaderRegion(
                 () =>
                 {
@@ -1853,14 +1853,16 @@ public class Blueprint
             });
         }),
         new("CombatResultsLoot", () => {
-            SetAnchor(-130, -124);
+            SetAnchor(-115, -109);
             AddRegionGroup();
-            SetRegionGroupWidth(258);
+            SetRegionGroupWidth(228);
             AddPaddingRegion(
                 () =>
                 {
-                    for (int j = 0; j < 5 && j < Board.board.results.items.Count; j++)
-                        PrintLootItem(Board.board.results.items[j]);
+                    for (int j = 0; j < 6; j++)
+                        if (j < Board.board.results.items.Count)
+                            PrintLootItem(Board.board.results.items[j]);
+                        else AddBigButton("OtherEmpty", (h) => { });
                 }
             );
         }),
@@ -6675,9 +6677,9 @@ public class Blueprint
                 SwitchDesktop("CharacterSheet");
                 PlaySound("DesktopCharacterSheetOpen");
             });
-            AddHotkey(N, () => { SpawnDesktopBlueprint("TalentScreen"); SwitchDesktop("TalentScreen"); });
-            AddHotkey(P, () => { SpawnDesktopBlueprint("SpellbookScreen"); SwitchDesktop("SpellbookScreen"); });
-            AddHotkey(B, () => { SpawnDesktopBlueprint("EquipmentScreen"); SwitchDesktop("EquipmentScreen"); });
+            AddHotkey(N, () => { SpawnDesktopBlueprint("TalentScreen"); });
+            AddHotkey(P, () => { SpawnDesktopBlueprint("SpellbookScreen"); });
+            AddHotkey(B, () => { SpawnDesktopBlueprint("EquipmentScreen"); });
             AddHotkey(Escape, () =>
             {
                 PlaySound("DesktopMenuOpen");
@@ -6710,6 +6712,7 @@ public class Blueprint
                     CloseDesktop("HostileArea");
                 }
             });
+            AddHotkey(B, () => { SpawnDesktopBlueprint("EquipmentScreen"); });
         }),
         new("CombatResults", () =>
         {
@@ -6727,6 +6730,11 @@ public class Blueprint
             SpawnWindowBlueprint("CombatResultsLoot");
             SpawnWindowBlueprint("Inventory");
             SpawnWindowBlueprint("ExperienceBar");
+            AddHotkey(Escape, () =>
+            {
+                PlaySound("DesktopInventoryClose");
+                CloseDesktop("CombatResultsLoot");
+            });
         }),
         new("Town", () =>
         {
@@ -6793,6 +6801,7 @@ public class Blueprint
                             });
                 SpawnDesktopBlueprint("ObjectManagerRaces");
             });
+            AddHotkey(B, () => { SpawnDesktopBlueprint("EquipmentScreen"); });
         }),
         new("Complex", () =>
         {
@@ -6815,6 +6824,7 @@ public class Blueprint
                     CloseDesktop("Complex");
                 }
             });
+            AddHotkey(B, () => { SpawnDesktopBlueprint("EquipmentScreen"); });
         }),
         new("Game", () =>
         {
@@ -6862,7 +6872,7 @@ public class Blueprint
                 CDesktop.RebuildAll();
             });
             AddHotkey(BackQuote, () => { SpawnDesktopBlueprint("DevPanel"); });
-            AddHotkey(KeypadMultiply, () => { Board.board.enemy.health = 0; });
+            AddHotkey(KeypadMultiply, () => { Board.board.EndCombat("Won"); });
         }),
         new("GameSimulation", () =>
         {

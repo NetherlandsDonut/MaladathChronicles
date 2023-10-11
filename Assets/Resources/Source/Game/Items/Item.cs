@@ -365,8 +365,15 @@ public class Item
                     Board.board.results.items.Remove(item);
                     if (Board.board.results.exclusiveItems.Contains(item.name))
                         Board.board.results.items.RemoveAll(x => Board.board.results.exclusiveItems.Contains(x.name));
-                    Respawn("Inventory");
-                    Respawn("CombatResultsLoot");
+                    if (Board.board.results.items.Count == 0)
+                    {
+                        CloseDesktop(CDesktop.title);
+                    }
+                    else
+                    {
+                        Respawn("Inventory");
+                        Respawn("CombatResultsLoot");
+                    }
                 }
             },
             null,

@@ -520,6 +520,41 @@
               "stats": {
                 "stats": {}
               }
+            },
+            {
+              "rarity": "Uncommon",
+              "name": "Enduring Cape",
+              "icon": "itemmisccape02",
+              "type": "Back",
+              "ilvl": 32,
+              "lvl": 27,
+              "price": 0.1685,
+              "stats": {
+                "stats": {
+                  "Strength": 2,
+                  "Agility": 2,
+                  "Stamina": 7
+                }
+              }
+            },
+            {
+              "rarity": "Rare",
+              "name": "Gemshard Heart",
+              "icon": "itemstone01",
+              "type": "Neck",
+              "ilvl": 54,
+              "lvl": 49,
+              "price": 1.1631,
+              "stats": {
+                "stats": {
+                  "Intellect": 10,
+                  "Stamina": 10,
+                  "Spirit": 6
+                }
+              },
+              "droppedBy": [
+                "Princess Theradras"
+              ]
             }
           ]
         },
@@ -732,8 +767,8 @@
           }
         }
       },
-      "cameraX": 32,
-      "cameraY": -129,
+      "cameraX": 28,
+      "cameraY": -139,
       "siteProgress": {
         "Balia'mah Ruins": 1,
         "The Crimson Throne": 4,
@@ -745,7 +780,10 @@
         "Gol'Bolar Quarry": 1,
         "The Rookery": 3,
         "Temple Hall": 1,
-        "Dig Three": 1
+        "Dig Three": 1,
+        "Ethel Rethor": 2,
+        "Sar'theris Strand": 1,
+        "Zaetar's Grave": 3
       },
       "commonsKilled": {
         "Dustbelcher Warrior": 1,
@@ -763,13 +801,18 @@
         "Rockjaw Bonesnapper": 1,
         "Rage Talon Flamescale": 1,
         "Rage Talon Dragonspawn": 2,
-        "Shadowforge Sharpshooter": 1
+        "Shadowforge Sharpshooter": 1,
+        "Enraged Reef Crawler": 2,
+        "Gritjaw Basilisk": 1,
+        "Deep Borer": 2,
+        "Thessala Hydra": 1
       },
       "raresKilled": {},
       "elitesKilled": {
         "Revelosh": 1,
         "Archaedas": 3,
-        "Solakar Flamewreath": 1
+        "Solakar Flamewreath": 1,
+        "Princess Theradras": 1
       },
       "siteVisits": {
         "The Sepulcher": 1,
@@ -824,15 +867,18 @@
         "Ridgepoint Tower": 1,
         "Brackwell Pumpkin Patch": 2,
         "Stendel's Pond": 1,
-        "Ethel Rethor": 4,
+        "Ethel Rethor": 5,
         "Thunder Axe Fortress": 1,
         "Tethris Aran": 1,
-        "Ranazjar Isle": 4
+        "Ranazjar Isle": 4,
+        "Valley of Spears": 1,
+        "Sar'theris Strand": 1,
+        "Maraudon": 1
       },
       "startDate": "2023-09-08T02:04:14.0667101+02:00",
-      "lastLoaded": "2023-10-09T23:29:17.1916726+02:00",
-      "lastPlayed": "2023-10-09T23:29:25.8957985+02:00",
-      "timePlayed": "07:51:19.2218574"
+      "lastLoaded": "2023-10-11T22:30:34.4841355+02:00",
+      "lastPlayed": "2023-10-11T22:39:36.4856227+02:00",
+      "timePlayed": "08:00:21.2233446"
     },
     {
       "player": {

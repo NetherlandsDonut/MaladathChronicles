@@ -173,7 +173,7 @@ public class Board
             {
                 var worldDrop = Item.items.FindAll(x => x.lvl >= enemy.level - 6 && x.lvl <= enemy.level && x.type != "Miscellaneous");
                 var instance = area.instancePart ? SiteInstance.instances.Find(x => x.wings.Any(y => y.areas.Any(z => z["AreaName"] == area.name))) : null;
-                var zoneDrop = instance == null ? new() : Item.items.FindAll(x => instance.zoneDrop.Contains(x.name));
+                var zoneDrop = instance == null || instance.zoneDrop == null ? new() : Item.items.FindAll(x => instance.zoneDrop.Contains(x.name));
                 var everything = zoneDrop.Concat(worldDrop).Where(x => x.CanEquip(currentSave.player));
                 var dropGreen = everything.Where(x => x.rarity == "Uncommon").ToList();
                 var dropBlue = everything.Where(x => x.rarity == "Rare").ToList();
@@ -191,18 +191,18 @@ public class Board
                 var notEquippable = directDrop.Where(x => !equippable.Contains(x)).ToList();
                 var item = equippable[random.Next(equippable.Count)];
                 results.items.Add(item);
-                results.exclusiveItems.Add(item.name);
-                equippable.Remove(item);
-                if (equippable.Count > 0)
-                {
-                    results.items.Add(equippable[random.Next(equippable.Count)]);
-                    results.exclusiveItems.Add(results.items.Last().name);
-                }
-                else if (notEquippable.Count > 0)
-                {
-                    results.items.Add(notEquippable[random.Next(notEquippable.Count)]);
-                    results.exclusiveItems.Add(results.items.Last().name);
-                }
+                //results.exclusiveItems.Add(item.name);
+                //equippable.Remove(item);
+                //if (equippable.Count > 0)
+                //{
+                //    results.items.Add(equippable[random.Next(equippable.Count)]);
+                //    results.exclusiveItems.Add(results.items.Last().name);
+                //}
+                //else if (notEquippable.Count > 0)
+                //{
+                //    results.items.Add(notEquippable[random.Next(notEquippable.Count)]);
+                //    results.exclusiveItems.Add(results.items.Last().name);
+                //}
             }
             SpawnDesktopBlueprint("CombatResults");
         }
