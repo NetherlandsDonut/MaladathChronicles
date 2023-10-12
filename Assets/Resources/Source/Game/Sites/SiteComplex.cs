@@ -115,7 +115,7 @@ public class SiteComplex : Site
     public static List<SiteComplex> complexesSearch;
 
     //Returns path to a texture that is the background visual of this site
-    public override string Background() => "Areas/Complex" + name.Replace("'", "").Replace(".", "").Replace(" ", "");
+    public override string Background() => "Areas/Complex" + name.Clean();
 
     //Function to print the site onto the map
     public override void PrintSite()
@@ -133,7 +133,7 @@ public class SiteComplex : Site
                 AddRegionGroup();
                 AddHeaderRegion(() => { AddLine(name, "Gray"); });
                 AddPaddingRegion(() => { AddLine("Contains sites:", "DarkGray"); });
-                complex = complexes.Find(x => x.name == name);
+                complex = this;
                 foreach (var site in complex.sites)
                     AddHeaderRegion(() =>
                     {

@@ -37,6 +37,11 @@ public class Race
     //Killing entities of this race will grant negative reputation with this faction
     //and grant positive reputation standing with factions that are it's main enemies
     public string faction;
+    public Faction Faction()
+    {
+        if (faction == null) return null;
+        return factions.Find(x => x.name == faction);
+    }
 
     //Starting site of a race.
     //This is useful only to races playable by player
@@ -82,13 +87,6 @@ public class Race
     //Loot that this race can drop
     //This is problematic right now because it is not dependant on entity's level
     public List<(int, string)> loot;
-
-    //??? ugly, get rid of this
-    public Faction Faction()
-    {
-        if (faction == null) return null;
-        return factions.Find(x => x.name == faction);
-    }
 
     //Currently opened race
     public static Race race;

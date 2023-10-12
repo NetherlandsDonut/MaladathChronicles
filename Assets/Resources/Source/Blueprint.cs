@@ -12,7 +12,7 @@ using static Root.Anchor;
 using static Item;
 using static Buff;
 using static Race;
-using static Class;
+using static Spec;
 using static Sound;
 using static Event;
 using static Cursor;
@@ -264,12 +264,12 @@ public class Blueprint
             if (settings.selectedCharacter != "")
             {
                 var slot = saves[settings.selectedRealm].Find(x => x.player.name == settings.selectedCharacter);
-                var spec = slot.player.GetClass();
+                var spec = slot.player.Spec();
                 AddHeaderRegion(() => { AddLine(slot.player.name); });
                 AddHeaderRegion(() =>
                 {
-                    AddBigButton("Portrait" + slot.player.race.Replace("'", "").Replace(".", "").Replace(" ", "") + (Race.races.Find(x => x.name == slot.player.race).genderedPortrait ? slot.player.gender : ""), (h) => { });
-                    AddBigButton(slot.player.GetClass().icon, (h) => { });
+                    AddBigButton("Portrait" + slot.player.race.Clean() + (slot.player.Race().genderedPortrait ? slot.player.gender : ""), (h) => { });
+                    AddBigButton(spec.icon, (h) => { });
                     AddLine("Level: " + slot.player.level, "Gray");
                     AddLine(spec.name, "Gray");
                 });
@@ -372,7 +372,7 @@ public class Blueprint
                 {
                     AddPaddingRegion(() =>
                     {
-                        AddBigButton("Portrait" + slot.player.race.Replace("'", "").Replace(".", "").Replace(" ", "") + (races.Find(x => x.name == slot.player.race).genderedPortrait ? slot.player.gender : ""), (h) =>
+                        AddBigButton("Portrait" + slot.player.race.Clean() + (slot.player.Race().genderedPortrait ? slot.player.gender : ""), (h) =>
                         {
                             CloseWindow("RealmRoster");
                             if (settings.selectedCharacter != slot.player.name)
@@ -408,7 +408,7 @@ public class Blueprint
                         creationSide = "";
                         creationGender = "";
                         creationRace = "";
-                        creationClass = "";
+                        creationSpec = "";
                         SpawnWindowBlueprint("CharacterCreation");
                         SpawnWindowBlueprint("CharacterCreationRightSide");
                     });
@@ -534,7 +534,7 @@ public class Blueprint
             {
                 if (Board.board.player.spec != null)
                 {
-                    AddBigButton(Board.board.player.GetClass().icon,
+                    AddBigButton(Board.board.player.Spec().icon,
                         (h) => { }
                     );
                 }
@@ -599,12 +599,8 @@ public class Blueprint
             );
             AddHeaderRegion(() =>
             {
-                AddBigButton("Portrait" + currentSave.player.race.Replace("'", "").Replace(".", "").Replace(" ", "") + (Race.races.Find(x => x.name == currentSave.player.race).genderedPortrait ? currentSave.player.gender : ""),
-                    (h) => { }
-                );
-                AddBigButton(currentSave.player.GetClass().icon,
-                    (h) => { }
-                );
+                AddBigButton("Portrait" + currentSave.player.race.Clean() + (currentSave.player.Race().genderedPortrait ? currentSave.player.gender : ""), (h) => { });
+                AddBigButton(currentSave.player.Spec().icon, (h) => { });
                 AddLine("Level: " + currentSave.player.level, "Gray");
             });
             Foo("Head", currentSave.player.GetItemInSlot("Head"));
@@ -822,7 +818,7 @@ public class Blueprint
             );
             AddHeaderRegion(() =>
             {
-                AddBigButton(currentSave.player.GetClass().icon,
+                AddBigButton(currentSave.player.Spec().icon,
                     (h) => { }
                 );
                 AddLine("Level: " + currentSave.player.level, "Gray");
@@ -1091,7 +1087,7 @@ public class Blueprint
                     SpawnDesktopBlueprint("SpellbookScreen");
                     SwitchDesktop("SpellbookScreen");
                 });
-                AddSmallButton("MenuClasses", (h) =>
+                AddSmallButton("MenuSpecs", (h) =>
                 {
                     SpawnDesktopBlueprint("TalentScreen");
                     SwitchDesktop("TalentScreen");
@@ -1123,7 +1119,7 @@ public class Blueprint
                     SpawnDesktopBlueprint("SpellbookScreen");
                     SwitchDesktop("SpellbookScreen");
                 });
-                AddSmallButton("MenuClasses", (h) =>
+                AddSmallButton("MenuSpecs", (h) =>
                 {
                     SpawnDesktopBlueprint("TalentScreen");
                     SwitchDesktop("TalentScreen");
@@ -1155,7 +1151,7 @@ public class Blueprint
                     SpawnDesktopBlueprint("SpellbookScreen");
                     SwitchDesktop("SpellbookScreen");
                 });
-                AddSmallButton("MenuClasses", (h) =>
+                AddSmallButton("MenuSpecs", (h) =>
                 {
                     SpawnDesktopBlueprint("TalentScreen");
                     SwitchDesktop("TalentScreen");
@@ -1598,7 +1594,7 @@ public class Blueprint
             PrintEquipmentItem(currentSave.player.GetItemInSlot("Trinket"));
         }),
         new("CharacterStats", () => {
-            SetAnchor(BottomLeft);
+            SetAnchor(TopLeft);
             AddRegionGroup();
             var stats = currentSave.player.Stats();
             AddHeaderRegion(() =>
@@ -1620,6 +1616,7 @@ public class Blueprint
                 AddLine("Spell Power:", "Gray", "Right");
                 AddLine("Critical Strike:", "Gray", "Right");
                 AddLine("Spell Critical:", "Gray", "Right");
+                AddLine("Health From Stamina:", "Gray", "Right");
             });
             AddRegionGroup();
             AddHeaderRegion(() =>
@@ -1641,6 +1638,7 @@ public class Blueprint
                 AddLine(currentSave.player.SpellPower() + "", "Gray");
                 AddLine(currentSave.player.CriticalStrike().ToString("0.00") + "%", "Gray");
                 AddLine(currentSave.player.SpellCritical().ToString("0.00") + "%", "Gray");
+                AddLine(currentSave.player.MaxHealth() + "", "Gray");
             });
         }),
         new("CharacterCreation", () => {
@@ -1656,15 +1654,15 @@ public class Blueprint
                 {
                     creationSide = random.Next(2) == 1 ? "Horde" : "Alliance";
                     creationRace = "";
-                    creationClass = "";
+                    creationSpec = "";
                     h.window.Respawn();
                 });
             });
             AddHeaderRegion(() =>
             {
-                AddBigButton("HonorAlliance", (h) => { creationSide = "Alliance"; creationRace = ""; creationClass = ""; h.window.Respawn(); });
+                AddBigButton("HonorAlliance", (h) => { creationSide = "Alliance"; creationRace = ""; creationSpec = ""; h.window.Respawn(); });
                 if (creationSide != "Alliance") { AddBigButtonOverlay("OtherGridBlurred"); SetBigButtonToGrayscale(); }
-                AddBigButton("HonorHorde", (h) => { creationSide = "Horde"; creationRace = ""; creationClass = ""; h.window.Respawn(); });
+                AddBigButton("HonorHorde", (h) => { creationSide = "Horde"; creationRace = ""; creationSpec = ""; h.window.Respawn(); });
                 if (creationSide != "Horde") { AddBigButtonOverlay("OtherGridBlurred"); SetBigButtonToGrayscale(); }
             });
             AddHeaderRegion(() =>
@@ -1692,7 +1690,7 @@ public class Blueprint
                     AddSmallButton("ActionReroll", (h) =>
                     {
                         creationRace = races[random.Next(races.Count)].name;
-                        creationClass = "";
+                        creationSpec = "";
                         h.window.Respawn();
                     });
                 });
@@ -1700,28 +1698,28 @@ public class Blueprint
                 {
                     if (creationSide == "Alliance")
                     {
-                        AddBigButton("PortraitDwarf" + creationGender, (h) => { creationRace = "Dwarf"; creationClass = ""; h.window.Respawn(); });
+                        AddBigButton("PortraitDwarf" + creationGender, (h) => { creationRace = "Dwarf"; creationSpec = ""; h.window.Respawn(); });
                         if (creationRace != "Dwarf") { AddBigButtonOverlay("OtherGridBlurred"); SetBigButtonToGrayscale(); }
-                        AddBigButton("PortraitGnome" + creationGender, (h) => { creationRace = "Gnome"; creationClass = ""; h.window.Respawn(); });
+                        AddBigButton("PortraitGnome" + creationGender, (h) => { creationRace = "Gnome"; creationSpec = ""; h.window.Respawn(); });
                         if (creationRace != "Gnome") { AddBigButtonOverlay("OtherGridBlurred"); SetBigButtonToGrayscale(); }
-                        AddBigButton("PortraitHuman" + creationGender, (h) => { creationRace = "Human"; creationClass = ""; h.window.Respawn(); });
+                        AddBigButton("PortraitHuman" + creationGender, (h) => { creationRace = "Human"; creationSpec = ""; h.window.Respawn(); });
                         if (creationRace != "Human") { AddBigButtonOverlay("OtherGridBlurred"); SetBigButtonToGrayscale(); }
-                        AddBigButton("PortraitNightElf" + creationGender, (h) => { creationRace = "Night Elf"; creationClass = ""; h.window.Respawn(); });
+                        AddBigButton("PortraitNightElf" + creationGender, (h) => { creationRace = "Night Elf"; creationSpec = ""; h.window.Respawn(); });
                         if (creationRace != "Night Elf") { AddBigButtonOverlay("OtherGridBlurred"); SetBigButtonToGrayscale(); }
-                        AddBigButton("PortraitPandaren" + creationGender, (h) => { creationRace = "Pandaren"; creationClass = ""; h.window.Respawn(); });
+                        AddBigButton("PortraitPandaren" + creationGender, (h) => { creationRace = "Pandaren"; creationSpec = ""; h.window.Respawn(); });
                         if (creationRace != "Pandaren") { AddBigButtonOverlay("OtherGridBlurred"); SetBigButtonToGrayscale(); }
                     }
                     else if (creationSide == "Horde")
                     {
-                        AddBigButton("PortraitOrc" + creationGender, (h) => { creationRace = "Orc"; creationClass = ""; h.window.Respawn(); });
+                        AddBigButton("PortraitOrc" + creationGender, (h) => { creationRace = "Orc"; creationSpec = ""; h.window.Respawn(); });
                         if (creationRace != "Orc") { AddBigButtonOverlay("OtherGridBlurred"); SetBigButtonToGrayscale(); }
-                        AddBigButton("PortraitTauren" + creationGender, (h) => { creationRace = "Tauren"; creationClass = ""; h.window.Respawn(); });
+                        AddBigButton("PortraitTauren" + creationGender, (h) => { creationRace = "Tauren"; creationSpec = ""; h.window.Respawn(); });
                         if (creationRace != "Tauren") { AddBigButtonOverlay("OtherGridBlurred"); SetBigButtonToGrayscale(); }
-                        AddBigButton("PortraitTroll" + creationGender, (h) => { creationRace = "Troll"; creationClass = ""; h.window.Respawn(); });
+                        AddBigButton("PortraitTroll" + creationGender, (h) => { creationRace = "Troll"; creationSpec = ""; h.window.Respawn(); });
                         if (creationRace != "Troll") { AddBigButtonOverlay("OtherGridBlurred"); SetBigButtonToGrayscale(); }
-                        AddBigButton("PortraitForsaken" + creationGender, (h) => { creationRace = "Forsaken"; creationClass = ""; h.window.Respawn(); });
+                        AddBigButton("PortraitForsaken" + creationGender, (h) => { creationRace = "Forsaken"; creationSpec = ""; h.window.Respawn(); });
                         if (creationRace != "Forsaken") { AddBigButtonOverlay("OtherGridBlurred"); SetBigButtonToGrayscale(); }
-                        AddBigButton("PortraitPandaren" + creationGender, (h) => { creationRace = "Pandaren"; creationClass = ""; h.window.Respawn(); });
+                        AddBigButton("PortraitPandaren" + creationGender, (h) => { creationRace = "Pandaren"; creationSpec = ""; h.window.Respawn(); });
                         if (creationRace != "Pandaren") { AddBigButtonOverlay("OtherGridBlurred"); SetBigButtonToGrayscale(); }
                     }
                 });
@@ -1730,21 +1728,20 @@ public class Blueprint
             {
                 AddHeaderRegion(() =>
                 {
-                    AddLine("Class: " + creationClass);
+                    AddLine("Class: " + creationSpec);
                     AddSmallButton("ActionReroll", (h) =>
                     {
-                        var classes = specs.FindAll(x => x.startingEquipment.ContainsKey(creationRace));
-                        creationClass = classes[random.Next(classes.Count)].name;
+                        var temp = specs.FindAll(x => x.startingEquipment.ContainsKey(creationRace));
+                        creationSpec = temp[random.Next(temp.Count)].name;
                         h.window.Respawn();
                     });
                 });
                 AddHeaderRegion(() =>
                 {
-                    var classes = specs.FindAll(x => x.startingEquipment.ContainsKey(creationRace));
-                    foreach (var foo in classes)
+                    foreach (var foo in specs.FindAll(x => x.startingEquipment.ContainsKey(creationRace)))
                     {
-                        AddBigButton(foo.icon, (h) => { creationClass = foo.name; });
-                        if (creationClass != foo.name) { AddBigButtonOverlay("OtherGridBlurred"); SetBigButtonToGrayscale(); }
+                        AddBigButton(foo.icon, (h) => { creationSpec = foo.name; });
+                        if (creationSpec != foo.name) { AddBigButtonOverlay("OtherGridBlurred"); SetBigButtonToGrayscale(); }
                     }
                 });
             }
@@ -1774,8 +1771,8 @@ public class Blueprint
                     var races = Race.races.FindAll(x => x.faction == creationSide || x.faction == "Both");
                     var race = races[random.Next(races.Count)];
                     creationRace = race.name;
-                    var classes = specs.FindAll(x => x.startingEquipment.ContainsKey(creationRace));
-                    creationClass = classes[random.Next(classes.Count)].name;
+                    var temp = specs.FindAll(x => x.startingEquipment.ContainsKey(creationRace));
+                    creationSpec = temp[random.Next(temp.Count)].name;
                     creationName = creationGender == "Male" ? race.maleNames[random.Next(race.maleNames.Count)] : race.femaleNames[random.Next(race.femaleNames.Count)];
                     CDesktop.windows.Find(x => x.title == "CharacterCreation").Respawn();
                 });
@@ -2010,7 +2007,7 @@ public class Blueprint
         }, true),
         new("TalentHeader", () => {
             SetAnchor(TopLeft);
-            var a = currentSave.player.GetClass();
+            var a = currentSave.player.Spec();
             AddHeaderGroup();
             AddPaddingRegion(() =>
             {
@@ -2107,10 +2104,10 @@ public class Blueprint
                 SpawnDesktopBlueprint("ObjectManagerTowns");
             });
             AddButtonRegion(() => { AddLine("Races"); }, (h) => { SpawnDesktopBlueprint("ObjectManagerRaces"); });
-            AddButtonRegion(() => { AddLine("Classes"); }, (h) =>
+            AddButtonRegion(() => { AddLine("Specs"); }, (h) =>
             {
                 specsSearch = specs;
-                SpawnDesktopBlueprint("ObjectManagerClasses");
+                SpawnDesktopBlueprint("ObjectManagerSpecs");
             });
             AddButtonRegion(() => { AddLine("Abilities"); }, (h) =>
             {
@@ -2141,7 +2138,7 @@ public class Blueprint
             AddButtonRegion(() => { AddLine("Save data"); }, (h) =>
             {
                 Serialize(races, "races", false, false, prefix);
-                Serialize(specs, "classes", false, false, prefix);
+                Serialize(specs, "Specs", false, false, prefix);
                 Serialize(abilities, "abilities", false, false, prefix);
                 Serialize(buffs, "buffs", false, false, prefix);
                 Serialize(areas, "areas", false, false, prefix);
@@ -2232,7 +2229,7 @@ public class Blueprint
             SetAnchor(TopLeft);
             AddRegionGroup(() => areasSearch.Count);
             SetRegionGroupWidth(171);
-            SetRegionGroupHeight(342);
+            SetRegionGroupHeight(358);
             if (area != null)
             {
                 var index = areas.IndexOf(area);
@@ -2384,7 +2381,7 @@ public class Blueprint
             SetAnchor(TopLeft);
             AddRegionGroup(() => towns.Count);
             SetRegionGroupWidth(171);
-            SetRegionGroupHeight(342);
+            SetRegionGroupHeight(358);
             if (town != null)
             {
                 var index = towns.IndexOf(town);
@@ -2572,7 +2569,7 @@ public class Blueprint
             SetAnchor(TopLeft);
             AddRegionGroup(() => instancesSearch.Count);
             SetRegionGroupWidth(171);
-            SetRegionGroupHeight(342);
+            SetRegionGroupHeight(358);
             if (instance != null)
             {
                 var index = instances.IndexOf(instance);
@@ -2728,7 +2725,7 @@ public class Blueprint
             SetAnchor(TopLeft);
             AddRegionGroup(() => complexesSearch.Count);
             SetRegionGroupWidth(171);
-            SetRegionGroupHeight(342);
+            SetRegionGroupHeight(358);
             if (complex != null)
             {
                 var index = complexes.IndexOf(complex);
@@ -2833,7 +2830,7 @@ public class Blueprint
             SetAnchor(TopLeft);
             AddRegionGroup(() => Assets.assets.ambienceSearch.Count);
             SetRegionGroupWidth(171);
-            SetRegionGroupHeight(342);
+            SetRegionGroupHeight(358);
             if (area != null)
             {
                 var index = Assets.assets.ambienceSearch.IndexOf(area.ambience + ".ogg");
@@ -2932,7 +2929,7 @@ public class Blueprint
             SetAnchor(TopLeft);
             AddRegionGroup(() => Assets.assets.soundsSearch.Count);
             SetRegionGroupWidth(171);
-            SetRegionGroupHeight(342);
+            SetRegionGroupHeight(358);
             if (eventEdit != null)
             {
                 var temp = eventEdit.effects[selectedEffect];
@@ -3014,7 +3011,7 @@ public class Blueprint
             SetAnchor(TopLeft);
             AddRegionGroup(() => Assets.assets.itemIconsSearch.Count);
             SetRegionGroupWidth(171);
-            SetRegionGroupHeight(342);
+            SetRegionGroupHeight(358);
             if (item != null)
             {
                 var index = Assets.assets.itemIconsSearch.IndexOf(item.icon + ".png");
@@ -3033,7 +3030,7 @@ public class Blueprint
                     else if (buff != null)
                         SpawnWindowBlueprint("ObjectManagerBuffs");
                     else if (spec != null)
-                        SpawnWindowBlueprint("ObjectManagerClasses");
+                        SpawnWindowBlueprint("ObjectManagerSpecs");
                 });
                 AddSmallButton("OtherReverse", (h) =>
                 {
@@ -3090,7 +3087,7 @@ public class Blueprint
             SetAnchor(TopLeft);
             AddRegionGroup(() => Assets.assets.abilityIconsSearch.Count);
             SetRegionGroupWidth(171);
-            SetRegionGroupHeight(342);
+            SetRegionGroupHeight(358);
             if (ability != null)
             {
                 var index = Assets.assets.abilityIconsSearch.IndexOf(ability.icon + ".png");
@@ -3173,7 +3170,7 @@ public class Blueprint
             SetAnchor(TopLeft);
             AddRegionGroup(() => Assets.assets.factionIconsSearch.Count);
             SetRegionGroupWidth(171);
-            SetRegionGroupHeight(342);
+            SetRegionGroupHeight(358);
             if (faction != null)
             {
                 var index = Assets.assets.factionIconsSearch.IndexOf(faction.icon + ".png");
@@ -3243,7 +3240,7 @@ public class Blueprint
             SetAnchor(TopLeft);
             AddRegionGroup(() => Assets.assets.portraitsSearch.Count);
             SetRegionGroupWidth(171);
-            SetRegionGroupHeight(342);
+            SetRegionGroupHeight(358);
             if (race != null)
             {
                 var index = Assets.assets.portraitsSearch.IndexOf(race.portrait + ".png");
@@ -3312,7 +3309,7 @@ public class Blueprint
             SetAnchor(TopLeft);
             AddRegionGroup(() => possibleEffects.Count);
             SetRegionGroupWidth(171);
-            SetRegionGroupHeight(342);
+            SetRegionGroupHeight(358);
             AddHeaderRegion(() =>
             {
                 AddLine("Effects:");
@@ -3372,7 +3369,7 @@ public class Blueprint
             SetAnchor(TopLeft);
             AddRegionGroup(() => possibleTriggers.Count);
             SetRegionGroupWidth(171);
-            SetRegionGroupHeight(342);
+            SetRegionGroupHeight(358);
             AddHeaderRegion(() =>
             {
                 AddLine("Triggers:");
@@ -4593,7 +4590,7 @@ public class Blueprint
             SetAnchor(TopLeft);
             AddRegionGroup();
             SetRegionGroupWidth(171);
-            SetRegionGroupHeight(342);
+            SetRegionGroupHeight(358);
             AddHeaderRegion(() =>
             {
                 AddLine("Area types:");
@@ -4646,7 +4643,7 @@ public class Blueprint
             SetAnchor(TopLeft);
             AddRegionGroup();
             SetRegionGroupWidth(171);
-            SetRegionGroupHeight(342);
+            SetRegionGroupHeight(358);
             AddHeaderRegion(() =>
             {
                 AddLine("Rarities:");
@@ -4815,7 +4812,7 @@ public class Blueprint
             SetAnchor(TopLeft);
             AddRegionGroup(() => itemsSearch.Count);
             SetRegionGroupWidth(171);
-            SetRegionGroupHeight(342);
+            SetRegionGroupHeight(358);
             if (item != null)
             {
                 var index = itemsSearch.IndexOf(item);
@@ -4904,7 +4901,7 @@ public class Blueprint
                 {
                     name = "Item #" + items.Count,
                     abilities = new(),
-                    classes = new(),
+                    specs = new(),
                     icon = "ItemEgg03",
                     type = "Miscellaneous",
                     rarity = "Common",
@@ -5046,7 +5043,7 @@ public class Blueprint
             SetAnchor(TopLeft);
             AddRegionGroup(() => itemSetsSearch.Count, 5);
             SetRegionGroupWidth(171);
-            SetRegionGroupHeight(342);
+            SetRegionGroupHeight(358);
             if (itemSet != null)
             {
                 var index = itemSetsSearch.IndexOf(itemSet);
@@ -5214,7 +5211,7 @@ public class Blueprint
             SetAnchor(TopLeft);
             AddRegionGroup();
             SetRegionGroupWidth(171);
-            SetRegionGroupHeight(342);
+            SetRegionGroupHeight(358);
             AddHeaderRegion(() =>
             {
                 AddLine("Ability cost:", "Gray");
@@ -5302,7 +5299,7 @@ public class Blueprint
             SetAnchor(TopLeft);
             AddRegionGroup();
             SetRegionGroupWidth(171);
-            SetRegionGroupHeight(342);
+            SetRegionGroupHeight(358);
             AddHeaderRegion(() =>
             {
                 AddLine("Stats:", "Gray");
@@ -5350,7 +5347,7 @@ public class Blueprint
             SetAnchor(TopLeft);
             AddRegionGroup(() => abilitiesSearch.Count);
             SetRegionGroupWidth(171);
-            SetRegionGroupHeight(342);
+            SetRegionGroupHeight(358);
             if (ability != null)
             {
                 var index = abilitiesSearch.IndexOf(ability);
@@ -5668,7 +5665,7 @@ public class Blueprint
             SetAnchor(TopLeft);
             AddRegionGroup(() => buffsSearch.Count);
             SetRegionGroupWidth(171);
-            SetRegionGroupHeight(342);
+            SetRegionGroupHeight(358);
             if (buff != null)
             {
                 var index = buffsSearch.IndexOf(buff);
@@ -6025,7 +6022,7 @@ public class Blueprint
             SetAnchor(TopLeft);
             AddRegionGroup(() => racesSearch.Count);
             SetRegionGroupWidth(171);
-            SetRegionGroupHeight(342);
+            SetRegionGroupHeight(358);
             if (race != null)
             {
                 var index = racesSearch.IndexOf(race);
@@ -6308,7 +6305,7 @@ public class Blueprint
             SetAnchor(TopLeft);
             AddRegionGroup(() => factionsSearch.Count);
             SetRegionGroupWidth(171);
-            SetRegionGroupHeight(342);
+            SetRegionGroupHeight(358);
             if (faction != null)
             {
                 var index = factionsSearch.IndexOf(faction);
@@ -6477,11 +6474,11 @@ public class Blueprint
             });
             AddPaddingRegion(() => { });
         }),
-        new("ObjectManagerClasses", () => {
+        new("ObjectManagerSpecs", () => {
             SetAnchor(TopLeft);
             AddRegionGroup(() => specsSearch.Count);
             SetRegionGroupWidth(171);
-            SetRegionGroupHeight(342);
+            SetRegionGroupHeight(358);
             if (spec != null)
             {
                 var index = specs.IndexOf(spec);
@@ -6490,17 +6487,17 @@ public class Blueprint
             }
             AddHeaderRegion(() =>
             {
-                AddLine("Classes:");
+                AddLine("Specs:");
                 AddSmallButton("OtherClose", (h) =>
                 {
                     spec = null; specsSearch = null;
-                    CloseDesktop("ObjectManagerClasses");
+                    CloseDesktop("ObjectManagerSpecs");
                 });
                 AddSmallButton("OtherReverse", (h) =>
                 {
                     specs.Reverse();
                     specsSearch.Reverse();
-                    Respawn("ObjectManagerClasses");
+                    Respawn("ObjectManagerSpecs");
                     PlaySound("DesktopInventorySort", 0.2f);
                 });
             });
@@ -6533,13 +6530,13 @@ public class Blueprint
                 {
                     spec = specsSearch[index + 10 * regionGroup.pagination];
                     String.objectName.Set(spec.name);
-                    Respawn("ObjectManagerClass");
+                    Respawn("ObjectManagerSpec");
                 });
             }
             AddPaddingRegion(() =>
             {
                 SetRegionAsGroupExtender();
-                AddLine(specs.Count + " classes", "DarkGray");
+                AddLine(specs.Count + " specs", "DarkGray");
                 if (specs.Count != specsSearch.Count)
                     AddLine(specsSearch.Count + " found in search", "DarkGray");
             });
@@ -6549,9 +6546,9 @@ public class Blueprint
             //},
             //(h) =>
             //{
-            //    spec = new Class()
+            //    spec = new Spec()
             //    {
-            //        name = "Class #" + specs.Count,
+            //        name = "Spec #" + specs.Count,
             //        icon = "PortraitChicken",
             //        startingEquipment = new(),
             //        abilities = new(),
@@ -6575,17 +6572,17 @@ public class Blueprint
             //    specs.Add(spec);
             //    specsSearch = specs.FindAll(x => x.name.ToLower().Contains(String.search.Value().ToLower()));
             //    String.objectName.Set(spec.name);
-            //    CloseWindow("ObjectManagerClass");
-            //    SpawnWindowBlueprint("ObjectManagerClass");
+            //    CloseWindow("ObjectManagerSpec");
+            //    SpawnWindowBlueprint("ObjectManagerSpec");
             //    h.window.Rebuild();
             //});
         }),
-        new("ObjectManagerClass", () => {
+        new("ObjectManagerSpec", () => {
             SetAnchor(TopRight);
             AddRegionGroup();
             SetRegionGroupWidth(171);
             SetRegionGroupHeight(354);
-            AddPaddingRegion(() => { AddLine("Class:", "DarkGray"); });
+            AddPaddingRegion(() => { AddLine("Spec:", "DarkGray"); });
             AddPaddingRegion(() =>
             {
                 AddInputLine(String.objectName, spec.name);
@@ -6605,7 +6602,7 @@ public class Blueprint
             //{
             //    if (!CDesktop.windows.Exists(x => x.title == "ObjectManagerIconList"))
             //    {
-            //        CloseWindow("ObjectManagerClasses");
+            //        CloseWindow("ObjectManagerSpecs");
             //        SpawnWindowBlueprint("ObjectManagerIconList");
             //    }
             //});
@@ -6957,12 +6954,12 @@ public class Blueprint
             SetDesktopBackground("StoneSplitLong", false);
             SpawnWindowBlueprint("TalentHeader");
             SpawnWindowBlueprint("ExperienceBar");
-            var playerClass = currentSave.player.GetClass();
+            var playerSpec = currentSave.player.Spec();
             for (int spec = 0; spec < 3; spec++)
-                for (int row = 0; row <= playerClass.talentTrees[spec].talents.Max(x => x.row); row++)
+                for (int row = 0; row <= playerSpec.talentTrees[spec].talents.Max(x => x.row); row++)
                     for (int col = 0; col < 3; col++)
                         if (windowBlueprints.Exists(x => x.title == "Talent" + spec + row + col))
-                            if (playerClass.talentTrees[spec].talents.Exists(x => x.row == row && x.col == col))
+                            if (playerSpec.talentTrees[spec].talents.Exists(x => x.row == row && x.col == col))
                                 SpawnWindowBlueprint("Talent" + spec + row + col);
             AddHotkey(N, () => { SwitchDesktop("Map"); CloseDesktop("TalentScreen"); PlaySound("DesktopTalentScreenClose"); });
             AddHotkey(Escape, () => { SwitchDesktop("Map"); CloseDesktop("TalentScreen"); PlaySound("DesktopTalentScreenClose"); });
@@ -7065,7 +7062,7 @@ public class Blueprint
             #if (!UNITY_EDITOR)
 
             Serialize(races, "races", true, false, prefix);
-            Serialize(specs, "classes", true, false, prefix);
+            Serialize(specs, "Specs", true, false, prefix);
             Serialize(abilities, "abilities", true, false, prefix);
             Serialize(buffs, "buffs", true, false, prefix);
             Serialize(areas, "areas", true, false, prefix);
@@ -7119,11 +7116,11 @@ public class Blueprint
             AddHotkey(Escape, () => { race = null; racesSearch = null; CloseDesktop("ObjectManagerRaces"); });
             AddPaginationHotkeys();
         }),
-        new("ObjectManagerClasses", () =>
+        new("ObjectManagerSpecs", () =>
         {
             SetDesktopBackground("Areas/AreaTheCelestialPlanetarium");
-            SpawnWindowBlueprint("ObjectManagerClasses");
-            AddHotkey(Escape, () => { spec = null; specsSearch = null; CloseDesktop("ObjectManagerClasses"); });
+            SpawnWindowBlueprint("ObjectManagerSpecs");
+            AddHotkey(Escape, () => { spec = null; specsSearch = null; CloseDesktop("ObjectManagerSpecs"); });
             AddPaginationHotkeys();
         }),
         new("ObjectManagerAbilities", () =>

@@ -35,7 +35,7 @@ public static class Root
     public static string creationSide;
     public static string creationGender;
     public static string creationRace;
-    public static string creationClass;
+    public static string creationSpec;
     public static int maxPlayerLevel = 60;
 
     public static Highlightable mouseOver;
@@ -56,10 +56,13 @@ public static class Root
 
     public static bool Roll(double chance) => random.Next(0, 100000) < chance * 1000;
 
+    public static string Clean(this string text) => text.Replace("'", "").Replace(".", "").Replace(" ", "");
+
     public static void SetMouseOver(Highlightable highlightable)
     {
         mouseOver = highlightable;
     }
+
 
     #region Desktop
 

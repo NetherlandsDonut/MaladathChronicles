@@ -1,6 +1,5 @@
 using System.Collections.Generic;
-
-using UnityEngine;
+using System.Linq;
 
 using static Root;
 using static Root.Anchor;
@@ -9,7 +8,6 @@ using static Sound;
 using static Faction;
 using static Transport;
 using static FlightPathGroup;
-using System.Linq;
 
 public class SiteTown : Site
 {
@@ -156,5 +154,5 @@ public class SiteTown : Site
     }
 
     //Returns path to a texture that is the background visual of this site
-    public override string Background() => "Areas/Area" + (zone + name).Replace("'", "").Replace(".", "").Replace(" ", "");
+    public override string Background() => "Areas/Area" + (zone + name).Clean();
 }

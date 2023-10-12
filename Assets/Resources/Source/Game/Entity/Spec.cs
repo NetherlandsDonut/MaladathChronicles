@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 using static Ability;
 
-public class Class
+public class Spec
 {
     //Initialisation method to fill automatic values
     //and remove empty collections to avoid serialising them later
@@ -57,11 +57,11 @@ public class Class
     public List<TalentTree> talentTrees;
 
     //Currently opened class
-    public static Class spec;
+    public static Spec spec;
 
-    //EXTERNAL FILE: List containing all classes in-game
-    public static List<Class> specs;
+    //EXTERNAL FILE: List containing all specs in-game
+    public static List<Spec> specs;
 
-    //List of all filtered classes by input search
-    public static List<Class> specsSearch;
+    //List of all filtered specs by input search
+    public static List<Spec> specsSearch;
 }

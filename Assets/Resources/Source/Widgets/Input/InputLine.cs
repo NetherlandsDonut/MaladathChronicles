@@ -300,9 +300,9 @@ public class InputLine : MonoBehaviour
             {
                 Respawn("ObjectManagerRaces");
             }
-            else if (CDesktop.windows.Exists(x => x.title == "ObjectManagerClasses"))
+            else if (CDesktop.windows.Exists(x => x.title == "ObjectManagerSpecs"))
             {
-                Respawn("ObjectManagerClasses");
+                Respawn("ObjectManagerSpecs");
             }
             else if (CDesktop.windows.Exists(x => x.title == "ObjectManagerHostileAreas"))
             {
@@ -381,10 +381,10 @@ public class InputLine : MonoBehaviour
                 var find = CDesktop.windows.Find(x => x.title == "ObjectManagerRaces");
                 if (find != null) find.Respawn();
             }
-            else if (CDesktop.title == "ObjectManagerClasses")
+            else if (CDesktop.title == "ObjectManagerSpecs")
             {
-                Class.spec.name = foo.Value();
-                var find = CDesktop.windows.Find(x => x.title == "ObjectManagerClasses");
+                Spec.spec.name = foo.Value();
+                var find = CDesktop.windows.Find(x => x.title == "ObjectManagerSpecs");
                 if (find != null) find.Respawn();
             }
         }

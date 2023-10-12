@@ -555,6 +555,82 @@
               "droppedBy": [
                 "Princess Theradras"
               ]
+            },
+            {
+              "rarity": "Uncommon",
+              "name": "Venomshroud Mask",
+              "icon": "itemhelmet32",
+              "type": "Head",
+              "armorClass": "Cloth",
+              "ilvl": 50,
+              "lvl": 45,
+              "armor": 53,
+              "price": 0.7166,
+              "stats": {
+                "stats": {
+                  "Intellect": 16,
+                  "Stamina": 10
+                }
+              }
+            },
+            {
+              "rarity": "Uncommon",
+              "name": "Ebonhold Cloak",
+              "icon": "itemmisccape05",
+              "type": "Back",
+              "ilvl": 51,
+              "lvl": 46,
+              "price": 0.7468,
+              "stats": {
+                "stats": {
+                  "Agility": 7,
+                  "Stamina": 4,
+                  "Spirit": 9
+                }
+              }
+            },
+            {
+              "rarity": "Uncommon",
+              "name": "Nightscape Cloak",
+              "icon": "itemmisccape03",
+              "type": "Back",
+              "ilvl": 46,
+              "lvl": 41,
+              "price": 0.5263,
+              "stats": {
+                "stats": {
+                  "Agility": 10,
+                  "Stamina": 3
+                }
+              }
+            },
+            {
+              "rarity": "Uncommon",
+              "name": "Cindercloth Boots",
+              "icon": "itemboots05",
+              "type": "Feet",
+              "armorClass": "Cloth",
+              "ilvl": 49,
+              "lvl": 44,
+              "armor": 44,
+              "price": 0.6765,
+              "stats": {
+                "stats": {}
+              }
+            },
+            {
+              "rarity": "Uncommon",
+              "name": "Mystical Belt",
+              "icon": "itembelt02",
+              "type": "Waist",
+              "armorClass": "Cloth",
+              "ilvl": 52,
+              "lvl": 47,
+              "armor": 38,
+              "price": 0.5141,
+              "stats": {
+                "stats": {}
+              }
             }
           ]
         },
@@ -783,7 +859,8 @@
         "Dig Three": 1,
         "Ethel Rethor": 2,
         "Sar'theris Strand": 1,
-        "Zaetar's Grave": 3
+        "Zaetar's Grave": 3,
+        "Foulspore Cavern": 5
       },
       "commonsKilled": {
         "Dustbelcher Warrior": 1,
@@ -805,7 +882,9 @@
         "Enraged Reef Crawler": 2,
         "Gritjaw Basilisk": 1,
         "Deep Borer": 2,
-        "Thessala Hydra": 1
+        "Thessala Hydra": 1,
+        "Celebrian Dryad": 4,
+        "Deeprot Stomper": 1
       },
       "raresKilled": {},
       "elitesKilled": {
@@ -873,12 +952,12 @@
         "Ranazjar Isle": 4,
         "Valley of Spears": 1,
         "Sar'theris Strand": 1,
-        "Maraudon": 1
+        "Maraudon": 2
       },
       "startDate": "2023-09-08T02:04:14.0667101+02:00",
-      "lastLoaded": "2023-10-11T22:30:34.4841355+02:00",
-      "lastPlayed": "2023-10-11T22:39:36.4856227+02:00",
-      "timePlayed": "08:00:21.2233446"
+      "lastLoaded": "2023-10-12T06:41:09.1166344+02:00",
+      "lastPlayed": "2023-10-12T07:30:32.7607288+02:00",
+      "timePlayed": "08:49:44.8674390"
     },
     {
       "player": {

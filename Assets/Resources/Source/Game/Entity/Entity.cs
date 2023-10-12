@@ -6,13 +6,15 @@ using UnityEngine;
 using UnityEditor;
 
 using static Root;
+using static Race;
+using static Spec;
 using static Sound;
 
 public class Entity
 {
     public Entity() { }
     
-    public Entity(string name, string creationGender, Race race, Class spec, List<string> items)
+    public Entity(string name, string creationGender, Race race, Spec spec, List<string> items)
     {
         level = 60;
         gender = creationGender;
@@ -42,7 +44,7 @@ public class Entity
     public Entity(int level, Race race)
     {
         this.level = level;
-        race ??= Race.races.Find(x => x.name == "Dumb Kobold");
+        race ??= races.Find(x => x.name == "Dumb Kobold");
         kind = race.kind;
         this.race = name = race.name;
         abilities = race.abilities.Select(x => x).Distinct().ToList();
@@ -290,13 +292,13 @@ public class Entity
 
     #endregion
 
-    #region Talents & Class
+    #region Talents & Spec
 
     //Checks whether entity can pick specific talent
     public bool CanPickTalent(int spec, Talent talent)
     {
         if (unspentTalentPoints == 0) return false;
-        var talentTree = GetClass().talentTrees[spec];
+        var talentTree = Spec().talentTrees[spec];
         if (talent.row > talentTree.talents.FindAll(x => abilities.Contains(x.ability)).Max(x => x.row) + 1) return false;
         if (talent.inherited) if (!abilities.Contains(PreviousTalent(spec, talent).ability)) return false;
         return true;
@@ -305,14 +307,8 @@ public class Entity
     //Provides a talent that preceeds given talent
     public Talent PreviousTalent(int spec, Talent talent)
     {
-        var temp = GetClass().talentTrees[spec].talents.OrderByDescending(x => x.row).ToList().FindAll(x => x.col == talent.col);
+        var temp = Spec().talentTrees[spec].talents.OrderByDescending(x => x.row).ToList().FindAll(x => x.col == talent.col);
         return temp.Find(x => x.row < talent.row);
-    }
-
-    //Provides entity's class
-    public Class GetClass()
-    {
-        return Class.specs.Find(x => x.name == spec);
     }
 
     #endregion
@@ -430,7 +426,7 @@ public class Entity
         var stats = new Dictionary<string, int>();
         foreach (var stat in this.stats.stats)
             stats.Add(stat.Key, stat.Value);
-        var temp = GetClass();
+        var temp = Spec();
         if (temp != null)
         {
             stats["Stamina"] += (int)(temp.rules["Stamina per Level"] * level);
@@ -449,7 +445,7 @@ public class Entity
 
     public double MeleeAttackPower()
     {
-        var temp = GetClass();
+        var temp = Spec();
         if (temp == null) return Stats()["Strength"] * 2 + Stats()["Agility"] * 2;
         var sum = temp.rules["Melee Attack Power per Strength"] * Stats()["Strength"];
         sum += temp.rules["Melee Attack Power per Agility"] * Stats()["Agility"];
@@ -458,7 +454,7 @@ public class Entity
 
     public double RangedAttackPower()
     {
-        var temp = GetClass();
+        var temp = Spec();
         if (temp == null) return Stats()["Agility"] * 3;
         var sum = temp.rules["Ranged Attack Power per Agility"] * Stats()["Agility"];
         return sum;
@@ -466,7 +462,7 @@ public class Entity
 
     public double SpellPower()
     {
-        var temp = GetClass();
+        var temp = Spec();
         if (temp == null) return Stats()["Intellect"] * 3;
         var sum = temp.rules["Spell Power per Intellect"] * Stats()["Intellect"];
         return sum;
@@ -474,7 +470,7 @@ public class Entity
 
     public double CriticalStrike()
     {
-        var temp = GetClass();
+        var temp = Spec();
         if (temp == null) return Stats()["Agility"] * 0.03;
         var sum = temp.rules["Critical Strike per Strength"] * Stats()["Strength"];
         sum += temp.rules["Critical Strike per Agility"] * Stats()["Agility"];
@@ -483,7 +479,7 @@ public class Entity
 
     public double SpellCritical()
     {
-        var temp = GetClass();
+        var temp = Spec();
         if (temp == null) return Stats()["Intellect"] * 0.03;
         var sum = temp.rules["Spell Critical per Intellect"] * Stats()["Intellect"];
         return sum;
@@ -596,14 +592,69 @@ public class Entity
 
     #endregion
 
-    [NonSerialized] public int health;
-    public int level, unspentTalentPoints, actionBarsUnlocked, experience;
-    public string name, race, spec, gender, kind;
-    [NonSerialized] public Dictionary<string, int> resources;
+    //Level of this entity
+    public int level;
+
+    //Amount of currently unspent talent points for this entity
+    public int unspentTalentPoints;
+
+    //Amount of unlocked action bars for the entity
+    //Trinket active abilities do not use up a slot of these!
+    public int actionBarsUnlocked;
+
+    //Current amount of experience this unit has
+    public int experience;
+
+    //Name of the entity
+    public string name;
+
+    //Race of the entity
+    public string race;
+    public Race Race()
+    {
+        if (race == null) return null;
+        return races.Find(x => x.name == race);
+    }
+
+    //The class that this entity is representing
+    public string spec;
+    public Spec Spec()
+    {
+        if (spec == null) return null;
+        return specs.Find(x => x.name == spec);
+    }
+
+    //Gender of this entity
+    public string gender;
+
+    //This variable is only for enemies
+    //and can have three different values:
+    //Common, Rare and Elite
+    public string kind;
+
+    //List of abilities that this entity has access to
+    //This can be abilities from items, class or race
     public List<string> abilities;
+
+    //Set action bars in spellbook
     public List<ActionBar> actionBars;
+
+    //"Naked" stats of the entity
     public Stats stats;
+
+    //Inventory of the entity storing currency and items
     public Inventory inventory;
+
+    //Currently equipped items
+    //Equipped items are not present in the inventory!
     public Dictionary<string, Item> equipment;
+
+    //Current health of the entity
+    [NonSerialized] public int health;
+
+    //Stores information about resources of the entity in combat
+    [NonSerialized] public Dictionary<string, int> resources;
+
+    //List of active buffs and debuffs on this entity
     [NonSerialized] public List<(Buff, int, GameObject)> buffs;
 }

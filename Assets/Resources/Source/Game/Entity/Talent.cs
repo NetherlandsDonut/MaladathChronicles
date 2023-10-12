@@ -31,8 +31,8 @@ public class Talent
         AddRegionGroup();
         AddPaddingRegion(() =>
         {
-            var playerClass = currentSave.player.GetClass();
-            var talent = playerClass.talentTrees[spec].talents.Find(x => x.row == row && x.col == col);
+            var playerSpec = currentSave.player.Spec();
+            var talent = playerSpec.talentTrees[spec].talents.Find(x => x.row == row && x.col == col);
             var previousTalent = currentSave.player.PreviousTalent(spec, talent);
             var previousTalentDistance = previousTalent == null ? 0 : talent.row - previousTalent.row;
             var abilityObj = abilities.Find(x => x.name == talent.ability);

@@ -166,7 +166,7 @@ public class SiteInstance : Site
     }
 
     //Returns path to a texture that is the background visual of this site
-    public override string Background() => "Areas/Area" + name.Replace("'", "").Replace(".", "").Replace(" ", "");
+    public override string Background() => "Areas/Area" + name.Clean();
 
     public static void PrintInstanceWing(SiteInstance instance, InstanceWing wing)
     {
@@ -183,13 +183,13 @@ public class SiteInstance : Site
             {
                 if (area == null) return;
                 SiteHostileArea.area = area;
-                var window = CDesktop.windows.Find(x => x.title.StartsWith("HostileArea: "));
+                var window = CDesktop.windows.Find(x => x.title.StartsWith("HostileArea: "));   
                 if (window != null)
                     if (window.title == "HostileArea: " + area.name) return;
                     else CloseWindow(window);
                 CloseWindow("InstanceLeftSide");
                 SpawnWindowBlueprint("HostileArea: " + area.name);
-                SetDesktopBackground("Areas/Area" + (instance.name + area.name).Replace("'", "").Replace(".", "").Replace(" ", "") + (area.specialClearBackground && area.eliteEncounters.All(x => currentSave.elitesKilled.ContainsKey(x.who)) ? "Cleared" : ""));
+                SetDesktopBackground("Areas/Area" + (instance.name + area.name).Clean() + (area.specialClearBackground && area.eliteEncounters.All(x => currentSave.elitesKilled.ContainsKey(x.who)) ? "Cleared" : ""));
             });
     }
 }

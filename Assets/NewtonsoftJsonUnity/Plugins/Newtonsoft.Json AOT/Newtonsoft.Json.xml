@@ -1076,7 +1076,7 @@
             Specifies default value handling options for the <see cref="T:Newtonsoft.Json.JsonSerializer"/>.
             </summary>
             <example>
-              <code lang="cs" source="..\Src\Newtonsoft.Json.Tests\Documentation\SerializationTests.cs" region="ReducingSerializedJsonSizeDefaultValueHandlingObject" title="DefaultValueHandling Class" />
+              <code lang="cs" source="..\Src\Newtonsoft.Json.Tests\Documentation\SerializationTests.cs" region="ReducingSerializedJsonSizeDefaultValueHandlingObject" title="DefaultValueHandling Spec" />
               <code lang="cs" source="..\Src\Newtonsoft.Json.Tests\Documentation\SerializationTests.cs" region="ReducingSerializedJsonSizeDefaultValueHandlingExample" title="DefaultValueHandling Ignore Example" />
             </example>
         </member>
@@ -2340,7 +2340,7 @@
             <returns>A <see cref="T:System.Threading.Tasks.Task`1"/> that represents the asynchronous read. The <see cref="P:System.Threading.Tasks.Task`1.Result"/>
             property returns <c>true</c> if the next token was read successfully; <c>false</c> if there are no more tokens to read.</returns>
             <remarks>The default behaviour is to execute synchronously, returning an already-completed task. Derived
-            classes can override this behaviour for true asynchronicity.</remarks>
+            specs can override this behaviour for true asynchronicity.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonReader.SkipAsync(System.Threading.CancellationToken)">
             <summary>
@@ -2349,7 +2349,7 @@
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
             <remarks>The default behaviour is to execute synchronously, returning an already-completed task. Derived
-            classes can override this behaviour for true asynchronicity.</remarks>
+            specs can override this behaviour for true asynchronicity.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonReader.ReadAsBooleanAsync(System.Threading.CancellationToken)">
             <summary>
@@ -2359,7 +2359,7 @@
             <returns>A <see cref="T:System.Threading.Tasks.Task`1"/> that represents the asynchronous read. The <see cref="P:System.Threading.Tasks.Task`1.Result"/>
             property returns the <see cref="T:System.Nullable`1"/> of <see cref="T:System.Boolean"/>. This result will be <c>null</c> at the end of an array.</returns>
             <remarks>The default behaviour is to execute synchronously, returning an already-completed task. Derived
-            classes can override this behaviour for true asynchronicity.</remarks>
+            specs can override this behaviour for true asynchronicity.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonReader.ReadAsBytesAsync(System.Threading.CancellationToken)">
             <summary>
@@ -2369,7 +2369,7 @@
             <returns>A <see cref="T:System.Threading.Tasks.Task`1"/> that represents the asynchronous read. The <see cref="P:System.Threading.Tasks.Task`1.Result"/>
             property returns the <see cref="T:System.Byte"/>[]. This result will be <c>null</c> at the end of an array.</returns>
             <remarks>The default behaviour is to execute synchronously, returning an already-completed task. Derived
-            classes can override this behaviour for true asynchronicity.</remarks>
+            specs can override this behaviour for true asynchronicity.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonReader.ReadAsDateTimeAsync(System.Threading.CancellationToken)">
             <summary>
@@ -2379,7 +2379,7 @@
             <returns>A <see cref="T:System.Threading.Tasks.Task`1"/> that represents the asynchronous read. The <see cref="P:System.Threading.Tasks.Task`1.Result"/>
             property returns the <see cref="T:System.Nullable`1"/> of <see cref="T:System.DateTime"/>. This result will be <c>null</c> at the end of an array.</returns>
             <remarks>The default behaviour is to execute synchronously, returning an already-completed task. Derived
-            classes can override this behaviour for true asynchronicity.</remarks>
+            specs can override this behaviour for true asynchronicity.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonReader.ReadAsDateTimeOffsetAsync(System.Threading.CancellationToken)">
             <summary>
@@ -2389,7 +2389,7 @@
             <returns>A <see cref="T:System.Threading.Tasks.Task`1"/> that represents the asynchronous read. The <see cref="P:System.Threading.Tasks.Task`1.Result"/>
             property returns the <see cref="T:System.Nullable`1"/> of <see cref="T:System.DateTimeOffset"/>. This result will be <c>null</c> at the end of an array.</returns>
             <remarks>The default behaviour is to execute synchronously, returning an already-completed task. Derived
-            classes can override this behaviour for true asynchronicity.</remarks>
+            specs can override this behaviour for true asynchronicity.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonReader.ReadAsDecimalAsync(System.Threading.CancellationToken)">
             <summary>
@@ -2399,7 +2399,7 @@
             <returns>A <see cref="T:System.Threading.Tasks.Task`1"/> that represents the asynchronous read. The <see cref="P:System.Threading.Tasks.Task`1.Result"/>
             property returns the <see cref="T:System.Nullable`1"/> of <see cref="T:System.Decimal"/>. This result will be <c>null</c> at the end of an array.</returns>
             <remarks>The default behaviour is to execute synchronously, returning an already-completed task. Derived
-            classes can override this behaviour for true asynchronicity.</remarks>
+            specs can override this behaviour for true asynchronicity.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonReader.ReadAsDoubleAsync(System.Threading.CancellationToken)">
             <summary>
@@ -2409,7 +2409,7 @@
             <returns>A <see cref="T:System.Threading.Tasks.Task`1"/> that represents the asynchronous read. The <see cref="P:System.Threading.Tasks.Task`1.Result"/>
             property returns the <see cref="T:System.Nullable`1"/> of <see cref="T:System.Double"/>. This result will be <c>null</c> at the end of an array.</returns>
             <remarks>The default behaviour is to execute synchronously, returning an already-completed task. Derived
-            classes can override this behaviour for true asynchronicity.</remarks>
+            specs can override this behaviour for true asynchronicity.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonReader.ReadAsInt32Async(System.Threading.CancellationToken)">
             <summary>
@@ -2419,7 +2419,7 @@
             <returns>A <see cref="T:System.Threading.Tasks.Task`1"/> that represents the asynchronous read. The <see cref="P:System.Threading.Tasks.Task`1.Result"/>
             property returns the <see cref="T:System.Nullable`1"/> of <see cref="T:System.Int32"/>. This result will be <c>null</c> at the end of an array.</returns>
             <remarks>The default behaviour is to execute synchronously, returning an already-completed task. Derived
-            classes can override this behaviour for true asynchronicity.</remarks>
+            specs can override this behaviour for true asynchronicity.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonReader.ReadAsStringAsync(System.Threading.CancellationToken)">
             <summary>
@@ -2429,7 +2429,7 @@
             <returns>A <see cref="T:System.Threading.Tasks.Task`1"/> that represents the asynchronous read. The <see cref="P:System.Threading.Tasks.Task`1.Result"/>
             property returns the <see cref="T:System.String"/>. This result will be <c>null</c> at the end of an array.</returns>
             <remarks>The default behaviour is to execute synchronously, returning an already-completed task. Derived
-            classes can override this behaviour for true asynchronicity.</remarks>
+            specs can override this behaviour for true asynchronicity.</remarks>
         </member>
         <member name="T:Newtonsoft.Json.JsonReader.State">
             <summary>
@@ -3409,7 +3409,7 @@
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task`1"/> that represents the asynchronous read. The <see cref="P:System.Threading.Tasks.Task`1.Result"/>
             property returns <c>true</c> if the next token was read successfully; <c>false</c> if there are no more tokens to read.</returns>
-            <remarks>Derived classes must override this method to get asynchronous behaviour. Otherwise it will
+            <remarks>Derived specs must override this method to get asynchronous behaviour. Otherwise it will
             execute synchronously, returning an already-completed task.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonTextReader.ReadAsBooleanAsync(System.Threading.CancellationToken)">
@@ -3419,7 +3419,7 @@
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task`1"/> that represents the asynchronous read. The <see cref="P:System.Threading.Tasks.Task`1.Result"/>
             property returns the <see cref="T:System.Nullable`1"/> of <see cref="T:System.Boolean"/>. This result will be <c>null</c> at the end of an array.</returns>
-            <remarks>Derived classes must override this method to get asynchronous behaviour. Otherwise it will
+            <remarks>Derived specs must override this method to get asynchronous behaviour. Otherwise it will
             execute synchronously, returning an already-completed task.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonTextReader.ReadAsBytesAsync(System.Threading.CancellationToken)">
@@ -3429,7 +3429,7 @@
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task`1"/> that represents the asynchronous read. The <see cref="P:System.Threading.Tasks.Task`1.Result"/>
             property returns the <see cref="T:System.Byte"/>[]. This result will be <c>null</c> at the end of an array.</returns>
-            <remarks>Derived classes must override this method to get asynchronous behaviour. Otherwise it will
+            <remarks>Derived specs must override this method to get asynchronous behaviour. Otherwise it will
             execute synchronously, returning an already-completed task.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonTextReader.ReadAsDateTimeAsync(System.Threading.CancellationToken)">
@@ -3439,7 +3439,7 @@
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task`1"/> that represents the asynchronous read. The <see cref="P:System.Threading.Tasks.Task`1.Result"/>
             property returns the <see cref="T:System.Nullable`1"/> of <see cref="T:System.DateTime"/>. This result will be <c>null</c> at the end of an array.</returns>
-            <remarks>Derived classes must override this method to get asynchronous behaviour. Otherwise it will
+            <remarks>Derived specs must override this method to get asynchronous behaviour. Otherwise it will
             execute synchronously, returning an already-completed task.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonTextReader.ReadAsDateTimeOffsetAsync(System.Threading.CancellationToken)">
@@ -3449,7 +3449,7 @@
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task`1"/> that represents the asynchronous read. The <see cref="P:System.Threading.Tasks.Task`1.Result"/>
             property returns the <see cref="T:System.Nullable`1"/> of <see cref="T:System.DateTimeOffset"/>. This result will be <c>null</c> at the end of an array.</returns>
-            <remarks>Derived classes must override this method to get asynchronous behaviour. Otherwise it will
+            <remarks>Derived specs must override this method to get asynchronous behaviour. Otherwise it will
             execute synchronously, returning an already-completed task.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonTextReader.ReadAsDecimalAsync(System.Threading.CancellationToken)">
@@ -3459,7 +3459,7 @@
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task`1"/> that represents the asynchronous read. The <see cref="P:System.Threading.Tasks.Task`1.Result"/>
             property returns the <see cref="T:System.Nullable`1"/> of <see cref="T:System.Decimal"/>. This result will be <c>null</c> at the end of an array.</returns>
-            <remarks>Derived classes must override this method to get asynchronous behaviour. Otherwise it will
+            <remarks>Derived specs must override this method to get asynchronous behaviour. Otherwise it will
             execute synchronously, returning an already-completed task.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonTextReader.ReadAsDoubleAsync(System.Threading.CancellationToken)">
@@ -3469,7 +3469,7 @@
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task`1"/> that represents the asynchronous read. The <see cref="P:System.Threading.Tasks.Task`1.Result"/>
             property returns the <see cref="T:System.Nullable`1"/> of <see cref="T:System.Double"/>. This result will be <c>null</c> at the end of an array.</returns>
-            <remarks>Derived classes must override this method to get asynchronous behaviour. Otherwise it will
+            <remarks>Derived specs must override this method to get asynchronous behaviour. Otherwise it will
             execute synchronously, returning an already-completed task.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonTextReader.ReadAsInt32Async(System.Threading.CancellationToken)">
@@ -3479,7 +3479,7 @@
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task`1"/> that represents the asynchronous read. The <see cref="P:System.Threading.Tasks.Task`1.Result"/>
             property returns the <see cref="T:System.Nullable`1"/> of <see cref="T:System.Int32"/>. This result will be <c>null</c> at the end of an array.</returns>
-            <remarks>Derived classes must override this method to get asynchronous behaviour. Otherwise it will
+            <remarks>Derived specs must override this method to get asynchronous behaviour. Otherwise it will
             execute synchronously, returning an already-completed task.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonTextReader.ReadAsStringAsync(System.Threading.CancellationToken)">
@@ -3489,7 +3489,7 @@
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task`1"/> that represents the asynchronous read. The <see cref="P:System.Threading.Tasks.Task`1.Result"/>
             property returns the <see cref="T:System.String"/>. This result will be <c>null</c> at the end of an array.</returns>
-            <remarks>Derived classes must override this method to get asynchronous behaviour. Otherwise it will
+            <remarks>Derived specs must override this method to get asynchronous behaviour. Otherwise it will
             execute synchronously, returning an already-completed task.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonTextReader.#ctor(System.IO.TextReader)">
@@ -3605,7 +3605,7 @@
             </summary>
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
-            <remarks>Derived classes must override this method to get asynchronous behaviour. Otherwise it will
+            <remarks>Derived specs must override this method to get asynchronous behaviour. Otherwise it will
             execute synchronously, returning an already-completed task.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonTextWriter.WriteValueDelimiterAsync(System.Threading.CancellationToken)">
@@ -3614,7 +3614,7 @@
             </summary>
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
-            <remarks>Derived classes must override this method to get asynchronous behaviour. Otherwise it will
+            <remarks>Derived specs must override this method to get asynchronous behaviour. Otherwise it will
             execute synchronously, returning an already-completed task.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonTextWriter.WriteEndAsync(Newtonsoft.Json.JsonToken,System.Threading.CancellationToken)">
@@ -3624,7 +3624,7 @@
             <param name="token">The end token to write.</param>
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
-            <remarks>Derived classes must override this method to get asynchronous behaviour. Otherwise it will
+            <remarks>Derived specs must override this method to get asynchronous behaviour. Otherwise it will
             execute synchronously, returning an already-completed task.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonTextWriter.CloseAsync(System.Threading.CancellationToken)">
@@ -3634,7 +3634,7 @@
             </summary>
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
-            <remarks>Derived classes must override this method to get asynchronous behaviour. Otherwise it will
+            <remarks>Derived specs must override this method to get asynchronous behaviour. Otherwise it will
             execute synchronously, returning an already-completed task.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonTextWriter.WriteEndAsync(System.Threading.CancellationToken)">
@@ -3643,7 +3643,7 @@
             </summary>
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
-            <remarks>Derived classes must override this method to get asynchronous behaviour. Otherwise it will
+            <remarks>Derived specs must override this method to get asynchronous behaviour. Otherwise it will
             execute synchronously, returning an already-completed task.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonTextWriter.WriteIndentAsync(System.Threading.CancellationToken)">
@@ -3652,7 +3652,7 @@
             </summary>
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
-            <remarks>Derived classes must override this method to get asynchronous behaviour. Otherwise it will
+            <remarks>Derived specs must override this method to get asynchronous behaviour. Otherwise it will
             execute synchronously, returning an already-completed task.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonTextWriter.WriteIndentSpaceAsync(System.Threading.CancellationToken)">
@@ -3661,7 +3661,7 @@
             </summary>
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
-            <remarks>Derived classes must override this method to get asynchronous behaviour. Otherwise it will
+            <remarks>Derived specs must override this method to get asynchronous behaviour. Otherwise it will
             execute synchronously, returning an already-completed task.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonTextWriter.WriteRawAsync(System.String,System.Threading.CancellationToken)">
@@ -3671,7 +3671,7 @@
             <param name="json">The raw JSON to write.</param>
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
-            <remarks>Derived classes must override this method to get asynchronous behaviour. Otherwise it will
+            <remarks>Derived specs must override this method to get asynchronous behaviour. Otherwise it will
             execute synchronously, returning an already-completed task.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonTextWriter.WriteNullAsync(System.Threading.CancellationToken)">
@@ -3680,7 +3680,7 @@
             </summary>
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
-            <remarks>Derived classes must override this method to get asynchronous behaviour. Otherwise it will
+            <remarks>Derived specs must override this method to get asynchronous behaviour. Otherwise it will
             execute synchronously, returning an already-completed task.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonTextWriter.WritePropertyNameAsync(System.String,System.Threading.CancellationToken)">
@@ -3690,7 +3690,7 @@
             <param name="name">The name of the property.</param>
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
-            <remarks>Derived classes must override this method to get asynchronous behaviour. Otherwise it will
+            <remarks>Derived specs must override this method to get asynchronous behaviour. Otherwise it will
             execute synchronously, returning an already-completed task.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonTextWriter.WritePropertyNameAsync(System.String,System.Boolean,System.Threading.CancellationToken)">
@@ -3701,7 +3701,7 @@
             <param name="escape">A flag to indicate whether the text should be escaped when it is written as a JSON property name.</param>
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
-            <remarks>Derived classes must override this method to get asynchronous behaviour. Otherwise it will
+            <remarks>Derived specs must override this method to get asynchronous behaviour. Otherwise it will
             execute synchronously, returning an already-completed task.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonTextWriter.WriteStartArrayAsync(System.Threading.CancellationToken)">
@@ -3710,7 +3710,7 @@
             </summary>
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
-            <remarks>Derived classes must override this method to get asynchronous behaviour. Otherwise it will
+            <remarks>Derived specs must override this method to get asynchronous behaviour. Otherwise it will
             execute synchronously, returning an already-completed task.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonTextWriter.WriteStartObjectAsync(System.Threading.CancellationToken)">
@@ -3719,7 +3719,7 @@
             </summary>
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
-            <remarks>Derived classes must override this method to get asynchronous behaviour. Otherwise it will
+            <remarks>Derived specs must override this method to get asynchronous behaviour. Otherwise it will
             execute synchronously, returning an already-completed task.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonTextWriter.WriteStartConstructorAsync(System.String,System.Threading.CancellationToken)">
@@ -3729,7 +3729,7 @@
             <param name="name">The name of the constructor.</param>
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
-            <remarks>Derived classes must override this method to get asynchronous behaviour. Otherwise it will
+            <remarks>Derived specs must override this method to get asynchronous behaviour. Otherwise it will
             execute synchronously, returning an already-completed task.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonTextWriter.WriteUndefinedAsync(System.Threading.CancellationToken)">
@@ -3738,7 +3738,7 @@
             </summary>
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
-            <remarks>Derived classes must override this method to get asynchronous behaviour. Otherwise it will
+            <remarks>Derived specs must override this method to get asynchronous behaviour. Otherwise it will
             execute synchronously, returning an already-completed task.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonTextWriter.WriteWhitespaceAsync(System.String,System.Threading.CancellationToken)">
@@ -3748,7 +3748,7 @@
             <param name="ws">The string of white space characters.</param>
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
-            <remarks>Derived classes must override this method to get asynchronous behaviour. Otherwise it will
+            <remarks>Derived specs must override this method to get asynchronous behaviour. Otherwise it will
             execute synchronously, returning an already-completed task.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonTextWriter.WriteValueAsync(System.Boolean,System.Threading.CancellationToken)">
@@ -3758,7 +3758,7 @@
             <param name="value">The <see cref="T:System.Nullable`1"/> of <see cref="T:System.Boolean"/> value to write.</param>
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
-            <remarks>Derived classes must override this method to get asynchronous behaviour. Otherwise it will
+            <remarks>Derived specs must override this method to get asynchronous behaviour. Otherwise it will
             execute synchronously, returning an already-completed task.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonTextWriter.WriteValueAsync(System.Nullable{System.Boolean},System.Threading.CancellationToken)">
@@ -3768,7 +3768,7 @@
             <param name="value">The <see cref="T:System.Boolean"/> value to write.</param>
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
-            <remarks>Derived classes must override this method to get asynchronous behaviour. Otherwise it will
+            <remarks>Derived specs must override this method to get asynchronous behaviour. Otherwise it will
             execute synchronously, returning an already-completed task.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonTextWriter.WriteValueAsync(System.Byte,System.Threading.CancellationToken)">
@@ -3778,7 +3778,7 @@
             <param name="value">The <see cref="T:System.Byte"/> value to write.</param>
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
-            <remarks>Derived classes must override this method to get asynchronous behaviour. Otherwise it will
+            <remarks>Derived specs must override this method to get asynchronous behaviour. Otherwise it will
             execute synchronously, returning an already-completed task.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonTextWriter.WriteValueAsync(System.Nullable{System.Byte},System.Threading.CancellationToken)">
@@ -3788,7 +3788,7 @@
             <param name="value">The <see cref="T:System.Nullable`1"/> of <see cref="T:System.Byte"/> value to write.</param>
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
-            <remarks>Derived classes must override this method to get asynchronous behaviour. Otherwise it will
+            <remarks>Derived specs must override this method to get asynchronous behaviour. Otherwise it will
             execute synchronously, returning an already-completed task.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonTextWriter.WriteValueAsync(System.Byte[],System.Threading.CancellationToken)">
@@ -3798,7 +3798,7 @@
             <param name="value">The <see cref="T:System.Byte"/>[] value to write.</param>
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
-            <remarks>Derived classes must override this method to get asynchronous behaviour. Otherwise it will
+            <remarks>Derived specs must override this method to get asynchronous behaviour. Otherwise it will
             execute synchronously, returning an already-completed task.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonTextWriter.WriteValueAsync(System.Char,System.Threading.CancellationToken)">
@@ -3808,7 +3808,7 @@
             <param name="value">The <see cref="T:System.Char"/> value to write.</param>
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
-            <remarks>Derived classes must override this method to get asynchronous behaviour. Otherwise it will
+            <remarks>Derived specs must override this method to get asynchronous behaviour. Otherwise it will
             execute synchronously, returning an already-completed task.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonTextWriter.WriteValueAsync(System.Nullable{System.Char},System.Threading.CancellationToken)">
@@ -3818,7 +3818,7 @@
             <param name="value">The <see cref="T:System.Nullable`1"/> of <see cref="T:System.Char"/> value to write.</param>
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
-            <remarks>Derived classes must override this method to get asynchronous behaviour. Otherwise it will
+            <remarks>Derived specs must override this method to get asynchronous behaviour. Otherwise it will
             execute synchronously, returning an already-completed task.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonTextWriter.WriteValueAsync(System.DateTime,System.Threading.CancellationToken)">
@@ -3828,7 +3828,7 @@
             <param name="value">The <see cref="T:System.DateTime"/> value to write.</param>
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
-            <remarks>Derived classes must override this method to get asynchronous behaviour. Otherwise it will
+            <remarks>Derived specs must override this method to get asynchronous behaviour. Otherwise it will
             execute synchronously, returning an already-completed task.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonTextWriter.WriteValueAsync(System.Nullable{System.DateTime},System.Threading.CancellationToken)">
@@ -3838,7 +3838,7 @@
             <param name="value">The <see cref="T:System.Nullable`1"/> of <see cref="T:System.DateTime"/> value to write.</param>
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
-            <remarks>Derived classes must override this method to get asynchronous behaviour. Otherwise it will
+            <remarks>Derived specs must override this method to get asynchronous behaviour. Otherwise it will
             execute synchronously, returning an already-completed task.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonTextWriter.WriteValueAsync(System.DateTimeOffset,System.Threading.CancellationToken)">
@@ -3848,7 +3848,7 @@
             <param name="value">The <see cref="T:System.DateTimeOffset"/> value to write.</param>
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
-            <remarks>Derived classes must override this method to get asynchronous behaviour. Otherwise it will
+            <remarks>Derived specs must override this method to get asynchronous behaviour. Otherwise it will
             execute synchronously, returning an already-completed task.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonTextWriter.WriteValueAsync(System.Nullable{System.DateTimeOffset},System.Threading.CancellationToken)">
@@ -3858,7 +3858,7 @@
             <param name="value">The <see cref="T:System.Nullable`1"/> of <see cref="T:System.DateTimeOffset"/> value to write.</param>
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
-            <remarks>Derived classes must override this method to get asynchronous behaviour. Otherwise it will
+            <remarks>Derived specs must override this method to get asynchronous behaviour. Otherwise it will
             execute synchronously, returning an already-completed task.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonTextWriter.WriteValueAsync(System.Decimal,System.Threading.CancellationToken)">
@@ -3868,7 +3868,7 @@
             <param name="value">The <see cref="T:System.Decimal"/> value to write.</param>
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
-            <remarks>Derived classes must override this method to get asynchronous behaviour. Otherwise it will
+            <remarks>Derived specs must override this method to get asynchronous behaviour. Otherwise it will
             execute synchronously, returning an already-completed task.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonTextWriter.WriteValueAsync(System.Nullable{System.Decimal},System.Threading.CancellationToken)">
@@ -3878,7 +3878,7 @@
             <param name="value">The <see cref="T:System.Nullable`1"/> of <see cref="T:System.Decimal"/> value to write.</param>
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
-            <remarks>Derived classes must override this method to get asynchronous behaviour. Otherwise it will
+            <remarks>Derived specs must override this method to get asynchronous behaviour. Otherwise it will
             execute synchronously, returning an already-completed task.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonTextWriter.WriteValueAsync(System.Double,System.Threading.CancellationToken)">
@@ -3888,7 +3888,7 @@
             <param name="value">The <see cref="T:System.Double"/> value to write.</param>
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
-            <remarks>Derived classes must override this method to get asynchronous behaviour. Otherwise it will
+            <remarks>Derived specs must override this method to get asynchronous behaviour. Otherwise it will
             execute synchronously, returning an already-completed task.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonTextWriter.WriteValueAsync(System.Nullable{System.Double},System.Threading.CancellationToken)">
@@ -3898,7 +3898,7 @@
             <param name="value">The <see cref="T:System.Nullable`1"/> of <see cref="T:System.Double"/> value to write.</param>
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
-            <remarks>Derived classes must override this method to get asynchronous behaviour. Otherwise it will
+            <remarks>Derived specs must override this method to get asynchronous behaviour. Otherwise it will
             execute synchronously, returning an already-completed task.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonTextWriter.WriteValueAsync(System.Single,System.Threading.CancellationToken)">
@@ -3908,7 +3908,7 @@
             <param name="value">The <see cref="T:System.Single"/> value to write.</param>
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
-            <remarks>Derived classes must override this method to get asynchronous behaviour. Otherwise it will
+            <remarks>Derived specs must override this method to get asynchronous behaviour. Otherwise it will
             execute synchronously, returning an already-completed task.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonTextWriter.WriteValueAsync(System.Nullable{System.Single},System.Threading.CancellationToken)">
@@ -3918,7 +3918,7 @@
             <param name="value">The <see cref="T:System.Nullable`1"/> of <see cref="T:System.Single"/> value to write.</param>
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
-            <remarks>Derived classes must override this method to get asynchronous behaviour. Otherwise it will
+            <remarks>Derived specs must override this method to get asynchronous behaviour. Otherwise it will
             execute synchronously, returning an already-completed task.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonTextWriter.WriteValueAsync(System.Guid,System.Threading.CancellationToken)">
@@ -3928,7 +3928,7 @@
             <param name="value">The <see cref="T:System.Guid"/> value to write.</param>
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
-            <remarks>Derived classes must override this method to get asynchronous behaviour. Otherwise it will
+            <remarks>Derived specs must override this method to get asynchronous behaviour. Otherwise it will
             execute synchronously, returning an already-completed task.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonTextWriter.WriteValueAsync(System.Nullable{System.Guid},System.Threading.CancellationToken)">
@@ -3938,7 +3938,7 @@
             <param name="value">The <see cref="T:System.Nullable`1"/> of <see cref="T:System.Guid"/> value to write.</param>
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
-            <remarks>Derived classes must override this method to get asynchronous behaviour. Otherwise it will
+            <remarks>Derived specs must override this method to get asynchronous behaviour. Otherwise it will
             execute synchronously, returning an already-completed task.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonTextWriter.WriteValueAsync(System.Int32,System.Threading.CancellationToken)">
@@ -3948,7 +3948,7 @@
             <param name="value">The <see cref="T:System.Int32"/> value to write.</param>
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
-            <remarks>Derived classes must override this method to get asynchronous behaviour. Otherwise it will
+            <remarks>Derived specs must override this method to get asynchronous behaviour. Otherwise it will
             execute synchronously, returning an already-completed task.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonTextWriter.WriteValueAsync(System.Nullable{System.Int32},System.Threading.CancellationToken)">
@@ -3958,7 +3958,7 @@
             <param name="value">The <see cref="T:System.Nullable`1"/> of <see cref="T:System.Int32"/> value to write.</param>
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
-            <remarks>Derived classes must override this method to get asynchronous behaviour. Otherwise it will
+            <remarks>Derived specs must override this method to get asynchronous behaviour. Otherwise it will
             execute synchronously, returning an already-completed task.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonTextWriter.WriteValueAsync(System.Int64,System.Threading.CancellationToken)">
@@ -3968,7 +3968,7 @@
             <param name="value">The <see cref="T:System.Int64"/> value to write.</param>
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
-            <remarks>Derived classes must override this method to get asynchronous behaviour. Otherwise it will
+            <remarks>Derived specs must override this method to get asynchronous behaviour. Otherwise it will
             execute synchronously, returning an already-completed task.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonTextWriter.WriteValueAsync(System.Nullable{System.Int64},System.Threading.CancellationToken)">
@@ -3978,7 +3978,7 @@
             <param name="value">The <see cref="T:System.Nullable`1"/> of <see cref="T:System.Int64"/> value to write.</param>
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
-            <remarks>Derived classes must override this method to get asynchronous behaviour. Otherwise it will
+            <remarks>Derived specs must override this method to get asynchronous behaviour. Otherwise it will
             execute synchronously, returning an already-completed task.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonTextWriter.WriteValueAsync(System.Object,System.Threading.CancellationToken)">
@@ -3988,7 +3988,7 @@
             <param name="value">The <see cref="T:System.Object"/> value to write.</param>
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
-            <remarks>Derived classes must override this method to get asynchronous behaviour. Otherwise it will
+            <remarks>Derived specs must override this method to get asynchronous behaviour. Otherwise it will
             execute synchronously, returning an already-completed task.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonTextWriter.WriteValueAsync(System.SByte,System.Threading.CancellationToken)">
@@ -3998,7 +3998,7 @@
             <param name="value">The <see cref="T:System.SByte"/> value to write.</param>
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
-            <remarks>Derived classes must override this method to get asynchronous behaviour. Otherwise it will
+            <remarks>Derived specs must override this method to get asynchronous behaviour. Otherwise it will
             execute synchronously, returning an already-completed task.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonTextWriter.WriteValueAsync(System.Nullable{System.SByte},System.Threading.CancellationToken)">
@@ -4008,7 +4008,7 @@
             <param name="value">The <see cref="T:System.Nullable`1"/> of <see cref="T:System.SByte"/> value to write.</param>
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
-            <remarks>Derived classes must override this method to get asynchronous behaviour. Otherwise it will
+            <remarks>Derived specs must override this method to get asynchronous behaviour. Otherwise it will
             execute synchronously, returning an already-completed task.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonTextWriter.WriteValueAsync(System.Int16,System.Threading.CancellationToken)">
@@ -4018,7 +4018,7 @@
             <param name="value">The <see cref="T:System.Int16"/> value to write.</param>
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
-            <remarks>Derived classes must override this method to get asynchronous behaviour. Otherwise it will
+            <remarks>Derived specs must override this method to get asynchronous behaviour. Otherwise it will
             execute synchronously, returning an already-completed task.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonTextWriter.WriteValueAsync(System.Nullable{System.Int16},System.Threading.CancellationToken)">
@@ -4028,7 +4028,7 @@
             <param name="value">The <see cref="T:System.Nullable`1"/> of <see cref="T:System.Int16"/> value to write.</param>
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
-            <remarks>Derived classes must override this method to get asynchronous behaviour. Otherwise it will
+            <remarks>Derived specs must override this method to get asynchronous behaviour. Otherwise it will
             execute synchronously, returning an already-completed task.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonTextWriter.WriteValueAsync(System.String,System.Threading.CancellationToken)">
@@ -4038,7 +4038,7 @@
             <param name="value">The <see cref="T:System.String"/> value to write.</param>
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
-            <remarks>Derived classes must override this method to get asynchronous behaviour. Otherwise it will
+            <remarks>Derived specs must override this method to get asynchronous behaviour. Otherwise it will
             execute synchronously, returning an already-completed task.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonTextWriter.WriteValueAsync(System.TimeSpan,System.Threading.CancellationToken)">
@@ -4048,7 +4048,7 @@
             <param name="value">The <see cref="T:System.TimeSpan"/> value to write.</param>
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
-            <remarks>Derived classes must override this method to get asynchronous behaviour. Otherwise it will
+            <remarks>Derived specs must override this method to get asynchronous behaviour. Otherwise it will
             execute synchronously, returning an already-completed task.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonTextWriter.WriteValueAsync(System.Nullable{System.TimeSpan},System.Threading.CancellationToken)">
@@ -4058,7 +4058,7 @@
             <param name="value">The <see cref="T:System.Nullable`1"/> of <see cref="T:System.TimeSpan"/> value to write.</param>
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
-            <remarks>Derived classes must override this method to get asynchronous behaviour. Otherwise it will
+            <remarks>Derived specs must override this method to get asynchronous behaviour. Otherwise it will
             execute synchronously, returning an already-completed task.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonTextWriter.WriteValueAsync(System.UInt32,System.Threading.CancellationToken)">
@@ -4068,7 +4068,7 @@
             <param name="value">The <see cref="T:System.UInt32"/> value to write.</param>
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
-            <remarks>Derived classes must override this method to get asynchronous behaviour. Otherwise it will
+            <remarks>Derived specs must override this method to get asynchronous behaviour. Otherwise it will
             execute synchronously, returning an already-completed task.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonTextWriter.WriteValueAsync(System.Nullable{System.UInt32},System.Threading.CancellationToken)">
@@ -4078,7 +4078,7 @@
             <param name="value">The <see cref="T:System.Nullable`1"/> of <see cref="T:System.UInt32"/> value to write.</param>
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
-            <remarks>Derived classes must override this method to get asynchronous behaviour. Otherwise it will
+            <remarks>Derived specs must override this method to get asynchronous behaviour. Otherwise it will
             execute synchronously, returning an already-completed task.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonTextWriter.WriteValueAsync(System.UInt64,System.Threading.CancellationToken)">
@@ -4088,7 +4088,7 @@
             <param name="value">The <see cref="T:System.UInt64"/> value to write.</param>
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
-            <remarks>Derived classes must override this method to get asynchronous behaviour. Otherwise it will
+            <remarks>Derived specs must override this method to get asynchronous behaviour. Otherwise it will
             execute synchronously, returning an already-completed task.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonTextWriter.WriteValueAsync(System.Nullable{System.UInt64},System.Threading.CancellationToken)">
@@ -4098,7 +4098,7 @@
             <param name="value">The <see cref="T:System.Nullable`1"/> of <see cref="T:System.UInt64"/> value to write.</param>
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
-            <remarks>Derived classes must override this method to get asynchronous behaviour. Otherwise it will
+            <remarks>Derived specs must override this method to get asynchronous behaviour. Otherwise it will
             execute synchronously, returning an already-completed task.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonTextWriter.WriteValueAsync(System.Uri,System.Threading.CancellationToken)">
@@ -4108,7 +4108,7 @@
             <param name="value">The <see cref="T:System.Uri"/> value to write.</param>
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
-            <remarks>Derived classes must override this method to get asynchronous behaviour. Otherwise it will
+            <remarks>Derived specs must override this method to get asynchronous behaviour. Otherwise it will
             execute synchronously, returning an already-completed task.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonTextWriter.WriteValueAsync(System.UInt16,System.Threading.CancellationToken)">
@@ -4118,7 +4118,7 @@
             <param name="value">The <see cref="T:System.UInt16"/> value to write.</param>
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
-            <remarks>Derived classes must override this method to get asynchronous behaviour. Otherwise it will
+            <remarks>Derived specs must override this method to get asynchronous behaviour. Otherwise it will
             execute synchronously, returning an already-completed task.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonTextWriter.WriteValueAsync(System.Nullable{System.UInt16},System.Threading.CancellationToken)">
@@ -4128,7 +4128,7 @@
             <param name="value">The <see cref="T:System.Nullable`1"/> of <see cref="T:System.UInt16"/> value to write.</param>
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
-            <remarks>Derived classes must override this method to get asynchronous behaviour. Otherwise it will
+            <remarks>Derived specs must override this method to get asynchronous behaviour. Otherwise it will
             execute synchronously, returning an already-completed task.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonTextWriter.WriteCommentAsync(System.String,System.Threading.CancellationToken)">
@@ -4138,7 +4138,7 @@
             <param name="text">Text to place inside the comment.</param>
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
-            <remarks>Derived classes must override this method to get asynchronous behaviour. Otherwise it will
+            <remarks>Derived specs must override this method to get asynchronous behaviour. Otherwise it will
             execute synchronously, returning an already-completed task.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonTextWriter.WriteEndArrayAsync(System.Threading.CancellationToken)">
@@ -4147,7 +4147,7 @@
             </summary>
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
-            <remarks>Derived classes must override this method to get asynchronous behaviour. Otherwise it will
+            <remarks>Derived specs must override this method to get asynchronous behaviour. Otherwise it will
             execute synchronously, returning an already-completed task.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonTextWriter.WriteEndConstructorAsync(System.Threading.CancellationToken)">
@@ -4156,7 +4156,7 @@
             </summary>
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
-            <remarks>Derived classes must override this method to get asynchronous behaviour. Otherwise it will
+            <remarks>Derived specs must override this method to get asynchronous behaviour. Otherwise it will
             execute synchronously, returning an already-completed task.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonTextWriter.WriteEndObjectAsync(System.Threading.CancellationToken)">
@@ -4165,7 +4165,7 @@
             </summary>
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
-            <remarks>Derived classes must override this method to get asynchronous behaviour. Otherwise it will
+            <remarks>Derived specs must override this method to get asynchronous behaviour. Otherwise it will
             execute synchronously, returning an already-completed task.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonTextWriter.WriteRawValueAsync(System.String,System.Threading.CancellationToken)">
@@ -4175,7 +4175,7 @@
             <param name="json">The raw JSON to write.</param>
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
-            <remarks>Derived classes must override this method to get asynchronous behaviour. Otherwise it will
+            <remarks>Derived specs must override this method to get asynchronous behaviour. Otherwise it will
             execute synchronously, returning an already-completed task.</remarks>
         </member>
         <member name="P:Newtonsoft.Json.JsonTextWriter.ArrayPool">
@@ -4679,7 +4679,7 @@
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
             <remarks>The default behaviour is to execute synchronously, returning an already-completed task. Derived
-            classes can override this behaviour for true asynchronicity.</remarks>
+            specs can override this behaviour for true asynchronicity.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonWriter.FlushAsync(System.Threading.CancellationToken)">
             <summary>
@@ -4688,7 +4688,7 @@
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
             <remarks>The default behaviour is to execute synchronously, returning an already-completed task. Derived
-            classes can override this behaviour for true asynchronicity.</remarks>
+            specs can override this behaviour for true asynchronicity.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonWriter.WriteEndAsync(Newtonsoft.Json.JsonToken,System.Threading.CancellationToken)">
             <summary>
@@ -4698,7 +4698,7 @@
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
             <remarks>The default behaviour is to execute synchronously, returning an already-completed task. Derived
-            classes can override this behaviour for true asynchronicity.</remarks>
+            specs can override this behaviour for true asynchronicity.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonWriter.WriteIndentAsync(System.Threading.CancellationToken)">
             <summary>
@@ -4707,7 +4707,7 @@
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
             <remarks>The default behaviour is to execute synchronously, returning an already-completed task. Derived
-            classes can override this behaviour for true asynchronicity.</remarks>
+            specs can override this behaviour for true asynchronicity.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonWriter.WriteValueDelimiterAsync(System.Threading.CancellationToken)">
             <summary>
@@ -4716,7 +4716,7 @@
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
             <remarks>The default behaviour is to execute synchronously, returning an already-completed task. Derived
-            classes can override this behaviour for true asynchronicity.</remarks>
+            specs can override this behaviour for true asynchronicity.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonWriter.WriteIndentSpaceAsync(System.Threading.CancellationToken)">
             <summary>
@@ -4725,7 +4725,7 @@
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
             <remarks>The default behaviour is to execute synchronously, returning an already-completed task. Derived
-            classes can override this behaviour for true asynchronicity.</remarks>
+            specs can override this behaviour for true asynchronicity.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonWriter.WriteRawAsync(System.String,System.Threading.CancellationToken)">
             <summary>
@@ -4735,7 +4735,7 @@
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
             <remarks>The default behaviour is to execute synchronously, returning an already-completed task. Derived
-            classes can override this behaviour for true asynchronicity.</remarks>
+            specs can override this behaviour for true asynchronicity.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonWriter.WriteEndAsync(System.Threading.CancellationToken)">
             <summary>
@@ -4744,7 +4744,7 @@
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
             <remarks>The default behaviour is to execute synchronously, returning an already-completed task. Derived
-            classes can override this behaviour for true asynchronicity.</remarks>
+            specs can override this behaviour for true asynchronicity.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonWriter.WriteEndArrayAsync(System.Threading.CancellationToken)">
             <summary>
@@ -4753,7 +4753,7 @@
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
             <remarks>The default behaviour is to execute synchronously, returning an already-completed task. Derived
-            classes can override this behaviour for true asynchronicity.</remarks>
+            specs can override this behaviour for true asynchronicity.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonWriter.WriteEndConstructorAsync(System.Threading.CancellationToken)">
             <summary>
@@ -4762,7 +4762,7 @@
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
             <remarks>The default behaviour is to execute synchronously, returning an already-completed task. Derived
-            classes can override this behaviour for true asynchronicity.</remarks>
+            specs can override this behaviour for true asynchronicity.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonWriter.WriteEndObjectAsync(System.Threading.CancellationToken)">
             <summary>
@@ -4771,7 +4771,7 @@
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
             <remarks>The default behaviour is to execute synchronously, returning an already-completed task. Derived
-            classes can override this behaviour for true asynchronicity.</remarks>
+            specs can override this behaviour for true asynchronicity.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonWriter.WriteNullAsync(System.Threading.CancellationToken)">
             <summary>
@@ -4780,7 +4780,7 @@
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
             <remarks>The default behaviour is to execute synchronously, returning an already-completed task. Derived
-            classes can override this behaviour for true asynchronicity.</remarks>
+            specs can override this behaviour for true asynchronicity.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonWriter.WritePropertyNameAsync(System.String,System.Threading.CancellationToken)">
             <summary>
@@ -4790,7 +4790,7 @@
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
             <remarks>The default behaviour is to execute synchronously, returning an already-completed task. Derived
-            classes can override this behaviour for true asynchronicity.</remarks>
+            specs can override this behaviour for true asynchronicity.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonWriter.WritePropertyNameAsync(System.String,System.Boolean,System.Threading.CancellationToken)">
             <summary>
@@ -4801,7 +4801,7 @@
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
             <remarks>The default behaviour is to execute synchronously, returning an already-completed task. Derived
-            classes can override this behaviour for true asynchronicity.</remarks>
+            specs can override this behaviour for true asynchronicity.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonWriter.WriteStartArrayAsync(System.Threading.CancellationToken)">
             <summary>
@@ -4810,7 +4810,7 @@
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
             <remarks>The default behaviour is to execute synchronously, returning an already-completed task. Derived
-            classes can override this behaviour for true asynchronicity.</remarks>
+            specs can override this behaviour for true asynchronicity.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonWriter.WriteCommentAsync(System.String,System.Threading.CancellationToken)">
             <summary>
@@ -4820,7 +4820,7 @@
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
             <remarks>The default behaviour is to execute synchronously, returning an already-completed task. Derived
-            classes can override this behaviour for true asynchronicity.</remarks>
+            specs can override this behaviour for true asynchronicity.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonWriter.WriteRawValueAsync(System.String,System.Threading.CancellationToken)">
             <summary>
@@ -4830,7 +4830,7 @@
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
             <remarks>The default behaviour is to execute synchronously, returning an already-completed task. Derived
-            classes can override this behaviour for true asynchronicity.</remarks>
+            specs can override this behaviour for true asynchronicity.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonWriter.WriteStartConstructorAsync(System.String,System.Threading.CancellationToken)">
             <summary>
@@ -4840,7 +4840,7 @@
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
             <remarks>The default behaviour is to execute synchronously, returning an already-completed task. Derived
-            classes can override this behaviour for true asynchronicity.</remarks>
+            specs can override this behaviour for true asynchronicity.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonWriter.WriteStartObjectAsync(System.Threading.CancellationToken)">
             <summary>
@@ -4849,7 +4849,7 @@
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
             <remarks>The default behaviour is to execute synchronously, returning an already-completed task. Derived
-            classes can override this behaviour for true asynchronicity.</remarks>
+            specs can override this behaviour for true asynchronicity.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonWriter.WriteTokenAsync(Newtonsoft.Json.JsonReader,System.Threading.CancellationToken)">
             <summary>
@@ -4859,7 +4859,7 @@
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
             <remarks>The default behaviour is to execute synchronously, returning an already-completed task. Derived
-            classes can override this behaviour for true asynchronicity.</remarks>
+            specs can override this behaviour for true asynchronicity.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonWriter.WriteTokenAsync(Newtonsoft.Json.JsonReader,System.Boolean,System.Threading.CancellationToken)">
             <summary>
@@ -4870,7 +4870,7 @@
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
             <remarks>The default behaviour is to execute synchronously, returning an already-completed task. Derived
-            classes can override this behaviour for true asynchronicity.</remarks>
+            specs can override this behaviour for true asynchronicity.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonWriter.WriteTokenAsync(Newtonsoft.Json.JsonToken,System.Threading.CancellationToken)">
             <summary>
@@ -4880,7 +4880,7 @@
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
             <remarks>The default behaviour is to execute synchronously, returning an already-completed task. Derived
-            classes can override this behaviour for true asynchronicity.</remarks>
+            specs can override this behaviour for true asynchronicity.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonWriter.WriteTokenAsync(Newtonsoft.Json.JsonToken,System.Object,System.Threading.CancellationToken)">
             <summary>
@@ -4895,7 +4895,7 @@
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
             <remarks>The default behaviour is to execute synchronously, returning an already-completed task. Derived
-            classes can override this behaviour for true asynchronicity.</remarks>
+            specs can override this behaviour for true asynchronicity.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonWriter.WriteValueAsync(System.Boolean,System.Threading.CancellationToken)">
             <summary>
@@ -4905,7 +4905,7 @@
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
             <remarks>The default behaviour is to execute synchronously, returning an already-completed task. Derived
-            classes can override this behaviour for true asynchronicity.</remarks>
+            specs can override this behaviour for true asynchronicity.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonWriter.WriteValueAsync(System.Nullable{System.Boolean},System.Threading.CancellationToken)">
             <summary>
@@ -4915,7 +4915,7 @@
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
             <remarks>The default behaviour is to execute synchronously, returning an already-completed task. Derived
-            classes can override this behaviour for true asynchronicity.</remarks>
+            specs can override this behaviour for true asynchronicity.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonWriter.WriteValueAsync(System.Byte,System.Threading.CancellationToken)">
             <summary>
@@ -4925,7 +4925,7 @@
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
             <remarks>The default behaviour is to execute synchronously, returning an already-completed task. Derived
-            classes can override this behaviour for true asynchronicity.</remarks>
+            specs can override this behaviour for true asynchronicity.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonWriter.WriteValueAsync(System.Nullable{System.Byte},System.Threading.CancellationToken)">
             <summary>
@@ -4935,7 +4935,7 @@
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
             <remarks>The default behaviour is to execute synchronously, returning an already-completed task. Derived
-            classes can override this behaviour for true asynchronicity.</remarks>
+            specs can override this behaviour for true asynchronicity.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonWriter.WriteValueAsync(System.Byte[],System.Threading.CancellationToken)">
             <summary>
@@ -4945,7 +4945,7 @@
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
             <remarks>The default behaviour is to execute synchronously, returning an already-completed task. Derived
-            classes can override this behaviour for true asynchronicity.</remarks>
+            specs can override this behaviour for true asynchronicity.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonWriter.WriteValueAsync(System.Char,System.Threading.CancellationToken)">
             <summary>
@@ -4955,7 +4955,7 @@
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
             <remarks>The default behaviour is to execute synchronously, returning an already-completed task. Derived
-            classes can override this behaviour for true asynchronicity.</remarks>
+            specs can override this behaviour for true asynchronicity.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonWriter.WriteValueAsync(System.Nullable{System.Char},System.Threading.CancellationToken)">
             <summary>
@@ -4965,7 +4965,7 @@
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
             <remarks>The default behaviour is to execute synchronously, returning an already-completed task. Derived
-            classes can override this behaviour for true asynchronicity.</remarks>
+            specs can override this behaviour for true asynchronicity.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonWriter.WriteValueAsync(System.DateTime,System.Threading.CancellationToken)">
             <summary>
@@ -4975,7 +4975,7 @@
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
             <remarks>The default behaviour is to execute synchronously, returning an already-completed task. Derived
-            classes can override this behaviour for true asynchronicity.</remarks>
+            specs can override this behaviour for true asynchronicity.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonWriter.WriteValueAsync(System.Nullable{System.DateTime},System.Threading.CancellationToken)">
             <summary>
@@ -4985,7 +4985,7 @@
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
             <remarks>The default behaviour is to execute synchronously, returning an already-completed task. Derived
-            classes can override this behaviour for true asynchronicity.</remarks>
+            specs can override this behaviour for true asynchronicity.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonWriter.WriteValueAsync(System.DateTimeOffset,System.Threading.CancellationToken)">
             <summary>
@@ -4995,7 +4995,7 @@
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
             <remarks>The default behaviour is to execute synchronously, returning an already-completed task. Derived
-            classes can override this behaviour for true asynchronicity.</remarks>
+            specs can override this behaviour for true asynchronicity.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonWriter.WriteValueAsync(System.Nullable{System.DateTimeOffset},System.Threading.CancellationToken)">
             <summary>
@@ -5005,7 +5005,7 @@
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
             <remarks>The default behaviour is to execute synchronously, returning an already-completed task. Derived
-            classes can override this behaviour for true asynchronicity.</remarks>
+            specs can override this behaviour for true asynchronicity.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonWriter.WriteValueAsync(System.Decimal,System.Threading.CancellationToken)">
             <summary>
@@ -5015,7 +5015,7 @@
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
             <remarks>The default behaviour is to execute synchronously, returning an already-completed task. Derived
-            classes can override this behaviour for true asynchronicity.</remarks>
+            specs can override this behaviour for true asynchronicity.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonWriter.WriteValueAsync(System.Nullable{System.Decimal},System.Threading.CancellationToken)">
             <summary>
@@ -5025,7 +5025,7 @@
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
             <remarks>The default behaviour is to execute synchronously, returning an already-completed task. Derived
-            classes can override this behaviour for true asynchronicity.</remarks>
+            specs can override this behaviour for true asynchronicity.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonWriter.WriteValueAsync(System.Double,System.Threading.CancellationToken)">
             <summary>
@@ -5035,7 +5035,7 @@
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
             <remarks>The default behaviour is to execute synchronously, returning an already-completed task. Derived
-            classes can override this behaviour for true asynchronicity.</remarks>
+            specs can override this behaviour for true asynchronicity.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonWriter.WriteValueAsync(System.Nullable{System.Double},System.Threading.CancellationToken)">
             <summary>
@@ -5045,7 +5045,7 @@
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
             <remarks>The default behaviour is to execute synchronously, returning an already-completed task. Derived
-            classes can override this behaviour for true asynchronicity.</remarks>
+            specs can override this behaviour for true asynchronicity.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonWriter.WriteValueAsync(System.Single,System.Threading.CancellationToken)">
             <summary>
@@ -5055,7 +5055,7 @@
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
             <remarks>The default behaviour is to execute synchronously, returning an already-completed task. Derived
-            classes can override this behaviour for true asynchronicity.</remarks>
+            specs can override this behaviour for true asynchronicity.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonWriter.WriteValueAsync(System.Nullable{System.Single},System.Threading.CancellationToken)">
             <summary>
@@ -5065,7 +5065,7 @@
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
             <remarks>The default behaviour is to execute synchronously, returning an already-completed task. Derived
-            classes can override this behaviour for true asynchronicity.</remarks>
+            specs can override this behaviour for true asynchronicity.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonWriter.WriteValueAsync(System.Guid,System.Threading.CancellationToken)">
             <summary>
@@ -5075,7 +5075,7 @@
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
             <remarks>The default behaviour is to execute synchronously, returning an already-completed task. Derived
-            classes can override this behaviour for true asynchronicity.</remarks>
+            specs can override this behaviour for true asynchronicity.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonWriter.WriteValueAsync(System.Nullable{System.Guid},System.Threading.CancellationToken)">
             <summary>
@@ -5085,7 +5085,7 @@
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
             <remarks>The default behaviour is to execute synchronously, returning an already-completed task. Derived
-            classes can override this behaviour for true asynchronicity.</remarks>
+            specs can override this behaviour for true asynchronicity.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonWriter.WriteValueAsync(System.Int32,System.Threading.CancellationToken)">
             <summary>
@@ -5095,7 +5095,7 @@
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
             <remarks>The default behaviour is to execute synchronously, returning an already-completed task. Derived
-            classes can override this behaviour for true asynchronicity.</remarks>
+            specs can override this behaviour for true asynchronicity.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonWriter.WriteValueAsync(System.Nullable{System.Int32},System.Threading.CancellationToken)">
             <summary>
@@ -5105,7 +5105,7 @@
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
             <remarks>The default behaviour is to execute synchronously, returning an already-completed task. Derived
-            classes can override this behaviour for true asynchronicity.</remarks>
+            specs can override this behaviour for true asynchronicity.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonWriter.WriteValueAsync(System.Int64,System.Threading.CancellationToken)">
             <summary>
@@ -5115,7 +5115,7 @@
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
             <remarks>The default behaviour is to execute synchronously, returning an already-completed task. Derived
-            classes can override this behaviour for true asynchronicity.</remarks>
+            specs can override this behaviour for true asynchronicity.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonWriter.WriteValueAsync(System.Nullable{System.Int64},System.Threading.CancellationToken)">
             <summary>
@@ -5125,7 +5125,7 @@
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
             <remarks>The default behaviour is to execute synchronously, returning an already-completed task. Derived
-            classes can override this behaviour for true asynchronicity.</remarks>
+            specs can override this behaviour for true asynchronicity.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonWriter.WriteValueAsync(System.Object,System.Threading.CancellationToken)">
             <summary>
@@ -5135,7 +5135,7 @@
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
             <remarks>The default behaviour is to execute synchronously, returning an already-completed task. Derived
-            classes can override this behaviour for true asynchronicity.</remarks>
+            specs can override this behaviour for true asynchronicity.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonWriter.WriteValueAsync(System.SByte,System.Threading.CancellationToken)">
             <summary>
@@ -5145,7 +5145,7 @@
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
             <remarks>The default behaviour is to execute synchronously, returning an already-completed task. Derived
-            classes can override this behaviour for true asynchronicity.</remarks>
+            specs can override this behaviour for true asynchronicity.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonWriter.WriteValueAsync(System.Nullable{System.SByte},System.Threading.CancellationToken)">
             <summary>
@@ -5155,7 +5155,7 @@
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
             <remarks>The default behaviour is to execute synchronously, returning an already-completed task. Derived
-            classes can override this behaviour for true asynchronicity.</remarks>
+            specs can override this behaviour for true asynchronicity.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonWriter.WriteValueAsync(System.Int16,System.Threading.CancellationToken)">
             <summary>
@@ -5165,7 +5165,7 @@
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
             <remarks>The default behaviour is to execute synchronously, returning an already-completed task. Derived
-            classes can override this behaviour for true asynchronicity.</remarks>
+            specs can override this behaviour for true asynchronicity.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonWriter.WriteValueAsync(System.Nullable{System.Int16},System.Threading.CancellationToken)">
             <summary>
@@ -5175,7 +5175,7 @@
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
             <remarks>The default behaviour is to execute synchronously, returning an already-completed task. Derived
-            classes can override this behaviour for true asynchronicity.</remarks>
+            specs can override this behaviour for true asynchronicity.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonWriter.WriteValueAsync(System.String,System.Threading.CancellationToken)">
             <summary>
@@ -5185,7 +5185,7 @@
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
             <remarks>The default behaviour is to execute synchronously, returning an already-completed task. Derived
-            classes can override this behaviour for true asynchronicity.</remarks>
+            specs can override this behaviour for true asynchronicity.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonWriter.WriteValueAsync(System.TimeSpan,System.Threading.CancellationToken)">
             <summary>
@@ -5195,7 +5195,7 @@
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
             <remarks>The default behaviour is to execute synchronously, returning an already-completed task. Derived
-            classes can override this behaviour for true asynchronicity.</remarks>
+            specs can override this behaviour for true asynchronicity.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonWriter.WriteValueAsync(System.Nullable{System.TimeSpan},System.Threading.CancellationToken)">
             <summary>
@@ -5205,7 +5205,7 @@
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
             <remarks>The default behaviour is to execute synchronously, returning an already-completed task. Derived
-            classes can override this behaviour for true asynchronicity.</remarks>
+            specs can override this behaviour for true asynchronicity.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonWriter.WriteValueAsync(System.UInt32,System.Threading.CancellationToken)">
             <summary>
@@ -5215,7 +5215,7 @@
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
             <remarks>The default behaviour is to execute synchronously, returning an already-completed task. Derived
-            classes can override this behaviour for true asynchronicity.</remarks>
+            specs can override this behaviour for true asynchronicity.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonWriter.WriteValueAsync(System.Nullable{System.UInt32},System.Threading.CancellationToken)">
             <summary>
@@ -5225,7 +5225,7 @@
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
             <remarks>The default behaviour is to execute synchronously, returning an already-completed task. Derived
-            classes can override this behaviour for true asynchronicity.</remarks>
+            specs can override this behaviour for true asynchronicity.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonWriter.WriteValueAsync(System.UInt64,System.Threading.CancellationToken)">
             <summary>
@@ -5235,7 +5235,7 @@
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
             <remarks>The default behaviour is to execute synchronously, returning an already-completed task. Derived
-            classes can override this behaviour for true asynchronicity.</remarks>
+            specs can override this behaviour for true asynchronicity.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonWriter.WriteValueAsync(System.Nullable{System.UInt64},System.Threading.CancellationToken)">
             <summary>
@@ -5245,7 +5245,7 @@
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
             <remarks>The default behaviour is to execute synchronously, returning an already-completed task. Derived
-            classes can override this behaviour for true asynchronicity.</remarks>
+            specs can override this behaviour for true asynchronicity.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonWriter.WriteValueAsync(System.Uri,System.Threading.CancellationToken)">
             <summary>
@@ -5255,7 +5255,7 @@
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
             <remarks>The default behaviour is to execute synchronously, returning an already-completed task. Derived
-            classes can override this behaviour for true asynchronicity.</remarks>
+            specs can override this behaviour for true asynchronicity.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonWriter.WriteValueAsync(System.UInt16,System.Threading.CancellationToken)">
             <summary>
@@ -5265,7 +5265,7 @@
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
             <remarks>The default behaviour is to execute synchronously, returning an already-completed task. Derived
-            classes can override this behaviour for true asynchronicity.</remarks>
+            specs can override this behaviour for true asynchronicity.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonWriter.WriteValueAsync(System.Nullable{System.UInt16},System.Threading.CancellationToken)">
             <summary>
@@ -5275,7 +5275,7 @@
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
             <remarks>The default behaviour is to execute synchronously, returning an already-completed task. Derived
-            classes can override this behaviour for true asynchronicity.</remarks>
+            specs can override this behaviour for true asynchronicity.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonWriter.WriteUndefinedAsync(System.Threading.CancellationToken)">
             <summary>
@@ -5284,7 +5284,7 @@
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
             <remarks>The default behaviour is to execute synchronously, returning an already-completed task. Derived
-            classes can override this behaviour for true asynchronicity.</remarks>
+            specs can override this behaviour for true asynchronicity.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonWriter.WriteWhitespaceAsync(System.String,System.Threading.CancellationToken)">
             <summary>
@@ -5294,7 +5294,7 @@
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
             <remarks>The default behaviour is to execute synchronously, returning an already-completed task. Derived
-            classes can override this behaviour for true asynchronicity.</remarks>
+            specs can override this behaviour for true asynchronicity.</remarks>
         </member>
         <member name="M:Newtonsoft.Json.JsonWriter.SetWriteStateAsync(Newtonsoft.Json.JsonToken,System.Object,System.Threading.CancellationToken)">
             <summary>
@@ -5305,7 +5305,7 @@
             <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
             <remarks>The default behaviour is to execute synchronously, returning an already-completed task. Derived
-            classes can override this behaviour for true asynchronicity.</remarks>
+            specs can override this behaviour for true asynchronicity.</remarks>
         </member>
         <member name="P:Newtonsoft.Json.JsonWriter.CloseOutput">
             <summary>
@@ -8846,7 +8846,7 @@
             Specifies null value handling options for the <see cref="T:Newtonsoft.Json.JsonSerializer"/>.
             </summary>
             <example>
-              <code lang="cs" source="..\Src\Newtonsoft.Json.Tests\Documentation\SerializationTests.cs" region="ReducingSerializedJsonSizeNullValueHandlingObject" title="NullValueHandling Class" />
+              <code lang="cs" source="..\Src\Newtonsoft.Json.Tests\Documentation\SerializationTests.cs" region="ReducingSerializedJsonSizeNullValueHandlingObject" title="NullValueHandling Spec" />
               <code lang="cs" source="..\Src\Newtonsoft.Json.Tests\Documentation\SerializationTests.cs" region="ReducingSerializedJsonSizeNullValueHandlingExample" title="NullValueHandling Ignore Example" />
             </example>
         </member>
@@ -9835,7 +9835,7 @@
         </member>
         <member name="T:Newtonsoft.Json.Serialization.DefaultSerializationBinder">
             <summary>
-            The default serialization binder used when resolving and loading classes from type names.
+            The default serialization binder used when resolving and loading specs from type names.
             </summary>
         </member>
         <member name="M:Newtonsoft.Json.Serialization.DefaultSerializationBinder.#ctor">
@@ -9968,7 +9968,7 @@
             Used by <see cref="T:Newtonsoft.Json.JsonSerializer"/> to resolve a <see cref="T:Newtonsoft.Json.Serialization.JsonContract"/> for a given <see cref="T:System.Type"/>.
             </summary>
             <example>
-              <code lang="cs" source="..\Src\Newtonsoft.Json.Tests\Documentation\SerializationTests.cs" region="ReducingSerializedJsonSizeContractResolverObject" title="IContractResolver Class" />
+              <code lang="cs" source="..\Src\Newtonsoft.Json.Tests\Documentation\SerializationTests.cs" region="ReducingSerializedJsonSizeContractResolverObject" title="IContractResolver Spec" />
               <code lang="cs" source="..\Src\Newtonsoft.Json.Tests\Documentation\SerializationTests.cs" region="ReducingSerializedJsonSizeContractResolverExample" title="IContractResolver Example" />
             </example>
         </member>

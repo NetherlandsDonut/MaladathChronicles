@@ -47,13 +47,26 @@ public class FutureEntity
             resources.Add(pair.Key, pair.Value);
     }
 
-    public int health, level;
-    public string name, spec;
-    public Dictionary<string, int> resources;
+    public int level;
+
+    public string name;
+
+    public string spec;
+
+    public Spec Spec() => global::Spec.specs.Find(x => x.name == spec);
+
     public List<ActionBar> actionBars;
+
     public Stats stats;
+
     public Inventory inventory;
+
     public Dictionary<string, Item> equipment;
+
+    public int health;
+
+    public Dictionary<string, int> resources;
+
     public List<(Buff, int)> buffs;
 
     public Dictionary<string, double> ElementImportance(double healthPerc, double otherHealthPerc)
@@ -69,8 +82,6 @@ public class FutureEntity
         }
         return sheet;
     }
-
-    public Class GetClass() => Class.specs.Find(x => x.name == spec);
 
     //Calculates max health for the entity
     public int MaxHealth()
@@ -191,7 +202,7 @@ public class FutureEntity
     
     public double MeleeAttackPower()
     {
-        var temp = GetClass();
+        var temp = Spec();
         if (temp == null) return Stats()["Strength"] * 2 + Stats()["Agility"] * 2;
         var sum = temp.rules["Melee Attack Power per Strength"] * Stats()["Strength"];
         sum += temp.rules["Melee Attack Power per Agility"] * Stats()["Agility"];
@@ -200,7 +211,7 @@ public class FutureEntity
 
     public double RangedAttackPower()
     {
-        var temp = GetClass();
+        var temp = Spec();
         if (temp == null) return Stats()["Agility"] * 3;
         var sum = temp.rules["Ranged Attack Power per Agility"] * Stats()["Agility"];
         return sum;
@@ -208,7 +219,7 @@ public class FutureEntity
 
     public double SpellPower()
     {
-        var temp = GetClass();
+        var temp = Spec();
         if (temp == null) return Stats()["Intellect"] * 3;
         var sum = temp.rules["Spell Power per Intellect"] * Stats()["Intellect"];
         return sum;
@@ -216,7 +227,7 @@ public class FutureEntity
 
     public double CriticalStrike()
     {
-        var temp = GetClass();
+        var temp = Spec();
         if (temp == null) return Stats()["Agility"] * 0.03;
         var sum = temp.rules["Critical Strike per Strength"] * Stats()["Strength"];
         sum += temp.rules["Critical Strike per Agility"] * Stats()["Agility"];
@@ -225,7 +236,7 @@ public class FutureEntity
 
     public double SpellCritical()
     {
-        var temp = GetClass();
+        var temp = Spec();
         if (temp == null) return Stats()["Intellect"] * 0.03;
         var sum = temp.rules["Spell Critical per Intellect"] * Stats()["Intellect"];
         return sum;

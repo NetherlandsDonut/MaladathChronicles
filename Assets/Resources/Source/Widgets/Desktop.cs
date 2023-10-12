@@ -372,10 +372,10 @@ public class Desktop : MonoBehaviour
                                 Race.racesSearch = Race.races.FindAll(x => x.name.ToLower().Contains(val));
                                 Respawn("ObjectManagerRaces");
                             }
-                            else if (windows.Exists(x => x.title == "ObjectManagerClasses"))
+                            else if (windows.Exists(x => x.title == "ObjectManagerSpecs"))
                             {
-                                Class.specsSearch = Class.specs.FindAll(x => x.name.ToLower().Contains(val));
-                                Respawn("ObjectManagerClasses");
+                                Spec.specsSearch = Spec.specs.FindAll(x => x.name.ToLower().Contains(val));
+                                Respawn("ObjectManagerSpecs");
                             }
                             else if (windows.Exists(x => x.title == "ObjectManagerHostileAreas"))
                             {

@@ -119,7 +119,7 @@ public class Starter : MonoBehaviour
     public static void LoadData()
     {
         //This region is responsible for deserializing the game content
-        //into the game. By game content I mean Classes, Abilities, Instances etc
+        //into the game. By game content I mean specs, Abilities, Instances etc
         #region Data Deserialization
 
         Deserialize(ref SiteHostileArea.areas, "areas", false, prefix);
@@ -134,8 +134,8 @@ public class Starter : MonoBehaviour
         Realm.realms ??= new();
         Deserialize(ref PersonType.personTypes, "persontypes", false, prefix);
         PersonType.personTypes ??= new();
-        Deserialize(ref Class.specs, "classes", false, prefix);
-        Class.specs ??= new();
+        Deserialize(ref Spec.specs, "specs", false, prefix);
+        Spec.specs ??= new();
         Deserialize(ref Race.races, "races", false, prefix);
         Race.races ??= new();
         Deserialize(ref ItemSet.itemSets, "sets", false, prefix);
@@ -211,8 +211,8 @@ public class Starter : MonoBehaviour
             instances[i].Initialise();
         for (int i = 0; i < SiteHostileArea.areas.Count; i++)
             SiteHostileArea.areas[i].Initialise();
-        for (int i = 0; i < Class.specs.Count; i++)
-            Class.specs[i].Initialise();
+        for (int i = 0; i < Spec.specs.Count; i++)
+            Spec.specs[i].Initialise();
         for (int i = 0; i < Item.items.Count; i++)
             Item.items[i].Initialise();
         for (int i = 0; i < ItemSet.itemSets.Count; i++)

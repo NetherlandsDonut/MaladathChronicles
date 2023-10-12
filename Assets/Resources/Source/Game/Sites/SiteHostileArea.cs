@@ -240,7 +240,7 @@ public class SiteHostileArea : Site
     }
 
     //Returns path to a texture that is the background visual of this site
-    public override string Background() => "Areas/Area" + (zone + name).Replace("'", "").Replace(".", "").Replace(" ", "") + (specialClearBackground && eliteEncounters.All(x => currentSave.elitesKilled.ContainsKey(x.who)) ? "Cleared" : "");
+    public override string Background() => "Areas/Area" + (zone + name).Clean() + (specialClearBackground && eliteEncounters.All(x => currentSave.elitesKilled.ContainsKey(x.who)) ? "Cleared" : "");
 
     public Entity RollEncounter()
     {

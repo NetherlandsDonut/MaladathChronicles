@@ -101,8 +101,8 @@ public class SaveGame
                 creationName,
                 creationGender,
                 Race.races.Find(x => x.name == creationRace),
-                Class.specs.Find(x => x.name == creationClass),
-                Class.specs.Find(x => x.name == creationClass).startingEquipment[creationRace]
+                Spec.specs.Find(x => x.name == creationSpec),
+                Spec.specs.Find(x => x.name == creationSpec).startingEquipment[creationRace]
             )
         };
         var startingSite = Race.races.Find(x => x.name == creationRace).startingSite;
