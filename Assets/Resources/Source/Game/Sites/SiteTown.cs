@@ -1,5 +1,6 @@
-using System.Collections.Generic;
+using System;
 using System.Linq;
+using System.Collections.Generic;
 
 using static Root;
 using static Root.Anchor;
@@ -8,7 +9,6 @@ using static Sound;
 using static Faction;
 using static Transport;
 using static FlightPathGroup;
-using System;
 
 public class SiteTown : Site
 {
@@ -80,29 +80,30 @@ public class SiteTown : Site
                             AddHeaderRegion(() => { AddLine("Points of interest:"); });
                             foreach (var person in people)
                             {
-                                if (person.type == "Battlemaster")
+                                var personType = PersonType.personTypes.Find(x => x.name == person.type);
+                                if (personType.type == "Battlemaster")
                                     AddButtonRegion(() =>
                                     {
                                         AddLine(person.name, "Black");
-                                        var personType = PersonType.personTypes.Find(x => x.name == person.type);
                                         AddSmallButton(personType.icon + factions.Find(x => x.name == faction).side, (h) => { });
                                     },
                                     (h) =>
                                     {
 
                                     });
-                                else if (person.type != "Flight Master")
+                                else if (personType.type != "Other")
                                     AddButtonRegion(() =>
                                     {
                                         AddLine(person.name, "Black");
-                                        var personType = PersonType.personTypes.Find(x => x.name == person.type);
                                         AddSmallButton(personType != null ? personType.icon : "OtherUnknown", (h) => { });
                                     },
                                     (h) =>
                                     {
                                         Person.person = person;
-                                        if (person.type == "Banker")
+                                        if (personType.type == "Banker")
                                             SpawnDesktopBlueprint("Bank");
+                                        if (personType.type == "Vendor")
+                                            SpawnDesktopBlueprint("Vendor");
                                     });
                             }
                         }

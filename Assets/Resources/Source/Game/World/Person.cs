@@ -17,7 +17,7 @@ public class Person
 
 public class PersonType
 {
-    public string name, icon, classRestriction;
+    public string name, icon, type, classRestriction;
 
     public static List<PersonType> personTypes;
 }

@@ -1,114 +1,142 @@
 [
   {
     "name": "Butcher",
-    "icon": "ItemMiscFood13"
+    "icon": "ItemMiscFood13",
+    "type": "Vendor"
   },
   {
     "name": "Food Vendor",
-    "icon": "ItemMiscFood11"
+    "icon": "ItemMiscFood11",
+    "type": "Vendor"
   },
   {
     "name": "General Goods",
-    "icon": "ItemBox01"
+    "icon": "ItemBox01",
+    "type": "Vendor"
   },
   {
     "name": "Trade Goods",
-    "icon": "ItemCrate05"
+    "icon": "ItemCrate05",
+    "type": "Vendor"
   },
   {
     "name": "Bag Vendor",
-    "icon": "ItemMiscBag07"
+    "icon": "ItemMiscBag07",
+    "type": "Vendor"
   },
   {
     "name": "Cloth Armor Merchant",
-    "icon": "ItemChestCloth21"
+    "icon": "ItemChestCloth21",
+    "type": "Vendor"
   },
   {
     "name": "Leather Armor Merchant",
-    "icon": "ItemChestLeather02"
+    "icon": "ItemChestLeather02",
+    "type": "Vendor"
   },
   {
     "name": "Heavy Armor Merchant",
-    "icon": "ItemChestPlate04"
+    "icon": "ItemChestPlate04",
+    "type": "Vendor"
   },
   {
     "name": "Weapon Merchant",
-    "icon": "ItemAxe01"
+    "icon": "ItemAxe01",
+    "type": "Vendor"
   },
   {
     "name": "Warrior Trainer",
-    "icon": "ClassWarrior"
+    "icon": "ClassWarrior",
+    "type": "Trainer"
   },
   {
     "name": "Paladin Trainer",
-    "icon": "ClassPaladin"
+    "icon": "ClassPaladin",
+    "type": "Trainer"
   },
   {
     "name": "Shaman Trainer",
-    "icon": "ClassShaman"
+    "icon": "ClassShaman",
+    "type": "Trainer"
   },
   {
     "name": "Mage Trainer",
-    "icon": "ClassMage"
+    "icon": "ClassMage",
+    "type": "Trainer"
   },
   {
     "name": "Warlock Trainer",
-    "icon": "ClassWarlock"
+    "icon": "ClassWarlock",
+    "type": "Trainer"
   },
   {
     "name": "Priest Trainer",
-    "icon": "ClassPriest"
+    "icon": "ClassPriest",
+    "type": "Trainer"
   },
   {
     "name": "Druid Trainer",
-    "icon": "ClassDruid"
+    "icon": "ClassDruid",
+    "type": "Trainer"
   },
   {
     "name": "Rogue Trainer",
-    "icon": "ClassRogue"
+    "icon": "ClassRogue",
+    "type": "Trainer"
   },
   {
     "name": "Hunter Trainer",
-    "icon": "ClassHunter"
+    "icon": "ClassHunter",
+    "type": "Trainer"
   },
   {
     "name": "Leatherworker",
-    "icon": "TradeLeatherWorking"
+    "icon": "TradeLeatherWorking",
+    "type": "Crafter"
   },
   {
     "name": "Blacksmith",
-    "icon": "TradeBlacksmithing"
+    "icon": "TradeBlacksmithing",
+    "type": "Crafter"
   },
   {
     "name": "Alchemist",
-    "icon": "TradeAlchemy"
+    "icon": "TradeAlchemy",
+    "type": "Crafter"
   },
   {
     "name": "Tailor",
-    "icon": "TradeTailoring"
+    "icon": "TradeTailoring",
+    "type": "Crafter"
   },
   {
     "name": "Enchanter",
-    "icon": "TradeEnchanting"
+    "icon": "TradeEnchanting",
+    "type": "Crafter"
   },
   {
     "name": "Engineer",
-    "icon": "TradeEngineering"
+    "icon": "TradeEngineering",
+    "type": "Crafter"
   },
   {
     "name": "Portal Trainer",
-    "icon": "TradeTrainerClass"
+    "icon": "TradeTrainerClass",
+    "type": "Trainer"
   },
   {
     "name": "Banker",
-    "icon": "TradeBank"
+    "icon": "TradeBank",
+    "type": "Bank"
   },
   {
     "name": "Flight Master",
-    "icon": "TradeFlightMaster"
+    "icon": "TradeFlightMaster",
+    "type": "Other"
   },
   {
     "name": "Battlemaster",
-    "icon": "TradeBattlemaster"
+    "icon": "TradeBattlemaster",
+    "type": "Battlemaster"
   }
 ]

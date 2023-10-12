@@ -766,8 +766,8 @@
           }
         }
       },
-      "cameraX": 23,
-      "cameraY": -187,
+      "cameraX": 104,
+      "cameraY": -107,
       "siteProgress": {
         "Balia'mah Ruins": 1,
         "The Crimson Throne": 4,
@@ -783,7 +783,8 @@
         "The Temple Gates": 1,
         "The Hive Undergrounds": 1,
         "Vault of C'Thun": 1,
-        "Scarab Terrace": 4
+        "Scarab Terrace": 4,
+        "The Crystal Vale": 1
       },
       "commonsKilled": {
         "Dustbelcher Warrior": 1,
@@ -807,7 +808,9 @@
         "Hive'Zara Wasp": 2,
         "Qiraji Swarmguard": 2
       },
-      "raresKilled": {},
+      "raresKilled": {
+        "Huricanian": 1
+      },
       "elitesKilled": {
         "Revelosh": 1,
         "Archaedas": 3,
@@ -846,7 +849,7 @@
         "Windshear Mine": 1,
         "Dire Maul": 1,
         "Blackfathom Deeps": 1,
-        "Orgrimmar": 1,
+        "Orgrimmar": 2,
         "Grom'gol Base Camp": 1,
         "The Tainted Scar": 1,
         "Twilight Grove": 2,
@@ -872,12 +875,14 @@
         "Tethris Aran": 1,
         "Ranazjar Isle": 4,
         "Temple of Ahn'Qiraj": 1,
-        "Ruins of Ahn'Qiraj": 1
+        "Ruins of Ahn'Qiraj": 1,
+        "Isle of Dread": 1,
+        "The Crystal Vale": 2
       },
       "startDate": "2023-09-08T02:04:14.0667101+02:00",
-      "lastLoaded": "2023-10-12T10:44:17.4077038+02:00",
-      "lastPlayed": "2023-10-12T10:44:19.2964529+02:00",
-      "timePlayed": "07:56:52.2057875"
+      "lastLoaded": "2023-10-12T19:31:51.6104863+02:00",
+      "lastPlayed": "2023-10-12T19:38:10.6483503+02:00",
+      "timePlayed": "08:04:36.6867912"
     },
     {
       "player": {

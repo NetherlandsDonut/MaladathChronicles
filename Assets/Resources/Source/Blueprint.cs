@@ -1067,7 +1067,7 @@ public class Blueprint
                 });
             }
         }, true),
-        new("MapToolbarLeft", () => {
+        new("MapToolbarLefts", () => {
             SetAnchor(TopLeft);
             AddRegionGroup();
             AddPaddingRegion(() =>
@@ -1119,7 +1119,7 @@ public class Blueprint
                     SpawnDesktopBlueprint("SpellbookScreen");
                     SwitchDesktop("SpellbookScreen");
                 });
-                AddSmallButton("MenuSpecs", (h) =>
+                AddSmallButton("MenuClasses", (h) =>
                 {
                     SpawnDesktopBlueprint("TalentScreen");
                     SwitchDesktop("TalentScreen");
@@ -1131,7 +1131,7 @@ public class Blueprint
                 });
             });
         }, true),
-        new("MapToolbarRight", () => {
+        new("MapToolbarRights", () => {
             SetAnchor(TopRight);
             AddRegionGroup();
             AddPaddingRegion(() =>
@@ -1821,6 +1821,9 @@ public class Blueprint
             });
             AddPaddingRegion(() =>
             {
+                if (Board.board.results.experience > 0)
+                    AddLine("You earned " + Board.board.results.experience + " experience", "", "Center");
+                else AddLine("You earned no experience", "", "Center");
                 SetRegionAsGroupExtender();
             });
             AddButtonRegion(() =>
@@ -7031,6 +7034,23 @@ public class Blueprint
             {
                 PlaySound("DesktopBankClose");
                 CloseDesktop("Bank");
+                SwitchDesktop("Town");
+            });
+        }),
+        new("Vendor", () =>
+        {
+            currentSave.banks ??= new();
+            if (!currentSave.banks.ContainsKey(town.name))
+                currentSave.banks.Add(town.name, new() { items = new() });
+            //PlaySound("DesktopBankOpen", 0.2f);
+            SetDesktopBackground(town.Background());
+            SpawnWindowBlueprint("Bank");
+            SpawnWindowBlueprint("Inventory");
+            SpawnWindowBlueprint("ExperienceBar");
+            AddHotkey(Escape, () =>
+            {
+                //PlaySound("DesktopBankClose");
+                CloseDesktop("Vendor");
                 SwitchDesktop("Town");
             });
         }),

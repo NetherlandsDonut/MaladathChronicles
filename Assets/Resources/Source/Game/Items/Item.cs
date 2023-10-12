@@ -305,13 +305,50 @@ public class Item
             AddBigButtonOverlay("OtherRarity" + item.rarity + (settings.bigRarityIndicators.Value() ? "Big" : ""), 0, 2);
     }
 
+    public static void PrintVendorItem(Item item)
+    {
+        AddBigButton(item.icon,
+            null,
+            (h) =>
+            {
+                if (currentSave.player.inventory.items.Count < 40 && currentSave.player.inventory.money >= item.price)
+                {
+                    PlaySound("DesktopTransportPay");
+                    currentSave.player.inventory.items.Add(item);
+                    currentSave.player.inventory.money -= item.price;
+                    Respawn("Inventory");
+                    Respawn("Vendor");
+                }
+            },
+            (h) => () =>
+            {
+                if (item == null) return;
+                SetAnchor(Center);
+                PrintItemTooltip(item);
+            }
+        );
+        if (settings.rarityIndicators.Value())
+            AddBigButtonOverlay("OtherRarity" + item.rarity + (settings.bigRarityIndicators.Value() ? "Big" : ""), 0, 2);
+    }
+
     public static void PrintInventoryItem(Item item)
     {
         AddBigButton(item.icon,
             null,
             (h) =>
             {
-                if (CDesktop.title == "BankScreen")
+                if (CDesktop.title == "Vendor")
+                {
+                    if (currentSave.banks[town.name].items.Count < 40)
+                    {
+                        PlaySound(item.ItemSound("DesktopTransportPay"), 0.6f);
+                        currentSave.banks[town.name].items.Add(item);
+                        currentSave.player.inventory.items.Remove(item);
+                        Respawn("Inventory");
+                        Respawn("Bank");
+                    }
+                }
+                else if (CDesktop.title == "Bank")
                 {
                     if (currentSave.banks[town.name].items.Count < 40)
                     {
