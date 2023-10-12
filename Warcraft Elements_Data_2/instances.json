@@ -204,12 +204,6 @@
         ]
       }
     ],
-    "x": 248,
-    "y": -90,
-    "name": "Shadowfang Keep",
-    "zone": "Silverpine Forest",
-    "type": "Dungeon",
-    "ambience": "AmbienceShadowfangKeep",
     "zoneDrop": [
       "Gloomshroud Armor",
       "Duskbringer",
@@ -223,7 +217,13 @@
       "Face Smasher",
       "Black Malice",
       "Eerie Stable Lantern"
-    ]
+    ],
+    "x": 248,
+    "y": -90,
+    "name": "Shadowfang Keep",
+    "zone": "Silverpine Forest",
+    "type": "Dungeon",
+    "ambience": "AmbienceShadowfangKeep"
   },
   {
     "complexPart": true,
@@ -317,12 +317,6 @@
         ]
       }
     ],
-    "x": 294,
-    "y": -74,
-    "name": "Scholomance",
-    "zone": "Western Plaguelands",
-    "type": "Dungeon",
-    "ambience": "AmbienceSpooky",
     "zoneDrop": [
       "Totem of Sustaining",
       "Libram of Divinity",
@@ -361,7 +355,13 @@
       "Icy Tomb Spaulders",
       "Tattered Leather Hood",
       "Coldstone Slippers"
-    ]
+    ],
+    "x": 294,
+    "y": -74,
+    "name": "Scholomance",
+    "zone": "Western Plaguelands",
+    "type": "Dungeon",
+    "ambience": "AmbienceSpooky"
   },
   {
     "description": [],
@@ -474,12 +474,6 @@
         ]
       }
     ],
-    "x": 303,
-    "y": -48,
-    "name": "Stratholme",
-    "zone": "Eastern Plaguelands",
-    "type": "Dungeon",
-    "ambience": "AmbienceStratholme",
     "zoneDrop": [
       "Star of Mystaria",
       "Demonshear",
@@ -505,7 +499,13 @@
       "Devout Bracers",
       "Sacred Cloth Leggings",
       "Frayed Abomination Stitching"
-    ]
+    ],
+    "x": 303,
+    "y": -48,
+    "name": "Stratholme",
+    "zone": "Eastern Plaguelands",
+    "type": "Dungeon",
+    "ambience": "AmbienceStratholme"
   },
   {
     "description": [],
@@ -576,12 +576,6 @@
         ]
       }
     ],
-    "x": 300,
-    "y": -152,
-    "name": "Uldaman",
-    "zone": "Badlands",
-    "type": "Dungeon",
-    "ambience": "AmbienceUldaman",
     "zoneDrop": [
       "The Jackhammer",
       "Spaulders of a Lost Age",
@@ -596,7 +590,13 @@
       "Monolithic Bow",
       "Obsidian Cleaver",
       "Annealed Blade"
-    ]
+    ],
+    "x": 300,
+    "y": -152,
+    "name": "Uldaman",
+    "zone": "Badlands",
+    "type": "Dungeon",
+    "ambience": "AmbienceUldaman"
   },
   {
     "description": [],
@@ -623,12 +623,6 @@
         ]
       }
     ],
-    "x": 104,
-    "y": -184,
-    "name": "Razorfen Downs",
-    "zone": "The Barrens",
-    "type": "Dungeon",
-    "ambience": "AmbienceRazorfenKraul",
     "zoneDrop": [
       "Corpseshroud",
       "Death's Head Vestment",
@@ -639,7 +633,13 @@
       "Thoughtcast Boots",
       "Ebony Boneclub",
       "Boneslasher"
-    ]
+    ],
+    "x": 104,
+    "y": -184,
+    "name": "Razorfen Downs",
+    "zone": "The Barrens",
+    "type": "Dungeon",
+    "ambience": "AmbienceRazorfenKraul"
   },
   {
     "description": [],
@@ -666,12 +666,6 @@
         ]
       }
     ],
-    "x": 94,
-    "y": -180,
-    "name": "Razorfen Kraul",
-    "zone": "The Barrens",
-    "type": "Dungeon",
-    "ambience": "AmbienceRazorfenKraul",
     "zoneDrop": [
       "Vendetta",
       "Avenger's Armor",
@@ -683,7 +677,13 @@
       "Pysan's Old Greatsword",
       "Wolfclaw Gloves",
       "Staff of the Shade"
-    ]
+    ],
+    "x": 94,
+    "y": -180,
+    "name": "Razorfen Kraul",
+    "zone": "The Barrens",
+    "type": "Dungeon",
+    "ambience": "AmbienceRazorfenKraul"
   },
   {
     "description": [],
@@ -714,18 +714,18 @@
         ]
       }
     ],
-    "x": 250,
-    "y": -208,
-    "name": "The Deadmines",
-    "zone": "Westfall",
-    "type": "Dungeon",
-    "ambience": "AmbienceDeadmines",
     "zoneDrop": [
       "Blackwater Cutlass",
       "Silk-threaded Trousers",
       "Blackened Defias Leggings",
       "Blackened Defias Gloves"
-    ]
+    ],
+    "x": 250,
+    "y": -208,
+    "name": "The Deadmines",
+    "zone": "Westfall",
+    "type": "Dungeon",
+    "ambience": "AmbienceDeadmines"
   },
   {
     "description": [],
@@ -760,12 +760,6 @@
         ]
       }
     ],
-    "x": 67,
-    "y": -88,
-    "name": "Blackfathom Deeps",
-    "zone": "Ashenvale",
-    "type": "Dungeon",
-    "ambience": "AmbienceBlackfathom",
     "zoneDrop": [
       "Axe of the Enforcer",
       "Crested Scepter",
@@ -779,7 +773,13 @@
       "Staff of the Friar",
       "Staff of the Blessed Seer",
       "Evocator's Blade"
-    ]
+    ],
+    "x": 67,
+    "y": -88,
+    "name": "Blackfathom Deeps",
+    "zone": "Ashenvale",
+    "type": "Dungeon",
+    "ambience": "AmbienceBlackfathom"
   },
   {
     "description": [],
@@ -844,12 +844,6 @@
         ]
       }
     ],
-    "x": 62,
-    "y": -181,
-    "name": "Dire Maul",
-    "zone": "Feralas",
-    "type": "Dungeon",
-    "ambience": "AmbienceDireMaul",
     "zoneDrop": [
       "Redoubt Cloak",
       "Gordok Bracers of Power",
@@ -862,7 +856,13 @@
       "Tarnished Elven Ring",
       "Cyclone Spaulders",
       "Elemental Plate Girdle"
-    ]
+    ],
+    "x": 62,
+    "y": -181,
+    "name": "Dire Maul",
+    "zone": "Feralas",
+    "type": "Dungeon",
+    "ambience": "AmbienceDireMaul"
   },
   {
     "complexPart": true,
@@ -956,10 +956,6 @@
         ]
       }
     ],
-    "name": "Scarlet Monastery",
-    "zone": "Scarlet Monastery Grounds",
-    "type": "Dungeon",
-    "ambience": "AmbienceScary",
     "zoneDrop": [
       "Scarlet Leggings",
       "Fight Club",
@@ -980,7 +976,11 @@
       "Chesterfall Musket",
       "Watchman Pauldrons",
       "Resplendent Guardian"
-    ]
+    ],
+    "name": "Scarlet Monastery",
+    "zone": "Scarlet Monastery Grounds",
+    "type": "Dungeon",
+    "ambience": "AmbienceScary"
   },
   {
     "complexPart": true,
@@ -1072,10 +1072,6 @@
         ]
       }
     ],
-    "name": "Blackrock Depths",
-    "zone": "Blackrock Mountain",
-    "type": "Dungeon",
-    "ambience": "AmbienceBlackrock",
     "zoneDrop": [
       "Ironweave Mantle",
       "Swiftwalker Boots",
@@ -1109,7 +1105,11 @@
       "Braincage",
       "Searing Needle",
       "Funeral Pyre Vestment"
-    ]
+    ],
+    "name": "Blackrock Depths",
+    "zone": "Blackrock Mountain",
+    "type": "Dungeon",
+    "ambience": "AmbienceBlackrock"
   },
   {
     "complexPart": true,
@@ -1166,10 +1166,6 @@
         ]
       }
     ],
-    "name": "Lower Blackrock Spire",
-    "zone": "Blackrock Mountain",
-    "type": "Dungeon",
-    "ambience": "AmbienceBlackrock",
     "zoneDrop": [
       "Draconian Deflector",
       "Wildfire Cape",
@@ -1186,7 +1182,11 @@
       "Dreadmist Bracers",
       "Shadowcraft Belt",
       "Bracers of Valor"
-    ]
+    ],
+    "name": "Lower Blackrock Spire",
+    "zone": "Blackrock Mountain",
+    "type": "Dungeon",
+    "ambience": "AmbienceBlackrock"
   },
   {
     "complexPart": true,
@@ -1237,10 +1237,6 @@
         ]
       }
     ],
-    "name": "Upper Blackrock Spire",
-    "zone": "Blackrock Mountain",
-    "type": "Dungeon",
-    "ambience": "AmbienceBlackrock",
     "zoneDrop": [
       "Draconian Deflector",
       "Wildfire Cape",
@@ -1257,7 +1253,11 @@
       "Dreadmist Bracers",
       "Shadowcraft Belt",
       "Bracers of Valor"
-    ]
+    ],
+    "name": "Upper Blackrock Spire",
+    "zone": "Blackrock Mountain",
+    "type": "Dungeon",
+    "ambience": "AmbienceBlackrock"
   },
   {
     "description": [],
@@ -1365,10 +1365,6 @@
         ]
       }
     ],
-    "name": "Molten Core",
-    "zone": "Blackrock Mountain",
-    "type": "Raid",
-    "ambience": "AmbienceMoltenCore",
     "zoneDrop": [
       "Arcanist Bindings",
       "Arcanist Belt",
@@ -1388,7 +1384,11 @@
       "Lawbringer Belt",
       "Bracers of Might",
       "Belt of Might"
-    ]
+    ],
+    "name": "Molten Core",
+    "zone": "Blackrock Mountain",
+    "type": "Raid",
+    "ambience": "AmbienceMoltenCore"
   },
   {
     "description": [
@@ -1455,12 +1455,6 @@
         ]
       }
     ],
-    "x": 278,
-    "y": -216,
-    "name": "Zul'Gurub",
-    "zone": "Stranglethorn Vale",
-    "type": "Raid",
-    "ambience": "AmbienceJungleDay",
     "zoneDrop": [
       "Sceptre of Smiting",
       "Zulian Hacker",
@@ -1478,7 +1472,13 @@
       "Zulian Headdress",
       "Band of Servitude",
       "Seal of the Gurubashi Berserker"
-    ]
+    ],
+    "x": 278,
+    "y": -216,
+    "name": "Zul'Gurub",
+    "zone": "Stranglethorn Vale",
+    "type": "Raid",
+    "ambience": "AmbienceJungleDay"
   },
   {
     "complexPart": true,
@@ -1530,10 +1530,6 @@
         ]
       }
     ],
-    "name": "Blackwing Lair",
-    "zone": "Blackrock Mountain",
-    "type": "Raid",
-    "ambience": "AmbienceBlackwingLair",
     "zoneDrop": [
       "Draconic Maul",
       "Doom's Edge",
@@ -1541,7 +1537,11 @@
       "Essence Gatherer",
       "Cloak of Draconic Might",
       "Boots of Pure Thought"
-    ]
+    ],
+    "name": "Blackwing Lair",
+    "zone": "Blackrock Mountain",
+    "type": "Raid",
+    "ambience": "AmbienceBlackwingLair"
   },
   {
     "description": [],
@@ -1576,12 +1576,6 @@
         ]
       }
     ],
-    "x": 56,
-    "y": -233,
-    "name": "Ruins of Ahn'Qiraj",
-    "zone": "Silithus",
-    "type": "Raid",
-    "ambience": "AmbienceAnhQirajExterior",
     "zoneDrop": [
       "Silithid Husked Launcher",
       "Antenna of Invigoration",
@@ -1592,7 +1586,13 @@
       "Gavel of Qiraji Authority",
       "Fury of the Forgotten Swarm",
       "Treads of the Wandering Nomad"
-    ]
+    ],
+    "x": 56,
+    "y": -233,
+    "name": "Ruins of Ahn'Qiraj",
+    "zone": "Silithus",
+    "type": "Raid",
+    "ambience": "AmbienceAnhQirajExterior"
   },
   {
     "description": [],
@@ -1631,12 +1631,6 @@
         ]
       }
     ],
-    "x": 55,
-    "y": -225,
-    "name": "Temple of Ahn'Qiraj",
-    "zone": "Silithus",
-    "type": "Raid",
-    "ambience": "AmbienceAnhQirajExterior",
     "zoneDrop": [
       "Ritssyn's Ring of Chaos",
       "Anubisath Warhammer",
@@ -1645,6 +1639,12 @@
       "Gloves of the Immortal",
       "Gloves of the Redeemed Prophecy",
       "Shard of the Fallen Star"
-    ]
+    ],
+    "x": 55,
+    "y": -225,
+    "name": "Temple of Ahn'Qiraj",
+    "zone": "Silithus",
+    "type": "Raid",
+    "ambience": "AmbienceAnhQirajExterior"
   }
 ]

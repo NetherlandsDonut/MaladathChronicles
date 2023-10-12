@@ -50,9 +50,9 @@ public class Shatter : MonoBehaviour
         var direction = UnityEngine.Random.insideUnitCircle;
         if (amount > 1) amount = 10;
         else if (amount < 0) amount = 0;
-        for (int i = 3; i < x - 2; i++)
-            for (int j = 3; j < y - 2; j++)
-                if (random.Next(0, (int)Math.Abs(amount * 100 - 100)) == 0)
+        for (int i = 2; i < x - 1; i++)
+            for (int j = 2; j < y - 1; j++)
+                if ((i + j) % 2 == 0 && random.Next(0, (int)Math.Abs(amount * 100 - 100)) == 0)
                     SpawnDot(i, j, foo.texture.GetPixel(i, j));
 
         void SpawnDot(int c, int v, Color32 color)
@@ -81,9 +81,9 @@ public class Shatter : MonoBehaviour
         var direction = RollDirection();
         if (amount > 1) amount = 1;
         else if (amount < 0) amount = 0;
-        for (int i = 3; i < x - 2; i++)
-            for (int j = 3; j < y - 2; j++)
-                if (random.Next(0, (int)Math.Abs(amount * 10 - 10)) == 0)
+        for (int i = 2; i < x - 1; i++)
+            for (int j = 2; j < y - 1; j++)
+                if ((i + j) % 2 == 0 && random.Next(0, (int)Math.Abs(amount * 10 - 10)) == 0)
                     SpawnDot(i, j, foo.texture.GetPixel(i, j));
 
         void SpawnDot(int c, int v, Color32 color)

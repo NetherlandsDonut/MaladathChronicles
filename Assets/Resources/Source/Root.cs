@@ -23,6 +23,7 @@ public static class Root
     public static string markerCharacter = "_";
     public static string textWrapEnding = "...";
     public static string prefix = "";
+    public static bool useUnityData = true;
 
     public static MapGrid grid;
     public static List<Vector2> cameraBoundaryPoints;

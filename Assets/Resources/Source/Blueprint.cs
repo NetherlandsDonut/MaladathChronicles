@@ -3768,7 +3768,7 @@ public class Blueprint
                     String.shatterDensity.Set(effect.ContainsKey("ShatterDensity") ? effect["ShatterDensity"] : "2");
                     String.shatterDegree.Set(effect.ContainsKey("ShatterDegree") ? effect["ShatterDegree"] : "0,7");
                     String.shatterSpeed.Set(effect.ContainsKey("ShatterSpeed") ? effect["ShatterSpeed"] : "4");
-                    String.await.Set(effect.ContainsKey("Await") ? effect["Await"] : "0");
+                    String.await.Set(effect.ContainsKey("Await") ? effect["Await"] : "1");
                     String.powerScale.Set(effect.ContainsKey("PowerScale") ? effect["PowerScale"] : "1");
                     String.resourceAmount.Set(effect.ContainsKey("ResourceAmount") ? effect["ResourceAmount"] : "1");
                     String.buffDuration.Set(effect.ContainsKey("BuffDuration") ? effect["BuffDuration"] : "3");
@@ -4052,8 +4052,8 @@ public class Blueprint
                 AddSmallButton("OtherReverse", (h) =>
                 {
                     if (effect.ContainsKey("Await"))
-                        effect["Await"] = "0";
-                    String.await.Set("0");
+                        effect["Await"] = "1";
+                    String.await.Set("1");
                     h.window.Respawn();
                 });
             });

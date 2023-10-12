@@ -38,7 +38,7 @@ public class Event
             string chanceScale = effect.ContainsKey("ChanceScale") ? effect["ChanceScale"] : "None";
             string animationType = effect.ContainsKey("AnimationType") ? effect["AnimationType"] : "None";
             string shatterType = effect.ContainsKey("ShatterType") ? effect["ShatterType"] : "None";
-            float await = effect.ContainsKey("Await") ? float.Parse(effect["Await"]) : 0;
+            float await = effect.ContainsKey("Await") ? float.Parse(effect["Await"]) : 1;
 
             //On a failed chance check of an effect program continues to the next one
             if (CheckFailChance()) continue;
@@ -82,8 +82,7 @@ public class Event
             //Prolongs wait time after effect
             void ExecuteAwait()
             {
-                if (await == 0) return;
-                animationTime += frameTime * await;
+                animationTime = frameTime * await;
             }
 
             //Executes a single effect from the list

@@ -8,6 +8,7 @@ using static Sound;
 using static Faction;
 using static Transport;
 using static FlightPathGroup;
+using System;
 
 public class SiteTown : Site
 {
@@ -120,7 +121,7 @@ public class SiteTown : Site
     public List<Person> people;
 
     //List of town flight paths, these are generated automatically
-    public List<Transport> flightPaths;
+    [NonSerialized] public List<Transport> flightPaths;
 
     //Currently opened town
     public static SiteTown town;

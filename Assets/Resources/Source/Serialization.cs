@@ -12,10 +12,7 @@ class Serialization
 {
     public static void Deserialize<T>(ref T target, string file, bool encoded = false, string prefix = "")
     {
-        #if (UNITY_ANDROID)
-        prefix = UnityEngine.Application.persistentDataPath;
-        if (!prefix.EndsWith("/")) prefix += "/";
-        #endif
+        if (Root.useUnityData) prefix = @"C:\Users\ragan\Documents\Projects\Unity\WarcraftElements\";
         if (!Directory.Exists(prefix + "Warcraft Elements_Data_2"))
             Directory.CreateDirectory(prefix + "Warcraft Elements_Data_2");
         if (!File.Exists(prefix + "Warcraft Elements_Data_2/" + file + (encoded ? ".WE" : ".json"))) return;
@@ -26,10 +23,7 @@ class Serialization
 
     public static void Serialize(object what, string where, bool backup = false, bool encoded = false, string prefix = "")
     {
-        #if (UNITY_ANDROID)
-        prefix = UnityEngine.Application.persistentDataPath;
-        if (!prefix.EndsWith("/")) prefix += "/";
-        #endif
+        if (Root.useUnityData) prefix = @"C:\Users\ragan\Documents\Projects\Unity\WarcraftElements\";
         if (!Directory.Exists(prefix + "Warcraft Elements_Data_2"))
             Directory.CreateDirectory(prefix + "Warcraft Elements_Data_2");
         var date = DateTime.Now.ToString("dd.MM.yyyy - HH.mm");

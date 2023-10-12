@@ -182,7 +182,7 @@ public class Board
                     results.items.Add(dropPurple[random.Next(dropPurple.Count)]);
                 else if (dropBlue.Count > 0 && Roll(1))
                     results.items.Add(dropBlue[random.Next(dropBlue.Count)]);
-                else if (dropGreen.Count > 0 && Roll(100))
+                else if (dropGreen.Count > 0 && Roll(10))
                     results.items.Add(dropGreen[random.Next(dropGreen.Count)]);
             }
             else
@@ -478,7 +478,7 @@ public class Board
         var foo = types.ToDictionary(x => Resource(x), x => list.Sum(y => y.Item3 == x ? 1 : 0));
         foreach (var a in list)
         {
-            SpawnFlyingElement(1, 0.5, window.LBRegionGroup.regions[a.Item2].bigButtons[a.Item1].transform.position + new Vector3(-17.5f, -17.5f), boardButtonDictionary[a.Item3], board.playerTurn);
+            SpawnFlyingElement(1, 0.8, window.LBRegionGroup.regions[a.Item2].bigButtons[a.Item1].transform.position + new Vector3(-17.5f, -17.5f), boardButtonDictionary[a.Item3], board.playerTurn);
             field[a.Item1, a.Item2] = 0;
         }
         if (playerTurn) player.AddResources(foo);

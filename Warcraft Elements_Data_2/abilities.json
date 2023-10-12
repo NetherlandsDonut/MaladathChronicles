@@ -419,7 +419,7 @@
             "ShatterDensity": "1",
             "ShatterSpeed": "2",
             "ShatterTarget": "Effector",
-            "Await": "4",
+            "Await": "5",
             "SoundEffect": "AbilityArdentDefenderCast"
           }
         ]
@@ -469,7 +469,7 @@
             "ShatterType": "Central",
             "Affect": "Effector",
             "SoundEffect": "AbilityArdentDefenderCast",
-            "Await": "4",
+            "Await": "5",
             "ShatterTarget": "Effector",
             "ShatterDegree": "0,2",
             "ShatterSpeed": "2",
@@ -572,7 +572,7 @@
             "ShatterSpeed": "2",
             "ShatterDensity": "2",
             "ShatterTarget": "Effector",
-            "Await": "4"
+            "Await": "5"
           }
         ]
       }
@@ -626,7 +626,7 @@
             "ShatterType": "Directional",
             "SoundEffect": "AbilityBladeofJusticeImpact",
             "ShatterTarget": "Other",
-            "Await": "4",
+            "Await": "5",
             "TrailStrength": "0,15",
             "AnimationSpeed": "1,3",
             "ShatterDensity": "3"
@@ -681,7 +681,7 @@
             "BuffName": "Blazing Barrier",
             "Affect": "Effector",
             "ShatterType": "Central",
-            "Await": "4",
+            "Await": "5",
             "ShatterTarget": "Effector",
             "ShatterSpeed": "2",
             "BuffDuration": "10"
@@ -733,7 +733,7 @@
             "Affect": "Effector",
             "BuffName": "Blessing of Might",
             "BuffDuration": "10",
-            "Await": "4",
+            "Await": "5",
             "ShatterTarget": "Effector",
             "ShatterDegree": "0,4",
             "ShatterSpeed": "2",
@@ -869,7 +869,7 @@
             "ShatterSpeed": "4",
             "ShatterDegree": "0.7",
             "SoundEffect": "AbilityFrostboltImpact",
-            "Await": "4"
+            "Await": "5"
           }
         ]
       }
@@ -988,7 +988,7 @@
             "Effect": "Damage",
             "PowerSource": "Effector",
             "PowerType": "Spell",
-            "Await": "4",
+            "Await": "5",
             "ShatterTarget": "Other",
             "TrailStrength": "0,65",
             "ShatterSpeed": "5",
@@ -1052,7 +1052,7 @@
             "ShatterDensity": "1",
             "ShatterSpeed": "2",
             "AnimationSpeed": "1,6",
-            "Await": "4"
+            "Await": "5"
           },
           {
             "Affect": "None",
@@ -1090,7 +1090,7 @@
             "Affect": "Effector",
             "ShatterSpeed": "1",
             "ShatterDensity": "2",
-            "Await": "4",
+            "Await": "5",
             "ShatterDegree": "0,5"
           },
           {
@@ -1211,7 +1211,7 @@
         "effects": [
           {
             "SoundEffect": "AbilityConsecrationCast",
-            "Await": "4"
+            "Await": "5"
           },
           {
             "AnimationType": "None",
@@ -1221,7 +1221,7 @@
             "Affect": "Effector",
             "BuffName": "Consecration",
             "BuffDuration": "10",
-            "Await": "4"
+            "Await": "5"
           }
         ]
       }
@@ -1314,7 +1314,7 @@
             "ShatterDensity": "2",
             "ShatterSpeed": "4",
             "SoundEffect": "AbilityCorruptionImpact",
-            "Await": "4",
+            "Await": "5",
             "AnimationType": "Missile",
             "TrailStrength": "0,55",
             "AnimationArc": "20",
@@ -2210,7 +2210,8 @@
             "ShatterTarget": "Effector",
             "ShatterDensity": "1",
             "ShatterSpeed": "2",
-            "ShatterDegree": "0,1"
+            "ShatterDegree": "0,1",
+            "Await": "0"
           },
           {
             "Effect": "Damage",
@@ -2224,7 +2225,7 @@
             "ShatterSpeed": "4",
             "ShatterDegree": "0,6",
             "SoundEffect": "AbilityFireballImpact",
-            "Await": "4",
+            "Await": "5",
             "AnimationType": "Missile",
             "TrailStrength": "0,45",
             "AnimationSpeed": "1,5"
@@ -2295,7 +2296,7 @@
             "ShatterSpeed": "4",
             "ShatterDegree": "0.7",
             "SoundEffect": "AbilityFireballImpact",
-            "Await": "4"
+            "Await": "5"
           }
         ]
       }
@@ -2469,7 +2470,7 @@
             "ShatterDegree": "0.6",
             "FlyingResources": "Yes",
             "SoundEffect": "AbilityForesightCast",
-            "Await": "4"
+            "Await": "5"
           }
         ]
       }
@@ -2638,7 +2639,7 @@
             "ShatterSpeed": "4",
             "ShatterDegree": "0.6",
             "SoundEffect": "AbilityFrostboltImpact",
-            "Await": "4",
+            "Await": "5",
             "AnimationType": "Missile",
             "TrailStrength": "0,55"
           },
@@ -3045,7 +3046,7 @@
             "ShatterSpeed": "4",
             "ShatterDegree": "0.7",
             "SoundEffect": "AbilityFireballImpact",
-            "Await": "4"
+            "Await": "5"
           }
         ]
       }
@@ -3313,7 +3314,7 @@
             "AnimationSpeed": "1,65",
             "ShatterDensity": "3",
             "ShatterSpeed": "5",
-            "Await": "4"
+            "Await": "5"
           },
           {
             "Effect": "EndTurn"
@@ -3420,7 +3421,7 @@
             "ShatterTarget": "Other",
             "PowerSource": "Effector",
             "PowerType": "Spell",
-            "Await": "4",
+            "Await": "5",
             "TrailStrength": "0,55",
             "AnimationSpeed": "3",
             "ShatterSpeed": "1",
@@ -3678,7 +3679,7 @@
             "ShatterSpeed": "4",
             "ShatterDegree": "0.7",
             "SoundEffect": "AbilitySleepImpact",
-            "Await": "4"
+            "Await": "5"
           }
         ]
       }
@@ -4416,7 +4417,7 @@
             "ShatterDensity": "2",
             "ShatterDegree": "0.7",
             "SoundEffect": "AbilityScorchImpact",
-            "Await": "4"
+            "Await": "5"
           }
         ]
       },
@@ -4437,7 +4438,7 @@
             "ShatterDensity": "2",
             "ShatterDegree": "0.7",
             "SoundEffect": "AbilityScorchImpact",
-            "Await": "4"
+            "Await": "5"
           }
         ]
       }
@@ -4499,7 +4500,7 @@
             "SoundEffect": "AbilitySealCast",
             "ShatterDegree": "0,5",
             "ShatterSpeed": "1",
-            "Await": "4",
+            "Await": "5",
             "ShatterDensity": "3",
             "BuffDuration": "15"
           },
@@ -4610,7 +4611,7 @@
             "ShatterSpeed": "4",
             "ShatterDegree": "0.7",
             "SoundEffect": "AbilityShadowboltImpact",
-            "Await": "4"
+            "Await": "5"
           },
           {
             "Effect": "EndTurn"
@@ -4696,7 +4697,7 @@
             "ShatterDensity": "2",
             "ShatterSpeed": "4",
             "SoundEffect": "AbilityShadowWordPainImpact",
-            "Await": "4"
+            "Await": "5"
           }
         ]
       }
@@ -5178,7 +5179,7 @@
             "Effect": "AddBuff",
             "BuffName": "Summoned Infernal",
             "SoundEffect": "AbilitySummonInfernalImpact",
-            "Await": "4",
+            "Await": "5",
             "ShatterType": "Central",
             "ShatterTarget": "Effector",
             "Affect": "Effector",
@@ -5607,7 +5608,7 @@
             "ShatterType": "Directional",
             "ShatterDensity": "2",
             "SoundEffect": "AbilityVenomousBiteImpact",
-            "Await": "4"
+            "Await": "5"
           },
           {
             "Effect": "EndTurn"
@@ -5742,7 +5743,7 @@
             "ShatterType": "Directional",
             "ShatterDensity": "2",
             "SoundEffect": "AbilityWebBurstImpact",
-            "Await": "4"
+            "Await": "5"
           },
           {
             "Effect": "EndTurn"

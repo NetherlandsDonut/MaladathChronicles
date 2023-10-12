@@ -1,5 +1,19 @@
 [
   {
+    "name": "Stonevault Rockchewer",
+    "kind": "Common",
+    "portrait": "PortraitTrogg",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Stonevault Cave Lurker",
+    "kind": "Common",
+    "portrait": "PortraitTrogg",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
     "name": "Margol the Rager",
     "kind": "Rare",
     "portrait": "PortraitThunderLizardDark",
