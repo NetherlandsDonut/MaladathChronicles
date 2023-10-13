@@ -27,7 +27,7 @@ public class Race
                     icon = "Faction" + faction,
                     side = "Hostile"
                 });
-        droppedItems = Item.items.FindAll(x => x.droppedBy != null && x.droppedBy.Contains(name) && x.type != "Miscellaneous").Select(x => x.name).ToList();
+        droppedItems = Item.items.FindAll(x => x.droppedBy != null && x.droppedBy.Contains(name)).Select(x => x.name).ToList();
     }
 
     //Name of the race

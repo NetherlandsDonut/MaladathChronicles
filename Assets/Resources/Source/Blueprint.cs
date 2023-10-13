@@ -256,6 +256,39 @@ public class Blueprint
                 AddInputLine(String.promptConfirm, "DangerousRed");
             });
         }, true),
+        new("ConfirmItemDestroy", () => {
+            SetAnchor(-115, 165);
+            AddHeaderGroup();
+            SetRegionGroupWidth(228);
+            AddPaddingRegion(() =>
+            {
+                AddLine("You are about to destroy", "", "Center");
+                AddLine(item.name, item.rarity, "Center");
+            });
+            AddRegionGroup();
+            SetRegionGroupWidth(114);
+            AddButtonRegion(() =>
+            {
+                SetRegionBackground(RegionBackgroundType.RedButton);
+                AddLine("Proceed", "", "Center");
+            },
+            (h) =>
+            {
+                currentSave.player.inventory.items.Remove(item);
+                CloseWindow("ConfirmItemDestroy");
+                CDesktop.RespawnAll();
+            });
+            AddRegionGroup();
+            SetRegionGroupWidth(114);
+            AddButtonRegion(() =>
+            {
+                AddLine("Cancel", "", "Center");
+            },
+            (h) =>
+            {
+                CloseWindow("ConfirmItemDestroy");
+            });
+        }, true),
         new("CharacterInfo", () => {
             SetAnchor(TopLeft);
             AddRegionGroup();
@@ -650,7 +683,7 @@ public class Blueprint
                             null,
                             (h) => () =>
                             {
-                                SetAnchor(Center);
+                                SetAnchor(-115, 165);
                                 PrintItemTooltip(item);
                             });
                             if (settings.rarityIndicators.Value())
@@ -1246,6 +1279,7 @@ public class Blueprint
         }),
         new("Inventory", () => {
             SetAnchor(TopRight);
+            DisableShadows();
             AddHeaderGroup();
             SetRegionGroupWidth(190);
             SetRegionGroupHeight(342);
@@ -5031,7 +5065,7 @@ public class Blueprint
                 null,
                 (h) => () =>
                 {
-                    SetAnchor(Center);
+                    SetAnchor(-115, 165);
                     PrintItemTooltip(items[index + 10 * regionGroup.pagination]);
                 });
             }
@@ -5266,7 +5300,7 @@ public class Blueprint
                             var J = j;
                             AddSmallButton(setItems[J].icon, null, null, (h) => () =>
                             {
-                                SetAnchor(Center);
+                                SetAnchor(-115, 165);
                                 PrintItemTooltip(setItems[J]);
                             });
                             AddSmallButtonOverlay("OtherRarity" + setItems[J].rarity + "Big");

@@ -14,16 +14,17 @@ public class Highlightable : MonoBehaviour
     public Region region;
     public Tooltip tooltip;
     public SpriteRenderer render;
-    public Action<Highlightable> pressEvent, rightPressEvent;
+    public Action<Highlightable> pressEvent, rightPressEvent, middlePressEvent;
     public Color defaultColor;
     public string pressedState;
 
-    public void Initialise(Region region, Action<Highlightable> pressEvent, Action<Highlightable> rightPressEvent, Func<Highlightable, Action> tooltip)
+    public void Initialise(Region region, Action<Highlightable> pressEvent, Action<Highlightable> rightPressEvent, Func<Highlightable, Action> tooltip, Action<Highlightable> middlePressEvent)
     {
         render = GetComponent<SpriteRenderer>();
         pressedState = "None";
         this.pressEvent = pressEvent;
         this.rightPressEvent = rightPressEvent;
+        this.middlePressEvent = middlePressEvent;
         if (tooltip != null)
             this.tooltip = new Tooltip(() => GetComponent<Highlightable>(), tooltip);
         this.region = region;
@@ -81,6 +82,11 @@ public class Highlightable : MonoBehaviour
         {
             PlaySound("DesktopButtonPressRight", 0.3f);
             rightPressEvent(this);
+        }
+        else if (pressedState == "Middle" && middlePressEvent != null)
+        {
+            PlaySound("DesktopButtonPressRight", 0.3f);
+            middlePressEvent(this);
         }
         pressedState = "None";
         if (window != null)

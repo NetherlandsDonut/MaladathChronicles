@@ -169,41 +169,46 @@ public class Board
                 SwitchDesktop("HostileArea");
             CDesktop.RespawnAll();
             var directDrop = Race.races.Find(x => x.name == enemy.race).droppedItems.Select(x => Item.GetItem(x)).ToList();
-            if (directDrop.Count == 0)
+            var worldDrop = Item.items.FindAll(x => x.lvl >= enemy.level - 6 && x.lvl <= enemy.level && x.type != "Miscellaneous");
+            var instance = area.instancePart ? SiteInstance.instances.Find(x => x.wings.Any(y => y.areas.Any(z => z["AreaName"] == area.name))) : null;
+            var zoneDrop = instance == null || instance.zoneDrop == null ? new() : Item.items.FindAll(x => instance.zoneDrop.Contains(x.name));
+            var everything = zoneDrop.Concat(worldDrop).Where(x => x.CanEquip(currentSave.player));
+            var dropOther = directDrop.Where(x => x.rarity == "Common" || x.rarity == "Poor").ToList();
+            var dropGray = everything.Where(x => x.rarity == "Poor").ToList();
+            var dropWhite = everything.Where(x => x.rarity == "Common").ToList();
+            var dropGreen = everything.Where(x => x.rarity == "Uncommon").ToList();
+            var dropBlue = everything.Where(x => x.rarity == "Rare").ToList();
+            var dropPurple = everything.Where(x => x.rarity == "Epic").ToList();
+            var equippable = directDrop.Where(x => x.CanEquip(currentSave.player)).ToList();
+            var notEquippable = directDrop.Where(x => !equippable.Contains(x) && x.type != "Miscellaneous").ToList();
+            if (equippable.Count + notEquippable.Count == 0)
             {
-                var worldDrop = Item.items.FindAll(x => x.lvl >= enemy.level - 6 && x.lvl <= enemy.level && x.type != "Miscellaneous");
-                var instance = area.instancePart ? SiteInstance.instances.Find(x => x.wings.Any(y => y.areas.Any(z => z["AreaName"] == area.name))) : null;
-                var zoneDrop = instance == null || instance.zoneDrop == null ? new() : Item.items.FindAll(x => instance.zoneDrop.Contains(x.name));
-                var everything = zoneDrop.Concat(worldDrop).Where(x => x.CanEquip(currentSave.player));
-                var dropGreen = everything.Where(x => x.rarity == "Uncommon").ToList();
-                var dropBlue = everything.Where(x => x.rarity == "Rare").ToList();
-                var dropPurple = everything.Where(x => x.rarity == "Epic").ToList();
                 if (dropPurple.Count > 0 && Roll(0.05))
                     results.items.Add(dropPurple[random.Next(dropPurple.Count)]);
                 else if (dropBlue.Count > 0 && Roll(1))
                     results.items.Add(dropBlue[random.Next(dropBlue.Count)]);
                 else if (dropGreen.Count > 0 && Roll(10))
                     results.items.Add(dropGreen[random.Next(dropGreen.Count)]);
+                //else if (dropWhite.Count > 0 && Roll(5))
+                //    results.items.Add(dropWhite[random.Next(dropWhite.Count)]);
+                else if (dropGray.Count > 0 && Roll(3))
+                    results.items.Add(dropGray[random.Next(dropGray.Count)]);
             }
             else
             {
-                var equippable = directDrop.Where(x => x.CanEquip(currentSave.player)).ToList();
-                var notEquippable = directDrop.Where(x => !equippable.Contains(x)).ToList();
-                var item = equippable[random.Next(equippable.Count)];
+                var item = equippable.Count > 0 ? equippable[random.Next(equippable.Count)] : notEquippable[random.Next(notEquippable.Count)];
                 results.items.Add(item);
-                //results.exclusiveItems.Add(item.name);
-                //equippable.Remove(item);
-                //if (equippable.Count > 0)
-                //{
-                //    results.items.Add(equippable[random.Next(equippable.Count)]);
-                //    results.exclusiveItems.Add(results.items.Last().name);
-                //}
-                //else if (notEquippable.Count > 0)
-                //{
-                //    results.items.Add(notEquippable[random.Next(notEquippable.Count)]);
-                //    results.exclusiveItems.Add(results.items.Last().name);
-                //}
             }
+            if (dropOther.Count > 2 && Roll(60))
+            {
+                results.items.Add(dropOther[random.Next(dropOther.Count)]);
+                dropOther.Remove(results.items.Last());
+                if (Roll(40)) results.items.Add(dropOther[random.Next(dropOther.Count)]);
+            }
+            else if (dropOther.Count > 1 && Roll(50))
+                results.items.Add(dropOther[random.Next(dropOther.Count)]);
+            else if (dropOther.Count > 0 && Roll(40))
+                results.items.Add(dropOther[random.Next(dropOther.Count)]);
             SpawnDesktopBlueprint("CombatResults");
         }
         else if (result == "Lost")

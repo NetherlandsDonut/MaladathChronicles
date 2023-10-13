@@ -49,7 +49,8 @@ public class FlyingBuff : MonoBehaviour
                 var fb = h.GetComponent<FlyingBuff>();
                 var buff = (fb.onPlayer ? Board.board.player.buffs : Board.board.enemy.buffs).Find(x => x.Item3 == h.gameObject);
                 PrintBuffTooltip(target, target == Board.board.player ? Board.board.enemy : Board.board.player, buff);
-            });
+            },
+            null);
         return buff;
     }
 }

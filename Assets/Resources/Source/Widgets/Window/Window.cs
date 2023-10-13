@@ -281,7 +281,7 @@ public class Window : MonoBehaviour
                     if (smallButton.gameObject.GetComponent<BoxCollider2D>() == null)
                         smallButton.gameObject.AddComponent<BoxCollider2D>();
                     if (smallButton.gameObject.GetComponent<Highlightable>() == null)
-                        smallButton.gameObject.AddComponent<Highlightable>().Initialise(region, null, null, null);
+                        smallButton.gameObject.AddComponent<Highlightable>().Initialise(region, null, null, null, null);
                     if (smallButton.frame == null)
                         smallButton.frame = new GameObject("ButtonFrame", typeof(SpriteRenderer));
                     smallButton.frame.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/Borders/ButtonFrame");
@@ -305,7 +305,7 @@ public class Window : MonoBehaviour
                     if (bigButton.gameObject.GetComponent<BoxCollider2D>() == null)
                         bigButton.gameObject.AddComponent<BoxCollider2D>();
                     if (bigButton.gameObject.GetComponent<Highlightable>() == null)
-                        bigButton.gameObject.AddComponent<Highlightable>().Initialise(region, null, null, null);
+                        bigButton.gameObject.AddComponent<Highlightable>().Initialise(region, null, null, null, null);
                     if (bigButton.frame == null)
                         bigButton.frame = new GameObject("BigButtonFrame", typeof(SpriteRenderer));
                     bigButton.frame.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/Borders/BigButtonFrame");
@@ -326,7 +326,7 @@ public class Window : MonoBehaviour
                     if (region.checkbox.gameObject.GetComponent<BoxCollider2D>() == null)
                         region.checkbox.gameObject.AddComponent<BoxCollider2D>();
                     if (region.checkbox.gameObject.GetComponent<Highlightable>() == null && region.backgroundType != RedButton && region.backgroundType != Button)
-                        region.checkbox.gameObject.AddComponent<Highlightable>().Initialise(region, null, null, null);
+                        region.checkbox.gameObject.AddComponent<Highlightable>().Initialise(region, null, null, null, null);
                     if (region.checkbox.frame == null)
                         region.checkbox.frame = new GameObject("CheckboxFrame", typeof(SpriteRenderer));
                     region.checkbox.frame.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/Borders/CheckboxFrame");

@@ -297,7 +297,7 @@ public class Item
             (h) => () =>
             {
                 if (item == null) return;
-                SetAnchor(Center);
+                SetAnchor(-115, 165);
                 PrintItemTooltip(item);
             }
         );
@@ -325,7 +325,7 @@ public class Item
             (h) => () =>
             {
                 if (item == null) return;
-                SetAnchor(Center);
+                SetAnchor(-115, 165);
                 PrintItemTooltip(item, 4);
             }
         );
@@ -375,8 +375,14 @@ public class Item
             (h) => () =>
             {
                 if (item == null) return;
-                SetAnchor(Center);
+                if (CDesktop.windows.Exists(x => x.title == "ConfirmItemDestroy")) return;
+                SetAnchor(-115, 165);
                 PrintItemTooltip(item);
+            },
+            (h) =>
+            {
+                Item.item = item;
+                SpawnWindowBlueprint("ConfirmItemDestroy");
             }
         );
         if (settings.rarityIndicators.Value())
@@ -419,7 +425,8 @@ public class Item
             (h) => () =>
             {
                 if (item == null) return;
-                SetAnchor(Center);
+                if (CDesktop.windows.Exists(x => x.title == "ConfirmItemDestroy")) return;
+                SetAnchor(-115, 165);
                 PrintItemTooltip(item);
             }
         );
@@ -441,7 +448,7 @@ public class Item
     public static void PrintItemTooltip(Item item, double priceMultiplier = 1)
     {
         AddHeaderGroup();
-        SetRegionGroupWidth(190);
+        SetRegionGroupWidth(228);
         var split = item.name.Split(", ");
         AddHeaderRegion(() => { AddLine(split[0], item.rarity); });
         if (split.Length > 1) AddHeaderRegion(() => { AddLine("\"" + split[1] + "\"", item.rarity); });

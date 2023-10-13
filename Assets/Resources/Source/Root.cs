@@ -309,15 +309,15 @@ public static class Root
 
     #region Regions
 
-    private static void AddRegion(RegionBackgroundType backgroundType, Action draw, Action<Highlightable> pressEvent, Action<Highlightable> rightPressEvent, Func<Highlightable, Action> tooltip)
+    private static void AddRegion(RegionBackgroundType backgroundType, Action draw, Action<Highlightable> pressEvent, Action<Highlightable> rightPressEvent, Func<Highlightable, Action> tooltip, Action<Highlightable> middlePressEvent)
     {
         var region = new GameObject("Region", typeof(Region)).GetComponent<Region>();
         var regionGroup = CDesktop.LBWindow.LBRegionGroup;
         region.transform.parent = regionGroup.transform;
         region.background = new GameObject("Background", typeof(SpriteRenderer), typeof(RegionBackground));
         region.Initialise(regionGroup, backgroundType, draw);
-        if (pressEvent != null || rightPressEvent != null || tooltip != null)
-            region.background.AddComponent<Highlightable>().Initialise(region, pressEvent, rightPressEvent, tooltip);
+        if (pressEvent != null || rightPressEvent != null || middlePressEvent != null || tooltip != null)
+            region.background.AddComponent<Highlightable>().Initialise(region, pressEvent, rightPressEvent, tooltip, middlePressEvent);
     }
 
     public static void AddRegionOverlay(Region onWhat, string overlay, float time = 0)
@@ -334,19 +334,19 @@ public static class Root
         }
     }
 
-    public static void AddButtonRegion(Action draw, Action<Highlightable> pressEvent, Action<Highlightable> rightPressEvent = null, Func<Highlightable, Action> tooltip = null)
+    public static void AddButtonRegion(Action draw, Action<Highlightable> pressEvent, Action<Highlightable> rightPressEvent = null, Func<Highlightable, Action> tooltip = null, Action<Highlightable> middlePressEvent = null)
     {
-        AddRegion(Button, draw, pressEvent, rightPressEvent, tooltip);
+        AddRegion(Button, draw, pressEvent, rightPressEvent, tooltip, middlePressEvent);
     }
 
     public static void AddHeaderRegion(Action draw)
     {
-        AddRegion(Header, draw, null, null, null);
+        AddRegion(Header, draw, null, null, null, null);
     }
 
     public static void AddPaddingRegion(Action draw)
     {
-        AddRegion(Padding, draw, null, null, null);
+        AddRegion(Padding, draw, null, null, null, null);
     }
 
     public static void AddPaginationLine(RegionGroup group)
@@ -474,14 +474,14 @@ public static class Root
         }
     }
 
-    public static void AddSmallButton(string type, Action<Highlightable> pressEvent, Action<Highlightable> rightPressEvent = null, Func<Highlightable, Action> tooltip = null)
+    public static void AddSmallButton(string type, Action<Highlightable> pressEvent, Action<Highlightable> rightPressEvent = null, Func<Highlightable, Action> tooltip = null, Action<Highlightable> middlePressEvent = null)
     {
         var region = CDesktop.LBWindow.LBRegionGroup.LBRegion;
         var newObject = new GameObject("SmallButton: " + type.ToString(), typeof(LineSmallButton), typeof(SpriteRenderer));
         newObject.transform.parent = region.transform;
         newObject.GetComponent<LineSmallButton>().Initialise(region, type);
         if (pressEvent != null || rightPressEvent != null || tooltip != null)
-            newObject.AddComponent<Highlightable>().Initialise(region, pressEvent, rightPressEvent, tooltip);
+            newObject.AddComponent<Highlightable>().Initialise(region, pressEvent, rightPressEvent, tooltip, middlePressEvent);
     }
 
     #endregion
@@ -518,14 +518,14 @@ public static class Root
         return newObject;
     }
 
-    public static void AddBigButton(string type, Action<Highlightable> pressEvent = null, Action<Highlightable> rightPressEvent = null, Func<Highlightable, Action> tooltip = null)
+    public static void AddBigButton(string type, Action<Highlightable> pressEvent = null, Action<Highlightable> rightPressEvent = null, Func<Highlightable, Action> tooltip = null, Action<Highlightable> middlePressEvent = null)
     {
         var region = CDesktop.LBWindow.LBRegionGroup.LBRegion;
         var newObject = new GameObject("BigButton: " + (type == null ? "Empty" : type.ToString()), typeof(LineBigButton), typeof(SpriteRenderer));
         newObject.transform.parent = region.transform;
         newObject.GetComponent<LineBigButton>().Initialise(region, type, pressEvent, tooltip);
         if (pressEvent != null || rightPressEvent != null || tooltip != null)
-            newObject.AddComponent<Highlightable>().Initialise(region, pressEvent, rightPressEvent, tooltip);
+            newObject.AddComponent<Highlightable>().Initialise(region, pressEvent, rightPressEvent, tooltip, middlePressEvent);
     }
 
     #endregion

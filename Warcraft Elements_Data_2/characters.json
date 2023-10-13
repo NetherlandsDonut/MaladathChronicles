@@ -766,8 +766,8 @@
           }
         }
       },
-      "cameraX": 104,
-      "cameraY": -107,
+      "cameraX": 112,
+      "cameraY": -133,
       "siteProgress": {
         "Balia'mah Ruins": 1,
         "The Crimson Throne": 4,
@@ -785,7 +785,8 @@
         "Vault of C'Thun": 1,
         "Scarab Terrace": 4,
         "The Crystal Vale": 1,
-        "Main Chamber": 2
+        "Main Chamber": 2,
+        "Frostwhisper Gorge": 3
       },
       "commonsKilled": {
         "Dustbelcher Warrior": 1,
@@ -808,7 +809,8 @@
         "Qiraji Champion": 1,
         "Hive'Zara Wasp": 2,
         "Qiraji Swarmguard": 2,
-        "Searing Blade Enforcer": 2
+        "Searing Blade Enforcer": 2,
+        "Frostmaul Giant": 3
       },
       "raresKilled": {
         "Huricanian": 1
@@ -832,8 +834,8 @@
         "Timbermaw Hold": 1,
         "Stonetalon Peak": 2,
         "The Talon Den": 1,
-        "Theramore Isle": 1,
-        "Ratchet": 2,
+        "Theramore Isle": 2,
+        "Ratchet": 3,
         "Booty Bay": 5,
         "Stratholme": 3,
         "Jintha'Alor": 1,
@@ -881,12 +883,19 @@
         "Ruins of Ahn'Qiraj": 1,
         "Isle of Dread": 1,
         "The Crystal Vale": 2,
-        "Ragefire Chasm": 3
+        "Ragefire Chasm": 3,
+        "Frostwhisper Gorge": 1,
+        "Darkwhisper Gorge": 1,
+        "Valormok": 1,
+        "Sen'jin Village": 2,
+        "Kolkar Crag": 1,
+        "Darkspear Strand": 2,
+        "Echo Isles": 1
       },
       "startDate": "2023-09-08T02:04:14.0667101+02:00",
-      "lastLoaded": "2023-10-13T11:18:31.182587+02:00",
-      "lastPlayed": "2023-10-13T11:18:39.8769263+02:00",
-      "timePlayed": "08:05:15.9053530"
+      "lastLoaded": "2023-10-13T13:22:42.3945554+02:00",
+      "lastPlayed": "2023-10-13T13:50:57.025116+02:00",
+      "timePlayed": "08:34:05.3541079"
     },
     {
       "player": {

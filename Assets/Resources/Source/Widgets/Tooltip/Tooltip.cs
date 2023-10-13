@@ -16,8 +16,12 @@ public class Tooltip
 
     public void SpawnTooltip()
     {
-        Sound.PlaySound("DesktopTooltipShow", 0.2f);
         SpawnWindowBlueprint(new Blueprint("Tooltip", () => { DisableCollisions(); tooltip(caller())(); }, true));
-        window = CDesktop.LBWindow;
+        if (CDesktop.LBWindow.LBRegionGroup != null)
+        {
+            Sound.PlaySound("DesktopTooltipShow", 0.2f);
+            window = CDesktop.LBWindow;
+        }
+        else CloseWindow(CDesktop.LBWindow);
     }
 }

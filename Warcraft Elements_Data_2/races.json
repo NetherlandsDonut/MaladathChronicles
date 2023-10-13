@@ -1,79 +1,9 @@
 [
   {
-    "name": "Stonevault Rockchewer",
-    "kind": "Common",
-    "portrait": "PortraitTrogg",
-    "vitality": 1.0,
-    "abilities": []
-  },
-  {
-    "name": "Stonevault Cave Lurker",
-    "kind": "Common",
-    "portrait": "PortraitTrogg",
-    "vitality": 1.0,
-    "abilities": []
-  },
-  {
-    "name": "Margol the Rager",
-    "kind": "Rare",
-    "portrait": "PortraitThunderLizardDark",
-    "vitality": 2.0,
-    "abilities": []
-  },
-  {
-    "name": "Ghost Howl",
-    "kind": "Rare",
-    "portrait": "PortraitWorgWhite",
-    "vitality": 2.0,
-    "abilities": []
-  },
-  {
-    "name": "The Rake",
-    "kind": "Rare",
-    "portrait": "PortraitLion",
-    "vitality": 2.0,
-    "abilities": []
-  },
-  {
-    "name": "Gammerita",
-    "kind": "Rare",
-    "portrait": "PortraitTurtleBlue",
-    "vitality": 2.0,
-    "abilities": []
-  },
-  {
-    "name": "Lupos",
-    "kind": "Rare",
-    "portrait": "PortraitWorg",
-    "vitality": 2.0,
-    "abilities": []
-  },
-  {
-    "name": "Bjarn",
-    "kind": "Rare",
-    "portrait": "PortraitPolarBear",
-    "vitality": 2.0,
-    "abilities": []
-  },
-  {
-    "name": "Enraged Reef Crawler",
-    "kind": "Common",
-    "portrait": "PortraitCrabWhite",
-    "vitality": 1.0,
-    "abilities": []
-  },
-  {
-    "name": "Spined Crawler",
-    "kind": "Common",
-    "portrait": "PortraitCrabWhite",
-    "vitality": 1.0,
-    "abilities": []
-  },
-  {
     "name": "Abomination",
     "kind": "Common",
     "portrait": "PortraitAbomination",
-    "vitality": 1.0,
+    "vitality": 1.5,
     "abilities": []
   },
   {
@@ -81,21 +11,21 @@
     "faction": "Scourge",
     "kind": "Common",
     "portrait": "PortraitAbomination",
-    "vitality": 1.0,
+    "vitality": 1.5,
     "abilities": []
   },
   {
     "name": "Gangled Golem",
     "kind": "Common",
     "portrait": "PortraitAbomination",
-    "vitality": 1.0,
+    "vitality": 1.6,
     "abilities": []
   },
   {
     "name": "Glutton",
     "kind": "Elite",
     "portrait": "PortraitAbomination",
-    "vitality": 3.0,
+    "vitality": 3.5,
     "abilities": []
   },
   {
@@ -103,7 +33,7 @@
     "faction": "Scourge",
     "kind": "Rare",
     "portrait": "PortraitAbomination",
-    "vitality": 2.0,
+    "vitality": 2.5,
     "abilities": []
   },
   {
@@ -111,14 +41,14 @@
     "faction": "Scourge",
     "kind": "Elite",
     "portrait": "PortraitAbomination",
-    "vitality": 3.0,
+    "vitality": 3.5,
     "abilities": []
   },
   {
     "name": "Stitched Horror",
     "kind": "Common",
     "portrait": "PortraitAbomination",
-    "vitality": 1.0,
+    "vitality": 1.5,
     "abilities": []
   },
   {
@@ -188,21 +118,21 @@
     "name": "Anubisath Guardian",
     "kind": "Common",
     "portrait": "PortraitAnubisath",
-    "vitality": 1.0,
+    "vitality": 1.6,
     "abilities": []
   },
   {
     "name": "Anubisath Sentinel",
     "kind": "Common",
     "portrait": "PortraitAnubisath",
-    "vitality": 1.0,
+    "vitality": 1.7,
     "abilities": []
   },
   {
     "name": "Setis",
     "kind": "Rare",
     "portrait": "PortraitAnubisath",
-    "vitality": 2.0,
+    "vitality": 2.6,
     "abilities": []
   },
   {
@@ -2686,27 +2616,6 @@
     "abilities": []
   },
   {
-    "name": "Monstrous Crawler",
-    "kind": "Common",
-    "portrait": "PortraitCrabWhite",
-    "vitality": 1.0,
-    "abilities": []
-  },
-  {
-    "name": "Pygmy Surf Crawler",
-    "kind": "Common",
-    "portrait": "PortraitCrabRed",
-    "vitality": 1.0,
-    "abilities": []
-  },
-  {
-    "name": "Pygmy Tide Crawler",
-    "kind": "Common",
-    "portrait": "PortraitCrabBlue",
-    "vitality": 1.0,
-    "abilities": []
-  },
-  {
     "name": "Shore Crawler",
     "kind": "Common",
     "portrait": "PortraitCrab",
@@ -2721,9 +2630,9 @@
     "abilities": []
   },
   {
-    "name": "Skittering Crustacean",
+    "name": "Pygmy Tide Crawler",
     "kind": "Common",
-    "portrait": "PortraitCrabWhite",
+    "portrait": "PortraitCrabBlue",
     "vitality": 1.0,
     "abilities": []
   },
@@ -2738,6 +2647,41 @@
     "name": "Tide Crawler",
     "kind": "Common",
     "portrait": "PortraitCrabBlue",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Pygmy Surf Crawler",
+    "kind": "Common",
+    "portrait": "PortraitCrabRed",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Enraged Reef Crawler",
+    "kind": "Common",
+    "portrait": "PortraitCrabWhite",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Spined Crawler",
+    "kind": "Common",
+    "portrait": "PortraitCrabWhite",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Monstrous Crawler",
+    "kind": "Common",
+    "portrait": "PortraitCrabWhite",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Skittering Crustacean",
+    "kind": "Common",
+    "portrait": "PortraitCrabWhite",
     "vitality": 1.0,
     "abilities": []
   },
@@ -2851,7 +2795,7 @@
     "faction": "Scourge",
     "kind": "Elite",
     "portrait": "PortraitCryptFiend",
-    "vitality": 1.0,
+    "vitality": 3.0,
     "abilities": []
   },
   {
@@ -2892,7 +2836,7 @@
     "faction": "Scourge",
     "kind": "Elite",
     "portrait": "PortraitCryptFiend",
-    "vitality": 1.0,
+    "vitality": 3.0,
     "abilities": []
   },
   {
@@ -2907,7 +2851,7 @@
     "faction": "Scourge",
     "kind": "Elite",
     "portrait": "PortraitCryptFiend",
-    "vitality": 1.0,
+    "vitality": 3.0,
     "abilities": []
   },
   {
@@ -3580,7 +3524,7 @@
     "faction": "Smolderthorn Tribe",
     "kind": "Common",
     "portrait": "PortraitDireTroll",
-    "vitality": 1.0,
+    "vitality": 1.5,
     "abilities": []
   },
   {
@@ -3588,14 +3532,14 @@
     "faction": "Gurubashi Tribe",
     "kind": "Common",
     "portrait": "PortraitDireTrollBlue",
-    "vitality": 1.0,
+    "vitality": 1.5,
     "abilities": []
   },
   {
     "name": "Atal'alarion",
     "kind": "Elite",
     "portrait": "PortraitDireTrollOrange",
-    "vitality": 3.0,
+    "vitality": 3.5,
     "abilities": []
   },
   {
@@ -4024,7 +3968,7 @@
     "name": "Baron Geddon",
     "kind": "Elite",
     "portrait": "PortraitFireElemental",
-    "vitality": 1.0,
+    "vitality": 3.0,
     "abilities": []
   },
   {
@@ -4080,7 +4024,7 @@
     "name": "Lord Incendius",
     "kind": "Elite",
     "portrait": "PortraitFireElemental",
-    "vitality": 1.0,
+    "vitality": 3.0,
     "abilities": []
   },
   {
@@ -4108,7 +4052,7 @@
     "name": "Ambassador Flamelash",
     "kind": "Elite",
     "portrait": "PortraitFlamewaker",
-    "vitality": 1.0,
+    "vitality": 3.0,
     "abilities": []
   },
   {
@@ -4136,21 +4080,21 @@
     "name": "Sulfuron Harbringer",
     "kind": "Elite",
     "portrait": "PortraitFlamewaker",
-    "vitality": 1.0,
+    "vitality": 3.0,
     "abilities": []
   },
   {
     "name": "Lucifron",
     "kind": "Elite",
     "portrait": "PortraitFlamewakerBlack",
-    "vitality": 1.0,
+    "vitality": 3.0,
     "abilities": []
   },
   {
     "name": "Majordomo Executus",
     "kind": "Elite",
     "portrait": "PortraitFlamewakerBlack",
-    "vitality": 1.0,
+    "vitality": 3.0,
     "abilities": []
   },
   {
@@ -4774,7 +4718,7 @@
     "name": "Viscidus",
     "kind": "Elite",
     "portrait": "PortraitGiantSlime",
-    "vitality": 1.0,
+    "vitality": 4.0,
     "abilities": []
   },
   {
@@ -5385,7 +5329,7 @@
     "faction": "Dark Iron Clan",
     "kind": "Elite",
     "portrait": "PortraitGolemOrange",
-    "vitality": 1.0,
+    "vitality": 3.0,
     "abilities": []
   },
   {
@@ -6364,21 +6308,21 @@
     "name": "Frostmaul Giant",
     "kind": "Common",
     "portrait": "PortraitIceGiant",
-    "vitality": 2.0,
+    "vitality": 2.8,
     "abilities": []
   },
   {
     "name": "Frostmaul Preserver",
     "kind": "Common",
     "portrait": "PortraitIceGiant",
-    "vitality": 2.0,
+    "vitality": 2.8,
     "abilities": []
   },
   {
     "name": "Kashoch the Reaver",
     "kind": "Rare",
     "portrait": "PortraitIceGiant",
-    "vitality": 3.0,
+    "vitality": 3.8,
     "abilities": []
   },
   {
@@ -7027,7 +6971,7 @@
     "faction": "Scourge",
     "kind": "Elite",
     "portrait": "PortraitLich",
-    "vitality": 1.0,
+    "vitality": 3.0,
     "abilities": []
   },
   {
@@ -7051,6 +6995,13 @@
     "kind": "Elite",
     "portrait": "PortraitLieutenantBenedict",
     "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "The Rake",
+    "kind": "Rare",
+    "portrait": "PortraitLion",
+    "vitality": 2.0,
     "abilities": []
   },
   {
@@ -7260,14 +7211,14 @@
     "name": "Bael'Gar",
     "kind": "Elite",
     "portrait": "PortraitMoltenGiant",
-    "vitality": 1.0,
+    "vitality": 3.9,
     "abilities": []
   },
   {
     "name": "Golemagg the Incinerator",
     "kind": "Elite",
     "portrait": "PortraitMoltenGiant",
-    "vitality": 3.0,
+    "vitality": 4.4,
     "abilities": [
       "Magma Splash",
       "Earthquake"
@@ -7278,21 +7229,21 @@
     "name": "Magmus",
     "kind": "Elite",
     "portrait": "PortraitMoltenGiant",
-    "vitality": 1.0,
+    "vitality": 3.8,
     "abilities": []
   },
   {
     "name": "Molten Destroyer",
     "kind": "Common",
     "portrait": "PortraitMoltenGiant",
-    "vitality": 1.0,
+    "vitality": 2.1,
     "abilities": []
   },
   {
     "name": "Molten Giant",
     "kind": "Common",
     "portrait": "PortraitMoltenGiant",
-    "vitality": 1.0,
+    "vitality": 2.0,
     "abilities": []
   },
   {
@@ -7341,35 +7292,35 @@
     "name": "Anathemus",
     "kind": "Rare",
     "portrait": "PortraitMountainGiant",
-    "vitality": 2.0,
+    "vitality": 2.8,
     "abilities": []
   },
   {
     "name": "Landslide",
     "kind": "Elite",
     "portrait": "PortraitMountainGiant",
-    "vitality": 3.0,
+    "vitality": 3.8,
     "abilities": []
   },
   {
     "name": "Primordial Behemoth",
     "kind": "Common",
     "portrait": "PortraitMountainGiant",
-    "vitality": 1.0,
+    "vitality": 2.0,
     "abilities": []
   },
   {
     "name": "Boulderheart",
     "kind": "Rare",
     "portrait": "PortraitMountainGiantBrown",
-    "vitality": 2.0,
+    "vitality": 3.6,
     "abilities": []
   },
   {
     "name": "Cliff Breaker",
     "kind": "Common",
     "portrait": "PortraitMountainGiantBrown",
-    "vitality": 1.0,
+    "vitality": 2.2,
     "abilities": []
   },
   {
@@ -7377,7 +7328,7 @@
     "faction": "Defias Brotherhood",
     "kind": "Elite",
     "portrait": "PortraitMrSmite",
-    "vitality": 2.0,
+    "vitality": 2.7,
     "abilities": []
   },
   {
@@ -8240,7 +8191,7 @@
     "faction": "Qiraji Empire",
     "kind": "Elite",
     "portrait": "PortraitObsidianDestroyer",
-    "vitality": 3.0,
+    "vitality": 4.3,
     "abilities": []
   },
   {
@@ -8248,7 +8199,7 @@
     "faction": "Qiraji Empire",
     "kind": "Common",
     "portrait": "PortraitObsidianDestroyer",
-    "vitality": 1.0,
+    "vitality": 2.3,
     "abilities": []
   },
   {
@@ -8256,7 +8207,7 @@
     "faction": "Qiraji Empire",
     "kind": "Common",
     "portrait": "PortraitObsidianDestroyer",
-    "vitality": 1.0,
+    "vitality": 2.2,
     "abilities": []
   },
   {
@@ -8264,7 +8215,7 @@
     "faction": "Qiraji Empire",
     "kind": "Common",
     "portrait": "PortraitObsidianDestroyer",
-    "vitality": 1.0,
+    "vitality": 2.1,
     "abilities": []
   },
   {
@@ -8965,7 +8916,7 @@
     "name": "Old Serra'kis",
     "kind": "Elite",
     "portrait": "PortraitOldSerrakis",
-    "vitality": 3.0,
+    "vitality": 2.6,
     "abilities": []
   },
   {
@@ -9419,6 +9370,13 @@
     "loot": []
   },
   {
+    "name": "Bjarn",
+    "kind": "Rare",
+    "portrait": "PortraitPolarBear",
+    "vitality": 2.0,
+    "abilities": []
+  },
+  {
     "name": "Elder Shardtooth",
     "kind": "Common",
     "portrait": "PortraitPolarBear",
@@ -9534,7 +9492,7 @@
     "faction": "Qiraji Empire",
     "kind": "Elite",
     "portrait": "PortraitQirajiEmperor",
-    "vitality": 1.0,
+    "vitality": 6.0,
     "abilities": []
   },
   {
@@ -9573,7 +9531,7 @@
     "name": "Swarmguard Needler",
     "kind": "Common",
     "portrait": "PortraitQirajiFemaleBlue",
-    "vitality": 1.0,
+    "vitality": 1.3,
     "abilities": []
   },
   {
@@ -9581,7 +9539,7 @@
     "faction": "Qiraji Empire",
     "kind": "Elite",
     "portrait": "PortraitQirajiGeneral",
-    "vitality": 3.0,
+    "vitality": 3.3,
     "abilities": []
   },
   {
@@ -9589,7 +9547,7 @@
     "faction": "Qiraji Empire",
     "kind": "Common",
     "portrait": "PortraitQirajiGeneral",
-    "vitality": 1.0,
+    "vitality": 2.1,
     "abilities": []
   },
   {
@@ -9597,7 +9555,7 @@
     "faction": "Qiraji Empire",
     "kind": "Common",
     "portrait": "PortraitQirajiMale",
-    "vitality": 1.0,
+    "vitality": 1.6,
     "abilities": []
   },
   {
@@ -9605,7 +9563,7 @@
     "faction": "Qiraji Empire",
     "kind": "Common",
     "portrait": "PortraitQirajiMale",
-    "vitality": 1.0,
+    "vitality": 1.6,
     "abilities": []
   },
   {
@@ -9613,7 +9571,7 @@
     "faction": "Qiraji Empire",
     "kind": "Common",
     "portrait": "PortraitQirajiProphet",
-    "vitality": 1.0,
+    "vitality": 2.0,
     "abilities": []
   },
   {
@@ -9621,7 +9579,7 @@
     "faction": "Qiraji Empire",
     "kind": "Common",
     "portrait": "PortraitQirajiProphet",
-    "vitality": 1.0,
+    "vitality": 2.0,
     "abilities": []
   },
   {
@@ -9629,7 +9587,7 @@
     "faction": "Qiraji Empire",
     "kind": "Elite",
     "portrait": "PortraitQirajiProphet",
-    "vitality": 1.0,
+    "vitality": 4.0,
     "abilities": []
   },
   {
@@ -9930,7 +9888,7 @@
     "name": "Ragnaros",
     "kind": "Elite",
     "portrait": "PortraitRagnarosAlternate",
-    "vitality": 4.0,
+    "vitality": 5.0,
     "abilities": []
   },
   {
@@ -12506,6 +12464,13 @@
     "abilities": []
   },
   {
+    "name": "Margol the Rager",
+    "kind": "Rare",
+    "portrait": "PortraitThunderLizardDark",
+    "vitality": 2.0,
+    "abilities": []
+  },
+  {
     "name": "Spiked Stegodon",
     "kind": "Common",
     "portrait": "PortraitThunderLizardDark",
@@ -12600,6 +12565,20 @@
     "name": "Tortured Sentinel",
     "kind": "Common",
     "portrait": "PortraitTorturedSentinel",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Stonevault Rockchewer",
+    "kind": "Common",
+    "portrait": "PortraitTrogg",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Stonevault Cave Lurker",
+    "kind": "Common",
+    "portrait": "PortraitTrogg",
     "vitality": 1.0,
     "abilities": []
   },
@@ -12879,6 +12858,13 @@
     "kind": "Common",
     "portrait": "PortraitTurtle",
     "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Gammerita",
+    "kind": "Rare",
+    "portrait": "PortraitTurtleBlue",
+    "vitality": 2.0,
     "abilities": []
   },
   {
@@ -13646,6 +13632,13 @@
     "abilities": []
   },
   {
+    "name": "Lupos",
+    "kind": "Rare",
+    "portrait": "PortraitWorg",
+    "vitality": 2.0,
+    "abilities": []
+  },
+  {
     "name": "Black Ravager",
     "kind": "Common",
     "portrait": "PortraitWorg",
@@ -13923,6 +13916,13 @@
     "kind": "Common",
     "portrait": "PortraitWorgenDark",
     "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Ghost Howl",
+    "kind": "Rare",
+    "portrait": "PortraitWorgWhite",
+    "vitality": 2.0,
     "abilities": []
   },
   {
