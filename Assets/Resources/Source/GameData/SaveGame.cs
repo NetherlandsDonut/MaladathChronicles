@@ -40,6 +40,9 @@ public class SaveGame
     //Stores all bank accounts of this character in towns
     public Dictionary<string, Inventory> banks;
 
+    //List of items available for buying back from vendors
+    public List<Item> buyback;
+
     //Date of the character creation
     public DateTime startDate;
 

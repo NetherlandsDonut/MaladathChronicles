@@ -1257,9 +1257,13 @@ public class Blueprint
                 {
                     if (town != null)
                     {
-                        CloseDesktop("Bank");
-                        SwitchDesktop("Town");
-                        PlaySound("DesktopBankClose");
+                        if (CDesktop.title == "Bank")
+                        {
+                            CloseDesktop("Bank");
+                            PlaySound("DesktopBankClose");
+                        }
+                        else
+                            CloseDesktop("Vendor");
                     }
                     else
                     {
@@ -1274,7 +1278,7 @@ public class Blueprint
                     SpawnWindowBlueprint("Inventory");
                     PlaySound("DesktopInventorySort", 0.2f);
                 });
-                if (!CDesktop.windows.Exists(x => x.title == "InventorySettings") && !CDesktop.windows.Exists(x => x.title == "BankSort"))
+                if (!CDesktop.windows.Exists(x => x.title == "InventorySettings") && !CDesktop.windows.Exists(x => x.title == "BankSort") && !CDesktop.windows.Exists(x => x.title == "VendorSort"))
                     AddSmallButton("OtherSort", (h) =>
                     {
                         SpawnWindowBlueprint("InventorySort");
@@ -1284,7 +1288,7 @@ public class Blueprint
                     });
                 else
                     AddSmallButton("OtherSortOff", (h) => { });
-                if (!CDesktop.windows.Exists(x => x.title == "InventorySettings") && !CDesktop.windows.Exists(x => x.title == "BankSort"))
+                if (!CDesktop.windows.Exists(x => x.title == "InventorySettings") && !CDesktop.windows.Exists(x => x.title == "BankSort") && !CDesktop.windows.Exists(x => x.title == "VendorSort"))
                     AddSmallButton("OtherSettings", (h) =>
                     {
                         SpawnWindowBlueprint("InventorySettings");
@@ -1312,6 +1316,7 @@ public class Blueprint
         new("Bank", () => {
             SetAnchor(TopLeft);
             AddRegionGroup();
+            SetRegionGroupWidth(190);
             SetRegionGroupHeight(342);
             var items = currentSave.banks[town.name].items;
             AddHeaderRegion(() =>
@@ -1330,7 +1335,7 @@ public class Blueprint
                     Respawn("Inventory");
                     PlaySound("DesktopInventorySort", 0.2f);
                 });
-                if (!CDesktop.windows.Exists(x => x.title == "InventorySettings") && !CDesktop.windows.Exists(x => x.title == "InventorySort"))
+                if (!CDesktop.windows.Exists(x => x.title == "InventorySettings") && !CDesktop.windows.Exists(x => x.title == "InventorySort") && !CDesktop.windows.Exists(x => x.title == "BankSort"))
                     AddSmallButton("OtherSort", (h) =>
                     {
                         SpawnWindowBlueprint("BankSort");
@@ -1354,6 +1359,86 @@ public class Blueprint
             }
             AddPaddingRegion(() => { AddLine(); });
         }, true),
+        new("Vendor", () => {
+            currentSave.buyback ??= new();
+            SetAnchor(TopLeft);
+            AddHeaderGroup();
+            SetRegionGroupWidth(190);
+            SetRegionGroupHeight(342);
+            var items = new List<Item>();
+            AddHeaderRegion(() =>
+            {
+                AddLine("Vendor:");
+                AddSmallButton("OtherClose", (h) =>
+                {
+                    CloseDesktop("Vendor");
+                    SwitchDesktop("Town");
+                    //PlaySound("DesktopBankClose");
+                });
+                if (!CDesktop.windows.Exists(x => x.title == "InventorySettings") && !CDesktop.windows.Exists(x => x.title == "InventorySort") && !CDesktop.windows.Exists(x => x.title == "VendorSort"))
+                    AddSmallButton("OtherSort", (h) =>
+                    {
+                        SpawnWindowBlueprint("VendorSort");
+                        Respawn("Vendor");
+                        Respawn("Inventory");
+                    });
+                else
+                    AddSmallButton("OtherSortOff", (h) => { });
+            });
+            for (int i = 0; i < 8; i++)
+            {
+                var index = i;
+                AddPaddingRegion(
+                    () =>
+                    {
+                        for (int j = 0; j < 5; j++)
+                            if (items.Count > index * 5 + j) PrintVendorItem(items[index * 5 + j]);
+                            else AddBigButton("OtherEmpty", (h) => { });
+                    }
+                );
+            }
+            AddRegionGroup();
+            SetRegionGroupWidth(95);
+            AddPaddingRegion(() => AddLine("Merchant", "", "Center"));
+            AddRegionGroup();
+            SetRegionGroupWidth(95);
+            AddButtonRegion(() => AddLine("Buyback", "", "Center"), (h) => { CloseWindow("Vendor"); CloseWindow("VendorSort"); SpawnWindowBlueprint("VendorBuyback"); });
+        }, true),
+        new("VendorBuyback", () => {
+            SetAnchor(TopLeft);
+            AddHeaderGroup();
+            SetRegionGroupWidth(190);
+            SetRegionGroupHeight(342);
+            var items = new List<Item>();
+            AddHeaderRegion(() =>
+            {
+                AddLine("Vendor:");
+                AddSmallButton("OtherClose", (h) =>
+                {
+                    CloseDesktop("Vendor");
+                    SwitchDesktop("Town");
+                    //PlaySound("DesktopBankClose");
+                });
+            });
+            for (int i = 0; i < 8; i++)
+            {
+                var index = i;
+                AddPaddingRegion(
+                    () =>
+                    {
+                        for (int j = 0; j < 5; j++)
+                            if (currentSave.buyback.Count > index * 5 + j) PrintVendorItem(currentSave.buyback[index * 5 + j]);
+                            else AddBigButton("OtherEmpty", (h) => { });
+                    }
+                );
+            }
+            AddRegionGroup();
+            SetRegionGroupWidth(95);
+            AddButtonRegion(() => AddLine("Merchant", "", "Center"), (h) => { CloseWindow("VendorBuyback"); SpawnWindowBlueprint("Vendor"); });
+            AddRegionGroup();
+            SetRegionGroupWidth(95);
+            AddPaddingRegion(() => AddLine("Buyback", "", "Center"));
+        }, true),
         new("BankSort", () => {
             SetAnchor(Center);
             AddRegionGroup();
@@ -1365,6 +1450,69 @@ public class Blueprint
                 {
                     CloseWindow("BankSort");
                     Respawn("Bank");
+                    Respawn("Inventory");
+                });
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("By name", "Black");
+            },
+            (h) =>
+            {
+                currentSave.banks[town.name].items = currentSave.banks[town.name].items.OrderBy(x => x.name).ToList();
+                CloseWindow("BankSort");
+                Respawn("Bank");
+                Respawn("Inventory");
+                PlaySound("DesktopInventorySort", 0.2f);
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("By item power", "Black");
+            },
+            (h) =>
+            {
+                currentSave.banks[town.name].items = currentSave.banks[town.name].items.OrderByDescending(x => x.ilvl).ToList();
+                CloseWindow("BankSort");
+                Respawn("Bank");
+                Respawn("Inventory");
+                PlaySound("DesktopInventorySort", 0.2f);
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("By price", "Black");
+            },
+            (h) =>
+            {
+                currentSave.banks[town.name].items = currentSave.banks[town.name].items.OrderByDescending(x => x.price).ToList();
+                CloseWindow("BankSort");
+                Respawn("Bank");
+                Respawn("Inventory");
+                PlaySound("DesktopInventorySort", 0.2f);
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("By type", "Black");
+            },
+            (h) =>
+            {
+                currentSave.banks[town.name].items = currentSave.banks[town.name].items.OrderByDescending(x => x.type).ToList();
+                CloseWindow("BankSort");
+                Respawn("Bank");
+                Respawn("Inventory");
+                PlaySound("DesktopInventorySort", 0.2f);
+            });
+        }),
+        new("VendorSort", () => {
+            SetAnchor(Center);
+            AddRegionGroup();
+            SetRegionGroupWidth(162);
+            AddHeaderRegion(() =>
+            {
+                AddLine("Sort vendor inventory:");
+                AddSmallButton("OtherClose", (h) =>
+                {
+                    CloseWindow("VendorSort");
+                    Respawn("Vendor");
                     Respawn("Inventory");
                 });
             });
@@ -7039,12 +7187,9 @@ public class Blueprint
         }),
         new("Vendor", () =>
         {
-            currentSave.banks ??= new();
-            if (!currentSave.banks.ContainsKey(town.name))
-                currentSave.banks.Add(town.name, new() { items = new() });
             //PlaySound("DesktopBankOpen", 0.2f);
             SetDesktopBackground(town.Background());
-            SpawnWindowBlueprint("Bank");
+            SpawnWindowBlueprint("Vendor");
             SpawnWindowBlueprint("Inventory");
             SpawnWindowBlueprint("ExperienceBar");
             AddHotkey(Escape, () =>

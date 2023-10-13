@@ -5,6 +5,11 @@
     "type": "Vendor"
   },
   {
+    "name": "Meat Vendor",
+    "icon": "ItemMiscFood13",
+    "type": "Vendor"
+  },
+  {
     "name": "Food Vendor",
     "icon": "ItemMiscFood11",
     "type": "Vendor"

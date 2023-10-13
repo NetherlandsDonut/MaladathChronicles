@@ -8,7 +8,7 @@ public class FlyingElement : MonoBehaviour
     public int index;
     public SpriteRenderer render;
 
-    public static int flySpeed = 6;
+    public static int flySpeed = 4;
     public static int rowAmount = 2;
 
     public void Initiate(bool forPlayer)

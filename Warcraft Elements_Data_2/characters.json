@@ -524,25 +524,21 @@
             },
             {
               "rarity": "Rare",
-              "name": "Fiery Retributer",
-              "icon": "itemsword01",
+              "name": "Dark Iron Reaver",
+              "icon": "itemsword48",
               "detailedType": "Sword",
               "type": "One Handed",
-              "ilvl": 68,
+              "ilvl": 65,
               "lvl": 60,
-              "minDamage": 56,
-              "maxDamage": 105,
-              "armor": 60,
-              "price": 7.4373,
-              "speed": 1.8,
+              "minDamage": 71,
+              "maxDamage": 134,
+              "price": 6.3738,
+              "speed": 2.4,
               "stats": {
                 "stats": {
-                  "Strength": 7
+                  "Stamina": 10
                 }
-              },
-              "droppedBy": [
-                "Hazza'rah"
-              ]
+              }
             },
             {
               "rarity": "Epic",
@@ -730,24 +726,6 @@
           },
           "Main Hand": {
             "rarity": "Rare",
-            "name": "Dark Iron Reaver",
-            "icon": "itemsword48",
-            "detailedType": "Sword",
-            "type": "One Handed",
-            "ilvl": 65,
-            "lvl": 60,
-            "minDamage": 71,
-            "maxDamage": 134,
-            "price": 6.3738,
-            "speed": 2.4,
-            "stats": {
-              "stats": {
-                "Stamina": 10
-              }
-            }
-          },
-          "Off Hand": {
-            "rarity": "Rare",
             "name": "Glacial Blade",
             "icon": "itemshortblade06",
             "detailedType": "Dagger",
@@ -763,6 +741,28 @@
                 "Agility": 10
               }
             }
+          },
+          "Off Hand": {
+            "rarity": "Rare",
+            "name": "Fiery Retributer",
+            "icon": "itemsword01",
+            "detailedType": "Sword",
+            "type": "One Handed",
+            "ilvl": 68,
+            "lvl": 60,
+            "minDamage": 56,
+            "maxDamage": 105,
+            "armor": 60,
+            "price": 7.4373,
+            "speed": 1.8,
+            "stats": {
+              "stats": {
+                "Strength": 7
+              }
+            },
+            "droppedBy": [
+              "Hazza'rah"
+            ]
           }
         }
       },
@@ -784,7 +784,8 @@
         "The Hive Undergrounds": 1,
         "Vault of C'Thun": 1,
         "Scarab Terrace": 4,
-        "The Crystal Vale": 1
+        "The Crystal Vale": 1,
+        "Main Chamber": 2
       },
       "commonsKilled": {
         "Dustbelcher Warrior": 1,
@@ -806,7 +807,8 @@
         "Obsidian Eradicator": 2,
         "Qiraji Champion": 1,
         "Hive'Zara Wasp": 2,
-        "Qiraji Swarmguard": 2
+        "Qiraji Swarmguard": 2,
+        "Searing Blade Enforcer": 2
       },
       "raresKilled": {
         "Huricanian": 1
@@ -815,7 +817,8 @@
         "Revelosh": 1,
         "Archaedas": 3,
         "Solakar Flamewreath": 1,
-        "Kurinnaxx": 1
+        "Kurinnaxx": 1,
+        "Taragaman the Hungerer": 1
       },
       "siteVisits": {
         "The Sepulcher": 1,
@@ -849,7 +852,7 @@
         "Windshear Mine": 1,
         "Dire Maul": 1,
         "Blackfathom Deeps": 1,
-        "Orgrimmar": 2,
+        "Orgrimmar": 3,
         "Grom'gol Base Camp": 1,
         "The Tainted Scar": 1,
         "Twilight Grove": 2,
@@ -877,12 +880,13 @@
         "Temple of Ahn'Qiraj": 1,
         "Ruins of Ahn'Qiraj": 1,
         "Isle of Dread": 1,
-        "The Crystal Vale": 2
+        "The Crystal Vale": 2,
+        "Ragefire Chasm": 3
       },
       "startDate": "2023-09-08T02:04:14.0667101+02:00",
-      "lastLoaded": "2023-10-12T19:31:51.6104863+02:00",
-      "lastPlayed": "2023-10-12T19:38:10.6483503+02:00",
-      "timePlayed": "08:04:36.6867912"
+      "lastLoaded": "2023-10-13T11:18:31.182587+02:00",
+      "lastPlayed": "2023-10-13T11:18:39.8769263+02:00",
+      "timePlayed": "08:05:15.9053530"
     },
     {
       "player": {

@@ -8,7 +8,7 @@ public class FlyingBuff : MonoBehaviour
     public int dyingIndex;
     public SpriteRenderer render;
 
-    public static int flySpeed = 6;
+    public static int flySpeed = 4;
     public static int rowAmount = 7;
 
     public void Initiate(bool targettedPlayer)

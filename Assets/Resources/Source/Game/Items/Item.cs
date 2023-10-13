@@ -311,20 +311,22 @@ public class Item
             null,
             (h) =>
             {
-                if (currentSave.player.inventory.items.Count < 40 && currentSave.player.inventory.money >= item.price)
+                if (currentSave.player.inventory.items.Count < 40 && currentSave.player.inventory.money >= item.price * 4)
                 {
                     PlaySound("DesktopTransportPay");
+                    var buyback = CDesktop.windows.Exists(x => x.title == "VendorBuyback");
+                    if (buyback) currentSave.buyback.Remove(item);
                     currentSave.player.inventory.items.Add(item);
-                    currentSave.player.inventory.money -= item.price;
+                    currentSave.player.inventory.money -= item.price * 4;
                     Respawn("Inventory");
-                    Respawn("Vendor");
+                    Respawn(buyback ? "VendorBuyback" : "Vendor");
                 }
             },
             (h) => () =>
             {
                 if (item == null) return;
                 SetAnchor(Center);
-                PrintItemTooltip(item);
+                PrintItemTooltip(item, 4);
             }
         );
         if (settings.rarityIndicators.Value())
@@ -339,14 +341,14 @@ public class Item
             {
                 if (CDesktop.title == "Vendor")
                 {
-                    if (currentSave.banks[town.name].items.Count < 40)
-                    {
-                        PlaySound(item.ItemSound("DesktopTransportPay"), 0.6f);
-                        currentSave.banks[town.name].items.Add(item);
-                        currentSave.player.inventory.items.Remove(item);
-                        Respawn("Inventory");
-                        Respawn("Bank");
-                    }
+                    PlaySound("DesktopTransportPay");
+                    currentSave.buyback ??= new();
+                    currentSave.buyback.Insert(0, item);
+                    currentSave.player.inventory.items.Remove(item);
+                    currentSave.player.inventory.money += item.price;
+                    Respawn("Inventory");
+                    CloseWindow("Vendor");
+                    Respawn("VendorBuyback");
                 }
                 else if (CDesktop.title == "Bank")
                 {
@@ -436,7 +438,7 @@ public class Item
             AddBigButtonOverlay("OtherItemUpgrade", 0, 2);
     }
 
-    public static void PrintItemTooltip(Item item)
+    public static void PrintItemTooltip(Item item, double priceMultiplier = 1)
     {
         AddHeaderGroup();
         SetRegionGroupWidth(190);
@@ -507,7 +509,7 @@ public class Item
                 AddText(item.lvl + "", ColorItemRequiredLevel(item.lvl));
             });
         if (item.price > 0)
-            PrintPriceRegion(item.price);
+            PrintPriceRegion(item.price * priceMultiplier);
     }
 
     public static Item GetItem(string name) => items.Find(x => x.name == name);

@@ -929,6 +929,12 @@
         "gender": "Male",
         "race": "Orc",
         "type": "Flight Master"
+      },
+      {
+        "name": "Borstan",
+        "gender": "Male",
+        "race": "Orc",
+        "type": "Meat Vendor"
       }
     ],
     "x": 121,
