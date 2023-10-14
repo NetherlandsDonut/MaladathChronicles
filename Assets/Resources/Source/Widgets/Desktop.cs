@@ -75,6 +75,8 @@ public class Desktop : MonoBehaviour
 
     public void Update()
     {
+        if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyUp(KeyCode.LeftShift))
+            CloseWindow("Tooltip");
         if (mouseOver != null)
         {
             if (mouseOver.pressedState == "None")
@@ -248,7 +250,7 @@ public class Desktop : MonoBehaviour
             }
             else
             {
-                if (tooltip != null && tooltipChanneling > 0)
+                if (tooltip != null && !CDesktop.windows.Exists(x => x.title == "Tooltip"))
                 {
                     tooltipChanneling -= Time.deltaTime;
                     if (tooltipChanneling <= 0 && tooltip.caller != null && tooltip.caller() != null)

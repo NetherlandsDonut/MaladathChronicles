@@ -25,11 +25,9 @@ public class Highlightable : MonoBehaviour
         this.pressEvent = pressEvent;
         this.rightPressEvent = rightPressEvent;
         this.middlePressEvent = middlePressEvent;
-        if (tooltip != null)
-            this.tooltip = new Tooltip(() => GetComponent<Highlightable>(), tooltip);
+        if (tooltip != null) this.tooltip = new Tooltip(() => GetComponent<Highlightable>(), tooltip);
         this.region = region;
-        if (region != null)
-            window = region.regionGroup.window;
+        if (region != null) window = region.regionGroup.window;
     }
 
     public void OnMouseEnter()

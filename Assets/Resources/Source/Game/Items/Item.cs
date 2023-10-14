@@ -13,6 +13,7 @@ using static SiteTown;
 using static Coloring;
 using static GameSettings;
 using static PermanentEnchant;
+using static UnityEngine.Random;
 
 public class Item
 {
@@ -369,7 +370,7 @@ public class Item
             {
                 if (item == null) return;
                 SetAnchor(-115, 165);
-                PrintItemTooltip(item, 4);
+                PrintItemTooltip(item, false, 4);
             }
         );
         if (settings.rarityIndicators.Value())
@@ -386,7 +387,7 @@ public class Item
                 {
                     PlaySound("DesktopTransportPay");
                     currentSave.buyback ??= new();
-                    currentSave.buyback.Insert(0, item);
+                    currentSave.buyback.Add(item);
                     currentSave.player.inventory.items.Remove(item);
                     currentSave.player.inventory.money += item.price;
                     Respawn("Inventory");
@@ -420,7 +421,7 @@ public class Item
                 if (item == null) return;
                 if (CDesktop.windows.Exists(x => x.title == "ConfirmItemDestroy")) return;
                 SetAnchor(-115, 165);
-                PrintItemTooltip(item);
+                PrintItemTooltip(item, Input.GetKey(KeyCode.LeftShift));
             },
             (h) =>
             {
@@ -470,7 +471,7 @@ public class Item
                 if (item == null) return;
                 if (CDesktop.windows.Exists(x => x.title == "ConfirmItemDestroy")) return;
                 SetAnchor(-115, 165);
-                PrintItemTooltip(item);
+                PrintItemTooltip(item, Input.GetKey(KeyCode.LeftShift));
             }
         );
         if (Board.board != null && Board.board.results.exclusiveItems.Count > 1 && Board.board.results.exclusiveItems.Contains(item.name))
@@ -488,7 +489,7 @@ public class Item
             AddBigButtonOverlay("OtherItemUpgrade", 0, 2);
     }
 
-    public static void PrintItemTooltip(Item item, double priceMultiplier = 1)
+    public static void PrintItemTooltip(Item item, bool compare = false, double priceMultiplier = 1)
     {
         AddHeaderGroup();
         SetRegionGroupWidth(228);
@@ -510,11 +511,25 @@ public class Item
             else
                 AddLine(item.type == null ? "" : item.type);
         });
-        if (item.stats != null && item.stats.stats.Count > 0)
+        var current = currentSave.player.equipment.ContainsKey(item.type) ? currentSave.player.equipment[item.type] : null;
+        if (item.stats != null && item.stats.stats.Count > 0 || compare && current != null && current.stats != null)
             AddPaddingRegion(() =>
             {
+                var statsRecorded = new List<string>();
                 foreach (var stat in item.stats.stats)
-                    AddLine("+" + stat.Value + " " + stat.Key);
+                {
+                    statsRecorded.Add(stat.Key);
+                    if (compare && current != null)
+                    {
+                        var balance = current.stats.stats.ContainsKey(stat.Key) ? stat.Value - current.stats.stats[stat.Key] : stat.Value;
+                        AddLine((balance > 0 ? "+" : "") + balance + " " + stat.Key, balance > 0 ? "Uncommon" : "DangerousRed");
+                    }
+                    else AddLine("+" + stat.Value + " " + stat.Key);
+                }
+                if (compare && current != null)
+                    foreach (var stat in current.stats.stats)
+                        if (!statsRecorded.Contains(stat.Key))
+                            AddLine("-" + stat.Value + " " + stat.Key, "DangerousRed");
             });
         if (item.specs != null)
             AddHeaderRegion(() =>

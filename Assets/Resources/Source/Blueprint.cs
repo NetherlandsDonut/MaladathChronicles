@@ -30,6 +30,7 @@ using static SiteHostileArea;
 using static SiteInstance;
 using static SiteComplex;
 using static SiteTown;
+using Newtonsoft.Json.Linq;
 
 public class Blueprint
 {
@@ -1683,9 +1684,8 @@ public class Blueprint
             },
             (h) =>
             {
-                Respawn("Inventory");
-                Respawn("PlayerEquipmentInfo");
-                Respawn("InventorySettings");
+                settings.rarityIndicators.Invert();
+                h.region.regionGroup.window.desktop.RebuildAll();
             });
             if (settings.rarityIndicators.Value())
                 AddButtonRegion(() =>
@@ -1695,8 +1695,8 @@ public class Blueprint
                 },
                 (h) =>
                 {
-                    Respawn("Inventory");
-                    Respawn("PlayerEquipmentInfo");
+                    settings.bigRarityIndicators.Invert();
+                    h.region.regionGroup.window.desktop.RebuildAll();
                 });
             AddButtonRegion(() =>
             {
@@ -1705,8 +1705,8 @@ public class Blueprint
             },
             (h) =>
             {
-                Respawn("Inventory");
-                Respawn("PlayerEquipmentInfo");
+                settings.upgradeIndicators.Invert();
+                h.region.regionGroup.window.desktop.RebuildAll();
             });
             AddButtonRegion(() =>
             {
@@ -1715,8 +1715,8 @@ public class Blueprint
             },
             (h) =>
             {
-                Respawn("Inventory");
-                Respawn("PlayerEquipmentInfo");
+                settings.newSlotIndicators.Invert();
+                h.region.regionGroup.window.desktop.RebuildAll();
             });
         }),
         new("CharacterNeckSlot", () => {
