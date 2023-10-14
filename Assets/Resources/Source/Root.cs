@@ -55,6 +55,8 @@ public static class Root
     public static Desktop CDesktop, LBDesktop;
     public static List<Dictionary<string, string>> triggersCopy, effectsCopy;
 
+    public static T Copy<T>(this object obj) => Newtonsoft.Json.JsonConvert.DeserializeObject<T>(Newtonsoft.Json.JsonConvert.SerializeObject(obj));
+
     public static bool Roll(double chance) => random.Next(0, 100000) < chance * 1000;
 
     public static string Clean(this string text) => text.Replace("'", "").Replace(".", "").Replace(" ", "");

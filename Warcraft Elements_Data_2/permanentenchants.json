@@ -1,0 +1,249 @@
+[
+  {
+    "suffix": "of the Boar",
+    "stats": {
+      "Strength": "***",
+      "Spirit": "***"
+    },
+    "commonOn": [
+      "Back",
+      "Finger",
+      "Neck",
+      "Shield",
+      "One Handed Axe",
+      "Two Handed Sword",
+      "Two Handed Mace",
+      "Two Handed Axe"
+    ],
+    "rarelyOn": [
+      "Leather Armor",
+      "Mail Armor",
+      "Plate Armor"
+    ]
+  },
+  {
+    "suffix": "of the Monkey",
+    "stats": {
+      "Stamina": "***",
+      "Agility": "***"
+    },
+    "commonlyOn": [
+      "Back",
+      "Finger",
+      "Neck",
+      "Shield",
+      "One Handed Fist Weapon",
+      "One Handed Dagger",
+      "One Handed Sword",
+      "One Handed Mace",
+      "One Handed Axe",
+      "Two Handed Sword",
+      "Two Handed Mace",
+      "Two Handed Axe",
+      "Two Handed Staff",
+      "Two Handed Polearm",
+      "Two Handed Gun",
+      "Two Handed Bow",
+      "Two Handed Crossbow",
+      "Leather Armor"
+    ],
+    "rarelyOn": [
+      "Cloth Armor",
+      "Mail Armor",
+      "Plate Armor"
+    ]
+  },
+  {
+    "suffix": "of the Whale",
+    "stats": {
+      "Stamina": "***",
+      "Spirit": "***"
+    },
+    "commonlyOn": [
+      "Back",
+      "Finger",
+      "Neck",
+      "One Handed Fist Weapon",
+      "One Handed Wand",
+      "One Handed Axe",
+      "Two Handed Sword",
+      "Two Handed Mace",
+      "Two Handed Axe",
+      "Two Handed Staff",
+      "Two Handed Gun",
+      "Two Handed Bow",
+      "Two Handed Crossbow",
+      "Cloth Armor"
+    ],
+    "rarelyOn": [
+      "Two Handed Polearm",
+      "Leather Armor",
+      "Mail Armor",
+      "Plate Armor"
+    ]
+  },
+  {
+    "suffix": "of the Eagle",
+    "stats": {
+      "Stamina": "***",
+      "Intellect": "***"
+    },
+    "commonlyOn": [
+      "Back",
+      "Finger",
+      "Neck",
+      "One Handed Wand",
+      "One Handed Sword",
+      "One Handed Axe",
+      "Two Handed Sword",
+      "Two Handed Mace",
+      "Two Handed Axe",
+      "Two Handed Staff",
+      "Two Handed Gun",
+      "Two Handed Bow",
+      "Two Handed Crossbow",
+      "Cloth Armor",
+      "Leather Armor"
+    ],
+    "rarelyOn": [
+      "Mail Armor",
+      "Plate Armor"
+    ]
+  },
+  {
+    "suffix": "of the Owl",
+    "stats": {
+      "Intellect": "***",
+      "Spirit": "***"
+    },
+    "commonlyOn": [
+      "Back",
+      "Finger",
+      "Neck",
+      "One Handed Wand",
+      "Two Handed Staff",
+      "Cloth Armor",
+      "Leather Armor"
+    ]
+  },
+  {
+    "suffix": "of the Bear",
+    "stats": {
+      "Stamina": "***",
+      "Strength": "***"
+    },
+    "commonlyOn": [
+      "Back",
+      "Finger",
+      "Neck",
+      "Shield",
+      "One Handed Fist Weapon",
+      "One Handed Dagger",
+      "One Handed Sword",
+      "One Handed Mace",
+      "One Handed Axe",
+      "Two Handed Sword",
+      "Two Handed Mace",
+      "Two Handed Axe",
+      "Two Handed Polearm",
+      "Mail Armor",
+      "Plate Armor"
+    ],
+    "rarelyOn": [
+      "Leather Armor"
+    ]
+  },
+  {
+    "suffix": "of the Tiger",
+    "stats": {
+      "Agility": "***",
+      "Strength": "***"
+    },
+    "commonlyOn": [
+      "Back",
+      "Finger",
+      "Neck",
+      "Shield",
+      "One Handed Fist Weapon",
+      "One Handed Dagger",
+      "One Handed Sword",
+      "One Handed Mace",
+      "One Handed Axe",
+      "Two Handed Sword",
+      "Two Handed Mace",
+      "Two Handed Axe",
+      "Two Handed Polearm",
+      "Two Handed Gun",
+      "Two Handed Bow",
+      "Two Handed Crossbow",
+      "Leather Armor",
+      "Mail Armor"
+    ],
+    "rarelyOn": [
+      "Plate Armor"
+    ]
+  },
+  {
+    "suffix": "of the Falcon",
+    "stats": {
+      "Agility": "***",
+      "Intellect": "***"
+    },
+    "commonlyOn": [
+      "Back",
+      "Finger",
+      "Neck",
+      "One Handed Wand",
+      "Leather Armor"
+    ],
+    "rarelyOn": [
+      "One Handed Fist Weapon",
+      "One Handed Dagger"
+    ]
+  },
+  {
+    "suffix": "of the Wolf",
+    "stats": {
+      "Agility": "***",
+      "Spirit": "***"
+    },
+    "commonlyOn": [
+      "Back",
+      "Finger",
+      "Neck",
+      "One Handed Fist Weapon",
+      "One Handed Axe",
+      "Two Handed Sword",
+      "Two Handed Axe",
+      "Two Handed Gun",
+      "Two Handed Bow",
+      "Two Handed Crossbow"
+    ],
+    "rarelyOn": [
+      "One Handed Dagger",
+      "Two Handed Polearm",
+      "Two Handed Staff",
+      "Cloth Armor",
+      "Leather Armor"
+    ]
+  },
+  {
+    "suffix": "of the Gorilla",
+    "stats": {
+      "Strength": "***",
+      "Intellect": "***"
+    },
+    "commonlyOn": [
+      "Back",
+      "Finger",
+      "Neck",
+      "Shield",
+      "One Handed Mace",
+      "Two Handed Mace",
+      "Plate Armor"
+    ],
+    "rarelyOn": [
+      "Two Handed Staff"
+    ]
+  }
+]

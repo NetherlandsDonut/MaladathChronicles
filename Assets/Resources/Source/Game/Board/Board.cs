@@ -184,31 +184,32 @@ public class Board
             if (equippable.Count + notEquippable.Count == 0)
             {
                 if (dropPurple.Count > 0 && Roll(0.05))
-                    results.items.Add(dropPurple[random.Next(dropPurple.Count)]);
+                    results.items.Add(dropPurple[random.Next(dropPurple.Count)].Copy<Item>());
                 else if (dropBlue.Count > 0 && Roll(1))
-                    results.items.Add(dropBlue[random.Next(dropBlue.Count)]);
+                    results.items.Add(dropBlue[random.Next(dropBlue.Count)].Copy<Item>());
                 else if (dropGreen.Count > 0 && Roll(10))
-                    results.items.Add(dropGreen[random.Next(dropGreen.Count)]);
+                    results.items.Add(dropGreen[random.Next(dropGreen.Count)].Copy<Item>());
                 //else if (dropWhite.Count > 0 && Roll(5))
-                //    results.items.Add(dropWhite[random.Next(dropWhite.Count)]);
+                //    results.items.Add(dropWhite[random.Next(dropWhite.Count)].Copy<Item>());
                 else if (dropGray.Count > 0 && Roll(3))
-                    results.items.Add(dropGray[random.Next(dropGray.Count)]);
+                    results.items.Add(dropGray[random.Next(dropGray.Count)].Copy<Item>());
             }
             else
             {
                 var item = equippable.Count > 0 ? equippable[random.Next(equippable.Count)] : notEquippable[random.Next(notEquippable.Count)];
-                results.items.Add(item);
+                results.items.Add(item.Copy<Item>());
             }
             if (dropOther.Count > 2 && Roll(60))
             {
-                results.items.Add(dropOther[random.Next(dropOther.Count)]);
+                results.items.Add(dropOther[random.Next(dropOther.Count)].Copy<Item>());
                 dropOther.Remove(results.items.Last());
-                if (Roll(40)) results.items.Add(dropOther[random.Next(dropOther.Count)]);
+                if (Roll(40)) results.items.Add(dropOther[random.Next(dropOther.Count)].Copy<Item>());
             }
             else if (dropOther.Count > 1 && Roll(50))
-                results.items.Add(dropOther[random.Next(dropOther.Count)]);
+                results.items.Add(dropOther[random.Next(dropOther.Count)].Copy<Item>());
             else if (dropOther.Count > 0 && Roll(40))
-                results.items.Add(dropOther[random.Next(dropOther.Count)]);
+                results.items.Add(dropOther[random.Next(dropOther.Count)].Copy<Item>());
+            results.items.ForEach(x => x.SetRandomEnchantment());
             SpawnDesktopBlueprint("CombatResults");
         }
         else if (result == "Lost")

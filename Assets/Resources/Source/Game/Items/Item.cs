@@ -12,6 +12,7 @@ using static SaveGame;
 using static SiteTown;
 using static Coloring;
 using static GameSettings;
+using static PermanentEnchant;
 
 public class Item
 {
@@ -38,6 +39,45 @@ public class Item
                     });
     }
 
+    public void SetRandomEnchantment()
+    {
+        if (!randomEnchantment) return;
+        var enchantment = GenerateEnchantment();
+        if (enchantment == null) return;
+        name += " " + enchantment.suffix;
+        foreach (var stat in enchantment.stats)
+            if (stats.stats.ContainsKey(stat.Key)) stats.stats[stat.Key] += EnchantmentStatGrowth(ilvl, stat.Value.Length);
+            else stats.stats.Add(stat.Key, EnchantmentStatGrowth(ilvl, stat.Value.Length));
+    }
+
+    public PermanentEnchant GenerateEnchantment()
+    {
+        var containing = new List<PermanentEnchant>();
+        var key = "";
+        if (type == "One Handed" || type == "Two Handed") key = type + " " + detailedType;
+        else if (armorClass != null) key = armorClass + " Armor";
+        else if (detailedType != null) key = detailedType;
+        else key = type;
+        containing = pEnchants.FindAll(x => x.commonlyOn != null && x.commonlyOn.Contains(key) || x.rarelyOn != null && x.rarelyOn.Contains(key));
+        if (Roll(10))
+        {
+            var rare = containing.FindAll(x => x.rarelyOn.Contains(key));
+            if (rare.Count > 0) return rare[random.Next(0, rare.Count)];
+        }
+        else
+        {
+            var common = containing.FindAll(x => x.commonlyOn.Contains(key));
+            if (common.Count > 0) return common[random.Next(0, common.Count)];
+        }
+        if (containing.Count == 0) return null;
+        return containing[random.Next(0, containing.Count)];
+    }
+
+    public static int EnchantmentStatGrowth(int ilvl, int amount)
+    {
+        return (int)Mathf.Ceil(1 / 500.0f * (ilvl * ilvl) * (amount > 1 ? (amount - 1) : 0.2f) + 2);
+    }
+
     //Rarity of this item which can range from Poor to Legendary
     public string rarity;
 
@@ -46,6 +86,9 @@ public class Item
 
     //Icon of the item in the inventory
     public string icon;
+
+    //Determines wether instances of this item get a random enchant
+    public bool randomEnchantment;
 
     //Detailed type of the item
     //EXAMPLE: "Axe" for item of "Two Handed" type
@@ -56,7 +99,7 @@ public class Item
 
     //Armor class of the armor piece
     //Can range from Cloth to Plate
-    public string armorSpec;
+    public string armorClass;
 
     //Set that this item is part of
     public string set;
@@ -126,10 +169,10 @@ public class Item
         else if (type == "Off Hand") result = "Book";
         else if (type == "One Handed") result = "MetalSmall";
         else if (type == "Two Handed") result = "MetalLarge";
-        else if (armorSpec == "Cloth") result = "ClothLeather";
-        else if (armorSpec == "Leather") result = "ClothLeather";
-        else if (armorSpec == "Mail") result = "ChainLarge";
-        else if (armorSpec == "Plate") result = "MetalLarge";
+        else if (armorClass == "Cloth") result = "ClothLeather";
+        else if (armorClass == "Leather") result = "ClothLeather";
+        else if (armorClass == "Mail") result = "ChainLarge";
+        else if (armorClass == "Plate") result = "MetalLarge";
         else result = "ClothLeather";
         return soundType + result;
     }
@@ -145,8 +188,8 @@ public class Item
             return false;
         if (specs != null && !specs.Contains(entity.spec))
             return false;
-        if (armorSpec != null)
-            return entity.abilities.Contains(armorSpec + " Proficiency");
+        if (armorClass != null)
+            return entity.abilities.Contains(armorClass + " Proficiency");
         else if (type == "Pouch")
             return entity.abilities.Contains("Pouch Proficiency");
         else if (type == "Quiver")
@@ -454,9 +497,9 @@ public class Item
         if (split.Length > 1) AddHeaderRegion(() => { AddLine("\"" + split[1] + "\"", item.rarity); });
         AddPaddingRegion(() =>
         {
-            if (item.armorSpec != null)
+            if (item.armorClass != null)
             {
-                AddLine(item.armorSpec + " " + item.type);
+                AddLine(item.armorClass + " " + item.type);
                 AddLine(item.armor + " Armor");
             }
             else if (item.maxDamage != 0)

@@ -14,6 +14,7 @@ using static SaveGame;
 using static GameSettings;
 using static CursorRemote;
 using static SiteSpiritHealer;
+using static PermanentEnchant;
 using static FlightPathGroup;
 using static Serialization;
 using static SiteInstance;
@@ -152,6 +153,8 @@ public class Starter : MonoBehaviour
         spiritHealers ??= new();
         Deserialize(ref flightPathGroups, "flightpaths", false, prefix);
         flightPathGroups ??= new();
+        Deserialize(ref pEnchants, "permanentenchants", false, prefix);
+        pEnchants ??= new();
 
         #endregion
 
