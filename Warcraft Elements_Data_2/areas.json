@@ -9296,7 +9296,8 @@
     "eliteEncounters": [
       {
         "who": "Onyxia",
-        "levelMin": 60
+        "levelMin": 60,
+        "requiredProgress": 2
       }
     ],
     "name": "Onyxia's Lair",
@@ -9306,9 +9307,93 @@
   {
     "commonEncounters": [
       {
+        "who": "Thorn Eater Ghoul",
+        "levelMin": 37,
+        "levelMax": 38
+      },
+      {
+        "who": "Frozen Soul",
+        "levelMin": 37,
+        "levelMax": 38
+      },
+      {
+        "who": "Splinterbone Warrior",
+        "levelMin": 37,
+        "levelMax": 38
+      },
+      {
+        "who": "Skeletal Frostweaver",
+        "levelMin": 38,
+        "levelMax": 39
+      }
+    ],
+    "eliteEncounters": [
+      {
         "who": "Ragglesnout",
         "levelMin": 40,
-        "levelMax": 40
+        "requiredProgress": 2
+      }
+    ],
+    "name": "Abandoned Gully",
+    "zone": "Razorfen Downs",
+    "type": "HostileArea"
+  },
+  {
+    "commonEncounters": [
+      {
+        "who": "Withered Warrior",
+        "levelMin": 34,
+        "levelMax": 35
+      },
+      {
+        "who": "Withered Battle Boar",
+        "levelMin": 34,
+        "levelMax": 35
+      },
+      {
+        "who": "Withered Spearhide",
+        "levelMin": 34,
+        "levelMax": 35
+      }
+    ],
+    "eliteEncounters": [
+      {
+        "who": "Plaguemaw",
+        "levelMin": 40,
+        "requiredProgress": 2
+      }
+    ],
+    "name": "The Pensive Burrow",
+    "zone": "Razorfen Downs",
+    "type": "HostileArea"
+  },
+  {
+    "commonEncounters": [
+      {
+        "who": "Battle Boar Horror",
+        "levelMin": 37,
+        "levelMax": 38
+      },
+      {
+        "who": "Withered Quilguard",
+        "levelMin": 36,
+        "levelMax": 37
+      },
+      {
+        "who": "Withered Reaver",
+        "levelMin": 36,
+        "levelMax": 37
+      },
+      {
+        "who": "Death's Head Necromancer",
+        "levelMin": 36,
+        "levelMax": 37
+      }
+    ],
+    "eliteEncounters": [
+      {
+        "who": "Mordresh Fire Eye",
+        "levelMin": 39
       }
     ],
     "name": "The Murder Pens",
@@ -9318,8 +9403,28 @@
   {
     "commonEncounters": [
       {
-        "who": "Ragglesnout",
-        "levelMin": 40,
+        "who": "Freezing Spirit",
+        "levelMin": 39,
+        "levelMax": 40
+      },
+      {
+        "who": "Boneflayer Ghoul",
+        "levelMin": 39,
+        "levelMax": 40
+      },
+      {
+        "who": "Splinterbone Summoner",
+        "levelMin": 39,
+        "levelMax": 40
+      },
+      {
+        "who": "Splinterbone Captain",
+        "levelMin": 39,
+        "levelMax": 40
+      },
+      {
+        "who": "Splinterbone Centurion",
+        "levelMin": 39,
         "levelMax": 40
       }
     ],
@@ -9342,36 +9447,22 @@
   {
     "commonEncounters": [
       {
-        "who": "Ragglesnout",
-        "levelMin": 40,
-        "levelMax": 40
-      }
-    ],
-    "eliteEncounters": [
-      {
-        "who": "Mordresh Fire Eye",
-        "levelMin": 39,
-        "requiredProgress": 2
-      }
-    ],
-    "name": "The Bone Pile",
-    "zone": "Razorfen Downs",
-    "type": "HostileArea"
-  },
-  {
-    "commonEncounters": [
-      {
-        "who": "Ragglesnout",
-        "levelMin": 40,
-        "levelMax": 40
-      }
-    ],
-    "eliteEncounters": [
-      {
-        "who": "Plaguemaw",
-        "levelMin": 40,
-        "requiredProgress": 2
+        "who": "Withered Quilguard",
+        "levelMin": 35,
+        "levelMax": 36
       },
+      {
+        "who": "Withered Reaver",
+        "levelMin": 35,
+        "levelMax": 36
+      },
+      {
+        "who": "Death's Head Necromancer",
+        "levelMin": 35,
+        "levelMax": 36
+      }
+    ],
+    "eliteEncounters": [
       {
         "who": "Tuten'kash",
         "levelMin": 40,
@@ -9385,54 +9476,69 @@
   {
     "commonEncounters": [
       {
-        "who": "Kraulshaped Monstrosity",
-        "levelMin": 40,
-        "levelMax": 40
+        "who": "Death's Head Seer",
+        "levelMin": 28,
+        "levelMax": 29
       },
       {
-        "who": "Razorfen Kraulshaper",
-        "levelMin": 40,
-        "levelMax": 40
+        "who": "Death's Head Adept",
+        "levelMin": 27,
+        "levelMax": 28
       },
       {
-        "who": "Vile Bat",
-        "levelMin": 40,
-        "levelMax": 40
+        "who": "Razorfen Defender",
+        "levelMin": 27,
+        "levelMax": 28
+      },
+      {
+        "who": "Razorfen Groundshaker",
+        "levelMin": 27,
+        "levelMax": 28
       }
     ],
     "eliteEncounters": [
       {
-        "who": "Blind Hunter",
-        "levelMin": 40,
+        "who": "Roogog",
+        "levelMin": 28,
         "requiredProgress": 2
       }
     ],
-    "name": "Bat Caves",
+    "name": "Kraul Pantry",
     "zone": "Razorfen Kraul",
     "type": "HostileArea"
   },
   {
     "commonEncounters": [
       {
-        "who": "Razorfen Kraulshaper",
-        "levelMin": 40,
-        "levelMax": 40
+        "who": "Razorfen Earthbraker",
+        "levelMin": 29,
+        "levelMax": 30
       },
       {
-        "who": "Razorfen Scarbalde",
-        "levelMin": 40,
-        "levelMax": 40
+        "who": "Razorfen Totemic",
+        "levelMin": 29,
+        "levelMax": 30
       },
       {
-        "who": "Razorfen Huntmaster",
-        "levelMin": 40,
-        "levelMax": 40
+        "who": "Death's Head Sage",
+        "levelMin": 29,
+        "levelMax": 30
+      },
+      {
+        "who": "Razorfen Beastmaster",
+        "levelMin": 29,
+        "levelMax": 30
+      },
+      {
+        "who": "Razorfen Spearhead",
+        "levelMin": 29,
+        "levelMax": 30
       }
     ],
     "eliteEncounters": [
       {
-        "who": "Warlord Ramtusk",
-        "levelMin": 40,
+        "who": "Overlord Ramtusk",
+        "levelMin": 32,
         "requiredProgress": 2
       }
     ],
@@ -9443,24 +9549,72 @@
   {
     "commonEncounters": [
       {
-        "who": "Enormous Bullfrog",
-        "levelMin": 40,
-        "levelMax": 40
+        "who": "Kraul Bat",
+        "levelMin": 29,
+        "levelMax": 30
       },
       {
-        "who": "Razorfen Hidecrusher",
-        "levelMin": 40,
-        "levelMax": 40
+        "who": "Greater Kraul Bat",
+        "levelMin": 30,
+        "levelMax": 31
+      }
+    ],
+    "eliteEncounters": [
+      {
+        "who": "Blind Hunter",
+        "levelMin": 32,
+        "requiredProgress": 2
+      }
+    ],
+    "name": "Bat Caves",
+    "zone": "Razorfen Kraul",
+    "type": "HostileArea"
+  },
+  {
+    "commonEncounters": [
+      {
+        "who": "Death's Head Seer",
+        "levelMin": 30,
+        "levelMax": 31
       },
       {
-        "who": "Razorfen Stonechanter",
-        "levelMin": 40,
-        "levelMax": 40
+        "who": "Ward Guardian",
+        "levelMin": 30,
+        "levelMax": 31
+      }
+    ],
+    "eliteEncounters": [
+      {
+        "who": "Agathelos the Raging",
+        "levelMin": 33,
+        "requiredProgress": 2
+      }
+    ],
+    "name": "Agathelos's Prison",
+    "zone": "Razorfen Kraul",
+    "type": "HostileArea"
+  },
+  {
+    "commonEncounters": [
+      {
+        "who": "Quilguard Champion",
+        "levelMin": 31,
+        "levelMax": 32
       },
       {
-        "who": "Razorfen Thornbolt",
-        "levelMin": 40,
-        "levelMax": 40
+        "who": "Death's Head Sage",
+        "levelMin": 30,
+        "levelMax": 31
+      },
+      {
+        "who": "Razorfen Totemic",
+        "levelMin": 30,
+        "levelMax": 31
+      },
+      {
+        "who": "Razorfen Stalker",
+        "levelMin": 30,
+        "levelMax": 31
       }
     ],
     "eliteEncounters": [
@@ -9477,30 +9631,35 @@
   {
     "commonEncounters": [
       {
-        "who": "Geomancer Acolyte",
-        "levelMin": 40,
-        "levelMax": 40
+        "who": "Death's Head Adept",
+        "levelMin": 27,
+        "levelMax": 28
       },
       {
-        "who": "Razorfen Beast Stalker",
-        "levelMin": 40,
-        "levelMax": 40
+        "who": "Razorfen Defender",
+        "levelMin": 27,
+        "levelMax": 28
       },
       {
-        "who": "Razorfen Geomagus",
-        "levelMin": 40,
-        "levelMax": 40
+        "who": "Razorfen Beast Trainer",
+        "levelMin": 28,
+        "levelMax": 29
+      },
+      {
+        "who": "Razorfen Dustweaver",
+        "levelMin": 28,
+        "levelMax": 29
       }
     ],
     "eliteEncounters": [
       {
-        "who": "Hunter Bonetusk",
-        "levelMin": 40,
+        "who": "Aggem Thorncurse",
+        "levelMin": 30,
         "requiredProgress": 2
       },
       {
-        "who": "Roogug",
-        "levelMin": 28,
+        "who": "Death Speaker Jargba",
+        "levelMin": 30,
         "requiredProgress": 2
       }
     ],

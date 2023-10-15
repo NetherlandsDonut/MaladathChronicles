@@ -1,5 +1,117 @@
 [
   {
+    "name": "Splinterbone Centurion",
+    "kind": "Common",
+    "portrait": "PortraitSkeletalWarrior",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Splinterbone Captain",
+    "kind": "Common",
+    "portrait": "PortraitSkeletalWarriorYellow",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Splinterbone Summoner",
+    "kind": "Common",
+    "portrait": "PortraitSkeletalMage",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Boneflayer Ghoul",
+    "kind": "Common",
+    "portrait": "PortraitGhoulWhite",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Freezing Spirit",
+    "kind": "Common",
+    "portrait": "PortraitWraith",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Death's Head Necromancer",
+    "kind": "Common",
+    "portrait": "PortraitQuilboarFemale",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Withered Reaver",
+    "kind": "Common",
+    "portrait": "PortraitQuilboarUndeadArmored",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Withered Quilguard",
+    "kind": "Common",
+    "portrait": "PortraitQuilboarUndeadArmored",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Battle Boar Horror",
+    "kind": "Common",
+    "portrait": "PortraitBoarHorror",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Withered Spearhide",
+    "kind": "Common",
+    "portrait": "PortraitQuilboarUndead",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Withered Battle Boar",
+    "kind": "Common",
+    "portrait": "PortraitBoarHorror",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Withered Warrior",
+    "kind": "Common",
+    "portrait": "PortraitQuilboarUndeadArmored",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Skeletal Frostweaver",
+    "kind": "Common",
+    "portrait": "PortraitSkeletonBlue",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Splinterbone Warrior",
+    "kind": "Common",
+    "portrait": "PortraitSkeletalWarrior",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Frozen Soul",
+    "kind": "Common",
+    "portrait": "PortraitWraith",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Thorn Eater Ghoul",
+    "kind": "Common",
+    "portrait": "PortraitGhoulWhite",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
     "name": "Abomination",
     "kind": "Common",
     "portrait": "PortraitAbomination",
@@ -506,6 +618,20 @@
     "name": "Greater Duskbat",
     "kind": "Common",
     "portrait": "PortraitBat",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Greater Kraul Bat",
+    "kind": "Common",
+    "portrait": "PortraitBatGray",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Kraul Bat",
+    "kind": "Common",
+    "portrait": "PortraitBatGray",
     "vitality": 1.0,
     "abilities": []
   },
@@ -1282,6 +1408,13 @@
     "kind": "Common",
     "portrait": "PortraitBoar",
     "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Agathelos the Raging",
+    "kind": "Elite",
+    "portrait": "PortraitBoarArmored",
+    "vitality": 3.0,
     "abilities": []
   },
   {
@@ -3051,7 +3184,7 @@
   {
     "name": "General Twinbraid",
     "kind": "Elite",
-    "portrait": "PortraitDarkIronFlameKeeper",
+    "portrait": "PortraitGeneralTwinbraid",
     "vitality": 3.0,
     "abilities": []
   },
@@ -9598,6 +9731,34 @@
     "abilities": []
   },
   {
+    "name": "Death Speaker Jargba",
+    "kind": "Elite",
+    "portrait": "PortraitQuilboarArmored",
+    "vitality": 3.0,
+    "abilities": []
+  },
+  {
+    "name": "Quilguard Champion",
+    "kind": "Common",
+    "portrait": "PortraitQuilboarArmored",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Overlord Ramtusk",
+    "kind": "Elite",
+    "portrait": "PortraitQuilboarArmored",
+    "vitality": 3.0,
+    "abilities": []
+  },
+  {
+    "name": "Razorfen Defender",
+    "kind": "Common",
+    "portrait": "PortraitQuilboarArmored",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
     "name": "Hagg Taurenbane",
     "kind": "Common",
     "portrait": "PortraitQuilboarArmored",
@@ -9623,6 +9784,41 @@
     "kind": "Elite",
     "portrait": "PortraitQuilboarArmored",
     "vitality": 3.0,
+    "abilities": []
+  },
+  {
+    "name": "Ward Guardian",
+    "kind": "Common",
+    "portrait": "PortraitQuilboarArmoredGreen",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Razorfen Groundshaker",
+    "kind": "Common",
+    "portrait": "PortraitQuilboarBlue",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Aggem Thorncurse",
+    "kind": "Elite",
+    "portrait": "PortraitQuilboarDark",
+    "vitality": 3.0,
+    "abilities": []
+  },
+  {
+    "name": "Razorfen Stalker",
+    "kind": "Common",
+    "portrait": "PortraitQuilboarDark",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Razorfen Spearhead",
+    "kind": "Common",
+    "portrait": "PortraitQuilboarDark",
+    "vitality": 1.0,
     "abilities": []
   },
   {
@@ -9693,6 +9889,27 @@
     "abilities": []
   },
   {
+    "name": "Death's Head Sage",
+    "kind": "Common",
+    "portrait": "PortraitQuilboarFemale",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Death's Head Adept",
+    "kind": "Common",
+    "portrait": "PortraitQuilboarFemale",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Death's Head Seer",
+    "kind": "Common",
+    "portrait": "PortraitQuilboarFemale",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
     "name": "Bristleback Geomancer",
     "faction": "Bristleback Tribe",
     "kind": "Common",
@@ -9736,6 +9953,34 @@
     "kind": "Common",
     "portrait": "PortraitQuilboarFemale",
     "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Razorfen Dustweaver",
+    "kind": "Common",
+    "portrait": "PortraitQuilboarFemaleAlternate",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Razorfen Totemic",
+    "kind": "Common",
+    "portrait": "PortraitQuilboarFemaleAlternate",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Razorfen Earthbraker",
+    "kind": "Common",
+    "portrait": "PortraitQuilboarFemaleAlternate",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Roogog",
+    "kind": "Elite",
+    "portrait": "PortraitQuilboarFemaleAlternate",
+    "vitality": 3.0,
     "abilities": []
   },
   {
@@ -9789,6 +10034,20 @@
     "kind": "Elite",
     "portrait": "PortraitQuilboarFemaleAlternate",
     "vitality": 3.0,
+    "abilities": []
+  },
+  {
+    "name": "Razorfen Beast Trainer",
+    "kind": "Common",
+    "portrait": "PortraitQuilboarMale",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Razorfen Beastmaster",
+    "kind": "Common",
+    "portrait": "PortraitQuilboarMale",
+    "vitality": 1.0,
     "abilities": []
   },
   {

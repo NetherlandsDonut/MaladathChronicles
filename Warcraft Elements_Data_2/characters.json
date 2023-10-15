@@ -271,8 +271,8 @@
           }
         }
       },
-      "cameraX": 104,
-      "cameraY": -107,
+      "cameraX": 87,
+      "cameraY": -175,
       "siteProgress": {
         "Balia'mah Ruins": 1,
         "The Crimson Throne": 4,
@@ -397,7 +397,10 @@
         "Sen'jin Village": 2,
         "Kolkar Crag": 1,
         "Darkspear Strand": 3,
-        "Echo Isles": 1
+        "Echo Isles": 1,
+        "Baeldun Keep": 1,
+        "Razorfen Kraul": 1,
+        "Razorfen Downs": 4
       },
       "buyback": [
         {
@@ -897,9 +900,9 @@
         }
       ],
       "startDate": "2023-09-08T02:04:14.0667101+02:00",
-      "lastLoaded": "2023-10-14T23:03:27.7682728+02:00",
-      "lastPlayed": "2023-10-14T23:03:35.2425951+02:00",
-      "timePlayed": "08:36:08.0270303"
+      "lastLoaded": "2023-10-15T15:06:24.5720344+02:00",
+      "lastPlayed": "2023-10-15T15:16:43.7391817+02:00",
+      "timePlayed": "09:03:03.0447070"
     },
     {
       "player": {

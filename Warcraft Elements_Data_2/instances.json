@@ -606,6 +606,10 @@
         "areas": [
           {
             "Requisite": "None",
+            "AreaName": "The Pensive Burrow"
+          },
+          {
+            "Requisite": "EliteKilled",
             "AreaName": "The Caller's Chamber"
           },
           {
@@ -614,7 +618,7 @@
           },
           {
             "Requisite": "EliteKilled",
-            "AreaName": "The Bone Pile"
+            "AreaName": "Abandoned Gully"
           },
           {
             "Requisite": "EliteKilled",
@@ -649,11 +653,19 @@
         "areas": [
           {
             "Requisite": "None",
+            "AreaName": "Kraul Pantry"
+          },
+          {
+            "Requisite": "EliteKilled",
             "AreaName": "Kraul Commons"
           },
           {
             "Requisite": "EliteKilled",
             "AreaName": "Central Grounds"
+          },
+          {
+            "Requisite": "EliteKilled",
+            "AreaName": "Agathelos's Prison"
           },
           {
             "Requisite": "EliteKilled",
