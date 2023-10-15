@@ -64,24 +64,7 @@
         },
         "inventory": {
           "money": 136.29970000000003,
-          "items": [
-            {
-              "rarity": "Rare",
-              "name": "Dustfeather Sash",
-              "icon": "itembelt11",
-              "type": "Waist",
-              "ilvl": 61,
-              "lvl": 56,
-              "armor": 49,
-              "price": 1.0251,
-              "stats": {
-                "stats": {
-                  "Intellect": 18,
-                  "Stamina": 10
-                }
-              }
-            }
-          ]
+          "items": []
         },
         "equipment": {
           "Finger": {
@@ -231,24 +214,6 @@
           },
           "Main Hand": {
             "rarity": "Rare",
-            "name": "Glacial Blade",
-            "icon": "itemshortblade06",
-            "detailedType": "Dagger",
-            "type": "One Handed",
-            "ilvl": 65,
-            "lvl": 60,
-            "minDamage": 53,
-            "maxDamage": 100,
-            "price": 6.3065,
-            "speed": 1.8,
-            "stats": {
-              "stats": {
-                "Agility": 10
-              }
-            }
-          },
-          "Off Hand": {
-            "rarity": "Rare",
             "name": "Fiery Retributer",
             "icon": "itemsword01",
             "detailedType": "Sword",
@@ -268,11 +233,45 @@
             "droppedBy": [
               "Hazza'rah"
             ]
+          },
+          "Off Hand": {
+            "rarity": "Rare",
+            "name": "Glacial Blade",
+            "icon": "itemshortblade06",
+            "detailedType": "Dagger",
+            "type": "One Handed",
+            "ilvl": 65,
+            "lvl": 60,
+            "minDamage": 53,
+            "maxDamage": 100,
+            "price": 6.3065,
+            "speed": 1.8,
+            "stats": {
+              "stats": {
+                "Agility": 10
+              }
+            }
+          },
+          "Waist": {
+            "rarity": "Rare",
+            "name": "Dustfeather Sash",
+            "icon": "itembelt11",
+            "type": "Waist",
+            "ilvl": 61,
+            "lvl": 56,
+            "armor": 49,
+            "price": 1.0251,
+            "stats": {
+              "stats": {
+                "Intellect": 18,
+                "Stamina": 10
+              }
+            }
           }
         }
       },
-      "cameraX": 87,
-      "cameraY": -175,
+      "cameraX": 81,
+      "cameraY": -133,
       "siteProgress": {
         "Balia'mah Ruins": 1,
         "The Crimson Throne": 4,
@@ -387,7 +386,7 @@
         "Tethris Aran": 1,
         "Ranazjar Isle": 4,
         "Temple of Ahn'Qiraj": 1,
-        "Ruins of Ahn'Qiraj": 1,
+        "Ruins of Ahn'Qiraj": 2,
         "Isle of Dread": 1,
         "The Crystal Vale": 2,
         "Ragefire Chasm": 3,
@@ -400,7 +399,15 @@
         "Echo Isles": 1,
         "Baeldun Keep": 1,
         "Razorfen Kraul": 1,
-        "Razorfen Downs": 4
+        "Razorfen Downs": 5,
+        "Abyssal Sands": 1,
+        "Dunemaul Compound": 1,
+        "Thistleshrub Valley": 1,
+        "The Gaping Chasm": 1,
+        "The Noxious Lair": 1,
+        "Rustmaul Dig Site": 1,
+        "Field of Giants": 1,
+        "Brambleblade Ravine": 1
       },
       "buyback": [
         {
@@ -900,9 +907,9 @@
         }
       ],
       "startDate": "2023-09-08T02:04:14.0667101+02:00",
-      "lastLoaded": "2023-10-15T15:06:24.5720344+02:00",
-      "lastPlayed": "2023-10-15T15:16:43.7391817+02:00",
-      "timePlayed": "09:03:03.0447070"
+      "lastLoaded": "2023-10-15T23:32:15.9780113+02:00",
+      "lastPlayed": "2023-10-15T23:33:03.7623399+02:00",
+      "timePlayed": "09:09:22.0413198"
     },
     {
       "player": {
@@ -2581,19 +2588,21 @@
               ]
             },
             {
-              "rarity": "Uncommon",
-              "name": "Nightscape Cloak",
-              "icon": "itemmisccape03",
+              "rarity": "Epic",
+              "name": "Puissant Cape",
+              "icon": "itemmisccape06",
               "type": "Back",
-              "ilvl": 46,
-              "lvl": 41,
-              "price": 0.5263,
+              "ilvl": 70,
+              "lvl": 60,
+              "price": 3.3028,
               "stats": {
                 "stats": {
-                  "Agility": 10,
-                  "Stamina": 3
+                  "Stamina": 12
                 }
-              }
+              },
+              "droppedBy": [
+                "Azuregos"
+              ]
             },
             {
               "rarity": "Rare",
@@ -3356,21 +3365,19 @@
             ]
           },
           "Back": {
-            "rarity": "Epic",
-            "name": "Puissant Cape",
-            "icon": "itemmisccape06",
+            "rarity": "Uncommon",
+            "name": "Nightscape Cloak",
+            "icon": "itemmisccape03",
             "type": "Back",
-            "ilvl": 70,
-            "lvl": 60,
-            "price": 3.3028,
+            "ilvl": 46,
+            "lvl": 41,
+            "price": 0.5263,
             "stats": {
               "stats": {
-                "Stamina": 12
+                "Agility": 10,
+                "Stamina": 3
               }
-            },
-            "droppedBy": [
-              "Azuregos"
-            ]
+            }
           },
           "Wrists": {
             "rarity": "Uncommon",
@@ -3452,9 +3459,9 @@
         "Uldaman": 1
       },
       "startDate": "2023-10-09T15:22:48.5166001+02:00",
-      "lastLoaded": "2023-10-14T23:18:21.0630966+02:00",
-      "lastPlayed": "2023-10-14T23:20:19.3151677+02:00",
-      "timePlayed": "00:55:22.7194043"
+      "lastLoaded": "2023-10-15T23:33:07.1194321+02:00",
+      "lastPlayed": "2023-10-15T23:34:17.6441952+02:00",
+      "timePlayed": "00:56:33.2441674"
     }
   ],
   "Mograine": [],

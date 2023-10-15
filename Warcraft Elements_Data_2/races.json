@@ -1,117 +1,5 @@
 [
   {
-    "name": "Splinterbone Centurion",
-    "kind": "Common",
-    "portrait": "PortraitSkeletalWarrior",
-    "vitality": 1.0,
-    "abilities": []
-  },
-  {
-    "name": "Splinterbone Captain",
-    "kind": "Common",
-    "portrait": "PortraitSkeletalWarriorYellow",
-    "vitality": 1.0,
-    "abilities": []
-  },
-  {
-    "name": "Splinterbone Summoner",
-    "kind": "Common",
-    "portrait": "PortraitSkeletalMage",
-    "vitality": 1.0,
-    "abilities": []
-  },
-  {
-    "name": "Boneflayer Ghoul",
-    "kind": "Common",
-    "portrait": "PortraitGhoulWhite",
-    "vitality": 1.0,
-    "abilities": []
-  },
-  {
-    "name": "Freezing Spirit",
-    "kind": "Common",
-    "portrait": "PortraitWraith",
-    "vitality": 1.0,
-    "abilities": []
-  },
-  {
-    "name": "Death's Head Necromancer",
-    "kind": "Common",
-    "portrait": "PortraitQuilboarFemale",
-    "vitality": 1.0,
-    "abilities": []
-  },
-  {
-    "name": "Withered Reaver",
-    "kind": "Common",
-    "portrait": "PortraitQuilboarUndeadArmored",
-    "vitality": 1.0,
-    "abilities": []
-  },
-  {
-    "name": "Withered Quilguard",
-    "kind": "Common",
-    "portrait": "PortraitQuilboarUndeadArmored",
-    "vitality": 1.0,
-    "abilities": []
-  },
-  {
-    "name": "Battle Boar Horror",
-    "kind": "Common",
-    "portrait": "PortraitBoarHorror",
-    "vitality": 1.0,
-    "abilities": []
-  },
-  {
-    "name": "Withered Spearhide",
-    "kind": "Common",
-    "portrait": "PortraitQuilboarUndead",
-    "vitality": 1.0,
-    "abilities": []
-  },
-  {
-    "name": "Withered Battle Boar",
-    "kind": "Common",
-    "portrait": "PortraitBoarHorror",
-    "vitality": 1.0,
-    "abilities": []
-  },
-  {
-    "name": "Withered Warrior",
-    "kind": "Common",
-    "portrait": "PortraitQuilboarUndeadArmored",
-    "vitality": 1.0,
-    "abilities": []
-  },
-  {
-    "name": "Skeletal Frostweaver",
-    "kind": "Common",
-    "portrait": "PortraitSkeletonBlue",
-    "vitality": 1.0,
-    "abilities": []
-  },
-  {
-    "name": "Splinterbone Warrior",
-    "kind": "Common",
-    "portrait": "PortraitSkeletalWarrior",
-    "vitality": 1.0,
-    "abilities": []
-  },
-  {
-    "name": "Frozen Soul",
-    "kind": "Common",
-    "portrait": "PortraitWraith",
-    "vitality": 1.0,
-    "abilities": []
-  },
-  {
-    "name": "Thorn Eater Ghoul",
-    "kind": "Common",
-    "portrait": "PortraitGhoulWhite",
-    "vitality": 1.0,
-    "abilities": []
-  },
-  {
     "name": "Abomination",
     "kind": "Common",
     "portrait": "PortraitAbomination",
@@ -622,6 +510,13 @@
     "abilities": []
   },
   {
+    "name": "Blood Seeker",
+    "kind": "Common",
+    "portrait": "PortraitBatGray",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
     "name": "Greater Kraul Bat",
     "kind": "Common",
     "portrait": "PortraitBatGray",
@@ -630,13 +525,6 @@
   },
   {
     "name": "Kraul Bat",
-    "kind": "Common",
-    "portrait": "PortraitBatGray",
-    "vitality": 1.0,
-    "abilities": []
-  },
-  {
-    "name": "Blood Seeker",
     "kind": "Common",
     "portrait": "PortraitBatGray",
     "vitality": 1.0,
@@ -1432,6 +1320,20 @@
     "abilities": []
   },
   {
+    "name": "Battle Boar Horror",
+    "kind": "Common",
+    "portrait": "PortraitBoarHorror",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Withered Battle Boar",
+    "kind": "Common",
+    "portrait": "PortraitBoarHorror",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
     "name": "Hellboar",
     "kind": "Common",
     "portrait": "PortraitBoarRed",
@@ -1637,6 +1539,20 @@
   {
     "name": "Verdan the Everliving",
     "kind": "Elite",
+    "portrait": "PortraitBogBeastRotting",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Warpwood Moss Flayer",
+    "kind": "Common",
+    "portrait": "PortraitBogBeastRotting",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Warpwood Shredder",
+    "kind": "Common",
     "portrait": "PortraitBogBeastRotting",
     "vitality": 1.0,
     "abilities": []
@@ -2623,20 +2539,6 @@
     "abilities": []
   },
   {
-    "name": "Warpwood Moss Flayer",
-    "kind": "Common",
-    "portrait": "PortraitCorruptedTreant",
-    "vitality": 1.0,
-    "abilities": []
-  },
-  {
-    "name": "Warpwood Shredder",
-    "kind": "Common",
-    "portrait": "PortraitCorruptedTreant",
-    "vitality": 1.0,
-    "abilities": []
-  },
-  {
     "name": "Warpwood Stomper",
     "kind": "Common",
     "portrait": "PortraitCorruptedTreant",
@@ -2688,7 +2590,7 @@
   {
     "name": "Baron Silverlaine",
     "kind": "Elite",
-    "portrait": "PortraitCow",
+    "portrait": "PortraitBaronSilverlaine",
     "vitality": 3.0,
     "abilities": []
   },
@@ -2798,13 +2700,6 @@
     "abilities": []
   },
   {
-    "name": "Spined Crawler",
-    "kind": "Common",
-    "portrait": "PortraitCrabWhite",
-    "vitality": 1.0,
-    "abilities": []
-  },
-  {
     "name": "Monstrous Crawler",
     "kind": "Common",
     "portrait": "PortraitCrabWhite",
@@ -2813,6 +2708,13 @@
   },
   {
     "name": "Skittering Crustacean",
+    "kind": "Common",
+    "portrait": "PortraitCrabWhite",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Spined Crawler",
     "kind": "Common",
     "portrait": "PortraitCrabWhite",
     "vitality": 1.0,
@@ -3182,13 +3084,6 @@
     "abilities": []
   },
   {
-    "name": "General Twinbraid",
-    "kind": "Elite",
-    "portrait": "PortraitGeneralTwinbraid",
-    "vitality": 3.0,
-    "abilities": []
-  },
-  {
     "name": "Dark Iron Lookout",
     "faction": "Dark Iron Clan",
     "kind": "Common",
@@ -3444,35 +3339,35 @@
   {
     "name": "Wastewander Assassin",
     "kind": "Common",
-    "portrait": "PortraitDefiasMessenger",
+    "portrait": "PortraitWastewanderAssassin",
     "vitality": 1.0,
     "abilities": []
   },
   {
     "name": "Wastewander Bandit",
     "kind": "Common",
-    "portrait": "PortraitDefiasMessenger",
+    "portrait": "PortraitWastewanderBandit",
     "vitality": 1.0,
     "abilities": []
   },
   {
     "name": "Wastewander Rogue",
     "kind": "Common",
-    "portrait": "PortraitDefiasMessenger",
+    "portrait": "PortraitWastewanderRogue",
     "vitality": 1.0,
     "abilities": []
   },
   {
     "name": "Wastewander Shadow Mage",
     "kind": "Common",
-    "portrait": "PortraitDefiasMessenger",
+    "portrait": "PortraitWastewanderShadowMage",
     "vitality": 1.0,
     "abilities": []
   },
   {
     "name": "Wastewander Thief",
     "kind": "Common",
-    "portrait": "PortraitDefiasMessenger",
+    "portrait": "PortraitWastewanderThief",
     "vitality": 1.0,
     "abilities": []
   },
@@ -4683,6 +4578,13 @@
     "abilities": []
   },
   {
+    "name": "General Twinbraid",
+    "kind": "Elite",
+    "portrait": "PortraitGeneralTwinbraid",
+    "vitality": 3.0,
+    "abilities": []
+  },
+  {
     "name": "Bone Chewer",
     "kind": "Common",
     "portrait": "PortraitGhoul",
@@ -4806,6 +4708,13 @@
     "abilities": []
   },
   {
+    "name": "Boneflayer Ghoul",
+    "kind": "Common",
+    "portrait": "PortraitGhoulWhite",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
     "name": "Cannibal Ghoul",
     "faction": "Scourge",
     "kind": "Common",
@@ -4834,6 +4743,13 @@
   },
   {
     "name": "Plague Spreader",
+    "kind": "Common",
+    "portrait": "PortraitGhoulWhite",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Thorn Eater Ghoul",
     "kind": "Common",
     "portrait": "PortraitGhoulWhite",
     "vitality": 1.0,
@@ -6969,7 +6885,7 @@
   {
     "name": "Silicate Feeder",
     "kind": "Common",
-    "portrait": "PortraitLarvaYellow",
+    "portrait": "PortraitLarva",
     "vitality": 1.0,
     "abilities": []
   },
@@ -9738,7 +9654,7 @@
     "abilities": []
   },
   {
-    "name": "Quilguard Champion",
+    "name": "Hagg Taurenbane",
     "kind": "Common",
     "portrait": "PortraitQuilboarArmored",
     "vitality": 1.0,
@@ -9752,14 +9668,7 @@
     "abilities": []
   },
   {
-    "name": "Razorfen Defender",
-    "kind": "Common",
-    "portrait": "PortraitQuilboarArmored",
-    "vitality": 1.0,
-    "abilities": []
-  },
-  {
-    "name": "Hagg Taurenbane",
+    "name": "Quilguard Champion",
     "kind": "Common",
     "portrait": "PortraitQuilboarArmored",
     "vitality": 1.0,
@@ -9770,6 +9679,13 @@
     "kind": "Elite",
     "portrait": "PortraitQuilboarArmored",
     "vitality": 3.0,
+    "abilities": []
+  },
+  {
+    "name": "Razorfen Defender",
+    "kind": "Common",
+    "portrait": "PortraitQuilboarArmored",
+    "vitality": 1.0,
     "abilities": []
   },
   {
@@ -9805,20 +9721,6 @@
     "kind": "Elite",
     "portrait": "PortraitQuilboarDark",
     "vitality": 3.0,
-    "abilities": []
-  },
-  {
-    "name": "Razorfen Stalker",
-    "kind": "Common",
-    "portrait": "PortraitQuilboarDark",
-    "vitality": 1.0,
-    "abilities": []
-  },
-  {
-    "name": "Razorfen Spearhead",
-    "kind": "Common",
-    "portrait": "PortraitQuilboarDark",
-    "vitality": 1.0,
     "abilities": []
   },
   {
@@ -9873,6 +9775,20 @@
     "abilities": []
   },
   {
+    "name": "Razorfen Spearhead",
+    "kind": "Common",
+    "portrait": "PortraitQuilboarDark",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Razorfen Stalker",
+    "kind": "Common",
+    "portrait": "PortraitQuilboarDark",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
     "name": "Razormane Stalker",
     "faction": "Razormane Tribe",
     "kind": "Common",
@@ -9889,7 +9805,15 @@
     "abilities": []
   },
   {
-    "name": "Death's Head Sage",
+    "name": "Bristleback Geomancer",
+    "faction": "Bristleback Tribe",
+    "kind": "Common",
+    "portrait": "PortraitQuilboarFemale",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Bristleback Shaman",
     "kind": "Common",
     "portrait": "PortraitQuilboarFemale",
     "vitality": 1.0,
@@ -9903,22 +9827,21 @@
     "abilities": []
   },
   {
+    "name": "Death's Head Necromancer",
+    "kind": "Common",
+    "portrait": "PortraitQuilboarFemale",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Death's Head Sage",
+    "kind": "Common",
+    "portrait": "PortraitQuilboarFemale",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
     "name": "Death's Head Seer",
-    "kind": "Common",
-    "portrait": "PortraitQuilboarFemale",
-    "vitality": 1.0,
-    "abilities": []
-  },
-  {
-    "name": "Bristleback Geomancer",
-    "faction": "Bristleback Tribe",
-    "kind": "Common",
-    "portrait": "PortraitQuilboarFemale",
-    "vitality": 1.0,
-    "abilities": []
-  },
-  {
-    "name": "Bristleback Shaman",
     "kind": "Common",
     "portrait": "PortraitQuilboarFemale",
     "vitality": 1.0,
@@ -9956,34 +9879,6 @@
     "abilities": []
   },
   {
-    "name": "Razorfen Dustweaver",
-    "kind": "Common",
-    "portrait": "PortraitQuilboarFemaleAlternate",
-    "vitality": 1.0,
-    "abilities": []
-  },
-  {
-    "name": "Razorfen Totemic",
-    "kind": "Common",
-    "portrait": "PortraitQuilboarFemaleAlternate",
-    "vitality": 1.0,
-    "abilities": []
-  },
-  {
-    "name": "Razorfen Earthbraker",
-    "kind": "Common",
-    "portrait": "PortraitQuilboarFemaleAlternate",
-    "vitality": 1.0,
-    "abilities": []
-  },
-  {
-    "name": "Roogog",
-    "kind": "Elite",
-    "portrait": "PortraitQuilboarFemaleAlternate",
-    "vitality": 3.0,
-    "abilities": []
-  },
-  {
     "name": "Bristleback Thornweaver",
     "faction": "Bristleback Tribe",
     "kind": "Common",
@@ -10014,8 +9909,29 @@
     "abilities": []
   },
   {
+    "name": "Razorfen Dustweaver",
+    "kind": "Common",
+    "portrait": "PortraitQuilboarFemaleAlternate",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Razorfen Earthbraker",
+    "kind": "Common",
+    "portrait": "PortraitQuilboarFemaleAlternate",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
     "name": "Razorfen Stonechanter",
     "faction": "Razorfen Tribe",
+    "kind": "Common",
+    "portrait": "PortraitQuilboarFemaleAlternate",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Razorfen Totemic",
     "kind": "Common",
     "portrait": "PortraitQuilboarFemaleAlternate",
     "vitality": 1.0,
@@ -10030,24 +9946,17 @@
     "abilities": []
   },
   {
-    "name": "Roogug",
+    "name": "Roogog",
     "kind": "Elite",
     "portrait": "PortraitQuilboarFemaleAlternate",
     "vitality": 3.0,
     "abilities": []
   },
   {
-    "name": "Razorfen Beast Trainer",
-    "kind": "Common",
-    "portrait": "PortraitQuilboarMale",
-    "vitality": 1.0,
-    "abilities": []
-  },
-  {
-    "name": "Razorfen Beastmaster",
-    "kind": "Common",
-    "portrait": "PortraitQuilboarMale",
-    "vitality": 1.0,
+    "name": "Roogug",
+    "kind": "Elite",
+    "portrait": "PortraitQuilboarFemaleAlternate",
+    "vitality": 3.0,
     "abilities": []
   },
   {
@@ -10082,6 +9991,20 @@
   },
   {
     "name": "Razorfen Beast Stalker",
+    "kind": "Common",
+    "portrait": "PortraitQuilboarMale",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Razorfen Beast Trainer",
+    "kind": "Common",
+    "portrait": "PortraitQuilboarMale",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Razorfen Beastmaster",
     "kind": "Common",
     "portrait": "PortraitQuilboarMale",
     "vitality": 1.0,
@@ -10140,6 +10063,34 @@
     "faction": "Razormane Tribe",
     "kind": "Common",
     "portrait": "PortraitQuilboarMale",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Withered Spearhide",
+    "kind": "Common",
+    "portrait": "PortraitQuilboarUndead",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Withered Quilguard",
+    "kind": "Common",
+    "portrait": "PortraitQuilboarUndeadArmored",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Withered Reaver",
+    "kind": "Common",
+    "portrait": "PortraitQuilboarUndeadArmored",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Withered Warrior",
+    "kind": "Common",
+    "portrait": "PortraitQuilboarUndeadArmored",
     "vitality": 1.0,
     "abilities": []
   },
@@ -10493,23 +10444,6 @@
     "portrait": "PortraitSandReaver",
     "vitality": 1.0,
     "abilities": []
-  },
-  {
-    "name": "Witch Doctor Zum'rah",
-    "faction": "Sandfury Tribe",
-    "kind": "Elite",
-    "portrait": "PortraitSandTroll",
-    "vitality": 1.8,
-    "abilities": [
-      "Corruption",
-      "Curse of Agony"
-    ],
-    "loot": [
-      {
-        "Item1": 100,
-        "Item2": "Witch Doctor Zum'rah Loot"
-      }
-    ]
   },
   {
     "name": "Ouro",
@@ -11369,7 +11303,7 @@
   {
     "name": "Hazzali Sandreaver",
     "kind": "Common",
-    "portrait": "PortraitSilithidTankRed",
+    "portrait": "PortraitSilithidTankTeal",
     "vitality": 1.0,
     "abilities": []
   },
@@ -11446,7 +11380,7 @@
   {
     "name": "Hazzali Swarmer",
     "kind": "Common",
-    "portrait": "PortraitSilithidWaspRed",
+    "portrait": "PortraitSilithidWaspTeal",
     "vitality": 1.0,
     "abilities": []
   },
@@ -11694,6 +11628,13 @@
     "abilities": []
   },
   {
+    "name": "Splinterbone Summoner",
+    "kind": "Common",
+    "portrait": "PortraitSkeletalMage",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
     "name": "Vectus",
     "faction": "Scourge",
     "kind": "Elite",
@@ -11778,6 +11719,20 @@
     "abilities": []
   },
   {
+    "name": "Splinterbone Centurion",
+    "kind": "Common",
+    "portrait": "PortraitSkeletalWarrior",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Splinterbone Warrior",
+    "kind": "Common",
+    "portrait": "PortraitSkeletalWarrior",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
     "name": "Mor'Ladim",
     "kind": "Elite",
     "portrait": "PortraitSkeletalWarriorYellow",
@@ -11807,6 +11762,13 @@
   },
   {
     "name": "Skeletal Warrior",
+    "kind": "Common",
+    "portrait": "PortraitSkeletalWarriorYellow",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Splinterbone Captain",
     "kind": "Common",
     "portrait": "PortraitSkeletalWarriorYellow",
     "vitality": 1.0,
@@ -11888,6 +11850,13 @@
   {
     "name": "Skeletal Acolyte",
     "faction": "Scourge",
+    "kind": "Common",
+    "portrait": "PortraitSkeletonBlue",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Skeletal Frostweaver",
     "kind": "Common",
     "portrait": "PortraitSkeletonBlue",
     "vitality": 1.0,
@@ -12289,86 +12258,86 @@
     "abilities": []
   },
   {
-    "name": "Syndicate Mercenary",
-    "kind": "Common",
-    "portrait": "PortraitSyndicateAssassin",
-    "vitality": 1.0,
-    "abilities": []
-  },
-  {
-    "name": "Syndicate Saboteur",
-    "kind": "Common",
-    "portrait": "PortraitSyndicateAssassin",
-    "vitality": 1.0,
-    "abilities": []
-  },
-  {
-    "name": "Syndicate Shadow Mage",
-    "kind": "Common",
-    "portrait": "PortraitSyndicateAssassin",
-    "vitality": 1.0,
-    "abilities": []
-  },
-  {
-    "name": "Syndicate Thief",
-    "kind": "Common",
-    "portrait": "PortraitSyndicateAssassin",
-    "vitality": 1.0,
-    "abilities": []
-  },
-  {
-    "name": "Syndicate Watchman",
-    "kind": "Common",
-    "portrait": "PortraitSyndicateAssassin",
-    "vitality": 1.0,
-    "abilities": []
-  },
-  {
-    "name": "Syndicate Wizard",
-    "kind": "Common",
-    "portrait": "PortraitSyndicateAssassin",
-    "vitality": 1.0,
-    "abilities": []
-  },
-  {
     "name": "Syndicate Enforcer",
     "kind": "Common",
-    "portrait": "PortraitSyndicateFootpad",
+    "portrait": "PortraitSyndicateEnforcer",
     "vitality": 1.0,
     "abilities": []
   },
   {
     "name": "Syndicate Highwayman",
     "kind": "Common",
-    "portrait": "PortraitSyndicateFootpad",
+    "portrait": "PortraitSyndicateHighwayman",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Syndicate Mercenary",
+    "kind": "Common",
+    "portrait": "PortraitSyndicateMercenary",
     "vitality": 1.0,
     "abilities": []
   },
   {
     "name": "Syndicate Pathstalker",
     "kind": "Common",
-    "portrait": "PortraitSyndicateFootpad",
+    "portrait": "PortraitSyndicatePathstalker",
     "vitality": 1.0,
     "abilities": []
   },
   {
     "name": "Syndicate Rogue",
     "kind": "Common",
-    "portrait": "PortraitSyndicateFootpad",
+    "portrait": "PortraitSyndicateRogue",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Syndicate Saboteur",
+    "kind": "Common",
+    "portrait": "PortraitSyndicateSaboteur",
     "vitality": 1.0,
     "abilities": []
   },
   {
     "name": "Syndicate Sentry",
     "kind": "Common",
-    "portrait": "PortraitSyndicateFootpad",
+    "portrait": "PortraitSyndicateSentry",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Syndicate Shadow Mage",
+    "kind": "Common",
+    "portrait": "PortraitSyndicateShadowMage",
     "vitality": 1.0,
     "abilities": []
   },
   {
     "name": "Syndicate Spy",
     "kind": "Common",
-    "portrait": "PortraitSyndicateFootpad",
+    "portrait": "PortraitSyndicateSpy",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Syndicate Thief",
+    "kind": "Common",
+    "portrait": "PortraitSyndicateThief",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Syndicate Watchman",
+    "kind": "Common",
+    "portrait": "PortraitSyndicateWatchman",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Syndicate Wizard",
+    "kind": "Common",
+    "portrait": "PortraitSyndicateWizard",
     "vitality": 1.0,
     "abilities": []
   },
@@ -12387,17 +12356,10 @@
     "loot": []
   },
   {
-    "name": "Fleeting Plainstrider",
-    "kind": "Common",
+    "name": "Mazzranache",
+    "kind": "Rare",
     "portrait": "PortraitTallstrider",
-    "vitality": 1.0,
-    "abilities": []
-  },
-  {
-    "name": "Elder Plainstrider",
-    "kind": "Common",
-    "portrait": "PortraitTallstriderBrown",
-    "vitality": 1.0,
+    "vitality": 2.0,
     "abilities": []
   },
   {
@@ -12418,6 +12380,20 @@
     "name": "Plainstrider",
     "kind": "Common",
     "portrait": "PortraitTallstriderBrown",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Fleeting Plainstrider",
+    "kind": "Common",
+    "portrait": "PortraitTallstriderWhite",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Elder Plainstrider",
+    "kind": "Common",
+    "portrait": "PortraitTallstriderWhite",
     "vitality": 1.0,
     "abilities": []
   },
@@ -12828,20 +12804,6 @@
     "abilities": []
   },
   {
-    "name": "Stonevault Rockchewer",
-    "kind": "Common",
-    "portrait": "PortraitTrogg",
-    "vitality": 1.0,
-    "abilities": []
-  },
-  {
-    "name": "Stonevault Cave Lurker",
-    "kind": "Common",
-    "portrait": "PortraitTrogg",
-    "vitality": 1.0,
-    "abilities": []
-  },
-  {
     "name": "Berserk Trogg",
     "kind": "Common",
     "portrait": "PortraitTrogg",
@@ -12996,6 +12958,13 @@
     "abilities": []
   },
   {
+    "name": "Stonevault Cave Lurker",
+    "kind": "Common",
+    "portrait": "PortraitTrogg",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
     "name": "Stonevault Geomancer",
     "kind": "Common",
     "portrait": "PortraitTrogg",
@@ -13011,6 +12980,13 @@
   },
   {
     "name": "Stonevault Pillager",
+    "kind": "Common",
+    "portrait": "PortraitTrogg",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Stonevault Rockchewer",
     "kind": "Common",
     "portrait": "PortraitTrogg",
     "vitality": 1.0,
@@ -13716,6 +13692,23 @@
     "abilities": []
   },
   {
+    "name": "Witch Doctor Zum'rah",
+    "faction": "Sandfury Tribe",
+    "kind": "Elite",
+    "portrait": "PortraitWitchDoctorZumrah",
+    "vitality": 1.8,
+    "abilities": [
+      "Corruption",
+      "Curse of Agony"
+    ],
+    "loot": [
+      {
+        "Item1": 100,
+        "Item2": "Witch Doctor Zum'rah Loot"
+      }
+    ]
+  },
+  {
     "name": "Witherbark Axe Thrower",
     "kind": "Common",
     "portrait": "PortraitWitherbarkAxeThrower",
@@ -13891,13 +13884,6 @@
     "abilities": []
   },
   {
-    "name": "Lupos",
-    "kind": "Rare",
-    "portrait": "PortraitWorg",
-    "vitality": 2.0,
-    "abilities": []
-  },
-  {
     "name": "Black Ravager",
     "kind": "Common",
     "portrait": "PortraitWorg",
@@ -13923,6 +13909,13 @@
     "kind": "Common",
     "portrait": "PortraitWorg",
     "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Lupos",
+    "kind": "Rare",
+    "portrait": "PortraitWorg",
+    "vitality": 2.0,
     "abilities": []
   },
   {
@@ -14239,6 +14232,20 @@
     "kind": "Rare",
     "portrait": "PortraitWraith",
     "vitality": 2.0,
+    "abilities": []
+  },
+  {
+    "name": "Freezing Spirit",
+    "kind": "Common",
+    "portrait": "PortraitWraith",
+    "vitality": 1.0,
+    "abilities": []
+  },
+  {
+    "name": "Frozen Soul",
+    "kind": "Common",
+    "portrait": "PortraitWraith",
+    "vitality": 1.0,
     "abilities": []
   },
   {

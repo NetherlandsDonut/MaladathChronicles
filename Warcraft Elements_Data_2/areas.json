@@ -9166,12 +9166,12 @@
   {
     "commonEncounters": [
       {
-        "who": "Elder Plainstrider",
+        "who": "Swoop",
         "levelMin": 7,
         "levelMax": 8
       },
       {
-        "who": "Swoop",
+        "who": "Elder Plainstrider",
         "levelMin": 7,
         "levelMax": 8
       },
@@ -9185,6 +9185,10 @@
       {
         "who": "The Rake",
         "levelMin": 10
+      },
+      {
+        "who": "Mazzranache",
+        "levelMin": 9
       }
     ],
     "x": 82,

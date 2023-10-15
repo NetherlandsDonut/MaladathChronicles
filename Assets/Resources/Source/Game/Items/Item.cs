@@ -511,30 +511,42 @@ public class Item
             else
                 AddLine(item.type == null ? "" : item.type);
         });
+        if (item.stats != null && item.stats.stats.Count > 0)
+            AddPaddingRegion(() =>
+            {
+                foreach (var stat in item.stats.stats)
+                    AddLine("+" + stat.Value + " " + stat.Key);
+            });
         var current = currentSave.player.equipment.ContainsKey(item.type) ? currentSave.player.equipment[item.type] : null;
-        if (item.stats != null && item.stats.stats.Count > 0 || compare && current != null && current.stats != null)
+        if (compare)
+        {
+            AddHeaderRegion(() =>
+            {
+                AddLine("Stat changes on equip:", "DarkGray");
+            });
             AddPaddingRegion(() =>
             {
                 var statsRecorded = new List<string>();
                 foreach (var stat in item.stats.stats)
                 {
                     statsRecorded.Add(stat.Key);
-                    if (compare && current != null)
-                    {
-                        var balance = current.stats.stats.ContainsKey(stat.Key) ? stat.Value - current.stats.stats[stat.Key] : stat.Value;
-                        AddLine((balance > 0 ? "+" : "") + balance + " " + stat.Key, balance > 0 ? "Uncommon" : "DangerousRed");
-                    }
-                    else AddLine("+" + stat.Value + " " + stat.Key);
+                    var balance = current != null && current.stats != null && current.stats.stats.ContainsKey(stat.Key) ? stat.Value - current.stats.stats[stat.Key] : stat.Value;
+                    AddLine((balance > 0 ? "+" : "") + balance, balance > 0 ? "Uncommon" : "DangerousRed");
+                    AddText(" " + stat.Key);
                 }
-                if (compare && current != null)
+                if (current != null && current.stats != null)
                     foreach (var stat in current.stats.stats)
                         if (!statsRecorded.Contains(stat.Key))
-                            AddLine("-" + stat.Value + " " + stat.Key, "DangerousRed");
+                        {
+                            AddLine("-" + stat.Value, "DangerousRed");
+                            AddText(" " + stat.Key);
+                        }
             });
+        }
         if (item.specs != null)
             AddHeaderRegion(() =>
             {
-                AddLine("Specs: ", "DarkGray");
+                AddLine("Classes: ", "DarkGray");
                 foreach (var spec in item.specs)
                 {
                     AddText(spec, spec);
