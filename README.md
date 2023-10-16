@@ -288,5 +288,33 @@ v0.3.7
     29.09 Asigned basic drop information for items
           Added Defias Brotherhood portraits
           Login screen background for characters now depend on the site of logging out
+v0.3.8
+    06.10 Setting item stats in object manager
+          Fixed bug with input lines not aligning vertically
+          Changed class trainer icons and added battlemaster ones
+v0.3.9
+    09.10 Added experience bar
+          Inventory now shows current money
+v0.3.10
+    11.10 Uldaman improvements
+          Loot system
+          Combat result screen
+v0.3.11
+    12.10 Option for effect to last 0 frames
+          Fixed unnessecary serialising of flight paths in towns
+          Fixed object manager to have long windows again
+v0.3.12
+    13.10 Destroying items
+          Selling items
+          Base for vendors
+          Enemies now drop junk items
+          Middle mouse button events
+          Tooltip sound now only after succesful build
+v0.3.13
+    14.10 Item comparison in tooltip
+          Random stat enchants for items
+v0.3.14
+    15.10 Razorfen Kraul and Downs improved
+          Many new portraits
           
 ```
