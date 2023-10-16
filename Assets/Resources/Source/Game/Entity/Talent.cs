@@ -25,22 +25,22 @@ public class Talent
     public bool defaultTaken;
 
     //Prints the talent on the screen for it to be picked
-    public static void PrintTalent(int spec, int row, int col)
+    public static void PrintTalent(int tree, int row, int col)
     {
-        SetAnchor(25 + (spec == 1 ? 213 : (spec == 2 ? 425 : 0)) + 62 * col, -62 * row - 23);
+        SetAnchor((tree == 0 ? 147 : -301) + 57 * col, -57 * row + 142);
         AddRegionGroup();
         AddPaddingRegion(() =>
         {
             var playerSpec = currentSave.player.Spec();
-            var talent = playerSpec.talentTrees[spec].talents.Find(x => x.row == row && x.col == col);
-            var previousTalent = currentSave.player.PreviousTalent(spec, talent);
+            var talent = playerSpec.talentTrees[tree].talents.Find(x => x.row == row && x.col == col);
+            var previousTalent = currentSave.player.PreviousTalent(tree, talent);
             var previousTalentDistance = previousTalent == null ? 0 : talent.row - previousTalent.row;
             var abilityObj = abilities.Find(x => x.name == talent.ability);
             AddBigButton(abilities.Find(x => x.name == talent.ability).icon,
                 (h) =>
                 {
-                    var canPick = currentSave.player.CanPickTalent(spec, talent);
-                    if (!currentSave.player.abilities.Contains(talent.ability) && currentSave.player.CanPickTalent(spec, talent))
+                    var canPick = currentSave.player.CanPickTalent(tree, talent);
+                    if (!currentSave.player.abilities.Contains(talent.ability) && currentSave.player.CanPickTalent(tree, talent))
                     {
                         currentSave.player.unspentTalentPoints--;
                         PlaySound("DesktopTalentAcquired", 0.2f);
@@ -58,8 +58,8 @@ public class Talent
                 AddBigButtonOverlay("OtherGlowLearned");
             else
             {
-                var canPick = currentSave.player.CanPickTalent(spec, talent);
-                if (currentSave.player.CanPickTalent(spec, talent)) AddBigButtonOverlay("OtherGlowLearnable");
+                var canPick = currentSave.player.CanPickTalent(tree, talent);
+                if (currentSave.player.CanPickTalent(tree, talent)) AddBigButtonOverlay("OtherGlowLearnable");
                 else
                 {
                     SetBigButtonToGrayscale();
@@ -74,12 +74,12 @@ public class Talent
                     body = AddBigButtonOverlay("OtherTalentArrowFillBody");
                     body.transform.localPosition = new Vector3(0, 26, 0);
                     body.GetComponent<SpriteRenderer>().sortingOrder = 2;
-                    body.transform.localScale = new Vector3(1, previousTalentDistance * 18 + (previousTalentDistance > 1 ? (previousTalentDistance - 1) * 44 : 0), 1);
+                    body.transform.localScale = new Vector3(1, previousTalentDistance * 13 + (previousTalentDistance > 1 ? (previousTalentDistance - 1) * 44 : 0), 1);
                     AddBigButtonOverlay("OtherTalentArrowFillHead").GetComponent<SpriteRenderer>().sortingOrder = 2;
                 }
                 body = AddBigButtonOverlay("OtherTalentArrowBody");
                 body.transform.localPosition = new Vector3(0, 28, 0);
-                body.transform.localScale = new Vector3(1, previousTalentDistance * 14 + (previousTalentDistance > 1 ? (previousTalentDistance - 1) * 48 : 0), 1);
+                body.transform.localScale = new Vector3(1, previousTalentDistance * 9 + (previousTalentDistance > 1 ? (previousTalentDistance - 1) * 48 : 0), 1);
                 AddBigButtonOverlay("OtherTalentArrowHead");
             }
         });

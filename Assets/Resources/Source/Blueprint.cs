@@ -1348,6 +1348,55 @@ public class Blueprint
             }
             PrintPriceRegion(currentSave.player.inventory.money);
         }, true),
+        new("TalentScreenHeader", () => {
+            SetAnchor(Top);
+            AddRegionGroup();
+            AddHeaderRegion(
+                () =>
+                {
+                    AddSmallButton("OtherPreviousPage", (h) => { });
+                }
+            );
+            AddRegionGroup();
+            SetRegionGroupWidth(239);
+            AddHeaderRegion(
+                () =>
+                {
+                    AddLine("Fire    ", "", "Center");
+                    AddSmallButton("OtherNextPage", (h) => { });
+                }
+            );
+        }),
+        new("TalentTreeRight", () => {
+            SetAnchor(TopRight);
+            DisableShadows();
+            AddHeaderGroup();
+            SetRegionGroupWidth(190);
+            SetRegionGroupHeight(328);
+            AddHeaderRegion(() =>
+            {
+                AddLine("Right", "", "Center");
+                AddSmallButton("OtherClose", (h) =>
+                {
+                    PlaySound("DesktopTalentScreenClose");
+                    CloseDesktop("TalentScreen");
+                });
+            });
+            AddPaddingRegion(() => SetRegionAsGroupExtender());
+            AddHeaderRegion(() => AddLine("1 / 20", "", "Center"));
+        }),
+        new("TalentTreeLeft", () => {
+            SetAnchor(TopLeft);
+            AddHeaderGroup();
+            SetRegionGroupWidth(190);
+            SetRegionGroupHeight(328);
+            AddHeaderRegion(() =>
+            {
+                AddLine("Left", "", "Center");
+            });
+            AddPaddingRegion(() => SetRegionAsGroupExtender());
+            AddHeaderRegion(() => AddLine("1 / 20", "", "Center"));
+        }),
         new("Bank", () => {
             SetAnchor(TopLeft);
             AddRegionGroup();
@@ -7133,7 +7182,7 @@ public class Blueprint
                 CloseDesktop("CharacterSheet");
             });
         }),
-        new("TalentScreen", () =>
+        new("OldTalentScreen", () =>
         {
             PlaySound("DesktopTalentScreenOpen");
             SetDesktopBackground("StoneSplitLong", false);
@@ -7172,6 +7221,24 @@ public class Blueprint
                     cursor.transform.position -= new Vector3(0, off);
                 }
             },  false);
+        }),
+        new("TalentScreen", () =>
+        {
+            PlaySound("DesktopTalentScreenOpen");
+            SetDesktopBackground("Stone");
+            SpawnWindowBlueprint("TalentTreeLeft");
+            SpawnWindowBlueprint("TalentScreenHeader");
+            SpawnWindowBlueprint("TalentTreeRight");
+            var playerSpec = currentSave.player.Spec();
+            for (int tree = 0; tree < 2; tree++)
+                for (int row = 0; row < 5; row++)
+                    for (int col = 0; col < 3; col++)
+                        if (windowBlueprints.Exists(x => x.title == "Talent" + tree + row + col))
+                            if (playerSpec.talentTrees[tree].talents.Exists(x => x.row == row && x.col == col))
+                                SpawnWindowBlueprint("Talent" + tree + row + col);
+            SpawnWindowBlueprint("ExperienceBar");
+            AddHotkey(N, () => { CloseDesktop("TalentScreen"); PlaySound("DesktopTalentScreenClose"); });
+            AddHotkey(Escape, () => { CloseDesktop("TalentScreen"); PlaySound("DesktopTalentScreenClose"); });
         }),
         new("SpellbookScreen", () =>
         {

@@ -228,13 +228,13 @@ public class Starter : MonoBehaviour
             Ability.abilities[i].Initialise();
         for (int i = 0; i < spiritHealers.Count; i++)
             spiritHealers[i].Initialise();
-        for (int i = 0; i < 3; i++)
-            for (int j = 0; j < 12; j++)
+        for (int i = 0; i < 2; i++)
+            for (int j = 0; j < 5; j++)
                 for (int k = 0; k < 3; k++)
                 {
-                    var spec = i; var row = j; var col = k;
-                    if (Blueprint.windowBlueprints.Exists(x => x.title == "Talent" + spec + row + col)) continue;
-                    Blueprint.windowBlueprints.Add(new Blueprint("Talent" + spec + row + col, () => PrintTalent(spec, row, col)));
+                    var tree = i; var row = j; var col = k;
+                    if (Blueprint.windowBlueprints.Exists(x => x.title == "Talent" + tree + row + col)) continue;
+                    Blueprint.windowBlueprints.Add(new Blueprint("Talent" + tree + row + col, () => PrintTalent(tree, row, col), true));
                 }
 
         #endregion

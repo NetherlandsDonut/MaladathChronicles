@@ -67,9 +67,7 @@ public class Desktop : MonoBehaviour
 
     public void Start()
     {
-        if (title == "TalentScreen")
-            screen.transform.localPosition = new Vector3(320, -140);
-        else if (title.Contains("Map"))
+        if (title.Contains("Map"))
             screen.transform.localPosition = new Vector3(-1000, 1000);
     }
 
