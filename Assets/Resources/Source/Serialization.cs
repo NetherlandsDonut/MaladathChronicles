@@ -15,8 +15,8 @@ class Serialization
         if (Root.useUnityData) prefix = @"C:\Users\ragan\Documents\Projects\Unity\MaladathChronicles\";
         if (!Directory.Exists(prefix + "Maladath_Data_2"))
             Directory.CreateDirectory(prefix + "Maladath_Data_2");
-        if (!File.Exists(prefix + "Maladath_Data_2/" + file + (encoded ? ".WE" : ".json"))) return;
-        var content = File.ReadAllText(prefix + "Maladath_Data_2/" + file + (encoded ? ".WE" : ".json"));
+        if (!File.Exists(prefix + "Maladath_Data_2/" + file + (encoded ? "" : ".json"))) return;
+        var content = File.ReadAllText(prefix + "Maladath_Data_2/" + file + (encoded ? "" : ".json"));
         if (encoded) content = Decrypt(content);
         target = DeserializeObject<T>(content);
     }
@@ -34,11 +34,11 @@ class Serialization
             if (backup && !Directory.Exists(prefix + "Maladath_Data_2/Backup/" + date))
                 Directory.CreateDirectory(prefix + "Maladath_Data_2/Backup/" + date);
         }
-        if (backup && File.Exists(prefix + "Maladath_Data_2/" + (backup ? "Backup/" + date + "/" : "") + where + (encoded ? ".WE" : ".json"))) return;
+        if (backup && File.Exists(prefix + "Maladath_Data_2/" + (backup ? "Backup/" + date + "/" : "") + where + (encoded ? "" : ".json"))) return;
         var sett = new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore, DefaultValueHandling = DefaultValueHandling.Ignore };
         var data = SerializeObject(what, encoded ? None : Indented, sett);
         if (encoded) data = Encrypt(data);
-        File.WriteAllText(prefix + "Maladath_Data_2/" + (backup ? "Backup/" + date + "/" : "") + where + (encoded ? ".WE" : ".json"), data);
+        File.WriteAllText(prefix + "Maladath_Data_2/" + (backup ? "Backup/" + date + "/" : "") + where + (encoded ? "" : ".json"), data);
     }
 
     public static string IV = "1a1a1a1a1a1a1a1a";

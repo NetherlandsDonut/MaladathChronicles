@@ -291,69 +291,80 @@
             "ability": "Capacitor Totem"
           },
           {
-            "row": 5,
+            "tree": 1,
             "ability": "Echo of the Elements"
           },
           {
-            "row": 5,
             "col": 1,
+            "tree": 1,
             "ability": "Unrelenting Calamity"
           },
           {
-            "row": 5,
-            "col": 2,
+            "row": 1,
+            "tree": 1,
             "ability": "Primordial Fury"
           },
           {
-            "row": 6,
+            "row": 1,
             "col": 1,
+            "tree": 1,
             "ability": "Magma Chamber"
           },
           {
-            "row": 6,
+            "row": 1,
             "col": 2,
+            "tree": 1,
             "ability": "Stormkeeper"
           },
           {
-            "row": 7,
+            "row": 2,
             "col": 1,
+            "tree": 1,
             "ability": "Elemental Equilibrium"
           },
           {
-            "row": 7,
+            "row": 2,
             "col": 2,
+            "tree": 1,
             "ability": "Earthquake"
           },
           {
-            "row": 8,
+            "row": 2,
+            "tree": 1,
             "ability": "Eye of The Storm"
           },
           {
-            "row": 8,
+            "row": 3,
             "col": 2,
+            "tree": 1,
             "ability": "Chain Lightning"
           },
           {
-            "row": 9,
+            "row": 3,
+            "tree": 1,
             "ability": "Flow of Power"
           },
           {
-            "row": 9,
+            "row": 3,
             "col": 1,
+            "tree": 1,
             "ability": "Further Beyond"
           },
           {
-            "row": 10,
+            "row": 4,
+            "tree": 1,
             "ability": "Echoes of Great Sundering"
           },
           {
-            "row": 10,
+            "row": 4,
             "col": 1,
+            "tree": 1,
             "ability": "Master of the Elements"
           },
           {
-            "row": 10,
+            "row": 4,
             "col": 2,
+            "tree": 1,
             "ability": "Thunderstorm"
           }
         ]
@@ -418,64 +429,73 @@
             "ability": "Crash Lightning"
           },
           {
-            "row": 5,
+            "tree": 1,
             "ability": "Molten Assault"
           },
           {
-            "row": 5,
             "col": 1,
+            "tree": 1,
             "ability": "Windfury Weapon"
           },
           {
-            "row": 5,
             "col": 2,
+            "tree": 1,
             "ability": "Thundering Strikes"
           },
           {
-            "row": 6,
+            "row": 1,
             "col": 1,
+            "tree": 1,
             "ability": "Call of Thunder"
           },
           {
-            "row": 6,
+            "row": 1,
             "col": 2,
+            "tree": 1,
             "ability": "Elemental Assault"
           },
           {
-            "row": 7,
+            "row": 1,
+            "tree": 1,
             "ability": "Storm's Wrath"
           },
           {
-            "row": 7,
+            "row": 2,
             "col": 2,
+            "tree": 1,
             "ability": "Doom Winds"
           },
           {
-            "row": 8,
+            "row": 2,
             "col": 1,
+            "tree": 1,
             "ability": "Feral Spirit"
           },
           {
-            "row": 8,
-            "col": 2,
+            "row": 2,
+            "tree": 1,
             "ability": "Unruly Winds"
           },
           {
-            "row": 9,
+            "row": 3,
+            "tree": 1,
             "ability": "Thorim's Invocation"
           },
           {
-            "row": 9,
+            "row": 3,
             "col": 1,
+            "tree": 1,
             "ability": "Converging Storms"
           },
           {
-            "row": 10,
+            "row": 4,
+            "tree": 1,
             "ability": "Sundering"
           },
           {
-            "row": 10,
+            "row": 4,
             "col": 1,
+            "tree": 1,
             "ability": "Static Accumulation"
           }
         ]
@@ -535,67 +555,70 @@
             "ability": "Mana Spring Totem"
           },
           {
-            "row": 5,
+            "tree": 1,
             "ability": "Earthen Harmony"
           },
           {
-            "row": 5,
             "col": 2,
+            "tree": 1,
             "ability": "Nature's Guardian"
           },
           {
-            "row": 6,
+            "row": 1,
+            "tree": 1,
             "ability": "Ancestral Vigor"
           },
           {
-            "row": 6,
+            "row": 1,
             "col": 1,
+            "tree": 1,
             "ability": "Totemic Focus"
           },
           {
-            "row": 6,
+            "row": 1,
             "col": 2,
+            "tree": 1,
             "ability": "Tidebringer"
           },
           {
-            "row": 7,
+            "row": 2,
             "col": 1,
+            "tree": 1,
             "ability": "Riptide"
           },
           {
-            "row": 7,
+            "row": 2,
             "col": 2,
+            "tree": 1,
             "ability": "Undercurrent",
             "inherited": true
           },
           {
-            "row": 8,
-            "col": 1,
+            "row": 2,
+            "tree": 1,
             "ability": "Downpour"
           },
           {
-            "row": 8,
+            "row": 3,
             "col": 2,
+            "tree": 1,
             "ability": "Healing Grace"
           },
           {
-            "row": 9,
+            "row": 3,
+            "tree": 1,
             "ability": "Continuous Waves"
           },
           {
-            "row": 9,
-            "col": 1,
+            "row": 4,
+            "tree": 1,
             "ability": "Resurgence"
           },
           {
-            "row": 9,
+            "row": 4,
             "col": 2,
+            "tree": 1,
             "ability": "Ancestral Guidance"
-          },
-          {
-            "row": 10,
-            "col": 1,
-            "ability": "Time Warp"
           }
         ]
       }
@@ -732,7 +755,6 @@
             "ability": "Hamstring"
           },
           {
-            "row": 0,
             "col": 2,
             "tree": 1,
             "ability": "Cleave"
@@ -808,7 +830,6 @@
             "ability": "Demoralizing Shout"
           },
           {
-            "row": 0,
             "col": 2,
             "tree": 1,
             "ability": "Skullsplitter"
@@ -885,13 +906,11 @@
             "ability": "Shield Bash"
           },
           {
-            "row": 0,
             "col": 2,
             "tree": 1,
             "ability": "Shield Block"
           },
           {
-            "row": 0,
             "col": 1,
             "tree": 1,
             "ability": "Anticipation"
@@ -1019,18 +1038,15 @@
             "ability": "Benediction"
           },
           {
-            "row": 0,
             "tree": 1,
             "ability": "Cleanse"
           },
           {
-            "row": 0,
             "col": 1,
             "tree": 1,
             "ability": "Unyielding Faith"
           },
           {
-            "row": 0,
             "col": 2,
             "tree": 1,
             "ability": "Light's Conviction"
@@ -1159,30 +1175,25 @@
             "ability": "Divine Storm"
           },
           {
-            "row": 0,
             "tree": 1,
             "ability": "Seething Flames"
           },
           {
-            "row": 0,
             "col": 1,
             "tree": 1,
             "ability": "Vengeance"
           },
           {
-            "row": 0,
             "col": 2,
             "tree": 1,
             "ability": "Hammer of Wrath"
           },
           {
-            "row": 0,
             "col": 1,
             "tree": 1,
             "ability": "Avenging Wrath"
           },
           {
-            "row": 0,
             "col": 2,
             "tree": 1,
             "ability": "Seal of Righteousness"
@@ -1289,18 +1300,15 @@
             "ability": "Hammer of Justice"
           },
           {
-            "row": 0,
             "tree": 1,
             "ability": "Hand of the Protector"
           },
           {
-            "row": 0,
             "col": 2,
             "tree": 1,
             "ability": "Divine Shield"
           },
           {
-            "row": 0,
             "tree": 1,
             "ability": "Righteous Protector"
           },
@@ -1318,7 +1326,6 @@
           },
           {
             "row": 2,
-            "col": 0,
             "tree": 1,
             "ability": "Ardent Defender"
           },
@@ -1463,18 +1470,15 @@
             "ability": "Cosmic Rapidity"
           },
           {
-            "row": 0,
             "tree": 1,
             "ability": "Cyclone"
           },
           {
-            "row": 0,
             "col": 1,
             "tree": 1,
             "ability": "Astral Communion"
           },
           {
-            "row": 0,
             "col": 2,
             "tree": 1,
             "ability": "Stellar Innervation"
@@ -1598,18 +1602,15 @@
             "ability": "Vein Ripper"
           },
           {
-            "row": 0,
             "tree": 1,
             "ability": "Dash"
           },
           {
-            "row": 0,
             "col": 1,
             "tree": 1,
             "ability": "Honed Instincts"
           },
           {
-            "row": 0,
             "col": 2,
             "tree": 1,
             "ability": "Dire Fixation"
@@ -1732,7 +1733,6 @@
             "ability": "Flourish"
           },
           {
-            "row": 0,
             "tree": 1,
             "ability": "Renewal"
           },
@@ -1920,12 +1920,10 @@
             "ability": "Healing Focus"
           },
           {
-            "row": 0,
             "tree": 1,
             "ability": "Prayer of Healing"
           },
           {
-            "row": 0,
             "col": 1,
             "tree": 1,
             "ability": "Spiritual Healing"
@@ -1993,7 +1991,6 @@
             "ability": "Silent Resolve"
           },
           {
-            "row": 0,
             "col": 2,
             "tree": 1,
             "ability": "Mana Burn"
@@ -2047,7 +2044,6 @@
             "ability": "Shadow Weaving"
           },
           {
-            "row": 0,
             "col": 1,
             "tree": 1,
             "ability": "Devouring Plague"
@@ -2170,7 +2166,6 @@
             "ability": "Haunt"
           },
           {
-            "row": 0,
             "tree": 1,
             "ability": "Curse of Tongues"
           },
@@ -2243,7 +2238,6 @@
             "ability": "Demonic Embrace"
           },
           {
-            "row": 0,
             "col": 1,
             "tree": 1,
             "ability": "Summon Fel Guard"
@@ -2277,7 +2271,6 @@
             "ability": "Chaos Bolt"
           },
           {
-            "row": 0,
             "col": 1,
             "tree": 1,
             "ability": "Rain of Fire"
@@ -2437,20 +2430,17 @@
             "inherited": true
           },
           {
-            "row": 0,
             "col": 1,
             "tree": 1,
             "ability": "Pyroblast"
           },
           {
-            "row": 0,
             "col": 2,
             "tree": 1,
             "ability": "Conflagration"
           },
           {
             "row": 1,
-            "col": 0,
             "tree": 1,
             "ability": "Combustion"
           },
@@ -2525,18 +2515,13 @@
           },
           {
             "row": 2,
-            "col": 1,
-            "ability": "Wintertide",
-            "inherited": true
-          },
-          {
-            "row": 2,
             "col": 2,
             "ability": "Fingers of Frost"
           },
           {
             "row": 3,
-            "ability": "Ice Shards",
+            "col": 1,
+            "ability": "Wintertide",
             "inherited": true
           },
           {
@@ -2555,18 +2540,10 @@
             "ability": "Frostbite"
           },
           {
-            "row": 4,
-            "col": 2,
-            "ability": "Hailstones",
-            "inherited": true
-          },
-          {
-            "row": 0,
             "tree": 1,
             "ability": "Icy Flows"
           },
           {
-            "row": 0,
             "col": 1,
             "tree": 1,
             "ability": "Permafrost"
@@ -2578,13 +2555,7 @@
             "ability": "Frost Channeling"
           },
           {
-            "row": 1,
-            "col": 1,
-            "tree": 1,
-            "ability": "Piercing Ice"
-          },
-          {
-            "row": 2,
+            "row": 3,
             "col": 1,
             "tree": 1,
             "ability": "Ice Block"
@@ -2602,16 +2573,10 @@
             "inherited": true
           },
           {
-            "row": 3,
+            "row": 1,
             "col": 1,
             "tree": 1,
             "ability": "Icy Veins"
-          },
-          {
-            "row": 3,
-            "col": 2,
-            "tree": 1,
-            "ability": "Perpetual Winter"
           },
           {
             "row": 3,
@@ -2621,18 +2586,12 @@
           },
           {
             "row": 4,
-            "col": 1,
-            "tree": 1,
-            "ability": "Deep Shatter"
-          },
-          {
-            "row": 4,
             "tree": 1,
             "ability": "Bone Chilling"
           },
           {
             "row": 4,
-            "col": 1,
+            "col": 2,
             "tree": 1,
             "ability": "Cryopathy",
             "inherited": true
@@ -2695,13 +2654,10 @@
             "ability": "Presence of Mind"
           },
           {
-            "row": 0,
             "tree": 1,
-            "ability": "Resonance",
-            "inherited": true
+            "ability": "Resonance"
           },
           {
-            "row": 0,
             "col": 2,
             "tree": 1,
             "ability": "Prodigious Savant"

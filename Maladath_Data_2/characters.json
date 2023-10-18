@@ -1715,7 +1715,7 @@
     {
       "player": {
         "level": 60,
-        "unspentTalentPoints": 20,
+        "unspentTalentPoints": 11,
         "actionBarsUnlocked": 7,
         "name": "Lutte",
         "race": "Tauren",
@@ -1734,7 +1734,16 @@
           "Dagger Proficiency": 1,
           "Lightning Bolt": 0,
           "Stormstrike": 0,
-          "Healing Wave": 0
+          "Healing Wave": 0,
+          "Refreshing Waters": 0,
+          "Water Shield": 0,
+          "Arcane Tempo": 0,
+          "Flash Flood": 0,
+          "Acid Rain": 0,
+          "Healing Stream Totem": 0,
+          "Elemental Warding": 0,
+          "Earth Shield": 0,
+          "Healing Rain": 0
         },
         "actionBars": [
           {
@@ -2536,9 +2545,10 @@
       "raresKilled": {},
       "elitesKilled": {},
       "startDate": "2023-10-18T21:02:37.5764175+02:00",
-      "lastLoaded": "2023-10-18T21:02:38.1546954+02:00",
-      "lastPlayed": "2023-10-18T21:02:42.80822+02:00",
-      "timePlayed": "00:00:04.6535246"
+      "lastLoaded": "2023-10-18T23:20:34.3457394+02:00",
+      "lastPlayed": "2023-10-18T23:20:56.838373+02:00",
+      "timePlayed": "00:00:27.1461582",
+      "lastVisitedTalents": 2
     },
     {
       "player": {
@@ -4253,10 +4263,9 @@
       "raresKilled": {},
       "elitesKilled": {},
       "startDate": "2023-10-18T21:02:56.49355+02:00",
-      "lastLoaded": "2023-10-18T21:02:57.0637369+02:00",
-      "lastPlayed": "2023-10-18T21:04:04.6464601+02:00",
-      "timePlayed": "00:01:07.5827232",
-      "lastVisitedTalents": 1
+      "lastLoaded": "2023-10-18T23:20:59.4364329+02:00",
+      "lastPlayed": "2023-10-18T23:21:13.8447639+02:00",
+      "timePlayed": "00:01:49.8245188"
     },
     {
       "player": {
@@ -5089,14 +5098,14 @@
       "raresKilled": {},
       "elitesKilled": {},
       "startDate": "2023-10-18T21:08:47.5610377+02:00",
-      "lastLoaded": "2023-10-18T21:08:49.541557+02:00",
-      "lastPlayed": "2023-10-18T21:09:15.06281+02:00",
-      "timePlayed": "00:00:25.5212530"
+      "lastLoaded": "2023-10-18T22:30:09.7775997+02:00",
+      "lastPlayed": "2023-10-18T22:31:18.8594001+02:00",
+      "timePlayed": "00:01:34.6030534"
     },
     {
       "player": {
         "level": 60,
-        "unspentTalentPoints": 20,
+        "unspentTalentPoints": 11,
         "actionBarsUnlocked": 7,
         "name": "Brishua",
         "race": "Dwarf",
@@ -5118,7 +5127,16 @@
           "Libram Proficiency": 1,
           "Holy Light": 0,
           "Judgement": 0,
-          "Consecration": 0
+          "Consecration": 0,
+          "Divine Favor": 0,
+          "Illumination": 0,
+          "Blessing of Wisdom": 0,
+          "Beacon of the Lightbringer": 0,
+          "Seal of Sacrifice": 0,
+          "Imbued Infusions": 0,
+          "Saved by the Light": 0,
+          "Benediction": 0,
+          "Flash of Light": 0
         },
         "actionBars": [
           {
@@ -5948,9 +5966,9 @@
       "raresKilled": {},
       "elitesKilled": {},
       "startDate": "2023-10-18T21:09:24.6369634+02:00",
-      "lastLoaded": "2023-10-18T21:09:25.6585288+02:00",
-      "lastPlayed": "2023-10-18T21:10:16.3437607+02:00",
-      "timePlayed": "00:00:50.6852319"
+      "lastLoaded": "2023-10-18T23:21:15.7833671+02:00",
+      "lastPlayed": "2023-10-18T23:21:41.8853909+02:00",
+      "timePlayed": "00:01:16.7872557"
     }
   ],
   "Mograine": [],

@@ -16,21 +16,21 @@
   {
     "name": "Splintered Skeleton",
     "kind": "Common",
-    "portrait": "PortraitChicken",
+    "portrait": "PortraitSkeletonDark",
     "vitality": 1.0,
     "abilities": {}
   },
   {
     "name": "Lady Illucia Barov",
     "kind": "Elite",
-    "portrait": "PortraitCow",
+    "portrait": "PortraitLadyIlluciaBarov",
     "vitality": 3.0,
     "abilities": {}
   },
   {
     "name": "Risen Bonewarder",
     "kind": "Common",
-    "portrait": "PortraitChicken",
+    "portrait": "PortraitSkeletalMage",
     "vitality": 1.0,
     "abilities": {}
   },
@@ -2447,7 +2447,7 @@
   {
     "name": "Theramore Deserter",
     "kind": "Common",
-    "portrait": "PortraitChicken",
+    "portrait": "PortraitTheramoreDeserter",
     "vitality": 1.0,
     "abilities": {}
   },
