@@ -47,16 +47,32 @@ public class Blueprint
     public static List<Blueprint> windowBlueprints = new()
     {
         new("TitleScreenMenu", () => {
-            SetAnchor(Center);
-            AddHeaderGroup();
+            SetAnchor(Top);
+            AddRegionGroup();
+            SetRegionGroupWidth(130);
+            SetRegionGroupHeight(354);
+            AddPaddingRegion(() =>
+            {
+                AddLine("", "Gray");
+                AddLine("", "Gray");
+                AddLine("Maladath", "Epic", "Center");
+                AddLine("Chronicles", "Epic", "Center");
+                AddLine("0.4.0", "Black", "Center");
+                AddLine("", "Gray");
+                AddLine("", "Gray");
+                AddLine("", "Gray");
+                AddLine("", "Gray");
+                AddLine("", "Gray");
+                AddLine("", "Gray");
+                AddLine("", "Gray");
+            });
             AddHeaderRegion(() =>
             {
-                AddLine("Menu", "Gray");
+                AddLine("Menu", "Gray", "Center");
             });
-            AddRegionGroup();
             AddButtonRegion(() =>
             {
-                AddLine("Singleplayer", "Black");
+                AddLine("Singleplayer", "", "Center");
             },
             (h) =>
             {
@@ -67,7 +83,7 @@ public class Blueprint
             });
             AddButtonRegion(() =>
             {
-                AddLine("Settings", "Black");
+                AddLine("Settings", "", "Center");
             },
             (h) =>
             {
@@ -82,14 +98,14 @@ public class Blueprint
             //{
 
             //});
-            //AddButtonRegion(() =>
-            //{
-            //    AddLine("Graveyard", "Black");
-            //},
-            //(h) =>
-            //{
+            AddButtonRegion(() =>
+            {
+                AddLine("Graveyard", "", "Center");
+            },
+            (h) =>
+            {
 
-            //});
+            });
             //AddButtonRegion(() =>
             //{
             //    AddLine("Dev panel", "Black");
@@ -98,25 +114,32 @@ public class Blueprint
             //{
             //    SpawnDesktopBlueprint("DevPanel");
             //});
-            //AddButtonRegion(() =>
-            //{
-            //    AddLine("Credits", "Black");
-            //},
-            //(h) =>
-            //{
-            //    //BLIZZARD: MUSIC, SOUNDS AND TEXTURES
-            //    //POOH: PROGRAMMING, DESIGN, 
-            //    //RYVED & LEKRIS: CONSULTATION AND ADVICE
-            //    //SPECIAL THANKS: ALL OF DISCO ADVANCE FOR BEING THE BEST TEAM EVER
-            //});
             AddButtonRegion(() =>
             {
-                AddLine("Exit", "Black");
+                AddLine("Credits", "", "Center");
+            },
+            (h) =>
+            {
+                //BLIZZARD: MUSIC, SOUNDS AND TEXTURES
+                //POOH: PROGRAMMING, DESIGN, 
+                //RYVED & LEKRIS: CONSULTATION AND ADVICE
+                //SPECIAL THANKS: ALL OF DISCO ADVANCE FOR BEING THE BEST TEAM EVER
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("Exit", "", "Center");
             },
             (h) =>
             {
                 Application.Quit();
             });
+            AddPaddingRegion(() => { });
+            var maladathIcon = new GameObject("MaladathIcon", typeof(SpriteRenderer));
+            maladathIcon.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Textures/MaladathIcon");
+            maladathIcon.GetComponent<SpriteRenderer>().sortingLayerName = "Upper";
+            maladathIcon.GetComponent<SpriteRenderer>().sortingOrder = 1;
+            maladathIcon.transform.parent = LBDesktop.LBWindow.transform;
+            maladathIcon.transform.localPosition = new Vector3(69, -184);
         }, true),
         new("TitleScreenSingleplayer", () => {
             SetAnchor(Bottom);
@@ -1749,62 +1772,6 @@ public class Blueprint
                 h.region.regionGroup.window.desktop.RebuildAll();
             });
         }),
-        new("CharacterNeckSlot", () => {
-            SetAnchor(-98, 74);
-            PrintEquipmentItem(currentSave.player.GetItemInSlot("Neck"));
-        }),
-        new("CharacterBackSlot", () => {
-            SetAnchor(-98, 22);
-            PrintEquipmentItem(currentSave.player.GetItemInSlot("Back"));
-        }),
-        new("CharacterRingSlot", () => {
-            SetAnchor(-98, -30);
-            PrintEquipmentItem(currentSave.player.GetItemInSlot("Finger"));
-        }),
-        new("CharacterHeadSlot", () => {
-            SetAnchor(-46, 100);
-            PrintEquipmentItem(currentSave.player.GetItemInSlot("Head"));
-        }),
-        new("CharacterChestSlot", () => {
-            SetAnchor(-46, 48);
-            PrintEquipmentItem(currentSave.player.GetItemInSlot("Chest"));
-        }),
-        new("CharacterLegsSlot", () => {
-            SetAnchor(-46, -4);
-            PrintEquipmentItem(currentSave.player.GetItemInSlot("Legs"));
-        }),
-        new("CharacterFeetSlot", () => {
-            SetAnchor(-46, -56);
-            PrintEquipmentItem(currentSave.player.GetItemInSlot("Feet"));
-        }),
-        new("CharacterShouldersSlot", () => {
-            SetAnchor(6, 100);
-            PrintEquipmentItem(currentSave.player.GetItemInSlot("Shoulders"));
-        }),
-        new("CharacterHandsSlot", () => {
-            SetAnchor(6, 48);
-            PrintEquipmentItem(currentSave.player.GetItemInSlot("Hands"));
-        }),
-        new("CharacterWaistSlot", () => {
-            SetAnchor(6, -4);
-            PrintEquipmentItem(currentSave.player.GetItemInSlot("Waist"));
-        }),
-        new("CharacterSpecialSlot", () => {
-            SetAnchor(6, -56);
-            PrintEquipmentItem(currentSave.player.GetItemInSlot("Special"));
-        }),
-        new("CharacterMainHandSlot", () => {
-            SetAnchor(58, 74);
-            PrintEquipmentItem(currentSave.player.GetItemInSlot("Main Hand"));
-        }),
-        new("CharacterOffHandSlot", () => {
-            SetAnchor(58, 22);
-            PrintEquipmentItem(currentSave.player.GetItemInSlot("Off Hand"));
-        }),
-        new("CharacterTrinketSlot", () => {
-            SetAnchor(58, -30);
-            PrintEquipmentItem(currentSave.player.GetItemInSlot("Trinket"));
-        }),
         new("CharacterStats", () => {
             SetAnchor(TopLeft);
             AddRegionGroup();
@@ -1858,7 +1825,7 @@ public class Blueprint
             DisableShadows();
             AddRegionGroup();
             SetRegionGroupWidth(228);
-            SetRegionGroupHeight(342);
+            SetRegionGroupHeight(354);
             AddHeaderRegion(() =>
             {
                 AddLine("Side: " + creationSide);
@@ -2202,24 +2169,6 @@ public class Blueprint
                     AddLine(value + "", value == 0 ? "DarkGray" : (value < Board.board.enemy.MaxResource(element) ? "Gray" : "Green"));
                 });
         }),
-        new("ReturnToMap", () => {
-            SetAnchor(TopRight);
-            AddRegionGroup();
-            AddHeaderRegion(() =>
-            {
-                AddSmallButton("OtherClose",
-                (h) =>
-                {
-                    var title = CDesktop.title;
-                    SwitchDesktop("Map");
-                    if (title == "TalentScreen")
-                        PlaySound("DesktopTalentScreenClose");
-                    else if (title == "SpellbookScreen")
-                        PlaySound("DesktopSpellbookScreenClose");
-                    CloseDesktop(title);
-                });
-            });
-        }, true),
         new("Console", () => {
             SetAnchor(Top);
             AddRegionGroup();
@@ -7089,21 +7038,6 @@ public class Blueprint
         new("CharacterSheet", () =>
         {
             SetDesktopBackground("Stone");
-            SpawnWindowBlueprint("ReturnToMap");
-            SpawnWindowBlueprint("CharacterNeckSlot");
-            SpawnWindowBlueprint("CharacterBackSlot");
-            SpawnWindowBlueprint("CharacterRingSlot");
-            SpawnWindowBlueprint("CharacterHeadSlot");
-            SpawnWindowBlueprint("CharacterChestSlot");
-            SpawnWindowBlueprint("CharacterLegsSlot");
-            SpawnWindowBlueprint("CharacterFeetSlot");
-            SpawnWindowBlueprint("CharacterShouldersSlot");
-            SpawnWindowBlueprint("CharacterHandsSlot");
-            SpawnWindowBlueprint("CharacterWaistSlot");
-            SpawnWindowBlueprint("CharacterSpecialSlot");
-            SpawnWindowBlueprint("CharacterMainHandSlot");
-            SpawnWindowBlueprint("CharacterOffHandSlot");
-            SpawnWindowBlueprint("CharacterTrinketSlot");
             SpawnWindowBlueprint("CharacterStats");
             SpawnWindowBlueprint("ExperienceBar");
             AddHotkey(C, () =>

@@ -78,7 +78,7 @@ public class Starter : MonoBehaviour
         //In case of Unity debugging set data directory
         //to that of the build so we don't have to store game data in two places
         #if (UNITY_EDITOR)
-        prefix = "D:/Games/Warcraft Elements/";
+        prefix = "D:/Games/Maladath/";
         #endif
 
         #endregion
