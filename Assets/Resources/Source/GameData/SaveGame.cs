@@ -61,6 +61,9 @@ public class SaveGame
     //Overall time player played this character
     public TimeSpan timePlayed;
 
+    //Keeps information about last visited talents page
+    public int lastVisitedTalents;
+
     //Provides information which background should be used for character
     //logging screen which will depend on the place of the logout
     public string LoginBackground()

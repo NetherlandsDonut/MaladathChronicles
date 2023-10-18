@@ -9,8 +9,14 @@ public class Talent
 {
     //Row and column of the talent in the talent tree
     //There are three columns: 0, 1 and 2
-    //There are eleven rows from 0 to 10 with row 10 being reserved for the most powerful abilities
+    //There are five rows from 0 to 4 with row 4 being reserved for the most powerful abilities
     public int row, col;
+
+    //Index of the tree, for each specialisation there are two trees
+    //The first one marked with 0 is the Novice tree, the second one
+    //marked with a 1 is the Adept tree that is unlocked after 50%
+    //of the Novice tree has been unlocked on a character
+    public int tree;
 
     //Name of the ability provided by this talent
     public string ability;
@@ -25,41 +31,42 @@ public class Talent
     public bool defaultTaken;
 
     //Prints the talent on the screen for it to be picked
-    public static void PrintTalent(int tree, int row, int col)
+    public static Talent PrintTalent(int spec, int row, int col, int tree)
     {
-        SetAnchor((tree == 0 ? 147 : -301) + 57 * col, -57 * row + 142);
+        var playerSpec = currentSave.player.Spec();
+        var talent = playerSpec.talentTrees[spec].talents.Find(x => x.row == row && x.col == col && x.tree == tree);
+        SetAnchor((tree == 0 ? -301 : 147) + 57 * col, -57 * row + 142);
         AddRegionGroup();
         AddPaddingRegion(() =>
         {
-            var playerSpec = currentSave.player.Spec();
-            var talent = playerSpec.talentTrees[tree].talents.Find(x => x.row == row && x.col == col);
-            var previousTalent = currentSave.player.PreviousTalent(tree, talent);
+            var previousTalent = currentSave.player.PreviousTalent(spec, talent);
             var previousTalentDistance = previousTalent == null ? 0 : talent.row - previousTalent.row;
             var abilityObj = abilities.Find(x => x.name == talent.ability);
             AddBigButton(abilities.Find(x => x.name == talent.ability).icon,
                 (h) =>
                 {
-                    var canPick = currentSave.player.CanPickTalent(tree, talent);
-                    if (!currentSave.player.abilities.Contains(talent.ability) && currentSave.player.CanPickTalent(tree, talent))
+                    if (currentSave.player.CanPickTalent(spec, talent))
                     {
                         currentSave.player.unspentTalentPoints--;
                         PlaySound("DesktopTalentAcquired", 0.2f);
-                        currentSave.player.abilities.Add(talent.ability);
+                        if (currentSave.player.abilities.ContainsKey(talent.ability))
+                            currentSave.player.abilities[talent.ability]++;
+                        else currentSave.player.abilities.Add(talent.ability, 0);
                         CDesktop.RebuildAll();
                     }
                 },
                 null,
                 (h) => () =>
                 {
-                    PrintAbilityTooltip(currentSave.player, null, abilities.Find(x => x.name == talent.ability));
+                    PrintAbilityTooltip(currentSave.player, null, abilities.Find(x => x.name == talent.ability), currentSave.player.abilities.ContainsKey(talent.ability) ? (currentSave.player.abilities[talent.ability] == abilities.Find(x => x.name == talent.ability).ranks.Count - 1 ? currentSave.player.abilities[talent.ability] : currentSave.player.abilities[talent.ability] + 1) : 0);
                 }
             );
-            if (currentSave.player.abilities.Contains(talent.ability))
+            if (currentSave.player.abilities.ContainsKey(talent.ability) && !currentSave.player.CanPickTalent(tree, talent))
                 AddBigButtonOverlay("OtherGlowLearned");
             else
             {
-                var canPick = currentSave.player.CanPickTalent(tree, talent);
-                if (currentSave.player.CanPickTalent(tree, talent)) AddBigButtonOverlay("OtherGlowLearnable");
+                var canPick = currentSave.player.CanPickTalent(spec, talent);
+                if (currentSave.player.CanPickTalent(spec, talent)) AddBigButtonOverlay("OtherGlowLearnable");
                 else
                 {
                     SetBigButtonToGrayscale();
@@ -69,7 +76,7 @@ public class Talent
             if (talent.inherited)
             {
                 GameObject body = null;
-                if (currentSave.player.abilities.Contains(previousTalent.ability))
+                if (currentSave.player.abilities.ContainsKey(previousTalent.ability))
                 {
                     body = AddBigButtonOverlay("OtherTalentArrowFillBody");
                     body.transform.localPosition = new Vector3(0, 26, 0);
@@ -83,5 +90,6 @@ public class Talent
                 AddBigButtonOverlay("OtherTalentArrowHead");
             }
         });
+        return talent;
     }
 }

@@ -159,9 +159,9 @@ public class FutureBoard
     public void CallEvents(FutureEntity entity, FutureBoard board, Dictionary<string, string> triggerData)
     {
         foreach (var ability in entity == player ? Board.board.playerCombatAbilities : Board.board.enemyCombatAbilities)
-            ability.ExecuteEvents(null, board, triggerData);
+            ability.Key.ExecuteEvents(null, board, triggerData, ability.Value);
         foreach (var buff in entity.buffs)
-            buff.Item1.ExecuteEvents(null, board, triggerData, (buff.Item1, buff.Item2, null));
+            buff.Item1.ExecuteEvents(null, board, triggerData, (buff.Item1, buff.Item2, null, buff.Item3));
     }
 
     public void EndTurn()

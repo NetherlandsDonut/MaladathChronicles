@@ -20,6 +20,7 @@ public class Region : MonoBehaviour
     public List<LineBigButton> bigButtons;
     public int currentHeight, xExtend, yExtend;
     public RegionBackgroundType backgroundType;
+    public Sprite backgroundImage;
     public GameObject background;
     public GameObject[] borders;
 

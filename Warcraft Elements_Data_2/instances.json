@@ -276,11 +276,11 @@
           },
           {
             "Requisite": "EliteKilled",
-            "AreaName": "Great Ossuary"
+            "AreaName": "The Great Ossuary"
           },
           {
             "Requisite": "EliteKilled",
-            "AreaName": "Viewing Room"
+            "AreaName": "The Viewing Room"
           },
           {
             "Requisite": "EliteKilled",

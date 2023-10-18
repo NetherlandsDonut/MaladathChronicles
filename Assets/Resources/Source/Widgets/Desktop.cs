@@ -104,8 +104,8 @@ public class Desktop : MonoBehaviour
             Starter.LoadData();
             if (Board.board != null)
             {
-                Board.board.playerCombatAbilities = Board.board.playerCombatAbilities.Select(x => Ability.abilities.Find(y => x.name == y.name)).ToList();
-                Board.board.enemyCombatAbilities = Board.board.enemyCombatAbilities.Select(x => Ability.abilities.Find(y => x.name == y.name)).ToList();
+                Board.board.playerCombatAbilities = Board.board.playerCombatAbilities.ToDictionary(x => Ability.abilities.Find(y => x.Key.name == y.name), x => x.Value);
+                Board.board.enemyCombatAbilities = Board.board.enemyCombatAbilities.ToDictionary(x => Ability.abilities.Find(y => x.Key.name == y.name), x => x.Value);
             }
             if (title == "Map")
             {

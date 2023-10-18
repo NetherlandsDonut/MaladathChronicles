@@ -3,30 +3,45 @@
     "name": "Acid Rain",
     "icon": "AbilityAcid",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Adjudication",
     "icon": "AbilityAdjudication",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Aetherial Kindling",
     "icon": "AbilityAetherialKindling",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Agonizing Corruption",
     "icon": "AbilityAgonizingCorruption",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Amplification",
     "icon": "AbilityAmplification",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -53,30 +68,45 @@
     "name": "Ancestral Guidance",
     "icon": "AbilityAncestralGuidance",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Ancestral Vigor",
     "icon": "AbilityAncestralVigor",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Anticipation",
     "icon": "AbilityAnticipation",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Apex Predator",
     "icon": "AbilityApexPredator",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Arcane Barrage",
     "icon": "AbilityArcaneBarrage",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -108,18 +138,27 @@
     "name": "Arcane Blast",
     "icon": "AbilityArcaneBlast",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Arcane Bombardment",
     "icon": "AbilityArcaneBombardment",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Arcane Harmony",
     "icon": "AbilityArcaneHarmony",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -151,6 +190,9 @@
     "cost": {
       "Arcane": 6
     },
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -349,6 +391,9 @@
     "name": "Arcane Tempo",
     "icon": "AbilityArcaneTempo",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -375,6 +420,9 @@
     "name": "Arcing Cleaves",
     "icon": "AbilityArcingCleaves",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -401,6 +449,9 @@
     "name": "Ardent Defender",
     "icon": "AbilityArdentDefender",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -430,30 +481,45 @@
     "name": "Ashen Catalyst",
     "icon": "AbilityAshenCatalyst",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Astral Communion",
     "icon": "AbilityAstralCommunion",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Astral Invocation",
     "icon": "AbilityAstralInvocation",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Avenger's Shield",
     "icon": "AbilityAvenger'sShield",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Avenging Wrath",
     "icon": "AbilityAvengingWrath",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -484,30 +550,45 @@
     "name": "Barkskin",
     "icon": "AbilityBarkskin",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Barricade of Faith",
     "icon": "AbilityBarricadeofFaith",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Bastion of Light",
     "icon": "AbilityBastionofLight",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Battle Shout",
     "icon": "AbilityBattleShout",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Beacon of the Lightbringer",
     "icon": "AbilityBeaconoftheLightbringer",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
@@ -520,6 +601,9 @@
       "Fire": 4,
       "Shadow": 4
     },
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -546,12 +630,18 @@
     "name": "Benediction",
     "icon": "AbilityBenediction",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Berserk",
     "icon": "AbilityBerserk",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -582,12 +672,18 @@
     "name": "Berserker Rage",
     "icon": "AbilityBerserkerRage",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Blackout",
     "icon": "AbilityBlackout",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
@@ -600,6 +696,9 @@
       "Earth": 2,
       "Order": 2
     },
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -643,18 +742,27 @@
     "name": "Blades of Light",
     "icon": "AbilityBladesofLight",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Bladestorm",
     "icon": "AbilityBladestorm",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Blast Wave",
     "icon": "AbilityBlastWave",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
@@ -666,6 +774,9 @@
       "Fire": 4,
       "Earth": 2
     },
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -694,18 +805,27 @@
     "name": "Blessed Champion",
     "icon": "AbilityBlessedChampion",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Blessed Recovery",
     "icon": "AbilityBlessedRecovery",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Blessing of Kings",
     "icon": "AbilityBlessingofKings",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
@@ -717,6 +837,9 @@
       "Air": 2,
       "Lightning": 4
     },
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -748,6 +871,9 @@
     "name": "Blessing of Wisdom",
     "icon": "AbilityBlessingofWisdom",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
@@ -762,6 +888,9 @@
       "Frost": 10,
       "Air": 10
     },
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -788,18 +917,27 @@
     "name": "Bloodrage",
     "icon": "AbilityBloodrage",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Bloodthirst",
     "icon": "AbilityBloodthirst",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Bone Chilling",
     "icon": "AbilityBoneChilling",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -826,24 +964,36 @@
     "name": "Boundless Judgement",
     "icon": "AbilityBoundlessJudgement",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Boundless Salvation",
     "icon": "AbilityBoundlessSalvation",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Bow Proficiency",
     "icon": "AbilityBowProficiency",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Brain Freeze",
     "icon": "AbilityBrainFreeze",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -901,30 +1051,45 @@
     "name": "Brutal Swipes",
     "icon": "AbilityBrutalSwipes",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Bulwark of Order",
     "icon": "AbilityBulwarkofOrder",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Call of Thunder",
     "icon": "AbilityAcid",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Capacitor Totem",
     "icon": "AbilityBrilliance",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Cascading Power",
     "icon": "AbilityCascadingPower",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -951,18 +1116,27 @@
     "name": "Chain Lightning",
     "icon": "AbilityChainLightning",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Channel Demonfire",
     "icon": "AbilityChannelDemonfire",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Chaos Bolt",
     "icon": "AbilityChaosBolt",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -1005,12 +1179,18 @@
     "name": "Charge",
     "icon": "AbilityCharge",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Cleanse",
     "icon": "AbilityCleanse",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
@@ -1022,6 +1202,9 @@
       "Earth": 4,
       "Air": 4
     },
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -1066,12 +1249,18 @@
     "name": "Cloth Proficiency",
     "icon": "AbilityClothProficiency",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Combustion",
     "icon": "AbilityCombustion",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -1104,6 +1293,9 @@
     "name": "Concentrated Power",
     "icon": "AbilityConcentratedPower",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -1130,6 +1322,9 @@
     "name": "Concentration",
     "icon": "AbilityConcentration",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -1156,12 +1351,18 @@
     "name": "Concetration",
     "icon": "AbilityConcetration",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Conflagration",
     "icon": "AbilityConflagration",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -1188,6 +1389,9 @@
     "name": "Consecrated Ground",
     "icon": "AbilityConsecratedGround",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
@@ -1200,6 +1404,9 @@
       "Earth": 2,
       "Order": 2
     },
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -1231,12 +1438,18 @@
     "name": "Continuous Waves",
     "icon": "AbilityAcid",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Convection",
     "icon": "AbilityConvection",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -1263,18 +1476,27 @@
     "name": "Converging Storms",
     "icon": "AbilityAcid",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Conviction",
     "icon": "AbilityConviction",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Convoke the Spirits",
     "icon": "AbilityConvoketheSpirits",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
@@ -1289,6 +1511,9 @@
       "Shadow": 2,
       "Decay": 5
     },
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -1350,30 +1575,45 @@
     "name": "Corruption of the Earth",
     "icon": "AbilityCreatureCursed01",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Cosmic Rapidity",
     "icon": "AbilityCosmicRapidity",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Crash Lightning",
     "icon": "AbilityCrashLightning",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Creeping Death",
     "icon": "AbilityCreepingDeath",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Critical Mass",
     "icon": "AbilityCriticalMass",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -1400,12 +1640,18 @@
     "name": "Crossbow Proficiency",
     "icon": "AbilityCrossbowProficiency",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Cruel Winter",
     "icon": "AbilityCruelWinter",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -1432,30 +1678,45 @@
     "name": "Cruelty",
     "icon": "AbilityCruelty",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Crusade",
     "icon": "AbilityCrusade",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Crusader's Resolve",
     "icon": "AbilityCrusader'sResolve",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Cryopathy",
     "icon": "AbilityCryopathy",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Cultivation",
     "icon": "AbilityCultivation",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
@@ -1470,6 +1731,9 @@
       "Shadow": 7,
       "Fire": 5
     },
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -1545,36 +1809,54 @@
     "name": "Curse of Thorns",
     "icon": "AbilityThorns",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Curse of Tongues",
     "icon": "AbilityCurseofTongues",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Curse of Weakness",
     "icon": "AbilityCurseofWeakness",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Cyclone",
     "icon": "AbilityCyclone",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Dagger Proficiency",
     "icon": "AbilityDaggerProficiency",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Dash",
     "icon": "AbilityDash",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
@@ -1589,6 +1871,9 @@
       "Air": 5,
       "Earth": 10
     },
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -1615,6 +1900,9 @@
     "name": "Deep Impact",
     "icon": "AbilityDeepImpact",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -1641,6 +1929,9 @@
     "name": "Deep Shatter",
     "icon": "AbilityDeepShatter",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -1667,24 +1958,36 @@
     "name": "Deep Wounds",
     "icon": "AbilityDeepWounds",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Defiance",
     "icon": "AbilityDefiance",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Deflection",
     "icon": "AbilityDeflection",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Deluge",
     "icon": "AbilityDeluge",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
@@ -1696,6 +1999,9 @@
     "cost": {
       "Shadow": 6
     },
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -1722,210 +2028,315 @@
     "name": "Demonic Embrace",
     "icon": "AbilityDemonicEmbrace",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Demoralizing Shout",
     "icon": "AbilityDemoralizingShout",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Desperate Prayer",
     "icon": "AbilityDesperatePrayer",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Devouring Plague",
     "icon": "AbilityDevouringPlague",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Dire Fixation",
     "icon": "AbilityDireFixation",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Divine Auxiliary",
     "icon": "AbilityDivineAuxiliary",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Divine Favor",
     "icon": "AbilityDivineFavor",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Divine Fury",
     "icon": "AbilityDivineFury",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Divine Intervention",
     "icon": "AbilityDivineIntervention",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Divine Revelations",
     "icon": "AbilityDivineRevelations",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Divine Shield",
     "icon": "AbilityDivineShield",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Divine Spirit",
     "icon": "AbilityDivineSpirit",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Divine Storm",
     "icon": "AbilityDivineStorm",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Divine Wrath",
     "icon": "AbilityDivineWrath",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Doom Winds",
     "icon": "AbilitySkyreachFourWind",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Downpour",
     "icon": "AbilityAcid",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Dragon's Breath",
     "icon": "AbilityDragonsBreath",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Drain Soul",
     "icon": "AbilityDrainSoul",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Draw Spirit",
     "icon": "AbilityDrawSpirit",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Dream Fog",
     "icon": "AbilityDeadEye",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Dual Wielding Proficiency",
     "icon": "AbilityAbolishMagic",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Earth Shield",
     "icon": "AbilityEarthShield",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Earth Shock",
     "icon": "AbilityEarthShock",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Earthen Harmony",
     "icon": "AbilityEarthenHarmony",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Earthquake",
     "icon": "AbilityEarthquake",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Echo of the Elements",
     "icon": "AbilityEchooftheElements",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Echoes of Great Sundering",
     "icon": "AbilityEchoesofGreatSundering",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Eclipse",
     "icon": "AbilityEclipse",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Efflorescence",
     "icon": "AbilityEfflorescence",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Elemental Assault",
     "icon": "AbilityElementalAssault",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Elemental Equilibrium",
     "icon": "AbilityElementalAbsorption",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Elemental Warding",
     "icon": "AbilityManaTree",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Embrace of the Dream",
     "icon": "AbilityEmbraceoftheDream",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Empyrean Power",
     "icon": "AbilityEmpyreanPower",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Enlightenment",
     "icon": "AbilityEnlightenment",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -1952,48 +2363,72 @@
     "name": "Enraged Regeneration",
     "icon": "AbilityEnragedRegeneration",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Eradication",
     "icon": "AbilityEradication",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Evocation",
     "icon": "AbilityEvocation",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Execute",
     "icon": "AbilityExecute",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Executioner's Will",
     "icon": "AbilityExecutioner'sWill",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Eye of The Storm",
     "icon": "AbilityEyeOfTheStorm",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Fade",
     "icon": "AbilityFade",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Faerie Fire",
     "icon": "AbilityFaerieFire",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
@@ -2006,6 +2441,9 @@
       "Shadow": 3,
       "Fire": 3
     },
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -2032,24 +2470,36 @@
     "name": "Feline Swiftness",
     "icon": "AbilityFelineSwiftness",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Feral Spirit",
     "icon": "AbilityFeralSpirit",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Ferocious Bite",
     "icon": "AbilityFerociousBite",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Fervent Flickering",
     "icon": "AbilityFerventFlickering",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -2076,6 +2526,9 @@
     "name": "Fiery Rush",
     "icon": "AbilityFieryRush",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -2102,12 +2555,18 @@
     "name": "Final Verdict",
     "icon": "AbilityFinalVerdict",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Fingers of Frost",
     "icon": "AbilityFingersOfFrost",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -2139,6 +2598,9 @@
       "Fire": 4,
       "Air": 2
     },
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -2196,6 +2658,20 @@
     "cost": {
       "Fire": 4
     },
+    "ranks": [
+      {
+        "#1": "2,9"
+      },
+      {
+        "#1": "3,0"
+      },
+      {
+        "#1": "3,1"
+      },
+      {
+        "#1": "3,2"
+      }
+    ],
     "events": [
       {
         "triggers": [
@@ -2218,7 +2694,7 @@
             "Affect": "Other",
             "PowerType": "Spell",
             "PowerSource": "Effector",
-            "PowerScale": "2.9",
+            "PowerScale": "#1",
             "ShatterTarget": "Other",
             "ShatterType": "Central",
             "ShatterDensity": "2",
@@ -2247,7 +2723,7 @@
             },
             {
               "Color": "Fire",
-              "Text": "PowerRange(Effector, Spell, 2.9, 1)",
+              "Text": "PowerRange(Effector, Spell, #1, 1)",
               "Split": "No"
             },
             {
@@ -2273,6 +2749,9 @@
     "name": "Firemind",
     "icon": "AbilityFiremind",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -2329,12 +2808,18 @@
     "name": "Fist Weapon Proficiency",
     "icon": "AbilityFistWeaponProficiency",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Flame Patch",
     "icon": "AbilityFlamePatch",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -2361,30 +2846,45 @@
     "name": "Flame Shock",
     "icon": "AbilityFlameShock",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Flamestrike",
     "icon": "AbilityFlamestrike",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Flametongue Weapon",
     "icon": "AbilityFlameTounge",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Flash Flood",
     "icon": "AbilityFlashFlood",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Flash Freeze",
     "icon": "AbilityFlashFreeze",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -2411,42 +2911,63 @@
     "name": "Flash of Light",
     "icon": "AbilityFlashofLight",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Flash of Lightning",
     "icon": "AbilityLightningOverload",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Flourish",
     "icon": "AbilityFlourish",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Flow of Power",
     "icon": "AbilityAcid",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Force of Will",
     "icon": "AbilityForceofWill",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Forceful Winds",
     "icon": "AbilityAcid",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Foresight",
     "icon": "AbilityForesight",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -2503,6 +3024,9 @@
     "name": "Frantic Momentum",
     "icon": "AbilityFranticMomentum",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
@@ -2517,6 +3041,9 @@
       "Air": 6,
       "Water": 2
     },
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -2543,6 +3070,9 @@
     "name": "Frost Channeling",
     "icon": "AbilityFrostChanneling",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -2569,18 +3099,27 @@
     "name": "Frost Shock",
     "icon": "AbilityFrostShock",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Frost Ward",
     "icon": "AbilityFrostWard",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Frostbite",
     "icon": "AbilityFrostbite",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -2612,6 +3151,9 @@
     "cost": {
       "Frost": 4
     },
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -2686,36 +3228,54 @@
     "name": "Frostbrand Weapon",
     "icon": "AbilityFrostBrand",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Further Beyond",
     "icon": "AbilityFurtherBeyond",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Glorious Dawn",
     "icon": "AbilityGloriousDawn",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Growl",
     "icon": "AbilityGrowl",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Gun Proficiency",
     "icon": "AbilityGunProficiency",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Hailstones",
     "icon": "AbilityHailstones",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -2748,6 +3308,9 @@
       "Order": 8,
       "Air": 2
     },
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -2774,24 +3337,36 @@
     "name": "Hammer of Wrath",
     "icon": "AbilityHammerofWrath",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Hamstring",
     "icon": "AbilityHamstring",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Hand of the Protector",
     "icon": "AbilityHandoftheProtector",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Harmonic Echo",
     "icon": "AbilityHarmonicEcho",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -2818,6 +3393,9 @@
     "name": "Harmonic Echo",
     "icon": "AbilityHarmonicEcho",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -2844,48 +3422,72 @@
     "name": "Harmonious Blooming",
     "icon": "AbilityHarmoniousBlooming",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Haunt",
     "icon": "AbilityHaunt",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Havoc",
     "icon": "AbilityHavoc",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Heal",
     "icon": "AbilityHeal",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Healing Focus",
     "icon": "AbilityHealingFocus",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Healing Grace",
     "icon": "AbilityAcid",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Healing Rain",
     "icon": "AbilityHealingRain",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Healing Stream Totem",
     "icon": "AbilityTotemNatureResistance",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
@@ -2898,6 +3500,9 @@
       "Water": 6,
       "Air": 2
     },
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -2924,30 +3529,45 @@
     "name": "Health Funnel",
     "icon": "AbilityHealthFunnel",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Heart of the Crusader",
     "icon": "AbilityHeartoftheCrusader",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Heroic Strike",
     "icon": "AbilityHeroicStrike",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Hex of Weakness",
     "icon": "AbilityHexofWeakness",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Hibernate",
     "icon": "AbilityHibernate",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
@@ -2962,6 +3582,9 @@
       "Order": 4,
       "Fire": 4
     },
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -2988,42 +3611,63 @@
     "name": "Holy Light",
     "icon": "AbilityHolyLight",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Holy Nova",
     "icon": "AbilityHolyNova",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Holy Shock",
     "icon": "AbilityHolyShock",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Holy Wrath",
     "icon": "AbilityHolyWrath",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Honed Instincts",
     "icon": "AbilityHonedInstincts",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Hot Hand",
     "icon": "AbilityFieryRush",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Hot Streak",
     "icon": "AbilityHotStreak",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -3078,6 +3722,9 @@
     "name": "Hyperthermia",
     "icon": "AbilityHyperthermia",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -3110,6 +3757,9 @@
     "cost": {
       "Frost": 4
     },
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -3142,6 +3792,9 @@
       "Frost": 5,
       "Air": 2
     },
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -3168,6 +3821,9 @@
     "name": "Ice Shards",
     "icon": "AbilityIceShards",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -3194,84 +3850,126 @@
     "name": "Ice Strike",
     "icon": "AbilityFrostStrike",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Icy Flows",
     "icon": "AbilityIcyFlows",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Icy Veins",
     "icon": "AbilityIcyVeins",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Idol Proficiency",
     "icon": "AbilityIdolProficiency",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Illumination",
     "icon": "AbilityIllumination",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Imbued Infusions",
     "icon": "AbilityImbuedInfusions",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Immolate",
     "icon": "AbilityImmolate",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Incapacitating Roar",
     "icon": "AbilityIncapacitatingRoar",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Indomitable",
     "icon": "AbilityIndomitable",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Infected Wounds",
     "icon": "AbilityInfectedWounds",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Infernal Brand",
     "icon": "AbilityInfernalBrand",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Inmost Light",
     "icon": "AbilityInmostLight",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Inner Fire",
     "icon": "AbilityInnerFire",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Innervate",
     "icon": "AbilityInnervate",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
@@ -3283,6 +3981,9 @@
       "Air": 2,
       "Order": 2
     },
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -3327,78 +4028,117 @@
     "name": "Jurisdiction",
     "icon": "AbilityJurisdiction",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Killer Instinct",
     "icon": "AbilityKillerInstinct",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Kindled Malice",
     "icon": "AbilityKindledMalice",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Last Stand",
     "icon": "AbilityLastStand",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Lava Burst",
     "icon": "AbilityLavaBurst",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Lava Lash",
     "icon": "AbilityLavalash",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Lay on Hands",
     "icon": "AbilityLayonHands",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Leather Proficiency",
     "icon": "AbilityLeatherProficiency",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Lesser Heal",
     "icon": "AbilityLesserHeal",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Libram Proficiency",
     "icon": "AbilityLibramProficiency",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Lifebloom",
     "icon": "AbilityLifebloom",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Light of the Sun",
     "icon": "AbilityLightoftheSun",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Lightning Bolt",
     "icon": "AbilityLightningBolt",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -3438,66 +4178,99 @@
     "name": "Lightning Shield",
     "icon": "AbilityLightningShield",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Lightning Wave",
     "icon": "AbilityCrashingStorm",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Light's Conviction",
     "icon": "AbilityLight'sConviction",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Lightwell",
     "icon": "AbilityLightwell",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Liquid Magma Totem",
     "icon": "AbilityTotemFireResistance",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Lunar Shrapnel",
     "icon": "AbilityLunarShrapnel",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Luxuriant Soil",
     "icon": "AbilityLuxuriantSoil",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Magma Chamber",
     "icon": "AbilityMagmaChamber",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Magma Splash",
     "icon": "AbilityMagmaSplash",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Mail Proficiency",
     "icon": "AbilityMailProficiency",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Mana Adept",
     "icon": "AbilityManaAdept",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -3524,42 +4297,63 @@
     "name": "Mana Burn",
     "icon": "AbilityManaBurn",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Mana Spring Totem",
     "icon": "AbilityTotemManaRegen",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Mangle",
     "icon": "AbilityMangle",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Martyrdom",
     "icon": "AbilityMartyrdom",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Master of the Elements",
     "icon": "AbilityMasterOfElements",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Master Summoner",
     "icon": "AbilityMasterSummoner",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Meditation",
     "icon": "AbilityMeditation",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
@@ -3572,6 +4366,9 @@
     "cost": {
       "Fire": 10
     },
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -3598,24 +4395,36 @@
     "name": "Molten Assault",
     "icon": "AbilityMoltenCore",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Moonfire",
     "icon": "AbilityMoonfire",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Moonkin Form",
     "icon": "AbilityMoonkinForm",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Mortal Strike",
     "icon": "AbilityMortalStrike",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
@@ -3628,6 +4437,9 @@
     "cost": {
       "Air": 6
     },
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -3660,6 +4472,9 @@
       "Water": 4,
       "Air": 4
     },
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -3738,30 +4553,45 @@
     "name": "Natural Recovery",
     "icon": "AbilityNaturalRecovery",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Nature's Balance",
     "icon": "AbilityNaturesBalance",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Nature's Grace",
     "icon": "AbilityNaturesGrace",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Nature's Guardian",
     "icon": "AbilityNatureGuardian",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Nether Precision",
     "icon": "AbilityNetherPrecision",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -3788,84 +4618,126 @@
     "name": "Nightfall",
     "icon": "AbilityNightfall",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Noxious Breath",
     "icon": "AbilityNoxiousBreath",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Nurturing Instinct",
     "icon": "AbilityNurturingInstinct",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Oath of the Far Seer",
     "icon": "AbilityElementalOath",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Off Hand Proficiency",
     "icon": "AbilityOffHandProficiency",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "One Handed Axe Proficiency",
     "icon": "AbilityOneHandedAxeProficiency",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "One Handed Mace Proficiency",
     "icon": "AbilityOneHandedMaceProficiency",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "One Handed Sword Proficiency",
     "icon": "AbilityOneHandedSwordProficiency",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Onslaught",
     "icon": "AbilityOnslaught",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Orbit Breaker",
     "icon": "AbilityOrbitBreaker",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Overflowing Light",
     "icon": "AbilityOverflowingLight",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Overpower",
     "icon": "AbilityOverpower",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Pain And Gain",
     "icon": "AbilityPainAndGain",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Permafrost",
     "icon": "AbilityPermafrost",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -3892,6 +4764,9 @@
     "name": "Perpetual Winter",
     "icon": "AbilityPerpetualWinter",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -3918,6 +4793,9 @@
     "name": "Piercing Ice",
     "icon": "AbilityPiercingIce",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -3944,36 +4822,54 @@
     "name": "Plate Proficiency",
     "icon": "AbilityPlateProficiency",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Polearm Proficiency",
     "icon": "AbilityPolearmProficiency",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Pouch Proficiency",
     "icon": "AbilityPouchProficiency",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Power Infusion",
     "icon": "AbilityPowerInfusion",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Power of the Archdruid",
     "icon": "AbilityPoweroftheArchdruid",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Power Word: Fortitude",
     "icon": "AbilityPrayerofFortitude",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
@@ -3985,6 +4881,9 @@
     "cost": {
       "Order": 6
     },
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -4011,60 +4910,90 @@
     "name": "Prayer of Healing",
     "icon": "AbilityPrayerofHealing",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Presence of Mind",
     "icon": "AbilityPresenceofMind",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Primal Fury",
     "icon": "AbilityPrimalFury",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Primordial Fury",
     "icon": "AbilityPrimordialFury",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Prismatic Barrier",
     "icon": "AbilityPrismaticBarrier",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Prodigious Savant",
     "icon": "AbilityProdigiousSavant",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Profane Bargain",
     "icon": "AbilityProfaneBargain",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Protector of the Pack",
     "icon": "AbilityProtectorofthePack",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Psychic Scream",
     "icon": "AbilityPsychicScream",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Pursuit of Justice",
     "icon": "AbilityPursuitofJustice",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
@@ -4079,6 +5008,9 @@
       "Decay": 4,
       "Air": 2
     },
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -4105,12 +5037,18 @@
     "name": "Pyroblast",
     "icon": "AbilityPyroblast",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Pyroclasm",
     "icon": "AbilityPyroclasm",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -4137,12 +5075,18 @@
     "name": "Pyrogenics",
     "icon": "AbilityPyrogenics",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Pyromaniac",
     "icon": "AbilityPyromaniac",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -4169,114 +5113,171 @@
     "name": "Quiver Proficiency",
     "icon": "AbilityQuiverProficiency",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Raging Blow",
     "icon": "AbilityRagingBlow",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Rain of Fire",
     "icon": "AbilityRainofFire",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Rake",
     "icon": "AbilityRake",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Rampage",
     "icon": "AbilityRampage",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Recklessness",
     "icon": "AbilityRecklessness",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Reckoning",
     "icon": "AbilityReckoning",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Redoubt",
     "icon": "AbilityRedoubt",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Refreshing Waters",
     "icon": "AbilityAcid",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Regrowth",
     "icon": "AbilityRegrowth",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Rejuvenation",
     "icon": "AbilityRejuvenation",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Relentless Inquisitor",
     "icon": "AbilityRelentlessInquisitor",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Relic Proficiency",
     "icon": "AbilityRelicProficiency",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Rend",
     "icon": "AbilityRend",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Renew",
     "icon": "AbilityRenew",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Renewal",
     "icon": "AbilityRenewal",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Repentance",
     "icon": "AbilityRepentance",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Resolute Defender",
     "icon": "AbilityResoluteDefender",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Resonance",
     "icon": "AbilityResonance",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -4303,30 +5304,45 @@
     "name": "Resonant Waters",
     "icon": "AbilityAcid",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Resurgence",
     "icon": "AbilityAcid",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Retaliation",
     "icon": "AbilityRetaliation",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Revenge",
     "icon": "AbilityRevenge",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Reverberate",
     "icon": "AbilityReverberate",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -4353,36 +5369,54 @@
     "name": "Righteous Protector",
     "icon": "AbilityRighteousProtector",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Riptide",
     "icon": "AbilityRiptide",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Ritual of Ruin",
     "icon": "AbilityRitualofRuin",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Rolling Magma",
     "icon": "AbilityRollingMagma",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Sanctuary",
     "icon": "AbilitySanctuary",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Saved by the Light",
     "icon": "AbilitySavedbytheLight",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
@@ -4397,6 +5431,9 @@
       "Fire": 4,
       "Air": 2
     },
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -4470,6 +5507,9 @@
     "name": "Seal of Blood",
     "icon": "AbilitySealofBlood",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
@@ -4481,6 +5521,9 @@
       "Fire": 4,
       "Order": 2
     },
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -4515,42 +5558,63 @@
     "name": "Seal of Protection",
     "icon": "AbilitySealofProtection",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Seal of Righteousness",
     "icon": "AbilitySealofRighteousness",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Seal of Sacrifice",
     "icon": "AbilitySealofSacrifice",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Seal of Salvation",
     "icon": "AbilitySealofSalvation",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Searing Flames",
     "icon": "AbilitySearingFlames",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Searing Light",
     "icon": "AbilitySearingLight",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Searing Touch",
     "icon": "AbilitySearingTouch",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -4577,6 +5641,9 @@
     "name": "Seething Flames",
     "icon": "AbilitySeethingFlames",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
@@ -4588,6 +5655,9 @@
     "cost": {
       "Shadow": 4
     },
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -4655,18 +5725,27 @@
     "name": "Shadow Bolt Whirl",
     "icon": "AbilityShadowBolt",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Shadow Focus",
     "icon": "AbilityShadowFocus",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Shadow Weaving",
     "icon": "AbilityShadowWeaving",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
@@ -4679,6 +5758,9 @@
     "cost": {
       "Shadow": 6
     },
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -4738,6 +5820,9 @@
       "Fire": 5,
       "Shadow": 5
     },
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -4764,60 +5849,90 @@
     "name": "Shadowform",
     "icon": "AbilityShadowform",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Shield Bash",
     "icon": "AbilityShieldBash",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Shield Block",
     "icon": "AbilityShieldBlock",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Shield Proficiency",
     "icon": "AbilityShieldProficiency",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Shield Slam",
     "icon": "AbilityShieldSlam",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Shield Wall",
     "icon": "AbilityShieldWall",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Shooting Stars",
     "icon": "AbilityShootingStars",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Silent Resolve",
     "icon": "AbilitySilentResolve",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Skullsplitter",
     "icon": "AbilitySkullsplitter",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Slipstream",
     "icon": "AbilitySlipstream",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
@@ -4829,6 +5944,9 @@
     "cost": {
       "Order": 4
     },
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -4869,54 +5987,81 @@
     "name": "Solar Beam",
     "icon": "AbilitySolarBeam",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Solstice",
     "icon": "AbilitySolstice",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Spell Reflection",
     "icon": "AbilitySpellReflection",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Spell Warding",
     "icon": "AbilitySpellWarding",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Spirit of Redemption",
     "icon": "AbilitySpiritofRedemption",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Spiritual Guidance",
     "icon": "AbilitySpiritualGuidance",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Spiritual Healing",
     "icon": "AbilitySpiritualHealing",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Splintered Elements",
     "icon": "AbilitySplinteredElements",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Splitting Ice",
     "icon": "AbilitySplittingIce",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -4950,6 +6095,9 @@
       "Air": 2,
       "Decay": 4
     },
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -4976,36 +6124,54 @@
     "name": "Staff Proficiency",
     "icon": "AbilityStaffProficiency",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Star Surge",
     "icon": "AbilityStarSurge",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Starfall",
     "icon": "AbilityStarfall",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Starweaver",
     "icon": "AbilityStarweaver",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Static Accumulation",
     "icon": "AbilityStaticAccumulation",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Stellar Innervation",
     "icon": "AbilityStellarInnervation",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
@@ -5019,6 +6185,9 @@
       "Earth": 4,
       "Lightning": 4
     },
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -5045,36 +6214,54 @@
     "name": "Stormblast",
     "icon": "AbilityStormReach",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Stormflurry",
     "icon": "AbilityLightningBolt2",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Stormkeeper",
     "icon": "AbilityThunderKingLightningWhip",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Storm's Wrath",
     "icon": "AbilityAcid",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Stormstrike",
     "icon": "AbilityStormstrike",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Summon Fel Guard",
     "icon": "AbilitySummonFelGuard",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
@@ -5088,6 +6275,9 @@
       "Shadow": 10,
       "Fire": 5
     },
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -5121,6 +6311,9 @@
       "Shadow": 6,
       "Fire": 2
     },
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -5153,6 +6346,9 @@
     "cost": {
       "Fire": 20
     },
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -5203,6 +6399,9 @@
     "cost": {
       "Shadow": 12
     },
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -5229,6 +6428,9 @@
     "name": "Sun King's Blessing",
     "icon": "AbilitySunKingsBlessing",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -5255,84 +6457,126 @@
     "name": "Sundered Firmament",
     "icon": "AbilitySunderedFirmament",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Sundering",
     "icon": "AbilitySundering",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Sunfire",
     "icon": "AbilitySunfire",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Supernova",
     "icon": "AbilitySupernova",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Sweeping Strikes",
     "icon": "AbilitySweepingStrikes",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Swift Justice",
     "icon": "AbilitySwiftJustice",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Swipe",
     "icon": "AbilitySwipe",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Tail Sweep",
     "icon": "AbilityTailSweep",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Taste for Blood",
     "icon": "AbilityTasteforBlood",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Thick Hide",
     "icon": "AbilityThickHide",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Thorim's Invocation",
     "icon": "AbilityThorimsInvocation",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Thrash",
     "icon": "AbilityThrash",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Thunder Clap",
     "icon": "AbilityThunderClap",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Thundering Strikes",
     "icon": "AbilityAcid",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
@@ -5346,6 +6590,9 @@
       "Lightning": 10,
       "Air": 2
     },
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -5372,132 +6619,198 @@
     "name": "Tidal Mastery",
     "icon": "AbilityTidalWaves",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Tidebringer",
     "icon": "AbilityAcid",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Time Warp",
     "icon": "AbilityTimeWarp",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Tireless Pursuit",
     "icon": "AbilityTirelessPursuit",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Totem Proficiency",
     "icon": "AbilityTotemProficiency",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Totemic Focus",
     "icon": "AbilityTotemTranquilMind",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Tranquil Mind",
     "icon": "AbilityTranquilMind",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Tranquility",
     "icon": "AbilityTranquility",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Truth's Wake",
     "icon": "AbilityTruth'sWake",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Twin Moons",
     "icon": "AbilityTwinMoons",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Two Handed Axe Proficiency",
     "icon": "AbilityTwoHandedAxeProficiency",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Two Handed Mace Proficiency",
     "icon": "AbilityTwoHandedMaceProficiency",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Two Handed Sword Proficiency",
     "icon": "AbilityTwoHandedSwordProficiency",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Umbral Intensity",
     "icon": "AbilityUmbralIntensity",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Unbreakable Will",
     "icon": "AbilityUnbreakableWill",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Undercurrent",
     "icon": "AbilityUndercurrent",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Unrelenting Calamity",
     "icon": "AbilityAcid",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Unruly Winds",
     "icon": "AbilityAcid",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Unstable Affliction",
     "icon": "AbilityUnstableAffliction",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Unstoppable Growth",
     "icon": "AbilityUnstoppableGrowth",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Unyielding Faith",
     "icon": "AbilityUnyieldingFaith",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Vanguard of Justice",
     "icon": "AbilityVanguardofJustice",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
@@ -5511,6 +6824,9 @@
     "cost": {
       "Shadow": 4
     },
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -5546,6 +6862,9 @@
       "Air": 2,
       "Shadow": 6
     },
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -5572,12 +6891,18 @@
     "name": "Vein Ripper",
     "icon": "AbilityVeinRipper",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Vengeance",
     "icon": "AbilityVengeance",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
@@ -5591,6 +6916,9 @@
     "cost": {
       "Decay": 6
     },
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -5621,18 +6949,27 @@
     "name": "Verdancy",
     "icon": "AbilityVerdancy",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Verdant Heart",
     "icon": "AbilityVerdantHeart",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Volatile Detonation",
     "icon": "AbilityVolatileDetonation",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -5666,6 +7003,9 @@
       "Air": 2,
       "Decay": 4
     },
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -5695,24 +7035,36 @@
     "name": "Wake of Ashes",
     "icon": "AbilityWakeofAshes",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Waking Dream",
     "icon": "AbilityWakingDream",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Wand Proficiency",
     "icon": "AbilityWandProficiency",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Water Shield",
     "icon": "AbilityWaterShield",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
@@ -5726,6 +7078,9 @@
       "Shadow": 4,
       "Decay": 4
     },
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -5756,24 +7111,36 @@
     "name": "Whirlwind",
     "icon": "AbilityWhirlwind",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Wild Growth",
     "icon": "AbilityWildGrowth",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Windfury Weapon",
     "icon": "AbilityWindfury",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Wintertide",
     "icon": "AbilityWintertide",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -5806,6 +7173,9 @@
     "cost": {
       "Air": 6
     },
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -5835,24 +7205,36 @@
     "name": "Wrath",
     "icon": "AbilityWrath",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Xavius Gambit",
     "icon": "AbilityXaviusGambit",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Ysera's Gift",
     "icon": "AbilityYserasGift",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Zealot's Fervor",
     "icon": "AbilityZealot'sFervor",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   }
 ]

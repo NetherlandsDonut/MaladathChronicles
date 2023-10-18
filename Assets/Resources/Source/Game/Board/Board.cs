@@ -32,7 +32,7 @@ public class Board
         actions = new List<Action>();
     }
 
-    public Board(int x, int y, List<Ability> abilities)
+    public Board(int x, int y, Dictionary<Ability, int> abilities)
     {
         field = new int[x, y];
         player = new Entity(60, null);
@@ -60,7 +60,7 @@ public class Board
 
     public static void NewBoard(Ability testingAbility)
     {
-        board = new Board(6, 6, new List<Ability>() { testingAbility });
+        board = new Board(6, 6, new() { { testingAbility, 0 } });
         bufferBoard = new BufferBoard();
         if (testingAbility.events != null)
             board.CallEvents(board.enemy, new() { { "Trigger", "AbilityCast" }, { "AbilityName", testingAbility.name }, { "Triggerer", "Effector" } });
@@ -78,14 +78,14 @@ public class Board
     public Entity player, enemy;
     public bool playerTurn, breakForEnemy, breakForCascade, enemyFinishedMoving, playerFinishedMoving;
     public List<GameObject> temporaryElementsPlayer, temporaryElementsEnemy, temporaryBuffsPlayer, temporaryBuffsEnemy;
-    public List<Ability> playerCombatAbilities, enemyCombatAbilities;
+    public Dictionary<Ability, int> playerCombatAbilities, enemyCombatAbilities;
     public List<Action> actions;
     public SiteHostileArea area;
 
     public void CallEvents(Entity entity, Dictionary<string, string> trigger)
     {
         foreach (var ability in entity == player ? playerCombatAbilities : enemyCombatAbilities)
-            ability.ExecuteEvents(board, null, trigger);
+            ability.Key.ExecuteEvents(board, null, trigger, ability.Value);
         foreach (var buff in entity.buffs)
             buff.Item1.ExecuteEvents(board, null, trigger, buff);
     }

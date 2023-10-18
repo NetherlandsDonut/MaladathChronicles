@@ -387,9 +387,10 @@ public class Window : MonoBehaviour
                 {
                     region.background.transform.parent = region.transform;
                     region.background.GetComponent<RegionBackground>().Initialise(region);
-                    region.background.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/Backgrounds/" + region.backgroundType);
+                    region.background.GetComponent<SpriteRenderer>().sprite = region.backgroundType == Image ? region.backgroundImage : Resources.Load<Sprite>("Sprites/Building/Backgrounds/" + region.backgroundType);
                     region.background.GetComponent<SpriteRenderer>().sortingLayerName = layer;
-                    region.background.transform.localScale = new Vector3(regionGroup.AutoWidth() - 2 + region.xExtend, region.AutoHeight() + 2 + region.yExtend, 1);
+                    if (region.backgroundType == Image) region.background.transform.localScale = new Vector3(1, 1, 1);
+                    else region.background.transform.localScale = new Vector3(regionGroup.AutoWidth() - 2 + region.xExtend, region.AutoHeight() + 2 + region.yExtend, 1);
                     region.background.transform.localPosition = new Vector3(2, -2, 0.8f);
                     if (region.backgroundType == Button || region.backgroundType == RedButton)
                     {

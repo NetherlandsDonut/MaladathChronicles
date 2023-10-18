@@ -13,7 +13,7 @@ using static FlyingMissile;
 
 public class Event
 {
-    public void ExecuteEffects(Board board, FutureBoard futureBoard, string icon, Dictionary<string, string> triggerBase)
+    public void ExecuteEffects(Board board, FutureBoard futureBoard, string icon, Dictionary<string, string> triggerBase, Dictionary<string, string> variables, int sourceRank)
     {
         //Define entities that take place in the event's effects
         var effector = board == null ? null : (board.playerTurn ? board.player : board.enemy);
@@ -31,7 +31,7 @@ public class Event
             int buffDuration = effect.ContainsKey("BuffDuration") ? int.Parse(effect["BuffDuration"]) : 1;
             string powerSource = effect.ContainsKey("PowerSource") ? effect["PowerSource"] : "Effector";
             string powerType = effect.ContainsKey("PowerType") ? effect["PowerType"] : "None";
-            double powerScale = effect.ContainsKey("PowerScale") ? double.Parse(effect["PowerScale"].Replace(".", ",")) : 1;
+            double powerScale = effect.ContainsKey("PowerScale") ? double.Parse(effect["PowerScale"].StartsWith("#") ? variables[effect["PowerScale"]] : effect["PowerScale"].Replace(".", ",")) : 1;
             double chance = effect.ContainsKey("Chance") ? double.Parse(effect["Chance"].Replace(".", ",")) : 0;
             double chanceBase = effect.ContainsKey("ChanceBase") ? double.Parse(effect["ChanceBase"].Replace(".", ",")) : 100;
             string chanceSource = effect.ContainsKey("ChanceSource") ? effect["ChanceSource"] : powerSource;
@@ -216,7 +216,7 @@ public class Event
                 else if (futureBoard != null)
                 {
                     var target = affect == "Effector" ? futureEffector : futureOther;
-                    target.AddBuff(buffs.Find(x => x.name == buffName), buffDuration);
+                    target.AddBuff(buffs.Find(x => x.name == buffName), buffDuration, sourceRank);
                     futureBoard.CallEvents(target, futureBoard, new()
                     {
                         { "Trigger", "BuffAdd" },
@@ -234,7 +234,7 @@ public class Event
                 {
                     var target = affect == "Effector" ? effector : other;
                     var pos = new Vector3(affect == "Other" ? (board.playerTurn ? 166 : -302) : (board.playerTurn ? -302 : 166), 142);
-                    target.AddBuff(buffs.Find(x => x.name == buffName), buffDuration, SpawnBuffObject(pos, icon, target));
+                    target.AddBuff(buffs.Find(x => x.name == buffName), buffDuration, SpawnBuffObject(pos, icon, target), sourceRank);
                     board.CallEvents(target, new()
                     {
                         { "Trigger", "BuffAdd" },

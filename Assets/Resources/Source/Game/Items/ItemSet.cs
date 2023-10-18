@@ -13,10 +13,10 @@ public class ItemSet
             foreach (var bonus in setBonuses)
                 if (bonus.abilitiesProvided != null)
                     foreach (var ability in bonus.abilitiesProvided)
-                        if (!abilities.Exists(x => x.name == ability))
+                        if (!abilities.Exists(x => x.name == ability.Key))
                             abilities.Insert(0, new Ability()
                             {
-                                name = ability,
+                                name = ability.Key,
                                 icon = "Ability" + ability,
                                 events = new(),
                                 tags = new()
@@ -52,5 +52,5 @@ public class SetBonus
     public List<string> description;
 
     //List of all abilities provided when the wearer has at least the required amount of pieces
-    public List<string> abilitiesProvided;
+    public Dictionary<string, int> abilitiesProvided;
 }

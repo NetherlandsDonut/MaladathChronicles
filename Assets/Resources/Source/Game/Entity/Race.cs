@@ -11,11 +11,11 @@ public class Race
     {
         if (abilities != null)
             foreach (var ability in abilities)
-                if (!Ability.abilities.Exists(x => x.name == ability))
+                if (!Ability.abilities.Exists(x => x.name == ability.Key))
                     Ability.abilities.Insert(0, new Ability()
                     {
-                        name = ability,
-                        icon = "Ability" + ability.Replace(" ", ""),
+                        name = ability.Key,
+                        icon = "Ability" + ability.Key.Replace(" ", ""),
                         events = new(),
                         tags = new()
                     });
@@ -73,7 +73,7 @@ public class Race
     public Stats stats;
 
     //List of racial abilities provided to all entities of this race
-    public List<string> abilities;
+    public Dictionary<string, int> abilities;
 
     //List of possible item drops by this race
     [NonSerialized] public List<string> droppedItems;

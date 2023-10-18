@@ -30,7 +30,6 @@ using static SiteHostileArea;
 using static SiteInstance;
 using static SiteComplex;
 using static SiteTown;
-using Newtonsoft.Json.Linq;
 
 public class Blueprint
 {
@@ -326,11 +325,11 @@ public class Blueprint
                 AddPaddingRegion(() =>
                 {
                     AddLine(spec.talentTrees[0].name + ": ", "DarkGray");
-                    AddText(spec.talentTrees[0].talents.Count(x => slot.player.abilities.Contains(x.ability)) + "");
+                    AddText(spec.talentTrees[0].talents.Count(x => slot.player.abilities.ContainsKey(x.ability)) + "");
                     AddLine(spec.talentTrees[1].name + ": ", "DarkGray");
-                    AddText(spec.talentTrees[1].talents.Count(x => slot.player.abilities.Contains(x.ability)) + "");
+                    AddText(spec.talentTrees[1].talents.Count(x => slot.player.abilities.ContainsKey(x.ability)) + "");
                     AddLine(spec.talentTrees[2].name + ": ", "DarkGray");
-                    AddText(spec.talentTrees[2].talents.Count(x => slot.player.abilities.Contains(x.ability)) + "");
+                    AddText(spec.talentTrees[2].talents.Count(x => slot.player.abilities.ContainsKey(x.ability)) + "");
                 });
                 AddHeaderRegion(() => { AddLine("Enemies defeated:"); });
                 AddPaddingRegion(() =>
@@ -612,7 +611,7 @@ public class Blueprint
                     null,
                     (h) => () =>
                     {
-                        PrintAbilityTooltip(Board.board.player, Board.board.enemy, abilityObj);
+                        PrintAbilityTooltip(Board.board.player, Board.board.enemy, abilityObj, Board.board.player.abilities[abilityObj.name]);
                     }
                 );
             }
@@ -701,7 +700,7 @@ public class Blueprint
         }),
         new("SpellbookAbilityList", () => {
             SetAnchor(TopRight);
-            var activeAbilities = abilities.FindAll(x => x.cost != null && currentSave.player.abilities.Contains(x.name)).ToList();
+            var activeAbilities = abilities.FindAll(x => x.cost != null && currentSave.player.abilities.ContainsKey(x.name)).ToDictionary(x => x, x => currentSave.player.abilities[x.name]);
             AddHeaderGroup(() => activeAbilities.Count, 7);
             SetRegionGroupWidth(171);
             SetRegionGroupHeight(342);
@@ -734,10 +733,10 @@ public class Blueprint
                     if (activeAbilities.Count > index + 7 * regionGroup.pagination)
                     {
                         SetRegionBackground(RegionBackgroundType.Button);
-                        var foo = activeAbilities[index + 7 * regionGroup.pagination];
-                        AddLine(foo.name);
-                        AddSmallButton(foo.icon, (h) => { });
-                        if (currentSave.player.actionBars.Exists(x => x.ability == foo.name))
+                        var key = activeAbilities.ToList()[index + 7 * regionGroup.pagination];
+                        AddLine(key.Key.name);
+                        AddSmallButton(key.Key.icon, (h) => { });
+                        if (currentSave.player.actionBars.Exists(x => x.ability == key.Key.name))
                         {
                             SetSmallButtonToGrayscale();
                             AddSmallButtonOverlay("OtherGridBlurred");
@@ -751,10 +750,10 @@ public class Blueprint
                 },
                 (h) =>
                 {
-                    var foo = activeAbilities[index + 7 * regionGroup.pagination];
-                    if (!currentSave.player.actionBars.Exists(x => x.ability == foo.name) && currentSave.player.actionBars.Count < currentSave.player.actionBarsUnlocked)
+                    var key = activeAbilities.ToList()[index + 7 * regionGroup.pagination];
+                    if (!currentSave.player.actionBars.Exists(x => x.ability == key.Key.name) && currentSave.player.actionBars.Count < currentSave.player.actionBarsUnlocked)
                     {
-                        currentSave.player.actionBars.Add(new ActionBar(foo.name));
+                        currentSave.player.actionBars.Add(new ActionBar(key.Key.name));
                         Respawn("PlayerSpellbookInfo");
                         Respawn("SpellbookAbilityList");
                         PlaySound("DesktopActionbarAdd", 0.7f);
@@ -764,10 +763,11 @@ public class Blueprint
                 (h) => () =>
                 {
                     SetAnchor(Center);
-                    PrintAbilityTooltip(null, null, activeAbilities[index + 7 * regionGroup.pagination]);
+                    var key = activeAbilities.ToList()[index + 7 * regionGroup.pagination].Key;
+                    PrintAbilityTooltip(null, null, key, activeAbilities[key]);
                 });
             }
-            var passiveAbilities = abilities.FindAll(x => x.cost == null && currentSave.player.abilities.Contains(x.name)).ToList();
+            var passiveAbilities = abilities.FindAll(x => x.cost == null && currentSave.player.abilities.ContainsKey(x.name)).ToList();
             AddRegionGroup(() => passiveAbilities.Count, 7);
             SetRegionGroupWidth(171);
             SetRegionGroupHeight(342);
@@ -824,7 +824,8 @@ public class Blueprint
                 (h) => () =>
                 {
                     SetAnchor(Center);
-                    PrintAbilityTooltip(null, null, abilitiesSearch[index + 10 * regionGroup.pagination]);
+                    var key = activeAbilities.ToList()[index + 10 * regionGroup.pagination].Key;
+                    PrintAbilityTooltip(null, null, key, activeAbilities[key]);
                 });
             }
             //AddPaddingRegion(() =>
@@ -881,7 +882,7 @@ public class Blueprint
                         null,
                         (h) => () =>
                         {
-                            PrintAbilityTooltip(currentSave.player, null, abilityObj);
+                            PrintAbilityTooltip(currentSave.player, null, abilityObj, currentSave.player.abilities[abilityObj.name]);
                         }
                     );
                 else
@@ -1003,7 +1004,7 @@ public class Blueprint
                     null,
                     (h) => () =>
                     {
-                        PrintAbilityTooltip(Board.board.enemy, Board.board.player, abilityObj);
+                        PrintAbilityTooltip(Board.board.enemy, Board.board.player, abilityObj, Board.board.enemy.abilities[abilityObj.name]);
                     }
                 );
             }
@@ -1101,38 +1102,6 @@ public class Blueprint
                 });
             }
         }, true),
-        new("MapToolbarLefts", () => {
-            SetAnchor(TopLeft);
-            AddRegionGroup();
-            AddPaddingRegion(() =>
-            {
-                AddSmallButton("MenuCharacterSheet", (h) =>
-                {
-                    SpawnDesktopBlueprint("CharacterSheet");
-                    SwitchDesktop("CharacterSheet");
-                });
-                AddSmallButton("MenuInventory", (h) =>
-                {
-                    SpawnDesktopBlueprint("EquipmentScreen");
-                    SwitchDesktop("EquipmentScreen");
-                });
-                AddSmallButton("MenuSpellbook", (h) =>
-                {
-                    SpawnDesktopBlueprint("SpellbookScreen");
-                    SwitchDesktop("SpellbookScreen");
-                });
-                AddSmallButton("MenuSpecs", (h) =>
-                {
-                    SpawnDesktopBlueprint("TalentScreen");
-                    SwitchDesktop("TalentScreen");
-                });
-                AddSmallButton("MenuCompletion", (h) =>
-                {
-                    SpawnDesktopBlueprint("TalentScreen");
-                    SwitchDesktop("TalentScreen");
-                });
-            });
-        }, true),
         new("MapToolbar", () => {
             SetAnchor(Top);
             AddRegionGroup();
@@ -1141,59 +1110,23 @@ public class Blueprint
                 AddSmallButton("MenuCharacterSheet", (h) =>
                 {
                     SpawnDesktopBlueprint("CharacterSheet");
-                    SwitchDesktop("CharacterSheet");
                 });
                 AddSmallButton("MenuInventory", (h) =>
                 {
                     SpawnDesktopBlueprint("EquipmentScreen");
-                    SwitchDesktop("EquipmentScreen");
                 });
                 AddSmallButton("MenuSpellbook", (h) =>
                 {
                     SpawnDesktopBlueprint("SpellbookScreen");
-                    SwitchDesktop("SpellbookScreen");
                 });
                 AddSmallButton("MenuClasses", (h) =>
                 {
+                    PlaySound("DesktopTalentScreenOpen");
                     SpawnDesktopBlueprint("TalentScreen");
-                    SwitchDesktop("TalentScreen");
                 });
                 AddSmallButton("MenuCompletion", (h) =>
                 {
-                    SpawnDesktopBlueprint("TalentScreen");
-                    SwitchDesktop("TalentScreen");
-                });
-            });
-        }, true),
-        new("MapToolbarRights", () => {
-            SetAnchor(TopRight);
-            AddRegionGroup();
-            AddPaddingRegion(() =>
-            {
-                AddSmallButton("MenuCharacterSheet", (h) =>
-                {
-                    SpawnDesktopBlueprint("CharacterSheet");
-                    SwitchDesktop("CharacterSheet");
-                });
-                AddSmallButton("MenuInventory", (h) =>
-                {
-                    SpawnDesktopBlueprint("EquipmentScreen");
-                    SwitchDesktop("EquipmentScreen");
-                });
-                AddSmallButton("MenuSpellbook", (h) =>
-                {
-                    SpawnDesktopBlueprint("SpellbookScreen");
-                    SwitchDesktop("SpellbookScreen");
-                });
-                AddSmallButton("MenuSpecs", (h) =>
-                {
-                    SpawnDesktopBlueprint("TalentScreen");
-                    SwitchDesktop("TalentScreen");
-                });
-                AddSmallButton("MenuCompletion", (h) =>
-                {
-                    SpawnDesktopBlueprint("TalentScreen");
-                    SwitchDesktop("TalentScreen");
+
                 });
             });
         }, true),
@@ -1354,7 +1287,15 @@ public class Blueprint
             AddHeaderRegion(
                 () =>
                 {
-                    AddSmallButton("OtherPreviousPage", (h) => { });
+                    AddSmallButton("OtherPreviousPage", (h) =>
+                    {
+                        PlaySound("DesktopSwitchPage");
+                        currentSave.lastVisitedTalents--;
+                        if (currentSave.lastVisitedTalents < 0)
+                            currentSave.lastVisitedTalents = currentSave.player.Spec().talentTrees.Count - 1;
+                        CloseDesktop("TalentScreen");
+                        SpawnDesktopBlueprint("TalentScreen");
+                    });
                 }
             );
             AddRegionGroup();
@@ -1362,8 +1303,28 @@ public class Blueprint
             AddHeaderRegion(
                 () =>
                 {
-                    AddLine("Fire    ", "", "Center");
-                    AddSmallButton("OtherNextPage", (h) => { });
+                    AddLine(currentSave.player.Spec().talentTrees[currentSave.lastVisitedTalents].name + "    ", "", "Center");
+                    AddSmallButton("OtherNextPage", (h) =>
+                    {
+                        PlaySound("DesktopSwitchPage");
+                        currentSave.lastVisitedTalents++;
+                        if (currentSave.lastVisitedTalents >= currentSave.player.Spec().talentTrees.Count)
+                            currentSave.lastVisitedTalents = 0;
+                        CloseDesktop("TalentScreen");
+                        SpawnDesktopBlueprint("TalentScreen");
+                    });
+                }
+            );
+        }),
+        new("TalentScreenFooter", () => {
+            SetAnchor(-130, -143);
+            AddRegionGroup();
+            SetRegionGroupWidth(258);
+            AddPaddingRegion(
+                () =>
+                {
+                    AddLine(currentSave.player.unspentTalentPoints + "", currentSave.player.unspentTalentPoints > 0 ? "Green" : "DarkGray", "Center");
+                    AddText(" talent points", currentSave.player.unspentTalentPoints > 0 ? "Gray" : "DarkGray");
                 }
             );
         }),
@@ -1375,15 +1336,26 @@ public class Blueprint
             SetRegionGroupHeight(328);
             AddHeaderRegion(() =>
             {
-                AddLine("Right", "", "Center");
+                AddLine("Adept Tree", "DarkGray", "Center");
                 AddSmallButton("OtherClose", (h) =>
                 {
                     PlaySound("DesktopTalentScreenClose");
                     CloseDesktop("TalentScreen");
                 });
             });
-            AddPaddingRegion(() => SetRegionAsGroupExtender());
-            AddHeaderRegion(() => AddLine("1 / 20", "", "Center"));
+            AddPaddingRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+                SetRegionBackgroundAsImage("Sprites/Textures/Specs/" + currentSave.player.spec + currentSave.player.Spec().talentTrees[currentSave.lastVisitedTalents].name + "Right");
+                if (currentSave.player.TreeCompletion(currentSave.lastVisitedTalents, 0) < adeptTreeRequirement)
+                    SetRegionBackgroundToGrayscale();
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine(currentSave.player.TreeCompletion(currentSave.lastVisitedTalents, 1) + "", "", "Center");
+                AddText(" / ", "DarkGray");
+                AddText(currentSave.player.TreeSize(currentSave.lastVisitedTalents, 1) + "");
+            });
         }),
         new("TalentTreeLeft", () => {
             SetAnchor(TopLeft);
@@ -1392,10 +1364,19 @@ public class Blueprint
             SetRegionGroupHeight(328);
             AddHeaderRegion(() =>
             {
-                AddLine("Left", "", "Center");
+                AddLine("Novice Tree", "DarkGray", "Center");
             });
-            AddPaddingRegion(() => SetRegionAsGroupExtender());
-            AddHeaderRegion(() => AddLine("1 / 20", "", "Center"));
+            AddPaddingRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+                SetRegionBackgroundAsImage("Sprites/Textures/Specs/" + currentSave.player.spec + currentSave.player.Spec().talentTrees[currentSave.lastVisitedTalents].name + "Left");
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine(currentSave.player.TreeCompletion(currentSave.lastVisitedTalents, 0) + "", "", "Center");
+                AddText(" / ", "DarkGray");
+                AddText(currentSave.player.TreeSize(currentSave.lastVisitedTalents, 0) + "");
+            });
         }),
         new("Bank", () => {
             SetAnchor(TopLeft);
@@ -2112,7 +2093,7 @@ public class Blueprint
                         {
                             SetAnchor(Top, h.window);
                             AddRegionGroup();
-                            SetRegionGroupWidth(93);
+                            SetRegionGroupWidth(98);
                             AddHeaderRegion(() =>
                             {
                                 AddLine(element + ":", "Gray");
@@ -2138,7 +2119,7 @@ public class Blueprint
                         {
                             SetAnchor(Top, h.window);
                             AddRegionGroup();
-                            SetRegionGroupWidth(93);
+                            SetRegionGroupWidth(98);
                             AddHeaderRegion(() =>
                             {
                                 AddLine(elements2[elements1.IndexOf(element)] + ":", "Gray");
@@ -2174,7 +2155,7 @@ public class Blueprint
                         {
                             SetAnchor(Top, h.window);
                             AddRegionGroup();
-                            SetRegionGroupWidth(93);
+                            SetRegionGroupWidth(98);
                             AddHeaderRegion(() =>
                             {
                                 AddLine(element + ":", "Gray");
@@ -2200,7 +2181,7 @@ public class Blueprint
                         {
                             SetAnchor(Top, h.window);
                             AddRegionGroup();
-                            SetRegionGroupWidth(93);
+                            SetRegionGroupWidth(98);
                             AddHeaderRegion(() =>
                             {
                                 AddLine(elements2[elements1.IndexOf(element)] + ":", "Gray");
@@ -2238,53 +2219,6 @@ public class Blueprint
                     CloseDesktop(title);
                 });
             });
-        }, true),
-        new("TalentHeader", () => {
-            SetAnchor(TopLeft);
-            var a = currentSave.player.Spec();
-            AddHeaderGroup();
-            AddPaddingRegion(() =>
-            {
-                if (currentSave.player.unspentTalentPoints > 0)
-                {
-                    AddLine("You have ");
-                    AddText(currentSave.player.unspentTalentPoints + "", "Green");
-                    AddText(" unspent points!");
-                }
-                else if (currentSave.player.level < 60)
-                    AddLine("Next talent point at level " + currentSave.player.level + (currentSave.player.level % 2 == 0 ? 2 : 1));
-                else
-                    AddLine("Look for orbs of power to gain additional talent points!");
-                AddSmallButton("OtherClose",
-                (h) =>
-                {
-                    var title = CDesktop.title;
-                    SwitchDesktop("Map");
-                    if (title == "TalentScreen")
-                        PlaySound("DesktopTalentScreenClose");
-                    else if (title == "SpellbookScreen")
-                        PlaySound("DesktopSpellbookScreenClose");
-                    CloseDesktop(title);
-                });
-            });
-            AddRegionGroup();
-            AddHeaderRegion(() =>
-            {
-                AddLine(a.talentTrees[0].name + ": " + a.talentTrees[0].talents.Count(x => currentSave.player.abilities.Contains(x.ability)));
-            });
-            SetRegionGroupWidth(213);
-            AddRegionGroup();
-            AddHeaderRegion(() =>
-            {
-                AddLine(a.talentTrees[1].name + ": " + a.talentTrees[1].talents.Count(x => currentSave.player.abilities.Contains(x.ability)));
-            });
-            SetRegionGroupWidth(212);
-            AddRegionGroup();
-            AddHeaderRegion(() =>
-            {
-                AddLine(a.talentTrees[2].name + ": " + a.talentTrees[2].talents.Count(x => currentSave.player.abilities.Contains(x.ability)));
-            });
-            SetRegionGroupWidth(213);
         }, true),
         new("Console", () => {
             SetAnchor(Top);
@@ -5696,7 +5630,8 @@ public class Blueprint
                 (h) => () =>
                 {
                     SetAnchor(Center);
-                    PrintAbilityTooltip(null, null, abilitiesSearch[index + 10 * regionGroup.pagination]);
+                    var key = abilitiesSearch.ToList()[index + 10 * regionGroup.pagination];
+                    PrintAbilityTooltip(null, null, key, 0);
                 });
             }
             AddPaddingRegion(() =>
@@ -6013,7 +5948,7 @@ public class Blueprint
                 (h) => () =>
                 {
                     SetAnchor(Center);
-                    PrintBuffTooltip(null, null, (buffsSearch[index + 10 * regionGroup.pagination], 0, null));
+                    PrintBuffTooltip(null, null, (buffsSearch[index + 10 * regionGroup.pagination], 0, null, 0));
                 });
             }
             AddPaddingRegion(() =>
@@ -6908,7 +6843,7 @@ public class Blueprint
                 SwitchDesktop("CharacterSheet");
                 PlaySound("DesktopCharacterSheetOpen");
             });
-            AddHotkey(N, () => { SpawnDesktopBlueprint("TalentScreen"); });
+            AddHotkey(N, () => { SpawnDesktopBlueprint("TalentScreen"); PlaySound("DesktopTalentScreenOpen"); });
             AddHotkey(P, () => { SpawnDesktopBlueprint("SpellbookScreen"); });
             AddHotkey(B, () => { SpawnDesktopBlueprint("EquipmentScreen"); });
             AddHotkey(Escape, () =>
@@ -7182,62 +7117,40 @@ public class Blueprint
                 CloseDesktop("CharacterSheet");
             });
         }),
-        new("OldTalentScreen", () =>
-        {
-            PlaySound("DesktopTalentScreenOpen");
-            SetDesktopBackground("StoneSplitLong", false);
-            SpawnWindowBlueprint("TalentHeader");
-            SpawnWindowBlueprint("ExperienceBar");
-            var playerSpec = currentSave.player.Spec();
-            for (int spec = 0; spec < 3; spec++)
-                for (int row = 0; row <= playerSpec.talentTrees[spec].talents.Max(x => x.row); row++)
-                    for (int col = 0; col < 3; col++)
-                        if (windowBlueprints.Exists(x => x.title == "Talent" + spec + row + col))
-                            if (playerSpec.talentTrees[spec].talents.Exists(x => x.row == row && x.col == col))
-                                SpawnWindowBlueprint("Talent" + spec + row + col);
-            AddHotkey(N, () => { SwitchDesktop("Map"); CloseDesktop("TalentScreen"); PlaySound("DesktopTalentScreenClose"); });
-            AddHotkey(Escape, () => { SwitchDesktop("Map"); CloseDesktop("TalentScreen"); PlaySound("DesktopTalentScreenClose"); });
-            AddHotkey(W, () =>
-            {
-                var amount = new Vector3(0, (float)Math.Round(EuelerGrowth())) / 2;
-                CDesktop.screen.transform.position += amount;
-                cursor.transform.position += amount;
-                if (CDesktop.screen.transform.position.y > -140)
-                {
-                    var off = CDesktop.screen.transform.position.y + 140f;
-                    CDesktop.screen.transform.position -= new Vector3(0, off);
-                    cursor.transform.position -= new Vector3(0, off);
-                }
-            },  false);
-            AddHotkey(S, () =>
-            {
-                var amount = new Vector3(0, -(float)Math.Round(EuelerGrowth())) / 2;
-                CDesktop.screen.transform.position += amount;
-                cursor.transform.position += amount;
-                if (CDesktop.screen.transform.position.y < -528)
-                {
-                    var off = CDesktop.screen.transform.position.y + 528f;
-                    CDesktop.screen.transform.position -= new Vector3(0, off);
-                    cursor.transform.position -= new Vector3(0, off);
-                }
-            },  false);
-        }),
         new("TalentScreen", () =>
         {
-            PlaySound("DesktopTalentScreenOpen");
             SetDesktopBackground("Stone");
             SpawnWindowBlueprint("TalentTreeLeft");
             SpawnWindowBlueprint("TalentScreenHeader");
+            SpawnWindowBlueprint("TalentScreenFooter");
             SpawnWindowBlueprint("TalentTreeRight");
             var playerSpec = currentSave.player.Spec();
             for (int tree = 0; tree < 2; tree++)
                 for (int row = 0; row < 5; row++)
                     for (int col = 0; col < 3; col++)
                         if (windowBlueprints.Exists(x => x.title == "Talent" + tree + row + col))
-                            if (playerSpec.talentTrees[tree].talents.Exists(x => x.row == row && x.col == col))
+                            if (playerSpec.talentTrees[currentSave.lastVisitedTalents].talents.Exists(x => x.row == row && x.col == col && x.tree == tree))
                                 SpawnWindowBlueprint("Talent" + tree + row + col);
             SpawnWindowBlueprint("ExperienceBar");
             AddHotkey(N, () => { CloseDesktop("TalentScreen"); PlaySound("DesktopTalentScreenClose"); });
+            AddHotkey(A, () =>
+            {
+                PlaySound("DesktopSwitchPage");
+                currentSave.lastVisitedTalents--;
+                if (currentSave.lastVisitedTalents < 0)
+                    currentSave.lastVisitedTalents = currentSave.player.Spec().talentTrees.Count - 1;
+                CloseDesktop("TalentScreen");
+                SpawnDesktopBlueprint("TalentScreen");
+            });
+            AddHotkey(D, () =>
+            {
+                PlaySound("DesktopSwitchPage");
+                currentSave.lastVisitedTalents++;
+                if (currentSave.lastVisitedTalents >= currentSave.player.Spec().talentTrees.Count)
+                    currentSave.lastVisitedTalents = 0;
+                CloseDesktop("TalentScreen");
+                SpawnDesktopBlueprint("TalentScreen");
+            });
             AddHotkey(Escape, () => { CloseDesktop("TalentScreen"); PlaySound("DesktopTalentScreenClose"); });
         }),
         new("SpellbookScreen", () =>

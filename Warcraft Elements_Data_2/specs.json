@@ -69,40 +69,16 @@
       "Intellect per Level": 0.0,
       "Spirit per Level": 0.0
     },
-    "abilities": [
-      {
-        "Item1": "Dual Wielding Proficiency",
-        "Item2": 1
-      },
-      {
-        "Item1": "One Handed Axe Proficiency",
-        "Item2": 1
-      },
-      {
-        "Item1": "One Handed Mace Proficiency",
-        "Item2": 1
-      },
-      {
-        "Item1": "One Handed Sword Proficiency",
-        "Item2": 1
-      },
-      {
-        "Item1": "Fist Weapon Proficiency",
-        "Item2": 1
-      },
-      {
-        "Item1": "Off Hand Proficiency",
-        "Item2": 1
-      },
-      {
-        "Item1": "Dagger Proficiency",
-        "Item2": 1
-      },
-      {
-        "Item1": "Leather Proficiency",
-        "Item2": 1
-      }
-    ],
+    "abilities": {
+      "Dual Wielding Proficiency": 0,
+      "One Handed Axe Proficiency": 1,
+      "One Handed Mace Proficiency": 1,
+      "One Handed Sword Proficiency": 1,
+      "Fist Weapon Proficiency": 1,
+      "Off Hand Proficiency": 1,
+      "Dagger Proficiency": 1,
+      "Leather Proficiency": 1
+    },
     "talentTrees": [
       {
         "name": "Assassination",
@@ -178,64 +154,25 @@
       "Intellect per Level": 0.0,
       "Spirit per Level": 0.0
     },
-    "abilities": [
-      {
-        "Item1": "Dual Wielding Proficiency",
-        "Item2": 1
-      },
-      {
-        "Item1": "Two Handed Axe Proficiency",
-        "Item2": 1
-      },
-      {
-        "Item1": "Two Handed Sword Proficiency",
-        "Item2": 1
-      },
-      {
-        "Item1": "One Handed Axe Proficiency",
-        "Item2": 1
-      },
-      {
-        "Item1": "One Handed Sword Proficiency",
-        "Item2": 1
-      },
-      {
-        "Item1": "Polearm Proficiency",
-        "Item2": 1
-      },
-      {
-        "Item1": "Off Hand Proficiency",
-        "Item2": 1
-      },
-      {
-        "Item1": "Quiver Proficiency",
-        "Item2": 1
-      },
-      {
-        "Item1": "Pouch Proficiency",
-        "Item2": 1
-      },
-      {
-        "Item1": "Bow Proficiency",
-        "Item2": 1
-      },
-      {
-        "Item1": "Crossbow Proficiency",
-        "Item2": 1
-      },
-      {
-        "Item1": "Gun Proficiency",
-        "Item2": 1
-      },
-      {
-        "Item1": "Leather Proficiency",
-        "Item2": 1
-      },
-      {
-        "Item1": "Mail Proficiency",
-        "Item2": 40
-      }
-    ],
+    "abilities": {
+      "Dual Wielding Proficiency": 0,
+      "Two Handed Axe Proficiency": 1,
+      "Two Handed Sword Proficiency": 1,
+      "Polearm Proficiency": 1,
+      "Quiver Proficiency": 1,
+      "Pouch Proficiency": 1,
+      "Bow Proficiency": 1,
+      "Crossbow Proficiency": 1,
+      "Gun Proficiency": 1,
+      "Leather Proficiency": 1,
+      "Mail Proficiency": 0,
+      "One Handed Axe Proficiency": 1,
+      "One Handed Mace Proficiency": 1,
+      "One Handed Sword Proficiency": 1,
+      "Fist Weapon Proficiency": 1,
+      "Off Hand Proficiency": 1,
+      "Dagger Proficiency": 1
+    },
     "talentTrees": [
       {
         "name": "Marksmanship",
@@ -286,44 +223,18 @@
       "Intellect per Level": 2.0,
       "Spirit per Level": 0.0
     },
-    "abilities": [
-      {
-        "Item1": "Dual Wielding Proficiency",
-        "Item2": 1
-      },
-      {
-        "Item1": "Two Handed Axe Proficiency",
-        "Item2": 1
-      },
-      {
-        "Item1": "One Handed Axe Proficiency",
-        "Item2": 1
-      },
-      {
-        "Item1": "One Handed Mace Proficiency",
-        "Item2": 1
-      },
-      {
-        "Item1": "Polearm Proficiency",
-        "Item2": 1
-      },
-      {
-        "Item1": "Off Hand Proficiency",
-        "Item2": 1
-      },
-      {
-        "Item1": "Totem Proficiency",
-        "Item2": 1
-      },
-      {
-        "Item1": "Leather Proficiency",
-        "Item2": 1
-      },
-      {
-        "Item1": "Mail Proficiency",
-        "Item2": 40
-      }
-    ],
+    "abilities": {
+      "Dual Wielding Proficiency": 0,
+      "Two Handed Axe Proficiency": 1,
+      "Polearm Proficiency": 1,
+      "Leather Proficiency": 1,
+      "Mail Proficiency": 0,
+      "One Handed Axe Proficiency": 1,
+      "One Handed Mace Proficiency": 1,
+      "Fist Weapon Proficiency": 1,
+      "Off Hand Proficiency": 1,
+      "Dagger Proficiency": 1
+    },
     "talentTrees": [
       {
         "name": "Elemental",
@@ -766,60 +677,21 @@
       "Intellect per Level": 0.0,
       "Spirit per Level": 0.0
     },
-    "abilities": [
-      {
-        "Item1": "Dual Wielding Proficiency",
-        "Item2": 1
-      },
-      {
-        "Item1": "Two Handed Axe Proficiency",
-        "Item2": 1
-      },
-      {
-        "Item1": "Two Handed Mace Proficiency",
-        "Item2": 1
-      },
-      {
-        "Item1": "Two Handed Sword Proficiency",
-        "Item2": 1
-      },
-      {
-        "Item1": "One Handed Axe Proficiency",
-        "Item2": 1
-      },
-      {
-        "Item1": "One Handed Mace Proficiency",
-        "Item2": 1
-      },
-      {
-        "Item1": "One Handed Sword Proficiency",
-        "Item2": 1
-      },
-      {
-        "Item1": "Fist Weapon Proficiency",
-        "Item2": 1
-      },
-      {
-        "Item1": "Off Hand Proficiency",
-        "Item2": 1
-      },
-      {
-        "Item1": "Polearm Proficiency",
-        "Item2": 1
-      },
-      {
-        "Item1": "Shield Proficiency",
-        "Item2": 1
-      },
-      {
-        "Item1": "Mail Proficiency",
-        "Item2": 1
-      },
-      {
-        "Item1": "Plate Proficiency",
-        "Item2": 40
-      }
-    ],
+    "abilities": {
+      "Dual Wielding Proficiency": 1,
+      "Two Handed Axe Proficiency": 1,
+      "Two Handed Mace Proficiency": 1,
+      "Two Handed Sword Proficiency": 1,
+      "Polearm Proficiency": 1,
+      "Shield Proficiency": 1,
+      "Mail Proficiency": 1,
+      "Plate Proficiency": 0,
+      "One Handed Axe Proficiency": 1,
+      "One Handed Mace Proficiency": 1,
+      "One Handed Sword Proficiency": 1,
+      "Fist Weapon Proficiency": 1,
+      "Off Hand Proficiency": 1
+    },
     "talentTrees": [
       {
         "name": "Arms",
@@ -1056,56 +928,20 @@
       "Intellect per Level": 2.0,
       "Spirit per Level": 0.0
     },
-    "abilities": [
-      {
-        "Item1": "Two Handed Axe Proficiency",
-        "Item2": 1
-      },
-      {
-        "Item1": "Two Handed Mace Proficiency",
-        "Item2": 1
-      },
-      {
-        "Item1": "Two Handed Sword Proficiency",
-        "Item2": 1
-      },
-      {
-        "Item1": "One Handed Axe Proficiency",
-        "Item2": 1
-      },
-      {
-        "Item1": "One Handed Mace Proficiency",
-        "Item2": 1
-      },
-      {
-        "Item1": "One Handed Sword Proficiency",
-        "Item2": 1
-      },
-      {
-        "Item1": "Off Hand Proficiency",
-        "Item2": 1
-      },
-      {
-        "Item1": "Polearm Proficiency",
-        "Item2": 1
-      },
-      {
-        "Item1": "Libram Proficiency",
-        "Item2": 1
-      },
-      {
-        "Item1": "Shield Proficiency",
-        "Item2": 1
-      },
-      {
-        "Item1": "Mail Proficiency",
-        "Item2": 1
-      },
-      {
-        "Item1": "Plate Proficiency",
-        "Item2": 40
-      }
-    ],
+    "abilities": {
+      "Two Handed Axe Proficiency": 1,
+      "Two Handed Mace Proficiency": 1,
+      "Two Handed Sword Proficiency": 1,
+      "Polearm Proficiency": 1,
+      "Shield Proficiency": 1,
+      "Mail Proficiency": 1,
+      "Plate Proficiency": 0,
+      "One Handed Axe Proficiency": 1,
+      "One Handed Mace Proficiency": 1,
+      "One Handed Sword Proficiency": 1,
+      "Off Hand Proficiency": 1,
+      "Libram Proficiency": 1
+    },
     "talentTrees": [
       {
         "name": "Holy",
@@ -1501,44 +1337,16 @@
       "Intellect per Level": 2.0,
       "Spirit per Level": 0.0
     },
-    "abilities": [
-      {
-        "Item1": "Two Handed Mace Proficiency",
-        "Item2": 1
-      },
-      {
-        "Item1": "One Handed Mace Proficiency",
-        "Item2": 1
-      },
-      {
-        "Item1": "Fist Weapon Proficiency",
-        "Item2": 1
-      },
-      {
-        "Item1": "Off Hand Proficiency",
-        "Item2": 1
-      },
-      {
-        "Item1": "Polearm Proficiency",
-        "Item2": 1
-      },
-      {
-        "Item1": "Dagger Proficiency",
-        "Item2": 1
-      },
-      {
-        "Item1": "Staff Proficiency",
-        "Item2": 1
-      },
-      {
-        "Item1": "Idol Proficiency",
-        "Item2": 1
-      },
-      {
-        "Item1": "Leather Proficiency",
-        "Item2": 1
-      }
-    ],
+    "abilities": {
+      "Two Handed Mace Proficiency": 1,
+      "Staff Proficiency": 1,
+      "Leather Proficiency": 1,
+      "One Handed Mace Proficiency": 1,
+      "Off Hand Proficiency": 1,
+      "Fist Weapon Proficiency": 1,
+      "Dagger Proficiency": 1,
+      "Idol Proficiency": 1
+    },
     "talentTrees": [
       {
         "name": "Balance",
@@ -1960,32 +1768,14 @@
       "Intellect per Level": 4.0,
       "Spirit per Level": 0.0
     },
-    "abilities": [
-      {
-        "Item1": "One Handed Mace Proficiency",
-        "Item2": 1
-      },
-      {
-        "Item1": "Off Hand Proficiency",
-        "Item2": 1
-      },
-      {
-        "Item1": "Dagger Proficiency",
-        "Item2": 1
-      },
-      {
-        "Item1": "Staff Proficiency",
-        "Item2": 1
-      },
-      {
-        "Item1": "Wand Proficiency",
-        "Item2": 1
-      },
-      {
-        "Item1": "Cloth Proficiency",
-        "Item2": 1
-      }
-    ],
+    "abilities": {
+      "Staff Proficiency": 1,
+      "Cloth Proficiency": 1,
+      "One Handed Mace Proficiency": 1,
+      "Off Hand Proficiency": 1,
+      "Dagger Proficiency": 1,
+      "Wand Proficiency": 1
+    },
     "talentTrees": [
       {
         "name": "Holy",
@@ -2224,32 +2014,14 @@
       "Intellect per Level": 4.0,
       "Spirit per Level": 0.0
     },
-    "abilities": [
-      {
-        "Item1": "One Handed Sword Proficiency",
-        "Item2": 1
-      },
-      {
-        "Item1": "Off Hand Proficiency",
-        "Item2": 1
-      },
-      {
-        "Item1": "Dagger Proficiency",
-        "Item2": 1
-      },
-      {
-        "Item1": "Staff Proficiency",
-        "Item2": 1
-      },
-      {
-        "Item1": "Wand Proficiency",
-        "Item2": 1
-      },
-      {
-        "Item1": "Cloth Proficiency",
-        "Item2": 1
-      }
-    ],
+    "abilities": {
+      "Staff Proficiency": 1,
+      "Cloth Proficiency": 1,
+      "One Handed Sword Proficiency": 1,
+      "Off Hand Proficiency": 1,
+      "Dagger Proficiency": 1,
+      "Wand Proficiency": 1
+    },
     "talentTrees": [
       {
         "name": "Affliction",
@@ -2477,32 +2249,14 @@
       "Intellect per Level": 4.0,
       "Spirit per Level": 0.0
     },
-    "abilities": [
-      {
-        "Item1": "One Handed Sword Proficiency",
-        "Item2": 1
-      },
-      {
-        "Item1": "Off Hand Proficiency",
-        "Item2": 1
-      },
-      {
-        "Item1": "Dagger Proficiency",
-        "Item2": 1
-      },
-      {
-        "Item1": "Staff Proficiency",
-        "Item2": 1
-      },
-      {
-        "Item1": "Wand Proficiency",
-        "Item2": 1
-      },
-      {
-        "Item1": "Cloth Proficiency",
-        "Item2": 1
-      }
-    ],
+    "abilities": {
+      "Staff Proficiency": 1,
+      "Cloth Proficiency": 1,
+      "One Handed Sword Proficiency": 1,
+      "Off Hand Proficiency": 1,
+      "Dagger Proficiency": 1,
+      "Wand Proficiency": 1
+    },
     "talentTrees": [
       {
         "name": "Fire",
@@ -2528,7 +2282,7 @@
             "ability": "Blazing Barrier"
           },
           {
-            "row": 2,
+            "row": 3,
             "ability": "Searing Touch",
             "inherited": true
           },
@@ -2543,7 +2297,7 @@
             "ability": "Flamestrike"
           },
           {
-            "row": 3,
+            "row": 4,
             "ability": "Fiery Rush"
           },
           {
@@ -2554,83 +2308,68 @@
           },
           {
             "row": 4,
-            "ability": "Pyroblast"
-          },
-          {
-            "row": 4,
             "col": 2,
             "ability": "Flame Patch",
             "inherited": true
           },
           {
-            "row": 5,
+            "row": 0,
+            "col": 1,
+            "tree": 1,
+            "ability": "Pyroblast"
+          },
+          {
+            "row": 0,
+            "col": 2,
+            "tree": 1,
+            "ability": "Conflagration"
+          },
+          {
+            "row": 1,
+            "col": 0,
+            "tree": 1,
+            "ability": "Combustion"
+          },
+          {
+            "row": 2,
+            "col": 1,
+            "tree": 1,
             "ability": "Pyroclasm",
             "inherited": true
           },
           {
-            "row": 5,
-            "col": 1,
-            "ability": "Firemind"
-          },
-          {
-            "row": 5,
-            "col": 2,
-            "ability": "Dragon's Breath"
-          },
-          {
-            "row": 6,
-            "col": 1,
-            "ability": "Blast Wave"
-          },
-          {
-            "row": 6,
-            "col": 2,
-            "ability": "Conflagration",
-            "inherited": true
-          },
-          {
-            "row": 7,
-            "col": 1,
-            "ability": "Combustion"
-          },
-          {
-            "row": 7,
-            "col": 2,
-            "ability": "Pyromaniac"
-          },
-          {
-            "row": 8,
+            "row": 2,
+            "tree": 1,
             "ability": "Convection"
           },
           {
-            "row": 8,
+            "row": 3,
             "col": 2,
-            "ability": "Critical Mass"
-          },
-          {
-            "row": 9,
+            "tree": 1,
             "ability": "Volatile Detonation"
           },
           {
-            "row": 9,
+            "row": 3,
             "col": 1,
-            "ability": "Hyperthermia",
-            "inherited": true
+            "tree": 1,
+            "ability": "Hyperthermia"
           },
           {
-            "row": 10,
+            "row": 3,
+            "tree": 1,
             "ability": "Meteor"
           },
           {
-            "row": 10,
-            "col": 1,
-            "ability": "Deep Impact"
+            "row": 4,
+            "tree": 1,
+            "ability": "Deep Impact",
+            "inherited": true
           },
           {
-            "row": 10,
+            "row": 4,
             "col": 2,
-            "ability": "Sun King's Blessing",
-            "inherited": true
+            "tree": 1,
+            "ability": "Sun King's Blessing"
           }
         ]
       },
@@ -2915,24 +2654,14 @@
       "Intellect per Level": 0.0,
       "Spirit per Level": 0.0
     },
-    "abilities": [
-      {
-        "Item1": "Off Hand Proficiency",
-        "Item2": 1
-      },
-      {
-        "Item1": "One Handed Mace Proficiency",
-        "Item2": 1
-      },
-      {
-        "Item1": "Staff Proficiency",
-        "Item2": 1
-      },
-      {
-        "Item1": "Leather Proficiency",
-        "Item2": 1
-      }
-    ],
+    "abilities": {
+      "Staff Proficiency": 1,
+      "Polearm Proficiency": 1,
+      "Leather Proficiency": 1,
+      "One Handed Mace Proficiency": 1,
+      "Off Hand Proficiency": 1,
+      "Fist Weapon Proficiency": 1
+    },
     "talentTrees": []
   }
 ]

@@ -6311,13 +6311,13 @@
     "commonEncounters": [
       {
         "who": "Blighted Surge",
-        "levelMin": 53,
-        "levelMax": 54
+        "levelMin": 54,
+        "levelMax": 55
       },
       {
         "who": "Plague Ravager",
-        "levelMin": 53,
-        "levelMax": 54
+        "levelMin": 55,
+        "levelMax": 56
       }
     ],
     "x": 316,
@@ -7386,6 +7386,23 @@
     "type": "EmeraldBough"
   },
   {
+    "commonEncounters": [
+      {
+        "who": "Enraged Feral Scar Yeti",
+        "levelMin": 43,
+        "levelMax": 44
+      },
+      {
+        "who": "Feral Scar Yeti",
+        "levelMin": 45,
+        "levelMax": 46
+      },
+      {
+        "who": "Hulking Feral Scar Yeti",
+        "levelMin": 46,
+        "levelMax": 47
+      }
+    ],
     "x": 58,
     "y": -186,
     "name": "Feral Scar Vale",
@@ -7950,21 +7967,59 @@
   {
     "commonEncounters": [
       {
-        "who": "Scourge Warder",
-        "levelMin": 53,
-        "levelMax": 54
+        "who": "Scarlet Magus",
+        "levelMin": 55,
+        "levelMax": 56
+      },
+      {
+        "who": "Scarlet Priest",
+        "levelMin": 55,
+        "levelMax": 56
+      },
+      {
+        "who": "Scarlet Avenger",
+        "levelMin": 56,
+        "levelMax": 57
+      },
+      {
+        "who": "Scarlet Spellbinder",
+        "levelMin": 56,
+        "levelMax": 57
       }
     ],
-    "name": "Central Town",
+    "rareEncounters": [
+      {
+        "who": "Scarlet Executioner",
+        "levelMin": 60
+      }
+    ],
+    "eliteEncounters": [
+      {
+        "who": "High Protector Lorik",
+        "levelMin": 61
+      }
+    ],
+    "name": "Hearthglen Town",
     "zone": "Hearthglen",
     "type": "HostileArea"
   },
   {
     "commonEncounters": [
       {
-        "who": "Scourge Warder",
-        "levelMin": 53,
-        "levelMax": 54
+        "who": "Scarlet Worker",
+        "levelMin": 55,
+        "levelMax": 56
+      },
+      {
+        "who": "Scarlet Sentinel",
+        "levelMin": 55,
+        "levelMax": 56
+      }
+    ],
+    "eliteEncounters": [
+      {
+        "who": "Foreman Jerris",
+        "levelMin": 61
       }
     ],
     "name": "Hearthglen Mine",
@@ -7974,9 +8029,25 @@
   {
     "commonEncounters": [
       {
-        "who": "Scourge Warder",
-        "levelMin": 53,
-        "levelMax": 54
+        "who": "Scarlet Sentinel",
+        "levelMin": 55,
+        "levelMax": 56
+      },
+      {
+        "who": "Scarlet Paladin",
+        "levelMin": 55,
+        "levelMax": 56
+      },
+      {
+        "who": "Scarlet Cavalier",
+        "levelMin": 57,
+        "levelMax": 58
+      }
+    ],
+    "eliteEncounters": [
+      {
+        "who": "Highlord Taelan Fordring",
+        "levelMin": 62
       }
     ],
     "name": "Mardenholde Keep",
@@ -10624,36 +10695,21 @@
   {
     "commonEncounters": [
       {
-        "who": "Miner Johnson",
-        "levelMin": 19,
-        "levelMax": 19
+        "who": "Risen Guard",
+        "levelMin": 58,
+        "levelMax": 59
       },
       {
-        "who": "Defias Evoker",
-        "levelMin": 17,
-        "levelMax": 18
-      },
-      {
-        "who": "Defias Watchman",
-        "levelMin": 16,
-        "levelMax": 17
-      },
-      {
-        "who": "Defias Overseer",
-        "levelMin": 17,
-        "levelMax": 18
-      },
-      {
-        "who": "Defias Miner",
-        "levelMin": 17,
-        "levelMax": 18
+        "who": "Risen Warrior",
+        "levelMin": 59,
+        "levelMax": 60
       }
     ],
     "eliteEncounters": [
       {
         "who": "Lord Alexei Barov",
         "levelMin": 60,
-        "requiredProgress": 3
+        "requiredProgress": 2
       }
     ],
     "name": "Barov Family Vault",
@@ -10692,19 +10748,19 @@
   {
     "commonEncounters": [
       {
-        "who": "Defias Taskmaster",
-        "levelMin": 18,
-        "levelMax": 19
+        "who": "Risen Construct",
+        "levelMin": 59,
+        "levelMax": 60
       },
       {
-        "who": "Defias Wizard",
-        "levelMin": 18,
-        "levelMax": 19
+        "who": "Plagued Hatchling",
+        "levelMin": 57,
+        "levelMax": 58
       },
       {
-        "who": "Defias Strip Miner",
-        "levelMin": 18,
-        "levelMax": 19
+        "who": "Scholomance Handler",
+        "levelMin": 59,
+        "levelMax": 60
       }
     ],
     "eliteEncounters": [
@@ -10714,28 +10770,28 @@
         "requiredProgress": 3
       }
     ],
-    "name": "Great Ossuary",
+    "name": "The Great Ossuary",
     "zone": "Scholomance",
     "type": "HostileArea"
   },
   {
     "commonEncounters": [
       {
-        "who": "Remote Controlled Golem",
-        "levelMin": 18,
-        "levelMax": 20
+        "who": "Unstable Corpse",
+        "levelMin": 58,
+        "levelMax": 59
       },
       {
-        "who": "Goblin Engineer",
-        "levelMin": 18,
-        "levelMax": 19
+        "who": "Reanimated Corpse",
+        "levelMin": 58,
+        "levelMax": 59
       }
     ],
     "eliteEncounters": [
       {
         "who": "Lorekeeper Polkelt",
         "levelMin": 60,
-        "requiredProgress": 3
+        "requiredProgress": 2
       }
     ],
     "name": "Hall of Secrets",
@@ -10772,23 +10828,10 @@
     "type": "HostileArea"
   },
   {
-    "commonEncounters": [
-      {
-        "who": "Defias Squallshaper",
-        "levelMin": 19,
-        "levelMax": 20
-      },
-      {
-        "who": "Defias Pirate",
-        "levelMin": 19,
-        "levelMax": 20
-      }
-    ],
     "eliteEncounters": [
       {
         "who": "Darkmaster Gandling",
-        "levelMin": 61,
-        "requiredProgress": 2
+        "levelMin": 61
       }
     ],
     "name": "Headmaster's Study",
@@ -10798,19 +10841,24 @@
   {
     "commonEncounters": [
       {
-        "who": "Defias Blackguard",
-        "levelMin": 19,
-        "levelMax": 20
+        "who": "Spectral Teacher",
+        "levelMin": 59,
+        "levelMax": 60
       },
       {
-        "who": "Defias Squallshaper",
-        "levelMin": 19,
-        "levelMax": 20
+        "who": "Scholomance Necromancer",
+        "levelMin": 59,
+        "levelMax": 60
       },
       {
-        "who": "Defias Pirate",
-        "levelMin": 19,
-        "levelMax": 20
+        "who": "Scholomance Neophyte",
+        "levelMin": 59,
+        "levelMax": 60
+      },
+      {
+        "who": "Scholomance Acolyte",
+        "levelMin": 59,
+        "levelMax": 60
       }
     ],
     "eliteEncounters": [
@@ -10851,21 +10899,26 @@
   {
     "commonEncounters": [
       {
-        "who": "Defias Squallshaper",
-        "levelMin": 19,
-        "levelMax": 20
+        "who": "Scholomance Adept",
+        "levelMin": 58,
+        "levelMax": 59
       },
       {
-        "who": "Defias Pirate",
-        "levelMin": 19,
-        "levelMax": 20
+        "who": "Scholomance Occultist",
+        "levelMin": 59,
+        "levelMax": 60
+      },
+      {
+        "who": "Scholomance Necromancer",
+        "levelMin": 59,
+        "levelMax": 60
       }
     ],
     "eliteEncounters": [
       {
         "who": "Instructor Malicia",
         "levelMin": 60,
-        "requiredProgress": 3
+        "requiredProgress": 2
       }
     ],
     "name": "The Coven",
@@ -10875,21 +10928,16 @@
   {
     "commonEncounters": [
       {
-        "who": "Defias Squallshaper",
-        "levelMin": 19,
-        "levelMax": 20
-      },
-      {
-        "who": "Defias Pirate",
-        "levelMin": 19,
-        "levelMax": 20
+        "who": "Risen Bonewarder",
+        "levelMin": 58,
+        "levelMax": 59
       }
     ],
     "eliteEncounters": [
       {
-        "who": "Instructor Malicia",
+        "who": "Lady Illucia Barov",
         "levelMin": 60,
-        "requiredProgress": 3
+        "requiredProgress": 2
       }
     ],
     "name": "The Shadow Vault",
@@ -10899,19 +10947,9 @@
   {
     "commonEncounters": [
       {
-        "who": "Defias Blackguard",
-        "levelMin": 19,
-        "levelMax": 20
-      },
-      {
-        "who": "Defias Squallshaper",
-        "levelMin": 19,
-        "levelMax": 20
-      },
-      {
-        "who": "Defias Pirate",
-        "levelMin": 19,
-        "levelMax": 20
+        "who": "Splintered Skeleton",
+        "levelMin": 59,
+        "levelMax": 60
       }
     ],
     "eliteEncounters": [
@@ -10928,14 +10966,15 @@
   {
     "commonEncounters": [
       {
-        "who": "Defias Squallshaper",
-        "levelMin": 19,
-        "levelMax": 20
-      },
+        "who": "Scholomance Student",
+        "levelMin": 58,
+        "levelMax": 59
+      }
+    ],
+    "rareEncounters": [
       {
-        "who": "Defias Pirate",
-        "levelMin": 19,
-        "levelMax": 20
+        "who": "Marduk Blackpool",
+        "levelMin": 58
       }
     ],
     "eliteEncounters": [
@@ -10945,7 +10984,7 @@
         "requiredProgress": 3
       }
     ],
-    "name": "Viewing Room",
+    "name": "The Viewing Room",
     "zone": "Scholomance",
     "type": "HostileArea"
   },
@@ -16135,18 +16174,30 @@
     "commonEncounters": [
       {
         "who": "Scarlet Curate",
-        "levelMin": 52,
-        "levelMax": 53
+        "levelMin": 55,
+        "levelMax": 56
       },
       {
-        "who": "Scarlet Enchanter",
-        "levelMin": 52,
-        "levelMax": 53
+        "who": "Scarlet Archmage",
+        "levelMin": 56,
+        "levelMax": 57
       },
       {
-        "who": "Scarlet Cleric",
-        "levelMin": 52,
-        "levelMax": 53
+        "who": "Scarlet Praetorian",
+        "levelMin": 56,
+        "levelMax": 57
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Crusader Lord Valdelmar",
+        "levelMin": 60
+      }
+    ],
+    "eliteEncounters": [
+      {
+        "who": "High General Abbendis",
+        "levelMin": 59
       }
     ],
     "name": "Scarlet Basilica",
@@ -16156,14 +16207,20 @@
   {
     "commonEncounters": [
       {
-        "who": "Scarlet Curate",
-        "levelMin": 52,
-        "levelMax": 53
+        "who": "Scarlet Cleric",
+        "levelMin": 54,
+        "levelMax": 55
       },
       {
         "who": "Scarlet Warder",
-        "levelMin": 52,
-        "levelMax": 53
+        "levelMin": 54,
+        "levelMax": 55
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Crusader Lord Valdelmar",
+        "levelMin": 60
       }
     ],
     "name": "Town Square",
@@ -16173,14 +16230,20 @@
   {
     "commonEncounters": [
       {
-        "who": "Scarlet Warder",
-        "levelMin": 52,
-        "levelMax": 53
+        "who": "Scarlet Cleric",
+        "levelMin": 54,
+        "levelMax": 55
       },
       {
-        "who": "Scarlet Cleric",
-        "levelMin": 52,
-        "levelMax": 53
+        "who": "Scarlet Enchanter",
+        "levelMin": 54,
+        "levelMax": 55
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Crusader Lord Valdelmar",
+        "levelMin": 60
       }
     ],
     "name": "Tyr's Hand Abbey",
@@ -16190,14 +16253,25 @@
   {
     "commonEncounters": [
       {
-        "who": "Scarlet Curate",
-        "levelMin": 52,
-        "levelMax": 53
+        "who": "Scarlet Cleric",
+        "levelMin": 54,
+        "levelMax": 55
       },
       {
         "who": "Scarlet Warder",
-        "levelMin": 52,
-        "levelMax": 53
+        "levelMin": 54,
+        "levelMax": 55
+      },
+      {
+        "who": "Scarlet Praetorian",
+        "levelMin": 55,
+        "levelMax": 56
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Crusader Lord Valdelmar",
+        "levelMin": 60
       }
     ],
     "name": "Tyr's Hand Keep",
@@ -16883,12 +16957,14 @@
     ],
     "rareEncounters": [
       {
-        "who": "High Protector Tarsen",
-        "levelMin": 59
-      },
-      {
         "who": "Foreman Marcrid",
         "levelMin": 58
+      }
+    ],
+    "eliteEncounters": [
+      {
+        "who": "High Protector Tarsen",
+        "levelMin": 59
       }
     ],
     "x": 284,

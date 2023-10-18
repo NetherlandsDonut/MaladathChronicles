@@ -30,10 +30,10 @@ public class Item
                 });
         if (abilities != null)
             foreach (var ability in abilities)
-                if (!Ability.abilities.Exists(x => x.name == ability))
+                if (!Ability.abilities.Exists(x => x.name == ability.Key))
                     Ability.abilities.Insert(0, new Ability()
                     {
-                        name = ability,
+                        name = ability.Key,
                         icon = "Ability" + ability,
                         events = new(),
                         tags = new()
@@ -130,7 +130,7 @@ public class Item
     public int block;
 
     //List of abilities provided to the wearer of this item
-    public List<string> abilities;
+    public Dictionary<string, int> abilities;
 
     //Spec restrictions for this item
     //Specs listed in it are the specs that exclusively can use this item
@@ -190,59 +190,59 @@ public class Item
         if (specs != null && !specs.Contains(entity.spec))
             return false;
         if (armorClass != null)
-            return entity.abilities.Contains(armorClass + " Proficiency");
+            return entity.abilities.ContainsKey(armorClass + " Proficiency");
         else if (type == "Pouch")
-            return entity.abilities.Contains("Pouch Proficiency");
+            return entity.abilities.ContainsKey("Pouch Proficiency");
         else if (type == "Quiver")
-            return entity.abilities.Contains("Quiver Proficiency");
+            return entity.abilities.ContainsKey("Quiver Proficiency");
         else if (type == "Libram")
-            return entity.abilities.Contains("Libram Proficiency");
+            return entity.abilities.ContainsKey("Libram Proficiency");
         else if (type == "Totem")
-            return entity.abilities.Contains("Totem Proficiency");
+            return entity.abilities.ContainsKey("Totem Proficiency");
         else if (type == "Idol")
-            return entity.abilities.Contains("Idol Proficiency");
+            return entity.abilities.ContainsKey("Idol Proficiency");
         else if (type == "Two Handed")
         {
             if (detailedType == "Sword")
-                return entity.abilities.Contains("Two Handed Sword Proficiency");
+                return entity.abilities.ContainsKey("Two Handed Sword Proficiency");
             else if (detailedType == "Axe")
-                return entity.abilities.Contains("Two Handed Axe Proficiency");
+                return entity.abilities.ContainsKey("Two Handed Axe Proficiency");
             else if (detailedType == "Mace")
-                return entity.abilities.Contains("Two Handed Mace Proficiency");
+                return entity.abilities.ContainsKey("Two Handed Mace Proficiency");
             else if (detailedType == "Polearm")
-                return entity.abilities.Contains("Polearm Proficiency");
+                return entity.abilities.ContainsKey("Polearm Proficiency");
             else if (detailedType == "Staff")
-                return entity.abilities.Contains("Staff Proficiency");
+                return entity.abilities.ContainsKey("Staff Proficiency");
             else if (detailedType == "Bow")
-                return entity.abilities.Contains("Bow");
+                return entity.abilities.ContainsKey("Bow");
             else if (detailedType == "Crossbow")
-                return entity.abilities.Contains("Crossbow");
+                return entity.abilities.ContainsKey("Crossbow");
             else if (detailedType == "Gun")
-                return entity.abilities.Contains("Gun");
+                return entity.abilities.ContainsKey("Gun");
             else
                 return true;
         }
         else if (type == "Off Hand")
         {
             if (detailedType == "Shield")
-                return entity.abilities.Contains("Shield Proficiency");
+                return entity.abilities.ContainsKey("Shield Proficiency");
             else
-                return entity.abilities.Contains("Off Hand Proficiency");
+                return entity.abilities.ContainsKey("Off Hand Proficiency");
         }
         else if (type == "One Handed")
         {
             if (detailedType == "Dagger")
-                return entity.abilities.Contains("Dagger Proficiency");
+                return entity.abilities.ContainsKey("Dagger Proficiency");
             else if (detailedType == "Sword")
-                return entity.abilities.Contains("One Handed Sword Proficiency");
+                return entity.abilities.ContainsKey("One Handed Sword Proficiency");
             else if (detailedType == "Axe")
-                return entity.abilities.Contains("One Handed Axe Proficiency");
+                return entity.abilities.ContainsKey("One Handed Axe Proficiency");
             else if (detailedType == "Mace")
-                return entity.abilities.Contains("One Handed Mace Proficiency");
+                return entity.abilities.ContainsKey("One Handed Mace Proficiency");
             else if (detailedType == "Wand")
-                return entity.abilities.Contains("Wand Proficiency");
+                return entity.abilities.ContainsKey("Wand Proficiency");
             else if (detailedType == "Fist Weapon")
-                return entity.abilities.Contains("Fist Weapon Proficiency");
+                return entity.abilities.ContainsKey("Fist Weapon Proficiency");
             else
                 return true;
         }
@@ -256,8 +256,7 @@ public class Item
         if (entity.inventory.items.Contains(this))
             entity.inventory.items.Remove(this);
         if (abilities == null) return;
-        entity.abilities.AddRange(abilities);
-        entity.abilities = entity.abilities.Distinct().ToList();
+        entity.abilities = entity.abilities.Concat(abilities).ToDictionary(x => x.Key, x => x.Value);
     }
 
     public void Equip(Entity entity, bool secondSlot = false)

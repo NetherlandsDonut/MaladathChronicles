@@ -17,6 +17,7 @@ public static class Root
     public static int textPaddingLeft = 4;
     public static int textPaddingRight = 12;
     public static int shadowSystem = 1;
+    public static int adeptTreeRequirement = 10;
     public static int aiDepth = 5;
     public static int aiManualBranches = 1;
     public static float frameTime = 0.08f;
@@ -54,6 +55,35 @@ public static class Root
     public static List<Desktop> desktops;
     public static Desktop CDesktop, LBDesktop;
     public static List<Dictionary<string, string>> triggersCopy, effectsCopy;
+
+    public static Dictionary<T, U> Merge<T, U>(this Dictionary<T, U> A, Dictionary<T, U> B)
+    {
+        var temp = A.ToDictionary(x => x.Key, x => x.Value);
+        foreach (var pair in B)
+            if (temp.ContainsKey(pair.Key)) continue;
+            else temp.Add(pair.Key, pair.Value);
+        return temp;
+    }
+
+    public static string ToRoman(int number)
+    {
+        if (number < 0 || number > 3999) return "";
+        if (number < 1) return string.Empty;
+        if (number >= 1000) return "M" + ToRoman(number - 1000);
+        if (number >= 900) return "CM" + ToRoman(number - 900);
+        if (number >= 500) return "D" + ToRoman(number - 500);
+        if (number >= 400) return "CD" + ToRoman(number - 400);
+        if (number >= 100) return "C" + ToRoman(number - 100);
+        if (number >= 90) return "XC" + ToRoman(number - 90);
+        if (number >= 50) return "L" + ToRoman(number - 50);
+        if (number >= 40) return "XL" + ToRoman(number - 40);
+        if (number >= 10) return "X" + ToRoman(number - 10);
+        if (number >= 9) return "IX" + ToRoman(number - 9);
+        if (number >= 5) return "V" + ToRoman(number - 5);
+        if (number >= 4) return "IV" + ToRoman(number - 4);
+        if (number >= 1) return "I" + ToRoman(number - 1);
+        return "";
+    }
 
     public static T Copy<T>(this object obj) => Newtonsoft.Json.JsonConvert.DeserializeObject<T>(Newtonsoft.Json.JsonConvert.SerializeObject(obj));
 
@@ -378,6 +408,12 @@ public static class Root
         });
     }
 
+    public static void SetRegionBackgroundToGrayscale()
+    {
+        var region = CDesktop.LBWindow.LBRegionGroup.LBRegion;
+        region.background.GetComponent<SpriteRenderer>().material = Resources.Load<Material>("Shaders/Grayscale");
+    }
+
     //When other region groups are lenghier than the
     //one this region is in then the unique extender will
     //be extended to match length of the other group regions
@@ -390,6 +426,12 @@ public static class Root
     public static void SetRegionBackground(RegionBackgroundType backgroundType)
     {
         CDesktop.LBWindow.LBRegionGroup.LBRegion.backgroundType = backgroundType;
+    }
+
+    public static void SetRegionBackgroundAsImage(string path)
+    {
+        SetRegionBackground(Image);
+        CDesktop.LBWindow.LBRegionGroup.LBRegion.backgroundImage = Resources.Load<Sprite>(path);
     }
 
     public static void PrintPriceRegion(double price)
@@ -430,7 +472,7 @@ public static class Root
         var newObject = new GameObject("Line", typeof(Line));
         newObject.transform.parent = region.transform;
         newObject.GetComponent<Line>().Initialise(region, align);
-        AddText(text, color == "" ? DefaultTextColorForRegion(region.backgroundType) : color);
+        AddText(text, color);
     }
 
     public static string DefaultTextColorForRegion(RegionBackgroundType type)
@@ -547,13 +589,13 @@ public static class Root
 
     #region Text
 
-    public static void AddText(string text = "", string color = "Gray")
+    public static void AddText(string text = "", string color = "")
     {
         text ??= "";
         var newObject = new GameObject("Text", typeof(LineText));
         var line = CDesktop.LBWindow.LBRegionGroup.LBRegion.LBLine;
         newObject.transform.parent = line.transform;
-        newObject.GetComponent<LineText>().Initialise(line, text, color);
+        newObject.GetComponent<LineText>().Initialise(line, text, color == "" ? DefaultTextColorForRegion(line.region.backgroundType) : color);
     }
 
     #endregion
@@ -605,6 +647,7 @@ public static class Root
 
     public enum RegionBackgroundType
     {
+        Image,
         Button,
         Header,
         Padding,

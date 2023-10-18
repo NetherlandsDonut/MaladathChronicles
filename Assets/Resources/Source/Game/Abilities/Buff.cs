@@ -25,6 +25,9 @@ public class Buff
     //Indicates whether this buff can be stacked on a target
     public bool stackable;
 
+    //Rank variables to scale buffs with their level
+    public List<Dictionary<string, string>> ranks;
+
     //List of events this buff has
     //This is essentially all the buff's effects with it's triggerers that make them happen
     public List<Event> events;
@@ -34,7 +37,7 @@ public class Buff
 
     #region Execution
 
-    public void ExecuteEvents(Board board, FutureBoard futureBoard, Dictionary<string, string> trigger, (Buff, int, GameObject) entityBuff)
+    public void ExecuteEvents(Board board, FutureBoard futureBoard, Dictionary<string, string> trigger, (Buff, int, GameObject, int) entityBuff)
     {
         //In case of this buff having no events just return
         if (events == null) return;
@@ -108,16 +111,27 @@ public class Buff
                     if (execute)
                     {
                         if (entityBuff.Item3 != null) board.actions.Add(() => { AddSmallButtonOverlay(entityBuff.Item3, "OtherGlowFull", 1, 5); });
-                        eve.ExecuteEffects(board, futureBoard, icon, trigger);
+                        eve.ExecuteEffects(board, futureBoard, icon, trigger, RankVariables(entityBuff.Item4), entityBuff.Item4);
                     }
                 }
+    }
+
+    public Dictionary<string, string> RankVariables(int abilityRank)
+    {
+        var variables = new Dictionary<string, string>();
+        foreach (var rank in ranks)
+            if (ranks.IndexOf(rank) > abilityRank) break;
+            else foreach (var variable in rank)
+                    if (variables.ContainsKey(variable.Key)) variables[variable.Key] = variable.Value;
+                    else variables.Add(variable.Key, variable.Value);
+        return variables;
     }
 
     #endregion
 
     #region Description
 
-    public static void PrintBuffTooltip(Entity Effector, Entity other, (Buff, int, GameObject) buff)
+    public static void PrintBuffTooltip(Entity Effector, Entity other, (Buff, int, GameObject, int) buff)
     {
         SetAnchor(Top, 0, -46);
         AddHeaderGroup();
@@ -135,16 +149,16 @@ public class Buff
                 AddText(buff.Item2 + "");
             }
         });
-        buff.Item1.PrintDescription(Effector, other);
+        buff.Item1.PrintDescription(Effector, other, buff.Item4);
         AddRegionGroup();
         SetRegionGroupWidth(242);
         AddPaddingRegion(() => { AddLine(); });
     }
 
-    public void PrintDescription(Entity effector, Entity other)
+    public void PrintDescription(Entity effector, Entity other, int rank)
     {
         int width = CDesktop.LBWindow.LBRegionGroup.setWidth;
-        if (description != null) description.Print(effector, other, width);
+        if (description != null) description.Print(effector, other, width, RankVariables(rank));
         else AddHeaderRegion(() =>
         {
             SetRegionAsGroupExtender();

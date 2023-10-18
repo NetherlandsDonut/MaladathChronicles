@@ -23,7 +23,7 @@ public class Entity
         if (name != "") this.name = name;
         else this.name = gender == "Female" ? race.femaleNames[random.Next(race.femaleNames.Count)] : race.maleNames[random.Next(race.maleNames.Count)];
         this.spec = spec.name;
-        abilities = race.abilities.Select(x => x).Concat(spec.abilities.FindAll(x => x.Item2 <= level).Select(x => x.Item1)).Concat(spec.talentTrees.SelectMany(x => x.talents.FindAll(y => y.defaultTaken)).Select(x => x.ability)).Distinct().ToList();
+        abilities = race.abilities.Merge(spec.abilities).Merge(spec.talentTrees.SelectMany(x => x.talents.FindAll(y => y.defaultTaken)).ToDictionary(x => x.ability, x => 0));
         actionBarsUnlocked = 7;
         stats = new Stats(race.stats.stats.ToDictionary(x => x.Key, x => x.Value));
         inventory = new Inventory(items);
@@ -37,7 +37,7 @@ public class Entity
         }
         equipment = new Dictionary<string, Item>();
         EquipAllItems();
-        actionBars = Ability.abilities.FindAll(x => abilities.Contains(x.name) && x.cost != null).OrderBy(x => x.cost.Sum(y => y.Value)).OrderBy(x => x.putOnEnd).Select(x => new ActionBar(x.name)).Take(actionBarsUnlocked).ToList();
+        actionBars = Ability.abilities.FindAll(x => abilities.ContainsKey(x.name) && x.cost != null).OrderBy(x => x.cost.Sum(y => y.Value)).OrderBy(x => x.putOnEnd).Select(x => new ActionBar(x.name)).Take(actionBarsUnlocked).ToList();
         Initialise();
     }
 
@@ -47,9 +47,9 @@ public class Entity
         race ??= races.Find(x => x.name == "Dumb Kobold");
         kind = race.kind;
         this.race = name = race.name;
-        abilities = race.abilities.Select(x => x).Distinct().ToList();
+        abilities = race.abilities.ToDictionary(x => x.Key, x => x.Value);
         actionBarsUnlocked = 7;
-        actionBars = Ability.abilities.FindAll(x => abilities.Contains(x.name) && x.cost != null).OrderBy(x => x.cost.Sum(y => y.Value)).OrderBy(x => x.putOnEnd).Select(x => new ActionBar(x.name)).ToList();
+        actionBars = Ability.abilities.FindAll(x => abilities.ContainsKey(x.name) && x.cost != null).OrderBy(x => x.cost.Sum(y => y.Value)).OrderBy(x => x.putOnEnd).Select(x => new ActionBar(x.name)).ToList();
         stats = new Stats(
             new()
             {
@@ -177,16 +177,16 @@ public class Entity
     #region Inventory & Equipment
 
     //Provides list of abilities gained from equipped items
-    public List<string> ItemAbilities()
+    public Dictionary<string, int> ItemAbilities()
     {
-        var list = equipment.SelectMany(x => x.Value.abilities).ToList();
+        var list = equipment.SelectMany(x => x.Value.abilities).ToDictionary(x => x.Key, x => x.Value);
         var sets = equipment.ToList().FindAll(x => x.Value.set != null).Select(x => ItemSet.itemSets.Find(y => y.name == x.Value.set)).Distinct();
         foreach (var set in sets)
         {
             var temp = set.EquippedPieces(this);
             foreach (var bonus in set.setBonuses)
                 if (temp >= bonus.requiredPieces)
-                    list.AddRange(bonus.abilitiesProvided);
+                    list = list.Merge(bonus.abilitiesProvided);
         }
         return list;
     }
@@ -201,7 +201,7 @@ public class Entity
     public bool IsItemNewSlot(Item item)
     {
         if (item.type == "Two Handed") return !equipment.ContainsKey("Main Hand") && !equipment.ContainsKey("Off Hand");
-        else if (item.type == "One Handed") return abilities.Contains("Dual Wielding Proficiency") && (!equipment.ContainsKey("Main Hand") || equipment["Main Hand"].type != "Two Handed") && !equipment.ContainsKey("Off Hand") || !equipment.ContainsKey("Main Hand");
+        else if (item.type == "One Handed") return abilities.ContainsKey("Dual Wielding Proficiency") && (!equipment.ContainsKey("Main Hand") || equipment["Main Hand"].type != "Two Handed") && !equipment.ContainsKey("Off Hand") || !equipment.ContainsKey("Main Hand");
         else if (item.type == "Off Hand") return (!equipment.ContainsKey("Main Hand") || equipment["Main Hand"].type != "Two Handed") && !equipment.ContainsKey("Off Hand");
         else return !equipment.ContainsKey(item.type);
     }
@@ -229,7 +229,7 @@ public class Entity
             else
                 if (item1 == null || item2 == null)
                 return true;
-            else if (abilities.Contains("Dual Wielding Proficiency") && item1.ilvl > item2.ilvl)
+            else if (abilities.ContainsKey("Dual Wielding Proficiency") && item1.ilvl > item2.ilvl)
                 return item.ilvl > item2.ilvl;
             else
                 return item.ilvl > item1.ilvl;
@@ -283,7 +283,7 @@ public class Entity
                     var itemAbilities = equipment[slot].abilities;
                     if (itemAbilities != null)
                         foreach (var ability in itemAbilities)
-                            abilities.Remove(ability);
+                            abilities.Remove(ability.Key);
                     if (index != -1) inventory.items.Insert(index, equipment[slot]);
                     else inventory.items.Add(equipment[slot]);
                     equipment.Remove(slot);
@@ -298,17 +298,34 @@ public class Entity
     public bool CanPickTalent(int spec, Talent talent)
     {
         if (unspentTalentPoints == 0) return false;
+        if (abilities.ContainsKey(talent.ability) && abilities[talent.ability] >= Ability.abilities.Find(x => x.name == talent.ability).ranks.Count - 1) return false;
+        if (talent.tree == 1 && TreeCompletion(spec, 0) < adeptTreeRequirement) return false;
         var talentTree = Spec().talentTrees[spec];
-        if (talent.row > talentTree.talents.FindAll(x => abilities.Contains(x.ability)).Max(x => x.row) + 1) return false;
-        if (talent.inherited) if (!abilities.Contains(PreviousTalent(spec, talent).ability)) return false;
+        var temp = talentTree.talents.FindAll(x => x.tree == talent.tree && abilities.ContainsKey(x.ability));
+        if (talent.row > (temp.Count > 0 ? temp.Max(x => x.row) + 1 : 0)) return false;
+        if (talent.inherited) if (!abilities.ContainsKey(PreviousTalent(spec, talent).ability)) return false;
         return true;
     }
 
     //Provides a talent that preceeds given talent
     public Talent PreviousTalent(int spec, Talent talent)
     {
-        var temp = Spec().talentTrees[spec].talents.OrderByDescending(x => x.row).ToList().FindAll(x => x.col == talent.col);
+        var temp = Spec().talentTrees[spec].talents.OrderByDescending(x => x.row).ToList().FindAll(x => x.col == talent.col && x.tree == talent.tree);
         return temp.Find(x => x.row < talent.row);
+    }
+
+    //Provides a talent that preceeds given talent
+    public int TreeSize(int spec, int tree)
+    {
+        var temp = Spec().talentTrees[spec].talents.FindAll(x => x.tree == tree);
+        return temp.Sum(x => Ability.abilities.Find(y => y.name == x.ability).ranks.Count);
+    }
+
+    //Provides a talent that preceeds given talent
+    public int TreeCompletion(int spec, int tree)
+    {
+        var temp = Spec().talentTrees[spec].talents.FindAll(x => x.tree == tree).Select(x => x.ability);
+        return abilities.Sum(x => temp.Contains(x.Key) ? x.Value + 1 : 0);
     }
 
     #endregion
@@ -547,7 +564,11 @@ public class Entity
         }
     }
 
-    public List<Ability> AbilitiesInCombat() => Ability.abilities.FindAll(x => abilities.Contains(x.name) && (x.cost == null || actionBars.Exists(y => y.ability == x.name)));
+    public Dictionary<Ability, int> AbilitiesInCombat()
+    {
+        var temp = Ability.abilities.FindAll(x => abilities.ContainsKey(x.name) && (x.cost == null || actionBars.Exists(y => y.ability == x.name)));
+        return temp.ToDictionary(x => x, x => abilities[x.name]);
+    }
 
     //Pops all buffs on this entity activating
     //their effects and "Red"ucing duration by 1 turn
@@ -564,25 +585,25 @@ public class Entity
             }
             Board.board.actions.Add(() =>
             {
-                buffs[index] = (buffs[index].Item1, buffs[index].Item2 - 1, buffs[index].Item3);
+                buffs[index] = (buffs[index].Item1, buffs[index].Item2 - 1, buffs[index].Item3, buffs[index].Item4);
                 if (buffs[index].Item2 <= 0) RemoveBuff(buffs[index]);
             });
         }
     }
 
     //Adds a buff to this entity
-    public void AddBuff(Buff buff, int duration, GameObject buffObject)
+    public void AddBuff(Buff buff, int duration, GameObject buffObject, int rank)
     {
         if (!buff.stackable)
         {
             var list = buffs.FindAll(x => x.Item1 == buff).ToList();
             for (int i = list.Count - 1; i >= 0; i--) RemoveBuff(list[i]);
         }
-        buffs.Add((buff, duration, buffObject));
+        buffs.Add((buff, duration, buffObject, rank));
     }
 
     //Removes a buff from this entity
-    public void RemoveBuff((Buff, int, GameObject) buff)
+    public void RemoveBuff((Buff, int, GameObject, int) buff)
     {
         var temp = buff.Item3.GetComponent<FlyingBuff>();
         temp.dyingIndex = temp.Index();
@@ -634,7 +655,7 @@ public class Entity
 
     //List of abilities that this entity has access to
     //This can be abilities from items, class or race
-    public List<string> abilities;
+    public Dictionary<string, int> abilities;
 
     //Set action bars in spellbook
     public List<ActionBar> actionBars;
@@ -656,5 +677,5 @@ public class Entity
     [NonSerialized] public Dictionary<string, int> resources;
 
     //List of active buffs and debuffs on this entity
-    [NonSerialized] public List<(Buff, int, GameObject)> buffs;
+    [NonSerialized] public List<(Buff, int, GameObject, int)> buffs;
 }

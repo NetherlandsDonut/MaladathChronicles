@@ -1,7 +1,5 @@
 using System.Collections.Generic;
 
-using static Ability;
-
 public class Spec
 {
     //Initialisation method to fill automatic values
@@ -10,11 +8,11 @@ public class Spec
     {
         if (abilities != null)
             foreach (var ability in abilities)
-                if (!Ability.abilities.Exists(x => x.name == ability.Item1))
+                if (!Ability.abilities.Exists(x => x.name == ability.Key))
                     Ability.abilities.Insert(0, new Ability()
                     {
-                        name = ability.Item1,
-                        icon = "Ability" + ability.Item1.Replace(" ", ""),
+                        name = ability.Key,
+                        icon = "Ability" + ability.Key.Clean(),
                         events = new(),
                         tags = new()
                     });
@@ -25,7 +23,7 @@ public class Spec
                         Ability.abilities.Insert(0, new Ability()
                         {
                             name = talent.ability,
-                            icon = "Ability" + talent.ability.Replace(" ", ""),
+                            icon = "Ability" + talent.ability.Clean(),
                             events = new(),
                             tags = new()
                         });
@@ -51,7 +49,7 @@ public class Spec
     //Item1 provides information on the name of the ability provided
     //Item2 provides information at which level of a character the ability is granted
     //EXAMPLE: { "Item1": "Mail Proficiency", "Item2": 40 }
-    public List<(string, int)> abilities;
+    public Dictionary<string, int> abilities;
 
     //Talent trees available to characters of this class
     public List<TalentTree> talentTrees;

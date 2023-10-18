@@ -21,7 +21,7 @@ public class FutureEntity
             actionBars.Add(new ActionBar(actionBar.ability, actionBar.cooldown));
         buffs = new();
         foreach (var buff in entity.buffs)
-            buffs.Add((buff.Item1, buff.Item2));
+            buffs.Add((buff.Item1, buff.Item2, buff.Item3));
         resources = new();
         foreach (var pair in entity.resources)
             resources.Add(pair.Key, pair.Value);
@@ -41,7 +41,7 @@ public class FutureEntity
             actionBars.Add(new ActionBar(actionBar.ability, actionBar.cooldown));
         buffs = new();
         foreach (var buff in entity.buffs)
-            buffs.Add((buff.Item1, buff.Item2));
+            buffs.Add((buff.Item1, buff.Item2, buff.Item4));
         resources = new();
         foreach (var pair in entity.resources)
             resources.Add(pair.Key, pair.Value);
@@ -67,7 +67,7 @@ public class FutureEntity
 
     public Dictionary<string, int> resources;
 
-    public List<(Buff, int)> buffs;
+    public List<(Buff, int, int)> buffs;
 
     public Dictionary<string, double> ElementImportance(double healthPerc, double otherHealthPerc)
     {
@@ -358,12 +358,12 @@ public class FutureEntity
                 board.CallEvents(this, board, new() { { "Trigger", "BuffRemove" }, { "Triggerer", "Effector" }, { "BuffName", buffs[index].Item1.name } });
                 board.CallEvents(board.player == this ? board.enemy : board.player, board, new() { { "Trigger", "BuffRemove" }, { "Triggerer", "Other" }, { "BuffName", buffs[index].Item1.name } });
             }
-            buffs[index] = (buffs[index].Item1, buffs[index].Item2 - 1);
+            buffs[index] = (buffs[index].Item1, buffs[index].Item2 - 1, buffs[index].Item3);
             if (buffs[index].Item2 <= 0) RemoveBuff(buffs[index]);
         }
     }
 
-    public void AddBuff(Buff buff, int duration)
+    public void AddBuff(Buff buff, int duration, int rank)
     {
         if (!buff.stackable)
         {
@@ -371,10 +371,10 @@ public class FutureEntity
             for (int i = list.Count - 1; i >= 0; i--)
                 RemoveBuff(list[i]);
         }
-        buffs.Add((buff, duration));
+        buffs.Add((buff, duration, rank));
     }
 
-    public void RemoveBuff((Buff, int) buff)
+    public void RemoveBuff((Buff, int, int) buff)
     {
         buffs.Remove(buff);
     }

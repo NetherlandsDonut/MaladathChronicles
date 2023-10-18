@@ -61,12 +61,20 @@ public class SiteHostileArea : Site
                         portrait = "PortraitCow",
                         vitality = 3.0,
                     });
+        var all = new List<Encounter>();
         if (commonEncounters != null)
             if (commonEncounters.Count > 0)
-                recommendedLevel = (int)commonEncounters.Average(x => x.levelMax != 0 ? (x.levelMin + x.levelMax) / 2.0 : x.levelMin);
-                else commonEncounters = null;
-        if (rareEncounters != null && rareEncounters.Count == 0) rareEncounters = null;
-        if (eliteEncounters != null && eliteEncounters.Count == 0) eliteEncounters = null;
+                all.AddRange(commonEncounters);
+            else commonEncounters = null;
+        if (rareEncounters != null)
+            if (rareEncounters.Count > 0)
+                all.AddRange(rareEncounters);
+            else rareEncounters = null;
+        if (eliteEncounters != null)
+            if (eliteEncounters.Count > 0)
+                all.AddRange(eliteEncounters);
+            else eliteEncounters = null;
+        if (all.Count > 0) recommendedLevel = (int)all.Average(x => x.levelMax != 0 ? (x.levelMin + x.levelMax) / 2.0 : x.levelMin);
         if (!Blueprint.windowBlueprints.Exists(x => x.title == "HostileArea: " + name))
             Blueprint.windowBlueprints.Add(
                 new Blueprint("HostileArea: " + name,

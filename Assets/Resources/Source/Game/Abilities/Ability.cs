@@ -10,6 +10,9 @@ public class Ability
     //and remove empty collections to avoid serialising them later
     public void Initialise()
     {
+        ranks ??= new();
+        if (ranks.Count == 0)
+            ranks.Add(new());
         events ??= new();
         tags ??= new();
     }
@@ -24,7 +27,7 @@ public class Ability
 
     #region Execution
 
-    public void ExecuteEvents(Board board, FutureBoard futureBoard, Dictionary<string, string> trigger)
+    public void ExecuteEvents(Board board, FutureBoard futureBoard, Dictionary<string, string> trigger, int abilityRank)
     {
         //In case of this ability having no events just return
         if (events == null) return;
@@ -95,15 +98,26 @@ public class Ability
                     else if (trigger["Trigger"] == "CombatBegin") execute = true;
                     else if (trigger["Trigger"] == "TurnBegin") execute = true;
                     else if (trigger["Trigger"] == "TurnEnd") execute = true;
-                    if (execute) eve.ExecuteEffects(board, futureBoard, icon, trigger);
+                    if (execute) eve.ExecuteEffects(board, futureBoard, icon, trigger, RankVariables(abilityRank), abilityRank);
                 }
+    }
+
+    public Dictionary<string, string> RankVariables(int abilityRank)
+    {
+        var variables = new Dictionary<string, string>();
+        foreach (var rank in ranks)
+            if (ranks.IndexOf(rank) > abilityRank) break;
+            else foreach (var variable in rank)
+                    if (variables.ContainsKey(variable.Key)) variables[variable.Key] = variable.Value;
+                    else variables.Add(variable.Key, variable.Value);
+        return variables;
     }
 
     #endregion
 
     #region Description
 
-    public static void PrintAbilityTooltip(Entity effector, Entity other, Ability ability)
+    public static void PrintAbilityTooltip(Entity effector, Entity other, Ability ability, int rank)
     {
         SetAnchor(Top, 0, -46);
         AddHeaderGroup();
@@ -124,6 +138,7 @@ public class Ability
             AddHeaderRegion(() =>
             {
                 AddLine(ability.name, "Gray");
+                AddText(" " + ToRoman(rank + 1));
             });
             AddPaddingRegion(() =>
             {
@@ -140,7 +155,7 @@ public class Ability
                     }
                 }
             });
-            ability.PrintDescription(effector, other, 242);
+            ability.PrintDescription(effector, other, 242, rank);
             if (ability.cost != null)
                 foreach (var cost in ability.cost)
                 {
@@ -162,9 +177,10 @@ public class Ability
         }
     }
 
-    public void PrintDescription(Entity effector, Entity other, int width)
+    public void PrintDescription(Entity effector, Entity other, int width, int rank)
     {
-        if (description != null) description.Print(effector, other, width);
+
+        if (description != null) description.Print(effector, other, width, RankVariables(rank));
         else AddHeaderRegion(() =>
         {
             SetRegionAsGroupExtender();
@@ -194,6 +210,9 @@ public class Ability
     //Values provide information how much of that resource entity needs
     //EXAMPLE: { "Frost": 4, "Decay": 2  } 
     public Dictionary<string, int> cost;
+
+    //Rank variables to scale abilities with their level
+    public List<Dictionary<string, string>> ranks;
 
     //List of events this ability has
     //This is essentially all the ability's effects with it's triggerers that make them happen
