@@ -1696,8 +1696,8 @@
           }
         }
       },
-      "cameraX": 277,
-      "cameraY": -65,
+      "cameraX": 265,
+      "cameraY": -64,
       "siteProgress": {},
       "commonsKilled": {},
       "raresKilled": {},
@@ -1705,12 +1705,16 @@
       "siteVisits": {
         "Orgrimmar": 1,
         "Undercity": 1,
-        "Scholomance": 2
+        "Scholomance": 2,
+        "Caer Darrow": 1,
+        "Sorrow Hill": 1,
+        "Uther's Tomb": 1,
+        "Ruins of Andorhal": 3
       },
       "startDate": "2023-10-18T12:41:15.4651668+02:00",
-      "lastLoaded": "2023-10-19T11:27:48.2117817+02:00",
-      "lastPlayed": "2023-10-19T11:32:01.8722857+02:00",
-      "timePlayed": "00:25:36.1684368",
+      "lastLoaded": "2023-10-19T23:10:27.7044668+02:00",
+      "lastPlayed": "2023-10-19T23:14:09.2058192+02:00",
+      "timePlayed": "00:30:06.5094637",
       "lastVisitedTalents": 2
     },
     {
@@ -4910,6 +4914,172 @@
               "droppedBy": [
                 "Lord Valthalak"
               ]
+            },
+            {
+              "rarity": "Poor",
+              "name": "Cracked Egg Shells",
+              "icon": "itemegg04",
+              "type": "Miscellaneous",
+              "ilvl": 1,
+              "price": 0.0004,
+              "stats": {
+                "stats": {}
+              },
+              "droppedBy": [
+                "Plainstrider",
+                "Adult Plainstrider",
+                "Elder Plainstrider",
+                "Taloned Swoop",
+                "Strigid Hunter",
+                "Strigid Owl",
+                "Swoop",
+                "Young Fleshripper",
+                "Strigid Screecher",
+                "Wiry Swoop",
+                "Mazzranache",
+                "Galak Centaur",
+                "Venture Co. Laborer",
+                "Gnarlpine Ursa",
+                "Venture Co. Taskmaster",
+                "Prairie Wolf",
+                "Venture Co. Hireling",
+                "Flatland Cougar",
+                "Prairie Stalker",
+                "Gnarlpine Ambusher",
+                "Mountain Cougar",
+                "Prairie Wolf Alpha",
+                "Webwood Venomfang",
+                "Palemane Tanner",
+                "Bael'dun Digger",
+                "Supervisor Fizsprocket",
+                "Flatland Prowler",
+                "Palemane Skinner",
+                "Bristleback Quilboar",
+                "Bael'dun Appraiser",
+                "Timberling Bark Ripper",
+                "Nightsaber",
+                "Battleboar",
+                "Venture Co. Worker",
+                "Bristleback Interloper",
+                "Elder Nightsaber",
+                "Palemane Poacher",
+                "Rascal Sprite",
+                "Young Wendigo",
+                "Nightsaber Stalker",
+                "Gnarlpine Warrior",
+                "Bristleback Battleboar",
+                "Timberling Mire Beast",
+                "Webwood Silkspinner",
+                "Timberling",
+                "Gnarlpine Shaman",
+                "Young Black Bear",
+                "Windfury Harpy",
+                "Timberling Trampler",
+                "Venture Co. Supervisor",
+                "Webwood Lurker",
+                "Snow Leopard",
+                "Windfury Sorceress",
+                "Windfury Matriarch",
+                "Gnarlpine Mystic",
+                "Bloodfeather Fury",
+                "Gnarlpine Avenger",
+                "Elder Crag Boar",
+                "Gnarlpine Defender",
+                "Bloodtalon Scythemaw",
+                "Gnarlpine Augur",
+                "Windfury Wind Witch",
+                "Bogling",
+                "Elder Timberling",
+                "Shadow Sprite",
+                "Felstalker",
+                "Elder Mottled Boar",
+                "Bloodtalon Taillasher",
+                "Razormane Water Seeker",
+                "Thunder Lizard"
+              ]
+            },
+            {
+              "rarity": "Poor",
+              "name": "Cracked Egg Shells",
+              "icon": "itemegg04",
+              "type": "Miscellaneous",
+              "ilvl": 1,
+              "price": 0.0004,
+              "stats": {
+                "stats": {}
+              },
+              "droppedBy": [
+                "Plainstrider",
+                "Adult Plainstrider",
+                "Elder Plainstrider",
+                "Taloned Swoop",
+                "Strigid Hunter",
+                "Strigid Owl",
+                "Swoop",
+                "Young Fleshripper",
+                "Strigid Screecher",
+                "Wiry Swoop",
+                "Mazzranache",
+                "Galak Centaur",
+                "Venture Co. Laborer",
+                "Gnarlpine Ursa",
+                "Venture Co. Taskmaster",
+                "Prairie Wolf",
+                "Venture Co. Hireling",
+                "Flatland Cougar",
+                "Prairie Stalker",
+                "Gnarlpine Ambusher",
+                "Mountain Cougar",
+                "Prairie Wolf Alpha",
+                "Webwood Venomfang",
+                "Palemane Tanner",
+                "Bael'dun Digger",
+                "Supervisor Fizsprocket",
+                "Flatland Prowler",
+                "Palemane Skinner",
+                "Bristleback Quilboar",
+                "Bael'dun Appraiser",
+                "Timberling Bark Ripper",
+                "Nightsaber",
+                "Battleboar",
+                "Venture Co. Worker",
+                "Bristleback Interloper",
+                "Elder Nightsaber",
+                "Palemane Poacher",
+                "Rascal Sprite",
+                "Young Wendigo",
+                "Nightsaber Stalker",
+                "Gnarlpine Warrior",
+                "Bristleback Battleboar",
+                "Timberling Mire Beast",
+                "Webwood Silkspinner",
+                "Timberling",
+                "Gnarlpine Shaman",
+                "Young Black Bear",
+                "Windfury Harpy",
+                "Timberling Trampler",
+                "Venture Co. Supervisor",
+                "Webwood Lurker",
+                "Snow Leopard",
+                "Windfury Sorceress",
+                "Windfury Matriarch",
+                "Gnarlpine Mystic",
+                "Bloodfeather Fury",
+                "Gnarlpine Avenger",
+                "Elder Crag Boar",
+                "Gnarlpine Defender",
+                "Bloodtalon Scythemaw",
+                "Gnarlpine Augur",
+                "Windfury Wind Witch",
+                "Bogling",
+                "Elder Timberling",
+                "Shadow Sprite",
+                "Felstalker",
+                "Elder Mottled Boar",
+                "Bloodtalon Taillasher",
+                "Razormane Water Seeker",
+                "Thunder Lizard"
+              ]
             }
           ]
         },
@@ -5113,21 +5283,33 @@
           }
         }
       },
-      "cameraX": -17,
-      "cameraY": 9,
-      "siteProgress": {},
-      "commonsKilled": {},
+      "cameraX": 51,
+      "cameraY": -22,
+      "siteProgress": {
+        "Pools of Arlithrien": 3,
+        "Lake Al'Ameth": 5
+      },
+      "commonsKilled": {
+        "Webwood Venomfang": 2,
+        "Gnarlpine Defender": 1,
+        "Timberling": 3,
+        "Timberling Bark Ripper": 2
+      },
       "raresKilled": {},
       "elitesKilled": {},
+      "siteVisits": {
+        "Pools of Arlithrien": 1,
+        "Lake Al'Ameth": 5
+      },
       "startDate": "2023-10-18T21:08:47.5610377+02:00",
-      "lastLoaded": "2023-10-19T10:43:59.5252739+02:00",
-      "lastPlayed": "2023-10-19T10:51:12.0607094+02:00",
-      "timePlayed": "00:08:47.1384889"
+      "lastLoaded": "2023-10-19T23:48:45.5118457+02:00",
+      "lastPlayed": "2023-10-19T23:49:56.5058295+02:00",
+      "timePlayed": "00:15:38.5236845"
     },
     {
       "player": {
         "level": 60,
-        "unspentTalentPoints": 11,
+        "unspentTalentPoints": 10,
         "actionBarsUnlocked": 7,
         "name": "Brishua",
         "race": "Dwarf",
@@ -5158,7 +5340,8 @@
           "Imbued Infusions": 0,
           "Saved by the Light": 0,
           "Benediction": 0,
-          "Flash of Light": 0
+          "Flash of Light": 0,
+          "Blade of Justice": 0
         },
         "actionBars": [
           {
@@ -5169,6 +5352,9 @@
           },
           {
             "ability": "Stoneform"
+          },
+          {
+            "ability": "Blade of Justice"
           }
         ],
         "stats": {
@@ -5987,10 +6173,14 @@
       "commonsKilled": {},
       "raresKilled": {},
       "elitesKilled": {},
+      "siteVisits": {
+        "Agmond's End": 5
+      },
       "startDate": "2023-10-18T21:09:24.6369634+02:00",
-      "lastLoaded": "2023-10-19T11:02:30.9996059+02:00",
-      "lastPlayed": "2023-10-19T11:16:39.8032656+02:00",
-      "timePlayed": "00:15:25.5909154"
+      "lastLoaded": "2023-10-19T23:42:11.50051+02:00",
+      "lastPlayed": "2023-10-19T23:42:42.3332392+02:00",
+      "timePlayed": "00:18:38.2247084",
+      "lastVisitedTalents": 1
     }
   ],
   "Mograine": [

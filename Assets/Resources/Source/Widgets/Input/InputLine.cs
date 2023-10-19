@@ -106,6 +106,7 @@ public class InputLine : MonoBehaviour
         {
             if (CDesktop.windows.Exists(x => x.title == "ObjectManagerEventEffect"))
             {
+                if (int.Parse(foo.Value()) > 100) foo.Set("100");
                 eventEdit.effects[selectedEffect]["TrailStrength"] = foo.Value();
                 Respawn("ObjectManagerEventEffect");
             }
@@ -114,6 +115,7 @@ public class InputLine : MonoBehaviour
         {
             if (CDesktop.windows.Exists(x => x.title == "ObjectManagerEventEffect"))
             {
+                if (int.Parse(foo.Value()) > 100) foo.Set("100");
                 eventEdit.effects[selectedEffect]["ShatterDegree"] = foo.Value();
                 Respawn("ObjectManagerEventEffect");
             }
@@ -122,6 +124,7 @@ public class InputLine : MonoBehaviour
         {
             if (CDesktop.windows.Exists(x => x.title == "ObjectManagerEventEffect"))
             {
+                if (int.Parse(foo.Value()) > 100) foo.Set("100");
                 eventEdit.effects[selectedEffect]["ShatterDensity"] = foo.Value();
                 Respawn("ObjectManagerEventEffect");
             }

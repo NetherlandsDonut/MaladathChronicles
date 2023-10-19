@@ -6,6 +6,9 @@
     "tags": [
       "Damage"
     ],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -31,6 +34,9 @@
     "dispelType": "None",
     "tags": [
       "Damage"
+    ],
+    "ranks": [
+      {}
     ],
     "events": [
       {
@@ -65,6 +71,9 @@
     "tags": [
       "Damage"
     ],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -98,6 +107,9 @@
     "tags": [
       "Defensive"
     ],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -124,6 +136,9 @@
     "tags": [
       "Defensive"
     ],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -149,6 +164,9 @@
     "dispelType": "Magic",
     "tags": [
       "Gathering"
+    ],
+    "ranks": [
+      {}
     ],
     "events": [
       {
@@ -184,6 +202,9 @@
     "tags": [
       "Stun"
     ],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -209,6 +230,9 @@
     "dispelType": "None",
     "tags": [
       "Damage"
+    ],
+    "ranks": [
+      {}
     ],
     "events": [
       {
@@ -236,6 +260,9 @@
     "tags": [
       "Defensive"
     ],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -261,6 +288,9 @@
     "dispelType": "None",
     "tags": [
       "Defensive"
+    ],
+    "ranks": [
+      {}
     ],
     "events": [
       {
@@ -288,6 +318,9 @@
     "tags": [
       "Damage"
     ],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -313,6 +346,9 @@
     "dispelType": "None",
     "tags": [
       "Damage"
+    ],
+    "ranks": [
+      {}
     ],
     "events": [
       {
@@ -365,6 +401,9 @@
     "tags": [
       "Damage"
     ],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -398,6 +437,9 @@
     "tags": [
       "Damage"
     ],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -424,6 +466,9 @@
     "tags": [
       "Defensive"
     ],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -449,6 +494,9 @@
     "dispelType": "None",
     "tags": [],
     "stackable": true,
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -474,6 +522,9 @@
     "dispelType": "None",
     "tags": [],
     "stackable": true,
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -499,6 +550,9 @@
     "dispelType": "None",
     "tags": [],
     "stackable": true,
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -524,6 +578,9 @@
     "dispelType": "None",
     "tags": [],
     "stackable": true,
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -551,6 +608,9 @@
       "Damage"
     ],
     "stackable": true,
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -591,6 +651,9 @@
     "tags": [
       "Damage"
     ],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -616,6 +679,9 @@
     "dispelType": "None",
     "tags": [
       "Damage"
+    ],
+    "ranks": [
+      {}
     ],
     "events": [
       {
@@ -643,6 +709,9 @@
     "tags": [
       "Damage"
     ],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -668,6 +737,9 @@
     "dispelType": "None",
     "tags": [
       "Stun"
+    ],
+    "ranks": [
+      {}
     ],
     "events": [
       {
@@ -695,6 +767,9 @@
     "tags": [
       "Gathering"
     ],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -718,6 +793,9 @@
     "name": "Seal of Fury",
     "icon": "AbilitySealofFury",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -752,42 +830,63 @@
     "name": "Avenging Wrath",
     "icon": "AbilityAvengingWrath",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Ardent Defender",
     "icon": "AbilityArdentDefender",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Berserk",
     "icon": "AbilityBerserk",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Consecration",
     "icon": "AbilityConsecration",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Blazing Barrier",
     "icon": "AbilityBlazingBarrier",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Blessing of Might",
     "icon": "AbilityBlessingofMight",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   },
   {
     "name": "Combustion",
     "icon": "AbilityCombustion",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": []
   }
 ]

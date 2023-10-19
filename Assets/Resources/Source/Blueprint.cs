@@ -138,7 +138,7 @@ public class Blueprint
             maladathIcon.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Textures/MaladathIcon");
             maladathIcon.GetComponent<SpriteRenderer>().sortingLayerName = "Upper";
             maladathIcon.GetComponent<SpriteRenderer>().sortingOrder = 1;
-            maladathIcon.transform.parent = LBDesktop.LBWindow.transform;
+            maladathIcon.transform.parent = CDesktop.LBWindow.transform;
             maladathIcon.transform.localPosition = new Vector3(69, -184);
         }, true),
         new("TitleScreenSingleplayer", () => {
@@ -3880,11 +3880,11 @@ public class Blueprint
                     String.chanceBase.Set(effect.ContainsKey("ChanceBase") ? effect["ChanceBase"] : "100");
                     String.chanceScale.Set(effect.ContainsKey("ChanceScale") ? effect["ChanceScale"] : "None");
                     String.animationArc.Set(effect.ContainsKey("AnimationArc") ? effect["AnimationArc"] : "20");
-                    String.trailStrength.Set(effect.ContainsKey("TrailStrength") ? effect["TrailStrength"] : "0,85");
+                    String.trailStrength.Set(effect.ContainsKey("TrailStrength") ? effect["TrailStrength"] : "5");
                     String.animationSpeed.Set(effect.ContainsKey("AnimationSpeed") ? effect["AnimationSpeed"] : "1,5");
-                    String.shatterDensity.Set(effect.ContainsKey("ShatterDensity") ? effect["ShatterDensity"] : "2");
-                    String.shatterDegree.Set(effect.ContainsKey("ShatterDegree") ? effect["ShatterDegree"] : "0,7");
-                    String.shatterSpeed.Set(effect.ContainsKey("ShatterSpeed") ? effect["ShatterSpeed"] : "4");
+                    String.shatterDensity.Set(effect.ContainsKey("ShatterDensity") ? effect["ShatterDensity"] : "1");
+                    String.shatterDegree.Set(effect.ContainsKey("ShatterDegree") ? effect["ShatterDegree"] : "20");
+                    String.shatterSpeed.Set(effect.ContainsKey("ShatterSpeed") ? effect["ShatterSpeed"] : "6");
                     String.await.Set(effect.ContainsKey("Await") ? effect["Await"] : "1");
                     String.powerScale.Set(effect.ContainsKey("PowerScale") ? effect["PowerScale"] : "1");
                     String.resourceAmount.Set(effect.ContainsKey("ResourceAmount") ? effect["ResourceAmount"] : "1");
@@ -4336,8 +4336,8 @@ public class Blueprint
                     AddSmallButton("OtherReverse", (h) =>
                     {
                         if (effect.ContainsKey("TrailStrength"))
-                            effect["TrailStrength"] = "0,85";
-                        String.trailStrength.Set("0,85");
+                            effect["TrailStrength"] = "5";
+                        String.trailStrength.Set("5");
                         h.window.Respawn();
                     });
                 });
@@ -4401,8 +4401,8 @@ public class Blueprint
                     AddSmallButton("OtherReverse", (h) =>
                     {
                         if (effect.ContainsKey("ShatterDegree"))
-                            effect["ShatterDegree"] = "0,7";
-                        String.shatterDegree.Set("0,7");
+                            effect["ShatterDegree"] = "20";
+                        String.shatterDegree.Set("20");
                         h.window.Respawn();
                     });
                 });
@@ -4413,8 +4413,8 @@ public class Blueprint
                     AddSmallButton("OtherReverse", (h) =>
                     {
                         if (effect.ContainsKey("ShatterDensity"))
-                            effect["ShatterDensity"] = "2";
-                        String.shatterDensity.Set("2");
+                            effect["ShatterDensity"] = "1";
+                        String.shatterDensity.Set("1");
                         h.window.Respawn();
                     });
                 });
@@ -4425,8 +4425,8 @@ public class Blueprint
                     AddSmallButton("OtherReverse", (h) =>
                     {
                         if (effect.ContainsKey("ShatterSpeed"))
-                            effect["ShatterSpeed"] = "4";
-                        String.shatterSpeed.Set("4");
+                            effect["ShatterSpeed"] = "6";
+                        String.shatterSpeed.Set("6");
                         h.window.Respawn();
                     });
                 });
@@ -6745,7 +6745,7 @@ public class Blueprint
             });
             AddHotkey(Escape, () =>
             {
-                if (CloseWindow("Settings"))
+                if (CloseWindow("GameSettings"))
                 {
                     PlaySound("DesktopButtonClose");
                     SpawnWindowBlueprint("TitleScreenMenu");

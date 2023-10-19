@@ -65,8 +65,8 @@ public class String
     public static String chanceBase = new() { inputType = Numbers };
     public static String chanceScale = new() { inputType = Numbers };
     public static String animationArc = new() { inputType = Numbers };
-    public static String trailStrength = new() { inputType = Decimal };
-    public static String shatterDegree = new() { inputType = Decimal };
+    public static String trailStrength = new() { inputType = Numbers };
+    public static String shatterDegree = new() { inputType = Numbers };
     public static String shatterDensity = new() { inputType = Numbers };
     public static String shatterSpeed = new() { inputType = Numbers };
     public static String await = new() { inputType = Numbers };

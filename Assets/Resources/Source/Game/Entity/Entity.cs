@@ -120,15 +120,19 @@ public class Entity
     //Gives many resources in given amounts to the entity
     public void AddResources(Dictionary<string, int> resources)
     {
-        foreach (var resource in resources)
-            if (resource.Value > 0)
+        foreach (var resource in this.resources.Keys.ToList())
+        {
+            if (resources.ContainsKey(resource))
             {
-                this.resources[resource.Key] += resource.Value;
-                if (this.resources[resource.Key] > MaxResource(resource.Key))
-                    this.resources[resource.Key] = MaxResource(resource.Key);
-                Board.board.CallEvents(this, new() { { "Trigger", "ResourceCollected" }, { "Triggerer", "Effector" }, { "ResourceType", resource.Key }, { "ResourceAmount", resource.Value + "" } });
-                Board.board.CallEvents(this == Board.board.player ? Board.board.enemy : Board.board.player, new() { { "Trigger", "ResourceCollected" }, { "Triggerer", "Other" }, { "ResourceType", resource.Key }, { "ResourceAmount", resource.Value + "" } });
+                this.resources[resource] += resources[resource];
+                Board.board.CallEvents(this, new() { { "Trigger", "ResourceCollected" }, { "Triggerer", "Effector" }, { "ResourceType", resource }, { "ResourceAmount", resources[resource] + "" } });
+                Board.board.CallEvents(this == Board.board.player ? Board.board.enemy : Board.board.player, new() { { "Trigger", "ResourceCollected" }, { "Triggerer", "Other" }, { "ResourceType", resource }, { "ResourceAmount", resources[resource] + "" } });
             }
+            if (this.resources[resource] > MaxResource(resource))
+                this.resources[resource] = MaxResource(resource);
+            else if (this.resources[resource] < 0)
+                this.resources[resource] = 0;
+        }
     }
 
     //Detracts specific resource in given amount from the entity
@@ -140,15 +144,19 @@ public class Entity
     //Detracts resources in given amounts from the entity
     public void DetractResources(Dictionary<string, int> resources)
     {
-        foreach (var resource in resources)
-            if (resource.Value > 0)
+        foreach (var resource in this.resources.Keys.ToList())
+        {
+            if (resources.ContainsKey(resource))
             {
-                this.resources[resource.Key] -= resource.Value;
-                if (this.resources[resource.Key] < 0)
-                    this.resources[resource.Key] = 0;
-                Board.board.CallEvents(this, new() { { "Trigger", "ResourceLost" }, { "Triggerer", "Effector" }, { "ResourceType", resource.Key }, { "ResourceAmount", resource.Value + "" } });
-                Board.board.CallEvents(this == Board.board.player ? Board.board.enemy : Board.board.player, new() { { "Trigger", "ResourceLost" }, { "Triggerer", "Other" }, { "ResourceType", resource.Key }, { "ResourceAmount", resource.Value + "" } });
+                this.resources[resource] -= resources[resource];
+                Board.board.CallEvents(this, new() { { "Trigger", "ResourceLost" }, { "Triggerer", "Effector" }, { "ResourceType", resource }, { "ResourceAmount", resources[resource] + "" } });
+                Board.board.CallEvents(this == Board.board.player ? Board.board.enemy : Board.board.player, new() { { "Trigger", "ResourceLost" }, { "Triggerer", "Other" }, { "ResourceType", resource }, { "ResourceAmount", resources[resource] + "" } });
             }
+            if (this.resources[resource] > MaxResource(resource))
+                this.resources[resource] = MaxResource(resource);
+            else if (this.resources[resource] < 0)
+                this.resources[resource] = 0;
+        }
     }
 
     //Resets entity's resources to their base amount

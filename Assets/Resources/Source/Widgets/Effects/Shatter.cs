@@ -1,6 +1,4 @@
-using System;
 using System.Collections;
-
 using UnityEngine;
 
 using static Root;
@@ -21,7 +19,7 @@ public class Shatter : MonoBehaviour
     {
         if (render != null)
         {
-            render.color = new Color(render.color.r, render.color.g, render.color.b, render.color.a - (0.3f * time));
+            render.color = new Color(render.color.r, render.color.g, render.color.b, render.color.a - (0.2f * time));
             if (render.color.a <= 0) Destroy(gameObject);
         }
     }
@@ -47,12 +45,12 @@ public class Shatter : MonoBehaviour
         }
         int x = (int)foo.textureRect.width, y = (int)foo.textureRect.height;
         var dot = Resources.Load<GameObject>("Prefabs/PrefabDot");
-        var direction = UnityEngine.Random.insideUnitCircle;
-        if (amount > 1) amount = 10;
+        var direction = Random.insideUnitCircle;
+        if (amount > 100) amount = 100;
         else if (amount < 0) amount = 0;
-        for (int i = 2; i < x - 1; i++)
-            for (int j = 2; j < y - 1; j++)
-                if ((i + j) % 2 == 0 && random.Next(0, (int)Math.Abs(amount * 100 - 100)) == 0)
+        for (int i = 5; i < x - 4; i++)
+            for (int j = 5; j < y - 4; j++)
+                if ((i + j) % 2 == 0 && random.Next(0, 100) < amount)
                     SpawnDot(i, j, foo.texture.GetPixel(i, j));
 
         void SpawnDot(int c, int v, Color32 color)
@@ -62,8 +60,8 @@ public class Shatter : MonoBehaviour
             newObject.transform.parent = shatter.transform;
             newObject.transform.localPosition = new Vector3(c, v);
             newObject.GetComponent<SpriteRenderer>().color = color;
-            newObject.GetComponent<Rigidbody2D>().AddRelativeForce((direction / 2 + UnityEngine.Random.insideUnitCircle / 2) * (int)(100 * speed));
-            direction = UnityEngine.Random.insideUnitCircle;
+            newObject.GetComponent<Rigidbody2D>().AddRelativeForce((direction / 2 + Random.insideUnitCircle / 6) * (int)(100 * speed));
+            direction = Random.insideUnitCircle;
         }
     }
 
@@ -79,11 +77,11 @@ public class Shatter : MonoBehaviour
         int x = (int)foo.textureRect.width, y = (int)foo.textureRect.height;
         var dot = Resources.Load<GameObject>("Prefabs/PrefabDot");
         var direction = RollDirection();
-        if (amount > 1) amount = 1;
+        if (amount > 100) amount = 100;
         else if (amount < 0) amount = 0;
         for (int i = 2; i < x - 1; i++)
             for (int j = 2; j < y - 1; j++)
-                if ((i + j) % 2 == 0 && random.Next(0, (int)Math.Abs(amount * 10 - 10)) == 0)
+                if ((i + j) % 2 == 0 && random.Next(0, 100) < amount)
                     SpawnDot(i, j, foo.texture.GetPixel(i, j));
 
         void SpawnDot(int c, int v, Color32 color)
@@ -93,13 +91,13 @@ public class Shatter : MonoBehaviour
             newObject.transform.parent = shatter.transform;
             newObject.transform.localPosition = new Vector3(c, v);
             newObject.GetComponent<SpriteRenderer>().color = color;
-            newObject.GetComponent<Rigidbody2D>().AddRelativeForce((direction / 2 + UnityEngine.Random.insideUnitCircle / 2) * (int)(100 * speed));
+            newObject.GetComponent<Rigidbody2D>().AddRelativeForce((direction / 2 + Random.insideUnitCircle / 6) * (int)(100 * speed));
             if (block == "0000") direction = RollDirection();
         }
 
         Vector2 RollDirection()
         {
-            var direction = UnityEngine.Random.insideUnitCircle;
+            var direction = Random.insideUnitCircle;
             if (block[0] == '1' && block[2] == '1') direction = new Vector2(direction.x, 0);
             else if (block[0] == '1' && direction.y > 0 || block[2] == '1' && direction.y < 0) direction = new Vector2(direction.x, -direction.y);
             if (block[1] == '1' && block[3] == '1') direction = new Vector2(0, direction.y);

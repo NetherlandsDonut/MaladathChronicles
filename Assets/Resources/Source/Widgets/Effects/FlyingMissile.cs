@@ -9,6 +9,7 @@ public class FlyingMissile : MonoBehaviour
     public float flySpeed, timeAlive;
     public string trailSprite;
     public double trailStrength;
+    public int trailSpawns;
     public bool up;
 
     public void Initiate(bool fromPlayer, float arc, double flySpeed, double trailStrength, string trailSprite)
@@ -46,7 +47,11 @@ public class FlyingMissile : MonoBehaviour
         }
         else
         {
-            SpawnTrail();
+            if (timeAlive * 3 / frameTime > trailSpawns)
+            {
+                SpawnTrail();
+                trailSpawns++;
+            }
             transform.position = Bezier(from, through1, through2, to, timeAlive * flySpeed);
         }
     }

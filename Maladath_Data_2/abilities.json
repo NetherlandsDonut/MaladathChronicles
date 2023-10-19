@@ -837,10 +837,11 @@
           {
             "SoundEffect": "AbilityBladeofJustice1",
             "ShatterType": "Directional",
-            "ShatterDegree": "0,2",
+            "ShatterDegree": "6",
             "ShatterDensity": "1",
-            "ShatterSpeed": "2",
-            "ShatterTarget": "Effector"
+            "ShatterSpeed": "6",
+            "ShatterTarget": "Effector",
+            "Await": "0"
           },
           {
             "Effect": "Damage",
@@ -848,13 +849,16 @@
             "PowerSource": "Effector",
             "Affect": "Other",
             "AnimationType": "Missile",
-            "ShatterType": "Directional",
+            "ShatterType": "Central",
             "SoundEffect": "AbilityBladeofJusticeImpact",
             "ShatterTarget": "Other",
             "Await": "5",
-            "TrailStrength": "0,15",
+            "TrailStrength": "20",
             "AnimationSpeed": "1,3",
-            "ShatterDensity": "3"
+            "ShatterDensity": "1",
+            "AnimationArc": "10",
+            "ShatterDegree": "30",
+            "ShatterSpeed": "8"
           },
           {
             "Effect": "EndTurn",
@@ -2310,7 +2314,34 @@
     "ranks": [
       {}
     ],
-    "events": []
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector"
+          }
+        ],
+        "effects": [
+          {
+            "SoundEffect": "AbilityShadowWordPainCast"
+          },
+          {
+            "Effect": "Damage",
+            "AnimationType": "Missile",
+            "ShatterType": "Central",
+            "ShatterTarget": "Other",
+            "TrailStrength": "3",
+            "ShatterDensity": "1",
+            "ShatterDegree": "20",
+            "ShatterSpeed": "8"
+          },
+          {
+            "Effect": "EndTurn"
+          }
+        ]
+      }
+    ]
   },
   {
     "name": "Draw Spirit",
@@ -3290,10 +3321,12 @@
         "effects": [
           {
             "SoundEffect": "AbilityFrostboltCast",
-            "ShatterType": "Directional",
+            "ShatterType": "Central",
             "ShatterTarget": "Effector",
-            "ShatterDegree": "0,1",
-            "ShatterDensity": "1"
+            "ShatterDegree": "2",
+            "ShatterDensity": "1",
+            "ShatterSpeed": "3",
+            "Await": "0"
           },
           {
             "Effect": "Damage",
@@ -3302,14 +3335,15 @@
             "PowerSource": "Effector",
             "PowerScale": "2.9",
             "ShatterTarget": "Other",
-            "ShatterType": "Directional",
-            "ShatterDensity": "2",
-            "ShatterSpeed": "4",
-            "ShatterDegree": "0.6",
+            "ShatterType": "Central",
+            "ShatterDensity": "1",
+            "ShatterSpeed": "10",
+            "ShatterDegree": "20",
             "SoundEffect": "AbilityFrostboltImpact",
             "Await": "5",
             "AnimationType": "Missile",
-            "TrailStrength": "0,55"
+            "TrailStrength": "3",
+            "AnimationSpeed": "1,25"
           },
           {
             "Effect": "EndTurn"
@@ -5923,6 +5957,7 @@
       "regions": [
         {
           "regionType": "Padding",
+          "isExtender": true,
           "contents": [
             {
               "Color": "Gray",
@@ -6092,11 +6127,12 @@
         "effects": [
           {
             "SoundEffect": "AbilitySmiteCast",
-            "ShatterType": "Central",
+            "ShatterType": "Directional",
             "ShatterTarget": "Effector",
-            "ShatterDegree": "0.3",
+            "ShatterDegree": "4",
             "ShatterDensity": "1",
-            "ShatterSpeed": "2"
+            "ShatterSpeed": "4",
+            "Await": "0"
           },
           {
             "Effect": "Damage",
@@ -6105,14 +6141,20 @@
             "PowerSource": "Effector",
             "PowerScale": "1.5",
             "AnimationType": "Missile",
-            "ShatterType": "Directional",
+            "ShatterType": "Central",
             "ShatterTarget": "Other",
             "SoundEffect": "AbilitySmiteImpact",
             "AnimationSpeed": "1,5",
-            "AnimationArc": "20"
+            "AnimationArc": "20",
+            "TrailStrength": "5",
+            "ShatterDensity": "1",
+            "ShatterDegree": "20",
+            "Await": "5",
+            "ShatterSpeed": "6",
+            "AbilityName": "Smite"
           },
           {
-            "Effect": "EndTurn"
+            "Effect": "None"
           }
         ]
       }

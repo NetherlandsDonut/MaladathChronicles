@@ -10,6 +10,17 @@ using static SaveGame;
 
 public class Buff
 {
+    //Initialisation method to fill automatic values
+    //and remove empty collections to avoid serialising them later
+    public void Initialise()
+    {
+        ranks ??= new();
+        if (ranks.Count == 0)
+            ranks.Add(new());
+        events ??= new();
+        tags ??= new();
+    }
+
     //Name of the buff
     public string name;
 

@@ -96,7 +96,7 @@ public class Desktop : MonoBehaviour
         if (title == "GameSimulation" && Input.GetKeyDown(KeyCode.Escape))
         {
             CloseDesktop("GameSimulation");
-            UnlockScreen();
+            CDesktop.UnlockScreen();
         }
         if (Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.Tab) && Input.GetKeyDown(KeyCode.LeftAlt))
         {

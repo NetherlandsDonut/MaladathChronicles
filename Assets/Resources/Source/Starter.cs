@@ -226,6 +226,8 @@ public class Starter : MonoBehaviour
             Realm.realms[i].Initialise();
         for (int i = 0; i < Ability.abilities.Count; i++)
             Ability.abilities[i].Initialise();
+        for (int i = 0; i < Buff.buffs.Count; i++)
+            Buff.buffs[i].Initialise();
         for (int i = 0; i < spiritHealers.Count; i++)
             spiritHealers[i].Initialise();
         for (int i = 0; i < 2; i++)
