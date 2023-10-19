@@ -260,6 +260,7 @@
           },
           {
             "row": 2,
+            "col": 2,
             "ability": "Oath of the Far Seer"
           },
           {
@@ -268,22 +269,18 @@
             "ability": "Lava Burst"
           },
           {
-            "row": 2,
-            "col": 2,
-            "ability": "Liquid Magma Totem"
+            "row": 3,
+            "ability": "Liquid Magma Totem",
+            "inherited": true
           },
           {
-            "row": 3,
+            "row": 4,
             "ability": "Searing Flames"
           },
           {
             "row": 3,
             "col": 1,
             "ability": "Earth Shock"
-          },
-          {
-            "row": 4,
-            "ability": "Rolling Magma"
           },
           {
             "row": 4,
@@ -295,17 +292,11 @@
             "ability": "Echo of the Elements"
           },
           {
-            "col": 1,
-            "tree": 1,
-            "ability": "Unrelenting Calamity"
-          },
-          {
             "row": 1,
             "tree": 1,
             "ability": "Primordial Fury"
           },
           {
-            "row": 1,
             "col": 1,
             "tree": 1,
             "ability": "Magma Chamber"
@@ -317,43 +308,28 @@
             "ability": "Stormkeeper"
           },
           {
-            "row": 2,
-            "col": 1,
+            "row": 3,
             "tree": 1,
             "ability": "Elemental Equilibrium"
           },
           {
             "row": 2,
-            "col": 2,
+            "col": 1,
             "tree": 1,
-            "ability": "Earthquake"
+            "ability": "Earthquake",
+            "inherited": true
           },
           {
             "row": 2,
-            "tree": 1,
-            "ability": "Eye of The Storm"
-          },
-          {
-            "row": 3,
             "col": 2,
             "tree": 1,
             "ability": "Chain Lightning"
           },
           {
             "row": 3,
-            "tree": 1,
-            "ability": "Flow of Power"
-          },
-          {
-            "row": 3,
             "col": 1,
             "tree": 1,
             "ability": "Further Beyond"
-          },
-          {
-            "row": 4,
-            "tree": 1,
-            "ability": "Echoes of Great Sundering"
           },
           {
             "row": 4,
@@ -379,10 +355,6 @@
           },
           {
             "row": 1,
-            "ability": "Ice Strike"
-          },
-          {
-            "row": 1,
             "col": 1,
             "ability": "Flametongue Weapon"
           },
@@ -393,6 +365,8 @@
           },
           {
             "row": 2,
+            "col": 2,
+            "tree": 1,
             "ability": "Lava Lash"
           },
           {
@@ -401,46 +375,35 @@
             "ability": "Frostbrand Weapon"
           },
           {
-            "row": 2,
+            "row": 4,
             "col": 2,
             "ability": "Stormflurry"
           },
           {
             "row": 3,
-            "ability": "Ashen Catalyst"
+            "col": 2,
+            "tree": 1,
+            "ability": "Ashen Catalyst",
+            "inherited": true
           },
           {
-            "row": 3,
-            "col": 2,
-            "ability": "Forceful Winds"
+            "row": 1,
+            "tree": 1,
+            "ability": "Storm's Wrath"
           },
           {
             "row": 4,
             "ability": "Splintered Elements"
           },
           {
-            "row": 4,
-            "col": 1,
+            "row": 3,
+            "col": 2,
             "ability": "Frost Shock"
           },
           {
-            "row": 4,
-            "col": 2,
-            "ability": "Crash Lightning"
-          },
-          {
-            "tree": 1,
-            "ability": "Molten Assault"
-          },
-          {
             "col": 1,
             "tree": 1,
-            "ability": "Windfury Weapon"
-          },
-          {
-            "col": 2,
-            "tree": 1,
-            "ability": "Thundering Strikes"
+            "ability": "Grounding Totem"
           },
           {
             "row": 1,
@@ -449,21 +412,8 @@
             "ability": "Call of Thunder"
           },
           {
-            "row": 1,
-            "col": 2,
-            "tree": 1,
-            "ability": "Elemental Assault"
-          },
-          {
-            "row": 1,
-            "tree": 1,
-            "ability": "Storm's Wrath"
-          },
-          {
             "row": 2,
-            "col": 2,
-            "tree": 1,
-            "ability": "Doom Winds"
+            "ability": "Elemental Assault"
           },
           {
             "row": 2,
@@ -484,7 +434,6 @@
           {
             "row": 3,
             "col": 1,
-            "tree": 1,
             "ability": "Converging Storms"
           },
           {
@@ -507,10 +456,6 @@
             "col": 1,
             "ability": "Healing Wave",
             "defaultTaken": true
-          },
-          {
-            "row": 1,
-            "ability": "Arcane Tempo"
           },
           {
             "row": 1,
@@ -575,12 +520,6 @@
             "ability": "Totemic Focus"
           },
           {
-            "row": 1,
-            "col": 2,
-            "tree": 1,
-            "ability": "Tidebringer"
-          },
-          {
             "row": 2,
             "col": 1,
             "tree": 1,
@@ -608,11 +547,6 @@
             "row": 3,
             "tree": 1,
             "ability": "Continuous Waves"
-          },
-          {
-            "row": 4,
-            "tree": 1,
-            "ability": "Resurgence"
           },
           {
             "row": 4,
@@ -750,8 +684,7 @@
             "ability": "Thunder Clap"
           },
           {
-            "row": 4,
-            "col": 2,
+            "row": 2,
             "ability": "Hamstring"
           },
           {
@@ -787,11 +720,6 @@
             "col": 2,
             "tree": 1,
             "ability": "Pain And Gain"
-          },
-          {
-            "row": 4,
-            "tree": 1,
-            "ability": "Bladestorm"
           }
         ]
       },
@@ -809,14 +737,14 @@
             "defaultTaken": true
           },
           {
-            "row": 2,
+            "row": 1,
             "col": 1,
             "ability": "Cruelty"
           },
           {
             "row": 3,
             "col": 2,
-            "ability": "Raging Blow"
+            "ability": "Slam"
           },
           {
             "row": 4,
@@ -824,15 +752,37 @@
             "ability": "Whirlwind"
           },
           {
-            "row": 5,
-            "col": 1,
-            "tree": 1,
+            "row": 2,
+            "col": 2,
             "ability": "Demoralizing Shout"
           },
           {
             "col": 2,
             "tree": 1,
-            "ability": "Skullsplitter"
+            "ability": "Blind Rage"
+          },
+          {
+            "row": 4,
+            "ability": "Fresh Meat"
+          },
+          {
+            "row": 4,
+            "col": 1,
+            "ability": "Immense Strength"
+          },
+          {
+            "row": 3,
+            "col": 1,
+            "ability": "War Machine"
+          },
+          {
+            "row": 2,
+            "col": 1,
+            "ability": "Bloodcraze"
+          },
+          {
+            "tree": 1,
+            "ability": "Pummel"
           },
           {
             "row": 1,
@@ -844,7 +794,7 @@
             "row": 1,
             "col": 2,
             "tree": 1,
-            "ability": "Onslaught"
+            "ability": "Enrage"
           },
           {
             "row": 2,
@@ -862,7 +812,7 @@
             "row": 3,
             "col": 1,
             "tree": 1,
-            "ability": "Rampage"
+            "ability": "Blood Frenzy"
           },
           {
             "row": 3,
@@ -875,6 +825,12 @@
             "tree": 1,
             "ability": "Recklessness",
             "inherited": true
+          },
+          {
+            "row": 4,
+            "col": 2,
+            "tree": 1,
+            "ability": "Heroism"
           }
         ]
       },
@@ -891,9 +847,18 @@
             "ability": "Shield Slam"
           },
           {
+            "row": 1,
+            "col": 1,
+            "ability": "Toughness"
+          },
+          {
             "row": 3,
             "col": 2,
             "ability": "Bloodrage"
+          },
+          {
+            "row": 3,
+            "ability": "Sunder Armor"
           },
           {
             "row": 4,
@@ -1015,11 +980,6 @@
             "ability": "Beacon of the Lightbringer"
           },
           {
-            "row": 2,
-            "col": 2,
-            "ability": "Saved by the Light"
-          },
-          {
             "row": 3,
             "ability": "Flash of Light"
           },
@@ -1027,10 +987,6 @@
             "row": 3,
             "col": 1,
             "ability": "Imbued Infusions"
-          },
-          {
-            "row": 4,
-            "ability": "Flash of Light"
           },
           {
             "row": 4,
@@ -1047,25 +1003,14 @@
             "ability": "Unyielding Faith"
           },
           {
-            "col": 2,
-            "tree": 1,
-            "ability": "Light's Conviction"
-          },
-          {
             "row": 1,
             "col": 1,
             "tree": 1,
             "ability": "Holy Shock"
           },
           {
-            "row": 1,
+            "row": 3,
             "col": 2,
-            "tree": 1,
-            "ability": "Overflowing Light"
-          },
-          {
-            "row": 2,
-            "col": 1,
             "ability": "Holy Wrath"
           },
           {
@@ -1073,11 +1018,6 @@
             "col": 2,
             "tree": 1,
             "ability": "Seal of Salvation"
-          },
-          {
-            "row": 3,
-            "tree": 1,
-            "ability": "Divine Intervention"
           },
           {
             "row": 3,
@@ -1139,17 +1079,8 @@
           },
           {
             "row": 2,
-            "ability": "Swift Justice"
-          },
-          {
-            "row": 2,
             "col": 1,
             "ability": "Adjudication"
-          },
-          {
-            "row": 2,
-            "col": 2,
-            "ability": "Executioner's Will"
           },
           {
             "row": 3,
@@ -1184,11 +1115,12 @@
             "ability": "Vengeance"
           },
           {
-            "col": 2,
+            "row": 2,
             "tree": 1,
             "ability": "Hammer of Wrath"
           },
           {
+            "row": 2,
             "col": 1,
             "tree": 1,
             "ability": "Avenging Wrath"
@@ -1202,18 +1134,6 @@
             "row": 1,
             "tree": 1,
             "ability": "Vanguard of Justice"
-          },
-          {
-            "row": 1,
-            "col": 2,
-            "tree": 1,
-            "ability": "Wake of Ashes"
-          },
-          {
-            "row": 2,
-            "col": 1,
-            "tree": 1,
-            "ability": "Jurisdiction"
           },
           {
             "row": 2,
@@ -1236,12 +1156,6 @@
             "row": 4,
             "tree": 1,
             "ability": "Divine Wrath"
-          },
-          {
-            "row": 4,
-            "col": 1,
-            "tree": 1,
-            "ability": "Divine Auxiliary"
           }
         ]
       },
@@ -1292,10 +1206,6 @@
           },
           {
             "row": 4,
-            "ability": "Consecrated Ground"
-          },
-          {
-            "row": 4,
             "col": 2,
             "ability": "Hammer of Justice"
           },
@@ -1309,6 +1219,7 @@
             "ability": "Divine Shield"
           },
           {
+            "row": 1,
             "tree": 1,
             "ability": "Righteous Protector"
           },
@@ -1336,27 +1247,9 @@
             "ability": "Seal of Blood"
           },
           {
-            "row": 2,
-            "col": 1,
-            "tree": 1,
-            "ability": "Bulwark of Order"
-          },
-          {
-            "row": 3,
-            "col": 2,
-            "tree": 1,
-            "ability": "Glorious Dawn"
-          },
-          {
             "row": 3,
             "tree": 1,
             "ability": "Blessed Champion"
-          },
-          {
-            "row": 3,
-            "col": 1,
-            "tree": 1,
-            "ability": "Bastion of Light"
           },
           {
             "row": 4,
@@ -1428,11 +1321,6 @@
             "ability": "Moonfire"
           },
           {
-            "row": 1,
-            "col": 1,
-            "ability": "Starweaver"
-          },
-          {
             "row": 2,
             "ability": "Sunfire"
           },
@@ -1479,11 +1367,6 @@
             "ability": "Astral Communion"
           },
           {
-            "col": 2,
-            "tree": 1,
-            "ability": "Stellar Innervation"
-          },
-          {
             "row": 1,
             "col": 1,
             "tree": 1,
@@ -1516,17 +1399,6 @@
             "row": 3,
             "tree": 1,
             "ability": "Orbit Breaker"
-          },
-          {
-            "row": 3,
-            "col": 2,
-            "tree": 1,
-            "ability": "Aetherial Kindling"
-          },
-          {
-            "row": 4,
-            "tree": 1,
-            "ability": "Twin Moons"
           },
           {
             "row": 4,
@@ -1566,10 +1438,6 @@
           },
           {
             "row": 2,
-            "ability": "Infected Wounds"
-          },
-          {
-            "row": 2,
             "col": 1,
             "ability": "Thrash"
           },
@@ -1597,15 +1465,6 @@
             "ability": "Growl"
           },
           {
-            "row": 4,
-            "col": 2,
-            "ability": "Vein Ripper"
-          },
-          {
-            "tree": 1,
-            "ability": "Dash"
-          },
-          {
             "col": 1,
             "tree": 1,
             "ability": "Honed Instincts"
@@ -1614,12 +1473,6 @@
             "col": 2,
             "tree": 1,
             "ability": "Dire Fixation"
-          },
-          {
-            "row": 1,
-            "col": 1,
-            "tree": 1,
-            "ability": "Frantic Momentum"
           },
           {
             "row": 1,
@@ -1643,12 +1496,6 @@
             "col": 1,
             "tree": 1,
             "ability": "Brutal Swipes"
-          },
-          {
-            "row": 3,
-            "col": 2,
-            "tree": 1,
-            "ability": "Protector of the Pack"
           },
           {
             "row": 3,
@@ -1682,10 +1529,6 @@
             "col": 1,
             "ability": "Regrowth",
             "defaultTaken": true
-          },
-          {
-            "row": 1,
-            "ability": "Natural Recovery"
           },
           {
             "row": 1,
@@ -1733,19 +1576,9 @@
             "ability": "Flourish"
           },
           {
+            "col": 1,
             "tree": 1,
             "ability": "Renewal"
-          },
-          {
-            "row": 1,
-            "col": 2,
-            "tree": 1,
-            "ability": "Innervate"
-          },
-          {
-            "row": 1,
-            "tree": 1,
-            "ability": "Waking Dream"
           },
           {
             "row": 1,
@@ -1768,8 +1601,7 @@
             "row": 2,
             "col": 2,
             "tree": 1,
-            "ability": "Ysera's Gift",
-            "inherited": true
+            "ability": "Ysera's Gift"
           },
           {
             "row": 3,
@@ -1788,11 +1620,6 @@
             "col": 2,
             "tree": 1,
             "ability": "Verdancy"
-          },
-          {
-            "row": 4,
-            "tree": 1,
-            "ability": "Unstoppable Growth"
           },
           {
             "row": 4,
@@ -2156,14 +1983,23 @@
             "ability": "Drain Soul"
           },
           {
-            "row": 4,
+            "row": 2,
             "col": 1,
             "ability": "Agonizing Corruption"
           },
           {
             "row": 4,
+            "col": 1,
+            "ability": "Weight of Death"
+          },
+          {
+            "row": 4,
             "col": 2,
             "ability": "Haunt"
+          },
+          {
+            "row": 4,
+            "ability": "Harvest of Life"
           },
           {
             "tree": 1,
@@ -2199,9 +2035,21 @@
             "ability": "Profane Bargain"
           },
           {
+            "row": 2,
+            "col": 2,
+            "tree": 1,
+            "ability": "Seized Vitality"
+          },
+          {
             "row": 4,
             "tree": 1,
             "ability": "Xavius Gambit"
+          },
+          {
+            "row": 4,
+            "col": 1,
+            "tree": 1,
+            "ability": "Soul Mangle"
           }
         ]
       },
@@ -2271,6 +2119,11 @@
             "ability": "Chaos Bolt"
           },
           {
+            "row": 4,
+            "col": 1,
+            "ability": "Destructive Calamity"
+          },
+          {
             "col": 1,
             "tree": 1,
             "ability": "Rain of Fire"
@@ -2286,6 +2139,11 @@
             "col": 1,
             "tree": 1,
             "ability": "Havoc"
+          },
+          {
+            "row": 2,
+            "tree": 1,
+            "ability": "Aftermath"
           },
           {
             "row": 2,
@@ -2608,10 +2466,6 @@
           },
           {
             "row": 1,
-            "ability": "Arcane Tempo"
-          },
-          {
-            "row": 1,
             "col": 1,
             "ability": "Concetration"
           },
@@ -2669,12 +2523,6 @@
           },
           {
             "row": 1,
-            "col": 1,
-            "tree": 1,
-            "ability": "Arcing Cleaves"
-          },
-          {
-            "row": 1,
             "col": 2,
             "tree": 1,
             "ability": "Evocation"
@@ -2705,12 +2553,6 @@
             "inherited": true
           },
           {
-            "row": 3,
-            "col": 2,
-            "tree": 1,
-            "ability": "Supernova"
-          },
-          {
             "row": 4,
             "tree": 1,
             "ability": "Arcane Harmony",
@@ -2718,16 +2560,9 @@
           },
           {
             "row": 4,
-            "col": 1,
-            "tree": 1,
-            "ability": "Time Warp"
-          },
-          {
-            "row": 4,
             "col": 2,
             "tree": 1,
-            "ability": "Harmonic Echo",
-            "inherited": true
+            "ability": "Harmonic Echo"
           }
         ]
       }

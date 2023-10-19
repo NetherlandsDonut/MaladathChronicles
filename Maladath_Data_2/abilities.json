@@ -1,5 +1,131 @@
 [
   {
+    "name": "Aftermath",
+    "icon": "AbilityFire",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Destructive Calamity",
+    "icon": "AbilityDestructiveSoul",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Weight of Death",
+    "icon": "AbilityDarkSummoning",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Seized Vitality",
+    "icon": "AbilitySeizedVitality",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Harvest of Life",
+    "icon": "AbilityHarvestofLife",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Soul Mangle",
+    "icon": "AbilitySoulSiphon",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "War Machine",
+    "icon": "AbilityRapidKilling",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Immense Strength",
+    "icon": "AbilityFaultline",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Sunder Armor",
+    "icon": "AbilitySunderArmor",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Toughness",
+    "icon": "AbilityToughness",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Pummel",
+    "icon": "AbilityPummel",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Bloodcraze",
+    "icon": "AbilityBloodcraze",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Fresh Meat",
+    "icon": "AbilityBloodCorruptionDeath",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Storm's Wrath",
+    "icon": "AbilityStormsWrath",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
     "name": "Acid Rain",
     "icon": "AbilityAcid",
     "tags": [],
@@ -1186,7 +1312,7 @@
   },
   {
     "name": "Cleanse",
-    "icon": "AbilityCleanse",
+    "icon": "AbilityPurify",
     "tags": [],
     "ranks": [
       {}
@@ -2909,7 +3035,7 @@
   },
   {
     "name": "Flash of Light",
-    "icon": "AbilityFlashofLight",
+    "icon": "AbilityFlashHeal",
     "tags": [],
     "ranks": [
       {}
@@ -4687,8 +4813,17 @@
     "events": []
   },
   {
-    "name": "Onslaught",
-    "icon": "AbilityOnslaught",
+    "name": "Enrage",
+    "icon": "AbilityEnrage",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Heroism",
+    "icon": "AbilityEmpowerChampion",
     "tags": [],
     "ranks": [
       {}
@@ -5119,8 +5254,8 @@
     "events": []
   },
   {
-    "name": "Raging Blow",
-    "icon": "AbilityRagingBlow",
+    "name": "Slam",
+    "icon": "AbilitySlam",
     "tags": [],
     "ranks": [
       {}
@@ -5146,8 +5281,8 @@
     "events": []
   },
   {
-    "name": "Rampage",
-    "icon": "AbilityRampage",
+    "name": "Blood Frenzy",
+    "icon": "AbilityBloodFrenzy",
     "tags": [],
     "ranks": [
       {}
@@ -5918,8 +6053,8 @@
     "events": []
   },
   {
-    "name": "Skullsplitter",
-    "icon": "AbilitySkullsplitter",
+    "name": "Blind Rage",
+    "icon": "AbilityBloodyEye",
     "tags": [],
     "ranks": [
       {}
@@ -6231,15 +6366,6 @@
   {
     "name": "Stormkeeper",
     "icon": "AbilityThunderKingLightningWhip",
-    "tags": [],
-    "ranks": [
-      {}
-    ],
-    "events": []
-  },
-  {
-    "name": "Storm's Wrath",
-    "icon": "AbilityAcid",
     "tags": [],
     "ranks": [
       {}
@@ -6564,15 +6690,6 @@
   {
     "name": "Thunder Clap",
     "icon": "AbilityThunderClap",
-    "tags": [],
-    "ranks": [
-      {}
-    ],
-    "events": []
-  },
-  {
-    "name": "Thundering Strikes",
-    "icon": "AbilityAcid",
     "tags": [],
     "ranks": [
       {}
@@ -7126,8 +7243,8 @@
     "events": []
   },
   {
-    "name": "Windfury Weapon",
-    "icon": "AbilityWindfury",
+    "name": "Grounding Totem",
+    "icon": "AbilityTotemGrounding",
     "tags": [],
     "ranks": [
       {}

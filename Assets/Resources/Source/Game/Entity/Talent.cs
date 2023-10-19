@@ -76,13 +76,14 @@ public class Talent
             if (talent.inherited)
             {
                 GameObject body = null;
-                if (currentSave.player.abilities.ContainsKey(previousTalent.ability))
+                var ab = currentSave.player.abilities.ContainsKey(previousTalent.ability) ? currentSave.player.abilities[previousTalent.ability] : -1;
+                if (ab >= 0)
                 {
-                    body = AddBigButtonOverlay("OtherTalentArrowFillBody");
+                    body = AddBigButtonOverlay("OtherTalentArrowFillBody" + (ab < abilities.Find(x => x.name == previousTalent.ability).ranks.Count - 1 ? "Green" : ""));
                     body.transform.localPosition = new Vector3(0, 26, 0);
                     body.GetComponent<SpriteRenderer>().sortingOrder = 2;
                     body.transform.localScale = new Vector3(1, previousTalentDistance * 13 + (previousTalentDistance > 1 ? (previousTalentDistance - 1) * 44 : 0), 1);
-                    AddBigButtonOverlay("OtherTalentArrowFillHead").GetComponent<SpriteRenderer>().sortingOrder = 2;
+                    AddBigButtonOverlay("OtherTalentArrowFillHead" + (ab < abilities.Find(x => x.name == previousTalent.ability).ranks.Count - 1 ? "Green" : "")).GetComponent<SpriteRenderer>().sortingOrder = 2;
                 }
                 body = AddBigButtonOverlay("OtherTalentArrowBody");
                 body.transform.localPosition = new Vector3(0, 28, 0);
