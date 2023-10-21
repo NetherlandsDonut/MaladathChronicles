@@ -6,6 +6,7 @@ using UnityEngine;
 
 using static Root;
 
+using static Zone;
 using static Font;
 using static Sound;
 using static Cursor;
@@ -160,6 +161,8 @@ public class Starter : MonoBehaviour
         flightPathGroups ??= new();
         Deserialize(ref pEnchants, "permanentenchants", false, prefix);
         pEnchants ??= new();
+        Deserialize(ref zones, "zones", false, prefix);
+        zones ??= new();
 
         #endregion
 

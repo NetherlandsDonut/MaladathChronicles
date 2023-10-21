@@ -689,26 +689,38 @@
               ]
             },
             {
-              "rarity": "Uncommon",
-              "name": "Riverpaw Mystic Staff",
-              "icon": "itemwand11",
+              "rarity": "Common",
+              "name": "Bent Staff",
+              "icon": "itemstaff08",
               "detailedType": "Staff",
               "type": "Two Handed",
-              "ilvl": 18,
-              "lvl": 13,
-              "minDamage": 28,
-              "maxDamage": 43,
-              "price": 0.1392,
-              "speed": 3.0,
+              "ilvl": 2,
+              "lvl": 1,
+              "minDamage": 3,
+              "maxDamage": 5,
+              "price": 0.0009,
+              "speed": 2.9,
+              "stats": {
+                "stats": {}
+              }
+            },
+            {
+              "rarity": "Uncommon",
+              "name": "Lunar Leggings of the Whale",
+              "icon": "itempants13",
+              "randomEnchantment": true,
+              "type": "Legs",
+              "armorClass": "Cloth",
+              "ilvl": 45,
+              "lvl": 40,
+              "armor": 52,
+              "price": 0.6194,
               "stats": {
                 "stats": {
-                  "Intellect": 2,
-                  "Spirit": 4
+                  "Stamina": 11,
+                  "Spirit": 11
                 }
-              },
-              "droppedBy": [
-                "Riverpaw Mystic"
-              ]
+              }
             }
           ]
         },
@@ -746,20 +758,26 @@
             }
           },
           "Main Hand": {
-            "rarity": "Common",
-            "name": "Bent Staff",
-            "icon": "itemstaff08",
+            "rarity": "Uncommon",
+            "name": "Riverpaw Mystic Staff",
+            "icon": "itemwand11",
             "detailedType": "Staff",
             "type": "Two Handed",
-            "ilvl": 2,
-            "lvl": 1,
-            "minDamage": 3,
-            "maxDamage": 5,
-            "price": 0.0009,
-            "speed": 2.9,
+            "ilvl": 18,
+            "lvl": 13,
+            "minDamage": 28,
+            "maxDamage": 43,
+            "price": 0.1392,
+            "speed": 3.0,
             "stats": {
-              "stats": {}
-            }
+              "stats": {
+                "Intellect": 2,
+                "Spirit": 4
+              }
+            },
+            "droppedBy": [
+              "Riverpaw Mystic"
+            ]
           },
           "Legs": {
             "rarity": "Poor",
@@ -926,27 +944,33 @@
           }
         }
       },
-      "cameraX": 236,
-      "cameraY": -199,
+      "cameraX": 103,
+      "cameraY": -77,
       "siteProgress": {
-        "Blackrock Stronghold": 1,
+        "Blackrock Stronghold": 2,
         "The Dead Acre": 1,
         "The Dust Plains": 5,
-        "The Dagger Hills": 2
+        "The Dagger Hills": 2,
+        "Addle's Stead": 1,
+        "Dreadmaul Hold": 1
       },
       "commonsKilled": {
-        "Blackrock Battlemaster": 1,
+        "Blackrock Battlemaster": 2,
         "Greater Fleshripper": 1,
         "Riverpaw Taskmaster": 2,
         "Riverpaw Mystic": 2,
         "Riverpaw Overseer": 1,
         "Defias Knuckleduster": 1,
-        "Defias Renegade Mage": 1
+        "Defias Renegade Mage": 1,
+        "Defias Night Runner": 1,
+        "Dreadmaul Ogre Mage": 1
       },
       "raresKilled": {},
-      "elitesKilled": {},
+      "elitesKilled": {
+        "Grol the Destroyer": 1
+      },
       "siteVisits": {
-        "Blackrock Stronghold": 3,
+        "Blackrock Stronghold": 4,
         "Draco'dar": 1,
         "The Pillar of Ash": 1,
         "Ruins of Thaurissan": 1,
@@ -954,12 +978,42 @@
         "Morgan's Vigil": 1,
         "The Dead Acre": 1,
         "The Dust Plains": 5,
-        "The Dagger Hills": 2
+        "The Dagger Hills": 3,
+        "The Deadmines": 1,
+        "Addle's Stead": 1,
+        "Plaguewood": 2,
+        "Blackwood Lake": 1,
+        "Dreadmaul Hold": 1,
+        "Stagalbog Cave": 1,
+        "Stagalbog": 1,
+        "Sorrowmurk": 1,
+        "Temple of Atal'Hakkar": 1,
+        "Blackrock Mountain": 1,
+        "Dustbelch Grotto": 1,
+        "Mirage Flats": 1,
+        "Valley of Fangs": 1,
+        "Gol'Bolar Quarry": 1,
+        "Angerfang Encampment": 1,
+        "Ironbeard's Tomb": 1,
+        "Direforge Hill": 1,
+        "Black Channel Marsh": 1,
+        "Bluegill Marsh": 1,
+        "Sundown Marsh": 1,
+        "Saltspray Glen": 1,
+        "Circle of Inner Binding": 1,
+        "Circle of Outer Binding": 1,
+        "The Marris Stead": 1,
+        "Frostfire Hot Springs": 1,
+        "Ruins of Kel'Theril": 1,
+        "Dun Mandarr": 1,
+        "Darkwhisper Gorge": 2,
+        "Shadowsong Shrine": 1,
+        "Frostwhisper Gorge": 1
       },
       "startDate": "2023-10-18T07:52:13.0981561+02:00",
-      "lastLoaded": "2023-10-21T15:36:20.9533061+02:00",
-      "lastPlayed": "2023-10-21T15:43:57.1820515+02:00",
-      "timePlayed": "01:06:16.7535773"
+      "lastLoaded": "2023-10-22T00:02:29.7961819+02:00",
+      "lastPlayed": "2023-10-22T00:03:02.2460561+02:00",
+      "timePlayed": "01:22:51.2583149"
     },
     {
       "player": {

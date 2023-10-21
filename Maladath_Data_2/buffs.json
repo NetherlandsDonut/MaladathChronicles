@@ -90,9 +90,9 @@
             "PowerScale": "0.9",
             "ShatterTarget": "Effector",
             "ShatterType": "Central",
-            "ShatterDensity": "2",
-            "ShatterSpeed": "5",
-            "ShatterDegree": "0.7",
+            "ShatterDensity": "1",
+            "ShatterSpeed": "20",
+            "ShatterDegree": "40",
             "SoundEffect": "AbilityCurseOfAgonyFlare",
             "Await": "4"
           }

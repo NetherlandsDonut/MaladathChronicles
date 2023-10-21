@@ -1877,10 +1877,10 @@
           {
             "SoundEffect": "AbilityCurseOfAgonyFlare",
             "Affect": "None",
-            "ShatterType": "Central",
-            "ShatterDegree": "0,2",
+            "ShatterType": "Directional",
+            "ShatterDegree": "5",
             "ShatterTarget": "Effector",
-            "ShatterSpeed": "2",
+            "ShatterSpeed": "3",
             "AnimationType": "None",
             "AnimationSpeed": "1,3",
             "TrailStrength": "0,65"
@@ -1891,12 +1891,16 @@
             "BuffName": "Curse of Agony",
             "BuffDuration": "10",
             "ShatterTarget": "Other",
-            "ShatterType": "Directional",
-            "ShatterDensity": "2",
+            "ShatterType": "Central",
+            "ShatterDensity": "1",
             "SoundEffect": "AbilityCurseOfAgonyCast",
             "AnimationType": "Missile",
-            "TrailStrength": "0,65",
-            "AnimationSpeed": "1,3"
+            "TrailStrength": "20",
+            "AnimationSpeed": "1,5",
+            "Await": "5",
+            "ShatterSpeed": "30",
+            "ShatterDegree": "40",
+            "AnimationArc": "15"
           },
           {
             "Effect": "EndTurn"
@@ -3494,6 +3498,7 @@
   {
     "name": "Hammer of Justice",
     "icon": "AbilityHammerOfJustice",
+    "cooldown": 5,
     "tags": [
       "Stun"
     ],
@@ -3513,11 +3518,27 @@
         ],
         "effects": [
           {
-            "Effect": "Damage",
+            "SoundEffect": "AbilityHammerOfJusticeCast",
+            "ShatterType": "Directional",
+            "ShatterDegree": "5",
+            "ShatterSpeed": "3",
+            "ShatterTarget": "Effector"
+          },
+          {
+            "Effect": "AddBuff",
             "Affect": "Other",
             "PowerType": "Spell",
             "PowerSource": "Effector",
-            "PowerScale": "1.5"
+            "PowerScale": "1.5",
+            "BuffName": "Hammer of Justice",
+            "Await": "5",
+            "AnimationType": "Missile",
+            "ShatterType": "Central",
+            "ShatterTarget": "Other",
+            "SoundEffect": "AbilityHammerOfJusticeImpact",
+            "ShatterDegree": "40",
+            "ShatterSpeed": "25",
+            "TrailStrength": "5"
           },
           {
             "Effect": "EndTurn"
@@ -3706,10 +3727,16 @@
         "effects": [
           {
             "Effect": "Heal",
-            "Affect": "Other",
+            "Affect": "Effector",
             "PowerType": "Spell",
             "PowerSource": "Effector",
-            "PowerScale": "1.5"
+            "PowerScale": "1.5",
+            "SoundEffect": "AbilityHealingWaveImpact",
+            "Await": "5",
+            "ShatterType": "Central",
+            "ShatterTarget": "Effector",
+            "ShatterDegree": "40",
+            "ShatterSpeed": "15"
           },
           {
             "Effect": "EndTurn"
@@ -4443,24 +4470,27 @@
         ],
         "effects": [
           {
-            "SoundEffect": "ElementAir",
+            "SoundEffect": "ElementLightning",
             "ShatterType": "Directional",
-            "ShatterTarget": "Effector"
+            "ShatterTarget": "Effector",
+            "ShatterDegree": "5",
+            "ShatterSpeed": "4"
           },
           {
             "Effect": "Damage",
             "Affect": "Other",
-            "SoundEffect": "ElementLightning",
+            "SoundEffect": "AbilityThunderstormImpact4",
             "AnimationType": "Missile",
-            "ShatterType": "Directional",
+            "ShatterType": "Central",
             "ShatterTarget": "Other",
             "PowerSource": "Effector",
             "PowerType": "Spell",
             "Await": "5",
-            "TrailStrength": "0,55",
-            "AnimationSpeed": "3",
-            "ShatterSpeed": "1",
-            "AnimationArc": "0"
+            "TrailStrength": "5",
+            "AnimationSpeed": "1,8",
+            "ShatterSpeed": "30",
+            "AnimationArc": "15",
+            "ShatterDegree": "40"
           },
           {
             "Effect": "EndTurn"
@@ -5775,6 +5805,7 @@
       "regions": [
         {
           "regionType": "Padding",
+          "isExtender": true,
           "contents": [
             {
               "Color": "Gray",

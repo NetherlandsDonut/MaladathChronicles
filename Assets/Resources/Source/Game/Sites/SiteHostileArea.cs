@@ -80,7 +80,12 @@ public class SiteHostileArea : Site
                 new Blueprint("HostileArea: " + name,
                     () =>
                     {
-                        PlayAmbience(ambience);
+                        if (ambience == null)
+                        {
+                            var zone = Zone.zones.Find(x => x.name == this.zone);
+                            if (zone != null) PlayAmbience(zone.ambience);
+                        }
+                        else PlayAmbience(ambience);
                         SetAnchor(TopLeft);
                         AddRegionGroup();
                         SetRegionGroupWidth(171);

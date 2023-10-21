@@ -276,6 +276,10 @@
           },
           {
             "Requisite": "EliteKilled",
+            "AreaName": "Hall of Illusions"
+          },
+          {
+            "Requisite": "EliteKilled",
             "AreaName": "The Great Ossuary"
           },
           {

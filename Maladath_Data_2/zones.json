@@ -1,0 +1,158 @@
+[
+  {
+    "name": "Azshara",
+    "ambience": "AmbienceForestHighNight"
+  },
+  {
+    "name": "Winterspring",
+    "ambience": "AmbienceForestHighNight"
+  },
+  {
+    "name": "Moonglade",
+    "ambience": "AmbienceForestHighNight"
+  },
+  {
+    "name": "Darkshore",
+    "ambience": "AmbienceForestHighNight"
+  },
+  {
+    "name": "Teldrassil",
+    "ambience": "AmbienceMarshNight"
+  },
+  {
+    "name": "Ashenvale",
+    "ambience": "AmbienceForestHighNight"
+  },
+  {
+    "name": "Tanaris",
+    "ambience": "AmbienceDesert"
+  },
+  {
+    "name": "The Barrens",
+    "ambience": "AmbienceGrasslandsDay"
+  },
+  {
+    "name": "Stonetalon Mountains",
+    "ambience": "AmbienceForestNormalDay"
+  },
+  {
+    "name": "Mulgore",
+    "ambience": "AmbienceGrasslandsDay"
+  },
+  {
+    "name": "Desolace",
+    "ambience": "AmbienceDesert"
+  },
+  {
+    "name": "Thousand Needles",
+    "ambience": "AmbienceStrongWind"
+  },
+  {
+    "name": "Dustwallow Marsh",
+    "ambience": "AmbienceMarshNight"
+  },
+  {
+    "name": "Feralas",
+    "ambience": "AmbienceJungleNight"
+  },
+  {
+    "name": "Silithus",
+    "ambience": "AmbienceDesert"
+  },
+  {
+    "name": "Un'Goro Crater",
+    "ambience": "AmbienceJungleNight"
+  },
+  {
+    "name": "Durotar",
+    "ambience": "AmbienceDesert"
+  },
+  {
+    "name": "Felwood",
+    "ambience": "AmbienceForestScaryNight"
+  },
+  {
+    "name": "Eastern Plaguelands",
+    "ambience": "AmbiencePlaguelandsNight"
+  },
+  {
+    "name": "Western Plaguelands",
+    "ambience": "AmbiencePlaguelandsDay"
+  },
+  {
+    "name": "Tirisfal Glades",
+    "ambience": "AmbienceForestScaryNight"
+  },
+  {
+    "name": "Silverpine Forest",
+    "ambience": "AmbienceForestScaryDay"
+  },
+  {
+    "name": "Arathi Highlands",
+    "ambience": "AmbienceGrasslandsDay"
+  },
+  {
+    "name": "Hinterlands",
+    "ambience": "AmbienceForestNormalDay"
+  },
+  {
+    "name": "Hillsbrad Foothills",
+    "ambience": "AmbienceForestNormalDay"
+  },
+  {
+    "name": "Loch Modan",
+    "ambience": "AmbienceForestNormalDay"
+  },
+  {
+    "name": "Redridge Mountains",
+    "ambience": "AmbienceForestNormalDay"
+  },
+  {
+    "name": "Dun Morogh",
+    "ambience": "AmbienceForestSnowDay"
+  },
+  {
+    "name": "Wetlands",
+    "ambience": "AmbienceSwampDay"
+  },
+  {
+    "name": "Searing Gorge",
+    "ambience": "AmbienceVolcanicDay"
+  },
+  {
+    "name": "Burning Steppes",
+    "ambience": "AmbienceVolcanicDay"
+  },
+  {
+    "name": "Duskwood",
+    "ambience": "AmbienceForestScaryDay"
+  },
+  {
+    "name": "Westfall",
+    "ambience": "AmbiencePlainsDay"
+  },
+  {
+    "name": "Elwynn Forest",
+    "ambience": "AmbienceForestNormalDay"
+  },
+  {
+    "name": "Badlands",
+    "ambience": "AmbienceStrongWind"
+  },
+  {
+    "name": "Swamp of Sorrows",
+    "ambience": "AmbienceSwampNight"
+  },
+  {
+    "name": "Deadwind Pass",
+    "ambience": "AmbienceDeadwindPass"
+  },
+  {
+    "name": "Blasted Lands",
+    "ambience": "AmbienceBlastedLands"
+  },
+  {
+    "name": "Stranglethorn Vale",
+    "ambience": "AmbienceJungleDay"
+  }
+]

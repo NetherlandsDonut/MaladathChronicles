@@ -1,5 +1,10 @@
 [
   {
+    "name": "Hall of Illusions",
+    "zone": "Scholomance",
+    "type": "HostileArea"
+  },
+  {
     "commonEncounters": [
       {
         "who": "Searing Blade Cultist",
@@ -17914,7 +17919,8 @@
     "y": -86,
     "name": "Darkwhisper Gorge",
     "zone": "Winterspring",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "ambience": "AmbienceSpooky"
   },
   {
     "commonEncounters": [
