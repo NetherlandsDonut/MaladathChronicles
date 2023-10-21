@@ -3086,16 +3086,15 @@
   {
     "commonEncounters": [
       {
-        "who": "Cannibal Ghoul",
-        "levelMin": 56,
-        "levelMax": 57
+        "who": "Death Talon Wyrmguard",
+        "levelMin": 60
       }
     ],
     "eliteEncounters": [
       {
         "who": "Chromaggus",
         "levelMin": 60,
-        "requiredProgress": 4
+        "requiredProgress": 2
       }
     ],
     "name": "Chromaggus' Lair",
@@ -3105,26 +3104,37 @@
   {
     "commonEncounters": [
       {
-        "who": "Cannibal Ghoul",
-        "levelMin": 56,
-        "levelMax": 57
+        "who": "Death Talon Wyrmguard",
+        "levelMin": 60
+      },
+      {
+        "who": "Death Talon Overseer",
+        "levelMin": 60
+      },
+      {
+        "who": "Blackwing Warlock",
+        "levelMin": 60
+      },
+      {
+        "who": "Blackwing Spellbinder",
+        "levelMin": 60
       }
     ],
     "eliteEncounters": [
       {
         "who": "Firemaw",
         "levelMin": 60,
-        "requiredProgress": 4
+        "requiredProgress": 2
       },
       {
         "who": "Ebonroc",
         "levelMin": 60,
-        "requiredProgress": 4
+        "requiredProgress": 2
       },
       {
         "who": "Flamegor",
         "levelMin": 60,
-        "requiredProgress": 4
+        "requiredProgress": 2
       }
     ],
     "name": "Crimson Laboratories",
@@ -3134,16 +3144,19 @@
   {
     "commonEncounters": [
       {
-        "who": "Cannibal Ghoul",
-        "levelMin": 56,
-        "levelMax": 57
+        "who": "Blackwing Guardsman",
+        "levelMin": 60
+      },
+      {
+        "who": "Blackwing Mage",
+        "levelMin": 60
       }
     ],
     "eliteEncounters": [
       {
         "who": "Razorgore the Untamed",
         "levelMin": 60,
-        "requiredProgress": 4
+        "requiredProgress": 2
       }
     ],
     "name": "Dragonmaw Garrison",
@@ -3153,9 +3166,24 @@
   {
     "commonEncounters": [
       {
-        "who": "Cannibal Ghoul",
-        "levelMin": 56,
-        "levelMax": 57
+        "who": "Death Talon Wyrmkin",
+        "levelMin": 60
+      },
+      {
+        "who": "Death Talon Seether",
+        "levelMin": 60
+      },
+      {
+        "who": "Death Talon Captain",
+        "levelMin": 60
+      },
+      {
+        "who": "Death Talon Flamescale",
+        "levelMin": 60
+      },
+      {
+        "who": "Death Talon Hatcher",
+        "levelMin": 60
       }
     ],
     "eliteEncounters": [
@@ -3170,18 +3198,10 @@
     "type": "HostileArea"
   },
   {
-    "commonEncounters": [
-      {
-        "who": "Cannibal Ghoul",
-        "levelMin": 56,
-        "levelMax": 57
-      }
-    ],
     "eliteEncounters": [
       {
         "who": "Nefarian",
-        "levelMin": 60,
-        "requiredProgress": 4
+        "levelMin": 60
       }
     ],
     "name": "Nefarian's Lair",
@@ -3189,18 +3209,10 @@
     "type": "HostileArea"
   },
   {
-    "commonEncounters": [
-      {
-        "who": "Cannibal Ghoul",
-        "levelMin": 56,
-        "levelMax": 57
-      }
-    ],
     "eliteEncounters": [
       {
         "who": "Vaelastrasz the Corrupt",
-        "levelMin": 60,
-        "requiredProgress": 4
+        "levelMin": 60
       }
     ],
     "name": "Shadow Wing Lair",
@@ -9006,38 +9018,87 @@
   {
     "commonEncounters": [
       {
-        "who": "Cannibal Ghoul",
-        "levelMin": 56,
-        "levelMax": 57
-      }
-    ],
-    "eliteEncounters": [
-      {
-        "who": "Sulfuron Harbringer",
-        "levelMin": 60,
-        "requiredProgress": 4
+        "who": "Molten Giant",
+        "levelMin": 60
       },
       {
-        "who": "Golemagg the Incinerator",
-        "levelMin": 60,
-        "requiredProgress": 4
+        "who": "Firelord",
+        "levelMin": 60
       },
       {
-        "who": "Majordomo Executus",
-        "levelMin": 60,
-        "requiredProgress": 4
+        "who": "Lava Annihilator",
+        "levelMin": 60
       }
     ],
-    "name": "Eastern Lavafalls",
+    "name": "Core Entrance",
     "zone": "Molten Core",
     "type": "HostileArea"
   },
   {
     "commonEncounters": [
       {
-        "who": "Cannibal Ghoul",
-        "levelMin": 56,
-        "levelMax": 57
+        "who": "Firelord",
+        "levelMin": 60
+      },
+      {
+        "who": "Lava Reaver",
+        "levelMin": 60
+      },
+      {
+        "who": "Lava Annihilator",
+        "levelMin": 60
+      },
+      {
+        "who": "Ancient Core Hound",
+        "levelMin": 60
+      },
+      {
+        "who": "Core Rager",
+        "levelMin": 60
+      }
+    ],
+    "eliteEncounters": [
+      {
+        "who": "Sulfuron Harbringer",
+        "levelMin": 60,
+        "requiredProgress": 2
+      },
+      {
+        "who": "Golemagg the Incinerator",
+        "levelMin": 60,
+        "requiredProgress": 2
+      },
+      {
+        "who": "Majordomo Executus",
+        "levelMin": 60,
+        "requiredProgress": 1
+      }
+    ],
+    "name": "Sulfuran Summit",
+    "zone": "Molten Core",
+    "type": "HostileArea"
+  },
+  {
+    "commonEncounters": [
+      {
+        "who": "Molten Destroyer",
+        "levelMin": 60
+      },
+      {
+        "who": "Firelord",
+        "levelMin": 60
+      },
+      {
+        "who": "Lava Surger",
+        "levelMin": 60
+      },
+      {
+        "who": "Ancient Core Hound",
+        "levelMin": 60
+      },
+      {
+        "who": "Core Hound",
+        "levelMin": 60
       }
     ],
     "eliteEncounters": [
@@ -9052,23 +9113,22 @@
         "requiredProgress": 4
       }
     ],
-    "name": "Magmadar Cavern",
+    "name": "Upper Crag",
     "zone": "Molten Core",
     "type": "HostileArea"
   },
   {
     "commonEncounters": [
       {
-        "who": "Cannibal Ghoul",
-        "levelMin": 56,
-        "levelMax": 57
+        "who": "Lava Surger",
+        "levelMin": 60
       }
     ],
     "eliteEncounters": [
       {
         "who": "Ragnaros",
         "levelMin": 60,
-        "requiredProgress": 2
+        "requiredProgress": 1
       }
     ],
     "name": "Ragnaros' Lair",
@@ -9078,9 +9138,59 @@
   {
     "commonEncounters": [
       {
-        "who": "Cannibal Ghoul",
-        "levelMin": 56,
-        "levelMax": 57
+        "who": "Firelord",
+        "levelMin": 60
+      },
+      {
+        "who": "Lava Reaver",
+        "levelMin": 60
+      },
+      {
+        "who": "Ancient Core Hound",
+        "levelMin": 60
+      }
+    ],
+    "eliteEncounters": [
+      {
+        "who": "Baron Geddon",
+        "levelMin": 60,
+        "requiredProgress": 4
+      },
+      {
+        "who": "Shazzrah",
+        "levelMin": 60,
+        "requiredProgress": 4
+      }
+    ],
+    "name": "The Lavafalls",
+    "zone": "Molten Core",
+    "type": "HostileArea"
+  },
+  {
+    "commonEncounters": [
+      {
+        "who": "Molten Destroyer",
+        "levelMin": 60
+      },
+      {
+        "who": "Firelord",
+        "levelMin": 60
+      },
+      {
+        "who": "Lava Surger",
+        "levelMin": 60
+      },
+      {
+        "who": "Ancient Core Hound",
+        "levelMin": 60
+      },
+      {
+        "who": "Core Hound",
+        "levelMin": 60
+      },
+      {
+        "who": "Flamewaker",
+        "levelMin": 60
       }
     ],
     "eliteEncounters": [
@@ -9093,19 +9203,9 @@
         "who": "Garr",
         "levelMin": 60,
         "requiredProgress": 4
-      },
-      {
-        "who": "Baron Geddon",
-        "levelMin": 60,
-        "requiredProgress": 4
-      },
-      {
-        "who": "Shazzrah",
-        "levelMin": 60,
-        "requiredProgress": 4
       }
     ],
-    "name": "Western Lavafalls",
+    "name": "Smoldering Hollow",
     "zone": "Molten Core",
     "type": "HostileArea"
   },

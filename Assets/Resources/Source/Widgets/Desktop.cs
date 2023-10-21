@@ -238,7 +238,8 @@ public class Desktop : MonoBehaviour
                         animationTime -= Time.deltaTime;
                     if (flyingMissiles.Count == 0 && animationTime <= 0 && fallingElements.Count == 0)
                     {
-                        animationTime = frameTime;
+                        if (!Board.board.playerTurn && CursorRemote.cursorEnemy.fadeIn)
+                            animationTime += frameTime;
                         if (fallingElements.Count == 0) RebuildAll();
                         if (canUnlockScreen) UnlockScreen();
                         else Board.board.AnimateBoard();

@@ -2791,6 +2791,34 @@
             "AnimationArc": "10"
           },
           {
+            "SoundEffect": "None",
+            "ShatterType": "Directional",
+            "ShatterDegree": "0,2",
+            "ShatterSpeed": "4",
+            "ShatterTarget": "Effector"
+          },
+          {
+            "SoundEffect": "None",
+            "ShatterType": "Directional",
+            "ShatterDegree": "0,2",
+            "ShatterSpeed": "4",
+            "ShatterTarget": "Effector"
+          },
+          {
+            "SoundEffect": "None",
+            "ShatterType": "Directional",
+            "ShatterDegree": "0,2",
+            "ShatterSpeed": "4",
+            "ShatterTarget": "Effector"
+          },
+          {
+            "SoundEffect": "None",
+            "ShatterType": "Directional",
+            "ShatterDegree": "0,2",
+            "ShatterSpeed": "4",
+            "ShatterTarget": "Effector"
+          },
+          {
             "Effect": "Damage",
             "Affect": "Other",
             "PowerSource": "Effector",
@@ -3708,11 +3736,62 @@
   {
     "name": "Heroic Strike",
     "icon": "AbilityHeroicStrike",
+    "cooldown": 1,
     "tags": [],
+    "cost": {
+      "Lightning": 0,
+      "Arcane": 0,
+      "Order": 0,
+      "Air": 4,
+      "Shadow": 0,
+      "Decay": 0,
+      "Frost": 0,
+      "Water": 0,
+      "Earth": 0,
+      "Fire": 0
+    },
     "ranks": [
       {}
     ],
-    "events": []
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector"
+          }
+        ],
+        "effects": [
+          {
+            "SoundEffect": "AbilityConsecrationCast",
+            "ShatterType": "Directional",
+            "ShatterTarget": "Effector",
+            "ShatterDegree": "5",
+            "ShatterSpeed": "10",
+            "AnimationType": "None"
+          },
+          {
+            "Effect": "Damage",
+            "AnimationType": "Missile",
+            "ShatterType": "Central",
+            "Await": "5",
+            "ShatterTarget": "Other",
+            "PowerSource": "Effector",
+            "Affect": "Other",
+            "PowerType": "Melee",
+            "SoundEffect": "AbilityHammerOfJusticeImpact",
+            "ShatterSpeed": "10",
+            "ShatterDegree": "30",
+            "ShatterDensity": "1",
+            "AnimationSpeed": "4",
+            "TrailStrength": "0"
+          },
+          {
+            "Effect": "EndTurn"
+          }
+        ]
+      }
+    ]
   },
   {
     "name": "Hex of Weakness",

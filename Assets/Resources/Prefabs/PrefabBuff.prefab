@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6538158974738602406}
   - component: {fileID: 9055567356862982747}
-  m_Layer: 2
+  m_Layer: 7
   m_Name: Border
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: -4037709150810899157}
   - component: {fileID: 5349790902257956977}
   - component: {fileID: 1889248176837836586}
-  m_Layer: 2
+  m_Layer: 7
   m_Name: PrefabBuff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -261,7 +261,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7373215359947083996}
   - component: {fileID: 8776727247828192757}
-  m_Layer: 2
+  m_Layer: 7
   m_Name: Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}

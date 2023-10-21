@@ -1,5 +1,110 @@
 [
   {
+    "name": "Death Talon Hatcher",
+    "kind": "Common",
+    "portrait": "PortraitBlackDragonSpawnFemale",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Death Talon Flamescale",
+    "kind": "Common",
+    "portrait": "PortraitBlackDragonSpawnArmored",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Death Talon Captain",
+    "kind": "Common",
+    "portrait": "PortraitRazorgore",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Death Talon Seether",
+    "kind": "Common",
+    "portrait": "PortraitBlackDragonSpawn",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Death Talon Wyrmkin",
+    "kind": "Common",
+    "portrait": "PortraitBlackDragonSpawnFemale",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Blackwing Mage",
+    "kind": "Common",
+    "portrait": "PortraitBlackhandIncarcerator",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Blackwing Guardsman",
+    "kind": "Common",
+    "portrait": "PortraitBlackwingGuardsman",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Blackwing Spellbinder",
+    "kind": "Common",
+    "portrait": "PortraitBlackrockWarlock",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Blackwing Warlock",
+    "kind": "Common",
+    "portrait": "PortraitBlackwingWarlock",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Death Talon Overseer",
+    "kind": "Common",
+    "portrait": "PortraitBlackDraconid",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Death Talon Wyrmguard",
+    "kind": "Common",
+    "portrait": "PortraitBlackDraconid",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Lava Surger",
+    "kind": "Common",
+    "portrait": "PortraitLavaElemental",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Lava Reaver",
+    "kind": "Common",
+    "portrait": "PortraitLavaElemental",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Lava Annihilator",
+    "kind": "Common",
+    "portrait": "PortraitLavaElemental",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Firelord",
+    "kind": "Common",
+    "portrait": "PortraitFireElemental",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
     "name": "Marduk Blackpool",
     "kind": "Rare",
     "portrait": "PortraitParrot",

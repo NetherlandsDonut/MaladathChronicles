@@ -420,7 +420,7 @@ public class Board
                 }
                 else
                 {
-                    board.actions.Add(() => { cursorEnemy.Move(window.LBRegionGroup.regions[bestMove.y].bigButtons[bestMove.x].transform.position); animationTime += frameTime * 9; });
+                    board.actions.Add(() => { cursorEnemy.Move(window.LBRegionGroup.regions[bestMove.y].bigButtons[bestMove.x].transform.position); animationTime += frameTime * 8; });
                     board.actions.Add(() => { cursorEnemy.SetCursor(CursorType.Click); });
                     board.actions.Add(() =>
                     {

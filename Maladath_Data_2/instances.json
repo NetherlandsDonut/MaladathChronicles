@@ -1356,19 +1356,27 @@
     ],
     "wings": [
       {
-        "name": "Lower",
+        "name": "Molten Core",
         "areas": [
           {
             "Requisite": "None",
-            "AreaName": "Magmadar Cavern"
+            "AreaName": "Core Entrance"
           },
           {
             "Requisite": "EliteKilled",
-            "AreaName": "Western Lavafalls"
+            "AreaName": "Upper Crag"
           },
           {
             "Requisite": "EliteKilled",
-            "AreaName": "Eastern Lavafalls"
+            "AreaName": "Smoldering Hollow"
+          },
+          {
+            "Requisite": "EliteKilled",
+            "AreaName": "The Lavafalls"
+          },
+          {
+            "Requisite": "EliteKilled",
+            "AreaName": "Sulfuran Summit"
           },
           {
             "Requisite": "EliteKilled",
