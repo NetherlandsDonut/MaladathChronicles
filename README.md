@@ -316,5 +316,25 @@ v0.3.13
 v0.3.14
     15.10 Razorfen Kraul and Downs improved
           Many new portraits
-          
 ```
+
+</details>
+
+<details>
+
+<summary>Version history for <b>v0.4</b></summary>
+
+```
+v0.4.0
+    18.10 New talent system
+v0.4.1
+    19.10 Made shatter effect have bigger particles
+          Green talent arrows
+v0.4.2
+    21.09 Molten Core and Blackwing Lair improvements
+          Bonus move, damage, heal and buff floating text system
+          Fixed particles colliding with UI
+          Flash on portraits on received damage or healing
+```
+
+</details>
