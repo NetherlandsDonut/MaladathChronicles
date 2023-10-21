@@ -1,11 +1,11 @@
 {
   "selectedRealm": "Firemaw",
-  "selectedCharacter": "Brishua",
+  "selectedCharacter": "Tine",
   "shadows": {
     "value": "True"
   },
   "pixelPerfectVision": {
-    "value": "False"
+    "value": "True"
   },
   "music": {
     "value": "False"

@@ -2039,7 +2039,8 @@
       {
         "triggers": [
           {
-            "Trigger": "AbilityCast"
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector"
           }
         ],
         "effects": [
@@ -2663,7 +2664,8 @@
       {
         "triggers": [
           {
-            "Trigger": "AbilityCast"
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector"
           }
         ],
         "effects": [
@@ -3011,7 +3013,8 @@
       {
         "triggers": [
           {
-            "Trigger": "AbilityCast"
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector"
           }
         ],
         "effects": [
@@ -3913,7 +3916,7 @@
       {
         "triggers": [
           {
-            "Trigger": "AbilityCast",
+            "Trigger": "None",
             "Triggerer": "Effector",
             "AbilityName": "Fireball"
           }
@@ -4307,11 +4310,59 @@
   {
     "name": "Lava Burst",
     "icon": "AbilityLavaBurst",
+    "cooldown": 3,
     "tags": [],
+    "cost": {
+      "Fire": 3,
+      "Earth": 3,
+      "Water": 0,
+      "Air": 0,
+      "Frost": 0,
+      "Decay": 0,
+      "Shadow": 0,
+      "Order": 0,
+      "Arcane": 0,
+      "Lightning": 0
+    },
     "ranks": [
       {}
     ],
-    "events": []
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector"
+          }
+        ],
+        "effects": [
+          {
+            "SoundEffect": "AbilityFireballCast",
+            "ShatterType": "Directional",
+            "ShatterTarget": "Effector",
+            "ShatterDegree": "5"
+          },
+          {
+            "Effect": "Damage",
+            "AnimationType": "Missile",
+            "ShatterType": "Central",
+            "Await": "5",
+            "ShatterTarget": "Other",
+            "SoundEffect": "AbilityThunderstormImpact3",
+            "AnimationSpeed": "1,8",
+            "TrailStrength": "20",
+            "ShatterDegree": "50",
+            "PowerSource": "Effector",
+            "PowerType": "Spell",
+            "Affect": "Other",
+            "ShatterSpeed": "30"
+          },
+          {
+            "Effect": "EndTurn"
+          }
+        ]
+      }
+    ]
   },
   {
     "name": "Lava Lash",
@@ -5691,7 +5742,8 @@
       {
         "triggers": [
           {
-            "Trigger": "AbilityCast"
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector"
           }
         ],
         "effects": [

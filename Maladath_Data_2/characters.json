@@ -931,14 +931,17 @@
       "siteProgress": {
         "Blackrock Stronghold": 1,
         "The Dead Acre": 1,
-        "The Dust Plains": 5
+        "The Dust Plains": 5,
+        "The Dagger Hills": 2
       },
       "commonsKilled": {
         "Blackrock Battlemaster": 1,
         "Greater Fleshripper": 1,
         "Riverpaw Taskmaster": 2,
         "Riverpaw Mystic": 2,
-        "Riverpaw Overseer": 1
+        "Riverpaw Overseer": 1,
+        "Defias Knuckleduster": 1,
+        "Defias Renegade Mage": 1
       },
       "raresKilled": {},
       "elitesKilled": {},
@@ -951,12 +954,12 @@
         "Morgan's Vigil": 1,
         "The Dead Acre": 1,
         "The Dust Plains": 5,
-        "The Dagger Hills": 1
+        "The Dagger Hills": 2
       },
       "startDate": "2023-10-18T07:52:13.0981561+02:00",
-      "lastLoaded": "2023-10-21T06:04:32.4929307+02:00",
-      "lastPlayed": "2023-10-21T06:06:53.916786+02:00",
-      "timePlayed": "00:58:40.5248319"
+      "lastLoaded": "2023-10-21T15:36:20.9533061+02:00",
+      "lastPlayed": "2023-10-21T15:43:57.1820515+02:00",
+      "timePlayed": "01:06:16.7535773"
     },
     {
       "player": {
@@ -4371,20 +4374,22 @@
           }
         }
       },
-      "cameraX": 105,
-      "cameraY": -129,
+      "cameraX": 104,
+      "cameraY": -107,
       "siteProgress": {},
       "commonsKilled": {},
       "raresKilled": {},
       "elitesKilled": {},
       "siteVisits": {
-        "Valley of Trials": 1
+        "Valley of Trials": 1,
+        "Burning Blade Coven": 1,
+        "Orgrimmar": 1
       },
       "startDate": "2023-10-18T21:02:56.49355+02:00",
-      "lastLoaded": "2023-10-21T06:07:14.0279861+02:00",
-      "lastPlayed": "2023-10-21T06:07:23.3590719+02:00",
-      "timePlayed": "00:54:42.9229835",
-      "lastVisitedTalents": 1
+      "lastLoaded": "2023-10-21T14:26:34.9217476+02:00",
+      "lastPlayed": "2023-10-21T14:27:21.6621558+02:00",
+      "timePlayed": "00:55:29.6633917",
+      "lastVisitedTalents": 2
     },
     {
       "player": {
@@ -5395,14 +5400,15 @@
         "Lake Al'Ameth": 6
       },
       "startDate": "2023-10-18T21:08:47.5610377+02:00",
-      "lastLoaded": "2023-10-20T00:00:56.5285977+02:00",
-      "lastPlayed": "2023-10-20T00:01:40.2649126+02:00",
-      "timePlayed": "00:16:22.2599994"
+      "lastLoaded": "2023-10-21T15:15:42.2553161+02:00",
+      "lastPlayed": "2023-10-21T15:15:57.8094916+02:00",
+      "timePlayed": "00:28:28.9771071",
+      "lastVisitedTalents": 2
     },
     {
       "player": {
         "level": 60,
-        "unspentTalentPoints": 10,
+        "unspentTalentPoints": 1,
         "actionBarsUnlocked": 7,
         "name": "Brishua",
         "race": "Dwarf",
@@ -5434,7 +5440,16 @@
           "Saved by the Light": 0,
           "Benediction": 0,
           "Flash of Light": 0,
-          "Blade of Justice": 0
+          "Blade of Justice": 0,
+          "Avenger's Shield": 0,
+          "Redoubt": 0,
+          "Blessing of Kings": 0,
+          "Resolute Defender": 0,
+          "Seal of Protection": 0,
+          "Barricade of Faith": 0,
+          "Crusader's Resolve": 0,
+          "Hammer of Justice": 0,
+          "Conviction": 0
         },
         "actionBars": [
           {
@@ -6260,8 +6275,8 @@
           }
         }
       },
-      "cameraX": 261,
-      "cameraY": -160,
+      "cameraX": 248,
+      "cameraY": -144,
       "siteProgress": {},
       "commonsKilled": {},
       "raresKilled": {},
@@ -6269,12 +6284,14 @@
       "siteVisits": {
         "Agmond's End": 5,
         "Mirage Flats": 3,
-        "Blackrock Mountain": 2
+        "Blackrock Mountain": 2,
+        "Chill Breeze Valley": 1,
+        "Coldridge Pass": 1
       },
       "startDate": "2023-10-18T21:09:24.6369634+02:00",
-      "lastLoaded": "2023-10-21T14:17:15.6149269+02:00",
-      "lastPlayed": "2023-10-21T14:20:26.4544998+02:00",
-      "timePlayed": "00:31:01.1025160",
+      "lastLoaded": "2023-10-21T15:15:59.7608128+02:00",
+      "lastPlayed": "2023-10-21T15:16:26.6290181+02:00",
+      "timePlayed": "00:33:47.2715260",
       "lastVisitedTalents": 1
     }
   ],
@@ -7114,9 +7131,9 @@
       "raresKilled": {},
       "elitesKilled": {},
       "startDate": "2023-10-19T10:51:31.7032721+02:00",
-      "lastLoaded": "2023-10-19T10:51:33.4931542+02:00",
-      "lastPlayed": "2023-10-19T11:02:20.5105764+02:00",
-      "timePlayed": "00:10:47.0174222"
+      "lastLoaded": "2023-10-21T15:16:33.157043+02:00",
+      "lastPlayed": "2023-10-21T15:16:40.177333+02:00",
+      "timePlayed": "00:10:54.0377122"
     }
   ],
   "Gehennas": [],
