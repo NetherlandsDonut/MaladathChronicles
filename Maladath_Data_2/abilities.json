@@ -663,8 +663,8 @@
             "SoundEffect": "AbilityArdentDefenderCast",
             "Await": "5",
             "ShatterTarget": "Effector",
-            "ShatterDegree": "0,2",
-            "ShatterSpeed": "2",
+            "ShatterDegree": "20",
+            "ShatterSpeed": "6",
             "ShatterDensity": "1",
             "AnimationType": "None"
           }
@@ -1654,10 +1654,10 @@
         "effects": [
           {
             "SoundEffect": "AbilityCorruptionFlare",
-            "ShatterType": "Central",
+            "ShatterType": "Directional",
             "ShatterTarget": "Effector",
-            "ShatterDegree": "0,2",
-            "ShatterSpeed": "2"
+            "ShatterDegree": "5",
+            "ShatterSpeed": "3"
           },
           {
             "Effect": "AddBuff",
@@ -1665,15 +1665,16 @@
             "BuffName": "Corruption",
             "BuffDuration": "6",
             "ShatterTarget": "Other",
-            "ShatterType": "Directional",
-            "ShatterDensity": "2",
-            "ShatterSpeed": "4",
+            "ShatterType": "Central",
+            "ShatterDensity": "1",
+            "ShatterSpeed": "15",
             "SoundEffect": "AbilityCorruptionImpact",
             "Await": "5",
             "AnimationType": "Missile",
-            "TrailStrength": "0,55",
-            "AnimationArc": "20",
-            "AnimationSpeed": "1,25"
+            "TrailStrength": "20",
+            "AnimationArc": "10",
+            "AnimationSpeed": "1,6",
+            "ShatterDegree": "30"
           }
         ]
       }
@@ -1682,6 +1683,7 @@
       "regions": [
         {
           "regionType": "Padding",
+          "isExtender": true,
           "contents": [
             {
               "Color": "Gray",
@@ -2842,8 +2844,8 @@
             "ShatterType": "Directional",
             "ShatterTarget": "Effector",
             "ShatterDensity": "1",
-            "ShatterSpeed": "2",
-            "ShatterDegree": "0,1",
+            "ShatterSpeed": "3",
+            "ShatterDegree": "5",
             "Await": "0"
           },
           {
@@ -2854,13 +2856,13 @@
             "PowerScale": "#1",
             "ShatterTarget": "Other",
             "ShatterType": "Central",
-            "ShatterDensity": "2",
-            "ShatterSpeed": "4",
-            "ShatterDegree": "0,6",
+            "ShatterDensity": "1",
+            "ShatterSpeed": "20",
+            "ShatterDegree": "50",
             "SoundEffect": "AbilityFireballImpact",
             "Await": "5",
             "AnimationType": "Missile",
-            "TrailStrength": "0,45",
+            "TrailStrength": "10",
             "AnimationSpeed": "1,5"
           },
           {
@@ -3321,9 +3323,9 @@
         "effects": [
           {
             "SoundEffect": "AbilityFrostboltCast",
-            "ShatterType": "Central",
+            "ShatterType": "Directional",
             "ShatterTarget": "Effector",
-            "ShatterDegree": "2",
+            "ShatterDegree": "5",
             "ShatterDensity": "1",
             "ShatterSpeed": "3",
             "Await": "0"
@@ -3337,13 +3339,13 @@
             "ShatterTarget": "Other",
             "ShatterType": "Central",
             "ShatterDensity": "1",
-            "ShatterSpeed": "10",
-            "ShatterDegree": "20",
+            "ShatterSpeed": "20",
+            "ShatterDegree": "40",
             "SoundEffect": "AbilityFrostboltImpact",
             "Await": "5",
             "AnimationType": "Missile",
-            "TrailStrength": "3",
-            "AnimationSpeed": "1,25"
+            "TrailStrength": "8",
+            "AnimationSpeed": "1,5"
           },
           {
             "Effect": "EndTurn"
@@ -4157,28 +4159,31 @@
             "SoundEffect": "AbilityJudgementCast",
             "ShatterType": "Directional",
             "ShatterTarget": "Effector",
-            "ShatterDegree": "0,2",
-            "ShatterDensity": "1",
-            "ShatterSpeed": "3"
+            "ShatterDegree": "1",
+            "ShatterDensity": "5",
+            "ShatterSpeed": "4",
+            "Await": "0"
           },
           {
             "Effect": "Damage",
             "SoundEffect": "AbilityJudgementImpact",
             "AnimationType": "Missile",
-            "TrailStrength": "0,35",
-            "ShatterType": "Directional",
-            "AnimationArc": "30",
+            "TrailStrength": "5",
+            "ShatterType": "Central",
+            "AnimationArc": "20",
             "ShatterTarget": "Other",
             "PowerSource": "Effector",
             "PowerType": "Spell",
             "Affect": "Other",
-            "AnimationSpeed": "1,65",
-            "ShatterDensity": "3",
-            "ShatterSpeed": "5",
-            "Await": "5"
+            "AnimationSpeed": "1,5",
+            "ShatterDensity": "1",
+            "ShatterSpeed": "20",
+            "Await": "5",
+            "ShatterDegree": "30"
           },
           {
-            "Effect": "EndTurn"
+            "Effect": "EndTurn",
+            "Await": "0"
           }
         ]
       }
@@ -5607,44 +5612,30 @@
       {
         "triggers": [
           {
-            "Trigger": "BuffAdd",
-            "Triggerer": "Effector",
-            "BuffName": "Any"
-          }
-        ],
-        "effects": [
-          {
-            "Effect": "AddBuff",
-            "Affect": "Other",
-            "BuffName": "Scorch",
-            "BuffDuration": "3",
-            "ShatterTarget": "Other",
-            "ShatterType": "Central",
-            "ShatterDensity": "2",
-            "ShatterDegree": "0.7",
-            "SoundEffect": "AbilityScorchImpact",
-            "Await": "5"
-          }
-        ]
-      },
-      {
-        "triggers": [
-          {
             "Trigger": "AbilityCast"
           }
         ],
         "effects": [
           {
+            "AnimationType": "None",
+            "ShatterType": "Central",
+            "ShatterTarget": "Effector",
+            "ShatterDegree": "5",
+            "ShatterSpeed": "1"
+          },
+          {
             "Effect": "AddBuff",
             "Affect": "Other",
             "BuffName": "Scorch",
             "BuffDuration": "3",
             "ShatterTarget": "Other",
             "ShatterType": "Central",
-            "ShatterDensity": "2",
-            "ShatterDegree": "0.7",
+            "ShatterDensity": "1",
+            "ShatterDegree": "20",
             "SoundEffect": "AbilityScorchImpact",
-            "Await": "5"
+            "Await": "5",
+            "AnimationType": "None",
+            "ShatterSpeed": "4"
           }
         ]
       }
@@ -5836,7 +5827,11 @@
         ],
         "effects": [
           {
-            "SoundEffect": "AbilityShadowboltCast"
+            "SoundEffect": "AbilityShadowboltCast",
+            "Await": "0",
+            "ShatterType": "Directional",
+            "ShatterTarget": "Effector",
+            "ShatterDegree": "4"
           },
           {
             "Effect": "Damage",
@@ -5845,15 +5840,18 @@
             "PowerSource": "Effector",
             "PowerScale": "2.9",
             "ShatterTarget": "Other",
-            "ShatterType": "Directional",
-            "ShatterDensity": "2",
-            "ShatterSpeed": "4",
-            "ShatterDegree": "0.7",
+            "ShatterType": "Central",
+            "ShatterDensity": "1",
+            "ShatterSpeed": "20",
+            "ShatterDegree": "50",
             "SoundEffect": "AbilityShadowboltImpact",
-            "Await": "5"
+            "Await": "5",
+            "AnimationType": "Missile",
+            "TrailStrength": "10"
           },
           {
-            "Effect": "EndTurn"
+            "Effect": "EndTurn",
+            "Await": "0"
           }
         ]
       }
@@ -5880,6 +5878,7 @@
         },
         {
           "regionType": "Padding",
+          "isExtender": true,
           "contents": [
             {
               "Color": "Gray",

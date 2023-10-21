@@ -3885,7 +3885,7 @@ public class Blueprint
                     String.shatterDensity.Set(effect.ContainsKey("ShatterDensity") ? effect["ShatterDensity"] : "1");
                     String.shatterDegree.Set(effect.ContainsKey("ShatterDegree") ? effect["ShatterDegree"] : "20");
                     String.shatterSpeed.Set(effect.ContainsKey("ShatterSpeed") ? effect["ShatterSpeed"] : "6");
-                    String.await.Set(effect.ContainsKey("Await") ? effect["Await"] : "1");
+                    String.await.Set(effect.ContainsKey("Await") ? effect["Await"] : "0");
                     String.powerScale.Set(effect.ContainsKey("PowerScale") ? effect["PowerScale"] : "1");
                     String.resourceAmount.Set(effect.ContainsKey("ResourceAmount") ? effect["ResourceAmount"] : "1");
                     String.buffDuration.Set(effect.ContainsKey("BuffDuration") ? effect["BuffDuration"] : "3");
@@ -4169,8 +4169,8 @@ public class Blueprint
                 AddSmallButton("OtherReverse", (h) =>
                 {
                     if (effect.ContainsKey("Await"))
-                        effect["Await"] = "1";
-                    String.await.Set("1");
+                        effect["Await"] = "0";
+                    String.await.Set("0");
                     h.window.Respawn();
                 });
             });
@@ -5654,6 +5654,16 @@ public class Blueprint
                 AddButtonRegion(() =>
                 {
                     AddLine("Event #" + (ability.events.IndexOf(foo) + 1));
+                    AddSmallButton("OtherTrash",
+                    (h) =>
+                    {
+                        eventEdit = null;
+                        ability.events.Remove(foo);
+                        h.window.Respawn();
+                        CloseWindow("ObjectManagerEventTriggers");
+                        CloseWindow("ObjectManagerEventEffects");
+                        Respawn("ObjectManagerAbilities");
+                    });
                 },
                 (h) =>
                 {

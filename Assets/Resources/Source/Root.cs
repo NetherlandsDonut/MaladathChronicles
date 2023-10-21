@@ -562,6 +562,22 @@ public static class Root
         return newObject;
     }
 
+    public static GameObject AddBigButtonOverlay(Vector2 position, string overlay, float time = 0, int sortingOrder = 1)
+    {
+        var newObject = new GameObject("BigButtonGrid", typeof(SpriteRenderer));
+        newObject.transform.parent = CDesktop.transform;
+        newObject.transform.localPosition = position;
+        newObject.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/BigButtons/" + overlay);
+        newObject.GetComponent<SpriteRenderer>().sortingOrder = sortingOrder;
+        newObject.GetComponent<SpriteRenderer>().sortingLayerName = CDesktop.LBWindow.layer;
+        if (time > 0)
+        {
+            newObject.AddComponent<Shatter>().render = newObject.GetComponent<SpriteRenderer>();
+            newObject.GetComponent<Shatter>().Initiate(time);
+        }
+        return newObject;
+    }
+
     public static void AddBigButton(string type, Action<Highlightable> pressEvent = null, Action<Highlightable> rightPressEvent = null, Func<Highlightable, Action> tooltip = null, Action<Highlightable> middlePressEvent = null)
     {
         var region = CDesktop.LBWindow.LBRegionGroup.LBRegion;
@@ -596,6 +612,18 @@ public static class Root
         var line = CDesktop.LBWindow.LBRegionGroup.LBRegion.LBLine;
         newObject.transform.parent = line.transform;
         newObject.GetComponent<LineText>().Initialise(line, text, color == "" ? DefaultTextColorForRegion(line.region.backgroundType) : color);
+    }
+
+    public static void SpawnFallingText(Vector2 position, string text = "", string color = "")
+    {
+        text ??= "";
+        var newObject = new GameObject("FallingText", typeof(FallingText));
+        newObject.transform.parent = CDesktop.transform;
+        newObject.transform.localPosition = position;
+        newObject.AddComponent<Rigidbody2D>().gravityScale = 2.5f;
+        newObject.AddComponent<Shatter>().Initiate(5);
+        var temp = newObject.GetComponent<FallingText>();
+        temp.Initialise(text, color == "" ? "Gray" : color);
     }
 
     #endregion

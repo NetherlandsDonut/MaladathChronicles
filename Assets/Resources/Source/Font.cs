@@ -1,14 +1,20 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 
 using UnityEngine;
 
 public class Font
 {
-    public Font(string name)
+    public Font(string name, string charset)
     {
+        this.name = name;
         glyphs = Resources.LoadAll<Sprite>("Sprites/Fonts/" + name);
         widths = glyphs.Select(x => (int)x.rect.width).ToArray();
+        this.charset = charset;
     }
+
+    //Name of the font
+    public string name;
 
     //Textures of all characters provided by the font in the order of the charset variable
     public Sprite[] glyphs;
@@ -21,18 +27,18 @@ public class Font
     public int Length(string text) => text.Sum(x => widths[charset.IndexOf(x)]) + text.Length - 1;
 
     //Set of all characters available to print in UI
-    public static string charset = "!\"#$%&\'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~¡¢£¤¥¦§¨©ª«¬®¯°±²³´µ¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõö÷ø ùúûüýþÿĀāĂăĄąĆćĈĉĊċČčĎďĐđĒēĔĕĖėĘęĚěĜĝĞğĠġĢģĤĥĦħĨĩĪīĬĭĮįİıĲĳĴĵĶķĸĹĺĻļĽľĿŀŁłŃńŅņŇňŉŊŋŌōŎŏŐőŒœŔŕŖŗŘřŚśŜŝŞşŠšŢţŤťŦŧŨũŪūŬŭŮůŰűŲųŴŵŶŷŸŹźŻżŽžſƀƁƂƃƄƅƆƇƈƊƋƌƍƎƏƐƑƒƓƔƕƖƗƘƙƚƛƜƝƞƟƠơƢƣƤƥƦƧƨƩƪƫƬƭƮƯưƱƲƳƴƵƶƷƸƹƺƻƼƽƾƿǀǁǂǃǄǅǆǇǈǉǊǋǌǍǎǏǐǑǒǓǔǕǖǗǘǙǚǛǜǝǞǟǠǡǢǣǤǥǦǧǨǩǪǫǬǭǮǯǰǱǲǳǴǵǶǷǸǹǺǻǼǽǾǿȀȁȂȃȄȅȆȇȈȉȊȋȌȍȎȏȐȑȒȓȔȕȖȗȘșȚțȜȝȞȟȠȡȢȣȤȥȦȧȨȩȪȫȬȭȮȯȰȱȲȳȴȵȶȷȸȹȺȻȼȽȾȿɀɁɂɃɄɅɆɇɈɉɊɋɌɍɎɏɐɑɒɓɔɕɖɗɘəɚɛɜɝɞɟɠɡɢɣɤɥɦɧɨɩɪɫɬɭɮɯɰɱɲɳɴɵɶɷɸɹɺɻɼɽɾɿʀʁʂʃʄʅʆʇʈʉʊʋʌʍʎʏʐʑʒʓʔʕʖʗʘʙʚʛʜʝʞʟʠʡʢʬʭʮʯʰˆˇˉ˘˙˚˛˜˝;΄΅Ά·ΈΉΊΌΎΏΐΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩΪΫάέήίΰαβγδεζηθικλμνξοπρςστυφχψωϊϋόύώЀЁЂЃЄЅІЇЈЉЊЋЌЍЎЏАБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдежзийклмнопрстуфхцчшщъыьэюяѐёђѓєѕіїјљњћќѝўџҐґҒғҖҗҚқҜҝҢңҮүҰұҲҳҸҹҺһӘә׃אבגדהוזחטיךכלםמןנסעףפץצקרשתװױײ׳״´῾‌‍‎‏–—―‗‘’‚‛“”„†‡•…‰′″‹›‼‾⁄ⁿ₣₤₥₦₧₨₩₪₫€₭₮₯℅ℓ№™Ω℮⅛⅜⅝⅞∂∆∏∑−∕∙√∞∫≈≠≤≥□▪▫◊●◦ﬁﬂ";
-    
-    //Current font loaded into memory
-    public static Font font;
+    public string charset;
 
     //Returns a texture corresponding to the given character
     //based on the order of the characters in the charset variable
-    public static Sprite GetGlyph(char character)
+    public Sprite GetGlyph(char character)
     {
         var index = charset.IndexOf(character);
         if (index == -1) { Debug.LogError("This character was not found in the font character data: " + character); return null; }
-        else if (font.glyphs.Length < index) { Debug.LogError("This character was not found in the font glyph set: " + character); return null; }
-        return font.glyphs[index];
+        else if (fonts[name].glyphs.Length < index) { Debug.LogError("This character was not found in the font glyph set: " + character); return null; }
+        return fonts[name].glyphs[index];
     }
+
+    //Current font loaded into memory
+    public static Dictionary<string, Font> fonts;
 }

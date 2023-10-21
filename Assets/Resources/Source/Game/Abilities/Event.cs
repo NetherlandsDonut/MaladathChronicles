@@ -38,7 +38,7 @@ public class Event
             string chanceScale = effect.ContainsKey("ChanceScale") ? effect["ChanceScale"] : "None";
             string animationType = effect.ContainsKey("AnimationType") ? effect["AnimationType"] : "None";
             string shatterType = effect.ContainsKey("ShatterType") ? effect["ShatterType"] : "None";
-            float await = effect.ContainsKey("Await") ? float.Parse(effect["Await"]) : 1;
+            float await = effect.ContainsKey("Await") ? float.Parse(effect["Await"]) : 0;
 
             //On a failed chance check of an effect program continues to the next one
             if (CheckFailChance()) continue;
@@ -135,7 +135,10 @@ public class Event
                 {
                     var source = powerSource == "Effector" ? effector : other;
                     var target = affect == "Effector" ? effector : other;
-                    target.Damage(source.RollWeaponDamage() * ((powerType == "Melee" ? source.MeleeAttackPower() : (powerType == "Spell" ? source.SpellPower() : (powerType == "Ranged" ? source.RangedAttackPower() : 1))) / 10.0 + 1) * powerScale, trigger["Trigger"] == "Damage");
+                    var amount = source.RollWeaponDamage() * ((powerType == "Melee" ? source.MeleeAttackPower() : (powerType == "Spell" ? source.SpellPower() : (powerType == "Ranged" ? source.RangedAttackPower() : 1))) / 10.0 + 1) * powerScale;
+                    target.Damage(amount, trigger["Trigger"] == "Damage");
+                    AddBigButtonOverlay(new Vector2(target == board.player ? -300 : 167, 141), "OtherDamaged", 0.1f, 5);
+                    SpawnFallingText(new Vector2(target == board.player ? -300 : 167, 141), "" + (int)amount, "White");
                 }
             }
 
@@ -153,7 +156,10 @@ public class Event
                 {
                     var source = powerSource == "Effector" ? effector : other;
                     var target = affect == "Effector" ? effector : other;
-                    target.Heal(source.RollWeaponDamage() * ((powerType == "Melee" ? source.MeleeAttackPower() : (powerType == "Spell" ? source.SpellPower() : (powerType == "Ranged" ? source.RangedAttackPower() : 1))) / 10.0 + 1) * powerScale, trigger["Trigger"] == "Heal");
+                    var amount = source.RollWeaponDamage() * ((powerType == "Melee" ? source.MeleeAttackPower() : (powerType == "Spell" ? source.SpellPower() : (powerType == "Ranged" ? source.RangedAttackPower() : 1))) / 10.0 + 1) * powerScale;
+                    target.Heal(amount, trigger["Trigger"] == "Heal");
+                    AddBigButtonOverlay(new Vector2(target == board.player ? -300 : 167, 141), "OtherHealed", 0.1f, 5);
+                    SpawnFallingText(new Vector2(target == board.player ? -300 : 167, 141), "" + (int)amount, "Uncommon");
                 }
             }
 
@@ -247,6 +253,7 @@ public class Event
                         { "Triggerer", "Other" },
                         { "BuffName", buffName }
                     });
+                    SpawnFallingText(new Vector2(target == board.player ? -300 : 167, 141), buffDuration + " turn" + (buffDuration > 1 ? "s" : ""), "White");
                 }
             }
 

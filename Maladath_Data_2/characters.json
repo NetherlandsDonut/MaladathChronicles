@@ -630,6 +630,24 @@
               "droppedBy": [
                 "Kirtonos the Herald"
               ]
+            },
+            {
+              "rarity": "Poor",
+              "name": "Vulture Talon",
+              "icon": "itemmiscmonsterclaw01",
+              "type": "Miscellaneous",
+              "ilvl": 1,
+              "price": 0.0081,
+              "stats": {
+                "stats": {}
+              },
+              "droppedBy": [
+                "Salt Flats Vulture",
+                "Salt Flats Scavenger",
+                "Fleshripper",
+                "Young Fleshripper",
+                "Greater Fleshripper"
+              ]
             }
           ]
         },
@@ -848,12 +866,16 @@
         }
       },
       "cameraX": 240,
-      "cameraY": -194,
+      "cameraY": -198,
       "siteProgress": {
-        "Blackrock Stronghold": 1
+        "Blackrock Stronghold": 1,
+        "The Dead Acre": 1,
+        "The Dust Plains": 2
       },
       "commonsKilled": {
-        "Blackrock Battlemaster": 1
+        "Blackrock Battlemaster": 1,
+        "Greater Fleshripper": 1,
+        "Riverpaw Taskmaster": 2
       },
       "raresKilled": {},
       "elitesKilled": {},
@@ -863,13 +885,14 @@
         "The Pillar of Ash": 1,
         "Ruins of Thaurissan": 1,
         "Flame Crest": 1,
-        "Morgan's Vigil": 1
+        "Morgan's Vigil": 1,
+        "The Dead Acre": 1,
+        "The Dust Plains": 2
       },
       "startDate": "2023-10-18T07:52:13.0981561+02:00",
-      "lastLoaded": "2023-10-19T09:00:41.5923253+02:00",
-      "lastPlayed": "2023-10-19T09:17:11.8859665+02:00",
-      "timePlayed": "00:54:56.4376891",
-      "lastVisitedTalents": 2
+      "lastLoaded": "2023-10-21T05:18:23.8413432+02:00",
+      "lastPlayed": "2023-10-21T05:18:44.1476475+02:00",
+      "timePlayed": "00:56:19.1009766"
     },
     {
       "player": {
@@ -1709,12 +1732,12 @@
         "Caer Darrow": 1,
         "Sorrow Hill": 1,
         "Uther's Tomb": 1,
-        "Ruins of Andorhal": 3
+        "Ruins of Andorhal": 12
       },
       "startDate": "2023-10-18T12:41:15.4651668+02:00",
-      "lastLoaded": "2023-10-19T23:10:27.7044668+02:00",
-      "lastPlayed": "2023-10-19T23:14:09.2058192+02:00",
-      "timePlayed": "00:30:06.5094637",
+      "lastLoaded": "2023-10-21T05:08:47.2581759+02:00",
+      "lastPlayed": "2023-10-21T05:12:43.781305+02:00",
+      "timePlayed": "00:47:28.8092413",
       "lastVisitedTalents": 2
     },
     {
@@ -2550,16 +2573,19 @@
           }
         }
       },
-      "cameraX": 62,
-      "cameraY": -155,
+      "cameraX": 65,
+      "cameraY": -157,
       "siteProgress": {},
       "commonsKilled": {},
       "raresKilled": {},
       "elitesKilled": {},
+      "siteVisits": {
+        "Red Cloud Mesa": 2
+      },
       "startDate": "2023-10-18T21:02:37.5764175+02:00",
-      "lastLoaded": "2023-10-19T09:17:15.3119826+02:00",
-      "lastPlayed": "2023-10-19T09:49:11.4096544+02:00",
-      "timePlayed": "00:32:23.2438300",
+      "lastLoaded": "2023-10-20T17:38:50.2638712+02:00",
+      "lastPlayed": "2023-10-20T17:38:51.9101181+02:00",
+      "timePlayed": "00:44:55.3042506",
       "lastVisitedTalents": 1
     },
     {
@@ -5299,12 +5325,12 @@
       "elitesKilled": {},
       "siteVisits": {
         "Pools of Arlithrien": 1,
-        "Lake Al'Ameth": 5
+        "Lake Al'Ameth": 6
       },
       "startDate": "2023-10-18T21:08:47.5610377+02:00",
-      "lastLoaded": "2023-10-19T23:48:45.5118457+02:00",
-      "lastPlayed": "2023-10-19T23:49:56.5058295+02:00",
-      "timePlayed": "00:15:38.5236845"
+      "lastLoaded": "2023-10-20T00:00:56.5285977+02:00",
+      "lastPlayed": "2023-10-20T00:01:40.2649126+02:00",
+      "timePlayed": "00:16:22.2599994"
     },
     {
       "player": {
@@ -6167,19 +6193,20 @@
           }
         }
       },
-      "cameraX": 284,
+      "cameraX": 280,
       "cameraY": -154,
       "siteProgress": {},
       "commonsKilled": {},
       "raresKilled": {},
       "elitesKilled": {},
       "siteVisits": {
-        "Agmond's End": 5
+        "Agmond's End": 5,
+        "Mirage Flats": 1
       },
       "startDate": "2023-10-18T21:09:24.6369634+02:00",
-      "lastLoaded": "2023-10-19T23:42:11.50051+02:00",
-      "lastPlayed": "2023-10-19T23:42:42.3332392+02:00",
-      "timePlayed": "00:18:38.2247084",
+      "lastLoaded": "2023-10-20T14:43:17.6270393+02:00",
+      "lastPlayed": "2023-10-20T14:43:41.6603836+02:00",
+      "timePlayed": "00:19:02.2580527",
       "lastVisitedTalents": 1
     }
   ],

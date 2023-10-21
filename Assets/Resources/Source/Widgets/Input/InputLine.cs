@@ -35,7 +35,7 @@ public class InputLine : MonoBehaviour
         region.regionGroup.window.Respawn();
     }
 
-    public int Length() => font.Length(text.text.Value());
+    public int Length() => fonts["Tahoma Bold"].Length(text.text.Value());
 
     public static String inputDestination;
     public static string inputLineName;

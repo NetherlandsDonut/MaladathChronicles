@@ -56,6 +56,9 @@ TagManager:
   - name: Missile
     uniqueID: 1043226619
     locked: 0
+  - name: FallingText
+    uniqueID: 544200975
+    locked: 0
   - name: CameraBorder
     uniqueID: 4121732107
     locked: 0

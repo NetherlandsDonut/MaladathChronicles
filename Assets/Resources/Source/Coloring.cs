@@ -37,6 +37,7 @@ public static class Coloring
         { "LightGray",      new Color32(202, 202, 202, 255) },
         { "Gray",           new Color32(183, 183, 183, 255) },
         { "DarkGray",       new Color32(114, 114, 114, 255) },
+        { "DimGray",        new Color32(045, 045, 045, 255) },
         { "Black",          new Color32(031, 031, 031, 255) },
         { "Red",            new Color32(181, 077, 077, 255) },
         { "DangerousRed",   new Color32(173, 036, 045, 255) },

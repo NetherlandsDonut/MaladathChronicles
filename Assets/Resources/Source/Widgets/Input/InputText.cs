@@ -34,7 +34,7 @@ public class InputText : MonoBehaviour
         var newCharacter = new GameObject("Character", typeof(SpriteRenderer));
         newCharacter.transform.parent = transform;
         newCharacter.transform.localPosition = new Vector3(offset, 0, 0.2f);
-        var glyph = GetGlyph(character);
+        var glyph = fonts["Tahoma Bold"].GetGlyph(character);
         newCharacter.GetComponent<SpriteRenderer>().sortingLayerName = inputLine.region.regionGroup.window.layer;
         newCharacter.GetComponent<SpriteRenderer>().sprite = glyph;
         newCharacter.GetComponent<SpriteRenderer>().color = colors[character + "" == markerCharacter ? "Gray" : (color != "" ? color : "LightGray")];
