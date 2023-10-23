@@ -15,6 +15,12 @@ public class SaveGame
     //Player character in the save
     public Entity player;
 
+    //Hour in-game
+    public int hour;
+
+    //Minute in-game
+    public int minute;
+
     //Position of the camera saved when logging out
     public int cameraX, cameraY;
 
@@ -63,6 +69,11 @@ public class SaveGame
 
     //Keeps information about last visited talents page
     public int lastVisitedTalents;
+
+    public bool IsNight()
+    {
+        return hour >= 20 && hour <= 6;
+    }
 
     //Provides information which background should be used for character
     //logging screen which will depend on the place of the logout
