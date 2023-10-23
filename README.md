@@ -335,6 +335,9 @@ v0.4.2
           Bonus move, damage, heal and buff floating text system
           Fixed particles colliding with UI
           Flash on portraits on received damage or healing
+v0.4.3
+    22.09 General zone music
+          Some lacking portraits added
 ```
 
 </details>
