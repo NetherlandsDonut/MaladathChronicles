@@ -1,6 +1,6 @@
 {
   "selectedRealm": "Firemaw",
-  "selectedCharacter": "Tine",
+  "selectedCharacter": "Fleta",
   "shadows": {
     "value": "True"
   },
@@ -8,7 +8,7 @@
     "value": "True"
   },
   "music": {
-    "value": "True"
+    "value": "False"
   },
   "soundEffects": {
     "value": "True"
@@ -26,6 +26,6 @@
     "value": "False"
   },
   "snapCamera": {
-    "value": "True"
+    "value": "False"
   }
 }

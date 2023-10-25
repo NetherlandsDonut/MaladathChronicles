@@ -4,14 +4,22 @@
     "y": -104,
     "name": "Raynewood Retreat",
     "zone": "Ashenvale",
-    "faction": "Darnassus"
+    "faction": "Darnassus",
+    "connections": [
+      "Greenpaw Village",
+      "Nightsong Woods",
+      "Night Run"
+    ]
   },
   {
     "x": 283,
     "y": -87,
     "name": "Ravenholdt Manor",
     "zone": "Hillsbrad Foothills",
-    "faction": "Assassin's League"
+    "faction": "Assassin's League",
+    "connections": [
+      "Chillwind Point"
+    ]
   },
   {
     "transport": [
@@ -93,7 +101,11 @@
     "y": -183,
     "name": "Stormwind City",
     "zone": "Elwynn Forest",
-    "faction": "Stormwind"
+    "faction": "Stormwind",
+    "connections": [
+      "Goldshire",
+      "The Stockade"
+    ]
   },
   {
     "x": 72,
@@ -114,21 +126,39 @@
     "y": -93,
     "name": "Hillsbrad",
     "zone": "Hillsbrad Foothills",
-    "faction": "Stormwind"
+    "faction": "Stormwind",
+    "connections": [
+      "Southshore",
+      "Lordamere Internment Camp",
+      "Headland",
+      "Darrow Hill",
+      "Azurelode Mine",
+      "Southpoint Tower"
+    ]
   },
   {
     "x": 297,
     "y": -99,
     "name": "Dabyrie's Farmstead",
     "zone": "Arathi Highlands",
-    "faction": "Stormwind"
+    "faction": "Stormwind",
+    "connections": [
+      "Refuge Point",
+      "Circle of Outer Binding"
+    ]
   },
   {
     "x": 264,
     "y": -97,
     "name": "Azurelode Mine",
     "zone": "Hillsbrad Foothills",
-    "faction": "Stormwind"
+    "faction": "Stormwind",
+    "connections": [
+      "Hillsbrad",
+      "Southpoint Tower",
+      "Western Strand",
+      "Purgation Isle"
+    ]
   },
   {
     "people": [
@@ -173,7 +203,16 @@
     "y": -189,
     "name": "Goldshire",
     "zone": "Elwynn Forest",
-    "faction": "Stormwind"
+    "faction": "Stormwind",
+    "connections": [
+      "Fargodeep Mine",
+      "The Maclure Vineyards",
+      "Mirror Lake Orchard",
+      "Mirror Lake",
+      "Stormwind City",
+      "Northshire Abbey",
+      "Crystal Lake"
+    ]
   },
   {
     "people": [
@@ -188,14 +227,26 @@
     "y": -186,
     "name": "Lakeshire",
     "zone": "Redridge Mountains",
-    "faction": "Stormwind"
+    "faction": "Stormwind",
+    "connections": [
+      "Rethban Caverns",
+      "Redridge Canyons",
+      "Lake Everstill",
+      "Alther's Mill"
+    ]
   },
   {
     "x": 268,
     "y": -183,
     "name": "Northshire Abbey",
     "zone": "Elwynn Forest",
-    "faction": "Stormwind"
+    "faction": "Stormwind",
+    "connections": [
+      "Goldshire",
+      "Northshire Vineyards",
+      "Northshire Valley",
+      "Echo Ridge Mine"
+    ]
   },
   {
     "people": [
@@ -210,7 +261,14 @@
     "y": -96,
     "name": "Southshore",
     "zone": "Hillsbrad Foothills",
-    "faction": "Stormwind"
+    "faction": "Stormwind",
+    "connections": [
+      "Western Strand",
+      "Eastern Strand",
+      "Nethander Stead",
+      "Darrow Hill",
+      "Hillsbrad"
+    ]
   },
   {
     "people": [
@@ -225,14 +283,31 @@
     "y": -201,
     "name": "Darkshire",
     "zone": "Duskwood",
-    "faction": "Stormwind"
+    "faction": "Stormwind",
+    "connections": [
+      "Gossamer Grotto",
+      "Tranquil Gardens Cemetery",
+      "Roland's Doom",
+      "The Rotting Orchard",
+      "Yorgen's Farmstead",
+      "Brightwood Grove",
+      "Manor Mistmantle",
+      "Deadman's Crossing",
+      "The Darkened Bank"
+    ]
   },
   {
     "x": 268,
     "y": -209,
     "name": "Rebel Camp",
     "zone": "Stranglethorn Vale",
-    "faction": "Stormwind"
+    "faction": "Stormwind",
+    "connections": [
+      "Vul'Gol Ogre Mound",
+      "Yorgen's Farmstead",
+      "Kurzen's Compound",
+      "Nesingwary's Expedition"
+    ]
   },
   {
     "people": [
@@ -247,7 +322,14 @@
     "y": -200,
     "name": "Sentinel Hill",
     "zone": "Westfall",
-    "faction": "Stormwind"
+    "faction": "Stormwind",
+    "connections": [
+      "The Dead Acre",
+      "Stendel's Pond",
+      "Molsen Farm",
+      "Saldean's Farm",
+      "Jansen Stead"
+    ]
   },
   {
     "people": [
@@ -296,7 +378,11 @@
     "y": -127,
     "name": "Menethil Harbor",
     "zone": "Wetlands",
-    "faction": "Stormwind"
+    "faction": "Stormwind",
+    "connections": [
+      "Bluegill Marsh",
+      "Black Channel Marsh"
+    ]
   },
   {
     "people": [
@@ -326,7 +412,13 @@
     "y": -177,
     "name": "Morgan's Vigil",
     "zone": "Burning Steppes",
-    "faction": "Stormwind"
+    "faction": "Stormwind",
+    "connections": [
+      "Blackrock Pass",
+      "Terror Wing Path",
+      "Dreadmaul Rock",
+      "Ruins of Thaurissan"
+    ]
   },
   {
     "people": [
@@ -341,7 +433,11 @@
     "y": -169,
     "name": "Flame Crest",
     "zone": "Burning Steppes",
-    "faction": "Orgrimmar"
+    "faction": "Orgrimmar",
+    "connections": [
+      "Ruins of Thaurissan",
+      "Dreadmaul Rock"
+    ]
   },
   {
     "x": 287,
@@ -363,7 +459,12 @@
     "y": -101,
     "name": "Refuge Point",
     "zone": "Arathi Highlands",
-    "faction": "Stormwind"
+    "faction": "Stormwind",
+    "connections": [
+      "Circle of Outer Binding",
+      "Boulder'gor",
+      "Dabyrie's Farmstead"
+    ]
   },
   {
     "people": [
@@ -420,13 +521,6 @@
     "x": 67,
     "y": -21,
     "name": "Aldrassil",
-    "zone": "Teldrassil",
-    "faction": "Darnassus"
-  },
-  {
-    "x": 72,
-    "y": -27,
-    "name": "Star Breeze Village",
     "zone": "Teldrassil",
     "faction": "Darnassus"
   },
@@ -518,7 +612,14 @@
     "y": -114,
     "name": "Silverwind Outpost",
     "zone": "Ashenvale",
-    "faction": "Darnassus"
+    "faction": "Darnassus",
+    "connections": [
+      "Greenpaw Village",
+      "Bloodtooth Camp",
+      "Silverwing Grove",
+      "Fallen Sky Lake",
+      "Splintertree Post"
+    ]
   },
   {
     "people": [
@@ -533,21 +634,36 @@
     "y": -110,
     "name": "Silverwind Refuge",
     "zone": "Ashenvale",
-    "faction": "Darnassus"
+    "faction": "Darnassus",
+    "connections": [
+      "Mystral Lake",
+      "Greenpaw Village",
+      "Nightsong Woods"
+    ]
   },
   {
     "x": 96,
     "y": -117,
     "name": "Silverwing Grove",
     "zone": "Ashenvale",
-    "faction": "Darnassus"
+    "faction": "Darnassus",
+    "connections": [
+      "Silverwind Outpost",
+      "Fallen Sky Lake"
+    ]
   },
   {
     "x": 111,
     "y": -101,
     "name": "Forest Song",
     "zone": "Ashenvale",
-    "faction": "Darnassus"
+    "faction": "Darnassus",
+    "connections": [
+      "Warsong Lumber Camp",
+      "Shadowsong Shrine",
+      "Satyrnaar",
+      "Bough Shadow"
+    ]
   },
   {
     "transport": [
@@ -589,7 +705,11 @@
     "y": -105,
     "name": "Talrendis Point",
     "zone": "Azshara",
-    "faction": "Darnassus"
+    "faction": "Darnassus",
+    "connections": [
+      "Shadowsong Shrine",
+      "Lake Mennar"
+    ]
   },
   {
     "people": [
@@ -782,14 +902,43 @@
     "y": -145,
     "name": "Thelsamar",
     "zone": "Loch Modan",
-    "faction": "Ironforge"
+    "faction": "Ironforge",
+    "connections": [
+      "Tunnel Rat Camp",
+      "Silver Stream Mine",
+      "Valley of Kings",
+      "Grizzlepaw Ridge"
+    ]
+  },
+  {
+    "people": [
+      {
+        "name": "Dargh Trueaim",
+        "gender": "Male",
+        "race": "Dwarf",
+        "type": "Hunter Trainer"
+      }
+    ],
+    "x": 312,
+    "y": -148,
+    "name": "Farstrider Lodge",
+    "zone": "Loch Modan",
+    "faction": "Ironforge",
+    "connections": [
+      "Buzzard Vale",
+      "Ironband's Excavation Site",
+      "Mo'grosh Woods"
+    ]
   },
   {
     "x": 279,
     "y": -101,
     "name": "Dun Garok",
     "zone": "Hillsbrad Foothills",
-    "faction": "Ironforge"
+    "faction": "Ironforge",
+    "connections": [
+      "Thoradin's Wall"
+    ]
   },
   {
     "people": [
@@ -854,7 +1003,12 @@
     "y": -139,
     "name": "Algaz Station",
     "zone": "Loch Modan",
-    "faction": "Ironforge"
+    "faction": "Ironforge",
+    "connections": [
+      "Silver Stream Mine",
+      "Tunnel Rat Camp",
+      "Dun Algaz"
+    ]
   },
   {
     "transport": [
@@ -941,7 +1095,13 @@
     "y": -116,
     "name": "Orgrimmar",
     "zone": "Durotar",
-    "faction": "Orgrimmar"
+    "faction": "Orgrimmar",
+    "connections": [
+      "Drygulch Ravine",
+      "Razorwind Canyon",
+      "Thunder Ridge",
+      "Ragefire Chasm"
+    ]
   },
   {
     "people": [
@@ -986,7 +1146,14 @@
     "y": -129,
     "name": "Razor Hill",
     "zone": "Durotar",
-    "faction": "Orgrimmar"
+    "faction": "Orgrimmar",
+    "connections": [
+      "Tiragarde Keep",
+      "Scuttle Coast",
+      "Razormane Grounds",
+      "Razorwind Canyon",
+      "Bladefist Bay"
+    ]
   },
   {
     "people": [
@@ -1016,7 +1183,17 @@
     "y": -137,
     "name": "The Crossroads",
     "zone": "The Barrens",
-    "faction": "Orgrimmar"
+    "faction": "Orgrimmar",
+    "connections": [
+      "Gold Road",
+      "Thorn Hill",
+      "Dreadmist Peak",
+      "The Forgotten Pools",
+      "Wailing Caverns",
+      "Lushwater Oasis",
+      "The Stagnant Oasis",
+      "Ratchet"
+    ]
   },
   {
     "people": [
@@ -1046,14 +1223,22 @@
     "y": -94,
     "name": "Valormok",
     "zone": "Azshara",
-    "faction": "Orgrimmar"
+    "faction": "Orgrimmar",
+    "connections": [
+      "Haldarr Encampment"
+    ]
   },
   {
     "x": 101,
     "y": -120,
     "name": "The Mor'shan Rampart",
     "zone": "The Barrens",
-    "faction": "Orgrimmar"
+    "faction": "Orgrimmar",
+    "connections": [
+      "Fallen Sky Lake",
+      "Warsong Labor Camp",
+      "Gold Road"
+    ]
   },
   {
     "transport": [
@@ -1075,7 +1260,12 @@
     "y": -220,
     "name": "Grom'gol Base Camp",
     "zone": "Stranglethorn Vale",
-    "faction": "Orgrimmar"
+    "faction": "Orgrimmar",
+    "connections": [
+      "Bal'lal Ruins",
+      "Kal'ai Ruins",
+      "Mizjah Ruins"
+    ]
   },
   {
     "people": [
@@ -1090,7 +1280,16 @@
     "y": -109,
     "name": "Splintertree Post",
     "zone": "Ashenvale",
-    "faction": "Orgrimmar"
+    "faction": "Orgrimmar",
+    "connections": [
+      "The Dor'Danil Barrow Den",
+      "Felfire Hill",
+      "Warsong Labor Camp",
+      "Fallen Sky Lake",
+      "Silverwind Outpost",
+      "Falfarren River",
+      "Satyrnaar"
+    ]
   },
   {
     "people": [
@@ -1105,7 +1304,11 @@
     "y": -159,
     "name": "Kargath",
     "zone": "Badlands",
-    "faction": "Orgrimmar"
+    "faction": "Orgrimmar",
+    "connections": [
+      "Apocryphan's Rest",
+      "The Dustbowl"
+    ]
   },
   {
     "people": [
@@ -1144,7 +1347,10 @@
     "y": -199,
     "name": "Stonard",
     "zone": "Swamp of Sorrows",
-    "faction": "Orgrimmar"
+    "faction": "Orgrimmar",
+    "connections": [
+      "Splinterspear Junction"
+    ]
   },
   {
     "people": [
@@ -1159,7 +1365,12 @@
     "y": -167,
     "name": "Brackenwall Village",
     "zone": "Dustwallow Marsh",
-    "faction": "Orgrimmar"
+    "faction": "Orgrimmar",
+    "connections": [
+      "Darkmist Cavern",
+      "Shady Rest Inn",
+      "The Quagmire"
+    ]
   },
   {
     "people": [
@@ -1174,7 +1385,14 @@
     "y": -142,
     "name": "Sen'jin Village",
     "zone": "Durotar",
-    "faction": "Darkspear Tribe"
+    "faction": "Darkspear Tribe",
+    "connections": [
+      "Tiragarde Keep",
+      "Kolkar Crag",
+      "Darkspear Strand",
+      "Valley of Trials",
+      "Echo Isles"
+    ]
   },
   {
     "people": [
@@ -1253,7 +1471,10 @@
     "y": -146,
     "name": "Thunder Bluff",
     "zone": "Mulgore",
-    "faction": "Thunder Bluff"
+    "faction": "Thunder Bluff",
+    "connections": [
+      "Bloodhoof Village"
+    ]
   },
   {
     "people": [
@@ -1286,14 +1507,24 @@
     "y": -158,
     "name": "Bloodhoof Village",
     "zone": "Mulgore",
-    "faction": "Thunder Bluff"
+    "faction": "Thunder Bluff",
+    "connections": [
+      "The Rolling Plains",
+      "The Ravaged Caravan",
+      "Baeldun Digsite",
+      "Palemane Rock",
+      "Thunder Bluff"
+    ]
   },
   {
     "x": 79,
     "y": -164,
     "name": "Camp Narache",
     "zone": "Mulgore",
-    "faction": "Thunder Bluff"
+    "faction": "Thunder Bluff",
+    "connections": [
+      "Red Cloud Mesa"
+    ]
   },
   {
     "people": [
@@ -1430,14 +1661,23 @@
     "y": -71,
     "name": "Undercity",
     "zone": "Tirisfal Glades",
-    "faction": "Undercity"
+    "faction": "Undercity",
+    "connections": [
+      "The Ruins of Lordaeron"
+    ]
   },
   {
     "x": 273,
     "y": -69,
     "name": "The Bulwark",
     "zone": "Tirisfal Glades",
-    "faction": "Undercity"
+    "faction": "Undercity",
+    "connections": [
+      "Felstone Field",
+      "Balnir Farmstead",
+      "Brill",
+      "The Ruins of Lordaeron"
+    ]
   },
   {
     "name": "Deathknell",
@@ -1481,7 +1721,15 @@
     "y": -63,
     "name": "Brill",
     "zone": "Tirisfal Glades",
-    "faction": "Undercity"
+    "faction": "Undercity",
+    "connections": [
+      "Brightwater Lake",
+      "Garren's Haunt",
+      "The Ruins of Lordaeron",
+      "Cold Hearth Manor",
+      "Balnir Farmstead",
+      "The Bulwark"
+    ]
   },
   {
     "people": [
@@ -1496,7 +1744,10 @@
     "y": -98,
     "name": "Hammerfall",
     "zone": "Arathi Highlands",
-    "faction": "Undercity"
+    "faction": "Undercity",
+    "connections": [
+      "Drywhisker Gorge"
+    ]
   },
   {
     "people": [
@@ -1511,7 +1762,11 @@
     "y": -88,
     "name": "Tarren Mill",
     "zone": "Hillsbrad Foothills",
-    "faction": "Undercity"
+    "faction": "Undercity",
+    "connections": [
+      "Gallows' Corner",
+      "Chillwind Point"
+    ]
   },
   {
     "people": [
@@ -1526,7 +1781,11 @@
     "y": -82,
     "name": "The Sepulcher",
     "zone": "Silverpine Forest",
-    "faction": "Undercity"
+    "faction": "Undercity",
+    "connections": [
+      "North Wood Crossing",
+      "Olsen's Farthing"
+    ]
   },
   {
     "people": [
@@ -1617,7 +1876,12 @@
     "y": -78,
     "name": "Chillwind Camp",
     "zone": "Western Plaguelands",
-    "faction": "Argent Dawn"
+    "faction": "Argent Dawn",
+    "connections": [
+      "Chillwind Point",
+      "Uther's Tomb",
+      "Ruins of Andorhal"
+    ]
   },
   {
     "people": [
@@ -1638,7 +1902,11 @@
     "y": -158,
     "name": "Thorium Point",
     "zone": "Searing Gorge",
-    "faction": "Thorium Brotherhood"
+    "faction": "Thorium Brotherhood",
+    "connections": [
+      "Firewatch Ridge",
+      "The Cauldron"
+    ]
   },
   {
     "people": [
@@ -1702,7 +1970,11 @@
     "y": -143,
     "name": "Ratchet",
     "zone": "The Barrens",
-    "faction": "Steamwheedle Cartel"
+    "faction": "Steamwheedle Cartel",
+    "connections": [
+      "The Crossroads",
+      "The Stagnant Oasis"
+    ]
   },
   {
     "transport": [
@@ -1736,7 +2008,11 @@
     "y": -241,
     "name": "Booty Bay",
     "zone": "Stranglethorn Vale",
-    "faction": "Steamwheedle Cartel"
+    "faction": "Steamwheedle Cartel",
+    "connections": [
+      "Mistvale Valley",
+      "Wild Shore"
+    ]
   },
   {
     "people": [
@@ -1772,14 +2048,22 @@
     "y": -196,
     "name": "The Harborage",
     "zone": "Swamp of Sorrows",
-    "faction": "Broken"
+    "faction": "Broken",
+    "connections": [
+      "Splinterspear Junction"
+    ]
   },
   {
     "x": 267,
     "y": -212,
     "name": "Nesingwary's Expedition",
     "zone": "Stranglethorn Vale",
-    "faction": "Neutral"
+    "faction": "Neutral",
+    "connections": [
+      "Venture Co. Operations Center",
+      "Rebel Camp",
+      "Tkashi Ruins"
+    ]
   },
   {
     "people": [
@@ -1794,6 +2078,9 @@
     "y": -229,
     "name": "Gurubashi Arena",
     "zone": "Stranglethorn Vale",
-    "faction": "Neutral"
+    "faction": "Neutral",
+    "connections": [
+      "Ruins of Jubuwal"
+    ]
   }
 ]

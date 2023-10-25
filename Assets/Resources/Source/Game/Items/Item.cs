@@ -516,7 +516,7 @@ public class Item
                 foreach (var stat in item.stats.stats)
                     AddLine("+" + stat.Value + " " + stat.Key);
             });
-        var current = currentSave.player.equipment.ContainsKey(item.type) ? currentSave.player.equipment[item.type] : null;
+        var current = currentSave != null && currentSave.player.equipment.ContainsKey(item.type) ? currentSave.player.equipment[item.type] : null;
         if (compare)
         {
             AddHeaderRegion(() =>

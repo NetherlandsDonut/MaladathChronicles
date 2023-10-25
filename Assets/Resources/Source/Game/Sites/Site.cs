@@ -10,6 +10,7 @@ using static SiteComplex;
 using static SiteInstance;
 using static SiteHostileArea;
 using static SiteSpiritHealer;
+using System;
 
 public class Site
 {
@@ -38,6 +39,10 @@ public class Site
     //If this value is empty then current ambience
     //will not be interrupted and will continue to play
     public string ambience;
+
+    public List<string> connections;
+
+    [NonSerialized] public List<Site> connectionsLoaded;
 
     //List of all sites connected to this one
     //letting the player travel from this site to any of these directly
@@ -69,5 +74,46 @@ public class Site
         CDesktop.cameraDestination = new Vector2(x, y) + mapCenteringOffset;
         CDesktop.queuedSiteOpen = siteType;
         CDesktop.LockScreen();
+    }
+
+    public static Site siteConnect;
+
+    public void DrawPath(Site b)
+    {
+        var start = new Vector2(x * 19, y * 19);
+        var end = new Vector2(b.x * 19, b.y * 19);
+        int stepsMade = 0;
+        var path = new GameObject("Path");
+        path.transform.position = Vector2.Lerp(start, end, 0.5f);
+        while ((int)Vector2.Distance(start, end) > stepsMade)
+        {
+            var dot = new GameObject("PathDot", typeof(SpriteRenderer));
+            dot.transform.parent = path.transform;
+            dot.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Other/PathDot");
+            dot.GetComponent<SpriteRenderer>().color = Color.black;
+            dot.GetComponent<SpriteRenderer>().sortingLayerName = "CameraShadow";
+            dot.transform.position = Vector2.Lerp(start, end, 1 / Vector2.Distance(start, end) * stepsMade);
+            dot.transform.position = new Vector2((int)dot.transform.position.x, (int)dot.transform.position.y);
+            stepsMade += 6;
+        }
+    }
+
+    public void LoadConnections()
+    {
+        if (connections == null) return;
+        if (connections.Count == 0) { connections = null; return; }
+        connectionsLoaded = new();
+        foreach (var connection in connections)
+        {
+            Site find = towns.Find(x => x.name == connection);
+            if (find != null) { if (find.name.GetHashCode() < name.GetHashCode()) DrawPath(find); connectionsLoaded.Add(find); continue; }
+            find = areas.Find(x => x.name == connection);
+            if (find != null) { if (find.name.GetHashCode() < name.GetHashCode()) DrawPath(find); connectionsLoaded.Add(find); continue; }
+            find = instances.Find(x => x.name == connection);
+            if (find != null) { if (find.name.GetHashCode() < name.GetHashCode()) DrawPath(find); connectionsLoaded.Add(find); continue; }
+            find = complexes.Find(x => x.name == connection);
+            if (find != null) { if (find.name.GetHashCode() < name.GetHashCode()) DrawPath(find); connectionsLoaded.Add(find); continue; }
+            Debug.Log("Coulnd't find a site named \"" + connection + "\"");
+        }
     }
 }

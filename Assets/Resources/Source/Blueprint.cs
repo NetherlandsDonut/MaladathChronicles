@@ -2265,6 +2265,10 @@ public class Blueprint
                 Serialize(items, "items", false, false, prefix);
                 Serialize(itemSets, "sets", false, false, prefix);
                 Serialize(factions, "factions", false, false, prefix);
+                Serialize(personTypes, "persontypes", false, false, prefix);
+                Serialize(spiritHealers, "spirithealers", false, false, prefix);
+                Serialize(PermanentEnchant.pEnchants, "permanentenchants", false, false, prefix);
+                Serialize(Zone.zones, "zones", false, false, prefix);
             });
             AddPaddingRegion(() => { });
         }),
