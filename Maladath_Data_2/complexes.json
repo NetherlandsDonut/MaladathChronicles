@@ -178,14 +178,15 @@
         "SiteName": "Alterac Keep"
       }
     ],
-    "x": 269,
-    "y": -82,
+    "x": 270,
+    "y": -81,
     "name": "Ruins of Alterac",
     "zone": "Alterac Mountains",
     "type": "Complex",
     "ambience": "AmbienceScary",
     "connections": [
-      "Crushridge Hold"
+      "Crushridge Hold",
+      "Gallows' Corner"
     ]
   },
   {

@@ -1889,8 +1889,8 @@
           }
         }
       },
-      "cameraX": 271,
-      "cameraY": -95,
+      "cameraX": 268,
+      "cameraY": -65,
       "siteProgress": {
         "Isle Ruins": 1
       },
@@ -1908,13 +1908,13 @@
         "Uther's Tomb": 1,
         "Ruins of Andorhal": 12,
         "Darrowmere Crossing": 2,
-        "Dalaran": 1,
+        "Dalaran": 2,
         "Dalaran Mage Camp": 1,
         "South Wood Crossing": 1,
         "North Wood Crossing": 1,
         "Thoradin's Wall": 3,
-        "Headland": 1,
-        "Lordamere Internment Camp": 1,
+        "Headland": 2,
+        "Lordamere Internment Camp": 2,
         "Deep Elem Mine": 1,
         "Fenris Keep": 1,
         "Ruins of Stromgarde": 1,
@@ -1928,12 +1928,21 @@
         "South Hillside": 1,
         "Mosshide Fen": 1,
         "Dam Waterfalls": 1,
-        "Arathi Outer Road": 1
+        "Arathi Outer Road": 1,
+        "Ruins of Alterac": 1,
+        "Booty Bay": 2,
+        "Ratchet": 2,
+        "Weazel's Crater": 1,
+        "Shimmering Flats": 1,
+        "Rustmaul Dig Site": 1,
+        "Tahonda Ruins": 1,
+        "Verdantis River": 1,
+        "Wildwind Lake": 1
       },
       "startDate": "2023-10-18T12:41:15.4651668+02:00",
-      "lastLoaded": "2023-10-25T13:10:49.4182042+02:00",
-      "lastPlayed": "2023-10-25T13:14:57.4522112+02:00",
-      "timePlayed": "01:26:51.0058929",
+      "lastLoaded": "2023-10-25T16:16:20.5854079+02:00",
+      "lastPlayed": "2023-10-25T16:23:45.3264853+02:00",
+      "timePlayed": "01:34:15.7469703",
       "lastVisitedTalents": 2
     },
     {

@@ -1,5 +1,32 @@
 [
   {
+    "name": "Gravis Slipknot",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "kind": "Rare",
+    "portrait": "PortraitParrot",
+    "vitality": 2.0,
+    "abilities": {}
+  },
+  {
+    "name": "Daggerspine Raider",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "kind": "Common",
+    "portrait": "PortraitChicken",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Daggerspine Sorceress",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "kind": "Common",
+    "portrait": "PortraitChicken",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
     "name": "Highland Trasher",
     "category": "Humanoid",
     "subcategory": "Human",

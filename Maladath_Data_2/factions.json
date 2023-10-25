@@ -1,5 +1,10 @@
 [
   {
+    "name": "Booty Bay",
+    "icon": "FactionBooty Bay",
+    "side": "Neutral"
+  },
+  {
     "name": "Southsea Pirates",
     "icon": "FactionSouthsea Pirates",
     "side": "Hostile"

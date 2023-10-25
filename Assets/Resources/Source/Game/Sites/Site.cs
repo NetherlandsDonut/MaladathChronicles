@@ -85,7 +85,7 @@ public class Site
         int stepsMade = 0;
         var path = new GameObject("Path");
         path.transform.position = Vector2.Lerp(start, end, 0.5f);
-        while ((int)Vector2.Distance(start, end) > stepsMade)
+        while ((int)Vector2.Distance(start, end) >= stepsMade)
         {
             var dot = new GameObject("PathDot", typeof(SpriteRenderer));
             dot.transform.parent = path.transform;
@@ -94,7 +94,7 @@ public class Site
             dot.GetComponent<SpriteRenderer>().sortingLayerName = "CameraShadow";
             dot.transform.position = Vector2.Lerp(start, end, 1 / Vector2.Distance(start, end) * stepsMade);
             dot.transform.position = new Vector2((int)dot.transform.position.x, (int)dot.transform.position.y);
-            stepsMade += 6;
+            stepsMade += 5;
         }
     }
 

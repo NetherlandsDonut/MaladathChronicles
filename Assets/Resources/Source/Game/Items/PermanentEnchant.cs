@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 public class PermanentEnchant
@@ -24,6 +25,6 @@ public class PermanentEnchant
     //Calculates how much stats does a permanent enchant grant
     public static int EnchantmentStatGrowth(int ilvl, int amount)
     {
-        return (int)Mathf.Ceil(1 / 500.0f * (ilvl * ilvl) * (amount > 1 ? (amount > 5 ? 4 : amount - 1) : 0.2f) + 2);
+        return (int)Math.Ceiling(1 / 500.0f * (ilvl * ilvl) * (amount > 1 ? (amount > 5 ? 4 : amount - 1) : 0.2f) + 2);
     }
 }

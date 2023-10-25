@@ -72,7 +72,8 @@ public class SaveGame
 
     public bool IsNight()
     {
-        return hour >= 20 && hour <= 6;
+        return false;
+        //return hour >= 20 && hour <= 6;
     }
 
     //Provides information which background should be used for character

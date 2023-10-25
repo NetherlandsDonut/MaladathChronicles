@@ -908,7 +908,8 @@
     "type": "HostileArea",
     "connections": [
       "Slaughter Hollow",
-      "Uplands"
+      "Uplands",
+      "Misty Shore"
     ]
   },
   {
@@ -955,7 +956,7 @@
         "levelMax": 34
       }
     ],
-    "x": 262,
+    "x": 263,
     "y": -85,
     "name": "Dalaran",
     "zone": "Alterac Mountains",
@@ -963,7 +964,34 @@
     "connections": [
       "Lordamere Internment Camp",
       "Vile Fin Village",
-      "Ambermill"
+      "Ambermill",
+      "The Dawning Isles",
+      "Misty Shore",
+      "Growless Cave"
+    ]
+  },
+  {
+    "commonEncounters": [
+      {
+        "who": "Hulking Mountain Lion",
+        "levelMin": 32,
+        "levelMax": 33
+      },
+      {
+        "who": "Snapjaw",
+        "levelMin": 30,
+        "levelMax": 31
+      }
+    ],
+    "x": 267,
+    "y": -79,
+    "name": "Misty Shore",
+    "zone": "Alterac Mountains",
+    "type": "HostileArea",
+    "connections": [
+      "The Dawning Isles",
+      "Dalaran",
+      "Dandred's Fold"
     ]
   },
   {
@@ -987,7 +1015,8 @@
     "connections": [
       "Headland",
       "Lordamere Internment Camp",
-      "Gallows' Corner"
+      "Gallows' Corner",
+      "Dalaran"
     ]
   },
   {
@@ -1067,7 +1096,8 @@
       "Tarren Mill",
       "Growless Cave",
       "Crushridge Hold",
-      "Ruins of Strahnbrad"
+      "Ruins of Strahnbrad",
+      "Ruins of Alterac"
     ]
   },
   {
@@ -1086,6 +1116,12 @@
         "who": "Hulking Mountain Lion",
         "levelMin": 34,
         "levelMax": 35
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Gravis Slipknot",
+        "levelMin": 36
       }
     ],
     "x": 276,
@@ -1212,6 +1248,29 @@
       "Dabyrie's Farmstead",
       "Western Grassland",
       "Hammerfall"
+    ]
+  },
+  {
+    "commonEncounters": [
+      {
+        "who": "Daggerspine Sorceress",
+        "levelMin": 39,
+        "levelMax": 40
+      },
+      {
+        "who": "Daggerspine Raider",
+        "levelMin": 38,
+        "levelMax": 39
+      }
+    ],
+    "x": 284,
+    "y": -112,
+    "name": "The Drowned Reef",
+    "zone": "Arathi Highlands",
+    "type": "HostileArea",
+    "connections": [
+      "Faldir's Cove",
+      "Saltspray Glen"
     ]
   },
   {
@@ -9116,7 +9175,8 @@
     "zone": "Hinterlands",
     "type": "HostileArea",
     "connections": [
-      "Durnholde Keep"
+      "Durnholde Keep",
+      "Aerie Peak"
     ]
   },
   {
@@ -13870,15 +13930,17 @@
         "levelMax": 16
       }
     ],
-    "x": 264,
-    "y": -79,
+    "x": 263,
+    "y": -80,
     "name": "The Dawning Isles",
     "zone": "Silverpine Forest",
     "type": "HostileArea",
     "connections": [
       "Fenris Keep",
       "Vile Fin Village",
-      "The Decrepit Ferry"
+      "The Decrepit Ferry",
+      "Dalaran",
+      "Misty Shore"
     ]
   },
   {
@@ -18089,7 +18151,8 @@
       "Nightmare Vale",
       "Night Web's Hollow",
       "Stillwater Pond",
-      "Solliden Farmstead"
+      "Solliden Farmstead",
+      "Shadow Grave"
     ]
   },
   {
@@ -18126,7 +18189,7 @@
       }
     ],
     "x": 247,
-    "y": -65,
+    "y": -66,
     "name": "Night Web's Hollow",
     "zone": "Tirisfal Glades",
     "type": "HostileArea",
@@ -20069,7 +20132,8 @@
     "connections": [
       "Ironbeard's Tomb",
       "Sundown Marsh",
-      "Bluegill Marsh"
+      "Bluegill Marsh",
+      "The Drowned Reef"
     ]
   },
   {
