@@ -177,5 +177,5 @@ public class SiteTown : Site
     }
 
     //Returns path to a texture that is the background visual of this site
-    public override string Background() => "Areas/Area" + (zone + name).Clean();
+    public override string Background() => "Areas/Area" + (zone + name).Clean() + (currentSave.IsNight() ? "Night" : "");
 }

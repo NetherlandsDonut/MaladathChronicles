@@ -40,6 +40,7 @@ public class Item
                     });
     }
 
+    //Sets a random permanent enchant for the item
     public void SetRandomEnchantment()
     {
         if (!randomEnchantment) return;
@@ -49,34 +50,29 @@ public class Item
         foreach (var stat in enchantment.stats)
             if (stats.stats.ContainsKey(stat.Key)) stats.stats[stat.Key] += EnchantmentStatGrowth(ilvl, stat.Value.Length);
             else stats.stats.Add(stat.Key, EnchantmentStatGrowth(ilvl, stat.Value.Length));
-    }
-
-    public PermanentEnchant GenerateEnchantment()
-    {
-        var containing = new List<PermanentEnchant>();
-        var key = "";
-        if (type == "One Handed" || type == "Two Handed") key = type + " " + detailedType;
-        else if (armorClass != null) key = armorClass + " Armor";
-        else if (detailedType != null) key = detailedType;
-        else key = type;
-        containing = pEnchants.FindAll(x => x.commonlyOn != null && x.commonlyOn.Contains(key) || x.rarelyOn != null && x.rarelyOn.Contains(key));
-        if (Roll(10))
+            
+        PermanentEnchant GenerateEnchantment()
         {
-            var rare = containing.FindAll(x => x.rarelyOn.Contains(key));
-            if (rare.Count > 0) return rare[random.Next(0, rare.Count)];
+            var containing = new List<PermanentEnchant>();
+            var key = "";
+            if (type == "One Handed" || type == "Two Handed") key = type + " " + detailedType;
+            else if (armorClass != null) key = armorClass + " Armor";
+            else if (detailedType != null) key = detailedType;
+            else key = type;
+            containing = pEnchants.FindAll(x => x.commonlyOn != null && x.commonlyOn.Contains(key) || x.rarelyOn != null && x.rarelyOn.Contains(key));
+            if (Roll(10))
+            {
+                var rare = containing.FindAll(x => x.rarelyOn.Contains(key));
+                if (rare.Count > 0) return rare[random.Next(0, rare.Count)];
+            }
+            else
+            {
+                var common = containing.FindAll(x => x.commonlyOn.Contains(key));
+                if (common.Count > 0) return common[random.Next(0, common.Count)];
+            }
+            if (containing.Count == 0) return null;
+            return containing[random.Next(0, containing.Count)];
         }
-        else
-        {
-            var common = containing.FindAll(x => x.commonlyOn.Contains(key));
-            if (common.Count > 0) return common[random.Next(0, common.Count)];
-        }
-        if (containing.Count == 0) return null;
-        return containing[random.Next(0, containing.Count)];
-    }
-
-    public static int EnchantmentStatGrowth(int ilvl, int amount)
-    {
-        return (int)Mathf.Ceil(1 / 500.0f * (ilvl * ilvl) * (amount > 1 ? (amount - 1) : 0.2f) + 2);
     }
 
     //Rarity of this item which can range from Poor to Legendary

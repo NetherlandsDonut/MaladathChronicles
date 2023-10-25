@@ -116,7 +116,7 @@ public class SiteComplex : Site
     public static List<SiteComplex> complexesSearch;
 
     //Returns path to a texture that is the background visual of this site
-    public override string Background() => "Areas/Complex" + name.Clean();
+    public override string Background() => "Areas/Complex" + name.Clean() + (currentSave.IsNight() ? "Night" : "");
 
     //Function to print the site onto the map
     public override void PrintSite()
