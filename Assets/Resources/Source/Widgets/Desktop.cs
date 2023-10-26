@@ -101,6 +101,9 @@ public class Desktop : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.Tab) && Input.GetKeyDown(KeyCode.LeftAlt))
         {
             PlaySound("DesktopMagicClick");
+            for (int i = 0; i < pathsDrawn.Count; i++)
+                Destroy(pathsDrawn[0]);
+            pathsDrawn = new();
             Starter.LoadData();
             if (Board.board != null)
             {

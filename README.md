@@ -338,6 +338,11 @@ v0.4.2
 v0.4.3
     22.09 General zone music
           Some lacking portraits added
+v0.4.4
+    25.09 Added over 20 lacking sites
+          Base for site pathing
+v0.4.5
+    26.09 Multi-point site pathing
 ```
 
 </details>

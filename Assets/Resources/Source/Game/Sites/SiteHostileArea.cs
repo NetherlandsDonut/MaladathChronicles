@@ -8,6 +8,7 @@ using static Root.Anchor;
 using static Race;
 using static Sound;
 using static Faction;
+using static SitePath;
 using static SaveGame;
 using static Coloring;
 using static SiteComplex;
@@ -204,31 +205,14 @@ public class SiteHostileArea : Site
         AddRegionGroup();
         AddPaddingRegion(() =>
         {
-            AddSmallButton("Site" + type,
+            AddSmallButton(currentSave.siteVisits.ContainsKey(name) ? "Site" + type : "OtherUnknown",
             (h) =>
             {
                 QueueSiteOpen("HostileArea");
             },
             (h) =>
             {
-                if (siteConnect == null) siteConnect = this;
-                else
-                {
-                    DrawPath(siteConnect);
-                    if (connections == null)
-                        connections = new();
-                    connections.Add(siteConnect.name);
-                    if (connectionsLoaded == null)
-                        connectionsLoaded = new();
-                    connectionsLoaded.Add(siteConnect);
-                    if (siteConnect.connections == null)
-                        siteConnect.connections = new();
-                    siteConnect.connections.Add(name);
-                    if (siteConnect.connectionsLoaded == null)
-                        siteConnect.connectionsLoaded = new();
-                    siteConnect.connectionsLoaded.Add(this);
-                    siteConnect = null;
-                }
+                BuildPath();
             },
             (h) => () =>
             {

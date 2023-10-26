@@ -125,29 +125,9 @@ public class SiteComplex : Site
         AddRegionGroup();
         AddPaddingRegion(() =>
         {
-            AddSmallButton("SiteComplex",
+            AddSmallButton(currentSave.siteVisits.ContainsKey(name) ? "SiteComplex" : "OtherUnknown",
             (h) => { QueueSiteOpen("Complex"); },
-            (h) =>
-            {
-                if (siteConnect == null) siteConnect = this;
-                else
-                {
-                    DrawPath(siteConnect);
-                    if (connections == null)
-                        connections = new();
-                    connections.Add(siteConnect.name);
-                    if (connectionsLoaded == null)
-                        connectionsLoaded = new();
-                    connectionsLoaded.Add(siteConnect);
-                    if (siteConnect.connections == null)
-                        siteConnect.connections = new();
-                    siteConnect.connections.Add(name);
-                    if (siteConnect.connectionsLoaded == null)
-                        siteConnect.connectionsLoaded = new();
-                    siteConnect.connectionsLoaded.Add(this);
-                    siteConnect = null;
-                }
-            },
+            (h) => { BuildPath(); },
             (h) => () =>
             {
                 SetAnchor(TopRight, h.window);

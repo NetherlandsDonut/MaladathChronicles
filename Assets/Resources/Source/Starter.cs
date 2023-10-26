@@ -12,6 +12,7 @@ using static Sound;
 using static Cursor;
 using static Talent;
 using static SaveGame;
+using static SitePath;
 using static GameSettings;
 using static CursorRemote;
 using static SiteSpiritHealer;
@@ -163,6 +164,8 @@ public class Starter : MonoBehaviour
         pEnchants ??= new();
         Deserialize(ref zones, "zones", false, prefix);
         zones ??= new();
+        Deserialize(ref paths, "paths", false, prefix);
+        paths ??= new();
 
         #endregion
 
