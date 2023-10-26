@@ -1889,8 +1889,8 @@
           }
         }
       },
-      "cameraX": 268,
-      "cameraY": -65,
+      "cameraX": 247,
+      "cameraY": -190,
       "siteProgress": {
         "Isle Ruins": 1
       },
@@ -1937,12 +1937,13 @@
         "Rustmaul Dig Site": 1,
         "Tahonda Ruins": 1,
         "Verdantis River": 1,
-        "Wildwind Lake": 1
+        "Wildwind Lake": 1,
+        "Dawning Wood Catacombs": 1
       },
       "startDate": "2023-10-18T12:41:15.4651668+02:00",
-      "lastLoaded": "2023-10-25T16:16:20.5854079+02:00",
-      "lastPlayed": "2023-10-25T16:23:45.3264853+02:00",
-      "timePlayed": "01:34:15.7469703",
+      "lastLoaded": "2023-10-25T22:00:27.5214033+02:00",
+      "lastPlayed": "2023-10-25T22:02:54.2555151+02:00",
+      "timePlayed": "01:55:23.9640425",
       "lastVisitedTalents": 2
     },
     {
