@@ -142,29 +142,9 @@ public class SiteTown : Site
         AddRegionGroup();
         AddPaddingRegion(() =>
         {
-            AddSmallButton(factions.Find(x => x.name == faction).Icon(),
+            AddSmallButton(currentSave.siteVisits.ContainsKey(name) ? factions.Find(x => x.name == faction).Icon() : "OtherUnknown",
             (h) => { QueueSiteOpen("Town"); },
-            (h) =>
-            {
-                if (siteConnect == null) siteConnect = this;
-                else
-                {
-                    DrawPath(siteConnect);
-                    if (connections == null)
-                        connections = new();
-                    connections.Add(siteConnect.name);
-                    if (connectionsLoaded == null)
-                        connectionsLoaded = new();
-                    connectionsLoaded.Add(siteConnect);
-                    if (siteConnect.connections == null)
-                        siteConnect.connections = new();
-                    siteConnect.connections.Add(name);
-                    if (siteConnect.connectionsLoaded == null)
-                        siteConnect.connectionsLoaded = new();
-                    siteConnect.connectionsLoaded.Add(this);
-                    siteConnect = null;
-                }
-            },
+            (h) => { BuildPath(); },
             (h) => () =>
             {
                 SetAnchor(TopRight, h.window);

@@ -7,6 +7,7 @@ using static UnityEngine.KeyCode;
 using static Root;
 using static Sound;
 using static Cursor;
+using static SitePath;
 
 //Map grid is a class responsible for direct
 //interactions with the map of the world in the scene
@@ -29,6 +30,17 @@ public class MapGrid : MonoBehaviour
     {
         var temp = cursor.transform.position;
         CDesktop.cameraDestination = new Vector2(temp.x - 333, temp.y + 183) / 19;
+        if (sitePathBuilder != null)
+        {
+            pathBuilder.Add(CDesktop.cameraDestination);
+            if (path != null) Destroy(path);
+            path = new SitePath()
+            {
+                sites = new() { sitePathBuilder.name, "?" },
+                points = pathBuilder.Select(x => (x.x, x.y)).ToList();
+            };
+            path.DrawPath();
+        }
     }
 
     //Switches map textures between ghost realm and normal world map

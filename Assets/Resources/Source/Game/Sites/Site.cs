@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 using UnityEngine;
@@ -6,11 +7,11 @@ using static Root;
 using static MapGrid;
 using static SiteTown;
 using static SaveGame;
+using static SitePath;
 using static SiteComplex;
 using static SiteInstance;
 using static SiteHostileArea;
 using static SiteSpiritHealer;
-using System;
 
 public class Site
 {
@@ -40,14 +41,6 @@ public class Site
     //will not be interrupted and will continue to play
     public string ambience;
 
-    public List<string> connections;
-
-    [NonSerialized] public List<Site> connectionsLoaded;
-
-    //List of all sites connected to this one
-    //letting the player travel from this site to any of these directly
-    public List<string> connectedSites;
-
     //Initialisation method to fill automatic values
     //and remove empty collections to avoid serialising them later
     public virtual void Initialise() { }
@@ -76,44 +69,33 @@ public class Site
         CDesktop.LockScreen();
     }
 
-    public static Site siteConnect;
-
-    public void DrawPath(Site b)
+    public bool CanBeSeen()
     {
-        var start = new Vector2(x * 19, y * 19);
-        var end = new Vector2(b.x * 19, b.y * 19);
-        int stepsMade = 0;
-        var path = new GameObject("Path");
-        path.transform.position = Vector2.Lerp(start, end, 0.5f);
-        while ((int)Vector2.Distance(start, end) >= stepsMade)
+        if (currentSave.siteVisits.ContainsKey(name)) return true;
+        return paths.FindAll(x => x.sites.Contains(name)).Count(x => currentSave.siteVisits.ContainsKey(x.name) > 0) > 0;
+    }
+
+    public void BuildPath()
+    {
+        if (path != null) Destroy(path);
+        path = null;
+        if (sitePathBuilder == null) sitePathBuilder = this;
+        else if (sitePathBuilder == this) sitePathBuilder = null;
+        else
         {
-            var dot = new GameObject("PathDot", typeof(SpriteRenderer));
-            dot.transform.parent = path.transform;
-            dot.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Other/PathDot");
-            dot.GetComponent<SpriteRenderer>().color = Color.black;
-            dot.GetComponent<SpriteRenderer>().sortingLayerName = "CameraShadow";
-            dot.transform.position = Vector2.Lerp(start, end, 1 / Vector2.Distance(start, end) * stepsMade);
-            dot.transform.position = new Vector2((int)dot.transform.position.x, (int)dot.transform.position.y);
-            stepsMade += 5;
+            pathBuilder.Add(new Vector2(x, y));
+            paths.Add(new SitePath()
+            {
+                sites = new() { sitePathBuilder.name, name },
+                points = pathBuilder.Select(x => (x.x, x.y)).ToList();
+            });
+            paths.Last().DrawPath();
+            sitePathBuilder = null;
         }
     }
 
-    public void LoadConnections()
-    {
-        if (connections == null) return;
-        if (connections.Count == 0) { connections = null; return; }
-        connectionsLoaded = new();
-        foreach (var connection in connections)
-        {
-            Site find = towns.Find(x => x.name == connection);
-            if (find != null) { if (find.name.GetHashCode() < name.GetHashCode()) DrawPath(find); connectionsLoaded.Add(find); continue; }
-            find = areas.Find(x => x.name == connection);
-            if (find != null) { if (find.name.GetHashCode() < name.GetHashCode()) DrawPath(find); connectionsLoaded.Add(find); continue; }
-            find = instances.Find(x => x.name == connection);
-            if (find != null) { if (find.name.GetHashCode() < name.GetHashCode()) DrawPath(find); connectionsLoaded.Add(find); continue; }
-            find = complexes.Find(x => x.name == connection);
-            if (find != null) { if (find.name.GetHashCode() < name.GetHashCode()) DrawPath(find); connectionsLoaded.Add(find); continue; }
-            Debug.Log("Coulnd't find a site named \"" + connection + "\"");
-        }
-    }
+    public static Site sitePathBuilder;
+
+    //List of points set during construction of a path between sites
+    public static List<Vector2> pathBuilder;
 }
