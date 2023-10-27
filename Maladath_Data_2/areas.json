@@ -871,12 +871,7 @@
     "y": -76,
     "name": "Uplands",
     "zone": "Alterac Mountains",
-    "type": "HostileArea",
-    "connections": [
-      "Ruins of Strahnbrad",
-      "Slaughter Hollow",
-      "Dandred's Fold"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -905,12 +900,7 @@
     "y": -75,
     "name": "Dandred's Fold",
     "zone": "Alterac Mountains",
-    "type": "HostileArea",
-    "connections": [
-      "Slaughter Hollow",
-      "Uplands",
-      "Misty Shore"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -935,13 +925,7 @@
     "y": -81,
     "name": "Crushridge Hold",
     "zone": "Alterac Mountains",
-    "type": "HostileArea",
-    "connections": [
-      "Gallows' Corner",
-      "Ruins of Alterac",
-      "Slaughter Hollow",
-      "Ruins of Strahnbrad"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -960,15 +944,7 @@
     "y": -85,
     "name": "Dalaran",
     "zone": "Alterac Mountains",
-    "type": "HostileArea",
-    "connections": [
-      "Lordamere Internment Camp",
-      "Vile Fin Village",
-      "Ambermill",
-      "The Dawning Isles",
-      "Misty Shore",
-      "Growless Cave"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -987,12 +963,7 @@
     "y": -79,
     "name": "Misty Shore",
     "zone": "Alterac Mountains",
-    "type": "HostileArea",
-    "connections": [
-      "The Dawning Isles",
-      "Dalaran",
-      "Dandred's Fold"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -1011,13 +982,7 @@
     "y": -85,
     "name": "Growless Cave",
     "zone": "Alterac Mountains",
-    "type": "HostileArea",
-    "connections": [
-      "Headland",
-      "Lordamere Internment Camp",
-      "Gallows' Corner",
-      "Dalaran"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -1041,13 +1006,7 @@
     "y": -89,
     "name": "Headland",
     "zone": "Alterac Mountains",
-    "type": "HostileArea",
-    "connections": [
-      "Darrow Hill",
-      "Lordamere Internment Camp",
-      "Hillsbrad",
-      "Growless Cave"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -1066,13 +1025,7 @@
     "y": -89,
     "name": "Lordamere Internment Camp",
     "zone": "Alterac Mountains",
-    "type": "HostileArea",
-    "connections": [
-      "Headland",
-      "Dalaran",
-      "Hillsbrad",
-      "Growless Cave"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -1091,14 +1044,7 @@
     "y": -83,
     "name": "Gallows' Corner",
     "zone": "Alterac Mountains",
-    "type": "HostileArea",
-    "connections": [
-      "Tarren Mill",
-      "Growless Cave",
-      "Crushridge Hold",
-      "Ruins of Strahnbrad",
-      "Ruins of Alterac"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -1128,12 +1074,7 @@
     "y": -80,
     "name": "Ruins of Strahnbrad",
     "zone": "Alterac Mountains",
-    "type": "HostileArea",
-    "connections": [
-      "Crushridge Hold",
-      "Gallows' Corner",
-      "Uplands"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -1152,12 +1093,7 @@
     "y": -78,
     "name": "Slaughter Hollow",
     "zone": "Alterac Mountains",
-    "type": "HostileArea",
-    "connections": [
-      "Crushridge Hold",
-      "Uplands",
-      "Dandred's Fold"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -1182,13 +1118,7 @@
     "y": -108,
     "name": "Boulderfist Hall",
     "zone": "Arathi Highlands",
-    "type": "HostileArea",
-    "connections": [
-      "Devyr's Hill",
-      "Thandol Span",
-      "Go'Shek Farm",
-      "Witherbark Village"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -1218,18 +1148,7 @@
     "y": -100,
     "name": "Boulder'gor",
     "zone": "Arathi Highlands",
-    "type": "HostileArea",
-    "connections": [
-      "Circle of Inner Binding",
-      "Ruins of Stromgarde",
-      "Refuge Point",
-      "Northfold Manor",
-      "Circle of West Binding",
-      "Circle of West Binding",
-      "Northfold Manor",
-      "Circle of Inner Binding",
-      "Refuge Point"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -1243,12 +1162,7 @@
     "y": -97,
     "name": "Circle of East Binding",
     "zone": "Arathi Highlands",
-    "type": "HostileArea",
-    "connections": [
-      "Dabyrie's Farmstead",
-      "Western Grassland",
-      "Hammerfall"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -1267,11 +1181,7 @@
     "y": -112,
     "name": "The Drowned Reef",
     "zone": "Arathi Highlands",
-    "type": "HostileArea",
-    "connections": [
-      "Faldir's Cove",
-      "Saltspray Glen"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -1285,16 +1195,7 @@
     "y": -104,
     "name": "Circle of Inner Binding",
     "zone": "Arathi Highlands",
-    "type": "HostileArea",
-    "connections": [
-      "Devyr's Hill",
-      "Ruins of Stromgarde",
-      "Boulder'gor",
-      "Refuge Point",
-      "Faldir's Cove",
-      "Boulder'gor",
-      "Arathi Outer Road"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -1308,16 +1209,7 @@
     "y": -102,
     "name": "Circle of Outer Binding",
     "zone": "Arathi Highlands",
-    "type": "HostileArea",
-    "connections": [
-      "Refuge Point",
-      "Dabyrie's Farmstead",
-      "Western Grassland",
-      "Go'Shek Farm",
-      "Devyr's Hill",
-      "Refuge Point",
-      "Dabyrie's Farmstead"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -1331,14 +1223,7 @@
     "y": -97,
     "name": "Circle of West Binding",
     "zone": "Arathi Highlands",
-    "type": "HostileArea",
-    "connections": [
-      "Northfold Manor",
-      "Boulder'gor",
-      "Thoradin's Wall",
-      "Arathi Outer Road",
-      "Boulder'gor"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -1362,13 +1247,7 @@
     "y": -99,
     "name": "Arathi Outer Road",
     "zone": "Arathi Highlands",
-    "type": "HostileArea",
-    "connections": [
-      "Circle of West Binding",
-      "Ruins of Stromgarde",
-      "Circle of Inner Binding",
-      "Thoradin's Wall"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -1392,17 +1271,7 @@
     "y": -96,
     "name": "Thoradin's Wall",
     "zone": "Hillsbrad Foothills",
-    "type": "HostileArea",
-    "connections": [
-      "Circle of West Binding",
-      "Durnholde Keep",
-      "Darrowmere Crossing",
-      "Dun Garok",
-      "Nethander Stead",
-      "Eastern Strand",
-      "Arathi Outer Road",
-      "Dun Garok"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -1427,12 +1296,7 @@
     "y": -100,
     "name": "Drywhisker Gorge",
     "zone": "Arathi Highlands",
-    "type": "HostileArea",
-    "connections": [
-      "Hammerfall",
-      "Western Grassland",
-      "Hammerfall"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -1456,12 +1320,7 @@
     "y": -96,
     "name": "Northfold Manor",
     "zone": "Arathi Highlands",
-    "type": "HostileArea",
-    "connections": [
-      "Boulder'gor",
-      "Circle of West Binding",
-      "Boulder'gor"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -1475,12 +1334,7 @@
     "y": -112,
     "name": "Thandol Span",
     "zone": "Arathi Highlands",
-    "type": "HostileArea",
-    "connections": [
-      "Dun Modr",
-      "Devyr's Hill",
-      "Boulderfist Hall"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -1504,15 +1358,7 @@
     "y": -105,
     "name": "Devyr's Hill",
     "zone": "Arathi Highlands",
-    "type": "HostileArea",
-    "connections": [
-      "Thandol Span",
-      "Boulderfist Hall",
-      "Circle of Inner Binding",
-      "Refuge Point",
-      "Circle of Outer Binding",
-      "Go'Shek Farm"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -1536,13 +1382,7 @@
     "y": -106,
     "name": "Witherbark Village",
     "zone": "Arathi Highlands",
-    "type": "HostileArea",
-    "connections": [
-      "Go'Shek Farm",
-      "Witherbark Caves",
-      "Boulderfist Hall",
-      "Western Grassland"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -1566,16 +1406,7 @@
     "y": -101,
     "name": "Western Grassland",
     "zone": "Arathi Highlands",
-    "type": "HostileArea",
-    "connections": [
-      "Go'Shek Farm",
-      "Circle of Outer Binding",
-      "Hammerfall",
-      "Circle of East Binding",
-      "Dabyrie's Farmstead",
-      "Drywhisker Gorge",
-      "Witherbark Village"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -1605,10 +1436,7 @@
     "y": -107,
     "name": "Witherbark Caves",
     "zone": "Arathi Highlands",
-    "type": "HostileArea",
-    "connections": [
-      "Witherbark Village"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -1658,11 +1486,7 @@
     "y": -115,
     "name": "Bloodtooth Camp",
     "zone": "Ashenvale",
-    "type": "HostileArea",
-    "connections": [
-      "Silverwind Outpost",
-      "Greenpaw Village"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -1700,10 +1524,7 @@
     "y": -98,
     "name": "Bough Shadow",
     "zone": "Ashenvale",
-    "type": "EmeraldBough",
-    "connections": [
-      "Forest Song"
-    ]
+    "type": "EmeraldBough"
   },
   {
     "commonEncounters": [
@@ -1732,10 +1553,7 @@
     "y": -115,
     "name": "Demon Fall Canyon",
     "zone": "Ashenvale",
-    "type": "HostileArea",
-    "connections": [
-      "Felfire Hill"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -1759,12 +1577,7 @@
     "y": -105,
     "name": "Falfarren River",
     "zone": "Ashenvale",
-    "type": "HostileArea",
-    "connections": [
-      "Splintertree Post",
-      "Night Run",
-      "Xavian"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -1783,14 +1596,7 @@
     "y": -116,
     "name": "Fallen Sky Lake",
     "zone": "Ashenvale",
-    "type": "HostileArea",
-    "connections": [
-      "Silverwind Outpost",
-      "Silverwing Grove",
-      "Warsong Labor Camp",
-      "The Mor'shan Rampart",
-      "Splintertree Post"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -1814,13 +1620,7 @@
     "y": -111,
     "name": "Felfire Hill",
     "zone": "Ashenvale",
-    "type": "HostileArea",
-    "connections": [
-      "Splintertree Post",
-      "Demon Fall Canyon",
-      "Satyrnaar",
-      "Warsong Lumber Camp"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -1873,15 +1673,7 @@
     "y": -109,
     "name": "Greenpaw Village",
     "zone": "Ashenvale",
-    "type": "HostileArea",
-    "connections": [
-      "Silverwind Refuge",
-      "Nightsong Woods",
-      "Raynewood Retreat",
-      "Night Run",
-      "Silverwind Outpost",
-      "Bloodtooth Camp"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -1944,10 +1736,7 @@
     "y": -112,
     "name": "Mystral Lake",
     "zone": "Ashenvale",
-    "type": "HostileArea",
-    "connections": [
-      "Silverwind Refuge"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -1976,12 +1765,7 @@
     "y": -106,
     "name": "Night Run",
     "zone": "Ashenvale",
-    "type": "HostileArea",
-    "connections": [
-      "Raynewood Retreat",
-      "Greenpaw Village",
-      "Falfarren River"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -2005,12 +1789,7 @@
     "y": -106,
     "name": "Nightsong Woods",
     "zone": "Ashenvale",
-    "type": "HostileArea",
-    "connections": [
-      "Greenpaw Village",
-      "Silverwind Refuge",
-      "Raynewood Retreat"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -2077,14 +1856,7 @@
     "y": -103,
     "name": "Satyrnaar",
     "zone": "Ashenvale",
-    "type": "HostileArea",
-    "connections": [
-      "Xavian",
-      "Felfire Hill",
-      "Splintertree Post",
-      "Warsong Lumber Camp",
-      "Forest Song"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -2113,11 +1885,7 @@
     "y": -114,
     "name": "The Dor'Danil Barrow Den",
     "zone": "Ashenvale",
-    "type": "HostileArea",
-    "connections": [
-      "Warsong Labor Camp",
-      "Splintertree Post"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -2233,13 +2001,7 @@
     "y": -116,
     "name": "Warsong Labor Camp",
     "zone": "Ashenvale",
-    "type": "HostileArea",
-    "connections": [
-      "Fallen Sky Lake",
-      "The Mor'shan Rampart",
-      "The Dor'Danil Barrow Den",
-      "Splintertree Post"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -2258,13 +2020,7 @@
     "y": -107,
     "name": "Warsong Lumber Camp",
     "zone": "Ashenvale",
-    "type": "HostileArea",
-    "connections": [
-      "Satyrnaar",
-      "Felfire Hill",
-      "Shadowsong Shrine",
-      "Forest Song"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -2289,11 +2045,7 @@
     "y": -102,
     "name": "Xavian",
     "zone": "Ashenvale",
-    "type": "HostileArea",
-    "connections": [
-      "Falfarren River",
-      "Satyrnaar"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -2317,13 +2069,7 @@
     "y": -100,
     "name": "Bay of Storms",
     "zone": "Azshara",
-    "type": "HostileArea",
-    "connections": [
-      "Southridge Beach",
-      "Hetaera's Clutch",
-      "The Ruined Reaches",
-      "Ravencrest Monument"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -2352,13 +2098,7 @@
     "y": -83,
     "name": "Bitter Reaches",
     "zone": "Azshara",
-    "type": "HostileArea",
-    "connections": [
-      "Legash Encampment",
-      "Jagged Reef",
-      "Tower of Eldara",
-      "Temple of Arkkoran"
-    ]
+    "type": "HostileArea"
   },
   {
     "name": "Forlorn Ridge",
@@ -2387,12 +2127,7 @@
     "y": -98,
     "name": "Haldarr Encampment",
     "zone": "Azshara",
-    "type": "HostileArea",
-    "connections": [
-      "Shadowsong Shrine",
-      "Valormok",
-      "Ruins of Eldarath"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -2411,12 +2146,7 @@
     "y": -95,
     "name": "Hetaera's Clutch",
     "zone": "Azshara",
-    "type": "HostileArea",
-    "connections": [
-      "Bay of Storms",
-      "Southridge Beach",
-      "The Shattered Strand"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -2445,11 +2175,7 @@
     "y": -80,
     "name": "Jagged Reef",
     "zone": "Azshara",
-    "type": "HostileArea",
-    "connections": [
-      "Bitter Reaches",
-      "Tower of Eldara"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -2473,12 +2199,7 @@
     "y": -104,
     "name": "Lake Mennar",
     "zone": "Azshara",
-    "type": "HostileArea",
-    "connections": [
-      "Talrendis Point",
-      "The Ruined Reaches",
-      "Southridge Beach"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -2502,11 +2223,7 @@
     "y": -82,
     "name": "Legash Encampment",
     "zone": "Azshara",
-    "type": "HostileArea",
-    "connections": [
-      "Thalassian Base Camp",
-      "Bitter Reaches"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -2525,12 +2242,7 @@
     "y": -107,
     "name": "Ravencrest Monument",
     "zone": "Azshara",
-    "type": "HostileArea",
-    "connections": [
-      "Rethress Sanctum",
-      "The Ruined Reaches",
-      "Bay of Storms"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -2554,11 +2266,7 @@
     "y": -110,
     "name": "Rethress Sanctum",
     "zone": "Azshara",
-    "type": "HostileArea",
-    "connections": [
-      "The Ruined Reaches",
-      "Ravencrest Monument"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -2594,13 +2302,7 @@
     "y": -95,
     "name": "Ruins of Eldarath",
     "zone": "Azshara",
-    "type": "HostileArea",
-    "connections": [
-      "Haldarr Encampment",
-      "The Shattered Strand",
-      "Southridge Beach",
-      "Ursolan"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -2619,13 +2321,7 @@
     "y": -102,
     "name": "Shadowsong Shrine",
     "zone": "Azshara",
-    "type": "HostileArea",
-    "connections": [
-      "Warsong Lumber Camp",
-      "Forest Song",
-      "Haldarr Encampment",
-      "Talrendis Point"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -2649,14 +2345,7 @@
     "y": -98,
     "name": "Southridge Beach",
     "zone": "Azshara",
-    "type": "HostileArea",
-    "connections": [
-      "Bay of Storms",
-      "Hetaera's Clutch",
-      "The Shattered Strand",
-      "Ruins of Eldarath",
-      "Lake Mennar"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -2680,11 +2369,7 @@
     "y": -92,
     "name": "Temple of Arkkoran",
     "zone": "Azshara",
-    "type": "HostileArea",
-    "connections": [
-      "Bitter Reaches",
-      "Tower of Eldara"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -2703,25 +2388,14 @@
     "y": -86,
     "name": "Thalassian Base Camp",
     "zone": "Azshara",
-    "type": "HostileArea",
-    "connections": [
-      "Legash Encampment",
-      "Ursolan",
-      "The Shattered Strand"
-    ]
+    "type": "HostileArea"
   },
   {
     "x": 141,
     "y": -108,
     "name": "The Ruined Reaches",
     "zone": "Azshara",
-    "type": "HostileArea",
-    "connections": [
-      "Lake Mennar",
-      "Rethress Sanctum",
-      "Ravencrest Monument",
-      "Bay of Storms"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -2740,14 +2414,7 @@
     "y": -93,
     "name": "The Shattered Strand",
     "zone": "Azshara",
-    "type": "HostileArea",
-    "connections": [
-      "Southridge Beach",
-      "Hetaera's Clutch",
-      "Ruins of Eldarath",
-      "Thalassian Base Camp",
-      "Ursolan"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -2771,24 +2438,14 @@
     "y": -88,
     "name": "Tower of Eldara",
     "zone": "Azshara",
-    "type": "HostileArea",
-    "connections": [
-      "Jagged Reef",
-      "Bitter Reaches",
-      "Temple of Arkkoran"
-    ]
+    "type": "HostileArea"
   },
   {
     "x": 134,
     "y": -85,
     "name": "Ursolan",
     "zone": "Azshara",
-    "type": "HostileArea",
-    "connections": [
-      "Thalassian Base Camp",
-      "Ruins of Eldarath",
-      "The Shattered Strand"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -2812,11 +2469,7 @@
     "y": -163,
     "name": "Agmond's End",
     "zone": "Badlands",
-    "type": "HostileArea",
-    "connections": [
-      "Mirage Flats",
-      "Valley of Fangs"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -2847,12 +2500,7 @@
     "y": -157,
     "name": "Angor Fortress",
     "zone": "Badlands",
-    "type": "HostileArea",
-    "connections": [
-      "Valley of Fangs",
-      "Hammertoe's Digsite",
-      "The Dustbowl"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -2878,14 +2526,7 @@
     "y": -162,
     "name": "Apocryphan's Rest",
     "zone": "Badlands",
-    "type": "HostileArea",
-    "connections": [
-      "The Dustbowl",
-      "Mirage Flats",
-      "Dustbelch Grotto",
-      "Kargath",
-      "Grimesilt Digsite"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -2904,10 +2545,7 @@
     "y": -163,
     "name": "Camp Boff",
     "zone": "Badlands",
-    "type": "HostileArea",
-    "connections": [
-      "Valley of Fangs"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -2926,12 +2564,7 @@
     "y": -155,
     "name": "Camp Kosh",
     "zone": "Badlands",
-    "type": "HostileArea",
-    "connections": [
-      "Dustwind Gulch",
-      "The Maker's Terrace",
-      "Hammertoe's Digsite"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -2965,11 +2598,7 @@
     "y": -166,
     "name": "Dustbelch Grotto",
     "zone": "Badlands",
-    "type": "HostileArea",
-    "connections": [
-      "Apocryphan's Rest",
-      "Mirage Flats"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -2988,13 +2617,7 @@
     "y": -157,
     "name": "Dustwind Gulch",
     "zone": "Badlands",
-    "type": "HostileArea",
-    "connections": [
-      "Lethlor Ravine",
-      "Camp Kosh",
-      "Hammertoe's Digsite",
-      "Valley of Fangs"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -3018,14 +2641,7 @@
     "y": -157,
     "name": "Hammertoe's Digsite",
     "zone": "Badlands",
-    "type": "HostileArea",
-    "connections": [
-      "Valley of Fangs",
-      "Angor Fortress",
-      "The Maker's Terrace",
-      "Camp Kosh",
-      "Dustwind Gulch"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -3044,11 +2660,7 @@
     "y": -159,
     "name": "Lethlor Ravine",
     "zone": "Badlands",
-    "type": "HostileArea",
-    "connections": [
-      "Dustwind Gulch",
-      "Valley of Fangs"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -3077,13 +2689,7 @@
     "y": -163,
     "name": "Mirage Flats",
     "zone": "Badlands",
-    "type": "HostileArea",
-    "connections": [
-      "Apocryphan's Rest",
-      "The Dustbowl",
-      "Agmond's End",
-      "Dustbelch Grotto"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -3112,13 +2718,7 @@
     "y": -160,
     "name": "The Dustbowl",
     "zone": "Badlands",
-    "type": "HostileArea",
-    "connections": [
-      "Apocryphan's Rest",
-      "Mirage Flats",
-      "Kargath",
-      "Angor Fortress"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -3142,12 +2742,7 @@
     "y": -154,
     "name": "The Maker's Terrace",
     "zone": "Badlands",
-    "type": "HostileArea",
-    "connections": [
-      "Hammertoe's Digsite",
-      "Camp Kosh",
-      "Uldaman"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -3166,15 +2761,7 @@
     "y": -161,
     "name": "Valley of Fangs",
     "zone": "Badlands",
-    "type": "HostileArea",
-    "connections": [
-      "Agmond's End",
-      "Camp Boff",
-      "Hammertoe's Digsite",
-      "Angor Fortress",
-      "Lethlor Ravine",
-      "Dustwind Gulch"
-    ]
+    "type": "HostileArea"
   },
   {
     "eliteEncounters": [
@@ -4023,10 +3610,7 @@
     "y": -170,
     "name": "Altar of Storms",
     "zone": "Burning Steppes",
-    "type": "HostileArea",
-    "connections": [
-      "Draco'dar"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -4050,11 +3634,7 @@
     "y": -180,
     "name": "Blackrock Pass",
     "zone": "Burning Steppes",
-    "type": "HostileArea",
-    "connections": [
-      "Morgan's Vigil",
-      "Alther's Mill"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -4084,11 +3664,7 @@
     "y": -170,
     "name": "Blackrock Stronghold",
     "zone": "Burning Steppes",
-    "type": "HostileArea",
-    "connections": [
-      "The Pillar of Ash",
-      "Ruins of Thaurissan"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -4117,12 +3693,7 @@
     "y": -176,
     "name": "Draco'dar",
     "zone": "Burning Steppes",
-    "type": "HostileArea",
-    "connections": [
-      "The Pillar of Ash",
-      "Altar of Storms",
-      "Blackrock Mountain"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -4152,14 +3723,7 @@
     "y": -172,
     "name": "Dreadmaul Rock",
     "zone": "Burning Steppes",
-    "type": "HostileArea",
-    "connections": [
-      "Flame Crest",
-      "Slither Rock",
-      "Terror Wing Path",
-      "Morgan's Vigil",
-      "The Pillar of Ash"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -4188,13 +3752,7 @@
     "y": -171,
     "name": "Ruins of Thaurissan",
     "zone": "Burning Steppes",
-    "type": "HostileArea",
-    "connections": [
-      "The Pillar of Ash",
-      "Blackrock Stronghold",
-      "Flame Crest",
-      "Morgan's Vigil"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -4213,11 +3771,7 @@
     "y": -170,
     "name": "Slither Rock",
     "zone": "Burning Steppes",
-    "type": "HostileArea",
-    "connections": [
-      "Dreadmaul Rock",
-      "Terror Wing Path"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -4241,12 +3795,7 @@
     "y": -175,
     "name": "Terror Wing Path",
     "zone": "Burning Steppes",
-    "type": "HostileArea",
-    "connections": [
-      "Slither Rock",
-      "Dreadmaul Rock",
-      "Morgan's Vigil"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -4275,14 +3824,7 @@
     "y": -175,
     "name": "The Pillar of Ash",
     "zone": "Burning Steppes",
-    "type": "HostileArea",
-    "connections": [
-      "Blackrock Stronghold",
-      "Ruins of Thaurissan",
-      "Draco'dar",
-      "Dreadmaul Rock",
-      "Blackrock Mountain"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -4572,12 +4114,7 @@
     "y": -200,
     "name": "Ariden's Camp",
     "zone": "Deadwind Pass",
-    "type": "HostileArea",
-    "connections": [
-      "Deadman's Crossing",
-      "Sleeping Gorge",
-      "Itharius's Cave"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -4591,12 +4128,7 @@
     "y": -200,
     "name": "Deadman's Crossing",
     "zone": "Deadwind Pass",
-    "type": "HostileArea",
-    "connections": [
-      "Darkshire",
-      "Ariden's Camp",
-      "The Vice"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -4618,10 +4150,7 @@
     "y": -207,
     "name": "Karazhan",
     "zone": "Deadwind Pass",
-    "type": "HostileArea",
-    "connections": [
-      "The Vice"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -4635,11 +4164,7 @@
     "y": -203,
     "name": "Sleeping Gorge",
     "zone": "Deadwind Pass",
-    "type": "HostileArea",
-    "connections": [
-      "Ariden's Camp",
-      "The Vice"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -4663,12 +4188,7 @@
     "y": -205,
     "name": "The Vice",
     "zone": "Deadwind Pass",
-    "type": "HostileArea",
-    "connections": [
-      "Sleeping Gorge",
-      "Deadman's Crossing",
-      "Karazhan"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -5684,12 +5204,7 @@
     "y": -124,
     "name": "Bladefist Bay",
     "zone": "Durotar",
-    "type": "HostileArea",
-    "connections": [
-      "Drygulch Ravine",
-      "Razor Hill",
-      "Skull Rock"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -5708,10 +5223,7 @@
     "y": -135,
     "name": "Burning Blade Coven",
     "zone": "Durotar",
-    "type": "HostileArea",
-    "connections": [
-      "Valley of Trials"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -5735,12 +5247,7 @@
     "y": -144,
     "name": "Darkspear Strand",
     "zone": "Durotar",
-    "type": "HostileArea",
-    "connections": [
-      "Kolkar Crag",
-      "Sen'jin Village",
-      "Echo Isles"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -5759,13 +5266,7 @@
     "y": -122,
     "name": "Drygulch Ravine",
     "zone": "Durotar",
-    "type": "HostileArea",
-    "connections": [
-      "Razorwind Canyon",
-      "Bladefist Bay",
-      "Skull Rock",
-      "Orgrimmar"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -5794,11 +5295,7 @@
     "y": -146,
     "name": "Echo Isles",
     "zone": "Durotar",
-    "type": "HostileArea",
-    "connections": [
-      "Sen'jin Village",
-      "Darkspear Strand"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -5823,11 +5320,7 @@
     "y": -143,
     "name": "Kolkar Crag",
     "zone": "Durotar",
-    "type": "HostileArea",
-    "connections": [
-      "Darkspear Strand",
-      "Sen'jin Village"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -5857,13 +5350,7 @@
     "y": -131,
     "name": "Razormane Grounds",
     "zone": "Durotar",
-    "type": "HostileArea",
-    "connections": [
-      "Razor Hill",
-      "Southfury Scree",
-      "Southfury River",
-      "Razorwind Canyon"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -5898,12 +5385,7 @@
     "y": -133,
     "name": "Southfury Scree",
     "zone": "Durotar",
-    "type": "HostileArea",
-    "connections": [
-      "Razormane Grounds",
-      "Southfury River",
-      "Thorn Hill"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -5922,14 +5404,7 @@
     "y": -126,
     "name": "Razorwind Canyon",
     "zone": "Durotar",
-    "type": "HostileArea",
-    "connections": [
-      "Razormane Grounds",
-      "Razor Hill",
-      "Drygulch Ravine",
-      "Orgrimmar",
-      "Southfury River"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -5953,11 +5428,7 @@
     "y": -131,
     "name": "Scuttle Coast",
     "zone": "Durotar",
-    "type": "HostileArea",
-    "connections": [
-      "Tiragarde Keep",
-      "Razor Hill"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -5981,11 +5452,7 @@
     "y": -118,
     "name": "Skull Rock",
     "zone": "Durotar",
-    "type": "HostileArea",
-    "connections": [
-      "Bladefist Bay",
-      "Drygulch Ravine"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -6011,11 +5478,7 @@
     "y": -123,
     "name": "Thunder Ridge",
     "zone": "Durotar",
-    "type": "HostileArea",
-    "connections": [
-      "Orgrimmar",
-      "Southfury River"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -6046,12 +5509,7 @@
     "y": -135,
     "name": "Tiragarde Keep",
     "zone": "Durotar",
-    "type": "HostileArea",
-    "connections": [
-      "Sen'jin Village",
-      "Razor Hill",
-      "Scuttle Coast"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -6070,11 +5528,7 @@
     "y": -138,
     "name": "Valley of Trials",
     "zone": "Durotar",
-    "type": "HostileArea",
-    "connections": [
-      "Burning Blade Coven",
-      "Sen'jin Village"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -6103,12 +5557,7 @@
     "y": -205,
     "name": "Addle's Stead",
     "zone": "Duskwood",
-    "type": "HostileArea",
-    "connections": [
-      "Raven Hill",
-      "The Dust Plains",
-      "Vul'Gol Ogre Mound"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -6132,11 +5581,7 @@
     "y": -201,
     "name": "Brightwood Grove",
     "zone": "Duskwood",
-    "type": "HostileArea",
-    "connections": [
-      "Darkshire",
-      "The Darkened Bank"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -6166,11 +5611,7 @@
     "y": -199,
     "name": "Dawning Wood Catacombs",
     "zone": "Duskwood",
-    "type": "HostileArea",
-    "connections": [
-      "Forlorn Rowe",
-      "Raven Hill Cemetery"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -6209,11 +5650,7 @@
     "y": -198,
     "name": "Forlorn Rowe",
     "zone": "Duskwood",
-    "type": "HostileArea",
-    "connections": [
-      "Dawning Wood Catacombs",
-      "Raven Hill"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -6233,11 +5670,7 @@
     "y": -198,
     "name": "Manor Mistmantle",
     "zone": "Duskwood",
-    "type": "HostileArea",
-    "connections": [
-      "Darkshire",
-      "The Darkened Bank"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -6256,13 +5689,7 @@
     "y": -202,
     "name": "Raven Hill",
     "zone": "Duskwood",
-    "type": "HostileArea",
-    "connections": [
-      "Forlorn Rowe",
-      "Raven Hill Cemetery",
-      "Addle's Stead",
-      "The Dead Acre"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -6296,11 +5723,7 @@
     "y": -201,
     "name": "Raven Hill Cemetery",
     "zone": "Duskwood",
-    "type": "HostileArea",
-    "connections": [
-      "Dawning Wood Catacombs",
-      "Raven Hill"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -6325,12 +5748,7 @@
     "y": -206,
     "name": "Roland's Doom",
     "zone": "Duskwood",
-    "type": "HostileArea",
-    "connections": [
-      "The Rotting Orchard",
-      "Tranquil Gardens Cemetery",
-      "Darkshire"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -6355,12 +5773,7 @@
     "y": -196,
     "name": "The Darkened Bank",
     "zone": "Duskwood",
-    "type": "HostileArea",
-    "connections": [
-      "Manor Mistmantle",
-      "Brightwood Grove",
-      "Darkshire"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -6379,12 +5792,7 @@
     "y": -207,
     "name": "The Rotting Orchard",
     "zone": "Duskwood",
-    "type": "HostileArea",
-    "connections": [
-      "Yorgen's Farmstead",
-      "Roland's Doom",
-      "Darkshire"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -6404,11 +5812,7 @@
     "y": -202,
     "name": "Gossamer Grotto",
     "zone": "Duskwood",
-    "type": "HostileArea",
-    "connections": [
-      "Tranquil Gardens Cemetery",
-      "Darkshire"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -6427,12 +5831,7 @@
     "y": -205,
     "name": "Tranquil Gardens Cemetery",
     "zone": "Duskwood",
-    "type": "HostileArea",
-    "connections": [
-      "Roland's Doom",
-      "Gossamer Grotto",
-      "Darkshire"
-    ]
+    "type": "HostileArea"
   },
   {
     "eliteEncounters": [
@@ -6445,11 +5844,7 @@
     "y": -200,
     "name": "Twilight Grove",
     "zone": "Duskwood",
-    "type": "EmeraldBough",
-    "connections": [
-      "Yorgen's Farmstead",
-      "Vul'Gol Ogre Mound"
-    ]
+    "type": "EmeraldBough"
   },
   {
     "commonEncounters": [
@@ -6493,13 +5888,7 @@
     "y": -206,
     "name": "Vul'Gol Ogre Mound",
     "zone": "Duskwood",
-    "type": "HostileArea",
-    "connections": [
-      "Addle's Stead",
-      "Yorgen's Farmstead",
-      "Twilight Grove",
-      "Rebel Camp"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -6528,14 +5917,7 @@
     "y": -206,
     "name": "Yorgen's Farmstead",
     "zone": "Duskwood",
-    "type": "HostileArea",
-    "connections": [
-      "Vul'Gol Ogre Mound",
-      "The Rotting Orchard",
-      "Darkshire",
-      "Twilight Grove",
-      "Rebel Camp"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -6600,10 +5982,7 @@
     "y": -172,
     "name": "Beezil's Wreck",
     "zone": "Dustwallow Marsh",
-    "type": "HostileArea",
-    "connections": [
-      "The Quagmire"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -6622,11 +6001,7 @@
     "y": -181,
     "name": "Bloodfen Burrow",
     "zone": "Dustwallow Marsh",
-    "type": "HostileArea",
-    "connections": [
-      "The Den of Flame",
-      "Lost Point"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -6655,11 +6030,7 @@
     "y": -162,
     "name": "Bluefen",
     "zone": "Dustwallow Marsh",
-    "type": "HostileArea",
-    "connections": [
-      "Northpoint Tower",
-      "Darkmist Cavern"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -6683,11 +6054,7 @@
     "y": -163,
     "name": "Darkmist Cavern",
     "zone": "Dustwallow Marsh",
-    "type": "HostileArea",
-    "connections": [
-      "Bluefen",
-      "Brackenwall Village"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -6740,10 +6107,7 @@
     "y": -186,
     "name": "Emberstrife's Den",
     "zone": "Dustwallow Marsh",
-    "type": "HostileArea",
-    "connections": [
-      "Wyrmbog"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -6763,46 +6127,28 @@
     "y": -175,
     "name": "Lost Point",
     "zone": "Dustwallow Marsh",
-    "type": "HostileArea",
-    "connections": [
-      "The Quagmire",
-      "The Den of Flame",
-      "Bloodfen Burrow",
-      "Shady Rest Inn"
-    ]
+    "type": "HostileArea"
   },
   {
     "x": 113,
     "y": -164,
     "name": "Northpoint Tower",
     "zone": "Dustwallow Marsh",
-    "type": "HostileArea",
-    "connections": [
-      "Witch Hill",
-      "Bluefen"
-    ]
+    "type": "HostileArea"
   },
   {
     "x": 120,
     "y": -170,
     "name": "Sentry Point",
     "zone": "Dustwallow Marsh",
-    "type": "HostileArea",
-    "connections": [
-      "Witch Hill"
-    ]
+    "type": "HostileArea"
   },
   {
     "x": 103,
     "y": -172,
     "name": "Shady Rest Inn",
     "zone": "Dustwallow Marsh",
-    "type": "HostileArea",
-    "connections": [
-      "Lost Point",
-      "The Quagmire",
-      "Brackenwall Village"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -6826,12 +6172,7 @@
     "y": -179,
     "name": "Stonemaul Ruins",
     "zone": "Dustwallow Marsh",
-    "type": "HostileArea",
-    "connections": [
-      "The Den of Flame",
-      "Wyrmbog",
-      "The Quagmire"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -6850,10 +6191,7 @@
     "y": -182,
     "name": "The Dragonmurk",
     "zone": "Dustwallow Marsh",
-    "type": "HostileArea",
-    "connections": [
-      "The Den of Flame"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -6877,14 +6215,7 @@
     "y": -179,
     "name": "The Den of Flame",
     "zone": "Dustwallow Marsh",
-    "type": "HostileArea",
-    "connections": [
-      "Stonemaul Ruins",
-      "The Dragonmurk",
-      "Bloodfen Burrow",
-      "Lost Point",
-      "The Quagmire"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -6918,15 +6249,7 @@
     "y": -174,
     "name": "The Quagmire",
     "zone": "Dustwallow Marsh",
-    "type": "HostileArea",
-    "connections": [
-      "Lost Point",
-      "Beezil's Wreck",
-      "The Den of Flame",
-      "Stonemaul Ruins",
-      "Shady Rest Inn",
-      "Brackenwall Village"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -6950,11 +6273,7 @@
     "y": -182,
     "name": "Wyrmbog",
     "zone": "Dustwallow Marsh",
-    "type": "HostileArea",
-    "connections": [
-      "Stonemaul Ruins",
-      "Emberstrife's Den"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -7002,11 +6321,7 @@
     "y": -164,
     "name": "Witch Hill",
     "zone": "Dustwallow Marsh",
-    "type": "HostileArea",
-    "connections": [
-      "Sentry Point",
-      "Northpoint Tower"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -7030,12 +6345,7 @@
     "y": -60,
     "name": "Blackwood Lake",
     "zone": "Eastern Plaguelands",
-    "type": "HostileArea",
-    "connections": [
-      "Eastwall Gate",
-      "Plaguewood",
-      "Northpass Tower"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -7126,13 +6436,7 @@
     "y": -54,
     "name": "Eastwall Gate",
     "zone": "Eastern Plaguelands",
-    "type": "HostileArea",
-    "connections": [
-      "Plaguewood",
-      "Blackwood Lake",
-      "Northpass Tower",
-      "Quel'Lithien Lodge"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -7214,10 +6518,7 @@
     "y": -61,
     "name": "Fungal Vale",
     "zone": "Eastern Plaguelands",
-    "type": "HostileArea",
-    "connections": [
-      "Plaguewood"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -7285,12 +6586,7 @@
     "y": -54,
     "name": "Northpass Tower",
     "zone": "Eastern Plaguelands",
-    "type": "HostileArea",
-    "connections": [
-      "Blackwood Lake",
-      "Eastwall Gate",
-      "Quel'Lithien Lodge"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -7373,15 +6669,7 @@
     "y": -55,
     "name": "Plaguewood",
     "zone": "Eastern Plaguelands",
-    "type": "HostileArea",
-    "connections": [
-      "Plaguewood Tower",
-      "Terrordale",
-      "Fungal Vale",
-      "Eastwall Gate",
-      "Blackwood Lake",
-      "Stratholme"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -7395,11 +6683,7 @@
     "y": -57,
     "name": "Plaguewood Tower",
     "zone": "Eastern Plaguelands",
-    "type": "HostileArea",
-    "connections": [
-      "Terrordale",
-      "Plaguewood"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -7429,11 +6713,7 @@
     "y": -52,
     "name": "Quel'Lithien Lodge",
     "zone": "Eastern Plaguelands",
-    "type": "HostileArea",
-    "connections": [
-      "Eastwall Gate",
-      "Northpass Tower"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -7462,12 +6742,7 @@
     "y": -55,
     "name": "Terrordale",
     "zone": "Eastern Plaguelands",
-    "type": "HostileArea",
-    "connections": [
-      "Terrorweb Tunnel",
-      "Plaguewood Tower",
-      "Plaguewood"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -7492,11 +6767,7 @@
     "y": -57,
     "name": "Terrorweb Tunnel",
     "zone": "Eastern Plaguelands",
-    "type": "HostileArea",
-    "connections": [
-      "Thondroril River",
-      "Terrordale"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -7647,12 +6918,7 @@
     "y": -67,
     "name": "Thondroril River",
     "zone": "Eastern Plaguelands",
-    "type": "HostileArea",
-    "connections": [
-      "Gahrron's Withering",
-      "The Weeping Cave",
-      "Terrorweb Tunnel"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -7720,12 +6986,7 @@
     "y": -192,
     "name": "Brackwell Pumpkin Patch",
     "zone": "Elwynn Forest",
-    "type": "HostileArea",
-    "connections": [
-      "Tower of Azora",
-      "Ridgepoint Tower",
-      "Eastvale Logging Camp"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -7744,13 +7005,7 @@
     "y": -189,
     "name": "Eastvale Logging Camp",
     "zone": "Elwynn Forest",
-    "type": "HostileArea",
-    "connections": [
-      "Heroes' Vigil",
-      "Ridgepoint Tower",
-      "Tower of Azora",
-      "Brackwell Pumpkin Patch"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -7769,10 +7024,7 @@
     "y": -181,
     "name": "Echo Ridge Mine",
     "zone": "Elwynn Forest",
-    "type": "HostileArea",
-    "connections": [
-      "Northshire Abbey"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -7803,13 +7055,7 @@
     "y": -193,
     "name": "Fargodeep Mine",
     "zone": "Elwynn Forest",
-    "type": "HostileArea",
-    "connections": [
-      "Mirror Lake Orchard",
-      "Goldshire",
-      "Stonefield Farm",
-      "The Maclure Vineyards"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -7828,13 +7074,7 @@
     "y": -189,
     "name": "Crystal Lake",
     "zone": "Elwynn Forest",
-    "type": "HostileArea",
-    "connections": [
-      "The Maclure Vineyards",
-      "Jasperlode Mine",
-      "Tower of Azora",
-      "Goldshire"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -7865,10 +7105,7 @@
     "y": -196,
     "name": "Forest's Edge",
     "zone": "Elwynn Forest",
-    "type": "HostileArea",
-    "connections": [
-      "Jansen Stead"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -7887,10 +7124,7 @@
     "y": -184,
     "name": "Stone Cairn Lake",
     "zone": "Elwynn Forest",
-    "type": "HostileArea",
-    "connections": [
-      "Heroes' Vigil"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -7904,12 +7138,7 @@
     "y": -186,
     "name": "Heroes' Vigil",
     "zone": "Elwynn Forest",
-    "type": "HostileArea",
-    "connections": [
-      "Stone Cairn Lake",
-      "Eastvale Logging Camp",
-      "Tower of Azora"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -7943,11 +7172,7 @@
     "y": -186,
     "name": "Jasperlode Mine",
     "zone": "Elwynn Forest",
-    "type": "HostileArea",
-    "connections": [
-      "Crystal Lake",
-      "Tower of Azora"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -7961,11 +7186,7 @@
     "y": -188,
     "name": "Mirror Lake",
     "zone": "Elwynn Forest",
-    "type": "HostileArea",
-    "connections": [
-      "Mirror Lake Orchard",
-      "Goldshire"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -7990,14 +7211,7 @@
     "y": -190,
     "name": "Mirror Lake Orchard",
     "zone": "Elwynn Forest",
-    "type": "HostileArea",
-    "connections": [
-      "Jansen Stead",
-      "Mirror Lake",
-      "Stonefield Farm",
-      "Fargodeep Mine",
-      "Goldshire"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -8011,10 +7225,7 @@
     "y": -185,
     "name": "Northshire Vineyards",
     "zone": "Elwynn Forest",
-    "type": "HostileArea",
-    "connections": [
-      "Northshire Abbey"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -8033,10 +7244,7 @@
     "y": -182,
     "name": "Northshire Valley",
     "zone": "Elwynn Forest",
-    "type": "HostileArea",
-    "connections": [
-      "Northshire Abbey"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -8055,12 +7263,7 @@
     "y": -193,
     "name": "Ridgepoint Tower",
     "zone": "Elwynn Forest",
-    "type": "HostileArea",
-    "connections": [
-      "Brackwell Pumpkin Patch",
-      "Eastvale Logging Camp",
-      "Three Corners"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -8074,12 +7277,7 @@
     "y": -194,
     "name": "Stonefield Farm",
     "zone": "Elwynn Forest",
-    "type": "HostileArea",
-    "connections": [
-      "Mirror Lake Orchard",
-      "Fargodeep Mine",
-      "The Maclure Vineyards"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -8098,13 +7296,7 @@
     "y": -194,
     "name": "The Maclure Vineyards",
     "zone": "Elwynn Forest",
-    "type": "HostileArea",
-    "connections": [
-      "Goldshire",
-      "Stonefield Farm",
-      "Fargodeep Mine",
-      "Crystal Lake"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -8123,14 +7315,7 @@
     "y": -190,
     "name": "Tower of Azora",
     "zone": "Elwynn Forest",
-    "type": "HostileArea",
-    "connections": [
-      "Crystal Lake",
-      "Jasperlode Mine",
-      "Brackwell Pumpkin Patch",
-      "Eastvale Logging Camp",
-      "Heroes' Vigil"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -9106,12 +8291,7 @@
     "y": -84,
     "name": "Chillwind Point",
     "zone": "Hillsbrad Foothills",
-    "type": "HostileArea",
-    "connections": [
-      "Tarren Mill",
-      "Ravenholdt Manor",
-      "Chillwind Camp"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -9130,15 +8310,7 @@
     "y": -91,
     "name": "Darrow Hill",
     "zone": "Hillsbrad Foothills",
-    "type": "HostileArea",
-    "connections": [
-      "Tarren Mill",
-      "Darrowmere Crossing",
-      "Southshore",
-      "Headland",
-      "Southshore",
-      "Hillsbrad"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -9162,22 +8334,14 @@
     "y": -93,
     "name": "Durnholde Keep",
     "zone": "Hillsbrad Foothills",
-    "type": "HostileArea",
-    "connections": [
-      "Thoradin's Wall",
-      "Wildhammer Mountain Pass"
-    ]
+    "type": "HostileArea"
   },
   {
     "x": 286,
     "y": -89,
     "name": "Wildhammer Mountain Pass",
     "zone": "Hinterlands",
-    "type": "HostileArea",
-    "connections": [
-      "Durnholde Keep",
-      "Aerie Peak"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -9196,14 +8360,7 @@
     "y": -99,
     "name": "Eastern Strand",
     "zone": "Hillsbrad Foothills",
-    "type": "HostileArea",
-    "connections": [
-      "Nethander Stead",
-      "Dun Garok",
-      "Thoradin's Wall",
-      "Western Strand",
-      "Southshore"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -9228,13 +8385,7 @@
     "y": -97,
     "name": "Nethander Stead",
     "zone": "Hillsbrad Foothills",
-    "type": "HostileArea",
-    "connections": [
-      "Thoradin's Wall",
-      "Eastern Strand",
-      "Darrowmere Crossing",
-      "Southshore"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -9253,14 +8404,7 @@
     "y": -93,
     "name": "Darrowmere Crossing",
     "zone": "Hillsbrad Foothills",
-    "type": "HostileArea",
-    "connections": [
-      "Thoradin's Wall",
-      "Nethander Stead",
-      "Southshore",
-      "Tarren Mill",
-      "Darrow Hill"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -9293,10 +8437,7 @@
     "y": -102,
     "name": "Purgation Isle",
     "zone": "Hillsbrad Foothills",
-    "type": "HostileArea",
-    "connections": [
-      "Azurelode Mine"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -9315,12 +8456,7 @@
     "y": -95,
     "name": "Southpoint Tower",
     "zone": "Hillsbrad Foothills",
-    "type": "HostileArea",
-    "connections": [
-      "Hillsbrad",
-      "Azurelode Mine",
-      "Beren's Peril"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -9355,12 +8491,7 @@
     "y": -99,
     "name": "Western Strand",
     "zone": "Hillsbrad Foothills",
-    "type": "HostileArea",
-    "connections": [
-      "Eastern Strand",
-      "Southshore",
-      "Azurelode Mine"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -9774,14 +8905,7 @@
     "y": -149,
     "name": "Ironband's Excavation Site",
     "zone": "Loch Modan",
-    "type": "HostileArea",
-    "connections": [
-      "Grizzlepaw Ridge",
-      "South Hillside",
-      "Buzzard Vale",
-      "Farstrider Lodge",
-      "The Loch"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -9811,11 +8935,7 @@
     "y": -151,
     "name": "Buzzard Vale",
     "zone": "Loch Modan",
-    "type": "HostileArea",
-    "connections": [
-      "Ironband's Excavation Site",
-      "Farstrider Lodge"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -9845,12 +8965,7 @@
     "y": -141,
     "name": "Mo'grosh Stronghold",
     "zone": "Loch Modan",
-    "type": "HostileArea",
-    "connections": [
-      "Mo'grosh Woods",
-      "Loch Shore",
-      "Stonewrought Dam"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -9879,12 +8994,7 @@
     "y": -144,
     "name": "Mo'grosh Woods",
     "zone": "Loch Modan",
-    "type": "HostileArea",
-    "connections": [
-      "Farstrider Lodge",
-      "Mo'grosh Stronghold",
-      "Loch Shore"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -9908,13 +9018,7 @@
     "y": -143,
     "name": "Loch Shore",
     "zone": "Loch Modan",
-    "type": "HostileArea",
-    "connections": [
-      "Mo'grosh Stronghold",
-      "Mo'grosh Woods",
-      "The Loch",
-      "Isle Ruins"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -9944,14 +9048,7 @@
     "y": -140,
     "name": "Silver Stream Mine",
     "zone": "Loch Modan",
-    "type": "HostileArea",
-    "connections": [
-      "Stonewrought Dam",
-      "Isle Ruins",
-      "Algaz Station",
-      "Tunnel Rat Camp",
-      "Thelsamar"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -9970,12 +9067,7 @@
     "y": -138,
     "name": "Stonewrought Dam",
     "zone": "Loch Modan",
-    "type": "HostileArea",
-    "connections": [
-      "Silver Stream Mine",
-      "Isle Ruins",
-      "Mo'grosh Stronghold"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -10004,13 +9096,7 @@
     "y": -141,
     "name": "Isle Ruins",
     "zone": "Loch Modan",
-    "type": "HostileArea",
-    "connections": [
-      "Loch Shore",
-      "The Loch",
-      "Stonewrought Dam",
-      "Silver Stream Mine"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -10029,12 +9115,7 @@
     "y": -146,
     "name": "The Loch",
     "zone": "Loch Modan",
-    "type": "HostileArea",
-    "connections": [
-      "Loch Shore",
-      "Ironband's Excavation Site",
-      "Isle Ruins"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -10058,14 +9139,7 @@
     "y": -152,
     "name": "Stonesplinter Valley",
     "zone": "Loch Modan",
-    "type": "HostileArea",
-    "connections": [
-      "Stonewrought Pass",
-      "Grizzlepaw Ridge",
-      "Valley of Kings",
-      "Valley of Kings",
-      "Grizzlepaw Ridge"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -10089,15 +9163,7 @@
     "y": -150,
     "name": "Grizzlepaw Ridge",
     "zone": "Loch Modan",
-    "type": "HostileArea",
-    "connections": [
-      "Stonesplinter Valley",
-      "Ironband's Excavation Site",
-      "South Hillside",
-      "Valley of Kings",
-      "Stonesplinter Valley",
-      "Thelsamar"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -10121,11 +9187,7 @@
     "y": -151,
     "name": "South Hillside",
     "zone": "Loch Modan",
-    "type": "HostileArea",
-    "connections": [
-      "Ironband's Excavation Site",
-      "Grizzlepaw Ridge"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -10149,14 +9211,7 @@
     "y": -150,
     "name": "Valley of Kings",
     "zone": "Loch Modan",
-    "type": "HostileArea",
-    "connections": [
-      "Thelsamar",
-      "Stonewrought Pass",
-      "Stonesplinter Valley",
-      "Grizzlepaw Ridge",
-      "Stonesplinter Valley"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -10185,12 +9240,7 @@
     "y": -143,
     "name": "Tunnel Rat Camp",
     "zone": "Loch Modan",
-    "type": "HostileArea",
-    "connections": [
-      "Silver Stream Mine",
-      "Algaz Station",
-      "Thelsamar"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -10634,10 +9684,7 @@
     "y": -152,
     "name": "Baeldun Digsite",
     "zone": "Mulgore",
-    "type": "HostileArea",
-    "connections": [
-      "Bloodhoof Village"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -10667,10 +9714,7 @@
     "y": -165,
     "name": "Brambleblade Ravine",
     "zone": "Mulgore",
-    "type": "HostileArea",
-    "connections": [
-      "Red Cloud Mesa"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -10694,10 +9738,7 @@
     "y": -157,
     "name": "Palemane Rock",
     "zone": "Mulgore",
-    "type": "HostileArea",
-    "connections": [
-      "Bloodhoof Village"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -10716,11 +9757,7 @@
     "y": -166,
     "name": "Red Cloud Mesa",
     "zone": "Mulgore",
-    "type": "HostileArea",
-    "connections": [
-      "Camp Narache",
-      "Brambleblade Ravine"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -10739,11 +9776,7 @@
     "y": -143,
     "name": "Red Rocks",
     "zone": "Mulgore",
-    "type": "HostileArea",
-    "connections": [
-      "The Golden Plains",
-      "Windfury Ridge"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -10777,12 +9810,7 @@
     "y": -149,
     "name": "The Golden Plains",
     "zone": "Mulgore",
-    "type": "HostileArea",
-    "connections": [
-      "The Ravaged Caravan",
-      "Red Rocks",
-      "Windfury Ridge"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -10801,12 +9829,7 @@
     "y": -154,
     "name": "The Ravaged Caravan",
     "zone": "Mulgore",
-    "type": "HostileArea",
-    "connections": [
-      "Bloodhoof Village",
-      "The Venture Co. Mine",
-      "The Golden Plains"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -10836,10 +9859,7 @@
     "y": -161,
     "name": "The Rolling Plains",
     "zone": "Mulgore",
-    "type": "HostileArea",
-    "connections": [
-      "Bloodhoof Village"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -10858,10 +9878,7 @@
     "y": -153,
     "name": "The Venture Co. Mine",
     "zone": "Mulgore",
-    "type": "HostileArea",
-    "connections": [
-      "The Ravaged Caravan"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -10886,11 +9903,7 @@
     "y": -139,
     "name": "Windfury Ridge",
     "zone": "Mulgore",
-    "type": "HostileArea",
-    "connections": [
-      "Red Rocks",
-      "The Golden Plains"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -11307,14 +10320,7 @@
     "y": -186,
     "name": "Alther's Mill",
     "zone": "Redridge Mountains",
-    "type": "HostileArea",
-    "connections": [
-      "Lakeshire",
-      "Stonewatch",
-      "Redridge Canyons",
-      "Render's Camp",
-      "Blackrock Pass"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -11344,11 +10350,7 @@
     "y": -185,
     "name": "Galardell Valley",
     "zone": "Redridge Mountains",
-    "type": "HostileArea",
-    "connections": [
-      "Stonewatch",
-      "Tower of Ilgalar"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -11372,12 +10374,7 @@
     "y": -190,
     "name": "Lake Everstill",
     "zone": "Redridge Mountains",
-    "type": "HostileArea",
-    "connections": [
-      "Three Corners",
-      "Lakeridge Highway",
-      "Lakeshire"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -11406,11 +10403,7 @@
     "y": -191,
     "name": "Lakeridge Highway",
     "zone": "Redridge Mountains",
-    "type": "HostileArea",
-    "connections": [
-      "Lake Everstill",
-      "Render's Valley"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -11440,11 +10433,7 @@
     "y": -184,
     "name": "Redridge Canyons",
     "zone": "Redridge Mountains",
-    "type": "HostileArea",
-    "connections": [
-      "Lakeshire",
-      "Alther's Mill"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -11479,10 +10468,7 @@
     "y": -181,
     "name": "Render's Camp",
     "zone": "Redridge Mountains",
-    "type": "HostileArea",
-    "connections": [
-      "Alther's Mill"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -11506,12 +10492,7 @@
     "y": -192,
     "name": "Render's Valley",
     "zone": "Redridge Mountains",
-    "type": "HostileArea",
-    "connections": [
-      "Stonewatch Falls",
-      "Lakeridge Highway",
-      "Tower of Ilgalar"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -11541,10 +10522,7 @@
     "y": -184,
     "name": "Rethban Caverns",
     "zone": "Redridge Mountains",
-    "type": "HostileArea",
-    "connections": [
-      "Lakeshire"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -11579,13 +10557,7 @@
     "y": -188,
     "name": "Stonewatch",
     "zone": "Redridge Mountains",
-    "type": "HostileArea",
-    "connections": [
-      "Alther's Mill",
-      "Stonewatch Falls",
-      "Galardell Valley",
-      "Tower of Ilgalar"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -11610,11 +10582,7 @@
     "y": -189,
     "name": "Stonewatch Falls",
     "zone": "Redridge Mountains",
-    "type": "HostileArea",
-    "connections": [
-      "Stonewatch",
-      "Render's Valley"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -11628,11 +10596,7 @@
     "y": -191,
     "name": "Three Corners",
     "zone": "Redridge Mountains",
-    "type": "HostileArea",
-    "connections": [
-      "Lake Everstill",
-      "Ridgepoint Tower"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -11662,12 +10626,7 @@
     "y": -187,
     "name": "Tower of Ilgalar",
     "zone": "Redridge Mountains",
-    "type": "HostileArea",
-    "connections": [
-      "Galardell Valley",
-      "Stonewatch",
-      "Render's Valley"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -12596,12 +11555,7 @@
     "y": -166,
     "name": "Blackchar Cave",
     "zone": "Searing Gorge",
-    "type": "HostileArea",
-    "connections": [
-      "The Cauldron",
-      "The Sea of Cinders",
-      "Blackrock Mountain"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -12625,12 +11579,7 @@
     "y": -160,
     "name": "Dustfire Valley",
     "zone": "Searing Gorge",
-    "type": "HostileArea",
-    "connections": [
-      "Grimesilt Digsite",
-      "The Cauldron",
-      "Stonewrought Pass"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -12665,10 +11614,7 @@
     "y": -158,
     "name": "Firewatch Ridge",
     "zone": "Searing Gorge",
-    "type": "HostileArea",
-    "connections": [
-      "Thorium Point"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -12693,13 +11639,7 @@
     "y": -164,
     "name": "The Sea of Cinders",
     "zone": "Searing Gorge",
-    "type": "HostileArea",
-    "connections": [
-      "The Cauldron",
-      "Grimesilt Digsite",
-      "Blackchar Cave",
-      "Blackrock Mountain"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -12723,24 +11663,14 @@
     "y": -163,
     "name": "Grimesilt Digsite",
     "zone": "Searing Gorge",
-    "type": "HostileArea",
-    "connections": [
-      "The Sea of Cinders",
-      "Dustfire Valley",
-      "Apocryphan's Rest"
-    ]
+    "type": "HostileArea"
   },
   {
     "x": 288,
     "y": -156,
     "name": "Stonewrought Pass",
     "zone": "Searing Gorge",
-    "type": "HostileArea",
-    "connections": [
-      "Dustfire Valley",
-      "Stonesplinter Valley",
-      "Valley of Kings"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -12775,14 +11705,7 @@
     "y": -162,
     "name": "The Cauldron",
     "zone": "Searing Gorge",
-    "type": "HostileArea",
-    "connections": [
-      "The Sea of Cinders",
-      "Dustfire Valley",
-      "The Slag Pit",
-      "Thorium Point",
-      "Blackchar Cave"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -12806,10 +11729,7 @@
     "y": -161,
     "name": "The Slag Pit",
     "zone": "Searing Gorge",
-    "type": "HostileArea",
-    "connections": [
-      "The Cauldron"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -13563,14 +12483,7 @@
     "y": -89,
     "name": "Ambermill",
     "zone": "Silverpine Forest",
-    "type": "HostileArea",
-    "connections": [
-      "Beren's Peril",
-      "Dalaran Mage Camp",
-      "Vile Fin Village",
-      "Dalaran",
-      "South Wood Crossing"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -13595,13 +12508,7 @@
     "y": -92,
     "name": "Beren's Peril",
     "zone": "Silverpine Forest",
-    "type": "HostileArea",
-    "connections": [
-      "Southpoint Tower",
-      "Ambermill",
-      "Dalaran Mage Camp",
-      "The Graymane Wall"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -13626,11 +12533,7 @@
     "y": -84,
     "name": "Deep Elem Mine",
     "zone": "Silverpine Forest",
-    "type": "HostileArea",
-    "connections": [
-      "South Wood Crossing",
-      "North Wood Crossing"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -13649,13 +12552,7 @@
     "y": -83,
     "name": "Vile Fin Village",
     "zone": "Silverpine Forest",
-    "type": "HostileArea",
-    "connections": [
-      "Ambermill",
-      "Dalaran",
-      "The Dawning Isles",
-      "The Decrepit Ferry"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -13674,14 +12571,7 @@
     "y": -85,
     "name": "South Wood Crossing",
     "zone": "Silverpine Forest",
-    "type": "HostileArea",
-    "connections": [
-      "Dalaran Mage Camp",
-      "Olsen's Farthing",
-      "Deep Elem Mine",
-      "North Wood Crossing",
-      "Ambermill"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -13700,15 +12590,7 @@
     "y": -81,
     "name": "North Wood Crossing",
     "zone": "Silverpine Forest",
-    "type": "HostileArea",
-    "connections": [
-      "The Decrepit Ferry",
-      "Valgan's Field",
-      "South Wood Crossing",
-      "Deep Elem Mine",
-      "The Sepulcher",
-      "The Dead Field"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -13743,11 +12625,7 @@
     "y": -77,
     "name": "Fenris Keep",
     "zone": "Silverpine Forest",
-    "type": "HostileArea",
-    "connections": [
-      "The Decrepit Ferry",
-      "The Dawning Isles"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -13767,13 +12645,7 @@
     "y": -74,
     "name": "Ivar Patch",
     "zone": "Silverpine Forest",
-    "type": "HostileArea",
-    "connections": [
-      "The Dead Field",
-      "The Shining Strand",
-      "Valgan's Field",
-      "Malden's Orchard"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -13792,13 +12664,7 @@
     "y": -73,
     "name": "Malden's Orchard",
     "zone": "Silverpine Forest",
-    "type": "HostileArea",
-    "connections": [
-      "The Shining Strand",
-      "Ivar Patch",
-      "Cold Hearth Manor",
-      "Nightmare Vale"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -13822,11 +12688,7 @@
     "y": -78,
     "name": "North Tide's Run",
     "zone": "Silverpine Forest",
-    "type": "HostileArea",
-    "connections": [
-      "The Dead Field",
-      "The Skittering Dark"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -13845,11 +12707,7 @@
     "y": -86,
     "name": "Olsen's Farthing",
     "zone": "Silverpine Forest",
-    "type": "HostileArea",
-    "connections": [
-      "South Wood Crossing",
-      "The Sepulcher"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -13868,15 +12726,7 @@
     "y": -90,
     "name": "Dalaran Mage Camp",
     "zone": "Silverpine Forest",
-    "type": "HostileArea",
-    "connections": [
-      "Ambermill",
-      "Beren's Peril",
-      "The Graymane Wall",
-      "Pyrewood Village",
-      "Shadowfang Keep",
-      "South Wood Crossing"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -13900,12 +12750,7 @@
     "y": -92,
     "name": "Pyrewood Village",
     "zone": "Silverpine Forest",
-    "type": "HostileArea",
-    "connections": [
-      "Dalaran Mage Camp",
-      "Shadowfang Keep",
-      "The Graymane Wall"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -13934,14 +12779,7 @@
     "y": -80,
     "name": "The Dawning Isles",
     "zone": "Silverpine Forest",
-    "type": "HostileArea",
-    "connections": [
-      "Fenris Keep",
-      "Vile Fin Village",
-      "The Decrepit Ferry",
-      "Dalaran",
-      "Misty Shore"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -13960,14 +12798,7 @@
     "y": -78,
     "name": "Valgan's Field",
     "zone": "Silverpine Forest",
-    "type": "HostileArea",
-    "connections": [
-      "The Decrepit Ferry",
-      "North Wood Crossing",
-      "The Dead Field",
-      "The Shining Strand",
-      "Ivar Patch"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -13986,15 +12817,7 @@
     "y": -80,
     "name": "The Decrepit Ferry",
     "zone": "Silverpine Forest",
-    "type": "HostileArea",
-    "connections": [
-      "Fenris Keep",
-      "Vile Fin Village",
-      "The Dawning Isles",
-      "Valgan's Field",
-      "The Shining Strand",
-      "North Wood Crossing"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -14012,14 +12835,7 @@
     "y": -76,
     "name": "The Dead Field",
     "zone": "Silverpine Forest",
-    "type": "HostileArea",
-    "connections": [
-      "Valgan's Field",
-      "North Tide's Run",
-      "The Skittering Dark",
-      "Ivar Patch",
-      "North Wood Crossing"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -14038,12 +12854,7 @@
     "y": -95,
     "name": "The Graymane Wall",
     "zone": "Silverpine Forest",
-    "type": "HostileArea",
-    "connections": [
-      "Dalaran Mage Camp",
-      "Pyrewood Village",
-      "Beren's Peril"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -14062,13 +12873,7 @@
     "y": -76,
     "name": "The Shining Strand",
     "zone": "Silverpine Forest",
-    "type": "HostileArea",
-    "connections": [
-      "The Decrepit Ferry",
-      "Ivar Patch",
-      "Valgan's Field",
-      "Malden's Orchard"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -14087,11 +12892,7 @@
     "y": -74,
     "name": "The Skittering Dark",
     "zone": "Silverpine Forest",
-    "type": "HostileArea",
-    "connections": [
-      "North Tide's Run",
-      "The Dead Field"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -14404,14 +13205,7 @@
     "y": -222,
     "name": "Balia'mah Ruins",
     "zone": "Stranglethorn Vale",
-    "type": "HostileArea",
-    "connections": [
-      "Lake Nazferiti",
-      "Kal'ai Ruins",
-      "Ziata'jai Ruins",
-      "Mosh'Ogg Ogre Mound",
-      "Ruins of Zul'Mamwe"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -14430,12 +13224,7 @@
     "y": -232,
     "name": "Bloodsail Compound",
     "zone": "Stranglethorn Vale",
-    "type": "HostileArea",
-    "connections": [
-      "Ruins of Jubuwal",
-      "Gurubashi Arena Grounds",
-      "Nek'mani Wellspring"
-    ]
+    "type": "HostileArea"
   },
   {
     "eliteEncounters": [
@@ -14448,11 +13237,7 @@
     "y": -238,
     "name": "Crystal Shore",
     "zone": "Stranglethorn Vale",
-    "type": "HostileArea",
-    "connections": [
-      "Mistvale Valley",
-      "Ruins of Aboraz"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -14477,11 +13262,7 @@
     "y": -230,
     "name": "Crystalvein Mine",
     "zone": "Stranglethorn Vale",
-    "type": "HostileArea",
-    "connections": [
-      "Ziata'jai Ruins",
-      "Ruins of Jubuwal"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -14505,10 +13286,7 @@
     "y": -245,
     "name": "Jaguero Isle",
     "zone": "Stranglethorn Vale",
-    "type": "HostileArea",
-    "connections": [
-      "Wild Shore"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -14532,14 +13310,7 @@
     "y": -218,
     "name": "Kal'ai Ruins",
     "zone": "Stranglethorn Vale",
-    "type": "HostileArea",
-    "connections": [
-      "Lake Nazferiti",
-      "Bal'lal Ruins",
-      "Grom'gol Base Camp",
-      "Mizjah Ruins",
-      "Balia'mah Ruins"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -14580,12 +13351,7 @@
     "y": -212,
     "name": "Kurzen's Compound",
     "zone": "Stranglethorn Vale",
-    "type": "HostileArea",
-    "connections": [
-      "Rebel Camp",
-      "Venture Co. Operations Center",
-      "Zul'Gurub"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -14604,14 +13370,7 @@
     "y": -216,
     "name": "Lake Nazferiti",
     "zone": "Stranglethorn Vale",
-    "type": "HostileArea",
-    "connections": [
-      "Venture Co. Operations Center",
-      "Tkashi Ruins",
-      "Bal'lal Ruins",
-      "Kal'ai Ruins",
-      "Balia'mah Ruins"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -14630,13 +13389,7 @@
     "y": -237,
     "name": "Mistvale Valley",
     "zone": "Stranglethorn Vale",
-    "type": "HostileArea",
-    "connections": [
-      "Nek'mani Wellspring",
-      "Ruins of Jubuwal",
-      "Crystal Shore",
-      "Booty Bay"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -14655,12 +13408,7 @@
     "y": -221,
     "name": "Mizjah Ruins",
     "zone": "Stranglethorn Vale",
-    "type": "HostileArea",
-    "connections": [
-      "Kal'ai Ruins",
-      "Grom'gol Base Camp",
-      "Ziata'jai Ruins"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -14700,11 +13448,7 @@
     "y": -220,
     "name": "Mosh'Ogg Ogre Mound",
     "zone": "Stranglethorn Vale",
-    "type": "HostileArea",
-    "connections": [
-      "Balia'mah Ruins",
-      "Zul'Gurub"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -14724,12 +13468,7 @@
     "y": -236,
     "name": "Nek'mani Wellspring",
     "zone": "Stranglethorn Vale",
-    "type": "HostileArea",
-    "connections": [
-      "Mistvale Valley",
-      "Bloodsail Compound",
-      "Ruins of Jubuwal"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -14764,11 +13503,7 @@
     "y": -234,
     "name": "Ruins of Aboraz",
     "zone": "Stranglethorn Vale",
-    "type": "HostileArea",
-    "connections": [
-      "Crystal Shore",
-      "Ruins of Jubuwal"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -14793,16 +13528,7 @@
     "y": -231,
     "name": "Ruins of Jubuwal",
     "zone": "Stranglethorn Vale",
-    "type": "HostileArea",
-    "connections": [
-      "Crystalvein Mine",
-      "Gurubashi Arena",
-      "Gurubashi Arena Grounds",
-      "Bloodsail Compound",
-      "Mistvale Valley",
-      "Nek'mani Wellspring",
-      "Ruins of Aboraz"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -14832,11 +13558,7 @@
     "y": -227,
     "name": "Gurubashi Arena Grounds",
     "zone": "Stranglethorn Vale",
-    "type": "HostileArea",
-    "connections": [
-      "Ruins of Jubuwal",
-      "Bloodsail Compound"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -14876,13 +13598,7 @@
     "y": -212,
     "name": "Ruins of Zul'Kunda",
     "zone": "Stranglethorn Vale",
-    "type": "HostileArea",
-    "connections": [
-      "The Savage Coast",
-      "Zuuldaia Ruins",
-      "Tkashi Ruins",
-      "Bal'lal Ruins"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -14916,11 +13632,7 @@
     "y": -227,
     "name": "Ruins of Zul'Mamwe",
     "zone": "Stranglethorn Vale",
-    "type": "HostileArea",
-    "connections": [
-      "Balia'mah Ruins",
-      "Ziata'jai Ruins"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -14939,12 +13651,7 @@
     "y": -215,
     "name": "The Savage Coast",
     "zone": "Stranglethorn Vale",
-    "type": "HostileArea",
-    "connections": [
-      "Ruins of Zul'Kunda",
-      "Zuuldaia Ruins",
-      "Bal'lal Ruins"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -14986,13 +13693,7 @@
     "y": -214,
     "name": "Tkashi Ruins",
     "zone": "Stranglethorn Vale",
-    "type": "HostileArea",
-    "connections": [
-      "Nesingwary's Expedition",
-      "Lake Nazferiti",
-      "Bal'lal Ruins",
-      "Ruins of Zul'Kunda"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -15011,13 +13712,7 @@
     "y": -215,
     "name": "Venture Co. Operations Center",
     "zone": "Stranglethorn Vale",
-    "type": "HostileArea",
-    "connections": [
-      "Kurzen's Compound",
-      "Nesingwary's Expedition",
-      "Lake Nazferiti",
-      "Zul'Gurub"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -15041,11 +13736,7 @@
     "y": -245,
     "name": "Wild Shore",
     "zone": "Stranglethorn Vale",
-    "type": "HostileArea",
-    "connections": [
-      "Booty Bay",
-      "Jaguero Isle"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -15064,13 +13755,7 @@
     "y": -224,
     "name": "Ziata'jai Ruins",
     "zone": "Stranglethorn Vale",
-    "type": "HostileArea",
-    "connections": [
-      "Mizjah Ruins",
-      "Balia'mah Ruins",
-      "Ruins of Zul'Mamwe",
-      "Crystalvein Mine"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -15094,11 +13779,7 @@
     "y": -213,
     "name": "Zuuldaia Ruins",
     "zone": "Stranglethorn Vale",
-    "type": "HostileArea",
-    "connections": [
-      "Ruins of Zul'Kunda",
-      "The Savage Coast"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -15122,15 +13803,7 @@
     "y": -216,
     "name": "Bal'lal Ruins",
     "zone": "Stranglethorn Vale",
-    "type": "HostileArea",
-    "connections": [
-      "Lake Nazferiti",
-      "Tkashi Ruins",
-      "Kal'ai Ruins",
-      "Grom'gol Base Camp",
-      "The Savage Coast",
-      "Ruins of Zul'Kunda"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -15400,12 +14073,7 @@
     "y": -202,
     "name": "Itharius's Cave",
     "zone": "Swamp of Sorrows",
-    "type": "HostileArea",
-    "connections": [
-      "Ariden's Camp",
-      "Misty Valley",
-      "Splinterspear Junction"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -15485,11 +14153,7 @@
     "y": -197,
     "name": "Misty Valley",
     "zone": "Swamp of Sorrows",
-    "type": "HostileArea",
-    "connections": [
-      "Itharius's Cave",
-      "Splinterspear Junction"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -15576,13 +14240,7 @@
     "y": -199,
     "name": "Splinterspear Junction",
     "zone": "Swamp of Sorrows",
-    "type": "HostileArea",
-    "connections": [
-      "Itharius's Cave",
-      "Misty Valley",
-      "The Harborage",
-      "Stonard"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -17001,11 +15659,7 @@
     "y": -119,
     "name": "Boulder Lode Mine",
     "zone": "The Barrens",
-    "type": "HostileArea",
-    "connections": [
-      "The Sludge Fen",
-      "Southfury River"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -17058,12 +15712,7 @@
     "y": -130,
     "name": "Dreadmist Peak",
     "zone": "The Barrens",
-    "type": "HostileArea",
-    "connections": [
-      "Gold Road",
-      "The Forgotten Pools",
-      "The Crossroads"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -17118,14 +15767,7 @@
     "y": -127,
     "name": "Gold Road",
     "zone": "The Barrens",
-    "type": "HostileArea",
-    "connections": [
-      "The Mor'shan Rampart",
-      "Dreadmist Peak",
-      "The Crossroads",
-      "Thorn Hill",
-      "The Sludge Fen"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -17149,10 +15791,7 @@
     "y": -137,
     "name": "Honor's Stand",
     "zone": "The Barrens",
-    "type": "HostileArea",
-    "connections": [
-      "The Forgotten Pools"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -17183,11 +15822,7 @@
     "y": -146,
     "name": "Lushwater Oasis",
     "zone": "The Barrens",
-    "type": "HostileArea",
-    "connections": [
-      "Wailing Caverns",
-      "The Crossroads"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -17220,11 +15855,7 @@
     "y": -154,
     "name": "Northwatch Hold",
     "zone": "The Barrens",
-    "type": "HostileArea",
-    "connections": [
-      "Raptor Grounds",
-      "The Merchant Coast"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -17238,11 +15869,7 @@
     "y": -154,
     "name": "Raptor Grounds",
     "zone": "The Barrens",
-    "type": "HostileArea",
-    "connections": [
-      "Northwatch Hold",
-      "The Merchant Coast"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -17280,16 +15907,7 @@
     "y": -128,
     "name": "Southfury River",
     "zone": "The Barrens",
-    "type": "HostileArea",
-    "connections": [
-      "Razormane Grounds",
-      "Southfury Scree",
-      "Thunder Ridge",
-      "Razorwind Canyon",
-      "Thorn Hill",
-      "Boulder Lode Mine",
-      "The Sludge Fen"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -17315,10 +15933,7 @@
     "y": -127,
     "name": "The Dry Hills",
     "zone": "The Barrens",
-    "type": "HostileArea",
-    "connections": [
-      "The Forgotten Pools"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -17344,13 +15959,7 @@
     "y": -132,
     "name": "The Forgotten Pools",
     "zone": "The Barrens",
-    "type": "HostileArea",
-    "connections": [
-      "Dreadmist Peak",
-      "The Dry Hills",
-      "Honor's Stand",
-      "The Crossroads"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -17369,11 +15978,7 @@
     "y": -150,
     "name": "The Merchant Coast",
     "zone": "The Barrens",
-    "type": "HostileArea",
-    "connections": [
-      "Northwatch Hold",
-      "Raptor Grounds"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -17406,12 +16011,7 @@
     "y": -122,
     "name": "The Sludge Fen",
     "zone": "The Barrens",
-    "type": "HostileArea",
-    "connections": [
-      "Gold Road",
-      "Boulder Lode Mine",
-      "Southfury River"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -17435,11 +16035,7 @@
     "y": -146,
     "name": "The Stagnant Oasis",
     "zone": "The Barrens",
-    "type": "HostileArea",
-    "connections": [
-      "The Crossroads",
-      "Ratchet"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -17475,13 +16071,7 @@
     "y": -135,
     "name": "Thorn Hill",
     "zone": "The Barrens",
-    "type": "HostileArea",
-    "connections": [
-      "The Crossroads",
-      "Gold Road",
-      "Southfury Scree",
-      "Southfury River"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -17943,10 +16533,7 @@
     "y": -56,
     "name": "Agamand Family Crypt",
     "zone": "Tirisfal Glades",
-    "type": "HostileArea",
-    "connections": [
-      "Agamand Mills"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -17975,12 +16562,7 @@
     "y": -58,
     "name": "Agamand Mills",
     "zone": "Tirisfal Glades",
-    "type": "HostileArea",
-    "connections": [
-      "Solliden Farmstead",
-      "Stillwater Pond",
-      "Agamand Family Crypt"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -18005,13 +16587,7 @@
     "y": -66,
     "name": "Balnir Farmstead",
     "zone": "Tirisfal Glades",
-    "type": "HostileArea",
-    "connections": [
-      "The Bulwark",
-      "Venomweb Vale",
-      "Brightwater Lake",
-      "Brill"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -18030,13 +16606,7 @@
     "y": -61,
     "name": "Brightwater Lake",
     "zone": "Tirisfal Glades",
-    "type": "HostileArea",
-    "connections": [
-      "Balnir Farmstead",
-      "Brill",
-      "The North Coast",
-      "Garren's Haunt"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -18066,15 +16636,7 @@
     "y": -63,
     "name": "Stillwater Pond",
     "zone": "Tirisfal Glades",
-    "type": "HostileArea",
-    "connections": [
-      "Cold Hearth Manor",
-      "Nightmare Vale",
-      "Solliden Farmstead",
-      "Agamand Mills",
-      "Deathknell",
-      "Garren's Haunt"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -18093,14 +16655,7 @@
     "y": -65,
     "name": "Cold Hearth Manor",
     "zone": "Tirisfal Glades",
-    "type": "HostileArea",
-    "connections": [
-      "Brill",
-      "Stillwater Pond",
-      "Nightmare Vale",
-      "The Ruins of Lordaeron",
-      "Malden's Orchard"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -18119,10 +16674,7 @@
     "y": -61,
     "name": "Crusader's Outpost",
     "zone": "Tirisfal Glades",
-    "type": "HostileArea",
-    "connections": [
-      "Solliden Farmstead"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -18146,14 +16698,7 @@
     "y": -67,
     "name": "Deathknell",
     "zone": "Tirisfal Glades",
-    "type": "HostileArea",
-    "connections": [
-      "Nightmare Vale",
-      "Night Web's Hollow",
-      "Stillwater Pond",
-      "Solliden Farmstead",
-      "Shadow Grave"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -18172,13 +16717,7 @@
     "y": -59,
     "name": "Garren's Haunt",
     "zone": "Tirisfal Glades",
-    "type": "HostileArea",
-    "connections": [
-      "Brill",
-      "The North Coast",
-      "Brightwater Lake",
-      "Stillwater Pond"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -18192,10 +16731,7 @@
     "y": -66,
     "name": "Night Web's Hollow",
     "zone": "Tirisfal Glades",
-    "type": "HostileArea",
-    "connections": [
-      "Deathknell"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -18220,13 +16756,7 @@
     "y": -67,
     "name": "Nightmare Vale",
     "zone": "Tirisfal Glades",
-    "type": "HostileArea",
-    "connections": [
-      "Stillwater Pond",
-      "Cold Hearth Manor",
-      "Deathknell",
-      "Malden's Orchard"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -18251,14 +16781,7 @@
     "y": -62,
     "name": "Solliden Farmstead",
     "zone": "Tirisfal Glades",
-    "type": "HostileArea",
-    "connections": [
-      "Stillwater Pond",
-      "Crusader's Outpost",
-      "Whispering Shore",
-      "Agamand Mills",
-      "Deathknell"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -18282,11 +16805,7 @@
     "y": -57,
     "name": "The North Coast",
     "zone": "Tirisfal Glades",
-    "type": "HostileArea",
-    "connections": [
-      "Garren's Haunt",
-      "Brightwater Lake"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -18300,13 +16819,7 @@
     "y": -69,
     "name": "The Ruins of Lordaeron",
     "zone": "Tirisfal Glades",
-    "type": "HostileArea",
-    "connections": [
-      "Brill",
-      "Undercity",
-      "Cold Hearth Manor",
-      "The Bulwark"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -18330,11 +16843,7 @@
     "y": -62,
     "name": "Venomweb Vale",
     "zone": "Tirisfal Glades",
-    "type": "HostileArea",
-    "connections": [
-      "Balnir Farmstead",
-      "Scarlet Monastery Grounds"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -18364,10 +16873,7 @@
     "y": -60,
     "name": "Whispering Shore",
     "zone": "Tirisfal Glades",
-    "type": "HostileArea",
-    "connections": [
-      "Solliden Farmstead"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -19060,14 +17566,7 @@
     "y": -68,
     "name": "Dalson's Tears",
     "zone": "Western Plaguelands",
-    "type": "HostileArea",
-    "connections": [
-      "The Writhing Haunt",
-      "Ruins of Andorhal",
-      "Felstone Field",
-      "Northridge Lumber Camp",
-      "Gahrron's Withering"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -19098,11 +17597,7 @@
     "y": -76,
     "name": "Sorrow Hill",
     "zone": "Western Plaguelands",
-    "type": "HostileArea",
-    "connections": [
-      "Uther's Tomb",
-      "Ruins of Andorhal"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -19126,12 +17621,7 @@
     "y": -69,
     "name": "Felstone Field",
     "zone": "Western Plaguelands",
-    "type": "HostileArea",
-    "connections": [
-      "Ruins of Andorhal",
-      "Dalson's Tears",
-      "The Bulwark"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -19155,13 +17645,7 @@
     "y": -69,
     "name": "Gahrron's Withering",
     "zone": "Western Plaguelands",
-    "type": "HostileArea",
-    "connections": [
-      "The Writhing Haunt",
-      "Dalson's Tears",
-      "Thondroril River",
-      "The Weeping Cave"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -19192,11 +17676,7 @@
     "y": -62,
     "name": "Northridge Lumber Camp",
     "zone": "Western Plaguelands",
-    "type": "HostileArea",
-    "connections": [
-      "Dalson's Tears",
-      "Hearthglen"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -19242,15 +17722,7 @@
     "y": -73,
     "name": "Ruins of Andorhal",
     "zone": "Western Plaguelands",
-    "type": "HostileArea",
-    "connections": [
-      "Uther's Tomb",
-      "Sorrow Hill",
-      "Chillwind Camp",
-      "The Writhing Haunt",
-      "Dalson's Tears",
-      "Felstone Field"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -19280,11 +17752,7 @@
     "y": -64,
     "name": "The Weeping Cave",
     "zone": "Western Plaguelands",
-    "type": "HostileArea",
-    "connections": [
-      "Gahrron's Withering",
-      "Thondroril River"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -19308,24 +17776,14 @@
     "y": -72,
     "name": "The Writhing Haunt",
     "zone": "Western Plaguelands",
-    "type": "HostileArea",
-    "connections": [
-      "Ruins of Andorhal",
-      "Dalson's Tears",
-      "Gahrron's Withering"
-    ]
+    "type": "HostileArea"
   },
   {
     "x": 285,
     "y": -77,
     "name": "Uther's Tomb",
     "zone": "Western Plaguelands",
-    "type": "HostileArea",
-    "connections": [
-      "Chillwind Camp",
-      "Sorrow Hill",
-      "Ruins of Andorhal"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -19349,13 +17807,7 @@
     "y": -194,
     "name": "Furlbrow's Pumpkin Farm",
     "zone": "Westfall",
-    "type": "HostileArea",
-    "connections": [
-      "Molsen Farm",
-      "Saldean's Farm",
-      "Jansen Stead",
-      "Jangolode Mine"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -19379,13 +17831,7 @@
     "y": -200,
     "name": "Gold Coast Quarry",
     "zone": "Westfall",
-    "type": "HostileArea",
-    "connections": [
-      "Alexton Farmstead",
-      "Longshore",
-      "Jangolode Mine",
-      "Molsen Farm"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -19415,12 +17861,7 @@
     "y": -195,
     "name": "Jangolode Mine",
     "zone": "Westfall",
-    "type": "HostileArea",
-    "connections": [
-      "Molsen Farm",
-      "Gold Coast Quarry",
-      "Furlbrow's Pumpkin Farm"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -19439,15 +17880,7 @@
     "y": -202,
     "name": "Alexton Farmstead",
     "zone": "Westfall",
-    "type": "HostileArea",
-    "connections": [
-      "Gold Coast Quarry",
-      "Longshore",
-      "Stendel's Pond",
-      "Moonbrook",
-      "Molsen Farm",
-      "Westfall Lighthouse"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -19471,13 +17904,7 @@
     "y": -193,
     "name": "Jansen Stead",
     "zone": "Westfall",
-    "type": "HostileArea",
-    "connections": [
-      "Sentinel Hill",
-      "Forest's Edge",
-      "Mirror Lake Orchard",
-      "Furlbrow's Pumpkin Farm"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -19506,12 +17933,7 @@
     "y": -202,
     "name": "Longshore",
     "zone": "Westfall",
-    "type": "HostileArea",
-    "connections": [
-      "Westfall Lighthouse",
-      "Gold Coast Quarry",
-      "Alexton Farmstead"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -19530,16 +17952,7 @@
     "y": -198,
     "name": "Molsen Farm",
     "zone": "Westfall",
-    "type": "HostileArea",
-    "connections": [
-      "Sentinel Hill",
-      "Jangolode Mine",
-      "Alexton Farmstead",
-      "Gold Coast Quarry",
-      "Furlbrow's Pumpkin Farm",
-      "Saldean's Farm",
-      "Stendel's Pond"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -19563,14 +17976,7 @@
     "y": -203,
     "name": "Stendel's Pond",
     "zone": "Westfall",
-    "type": "HostileArea",
-    "connections": [
-      "Alexton Farmstead",
-      "Moonbrook",
-      "The Dead Acre",
-      "Sentinel Hill",
-      "Molsen Farm"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -19589,15 +17995,7 @@
     "y": -206,
     "name": "Moonbrook",
     "zone": "Westfall",
-    "type": "HostileArea",
-    "connections": [
-      "The Dagger Hills",
-      "The Deadmines",
-      "Stendel's Pond",
-      "Alexton Farmstead",
-      "The Dust Plains",
-      "The Dead Acre"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -19616,12 +18014,7 @@
     "y": -197,
     "name": "Saldean's Farm",
     "zone": "Westfall",
-    "type": "HostileArea",
-    "connections": [
-      "Sentinel Hill",
-      "Furlbrow's Pumpkin Farm",
-      "Molsen Farm"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -19650,10 +18043,7 @@
     "y": -208,
     "name": "The Dagger Hills",
     "zone": "Westfall",
-    "type": "HostileArea",
-    "connections": [
-      "Moonbrook"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -19678,14 +18068,7 @@
     "y": -203,
     "name": "The Dead Acre",
     "zone": "Westfall",
-    "type": "HostileArea",
-    "connections": [
-      "Raven Hill",
-      "The Dust Plains",
-      "Stendel's Pond",
-      "Moonbrook",
-      "Sentinel Hill"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -19708,12 +18091,7 @@
     "y": -207,
     "name": "The Dust Plains",
     "zone": "Westfall",
-    "type": "HostileArea",
-    "connections": [
-      "Addle's Stead",
-      "The Dead Acre",
-      "Moonbrook"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -19732,11 +18110,7 @@
     "y": -210,
     "name": "Westfall Lighthouse",
     "zone": "Westfall",
-    "type": "HostileArea",
-    "connections": [
-      "Longshore",
-      "Alexton Farmstead"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -19765,12 +18139,7 @@
     "y": -124,
     "name": "Angerfang Encampment",
     "zone": "Wetlands",
-    "type": "HostileArea",
-    "connections": [
-      "Marsh Crossing",
-      "Sundown Marsh",
-      "Ironbeard's Tomb"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -19794,12 +18163,7 @@
     "y": -125,
     "name": "Black Channel Marsh",
     "zone": "Wetlands",
-    "type": "HostileArea",
-    "connections": [
-      "Sundown Marsh",
-      "Bluegill Marsh",
-      "Menethil Harbor"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -19828,13 +18192,7 @@
     "y": -122,
     "name": "Bluegill Marsh",
     "zone": "Wetlands",
-    "type": "HostileArea",
-    "connections": [
-      "Black Channel Marsh",
-      "Sundown Marsh",
-      "Menethil Harbor",
-      "Saltspray Glen"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -19858,12 +18216,7 @@
     "y": -118,
     "name": "Direforge Hill",
     "zone": "Wetlands",
-    "type": "HostileArea",
-    "connections": [
-      "Raptor Ridge",
-      "The Green Belt",
-      "Dun Modr"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -19898,11 +18251,7 @@
     "y": -124,
     "name": "Dragonmaw Gates",
     "zone": "Wetlands",
-    "type": "HostileArea",
-    "connections": [
-      "Raptor Ridge",
-      "Mosshide Fen"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -19927,12 +18276,7 @@
     "y": -135,
     "name": "Dun Algaz",
     "zone": "Wetlands",
-    "type": "HostileArea",
-    "connections": [
-      "Dam Waterfalls",
-      "Thelgen Rock",
-      "Algaz Station"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -19956,14 +18300,7 @@
     "y": -116,
     "name": "Dun Modr",
     "zone": "Wetlands",
-    "type": "HostileArea",
-    "connections": [
-      "The Green Belt",
-      "Marsh Crossing",
-      "Direforge Hill",
-      "Ironbeard's Tomb",
-      "Thandol Span"
-    ]
+    "type": "HostileArea"
   },
   {
     "x": 303,
@@ -19994,14 +18331,7 @@
     "y": -118,
     "name": "Ironbeard's Tomb",
     "zone": "Wetlands",
-    "type": "HostileArea",
-    "connections": [
-      "Marsh Crossing",
-      "Dun Modr",
-      "Saltspray Glen",
-      "Angerfang Encampment",
-      "Sundown Marsh"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -20025,15 +18355,7 @@
     "y": -127,
     "name": "Mosshide Fen",
     "zone": "Wetlands",
-    "type": "HostileArea",
-    "connections": [
-      "Thelgen Rock",
-      "Dam Waterfalls",
-      "Marsh Crossing",
-      "The Green Belt",
-      "Raptor Ridge",
-      "Dragonmaw Gates"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -20052,12 +18374,7 @@
     "y": -131,
     "name": "Dam Waterfalls",
     "zone": "Wetlands",
-    "type": "HostileArea",
-    "connections": [
-      "Dun Algaz",
-      "Thelgen Rock",
-      "Mosshide Fen"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -20082,13 +18399,7 @@
     "y": -122,
     "name": "Raptor Ridge",
     "zone": "Wetlands",
-    "type": "HostileArea",
-    "connections": [
-      "The Green Belt",
-      "Dragonmaw Gates",
-      "Mosshide Fen",
-      "Direforge Hill"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -20128,13 +18439,7 @@
     "y": -118,
     "name": "Saltspray Glen",
     "zone": "Wetlands",
-    "type": "HostileArea",
-    "connections": [
-      "Ironbeard's Tomb",
-      "Sundown Marsh",
-      "Bluegill Marsh",
-      "The Drowned Reef"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -20164,15 +18469,7 @@
     "y": -121,
     "name": "Sundown Marsh",
     "zone": "Wetlands",
-    "type": "HostileArea",
-    "connections": [
-      "Saltspray Glen",
-      "Angerfang Encampment",
-      "Ironbeard's Tomb",
-      "Whelgar's Excavation Site",
-      "Black Channel Marsh",
-      "Bluegill Marsh"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -20191,14 +18488,7 @@
     "y": -121,
     "name": "Marsh Crossing",
     "zone": "Wetlands",
-    "type": "HostileArea",
-    "connections": [
-      "Mosshide Fen",
-      "Angerfang Encampment",
-      "The Green Belt",
-      "Dun Modr",
-      "Ironbeard's Tomb"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -20222,14 +18512,7 @@
     "y": -123,
     "name": "The Green Belt",
     "zone": "Wetlands",
-    "type": "HostileArea",
-    "connections": [
-      "Marsh Crossing",
-      "Mosshide Fen",
-      "Raptor Ridge",
-      "Direforge Hill",
-      "Dun Modr"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -20248,12 +18531,7 @@
     "y": -130,
     "name": "Thelgen Rock",
     "zone": "Wetlands",
-    "type": "HostileArea",
-    "connections": [
-      "Dun Algaz",
-      "Dam Waterfalls",
-      "Mosshide Fen"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -20272,10 +18550,7 @@
     "y": -125,
     "name": "Whelgar's Excavation Site",
     "zone": "Wetlands",
-    "type": "HostileArea",
-    "connections": [
-      "Sundown Marsh"
-    ]
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [

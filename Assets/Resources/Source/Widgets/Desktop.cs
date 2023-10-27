@@ -8,6 +8,7 @@ using static Root;
 using static Sound;
 using static Cursor;
 using static SaveGame;
+using static SitePath;
 using static InputLine;
 
 public class Desktop : MonoBehaviour

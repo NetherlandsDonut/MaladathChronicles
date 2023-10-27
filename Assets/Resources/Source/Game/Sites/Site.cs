@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using System.Collections.Generic;
 
 using UnityEngine;
@@ -72,24 +73,29 @@ public class Site
     public bool CanBeSeen()
     {
         if (currentSave.siteVisits.ContainsKey(name)) return true;
-        return paths.FindAll(x => x.sites.Contains(name)).Count(x => currentSave.siteVisits.ContainsKey(x.name) > 0) > 0;
+        return paths.FindAll(x => x.sites.Contains(name)).Any(x => x.sites.Any(y => currentSave.siteVisits.ContainsKey(y)));
     }
 
     public void BuildPath()
     {
-        if (path != null) Destroy(path);
-        path = null;
-        if (sitePathBuilder == null) sitePathBuilder = this;
+        if (pathTest != null)
+            UnityEngine.Object.Destroy(pathTest);
+        pathTest = null;
+        if (sitePathBuilder == null)
+        {
+            pathBuilder = new() { new Vector2(x, y) + mapCenteringOffset };
+            sitePathBuilder = this;
+        }
         else if (sitePathBuilder == this) sitePathBuilder = null;
         else
         {
-            pathBuilder.Add(new Vector2(x, y));
+            pathBuilder.Add(new Vector2(x, y) + mapCenteringOffset);
             paths.Add(new SitePath()
             {
                 sites = new() { sitePathBuilder.name, name },
-                points = pathBuilder.Select(x => (x.x, x.y)).ToList();
+                points = pathBuilder.Select(x => ((int)x.x, (int)x.y)).ToList()
             });
-            paths.Last().DrawPath();
+            pathsDrawn.Add(paths.Last().DrawPath());
             sitePathBuilder = null;
         }
     }

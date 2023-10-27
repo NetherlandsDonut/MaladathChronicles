@@ -1,0 +1,26 @@
+[
+  {
+    "sites": [
+      "Dawning Wood Catacombs",
+      "Raven Hill"
+    ],
+    "points": [
+      {
+        "Item1": 264,
+        "Item2": -199
+      },
+      {
+        "Item1": 245,
+        "Item2": -190
+      },
+      {
+        "Item1": 245,
+        "Item2": -191
+      },
+      {
+        "Item1": 262,
+        "Item2": -202
+      }
+    ]
+  }
+]

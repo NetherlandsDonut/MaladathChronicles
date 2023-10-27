@@ -112,7 +112,6 @@ public class SiteTown : Site
                     }
                 )
             );
-        LoadConnections();
         if (x != 0 && y != 0)
             Blueprint.windowBlueprints.Add(new Blueprint("Site: " + name, () => PrintSite()));
     }

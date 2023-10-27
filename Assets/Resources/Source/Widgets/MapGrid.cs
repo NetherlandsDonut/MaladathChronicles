@@ -4,6 +4,7 @@ using UnityEngine;
 
 using static UnityEngine.KeyCode;
 
+using static Site;
 using static Root;
 using static Sound;
 using static Cursor;
@@ -33,13 +34,12 @@ public class MapGrid : MonoBehaviour
         if (sitePathBuilder != null)
         {
             pathBuilder.Add(CDesktop.cameraDestination);
-            if (path != null) Destroy(path);
-            path = new SitePath()
+            if (pathTest != null) Destroy(pathTest);
+            pathTest = new SitePath()
             {
                 sites = new() { sitePathBuilder.name, "?" },
-                points = pathBuilder.Select(x => (x.x, x.y)).ToList();
-            };
-            path.DrawPath();
+                points = pathBuilder.Select(x => ((int)x.x, (int)x.y)).ToList()
+            }.DrawPath();
         }
     }
 

@@ -30,13 +30,7 @@
     "name": "Blackrock Mountain",
     "zone": "Burning Steppes",
     "type": "Complex",
-    "ambience": "AmbienceBlackrock",
-    "connections": [
-      "The Sea of Cinders",
-      "Blackchar Cave",
-      "Draco'dar",
-      "The Pillar of Ash"
-    ]
+    "ambience": "AmbienceBlackrock"
   },
   {
     "description": [
@@ -119,10 +113,7 @@
     "name": "Hearthglen",
     "zone": "Western Plaguelands",
     "type": "Complex",
-    "ambience": "AmbienceScary",
-    "connections": [
-      "Northridge Lumber Camp"
-    ]
+    "ambience": "AmbienceScary"
   },
   {
     "description": [
@@ -155,10 +146,7 @@
     "name": "Ruins of Stromgarde",
     "zone": "Arathi Highlands",
     "type": "Complex",
-    "ambience": "AmbienceScary",
-    "connections": [
-      "Arathi Outer Road"
-    ]
+    "ambience": "AmbienceScary"
   },
   {
     "description": [
@@ -183,11 +171,7 @@
     "name": "Ruins of Alterac",
     "zone": "Alterac Mountains",
     "type": "Complex",
-    "ambience": "AmbienceScary",
-    "connections": [
-      "Crushridge Hold",
-      "Gallows' Corner"
-    ]
+    "ambience": "AmbienceScary"
   },
   {
     "description": [
@@ -216,10 +200,7 @@
     "name": "Scarlet Monastery Grounds",
     "zone": "Tirisfal Glades",
     "type": "Complex",
-    "ambience": "AmbienceScary",
-    "connections": [
-      "Venomweb Vale"
-    ]
+    "ambience": "AmbienceScary"
   },
   {
     "description": [

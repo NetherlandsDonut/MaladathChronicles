@@ -97,10 +97,7 @@
     "name": "The Stockade",
     "zone": "Elwynn Forest",
     "type": "Dungeon",
-    "ambience": "AmbienceTheStockade",
-    "connections": [
-      "Stormwind City"
-    ]
+    "ambience": "AmbienceTheStockade"
   },
   {
     "description": [],
@@ -128,10 +125,7 @@
     "name": "Ragefire Chasm",
     "zone": "Durotar",
     "type": "Dungeon",
-    "ambience": "AmbienceVolcanicDay",
-    "connections": [
-      "Orgrimmar"
-    ]
+    "ambience": "AmbienceVolcanicDay"
   },
   {
     "description": [],
@@ -229,11 +223,7 @@
     "name": "Shadowfang Keep",
     "zone": "Silverpine Forest",
     "type": "Dungeon",
-    "ambience": "AmbienceShadowfangKeep",
-    "connections": [
-      "Pyrewood Village",
-      "Dalaran Mage Camp"
-    ]
+    "ambience": "AmbienceShadowfangKeep"
   },
   {
     "complexPart": true,
@@ -519,10 +509,7 @@
     "name": "Stratholme",
     "zone": "Eastern Plaguelands",
     "type": "Dungeon",
-    "ambience": "AmbienceStratholme",
-    "connections": [
-      "Plaguewood"
-    ]
+    "ambience": "AmbienceStratholme"
   },
   {
     "description": [],
@@ -558,11 +545,7 @@
     "name": "Wailing Caverns",
     "zone": "The Barrens",
     "type": "Dungeon",
-    "ambience": "AmbienceWailingCaverns",
-    "connections": [
-      "Lushwater Oasis",
-      "The Crossroads"
-    ]
+    "ambience": "AmbienceWailingCaverns"
   },
   {
     "description": [],
@@ -617,10 +600,7 @@
     "name": "Uldaman",
     "zone": "Badlands",
     "type": "Dungeon",
-    "ambience": "AmbienceUldaman",
-    "connections": [
-      "The Maker's Terrace"
-    ]
+    "ambience": "AmbienceUldaman"
   },
   {
     "description": [],
@@ -761,10 +741,7 @@
     "name": "The Deadmines",
     "zone": "Westfall",
     "type": "Dungeon",
-    "ambience": "AmbienceDeadmines",
-    "connections": [
-      "Moonbrook"
-    ]
+    "ambience": "AmbienceDeadmines"
   },
   {
     "description": [],
@@ -1356,10 +1333,7 @@
     "name": "Onyxia's Lair",
     "zone": "Dustwallow Marsh",
     "type": "Raid",
-    "ambience": "AmbienceOnyxiasLair",
-    "connections": [
-      "Wyrmbog"
-    ]
+    "ambience": "AmbienceOnyxiasLair"
   },
   {
     "complexPart": true,
@@ -1528,12 +1502,7 @@
     "name": "Zul'Gurub",
     "zone": "Stranglethorn Vale",
     "type": "Raid",
-    "ambience": "AmbienceJungleDay",
-    "connections": [
-      "Mosh'Ogg Ogre Mound",
-      "Venture Co. Operations Center",
-      "Kurzen's Compound"
-    ]
+    "ambience": "AmbienceJungleDay"
   },
   {
     "complexPart": true,

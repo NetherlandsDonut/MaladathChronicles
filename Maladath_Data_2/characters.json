@@ -866,8 +866,8 @@
           }
         }
       },
-      "cameraX": 104,
-      "cameraY": -107,
+      "cameraX": 91,
+      "cameraY": -126,
       "siteProgress": {
         "Blackrock Stronghold": 2,
         "The Dead Acre": 1,
@@ -937,7 +937,8 @@
         "Bluefen": 1,
         "Southfury River": 1,
         "The Crystal Vale": 2,
-        "Orgrimmar": 1
+        "Orgrimmar": 1,
+        "Thorn Hill": 1
       },
       "buyback": [
         {
@@ -1039,9 +1040,10 @@
         }
       ],
       "startDate": "2023-10-18T07:52:13.0981561+02:00",
-      "lastLoaded": "2023-10-24T18:42:34.0458693+02:00",
-      "lastPlayed": "2023-10-24T18:44:03.157399+02:00",
-      "timePlayed": "01:25:24.7831916"
+      "lastLoaded": "2023-10-27T00:22:35.3026541+02:00",
+      "lastPlayed": "2023-10-27T00:23:35.7857526+02:00",
+      "timePlayed": "01:27:01.1897047",
+      "lastVisitedTalents": 1
     },
     {
       "player": {

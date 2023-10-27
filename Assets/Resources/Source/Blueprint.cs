@@ -2269,6 +2269,7 @@ public class Blueprint
                 Serialize(spiritHealers, "spirithealers", false, false, prefix);
                 Serialize(PermanentEnchant.pEnchants, "permanentenchants", false, false, prefix);
                 Serialize(Zone.zones, "zones", false, false, prefix);
+                Serialize(SitePath.paths, "paths", false, false, prefix);
             });
             AddPaddingRegion(() => { });
         }),
@@ -6796,6 +6797,8 @@ public class Blueprint
             loadingBar[1].GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Textures/LoadingBarStretch");
             loadingBar[1].transform.position = new Vector3(-1178, 863);
             OrderLoadingMap();
+            foreach (var path in SitePath.paths)
+                SitePath.pathsDrawn.Add(path.DrawPath());
             AddHotkey(W, () => { MoveCamera(new Vector3(0, EuelerGrowth())); }, false);
             AddHotkey(A, () => { MoveCamera(new Vector3(-EuelerGrowth(), 0)); }, false);
             AddHotkey(S, () => { MoveCamera(new Vector3(0, -EuelerGrowth())); }, false);
