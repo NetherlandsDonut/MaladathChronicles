@@ -18,13 +18,12 @@ public class Entity
     {
         level = 60;
         gender = creationGender;
-        unspentTalentPoints = 20;
+        unspentTalentPoints = 59;
         this.race = race.name;
         if (name != "") this.name = name;
         else this.name = gender == "Female" ? race.femaleNames[random.Next(race.femaleNames.Count)] : race.maleNames[random.Next(race.maleNames.Count)];
         this.spec = spec.name;
         abilities = race.abilities.Merge(spec.abilities).Merge(spec.talentTrees.SelectMany(x => x.talents.FindAll(y => y.defaultTaken)).ToDictionary(x => x.ability, x => 0));
-        actionBarsUnlocked = 7;
         stats = new Stats(race.stats.stats.ToDictionary(x => x.Key, x => x.Value));
         inventory = new Inventory(items);
         inventory.items.RemoveAll(x => x == null);
@@ -37,7 +36,7 @@ public class Entity
         }
         equipment = new Dictionary<string, Item>();
         EquipAllItems();
-        actionBars = Ability.abilities.FindAll(x => abilities.ContainsKey(x.name) && x.cost != null).OrderBy(x => x.cost.Sum(y => y.Value)).OrderBy(x => x.putOnEnd).Select(x => new ActionBar(x.name)).Take(actionBarsUnlocked).ToList();
+        actionBars = Ability.abilities.FindAll(x => abilities.ContainsKey(x.name) && x.cost != null).OrderBy(x => x.cost.Sum(y => y.Value)).OrderBy(x => x.putOnEnd).Select(x => new ActionBar(x.name)).Take(ActionBarsAmount()).ToList();
         Initialise();
     }
 
@@ -48,7 +47,6 @@ public class Entity
         kind = race.kind;
         this.race = name = race.name;
         abilities = race.abilities.ToDictionary(x => x.Key, x => x.Value);
-        actionBarsUnlocked = 7;
         actionBars = Ability.abilities.FindAll(x => abilities.ContainsKey(x.name) && x.cost != null).OrderBy(x => x.cost.Sum(y => y.Value)).OrderBy(x => x.putOnEnd).Select(x => new ActionBar(x.name)).ToList();
         stats = new Stats(
             new()
@@ -81,6 +79,13 @@ public class Entity
     public bool WillGetExperience(int level)
     {
         return this.level - 5 <= level;
+    }
+
+    //Tells whether this entity will get experience from
+    //killing an enemy that was at given level
+    public bool ActionBarsAmount()
+    {
+        return level >= 30 ? 7 : (level >= 20 ? 6 : (level >= 10 ? 5 : 4));
     }
 
     //Grants experience to this entity
@@ -579,7 +584,7 @@ public class Entity
     }
 
     //Pops all buffs on this entity activating
-    //their effects and "Red"ucing duration by 1 turn
+    //their effects and reducing duration by 1 turn
     //If duration reaches 0 it removes the buff
     public void FlareBuffs()
     {
@@ -626,10 +631,6 @@ public class Entity
 
     //Amount of currently unspent talent points for this entity
     public int unspentTalentPoints;
-
-    //Amount of unlocked action bars for the entity
-    //Trinket active abilities do not use up a slot of these!
-    public int actionBarsUnlocked;
 
     //Current amount of experience this unit has
     public int experience;

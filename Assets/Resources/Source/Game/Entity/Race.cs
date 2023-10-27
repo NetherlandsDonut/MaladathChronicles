@@ -28,12 +28,12 @@ public class Race
                     side = "Hostile"
                 });
         droppedItems = Item.items.FindAll(x => x.droppedBy != null && x.droppedBy.Contains(name)).Select(x => x.name).ToList();
-        category = portrait.ToLower().Contains("draco") || portrait.ToLower().Contains("drago") ? "Dragonkin" : (portrait.ToLower().Contains("giant") ? "Giant" : (portrait.ToLower().Contains("element") || portrait.ToLower().Contains("bog") ? "Elemental" : (portrait.ToLower().Contains("fel") || portrait.ToLower().Contains("imp") || portrait.ToLower().Contains("demon") || portrait.ToLower().Contains("infernal") || portrait.ToLower().Contains("sayaad") ? "Demon" : (new List<string>() { "boar", "hippo", "wyvern", "gryph", "borer", "bear", "bird", "cat", "crab", "hydra", "makrura", "hyena", "giraffe", "bat", "croc", "owl", "gorilla", "serpent", "turtle", "tiger", "scorpid", "spider", "tarantula", "wolf", "worg", "raptor", "owl", "saur" }.Any(x => portrait.ToLower().Contains(x)) ? "Beast" : (new List<string>() { "abomination", "skelet", "ghoul", "banshee", "crypt", "zombie" }.Any(x => portrait.ToLower().Contains(x)) ? "Undead" : (new List<string>() { "silithid", "aqir", "qiraji", "wasp" }.Any(x => portrait.ToLower().Contains(x)) ? "Insect" : "Humanoid"))))));
+        category = portrait.ToLower().Contains("draco") || portrait.ToLower().Contains("drago") ? "Dragonkin" : (portrait.ToLower().Contains("giant") ? "Giant" : (portrait.ToLower().Contains("element") || portrait.ToLower().Contains("bog") || portrait.ToLower().Contains("ooze")|| portrait.ToLower().Contains("obsidian") || portrait.ToLower().Contains("slime") ? "Elemental" : (portrait.ToLower().Contains("fel") || portrait.ToLower().Contains("imp") || portrait.ToLower().Contains("demon") || portrait.ToLower().Contains("infernal") || portrait.ToLower().Contains("sayaad") ? "Demon" : (new List<string>() { "boar", "darkhound", "tallstrider", "hippo", "wyvern", "gryph", "borer", "bear", "bird", "cat", "crab", "hydra", "makrura", "hyena", "giraffe", "bat", "croc", "owl", "gorilla", "serpent", "turtle", "tiger", "scorpid", "spider", "tarantula", "wolf", "worg", "raptor", "owl", "saur" }.Any(x => portrait.ToLower().Contains(x)) ? "Beast" : (new List<string>() { "abomination", "skelet", "ghoul", "banshee", "crypt", "zombie", "wraith" }.Any(x => portrait.ToLower().Contains(x)) ? "Undead" : (new List<string>() { "silithid", "aqir", "qiraji", "wasp" }.Any(x => portrait.ToLower().Contains(x)) ? "Insect" : "Humanoid"))))));
         if (category == "Beast")
         {
             if (portrait.ToLower().Contains("bear")) subcategory = "Bear";
             else if (portrait.ToLower().Contains("wolf")) subcategory = "Wolf";
-            else if (portrait.ToLower().Contains("wolf")) subcategory = "Worg";
+            else if (portrait.ToLower().Contains("worg")) subcategory = "Worg";
             else if (portrait.ToLower().Contains("saur") || portrait.ToLower().Contains("raptor")) subcategory = "Raptor";
             else if (portrait.ToLower().Contains("crab")) subcategory = "Crab";
             else if (portrait.ToLower().Contains("makrura")) subcategory = "Makrura";
@@ -57,6 +57,10 @@ public class Race
             else if (portrait.ToLower().Contains("wyvern")) subcategory = "Wyvern";
             else if (portrait.ToLower().Contains("hippo")) subcategory = "Hippogryph";
             else if (portrait.ToLower().Contains("gryph")) subcategory = "Gryphon";
+            else if (portrait.ToLower().Contains("tallstrider")) subcategory = "Tallstrider";
+            else if (portrait.ToLower().Contains("darkhound")) subcategory = "Darkhound";
+            else if (portrait.ToLower().Contains("worgen")) { category = "Humanoid"; subcategory = "Worgen"; }
+            else if (portrait.ToLower().Contains("quil")) { category = "Humanoid"; subcategory = "Quilboar"; }
         }
         else if (category == "Humanoid")
         {
@@ -88,25 +92,50 @@ public class Race
             else if (portrait.ToLower().Contains("troll")) subcategory = "Troll";
             else if (portrait.ToLower().Contains("atalai")) subcategory = "Troll";
             else if (portrait.ToLower().Contains("bloodscalp")) subcategory = "Troll";
+            else if (portrait.ToLower().Contains("witherbark")) subcategory = "Troll";
+            else if (portrait.ToLower().Contains("wildkin")) subcategory = "Wildkin";
             else subcategory = "Human";
+        }
+        else if (category == "Undead")
+        {
+            if (portrait.ToLower().Contains("abomination")) subcategory = "Abomination";
+            else if (portrait.ToLower().Contains("skele")) subcategory = "Skeleton";
+            else if (portrait.ToLower().Contains("wraith")) subcategory = "Ghost";
+            else if (portrait.ToLower().Contains("banshee")) subcategory = "Ghost";
+            else if (portrait.ToLower().Contains("zombie")) subcategory = "Zombie";
+            else if (portrait.ToLower().Contains("ghoul")) subcategory = "Ghoul";
+            else if (portrait.ToLower().Contains("crypt")) subcategory = "Nerubian";
+            else if (portrait.ToLower().Contains("wight")) subcategory = "Wight";
+            else subcategory = "Undead";
         }
         else if (category == "Dragonkin")
         {
             if (portrait.ToLower().Contains("spawn")) subcategory = "Dragonspawn";
-            else if(portrait.ToLower().Contains("draconid")) subcategory = "Draconid";
+            else if (portrait.ToLower().Contains("draconid")) subcategory = "Draconid";
             else subcategory = "Dragon";
+        }
+        else if (category == "Elemental")
+        {
+            if (portrait.ToLower().Contains("bog")) subcategory = "Bog Beast";
+            else if (portrait.ToLower().Contains("obsidian")) subcategory = "Qiraji Construct";
+            else if (portrait.ToLower().Contains("ooze")) subcategory = "Ooze";
+            else if (portrait.ToLower().Contains("slime")) subcategory = "Ooze";
+            else subcategory = "Elemental";
         }
         else if (category == "Insect")
         {
             if (portrait.ToLower().Contains("qiraji")) subcategory = "Qiraji";
-            if (portrait.ToLower().Contains("queen")) subcategory = "Qiraji";
+            else if (portrait.ToLower().Contains("queen")) subcategory = "Qiraji";
             else subcategory = "Silithid";
         }
         else if (category == "Demon")
         {
             if (portrait.ToLower().Contains("imp")) subcategory = "Imp";
-            if (portrait.ToLower().Contains("sayaad")) subcategory = "Sayaad";
-            if (portrait.ToLower().Contains("infernal")) subcategory = "Infernal";
+            else if (portrait.ToLower().Contains("sayaad")) subcategory = "Sayaad";
+            else if (portrait.ToLower().Contains("infernal")) subcategory = "Infernal";
+            else if (portrait.ToLower().Contains("guard")) subcategory = "Fel Guard";
+            else if (portrait.ToLower().Contains("stalker")) subcategory = "Fel Stalker";
+            else if (portrait.ToLower().Contains("hunter")) subcategory = "Fel Stalker";
         }
         if (portrait.ToLower().Contains("golem")) { category = "Mechanical"; subcategory = "Golem"; }
     }

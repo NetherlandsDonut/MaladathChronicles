@@ -31,16 +31,20 @@ public class SitePath
         {
             var start = new Vector2(a.Item1 * 19, a.Item2 * 19);
             var end = new Vector2(b.Item1 * 19, b.Item2 * 19);
-            for (int stepsMade = 0; (int)Vector2.Distance(start, end) >= stepsMade; )
+            var intermediatePointCount = 5;
+            for (int stepsMade = 0; intermediatePointCount > stepsMade; )
             {
                 var dot = new GameObject("PathDot", typeof(SpriteRenderer));
                 dot.transform.parent = path.transform;
                 dot.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Other/PathDot");
                 dot.GetComponent<SpriteRenderer>().color = Color.black;
                 dot.GetComponent<SpriteRenderer>().sortingLayerName = "CameraShadow";
-                dot.transform.position = Vector2.Lerp(start, end, 1 / Vector2.Distance(start, end) * stepsMade);
+                if (start.x == end.x || start.y == end.y)
+                    dot.transform.position = Vector2.Lerp(start, end, 1f / intermediatePointCount * stepsMade);
+                else if (end.x > start.x && end.y > start.y)
+                    dot.transform.position = Bezier(start, (end - start) / 2 + start, (end - start) / 4 + start, end, 1f / intermediatePointCount * stepsMade);
                 dot.transform.position = new Vector2((int)dot.transform.position.x, (int)dot.transform.position.y);
-                stepsMade += 6;
+                stepsMade++;
             }
         }
     }
