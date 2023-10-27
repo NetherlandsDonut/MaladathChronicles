@@ -96,7 +96,6 @@ public static class Root
         mouseOver = highlightable;
     }
 
-
     #region Desktop
 
     public static void SpawnDesktopBlueprint(string blueprintTitle, bool autoSwitch = true)
