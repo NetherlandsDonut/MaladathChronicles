@@ -1,10 +1,13 @@
 using System.Linq;
 using System.Collections.Generic;
 
+using UnityEngine;
+
 using static Root;
 using static Root.Anchor;
 
 using static Sound;
+using static MapGrid;
 using static Faction;
 using static SaveGame;
 using static SiteInstance;
@@ -120,13 +123,17 @@ public class SiteComplex : Site
     //Function to print the site onto the map
     public override void PrintSite()
     {
-        SetAnchor(x * 19, y * 19);
+        SetAnchor(x * mapGridSize, y * mapGridSize);
         AddRegionGroup();
         AddPaddingRegion(() =>
         {
             AddSmallButton(currentSave.siteVisits.ContainsKey(name) ? "SiteComplex" : "OtherUnknown",
-            (h) => { QueueSiteOpen("Complex"); },
-            (h) => { BuildPath(); },
+            (h) => { CDesktop.cameraDestination = new Vector2(x, y) * mapGridSize; },
+            (h) =>
+            {
+                if (h == null) LeadPath();
+                else ExecutePath("Complex");
+            },
             (h) => () =>
             {
                 SetAnchor(TopRight, h.window);
@@ -140,7 +147,10 @@ public class SiteComplex : Site
                         AddLine(site["SiteName"], "DarkGray");
                         AddSmallButton("Site" + site["SiteType"], (h) => { });
                     });
-            });
+            },
+            (h) => { BuildPath(); });
+            if (currentSave.currentSite == name)
+                    AddSmallButtonOverlay("PlayerLocation");
         });
     }
 

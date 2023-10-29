@@ -128,13 +128,13 @@ public class SaveGame
         };
         var startingSite = Race.races.Find(x => x.name == creationRace).startingSite;
         var temp1 = areas.Find(x => x.name == startingSite);
-        if (temp1 != null) (newSlot.cameraX, newSlot.cameraY) = (temp1.x, temp1.y);
+        if (temp1 != null) (newSlot.cameraX, newSlot.cameraY) = (temp1.x * 19, temp1.y * 19);
         var temp2 = towns.Find(x => x.name == startingSite);
-        if (temp2 != null) (newSlot.cameraX, newSlot.cameraY) = (temp2.x, temp2.y);
+        if (temp2 != null) (newSlot.cameraX, newSlot.cameraY) = (temp2.x * 19, temp2.y * 19);
         var temp3 = complexes.Find(x => x.name == startingSite);
-        if (temp3 != null) (newSlot.cameraX, newSlot.cameraY) = (temp3.x, temp3.y);
+        if (temp3 != null) (newSlot.cameraX, newSlot.cameraY) = (temp3.x * 19, temp3.y * 19);
         var temp4 = instances.Find(x => x.name == startingSite);
-        if (temp4 != null) (newSlot.cameraX, newSlot.cameraY) = (temp4.x, temp4.y);
+        if (temp4 != null) (newSlot.cameraX, newSlot.cameraY) = (temp4.x * 19, temp4.y * 19);
         newSlot.currentSite = startingSite;
         newSlot.siteVisits = new() { { startingSite, 1 } };
         saves[settings.selectedRealm].Add(newSlot);
@@ -166,7 +166,7 @@ public class SaveGame
     {
         currentSave = saves[settings.selectedRealm].Find(x => x.player.name == settings.selectedCharacter);
         currentSave.lastLoaded = DateTime.Now;
-        CDesktop.cameraDestination = new Vector2(currentSave.cameraX, currentSave.cameraY);
+        currentSave.currentSite ??= currentSave.player.Race().startingSite;
     }
 
     //Saves all characters on the account

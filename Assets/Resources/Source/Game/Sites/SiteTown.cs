@@ -2,10 +2,13 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 
+using UnityEngine;
+
 using static Root;
 using static Root.Anchor;
 
 using static Sound;
+using static MapGrid;
 using static Faction;
 using static SaveGame;
 using static Transport;
@@ -137,13 +140,17 @@ public class SiteTown : Site
     //Prints the site on the world map
     public override void PrintSite()
     {
-        SetAnchor(x * 19, y * 19);
+        SetAnchor(x * mapGridSize, y * mapGridSize);
         AddRegionGroup();
         AddPaddingRegion(() =>
         {
             AddSmallButton(currentSave.siteVisits.ContainsKey(name) ? factions.Find(x => x.name == faction).Icon() : "OtherUnknown",
-            (h) => { QueueSiteOpen("Town"); },
-            (h) => { BuildPath(); },
+            (h) => { CDesktop.cameraDestination = new Vector2(x, y) * mapGridSize; },
+            (h) =>
+            {
+                if (h == null) LeadPath();
+                else ExecutePath("Town");
+            },
             (h) => () =>
             {
                 SetAnchor(TopRight, h.window);
@@ -152,10 +159,13 @@ public class SiteTown : Site
                 {
                     AddLine(name);
                 });
-            });
+            },
+            (h) => { BuildPath(); });
+            if (currentSave.currentSite == name)
+                AddSmallButtonOverlay("PlayerLocation");
         });
     }
 
     //Returns path to a texture that is the background visual of this site
-    public override string Background() => "Areas/Area" + (zone + name).Clean() + (currentSave.IsNight() ? "Night" : "");
+    public override string Background() => "Areas/Area" + (zone + name).Clean() + (currentSave != null && currentSave.IsNight() ? "Night" : "");
 }

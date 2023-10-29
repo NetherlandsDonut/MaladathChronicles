@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 
 using static Root;
+using static MapGrid;
 
 public class SiteSpiritHealer : Site
 {
@@ -23,7 +24,7 @@ public class SiteSpiritHealer : Site
 
     public override void PrintSite()
     {
-        SetAnchor(x * 19, y * 19);
+        SetAnchor(x * mapGridSize, y * mapGridSize);
         AddRegionGroup();
         AddPaddingRegion(() =>
         {

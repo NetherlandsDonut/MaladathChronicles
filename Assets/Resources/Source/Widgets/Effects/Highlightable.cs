@@ -7,6 +7,8 @@ using static Root.CursorType;
 
 using static Sound;
 using static Cursor;
+using static SaveGame;
+using static SitePath;
 
 public class Highlightable : MonoBehaviour
 {
@@ -41,6 +43,8 @@ public class Highlightable : MonoBehaviour
             cursor.SetCursor(Write);
         else if (pressedState != "None") cursor.SetCursor(Click);
         render.color = defaultColor - new Color(0.1f, 0.1f, 0.1f, 0);
+        if (window.title.StartsWith("Site: ") && window.title != "Site: " + currentSave.currentSite)
+            rightPressEvent(null);
     }
 
     public void OnMouseExit()
@@ -53,6 +57,12 @@ public class Highlightable : MonoBehaviour
             cursor.SetCursor(Default);
         render.color = defaultColor;
         pressedState = "None";
+        if (window.title.StartsWith("Site: "))
+        {
+            for (int i = 0; i < pathsDrawn.Count; i++)
+                Destroy(pathsDrawn[i]);
+            pathsDrawn = new();
+        }
     }
 
     public void MouseDown(string key)

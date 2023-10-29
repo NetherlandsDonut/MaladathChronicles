@@ -31,9 +31,8 @@ public class MapGrid : MonoBehaviour
     //On mouse down pan the camera to the pressed square on the map
     void OnMouseDown()
     {
-        var temp = cursor.transform.position;
-        CDesktop.cameraDestination = new Vector2(temp.x, temp.y) / mapGridSize;
-        CDesktop.cameraDestination = new Vector2((int)CDesktop.cameraDestination.x, (int)CDesktop.cameraDestination.y);
+        var temp = new Vector2Int((int)cursor.transform.position.x / mapGridSize, (int)cursor.transform.position.y / mapGridSize);
+        CDesktop.cameraDestination = new Vector2(temp.x, temp.y) * mapGridSize;
     }
     
     //On mouse down pan the camera to the pressed square on the map
@@ -82,13 +81,13 @@ public class MapGrid : MonoBehaviour
     //Whenever camera is close enough to detect sites it will be dragged to their proximity
     public static void EnforceBoundary(int detectionRange = 700, int maxDistance = 7, int maxDistanceWhileMoving = 200, float harshness = 0.0001f)
     {
-        var cameraDestinationScaled = CDesktop.cameraDestination * mapGridSize;
+        var cameraDestinationScaled = CDesktop.cameraDestination;
         var nearbySites = cameraBoundaryPoints.Select(x => (x, Vector2.Distance(new Vector2(x.x, x.y), cameraDestinationScaled))).ToList().FindAll(x => x.Item2 < detectionRange).OrderBy(x => x.Item2).ToList();
         if (nearbySites.Count > 0)
         {
             while (Vector2.Distance(new Vector2(nearbySites[0].x.x, nearbySites[0].x.y), cameraDestinationScaled) > (!GameSettings.settings.snapCamera.Value() || Input.GetKey(W) || Input.GetKey(A) || Input.GetKey(S) || Input.GetKey(D) ? maxDistanceWhileMoving : maxDistance))
                 cameraDestinationScaled = Vector3.Lerp(cameraDestinationScaled, nearbySites[0].x, harshness);
-            CDesktop.cameraDestination = cameraDestinationScaled / mapGridSize;
+            CDesktop.cameraDestination = cameraDestinationScaled;
         }
     }
 }

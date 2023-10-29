@@ -81,7 +81,7 @@ public class FallingText : MonoBehaviour
         }
         var textBorder = new GameObject("TextBorder", typeof(SpriteRenderer));
         textBorder.transform.parent = transform;
-        textBorder.transform.localPosition = new Vector3(fonts[fallingTextFont].Length(text) / -2 - 2, 9, 1);
+        textBorder.transform.localPosition = new Vector3(fonts[fallingTextFont].Length(text) / -2 - 2, 10, 1);
         var xPlus = pixelList.Min(x => x.Item1);
         var yPlus = pixelList.Min(x => x.Item2);
         var texture = new Texture2D(pixelList.Max(x => x.Item1) - xPlus + 5, pixelList.Max(x => x.Item2) - yPlus + 5, TextureFormat.ARGB32, true) { filterMode = FilterMode.Point };

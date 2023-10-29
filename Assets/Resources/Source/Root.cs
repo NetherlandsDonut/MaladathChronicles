@@ -26,6 +26,7 @@ public static class Root
     public static string textWrapEnding = "...";
     public static string prefix = "";
     public static bool useUnityData = true;
+    public static bool showSitesUnconditional;
 
     public static MapGrid grid;
     public static List<Vector2> cameraBoundaryPoints;
@@ -130,7 +131,7 @@ public static class Root
         newDesktop.screen.transform.parent = newDesktop.transform;
         var screenOffsetter = new GameObject("CameraOffset");
         screenOffsetter.transform.parent = newDesktop.transform;
-        screenOffsetter.transform.localPosition = new Vector2(10, -10);
+        screenOffsetter.transform.localPosition = new Vector2(10, -9);
         newDesktop.screen.transform.parent = screenOffsetter.transform;
         newDesktop.GetComponent<SpriteRenderer>().sortingLayerName = "DesktopBackground";
         newDesktop.screen.GetComponent<SpriteRenderer>().sortingLayerName = "DesktopBackground";
@@ -175,11 +176,8 @@ public static class Root
         }
         if (CDesktop.cameraDestination != Vector2.zero)
         {
-            var temp = CDesktop.screen.transform.localPosition;
-            var rounded = new Vector2((float)Math.Round(CDesktop.cameraDestination.x), (float)Math.Round(CDesktop.cameraDestination.y));
-            var newPosition = rounded * mapGridSize;
-            Cursor.cursor.transform.position += (Vector3)newPosition - temp;
-            CDesktop.screen.transform.localPosition = newPosition;
+            Cursor.cursor.transform.position += (Vector3)CDesktop.cameraDestination - CDesktop.screen.transform.localPosition;
+            CDesktop.screen.transform.localPosition = (Vector3)CDesktop.cameraDestination;
         }
     }
 
@@ -187,6 +185,12 @@ public static class Root
     {
         cameraBoundaryPoints = new();
         loadSites = windowBlueprints.FindAll(x => x.title.StartsWith("Site: "));
+        if (!showSitesUnconditional)
+            for (int i = loadSites.Count - 1; i >= 0; i--)
+            {
+                var site = Site.FindSite(x => "Site: " + x.name == loadSites[i].title);
+                if (site != null && !site.CanBeSeen()) loadSites.RemoveAt(i);
+            }
         loadingScreenObjectLoad = 0;
         loadingScreenObjectLoadAim = loadSites.Count;
     }
@@ -513,6 +517,7 @@ public static class Root
         newObject.transform.localPosition = Vector3.zero;
         if (overlay == "Cooldown") newObject.AddComponent<AnimatedSprite>().Initiate("Sprites/Building/Shadows/Cooldown");
         else if (overlay == "YellowGlow") newObject.AddComponent<AnimatedSprite>().Initiate("Sprites/Building/Shadows/YellowGlow");
+        else if (overlay == "PlayerLocation") newObject.AddComponent<AnimatedSprite>().Initiate("Sprites/Building/Shadows/PlayerLocation", 0.07f);
         else newObject.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/Buttons/" + overlay);
         newObject.GetComponent<SpriteRenderer>().sortingOrder = sortingOrder;
         newObject.GetComponent<SpriteRenderer>().sortingLayerName = CDesktop.LBWindow.layer;

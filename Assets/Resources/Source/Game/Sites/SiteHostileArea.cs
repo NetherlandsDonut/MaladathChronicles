@@ -2,13 +2,15 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 
+using UnityEngine;
+
 using static Root;
 using static Root.Anchor;
 
 using static Race;
 using static Sound;
 using static Faction;
-using static SitePath;
+using static MapGrid;
 using static SaveGame;
 using static Coloring;
 using static SiteComplex;
@@ -200,18 +202,16 @@ public class SiteHostileArea : Site
     //Function to print the site onto the map
     public override void PrintSite()
     {
-        SetAnchor(x * 19, y * 19);
+        SetAnchor(x * mapGridSize, y * mapGridSize);
         AddRegionGroup();
         AddPaddingRegion(() =>
         {
             AddSmallButton(currentSave.siteVisits.ContainsKey(name) ? "Site" + type : "OtherUnknown",
+            (h) => { CDesktop.cameraDestination = new Vector2(x, y) * mapGridSize; },
             (h) =>
             {
-                QueueSiteOpen("HostileArea");
-            },
-            (h) =>
-            {
-                BuildPath();
+                if (h == null) LeadPath();
+                else ExecutePath("HostileArea");
             },
             (h) => () =>
             {
@@ -253,9 +253,10 @@ public class SiteHostileArea : Site
                         foreach (var enemy in rareEncounters)
                             AddSmallButton("OtherUnknown", (h) => { });
                     });
-            });
+            },
+            (h) => { BuildPath(); });
             if (currentSave.currentSite == name)
-                AddSmallButtonOverlay("YellowGlow");
+                AddSmallButtonOverlay("PlayerLocation");
         });
     }
 

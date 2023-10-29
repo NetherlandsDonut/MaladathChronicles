@@ -60,16 +60,33 @@ public class Site
         if (currentSave.currentSite != name)
         {
             var refreshWindow = CDesktop.windows.Find(x => x.title == "Site: " + currentSave.currentSite);
-            if (refreshWindow != null) refreshWindow.Respawn();
             currentSave.currentSite = name;
+            if (refreshWindow != null) refreshWindow.Respawn();
         }
         if (siteType == "Instance") instance = (SiteInstance)this;
         else if (siteType == "HostileArea") area = (SiteHostileArea)this;
         else if (siteType == "Town") town = (SiteTown)this;
         else if (siteType == "Complex") complex = (SiteComplex)this;
         else if (siteType == "SpiritHealer") spiritHealer = (SiteSpiritHealer)this;
-        CDesktop.cameraDestination = new Vector2(x, y);
+        CDesktop.cameraDestination = new Vector2(x, y) * mapGridSize;
         CDesktop.queuedSiteOpen = siteType;
+        CDesktop.LockScreen();
+    }
+
+    //Queue opening of this site.
+    //After calling this the screen is locked and camera will pan there slowly.
+    //After reaching the site the screen will change accordingly to the site type
+    public void QueueSitePathTravel()
+    {
+        CDesktop.queuedPath = pathsDrawn.SelectMany(x => x.GetComponentsInChildren<SpriteRenderer>()).Select(x => x.transform).ToList();
+        if (CDesktop.queuedPath.Count == 0) return;
+        if (CDesktop.queuedPath.Count > 1)
+            if (Vector2.Distance(CDesktop.queuedPath[0].transform.position, new Vector2(x * mapGridSize, y * mapGridSize)) < Vector2.Distance(CDesktop.queuedPath.Last().transform.position, new Vector2(x * 19, y * 19)))
+                CDesktop.queuedPath.Reverse();
+        var current = currentSave.currentSite;
+        currentSave.currentSite = "";
+        Respawn("Site: " + current);
+        CDesktop.queuedSiteOpen = name;
         CDesktop.LockScreen();
     }
 
@@ -111,9 +128,40 @@ public class Site
         }
     }
 
+    public void LeadPath()
+    {
+        siteTravelPlan = this;
+        var findPath = paths.Find(x => x.sites.Contains(siteTravelPlan.name) && x.sites.Contains(currentSave.currentSite));
+        if (findPath != null) pathsDrawn.Add(findPath.DrawPath());
+        else siteTravelPlan = null;
+    }
+
+    public void ExecutePath(string siteType)
+    {
+        if (currentSave.currentSite != name) QueueSitePathTravel();
+        else QueueSiteOpen(siteType);
+    }
+
     //Site selected as the beginning of the path building
     public static Site sitePathBuilder;
 
+    //Site selected as the beginning of the path building
+    public static Site siteTravelPlan;
+
     //List of points set during construction of a path between sites
     public static List<Vector2> pathBuilder;
+
+    //Finds a site using a predicate
+    public static Site FindSite(Predicate<Site> predicate)
+    {
+        var area = areas.Find(predicate);
+        if (area != null) return area;
+        var town = towns.Find(predicate);
+        if (town != null) return town;
+        var instance = instances.Find(predicate);
+        if (instance != null) return instance;
+        var complex = complexes.Find(predicate);
+        if (complex != null) return complex;
+        return null;
+    }
 }

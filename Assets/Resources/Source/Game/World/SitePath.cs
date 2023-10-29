@@ -49,6 +49,7 @@ public class SitePath
                     var dot = new GameObject("PathDot", typeof(SpriteRenderer));
                     dot.transform.parent = path.transform;
                     dot.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Other/PathDot");
+                    dot.GetComponent<SpriteRenderer>().color = Color.black;
                     dot.GetComponent<SpriteRenderer>().sortingLayerName = "CameraShadow";
                     dot.transform.position = Vector2.Lerp(start, end, 1 / Vector2.Distance(start, end) * (stepsMade - beginSteps));
                     dot.transform.position = new Vector2((int)dot.transform.position.x, (int)dot.transform.position.y);

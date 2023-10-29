@@ -16,10 +16,11 @@ using static Zone;
 using static Spec;
 using static Sound;
 using static Event;
-using static SitePath;
+using static MapGrid;
 using static Faction;
 using static ItemSet;
 using static Ability;
+using static SitePath;
 using static SaveGame;
 using static Coloring;
 using static PersonType;
@@ -155,8 +156,9 @@ public class Blueprint
                 },
                 (h) =>
                 {
-                    SpawnDesktopBlueprint("Map");
                     Login();
+                    SpawnDesktopBlueprint("Map");
+                    CDesktop.cameraDestination = new Vector2(currentSave.cameraX, currentSave.cameraY);
                 });
             }
             else
@@ -6789,7 +6791,7 @@ public class Blueprint
         new("Map", () =>
         {
             PlaySound("DesktopOpenSave", 0.2f);
-            SetDesktopBackground("LoadingScreens/LoadingScreen" + (CDesktop.cameraDestination.x < 130 ? "Kalimdor" : "EasternKingdoms"));
+            SetDesktopBackground("LoadingScreens/LoadingScreen" + (CDesktop.cameraDestination.x < 2470 ? "Kalimdor" : "EasternKingdoms"));
             loadingBar = new GameObject[2];
             loadingBar[0] = new GameObject("LoadingBarBegin", typeof(SpriteRenderer));
             loadingBar[0].GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Textures/LoadingBarEnd");
@@ -6798,12 +6800,10 @@ public class Blueprint
             loadingBar[1].GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Textures/LoadingBarStretch");
             loadingBar[1].transform.position = new Vector3(-1168, 853);
             OrderLoadingMap();
-            foreach (var path in paths)
-                pathsDrawn.Add(path.DrawPath());
-            AddHotkey(W, () => { MoveCamera(new Vector3(0, EuelerGrowth())); }, false);
-            AddHotkey(A, () => { MoveCamera(new Vector3(-EuelerGrowth(), 0)); }, false);
-            AddHotkey(S, () => { MoveCamera(new Vector3(0, -EuelerGrowth())); }, false);
-            AddHotkey(D, () => { MoveCamera(new Vector3(EuelerGrowth(), 0)); }, false);
+            //AddHotkey(W, () => { MoveCamera(new Vector3(0, EuelerGrowth())); }, false);
+            //AddHotkey(A, () => { MoveCamera(new Vector3(-EuelerGrowth(), 0)); }, false);
+            //AddHotkey(S, () => { MoveCamera(new Vector3(0, -EuelerGrowth())); }, false);
+            //AddHotkey(D, () => { MoveCamera(new Vector3(EuelerGrowth(), 0)); }, false);
             AddHotkey(C, () =>
             {
                 SpawnDesktopBlueprint("CharacterSheet");
@@ -6818,12 +6818,32 @@ public class Blueprint
                 PlaySound("DesktopMenuOpen");
                 SpawnDesktopBlueprint("GameMenu");
             });
-            AddHotkey(BackQuote, () => { SpawnDesktopBlueprint("DevPanel"); });
+            AddHotkey(Delete, () =>
+            {
+                if (Input.GetKey(LeftShift))
+                {
+                    foreach (var path in paths)
+                        pathsDrawn.Add(path.DrawPath());
+                }
+                else
+                {
+                    for (int i = 0; i < pathsDrawn.Count; i++)
+                        UnityEngine.Object.Destroy(pathsDrawn[i]);
+                    pathsDrawn = new();
+                }
+            });
+            AddHotkey(BackQuote, () =>
+            {
+                if (SpawnWindowBlueprint("Console") != null)
+                    CDesktop.LBWindow.LBRegionGroup.LBRegion.inputLine.Activate();
+            });
             AddHotkey(L, () => { SpawnWindowBlueprint("ItemDrop"); });
 
             void MoveCamera(Vector3 amount)
             {
-                CDesktop.cameraDestination += new Vector2(amount.x, amount.y) / 5;
+                var temp = CDesktop.cameraDestination + new Vector2(amount.x, amount.y) / 5;
+                temp = new Vector2Int((int)temp.x / mapGridSize, (int)temp.y / mapGridSize);
+                CDesktop.cameraDestination = new Vector2(temp.x, temp.y) * mapGridSize;
             }
         }),
         new("HostileArea", () =>

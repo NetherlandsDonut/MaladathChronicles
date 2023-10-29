@@ -465,6 +465,16 @@ public class InputLine : MonoBehaviour
             {
                 Debug.Log(string.Join('\n', SiteHostileArea.areas.FindAll(x => x.recommendedLevel > 0).GroupBy(x => x.zone).Select(x => (x.Key, x.Average(y => y.recommendedLevel))).OrderBy(x => x.Item2).Select(x => x.Key + ": " + System.Math.Round(x.Item2))));
             }
+            else if (foo.Value() == "showsites")
+            {
+                showSitesUnconditional = true;
+                CDesktop.ReloadAssets();
+            }
+            else if (foo.Value() == "hidesites")
+            {
+                showSitesUnconditional = false;
+                CDesktop.ReloadAssets();
+            }
             foo.Set("");
         }
         else if (encounterLevels.ToList().Exists(x => x.Value.Item1 == foo))

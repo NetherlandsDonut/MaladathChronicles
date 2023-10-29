@@ -2,6 +2,8 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 
+using UnityEngine;
+
 using static Root;
 using static Root.Anchor;
 
@@ -128,8 +130,12 @@ public class SiteInstance : Site
         AddPaddingRegion(() =>
         {
             AddSmallButton(currentSave.siteVisits.ContainsKey(name) ? "Site" + type : "OtherUnknown",
-            (h) => { QueueSiteOpen("Instance"); },
-            (h) => { BuildPath(); },
+            (h) => { CDesktop.cameraDestination = new Vector2(x, y) * mapGridSize; },
+            (h) =>
+            {
+                if (h == null) LeadPath();
+                else ExecutePath("Instance");
+            },
             (h) => () =>
             {
                 SetAnchor(TopRight, h.window);
@@ -162,7 +168,10 @@ public class SiteInstance : Site
                             }
                         });
                     }
-            });
+            },
+            (h) => { BuildPath(); });
+            if (currentSave.currentSite == name)
+                AddSmallButtonOverlay("PlayerLocation");
         });
     }
 

@@ -26,6 +26,7 @@ public class Desktop : MonoBehaviour
     public bool screenLocked;
     public Vector2 cameraDestination;
     public string queuedSiteOpen;
+    public List<Transform> queuedPath;
 
     public void Initialise(string title)
     {
@@ -33,6 +34,7 @@ public class Desktop : MonoBehaviour
         windows = new();
         hotkeys = new();
         queuedSiteOpen = "";
+        queuedPath = new();
         cameraDestination = new Vector2();
     }
 
@@ -74,6 +76,24 @@ public class Desktop : MonoBehaviour
             screen.transform.localPosition = new Vector3(-1000, 1000);
     }
 
+    public void ReloadAssets()
+    {
+        PlaySound("DesktopMagicClick");
+        Starter.LoadData();
+        if (Board.board != null)
+        {
+            Board.board.playerCombatAbilities = Board.board.playerCombatAbilities.ToDictionary(x => Ability.abilities.Find(y => x.Key.name == y.name), x => x.Value);
+            Board.board.enemyCombatAbilities = Board.board.enemyCombatAbilities.ToDictionary(x => Ability.abilities.Find(y => x.Key.name == y.name), x => x.Value);
+        }
+        if (title == "Map")
+        {
+            var temp = cameraDestination;
+            CloseDesktop(title);
+            SpawnDesktopBlueprint(title);
+            CDesktop.cameraDestination = temp;
+        }
+    }
+
     public void Update()
     {
         if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyUp(KeyCode.LeftShift))
@@ -103,23 +123,7 @@ public class Desktop : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.Tab) && Input.GetKeyDown(KeyCode.LeftAlt))
         {
-            PlaySound("DesktopMagicClick");
-            for (int i = 0; i < pathsDrawn.Count; i++)
-                Destroy(pathsDrawn[i]);
-            pathsDrawn = new();
-            Starter.LoadData();
-            if (Board.board != null)
-            {
-                Board.board.playerCombatAbilities = Board.board.playerCombatAbilities.ToDictionary(x => Ability.abilities.Find(y => x.Key.name == y.name), x => x.Value);
-                Board.board.enemyCombatAbilities = Board.board.enemyCombatAbilities.ToDictionary(x => Ability.abilities.Find(y => x.Key.name == y.name), x => x.Value);
-            }
-            if (title == "Map")
-            {
-                var temp = cameraDestination;
-                CloseDesktop(title);
-                SpawnDesktopBlueprint(title);
-                CDesktop.cameraDestination = temp;
-            }
+            ReloadAssets();
         }
         if (!GameSettings.settings.music.Value())
         {
@@ -153,10 +157,8 @@ public class Desktop : MonoBehaviour
                 if (loadSites.Count == 0)
                 {
                     RemoveDesktopBackground();
-                    var rounded = new Vector2((float)Math.Round(cameraDestination.x), (float)Math.Round(cameraDestination.y));
-                    var newPosition = rounded * mapGridSize;
-                    cursor.transform.position += (Vector3)newPosition - screen.transform.position;
-                    screen.transform.localPosition = newPosition;
+                    cursor.transform.position += (Vector3)cameraDestination - screen.transform.position;
+                    screen.transform.localPosition = cameraDestination;
                     SpawnWindowBlueprint("MapToolbarLeft");
                     SpawnWindowBlueprint("MapToolbar");
                     SpawnWindowBlueprint("MapToolbarRight");
@@ -192,14 +194,46 @@ public class Desktop : MonoBehaviour
             else if (title == "Map")
             {
                 var temp = screen.transform.localPosition;
-                if (screenLocked || temp.x != cameraDestination.x || temp.y != cameraDestination.y)
+                if (queuedPath.Count > 0)
+                {
+                    if (Vector2.Distance(temp, cameraDestination) > 5)
+                    {
+                        var newPosition = Vector3.Lerp(temp, cameraDestination, Time.deltaTime * 5);
+                        cursor.transform.position += newPosition - temp;
+                        screen.transform.localPosition = newPosition;
+                    }
+                    else
+                    {
+                        Destroy(queuedPath.First(x => x.name == "PathDot").gameObject);
+                        queuedPath.RemoveRange(0, 3);
+                        if (queuedPath.Count == 0)
+                        {
+                            UnlockScreen();
+                            currentSave.currentSite = queuedSiteOpen;
+                            var find = FindSite(x => x.name == queuedSiteOpen);
+                            if (!currentSave.siteVisits.ContainsKey(queuedSiteOpen))
+                                currentSave.siteVisits.Add(queuedSiteOpen, 0);
+                            Respawn("Site: " + queuedSiteOpen);
+                            foreach (var connection in paths.FindAll(x => x.sites.Contains(queuedSiteOpen)))
+                                Respawn("Site: " + connection.sites.Find(x => x != queuedSiteOpen));
+                            queuedSiteOpen = "";
+                            cameraDestination = new Vector2(find.x, find.y) * mapGridSize;
+                        }
+                        else
+                        {
+                            var first = queuedPath.First(x => x.name == "PathDot");
+                            cameraDestination = first.position;
+                            first.GetComponent<SpriteRenderer>().color = Color.green;
+                        }
+                    }
+                }
+                else if (screenlock || queuedSiteOpen != "")
                 {
                     EnforceBoundary();
-                    var rounded = new Vector2((float)Math.Round(cameraDestination.x), (float)Math.Round(cameraDestination.y));
-                    var newPosition = Vector3.Lerp(temp, rounded * mapGridSize, Time.deltaTime * 5);
+                    var newPosition = Vector3.Lerp(temp, cameraDestination, Time.deltaTime * 5);
                     cursor.transform.position += newPosition - temp;
                     screen.transform.localPosition = newPosition;
-                    if (screenLocked && Vector3.Distance(screen.transform.localPosition, cameraDestination * mapGridSize) <= 5)
+                    if (screenLocked && Vector3.Distance(screen.transform.localPosition, cameraDestination) <= 5)
                     {
                         if (currentSave.siteVisits == null) currentSave.siteVisits = new();
                         if (currentSave.siteVisits.ContainsKey(currentSave.currentSite))
