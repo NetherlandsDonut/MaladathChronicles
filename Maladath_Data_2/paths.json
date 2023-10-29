@@ -1,25 +1,653 @@
 [
   {
     "sites": [
-      "Dawning Wood Catacombs",
-      "Raven Hill"
+      "Northshire Abbey",
+      "Northshire Vineyards"
     ],
     "points": [
       {
-        "Item1": 264,
-        "Item2": -199
+        "Item1": 5092,
+        "Item2": -3477
       },
       {
-        "Item1": 245,
-        "Item2": -190
+        "Item1": 5100,
+        "Item2": -3482
       },
       {
-        "Item1": 245,
-        "Item2": -191
+        "Item1": 5105,
+        "Item2": -3490
       },
       {
-        "Item1": 262,
-        "Item2": -202
+        "Item1": 5115,
+        "Item2": -3494
+      },
+      {
+        "Item1": 5124,
+        "Item2": -3499
+      },
+      {
+        "Item1": 5130,
+        "Item2": -3508
+      },
+      {
+        "Item1": 5130,
+        "Item2": -3515
+      }
+    ]
+  },
+  {
+    "sites": [
+      "Echo Ridge Mine",
+      "Northshire Abbey"
+    ],
+    "points": [
+      {
+        "Item1": 5092,
+        "Item2": -3477
+      },
+      {
+        "Item1": 5086,
+        "Item2": -3468
+      },
+      {
+        "Item1": 5078,
+        "Item2": -3461
+      },
+      {
+        "Item1": 5075,
+        "Item2": -3452
+      },
+      {
+        "Item1": 5075,
+        "Item2": -3441
+      },
+      {
+        "Item1": 5073,
+        "Item2": -3439
+      }
+    ]
+  },
+  {
+    "sites": [
+      "Northshire Abbey",
+      "Northshire Valley"
+    ],
+    "points": [
+      {
+        "Item1": 5092,
+        "Item2": -3477
+      },
+      {
+        "Item1": 5100,
+        "Item2": -3471
+      },
+      {
+        "Item1": 5110,
+        "Item2": -3472
+      },
+      {
+        "Item1": 5120,
+        "Item2": -3473
+      },
+      {
+        "Item1": 5127,
+        "Item2": -3466
+      },
+      {
+        "Item1": 5130,
+        "Item2": -3458
+      }
+    ]
+  },
+  {
+    "sites": [
+      "Fargodeep Mine",
+      "Goldshire"
+    ],
+    "points": [
+      {
+        "Item1": 5054,
+        "Item2": -3591
+      },
+      {
+        "Item1": 5046,
+        "Item2": -3598
+      },
+      {
+        "Item1": 5037,
+        "Item2": -3602
+      },
+      {
+        "Item1": 5027,
+        "Item2": -3604
+      },
+      {
+        "Item1": 5018,
+        "Item2": -3608
+      },
+      {
+        "Item1": 5012,
+        "Item2": -3617
+      },
+      {
+        "Item1": 5009,
+        "Item2": -3626
+      },
+      {
+        "Item1": 5006,
+        "Item2": -3636
+      },
+      {
+        "Item1": 5004,
+        "Item2": -3646
+      },
+      {
+        "Item1": 5009,
+        "Item2": -3655
+      },
+      {
+        "Item1": 5012,
+        "Item2": -3664
+      },
+      {
+        "Item1": 5016,
+        "Item2": -3667
+      }
+    ]
+  },
+  {
+    "sites": [
+      "Fargodeep Mine",
+      "Stonefield Farm"
+    ],
+    "points": [
+      {
+        "Item1": 4978,
+        "Item2": -3686
+      },
+      {
+        "Item1": 4987,
+        "Item2": -3690
+      },
+      {
+        "Item1": 4994,
+        "Item2": -3697
+      },
+      {
+        "Item1": 5004,
+        "Item2": -3700
+      },
+      {
+        "Item1": 5014,
+        "Item2": -3698
+      },
+      {
+        "Item1": 5015,
+        "Item2": -3688
+      },
+      {
+        "Item1": 5015,
+        "Item2": -3678
+      },
+      {
+        "Item1": 5016,
+        "Item2": -3667
+      }
+    ]
+  },
+  {
+    "sites": [
+      "Fargodeep Mine",
+      "The Maclure Vineyards"
+    ],
+    "points": [
+      {
+        "Item1": 5054,
+        "Item2": -3686
+      },
+      {
+        "Item1": 5047,
+        "Item2": -3694
+      },
+      {
+        "Item1": 5038,
+        "Item2": -3702
+      },
+      {
+        "Item1": 5029,
+        "Item2": -3707
+      },
+      {
+        "Item1": 5019,
+        "Item2": -3706
+      },
+      {
+        "Item1": 5013,
+        "Item2": -3698
+      },
+      {
+        "Item1": 5012,
+        "Item2": -3688
+      },
+      {
+        "Item1": 5016,
+        "Item2": -3678
+      },
+      {
+        "Item1": 5016,
+        "Item2": -3667
+      }
+    ]
+  },
+  {
+    "sites": [
+      "Stonefield Farm",
+      "The Maclure Vineyards"
+    ],
+    "points": [
+      {
+        "Item1": 5054,
+        "Item2": -3686
+      },
+      {
+        "Item1": 5047,
+        "Item2": -3693
+      },
+      {
+        "Item1": 5039,
+        "Item2": -3700
+      },
+      {
+        "Item1": 5031,
+        "Item2": -3706
+      },
+      {
+        "Item1": 5021,
+        "Item2": -3707
+      },
+      {
+        "Item1": 5010,
+        "Item2": -3707
+      },
+      {
+        "Item1": 5001,
+        "Item2": -3703
+      },
+      {
+        "Item1": 4992,
+        "Item2": -3697
+      },
+      {
+        "Item1": 4978,
+        "Item2": -3686
+      }
+    ]
+  },
+  {
+    "sites": [
+      "Goldshire",
+      "The Maclure Vineyards"
+    ],
+    "points": [
+      {
+        "Item1": 5054,
+        "Item2": -3686
+      },
+      {
+        "Item1": 5060,
+        "Item2": -3677
+      },
+      {
+        "Item1": 5067,
+        "Item2": -3670
+      },
+      {
+        "Item1": 5075,
+        "Item2": -3663
+      },
+      {
+        "Item1": 5079,
+        "Item2": -3654
+      },
+      {
+        "Item1": 5079,
+        "Item2": -3644
+      },
+      {
+        "Item1": 5088,
+        "Item2": -3639
+      },
+      {
+        "Item1": 5098,
+        "Item2": -3637
+      },
+      {
+        "Item1": 5102,
+        "Item2": -3628
+      },
+      {
+        "Item1": 5095,
+        "Item2": -3620
+      },
+      {
+        "Item1": 5086,
+        "Item2": -3617
+      },
+      {
+        "Item1": 5076,
+        "Item2": -3614
+      },
+      {
+        "Item1": 5066,
+        "Item2": -3612
+      },
+      {
+        "Item1": 5057,
+        "Item2": -3606
+      },
+      {
+        "Item1": 5052,
+        "Item2": -3598
+      },
+      {
+        "Item1": 5054,
+        "Item2": -3591
+      }
+    ]
+  },
+  {
+    "sites": [
+      "Goldshire",
+      "Stonefield Farm"
+    ],
+    "points": [
+      {
+        "Item1": 5054,
+        "Item2": -3591
+      },
+      {
+        "Item1": 5046,
+        "Item2": -3598
+      },
+      {
+        "Item1": 5036,
+        "Item2": -3601
+      },
+      {
+        "Item1": 5026,
+        "Item2": -3603
+      },
+      {
+        "Item1": 5018,
+        "Item2": -3609
+      },
+      {
+        "Item1": 5012,
+        "Item2": -3617
+      },
+      {
+        "Item1": 5007,
+        "Item2": -3626
+      },
+      {
+        "Item1": 5003,
+        "Item2": -3635
+      },
+      {
+        "Item1": 4999,
+        "Item2": -3644
+      },
+      {
+        "Item1": 4992,
+        "Item2": -3652
+      },
+      {
+        "Item1": 4982,
+        "Item2": -3655
+      },
+      {
+        "Item1": 4973,
+        "Item2": -3660
+      },
+      {
+        "Item1": 4972,
+        "Item2": -3670
+      },
+      {
+        "Item1": 4976,
+        "Item2": -3679
+      },
+      {
+        "Item1": 4978,
+        "Item2": -3686
+      }
+    ]
+  },
+  {
+    "sites": [
+      "Forest's Edge",
+      "Jansen Stead"
+    ],
+    "points": [
+      {
+        "Item1": 4864,
+        "Item2": -3667
+      },
+      {
+        "Item1": 4871,
+        "Item2": -3673
+      },
+      {
+        "Item1": 4881,
+        "Item2": -3674
+      },
+      {
+        "Item1": 4891,
+        "Item2": -3671
+      },
+      {
+        "Item1": 4897,
+        "Item2": -3663
+      },
+      {
+        "Item1": 4907,
+        "Item2": -3660
+      },
+      {
+        "Item1": 4917,
+        "Item2": -3659
+      },
+      {
+        "Item1": 4926,
+        "Item2": -3664
+      },
+      {
+        "Item1": 4930,
+        "Item2": -3673
+      },
+      {
+        "Item1": 4931,
+        "Item2": -3683
+      },
+      {
+        "Item1": 4928,
+        "Item2": -3693
+      },
+      {
+        "Item1": 4927,
+        "Item2": -3703
+      },
+      {
+        "Item1": 4927,
+        "Item2": -3713
+      },
+      {
+        "Item1": 4922,
+        "Item2": -3722
+      },
+      {
+        "Item1": 4921,
+        "Item2": -3724
+      }
+    ]
+  },
+  {
+    "sites": [
+      "Forest's Edge",
+      "Stonefield Farm"
+    ],
+    "points": [
+      {
+        "Item1": 4921,
+        "Item2": -3724
+      },
+      {
+        "Item1": 4923,
+        "Item2": -3714
+      },
+      {
+        "Item1": 4927,
+        "Item2": -3704
+      },
+      {
+        "Item1": 4929,
+        "Item2": -3694
+      },
+      {
+        "Item1": 4928,
+        "Item2": -3684
+      },
+      {
+        "Item1": 4928,
+        "Item2": -3674
+      },
+      {
+        "Item1": 4930,
+        "Item2": -3664
+      },
+      {
+        "Item1": 4935,
+        "Item2": -3656
+      },
+      {
+        "Item1": 4945,
+        "Item2": -3655
+      },
+      {
+        "Item1": 4955,
+        "Item2": -3657
+      },
+      {
+        "Item1": 4965,
+        "Item2": -3658
+      },
+      {
+        "Item1": 4973,
+        "Item2": -3665
+      },
+      {
+        "Item1": 4976,
+        "Item2": -3674
+      },
+      {
+        "Item1": 4978,
+        "Item2": -3686
+      }
+    ]
+  },
+  {
+    "sites": [
+      "Forest's Edge",
+      "Mirror Lake Orchard"
+    ],
+    "points": [
+      {
+        "Item1": 4921,
+        "Item2": -3724
+      },
+      {
+        "Item1": 4924,
+        "Item2": -3714
+      },
+      {
+        "Item1": 4928,
+        "Item2": -3705
+      },
+      {
+        "Item1": 4929,
+        "Item2": -3695
+      },
+      {
+        "Item1": 4929,
+        "Item2": -3684
+      },
+      {
+        "Item1": 4929,
+        "Item2": -3674
+      },
+      {
+        "Item1": 4930,
+        "Item2": -3664
+      },
+      {
+        "Item1": 4929,
+        "Item2": -3654
+      },
+      {
+        "Item1": 4931,
+        "Item2": -3644
+      },
+      {
+        "Item1": 4935,
+        "Item2": -3635
+      },
+      {
+        "Item1": 4940,
+        "Item2": -3626
+      },
+      {
+        "Item1": 4948,
+        "Item2": -3620
+      },
+      {
+        "Item1": 4955,
+        "Item2": -3613
+      },
+      {
+        "Item1": 4959,
+        "Item2": -3610
+      }
+    ]
+  },
+  {
+    "sites": [
+      "Mirror Lake",
+      "Mirror Lake Orchard"
+    ],
+    "points": [
+      {
+        "Item1": 4959,
+        "Item2": -3610
+      },
+      {
+        "Item1": 4962,
+        "Item2": -3600
+      },
+      {
+        "Item1": 4966,
+        "Item2": -3591
+      },
+      {
+        "Item1": 4972,
+        "Item2": -3583
+      },
+      {
+        "Item1": 4975,
+        "Item2": -3573
+      },
+      {
+        "Item1": 4978,
+        "Item2": -3572
       }
     ]
   }

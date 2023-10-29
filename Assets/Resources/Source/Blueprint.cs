@@ -12,11 +12,11 @@ using static Root.Anchor;
 using static Item;
 using static Buff;
 using static Race;
+using static Zone;
 using static Spec;
 using static Sound;
 using static Event;
-using static Cursor;
-using static Person;
+using static SitePath;
 using static Faction;
 using static ItemSet;
 using static Ability;
@@ -25,6 +25,7 @@ using static Coloring;
 using static PersonType;
 using static GameSettings;
 using static Serialization;
+using static PermanentEnchant;
 using static SiteSpiritHealer;
 using static SiteHostileArea;
 using static SiteInstance;
@@ -774,7 +775,7 @@ public class Blueprint
                 (h) =>
                 {
                     var key = activeAbilities.ToList()[index + 7 * regionGroup.pagination];
-                    if (!currentSave.player.actionBars.Exists(x => x.ability == key.Key.name) && currentSave.player.actionBars.Count < currentSave.player.actionBarsUnlocked)
+                    if (!currentSave.player.actionBars.Exists(x => x.ability == key.Key.name) && currentSave.player.actionBars.Count < currentSave.player.ActionBarsAmount())
                     {
                         currentSave.player.actionBars.Add(new ActionBar(key.Key.name));
                         Respawn("PlayerSpellbookInfo");
@@ -882,7 +883,7 @@ public class Blueprint
                 AddLine("Level: " + currentSave.player.level, "Gray");
                 AddLine("Health: " + currentSave.player.health + "/" + currentSave.player.MaxHealth(), "Gray");
             });
-            for (int i = 0; i < currentSave.player.actionBarsUnlocked; i++)
+            for (int i = 0; i < currentSave.player.ActionBarsAmount(); i++)
             {
                 var index = i;
                 var abilityObj = currentSave.player.actionBars.Count <= index ? null : Ability.abilities.Find(x => x.name == currentSave.player.actionBars[index].ability);
@@ -2267,9 +2268,9 @@ public class Blueprint
                 Serialize(factions, "factions", false, false, prefix);
                 Serialize(personTypes, "persontypes", false, false, prefix);
                 Serialize(spiritHealers, "spirithealers", false, false, prefix);
-                Serialize(PermanentEnchant.pEnchants, "permanentenchants", false, false, prefix);
-                Serialize(Zone.zones, "zones", false, false, prefix);
-                Serialize(SitePath.paths, "paths", false, false, prefix);
+                Serialize(pEnchants, "permanentenchants", false, false, prefix);
+                Serialize(zones, "zones", false, false, prefix);
+                Serialize(paths, "paths", false, false, prefix);
             });
             AddPaddingRegion(() => { });
         }),
@@ -6792,13 +6793,13 @@ public class Blueprint
             loadingBar = new GameObject[2];
             loadingBar[0] = new GameObject("LoadingBarBegin", typeof(SpriteRenderer));
             loadingBar[0].GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Textures/LoadingBarEnd");
-            loadingBar[0].transform.position = new Vector3(-1181, 863);
+            loadingBar[0].transform.position = new Vector3(-1171, 853);
             loadingBar[1] = new GameObject("LoadingBar", typeof(SpriteRenderer));
             loadingBar[1].GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Textures/LoadingBarStretch");
-            loadingBar[1].transform.position = new Vector3(-1178, 863);
+            loadingBar[1].transform.position = new Vector3(-1168, 853);
             OrderLoadingMap();
-            foreach (var path in SitePath.paths)
-                SitePath.pathsDrawn.Add(path.DrawPath());
+            foreach (var path in paths)
+                pathsDrawn.Add(path.DrawPath());
             AddHotkey(W, () => { MoveCamera(new Vector3(0, EuelerGrowth())); }, false);
             AddHotkey(A, () => { MoveCamera(new Vector3(-EuelerGrowth(), 0)); }, false);
             AddHotkey(S, () => { MoveCamera(new Vector3(0, -EuelerGrowth())); }, false);

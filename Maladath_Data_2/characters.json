@@ -4,7 +4,6 @@
       "player": {
         "level": 60,
         "unspentTalentPoints": 8,
-        "actionBarsUnlocked": 7,
         "name": "Tine",
         "race": "Human",
         "spec": "Mage",
@@ -866,8 +865,8 @@
           }
         }
       },
-      "cameraX": 91,
-      "cameraY": -126,
+      "cameraX": 266,
+      "cameraY": -188,
       "siteProgress": {
         "Blackrock Stronghold": 2,
         "The Dead Acre": 1,
@@ -937,8 +936,11 @@
         "Bluefen": 1,
         "Southfury River": 1,
         "The Crystal Vale": 2,
-        "Orgrimmar": 1,
-        "Thorn Hill": 1
+        "Orgrimmar": 2,
+        "Thorn Hill": 3,
+        "Thunder Ridge": 1,
+        "Grom'gol Base Camp": 1,
+        "Northshire Abbey": 1
       },
       "buyback": [
         {
@@ -1040,16 +1042,15 @@
         }
       ],
       "startDate": "2023-10-18T07:52:13.0981561+02:00",
-      "lastLoaded": "2023-10-27T00:22:35.3026541+02:00",
-      "lastPlayed": "2023-10-27T00:23:35.7857526+02:00",
-      "timePlayed": "01:27:01.1897047",
+      "lastLoaded": "2023-10-28T22:34:00.1292685+02:00",
+      "lastPlayed": "2023-10-28T22:42:08.2144588+02:00",
+      "timePlayed": "01:36:50.5291486",
       "lastVisitedTalents": 1
     },
     {
       "player": {
         "level": 60,
         "unspentTalentPoints": 16,
-        "actionBarsUnlocked": 7,
         "name": "Fleta",
         "race": "Forsaken",
         "spec": "Warlock",
@@ -1952,7 +1953,6 @@
       "player": {
         "level": 60,
         "unspentTalentPoints": 4,
-        "actionBarsUnlocked": 7,
         "name": "Lutte",
         "race": "Tauren",
         "spec": "Shaman",
@@ -2800,7 +2800,6 @@
       "player": {
         "level": 60,
         "unspentTalentPoints": 20,
-        "actionBarsUnlocked": 7,
         "name": "Brudriak",
         "race": "Dwarf",
         "spec": "Rogue",
@@ -3655,7 +3654,6 @@
     {
       "player": {
         "level": 60,
-        "actionBarsUnlocked": 7,
         "name": "Az'math",
         "race": "Troll",
         "spec": "Warrior",
@@ -4536,7 +4534,6 @@
       "player": {
         "level": 60,
         "unspentTalentPoints": 20,
-        "actionBarsUnlocked": 7,
         "name": "Linda",
         "race": "Forsaken",
         "spec": "Priest",
@@ -5550,7 +5547,6 @@
       "player": {
         "level": 60,
         "unspentTalentPoints": 1,
-        "actionBarsUnlocked": 7,
         "name": "Brishua",
         "race": "Dwarf",
         "spec": "Paladin",
@@ -6441,7 +6437,6 @@
       "player": {
         "level": 60,
         "unspentTalentPoints": 7,
-        "actionBarsUnlocked": 7,
         "name": "Telania",
         "race": "Night Elf",
         "spec": "Druid",

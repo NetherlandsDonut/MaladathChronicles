@@ -83,7 +83,7 @@ public class Entity
 
     //Tells whether this entity will get experience from
     //killing an enemy that was at given level
-    public bool ActionBarsAmount()
+    public int ActionBarsAmount()
     {
         return level >= 30 ? 7 : (level >= 20 ? 6 : (level >= 10 ? 5 : 4));
     }

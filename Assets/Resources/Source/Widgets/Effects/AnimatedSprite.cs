@@ -18,7 +18,7 @@ public class AnimatedSprite : MonoBehaviour
         if (timer > 0) timer -= Time.deltaTime;
         if (timer <= 0)
         {
-            timer = 0.01f;
+            timer = 0.02f;
             render.sprite = sprites[index++];
             if (index == sprites.Length) index = 0;
         }

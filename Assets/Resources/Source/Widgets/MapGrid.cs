@@ -26,14 +26,22 @@ public class MapGrid : MonoBehaviour
     //Holds reference to the black mask areas of the map of the ghost realm
     public GameObject foregroundDead;
 
+    public Vector2 lastCursorPosition;
+
     //On mouse down pan the camera to the pressed square on the map
     void OnMouseDown()
     {
         var temp = cursor.transform.position;
-        CDesktop.cameraDestination = new Vector2(temp.x - 333, temp.y + 183) / 19;
-        if (sitePathBuilder != null)
+        CDesktop.cameraDestination = new Vector2(temp.x, temp.y) / mapGridSize;
+        CDesktop.cameraDestination = new Vector2((int)CDesktop.cameraDestination.x, (int)CDesktop.cameraDestination.y);
+    }
+    
+    //On mouse down pan the camera to the pressed square on the map
+    void Update()
+    {
+        if (sitePathBuilder != null && Vector2.Distance(pathBuilder.Last(), cursor.transform.position - new Vector3(10, -10)) > 10)
         {
-            pathBuilder.Add(CDesktop.cameraDestination);
+            pathBuilder.Add(cursor.transform.position - new Vector3(10, -10));
             if (pathTest != null) Destroy(pathTest);
             pathTest = new SitePath()
             {
@@ -42,6 +50,18 @@ public class MapGrid : MonoBehaviour
             }.DrawPath();
         }
     }
+
+    //public void Update()
+    //{
+    //    var temp = cursor.transform.position;
+    //    var newPos = new Vector2(temp.x, temp.y) / 19;
+    //    newPos = new Vector2((int)newPos.x, (int)newPos.y);
+    //    if (newPos != lastCursorPosition)
+    //    {
+    //        lastCursorPosition = newPos;
+    //        SpawnFallingText(temp, "(" + lastCursorPosition.x + ", " + lastCursorPosition.y + ")");
+    //    }
+    //}
 
     //Switches map textures between ghost realm and normal world map
     public void SwitchMapTexture(bool deadOn)
@@ -57,20 +77,18 @@ public class MapGrid : MonoBehaviour
     }
 
     public static int mapGridSize = 19;
-    public static Vector2 mapCenteringOffset = new(-17, 9);
 
     //Bounds camera to be in a specified proximity of any sites in reach
     //Whenever camera is close enough to detect sites it will be dragged to their proximity
     public static void EnforceBoundary(int detectionRange = 700, int maxDistance = 7, int maxDistanceWhileMoving = 200, float harshness = 0.0001f)
     {
-        var cameraDestinationScaled = CDesktop.cameraDestination * 19 + new Vector2(333, -180);
+        var cameraDestinationScaled = CDesktop.cameraDestination * mapGridSize;
         var nearbySites = cameraBoundaryPoints.Select(x => (x, Vector2.Distance(new Vector2(x.x, x.y), cameraDestinationScaled))).ToList().FindAll(x => x.Item2 < detectionRange).OrderBy(x => x.Item2).ToList();
         if (nearbySites.Count > 0)
         {
-            //for (int i = 0; i < 100 && Vector2.Distance(new Vector2(nearbySites[0].x.x, nearbySites[0].x.y), cameraDestinationScaled) > (Input.GetKey(W) || Input.GetKey(A) || Input.GetKey(S) || Input.GetKey(D) ? maxDistanceWhileMoving : maxDistance); i++)
             while (Vector2.Distance(new Vector2(nearbySites[0].x.x, nearbySites[0].x.y), cameraDestinationScaled) > (!GameSettings.settings.snapCamera.Value() || Input.GetKey(W) || Input.GetKey(A) || Input.GetKey(S) || Input.GetKey(D) ? maxDistanceWhileMoving : maxDistance))
                 cameraDestinationScaled = Vector3.Lerp(cameraDestinationScaled, nearbySites[0].x, harshness);
-            CDesktop.cameraDestination = (cameraDestinationScaled - new Vector2(333, -180)) / 19;
+            CDesktop.cameraDestination = cameraDestinationScaled / mapGridSize;
         }
     }
 }

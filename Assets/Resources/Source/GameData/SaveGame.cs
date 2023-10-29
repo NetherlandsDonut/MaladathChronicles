@@ -21,6 +21,9 @@ public class SaveGame
     //Minute in-game
     public int minute;
 
+    //Site at which player currently resides
+    public string currentSite;
+
     //Position of the camera saved when logging out
     public int cameraX, cameraY;
 
@@ -80,13 +83,13 @@ public class SaveGame
     //logging screen which will depend on the place of the logout
     public string LoginBackground()
     {
-        var area = areas.Find(x => x.x == cameraX + 17 && x.y == cameraY - 9);
+        var area = areas.Find(x => x.x == cameraX && x.y == cameraY);
         if (area != null) return area.Background();
-        var town = towns.Find(x => x.x == cameraX + 17 && x.y == cameraY - 9);
+        var town = towns.Find(x => x.x == cameraX && x.y == cameraY);
         if (town != null) return town.Background();
-        var instance = instances.Find(x => x.x == cameraX + 17 && x.y == cameraY - 9);
+        var instance = instances.Find(x => x.x == cameraX && x.y == cameraY);
         if (instance != null) return instance.Background();
-        var complex = complexes.Find(x => x.x == cameraX + 17 && x.y == cameraY - 9);
+        var complex = complexes.Find(x => x.x == cameraX && x.y == cameraY);
         if (complex != null) return complex.Background();
         return "";
     }
@@ -124,14 +127,15 @@ public class SaveGame
             )
         };
         var startingSite = Race.races.Find(x => x.name == creationRace).startingSite;
-        var temp1 = SiteHostileArea.areas.Find(x => x.name == startingSite);
-        if (temp1 != null) (newSlot.cameraX, newSlot.cameraY) = (temp1.x - 17, temp1.y + 9);
-        var temp2 = SiteTown.towns.Find(x => x.name == startingSite);
-        if (temp2 != null) (newSlot.cameraX, newSlot.cameraY) = (temp2.x - 17, temp2.y + 9);
-        var temp3 = SiteComplex.complexes.Find(x => x.name == startingSite);
-        if (temp3 != null) (newSlot.cameraX, newSlot.cameraY) = (temp3.x - 17, temp3.y + 9);
-        var temp4 = SiteInstance.instances.Find(x => x.name == startingSite);
-        if (temp4 != null) (newSlot.cameraX, newSlot.cameraY) = (temp4.x - 17, temp4.y + 9);
+        var temp1 = areas.Find(x => x.name == startingSite);
+        if (temp1 != null) (newSlot.cameraX, newSlot.cameraY) = (temp1.x, temp1.y);
+        var temp2 = towns.Find(x => x.name == startingSite);
+        if (temp2 != null) (newSlot.cameraX, newSlot.cameraY) = (temp2.x, temp2.y);
+        var temp3 = complexes.Find(x => x.name == startingSite);
+        if (temp3 != null) (newSlot.cameraX, newSlot.cameraY) = (temp3.x, temp3.y);
+        var temp4 = instances.Find(x => x.name == startingSite);
+        if (temp4 != null) (newSlot.cameraX, newSlot.cameraY) = (temp4.x, temp4.y);
+        newSlot.currentSite = startingSite;
         newSlot.siteVisits = new() { { startingSite, 1 } };
         saves[settings.selectedRealm].Add(newSlot);
         settings.selectedCharacter = newSlot.player.name;

@@ -1202,6 +1202,7 @@ MonoBehaviour:
   textureDead: {fileID: 456935889}
   foreground: {fileID: 905896018}
   foregroundDead: {fileID: 1054705958}
+  lastCursorPosition: {x: 0, y: 0}
 --- !u!61 &1782962386
 BoxCollider2D:
   m_ObjectHideFlags: 0

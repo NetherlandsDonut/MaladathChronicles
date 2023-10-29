@@ -4,9 +4,11 @@ using System.Collections.Generic;
 
 using UnityEngine;
 
+using static Site;
 using static Root;
 using static Sound;
 using static Cursor;
+using static MapGrid;
 using static SaveGame;
 using static SitePath;
 using static InputLine;
@@ -103,7 +105,7 @@ public class Desktop : MonoBehaviour
         {
             PlaySound("DesktopMagicClick");
             for (int i = 0; i < pathsDrawn.Count; i++)
-                Destroy(pathsDrawn[0]);
+                Destroy(pathsDrawn[i]);
             pathsDrawn = new();
             Starter.LoadData();
             if (Board.board != null)
@@ -139,22 +141,22 @@ public class Desktop : MonoBehaviour
         }
         fallingSoundsPlayedThisFrame = 0;
         if (loadSites != null && loadSites.Count > 0)
-            for (int i = 0; i < 6; i++)
+            for (int i = 0; i < 10; i++)
             {
                 var site = loadSites[0];
                 loadingScreenObjectLoad++;
                 var spawn = SpawnWindowBlueprint(site);
                 if (spawn != null && !cameraBoundaryPoints.Contains(spawn.transform.position))
-                    cameraBoundaryPoints.Add(spawn.transform.position + new Vector3(10, -10));
+                    cameraBoundaryPoints.Add(spawn.transform.position);
                 loadSites.RemoveAt(0);
                 loadingBar[1].transform.localScale = new Vector3((int)(357.0 / loadingScreenObjectLoadAim * loadingScreenObjectLoad), 1, 1);
                 if (loadSites.Count == 0)
                 {
                     RemoveDesktopBackground();
                     var rounded = new Vector2((float)Math.Round(cameraDestination.x), (float)Math.Round(cameraDestination.y));
-                    var newPosition = rounded * 19;
+                    var newPosition = rounded * mapGridSize;
                     cursor.transform.position += (Vector3)newPosition - screen.transform.position;
-                    screen.transform.position = newPosition + new Vector2(333, -180);
+                    screen.transform.localPosition = newPosition;
                     SpawnWindowBlueprint("MapToolbarLeft");
                     SpawnWindowBlueprint("MapToolbar");
                     SpawnWindowBlueprint("MapToolbarRight");
@@ -189,16 +191,21 @@ public class Desktop : MonoBehaviour
             }
             else if (title == "Map")
             {
-                var temp = screen.transform.position;
-                if ((float)Math.Round(temp.y / 19) != cameraDestination.y || (float)Math.Round(temp.x / 19) != cameraDestination.x)
+                var temp = screen.transform.localPosition;
+                if (screenLocked || temp.x != cameraDestination.x || temp.y != cameraDestination.y)
                 {
-                    MapGrid.EnforceBoundary();
+                    EnforceBoundary();
                     var rounded = new Vector2((float)Math.Round(cameraDestination.x), (float)Math.Round(cameraDestination.y));
-                    var newPosition = Vector3.Lerp(temp, rounded * 19 + new Vector2(333, -180), Time.deltaTime * 4);
+                    var newPosition = Vector3.Lerp(temp, rounded * mapGridSize, Time.deltaTime * 5);
                     cursor.transform.position += newPosition - temp;
-                    screen.transform.position = newPosition;
-                    if (screenLocked && Vector3.Distance(screen.transform.position, (cameraDestination + new Vector2(17, -9)) * 19 + new Vector2(10, -10)) <= 10)
+                    screen.transform.localPosition = newPosition;
+                    if (screenLocked && Vector3.Distance(screen.transform.localPosition, cameraDestination * mapGridSize) <= 5)
                     {
+                        if (currentSave.siteVisits == null) currentSave.siteVisits = new();
+                        if (currentSave.siteVisits.ContainsKey(currentSave.currentSite))
+                            currentSave.siteVisits[currentSave.currentSite]++;
+                        else currentSave.siteVisits.Add(currentSave.currentSite, 1);
+                        Respawn("Site: " + currentSave.currentSite);
                         UnlockScreen();
                         if (queuedSiteOpen == "Instance")
                         {

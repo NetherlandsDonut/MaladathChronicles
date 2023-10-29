@@ -254,6 +254,8 @@ public class SiteHostileArea : Site
                             AddSmallButton("OtherUnknown", (h) => { });
                     });
             });
+            if (currentSave.currentSite == name)
+                AddSmallButtonOverlay("YellowGlow");
         });
     }
 

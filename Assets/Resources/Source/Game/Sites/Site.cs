@@ -57,15 +57,18 @@ public class Site
     //After reaching the site the screen will change accordingly to the site type
     public void QueueSiteOpen(string siteType)
     {
-        if (currentSave.siteVisits == null) currentSave.siteVisits = new();
-        if (currentSave.siteVisits.ContainsKey(name)) currentSave.siteVisits[name]++;
-        else currentSave.siteVisits.Add(name, 1);
+        if (currentSave.currentSite != name)
+        {
+            var refreshWindow = CDesktop.windows.Find(x => x.title == "Site: " + currentSave.currentSite);
+            if (refreshWindow != null) refreshWindow.Respawn();
+            currentSave.currentSite = name;
+        }
         if (siteType == "Instance") instance = (SiteInstance)this;
         else if (siteType == "HostileArea") area = (SiteHostileArea)this;
         else if (siteType == "Town") town = (SiteTown)this;
         else if (siteType == "Complex") complex = (SiteComplex)this;
         else if (siteType == "SpiritHealer") spiritHealer = (SiteSpiritHealer)this;
-        CDesktop.cameraDestination = new Vector2(x, y) + mapCenteringOffset;
+        CDesktop.cameraDestination = new Vector2(x, y);
         CDesktop.queuedSiteOpen = siteType;
         CDesktop.LockScreen();
     }
@@ -83,13 +86,21 @@ public class Site
         pathTest = null;
         if (sitePathBuilder == null)
         {
-            pathBuilder = new() { new Vector2(x, y) + mapCenteringOffset };
+            pathBuilder = new() { new Vector2(x * 19, y * 19) };
             sitePathBuilder = this;
         }
-        else if (sitePathBuilder == this) sitePathBuilder = null;
+        else if (sitePathBuilder == this)
+        {
+            sitePathBuilder = null;
+            var pathsFound = pathsDrawn.FindAll(x => x.name.Contains("\"" + name + "\""));
+            pathsDrawn.RemoveAll(x => pathsFound.Contains(x));
+            for (int i = 0; i < pathsFound.Count; i++)
+                UnityEngine.Object.Destroy(pathsFound[i]);
+            paths.RemoveAll(x => x.sites.Any(y => pathsFound.Exists(z => z.name.Contains("\"" + y + "\""))));
+        }
         else
         {
-            pathBuilder.Add(new Vector2(x, y) + mapCenteringOffset);
+            pathBuilder.Add(new Vector2(x * 19, y * 19));
             paths.Add(new SitePath()
             {
                 sites = new() { sitePathBuilder.name, name },
@@ -100,6 +111,7 @@ public class Site
         }
     }
 
+    //Site selected as the beginning of the path building
     public static Site sitePathBuilder;
 
     //List of points set during construction of a path between sites

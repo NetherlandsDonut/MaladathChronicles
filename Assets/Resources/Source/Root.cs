@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 using UnityEngine;
 
+using static MapGrid;
 using static Blueprint;
 
 using static Root.Anchor;
@@ -127,6 +128,10 @@ public static class Root
         desktops.Add(newDesktop);
         newDesktop.screen = new GameObject("Camera", typeof(Camera), typeof(SpriteRenderer)).GetComponent<Camera>();
         newDesktop.screen.transform.parent = newDesktop.transform;
+        var screenOffsetter = new GameObject("CameraOffset");
+        screenOffsetter.transform.parent = newDesktop.transform;
+        screenOffsetter.transform.localPosition = new Vector2(10, -10);
+        newDesktop.screen.transform.parent = screenOffsetter.transform;
         newDesktop.GetComponent<SpriteRenderer>().sortingLayerName = "DesktopBackground";
         newDesktop.screen.GetComponent<SpriteRenderer>().sortingLayerName = "DesktopBackground";
         newDesktop.screen.orthographicSize = 180;
@@ -170,11 +175,11 @@ public static class Root
         }
         if (CDesktop.cameraDestination != Vector2.zero)
         {
-            var temp = CDesktop.screen.transform.position;
+            var temp = CDesktop.screen.transform.localPosition;
             var rounded = new Vector2((float)Math.Round(CDesktop.cameraDestination.x), (float)Math.Round(CDesktop.cameraDestination.y));
-            var newPosition = rounded * 19 + new Vector2(333, -180);
+            var newPosition = rounded * mapGridSize;
             Cursor.cursor.transform.position += (Vector3)newPosition - temp;
-            CDesktop.screen.transform.position = newPosition;
+            CDesktop.screen.transform.localPosition = newPosition;
         }
     }
 
@@ -507,6 +512,7 @@ public static class Root
         newObject.transform.parent = onWhat.transform;
         newObject.transform.localPosition = Vector3.zero;
         if (overlay == "Cooldown") newObject.AddComponent<AnimatedSprite>().Initiate("Sprites/Building/Shadows/Cooldown");
+        else if (overlay == "YellowGlow") newObject.AddComponent<AnimatedSprite>().Initiate("Sprites/Building/Shadows/YellowGlow");
         else newObject.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/Buttons/" + overlay);
         newObject.GetComponent<SpriteRenderer>().sortingOrder = sortingOrder;
         newObject.GetComponent<SpriteRenderer>().sortingLayerName = CDesktop.LBWindow.layer;

@@ -6,6 +6,7 @@ using static Root;
 using static Root.Anchor;
 
 using static Sound;
+using static MapGrid;
 using static Faction;
 using static Coloring;
 using static SaveGame;
@@ -122,7 +123,7 @@ public class SiteInstance : Site
     //Function to print the site onto the map
     public override void PrintSite()
     {
-        SetAnchor(x * 19, y * 19);
+        SetAnchor(x * mapGridSize, y * mapGridSize);
         AddRegionGroup();
         AddPaddingRegion(() =>
         {
