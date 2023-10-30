@@ -21,12 +21,13 @@ public static class Root
     public static int adeptTreeRequirement = 10;
     public static int aiDepth = 5;
     public static int aiManualBranches = 1;
+    public static int maxPathLength = 500;
+    public static bool useUnityData = true;
+    public static bool showSitesUnconditional;
     public static float frameTime = 0.08f;
     public static string markerCharacter = "_";
     public static string textWrapEnding = "...";
     public static string prefix = "";
-    public static bool useUnityData = true;
-    public static bool showSitesUnconditional;
 
     public static MapGrid grid;
     public static List<Vector2> cameraBoundaryPoints;

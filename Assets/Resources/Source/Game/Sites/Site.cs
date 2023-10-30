@@ -131,8 +131,10 @@ public class Site
     public void LeadPath()
     {
         siteTravelPlan = this;
-        var findPath = paths.Find(x => x.sites.Contains(siteTravelPlan.name) && x.sites.Contains(currentSave.currentSite));
-        if (findPath != null) pathsDrawn.Add(findPath.DrawPath());
+        var pathing = FindShortestPath(FindSite(x => x.name == currentSave.currentSite), this);
+        if (pathing.Count > 0)
+            foreach (var path in pathing)
+                pathsDrawn.Add(path.DrawPath());
         else siteTravelPlan = null;
     }
 

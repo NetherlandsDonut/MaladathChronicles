@@ -74,4 +74,20 @@ public class SitePath
 
     //EXTERNAL FILE: List containing all paths in-game
     public static List<SitePath> paths;
+
+    //Finds the shortest path between the two given sites
+    public static List<SitePath> FindShortestPath(Site from, Site to)
+    {
+        List<SitePath> bestPath = null;
+        int currentMin = maxPathLength;
+        FindPath(new() { from });
+        return possiblePaths.Find(x => x.points.Count == x.Min(y => y.points.Count));
+
+        void FindPath(List<SitePath> pathing)
+        {
+            if (pathing.Any(x => pathing.Count(y => y == x) != 1) || pathing.Sum(x => x.points.Count) > currentMin) return;
+            else if (pathing.Last() == to) (bestPath, currentMin) = (pathing, pathing.points.Count);
+            else paths.FindAll(x => x.sites.Contains(pathing.Last().name)).ForEach(x => FindPath(pathing.Concat(new() { x.sites.Find(z => z != pathing.Last().name) })));
+        }
+    }
 }
