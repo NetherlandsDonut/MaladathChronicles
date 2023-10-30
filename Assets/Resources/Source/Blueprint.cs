@@ -6821,10 +6821,8 @@ public class Blueprint
             AddHotkey(Delete, () =>
             {
                 if (Input.GetKey(LeftShift))
-                {
                     foreach (var path in paths)
                         pathsDrawn.Add(path.DrawPath());
-                }
                 else
                 {
                     for (int i = 0; i < pathsDrawn.Count; i++)

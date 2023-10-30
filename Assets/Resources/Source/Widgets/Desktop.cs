@@ -196,6 +196,15 @@ public class Desktop : MonoBehaviour
                 var temp = screen.transform.localPosition;
                 if (queuedPath.Count > 0)
                 {
+                    if (Input.GetKeyDown(KeyCode.Escape))
+                    {
+                        queuedPath.FindAll(x => x.parent != queuedPath[0].parent).ForEach(x => Destroy(x.gameObject));
+                        queuedPath.RemoveAll(x => x.parent != queuedPath[0].parent);
+                        var siteA = FindSite(x => queuedPath[0].parent.name.Contains("\"" + x.name + "\""));
+                        var siteB = FindSite(x => siteA != x && queuedPath[0].parent.name.Contains("\"" + x.name + "\""));
+                        if (Vector2.Distance(new Vector2(siteA.x, siteA.y) * 19, queuedPath.Last().transform.position) < Vector2.Distance(new Vector2(siteB.x, siteB.y) * 19, queuedPath.Last().transform.position))
+                            queuedSiteOpen = siteA.name;
+                    }
                     if (Vector2.Distance(temp, cameraDestination) > 5)
                     {
                         var newPosition = Vector3.Lerp(temp, cameraDestination, Time.deltaTime * 5);
@@ -205,7 +214,7 @@ public class Desktop : MonoBehaviour
                     else
                     {
                         Destroy(queuedPath.First(x => x.name == "PathDot").gameObject);
-                        queuedPath.RemoveRange(0, 3);
+                        queuedPath.RemoveAt(0);
                         if (queuedPath.Count == 0)
                         {
                             UnlockScreen();

@@ -78,11 +78,15 @@ public class Site
     //After reaching the site the screen will change accordingly to the site type
     public void QueueSitePathTravel()
     {
-        CDesktop.queuedPath = pathsDrawn.SelectMany(x => x.GetComponentsInChildren<SpriteRenderer>()).Select(x => x.transform).ToList();
-        if (CDesktop.queuedPath.Count == 0) return;
-        if (CDesktop.queuedPath.Count > 1)
-            if (Vector2.Distance(CDesktop.queuedPath[0].transform.position, new Vector2(x * mapGridSize, y * mapGridSize)) < Vector2.Distance(CDesktop.queuedPath.Last().transform.position, new Vector2(x * 19, y * 19)))
-                CDesktop.queuedPath.Reverse();
+        CDesktop.queuedPath = new();
+        foreach (var path in pathsDrawn)
+        {
+            var queue = path.GetComponentsInChildren<Transform>().ToList().FindAll(x => x.name == "PathDot");
+            if (queue.Count > 1)
+                if (Vector2.Distance(queue[0].transform.position, new Vector2(x * mapGridSize, y * mapGridSize)) < Vector2.Distance(queue.Last().transform.position, new Vector2(x * 19, y * 19)))
+                    queue.Reverse();
+            CDesktop.queuedPath.AddRange(queue);
+        }
         var current = currentSave.currentSite;
         currentSave.currentSite = "";
         Respawn("Site: " + current);
@@ -132,7 +136,7 @@ public class Site
     {
         siteTravelPlan = this;
         var pathing = FindShortestPath(FindSite(x => x.name == currentSave.currentSite), this);
-        if (pathing.Count > 0)
+        if (pathing != null)
             foreach (var path in pathing)
                 pathsDrawn.Add(path.DrawPath());
         else siteTravelPlan = null;

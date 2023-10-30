@@ -21,7 +21,7 @@ public static class Root
     public static int adeptTreeRequirement = 10;
     public static int aiDepth = 5;
     public static int aiManualBranches = 1;
-    public static int maxPathLength = 500;
+    public static int maxPathLength = 100;
     public static bool useUnityData = true;
     public static bool showSitesUnconditional;
     public static float frameTime = 0.08f;

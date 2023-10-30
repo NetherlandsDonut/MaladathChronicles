@@ -78,16 +78,25 @@ public class SitePath
     //Finds the shortest path between the two given sites
     public static List<SitePath> FindShortestPath(Site from, Site to)
     {
+        var timeA = System.DateTime.Now;
         List<SitePath> bestPath = null;
         int currentMin = maxPathLength;
-        FindPath(new() { from });
-        return possiblePaths.Find(x => x.points.Count == x.Min(y => y.points.Count));
+        var startingPoints = paths.FindAll(x => x.sites.Contains(from.name));
+        var scan = new List<List<SitePath>>();
+        foreach (var direction in startingPoints)
+            FindPath(new() { direction });
+        while (scan.Count > 0) FindPath(scan[0]);
+        Debug.Log((System.DateTime.Now - timeA).Milliseconds);
+        Debug.Log(bestPath.Sum(x => x.points.Count) + " LENGTH");
+        return bestPath;
 
         void FindPath(List<SitePath> pathing)
         {
-            if (pathing.Any(x => pathing.Count(y => y == x) != 1) || pathing.Sum(x => x.points.Count) > currentMin) return;
-            else if (pathing.Last() == to) (bestPath, currentMin) = (pathing, pathing.points.Count);
-            else paths.FindAll(x => x.sites.Contains(pathing.Last().name)).ForEach(x => FindPath(pathing.Concat(new() { x.sites.Find(z => z != pathing.Last().name) })));
+            scan.Remove(pathing);
+            var sum = pathing.Sum(x => x.points.Count);
+            if (sum > currentMin) return;
+            else if (pathing.Last().sites.Contains(to.name)) (bestPath, currentMin) = (pathing, sum);
+            else paths.FindAll(x => pathing.Last().sites.Any(y => x.sites.Contains(y)) && !pathing.Contains(x)).ForEach(x => scan.Add(pathing.Concat(new List<SitePath>() { x }).ToList()));
         }
     }
 }

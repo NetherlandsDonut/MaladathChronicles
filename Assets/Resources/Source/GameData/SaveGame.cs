@@ -83,15 +83,8 @@ public class SaveGame
     //logging screen which will depend on the place of the logout
     public string LoginBackground()
     {
-        var area = areas.Find(x => x.x == cameraX && x.y == cameraY);
-        if (area != null) return area.Background();
-        var town = towns.Find(x => x.x == cameraX && x.y == cameraY);
-        if (town != null) return town.Background();
-        var instance = instances.Find(x => x.x == cameraX && x.y == cameraY);
-        if (instance != null) return instance.Background();
-        var complex = complexes.Find(x => x.x == cameraX && x.y == cameraY);
-        if (complex != null) return complex.Background();
-        return "";
+        var find = Site.FindSite(x => x.name == currentSite);
+        return find != null ? find.Background() : "Sky";
     }
 
     //Revives the player

@@ -3562,7 +3562,7 @@
         "levelMax": 62
       }
     ],
-    "x": 300,
+    "x": 301,
     "y": -215,
     "name": "The Dark Portal",
     "zone": "Blasted Lands",
@@ -17857,7 +17857,7 @@
         "levelMin": 15
       }
     ],
-    "x": 250,
+    "x": 251,
     "y": -195,
     "name": "Jangolode Mine",
     "zone": "Westfall",

@@ -865,9 +865,9 @@
           }
         }
       },
-      "currentSite": "Fargodeep Mine",
-      "cameraX": 5130,
-      "cameraY": -3173,
+      "currentSite": "Jansen Stead",
+      "cameraX": 4921,
+      "cameraY": -3629,
       "siteProgress": {
         "Blackrock Stronghold": 2,
         "The Dead Acre": 1,
@@ -949,7 +949,8 @@
         "Stormwind City": 0,
         "Mirror Lake": 0,
         "Mirror Lake Orchard": 0,
-        "Fargodeep Mine": 0
+        "Fargodeep Mine": 0,
+        "Jansen Stead": 0
       },
       "buyback": [
         {
@@ -1051,9 +1052,9 @@
         }
       ],
       "startDate": "2023-10-18T07:52:13.0981561+02:00",
-      "lastLoaded": "2023-10-29T18:05:46.9480545+01:00",
-      "lastPlayed": "2023-10-29T18:08:49.2924304+01:00",
-      "timePlayed": "01:39:52.8735245",
+      "lastLoaded": "2023-10-30T18:24:35.995162+01:00",
+      "lastPlayed": "2023-10-30T18:25:27.1957147+01:00",
+      "timePlayed": "01:40:44.0740772",
       "lastVisitedTalents": 1
     },
     {
@@ -8087,8 +8088,8 @@
         }
       },
       "currentSite": "Shadow Grave",
-      "cameraX": 4788,
-      "cameraY": -1330,
+      "cameraX": 5700,
+      "cameraY": -4009,
       "siteProgress": {},
       "commonsKilled": {},
       "raresKilled": {},
@@ -8097,9 +8098,9 @@
         "Shadow Grave": 5
       },
       "startDate": "2023-10-29T18:14:43.8707855+01:00",
-      "lastLoaded": "2023-10-29T18:16:23.4946682+01:00",
-      "lastPlayed": "2023-10-29T18:17:12.0147102+01:00",
-      "timePlayed": "00:02:25.8646588"
+      "lastLoaded": "2023-10-30T18:22:56.5778109+01:00",
+      "lastPlayed": "2023-10-30T18:22:58.916252+01:00",
+      "timePlayed": "00:16:24.2463849"
     }
   ],
   "Gehennas": [],
