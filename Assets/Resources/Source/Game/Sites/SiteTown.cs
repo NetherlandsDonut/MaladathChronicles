@@ -153,6 +153,7 @@ public class SiteTown : Site
             },
             (h) => () =>
             {
+                if (!currentSave.siteVisits.ContainsKey(name)) return;
                 SetAnchor(TopRight, h.window);
                 AddRegionGroup();
                 AddHeaderRegion(() =>

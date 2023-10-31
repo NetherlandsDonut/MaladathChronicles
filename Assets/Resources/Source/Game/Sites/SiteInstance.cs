@@ -138,6 +138,7 @@ public class SiteInstance : Site
             },
             (h) => () =>
             {
+                if (!currentSave.siteVisits.ContainsKey(name)) return;
                 SetAnchor(TopRight, h.window);
                 AddRegionGroup();
                 SetRegionGroupWidth(152);

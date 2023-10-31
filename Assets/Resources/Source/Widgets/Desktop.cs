@@ -204,8 +204,7 @@ public class Desktop : MonoBehaviour
                         queuedPath.RemoveAll(x => x.parent != queuedPath[0].parent);
                         var siteA = FindSite(x => queuedPath[0].parent.name.Contains("\"" + x.name + "\""));
                         var siteB = FindSite(x => siteA != x && queuedPath[0].parent.name.Contains("\"" + x.name + "\""));
-                        if (Vector2.Distance(new Vector2(siteA.x, siteA.y) * 19, queuedPath.Last().transform.position) < Vector2.Distance(new Vector2(siteB.x, siteB.y) * 19, queuedPath.Last().transform.position))
-                            queuedSiteOpen = siteA.name;
+                        queuedSiteOpen = Vector2.Distance(new Vector2(siteA.x, siteA.y) * 19, queuedPath.Last().transform.position) < Vector2.Distance(new Vector2(siteB.x, siteB.y) * 19, queuedPath.Last().transform.position) ? siteA.name : siteB.name;
                     }
                     if (Vector2.Distance(temp, cameraDestination) > 5)
                     {
@@ -223,7 +222,12 @@ public class Desktop : MonoBehaviour
                             currentSave.currentSite = queuedSiteOpen;
                             var find = FindSite(x => x.name == queuedSiteOpen);
                             if (!currentSave.siteVisits.ContainsKey(queuedSiteOpen))
+                            {
                                 currentSave.siteVisits.Add(queuedSiteOpen, 0);
+                                PlaySound("DesktopZoneDiscovered", 1f);
+                                currentSave.player.ReceiveExperience(1);
+                                Respawn("ExperienceBar");
+                            }
                             Respawn("Site: " + queuedSiteOpen);
                             foreach (var connection in paths.FindAll(x => x.sites.Contains(queuedSiteOpen)))
                                 Respawn("Site: " + connection.sites.Find(x => x != queuedSiteOpen));

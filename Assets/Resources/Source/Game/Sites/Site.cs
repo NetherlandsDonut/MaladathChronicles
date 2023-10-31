@@ -91,6 +91,7 @@ public class Site
                 CDesktop.queuedPath.AddRange(queue);
             }
         }
+        if (pathsDrawn.Count == 0) return;
         var current = currentSave.currentSite;
         currentSave.currentSite = "";
         Respawn("Site: " + current);

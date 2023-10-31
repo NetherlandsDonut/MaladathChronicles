@@ -1,6 +1,6 @@
 {
-  "selectedRealm": "Firemaw",
-  "selectedCharacter": "Tine",
+  "selectedRealm": "Gehennas",
+  "selectedCharacter": "Christine",
   "shadows": {
     "value": "True"
   },
@@ -8,7 +8,7 @@
     "value": "True"
   },
   "music": {
-    "value": "False"
+    "value": "True"
   },
   "soundEffects": {
     "value": "True"

@@ -136,6 +136,7 @@ public class SiteComplex : Site
             },
             (h) => () =>
             {
+                if (!currentSave.siteVisits.ContainsKey(name)) return;
                 SetAnchor(TopRight, h.window);
                 AddRegionGroup();
                 AddHeaderRegion(() => { AddLine(name, "Gray"); });

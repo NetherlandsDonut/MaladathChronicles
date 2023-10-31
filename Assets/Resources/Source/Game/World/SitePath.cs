@@ -4,6 +4,7 @@ using System.Linq;
 using System.Collections.Generic;
 
 using static Root;
+using static SaveGame;
 
 public class SitePath
 {
@@ -115,7 +116,7 @@ public class SitePath
             {
                 var alreadyVisitedSites = pathing.Item1.SelectMany(x => x.sites).ToList();
                 alreadyVisitedSites.Insert(0, from.name);
-                var connectedPaths = pathing.Item1.Last().PathsConnected(alreadyVisitedSites);
+                var connectedPaths = pathing.Item1.Last().PathsConnected(alreadyVisitedSites.Where(x => currentSave.siteVisits.ContainsKey(x)).ToList());
                 scan.AddRange(connectedPaths.Select(x => (pathing.Item1.Append(x).ToList(), pathing.Item2 + x.points.Count)));
             }
         }
