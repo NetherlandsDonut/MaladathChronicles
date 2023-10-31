@@ -17,7 +17,8 @@ public class SitePath
 
     public List<SitePath> PathsConnected(List<string> exclude)
     {
-        var here = sites[exclude.Contains(sites[0]) ? 1 : 0];
+        if (exclude.Count(x => x == sites[0]) > 1 && exclude.Count(x => x == sites[1]) > 1) return new();
+        var here = sites[exclude.Count(x => x == sites[0]) == 1 ? 0 : 1];
         return pathsConnectedToSite[here].Where(x => x != this).ToList();
 
     }
@@ -101,7 +102,7 @@ public class SitePath
         var scan = new List<(List<SitePath>, int)>();
         foreach (var direction in startingPoints)
             FindPath((new() { direction }, direction.points.Count), false);
-        while (scan.Count > 0) FindPath(scan[0]);
+        while (scan.Count > 0 && scan.Count < 20000) FindPath(scan[0]);
         Debug.Log((System.DateTime.Now - timeA).Milliseconds);
         return bestPath.Item1;
 
@@ -112,9 +113,10 @@ public class SitePath
             else if (pathing.Item1.Last().sites.Contains(to.name)) bestPath = pathing;
             else
             {
-                var newSite = pathing.Item1[^1].sites.Find(x => pathing.Item1.Count == 1 ? x != from.name : !pathing.Item1[^2].sites.Contains(x));
-                var connectedPaths = pathing.Item1.Last().PathsConnected(pathing.Item1.SelectMany(x => x.sites).Where(x => x != newSite).ToList());
-                scan.AddRange(connectedPaths.Select(x => (pathing.Item1.Concat(new List<SitePath>() { x }).ToList(), pathing.Item2 + x.points.Count)));
+                var alreadyVisitedSites = pathing.Item1.SelectMany(x => x.sites).ToList();
+                alreadyVisitedSites.Insert(0, from.name);
+                var connectedPaths = pathing.Item1.Last().PathsConnected(alreadyVisitedSites);
+                scan.AddRange(connectedPaths.Select(x => (pathing.Item1.Append(x).ToList(), pathing.Item2 + x.points.Count)));
             }
         }
     }

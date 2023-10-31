@@ -13,6 +13,7 @@ using static Item;
 using static Buff;
 using static Race;
 using static Zone;
+using static Site;
 using static Spec;
 using static Sound;
 using static Event;
@@ -6820,6 +6821,11 @@ public class Blueprint
             });
             AddHotkey(Delete, () =>
             {
+                if (sitePathBuilder != null)
+                {
+                        UnityEngine.Object.Destroy(pathTest);
+                    sitePathBuilder = null;
+                }
                 if (Input.GetKey(LeftShift))
                     foreach (var path in paths)
                         pathsDrawn.Add(path.DrawPath());

@@ -43,8 +43,11 @@ public class Highlightable : MonoBehaviour
             cursor.SetCursor(Write);
         else if (pressedState != "None") cursor.SetCursor(Click);
         render.color = defaultColor - new Color(0.1f, 0.1f, 0.1f, 0);
-        if (window.title.StartsWith("Site: ") && window.title != "Site: " + currentSave.currentSite)
-            rightPressEvent(null);
+        if (window.title.StartsWith("Site: "))
+        {
+            if (Input.GetKey(KeyCode.LeftAlt)) pathsConnectedToSite[window.title.Substring(window.title.IndexOf("Site: ") + 6)].ForEach(x => pathsDrawn.Add(x.DrawPath()));
+            else if (window.title != "Site: " + currentSave.currentSite) rightPressEvent(null);
+        }
     }
 
     public void OnMouseExit()

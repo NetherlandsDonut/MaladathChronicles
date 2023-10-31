@@ -114,23 +114,17 @@ public class Site
             pathBuilder = new() { new Vector2(x * 19, y * 19) };
             sitePathBuilder = this;
         }
-        else if (sitePathBuilder == this)
-        {
-            sitePathBuilder = null;
-            var pathsFound = pathsDrawn.FindAll(x => x.name.Contains("\"" + name + "\""));
-            pathsDrawn.RemoveAll(x => pathsFound.Contains(x));
-            for (int i = 0; i < pathsFound.Count; i++)
-                UnityEngine.Object.Destroy(pathsFound[i]);
-            paths.RemoveAll(x => x.sites.Any(y => pathsFound.Exists(z => z.name.Contains("\"" + y + "\""))));
-        }
+        else if (sitePathBuilder == this) sitePathBuilder = null;
         else
         {
             pathBuilder.Add(new Vector2(x * 19, y * 19));
+            paths.RemoveAll(x => x.sites.Contains(sitePathBuilder.name) && x.sites.Contains(name));
             paths.Add(new SitePath()
             {
                 sites = new() { sitePathBuilder.name, name },
                 points = pathBuilder.Select(x => ((int)x.x, (int)x.y)).ToList()
             });
+            paths.Last().Initialise();
             pathsDrawn.Add(paths.Last().DrawPath());
             sitePathBuilder = null;
         }

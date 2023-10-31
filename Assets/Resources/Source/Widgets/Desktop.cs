@@ -59,12 +59,14 @@ public class Desktop : MonoBehaviour
 
     public void LockScreen()
     {
+        cursor.SetCursor(CursorType.Await);
         screenLocked = true;
         screenlock.SetActive(true);
     }
 
     public void UnlockScreen()
     {
+        cursor.SetCursor(CursorType.Default);
         canUnlockScreen = false;
         screenLocked = false;
         screenlock.SetActive(false);
