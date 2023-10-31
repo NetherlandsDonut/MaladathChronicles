@@ -4,10 +4,24 @@ using System.Linq;
 using System.Collections.Generic;
 
 using static Root;
-using static MapGrid;
 
 public class SitePath
 {
+    //Initialisation method to fill automatic values
+    public void Initialise()
+    {
+        foreach (var site in sites)
+            if (pathsConnectedToSite.ContainsKey(site)) pathsConnectedToSite[site].Add(this);
+            else pathsConnectedToSite.Add(site, new() { this });
+    }
+
+    public List<SitePath> PathsConnected(List<string> exclude)
+    {
+        var here = sites[exclude.Contains(sites[0]) ? 1 : 0];
+        return pathsConnectedToSite[here].Where(x => x != this).ToList();
+
+    }
+
     //Sites connected with a path
     //This pathing will not work unless there are two
     //and only two sites in this list!
@@ -15,6 +29,9 @@ public class SitePath
 
     //List of all points in between the two sites
     public List<(int, int)> points;
+
+    //List of all points in between the two sites
+    public static Dictionary<string, List<SitePath>> pathsConnectedToSite = new();
 
     //List of all active paths in the world
     public static List<GameObject> pathsDrawn = new();
@@ -79,24 +96,26 @@ public class SitePath
     public static List<SitePath> FindShortestPath(Site from, Site to)
     {
         var timeA = System.DateTime.Now;
-        List<SitePath> bestPath = null;
-        int currentMin = maxPathLength;
+        (List<SitePath>, int) bestPath = (null, maxPathLength);
         var startingPoints = paths.FindAll(x => x.sites.Contains(from.name));
-        var scan = new List<List<SitePath>>();
+        var scan = new List<(List<SitePath>, int)>();
         foreach (var direction in startingPoints)
-            FindPath(new() { direction });
+            FindPath((new() { direction }, direction.points.Count), false);
         while (scan.Count > 0) FindPath(scan[0]);
         Debug.Log((System.DateTime.Now - timeA).Milliseconds);
-        Debug.Log(bestPath.Sum(x => x.points.Count) + " LENGTH");
-        return bestPath;
+        return bestPath.Item1;
 
-        void FindPath(List<SitePath> pathing)
+        void FindPath((List<SitePath>, int) pathing, bool removeFromScan = true)
         {
-            scan.Remove(pathing);
-            var sum = pathing.Sum(x => x.points.Count);
-            if (sum > currentMin) return;
-            else if (pathing.Last().sites.Contains(to.name)) (bestPath, currentMin) = (pathing, sum);
-            else paths.FindAll(x => pathing.Last().sites.Any(y => x.sites.Contains(y)) && !pathing.Contains(x)).ForEach(x => scan.Add(pathing.Concat(new List<SitePath>() { x }).ToList()));
+            if (removeFromScan) scan.RemoveAt(0);
+            if (pathing.Item2 >= bestPath.Item2) return;
+            else if (pathing.Item1.Last().sites.Contains(to.name)) bestPath = pathing;
+            else
+            {
+                var newSite = pathing.Item1[^1].sites.Find(x => pathing.Item1.Count == 1 ? x != from.name : !pathing.Item1[^2].sites.Contains(x));
+                var connectedPaths = pathing.Item1.Last().PathsConnected(pathing.Item1.SelectMany(x => x.sites).Where(x => x != newSite).ToList());
+                scan.AddRange(connectedPaths.Select(x => (pathing.Item1.Concat(new List<SitePath>() { x }).ToList(), pathing.Item2 + x.points.Count)));
+            }
         }
     }
 }

@@ -79,13 +79,17 @@ public class Site
     public void QueueSitePathTravel()
     {
         CDesktop.queuedPath = new();
+        var site = FindSite(x => x.name == currentSave.currentSite);
+        var newPoint = new Vector2(site.x, site.y) * 19;
         foreach (var path in pathsDrawn)
         {
             var queue = path.GetComponentsInChildren<Transform>().ToList().FindAll(x => x.name == "PathDot");
-            if (queue.Count > 1)
-                if (Vector2.Distance(queue[0].transform.position, new Vector2(x * mapGridSize, y * mapGridSize)) < Vector2.Distance(queue.Last().transform.position, new Vector2(x * 19, y * 19)))
-                    queue.Reverse();
-            CDesktop.queuedPath.AddRange(queue);
+            if (queue.Count > 0)
+            {
+                if (queue.Count > 1 && Vector2.Distance(queue[0].transform.position, newPoint) > Vector2.Distance(queue.Last().transform.position, newPoint)) queue.Reverse();
+                newPoint = queue.Last().position;
+                CDesktop.queuedPath.AddRange(queue);
+            }
         }
         var current = currentSave.currentSite;
         currentSave.currentSite = "";

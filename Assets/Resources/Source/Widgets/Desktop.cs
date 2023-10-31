@@ -207,7 +207,7 @@ public class Desktop : MonoBehaviour
                     }
                     if (Vector2.Distance(temp, cameraDestination) > 5)
                     {
-                        var newPosition = Vector3.Lerp(temp, cameraDestination, Time.deltaTime * 5);
+                        var newPosition = Vector3.Lerp(temp, cameraDestination, Time.deltaTime * 15);
                         cursor.transform.position += newPosition - temp;
                         screen.transform.localPosition = newPosition;
                     }
