@@ -6823,7 +6823,7 @@ public class Blueprint
             {
                 if (sitePathBuilder != null)
                 {
-                        UnityEngine.Object.Destroy(pathTest);
+                    UnityEngine.Object.Destroy(pathTest);
                     sitePathBuilder = null;
                 }
                 if (Input.GetKey(LeftShift))

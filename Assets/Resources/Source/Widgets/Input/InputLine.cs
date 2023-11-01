@@ -503,6 +503,18 @@ public class InputLine : MonoBehaviour
                     Respawn("Site: " + site.name);
                 }
             }
+            else if (foo.Value().StartsWith("delpaths"))
+            {
+                var site = Site.FindSite(x => x.name.ToLower() == foo.Value().Substring(9));
+                if (site != null)
+                {
+                    var list = SitePath.pathsConnectedToSite[site.name];
+                    SitePath.paths.RemoveAll(x => list.Contains(x));
+                    SitePath.pathsConnectedToSite = new();
+                    for (int i = 0; i < SitePath.paths.Count; i++)
+                        SitePath.paths[i].Initialise();
+                }
+            }
             foo.Set("");
         }
         else if (encounterLevels.ToList().Exists(x => x.Value.Item1 == foo))

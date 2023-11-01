@@ -1,5 +1,50 @@
 [
   {
+    "name": "Scarlet Mage",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "kind": "Common",
+    "portrait": "PortraitChicken",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Witherbark Zealot",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "kind": "Common",
+    "portrait": "PortraitChicken",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Witherbark Scalper",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "kind": "Common",
+    "portrait": "PortraitChicken",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Stone Fury",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "kind": "Rare",
+    "portrait": "PortraitParrot",
+    "vitality": 2.0,
+    "abilities": {}
+  },
+  {
+    "name": "Syndicate Footpad",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "kind": "Common",
+    "portrait": "PortraitChicken",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
     "name": "Gravis Slipknot",
     "category": "Humanoid",
     "subcategory": "Human",

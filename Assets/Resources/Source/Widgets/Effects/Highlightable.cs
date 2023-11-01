@@ -45,7 +45,12 @@ public class Highlightable : MonoBehaviour
         render.color = defaultColor - new Color(0.1f, 0.1f, 0.1f, 0);
         if (window.title.StartsWith("Site: "))
         {
-            if (Input.GetKey(KeyCode.LeftAlt)) pathsConnectedToSite[window.title.Substring(window.title.IndexOf("Site: ") + 6)].ForEach(x => pathsDrawn.Add(x.DrawPath()));
+            if (Input.GetKey(KeyCode.LeftAlt))
+            {
+                var site = window.title.Substring(window.title.IndexOf("Site: ") + 6);
+                if (pathsConnectedToSite.ContainsKey(site))
+                    pathsConnectedToSite[site].ForEach(x => pathsDrawn.Add(x.DrawPath()));
+            }
             else if (window.title != "Site: " + currentSave.currentSite) rightPressEvent(null);
         }
     }

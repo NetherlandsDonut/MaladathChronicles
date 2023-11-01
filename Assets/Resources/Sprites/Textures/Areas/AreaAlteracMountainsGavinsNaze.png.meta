@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 0511c72326e441349b0f36bcc98100e4
+guid: 26c4c5ae5858d654b92a0c313c97a4a4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5900615015626840923
-    second: AreaBurningSteppesDreadmaulRockd_0
+      213: 4370535169079959715
+    second: AreaAlteracMountainsGavinsNaze_0
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -98,7 +98,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: AreaBurningSteppesDreadmaulRockd_0
+      name: AreaAlteracMountainsGavinsNaze_0
       rect:
         serializedVersion: 2
         x: 0
@@ -112,8 +112,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b5b16ca081233e150800000000000000
-      internalID: 5900615015626840923
+      spriteID: 3a0ec57849247ac30800000000000000
+      internalID: 4370535169079959715
       vertices: []
       indices: 
       edges: []

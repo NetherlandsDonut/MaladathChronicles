@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 0511c72326e441349b0f36bcc98100e4
+guid: e9bc818abe04df04ebfefb2b96dbc460
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5900615015626840923
-    second: AreaBurningSteppesDreadmaulRockd_0
+      213: -2313528726136676459
+    second: AreaHinterlandsZunwatha_0
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -98,7 +98,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: AreaBurningSteppesDreadmaulRockd_0
+      name: AreaHinterlandsZunwatha_0
       rect:
         serializedVersion: 2
         x: 0
@@ -112,8 +112,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b5b16ca081233e150800000000000000
-      internalID: 5900615015626840923
+      spriteID: 59f16f491e1b4efd0800000000000000
+      internalID: -2313528726136676459
       vertices: []
       indices: 
       edges: []
