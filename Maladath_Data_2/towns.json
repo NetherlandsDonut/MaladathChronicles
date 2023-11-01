@@ -1149,7 +1149,7 @@
       }
     ],
     "x": 301,
-    "y": -199,
+    "y": -200,
     "name": "Stonard",
     "zone": "Swamp of Sorrows",
     "faction": "Orgrimmar"
@@ -1434,7 +1434,7 @@
         "type": "Flight Master"
       }
     ],
-    "x": 263,
+    "x": 264,
     "y": -71,
     "name": "Undercity",
     "zone": "Tirisfal Glades",

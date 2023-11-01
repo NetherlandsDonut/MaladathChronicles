@@ -8106,9 +8106,9 @@
   "Gehennas": [
     {
       "player": {
-        "level": 60,
+        "level": 61,
         "unspentTalentPoints": 59,
-        "experience": 33,
+        "experience": 1,
         "name": "Christine",
         "race": "Human",
         "spec": "Mage",
@@ -8927,9 +8927,9 @@
           }
         }
       },
-      "currentSite": "Stormwind City",
-      "cameraX": 4845,
-      "cameraY": -3800,
+      "currentSite": "Stratholme",
+      "cameraX": 5757,
+      "cameraY": -912,
       "siteProgress": {},
       "commonsKilled": {},
       "raresKilled": {},
@@ -8968,12 +8968,41 @@
         "Grizzlepaw Ridge": 0,
         "The Maker's Terrace": 0,
         "Uldaman": 0,
-        "Eastvale Logging Camp": 0
+        "Eastvale Logging Camp": 0,
+        "Maraudon": 2,
+        "Valley of Spears": 0,
+        "Kodo Graveyard": 0,
+        "Ghost Walker Post": 1,
+        "Magram Village": 0,
+        "Shadowbreak Ravine": 0,
+        "Mannoroc Coven": 0,
+        "Gelkis Village": 0,
+        "Bolgan's Hole": 0,
+        "Sar'theris Strand": 0,
+        "Shadowprey Village": 1,
+        "Echo Isles": 2,
+        "Sen'jin Village": 0,
+        "Valley of Trials": 0,
+        "Tiragarde Keep": 0,
+        "Razor Hill": 0,
+        "Orgrimmar": 3,
+        "Undercity": 3,
+        "The Ruins of Lordaeron": 0,
+        "Balnir Farmstead": 0,
+        "The Bulwark": 0,
+        "Felstone Field": 0,
+        "Dalson's Tears": 0,
+        "Gahrron's Withering": 0,
+        "Thondroril River": 0,
+        "Terrorweb Tunnel": 0,
+        "Terrordale": 0,
+        "Plaguewood": 0,
+        "Stratholme": 0
       },
       "startDate": "2023-10-31T22:52:05.1863646+01:00",
-      "lastLoaded": "2023-10-31T23:21:00.5133162+01:00",
-      "lastPlayed": "2023-10-31T23:33:53.6901511+01:00",
-      "timePlayed": "00:28:33.8930576"
+      "lastLoaded": "2023-11-01T01:58:21.9863369+01:00",
+      "lastPlayed": "2023-11-01T01:58:40.5114196+01:00",
+      "timePlayed": "01:04:27.4853238"
     }
   ],
   "Whitemane": []

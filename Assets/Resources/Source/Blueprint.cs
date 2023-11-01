@@ -6801,10 +6801,10 @@ public class Blueprint
             loadingBar[1].GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Textures/LoadingBarStretch");
             loadingBar[1].transform.position = new Vector3(-1168, 853);
             OrderLoadingMap();
-            //AddHotkey(W, () => { MoveCamera(new Vector3(0, EuelerGrowth())); }, false);
-            //AddHotkey(A, () => { MoveCamera(new Vector3(-EuelerGrowth(), 0)); }, false);
-            //AddHotkey(S, () => { MoveCamera(new Vector3(0, -EuelerGrowth())); }, false);
-            //AddHotkey(D, () => { MoveCamera(new Vector3(EuelerGrowth(), 0)); }, false);
+            AddHotkey(W, () => { MoveCamera(new Vector2(0, EuelerGrowth())); }, false);
+            AddHotkey(A, () => { MoveCamera(new Vector2(-EuelerGrowth(), 0)); }, false);
+            AddHotkey(S, () => { MoveCamera(new Vector2(0, -EuelerGrowth())); }, false);
+            AddHotkey(D, () => { MoveCamera(new Vector2(EuelerGrowth(), 0)); }, false);
             AddHotkey(C, () =>
             {
                 SpawnDesktopBlueprint("CharacterSheet");
@@ -6843,11 +6843,11 @@ public class Blueprint
             });
             AddHotkey(L, () => { SpawnWindowBlueprint("ItemDrop"); });
 
-            void MoveCamera(Vector3 amount)
+            void MoveCamera(Vector2 amount)
             {
-                var temp = CDesktop.cameraDestination + new Vector2(amount.x, amount.y) / 5;
-                temp = new Vector2Int((int)temp.x / mapGridSize, (int)temp.y / mapGridSize);
-                CDesktop.cameraDestination = new Vector2(temp.x, temp.y) * mapGridSize;
+                var temp = CDesktop.cameraDestination + amount * 2;
+                //temp = new Vector2Int((int)temp.x, (int)temp.y) / mapGridSize;
+                CDesktop.cameraDestination = new Vector2(temp.x, temp.y);
             }
         }),
         new("HostileArea", () =>

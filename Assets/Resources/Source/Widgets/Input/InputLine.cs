@@ -475,6 +475,34 @@ public class InputLine : MonoBehaviour
                 showSitesUnconditional = false;
                 CDesktop.ReloadAssets();
             }
+            else if (foo.Value() == "exploreall")
+            {
+                foreach (var site in SiteHostileArea.areas)
+                    if (!SaveGame.currentSave.siteVisits.ContainsKey(site.name))
+                        SaveGame.currentSave.siteVisits.Add(site.name, 1);
+                foreach (var site in SiteTown.towns)
+                    if (!SaveGame.currentSave.siteVisits.ContainsKey(site.name))
+                        SaveGame.currentSave.siteVisits.Add(site.name, 1);
+                foreach (var site in SiteInstance.instances)
+                    if (!SaveGame.currentSave.siteVisits.ContainsKey(site.name))
+                        SaveGame.currentSave.siteVisits.Add(site.name, 1);
+                foreach (var site in SiteComplex.complexes)
+                    if (!SaveGame.currentSave.siteVisits.ContainsKey(site.name))
+                        SaveGame.currentSave.siteVisits.Add(site.name, 1);
+                CDesktop.ReloadAssets();
+            }
+            else if (foo.Value().StartsWith("tele"))
+            {
+                var site = Site.FindSite(x => x.name.ToLower() == foo.Value().Substring(5));
+                if (site != null)
+                {
+                    SaveGame.currentSave.currentSite = site.name;
+                    if (!SaveGame.currentSave.siteVisits.ContainsKey(site.name))
+                        SaveGame.currentSave.siteVisits.Add(site.name, 1);
+                    CDesktop.cameraDestination = new Vector2(site.x, site.y) * 19;
+                    Respawn("Site: " + site.name);
+                }
+            }
             foo.Set("");
         }
         else if (encounterLevels.ToList().Exists(x => x.Value.Item1 == foo))
