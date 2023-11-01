@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using System.Collections.Generic;
 
@@ -148,6 +149,41 @@ public class SiteComplex : Site
                         AddLine(site["SiteName"], "DarkGray");
                         AddSmallButton("Site" + site["SiteType"], (h) => { });
                     });
+                //var allRaces = new List<string>();
+                //foreach (var site in sites)
+                //{
+                //    if (site["SiteType"] == "Dungeon" || site["SiteType"] == "Raid")
+                //    {
+                //        SiteInstance find = instances.Find(x => x.name == site["SiteName"]);
+                //        var areas = find.wings.SelectMany(x => x.areas.Select(y => SiteHostileArea.areas.Find(z => z.name == y["AreaName"])));
+                //        var total = areas.SelectMany(x => x.commonEncounters ?? new()).Distinct().ToList();
+                //        total.AddRange(areas.SelectMany(x => x.eliteEncounters ?? new()).Distinct().ToList());
+                //        total.AddRange(areas.SelectMany(x => x.rareEncounters ?? new()).Distinct().ToList());
+                //        allRaces = allRaces.Concat(total.Select(x => Race.races.Find(y => y.name == x.who).portrait).Distinct()).ToList();
+                //    }
+                //    if (site["SiteType"] == "HostileArea")
+                //    {
+                //        SiteHostileArea area = areas.Find(x => x.name == site["SiteName"]);
+                //        var total = (area.commonEncounters ?? new()).Distinct().ToList();
+                //        total.AddRange((area.rareEncounters ?? new()).Distinct().ToList());
+                //        total.AddRange((area.eliteEncounters ?? new()).Distinct().ToList());
+                //        allRaces = allRaces.Concat(total.Select(x => Race.races.Find(y => y.name == x.who).portrait).Distinct()).ToList();
+                //    }
+                //}
+                //allRaces = allRaces.Distinct().ToList();
+                //if (allRaces.Count > 0)
+                //    for (int i = 0; i < Math.Ceiling(allRaces.Count / 8.0); i++)
+                //    {
+                //        var ind = i;
+                //        AddPaddingRegion(() =>
+                //        {
+                //            for (int j = 0; j < 8 && j < allRaces.Count - ind * 8; j++)
+                //            {
+                //                var jnd = j;
+                //                AddSmallButton(allRaces[jnd + ind * 8], (h) => { });
+                //            }
+                //        });
+                //    }
             },
             (h) => { BuildPath(); });
             if (currentSave.currentSite == name)

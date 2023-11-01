@@ -3656,6 +3656,25 @@
     ],
     "x": 293,
     "y": -219,
+    "name": "Kazzak's Seat",
+    "zone": "Blasted Lands",
+    "type": "HostileArea"
+  },
+  {
+    "commonEncounters": [
+      {
+        "who": "Manahound",
+        "levelMin": 60,
+        "levelMax": 61
+      },
+      {
+        "who": "Felguard Elite",
+        "levelMin": 60,
+        "levelMax": 61
+      }
+    ],
+    "x": 295,
+    "y": -215,
     "name": "The Tainted Scar",
     "zone": "Blasted Lands",
     "type": "HostileArea"
@@ -5196,6 +5215,20 @@
     "type": "HostileArea"
   },
   {
+    "x": 291,
+    "y": -148,
+    "name": "South Gate Pass",
+    "zone": "Dun Morogh",
+    "type": "HostileArea"
+  },
+  {
+    "x": 290,
+    "y": -144,
+    "name": "North Gate Pass",
+    "zone": "Dun Morogh",
+    "type": "HostileArea"
+  },
+  {
     "commonEncounters": [
       {
         "who": "Winter Wolf",
@@ -5243,6 +5276,30 @@
     "x": 268,
     "y": -143,
     "name": "Shimmer Ridge",
+    "zone": "Dun Morogh",
+    "type": "HostileArea"
+  },
+  {
+    "commonEncounters": [
+      {
+        "who": "Snow Tracker Wolf",
+        "levelMin": 6,
+        "levelMax": 7
+      },
+      {
+        "who": "Large Crag Boar",
+        "levelMin": 6,
+        "levelMax": 7
+      },
+      {
+        "who": "Ice Claw Bear",
+        "levelMin": 7,
+        "levelMax": 8
+      }
+    ],
+    "x": 272,
+    "y": -145,
+    "name": "Frozen Crossing",
     "zone": "Dun Morogh",
     "type": "HostileArea"
   },
@@ -5774,6 +5831,30 @@
   {
     "commonEncounters": [
       {
+        "who": "Starving Dire Wolf",
+        "levelMin": 19,
+        "levelMax": 20
+      },
+      {
+        "who": "Pygmy Venom Web Spider",
+        "levelMin": 18,
+        "levelMax": 19
+      },
+      {
+        "who": "Green Recluse",
+        "levelMin": 20,
+        "levelMax": 21
+      }
+    ],
+    "x": 282,
+    "y": -196,
+    "name": "Gloom Reach",
+    "zone": "Duskwood",
+    "type": "HostileArea"
+  },
+  {
+    "commonEncounters": [
+      {
         "who": "Fetid Corpse",
         "levelMin": 29,
         "levelMax": 30
@@ -5866,6 +5947,30 @@
     "x": 278,
     "y": -206,
     "name": "Roland's Doom",
+    "zone": "Duskwood",
+    "type": "HostileArea"
+  },
+  {
+    "commonEncounters": [
+      {
+        "who": "Pygmy Venom Web Spider",
+        "levelMin": 19,
+        "levelMax": 20
+      },
+      {
+        "who": "Starving Dire Wolf",
+        "levelMin": 19,
+        "levelMax": 20
+      },
+      {
+        "who": "Rabid Dire Wolf",
+        "levelMin": 20,
+        "levelMax": 21
+      }
+    ],
+    "x": 268,
+    "y": -197,
+    "name": "The Hushed Bank",
     "zone": "Duskwood",
     "type": "HostileArea"
   },
@@ -6006,6 +6111,30 @@
     "x": 268,
     "y": -206,
     "name": "Vul'Gol Ogre Mound",
+    "zone": "Duskwood",
+    "type": "HostileArea"
+  },
+  {
+    "commonEncounters": [
+      {
+        "who": "Young Black Ravager",
+        "levelMin": 23,
+        "levelMax": 24
+      },
+      {
+        "who": "Black Widow Hatchling",
+        "levelMin": 23,
+        "levelMax": 24
+      },
+      {
+        "who": "Black Ravager Mastiff",
+        "levelMin": 25,
+        "levelMax": 26
+      }
+    ],
+    "x": 270,
+    "y": -205,
+    "name": "Night Watch Camp",
     "zone": "Duskwood",
     "type": "HostileArea"
   },
@@ -13419,6 +13548,30 @@
   {
     "commonEncounters": [
       {
+        "who": "Venture Co. Surveyor",
+        "levelMin": 41,
+        "levelMax": 42
+      },
+      {
+        "who": "Venture Co. Strip Miner",
+        "levelMin": 40,
+        "levelMax": 41
+      },
+      {
+        "who": "Venture Co. Foreman",
+        "levelMin": 42,
+        "levelMax": 43
+      }
+    ],
+    "x": 271,
+    "y": -228,
+    "name": "Venture Co. Hideout",
+    "zone": "Stranglethorn Vale",
+    "type": "HostileArea"
+  },
+  {
+    "commonEncounters": [
+      {
         "who": "Thrashtail Basilisk",
         "levelMin": 41,
         "levelMax": 42
@@ -13624,6 +13777,19 @@
     "x": 276,
     "y": -220,
     "name": "Mosh'Ogg Ogre Mound",
+    "zone": "Stranglethorn Vale",
+    "type": "HostileArea"
+  },
+  {
+    "eliteEncounters": [
+      {
+        "who": "Mok'rash",
+        "levelMin": 50
+      }
+    ],
+    "x": 259,
+    "y": -240,
+    "name": "Janeiro's Point",
     "zone": "Stranglethorn Vale",
     "type": "HostileArea"
   },
@@ -14494,7 +14660,56 @@
       }
     ],
     "x": 306,
-    "y": -196,
+    "y": -195,
+    "name": "Fallow Sanctuary",
+    "zone": "Swamp of Sorrows",
+    "type": "HostileArea"
+  },
+  {
+    "commonEncounters": [
+      {
+        "who": "Swamp Jaguar",
+        "levelMin": 36,
+        "levelMax": 37
+      },
+      {
+        "who": "Sorrow Spinner",
+        "levelMin": 36,
+        "levelMax": 37
+      }
+    ],
+    "x": 299,
+    "y": -202,
+    "name": "Ruined Path",
+    "zone": "Swamp of Sorrows",
+    "type": "HostileArea"
+  },
+  {
+    "commonEncounters": [
+      {
+        "who": "Swamp Jaguar",
+        "levelMin": 36,
+        "levelMax": 37
+      },
+      {
+        "who": "Sorrow Spinner",
+        "levelMin": 36,
+        "levelMax": 37
+      },
+      {
+        "who": "Young Sawtooth Crocolisk",
+        "levelMin": 35,
+        "levelMax": 36
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Molt Thorn",
+        "levelMin": 42
+      }
+    ],
+    "x": 302,
+    "y": -197,
     "name": "The Shifting Mire",
     "zone": "Swamp of Sorrows",
     "type": "HostileArea"
@@ -18182,6 +18397,25 @@
   {
     "commonEncounters": [
       {
+        "who": "Defias Pathstalker",
+        "levelMin": 15,
+        "levelMax": 16
+      },
+      {
+        "who": "Defias Knuckleduster",
+        "levelMin": 15,
+        "levelMax": 16
+      }
+    ],
+    "x": 247,
+    "y": -207,
+    "name": "Demont's Place",
+    "zone": "Westfall",
+    "type": "HostileArea"
+  },
+  {
+    "commonEncounters": [
+      {
         "who": "Defias Looter",
         "levelMin": 13,
         "levelMax": 14
@@ -18268,6 +18502,25 @@
     "x": 257,
     "y": -203,
     "name": "The Dead Acre",
+    "zone": "Westfall",
+    "type": "HostileArea"
+  },
+  {
+    "commonEncounters": [
+      {
+        "who": "Starving Dire Wolf",
+        "levelMin": 18,
+        "levelMax": 19
+      },
+      {
+        "who": "Pygmy Venom Web Spider",
+        "levelMin": 18,
+        "levelMax": 19
+      }
+    ],
+    "x": 260,
+    "y": -204,
+    "name": "Westfall Crossing",
     "zone": "Westfall",
     "type": "HostileArea"
   },

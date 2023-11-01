@@ -1129,8 +1129,16 @@ public class Blueprint
                 });
             }
         }, true),
+        new("MapToolbarShadow", () => {
+            SetAnchor(Top);
+            AddRegionGroup();
+            SetRegionGroupWidth(640);
+            SetRegionGroupHeight(15);
+            AddPaddingRegion(() => { });
+        }),
         new("MapToolbar", () => {
             SetAnchor(Top);
+            DisableShadows();
             AddRegionGroup();
             AddPaddingRegion(() =>
             {
@@ -1155,6 +1163,26 @@ public class Blueprint
                 {
 
                 });
+            });
+        }, true),
+        new("MapToolbarClockLeft", () => {
+            SetAnchor(Top, -183, 0);
+            DisableShadows();
+            AddRegionGroup();
+            SetRegionGroupWidth(272);
+            AddPaddingRegion(() =>
+            {
+                AddLine("Day 1", "", "Right");
+            });
+        }, true),
+        new("MapToolbarClockRight", () => {
+            SetAnchor(Top, 183, 0);
+            DisableShadows();
+            AddRegionGroup();
+            SetRegionGroupWidth(272);
+            AddPaddingRegion(() =>
+            {
+                AddLine("10:00", "", "Left");
             });
         }, true),
         new("InstanceLeftSide", () => {
@@ -1530,6 +1558,120 @@ public class Blueprint
             AddRegionGroup();
             SetRegionGroupWidth(95);
             AddPaddingRegion(() => AddLine("Buyback", "", "Center"));
+        }, true),
+        new("CharacterInfoEquipment", () => {
+            currentSave.buyback ??= new();
+            SetAnchor(TopLeft, 0, -19);
+            AddHeaderGroup();
+            SetRegionGroupWidth(190);
+            SetRegionGroupHeight(290);
+            //AddHeaderRegion(() =>
+            //{
+            //    AddLine("Character equipment:");
+            //});
+            Foo("Head", currentSave.player.GetItemInSlot("Head"));
+            Foo("Shoulders", currentSave.player.GetItemInSlot("Shoulders"));
+            Foo("Back", currentSave.player.GetItemInSlot("Back"));
+            Foo("Chest", currentSave.player.GetItemInSlot("Chest"));
+            Foo("Wrists", currentSave.player.GetItemInSlot("Wrists"));
+            Foo("Hands", currentSave.player.GetItemInSlot("Hands"));
+            Foo("Waist", currentSave.player.GetItemInSlot("Waist"));
+            Foo("Legs", currentSave.player.GetItemInSlot("Legs"));
+            Foo("Feet", currentSave.player.GetItemInSlot("Feet"));
+            Foo("Main Hand", currentSave.player.GetItemInSlot("Main Hand"));
+            if (currentSave.player.GetItemInSlot("Main Hand") == null || currentSave.player.GetItemInSlot("Main Hand") != null && currentSave.player.GetItemInSlot("Main Hand").type != "Two Handed")
+                Foo("Off Hand", currentSave.player.GetItemInSlot("Off Hand"));
+            Foo("Neck", currentSave.player.GetItemInSlot("Neck"));
+            Foo("Finger", currentSave.player.GetItemInSlot("Finger"));
+            Foo("Trinket", currentSave.player.GetItemInSlot("Trinket"));
+            if (currentSave.player.spec == "Druid")
+                Foo("Idol", currentSave.player.GetItemInSlot("Special"));
+            if (currentSave.player.spec == "Paladin")
+                Foo("Libram", currentSave.player.GetItemInSlot("Special"));
+            if (currentSave.player.spec == "Shaman")
+                Foo("Totem", currentSave.player.GetItemInSlot("Special"));
+            AddPaddingRegion(() => SetRegionAsGroupExtender());
+
+            void Foo(string slot, Item item)
+            {
+                if (item != null)
+                    AddHeaderRegion(
+                        () =>
+                        {
+                            AddLine(item.name, item.rarity, "Right");
+                            AddSmallButton(item.icon,
+                            (h) =>
+                            {
+                                PlaySound(item.ItemSound("PutDown"), 0.6f);
+                                currentSave.player.Unequip(new() { slot });
+                                Respawn("PlayerEquipmentInfo");
+                                Respawn("Inventory");
+                            },
+                            null,
+                            (h) => () =>
+                            {
+                                SetAnchor(-115, 165);
+                                PrintItemTooltip(item);
+                            });
+                            if (settings.rarityIndicators.Value())
+                                AddSmallButtonOverlay("OtherRarity" + item.rarity + (settings.bigRarityIndicators.Value() ? "Big" : ""), 0, 2);
+                        }
+                    );
+                else
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine(slot, "DarkGray", "Right");
+                        AddSmallButton("OtherEmpty", (h) => { });
+                    });
+            }
+            AddRegionGroup();
+            SetRegionGroupWidth(95);
+            AddPaddingRegion(() => AddLine("Equipment", "", "Center"));
+            AddRegionGroup();
+            SetRegionGroupWidth(95);
+            AddButtonRegion(() => AddLine("Stats", "", "Center"), (h) => { CloseWindow(h.window); SpawnWindowBlueprint("CharacterInfoStats"); Respawn("ExperienceBar"); });
+        }, true),
+        new("CharacterInfoStats", () => {
+            SetAnchor(TopLeft, 0, -19);
+            AddHeaderGroup();
+            SetRegionGroupWidth(190);
+            SetRegionGroupHeight(290);
+            var stats = currentSave.player.Stats();
+            //AddHeaderRegion(() =>
+            //{
+            //    AddLine("Character stats:");
+            //});
+            AddHeaderRegion(() =>
+            {
+                foreach (var foo in stats)
+                    if (!foo.Key.Contains("Mastery"))
+                    {
+                        AddLine(foo.Key + ": ", "Gray", "Right");
+                        AddText(foo.Value + "", "Uncommon");
+                    }
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Melee Attack Power: ", "Gray", "Right");
+                AddText(currentSave.player.MeleeAttackPower() + "", "Uncommon");
+                AddLine("Ranged Attack Power: ", "Gray", "Right");
+                AddText(currentSave.player.RangedAttackPower() + "", "Uncommon");
+                AddLine("Spell Power: ", "Gray", "Right");
+                AddText(currentSave.player.SpellPower() + "", "Uncommon");
+                AddLine("Critical Strike: ", "Gray", "Right");
+                AddText(currentSave.player.CriticalStrike().ToString("0.00") + "%", "Uncommon");
+                AddLine("Spell Critical: ", "Gray", "Right");
+                AddText(currentSave.player.SpellCritical().ToString("0.00") + "%", "Uncommon");
+                AddLine("Health From Stamina: ", "Gray", "Right");
+                AddText(currentSave.player.MaxHealth() + "", "Uncommon");
+            });
+            AddPaddingRegion(() => SetRegionAsGroupExtender());
+            AddRegionGroup();
+            SetRegionGroupWidth(95);
+            AddButtonRegion(() => AddLine("Equipment", "", "Center"), (h) => { CloseWindow(h.window); SpawnWindowBlueprint("CharacterInfoEquipment"); Respawn("ExperienceBar"); });
+            AddRegionGroup();
+            SetRegionGroupWidth(95);
+            AddPaddingRegion(() => AddLine("Stats", "", "Center"));
         }, true),
         new("BankSort", () => {
             SetAnchor(Center);
@@ -6807,9 +6949,13 @@ public class Blueprint
             AddHotkey(D, () => { MoveCamera(new Vector2(EuelerGrowth(), 0)); }, false);
             AddHotkey(C, () =>
             {
-                SpawnDesktopBlueprint("CharacterSheet");
-                SwitchDesktop("CharacterSheet");
-                PlaySound("DesktopCharacterSheetOpen");
+                if (!CloseWindow("CharacterInfoEquipment") && !CloseWindow("CharacterInfoEquipment"))
+                {
+                    SpawnWindowBlueprint("CharacterInfoEquipment");
+                    PlaySound("DesktopCharacterSheetOpen");
+                    Respawn("ExperienceBar");
+                }
+                else PlaySound("DesktopCharacterSheetClose");
             });
             AddHotkey(N, () => { SpawnDesktopBlueprint("TalentScreen"); PlaySound("DesktopTalentScreenOpen"); });
             AddHotkey(P, () => { SpawnDesktopBlueprint("SpellbookScreen"); });

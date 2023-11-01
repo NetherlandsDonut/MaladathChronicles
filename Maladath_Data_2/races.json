@@ -1,527 +1,5 @@
 [
   {
-    "name": "Scarlet Mage",
-    "category": "Humanoid",
-    "subcategory": "Human",
-    "kind": "Common",
-    "portrait": "PortraitChicken",
-    "vitality": 1.0,
-    "abilities": {}
-  },
-  {
-    "name": "Witherbark Zealot",
-    "category": "Humanoid",
-    "subcategory": "Human",
-    "kind": "Common",
-    "portrait": "PortraitChicken",
-    "vitality": 1.0,
-    "abilities": {}
-  },
-  {
-    "name": "Witherbark Scalper",
-    "category": "Humanoid",
-    "subcategory": "Human",
-    "kind": "Common",
-    "portrait": "PortraitChicken",
-    "vitality": 1.0,
-    "abilities": {}
-  },
-  {
-    "name": "Stone Fury",
-    "category": "Humanoid",
-    "subcategory": "Human",
-    "kind": "Rare",
-    "portrait": "PortraitParrot",
-    "vitality": 2.0,
-    "abilities": {}
-  },
-  {
-    "name": "Syndicate Footpad",
-    "category": "Humanoid",
-    "subcategory": "Human",
-    "kind": "Common",
-    "portrait": "PortraitChicken",
-    "vitality": 1.0,
-    "abilities": {}
-  },
-  {
-    "name": "Gravis Slipknot",
-    "category": "Humanoid",
-    "subcategory": "Human",
-    "kind": "Rare",
-    "portrait": "PortraitParrot",
-    "vitality": 2.0,
-    "abilities": {}
-  },
-  {
-    "name": "Daggerspine Raider",
-    "category": "Humanoid",
-    "subcategory": "Human",
-    "kind": "Common",
-    "portrait": "PortraitChicken",
-    "vitality": 1.0,
-    "abilities": {}
-  },
-  {
-    "name": "Daggerspine Sorceress",
-    "category": "Humanoid",
-    "subcategory": "Human",
-    "kind": "Common",
-    "portrait": "PortraitChicken",
-    "vitality": 1.0,
-    "abilities": {}
-  },
-  {
-    "name": "Highland Trasher",
-    "category": "Humanoid",
-    "subcategory": "Human",
-    "kind": "Common",
-    "portrait": "PortraitChicken",
-    "vitality": 1.0,
-    "abilities": {}
-  },
-  {
-    "name": "Mirelow",
-    "category": "Elemental",
-    "subcategory": "Bog Beast",
-    "kind": "Rare",
-    "portrait": "PortraitBogBeastGreen",
-    "vitality": 2.0,
-    "abilities": {}
-  },
-  {
-    "name": "Mosshide Mistweaver",
-    "category": "Humanoid",
-    "subcategory": "Gnoll",
-    "kind": "Common",
-    "portrait": "PortraitGnollRotMystic",
-    "vitality": 1.0,
-    "abilities": {}
-  },
-  {
-    "name": "Tunnel Rat Vermin",
-    "category": "Humanoid",
-    "subcategory": "Kobold",
-    "kind": "Common",
-    "portrait": "PortraitKobold",
-    "vitality": 1.0,
-    "abilities": {}
-  },
-  {
-    "name": "Tunnel Rat Forager",
-    "category": "Humanoid",
-    "subcategory": "Kobold",
-    "kind": "Common",
-    "portrait": "PortraitKobold",
-    "vitality": 1.0,
-    "abilities": {}
-  },
-  {
-    "name": "Tunnel Rat Kobold",
-    "category": "Humanoid",
-    "subcategory": "Kobold",
-    "kind": "Common",
-    "portrait": "PortraitKoboldSurveyor",
-    "vitality": 1.0,
-    "abilities": {}
-  },
-  {
-    "name": "Tunnel Rat Scout",
-    "category": "Humanoid",
-    "subcategory": "Kobold",
-    "kind": "Common",
-    "portrait": "PortraitKoboldSurveyor",
-    "vitality": 1.0,
-    "abilities": {}
-  },
-  {
-    "name": "Cliff Lurker",
-    "category": "Beast",
-    "subcategory": "Spider",
-    "kind": "Common",
-    "portrait": "PortraitTarantulaOrange",
-    "vitality": 1.0,
-    "abilities": {}
-  },
-  {
-    "name": "Young Treshadon",
-    "category": "Humanoid",
-    "subcategory": "Human",
-    "kind": "Common",
-    "portrait": "PortraitThreshadon",
-    "vitality": 1.0,
-    "abilities": {}
-  },
-  {
-    "name": "Wood Lurker",
-    "category": "Beast",
-    "subcategory": "Spider",
-    "kind": "Common",
-    "portrait": "PortraitTarantulaOrange",
-    "vitality": 1.0,
-    "abilities": {}
-  },
-  {
-    "name": "Mo'grosh Forager",
-    "category": "Humanoid",
-    "subcategory": "Ogre",
-    "kind": "Common",
-    "portrait": "PortraitOgre",
-    "vitality": 1.0,
-    "abilities": {}
-  },
-  {
-    "name": "Vile Fin Lakestalker",
-    "category": "Humanoid",
-    "subcategory": "Murloc",
-    "kind": "Common",
-    "portrait": "PortraitMurlocGreen",
-    "vitality": 1.0,
-    "abilities": {}
-  },
-  {
-    "name": "Vile Fin Oracle",
-    "category": "Humanoid",
-    "subcategory": "Murloc",
-    "kind": "Common",
-    "portrait": "PortraitMurlocPurple",
-    "vitality": 1.0,
-    "abilities": {}
-  },
-  {
-    "name": "Stonesplinter Shaman",
-    "category": "Humanoid",
-    "subcategory": "Trogg",
-    "kind": "Common",
-    "portrait": "PortraitTrogg",
-    "vitality": 1.0,
-    "abilities": {}
-  },
-  {
-    "name": "Stonesplinter Skullthumper",
-    "category": "Humanoid",
-    "subcategory": "Trogg",
-    "kind": "Common",
-    "portrait": "PortraitTrogg",
-    "vitality": 1.0,
-    "abilities": {}
-  },
-  {
-    "name": "Stonesplinter Bonesnapper",
-    "category": "Humanoid",
-    "subcategory": "Trogg",
-    "kind": "Common",
-    "portrait": "PortraitTrogg",
-    "vitality": 1.0,
-    "abilities": {}
-  },
-  {
-    "name": "Dark Iron Insurgent",
-    "category": "Humanoid",
-    "subcategory": "Dwarf",
-    "kind": "Common",
-    "portrait": "PortraitDarkIronAmbusher",
-    "vitality": 1.0,
-    "abilities": {}
-  },
-  {
-    "name": "Dark Iron Sapper",
-    "category": "Humanoid",
-    "subcategory": "Dwarf",
-    "kind": "Common",
-    "portrait": "PortraitDarkIronAgent",
-    "vitality": 1.0,
-    "abilities": {}
-  },
-  {
-    "name": "Black Bear Patriarch",
-    "category": "Beast",
-    "subcategory": "Bear",
-    "kind": "Common",
-    "portrait": "PortraitBlackBear",
-    "vitality": 1.0,
-    "abilities": {}
-  },
-  {
-    "name": "Loch Crocolisk",
-    "category": "Beast",
-    "subcategory": "Crocolisk",
-    "kind": "Common",
-    "portrait": "PortraitCrocolisk",
-    "vitality": 1.0,
-    "abilities": {}
-  },
-  {
-    "name": "Lord Condar",
-    "category": "Beast",
-    "subcategory": "Carrion Bird",
-    "kind": "Rare",
-    "portrait": "PortraitCarrionBird",
-    "vitality": 2.0,
-    "abilities": {}
-  },
-  {
-    "name": "Mountain Buzzard",
-    "category": "Beast",
-    "subcategory": "Carrion Bird",
-    "kind": "Common",
-    "portrait": "PortraitCarrionBird",
-    "vitality": 1.0,
-    "abilities": {}
-  },
-  {
-    "name": "Mangy Mountain Boar",
-    "category": "Beast",
-    "subcategory": "Boar",
-    "kind": "Common",
-    "portrait": "PortraitBoarYellow",
-    "vitality": 1.0,
-    "abilities": {}
-  },
-  {
-    "name": "Grizzled Black Bear",
-    "category": "Beast",
-    "subcategory": "Bear",
-    "kind": "Common",
-    "portrait": "PortraitBlackBear",
-    "vitality": 1.0,
-    "abilities": {}
-  },
-  {
-    "name": "Young Mesa Buzzard",
-    "category": "Beast",
-    "subcategory": "Carrion Bird",
-    "kind": "Common",
-    "portrait": "PortraitCarrionBird",
-    "vitality": 1.0,
-    "abilities": {}
-  },
-  {
-    "name": "Highland Fleshstalker",
-    "category": "Beast",
-    "subcategory": "Raptor",
-    "kind": "Common",
-    "portrait": "PortraitRaptorOrange",
-    "vitality": 1.0,
-    "abilities": {}
-  },
-  {
-    "name": "Highland Strider",
-    "category": "Beast",
-    "subcategory": "Raptor",
-    "kind": "Common",
-    "portrait": "PortraitRaptorYellow",
-    "vitality": 1.0,
-    "abilities": {}
-  },
-  {
-    "name": "Vultros",
-    "category": "Beast",
-    "subcategory": "Carrion Bird",
-    "kind": "Rare",
-    "portrait": "PortraitCarrionBirdBlue",
-    "vitality": 2.0,
-    "abilities": {}
-  },
-  {
-    "name": "Ravenclaw Champion",
-    "category": "Undead",
-    "subcategory": "Skeleton",
-    "kind": "Common",
-    "portrait": "PortraitSkeletalWarriorYellow",
-    "vitality": 1.0,
-    "abilities": {}
-  },
-  {
-    "name": "Hand of Ravenclaw",
-    "category": "Undead",
-    "subcategory": "Skeleton",
-    "kind": "Common",
-    "portrait": "PortraitSkeletalWarrior",
-    "vitality": 1.0,
-    "abilities": {}
-  },
-  {
-    "name": "Dalaran Apprentice",
-    "category": "Humanoid",
-    "subcategory": "Human",
-    "kind": "Common",
-    "portrait": "PortraitDalaranConjuror",
-    "vitality": 1.0,
-    "abilities": {}
-  },
-  {
-    "name": "Dalaran Protector",
-    "category": "Humanoid",
-    "subcategory": "Human",
-    "kind": "Common",
-    "portrait": "PortraitDalaranShieldGuard",
-    "vitality": 1.0,
-    "abilities": {}
-  },
-  {
-    "name": "Zalas Witherbark",
-    "category": "Humanoid",
-    "subcategory": "Human",
-    "kind": "Rare",
-    "portrait": "PortraitWitherhearttheStalker",
-    "vitality": 2.0,
-    "abilities": {}
-  },
-  {
-    "name": "Witherbark Shadow Hunter",
-    "category": "Humanoid",
-    "subcategory": "Troll",
-    "kind": "Common",
-    "portrait": "PortraitWitherbarkShadowHunter",
-    "vitality": 1.0,
-    "abilities": {}
-  },
-  {
-    "name": "Elder Moss Creeper",
-    "category": "Beast",
-    "subcategory": "Spider",
-    "kind": "Common",
-    "portrait": "PortraitTarantulaOrange",
-    "vitality": 1.0,
-    "abilities": {}
-  },
-  {
-    "name": "Muad",
-    "category": "Humanoid",
-    "subcategory": "Murloc",
-    "kind": "Rare",
-    "portrait": "PortraitMurlocPurple",
-    "vitality": 2.0,
-    "abilities": {}
-  },
-  {
-    "name": "Farmer Solliden",
-    "category": "Humanoid",
-    "subcategory": "Human",
-    "kind": "Rare",
-    "portrait": "PortraitFarmerSolliden",
-    "vitality": 2.0,
-    "abilities": {}
-  },
-  {
-    "name": "Bayne",
-    "category": "Humanoid",
-    "subcategory": "Human",
-    "kind": "Rare",
-    "portrait": "PortraitPlaguehound",
-    "vitality": 2.0,
-    "abilities": {}
-  },
-  {
-    "name": "Fury Shelda",
-    "category": "Humanoid",
-    "subcategory": "Human",
-    "kind": "Rare",
-    "portrait": "PortraitHarpyWhite",
-    "vitality": 2.0,
-    "abilities": {}
-  },
-  {
-    "name": "Duskstalker",
-    "category": "Humanoid",
-    "subcategory": "Human",
-    "kind": "Rare",
-    "portrait": "PortraitDuskstalker",
-    "vitality": 2.0,
-    "abilities": {}
-  },
-  {
-    "name": "Gnarlpine Gardener",
-    "category": "Humanoid",
-    "subcategory": "Furbolg",
-    "kind": "Common",
-    "portrait": "PortraitFurbolgBrown",
-    "vitality": 1.0,
-    "abilities": {}
-  },
-  {
-    "name": "Gnarlpine Ursa",
-    "category": "Humanoid",
-    "subcategory": "Furbolg",
-    "kind": "Common",
-    "portrait": "PortraitFurbolg",
-    "vitality": 1.0,
-    "abilities": {}
-  },
-  {
-    "name": "Gnarlpine Warrior",
-    "category": "Humanoid",
-    "subcategory": "Furbolg",
-    "kind": "Common",
-    "portrait": "PortraitFurbolgBrown",
-    "vitality": 1.0,
-    "abilities": {}
-  },
-  {
-    "name": "Snagglespear",
-    "category": "Humanoid",
-    "subcategory": "Gnoll",
-    "kind": "Rare",
-    "portrait": "PortraitGnollBlue",
-    "vitality": 2.0,
-    "abilities": {}
-  },
-  {
-    "name": "Morgaine the Sly",
-    "category": "Humanoid",
-    "subcategory": "Human",
-    "kind": "Rare",
-    "portrait": "PortraitMorgainetheSly",
-    "vitality": 2.0,
-    "abilities": {}
-  },
-  {
-    "name": "Narg the Taskmaster",
-    "category": "Humanoid",
-    "subcategory": "Kobold",
-    "kind": "Rare",
-    "portrait": "PortraitKoboldSurveyor",
-    "vitality": 2.0,
-    "abilities": {}
-  },
-  {
-    "name": "Watch Commander Zalaphil",
-    "category": "Humanoid",
-    "subcategory": "Human",
-    "kind": "Rare",
-    "portrait": "PortraitWatchCommanderZalaphil",
-    "vitality": 2.0,
-    "abilities": {}
-  },
-  {
-    "name": "Death Flayer",
-    "category": "Beast",
-    "subcategory": "Scorpid",
-    "kind": "Rare",
-    "portrait": "PortraitScorpidBlack",
-    "vitality": 2.0,
-    "abilities": {}
-  },
-  {
-    "name": "Corrupted Bloodtalon Scythemaw",
-    "category": "Beast",
-    "subcategory": "Raptor",
-    "kind": "Common",
-    "portrait": "PortraitRaptorYellow",
-    "vitality": 1.0,
-    "abilities": {}
-  },
-  {
-    "name": "Edan the Howler",
-    "category": "Humanoid",
-    "subcategory": "Human",
-    "kind": "Rare",
-    "portrait": "PortraitYeti",
-    "vitality": 2.0,
-    "abilities": {}
-  },
-  {
     "name": "Glutton",
     "category": "Undead",
     "subcategory": "Abomination",
@@ -1351,6 +829,24 @@
     "abilities": {}
   },
   {
+    "name": "Black Bear Patriarch",
+    "category": "Beast",
+    "subcategory": "Bear",
+    "kind": "Common",
+    "portrait": "PortraitBlackBear",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Grizzled Black Bear",
+    "category": "Beast",
+    "subcategory": "Bear",
+    "kind": "Common",
+    "portrait": "PortraitBlackBear",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
     "name": "Ashenvale Bear",
     "category": "Beast",
     "subcategory": "Bear",
@@ -1545,6 +1041,15 @@
     "subcategory": "Dragonspawn",
     "kind": "Common",
     "portrait": "PortraitBlackDragonSpawnArmored",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Death Talon Captain",
+    "category": "Dragonkin",
+    "subcategory": "Dragonspawn",
+    "kind": "Common",
+    "portrait": "PortraitBlackDragonSpawnCaptain",
     "vitality": 1.0,
     "abilities": {}
   },
@@ -1768,15 +1273,6 @@
     "abilities": {}
   },
   {
-    "name": "Blackwing Mage",
-    "category": "Humanoid",
-    "subcategory": "Orc",
-    "kind": "Common",
-    "portrait": "PortraitBlackwingMage",
-    "vitality": 1.0,
-    "abilities": {}
-  },
-  {
     "name": "Blackhand Incarcerator",
     "category": "Humanoid",
     "subcategory": "Orc",
@@ -1937,6 +1433,15 @@
     "subcategory": "Orc",
     "kind": "Common",
     "portrait": "PortraitBlackwingGuardsman",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Blackwing Mage",
+    "category": "Humanoid",
+    "subcategory": "Orc",
+    "kind": "Common",
+    "portrait": "PortraitBlackwingMage",
     "vitality": 1.0,
     "abilities": {}
   },
@@ -2334,6 +1839,15 @@
     "abilities": {}
   },
   {
+    "name": "Mangy Mountain Boar",
+    "category": "Beast",
+    "subcategory": "Boar",
+    "kind": "Common",
+    "portrait": "PortraitBoarYellow",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
     "name": "Bristleback Battleboar",
     "category": "Beast",
     "subcategory": "Boar",
@@ -2448,6 +1962,15 @@
     "kind": "Common",
     "portrait": "PortraitBogBeast",
     "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Mirelow",
+    "category": "Elemental",
+    "subcategory": "Bog Beast",
+    "kind": "Rare",
+    "portrait": "PortraitBogBeastGreen",
+    "vitality": 2.0,
     "abilities": {}
   },
   {
@@ -2879,6 +2402,33 @@
     "abilities": {}
   },
   {
+    "name": "Lord Condar",
+    "category": "Beast",
+    "subcategory": "Carrion Bird",
+    "kind": "Rare",
+    "portrait": "PortraitCarrionBird",
+    "vitality": 2.0,
+    "abilities": {}
+  },
+  {
+    "name": "Mountain Buzzard",
+    "category": "Beast",
+    "subcategory": "Carrion Bird",
+    "kind": "Common",
+    "portrait": "PortraitCarrionBird",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Young Mesa Buzzard",
+    "category": "Beast",
+    "subcategory": "Carrion Bird",
+    "kind": "Common",
+    "portrait": "PortraitCarrionBird",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
     "name": "Black Slayer",
     "category": "Beast",
     "subcategory": "Carrion Bird",
@@ -2921,6 +2471,15 @@
     "kind": "Common",
     "portrait": "PortraitCarrionBird",
     "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Vultros",
+    "category": "Beast",
+    "subcategory": "Carrion Bird",
+    "kind": "Rare",
+    "portrait": "PortraitCarrionBirdBlue",
+    "vitality": 2.0,
     "abilities": {}
   },
   {
@@ -3326,6 +2885,16 @@
     "abilities": {}
   },
   {
+    "name": "Charlga Razorflank",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "faction": "Razorfen Tribe",
+    "kind": "Elite",
+    "portrait": "PortraitCharlgaRazorflank",
+    "vitality": 3.0,
+    "abilities": {}
+  },
+  {
     "name": "Ridge Huntress",
     "category": "Humanoid",
     "subcategory": "Human",
@@ -3349,69 +2918,6 @@
     "subcategory": "Human",
     "kind": "Common",
     "portrait": "PortraitCheetah",
-    "vitality": 1.0,
-    "abilities": {}
-  },
-  {
-    "name": "Scholomance Student",
-    "category": "Humanoid",
-    "subcategory": "Human",
-    "kind": "Common",
-    "portrait": "PortraitDeathCultist",
-    "vitality": 1.0,
-    "abilities": {}
-  },
-  {
-    "name": "Scholomance Occultist",
-    "category": "Humanoid",
-    "subcategory": "Human",
-    "kind": "Common",
-    "portrait": "PortraitScholomanceOccultist",
-    "vitality": 1.0,
-    "abilities": {}
-  },
-  {
-    "name": "Scholomance Adept",
-    "category": "Humanoid",
-    "subcategory": "Human",
-    "kind": "Common",
-    "portrait": "PortraitScholomanceAdept",
-    "vitality": 1.0,
-    "abilities": {}
-  },
-  {
-    "name": "Scholomance Acolyte",
-    "category": "Humanoid",
-    "subcategory": "Human",
-    "kind": "Common",
-    "portrait": "PortraitScholomanceAcolyte",
-    "vitality": 1.0,
-    "abilities": {}
-  },
-  {
-    "name": "Scholomance Neophyte",
-    "category": "Humanoid",
-    "subcategory": "Human",
-    "kind": "Common",
-    "portrait": "PortraitScholomanceNeophyte",
-    "vitality": 1.0,
-    "abilities": {}
-  },
-  {
-    "name": "Scholomance Necromancer",
-    "category": "Humanoid",
-    "subcategory": "Human",
-    "kind": "Common",
-    "portrait": "PortraitScholomanceNecromancer",
-    "vitality": 1.0,
-    "abilities": {}
-  },
-  {
-    "name": "Scholomance Handler",
-    "category": "Humanoid",
-    "subcategory": "Human",
-    "kind": "Common",
-    "portrait": "PortraitScholomanceHandler",
     "vitality": 1.0,
     "abilities": {}
   },
@@ -3475,105 +2981,6 @@
     "subcategory": "Human",
     "kind": "Common",
     "portrait": "PortraitChicken",
-    "vitality": 1.0,
-    "abilities": {}
-  },
-  {
-    "name": "Kurzen Commando",
-    "category": "Humanoid",
-    "subcategory": "Human",
-    "kind": "Common",
-    "portrait": "PortraitKurzenCommando",
-    "vitality": 1.0,
-    "abilities": {}
-  },
-  {
-    "name": "Kurzen Headshrinker",
-    "category": "Humanoid",
-    "subcategory": "Human",
-    "kind": "Common",
-    "portrait": "PortraitKurzenHeadshrinker",
-    "vitality": 1.0,
-    "abilities": {}
-  },
-  {
-    "name": "Kurzen Shadow Hunter",
-    "category": "Humanoid",
-    "subcategory": "Human",
-    "kind": "Common",
-    "portrait": "PortraitKurzenShadowHunter",
-    "vitality": 1.0,
-    "abilities": {}
-  },
-  {
-    "name": "Kurzen Witch Doctor",
-    "category": "Humanoid",
-    "subcategory": "Human",
-    "kind": "Common",
-    "portrait": "PortraitKurzenWitchDoctor",
-    "vitality": 1.0,
-    "abilities": {}
-  },
-  {
-    "name": "Rivermane Stalker",
-    "category": "Humanoid",
-    "subcategory": "Gnoll",
-    "kind": "Common",
-    "portrait": "PortraitGnollBrown",
-    "vitality": 1.0,
-    "abilities": {}
-  },
-  {
-    "name": "Shadowsworn Adept",
-    "category": "Humanoid",
-    "subcategory": "Human",
-    "kind": "Common",
-    "portrait": "PortraitShadowswornAdept",
-    "vitality": 1.0,
-    "abilities": {}
-  },
-  {
-    "name": "Shadowsworn Cultist",
-    "category": "Humanoid",
-    "subcategory": "Human",
-    "kind": "Common",
-    "portrait": "PortraitShadowswornCultist",
-    "vitality": 1.0,
-    "abilities": {}
-  },
-  {
-    "name": "Shadowsworn Dreadweaver",
-    "category": "Humanoid",
-    "subcategory": "Human",
-    "kind": "Common",
-    "portrait": "PortraitShadowswornDreadweaver",
-    "vitality": 1.0,
-    "abilities": {}
-  },
-  {
-    "name": "Shadowsworn Enforcer",
-    "category": "Humanoid",
-    "subcategory": "Human",
-    "kind": "Common",
-    "portrait": "PortraitShadowswornEnforcer",
-    "vitality": 1.0,
-    "abilities": {}
-  },
-  {
-    "name": "Shadowsworn Thug",
-    "category": "Humanoid",
-    "subcategory": "Human",
-    "kind": "Common",
-    "portrait": "PortraitShadowswornThug",
-    "vitality": 1.0,
-    "abilities": {}
-  },
-  {
-    "name": "Shadowsworn Warlock",
-    "category": "Humanoid",
-    "subcategory": "Human",
-    "kind": "Common",
-    "portrait": "PortraitShadowswornWarlock",
     "vitality": 1.0,
     "abilities": {}
   },
@@ -3939,15 +3346,6 @@
     "abilities": {}
   },
   {
-    "name": "Magister Kalendris",
-    "category": "Humanoid",
-    "subcategory": "Human",
-    "kind": "Elite",
-    "portrait": "PortraitMagisterKalendris",
-    "vitality": 3.0,
-    "abilities": {}
-  },
-  {
     "name": "Coyote",
     "category": "Humanoid",
     "subcategory": "Human",
@@ -4101,6 +3499,15 @@
     "abilities": {}
   },
   {
+    "name": "Loch Crocolisk",
+    "category": "Beast",
+    "subcategory": "Crocolisk",
+    "kind": "Common",
+    "portrait": "PortraitCrocolisk",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
     "name": "Rotgrip",
     "category": "Beast",
     "subcategory": "Crocolisk",
@@ -4233,6 +3640,15 @@
     "kind": "Common",
     "portrait": "PortraitCrocoliskDark",
     "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Crusader Lord Valdelmar",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "kind": "Rare",
+    "portrait": "PortraitCrusaderLordValdelmar",
+    "vitality": 2.0,
     "abilities": {}
   },
   {
@@ -4369,6 +3785,15 @@
     "abilities": {}
   },
   {
+    "name": "Dalaran Apprentice",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "kind": "Common",
+    "portrait": "PortraitDalaranConjuror",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
     "name": "Dalaran Conjurer",
     "category": "Humanoid",
     "subcategory": "Human",
@@ -4383,6 +3808,15 @@
     "subcategory": "Human",
     "kind": "Common",
     "portrait": "PortraitDalaranConjuror",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Dalaran Protector",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "kind": "Common",
+    "portrait": "PortraitDalaranShieldGuard",
     "vitality": 1.0,
     "abilities": {}
   },
@@ -4452,6 +3886,15 @@
     "abilities": {}
   },
   {
+    "name": "Dark Iron Sapper",
+    "category": "Humanoid",
+    "subcategory": "Dwarf",
+    "kind": "Common",
+    "portrait": "PortraitDarkIronAgent",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
     "name": "Dark Iron Dwarf",
     "category": "Humanoid",
     "subcategory": "Dwarf",
@@ -4479,6 +3922,15 @@
     "kind": "Rare",
     "portrait": "PortraitDarkIronAmbassador",
     "vitality": 2.0,
+    "abilities": {}
+  },
+  {
+    "name": "Dark Iron Insurgent",
+    "category": "Humanoid",
+    "subcategory": "Dwarf",
+    "kind": "Common",
+    "portrait": "PortraitDarkIronAmbusher",
+    "vitality": 1.0,
     "abilities": {}
   },
   {
@@ -4740,6 +4192,15 @@
     "subcategory": "Human",
     "kind": "Common",
     "portrait": "PortraitDarkStrandVoidcaller",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Scholomance Student",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "kind": "Common",
+    "portrait": "PortraitDeathCultist",
     "vitality": 1.0,
     "abilities": {}
   },
@@ -5258,6 +4719,15 @@
     "abilities": {}
   },
   {
+    "name": "Duskstalker",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "kind": "Rare",
+    "portrait": "PortraitDuskstalker",
+    "vitality": 2.0,
+    "abilities": {}
+  },
+  {
     "name": "Dust Stormer",
     "category": "Humanoid",
     "subcategory": "Human",
@@ -5338,6 +4808,15 @@
       "Jehdana",
       "Azahva"
     ]
+  },
+  {
+    "name": "Stone Fury",
+    "category": "Elemental",
+    "subcategory": "Elemental",
+    "kind": "Rare",
+    "portrait": "PortraitEarthElemental",
+    "vitality": 2.0,
+    "abilities": {}
   },
   {
     "name": "Desert Rumbler",
@@ -5484,6 +4963,15 @@
     "abilities": {}
   },
   {
+    "name": "Farmer Solliden",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "kind": "Rare",
+    "portrait": "PortraitFarmerSolliden",
+    "vitality": 2.0,
+    "abilities": {}
+  },
+  {
     "name": "Felguard",
     "category": "Demon",
     "subcategory": "Fel Guard",
@@ -5518,6 +5006,25 @@
     "subcategory": "Fel Guard",
     "kind": "Common",
     "portrait": "PortraitFelGuard",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Taragaman the Hungerer",
+    "category": "Demon",
+    "subcategory": "Fel Guard",
+    "faction": "Burning Blade Clan",
+    "kind": "Elite",
+    "portrait": "PortraitFelGuardBlack",
+    "vitality": 3.0,
+    "abilities": {}
+  },
+  {
+    "name": "Rathorian",
+    "category": "Demon",
+    "subcategory": "Fel Guard",
+    "kind": "Common",
+    "portrait": "PortraitFelGuardBlack",
     "vitality": 1.0,
     "abilities": {}
   },
@@ -6020,6 +5527,15 @@
     "abilities": {}
   },
   {
+    "name": "Gnarlpine Ursa",
+    "category": "Humanoid",
+    "subcategory": "Furbolg",
+    "kind": "Common",
+    "portrait": "PortraitFurbolg",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
     "name": "Greenpaw",
     "category": "Humanoid",
     "subcategory": "Furbolg",
@@ -6241,6 +5757,33 @@
     "subcategory": "Furbolg",
     "kind": "Common",
     "portrait": "PortraitFurbolgBlack",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Uruson",
+    "category": "Humanoid",
+    "subcategory": "Furbolg",
+    "kind": "Rare",
+    "portrait": "PortraitFurbolgBlack",
+    "vitality": 2.0,
+    "abilities": {}
+  },
+  {
+    "name": "Gnarlpine Gardener",
+    "category": "Humanoid",
+    "subcategory": "Furbolg",
+    "kind": "Common",
+    "portrait": "PortraitFurbolgBrown",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Gnarlpine Warrior",
+    "category": "Humanoid",
+    "subcategory": "Furbolg",
+    "kind": "Common",
+    "portrait": "PortraitFurbolgBrown",
     "vitality": 1.0,
     "abilities": {}
   },
@@ -6706,6 +6249,15 @@
     "abilities": {}
   },
   {
+    "name": "Snagglespear",
+    "category": "Humanoid",
+    "subcategory": "Gnoll",
+    "kind": "Rare",
+    "portrait": "PortraitGnollBlue",
+    "vitality": 2.0,
+    "abilities": {}
+  },
+  {
     "name": "Shadowhide Assassin",
     "category": "Humanoid",
     "subcategory": "Gnoll",
@@ -6830,6 +6382,15 @@
     "kind": "Rare",
     "portrait": "PortraitGnollBright",
     "vitality": 2.0,
+    "abilities": {}
+  },
+  {
+    "name": "Rivermane Stalker",
+    "category": "Humanoid",
+    "subcategory": "Gnoll",
+    "kind": "Common",
+    "portrait": "PortraitGnollBrown",
+    "vitality": 1.0,
     "abilities": {}
   },
   {
@@ -7118,6 +6679,15 @@
     "abilities": {}
   },
   {
+    "name": "Mosshide Mistweaver",
+    "category": "Humanoid",
+    "subcategory": "Gnoll",
+    "kind": "Common",
+    "portrait": "PortraitGnollRotMystic",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
     "name": "Rot Hide Mystic",
     "category": "Humanoid",
     "subcategory": "Gnoll",
@@ -7195,6 +6765,33 @@
     "subcategory": "Human",
     "kind": "Elite",
     "portrait": "PortraitGnomishMech",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Venture Co. Foreman",
+    "category": "Humanoid",
+    "subcategory": "Goblin",
+    "kind": "Common",
+    "portrait": "PortraitGoblin",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Venture Co. Strip Miner",
+    "category": "Humanoid",
+    "subcategory": "Goblin",
+    "kind": "Common",
+    "portrait": "PortraitGoblin",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Venture Co. Surveyor",
+    "category": "Humanoid",
+    "subcategory": "Goblin",
+    "kind": "Common",
+    "portrait": "PortraitGoblin",
     "vitality": 1.0,
     "abilities": {}
   },
@@ -7979,15 +7576,6 @@
     "abilities": {}
   },
   {
-    "name": "Zalazane",
-    "category": "Humanoid",
-    "subcategory": "Human",
-    "kind": "Common",
-    "portrait": "PortraitZalazane",
-    "vitality": 1.0,
-    "abilities": {}
-  },
-  {
     "name": "Hakkar the Soulflayer",
     "category": "Humanoid",
     "subcategory": "Human",
@@ -8210,6 +7798,15 @@
     "kind": "Common",
     "portrait": "PortraitHarpy",
     "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Fury Shelda",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "kind": "Rare",
+    "portrait": "PortraitHarpyWhite",
+    "vitality": 2.0,
     "abilities": {}
   },
   {
@@ -9057,11 +8654,47 @@
     "abilities": {}
   },
   {
-    "name": "Uruson",
+    "name": "Tunnel Rat Vermin",
     "category": "Humanoid",
-    "subcategory": "Furbolg",
+    "subcategory": "Kobold",
+    "kind": "Common",
+    "portrait": "PortraitKobold",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Tunnel Rat Forager",
+    "category": "Humanoid",
+    "subcategory": "Kobold",
+    "kind": "Common",
+    "portrait": "PortraitKobold",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Tunnel Rat Kobold",
+    "category": "Humanoid",
+    "subcategory": "Kobold",
+    "kind": "Common",
+    "portrait": "PortraitKoboldSurveyor",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Tunnel Rat Scout",
+    "category": "Humanoid",
+    "subcategory": "Kobold",
+    "kind": "Common",
+    "portrait": "PortraitKoboldSurveyor",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Narg the Taskmaster",
+    "category": "Humanoid",
+    "subcategory": "Kobold",
     "kind": "Rare",
-    "portrait": "PortraitFurbolgBlack",
+    "portrait": "PortraitKoboldSurveyor",
     "vitality": 2.0,
     "abilities": {}
   },
@@ -9339,6 +8972,42 @@
     "kind": "Elite",
     "portrait": "PortraitKurzen",
     "vitality": 3.0,
+    "abilities": {}
+  },
+  {
+    "name": "Kurzen Commando",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "kind": "Common",
+    "portrait": "PortraitKurzenCommando",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Kurzen Headshrinker",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "kind": "Common",
+    "portrait": "PortraitKurzenHeadshrinker",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Kurzen Shadow Hunter",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "kind": "Common",
+    "portrait": "PortraitKurzenShadowHunter",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Kurzen Witch Doctor",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "kind": "Common",
+    "portrait": "PortraitKurzenWitchDoctor",
+    "vitality": 1.0,
     "abilities": {}
   },
   {
@@ -9752,6 +9421,15 @@
     "abilities": {}
   },
   {
+    "name": "Magister Kalendris",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "kind": "Elite",
+    "portrait": "PortraitMagisterKalendris",
+    "vitality": 3.0,
+    "abilities": {}
+  },
+  {
     "name": "Makrura Clacker",
     "category": "Beast",
     "subcategory": "Makrura",
@@ -9966,6 +9644,15 @@
     "kind": "Elite",
     "portrait": "PortraitMorbentFel",
     "vitality": 3.0,
+    "abilities": {}
+  },
+  {
+    "name": "Morgaine the Sly",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "kind": "Rare",
+    "portrait": "PortraitMorgainetheSly",
+    "vitality": 2.0,
     "abilities": {}
   },
   {
@@ -10253,6 +9940,15 @@
     "abilities": {}
   },
   {
+    "name": "Vile Fin Lakestalker",
+    "category": "Humanoid",
+    "subcategory": "Murloc",
+    "kind": "Common",
+    "portrait": "PortraitMurlocGreen",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
     "name": "Fingat",
     "category": "Humanoid",
     "subcategory": "Murloc",
@@ -10366,6 +10062,24 @@
     "subcategory": "Murloc",
     "kind": "Rare",
     "portrait": "PortraitMurlocOrange",
+    "vitality": 2.0,
+    "abilities": {}
+  },
+  {
+    "name": "Vile Fin Oracle",
+    "category": "Humanoid",
+    "subcategory": "Murloc",
+    "kind": "Common",
+    "portrait": "PortraitMurlocPurple",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Muad",
+    "category": "Humanoid",
+    "subcategory": "Murloc",
+    "kind": "Rare",
+    "portrait": "PortraitMurlocPurple",
     "vitality": 2.0,
     "abilities": {}
   },
@@ -10640,6 +10354,15 @@
     "abilities": {}
   },
   {
+    "name": "Daggerspine Raider",
+    "category": "Humanoid",
+    "subcategory": "Naga",
+    "kind": "Common",
+    "portrait": "PortraitNagaDark",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
     "name": "Warlord Krellian",
     "category": "Humanoid",
     "subcategory": "Naga",
@@ -10780,6 +10503,15 @@
     "subcategory": "Naga",
     "kind": "Common",
     "portrait": "PortraitNagaDark",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Daggerspine Sorceress",
+    "category": "Humanoid",
+    "subcategory": "Naga",
+    "kind": "Common",
+    "portrait": "PortraitNagaFemale",
     "vitality": 1.0,
     "abilities": {}
   },
@@ -11187,6 +10919,15 @@
     "kind": "Elite",
     "portrait": "PortraitOgomtheWretched",
     "vitality": 3.0,
+    "abilities": {}
+  },
+  {
+    "name": "Mo'grosh Forager",
+    "category": "Humanoid",
+    "subcategory": "Ogre",
+    "kind": "Common",
+    "portrait": "PortraitOgre",
+    "vitality": 1.0,
     "abilities": {}
   },
   {
@@ -12577,15 +12318,6 @@
     "abilities": {}
   },
   {
-    "name": "Crusader Lord Valdelmar",
-    "category": "Humanoid",
-    "subcategory": "Human",
-    "kind": "Rare",
-    "portrait": "PortraitCrusaderLordValdelmar",
-    "vitality": 2.0,
-    "abilities": {}
-  },
-  {
     "name": "Plagued Hatchling",
     "category": "Dragonkin",
     "subcategory": "Dragon",
@@ -12593,6 +12325,15 @@
     "kind": "Common",
     "portrait": "PortraitPlagueDragonWhelp",
     "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Bayne",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "kind": "Rare",
+    "portrait": "PortraitPlaguehound",
+    "vitality": 2.0,
     "abilities": {}
   },
   {
@@ -13217,16 +12958,6 @@
     "abilities": {}
   },
   {
-    "name": "Charlga Razorflank",
-    "category": "Humanoid",
-    "subcategory": "Human",
-    "faction": "Razorfen Tribe",
-    "kind": "Elite",
-    "portrait": "PortraitCharlgaRazorflank",
-    "vitality": 3.0,
-    "abilities": {}
-  },
-  {
     "name": "Roogog",
     "category": "Beast",
     "subcategory": "Boar",
@@ -13590,6 +13321,24 @@
     "abilities": {}
   },
   {
+    "name": "Highland Trasher",
+    "category": "Beast",
+    "subcategory": "Raptor",
+    "kind": "Common",
+    "portrait": "PortraitRaptorOrange",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Highland Fleshstalker",
+    "category": "Beast",
+    "subcategory": "Raptor",
+    "kind": "Common",
+    "portrait": "PortraitRaptorOrange",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
     "name": "Bloodfen Lashtail",
     "category": "Beast",
     "subcategory": "Raptor",
@@ -13653,6 +13402,24 @@
     "abilities": {}
   },
   {
+    "name": "Highland Strider",
+    "category": "Beast",
+    "subcategory": "Raptor",
+    "kind": "Common",
+    "portrait": "PortraitRaptorYellow",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Corrupted Bloodtalon Scythemaw",
+    "category": "Beast",
+    "subcategory": "Raptor",
+    "kind": "Common",
+    "portrait": "PortraitRaptorYellow",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
     "name": "Razormaw Matriarch",
     "category": "Beast",
     "subcategory": "Raptor",
@@ -13712,15 +13479,6 @@
     "subcategory": "Raptor",
     "kind": "Common",
     "portrait": "PortraitRaptorYellow",
-    "vitality": 1.0,
-    "abilities": {}
-  },
-  {
-    "name": "Death Talon Captain",
-    "category": "Dragonkin",
-    "subcategory": "Dragonspawn",
-    "kind": "Common",
-    "portrait": "PortraitBlackDragonSpawnCaptain",
     "vitality": 1.0,
     "abilities": {}
   },
@@ -14551,6 +14309,15 @@
     "abilities": {}
   },
   {
+    "name": "Scarlet Mage",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "kind": "Common",
+    "portrait": "PortraitScarletEnchanter",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
     "name": "Scarlet Wizard",
     "category": "Humanoid",
     "subcategory": "Human",
@@ -14764,6 +14531,60 @@
     "abilities": {}
   },
   {
+    "name": "Scholomance Acolyte",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "kind": "Common",
+    "portrait": "PortraitScholomanceAcolyte",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Scholomance Adept",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "kind": "Common",
+    "portrait": "PortraitScholomanceAdept",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Scholomance Handler",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "kind": "Common",
+    "portrait": "PortraitScholomanceHandler",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Scholomance Necromancer",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "kind": "Common",
+    "portrait": "PortraitScholomanceNecromancer",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Scholomance Neophyte",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "kind": "Common",
+    "portrait": "PortraitScholomanceNeophyte",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Scholomance Occultist",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "kind": "Common",
+    "portrait": "PortraitScholomanceOccultist",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
     "name": "Krellack",
     "category": "Beast",
     "subcategory": "Scorpid",
@@ -14845,6 +14666,15 @@
     "abilities": {}
   },
   {
+    "name": "Death Flayer",
+    "category": "Beast",
+    "subcategory": "Scorpid",
+    "kind": "Rare",
+    "portrait": "PortraitScorpidBlack",
+    "vitality": 2.0,
+    "abilities": {}
+  },
+  {
     "name": "Scorpid Reaver",
     "category": "Beast",
     "subcategory": "Scorpid",
@@ -14887,6 +14717,15 @@
     "kind": "Common",
     "portrait": "PortraitScorpidTeal",
     "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Mok'rash",
+    "category": "Giant",
+    "subcategory": "Human",
+    "kind": "Elite",
+    "portrait": "PortraitSeaGiant",
+    "vitality": 3.0,
     "abilities": {}
   },
   {
@@ -15071,6 +14910,60 @@
     "kind": "Elite",
     "portrait": "PortraitShadowpriestSezzziz",
     "vitality": 3.0,
+    "abilities": {}
+  },
+  {
+    "name": "Shadowsworn Adept",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "kind": "Common",
+    "portrait": "PortraitShadowswornAdept",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Shadowsworn Cultist",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "kind": "Common",
+    "portrait": "PortraitShadowswornCultist",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Shadowsworn Dreadweaver",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "kind": "Common",
+    "portrait": "PortraitShadowswornDreadweaver",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Shadowsworn Enforcer",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "kind": "Common",
+    "portrait": "PortraitShadowswornEnforcer",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Shadowsworn Thug",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "kind": "Common",
+    "portrait": "PortraitShadowswornThug",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Shadowsworn Warlock",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "kind": "Common",
+    "portrait": "PortraitShadowswornWarlock",
+    "vitality": 1.0,
     "abilities": {}
   },
   {
@@ -15575,6 +15468,15 @@
     "abilities": {}
   },
   {
+    "name": "Hand of Ravenclaw",
+    "category": "Undead",
+    "subcategory": "Skeleton",
+    "kind": "Common",
+    "portrait": "PortraitSkeletalWarrior",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
     "name": "Risen Guard",
     "category": "Undead",
     "subcategory": "Skeleton",
@@ -15692,6 +15594,15 @@
     "subcategory": "Skeleton",
     "kind": "Common",
     "portrait": "PortraitSkeletalWarrior",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Ravenclaw Champion",
+    "category": "Undead",
+    "subcategory": "Skeleton",
+    "kind": "Common",
+    "portrait": "PortraitSkeletalWarriorYellow",
     "vitality": 1.0,
     "abilities": {}
   },
@@ -16383,11 +16294,29 @@
     "abilities": {}
   },
   {
+    "name": "Gravis Slipknot",
+    "category": "Beast",
+    "subcategory": "Cat",
+    "kind": "Rare",
+    "portrait": "PortraitSyndicateEnforcer",
+    "vitality": 2.0,
+    "abilities": {}
+  },
+  {
     "name": "Syndicate Enforcer",
     "category": "Beast",
     "subcategory": "Cat",
     "kind": "Common",
     "portrait": "PortraitSyndicateEnforcer",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Syndicate Footpad",
+    "category": "Beast",
+    "subcategory": "Cat",
+    "kind": "Common",
+    "portrait": "PortraitSyndicateFootpad",
     "vitality": 1.0,
     "abilities": {}
   },
@@ -16561,25 +16490,6 @@
     "abilities": {}
   },
   {
-    "name": "Taragaman the Hungerer",
-    "category": "Demon",
-    "subcategory": "Fel Guard",
-    "faction": "Burning Blade Clan",
-    "kind": "Elite",
-    "portrait": "PortraitFelGuardBlack",
-    "vitality": 3.0,
-    "abilities": {}
-  },
-  {
-    "name": "Rathorian",
-    "category": "Demon",
-    "subcategory": "Fel Guard",
-    "kind": "Common",
-    "portrait": "PortraitFelGuardBlack",
-    "vitality": 1.0,
-    "abilities": {}
-  },
-  {
     "name": "Deathstrike Tarantula",
     "category": "Beast",
     "subcategory": "Spider",
@@ -16693,6 +16603,33 @@
     "subcategory": "Spider",
     "kind": "Common",
     "portrait": "PortraitTarantulaGray",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Cliff Lurker",
+    "category": "Beast",
+    "subcategory": "Spider",
+    "kind": "Common",
+    "portrait": "PortraitTarantulaOrange",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Wood Lurker",
+    "category": "Beast",
+    "subcategory": "Spider",
+    "kind": "Common",
+    "portrait": "PortraitTarantulaOrange",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Elder Moss Creeper",
+    "category": "Beast",
+    "subcategory": "Spider",
+    "kind": "Common",
+    "portrait": "PortraitTarantulaOrange",
     "vitality": 1.0,
     "abilities": {}
   },
@@ -16887,6 +16824,15 @@
     "abilities": {}
   },
   {
+    "name": "Young Treshadon",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "kind": "Common",
+    "portrait": "PortraitThreshadon",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
     "name": "Deep Pool Threshkin",
     "category": "Humanoid",
     "subcategory": "Human",
@@ -17072,6 +17018,33 @@
     "subcategory": "Human",
     "kind": "Common",
     "portrait": "PortraitTorturedSentinel",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Stonesplinter Shaman",
+    "category": "Humanoid",
+    "subcategory": "Trogg",
+    "kind": "Common",
+    "portrait": "PortraitTrogg",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Stonesplinter Skullthumper",
+    "category": "Humanoid",
+    "subcategory": "Trogg",
+    "kind": "Common",
+    "portrait": "PortraitTrogg",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Stonesplinter Bonesnapper",
+    "category": "Humanoid",
+    "subcategory": "Trogg",
+    "kind": "Common",
+    "portrait": "PortraitTrogg",
     "vitality": 1.0,
     "abilities": {}
   },
@@ -17996,6 +17969,15 @@
     "abilities": {}
   },
   {
+    "name": "Watch Commander Zalaphil",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "kind": "Rare",
+    "portrait": "PortraitWatchCommanderZalaphil",
+    "vitality": 2.0,
+    "abilities": {}
+  },
+  {
     "name": "Baron Aquanis",
     "category": "Elemental",
     "subcategory": "Elemental",
@@ -18296,11 +18278,38 @@
     "abilities": {}
   },
   {
+    "name": "Witherbark Scalper",
+    "category": "Humanoid",
+    "subcategory": "Troll",
+    "kind": "Common",
+    "portrait": "PortraitWitherbarkScalper",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
     "name": "Witherbark Hideskinner",
     "category": "Humanoid",
     "subcategory": "Troll",
     "kind": "Common",
     "portrait": "PortraitWitherbarkScalper",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Witherbark Zealot",
+    "category": "Humanoid",
+    "subcategory": "Troll",
+    "kind": "Common",
+    "portrait": "PortraitWitherbarkShadowHunter",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Witherbark Shadow Hunter",
+    "category": "Humanoid",
+    "subcategory": "Troll",
+    "kind": "Common",
+    "portrait": "PortraitWitherbarkShadowHunter",
     "vitality": 1.0,
     "abilities": {}
   },
@@ -18341,12 +18350,30 @@
     "abilities": {}
   },
   {
+    "name": "Zalas Witherbark",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "kind": "Rare",
+    "portrait": "PortraitWitherhearttheStalker",
+    "vitality": 2.0,
+    "abilities": {}
+  },
+  {
     "name": "Witherheart the Stalker",
     "category": "Humanoid",
     "subcategory": "Human",
     "kind": "Rare",
     "portrait": "PortraitWitherhearttheStalker",
     "vitality": 2.0,
+    "abilities": {}
+  },
+  {
+    "name": "Rabid Dire Wolf",
+    "category": "Beast",
+    "subcategory": "Wolf",
+    "kind": "Common",
+    "portrait": "PortraitWolf",
+    "vitality": 1.0,
     "abilities": {}
   },
   {
@@ -18449,6 +18476,15 @@
     "abilities": {}
   },
   {
+    "name": "Black Ravager Mastiff",
+    "category": "Beast",
+    "subcategory": "Wolf",
+    "kind": "Common",
+    "portrait": "PortraitWolfBlack",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
     "name": "Young Black Ravager",
     "category": "Beast",
     "subcategory": "Wolf",
@@ -18481,6 +18517,15 @@
     "subcategory": "Wolf",
     "kind": "Common",
     "portrait": "PortraitWolfDiseased",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Snow Tracker Wolf",
+    "category": "Beast",
+    "subcategory": "Wolf",
+    "kind": "Common",
+    "portrait": "PortraitWolfWhite",
     "vitality": 1.0,
     "abilities": {}
   },
@@ -19121,6 +19166,15 @@
     "abilities": {}
   },
   {
+    "name": "Edan the Howler",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "kind": "Rare",
+    "portrait": "PortraitYeti",
+    "vitality": 2.0,
+    "abilities": {}
+  },
+  {
     "name": "Old Icebeard",
     "category": "Humanoid",
     "subcategory": "Human",
@@ -19244,6 +19298,15 @@
       "Curse of Thorns": 0
     },
     "loot": []
+  },
+  {
+    "name": "Zalazane",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "kind": "Common",
+    "portrait": "PortraitZalazane",
+    "vitality": 1.0,
+    "abilities": {}
   },
   {
     "name": "Zanzil the Outcast",

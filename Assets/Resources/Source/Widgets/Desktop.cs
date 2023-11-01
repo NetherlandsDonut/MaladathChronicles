@@ -161,9 +161,12 @@ public class Desktop : MonoBehaviour
                     RemoveDesktopBackground();
                     cursor.transform.position += (Vector3)cameraDestination - screen.transform.position;
                     screen.transform.localPosition = cameraDestination;
-                    SpawnWindowBlueprint("MapToolbarLeft");
+                    //SpawnWindowBlueprint("MapToolbarLeft");
+                    SpawnWindowBlueprint("MapToolbarShadow");
+                    SpawnWindowBlueprint("MapToolbarClockLeft");
                     SpawnWindowBlueprint("MapToolbar");
-                    SpawnWindowBlueprint("MapToolbarRight");
+                    SpawnWindowBlueprint("MapToolbarClockRight");
+                    //SpawnWindowBlueprint("MapToolbarRight");
                     SpawnWindowBlueprint("ExperienceBar");
                     grid.SwitchMapTexture(currentSave.playerDead);
                     SpawnTransition(0.1f);
