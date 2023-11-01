@@ -21,6 +21,14 @@ public class SaveGame
     //Minute in-game
     public int minute;
 
+    public void AddTime(int minutes, int hours = 0)
+    {
+        minute += minutes;
+        hour += hours + minute / 60;
+        minute = minute % 60;
+        if (hour >= 24) hour -= 24;
+    }
+
     //Site at which player currently resides
     public string currentSite;
 
