@@ -166,8 +166,6 @@ public class Starter : MonoBehaviour
         zones ??= new();
         Deserialize(ref paths, "paths", false, prefix);
         paths ??= new();
-        Deserialize(ref transports, "transport", false, prefix);
-        transports ??= new();
 
         #endregion
 

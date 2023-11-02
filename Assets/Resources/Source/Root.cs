@@ -263,10 +263,10 @@ public static class Root
         newObject.GetComponent<Window>().Initialise(CDesktop, title, upperUI);
     }
 
-    public static void Respawn(string windowName)
+    public static void Respawn(string windowName, bool onlyWhenActive = false)
     {
         var window = CDesktop.windows.Find(x => x.title == windowName);
-        if (window != null) window.Respawn();
+        if (window != null) window.Respawn(onlyWhenActive);
         else SpawnWindowBlueprint(windowName, true);
     }
 

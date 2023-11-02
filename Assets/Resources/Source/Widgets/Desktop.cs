@@ -12,6 +12,7 @@ using static MapGrid;
 using static SaveGame;
 using static SitePath;
 using static InputLine;
+using UnityEditor;
 
 public class Desktop : MonoBehaviour
 {
@@ -26,7 +27,7 @@ public class Desktop : MonoBehaviour
     public bool screenLocked;
     public Vector2 cameraDestination;
     public string queuedSiteOpen;
-    public List<Transform> queuedPath;
+    public List<(SitePath, List<Transform>)> queuedPath;
 
     public void Initialise(string title)
     {
@@ -201,22 +202,23 @@ public class Desktop : MonoBehaviour
                 {
                     if (Input.GetKeyDown(KeyCode.Escape))
                     {
-                        queuedPath.FindAll(x => x.parent != queuedPath[0].parent).ForEach(x => Destroy(x.gameObject));
-                        queuedPath.RemoveAll(x => x.parent != queuedPath[0].parent);
-                        var siteA = FindSite(x => queuedPath[0].parent.name.Contains("\"" + x.name + "\""));
-                        var siteB = FindSite(x => siteA != x && queuedPath[0].parent.name.Contains("\"" + x.name + "\""));
-                        queuedSiteOpen = Vector2.Distance(new Vector2(siteA.x, siteA.y) * mapGridSize, queuedPath.Last().transform.position) < Vector2.Distance(new Vector2(siteB.x, siteB.y) * mapGridSize, queuedPath.Last().transform.position) ? siteA.name : siteB.name;
+                        queuedPath.FindAll(x => x != queuedPath[0]).SelectMany(x => x.Item2).ToList().ForEach(x => Destroy(x.gameObject));
+                        queuedPath.RemoveAll(x => x != queuedPath[0]);
+                        var siteA = FindSite(x => x.name == queuedPath[0].Item1.sites[0]);
+                        var siteB = FindSite(x => x.name == queuedPath[0].Item1.sites[1]);
+                        queuedSiteOpen = Vector2.Distance(new Vector2(siteA.x, siteA.y) * mapGridSize, queuedPath[0].Item2.Last().transform.position) < Vector2.Distance(new Vector2(siteB.x, siteB.y) * mapGridSize, queuedPath[0].Item2.Last().transform.position) ? siteA.name : siteB.name;
                     }
                     if (Vector2.Distance(temp, cameraDestination) > 5)
                     {
-                        var newPosition = Vector3.Lerp(temp, cameraDestination, Time.deltaTime * 15);
+                        var newPosition = Vector3.Lerp(temp, cameraDestination, Time.deltaTime * queuedPath[0].Item1.speed);
                         cursor.transform.position += newPosition - temp;
                         screen.transform.localPosition = newPosition;
                     }
                     else
                     {
-                        Destroy(queuedPath.First(x => x.name == "PathDot").gameObject);
-                        queuedPath.RemoveAt(0);
+                        Destroy(queuedPath[0].Item2.First(x => x.name == "PathDot").gameObject);
+                        queuedPath[0].Item2.RemoveAt(0);
+                        if (queuedPath[0].Item2.Count == 0) queuedPath.RemoveAt(0);
                         if (queuedPath.Count == 0)
                         {
                             UnlockScreen();
@@ -237,9 +239,9 @@ public class Desktop : MonoBehaviour
                         }
                         else
                         {
-                            var first = queuedPath.First(x => x.name == "PathDot");
+                            var first = queuedPath[0].Item2.First(x => x.name == "PathDot");
                             cameraDestination = first.position;
-                            first.GetComponent<SpriteRenderer>().color = (means == "Tram" ? Color.brown : (means == "Ship" ? Color.blue : Color.green));
+                            first.GetComponent<SpriteRenderer>().color = (queuedPath[0].Item1.means == "Tram" ? Color.yellow : (queuedPath[0].Item1.means == "Ship" ? Color.blue : Color.green));
                         }
                     }
                 }

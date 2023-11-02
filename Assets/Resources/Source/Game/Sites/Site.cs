@@ -83,12 +83,12 @@ public class Site
         var newPoint = new Vector2(site.x, site.y) * 19;
         foreach (var path in pathsDrawn)
         {
-            var queue = path.GetComponentsInChildren<Transform>().ToList().FindAll(x => x.name == "PathDot");
+            var queue = path.Item2.GetComponentsInChildren<Transform>().ToList().FindAll(x => x.name == "PathDot");
             if (queue.Count > 0)
             {
                 if (queue.Count > 1 && Vector2.Distance(queue[0].transform.position, newPoint) > Vector2.Distance(queue.Last().transform.position, newPoint)) queue.Reverse();
                 newPoint = queue.Last().position;
-                CDesktop.queuedPath.AddRange(queue);
+                CDesktop.queuedPath.Add((path.Item1, queue));
             }
         }
         if (pathsDrawn.Count == 0) return;
@@ -107,9 +107,9 @@ public class Site
 
     public void BuildPath()
     {
-        if (pathTest != null)
-            UnityEngine.Object.Destroy(pathTest);
-        pathTest = null;
+        if (pathTest.Item2 != null)
+            UnityEngine.Object.Destroy(pathTest.Item2);
+        pathTest = (null, null);
         if (sitePathBuilder == null)
         {
             pathBuilder = new() { new Vector2(x * 19, y * 19) };

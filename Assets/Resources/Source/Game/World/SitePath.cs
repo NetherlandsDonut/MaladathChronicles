@@ -5,6 +5,7 @@ using System.Collections.Generic;
 
 using static Root;
 using static SaveGame;
+using UnityEditor.SceneTemplate;
 
 public class SitePath
 {
@@ -12,10 +13,11 @@ public class SitePath
     public void Initialise()
     {
         if (means == null) means = "Land";
-        var ref = means == "Land" ? pathsConnectedToSite : transportationConnectedToSite;
+        if (speed <= 0) speed = 10;
+        var list = means == "Land" ? pathsConnectedToSite : transportationConnectedToSite;
         foreach (var site in sites)
-            if (ref.ContainsKey(site)) ref[site].Add(this);
-            else ref.Add(site, new() { this });
+            if (list.ContainsKey(site)) list[site].Add(this);
+            else list.Add(site, new() { this });
     }
 
     //Paths connected to this one excluding connections to sites in exclude list
@@ -35,6 +37,12 @@ public class SitePath
     //Type of traveling that the entity takes while on this path
     public string means;
 
+    //Price of taking this path
+    public double price;
+
+    //Animation speed of this path
+    public int speed;
+
     //List of all points in between the two sites
     public List<(int, int)> points;
 
@@ -45,26 +53,26 @@ public class SitePath
     public static Dictionary<string, List<SitePath>> transportationConnectedToSite = new();
 
     //List of all active paths in the world
-    public static List<GameObject> pathsDrawn = new();
+    public static List<(SitePath, GameObject)> pathsDrawn = new();
 
     //Draws the path
-    public GameObject DrawPath()
+    public (SitePath, GameObject) DrawPath()
     {
         sites = sites.OrderBy(x => x).ToList();
         var a = sites[0];
         var b = sites[1];
         var name = "Path between \"" + a + "\" and \"" + b + "\"";
-        var findPath = pathsDrawn.Find(x => x.name == name);
-        if (findPath != null)
+        var findPath = pathsDrawn.Find(x => x.Item2.name == name);
+        if (findPath.Item2 != null)
         {
             pathsDrawn.Remove(findPath);
-            Object.Destroy(findPath);
+            Object.Destroy(findPath.Item2);
         }
         var path = new GameObject(name);
         int stepsMade = 0;
         for (int i = 0; i < points.Count - 1; i++)
             PathStep(points[i], points[i + 1]);
-        return path;
+        return (this, path);
 
         void PathStep((int, int) a, (int, int) b)
         {
@@ -100,7 +108,7 @@ public class SitePath
     //Transport mouseover information
     public void PrintTooltip()
     {
-        SetAnchor(Center);
+        SetAnchor(Anchor.Center);
         AddHeaderGroup();
         SetRegionGroupWidth(188);
         AddHeaderRegion(() => { AddLine(means); });
@@ -114,7 +122,7 @@ public class SitePath
     }
     
     //Path currently being built 
-    public static GameObject pathTest;
+    public static (SitePath, GameObject) pathTest;
 
     //EXTERNAL FILE: List containing all paths in-game
     public static List<SitePath> paths;
@@ -124,7 +132,7 @@ public class SitePath
     {
         var timeA = System.DateTime.Now;
         (List<SitePath>, int) bestPath = (null, maxPathLength);
-        var startingPoints = paths.FindAll(x => x.sites.Contains(from.name));
+        var startingPoints = pathsConnectedToSite[from.name];
         var scan = new List<(List<SitePath>, int)>();
         foreach (var direction in startingPoints)
             FindPath((new() { direction }, direction.points.Count), false);

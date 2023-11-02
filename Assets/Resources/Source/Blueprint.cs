@@ -1173,7 +1173,7 @@ public class Blueprint
             SetRegionGroupWidth(272);
             AddPaddingRegion(() =>
             {
-                AddLine("Day " + currentSave.day, "", "Right");
+                AddLine("Day " + (currentSave.day + 1), "", "Right");
             });
         }, true),
         new("MapToolbarClockRight", () => {
@@ -1235,14 +1235,15 @@ public class Blueprint
                 int unknownLocations = 0;
                 foreach (var flightPath in town.flightPaths)
                 {
-                    var desitnation = towns.Find(x => x.name == flightPath.destination);
-                    var faction = factions.Find(x => x.name == desitnation.faction);
+                    var desitnationName = flightPath.sites.Find(x => x != currentSave.currentSite);
+                    var destination = towns.Find(x => x.name == desitnationName);
+                    var faction = factions.Find(x => x.name == destination.faction);
                     if (faction.side == "Neutral" || faction.side == races.Find(x => x.name == currentSave.player.race).Faction().side)
-                        if (currentSave.siteVisits.ContainsKey(desitnation.name))
+                        if (currentSave.siteVisits.ContainsKey(destination.name))
                         {
                                 AddButtonRegion(() =>
                                 {
-                                    AddLine(flightPath.destination);
+                                    AddLine(desitnationName);
                                     AddSmallButton(faction.Icon(), (h) => { });
                                 },
                                 (h) =>
@@ -1252,10 +1253,10 @@ public class Blueprint
                                     CDesktop.LockScreen();
                                     if (flightPath.price > 0)
                                         PlaySound("DesktopTransportPay");
-                                    desitnation.QueueSiteOpen("Town");
+                                    destination.QueueSiteOpen("Town");
                                 },
                                 null,
-                                (h) => () => { Transport.PrintTransportTooltip(flightPath); });
+                                (h) => () => { flightPath.PrintTooltip(); });
                         }
                         else unknownLocations++;
                 }
@@ -6970,7 +6971,7 @@ public class Blueprint
             {
                 if (sitePathBuilder != null)
                 {
-                    UnityEngine.Object.Destroy(pathTest);
+                    UnityEngine.Object.Destroy(pathTest.Item2);
                     sitePathBuilder = null;
                 }
                 if (Input.GetKey(LeftShift))
@@ -6979,7 +6980,7 @@ public class Blueprint
                 else
                 {
                     for (int i = 0; i < pathsDrawn.Count; i++)
-                        UnityEngine.Object.Destroy(pathsDrawn[i]);
+                        UnityEngine.Object.Destroy(pathsDrawn[i].Item2);
                     pathsDrawn = new();
                 }
             });

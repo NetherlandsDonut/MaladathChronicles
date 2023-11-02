@@ -1,123 +1,105 @@
 [
   {
-      "sites": [
-          "Stormwind",
-          "Ironforge"
-      ],
-      "means": "Tram",
-      "price": 1.5,
-      "speed": 5,
-      "points": [
-          {
-              "Item1": 5092,
-              "Item2": -3477
-          },
-          {
-              "Item1": 5130,
-              "Item2": -3515
-          }
-      ]
+    "sites": [
+      "Auberdine",
+      "Menethil Harbor"
+    ],
+    "means": "Ship",
+    "price": 1.5,
+    "speed": 5,
+    "points": [
+      {
+        "Item1": 5092,
+        "Item2": -3477
+      },
+      {
+        "Item1": 5130,
+        "Item2": -3515
+      }
+    ]
   },
   {
-      "sites": [
-          "Auberdine",
-          "Menethil Harbor"
-      ],
-      "means": "Ship",
-      "price": 1.5,
-      "speed": 5,
-      "points": [
-          {
-              "Item1": 5092,
-              "Item2": -3477
-          },
-          {
-              "Item1": 5130,
-              "Item2": -3515
-          }
-      ]
+    "sites": [
+      "Auberdine",
+      "Rut'theran Village"
+    ],
+    "means": "Ship",
+    "price": 1.5,
+    "speed": 5,
+    "points": [
+      {
+        "Item1": 5092,
+        "Item2": -3477
+      },
+      {
+        "Item1": 5130,
+        "Item2": -3515
+      }
+    ]
   },
   {
-      "sites": [
-          "Auberdine",
-          "Rut'theran Village"
-      ],
-      "means": "Ship",
-      "price": 1.5,
-      "speed": 5,
-      "points": [
-          {
-              "Item1": 5092,
-              "Item2": -3477
-          },
-          {
-              "Item1": 5130,
-              "Item2": -3515
-          }
-      ]
+    "sites": [
+      "Orgrimmar",
+      "Undercity"
+    ],
+    "means": "Zeppelin",
+    "price": 1.5,
+    "speed": 5,
+    "points": [
+      {
+        "Item1": 5092,
+        "Item2": -3477
+      },
+      {
+        "Item1": 5130,
+        "Item2": -3515
+      }
+    ]
   },
   {
-      "sites": [
-          "Orgrimmar",
-          "Undercity"
-      ],
-      "means": "Zeppelin",
-      "price": 1.5,
-      "speed": 5,
-      "points": [
-          {
-              "Item1": 5092,
-              "Item2": -3477
-          },
-          {
-              "Item1": 5130,
-              "Item2": -3515
-          }
-      ]
+    "sites": [
+      "Orgrimmar",
+      "Grom'gol Base Camp"
+    ],
+    "means": "Zeppelin",
+    "price": 1.5,
+    "speed": 5,
+    "points": [
+      {
+        "Item1": 5092,
+        "Item2": -3477
+      },
+      {
+        "Item1": 5130,
+        "Item2": -3515
+      }
+    ]
   },
   {
-      "sites": [
-          "Orgrimmar",
-          "Grom'gol Base Camp"
-      ],
-      "means": "Zeppelin",
-      "price": 1.5,
-      "speed": 5,
-      "points": [
-          {
-              "Item1": 5092,
-              "Item2": -3477
-          },
-          {
-              "Item1": 5130,
-              "Item2": -3515
-          }
-      ]
-  },
-  {
-      "sites": [
-          "Booty Bay",
-          "Ratchet"
-      ],
-      "means": "Ship",
-      "price": 1.5,
-      "speed": 5,
-      "points": [
-          {
-              "Item1": 5092,
-              "Item2": -3477
-          },
-          {
-              "Item1": 5130,
-              "Item2": -3515
-          }
-      ]
+    "sites": [
+      "Booty Bay",
+      "Ratchet"
+    ],
+    "means": "Ship",
+    "price": 1.5,
+    "speed": 5,
+    "points": [
+      {
+        "Item1": 5092,
+        "Item2": -3477
+      },
+      {
+        "Item1": 5130,
+        "Item2": -3515
+      }
+    ]
   },
   {
     "sites": [
       "Northshire Abbey",
       "Northshire Vineyards"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5092,
@@ -154,6 +136,7 @@
       "Echo Ridge Mine",
       "Northshire Abbey"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5092,
@@ -186,6 +169,7 @@
       "Northshire Abbey",
       "Northshire Valley"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5092,
@@ -218,6 +202,7 @@
       "Fargodeep Mine",
       "Goldshire"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5054,
@@ -274,6 +259,7 @@
       "Fargodeep Mine",
       "Stonefield Farm"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4978,
@@ -314,6 +300,7 @@
       "Fargodeep Mine",
       "The Maclure Vineyards"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5054,
@@ -358,6 +345,7 @@
       "Stonefield Farm",
       "The Maclure Vineyards"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5054,
@@ -402,6 +390,7 @@
       "Goldshire",
       "The Maclure Vineyards"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5054,
@@ -474,6 +463,7 @@
       "Goldshire",
       "Stonefield Farm"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5054,
@@ -542,6 +532,7 @@
       "Forest's Edge",
       "Jansen Stead"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4864,
@@ -610,6 +601,7 @@
       "Forest's Edge",
       "Stonefield Farm"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4921,
@@ -674,6 +666,7 @@
       "Forest's Edge",
       "Mirror Lake Orchard"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4921,
@@ -738,6 +731,7 @@
       "Mirror Lake",
       "Mirror Lake Orchard"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4959,
@@ -770,6 +764,7 @@
       "Goldshire",
       "Northshire Abbey"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5092,
@@ -838,6 +833,7 @@
       "Goldshire",
       "Stormwind City"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5054,
@@ -918,6 +914,7 @@
       "Stormwind City",
       "The Stockade"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4883,
@@ -958,6 +955,7 @@
       "Crystal Lake",
       "Northshire Abbey"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5092,
@@ -1030,6 +1028,7 @@
       "Northshire Valley",
       "Northshire Vineyards"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5130,
@@ -1066,6 +1065,7 @@
       "Echo Ridge Mine",
       "Northshire Valley"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5073,
@@ -1106,6 +1106,7 @@
       "Crystal Lake",
       "Goldshire"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5054,
@@ -1158,6 +1159,7 @@
       "Goldshire",
       "Mirror Lake"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5054,
@@ -1210,6 +1212,7 @@
       "Goldshire",
       "Mirror Lake Orchard"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5054,
@@ -1266,6 +1269,7 @@
       "Forest's Edge",
       "Goldshire"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5054,
@@ -1370,6 +1374,7 @@
       "Goldshire",
       "Jansen Stead"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5054,
@@ -1474,6 +1479,7 @@
       "Jansen Stead",
       "Saldean's Farm"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4864,
@@ -1526,6 +1532,7 @@
       "Jansen Stead",
       "Sentinel Hill"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4864,
@@ -1598,6 +1605,7 @@
       "Sentinel Hill",
       "The Dead Acre"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4845,
@@ -1654,6 +1662,7 @@
       "Sentinel Hill",
       "The Dust Plains"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4845,
@@ -1726,6 +1735,7 @@
       "The Dead Acre",
       "The Dust Plains"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4883,
@@ -1770,6 +1780,7 @@
       "The Dagger Hills",
       "The Dust Plains"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4883,
@@ -1822,6 +1833,7 @@
       "Moonbrook",
       "The Dagger Hills"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4769,
@@ -1874,6 +1886,7 @@
       "Moonbrook",
       "The Deadmines"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4769,
@@ -1910,6 +1923,7 @@
       "Moonbrook",
       "Stendel's Pond"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4769,
@@ -1950,6 +1964,7 @@
       "Alexton Farmstead",
       "Moonbrook"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4769,
@@ -2010,6 +2025,7 @@
       "Molsen Farm",
       "Moonbrook"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4769,
@@ -2102,6 +2118,7 @@
       "Alexton Farmstead",
       "Gold Coast Quarry"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4712,
@@ -2150,6 +2167,7 @@
       "Gold Coast Quarry",
       "Longshore"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4674,
@@ -2210,6 +2228,7 @@
       "Longshore",
       "Westfall Lighthouse"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4617,
@@ -2298,6 +2317,7 @@
       "Alexton Farmstead",
       "Longshore"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4712,
@@ -2350,6 +2370,7 @@
       "Gold Coast Quarry",
       "Jangolode Mine"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4674,
@@ -2422,6 +2443,7 @@
       "Jangolode Mine",
       "Molsen Farm"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4769,
@@ -2462,6 +2484,7 @@
       "Molsen Farm",
       "Saldean's Farm"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4769,
@@ -2502,6 +2525,7 @@
       "Furlbrow's Pumpkin Farm",
       "Saldean's Farm"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4826,
@@ -2538,6 +2562,7 @@
       "Furlbrow's Pumpkin Farm",
       "Jangolode Mine"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4750,
@@ -2578,6 +2603,7 @@
       "Furlbrow's Pumpkin Farm",
       "Molsen Farm"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4769,
@@ -2626,6 +2652,7 @@
       "Furlbrow's Pumpkin Farm",
       "Jansen Stead"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4807,
@@ -2666,6 +2693,7 @@
       "Sentinel Hill",
       "Stendel's Pond"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4788,
@@ -2714,6 +2742,7 @@
       "Moonbrook",
       "The Dead Acre"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4769,
@@ -2786,6 +2815,7 @@
       "Stendel's Pond",
       "The Dead Acre"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4788,
@@ -2838,6 +2868,7 @@
       "Mirror Lake",
       "Stormwind City"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4978,
@@ -2894,6 +2925,7 @@
       "Fargodeep Mine",
       "Mirror Lake"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4978,
@@ -2950,6 +2982,7 @@
       "Mirror Lake",
       "Stonefield Farm"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4978,
@@ -3018,6 +3051,7 @@
       "Mirror Lake",
       "The Maclure Vineyards"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4978,
@@ -3090,6 +3124,7 @@
       "Jansen Stead",
       "Mirror Lake"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4978,
@@ -3190,6 +3225,7 @@
       "Forest's Edge",
       "Mirror Lake"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4978,
@@ -3290,6 +3326,7 @@
       "Jansen Stead",
       "Mirror Lake Orchard"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4959,
@@ -3354,6 +3391,7 @@
       "Mirror Lake Orchard",
       "Stonefield Farm"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4959,
@@ -3410,6 +3448,7 @@
       "Fargodeep Mine",
       "Mirror Lake Orchard"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4959,
@@ -3470,6 +3509,7 @@
       "Mirror Lake Orchard",
       "The Maclure Vineyards"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4959,
@@ -3562,6 +3602,7 @@
       "Camp Narache",
       "Red Cloud Mesa"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 1501,
@@ -3610,6 +3651,7 @@
       "Brambleblade Ravine",
       "Red Cloud Mesa"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 1558,
@@ -3686,6 +3728,7 @@
       "Bloodhoof Village",
       "Camp Narache"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 1501,
@@ -3838,6 +3881,7 @@
       "Bloodhoof Village",
       "Red Cloud Mesa"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 1558,
@@ -3998,6 +4042,7 @@
       "Bloodhoof Village",
       "The Rolling Plains"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 1539,
@@ -4050,6 +4095,7 @@
       "Bloodhoof Village",
       "Palemane Rock"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 1539,
@@ -4142,6 +4188,7 @@
       "Bloodhoof Village",
       "Thunder Bluff"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 1539,
@@ -4278,6 +4325,7 @@
       "Deathknell",
       "Shadow Grave"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4712,
@@ -4322,6 +4370,7 @@
       "Deadman's Crossing",
       "Sleeping Gorge"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5415,
@@ -4410,6 +4459,7 @@
       "Ariden's Camp",
       "Deadman's Crossing"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5415,
@@ -4454,6 +4504,7 @@
       "Ariden's Camp",
       "Sleeping Gorge"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5472,
@@ -4494,6 +4545,7 @@
       "Karazhan",
       "The Vice"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5453,
@@ -4558,6 +4610,7 @@
       "Sleeping Gorge",
       "The Vice"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5472,
@@ -4598,6 +4651,7 @@
       "Itharius's Cave",
       "Splinterspear Junction"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5567,
@@ -4650,6 +4704,7 @@
       "Ariden's Camp",
       "Itharius's Cave"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5567,
@@ -4734,6 +4789,7 @@
       "Itharius's Cave",
       "Sleeping Gorge"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5472,
@@ -4822,6 +4878,7 @@
       "Dreadmaul Post",
       "The Altar of Storms"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5586,
@@ -4870,6 +4927,7 @@
       "Dreadmaul Hold",
       "Dreadmaul Post"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5643,
@@ -4934,6 +4992,7 @@
       "Dreadmaul Post",
       "Serpent's Coil"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5643,
@@ -4994,6 +5053,7 @@
       "Dreadmaul Post",
       "The Tainted Scar"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5643,
@@ -5094,6 +5154,7 @@
       "Serpent's Coil",
       "The Dark Portal"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5719,
@@ -5162,6 +5223,7 @@
       "The Dark Portal",
       "The Tainted Scar"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5567,
@@ -5290,6 +5352,7 @@
       "Dreadmaul Post",
       "The Dark Portal"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5719,
@@ -5358,6 +5421,7 @@
       "Kurzen's Compound",
       "Zul'Gurub"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5282,
@@ -5430,6 +5494,7 @@
       "Mosh'Ogg Ogre Mound",
       "Zul'Gurub"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5282,
@@ -5514,6 +5579,7 @@
       "Balia'mah Ruins",
       "Mosh'Ogg Ogre Mound"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5206,
@@ -5570,6 +5636,7 @@
       "Balia'mah Ruins",
       "Ruins of Zul'Mamwe"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5206,
@@ -5634,6 +5701,7 @@
       "Balia'mah Ruins",
       "Ziata'jai Ruins"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5149,
@@ -5678,6 +5746,7 @@
       "Crystalvein Mine",
       "Ziata'jai Ruins"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5149,
@@ -5754,6 +5823,7 @@
       "Crystalvein Mine",
       "Ruins of Jubuwal"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5149,
@@ -5814,6 +5884,7 @@
       "Gurubashi Arena",
       "Ruins of Jubuwal"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5054,
@@ -5854,6 +5925,7 @@
       "Gurubashi Arena Grounds",
       "Ruins of Jubuwal"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5016,
@@ -5946,6 +6018,7 @@
       "Crystalvein Mine",
       "Gurubashi Arena Grounds"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5149,
@@ -6030,6 +6103,7 @@
       "Gurubashi Arena Grounds",
       "Ziata'jai Ruins"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5016,
@@ -6110,6 +6184,7 @@
       "Grom'gol Base Camp",
       "Mizjah Ruins"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5016,
@@ -6154,6 +6229,7 @@
       "Grom'gol Base Camp",
       "Kal'ai Ruins"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5016,
@@ -6226,6 +6302,7 @@
       "Bal'lal Ruins",
       "Tkashi Ruins"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4978,
@@ -6270,6 +6347,7 @@
       "Nesingwary's Expedition",
       "Tkashi Ruins"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5073,
@@ -6310,6 +6388,7 @@
       "Nesingwary's Expedition",
       "Rebel Camp"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5073,
@@ -6386,6 +6465,7 @@
       "Roland's Doom",
       "The Rotting Orchard"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5282,
@@ -6426,6 +6506,7 @@
       "Gossamer Grotto",
       "Tranquil Gardens Cemetery"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5358,
@@ -6470,6 +6551,7 @@
       "Darkshire",
       "Tranquil Gardens Cemetery"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5320,
@@ -6518,6 +6600,7 @@
       "Darkshire",
       "Manor Mistmantle"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5320,
@@ -6558,6 +6641,7 @@
       "Brightwood Grove",
       "Darkshire"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5301,
@@ -6614,6 +6698,7 @@
       "Brightwood Grove",
       "The Darkened Bank"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5244,
@@ -6670,6 +6755,7 @@
       "Dawning Wood Catacombs",
       "Raven Hill Cemetery"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5016,
@@ -6698,6 +6784,7 @@
       "Raven Hill",
       "Raven Hill Cemetery"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4978,
@@ -6730,6 +6817,7 @@
       "Forlorn Rowe",
       "Raven Hill"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4978,
@@ -6778,6 +6866,7 @@
       "Dawning Wood Catacombs",
       "Forlorn Rowe"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5016,
@@ -6810,6 +6899,7 @@
       "Camp Boff",
       "Lethlor Ravine"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5890,
@@ -6918,6 +7008,7 @@
       "Lethlor Ravine",
       "Valley of Fangs"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5757,
@@ -7018,6 +7109,7 @@
       "Dustwind Gulch",
       "Lethlor Ravine"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5890,
@@ -7070,6 +7162,7 @@
       "Camp Kosh",
       "Dustwind Gulch"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5833,
@@ -7118,6 +7211,7 @@
       "Camp Kosh",
       "Hammertoe's Digsite"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5814,
@@ -7162,6 +7256,7 @@
       "Camp Kosh",
       "The Maker's Terrace"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5814,
@@ -7214,6 +7309,7 @@
       "Grizzlepaw Ridge",
       "The Maker's Terrace"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5738,
@@ -7290,6 +7386,7 @@
       "Grizzlepaw Ridge",
       "Stonesplinter Valley"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5681,
@@ -7326,6 +7423,7 @@
       "Stonesplinter Valley",
       "Valley of Kings"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5643,
@@ -7378,6 +7476,7 @@
       "Grizzlepaw Ridge",
       "Valley of Kings"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5605,
@@ -7430,6 +7529,7 @@
       "Thelsamar",
       "Tunnel Rat Camp"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5662,
@@ -7474,6 +7574,7 @@
       "Silver Stream Mine",
       "Thelsamar"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5662,
@@ -7542,6 +7643,7 @@
       "Algaz Station",
       "Thelsamar"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5662,
@@ -7606,6 +7708,7 @@
       "Algaz Station",
       "Silver Stream Mine"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5605,
@@ -7646,6 +7749,7 @@
       "Silver Stream Mine",
       "Stonewrought Dam"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5662,
@@ -7698,6 +7802,7 @@
       "Isle Ruins",
       "Stonewrought Dam"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5738,
@@ -7754,6 +7859,7 @@
       "Loch Shore",
       "Stonewrought Dam"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5814,
@@ -7822,6 +7928,7 @@
       "Loch Shore",
       "Mo'grosh Stronghold"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5852,
@@ -7874,6 +7981,7 @@
       "Isle Ruins",
       "Mo'grosh Stronghold"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5757,
@@ -7934,6 +8042,7 @@
       "Mo'grosh Stronghold",
       "Mo'grosh Woods"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5890,
@@ -7982,6 +8091,7 @@
       "Buzzard Vale",
       "Farstrider Lodge"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5928,
@@ -8022,6 +8132,7 @@
       "Buzzard Vale",
       "Ironband's Excavation Site"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5909,
@@ -8070,6 +8181,7 @@
       "Ironband's Excavation Site",
       "South Hillside"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5795,
@@ -8126,6 +8238,7 @@
       "Farstrider Lodge",
       "Ironband's Excavation Site"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5852,
@@ -8198,6 +8311,7 @@
       "Farstrider Lodge",
       "Mo'grosh Woods"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5928,
@@ -8250,6 +8364,7 @@
       "Loch Shore",
       "The Loch"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5776,
@@ -8294,6 +8409,7 @@
       "Ironband's Excavation Site",
       "The Loch"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5852,
@@ -8346,6 +8462,7 @@
       "South Hillside",
       "The Loch"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5795,
@@ -8398,6 +8515,7 @@
       "Fargodeep Mine",
       "Jansen Stead"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5016,
@@ -8474,6 +8592,7 @@
       "Crystal Lake",
       "Jasperlode Mine"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5130,
@@ -8526,6 +8645,7 @@
       "Jasperlode Mine",
       "Tower of Azora"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5187,
@@ -8570,6 +8690,7 @@
       "Crystal Lake",
       "Tower of Azora"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5130,
@@ -8622,6 +8743,7 @@
       "Crystal Lake",
       "The Maclure Vineyards"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5054,
@@ -8686,6 +8808,7 @@
       "Brackwell Pumpkin Patch",
       "Crystal Lake"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5130,
@@ -8746,6 +8869,7 @@
       "Brackwell Pumpkin Patch",
       "Tower of Azora"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5206,
@@ -8786,6 +8910,7 @@
       "Brackwell Pumpkin Patch",
       "Three Corners"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5225,
@@ -8898,6 +9023,7 @@
       "Ridgepoint Tower",
       "Three Corners"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5339,
@@ -8966,6 +9092,7 @@
       "Eastvale Logging Camp",
       "Ridgepoint Tower"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5339,
@@ -9014,6 +9141,7 @@
       "Brackwell Pumpkin Patch",
       "Ridgepoint Tower"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5339,
@@ -9086,6 +9214,7 @@
       "Brackwell Pumpkin Patch",
       "Eastvale Logging Camp"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5320,
@@ -9158,6 +9287,7 @@
       "Eastvale Logging Camp",
       "Stone Cairn Lake"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5320,
@@ -9226,6 +9356,7 @@
       "Heroes' Vigil",
       "Stone Cairn Lake"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5282,
@@ -9258,6 +9389,7 @@
       "Eastvale Logging Camp",
       "Heroes' Vigil"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5263,
@@ -9306,6 +9438,7 @@
       "Heroes' Vigil",
       "Tower of Azora"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5206,
@@ -9358,6 +9491,7 @@
       "Eastvale Logging Camp",
       "Tower of Azora"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5206,
@@ -9422,6 +9556,7 @@
       "Lake Everstill",
       "Three Corners"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5453,
@@ -9470,6 +9605,7 @@
       "Lakeridge Highway",
       "Three Corners"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5453,
@@ -9534,6 +9670,7 @@
       "Lakeridge Highway",
       "Stonewatch"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5567,
@@ -9606,6 +9743,7 @@
       "Lakeridge Highway",
       "Stonewatch Falls"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5567,
@@ -9678,6 +9816,7 @@
       "Lake Everstill",
       "Lakeridge Highway"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5567,
@@ -9714,6 +9853,7 @@
       "Lakeridge Highway",
       "Render's Valley"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5567,
@@ -9782,6 +9922,7 @@
       "Render's Valley",
       "Tower of Ilgalar"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5700,
@@ -9850,6 +9991,7 @@
       "Galardell Valley",
       "Tower of Ilgalar"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5738,
@@ -9886,6 +10028,7 @@
       "Alther's Mill",
       "Galardell Valley"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5719,
@@ -9954,6 +10097,7 @@
       "Galardell Valley",
       "Stonewatch"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5719,
@@ -10006,6 +10150,7 @@
       "Stonewatch",
       "Tower of Ilgalar"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5738,
@@ -10058,6 +10203,7 @@
       "Alther's Mill",
       "Stonewatch"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5662,
@@ -10114,6 +10260,7 @@
       "Stonewatch",
       "Stonewatch Falls"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5700,
@@ -10146,6 +10293,7 @@
       "Render's Valley",
       "Stonewatch Falls"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5700,
@@ -10226,6 +10374,7 @@
       "Render's Valley",
       "Stonewatch"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5700,
@@ -10306,6 +10455,7 @@
       "Alther's Mill",
       "Redridge Canyons"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5605,
@@ -10362,6 +10512,7 @@
       "Alther's Mill",
       "Render's Camp"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5605,
@@ -10430,6 +10581,7 @@
       "Flame Crest",
       "Slither Rock"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5662,
@@ -10506,6 +10658,7 @@
       "Blackchar Cave",
       "The Sea of Cinders"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5244,
@@ -10574,6 +10727,7 @@
       "Grimesilt Digsite",
       "The Sea of Cinders"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5358,
@@ -10614,6 +10768,7 @@
       "Dustfire Valley",
       "Grimesilt Digsite"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5415,
@@ -10670,6 +10825,7 @@
       "Grimesilt Digsite",
       "Stonewrought Pass"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5415,
@@ -10742,6 +10898,7 @@
       "Stonewrought Pass",
       "Valley of Kings"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5472,
@@ -10830,6 +10987,7 @@
       "Helm's Bed Lake",
       "Valley of Kings"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5605,
@@ -10918,6 +11076,7 @@
       "Morgan's Vigil",
       "The Pillar of Ash"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5605,
@@ -11022,6 +11181,7 @@
       "Morgan's Vigil",
       "Terror Wing Path"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5643,
@@ -11058,6 +11218,7 @@
       "Slither Rock",
       "Terror Wing Path"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5643,
@@ -11110,6 +11271,7 @@
       "Apocryphan's Rest",
       "Grimesilt Digsite"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5415,
@@ -11182,6 +11344,7 @@
       "Thelsamar",
       "Valley of Kings"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5605,
@@ -11242,6 +11405,7 @@
       "The Maker's Terrace",
       "Thelsamar"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5662,
@@ -11338,6 +11502,7 @@
       "The Maker's Terrace",
       "Uldaman"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5738,
@@ -11374,6 +11539,7 @@
       "South Hillside",
       "The Maker's Terrace"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5738,
@@ -11434,6 +11600,7 @@
       "Grizzlepaw Ridge",
       "Thelsamar"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5681,
@@ -11498,6 +11665,7 @@
       "The Cauldron",
       "The Slag Pit"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5339,
@@ -11542,6 +11710,7 @@
       "Blackchar Cave",
       "Firewatch Ridge"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5244,
@@ -11626,6 +11795,7 @@
       "Blackchar Cave",
       "Thorium Point"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5244,
@@ -11730,6 +11900,7 @@
       "The Cauldron",
       "Thorium Point"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5339,
@@ -11782,6 +11953,7 @@
       "The Cauldron",
       "The Sea of Cinders"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5339,
@@ -11814,6 +11986,7 @@
       "Dustfire Valley",
       "The Cauldron"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5339,
@@ -11862,6 +12035,7 @@
       "Dustfire Valley",
       "Stonewrought Pass"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5415,
@@ -11914,6 +12088,7 @@
       "Firewatch Ridge",
       "The Cauldron"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5339,
@@ -11982,6 +12157,7 @@
       "Firewatch Ridge",
       "Thorium Point"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5301,
@@ -12030,6 +12206,7 @@
       "Lake Everstill",
       "Lakeshire"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5529,
@@ -12078,6 +12255,7 @@
       "Lakeshire",
       "Rethban Caverns"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5510,
@@ -12114,6 +12292,7 @@
       "Lakeshire",
       "Redridge Canyons"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5510,
@@ -12146,6 +12325,7 @@
       "Redridge Canyons",
       "Rethban Caverns"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5529,
@@ -12186,6 +12366,7 @@
       "Alther's Mill",
       "Lakeshire"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5510,
@@ -12242,6 +12423,7 @@
       "Roland's Doom",
       "Tranquil Gardens Cemetery"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5282,
@@ -12286,6 +12468,7 @@
       "Darkshire",
       "Roland's Doom"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5282,
@@ -12338,6 +12521,7 @@
       "Darkshire",
       "Gossamer Grotto"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5301,
@@ -12390,6 +12574,7 @@
       "Kurzen's Compound",
       "Rebel Camp"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5092,
@@ -12462,6 +12647,7 @@
       "Lake Nazferiti",
       "Nesingwary's Expedition"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5111,
@@ -12514,6 +12700,7 @@
       "Maraudon",
       "Valley of Spears"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 855,
@@ -12558,6 +12745,7 @@
       "Kodo Graveyard",
       "Valley of Spears"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 893,
@@ -12646,6 +12834,7 @@
       "Ghost Walker Post",
       "Kodo Graveyard"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 1045,
@@ -12682,6 +12871,7 @@
       "Ghost Walker Post",
       "Mannoroc Coven"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 1045,
@@ -12774,6 +12964,7 @@
       "Kodo Graveyard",
       "Mannoroc Coven"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 1045,
@@ -12842,6 +13033,7 @@
       "Magram Village",
       "Shadowbreak Ravine"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 1330,
@@ -12906,6 +13098,7 @@
       "Kolkar Village",
       "Magram Village"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 1216,
@@ -12994,6 +13187,7 @@
       "Kolkar Village",
       "Thunder Axe Fortress"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 1235,
@@ -13090,6 +13284,7 @@
       "Ethel Rethor",
       "Ghost Walker Post"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 1083,
@@ -13218,6 +13413,7 @@
       "Ethel Rethor",
       "Ranazjar Isle"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 931,
@@ -13298,6 +13494,7 @@
       "Maraudon",
       "Sar'theris Strand"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 855,
@@ -13382,6 +13579,7 @@
       "Sar'theris Strand",
       "Shadowprey Village"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 836,
@@ -13430,6 +13628,7 @@
       "Gelkis Village",
       "Sar'theris Strand"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 836,
@@ -13486,6 +13685,7 @@
       "Bolgan's Hole",
       "Gelkis Village"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 931,
@@ -13522,6 +13722,7 @@
       "Gelkis Village",
       "Mannoroc Coven"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 931,
@@ -13586,6 +13787,7 @@
       "Ghost Walker Post",
       "Magram Village"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 1216,
@@ -13682,6 +13884,7 @@
       "Magram Village",
       "Mannoroc Coven"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 1045,
@@ -13790,6 +13993,7 @@
       "Feathermoon Stronghold",
       "The Forgotten Coast"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 969,
@@ -13898,6 +14102,7 @@
       "Feathermoon Stronghold",
       "Ruins of Solarsal"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 779,
@@ -13958,6 +14163,7 @@
       "Burning Blade Coven",
       "Valley of Trials"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 2318,
@@ -14002,6 +14208,7 @@
       "Sen'jin Village",
       "Valley of Trials"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 2318,
@@ -14086,6 +14293,7 @@
       "Darkspear Strand",
       "Sen'jin Village"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 2451,
@@ -14118,6 +14326,7 @@
       "Darkspear Strand",
       "Echo Isles"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 2432,
@@ -14190,6 +14399,7 @@
       "Echo Isles",
       "Sen'jin Village"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 2565,
@@ -14258,6 +14468,7 @@
       "Darkspear Strand",
       "Kolkar Crag"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 2375,
@@ -14302,6 +14513,7 @@
       "Kolkar Crag",
       "Sen'jin Village"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 2375,
@@ -14358,6 +14570,7 @@
       "Darkspear Strand",
       "Valley of Trials"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 2432,
@@ -14450,6 +14663,7 @@
       "Tiragarde Keep",
       "Valley of Trials"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 2318,
@@ -14554,6 +14768,7 @@
       "Scuttle Coast",
       "Tiragarde Keep"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 2470,
@@ -14602,6 +14817,7 @@
       "Razor Hill",
       "Tiragarde Keep"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 2470,
@@ -14670,6 +14886,7 @@
       "Orgrimmar",
       "Razor Hill"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 2413,
@@ -14806,6 +15023,7 @@
       "Orgrimmar",
       "Ragefire Chasm"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 2299,
@@ -14854,6 +15072,7 @@
       "Razor Hill",
       "Razormane Grounds"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 2413,
@@ -14922,6 +15141,7 @@
       "Razormane Grounds",
       "Southfury Scree"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 2318,
@@ -14974,6 +15194,7 @@
       "Southfury River",
       "Southfury Scree"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 2242,
@@ -15030,6 +15251,7 @@
       "Razormane Grounds",
       "Southfury River"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 2318,
@@ -15086,6 +15308,7 @@
       "Ratchet",
       "The Merchant Coast"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 2204,
@@ -15166,6 +15389,7 @@
       "Northwatch Hold",
       "The Merchant Coast"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 2223,
@@ -15222,6 +15446,7 @@
       "Northwatch Hold",
       "Raptor Grounds"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 2185,
@@ -15278,6 +15503,7 @@
       "Bramblescar",
       "Raptor Grounds"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 2090,
@@ -15350,6 +15576,7 @@
       "Bramblescar",
       "Camp Taurajo"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 1995,
@@ -15422,6 +15649,7 @@
       "Camp Taurajo",
       "The Rolling Plains"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 1615,
@@ -15538,6 +15766,7 @@
       "Emberstrife's Den",
       "Wyrmbog"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 2223,
@@ -15598,6 +15827,7 @@
       "Corin's Crossing",
       "Tyr's Hand"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 6175,
@@ -15698,6 +15928,7 @@
       "Corin's Crossing",
       "Lake Mereldar"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 6004,
@@ -15738,6 +15969,7 @@
       "Lake Mereldar",
       "Tyr's Hand"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 6004,
@@ -15830,6 +16062,7 @@
       "Light's Hope Chapel",
       "Pestilent Scar"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 6137,
@@ -15870,6 +16103,7 @@
       "Browman's Mill",
       "Light's Hope Chapel"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 6137,
@@ -15906,6 +16140,7 @@
       "Browman's Mill",
       "The Noxious Glade"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 6118,
@@ -15942,6 +16177,7 @@
       "Browman's Mill",
       "Eastwall Tower"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 6042,
@@ -16034,6 +16270,7 @@
       "Eastwall Tower",
       "Light's Hope Chapel"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 6042,
@@ -16126,6 +16363,7 @@
       "Eastwall Tower",
       "Pestilent Scar"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 6042,
@@ -16206,6 +16444,7 @@
       "Browman's Mill",
       "Pestilent Scar"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 6099,
@@ -16246,6 +16485,7 @@
       "Blackwood Lake",
       "Eastwall Tower"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5909,
@@ -16318,6 +16558,7 @@
       "Corin's Crossing",
       "The Infectis Scar"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5985,
@@ -16358,6 +16599,7 @@
       "Corin's Crossing",
       "Eastwall Tower"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5985,
@@ -16426,6 +16668,7 @@
       "Corin's Crossing",
       "Crown Guard Tower"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5985,
@@ -16518,6 +16761,7 @@
       "Crown Guard Tower",
       "Darrowshire"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5814,
@@ -16562,6 +16806,7 @@
       "Crown Guard Tower",
       "The Undercroft"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5814,
@@ -16626,6 +16871,7 @@
       "The Marris Stead",
       "The Undercroft"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5700,
@@ -16670,6 +16916,7 @@
       "The Marris Stead",
       "Thondroril River"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5605,
@@ -16730,6 +16977,7 @@
       "The Weeping Cave",
       "Thondroril River"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5605,
@@ -16782,6 +17030,7 @@
       "Terrorweb Tunnel",
       "Thondroril River"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5605,
@@ -16906,6 +17155,7 @@
       "Terrordale",
       "Terrorweb Tunnel"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5586,
@@ -16950,6 +17200,7 @@
       "Plaguewood Tower",
       "Terrordale"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5643,
@@ -16998,6 +17249,7 @@
       "Plaguewood",
       "Plaguewood Tower"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5757,
@@ -17058,6 +17310,7 @@
       "Plaguewood",
       "Terrordale"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5643,
@@ -17134,6 +17387,7 @@
       "Plaguewood",
       "Stratholme"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5757,
@@ -17210,6 +17464,7 @@
       "Eastwall Gate",
       "Plaguewood"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5757,
@@ -17282,6 +17537,7 @@
       "Eastwall Gate",
       "Quel'Lithien Lodge"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5871,
@@ -17346,6 +17602,7 @@
       "Northpass Tower",
       "Quel'Lithien Lodge"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5947,
@@ -17398,6 +17655,7 @@
       "Eastwall Gate",
       "Northpass Tower"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5871,
@@ -17450,6 +17708,7 @@
       "Blackwood Lake",
       "Northpass Tower"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5909,
@@ -17522,6 +17781,7 @@
       "Eastwall Tower",
       "Northdale"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 6042,
@@ -17610,6 +17870,7 @@
       "Northdale",
       "Zul'Mashar"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 6061,
@@ -17678,6 +17939,7 @@
       "Northpass Tower",
       "Zul'Mashar"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5947,
@@ -17750,6 +18012,7 @@
       "Blackwood Lake",
       "Eastwall Gate"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5909,
@@ -17826,6 +18089,7 @@
       "Blackwood Lake",
       "Plaguewood"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5909,
@@ -17930,6 +18194,7 @@
       "Crown Guard Tower",
       "Fungal Vale"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5814,
@@ -18026,6 +18291,7 @@
       "Fungal Vale",
       "Plaguewood"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5814,
@@ -18130,6 +18396,7 @@
       "Crown Guard Tower",
       "The Marris Stead"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5700,
@@ -18202,6 +18469,7 @@
       "Darrowshire",
       "The Undercroft"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5719,
@@ -18262,6 +18530,7 @@
       "Gahrron's Withering",
       "Thondroril River"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5510,
@@ -18314,6 +18583,7 @@
       "Dalson's Tears",
       "Gahrron's Withering"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5510,
@@ -18382,6 +18652,7 @@
       "Gahrron's Withering",
       "The Writhing Haunt"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5510,
@@ -18458,6 +18729,7 @@
       "Ruins of Andorhal",
       "The Writhing Haunt"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5434,
@@ -18506,6 +18778,7 @@
       "Felstone Field",
       "Ruins of Andorhal"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5358,
@@ -18562,6 +18835,7 @@
       "Dalson's Tears",
       "Felstone Field"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5301,
@@ -18622,6 +18896,7 @@
       "Dalson's Tears",
       "Northridge Lumber Camp"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5377,
@@ -18710,6 +18985,7 @@
       "Sorrow Hill",
       "Uther's Tomb"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5415,
@@ -18750,6 +19026,7 @@
       "Ruins of Andorhal",
       "Sorrow Hill"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5453,
@@ -18810,6 +19087,7 @@
       "Ruins of Andorhal",
       "Uther's Tomb"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5415,
@@ -18866,6 +19144,7 @@
       "Chillwind Camp",
       "Ruins of Andorhal"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5358,
@@ -18950,6 +19229,7 @@
       "Durnholde Keep",
       "Ravenholdt Manor"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5358,
@@ -19046,6 +19326,7 @@
       "Durnholde Keep",
       "Wildhammer Mountain Pass"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5358,
@@ -19102,6 +19383,7 @@
       "Aerie Peak",
       "Wildhammer Mountain Pass"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5434,
@@ -19166,6 +19448,7 @@
       "Eastern Strand",
       "Nethander Stead"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5225,
@@ -19202,6 +19485,7 @@
       "Dun Garok",
       "Thoradin's Wall"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5301,
@@ -19262,6 +19546,7 @@
       "Arathi Outer Road",
       "Thoradin's Wall"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5339,
@@ -19314,6 +19599,7 @@
       "Arathi Outer Road",
       "Circle of West Binding"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5396,
@@ -19354,6 +19640,7 @@
       "Circle of West Binding",
       "Northfold Manor"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5434,
@@ -19390,6 +19677,7 @@
       "Arathi Outer Road",
       "Boulder'gor"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5491,
@@ -19446,6 +19734,7 @@
       "Boulder'gor",
       "Circle of West Binding"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5491,
@@ -19494,6 +19783,7 @@
       "Boulder'gor",
       "Northfold Manor"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5491,
@@ -19546,6 +19836,7 @@
       "Dabyrie's Farmstead",
       "Refuge Point"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5567,
@@ -19594,6 +19885,7 @@
       "Circle of Outer Binding",
       "Dabyrie's Farmstead"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5624,
@@ -19634,6 +19926,7 @@
       "Go'Shek Farm",
       "Witherbark Village"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5681,
@@ -19670,6 +19963,7 @@
       "Witherbark Caves",
       "Witherbark Village"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5719,
@@ -19718,6 +20012,7 @@
       "Boulderfist Hall",
       "Witherbark Village"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5719,
@@ -19778,6 +20073,7 @@
       "Boulderfist Hall",
       "Go'Shek Farm"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5681,
@@ -19830,6 +20126,7 @@
       "Devyr's Hill",
       "Thandol Span"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5567,
@@ -19898,6 +20195,7 @@
       "Circle of Inner Binding",
       "Devyr's Hill"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5567,
@@ -19950,6 +20248,7 @@
       "Devyr's Hill",
       "Ruins of Stromgarde"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5567,
@@ -20046,6 +20345,7 @@
       "Arathi Outer Road",
       "Ruins of Stromgarde"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5415,
@@ -20110,6 +20410,7 @@
       "Circle of Inner Binding",
       "Ruins of Stromgarde"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5491,
@@ -20174,6 +20475,7 @@
       "Arathi Outer Road",
       "Circle of Inner Binding"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5491,
@@ -20246,6 +20548,7 @@
       "Devyr's Hill",
       "Refuge Point"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5567,
@@ -20294,6 +20597,7 @@
       "Boulder'gor",
       "Devyr's Hill"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5567,
@@ -20358,6 +20662,7 @@
       "Circle of Outer Binding",
       "Devyr's Hill"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5567,
@@ -20414,6 +20719,7 @@
       "Boulderfist Hall",
       "Devyr's Hill"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5567,
@@ -20474,6 +20780,7 @@
       "Devyr's Hill",
       "Go'Shek Farm"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5567,
@@ -20542,6 +20849,7 @@
       "Devyr's Hill",
       "Witherbark Village"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5567,
@@ -20618,6 +20926,7 @@
       "Go'Shek Farm",
       "Western Grassland"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5681,
@@ -20678,6 +20987,7 @@
       "Western Grassland",
       "Witherbark Village"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5719,
@@ -20730,6 +21040,7 @@
       "Hammerfall",
       "Western Grassland"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5719,
@@ -20790,6 +21101,7 @@
       "Drywhisker Gorge",
       "Hammerfall"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5757,
@@ -20834,6 +21146,7 @@
       "Drywhisker Gorge",
       "Western Grassland"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5719,
@@ -20886,6 +21199,7 @@
       "Circle of East Binding",
       "Hammerfall"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5757,
@@ -20918,6 +21232,7 @@
       "Circle of East Binding",
       "Western Grassland"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5719,
@@ -20962,6 +21277,7 @@
       "Dabyrie's Farmstead",
       "Western Grassland"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5719,
@@ -21010,6 +21326,7 @@
       "Circle of East Binding",
       "Dabyrie's Farmstead"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5643,
@@ -21066,6 +21383,7 @@
       "Dabyrie's Farmstead",
       "Northfold Manor"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5472,
@@ -21158,6 +21476,7 @@
       "Darrowmere Crossing",
       "Thoradin's Wall"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5339,
@@ -21210,6 +21529,7 @@
       "Durnholde Keep",
       "Thoradin's Wall"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5339,
@@ -21254,6 +21574,7 @@
       "Darrowmere Crossing",
       "Southshore"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5263,
@@ -21326,6 +21647,7 @@
       "Darrowmere Crossing",
       "Hillsbrad"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5263,
@@ -21446,6 +21768,7 @@
       "Hillsbrad",
       "Southpoint Tower"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4978,
@@ -21510,6 +21833,7 @@
       "Azurelode Mine",
       "Hillsbrad"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5016,
@@ -21562,6 +21886,7 @@
       "Azurelode Mine",
       "Western Strand"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5092,
@@ -21614,6 +21939,7 @@
       "Hillsbrad",
       "Western Strand"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5092,
@@ -21686,6 +22012,7 @@
       "Southshore",
       "Western Strand"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5168,
@@ -21750,6 +22077,7 @@
       "Darrowmere Crossing",
       "Nethander Stead"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5244,
@@ -21798,6 +22126,7 @@
       "Nethander Stead",
       "Thoradin's Wall"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5244,
@@ -21854,6 +22183,7 @@
       "Dun Garok",
       "Nethander Stead"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5244,
@@ -21910,6 +22240,7 @@
       "Dun Garok",
       "Eastern Strand"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5301,
@@ -21962,6 +22293,7 @@
       "Darrowmere Crossing",
       "Durnholde Keep"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5263,
@@ -22022,6 +22354,7 @@
       "Darrowmere Crossing",
       "Gallows' Corner"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5263,
@@ -22130,6 +22463,7 @@
       "Gallows' Corner",
       "Tarren Mill"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5225,
@@ -22194,6 +22528,7 @@
       "Crushridge Hold",
       "Gallows' Corner"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5168,
@@ -22234,6 +22569,7 @@
       "Gallows' Corner",
       "Ruins of Alterac"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5168,
@@ -22290,6 +22626,7 @@
       "Crushridge Hold",
       "Ruins of Alterac"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5187,
@@ -22326,6 +22663,7 @@
       "Gallows' Corner",
       "Growless Cave"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5168,
@@ -22374,6 +22712,7 @@
       "Dalaran",
       "Growless Cave"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4997,
@@ -22438,6 +22777,7 @@
       "Hillsbrad",
       "Lordamere Internment Camp"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5054,
@@ -22486,6 +22826,7 @@
       "Dalaran",
       "Lordamere Internment Camp"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5016,
@@ -22530,6 +22871,7 @@
       "Ambermill",
       "Vile Fin Village"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4921,
@@ -22594,6 +22936,7 @@
       "Ambermill",
       "Dalaran Mage Camp"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4883,
@@ -22642,6 +22985,7 @@
       "Dalaran Mage Camp",
       "Southpoint Tower"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4807,
@@ -22746,6 +23090,7 @@
       "Ambermill",
       "Beren's Peril"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4864,
@@ -22818,6 +23163,7 @@
       "Beren's Peril",
       "Dalaran Mage Camp"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4864,
@@ -22878,6 +23224,7 @@
       "Dalaran Mage Camp",
       "Pyrewood Village"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4807,
@@ -22938,6 +23285,7 @@
       "Dalaran Mage Camp",
       "Shadowfang Keep"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4807,
@@ -23014,6 +23362,7 @@
       "Pyrewood Village",
       "Shadowfang Keep"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4731,
@@ -23082,6 +23431,7 @@
       "Pyrewood Village",
       "The Graymane Wall"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4750,
@@ -23154,6 +23504,7 @@
       "Shadowfang Keep",
       "The Graymane Wall"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4750,
@@ -23238,6 +23589,7 @@
       "Dalaran Mage Camp",
       "The Graymane Wall"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4750,
@@ -23302,6 +23654,7 @@
       "Beren's Peril",
       "The Graymane Wall"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4750,
@@ -23390,6 +23743,7 @@
       "Southpoint Tower",
       "The Graymane Wall"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4750,
@@ -23518,6 +23872,7 @@
       "Beren's Peril",
       "Southpoint Tower"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4864,
@@ -23586,6 +23941,7 @@
       "Ambermill",
       "Southpoint Tower"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4978,
@@ -23670,6 +24026,7 @@
       "Azurelode Mine",
       "Southpoint Tower"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5016,
@@ -23706,6 +24063,7 @@
       "Lordamere Internment Camp",
       "Southpoint Tower"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4978,
@@ -23778,6 +24136,7 @@
       "Hillsbrad",
       "Southshore"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5168,
@@ -23882,6 +24241,7 @@
       "Southpoint Tower",
       "Southshore"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5168,
@@ -24002,6 +24362,7 @@
       "Azurelode Mine",
       "Southshore"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5168,
@@ -24118,6 +24479,7 @@
       "Southshore",
       "Tarren Mill"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5168,
@@ -24206,6 +24568,7 @@
       "Gallows' Corner",
       "Southshore"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5168,
@@ -24330,6 +24693,7 @@
       "North Wood Crossing",
       "The Sepulcher"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4712,
@@ -24378,6 +24742,7 @@
       "North Wood Crossing",
       "The Decrepit Ferry"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4788,
@@ -24426,6 +24791,7 @@
       "Fenris Keep",
       "The Decrepit Ferry"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4864,
@@ -24482,6 +24848,7 @@
       "The Dawning Isles",
       "The Decrepit Ferry"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4864,
@@ -24550,6 +24917,7 @@
       "The Decrepit Ferry",
       "Vile Fin Village"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4864,
@@ -24602,6 +24970,7 @@
       "Ambermill",
       "Dalaran"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4883,
@@ -24686,6 +25055,7 @@
       "Dalaran",
       "Vile Fin Village"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4921,
@@ -24758,6 +25128,7 @@
       "Dalaran",
       "Misty Shore"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4997,
@@ -24838,6 +25209,7 @@
       "Misty Shore",
       "The Dawning Isles"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4997,
@@ -24886,6 +25258,7 @@
       "Dandred's Fold",
       "Misty Shore"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5073,
@@ -24938,6 +25311,7 @@
       "Dandred's Fold",
       "Uplands"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5130,
@@ -24978,6 +25352,7 @@
       "Ruins of Strahnbrad",
       "Uplands"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5187,
@@ -25030,6 +25405,7 @@
       "Crushridge Hold",
       "Ruins of Strahnbrad"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5187,
@@ -25078,6 +25454,7 @@
       "Gallows' Corner",
       "Ruins of Strahnbrad"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5244,
@@ -25134,6 +25511,7 @@
       "Crushridge Hold",
       "Slaughter Hollow"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5187,
@@ -25178,6 +25556,7 @@
       "The Ruins of Lordaeron",
       "Undercity"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5016,
@@ -25218,6 +25597,7 @@
       "Deathknell",
       "Night Web's Hollow"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4750,
@@ -25254,6 +25634,7 @@
       "Cold Hearth Manor",
       "Deathknell"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4750,
@@ -25346,6 +25727,7 @@
       "Brill",
       "Cold Hearth Manor"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4921,
@@ -25394,6 +25776,7 @@
       "Brill",
       "The Ruins of Lordaeron"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4997,
@@ -25462,6 +25845,7 @@
       "Cold Hearth Manor",
       "Nightmare Vale"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4864,
@@ -25510,6 +25894,7 @@
       "Cold Hearth Manor",
       "Stillwater Pond"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4921,
@@ -25546,6 +25931,7 @@
       "Brill",
       "Garren's Haunt"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4997,
@@ -25590,6 +25976,7 @@
       "Garren's Haunt",
       "The North Coast"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4978,
@@ -25630,6 +26017,7 @@
       "Brightwater Lake",
       "The North Coast"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5054,
@@ -25678,6 +26066,7 @@
       "Brightwater Lake",
       "Brill"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4997,
@@ -25734,6 +26123,7 @@
       "Brightwater Lake",
       "Garren's Haunt"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5054,
@@ -25782,6 +26172,7 @@
       "Felstone Field",
       "The Bulwark"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5187,
@@ -25854,6 +26245,7 @@
       "Ruins of Andorhal",
       "The Bulwark"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5187,
@@ -25954,6 +26346,7 @@
       "Dalson's Tears",
       "The Bulwark"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5187,
@@ -26066,6 +26459,7 @@
       "The Bulwark",
       "The Ruins of Lordaeron"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5187,
@@ -26178,6 +26572,7 @@
       "Balnir Farmstead",
       "The Bulwark"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5187,
@@ -26238,6 +26633,7 @@
       "Balnir Farmstead",
       "The Ruins of Lordaeron"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5149,
@@ -26346,6 +26742,7 @@
       "Balnir Farmstead",
       "Brill"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4997,
@@ -26454,6 +26851,7 @@
       "Scarlet Monastery Grounds",
       "Venomweb Vale"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5225,
@@ -26514,6 +26912,7 @@
       "Balnir Farmstead",
       "Venomweb Vale"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5149,
@@ -26614,6 +27013,7 @@
       "Balnir Farmstead",
       "Scarlet Monastery Grounds"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5149,
@@ -26726,6 +27126,7 @@
       "Scarlet Monastery Grounds",
       "The Ruins of Lordaeron"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5206,
@@ -26878,6 +27279,7 @@
       "Brill",
       "Scarlet Monastery Grounds"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4997,
@@ -27034,6 +27436,7 @@
       "Brill",
       "The North Coast"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4997,
@@ -27122,6 +27525,7 @@
       "Agamand Family Crypt",
       "Agamand Mills"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4864,
@@ -27166,6 +27570,7 @@
       "Agamand Mills",
       "Stillwater Pond"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4883,
@@ -27222,6 +27627,7 @@
       "Solliden Farmstead",
       "Whispering Shore"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4788,
@@ -27254,6 +27660,7 @@
       "Crusader's Outpost",
       "Solliden Farmstead"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4788,
@@ -27298,6 +27705,7 @@
       "Solliden Farmstead",
       "Stillwater Pond"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4788,
@@ -27354,6 +27762,7 @@
       "Cold Hearth Manor",
       "Solliden Farmstead"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4788,
@@ -27430,6 +27839,7 @@
       "Deathknell",
       "Solliden Farmstead"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4788,
@@ -27498,6 +27908,7 @@
       "Deathknell",
       "Stillwater Pond"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4750,
@@ -27574,6 +27985,7 @@
       "Deathknell",
       "Nightmare Vale"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4750,
@@ -27662,6 +28074,7 @@
       "Agamand Mills",
       "Deathknell"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4750,
@@ -27782,6 +28195,7 @@
       "Nightmare Vale",
       "Stillwater Pond"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4864,
@@ -27830,6 +28244,7 @@
       "The Shining Strand",
       "Valgan's Field"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4807,
@@ -27866,6 +28281,7 @@
       "Ivar Patch",
       "Valgan's Field"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4807,
@@ -27918,6 +28334,7 @@
       "Ivar Patch",
       "The Dead Field"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4788,
@@ -27962,6 +28379,7 @@
       "The Dead Field",
       "Valgan's Field"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4731,
@@ -28014,6 +28432,7 @@
       "North Tide's Run",
       "The Dead Field"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4674,
@@ -28058,6 +28477,7 @@
       "The Dead Field",
       "The Skittering Dark"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4731,
@@ -28114,6 +28534,7 @@
       "North Tide's Run",
       "The Skittering Dark"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4655,
@@ -28158,6 +28579,7 @@
       "North Wood Crossing",
       "The Dead Field"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4731,
@@ -28218,6 +28640,7 @@
       "North Wood Crossing",
       "Valgan's Field"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4788,
@@ -28266,6 +28689,7 @@
       "North Wood Crossing",
       "South Wood Crossing"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4788,
@@ -28314,6 +28738,7 @@
       "Deep Elem Mine",
       "South Wood Crossing"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4807,
@@ -28362,6 +28787,7 @@
       "Olsen's Farthing",
       "South Wood Crossing"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4807,
@@ -28402,6 +28828,7 @@
       "Dalaran Mage Camp",
       "South Wood Crossing"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4807,
@@ -28454,6 +28881,7 @@
       "Ambermill",
       "South Wood Crossing"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4807,
@@ -28518,6 +28946,7 @@
       "Fenris Keep",
       "The Dawning Isles"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4921,
@@ -28586,6 +29015,7 @@
       "The Dawning Isles",
       "Vile Fin Village"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4997,
@@ -28650,6 +29080,7 @@
       "Fenris Keep",
       "Vile Fin Village"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4921,
@@ -28710,6 +29141,7 @@
       "Dun Modr",
       "Thandol Span"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5548,
@@ -28762,6 +29194,7 @@
       "Direforge Hill",
       "Dun Modr"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5624,
@@ -28818,6 +29251,7 @@
       "Direforge Hill",
       "Thandol Span"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5624,
@@ -28894,6 +29328,7 @@
       "Marsh Crossing",
       "Thandol Span"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5567,
@@ -28978,6 +29413,7 @@
       "Dun Modr",
       "Marsh Crossing"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5567,
@@ -29038,6 +29474,7 @@
       "Ironbeard's Tomb",
       "Marsh Crossing"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5567,
@@ -29090,6 +29527,7 @@
       "Direforge Hill",
       "Marsh Crossing"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5567,
@@ -29150,6 +29588,7 @@
       "Marsh Crossing",
       "Mosshide Fen"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5624,
@@ -29218,6 +29657,7 @@
       "Dun Algaz",
       "Mosshide Fen"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5624,
@@ -29354,6 +29794,7 @@
       "Algaz Station",
       "Dun Algaz"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5567,
@@ -29414,6 +29855,7 @@
       "Dun Algaz",
       "Thelgen Rock"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5567,
@@ -29526,6 +29968,7 @@
       "Dam Waterfalls",
       "Thelgen Rock"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5586,
@@ -29578,6 +30021,7 @@
       "Dam Waterfalls",
       "Dragonmaw Gates"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5681,
@@ -29670,6 +30114,7 @@
       "Dragonmaw Gates",
       "Grim Batol"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5795,
@@ -29806,6 +30251,7 @@
       "Dragonmaw Gates",
       "Raptor Ridge"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5700,
@@ -29862,6 +30308,7 @@
       "Raptor Ridge",
       "The Green Belt"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5700,
@@ -29902,6 +30349,7 @@
       "Marsh Crossing",
       "The Green Belt"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5567,
@@ -29954,6 +30402,7 @@
       "Mosshide Fen",
       "The Green Belt"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5624,
@@ -30002,6 +30451,7 @@
       "Direforge Hill",
       "The Green Belt"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5643,
@@ -30054,6 +30504,7 @@
       "Direforge Hill",
       "Raptor Ridge"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5624,
@@ -30114,6 +30565,7 @@
       "Angerfang Encampment",
       "Marsh Crossing"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5529,
@@ -30182,6 +30634,7 @@
       "Angerfang Encampment",
       "Sundown Marsh"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5529,
@@ -30254,6 +30707,7 @@
       "Sundown Marsh",
       "Whelgar's Excavation Site"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5434,
@@ -30302,6 +30756,7 @@
       "Black Channel Marsh",
       "Sundown Marsh"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5320,
@@ -30370,6 +30825,7 @@
       "Saltspray Glen",
       "Sundown Marsh"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5415,
@@ -30414,6 +30870,7 @@
       "Bluegill Marsh",
       "Saltspray Glen"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5282,
@@ -30478,6 +30935,7 @@
       "Bluegill Marsh",
       "Sundown Marsh"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5282,
@@ -30546,6 +31004,7 @@
       "Black Channel Marsh",
       "Bluegill Marsh"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5282,
@@ -30590,6 +31049,7 @@
       "Black Channel Marsh",
       "Menethil Harbor"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5320,
@@ -30658,6 +31118,7 @@
       "Bluegill Marsh",
       "Menethil Harbor"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5225,
@@ -30722,6 +31183,7 @@
       "Ironbeard's Tomb",
       "Saltspray Glen"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5510,
@@ -30798,6 +31260,7 @@
       "Ironbeard's Tomb",
       "Sundown Marsh"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5415,
@@ -30854,6 +31317,7 @@
       "Saltspray Glen",
       "The Drowned Reef"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5358,
@@ -30926,6 +31390,7 @@
       "Faldir's Cove",
       "The Drowned Reef"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5396,
@@ -30978,6 +31443,7 @@
       "Faldir's Cove",
       "Ruins of Stromgarde"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5472,
@@ -31082,6 +31548,7 @@
       "Circle of Inner Binding",
       "Faldir's Cove"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5472,
@@ -31150,6 +31617,7 @@
       "Devyr's Hill",
       "Faldir's Cove"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5472,
@@ -31270,6 +31738,7 @@
       "Boulder'gor",
       "Faldir's Cove"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5472,
@@ -31390,6 +31859,7 @@
       "Faldir's Cove",
       "Refuge Point"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5472,
@@ -31518,6 +31988,7 @@
       "Arathi Outer Road",
       "Faldir's Cove"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5472,
@@ -31630,6 +32101,7 @@
       "Dam Waterfalls",
       "Mosshide Fen"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5681,
@@ -31686,6 +32158,7 @@
       "Mosshide Fen",
       "Thelgen Rock"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5586,
@@ -31758,6 +32231,7 @@
       "Aerie Peak",
       "Zun'watha"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5472,
@@ -31818,6 +32292,7 @@
       "Bogen's Ledge",
       "Zun'watha"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5567,
@@ -31850,6 +32325,7 @@
       "Bogen's Ledge",
       "Shadra'Alor"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5586,
@@ -31918,6 +32394,7 @@
       "Hiri'watha",
       "Shadra'Alor"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5643,
@@ -31978,6 +32455,7 @@
       "Quel'Danil Lodge",
       "Shadra'Alor"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5643,
@@ -32050,6 +32528,7 @@
       "Shadra'Alor",
       "Valorwind Lake"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5643,
@@ -32110,6 +32589,7 @@
       "The Creeping Ruin",
       "Valorwind Lake"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5700,
@@ -32150,6 +32630,7 @@
       "Altar of Zul",
       "Valorwind Lake"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5700,
@@ -32190,6 +32671,7 @@
       "Altar of Zul",
       "The Creeping Ruin"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5738,
@@ -32230,6 +32712,7 @@
       "Agol'watha",
       "The Creeping Ruin"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5757,
@@ -32282,6 +32765,7 @@
       "Agol'watha",
       "Valorwind Lake"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5700,
@@ -32346,6 +32830,7 @@
       "Agol'watha",
       "Skulk Rock"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5738,
@@ -32418,6 +32903,7 @@
       "Skulk Rock",
       "The Creeping Ruin"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5833,
@@ -32478,6 +32964,7 @@
       "Altar of Zul",
       "Skulk Rock"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5738,
@@ -32554,6 +33041,7 @@
       "Shaol'watha",
       "Skulk Rock"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5947,
@@ -32618,6 +33106,7 @@
       "Seradane",
       "Skulk Rock"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5833,
@@ -32686,6 +33175,7 @@
       "Jintha'Alor",
       "Shaol'watha"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5871,
@@ -32762,6 +33252,7 @@
       "Revantusk Village",
       "The Overlook Cliffs"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 6004,
@@ -32814,6 +33305,7 @@
       "Jintha'Alor",
       "Revantusk Village"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 6004,
@@ -32910,6 +33402,7 @@
       "Jintha'Alor",
       "Skulk Rock"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5871,
@@ -33002,6 +33495,7 @@
       "Jintha'Alor",
       "The Creeping Ruin"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5871,
@@ -33118,6 +33612,7 @@
       "Agol'watha",
       "Jintha'Alor"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5871,
@@ -33242,6 +33737,7 @@
       "Jintha'Alor",
       "Valorwind Lake"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5871,
@@ -33390,6 +33886,7 @@
       "Quel'Danil Lodge",
       "Valorwind Lake"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5700,
@@ -33446,6 +33943,7 @@
       "Hiri'watha",
       "Quel'Danil Lodge"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5624,
@@ -33490,6 +33988,7 @@
       "Aerie Peak",
       "Plaguemist Ravine"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5472,
@@ -33578,6 +34077,7 @@
       "Caer Darrow",
       "Plaguemist Ravine"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5567,
@@ -33638,6 +34138,7 @@
       "Plaguemist Ravine",
       "Sorrow Hill"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5567,
@@ -33718,6 +34219,7 @@
       "Caer Darrow",
       "Scholomance"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5567,
@@ -33750,6 +34252,7 @@
       "Caer Darrow",
       "Sorrow Hill"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5567,
@@ -33826,6 +34329,7 @@
       "Chillwind Camp",
       "Uther's Tomb"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5358,
@@ -33874,6 +34378,7 @@
       "Hearthglen",
       "Northridge Blockade"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5358,
@@ -33966,6 +34471,7 @@
       "Northridge Blockade",
       "Northridge Lumber Camp"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5434,
@@ -34014,6 +34520,7 @@
       "Northridge Blockade",
       "The Writhing Haunt"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5434,
@@ -34094,6 +34601,7 @@
       "Dalson's Tears",
       "The Writhing Haunt"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5434,
@@ -34146,6 +34654,7 @@
       "Northridge Lumber Camp",
       "The Writhing Haunt"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5434,
@@ -34238,6 +34747,7 @@
       "Dalson's Tears",
       "Northridge Blockade"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5377,
@@ -34306,6 +34816,7 @@
       "Gahrron's Withering",
       "The Weeping Cave"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5510,
@@ -34366,6 +34877,7 @@
       "Dalaran",
       "Gavin's Naze"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4997,
@@ -34422,6 +34934,7 @@
       "Gavin's Naze",
       "The Headland"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5073,
@@ -34454,6 +34967,7 @@
       "Corrahn's Dagger",
       "The Headland"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5111,
@@ -34494,6 +35008,7 @@
       "Corrahn's Dagger",
       "Sofera's Naze"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5168,
@@ -34546,6 +35061,7 @@
       "Corrahn's Dagger",
       "Gallows' Corner"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5168,
@@ -34602,6 +35118,7 @@
       "Gallows' Corner",
       "Sofera's Naze"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5225,
@@ -34642,6 +35159,7 @@
       "Gavin's Naze",
       "Growless Cave"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5073,
@@ -34686,6 +35204,7 @@
       "Darrow Hill",
       "Southshore"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5168,
@@ -34742,6 +35261,7 @@
       "Darrow Hill",
       "Darrowmere Crossing"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5263,
@@ -34806,6 +35326,7 @@
       "Darrowmere Crossing",
       "Tarren Mill"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5263,
@@ -34878,6 +35399,7 @@
       "Corrahn's Dagger",
       "Darrowmere Crossing"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5263,
@@ -34978,6 +35500,7 @@
       "Darrowmere Crossing",
       "Sofera's Naze"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5263,
@@ -35078,6 +35601,7 @@
       "Corrahn's Dagger",
       "Darrow Hill"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5149,
@@ -35134,6 +35658,7 @@
       "Darrow Hill",
       "The Headland"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5149,
@@ -35186,6 +35711,7 @@
       "Darrow Hill",
       "Hillsbrad"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5149,
@@ -35270,6 +35796,7 @@
       "Hillsbrad",
       "The Headland"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5054,
@@ -35326,6 +35853,7 @@
       "Gavin's Naze",
       "Lordamere Internment Camp"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5016,
@@ -35366,6 +35894,7 @@
       "Chillwind Pass",
       "Ruins of Strahnbrad"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5244,
@@ -35414,6 +35943,7 @@
       "Chillwind Pass",
       "Chillwind Point"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5358,
@@ -35458,6 +35988,7 @@
       "Chillwind Point",
       "Darrowmere Crossing"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5263,
@@ -35558,6 +36089,7 @@
       "Chillwind Camp",
       "Chillwind Pass"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5358,
@@ -35606,6 +36138,7 @@
       "Plaguemist Ravine",
       "Zun'watha"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5567,
@@ -35690,6 +36223,7 @@
       "Slaughter Hollow",
       "Uplands"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5187,
@@ -35734,6 +36268,7 @@
       "Malden's Orchard",
       "The Shining Strand"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4845,
@@ -35770,6 +36305,7 @@
       "Ivar Patch",
       "Malden's Orchard"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4788,
@@ -35810,6 +36346,7 @@
       "Malden's Orchard",
       "Valgan's Field"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4807,
@@ -35858,6 +36395,7 @@
       "Malden's Orchard",
       "Tirisfal Tract"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4845,
@@ -35918,6 +36456,7 @@
       "Nightmare Vale",
       "Tirisfal Tract"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4940,
@@ -35978,6 +36517,7 @@
       "Cold Hearth Manor",
       "Tirisfal Tract"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4940,
@@ -36038,6 +36578,7 @@
       "The Ruins of Lordaeron",
       "Tirisfal Tract"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4940,
@@ -36118,6 +36659,7 @@
       "Brill",
       "Tirisfal Tract"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4940,
@@ -36198,6 +36740,7 @@
       "Boulderfist Hall",
       "Thandol Span"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5567,
@@ -36250,6 +36793,7 @@
       "Ironbeard's Tomb",
       "The Drowned Reef"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5510,
@@ -36334,6 +36878,7 @@
       "Direforge Hill",
       "Ironbeard's Tomb"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5624,
@@ -36394,6 +36939,7 @@
       "Dun Modr",
       "Ironbeard's Tomb"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5510,
@@ -36454,6 +37000,7 @@
       "Ironbeard's Tomb",
       "Thandol Span"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5510,
@@ -36534,6 +37081,7 @@
       "Loch Shore",
       "Mo'grosh Woods"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5890,
@@ -36578,6 +37126,7 @@
       "Isle Ruins",
       "Loch Shore"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5814,
@@ -36622,6 +37171,7 @@
       "South Hillside",
       "Thelsamar"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5662,
@@ -36710,6 +37260,7 @@
       "Grizzlepaw Ridge",
       "South Hillside"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5681,
@@ -36774,6 +37325,7 @@
       "Ironband's Excavation Site",
       "Loch Shore"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5852,
@@ -36834,6 +37386,7 @@
       "Ironband's Excavation Site",
       "Mo'grosh Woods"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5852,
@@ -36902,6 +37455,7 @@
       "Isle Ruins",
       "The Loch"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5776,
@@ -36950,6 +37504,7 @@
       "Camp Boff",
       "Valley of Fangs"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5757,
@@ -36986,6 +37541,7 @@
       "Agmond's End",
       "Camp Boff"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5719,
@@ -37030,6 +37586,7 @@
       "Agmond's End",
       "Valley of Fangs"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5719,
@@ -37066,6 +37623,7 @@
       "Hammertoe's Digsite",
       "Valley of Fangs"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5757,
@@ -37118,6 +37676,7 @@
       "Angor Fortress",
       "Hammertoe's Digsite"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5757,
@@ -37154,6 +37713,7 @@
       "Angor Fortress",
       "The Dustbowl"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5700,
@@ -37206,6 +37766,7 @@
       "Mirage Flats",
       "The Dustbowl"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5643,
@@ -37242,6 +37803,7 @@
       "Apocryphan's Rest",
       "The Dustbowl"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5548,
@@ -37282,6 +37844,7 @@
       "Apocryphan's Rest",
       "Dustbelch Grotto"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5529,
@@ -37322,6 +37885,7 @@
       "Apocryphan's Rest",
       "Kargath"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5548,
@@ -37366,6 +37930,7 @@
       "Kargath",
       "The Dustbowl"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5510,
@@ -37426,6 +37991,7 @@
       "Dustwind Gulch",
       "Valley of Fangs"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5833,
@@ -37486,6 +38052,7 @@
       "Camp Boff",
       "Dustwind Gulch"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5833,
@@ -37554,6 +38121,7 @@
       "Dustwind Gulch",
       "Hammertoe's Digsite"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5833,
@@ -37602,6 +38170,7 @@
       "Dustwind Gulch",
       "The Maker's Terrace"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5833,
@@ -37658,6 +38227,7 @@
       "Agmond's End",
       "Mirage Flats"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5719,
@@ -37702,6 +38272,7 @@
       "Agmond's End",
       "The Dustbowl"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5719,
@@ -37762,6 +38333,7 @@
       "Apocryphan's Rest",
       "Mirage Flats"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5643,
@@ -37818,6 +38390,7 @@
       "Dustbelch Grotto",
       "Mirage Flats"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5643,
@@ -37882,6 +38455,7 @@
       "Mirage Flats",
       "Valley of Fangs"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5757,
@@ -37946,6 +38520,7 @@
       "The Dustbowl",
       "Valley of Fangs"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5757,
@@ -38014,6 +38589,7 @@
       "Apocryphan's Rest",
       "Dustfire Valley"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5415,
@@ -38102,6 +38678,7 @@
       "Dustfire Valley",
       "Kargath"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5415,
@@ -38190,6 +38767,7 @@
       "Grimesilt Digsite",
       "Kargath"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5415,
@@ -38266,6 +38844,7 @@
       "Flame Crest",
       "Ruins of Thaurissan"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5472,
@@ -38318,6 +38897,7 @@
       "Blackrock Stronghold",
       "Ruins of Thaurissan"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5472,
@@ -38378,6 +38958,7 @@
       "Ruins of Thaurissan",
       "The Pillar of Ash"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5415,
@@ -38434,6 +39015,7 @@
       "Blackrock Stronghold",
       "The Pillar of Ash"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5415,
@@ -38490,6 +39072,7 @@
       "Draco'dar",
       "Gates of Blackrock"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5282,
@@ -38534,6 +39117,7 @@
       "Altar of Storms",
       "Draco'dar"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5282,
@@ -38606,6 +39190,7 @@
       "Altar of Storms",
       "Gates of Blackrock"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5301,
@@ -38690,6 +39275,7 @@
       "Gates of Blackrock",
       "The Pillar of Ash"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5301,
@@ -38770,6 +39356,7 @@
       "Blackrock Stronghold",
       "Gates of Blackrock"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5301,
@@ -38846,6 +39433,7 @@
       "Blackrock Mountain",
       "Gates of Blackrock"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5301,
@@ -38894,6 +39482,7 @@
       "Blackchar Cave",
       "Blackrock Mountain"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5282,
@@ -38946,6 +39535,7 @@
       "Blackrock Mountain",
       "The Sea of Cinders"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5282,
@@ -39022,6 +39612,7 @@
       "Blackrock Mountain",
       "Firewatch Ridge"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5282,
@@ -39126,6 +39717,7 @@
       "Blackrock Mountain",
       "The Cauldron"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5282,
@@ -39206,6 +39798,7 @@
       "Firegut Blockade",
       "Ruins of Thaurissan"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5567,
@@ -39270,6 +39863,7 @@
       "Dreadmaul Rock",
       "Firegut Blockade"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5567,
@@ -39318,6 +39912,7 @@
       "Dreadmaul Rock",
       "Firegut Hold"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5567,
@@ -39358,6 +39953,7 @@
       "Alther's Mill",
       "Blackrock Pass"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5605,
@@ -39422,6 +40018,7 @@
       "Blackrock Pass",
       "Render's Camp"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5529,
@@ -39478,6 +40075,7 @@
       "Blackrock Pass",
       "Lakeshire"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5510,
@@ -39558,6 +40156,7 @@
       "Blackrock Pass",
       "Redridge Canyons"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5529,
@@ -39634,6 +40233,7 @@
       "Blackrock Pass",
       "Morgan's Vigil"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5586,
@@ -39682,6 +40282,7 @@
       "Blackrock Pass",
       "Firegut Blockade"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5586,
@@ -39734,6 +40335,7 @@
       "Firegut Blockade",
       "Terror Wing Path"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5567,
@@ -39782,6 +40384,7 @@
       "Dreadmaul Rock",
       "Flame Crest"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5510,
@@ -39834,6 +40437,7 @@
       "Dreadmaul Rock",
       "Slither Rock"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5567,
@@ -39890,6 +40494,7 @@
       "Firegut Blockade",
       "The Pillar of Ash"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5567,
@@ -39974,6 +40579,7 @@
       "Heroes' Vigil",
       "Jasperlode Mine"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5187,
@@ -40030,6 +40636,7 @@
       "Misty Valley",
       "Splinterspear Junction"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5624,
@@ -40070,6 +40677,7 @@
       "Splinterspear Junction",
       "Stonard"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5624,
@@ -40130,6 +40738,7 @@
       "Hiri'watha",
       "Zun'watha"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5567,
@@ -40182,6 +40791,7 @@
       "Quel'Danil Lodge",
       "Zun'watha"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5567,
@@ -40234,6 +40844,7 @@
       "Bogen's Ledge",
       "Hiri'watha"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5624,
@@ -40294,6 +40905,7 @@
       "Agol'watha",
       "Quel'Danil Lodge"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5624,
@@ -40374,6 +40986,7 @@
       "Quel'Danil Lodge",
       "The Creeping Ruin"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5624,
@@ -40450,6 +41063,7 @@
       "Seradane",
       "Shaol'watha"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5947,
@@ -40546,6 +41160,7 @@
       "Shaol'watha",
       "The Overlook Cliffs"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 6004,
@@ -40622,6 +41237,7 @@
       "Jintha'Alor",
       "The Overlook Cliffs"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 6004,
@@ -40702,6 +41318,7 @@
       "Skulk Rock",
       "The Overlook Cliffs"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 6004,
@@ -40814,6 +41431,7 @@
       "Revantusk Village",
       "Shaol'watha"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 6004,
@@ -40898,6 +41516,7 @@
       "Revantusk Village",
       "Skulk Rock"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 6004,
@@ -41018,6 +41637,7 @@
       "Booty Bay",
       "Wild Shore"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4997,
@@ -41098,6 +41718,7 @@
       "Booty Bay",
       "Nek'mani Wellspring"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4959,
@@ -41166,6 +41787,7 @@
       "Nek'mani Wellspring",
       "Ruins of Jubuwal"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4940,
@@ -41242,6 +41864,7 @@
       "Mistvale Valley",
       "Ruins of Jubuwal"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5054,
@@ -41306,6 +41929,7 @@
       "Crystal Shore",
       "Ruins of Aboraz"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5092,
@@ -41354,6 +41978,7 @@
       "Crystal Shore",
       "Mistvale Valley"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5092,
@@ -41398,6 +42023,7 @@
       "Booty Bay",
       "Mistvale Valley"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5035,
@@ -41466,6 +42092,7 @@
       "Crystal Shore",
       "Jaguero Isle"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5111,
@@ -41550,6 +42177,7 @@
       "Jaguero Isle",
       "Mistvale Valley"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5111,
@@ -41646,6 +42274,7 @@
       "Booty Bay",
       "Jaguero Isle"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5111,
@@ -41734,6 +42363,7 @@
       "Jaguero Isle",
       "Nek'mani Wellspring"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5111,
@@ -41846,6 +42476,7 @@
       "Mistvale Valley",
       "Nek'mani Wellspring"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4940,
@@ -41918,6 +42549,7 @@
       "Bloodsail Compound",
       "Gurubashi Arena Grounds"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5016,
@@ -41990,6 +42622,7 @@
       "Bloodsail Compound",
       "Nek'mani Wellspring"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4902,
@@ -42086,6 +42719,7 @@
       "Bloodsail Compound",
       "Ruins of Jubuwal"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4902,
@@ -42166,6 +42800,7 @@
       "Bloodsail Compound",
       "Mistvale Valley"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4902,
@@ -42270,6 +42905,7 @@
       "Ruins of Aboraz",
       "Ruins of Jubuwal"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5130,
@@ -42334,6 +42970,7 @@
       "Mistvale Valley",
       "Ruins of Aboraz"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5130,
@@ -42410,6 +43047,7 @@
       "Kal'ai Ruins",
       "Lake Nazferiti"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5054,
@@ -42466,6 +43104,7 @@
       "Rebel Camp",
       "Ziata'jai Ruins"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5092,
@@ -42642,6 +43281,7 @@
       "The Savage Coast",
       "Zuuldaia Ruins"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4864,
@@ -42674,6 +43314,7 @@
       "Bal'lal Ruins",
       "The Savage Coast"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4902,
@@ -42718,6 +43359,7 @@
       "Bal'lal Ruins",
       "Grom'gol Base Camp"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4978,
@@ -42774,6 +43416,7 @@
       "Bal'lal Ruins",
       "Kal'ai Ruins"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4978,
@@ -42826,6 +43469,7 @@
       "Ruins of Zul'Kunda",
       "Tkashi Ruins"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5035,
@@ -42890,6 +43534,7 @@
       "Ruins of Zul'Kunda",
       "Zuuldaia Ruins"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4921,
@@ -42934,6 +43579,7 @@
       "Ruins of Zul'Kunda",
       "The Savage Coast"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4921,
@@ -42974,6 +43620,7 @@
       "Bal'lal Ruins",
       "Ruins of Zul'Kunda"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4921,
@@ -43034,6 +43681,7 @@
       "Nesingwary's Expedition",
       "Ruins of Zul'Kunda"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5073,
@@ -43118,6 +43766,7 @@
       "Lake Nazferiti",
       "Tkashi Ruins"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5035,
@@ -43170,6 +43819,7 @@
       "Kal'ai Ruins",
       "Tkashi Ruins"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5035,
@@ -43218,6 +43868,7 @@
       "Grom'gol Base Camp",
       "Tkashi Ruins"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5035,
@@ -43278,6 +43929,7 @@
       "Mosh'Ogg Ogre Mound",
       "Venture Co. Operations Center"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5244,
@@ -43338,6 +43990,7 @@
       "Lake Nazferiti",
       "Venture Co. Operations Center"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5168,
@@ -43406,6 +44059,7 @@
       "Kurzen's Compound",
       "Venture Co. Operations Center"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5168,
@@ -43454,6 +44108,7 @@
       "Rebel Camp",
       "Venture Co. Operations Center"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5168,
@@ -43534,6 +44189,7 @@
       "Balia'mah Ruins",
       "Venture Co. Operations Center"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5206,
@@ -43602,6 +44258,7 @@
       "Venture Co. Operations Center",
       "Zul'Gurub"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5282,
@@ -43662,6 +44319,7 @@
       "Balia'mah Ruins",
       "Zul'Gurub"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5206,
@@ -43750,6 +44408,7 @@
       "Ruins of Zul'Mamwe",
       "Ziata'jai Ruins"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5206,
@@ -43798,6 +44457,7 @@
       "Mizjah Ruins",
       "Ziata'jai Ruins"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5149,
@@ -43906,6 +44566,7 @@
       "Lake Nazferiti",
       "Mizjah Ruins"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5111,
@@ -43962,6 +44623,7 @@
       "Mizjah Ruins",
       "Venture Co. Operations Center"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5168,
@@ -44042,6 +44704,7 @@
       "Gloom Reach",
       "Three Corners"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5358,
@@ -44114,6 +44777,7 @@
       "Gloom Reach",
       "Manor Mistmantle"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5320,
@@ -44170,6 +44834,7 @@
       "Manor Mistmantle",
       "The Darkened Bank"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5320,
@@ -44230,6 +44895,7 @@
       "Night Watch Camp",
       "Vul'Gol Ogre Mound"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5092,
@@ -44262,6 +44928,7 @@
       "Addle's Stead",
       "Night Watch Camp"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4997,
@@ -44334,6 +45001,7 @@
       "Night Watch Camp",
       "Raven Hill"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4978,
@@ -44418,6 +45086,7 @@
       "Night Watch Camp",
       "Raven Hill Cemetery"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5016,
@@ -44486,6 +45155,7 @@
       "The Dead Acre",
       "Westfall Crossing"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4883,
@@ -44534,6 +45204,7 @@
       "The Dust Plains",
       "Westfall Crossing"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4883,
@@ -44586,6 +45257,7 @@
       "Night Watch Camp",
       "Westfall Crossing"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4940,
@@ -44678,6 +45350,7 @@
       "Addle's Stead",
       "Westfall Crossing"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4997,
@@ -44734,6 +45407,7 @@
       "Raven Hill",
       "Westfall Crossing"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4940,
@@ -44786,6 +45460,7 @@
       "Raven Hill Cemetery",
       "Westfall Crossing"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4940,
@@ -44846,6 +45521,7 @@
       "Forlorn Rowe",
       "Raven Hill Cemetery"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5016,
@@ -44890,6 +45566,7 @@
       "Dawning Wood Catacombs",
       "Raven Hill"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4978,
@@ -44934,6 +45611,7 @@
       "Dawning Wood Catacombs",
       "The Hushed Bank"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5016,
@@ -44982,6 +45660,7 @@
       "Forlorn Rowe",
       "The Hushed Bank"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4978,
@@ -45042,6 +45721,7 @@
       "The Darkened Bank",
       "The Hushed Bank"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5092,
@@ -45110,6 +45790,7 @@
       "Gloom Reach",
       "The Darkened Bank"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5358,
@@ -45178,6 +45859,7 @@
       "Darkshire",
       "Gloom Reach"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5358,
@@ -45250,6 +45932,7 @@
       "Brightwood Grove",
       "Gloom Reach"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5358,
@@ -45330,6 +46013,7 @@
       "Darkshire",
       "Deadman's Crossing"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5301,
@@ -45390,6 +46074,7 @@
       "Darkshire",
       "Night Watch Camp"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5301,
@@ -45490,6 +46175,7 @@
       "Night Watch Camp",
       "Yorgen's Farmstead"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5130,
@@ -45526,6 +46212,7 @@
       "Darkshire",
       "Yorgen's Farmstead"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5301,
@@ -45614,6 +46301,7 @@
       "Night Watch Camp",
       "Rebel Camp"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5130,
@@ -45682,6 +46370,7 @@
       "Crystalvein Mine",
       "Venture Co. Hideout"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5149,
@@ -45754,6 +46443,7 @@
       "Venture Co. Hideout",
       "Ziata'jai Ruins"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5149,
@@ -45806,6 +46496,7 @@
       "Sentinel Hill",
       "Westfall Crossing"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4845,
@@ -45894,6 +46585,7 @@
       "Stendel's Pond",
       "Westfall Crossing"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4940,
@@ -45978,6 +46670,7 @@
       "Moonbrook",
       "Westfall Crossing"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4940,
@@ -46066,6 +46759,7 @@
       "The Dagger Hills",
       "Westfall Crossing"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4940,
@@ -46150,6 +46844,7 @@
       "Demont's Place",
       "Moonbrook"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4693,
@@ -46198,6 +46893,7 @@
       "Alexton Farmstead",
       "Demont's Place"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4693,
@@ -46254,6 +46950,7 @@
       "Demont's Place",
       "Gold Coast Quarry"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4693,
@@ -46338,6 +47035,7 @@
       "Demont's Place",
       "Longshore"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4617,
@@ -46410,6 +47108,7 @@
       "Demont's Place",
       "Stendel's Pond"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4693,
@@ -46474,6 +47173,7 @@
       "Stonard",
       "The Shifting Mire"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5719,
@@ -46514,6 +47214,7 @@
       "Pool of Tears",
       "Stonard"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5719,
@@ -46550,6 +47251,7 @@
       "Pool of Tears",
       "Temple of Atal'Hakkar"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5795,
@@ -46586,6 +47288,7 @@
       "Pool of Tears",
       "Stagalbog Cave"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5795,
@@ -46626,6 +47329,7 @@
       "Stagalbog",
       "Stagalbog Cave"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5833,
@@ -46658,6 +47362,7 @@
       "Southern Misty Reed Strand",
       "Stagalbog"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5871,
@@ -46702,6 +47407,7 @@
       "Northern Misty Reed Strand",
       "Southern Misty Reed Strand"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5947,
@@ -46802,6 +47508,7 @@
       "Northern Misty Reed Strand",
       "Sorrowmurk"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5928,
@@ -46850,6 +47557,7 @@
       "Fallow Sanctuary",
       "Sorrowmurk"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5890,
@@ -46898,6 +47606,7 @@
       "Fallow Sanctuary",
       "The Shifting Mire"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5738,
@@ -46946,6 +47655,7 @@
       "Splinterspear Junction",
       "The Shifting Mire"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5738,
@@ -47010,6 +47720,7 @@
       "Splinterspear Junction",
       "The Harborage"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5624,
@@ -47046,6 +47757,7 @@
       "Ruined Path",
       "Stonard"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5681,
@@ -47086,6 +47798,7 @@
       "Red Wasteland",
       "Ruined Path"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5681,
@@ -47150,6 +47863,7 @@
       "Ruined Path",
       "Splinterspear Junction"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5624,
@@ -47202,6 +47916,7 @@
       "Nethergarde Keep",
       "Ruined Path"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5681,
@@ -47270,6 +47985,7 @@
       "Nethergarde Keep",
       "Serpent's Coil"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5738,
@@ -47326,6 +48042,7 @@
       "Nethergarde Keep",
       "Red Wasteland"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5681,
@@ -47382,6 +48099,7 @@
       "Dreadmaul Hold",
       "Red Wasteland"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5681,
@@ -47434,6 +48152,7 @@
       "Dreadmaul Post",
       "Red Wasteland"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5643,
@@ -47482,6 +48201,7 @@
       "Red Wasteland",
       "The Dark Portal"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5681,
@@ -47550,6 +48270,7 @@
       "Red Wasteland",
       "The Tainted Scar"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5605,
@@ -47638,6 +48359,7 @@
       "The Altar of Storms",
       "The Tainted Scar"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5605,
@@ -47706,6 +48428,7 @@
       "Frozen Crossing",
       "Kharanos"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5149,
@@ -47746,6 +48469,7 @@
       "Frozen Crossing",
       "Ironforge"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5168,
@@ -47798,6 +48522,7 @@
       "Frozen Crossing",
       "Misty Pine Refuge"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5168,
@@ -47858,6 +48583,7 @@
       "Misty Pine Refuge",
       "The Tundrid Hills"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5263,
@@ -47914,6 +48640,7 @@
       "Gol'Bolar Quarry",
       "The Tundrid Hills"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5282,
@@ -47978,6 +48705,7 @@
       "Gol'Bolar Quarry",
       "Helm's Bed Lake"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5377,
@@ -48046,6 +48774,7 @@
       "Helm's Bed Lake",
       "South Gate Pass"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5453,
@@ -48094,6 +48823,7 @@
       "Helm's Bed Lake",
       "North Gate Pass"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5453,
@@ -48146,6 +48876,7 @@
       "Algaz Station",
       "North Gate Pass"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5510,
@@ -48222,6 +48953,7 @@
       "North Gate Pass",
       "South Gate Pass"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5510,
@@ -48282,6 +49014,7 @@
       "South Gate Pass",
       "Valley of Kings"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5529,
@@ -48334,6 +49067,7 @@
       "Kharanos",
       "The Grizzled Den"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5149,
@@ -48394,6 +49128,7 @@
       "Coldridge Pass",
       "Kharanos"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5149,
@@ -48490,6 +49225,7 @@
       "Anvilmar",
       "Coldridge Pass"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5035,
@@ -48542,6 +49278,7 @@
       "Anvilmar",
       "Coldridge Valley"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4978,
@@ -48590,6 +49327,7 @@
       "Frostmane Hold",
       "Gnomeregan"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4959,
@@ -48638,6 +49376,7 @@
       "Frostmane Hold",
       "Ice Flow Lake"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4959,
@@ -48690,6 +49429,7 @@
       "Chill Breeze Valley",
       "Frostmane Hold"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4959,
@@ -48758,6 +49498,7 @@
       "Chill Breeze Valley",
       "Ice Flow Lake"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5054,
@@ -48818,6 +49559,7 @@
       "Ice Flow Lake",
       "Shimmer Ridge"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5092,
@@ -48870,6 +49612,7 @@
       "Chill Breeze Valley",
       "Shimmer Ridge"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5054,
@@ -48942,6 +49685,7 @@
       "Frozen Crossing",
       "Gnomeregan"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5168,
@@ -49070,6 +49814,7 @@
       "Chill Breeze Valley",
       "The Grizzled Den"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5111,
@@ -49134,6 +49879,7 @@
       "Frostmane Hold",
       "The Grizzled Den"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5111,
@@ -49222,6 +49968,7 @@
       "Gnomeregan",
       "The Grizzled Den"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5111,
@@ -49338,6 +50085,7 @@
       "Ice Flow Lake",
       "The Grizzled Den"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5111,
@@ -49442,6 +50190,7 @@
       "Chill Breeze Valley",
       "Gnomeregan"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5054,
@@ -49538,6 +50287,7 @@
       "Frostmane Hold",
       "Frozen Crossing"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4959,
@@ -49686,6 +50436,7 @@
       "Frostmane Hold",
       "Shimmer Ridge"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4959,
@@ -49786,6 +50537,7 @@
       "Gnomeregan",
       "Ice Flow Lake"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5035,
@@ -49842,6 +50594,7 @@
       "Chill Breeze Valley",
       "Coldridge Pass"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5035,
@@ -49898,6 +50651,7 @@
       "Coldridge Pass",
       "Frostmane Hold"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5035,
@@ -49978,6 +50732,7 @@
       "Coldridge Pass",
       "Ice Flow Lake"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5035,
@@ -50082,6 +50837,7 @@
       "Coldridge Pass",
       "Gnomeregan"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5035,
@@ -50190,6 +50946,7 @@
       "Coldridge Pass",
       "Shimmer Ridge"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5035,
@@ -50330,6 +51087,7 @@
       "Coldridge Pass",
       "Frozen Crossing"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5035,
@@ -50522,6 +51280,7 @@
       "Coldridge Pass",
       "The Grizzled Den"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5111,
@@ -50578,6 +51337,7 @@
       "Night Watch Camp",
       "Twilight Grove"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5130,
@@ -50634,6 +51394,7 @@
       "Ariden's Camp",
       "Splinterspear Junction"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5491,
@@ -50718,6 +51479,7 @@
       "Alther's Mill",
       "Lake Everstill"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5529,
@@ -50790,6 +51552,7 @@
       "Blackrock Pass",
       "Lake Everstill"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5529,
@@ -50890,6 +51653,7 @@
       "Lake Everstill",
       "Redridge Canyons"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5529,
@@ -50958,6 +51722,7 @@
       "Lake Everstill",
       "Render's Camp"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5529,
@@ -51062,6 +51827,7 @@
       "Alther's Mill",
       "Tower of Ilgalar"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5738,
@@ -51130,6 +51896,7 @@
       "Booty Bay",
       "Janeiro's Point"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4959,
@@ -51166,6 +51933,7 @@
       "Ruins of Jubuwal",
       "Venture Co. Hideout"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5054,
@@ -51234,6 +52002,7 @@
       "Ruins of Jubuwal",
       "Ziata'jai Ruins"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5054,
@@ -51318,6 +52087,7 @@
       "Mistvale Valley",
       "Wild Shore"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5035,
@@ -51406,6 +52176,7 @@
       "Jaguero Isle",
       "Wild Shore"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5111,
@@ -51478,6 +52249,7 @@
       "Crystal Shore",
       "Wild Shore"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4997,
@@ -51558,6 +52330,7 @@
       "Booty Bay",
       "Crystal Shore"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 5092,
@@ -51642,6 +52415,7 @@
       "Crystal Shore",
       "Nek'mani Wellspring"
     ],
+    "means": "Land",
     "points": [
       {
         "Item1": 4940,
@@ -51742,6 +52516,29 @@
       {
         "Item1": 5092,
         "Item2": -4522
+      }
+    ]
+  },
+  {
+    "sites": [
+      "Ironforge",
+      "Stormwind City"
+    ],
+    "means": "Tram",
+    "price": 1.5,
+    "speed": 30,
+    "points": [
+      {
+        "Item1": 4948,
+        "Item2": -3380
+      },
+      {
+        "Item1": 5075,
+        "Item2": -3234
+      },
+      {
+        "Item1": 5225,
+        "Item2": -2698
       }
     ]
   }

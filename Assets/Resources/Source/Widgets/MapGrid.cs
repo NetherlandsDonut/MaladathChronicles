@@ -41,7 +41,7 @@ public class MapGrid : MonoBehaviour
         if (sitePathBuilder != null && Vector2.Distance(pathBuilder.Last(), cursor.transform.position - new Vector3(10, -10)) > 10)
         {
             pathBuilder.Add(cursor.transform.position - new Vector3(10, -10));
-            if (pathTest != null) Destroy(pathTest);
+            if (pathTest.Item2 != null) Destroy(pathTest.Item2);
             pathTest = new SitePath()
             {
                 sites = new() { sitePathBuilder.name, "?" },

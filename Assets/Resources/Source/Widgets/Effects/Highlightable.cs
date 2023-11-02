@@ -68,7 +68,7 @@ public class Highlightable : MonoBehaviour
         if (window.title.StartsWith("Site: "))
         {
             for (int i = 0; i < pathsDrawn.Count; i++)
-                Destroy(pathsDrawn[i]);
+                Destroy(pathsDrawn[i].Item2);
             pathsDrawn = new();
         }
     }

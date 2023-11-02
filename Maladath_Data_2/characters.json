@@ -866,8 +866,6 @@
         }
       },
       "currentSite": "Jansen Stead",
-      "cameraX": 5054,
-      "cameraY": -3629,
       "siteProgress": {
         "Blackrock Stronghold": 2,
         "The Dead Acre": 1,
@@ -1902,8 +1900,6 @@
           }
         }
       },
-      "cameraX": 247,
-      "cameraY": -190,
       "siteProgress": {
         "Isle Ruins": 1
       },
@@ -2791,8 +2787,6 @@
           }
         }
       },
-      "cameraX": 65,
-      "cameraY": -157,
       "siteProgress": {},
       "commonsKilled": {},
       "raresKilled": {},
@@ -3650,8 +3644,6 @@
           }
         }
       },
-      "cameraX": 245,
-      "cameraY": -145,
       "siteProgress": {},
       "commonsKilled": {},
       "raresKilled": {},
@@ -4523,8 +4515,6 @@
           }
         }
       },
-      "cameraX": 104,
-      "cameraY": -107,
       "siteProgress": {},
       "commonsKilled": {},
       "raresKilled": {},
@@ -5529,8 +5519,6 @@
           }
         }
       },
-      "cameraX": 51,
-      "cameraY": -22,
       "siteProgress": {
         "Pools of Arlithrien": 3,
         "Lake Al'Ameth": 5
@@ -6422,8 +6410,6 @@
           }
         }
       },
-      "cameraX": 248,
-      "cameraY": -144,
       "siteProgress": {},
       "commonsKilled": {},
       "raresKilled": {},
@@ -7248,8 +7234,6 @@
         }
       },
       "currentSite": "Bloodhoof Village",
-      "cameraX": 1463,
-      "cameraY": -3059,
       "siteProgress": {},
       "commonsKilled": {},
       "raresKilled": {},
@@ -8088,8 +8072,6 @@
         }
       },
       "currentSite": "Shadow Grave",
-      "cameraX": 5700,
-      "cameraY": -4009,
       "siteProgress": {},
       "commonsKilled": {},
       "raresKilled": {},
@@ -8927,9 +8909,7 @@
           }
         }
       },
-      "currentSite": "Ruins of Jubuwal",
-      "cameraX": 5078,
-      "cameraY": -1515,
+      "currentSite": "Stormwind City",
       "siteProgress": {},
       "commonsKilled": {},
       "raresKilled": {},
@@ -9864,9 +9844,9 @@
       },
       "buyback": [],
       "startDate": "2023-10-31T22:52:05.1863646+01:00",
-      "lastLoaded": "2023-11-01T22:27:25.0477178+01:00",
-      "lastPlayed": "2023-11-01T22:34:53.4721162+01:00",
-      "timePlayed": "01:53:41.0892586"
+      "lastLoaded": "2023-11-02T19:45:09.5092898+01:00",
+      "lastPlayed": "2023-11-02T19:45:58.8083089+01:00",
+      "timePlayed": "01:54:30.3882777"
     },
     {
       "player": {
@@ -10722,8 +10702,6 @@
         }
       },
       "currentSite": "Gol'Bolar Quarry",
-      "cameraX": 5149,
-      "cameraY": -2869,
       "siteProgress": {},
       "commonsKilled": {},
       "raresKilled": {},

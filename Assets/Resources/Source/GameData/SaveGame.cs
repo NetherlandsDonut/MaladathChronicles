@@ -1,19 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 
-using UnityEngine;
-
 using static Root;
 using static GameSettings;
-using static SiteHostileArea;
-using static SiteInstance;
-using static SiteComplex;
-using static SiteTown;
 
 public class SaveGame
 {
     //Player character in the save
     public Entity player;
+
+    //Day in-game
+    public int day;
 
     //Hour in-game
     public int hour;
@@ -111,6 +108,8 @@ public class SaveGame
     //Creates a new character
     public static void AddNewSave()
     {
+        var race = Race.races.Find(x => x.name == creationRace);
+        var spec = Spec.specs.Find(x => x.name == creationSpec);
         var newSlot = new SaveGame
         {
             siteProgress = new(),
@@ -122,13 +121,13 @@ public class SaveGame
             (
                 creationName,
                 creationGender,
-                Race.races.Find(x => x.name == creationRace),
-                Spec.specs.Find(x => x.name == creationSpec),
-                Spec.specs.Find(x => x.name == creationSpec).startingEquipment[creationRace]
+                race,
+                spec,
+                spec.startingEquipment[creationRace]
             )
         };
-        newSlot.currentSite = startingSite;
-        newSlot.siteVisits = new() { { startingSite, 1 } };
+        newSlot.currentSite = race.startingSite;
+        newSlot.siteVisits = new() { { race.startingSite, 1 } };
         saves[settings.selectedRealm].Add(newSlot);
         settings.selectedCharacter = newSlot.player.name;
     }
