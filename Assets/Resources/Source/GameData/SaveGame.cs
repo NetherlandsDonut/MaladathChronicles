@@ -21,19 +21,19 @@ public class SaveGame
     //Minute in-game
     public int minute;
 
-    public void AddTime(int minutes, int hours = 0)
+    public void AddTime(int minutes, int hours = 0, int days = 0)
     {
         minute += minutes;
         hour += hours + minute / 60;
-        minute = minute % 60;
-        if (hour >= 24) hour -= 24;
+        minute %= 60;
+        day += days + hour / 24;
+        hour %= 24;
+        Respawn("MapToolbarClockLeft", true);
+        Respawn("MapToolbarClockRight", true);
     }
 
     //Site at which player currently resides
     public string currentSite;
-
-    //Position of the camera saved when logging out
-    public int cameraX, cameraY;
 
     //Stores progress done while exploring sites in the world
     public Dictionary<string, int> siteProgress;
@@ -127,15 +127,6 @@ public class SaveGame
                 Spec.specs.Find(x => x.name == creationSpec).startingEquipment[creationRace]
             )
         };
-        var startingSite = Race.races.Find(x => x.name == creationRace).startingSite;
-        var temp1 = areas.Find(x => x.name == startingSite);
-        if (temp1 != null) (newSlot.cameraX, newSlot.cameraY) = (temp1.x * 19, temp1.y * 19);
-        var temp2 = towns.Find(x => x.name == startingSite);
-        if (temp2 != null) (newSlot.cameraX, newSlot.cameraY) = (temp2.x * 19, temp2.y * 19);
-        var temp3 = complexes.Find(x => x.name == startingSite);
-        if (temp3 != null) (newSlot.cameraX, newSlot.cameraY) = (temp3.x * 19, temp3.y * 19);
-        var temp4 = instances.Find(x => x.name == startingSite);
-        if (temp4 != null) (newSlot.cameraX, newSlot.cameraY) = (temp4.x * 19, temp4.y * 19);
         newSlot.currentSite = startingSite;
         newSlot.siteVisits = new() { { startingSite, 1 } };
         saves[settings.selectedRealm].Add(newSlot);
@@ -157,8 +148,6 @@ public class SaveGame
         currentSave.timePlayed = currentSave.timePlayed.Add(DateTime.Now - currentSave.lastLoaded);
         currentSave.lastPlayed = DateTime.Now;
         var temp = desktops.Find(x => x.title.Contains("Map"));
-        currentSave.cameraX = (int)Math.Round(temp.cameraDestination.x);
-        currentSave.cameraY = (int)Math.Round(temp.cameraDestination.y);
     }
 
     //Logs the character into the world

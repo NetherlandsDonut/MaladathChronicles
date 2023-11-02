@@ -98,6 +98,7 @@ public class Entity
             level++;
             PlaySound("DesktopLevelUp");
         }
+        Respawn("ExperienceBar", true);
     }
 
     //Provides amount of experience needed to level up

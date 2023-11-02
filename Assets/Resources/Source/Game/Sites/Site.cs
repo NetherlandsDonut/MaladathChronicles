@@ -131,14 +131,17 @@ public class Site
         }
     }
 
+    //Lead 
     public void LeadPath()
     {
-        siteTravelPlan = this;
         var pathing = FindShortestPath(FindSite(x => x.name == currentSave.currentSite), this);
-        if (pathing != null)
-            foreach (var path in pathing)
-                pathsDrawn.Add(path.DrawPath());
-        else siteTravelPlan = null;
+        if (pathing != null) foreach (var path in pathing) pathsDrawn.Add(path.DrawPath());
+    }
+
+    //Lead provided in the argument path
+    public static void LeadPath(SitePath path)
+    {
+        if (path != null) pathsDrawn.Add(path.DrawPath());
     }
 
     public void ExecutePath(string siteType)
@@ -149,9 +152,6 @@ public class Site
 
     //Site selected as the beginning of the path building
     public static Site sitePathBuilder;
-
-    //Site selected as the beginning of the path building
-    public static Site siteTravelPlan;
 
     //List of points set during construction of a path between sites
     public static List<Vector2> pathBuilder;

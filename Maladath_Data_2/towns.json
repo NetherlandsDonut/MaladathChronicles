@@ -14,13 +14,6 @@
     "faction": "Assassin's League"
   },
   {
-    "transport": [
-      {
-        "means": "Tram",
-        "destination": "Ironforge",
-        "price": 1.5
-      }
-    ],
     "people": [
       {
         "name": "Ander Germaine",
@@ -277,13 +270,6 @@
     "faction": "Stormwind"
   },
   {
-    "transport": [
-      {
-        "means": "Ship",
-        "destination": "Auberdine",
-        "price": 1.5
-      }
-    ],
     "people": [
       {
         "name": "Shellei Brondil",
@@ -424,13 +410,6 @@
     "faction": "Darnassus"
   },
   {
-    "transport": [
-      {
-        "means": "Ship",
-        "destination": "Auberdine",
-        "price": 1.5
-      }
-    ],
     "people": [
       {
         "name": "Vesprystus",
@@ -543,18 +522,6 @@
     "faction": "Darnassus"
   },
   {
-    "transport": [
-      {
-        "means": "Ship",
-        "destination": "Rut'theran Village",
-        "price": 1.5
-      },
-      {
-        "means": "Ship",
-        "destination": "Menethil Harbor",
-        "price": 1.5
-      }
-    ],
     "people": [
       {
         "name": "Caylais Moonfeather",
@@ -687,13 +654,6 @@
     "faction": "Wildhammer Clan"
   },
   {
-    "transport": [
-      {
-        "means": "Tram",
-        "destination": "Stormwind City",
-        "price": 1.5
-      }
-    ],
     "people": [
       {
         "name": "Kelstrum Stonebreaker",
@@ -865,18 +825,6 @@
     "faction": "Ironforge"
   },
   {
-    "transport": [
-      {
-        "means": "Zeppelin",
-        "destination": "Undercity",
-        "price": 1.5
-      },
-      {
-        "means": "Zeppelin",
-        "destination": "Grom'gol Base Camp",
-        "price": 1.5
-      }
-    ],
     "people": [
       {
         "name": "Grezz Ragefist",
@@ -1064,13 +1012,6 @@
     "faction": "Orgrimmar"
   },
   {
-    "transport": [
-      {
-        "means": "Zeppelin",
-        "destination": "Orgrimmar",
-        "price": 1.5
-      }
-    ],
     "people": [
       {
         "name": "Kragg",
@@ -1377,13 +1318,6 @@
     "faction": "Thunder Bluff"
   },
   {
-    "transport": [
-      {
-        "means": "Zeppelin",
-        "destination": "Orgrimmar",
-        "price": 1.5
-      }
-    ],
     "people": [
       {
         "name": "Cristoph Walker",
@@ -1693,13 +1627,6 @@
     "faction": "Steamwheedle Cartel"
   },
   {
-    "transport": [
-      {
-        "means": "Ship",
-        "destination": "Booty Bay",
-        "price": 1.5
-      }
-    ],
     "people": [
       {
         "name": "Bragok",
@@ -1715,13 +1642,6 @@
     "faction": "Steamwheedle Cartel"
   },
   {
-    "transport": [
-      {
-        "means": "Ship",
-        "destination": "Ratchet",
-        "price": 1.5
-      }
-    ],
     "people": [
       {
         "name": "Ian Strom",

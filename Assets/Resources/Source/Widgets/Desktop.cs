@@ -205,7 +205,7 @@ public class Desktop : MonoBehaviour
                         queuedPath.RemoveAll(x => x.parent != queuedPath[0].parent);
                         var siteA = FindSite(x => queuedPath[0].parent.name.Contains("\"" + x.name + "\""));
                         var siteB = FindSite(x => siteA != x && queuedPath[0].parent.name.Contains("\"" + x.name + "\""));
-                        queuedSiteOpen = Vector2.Distance(new Vector2(siteA.x, siteA.y) * 19, queuedPath.Last().transform.position) < Vector2.Distance(new Vector2(siteB.x, siteB.y) * 19, queuedPath.Last().transform.position) ? siteA.name : siteB.name;
+                        queuedSiteOpen = Vector2.Distance(new Vector2(siteA.x, siteA.y) * mapGridSize, queuedPath.Last().transform.position) < Vector2.Distance(new Vector2(siteB.x, siteB.y) * mapGridSize, queuedPath.Last().transform.position) ? siteA.name : siteB.name;
                     }
                     if (Vector2.Distance(temp, cameraDestination) > 5)
                     {
@@ -239,7 +239,7 @@ public class Desktop : MonoBehaviour
                         {
                             var first = queuedPath.First(x => x.name == "PathDot");
                             cameraDestination = first.position;
-                            first.GetComponent<SpriteRenderer>().color = Color.green;
+                            first.GetComponent<SpriteRenderer>().color = (means == "Tram" ? Color.brown : (means == "Ship" ? Color.blue : Color.green));
                         }
                     }
                 }

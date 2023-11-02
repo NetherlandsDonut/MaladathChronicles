@@ -159,7 +159,8 @@ public class Blueprint
                 {
                     Login();
                     SpawnDesktopBlueprint("Map");
-                    CDesktop.cameraDestination = new Vector2(currentSave.cameraX, currentSave.cameraY);
+                    var find = FindSite(x => x.name == currentSave.currentSite);
+                    CDesktop.cameraDestination = new Vector2(find.x, find.y) * mapGridSize;
                 });
             }
             else
@@ -1172,7 +1173,7 @@ public class Blueprint
             SetRegionGroupWidth(272);
             AddPaddingRegion(() =>
             {
-                AddLine("Day 1", "", "Right");
+                AddLine("Day " + currentSave.day, "", "Right");
             });
         }, true),
         new("MapToolbarClockRight", () => {
@@ -1182,7 +1183,7 @@ public class Blueprint
             SetRegionGroupWidth(272);
             AddPaddingRegion(() =>
             {
-                AddLine("10:00", "", "Left");
+                AddLine(currentSave.hour + (currentSave.minute < 10 ? ":0" : ":") + currentSave.minute, "", "Left");
             });
         }, true),
         new("InstanceLeftSide", () => {

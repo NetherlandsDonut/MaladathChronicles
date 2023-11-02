@@ -11,11 +11,14 @@ public class SitePath
     //Initialisation method to fill automatic values
     public void Initialise()
     {
+        if (means == null) means = "Land";
+        var ref = means == "Land" ? pathsConnectedToSite : transportationConnectedToSite;
         foreach (var site in sites)
-            if (pathsConnectedToSite.ContainsKey(site)) pathsConnectedToSite[site].Add(this);
-            else pathsConnectedToSite.Add(site, new() { this });
+            if (ref.ContainsKey(site)) ref[site].Add(this);
+            else ref.Add(site, new() { this });
     }
 
+    //Paths connected to this one excluding connections to sites in exclude list
     public List<SitePath> PathsConnected(List<string> exclude)
     {
         if (exclude.Count(x => x == sites[0]) > 1 && exclude.Count(x => x == sites[1]) > 1) return new();
@@ -29,11 +32,17 @@ public class SitePath
     //and only two sites in this list!
     public List<string> sites;
 
+    //Type of traveling that the entity takes while on this path
+    public string means;
+
     //List of all points in between the two sites
     public List<(int, int)> points;
 
-    //List of all points in between the two sites
+    //Collection of all paths connected to each site
     public static Dictionary<string, List<SitePath>> pathsConnectedToSite = new();
+
+    //Collection of all transportation paths connected to each site
+    public static Dictionary<string, List<SitePath>> transportationConnectedToSite = new();
 
     //List of all active paths in the world
     public static List<GameObject> pathsDrawn = new();
@@ -86,6 +95,22 @@ public class SitePath
                     dotShadow.transform.localPosition = Vector3.zero;
                 }
         }
+    }
+
+    //Transport mouseover information
+    public void PrintTooltip()
+    {
+        SetAnchor(Center);
+        AddHeaderGroup();
+        SetRegionGroupWidth(188);
+        AddHeaderRegion(() => { AddLine(means); });
+        AddPaddingRegion(() =>
+        {
+            if (sites.Contains(currentSave.currentSite))
+                AddLine("To " + sites.Find(x => x != currentSave.currentSite));
+            else AddLine("Between " + sites[0] + " and " + sites[1]);
+        });
+        PrintPriceRegion(price);
     }
     
     //Path currently being built 

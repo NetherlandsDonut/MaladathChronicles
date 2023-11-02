@@ -10,6 +10,7 @@ using static Root.Anchor;
 using static Sound;
 using static MapGrid;
 using static Faction;
+using static SitePath;
 using static SaveGame;
 using static Transport;
 using static FlightPathGroup;
@@ -55,15 +56,18 @@ public class SiteTown : Site
                                 SwitchDesktop("Map");
                             });
                         });
-                        if (transport != null)
+                        if (transportationConnectedToSite.ContainsKey(name))
                         {
+                            var transportOptions = transportationConnectedToSite[name];
                             AddHeaderRegion(() => { AddLine("Transportation:"); });
-                            foreach (var transport in transport)
+                            foreach (var transport in transportOptions)
                             {
-                                var desitnation = towns.Find(x => x.name == transport.destination);
+                                var desitnationName = transport.sites.Find(x => x != name);
+                                var desitnation = towns.Find(x => x.name == otherSite);
+                                if (destination == null) continue;
                                 AddButtonRegion(() =>
                                 {
-                                    AddLine(transport.destination, "Black");
+                                    AddLine(desitnationName, "Black");
                                     AddSmallButton("Transport" + transport.means, (h) => { });
                                 },
                                 (h) =>
@@ -73,10 +77,11 @@ public class SiteTown : Site
                                     CDesktop.LockScreen();
                                     if (transport.price > 0)
                                         PlaySound("DesktopTransportPay");
-                                    desitnation.QueueSiteOpen("Town");
+                                    LeadPath(transport);
+                                    desitnation.ExecutePath("Town");
                                 },
                                 null,
-                                (h) => () => { PrintTransportTooltip(transport); });
+                                (h) => () => { transport.PrintTooltip(); });
                             }
                         }
                         if (people != null)
@@ -118,9 +123,6 @@ public class SiteTown : Site
         if (x != 0 && y != 0)
             Blueprint.windowBlueprints.Add(new Blueprint("Site: " + name, () => PrintSite()));
     }
-
-    //List of all transport paths provided in this town
-    public List<Transport> transport;
 
     //List of NPC's that are inside of this town
     public List<Person> people;
