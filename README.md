@@ -331,18 +331,25 @@ v0.4.1
     19.10 Made shatter effect have bigger particles
           Green talent arrows
 v0.4.2
-    21.09 Molten Core and Blackwing Lair improvements
+    21.10 Molten Core and Blackwing Lair improvements
           Bonus move, damage, heal and buff floating text system
           Fixed particles colliding with UI
           Flash on portraits on received damage or healing
 v0.4.3
-    22.09 General zone music
+    22.10 General zone music
           Some lacking portraits added
 v0.4.4
-    25.09 Added over 20 lacking sites
+    25.10 Added over 20 lacking sites
           Base for site pathing
 v0.4.5
-    26.09 Multi-point site pathing
+    26.10 Multi-point site pathing
+v0.4.6
+    29.10 Discovering sites
+v0.4.7
+    31.10 Pathfinding for traveling on the adventure map
+v0.4.8
+    01.11 Added over 20 new sites
+          Connected most of Eastern Kingdoms with paths
 ```
 
 </details>
