@@ -166,6 +166,8 @@ public class Desktop : MonoBehaviour
                     SpawnWindowBlueprint("MapToolbarClockLeft");
                     SpawnWindowBlueprint("MapToolbar");
                     SpawnWindowBlueprint("MapToolbarClockRight");
+                    SpawnWindowBlueprint("MapToolbarStatusLeft");
+                    SpawnWindowBlueprint("MapToolbarStatusRight");
                     SpawnWindowBlueprint("ExperienceBar");
                     grid.SwitchMapTexture(currentSave.playerDead);
                     SpawnTransition(0.1f);

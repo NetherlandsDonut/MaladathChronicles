@@ -1176,6 +1176,31 @@ public class Blueprint
                 AddLine("Day " + (currentSave.day + 1), "", "Right");
             });
         }, true),
+        new("MapToolbarStatusLeft", () => {
+            SetAnchor(Top, -183, 0);
+            DisableGeneralSprites();
+            AddRegionGroup();
+            SetRegionGroupWidth(272);
+            AddPaddingRegion(() =>
+            {
+                if (currentSave.player.unspentTalentPoints > 0)
+                {
+                    AddLine("You have ", "", "Left");
+                    AddText(currentSave.player.unspentTalentPoints + "", "Uncommon");
+                    AddText(" talent point" + (currentSave.player.unspentTalentPoints == 1 ? "!" : "s!"));
+                }
+            });
+        }, true),
+        new("MapToolbarStatusRight", () => {
+            SetAnchor(Top, 183, 0);
+            DisableGeneralSprites();
+            AddRegionGroup();
+            SetRegionGroupWidth(272);
+            AddPaddingRegion(() =>
+            {
+                
+            });
+        }, true),
         new("MapToolbarClockRight", () => {
             SetAnchor(Top, 183, 0);
             DisableShadows();
@@ -6940,10 +6965,10 @@ public class Blueprint
             loadingBar = new GameObject[2];
             loadingBar[0] = new GameObject("LoadingBarBegin", typeof(SpriteRenderer));
             loadingBar[0].GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Textures/LoadingBarEnd");
-            loadingBar[0].transform.position = new Vector3(-1171, 853);
+            loadingBar[0].transform.position = new Vector3(-1171, 854);
             loadingBar[1] = new GameObject("LoadingBar", typeof(SpriteRenderer));
             loadingBar[1].GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Textures/LoadingBarStretch");
-            loadingBar[1].transform.position = new Vector3(-1168, 853);
+            loadingBar[1].transform.position = new Vector3(-1168, 854);
             OrderLoadingMap();
             AddHotkey(W, () => { MoveCamera(new Vector2(0, EuelerGrowth())); }, false);
             AddHotkey(A, () => { MoveCamera(new Vector2(-EuelerGrowth(), 0)); }, false);
@@ -7006,6 +7031,8 @@ public class Blueprint
             SpawnWindowBlueprint("MapToolbarClockLeft");
             SpawnWindowBlueprint("MapToolbar");
             SpawnWindowBlueprint("MapToolbarClockRight");
+            SpawnWindowBlueprint("MapToolbarStatusLeft");
+            SpawnWindowBlueprint("MapToolbarStatusRight");
             SpawnWindowBlueprint("ExperienceBar");
             AddHotkey(Escape, () =>
             {
@@ -7051,6 +7078,8 @@ public class Blueprint
             SpawnWindowBlueprint("MapToolbarClockLeft");
             SpawnWindowBlueprint("MapToolbar");
             SpawnWindowBlueprint("MapToolbarClockRight");
+            SpawnWindowBlueprint("MapToolbarStatusLeft");
+            SpawnWindowBlueprint("MapToolbarStatusRight");
             SpawnWindowBlueprint("ExperienceBar");
             SpawnWindowBlueprint("Town: " + town.name);
             AddHotkey(Escape, () =>
@@ -7067,6 +7096,8 @@ public class Blueprint
             SpawnWindowBlueprint("MapToolbarClockLeft");
             SpawnWindowBlueprint("MapToolbar");
             SpawnWindowBlueprint("MapToolbarClockRight");
+            SpawnWindowBlueprint("MapToolbarStatusLeft");
+            SpawnWindowBlueprint("MapToolbarStatusRight");
             SpawnWindowBlueprint("ExperienceBar");
             SpawnWindowBlueprint("InstanceLeftSide");
             AddHotkey(Escape, () =>
@@ -7125,6 +7156,8 @@ public class Blueprint
             SpawnWindowBlueprint("MapToolbarClockLeft");
             SpawnWindowBlueprint("MapToolbar");
             SpawnWindowBlueprint("MapToolbarClockRight");
+            SpawnWindowBlueprint("MapToolbarStatusLeft");
+            SpawnWindowBlueprint("MapToolbarStatusRight");
             SpawnWindowBlueprint("ExperienceBar");
             SpawnWindowBlueprint("Complex: " + complex.name);
             AddHotkey(Escape, () =>
