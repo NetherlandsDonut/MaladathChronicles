@@ -1364,7 +1364,7 @@ public class Blueprint
             PrintPriceRegion(currentSave.player.inventory.money);
         }, true),
         new("TalentScreenHeader", () => {
-            SetAnchor(Top);
+            SetAnchor(Top, 0, -19);
             AddRegionGroup();
             AddHeaderRegion(
                 () =>
@@ -1411,20 +1411,11 @@ public class Blueprint
             );
         }),
         new("TalentTreeRight", () => {
-            SetAnchor(TopRight);
+            SetAnchor(TopRight, 0, -19);
             DisableShadows();
             AddHeaderGroup();
             SetRegionGroupWidth(190);
-            SetRegionGroupHeight(328);
-            AddHeaderRegion(() =>
-            {
-                AddLine("Adept Tree", "DarkGray", "Center");
-                AddSmallButton("OtherClose", (h) =>
-                {
-                    PlaySound("DesktopTalentScreenClose");
-                    CloseDesktop("TalentScreen");
-                });
-            });
+            SetRegionGroupHeight(309);
             AddPaddingRegion(() =>
             {
                 SetRegionAsGroupExtender();
@@ -1440,14 +1431,10 @@ public class Blueprint
             });
         }),
         new("TalentTreeLeft", () => {
-            SetAnchor(TopLeft);
+            SetAnchor(TopLeft, 0, -19);
             AddHeaderGroup();
             SetRegionGroupWidth(190);
-            SetRegionGroupHeight(328);
-            AddHeaderRegion(() =>
-            {
-                AddLine("Novice Tree", "DarkGray", "Center");
-            });
+            SetRegionGroupHeight(309);
             AddPaddingRegion(() =>
             {
                 SetRegionAsGroupExtender();
@@ -6976,7 +6963,7 @@ public class Blueprint
             AddHotkey(D, () => { MoveCamera(new Vector2(EuelerGrowth(), 0)); }, false);
             AddHotkey(C, () =>
             {
-                if (!CloseWindow("CharacterInfoEquipment") && !CloseWindow("CharacterInfoEquipment"))
+                if (!CloseWindow("CharacterInfoEquipment") && !CloseWindow("CharacterInfoStats"))
                 {
                     SpawnWindowBlueprint("CharacterInfoEquipment");
                     PlaySound("DesktopCharacterSheetOpen");
@@ -7290,9 +7277,15 @@ public class Blueprint
         new("TalentScreen", () =>
         {
             SetDesktopBackground("Stone");
+            SpawnWindowBlueprint("MapToolbarShadow");
+            SpawnWindowBlueprint("MapToolbarClockLeft");
+            SpawnWindowBlueprint("MapToolbar");
+            SpawnWindowBlueprint("MapToolbarClockRight");
+            SpawnWindowBlueprint("MapToolbarStatusLeft");
+            SpawnWindowBlueprint("MapToolbarStatusRight");
             SpawnWindowBlueprint("TalentTreeLeft");
             SpawnWindowBlueprint("TalentScreenHeader");
-            SpawnWindowBlueprint("TalentScreenFooter");
+            //SpawnWindowBlueprint("TalentScreenFooter");
             SpawnWindowBlueprint("TalentTreeRight");
             var playerSpec = currentSave.player.Spec();
             for (int tree = 0; tree < 2; tree++)
