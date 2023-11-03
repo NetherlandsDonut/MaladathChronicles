@@ -39,10 +39,9 @@ public class SiteTown : Site
                     () =>
                     {
                         PlayAmbience(ambience);
-                        SetAnchor(TopRight);
+                        SetAnchor(TopRight, -19, -38);
                         AddRegionGroup();
                         SetRegionGroupWidth(171);
-                        SetRegionGroupHeight(338);
                         AddHeaderRegion(() =>
                         {
                             AddLine(name);
@@ -115,7 +114,6 @@ public class SiteTown : Site
                                     });
                             }
                         }
-                        AddPaddingRegion(() => SetRegionAsGroupExtender());
                     }
                 )
             );

@@ -89,10 +89,9 @@ public class SiteHostileArea : Site
                             if (zone != null) PlayAmbience(zone.ambience);
                         }
                         else PlayAmbience(ambience);
-                        SetAnchor(TopLeft);
+                        SetAnchor(TopLeft, 19, -38);
                         AddRegionGroup();
                         SetRegionGroupWidth(171);
-                        SetRegionGroupHeight(338);
                         AddHeaderRegion(() =>
                         {
                             AddLine(name);
@@ -134,10 +133,6 @@ public class SiteHostileArea : Site
                             Board.NewBoard(RollEncounter(), this);
                             SpawnDesktopBlueprint("Game");
                             SwitchDesktop("Game");
-                        });
-                        AddPaddingRegion(() =>
-                        {
-                            SetRegionAsGroupExtender();
                         });
                         if (commonEncounters != null && commonEncounters.Count > 0)
                         {

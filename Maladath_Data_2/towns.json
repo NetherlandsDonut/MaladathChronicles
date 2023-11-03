@@ -86,7 +86,8 @@
     "y": -183,
     "name": "Stormwind City",
     "zone": "Elwynn Forest",
-    "faction": "Stormwind"
+    "faction": "Stormwind",
+    "ambience": "MusicStormwind"
   },
   {
     "x": 72,
@@ -400,7 +401,8 @@
     "y": -27,
     "name": "Darnassus",
     "zone": "Teldrassil",
-    "faction": "Darnassus"
+    "faction": "Darnassus",
+    "ambience": "MusicDarnassus"
   },
   {
     "x": 67,
@@ -720,7 +722,8 @@
     "y": -142,
     "name": "Ironforge",
     "zone": "Dun Morogh",
-    "faction": "Ironforge"
+    "faction": "Ironforge",
+    "ambience": "MusicIronforge"
   },
   {
     "people": [
@@ -893,11 +896,12 @@
         "type": "Meat Vendor"
       }
     ],
-    "x": 121,
-    "y": -116,
+    "x": 123,
+    "y": -118,
     "name": "Orgrimmar",
     "zone": "Durotar",
-    "faction": "Orgrimmar"
+    "faction": "Orgrimmar",
+    "ambience": "MusicOrgrimmar"
   },
   {
     "people": [
@@ -939,7 +943,7 @@
       }
     ],
     "x": 127,
-    "y": -129,
+    "y": -130,
     "name": "Razor Hill",
     "zone": "Durotar",
     "faction": "Orgrimmar"
@@ -1202,7 +1206,8 @@
     "y": -146,
     "name": "Thunder Bluff",
     "zone": "Mulgore",
-    "faction": "Thunder Bluff"
+    "faction": "Thunder Bluff",
+    "ambience": "MusicThunderBluff"
   },
   {
     "people": [
@@ -1372,7 +1377,8 @@
     "y": -71,
     "name": "Undercity",
     "zone": "Tirisfal Glades",
-    "faction": "Undercity"
+    "faction": "Undercity",
+    "ambience": "MusicUndercity"
   },
   {
     "x": 273,

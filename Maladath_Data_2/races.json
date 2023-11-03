@@ -1794,6 +1794,15 @@
     "abilities": {}
   },
   {
+    "name": "Dire Mottled Boar",
+    "category": "Beast",
+    "subcategory": "Boar",
+    "kind": "Common",
+    "portrait": "PortraitBoarBlack",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
     "name": "Grunter",
     "category": "Beast",
     "subcategory": "Boar",
@@ -2291,6 +2300,15 @@
     "abilities": {}
   },
   {
+    "name": "Burning Blade Thug",
+    "category": "Humanoid",
+    "subcategory": "Orc",
+    "kind": "Common",
+    "portrait": "PortraitBurningBladeApprentice",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
     "name": "Burning Blade Apprentice",
     "category": "Humanoid",
     "subcategory": "Orc",
@@ -2301,12 +2319,30 @@
     "abilities": {}
   },
   {
+    "name": "Burning Blade Neophyte",
+    "category": "Humanoid",
+    "subcategory": "Orc",
+    "kind": "Common",
+    "portrait": "PortraitBurningBladeConjuror",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
     "name": "Burning Blade Bruiser",
     "category": "Humanoid",
     "subcategory": "Orc",
     "faction": "Burning Blade Clan",
     "kind": "Common",
     "portrait": "PortraitBurningBladeConjuror",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Burning Blade Cultist",
+    "category": "Humanoid",
+    "subcategory": "Orc",
+    "kind": "Common",
+    "portrait": "PortraitBurningBladeCultist",
     "vitality": 1.0,
     "abilities": {}
   },
@@ -2399,6 +2435,15 @@
     "kind": "Elite",
     "portrait": "PortraitCaptainFairmount",
     "vitality": 3.0,
+    "abilities": {}
+  },
+  {
+    "name": "Wiry Swoop",
+    "category": "Beast",
+    "subcategory": "Carrion Bird",
+    "kind": "Common",
+    "portrait": "PortraitCarrionBird",
+    "vitality": 1.0,
     "abilities": {}
   },
   {
@@ -2560,6 +2605,15 @@
     "subcategory": "Human",
     "kind": "Common",
     "portrait": "PortraitCenarianFemale",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Kolkar Looter",
+    "category": "Humanoid",
+    "subcategory": "Centaur",
+    "kind": "Common",
+    "portrait": "PortraitCentaurBrown",
     "vitality": 1.0,
     "abilities": {}
   },
@@ -3342,6 +3396,15 @@
     "subcategory": "Human",
     "kind": "Common",
     "portrait": "PortraitCougar",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Prairie Wolf",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "kind": "Common",
+    "portrait": "PortraitCoyote",
     "vitality": 1.0,
     "abilities": {}
   },
@@ -6382,6 +6445,15 @@
     "kind": "Rare",
     "portrait": "PortraitGnollBright",
     "vitality": 2.0,
+    "abilities": {}
+  },
+  {
+    "name": "Venture Co. Hireling",
+    "category": "Humanoid",
+    "subcategory": "Gnoll",
+    "kind": "Common",
+    "portrait": "PortraitGnollBrown",
+    "vitality": 1.0,
     "abilities": {}
   },
   {
@@ -9484,6 +9556,15 @@
     "abilities": {}
   },
   {
+    "name": "Slimeshell Makrura",
+    "category": "Beast",
+    "subcategory": "Makrura",
+    "kind": "Common",
+    "portrait": "PortraitMakruraBlue",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
     "name": "Arkkoran Pincer",
     "category": "Beast",
     "subcategory": "Makrura",
@@ -10796,7 +10877,7 @@
     "category": "Humanoid",
     "subcategory": "Human",
     "kind": "Elite",
-    "portrait": "PortraitNightElfMale",
+    "portrait": "PortraitPrinceTortheldrin",
     "vitality": 3.0,
     "abilities": {}
   },
@@ -10919,6 +11000,15 @@
     "kind": "Elite",
     "portrait": "PortraitOgomtheWretched",
     "vitality": 3.0,
+    "abilities": {}
+  },
+  {
+    "name": "Enforcer Emilgund",
+    "category": "Humanoid",
+    "subcategory": "Ogre",
+    "kind": "Rare",
+    "portrait": "PortraitOgre",
+    "vitality": 2.0,
     "abilities": {}
   },
   {
@@ -16445,6 +16535,24 @@
     "abilities": {}
   },
   {
+    "name": "Greater Plainstrider",
+    "category": "Beast",
+    "subcategory": "Tallstrider",
+    "kind": "Common",
+    "portrait": "PortraitTallstriderBrown",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Adult Plainstrider",
+    "category": "Beast",
+    "subcategory": "Tallstrider",
+    "kind": "Common",
+    "portrait": "PortraitTallstriderBrown",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
     "name": "Foreststrider",
     "category": "Beast",
     "subcategory": "Tallstrider",
@@ -16468,6 +16576,15 @@
     "subcategory": "Tallstrider",
     "kind": "Common",
     "portrait": "PortraitTallstriderBrown",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Ornery Plainstrider",
+    "category": "Beast",
+    "subcategory": "Tallstrider",
+    "kind": "Common",
+    "portrait": "PortraitTallstriderWhite",
     "vitality": 1.0,
     "abilities": {}
   },
@@ -16919,6 +17036,15 @@
     "subcategory": "Human",
     "kind": "Common",
     "portrait": "PortraitThunderLizardGreen",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Stormsnout",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "kind": "Common",
+    "portrait": "PortraitThunderLizardRed",
     "vitality": 1.0,
     "abilities": {}
   },
@@ -19342,6 +19468,15 @@
     "kind": "Rare",
     "portrait": "PortraitZerillis",
     "vitality": 2.0,
+    "abilities": {}
+  },
+  {
+    "name": "Zhevra Charger",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "kind": "Common",
+    "portrait": "PortraitZhevra",
+    "vitality": 1.0,
     "abilities": {}
   },
   {

@@ -5583,6 +5583,13 @@
     "type": "HostileArea"
   },
   {
+    "x": 125,
+    "y": -124,
+    "name": "The Placid Dune",
+    "zone": "Durotar",
+    "type": "HostileArea"
+  },
+  {
     "commonEncounters": [
       {
         "who": "Pygmy Surf Crawler",
@@ -5600,8 +5607,8 @@
         "levelMax": 7
       }
     ],
-    "x": 132,
-    "y": -131,
+    "x": 133,
+    "y": -133,
     "name": "Scuttle Coast",
     "zone": "Durotar",
     "type": "HostileArea"
@@ -5617,16 +5624,41 @@
         "who": "Burning Blade Apprentice",
         "levelMin": 10,
         "levelMax": 11
-      },
+      }
+    ],
+    "eliteEncounters": [
       {
         "who": "Gazz'uz",
-        "levelMin": 14,
-        "levelMax": 14
+        "levelMin": 14
       }
     ],
     "x": 128,
     "y": -118,
     "name": "Skull Rock",
+    "zone": "Durotar",
+    "type": "HostileArea"
+  },
+  {
+    "commonEncounters": [
+      {
+        "who": "Burning Blade Neophyte",
+        "levelMin": 8,
+        "levelMax": 9
+      },
+      {
+        "who": "Burning Blade Thug",
+        "levelMin": 8,
+        "levelMax": 9
+      },
+      {
+        "who": "Burning Blade Cultist",
+        "levelMin": 9,
+        "levelMax": 10
+      }
+    ],
+    "x": 128,
+    "y": -125,
+    "name": "Dustwind Cave",
     "zone": "Durotar",
     "type": "HostileArea"
   },
@@ -5684,6 +5716,25 @@
     "x": 130,
     "y": -135,
     "name": "Tiragarde Keep",
+    "zone": "Durotar",
+    "type": "HostileArea"
+  },
+  {
+    "commonEncounters": [
+      {
+        "who": "Clattering Scorpid",
+        "levelMin": 5,
+        "levelMax": 6
+      },
+      {
+        "who": "Dire Mottled Boar",
+        "levelMin": 6,
+        "levelMax": 7
+      }
+    ],
+    "x": 127,
+    "y": -134,
+    "name": "Rocky Desert",
     "zone": "Durotar",
     "type": "HostileArea"
   },
@@ -10027,8 +10078,27 @@
       }
     ],
     "x": 74,
-    "y": -157,
+    "y": -159,
     "name": "Palemane Rock",
+    "zone": "Mulgore",
+    "type": "HostileArea"
+  },
+  {
+    "commonEncounters": [
+      {
+        "who": "Prairie Wolf",
+        "levelMin": 5,
+        "levelMax": 6
+      },
+      {
+        "who": "Adult Plainstrider",
+        "levelMin": 5,
+        "levelMax": 6
+      }
+    ],
+    "x": 75,
+    "y": -163,
+    "name": "The Washed Hillside",
     "zone": "Mulgore",
     "type": "HostileArea"
   },
@@ -10092,15 +10162,60 @@
       {
         "who": "The Rake",
         "levelMin": 10
-      },
-      {
-        "who": "Mazzranache",
-        "levelMin": 9
       }
     ],
     "x": 82,
     "y": -149,
     "name": "The Golden Plains",
+    "zone": "Mulgore",
+    "type": "HostileArea"
+  },
+  {
+    "commonEncounters": [
+      {
+        "who": "Wiry Swoop",
+        "levelMin": 6,
+        "levelMax": 7
+      },
+      {
+        "who": "Adult Plainstrider",
+        "levelMin": 6,
+        "levelMax": 7
+      },
+      {
+        "who": "Prairie Stalker",
+        "levelMin": 7,
+        "levelMax": 8
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Mazzranache",
+        "levelMin": 9
+      }
+    ],
+    "x": 80,
+    "y": -155,
+    "name": "Stonebull Lake",
+    "zone": "Mulgore",
+    "type": "HostileArea"
+  },
+  {
+    "commonEncounters": [
+      {
+        "who": "Venture Co. Taskmaster",
+        "levelMin": 7,
+        "levelMax": 8
+      },
+      {
+        "who": "Venture Co. Laborer",
+        "levelMin": 6,
+        "levelMax": 7
+      }
+    ],
+    "x": 79,
+    "y": -153,
+    "name": "Thunderhorn Water Well",
     "zone": "Mulgore",
     "type": "HostileArea"
   },
@@ -10147,9 +10262,28 @@
         "levelMin": 9
       }
     ],
-    "x": 85,
-    "y": -161,
+    "x": 88,
+    "y": -159,
     "name": "The Rolling Plains",
+    "zone": "Mulgore",
+    "type": "HostileArea"
+  },
+  {
+    "commonEncounters": [
+      {
+        "who": "Venture Co. Hireling",
+        "levelMin": 5,
+        "levelMax": 6
+      },
+      {
+        "who": "Venture Co. Laborer",
+        "levelMin": 5,
+        "levelMax": 6
+      }
+    ],
+    "x": 84,
+    "y": -161,
+    "name": "Winterhood Water Well",
     "zone": "Mulgore",
     "type": "HostileArea"
   },
@@ -10169,6 +10303,31 @@
     "x": 87,
     "y": -153,
     "name": "The Venture Co. Mine",
+    "zone": "Mulgore",
+    "type": "HostileArea"
+  },
+  {
+    "commonEncounters": [
+      {
+        "who": "Venture Co. Worker",
+        "levelMin": 8,
+        "levelMax": 9
+      },
+      {
+        "who": "Venture Co. Supervisor",
+        "levelMin": 9,
+        "levelMax": 10
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Enforcer Emilgund",
+        "levelMin": 11
+      }
+    ],
+    "x": 79,
+    "y": -142,
+    "name": "Wildmane Water Well",
     "zone": "Mulgore",
     "type": "HostileArea"
   },
@@ -16085,6 +16244,35 @@
   {
     "commonEncounters": [
       {
+        "who": "Sunscale Scytheclaw",
+        "levelMin": 17,
+        "levelMax": 18
+      },
+      {
+        "who": "Zhevra Charger",
+        "levelMin": 17,
+        "levelMax": 18
+      },
+      {
+        "who": "Ornery Plainstrider",
+        "levelMin": 16,
+        "levelMax": 17
+      },
+      {
+        "who": "Stormsnout",
+        "levelMin": 17,
+        "levelMax": 18
+      }
+    ],
+    "x": 103,
+    "y": -151,
+    "name": "The Riverbed",
+    "zone": "The Barrens",
+    "type": "HostileArea"
+  },
+  {
+    "commonEncounters": [
+      {
         "who": "Burning Blade Bruiser",
         "levelMin": 10,
         "levelMax": 11
@@ -16182,6 +16370,30 @@
     "x": 91,
     "y": -137,
     "name": "Honor's Stand",
+    "zone": "The Barrens",
+    "type": "HostileArea"
+  },
+  {
+    "commonEncounters": [
+      {
+        "who": "Sunscale Screecher",
+        "levelMin": 14,
+        "levelMax": 15
+      },
+      {
+        "who": "Kolkar Wrangler",
+        "levelMin": 13,
+        "levelMax": 14
+      },
+      {
+        "who": "Kolkar Looter",
+        "levelMin": 14,
+        "levelMax": 15
+      }
+    ],
+    "x": 97,
+    "y": -136,
+    "name": "Looted Farm",
     "zone": "The Barrens",
     "type": "HostileArea"
   },
@@ -16296,8 +16508,32 @@
       }
     ],
     "x": 117,
-    "y": -128,
+    "y": -126,
     "name": "Southfury River",
+    "zone": "The Barrens",
+    "type": "HostileArea"
+  },
+  {
+    "commonEncounters": [
+      {
+        "who": "Zhevra Runner",
+        "levelMin": 12,
+        "levelMax": 13
+      },
+      {
+        "who": "Sunscale Screecher",
+        "levelMin": 13,
+        "levelMax": 14
+      },
+      {
+        "who": "Barrens Giraffe",
+        "levelMin": 13,
+        "levelMax": 14
+      }
+    ],
+    "x": 116,
+    "y": -130,
+    "name": "Far Watch Post",
     "zone": "The Barrens",
     "type": "HostileArea"
   },
@@ -16369,6 +16605,20 @@
     "x": 117,
     "y": -150,
     "name": "The Merchant Coast",
+    "zone": "The Barrens",
+    "type": "HostileArea"
+  },
+  {
+    "commonEncounters": [
+      {
+        "who": "Slimeshell Makrura",
+        "levelMin": 18,
+        "levelMax": 19
+      }
+    ],
+    "x": 119,
+    "y": -148,
+    "name": "The Tidus Stair",
     "zone": "The Barrens",
     "type": "HostileArea"
   },
@@ -16462,6 +16712,35 @@
     "x": 108,
     "y": -135,
     "name": "Thorn Hill",
+    "zone": "The Barrens",
+    "type": "HostileArea"
+  },
+  {
+    "commonEncounters": [
+      {
+        "who": "Greater Plainstrider",
+        "levelMin": 12,
+        "levelMax": 13
+      },
+      {
+        "who": "Fleeting Plainstrider",
+        "levelMin": 13,
+        "levelMax": 14
+      },
+      {
+        "who": "Zhevra Runner",
+        "levelMin": 13,
+        "levelMax": 14
+      },
+      {
+        "who": "Hacklefang Hyena",
+        "levelMin": 14,
+        "levelMax": 15
+      }
+    ],
+    "x": 109,
+    "y": -131,
+    "name": "Grom'dom Farm",
     "zone": "The Barrens",
     "type": "HostileArea"
   },

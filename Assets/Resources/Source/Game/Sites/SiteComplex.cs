@@ -12,6 +12,7 @@ using static MapGrid;
 using static Faction;
 using static SaveGame;
 using static SiteInstance;
+using static GameSettings;
 using static SiteHostileArea;
 
 public class SiteComplex : Site
@@ -73,10 +74,9 @@ public class SiteComplex : Site
                     () =>
                     {
                         PlayAmbience(ambience);
-                        SetAnchor(TopRight);
+                        SetAnchor(TopRight, -19, -38);
                         AddRegionGroup();
                         SetRegionGroupWidth(171);
-                        SetRegionGroupHeight(338);
                         AddHeaderRegion(() =>
                         {
                             AddLine(name);
@@ -92,7 +92,6 @@ public class SiteComplex : Site
                         AddPaddingRegion(() => { AddLine("Sites: "); });
                         foreach (var site in sites)
                             PrintComplexSite(site);
-                        AddPaddingRegion(() => { });
                     }
                 )
             );
@@ -119,7 +118,7 @@ public class SiteComplex : Site
     public static List<SiteComplex> complexesSearch;
 
     //Returns path to a texture that is the background visual of this site
-    public override string Background() => "Areas/Complex" + name.Clean() + (currentSave.IsNight() ? "Night" : "");
+    public override string Background() => "Areas/Complex" + name.Clean() + ((currentSave != null ? currentSave : saves[settings.selectedRealm].Find(x => x.player.name == settings.selectedCharacter)).IsNight() ? "Night" : "");
 
     //Function to print the site onto the map
     public override void PrintSite()

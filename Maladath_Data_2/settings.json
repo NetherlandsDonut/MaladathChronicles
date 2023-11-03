@@ -1,14 +1,14 @@
 {
-  "selectedRealm": "Gehennas",
-  "selectedCharacter": "Christine",
+  "selectedRealm": "Whitemane",
+  "selectedCharacter": "Delaney",
   "shadows": {
     "value": "True"
   },
   "pixelPerfectVision": {
-    "value": "True"
+    "value": "False"
   },
   "music": {
-    "value": "False"
+    "value": "True"
   },
   "soundEffects": {
     "value": "True"

@@ -42,7 +42,7 @@ public class SiteInstance : Site
                                     rareEncounters = new(),
                                     eliteEncounters = new(),
                                     type = "HostileArea",
-                                    zone = this.name
+                                    zone = name
                                 });
         var localAreas = wings.SelectMany(x => x.areas.Select(y => y.ContainsKey("AreaName") ? y["AreaName"] : ""));
         var temp = areas.FindAll(x => localAreas.Contains(x.name));
@@ -53,10 +53,9 @@ public class SiteInstance : Site
                     () =>
                     {
                         PlayAmbience(ambience);
-                        SetAnchor(TopRight);
+                        SetAnchor(TopRight, -19, -38);
                         AddRegionGroup();
                         SetRegionGroupWidth(171);
-                        SetRegionGroupHeight(338);
                         AddHeaderRegion(() =>
                         {
                             AddLine(name);
@@ -84,7 +83,6 @@ public class SiteInstance : Site
                         });
                         foreach (var wing in wings)
                             PrintInstanceWing(this, wing);
-                        AddPaddingRegion(() => { });
                     }
                 )
             );
@@ -188,7 +186,7 @@ public class SiteInstance : Site
             AddButtonRegion(() =>
             {
                 var name = area != null ? area.name : "AREA NOT FOUND";
-                AddLine(name, "", "Right");
+                AddLine(name);
             },
             (h) =>
             {

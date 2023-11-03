@@ -16,9 +16,9 @@ public class Entity
     
     public Entity(string name, string creationGender, Race race, Spec spec, List<string> items)
     {
-        level = 60;
+        level = 1;
         gender = creationGender;
-        unspentTalentPoints = 59;
+        unspentTalentPoints = level - 1;
         this.race = race.name;
         if (name != "") this.name = name;
         else this.name = gender == "Female" ? race.femaleNames[random.Next(race.femaleNames.Count)] : race.maleNames[random.Next(race.maleNames.Count)];
@@ -27,7 +27,7 @@ public class Entity
         stats = new Stats(race.stats.stats.ToDictionary(x => x.Key, x => x.Value));
         inventory = new Inventory(items);
         inventory.items.RemoveAll(x => x == null);
-        for (int i = 0; i < 40; i++)
+        for (int i = 0; i < 0; i++)
         {
             Item item;
             do item = Item.items[random.Next(Item.items.Count)];
@@ -348,7 +348,7 @@ public class Entity
 
     public int MaxHealth()
     {
-        return Stats()["Stamina"] * 10;
+        return Stats()["Stamina"] * 5;
     }
 
     public (double, double) WeaponDamage()

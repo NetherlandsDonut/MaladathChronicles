@@ -7002,7 +7002,10 @@ public class Blueprint
         {
             SetDesktopBackground(area.Background());
             SpawnWindowBlueprint("HostileArea: " + area.name);
-            SpawnWindowBlueprint("HostileAreaRightSide");
+            SpawnWindowBlueprint("MapToolbarShadow");
+            SpawnWindowBlueprint("MapToolbarClockLeft");
+            SpawnWindowBlueprint("MapToolbar");
+            SpawnWindowBlueprint("MapToolbarClockRight");
             SpawnWindowBlueprint("ExperienceBar");
             AddHotkey(Escape, () =>
             {
@@ -7044,9 +7047,12 @@ public class Blueprint
         new("Town", () =>
         {
             SetDesktopBackground(town.Background());
-            SpawnWindowBlueprint("Town: " + town.name);
-            SpawnWindowBlueprint("TownLeftSide");
+            SpawnWindowBlueprint("MapToolbarShadow");
+            SpawnWindowBlueprint("MapToolbarClockLeft");
+            SpawnWindowBlueprint("MapToolbar");
+            SpawnWindowBlueprint("MapToolbarClockRight");
             SpawnWindowBlueprint("ExperienceBar");
+            SpawnWindowBlueprint("Town: " + town.name);
             AddHotkey(Escape, () =>
             {
                 PlaySound("DesktopInstanceClose");
@@ -7057,8 +7063,12 @@ public class Blueprint
         {
             SetDesktopBackground(instance.Background());
             SpawnWindowBlueprint(instance.type + ": " + instance.name);
-            SpawnWindowBlueprint("InstanceLeftSide");
+            SpawnWindowBlueprint("MapToolbarShadow");
+            SpawnWindowBlueprint("MapToolbarClockLeft");
+            SpawnWindowBlueprint("MapToolbar");
+            SpawnWindowBlueprint("MapToolbarClockRight");
             SpawnWindowBlueprint("ExperienceBar");
+            SpawnWindowBlueprint("InstanceLeftSide");
             AddHotkey(Escape, () =>
             {
                 if (CloseWindow("HostileArea: " + area?.name))
@@ -7111,9 +7121,12 @@ public class Blueprint
         new("Complex", () =>
         {
             SetDesktopBackground(complex.Background());
-            SpawnWindowBlueprint("Complex: " + complex.name);
-            SpawnWindowBlueprint("ComplexLeftSide");
+            SpawnWindowBlueprint("MapToolbarShadow");
+            SpawnWindowBlueprint("MapToolbarClockLeft");
+            SpawnWindowBlueprint("MapToolbar");
+            SpawnWindowBlueprint("MapToolbarClockRight");
             SpawnWindowBlueprint("ExperienceBar");
+            SpawnWindowBlueprint("Complex: " + complex.name);
             AddHotkey(Escape, () =>
             {
                 if (CloseWindow("HostileArea: " + area?.name))
