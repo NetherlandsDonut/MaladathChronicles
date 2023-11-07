@@ -10754,7 +10754,7 @@
     {
       "player": {
         "level": 1,
-        "experience": 27,
+        "experience": 33,
         "name": "Delaney",
         "race": "Human",
         "spec": "Mage",
@@ -10862,12 +10862,14 @@
           }
         }
       },
-      "currentSite": "Bloodhoof Village",
+      "currentSite": "Blackrock Mountain",
       "siteProgress": {
-        "Northshire Valley": 1
+        "Northshire Valley": 1,
+        "The Black Anvil": 2
       },
       "commonsKilled": {
-        "Young Wolf": 1
+        "Young Wolf": 1,
+        "Blazing Fireguard": 2
       },
       "raresKilled": {},
       "elitesKilled": {},
@@ -10878,7 +10880,7 @@
         "Northshire Vineyards": 1,
         "Goldshire": 2,
         "Jansen Stead": 0,
-        "Stormwind City": 3,
+        "Stormwind City": 4,
         "Ironforge": 2,
         "Frozen Crossing": 0,
         "Misty Pine Refuge": 0,
@@ -10887,7 +10889,7 @@
         "Mirror Lake": 2,
         "Fargodeep Mine": 0,
         "Mirror Lake Orchard": 1,
-        "The Stockade": 1,
+        "The Stockade": 3,
         "Crystal Lake": 0,
         "Tower of Azora": 0,
         "The Maclure Vineyards": 0,
@@ -11550,7 +11552,7 @@
         "Baeldun Keep": 1,
         "Blackthorn Ridge": 1,
         "Boulder Lode Mine": 1,
-        "Bramblescar": 1,
+        "Bramblescar": 2,
         "The Riverbed": 1,
         "Dreadmist Peak": 1,
         "Field of Giants": 1,
@@ -11743,15 +11745,15 @@
         "Splintertree Post": 1,
         "Kargath": 1,
         "Stonard": 1,
-        "Brackenwall Village": 1,
+        "Brackenwall Village": 2,
         "Sen'jin Village": 1,
         "Shadowprey Village": 1,
         "Revantusk Village": 1,
-        "Thunder Bluff": 3,
+        "Thunder Bluff": 7,
         "Bloodhoof Village": 2,
         "Camp Narache": 1,
         "Camp Mojache": 1,
-        "Camp Taurajo": 1,
+        "Camp Taurajo": 2,
         "Freewind Post": 1,
         "Sun Rock Retreat": 1,
         "Ghost Walker Post": 1,
@@ -11803,19 +11805,25 @@
         "Blackwing Lair": 1,
         "Ruins of Ahn'Qiraj": 1,
         "Temple of Ahn'Qiraj": 1,
-        "Blackrock Mountain": 1,
+        "Blackrock Mountain": 13,
         "Jintha'Alor": 1,
         "Tyr's Hand": 1,
         "Hearthglen": 1,
         "Ruins of Stromgarde": 1,
         "Ruins of Alterac": 1,
         "Scarlet Monastery Grounds": 1,
-        "Alcaz Island": 1
+        "Alcaz Island": 1,
+        "Corrupted Woods": 1,
+        "Jadefire Glen": 1,
+        "Corrupted Moonwell": 1,
+        "The Broodmother's Lair": 1,
+        "The Den": 1
       },
+      "buyback": [],
       "startDate": "2023-11-02T23:04:26.1954845+01:00",
-      "lastLoaded": "2023-11-03T14:25:38.8368568+01:00",
-      "lastPlayed": "2023-11-03T14:26:36.180746+01:00",
-      "timePlayed": "00:22:06.9041919"
+      "lastLoaded": "2023-11-07T10:41:40.7441212+01:00",
+      "lastPlayed": "2023-11-07T11:40:28.6701245+01:00",
+      "timePlayed": "03:49:42.8006291"
     }
   ]
 }

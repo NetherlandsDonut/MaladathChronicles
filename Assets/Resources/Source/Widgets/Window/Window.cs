@@ -121,7 +121,7 @@ public class Window : MonoBehaviour
         groupGrouping.transform.localPosition = new Vector3(0, headerGroup != null ? -headerGroup.currentHeight : 0, 0);
 
         //Draws window background
-        if (!disabledGeneralSprites)
+        if (!disabledGeneralSprites && xOffset > 0)
         {
             if (background == null)
                 background = new GameObject("Window Background", typeof(SpriteRenderer));
@@ -138,7 +138,7 @@ public class Window : MonoBehaviour
         }
 
         //Draws window shadows
-        if (!disabledGeneralSprites && !disabledShadows && settings.shadows.Value())
+        if (!disabledGeneralSprites && !disabledShadows && settings.shadows.Value() && xOffset > 0)
             if (shadowSystem == 0)
             {
                 var shadowSprites = Resources.LoadAll<Sprite>("Sprites/Building/Shadows/First");

@@ -96,7 +96,8 @@ public class SiteTown : Site
                                     },
                                     (h) =>
                                     {
-
+                                        Person.person = person;
+                                        Respawn("Person");
                                     });
                                 else if (personType.type != "Other")
                                     AddButtonRegion(() =>
@@ -107,10 +108,7 @@ public class SiteTown : Site
                                     (h) =>
                                     {
                                         Person.person = person;
-                                        if (personType.type == "Banker")
-                                            SpawnDesktopBlueprint("Bank");
-                                        if (personType.type == "Vendor")
-                                            SpawnDesktopBlueprint("Vendor");
+                                        Respawn("Person");
                                     });
                             }
                         }

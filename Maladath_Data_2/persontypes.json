@@ -132,7 +132,7 @@
   {
     "name": "Banker",
     "icon": "TradeBank",
-    "type": "Bank"
+    "type": "Banker"
   },
   {
     "name": "Flight Master",
@@ -143,5 +143,10 @@
     "name": "Battlemaster",
     "icon": "TradeBattlemaster",
     "type": "Battlemaster"
+  },
+  {
+    "name": "Innkeeper",
+    "icon": "TradeInnkeeper",
+    "type": "Innkeeper"
   }
 ]

@@ -17,6 +17,7 @@ using static Site;
 using static Spec;
 using static Sound;
 using static Event;
+using static Person;
 using static MapGrid;
 using static Faction;
 using static ItemSet;
@@ -1155,10 +1156,18 @@ public class Blueprint
                 {
                     SpawnDesktopBlueprint("SpellbookScreen");
                 });
-                AddSmallButton("MenuClasses", (h) =>
+                AddSmallButton(CDesktop.title == "TalentScreen" ? "OtherClose" : "MenuClasses", (h) =>
                 {
-                    PlaySound("DesktopTalentScreenOpen");
-                    SpawnDesktopBlueprint("TalentScreen");
+                    if (CDesktop.title == "TalentScreen")
+                    {
+                        PlaySound("DesktopTalentScreenClose");
+                        CloseDesktop("TalentScreen");
+                    }
+                    else
+                    {
+                        PlaySound("DesktopTalentScreenOpen");
+                        SpawnDesktopBlueprint("TalentScreen");
+                    }
                 });
                 AddSmallButton("MenuCompletion", (h) =>
                 {
@@ -1212,38 +1221,38 @@ public class Blueprint
             });
         }, true),
         new("InstanceLeftSide", () => {
-            SetAnchor(TopLeft);
-            AddRegionGroup();
-            SetRegionGroupWidth(171);
-            SetRegionGroupHeight(342);
-            AddPaddingRegion(() =>
-            {
-                //foreach (var line in instance.description)
-                //    AddLine(line, "DarkGray");
-            });
+            //SetAnchor(TopLeft);
+            //AddRegionGroup();
+            //SetRegionGroupWidth(171);
+            //SetRegionGroupHeight(342);
+            //AddPaddingRegion(() =>
+            //{
+            //    //foreach (var line in instance.description)
+            //    //    AddLine(line, "DarkGray");
+            //});
         }),
         new("HostileAreaRightSide", () => {
-            SetAnchor(TopRight);
-            AddRegionGroup();
-            SetRegionGroupWidth(171);
-            SetRegionGroupHeight(342);
-            AddPaddingRegion(() =>
-            {
-                //foreach (var line in instance.description)
-                //    AddLine(line, "DarkGray");
-                //AddLine("Select area on the right.", "DarkGray");
-            });
+            //SetAnchor(TopRight);
+            //AddRegionGroup();
+            //SetRegionGroupWidth(171);
+            //SetRegionGroupHeight(342);
+            //AddPaddingRegion(() =>
+            //{
+            //    //foreach (var line in instance.description)
+            //    //    AddLine(line, "DarkGray");
+            //    //AddLine("Select area on the right.", "DarkGray");
+            //});
         }),
         new("ComplexLeftSide", () => {
-            SetAnchor(TopLeft);
-            AddRegionGroup();
-            SetRegionGroupWidth(171);
-            SetRegionGroupHeight(342);
-            AddPaddingRegion(() =>
-            {
-                //foreach (var line in complex.description)
-                //    AddLine(line, "DarkGray");
-            });
+            //SetAnchor(TopLeft);
+            //AddRegionGroup();
+            //SetRegionGroupWidth(171);
+            //SetRegionGroupHeight(342);
+            //AddPaddingRegion(() =>
+            //{
+            //    //foreach (var line in complex.description)
+            //    //    AddLine(line, "DarkGray");
+            //});
         }),
         new("TownLeftSide", () => {
             SetAnchor(TopLeft);
@@ -1349,7 +1358,7 @@ public class Blueprint
                 else
                     AddSmallButton("OtherSettingsOff", (h) => { });
             });
-            for (int i = 0; i < 8; i++)
+            for (int i = 0; i < 7; i++)
             {
                 var index = i;
                 AddPaddingRegion(
@@ -1405,8 +1414,7 @@ public class Blueprint
             AddPaddingRegion(
                 () =>
                 {
-                    AddLine(currentSave.player.unspentTalentPoints + "", currentSave.player.unspentTalentPoints > 0 ? "Green" : "DarkGray", "Center");
-                    AddText(" talent points", currentSave.player.unspentTalentPoints > 0 ? "Gray" : "DarkGray");
+                    AddLine(">> " + (currentSave.player.TreeCompletion(currentSave.lastVisitedTalents, 1) + currentSave.player.TreeCompletion(currentSave.lastVisitedTalents, 0)) + " / " + (currentSave.player.TreeSize(currentSave.lastVisitedTalents, 1) + currentSave.player.TreeSize(currentSave.lastVisitedTalents, 0)) + " <<", "", "Center");
                 }
             );
         }),
@@ -1448,18 +1456,17 @@ public class Blueprint
             });
         }),
         new("Bank", () => {
-            SetAnchor(TopLeft);
+            SetAnchor(TopLeft, 19, -38);
             AddRegionGroup();
             SetRegionGroupWidth(190);
-            SetRegionGroupHeight(342);
             var items = currentSave.banks[town.name].items;
             AddHeaderRegion(() =>
             {
                 AddLine("Bank:");
                 AddSmallButton("OtherClose", (h) =>
                 {
-                    CloseDesktop("Bank");
-                    SwitchDesktop("Town");
+                    CloseWindow("Bank");
+                    Respawn("Person");
                     PlaySound("DesktopBankClose");
                 });
                 AddSmallButton("OtherReverse", (h) =>
@@ -1479,7 +1486,7 @@ public class Blueprint
                 else
                     AddSmallButton("OtherSortOff", (h) => { });
             });
-            for (int i = 0; i < 8; i++)
+            for (int i = 0; i < 7; i++)
             {
                 var index = i;
                 AddPaddingRegion(
@@ -1491,14 +1498,12 @@ public class Blueprint
                     }
                 );
             }
-            AddPaddingRegion(() => { AddLine(); });
         }, true),
         new("Vendor", () => {
             currentSave.buyback ??= new();
             SetAnchor(TopLeft);
             AddHeaderGroup();
             SetRegionGroupWidth(190);
-            SetRegionGroupHeight(342);
             var items = new List<Item>();
             AddHeaderRegion(() =>
             {
@@ -1519,7 +1524,7 @@ public class Blueprint
                 else
                     AddSmallButton("OtherSortOff", (h) => { });
             });
-            for (int i = 0; i < 8; i++)
+            for (int i = 0; i < 7; i++)
             {
                 var index = i;
                 AddPaddingRegion(
@@ -1542,7 +1547,6 @@ public class Blueprint
             SetAnchor(TopLeft);
             AddHeaderGroup();
             SetRegionGroupWidth(190);
-            SetRegionGroupHeight(342);
             var items = new List<Item>();
             AddHeaderRegion(() =>
             {
@@ -1554,7 +1558,7 @@ public class Blueprint
                     //PlaySound("DesktopBankClose");
                 });
             });
-            for (int i = 0; i < 8; i++)
+            for (int i = 0; i < 7; i++)
             {
                 var index = i;
                 AddPaddingRegion(
@@ -1644,6 +1648,112 @@ public class Blueprint
             AddRegionGroup();
             SetRegionGroupWidth(95);
             AddButtonRegion(() => AddLine("Stats", "", "Center"), (h) => { CloseWindow(h.window); SpawnWindowBlueprint("CharacterInfoStats"); Respawn("ExperienceBar"); });
+        }, true),
+        new("PersonBattlemaster", () => {
+            SetAnchor(TopLeft, 19, -38);
+            AddHeaderGroup();
+            SetRegionGroupWidth(250);
+            var personType = personTypes.Find(x => x.name == person.type);
+            AddHeaderRegion(() =>
+            {
+                AddLine(person.type + " " + person.name);
+                AddSmallButton(personType.icon, (h) => { });
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("Goodbye.");
+            },
+            (h) =>
+            {
+                person = null;
+                CloseWindow(h.window);
+            });
+        }, true),
+        new("Person", () => {
+            SetAnchor(TopLeft, 19, -38);
+            AddHeaderGroup();
+            SetRegionGroupWidth(250);
+            var type = personTypes.Find(x => x.name == person.type);
+            AddHeaderRegion(() =>
+            {
+                AddLine(person.type + " ", "Gray");
+                AddText(person.name);
+                AddSmallButton(type.icon + (type.type == "Battlemaster" ? factions.Find(x => x.name == town.faction).side : ""), (h) => { });
+            });
+            if (type.type == "Trainer")
+            {
+                AddButtonRegion(() =>
+                {
+                    AddLine("I seek training.");
+                },
+                (h) => { });
+                AddButtonRegion(() =>
+                {
+                    AddLine("I want to reset my talents.");
+                },
+                (h) => { });
+            }
+            else if (type.type == "Banker")
+            {
+                AddButtonRegion(() =>
+                {
+                    AddLine("I want to open my vault.");
+                },
+                (h) =>
+                {
+                    currentSave.banks ??= new();
+                    if (!currentSave.banks.ContainsKey(town.name))
+                        currentSave.banks.Add(town.name, new() { items = new() });
+                    PlaySound("DesktopBankOpen", 0.2f);
+                    CloseWindow(h.window);
+                    SpawnWindowBlueprint("Bank");
+                });
+                AddButtonRegion(() =>
+                {
+                    AddLine("I want to buy additional vault space.");
+                },
+                (h) => { });
+            }
+            else if (type.type == "Innkeeper")
+            {
+                AddButtonRegion(() =>
+                {
+                    AddLine("I want to rest in this inn.");
+                },
+                (h) => { });
+                AddButtonRegion(() =>
+                {
+                    AddLine("I want to browse your goods.");
+                },
+                (h) => { });
+                AddButtonRegion(() =>
+                {
+                    AddLine("I want to make this inn my home.");
+                },
+                (h) => { });
+            }
+            else if (type.type == "Battlemaster")
+            {
+                AddButtonRegion(() =>
+                {
+                    AddLine("I want to sign up for an arena match.");
+                },
+                (h) => { });
+                AddButtonRegion(() =>
+                {
+                    AddLine("I want to buy gladiator equipment.");
+                },
+                (h) => { });
+            }
+            AddButtonRegion(() =>
+            {
+                AddLine("Goodbye.");
+            },
+            (h) =>
+            {
+                person = null;
+                CloseWindow(h.window);
+            });
         }, true),
         new("CharacterInfoStats", () => {
             SetAnchor(TopLeft, 0, -19);
@@ -7139,6 +7249,7 @@ public class Blueprint
         new("Complex", () =>
         {
             SetDesktopBackground(complex.Background());
+            SpawnWindowBlueprint("Complex: " + complex.name);
             SpawnWindowBlueprint("MapToolbarShadow");
             SpawnWindowBlueprint("MapToolbarClockLeft");
             SpawnWindowBlueprint("MapToolbar");
@@ -7146,7 +7257,7 @@ public class Blueprint
             SpawnWindowBlueprint("MapToolbarStatusLeft");
             SpawnWindowBlueprint("MapToolbarStatusRight");
             SpawnWindowBlueprint("ExperienceBar");
-            SpawnWindowBlueprint("Complex: " + complex.name);
+            SpawnWindowBlueprint("ComplexLeftSide");
             AddHotkey(Escape, () =>
             {
                 if (CloseWindow("HostileArea: " + area?.name))
@@ -7347,10 +7458,6 @@ public class Blueprint
         }),
         new("Bank", () =>
         {
-            currentSave.banks ??= new();
-            if (!currentSave.banks.ContainsKey(town.name))
-                currentSave.banks.Add(town.name, new() { items = new() });
-            PlaySound("DesktopBankOpen", 0.2f);
             SetDesktopBackground(town.Background() + "Bank");
             SpawnWindowBlueprint("Bank");
             SpawnWindowBlueprint("Inventory");

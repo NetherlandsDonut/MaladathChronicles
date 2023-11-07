@@ -80,6 +80,18 @@
         "gender": "Female",
         "race": "Human",
         "type": "Flight Master"
+      },
+      {
+        "name": "Allison",
+        "gender": "Female",
+        "race": "Human",
+        "type": "Innkeeper"
+      },
+      {
+        "name": "TESTER",
+        "gender": "Female",
+        "race": "Human",
+        "type": "Banker"
       }
     ],
     "x": 260,
@@ -161,6 +173,12 @@
         "gender": "Male",
         "race": "Human",
         "type": "Mage Trainer"
+      },
+      {
+        "name": "Farley",
+        "gender": "Male",
+        "race": "Human",
+        "type": "Innkeeper"
       }
     ],
     "x": 266,
@@ -176,6 +194,12 @@
         "gender": "Female",
         "race": "Human",
         "type": "Flight Master"
+      },
+      {
+        "name": "Brianna",
+        "gender": "Female",
+        "race": "Human",
+        "type": "Innkeeper"
       }
     ],
     "x": 290,
@@ -198,6 +222,12 @@
         "gender": "Female",
         "race": "Human",
         "type": "Flight Master"
+      },
+      {
+        "name": "Anderson",
+        "gender": "Male",
+        "race": "Human",
+        "type": "Innkeeper"
       }
     ],
     "x": 272,
@@ -213,6 +243,12 @@
         "gender": "Female",
         "race": "Human",
         "type": "Flight Master"
+      },
+      {
+        "name": "Trelayne",
+        "gender": "Female",
+        "race": "Human",
+        "type": "Innkeeper"
       }
     ],
     "x": 279,
@@ -235,6 +271,12 @@
         "gender": "Male",
         "race": "Human",
         "type": "Flight Master"
+      },
+      {
+        "name": "Heather",
+        "gender": "Female",
+        "race": "Human",
+        "type": "Innkeeper"
       }
     ],
     "x": 255,
@@ -262,6 +304,12 @@
         "gender": "Male",
         "race": "Human",
         "type": "Flight Master"
+      },
+      {
+        "name": "Janene",
+        "gender": "Female",
+        "race": "Human",
+        "type": "Innkeeper"
       }
     ],
     "x": 124,
@@ -277,6 +325,12 @@
         "gender": "Female",
         "race": "Human",
         "type": "Flight Master"
+      },
+      {
+        "name": "Helbrek",
+        "gender": "Male",
+        "race": "Dwarf",
+        "type": "Innkeeper"
       }
     ],
     "x": 275,
@@ -395,6 +449,12 @@
         "gender": "Female",
         "race": "Night Elf",
         "type": "Battlemaster"
+      },
+      {
+        "name": "Saelienne",
+        "gender": "Female",
+        "race": "Night Elf",
+        "type": "Innkeeper"
       }
     ],
     "x": 51,
@@ -457,6 +517,12 @@
         "gender": "Male",
         "race": "Night Elf",
         "type": "Hunter Trainer"
+      },
+      {
+        "name": "Keldamyr",
+        "gender": "Male",
+        "race": "Night Elf",
+        "type": "Innkeeper"
       }
     ],
     "x": 66,
@@ -472,6 +538,12 @@
         "gender": "Female",
         "race": "Night Elf",
         "type": "Flight Master"
+      },
+      {
+        "name": "Kimlya",
+        "gender": "Female",
+        "race": "Night Elf",
+        "type": "Innkeeper"
       }
     ],
     "x": 80,
@@ -587,6 +659,12 @@
         "gender": "Male",
         "race": "Night Elf",
         "type": "Flight Master"
+      },
+      {
+        "name": "Shyria",
+        "gender": "Female",
+        "race": "Night Elf",
+        "type": "Innkeeper"
       }
     ],
     "x": 41,
@@ -602,6 +680,12 @@
         "gender": "Male",
         "race": "Night Elf",
         "type": "Flight Master"
+      },
+      {
+        "name": "Lyshaerya",
+        "gender": "Female",
+        "race": "Night Elf",
+        "type": "Innkeeper"
       }
     ],
     "x": 63,
@@ -632,6 +716,12 @@
         "gender": "Male",
         "race": "Night Elf",
         "type": "Flight Master"
+      },
+      {
+        "name": "Faralia",
+        "gender": "Female",
+        "race": "Night Elf",
+        "type": "Innkeeper"
       }
     ],
     "x": 61,
@@ -647,6 +737,12 @@
         "gender": "Male",
         "race": "Dwarf",
         "type": "Flight Master"
+      },
+      {
+        "name": "Thulfram",
+        "gender": "Male",
+        "race": "Dwarf",
+        "type": "Innkeeper"
       }
     ],
     "x": 288,
@@ -716,6 +812,12 @@
         "gender": "Male",
         "race": "Dwarf",
         "type": "Flight Master"
+      },
+      {
+        "name": "Firebrew",
+        "gender": "Male",
+        "race": "Dwarf",
+        "type": "Innkeeper"
       }
     ],
     "x": 275,
@@ -732,6 +834,12 @@
         "gender": "Male",
         "race": "Dwarf",
         "type": "Flight Master"
+      },
+      {
+        "name": "Hearthstove",
+        "gender": "Male",
+        "race": "Dwarf",
+        "type": "Innkeeper"
       }
     ],
     "x": 298,
@@ -805,6 +913,12 @@
         "gender": "Male",
         "race": "Gnome",
         "type": "Mage Trainer"
+      },
+      {
+        "name": "Belm",
+        "gender": "Male",
+        "race": "Dwarf",
+        "type": "Innkeeper"
       }
     ],
     "x": 271,
@@ -894,6 +1008,12 @@
         "gender": "Male",
         "race": "Orc",
         "type": "Meat Vendor"
+      },
+      {
+        "name": "Gryshka",
+        "gender": "Female",
+        "race": "Orc",
+        "type": "Innkeeper"
       }
     ],
     "x": 123,
@@ -902,6 +1022,13 @@
     "zone": "Durotar",
     "faction": "Orgrimmar",
     "ambience": "MusicOrgrimmar"
+  },
+  {
+    "x": 122,
+    "y": -140,
+    "name": "The Den",
+    "zone": "Durotar",
+    "faction": "Orgrimmar"
   },
   {
     "people": [
@@ -940,6 +1067,12 @@
         "gender": "Male",
         "race": "Orc",
         "type": "Warlock Trainer"
+      },
+      {
+        "name": "Grosk",
+        "gender": "Male",
+        "race": "Orc",
+        "type": "Innkeeper"
       }
     ],
     "x": 127,
@@ -1022,6 +1155,12 @@
         "gender": "Male",
         "race": "Orc",
         "type": "Hunter Trainer"
+      },
+      {
+        "name": "Thulbek",
+        "gender": "Male",
+        "race": "Orc",
+        "type": "Innkeeper"
       }
     ],
     "x": 264,
@@ -1037,6 +1176,12 @@
         "gender": "Female",
         "race": "Orc",
         "type": "Flight Master"
+      },
+      {
+        "name": "Kaylisk",
+        "gender": "Female",
+        "race": "Orc",
+        "type": "Innkeeper"
       }
     ],
     "x": 103,
@@ -1052,6 +1197,12 @@
         "gender": "Male",
         "race": "Orc",
         "type": "Flight Master"
+      },
+      {
+        "name": "Shul'kar",
+        "gender": "Male",
+        "race": "Orc",
+        "type": "Innkeeper"
       }
     ],
     "x": 290,
@@ -1091,6 +1242,12 @@
         "gender": "male",
         "race": "Orc",
         "type": "Flight Master"
+      },
+      {
+        "name": "Karakul",
+        "gender": "Male",
+        "race": "Orc",
+        "type": "Innkeeper"
       }
     ],
     "x": 301,
@@ -1136,6 +1293,12 @@
         "gender": "Male",
         "race": "Tauren",
         "type": "Flight Master"
+      },
+      {
+        "name": "Sikewa",
+        "gender": "Female",
+        "race": "Tauren",
+        "type": "Innkeeper"
       }
     ],
     "x": 42,
@@ -1145,6 +1308,14 @@
     "faction": "Darkspear Tribe"
   },
   {
+    "people": [
+      {
+        "name": "Lard",
+        "gender": "Male",
+        "race": "Ogre",
+        "type": "Innkeeper"
+      }
+    ],
     "x": 316,
     "y": -94,
     "name": "Revantusk Village",
@@ -1200,6 +1371,12 @@
         "gender": "Male",
         "race": "Tauren",
         "type": "Flight Master"
+      },
+      {
+        "name": "Pala",
+        "gender": "Female",
+        "race": "Tauren",
+        "type": "Innkeeper"
       }
     ],
     "x": 76,
@@ -1234,6 +1411,12 @@
         "gender": "Male",
         "race": "Tauren",
         "type": "Hunter Trainer"
+      },
+      {
+        "name": "Kauth",
+        "gender": "Male",
+        "race": "Tauren",
+        "type": "Innkeeper"
       }
     ],
     "x": 81,
@@ -1262,6 +1445,12 @@
         "gender": "Female",
         "race": "Tauren",
         "type": "Flight Master"
+      },
+      {
+        "name": "Greul",
+        "gender": "Female",
+        "race": "Tauren",
+        "type": "Innkeeper"
       }
     ],
     "x": 73,
@@ -1277,6 +1466,12 @@
         "gender": "Female",
         "race": "Tauren",
         "type": "Flight Master"
+      },
+      {
+        "name": "Byula",
+        "gender": "Male",
+        "race": "Tauren",
+        "type": "Innkeeper"
       }
     ],
     "x": 98,
@@ -1292,6 +1487,12 @@
         "gender": "Female",
         "race": "Tauren",
         "type": "Flight Master"
+      },
+      {
+        "name": "Abeqwa",
+        "gender": "Male",
+        "race": "Tauren",
+        "type": "Innkeeper"
       }
     ],
     "x": 102,
@@ -1307,6 +1508,12 @@
         "gender": "Male",
         "race": "Tauren",
         "type": "Flight Master"
+      },
+      {
+        "name": "Jayka",
+        "gender": "Female",
+        "race": "Orc",
+        "type": "Innkeeper"
       }
     ],
     "x": 66,
@@ -1371,6 +1578,12 @@
         "gender": "Male",
         "race": "Forsaken",
         "type": "Flight Master"
+      },
+      {
+        "name": "Norman",
+        "gender": "Male",
+        "race": "Forsaken",
+        "type": "Innkeeper"
       }
     ],
     "x": 264,
@@ -1425,6 +1638,12 @@
         "gender": "Male",
         "race": "Forsaken",
         "type": "Mage Trainer"
+      },
+      {
+        "name": "Renee",
+        "gender": "Male",
+        "race": "Forsaken",
+        "type": "Innkeeper"
       }
     ],
     "x": 263,
@@ -1440,6 +1659,12 @@
         "gender": "Female",
         "race": "Orc",
         "type": "Flight Master"
+      },
+      {
+        "name": "Adegwa",
+        "gender": "Male",
+        "race": "Tauren",
+        "type": "Innkeeper"
       }
     ],
     "x": 303,
@@ -1455,6 +1680,12 @@
         "gender": "Female",
         "race": "Forsaken",
         "type": "Flight Master"
+      },
+      {
+        "name": "Shay",
+        "gender": "Male",
+        "race": "Forsaken",
+        "type": "Innkeeper"
       }
     ],
     "x": 275,
@@ -1470,6 +1701,12 @@
         "gender": "Male",
         "race": "Forsaken",
         "type": "Flight Master"
+      },
+      {
+        "name": "Bates",
+        "gender": "Male",
+        "race": "Forsaken",
+        "type": "Innkeeper"
       }
     ],
     "x": 248,
@@ -1491,6 +1728,12 @@
         "gender": "Male",
         "race": "Tauren",
         "type": "Flight Master"
+      },
+      {
+        "name": "Calandrath",
+        "gender": "Female",
+        "race": "Night Elf",
+        "type": "Innkeeper"
       }
     ],
     "x": 68,
@@ -1546,6 +1789,12 @@
         "gender": "Female",
         "race": "Forsaken",
         "type": "Flight Master"
+      },
+      {
+        "name": "Jessica Chambers",
+        "gender": "Female",
+        "race": "Human",
+        "type": "Innkeeper"
       }
     ],
     "x": 323,
@@ -1603,6 +1852,12 @@
         "gender": "Female",
         "race": "Orc",
         "type": "Flight Master"
+      },
+      {
+        "name": "Vizzie",
+        "gender": "Female",
+        "race": "Goblin",
+        "type": "Innkeeper"
       }
     ],
     "x": 127,
@@ -1620,10 +1875,10 @@
         "type": "Flight Master"
       },
       {
-        "name": "Bulkrek Ragefist",
+        "name": "Fizzgrimble",
         "gender": "Male",
-        "race": "Orc",
-        "type": "Flight Master"
+        "race": "Goblin",
+        "type": "Innkeeper"
       }
     ],
     "x": 117,
@@ -1639,6 +1894,12 @@
         "gender": "Male",
         "race": "Goblin",
         "type": "Flight Master"
+      },
+      {
+        "name": "Wiley",
+        "gender": "Male",
+        "race": "Goblin",
+        "type": "Innkeeper"
       }
     ],
     "x": 116,
@@ -1666,6 +1927,12 @@
         "gender": "Male",
         "race": "Dwarf",
         "type": "Flight Master"
+      },
+      {
+        "name": "Skindle",
+        "gender": "Male",
+        "race": "Goblin",
+        "type": "Innkeeper"
       }
     ],
     "x": 261,

@@ -6,6 +6,7 @@ using UnityEngine;
 
 using static Root;
 using static Root.Anchor;
+using static Root.RegionBackgroundType;
 
 using static Race;
 using static Sound;
@@ -22,6 +23,7 @@ public class SiteHostileArea : Site
     //and remove empty collections to avoid serialising them later
     public override void Initialise()
     {
+        if (areaSize < 1) areaSize = 3;
         type ??= "HostileArea";
         if (faction != null)
             if (!factions.Exists(x => x.name == faction))
@@ -78,6 +80,28 @@ public class SiteHostileArea : Site
                 all.AddRange(eliteEncounters);
             else eliteEncounters = null;
         if (all.Count > 0) recommendedLevel = (int)all.Average(x => x.levelMax != 0 ? (x.levelMin + x.levelMax) / 2.0 : x.levelMin);
+        if (progression == null)
+        {
+            var length = eliteEncounters != null ? eliteEncounters.Count * 2 + 1 : 3;
+            if (areaSize < length) areaSize = length;
+            progression = new();
+            if (eliteEncounters != null)
+                foreach (var boss in eliteEncounters)
+                {
+                    progression.Add(new AreaProgression() { point = eliteEncounters.IndexOf(boss) * 2 + 2, bossName = boss.who, type = "Boss" });
+                    if (eliteEncounters.Last() == boss && instancePart)
+                    {
+                        var inst = instances.Find(x => x.wings.Any(y => y.areas.Any(z => z["AreaName"] == name)));
+                        var wing = inst.wings.Find(x => x.areas.Any(z => z["AreaName"] == name));
+                        var areasIn = wing.areas.Select(x => x["AreaName"]).ToList();
+                        if (areasIn.Last() != name)
+                        {
+                            progression.Add(new AreaProgression() { point = eliteEncounters.IndexOf(boss) * 2 + 2, areaName = areasIn[areasIn.IndexOf(name) + 1], type = "Area" });
+                        }
+                    }
+                }
+            progression.Add(new AreaProgression() { point = length, type = "Treasure" });
+        }
         if (!Blueprint.windowBlueprints.Exists(x => x.title == "HostileArea: " + name))
             Blueprint.windowBlueprints.Add(
                 new Blueprint("HostileArea: " + name,
@@ -90,8 +114,8 @@ public class SiteHostileArea : Site
                         }
                         else PlayAmbience(ambience);
                         SetAnchor(TopLeft, 19, -38);
-                        AddRegionGroup();
-                        SetRegionGroupWidth(171);
+                        AddHeaderGroup();
+                        SetRegionGroupWidth(200);
                         AddHeaderRegion(() =>
                         {
                             AddLine(name);
@@ -119,14 +143,14 @@ public class SiteHostileArea : Site
                             AddLine("Recommended level: ");
                             AddText(recommendedLevel + "", ColorEntityLevel(recommendedLevel));
                         });
-                        if (eliteEncounters != null && eliteEncounters.Count > 0 && eliteEncounters.Sum(x => x.requiredProgress) > 0)
-                            AddPaddingRegion(() =>
-                            {
-                                AddLine("Exploration progress: ", "DarkGray");
-                                var temp = currentSave.siteProgress;
-                                int progress = (int)(currentSave.siteProgress.ContainsKey(name) ? (double)currentSave.siteProgress[name] / eliteEncounters.Sum(x => x.requiredProgress) * 100 : 0);
-                                AddText((progress > 100 ? 100 : progress) + "%", ColorProgress(progress));
-                            });
+                        //if (eliteEncounters != null && eliteEncounters.Count > 0/* && eliteEncounters.Sum(x => x.requiredProgress) > 0*/)
+                        //    AddPaddingRegion(() =>
+                        //    {
+                        //        AddLine("Exploration progress: ", "DarkGray");
+                        //        var temp = currentSave.siteProgress;
+                        //        int progress = (int)(currentSave.siteProgress.ContainsKey(name) ? (double)currentSave.siteProgress[name]/* / eliteEncounters.Sum(x => x.requiredProgress) * 100*/ : 0);
+                        //        AddText((progress > 100 ? 100 : progress) + "%", ColorProgress(progress));
+                        //    });
                         AddButtonRegion(() => { AddLine("Explore", "Black"); },
                         (h) =>
                         {
@@ -136,7 +160,7 @@ public class SiteHostileArea : Site
                         });
                         if (commonEncounters != null && commonEncounters.Count > 0)
                         {
-                            if (currentSave.siteProgress.ContainsKey(name) && eliteEncounters != null && eliteEncounters.Count > 0 && eliteEncounters.Sum(x => x.requiredProgress) <= currentSave.siteProgress[name])
+                            if (currentSave.siteProgress.ContainsKey(name) && eliteEncounters != null && eliteEncounters.Count > 0 /*&& eliteEncounters.Sum(x => x.requiredProgress) <= currentSave.siteProgress[name]*/)
                                 foreach (var encounter in commonEncounters)
                                     AddButtonRegion(() =>
                                     {
@@ -163,10 +187,10 @@ public class SiteHostileArea : Site
                         {
                             foreach (var boss in eliteEncounters)
                             {
-                                if (currentSave.siteProgress.ContainsKey(name) && boss.requiredProgress <= currentSave.siteProgress[name])
+                                if (currentSave.siteProgress.ContainsKey(name)/* && boss.requiredProgress <= currentSave.siteProgress[name]*/)
                                     AddButtonRegion(() =>
                                     {
-                                        SetRegionBackground(RegionBackgroundType.RedButton);
+                                        SetRegionBackground(RedButton);
                                         AddLine(boss.who, "", "Right");
                                         var race = races.Find(x => x.name == boss.who);
                                         AddSmallButton(race == null ? "OtherUnknown" : race.portrait, (h) => { });
@@ -186,6 +210,40 @@ public class SiteHostileArea : Site
                                     });
                             }
                         }
+                        if (progression != null && progression.Count > 0)
+                            for (int i = 0; i <= areaSize; i++)
+                            {
+                                var index = i;
+                                if (index > 0)
+                                {
+                                    var progressions = progression.FindAll(x => x.point == index);
+                                    var printType = "";
+                                    if (progressions.Exists(x => x.type == "Boss") && progressions.Exists(x => x.type == "Area")) printType = "BossArea";
+                                    else if (progressions.Exists(x => x.type == "Treasure") && progressions.Exists(x => x.type == "Area")) printType = "TreasureArea";
+                                    else if (progressions.Exists(x => x.type == "Boss")) printType = "Boss";
+                                    else if (progressions.Exists(x => x.type == "Treasure")) printType = "Treasure";
+                                    else if (progressions.Exists(x => x.type == "Area")) printType = "Area";
+                                    if (printType != "")
+                                    {
+                                        var marker = new GameObject("ProgressionMarker", typeof(SpriteRenderer));
+                                        marker.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Other/Progress" + printType);
+                                        marker.transform.parent = CDesktop.LBWindow.LBRegionGroup.LBRegion.transform;
+                                        marker.transform.localPosition = new Vector3(1 + CDesktop.LBWindow.LBRegionGroup.setWidth, -8);
+                                    }
+                                }
+                                if (i < areaSize)
+                                {
+                                    AddRegionGroup();
+                                    SetRegionGroupWidth((i == areaSize - 1 ? 200 % areaSize : 0) + 200 / areaSize);
+                                    SetRegionGroupHeight(4);
+                                    AddPaddingRegion(() =>
+                                    {
+                                        var temp = currentSave.siteProgress.ContainsKey(name) ? currentSave.siteProgress[name] : 0;
+                                        if (temp > index) SetRegionBackground(ProgressDone);
+                                        else SetRegionBackground(ProgressEmpty);
+                                    });
+                                }
+                            }
                     }
                 )
             );
@@ -289,6 +347,23 @@ public class SiteHostileArea : Site
     //List of special elite encounters in this area
     public List<Encounter> eliteEncounters;
 
+    //Size of the area
+    public int areaSize;
+
+    //Names for area sizes
+    public static Dictionary<int, string> areaSizeNames = new()
+    {
+        { 1, "Tiny" },
+        { 2, "Tiny" },
+        { 3, "Small" },
+        { 4, "Medium" },
+        { 5, "Large" },
+        { 6, "Huge" },
+    };
+
+    //List of of progression points in the area
+    public List<AreaProgression> progression;
+
     //Automatically calculated number that suggests
     //at which level player should enter this area
     [NonSerialized] public int recommendedLevel;
@@ -312,7 +387,7 @@ public class SiteHostileArea : Site
 public class Encounter
 {
     public string who;
-    public int levelMin, levelMax, requiredProgress;
+    public int levelMin, levelMax;
 
     public static Encounter encounter;
 }

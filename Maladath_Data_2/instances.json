@@ -1026,7 +1026,7 @@
     ],
     "wings": [
       {
-        "name": "Outer Depths",
+        "name": "Blackrock Depths",
         "areas": [
           {
             "Requisite": "None",
@@ -1051,15 +1051,10 @@
           {
             "Requisite": "EliteKilled",
             "AreaName": "Hall of Crafting"
-          }
-        ]
-      },
-      {
-        "name": "Inner City",
-        "areas": [
+          },
           {
             "Requisite": "EliteKilled",
-            "AreaName": "West Garrison"
+            "AreaName": "The Garrison"
           },
           {
             "Requisite": "EliteKilled",
@@ -1323,7 +1318,7 @@
         "areas": [
           {
             "Requisite": "None",
-            "AreaName": "Onyxia's Lair"
+            "AreaName": "The Broodmother's Lair"
           }
         ]
       }

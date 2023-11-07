@@ -1,5 +1,149 @@
 [
   {
+    "name": "Anvilrage Marshal",
+    "category": "Humanoid",
+    "subcategory": "Dwarf",
+    "kind": "Common",
+    "portrait": "PortraitDarkIronCommander",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Anvilrage Dragoon",
+    "category": "Dragonkin",
+    "subcategory": "Dragon",
+    "kind": "Common",
+    "portrait": "PortraitDarkIronDragoon",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Anvilrage Guardsman",
+    "category": "Humanoid",
+    "subcategory": "Dwarf",
+    "kind": "Common",
+    "portrait": "PortraitDarkIronAgent",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Ragereaver Golem",
+    "category": "Mechanical",
+    "subcategory": "Golem",
+    "kind": "Common",
+    "portrait": "PortraitGolemOrange",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Wrath Hammer Construct",
+    "category": "Mechanical",
+    "subcategory": "Golem",
+    "kind": "Common",
+    "portrait": "PortraitGolemDark",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Anvilrage Flame Keeper",
+    "category": "Humanoid",
+    "subcategory": "Dwarf",
+    "kind": "Common",
+    "portrait": "PortraitDarkIronFlameKeeper",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Ironhand Guardian",
+    "category": "Mechanical",
+    "subcategory": "Golem",
+    "kind": "Common",
+    "portrait": "PortraitGolemOrange",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Anvilrage Captain",
+    "category": "Humanoid",
+    "subcategory": "Dwarf",
+    "kind": "Common",
+    "portrait": "PortraitDarkIronCommander",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Doomforge Dragoon",
+    "category": "Dragonkin",
+    "subcategory": "Dragon",
+    "kind": "Common",
+    "portrait": "PortraitDarkIronDragoon",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Twilight Bodyguard",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "kind": "Common",
+    "portrait": "PortraitTwilightThug",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Molten War Golem",
+    "category": "Mechanical",
+    "subcategory": "Golem",
+    "kind": "Common",
+    "portrait": "PortraitGolemMolten",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Warbringer Construct",
+    "category": "Mechanical",
+    "subcategory": "Golem",
+    "kind": "Common",
+    "portrait": "PortraitGolemOrange",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Anvilrage Medic",
+    "category": "Humanoid",
+    "subcategory": "Dwarf",
+    "kind": "Common",
+    "portrait": "PortraitDarkIronDarkCaster",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Anvilrage Footman",
+    "category": "Humanoid",
+    "subcategory": "Dwarf",
+    "kind": "Common",
+    "portrait": "PortraitDarkIronAgent",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Anvilrage Soldier",
+    "category": "Humanoid",
+    "subcategory": "Dwarf",
+    "kind": "Common",
+    "portrait": "PortraitDarkIronWarrior",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Anvilrage Officer",
+    "category": "Humanoid",
+    "subcategory": "Dwarf",
+    "kind": "Common",
+    "portrait": "PortraitDarkIronOfficer",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
     "name": "Glutton",
     "category": "Undead",
     "subcategory": "Abomination",
@@ -754,6 +898,15 @@
     "kind": "Common",
     "portrait": "PortraitBatRed",
     "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Bazil Thredd",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "kind": "Elite",
+    "portrait": "PortraitBazil",
+    "vitality": 3.0,
     "abilities": {}
   },
   {
@@ -4305,6 +4458,33 @@
     "abilities": {}
   },
   {
+    "name": "Defias Prisoner",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "kind": "Common",
+    "portrait": "PortraitDefiasBodyguard",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Defias Captive",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "kind": "Common",
+    "portrait": "PortraitDefiasCaptive",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Defias Convict",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "kind": "Common",
+    "portrait": "PortraitDefiasConvict",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
     "name": "Defias Cutpurse",
     "category": "Humanoid",
     "subcategory": "Human",
@@ -4414,6 +4594,15 @@
     "abilities": {}
   },
   {
+    "name": "Defias Inmate",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "kind": "Common",
+    "portrait": "PortraitDefiasOverseer",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
     "name": "Defias Overseer",
     "category": "Humanoid",
     "subcategory": "Human",
@@ -4477,6 +4666,15 @@
     "subcategory": "Human",
     "kind": "Common",
     "portrait": "PortraitDefiasRenegadeMage",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Defias Insurgent",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "kind": "Common",
+    "portrait": "PortraitDefiasRioter",
     "vitality": 1.0,
     "abilities": {}
   },
@@ -4580,6 +4778,15 @@
     "subcategory": "Raptor",
     "kind": "Common",
     "portrait": "PortraitDevilsaurRed",
+    "vitality": 3.0,
+    "abilities": {}
+  },
+  {
+    "name": "Dextren Ward",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "kind": "Elite",
+    "portrait": "PortraitDextrenWard",
     "vitality": 3.0,
     "abilities": {}
   },
@@ -10873,15 +11080,6 @@
     ]
   },
   {
-    "name": "Prince Tortheldrin",
-    "category": "Humanoid",
-    "subcategory": "Human",
-    "kind": "Elite",
-    "portrait": "PortraitPrinceTortheldrin",
-    "vitality": 3.0,
-    "abilities": {}
-  },
-  {
     "name": "Noxxion",
     "category": "Elemental",
     "subcategory": "Elemental",
@@ -11486,6 +11684,15 @@
     "kind": "Common",
     "portrait": "PortraitOgreAlternate",
     "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Hamcock",
+    "category": "Humanoid",
+    "subcategory": "Ogre",
+    "kind": "Elite",
+    "portrait": "PortraitOgreAlternateTwoheads",
+    "vitality": 3.0,
     "abilities": {}
   },
   {
@@ -12574,6 +12781,15 @@
     "subcategory": "Human",
     "kind": "Elite",
     "portrait": "PortraitPrincessTheradras",
+    "vitality": 3.0,
+    "abilities": {}
+  },
+  {
+    "name": "Prince Tortheldrin",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "kind": "Elite",
+    "portrait": "PortraitPrinceTortheldrin",
     "vitality": 3.0,
     "abilities": {}
   },
@@ -16820,6 +17036,15 @@
     "kind": "Common",
     "portrait": "PortraitTarantulaOrange",
     "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Targorr The Dread",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "kind": "Elite",
+    "portrait": "PortraitTargorr",
+    "vitality": 3.0,
     "abilities": {}
   },
   {

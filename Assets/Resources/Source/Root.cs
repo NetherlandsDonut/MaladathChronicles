@@ -186,6 +186,7 @@ public static class Root
     {
         cameraBoundaryPoints = new();
         loadSites = windowBlueprints.FindAll(x => x.title.StartsWith("Site: "));
+        var hoobabooba = loadSites.Find(x => x.title.Contains("Corrupted Moonwell"));
         if (!showSitesUnconditional)
             for (int i = loadSites.Count - 1; i >= 0; i--)
             {
@@ -692,7 +693,10 @@ public static class Root
         Padding,
         RedButton,
         Experience,
-        RestedExperience
+        RestedExperience,
+        ProgressDone,
+        ProgressEmpty,
+        ProgressPossible
     }
 
     public enum Anchor
