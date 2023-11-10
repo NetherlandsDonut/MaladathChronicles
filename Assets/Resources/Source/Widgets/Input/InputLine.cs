@@ -515,6 +515,10 @@ public class InputLine : MonoBehaviour
                         SitePath.paths[i].Initialise();
                 }
             }
+            else if (foo.Value().StartsWith("exp"))
+            {
+                currentSave.player.ReceiveExperience(int.Parse(foo.Value().Substring(4)));
+            }
             foo.Set("");
         }
         else if (encounterLevels.ToList().Exists(x => x.Value.Item1 == foo))

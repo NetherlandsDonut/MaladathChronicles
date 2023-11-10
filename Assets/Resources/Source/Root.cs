@@ -15,19 +15,6 @@ public static class Root
     //Program constants
     public static int screenX = 640;
     public static int screenY = 360;
-    public static int textPaddingLeft = 4;
-    public static int textPaddingRight = 12;
-    public static int shadowSystem = 1;
-    public static int adeptTreeRequirement = 10;
-    public static int aiDepth = 5;
-    public static int aiManualBranches = 1;
-    public static int maxPathLength = 9999;
-    public static bool useUnityData = true;
-    public static bool showSitesUnconditional;
-    public static float frameTime = 0.08f;
-    public static string markerCharacter = "_";
-    public static string textWrapEnding = "...";
-    public static string prefix = "";
 
     public static MapGrid grid;
     public static List<Vector2> cameraBoundaryPoints;
@@ -41,7 +28,6 @@ public static class Root
     public static string creationGender;
     public static string creationRace;
     public static string creationSpec;
-    public static int maxPlayerLevel = 60;
 
     public static Highlightable mouseOver;
     public static GameObject[] loadingBar;

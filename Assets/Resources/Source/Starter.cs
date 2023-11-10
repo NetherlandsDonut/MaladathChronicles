@@ -11,6 +11,7 @@ using static Font;
 using static Sound;
 using static Cursor;
 using static Talent;
+using static Defines;
 using static SaveGame;
 using static SitePath;
 using static GameSettings;
@@ -166,6 +167,8 @@ public class Starter : MonoBehaviour
         zones ??= new();
         Deserialize(ref paths, "paths", false, prefix);
         paths ??= new();
+        Deserialize(ref defines, "defines", false, prefix);
+        defines ??= new();
 
         #endregion
 
