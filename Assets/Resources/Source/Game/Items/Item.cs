@@ -125,6 +125,9 @@ public class Item
     //Amount of block power provided to the wearer
     public int block;
 
+    //Amount of block power provided to the wearer
+    public int bagSize;
+
     //List of abilities provided to the wearer of this item
     public Dictionary<string, int> abilities;
 
@@ -137,6 +140,9 @@ public class Item
 
     //Weapon attack speed
     public double speed;
+
+    //Amount of bag space provided
+    public int bagSpace;
     
     //Stats provided to the wearer like Stamina or Intellect
     public Stats stats;
@@ -185,7 +191,9 @@ public class Item
             return false;
         if (specs != null && !specs.Contains(entity.spec))
             return false;
-        if (armorClass != null)
+        if (type == "Container")
+            return inventory.containers.Count < maxBagsEquipped;
+        else if (armorClass != null)
             return entity.abilities.ContainsKey(armorClass + " Proficiency");
         else if (type == "Pouch")
             return entity.abilities.ContainsKey("Pouch Proficiency");
@@ -248,7 +256,8 @@ public class Item
 
     private void Equip(Entity entity, string slot)
     {
-        entity.equipment[slot] = this;
+        if (slot == "Container") entity.inventory.containers.Add(this);
+        else entity.equipment[slot] = this;
         if (entity.inventory.items.Contains(this))
             entity.inventory.items.Remove(this);
         if (abilities == null) return;
@@ -289,6 +298,11 @@ public class Item
                 Equip(entity, "Main Hand");
             }
         }
+        else if (type == "Container")
+        {
+            entity.Unequip(new() { "Main Hand" }, index);
+            Equip(entity, "Main Hand");
+        }
         else
         {
             if (type == null) Debug.Log(name);
@@ -324,7 +338,7 @@ public class Item
             null,
             (h) =>
             {
-                if (currentSave.player.inventory.items.Count < 40)
+                if (currentSave.player.inventory.items.Count < currentSave.player.inventory.BagSpace())
                 {
                     PlaySound(item.ItemSound("PickUp"), 0.6f);
                     currentSave.player.inventory.items.Add(item);
@@ -350,7 +364,7 @@ public class Item
             null,
             (h) =>
             {
-                if (currentSave.player.inventory.items.Count < 40 && currentSave.player.inventory.money >= item.price * 4)
+                if (currentSave.player.inventory.items.Count < currentSave.player.inventory.BagSpace() && currentSave.player.inventory.money >= item.price * 4)
                 {
                     PlaySound("DesktopTransportPay");
                     var buyback = CDesktop.windows.Exists(x => x.title == "VendorBuyback");
@@ -391,7 +405,7 @@ public class Item
                 }
                 else if (CDesktop.title == "Bank")
                 {
-                    if (currentSave.banks[town.name].items.Count < 40)
+                    if (currentSave.banks[town.name].items.Count < currentSave.banks[town.name].BagSpace())
                     {
                         PlaySound(item.ItemSound("PutDown"), 0.6f);
                         currentSave.banks[town.name].items.Add(item);
@@ -442,7 +456,7 @@ public class Item
         AddBigButton(item.icon,
             (h) =>
             {
-                if (currentSave.player.inventory.items.Count < 40)
+                if (currentSave.player.inventory.items.Count < currentSave.player.inventory.BagSpace())
                 {
                     PlaySound(item.ItemSound("PutDown"), 0.6f);
                     currentSave.player.inventory.items.Add(item);

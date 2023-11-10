@@ -1303,11 +1303,9 @@ public class Blueprint
             AddPaddingRegion(() => { });
         }),
         new("Inventory", () => {
-            SetAnchor(TopRight);
+            SetAnchor(TopRight, -19, -38);
             DisableShadows();
             AddHeaderGroup();
-            SetRegionGroupWidth(190);
-            SetRegionGroupHeight(342);
             var items = currentSave.player.inventory.items;
             AddHeaderRegion(() =>
             {
@@ -1358,14 +1356,15 @@ public class Blueprint
                 else
                     AddSmallButton("OtherSettingsOff", (h) => { });
             });
-            for (int i = 0; i < 7; i++)
+            for (int i = 0; i < 6; i++)
             {
                 var index = i;
                 AddPaddingRegion(
                     () =>
                     {
-                        for (int j = 0; j < 5; j++)
-                            if (items.Count > index * 5 + j) PrintInventoryItem(items[index * 5 + j]);
+                        for (int j = 0; j < 6; j++)
+                            if (index * 6 + j >= currentSave.player.inventory.BagSpace()) AddBigButton("OtherNoSlot", (h) => { });
+                            else if (items.Count > index * 6 + j) PrintInventoryItem(items[index * 6 + j]);
                             else AddBigButton("OtherEmpty", (h) => { });
                     }
                 );
@@ -1458,7 +1457,6 @@ public class Blueprint
         new("Bank", () => {
             SetAnchor(TopLeft, 19, -38);
             AddRegionGroup();
-            SetRegionGroupWidth(190);
             var items = currentSave.banks[town.name].items;
             AddHeaderRegion(() =>
             {
@@ -1486,14 +1484,15 @@ public class Blueprint
                 else
                     AddSmallButton("OtherSortOff", (h) => { });
             });
-            for (int i = 0; i < 7; i++)
+            for (int i = 0; i < 6; i++)
             {
                 var index = i;
                 AddPaddingRegion(
                     () =>
                     {
-                        for (int j = 0; j < 5; j++)
-                            if (items.Count > index * 5 + j) PrintBankItem(items[index * 5 + j]);
+                        for (int j = 0; j < 6; j++)
+                            if (index * 6 + j >= currentSave.banks[town.name].BagSpace()) AddBigButton("OtherNoSlot", (h) => { });
+                            else if (items.Count > index * 6 + j) PrintBankItem(items[index * 6 + j]);
                             else AddBigButton("OtherEmpty", (h) => { });
                     }
                 );
@@ -1501,9 +1500,8 @@ public class Blueprint
         }, true),
         new("Vendor", () => {
             currentSave.buyback ??= new();
-            SetAnchor(TopLeft);
+            SetAnchor(TopLeft, 19, -38);
             AddHeaderGroup();
-            SetRegionGroupWidth(190);
             var items = new List<Item>();
             AddHeaderRegion(() =>
             {
@@ -1524,14 +1522,15 @@ public class Blueprint
                 else
                     AddSmallButton("OtherSortOff", (h) => { });
             });
-            for (int i = 0; i < 7; i++)
+            for (int i = 0; i < 6; i++)
             {
                 var index = i;
                 AddPaddingRegion(
                     () =>
                     {
-                        for (int j = 0; j < 5; j++)
-                            if (items.Count > index * 5 + j) PrintVendorItem(items[index * 5 + j]);
+                        for (int j = 0; j < 6; j++)
+                            if (index * 6 + j >= 999) AddBigButton("OtherNoSlot", (h) => { });
+                            else if (items.Count > index * 6 + j) PrintVendorItem(items[index * 6 + j]);
                             else AddBigButton("OtherEmpty", (h) => { });
                     }
                 );
