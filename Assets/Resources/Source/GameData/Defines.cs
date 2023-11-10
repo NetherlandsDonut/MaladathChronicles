@@ -8,12 +8,12 @@ public class Defines
     //This function generates default values for the game settings
     public void FillNulls()
     {
+        maxPathLength ??= 9999;
         maxPlayerLevel ??= 60;
-        backpackSpace ??= 12;
         maxBagsEquipped ??= 3;
+        backpackSpace ??= 12;
         aiDepth ??= 5;
         aiManualBranches ??= 1;
-        maxPathLength ??= 9999;
         textPaddingLeft ??= 4;
         textPaddingRight ??= 12;
         shadowSystem ??= 1;
@@ -24,12 +24,12 @@ public class Defines
         frameTime ??= 0.08f;
     }
 
+    public int maxPathLength;
     public int maxPlayerLevel;
-    public int backpackSpace;
     public int maxBagsEquipped;
+    public int backpackSpace;
     public int aiDepth;
     public int aiManualBranches;
-    public int maxPathLength;
     public int textPaddingLeft;
     public int textPaddingRight;
     public int shadowSystem;
