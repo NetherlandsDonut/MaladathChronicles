@@ -140,23 +140,8 @@ public class SiteHostileArea : Site
                         });
                         AddPaddingRegion(() =>
                         {
-                            AddLine("Recommended level: ");
+                            AddLine("Recommended level: ", "DarkGray");
                             AddText(recommendedLevel + "", ColorEntityLevel(recommendedLevel));
-                        });
-                        //if (eliteEncounters != null && eliteEncounters.Count > 0/* && eliteEncounters.Sum(x => x.requiredProgress) > 0*/)
-                        //    AddPaddingRegion(() =>
-                        //    {
-                        //        AddLine("Exploration progress: ", "DarkGray");
-                        //        var temp = currentSave.siteProgress;
-                        //        int progress = (int)(currentSave.siteProgress.ContainsKey(name) ? (double)currentSave.siteProgress[name]/* / eliteEncounters.Sum(x => x.requiredProgress) * 100*/ : 0);
-                        //        AddText((progress > 100 ? 100 : progress) + "%", ColorProgress(progress));
-                        //    });
-                        AddButtonRegion(() => { AddLine("Explore", "Black"); },
-                        (h) =>
-                        {
-                            Board.NewBoard(RollEncounter(), this);
-                            SpawnDesktopBlueprint("Game");
-                            SwitchDesktop("Game");
                         });
                         if (commonEncounters != null && commonEncounters.Count > 0)
                         {
@@ -183,33 +168,13 @@ public class SiteHostileArea : Site
                                         AddSmallButton(race == null ? "OtherUnknown" : race.portrait, (h) => { });
                                     });
                         }
-                        if (eliteEncounters != null && eliteEncounters.Count > 0)
+                        AddButtonRegion(() => { AddLine("Explore", "Black"); },
+                        (h) =>
                         {
-                            foreach (var boss in eliteEncounters)
-                            {
-                                if (currentSave.siteProgress.ContainsKey(name)/* && boss.requiredProgress <= currentSave.siteProgress[name]*/)
-                                    AddButtonRegion(() =>
-                                    {
-                                        SetRegionBackground(RedButton);
-                                        AddLine(boss.who, "", "Right");
-                                        var race = races.Find(x => x.name == boss.who);
-                                        AddSmallButton(race == null ? "OtherUnknown" : race.portrait, (h) => { });
-                                    },
-                                    (h) =>
-                                    {
-                                        Board.NewBoard(RollEncounter(boss), this);
-                                        SpawnDesktopBlueprint("Game");
-                                        SwitchDesktop("Game");
-                                    });
-                                else
-                                    AddPaddingRegion(() =>
-                                    {
-                                        AddLine(boss.who, "DangerousRed", "Right");
-                                        var race = races.Find(x => x.name == boss.who);
-                                        AddSmallButton(race == null ? "OtherUnknown" : race.portrait, (h) => { });
-                                    });
-                            }
-                        }
+                            Board.NewBoard(RollEncounter(), this);
+                            SpawnDesktopBlueprint("Game");
+                            SwitchDesktop("Game");
+                        });
                         if (progression != null && progression.Count > 0)
                             for (int i = 0; i <= areaSize; i++)
                             {

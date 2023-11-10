@@ -208,6 +208,7 @@ public class SiteComplex : Site
                     else CloseWindow(window);
                 CloseWindow("ComplexLeftSide");
                 SpawnWindowBlueprint("HostileArea: " + area.name);
+                Respawn("BossQueue");
                 SetDesktopBackground(area.Background());
             }
             else

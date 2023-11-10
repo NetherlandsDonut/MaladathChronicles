@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 5a62daca062d7274bae363b7d471df3c
+guid: 1ac0184f41f404f44bc77d1692c750b9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -547072722672833147
-    second: DruidBalance_0
+      213: 2887422426852493428
+    second: BossBackground_0
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -98,13 +98,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: DruidBalance_0
+      name: BossBackground_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 4
         y: 0
-        width: 640
-        height: 360
+        width: 60
+        height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -112,8 +112,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 58da7cad1486868f0800000000000000
-      internalID: -547072722672833147
+      spriteID: 4780a05266f221820800000000000000
+      internalID: 2887422426852493428
       vertices: []
       indices: 
       edges: []

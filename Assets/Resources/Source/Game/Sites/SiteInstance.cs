@@ -75,10 +75,10 @@ public class SiteInstance : Site
                         });
                         AddPaddingRegion(() =>
                         {
-                            AddLine("Level range: ", "Gray");
+                            AddLine("Level range: ", "DarkGray");
                             var range = LevelRange();
                             AddText(range.Item1 + "", ColorEntityLevel(range.Item1));
-                            AddText(" - ", "Gray");
+                            AddText(" - ", "DarkGray");
                             AddText(range.Item2 + "", ColorEntityLevel(range.Item2));
                         });
                         foreach (var wing in wings)
@@ -143,10 +143,10 @@ public class SiteInstance : Site
                 AddHeaderRegion(() => { AddLine(name); });
                 AddPaddingRegion(() =>
                 {
-                    AddLine("Level range: ");
+                    AddLine("Level range: ", "DarkGray");
                     var range = LevelRange();
                     AddText(range.Item1 + "", ColorEntityLevel(range.Item1));
-                    AddText(" - ");
+                    AddText(" - ", "DarkGray");
                     AddText(range.Item2 + "", ColorEntityLevel(range.Item2));
                 });
                 var areas = wings.SelectMany(x => x.areas.Select(y => SiteHostileArea.areas.Find(z => z.name == y["AreaName"])));
@@ -198,6 +198,7 @@ public class SiteInstance : Site
                     else CloseWindow(window);
                 CloseWindow("InstanceLeftSide");
                 SpawnWindowBlueprint("HostileArea: " + area.name);
+                Respawn("BossQueue");
                 SetDesktopBackground("Areas/Area" + (instance.name + area.name).Clean() + (area.specialClearBackground && area.eliteEncounters.All(x => currentSave.elitesKilled.ContainsKey(x.who)) ? "Cleared" : ""));
             });
     }
