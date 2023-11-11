@@ -1,6 +1,7 @@
 using UnityEngine;
 
 using static Root;
+using static Defines;
 
 public class FlyingMissile : MonoBehaviour
 {
@@ -47,7 +48,7 @@ public class FlyingMissile : MonoBehaviour
         }
         else
         {
-            if (timeAlive * 3 / frameTime > trailSpawns)
+            if (timeAlive * 3 / defines.frameTime > trailSpawns)
             {
                 SpawnTrail();
                 trailSpawns++;

@@ -8,11 +8,11 @@ using static Site;
 using static Root;
 using static Sound;
 using static Cursor;
+using static Defines;
 using static MapGrid;
 using static SaveGame;
 using static SitePath;
 using static InputLine;
-using UnityEditor;
 
 public class Desktop : MonoBehaviour
 {
@@ -304,7 +304,7 @@ public class Desktop : MonoBehaviour
                     if (flyingMissiles.Count == 0 && animationTime <= 0 && fallingElements.Count == 0)
                     {
                         if (!Board.board.playerTurn && CursorRemote.cursorEnemy.fadeIn)
-                            animationTime += frameTime;
+                            animationTime += defines.frameTime;
                         if (fallingElements.Count == 0) RebuildAll();
                         if (canUnlockScreen) UnlockScreen();
                         else Board.board.AnimateBoard();

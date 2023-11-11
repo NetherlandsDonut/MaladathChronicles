@@ -6,6 +6,7 @@ using UnityEngine;
 using static Root;
 using static Buff;
 using static Sound;
+using static Defines;
 using static Shatter;
 using static FlyingBuff;
 using static FlyingElement;
@@ -82,7 +83,7 @@ public class Event
             //Prolongs wait time after effect
             void ExecuteAwait()
             {
-                animationTime = frameTime * await;
+                animationTime = defines.frameTime * await;
             }
 
             //Executes a single effect from the list

@@ -9,6 +9,7 @@ using static Root;
 using static Race;
 using static Spec;
 using static Sound;
+using static Defines;
 
 public class Entity
 {
@@ -313,7 +314,7 @@ public class Entity
     {
         if (unspentTalentPoints == 0) return false;
         if (abilities.ContainsKey(talent.ability) && abilities[talent.ability] >= Ability.abilities.Find(x => x.name == talent.ability).ranks.Count - 1) return false;
-        if (talent.tree == 1 && TreeCompletion(spec, 0) < adeptTreeRequirement) return false;
+        if (talent.tree == 1 && TreeCompletion(spec, 0) < defines.adeptTreeRequirement) return false;
         var talentTree = Spec().talentTrees[spec];
         var temp = talentTree.talents.FindAll(x => x.tree == talent.tree && abilities.ContainsKey(x.ability));
         if (talent.row > (temp.Count > 0 ? temp.Max(x => x.row) + 1 : 0)) return false;

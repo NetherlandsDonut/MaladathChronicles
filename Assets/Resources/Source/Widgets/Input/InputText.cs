@@ -1,8 +1,8 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-using static Root;
 using static Font;
+using static Defines;
 using static Coloring;
 
 public class InputText : MonoBehaviour
@@ -37,8 +37,8 @@ public class InputText : MonoBehaviour
         var glyph = fonts["Tahoma Bold"].GetGlyph(character);
         newCharacter.GetComponent<SpriteRenderer>().sortingLayerName = inputLine.region.regionGroup.window.layer;
         newCharacter.GetComponent<SpriteRenderer>().sprite = glyph;
-        newCharacter.GetComponent<SpriteRenderer>().color = colors[character + "" == markerCharacter ? "Gray" : (color != "" ? color : "LightGray")];
-        if (character + "" == markerCharacter) newCharacter.AddComponent<Blinking>();
+        newCharacter.GetComponent<SpriteRenderer>().color = colors[character + "" == defines.markerCharacter ? "Gray" : (color != "" ? color : "LightGray")];
+        if (character + "" == defines.markerCharacter) newCharacter.AddComponent<Blinking>();
         else
         {
             newCharacter.AddComponent<Highlightable>().Initialise(inputLine.region, null, null, null, null);

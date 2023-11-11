@@ -8,20 +8,20 @@ public class Defines
     //This function generates default values for the game settings
     public void FillNulls()
     {
-        maxPathLength ??= 9999;
-        maxPlayerLevel ??= 60;
-        maxBagsEquipped ??= 3;
-        backpackSpace ??= 12;
-        aiDepth ??= 5;
-        aiManualBranches ??= 1;
-        textPaddingLeft ??= 4;
-        textPaddingRight ??= 12;
-        shadowSystem ??= 1;
-        adeptTreeRequirement ??= 10;
-        mapGridSize ??= 19;
+        maxPathLength = 9999;
+        maxPlayerLevel = 60;
+        maxBagsEquipped = 3;
+        backpackSpace = 12;
+        aiDepth = 5;
+        aiManualBranches = 1;
+        textPaddingLeft = 4;
+        textPaddingRight = 12;
+        shadowSystem = 1;
+        adeptTreeRequirement = 10;
+        mapGridSize = 19;
         markerCharacter ??= "_";
         textWrapEnding ??= "...";
-        frameTime ??= 0.08f;
+        frameTime = 0.08f;
     }
 
     public int maxPathLength;

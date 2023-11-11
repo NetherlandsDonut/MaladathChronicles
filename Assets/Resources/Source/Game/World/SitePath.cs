@@ -4,6 +4,7 @@ using System.Linq;
 using System.Collections.Generic;
 
 using static Root;
+using static Defines;
 using static SaveGame;
 
 public class SitePath
@@ -130,7 +131,7 @@ public class SitePath
     public static List<SitePath> FindShortestPath(Site from, Site to)
     {
         var timeA = System.DateTime.Now;
-        (List<SitePath>, int) bestPath = (null, maxPathLength);
+        (List<SitePath>, int) bestPath = (null, defines.maxPathLength);
         var startingPoints = pathsConnectedToSite[from.name];
         var scan = new List<(List<SitePath>, int)>();
         foreach (var direction in startingPoints)

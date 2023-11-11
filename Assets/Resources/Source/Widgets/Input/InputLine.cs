@@ -7,6 +7,7 @@ using static Font;
 using static Event;
 using static Cursor;
 using static String;
+using static SaveGame;
 
 public class InputLine : MonoBehaviour
 {

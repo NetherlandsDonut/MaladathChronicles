@@ -119,10 +119,12 @@ public class Ability
 
     public static void PrintAbilityTooltip(Entity effector, Entity other, Ability ability, int rank)
     {
-        SetAnchor(Top, 0, -46);
+        SetAnchor(Top, 0, -53);
         AddHeaderGroup();
-        SetRegionGroupWidth(242);
-        SetRegionGroupHeight(213);
+        if (CDesktop.title == "Game")
+            DisableShadows();
+        SetRegionGroupWidth(228);
+        SetRegionGroupHeight(199);
         if (ability == null)
         {
             AddHeaderRegion(() =>
@@ -130,7 +132,7 @@ public class Ability
                 AddLine("Ability not found.", "Red");
             });
             AddRegionGroup();
-            SetRegionGroupWidth(242);
+            SetRegionGroupWidth(228);
             AddPaddingRegion(() => { AddLine(); });
         }
         else
@@ -155,7 +157,7 @@ public class Ability
                     }
                 }
             });
-            ability.PrintDescription(effector, other, 242, rank);
+            ability.PrintDescription(effector, other, 228, rank);
             if (ability.cost != null)
                 foreach (var cost in ability.cost)
                 {
@@ -172,7 +174,7 @@ public class Ability
                     });
                 }
             AddRegionGroup();
-            SetRegionGroupWidth(242 - (ability.cost == null ? 0 : ability.cost.Count) * 52);
+            SetRegionGroupWidth(228 - (ability.cost == null ? 0 : ability.cost.Count) * 52);
             AddPaddingRegion(() => { AddLine(); });
         }
     }

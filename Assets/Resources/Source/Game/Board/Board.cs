@@ -5,6 +5,7 @@ using System.Collections.Generic;
 
 using static Root;
 using static Sound;
+using static Defines;
 using static SaveGame;
 using static BufferBoard;
 using static GameSettings;
@@ -132,7 +133,7 @@ public class Board
         results = new CombatResults(result);
         if (result == "Won")
         {
-            if (currentSave.player.WillGetExperience(enemy.level) && currentSave.player.level < maxPlayerLevel)
+            if (currentSave.player.WillGetExperience(enemy.level) && currentSave.player.level < defines.maxPlayerLevel)
             {
                 var enemyRace = Race.races.Find(x => x.name == enemy.race);
                 results.experience = (Coloring.ColorEntityLevel(enemy.level) == "Green" ? 1 : 3) * (enemyRace.kind == "Elite" || enemyRace.kind == "Rare" ? 2 : 1);
@@ -294,7 +295,7 @@ public class Board
                     else
                     {
                         breakForCascade = false;
-                        animationTime += frameTime;
+                        animationTime += defines.frameTime;
                     }
                     return;
                 }
@@ -345,7 +346,7 @@ public class Board
                 var baseDesiredness = firstLayerBase.Desiredness();
                 firstLayerBase.enemyFinishedMoving = false;
                 var currentLayer = firstLayer;
-                firstLayer.ForEach(x => x.depth = aiDepth);
+                firstLayer.ForEach(x => x.depth = defines.aiDepth);
                 while (true)
                 {
                     foreach (var solving in currentLayer)
@@ -404,14 +405,14 @@ public class Board
                     board.actions.Add(() =>
                     {
                         cursorEnemy.Move(CDesktop.windows.Find(x => x.title == "EnemyBattleInfo").regionGroups[0].regions[enemy.actionBars.IndexOf(actionBar) + 2].transform.position + new Vector3(139, -10));
-                        animationTime += frameTime * 9;
+                        animationTime += defines.frameTime * 9;
                     });
                     board.actions.Add(() => { cursorEnemy.SetCursor(CursorType.Click); });
                     board.actions.Add(() =>
                     {
                         cursorEnemy.SetCursor(CursorType.Default);
                         AddRegionOverlay(CDesktop.windows.Find(x => x.title == "EnemyBattleInfo").regionGroups[0].regions[enemy.actionBars.IndexOf(actionBar) + 2], "Black", 0.1f);
-                        animationTime += frameTime;
+                        animationTime += defines.frameTime;
                         actionBar.cooldown = abilityObj.cooldown;
                         board.CallEvents(board.enemy, new() { { "Trigger", "AbilityCast" }, {"Triggerer", "Effector" }, { "AbilityName", abilityObj.name } });
                         board.CallEvents(board.player, new() { { "Trigger", "AbilityCast" }, { "Triggerer", "Other" }, { "AbilityName", abilityObj.name } });
@@ -420,7 +421,7 @@ public class Board
                 }
                 else
                 {
-                    board.actions.Add(() => { cursorEnemy.Move(window.LBRegionGroup.regions[bestMove.y].bigButtons[bestMove.x].transform.position); animationTime += frameTime * 8; });
+                    board.actions.Add(() => { cursorEnemy.Move(window.LBRegionGroup.regions[bestMove.y].bigButtons[bestMove.x].transform.position); animationTime += defines.frameTime * 8; });
                     board.actions.Add(() => { cursorEnemy.SetCursor(CursorType.Click); });
                     board.actions.Add(() =>
                     {

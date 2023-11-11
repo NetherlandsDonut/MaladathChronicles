@@ -675,7 +675,8 @@
                 "Garr"
               ]
             }
-          ]
+          ],
+          "bags": []
         },
         "equipment": {
           "Neck": {
@@ -1677,7 +1678,8 @@
                 "Stonesplinter Skullthumper"
               ]
             }
-          ]
+          ],
+          "bags": []
         },
         "equipment": {
           "Off Hand": {
@@ -2549,7 +2551,8 @@
                 "Captain Kromcrush"
               ]
             }
-          ]
+          ],
+          "bags": []
         },
         "equipment": {
           "Waist": {
@@ -3418,7 +3421,8 @@
                 "stats": {}
               }
             }
-          ]
+          ],
+          "bags": []
         },
         "equipment": {
           "Back": {
@@ -4265,7 +4269,8 @@
                 }
               }
             }
-          ]
+          ],
+          "bags": []
         },
         "equipment": {
           "Hands": {
@@ -5321,7 +5326,8 @@
                 "Thunder Lizard"
               ]
             }
-          ]
+          ],
+          "bags": []
         },
         "equipment": {
           "Head": {
@@ -6216,7 +6222,8 @@
                 }
               }
             }
-          ]
+          ],
+          "bags": []
         },
         "equipment": {
           "Shoulders": {
@@ -7012,7 +7019,8 @@
                 }
               }
             }
-          ]
+          ],
+          "bags": []
         },
         "equipment": {
           "Main Hand": {
@@ -7867,7 +7875,8 @@
                 "Patchwerk"
               ]
             }
-          ]
+          ],
+          "bags": []
         },
         "equipment": {
           "Hands": {
@@ -8720,7 +8729,8 @@
                 "stats": {}
               }
             }
-          ]
+          ],
+          "bags": []
         },
         "equipment": {
           "Neck": {
@@ -10459,7 +10469,8 @@
                 "stats": {}
               }
             }
-          ]
+          ],
+          "bags": []
         },
         "equipment": {
           "Finger": {
@@ -10801,7 +10812,8 @@
           }
         },
         "inventory": {
-          "items": []
+          "items": [],
+          "bags": []
         },
         "equipment": {
           "Main Hand": {
@@ -10862,7 +10874,7 @@
           }
         }
       },
-      "currentSite": "Blackrock Mountain",
+      "currentSite": "The Sea of Cinders",
       "siteProgress": {
         "Northshire Valley": 1,
         "The Black Anvil": 2
@@ -11821,9 +11833,10 @@
       },
       "buyback": [],
       "startDate": "2023-11-02T23:04:26.1954845+01:00",
-      "lastLoaded": "2023-11-07T10:41:40.7441212+01:00",
-      "lastPlayed": "2023-11-07T11:40:28.6701245+01:00",
-      "timePlayed": "03:49:42.8006291"
+      "lastLoaded": "2023-11-11T19:23:41.2205121+01:00",
+      "lastPlayed": "2023-11-11T19:25:22.6058601+01:00",
+      "timePlayed": "03:57:20.7374327",
+      "lastVisitedTalents": 2
     }
   ]
 }

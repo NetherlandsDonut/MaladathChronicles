@@ -21,6 +21,9 @@ public static class Root
     public static List<FallingElement> fallingElements;
     public static List<FlyingMissile> flyingMissiles;
     public static bool canUnlockScreen;
+    public static bool useUnityData = true;
+    public static bool showSitesUnconditional;
+    public static string prefix = "";
 
     public static string locationName;
     public static string creationName;

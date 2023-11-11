@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 using static Root;
+using static Defines;
 
 public class Region : MonoBehaviour
 {
@@ -53,7 +54,7 @@ public class Region : MonoBehaviour
 
     public int AutoWidth()
     {
-        var lineX = lines.Count > 0 && lines.Max(x => x.Length()) > 0 ? lines.Max(x => x.Length()) + 2 + textPaddingLeft + textPaddingRight : 0;
+        var lineX = lines.Count > 0 && lines.Max(x => x.Length()) > 0 ? lines.Max(x => x.Length()) + 2 + defines.textPaddingLeft + defines.textPaddingRight : 0;
         var bigButtonX = 38 * bigButtons.Count;
         var smallButtonX = 19 * smallButtons.Count;
         var checkboxX = checkbox != null ? 15 : 0;

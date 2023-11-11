@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 using static Root;
+using static Defines;
+
 using static Root.Anchor;
 using static Root.RegionBackgroundType;
 
@@ -139,7 +141,7 @@ public class Window : MonoBehaviour
 
         //Draws window shadows
         if (!disabledGeneralSprites && !disabledShadows && settings.shadows.Value() && xOffset > 0)
-            if (shadowSystem == 0)
+            if (defines.shadowSystem == 0)
             {
                 var shadowSprites = Resources.LoadAll<Sprite>("Sprites/Building/Shadows/First");
                 for (int i = 0; i < 8; i++)
@@ -161,7 +163,7 @@ public class Window : MonoBehaviour
                 shadows[6].transform.localPosition = new Vector3(0, -yOffset - 2, 0.9f);
                 shadows[7].transform.localPosition = new Vector3(Width() + 2, -yOffset - 2, 0.9f);
             }
-            else if (shadowSystem == 1)
+            else if (defines.shadowSystem == 1)
             {
                 var shadowSprites = Resources.LoadAll<Sprite>("Sprites/Building/Shadows/Second");
                 for (int i = 0; i < 5; i++)
@@ -249,22 +251,22 @@ public class Window : MonoBehaviour
                             if (regionGroup.setWidth == 0)
                                 foreach (var character in part)
                                     length = text.SpawnCharacter(character, length);
-                            else if (textPaddingLeft + 6 + (line.align == "Right" ? 2 : 0) + length + Font.fonts["Tahoma Bold"].Length(part) + (split.Last() == part ? 0 : Font.fonts["Tahoma Bold"].Length(textWrapEnding)) + objectOffset < regionGroup.setWidth - region.smallButtons.Count * 19)
+                            else if (defines.textPaddingLeft + 6 + (line.align == "Right" ? 2 : 0) + length + Font.fonts["Tahoma Bold"].Length(part) + (split.Last() == part ? 0 : Font.fonts["Tahoma Bold"].Length(defines.textWrapEnding)) + objectOffset < regionGroup.setWidth - region.smallButtons.Count * 19)
                                 foreach (var character in part)
                                     length = text.SpawnCharacter(character, length);
                             else
                             {
-                                for (int i = 0; i < 3; i++)
-                                    length = text.SpawnCharacter(textWrapEnding[i], length);
+                                for (int i = 0; i < defines.textWrapEnding.Length; i++)
+                                    length = text.SpawnCharacter(defines.textWrapEnding[i], length);
                                 break;
                             }
                     }
                     if (line.align == "Left")
-                        line.transform.localPosition = new Vector3(2 + textPaddingLeft + objectOffset, -region.currentHeight - 3, 0);
+                        line.transform.localPosition = new Vector3(2 + defines.textPaddingLeft + objectOffset, -region.currentHeight - 3, 0);
                     else if (line.align == "Center")
                         line.transform.localPosition = new Vector3(2 + (region.regionGroup.AutoWidth() / 2) - (length / 2), -region.currentHeight - 3, 0);
                     else if (line.align == "Right")
-                        line.transform.localPosition = new Vector3(-textPaddingLeft + region.regionGroup.AutoWidth() - (region.smallButtons.Count * 19) - length, -region.currentHeight - 3, 0);
+                        line.transform.localPosition = new Vector3(-defines.textPaddingLeft + region.regionGroup.AutoWidth() - (region.smallButtons.Count * 19) - length, -region.currentHeight - 3, 0);
                     region.currentHeight += 15;
                 }
 
@@ -345,13 +347,13 @@ public class Window : MonoBehaviour
                     else
                     {
                         if (region.currentHeight < 15) region.currentHeight = 15;
-                        region.inputLine.transform.localPosition = new Vector3(2 + textPaddingLeft, -region.currentHeight + 12, 0);
+                        region.inputLine.transform.localPosition = new Vector3(2 + defines.textPaddingLeft, -region.currentHeight + 12, 0);
                     }
                     int length = 0;
                     region.inputLine.text.Erase();
                     var print = region.inputLine.text.text.Value();
                     if (inputDestination == region.inputLine.text.text && inputLineName == region.inputLine.name)
-                        print = print.Insert(inputLineMarker > print.Length ? print.Length : inputLineMarker, markerCharacter);
+                        print = print.Insert(inputLineMarker > print.Length ? print.Length : inputLineMarker, defines.markerCharacter);
                     else print += " ";
                     foreach (var character in print)
                         length = region.inputLine.text.SpawnCharacter(character, length, region.inputLine.color);

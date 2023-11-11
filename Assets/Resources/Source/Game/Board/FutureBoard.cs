@@ -2,6 +2,7 @@ using System.Linq;
 using System.Collections.Generic;
 
 using static Root;
+using static Defines;
 
 public class FutureBoard
 {
@@ -148,7 +149,7 @@ public class FutureBoard
         list = list.OrderBy(x => (list[0].board.playerTurn ? 1 : -1) * x.board.Desiredness(this)).ToList();
         var manualMoves = 0;
         for (int i = list.Count - 1; i >= 0; i--)
-            if (list[i].ability == "" && aiManualBranches <= manualMoves)
+            if (list[i].ability == "" && defines.aiManualBranches <= manualMoves)
                 list.RemoveAt(i);
             else if (list[i].ability == "")
                 manualMoves++;

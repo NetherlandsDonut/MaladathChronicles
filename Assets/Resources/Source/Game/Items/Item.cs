@@ -8,12 +8,12 @@ using static Root.Anchor;
 
 using static Sound;
 using static ItemSet;
+using static Defines;
 using static SaveGame;
 using static SiteTown;
 using static Coloring;
 using static GameSettings;
 using static PermanentEnchant;
-using static UnityEngine.Random;
 
 public class Item
 {
@@ -192,7 +192,7 @@ public class Item
         if (specs != null && !specs.Contains(entity.spec))
             return false;
         if (type == "Container")
-            return inventory.containers.Count < maxBagsEquipped;
+            return entity.inventory.bags.Count < defines.maxBagsEquipped;
         else if (armorClass != null)
             return entity.abilities.ContainsKey(armorClass + " Proficiency");
         else if (type == "Pouch")
@@ -256,7 +256,7 @@ public class Item
 
     private void Equip(Entity entity, string slot)
     {
-        if (slot == "Container") entity.inventory.containers.Add(this);
+        if (slot == "Container") entity.inventory.bags.Add(this);
         else entity.equipment[slot] = this;
         if (entity.inventory.items.Contains(this))
             entity.inventory.items.Remove(this);
@@ -311,27 +311,6 @@ public class Item
         }
     }
 
-    public static void PrintEquipmentItem(Item item)
-    {
-        AddRegionGroup();
-        AddPaddingRegion(() =>
-        {
-            AddBigButton(item == null ? "OtherEmpty" : item.icon,
-            (h) =>
-            {
-
-            },
-            null,
-            (h) => () =>
-            {
-                if (item == null) return;
-                SetAnchor(BottomRight);
-                PrintItemTooltip(item);
-            });
-            if (item != null) AddBigButtonOverlay("OtherRarity" + item.rarity + (settings.bigRarityIndicators.Value() ? "Big" : ""));
-        });
-    }
-
     public static void PrintBankItem(Item item)
     {
         AddBigButton(item.icon,
@@ -350,7 +329,6 @@ public class Item
             (h) => () =>
             {
                 if (item == null) return;
-                SetAnchor(-115, 165);
                 PrintItemTooltip(item);
             }
         );
@@ -378,7 +356,6 @@ public class Item
             (h) => () =>
             {
                 if (item == null) return;
-                SetAnchor(-115, 165);
                 PrintItemTooltip(item, false, 4);
             }
         );
@@ -429,7 +406,6 @@ public class Item
             {
                 if (item == null) return;
                 if (CDesktop.windows.Exists(x => x.title == "ConfirmItemDestroy")) return;
-                SetAnchor(-115, 165);
                 PrintItemTooltip(item, Input.GetKey(KeyCode.LeftShift));
             },
             (h) =>
@@ -479,7 +455,6 @@ public class Item
             {
                 if (item == null) return;
                 if (CDesktop.windows.Exists(x => x.title == "ConfirmItemDestroy")) return;
-                SetAnchor(-115, 165);
                 PrintItemTooltip(item, Input.GetKey(KeyCode.LeftShift));
             }
         );
@@ -500,6 +475,7 @@ public class Item
 
     public static void PrintItemTooltip(Item item, bool compare = false, double priceMultiplier = 1)
     {
+        SetAnchor(-115, 146);
         AddHeaderGroup();
         SetRegionGroupWidth(228);
         var split = item.name.Split(", ");
