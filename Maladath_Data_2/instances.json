@@ -1303,8 +1303,8 @@
         ]
       }
     ],
-    "x": 105,
-    "y": -200,
+    "x": 108,
+    "y": -204,
     "name": "Zul'Farrak",
     "zone": "Tanaris",
     "type": "Dungeon",
@@ -1606,8 +1606,8 @@
       "Fury of the Forgotten Swarm",
       "Treads of the Wandering Nomad"
     ],
-    "x": 56,
-    "y": -233,
+    "x": 59,
+    "y": -228,
     "name": "Ruins of Ahn'Qiraj",
     "zone": "Silithus",
     "type": "Raid",

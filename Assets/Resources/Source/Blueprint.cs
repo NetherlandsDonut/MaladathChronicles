@@ -673,7 +673,7 @@ public class Blueprint
                 Foo("Libram", currentSave.player.GetItemInSlot("Special"));
             if (currentSave.player.spec == "Shaman")
                 Foo("Totem", currentSave.player.GetItemInSlot("Special"));
-            AddPaddingRegion(() => { });
+            AddPaddingRegion(() => { AddLine(); AddLine(); AddLine(); AddLine(); });
 
             void Foo(string slot, Item item)
             {
@@ -768,7 +768,7 @@ public class Blueprint
                 var index = i;
                 AddPaddingRegion(() =>
                 {
-                    SetRegionBackgroundAsImage("Sprites/Textures/SpellbookSpellBackground");
+                    //SetRegionBackgroundAsImage("Sprites/Textures/SpellbookSpellBackground");
                     if (activeAbilities.Count > index + 7 * regionGroup.pagination)
                     {
                         var key = activeAbilities.ToList()[index + 7 * regionGroup.pagination];
@@ -1114,6 +1114,14 @@ public class Blueprint
                     if (temp != "SpellbookScreen")
                         SpawnDesktopBlueprint("SpellbookScreen");
                 });
+                //AddSmallButton(CDesktop.title == "PetScreen" ? "OtherClose" : "MenuSpellbook", (h) =>
+                //{
+                //    var temp = CDesktop.title;
+                //    if (CDesktop.title != "Map" && CDesktop.title != "CombatResults")
+                //        CloseDesktop(CDesktop.title);
+                //    if (temp != "SpellbookScreen")
+                //        SpawnDesktopBlueprint("SpellbookScreen");
+                //});
                 AddSmallButton(CDesktop.title == "TalentScreen" ? "OtherClose" : "MenuClasses", (h) =>
                 {
                     var temp = CDesktop.title;
@@ -1319,17 +1327,34 @@ public class Blueprint
                     () =>
                     {
                         for (int j = 0; j < 5; j++)
-                            if (index * 7 + j >= currentSave.player.inventory.BagSpace()) AddBigButton("OtherNoSlot", (h) => { });
-                            else if (items.Count > index * 7 + j) PrintInventoryItem(items[index * 7 + j]);
+                            if (index * 5 + j >= currentSave.player.inventory.BagSpace()) AddBigButton("OtherDisabled", (h) => { });
+                            else if (items.Count > index * 5 + j) PrintInventoryItem(items[index * 5 + j]);
                             else AddBigButton("OtherEmpty", (h) => { });
                     }
                 );
             }
-            PrintPriceRegion(currentSave.player.inventory.money);
             AddHeaderRegion(() =>
             {
-                AddLine(" ");
+                AddLine("Bags:");
+                for (int i = 0; i < defines.maxBagsEquipped; i++)
+                {
+                    var index = i;
+                    AddSmallButton(currentSave.player.inventory.bags.Count > index ? currentSave.player.inventory.bags[index].icon : "OtherEmpty",
+                        (h) =>
+                        {
+                            if (currentSave.player.inventory.bags.Count > index && currentSave.player.inventory.items.Count < currentSave.player.inventory.BagSpace() - currentSave.player.inventory.bags[index].bagSpace)
+                                currentSave.player.UnequipBag(index);
+                        },
+                        null,
+                        (h) => () =>
+                        {
+                            if (currentSave.player.inventory.bags.Count > index)
+                                PrintItemTooltip(currentSave.player.inventory.bags[index]);
+                        }
+                    );
+                }
             });
+            PrintPriceRegion(currentSave.player.inventory.money);
         }, true),
         new("TalentScreenHeader", () => {
             SetAnchor(Top, 0, -19);
@@ -1451,8 +1476,8 @@ public class Blueprint
                     () =>
                     {
                         for (int j = 0; j < 5; j++)
-                            if (index * 7 + j >= currentSave.banks[town.name].BagSpace()) AddBigButton("OtherNoSlot", (h) => { });
-                            else if (items.Count > index * 7 + j) PrintBankItem(items[index * 7 + j]);
+                            if (index * 5 + j >= currentSave.banks[town.name].BagSpace()) AddBigButton("OtherNoSlot", (h) => { });
+                            else if (items.Count > index * 5 + j) PrintBankItem(items[index * 5 + j]);
                             else AddBigButton("OtherEmpty", (h) => { });
                     }
                 );
@@ -1489,8 +1514,8 @@ public class Blueprint
                     () =>
                     {
                         for (int j = 0; j < 5; j++)
-                            if (index * 7 + j >= 999) AddBigButton("OtherNoSlot", (h) => { });
-                            else if (items.Count > index * 7 + j) PrintVendorItem(items[index * 7 + j]);
+                            if (index * 5 + j >= 999) AddBigButton("OtherNoSlot", (h) => { });
+                            else if (items.Count > index * 5 + j) PrintVendorItem(items[index * 5 + j]);
                             else AddBigButton("OtherEmpty", (h) => { });
                     }
                 );

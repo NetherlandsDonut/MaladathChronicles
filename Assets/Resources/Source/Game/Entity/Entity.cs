@@ -305,6 +305,18 @@ public class Entity
                 }
     }
 
+    //Unequips a bag in given index
+    public void UnequipBag(int index = 0)
+    {
+        if (inventory.bags.Count <= index) return;
+        var itemAbilities = inventory.bags[index].abilities;
+        if (itemAbilities != null)
+            foreach (var ability in itemAbilities)
+                abilities.Remove(ability.Key);
+        inventory.items.Add(inventory.bags[index]);
+        inventory.bags.RemoveAt(index);
+    }
+
     #endregion
 
     #region Talents & Spec

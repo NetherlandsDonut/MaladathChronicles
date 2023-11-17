@@ -1,5 +1,122 @@
 [
   {
+    "name": "Ravasaur Hunter",
+    "category": "Beast",
+    "subcategory": "Raptor",
+    "kind": "Common",
+    "portrait": "PortraitRaptorBlue",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Bloodpetal Tresher",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "kind": "Common",
+    "portrait": "PortraitLasher",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Frenzied Pterrodax",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "kind": "Common",
+    "portrait": "PortraitPterrodax",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Bloodpetal Trapper",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "kind": "Common",
+    "portrait": "PortraitLasher",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Searing Roc",
+    "category": "Beast",
+    "subcategory": "Carrion Bird",
+    "kind": "Common",
+    "portrait": "PortraitCarrionBird",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Glasshide Petrifier",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "kind": "Common",
+    "portrait": "PortraitBasilisk",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Rabid Blisterpaw",
+    "category": "Beast",
+    "subcategory": "Hyena",
+    "kind": "Common",
+    "portrait": "PortraitHyenaYellow",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Land Rager",
+    "category": "Elemental",
+    "subcategory": "Elemental",
+    "kind": "Common",
+    "portrait": "PortraitEarthElemental",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Scorpid Tail Lasher",
+    "category": "Beast",
+    "subcategory": "Scorpid",
+    "kind": "Common",
+    "portrait": "PortraitScorpidBlue",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Deathclasp",
+    "category": "Beast",
+    "subcategory": "Scorpid",
+    "kind": "Elite",
+    "portrait": "PortraitScorpidPink",
+    "vitality": 3.0,
+    "abilities": {}
+  },
+  {
+    "name": "Stonelash Flayer",
+    "category": "Beast",
+    "subcategory": "Scorpid",
+    "kind": "Common",
+    "portrait": "PortraitScorpidBlue",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Dredge Stalker",
+    "category": "Beast",
+    "subcategory": "Borer",
+    "kind": "Common",
+    "portrait": "PortraitBorerDark",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Sand Skitterer",
+    "category": "Beast",
+    "subcategory": "Borer",
+    "kind": "Common",
+    "portrait": "PortraitBorerDark",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
     "name": "Anvilrage Marshal",
     "category": "Humanoid",
     "subcategory": "Dwarf",

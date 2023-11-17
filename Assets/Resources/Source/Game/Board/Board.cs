@@ -140,9 +140,12 @@ public class Board
             }
             if (area != null && enemy.kind != "Elite")
             {
-                if (!currentSave.siteProgress.ContainsKey(area.name))
-                    currentSave.siteProgress.Add(area.name, 1);
-                else currentSave.siteProgress[area.name]++;
+                if (!area.progression.Any(x => x.type == "Boss" && x.point == (currentSave.siteProgress.ContainsKey(area.name) ? currentSave.siteProgress[area.name] : 0) && !currentSave.elitesKilled.ContainsKey(enemy.name)))
+                {
+                    if (!currentSave.siteProgress.ContainsKey(area.name))
+                        currentSave.siteProgress.Add(area.name, 1);
+                    else currentSave.siteProgress[area.name]++;
+                }
             }
             if (enemy.kind == "Common")
             {

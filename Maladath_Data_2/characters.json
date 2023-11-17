@@ -10786,10 +10786,10 @@
             "ability": "Fireball"
           },
           {
-            "ability": "Frostbolt"
+            "ability": "Arcane Missiles"
           },
           {
-            "ability": "Arcane Missiles"
+            "ability": "Frostbolt"
           }
         ],
         "stats": {
@@ -10812,69 +10812,69 @@
           }
         },
         "inventory": {
-          "items": [],
+          "items": [
+            {
+              "rarity": "Common",
+              "name": "Bent Staff",
+              "icon": "itemstaff08",
+              "detailedType": "Staff",
+              "type": "Two Handed",
+              "ilvl": 2,
+              "lvl": 1,
+              "minDamage": 3,
+              "maxDamage": 5,
+              "price": 0.0009,
+              "speed": 2.9,
+              "stats": {
+                "stats": {}
+              }
+            },
+            {
+              "rarity": "Poor",
+              "name": "Apprentice's Pants",
+              "icon": "itempants01",
+              "type": "Legs",
+              "armorClass": "Cloth",
+              "ilvl": 1,
+              "lvl": 1,
+              "armor": 2,
+              "price": 0.0001,
+              "stats": {
+                "stats": {}
+              }
+            },
+            {
+              "rarity": "Common",
+              "name": "Apprentice's Boots",
+              "icon": "itemboots09",
+              "type": "Feet",
+              "ilvl": 1,
+              "lvl": 1,
+              "price": 0.0001,
+              "stats": {
+                "stats": {}
+              }
+            },
+            {
+              "rarity": "Poor",
+              "name": "Apprentice's Robe",
+              "icon": "itemchestcloth23",
+              "type": "Chest",
+              "armorClass": "Cloth",
+              "ilvl": 1,
+              "lvl": 1,
+              "armor": 3,
+              "price": 0.0001,
+              "stats": {
+                "stats": {}
+              }
+            }
+          ],
           "bags": []
         },
-        "equipment": {
-          "Main Hand": {
-            "rarity": "Common",
-            "name": "Bent Staff",
-            "icon": "itemstaff08",
-            "detailedType": "Staff",
-            "type": "Two Handed",
-            "ilvl": 2,
-            "lvl": 1,
-            "minDamage": 3,
-            "maxDamage": 5,
-            "price": 0.0009,
-            "speed": 2.9,
-            "stats": {
-              "stats": {}
-            }
-          },
-          "Feet": {
-            "rarity": "Common",
-            "name": "Apprentice's Boots",
-            "icon": "itemboots09",
-            "type": "Feet",
-            "ilvl": 1,
-            "lvl": 1,
-            "price": 0.0001,
-            "stats": {
-              "stats": {}
-            }
-          },
-          "Legs": {
-            "rarity": "Poor",
-            "name": "Apprentice's Pants",
-            "icon": "itempants01",
-            "type": "Legs",
-            "armorClass": "Cloth",
-            "ilvl": 1,
-            "lvl": 1,
-            "armor": 2,
-            "price": 0.0001,
-            "stats": {
-              "stats": {}
-            }
-          },
-          "Chest": {
-            "rarity": "Poor",
-            "name": "Apprentice's Robe",
-            "icon": "itemchestcloth23",
-            "type": "Chest",
-            "armorClass": "Cloth",
-            "ilvl": 1,
-            "lvl": 1,
-            "armor": 3,
-            "price": 0.0001,
-            "stats": {
-              "stats": {}
-            }
-          }
-        }
+        "equipment": {}
       },
-      "currentSite": "The Sea of Cinders",
+      "currentSite": "Dunemaul Compound",
       "siteProgress": {
         "Northshire Valley": 1,
         "The Black Anvil": 2
@@ -11513,7 +11513,7 @@
         "The Shifting Mire": 1,
         "Abyssal Sands": 1,
         "Broken Pillar": 1,
-        "Dunemaul Compound": 1,
+        "Dunemaul Compound": 4,
         "Eastmoon Ruins": 1,
         "Land's End Beach": 1,
         "Lost Rigger Cove": 1,
@@ -11829,14 +11829,301 @@
         "Jadefire Glen": 1,
         "Corrupted Moonwell": 1,
         "The Broodmother's Lair": 1,
-        "The Den": 1
+        "The Den": 1,
+        "The Garrison": 1,
+        "Twilight's Run": 1,
+        "Eastern Wastes": 2,
+        "Deathclasp Lair": 1,
+        "Orgrimmar Legion Camp": 1,
+        "Valor's Rest": 2,
+        "Ironforge Brigade Outpost": 1,
+        "Crater Descend": 2,
+        "Northern Climb": 2,
+        "Southern Climb": 2,
+        "Empty Dune": 2,
+        "Scorching Sands": 2
       },
       "buyback": [],
       "startDate": "2023-11-02T23:04:26.1954845+01:00",
-      "lastLoaded": "2023-11-11T19:23:41.2205121+01:00",
-      "lastPlayed": "2023-11-11T19:25:22.6058601+01:00",
-      "timePlayed": "03:57:20.7374327",
-      "lastVisitedTalents": 2
+      "lastLoaded": "2023-11-17T12:16:22.0941596+01:00",
+      "lastPlayed": "2023-11-17T12:19:44.3815653+01:00",
+      "timePlayed": "05:13:00.0678926"
+    },
+    {
+      "player": {
+        "level": 1,
+        "name": "Delaney",
+        "race": "Human",
+        "spec": "Priest",
+        "gender": "Female",
+        "abilities": {
+          "Staff Proficiency": 1,
+          "Cloth Proficiency": 1,
+          "One Handed Mace Proficiency": 1,
+          "Off Hand Proficiency": 1,
+          "Dagger Proficiency": 1,
+          "Wand Proficiency": 1,
+          "Smite": 0,
+          "Power Word: Shield": 0,
+          "Shadow Word: Pain": 0
+        },
+        "actionBars": [
+          {
+            "ability": "Smite"
+          },
+          {
+            "ability": "Power Word: Shield"
+          },
+          {
+            "ability": "Shadow Word: Pain"
+          }
+        ],
+        "stats": {
+          "stats": {
+            "Stamina": 6,
+            "Strength": 6,
+            "Agility": 6,
+            "Intellect": 6,
+            "Spirit": 0,
+            "Earth Mastery": 1,
+            "Fire Mastery": 3,
+            "Air Mastery": 2,
+            "Water Mastery": 1,
+            "Frost Mastery": 2,
+            "Lightning Mastery": 1,
+            "Arcane Mastery": 3,
+            "Decay Mastery": 1,
+            "Shadow Mastery": 2,
+            "Order Mastery": 3
+          }
+        },
+        "inventory": {
+          "items": [],
+          "bags": [
+            {
+              "rarity": "Uncommon",
+              "name": "Traveler's Backpack",
+              "icon": "itemmiscbag08",
+              "type": "Bag",
+              "ilvl": 55,
+              "lvl": 1,
+              "price": 0.875,
+              "bagSpace": 8,
+              "stats": {
+                "stats": {}
+              }
+            }
+          ]
+        },
+        "equipment": {
+          "Main Hand": {
+            "rarity": "Common",
+            "name": "Worn Mace",
+            "icon": "itemmace03",
+            "detailedType": "Mace",
+            "type": "One Handed",
+            "ilvl": 2,
+            "lvl": 1,
+            "minDamage": 1,
+            "maxDamage": 3,
+            "price": 0.0007,
+            "speed": 1.9,
+            "stats": {
+              "stats": {}
+            }
+          },
+          "Feet": {
+            "rarity": "Common",
+            "name": "Neophyte's Boots",
+            "icon": "itemboots04",
+            "type": "Feet",
+            "ilvl": 1,
+            "lvl": 1,
+            "price": 0.0001,
+            "stats": {
+              "stats": {}
+            }
+          },
+          "Legs": {
+            "rarity": "Poor",
+            "name": "Neophyte's Pants",
+            "icon": "itempants02",
+            "type": "Legs",
+            "armorClass": "Cloth",
+            "ilvl": 1,
+            "lvl": 1,
+            "armor": 2,
+            "price": 0.0001,
+            "stats": {
+              "stats": {}
+            }
+          },
+          "Chest": {
+            "rarity": "Poor",
+            "name": "Neophyte's Robe",
+            "icon": "itemchestcloth13",
+            "type": "Chest",
+            "armorClass": "Cloth",
+            "ilvl": 1,
+            "lvl": 1,
+            "armor": 3,
+            "price": 0.0001,
+            "stats": {
+              "stats": {}
+            }
+          }
+        }
+      },
+      "currentSite": "Northshire Abbey",
+      "siteProgress": {},
+      "commonsKilled": {},
+      "raresKilled": {},
+      "elitesKilled": {},
+      "siteVisits": {
+        "Northshire Abbey": 1
+      },
+      "startDate": "2023-11-17T12:08:55.9976007+01:00"
+    },
+    {
+      "player": {
+        "level": 1,
+        "name": "Shalra",
+        "race": "Troll",
+        "spec": "Warrior",
+        "gender": "Female",
+        "abilities": {
+          "Dual Wielding Proficiency": 1,
+          "Two Handed Axe Proficiency": 1,
+          "Two Handed Mace Proficiency": 1,
+          "Two Handed Sword Proficiency": 1,
+          "Polearm Proficiency": 1,
+          "Shield Proficiency": 1,
+          "Mail Proficiency": 1,
+          "Plate Proficiency": 0,
+          "One Handed Axe Proficiency": 1,
+          "One Handed Mace Proficiency": 1,
+          "One Handed Sword Proficiency": 1,
+          "Fist Weapon Proficiency": 1,
+          "Off Hand Proficiency": 1,
+          "Heroic Strike": 0,
+          "Battle Shout": 0,
+          "Bloodthirst": 0,
+          "Revenge": 0
+        },
+        "actionBars": [
+          {
+            "ability": "Heroic Strike"
+          }
+        ],
+        "stats": {
+          "stats": {
+            "Stamina": 7,
+            "Strength": 6,
+            "Agility": 7,
+            "Intellect": 6,
+            "Spirit": 0,
+            "Earth Mastery": 2,
+            "Fire Mastery": 3,
+            "Air Mastery": 2,
+            "Water Mastery": 1,
+            "Frost Mastery": 3,
+            "Lightning Mastery": 2,
+            "Arcane Mastery": 1,
+            "Decay Mastery": 1,
+            "Shadow Mastery": 3,
+            "Order Mastery": 1
+          }
+        },
+        "inventory": {
+          "items": [
+            {
+              "rarity": "Poor",
+              "name": "Brawler's Pants",
+              "icon": "itempants02",
+              "type": "Legs",
+              "armorClass": "Cloth",
+              "ilvl": 1,
+              "lvl": 1,
+              "armor": 2,
+              "price": 0.0001,
+              "stats": {
+                "stats": {}
+              }
+            }
+          ],
+          "bags": [
+            {
+              "rarity": "Uncommon",
+              "name": "Traveler's Backpack",
+              "icon": "itemmiscbag08",
+              "type": "Bag",
+              "ilvl": 55,
+              "lvl": 1,
+              "price": 0.875,
+              "bagSpace": 8,
+              "stats": {
+                "stats": {}
+              }
+            }
+          ]
+        },
+        "equipment": {
+          "Off Hand": {
+            "rarity": "Poor",
+            "name": "Worn Wooden Shield",
+            "icon": "itemshield09",
+            "detailedType": "Shield",
+            "type": "Off Hand",
+            "ilvl": 1,
+            "lvl": 1,
+            "armor": 5,
+            "price": 0.0001,
+            "stats": {
+              "stats": {}
+            }
+          },
+          "Main Hand": {
+            "rarity": "Common",
+            "name": "Worn Axe",
+            "icon": "itemaxe11",
+            "detailedType": "Axe",
+            "type": "One Handed",
+            "ilvl": 2,
+            "lvl": 1,
+            "minDamage": 1,
+            "maxDamage": 3,
+            "price": 0.0007,
+            "speed": 2.0,
+            "stats": {
+              "stats": {}
+            }
+          },
+          "Chest": {
+            "rarity": "Common",
+            "name": "Brawler's Harness",
+            "icon": "itemchestleather04",
+            "type": "Chest",
+            "ilvl": 1,
+            "lvl": 1,
+            "price": 0.0001,
+            "stats": {
+              "stats": {}
+            }
+          }
+        }
+      },
+      "currentSite": "Valley of Trials",
+      "siteProgress": {},
+      "commonsKilled": {},
+      "raresKilled": {},
+      "elitesKilled": {},
+      "siteVisits": {
+        "Valley of Trials": 1
+      },
+      "startDate": "2023-11-17T12:19:49.3605186+01:00",
+      "lastLoaded": "2023-11-17T12:19:49.9704043+01:00",
+      "lastPlayed": "2023-11-17T12:21:38.9972914+01:00",
+      "timePlayed": "00:01:49.0268871"
     }
   ]
 }

@@ -17764,6 +17764,20 @@
       }
     ],
     "x": 75,
+    "y": -201,
+    "name": "Twilight's Run",
+    "zone": "Silithus",
+    "type": "HostileArea"
+  },
+  {
+    "areaSize": 3,
+    "progression": [
+      {
+        "type": "Treasure",
+        "point": 3
+      }
+    ],
+    "x": 75,
     "y": -203,
     "name": "Staghelm Point",
     "zone": "Silithus",
@@ -17952,6 +17966,37 @@
   {
     "commonEncounters": [
       {
+        "who": "Dust Stormer",
+        "levelMin": 55,
+        "levelMax": 56
+      },
+      {
+        "who": "Sand Skitterer",
+        "levelMin": 55,
+        "levelMax": 56
+      },
+      {
+        "who": "Dredge Stalker",
+        "levelMin": 55,
+        "levelMax": 56
+      }
+    ],
+    "areaSize": 3,
+    "progression": [
+      {
+        "type": "Treasure",
+        "point": 3
+      }
+    ],
+    "x": 74,
+    "y": -206,
+    "name": "Eastern Wastes",
+    "zone": "Silithus",
+    "type": "HostileArea"
+  },
+  {
+    "commonEncounters": [
+      {
         "who": "Tortured Sentinel",
         "levelMin": 57,
         "levelMax": 58
@@ -18027,6 +18072,43 @@
   {
     "commonEncounters": [
       {
+        "who": "Stonelash Flayer",
+        "levelMin": 57,
+        "levelMax": 58
+      },
+      {
+        "who": "Rock Stalker",
+        "levelMin": 58,
+        "levelMax": 59
+      }
+    ],
+    "eliteEncounters": [
+      {
+        "who": "Deathclasp",
+        "levelMin": 59
+      }
+    ],
+    "areaSize": 2,
+    "progression": [
+      {
+        "type": "Boss",
+        "bossName": "Deathclasp",
+        "point": 1
+      },
+      {
+        "type": "Treasure",
+        "point": 2
+      }
+    ],
+    "x": 66,
+    "y": -220,
+    "name": "Deathclasp Lair",
+    "zone": "Silithus",
+    "type": "HostileArea"
+  },
+  {
+    "commonEncounters": [
+      {
         "who": "Cyclone Warrior",
         "levelMin": 58,
         "levelMax": 59
@@ -18050,7 +18132,7 @@
         "point": 3
       }
     ],
-    "x": 59,
+    "x": 60,
     "y": -219,
     "name": "The Scarab Wall",
     "zone": "Silithus",
@@ -20963,6 +21045,42 @@
   {
     "commonEncounters": [
       {
+        "who": "Glasshide Gazer",
+        "levelMin": 45,
+        "levelMax": 46
+      },
+      {
+        "who": "Blisterpaw Hyena",
+        "levelMin": 44,
+        "levelMax": 45
+      },
+      {
+        "who": "Scorpid Tail Lasher",
+        "levelMin": 45,
+        "levelMax": 46
+      },
+      {
+        "who": "Land Rager",
+        "levelMin": 45,
+        "levelMax": 46
+      }
+    ],
+    "areaSize": 3,
+    "progression": [
+      {
+        "type": "Treasure",
+        "point": 3
+      }
+    ],
+    "x": 119,
+    "y": -223,
+    "name": "Empty Dune",
+    "zone": "Tanaris",
+    "type": "HostileArea"
+  },
+  {
+    "commonEncounters": [
+      {
         "who": "Blisterpaw Hyena",
         "levelMin": 44,
         "levelMax": 45
@@ -21185,7 +21303,7 @@
       }
     ],
     "x": 108,
-    "y": -209,
+    "y": -211,
     "name": "Sandsorrow Watch",
     "zone": "Tanaris",
     "type": "HostileArea"
@@ -21340,6 +21458,63 @@
     "x": 104,
     "y": -219,
     "name": "The Noxious Lair",
+    "zone": "Tanaris",
+    "type": "HostileArea"
+  },
+  {
+    "commonEncounters": [
+      {
+        "who": "Rabid Blisterpaw",
+        "levelMin": 48,
+        "levelMax": 49
+      },
+      {
+        "who": "Glasshide Petrifier",
+        "levelMin": 48,
+        "levelMax": 49
+      },
+      {
+        "who": "Searing Roc",
+        "levelMin": 47,
+        "levelMax": 48
+      }
+    ],
+    "areaSize": 3,
+    "progression": [
+      {
+        "type": "Treasure",
+        "point": 3
+      }
+    ],
+    "x": 105,
+    "y": -226,
+    "name": "Scorching Sands",
+    "zone": "Tanaris",
+    "type": "HostileArea"
+  },
+  {
+    "commonEncounters": [
+      {
+        "who": "Scorpid Dunestalker",
+        "levelMin": 46,
+        "levelMax": 47
+      },
+      {
+        "who": "Glasshide Petrifier",
+        "levelMin": 48,
+        "levelMax": 49
+      }
+    ],
+    "areaSize": 3,
+    "progression": [
+      {
+        "type": "Treasure",
+        "point": 3
+      }
+    ],
+    "x": 99,
+    "y": -225,
+    "name": "Crater Descend",
     "zone": "Tanaris",
     "type": "HostileArea"
   },
@@ -25093,6 +25268,37 @@
   {
     "commonEncounters": [
       {
+        "who": "Elder Diemetradon",
+        "levelMin": 53,
+        "levelMax": 54
+      },
+      {
+        "who": "Bloodpetal Trapper",
+        "levelMin": 52,
+        "levelMax": 53
+      },
+      {
+        "who": "Frenzied Pterrodax",
+        "levelMin": 52,
+        "levelMax": 53
+      }
+    ],
+    "areaSize": 3,
+    "progression": [
+      {
+        "type": "Treasure",
+        "point": 3
+      }
+    ],
+    "x": 83,
+    "y": -204,
+    "name": "Northern Climb",
+    "zone": "Un'Goro Crater",
+    "type": "HostileArea"
+  },
+  {
+    "commonEncounters": [
+      {
         "who": "Plated Stegodon",
         "levelMin": 53,
         "levelMax": 54
@@ -25214,6 +25420,42 @@
       },
       {
         "who": "Ravasaur Runner",
+        "levelMin": 49,
+        "levelMax": 50
+      },
+      {
+        "who": "Bloodpetal Tresher",
+        "levelMin": 49,
+        "levelMax": 50
+      }
+    ],
+    "areaSize": 3,
+    "progression": [
+      {
+        "type": "Treasure",
+        "point": 3
+      }
+    ],
+    "x": 98,
+    "y": -217,
+    "name": "Southern Climb",
+    "zone": "Un'Goro Crater",
+    "type": "HostileArea"
+  },
+  {
+    "commonEncounters": [
+      {
+        "who": "Ravasaur",
+        "levelMin": 48,
+        "levelMax": 49
+      },
+      {
+        "who": "Ravasaur Runner",
+        "levelMin": 49,
+        "levelMax": 50
+      },
+      {
+        "who": "Ravasaur Hunter",
         "levelMin": 49,
         "levelMax": 50
       },

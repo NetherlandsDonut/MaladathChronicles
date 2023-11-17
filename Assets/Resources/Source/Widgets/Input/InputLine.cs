@@ -57,9 +57,9 @@ public class InputLine : MonoBehaviour
             {
                 if (foo.Value() == "DELETE")
                 {
-                    SaveGame.saves[GameSettings.settings.selectedRealm].RemoveAll(x => x.player.name == GameSettings.settings.selectedCharacter);
-                    if (SaveGame.saves[GameSettings.settings.selectedRealm].Count > 0)
-                        GameSettings.settings.selectedCharacter = SaveGame.saves[GameSettings.settings.selectedRealm].First().player.name;
+                    saves[GameSettings.settings.selectedRealm].RemoveAll(x => x.player.name == GameSettings.settings.selectedCharacter);
+                    if (saves[GameSettings.settings.selectedRealm].Count > 0)
+                        GameSettings.settings.selectedCharacter = saves[GameSettings.settings.selectedRealm].First().player.name;
                     else GameSettings.settings.selectedCharacter = "";
                     CloseWindow("ConfirmDeleteCharacter");
                     RemoveDesktopBackground();
@@ -479,17 +479,17 @@ public class InputLine : MonoBehaviour
             else if (foo.Value() == "exploreall")
             {
                 foreach (var site in SiteHostileArea.areas)
-                    if (!SaveGame.currentSave.siteVisits.ContainsKey(site.name))
-                        SaveGame.currentSave.siteVisits.Add(site.name, 1);
+                    if (!currentSave.siteVisits.ContainsKey(site.name))
+                        currentSave.siteVisits.Add(site.name, 1);
                 foreach (var site in SiteTown.towns)
-                    if (!SaveGame.currentSave.siteVisits.ContainsKey(site.name))
-                        SaveGame.currentSave.siteVisits.Add(site.name, 1);
+                    if (!currentSave.siteVisits.ContainsKey(site.name))
+                        currentSave.siteVisits.Add(site.name, 1);
                 foreach (var site in SiteInstance.instances)
-                    if (!SaveGame.currentSave.siteVisits.ContainsKey(site.name))
-                        SaveGame.currentSave.siteVisits.Add(site.name, 1);
+                    if (!currentSave.siteVisits.ContainsKey(site.name))
+                        currentSave.siteVisits.Add(site.name, 1);
                 foreach (var site in SiteComplex.complexes)
-                    if (!SaveGame.currentSave.siteVisits.ContainsKey(site.name))
-                        SaveGame.currentSave.siteVisits.Add(site.name, 1);
+                    if (!currentSave.siteVisits.ContainsKey(site.name))
+                        currentSave.siteVisits.Add(site.name, 1);
                 CDesktop.ReloadAssets();
             }
             else if (foo.Value().StartsWith("tele"))
@@ -497,9 +497,9 @@ public class InputLine : MonoBehaviour
                 var site = Site.FindSite(x => x.name.ToLower() == foo.Value().Substring(5));
                 if (site != null)
                 {
-                    SaveGame.currentSave.currentSite = site.name;
-                    if (!SaveGame.currentSave.siteVisits.ContainsKey(site.name))
-                        SaveGame.currentSave.siteVisits.Add(site.name, 1);
+                    currentSave.currentSite = site.name;
+                    if (!currentSave.siteVisits.ContainsKey(site.name))
+                        currentSave.siteVisits.Add(site.name, 1);
                     CDesktop.cameraDestination = new Vector2(site.x, site.y) * 19;
                     Respawn("Site: " + site.name);
                 }
@@ -518,7 +518,13 @@ public class InputLine : MonoBehaviour
             }
             else if (foo.Value().StartsWith("exp"))
             {
-                currentSave.player.ReceiveExperience(int.Parse(foo.Value().Substring(4)));
+                currentSave.player.ReceiveExperience(int.Parse(foo.Value()[4..]));
+            }
+            else if (foo.Value().StartsWith("additem"))
+            {
+                var item = Item.items.Find(x => x.name.ToLower() == foo.Value()[8..].ToLower());
+                if (item != null)
+                    currentSave.player.inventory.items.Add(item);
             }
             foo.Set("");
         }

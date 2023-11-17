@@ -1,7 +1,6 @@
 using System.Linq;
 using System.Collections.Generic;
 
-using static Root;
 using static Defines;
 
 //Iventory is a space for storing money and items
@@ -13,7 +12,7 @@ public class Inventory
     {
         bags = new();
         this.items = items.Select(x => Item.GetItem(x)).ToList();
-    }
+    } 
 
     //Amount of money in the bags
     public double money;

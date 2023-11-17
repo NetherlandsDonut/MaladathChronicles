@@ -8,20 +8,34 @@ public class Defines
     //This function generates default values for the game settings
     public void FillNulls()
     {
-        maxPathLength = 9999;
-        maxPlayerLevel = 60;
-        maxBagsEquipped = 3;
-        backpackSpace = 12;
-        aiDepth = 5;
-        aiManualBranches = 1;
-        textPaddingLeft = 4;
-        textPaddingRight = 12;
-        shadowSystem = 1;
-        adeptTreeRequirement = 10;
-        mapGridSize = 19;
-        markerCharacter ??= "_";
-        textWrapEnding ??= "...";
-        frameTime = 0.08f;
+        if (maxPathLength < 0)
+            maxPathLength = 9999;
+        if (maxPlayerLevel < 1)
+            maxPlayerLevel = 60;
+        if (maxBagsEquipped < 1)
+            maxBagsEquipped = 4;
+        if (backpackSpace < 1)
+            backpackSpace = 3;
+        if (aiDepth < 1)
+            aiDepth = 5;
+        if (aiManualBranches < 1)
+            aiManualBranches = 1;
+        if (textPaddingLeft < 0)
+            textPaddingLeft = 4;
+        if (textPaddingRight < 0)
+            textPaddingRight = 12;
+        if (shadowSystem < 0)
+            shadowSystem = 1;
+        if (adeptTreeRequirement < 0)
+            adeptTreeRequirement = 10;
+        if (mapGridSize < 0)
+            mapGridSize = 19;
+        if (markerCharacter == null || markerCharacter == "")
+            markerCharacter ??= "_";
+        if (textWrapEnding == null || textWrapEnding == "")
+            textWrapEnding ??= "...";
+        if (frameTime < 0.01f)
+            frameTime = 0.08f;
     }
 
     public int maxPathLength;

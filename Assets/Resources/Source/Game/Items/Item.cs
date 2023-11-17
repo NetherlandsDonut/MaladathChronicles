@@ -125,9 +125,6 @@ public class Item
     //Amount of block power provided to the wearer
     public int block;
 
-    //Amount of block power provided to the wearer
-    public int bagSize;
-
     //List of abilities provided to the wearer of this item
     public Dictionary<string, int> abilities;
 
@@ -191,7 +188,7 @@ public class Item
             return false;
         if (specs != null && !specs.Contains(entity.spec))
             return false;
-        if (type == "Container")
+        if (type == "Bag")
             return entity.inventory.bags.Count < defines.maxBagsEquipped;
         else if (armorClass != null)
             return entity.abilities.ContainsKey(armorClass + " Proficiency");
@@ -256,7 +253,7 @@ public class Item
 
     private void Equip(Entity entity, string slot)
     {
-        if (slot == "Container") entity.inventory.bags.Add(this);
+        if (slot == "Bag") entity.inventory.bags.Add(this);
         else entity.equipment[slot] = this;
         if (entity.inventory.items.Contains(this))
             entity.inventory.items.Remove(this);
@@ -298,10 +295,9 @@ public class Item
                 Equip(entity, "Main Hand");
             }
         }
-        else if (type == "Container")
+        else if (type == "Bag")
         {
-            entity.Unequip(new() { "Main Hand" }, index);
-            Equip(entity, "Main Hand");
+            Equip(entity, "Bag");
         }
         else
         {
@@ -493,8 +489,8 @@ public class Item
                 AddLine(item.type + " " + item.detailedType);
                 AddLine(item.minDamage + " - " + item.maxDamage + " Damage");
             }
-            else
-                AddLine(item.type == null ? "" : item.type);
+            else if (item.bagSpace != 0) AddLine(item.bagSpace + " Slot Bag");
+            else AddLine(item.type == null ? "" : item.type);
         });
         if (item.stats != null && item.stats.stats.Count > 0)
             AddPaddingRegion(() =>

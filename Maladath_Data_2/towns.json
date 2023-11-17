@@ -1882,7 +1882,7 @@
       }
     ],
     "x": 117,
-    "y": -209,
+    "y": -210,
     "name": "Gadgetzan",
     "zone": "Tanaris",
     "faction": "Steamwheedle Cartel"
@@ -1969,6 +1969,27 @@
     "name": "Bronzebeard Encampment",
     "zone": "Silithus",
     "faction": "Neutral"
+  },
+  {
+    "x": 68,
+    "y": -214,
+    "name": "Orgrimmar Legion Camp",
+    "zone": "Silithus",
+    "faction": "Orgrimmar"
+  },
+  {
+    "x": 79,
+    "y": -201,
+    "name": "Valor's Rest",
+    "zone": "Silithus",
+    "faction": "Cenarion Circle"
+  },
+  {
+    "x": 61,
+    "y": -210,
+    "name": "Ironforge Brigade Outpost",
+    "zone": "Silithus",
+    "faction": "Ironforge"
   },
   {
     "x": 296,

@@ -4,12 +4,14 @@
     "icon": "ClassRogue",
     "startingEquipment": {
       "Pandaren": [
+        "Traveler's Backpack",
         "Footpad's Shirt",
         "Footpad's Pants",
         "Footpad's Shoes",
         "Worn Dagger"
       ],
       "Dwarf": [
+        "Traveler's Backpack",
         "Footpad's Shirt",
         "Footpad's Pants",
         "Footpad's Shoes",
@@ -17,24 +19,28 @@
         "Worn Dagger"
       ],
       "Gnome": [
+        "Traveler's Backpack",
         "Footpad's Shirt",
         "Footpad's Pants",
         "Footpad's Shoes",
         "Worn Dagger"
       ],
       "Human": [
+        "Traveler's Backpack",
         "Footpad's Shirt",
         "Footpad's Pants",
         "Footpad's Shoes",
         "Worn Dagger"
       ],
       "Night Elf": [
+        "Traveler's Backpack",
         "Footpad's Shirt",
         "Footpad's Pants",
         "Footpad's Shoes",
         "Worn Dagger"
       ],
       "Orc": [
+        "Traveler's Backpack",
         "Thug Shirt",
         "Thug Pants",
         "Thug Boots",
@@ -42,12 +48,14 @@
         "Worn Dagger"
       ],
       "Troll": [
+        "Traveler's Backpack",
         "Thug Shirt",
         "Thug Pants",
         "Thug Boots",
         "Worn Dagger"
       ],
       "Forsaken": [
+        "Traveler's Backpack",
         "Thug Shirt",
         "Thug Pants",
         "Thug Boots",
@@ -99,6 +107,7 @@
     "icon": "ClassHunter",
     "startingEquipment": {
       "Pandaren": [
+        "Traveler's Backpack",
         "Rugged Trapper's Shirt",
         "Rugged Trapper's Pants",
         "Rugged Trapper's Boots",
@@ -106,6 +115,7 @@
         "Worn Shortbow"
       ],
       "Dwarf": [
+        "Traveler's Backpack",
         "Rugged Trapper's Shirt",
         "Rugged Trapper's Pants",
         "Rugged Trapper's Boots",
@@ -113,6 +123,7 @@
         "Old Blunderbuss"
       ],
       "Night Elf": [
+        "Traveler's Backpack",
         "Rugged Trapper's Shirt",
         "Rugged Trapper's Pants",
         "Rugged Trapper's Boots",
@@ -120,6 +131,7 @@
         "Worn Shortbow"
       ],
       "Orc": [
+        "Traveler's Backpack",
         "Trapper's Shirt",
         "Trapper's Pants",
         "Trapper's Boots",
@@ -127,12 +139,14 @@
         "Worn Shortbow"
       ],
       "Tauren": [
+        "Traveler's Backpack",
         "Trapper's Shirt",
         "Trapper's Pants",
         "Worn Axe",
         "Old Blunderbuss"
       ],
       "Troll": [
+        "Traveler's Backpack",
         "Trapper's Shirt",
         "Trapper's Pants",
         "Worn Axe",
@@ -193,16 +207,19 @@
     "icon": "ClassShaman",
     "startingEquipment": {
       "Orc": [
+        "Traveler's Backpack",
         "Primitive Mantle",
         "Primitive Kilt",
         "Worn Mace"
       ],
       "Tauren": [
+        "Traveler's Backpack",
         "Primitive Mantle",
         "Primitive Kilt",
         "Worn Mace"
       ],
       "Troll": [
+        "Traveler's Backpack",
         "Primitive Mantle",
         "Primitive Kilt",
         "Worn Mace"
@@ -563,17 +580,20 @@
     "icon": "ClassWarrior",
     "startingEquipment": {
       "Pandaren": [
+        "Traveler's Backpack",
         "Recruit's Shirt",
         "Recruit's Pants",
         "Battleworn Hammer"
       ],
       "Dwarf": [
+        "Traveler's Backpack",
         "Recruit's Shirt",
         "Recruit's Pants",
         "Recruit's Boots",
         "Worn Battleaxe"
       ],
       "Gnome": [
+        "Traveler's Backpack",
         "Recruit's Shirt",
         "Recruit's Pants",
         "Recruit's Boots",
@@ -581,6 +601,7 @@
         "Worn Wooden Shield"
       ],
       "Human": [
+        "Traveler's Backpack",
         "Recruit's Shirt",
         "Recruit's Pants",
         "Recruit's Boots",
@@ -588,6 +609,7 @@
         "Worn Wooden Shield"
       ],
       "Night Elf": [
+        "Traveler's Backpack",
         "Recruit's Shirt",
         "Recruit's Pants",
         "Recruit's Boots",
@@ -595,23 +617,27 @@
         "Worn Wooden Shield"
       ],
       "Orc": [
+        "Traveler's Backpack",
         "Brawler's Harness",
         "Brawler's Pants",
         "Brawler's Boots",
         "Worn Battleaxe"
       ],
       "Tauren": [
+        "Traveler's Backpack",
         "Brawler's Harness",
         "Brawler's Pants",
         "Battleworn Hammer"
       ],
       "Troll": [
+        "Traveler's Backpack",
         "Brawler's Harness",
         "Brawler's Pants",
         "Worn Axe",
         "Worn Wooden Shield"
       ],
       "Forsaken": [
+        "Traveler's Backpack",
         "Brawler's Harness",
         "Brawler's Pants",
         "Brawler's Boots",
@@ -906,12 +932,14 @@
     "icon": "ClassPaladin",
     "startingEquipment": {
       "Dwarf": [
+        "Traveler's Backpack",
         "Squire's Shirt",
         "Squire's Pants",
         "Squire's Boots",
         "Battleworn Hammer"
       ],
       "Human": [
+        "Traveler's Backpack",
         "Squire's Shirt",
         "Squire's Pants",
         "Squire's Boots",
@@ -1272,11 +1300,13 @@
     "icon": "ClassDruid",
     "startingEquipment": {
       "Night Elf": [
+        "Traveler's Backpack",
         "Novice's Robe",
         "Novice's Pants",
         "Handcrafted Staff"
       ],
       "Tauren": [
+        "Traveler's Backpack",
         "Novice's Robe",
         "Novice's Pants",
         "Bent Staff"
@@ -1642,30 +1672,35 @@
     "icon": "ClassPriest",
     "startingEquipment": {
       "Dwarf": [
+        "Traveler's Backpack",
         "Neophyte's Robe",
         "Neophyte's Pants",
         "Neophyte's Boots",
         "Worn Mace"
       ],
       "Human": [
+        "Traveler's Backpack",
         "Neophyte's Robe",
         "Neophyte's Pants",
         "Neophyte's Boots",
         "Worn Mace"
       ],
       "Night Elf": [
+        "Traveler's Backpack",
         "Neophyte's Robe",
         "Neophyte's Pants",
         "Neophyte's Boots",
         "Worn Mace"
       ],
       "Troll": [
+        "Traveler's Backpack",
         "Neophyte's Robe",
         "Neophyte's Pants",
         "Neophyte's Boots",
         "Worn Mace"
       ],
       "Forsaken": [
+        "Traveler's Backpack",
         "Neophyte's Robe",
         "Neophyte's Pants",
         "Neophyte's Boots",
@@ -1907,24 +1942,28 @@
     "icon": "ClassWarlock",
     "startingEquipment": {
       "Gnome": [
+        "Traveler's Backpack",
         "Acolyte's Robe",
         "Acolyte's Pants",
         "Acolyte's Shoes",
         "Worn Dagger"
       ],
       "Human": [
+        "Traveler's Backpack",
         "Acolyte's Robe",
         "Acolyte's Pants",
         "Acolyte's Shoes",
         "Worn Dagger"
       ],
       "Orc": [
+        "Traveler's Backpack",
         "Acolyte's Robe",
         "Acolyte's Pants",
         "Acolyte's Shoes",
         "Worn Dagger"
       ],
       "Forsaken": [
+        "Traveler's Backpack",
         "Acolyte's Robe",
         "Acolyte's Pants",
         "Acolyte's Shoes",
@@ -2179,30 +2218,35 @@
     "icon": "ClassMage",
     "startingEquipment": {
       "Pandaren": [
+        "Traveler's Backpack",
         "Apprentice's Robe",
         "Apprentice's Pants",
         "Apprentice's Boots",
         "Bent Staff"
       ],
       "Gnome": [
+        "Traveler's Backpack",
         "Apprentice's Robe",
         "Apprentice's Pants",
         "Apprentice's Boots",
         "Bent Staff"
       ],
       "Human": [
+        "Traveler's Backpack",
         "Apprentice's Robe",
         "Apprentice's Pants",
         "Apprentice's Boots",
         "Bent Staff"
       ],
       "Troll": [
+        "Traveler's Backpack",
         "Apprentice's Robe",
         "Apprentice's Pants",
         "Apprentice's Boots",
         "Bent Staff"
       ],
       "Forsaken": [
+        "Traveler's Backpack",
         "Apprentice's Robe",
         "Apprentice's Pants",
         "Apprentice's Boots",
@@ -2573,6 +2617,7 @@
     "icon": "ClassMonk",
     "startingEquipment": {
       "Pandaren": [
+        "Traveler's Backpack",
         "Footpad's Shirt",
         "Footpad's Pants",
         "Footpad's Shoes",

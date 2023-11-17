@@ -1,8 +1,8 @@
 {
   "maxPathLength": 9999,
   "maxPlayerLevel": 60,
-  "maxBagsEquipped": 3,
-  "backpackSpace": 12,
+  "maxBagsEquipped": 4,
+  "backpackSpace": 3,
   "aiDepth": 5,
   "aiManualBranches": 1,
   "textPaddingLeft": 4,
