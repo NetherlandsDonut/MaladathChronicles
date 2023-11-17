@@ -160,21 +160,22 @@ public class Ability
             ability.PrintDescription(effector, other, 228, rank);
             if (ability.cost != null)
                 foreach (var cost in ability.cost)
-                {
-                    AddRegionGroup();
-                    AddHeaderRegion(() =>
+                    if (cost.Value > 0)
                     {
-                        AddSmallButton("Element" + cost.Key + "Rousing", (h) => { });
-                    });
-                    AddRegionGroup();
-                    SetRegionGroupWidth(33);
-                    AddHeaderRegion(() =>
-                    {
-                        AddLine(cost.Value + "", effector != null && effector.resources != null ? cost.Value > effector.resources[cost.Key] ? "Red" : "Green" : "Gray");
-                    });
-                }
+                        AddRegionGroup();
+                        AddHeaderRegion(() =>
+                        {
+                            AddSmallButton("Element" + cost.Key + "Rousing", (h) => { });
+                        });
+                        AddRegionGroup();
+                        SetRegionGroupWidth(33);
+                        AddHeaderRegion(() =>
+                        {
+                            AddLine(cost.Value + "", effector != null && effector.resources != null ? cost.Value > effector.resources[cost.Key] ? "Red" : "Green" : "Gray");
+                        });
+                    }
             AddRegionGroup();
-            SetRegionGroupWidth(228 - (ability.cost == null ? 0 : ability.cost.Count) * 52);
+            SetRegionGroupWidth(228 - (ability.cost == null ? 0 : ability.cost.Count(x => x.Value > 0)) * 52);
             AddPaddingRegion(() => { AddLine(); });
         }
     }
@@ -203,6 +204,9 @@ public class Ability
 
     //Indicates whether this ability should be always put on the bottom of the action bars in combat
     public bool putOnEnd;
+
+    //Hides this ability in spellbook
+    public bool hide;
 
     //Tags to help AI in calculating priorities in combat
     public List<string> tags;

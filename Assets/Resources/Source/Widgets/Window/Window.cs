@@ -12,6 +12,7 @@ using static Root.RegionBackgroundType;
 using static GameSettings;
 
 using static InputLine;
+using UnityEngine.Rendering;
 
 public class Window : MonoBehaviour
 {
@@ -99,6 +100,7 @@ public class Window : MonoBehaviour
         if (CDesktop != desktop || onlyWhenActive && !desktop.windows.Contains(this)) return;
         CDesktop.windows.FindAll(x => x.title == "Tooltip").ForEach(x => CloseWindow(x));
         var paginations = regionGroups.Select(x => x.pagination).ToList();
+        if (headerGroup != null) paginations.Insert(0, headerGroup.pagination);
         CloseWindow(this);
         SpawnWindowBlueprint(title, false, paginations);
     }
@@ -212,8 +214,11 @@ public class Window : MonoBehaviour
             CDesktop.LBWindow.LBRegionGroup = regionGroup;
             int index = CDesktop.LBWindow.regionGroups.IndexOf(regionGroup);
             if (index != -1 && paginations?.Count > index)
-                if (regionGroup.maxPagination() < paginations[index]) regionGroup.pagination = regionGroup.maxPagination() - 1;
-                else regionGroup.pagination = paginations[index];
+                if (regionGroup.maxPagination() < paginations[index + (headerGroup != null ? 1 : 0)]) regionGroup.pagination = regionGroup.maxPagination() - 1;
+                else regionGroup.pagination = paginations[index + (headerGroup != null ? 1 : 0)];
+            else if (headerGroup == regionGroup && paginations?.Count > 0)
+                if (regionGroup.maxPagination() < paginations[0]) regionGroup.pagination = regionGroup.maxPagination() - 1;
+                else regionGroup.pagination = paginations[0];
 
             #region CREATING REGIONS
 

@@ -3,7 +3,6 @@
     {
       "player": {
         "level": 60,
-        "unspentTalentPoints": 8,
         "name": "Tine",
         "race": "Human",
         "spec": "Mage",
@@ -27,7 +26,15 @@
           "Fervent Flickering": 0,
           "Pyroblast": 0,
           "Combustion": 0,
-          "Pyroclasm": 0
+          "Pyroclasm": 0,
+          "Freezing Nova": 0,
+          "Brain Freeze": 0,
+          "Ice Lance": 0,
+          "Frost Ward": 0,
+          "Fingers of Frost": 0,
+          "Blizzard": 0,
+          "Wintertide": 0,
+          "Frostbite": 0
         },
         "actionBars": [
           {
@@ -47,6 +54,9 @@
           },
           {
             "ability": "Scorch"
+          },
+          {
+            "ability": "Blizzard"
           }
         ],
         "stats": {
@@ -1055,9 +1065,9 @@
         }
       ],
       "startDate": "2023-10-18T07:52:13.0981561+02:00",
-      "lastLoaded": "2023-11-03T08:06:22.4322411+01:00",
-      "lastPlayed": "2023-11-03T08:28:50.5248335+01:00",
-      "timePlayed": "02:04:06.4039977",
+      "lastLoaded": "2023-11-17T15:07:44.9027026+01:00",
+      "lastPlayed": "2023-11-17T15:08:25.4778474+01:00",
+      "timePlayed": "02:04:46.9791425",
       "lastVisitedTalents": 1
     },
     {
@@ -10764,8 +10774,8 @@
   "Whitemane": [
     {
       "player": {
-        "level": 1,
-        "experience": 33,
+        "level": 5,
+        "experience": 1104,
         "name": "Delaney",
         "race": "Human",
         "spec": "Mage",
@@ -10877,11 +10887,13 @@
       "currentSite": "Dunemaul Compound",
       "siteProgress": {
         "Northshire Valley": 1,
-        "The Black Anvil": 2
+        "The Black Anvil": 2,
+        "Dunemaul Compound": 1
       },
       "commonsKilled": {
         "Young Wolf": 1,
-        "Blazing Fireguard": 2
+        "Blazing Fireguard": 2,
+        "Dunemaul Ogre": 1
       },
       "raresKilled": {},
       "elitesKilled": {},
@@ -11513,7 +11525,7 @@
         "The Shifting Mire": 1,
         "Abyssal Sands": 1,
         "Broken Pillar": 1,
-        "Dunemaul Compound": 4,
+        "Dunemaul Compound": 5,
         "Eastmoon Ruins": 1,
         "Land's End Beach": 1,
         "Lost Rigger Cove": 1,
@@ -11845,9 +11857,9 @@
       },
       "buyback": [],
       "startDate": "2023-11-02T23:04:26.1954845+01:00",
-      "lastLoaded": "2023-11-17T12:16:22.0941596+01:00",
-      "lastPlayed": "2023-11-17T12:19:44.3815653+01:00",
-      "timePlayed": "05:13:00.0678926"
+      "lastLoaded": "2023-11-17T15:07:31.9922178+01:00",
+      "lastPlayed": "2023-11-17T15:07:41.5822309+01:00",
+      "timePlayed": "05:14:02.7977523"
     },
     {
       "player": {
@@ -12121,9 +12133,9 @@
         "Valley of Trials": 1
       },
       "startDate": "2023-11-17T12:19:49.3605186+01:00",
-      "lastLoaded": "2023-11-17T12:19:49.9704043+01:00",
-      "lastPlayed": "2023-11-17T12:21:38.9972914+01:00",
-      "timePlayed": "00:01:49.0268871"
+      "lastLoaded": "2023-11-17T15:01:46.704434+01:00",
+      "lastPlayed": "2023-11-17T15:02:15.5283169+01:00",
+      "timePlayed": "00:02:17.8507700"
     }
   ]
 }

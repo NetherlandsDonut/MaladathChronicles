@@ -257,7 +257,7 @@ public static class Root
     {
         var window = CDesktop.windows.Find(x => x.title == windowName);
         if (window != null) window.Respawn(onlyWhenActive);
-        else SpawnWindowBlueprint(windowName, true);
+        else if (!onlyWhenActive) SpawnWindowBlueprint(windowName, true);
     }
 
     public static bool CloseWindow(string windowName)

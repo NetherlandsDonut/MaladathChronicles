@@ -736,10 +736,10 @@ public class Blueprint
                 });
             }
         ),
-        new("SpellbookAbilityList", () => {
-            SetAnchor(TopRight);
-            var activeAbilities = abilities.FindAll(x => x.cost != null && currentSave.player.abilities.ContainsKey(x.name)).ToDictionary(x => x, x => currentSave.player.abilities[x.name]);
-            AddHeaderGroup(() => activeAbilities.Count, 7);
+        new("SpellbookAbilityListActivated", () => {
+            SetAnchor(TopRight, 0, -19);
+            var activeAbilities = abilities.FindAll(x => !x.hide && x.cost != null && currentSave.player.abilities.ContainsKey(x.name)).ToDictionary(x => x, x => currentSave.player.abilities[x.name]);
+            AddHeaderGroup(() => abilities.Count(x => !x.hide && x.cost != null && currentSave.player.abilities.ContainsKey(x.name)), 7);
             SetRegionGroupWidth(171);
             SetRegionGroupHeight(342);
             AddHeaderRegion(() =>
@@ -768,7 +768,6 @@ public class Blueprint
                 var index = i;
                 AddPaddingRegion(() =>
                 {
-                    //SetRegionBackgroundAsImage("Sprites/Textures/SpellbookSpellBackground");
                     if (activeAbilities.Count > index + 7 * regionGroup.pagination)
                     {
                         var key = activeAbilities.ToList()[index + 7 * regionGroup.pagination];
@@ -783,7 +782,7 @@ public class Blueprint
                                 {
                                     currentSave.player.actionBars.Add(new ActionBar(key.Key.name));
                                     Respawn("PlayerSpellbookInfo");
-                                    Respawn("SpellbookAbilityList");
+                                    Respawn("SpellbookAbilityListActivated", true);
                                     PlaySound("DesktopActionbarAdd", 0.7f);
                                 }
                             },
@@ -800,11 +799,13 @@ public class Blueprint
                             SetBigButtonToGrayscale();
                             AddBigButtonOverlay("OtherGridBlurred");
                         }
+                        else if (currentSave.player.actionBars.Count < currentSave.player.ActionBarsAmount())
+                            AddBigButtonOverlay("OtherGlowLearnable");
                     }
                     else
                     {
                         SetRegionBackground(RegionBackgroundType.Padding);
-                        AddLine();
+                        AddBigButton("OtherEmpty", (h) => { });
                     }
                 });
             }
@@ -813,7 +814,75 @@ public class Blueprint
             AddPaddingRegion(() => AddLine("Activated", "", "Center"));
             AddRegionGroup();
             SetRegionGroupWidth(95);
-            AddButtonRegion(() => AddLine("Passive", "", "Center"), (h) => { CloseWindow("Activated"); SpawnWindowBlueprint("Passive"); });
+            AddButtonRegion(() => AddLine("Passive", "", "Center"), (h) => { CloseWindow("SpellbookAbilityListActivated"); SpawnWindowBlueprint("SpellbookAbilityListPassive"); });
+        }),
+        new("SpellbookAbilityListPassive", () => {
+            SetAnchor(TopRight, 0, -19);
+            var passiveAbilities = abilities.FindAll(x => !x.hide && x.cost == null && currentSave.player.abilities.ContainsKey(x.name)).ToDictionary(x => x, x => currentSave.player.abilities[x.name]);
+            AddHeaderGroup(() => abilities.Count(x => !x.hide && x.cost == null && currentSave.player.abilities.ContainsKey(x.name)), 7);
+            SetRegionGroupWidth(171);
+            SetRegionGroupHeight(342);
+            AddHeaderRegion(() =>
+            {
+                AddLine("Passive abilities:");
+                AddSmallButton("OtherReverse", (h) =>
+                {
+                    abilities.Reverse();
+                    abilitiesSearch.Reverse();
+                    Respawn("ObjectManagerAbilities");
+                    PlaySound("DesktopInventorySort", 0.2f);
+                });
+                if (!CDesktop.windows.Exists(x => x.title == "AbilitiesSort"))
+                    AddSmallButton("OtherSort", (h) =>
+                    {
+                        SpawnWindowBlueprint("AbilitiesSort");
+                        Respawn("ObjectManagerAbilities");
+                    });
+                else
+                    AddSmallButton("OtherSortOff", (h) => { });
+            });
+            var regionGroup = CDesktop.LBWindow.LBRegionGroup;
+            AddPaginationLine(regionGroup);
+            for (int i = 0; i < 7; i++)
+            {
+                var index = i;
+                AddPaddingRegion(() =>
+                {
+                    if (passiveAbilities.Count > index + 7 * regionGroup.pagination)
+                    {
+                        var key = passiveAbilities.ToList()[index + 7 * regionGroup.pagination];
+                        AddLine(key.Key.name);
+                        AddLine("Rank: ", "DarkGray");
+                        AddText("" + ToRoman(key.Value + 1));
+                        AddBigButton(key.Key.icon,
+                            null,
+                            null,
+                            (h) => () =>
+                            {
+                                SetAnchor(Center);
+                                var key = passiveAbilities.ToList()[index + 7 * regionGroup.pagination].Key;
+                                PrintAbilityTooltip(null, null, key, passiveAbilities[key]);
+                            }
+                        );
+                        if (currentSave.player.actionBars.Exists(x => x.ability == key.Key.name))
+                        {
+                            SetBigButtonToGrayscale();
+                            AddBigButtonOverlay("OtherGridBlurred");
+                        }
+                    }
+                    else
+                    {
+                        SetRegionBackground(RegionBackgroundType.Padding);
+                        AddBigButton("OtherEmpty", (h) => { });
+                    }
+                });
+            }
+            AddRegionGroup();
+            SetRegionGroupWidth(95);
+            AddButtonRegion(() => AddLine("Activated", "", "Center"), (h) => { CloseWindow("SpellbookAbilityListPassive"); SpawnWindowBlueprint("SpellbookAbilityListActivated"); });
+            AddRegionGroup();
+            SetRegionGroupWidth(95);
+            AddPaddingRegion(() => AddLine("Passive", "", "Center"));
         }),
         new("PlayerSpellbookInfo", () => {
             SetAnchor(TopLeft);
@@ -841,7 +910,7 @@ public class Blueprint
             for (int i = 0; i < currentSave.player.ActionBarsAmount(); i++)
             {
                 var index = i;
-                var abilityObj = currentSave.player.actionBars.Count <= index ? null : Ability.abilities.Find(x => x.name == currentSave.player.actionBars[index].ability);
+                var abilityObj = currentSave.player.actionBars.Count <= index ? null : abilities.Find(x => x.name == currentSave.player.actionBars[index].ability);
                 if (abilityObj != null)
                     AddButtonRegion(
                         () =>
@@ -852,10 +921,9 @@ public class Blueprint
                         (h) =>
                         {
                             currentSave.player.actionBars.RemoveAt(index);
-                            CloseWindow("SpellbookAbilityList");
-                            CloseWindow("PlayerSpellbookInfo");
-                            SpawnWindowBlueprint("SpellbookAbilityList");
-                            SpawnWindowBlueprint("PlayerSpellbookInfo");
+                            Respawn("SpellbookAbilityListActivated", true);
+                            Respawn("SpellbookAbilityListPassive", true);
+                            Respawn("PlayerSpellbookInfo");
                             PlaySound("DesktopActionbarRemove", 0.7f);
                         },
                         null,
@@ -1274,24 +1342,6 @@ public class Blueprint
             AddHeaderRegion(() =>
             {
                 AddLine("Inventory:");
-                AddSmallButton("OtherClose", (h) =>
-                {
-                    if (town != null)
-                    {
-                        if (CDesktop.title == "Bank")
-                        {
-                            CloseDesktop("Bank");
-                            PlaySound("DesktopBankClose");
-                        }
-                        else
-                            CloseDesktop("Vendor");
-                    }
-                    else
-                    {
-                        CloseDesktop(h.window.desktop.title);
-                        PlaySound("DesktopInventoryClose");
-                    }
-                });
                 AddSmallButton("OtherReverse", (h) =>
                 {
                     currentSave.player.inventory.items.Reverse();
@@ -7426,7 +7476,7 @@ public class Blueprint
             SpawnWindowBlueprint("MapToolbarClockRight");
             SpawnWindowBlueprint("MapToolbarStatusLeft");
             SpawnWindowBlueprint("MapToolbarStatusRight");
-            SpawnWindowBlueprint("SpellbookAbilityList");
+            SpawnWindowBlueprint("SpellbookAbilityListActivated");
             SpawnWindowBlueprint("PlayerSpellbookInfo");
             SpawnWindowBlueprint("SpellbookResources");
             SpawnWindowBlueprint("ExperienceBar");
@@ -7434,6 +7484,7 @@ public class Blueprint
             AddHotkey(P, () => { CloseDesktop("SpellbookScreen"); PlaySound("DesktopSpellbookScreenClose"); });
             AddHotkey(B, () => { CloseDesktop("SpellbookScreen"); SpawnDesktopBlueprint("EquipmentScreen"); PlaySound("DesktopSpellbookScreenClose"); });
             AddHotkey(Escape, () => { SwitchDesktop("Map"); CloseDesktop("SpellbookScreen"); PlaySound("DesktopSpellbookScreenClose"); });
+            AddPaginationHotkeys();
         }),
         new("EquipmentScreen", () =>
         {
@@ -7642,7 +7693,11 @@ public class Blueprint
         AddHotkey(D, () =>
         {
             var window = CDesktop.windows.Find(x => x.regionGroups.Any(y => y.maxPaginationReq != null));
-            if (window == null) return;
+            if (window == null)
+            {
+                window = CDesktop.windows.Find(x => x.headerGroup.maxPaginationReq != null);
+                if (window == null) return;
+            }
             var group = window.regionGroups.Find(x => x.maxPaginationReq != null);
             group.pagination += 1;
             var max = group.maxPagination();
@@ -7664,7 +7719,11 @@ public class Blueprint
         AddHotkey(A, () =>
         {
             var window = CDesktop.windows.Find(x => x.regionGroups.Any(y => y.maxPaginationReq != null));
-            if (window == null) return;
+            if (window == null)
+            {
+                window = CDesktop.windows.Find(x => x.headerGroup.maxPaginationReq != null);
+                if (window == null) return;
+            }
             var group = window.regionGroups.Find(x => x.maxPaginationReq != null);
             group.pagination -= 1;
             if (group.pagination < 0)
@@ -7674,7 +7733,11 @@ public class Blueprint
         AddHotkey(A, () =>
         {
             var window = CDesktop.windows.Find(x => x.regionGroups.Any(y => y.maxPaginationReq != null));
-            if (window == null) return;
+            if (window == null)
+            {
+                window = CDesktop.windows.Find(x => x.headerGroup.maxPaginationReq != null);
+                if (window == null) return;
+            }
             var group = window.regionGroups.Find(x => x.maxPaginationReq != null);
             group.pagination -= (int)Math.Round(EuelerGrowth()) / 2;
             if (group.pagination < 0)
@@ -7684,7 +7747,11 @@ public class Blueprint
         AddHotkey(Alpha1, () =>
         {
             var window = CDesktop.windows.Find(x => x.regionGroups.Any(y => y.maxPaginationReq != null));
-            if (window == null) return;
+            if (window == null)
+            {
+                window = CDesktop.windows.Find(x => x.headerGroup.maxPaginationReq != null);
+                if (window == null) return;
+            }
             var group = window.regionGroups.Find(x => x.maxPaginationReq != null);
             group.pagination = 0;
             window.Respawn();
@@ -7692,7 +7759,11 @@ public class Blueprint
         AddHotkey(Alpha2, () =>
         {
             var window = CDesktop.windows.Find(x => x.regionGroups.Any(y => y.maxPaginationReq != null));
-            if (window == null) return;
+            if (window == null)
+            {
+                window = CDesktop.windows.Find(x => x.headerGroup.maxPaginationReq != null);
+                if (window == null) return;
+            }
             var group = window.regionGroups.Find(x => x.maxPaginationReq != null);
             var max = group.maxPagination();
             group.pagination = (int)(max / 10 * 1.1);
@@ -7701,7 +7772,11 @@ public class Blueprint
         AddHotkey(Alpha3, () =>
         {
             var window = CDesktop.windows.Find(x => x.regionGroups.Any(y => y.maxPaginationReq != null));
-            if (window == null) return;
+            if (window == null)
+            {
+                window = CDesktop.windows.Find(x => x.headerGroup.maxPaginationReq != null);
+                if (window == null) return;
+            }
             var group = window.regionGroups.Find(x => x.maxPaginationReq != null);
             var max = group.maxPagination();
             group.pagination = (int)(max / 10 * 2.2);
@@ -7710,7 +7785,11 @@ public class Blueprint
         AddHotkey(Alpha4, () =>
         {
             var window = CDesktop.windows.Find(x => x.regionGroups.Any(y => y.maxPaginationReq != null));
-            if (window == null) return;
+            if (window == null)
+            {
+                window = CDesktop.windows.Find(x => x.headerGroup.maxPaginationReq != null);
+                if (window == null) return;
+            }
             var group = window.regionGroups.Find(x => x.maxPaginationReq != null);
             var max = group.maxPagination();
             group.pagination = (int)(max / 10 * 3.3);
@@ -7719,7 +7798,11 @@ public class Blueprint
         AddHotkey(Alpha5, () =>
         {
             var window = CDesktop.windows.Find(x => x.regionGroups.Any(y => y.maxPaginationReq != null));
-            if (window == null) return;
+            if (window == null)
+            {
+                window = CDesktop.windows.Find(x => x.headerGroup.maxPaginationReq != null);
+                if (window == null) return;
+            }
             var group = window.regionGroups.Find(x => x.maxPaginationReq != null);
             var max = group.maxPagination();
             group.pagination = (int)(max / 10 * 4.4);
@@ -7728,7 +7811,11 @@ public class Blueprint
         AddHotkey(Alpha6, () =>
         {
             var window = CDesktop.windows.Find(x => x.regionGroups.Any(y => y.maxPaginationReq != null));
-            if (window == null) return;
+            if (window == null)
+            {
+                window = CDesktop.windows.Find(x => x.headerGroup.maxPaginationReq != null);
+                if (window == null) return;
+            }
             var group = window.regionGroups.Find(x => x.maxPaginationReq != null);
             var max = group.maxPagination();
             group.pagination = (int)(max / 10 * 5.5);
@@ -7737,7 +7824,11 @@ public class Blueprint
         AddHotkey(Alpha7, () =>
         {
             var window = CDesktop.windows.Find(x => x.regionGroups.Any(y => y.maxPaginationReq != null));
-            if (window == null) return;
+            if (window == null)
+            {
+                window = CDesktop.windows.Find(x => x.headerGroup.maxPaginationReq != null);
+                if (window == null) return;
+            }
             var group = window.regionGroups.Find(x => x.maxPaginationReq != null);
             var max = group.maxPagination();
             group.pagination = (int)(max / 10 * 6.6);
@@ -7746,7 +7837,11 @@ public class Blueprint
         AddHotkey(Alpha8, () =>
         {
             var window = CDesktop.windows.Find(x => x.regionGroups.Any(y => y.maxPagination != null));
-            if (window == null) return;
+            if (window == null)
+            {
+                window = CDesktop.windows.Find(x => x.headerGroup.maxPaginationReq != null);
+                if (window == null) return;
+            }
             var group = window.regionGroups.Find(x => x.maxPaginationReq != null);
             var max = group.maxPagination();
             group.pagination = (int)(max / 10 * 7.7);
@@ -7755,7 +7850,11 @@ public class Blueprint
         AddHotkey(Alpha9, () =>
         {
             var window = CDesktop.windows.Find(x => x.regionGroups.Any(y => y.maxPaginationReq != null));
-            if (window == null) return;
+            if (window == null)
+            {
+                window = CDesktop.windows.Find(x => x.headerGroup.maxPaginationReq != null);
+                if (window == null) return;
+            }
             var group = window.regionGroups.Find(x => x.maxPaginationReq != null);
             var max = group.maxPagination();
             group.pagination = (int)(max / 10 * 8.8);
@@ -7764,10 +7863,14 @@ public class Blueprint
         AddHotkey(Alpha0, () =>
         {
             var window = CDesktop.windows.Find(x => x.regionGroups.Any(y => y.maxPaginationReq != null));
-            if (window == null) return;
+            if (window == null)
+            {
+                window = CDesktop.windows.Find(x => x.headerGroup.maxPaginationReq != null);
+                if (window == null) return;
+            }
             var group = window.regionGroups.Find(x => x.maxPaginationReq != null);
             var max = group.maxPagination();
-            group.pagination = (int)(max - 1);
+            group.pagination = max - 1;
             window.Respawn();
         });
     }

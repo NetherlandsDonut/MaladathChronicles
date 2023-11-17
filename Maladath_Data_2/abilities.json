@@ -1115,7 +1115,8 @@
     "ranks": [
       {}
     ],
-    "events": []
+    "events": [],
+    "hide": true
   },
   {
     "name": "Brain Freeze",
@@ -1382,7 +1383,8 @@
     "ranks": [
       {}
     ],
-    "events": []
+    "events": [],
+    "hide": true
   },
   {
     "name": "Combustion",
@@ -1775,7 +1777,8 @@
     "ranks": [
       {}
     ],
-    "events": []
+    "events": [],
+    "hide": true
   },
   {
     "name": "Cruel Winter",
@@ -1984,7 +1987,8 @@
     "ranks": [
       {}
     ],
-    "events": []
+    "events": [],
+    "hide": true
   },
   {
     "name": "Dash",
@@ -2375,7 +2379,8 @@
     "ranks": [
       {}
     ],
-    "events": []
+    "events": [],
+    "hide": true
   },
   {
     "name": "Earth Shield",
@@ -3004,7 +3009,8 @@
     "ranks": [
       {}
     ],
-    "events": []
+    "events": [],
+    "hide": true
   },
   {
     "name": "Flame Patch",
@@ -3464,7 +3470,8 @@
     "ranks": [
       {}
     ],
-    "events": []
+    "events": [],
+    "hide": true
   },
   {
     "name": "Hailstones",
@@ -4151,7 +4158,8 @@
     "ranks": [
       {}
     ],
-    "events": []
+    "events": [],
+    "hide": true
   },
   {
     "name": "Illumination",
@@ -4416,7 +4424,8 @@
     "ranks": [
       {}
     ],
-    "events": []
+    "events": [],
+    "hide": true
   },
   {
     "name": "Lesser Heal",
@@ -4434,7 +4443,8 @@
     "ranks": [
       {}
     ],
-    "events": []
+    "events": [],
+    "hide": true
   },
   {
     "name": "Lifebloom",
@@ -4587,7 +4597,8 @@
     "ranks": [
       {}
     ],
-    "events": []
+    "events": [],
+    "hide": true
   },
   {
     "name": "Mana Adept",
@@ -4982,7 +4993,8 @@
     "ranks": [
       {}
     ],
-    "events": []
+    "events": [],
+    "hide": true
   },
   {
     "name": "One Handed Axe Proficiency",
@@ -4991,7 +5003,8 @@
     "ranks": [
       {}
     ],
-    "events": []
+    "events": [],
+    "hide": true
   },
   {
     "name": "One Handed Mace Proficiency",
@@ -5000,7 +5013,8 @@
     "ranks": [
       {}
     ],
-    "events": []
+    "events": [],
+    "hide": true
   },
   {
     "name": "One Handed Sword Proficiency",
@@ -5009,7 +5023,8 @@
     "ranks": [
       {}
     ],
-    "events": []
+    "events": [],
+    "hide": true
   },
   {
     "name": "Enrage",
@@ -5159,7 +5174,8 @@
     "ranks": [
       {}
     ],
-    "events": []
+    "events": [],
+    "hide": true
   },
   {
     "name": "Polearm Proficiency",
@@ -5168,7 +5184,8 @@
     "ranks": [
       {}
     ],
-    "events": []
+    "events": [],
+    "hide": true
   },
   {
     "name": "Pouch Proficiency",
@@ -5177,7 +5194,8 @@
     "ranks": [
       {}
     ],
-    "events": []
+    "events": [],
+    "hide": true
   },
   {
     "name": "Power Infusion",
@@ -5450,7 +5468,8 @@
     "ranks": [
       {}
     ],
-    "events": []
+    "events": [],
+    "hide": true
   },
   {
     "name": "Slam",
@@ -5558,7 +5577,8 @@
     "ranks": [
       {}
     ],
-    "events": []
+    "events": [],
+    "hide": true
   },
   {
     "name": "Rend",
@@ -6210,7 +6230,8 @@
     "ranks": [
       {}
     ],
-    "events": []
+    "events": [],
+    "hide": true
   },
   {
     "name": "Shield Slam",
@@ -6465,7 +6486,8 @@
     "ranks": [
       {}
     ],
-    "events": []
+    "events": [],
+    "hide": true
   },
   {
     "name": "Star Surge",
@@ -6978,7 +7000,8 @@
     "ranks": [
       {}
     ],
-    "events": []
+    "events": [],
+    "hide": true
   },
   {
     "name": "Totemic Focus",
@@ -7032,7 +7055,8 @@
     "ranks": [
       {}
     ],
-    "events": []
+    "events": [],
+    "hide": true
   },
   {
     "name": "Two Handed Mace Proficiency",
@@ -7041,7 +7065,8 @@
     "ranks": [
       {}
     ],
-    "events": []
+    "events": [],
+    "hide": true
   },
   {
     "name": "Two Handed Sword Proficiency",
@@ -7050,7 +7075,8 @@
     "ranks": [
       {}
     ],
-    "events": []
+    "events": [],
+    "hide": true
   },
   {
     "name": "Umbral Intensity",
@@ -7376,7 +7402,8 @@
     "ranks": [
       {}
     ],
-    "events": []
+    "events": [],
+    "hide": true
   },
   {
     "name": "Water Shield",
