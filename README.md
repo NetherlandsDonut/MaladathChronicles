@@ -353,6 +353,20 @@ v0.4.7
 v0.4.8
     01.11 Added over 20 new sites
           Connected most of Eastern Kingdoms with paths
+v0.4.9
+    02.11 Transportation system unification
+v0.4.9
+    03.11 Integrated talent screen with toolbar
+          Unspent talent points indicator
+v0.4.9
+    07.11 Site progression visuals
+v0.4.9
+    10.11 Boss queue in areas
+          Defines added to external file
+v0.4.9
+    17.11 New spellbook layout
+          Bag system
+          Blocked progression till elite is killed
 ```
 
 </details>
