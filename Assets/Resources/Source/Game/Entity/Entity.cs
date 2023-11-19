@@ -313,6 +313,7 @@ public class Entity
         if (itemAbilities != null)
             foreach (var ability in itemAbilities)
                 abilities.Remove(ability.Key);
+        PlaySound(inventory.bags[index].ItemSound("PutDown"), 0.6f);
         inventory.items.Add(inventory.bags[index]);
         inventory.bags.RemoveAt(index);
     }

@@ -1111,12 +1111,12 @@
   {
     "name": "Bow Proficiency",
     "icon": "AbilityBowProficiency",
+    "hide": true,
     "tags": [],
     "ranks": [
       {}
     ],
-    "events": [],
-    "hide": true
+    "events": []
   },
   {
     "name": "Brain Freeze",
@@ -1379,12 +1379,12 @@
   {
     "name": "Cloth Proficiency",
     "icon": "AbilityClothProficiency",
+    "hide": true,
     "tags": [],
     "ranks": [
       {}
     ],
-    "events": [],
-    "hide": true
+    "events": []
   },
   {
     "name": "Combustion",
@@ -1773,12 +1773,12 @@
   {
     "name": "Crossbow Proficiency",
     "icon": "AbilityCrossbowProficiency",
+    "hide": true,
     "tags": [],
     "ranks": [
       {}
     ],
-    "events": [],
-    "hide": true
+    "events": []
   },
   {
     "name": "Cruel Winter",
@@ -1983,12 +1983,12 @@
   {
     "name": "Dagger Proficiency",
     "icon": "AbilityDaggerProficiency",
+    "hide": true,
     "tags": [],
     "ranks": [
       {}
     ],
-    "events": [],
-    "hide": true
+    "events": []
   },
   {
     "name": "Dash",
@@ -2375,12 +2375,12 @@
   {
     "name": "Dual Wielding Proficiency",
     "icon": "AbilityAbolishMagic",
+    "hide": true,
     "tags": [],
     "ranks": [
       {}
     ],
-    "events": [],
-    "hide": true
+    "events": []
   },
   {
     "name": "Earth Shield",
@@ -3005,12 +3005,12 @@
   {
     "name": "Fist Weapon Proficiency",
     "icon": "AbilityFistWeaponProficiency",
+    "hide": true,
     "tags": [],
     "ranks": [
       {}
     ],
-    "events": [],
-    "hide": true
+    "events": []
   },
   {
     "name": "Flame Patch",
@@ -3466,12 +3466,12 @@
   {
     "name": "Gun Proficiency",
     "icon": "AbilityGunProficiency",
+    "hide": true,
     "tags": [],
     "ranks": [
       {}
     ],
-    "events": [],
-    "hide": true
+    "events": []
   },
   {
     "name": "Hailstones",
@@ -4154,12 +4154,12 @@
   {
     "name": "Idol Proficiency",
     "icon": "AbilityIdolProficiency",
+    "hide": true,
     "tags": [],
     "ranks": [
       {}
     ],
-    "events": [],
-    "hide": true
+    "events": []
   },
   {
     "name": "Illumination",
@@ -4420,12 +4420,12 @@
   {
     "name": "Leather Proficiency",
     "icon": "AbilityLeatherProficiency",
+    "hide": true,
     "tags": [],
     "ranks": [
       {}
     ],
-    "events": [],
-    "hide": true
+    "events": []
   },
   {
     "name": "Lesser Heal",
@@ -4439,12 +4439,12 @@
   {
     "name": "Libram Proficiency",
     "icon": "AbilityLibramProficiency",
+    "hide": true,
     "tags": [],
     "ranks": [
       {}
     ],
-    "events": [],
-    "hide": true
+    "events": []
   },
   {
     "name": "Lifebloom",
@@ -4593,12 +4593,12 @@
   {
     "name": "Mail Proficiency",
     "icon": "AbilityMailProficiency",
+    "hide": true,
     "tags": [],
     "ranks": [
       {}
     ],
-    "events": [],
-    "hide": true
+    "events": []
   },
   {
     "name": "Mana Adept",
@@ -4989,42 +4989,42 @@
   {
     "name": "Off Hand Proficiency",
     "icon": "AbilityOffHandProficiency",
+    "hide": true,
     "tags": [],
     "ranks": [
       {}
     ],
-    "events": [],
-    "hide": true
+    "events": []
   },
   {
     "name": "One Handed Axe Proficiency",
     "icon": "AbilityOneHandedAxeProficiency",
+    "hide": true,
     "tags": [],
     "ranks": [
       {}
     ],
-    "events": [],
-    "hide": true
+    "events": []
   },
   {
     "name": "One Handed Mace Proficiency",
     "icon": "AbilityOneHandedMaceProficiency",
+    "hide": true,
     "tags": [],
     "ranks": [
       {}
     ],
-    "events": [],
-    "hide": true
+    "events": []
   },
   {
     "name": "One Handed Sword Proficiency",
     "icon": "AbilityOneHandedSwordProficiency",
+    "hide": true,
     "tags": [],
     "ranks": [
       {}
     ],
-    "events": [],
-    "hide": true
+    "events": []
   },
   {
     "name": "Enrage",
@@ -5170,32 +5170,32 @@
   {
     "name": "Plate Proficiency",
     "icon": "AbilityPlateProficiency",
+    "hide": true,
     "tags": [],
     "ranks": [
       {}
     ],
-    "events": [],
-    "hide": true
+    "events": []
   },
   {
     "name": "Polearm Proficiency",
     "icon": "AbilityPolearmProficiency",
+    "hide": true,
     "tags": [],
     "ranks": [
       {}
     ],
-    "events": [],
-    "hide": true
+    "events": []
   },
   {
     "name": "Pouch Proficiency",
     "icon": "AbilityPouchProficiency",
+    "hide": true,
     "tags": [],
     "ranks": [
       {}
     ],
-    "events": [],
-    "hide": true
+    "events": []
   },
   {
     "name": "Power Infusion",
@@ -5464,12 +5464,12 @@
   {
     "name": "Quiver Proficiency",
     "icon": "AbilityQuiverProficiency",
+    "hide": true,
     "tags": [],
     "ranks": [
       {}
     ],
-    "events": [],
-    "hide": true
+    "events": []
   },
   {
     "name": "Slam",
@@ -5573,12 +5573,12 @@
   {
     "name": "Relic Proficiency",
     "icon": "AbilityRelicProficiency",
+    "hide": true,
     "tags": [],
     "ranks": [
       {}
     ],
-    "events": [],
-    "hide": true
+    "events": []
   },
   {
     "name": "Rend",
@@ -6226,12 +6226,12 @@
   {
     "name": "Shield Proficiency",
     "icon": "AbilityShieldProficiency",
+    "hide": true,
     "tags": [],
     "ranks": [
       {}
     ],
-    "events": [],
-    "hide": true
+    "events": []
   },
   {
     "name": "Shield Slam",
@@ -6482,12 +6482,12 @@
   {
     "name": "Staff Proficiency",
     "icon": "AbilityStaffProficiency",
+    "hide": true,
     "tags": [],
     "ranks": [
       {}
     ],
-    "events": [],
-    "hide": true
+    "events": []
   },
   {
     "name": "Star Surge",
@@ -6996,12 +6996,12 @@
   {
     "name": "Totem Proficiency",
     "icon": "AbilityTotemProficiency",
+    "hide": true,
     "tags": [],
     "ranks": [
       {}
     ],
-    "events": [],
-    "hide": true
+    "events": []
   },
   {
     "name": "Totemic Focus",
@@ -7051,32 +7051,32 @@
   {
     "name": "Two Handed Axe Proficiency",
     "icon": "AbilityTwoHandedAxeProficiency",
+    "hide": true,
     "tags": [],
     "ranks": [
       {}
     ],
-    "events": [],
-    "hide": true
+    "events": []
   },
   {
     "name": "Two Handed Mace Proficiency",
     "icon": "AbilityTwoHandedMaceProficiency",
+    "hide": true,
     "tags": [],
     "ranks": [
       {}
     ],
-    "events": [],
-    "hide": true
+    "events": []
   },
   {
     "name": "Two Handed Sword Proficiency",
     "icon": "AbilityTwoHandedSwordProficiency",
+    "hide": true,
     "tags": [],
     "ranks": [
       {}
     ],
-    "events": [],
-    "hide": true
+    "events": []
   },
   {
     "name": "Umbral Intensity",
@@ -7398,12 +7398,12 @@
   {
     "name": "Wand Proficiency",
     "icon": "AbilityWandProficiency",
+    "hide": true,
     "tags": [],
     "ranks": [
       {}
     ],
-    "events": [],
-    "hide": true
+    "events": []
   },
   {
     "name": "Water Shield",

@@ -1,262 +1,55 @@
 [
   {
-    "name": "Ravasaur Hunter",
-    "category": "Beast",
-    "subcategory": "Raptor",
-    "kind": "Common",
-    "portrait": "PortraitRaptorBlue",
-    "vitality": 1.0,
-    "abilities": {}
-  },
-  {
-    "name": "Bloodpetal Tresher",
+    "name": "Muckshell Clacker",
     "category": "Humanoid",
     "subcategory": "Human",
     "kind": "Common",
-    "portrait": "PortraitLasher",
+    "portrait": "PortraitChicken",
     "vitality": 1.0,
     "abilities": {}
   },
   {
-    "name": "Frenzied Pterrodax",
+    "name": "Young Murk Tresher",
     "category": "Humanoid",
     "subcategory": "Human",
     "kind": "Common",
-    "portrait": "PortraitPterrodax",
+    "portrait": "PortraitChicken",
     "vitality": 1.0,
     "abilities": {}
   },
   {
-    "name": "Bloodpetal Trapper",
+    "name": "Mudrock Burrower",
     "category": "Humanoid",
     "subcategory": "Human",
     "kind": "Common",
-    "portrait": "PortraitLasher",
+    "portrait": "PortraitChicken",
     "vitality": 1.0,
     "abilities": {}
   },
   {
-    "name": "Searing Roc",
-    "category": "Beast",
-    "subcategory": "Carrion Bird",
-    "kind": "Common",
-    "portrait": "PortraitCarrionBird",
-    "vitality": 1.0,
-    "abilities": {}
-  },
-  {
-    "name": "Glasshide Petrifier",
+    "name": "Darkfang Spider",
     "category": "Humanoid",
     "subcategory": "Human",
     "kind": "Common",
-    "portrait": "PortraitBasilisk",
+    "portrait": "PortraitChicken",
     "vitality": 1.0,
     "abilities": {}
   },
   {
-    "name": "Rabid Blisterpaw",
-    "category": "Beast",
-    "subcategory": "Hyena",
-    "kind": "Common",
-    "portrait": "PortraitHyenaYellow",
-    "vitality": 1.0,
-    "abilities": {}
-  },
-  {
-    "name": "Land Rager",
-    "category": "Elemental",
-    "subcategory": "Elemental",
-    "kind": "Common",
-    "portrait": "PortraitEarthElemental",
-    "vitality": 1.0,
-    "abilities": {}
-  },
-  {
-    "name": "Scorpid Tail Lasher",
-    "category": "Beast",
-    "subcategory": "Scorpid",
-    "kind": "Common",
-    "portrait": "PortraitScorpidBlue",
-    "vitality": 1.0,
-    "abilities": {}
-  },
-  {
-    "name": "Deathclasp",
-    "category": "Beast",
-    "subcategory": "Scorpid",
-    "kind": "Elite",
-    "portrait": "PortraitScorpidPink",
-    "vitality": 3.0,
-    "abilities": {}
-  },
-  {
-    "name": "Stonelash Flayer",
-    "category": "Beast",
-    "subcategory": "Scorpid",
-    "kind": "Common",
-    "portrait": "PortraitScorpidBlue",
-    "vitality": 1.0,
-    "abilities": {}
-  },
-  {
-    "name": "Dredge Stalker",
-    "category": "Beast",
-    "subcategory": "Borer",
-    "kind": "Common",
-    "portrait": "PortraitBorerDark",
-    "vitality": 1.0,
-    "abilities": {}
-  },
-  {
-    "name": "Sand Skitterer",
-    "category": "Beast",
-    "subcategory": "Borer",
-    "kind": "Common",
-    "portrait": "PortraitBorerDark",
-    "vitality": 1.0,
-    "abilities": {}
-  },
-  {
-    "name": "Anvilrage Marshal",
-    "category": "Humanoid",
-    "subcategory": "Dwarf",
-    "kind": "Common",
-    "portrait": "PortraitDarkIronCommander",
-    "vitality": 1.0,
-    "abilities": {}
-  },
-  {
-    "name": "Anvilrage Dragoon",
-    "category": "Dragonkin",
-    "subcategory": "Dragon",
-    "kind": "Common",
-    "portrait": "PortraitDarkIronDragoon",
-    "vitality": 1.0,
-    "abilities": {}
-  },
-  {
-    "name": "Anvilrage Guardsman",
-    "category": "Humanoid",
-    "subcategory": "Dwarf",
-    "kind": "Common",
-    "portrait": "PortraitDarkIronAgent",
-    "vitality": 1.0,
-    "abilities": {}
-  },
-  {
-    "name": "Ragereaver Golem",
-    "category": "Mechanical",
-    "subcategory": "Golem",
-    "kind": "Common",
-    "portrait": "PortraitGolemOrange",
-    "vitality": 1.0,
-    "abilities": {}
-  },
-  {
-    "name": "Wrath Hammer Construct",
-    "category": "Mechanical",
-    "subcategory": "Golem",
-    "kind": "Common",
-    "portrait": "PortraitGolemDark",
-    "vitality": 1.0,
-    "abilities": {}
-  },
-  {
-    "name": "Anvilrage Flame Keeper",
-    "category": "Humanoid",
-    "subcategory": "Dwarf",
-    "kind": "Common",
-    "portrait": "PortraitDarkIronFlameKeeper",
-    "vitality": 1.0,
-    "abilities": {}
-  },
-  {
-    "name": "Ironhand Guardian",
-    "category": "Mechanical",
-    "subcategory": "Golem",
-    "kind": "Common",
-    "portrait": "PortraitGolemOrange",
-    "vitality": 1.0,
-    "abilities": {}
-  },
-  {
-    "name": "Anvilrage Captain",
-    "category": "Humanoid",
-    "subcategory": "Dwarf",
-    "kind": "Common",
-    "portrait": "PortraitDarkIronCommander",
-    "vitality": 1.0,
-    "abilities": {}
-  },
-  {
-    "name": "Doomforge Dragoon",
-    "category": "Dragonkin",
-    "subcategory": "Dragon",
-    "kind": "Common",
-    "portrait": "PortraitDarkIronDragoon",
-    "vitality": 1.0,
-    "abilities": {}
-  },
-  {
-    "name": "Twilight Bodyguard",
+    "name": "Bloodfen Screecher",
     "category": "Humanoid",
     "subcategory": "Human",
     "kind": "Common",
-    "portrait": "PortraitTwilightThug",
+    "portrait": "PortraitChicken",
     "vitality": 1.0,
     "abilities": {}
   },
   {
-    "name": "Molten War Golem",
-    "category": "Mechanical",
-    "subcategory": "Golem",
-    "kind": "Common",
-    "portrait": "PortraitGolemMolten",
-    "vitality": 1.0,
-    "abilities": {}
-  },
-  {
-    "name": "Warbringer Construct",
-    "category": "Mechanical",
-    "subcategory": "Golem",
-    "kind": "Common",
-    "portrait": "PortraitGolemOrange",
-    "vitality": 1.0,
-    "abilities": {}
-  },
-  {
-    "name": "Anvilrage Medic",
+    "name": "Drywallow Crocolisk",
     "category": "Humanoid",
-    "subcategory": "Dwarf",
+    "subcategory": "Human",
     "kind": "Common",
-    "portrait": "PortraitDarkIronDarkCaster",
-    "vitality": 1.0,
-    "abilities": {}
-  },
-  {
-    "name": "Anvilrage Footman",
-    "category": "Humanoid",
-    "subcategory": "Dwarf",
-    "kind": "Common",
-    "portrait": "PortraitDarkIronAgent",
-    "vitality": 1.0,
-    "abilities": {}
-  },
-  {
-    "name": "Anvilrage Soldier",
-    "category": "Humanoid",
-    "subcategory": "Dwarf",
-    "kind": "Common",
-    "portrait": "PortraitDarkIronWarrior",
-    "vitality": 1.0,
-    "abilities": {}
-  },
-  {
-    "name": "Anvilrage Officer",
-    "category": "Humanoid",
-    "subcategory": "Dwarf",
-    "kind": "Common",
-    "portrait": "PortraitDarkIronOfficer",
+    "portrait": "PortraitChicken",
     "vitality": 1.0,
     "abilities": {}
   },
@@ -760,6 +553,15 @@
     "kind": "Elite",
     "portrait": "PortraitBaronSilverlaine",
     "vitality": 3.0,
+    "abilities": {}
+  },
+  {
+    "name": "Glasshide Petrifier",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "kind": "Common",
+    "portrait": "PortraitBasilisk",
+    "vitality": 1.0,
     "abilities": {}
   },
   {
@@ -2533,6 +2335,24 @@
     "abilities": {}
   },
   {
+    "name": "Dredge Stalker",
+    "category": "Beast",
+    "subcategory": "Borer",
+    "kind": "Common",
+    "portrait": "PortraitBorerDark",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Sand Skitterer",
+    "category": "Beast",
+    "subcategory": "Borer",
+    "kind": "Common",
+    "portrait": "PortraitBorerDark",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
     "name": "Dredge Crusher",
     "category": "Beast",
     "subcategory": "Borer",
@@ -2705,6 +2525,15 @@
     "kind": "Elite",
     "portrait": "PortraitCaptainFairmount",
     "vitality": 3.0,
+    "abilities": {}
+  },
+  {
+    "name": "Searing Roc",
+    "category": "Beast",
+    "subcategory": "Carrion Bird",
+    "kind": "Common",
+    "portrait": "PortraitCarrionBird",
+    "vitality": 1.0,
     "abilities": {}
   },
   {
@@ -4219,6 +4048,24 @@
     "abilities": {}
   },
   {
+    "name": "Anvilrage Guardsman",
+    "category": "Humanoid",
+    "subcategory": "Dwarf",
+    "kind": "Common",
+    "portrait": "PortraitDarkIronAgent",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Anvilrage Footman",
+    "category": "Humanoid",
+    "subcategory": "Dwarf",
+    "kind": "Common",
+    "portrait": "PortraitDarkIronAgent",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
     "name": "Dark Iron Sapper",
     "category": "Humanoid",
     "subcategory": "Dwarf",
@@ -4286,11 +4133,38 @@
     "abilities": {}
   },
   {
+    "name": "Anvilrage Marshal",
+    "category": "Humanoid",
+    "subcategory": "Dwarf",
+    "kind": "Common",
+    "portrait": "PortraitDarkIronCommander",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Anvilrage Captain",
+    "category": "Humanoid",
+    "subcategory": "Dwarf",
+    "kind": "Common",
+    "portrait": "PortraitDarkIronCommander",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
     "name": "Thaurissan Firewalker",
     "category": "Humanoid",
     "subcategory": "Dwarf",
     "kind": "Common",
     "portrait": "PortraitDarkIronCommander",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Anvilrage Medic",
+    "category": "Humanoid",
+    "subcategory": "Dwarf",
+    "kind": "Common",
+    "portrait": "PortraitDarkIronDarkCaster",
     "vitality": 1.0,
     "abilities": {}
   },
@@ -4335,6 +4209,33 @@
     "abilities": {}
   },
   {
+    "name": "Anvilrage Dragoon",
+    "category": "Dragonkin",
+    "subcategory": "Dragon",
+    "kind": "Common",
+    "portrait": "PortraitDarkIronDragoon",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Doomforge Dragoon",
+    "category": "Dragonkin",
+    "subcategory": "Dragon",
+    "kind": "Common",
+    "portrait": "PortraitDarkIronDragoon",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Anvilrage Flame Keeper",
+    "category": "Humanoid",
+    "subcategory": "Dwarf",
+    "kind": "Common",
+    "portrait": "PortraitDarkIronFlameKeeper",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
     "name": "Galgann Firehammer",
     "category": "Humanoid",
     "subcategory": "Dwarf",
@@ -4342,6 +4243,15 @@
     "kind": "Elite",
     "portrait": "PortraitDarkIronFlameKeeper",
     "vitality": 3.0,
+    "abilities": {}
+  },
+  {
+    "name": "Anvilrage Officer",
+    "category": "Humanoid",
+    "subcategory": "Dwarf",
+    "kind": "Common",
+    "portrait": "PortraitDarkIronOfficer",
+    "vitality": 1.0,
     "abilities": {}
   },
   {
@@ -4449,6 +4359,15 @@
     "faction": "Dark Iron Clan",
     "kind": "Common",
     "portrait": "PortraitDarkIronTunneler",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Anvilrage Soldier",
+    "category": "Humanoid",
+    "subcategory": "Dwarf",
+    "kind": "Common",
+    "portrait": "PortraitDarkIronWarrior",
     "vitality": 1.0,
     "abilities": {}
   },
@@ -5195,6 +5114,15 @@
       "Jehdana",
       "Azahva"
     ]
+  },
+  {
+    "name": "Land Rager",
+    "category": "Elemental",
+    "subcategory": "Elemental",
+    "kind": "Common",
+    "portrait": "PortraitEarthElemental",
+    "vitality": 1.0,
+    "abilities": {}
   },
   {
     "name": "Stone Fury",
@@ -7393,6 +7321,15 @@
     "abilities": {}
   },
   {
+    "name": "Wrath Hammer Construct",
+    "category": "Mechanical",
+    "subcategory": "Golem",
+    "kind": "Common",
+    "portrait": "PortraitGolemDark",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
     "name": "Obsidion",
     "category": "Mechanical",
     "subcategory": "Golem",
@@ -7427,6 +7364,42 @@
     "kind": "Elite",
     "portrait": "PortraitGolemLordArgelmach",
     "vitality": 3.0,
+    "abilities": {}
+  },
+  {
+    "name": "Molten War Golem",
+    "category": "Mechanical",
+    "subcategory": "Golem",
+    "kind": "Common",
+    "portrait": "PortraitGolemMolten",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Ragereaver Golem",
+    "category": "Mechanical",
+    "subcategory": "Golem",
+    "kind": "Common",
+    "portrait": "PortraitGolemOrange",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Ironhand Guardian",
+    "category": "Mechanical",
+    "subcategory": "Golem",
+    "kind": "Common",
+    "portrait": "PortraitGolemOrange",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Warbringer Construct",
+    "category": "Mechanical",
+    "subcategory": "Golem",
+    "kind": "Common",
+    "portrait": "PortraitGolemOrange",
+    "vitality": 1.0,
     "abilities": {}
   },
   {
@@ -8679,6 +8652,15 @@
     "abilities": {}
   },
   {
+    "name": "Rabid Blisterpaw",
+    "category": "Beast",
+    "subcategory": "Hyena",
+    "kind": "Common",
+    "portrait": "PortraitHyenaYellow",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
     "name": "Blisterpaw Hyena",
     "category": "Beast",
     "subcategory": "Hyena",
@@ -9479,11 +9461,29 @@
     "abilities": {}
   },
   {
+    "name": "Bloodpetal Tresher",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "kind": "Common",
+    "portrait": "PortraitLasherPink",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Bloodpetal Trapper",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "kind": "Common",
+    "portrait": "PortraitLasherPink",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
     "name": "Barbed Lasher",
     "category": "Humanoid",
     "subcategory": "Human",
     "kind": "Common",
-    "portrait": "PortraitLasher",
+    "portrait": "PortraitLasherBlack",
     "vitality": 1.0,
     "abilities": {}
   },
@@ -9501,7 +9501,7 @@
     "category": "Humanoid",
     "subcategory": "Human",
     "kind": "Common",
-    "portrait": "PortraitLasher",
+    "portrait": "PortraitLasherWhite",
     "vitality": 1.0,
     "abilities": {}
   },
@@ -9519,7 +9519,7 @@
     "category": "Humanoid",
     "subcategory": "Human",
     "kind": "Common",
-    "portrait": "PortraitLasher",
+    "portrait": "PortraitLasherBlack",
     "vitality": 1.0,
     "abilities": {}
   },
@@ -9528,7 +9528,7 @@
     "category": "Humanoid",
     "subcategory": "Human",
     "kind": "Elite",
-    "portrait": "PortraitLasherTeal",
+    "portrait": "PortraitLasherWhite",
     "vitality": 2.0,
     "abilities": {}
   },
@@ -9537,7 +9537,7 @@
     "category": "Humanoid",
     "subcategory": "Human",
     "kind": "Common",
-    "portrait": "PortraitLasherTeal",
+    "portrait": "PortraitLasherPink",
     "vitality": 1.0,
     "abilities": {}
   },
@@ -9636,7 +9636,7 @@
     "category": "Humanoid",
     "subcategory": "Gnome",
     "kind": "Common",
-    "portrait": "PortraitLeperGnomeAlternate",
+    "portrait": "PortraitLeperGnome",
     "vitality": 1.0,
     "abilities": {}
   },
@@ -12911,6 +12911,15 @@
     "abilities": {}
   },
   {
+    "name": "Frenzied Pterrodax",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "kind": "Common",
+    "portrait": "PortraitPterrodax",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
     "name": "Frenzied Pterrordax",
     "category": "Humanoid",
     "subcategory": "Human",
@@ -13722,6 +13731,15 @@
     "subcategory": "Raptor",
     "kind": "Common",
     "portrait": "PortraitRaptor",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Ravasaur Hunter",
+    "category": "Beast",
+    "subcategory": "Raptor",
+    "kind": "Common",
+    "portrait": "PortraitRaptorBlue",
     "vitality": 1.0,
     "abilities": {}
   },
@@ -15095,6 +15113,33 @@
     "kind": "Rare",
     "portrait": "PortraitScorpidBlack",
     "vitality": 2.0,
+    "abilities": {}
+  },
+  {
+    "name": "Scorpid Tail Lasher",
+    "category": "Beast",
+    "subcategory": "Scorpid",
+    "kind": "Common",
+    "portrait": "PortraitScorpidBlue",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Stonelash Flayer",
+    "category": "Beast",
+    "subcategory": "Scorpid",
+    "kind": "Common",
+    "portrait": "PortraitScorpidBlue",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Deathclasp",
+    "category": "Beast",
+    "subcategory": "Scorpid",
+    "kind": "Elite",
+    "portrait": "PortraitScorpidPink",
+    "vitality": 3.0,
     "abilities": {}
   },
   {
@@ -18168,6 +18213,15 @@
     "faction": "Twilight's Hammer",
     "kind": "Common",
     "portrait": "PortraitTwilightStonecaller",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Twilight Bodyguard",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "kind": "Common",
+    "portrait": "PortraitTwilightThug",
     "vitality": 1.0,
     "abilities": {}
   },

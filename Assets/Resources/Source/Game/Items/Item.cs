@@ -162,6 +162,7 @@ public class Item
         else if (detailedType == "Idol") result = "Ring";
         else if (detailedType == "Quiver") result = "ClothLeather";
         else if (detailedType == "Shield") result = "MetalLarge";
+        else if (type == "Bag") result = "Bag";
         else if (type == "Back") result = "ClothLeather";
         else if (type == "Neck") result = "Ring";
         else if (type == "Finger") result = "Ring";
@@ -407,6 +408,7 @@ public class Item
             (h) =>
             {
                 Item.item = item;
+                PlaySound("DesktopMenuOpen");
                 SpawnWindowBlueprint("ConfirmItemDestroy");
             }
         );

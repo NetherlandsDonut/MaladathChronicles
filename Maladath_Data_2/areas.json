@@ -8881,8 +8881,8 @@
         "point": 3
       }
     ],
-    "x": 113,
-    "y": -172,
+    "x": 117,
+    "y": -176,
     "name": "Beezil's Wreck",
     "zone": "Dustwallow Marsh",
     "type": "HostileArea"
@@ -9080,6 +9080,33 @@
     "type": "HostileArea"
   },
   {
+    "commonEncounters": [
+      {
+        "who": "Drywallow Crocolisk",
+        "levelMin": 35,
+        "levelMax": 36
+      },
+      {
+        "who": "Drywallow Vicejaw",
+        "levelMin": 36,
+        "levelMax": 37
+      },
+      {
+        "who": "Bloodfen Raptor",
+        "levelMin": 35,
+        "levelMax": 36
+      },
+      {
+        "who": "Bloodfen Screecher",
+        "levelMin": 35,
+        "levelMax": 36
+      },
+      {
+        "who": "Darkfang Spider",
+        "levelMin": 35,
+        "levelMax": 36
+      }
+    ],
     "areaSize": 3,
     "progression": [
       {
@@ -9094,6 +9121,49 @@
     "type": "HostileArea"
   },
   {
+    "commonEncounters": [
+      {
+        "who": "Mudrock Burrower",
+        "levelMin": 39,
+        "levelMax": 40
+      },
+      {
+        "who": "Young Murk Tresher",
+        "levelMin": 39,
+        "levelMax": 40
+      },
+      {
+        "who": "Muckshell Clacker",
+        "levelMin": 39,
+        "levelMax": 40
+      }
+    ],
+    "areaSize": 3,
+    "progression": [
+      {
+        "type": "Treasure",
+        "point": 3
+      }
+    ],
+    "x": 114,
+    "y": -168,
+    "name": "Dustwallow Bay",
+    "zone": "Dustwallow Marsh",
+    "type": "HostileArea"
+  },
+  {
+    "commonEncounters": [
+      {
+        "who": "Mudrock Tortoise",
+        "levelMin": 35,
+        "levelMax": 36
+      },
+      {
+        "who": "Darkfang Spider",
+        "levelMin": 34,
+        "levelMax": 35
+      }
+    ],
     "areaSize": 3,
     "progression": [
       {
@@ -9244,7 +9314,7 @@
         "point": 3
       }
     ],
-    "x": 109,
+    "x": 111,
     "y": -173,
     "name": "The Quagmire",
     "zone": "Dustwallow Marsh",

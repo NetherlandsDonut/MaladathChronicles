@@ -81,6 +81,8 @@ public class Blueprint
             },
             (h) =>
             {
+                if (settings.selectedRealm == "")
+                    SpawnWindowBlueprint("RealmRoster");
                 SpawnWindowBlueprint("CharacterRoster");
                 SpawnWindowBlueprint("CharacterInfo");
                 SpawnWindowBlueprint("TitleScreenSingleplayer");
@@ -206,7 +208,7 @@ public class Blueprint
                             settings.selectedCharacter = "";
                             SpawnTransition();
                         }
-                        h.window.Respawn();
+                        CloseWindow(h.window);
                         Respawn("TitleScreenSingleplayer");
                         Respawn("CharacterRoster");
                         Respawn("CharacterInfo");
@@ -287,7 +289,7 @@ public class Blueprint
             });
         }, true),
         new("ConfirmItemDestroy", () => {
-            SetAnchor(-115, 165);
+            SetAnchor(-115, 146);
             AddHeaderGroup();
             SetRegionGroupWidth(228);
             AddPaddingRegion(() =>
@@ -304,6 +306,7 @@ public class Blueprint
             },
             (h) =>
             {
+                PlaySound("DesktopMenuClose");
                 currentSave.player.inventory.items.Remove(item);
                 CloseWindow("ConfirmItemDestroy");
                 CDesktop.RespawnAll();
@@ -316,6 +319,7 @@ public class Blueprint
             },
             (h) =>
             {
+                PlaySound("DesktopMenuClose");
                 CloseWindow("ConfirmItemDestroy");
             });
         }, true),
@@ -425,61 +429,63 @@ public class Blueprint
             {
                 Respawn("RealmRoster");
             });
-            AddHeaderRegion(() =>
+            if (settings.selectedRealm != "")
             {
-                AddLine("Characters:", "Gray");
-            });
-            if (saves.ContainsKey(settings.selectedRealm))
-            {
-                foreach (var slot in saves[settings.selectedRealm])
+                AddHeaderRegion(() =>
                 {
-                    AddPaddingRegion(() =>
+                    AddLine("Characters:", "Gray");
+                });
+                if (saves.ContainsKey(settings.selectedRealm))
+                {
+                    foreach (var slot in saves[settings.selectedRealm])
                     {
-                        AddBigButton("Portrait" + slot.player.race.Clean() + (slot.player.Race().genderedPortrait ? slot.player.gender : ""), (h) =>
+                        AddPaddingRegion(() =>
                         {
-                            CloseWindow("RealmRoster");
+                            AddBigButton("Portrait" + slot.player.race.Clean() + (slot.player.Race().genderedPortrait ? slot.player.gender : ""), (h) =>
+                            {
+                                CloseWindow("RealmRoster");
+                                if (settings.selectedCharacter != slot.player.name)
+                                {
+                                    settings.selectedCharacter = slot.player.name;
+                                    SetDesktopBackground(slot.LoginBackground(), true);
+                                    Respawn("CharacterInfo");
+                                }
+                            });
                             if (settings.selectedCharacter != slot.player.name)
                             {
-                                settings.selectedCharacter = slot.player.name;
-                                SetDesktopBackground(slot.LoginBackground(), true);
-                                Respawn("CharacterInfo");
+                                SetBigButtonToGrayscale();
+                                AddBigButtonOverlay("OtherGridBlurred");
                             }
+                            AddLine(slot.player.name);
+                            AddLine("Level: " + slot.player.level + " ");
+                            AddText(slot.player.spec, slot.player.spec);
                         });
-                        if (settings.selectedCharacter != slot.player.name)
+                    }
+                    AddPaddingRegion(() => { SetRegionAsGroupExtender(); });
+                    if (saves[settings.selectedRealm].Count < 7)
+                        AddButtonRegion(() =>
                         {
-                            SetBigButtonToGrayscale();
-                            AddBigButtonOverlay("OtherGridBlurred");
-                        }
-                        AddLine(slot.player.name);
-                        AddLine("Level: " + slot.player.level + " ");
-                        AddText(slot.player.spec, slot.player.spec);
-                    });
+                            AddLine("Create a new character", "Black");
+                        },
+                        (h) =>
+                        {
+                            CloseWindow(h.window);
+                            CloseWindow("RealmRoster");
+                            CloseWindow("CharacterInfo");
+                            CloseWindow("TitleScreenSingleplayer");
+                            creationName = "";
+                            creationSide = "";
+                            creationGender = "";
+                            creationRace = "";
+                            creationSpec = "";
+                            SpawnWindowBlueprint("CharacterCreation");
+                            SpawnWindowBlueprint("CharacterCreationRightSide");
+                        });
+                    else AddPaddingRegion(() => AddLine("Create a new character", "DarkGray"));
                 }
-                AddPaddingRegion(() => { SetRegionAsGroupExtender(); });
-                if (saves[settings.selectedRealm].Count < 7)
-                    AddButtonRegion(() =>
-                    {
-                        AddLine("Create a new character", "Black");
-                    },
-                    (h) =>
-                    {
-                        CloseWindow(h.window);
-                        CloseWindow("RealmRoster");
-                        CloseWindow("CharacterInfo");
-                        CloseWindow("TitleScreenSingleplayer");
-                        creationName = "";
-                        creationSide = "";
-                        creationGender = "";
-                        creationRace = "";
-                        creationSpec = "";
-                        SpawnWindowBlueprint("CharacterCreation");
-                        SpawnWindowBlueprint("CharacterCreationRightSide");
-                    });
-                else
-                    AddPaddingRegion(() => AddLine("Create a new character", "DarkGray"));
+                else AddPaddingRegion(() => AddLine("Create a new character", "DarkGray"));
             }
-            else
-                AddPaddingRegion(() => AddLine("Create a new character", "DarkGray"));
+            else AddPaddingRegion(() => { });
         }, true),
         new("GameSettings", () =>
         {
@@ -749,14 +755,14 @@ public class Blueprint
                 {
                     abilities.Reverse();
                     abilitiesSearch.Reverse();
-                    Respawn("ObjectManagerAbilities");
+                    Respawn("SpellbookAbilityListActivated");
                     PlaySound("DesktopInventorySort", 0.2f);
                 });
                 if (!CDesktop.windows.Exists(x => x.title == "AbilitiesSort"))
                     AddSmallButton("OtherSort", (h) =>
                     {
                         SpawnWindowBlueprint("AbilitiesSort");
-                        Respawn("ObjectManagerAbilities");
+                        Respawn("SpellbookAbilityListActivated");
                     });
                 else
                     AddSmallButton("OtherSortOff", (h) => { });
@@ -829,14 +835,14 @@ public class Blueprint
                 {
                     abilities.Reverse();
                     abilitiesSearch.Reverse();
-                    Respawn("ObjectManagerAbilities");
+                    Respawn("SpellbookAbilityListPassive");
                     PlaySound("DesktopInventorySort", 0.2f);
                 });
                 if (!CDesktop.windows.Exists(x => x.title == "AbilitiesSort"))
                     AddSmallButton("OtherSort", (h) =>
                     {
                         SpawnWindowBlueprint("AbilitiesSort");
-                        Respawn("ObjectManagerAbilities");
+                        Respawn("SpellbookAbilityListPassive");
                     });
                 else
                     AddSmallButton("OtherSortOff", (h) => { });
@@ -5591,7 +5597,9 @@ public class Blueprint
                 AddSmallButton("OtherClose", (h) =>
                 {
                     CloseWindow("AbilitiesSort");
-                    Respawn("ObjectManagerAbilities");
+                    Respawn("ObjectManagerAbilities", true);
+                    Respawn("SpellbookAbilityListActivated", true);
+                    Respawn("SpellbookAbilityListPassive", true);
                 });
             });
             AddButtonRegion(() =>
@@ -5603,7 +5611,9 @@ public class Blueprint
                 abilities = abilities.OrderBy(x => x.name).ToList();
                 abilitiesSearch = abilitiesSearch.OrderBy(x => x.name).ToList();
                 CloseWindow("AbilitiesSort");
-                Respawn("ObjectManagerAbilities");
+                Respawn("ObjectManagerAbilities", true);
+                Respawn("SpellbookAbilityListActivated", true);
+                Respawn("SpellbookAbilityListPassive", true);
                 PlaySound("DesktopInventorySort", 0.2f);
             });
             AddButtonRegion(() =>
@@ -5615,7 +5625,9 @@ public class Blueprint
                 abilities = abilities.OrderByDescending(x => x.cost == null ? -1 : x.cost.Sum(y => y.Value)).ToList();
                 abilitiesSearch = abilitiesSearch.OrderByDescending(x => x.cost == null ? -1 : x.cost.Sum(y => y.Value)).ToList();
                 CloseWindow("AbilitiesSort");
-                Respawn("ObjectManagerAbilities");
+                Respawn("ObjectManagerAbilities", true);
+                Respawn("SpellbookAbilityListActivated", true);
+                Respawn("SpellbookAbilityListPassive", true);
                 PlaySound("DesktopInventorySort", 0.2f);
             });
             AddButtonRegion(() =>
@@ -5627,7 +5639,9 @@ public class Blueprint
                 abilities = abilities.OrderByDescending(x => x.cooldown).ToList();
                 abilitiesSearch = abilitiesSearch.OrderByDescending(x => x.cooldown).ToList();
                 CloseWindow("AbilitiesSort");
-                Respawn("ObjectManagerAbilities");
+                Respawn("ObjectManagerAbilities", true);
+                Respawn("SpellbookAbilityListActivated", true);
+                Respawn("SpellbookAbilityListPassive", true);
                 PlaySound("DesktopInventorySort", 0.2f);
             });
         }),
