@@ -1,10 +1,10 @@
 [
   {
     "name": "Muckshell Clacker",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Beast",
+    "subcategory": "Makrura",
     "kind": "Common",
-    "portrait": "PortraitChicken",
+    "portrait": "PortraitMakruraBlack",
     "vitality": 1.0,
     "abilities": {}
   },
@@ -13,43 +13,43 @@
     "category": "Humanoid",
     "subcategory": "Human",
     "kind": "Common",
-    "portrait": "PortraitChicken",
+    "portrait": "PortraitThreshadon",
     "vitality": 1.0,
     "abilities": {}
   },
   {
     "name": "Mudrock Burrower",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Beast",
+    "subcategory": "Turtle",
     "kind": "Common",
-    "portrait": "PortraitChicken",
+    "portrait": "PortraitTurtleWhite",
     "vitality": 1.0,
     "abilities": {}
   },
   {
     "name": "Darkfang Spider",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Beast",
+    "subcategory": "Spider",
     "kind": "Common",
-    "portrait": "PortraitChicken",
+    "portrait": "PortraitTarantulaOrange",
     "vitality": 1.0,
     "abilities": {}
   },
   {
     "name": "Bloodfen Screecher",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Beast",
+    "subcategory": "Raptor",
     "kind": "Common",
-    "portrait": "PortraitChicken",
+    "portrait": "PortraitRaptorRed",
     "vitality": 1.0,
     "abilities": {}
   },
   {
     "name": "Drywallow Crocolisk",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Beast",
+    "subcategory": "Crocolisk",
     "kind": "Common",
-    "portrait": "PortraitChicken",
+    "portrait": "PortraitCrocolisk",
     "vitality": 1.0,
     "abilities": {}
   },
@@ -18995,7 +18995,9 @@
     "kind": "Common",
     "portrait": "PortraitWolf",
     "vitality": 1.0,
-    "abilities": {}
+    "abilities": {
+      "Rabies": 0
+    }
   },
   {
     "name": "Black Ravager Mastiff",

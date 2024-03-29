@@ -811,15 +811,15 @@ public class Blueprint
                     else
                     {
                         SetRegionBackground(RegionBackgroundType.Padding);
-                        AddBigButton("OtherEmpty", (h) => { });
+                        AddBigButton("OtherDisabled", (h) => { });
                     }
                 });
             }
             AddRegionGroup();
-            SetRegionGroupWidth(95);
+            SetRegionGroupWidth(86);
             AddPaddingRegion(() => AddLine("Activated", "", "Center"));
             AddRegionGroup();
-            SetRegionGroupWidth(95);
+            SetRegionGroupWidth(85);
             AddButtonRegion(() => AddLine("Passive", "", "Center"), (h) => { CloseWindow("SpellbookAbilityListActivated"); SpawnWindowBlueprint("SpellbookAbilityListPassive"); });
         }),
         new("SpellbookAbilityListPassive", () => {
@@ -879,15 +879,15 @@ public class Blueprint
                     else
                     {
                         SetRegionBackground(RegionBackgroundType.Padding);
-                        AddBigButton("OtherEmpty", (h) => { });
+                        AddBigButton("OtherDisabled", (h) => { });
                     }
                 });
             }
             AddRegionGroup();
-            SetRegionGroupWidth(95);
+            SetRegionGroupWidth(86);
             AddButtonRegion(() => AddLine("Activated", "", "Center"), (h) => { CloseWindow("SpellbookAbilityListPassive"); SpawnWindowBlueprint("SpellbookAbilityListActivated"); });
             AddRegionGroup();
-            SetRegionGroupWidth(95);
+            SetRegionGroupWidth(85);
             AddPaddingRegion(() => AddLine("Passive", "", "Center"));
         }),
         new("PlayerSpellbookInfo", () => {
@@ -1769,7 +1769,7 @@ public class Blueprint
                 {
                     AddLine("I want to make this inn my home.");
                 },
-                (h) => { });
+                (h) => { currentSave.player.homeLocation = town.name; });
             }
             else if (type.type == "Battlemaster")
             {
@@ -2486,7 +2486,15 @@ public class Blueprint
             {
                 AddInputLine(String.consoleInput);
             });
-            AddSmallButton("OtherClose", (h) => { CloseWindow(h.window); });
+        },  true),
+        new("PathingGeneration", () => {
+            SetAnchor(Top);
+            AddRegionGroup();
+            SetRegionGroupWidth(638);
+            AddPaddingRegion(() =>
+            {
+                AddLine("Progress: (" + (PATHINGsitesI * PATHINGsites.Count + PATHINGsitesJ) + "/" + (PATHINGsites.Count * PATHINGsites.Count) + ") " + ((PATHINGsitesI * PATHINGsites.Count + PATHINGsitesJ) / (double)(PATHINGsites.Count * PATHINGsites.Count) * 100) + "%");
+            });
         },  true),
         new("ExperienceBar", () => {
             SetAnchor(Bottom);
@@ -7595,6 +7603,11 @@ public class Blueprint
             SetDesktopBackground("Areas/AreaTheCelestialPlanetarium");
             SpawnWindowBlueprint("ObjectManagerLobby");
             AddHotkey(Escape, () => { CloseDesktop("DevPanel"); });
+        }),
+        new("PathingGenerationPanel", () =>
+        {
+            SetDesktopBackground("Areas/AreaTheCelestialPlanetarium");
+            SpawnWindowBlueprint("PathingGeneration");
         }),
         new("ObjectManagerHostileAreas", () =>
         {

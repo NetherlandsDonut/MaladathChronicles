@@ -24,9 +24,9 @@ public class FallingElement : MonoBehaviour
         transform.position = Vector3.Lerp(transform.position, destination, timeAlive * fallSpeed / (float)System.Math.Sqrt(howFar) * 0.9f);
         if (Mathf.Abs(transform.position.x - destination.x) + Mathf.Abs(transform.position.y - destination.y) < 0.3f)
         {
-            if (fallingSoundsPlayedThisFrame == 0)
+            if (soundsPlayedThisFrame == 0)
             {
-                fallingSoundsPlayedThisFrame++;
+                soundsPlayedThisFrame++;
                 PlaySound("PutDownWoodSmall", 0.8f);
             }
             fallingElements.Remove(this);

@@ -93,10 +93,11 @@ public class Entity
     public void ReceiveExperience(int exp)
     {
         experience += exp;
-        if (ExperienceNeeded() <= experience)
+        while (ExperienceNeeded() <= experience)
         {
             experience -= ExperienceNeeded();
             level++;
+            unspentTalentPoints++;
             PlaySound("DesktopLevelUp");
         }
         Respawn("ExperienceBar", true);
@@ -676,6 +677,9 @@ public class Entity
     //and can have three different values:
     //Common, Rare and Elite
     public string kind;
+
+    //Set hearthstone home location
+    public string homeLocation;
 
     //List of abilities that this entity has access to
     //This can be abilities from items, class or race

@@ -142,7 +142,7 @@ public class Window : MonoBehaviour
         }
 
         //Draws window shadows
-        if (!disabledGeneralSprites && !disabledShadows && settings.shadows.Value() && xOffset > 0)
+        if (!disabledGeneralSprites && !disabledShadows && settings.shadows.Value() && (xOffset > 0 || yOffset > 0))
             if (defines.shadowSystem == 0)
             {
                 var shadowSprites = Resources.LoadAll<Sprite>("Sprites/Building/Shadows/First");

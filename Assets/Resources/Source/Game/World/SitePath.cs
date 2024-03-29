@@ -128,17 +128,21 @@ public class SitePath
     public static List<SitePath> paths;
 
     //Finds the shortest path between the two given sites
-    public static List<SitePath> FindShortestPath(Site from, Site to)
+    public static List<SitePath> FindShortestPath(Site from, Site to, bool firstQuit = true)
     {
         var timeA = System.DateTime.Now;
         (List<SitePath>, int) bestPath = (null, defines.maxPathLength);
+        if (!pathsConnectedToSite.ContainsKey(from.name)) return bestPath.Item1;
         var startingPoints = pathsConnectedToSite[from.name];
         var scan = new List<(List<SitePath>, int)>();
         foreach (var direction in startingPoints)
             FindPath((new() { direction }, direction.points.Count), false);
-        while (scan.Count > 0 && scan.Count < 20000) FindPath(scan[0]);
-        Debug.Log((System.DateTime.Now - timeA).Milliseconds);
+        scan = scan.OrderBy(x => Distance(x.Item1.Last().points.Last(), (to.x, to.y))).ToList();
+        while (scan.Count > 0 && scan.Count < 20000 && (!firstQuit || bestPath.Item1 == null)) FindPath(scan[0]);
+        //Debug.Log((System.DateTime.Now - timeA).Milliseconds);
         return bestPath.Item1;
+
+        int Distance((int, int) a, (int, int) b) => Mathf.Abs(a.Item1 - b.Item1) + Mathf.Abs(a.Item2 - b.Item2);
 
         void FindPath((List<SitePath>, int) pathing, bool removeFromScan = true)
         {

@@ -888,5 +888,14 @@
       {}
     ],
     "events": []
+  },
+  {
+    "name": "Rabies",
+    "icon": "AbilityHarmUndeadAura",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
   }
 ]

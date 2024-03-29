@@ -252,6 +252,14 @@ public class Item
             return true;
     }
 
+    public bool CanUse(Entity entity)
+    {
+        if (type == "Miscellaneous")
+            return abilities != null;
+        else
+            return false;
+    }
+
     private void Equip(Entity entity, string slot)
     {
         if (slot == "Bag") entity.inventory.bags.Add(this);
@@ -306,6 +314,11 @@ public class Item
             entity.Unequip(new() { type }, index);
             Equip(entity, type);
         }
+    }
+
+    public void Use(Entity entity)
+    {
+
     }
 
     public static void PrintBankItem(Item item)
@@ -394,6 +407,13 @@ public class Item
                     {
                         PlaySound(item.ItemSound("PickUp"), 0.6f);
                         item.Equip(currentSave.player);
+                        Respawn("Inventory");
+                        Respawn("PlayerEquipmentInfo");
+                    }
+                    else if (item.CanUse(currentSave.player))
+                    {
+                        PlaySound(item.ItemSound("Use"), 0.6f);
+                        item.Use(currentSave.player);
                         Respawn("Inventory");
                         Respawn("PlayerEquipmentInfo");
                     }

@@ -7583,5 +7583,62 @@
       {}
     ],
     "events": []
+  },
+  {
+    "name": "Rabies",
+    "icon": "AbilityHarmUndeadAura",
+    "cooldown": 5,
+    "tags": [],
+    "cost": {
+      "Air": 2,
+      "Decay": 2,
+      "Shadow": 2
+    },
+    "ranks": [
+      {}
+    ],
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector"
+          }
+        ],
+        "effects": [
+          {
+            "SoundEffect": "AbilityRendCast",
+            "ShatterType": "Directional",
+            "ShatterTarget": "Effector",
+            "ShatterDegree": "5",
+            "ShatterSpeed": "4"
+          },
+          {
+            "Effect": "AddBuff",
+            "Affect": "Other",
+            "BuffName": "Rabies",
+            "BuffDuration": "7",
+            "AnimationType": "Missile",
+            "ShatterType": "Central",
+            "ShatterTarget": "Other",
+            "Await": "0",
+            "AnimationSpeed": "1,95",
+            "SoundEffect": "AbilityRendImpact",
+            "AnimationArc": "10",
+            "ShatterSpeed": "15",
+            "ShatterDegree": "30",
+            "TrailStrength": "10"
+          },
+          {
+            "Await": "5",
+            "Affect": "Other",
+            "Effect": "Damage"
+          },
+          {
+            "Effect": "EndTurn"
+          }
+        ]
+      }
+    ]
   }
 ]

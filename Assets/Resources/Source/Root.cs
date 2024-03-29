@@ -12,6 +12,13 @@ using static Root.RegionBackgroundType;
 
 public static class Root
 {
+    //Pathing generation
+    public static int PATHINGsitesI;
+    public static int PATHINGsitesJ;
+    public static List<Site> PATHINGsitesDone;
+    public static List<string> PATHINGpathTable;
+    public static List<Site> PATHINGsites;
+
     //Program constants
     public static int screenX = 640;
     public static int screenY = 360;
@@ -83,10 +90,7 @@ public static class Root
 
     public static string Clean(this string text) => text.Replace("'", "").Replace(".", "").Replace(" ", "");
 
-    public static void SetMouseOver(Highlightable highlightable)
-    {
-        mouseOver = highlightable;
-    }
+    public static void SetMouseOver(Highlightable highlightable) => mouseOver = highlightable;
 
     #region Desktop
 

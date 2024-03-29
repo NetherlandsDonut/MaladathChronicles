@@ -8,6 +8,7 @@ using static Event;
 using static Cursor;
 using static String;
 using static SaveGame;
+using System.Collections.Generic;
 
 public class InputLine : MonoBehaviour
 {
@@ -461,6 +462,60 @@ public class InputLine : MonoBehaviour
             if (foo.Value() == "d")
             {
                 SpawnDesktopBlueprint("DevPanel");
+            }
+            else if (foo.Value() == "pr r")
+            {
+                PATHINGsitesDone = new List<Site>();
+                PATHINGpathTable = new List<string>();
+                PATHINGsites = new List<Site>();
+            }
+            else if (foo.Value() == "pr 1")
+            {
+                PATHINGsitesI = 0;
+                PATHINGsitesJ = 0;
+                PATHINGsites = new List<Site>();
+                for (int i = 0; i < SiteTown.towns.Count; i++)
+                    PATHINGsites.Add(SiteTown.towns[i]);
+                for (int i = 0; i < SiteHostileArea.areas.Count; i++)
+                    PATHINGsites.Add(SiteHostileArea.areas[i]);
+                for (int i = 0; i < SiteComplex.complexes.Count; i++)
+                    PATHINGsites.Add(SiteComplex.complexes[i]);
+                for (int i = 0; i < SiteInstance.instances.Count; i++)
+                    PATHINGsites.Add(SiteInstance.instances[i]);
+                PATHINGsites.RemoveAll(x => x.x == 0 && x.y == 0 || x.y < -39);
+                SpawnDesktopBlueprint("PathingGenerationPanel");
+            }
+            else if (foo.Value() == "pr 2")
+            {
+                PATHINGsitesI = 0;
+                PATHINGsitesJ = 0;
+                PATHINGsites = new List<Site>();
+                for (int i = 0; i < SiteTown.towns.Count; i++)
+                    PATHINGsites.Add(SiteTown.towns[i]);
+                for (int i = 0; i < SiteHostileArea.areas.Count; i++)
+                    PATHINGsites.Add(SiteHostileArea.areas[i]);
+                for (int i = 0; i < SiteComplex.complexes.Count; i++)
+                    PATHINGsites.Add(SiteComplex.complexes[i]);
+                for (int i = 0; i < SiteInstance.instances.Count; i++)
+                    PATHINGsites.Add(SiteInstance.instances[i]);
+                PATHINGsites.RemoveAll(x => x.x == 0 && x.y == 0 || x.y > -40 || x.x > 160);
+                SpawnDesktopBlueprint("PathingGenerationPanel");
+            }
+            else if (foo.Value() == "pr 3")
+            {
+                PATHINGsitesI = 0;
+                PATHINGsitesJ = 0;
+                PATHINGsites = new List<Site>();
+                for (int i = 0; i < SiteTown.towns.Count; i++)
+                    PATHINGsites.Add(SiteTown.towns[i]);
+                for (int i = 0; i < SiteHostileArea.areas.Count; i++)
+                    PATHINGsites.Add(SiteHostileArea.areas[i]);
+                for (int i = 0; i < SiteComplex.complexes.Count; i++)
+                    PATHINGsites.Add(SiteComplex.complexes[i]);
+                for (int i = 0; i < SiteInstance.instances.Count; i++)
+                    PATHINGsites.Add(SiteInstance.instances[i]);
+                PATHINGsites.RemoveAll(x => x.x == 0 && x.y == 0 || x.x < 160);
+                SpawnDesktopBlueprint("PathingGenerationPanel");
             }
             else if (foo.Value() == "avglvl")
             {
