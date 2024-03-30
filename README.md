@@ -355,18 +355,23 @@ v0.4.8
           Connected most of Eastern Kingdoms with paths
 v0.4.9
     02.11 Transportation system unification
-v0.4.9
+v0.4.10
     03.11 Integrated talent screen with toolbar
           Unspent talent points indicator
-v0.4.9
+v0.4.11
     07.11 Site progression visuals
-v0.4.9
+v0.4.12
     10.11 Boss queue in areas
           Defines added to external file
-v0.4.9
+v0.4.13
     17.11 New spellbook layout
           Bag system
           Blocked progression till elite is killed
+v0.4.14
+ 29.03.24 Hearthstone at start
+          Fixed shadows for windows with header group only
+v0.4.15
+    30.03 Hugely improved pathfinding
 ```
 
 </details>
