@@ -12,13 +12,6 @@ using static Root.RegionBackgroundType;
 
 public static class Root
 {
-    //Pathing generation
-    public static int PATHINGsitesI;
-    public static int PATHINGsitesJ;
-    public static List<Site> PATHINGsitesDone;
-    public static List<string> PATHINGpathTable;
-    public static List<Site> PATHINGsites;
-
     //Program constants
     public static int screenX = 640;
     public static int screenY = 360;
@@ -168,6 +161,7 @@ public static class Root
             desktops.Insert(0, CDesktop);
             SpawnTransition();
         }
+        Respawn("ExperienceBar", true);
         if (CDesktop.cameraDestination != Vector2.zero)
         {
             Cursor.cursor.transform.position += (Vector3)CDesktop.cameraDestination - CDesktop.screen.transform.localPosition;
@@ -257,11 +251,13 @@ public static class Root
         newObject.GetComponent<Window>().Initialise(CDesktop, title, upperUI);
     }
 
-    public static void Respawn(string windowName, bool onlyWhenActive = false)
+    public static bool Respawn(string windowName, bool onlyWhenActive = false)
     {
         var window = CDesktop.windows.Find(x => x.title == windowName);
-        if (window != null) window.Respawn(onlyWhenActive);
+        bool wasThere = window != null;
+        if (wasThere) window.Respawn(onlyWhenActive);
         else if (!onlyWhenActive) SpawnWindowBlueprint(windowName, true);
+        return wasThere;
     }
 
     public static bool CloseWindow(string windowName)

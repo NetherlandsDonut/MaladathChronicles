@@ -92,6 +92,12 @@
         "gender": "Female",
         "race": "Human",
         "type": "Banker"
+      },
+      {
+        "name": "Katie Hunter",
+        "gender": "Female",
+        "race": "Human",
+        "type": "Stable Master"
       }
     ],
     "x": 260,
@@ -179,6 +185,12 @@
         "gender": "Male",
         "race": "Human",
         "type": "Innkeeper"
+      },
+      {
+        "name": "Erma",
+        "gender": "Female",
+        "race": "Human",
+        "type": "Stable Master"
       }
     ],
     "x": 266,
@@ -200,6 +212,12 @@
         "gender": "Female",
         "race": "Human",
         "type": "Innkeeper"
+      },
+      {
+        "name": "Penny",
+        "gender": "Female",
+        "race": "Human",
+        "type": "Stable Master"
       }
     ],
     "x": 290,
@@ -228,6 +246,12 @@
         "gender": "Male",
         "race": "Human",
         "type": "Innkeeper"
+      },
+      {
+        "name": "Wesley",
+        "gender": "Male",
+        "race": "Human",
+        "type": "Stable Master"
       }
     ],
     "x": 272,
@@ -249,7 +273,13 @@
         "gender": "Female",
         "race": "Human",
         "type": "Innkeeper"
-      }
+        },
+        {
+          "name": "Steven Black",
+          "gender": "Male",
+          "race": "Human",
+          "type": "Stable Master"
+        }
     ],
     "x": 279,
     "y": -201,
@@ -277,6 +307,12 @@
         "gender": "Female",
         "race": "Human",
         "type": "Innkeeper"
+      },
+      {
+        "name": "Kirk Maxwell",
+        "gender": "Male",
+        "race": "Human",
+        "type": "Stable Master"
       }
     ],
     "x": 255,
@@ -310,6 +346,12 @@
         "gender": "Female",
         "race": "Human",
         "type": "Innkeeper"
+      },
+      {
+        "name": "Michael",
+        "gender": "Male",
+        "race": "Human",
+        "type": "Stable Master"
       }
     ],
     "x": 124,
@@ -331,6 +373,12 @@
         "gender": "Male",
         "race": "Dwarf",
         "type": "Innkeeper"
+      },
+      {
+        "name": "Bethaine Flinthammer",
+        "gender": "Female",
+        "race": "Dwarf",
+        "type": "Stable Master"
       }
     ],
     "x": 275,
@@ -455,6 +503,12 @@
         "gender": "Female",
         "race": "Night Elf",
         "type": "Innkeeper"
+      },
+      {
+        "name": "Alassin",
+        "gender": "Male",
+        "race": "Night Elf",
+        "type": "Stable Master"
       }
     ],
     "x": 51,
@@ -523,6 +577,12 @@
         "gender": "Male",
         "race": "Night Elf",
         "type": "Innkeeper"
+      },
+      {
+        "name": "Seriadne",
+        "gender": "Female",
+        "race": "Night Elf",
+        "type": "Stable Master"
       }
     ],
     "x": 66,
@@ -544,6 +604,12 @@
         "gender": "Female",
         "race": "Night Elf",
         "type": "Innkeeper"
+      },
+      {
+        "name": "Maluressian",
+        "gender": "Male",
+        "race": "Night Elf",
+        "type": "Stable Master"
       }
     ],
     "x": 80,
@@ -602,6 +668,12 @@
         "gender": "Female",
         "race": "Night Elf",
         "type": "Flight Master"
+      },
+      {
+        "name": "Jaelysia",
+        "gender": "Female",
+        "race": "Night Elf",
+        "type": "Stable Master"
       }
     ],
     "x": 71,
@@ -665,6 +737,12 @@
         "gender": "Female",
         "race": "Night Elf",
         "type": "Innkeeper"
+      },
+      {
+        "name": "Antarius",
+        "gender": "Male",
+        "race": "Night Elf",
+        "type": "Stable Master"
       }
     ],
     "x": 41,
@@ -686,6 +764,12 @@
         "gender": "Female",
         "race": "Night Elf",
         "type": "Innkeeper"
+      },
+      {
+        "name": "Shelgrayn",
+        "gender": "Male",
+        "race": "Night Elf",
+        "type": "Stable Master"
       }
     ],
     "x": 63,
@@ -743,6 +827,12 @@
         "gender": "Male",
         "race": "Dwarf",
         "type": "Innkeeper"
+      },
+      {
+        "name": "Killium Bouldertoe",
+        "gender": "Male",
+        "race": "Dwarf",
+        "type": "Stable Master"
       }
     ],
     "x": 288,
@@ -818,6 +908,12 @@
         "gender": "Male",
         "race": "Dwarf",
         "type": "Innkeeper"
+      },
+      {
+        "name": "Ulbrek Firehand",
+        "gender": "Male",
+        "race": "Dwarf",
+        "type": "Stable Master"
       }
     ],
     "x": 275,
@@ -840,6 +936,12 @@
         "gender": "Male",
         "race": "Dwarf",
         "type": "Innkeeper"
+      },
+      {
+        "name": "Lina Hearthstove",
+        "gender": "Female",
+        "race": "Dwarf",
+        "type": "Stable Master"
       }
     ],
     "x": 298,
@@ -919,6 +1021,12 @@
         "gender": "Male",
         "race": "Dwarf",
         "type": "Innkeeper"
+      },
+      {
+        "name": "Shelby Stoneflint",
+        "gender": "Female",
+        "race": "Dwarf",
+        "type": "Stable Master"
       }
     ],
     "x": 271,
@@ -1014,6 +1122,12 @@
         "gender": "Female",
         "race": "Orc",
         "type": "Innkeeper"
+      },
+      {
+        "name": "Xon'cha",
+        "gender": "Male",
+        "race": "Troll",
+        "type": "Stable Master"
       }
     ],
     "x": 123,
@@ -1073,6 +1187,12 @@
         "gender": "Male",
         "race": "Orc",
         "type": "Innkeeper"
+      },
+      {
+        "name": "Shoja'my",
+        "gender": "Female",
+        "race": "Troll",
+        "type": "Stable Master"
       }
     ],
     "x": 127,
@@ -1103,6 +1223,12 @@
         "gender": "Male",
         "race": "Orc",
         "type": "Flight Master"
+      },
+      {
+        "name": "Sikwa",
+        "gender": "Female",
+        "race": "Tauren",
+        "type": "Stable Master"
       }
     ],
     "x": 105,
@@ -1161,6 +1287,12 @@
         "gender": "Male",
         "race": "Orc",
         "type": "Innkeeper"
+      },
+      {
+        "name": "Durik",
+        "gender": "Male",
+        "race": "Orc",
+        "type": "Stable Master"
       }
     ],
     "x": 264,
@@ -1182,6 +1314,12 @@
         "gender": "Female",
         "race": "Orc",
         "type": "Innkeeper"
+      },
+      {
+        "name": "Qeeju",
+        "gender": "Male",
+        "race": "Troll",
+        "type": "Stable Master"
       }
     ],
     "x": 103,
@@ -1203,6 +1341,12 @@
         "gender": "Male",
         "race": "Orc",
         "type": "Innkeeper"
+      },
+      {
+        "name": "Greth",
+        "gender": "Male",
+        "race": "Orc",
+        "type": "Stable Master"
       }
     ],
     "x": 290,
@@ -1248,6 +1392,12 @@
         "gender": "Male",
         "race": "Orc",
         "type": "Innkeeper"
+      },
+      {
+        "name": "Hekkru",
+        "gender": "Male",
+        "race": "Orc",
+        "type": "Stable Master"
       }
     ],
     "x": 301,
@@ -1299,6 +1449,12 @@
         "gender": "Female",
         "race": "Tauren",
         "type": "Innkeeper"
+      },
+      {
+        "name": "Aboda",
+        "gender": "Male",
+        "race": "Tauren",
+        "type": "Stable Master"
       }
     ],
     "x": 42,
@@ -1314,6 +1470,12 @@
         "gender": "Male",
         "race": "Ogre",
         "type": "Innkeeper"
+      },
+      {
+        "name": "Huntsman Markhor",
+        "gender": "Male",
+        "race": "Troll",
+        "type": "Stable Master"
       }
     ],
     "x": 316,
@@ -1377,6 +1539,12 @@
         "gender": "Female",
         "race": "Tauren",
         "type": "Innkeeper"
+      },
+      {
+        "name": "Bulrug",
+        "gender": "Male",
+        "race": "Tauren",
+        "type": "Stable Master"
       }
     ],
     "x": 76,
@@ -1417,6 +1585,12 @@
         "gender": "Male",
         "race": "Tauren",
         "type": "Innkeeper"
+      },
+      {
+        "name": "Seikwa",
+        "gender": "Female",
+        "race": "Tauren",
+        "type": "Stable Master"
       }
     ],
     "x": 81,
@@ -1451,6 +1625,12 @@
         "gender": "Female",
         "race": "Tauren",
         "type": "Innkeeper"
+      },
+      {
+        "name": "Shyrka Wolfrunner",
+        "gender": "Female",
+        "race": "Orc",
+        "type": "Stable Master"
       }
     ],
     "x": 73,
@@ -1472,6 +1652,12 @@
         "gender": "Male",
         "race": "Tauren",
         "type": "Innkeeper"
+      },
+      {
+        "name": "Kelsuwa",
+        "gender": "Male",
+        "race": "Tauren",
+        "type": "Stable Master"
       }
     ],
     "x": 98,
@@ -1493,6 +1679,12 @@
         "gender": "Male",
         "race": "Tauren",
         "type": "Innkeeper"
+      },
+      {
+        "name": "Awenasa",
+        "gender": "Female",
+        "race": "Tauren",
+        "type": "Stable Master"
       }
     ],
     "x": 102,
@@ -1514,6 +1706,12 @@
         "gender": "Female",
         "race": "Orc",
         "type": "Innkeeper"
+      },
+      {
+        "name": "Gereck",
+        "gender": "Male",
+        "race": "Orc",
+        "type": "Stable Master"
       }
     ],
     "x": 66,
@@ -1584,6 +1782,12 @@
         "gender": "Male",
         "race": "Forsaken",
         "type": "Innkeeper"
+      },
+      {
+        "name": "Anya Maulray",
+        "gender": "Female",
+        "race": "Forsaken",
+        "type": "Stable Master"
       }
     ],
     "x": 264,
@@ -1644,6 +1848,12 @@
         "gender": "Male",
         "race": "Forsaken",
         "type": "Innkeeper"
+      },
+      {
+        "name": "Morganus",
+        "gender": "Male",
+        "race": "Forsaken",
+        "type": "Stable Master"
       }
     ],
     "x": 263,
@@ -1665,6 +1875,12 @@
         "gender": "Male",
         "race": "Tauren",
         "type": "Innkeeper"
+      },
+      {
+        "name": "Tharlidun",
+        "gender": "Male",
+        "race": "Orc",
+        "type": "Stable Master"
       }
     ],
     "x": 303,
@@ -1686,6 +1902,12 @@
         "gender": "Male",
         "race": "Forsaken",
         "type": "Innkeeper"
+      },
+      {
+        "name": "Theodore Mont Claire",
+        "gender": "Male",
+        "race": "Forsaken",
+        "type": "Stable Master"
       }
     ],
     "x": 275,
@@ -1707,6 +1929,12 @@
         "gender": "Male",
         "race": "Forsaken",
         "type": "Innkeeper"
+      },
+      {
+        "name": "Sarah Goode",
+        "gender": "Female",
+        "race": "Forsaken",
+        "type": "Stable Master"
       }
     ],
     "x": 248,
@@ -1734,6 +1962,12 @@
         "gender": "Female",
         "race": "Night Elf",
         "type": "Innkeeper"
+      },
+      {
+        "name": "Squire Leoren Mal'derath",
+        "gender": "Male",
+        "race": "Night Elf",
+        "type": "Stable Master"
       }
     ],
     "x": 68,
@@ -1858,6 +2092,12 @@
         "gender": "Female",
         "race": "Goblin",
         "type": "Innkeeper"
+      },
+      {
+        "name": "Azzleby",
+        "gender": "Male",
+        "race": "Goblin",
+        "type": "Stable Master"
       }
     ],
     "x": 127,
@@ -1879,6 +2119,12 @@
         "gender": "Male",
         "race": "Goblin",
         "type": "Innkeeper"
+      },
+      {
+        "name": "Laziphus",
+        "gender": "Male",
+        "race": "Goblin",
+        "type": "Stable Master"
       }
     ],
     "x": 117,
@@ -1900,6 +2146,12 @@
         "gender": "Male",
         "race": "Goblin",
         "type": "Innkeeper"
+      },
+      {
+        "name": "Reggifuz",
+        "gender": "Male",
+        "race": "Goblin",
+        "type": "Stable Master"
       }
     ],
     "x": 116,
@@ -1933,6 +2185,12 @@
         "gender": "Male",
         "race": "Goblin",
         "type": "Innkeeper"
+      },
+      {
+        "name": "Grimestack",
+        "gender": "Male",
+        "race": "Goblin",
+        "type": "Stable Master"
       }
     ],
     "x": 261,

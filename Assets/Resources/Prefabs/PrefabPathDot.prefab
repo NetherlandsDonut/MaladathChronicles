@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7512267290047808391}
   - component: {fileID: 3844900246543393167}
+  - component: {fileID: 8377439167169119614}
   m_Layer: 0
   m_Name: PrefabPathDot
   m_TagString: Untagged
@@ -86,6 +87,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8377439167169119614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1011410038520554025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90fd4b78619bc5b428d4e9c1a57a388e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  counter: 0
+  render: {fileID: 0}
 --- !u!1 &4961113512203331665
 GameObject:
   m_ObjectHideFlags: 0
@@ -96,6 +111,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7105425042087213087}
   - component: {fileID: 8376879859844456096}
+  - component: {fileID: 1913718542461920573}
   m_Layer: 0
   m_Name: PathDotShadow
   m_TagString: Untagged
@@ -170,6 +186,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1913718542461920573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4961113512203331665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90fd4b78619bc5b428d4e9c1a57a388e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  counter: 0
+  render: {fileID: 0}
 --- !u!1 &6904671665588369418
 GameObject:
   m_ObjectHideFlags: 0
@@ -180,6 +210,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8433675585658479605}
   - component: {fileID: 3964169096895883528}
+  - component: {fileID: 383371315412350280}
   m_Layer: 0
   m_Name: PathDotBorder
   m_TagString: Untagged
@@ -254,3 +285,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &383371315412350280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6904671665588369418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90fd4b78619bc5b428d4e9c1a57a388e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  counter: 0
+  render: {fileID: 0}

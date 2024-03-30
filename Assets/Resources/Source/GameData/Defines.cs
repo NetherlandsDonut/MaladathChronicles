@@ -52,7 +52,9 @@ public class Defines
     public string markerCharacter;
     public string textWrapEnding;
     public float frameTime;
+    public bool fasterPathfinding;
+    public bool splitExperienceBar;
 
-    //EXTERNAL FILE: Collection of all settings in game
+    //EXTERNAL FILE: Collection of constant values or alternate ways of handling engine
     public static Defines defines;
 }

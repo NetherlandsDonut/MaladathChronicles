@@ -12,7 +12,6 @@ using static Root.RegionBackgroundType;
 using static GameSettings;
 
 using static InputLine;
-using UnityEngine.Rendering;
 
 public class Window : MonoBehaviour
 {
@@ -404,6 +403,12 @@ public class Window : MonoBehaviour
                         if (region.background.GetComponent<BoxCollider2D>() == null)
                             region.background.AddComponent<BoxCollider2D>();
                         region.background.GetComponent<BoxCollider2D>().enabled = !disabledCollisions;
+                    }
+                    if (region.backgroundType == Experience && !defines.splitExperienceBar)
+                    {
+                        region.background.transform.localPosition -= new Vector3(2, 0, 0);
+                        region.background.transform.localScale += new Vector3(2, 0, 0);
+                        region.background.GetComponent<SpriteRenderer>().sortingOrder = 1;
                     }
                 }
 

@@ -2487,15 +2487,6 @@ public class Blueprint
                 AddInputLine(String.consoleInput);
             });
         },  true),
-        new("PathingGeneration", () => {
-            SetAnchor(Top);
-            AddRegionGroup();
-            SetRegionGroupWidth(638);
-            AddPaddingRegion(() =>
-            {
-                AddLine("Progress: (" + (PATHINGsitesI * PATHINGsites.Count + PATHINGsitesJ) + "/" + (PATHINGsites.Count * PATHINGsites.Count) + ") " + ((PATHINGsitesI * PATHINGsites.Count + PATHINGsitesJ) / (double)(PATHINGsites.Count * PATHINGsites.Count) * 100) + "%");
-            });
-        },  true),
         new("ExperienceBar", () => {
             SetAnchor(Bottom);
             for (int i = 0; i < 58; i++)
@@ -7603,11 +7594,6 @@ public class Blueprint
             SetDesktopBackground("Areas/AreaTheCelestialPlanetarium");
             SpawnWindowBlueprint("ObjectManagerLobby");
             AddHotkey(Escape, () => { CloseDesktop("DevPanel"); });
-        }),
-        new("PathingGenerationPanel", () =>
-        {
-            SetDesktopBackground("Areas/AreaTheCelestialPlanetarium");
-            SpawnWindowBlueprint("PathingGeneration");
         }),
         new("ObjectManagerHostileAreas", () =>
         {

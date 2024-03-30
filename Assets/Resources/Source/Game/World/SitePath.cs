@@ -82,20 +82,20 @@ public class SitePath
             while ((int)Vector2.Distance(start, end) >= stepsMade - beginSteps)
                 if (stepsMade++ % 10 == 0)
                 {
-                    var dot = new GameObject("PathDot", typeof(SpriteRenderer));
+                    var dot = new GameObject("PathDot", typeof(SpriteRenderer), typeof(FadeIn));
                     dot.transform.parent = path.transform;
                     dot.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Other/PathDot");
                     dot.GetComponent<SpriteRenderer>().color = Color.black;
                     dot.GetComponent<SpriteRenderer>().sortingLayerName = "CameraShadow";
                     dot.transform.position = Vector2.Lerp(start, end, 1 / Vector2.Distance(start, end) * (stepsMade - beginSteps));
                     dot.transform.position = new Vector2((int)dot.transform.position.x, (int)dot.transform.position.y);
-                    var dotBorder = new GameObject("PathDotBorder", typeof(SpriteRenderer));
+                    var dotBorder = new GameObject("PathDotBorder", typeof(SpriteRenderer), typeof(FadeIn));
                     dotBorder.transform.parent = dot.transform;
                     dotBorder.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Other/PathDotBorder");
                     dotBorder.GetComponent<SpriteRenderer>().sortingLayerName = "CameraShadow";
                     dotBorder.GetComponent<SpriteRenderer>().sortingOrder = -1;
                     dotBorder.transform.localPosition = Vector3.zero;
-                    var dotShadow = new GameObject("PathDotShadow", typeof(SpriteRenderer));
+                    var dotShadow = new GameObject("PathDotShadow", typeof(SpriteRenderer), typeof(FadeIn));
                     dotShadow.transform.parent = dot.transform;
                     dotShadow.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Other/PathDotShadow");
                     dotShadow.GetComponent<SpriteRenderer>().sortingLayerName = "CameraShadow";
@@ -133,16 +133,18 @@ public class SitePath
         List<SitePath> bestPath = null;
         var possiblePaths = new List<List<SitePath>>();
         possiblePaths = pathsConnectedToSite[from.name].Select(x => new List<SitePath> { x }).ToList();
-        while (bestPath == null) ContinuePaths(possiblePaths);
+        while (bestPath == null) ContinuePaths();
         return bestPath;
 
-        void ContinuePaths(List<List<SitePath>> pathing)
+        void ContinuePaths()
         {
-            var initialAmount = pathing.Count;
-            var allVisitedSites = pathing.SelectMany(y => y.SelectMany(x => x.sites)).Distinct().ToList();
+            if (!defines.fasterPathfinding)
+                possiblePaths = possiblePaths.OrderBy(x => x.Sum(y => y.points.Count)).ToList();
+            var initialAmount = possiblePaths.Count;
+            var allVisitedSites = possiblePaths.SelectMany(y => y.SelectMany(x => x.sites)).Distinct().ToList();
             for (int i = 0; i < initialAmount; i++)
             {
-                var path = pathing[i];
+                var path = possiblePaths[i];
                 if (path.Last().sites.Contains(to.name))
                 {
                     bestPath = path;
@@ -154,9 +156,9 @@ public class SitePath
                 var newPaths = pathsConnectedToSite[newestSite];
                 foreach (var newPath in newPaths)
                     if (!allVisitedSites.Contains(newPath.sites.Find(x => x != newestSite)))
-                        pathing.Add(path.Concat(new List<SitePath> { newPath }).ToList());
+                        possiblePaths.Add(path.Concat(new List<SitePath> { newPath }).ToList());
             }
-            pathing.RemoveRange(0, initialAmount);
+            possiblePaths.RemoveRange(0, initialAmount);
         }
     }
 }

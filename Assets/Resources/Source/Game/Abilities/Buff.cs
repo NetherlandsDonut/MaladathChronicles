@@ -144,10 +144,10 @@ public class Buff
 
     public static void PrintBuffTooltip(Entity Effector, Entity other, (Buff, int, GameObject, int) buff)
     {
-        SetAnchor(Top, 0, -46);
+        SetAnchor(Top, 0, -53);
         AddHeaderGroup();
-        SetRegionGroupWidth(242);
-        SetRegionGroupHeight(213);
+        SetRegionGroupWidth(228);
+        SetRegionGroupHeight(199);
         AddHeaderRegion(() => { AddLine(buff.Item1.name); });
         AddPaddingRegion(() =>
         {
@@ -162,7 +162,7 @@ public class Buff
         });
         buff.Item1.PrintDescription(Effector, other, buff.Item4);
         AddRegionGroup();
-        SetRegionGroupWidth(242);
+        SetRegionGroupWidth(228);
         AddPaddingRegion(() => { AddLine(); });
     }
 

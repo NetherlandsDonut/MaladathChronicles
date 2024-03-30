@@ -239,7 +239,10 @@ public class Desktop : MonoBehaviour
                             }
                             Respawn("Site: " + queuedSiteOpen);
                             foreach (var connection in paths.FindAll(x => x.sites.Contains(queuedSiteOpen)))
-                                Respawn("Site: " + connection.sites.Find(x => x != queuedSiteOpen));
+                            {
+                                var didRespawn = Respawn("Site: " + connection.sites.Find(x => x != queuedSiteOpen));
+                                if (!didRespawn) LBWindow.GetComponentsInChildren<Renderer>().ToList().ForEach(x => x.gameObject.AddComponent<FadeIn>());
+                            }
                             queuedSiteOpen = "";
                             cameraDestination = new Vector2(find.x, find.y) * mapGridSize;
                         }

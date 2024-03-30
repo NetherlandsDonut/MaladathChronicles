@@ -1,14 +1,14 @@
 {
   "selectedRealm": "Whitemane",
-  "selectedCharacter": "Christine",
+  "selectedCharacter": "Allesha",
   "shadows": {
     "value": "True"
   },
   "pixelPerfectVision": {
-    "value": "False"
+    "value": "True"
   },
   "music": {
-    "value": "False"
+    "value": "True"
   },
   "soundEffects": {
     "value": "True"
