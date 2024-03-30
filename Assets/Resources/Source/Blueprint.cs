@@ -1784,6 +1784,19 @@ public class Blueprint
                 },
                 (h) => { });
             }
+            else if (type.type == "Stable Master")
+            {
+                AddButtonRegion(() =>
+                {
+                    AddLine("I want to swap my current mount.");
+                },
+                (h) => { });
+                AddButtonRegion(() =>
+                {
+                    AddLine("I want to buy a new mount.");
+                },
+                (h) => { });
+            }
             AddButtonRegion(() =>
             {
                 AddLine("Goodbye.");
@@ -2494,7 +2507,7 @@ public class Blueprint
                 AddRegionGroup();
                 SetRegionGroupWidth(11);
                 SetRegionGroupHeight(12);
-                if (currentSave.player.experience > i)
+                if (currentSave != null && currentSave.player.experience > i)
                     AddPaddingRegion(() => { SetRegionBackground(RegionBackgroundType.Experience); });
                 else AddPaddingRegion(() => { });
             }

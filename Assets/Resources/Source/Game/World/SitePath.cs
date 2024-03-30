@@ -133,7 +133,7 @@ public class SitePath
         List<SitePath> bestPath = null;
         var possiblePaths = new List<List<SitePath>>();
         possiblePaths = pathsConnectedToSite[from.name].Select(x => new List<SitePath> { x }).ToList();
-        while (bestPath == null) ContinuePaths();
+        while (bestPath == null && possiblePaths.Count > 0) ContinuePaths();
         return bestPath;
 
         void ContinuePaths()

@@ -3683,7 +3683,7 @@
     {
       "player": {
         "level": 2,
-        "experience": 12,
+        "experience": 28,
         "name": "Allesha",
         "race": "Human",
         "spec": "Paladin",
@@ -3840,7 +3840,7 @@
           }
         }
       },
-      "currentSite": "Stormwind City",
+      "currentSite": "Lake Nazferiti",
       "siteProgress": {
         "Northshire Valley": 12,
         "Crystal Lake": 3
@@ -3878,12 +3878,28 @@
         "Echo Ridge Mine": 0,
         "Goldshire": 0,
         "Stormwind City": 1,
-        "The Stockade": 1
+        "The Stockade": 1,
+        "Jansen Stead": 0,
+        "Sentinel Hill": 0,
+        "Westfall Crossing": 0,
+        "Night Watch Camp": 0,
+        "Rebel Camp": 0,
+        "Kurzen's Compound": 0,
+        "Zul'Gurub": 0,
+        "Mosh'Ogg Ogre Mound": 0,
+        "Balia'mah Ruins": 0,
+        "Ruins of Zul'Mamwe": 0,
+        "Ziata'jai Ruins": 0,
+        "Mizjah Ruins": 0,
+        "Venture Co. Hideout": 0,
+        "Crystalvein Mine": 0,
+        "Venture Co. Operations Center": 0,
+        "Lake Nazferiti": 0
       },
       "startDate": "2024-03-30T14:12:01.6656901+01:00",
-      "lastLoaded": "2024-03-30T14:25:56.3528998+01:00",
-      "lastPlayed": "2024-03-30T14:38:45.8796808+01:00",
-      "timePlayed": "00:20:54.4929680",
+      "lastLoaded": "2024-03-30T23:25:09.4686705+01:00",
+      "lastPlayed": "2024-03-30T23:25:12.3134885+01:00",
+      "timePlayed": "00:24:36.0995584",
       "lastVisitedTalents": 1
     }
   ]

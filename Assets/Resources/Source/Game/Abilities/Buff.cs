@@ -146,6 +146,8 @@ public class Buff
     {
         SetAnchor(Top, 0, -53);
         AddHeaderGroup();
+        if (CDesktop.title == "Game")
+            DisableShadows();
         SetRegionGroupWidth(228);
         SetRegionGroupHeight(199);
         AddHeaderRegion(() => { AddLine(buff.Item1.name); });
