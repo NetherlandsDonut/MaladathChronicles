@@ -134,12 +134,12 @@ public class Site
     //Lead 
     public void LeadPath()
     {
-        var pathing = FindShortestPath(FindSite(x => x.name == currentSave.currentSite), this);
+        var pathing = FindPath(FindSite(x => x.name == currentSave.currentSite), this);
         if (pathing != null) foreach (var path in pathing) pathsDrawn.Add(path.DrawPath());
     }
 
     //Lead provided in the argument path
-    public static void LeadPath(SitePath path)
+    public static void LeadPath(SitePath path)  
     {
         if (path != null) pathsDrawn.Add(path.DrawPath());
     }

@@ -13,7 +13,6 @@ using static MapGrid;
 using static SaveGame;
 using static SitePath;
 using static InputLine;
-using Newtonsoft.Json.Schema;
 
 public class Desktop : MonoBehaviour
 {
@@ -124,42 +123,6 @@ public class Desktop : MonoBehaviour
                 mouseOver.MouseUp("Right");
             else if (Input.GetMouseButtonUp(2))
                 mouseOver.MouseUp("Middle");
-        }
-        if (title == "PathingGenerationPanel")
-        {
-            if (Input.GetKeyDown(KeyCode.Escape))
-                CloseDesktop("PathingGeneration");
-            var main = PATHINGsites[PATHINGsitesI];
-            var site = PATHINGsites[PATHINGsitesJ];
-            if (site != main && !PATHINGsitesDone.Contains(site))
-            {
-                var path = FindShortestPath(main, site);
-                if (path != null)
-                {
-                    var temp = main.name;
-                    var prevSite = main.name;
-                    foreach (var foo in path)
-                    {
-                        var newSite = foo.sites[foo.sites[0] == prevSite ? 1 : 0];
-                        temp += "-" + newSite;
-                        prevSite = newSite;
-                    }
-                    PATHINGpathTable.Add(temp);
-                }
-            }
-            RebuildAll();
-            PATHINGsitesJ++;
-            if (PATHINGsites.Count == PATHINGsitesJ)
-            {
-                PATHINGsitesDone.Add(main);
-                PATHINGsitesI++;
-                PATHINGsitesJ = 0;
-                if (PATHINGsitesI == PATHINGsites.Count)
-                {
-                    Serialization.Serialize(PATHINGpathTable, "pathTable", false, false, prefix);
-                    CloseDesktop("PathingGenerationPanel");
-                }
-            }
         }
         if (title == "GameSimulation" && Input.GetKeyDown(KeyCode.Escape))
         {

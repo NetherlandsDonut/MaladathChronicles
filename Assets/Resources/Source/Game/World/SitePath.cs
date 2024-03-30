@@ -127,35 +127,36 @@ public class SitePath
     //EXTERNAL FILE: List containing all paths in-game
     public static List<SitePath> paths;
 
-    //Finds the shortest path between the two given sites
-    public static List<SitePath> FindShortestPath(Site from, Site to, bool firstQuit = true)
+    //Finds the path with the least points in between the two given sites
+    public static List<SitePath> FindPath(Site from, Site to)
     {
-        var timeA = System.DateTime.Now;
-        (List<SitePath>, int) bestPath = (null, defines.maxPathLength);
-        if (!pathsConnectedToSite.ContainsKey(from.name)) return bestPath.Item1;
-        var startingPoints = pathsConnectedToSite[from.name];
-        var scan = new List<(List<SitePath>, int)>();
-        foreach (var direction in startingPoints)
-            FindPath((new() { direction }, direction.points.Count), false);
-        scan = scan.OrderBy(x => Distance(x.Item1.Last().points.Last(), (to.x, to.y))).ToList();
-        while (scan.Count > 0 && scan.Count < 20000 && (!firstQuit || bestPath.Item1 == null)) FindPath(scan[0]);
-        //Debug.Log((System.DateTime.Now - timeA).Milliseconds);
-        return bestPath.Item1;
+        List<SitePath> bestPath = null;
+        var possiblePaths = new List<List<SitePath>>();
+        possiblePaths = pathsConnectedToSite[from.name].Select(x => new List<SitePath> { x }).ToList();
+        while (bestPath == null) ContinuePaths(possiblePaths);
+        return bestPath;
 
-        int Distance((int, int) a, (int, int) b) => Mathf.Abs(a.Item1 - b.Item1) + Mathf.Abs(a.Item2 - b.Item2);
-
-        void FindPath((List<SitePath>, int) pathing, bool removeFromScan = true)
+        void ContinuePaths(List<List<SitePath>> pathing)
         {
-            if (removeFromScan) scan.RemoveAt(0);
-            if (pathing.Item2 >= bestPath.Item2) return;
-            else if (pathing.Item1.Last().sites.Contains(to.name)) bestPath = pathing;
-            else
+            var initialAmount = pathing.Count;
+            var allVisitedSites = pathing.SelectMany(y => y.SelectMany(x => x.sites)).Distinct().ToList();
+            for (int i = 0; i < initialAmount; i++)
             {
-                var alreadyVisitedSites = pathing.Item1.SelectMany(x => x.sites).ToList();
-                alreadyVisitedSites.Insert(0, from.name);
-                var connectedPaths = pathing.Item1.Last().PathsConnected(alreadyVisitedSites.Where(x => currentSave.siteVisits.ContainsKey(x)).ToList());
-                scan.AddRange(connectedPaths.Select(x => (pathing.Item1.Append(x).ToList(), pathing.Item2 + x.points.Count)));
+                var path = pathing[i];
+                if (path.Last().sites.Contains(to.name))
+                {
+                    bestPath = path;
+                    return;
+                }
+                var visitedSites = path.SelectMany(x => x.sites).ToList();
+                var newestSite = path.Last().sites[from.name == path.Last().sites[0] || visitedSites.Count(x => x == path.Last().sites[0]) == 2 ? 1 : 0];
+                if (!currentSave.siteVisits.ContainsKey(newestSite)) continue;
+                var newPaths = pathsConnectedToSite[newestSite];
+                foreach (var newPath in newPaths)
+                    if (!allVisitedSites.Contains(newPath.sites.Find(x => x != newestSite)))
+                        pathing.Add(path.Concat(new List<SitePath> { newPath }).ToList());
             }
+            pathing.RemoveRange(0, initialAmount);
         }
     }
 }
