@@ -1500,8 +1500,9 @@ public class Blueprint
             });
         }),
         new("Bank", () => {
-            SetAnchor(TopLeft, 19, -38);
+            SetAnchor(TopLeft, 0, -19);
             AddRegionGroup();
+            SetRegionGroupHeight(319);
             var items = currentSave.banks[town.name].items;
             AddHeaderRegion(() =>
             {
@@ -1510,6 +1511,8 @@ public class Blueprint
                 {
                     CloseWindow("Bank");
                     Respawn("Person");
+                    Respawn("Town: " + town.name);
+                    CloseWindow("Inventory");
                     PlaySound("DesktopBankClose");
                 });
                 AddSmallButton("OtherReverse", (h) =>
@@ -1542,6 +1545,7 @@ public class Blueprint
                     }
                 );
             }
+            AddPaddingRegion(() => SetRegionAsGroupExtender());
         }, true),
         new("Vendor", () => {
             currentSave.buyback ??= new();
@@ -1749,7 +1753,10 @@ public class Blueprint
                         currentSave.banks.Add(town.name, new() { items = new() });
                     PlaySound("DesktopBankOpen", 0.2f);
                     CloseWindow(h.window);
+                    CloseWindow("Town: " + town.name);
                     SpawnWindowBlueprint("Bank");
+                    SpawnWindowBlueprint("Inventory");
+                    Respawn("ExperienceBar");
                 });
                 AddButtonRegion(() =>
                 {

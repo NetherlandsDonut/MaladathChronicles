@@ -88,16 +88,16 @@
         "type": "Innkeeper"
       },
       {
-        "name": "TESTER",
-        "gender": "Female",
-        "race": "Human",
-        "type": "Banker"
-      },
-      {
         "name": "Katie Hunter",
         "gender": "Female",
         "race": "Human",
         "type": "Stable Master"
+      },
+      {
+        "name": "John Burnside",
+        "gender": "Male",
+        "race": "Human",
+        "type": "Banker"
       }
     ],
     "x": 260,
@@ -509,6 +509,12 @@
         "gender": "Male",
         "race": "Night Elf",
         "type": "Stable Master"
+      },
+      {
+        "name": "Idriana",
+        "gender": "Female",
+        "race": "Night Elf",
+        "type": "Banker"
       }
     ],
     "x": 51,
@@ -914,6 +920,12 @@
         "gender": "Male",
         "race": "Dwarf",
         "type": "Stable Master"
+      },
+      {
+        "name": "Bailey Stonemantle",
+        "gender": "Male",
+        "race": "Dwarf",
+        "type": "Banker"
       }
     ],
     "x": 275,
@@ -1128,6 +1140,12 @@
         "gender": "Male",
         "race": "Troll",
         "type": "Stable Master"
+      },
+      {
+        "name": "Karus",
+        "gender": "Male",
+        "race": "Orc",
+        "type": "Banker"
       }
     ],
     "x": 123,
@@ -1545,6 +1563,12 @@
         "gender": "Male",
         "race": "Tauren",
         "type": "Stable Master"
+      },
+      {
+        "name": "Atepa",
+        "gender": "Male",
+        "race": "Tauren",
+        "type": "Banker"
       }
     ],
     "x": 76,
@@ -1788,6 +1812,12 @@
         "gender": "Female",
         "race": "Forsaken",
         "type": "Stable Master"
+      },
+      {
+        "name": "William Montague",
+        "gender": "Male",
+        "race": "Forsaken",
+        "type": "Banker"
       }
     ],
     "x": 264,
@@ -2098,6 +2128,12 @@
         "gender": "Male",
         "race": "Goblin",
         "type": "Stable Master"
+      },
+      {
+        "name": "Izzy Coppergrab",
+        "gender": "Male",
+        "race": "Goblin",
+        "type": "Banker"
       }
     ],
     "x": 127,
@@ -2125,6 +2161,12 @@
         "gender": "Male",
         "race": "Goblin",
         "type": "Stable Master"
+      },
+      {
+        "name": "Qizzik",
+        "gender": "Male",
+        "race": "Goblin",
+        "type": "Banker"
       }
     ],
     "x": 117,
@@ -2152,6 +2194,12 @@
         "gender": "Male",
         "race": "Goblin",
         "type": "Stable Master"
+      },
+      {
+        "name": "Fuzruckle",
+        "gender": "Male",
+        "race": "Goblin",
+        "type": "Banker"
       }
     ],
     "x": 116,
@@ -2191,6 +2239,12 @@
         "gender": "Male",
         "race": "Goblin",
         "type": "Stable Master"
+      },
+      {
+        "name": "Viznik Goldgrubber",
+        "gender": "Male",
+        "race": "Goblin",
+        "type": "Banker"
       }
     ],
     "x": 261,

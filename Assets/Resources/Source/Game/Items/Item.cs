@@ -390,7 +390,7 @@ public class Item
                     CloseWindow("Vendor");
                     Respawn("VendorBuyback");
                 }
-                else if (CDesktop.title == "Bank")
+                else if (CDesktop.windows.Exists(x => x.title == "Bank"))
                 {
                     if (currentSave.banks[town.name].items.Count < currentSave.banks[town.name].BagSpace())
                     {
