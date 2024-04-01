@@ -25,7 +25,7 @@ public class FadeIn : MonoBehaviour
         {
             render.color = new Color(render.color.r, render.color.g, render.color.b, render.color.a + 0.1f);
             if (render.color.a == 1) Destroy(this);
-            counter = 0.01f;
+            counter = 0.005f;
         }
     }
 }

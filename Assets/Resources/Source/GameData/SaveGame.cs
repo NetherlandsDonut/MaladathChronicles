@@ -155,6 +155,7 @@ public class SaveGame
     {
         currentSave = saves[settings.selectedRealm].Find(x => x.player.name == settings.selectedCharacter);
         currentSave.lastLoaded = DateTime.Now;
+        if (currentSave.currentSite != null && Site.FindSite(x => x.name == currentSave.currentSite) == null) currentSave.currentSite = null;
         currentSave.currentSite ??= currentSave.player.Race().startingSite;
     }
 

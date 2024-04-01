@@ -1,5 +1,4 @@
 using System;
-using System.Linq;
 using System.Collections.Generic;
 
 using UnityEngine;
@@ -12,7 +11,6 @@ using static MapGrid;
 using static Faction;
 using static SitePath;
 using static SaveGame;
-using static FlightPathGroup;
 
 public class SiteTown : Site
 {
@@ -70,12 +68,23 @@ public class SiteTown : Site
                                 },
                                 (h) =>
                                 {
-                                    CloseDesktop("Town");
-                                    SwitchDesktop("Map");
-                                    CDesktop.LockScreen();
                                     if (transport.price > 0)
+                                    {
+                                        if (transport.price > currentSave.player.inventory.money) return;
                                         PlaySound("DesktopTransportPay");
+                                        currentSave.player.inventory.money -= transport.price;
+                                    }
+
+                                    //Close town screen as we're beginning to travel on map
+                                    CloseDesktop("Town");
+
+                                    //Switch desktop to map
+                                    SwitchDesktop("Map");
+
+                                    //Lead path to the destination
                                     LeadPath(transport);
+
+                                    //Queue moving player to the destination
                                     destination.ExecutePath("Town");
                                 },
                                 null,
@@ -115,6 +124,8 @@ public class SiteTown : Site
                     }
                 )
             );
+        pathsConnectedToSite.Remove(name);
+        transportationConnectedToSite.Remove(name);
         if (x != 0 && y != 0)
             Blueprint.windowBlueprints.Add(new Blueprint("Site: " + name, () => PrintSite()));
     }

@@ -83,6 +83,7 @@ public class Site
         var newPoint = new Vector2(site.x, site.y) * 19;
         foreach (var path in pathsDrawn)
         {
+            if (path.Item2 == null) continue;
             var queue = path.Item2.GetComponentsInChildren<Transform>().ToList().FindAll(x => x.name == "PathDot");
             if (queue.Count > 0)
             {
@@ -91,14 +92,28 @@ public class Site
                 CDesktop.queuedPath.Add((path.Item1, queue));
             }
         }
+
+        //?
         if (pathsDrawn.Count == 0) return;
+
+        //Save current site for later use so that we can remember where we were
         var current = currentSave.currentSite;
+
+        //Set current site to none because the player is traveling between sites
         currentSave.currentSite = "";
+
+        //Respawn the site the player was at a moment ago so that it doesn't have
+        //the green arrow indicating that the player would be still there
         Respawn("Site: " + current);
+
+        //?
         CDesktop.queuedSiteOpen = name;
+
+        //Don't know if it's needed
         CDesktop.LockScreen();
     }
 
+    //Can this site be seen on map
     public bool CanBeSeen()
     {
         if (currentSave.siteVisits.ContainsKey(name)) return true;
@@ -123,7 +138,8 @@ public class Site
             paths.Add(new SitePath()
             {
                 sites = new() { sitePathBuilder.name, name },
-                points = pathBuilder.Select(x => ((int)x.x, (int)x.y)).ToList()
+                points = pathBuilder.Select(x => ((int)x.x, (int)x.y)).ToList(),
+                spacing = builderSpacing <= 0 ? 10 : builderSpacing
             });
             paths.Last().Initialise();
             pathsDrawn.Add(paths.Last().DrawPath());
@@ -146,7 +162,7 @@ public class Site
 
     public void ExecutePath(string siteType)
     {
-        if (currentSave.currentSite != name) QueueSitePathTravel();
+        if (currentSave.currentSite != name && pathsDrawn.Count > 0) QueueSitePathTravel();
         else QueueSiteOpen(siteType);
     }
 

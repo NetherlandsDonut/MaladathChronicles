@@ -86,8 +86,8 @@ public class SiteInstance : Site
                     }
                 )
             );
-        if (x != 0 && y != 0)
-            Blueprint.windowBlueprints.Add(new Blueprint("Site: " + name, () => PrintSite()));
+        SitePath.pathsConnectedToSite.Remove(name);
+        if (x != 0 && y != 0) Blueprint.windowBlueprints.Add(new Blueprint("Site: " + name, () => PrintSite()));
     }
 
     //Determines whether this instance is a part of a complex

@@ -25,7 +25,7 @@ public class FallingText : MonoBehaviour
             length = temp.SpawnCharacter(character, length, fallingTextFont);
             var ch = temp.characters.Last();
             var chs = ch.GetComponent<SpriteRenderer>();
-            ch.AddComponent<Shatter>().Initiate(0.015f, chs);
+            ch.AddComponent<Shatter>().Initiate(0.015f, 0, chs);
             for (int i = 0; i < chs.sprite.textureRect.width; i++)
                 for (int j = 0; j < chs.sprite.textureRect.height; j++)
                 {
@@ -92,7 +92,7 @@ public class FallingText : MonoBehaviour
                 else texture.SetPixel(i, j, new Color(0, 0, 0, 0));
         texture.Apply();
         var sprite = Sprite.Create(texture, new Rect(Vector2.zero, new Vector2(texture.width, texture.height)), new Vector2(0, 1), 1);
-        textBorder.AddComponent<Shatter>().Initiate(0.015f, textBorder.GetComponent<SpriteRenderer>());
+        textBorder.AddComponent<Shatter>().Initiate(0.015f, 0, textBorder.GetComponent<SpriteRenderer>());
         textBorder.GetComponent<SpriteRenderer>().sprite = sprite;
         textBorder.GetComponent<SpriteRenderer>().sortingLayerName = "FallingText";
     }

@@ -4304,7 +4304,39 @@
           }
         ]
       }
-    ]
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Gray",
+              "Text": "Hurls a hammer of light that deals"
+            },
+            {
+              "Color": "Order",
+              "Text": "PowerRange(Effector, Spell, 1, 1)",
+              "Split": "No"
+            },
+            {
+              "Color": "Gray",
+              "Text": "damage."
+            }
+          ]
+        },
+        {
+          "regionType": "Padding",
+          "isExtender": true,
+          "contents": [
+            {
+              "Color": "Gray",
+              "Text": "This ability ends caster's turn."
+            }
+          ]
+        }
+      ]
+    }
   },
   {
     "name": "Jurisdiction",

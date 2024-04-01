@@ -23,6 +23,8 @@ public static class Root
     public static bool canUnlockScreen;
     public static bool useUnityData = true;
     public static bool showSitesUnconditional;
+    public static bool disableCameraBounds;
+    public static int builderSpacing;
     public static string prefix = "";
 
     public static string locationName;
@@ -190,7 +192,7 @@ public static class Root
         transition.transform.parent = CDesktop.screen.transform;
         transition.transform.localPosition = Vector3.zero;
         transition.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Textures/CameraTransition");
-        transition.GetComponent<Shatter>().Initiate(time, transition.GetComponent<SpriteRenderer>());
+        transition.GetComponent<Shatter>().Initiate(time, 0, transition.GetComponent<SpriteRenderer>());
     }
 
     public static void RemoveDesktopBackground(bool followCamera = true)

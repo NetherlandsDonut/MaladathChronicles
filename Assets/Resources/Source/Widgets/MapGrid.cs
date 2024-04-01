@@ -38,15 +38,19 @@ public class MapGrid : MonoBehaviour
     //On mouse down pan the camera to the pressed square on the map
     void Update()
     {
-        if (sitePathBuilder != null && Vector2.Distance(pathBuilder.Last(), cursor.transform.position - new Vector3(10, -10)) > 10)
+        if (sitePathBuilder != null)
         {
-            pathBuilder.Add(cursor.transform.position - new Vector3(10, -10));
-            if (pathTest.Item2 != null) Destroy(pathTest.Item2);
-            pathTest = new SitePath()
+            var foo = builderSpacing <= 0 ? 10 : builderSpacing;
+            if (Vector2.Distance(pathBuilder.Last(), cursor.transform.position - new Vector3(10, -10)) > foo)
             {
-                sites = new() { sitePathBuilder.name, "?" },
-                points = pathBuilder.Select(x => ((int)x.x, (int)x.y)).ToList()
-            }.DrawPath();
+                pathBuilder.Add(cursor.transform.position - new Vector3(10, -10));
+                if (pathTest.Item2 != null) Destroy(pathTest.Item2);
+                pathTest = new SitePath()
+                {
+                    sites = new() { sitePathBuilder.name, "?" },
+                    points = pathBuilder.Select(x => ((int)x.x, (int)x.y)).ToList()
+                }.DrawPath();
+            }
         }
     }
 

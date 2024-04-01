@@ -9,8 +9,8 @@ public class SiteSpiritHealer : Site
     //and remove empty collections to avoid serialising them later
     public override void Initialise()
     {
-        if (x != 0 && y != 0)
-            Blueprint.windowBlueprints.Add(new Blueprint("Site: SpiritHealer: " + name, () => PrintSite()));
+        SitePath.pathsConnectedToSite.Remove(name);
+        if (x != 0 && y != 0) Blueprint.windowBlueprints.Add(new Blueprint("Site: SpiritHealer: " + name, () => PrintSite()));
     }
 
     //Currently opened spirit healer

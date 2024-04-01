@@ -5,19 +5,28 @@ using static Root;
 
 public class Shatter : MonoBehaviour
 {
+    //Time that the shatter effect will be delayed by
+    public float delayLeft;
+
+    //Speed at which the shatter effect proceeds
     public float time;
+
+    //Renderer that will be affected by this effect
     public SpriteRenderer render;
 
-    public void Initiate(float time, SpriteRenderer r = null)
+    //Initiates the shatter effect
+    public void Initiate(float time, float delay = 0, SpriteRenderer r = null)
     {
         this.time = time;
+        delayLeft = delay;
         if (r != null) render = r;
         if (render == null) StartCoroutine(SelfDestruct(time));
     }
 
     public void Update()
     {
-        if (render != null)
+        if (delayLeft > 0) delayLeft -= Time.deltaTime;
+        else if (render != null)
         {
             render.color = new Color(render.color.r, render.color.g, render.color.b, render.color.a - (0.2f * time));
             if (render.color.a <= 0) Destroy(gameObject);
@@ -87,7 +96,7 @@ public class Shatter : MonoBehaviour
         void SpawnDot(int c, int v, Color32 color)
         {
             var newObject = Instantiate(dot);
-            newObject.GetComponent<Shatter>().Initiate(random.Next(1, 8) / 50.0f);
+            newObject.GetComponent<Shatter>().Initiate(random.Next(1, 8) / 60.0f, 0.5f);
             newObject.transform.parent = shatter.transform;
             newObject.transform.localPosition = new Vector3(c, v);
             newObject.GetComponent<SpriteRenderer>().color = color;

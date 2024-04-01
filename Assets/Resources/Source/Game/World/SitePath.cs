@@ -16,8 +16,10 @@ public class SitePath
         if (speed <= 0) speed = 10;
         var list = means == "Land" ? pathsConnectedToSite : transportationConnectedToSite;
         foreach (var site in sites)
-            if (list.ContainsKey(site)) list[site].Add(this);
-            else list.Add(site, new() { this });
+            if (!list.ContainsKey(site))
+                list.Add(site, new() { this });
+            else if (!list[site].Contains(this))
+                list[site].Add(this);
     }
 
     //Paths connected to this one excluding connections to sites in exclude list
@@ -43,6 +45,9 @@ public class SitePath
     //Animation speed of this path
     public int speed;
 
+    //Space between pips of the path
+    public int spacing;
+
     //List of all points in between the two sites
     public List<(int, int)> points;
 
@@ -58,6 +63,7 @@ public class SitePath
     //Draws the path
     public (SitePath, GameObject) DrawPath()
     {
+        if (points.Count == 0) return (this, null);
         sites = sites.OrderBy(x => x).ToList();
         var a = sites[0];
         var b = sites[1];
@@ -80,9 +86,10 @@ public class SitePath
             var start = new Vector2(a.Item1, a.Item2);
             var end = new Vector2(b.Item1, b.Item2);
             while ((int)Vector2.Distance(start, end) >= stepsMade - beginSteps)
-                if (stepsMade++ % 10 == 0)
+                if (stepsMade++ % ((Site.sitePathBuilder != null ? builderSpacing : spacing) <= 0 ? 10 : (Site.sitePathBuilder != null ? builderSpacing : spacing)) == 0)
                 {
                     var dot = new GameObject("PathDot", typeof(SpriteRenderer), typeof(FadeIn));
+                    if (Site.sitePathBuilder != null) Object.Destroy(dot.GetComponent<FadeIn>());
                     dot.transform.parent = path.transform;
                     dot.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Other/PathDot");
                     dot.GetComponent<SpriteRenderer>().color = Color.black;
@@ -90,12 +97,14 @@ public class SitePath
                     dot.transform.position = Vector2.Lerp(start, end, 1 / Vector2.Distance(start, end) * (stepsMade - beginSteps));
                     dot.transform.position = new Vector2((int)dot.transform.position.x, (int)dot.transform.position.y);
                     var dotBorder = new GameObject("PathDotBorder", typeof(SpriteRenderer), typeof(FadeIn));
+                    if (Site.sitePathBuilder != null) Object.Destroy(dotBorder.GetComponent<FadeIn>());
                     dotBorder.transform.parent = dot.transform;
                     dotBorder.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Other/PathDotBorder");
                     dotBorder.GetComponent<SpriteRenderer>().sortingLayerName = "CameraShadow";
                     dotBorder.GetComponent<SpriteRenderer>().sortingOrder = -1;
                     dotBorder.transform.localPosition = Vector3.zero;
                     var dotShadow = new GameObject("PathDotShadow", typeof(SpriteRenderer), typeof(FadeIn));
+                    if (Site.sitePathBuilder != null) Object.Destroy(dotShadow.GetComponent<FadeIn>());
                     dotShadow.transform.parent = dot.transform;
                     dotShadow.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Other/PathDotShadow");
                     dotShadow.GetComponent<SpriteRenderer>().sortingLayerName = "CameraShadow";

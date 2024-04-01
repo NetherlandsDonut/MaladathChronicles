@@ -212,9 +212,9 @@ public class SiteHostileArea : Site
                     }
                 )
             );
+        SitePath.pathsConnectedToSite.Remove(name);
         Blueprint.windowBlueprints.RemoveAll(x => x.title == "Site: " + name);
-        if (x != 0 && y != 0)
-            Blueprint.windowBlueprints.Add(new Blueprint("Site: " + name, () => PrintSite()));
+        if (x != 0 && y != 0) Blueprint.windowBlueprints.Add(new Blueprint("Site: " + name, () => PrintSite()));
     }
 
     //Function to print the site onto the map

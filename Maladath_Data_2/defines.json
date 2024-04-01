@@ -12,7 +12,5 @@
   "mapGridSize": 19,
   "markerCharacter": "_",
   "textWrapEnding": "...",
-  "frameTime": 0.08,
-  "fasterPathfinding": false,
-  "splitExperienceBar": false
+  "frameTime": 0.08
 }

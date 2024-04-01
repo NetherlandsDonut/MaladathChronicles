@@ -164,7 +164,7 @@ public class Blueprint
                     Login();
                     SpawnDesktopBlueprint("Map");
                     var find = FindSite(x => x.name == currentSave.currentSite);
-                    CDesktop.cameraDestination = new Vector2(find.x, find.y) * mapGridSize;
+                    if (find != null) CDesktop.cameraDestination = new Vector2(find.x, find.y) * mapGridSize;
                 });
             }
             else
@@ -1245,7 +1245,11 @@ public class Blueprint
             SetRegionGroupWidth(272);
             AddPaddingRegion(() =>
             {
-                
+                AddSmallButton("OtherSettings", (h) =>
+                {
+                    PlaySound("DesktopMenuOpen");
+                    SpawnDesktopBlueprint("GameMenu");
+                });
             });
         }, true),
         new("MapToolbarClockRight", () => {
@@ -7153,15 +7157,6 @@ public class Blueprint
                 {
                     UnityEngine.Object.Destroy(pathTest.Item2);
                     sitePathBuilder = null;
-                }
-                if (Input.GetKey(LeftShift))
-                    foreach (var path in paths)
-                        pathsDrawn.Add(path.DrawPath());
-                else
-                {
-                    for (int i = 0; i < pathsDrawn.Count; i++)
-                        UnityEngine.Object.Destroy(pathsDrawn[i].Item2);
-                    pathsDrawn = new();
                 }
             });
             AddHotkey(BackQuote, () =>

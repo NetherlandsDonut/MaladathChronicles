@@ -235,7 +235,6 @@ public class Desktop : MonoBehaviour
                                 currentSave.siteVisits.Add(queuedSiteOpen, 0);
                                 PlaySound("DesktopZoneDiscovered", 1f);
                                 currentSave.player.ReceiveExperience(1);
-                                Respawn("ExperienceBar");
                             }
                             Respawn("Site: " + queuedSiteOpen);
                             foreach (var connection in paths.FindAll(x => x.sites.Contains(queuedSiteOpen)))
@@ -250,13 +249,13 @@ public class Desktop : MonoBehaviour
                         {
                             var first = queuedPath[0].Item2.First(x => x.name == "PathDot");
                             cameraDestination = first.position;
-                            first.GetComponent<SpriteRenderer>().color = (queuedPath[0].Item1.means == "Tram" ? Color.yellow : (queuedPath[0].Item1.means == "Ship" ? Color.blue : Color.green));
+                            first.GetComponent<SpriteRenderer>().color = queuedPath[0].Item1.means == "Tram" ? Color.yellow : (queuedPath[0].Item1.means == "Ship" ? Color.blue : Color.green);
                         }
                     }
                 }
-                else if (screenlock || queuedSiteOpen != "")
+                else
                 {
-                    EnforceBoundary();
+                    if (!disableCameraBounds) EnforceBoundary();
                     var newPosition = Vector3.Lerp(temp, cameraDestination, Time.deltaTime * 5);
                     cursor.transform.position += newPosition - temp;
                     screen.transform.localPosition = newPosition;

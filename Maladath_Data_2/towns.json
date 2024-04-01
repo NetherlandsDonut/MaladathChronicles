@@ -273,13 +273,13 @@
         "gender": "Female",
         "race": "Human",
         "type": "Innkeeper"
-        },
-        {
-          "name": "Steven Black",
-          "gender": "Male",
-          "race": "Human",
-          "type": "Stable Master"
-        }
+      },
+      {
+        "name": "Steven Black",
+        "gender": "Male",
+        "race": "Human",
+        "type": "Stable Master"
+      }
     ],
     "x": 279,
     "y": -201,

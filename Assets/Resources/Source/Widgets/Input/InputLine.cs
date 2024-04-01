@@ -472,6 +472,14 @@ public class InputLine : MonoBehaviour
                 showSitesUnconditional = true;
                 CDesktop.ReloadAssets();
             }
+            else if (foo.Value() == "disablebounds")
+            {
+                disableCameraBounds = true;
+            }
+            else if (foo.Value() == "enablebounds")
+            {
+                disableCameraBounds = false;
+            }
             else if (foo.Value() == "hidesites")
             {
                 showSitesUnconditional = false;
@@ -503,7 +511,22 @@ public class InputLine : MonoBehaviour
                         currentSave.siteVisits.Add(site.name, 1);
                     CDesktop.cameraDestination = new Vector2(site.x, site.y) * 19;
                     Respawn("Site: " + site.name);
+                    CDesktop.LockScreen();
                 }
+            }
+            else if (foo.Value().StartsWith("money"))
+            {
+                var amount = int.Parse(foo.Value().Substring(5));
+                currentSave.player.inventory.money += amount;
+            }
+            else if (foo.Value().StartsWith("builderspacing"))
+            {
+                builderSpacing = int.Parse(foo.Value()[15..]);
+            }
+            else if (foo.Value().StartsWith("showpaths"))
+            {
+                foreach (var path in SitePath.paths)
+                    SitePath.pathsDrawn.Add(path.DrawPath());
             }
             else if (foo.Value().StartsWith("delpaths"))
             {
