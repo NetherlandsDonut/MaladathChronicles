@@ -108,7 +108,7 @@ public class SiteTown : Site
                                         Person.person = person;
                                         Respawn("Person");
                                     });
-                                else if (personType.type != "Other")
+                                else if (personType.type != "Other" && (!person.type.Contains("Trainer") || person.type.Contains(currentSave.player.spec) || currentSave.player.spec == "Mage" && person.type.Contains("Portal")))
                                     AddButtonRegion(() =>
                                     {
                                         AddLine(person.name, "Black");

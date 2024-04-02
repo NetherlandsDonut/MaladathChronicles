@@ -99,14 +99,15 @@ public static class Root
         blueprint.actions();
     }
 
-    public static void CloseDesktop(string desktopName)
+    public static bool CloseDesktop(string desktopName)
     {
         var find = desktops.Find(x => x.title == desktopName);
-        if (find == null) return;
+        if (find == null) return false;
         desktops.Remove(find);
         if (find == CDesktop)
             SwitchDesktop(desktops[0].title);
         UnityEngine.Object.Destroy(find.gameObject);
+        return true;
     }
 
     private static void AddDesktop(string title)

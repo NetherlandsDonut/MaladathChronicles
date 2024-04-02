@@ -1016,7 +1016,11 @@ public class Blueprint
                 () =>
                 {
                     AddLine(Board.board.enemy.name, "Black");
-                    AddSmallButton("OtherSettings", (h) => { SpawnDesktopBlueprint("GameMenu"); });
+                    AddSmallButton("OtherSettings", (h) =>
+                    {
+                        PlaySound("DesktopMenuOpen");
+                        SpawnDesktopBlueprint("GameMenu");
+                    });
                 },
                 (h) =>
                 {
@@ -1167,7 +1171,11 @@ public class Blueprint
                 CloseDesktop("EquipmentScreen");
                 if (CDesktop.title != "TalentScreen")
                     SpawnDesktopBlueprint("TalentScreen");
-                else CloseDesktop(CDesktop.title);
+                else
+                { 
+                    CloseDesktop(CDesktop.title);
+                    PlaySound("DesktopTalentScreenClose");
+                }
             });
             AddHotkey(P, () =>
             {
@@ -1175,7 +1183,11 @@ public class Blueprint
                 CloseDesktop("EquipmentScreen");
                 if (CDesktop.title != "SpellbookScreen")
                     SpawnDesktopBlueprint("SpellbookScreen");
-                else CloseDesktop(CDesktop.title);
+                else
+                {
+                    CloseDesktop(CDesktop.title);
+                    PlaySound("DesktopSpellbookScreenClose");
+                }
             });
             AddHotkey(B, () =>
             {
@@ -1183,7 +1195,11 @@ public class Blueprint
                 CloseDesktop("SpellbookScreen");
                 if (CDesktop.title != "EquipmentScreen")
                     SpawnDesktopBlueprint("EquipmentScreen");
-                else CloseDesktop(CDesktop.title);
+                else
+                {
+                    CloseDesktop(CDesktop.title);
+                    PlaySound("DesktopInventoryClose");
+                }
             });
             SetAnchor(Top);
             DisableShadows();
@@ -1200,7 +1216,11 @@ public class Blueprint
                     CloseDesktop("TalentScreen");
                     if (CDesktop.title != "EquipmentScreen")
                         SpawnDesktopBlueprint("EquipmentScreen");
-                    else CloseDesktop(CDesktop.title);
+                    else
+                    {
+                        CloseDesktop(CDesktop.title);
+                        PlaySound("DesktopInventoryClose");
+                    }
                 });
                 AddSmallButton(CDesktop.title == "SpellbookScreen" ? "OtherClose" : "MenuSpellbook", (h) =>
                 {
@@ -1208,7 +1228,11 @@ public class Blueprint
                     CloseDesktop("TalentScreen");
                     if (CDesktop.title != "SpellbookScreen")
                         SpawnDesktopBlueprint("SpellbookScreen");
-                    else CloseDesktop(CDesktop.title);
+                    else
+                    {
+                        CloseDesktop(CDesktop.title);
+                        PlaySound("DesktopSpellbookScreenClose");
+                    }
                 });
                 //AddSmallButton(CDesktop.title == "PetScreen" ? "OtherClose" : "MenuSpellbook", (h) =>
                 //{
@@ -1224,7 +1248,11 @@ public class Blueprint
                     CloseDesktop("EquipmentScreen");
                     if (CDesktop.title != "TalentScreen")
                         SpawnDesktopBlueprint("TalentScreen");
-                    else CloseDesktop(CDesktop.title);
+                    else
+                    {
+                        CloseDesktop(CDesktop.title);
+                        PlaySound("DesktopTalentScreenClose");
+                    }
                 });
                 AddSmallButton("MenuCompletion", (h) =>
                 {
@@ -7371,6 +7399,11 @@ public class Blueprint
                     { "Shadow", 99 },
                 };
                 CDesktop.RebuildAll();
+            });
+            AddHotkey(Escape, () =>
+            {
+                PlaySound("DesktopMenuOpen");
+                SpawnDesktopBlueprint("GameMenu");
             });
             AddHotkey(BackQuote, () => { SpawnDesktopBlueprint("DevPanel"); });
             AddHotkey(KeypadMultiply, () => { Board.board.EndCombat("Won"); });
