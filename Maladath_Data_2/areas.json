@@ -23784,7 +23784,7 @@
     ],
     "x": 109,
     "y": -131,
-    "name": "Grom'dom Farm",
+    "name": "Grol'dom Farm",
     "zone": "The Barrens",
     "type": "HostileArea"
   },
@@ -25542,9 +25542,30 @@
         "point": 3
       }
     ],
-    "x": 98,
-    "y": -212,
+    "x": 97,
+    "y": -210,
     "name": "The Marshlands",
+    "zone": "Un'Goro Crater",
+    "type": "HostileArea"
+  },
+  {
+    "commonEncounters": [
+      {
+        "who": "Frenzied Pterrordax",
+        "levelMin": 53,
+        "levelMax": 54
+      }
+    ],
+    "areaSize": 3,
+    "progression": [
+      {
+        "type": "Treasure",
+        "point": 3
+      }
+    ],
+    "x": 101,
+    "y": -213,
+    "name": "Ironstone Plateau",
     "zone": "Un'Goro Crater",
     "type": "HostileArea"
   },

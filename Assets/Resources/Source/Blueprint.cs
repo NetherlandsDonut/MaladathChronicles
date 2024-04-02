@@ -754,7 +754,6 @@ public class Blueprint
                 AddSmallButton("OtherReverse", (h) =>
                 {
                     abilities.Reverse();
-                    abilitiesSearch.Reverse();
                     Respawn("SpellbookAbilityListActivated");
                     PlaySound("DesktopInventorySort", 0.2f);
                 });
@@ -834,7 +833,6 @@ public class Blueprint
                 AddSmallButton("OtherReverse", (h) =>
                 {
                     abilities.Reverse();
-                    abilitiesSearch.Reverse();
                     Respawn("SpellbookAbilityListPassive");
                     PlaySound("DesktopInventorySort", 0.2f);
                 });
@@ -1163,6 +1161,30 @@ public class Blueprint
             AddPaddingRegion(() => { });
         }),
         new("MapToolbar", () => {
+            AddHotkey(N, () =>
+            {
+                CloseDesktop("SpellbookScreen");
+                CloseDesktop("EquipmentScreen");
+                if (CDesktop.title != "TalentScreen")
+                    SpawnDesktopBlueprint("TalentScreen");
+                else CloseDesktop(CDesktop.title);
+            });
+            AddHotkey(P, () =>
+            {
+                CloseDesktop("TalentScreen");
+                CloseDesktop("EquipmentScreen");
+                if (CDesktop.title != "SpellbookScreen")
+                    SpawnDesktopBlueprint("SpellbookScreen");
+                else CloseDesktop(CDesktop.title);
+            });
+            AddHotkey(B, () =>
+            {
+                CloseDesktop("TalentScreen");
+                CloseDesktop("SpellbookScreen");
+                if (CDesktop.title != "EquipmentScreen")
+                    SpawnDesktopBlueprint("EquipmentScreen");
+                else CloseDesktop(CDesktop.title);
+            });
             SetAnchor(Top);
             DisableShadows();
             AddRegionGroup();
@@ -1174,19 +1196,19 @@ public class Blueprint
                 });
                 AddSmallButton(CDesktop.title == "EquipmentScreen" ? "OtherClose" : "MenuInventory", (h) =>
                 {
-                    var temp = CDesktop.title;
-                    if (CDesktop.title != "Map" && CDesktop.title != "CombatResults")
-                        CloseDesktop(CDesktop.title);
-                    if (temp != "EquipmentScreen")
+                    CloseDesktop("SpellbookScreen");
+                    CloseDesktop("TalentScreen");
+                    if (CDesktop.title != "EquipmentScreen")
                         SpawnDesktopBlueprint("EquipmentScreen");
+                    else CloseDesktop(CDesktop.title);
                 });
                 AddSmallButton(CDesktop.title == "SpellbookScreen" ? "OtherClose" : "MenuSpellbook", (h) =>
                 {
-                    var temp = CDesktop.title;
-                    if (CDesktop.title != "Map" && CDesktop.title != "CombatResults")
-                        CloseDesktop(CDesktop.title);
-                    if (temp != "SpellbookScreen")
+                    CloseDesktop("EquipmentScreen");
+                    CloseDesktop("TalentScreen");
+                    if (CDesktop.title != "SpellbookScreen")
                         SpawnDesktopBlueprint("SpellbookScreen");
+                    else CloseDesktop(CDesktop.title);
                 });
                 //AddSmallButton(CDesktop.title == "PetScreen" ? "OtherClose" : "MenuSpellbook", (h) =>
                 //{
@@ -1198,14 +1220,11 @@ public class Blueprint
                 //});
                 AddSmallButton(CDesktop.title == "TalentScreen" ? "OtherClose" : "MenuClasses", (h) =>
                 {
-                    var temp = CDesktop.title;
-                    if (CDesktop.title != "Map" && CDesktop.title != "CombatResults")
-                        CloseDesktop(CDesktop.title);
-                    if (temp != "TalentScreen")
-                    {
-                        PlaySound("DesktopTalentScreenOpen");
+                    CloseDesktop("SpellbookScreen");
+                    CloseDesktop("EquipmentScreen");
+                    if (CDesktop.title != "TalentScreen")
                         SpawnDesktopBlueprint("TalentScreen");
-                    }
+                    else CloseDesktop(CDesktop.title);
                 });
                 AddSmallButton("MenuCompletion", (h) =>
                 {
@@ -1364,8 +1383,8 @@ public class Blueprint
                     {
                         SpawnWindowBlueprint("InventorySort");
                         Respawn("Inventory");
-                        if (town != null)
-                            Respawn("Bank");
+                        Respawn("Bank", true);
+                        Respawn("ExperienceBar", true);
                     });
                 else
                     AddSmallButton("OtherSortOff", (h) => { });
@@ -1374,8 +1393,8 @@ public class Blueprint
                     {
                         SpawnWindowBlueprint("InventorySettings");
                         Respawn("Inventory");
-                        if (town != null)
-                            Respawn("Bank");
+                        Respawn("Bank", true);
+                        Respawn("ExperienceBar", true);
                     });
                 else
                     AddSmallButton("OtherSettingsOff", (h) => { });
@@ -1870,8 +1889,7 @@ public class Blueprint
                 AddSmallButton("OtherClose", (h) =>
                 {
                     CloseWindow("BankSort");
-                    Respawn("Bank");
-                    Respawn("Inventory");
+                    CDesktop.RespawnAll();
                 });
             });
             AddButtonRegion(() =>
@@ -1882,8 +1900,7 @@ public class Blueprint
             {
                 currentSave.banks[town.name].items = currentSave.banks[town.name].items.OrderBy(x => x.name).ToList();
                 CloseWindow("BankSort");
-                Respawn("Bank");
-                Respawn("Inventory");
+                CDesktop.RespawnAll();
                 PlaySound("DesktopInventorySort", 0.2f);
             });
             AddButtonRegion(() =>
@@ -1894,8 +1911,7 @@ public class Blueprint
             {
                 currentSave.banks[town.name].items = currentSave.banks[town.name].items.OrderByDescending(x => x.ilvl).ToList();
                 CloseWindow("BankSort");
-                Respawn("Bank");
-                Respawn("Inventory");
+                CDesktop.RespawnAll();
                 PlaySound("DesktopInventorySort", 0.2f);
             });
             AddButtonRegion(() =>
@@ -1906,8 +1922,7 @@ public class Blueprint
             {
                 currentSave.banks[town.name].items = currentSave.banks[town.name].items.OrderByDescending(x => x.price).ToList();
                 CloseWindow("BankSort");
-                Respawn("Bank");
-                Respawn("Inventory");
+                CDesktop.RespawnAll();
                 PlaySound("DesktopInventorySort", 0.2f);
             });
             AddButtonRegion(() =>
@@ -1918,8 +1933,7 @@ public class Blueprint
             {
                 currentSave.banks[town.name].items = currentSave.banks[town.name].items.OrderByDescending(x => x.type).ToList();
                 CloseWindow("BankSort");
-                Respawn("Bank");
-                Respawn("Inventory");
+                CDesktop.RespawnAll();
                 PlaySound("DesktopInventorySort", 0.2f);
             });
         }),
@@ -1933,8 +1947,7 @@ public class Blueprint
                 AddSmallButton("OtherClose", (h) =>
                 {
                     CloseWindow("VendorSort");
-                    Respawn("Vendor");
-                    Respawn("Inventory");
+                    CDesktop.RespawnAll();
                 });
             });
             AddButtonRegion(() =>
@@ -1945,8 +1958,7 @@ public class Blueprint
             {
                 currentSave.banks[town.name].items = currentSave.banks[town.name].items.OrderBy(x => x.name).ToList();
                 CloseWindow("BankSort");
-                Respawn("Bank");
-                Respawn("Inventory");
+                CDesktop.RespawnAll();
                 PlaySound("DesktopInventorySort", 0.2f);
             });
             AddButtonRegion(() =>
@@ -1957,8 +1969,7 @@ public class Blueprint
             {
                 currentSave.banks[town.name].items = currentSave.banks[town.name].items.OrderByDescending(x => x.ilvl).ToList();
                 CloseWindow("BankSort");
-                Respawn("Bank");
-                Respawn("Inventory");
+                CDesktop.RespawnAll();
                 PlaySound("DesktopInventorySort", 0.2f);
             });
             AddButtonRegion(() =>
@@ -1969,8 +1980,7 @@ public class Blueprint
             {
                 currentSave.banks[town.name].items = currentSave.banks[town.name].items.OrderByDescending(x => x.price).ToList();
                 CloseWindow("BankSort");
-                Respawn("Bank");
-                Respawn("Inventory");
+                CDesktop.RespawnAll();
                 PlaySound("DesktopInventorySort", 0.2f);
             });
             AddButtonRegion(() =>
@@ -1981,8 +1991,7 @@ public class Blueprint
             {
                 currentSave.banks[town.name].items = currentSave.banks[town.name].items.OrderByDescending(x => x.type).ToList();
                 CloseWindow("BankSort");
-                Respawn("Bank");
-                Respawn("Inventory");
+                CDesktop.RespawnAll();
                 PlaySound("DesktopInventorySort", 0.2f);
             });
         }),
@@ -1996,8 +2005,7 @@ public class Blueprint
                 AddSmallButton("OtherClose", (h) =>
                 {
                     CloseWindow("InventorySort");
-                    Respawn("Inventory");
-                    Respawn("Bank");
+                    CDesktop.RespawnAll();
                 });
             });
             AddButtonRegion(() =>
@@ -2008,8 +2016,7 @@ public class Blueprint
             {
                 currentSave.player.inventory.items = currentSave.player.inventory.items.OrderBy(x => x.name).ToList();
                 CloseWindow("InventorySort");
-                Respawn("Inventory");
-                Respawn("Bank");
+                CDesktop.RespawnAll();
                 PlaySound("DesktopInventorySort", 0.2f);
             });
             AddButtonRegion(() =>
@@ -2020,8 +2027,7 @@ public class Blueprint
             {
                 currentSave.player.inventory.items = currentSave.player.inventory.items.OrderByDescending(x => x.ilvl).ToList();
                 CloseWindow("InventorySort");
-                Respawn("Inventory");
-                Respawn("Bank");
+                CDesktop.RespawnAll();
                 PlaySound("DesktopInventorySort", 0.2f);
             });
             AddButtonRegion(() =>
@@ -2032,8 +2038,7 @@ public class Blueprint
             {
                 currentSave.player.inventory.items = currentSave.player.inventory.items.OrderByDescending(x => x.price).ToList();
                 CloseWindow("InventorySort");
-                Respawn("Inventory");
-                Respawn("Bank");
+                CDesktop.RespawnAll();
                 PlaySound("DesktopInventorySort", 0.2f);
             });
             AddButtonRegion(() =>
@@ -2044,8 +2049,7 @@ public class Blueprint
             {
                 currentSave.player.inventory.items = currentSave.player.inventory.items.OrderByDescending(x => x.type).ToList();
                 CloseWindow("InventorySort");
-                Respawn("Inventory");
-                Respawn("Bank");
+                CDesktop.RespawnAll();
                 PlaySound("DesktopInventorySort", 0.2f);
             });
         }),
@@ -2059,8 +2063,7 @@ public class Blueprint
                 AddSmallButton("OtherClose", (h) =>
                 {
                     CloseWindow("InventorySettings");
-                    Respawn("Inventory");
-                    Respawn("PlayerEquipmentInfo");
+                    CDesktop.RespawnAll();
                 });
             });
             AddButtonRegion(() =>
@@ -2071,7 +2074,7 @@ public class Blueprint
             (h) =>
             {
                 settings.rarityIndicators.Invert();
-                h.region.regionGroup.window.desktop.RebuildAll();
+                CDesktop.RespawnAll();
             });
             if (settings.rarityIndicators.Value())
                 AddButtonRegion(() =>
@@ -2082,7 +2085,7 @@ public class Blueprint
                 (h) =>
                 {
                     settings.bigRarityIndicators.Invert();
-                    h.region.regionGroup.window.desktop.RebuildAll();
+                    CDesktop.RespawnAll();
                 });
             AddButtonRegion(() =>
             {
@@ -2092,7 +2095,7 @@ public class Blueprint
             (h) =>
             {
                 settings.upgradeIndicators.Invert();
-                h.region.regionGroup.window.desktop.RebuildAll();
+                CDesktop.RespawnAll();
             });
             AddButtonRegion(() =>
             {
@@ -2102,7 +2105,7 @@ public class Blueprint
             (h) =>
             {
                 settings.newSlotIndicators.Invert();
-                h.region.regionGroup.window.desktop.RebuildAll();
+                CDesktop.RespawnAll();
             });
         }),
         new("CharacterStats", () => {
@@ -5620,9 +5623,7 @@ public class Blueprint
                 AddSmallButton("OtherClose", (h) =>
                 {
                     CloseWindow("AbilitiesSort");
-                    Respawn("ObjectManagerAbilities", true);
-                    Respawn("SpellbookAbilityListActivated", true);
-                    Respawn("SpellbookAbilityListPassive", true);
+                    CDesktop.RespawnAll();
                 });
             });
             AddButtonRegion(() =>
@@ -5632,11 +5633,8 @@ public class Blueprint
             (h) =>
             {
                 abilities = abilities.OrderBy(x => x.name).ToList();
-                abilitiesSearch = abilitiesSearch.OrderBy(x => x.name).ToList();
                 CloseWindow("AbilitiesSort");
-                Respawn("ObjectManagerAbilities", true);
-                Respawn("SpellbookAbilityListActivated", true);
-                Respawn("SpellbookAbilityListPassive", true);
+                CDesktop.RespawnAll();
                 PlaySound("DesktopInventorySort", 0.2f);
             });
             AddButtonRegion(() =>
@@ -5646,11 +5644,8 @@ public class Blueprint
             (h) =>
             {
                 abilities = abilities.OrderByDescending(x => x.cost == null ? -1 : x.cost.Sum(y => y.Value)).ToList();
-                abilitiesSearch = abilitiesSearch.OrderByDescending(x => x.cost == null ? -1 : x.cost.Sum(y => y.Value)).ToList();
                 CloseWindow("AbilitiesSort");
-                Respawn("ObjectManagerAbilities", true);
-                Respawn("SpellbookAbilityListActivated", true);
-                Respawn("SpellbookAbilityListPassive", true);
+                CDesktop.RespawnAll();
                 PlaySound("DesktopInventorySort", 0.2f);
             });
             AddButtonRegion(() =>
@@ -5660,11 +5655,8 @@ public class Blueprint
             (h) =>
             {
                 abilities = abilities.OrderByDescending(x => x.cooldown).ToList();
-                abilitiesSearch = abilitiesSearch.OrderByDescending(x => x.cooldown).ToList();
                 CloseWindow("AbilitiesSort");
-                Respawn("ObjectManagerAbilities", true);
-                Respawn("SpellbookAbilityListActivated", true);
-                Respawn("SpellbookAbilityListPassive", true);
+                CDesktop.RespawnAll();
                 PlaySound("DesktopInventorySort", 0.2f);
             });
         }),
@@ -7150,9 +7142,6 @@ public class Blueprint
                 }
                 else PlaySound("DesktopCharacterSheetClose");
             });
-            AddHotkey(N, () => { SpawnDesktopBlueprint("TalentScreen"); PlaySound("DesktopTalentScreenOpen"); });
-            AddHotkey(P, () => { SpawnDesktopBlueprint("SpellbookScreen"); });
-            AddHotkey(B, () => { SpawnDesktopBlueprint("EquipmentScreen"); });
             AddHotkey(Escape, () =>
             {
                 PlaySound("DesktopMenuOpen");
@@ -7204,7 +7193,6 @@ public class Blueprint
                     CloseDesktop("HostileArea");
                 }
             });
-            AddHotkey(B, () => { SpawnDesktopBlueprint("EquipmentScreen"); });
         }),
         new("CombatResults", () =>
         {
@@ -7310,7 +7298,6 @@ public class Blueprint
                             });
                 SpawnDesktopBlueprint("ObjectManagerRaces");
             });
-            AddHotkey(B, () => { SpawnDesktopBlueprint("EquipmentScreen"); });
         }),
         new("Complex", () =>
         {
@@ -7339,7 +7326,6 @@ public class Blueprint
                     CloseDesktop("Complex");
                 }
             });
-            AddHotkey(B, () => { SpawnDesktopBlueprint("EquipmentScreen"); });
         }),
         new("Game", () =>
         {
@@ -7453,6 +7439,7 @@ public class Blueprint
         }),
         new("TalentScreen", () =>
         {
+            PlaySound("DesktopTalentScreenOpen");
             SetDesktopBackground("Stone");
             SpawnWindowBlueprint("MapToolbarShadow");
             SpawnWindowBlueprint("MapToolbarClockLeft");
@@ -7471,9 +7458,6 @@ public class Blueprint
                             if (playerSpec.talentTrees[currentSave.lastVisitedTalents].talents.Exists(x => x.row == row && x.col == col && x.tree == tree))
                                 SpawnWindowBlueprint("Talent" + tree + row + col);
             SpawnWindowBlueprint("ExperienceBar");
-            AddHotkey(N, () => { CloseDesktop("TalentScreen"); PlaySound("DesktopTalentScreenClose"); });
-            AddHotkey(P, () => { CloseDesktop("TalentScreen"); SpawnDesktopBlueprint("SpellbookScreen"); PlaySound("DesktopTalentScreenClose"); });
-            AddHotkey(B, () => { CloseDesktop("TalentScreen"); SpawnDesktopBlueprint("EquipmentScreen"); PlaySound("DesktopTalentScreenClose"); });
             AddHotkey(A, () =>
             {
                 PlaySound("DesktopSwitchPage");
@@ -7508,9 +7492,6 @@ public class Blueprint
             SpawnWindowBlueprint("PlayerSpellbookInfo");
             SpawnWindowBlueprint("SpellbookResources");
             SpawnWindowBlueprint("ExperienceBar");
-            AddHotkey(N, () => { CloseDesktop("SpellbookScreen"); SpawnDesktopBlueprint("TalentScreen"); PlaySound("DesktopSpellbookScreenClose"); });
-            AddHotkey(P, () => { CloseDesktop("SpellbookScreen"); PlaySound("DesktopSpellbookScreenClose"); });
-            AddHotkey(B, () => { CloseDesktop("SpellbookScreen"); SpawnDesktopBlueprint("EquipmentScreen"); PlaySound("DesktopSpellbookScreenClose"); });
             AddHotkey(Escape, () => { SwitchDesktop("Map"); CloseDesktop("SpellbookScreen"); PlaySound("DesktopSpellbookScreenClose"); });
             AddPaginationHotkeys();
         }),
@@ -7527,9 +7508,6 @@ public class Blueprint
             SpawnWindowBlueprint("PlayerEquipmentInfo");
             SpawnWindowBlueprint("Inventory");
             SpawnWindowBlueprint("ExperienceBar");
-            AddHotkey(N, () => { CloseDesktop("EquipmentScreen"); SpawnDesktopBlueprint("TalentScreen"); PlaySound("DesktopInventoryClose"); });
-            AddHotkey(P, () => { CloseDesktop("EquipmentScreen"); SpawnDesktopBlueprint("SpellbookScreen"); PlaySound("DesktopInventoryClose"); });
-            AddHotkey(B, () => { CloseDesktop("EquipmentScreen"); PlaySound("DesktopInventoryClose"); });
             AddHotkey(Escape, () =>
             {
                 PlaySound("DesktopInventoryClose");

@@ -102,6 +102,7 @@ public static class Root
     public static void CloseDesktop(string desktopName)
     {
         var find = desktops.Find(x => x.title == desktopName);
+        if (find == null) return;
         desktops.Remove(find);
         if (find == CDesktop)
             SwitchDesktop(desktops[0].title);
@@ -163,7 +164,6 @@ public static class Root
             desktops.Insert(0, CDesktop);
             SpawnTransition();
         }
-        Respawn("ExperienceBar", true);
         if (CDesktop.cameraDestination != Vector2.zero)
         {
             Cursor.cursor.transform.position += (Vector3)CDesktop.cameraDestination - CDesktop.screen.transform.localPosition;
@@ -216,6 +216,7 @@ public static class Root
     //Hotkeys can be added only on desktop creation!
     public static void AddHotkey(KeyCode key, Action action, bool keyDown = true)
     {
+        if (LBDesktop.hotkeys.Exists(x => x.key == key)) return;
         LBDesktop.hotkeys.Add(new Hotkey(key, action, keyDown));
     }
 
