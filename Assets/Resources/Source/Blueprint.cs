@@ -2544,15 +2544,15 @@ public class Blueprint
         },  true),
         new("ExperienceBar", () => {
             SetAnchor(Bottom);
-            for (int i = 0; i < 58; i++)
-            {
-                AddRegionGroup();
-                SetRegionGroupWidth(11);
-                SetRegionGroupHeight(12);
-                if (currentSave != null && currentSave.player.experience > i)
-                    AddPaddingRegion(() => { SetRegionBackground(RegionBackgroundType.Experience); });
-                else AddPaddingRegion(() => { });
-            }
+            var experience = (int)(319 * (currentSave.player.experience / (double)currentSave.player.ExperienceNeeded()));
+            AddRegionGroup();
+            SetRegionGroupWidth(experience * 2);
+            SetRegionGroupHeight(12);
+            AddPaddingRegion(() => { SetRegionBackground(RegionBackgroundType.Experience); });
+            AddRegionGroup();
+            SetRegionGroupWidth((319 - experience) * 2);
+            SetRegionGroupHeight(12);
+            AddPaddingRegion(() => { SetRegionBackground(RegionBackgroundType.NoExperience); });
         },  true),
 
         #region Dev Panel

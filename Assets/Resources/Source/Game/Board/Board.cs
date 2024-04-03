@@ -136,7 +136,12 @@ public class Board
             if (currentSave.player.WillGetExperience(enemy.level) && currentSave.player.level < defines.maxPlayerLevel)
             {
                 var enemyRace = Race.races.Find(x => x.name == enemy.race);
-                results.experience = (Coloring.ColorEntityLevel(enemy.level) == "Green" ? 1 : 3) * (enemyRace.kind == "Elite" || enemyRace.kind == "Rare" ? 2 : 1);
+                float amount = currentSave.player.ExperienceForEqualEnemy();
+                if (Coloring.ColorEntityLevel(enemy.level) == "Green") amount *= 0.5f;
+                else if (Coloring.ColorEntityLevel(enemy.level) == "DarkGray") amount *= 0;
+                if (enemyRace.kind == "Elite") amount *= 2;
+                else if (enemyRace.kind == "Rare") amount *= 1.5f;
+                results.experience = (int)amount;
             }
             if (area != null && enemy.kind != "Elite")
             {

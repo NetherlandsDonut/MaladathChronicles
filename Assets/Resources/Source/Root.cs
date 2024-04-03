@@ -152,6 +152,7 @@ public static class Root
 
     public static void SwitchDesktop(string name)
     {
+        var windows = CDesktop != null ? CDesktop.windows.Select(x => x.title).ToList() : null;
         if (mouseOver != null)
             mouseOver.OnMouseExit();
         if (CDesktop != null)
@@ -170,6 +171,9 @@ public static class Root
             Cursor.cursor.transform.position += (Vector3)CDesktop.cameraDestination - CDesktop.screen.transform.localPosition;
             CDesktop.screen.transform.localPosition = (Vector3)CDesktop.cameraDestination;
         }
+        if (windows != null)
+            foreach (var window in windows)
+                Respawn(window, true);
     }
 
     public static void OrderLoadingMap()
@@ -687,6 +691,7 @@ public static class Root
         RedButton,
         Experience,
         RestedExperience,
+        NoExperience,
         ProgressDone,
         ProgressEmpty,
         ProgressPossible

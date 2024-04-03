@@ -544,6 +544,8 @@ public class Item
                             AddLine("-" + stat.Value, "DangerousRed");
                             AddText(" " + stat.Key);
                         }
+                if (CDesktop.LBWindow.LBRegionGroup.LBRegion.lines.Count == 0)
+                    AddLine("No changes", "Gray");
             });
         }
         if (item.specs != null)

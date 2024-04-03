@@ -23029,11 +23029,18 @@
         "who": "Razormane Warfrenzy",
         "levelMin": 23,
         "levelMax": 25
-      },
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Lok Orcbane",
+        "levelMin": 25
+      }
+    ],
+    "eliteEncounters": [
       {
         "who": "Hagg Taurenbane",
-        "levelMin": 26,
-        "levelMax": 26
+        "levelMin": 26
       }
     ],
     "areaSize": 3,
@@ -23243,6 +23250,68 @@
         "levelMax": 13
       },
       {
+        "who": "Greater Plainstrider",
+        "levelMin": 12,
+        "levelMax": 13
+      },
+      {
+        "who": "Zhevra Runner",
+        "levelMin": 13,
+        "levelMax": 14
+      }
+    ],
+    "areaSize": 3,
+    "progression": [
+      {
+        "type": "Treasure",
+        "point": 3
+      }
+    ],
+    "x": 104,
+    "y": -142,
+    "name": "Central Gold Road",
+    "zone": "The Barrens",
+    "type": "HostileArea"
+  },
+  {
+    "commonEncounters": [
+      {
+        "who": "Hecklefang Hyena",
+        "levelMin": 15,
+        "levelMax": 16
+      },
+      {
+        "who": "Sunscale Screecher",
+        "levelMin": 14,
+        "levelMax": 15
+      },
+      {
+        "who": "Fleeting Plainstrider",
+        "levelMin": 13,
+        "levelMax": 14
+      }
+    ],
+    "areaSize": 3,
+    "progression": [
+      {
+        "type": "Treasure",
+        "point": 3
+      }
+    ],
+    "x": 110,
+    "y": -143,
+    "name": "Eastern Gold Road",
+    "zone": "The Barrens",
+    "type": "HostileArea"
+  },
+  {
+    "commonEncounters": [
+      {
+        "who": "Fleeting Plainstrider",
+        "levelMin": 12,
+        "levelMax": 13
+      },
+      {
         "who": "Savannah Huntress",
         "levelMin": 12,
         "levelMax": 13
@@ -23262,7 +23331,7 @@
     ],
     "x": 104,
     "y": -127,
-    "name": "Gold Road",
+    "name": "Northern Gold Road",
     "zone": "The Barrens",
     "type": "HostileArea"
   },
@@ -23547,8 +23616,34 @@
         "point": 3
       }
     ],
-    "x": 90,
-    "y": -127,
+    "x": 91,
+    "y": -125,
+    "name": "Witchwing Nest",
+    "zone": "The Barrens",
+    "type": "HostileArea"
+  },
+  {
+    "commonEncounters": [
+      {
+        "who": "Witchwing Harpy",
+        "levelMin": 14,
+        "levelMax": 15
+      },
+      {
+        "who": "Witchwing Rogue",
+        "levelMin": 15,
+        "levelMax": 16
+      }
+    ],
+    "areaSize": 3,
+    "progression": [
+      {
+        "type": "Treasure",
+        "point": 3
+      }
+    ],
+    "x": 93,
+    "y": -128,
     "name": "The Dry Hills",
     "zone": "The Barrens",
     "type": "HostileArea"

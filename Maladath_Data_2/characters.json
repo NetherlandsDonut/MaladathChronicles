@@ -6,289 +6,47 @@
     {
       "player": {
         "level": 1,
-        "experience": 14,
-        "name": "Madisen",
-        "race": "Forsaken",
-        "spec": "Priest",
+        "experience": 293,
+        "name": "Deyell",
+        "race": "Night Elf",
+        "spec": "Druid",
         "gender": "Female",
         "abilities": {
+          "Two Handed Mace Proficiency": 1,
           "Staff Proficiency": 1,
-          "Cloth Proficiency": 1,
+          "Leather Proficiency": 1,
           "One Handed Mace Proficiency": 1,
           "Off Hand Proficiency": 1,
+          "Fist Weapon Proficiency": 1,
           "Dagger Proficiency": 1,
-          "Wand Proficiency": 1,
-          "Smite": 0,
-          "Power Word: Shield": 0,
-          "Shadow Word: Pain": 0
+          "Idol Proficiency": 1,
+          "Wrath": 0,
+          "Rake": 0,
+          "Regrowth": 0
         },
-        "actionBars": [
-          {
-            "ability": "Power Word: Shield"
-          },
-          {
-            "ability": "Shadow Word: Pain"
-          },
-          {
-            "ability": "Smite"
-          }
-        ],
+        "actionBars": [],
         "stats": {
           "stats": {
             "Stamina": 5,
-            "Strength": 5,
-            "Agility": 6,
-            "Intellect": 6,
+            "Strength": 4,
+            "Agility": 7,
+            "Intellect": 8,
             "Spirit": 0,
             "Earth Mastery": 2,
-            "Fire Mastery": 2,
-            "Air Mastery": 2,
-            "Water Mastery": 1,
-            "Frost Mastery": 3,
-            "Lightning Mastery": 1,
-            "Arcane Mastery": 1,
-            "Decay Mastery": 3,
-            "Shadow Mastery": 3,
-            "Order Mastery": 1
-          }
-        },
-        "inventory": {
-          "items": [
-            {
-              "rarity": "Common",
-              "name": "Hearthstone",
-              "icon": "itemmiscrune01",
-              "type": "Miscellaneous",
-              "ilvl": 1,
-              "stats": {
-                "stats": {}
-              }
-            }
-          ],
-          "bags": [
-            {
-              "rarity": "Uncommon",
-              "name": "Traveler's Backpack",
-              "icon": "itemmiscbag08",
-              "type": "Bag",
-              "ilvl": 55,
-              "lvl": 1,
-              "price": 0.875,
-              "bagSpace": 8,
-              "stats": {
-                "stats": {}
-              }
-            },
-            {
-              "rarity": "Uncommon",
-              "name": "Traveler's Backpack",
-              "icon": "itemmiscbag08",
-              "type": "Bag",
-              "ilvl": 55,
-              "lvl": 1,
-              "price": 0.875,
-              "bagSpace": 8,
-              "stats": {
-                "stats": {}
-              }
-            },
-            {
-              "rarity": "Uncommon",
-              "name": "Traveler's Backpack",
-              "icon": "itemmiscbag08",
-              "type": "Bag",
-              "ilvl": 55,
-              "lvl": 1,
-              "price": 0.875,
-              "bagSpace": 8,
-              "stats": {
-                "stats": {}
-              }
-            },
-            {
-              "rarity": "Uncommon",
-              "name": "Traveler's Backpack",
-              "icon": "itemmiscbag08",
-              "type": "Bag",
-              "ilvl": 55,
-              "lvl": 1,
-              "price": 0.875,
-              "bagSpace": 8,
-              "stats": {
-                "stats": {}
-              }
-            }
-          ]
-        },
-        "equipment": {
-          "Main Hand": {
-            "rarity": "Common",
-            "name": "Worn Mace",
-            "icon": "itemmace03",
-            "detailedType": "Mace",
-            "type": "One Handed",
-            "ilvl": 2,
-            "lvl": 1,
-            "minDamage": 1,
-            "maxDamage": 3,
-            "price": 0.0007,
-            "speed": 1.9,
-            "stats": {
-              "stats": {}
-            }
-          },
-          "Feet": {
-            "rarity": "Common",
-            "name": "Neophyte's Boots",
-            "icon": "itemboots04",
-            "type": "Feet",
-            "ilvl": 1,
-            "lvl": 1,
-            "price": 0.0001,
-            "stats": {
-              "stats": {}
-            }
-          },
-          "Legs": {
-            "rarity": "Poor",
-            "name": "Neophyte's Pants",
-            "icon": "itempants02",
-            "type": "Legs",
-            "armorClass": "Cloth",
-            "ilvl": 1,
-            "lvl": 1,
-            "armor": 2,
-            "price": 0.0001,
-            "stats": {
-              "stats": {}
-            }
-          },
-          "Chest": {
-            "rarity": "Poor",
-            "name": "Neophyte's Robe",
-            "icon": "itemchestcloth13",
-            "type": "Chest",
-            "armorClass": "Cloth",
-            "ilvl": 1,
-            "lvl": 1,
-            "armor": 3,
-            "price": 0.0001,
-            "stats": {
-              "stats": {}
-            }
-          }
-        }
-      },
-      "currentSite": "Azurelode Mine",
-      "siteProgress": {},
-      "commonsKilled": {},
-      "raresKilled": {},
-      "elitesKilled": {},
-      "siteVisits": {
-        "Shadow Grave": 3,
-        "Deathknell": 3,
-        "Cold Hearth Manor": 0,
-        "Brill": 2,
-        "The Ruins of Lordaeron": 1,
-        "Undercity": 5,
-        "Tirisfal Tract": 0,
-        "Malden's Orchard": 0,
-        "Valgan's Field": 0,
-        "North Wood Crossing": 0,
-        "The Sepulcher": 1,
-        "South Wood Crossing": 1,
-        "Dalaran Mage Camp": 1,
-        "Southpoint Tower": 0,
-        "Azurelode Mine": 0
-      },
-      "banks": {
-        "Undercity": {
-          "items": [],
-          "bags": []
-        }
-      },
-      "startDate": "2024-04-01T23:04:45.5974745+02:00",
-      "lastLoaded": "2024-04-02T12:45:52.7644076+02:00",
-      "lastPlayed": "2024-04-02T12:58:14.9538445+02:00",
-      "deathInfo": {},
-      "timePlayed": "00:51:02.1443840"
-    },
-    {
-      "player": {
-        "level": 1,
-        "experience": 7,
-        "name": "Abbigail",
-        "race": "Human",
-        "spec": "Mage",
-        "gender": "Female",
-        "abilities": {
-          "Staff Proficiency": 1,
-          "Cloth Proficiency": 1,
-          "One Handed Sword Proficiency": 1,
-          "Off Hand Proficiency": 1,
-          "Dagger Proficiency": 1,
-          "Wand Proficiency": 1,
-          "Fireball": 0,
-          "Frostbolt": 0,
-          "Arcane Missiles": 0
-        },
-        "actionBars": [
-          {
-            "ability": "Fireball"
-          },
-          {
-            "ability": "Frostbolt"
-          },
-          {
-            "ability": "Arcane Missiles"
-          }
-        ],
-        "stats": {
-          "stats": {
-            "Stamina": 6,
-            "Strength": 6,
-            "Agility": 6,
-            "Intellect": 6,
-            "Spirit": 0,
-            "Earth Mastery": 1,
-            "Fire Mastery": 3,
-            "Air Mastery": 2,
-            "Water Mastery": 1,
-            "Frost Mastery": 2,
+            "Fire Mastery": 1,
+            "Air Mastery": 3,
+            "Water Mastery": 3,
+            "Frost Mastery": 1,
             "Lightning Mastery": 1,
             "Arcane Mastery": 3,
             "Decay Mastery": 1,
             "Shadow Mastery": 2,
-            "Order Mastery": 3
+            "Order Mastery": 2
           }
         },
         "inventory": {
-          "items": [
-            {
-              "rarity": "Common",
-              "name": "Hearthstone",
-              "icon": "itemmiscrune01",
-              "type": "Miscellaneous",
-              "ilvl": 1,
-              "stats": {
-                "stats": {}
-              }
-            },
-            {
-              "rarity": "Poor",
-              "name": "Novice's Robe",
-              "icon": "itemchestcloth13",
-              "type": "Chest",
-              "armorClass": "Cloth",
-              "ilvl": 1,
-              "lvl": 1,
-              "armor": 3,
-              "price": 0.0001,
-              "stats": {
-                "stats": {}
-              }
-            }
-          ],
+          "money": 1311.2121,
+          "items": [],
           "bags": [
             {
               "rarity": "Uncommon",
@@ -305,94 +63,24 @@
             }
           ]
         },
-        "equipment": {
-          "Main Hand": {
-            "rarity": "Common",
-            "name": "Bent Staff",
-            "icon": "itemstaff08",
-            "detailedType": "Staff",
-            "type": "Two Handed",
-            "ilvl": 2,
-            "lvl": 1,
-            "minDamage": 3,
-            "maxDamage": 5,
-            "price": 0.0009,
-            "speed": 2.9,
-            "stats": {
-              "stats": {}
-            }
-          },
-          "Feet": {
-            "rarity": "Common",
-            "name": "Apprentice's Boots",
-            "icon": "itemboots09",
-            "type": "Feet",
-            "ilvl": 1,
-            "lvl": 1,
-            "price": 0.0001,
-            "stats": {
-              "stats": {}
-            }
-          },
-          "Legs": {
-            "rarity": "Poor",
-            "name": "Apprentice's Pants",
-            "icon": "itempants01",
-            "type": "Legs",
-            "armorClass": "Cloth",
-            "ilvl": 1,
-            "lvl": 1,
-            "armor": 2,
-            "price": 0.0001,
-            "stats": {
-              "stats": {}
-            }
-          },
-          "Chest": {
-            "rarity": "Poor",
-            "name": "Apprentice's Robe",
-            "icon": "itemchestcloth23",
-            "type": "Chest",
-            "armorClass": "Cloth",
-            "ilvl": 1,
-            "lvl": 1,
-            "armor": 3,
-            "price": 0.0001,
-            "stats": {
-              "stats": {}
-            }
-          },
-          "Waist": {
-            "rarity": "Uncommon",
-            "name": "Lilac Sash",
-            "icon": "itembelt24",
-            "type": "Waist",
-            "armorClass": "Cloth",
-            "ilvl": 36,
-            "lvl": 1,
-            "armor": 27,
-            "price": 0.156,
-            "stats": {
-              "stats": {
-                "Intellect": 9,
-                "Spirit": 3
-              }
-            }
-          }
-        }
+        "equipment": {}
       },
-      "currentSite": "Black Channel Marsh",
+      "currentSite": "Darnassus",
       "siteProgress": {
-        "Northshire Valley": 2
+        "Shadowthread Cave": 1
       },
       "commonsKilled": {
-        "Young Wolf": 2
+        "Webwood Spider": 1
       },
       "raresKilled": {},
       "elitesKilled": {},
       "siteVisits": {
-        "Northshire Abbey": 1,
-        "Northshire Valley": 3,
+        "Aldrassil": 1,
+        "Shadowglen": 0,
+        "Shadowthread Cave": 1,
+        "Starbreeze Village": 1,
+        "Dolanaar": 0,
+        "Darnassus": 1,
         "Hall of Illusions": 1,
         "Searing Blade Hideout": 1,
         "Main Chamber": 1,
@@ -705,6 +393,7 @@
         "Mirror Lake": 1,
         "Mirror Lake Orchard": 1,
         "Northshire Vineyards": 1,
+        "Northshire Valley": 1,
         "Ridgepoint Tower": 1,
         "Stonefield Farm": 1,
         "The Maclure Vineyards": 1,
@@ -1027,18 +716,15 @@
         "The Gaping Chasm": 1,
         "The Noxious Lair": 1,
         "Scorching Sands": 1,
-        "Crater Descend": 3,
+        "Crater Descend": 1,
         "Thistleshrub Valley": 1,
         "Waterspring Field": 1,
         "Wavestrider Beach": 1,
         "Ban'ethil Hollow": 1,
-        "Starbreeze Village": 1,
         "Fel Rock": 1,
         "Gnarlpine Hold": 1,
         "Lake Al'Ameth": 1,
         "Pools of Arlithrien": 1,
-        "Shadowglen": 1,
-        "Shadowthread Cave": 1,
         "The Oracle Glade": 1,
         "Wellspring Lake": 1,
         "Wellspring River": 1,
@@ -1175,7 +861,7 @@
         "The Dust Plains": 1,
         "Westfall Lighthouse": 1,
         "Angerfang Encampment": 1,
-        "Black Channel Marsh": 2,
+        "Black Channel Marsh": 1,
         "Bluegill Marsh": 1,
         "Direforge Hill": 1,
         "Dragonmaw Gates": 1,
@@ -1227,21 +913,19 @@
         "Azurelode Mine": 1,
         "Goldshire": 1,
         "Lakeshire": 1,
+        "Northshire Abbey": 1,
         "Southshore": 1,
         "Darkshire": 1,
         "Rebel Camp": 1,
         "Sentinel Hill": 1,
         "Theramore Isle": 1,
-        "Menethil Harbor": 3,
+        "Menethil Harbor": 1,
         "Nethergarde Keep": 1,
         "Morgan's Vigil": 1,
         "Flame Crest": 1,
         "Faldir's Cove": 1,
         "Refuge Point": 1,
-        "Darnassus": 1,
-        "Aldrassil": 1,
         "Rut'theran Village": 1,
-        "Dolanaar": 1,
         "Astranaar": 1,
         "Starfall Village": 1,
         "Silverwind Outpost": 1,
@@ -1347,14 +1031,67 @@
         "Ruins of Stromgarde": 1,
         "Ruins of Alterac": 1,
         "Scarlet Monastery Grounds": 1,
-        "Alcaz Island": 1
+        "Alcaz Island": 1,
+        "Witchwing Nest": 1,
+        "Central Gold Road": 1,
+        "Eastern Gold Road": 1,
+        "Northern Gold Road": 1
       },
-      "buyback": [],
-      "startDate": "2024-04-02T12:58:23.9090202+02:00",
-      "lastLoaded": "2024-04-02T13:28:01.0368053+02:00",
-      "lastPlayed": "2024-04-02T13:45:05.8099971+02:00",
-      "timePlayed": "00:29:47.8838356",
-      "lastVisitedTalents": 2
+      "banks": {
+        "Darnassus": {
+          "items": [
+            {
+              "rarity": "Poor",
+              "name": "Novice's Pants",
+              "icon": "itempants01",
+              "type": "Legs",
+              "armorClass": "Cloth",
+              "ilvl": 1,
+              "lvl": 1,
+              "armor": 2,
+              "price": 0.0001,
+              "stats": {
+                "stats": {}
+              }
+            },
+            {
+              "rarity": "Poor",
+              "name": "Novice's Robe",
+              "icon": "itemchestcloth13",
+              "type": "Chest",
+              "armorClass": "Cloth",
+              "ilvl": 1,
+              "lvl": 1,
+              "armor": 3,
+              "price": 0.0001,
+              "stats": {
+                "stats": {}
+              }
+            },
+            {
+              "rarity": "Common",
+              "name": "Handcrafted Staff",
+              "icon": "itemstaff21",
+              "detailedType": "Staff",
+              "type": "Two Handed",
+              "ilvl": 2,
+              "lvl": 1,
+              "minDamage": 3,
+              "maxDamage": 5,
+              "price": 0.0009,
+              "speed": 2.9,
+              "stats": {
+                "stats": {}
+              }
+            }
+          ],
+          "bags": []
+        }
+      },
+      "startDate": "2024-04-03T14:41:57.7277162+02:00",
+      "lastLoaded": "2024-04-03T17:22:39.8714311+02:00",
+      "lastPlayed": "2024-04-03T17:31:01.3843611+02:00",
+      "timePlayed": "01:03:36.7676647"
     }
   ]
 }

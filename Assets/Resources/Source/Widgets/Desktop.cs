@@ -234,7 +234,7 @@ public class Desktop : MonoBehaviour
                             {
                                 currentSave.siteVisits.Add(queuedSiteOpen, 0);
                                 PlaySound("DesktopZoneDiscovered", 1f);
-                                currentSave.player.ReceiveExperience(1);
+                                currentSave.player.ReceiveExperience(20);
                             }
                             Respawn("Site: " + queuedSiteOpen);
                             foreach (var connection in paths.FindAll(x => x.sites.Contains(queuedSiteOpen)))

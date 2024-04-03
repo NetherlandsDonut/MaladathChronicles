@@ -516,7 +516,7 @@ public class InputLine : MonoBehaviour
             }
             else if (foo.Value().StartsWith("money"))
             {
-                var amount = int.Parse(foo.Value().Substring(5));
+                var amount = double.Parse(foo.Value().Substring(5));
                 currentSave.player.inventory.money += amount;
             }
             else if (foo.Value().StartsWith("builderspacing"))

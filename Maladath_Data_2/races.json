@@ -1,5 +1,41 @@
 [
   {
+    "name": "Hecklefang Hyena",
+    "category": "Beast",
+    "subcategory": "Hyena",
+    "kind": "Common",
+    "portrait": "PortraitHyenaYellow",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Lok Orcbane",
+    "category": "Beast",
+    "subcategory": "Boar",
+    "kind": "Rare",
+    "portrait": "PortraitQuilboarArmored",
+    "vitality": 2.0,
+    "abilities": {}
+  },
+  {
+    "name": "Witchwing Rogue",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "kind": "Common",
+    "portrait": "PortraitHarpyBlack",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Witchwing Harpy",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "kind": "Common",
+    "portrait": "PortraitHarpyBlack",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
     "name": "Muckshell Clacker",
     "category": "Beast",
     "subcategory": "Makrura",
@@ -7994,7 +8030,7 @@
     "category": "Humanoid",
     "subcategory": "Human",
     "kind": "Elite",
-    "portrait": "PortraitHarpy",
+    "portrait": "PortraitHarpyBlue",
     "vitality": 3.0,
     "abilities": {}
   },
@@ -8156,7 +8192,7 @@
     "category": "Humanoid",
     "subcategory": "Human",
     "kind": "Common",
-    "portrait": "PortraitHarpy",
+    "portrait": "PortraitHarpyBlack",
     "vitality": 1.0,
     "abilities": {}
   },
@@ -8165,7 +8201,7 @@
     "category": "Humanoid",
     "subcategory": "Human",
     "kind": "Common",
-    "portrait": "PortraitHarpy",
+    "portrait": "PortraitHarpyPink",
     "vitality": 1.0,
     "abilities": {}
   },
