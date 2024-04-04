@@ -713,9 +713,7 @@ public class Blueprint
                     });
             }
         }),
-        new("BossQueue",
-            () =>
-            {
+        new("BossQueue", () => {
                 if (area.eliteEncounters == null) return;
                 var bosses = area.eliteEncounters.FindAll(x => !currentSave.elitesKilled.ContainsKey(x.who));
                 if (bosses.Count == 0) return;

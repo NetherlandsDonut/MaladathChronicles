@@ -1,5 +1,140 @@
 [
   {
+    "name": "Starving Bonepaw",
+    "category": "Beast",
+    "subcategory": "Hyena",
+    "kind": "Common",
+    "portrait": "PortraitHyenaWhite",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Hulking Gritjaw Basilisk",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "kind": "Common",
+    "portrait": "PortraitBasiliskYellow",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Scorpashi Snapper",
+    "category": "Beast",
+    "subcategory": "Scorpid",
+    "kind": "Common",
+    "portrait": "PortraitScorpidYellow",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Whirlwind Ripper",
+    "category": "Elemental",
+    "subcategory": "Elemental",
+    "kind": "Common",
+    "portrait": "PortraitAirElemental",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Slitherblade Warrior",
+    "category": "Humanoid",
+    "subcategory": "Naga",
+    "kind": "Common",
+    "portrait": "PortraitNagaDark",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Slitherblade Naga",
+    "category": "Humanoid",
+    "subcategory": "Naga",
+    "kind": "Common",
+    "portrait": "PortraitNagaDark",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Chok'sul",
+    "category": "Humanoid",
+    "subcategory": "Ogre",
+    "kind": "Elite",
+    "portrait": "PortraitOgreBlue",
+    "vitality": 3.0,
+    "abilities": {}
+  },
+  {
+    "name": "Foulbelly",
+    "category": "Humanoid",
+    "subcategory": "Ogre",
+    "kind": "Elite",
+    "portrait": "PortraitOgreBlue",
+    "vitality": 3.0,
+    "abilities": {}
+  },
+  {
+    "name": "Prince Galen Trollbane",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "kind": "Elite",
+    "portrait": "PortraitPrinceGalenTrollbane",
+    "vitality": 3.0,
+    "abilities": {}
+  },
+  {
+    "name": "Stromgarde Vindicator",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "kind": "Common",
+    "portrait": "PortraitStromgardeVindicator",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Lord Falconcrest",
+    "category": "Beast",
+    "subcategory": "Cat",
+    "kind": "Elite",
+    "portrait": "PortraitSyndicateEnforcer",
+    "vitality": 3.0,
+    "abilities": {}
+  },
+  {
+    "name": "Syndicate Magus",
+    "category": "Beast",
+    "subcategory": "Cat",
+    "kind": "Common",
+    "portrait": "PortraitSyndicateMagus",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Syndicate Prowler",
+    "category": "Beast",
+    "subcategory": "Owl",
+    "kind": "Common",
+    "portrait": "PortraitSyndicateProwler",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Stromgarde Troll Hunter",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "kind": "Common",
+    "portrait": "PortraitStromgardeTrollHunter",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Stromgarde Defender",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "kind": "Common",
+    "portrait": "PortraitStromgardeDefender",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
     "name": "Hecklefang Hyena",
     "category": "Beast",
     "subcategory": "Hyena",

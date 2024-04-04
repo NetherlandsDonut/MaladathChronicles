@@ -6278,6 +6278,16 @@
         "who": "Enraged Reef Crawler",
         "levelMin": 31,
         "levelMax": 32
+      },
+      {
+        "who": "Slitherblade Naga",
+        "levelMin": 32,
+        "levelMax": 33
+      },
+      {
+        "who": "Slitherblade Warrior",
+        "levelMin": 32,
+        "levelMax": 33
       }
     ],
     "areaSize": 3,
@@ -6290,6 +6300,37 @@
     "x": 49,
     "y": -138,
     "name": "Ethel Rethor",
+    "zone": "Desolace",
+    "type": "HostileArea"
+  },
+  {
+    "commonEncounters": [
+      {
+        "who": "Raging Thunder Lizard",
+        "levelMin": 33,
+        "levelMax": 34
+      },
+      {
+        "who": "Dread Swoop",
+        "levelMin": 33,
+        "levelMax": 34
+      },
+      {
+        "who": "Whirlwind Ripper",
+        "levelMin": 33,
+        "levelMax": 34
+      }
+    ],
+    "areaSize": 3,
+    "progression": [
+      {
+        "type": "Treasure",
+        "point": 3
+      }
+    ],
+    "x": 55,
+    "y": -142,
+    "name": "Western Wastes",
     "zone": "Desolace",
     "type": "HostileArea"
   },
@@ -6332,6 +6373,37 @@
   {
     "commonEncounters": [
       {
+        "who": "Gritjaw Basilisk",
+        "levelMin": 32,
+        "levelMax": 33
+      },
+      {
+        "who": "Scorpashi Snapper",
+        "levelMin": 32,
+        "levelMax": 33
+      },
+      {
+        "who": "Hulking Gritjaw Basilisk",
+        "levelMin": 34,
+        "levelMax": 35
+      }
+    ],
+    "areaSize": 3,
+    "progression": [
+      {
+        "type": "Treasure",
+        "point": 3
+      }
+    ],
+    "x": 60,
+    "y": -149,
+    "name": "Scrabblescrew's Camp",
+    "zone": "Desolace",
+    "type": "HostileArea"
+  },
+  {
+    "commonEncounters": [
+      {
         "who": "Ancient Kodo",
         "levelMin": 36,
         "levelMax": 37
@@ -6357,6 +6429,37 @@
     "x": 55,
     "y": -148,
     "name": "Kodo Graveyard",
+    "zone": "Desolace",
+    "type": "HostileArea"
+  },
+  {
+    "commonEncounters": [
+      {
+        "who": "Raging Thunder Lizard",
+        "levelMin": 33,
+        "levelMax": 34
+      },
+      {
+        "who": "Gritjaw Basilisk",
+        "levelMin": 31,
+        "levelMax": 32
+      },
+      {
+        "who": "Starving Bonepaw",
+        "levelMin": 31,
+        "levelMax": 32
+      }
+    ],
+    "areaSize": 3,
+    "progression": [
+      {
+        "type": "Treasure",
+        "point": 3
+      }
+    ],
+    "x": 61,
+    "y": -141,
+    "name": "Kormek's Hut",
     "zone": "Desolace",
     "type": "HostileArea"
   },
@@ -6649,8 +6752,8 @@
       },
       {
         "who": "Dread Swoop",
-        "levelMin": 32,
-        "levelMax": 33
+        "levelMin": 31,
+        "levelMax": 32
       }
     ],
     "areaSize": 3,
@@ -6663,6 +6766,32 @@
     "x": 57,
     "y": -132,
     "name": "Tethris Aran",
+    "zone": "Desolace",
+    "type": "HostileArea"
+  },
+  {
+    "commonEncounters": [
+      {
+        "who": "Gritjaw Basilisk",
+        "levelMin": 31,
+        "levelMax": 32
+      },
+      {
+        "who": "Scorpashi Snapper",
+        "levelMin": 31,
+        "levelMax": 32
+      }
+    ],
+    "areaSize": 3,
+    "progression": [
+      {
+        "type": "Treasure",
+        "point": 3
+      }
+    ],
+    "x": 62,
+    "y": -136,
+    "name": "Northern Wastes",
     "zone": "Desolace",
     "type": "HostileArea"
   },
@@ -13083,11 +13212,22 @@
         "levelMin": 20
       }
     ],
+    "eliteEncounters": [
+      {
+        "who": "Chok'sul",
+        "levelMin": 20
+      }
+    ],
     "areaSize": 3,
     "progression": [
       {
         "type": "Treasure",
         "point": 3
+      },
+      {
+        "type": "Boss",
+        "bossName": "Landslide",
+        "point": 2
       }
     ],
     "x": 308,
@@ -15823,8 +15963,7 @@
     "eliteEncounters": [
       {
         "who": "Targ",
-        "levelMin": 38,
-        "levelMax": 39
+        "levelMin": 41
       }
     ],
     "areaSize": 3,
@@ -15925,14 +16064,14 @@
   {
     "commonEncounters": [
       {
-        "who": "Boulderfist Lord",
-        "levelMin": 38,
-        "levelMax": 39
+        "who": "Stromgarde Defender",
+        "levelMin": 37,
+        "levelMax": 38
       },
       {
-        "who": "Boulderfist Mauler",
-        "levelMin": 38,
-        "levelMax": 39
+        "who": "Stromgarde Troll Hunter",
+        "levelMin": 36,
+        "levelMax": 37
       }
     ],
     "areaSize": 3,
@@ -15949,14 +16088,20 @@
   {
     "commonEncounters": [
       {
-        "who": "Boulderfist Lord",
-        "levelMin": 38,
-        "levelMax": 39
+        "who": "Syndicate Prowler",
+        "levelMin": 36,
+        "levelMax": 37
       },
       {
-        "who": "Boulderfist Mauler",
-        "levelMin": 38,
-        "levelMax": 39
+        "who": "Syndicate Magus",
+        "levelMin": 37,
+        "levelMax": 38
+      }
+    ],
+    "eliteEncounters": [
+      {
+        "who": "Lord Falconcrest",
+        "levelMin": 40
       }
     ],
     "areaSize": 3,
@@ -15978,9 +16123,15 @@
         "levelMax": 39
       },
       {
-        "who": "Boulderfist Mauler",
+        "who": "Stromgarde Vindicator",
         "levelMin": 38,
         "levelMax": 39
+      }
+    ],
+    "eliteEncounters": [
+      {
+        "who": "Prince Galen Trollbane",
+        "levelMin": 44
       }
     ],
     "areaSize": 3,
@@ -16047,8 +16198,19 @@
         "levelMax": 39
       }
     ],
+    "eliteEncounters": [
+      {
+        "who": "Foulbelly",
+        "levelMin": 42
+      }
+    ],
     "areaSize": 3,
     "progression": [
+      {
+        "type": "Boss",
+        "bossName": "Ruul Onestone",
+        "point": 2
+      },
       {
         "type": "Treasure",
         "point": 3

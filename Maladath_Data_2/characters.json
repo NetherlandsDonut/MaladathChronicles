@@ -46,8 +46,7 @@
         },
         "inventory": {
           "money": 1311.2121,
-          "items": [],
-          "bags": [
+          "items": [
             {
               "rarity": "Uncommon",
               "name": "Traveler's Backpack",
@@ -61,9 +60,27 @@
                 "stats": {}
               }
             }
-          ]
+          ],
+          "bags": []
         },
-        "equipment": {}
+        "equipment": {
+          "Main Hand": {
+            "rarity": "Common",
+            "name": "Handcrafted Staff",
+            "icon": "itemstaff21",
+            "detailedType": "Staff",
+            "type": "Two Handed",
+            "ilvl": 2,
+            "lvl": 1,
+            "minDamage": 3,
+            "maxDamage": 5,
+            "price": 0.0009,
+            "speed": 2.9,
+            "stats": {
+              "stats": {}
+            }
+          }
+        }
       },
       "currentSite": "Darnassus",
       "siteProgress": {
@@ -80,7 +97,7 @@
         "Shadowthread Cave": 1,
         "Starbreeze Village": 1,
         "Dolanaar": 0,
-        "Darnassus": 1,
+        "Darnassus": 9,
         "Hall of Illusions": 1,
         "Searing Blade Hideout": 1,
         "Main Chamber": 1,
@@ -1067,31 +1084,300 @@
               "stats": {
                 "stats": {}
               }
-            },
-            {
-              "rarity": "Common",
-              "name": "Handcrafted Staff",
-              "icon": "itemstaff21",
-              "detailedType": "Staff",
-              "type": "Two Handed",
-              "ilvl": 2,
-              "lvl": 1,
-              "minDamage": 3,
-              "maxDamage": 5,
-              "price": 0.0009,
-              "speed": 2.9,
-              "stats": {
-                "stats": {}
-              }
             }
           ],
           "bags": []
         }
       },
+      "buyback": [],
       "startDate": "2024-04-03T14:41:57.7277162+02:00",
-      "lastLoaded": "2024-04-03T17:22:39.8714311+02:00",
-      "lastPlayed": "2024-04-03T17:31:01.3843611+02:00",
-      "timePlayed": "01:03:36.7676647"
+      "lastLoaded": "2024-04-03T21:18:32.852258+02:00",
+      "lastPlayed": "2024-04-03T21:20:44.3289618+02:00",
+      "timePlayed": "01:22:06.7283852",
+      "lastVisitedTalents": 1
+    },
+    {
+      "player": {
+        "level": 1,
+        "name": "Jennine",
+        "race": "Human",
+        "spec": "Priest",
+        "gender": "Female",
+        "abilities": {
+          "Staff Proficiency": 1,
+          "Cloth Proficiency": 1,
+          "One Handed Mace Proficiency": 1,
+          "Off Hand Proficiency": 1,
+          "Dagger Proficiency": 1,
+          "Wand Proficiency": 1,
+          "Smite": 0,
+          "Power Word: Shield": 0,
+          "Shadow Word: Pain": 0
+        },
+        "actionBars": [
+          {
+            "ability": "Smite"
+          },
+          {
+            "ability": "Power Word: Shield"
+          },
+          {
+            "ability": "Shadow Word: Pain"
+          }
+        ],
+        "stats": {
+          "stats": {
+            "Stamina": 6,
+            "Strength": 6,
+            "Agility": 6,
+            "Intellect": 6,
+            "Spirit": 0,
+            "Earth Mastery": 1,
+            "Fire Mastery": 3,
+            "Air Mastery": 2,
+            "Water Mastery": 1,
+            "Frost Mastery": 2,
+            "Lightning Mastery": 1,
+            "Arcane Mastery": 3,
+            "Decay Mastery": 1,
+            "Shadow Mastery": 2,
+            "Order Mastery": 3
+          }
+        },
+        "inventory": {
+          "items": [
+            {
+              "rarity": "Common",
+              "name": "Hearthstone",
+              "icon": "itemmiscrune01",
+              "type": "Miscellaneous",
+              "ilvl": 1,
+              "stats": {
+                "stats": {}
+              }
+            }
+          ],
+          "bags": [
+            {
+              "rarity": "Uncommon",
+              "name": "Traveler's Backpack",
+              "icon": "itemmiscbag08",
+              "type": "Bag",
+              "ilvl": 55,
+              "lvl": 1,
+              "price": 0.875,
+              "bagSpace": 8,
+              "stats": {
+                "stats": {}
+              }
+            }
+          ]
+        },
+        "equipment": {
+          "Main Hand": {
+            "rarity": "Common",
+            "name": "Worn Mace",
+            "icon": "itemmace03",
+            "detailedType": "Mace",
+            "type": "One Handed",
+            "ilvl": 2,
+            "lvl": 1,
+            "minDamage": 1,
+            "maxDamage": 3,
+            "price": 0.0007,
+            "speed": 1.9,
+            "stats": {
+              "stats": {}
+            }
+          },
+          "Feet": {
+            "rarity": "Common",
+            "name": "Neophyte's Boots",
+            "icon": "itemboots04",
+            "type": "Feet",
+            "ilvl": 1,
+            "lvl": 1,
+            "price": 0.0001,
+            "stats": {
+              "stats": {}
+            }
+          },
+          "Legs": {
+            "rarity": "Poor",
+            "name": "Neophyte's Pants",
+            "icon": "itempants02",
+            "type": "Legs",
+            "armorClass": "Cloth",
+            "ilvl": 1,
+            "lvl": 1,
+            "armor": 2,
+            "price": 0.0001,
+            "stats": {
+              "stats": {}
+            }
+          },
+          "Chest": {
+            "rarity": "Poor",
+            "name": "Neophyte's Robe",
+            "icon": "itemchestcloth13",
+            "type": "Chest",
+            "armorClass": "Cloth",
+            "ilvl": 1,
+            "lvl": 1,
+            "armor": 3,
+            "price": 0.0001,
+            "stats": {
+              "stats": {}
+            }
+          }
+        }
+      },
+      "currentSite": "Northshire Abbey",
+      "siteProgress": {},
+      "commonsKilled": {},
+      "raresKilled": {},
+      "elitesKilled": {},
+      "siteVisits": {
+        "Northshire Abbey": 1
+      },
+      "startDate": "2024-04-03T22:42:53.8955758+02:00",
+      "lastLoaded": "2024-04-03T23:30:45.3770643+02:00",
+      "lastPlayed": "2024-04-03T23:30:46.6688171+02:00",
+      "timePlayed": "00:00:06.7987540",
+      "lastVisitedTalents": 2
+    },
+    {
+      "player": {
+        "level": 1,
+        "name": "Tikke",
+        "race": "Tauren",
+        "spec": "Shaman",
+        "gender": "Female",
+        "abilities": {
+          "Dual Wielding Proficiency": 0,
+          "Two Handed Axe Proficiency": 1,
+          "Polearm Proficiency": 1,
+          "Leather Proficiency": 1,
+          "Mail Proficiency": 0,
+          "One Handed Axe Proficiency": 1,
+          "One Handed Mace Proficiency": 1,
+          "Fist Weapon Proficiency": 1,
+          "Off Hand Proficiency": 1,
+          "Dagger Proficiency": 1,
+          "Lightning Bolt": 0,
+          "Stormstrike": 0,
+          "Healing Wave": 0
+        },
+        "actionBars": [
+          {
+            "ability": "Healing Wave"
+          }
+        ],
+        "stats": {
+          "stats": {
+            "Stamina": 8,
+            "Strength": 8,
+            "Agility": 3,
+            "Intellect": 6,
+            "Spirit": 0,
+            "Earth Mastery": 3,
+            "Fire Mastery": 2,
+            "Air Mastery": 3,
+            "Water Mastery": 3,
+            "Frost Mastery": 1,
+            "Lightning Mastery": 1,
+            "Arcane Mastery": 2,
+            "Decay Mastery": 1,
+            "Shadow Mastery": 1,
+            "Order Mastery": 2
+          }
+        },
+        "inventory": {
+          "items": [
+            {
+              "rarity": "Common",
+              "name": "Hearthstone",
+              "icon": "itemmiscrune01",
+              "type": "Miscellaneous",
+              "ilvl": 1,
+              "stats": {
+                "stats": {}
+              }
+            }
+          ],
+          "bags": [
+            {
+              "rarity": "Uncommon",
+              "name": "Traveler's Backpack",
+              "icon": "itemmiscbag08",
+              "type": "Bag",
+              "ilvl": 55,
+              "lvl": 1,
+              "price": 0.875,
+              "bagSpace": 8,
+              "stats": {
+                "stats": {}
+              }
+            }
+          ]
+        },
+        "equipment": {
+          "Main Hand": {
+            "rarity": "Common",
+            "name": "Worn Mace",
+            "icon": "itemmace03",
+            "detailedType": "Mace",
+            "type": "One Handed",
+            "ilvl": 2,
+            "lvl": 1,
+            "minDamage": 1,
+            "maxDamage": 3,
+            "price": 0.0007,
+            "speed": 1.9,
+            "stats": {
+              "stats": {}
+            }
+          },
+          "Legs": {
+            "rarity": "Poor",
+            "name": "Primitive Kilt",
+            "icon": "itempants02",
+            "type": "Legs",
+            "armorClass": "Leather",
+            "ilvl": 1,
+            "lvl": 1,
+            "armor": 14,
+            "price": 0.0001,
+            "stats": {
+              "stats": {}
+            }
+          },
+          "Chest": {
+            "rarity": "Common",
+            "name": "Primitive Mantle",
+            "icon": "itemmisccape14",
+            "type": "Chest",
+            "ilvl": 1,
+            "lvl": 1,
+            "price": 0.0001,
+            "stats": {
+              "stats": {}
+            }
+          }
+        }
+      },
+      "currentSite": "Camp Narache",
+      "siteProgress": {},
+      "commonsKilled": {},
+      "raresKilled": {},
+      "elitesKilled": {},
+      "siteVisits": {
+        "Camp Narache": 1
+      },
+      "startDate": "2024-04-03T23:30:49.9434377+02:00",
+      "lastLoaded": "2024-04-04T14:28:11.2600941+02:00",
+      "lastPlayed": "2024-04-04T14:28:16.5818783+02:00",
+      "timePlayed": "00:00:17.8837882"
     }
   ]
 }

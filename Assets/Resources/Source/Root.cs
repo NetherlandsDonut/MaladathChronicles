@@ -4,7 +4,6 @@ using System.Collections.Generic;
 
 using UnityEngine;
 
-using static MapGrid;
 using static Blueprint;
 
 using static Root.Anchor;
@@ -40,8 +39,8 @@ public static class Root
     public static int loadingScreenObjectLoadAim;
     public static List<Blueprint> loadSites;
 
-    public static int inputLineMarker;
     public static System.Random random;
+    public static int inputLineMarker;
     public static int keyStack;
     public static int titleScreenCameraDirection;
     public static float heldKeyTime;
@@ -152,6 +151,7 @@ public static class Root
 
     public static void SwitchDesktop(string name)
     {
+        if (CDesktop != null && CDesktop.title == name) return;
         var windows = CDesktop != null ? CDesktop.windows.Select(x => x.title).ToList() : null;
         if (mouseOver != null)
             mouseOver.OnMouseExit();
