@@ -72,15 +72,58 @@ public class Board
     //THERE CAN BE ONLY ONE AT A TIME THANKS TO STATIC REF
     public static Board board;
 
+    //Stores the results of the combat
     public CombatResults results;
+
+    //Indicates how many bonus moves were awarded this turn for the current player. This value is used only in sound effects
     public int bonusTurnStreak;
+
+    //Array of all elements on the board
     public int[,] field;
+
+    //Reference to the window that contains the drawn board
     public Window window;
+
+    //Player and enemy references for the combat. Player is always on the left side of the screen.
     public Entity player, enemy;
-    public bool playerTurn, breakForEnemy, breakForCascade, enemyFinishedMoving, playerFinishedMoving;
-    public List<GameObject> temporaryElementsPlayer, temporaryElementsEnemy, temporaryBuffsPlayer, temporaryBuffsEnemy;
-    public Dictionary<Ability, int> playerCombatAbilities, enemyCombatAbilities;
+
+    //Indicates whether it's currently the player's turn
+    public bool playerTurn;
+
+    //Tells whether the artificial time break for the enemy move was made already. For now it is used as an illusion that the enemy is thinking before making a move. It may not be useful in the future. We will see
+    public bool breakForEnemy;
+
+    //Tells whether the time break was made in between element cascades on the board
+    public bool breakForCascade;
+
+    //Indicates whether the enemy finished moving and whether turn can be switched to the player
+    public bool enemyFinishedMoving;
+
+    //Indicates whether the player finished moving and whether the turn can be switched to the enemy
+    public bool playerFinishedMoving;
+
+    //List of all flying elements that are docking in the player mana region
+    public List<GameObject> temporaryElementsPlayer;
+
+    //List of all flying elements that are docking in the enemy mana region
+    public List<GameObject> temporaryElementsEnemy;
+
+    //List of all flying buffs that are docking in the player buff region
+    public List<GameObject> temporaryBuffsPlayer;
+
+    //List of all flying buffs that are docking in the player mana region
+    public List<GameObject> temporaryBuffsEnemy;
+
+    //Abilities (Active and passive) that player has in the combat
+    public Dictionary<Ability, int> playerCombatAbilities;
+
+//Abilities (Active and passive) that enemy has in the combat
+    public Dictionary<Ability, int> enemyCombatAbilities;
+
+    //Queue of actions to do on the board and the combatants
     public List<Action> actions;
+
+    //Are where the combat takes place
     public SiteHostileArea area;
 
     public void CallEvents(Entity entity, Dictionary<string, string> trigger)
