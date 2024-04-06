@@ -372,6 +372,30 @@ v0.4.14
           Fixed shadows for windows with header group only
 v0.4.15
     30.03 Hugely improved pathfinding
+v0.4.16
+    30.03 Added stable masters to the game
+          Made buff tooltip the same size as the tooltip of abilites
+          Added fade in's for sites on map when freshly explored
+v0.4.17
+    01.04 Fixed pathing information getting duplicated on asset reloads
+          Fixed orchish starting position
+          Added delay for shatter effect
+v0.4.18
+    02.04 Fixed a lot of black areas on the map
+          Fixed sounds with toolbar
+          Made unuseful npc do not show in towns
+          Fixed window respawning in inventory screens
+          Fixed spellbook not updating properly on sorting
+          One new site in Un'Goro Crater
+          Made banks work again
+v0.4.19
+    03.04 Added three new sites to Barrens
+          Added reloading windows that were present on previous desktop for updating
+          New experience scaling
+          New experience bar design
+v0.4.20
+    04.04 Added five new portraits
+          Added four new sites to Desolace
+          Shaman backgrounds for enhancement and elemental
 ```
-
 </details>
