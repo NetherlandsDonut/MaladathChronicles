@@ -52813,254 +52813,6 @@
   },
   {
     "sites": [
-      "Camp Aparaje",
-      "Honor's Stand"
-    ],
-    "means": "Land",
-    "speed": 10,
-    "points": [
-      {
-        "Item1": 1539,
-        "Item2": -2546
-      },
-      {
-        "Item1": 1548,
-        "Item2": -2548
-      },
-      {
-        "Item1": 1558,
-        "Item2": -2543
-      },
-      {
-        "Item1": 1566,
-        "Item2": -2538
-      },
-      {
-        "Item1": 1576,
-        "Item2": -2535
-      },
-      {
-        "Item1": 1586,
-        "Item2": -2536
-      },
-      {
-        "Item1": 1593,
-        "Item2": -2544
-      },
-      {
-        "Item1": 1594,
-        "Item2": -2555
-      },
-      {
-        "Item1": 1592,
-        "Item2": -2565
-      },
-      {
-        "Item1": 1598,
-        "Item2": -2573
-      },
-      {
-        "Item1": 1606,
-        "Item2": -2579
-      },
-      {
-        "Item1": 1617,
-        "Item2": -2583
-      },
-      {
-        "Item1": 1627,
-        "Item2": -2583
-      },
-      {
-        "Item1": 1637,
-        "Item2": -2582
-      },
-      {
-        "Item1": 1647,
-        "Item2": -2578
-      },
-      {
-        "Item1": 1657,
-        "Item2": -2576
-      },
-      {
-        "Item1": 1667,
-        "Item2": -2577
-      },
-      {
-        "Item1": 1677,
-        "Item2": -2580
-      },
-      {
-        "Item1": 1687,
-        "Item2": -2584
-      },
-      {
-        "Item1": 1695,
-        "Item2": -2589
-      },
-      {
-        "Item1": 1704,
-        "Item2": -2595
-      },
-      {
-        "Item1": 1713,
-        "Item2": -2601
-      },
-      {
-        "Item1": 1722,
-        "Item2": -2604
-      },
-      {
-        "Item1": 1729,
-        "Item2": -2603
-      }
-    ]
-  },
-  {
-    "sites": [
-      "Camp Aparaje",
-      "Greatwood Vale"
-    ],
-    "means": "Land",
-    "speed": 10,
-    "points": [
-      {
-        "Item1": 1539,
-        "Item2": -2546
-      },
-      {
-        "Item1": 1531,
-        "Item2": -2539
-      },
-      {
-        "Item1": 1521,
-        "Item2": -2538
-      },
-      {
-        "Item1": 1511,
-        "Item2": -2536
-      },
-      {
-        "Item1": 1503,
-        "Item2": -2529
-      },
-      {
-        "Item1": 1493,
-        "Item2": -2527
-      },
-      {
-        "Item1": 1483,
-        "Item2": -2526
-      },
-      {
-        "Item1": 1482,
-        "Item2": -2527
-      }
-    ]
-  },
-  {
-    "sites": [
-      "Greatwood Vale",
-      "Grimtotem Post"
-    ],
-    "means": "Land",
-    "speed": 10,
-    "points": [
-      {
-        "Item1": 1482,
-        "Item2": -2527
-      },
-      {
-        "Item1": 1485,
-        "Item2": -2517
-      },
-      {
-        "Item1": 1496,
-        "Item2": -2515
-      },
-      {
-        "Item1": 1506,
-        "Item2": -2514
-      },
-      {
-        "Item1": 1516,
-        "Item2": -2511
-      },
-      {
-        "Item1": 1524,
-        "Item2": -2504
-      },
-      {
-        "Item1": 1534,
-        "Item2": -2506
-      },
-      {
-        "Item1": 1543,
-        "Item2": -2511
-      },
-      {
-        "Item1": 1554,
-        "Item2": -2512
-      },
-      {
-        "Item1": 1558,
-        "Item2": -2508
-      }
-    ]
-  },
-  {
-    "sites": [
-      "Boulderslide Ravine",
-      "Greatwood Vale"
-    ],
-    "means": "Land",
-    "speed": 10,
-    "points": [
-      {
-        "Item1": 1482,
-        "Item2": -2527
-      },
-      {
-        "Item1": 1473,
-        "Item2": -2520
-      },
-      {
-        "Item1": 1467,
-        "Item2": -2512
-      },
-      {
-        "Item1": 1458,
-        "Item2": -2515
-      },
-      {
-        "Item1": 1455,
-        "Item2": -2525
-      },
-      {
-        "Item1": 1451,
-        "Item2": -2534
-      },
-      {
-        "Item1": 1442,
-        "Item2": -2539
-      },
-      {
-        "Item1": 1438,
-        "Item2": -2549
-      },
-      {
-        "Item1": 1433,
-        "Item2": -2558
-      },
-      {
-        "Item1": 1425,
-        "Item2": -2565
-      }
-    ]
-  },
-  {
-    "sites": [
       "Greatwood Vale",
       "Webwinder Path"
     ],
@@ -54664,134 +54416,6 @@
       {
         "Item1": 1273,
         "Item2": -1672
-      }
-    ]
-  },
-  {
-    "sites": [
-      "Blackfathom Deeps",
-      "The Zoram Strand"
-    ],
-    "means": "Land",
-    "speed": 10,
-    "points": [
-      {
-        "Item1": 1273,
-        "Item2": -1672
-      },
-      {
-        "Item1": 1275,
-        "Item2": -1682
-      },
-      {
-        "Item1": 1279,
-        "Item2": -1691
-      },
-      {
-        "Item1": 1282,
-        "Item2": -1701
-      },
-      {
-        "Item1": 1284,
-        "Item2": -1711
-      },
-      {
-        "Item1": 1285,
-        "Item2": -1721
-      },
-      {
-        "Item1": 1290,
-        "Item2": -1730
-      },
-      {
-        "Item1": 1294,
-        "Item2": -1739
-      },
-      {
-        "Item1": 1290,
-        "Item2": -1749
-      },
-      {
-        "Item1": 1288,
-        "Item2": -1759
-      },
-      {
-        "Item1": 1290,
-        "Item2": -1769
-      },
-      {
-        "Item1": 1279,
-        "Item2": -1768
-      },
-      {
-        "Item1": 1273,
-        "Item2": -1761
-      },
-      {
-        "Item1": 1264,
-        "Item2": -1755
-      },
-      {
-        "Item1": 1254,
-        "Item2": -1748
-      }
-    ]
-  },
-  {
-    "sites": [
-      "The Zoram Strand",
-      "Zoram'gar Outpost"
-    ],
-    "means": "Land",
-    "speed": 10,
-    "points": [
-      {
-        "Item1": 1235,
-        "Item2": -1843
-      },
-      {
-        "Item1": 1243,
-        "Item2": -1836
-      },
-      {
-        "Item1": 1250,
-        "Item2": -1827
-      },
-      {
-        "Item1": 1256,
-        "Item2": -1819
-      },
-      {
-        "Item1": 1263,
-        "Item2": -1812
-      },
-      {
-        "Item1": 1269,
-        "Item2": -1803
-      },
-      {
-        "Item1": 1266,
-        "Item2": -1793
-      },
-      {
-        "Item1": 1267,
-        "Item2": -1783
-      },
-      {
-        "Item1": 1270,
-        "Item2": -1773
-      },
-      {
-        "Item1": 1265,
-        "Item2": -1763
-      },
-      {
-        "Item1": 1259,
-        "Item2": -1755
-      },
-      {
-        "Item1": 1254,
-        "Item2": -1748
       }
     ]
   },
@@ -87858,6 +87482,415 @@
       {
         "Item1": 1159,
         "Item2": -2679
+      }
+    ]
+  },
+  {
+    "sites": [
+      "Blackfathom Deeps",
+      "The Zoram Strand"
+    ],
+    "means": "Land",
+    "speed": 10,
+    "spacing": 10,
+    "points": [
+      {
+        "Item1": 1273,
+        "Item2": -1767
+      },
+      {
+        "Item1": 1283,
+        "Item2": -1764
+      },
+      {
+        "Item1": 1287,
+        "Item2": -1755
+      },
+      {
+        "Item1": 1286,
+        "Item2": -1745
+      },
+      {
+        "Item1": 1285,
+        "Item2": -1735
+      },
+      {
+        "Item1": 1291,
+        "Item2": -1726
+      },
+      {
+        "Item1": 1297,
+        "Item2": -1718
+      },
+      {
+        "Item1": 1293,
+        "Item2": -1708
+      },
+      {
+        "Item1": 1285,
+        "Item2": -1701
+      },
+      {
+        "Item1": 1277,
+        "Item2": -1695
+      },
+      {
+        "Item1": 1273,
+        "Item2": -1685
+      },
+      {
+        "Item1": 1274,
+        "Item2": -1675
+      },
+      {
+        "Item1": 1273,
+        "Item2": -1672
+      }
+    ]
+  },
+  {
+    "sites": [
+      "The Zoram Strand",
+      "Zoram'gar Outpost"
+    ],
+    "means": "Land",
+    "speed": 10,
+    "spacing": 10,
+    "points": [
+      {
+        "Item1": 1235,
+        "Item2": -1843
+      },
+      {
+        "Item1": 1243,
+        "Item2": -1837
+      },
+      {
+        "Item1": 1250,
+        "Item2": -1829
+      },
+      {
+        "Item1": 1253,
+        "Item2": -1819
+      },
+      {
+        "Item1": 1260,
+        "Item2": -1811
+      },
+      {
+        "Item1": 1270,
+        "Item2": -1809
+      },
+      {
+        "Item1": 1280,
+        "Item2": -1810
+      },
+      {
+        "Item1": 1290,
+        "Item2": -1810
+      },
+      {
+        "Item1": 1297,
+        "Item2": -1803
+      },
+      {
+        "Item1": 1294,
+        "Item2": -1793
+      },
+      {
+        "Item1": 1287,
+        "Item2": -1786
+      },
+      {
+        "Item1": 1280,
+        "Item2": -1778
+      },
+      {
+        "Item1": 1275,
+        "Item2": -1770
+      },
+      {
+        "Item1": 1273,
+        "Item2": -1767
+      }
+    ]
+  },
+  {
+    "sites": [
+      "Camp Aparaje",
+      "Honor's Stand"
+    ],
+    "means": "Land",
+    "speed": 10,
+    "spacing": 10,
+    "points": [
+      {
+        "Item1": 1729,
+        "Item2": -2603
+      },
+      {
+        "Item1": 1719,
+        "Item2": -2606
+      },
+      {
+        "Item1": 1710,
+        "Item2": -2601
+      },
+      {
+        "Item1": 1703,
+        "Item2": -2594
+      },
+      {
+        "Item1": 1694,
+        "Item2": -2589
+      },
+      {
+        "Item1": 1684,
+        "Item2": -2587
+      },
+      {
+        "Item1": 1674,
+        "Item2": -2584
+      },
+      {
+        "Item1": 1664,
+        "Item2": -2583
+      },
+      {
+        "Item1": 1654,
+        "Item2": -2584
+      },
+      {
+        "Item1": 1644,
+        "Item2": -2585
+      },
+      {
+        "Item1": 1634,
+        "Item2": -2585
+      },
+      {
+        "Item1": 1624,
+        "Item2": -2584
+      },
+      {
+        "Item1": 1614,
+        "Item2": -2581
+      },
+      {
+        "Item1": 1604,
+        "Item2": -2577
+      },
+      {
+        "Item1": 1596,
+        "Item2": -2572
+      },
+      {
+        "Item1": 1591,
+        "Item2": -2563
+      },
+      {
+        "Item1": 1584,
+        "Item2": -2555
+      },
+      {
+        "Item1": 1577,
+        "Item2": -2546
+      }
+    ]
+  },
+  {
+    "sites": [
+      "Greatwood Vale",
+      "Malaka'jin"
+    ],
+    "means": "Land",
+    "speed": 10,
+    "spacing": 10,
+    "points": [
+      {
+        "Item1": 1482,
+        "Item2": -2527
+      },
+      {
+        "Item1": 1492,
+        "Item2": -2526
+      },
+      {
+        "Item1": 1500,
+        "Item2": -2532
+      },
+      {
+        "Item1": 1503,
+        "Item2": -2542
+      },
+      {
+        "Item1": 1509,
+        "Item2": -2550
+      },
+      {
+        "Item1": 1516,
+        "Item2": -2558
+      },
+      {
+        "Item1": 1520,
+        "Item2": -2565
+      }
+    ]
+  },
+  {
+    "sites": [
+      "Camp Aparaje",
+      "Greatwood Vale"
+    ],
+    "means": "Land",
+    "speed": 10,
+    "spacing": 10,
+    "points": [
+      {
+        "Item1": 1482,
+        "Item2": -2527
+      },
+      {
+        "Item1": 1492,
+        "Item2": -2527
+      },
+      {
+        "Item1": 1501,
+        "Item2": -2533
+      },
+      {
+        "Item1": 1510,
+        "Item2": -2536
+      },
+      {
+        "Item1": 1522,
+        "Item2": -2536
+      },
+      {
+        "Item1": 1531,
+        "Item2": -2539
+      },
+      {
+        "Item1": 1540,
+        "Item2": -2544
+      },
+      {
+        "Item1": 1550,
+        "Item2": -2541
+      },
+      {
+        "Item1": 1560,
+        "Item2": -2538
+      },
+      {
+        "Item1": 1570,
+        "Item2": -2541
+      },
+      {
+        "Item1": 1577,
+        "Item2": -2546
+      }
+    ]
+  },
+  {
+    "sites": [
+      "Greatwood Vale",
+      "Grimtotem Post"
+    ],
+    "means": "Land",
+    "speed": 10,
+    "spacing": 10,
+    "points": [
+      {
+        "Item1": 1482,
+        "Item2": -2527
+      },
+      {
+        "Item1": 1492,
+        "Item2": -2528
+      },
+      {
+        "Item1": 1501,
+        "Item2": -2524
+      },
+      {
+        "Item1": 1504,
+        "Item2": -2514
+      },
+      {
+        "Item1": 1512,
+        "Item2": -2509
+      },
+      {
+        "Item1": 1522,
+        "Item2": -2509
+      },
+      {
+        "Item1": 1532,
+        "Item2": -2512
+      },
+      {
+        "Item1": 1542,
+        "Item2": -2511
+      },
+      {
+        "Item1": 1552,
+        "Item2": -2508
+      },
+      {
+        "Item1": 1558,
+        "Item2": -2508
+      }
+    ]
+  },
+  {
+    "sites": [
+      "Boulderslide Ravine",
+      "Greatwood Vale"
+    ],
+    "means": "Land",
+    "speed": 10,
+    "spacing": 10,
+    "points": [
+      {
+        "Item1": 1482,
+        "Item2": -2527
+      },
+      {
+        "Item1": 1479,
+        "Item2": -2517
+      },
+      {
+        "Item1": 1469,
+        "Item2": -2513
+      },
+      {
+        "Item1": 1459,
+        "Item2": -2514
+      },
+      {
+        "Item1": 1457,
+        "Item2": -2524
+      },
+      {
+        "Item1": 1450,
+        "Item2": -2532
+      },
+      {
+        "Item1": 1443,
+        "Item2": -2540
+      },
+      {
+        "Item1": 1437,
+        "Item2": -2548
+      },
+      {
+        "Item1": 1429,
+        "Item2": -2555
+      },
+      {
+        "Item1": 1425,
+        "Item2": -2565
       }
     ]
   }

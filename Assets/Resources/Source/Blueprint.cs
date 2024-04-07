@@ -97,14 +97,6 @@ public class Blueprint
                 SpawnWindowBlueprint("GameSettings");
                 CloseWindow(h.window);
             });
-            //AddButtonRegion(() =>
-            //{
-            //    AddLine("Achievments", "Black");
-            //},
-            //(h) =>
-            //{
-
-            //});
             AddButtonRegion(() =>
             {
                 AddLine("Graveyard", "", "Center");
@@ -113,14 +105,6 @@ public class Blueprint
             {
 
             });
-            //AddButtonRegion(() =>
-            //{
-            //    AddLine("Dev panel", "Black");
-            //},
-            //(h) =>
-            //{
-            //    SpawnDesktopBlueprint("DevPanel");
-            //});
             AddButtonRegion(() =>
             {
                 AddLine("Credits", "", "Center");
@@ -548,14 +532,6 @@ public class Blueprint
             {
                 SpawnWindowBlueprint("GameSettings");
                 CloseWindow(h.window);
-            });
-            AddButtonRegion(() =>
-            {
-                AddLine("Achievments", "Black");
-            },
-            (h) =>
-            {
-
             });
             AddButtonRegion(() =>
             {

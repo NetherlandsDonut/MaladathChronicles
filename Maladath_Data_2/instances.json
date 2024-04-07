@@ -1611,7 +1611,7 @@
     "name": "Ruins of Ahn'Qiraj",
     "zone": "Silithus",
     "type": "Raid",
-    "ambience": "AmbienceAnhQirajExterior"
+    "ambience": "AmbienceAhnQirajExterior"
   },
   {
     "description": [],
@@ -1664,6 +1664,6 @@
     "name": "Temple of Ahn'Qiraj",
     "zone": "Silithus",
     "type": "Raid",
-    "ambience": "AmbienceAnhQirajExterior"
+    "ambience": "AmbienceAhnQirajUndergrounds"
   }
 ]

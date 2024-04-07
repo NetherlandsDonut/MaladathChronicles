@@ -74,7 +74,7 @@
   {
     "name": "Prince Galen Trollbane",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Troll",
     "kind": "Elite",
     "portrait": "PortraitPrinceGalenTrollbane",
     "vitality": 3.0,
@@ -82,8 +82,8 @@
   },
   {
     "name": "Stromgarde Vindicator",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Beast",
+    "subcategory": "Cat",
     "kind": "Common",
     "portrait": "PortraitStromgardeVindicator",
     "vitality": 1.0,
@@ -119,7 +119,7 @@
   {
     "name": "Stromgarde Troll Hunter",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Troll",
     "kind": "Common",
     "portrait": "PortraitStromgardeTrollHunter",
     "vitality": 1.0,
@@ -14440,7 +14440,7 @@
     "category": "Humanoid",
     "subcategory": "Satyr",
     "kind": "Common",
-    "portrait": "PortraitSatyrPink",
+    "portrait": "PortraitSatyrDarkPink",
     "vitality": 1.0,
     "abilities": {}
   },
@@ -14476,7 +14476,7 @@
     "category": "Humanoid",
     "subcategory": "Satyr",
     "kind": "Common",
-    "portrait": "PortraitSatyrPink",
+    "portrait": "PortraitSatyrDarkPink",
     "vitality": 1.0,
     "abilities": {}
   },

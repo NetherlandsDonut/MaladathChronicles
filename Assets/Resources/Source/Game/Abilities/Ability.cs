@@ -6,6 +6,8 @@ using static Root.Anchor;
 
 public class Ability
 {
+    #region Initialisation
+
     //Initialisation method to fill automatic values
     //and remove empty collections to avoid serialising them later
     public void Initialise()
@@ -16,6 +18,8 @@ public class Ability
         events ??= new();
         tags ??= new();
     }
+
+    #endregion
 
     #region Resource Check
 

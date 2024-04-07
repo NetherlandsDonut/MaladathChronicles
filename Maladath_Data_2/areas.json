@@ -2453,8 +2453,8 @@
         "point": 3
       }
     ],
-    "x": 75,
-    "y": -109,
+    "x": 74,
+    "y": -108,
     "name": "Fire Scar Shrine",
     "zone": "Ashenvale",
     "type": "HostileArea"
@@ -2547,7 +2547,7 @@
         "point": 3
       }
     ],
-    "x": 70,
+    "x": 71,
     "y": -100,
     "name": "Lake Falathim",
     "zone": "Ashenvale",
@@ -2607,6 +2607,37 @@
     "x": 99,
     "y": -106,
     "name": "Night Run",
+    "zone": "Ashenvale",
+    "type": "HostileArea"
+  },
+  {
+    "commonEncounters": [
+      {
+        "who": "Elder Shadowhorn Stag",
+        "levelMin": 25,
+        "levelMax": 26
+      },
+      {
+        "who": "Crazed Ancient",
+        "levelMin": 25,
+        "levelMax": 26
+      },
+      {
+        "who": "Elder Ashenvale Bear",
+        "levelMin": 25,
+        "levelMax": 26
+      }
+    ],
+    "areaSize": 3,
+    "progression": [
+      {
+        "type": "Treasure",
+        "point": 3
+      }
+    ],
+    "x": 91,
+    "y": -102,
+    "name": "Shael'dryn Moonwell",
     "zone": "Ashenvale",
     "type": "HostileArea"
   },
@@ -2817,8 +2848,8 @@
         "point": 3
       }
     ],
-    "x": 71,
-    "y": -104,
+    "x": 72,
+    "y": -105,
     "name": "The Shrine of Aessina",
     "zone": "Ashenvale",
     "type": "HostileArea"
@@ -2848,8 +2879,8 @@
         "point": 3
       }
     ],
-    "x": 66,
-    "y": -92,
+    "x": 67,
+    "y": -93,
     "name": "The Zoram Strand",
     "zone": "Ashenvale",
     "type": "HostileArea"
@@ -2879,7 +2910,7 @@
         "point": 3
       }
     ],
-    "x": 80,
+    "x": 81,
     "y": -97,
     "name": "Thistlefur Village",
     "zone": "Ashenvale",
@@ -19182,7 +19213,7 @@
         "point": 3
       }
     ],
-    "x": 81,
+    "x": 83,
     "y": -134,
     "name": "Camp Aparaje",
     "zone": "Stonetalon Mountains",

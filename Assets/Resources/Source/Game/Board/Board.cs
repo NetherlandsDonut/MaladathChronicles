@@ -15,6 +15,8 @@ using static SiteHostileArea;
 
 public class Board
 {
+    #region Initialisation
+
     public Board(int x, int y, Entity enemy, SiteHostileArea area = null)
     {
         field = new int[x, y];
@@ -67,6 +69,8 @@ public class Board
             board.CallEvents(board.enemy, new() { { "Trigger", "AbilityCast" }, { "AbilityName", testingAbility.name }, { "Triggerer", "Effector" } });
         board.actions.Add(() => { CloseDesktop("GameSimulation"); CDesktop.UnlockScreen(); });
     }
+
+    #endregion
 
     //STATIC REFERENCE TO THE BOARD
     //THERE CAN BE ONLY ONE AT A TIME THANKS TO STATIC REF

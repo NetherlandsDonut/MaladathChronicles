@@ -598,6 +598,13 @@
     "faction": "Darnassus"
   },
   {
+    "x": 74,
+    "y": -99,
+    "name": "Maestra's Post",
+    "zone": "Ashenvale",
+    "faction": "Darnassus"
+  },
+  {
     "people": [
       {
         "name": "Daelyshia",
@@ -618,8 +625,8 @@
         "type": "Stable Master"
       }
     ],
-    "x": 80,
-    "y": -103,
+    "x": 81,
+    "y": -104,
     "name": "Astranaar",
     "zone": "Ashenvale",
     "faction": "Darnassus"
@@ -1501,6 +1508,13 @@
     "name": "Revantusk Village",
     "zone": "Hinterlands",
     "faction": "Revantusk Tribe"
+  },
+  {
+    "x": 80,
+    "y": -135,
+    "name": "Malaka'jin",
+    "zone": "Stonetalon Mountains",
+    "faction": "Orgrimmar"
   },
   {
     "people": [

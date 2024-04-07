@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 
 using UnityEngine;
@@ -6,10 +5,10 @@ using UnityEngine;
 using static Root;
 using static Root.Anchor;
 
-using static SaveGame;
-
 public class Buff
 {
+    #region Initialisation
+
     //Initialisation method to fill automatic values
     //and remove empty collections to avoid serialising them later
     public void Initialise()
@@ -20,6 +19,8 @@ public class Buff
         events ??= new();
         tags ??= new();
     }
+
+    #endregion
 
     //Name of the buff
     public string name;

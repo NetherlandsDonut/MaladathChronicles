@@ -14,6 +14,18 @@ using static FlyingMissile;
 
 public class Event
 {
+    //List of triggers of this event
+    //Those triggers will trigger this event's effects
+    //Each trigger will make all of the effects flare up
+    public List<Dictionary<string, string>> triggers;
+
+    //List of effects of this event
+    //Whenever a single trigger has met it's conditions
+    //all of these will be called to function
+    public List<Dictionary<string, string>> effects;
+
+    #region Execution
+
     public void ExecuteEffects(Board board, FutureBoard futureBoard, string icon, Dictionary<string, string> triggerBase, Dictionary<string, string> variables, int sourceRank)
     {
         //Define entities that take place in the event's effects
@@ -21,7 +33,7 @@ public class Event
         var other = board == null ? null : (board.playerTurn ? board.enemy : board.player);
         var futureEffector = futureBoard == null ? null : (futureBoard.playerTurn ? futureBoard.player : futureBoard.enemy);
         var futureOther = futureBoard == null ? null : (futureBoard.playerTurn ? futureBoard.enemy : futureBoard.player);
-        
+
         //Main loop of executing effects, each effect is calculated here separately
         foreach (var effect in effects)
         {
@@ -315,15 +327,7 @@ public class Event
         }
     }
 
-    //List of triggers of this event
-    //Those triggers will trigger this event's effects
-    //Each trigger will make all of the effects flare up
-    public List<Dictionary<string, string>> triggers;
-
-    //List of effects of this event
-    //Whenever a single trigger has met it's conditions
-    //all of these will be called to function
-    public List<Dictionary<string, string>> effects;
+    #endregion
 
     //Stores information about what type of object
     //is the parent of the currently edited event
