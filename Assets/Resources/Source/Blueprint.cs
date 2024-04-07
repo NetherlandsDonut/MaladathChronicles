@@ -372,6 +372,7 @@ public class Blueprint
                 (h) =>
                 {
                     String.promptConfirm.Set("");
+                    CDesktop.RespawnAll();
                     SpawnWindowBlueprint("ConfirmDeleteCharacter");
                     CDesktop.LBWindow.LBRegionGroup.LBRegion.inputLine.Activate();
                 });
@@ -7258,6 +7259,7 @@ public class Blueprint
                 if (CloseWindow("HostileArea: " + area?.name))
                 {
                     area = null;
+                    CloseWindow("BossQueue");
                     PlaySound("DesktopButtonClose");
                     SetDesktopBackground(instance.Background());
                     Respawn("InstanceLeftSide");

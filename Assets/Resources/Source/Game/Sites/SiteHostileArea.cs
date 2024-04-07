@@ -127,12 +127,14 @@ public class SiteHostileArea : Site
                                 {
                                     SetDesktopBackground(instance.Background());
                                     CloseWindow(h.window);
+                                    CloseWindow("BossQueue");
                                     Respawn("InstanceLeftSide");
                                 }
                                 else if (complexPart)
                                 {
                                     SetDesktopBackground(complex.Background());
                                     CloseWindow(h.window);
+                                    CloseWindow("BossQueue");
                                     Respawn("ComplexLeftSide");
                                 }
                                 else CloseDesktop("HostileArea");

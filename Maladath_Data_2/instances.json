@@ -6,59 +6,46 @@
         "name": "Temple of Atal'Hakkar",
         "areas": [
           {
-            "Requisite": "None",
+            "OpenByDefault": "True",
             "AreaName": "The Broken Hall"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "The Butchery"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Chamber of Blood"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Den of the Caller"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Hall of Masks"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Hall of Ritual"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Hall of Bones"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Hall of Serpents"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Pit of Refuse"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Hall of the Cursed"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "The Pit of Sacrifice"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Lair of the Chosen"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Sanctum of the Fallen God"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Chamber of the Dreamer"
           }
         ]
@@ -78,15 +65,13 @@
         "name": "The Stockade",
         "areas": [
           {
-            "Requisite": "None",
+            "OpenByDefault": "True",
             "AreaName": "Central Corridor"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Western Cells"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "East Section"
           }
         ]
@@ -106,15 +91,13 @@
         "name": "Ragefire Chasm",
         "areas": [
           {
-            "Requisite": "None",
+            "OpenByDefault": "True",
             "AreaName": "Charred Tunnels"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Main Chamber"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Searing Blade Hideout"
           }
         ]
@@ -134,23 +117,20 @@
         "name": "Gnomeregan",
         "areas": [
           {
-            "Requisite": "None",
+            "OpenByDefault": "True",
             "AreaName": "Trogg Caves"
           },
           {
-            "Requisite": "None",
+            "OpenByDefault": "True",
             "AreaName": "Hall of Gears"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Launch Bay"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Engineering Labs"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Tinkers' Court"
           }
         ]
@@ -170,35 +150,28 @@
         "name": "Shadowfang Keep",
         "areas": [
           {
-            "Requisite": "None",
+            "OpenByDefault": "True",
             "AreaName": "Jail"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "The Courtyard"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Kitchen"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Dining Hall"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Perimeter Wall"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "The Laboratory"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Tower Summit"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Arugal Chamber"
           }
         ]
@@ -233,23 +206,19 @@
         "name": "Shadow Hold",
         "areas": [
           {
-            "Requisite": "None",
+            "OpenByDefault": "True",
             "AreaName": "Upper Tunnels"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Council Camp"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Altar Room"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Inner Sanctum"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Banehollow Shrine"
           }
         ]
@@ -267,55 +236,43 @@
         "name": "Scholomance",
         "areas": [
           {
-            "Requisite": "None",
+            "OpenByDefault": "True",
             "AreaName": "Reliquary"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Chamber of Summoning"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Hall of Illusions"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "The Great Ossuary"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "The Viewing Room"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Laboratory"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Hall of Secrets"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Hall of the Damned"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "The Coven"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Vault of the Ravenian"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "The Shadow Vault"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Barov Family Vault"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Headmaster's Study"
           }
         ]
@@ -374,11 +331,10 @@
         "name": "Orange Crystal Caverns",
         "areas": [
           {
-            "Requisite": "None",
+            "OpenByDefault": "True",
             "AreaName": "The Noxious Hollow"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Foulspore Cavern"
           }
         ]
@@ -387,11 +343,10 @@
         "name": "Purple Crystal Caverns",
         "areas": [
           {
-            "Requisite": "None",
+            "OpenByDefault": "True",
             "AreaName": "Wicked Grotto"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Vyletongue Seat"
           }
         ]
@@ -400,15 +355,12 @@
         "name": "Inner Maraudon",
         "areas": [
           {
-            "Requisite": "None",
             "AreaName": "Poison Falls"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Earth Song Falls"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Zaetar's Grave"
           }
         ]
@@ -427,31 +379,25 @@
         "name": "Main Gate",
         "areas": [
           {
-            "Requisite": "None",
+            "OpenByDefault": "True",
             "AreaName": "King's Square"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Market Row"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Crusaders' Square"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "The Hoard"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "The Hall of Lights"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "The Scarlet Bastion"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "The Crimson Throne"
           }
         ]
@@ -460,19 +406,16 @@
         "name": "Service Gate",
         "areas": [
           {
-            "Requisite": "None",
+            "OpenByDefault": "True",
             "AreaName": "Elder's Square"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "The Gauntlet"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Slaughter Square"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "The Slaughter House"
           }
         ]
@@ -518,23 +461,19 @@
         "name": "Wailing Caverns",
         "areas": [
           {
-            "Requisite": "None",
+            "OpenByDefault": "True",
             "AreaName": "Screaming Gully"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Pit of Fangs"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Winding Chasm"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Crag of the Everliving"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Dreamer's Rock"
           }
         ]
@@ -554,27 +493,22 @@
         "name": "Uldaman",
         "areas": [
           {
-            "Requisite": "None",
+            "OpenByDefault": "True",
             "AreaName": "Hall of the Keepers"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Map Chamber"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Temple Hall"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Dig Three"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "The Stone Vault"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Khaz'Goroth's Seat"
           }
         ]
@@ -609,23 +543,19 @@
         "name": "Razorfen Downs",
         "areas": [
           {
-            "Requisite": "None",
+            "OpenByDefault": "True",
             "AreaName": "The Pensive Burrow"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "The Caller's Chamber"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "The Murder Pens"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Abandoned Gully"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Spiral of Thorns"
           }
         ]
@@ -656,27 +586,22 @@
         "name": "Razorfen Kraul",
         "areas": [
           {
-            "Requisite": "None",
+            "OpenByDefault": "True",
             "AreaName": "Kraul Pantry"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Kraul Commons"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Central Grounds"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Agathelos's Prison"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Bat Caves"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Charlga's Seat"
           }
         ]
@@ -708,23 +633,19 @@
         "name": "The Deadmines",
         "areas": [
           {
-            "Requisite": "None",
+            "OpenByDefault": "True",
             "AreaName": "Defias Hideout"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Mast Room"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Goblin Foundry"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Ironclad Cove"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "The Juggernaut"
           }
         ]
@@ -750,27 +671,22 @@
         "name": "Blackfathom Deeps",
         "areas": [
           {
-            "Requisite": "None",
+            "OpenByDefault": "True",
             "AreaName": "Pool of Ask'ar"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Shrine of Gelihast"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Moonshrine Ruins"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Forgotten Pool"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Moonshrine Sanctum"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Aku'mai's Lair"
           }
         ]
@@ -804,19 +720,16 @@
         "name": "Eastern Wing",
         "areas": [
           {
-            "Requisite": "None",
+            "OpenByDefault": "True",
             "AreaName": "Warpwood Quarter"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Warpwood Vestibule"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "The Conservatory"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "The Shrine of Eldre'tharr"
           }
         ]
@@ -825,19 +738,16 @@
         "name": "Western Wing",
         "areas": [
           {
-            "Requisite": "None",
+            "OpenByDefault": "True",
             "AreaName": "Capital Gardens"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Court of the Highborne"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Prison of Immol'Thar"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "The Athenaeum"
           }
         ]
@@ -846,15 +756,13 @@
         "name": "Northern Wing",
         "areas": [
           {
-            "Requisite": "None",
+            "OpenByDefault": "True",
             "AreaName": "Gordok Commons"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Halls of Destruction"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Gordok's Seat"
           }
         ]
@@ -911,15 +819,13 @@
         "name": "Graveyard",
         "areas": [
           {
-            "Requisite": "None",
+            "OpenByDefault": "True",
             "AreaName": "Chamber of Atonement"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Forlorn Cloister"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Honor's Tomb"
           }
         ]
@@ -928,15 +834,13 @@
         "name": "Library",
         "areas": [
           {
-            "Requisite": "None",
+            "OpenByDefault": "True",
             "AreaName": "Huntsman's Cloister"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Gallery of Treasures"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Athenaeum"
           }
         ]
@@ -945,15 +849,13 @@
         "name": "Armory",
         "areas": [
           {
-            "Requisite": "None",
+            "OpenByDefault": "True",
             "AreaName": "Training Grounds"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Crusader's Armory"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Hall of Champions"
           }
         ]
@@ -962,11 +864,10 @@
         "name": "Cathedral",
         "areas": [
           {
-            "Requisite": "None",
+            "OpenByDefault": "True",
             "AreaName": "Chapel Gardens"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Crusader's Chapel"
           }
         ]
@@ -1029,55 +930,43 @@
         "name": "Blackrock Depths",
         "areas": [
           {
-            "Requisite": "None",
+            "OpenByDefault": "True",
             "AreaName": "Detention Block"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Halls of the Law"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Ring of Law"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Dark Iron Highway"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "The Black Anvil"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Hall of Crafting"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "The Garrison"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "The Manufactory"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Chamber of Enchantment"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Mold Foundry"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Summoners' Tomb"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "The Iron Hall"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "The Imperial Seat"
           }
         ]
@@ -1143,35 +1032,29 @@
         "name": "Lower Wing",
         "areas": [
           {
-            "Requisite": "None",
+            "OpenByDefault": "True",
             "AreaName": "Lower Hall of Blackhand"
           },
           {
-            "Requisite": "None",
+            "OpenByDefault": "True",
             "AreaName": "Hordemar City"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Mok'Doom"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Tazz'Alor"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Skitterweb Tunnels"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "The Storehouse"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Halycon's Lair"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Chamber of Battle"
           }
         ]
@@ -1218,31 +1101,25 @@
         "name": "Upper Wing",
         "areas": [
           {
-            "Requisite": "None",
+            "OpenByDefault": "True",
             "AreaName": "Dragonspire Hall"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Hall of Binding"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "The Rookery"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Upper Hall of Blackhand"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Blackrock Stadium"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "The Furnace"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Spire Throne"
           }
         ]
@@ -1277,27 +1154,22 @@
         "name": "Zul'Farrak",
         "areas": [
           {
-            "Requisite": "None",
+            "OpenByDefault": "True",
             "AreaName": "Central Village"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Cave of Sul"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Graveyard"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Gahz'rilla Pond"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "The Pyramid"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Throne of the Sandfury"
           }
         ]
@@ -1317,7 +1189,7 @@
         "name": "Onyxia's Lair",
         "areas": [
           {
-            "Requisite": "None",
+            "OpenByDefault": "True",
             "AreaName": "The Broodmother's Lair"
           }
         ]
@@ -1358,27 +1230,22 @@
         "name": "Molten Core",
         "areas": [
           {
-            "Requisite": "None",
+            "OpenByDefault": "True",
             "AreaName": "Core Entrance"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Upper Crag"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Smoldering Hollow"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "The Lavafalls"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Sulfuran Summit"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Ragnaros' Lair"
           }
         ]
@@ -1436,39 +1303,31 @@
         "name": "Lower",
         "areas": [
           {
-            "Requisite": "None",
+            "OpenByDefault": "True",
             "AreaName": "Altar of Hir'eek"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "The Coil"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Shadra'zaar"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Hakkari Grounds"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Naze of Shirvallah"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Pagle's Pointe"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Temple of Bethekk"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "The Bloodfire Pit"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Altar of the Blood God"
           }
         ]
@@ -1523,27 +1382,22 @@
         "name": "Lower",
         "areas": [
           {
-            "Requisite": "None",
+            "OpenByDefault": "True",
             "AreaName": "Dragonmaw Garrison"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Shadow Wing Lair"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Halls of Strife"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Crimson Laboratories"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Chromaggus' Lair"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Nefarian's Lair"
           }
         ]
@@ -1569,27 +1423,22 @@
         "name": "Ruins of Ahn'Qiraj",
         "areas": [
           {
-            "Requisite": "None",
+            "OpenByDefault": "True",
             "AreaName": "Scarab Terrace"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "General's Terrace"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "The Hatchery"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "The Comb"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "The Reservoir"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Watcher's Terrace"
           }
         ]
@@ -1620,31 +1469,25 @@
         "name": "Temple of Ahn'Qiraj",
         "areas": [
           {
-            "Requisite": "None",
+            "OpenByDefault": "True",
             "AreaName": "The Temple Gates"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "The Hive Undergrounds"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Abandoned Tunnel"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Princess Chambers"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Ouro's Lair"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Qiraji Imperial Seat"
           },
           {
-            "Requisite": "EliteKilled",
             "AreaName": "Vault of C'Thun"
           }
         ]

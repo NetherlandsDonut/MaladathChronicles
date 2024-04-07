@@ -13698,6 +13698,11 @@
         "point": 2
       },
       {
+        "type": "Area",
+        "areaName": "Poison Falls",
+        "point": 2
+      },
+      {
         "type": "Treasure",
         "point": 3
       }
@@ -13832,6 +13837,11 @@
       {
         "type": "Boss",
         "bossName": "Lord Vyletongue",
+        "point": 2
+      },
+      {
+        "type": "Area",
+        "areaName": "Poison Falls",
         "point": 2
       },
       {

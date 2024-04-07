@@ -50,7 +50,10 @@ public class SaveGame
     //Stores amounts of visits to all sites
     //If one is equal at least to 1 the site is considered to be discovered
     public Dictionary<string, int> siteVisits;
-    
+
+    //Stores information about all unlocked areas in instances
+    public List<string> unlockedAreas;
+
     //Stores all bank accounts of this character in towns
     public Dictionary<string, Inventory> banks;
 
@@ -116,6 +119,7 @@ public class SaveGame
             commonsKilled = new(),
             raresKilled = new(),
             elitesKilled = new(),
+            unlockedAreas = new(),
             startDate = DateTime.Now,
             player = new Entity
             (

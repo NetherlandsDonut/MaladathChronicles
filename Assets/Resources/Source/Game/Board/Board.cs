@@ -121,7 +121,7 @@ public class Board
     //Abilities (Active and passive) that player has in the combat
     public Dictionary<Ability, int> playerCombatAbilities;
 
-//Abilities (Active and passive) that enemy has in the combat
+    //Abilities (Active and passive) that enemy has in the combat
     public Dictionary<Ability, int> enemyCombatAbilities;
 
     //Queue of actions to do on the board and the combatants
@@ -180,6 +180,7 @@ public class Board
         results = new CombatResults(result);
         if (result == "Won")
         {
+            var progression = area.progression.FindAll(x => x.point == (currentSave.siteProgress.ContainsKey(area.name) ? currentSave.siteProgress[area.name] : 0));
             if (currentSave.player.WillGetExperience(enemy.level) && currentSave.player.level < defines.maxPlayerLevel)
             {
                 var enemyRace = Race.races.Find(x => x.name == enemy.race);
@@ -190,9 +191,12 @@ public class Board
                 else if (enemyRace.kind == "Rare") amount *= 1.5f;
                 results.experience = (int)amount;
             }
+            foreach (var unlockArea in progression.FindAll(x => x.type == "Area"))
+                if (!currentSave.unlockedAreas.Contains(unlockArea.areaName) && (progression.Exists(x => x.type == "Boss" && currentSave.elitesKilled.ContainsKey(enemy.name)) || !progression.Exists(x => x.type == "Boss")))
+                    currentSave.unlockedAreas.Add(unlockArea.areaName);
             if (area != null && enemy.kind != "Elite")
             {
-                if (!area.progression.Any(x => x.type == "Boss" && x.point == (currentSave.siteProgress.ContainsKey(area.name) ? currentSave.siteProgress[area.name] : 0) && !currentSave.elitesKilled.ContainsKey(enemy.name)))
+                if (!progression.Any(x => x.type == "Boss" && !currentSave.elitesKilled.ContainsKey(enemy.name)))
                 {
                     if (!currentSave.siteProgress.ContainsKey(area.name))
                         currentSave.siteProgress.Add(area.name, 1);

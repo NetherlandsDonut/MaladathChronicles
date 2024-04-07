@@ -181,26 +181,33 @@ public class SiteInstance : Site
     {
         if (instance.wings.Count > 1)
             AddHeaderRegion(() => { AddLine(wing.name); });
-        var temp = wing.areas.Select(x => areas.Find(y => x.ContainsKey("AreaName") && y.name == x["AreaName"])).ToList();
+        var temp = wing.areas.Select(x => (areas.Find(y => x.ContainsKey("AreaName") && y.name == x["AreaName"]), x)).ToList();
         foreach (var area in temp)
-            AddButtonRegion(() =>
-            {
-                var name = area != null ? area.name : "AREA NOT FOUND";
-                AddLine(name);
-            },
-            (h) =>
-            {
-                if (area == null) return;
-                SiteHostileArea.area = area;
-                var window = CDesktop.windows.Find(x => x.title.StartsWith("HostileArea: "));   
-                if (window != null)
-                    if (window.title == "HostileArea: " + area.name) return;
-                    else CloseWindow(window);
-                CloseWindow("InstanceLeftSide");
-                SpawnWindowBlueprint("HostileArea: " + area.name);
-                Respawn("BossQueue");
-                SetDesktopBackground("Areas/Area" + (instance.name + area.name).Clean() + (area.specialClearBackground && area.eliteEncounters.All(x => currentSave.elitesKilled.ContainsKey(x.who)) ? "Cleared" : ""));
-            });
+            if (area.x.ContainsKey("OpenByDefault") && area.x["OpenByDefault"] == "True" || currentSave.unlockedAreas.Contains(area.Item1.name))
+                AddButtonRegion(() =>
+                {
+                    var name = area.Item1 != null ? area.Item1.name : "AREA NOT FOUND";
+                    AddLine(name);
+                },
+                (h) =>
+                {
+                    if (area.Item1 == null) return;
+                    SiteHostileArea.area = area.Item1;
+                    var window = CDesktop.windows.Find(x => x.title.StartsWith("HostileArea: "));
+                    if (window != null)
+                        if (window.title == "HostileArea: " + area.Item1.name) return;
+                        else CloseWindow(window);
+                    CloseWindow("InstanceLeftSide");
+                    SpawnWindowBlueprint("HostileArea: " + area.Item1.name);
+                    Respawn("BossQueue");
+                    SetDesktopBackground("Areas/Area" + (instance.name + area.Item1.name).Clean() + (area.Item1.specialClearBackground && area.Item1.eliteEncounters.All(x => currentSave.elitesKilled.ContainsKey(x.who)) ? "Cleared" : ""));
+                });
+            else
+                AddPaddingRegion(() =>
+                {
+                    //var name = area.Item1 != null ? area.Item1.name : "AREA NOT FOUND";
+                    AddLine(" ", "DimGray");
+                });
     }
 }
 
