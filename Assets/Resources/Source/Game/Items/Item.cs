@@ -62,12 +62,12 @@ public class Item
             containing = pEnchants.FindAll(x => x.commonlyOn != null && x.commonlyOn.Contains(key) || x.rarelyOn != null && x.rarelyOn.Contains(key));
             if (Roll(10))
             {
-                var rare = containing.FindAll(x => x.rarelyOn.Contains(key));
+                var rare = containing.FindAll(x => x.rarelyOn != null && x.rarelyOn.Contains(key));
                 if (rare.Count > 0) return rare[random.Next(0, rare.Count)];
             }
             else
             {
-                var common = containing.FindAll(x => x.commonlyOn.Contains(key));
+                var common = containing.FindAll(x => x.commonlyOn != null && x.commonlyOn.Contains(key));
                 if (common.Count > 0) return common[random.Next(0, common.Count)];
             }
             if (containing.Count == 0) return null;

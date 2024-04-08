@@ -121,7 +121,6 @@
             "AreaName": "Trogg Caves"
           },
           {
-            "OpenByDefault": "True",
             "AreaName": "Hall of Gears"
           },
           {
@@ -1036,7 +1035,6 @@
             "AreaName": "Lower Hall of Blackhand"
           },
           {
-            "OpenByDefault": "True",
             "AreaName": "Hordemar City"
           },
           {

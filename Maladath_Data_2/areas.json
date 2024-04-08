@@ -911,6 +911,11 @@
     "areaSize": 3,
     "progression": [
       {
+        "type": "Area",
+        "areaName": "Hall of Binding",
+        "point": 2
+      },
+      {
         "type": "Treasure",
         "point": 3
       }
@@ -1273,11 +1278,16 @@
         "levelMax": 55
       }
     ],
-    "areaSize": 3,
+    "areaSize": 2,
     "progression": [
       {
+        "type": "Area",
+        "areaName": "Hordemar City",
+        "point": 1
+      },
+      {
         "type": "Treasure",
-        "point": 3
+        "point": 2
       }
     ],
     "name": "Lower Hall of Blackhand",

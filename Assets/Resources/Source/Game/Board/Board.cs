@@ -180,7 +180,6 @@ public class Board
         results = new CombatResults(result);
         if (result == "Won")
         {
-            var progression = area.progression.FindAll(x => x.point == (currentSave.siteProgress.ContainsKey(area.name) ? currentSave.siteProgress[area.name] : 0));
             if (currentSave.player.WillGetExperience(enemy.level) && currentSave.player.level < defines.maxPlayerLevel)
             {
                 var enemyRace = Race.races.Find(x => x.name == enemy.race);
@@ -191,12 +190,13 @@ public class Board
                 else if (enemyRace.kind == "Rare") amount *= 1.5f;
                 results.experience = (int)amount;
             }
-            foreach (var unlockArea in progression.FindAll(x => x.type == "Area"))
-                if (!currentSave.unlockedAreas.Contains(unlockArea.areaName) && (progression.Exists(x => x.type == "Boss" && currentSave.elitesKilled.ContainsKey(enemy.name)) || !progression.Exists(x => x.type == "Boss")))
-                    currentSave.unlockedAreas.Add(unlockArea.areaName);
+            var progression = area.progression.FindAll(x => x.point == (currentSave.siteProgress.ContainsKey(area.name) ? currentSave.siteProgress[area.name] : 0));
+            var nextProgression = area.progression.FindAll(x => x.point - 1 == (currentSave.siteProgress.ContainsKey(area.name) ? currentSave.siteProgress[area.name] : 0));
+            var progBosses = progression.FindAll(x => x.type == "Boss");
+            var nextProgBosses = nextProgression.FindAll(x => x.type == "Boss");
             if (area != null && enemy.kind != "Elite")
             {
-                if (!progression.Any(x => x.type == "Boss" && !currentSave.elitesKilled.ContainsKey(enemy.name)))
+                if (progBosses.Count > 0 && progBosses.All(x => currentSave.elitesKilled.ContainsKey(x.bossName)) || progBosses.Count == 0)
                 {
                     if (!currentSave.siteProgress.ContainsKey(area.name))
                         currentSave.siteProgress.Add(area.name, 1);
@@ -221,6 +221,12 @@ public class Board
                     currentSave.elitesKilled.Add(enemy.name, 1);
                 else currentSave.elitesKilled[enemy.name]++;
             }
+            foreach (var unlockArea in progression.FindAll(x => x.type == "Area"))
+                if (!currentSave.unlockedAreas.Contains(unlockArea.areaName) && progBosses.Count > 0 && progBosses.All(x => currentSave.elitesKilled.ContainsKey(x.bossName)))
+                    currentSave.unlockedAreas.Add(unlockArea.areaName);
+            foreach (var unlockArea in nextProgression.FindAll(x => x.type == "Area"))
+                if (!currentSave.unlockedAreas.Contains(unlockArea.areaName) && nextProgBosses.Count == 0)
+                    currentSave.unlockedAreas.Add(unlockArea.areaName);
             if (area != null && area.instancePart)
                 SwitchDesktop("Instance");
             else if (area != null && area.complexPart)

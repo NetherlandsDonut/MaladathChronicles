@@ -691,32 +691,31 @@ public class Blueprint
             }
         }),
         new("BossQueue", () => {
-                if (area.eliteEncounters == null) return;
-                var bosses = area.eliteEncounters.FindAll(x => !currentSave.elitesKilled.ContainsKey(x.who));
-                if (bosses.Count == 0) return;
-                var boss = bosses[0];
-                if (boss == null || !currentSave.siteProgress.ContainsKey(area.name)) return;
-                var temp = area.progression.Find(x => x.bossName == boss.who);
-                if (temp == null || currentSave.siteProgress[area.name] < temp.point) return;
-                var bossBackground = new GameObject("BossBackground", typeof(SpriteRenderer));
-                bossBackground.transform.parent = CDesktop.LBWindow.transform;
-                bossBackground.transform.localPosition = new Vector2(20, -20);
-                bossBackground.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Textures/BossBackground");
-                SetAnchor(BottomLeft, 23, 42);
-                AddHeaderGroup();
-                AddPaddingRegion(() =>
+            if (area.eliteEncounters == null) return;
+            var bosses = area.eliteEncounters.FindAll(x => !currentSave.elitesKilled.ContainsKey(x.who));
+            if (bosses.Count == 0) return;
+            var boss = bosses[0];
+            if (boss == null || !currentSave.siteProgress.ContainsKey(area.name)) return;
+            var temp = area.progression.Find(x => x.bossName == boss.who);
+            if (temp == null || currentSave.siteProgress[area.name] < temp.point) return;
+            var bossBackground = new GameObject("BossBackground", typeof(SpriteRenderer));
+            bossBackground.transform.parent = CDesktop.LBWindow.transform;
+            bossBackground.transform.localPosition = new Vector2(20, -20);
+            bossBackground.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Textures/BossBackground");
+            SetAnchor(BottomLeft, 23, 42);
+            AddHeaderGroup();
+            AddPaddingRegion(() =>
+            {
+                var race = races.Find(x => x.name == boss.who);
+                AddBigButton(race == null ? "OtherUnknown" : race.portrait,
+                (h) =>
                 {
-                    var race = races.Find(x => x.name == boss.who);
-                    AddBigButton(race == null ? "OtherUnknown" : race.portrait,
-                    (h) =>
-                    {
-                        Board.NewBoard(area.RollEncounter(boss), area);
-                        SpawnDesktopBlueprint("Game");
-                        SwitchDesktop("Game");
-                    });
+                    Board.NewBoard(area.RollEncounter(boss), area);
+                    SpawnDesktopBlueprint("Game");
+                    SwitchDesktop("Game");
                 });
-            }
-        ),
+            });
+        }),
         new("SpellbookAbilityListActivated", () => {
             SetAnchor(TopRight, 0, -19);
             var activeAbilities = abilities.FindAll(x => !x.hide && x.cost != null && currentSave.player.abilities.ContainsKey(x.name)).ToDictionary(x => x, x => currentSave.player.abilities[x.name]);

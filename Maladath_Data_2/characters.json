@@ -5,8 +5,9 @@
   "Whitemane": [
     {
       "player": {
-        "level": 4,
-        "experience": 1130,
+        "level": 13,
+        "unspentTalentPoints": 9,
+        "experience": 2360,
         "name": "Wauza",
         "race": "Tauren",
         "spec": "Shaman",
@@ -81,6 +82,118 @@
               "stats": {
                 "stats": {}
               }
+            },
+            {
+              "rarity": "Common",
+              "name": "Primitive Mantle",
+              "icon": "itemmisccape14",
+              "type": "Chest",
+              "ilvl": 1,
+              "lvl": 1,
+              "price": 0.0001,
+              "stats": {
+                "stats": {}
+              }
+            },
+            {
+              "rarity": "Rare",
+              "name": "Enthralled Sphere",
+              "icon": "itemmiscorb03",
+              "type": "Off Hand",
+              "ilvl": 53,
+              "lvl": 48,
+              "price": 1.0452,
+              "stats": {
+                "stats": {
+                  "Intellect": 14,
+                  "Stamina": 3,
+                  "Spirit": 5
+                }
+              },
+              "droppedBy": [
+                "High Interrogator Gerstahn"
+              ]
+            },
+            {
+              "rarity": "Uncommon",
+              "name": "Hero's Band",
+              "icon": "itemcrown01",
+              "type": "Head",
+              "armorClass": "Mail",
+              "ilvl": 60,
+              "lvl": 55,
+              "armor": 262,
+              "price": 1.8703,
+              "stats": {
+                "stats": {
+                  "Agility": 9,
+                  "Stamina": 14,
+                  "Spirit": 17
+                }
+              }
+            },
+            {
+              "rarity": "Uncommon",
+              "name": "Hero's Band",
+              "icon": "itemcrown01",
+              "type": "Head",
+              "armorClass": "Mail",
+              "ilvl": 60,
+              "lvl": 55,
+              "armor": 262,
+              "price": 1.8703,
+              "stats": {
+                "stats": {
+                  "Agility": 9,
+                  "Stamina": 14,
+                  "Spirit": 17
+                }
+              }
+            },
+            {
+              "rarity": "Common",
+              "name": "Head of Rend Blackhand",
+              "icon": "itemmischeadorc01",
+              "type": "Miscellaneous",
+              "ilvl": 1,
+              "stats": {
+                "stats": {}
+              },
+              "droppedBy": [
+                "Warchief Rend Blackhand"
+              ]
+            },
+            {
+              "rarity": "Uncommon",
+              "name": "Hyena Hide Belt",
+              "icon": "itembelt16",
+              "type": "Waist",
+              "armorClass": "Leather",
+              "ilvl": 60,
+              "lvl": 55,
+              "armor": 87,
+              "price": 0.9884,
+              "stats": {
+                "stats": {
+                  "Stamina": 13
+                }
+              }
+            },
+            {
+              "rarity": "Common",
+              "name": "Worn Mace",
+              "icon": "itemmace03",
+              "detailedType": "Mace",
+              "type": "One Handed",
+              "ilvl": 2,
+              "lvl": 1,
+              "minDamage": 1,
+              "maxDamage": 3,
+              "price": 0.0007,
+              "speed": 1.9,
+              "stats": {
+                "stats": {}
+              }
             }
           ],
           "bags": [
@@ -101,20 +214,23 @@
         },
         "equipment": {
           "Main Hand": {
-            "rarity": "Common",
-            "name": "Worn Mace",
-            "icon": "itemmace03",
-            "detailedType": "Mace",
+            "rarity": "Rare",
+            "name": "Finkle's Skinner",
+            "icon": "itemsword33",
+            "detailedType": "Dagger",
             "type": "One Handed",
-            "ilvl": 2,
-            "lvl": 1,
-            "minDamage": 1,
-            "maxDamage": 3,
-            "price": 0.0007,
-            "speed": 1.9,
+            "ilvl": 63,
+            "lvl": 58,
+            "minDamage": 37,
+            "maxDamage": 70,
+            "price": 5.7991,
+            "speed": 1.3,
             "stats": {
               "stats": {}
-            }
+            },
+            "droppedBy": [
+              "The Beast"
+            ]
           },
           "Legs": {
             "rarity": "Uncommon",
@@ -134,16 +250,24 @@
             }
           },
           "Chest": {
-            "rarity": "Common",
-            "name": "Primitive Mantle",
-            "icon": "itemmisccape14",
+            "rarity": "Rare",
+            "name": "Nightbrace Tunic",
+            "icon": "itemchestplate06",
             "type": "Chest",
-            "ilvl": 1,
-            "lvl": 1,
-            "price": 0.0001,
+            "armorClass": "Leather",
+            "ilvl": 61,
+            "lvl": 56,
+            "armor": 172,
+            "price": 2.5048,
             "stats": {
-              "stats": {}
-            }
+              "stats": {
+                "Agility": 5,
+                "Stamina": 10
+              }
+            },
+            "droppedBy": [
+              "Solakar Flamewreath"
+            ]
           },
           "Wrists": {
             "rarity": "Epic",
@@ -170,21 +294,23 @@
           },
           "Off Hand": {
             "rarity": "Rare",
-            "name": "Enthralled Sphere",
-            "icon": "itemmiscorb03",
-            "type": "Off Hand",
-            "ilvl": 53,
-            "lvl": 48,
-            "price": 1.0452,
+            "name": "Mastersmith's Hammer",
+            "icon": "itemhammer06",
+            "detailedType": "Mace",
+            "type": "One Handed",
+            "ilvl": 60,
+            "lvl": 55,
+            "minDamage": 66,
+            "maxDamage": 123,
+            "price": 4.9204,
+            "speed": 2.4,
             "stats": {
               "stats": {
-                "Intellect": 14,
-                "Stamina": 3,
-                "Spirit": 5
+                "Intellect": 5
               }
             },
             "droppedBy": [
-              "High Interrogator Gerstahn"
+              "Goraluk Anvilcrack"
             ]
           },
           "Feet": {
@@ -221,37 +347,121 @@
             "stats": {
               "stats": {}
             }
+          },
+          "Shoulders": {
+            "rarity": "Rare",
+            "name": "Truestrike Shoulders",
+            "icon": "itemshoulder10",
+            "type": "Shoulders",
+            "armorClass": "Leather",
+            "ilvl": 61,
+            "lvl": 56,
+            "armor": 129,
+            "price": 1.9149,
+            "stats": {
+              "stats": {}
+            },
+            "droppedBy": [
+              "Pyroguard Emberseer"
+            ]
+          },
+          "Head": {
+            "rarity": "Rare",
+            "name": "Dragoneye Coif of the Bear",
+            "icon": "itemhelmet39",
+            "randomEnchantment": true,
+            "type": "Head",
+            "armorClass": "Mail",
+            "ilvl": 60,
+            "lvl": 55,
+            "armor": 288,
+            "price": 2.2374,
+            "stats": {
+              "stats": {
+                "Stamina": 34,
+                "Strength": 17
+              }
+            },
+            "droppedBy": [
+              "Gyth"
+            ]
+          },
+          "Waist": {
+            "rarity": "Rare",
+            "name": "Feralsurge Girdle",
+            "icon": "itembelt03",
+            "type": "Waist",
+            "armorClass": "Mail",
+            "ilvl": 63,
+            "lvl": 58,
+            "armor": 208,
+            "price": 1.7285,
+            "stats": {
+              "stats": {
+                "Intellect": 10,
+                "Stamina": 9
+              }
+            },
+            "droppedBy": [
+              "Warchief Rend Blackhand"
+            ]
           }
         }
       },
       "currentSite": "Blackrock Mountain",
       "siteProgress": {
         "Detention Block": 2,
-        "Dragonmaw Garrison": 2
+        "Dragonmaw Garrison": 2,
+        "Dragonspire Hall": 2,
+        "Hall of Binding": 3,
+        "The Rookery": 2,
+        "Upper Hall of Blackhand": 2,
+        "Blackrock Stadium": 4,
+        "The Furnace": 2
       },
       "commonsKilled": {
         "Cannibal Ghoul": 2,
         "Blackwing Mage": 4,
-        "Blackwing Guardsman": 2
+        "Blackwing Guardsman": 2,
+        "Blackhand Dreadweaver": 2,
+        "Blackhand Incarcerator": 2,
+        "Blackhand Veteran": 1,
+        "Rage Talon Dragonspawn": 3,
+        "Rage Talon Flamescale": 4,
+        "Chromatic Dragonspawn": 2,
+        "Blackhand Elite": 1,
+        "Rage Talon Fire Tongue": 3
       },
       "raresKilled": {},
       "elitesKilled": {
         "High Interrogator Gerstahn": 1,
-        "Razorgore the Untamed": 1
+        "Razorgore the Untamed": 1,
+        "Pyroguard Emberseer": 1,
+        "Solakar Flamewreath": 1,
+        "Goraluk Anvilcrack": 1,
+        "Gyth": 1,
+        "Warchief Rend Blackhand": 1,
+        "The Beast": 1
       },
       "siteVisits": {
         "Camp Narache": 1,
         "Molten Core": 2,
-        "Blackrock Mountain": 5
+        "Blackrock Mountain": 7
       },
       "unlockedAreas": [
         "Halls of the Law",
-        "Shadow Wing Lair"
+        "Shadow Wing Lair",
+        "Hall of Binding",
+        "The Rookery",
+        "Upper Hall of Blackhand",
+        "Blackrock Stadium",
+        "The Furnace",
+        "Spire Throne"
       ],
       "startDate": "2024-04-07T23:47:41.1820461+02:00",
-      "lastLoaded": "2024-04-07T23:51:38.7225868+02:00",
-      "lastPlayed": "2024-04-07T23:58:06.8211986+02:00",
-      "timePlayed": "00:09:26.9779287"
+      "lastLoaded": "2024-04-08T11:27:32.8032269+02:00",
+      "lastPlayed": "2024-04-08T11:30:03.3967214+02:00",
+      "timePlayed": "00:12:46.0981861"
     }
   ]
 }

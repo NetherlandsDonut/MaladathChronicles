@@ -206,7 +206,7 @@ public class SiteInstance : Site
                 AddPaddingRegion(() =>
                 {
                     //var name = area.Item1 != null ? area.Item1.name : "AREA NOT FOUND";
-                    AddLine(" ", "DimGray");
+                    AddLine("?", "DimGray");
                 });
     }
 }
