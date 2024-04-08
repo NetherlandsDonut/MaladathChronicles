@@ -446,7 +446,7 @@
       "siteVisits": {
         "Camp Narache": 1,
         "Molten Core": 2,
-        "Blackrock Mountain": 7
+        "Blackrock Mountain": 9
       },
       "unlockedAreas": [
         "Halls of the Law",
@@ -459,9 +459,9 @@
         "Spire Throne"
       ],
       "startDate": "2024-04-07T23:47:41.1820461+02:00",
-      "lastLoaded": "2024-04-08T11:27:32.8032269+02:00",
-      "lastPlayed": "2024-04-08T11:30:03.3967214+02:00",
-      "timePlayed": "00:12:46.0981861"
+      "lastLoaded": "2024-04-08T12:32:14.2153442+02:00",
+      "lastPlayed": "2024-04-08T12:39:29.3291172+02:00",
+      "timePlayed": "00:20:01.2119591"
     }
   ]
 }

@@ -1144,9 +1144,12 @@ public class Blueprint
                 CloseDesktop("SpellbookScreen");
                 CloseDesktop("EquipmentScreen");
                 if (CDesktop.title != "TalentScreen")
+                {
+                    PlaySound("DesktopTalentScreenOpen");
                     SpawnDesktopBlueprint("TalentScreen");
+                }
                 else
-                { 
+                {
                     CloseDesktop(CDesktop.title);
                     PlaySound("DesktopTalentScreenClose");
                 }
@@ -1221,7 +1224,10 @@ public class Blueprint
                     CloseDesktop("SpellbookScreen");
                     CloseDesktop("EquipmentScreen");
                     if (CDesktop.title != "TalentScreen")
+                    {
+                        PlaySound("DesktopTalentScreenOpen");
                         SpawnDesktopBlueprint("TalentScreen");
+                    }
                     else
                     {
                         CloseDesktop(CDesktop.title);
@@ -7447,7 +7453,6 @@ public class Blueprint
         }),
         new("TalentScreen", () =>
         {
-            PlaySound("DesktopTalentScreenOpen");
             SetDesktopBackground("Stone");
             SpawnWindowBlueprint("MapToolbarShadow");
             SpawnWindowBlueprint("MapToolbarClockLeft");

@@ -188,6 +188,8 @@ public class SiteInstance : Site
                 {
                     var name = area.Item1 != null ? area.Item1.name : "AREA NOT FOUND";
                     AddLine(name);
+                    if (currentSave.siteProgress.ContainsKey(area.Item1.name) && area.Item1.areaSize == currentSave.siteProgress[area.Item1.name])
+                        SetRegionBackgroundAsImage("Sprites/Textures/ClearedArea");
                 },
                 (h) =>
                 {

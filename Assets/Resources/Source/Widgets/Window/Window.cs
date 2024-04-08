@@ -398,7 +398,7 @@ public class Window : MonoBehaviour
                     if (region.backgroundType == Image) region.background.transform.localScale = new Vector3(1, 1, 1);
                     else region.background.transform.localScale = new Vector3(regionGroup.AutoWidth() - 2 + region.xExtend, region.AutoHeight() + 2 + region.yExtend, 1);
                     region.background.transform.localPosition = new Vector3(2, -2, 0.8f);
-                    if (region.backgroundType == Button || region.backgroundType == RedButton)
+                    if (region.backgroundType == Button || region.backgroundType == RedButton || region.backgroundType == Image)
                     {
                         if (region.background.GetComponent<BoxCollider2D>() == null)
                             region.background.AddComponent<BoxCollider2D>();

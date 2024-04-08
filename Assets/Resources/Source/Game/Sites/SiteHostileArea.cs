@@ -147,28 +147,28 @@ public class SiteHostileArea : Site
                         });
                         if (commonEncounters != null && commonEncounters.Count > 0)
                         {
-                            if (currentSave.siteProgress.ContainsKey(name) && eliteEncounters != null && eliteEncounters.Count > 0 /*&& eliteEncounters.Sum(x => x.requiredProgress) <= currentSave.siteProgress[name]*/)
-                                foreach (var encounter in commonEncounters)
-                                    AddButtonRegion(() =>
-                                    {
-                                        AddLine(encounter.who, "", "Right");
-                                        var race = races.Find(x => x.name == encounter.who);
-                                        AddSmallButton(race == null ? "OtherUnknown" : race.portrait, (h) => { });
-                                    },
-                                    (h) =>
-                                    {
-                                        Board.NewBoard(RollEncounter(encounter), this);
-                                        SpawnDesktopBlueprint("Game");
-                                        SwitchDesktop("Game");
-                                    });
-                            else
-                                foreach (var encounter in commonEncounters)
-                                    AddPaddingRegion(() =>
-                                    {
-                                        AddLine(encounter.who, "DarkGray", "Right");
-                                        var race = races.Find(x => x.name == encounter.who);
-                                        AddSmallButton(race == null ? "OtherUnknown" : race.portrait, (h) => { });
-                                    });
+                            //if (currentSave.siteProgress.ContainsKey(name) && eliteEncounters != null && eliteEncounters.Count > 0 /*&& eliteEncounters.Sum(x => x.requiredProgress) <= currentSave.siteProgress[name]*/)
+                            //    foreach (var encounter in commonEncounters)
+                            //        AddButtonRegion(() =>
+                            //        {
+                            //            AddLine(encounter.who, "", "Right");
+                            //            var race = races.Find(x => x.name == encounter.who);
+                            //            AddSmallButton(race == null ? "OtherUnknown" : race.portrait, (h) => { });
+                            //        },
+                            //        (h) =>
+                            //        {
+                            //            Board.NewBoard(RollEncounter(encounter), this);
+                            //            SpawnDesktopBlueprint("Game");
+                            //            SwitchDesktop("Game");
+                            //        });
+                            //else
+                            foreach (var encounter in commonEncounters)
+                                AddPaddingRegion(() =>
+                                {
+                                    AddLine(encounter.who, "DarkGray", "Right");
+                                    var race = races.Find(x => x.name == encounter.who);
+                                    AddSmallButton(race == null ? "OtherUnknown" : race.portrait, (h) => { });
+                                });
                         }
                         AddButtonRegion(() => { AddLine("Explore", "Black"); },
                         (h) =>

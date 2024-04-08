@@ -4295,9 +4295,19 @@
   {
     "commonEncounters": [
       {
-        "who": "Cannibal Ghoul",
-        "levelMin": 56,
-        "levelMax": 57
+        "who": "Anvilrage Overseer",
+        "levelMin": 49,
+        "levelMax": 50
+      },
+      {
+        "who": "Anvilrage Warden",
+        "levelMin": 49,
+        "levelMax": 50
+      },
+      {
+        "who": "Bloodhound",
+        "levelMin": 49,
+        "levelMax": 50
       }
     ],
     "eliteEncounters": [
@@ -4365,9 +4375,19 @@
   {
     "commonEncounters": [
       {
-        "who": "Cannibal Ghoul",
-        "levelMin": 56,
-        "levelMax": 57
+        "who": "Anvilrage Footman",
+        "levelMin": 51,
+        "levelMax": 52
+      },
+      {
+        "who": "Anvilrage Guardsman",
+        "levelMin": 50,
+        "levelMax": 51
+      },
+      {
+        "who": "Fireguard",
+        "levelMin": 51,
+        "levelMax": 52
       }
     ],
     "eliteEncounters": [
