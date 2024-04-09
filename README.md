@@ -397,5 +397,17 @@ v0.4.20
     04.04 Added five new portraits
           Added four new sites to Desolace
           Shaman backgrounds for enhancement and elemental
+v0.4.21
+    07.04 Fixed music in Ahn'Qiraj
+          Fixed Jaedenar so now it appears on the map
+          Added one site to Stonetalon and one to Ashenvale
+          Removed achievments from the game
+v0.4.22
+    08.04 Added unlocking new parts of instances step by step
+          Fixed boss button being visible after closing the area it's in
+          Fixed shadows breaking on deleting characters
+          Fixed a rare error with generatin permanent enchants for items
+          Fixed talent screen reopen sound on switching specs
+          Added indicator for fully explored areas in instances
 ```
 </details>
