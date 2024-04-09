@@ -4237,6 +4237,7 @@ public class Blueprint
                     String.await.Set(effect.ContainsKey("Await") ? effect["Await"] : "0");
                     String.powerScale.Set(effect.ContainsKey("PowerScale") ? effect["PowerScale"] : "1");
                     String.resourceAmount.Set(effect.ContainsKey("ResourceAmount") ? effect["ResourceAmount"] : "1");
+                    String.changeAmount.Set(effect.ContainsKey("ChangeAmount") ? effect["ChangeAmount"] : "1");
                     String.buffDuration.Set(effect.ContainsKey("BuffDuration") ? effect["BuffDuration"] : "3");
                     Respawn("ObjectManagerEventEffects");
                     Respawn("ObjectManagerEventEffect");
@@ -4292,32 +4293,35 @@ public class Blueprint
             AddRegionGroup();
             SetRegionGroupWidth(148);
             SetRegionGroupHeight(316);
-            AddPaddingRegion(() =>
+            if (effect.ContainsKey("Effect") && effect["Effect"] != "ChangeElements")
             {
-                AddLine("Affect:", "DarkGray");
-                AddSmallButton("OtherReverse", (h) =>
+                AddPaddingRegion(() =>
                 {
-                    if (effect.ContainsKey("Affect"))
+                    AddLine("Affect:", "DarkGray");
+                    AddSmallButton("OtherReverse", (h) =>
+                    {
+                        if (effect.ContainsKey("Affect"))
+                            effect["Affect"] = "None";
+                        h.window.Respawn();
+                    });
+                });
+                AddButtonRegion(() =>
+                {
+                    AddLine(effect.ContainsKey("Affect") ? effect["Affect"] : "None");
+                },
+                (h) =>
+                {
+                    if (!effect.ContainsKey("Affect"))
+                        effect.Add("Affect", "Effector");
+                    else if (effect["Affect"] == "Effector")
+                        effect["Affect"] = "Other";
+                    else if (effect["Affect"] == "Other")
                         effect["Affect"] = "None";
+                    else if (effect["Affect"] == "None")
+                        effect["Affect"] = "Effector";
                     h.window.Respawn();
                 });
-            });
-            AddButtonRegion(() =>
-            {
-                AddLine(effect.ContainsKey("Affect") ? effect["Affect"] : "None");
-            },
-            (h) =>
-            {
-                if (!effect.ContainsKey("Affect"))
-                    effect.Add("Affect", "Effector");
-                else if (effect["Affect"] == "Effector")
-                    effect["Affect"] = "Other";
-                else if (effect["Affect"] == "Other")
-                    effect["Affect"] = "None";
-                else if (effect["Affect"] == "None")
-                    effect["Affect"] = "Effector";
-                h.window.Respawn();
-            });
+            }
             if (effect.ContainsKey("Effect") && (effect["Effect"] == "Damage" || effect["Effect"] == "Heal"))
             {
                 AddPaddingRegion(() =>
@@ -4462,7 +4466,7 @@ public class Blueprint
                     AddSmallButton("OtherReverse", (h) =>
                     {
                         if (effect.ContainsKey("ResourceType"))
-                            effect["ResourceType"] = "None";
+                            effect.Remove("ResourceType");
                         h.window.Respawn();
                     });
                 });
@@ -4509,6 +4513,105 @@ public class Blueprint
                         String.resourceAmount.Set("1");
                         h.window.Respawn();
                     });
+                });
+            }
+            else if (effect.ContainsKey("Effect") && (effect["Effect"] == "ChangeElements"))
+            {
+                AddPaddingRegion(() =>
+                {
+                    AddLine("Change amount:", "DarkGray");
+                    AddInputLine(String.changeAmount);
+                    AddSmallButton("OtherReverse", (h) =>
+                    {
+                        if (effect.ContainsKey("ChangeAmount"))
+                            effect["ChangeAmount"] = "1";
+                        String.changeAmount.Set("1");
+                        h.window.Respawn();
+                    });
+                });
+                AddPaddingRegion(() =>
+                {
+                    AddLine("Element from:", "DarkGray");
+                    AddSmallButton("OtherReverse", (h) =>
+                    {
+                        if (effect.ContainsKey("ElementFrom"))
+                            effect.Remove("ElementFrom");
+                        h.window.Respawn();
+                    });
+                });
+                AddButtonRegion(() =>
+                {
+                    AddLine(effect.ContainsKey("ElementFrom") ? effect["ElementFrom"] : "Random");
+                    if (effect.ContainsKey("ElementFrom") && effect["ElementFrom"] != "Random")
+                        AddSmallButton("Element" + effect["ElementFrom"] + "Rousing", (h) => { });
+                },
+                (h) =>
+                {
+                    if (!effect.ContainsKey("ElementFrom"))
+                        effect.Add("ElementFrom", "Fire");
+                    else if (effect["ElementFrom"] == "Fire")
+                        effect["ElementFrom"] = "Earth";
+                    else if (effect["ElementFrom"] == "Earth")
+                        effect["ElementFrom"] = "Water";
+                    else if (effect["ElementFrom"] == "Water")
+                        effect["ElementFrom"] = "Air";
+                    else if (effect["ElementFrom"] == "Air")
+                        effect["ElementFrom"] = "Frost";
+                    else if (effect["ElementFrom"] == "Frost")
+                        effect["ElementFrom"] = "Decay";
+                    else if (effect["ElementFrom"] == "Decay")
+                        effect["ElementFrom"] = "Shadow";
+                    else if (effect["ElementFrom"] == "Shadow")
+                        effect["ElementFrom"] = "Order";
+                    else if (effect["ElementFrom"] == "Order")
+                        effect["ElementFrom"] = "Arcane";
+                    else if (effect["ElementFrom"] == "Arcane")
+                        effect["ElementFrom"] = "Lightning";
+                    else if (effect["ElementFrom"] == "Lightning")
+                        effect["ElementFrom"] = "Fire";
+                    h.window.Respawn();
+                });
+                AddPaddingRegion(() =>
+                {
+                    AddLine("Element to:", "DarkGray");
+                    AddSmallButton("OtherReverse", (h) =>
+                    {
+                        if (effect.ContainsKey("ElementTo"))
+                            effect.Remove("ElementTo");
+                        h.window.Respawn();
+                    });
+                });
+                AddButtonRegion(() =>
+                {
+                    AddLine(effect.ContainsKey("ElementTo") ? effect["ElementTo"] : "Random");
+                    if (effect.ContainsKey("ElementTo") && effect["ElementTo"] != "Random")
+                        AddSmallButton("Element" + effect["ElementTo"] + "Rousing", (h) => { });
+                },
+                (h) =>
+                {
+                    if (!effect.ContainsKey("ElementTo"))
+                        effect.Add("ElementTo", "Fire");
+                    else if (effect["ElementTo"] == "Fire")
+                        effect["ElementTo"] = "Earth";
+                    else if (effect["ElementTo"] == "Earth")
+                        effect["ElementTo"] = "Water";
+                    else if (effect["ElementTo"] == "Water")
+                        effect["ElementTo"] = "Air";
+                    else if (effect["ElementTo"] == "Air")
+                        effect["ElementTo"] = "Frost";
+                    else if (effect["ElementTo"] == "Frost")
+                        effect["ElementTo"] = "Decay";
+                    else if (effect["ElementTo"] == "Decay")
+                        effect["ElementTo"] = "Shadow";
+                    else if (effect["ElementTo"] == "Shadow")
+                        effect["ElementTo"] = "Order";
+                    else if (effect["ElementTo"] == "Order")
+                        effect["ElementTo"] = "Arcane";
+                    else if (effect["ElementTo"] == "Arcane")
+                        effect["ElementTo"] = "Lightning";
+                    else if (effect["ElementTo"] == "Lightning")
+                        effect["ElementTo"] = "Fire";
+                    h.window.Respawn();
                 });
             }
             AddPaddingRegion(() =>

@@ -5,10 +5,188 @@
   "Whitemane": [
     {
       "player": {
-        "level": 13,
-        "unspentTalentPoints": 9,
-        "experience": 2360,
-        "name": "Wauza",
+        "level": 15,
+        "experience": 6039,
+        "name": "Arlissa",
+        "race": "Human",
+        "spec": "Mage",
+        "gender": "Female",
+        "abilities": {
+          "Staff Proficiency": 1,
+          "Cloth Proficiency": 1,
+          "One Handed Sword Proficiency": 1,
+          "Off Hand Proficiency": 1,
+          "Dagger Proficiency": 1,
+          "Wand Proficiency": 1,
+          "Fireball": 0,
+          "Frostbolt": 0,
+          "Arcane Missiles": 0,
+          "Blazing Barrier": 0,
+          "Brain Freeze": 0,
+          "Freezing Nova": 0,
+          "Frost Ward": 0,
+          "Ice Lance": 0,
+          "Wintertide": 0,
+          "Fingers of Frost": 0,
+          "Blizzard": 0,
+          "Frostbite": 0,
+          "Splitting Ice": 0,
+          "Icy Flows": 0,
+          "Icy Veins": 0,
+          "Deep Freeze": 0,
+          "Cruel Winter": 0
+        },
+        "actionBars": [
+          {
+            "ability": "Fireball"
+          },
+          {
+            "ability": "Frostbolt"
+          },
+          {
+            "ability": "Freezing Nova"
+          },
+          {
+            "ability": "Deep Freeze"
+          },
+          {
+            "ability": "Arcane Missiles"
+          }
+        ],
+        "stats": {
+          "stats": {
+            "Stamina": 6,
+            "Strength": 6,
+            "Agility": 6,
+            "Intellect": 6,
+            "Spirit": 0,
+            "Earth Mastery": 1,
+            "Fire Mastery": 3,
+            "Air Mastery": 2,
+            "Water Mastery": 1,
+            "Frost Mastery": 2,
+            "Lightning Mastery": 1,
+            "Arcane Mastery": 3,
+            "Decay Mastery": 1,
+            "Shadow Mastery": 2,
+            "Order Mastery": 3
+          }
+        },
+        "inventory": {
+          "items": [
+            {
+              "rarity": "Common",
+              "name": "Hearthstone",
+              "icon": "itemmiscrune01",
+              "type": "Miscellaneous",
+              "ilvl": 1,
+              "stats": {
+                "stats": {}
+              }
+            }
+          ],
+          "bags": [
+            {
+              "rarity": "Uncommon",
+              "name": "Traveler's Backpack",
+              "icon": "itemmiscbag08",
+              "type": "Bag",
+              "ilvl": 55,
+              "lvl": 1,
+              "price": 0.875,
+              "bagSpace": 8,
+              "stats": {
+                "stats": {}
+              }
+            }
+          ]
+        },
+        "equipment": {
+          "Main Hand": {
+            "rarity": "Common",
+            "name": "Bent Staff",
+            "icon": "itemstaff08",
+            "detailedType": "Staff",
+            "type": "Two Handed",
+            "ilvl": 2,
+            "lvl": 1,
+            "minDamage": 3,
+            "maxDamage": 5,
+            "price": 0.0009,
+            "speed": 2.9,
+            "stats": {
+              "stats": {}
+            }
+          },
+          "Feet": {
+            "rarity": "Common",
+            "name": "Apprentice's Boots",
+            "icon": "itemboots09",
+            "type": "Feet",
+            "ilvl": 1,
+            "lvl": 1,
+            "price": 0.0001,
+            "stats": {
+              "stats": {}
+            }
+          },
+          "Legs": {
+            "rarity": "Poor",
+            "name": "Apprentice's Pants",
+            "icon": "itempants01",
+            "type": "Legs",
+            "armorClass": "Cloth",
+            "ilvl": 1,
+            "lvl": 1,
+            "armor": 2,
+            "price": 0.0001,
+            "stats": {
+              "stats": {}
+            }
+          },
+          "Chest": {
+            "rarity": "Poor",
+            "name": "Apprentice's Robe",
+            "icon": "itemchestcloth23",
+            "type": "Chest",
+            "armorClass": "Cloth",
+            "ilvl": 1,
+            "lvl": 1,
+            "armor": 3,
+            "price": 0.0001,
+            "stats": {
+              "stats": {}
+            }
+          }
+        }
+      },
+      "currentSite": "Northshire Valley",
+      "siteProgress": {
+        "Northshire Valley": 3
+      },
+      "commonsKilled": {
+        "Young Wolf": 1,
+        "Kobold Vermin": 2
+      },
+      "raresKilled": {},
+      "elitesKilled": {},
+      "siteVisits": {
+        "Northshire Abbey": 2,
+        "Northshire Valley": 3,
+        "Echo Ridge Mine": 1
+      },
+      "unlockedAreas": [],
+      "startDate": "2024-04-08T14:45:01.3565917+02:00",
+      "lastLoaded": "2024-04-09T14:10:25.6720215+02:00",
+      "lastPlayed": "2024-04-09T14:10:26.6648784+02:00",
+      "timePlayed": "00:22:56.3395812",
+      "lastVisitedTalents": 1
+    },
+    {
+      "player": {
+        "level": 3,
+        "experience": 951,
+        "name": "Memdi",
         "race": "Tauren",
         "spec": "Shaman",
         "gender": "Female",
@@ -27,12 +205,14 @@
           "Stormstrike": 0,
           "Healing Wave": 0,
           "Flame Shock": 0,
-          "Flash of Lightning": 0,
           "Lava Burst": 0
         },
         "actionBars": [
           {
             "ability": "Healing Wave"
+          },
+          {
+            "ability": "Flame Shock"
           },
           {
             "ability": "Lava Burst"
@@ -70,127 +250,238 @@
               }
             },
             {
-              "rarity": "Poor",
-              "name": "Primitive Kilt",
-              "icon": "itempants02",
-              "type": "Legs",
-              "armorClass": "Leather",
-              "ilvl": 1,
-              "lvl": 1,
-              "armor": 14,
-              "price": 0.0001,
-              "stats": {
-                "stats": {}
-              }
-            },
-            {
               "rarity": "Common",
-              "name": "Primitive Mantle",
-              "icon": "itemmisccape14",
-              "type": "Chest",
-              "ilvl": 1,
-              "lvl": 1,
-              "price": 0.0001,
-              "stats": {
-                "stats": {}
-              }
-            },
-            {
-              "rarity": "Rare",
-              "name": "Enthralled Sphere",
-              "icon": "itemmiscorb03",
-              "type": "Off Hand",
-              "ilvl": 53,
-              "lvl": 48,
-              "price": 1.0452,
-              "stats": {
-                "stats": {
-                  "Intellect": 14,
-                  "Stamina": 3,
-                  "Spirit": 5
-                }
-              },
-              "droppedBy": [
-                "High Interrogator Gerstahn"
-              ]
-            },
-            {
-              "rarity": "Uncommon",
-              "name": "Hero's Band",
-              "icon": "itemcrown01",
-              "type": "Head",
-              "armorClass": "Mail",
-              "ilvl": 60,
-              "lvl": 55,
-              "armor": 262,
-              "price": 1.8703,
-              "stats": {
-                "stats": {
-                  "Agility": 9,
-                  "Stamina": 14,
-                  "Spirit": 17
-                }
-              }
-            },
-            {
-              "rarity": "Uncommon",
-              "name": "Hero's Band",
-              "icon": "itemcrown01",
-              "type": "Head",
-              "armorClass": "Mail",
-              "ilvl": 60,
-              "lvl": 55,
-              "armor": 262,
-              "price": 1.8703,
-              "stats": {
-                "stats": {
-                  "Agility": 9,
-                  "Stamina": 14,
-                  "Spirit": 17
-                }
-              }
-            },
-            {
-              "rarity": "Common",
-              "name": "Head of Rend Blackhand",
-              "icon": "itemmischeadorc01",
+              "name": "Plainstrider Meat",
+              "icon": "itemmiscfood14",
               "type": "Miscellaneous",
               "ilvl": 1,
               "stats": {
                 "stats": {}
               },
               "droppedBy": [
-                "Warchief Rend Blackhand"
+                "Plainstrider"
+              ]
+            },
+            {
+              "rarity": "Common",
+              "name": "Plainstrider Meat",
+              "icon": "itemmiscfood14",
+              "type": "Miscellaneous",
+              "ilvl": 1,
+              "stats": {
+                "stats": {}
+              },
+              "droppedBy": [
+                "Plainstrider"
+              ]
+            },
+            {
+              "rarity": "Common",
+              "name": "Plainstrider Feather",
+              "icon": "itemfeather05",
+              "type": "Miscellaneous",
+              "ilvl": 1,
+              "stats": {
+                "stats": {}
+              },
+              "droppedBy": [
+                "Plainstrider"
               ]
             },
             {
               "rarity": "Uncommon",
-              "name": "Hyena Hide Belt",
-              "icon": "itembelt16",
-              "type": "Waist",
-              "armorClass": "Leather",
-              "ilvl": 60,
-              "lvl": 55,
-              "armor": 87,
-              "price": 0.9884,
+              "name": "Sturdy Female Orc Mask",
+              "icon": "itemmischeadorc02",
+              "type": "Head",
+              "ilvl": 45,
+              "lvl": 1,
+              "price": 0.481,
               "stats": {
-                "stats": {
-                  "Stamina": 13
-                }
+                "stats": {}
               }
             },
             {
               "rarity": "Common",
-              "name": "Worn Mace",
-              "icon": "itemmace03",
-              "detailedType": "Mace",
-              "type": "One Handed",
-              "ilvl": 2,
+              "name": "Plainstrider Meat",
+              "icon": "itemmiscfood14",
+              "type": "Miscellaneous",
+              "ilvl": 1,
+              "stats": {
+                "stats": {}
+              },
+              "droppedBy": [
+                "Plainstrider"
+              ]
+            },
+            {
+              "rarity": "Common",
+              "name": "Plainstrider Feather",
+              "icon": "itemfeather05",
+              "type": "Miscellaneous",
+              "ilvl": 1,
+              "stats": {
+                "stats": {}
+              },
+              "droppedBy": [
+                "Plainstrider"
+              ]
+            }
+          ],
+          "bags": [
+            {
+              "rarity": "Uncommon",
+              "name": "Traveler's Backpack",
+              "icon": "itemmiscbag08",
+              "type": "Bag",
+              "ilvl": 55,
               "lvl": 1,
-              "minDamage": 1,
-              "maxDamage": 3,
-              "price": 0.0007,
-              "speed": 1.9,
+              "price": 0.875,
+              "bagSpace": 8,
+              "stats": {
+                "stats": {}
+              }
+            }
+          ]
+        },
+        "equipment": {
+          "Main Hand": {
+            "rarity": "Common",
+            "name": "Worn Mace",
+            "icon": "itemmace03",
+            "detailedType": "Mace",
+            "type": "One Handed",
+            "ilvl": 2,
+            "lvl": 1,
+            "minDamage": 1,
+            "maxDamage": 3,
+            "price": 0.0007,
+            "speed": 1.9,
+            "stats": {
+              "stats": {}
+            }
+          },
+          "Legs": {
+            "rarity": "Poor",
+            "name": "Primitive Kilt",
+            "icon": "itempants02",
+            "type": "Legs",
+            "armorClass": "Leather",
+            "ilvl": 1,
+            "lvl": 1,
+            "armor": 14,
+            "price": 0.0001,
+            "stats": {
+              "stats": {}
+            }
+          },
+          "Chest": {
+            "rarity": "Common",
+            "name": "Primitive Mantle",
+            "icon": "itemmisccape14",
+            "type": "Chest",
+            "ilvl": 1,
+            "lvl": 1,
+            "price": 0.0001,
+            "stats": {
+              "stats": {}
+            }
+          }
+        }
+      },
+      "currentSite": "Red Cloud Mesa",
+      "siteProgress": {
+        "Red Cloud Mesa": 8
+      },
+      "commonsKilled": {
+        "Mountain Cougar": 3,
+        "Plainstrider": 5
+      },
+      "raresKilled": {},
+      "elitesKilled": {},
+      "siteVisits": {
+        "Camp Narache": 2,
+        "Red Cloud Mesa": 7
+      },
+      "unlockedAreas": [],
+      "startDate": "2024-04-08T20:25:38.955594+02:00",
+      "lastLoaded": "2024-04-09T00:12:43.5680441+02:00",
+      "lastPlayed": "2024-04-09T00:51:57.4644804+02:00",
+      "timePlayed": "00:52:08.0216807"
+    },
+    {
+      "player": {
+        "level": 1,
+        "experience": 20,
+        "name": "Delilah",
+        "race": "Human",
+        "spec": "Paladin",
+        "gender": "Female",
+        "abilities": {
+          "Two Handed Axe Proficiency": 1,
+          "Two Handed Mace Proficiency": 1,
+          "Two Handed Sword Proficiency": 1,
+          "Polearm Proficiency": 1,
+          "Shield Proficiency": 1,
+          "Mail Proficiency": 1,
+          "Plate Proficiency": 0,
+          "One Handed Axe Proficiency": 1,
+          "One Handed Mace Proficiency": 1,
+          "One Handed Sword Proficiency": 1,
+          "Off Hand Proficiency": 1,
+          "Libram Proficiency": 1,
+          "Holy Light": 0,
+          "Judgement": 0,
+          "Consecration": 0
+        },
+        "actionBars": [
+          {
+            "ability": "Judgement"
+          },
+          {
+            "ability": "Consecration"
+          }
+        ],
+        "stats": {
+          "stats": {
+            "Stamina": 6,
+            "Strength": 6,
+            "Agility": 6,
+            "Intellect": 6,
+            "Spirit": 0,
+            "Earth Mastery": 1,
+            "Fire Mastery": 3,
+            "Air Mastery": 2,
+            "Water Mastery": 1,
+            "Frost Mastery": 2,
+            "Lightning Mastery": 1,
+            "Arcane Mastery": 3,
+            "Decay Mastery": 1,
+            "Shadow Mastery": 2,
+            "Order Mastery": 3
+          }
+        },
+        "inventory": {
+          "items": [
+            {
+              "rarity": "Common",
+              "name": "Hearthstone",
+              "icon": "itemmiscrune01",
+              "type": "Miscellaneous",
+              "ilvl": 1,
+              "stats": {
+                "stats": {}
+              }
+            },
+            {
+              "rarity": "Poor",
+              "name": "Squire's Pants",
+              "icon": "itempants02",
+              "type": "Legs",
+              "armorClass": "Cloth",
+              "ilvl": 1,
+              "lvl": 1,
+              "armor": 2,
+              "price": 0.0001,
               "stats": {
                 "stats": {}
               }
@@ -214,254 +505,62 @@
         },
         "equipment": {
           "Main Hand": {
-            "rarity": "Rare",
-            "name": "Finkle's Skinner",
-            "icon": "itemsword33",
-            "detailedType": "Dagger",
-            "type": "One Handed",
-            "ilvl": 63,
-            "lvl": 58,
-            "minDamage": 37,
-            "maxDamage": 70,
-            "price": 5.7991,
-            "speed": 1.3,
+            "rarity": "Common",
+            "name": "Battleworn Hammer",
+            "icon": "itemhammer15",
+            "detailedType": "Mace",
+            "type": "Two Handed",
+            "ilvl": 2,
+            "lvl": 1,
+            "minDamage": 3,
+            "maxDamage": 5,
+            "price": 0.0009,
+            "speed": 2.9,
             "stats": {
               "stats": {}
-            },
-            "droppedBy": [
-              "The Beast"
-            ]
+            }
           },
-          "Legs": {
-            "rarity": "Uncommon",
-            "name": "Traveler's Leggings",
-            "icon": "itempants06",
-            "type": "Legs",
-            "armorClass": "Leather",
-            "ilvl": 60,
-            "lvl": 55,
-            "armor": 135,
-            "price": 2.0172,
+          "Feet": {
+            "rarity": "Common",
+            "name": "Squire's Boots",
+            "icon": "itemboots01",
+            "type": "Feet",
+            "ilvl": 1,
+            "lvl": 1,
+            "price": 0.0001,
             "stats": {
-              "stats": {
-                "Strength": 17,
-                "Agility": 17
-              }
+              "stats": {}
             }
           },
           "Chest": {
-            "rarity": "Rare",
-            "name": "Nightbrace Tunic",
-            "icon": "itemchestplate06",
+            "rarity": "Common",
+            "name": "Squire's Shirt",
+            "icon": "itemshirt01",
             "type": "Chest",
-            "armorClass": "Leather",
-            "ilvl": 61,
-            "lvl": 56,
-            "armor": 172,
-            "price": 2.5048,
-            "stats": {
-              "stats": {
-                "Agility": 5,
-                "Stamina": 10
-              }
-            },
-            "droppedBy": [
-              "Solakar Flamewreath"
-            ]
-          },
-          "Wrists": {
-            "rarity": "Epic",
-            "name": "Dragonstalker's Bracers",
-            "icon": "itembracer17",
-            "type": "Wrists",
-            "armorClass": "Mail",
-            "set": "Dragonstalker Armor",
-            "ilvl": 76,
-            "lvl": 60,
-            "armor": 211,
-            "price": 4.2481,
-            "stats": {
-              "stats": {
-                "Agility": 23,
-                "Intellect": 6,
-                "Stamina": 13,
-                "Spirit": 6
-              }
-            },
-            "droppedBy": [
-              "Razorgore the Untamed"
-            ]
-          },
-          "Off Hand": {
-            "rarity": "Rare",
-            "name": "Mastersmith's Hammer",
-            "icon": "itemhammer06",
-            "detailedType": "Mace",
-            "type": "One Handed",
-            "ilvl": 60,
-            "lvl": 55,
-            "minDamage": 66,
-            "maxDamage": 123,
-            "price": 4.9204,
-            "speed": 2.4,
-            "stats": {
-              "stats": {
-                "Intellect": 5
-              }
-            },
-            "droppedBy": [
-              "Goraluk Anvilcrack"
-            ]
-          },
-          "Feet": {
-            "rarity": "Rare",
-            "name": "Beaststalker's Boots",
-            "icon": "itembootsplate07",
-            "type": "Feet",
-            "armorClass": "Mail",
-            "set": "Beaststalker Armor",
-            "ilvl": 59,
-            "lvl": 54,
-            "armor": 240,
-            "price": 2.1421,
-            "stats": {
-              "stats": {
-                "Agility": 21,
-                "Stamina": 9
-              }
-            },
-            "droppedBy": [
-              "Nerub'enkan"
-            ]
-          },
-          "Hands": {
-            "rarity": "Poor",
-            "name": "Laminated Scale Gloves",
-            "icon": "itemgauntlets04",
-            "type": "Hands",
-            "armorClass": "Mail",
-            "ilvl": 59,
-            "lvl": 54,
-            "armor": 179,
-            "price": 0.4659,
+            "ilvl": 1,
+            "lvl": 1,
+            "price": 0.0001,
             "stats": {
               "stats": {}
             }
-          },
-          "Shoulders": {
-            "rarity": "Rare",
-            "name": "Truestrike Shoulders",
-            "icon": "itemshoulder10",
-            "type": "Shoulders",
-            "armorClass": "Leather",
-            "ilvl": 61,
-            "lvl": 56,
-            "armor": 129,
-            "price": 1.9149,
-            "stats": {
-              "stats": {}
-            },
-            "droppedBy": [
-              "Pyroguard Emberseer"
-            ]
-          },
-          "Head": {
-            "rarity": "Rare",
-            "name": "Dragoneye Coif of the Bear",
-            "icon": "itemhelmet39",
-            "randomEnchantment": true,
-            "type": "Head",
-            "armorClass": "Mail",
-            "ilvl": 60,
-            "lvl": 55,
-            "armor": 288,
-            "price": 2.2374,
-            "stats": {
-              "stats": {
-                "Stamina": 34,
-                "Strength": 17
-              }
-            },
-            "droppedBy": [
-              "Gyth"
-            ]
-          },
-          "Waist": {
-            "rarity": "Rare",
-            "name": "Feralsurge Girdle",
-            "icon": "itembelt03",
-            "type": "Waist",
-            "armorClass": "Mail",
-            "ilvl": 63,
-            "lvl": 58,
-            "armor": 208,
-            "price": 1.7285,
-            "stats": {
-              "stats": {
-                "Intellect": 10,
-                "Stamina": 9
-              }
-            },
-            "droppedBy": [
-              "Warchief Rend Blackhand"
-            ]
           }
         }
       },
-      "currentSite": "Blackrock Mountain",
-      "siteProgress": {
-        "Detention Block": 2,
-        "Dragonmaw Garrison": 2,
-        "Dragonspire Hall": 2,
-        "Hall of Binding": 3,
-        "The Rookery": 2,
-        "Upper Hall of Blackhand": 2,
-        "Blackrock Stadium": 4,
-        "The Furnace": 2
-      },
-      "commonsKilled": {
-        "Cannibal Ghoul": 2,
-        "Blackwing Mage": 4,
-        "Blackwing Guardsman": 2,
-        "Blackhand Dreadweaver": 2,
-        "Blackhand Incarcerator": 2,
-        "Blackhand Veteran": 1,
-        "Rage Talon Dragonspawn": 3,
-        "Rage Talon Flamescale": 4,
-        "Chromatic Dragonspawn": 2,
-        "Blackhand Elite": 1,
-        "Rage Talon Fire Tongue": 3
-      },
+      "currentSite": "Northshire Valley",
+      "siteProgress": {},
+      "commonsKilled": {},
       "raresKilled": {},
-      "elitesKilled": {
-        "High Interrogator Gerstahn": 1,
-        "Razorgore the Untamed": 1,
-        "Pyroguard Emberseer": 1,
-        "Solakar Flamewreath": 1,
-        "Goraluk Anvilcrack": 1,
-        "Gyth": 1,
-        "Warchief Rend Blackhand": 1,
-        "The Beast": 1
-      },
+      "elitesKilled": {},
       "siteVisits": {
-        "Camp Narache": 1,
-        "Molten Core": 2,
-        "Blackrock Mountain": 9
+        "Northshire Abbey": 2,
+        "Northshire Valley": 1
       },
-      "unlockedAreas": [
-        "Halls of the Law",
-        "Shadow Wing Lair",
-        "Hall of Binding",
-        "The Rookery",
-        "Upper Hall of Blackhand",
-        "Blackrock Stadium",
-        "The Furnace",
-        "Spire Throne"
-      ],
-      "startDate": "2024-04-07T23:47:41.1820461+02:00",
-      "lastLoaded": "2024-04-08T12:32:14.2153442+02:00",
-      "lastPlayed": "2024-04-08T12:39:29.3291172+02:00",
-      "timePlayed": "00:20:01.2119591"
+      "unlockedAreas": [],
+      "startDate": "2024-04-09T00:52:02.3368664+02:00",
+      "lastLoaded": "2024-04-09T00:52:03.1421101+02:00",
+      "lastPlayed": "2024-04-09T00:53:32.8621302+02:00",
+      "timePlayed": "00:01:29.7200201",
+      "lastVisitedTalents": 2
     }
   ]
 }

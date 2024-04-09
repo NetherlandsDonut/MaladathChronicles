@@ -1,5 +1,4 @@
 using System.Linq;
-
 using UnityEngine;
 
 using static Root;
@@ -8,7 +7,6 @@ using static Event;
 using static Cursor;
 using static String;
 using static SaveGame;
-using System.Collections.Generic;
 
 public class InputLine : MonoBehaviour
 {
@@ -150,6 +148,14 @@ public class InputLine : MonoBehaviour
             {
                 eventEdit.triggers[selectedTrigger]["ResourceAmount"] = foo.Value();
                 Respawn("ObjectManagerEventTrigger");
+            }
+        }
+        else if (foo == changeAmount)
+        {
+            if (CDesktop.windows.Exists(x => x.title == "ObjectManagerEventEffect"))
+            {
+                eventEdit.effects[selectedEffect]["ChangeAmount"] = foo.Value();
+                Respawn("ObjectManagerEventEffect");
             }
         }
         else if (foo == buffDuration)
@@ -472,6 +478,19 @@ public class InputLine : MonoBehaviour
                 showSitesUnconditional = true;
                 CDesktop.ReloadAssets();
             }
+            else if (foo.Value() == "hidesites")
+            {
+                showSitesUnconditional = false;
+                CDesktop.ReloadAssets();
+            }
+            else if (foo.Value() == "showlockedareas")
+            {
+                showAreasUnconditional = true;
+            }
+            else if (foo.Value() == "hidelockedareas")
+            {
+                showAreasUnconditional = false;
+            }
             else if (foo.Value() == "disablebounds")
             {
                 disableCameraBounds = true;
@@ -479,11 +498,6 @@ public class InputLine : MonoBehaviour
             else if (foo.Value() == "enablebounds")
             {
                 disableCameraBounds = false;
-            }
-            else if (foo.Value() == "hidesites")
-            {
-                showSitesUnconditional = false;
-                CDesktop.ReloadAssets();
             }
             else if (foo.Value() == "exploreall")
             {
@@ -503,7 +517,7 @@ public class InputLine : MonoBehaviour
             }
             else if (foo.Value().StartsWith("tele"))
             {
-                var site = Site.FindSite(x => x.name.ToLower() == foo.Value().Substring(5));
+                var site = Site.FindSite(x => x.name.ToLower() == foo.Value().Substring(5).ToLower());
                 if (site != null)
                 {
                     currentSave.currentSite = site.name;

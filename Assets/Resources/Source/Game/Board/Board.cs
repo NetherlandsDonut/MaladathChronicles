@@ -360,7 +360,7 @@ public class Board
                     else
                     {
                         breakForCascade = false;
-                        animationTime += defines.frameTime;
+                        animationTime += defines.frameTime * 2;
                     }
                     return;
                 }
@@ -573,6 +573,21 @@ public class Board
         else if (id == 19) return "Order";
         else if (id == 20) return "Shadow";
         else return "None";
+    }
+
+    public int ResourceReverse(string element)
+    {
+        if (element == "Earth") return 11;
+        else if (element == "Fire") return 12;
+        else if (element == "Water") return 13;
+        else if (element == "Air") return 14;
+        else if (element == "Lightning") return 15;
+        else if (element == "Frost") return 16;
+        else if (element == "Decay") return 17;
+        else if (element == "Arcane") return 18;
+        else if (element == "Order") return 19;
+        else if (element == "Shadow") return 20;
+        else return 0;
     }
 
     public List<(int, int, int)> FloodCount(int x, int y)

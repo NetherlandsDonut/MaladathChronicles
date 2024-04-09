@@ -73,6 +73,7 @@ public class String
     public static String powerScale = new() { inputType = Decimal };
     public static String buffDuration = new() { inputType = Numbers };
     public static String resourceAmount = new() { inputType = Numbers };
+    public static String changeAmount = new() { inputType = Numbers };
     public static String stamina = new() { inputType = Numbers };
     public static String strength = new() { inputType = Numbers };
     public static String agility = new() { inputType = Numbers };

@@ -22,6 +22,7 @@ public static class Root
     public static bool canUnlockScreen;
     public static bool useUnityData = true;
     public static bool showSitesUnconditional;
+    public static bool showAreasUnconditional;
     public static bool disableCameraBounds;
     public static int builderSpacing;
     public static string prefix = "";

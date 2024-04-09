@@ -4210,9 +4210,14 @@
   {
     "commonEncounters": [
       {
-        "who": "Cannibal Ghoul",
-        "levelMin": 56,
-        "levelMax": 57
+        "who": "Fireguard Destroyer",
+        "levelMin": 55,
+        "levelMax": 56
+      },
+      {
+        "who": "Burning Spirit",
+        "levelMin": 55,
+        "levelMax": 56
       }
     ],
     "eliteEncounters": [
@@ -4432,6 +4437,11 @@
         "who": "Molten War Golem",
         "levelMin": 55,
         "levelMax": 56
+      },
+      {
+        "who": "Doomforge Arcanasmith",
+        "levelMin": 54,
+        "levelMax": 55
       }
     ],
     "eliteEncounters": [
@@ -4888,6 +4898,10 @@
       {
         "who": "Death Talon Wyrmguard",
         "levelMin": 60
+      },
+      {
+        "who": "Death Talon Overseer",
+        "levelMin": 60
       }
     ],
     "eliteEncounters": [
@@ -4988,7 +5002,15 @@
         "levelMin": 60
       },
       {
+        "who": "Blackwing Legionnaire",
+        "levelMin": 60
+      },
+      {
         "who": "Blackwing Mage",
+        "levelMin": 60
+      },
+      {
+        "who": "Death Talon Dragonspawn",
         "levelMin": 60
       }
     ],

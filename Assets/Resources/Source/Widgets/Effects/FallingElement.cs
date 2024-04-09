@@ -22,7 +22,7 @@ public class FallingElement : MonoBehaviour
     {
         timeAlive += Time.deltaTime;
         transform.position = Vector3.Lerp(transform.position, destination, timeAlive * fallSpeed / (float)System.Math.Sqrt(howFar) * 0.9f);
-        if (Mathf.Abs(transform.position.x - destination.x) + Mathf.Abs(transform.position.y - destination.y) < 0.3f)
+        if (Mathf.Abs(transform.position.x - destination.x) + Mathf.Abs(transform.position.y - destination.y) < 0.4f)
         {
             if (soundsPlayedThisFrame == 0)
             {
@@ -34,5 +34,5 @@ public class FallingElement : MonoBehaviour
         }
     }
 
-    public static int fallSpeed = 1;
+    public static float fallSpeed = 0.8f;
 }

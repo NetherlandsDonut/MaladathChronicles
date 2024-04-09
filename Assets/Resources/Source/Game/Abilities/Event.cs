@@ -109,6 +109,7 @@ public class Event
                 else if (type == "AddBuff") EffectAddBuff();
                 else if (type == "RemoveBuff") EffectRemoveBuff();
                 else if (type == "EndTurn") EffectEndTurn();
+                else if (type == "ChangeElements") EffectChangeElements();
 
                 ExecuteShatter();
                 ExecuteSoundEffect();
@@ -324,6 +325,56 @@ public class Event
                     else board.enemyFinishedMoving = true;
                 }
             }
+
+            //This effect gives a specific amount of a resource to the targetted entity
+            void EffectChangeElements()
+            {
+                if (futureBoard != null)
+                {
+                    int amount = effect.ContainsKey("ChangeAmount") ? int.Parse(effect["ChangeAmount"]) : 1;
+                    string from = effect.ContainsKey("ElementFrom") ? effect["ElementFrom"] : "Random";
+                    string to = effect.ContainsKey("ElementTo") ? effect["ElementTo"] : "Random";
+                    var list = new List<(int, int)>();
+                    var possible = new List<(int, int)>();
+                    for (int i = 0; i < futureBoard.field.GetLength(0); i++)
+                        for (int j = 0; j < futureBoard.field.GetLength(1); j++)
+                            if (from == "Random" || from != "Random" && Board.boardNameDictionary[futureBoard.field[i, j]].Contains(from))
+                                possible.Add((i, j));
+                    for (int i = 0; i < amount && possible.Count > 0; i++)
+                    {
+                        list.Add(possible[random.Next(possible.Count)]);
+                        possible.Remove(list.Last());
+                    }
+                    foreach (var element in list)
+                        futureBoard.field[element.Item1, element.Item2] = to == "Random" ? random.Next(11, 21) : board.ResourceReverse(to);
+                }
+                else if (board != null)
+                {
+                    int amount = effect.ContainsKey("ChangeAmount") ? int.Parse(effect["ChangeAmount"]) : 1;
+                    string from = effect.ContainsKey("ElementFrom") ? effect["ElementFrom"] : "Random";
+                    string to = effect.ContainsKey("ElementTo") ? effect["ElementTo"] : "Random";
+                    var list = new List<(int, int)>();
+                    var possible = new List<(int, int)>();
+                    for (int i = 0; i < board.field.GetLength(0); i++)
+                        for (int j = 0; j < board.field.GetLength(1); j++)
+                            if (from == "Random" || Board.boardNameDictionary[board.field[i, j]].Contains(from))
+                                if (to == "Random" || !Board.boardNameDictionary[board.field[i, j]].Contains(to))
+                                    possible.Add((i, j));
+                    for (int i = 0; i < amount && possible.Count > 0; i++)
+                    {
+                        list.Add(possible[random.Next(possible.Count)]);
+                        possible.Remove(list.Last());
+                    }
+                    foreach (var e in list)
+                    {
+                        var newValue = 0;
+                        do newValue = to == "Random" ? random.Next(11, 21) : board.ResourceReverse(to);
+                        while (newValue == board.field[e.Item1, e.Item2]);
+                        board.field[e.Item1, e.Item2] = newValue;
+                        SpawnShatter(10, 9, board.window.LBRegionGroup.regions[e.Item2].bigButtons[e.Item1].transform.position + new Vector3(-17.5f, -17.5f), Board.boardButtonDictionary[board.field[e.Item1, e.Item2]]);
+                    }
+                }
+            }
         }
     }
 
@@ -381,6 +432,7 @@ public class Event
         "RemoveBuff",
         "DestroyRows",
         "DestroyColumns",
-        "DestroyRegion"
+        "DestroyRegion",
+        "ChangeElements"
     };
 }

@@ -183,7 +183,7 @@ public class SiteInstance : Site
             AddHeaderRegion(() => { AddLine(wing.name); });
         var temp = wing.areas.Select(x => (areas.Find(y => x.ContainsKey("AreaName") && y.name == x["AreaName"]), x)).ToList();
         foreach (var area in temp)
-            if (area.x.ContainsKey("OpenByDefault") && area.x["OpenByDefault"] == "True" || currentSave.unlockedAreas.Contains(area.Item1.name))
+            if (showAreasUnconditional || area.x.ContainsKey("OpenByDefault") && area.x["OpenByDefault"] == "True" || currentSave.unlockedAreas.Contains(area.Item1.name))
                 AddButtonRegion(() =>
                 {
                     var name = area.Item1 != null ? area.Item1.name : "AREA NOT FOUND";

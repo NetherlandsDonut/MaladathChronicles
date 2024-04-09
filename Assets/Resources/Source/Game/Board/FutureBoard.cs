@@ -1,7 +1,6 @@
 using System.Linq;
 using System.Collections.Generic;
 
-using static Root;
 using static Defines;
 
 public class FutureBoard
@@ -121,19 +120,20 @@ public class FutureBoard
         {
             var entity = temp.playerTurn ? player : enemy;
             var abilities = entity.actionBars.Select(x => (x, Ability.abilities.Find(y => y.name == x.ability))).ToList();
-            foreach (var ability in abilities)
-                if (ability.x.cooldown == 0 && ability.Item2.EnoughResources(entity))
-                {
-                    var board = new FutureBoard(this);
-                    entity = board.playerTurn ? board.player : board.enemy;
-                    list.Add(new FutureMove(ability.Item2.name, board));
-                    entity.actionBars.Find(x => x.ability == ability.Item2.name).cooldown = ability.Item2.cooldown;
-                    CallEvents(entity, board, new() { { "Trigger", "AbilityCast" }, { "Triggerer", "Effector" }, { "AbilityName", ability.Item2.name } });
-                    CallEvents(entity == player ? enemy : player, board, new() { { "Trigger", "AbilityCast" }, { "Triggerer", "Effector" }, { "AbilityName", ability.Item2.name } });
-                    entity.DetractResources(board, ability.Item2.cost);
-                    while (!board.finishedAnimation)
-                        board.AnimateBoard();
-                }
+            if (!temp.playerTurn) //THIS PREVENTS ENEMY FROM CALCULATING PLAYER ABILITIES
+                foreach (var ability in abilities)
+                    if (ability.x.cooldown == 0 && ability.Item2.EnoughResources(entity))
+                    {
+                        var board = new FutureBoard(this);
+                        entity = board.playerTurn ? board.player : board.enemy;
+                        list.Add(new FutureMove(ability.Item2.name, board));
+                        entity.actionBars.Find(x => x.ability == ability.Item2.name).cooldown = ability.Item2.cooldown;
+                        CallEvents(entity, board, new() { { "Trigger", "AbilityCast" }, { "Triggerer", "Effector" }, { "AbilityName", ability.Item2.name } });
+                        CallEvents(entity == player ? enemy : player, board, new() { { "Trigger", "AbilityCast" }, { "Triggerer", "Effector" }, { "AbilityName", ability.Item2.name } });
+                        entity.DetractResources(board, ability.Item2.cost);
+                        while (!board.finishedAnimation)
+                            board.AnimateBoard();
+                    }
             var differentFloodings = PossibleFloodings();
             foreach (var flooding in differentFloodings)
             {

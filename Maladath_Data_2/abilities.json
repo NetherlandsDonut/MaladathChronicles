@@ -857,8 +857,8 @@
             "AnimationSpeed": "1,3",
             "ShatterDensity": "1",
             "AnimationArc": "10",
-            "ShatterDegree": "30",
-            "ShatterSpeed": "8"
+            "ShatterDegree": "40",
+            "ShatterSpeed": "20"
           },
           {
             "Effect": "EndTurn",
@@ -2023,14 +2023,56 @@
         ],
         "effects": [
           {
-            "Effect": "Damage",
+            "Effect": "ChangeElements",
             "Affect": "Other",
             "PowerType": "Spell",
             "PowerSource": "Effector",
-            "PowerScale": "1.5"
+            "PowerScale": "1.5",
+            "ElementTo": "Earth",
+            "ChangeAmount": "10",
+            "SoundEffect": "AbilityDeepFreezeCast",
+            "ShatterType": "None",
+            "ShatterTarget": "Effector",
+            "ShatterDegree": "10",
+            "ShatterSpeed": "6",
+            "Await": "4",
+            "ElementFrom": "Fire"
           },
           {
-            "Effect": "EndTurn"
+            "Effect": "ChangeElements",
+            "Affect": "Other",
+            "PowerType": "Spell",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5",
+            "ElementTo": "Water",
+            "ChangeAmount": "10",
+            "SoundEffect": "AbilityFreezingNovaCast",
+            "ShatterType": "None",
+            "ShatterTarget": "Effector",
+            "ShatterDegree": "5",
+            "ShatterSpeed": "8",
+            "Await": "2",
+            "ElementFrom": "Air"
+          },
+          {
+            "Effect": "ChangeElements",
+            "Affect": "Other",
+            "PowerType": "Spell",
+            "PowerSource": "Effector",
+            "PowerScale": "1.5",
+            "ElementTo": "Frost",
+            "ChangeAmount": "10",
+            "SoundEffect": "None",
+            "ShatterType": "None",
+            "ShatterTarget": "Effector",
+            "ShatterDegree": "10",
+            "ShatterSpeed": "10",
+            "Await": "12",
+            "ElementFrom": "Water"
+          },
+          {
+            "Effect": "EndTurn",
+            "Await": "0"
           }
         ]
       }
@@ -2793,41 +2835,17 @@
             "PowerSource": "Effector",
             "PowerType": "Spell",
             "ChanceScale": "None",
-            "ShatterType": "Directional",
+            "ShatterType": "Central",
             "AnimationType": "Missile",
             "SoundEffect": "AbilityFireballImpact",
-            "TrailStrength": "0,45",
+            "TrailStrength": "10",
             "ShatterTarget": "Other",
-            "AnimationSpeed": "2,5",
-            "AnimationArc": "10"
-          },
-          {
-            "SoundEffect": "None",
-            "ShatterType": "Directional",
-            "ShatterDegree": "0,2",
-            "ShatterSpeed": "4",
-            "ShatterTarget": "Effector"
-          },
-          {
-            "SoundEffect": "None",
-            "ShatterType": "Directional",
-            "ShatterDegree": "0,2",
-            "ShatterSpeed": "4",
-            "ShatterTarget": "Effector"
-          },
-          {
-            "SoundEffect": "None",
-            "ShatterType": "Directional",
-            "ShatterDegree": "0,2",
-            "ShatterSpeed": "4",
-            "ShatterTarget": "Effector"
-          },
-          {
-            "SoundEffect": "None",
-            "ShatterType": "Directional",
-            "ShatterDegree": "0,2",
-            "ShatterSpeed": "4",
-            "ShatterTarget": "Effector"
+            "AnimationSpeed": "1,7",
+            "AnimationArc": "10",
+            "Await": "2",
+            "PowerScale": "2",
+            "ShatterDegree": "20",
+            "ShatterSpeed": "10"
           },
           {
             "Effect": "Damage",
@@ -2835,13 +2853,16 @@
             "PowerSource": "Effector",
             "PowerType": "Spell",
             "ChanceScale": "None",
-            "ShatterType": "Directional",
+            "ShatterType": "Central",
             "AnimationType": "Missile",
             "SoundEffect": "AbilityFireballImpact",
-            "TrailStrength": "0,45",
+            "TrailStrength": "10",
             "ShatterTarget": "Other",
-            "AnimationSpeed": "2,5",
-            "AnimationArc": "10"
+            "AnimationSpeed": "1,7",
+            "AnimationArc": "10",
+            "PowerScale": "2",
+            "ShatterDegree": "20",
+            "ShatterSpeed": "10"
           }
         ]
       }
@@ -3045,11 +3066,55 @@
   {
     "name": "Flame Shock",
     "icon": "AbilityFlameShock",
+    "cooldown": 4,
     "tags": [],
+    "cost": {
+      "Fire": 4
+    },
     "ranks": [
       {}
     ],
-    "events": []
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector"
+          }
+        ],
+        "effects": [
+          {
+            "AnimationType": "None",
+            "ShatterType": "Central",
+            "ShatterTarget": "Effector",
+            "ShatterDegree": "5",
+            "ShatterSpeed": "1",
+            "ShatterDensity": "1"
+          },
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerSource": "Effector",
+            "PowerType": "Spell",
+            "ChanceScale": "None",
+            "ShatterType": "Central",
+            "AnimationType": "None",
+            "SoundEffect": "AbilityFlameShockImpact",
+            "TrailStrength": "20",
+            "ShatterTarget": "Other",
+            "AnimationSpeed": "1,6",
+            "AnimationArc": "5",
+            "Await": "10",
+            "PowerScale": "3",
+            "ShatterDegree": "40",
+            "ShatterSpeed": "15"
+          },
+          {
+            "Effect": "EndTurn"
+          }
+        ]
+      }
+    ]
   },
   {
     "name": "Flamestrike",
@@ -3253,14 +3318,32 @@
         ],
         "effects": [
           {
-            "Effect": "Damage",
+            "SoundEffect": "AbilityFreezingNovaCast",
+            "Await": "4",
+            "ShatterType": "None",
+            "AnimationType": "None",
+            "ShatterTarget": "Effector",
+            "ShatterDegree": "5",
+            "ShatterSpeed": "2"
+          },
+          {
+            "Effect": "ChangeElements",
             "Affect": "Other",
             "PowerType": "Spell",
             "PowerSource": "Effector",
-            "PowerScale": "1.5"
+            "PowerScale": "1.5",
+            "ElementTo": "Frost",
+            "ChangeAmount": "5",
+            "SoundEffect": "AbilityFreezingNovaImpact",
+            "ShatterType": "None",
+            "ShatterTarget": "Effector",
+            "ShatterDegree": "10",
+            "ShatterSpeed": "6",
+            "Await": "12"
           },
           {
-            "Effect": "EndTurn"
+            "Effect": "EndTurn",
+            "Await": "0"
           }
         ]
       }
@@ -4377,19 +4460,11 @@
   {
     "name": "Lava Burst",
     "icon": "AbilityLavaBurst",
-    "cooldown": 3,
+    "cooldown": 4,
     "tags": [],
     "cost": {
-      "Fire": 3,
-      "Earth": 3,
-      "Water": 0,
-      "Air": 0,
-      "Frost": 0,
-      "Decay": 0,
-      "Shadow": 0,
-      "Order": 0,
-      "Arcane": 0,
-      "Lightning": 0
+      "Fire": 4,
+      "Earth": 4
     },
     "ranks": [
       {}
@@ -4399,7 +4474,8 @@
         "triggers": [
           {
             "Trigger": "AbilityCast",
-            "Triggerer": "Effector"
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -4416,13 +4492,15 @@
             "Await": "5",
             "ShatterTarget": "Other",
             "SoundEffect": "AbilityThunderstormImpact3",
-            "AnimationSpeed": "1,8",
+            "AnimationSpeed": "1,2",
             "TrailStrength": "20",
             "ShatterDegree": "50",
             "PowerSource": "Effector",
             "PowerType": "Spell",
             "Affect": "Other",
-            "ShatterSpeed": "30"
+            "ShatterSpeed": "30",
+            "AbilityName": "Shadow Bolt",
+            "PowerScale": "4,2"
           },
           {
             "Effect": "EndTurn"
@@ -6023,6 +6101,7 @@
   {
     "name": "Shadow Bolt",
     "icon": "AbilityShadowBolt",
+    "cooldown": 1,
     "tags": [
       "Damage"
     ],
