@@ -9,7 +9,7 @@ using static Root.InputType;
 public class String
 {
     public string value = "";
-    public InputType inputType = InputType.Everything;
+    public InputType inputType = Everything;
     private string backupValue = "";
 
     public string Value() => value;

@@ -102,7 +102,7 @@ public class Ability
                     else if (trigger["Trigger"] == "CombatBegin") execute = true;
                     else if (trigger["Trigger"] == "TurnBegin") execute = true;
                     else if (trigger["Trigger"] == "TurnEnd") execute = true;
-                    if (execute) eve.ExecuteEffects(board, futureBoard, icon, trigger, RankVariables(abilityRank), abilityRank);
+                    if (execute) eve.ExecuteEffects(board, futureBoard, icon, trigger, RankVariables(abilityRank), name, abilityRank);
                 }
     }
 

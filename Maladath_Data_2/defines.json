@@ -3,7 +3,7 @@
   "maxPlayerLevel": 60,
   "maxBagsEquipped": 4,
   "backpackSpace": 3,
-  "aiDepth": 5,
+  "aiDepth": 7,
   "aiManualBranches": 1,
   "textPaddingLeft": 4,
   "textPaddingRight": 12,

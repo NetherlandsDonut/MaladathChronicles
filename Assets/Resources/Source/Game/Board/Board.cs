@@ -33,6 +33,7 @@ public class Board
         temporaryBuffsEnemy = new();
         flyingMissiles = new();
         actions = new List<Action>();
+        log = new();
     }
 
     public Board(int x, int y, Dictionary<Ability, int> abilities)
@@ -78,6 +79,9 @@ public class Board
 
     //Stores the results of the combat
     public CombatResults results;
+
+    //Stores the actions and stats of the combat
+    public CombatLog log;
 
     //Indicates how many bonus moves were awarded this turn for the current player. This value is used only in sound effects
     public int bonusTurnStreak;
@@ -276,6 +280,8 @@ public class Board
             else if (dropOther.Count > 0 && Roll(40))
                 results.items.Add(dropOther[random.Next(dropOther.Count)].Copy<Item>());
             results.items.ForEach(x => x.SetRandomEnchantment());
+            chartPage = "Damage Dealt";
+            currentSave.player.ReceiveExperience(board.results.experience);
             SpawnDesktopBlueprint("CombatResults");
         }
         else if (result == "Lost")
@@ -297,6 +303,8 @@ public class Board
                 SpawnTransition();
                 SpawnTransition();
             }
+            chartPage = "Damage Dealt";
+            currentSave.player.ReceiveExperience(board.results.experience);
             SpawnDesktopBlueprint("CombatResults");
         }
         else if (result == "Fled")

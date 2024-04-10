@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 using static Blueprint;
+using static GameSettings;
 
 using static Root.Anchor;
 using static Root.RegionBackgroundType;
@@ -26,6 +27,9 @@ public static class Root
     public static bool disableCameraBounds;
     public static int builderSpacing;
     public static string prefix = "";
+
+    public static string chartPage;
+    public static Region iconRow;
 
     public static string locationName;
     public static string creationName;
@@ -57,6 +61,12 @@ public static class Root
             if (temp.ContainsKey(pair.Key)) continue;
             else temp.Add(pair.Key, pair.Value);
         return temp;
+    }
+
+    public static void Inc<TKey>(this Dictionary<TKey, int> dic, TKey source, int amount)
+    {
+        if (dic.ContainsKey(source)) dic[source] += amount;
+        else dic.Add(source, amount);
     }
 
     public static string ToRoman(int number)
@@ -192,13 +202,16 @@ public static class Root
         loadingScreenObjectLoadAim = loadSites.Count;
     }
 
-    public static void SpawnTransition(float time = 0.1f)
+    public static void SpawnTransition(bool single = true, float time = 0.1f)
     {
+        if (CDesktop.transition != null && single) return;
         var transition = new GameObject("CameraTransition", typeof(SpriteRenderer), typeof(Shatter));
         transition.transform.parent = CDesktop.screen.transform;
         transition.transform.localPosition = Vector3.zero;
         transition.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Textures/CameraTransition");
+        transition.GetComponent<SpriteRenderer>().sortingLayerName = "CameraBorder";
         transition.GetComponent<Shatter>().Initiate(time, 0, transition.GetComponent<SpriteRenderer>());
+        CDesktop.transition = transition;
     }
 
     public static void RemoveDesktopBackground(bool followCamera = true)
@@ -355,6 +368,7 @@ public static class Root
         var regionGroup = CDesktop.LBWindow.LBRegionGroup;
         region.transform.parent = regionGroup.transform;
         region.background = new GameObject("Background", typeof(SpriteRenderer), typeof(RegionBackground));
+        region.background.transform.parent = region.transform;
         region.Initialise(regionGroup, backgroundType, draw);
         if (pressEvent != null || rightPressEvent != null || middlePressEvent != null || tooltip != null)
             region.background.AddComponent<Highlightable>().Initialise(region, pressEvent, rightPressEvent, tooltip, middlePressEvent);
@@ -648,7 +662,118 @@ public static class Root
         newObject.transform.parent = region.transform;
         newObject.GetComponent<InputLine>().Initialise(region, refText, color);
     }
-    
+
+    #endregion
+
+    #region Charts
+
+    public static void AddChart()
+    {
+        Dictionary<string, int> dic = new();
+        var rising = false;
+        if (chartPage == "Damage Dealt") dic = Board.board.log.damageDealt;
+        else if (chartPage == "Damage Taken") dic = Board.board.log.damageTaken;
+        else if (chartPage == "Healing Received") dic = Board.board.log.healingReceived;
+        else if (chartPage == "Elements Used") dic = Board.board.log.elementsUsed;
+        var temp = dic.Count * (settings.chartBigIcons.Value() ? 38 : 19);
+        if (temp == 0)
+        {
+            AddRegionGroup();
+            SetRegionGroupWidth(600);
+            SetRegionGroupHeight(261);
+            AddPaddingRegion(() =>
+            {
+                SetRegionBackground(ChartBackground);
+                SetRegionAsGroupExtender();
+            });
+        }
+        else
+        {
+            var list = dic.OrderBy(x => x.Value * (rising ? 1 : -1)).Select(x => (x.Key, x.Value)).ToList();
+            AddRegionGroup();
+            var left = 600 - temp;
+            SetRegionGroupWidth((int)Math.Floor(left / 2.0));
+            SetRegionGroupHeight(261);
+            AddPaddingRegion(() =>
+            {
+                SetRegionBackground(ChartBackground);
+                SetRegionAsGroupExtender();
+            });
+            AddRegionGroup();
+            SetRegionGroupWidth(temp);
+            SetRegionGroupHeight(261);
+            AddPaddingRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+            });
+            AddHeaderRegion(() =>
+            {
+                if (settings.chartBigIcons.Value()) for (int i = list.Count - 1; i >= 0 && i - list.Count > -15; i--)
+                    if (chartPage == "Elements Used") AddBigButton("Element" + list[i].Key + "Rousing", (h) => { });
+                    else AddBigButton(Ability.abilities.Find(y => y.name == list[i].Key).icon, (h) => { });
+                else for (int i = 0; i < list.Count && i < 30; i++)
+                    if (chartPage == "Elements Used") AddSmallButton("Element" + list[i].Key + "Rousing", (h) => { });
+                    else AddSmallButton(Ability.abilities.Find(y => y.name == list[i].Key).icon, (h) => { });
+            });
+            iconRow = CDesktop.LBWindow.LBRegionGroup.LBRegion;
+            AddRegionGroup();
+            SetRegionGroupWidth((int)Math.Ceiling(left / 2.0));
+            SetRegionGroupHeight(261);
+            AddPaddingRegion(() =>
+            {
+                SetRegionBackground(ChartBackground);
+                SetRegionAsGroupExtender();
+            });
+        }
+    }
+
+    public static void FillChart()
+    {
+        Dictionary<string, int> dic = new();
+        var rising = false;
+        if (chartPage == "Damage Dealt") dic = Board.board.log.damageDealt;
+        else if (chartPage == "Damage Taken") dic = Board.board.log.damageTaken;
+        else if (chartPage == "Healing Received") dic = Board.board.log.healingReceived;
+        else if (chartPage == "Elements Used") dic = Board.board.log.elementsUsed;
+        var temp = dic.Count * (settings.chartBigIcons.Value() ? 38 : 19);
+        if (temp > 0)
+        {
+            var list = dic.OrderBy(x => x.Value * (rising ? 1 : -1)).Select(x => (x.Key, x.Value)).ToList();
+            var highestValue = list.Max(x => x.Value);
+            if (settings.chartBigIcons.Value())
+                for (int i = list.Count - 1; i >= 0 && i > -15; i--)
+                    AddChartColumn(list.Count, Math.Abs(list.Count - 1 - i), highestValue, list[i].Value);
+            else for (int i = 0; i < list.Count && i < 30; i++)
+                AddChartColumn(list.Count, i, highestValue, list[i].Value);
+        }
+    }
+
+    public static void AddChartColumn(int amount, int index, int highestValue, int value)
+    {
+        var height = (int)((242.0 - (settings.chartBigIcons.Value() ? 19 : 0)) / highestValue * value);
+        SpawnWindowBlueprint(new Blueprint("ChartColumn" + index, () =>
+        {
+            var foo = (settings.chartBigIcons.Value() ? iconRow.bigButtons.Select(x => x.transform) : iconRow.smallButtons.Select(x => x.transform)).Last().position;
+            SetAnchor(foo.x + (settings.chartBigIcons.Value() ? -38 : 19) * (amount - 1 - index) - (settings.chartBigIcons.Value() ? 20f : 10.5f), foo.y + (settings.chartBigIcons.Value() ? 24 : 14.5f) + height);
+            DisableShadows();
+            DisableCollisions();
+            AddRegionGroup();
+            SetRegionGroupWidth(settings.chartBigIcons.Value() ? 38 : 19);
+            SetRegionGroupHeight(height);
+            AddButtonRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+            }, (h) => { }, (h) => { },
+            (h) => () =>
+            {
+                SetAnchor(Bottom, h.window);
+                AddHeaderGroup();
+                AddPaddingRegion(() => { AddLine(value + "", "", "Center"); });
+            });
+        },
+        true));
+    }
+
     #endregion
 
     #region Enumerations
@@ -695,7 +820,8 @@ public static class Root
         NoExperience,
         ProgressDone,
         ProgressEmpty,
-        ProgressPossible
+        ProgressPossible,
+        ChartBackground
     }
 
     public enum Anchor

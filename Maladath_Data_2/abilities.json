@@ -2926,6 +2926,11 @@
             "AnimationSpeed": "1,5"
           },
           {
+            "Effect": "ChangeElements",
+            "ElementFrom": "Earth",
+            "ElementTo": "Fire"
+          },
+          {
             "Effect": "EndTurn"
           }
         ]

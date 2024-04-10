@@ -123,7 +123,7 @@ public class Buff
                     if (execute)
                     {
                         if (entityBuff.Item3 != null) board.actions.Add(() => { AddSmallButtonOverlay(entityBuff.Item3, "OtherBlack", 1, 5); });
-                        eve.ExecuteEffects(board, futureBoard, icon, trigger, RankVariables(entityBuff.Item4), entityBuff.Item4);
+                        eve.ExecuteEffects(board, futureBoard, icon, trigger, RankVariables(entityBuff.Item4), name, entityBuff.Item4);
                     }
                 }
     }

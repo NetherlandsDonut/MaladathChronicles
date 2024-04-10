@@ -683,10 +683,10 @@ public class Entity
     }
 
     //Deals given amount of damage to this entity
-    public void Damage(double damage, bool dontCall)
+    public void Damage(int damage, bool dontCall)
     {
         var before = health;
-        health -= (int)Math.Ceiling(damage);
+        health -= damage;
         if (!dontCall)
         {
             Board.board.CallEvents(this, new() { { "Trigger", "Damage" }, { "Triggerer", "Effector" }, { "DamageAmount", damage + "" } });
@@ -700,10 +700,10 @@ public class Entity
     }
 
     //Heals this entity by given amount
-    public void Heal(double heal, bool dontCall)
+    public void Heal(int heal, bool dontCall)
     {
         var before = health;
-        health += (int)Math.Round(heal);
+        health += heal;
         if (health > MaxHealth())
             health = MaxHealth();
         if (!dontCall)

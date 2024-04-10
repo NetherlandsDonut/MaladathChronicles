@@ -35,6 +35,7 @@ using static SiteHostileArea;
 using static SiteInstance;
 using static SiteComplex;
 using static SiteTown;
+using static UnityEngine.GraphicsBuffer;
 
 public class Blueprint
 {
@@ -617,6 +618,8 @@ public class Blueprint
                             Board.board.CallEvents(Board.board.player, new() { { "Trigger", "AbilityCast" }, {"Triggerer", "Effector" }, { "AbilityName", abilityObj.name } });
                             Board.board.CallEvents(Board.board.enemy, new() { { "Trigger", "AbilityCast" }, {"Triggerer", "Other" }, { "AbilityName", abilityObj.name } });
                             Board.board.player.DetractResources(abilityObj.cost);
+                            foreach (var element in abilityObj.cost)
+                                Board.board.log.elementsUsed.Inc(element.Key, element.Value);
                             Board.board.temporaryElementsPlayer = new();
                             h.window.desktop.RebuildAll();
                         }
@@ -770,7 +773,7 @@ public class Blueprint
                             {
                                 SetAnchor(Center);
                                 var key = activeAbilities.ToList()[index + 7 * regionGroup.pagination].Key;
-                                PrintAbilityTooltip(null, null, key, activeAbilities[key]);
+                                PrintAbilityTooltip(currentSave.player, null, key, activeAbilities[key]);
                             }
                         );
                         if (currentSave.player.actionBars.Exists(x => x.ability == key.Key.name))
@@ -839,7 +842,7 @@ public class Blueprint
                             {
                                 SetAnchor(Center);
                                 var key = passiveAbilities.ToList()[index + 7 * regionGroup.pagination].Key;
-                                PrintAbilityTooltip(null, null, key, passiveAbilities[key]);
+                                PrintAbilityTooltip(currentSave.player, null, key, passiveAbilities[key]);
                             }
                         );
                         if (currentSave.player.actionBars.Exists(x => x.ability == key.Key.name))
@@ -2337,7 +2340,7 @@ public class Blueprint
             SetAnchor(Center);
             AddRegionGroup();
             SetRegionGroupWidth(200);
-            SetRegionGroupHeight(150);
+            SetRegionGroupHeight(94);
             AddHeaderRegion(() =>
             {
                 AddLine("Combat Results", "", "Center");
@@ -2348,6 +2351,15 @@ public class Blueprint
                     AddLine("You earned " + Board.board.results.experience + " experience", "", "Center");
                 else AddLine("You earned no experience", "", "Center");
                 SetRegionAsGroupExtender();
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("Show Combat Log", "", "Center");
+            },
+            (h) =>
+            {
+                PlaySound("DesktopInstanceOpen");
+                SpawnDesktopBlueprint("CombatLog");
             });
             AddButtonRegion(() =>
             {
@@ -2375,6 +2387,60 @@ public class Blueprint
                 }
             });
         }),
+        new("CombatResultsChart", () => {
+            SetAnchor(-301, 161);
+            AddHeaderGroup();
+            SetRegionGroupWidth(600);
+            AddHeaderRegion(() =>
+            {
+                AddLine("Combat Log", "", "Center");
+                AddSmallButton("OtherClose", (h) => { PlaySound("DesktopInstanceClose"); CloseDesktop("CombatLog"); });
+                AddSmallButton(settings.chartBigIcons.Value() ? "OtherSmaller" : "OtherBigger",
+                    (h) =>
+                    {
+                        settings.chartBigIcons.Invert();
+                        PlaySound("DesktopChartSwitch");
+                        CloseDesktop("CombatLog");
+                        SpawnDesktopBlueprint("CombatLog");
+                    });
+            });
+            AddPaddingRegion(() => { AddLine(chartPage, "", "Center"); });
+            AddChart();
+        }),
+        new("CombatResultsChartLeftArrow", () => {
+            DisableShadows();
+            SetAnchor(-301, 142);
+            AddRegionGroup();
+            AddHeaderRegion(() =>
+            {
+                AddSmallButton("OtherPreviousPage", (h) =>
+                {
+                    if (chartPage == "Damage Taken") chartPage = "Damage Dealt";
+                    else if (chartPage == "Healing Received") chartPage = "Damage Taken";
+                    else if (chartPage == "Elements Used") chartPage = "Healing Received";
+                    else if (chartPage == "Damage Dealt") chartPage = "Elements Used";
+                    CloseDesktop("CombatLog");
+                    SpawnDesktopBlueprint("CombatLog");
+                });
+            });
+        }, true),
+        new("CombatResultsChartRightArrow", () => {
+            DisableShadows();
+            SetAnchor(280, 142);
+            AddRegionGroup();
+            AddHeaderRegion(() =>
+            {
+                AddSmallButton("OtherNextPage", (h) =>
+                {
+                    if (chartPage == "Damage Dealt") chartPage = "Damage Taken";
+                    else if (chartPage == "Damage Taken") chartPage = "Healing Received";
+                    else if (chartPage == "Healing Received") chartPage = "Elements Used";
+                    else if (chartPage == "Elements Used") chartPage = "Damage Dealt";
+                    CloseDesktop("CombatLog");
+                    SpawnDesktopBlueprint("CombatLog");
+                });
+            });
+        }, true),
         new("CombatResultsLoot", () => {
             SetAnchor(-115, -109);
             AddRegionGroup();
@@ -5750,6 +5816,28 @@ public class Blueprint
             });
             AddButtonRegion(() =>
             {
+                AddLine("By status", "Black");
+            },
+            (h) =>
+            {
+                abilities = abilities.OrderBy(x => currentSave.player.actionBars.Exists(y => y.ability == x.name)).ToList();
+                CloseWindow("AbilitiesSort");
+                CDesktop.RespawnAll();
+                PlaySound("DesktopInventorySort", 0.2f);
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("By rank", "Black");
+            },
+            (h) =>
+            {
+                abilities = abilities.OrderByDescending(x => currentSave.player.abilities.ContainsKey(x.name) ? currentSave.player.abilities[x.name] : 0).ToList();
+                CloseWindow("AbilitiesSort");
+                CDesktop.RespawnAll();
+                PlaySound("DesktopInventorySort", 0.2f);
+            });
+            AddButtonRegion(() =>
+            {
                 AddLine("By cost", "Black");
             },
             (h) =>
@@ -7310,7 +7398,40 @@ public class Blueprint
             SetDesktopBackground(Board.board.area.Background());
             SpawnWindowBlueprint("CombatResults");
             SpawnWindowBlueprint("ExperienceBar");
-            currentSave.player.ReceiveExperience(Board.board.results.experience);
+        }),
+        new("CombatLog", () =>
+        {
+            SetDesktopBackground(Board.board.area.Background());
+            SpawnWindowBlueprint("CombatResultsChart");
+            SpawnWindowBlueprint("CombatResultsChartLeftArrow");
+            SpawnWindowBlueprint("CombatResultsChartRightArrow");
+            FillChart();
+            SpawnWindowBlueprint("ExperienceBar");
+            AddHotkey(A, () =>
+            {
+                PlaySound("DesktopChartSwitch");
+                if (chartPage == "Damage Taken") chartPage = "Damage Dealt";
+                else if (chartPage == "Healing Received") chartPage = "Damage Taken";
+                else if (chartPage == "Elements Used") chartPage = "Healing Received";
+                else if (chartPage == "Damage Dealt") chartPage = "Elements Used";
+                CloseDesktop("CombatLog");
+                SpawnDesktopBlueprint("CombatLog");
+            });
+            AddHotkey(D, () =>
+            {
+                PlaySound("DesktopChartSwitch");
+                if (chartPage == "Damage Dealt") chartPage = "Damage Taken";
+                else if (chartPage == "Damage Taken") chartPage = "Healing Received";
+                else if (chartPage == "Healing Received") chartPage = "Elements Used";
+                else if (chartPage == "Elements Used") chartPage = "Damage Dealt";
+                CloseDesktop("CombatLog");
+                SpawnDesktopBlueprint("CombatLog");
+            });
+            AddHotkey(Escape, () =>
+            {
+                PlaySound("DesktopInstanceClose");
+                CloseDesktop("CombatLog");
+            });
         }),
         new("CombatResultsLoot", () =>
         {

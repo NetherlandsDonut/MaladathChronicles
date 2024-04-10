@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using System.Collections.Generic;
 
@@ -26,7 +27,7 @@ public class Event
 
     #region Execution
 
-    public void ExecuteEffects(Board board, FutureBoard futureBoard, string icon, Dictionary<string, string> triggerBase, Dictionary<string, string> variables, int sourceRank)
+    public void ExecuteEffects(Board board, FutureBoard futureBoard, string icon, Dictionary<string, string> triggerBase, Dictionary<string, string> variables, string sourceName, int sourceRank)
     {
         //Define entities that take place in the event's effects
         var effector = board == null ? null : (board.playerTurn ? board.player : board.enemy);
@@ -53,7 +54,7 @@ public class Event
             string shatterType = effect.ContainsKey("ShatterType") ? effect["ShatterType"] : "None";
             float await = effect.ContainsKey("Await") ? float.Parse(effect["Await"]) : 0;
 
-            //On a failed chance check of an effect program continues to the next one
+            //On a failed chance check of an effect program continues to the next effect
             if (CheckFailChance()) continue;
 
             //Copy trigger base to make unique object for each effect
@@ -149,10 +150,12 @@ public class Event
                 {
                     var source = powerSource == "Effector" ? effector : other;
                     var target = affect == "Effector" ? effector : other;
-                    var amount = source.RollWeaponDamage() * ((powerType == "Melee" ? source.MeleeAttackPower() : (powerType == "Spell" ? source.SpellPower() : (powerType == "Ranged" ? source.RangedAttackPower() : 1))) / 10.0 + 1) * powerScale;
+                    var amount = (int)Math.Round(source.RollWeaponDamage() * ((powerType == "Melee" ? source.MeleeAttackPower() : (powerType == "Spell" ? source.SpellPower() : (powerType == "Ranged" ? source.RangedAttackPower() : 1))) / 10.0 + 1) * powerScale);
                     target.Damage(amount, trigger["Trigger"] == "Damage");
                     AddBigButtonOverlay(new Vector2(target == board.player ? -300 : 167, 141), "OtherDamaged", 0.1f, 5);
-                    SpawnFallingText(new Vector2(target == board.player ? -300 : 167, 141), "" + (int)amount, "White");
+                    SpawnFallingText(new Vector2(target == board.player ? -300 : 167, 141), "" + amount, "White");
+                    if (target == board.player) board.log.damageTaken.Inc(sourceName, amount);
+                    else board.log.damageDealt.Inc(sourceName, amount);
                 }
             }
 
@@ -170,10 +173,11 @@ public class Event
                 {
                     var source = powerSource == "Effector" ? effector : other;
                     var target = affect == "Effector" ? effector : other;
-                    var amount = source.RollWeaponDamage() * ((powerType == "Melee" ? source.MeleeAttackPower() : (powerType == "Spell" ? source.SpellPower() : (powerType == "Ranged" ? source.RangedAttackPower() : 1))) / 10.0 + 1) * powerScale;
+                    var amount = (int)Math.Round(source.RollWeaponDamage() * ((powerType == "Melee" ? source.MeleeAttackPower() : (powerType == "Spell" ? source.SpellPower() : (powerType == "Ranged" ? source.RangedAttackPower() : 1))) / 10.0 + 1) * powerScale);
                     target.Heal(amount, trigger["Trigger"] == "Heal");
                     AddBigButtonOverlay(new Vector2(target == board.player ? -300 : 167, 141), "OtherHealed", 0.1f, 5);
-                    SpawnFallingText(new Vector2(target == board.player ? -300 : 167, 141), "" + (int)amount, "Uncommon");
+                    SpawnFallingText(new Vector2(target == board.player ? -300 : 167, 141), "" + amount, "Uncommon");
+                    if (target == board.player) board.log.healingReceived.Inc(sourceName, amount);
                 }
             }
 

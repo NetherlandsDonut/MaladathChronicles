@@ -19,6 +19,7 @@ public class Desktop : MonoBehaviour
     public Window LBWindow;
     public List<Window> windows;
     public Camera screen;
+    public GameObject transition;
     public string title;
     public Tooltip tooltip;
     public float tooltipChanneling;
@@ -174,12 +175,12 @@ public class Desktop : MonoBehaviour
                     SpawnWindowBlueprint("MapToolbarStatusRight");
                     SpawnWindowBlueprint("ExperienceBar");
                     grid.SwitchMapTexture(currentSave.playerDead);
-                    SpawnTransition(0.1f);
-                    SpawnTransition(0.1f);
-                    SpawnTransition(0.1f);
-                    SpawnTransition(0.1f);
-                    SpawnTransition(0.1f);
-                    SpawnTransition(0.1f);
+                    SpawnTransition(false);
+                    SpawnTransition(false);
+                    SpawnTransition(false);
+                    SpawnTransition(false);
+                    SpawnTransition(false);
+                    SpawnTransition(false);
                     Destroy(loadingBar[0]);
                     Destroy(loadingBar[1]);
                     loadingBar = null;
