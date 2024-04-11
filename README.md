@@ -409,5 +409,18 @@ v0.4.22
           Fixed a rare error with generatin permanent enchants for items
           Fixed talent screen reopen sound on switching specs
           Added indicator for fully explored areas in instances
+v0.4.23
+    09.04 Added ChangeElements effect
+          Added Flame Shock, Freezing Nova and Deep Freeze
+          Made enemies skip player abilities in calculations
+v0.4.24
+    10.04 Added Combat Log
+          Fixed stacked transition effect
+          Fixed text clipping in tooltips, again
+          Added more ways of sorting abilities in spellbook
+          Changed AIDepth from 5 to 7
+v0.4.25
+    11.04 Fixed transportation to work again
+          Added shatter params to ChangeElements effect
 ```
 </details>
