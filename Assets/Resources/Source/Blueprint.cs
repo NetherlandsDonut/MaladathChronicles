@@ -1146,6 +1146,7 @@ public class Blueprint
             {
                 CloseDesktop("SpellbookScreen");
                 CloseDesktop("EquipmentScreen");
+                CloseDesktop("BestiaryScreen");
                 if (CDesktop.title != "TalentScreen")
                 {
                     PlaySound("DesktopTalentScreenOpen");
@@ -1161,6 +1162,7 @@ public class Blueprint
             {
                 CloseDesktop("TalentScreen");
                 CloseDesktop("EquipmentScreen");
+                CloseDesktop("BestiaryScreen");
                 if (CDesktop.title != "SpellbookScreen")
                     SpawnDesktopBlueprint("SpellbookScreen");
                 else
@@ -1173,12 +1175,26 @@ public class Blueprint
             {
                 CloseDesktop("TalentScreen");
                 CloseDesktop("SpellbookScreen");
+                CloseDesktop("BestiaryScreen");
                 if (CDesktop.title != "EquipmentScreen")
                     SpawnDesktopBlueprint("EquipmentScreen");
                 else
                 {
                     CloseDesktop(CDesktop.title);
                     PlaySound("DesktopInventoryClose");
+                }
+            });
+            AddHotkey(T, () =>
+            {
+                CloseDesktop("TalentScreen");
+                CloseDesktop("SpellbookScreen");
+                CloseDesktop("EquipmentScreen");
+                if (CDesktop.title != "BestiaryScreen")
+                    SpawnDesktopBlueprint("BestiaryScreen");
+                else
+                {
+                    CloseDesktop(CDesktop.title);
+                    PlaySound("DesktopInstanceClose");
                 }
             });
             SetAnchor(Top);
@@ -1192,6 +1208,7 @@ public class Blueprint
                 });
                 AddSmallButton(CDesktop.title == "EquipmentScreen" ? "OtherClose" : "MenuInventory", (h) =>
                 {
+                    CloseDesktop("BestiaryScreen");
                     CloseDesktop("SpellbookScreen");
                     CloseDesktop("TalentScreen");
                     if (CDesktop.title != "EquipmentScreen")
@@ -1204,6 +1221,7 @@ public class Blueprint
                 });
                 AddSmallButton(CDesktop.title == "SpellbookScreen" ? "OtherClose" : "MenuSpellbook", (h) =>
                 {
+                    CloseDesktop("BestiaryScreen");
                     CloseDesktop("EquipmentScreen");
                     CloseDesktop("TalentScreen");
                     if (CDesktop.title != "SpellbookScreen")
@@ -1224,6 +1242,7 @@ public class Blueprint
                 //});
                 AddSmallButton(CDesktop.title == "TalentScreen" ? "OtherClose" : "MenuClasses", (h) =>
                 {
+                    CloseDesktop("BestiaryScreen");
                     CloseDesktop("SpellbookScreen");
                     CloseDesktop("EquipmentScreen");
                     if (CDesktop.title != "TalentScreen")
@@ -1239,7 +1258,19 @@ public class Blueprint
                 });
                 AddSmallButton("MenuCompletion", (h) =>
                 {
-
+                    CloseDesktop("TalentScreen");
+                    CloseDesktop("SpellbookScreen");
+                    CloseDesktop("EquipmentScreen");
+                    if (CDesktop.title != "BestiaryScreen")
+                    {
+                        PlaySound("DesktopTalentScreenOpen");
+                        SpawnDesktopBlueprint("BestiaryScreen");
+                    }
+                    else
+                    {
+                        CloseDesktop(CDesktop.title);
+                        PlaySound("DesktopInstanceOpen");
+                    }
                 });
             });
         }, true),
@@ -2594,6 +2625,104 @@ public class Blueprint
             SetRegionGroupHeight(12);
             AddPaddingRegion(() => { SetRegionBackground(RegionBackgroundType.NoExperience); });
         },  true),
+        new("BestiaryKalimdor", () => {
+            SetAnchor(-210, 142);
+            AddHeaderGroup();
+            SetRegionGroupWidth(200);
+            SetRegionGroupHeight(176);
+            AddHeaderRegion(() =>
+            {
+                AddLine("Kalimdor", "", "Center");
+            });
+            AddPaddingRegion(() =>
+            {
+                SetRegionBackgroundAsImage("Sprites/Textures/Kalimdor");
+                SetRegionAsGroupExtender();
+            });
+            AddRegionGroup();
+            SetRegionGroupWidth(200);
+            SetRegionGroupHeight(91);
+            AddPaddingRegion(() =>
+            {
+                var allSites = new List<Site>();
+                for (int i = 0; i < towns.Count; i++)
+                    allSites.Add(towns[i]);
+                for (int i = 0; i < areas.Count; i++)
+                    allSites.Add(areas[i]);
+                for (int i = 0; i < complexes.Count; i++)
+                    allSites.Add(complexes[i]);
+                for (int i = 0; i < instances.Count; i++)
+                    allSites.Add(instances[i]);
+                var zonesExcluded = zones.FindAll(x => x.continent != "Kalimdor").Select(x => x.name);
+                allSites.RemoveAll(x => x.x == 0 && x.y == 0 || zonesExcluded.Contains(x.zone));
+                AddLine("Explored areas: " + allSites.Count(x => currentSave.siteVisits.ContainsKey(x.name)) + " / " + allSites.Count, "DarkGray", "Center");
+                var commons = areas.FindAll(x => !zonesExcluded.Contains(x.zone)).SelectMany(x => x.commonEncounters ?? new()).Select(x => x.who).Distinct().ToList();
+                AddLine("Common entries: " + commons.Count(x => currentSave.commonsKilled.ContainsKey(x)) + " / " + commons.Count, "DarkGray", "Center");
+                var rares = areas.FindAll(x => !zonesExcluded.Contains(x.zone)).SelectMany(x => x.rareEncounters ?? new()).Select(x => x.who).Distinct().ToList();
+                AddLine("Rares killed: " + rares.Count(x => currentSave.raresKilled.ContainsKey(x)) + " / " + rares.Count, "DarkGray", "Center");
+                var elites = areas.FindAll(x => !zonesExcluded.Contains(x.zone)).SelectMany(x => x.eliteEncounters ?? new()).Select(x => x.who).Distinct().ToList();
+                AddLine("Elites killed: " + elites.Count(x => currentSave.elitesKilled.ContainsKey(x)) + " / " + elites.Count, "DarkGray", "Center");
+                SetRegionAsGroupExtender();
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("Explore", "", "Center");
+            },
+            (h) =>
+            {
+                //PlaySound("DesktopInstanceOpen");
+                //SpawnDesktopBlueprint("Bestiary");
+            });
+        }),
+        new("BestiaryEasternKingdoms", () => {
+            SetAnchor(9, 142);
+            AddHeaderGroup();
+            SetRegionGroupWidth(200);
+            SetRegionGroupHeight(176);
+            AddHeaderRegion(() =>
+            {
+                AddLine("Eastern Kingdoms", "", "Center");
+            });
+            AddPaddingRegion(() =>
+            {
+                SetRegionBackgroundAsImage("Sprites/Textures/EasternKingdoms");
+                SetRegionAsGroupExtender();
+            });
+            AddRegionGroup();
+            SetRegionGroupWidth(200);
+            SetRegionGroupHeight(91);
+            AddPaddingRegion(() =>
+            {
+                var allSites = new List<Site>();
+                for (int i = 0; i < towns.Count; i++)
+                    allSites.Add(towns[i]);
+                for (int i = 0; i < areas.Count; i++)
+                    allSites.Add(areas[i]);
+                for (int i = 0; i < complexes.Count; i++)
+                    allSites.Add(complexes[i]);
+                for (int i = 0; i < instances.Count; i++)
+                    allSites.Add(instances[i]);
+                var zonesExcluded = zones.FindAll(x => x.continent != "Eastern Kingdoms").Select(x => x.name);
+                allSites.RemoveAll(x => x.x == 0 && x.y == 0 || zonesExcluded.Contains(x.zone));
+                AddLine("Explored areas: " + allSites.Count(x => currentSave.siteVisits.ContainsKey(x.name)) + " / " + allSites.Count, "DarkGray", "Center");
+                var commons = areas.FindAll(x => !zonesExcluded.Contains(x.zone)).SelectMany(x => x.commonEncounters ?? new()).Select(x => x.who).Distinct().ToList();
+                AddLine("Common entries: " + commons.Count(x => currentSave.commonsKilled.ContainsKey(x)) + " / " + commons.Count, "DarkGray", "Center");
+                var rares = areas.FindAll(x => !zonesExcluded.Contains(x.zone)).SelectMany(x => x.rareEncounters ?? new()).Select(x => x.who).Distinct().ToList();
+                AddLine("Rares killed: " + rares.Count(x => currentSave.raresKilled.ContainsKey(x)) + " / " + rares.Count, "DarkGray", "Center");
+                var elites = areas.FindAll(x => !zonesExcluded.Contains(x.zone)).SelectMany(x => x.eliteEncounters ?? new()).Select(x => x.who).Distinct().ToList();
+                AddLine("Elites killed: " + elites.Count(x => currentSave.elitesKilled.ContainsKey(x)) + " / " + elites.Count, "DarkGray", "Center");
+                SetRegionAsGroupExtender();
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("Explore", "", "Center");
+            },
+            (h) =>
+            {
+                //PlaySound("DesktopInstanceOpen");
+                //SpawnDesktopBlueprint("Bestiary");
+            });
+        }),
 
         #region Dev Panel
 
@@ -7780,6 +7909,25 @@ public class Blueprint
             {
                 PlaySound("DesktopInventoryClose");
                 CloseDesktop("EquipmentScreen");
+            });
+        }),
+        new("BestiaryScreen", () =>
+        {
+            PlaySound("DesktopInstanceOpen");
+            SetDesktopBackground("Stone");
+            SpawnWindowBlueprint("MapToolbarShadow");
+            SpawnWindowBlueprint("MapToolbarClockLeft");
+            SpawnWindowBlueprint("MapToolbar");
+            SpawnWindowBlueprint("MapToolbarClockRight");
+            SpawnWindowBlueprint("MapToolbarStatusLeft");
+            SpawnWindowBlueprint("MapToolbarStatusRight");
+            SpawnWindowBlueprint("BestiaryKalimdor");
+            SpawnWindowBlueprint("BestiaryEasternKingdoms");
+            SpawnWindowBlueprint("ExperienceBar");
+            AddHotkey(Escape, () =>
+            {
+                PlaySound("DesktopInstanceClose");
+                CloseDesktop("BestiaryScreen");
             });
         }),
         new("Bank", () =>
