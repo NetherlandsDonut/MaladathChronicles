@@ -82,7 +82,7 @@ public class SiteTown : Site
                                     SwitchDesktop("Map");
 
                                     //Lead path to the destination
-                                    LeadPath(transport);
+                                    LeadPath(transport, true);
 
                                     //Queue moving player to the destination
                                     destination.ExecutePath("Town");

@@ -2344,6 +2344,7 @@ public class Blueprint
             AddHeaderRegion(() =>
             {
                 AddLine("Combat Results", "", "Center");
+                AddSmallButton("OtherChart", (h) => { PlaySound("DesktopInstanceOpen"); SpawnDesktopBlueprint("CombatLog"); });
             });
             AddPaddingRegion(() =>
             {
@@ -2351,15 +2352,6 @@ public class Blueprint
                     AddLine("You earned " + Board.board.results.experience + " experience", "", "Center");
                 else AddLine("You earned no experience", "", "Center");
                 SetRegionAsGroupExtender();
-            });
-            AddButtonRegion(() =>
-            {
-                AddLine("Show Combat Log", "", "Center");
-            },
-            (h) =>
-            {
-                PlaySound("DesktopInstanceOpen");
-                SpawnDesktopBlueprint("CombatLog");
             });
             AddButtonRegion(() =>
             {
@@ -2415,6 +2407,7 @@ public class Blueprint
             {
                 AddSmallButton("OtherPreviousPage", (h) =>
                 {
+                    PlaySound("DesktopChartSwitch");
                     if (chartPage == "Damage Taken") chartPage = "Damage Dealt";
                     else if (chartPage == "Healing Received") chartPage = "Damage Taken";
                     else if (chartPage == "Elements Used") chartPage = "Healing Received";
@@ -2432,6 +2425,7 @@ public class Blueprint
             {
                 AddSmallButton("OtherNextPage", (h) =>
                 {
+                    PlaySound("DesktopChartSwitch");
                     if (chartPage == "Damage Dealt") chartPage = "Damage Taken";
                     else if (chartPage == "Damage Taken") chartPage = "Healing Received";
                     else if (chartPage == "Healing Received") chartPage = "Elements Used";
@@ -3489,11 +3483,6 @@ public class Blueprint
                 AddLine("Search:", "DarkGray");
                 AddInputLine(String.search);
             });
-            AddPaddingRegion(() =>
-            {
-                AddLine("Search:", "DarkGray");
-                AddInputLine(String.search);
-            });
             var regionGroup = CDesktop.LBWindow.LBRegionGroup;
             AddPaginationLine(regionGroup);
             for (int i = 0; i < regionGroup.perPage; i++)
@@ -4300,6 +4289,9 @@ public class Blueprint
                     String.shatterDensity.Set(effect.ContainsKey("ShatterDensity") ? effect["ShatterDensity"] : "1");
                     String.shatterDegree.Set(effect.ContainsKey("ShatterDegree") ? effect["ShatterDegree"] : "20");
                     String.shatterSpeed.Set(effect.ContainsKey("ShatterSpeed") ? effect["ShatterSpeed"] : "6");
+                    String.elementShatterDensity.Set(effect.ContainsKey("ElementShatterDensity") ? effect["ElementShatterDensity"] : "1");
+                    String.elementShatterDegree.Set(effect.ContainsKey("ElementShatterDegree") ? effect["ElementShatterDegree"] : "8");
+                    String.elementShatterSpeed.Set(effect.ContainsKey("ElementShatterSpeed") ? effect["ElementShatterSpeed"] : "5");
                     String.await.Set(effect.ContainsKey("Await") ? effect["Await"] : "0");
                     String.powerScale.Set(effect.ContainsKey("PowerScale") ? effect["PowerScale"] : "1");
                     String.resourceAmount.Set(effect.ContainsKey("ResourceAmount") ? effect["ResourceAmount"] : "1");
@@ -4945,6 +4937,45 @@ public class Blueprint
                         if (effect.ContainsKey("ShatterSpeed"))
                             effect["ShatterSpeed"] = "6";
                         String.shatterSpeed.Set("6");
+                        h.window.Respawn();
+                    });
+                });
+            }
+            if (effect.ContainsKey("Effect") && (effect["Effect"] == "ChangeElements"))
+            {
+                AddPaddingRegion(() =>
+                {
+                    AddLine("E.Shatter degree:", "DarkGray");
+                    AddInputLine(String.elementShatterDegree);
+                    AddSmallButton("OtherReverse", (h) =>
+                    {
+                        if (effect.ContainsKey("ElementShatterDegree"))
+                            effect["ElementShatterDegree"] = "8";
+                        String.elementShatterDegree.Set("8");
+                        h.window.Respawn();
+                    });
+                });
+                AddPaddingRegion(() =>
+                {
+                    AddLine("E.Shatter density:", "DarkGray");
+                    AddInputLine(String.elementShatterDensity);
+                    AddSmallButton("OtherReverse", (h) =>
+                    {
+                        if (effect.ContainsKey("ElementShatterDensity"))
+                            effect["ElementShatterDensity"] = "1";
+                        String.elementShatterDensity.Set("1");
+                        h.window.Respawn();
+                    });
+                });
+                AddPaddingRegion(() =>
+                {
+                    AddLine("E.Shatter speed:", "DarkGray");
+                    AddInputLine(String.elementShatterSpeed);
+                    AddSmallButton("OtherReverse", (h) =>
+                    {
+                        if (effect.ContainsKey("ElementShatterSpeed"))
+                            effect["ElementShatterSpeed"] = "5";
+                        String.elementShatterSpeed.Set("5");
                         h.window.Respawn();
                     });
                 });

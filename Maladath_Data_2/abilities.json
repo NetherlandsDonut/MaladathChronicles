@@ -2035,7 +2035,7 @@
             "ShatterTarget": "Effector",
             "ShatterDegree": "10",
             "ShatterSpeed": "6",
-            "Await": "4",
+            "Await": "3",
             "ElementFrom": "Fire"
           },
           {
@@ -2924,11 +2924,6 @@
             "AnimationType": "Missile",
             "TrailStrength": "10",
             "AnimationSpeed": "1,5"
-          },
-          {
-            "Effect": "ChangeElements",
-            "ElementFrom": "Earth",
-            "ElementTo": "Fire"
           },
           {
             "Effect": "EndTurn"

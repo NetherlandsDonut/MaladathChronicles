@@ -742,13 +742,13 @@ public static class Root
             var highestValue = list.Max(x => x.Value);
             if (settings.chartBigIcons.Value())
                 for (int i = list.Count - 1; i >= 0 && i > -15; i--)
-                    AddChartColumn(list.Count, Math.Abs(list.Count - 1 - i), highestValue, list[i].Value);
+                    AddChartColumn(list.Count, Math.Abs(list.Count - 1 - i), list.Sum(x => x.Value), highestValue, list[i].Value);
             else for (int i = 0; i < list.Count && i < 30; i++)
-                AddChartColumn(list.Count, i, highestValue, list[i].Value);
+                AddChartColumn(list.Count, i, list.Sum(x => x.Value), highestValue, list[i].Value);
         }
     }
 
-    public static void AddChartColumn(int amount, int index, int highestValue, int value)
+    public static void AddChartColumn(int amount, int index, int total, int highestValue, int value)
     {
         var height = (int)((242.0 - (settings.chartBigIcons.Value() ? 19 : 0)) / highestValue * value);
         SpawnWindowBlueprint(new Blueprint("ChartColumn" + index, () =>
@@ -756,19 +756,15 @@ public static class Root
             var foo = (settings.chartBigIcons.Value() ? iconRow.bigButtons.Select(x => x.transform) : iconRow.smallButtons.Select(x => x.transform)).Last().position;
             SetAnchor(foo.x + (settings.chartBigIcons.Value() ? -38 : 19) * (amount - 1 - index) - (settings.chartBigIcons.Value() ? 20f : 10.5f), foo.y + (settings.chartBigIcons.Value() ? 24 : 14.5f) + height);
             DisableShadows();
-            DisableCollisions();
             AddRegionGroup();
             SetRegionGroupWidth(settings.chartBigIcons.Value() ? 38 : 19);
-            SetRegionGroupHeight(height);
-            AddButtonRegion(() =>
+            SetRegionGroupHeight(height + (settings.chartBigIcons.Value() ? 4 : 0));
+            AddPaddingRegion(() =>
             {
+                SetRegionBackground(Button);
+                if (settings.chartBigIcons.Value())
+                    AddLine(Math.Round(100.0 / total * value) + "%");
                 SetRegionAsGroupExtender();
-            }, (h) => { }, (h) => { },
-            (h) => () =>
-            {
-                SetAnchor(Bottom, h.window);
-                AddHeaderGroup();
-                AddPaddingRegion(() => { AddLine(value + "", "", "Center"); });
             });
         },
         true));

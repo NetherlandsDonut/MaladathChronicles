@@ -250,7 +250,8 @@ public class Desktop : MonoBehaviour
                         {
                             var first = queuedPath[0].Item2.First(x => x.name == "PathDot");
                             cameraDestination = first.position;
-                            first.GetComponent<SpriteRenderer>().color = queuedPath[0].Item1.means == "Tram" ? Color.yellow : (queuedPath[0].Item1.means == "Ship" ? Color.blue : Color.green);
+                            if (first.TryGetComponent<SpriteRenderer>(out var r))
+                                r.color = queuedPath[0].Item1.means == "Tram" ? Color.yellow : (queuedPath[0].Item1.means == "Ship" ? Color.blue : Color.green);
                         }
                     }
                 }

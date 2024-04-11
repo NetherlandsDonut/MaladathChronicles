@@ -5,7 +5,7 @@
     "value": "True"
   },
   "pixelPerfectVision": {
-    "value": "True"
+    "value": "False"
   },
   "music": {
     "value": "False"
@@ -27,5 +27,8 @@
   },
   "snapCamera": {
     "value": "False"
+  },
+  "chartBigIcons": {
+    "value": "True"
   }
 }

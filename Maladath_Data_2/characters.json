@@ -7,7 +7,7 @@
       "player": {
         "level": 16,
         "unspentTalentPoints": 1,
-        "experience": 6379,
+        "experience": 10379,
         "name": "Arlissa",
         "race": "Human",
         "spec": "Mage",
@@ -49,10 +49,10 @@
             "ability": "Arcane Missiles"
           },
           {
-            "ability": "Blazing Barrier"
+            "ability": "Deep Freeze"
           },
           {
-            "ability": "Blizzard"
+            "ability": "Freezing Nova"
           }
         ],
         "stats": {
@@ -75,6 +75,7 @@
           }
         },
         "inventory": {
+          "money": 1980.5,
           "items": [
             {
               "rarity": "Common",
@@ -104,6 +105,43 @@
               "droppedBy": [
                 "High Interrogator Gerstahn"
               ]
+            },
+            {
+              "rarity": "Uncommon",
+              "name": "Engineering Gloves",
+              "icon": "itemgauntlets04",
+              "type": "Hands",
+              "armorClass": "Cloth",
+              "ilvl": 40,
+              "lvl": 35,
+              "armor": 33,
+              "price": 0.2136,
+              "stats": {
+                "stats": {
+                  "Strength": 8,
+                  "Intellect": 8
+                }
+              },
+              "droppedBy": [
+                "Venture Co. Tinkerer"
+              ]
+            },
+            {
+              "rarity": "Uncommon",
+              "name": "Dread Mage Hat",
+              "icon": "itemhelmet14",
+              "type": "Head",
+              "armorClass": "Cloth",
+              "ilvl": 30,
+              "lvl": 1,
+              "armor": 35,
+              "price": 0.1285,
+              "stats": {
+                "stats": {
+                  "Intellect": 7,
+                  "Spirit": 7
+                }
+              }
             }
           ],
           "bags": [
@@ -181,16 +219,20 @@
           }
         }
       },
-      "currentSite": "Kargath",
+      "currentSite": "Thunder Ridge",
       "siteProgress": {
         "Northshire Valley": 3,
-        "Detention Block": 2
+        "Detention Block": 2,
+        "Mirage Flats": 1,
+        "Frozen Crossing": 1
       },
       "commonsKilled": {
         "Young Wolf": 1,
         "Kobold Vermin": 2,
         "Anvilrage Overseer": 1,
-        "Bloodhound": 1
+        "Bloodhound": 1,
+        "Giant Buzzard": 1,
+        "Snow Tracker Wolf": 1
       },
       "raresKilled": {},
       "elitesKilled": {
@@ -328,7 +370,7 @@
         "Dustwind Gulch": 1,
         "Hammertoe's Digsite": 1,
         "Lethlor Ravine": 1,
-        "Mirage Flats": 1,
+        "Mirage Flats": 2,
         "The Dustbowl": 1,
         "The Maker's Terrace": 1,
         "Valley of Fangs": 1,
@@ -440,7 +482,7 @@
         "Ice Flow Lake": 1,
         "Misty Pine Refuge": 1,
         "Shimmer Ridge": 1,
-        "Frozen Crossing": 1,
+        "Frozen Crossing": 2,
         "The Grizzled Den": 1,
         "The Tundrid Hills": 1,
         "Bladefist Bay": 1,
@@ -456,7 +498,7 @@
         "Scuttle Coast": 1,
         "Skull Rock": 1,
         "Dustwind Cave": 1,
-        "Thunder Ridge": 1,
+        "Thunder Ridge": 3,
         "Tiragarde Keep": 1,
         "Rocky Desert": 1,
         "Valley of Trials": 1,
@@ -1036,7 +1078,7 @@
         "The Coil": 1,
         "Raynewood Retreat": 1,
         "Ravenholdt Manor": 1,
-        "Stormwind City": 1,
+        "Stormwind City": 7,
         "Grove of the Ancients": 1,
         "Go'Shek Farm": 1,
         "Hillsbrad": 1,
@@ -1073,14 +1115,14 @@
         "Nijel's Point": 1,
         "Thalanaar": 1,
         "Stonetalon Peak": 1,
-        "Ironforge": 1,
+        "Ironforge": 6,
         "Thelsamar": 1,
         "Farstrider Lodge": 1,
         "Dun Garok": 1,
         "Kharanos": 1,
         "Anvilmar": 1,
         "Algaz Station": 1,
-        "Orgrimmar": 1,
+        "Orgrimmar": 11,
         "The Den": 1,
         "Razor Hill": 1,
         "Zoram'gar Outpost": 1,
@@ -1088,7 +1130,7 @@
         "Bloodvenom Post": 1,
         "Valormok": 1,
         "The Mor'shan Rampart": 1,
-        "Grom'gol Base Camp": 1,
+        "Grom'gol Base Camp": 6,
         "Splintertree Post": 1,
         "Kargath": 4,
         "Stonard": 1,
@@ -1105,7 +1147,7 @@
         "Freewind Post": 1,
         "Sun Rock Retreat": 1,
         "Ghost Walker Post": 1,
-        "Undercity": 1,
+        "Undercity": 2,
         "The Bulwark": 1,
         "Shadow Grave": 1,
         "Brill": 1,
@@ -1164,17 +1206,24 @@
         "Ruins of Alterac": 1,
         "Scarlet Monastery Grounds": 1,
         "Jaedenar Grounds": 1,
-        "Alcaz Island": 1
+        "Alcaz Island": 1,
+        "": 2
       },
       "unlockedAreas": [
         "Halls of the Law"
       ],
+      "banks": {
+        "Orgrimmar": {
+          "items": [],
+          "bags": []
+        }
+      },
       "buyback": [],
       "startDate": "2024-04-08T14:45:01.3565917+02:00",
-      "lastLoaded": "2024-04-10T03:30:20.6752203+02:00",
-      "lastPlayed": "2024-04-10T03:31:18.5942101+02:00",
+      "lastLoaded": "2024-04-11T12:32:11.5606263+02:00",
+      "lastPlayed": "2024-04-11T12:35:42.7430257+02:00",
       "deathInfo": {},
-      "timePlayed": "01:31:16.9265689",
+      "timePlayed": "02:04:05.9272337",
       "lastVisitedTalents": 1
     },
     {

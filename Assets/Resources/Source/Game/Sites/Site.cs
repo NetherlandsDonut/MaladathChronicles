@@ -155,9 +155,9 @@ public class Site
     }
 
     //Lead provided in the argument path
-    public static void LeadPath(SitePath path)  
+    public static void LeadPath(SitePath path, bool hidden = false)  
     {
-        if (path != null) pathsDrawn.Add(path.DrawPath());
+        if (path != null) pathsDrawn.Add(path.DrawPath(hidden));
     }
 
     public void ExecutePath(string siteType)

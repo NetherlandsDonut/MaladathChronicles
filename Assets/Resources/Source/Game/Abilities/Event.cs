@@ -369,13 +369,17 @@ public class Event
                         list.Add(possible[random.Next(possible.Count)]);
                         possible.Remove(list.Last());
                     }
+                    int shatterDensity = effect.ContainsKey("ElementShatterDensity") ? int.Parse(effect["ElementShatterDensity"]) : 1;
+                    double shatterDegree = effect.ContainsKey("ElementShatterDegree") ? double.Parse(effect["ElementShatterDegree"].Replace(".", ",")) : 8;
+                    double shatterSpeed = effect.ContainsKey("ElementShatterSpeed") ? double.Parse(effect["ElementShatterSpeed"].Replace(".", ",")) : 5;
                     foreach (var e in list)
                     {
                         var newValue = 0;
                         do newValue = to == "Random" ? random.Next(11, 21) : board.ResourceReverse(to);
                         while (newValue == board.field[e.Item1, e.Item2]);
                         board.field[e.Item1, e.Item2] = newValue;
-                        SpawnShatter(10, 9, board.window.LBRegionGroup.regions[e.Item2].bigButtons[e.Item1].transform.position + new Vector3(-17.5f, -17.5f), Board.boardButtonDictionary[board.field[e.Item1, e.Item2]]);
+                        for (int i = 0; i < shatterDensity; i++)
+                            SpawnShatter(shatterSpeed, shatterDegree, board.window.LBRegionGroup.regions[e.Item2].bigButtons[e.Item1].transform.position + new Vector3(-17.5f, -17.5f), Board.boardButtonDictionary[board.field[e.Item1, e.Item2]]);
                     }
                 }
             }

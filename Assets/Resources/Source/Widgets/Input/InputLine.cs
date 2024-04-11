@@ -137,6 +137,32 @@ public class InputLine : MonoBehaviour
                 Respawn("ObjectManagerEventEffect");
             }
         }
+        else if (foo == elementShatterDegree)
+        {
+            if (CDesktop.windows.Exists(x => x.title == "ObjectManagerEventEffect"))
+            {
+                if (int.Parse(foo.Value()) > 100) foo.Set("100");
+                eventEdit.effects[selectedEffect]["ElementShatterDegree"] = foo.Value();
+                Respawn("ObjectManagerEventEffect");
+            }
+        }
+        else if (foo == elementShatterDensity)
+        {
+            if (CDesktop.windows.Exists(x => x.title == "ObjectManagerEventEffect"))
+            {
+                if (int.Parse(foo.Value()) > 100) foo.Set("100");
+                eventEdit.effects[selectedEffect]["ElementShatterDensity"] = foo.Value();
+                Respawn("ObjectManagerEventEffect");
+            }
+        }
+        else if (foo == elementShatterSpeed)
+        {
+            if (CDesktop.windows.Exists(x => x.title == "ObjectManagerEventEffect"))
+            {
+                eventEdit.effects[selectedEffect]["ElementShatterSpeed"] = foo.Value();
+                Respawn("ObjectManagerEventEffect");
+            }
+        }
         else if (foo == resourceAmount)
         {
             if (CDesktop.windows.Exists(x => x.title == "ObjectManagerEventEffect"))
