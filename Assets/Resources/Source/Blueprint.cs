@@ -1267,10 +1267,7 @@ public class Blueprint
                     CloseDesktop("SpellbookScreen");
                     CloseDesktop("EquipmentScreen");
                     if (CDesktop.title != "BestiaryScreen")
-                    {
-                        PlaySound("DesktopInstanceOpen");
                         SpawnDesktopBlueprint("BestiaryScreen");
-                    }
                     else
                     {
                         CloseDesktop(CDesktop.title);
