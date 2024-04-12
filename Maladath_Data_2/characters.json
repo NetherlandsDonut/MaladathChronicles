@@ -46,13 +46,13 @@
             "ability": "Frostbolt"
           },
           {
-            "ability": "Freezing Nova"
-          },
-          {
             "ability": "Blizzard"
           },
           {
             "ability": "Blazing Barrier"
+          },
+          {
+            "ability": "Freezing Nova"
           }
         ],
         "stats": {
@@ -238,7 +238,7 @@
           }
         }
       },
-      "currentSite": "Plaguewood",
+      "currentSite": "Blackrock Pass",
       "siteProgress": {
         "Northshire Valley": 3,
         "Detention Block": 2,
@@ -437,7 +437,7 @@
         "Kazzak's Seat": 1,
         "The Tainted Scar": 1,
         "Altar of Storms": 1,
-        "Blackrock Pass": 1,
+        "Blackrock Pass": 2,
         "Blackrock Stronghold": 1,
         "Gates of Blackrock": 1,
         "Draco'dar": 1,
@@ -1245,10 +1245,10 @@
       },
       "buyback": [],
       "startDate": "2024-04-08T14:45:01.3565917+02:00",
-      "lastLoaded": "2024-04-11T19:51:14.5609576+02:00",
-      "lastPlayed": "2024-04-11T19:55:05.1729102+02:00",
+      "lastLoaded": "2024-04-12T15:13:32.4933888+02:00",
+      "lastPlayed": "2024-04-12T15:14:18.8809804+02:00",
       "deathInfo": {},
-      "timePlayed": "03:13:26.4567361",
+      "timePlayed": "03:15:10.0592058",
       "lastVisitedTalents": 1
     },
     {

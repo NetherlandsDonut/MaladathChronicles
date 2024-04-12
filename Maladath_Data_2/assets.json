@@ -285,7 +285,9 @@
     "StepWood2.ogg",
     "StepWood3.ogg",
     "StepWood4.ogg",
-    "StepWood5.ogg"
+    "StepWood5.ogg",
+    "TramStart.ogg",
+    "TramStop.ogg"
   ],
   "itemIcons": [
     "ItemAmmoArrow01.png",

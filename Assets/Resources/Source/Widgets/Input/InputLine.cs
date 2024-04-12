@@ -543,14 +543,27 @@ public class InputLine : MonoBehaviour
             }
             else if (foo.Value().StartsWith("tele"))
             {
-                var site = Site.FindSite(x => x.name.ToLower() == foo.Value().Substring(5).ToLower());
+                var site = Site.FindSite(x => x.x != 0 && x.y != 0 && x.name.ToLower().Contains(foo.Value().Substring(5).ToLower()));
                 if (site != null)
                 {
+                    var prev = currentSave.currentSite;
                     currentSave.currentSite = site.name;
                     if (!currentSave.siteVisits.ContainsKey(site.name))
                         currentSave.siteVisits.Add(site.name, 1);
                     CDesktop.cameraDestination = new Vector2(site.x, site.y) * 19;
+                    Respawn("Site: " + prev);
+                    if (!currentSave.siteVisits.ContainsKey(site.name))
+                    {
+                        currentSave.siteVisits.Add(site.name, 0);
+                        Sound.PlaySound("DesktopZoneDiscovered", 0.3f);
+                        currentSave.player.ReceiveExperience(20);
+                    }
                     Respawn("Site: " + site.name);
+                    foreach (var connection in SitePath.paths.FindAll(x => x.sites.Contains(site.name)))
+                    {
+                        var didRespawn = Respawn("Site: " + connection.sites.Find(x => x != site.name));
+                        if (!didRespawn) CDesktop.LBWindow.GetComponentsInChildren<Renderer>().ToList().ForEach(x => x.gameObject.AddComponent<FadeIn>());
+                    }
                     CDesktop.LockScreen();
                 }
             }

@@ -4,7 +4,7 @@
     "category": "Humanoid",
     "subcategory": "Human",
     "kind": "Common",
-    "portrait": "PortraitChicken",
+    "portrait": "PortraitBlackDragonSpawn",
     "vitality": 1.0,
     "abilities": {}
   },
@@ -13,7 +13,7 @@
     "category": "Humanoid",
     "subcategory": "Human",
     "kind": "Common",
-    "portrait": "PortraitChicken",
+    "portrait": "PortraitBlackwingGuardsman",
     "vitality": 1.0,
     "abilities": {}
   },
@@ -22,7 +22,7 @@
     "category": "Humanoid",
     "subcategory": "Human",
     "kind": "Common",
-    "portrait": "PortraitChicken",
+    "portrait": "PortraitDarkIronArcanasmith",
     "vitality": 1.0,
     "abilities": {}
   },
@@ -31,7 +31,7 @@
     "category": "Humanoid",
     "subcategory": "Human",
     "kind": "Common",
-    "portrait": "PortraitChicken",
+    "portrait": "PortraitFireElemental",
     "vitality": 1.0,
     "abilities": {}
   },

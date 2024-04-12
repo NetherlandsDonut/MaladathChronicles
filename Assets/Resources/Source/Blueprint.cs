@@ -1261,20 +1261,20 @@ public class Blueprint
                         PlaySound("DesktopTalentScreenClose");
                     }
                 });
-                AddSmallButton("MenuCompletion", (h) =>
+                AddSmallButton(CDesktop.title == "BestiaryScreen" ? "OtherClose" : "MenuCompletion", (h) =>
                 {
                     CloseDesktop("TalentScreen");
                     CloseDesktop("SpellbookScreen");
                     CloseDesktop("EquipmentScreen");
                     if (CDesktop.title != "BestiaryScreen")
                     {
-                        PlaySound("DesktopTalentScreenOpen");
+                        PlaySound("DesktopInstanceOpen");
                         SpawnDesktopBlueprint("BestiaryScreen");
                     }
                     else
                     {
                         CloseDesktop(CDesktop.title);
-                        PlaySound("DesktopInstanceOpen");
+                        PlaySound("DesktopInstanceClose");
                     }
                 });
             });
@@ -2611,6 +2611,8 @@ public class Blueprint
         }),
         new("Console", () => {
             SetAnchor(Top);
+            if (CDesktop.windows.Exists(x => x.title == "MapToolbar"))
+                DisableShadows();
             AddRegionGroup();
             SetRegionGroupWidth(638);
             AddPaddingRegion(() =>
@@ -7451,7 +7453,10 @@ public class Blueprint
             AddHotkey(BackQuote, () =>
             {
                 if (SpawnWindowBlueprint("Console") != null)
+                {
+                    PlaySound("DesktopTooltipShow", 0.2f);
                     CDesktop.LBWindow.LBRegionGroup.LBRegion.inputLine.Activate();
+                }
             });
             AddHotkey(Escape, () =>
             {
@@ -7460,7 +7465,7 @@ public class Blueprint
                     PlaySound("DesktopButtonClose");
                     SpawnWindowBlueprint("TitleScreenMenu");
                 }
-                if (CloseWindow("CharacterCreation"))
+                else if (CloseWindow("CharacterCreation"))
                 {
                     PlaySound("DesktopButtonClose");
                     CloseWindow("CharacterCreationRightSide");
@@ -7468,10 +7473,9 @@ public class Blueprint
                     SpawnWindowBlueprint("CharacterInfo");
                     SpawnWindowBlueprint("TitleScreenSingleplayer");
                 }
-                else
+                else if (CloseWindow("TitleScreenSingleplayer"))
                 {
                     PlaySound("DesktopButtonClose");
-                    CloseWindow("TitleScreenSingleplayer");
                     CloseWindow("CharacterRoster");
                     CloseWindow("CharacterInfo");
                     CloseWindow("RealmRoster");
@@ -7522,7 +7526,10 @@ public class Blueprint
             AddHotkey(BackQuote, () =>
             {
                 if (SpawnWindowBlueprint("Console") != null)
+                {
+                    PlaySound("DesktopTooltipShow", 0.2f);
                     CDesktop.LBWindow.LBRegionGroup.LBRegion.inputLine.Activate();
+                }
             });
             AddHotkey(L, () => { SpawnWindowBlueprint("ItemDrop"); });
 
@@ -7668,33 +7675,6 @@ public class Blueprint
                     PlaySound("DesktopInstanceClose");
                     CloseDesktop("Instance");
                 }
-            });
-            AddHotkey(BackQuote, () =>
-            {
-                if (area == null) return;
-                if (area.commonEncounters != null)
-                    foreach (var encounter in area.commonEncounters)
-                        if (!races.Exists(x => x.name == encounter.who))
-                            races.Insert(0, new Race()
-                            {
-                                name = encounter.who,
-                                abilities = new(),
-                                kind = "Common",
-                                portrait = "PortraitChicken",
-                                vitality = 1.0,
-                            });
-                if (area.eliteEncounters != null)
-                    foreach (var encounter in area.eliteEncounters)
-                        if (!races.Exists(x => x.name == encounter.who))
-                            races.Insert(0, new Race()
-                            {
-                                name = encounter.who,
-                                abilities = new(),
-                                kind = "Elite",
-                                portrait = "PortraitCow",
-                                vitality = 1.0,
-                            });
-                SpawnDesktopBlueprint("ObjectManagerRaces");
             });
         }),
         new("Complex", () =>
