@@ -223,8 +223,6 @@ public class Desktop : MonoBehaviour
                     }
                     else
                     {
-                        //if (queuedPath[0].Item1.means == "Tram" && queuedPath[0].Item1.points[0].Item1 == queuedPath[0].Item2[0].transform.position.x && queuedPath[0].Item1.points[0].Item1 == queuedPath[0].Item2[0].transform.position.x)
-                        //    PlaySound("TramStart");
                         if (queuedPath[0].Item2.Count % 2 == 0 && queuedPath[0].Item1.means == "Land")
                             PlaySound("StepStone" + random.Next(1, 6));
                         Destroy(queuedPath[0].Item2.First(x => x.name == "PathDot").gameObject);
@@ -232,7 +230,11 @@ public class Desktop : MonoBehaviour
                         if (queuedPath[0].Item2.Count == 0)
                         {
                             if (queuedPath[0].Item1.means == "Tram")
-                                PlaySound("TramStop");
+                                PlaySound("TramStop", 0.4f);
+                            else if (queuedPath[0].Item1.means == "Zeppelin")
+                                PlaySound("ZeppelinStop", 0.25f);
+                            else if (queuedPath[0].Item1.means == "Ship")
+                                PlaySound("ShipStop", 0.25f);
                             queuedPath.RemoveAt(0);
                         }
                         if (queuedPath.Count == 0)
