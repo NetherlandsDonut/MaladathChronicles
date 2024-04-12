@@ -104,6 +104,9 @@ public class Item
     //Faction that this item belongs to
     public string faction;
 
+    //Source where this item can be gotten from
+    public string source;
+
     //Reputation standing required from the player to use this item
     public string reputationRequired;
     
@@ -124,6 +127,12 @@ public class Item
 
     //Amount of block power provided to the wearer
     public int block;
+
+    //Amount of this item
+    public int amount;
+
+    //Max amount of this item per stack
+    public int maxStack;
 
     //List of abilities provided to the wearer of this item
     public Dictionary<string, int> abilities;
@@ -584,7 +593,7 @@ public class Item
                 });
             }
         }
-        if (item.lvl > 0)
+        if (item.lvl > 1)
             AddHeaderRegion(() =>
             {
                 AddLine("Required level: ", "DarkGray");

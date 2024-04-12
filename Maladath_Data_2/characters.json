@@ -7,7 +7,7 @@
       "player": {
         "level": 17,
         "unspentTalentPoints": 2,
-        "experience": 2379,
+        "experience": 6804,
         "name": "Arlissa",
         "race": "Human",
         "spec": "Mage",
@@ -52,7 +52,7 @@
             "ability": "Blizzard"
           },
           {
-            "ability": "Ice Lance"
+            "ability": "Blazing Barrier"
           }
         ],
         "stats": {
@@ -245,7 +245,7 @@
         "Mirage Flats": 1,
         "Frozen Crossing": 1,
         "Thunder Ridge": 2,
-        "Plaguewood": 2
+        "Plaguewood": 3
       },
       "commonsKilled": {
         "Young Wolf": 1,
@@ -256,7 +256,8 @@
         "Snow Tracker Wolf": 1,
         "Thunder Lizard": 2,
         "Scourge Warder": 1,
-        "Putrid Gargoyle": 1
+        "Putrid Gargoyle": 1,
+        "Hate Shrieker": 1
       },
       "raresKilled": {},
       "elitesKilled": {
@@ -266,7 +267,7 @@
         "Northshire Abbey": 2,
         "Northshire Valley": 4,
         "Echo Ridge Mine": 1,
-        "Plaguewood": 13,
+        "Plaguewood": 16,
         "Terrordale": 0,
         "Terrorweb Tunnel": 1,
         "Thondroril River": 0,
@@ -1244,10 +1245,10 @@
       },
       "buyback": [],
       "startDate": "2024-04-08T14:45:01.3565917+02:00",
-      "lastLoaded": "2024-04-11T15:05:08.0066503+02:00",
-      "lastPlayed": "2024-04-11T15:06:06.2726491+02:00",
+      "lastLoaded": "2024-04-11T19:51:14.5609576+02:00",
+      "lastPlayed": "2024-04-11T19:55:05.1729102+02:00",
       "deathInfo": {},
-      "timePlayed": "03:09:35.8447835",
+      "timePlayed": "03:13:26.4567361",
       "lastVisitedTalents": 1
     },
     {

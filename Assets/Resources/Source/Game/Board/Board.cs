@@ -239,7 +239,7 @@ public class Board
                 SwitchDesktop("HostileArea");
             CDesktop.RespawnAll();
             var directDrop = Race.races.Find(x => x.name == enemy.race).droppedItems.Select(x => Item.GetItem(x)).ToList();
-            var worldDrop = Item.items.FindAll(x => x.lvl >= enemy.level - 6 && x.lvl <= enemy.level && x.type != "Miscellaneous");
+            var worldDrop = Item.items.FindAll(x => x.lvl >= enemy.level - 6 && x.lvl <= enemy.level && x.source == "Rare Drop");
             var instance = area.instancePart ? SiteInstance.instances.Find(x => x.wings.Any(y => y.areas.Any(z => z["AreaName"] == area.name))) : null;
             var zoneDrop = instance == null || instance.zoneDrop == null ? new() : Item.items.FindAll(x => instance.zoneDrop.Contains(x.name));
             var everything = zoneDrop.Concat(worldDrop).Where(x => x.CanEquip(currentSave.player));
@@ -259,8 +259,8 @@ public class Board
                     results.items.Add(dropBlue[random.Next(dropBlue.Count)].Copy<Item>());
                 else if (dropGreen.Count > 0 && Roll(10))
                     results.items.Add(dropGreen[random.Next(dropGreen.Count)].Copy<Item>());
-                //else if (dropWhite.Count > 0 && Roll(5))
-                //    results.items.Add(dropWhite[random.Next(dropWhite.Count)].Copy<Item>());
+                else if (dropWhite.Count > 0 && Roll(5))
+                    results.items.Add(dropWhite[random.Next(dropWhite.Count)].Copy<Item>());
                 else if (dropGray.Count > 0 && Roll(3))
                     results.items.Add(dropGray[random.Next(dropGray.Count)].Copy<Item>());
             }

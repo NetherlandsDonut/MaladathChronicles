@@ -1059,7 +1059,12 @@ public class Blueprint
             AddHeaderRegion(
                 () =>
                 {
-                    AddLine(Board.board.enemy.name + "'s Loot", "", "Center");
+                    AddLine(Board.board.enemy.name + "'s Loot");
+                    AddSmallButton("OtherClose", (h) =>
+                    {
+                        PlaySound("DesktopInventoryClose");
+                        CloseDesktop("CombatResultsLoot");
+                    });
                 }
             );
         }),

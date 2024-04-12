@@ -99,7 +99,7 @@ public class Entity
             experience -= ExperienceNeeded();
             level++;
             unspentTalentPoints++;
-            PlaySound("DesktopLevelUp");
+            PlaySound("DesktopLevelUp", 0.3f);
         }
         Respawn("ExperienceBar", true);
     }

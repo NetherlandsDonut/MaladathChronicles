@@ -4133,7 +4133,7 @@
     ],
     "eliteEncounters": [
       {
-        "who": "Ghamoo Ra",
+        "who": "Ghamoo-ra",
         "levelMin": 25
       },
       {
@@ -4145,7 +4145,7 @@
     "progression": [
       {
         "type": "Boss",
-        "bossName": "Ghamoo Ra",
+        "bossName": "Ghamoo-ra",
         "point": 2
       },
       {
