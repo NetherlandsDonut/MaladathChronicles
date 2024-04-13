@@ -424,3 +424,22 @@ v0.4.25
           Added shatter params to ChangeElements effect
 ```
 </details>
+
+<details>
+
+<summary>Version history for <b>v0.5</b></summary>
+
+```
+v0.5.0
+    12.04 Added sounds for ship, zeppelin and tram travel
+          Added source information to items
+          Added button to close the loot window
+          Made cursor thicker
+          Fixed journal opening from toolbar playing sound twice
+          Fixed journal icon not changing on opening journal
+          Fixed stacked shadow from console window
+          Fixed Ghamoo-ra not having any drop
+    13.04 Added dynamic footsteps sound during travel
+          Added stacking items
+```
+</details>
