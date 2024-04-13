@@ -58,7 +58,7 @@ public class SaveGame
     public Dictionary<string, Inventory> banks;
 
     //List of items available for buying back from vendors
-    public List<Item> buyback;
+    public Inventory buyback;
 
     //Date of the character creation
     public DateTime startDate;

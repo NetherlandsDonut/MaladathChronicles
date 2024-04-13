@@ -254,32 +254,35 @@ public class Board
             if (equippable.Count + notEquippable.Count == 0)
             {
                 if (dropPurple.Count > 0 && Roll(0.05))
-                    results.items.Add(dropPurple[random.Next(dropPurple.Count)].Copy<Item>());
+                    results.inventory.AddItem(dropPurple[random.Next(dropPurple.Count)].CopyItem());
                 else if (dropBlue.Count > 0 && Roll(1))
-                    results.items.Add(dropBlue[random.Next(dropBlue.Count)].Copy<Item>());
+                    results.inventory.AddItem(dropBlue[random.Next(dropBlue.Count)].CopyItem());
                 else if (dropGreen.Count > 0 && Roll(10))
-                    results.items.Add(dropGreen[random.Next(dropGreen.Count)].Copy<Item>());
+                    results.inventory.AddItem(dropGreen[random.Next(dropGreen.Count)].CopyItem());
                 else if (dropWhite.Count > 0 && Roll(5))
-                    results.items.Add(dropWhite[random.Next(dropWhite.Count)].Copy<Item>());
+                    results.inventory.AddItem(dropWhite[random.Next(dropWhite.Count)].CopyItem());
                 else if (dropGray.Count > 0 && Roll(3))
-                    results.items.Add(dropGray[random.Next(dropGray.Count)].Copy<Item>());
+                    results.inventory.AddItem(dropGray[random.Next(dropGray.Count)].CopyItem());
             }
             else
             {
                 var item = equippable.Count > 0 ? equippable[random.Next(equippable.Count)] : notEquippable[random.Next(notEquippable.Count)];
-                results.items.Add(item.Copy<Item>());
+                results.inventory.AddItem(item.CopyItem());
             }
             if (dropOther.Count > 2 && Roll(60))
             {
-                results.items.Add(dropOther[random.Next(dropOther.Count)].Copy<Item>());
-                dropOther.Remove(results.items.Last());
-                if (Roll(40)) results.items.Add(dropOther[random.Next(dropOther.Count)].Copy<Item>());
+                results.inventory.AddItem(dropOther[random.Next(dropOther.Count)].CopyItem());
+                dropOther.Remove(results.inventory.items.Last());
+                if (Roll(40)) results.inventory.AddItem(dropOther[random.Next(dropOther.Count)].CopyItem());
             }
             else if (dropOther.Count > 1 && Roll(50))
-                results.items.Add(dropOther[random.Next(dropOther.Count)].Copy<Item>());
+                results.inventory.AddItem(dropOther[random.Next(dropOther.Count)].CopyItem());
             else if (dropOther.Count > 0 && Roll(40))
-                results.items.Add(dropOther[random.Next(dropOther.Count)].Copy<Item>());
-            results.items.ForEach(x => x.SetRandomEnchantment());
+                results.inventory.AddItem(dropOther[random.Next(dropOther.Count)].CopyItem());
+            results.inventory.AddItem(Item.items.Find(x => x.name == "Linen Cloth").CopyItem());
+            results.inventory.AddItem(Item.items.Find(x => x.name == "Linen Cloth").CopyItem());
+            results.inventory.AddItem(Item.items.Find(x => x.name == "Linen Cloth").CopyItem(2));
+            results.inventory.items.ForEach(x => x.SetRandomEnchantment());
             chartPage = "Damage Dealt";
             currentSave.player.ReceiveExperience(board.results.experience);
             SpawnDesktopBlueprint("CombatResults");

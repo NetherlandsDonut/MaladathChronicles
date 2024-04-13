@@ -25,7 +25,7 @@ public class LineText : MonoBehaviour
         line.texts.Add(this);
     }
 
-    public void Initialise(FallingText fallingtext, string text, string color)
+    public void Initialise(FloatingText fallingtext, string text, string color)
     {
         this.color = color;
         this.text = text;

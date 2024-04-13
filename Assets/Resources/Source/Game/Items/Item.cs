@@ -353,6 +353,8 @@ public class Item
         );
         if (settings.rarityIndicators.Value())
             AddBigButtonOverlay("OtherRarity" + item.rarity + (settings.bigRarityIndicators.Value() ? "Big" : ""), 0, 2);
+        if (item.amount > 1)
+            SpawnFloatingText(CDesktop.LBWindow.LBRegionGroup.LBRegion.transform.position + new Vector3(32, -27) + new Vector3(38, 0) * (currentSave.banks[town.name].items.IndexOf(item) % 5), item.amount + "", "", "Right");
     }
 
     public static void PrintVendorItem(Item item)
@@ -365,7 +367,7 @@ public class Item
                 {
                     PlaySound("DesktopTransportPay");
                     var buyback = CDesktop.windows.Exists(x => x.title == "VendorBuyback");
-                    if (buyback) currentSave.buyback.Remove(item);
+                    if (buyback) currentSave.buyback.items.Remove(item);
                     currentSave.player.inventory.items.Add(item);
                     currentSave.player.inventory.money -= item.price * 4;
                     Respawn("Inventory");
@@ -380,6 +382,8 @@ public class Item
         );
         if (settings.rarityIndicators.Value())
             AddBigButtonOverlay("OtherRarity" + item.rarity + (settings.bigRarityIndicators.Value() ? "Big" : ""), 0, 2);
+        if (item.amount > 1)
+            SpawnFloatingText(CDesktop.LBWindow.LBRegionGroup.LBRegion.transform.position + new Vector3(32, -27) + new Vector3(38, 0) * (currentSave.buyback.items.IndexOf(item) % 5), item.amount + "", "", "Right");
     }
 
     public static void PrintInventoryItem(Item item)
@@ -391,8 +395,8 @@ public class Item
                 if (CDesktop.title == "Vendor")
                 {
                     PlaySound("DesktopTransportPay");
-                    currentSave.buyback ??= new();
-                    currentSave.buyback.Add(item);
+                    currentSave.buyback ??= new(true);
+                    currentSave.buyback.AddItem(item);
                     currentSave.player.inventory.items.Remove(item);
                     currentSave.player.inventory.money += item.price;
                     Respawn("Inventory");
@@ -452,6 +456,8 @@ public class Item
             AddBigButtonOverlay(settings.newSlotIndicators.Value() ? "OtherItemNewSlot" : "OtherItemUpgrade", 0, 2);
         else if (settings.upgradeIndicators.Value() && item.CanEquip(currentSave.player) && currentSave.player.IsItemAnUpgrade(item))
             AddBigButtonOverlay("OtherItemUpgrade", 0, 2);
+        if (item.amount > 1)
+            SpawnFloatingText(CDesktop.LBWindow.LBRegionGroup.LBRegion.transform.position + new Vector3(32, -27) + new Vector3(38, 0) * (currentSave.player.inventory.items.IndexOf(item) % 5), item.amount + "", "", "Right");
     }
 
     public static void PrintLootItem(Item item)
@@ -459,17 +465,14 @@ public class Item
         AddBigButton(item.icon,
             (h) =>
             {
-                if (currentSave.player.inventory.items.Count < currentSave.player.inventory.BagSpace())
+                if (currentSave.player.inventory.CanAddItem(item))
                 {
                     PlaySound(item.ItemSound("PutDown"), 0.6f);
-                    currentSave.player.inventory.items.Add(item);
-                    Board.board.results.items.Remove(item);
+                    if (currentSave.player.inventory.AddItem(item))
+                        Board.board.results.inventory.items.Remove(item);
                     if (Board.board.results.exclusiveItems.Contains(item.name))
-                        Board.board.results.items.RemoveAll(x => Board.board.results.exclusiveItems.Contains(x.name));
-                    if (Board.board.results.items.Count == 0)
-                    {
-                        CloseDesktop(CDesktop.title);
-                    }
+                        Board.board.results.inventory.items.RemoveAll(x => Board.board.results.exclusiveItems.Contains(x.name));
+                    if (Board.board.results.inventory.items.Count == 0) CloseDesktop(CDesktop.title);
                     else
                     {
                         Respawn("Inventory");
@@ -498,6 +501,8 @@ public class Item
             AddBigButtonOverlay(settings.newSlotIndicators.Value() ? "OtherItemNewSlot" : "OtherItemUpgrade", 0, 2);
         else if (settings.upgradeIndicators.Value() && item.CanEquip(currentSave.player) && currentSave.player.IsItemAnUpgrade(item))
             AddBigButtonOverlay("OtherItemUpgrade", 0, 2);
+        if (item.amount > 1)
+            SpawnFloatingText(CDesktop.LBWindow.LBRegionGroup.LBRegion.transform.position + new Vector3(32, -27) + new Vector3(38, 0) * Board.board.results.inventory.items.IndexOf(item), item.amount + "", "", "Right");
     }
 
     public static void PrintItemTooltip(Item item, bool compare = false, double priceMultiplier = 1)
@@ -601,6 +606,13 @@ public class Item
             });
         if (item.price > 0)
             PrintPriceRegion(item.price * priceMultiplier);
+    }
+
+    public Item CopyItem(int amount = 1)
+    {
+        var newItem = this.Copy<Item>();
+        newItem.amount = amount;
+        return newItem;
     }
 
     public static Item GetItem(string name) => items.Find(x => x.name == name);

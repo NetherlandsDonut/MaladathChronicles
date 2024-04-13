@@ -639,16 +639,26 @@ public static class Root
         newObject.GetComponent<LineText>().Initialise(line, text, color == "" ? DefaultTextColorForRegion(line.region.backgroundType) : color);
     }
 
-    public static void SpawnFallingText(Vector2 position, string text = "", string color = "")
+    public static void SpawnFloatingText(Vector2 position, string text = "", string color = "", string align = "Center")
     {
         text ??= "";
-        var newObject = new GameObject("FallingText", typeof(FallingText));
+        var newObject = new GameObject("FloatingText", typeof(FloatingText));
+        newObject.transform.parent = CDesktop.LBWindow.LBRegionGroup.LBRegion.transform;
+        newObject.transform.localPosition = position;
+        var temp = newObject.GetComponent<FloatingText>();
+        temp.Initialise(text, color == "" ? "Gray" : color, align, false);
+    }
+
+    public static void SpawnFallingText(Vector2 position, string text = "", string color = "", string align = "Center")
+    {
+        text ??= "";
+        var newObject = new GameObject("FallingText", typeof(FloatingText));
         newObject.transform.parent = CDesktop.transform;
         newObject.transform.localPosition = position;
         newObject.AddComponent<Rigidbody2D>().gravityScale = 2.5f;
         newObject.AddComponent<Shatter>().Initiate(5);
-        var temp = newObject.GetComponent<FallingText>();
-        temp.Initialise(text, color == "" ? "Gray" : color);
+        var temp = newObject.GetComponent<FloatingText>();
+        temp.Initialise(text, color == "" ? "Gray" : color, align);
     }
 
     #endregion

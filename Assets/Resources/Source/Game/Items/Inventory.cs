@@ -8,14 +8,23 @@ using static Defines;
 public class Inventory
 {
     public Inventory() { bags ??= new(); items ??= new(); }
+    public Inventory(bool ignoreSpaceChecks)
+    {
+        this.ignoreSpaceChecks = ignoreSpaceChecks;
+        bags = new();
+        items = new();
+    }
     public Inventory(List<string> items)
     {
         bags = new();
         this.items = items.Select(x => Item.GetItem(x)).ToList();
-    } 
+    }
 
     //Amount of money in the bags
     public double money;
+
+    //If true, functions don't look at empty space in bags
+    public bool ignoreSpaceChecks;
 
     //List of all items contained in the bags
     public List<Item> items;
@@ -23,6 +32,36 @@ public class Inventory
     //Bags equipped in this inventory
     public List<Item> bags;
 
+    //Tells whether the player can fit the item in the inventory
+    public bool CanAddItem(Item item)
+    {
+        if (ignoreSpaceChecks) return true;
+        if (items.Count < BagSpace()) return true; 
+        var find = items.FindAll(x => x.name == item.name);
+        if (find.Count > 0) return find.Sum(x => x.maxStack - x.amount) > 0;
+        else return false;
+    }
+
+    //Adds item to the inventory and automatically fills stacks
+    public bool AddItem(Item item)
+    {
+        var find = items.FindAll(x => x.name == item.name);
+        foreach (var stack in find)
+        {
+            var free = stack.maxStack - stack.amount;
+            if (free > 0)
+                if (item.amount > free) (item.amount, stack.amount) = (item.amount - free, stack.maxStack);
+                else { (item.amount, stack.amount) = (0, stack.amount + item.amount); break; }
+        }
+        if (item.amount > 0 && (ignoreSpaceChecks || items.Count < BagSpace()))
+        {
+            items.Add(item.CopyItem(item.amount));
+            item.amount = 0;
+        }
+        return item.amount == 0;
+    }
+
+    //Returns the amount of bag space inventory has
     public int BagSpace()
     {
         return bags.Sum(x => x.bagSpace) + defines.backpackSpace;

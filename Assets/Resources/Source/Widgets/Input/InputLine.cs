@@ -600,7 +600,7 @@ public class InputLine : MonoBehaviour
             else if (foo.Value().StartsWith("additem"))
             {
                 var item = Item.items.Find(x => x.name.ToLower() == foo.Value()[8..].ToLower());
-                if (item != null) currentSave.player.inventory.items.Add(item);
+                if (item != null) currentSave.player.inventory.AddItem(item.CopyItem(1));
             }
             foo.Set("");
         }

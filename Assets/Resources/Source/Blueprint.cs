@@ -1676,7 +1676,7 @@ public class Blueprint
                     () =>
                     {
                         for (int j = 0; j < 5; j++)
-                            if (currentSave.buyback.Count > index * 5 + j) PrintVendorItem(currentSave.buyback[index * 5 + j]);
+                            if (currentSave.buyback.items.Count > index * 5 + j) PrintVendorItem(currentSave.buyback.items[index * 5 + j]);
                             else AddBigButton("OtherEmpty", (h) => { });
                     }
                 );
@@ -1838,12 +1838,36 @@ public class Blueprint
                 {
                     AddLine("I want to browse your goods.");
                 },
-                (h) => { });
+                (h) =>
+                {
+                    PlaySound("DesktopInventoryOpen");
+                    CloseWindow(h.window);
+                    CloseWindow("Town: " + town.name);
+                    SpawnWindowBlueprint("Vendor");
+                    SpawnWindowBlueprint("Inventory");
+                    Respawn("ExperienceBar");
+                });
                 AddButtonRegion(() =>
                 {
                     AddLine("I want to make this inn my home.");
                 },
                 (h) => { currentSave.player.homeLocation = town.name; });
+            }
+            else if (type.type == "Vendor")
+            {
+                AddButtonRegion(() =>
+                {
+                    AddLine("I want to browse your goods.");
+                },
+                (h) =>
+                {
+                    PlaySound("DesktopInventoryOpen");
+                    CloseWindow(h.window);
+                    CloseWindow("Town: " + town.name);
+                    SpawnWindowBlueprint("Vendor");
+                    SpawnWindowBlueprint("Inventory");
+                    Respawn("ExperienceBar");
+                });
             }
             else if (type.type == "Battlemaster")
             {
@@ -1949,6 +1973,17 @@ public class Blueprint
             });
             AddButtonRegion(() =>
             {
+                AddLine("By name", "Black");
+            },
+            (h) =>
+            {
+                currentSave.banks[town.name].items = currentSave.banks[town.name].items.OrderBy(x => x.amount).ToList();
+                CloseWindow("BankSort");
+                CDesktop.RespawnAll();
+                PlaySound("DesktopInventorySort", 0.2f);
+            });
+            AddButtonRegion(() =>
+            {
                 AddLine("By item power", "Black");
             },
             (h) =>
@@ -2007,6 +2042,17 @@ public class Blueprint
             });
             AddButtonRegion(() =>
             {
+                AddLine("By amount", "Black");
+            },
+            (h) =>
+            {
+                currentSave.banks[town.name].items = currentSave.banks[town.name].items.OrderBy(x => x.amount).ToList();
+                CloseWindow("BankSort");
+                CDesktop.RespawnAll();
+                PlaySound("DesktopInventorySort", 0.2f);
+            });
+            AddButtonRegion(() =>
+            {
                 AddLine("By item power", "Black");
             },
             (h) =>
@@ -2059,6 +2105,17 @@ public class Blueprint
             (h) =>
             {
                 currentSave.player.inventory.items = currentSave.player.inventory.items.OrderBy(x => x.name).ToList();
+                CloseWindow("InventorySort");
+                CDesktop.RespawnAll();
+                PlaySound("DesktopInventorySort", 0.2f);
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("By amount", "Black");
+            },
+            (h) =>
+            {
+                currentSave.player.inventory.items = currentSave.player.inventory.items.OrderBy(x => x.amount).ToList();
                 CloseWindow("InventorySort");
                 CDesktop.RespawnAll();
                 PlaySound("DesktopInventorySort", 0.2f);
@@ -2390,7 +2447,7 @@ public class Blueprint
             {
                 if (Board.board.results.result == "Won")
                 {
-                    if (Board.board.results.items.Count > 0)
+                    if (Board.board.results.inventory.items.Count > 0)
                         AddLine("Show Loot", "", "Center");
                     else AddLine("OK", "", "Center");
                 }
@@ -2405,7 +2462,7 @@ public class Blueprint
             (h) =>
             {
                 CloseDesktop("CombatResults");
-                if (Board.board.results.items.Count > 0)
+                if (Board.board.results.inventory.items.Count > 0)
                 {
                     PlaySound("DesktopInventoryOpen");
                     SpawnDesktopBlueprint("CombatResultsLoot");
@@ -2476,8 +2533,8 @@ public class Blueprint
                 () =>
                 {
                     for (int j = 0; j < 6; j++)
-                        if (j < Board.board.results.items.Count)
-                            PrintLootItem(Board.board.results.items[j]);
+                        if (j < Board.board.results.inventory.items.Count)
+                            PrintLootItem(Board.board.results.inventory.items[j]);
                         else AddBigButton("OtherEmpty", (h) => { });
                 }
             );

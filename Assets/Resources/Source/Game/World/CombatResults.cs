@@ -5,7 +5,7 @@ public class CombatResults
     public CombatResults(string result)
     {
         this.result = result;
-        items = new();
+        inventory = new(true);
         exclusiveItems = new();
     }
 
@@ -13,9 +13,7 @@ public class CombatResults
 
     public int experience;
 
-    public double money;
-
-    public List<Item> items;
+    public Inventory inventory;
 
     public List<string> exclusiveItems;
 }
