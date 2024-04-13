@@ -149,6 +149,7 @@ public class SitePath
     {
         List<SitePath> bestPath = null;
         var possiblePaths = new List<List<SitePath>>();
+        if (!pathsConnectedToSite.ContainsKey(from.name)) return null;
         possiblePaths = pathsConnectedToSite[from.name].Select(x => new List<SitePath> { x }).ToList();
         while (bestPath == null && possiblePaths.Count > 0) ContinuePaths();
         return bestPath;

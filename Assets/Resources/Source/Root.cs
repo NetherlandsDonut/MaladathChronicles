@@ -44,6 +44,7 @@ public static class Root
     public static int loadingScreenObjectLoadAim;
     public static List<Blueprint> loadSites;
 
+    public static string[,] groundData;
     public static System.Random random;
     public static int inputLineMarker;
     public static int keyStack;

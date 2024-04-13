@@ -105,22 +105,23 @@
             },
             {
               "rarity": "Uncommon",
-              "name": "Highborne Gloves",
-              "icon": "itemgauntlets17",
+              "name": "Engineering Gloves",
+              "icon": "itemgauntlets04",
               "type": "Hands",
               "armorClass": "Cloth",
-              "ilvl": 53,
-              "lvl": 48,
-              "armor": 43,
-              "price": 0.5536,
+              "ilvl": 40,
+              "lvl": 35,
+              "armor": 33,
+              "price": 0.2136,
               "stats": {
                 "stats": {
-                  "Strength": 3,
-                  "Agility": 5,
-                  "Intellect": 10,
-                  "Spirit": 10
+                  "Strength": 8,
+                  "Intellect": 8
                 }
-              }
+              },
+              "droppedBy": [
+                "Venture Co. Tinkerer"
+              ]
             }
           ],
           "bags": [
@@ -218,27 +219,26 @@
           },
           "Hands": {
             "rarity": "Uncommon",
-            "name": "Engineering Gloves",
-            "icon": "itemgauntlets04",
+            "name": "Highborne Gloves",
+            "icon": "itemgauntlets17",
             "type": "Hands",
             "armorClass": "Cloth",
-            "ilvl": 40,
-            "lvl": 35,
-            "armor": 33,
-            "price": 0.2136,
+            "ilvl": 53,
+            "lvl": 48,
+            "armor": 43,
+            "price": 0.5536,
             "stats": {
               "stats": {
-                "Strength": 8,
-                "Intellect": 8
+                "Strength": 3,
+                "Agility": 5,
+                "Intellect": 10,
+                "Spirit": 10
               }
-            },
-            "droppedBy": [
-              "Venture Co. Tinkerer"
-            ]
+            }
           }
         }
       },
-      "currentSite": "Ironforge",
+      "currentSite": "Kharanos",
       "siteProgress": {
         "Northshire Valley": 3,
         "Detention Block": 2,
@@ -507,7 +507,7 @@
         "Ice Flow Lake": 1,
         "Misty Pine Refuge": 1,
         "Shimmer Ridge": 1,
-        "Frozen Crossing": 2,
+        "Frozen Crossing": 3,
         "The Grizzled Den": 1,
         "The Tundrid Hills": 1,
         "Bladefist Bay": 1,
@@ -587,7 +587,7 @@
         "Brackwell Pumpkin Patch": 1,
         "Eastvale Logging Camp": 1,
         "Fargodeep Mine": 1,
-        "Crystal Lake": 1,
+        "Crystal Lake": 3,
         "Forest's Edge": 1,
         "Stone Cairn Lake": 1,
         "Heroes' Vigil": 1,
@@ -1103,13 +1103,13 @@
         "The Coil": 1,
         "Raynewood Retreat": 1,
         "Ravenholdt Manor": 1,
-        "Stormwind City": 11,
+        "Stormwind City": 13,
         "Grove of the Ancients": 1,
         "Go'Shek Farm": 1,
         "Hillsbrad": 1,
         "Dabyrie's Farmstead": 1,
         "Azurelode Mine": 1,
-        "Goldshire": 1,
+        "Goldshire": 2,
         "Lakeshire": 1,
         "Southshore": 2,
         "Darkshire": 1,
@@ -1140,11 +1140,11 @@
         "Nijel's Point": 1,
         "Thalanaar": 1,
         "Stonetalon Peak": 1,
-        "Ironforge": 8,
+        "Ironforge": 11,
         "Thelsamar": 1,
         "Farstrider Lodge": 1,
         "Dun Garok": 1,
-        "Kharanos": 1,
+        "Kharanos": 3,
         "Anvilmar": 1,
         "Algaz Station": 1,
         "Orgrimmar": 18,
@@ -1245,10 +1245,10 @@
       },
       "buyback": [],
       "startDate": "2024-04-08T14:45:01.3565917+02:00",
-      "lastLoaded": "2024-04-12T18:26:37.598213+02:00",
-      "lastPlayed": "2024-04-12T18:28:12.1707996+02:00",
+      "lastLoaded": "2024-04-12T18:32:07.983772+02:00",
+      "lastPlayed": "2024-04-12T18:37:30.6275534+02:00",
       "deathInfo": {},
-      "timePlayed": "03:16:44.6317924",
+      "timePlayed": "03:22:07.2755738",
       "lastVisitedTalents": 1
     },
     {

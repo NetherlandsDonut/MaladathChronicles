@@ -169,6 +169,37 @@ public class Starter : MonoBehaviour
         paths ??= new();
         Deserialize(ref defines, "defines", false, prefix);
         defines ??= new();
+        var file = Resources.Load<Sprite>("Sprites/Textures/Map/Ground").texture;
+        groundData = new string[file.width, file.height];
+        for (int i = 0; i < file.width; i++)
+            for (int j = 0; j < file.height; j++)
+            {
+                var color = (Color32)file.GetPixel(i, file.height - 1 - j);
+                if (color.r == 127 && color.g == 51 && color.b == 0)
+                    groundData[i, j] = "Dirt";
+                else if (color.r == 64 && color.g == 64 && color.b == 64)
+                    groundData[i, j] = "Stone";
+                else if (color.r == 10 && color.g == 124 && color.b == 0)
+                    groundData[i, j] = "Grass";
+                else if (color.r == 124 && color.g == 85 && color.b == 0)
+                    groundData[i, j] = "Wood";
+                else if (color.r == 0 && color.g == 24 && color.b == 124)
+                    groundData[i, j] = "Water";
+                else if (color.r == 128 && color.g == 128 && color.b == 128)
+                    groundData[i, j] = "Snow";
+                else if (color.r == 0 && color.g == 122 && color.b == 122)
+                    groundData[i, j] = "Ice";
+                else if (color.r == 114 && color.g == 88 && color.b == 88)
+                    groundData[i, j] = "Metal";
+                else if (color.r == 84 && color.g == 64 && color.b == 64)
+                    groundData[i, j] = "MetalGrate";
+                else if (color.r == 178 && color.g == 140 && color.b == 0)
+                    groundData[i, j] = "Sand";
+                else if (color.r == 60 && color.g == 79 && color.b == 42)
+                    groundData[i, j] = "Swamp";
+                else
+                    groundData[i, j] = "None";
+            }
 
         #endregion
 
@@ -176,7 +207,7 @@ public class Starter : MonoBehaviour
         //asset base information for in-game content to use such as music or textures
         #region Asset Database
 
-        #if (UNITY_EDITOR)
+#if (UNITY_EDITOR)
 
         var ambienceList = AssetDatabase.FindAssets("t:AudioClip Ambience", new[] { "Assets/Resources/Ambience/" }).Select(x => AssetDatabase.GUIDToAssetPath(x).Replace("Assets/Resources/Ambience/", "")).ToList();
         var soundList = AssetDatabase.FindAssets("t:AudioClip", new[] { "Assets/Resources/Sounds/" }).Select(x => AssetDatabase.GUIDToAssetPath(x).Replace("Assets/Resources/Sounds/", "")).ToList();

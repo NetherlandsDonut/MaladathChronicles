@@ -224,7 +224,7 @@ public class Desktop : MonoBehaviour
                     else
                     {
                         if (queuedPath[0].Item2.Count % 2 == 0 && queuedPath[0].Item1.means == "Land")
-                            PlaySound("StepStone" + random.Next(1, 6));
+                            PlaySound("Step" + groundData[Math.Abs((int)queuedPath[0].Item2[0].position.x / 19), Math.Abs((int)queuedPath[0].Item2[0].position.y / 19)] + random.Next(1, 6));
                         Destroy(queuedPath[0].Item2.First(x => x.name == "PathDot").gameObject);
                         queuedPath[0].Item2.RemoveAt(0);
                         if (queuedPath[0].Item2.Count == 0)
