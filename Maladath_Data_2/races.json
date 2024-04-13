@@ -1,8 +1,8 @@
 [
   {
     "name": "Death Talon Dragonspawn",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Dragonkin",
+    "subcategory": "Dragonspawn",
     "kind": "Common",
     "portrait": "PortraitBlackDragonSpawn",
     "vitality": 1.0,
@@ -11,7 +11,7 @@
   {
     "name": "Blackwing Legionnaire",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Orc",
     "kind": "Common",
     "portrait": "PortraitBlackwingGuardsman",
     "vitality": 1.0,
@@ -20,7 +20,7 @@
   {
     "name": "Doomforge Arcanasmith",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Dwarf",
     "kind": "Common",
     "portrait": "PortraitDarkIronArcanasmith",
     "vitality": 1.0,
@@ -28,8 +28,8 @@
   },
   {
     "name": "Burning Spirit",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Elemental",
+    "subcategory": "Elemental",
     "kind": "Common",
     "portrait": "PortraitFireElemental",
     "vitality": 1.0,

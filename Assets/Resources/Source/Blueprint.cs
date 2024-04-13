@@ -63,7 +63,7 @@ public class Blueprint
                 AddLine("", "Gray");
                 AddLine("Maladath", "Epic", "Center");
                 AddLine("Chronicles", "Epic", "Center");
-                AddLine("0.4.0", "Black", "Center");
+                AddLine("0.5.0", "Black", "Center");
                 AddLine("", "Gray");
                 AddLine("", "Gray");
                 AddLine("", "Gray");

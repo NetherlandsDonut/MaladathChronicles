@@ -13,7 +13,7 @@ public class SitePath
     public void Initialise()
     {
         if (means == null) means = "Land";
-        if (speed <= 0) speed = 10;
+        if (speed <= 0) speed = 6;
         var list = means == "Land" ? pathsConnectedToSite : transportationConnectedToSite;
         foreach (var site in sites)
             if (!list.ContainsKey(site))
