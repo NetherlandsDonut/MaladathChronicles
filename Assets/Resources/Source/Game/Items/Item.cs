@@ -336,13 +336,41 @@ public class Item
             null,
             (h) =>
             {
-                if (currentSave.player.inventory.items.Count < currentSave.player.inventory.BagSpace())
+                if (currentSave.player.inventory.CanAddItem(item))
                 {
-                    PlaySound(item.ItemSound("PickUp"), 0.6f);
-                    currentSave.player.inventory.items.Add(item);
-                    currentSave.banks[town.name].items.Remove(item);
-                    Respawn("Inventory");
-                    Respawn("Bank");
+                    if (item.amount > 1 && Input.GetKey(KeyCode.LeftShift))
+                    {
+                        String.splitAmount.Set("");
+                        SpawnWindowBlueprint("SplitItem");
+                        CDesktop.LBWindow.LBRegionGroup.LBRegion.inputLine.Activate();
+                        splitDelegate = () =>
+                        {
+                            var amount = int.Parse(String.splitAmount.value == "" ? "0" : String.splitAmount.value);
+                            if (amount <= 0) return;
+                            PlaySound(item.ItemSound("PickUp"), 0.6f);
+                            if (amount > item.amount) amount = item.amount;
+                            if (amount == item.amount)
+                            {
+                                currentSave.player.inventory.AddItem(item);
+                                currentSave.banks[town.name].items.Remove(item);
+                            }
+                            else
+                            {
+                                currentSave.player.inventory.AddItem(item.CopyItem(amount));
+                                item.amount -= amount;
+                            }
+                            Respawn("Inventory");
+                            Respawn("Bank");
+                        };
+                    }
+                    else
+                    {
+                        PlaySound(item.ItemSound("PickUp"), 0.6f);
+                        currentSave.player.inventory.AddItem(item);
+                        currentSave.banks[town.name].items.Remove(item);
+                        Respawn("Inventory");
+                        Respawn("Bank");
+                    }
                 }
             },
             (h) => () =>
@@ -363,7 +391,7 @@ public class Item
             null,
             (h) =>
             {
-                if (currentSave.player.inventory.items.Count < currentSave.player.inventory.BagSpace() && currentSave.player.inventory.money >= item.price * 4)
+                if (currentSave.player.inventory.CanAddItem(item) && currentSave.player.inventory.money >= item.price * 4)
                 {
                     PlaySound("DesktopTransportPay");
                     var buyback = CDesktop.windows.Exists(x => x.title == "VendorBuyback");
@@ -394,24 +422,83 @@ public class Item
             {
                 if (CDesktop.title == "Vendor")
                 {
-                    PlaySound("DesktopTransportPay");
-                    currentSave.buyback ??= new(true);
-                    currentSave.buyback.AddItem(item);
-                    currentSave.player.inventory.items.Remove(item);
-                    currentSave.player.inventory.money += item.price;
-                    Respawn("Inventory");
-                    CloseWindow("Vendor");
-                    Respawn("VendorBuyback");
+                    if (item.amount > 1 && Input.GetKey(KeyCode.LeftShift))
+                    {
+                        String.splitAmount.Set("");
+                        SpawnWindowBlueprint("SplitItem");
+                        CDesktop.LBWindow.LBRegionGroup.LBRegion.inputLine.Activate();
+                        splitDelegate = () =>
+                        {
+                            var amount = int.Parse(String.splitAmount.value == "" ? "0" : String.splitAmount.value);
+                            if (amount <= 0) return;
+                            PlaySound("DesktopTransportPay");
+                            if (amount > item.amount) amount = item.amount;
+                            currentSave.buyback ??= new(true);
+                            if (amount == item.amount)
+                            {
+                                currentSave.buyback.AddItem(item);
+                                currentSave.player.inventory.items.Remove(item);
+                            }
+                            else
+                            {
+                                currentSave.buyback.AddItem(item.CopyItem(amount));
+                                item.amount -= amount;
+                            }
+                            currentSave.player.inventory.money += item.price * amount;
+                            Respawn("Inventory");
+                            CloseWindow("Vendor");
+                            Respawn("VendorBuyback");
+                        };
+                    }
+                    else
+                    {
+                        PlaySound("DesktopTransportPay");
+                        currentSave.buyback ??= new(true);
+                        currentSave.buyback.AddItem(item);
+                        currentSave.player.inventory.items.Remove(item);
+                        currentSave.player.inventory.money += item.price * item.amount;
+                        Respawn("Inventory");
+                        CloseWindow("Vendor");
+                        Respawn("VendorBuyback");
+                    }
                 }
                 else if (CDesktop.windows.Exists(x => x.title == "Bank"))
                 {
-                    if (currentSave.banks[town.name].items.Count < currentSave.banks[town.name].BagSpace())
+                    if (currentSave.banks[town.name].CanAddItem(item))
                     {
-                        PlaySound(item.ItemSound("PutDown"), 0.6f);
-                        currentSave.banks[town.name].items.Add(item);
-                        currentSave.player.inventory.items.Remove(item);
-                        Respawn("Inventory");
-                        Respawn("Bank");
+                        if (item.amount > 1 && Input.GetKey(KeyCode.LeftShift))
+                        {
+                            String.splitAmount.Set("");
+                            SpawnWindowBlueprint("SplitItem");
+                            CDesktop.LBWindow.LBRegionGroup.LBRegion.inputLine.Activate();
+                            splitDelegate = () =>
+                            {
+                                var amount = int.Parse(String.splitAmount.value == "" ? "0" : String.splitAmount.value);
+                                if (amount <= 0) return;
+                                PlaySound(item.ItemSound("PutDown"), 0.6f);
+                                if (amount > item.amount) amount = item.amount;
+                                if (amount == item.amount)
+                                {
+                                    currentSave.banks[town.name].AddItem(item);
+                                    currentSave.player.inventory.items.Remove(item);
+                                }
+                                else
+                                {
+                                    currentSave.banks[town.name].AddItem(item.CopyItem(amount));
+                                    item.amount -= amount;
+                                }
+                                Respawn("Inventory");
+                                Respawn("Bank");
+                            };
+                        }
+                        else
+                        {
+                            PlaySound(item.ItemSound("PutDown"), 0.6f);
+                            currentSave.banks[town.name].AddItem(item);
+                            currentSave.player.inventory.items.Remove(item);
+                            Respawn("Inventory");
+                            Respawn("Bank");
+                        }
                     }
                 }
                 else

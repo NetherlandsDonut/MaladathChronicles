@@ -60,6 +60,7 @@ public class String
     public static String arcane = new() { inputType = Numbers };
     public static String lightning = new() { inputType = Numbers };
     public static String requiredLevel = new() { inputType = Numbers };
+    public static String splitAmount = new() { inputType = Numbers };
     public static String animationSpeed = new() { inputType = Decimal };
     public static String chance = new() { inputType = Numbers };
     public static String chanceBase = new() { inputType = Numbers };

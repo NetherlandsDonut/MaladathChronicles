@@ -308,6 +308,25 @@ public class Blueprint
                 CloseWindow("ConfirmItemDestroy");
             });
         }, true),
+        new("SplitItem", () => {
+            SetAnchor(-115, 146);
+            AddRegionGroup();
+            SetRegionGroupWidth(228);
+            AddHeaderRegion(() =>
+            {
+                AddLine("Enter amount to pick up:");
+            });
+            //AddPaddingRegion(() =>
+            //{
+            //    AddLine("Type");
+            //    AddText(" DELETE ", "DangerousRed");
+            //    AddText("to confirm deletion");
+            //});
+            AddPaddingRegion(() =>
+            {
+                AddInputLine(String.splitAmount);
+            });
+        }, true),
         new("CharacterInfo", () => {
             SetAnchor(TopLeft);
             AddRegionGroup();

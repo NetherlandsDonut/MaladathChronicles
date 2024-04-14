@@ -5,8 +5,8 @@
   "Whitemane": [
     {
       "player": {
-        "level": 1,
-        "experience": 293,
+        "level": 2,
+        "experience": 326,
         "name": "Abbigail",
         "race": "Human",
         "spec": "Mage",
@@ -20,7 +20,8 @@
           "Wand Proficiency": 1,
           "Fireball": 0,
           "Frostbolt": 0,
-          "Arcane Missiles": 0
+          "Arcane Missiles": 0,
+          "Scorch": 0
         },
         "actionBars": [
           {
@@ -31,6 +32,9 @@
           },
           {
             "ability": "Arcane Missiles"
+          },
+          {
+            "ability": "Scorch"
           }
         ],
         "stats": {
@@ -61,6 +65,21 @@
               "type": "Miscellaneous",
               "ilvl": 1,
               "maxStack": 1,
+              "stats": {
+                "stats": {}
+              }
+            },
+            {
+              "rarity": "Common",
+              "name": "Linen Cloth",
+              "icon": "itemfabriclinen01",
+              "type": "Trade Good",
+              "source": "Rare Drop",
+              "ilvl": 5,
+              "lvl": 1,
+              "amount": 8,
+              "maxStack": 20,
+              "price": 0.0013,
               "stats": {
                 "stats": {}
               }
@@ -147,12 +166,15 @@
           }
         }
       },
-      "currentSite": "The Scarab Wall",
+      "currentSite": "Purgation Isle",
       "siteProgress": {
-        "Mirror Lake Orchard": 1
+        "Mirror Lake Orchard": 1,
+        "Purgation Isle": 2
       },
       "commonsKilled": {
-        "Defias Cutpurse": 1
+        "Defias Cutpurse": 1,
+        "Writhing Mage": 1,
+        "Cursed Paladin": 1
       },
       "raresKilled": {},
       "elitesKilled": {},
@@ -535,7 +557,7 @@
         "Eastern Strand": 1,
         "Nethander Stead": 1,
         "Darrowmere Crossing": 1,
-        "Purgation Isle": 1,
+        "Purgation Isle": 2,
         "Southpoint Tower": 1,
         "Western Strand": 1,
         "Agol'watha": 1,
@@ -1063,7 +1085,7 @@
         "Freewind Post": 1,
         "Sun Rock Retreat": 1,
         "Ghost Walker Post": 1,
-        "Undercity": 1,
+        "Undercity": 2,
         "The Bulwark": 1,
         "Shadow Grave": 1,
         "Brill": 1,
@@ -1150,9 +1172,9 @@
         }
       },
       "startDate": "2024-04-13T15:04:28.2810568+02:00",
-      "lastLoaded": "2024-04-13T15:04:30.5139851+02:00",
-      "lastPlayed": "2024-04-13T15:20:59.421102+02:00",
-      "timePlayed": "00:16:28.9071169"
+      "lastLoaded": "2024-04-13T17:10:20.9216259+02:00",
+      "lastPlayed": "2024-04-13T17:12:21.605301+02:00",
+      "timePlayed": "00:18:29.5907920"
     }
   ]
 }

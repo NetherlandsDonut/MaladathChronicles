@@ -44,6 +44,8 @@ public class InputLine : MonoBehaviour
     {
         if (foo == promptConfirm)
             CloseWindow("ConfirmDeleteCharacter");
+        else if (foo == splitAmount)
+            CloseWindow("SplitItem");
         else if (foo == consoleInput)
             CloseWindow("Console");
     }
@@ -68,6 +70,14 @@ public class InputLine : MonoBehaviour
                 }
                 else
                     CloseWindow("ConfirmDeleteCharacter");
+            }
+        }
+        else if (foo == splitAmount)
+        {
+            if (CDesktop.windows.Exists(x => x.title == "SplitItem"))
+            {
+                splitDelegate();
+                CloseWindow("SplitItem");
             }
         }
         else if (foo == await)
