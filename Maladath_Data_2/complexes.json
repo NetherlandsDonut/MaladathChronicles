@@ -30,7 +30,8 @@
     "name": "Blackrock Mountain",
     "zone": "Burning Steppes",
     "type": "Complex",
-    "ambience": "AmbienceBlackrock"
+    "ambience": "AmbienceBlackrock",
+    "noNightVariant": true
   },
   {
     "description": [

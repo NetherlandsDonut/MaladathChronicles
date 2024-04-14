@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 using static UnityEngine.KeyCode;
+using static UnityEngine.GraphicsBuffer;
 
 using static Root;
 using static Root.Anchor;
@@ -17,6 +18,7 @@ using static Site;
 using static Spec;
 using static Sound;
 using static Event;
+using static Mount;
 using static Person;
 using static Defines;
 using static MapGrid;
@@ -35,7 +37,6 @@ using static SiteHostileArea;
 using static SiteInstance;
 using static SiteComplex;
 using static SiteTown;
-using static UnityEngine.GraphicsBuffer;
 
 public class Blueprint
 {
@@ -2858,6 +2859,11 @@ public class Blueprint
                 itemSetsSearch = itemSets;
                 SpawnDesktopBlueprint("ObjectManagerItemSets");
             });
+            AddButtonRegion(() => { AddLine("Mounts"); }, (h) =>
+            {
+                mountsSearch = mounts;
+                SpawnDesktopBlueprint("ObjectManagerMounts");
+            });
             AddButtonRegion(() => { AddLine("Factions"); }, (h) =>
             {
                 factionsSearch = factions;
@@ -2876,6 +2882,7 @@ public class Blueprint
                 Serialize(towns, "towns", false, false, prefix);
                 Serialize(items, "items", false, false, prefix);
                 Serialize(itemSets, "sets", false, false, prefix);
+                Serialize(mounts, "mounts", false, false, prefix);
                 Serialize(factions, "factions", false, false, prefix);
                 Serialize(personTypes, "persontypes", false, false, prefix);
                 Serialize(spiritHealers, "spirithealers", false, false, prefix);
@@ -3753,14 +3760,10 @@ public class Blueprint
                 AddSmallButton("OtherClose", (h) =>
                 {
                     CloseWindow(h.window);
-                    if (item != null)
-                        SpawnWindowBlueprint("ObjectManagerItems");
-                    else if (ability != null)
-                        SpawnWindowBlueprint("ObjectManagerAbilities");
-                    else if (buff != null)
-                        SpawnWindowBlueprint("ObjectManagerBuffs");
-                    else if (spec != null)
-                        SpawnWindowBlueprint("ObjectManagerSpecs");
+                    if (item != null) Respawn("ObjectManagerItems");
+                    else if (ability != null) Respawn("ObjectManagerAbilities");
+                    else if (buff != null) Respawn("ObjectManagerBuffs");
+                    else if (spec != null) Respawn("ObjectManagerSpecs");
                 });
                 AddSmallButton("OtherReverse", (h) =>
                 {
@@ -3802,7 +3805,7 @@ public class Blueprint
                     {
                         item.icon = foo.Replace(".png", "");
                         Respawn("ObjectManagerItem");
-                        SpawnWindowBlueprint("ObjectManagerItems");
+                        Respawn("ObjectManagerItems");
                     }
                 });
             }
@@ -3834,10 +3837,8 @@ public class Blueprint
                 AddSmallButton("OtherClose", (h) =>
                 {
                     CloseWindow(h.window);
-                    if (ability != null)
-                        SpawnWindowBlueprint("ObjectManagerAbilities");
-                    else if (buff != null)
-                        SpawnWindowBlueprint("ObjectManagerBuffs");
+                    if (ability != null) Respawn("ObjectManagerAbilities");
+                    else if (buff != null) Respawn("ObjectManagerBuffs");
                 });
                 AddSmallButton("OtherReverse", (h) =>
                 {
@@ -3879,13 +3880,13 @@ public class Blueprint
                     {
                         ability.icon = foo.Replace(".png", "");
                         Respawn("ObjectManagerAbility");
-                        SpawnWindowBlueprint("ObjectManagerAbilities");
+                        Respawn("ObjectManagerAbilities");
                     }
                     else if (buff != null)
                     {
                         buff.icon = foo.Replace(".png", "");
                         Respawn("ObjectManagerBuff");
-                        SpawnWindowBlueprint("ObjectManagerBuffs");
+                        Respawn("ObjectManagerBuffs");
                     }
                 });
             }
@@ -3912,8 +3913,7 @@ public class Blueprint
                 AddSmallButton("OtherClose", (h) =>
                 {
                     CloseWindow(h.window);
-                    if (faction != null)
-                        SpawnWindowBlueprint("ObjectManagerFactions");
+                    if (faction != null) Respawn("ObjectManagerFactions");
                 });
                 AddSmallButton("OtherReverse", (h) =>
                 {
@@ -3955,7 +3955,7 @@ public class Blueprint
                     {
                         faction.icon = foo.Replace(".png", "");
                         Respawn("ObjectManagerFaction");
-                        SpawnWindowBlueprint("ObjectManagerFactions");
+                        Respawn("ObjectManagerFactions");
                     }
                 });
             }
@@ -3964,6 +3964,75 @@ public class Blueprint
                 AddLine(Assets.assets.factionIcons.Count + " faction icons", "DarkGray");
                 if (Assets.assets.factionIcons.Count != Assets.assets.factionIconsSearch.Count)
                     AddLine(Assets.assets.factionIconsSearch.Count + " found in search", "DarkGray");
+            });
+        }),
+        new("ObjectManagerMountIconList", () => {
+            SetAnchor(TopLeft);
+            AddRegionGroup(() => Assets.assets.mountIconsSearch.Count);
+            SetRegionGroupWidth(171);
+            SetRegionGroupHeight(358);
+            if (mount != null)
+            {
+                var index = Assets.assets.mountIconsSearch.IndexOf(mount.icon + ".png");
+                if (index >= 10) CDesktop.LBWindow.LBRegionGroup.pagination = index / 10;
+            }
+            AddHeaderRegion(() =>
+            {
+                AddLine("Mount icons:");
+                AddSmallButton("OtherClose", (h) =>
+                {
+                    CloseWindow(h.window);
+                    if (mount != null) Respawn("ObjectManagerMounts");
+                });
+                AddSmallButton("OtherReverse", (h) =>
+                {
+                    Assets.assets.mountIcons.Reverse();
+                    Respawn("ObjectManagerMountIconList");
+                    PlaySound("DesktopInventorySort", 0.2f);
+                });
+            });
+            AddPaddingRegion(() =>
+            {
+                AddLine("Search:", "DarkGray");
+                AddInputLine(String.search);
+            });
+            var regionGroup = CDesktop.LBWindow.LBRegionGroup;
+            AddPaginationLine(regionGroup);
+            for (int i = 0; i < regionGroup.perPage; i++)
+            {
+                var index = i;
+                AddButtonRegion(() =>
+                {
+                    if (Assets.assets.mountIconsSearch.Count > index + regionGroup.perPage * regionGroup.pagination)
+                    {
+                        SetRegionBackground(RegionBackgroundType.Button);
+                        var foo = Assets.assets.mountIconsSearch[index + regionGroup.perPage * regionGroup.pagination];
+                        AddLine(foo.Substring(5));
+                        AddSmallButton(Assets.assets.mountIconsSearch[index + regionGroup.perPage * regionGroup.pagination].Replace(".png", ""), (h) => { });
+                    }
+                    else
+                    {
+                        SetRegionBackground(RegionBackgroundType.Padding);
+                        AddLine();
+                    }
+                },
+                (h) =>
+                {
+                    var foo = Assets.assets.mountIconsSearch[index + regionGroup.perPage * regionGroup.pagination];
+                    CloseWindow("ObjectManagerMountIconList");
+                    if (mount != null)
+                    {
+                        mount.icon = foo.Replace(".png", "");
+                        Respawn("ObjectManagerMount");
+                        Respawn("ObjectManagerMounts");
+                    }
+                });
+            }
+            AddPaddingRegion(() =>
+            {
+                AddLine(Assets.assets.mountIcons.Count + " mount icons", "DarkGray");
+                if (Assets.assets.mountIcons.Count != Assets.assets.mountIconsSearch.Count)
+                    AddLine(Assets.assets.mountIconsSearch.Count + " found in search", "DarkGray");
             });
         }),
         new("ObjectManagerPortraitList", () => {
@@ -7166,6 +7235,163 @@ public class Blueprint
             }
             AddPaddingRegion(() => { });
         }),
+        new("MountsSort", () => {
+            SetAnchor(Center);
+            AddRegionGroup();
+            SetRegionGroupWidth(162);
+            AddHeaderRegion(() =>
+            {
+                AddLine("Sort mounts:");
+                AddSmallButton("OtherClose", (h) =>
+                {
+                    CloseWindow("MountsSort");
+                    Respawn("ObjectManagerMounts");
+                });
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("By name", "Black");
+            },
+            (h) =>
+            {
+                mounts = mounts.OrderBy(x => x.name).ToList();
+                mountsSearch = mountsSearch.OrderBy(x => x.name).ToList();
+                CloseWindow("MountsSort");
+                Respawn("ObjectManagerMounts");
+                PlaySound("DesktopInventorySort", 0.2f);
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("By speed", "Black");
+            },
+            (h) =>
+            {
+                mounts = mounts.OrderByDescending(x => x.speed).ToList();
+                mountsSearch = mountsSearch.OrderByDescending(x => x.speed).ToList();
+                CloseWindow("MountsSort");
+                Respawn("ObjectManagerMounts");
+                PlaySound("DesktopInventorySort", 0.2f);
+            });
+        }),
+        new("ObjectManagerMounts", () => {
+            SetAnchor(TopLeft);
+            AddRegionGroup(() => mountsSearch.Count);
+            SetRegionGroupWidth(171);
+            SetRegionGroupHeight(358);
+            if (mount != null)
+            {
+                var index = mountsSearch.IndexOf(mount);
+                if (index >= 10) CDesktop.LBWindow.LBRegionGroup.pagination = index / 10;
+            }
+            AddHeaderRegion(() =>
+            {
+                AddLine("Mounts:");
+                AddSmallButton("OtherClose", (h) =>
+                {
+                    mount = null; mountsSearch = null;
+                    CloseDesktop("ObjectManagerMounts");
+                });
+                AddSmallButton("OtherReverse", (h) =>
+                {
+                    factions.Reverse();
+                    factionsSearch.Reverse();
+                    Respawn("ObjectManagerMounts");
+                    PlaySound("DesktopInventorySort", 0.2f);
+                });
+                if (!CDesktop.windows.Exists(x => x.title == "FactionsSort"))
+                    AddSmallButton("OtherSort", (h) =>
+                    {
+                        SpawnWindowBlueprint("FactionsSort");
+                        Respawn("ObjectManagerMounts");
+                    });
+                else
+                    AddSmallButton("OtherSortOff", (h) => { });
+            });
+            AddPaddingRegion(() =>
+            {
+                AddLine("Search:", "DarkGray");
+                AddInputLine(String.search);
+            });
+            var regionGroup = CDesktop.LBWindow.LBRegionGroup;
+            AddPaginationLine(regionGroup);
+            for (int i = 0; i < 10; i++)
+            {
+                var index = i;
+                AddButtonRegion(() =>
+                {
+                    if (mountsSearch.Count > index + 10 * regionGroup.pagination)
+                    {
+                        SetRegionBackground(RegionBackgroundType.Button);
+                        var foo = mountsSearch[index + 10 * regionGroup.pagination];
+                        AddLine(foo.name);
+                        AddSmallButton(foo.icon, (h) => { });
+                    }
+                    else
+                    {
+                        SetRegionBackground(RegionBackgroundType.Padding);
+                        AddLine();
+                    }
+                },
+                (h) =>
+                {
+                    mount = mountsSearch[index + 10 * regionGroup.pagination];
+                    String.objectName.Set(mount.name);
+                    Respawn("ObjectManagerMount");
+                });
+            }
+            AddPaddingRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+                AddLine(mounts.Count + " mounts", "DarkGray");
+                if (mounts.Count != mountsSearch.Count)
+                    AddLine(mountsSearch.Count + " found in search", "DarkGray");
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("Create a new mount");
+            },
+            (h) =>
+            {
+                mount = new Mount()
+                {
+                    name = "Mount #" + mounts.Count,
+                    icon = "None",
+                    speed = 7
+                };
+                mounts.Add(mount);
+                mountsSearch = mounts.FindAll(x => x.name.ToLower().Contains(String.search.Value().ToLower()));
+                String.objectName.Set(mount.name);
+                Respawn("ObjectManagerMount");
+                h.window.Respawn();
+            });
+        }),
+        new("ObjectManagerMount", () => {
+            SetAnchor(TopRight);
+            AddRegionGroup();
+            SetRegionGroupWidth(171);
+            SetRegionGroupHeight(354);
+            AddPaddingRegion(() => { AddLine("Mount:", "DarkGray"); });
+            AddPaddingRegion(() => { AddInputLine(String.objectName); });
+            AddPaddingRegion(() => { AddLine("Icon:", "DarkGray"); });
+            AddButtonRegion(() =>
+            {
+                AddLine(mount.icon.Replace("Mount", "") + ".png");
+                AddSmallButton(mount.icon, (h) => { });
+            },
+            (h) =>
+            {
+                var list = CDesktop.windows.Find(x => x.title == "ObjectManagerMountIconList");
+                if (list == null)
+                {
+                    CloseWindow("ObjectManagerMounts");
+                    Assets.assets.mountIconsSearch = Assets.assets.mountIcons;
+                    list = SpawnWindowBlueprint("ObjectManagerMountIconList");
+                }
+            });
+            AddPaddingRegion(() => { AddLine("Speed:", "DarkGray"); });
+            AddPaddingRegion(() => { AddInputLine(String.mountSpeed); });
+            AddPaddingRegion(() => { });
+        }),
         new("FactionsSort", () => {
             SetAnchor(Center);
             AddRegionGroup();
@@ -8052,6 +8278,7 @@ public class Blueprint
             Serialize(towns, "towns", true, false, prefix);
             Serialize(items, "items", true, false, prefix);
             Serialize(itemSets, "sets", true, false, prefix);
+            Serialize(mounts, "mounts", true, false, prefix);
             Serialize(factions, "factions", true, false, prefix);
             Serialize(spiritHealers, "spirithealers", true, false, prefix);
             Serialize(personTypes, "personTypes", true, false, prefix);
@@ -8155,6 +8382,13 @@ public class Blueprint
             SetDesktopBackground("Areas/AreaTheCelestialPlanetarium");
             SpawnWindowBlueprint("ObjectManagerItemSets");
             AddHotkey(Escape, () => { itemSet = null; itemSetsSearch = null; CloseDesktop("ObjectManagerItemSets"); });
+            AddPaginationHotkeys();
+        }),
+        new("ObjectManagerMounts", () =>
+        {
+            SetDesktopBackground("Areas/AreaTheCelestialPlanetarium");
+            SpawnWindowBlueprint("ObjectManagerMounts");
+            AddHotkey(Escape, () => { mount = null; mountsSearch = null; CloseDesktop("ObjectManagerMounts"); });
             AddPaginationHotkeys();
         }),
         new("ObjectManagerFactions", () =>

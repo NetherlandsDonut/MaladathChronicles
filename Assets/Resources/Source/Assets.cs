@@ -35,6 +35,12 @@ public class Assets
     //List of filtered faction icons by input search
     [NonSerialized] public List<string> factionIconsSearch;
 
+    //List of all mount icons available in-game
+    public List<string> mountIcons;
+
+    //List of filtered mount icons by input search
+    [NonSerialized] public List<string> mountIconsSearch;
+
     //List of all portraits available in-game
     public List<string> portraits;
 

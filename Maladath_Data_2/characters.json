@@ -166,7 +166,9 @@
           }
         }
       },
-      "currentSite": "Purgation Isle",
+      "minute": 6,
+      "second": 51,
+      "currentSite": "South Wood Crossing",
       "siteProgress": {
         "Mirror Lake Orchard": 1,
         "Purgation Isle": 2
@@ -1172,9 +1174,9 @@
         }
       },
       "startDate": "2024-04-13T15:04:28.2810568+02:00",
-      "lastLoaded": "2024-04-13T17:10:20.9216259+02:00",
-      "lastPlayed": "2024-04-13T17:12:21.605301+02:00",
-      "timePlayed": "00:18:29.5907920"
+      "lastLoaded": "2024-04-14T16:20:55.0575944+02:00",
+      "lastPlayed": "2024-04-14T16:21:00.7629877+02:00",
+      "timePlayed": "00:19:01.6475820"
     }
   ]
 }

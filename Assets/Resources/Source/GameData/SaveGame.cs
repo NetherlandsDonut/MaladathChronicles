@@ -18,15 +18,26 @@ public class SaveGame
     //Minute in-game
     public int minute;
 
-    public void AddTime(int minutes, int hours = 0, int days = 0)
+    //Seconds in-game
+    public int second;
+
+    public void AddTime(int seconds, int minutes = 0, int hours = 0, int days = 0)
     {
-        minute += minutes;
+        var prev = minute + ":" + hour + ":" + day;
+        second += seconds;
+        minute += minutes + second / 60;
+        second %= 60;
         hour += hours + minute / 60;
         minute %= 60;
         day += days + hour / 24;
         hour %= 24;
+        if (prev == minute + ":" + hour + ":" + day) return;
+        Respawn("MapToolbarShadow", true);
+        Respawn("MapToolbar", true);
         Respawn("MapToolbarClockLeft", true);
         Respawn("MapToolbarClockRight", true);
+        Respawn("MapToolbarStatusLeft", true);
+        Respawn("MapToolbarStatusRight", true);
     }
 
     //Site at which player currently resides
@@ -83,8 +94,7 @@ public class SaveGame
 
     public bool IsNight()
     {
-        return false;
-        //return hour >= 20 && hour <= 6;
+        return hour >= 20 && hour <= 6;
     }
 
     //Provides information which background should be used for character

@@ -1,5 +1,14 @@
 [
   {
+    "name": "Skhowl",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "kind": "Rare",
+    "portrait": "PortraitParrot",
+    "vitality": 2.0,
+    "abilities": {}
+  },
+  {
     "name": "Death Talon Dragonspawn",
     "category": "Dragonkin",
     "subcategory": "Dragonspawn",

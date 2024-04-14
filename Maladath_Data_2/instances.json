@@ -82,7 +82,8 @@
     "name": "The Stockade",
     "zone": "Elwynn Forest",
     "type": "Dungeon",
-    "ambience": "AmbienceTheStockade"
+    "ambience": "AmbienceTheStockade",
+    "noNightVariant": true
   },
   {
     "description": [],
@@ -108,7 +109,8 @@
     "name": "Ragefire Chasm",
     "zone": "Durotar",
     "type": "Dungeon",
-    "ambience": "AmbienceVolcanicDay"
+    "ambience": "AmbienceVolcanicDay",
+    "noNightVariant": true
   },
   {
     "description": [],
@@ -140,7 +142,8 @@
     "name": "Gnomeregan",
     "zone": "Dun Morogh",
     "type": "Dungeon",
-    "ambience": "AmbienceGnomeregan"
+    "ambience": "AmbienceGnomeregan",
+    "noNightVariant": true
   },
   {
     "description": [],
@@ -483,7 +486,8 @@
     "name": "Wailing Caverns",
     "zone": "The Barrens",
     "type": "Dungeon",
-    "ambience": "AmbienceWailingCaverns"
+    "ambience": "AmbienceWailingCaverns",
+    "noNightVariant": true
   },
   {
     "description": [],
@@ -533,7 +537,8 @@
     "name": "Uldaman",
     "zone": "Badlands",
     "type": "Dungeon",
-    "ambience": "AmbienceUldaman"
+    "ambience": "AmbienceUldaman",
+    "noNightVariant": true
   },
   {
     "description": [],
@@ -576,7 +581,8 @@
     "name": "Razorfen Downs",
     "zone": "The Barrens",
     "type": "Dungeon",
-    "ambience": "AmbienceRazorfenKraul"
+    "ambience": "AmbienceRazorfenKraul",
+    "noNightVariant": true
   },
   {
     "description": [],
@@ -661,7 +667,8 @@
     "name": "The Deadmines",
     "zone": "Westfall",
     "type": "Dungeon",
-    "ambience": "AmbienceDeadmines"
+    "ambience": "AmbienceDeadmines",
+    "noNightVariant": true
   },
   {
     "description": [],
@@ -710,7 +717,8 @@
     "name": "Blackfathom Deeps",
     "zone": "Ashenvale",
     "type": "Dungeon",
-    "ambience": "AmbienceBlackfathom"
+    "ambience": "AmbienceBlackfathom",
+    "noNightVariant": true
   },
   {
     "description": [],
@@ -1008,7 +1016,8 @@
     "name": "Blackrock Depths",
     "zone": "Blackrock Mountain",
     "type": "Dungeon",
-    "ambience": "AmbienceBlackrock"
+    "ambience": "AmbienceBlackrock",
+    "noNightVariant": true
   },
   {
     "complexPart": true,
@@ -1078,7 +1087,8 @@
     "name": "Lower Blackrock Spire",
     "zone": "Blackrock Mountain",
     "type": "Dungeon",
-    "ambience": "AmbienceBlackrock"
+    "ambience": "AmbienceBlackrock",
+    "noNightVariant": true
   },
   {
     "complexPart": true,
@@ -1143,7 +1153,8 @@
     "name": "Upper Blackrock Spire",
     "zone": "Blackrock Mountain",
     "type": "Dungeon",
-    "ambience": "AmbienceBlackrock"
+    "ambience": "AmbienceBlackrock",
+    "noNightVariant": true
   },
   {
     "description": [],
@@ -1198,7 +1209,8 @@
     "name": "Onyxia's Lair",
     "zone": "Dustwallow Marsh",
     "type": "Raid",
-    "ambience": "AmbienceOnyxiasLair"
+    "ambience": "AmbienceOnyxiasLair",
+    "noNightVariant": true
   },
   {
     "complexPart": true,
@@ -1272,7 +1284,8 @@
     "name": "Molten Core",
     "zone": "Blackrock Mountain",
     "type": "Raid",
-    "ambience": "AmbienceMoltenCore"
+    "ambience": "AmbienceMoltenCore",
+    "noNightVariant": true
   },
   {
     "description": [
@@ -1412,7 +1425,8 @@
     "name": "Blackwing Lair",
     "zone": "Blackrock Mountain",
     "type": "Raid",
-    "ambience": "AmbienceBlackwingLair"
+    "ambience": "AmbienceBlackwingLair",
+    "noNightVariant": true
   },
   {
     "description": [],
@@ -1458,7 +1472,8 @@
     "name": "Ruins of Ahn'Qiraj",
     "zone": "Silithus",
     "type": "Raid",
-    "ambience": "AmbienceAhnQirajExterior"
+    "ambience": "AmbienceAhnQirajExterior",
+    "noNightVariant": true
   },
   {
     "description": [],
@@ -1505,6 +1520,7 @@
     "name": "Temple of Ahn'Qiraj",
     "zone": "Silithus",
     "type": "Raid",
-    "ambience": "AmbienceAhnQirajUndergrounds"
+    "ambience": "AmbienceAhnQirajUndergrounds",
+    "noNightVariant": true
   }
 ]

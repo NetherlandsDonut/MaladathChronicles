@@ -155,6 +155,8 @@ public class Starter : MonoBehaviour
         Ability.abilities ??= new();
         Deserialize(ref Buff.buffs, "buffs", false, prefix);
         Buff.buffs ??= new();
+        Deserialize(ref Mount.mounts, "mounts", false, prefix);
+        Mount.mounts ??= new();
         Deserialize(ref Faction.factions, "factions", false, prefix);
         Faction.factions ??= new();
         Deserialize(ref spiritHealers, "spirithealers", false, prefix);
@@ -207,17 +209,19 @@ public class Starter : MonoBehaviour
         //asset base information for in-game content to use such as music or textures
         #region Asset Database
 
-#if (UNITY_EDITOR)
+        #if (UNITY_EDITOR)
 
         var ambienceList = AssetDatabase.FindAssets("t:AudioClip Ambience", new[] { "Assets/Resources/Ambience/" }).Select(x => AssetDatabase.GUIDToAssetPath(x).Replace("Assets/Resources/Ambience/", "")).ToList();
         var soundList = AssetDatabase.FindAssets("t:AudioClip", new[] { "Assets/Resources/Sounds/" }).Select(x => AssetDatabase.GUIDToAssetPath(x).Replace("Assets/Resources/Sounds/", "")).ToList();
         var itemIconList = AssetDatabase.FindAssets("t:Texture Item", new[] { "Assets/Resources/Sprites/Building/BigButtons/" }).Select(x => AssetDatabase.GUIDToAssetPath(x).Replace("Assets/Resources/Sprites/Building/BigButtons/", "")).ToList();
         var abilityIconList = AssetDatabase.FindAssets("t:Texture Ability", new[] { "Assets/Resources/Sprites/Building/BigButtons/" }).Select(x => AssetDatabase.GUIDToAssetPath(x).Replace("Assets/Resources/Sprites/Building/BigButtons/", "")).ToList();
+        var mountIconList = AssetDatabase.FindAssets("t:Texture Mount", new[] { "Assets/Resources/Sprites/Building/BigButtons/" }).Select(x => AssetDatabase.GUIDToAssetPath(x).Replace("Assets/Resources/Sprites/Building/BigButtons/", "")).ToList();
         var factionIconList = AssetDatabase.FindAssets("t:Texture Faction", new[] { "Assets/Resources/Sprites/Building/BigButtons/" }).Select(x => AssetDatabase.GUIDToAssetPath(x).Replace("Assets/Resources/Sprites/Building/BigButtons/", "")).ToList();
         var portraitList = AssetDatabase.FindAssets("t:Texture Portrait", new[] { "Assets/Resources/Sprites/Building/BigButtons/" }).Select(x => AssetDatabase.GUIDToAssetPath(x).Replace("Assets/Resources/Sprites/Building/BigButtons/", "")).ToList();
         ambienceList.RemoveAll(x => !x.StartsWith("Ambience"));
         itemIconList.RemoveAll(x => !x.StartsWith("Item"));
         abilityIconList.RemoveAll(x => !x.StartsWith("Ability"));
+        mountIconList.RemoveAll(x => !x.StartsWith("Mount"));
         factionIconList.RemoveAll(x => !x.StartsWith("Faction"));
         portraitList.RemoveAll(x => !x.StartsWith("Portrait"));
         Assets.assets = new Assets()
@@ -226,6 +230,7 @@ public class Starter : MonoBehaviour
             sounds = soundList,
             itemIcons = itemIconList,
             abilityIcons = abilityIconList,
+            mountIcons = mountIconList,
             factionIcons = factionIconList,
             portraits = portraitList
         };
@@ -240,6 +245,8 @@ public class Starter : MonoBehaviour
             sounds = new(),
             itemIcons = new(),
             abilityIcons = new(),
+            mountIcons = new(),
+            factionIcons = new(),
             portraits = new()
         };
 
@@ -273,6 +280,8 @@ public class Starter : MonoBehaviour
             Ability.abilities[i].Initialise();
         for (int i = 0; i < Buff.buffs.Count; i++)
             Buff.buffs[i].Initialise();
+        for (int i = 0; i < Mount.mounts.Count; i++)
+            Mount.mounts[i].Initialise();
         for (int i = 0; i < spiritHealers.Count; i++)
             spiritHealers[i].Initialise();
         for (int i = 0; i < paths.Count; i++)

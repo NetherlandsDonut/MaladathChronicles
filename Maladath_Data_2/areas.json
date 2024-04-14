@@ -9,7 +9,8 @@
     ],
     "name": "Hall of Illusions",
     "zone": "Scholomance",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -182,7 +183,8 @@
     ],
     "name": "East Section",
     "zone": "The Stockade",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -222,7 +224,8 @@
     ],
     "name": "Western Cells",
     "zone": "The Stockade",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -262,7 +265,8 @@
     ],
     "name": "Central Corridor",
     "zone": "The Stockade",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -607,7 +611,8 @@
     ],
     "name": "Spire Throne",
     "zone": "Upper Blackrock Spire",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -667,7 +672,8 @@
     ],
     "name": "The Furnace",
     "zone": "Upper Blackrock Spire",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -736,7 +742,8 @@
     ],
     "name": "Blackrock Stadium",
     "zone": "Upper Blackrock Spire",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -798,7 +805,8 @@
     ],
     "name": "Upper Hall of Blackhand",
     "zone": "Upper Blackrock Spire",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -843,7 +851,8 @@
     ],
     "name": "The Rookery",
     "zone": "Upper Blackrock Spire",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -883,7 +892,8 @@
     ],
     "name": "Hall of Binding",
     "zone": "Upper Blackrock Spire",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -922,7 +932,8 @@
     ],
     "name": "Dragonspire Hall",
     "zone": "Upper Blackrock Spire",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -962,7 +973,8 @@
     ],
     "name": "Chamber of Battle",
     "zone": "Lower Blackrock Spire",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -1007,7 +1019,8 @@
     ],
     "name": "Halycon's Lair",
     "zone": "Lower Blackrock Spire",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -1052,7 +1065,8 @@
     ],
     "name": "The Storehouse",
     "zone": "Lower Blackrock Spire",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -1094,7 +1108,8 @@
     ],
     "name": "Skitterweb Tunnels",
     "zone": "Lower Blackrock Spire",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -1158,7 +1173,8 @@
     ],
     "name": "Tazz'Alor",
     "zone": "Lower Blackrock Spire",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -1208,7 +1224,8 @@
     ],
     "name": "Mok'Doom",
     "zone": "Lower Blackrock Spire",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -1258,7 +1275,8 @@
     ],
     "name": "Hordemar City",
     "zone": "Lower Blackrock Spire",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -1292,7 +1310,8 @@
     ],
     "name": "Lower Hall of Blackhand",
     "zone": "Lower Blackrock Spire",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -1486,6 +1505,12 @@
         "who": "Mountain Yeti",
         "levelMin": 32,
         "levelMax": 33
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Skhowl",
+        "levelMin": 36
       }
     ],
     "areaSize": 3,
@@ -1844,7 +1869,8 @@
     "y": -112,
     "name": "The Drowned Reef",
     "zone": "Arathi Highlands",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -2183,7 +2209,8 @@
     "y": -107,
     "name": "Witherbark Caves",
     "zone": "Arathi Highlands",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -3625,7 +3652,8 @@
     "y": -157,
     "name": "Angor Fortress",
     "zone": "Badlands",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -3986,7 +4014,8 @@
     ],
     "name": "Aku'mai's Lair",
     "zone": "Blackfathom Deeps",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -4026,7 +4055,8 @@
     ],
     "name": "Forgotten Pool",
     "zone": "Blackfathom Deeps",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -4071,7 +4101,8 @@
     ],
     "name": "Moonshrine Ruins",
     "zone": "Blackfathom Deeps",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -4111,7 +4142,8 @@
     ],
     "name": "Moonshrine Sanctum",
     "zone": "Blackfathom Deeps",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -4165,7 +4197,8 @@
     ],
     "name": "Pool of Ask'ar",
     "zone": "Blackfathom Deeps",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -4205,7 +4238,8 @@
     ],
     "name": "Shrine of Gelihast",
     "zone": "Blackfathom Deeps",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -4245,7 +4279,8 @@
     ],
     "name": "Chamber of Enchantment",
     "zone": "Blackrock Depths",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -4295,7 +4330,8 @@
     ],
     "name": "Dark Iron Highway",
     "zone": "Blackrock Depths",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -4340,7 +4376,8 @@
     ],
     "name": "Detention Block",
     "zone": "Blackrock Depths",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -4375,7 +4412,8 @@
     ],
     "name": "Hall of Crafting",
     "zone": "Blackrock Depths",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -4429,7 +4467,8 @@
     ],
     "name": "Halls of the Law",
     "zone": "Blackrock Depths",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -4469,7 +4508,8 @@
     ],
     "name": "Mold Foundry",
     "zone": "Blackrock Depths",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -4549,7 +4589,8 @@
     ],
     "name": "Ring of Law",
     "zone": "Blackrock Depths",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -4584,7 +4625,8 @@
     ],
     "name": "Shrine of Thaurissan",
     "zone": "Blackrock Depths",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -4619,7 +4661,8 @@
     ],
     "name": "Summoners' Tomb",
     "zone": "Blackrock Depths",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -4654,7 +4697,8 @@
     ],
     "name": "The Black Anvil",
     "zone": "Blackrock Depths",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -4684,7 +4728,8 @@
     ],
     "name": "The Black Vault",
     "zone": "Blackrock Depths",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -4714,7 +4759,8 @@
     ],
     "name": "The Grim Guzzler",
     "zone": "Blackrock Depths",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -4748,7 +4794,8 @@
     ],
     "name": "The Imperial Seat",
     "zone": "Blackrock Depths",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -4782,7 +4829,8 @@
     ],
     "name": "The Iron Hall",
     "zone": "Blackrock Depths",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -4801,7 +4849,8 @@
     ],
     "name": "The Lyceum",
     "zone": "Blackrock Depths",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -4841,7 +4890,8 @@
     ],
     "name": "The Manufactory",
     "zone": "Blackrock Depths",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -4891,7 +4941,8 @@
     ],
     "name": "The Garrison",
     "zone": "Blackrock Depths",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -4929,7 +4980,8 @@
     ],
     "name": "Chromaggus' Lair",
     "zone": "Blackwing Lair",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -4993,7 +5045,8 @@
     ],
     "name": "Crimson Laboratories",
     "zone": "Blackwing Lair",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -5039,7 +5092,8 @@
     ],
     "name": "Dragonmaw Garrison",
     "zone": "Blackwing Lair",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -5089,7 +5143,8 @@
     ],
     "name": "Halls of Strife",
     "zone": "Blackwing Lair",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "eliteEncounters": [
@@ -5112,7 +5167,8 @@
     ],
     "name": "Nefarian's Lair",
     "zone": "Blackwing Lair",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "eliteEncounters": [
@@ -5140,7 +5196,8 @@
     ],
     "name": "Shadow Wing Lair",
     "zone": "Blackwing Lair",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -9041,7 +9098,8 @@
     ],
     "name": "Alcaz Dungeon",
     "zone": "Alcaz Island",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -10188,7 +10246,8 @@
     "y": -57,
     "name": "Terrorweb Tunnel",
     "zone": "Eastern Plaguelands",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -11686,7 +11745,8 @@
     "y": -175,
     "name": "Rage Scar Hold",
     "zone": "Feralas",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -12029,7 +12089,8 @@
     ],
     "name": "Engineering Labs",
     "zone": "Gnomeregan",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -12074,7 +12135,8 @@
     ],
     "name": "Hall of Gears",
     "zone": "Gnomeregan",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -12126,7 +12188,8 @@
     ],
     "name": "Launch Bay",
     "zone": "Gnomeregan",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "eliteEncounters": [
@@ -12149,7 +12212,8 @@
     ],
     "name": "Tinkers' Court",
     "zone": "Gnomeregan",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -12194,7 +12258,8 @@
     ],
     "name": "Trogg Caves",
     "zone": "Gnomeregan",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -13716,7 +13781,8 @@
     ],
     "name": "Earth Song Falls",
     "zone": "Maraudon",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -13761,7 +13827,8 @@
     ],
     "name": "Foulspore Cavern",
     "zone": "Maraudon",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -13813,7 +13880,8 @@
     ],
     "name": "Poison Falls",
     "zone": "Maraudon",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -13858,7 +13926,8 @@
     ],
     "name": "The Noxious Hollow",
     "zone": "Maraudon",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -13903,7 +13972,8 @@
     ],
     "name": "Vyletongue Seat",
     "zone": "Maraudon",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -13948,7 +14018,8 @@
     ],
     "name": "Wicked Grotto",
     "zone": "Maraudon",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -13993,7 +14064,8 @@
     ],
     "name": "Zaetar's Grave",
     "zone": "Maraudon",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -14024,7 +14096,8 @@
     ],
     "name": "Core Entrance",
     "zone": "Molten Core",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -14092,7 +14165,8 @@
     ],
     "name": "Sulfuran Summit",
     "zone": "Molten Core",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -14151,7 +14225,8 @@
     ],
     "name": "Upper Crag",
     "zone": "Molten Core",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -14176,7 +14251,8 @@
     ],
     "name": "Ragnaros' Lair",
     "zone": "Molten Core",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -14227,7 +14303,8 @@
     ],
     "name": "The Lavafalls",
     "zone": "Molten Core",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -14290,7 +14367,8 @@
     ],
     "name": "Smoldering Hollow",
     "zone": "Molten Core",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "areaSize": 3,
@@ -14804,7 +14882,8 @@
     ],
     "name": "The Broodmother's Lair",
     "zone": "Onyxia's Lair",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -14854,7 +14933,8 @@
     ],
     "name": "Abandoned Gully",
     "zone": "Razorfen Downs",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -14899,7 +14979,8 @@
     ],
     "name": "The Pensive Burrow",
     "zone": "Razorfen Downs",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -14949,7 +15030,8 @@
     ],
     "name": "The Murder Pens",
     "zone": "Razorfen Downs",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -15008,7 +15090,8 @@
     ],
     "name": "Spiral of Thorns",
     "zone": "Razorfen Downs",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -15053,7 +15136,8 @@
     ],
     "name": "The Caller's Chamber",
     "zone": "Razorfen Downs",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -15103,7 +15187,8 @@
     ],
     "name": "Kraul Pantry",
     "zone": "Razorfen Kraul",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -15158,7 +15243,8 @@
     ],
     "name": "Central Grounds",
     "zone": "Razorfen Kraul",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -15198,7 +15284,8 @@
     ],
     "name": "Bat Caves",
     "zone": "Razorfen Kraul",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -15238,7 +15325,8 @@
     ],
     "name": "Agathelos's Prison",
     "zone": "Razorfen Kraul",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -15283,7 +15371,8 @@
     ],
     "name": "Charlga's Seat",
     "zone": "Razorfen Kraul",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -15342,7 +15431,8 @@
     ],
     "name": "Kraul Commons",
     "zone": "Razorfen Kraul",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "areaSize": 3,
@@ -15354,7 +15444,8 @@
     ],
     "name": "Kraul Drain",
     "zone": "Razorfen Kraul",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -15824,7 +15915,8 @@
     ],
     "name": "General's Terrace",
     "zone": "Ruins of Ahn'Qiraj",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -15874,7 +15966,8 @@
     ],
     "name": "Scarab Terrace",
     "zone": "Ruins of Ahn'Qiraj",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -15929,7 +16022,8 @@
     ],
     "name": "The Comb",
     "zone": "Ruins of Ahn'Qiraj",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -15974,7 +16068,8 @@
     ],
     "name": "The Hatchery",
     "zone": "Ruins of Ahn'Qiraj",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -16014,7 +16109,8 @@
     ],
     "name": "The Reservoir",
     "zone": "Ruins of Ahn'Qiraj",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -16044,7 +16140,8 @@
     ],
     "name": "Watcher's Terrace",
     "zone": "Ruins of Ahn'Qiraj",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -16341,7 +16438,8 @@
     ],
     "name": "Athenaeum",
     "zone": "Scarlet Monastery",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -16376,7 +16474,8 @@
     ],
     "name": "Chamber of Atonement",
     "zone": "Scarlet Monastery",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -16440,7 +16539,8 @@
     ],
     "name": "Crusader's Armory",
     "zone": "Scarlet Monastery",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -16489,7 +16589,8 @@
     ],
     "name": "Crusader's Chapel",
     "zone": "Scarlet Monastery",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -16543,7 +16644,8 @@
     ],
     "name": "Gallery of Treasures",
     "zone": "Scarlet Monastery",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -16573,7 +16675,8 @@
     ],
     "name": "Hall of Champions",
     "zone": "Scarlet Monastery",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -16726,7 +16829,8 @@
     ],
     "name": "The Grand Vestibule",
     "zone": "Scarlet Monastery Grounds",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -16790,7 +16894,8 @@
     ],
     "name": "Barov Family Vault",
     "zone": "Scholomance",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -16835,7 +16940,8 @@
     ],
     "name": "Chamber of Summoning",
     "zone": "Scholomance",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -16880,7 +16986,8 @@
     ],
     "name": "The Great Ossuary",
     "zone": "Scholomance",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -16965,7 +17072,8 @@
     ],
     "name": "Hall of the Damned",
     "zone": "Scholomance",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "eliteEncounters": [
@@ -16988,7 +17096,8 @@
     ],
     "name": "Headmaster's Study",
     "zone": "Scholomance",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -17038,7 +17147,8 @@
     ],
     "name": "Laboratory",
     "zone": "Scholomance",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -17078,7 +17188,8 @@
     ],
     "name": "Reliquary",
     "zone": "Scholomance",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -17123,7 +17234,8 @@
     ],
     "name": "The Coven",
     "zone": "Scholomance",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -17158,7 +17270,8 @@
     ],
     "name": "The Shadow Vault",
     "zone": "Scholomance",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -17193,7 +17306,8 @@
     ],
     "name": "Vault of the Ravenian",
     "zone": "Scholomance",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -17234,7 +17348,8 @@
     ],
     "name": "The Viewing Room",
     "zone": "Scholomance",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -17498,7 +17613,8 @@
     "y": -161,
     "name": "The Slag Pit",
     "zone": "Searing Gorge",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -17543,7 +17659,8 @@
     ],
     "name": "Altar Room",
     "zone": "Shadow Hold",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -17578,7 +17695,8 @@
     ],
     "name": "Banehollow Shrine",
     "zone": "Shadow Hold",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -17623,7 +17741,8 @@
     ],
     "name": "Council Camp",
     "zone": "Shadow Hold",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -17673,7 +17792,8 @@
     ],
     "name": "Inner Sanctum",
     "zone": "Shadow Hold",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -17718,7 +17838,8 @@
     ],
     "name": "Upper Tunnels",
     "zone": "Shadow Hold",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -17748,7 +17869,8 @@
     ],
     "name": "Arugal Chamber",
     "zone": "Shadowfang Keep",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -17788,7 +17910,8 @@
     ],
     "name": "Dining Hall",
     "zone": "Shadowfang Keep",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -17828,7 +17951,8 @@
     ],
     "name": "Jail",
     "zone": "Shadowfang Keep",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -17863,7 +17987,8 @@
     ],
     "name": "Kitchen",
     "zone": "Shadowfang Keep",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -18013,7 +18138,8 @@
     ],
     "name": "The Laboratory",
     "zone": "Shadowfang Keep",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -18058,7 +18184,8 @@
     ],
     "name": "Tower Summit",
     "zone": "Shadowfang Keep",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -18092,7 +18219,8 @@
     "y": -201,
     "name": "Twilight's Run",
     "zone": "Silithus",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "areaSize": 3,
@@ -20520,7 +20648,8 @@
     ],
     "name": "Crusaders' Square",
     "zone": "Stratholme",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -20555,7 +20684,8 @@
     ],
     "name": "Elder's Square",
     "zone": "Stratholme",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -20616,7 +20746,8 @@
     "name": "King's Square",
     "zone": "Stratholme",
     "type": "HostileArea",
-    "ambience": "AmbienceStratholme"
+    "ambience": "AmbienceStratholme",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -20651,7 +20782,8 @@
     ],
     "name": "Market Row",
     "zone": "Stratholme",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -20686,7 +20818,8 @@
     ],
     "name": "Slaughter Square",
     "zone": "Stratholme",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -20716,7 +20849,8 @@
     ],
     "name": "The Crimson Throne",
     "zone": "Stratholme",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -20769,7 +20903,8 @@
     ],
     "name": "The Gauntlet",
     "zone": "Stratholme",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -20804,7 +20939,8 @@
     ],
     "name": "The Hall of Lights",
     "zone": "Stratholme",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -20839,7 +20975,8 @@
     ],
     "name": "The Hoard",
     "zone": "Stratholme",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -20880,7 +21017,8 @@
     ],
     "name": "The Scarlet Bastion",
     "zone": "Stratholme",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -20910,7 +21048,8 @@
     ],
     "name": "The Slaughter House",
     "zone": "Stratholme",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -22332,7 +22471,8 @@
     ],
     "name": "Abandoned Tunnel",
     "zone": "Temple of Ahn'Qiraj",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -22377,7 +22517,8 @@
     ],
     "name": "Ouro's Lair",
     "zone": "Temple of Ahn'Qiraj",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -22422,7 +22563,8 @@
     ],
     "name": "Princess Chambers",
     "zone": "Temple of Ahn'Qiraj",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -22462,7 +22604,8 @@
     ],
     "name": "Qiraji Imperial Seat",
     "zone": "Temple of Ahn'Qiraj",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -22521,7 +22664,8 @@
     ],
     "name": "The Hive Undergrounds",
     "zone": "Temple of Ahn'Qiraj",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -22561,7 +22705,8 @@
     ],
     "name": "The Temple Gates",
     "zone": "Temple of Ahn'Qiraj",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -22596,7 +22741,8 @@
     ],
     "name": "Vault of C'Thun",
     "zone": "Temple of Ahn'Qiraj",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -22636,7 +22782,8 @@
     ],
     "name": "Chamber of Blood",
     "zone": "Temple of Atal'Hakkar",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "eliteEncounters": [
@@ -22677,7 +22824,8 @@
     ],
     "name": "Chamber of the Dreamer",
     "zone": "Temple of Atal'Hakkar",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -22701,7 +22849,8 @@
     ],
     "name": "Den of the Caller",
     "zone": "Temple of Atal'Hakkar",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -22741,7 +22890,8 @@
     ],
     "name": "Hall of Bones",
     "zone": "Temple of Atal'Hakkar",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -22765,7 +22915,8 @@
     ],
     "name": "Hall of Masks",
     "zone": "Temple of Atal'Hakkar",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -22794,7 +22945,8 @@
     ],
     "name": "Hall of Ritual",
     "zone": "Temple of Atal'Hakkar",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -22827,7 +22979,8 @@
     ],
     "name": "Hall of Serpents",
     "zone": "Temple of Atal'Hakkar",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -22917,7 +23070,8 @@
     ],
     "name": "Hall of the Cursed",
     "zone": "Temple of Atal'Hakkar",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -22971,7 +23125,8 @@
     ],
     "name": "Lair of the Chosen",
     "zone": "Temple of Atal'Hakkar",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -23006,7 +23161,8 @@
     ],
     "name": "Pit of Refuse",
     "zone": "Temple of Atal'Hakkar",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -23041,7 +23197,8 @@
     ],
     "name": "Sanctum of the Fallen God",
     "zone": "Temple of Atal'Hakkar",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -23060,7 +23217,8 @@
     ],
     "name": "The Broken Hall",
     "zone": "Temple of Atal'Hakkar",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -23100,7 +23258,8 @@
     ],
     "name": "The Butchery",
     "zone": "Temple of Atal'Hakkar",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -23149,7 +23308,8 @@
     ],
     "name": "The Pit of Sacrifice",
     "zone": "Temple of Atal'Hakkar",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -24193,7 +24353,8 @@
     ],
     "name": "Defias Hideout",
     "zone": "The Deadmines",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -24233,7 +24394,8 @@
     ],
     "name": "Goblin Foundry",
     "zone": "The Deadmines",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -24278,7 +24440,8 @@
     ],
     "name": "Ironclad Cove",
     "zone": "The Deadmines",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -24323,7 +24486,8 @@
     ],
     "name": "Mast Room",
     "zone": "The Deadmines",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -24367,7 +24531,8 @@
     ],
     "name": "The Juggernaut",
     "zone": "The Deadmines",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -25392,7 +25557,8 @@
     ],
     "name": "Dig Three",
     "zone": "Uldaman",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -25437,7 +25603,8 @@
     ],
     "name": "Hall of the Keepers",
     "zone": "Uldaman",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -25472,7 +25639,8 @@
     ],
     "name": "Khaz'Goroth's Seat",
     "zone": "Uldaman",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -25517,7 +25685,8 @@
     ],
     "name": "Map Chamber",
     "zone": "Uldaman",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -25562,7 +25731,8 @@
     ],
     "name": "Temple Hall",
     "zone": "Uldaman",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -25607,7 +25777,8 @@
     ],
     "name": "The Stone Vault",
     "zone": "Uldaman",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -26024,7 +26195,8 @@
     ],
     "name": "Crag of the Everliving",
     "zone": "Wailing Caverns",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -26064,7 +26236,8 @@
     ],
     "name": "Dreamer's Rock",
     "zone": "Wailing Caverns",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -26123,7 +26296,8 @@
     ],
     "name": "Pit of Fangs",
     "zone": "Wailing Caverns",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -26173,7 +26347,8 @@
     ],
     "name": "Screaming Gully",
     "zone": "Wailing Caverns",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -26223,7 +26398,8 @@
     ],
     "name": "Winding Chasm",
     "zone": "Wailing Caverns",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "areaSize": 3,
@@ -28224,7 +28400,8 @@
     ],
     "name": "Altar of the Blood God",
     "zone": "Zul'Gurub",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -28291,7 +28468,8 @@
     ],
     "name": "Edge of Madness",
     "zone": "Zul'Gurub",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -28561,7 +28739,8 @@
     ],
     "name": "The Bloodfire Pit",
     "zone": "Zul'Gurub",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [

@@ -13,7 +13,6 @@ public class SitePath
     public void Initialise()
     {
         if (means == null) means = "Land";
-        if (speed <= 0) speed = 6;
         var list = means == "Land" ? pathsConnectedToSite : transportationConnectedToSite;
         foreach (var site in sites)
             if (!list.ContainsKey(site))
@@ -42,8 +41,8 @@ public class SitePath
     //Price of taking this path
     public double price;
 
-    //Animation speed of this path
-    public int speed;
+    //Time required to take this path
+    public int fixedDuration;
 
     //Space between pips of the path
     public int spacing;

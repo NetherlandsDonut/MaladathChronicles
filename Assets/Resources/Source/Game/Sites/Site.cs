@@ -42,6 +42,10 @@ public class Site
     //will not be interrupted and will continue to play
     public string ambience;
 
+    //Areas during nighttime usually change visuals.
+    //Sites marked with this boolean as true keep it always the same.
+    public bool noNightVariant;
+
     //Initialisation method to fill automatic values
     //and remove empty collections to avoid serialising them later
     public virtual void Initialise() { }

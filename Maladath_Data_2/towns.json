@@ -1839,7 +1839,8 @@
     "name": "Undercity",
     "zone": "Tirisfal Glades",
     "faction": "Undercity",
-    "ambience": "MusicUndercity"
+    "ambience": "MusicUndercity",
+    "noNightVariant": true
   },
   {
     "x": 273,

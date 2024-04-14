@@ -10,7 +10,6 @@ using static Race;
 using static Spec;
 using static Sound;
 using static Defines;
-using System.Runtime.InteropServices.WindowsRuntime;
 
 public class Entity
 {
@@ -27,6 +26,7 @@ public class Entity
         this.spec = spec.name;
         abilities = race.abilities.Merge(spec.abilities).Merge(spec.talentTrees.SelectMany(x => x.talents.FindAll(y => y.defaultTaken)).ToDictionary(x => x.ability, x => 0));
         stats = new Stats(race.stats.stats.ToDictionary(x => x.Key, x => x.Value));
+        mounts = new();
         inventory = new Inventory(items);
         inventory.items.RemoveAll(x => x == null);
         for (int i = 0; i < 0; i++)
@@ -486,6 +486,31 @@ public class Entity
 
     #region Stats
 
+    public int TravelPassTime() => Speed() switch
+    {
+        01 => 70,
+        02 => 56,
+        03 => 42,
+        04 => 29,
+        05 => 14,
+        06 => 12,
+        07 => 10,
+        08 => 09,
+        09 => 08,
+        10 => 07,
+        11 => 06,
+        12 => 06,
+        13 => 06,
+        14 => 05,
+         _ => 04
+    };
+
+    public int Speed()
+    {
+        var mount = Mount.mounts.Find(x => x.name == this.mount);
+        return mount == null ? 5 : mount.speed;
+    }
+
     public int MaxHealth()
     {
         return Stats()["Stamina"] * 5;
@@ -818,6 +843,12 @@ public class Entity
 
     //Inventory of the entity storing currency and items
     public Inventory inventory;
+
+    //Current mount equipped
+    public string mount;
+
+    //All of the mounts that this entity possesses
+    public List<string> mounts;
 
     //Currently equipped items
     //Equipped items are not present in the inventory!

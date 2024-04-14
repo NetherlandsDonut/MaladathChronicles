@@ -282,7 +282,7 @@ public class SiteHostileArea : Site
     }
 
     //Returns path to a texture that is the background visual of this site
-    public override string Background() => "Areas/Area" + (zone + name).Clean() + (currentSave != null && currentSave.IsNight() ? "Night" : "") + (specialClearBackground && eliteEncounters.All(x => currentSave.elitesKilled.ContainsKey(x.who)) ? "Cleared" : "");
+    public override string Background() => "Areas/Area" + (zone + name).Clean() + (currentSave != null && currentSave.IsNight() ? "Night" : "") + (specialClearBackground && eliteEncounters.All(x => currentSave.elitesKilled.ContainsKey(x.who)) ? "Cleared" : "") + (currentSave != null && currentSave.IsNight() && !noNightVariant ? "Night" : "");
 
     public Entity RollEncounter()
     {
