@@ -486,6 +486,9 @@ public class Entity
 
     #region Stats
 
+    //02:42 - rutheran to auberdine by ship
+    //02:10 - stormwind to goldshire on land
+
     public int TravelPassTime() => Speed() switch
     {
         01 => 70,

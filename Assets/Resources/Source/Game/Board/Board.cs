@@ -52,6 +52,7 @@ public class Board
         temporaryBuffsEnemy = new();
         flyingMissiles = new();
         actions = new List<Action>();
+        log = new();
     }
 
     public static void NewBoard(Entity entity, SiteHostileArea area)
@@ -294,7 +295,7 @@ public class Board
             StopAmbience();
             if (Realm.realms.Find(x => x.name == settings.selectedRealm).hardcore)
             {
-                currentSave.deathInfo = new();
+                currentSave.deathInfo = new(enemy.name, area.name);
             }
             else
             {
@@ -307,7 +308,6 @@ public class Board
                 SpawnTransition();
             }
             chartPage = "Damage Dealt";
-            currentSave.player.ReceiveExperience(board.results.experience);
             SpawnDesktopBlueprint("CombatResults");
         }
         else if (result == "Fled")

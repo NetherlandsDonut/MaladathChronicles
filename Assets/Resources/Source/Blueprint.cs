@@ -1902,18 +1902,25 @@ public class Blueprint
                 },
                 (h) => { });
             }
-            else if (type.type == "Stable Master")
+            else if (type.type == "StableMaster")
             {
                 AddButtonRegion(() =>
                 {
                     AddLine("I want to swap my current mount.");
                 },
-                (h) => { });
+                (h) =>
+                {
+                    PlaySound("DesktopBankOpen", 0.2f);
+                    CloseWindow(h.window);
+                    CloseWindow("Town: " + town.name);
+                    SpawnWindowBlueprint("MountList");
+                    Respawn("ExperienceBar");
+                });
                 AddButtonRegion(() =>
                 {
                     AddLine("I want to buy a new mount.");
                 },
-                (h) => { });
+                (h) => {  });
             }
             AddButtonRegion(() =>
             {
@@ -2802,6 +2809,115 @@ public class Blueprint
             {
                 //PlaySound("DesktopInstanceOpen");
                 //SpawnDesktopBlueprint("Bestiary");
+            });
+        }),
+        new("MountList", () => {
+            SetAnchor(TopRight, 0, -19);
+            AddHeaderGroup(() => currentSave.player.mounts.Count, 7);
+            SetRegionGroupWidth(171);
+            SetRegionGroupHeight(342);
+            AddHeaderRegion(() =>
+            {
+                AddLine("Mounts:");
+                AddSmallButton("OtherReverse", (h) =>
+                {
+                    currentSave.player.mounts.Reverse();
+                    Respawn("MountList");
+                    PlaySound("DesktopInventorySort", 0.2f);
+                });
+                if (!CDesktop.windows.Exists(x => x.title == "MountsSort"))
+                    AddSmallButton("OtherSort", (h) =>
+                    {
+                        SpawnWindowBlueprint("MountsSort");
+                        Respawn("MountList");
+                    });
+                else
+                    AddSmallButton("OtherSortOff", (h) => { });
+            });
+            var regionGroup = CDesktop.LBWindow.LBRegionGroup;
+            AddPaginationLine(regionGroup);
+            var mounts = currentSave.player.mounts.Select(x => Mount.mounts.Find(y => y.name == x)).ToList();
+            for (int i = 0; i < 7; i++)
+            {
+                var index = i;
+                AddPaddingRegion(() =>
+                {
+                    if (mounts.Count > index + 7 * regionGroup.pagination)
+                    {
+                        var mount = mounts[index + 7 * regionGroup.pagination];
+                        AddLine(mount.name);
+                        AddLine("Speed: ", "DarkGray");
+                        AddText(mount.speed == 7 ? "Fast" : (mount.speed == 9 ? "Very Fast" : "Normal"));
+                        AddBigButton(mount.icon,
+                            (h) =>
+                            {
+                                var mount = mounts[index + 7 * regionGroup.pagination];
+                                if (currentSave.player.mount != mount.name)
+                                {
+                                    currentSave.player.mount = mount.name;
+                                    Respawn("MountList");
+                                    PlaySound("DesktopActionbarAdd", 0.7f);
+                                }
+                            },
+                            null,
+                            (h) => () =>
+                            {
+                                SetAnchor(Center);
+                                var mount = mounts[index + 7 * regionGroup.pagination];
+                                if (mount.abilities != null && mount.abilities.Count > 0)
+                                    PrintAbilityTooltip(currentSave.player, null, abilities.Find(x => x.name == mount.abilities[0]), 0);
+                            }
+                        );
+                        if (currentSave.player.mount == mount.name)
+                        {
+                            AddBigButtonOverlay("OtherGlowLearnable");
+                        }
+                    }
+                    else
+                    {
+                        SetRegionBackground(RegionBackgroundType.Padding);
+                        AddBigButton("OtherDisabled", (h) => { });
+                    }
+                });
+            }
+            AddRegionGroup();
+            SetRegionGroupWidth(171);
+            AddPaddingRegion(() => AddLine("Mounts collected: " + mounts.Count));
+        }),
+        new("MountsSort", () => {
+            SetAnchor(Center);
+            AddRegionGroup();
+            SetRegionGroupWidth(162);
+            AddHeaderRegion(() =>
+            {
+                AddLine("Sort mounts:");
+                AddSmallButton("OtherClose", (h) =>
+                {
+                    CloseWindow("MountsSort");
+                    CDesktop.RespawnAll();
+                });
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("By name", "Black");
+            },
+            (h) =>
+            {
+                currentSave.player.mounts = currentSave.player.mounts.OrderBy(x => x).ToList();
+                CloseWindow("MountsSort");
+                CDesktop.RespawnAll();
+                PlaySound("DesktopInventorySort", 0.2f);
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("By speed", "Black");
+            },
+            (h) =>
+            {
+                currentSave.player.mounts = currentSave.player.mounts.OrderByDescending(x => Mount.mounts.Find(y => y.name == x).speed).ToList();
+                CloseWindow("MountsSort");
+                CDesktop.RespawnAll();
+                PlaySound("DesktopInventorySort", 0.2f);
             });
         }),
 

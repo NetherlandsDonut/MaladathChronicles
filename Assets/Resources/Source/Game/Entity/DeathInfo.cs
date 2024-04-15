@@ -11,6 +11,11 @@ using static Sound;
 public class DeathInfo
 {
     public DeathInfo() { }
+    public DeathInfo(string source, string area)
+    {
+        this.source = source;
+        this.area = area;
+    }
     
-    public string detail, means, source, area;
+    public string source, area;
 }
