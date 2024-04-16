@@ -119,7 +119,11 @@ public class SiteComplex : Site
     public static List<SiteComplex> complexesSearch;
 
     //Returns path to a texture that is the background visual of this site
-    public override string Background() => "Areas/Complex" + name.Clean() + ((currentSave != null ? currentSave : saves[settings.selectedRealm].Find(x => x.player.name == settings.selectedCharacter)).IsNight() && !noNightVariant ? "Night" : "");
+    public override string Background()
+    {
+        var save = currentSave ?? saves[settings.selectedRealm].Find(x => x.player.name == settings.selectedCharacter);
+        return "Areas/Complex" + name.Clean() + (save.IsNight() && !noNightVariant ? "Night" : "");
+    }
 
     //Function to print the site onto the map
     public override void PrintSite()

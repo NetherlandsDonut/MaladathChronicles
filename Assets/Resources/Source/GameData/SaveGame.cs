@@ -24,7 +24,7 @@ public class SaveGame
 
     public Color32 ColorOfDay()
     {
-        return !IsNight() ? new Color32(255, 255, 255, 255) : new Color32(164, 164, 198, 255);
+        return !IsNight() ? new Color32(255, 255, 255, 255) : new Color32(185, 185, 202, 255);
     }
 
     public void AddTime(int seconds, int minutes = 0, int hours = 0, int days = 0)

@@ -992,6 +992,13 @@
     "faction": "Ironforge"
   },
   {
+    "x": 263,
+    "y": -145,
+    "name": "Brewnall Village",
+    "zone": "Dun Morogh",
+    "faction": "Ironforge"
+  },
+  {
     "people": [
       {
         "name": "Granis Swiftaxe",
@@ -1051,6 +1058,13 @@
     "x": 271,
     "y": -148,
     "name": "Kharanos",
+    "zone": "Dun Morogh",
+    "faction": "Ironforge"
+  },
+  {
+    "x": 281,
+    "y": -147,
+    "name": "Amberstill Ranch",
     "zone": "Dun Morogh",
     "faction": "Ironforge"
   },
@@ -2096,6 +2110,13 @@
     "name": "Chillwind Camp",
     "zone": "Western Plaguelands",
     "faction": "Argent Dawn"
+  },
+  {
+    "x": 280,
+    "y": -165,
+    "name": "Nilith Camp",
+    "zone": "Searing Gorge",
+    "faction": "Thorium Brotherhood"
   },
   {
     "people": [

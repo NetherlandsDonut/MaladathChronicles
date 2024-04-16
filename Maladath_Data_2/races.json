@@ -1,5 +1,32 @@
 [
   {
+    "name": "Captain Beld",
+    "category": "Humanoid",
+    "subcategory": "Dwarf",
+    "kind": "Elite",
+    "portrait": "PortraitDarkIronAmbassador",
+    "vitality": 3.0,
+    "abilities": {}
+  },
+  {
+    "name": "Dark Iron Spy",
+    "category": "Humanoid",
+    "subcategory": "Dwarf",
+    "kind": "Common",
+    "portrait": "PortraitDarkIronAmbusher",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Rockjaw Ambusher",
+    "category": "Humanoid",
+    "subcategory": "Trogg",
+    "kind": "Common",
+    "portrait": "PortraitTroggDark",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
     "name": "Skhowl",
     "category": "Humanoid",
     "subcategory": "Human",

@@ -7726,6 +7726,43 @@
     "type": "HostileArea"
   },
   {
+    "commonEncounters": [
+      {
+        "who": "Rockjaw Bonesnapper",
+        "levelMin": 9,
+        "levelMax": 10
+      },
+      {
+        "who": "Rockjaw Ambusher",
+        "levelMin": 9,
+        "levelMax": 10
+      },
+      {
+        "who": "Dark Iron Spy",
+        "levelMin": 9,
+        "levelMax": 10
+      }
+    ],
+    "eliteEncounters": [
+      {
+        "who": "Captain Beld",
+        "levelMin": 11
+      }
+    ],
+    "areaSize": 3,
+    "progression": [
+      {
+        "type": "Treasure",
+        "point": 3
+      }
+    ],
+    "x": 288,
+    "y": -151,
+    "name": "Ironband's Compound",
+    "zone": "Dun Morogh",
+    "type": "HostileArea"
+  },
+  {
     "areaSize": 3,
     "progression": [
       {
@@ -7791,6 +7828,37 @@
     "x": 277,
     "y": -145,
     "name": "Misty Pine Refuge",
+    "zone": "Dun Morogh",
+    "type": "HostileArea"
+  },
+  {
+    "commonEncounters": [
+      {
+        "who": "Large Crag Boar",
+        "levelMin": 6,
+        "levelMax": 7
+      },
+      {
+        "who": "Elder Crag Boar",
+        "levelMin": 7,
+        "levelMax": 8
+      },
+      {
+        "who": "Snow Leopard",
+        "levelMin": 7,
+        "levelMax": 8
+      }
+    ],
+    "areaSize": 3,
+    "progression": [
+      {
+        "type": "Treasure",
+        "point": 3
+      }
+    ],
+    "x": 266,
+    "y": -141,
+    "name": "Northern Tract",
     "zone": "Dun Morogh",
     "type": "HostileArea"
   },
@@ -27609,7 +27677,7 @@
         "point": 3
       }
     ],
-    "x": 300,
+    "x": 301,
     "y": -122,
     "name": "Raptor Ridge",
     "zone": "Wetlands",

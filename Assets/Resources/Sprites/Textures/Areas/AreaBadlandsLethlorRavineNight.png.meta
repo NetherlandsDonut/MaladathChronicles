@@ -1,12 +1,9 @@
 fileFormatVersion: 2
-guid: d2091e8a049d3304c83b0ad79ce9cabc
+guid: 12d1d8a31f6d0da44b2af4e8749f2dda
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: 182443880524722712
-    second: AreaArathiHighlandsDevyrsHill_0
+  internalIDToNameTable: []
   externalObjects: {}
-  serializedVersion: 12
+  serializedVersion: 13
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -80,6 +77,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -92,19 +90,20 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: AreaArathiHighlandsDevyrsHill_0
+      name: PortraitZombiePale_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 640
-        height: 360
+        width: 17
+        height: 17
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -112,8 +111,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 812be122ebb288200800000000000000
-      internalID: 182443880524722712
+      spriteID: a14f0ed7702e32440800000000000000
+      internalID: 4910016540568515610
       vertices: []
       indices: 
       edges: []

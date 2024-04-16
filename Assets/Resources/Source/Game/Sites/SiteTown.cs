@@ -176,5 +176,9 @@ public class SiteTown : Site
     }
 
     //Returns path to a texture that is the background visual of this site
-    public override string Background() => "Areas/Area" + (zone + name).Clean() + (currentSave != null && currentSave.IsNight() && !noNightVariant ? "Night" : "");
+    public override string Background()
+    {
+        var save = currentSave ?? saves[GameSettings.settings.selectedRealm].Find(x => x.player.name == GameSettings.settings.selectedCharacter);
+        return "Areas/Area" + (zone + name).Clean() + (save.IsNight() && !noNightVariant ? "Night" : "");
+    }
 }
