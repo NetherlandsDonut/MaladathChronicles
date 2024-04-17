@@ -43,7 +43,7 @@ public class Highlightable : MonoBehaviour
             cursor.SetCursor(Write);
         else if (pressedState != "None") cursor.SetCursor(Click);
         render.color = defaultColor - new Color(0.1f, 0.1f, 0.1f, 0);
-        if (window.title.StartsWith("Site: "))
+        if (window != null && window.title.StartsWith("Site: "))
         {
             if (Input.GetKey(KeyCode.LeftAlt))
             {
@@ -65,7 +65,7 @@ public class Highlightable : MonoBehaviour
             cursor.SetCursor(Default);
         render.color = defaultColor;
         pressedState = "None";
-        if (window.title.StartsWith("Site: "))
+        if (window != null && window.title.StartsWith("Site: "))
         {
             for (int i = 0; i < pathsDrawn.Count; i++)
                 Destroy(pathsDrawn[i].Item2);

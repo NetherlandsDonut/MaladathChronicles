@@ -611,8 +611,8 @@ public class Blueprint
                     AddBigButton(race.portrait == "" ? "OtherUnknown" : race.portrait + (race.genderedPortrait ? Board.board.enemy.gender : ""), (h) => { });
                 }
                 AddLine("Level: " + Board.board.player.level, "Gray");
-                AddLine("Health: " + Board.board.player.health + "/" + Board.board.player.MaxHealth(), "Gray");
             });
+            AddHealthBar(40, -38, "Player", Board.board.player);
             foreach (var actionBar in Board.board.player.actionBars)
             {
                 var abilityObj = abilities.Find(x => x.name == actionBar.ability);
@@ -1030,8 +1030,8 @@ public class Blueprint
                 AddBigButton(race.portrait == "" ? "OtherUnknown" : race.portrait + (race.genderedPortrait ? Board.board.enemy.gender : ""), (h) => { });
                 AddLine("Level: ", "Gray");
                 AddText(Board.board.enemy.level - 10 > Board.board.player.level ? "??" : "" + Board.board.enemy.level, ColorEntityLevel(Board.board.enemy.level));
-                AddLine("Health: " + Board.board.enemy.health + "/" + Board.board.enemy.MaxHealth(), "Gray");
             });
+            AddHealthBar(40, -38, "Enemy", Board.board.enemy);
             foreach (var actionBar in Board.board.enemy.actionBars)
             {
                 var abilityObj = abilities.Find(x => x.name == actionBar.ability);

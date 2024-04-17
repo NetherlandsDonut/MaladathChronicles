@@ -788,6 +788,22 @@ public static class Root
 
     #endregion
 
+    #region HealthBar
+
+    public static void AddHealthBar(int x, int y, string forWho, Entity entity)
+    {
+        var healthBar = UnityEngine.Object.Instantiate(Resources.Load<GameObject>("Prefabs/PrefabHealthBar"));
+        healthBar.transform.parent = CDesktop.LBWindow.transform;
+        healthBar.transform.localPosition = new Vector3(x, y, 0);
+        var thisBar = healthBar.GetComponent<HealthBar>();
+        if (Board.board.healthBars.ContainsKey(forWho)) Board.board.healthBars[forWho] = thisBar;
+        else Board.board.healthBars.Add(forWho, thisBar);
+        thisBar.entity = entity;
+        thisBar.UpdateHealthBar();
+    }
+
+    #endregion
+
     #region Enumerations
 
     #region General

@@ -50,6 +50,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: HealthBar
+    uniqueID: 2262292729
+    locked: 0
   - name: Upper
     uniqueID: 143456597
     locked: 0

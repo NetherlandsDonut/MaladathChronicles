@@ -7,7 +7,7 @@
       "player": {
         "level": 2,
         "unspentTalentPoints": 1,
-        "experience": 340,
+        "experience": 640,
         "name": "Jennine",
         "race": "Human",
         "spec": "Mage",
@@ -62,6 +62,21 @@
               "type": "Miscellaneous",
               "ilvl": 1,
               "maxStack": 1,
+              "stats": {
+                "stats": {}
+              }
+            },
+            {
+              "rarity": "Common",
+              "name": "Linen Cloth",
+              "icon": "itemfabriclinen01",
+              "type": "Trade Good",
+              "source": "Rare Drop",
+              "ilvl": 5,
+              "lvl": 1,
+              "amount": 4,
+              "maxStack": 20,
+              "price": 0.0013,
               "stats": {
                 "stats": {}
               }
@@ -163,9 +178,13 @@
       "hour": 7,
       "minute": 34,
       "second": 6,
-      "currentSite": "The Marris Stead",
-      "siteProgress": {},
-      "commonsKilled": {},
+      "currentSite": "Crown Guard Tower",
+      "siteProgress": {
+        "Crown Guard Tower": 1
+      },
+      "commonsKilled": {
+        "Plaguebat": 1
+      },
       "raresKilled": {},
       "elitesKilled": {},
       "siteVisits": {
@@ -482,7 +501,7 @@
         "Witch Hill": 1,
         "Blackwood Lake": 1,
         "Corin's Crossing": 1,
-        "Crown Guard Tower": 1,
+        "Crown Guard Tower": 4,
         "Darrowshire": 1,
         "Eastwall Gate": 1,
         "Eastwall Tower": 1,
@@ -498,7 +517,7 @@
         "Terrordale": 1,
         "Terrorweb Tunnel": 1,
         "The Infectis Scar": 1,
-        "The Marris Stead": 1,
+        "The Marris Stead": 2,
         "The Undercroft": 1,
         "The Noxious Glade": 1,
         "Thondroril River": 1,
@@ -1160,9 +1179,13 @@
         "bags": []
       },
       "startDate": "2024-04-15T03:23:40.12168+02:00",
-      "lastLoaded": "2024-04-17T03:36:08.4399099+02:00",
-      "lastPlayed": "2024-04-17T03:36:11.5990834+02:00",
-      "timePlayed": "01:08:40.8938599"
+      "lastLoaded": "2024-04-17T18:49:26.0251705+02:00",
+      "lastPlayed": "2024-04-17T18:50:26.2500776+02:00",
+      "deathInfo": {
+        "source": "Putrid Gargoyle",
+        "area": "The Marris Stead"
+      },
+      "timePlayed": "01:11:36.8042787"
     },
     {
       "player": {
@@ -2304,6 +2327,161 @@
       "lastPlayed": "2024-04-17T23:49:42.4660073+02:00",
       "timePlayed": "00:11:11.1281966",
       "lastVisitedTalents": 2
+    },
+    {
+      "player": {
+        "level": 1,
+        "name": "Jennine",
+        "race": "Human",
+        "spec": "Mage",
+        "gender": "Female",
+        "abilities": {
+          "Staff Proficiency": 1,
+          "Cloth Proficiency": 1,
+          "One Handed Sword Proficiency": 1,
+          "Off Hand Proficiency": 1,
+          "Dagger Proficiency": 1,
+          "Wand Proficiency": 1,
+          "Fireball": 0,
+          "Frostbolt": 0,
+          "Arcane Missiles": 0
+        },
+        "actionBars": [
+          {
+            "ability": "Fireball"
+          },
+          {
+            "ability": "Frostbolt"
+          },
+          {
+            "ability": "Arcane Missiles"
+          }
+        ],
+        "stats": {
+          "stats": {
+            "Stamina": 6,
+            "Strength": 6,
+            "Agility": 6,
+            "Intellect": 6,
+            "Spirit": 0,
+            "Earth Mastery": 1,
+            "Fire Mastery": 3,
+            "Air Mastery": 2,
+            "Water Mastery": 1,
+            "Frost Mastery": 2,
+            "Lightning Mastery": 1,
+            "Arcane Mastery": 3,
+            "Decay Mastery": 1,
+            "Shadow Mastery": 2,
+            "Order Mastery": 3
+          }
+        },
+        "inventory": {
+          "items": [
+            {
+              "rarity": "Common",
+              "name": "Hearthstone",
+              "icon": "itemmiscrune01",
+              "type": "Miscellaneous",
+              "ilvl": 1,
+              "maxStack": 1,
+              "stats": {
+                "stats": {}
+              }
+            }
+          ],
+          "bags": [
+            {
+              "rarity": "Uncommon",
+              "name": "Traveler's Backpack",
+              "icon": "itemmiscbag08",
+              "type": "Bag",
+              "source": "Rare Drop",
+              "ilvl": 55,
+              "lvl": 1,
+              "maxStack": 1,
+              "price": 0.875,
+              "bagSpace": 8,
+              "stats": {
+                "stats": {}
+              }
+            }
+          ]
+        },
+        "mounts": [],
+        "equipment": {
+          "Main Hand": {
+            "rarity": "Common",
+            "name": "Bent Staff",
+            "icon": "itemstaff08",
+            "detailedType": "Staff",
+            "type": "Two Handed",
+            "ilvl": 2,
+            "lvl": 1,
+            "minDamage": 3,
+            "maxDamage": 5,
+            "maxStack": 1,
+            "price": 0.0009,
+            "speed": 2.9,
+            "stats": {
+              "stats": {}
+            }
+          },
+          "Feet": {
+            "rarity": "Common",
+            "name": "Apprentice's Boots",
+            "icon": "itemboots09",
+            "type": "Feet",
+            "ilvl": 1,
+            "lvl": 1,
+            "maxStack": 1,
+            "price": 0.0001,
+            "stats": {
+              "stats": {}
+            }
+          },
+          "Legs": {
+            "rarity": "Poor",
+            "name": "Apprentice's Pants",
+            "icon": "itempants01",
+            "type": "Legs",
+            "armorClass": "Cloth",
+            "ilvl": 1,
+            "lvl": 1,
+            "armor": 2,
+            "maxStack": 1,
+            "price": 0.0001,
+            "stats": {
+              "stats": {}
+            }
+          },
+          "Chest": {
+            "rarity": "Poor",
+            "name": "Apprentice's Robe",
+            "icon": "itemchestcloth23",
+            "type": "Chest",
+            "armorClass": "Cloth",
+            "ilvl": 1,
+            "lvl": 1,
+            "armor": 3,
+            "maxStack": 1,
+            "price": 0.0001,
+            "stats": {
+              "stats": {}
+            }
+          }
+        }
+      },
+      "currentSite": "Northshire Abbey",
+      "siteProgress": {},
+      "commonsKilled": {},
+      "raresKilled": {},
+      "elitesKilled": {},
+      "siteVisits": {
+        "Northshire Abbey": 1
+      },
+      "unlockedAreas": [],
+      "startDate": "2024-04-18T01:34:37.2543623+02:00"
     }
   ]
 }

@@ -34,6 +34,7 @@ public class Board
         flyingMissiles = new();
         actions = new List<Action>();
         log = new();
+        healthBars = new();
     }
 
     public Board(int x, int y, Dictionary<Ability, int> abilities)
@@ -53,6 +54,7 @@ public class Board
         flyingMissiles = new();
         actions = new List<Action>();
         log = new();
+        healthBars = new();
     }
 
     public static void NewBoard(Entity entity, SiteHostileArea area)
@@ -95,6 +97,9 @@ public class Board
 
     //Player and enemy references for the combat. Player is always on the left side of the screen.
     public Entity player, enemy;
+
+    //Health bars for player and the enemy
+    public Dictionary<string, HealthBar> healthBars;
 
     //Indicates whether it's currently the player's turn
     public bool playerTurn;
@@ -176,6 +181,12 @@ public class Board
             for (int j = 0; j < field.GetLength(1); j++)
                 field[i, j] = 0;
         CDesktop.LockScreen();
+    }
+
+    public void UpdateHealthBars()
+    {
+        foreach (var foo in healthBars)
+            foo.Value.UpdateHealthBar();
     }
 
     public void EndCombat(string result)
