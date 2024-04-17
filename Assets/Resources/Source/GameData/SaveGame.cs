@@ -22,11 +22,6 @@ public class SaveGame
     //Seconds in-game
     public int second;
 
-    public Color32 ColorOfDay()
-    {
-        return !IsNight() ? new Color32(255, 255, 255, 255) : new Color32(185, 185, 202, 255);
-    }
-
     public void AddTime(int seconds, int minutes = 0, int hours = 0, int days = 0)
     {
         var prev = minute + ":" + hour + ":" + day;
@@ -38,7 +33,7 @@ public class SaveGame
         day += days + hour / 24;
         hour %= 24;
         if (prev == minute + ":" + hour + ":" + day) return;
-        grid.texture.GetComponent<SpriteRenderer>().color = ColorOfDay();
+        grid.updateTextureColors = true;
         Respawn("MapToolbarShadow", true);
         Respawn("MapToolbar", true);
         Respawn("MapToolbarClockLeft", true);
@@ -101,7 +96,7 @@ public class SaveGame
 
     public bool IsNight()
     {
-        return hour >= 20 || hour <= 6;
+        return hour >= 20 || hour < 6;
     }
 
     //Provides information which background should be used for character

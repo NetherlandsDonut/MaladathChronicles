@@ -8,6 +8,7 @@ using static Site;
 using static Root;
 using static Sound;
 using static Cursor;
+using static SaveGame;
 using static SitePath;
 
 //Map grid is a class responsible for direct
@@ -15,18 +16,19 @@ using static SitePath;
 public class MapGrid : MonoBehaviour
 {
     //Holds reference to the texture of the map
-    public GameObject texture;
+    public SpriteRenderer texture;
 
     //Holds reference to the texture of the map of the ghost realm
-    public GameObject textureDead;
+    public SpriteRenderer textureDead;
 
     //Holds reference to the black mask areas of the map
-    public GameObject foreground;
+    public SpriteRenderer foreground;
 
     //Holds reference to the black mask areas of the map of the ghost realm
-    public GameObject foregroundDead;
+    public SpriteRenderer foregroundDead;
 
-    public Vector2 lastCursorPosition;
+    //When this is true desktop on update will try to change map color slowly
+    public bool updateTextureColors;
 
     //On mouse down pan the camera to the pressed square on the map
     void OnMouseDown()
@@ -34,10 +36,20 @@ public class MapGrid : MonoBehaviour
         var temp = new Vector2Int((int)cursor.transform.position.x / mapGridSize, (int)cursor.transform.position.y / mapGridSize);
         CDesktop.cameraDestination = new Vector2(temp.x, temp.y) * mapGridSize;
     }
+
+    //Updates color of the map texture based on time
+    public void UpdateTextureColors(bool instant = false)
+    {
+        if (currentSave == null) { updateTextureColors = false; return; }
+        var aim = currentSave.IsNight() ? nightColor : dayColor;
+        if (texture.color == aim) { updateTextureColors = false; return; }
+        texture.color = instant ? aim : Color.Lerp(texture.color, aim, Time.deltaTime);
+    }
     
     //On mouse down pan the camera to the pressed square on the map
     void Update()
     {
+        if (updateTextureColors) UpdateTextureColors();
         if (sitePathBuilder != null)
         {
             var foo = builderSpacing <= 0 ? 10 : builderSpacing;
@@ -73,10 +85,10 @@ public class MapGrid : MonoBehaviour
         if (deadOn) PlayAmbience("AmbienceGhost");
         else if (ambience.clip != null && ambience.clip.name == "AmbienceGhost")
             StopAmbience();
-        texture.SetActive(!deadOn);
-        textureDead.SetActive(deadOn);
-        foreground.SetActive(!deadOn);
-        foregroundDead.SetActive(deadOn);
+        texture.gameObject.SetActive(!deadOn);
+        textureDead.gameObject.SetActive(deadOn);
+        foreground.gameObject.SetActive(!deadOn);
+        foregroundDead.gameObject.SetActive(deadOn);
     }
 
     public static int mapGridSize = 19;

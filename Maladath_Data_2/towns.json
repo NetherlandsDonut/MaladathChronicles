@@ -14,6 +14,13 @@
     "faction": "Assassin's League"
   },
   {
+    "x": 310,
+    "y": -204,
+    "name": "Misty Reed Post",
+    "zone": "Swamp of Sorrows",
+    "faction": "Orgrimmar"
+  },
+  {
     "people": [
       {
         "name": "Ander Germaine",

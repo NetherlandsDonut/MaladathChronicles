@@ -44,6 +44,9 @@ public static class Root
     public static int loadingScreenObjectLoadAim;
     public static List<Blueprint> loadSites;
 
+    public static Color32 dayColor = new Color32(255, 255, 255, 255);
+    public static Color32 nightColor = new Color32(185, 185, 202, 255);
+
     public static Action splitDelegate;
     public static string[,] groundData;
     public static System.Random random;
@@ -174,6 +177,7 @@ public static class Root
         if (find != null) CDesktop = find;
         if (CDesktop != null)
         {
+            if (name == "Map") grid.UpdateTextureColors(true);
             CDesktop.gameObject.SetActive(true);
             desktops.Remove(CDesktop);
             desktops.Insert(0, CDesktop);

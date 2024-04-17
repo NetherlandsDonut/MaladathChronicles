@@ -169,7 +169,7 @@ MonoBehaviour:
   textureDead: {fileID: 456935889}
   foreground: {fileID: 905896018}
   foregroundDead: {fileID: 1054705958}
-  lastCursorPosition: {x: 0, y: 0}
+  updateTextureColors: 0
 --- !u!61 &90073379
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1367,11 +1367,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae11c5ca6e46f244ca4e2a24feb0aeab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  texture: {fileID: 1782962382}
-  textureDead: {fileID: 456935889}
-  foreground: {fileID: 905896018}
-  foregroundDead: {fileID: 1054705958}
-  lastCursorPosition: {x: 0, y: 0}
+  texture: {fileID: 1782962384}
+  textureDead: {fileID: 456935893}
+  foreground: {fileID: 905896020}
+  foregroundDead: {fileID: 1054705960}
+  updateTextureColors: 0
 --- !u!61 &1782962386
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1410,7 +1410,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 1}
-    oldSize: {x: 7146, y: 5094}
+    oldSize: {x: 7144, y: 5092}
     newSize: {x: 3072, y: 4096}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

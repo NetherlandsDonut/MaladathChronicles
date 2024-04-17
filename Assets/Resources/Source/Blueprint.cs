@@ -7946,6 +7946,11 @@ public class Blueprint
                     CDesktop.LBWindow.LBRegionGroup.LBRegion.inputLine.Activate();
                 }
             });
+            AddHotkey(KeyCode.Space, () =>
+            {
+                var whereTo = Site.FindSite(x => x.name == currentSave.currentSite);
+                CDesktop.cameraDestination = new Vector2(whereTo.x * mapGridSize, whereTo.y * mapGridSize);
+            });
             AddHotkey(L, () => { SpawnWindowBlueprint("ItemDrop"); });
 
             void MoveCamera(Vector2 amount)
