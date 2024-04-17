@@ -9652,9 +9652,50 @@
         "point": 3
       }
     ],
+    "x": 109,
+    "y": -169,
+    "name": "Northern Quagmire",
+    "zone": "Dustwallow Marsh",
+    "type": "HostileArea"
+  },
+  {
+    "commonEncounters": [
+      {
+        "who": "Drywallow Snapper",
+        "levelMin": 37,
+        "levelMax": 38
+      },
+      {
+        "who": "Mottled Drywallow Snapper",
+        "levelMin": 38,
+        "levelMax": 39
+      },
+      {
+        "who": "Swamp Ooze",
+        "levelMin": 38,
+        "levelMax": 39
+      },
+      {
+        "who": "Darkfang Creper",
+        "levelMin": 38,
+        "levelMax": 39
+      },
+      {
+        "who": "Bloodfen Scytheclaw",
+        "levelMin": 37,
+        "levelMax": 38
+      }
+    ],
+    "areaSize": 3,
+    "progression": [
+      {
+        "type": "Treasure",
+        "point": 3
+      }
+    ],
     "x": 111,
     "y": -173,
-    "name": "The Quagmire",
+    "name": "Southern Quagmire",
     "zone": "Dustwallow Marsh",
     "type": "HostileArea"
   },
@@ -9718,6 +9759,32 @@
   {
     "commonEncounters": [
       {
+        "who": "Bloodfen Raptor",
+        "levelMin": 35,
+        "levelMax": 36
+      },
+      {
+        "who": "Darkfang Venomspitter",
+        "levelMin": 36,
+        "levelMax": 37
+      }
+    ],
+    "areaSize": 3,
+    "progression": [
+      {
+        "type": "Treasure",
+        "point": 3
+      }
+    ],
+    "x": 118,
+    "y": -165,
+    "name": "Swamplight Manor",
+    "zone": "Dustwallow Marsh",
+    "type": "HostileArea"
+  },
+  {
+    "commonEncounters": [
+      {
         "who": "Mirefin Puddlejumper",
         "levelMin": 35,
         "levelMax": 36
@@ -9745,8 +9812,8 @@
         "point": 3
       }
     ],
-    "x": 117,
-    "y": -164,
+    "x": 119,
+    "y": -163,
     "name": "Witch Hill",
     "zone": "Dustwallow Marsh",
     "type": "HostileArea"

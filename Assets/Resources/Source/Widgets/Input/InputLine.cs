@@ -367,6 +367,14 @@ public class InputLine : MonoBehaviour
             {
                 Respawn("ObjectManagerTowns");
             }
+            else if (CDesktop.windows.Exists(x => x.title == "ObjectManagerMounts"))
+            {
+                Respawn("ObjectManagerMounts");
+            }
+            else if (CDesktop.windows.Exists(x => x.title == "ObjectManagerFactions"))
+            {
+                Respawn("ObjectManagerFactions");
+            }
             else if (CDesktop.windows.Exists(x => x.title == "ObjectManagerTriggerList"))
             {
                 Respawn("ObjectManagerTriggerList");
@@ -386,6 +394,10 @@ public class InputLine : MonoBehaviour
             else if (CDesktop.windows.Exists(x => x.title == "ObjectManagerItemIconList"))
             {
                 Respawn("ObjectManagerItemIconList");
+            }
+            else if (CDesktop.windows.Exists(x => x.title == "ObjectManagerMountIconList"))
+            {
+                Respawn("ObjectManagerMountIconList");
             }
             else if (CDesktop.windows.Exists(x => x.title == "ObjectManagerAmbienceList"))
             {
@@ -581,6 +593,11 @@ public class InputLine : MonoBehaviour
             {
                 var amount = double.Parse(foo.Value().Substring(5));
                 currentSave.player.inventory.money += amount;
+            }
+            else if (foo.Value().StartsWith("addtime"))
+            {
+                var amount = int.Parse(foo.Value().Substring(7));
+                currentSave.AddTime(amount);
             }
             else if (foo.Value().StartsWith("builderspacing"))
             {
