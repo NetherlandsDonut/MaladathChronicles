@@ -194,7 +194,7 @@ public class Item
 
     public bool CanEquip(Entity entity)
     {
-        if (type == "Miscellaneous")
+        if (type == "Miscellaneous" || type == "Trade Good")
             return false;
         if (specs != null && !specs.Contains(entity.spec))
             return false;

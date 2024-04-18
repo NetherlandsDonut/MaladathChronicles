@@ -2,31 +2,37 @@
   {
     "name": "Pinto",
     "icon": "MountRidingHorse",
+    "price": 80,
     "speed": 7
   },
   {
     "name": "Brown Horse",
     "icon": "MountRidingHorse",
+    "price": 80,
     "speed": 7
   },
   {
     "name": "Chestnut Mare",
     "icon": "MountRidingHorse",
+    "price": 80,
     "speed": 7
   },
   {
     "name": "Swift Brown Steed",
     "icon": "MountRidingHorse",
+    "price": 1000,
     "speed": 9
   },
   {
     "name": "Swift Palomino",
     "icon": "MountRidingHorse",
+    "price": 1000,
     "speed": 9
   },
   {
     "name": "Swift White Steed",
     "icon": "MountRidingHorse",
+    "price": 1000,
     "speed": 9
   },
   {
@@ -82,166 +88,199 @@
   {
     "name": "Brown Wolf",
     "icon": "MountBlackDireWolf",
+    "price": 80,
     "speed": 7
   },
   {
     "name": "Dire Wolf",
     "icon": "MountWhiteDireWolf",
+    "price": 80,
     "speed": 7
   },
   {
     "name": "Timber Wolf",
     "icon": "MountWhiteDireWolf",
+    "price": 80,
     "speed": 7
   },
   {
     "name": "Swift Brown Wolf",
     "icon": "MountBlackDireWolf",
+    "price": 1000,
     "speed": 9
   },
   {
     "name": "Swift Gray Wolf",
     "icon": "MountWhiteDireWolf",
+    "price": 1000,
     "speed": 9
   },
   {
     "name": "Swift Timber Wolf",
     "icon": "MountWhiteDireWolf",
+    "price": 1000,
     "speed": 9
   },
   {
     "name": "Blue Skeletal Horse",
     "icon": "MountUndeadHorse",
+    "price": 80,
     "speed": 7
   },
   {
     "name": "Brown Skeletal Horse",
     "icon": "MountUndeadHorse",
+    "price": 80,
     "speed": 7
   },
   {
     "name": "Red Skeletal Horse",
     "icon": "MountUndeadHorse",
+    "price": 80,
     "speed": 7
   },
   {
     "name": "Green Skeletal Horse",
     "icon": "MountUndeadHorse",
+    "price": 1000,
     "speed": 9
   },
   {
     "name": "Purple Skeletal Horse",
     "icon": "MountUndeadHorse",
+    "price": 1000,
     "speed": 9
   },
   {
     "name": "Green Kodo",
     "icon": "MountKodoGreen",
+    "price": 80,
     "speed": 7
   },
   {
     "name": "Brown Kodo",
     "icon": "MountKodoBrown",
+    "price": 80,
     "speed": 7
   },
   {
     "name": "Gray Kodo",
     "icon": "MountKodoBrown",
+    "price": 80,
     "speed": 7
   },
   {
     "name": "Great Green Kodo",
     "icon": "MountKodoGreen",
+    "price": 1000,
     "speed": 9
   },
   {
     "name": "Great Brown Kodo",
     "icon": "MountKodoBrown",
+    "price": 1000,
     "speed": 9
   },
   {
     "name": "Great Gray Kodo",
     "icon": "MountKodoGray",
+    "price": 1000,
     "speed": 9
   },
   {
     "name": "Great White Kodo",
     "icon": "MountKodoWhite",
+    "price": 1000,
     "speed": 9
   },
   {
     "name": "Emerald Raptor",
     "icon": "MountRaptorGreen",
+    "price": 80,
     "speed": 7
   },
   {
     "name": "Turquoise Raptor",
     "icon": "MountRaptorGreen",
+    "price": 80,
     "speed": 7
   },
   {
     "name": "Violet Raptor",
     "icon": "MountRaptorGreen",
+    "price": 80,
     "speed": 7
   },
   {
     "name": "Swift Blue Raptor",
     "icon": "MountRaptorGreen",
+    "price": 1000,
     "speed": 9
   },
   {
     "name": "Swift Olive Raptor",
     "icon": "MountRaptorGreen",
+    "price": 1000,
     "speed": 9
   },
   {
     "name": "Swift Orange Raptor",
     "icon": "MountRaptorGreen",
+    "price": 1000,
     "speed": 9
   },
   {
     "name": "Black War Kodo",
     "icon": "MountKodoBlack",
+    "price": 100,
     "speed": 9
   },
   {
     "name": "Black War Wolf",
     "icon": "MountBlackDireWolf",
+    "price": 100,
     "speed": 9
   },
   {
     "name": "Black War Raptor",
     "icon": "MountRaptorBlack",
+    "price": 100,
     "speed": 9
   },
   {
     "name": "Red Skeletal Warhorse",
     "icon": "MountUndeadHorse",
+    "price": 100,
     "speed": 9
   },
   {
     "name": "Frostwolf Howler",
     "icon": "MountFrostwolfHowler",
+    "price": 800,
     "speed": 9
   },
   {
     "name": "Brown Ram",
     "icon": "MountMountainRam",
+    "price": 80,
     "speed": 7
   },
   {
     "name": "Gray Ram",
     "icon": "MountMountainRam",
+    "price": 80,
     "speed": 7
   },
   {
     "name": "White Ram",
     "icon": "MountMountainRam",
+    "price": 1000,
     "speed": 7
   },
   {
     "name": "Swift Brown Ram",
     "icon": "MountMountainRam",
+    "price": 1000,
     "speed": 9
   },
   {
@@ -252,36 +291,43 @@
   {
     "name": "Swift White Ram",
     "icon": "MountMountainRam",
+    "price": 1000,
     "speed": 9
   },
   {
     "name": "Stormpike Battle Charger",
     "icon": "MountMountainRam",
+    "price": 800,
     "speed": 9
   },
   {
     "name": "Black Battlestrider",
     "icon": "MountMechaStriderBlue",
+    "price": 100,
     "speed": 9
   },
   {
     "name": "Black War Tiger",
     "icon": "MountBlackPanther",
+    "price": 100,
     "speed": 9
   },
   {
     "name": "Black War Ram",
     "icon": "MountMountainRam",
+    "price": 100,
     "speed": 9
   },
   {
     "name": "Black War Steed",
     "icon": "MountNightmareHorse",
+    "price": 100,
     "speed": 9
   },
   {
     "name": "Winterspring Frostsaber",
     "icon": "MountPinkTiger",
+    "price": 900,
     "speed": 9
   },
   {
@@ -297,66 +343,79 @@
   {
     "name": "Striped Nightsaber",
     "icon": "MountBlackPanther",
+    "price": 80,
     "speed": 7
   },
   {
     "name": "Striped Mistsaber",
     "icon": "MountWhiteTiger",
+    "price": 80,
     "speed": 7
   },
   {
     "name": "Spotted Frostsaber",
     "icon": "MountWhiteTiger",
+    "price": 80,
     "speed": 7
   },
   {
     "name": "Swift Stormsaber",
     "icon": "MountWhiteTiger",
+    "price": 1000,
     "speed": 9
   },
   {
     "name": "Swift Mistsaber",
     "icon": "MountWhiteTiger",
+    "price": 1000,
     "speed": 9
   },
   {
     "name": "Swift Frostsaber",
     "icon": "MountWhiteTiger",
+    "price": 1000,
     "speed": 9
   },
   {
     "name": "Swift Green Mechanostrider",
     "icon": "MountMechaStriderBlue",
+    "price": 1000,
     "speed": 9
   },
   {
     "name": "Swift Yellow Mechanostrider",
     "icon": "MountMechaStriderBlue",
+    "price": 1000,
     "speed": 9
   },
   {
     "name": "Swift White Mechanostrider",
     "icon": "MountMechaStriderBlue",
+    "price": 1000,
     "speed": 9
   },
   {
     "name": "Red Mechanostrider",
     "icon": "MountMechaStriderBlue",
+    "price": 80,
     "speed": 7
   },
   {
     "name": "Green Mechanostrider",
     "icon": "MountMechaStriderBlue",
+    "price": 80,
     "speed": 7
   },
   {
     "name": "Unpainted Mechanostrider",
     "icon": "MountMechaStriderBlue",
+    "price": 80,
     "speed": 7
   },
   {
     "name": "Blue Mechanostrider",
     "icon": "MountMechaStriderBlue",
+    "price": 80,
     "speed": 7
   },
   {

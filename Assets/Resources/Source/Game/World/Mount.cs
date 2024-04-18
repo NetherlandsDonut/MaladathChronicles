@@ -28,6 +28,9 @@ public class Mount
     //this speed replaces the player speed
     public int speed;
 
+    //Price of the mount
+    public float price;
+
     //List of abilities provided by the mount
     public List<string> abilities;
 
