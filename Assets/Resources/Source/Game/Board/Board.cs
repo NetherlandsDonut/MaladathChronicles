@@ -65,13 +65,17 @@ public class Board
         board.CallEvents(board.enemy, new() { { "Trigger", "CombatBegin" } });
     }
 
+    //Spawns a new board that is intended to be used as a playtest site for a specific ability
     public static void NewBoard(Ability testingAbility)
     {
         board = new Board(6, 6, new() { { testingAbility, 0 } });
         bufferBoard = new BufferBoard();
         if (testingAbility.events != null)
             board.CallEvents(board.enemy, new() { { "Trigger", "AbilityCast" }, { "AbilityName", testingAbility.name }, { "Triggerer", "Effector" } });
-        board.actions.Add(() => { CloseDesktop("GameSimulation"); CDesktop.UnlockScreen(); });
+
+        //This line automatically closed the simulation once the ability is done testing.
+        //It was deactivated to make the dev see the after effects of the ability.
+        //board.actions.Add(() => { CloseDesktop("GameSimulation"); CDesktop.UnlockScreen(); });
     }
 
     #endregion

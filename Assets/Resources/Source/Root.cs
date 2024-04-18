@@ -44,8 +44,8 @@ public static class Root
     public static int loadingScreenObjectLoadAim;
     public static List<Blueprint> loadSites;
 
-    public static Color32 dayColor = new Color32(255, 255, 255, 255);
-    public static Color32 nightColor = new Color32(185, 185, 202, 255);
+    public static Color32 dayColor = new(255, 255, 255, 255);
+    public static Color32 nightColor = new(185, 185, 202, 255);
 
     public static Action splitDelegate;
     public static string[,] groundData;

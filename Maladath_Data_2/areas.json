@@ -16573,8 +16573,7 @@
     ],
     "name": "Athenaeum",
     "zone": "Scarlet Monastery",
-    "type": "HostileArea",
-    "noNightVariant": true
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -16779,8 +16778,7 @@
     ],
     "name": "Gallery of Treasures",
     "zone": "Scarlet Monastery",
-    "type": "HostileArea",
-    "noNightVariant": true
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -16810,8 +16808,7 @@
     ],
     "name": "Hall of Champions",
     "zone": "Scarlet Monastery",
-    "type": "HostileArea",
-    "noNightVariant": true
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -18004,8 +18001,7 @@
     ],
     "name": "Arugal Chamber",
     "zone": "Shadowfang Keep",
-    "type": "HostileArea",
-    "noNightVariant": true
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -18045,8 +18041,7 @@
     ],
     "name": "Dining Hall",
     "zone": "Shadowfang Keep",
-    "type": "HostileArea",
-    "noNightVariant": true
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -18086,8 +18081,7 @@
     ],
     "name": "Jail",
     "zone": "Shadowfang Keep",
-    "type": "HostileArea",
-    "noNightVariant": true
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [

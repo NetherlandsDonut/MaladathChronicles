@@ -51,7 +51,7 @@ public class Highlightable : MonoBehaviour
                 if (pathsConnectedToSite.ContainsKey(site))
                     pathsConnectedToSite[site].ForEach(x => pathsDrawn.Add(x.DrawPath()));
             }
-            else if (window.title != "Site: " + currentSave.currentSite) rightPressEvent(null);
+            else if (window.title != "Site: " + currentSave.currentSite && rightPressEvent != null) rightPressEvent(null);
         }
     }
 

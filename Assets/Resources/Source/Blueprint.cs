@@ -8177,52 +8177,6 @@ public class Blueprint
             AddHotkey(BackQuote, () => { SpawnDesktopBlueprint("DevPanel"); });
             AddHotkey(KeypadMultiply, () => { Board.board.EndCombat("Won"); });
         }),
-        new("GameSimulation", () =>
-        {
-            locationName = Board.board.area.name;
-            PlaySound("DesktopEnterCombat");
-            SetDesktopBackground(Board.board.area.Background());
-            SpawnWindowBlueprint("BattleBoard");
-            SpawnWindowBlueprint("BufferBoard");
-            SpawnWindowBlueprint("PlayerBattleInfo");
-            SpawnWindowBlueprint("LocationInfo");
-            SpawnWindowBlueprint("EnemyBattleInfo");
-            SpawnWindowBlueprint("PlayerResources");
-            SpawnWindowBlueprint("EnemyResources");
-            Board.board.Reset();
-            AddHotkey(PageUp, () => {
-                Board.board.player.resources = new Dictionary<string, int>
-                {
-                    { "Earth", 99 },
-                    { "Fire", 99 },
-                    { "Air", 99 },
-                    { "Water", 99 },
-                    { "Frost", 99 },
-                    { "Lightning", 99 },
-                    { "Arcane", 99 },
-                    { "Decay", 99 },
-                    { "Order", 99 },
-                    { "Shadow", 99 },
-                };
-                CDesktop.RebuildAll();
-            });
-            AddHotkey(PageDown, () => {
-                Board.board.enemy.resources = new Dictionary<string, int>
-                {
-                    { "Earth", 99 },
-                    { "Fire", 99 },
-                    { "Air", 99 },
-                    { "Water", 99 },
-                    { "Frost", 99 },
-                    { "Lightning", 99 },
-                    { "Arcane", 99 },
-                    { "Decay", 99 },
-                    { "Order", 99 },
-                    { "Shadow", 99 },
-                };
-                CDesktop.RebuildAll();
-            });
-        }),
         new("CharacterSheet", () =>
         {
             SetDesktopBackground("Stone");
@@ -8408,6 +8362,52 @@ public class Blueprint
             SetDesktopBackground("Areas/AreaTheCelestialPlanetarium");
             SpawnWindowBlueprint("ObjectManagerLobby");
             AddHotkey(Escape, () => { CloseDesktop("DevPanel"); });
+        }),
+        new("GameSimulation", () =>
+        {
+            locationName = Board.board.area.name;
+            PlaySound("DesktopEnterCombat");
+            SetDesktopBackground(Board.board.area.Background());
+            SpawnWindowBlueprint("BattleBoard");
+            SpawnWindowBlueprint("BufferBoard");
+            SpawnWindowBlueprint("PlayerBattleInfo");
+            SpawnWindowBlueprint("LocationInfo");
+            SpawnWindowBlueprint("EnemyBattleInfo");
+            SpawnWindowBlueprint("PlayerResources");
+            SpawnWindowBlueprint("EnemyResources");
+            Board.board.Reset();
+            AddHotkey(PageUp, () => {
+                Board.board.player.resources = new Dictionary<string, int>
+                {
+                    { "Earth", 99 },
+                    { "Fire", 99 },
+                    { "Air", 99 },
+                    { "Water", 99 },
+                    { "Frost", 99 },
+                    { "Lightning", 99 },
+                    { "Arcane", 99 },
+                    { "Decay", 99 },
+                    { "Order", 99 },
+                    { "Shadow", 99 },
+                };
+                CDesktop.RebuildAll();
+            });
+            AddHotkey(PageDown, () => {
+                Board.board.enemy.resources = new Dictionary<string, int>
+                {
+                    { "Earth", 99 },
+                    { "Fire", 99 },
+                    { "Air", 99 },
+                    { "Water", 99 },
+                    { "Frost", 99 },
+                    { "Lightning", 99 },
+                    { "Arcane", 99 },
+                    { "Decay", 99 },
+                    { "Order", 99 },
+                    { "Shadow", 99 },
+                };
+                CDesktop.RebuildAll();
+            });
         }),
         new("ObjectManagerHostileAreas", () =>
         {

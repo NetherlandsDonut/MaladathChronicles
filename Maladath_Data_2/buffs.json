@@ -42,7 +42,8 @@
       {
         "triggers": [
           {
-            "Trigger": "TurnBegin"
+            "Trigger": "TurnBegin",
+            "AbilityName": "Arcane Missiles"
           }
         ],
         "effects": [

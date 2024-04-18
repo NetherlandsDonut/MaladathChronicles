@@ -2,10 +2,13 @@ using UnityEngine;
 
 public class HealthBar : MonoBehaviour
 {
+    //Entity this health bar referes to
     public Entity entity;
 
+    //Reference to the splitter
     public SpriteRenderer split;
 
+    //Updates the length of the health bar
     public void UpdateHealthBar()
     {
         var aim = (int)(131.0 / entity.MaxHealth() * entity.health);
