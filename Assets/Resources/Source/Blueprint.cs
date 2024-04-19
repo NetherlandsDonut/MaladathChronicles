@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 using static UnityEngine.KeyCode;
-using static UnityEngine.GraphicsBuffer;
 
 using static Root;
 using static Root.Anchor;
@@ -19,6 +18,7 @@ using static Spec;
 using static Sound;
 using static Event;
 using static Mount;
+using static Board;
 using static Person;
 using static Defines;
 using static MapGrid;
@@ -586,10 +586,10 @@ public class Blueprint
             AddButtonRegion(
                 () =>
                 {
-                    AddLine(Board.board.player.name, "Black");
+                    AddLine(board.player.name, "Black");
                     AddSmallButton("MenuFlee", (h) =>
                     {
-                        Board.board.EndCombat("Fled");
+                        board.EndCombat("Fled");
                     });
                 },
                 (h) =>
@@ -599,55 +599,54 @@ public class Blueprint
             );
             AddHeaderRegion(() =>
             {
-                if (Board.board.player.spec != null)
+                if (board.player.spec != null)
                 {
-                    AddBigButton(Board.board.player.Spec().icon,
+                    AddBigButton(board.player.Spec().icon,
                         (h) => { }
                     );
                 }
                 else
                 {
-                    var race = races.Find(x => x.name == Board.board.enemy.race);
-                    AddBigButton(race.portrait == "" ? "OtherUnknown" : race.portrait + (race.genderedPortrait ? Board.board.enemy.gender : ""), (h) => { });
+                    var race = races.Find(x => x.name == board.enemy.race);
+                    AddBigButton(race.portrait == "" ? "OtherUnknown" : race.portrait + (race.genderedPortrait ? board.enemy.gender : ""), (h) => { });
                 }
-                AddLine("Level: " + Board.board.player.level, "Gray");
+                AddLine("Level: " + board.player.level, "Gray");
             });
-            AddHealthBar(40, -38, "Player", Board.board.player);
-            foreach (var actionBar in Board.board.player.actionBars)
+            AddHealthBar(40, -38, "Player", board.player);
+            foreach (var actionBar in board.player.actionBars)
             {
-                var abilityObj = abilities.Find(x => x.name == actionBar.ability);
+                var abilityObj = abilities.Find(x => x.name == actionBar);
                 if (abilityObj == null || abilityObj.cost == null) continue;
                 AddButtonRegion(
                     () =>
                     {
-                        AddLine(actionBar.ability, "", "Right");
+                        AddLine(actionBar, "", "Right");
                         AddSmallButton(abilityObj.icon, (h) => { });
-                        if (!abilityObj.EnoughResources(Board.board.player))
+                        if (!abilityObj.EnoughResources(board.player))
                         {
                             SetSmallButtonToGrayscale();
                             AddSmallButtonOverlay("OtherGridBlurred");
                         }
-                        if (actionBar.cooldown > 0)
+                        if (board.CooldownOn(true, actionBar) > 0)
                             AddSmallButtonOverlay("OtherGrid");
                     },
                     (h) =>
                     {
-                        if (abilityObj.EnoughResources(Board.board.player) && actionBar.cooldown == 0)
+                        if (abilityObj.EnoughResources(board.player) && board.CooldownOn(true, actionBar) <= 0)
                         {
-                            actionBar.cooldown = abilityObj.cooldown;
-                            Board.board.CallEvents(Board.board.player, new() { { "Trigger", "AbilityCast" }, {"Triggerer", "Effector" }, { "AbilityName", abilityObj.name } });
-                            Board.board.CallEvents(Board.board.enemy, new() { { "Trigger", "AbilityCast" }, {"Triggerer", "Other" }, { "AbilityName", abilityObj.name } });
-                            Board.board.player.DetractResources(abilityObj.cost);
+                            board.CallEvents(board.player, new() { { "Trigger", "AbilityCast" }, {"Triggerer", "Effector" }, { "AbilityName", abilityObj.name } });
+                            board.CallEvents(board.enemy, new() { { "Trigger", "AbilityCast" }, {"Triggerer", "Other" }, { "AbilityName", abilityObj.name } });
+                            board.player.DetractResources(abilityObj.cost);
                             foreach (var element in abilityObj.cost)
-                                Board.board.log.elementsUsed.Inc(element.Key, element.Value);
-                            Board.board.temporaryElementsPlayer = new();
+                                board.log.elementsUsed.Inc(element.Key, element.Value);
+                            board.temporaryElementsPlayer = new();
                             h.window.desktop.RebuildAll();
                         }
                     },
                     null,
                     (h) => () =>
                     {
-                        PrintAbilityTooltip(Board.board.player, Board.board.enemy, abilityObj, Board.board.player.abilities[abilityObj.name]);
+                        PrintAbilityTooltip(board.player, board.enemy, abilityObj, board.player.abilities[abilityObj.name]);
                     }
                 );
             }
@@ -733,7 +732,7 @@ public class Blueprint
                 AddBigButton(race == null ? "OtherUnknown" : race.portrait,
                 (h) =>
                 {
-                    Board.NewBoard(area.RollEncounter(boss), area);
+                    NewBoard(area.RollEncounter(boss), area);
                     SpawnDesktopBlueprint("Game");
                     SwitchDesktop("Game");
                 });
@@ -780,9 +779,9 @@ public class Blueprint
                             (h) =>
                             {
                                 var key = activeAbilities.ToList()[index + 7 * regionGroup.pagination];
-                                if (!currentSave.player.actionBars.Exists(x => x.ability == key.Key.name) && currentSave.player.actionBars.Count < currentSave.player.ActionBarsAmount())
+                                if (!currentSave.player.actionBars.Contains(key.Key.name) && currentSave.player.actionBars.Count < currentSave.player.ActionBarsAmount())
                                 {
-                                    currentSave.player.actionBars.Add(new ActionBar(key.Key.name));
+                                    currentSave.player.actionBars.Add(key.Key.name);
                                     Respawn("PlayerSpellbookInfo");
                                     Respawn("SpellbookAbilityListActivated", true);
                                     PlaySound("DesktopActionbarAdd", 0.7f);
@@ -796,7 +795,7 @@ public class Blueprint
                                 PrintAbilityTooltip(currentSave.player, null, key, activeAbilities[key]);
                             }
                         );
-                        if (currentSave.player.actionBars.Exists(x => x.ability == key.Key.name))
+                        if (currentSave.player.actionBars.Contains(key.Key.name))
                         {
                             SetBigButtonToGrayscale();
                             AddBigButtonOverlay("OtherGridBlurred");
@@ -865,7 +864,7 @@ public class Blueprint
                                 PrintAbilityTooltip(currentSave.player, null, key, passiveAbilities[key]);
                             }
                         );
-                        if (currentSave.player.actionBars.Exists(x => x.ability == key.Key.name))
+                        if (currentSave.player.actionBars.Contains(key.Key.name))
                         {
                             SetBigButtonToGrayscale();
                             AddBigButtonOverlay("OtherGridBlurred");
@@ -911,7 +910,7 @@ public class Blueprint
             for (int i = 0; i < currentSave.player.ActionBarsAmount(); i++)
             {
                 var index = i;
-                var abilityObj = currentSave.player.actionBars.Count <= index ? null : abilities.Find(x => x.name == currentSave.player.actionBars[index].ability);
+                var abilityObj = currentSave.player.actionBars.Count <= index ? null : abilities.Find(x => x.name == currentSave.player.actionBars[index]);
                 if (abilityObj != null)
                     AddButtonRegion(
                         () =>
@@ -1012,7 +1011,7 @@ public class Blueprint
             AddButtonRegion(
                 () =>
                 {
-                    AddLine(Board.board.enemy.name, "Black");
+                    AddLine(board.enemy.name, "Black");
                     AddSmallButton("OtherSettings", (h) =>
                     {
                         PlaySound("DesktopMenuOpen");
@@ -1026,27 +1025,27 @@ public class Blueprint
             );
             AddHeaderRegion(() =>
             {
-                var race = races.Find(x => x.name == Board.board.enemy.race);
-                AddBigButton(race.portrait == "" ? "OtherUnknown" : race.portrait + (race.genderedPortrait ? Board.board.enemy.gender : ""), (h) => { });
+                var race = races.Find(x => x.name == board.enemy.race);
+                AddBigButton(race.portrait == "" ? "OtherUnknown" : race.portrait + (race.genderedPortrait ? board.enemy.gender : ""), (h) => { });
                 AddLine("Level: ", "Gray");
-                AddText(Board.board.enemy.level - 10 > Board.board.player.level ? "??" : "" + Board.board.enemy.level, ColorEntityLevel(Board.board.enemy.level));
+                AddText(board.enemy.level - 10 > board.player.level ? "??" : "" + board.enemy.level, ColorEntityLevel(board.enemy.level));
             });
-            AddHealthBar(40, -38, "Enemy", Board.board.enemy);
-            foreach (var actionBar in Board.board.enemy.actionBars)
+            AddHealthBar(40, -38, "Enemy", board.enemy);
+            foreach (var actionBar in board.enemy.actionBars)
             {
-                var abilityObj = abilities.Find(x => x.name == actionBar.ability);
+                var abilityObj = abilities.Find(x => x.name == actionBar);
                 if (abilityObj == null || abilityObj.cost == null) continue;
                 AddButtonRegion(
                     () =>
                     {
-                        AddLine(actionBar.ability, "", "Right");
+                        AddLine(actionBar, "", "Right");
                         AddSmallButton(abilityObj.icon, (h) => { });
-                        if (!abilityObj.EnoughResources(Board.board.enemy))
+                        if (!abilityObj.EnoughResources(board.enemy))
                         {
                             SetSmallButtonToGrayscale();
                             AddSmallButtonOverlay("OtherGridBlurred");
                         }
-                        if (actionBar.cooldown > 0)
+                        if (board.CooldownOn(false, actionBar) > 0)
                             AddSmallButtonOverlay("OtherGrid");
                     },
                     (h) =>
@@ -1056,7 +1055,7 @@ public class Blueprint
                     null,
                     (h) => () =>
                     {
-                        PrintAbilityTooltip(Board.board.enemy, Board.board.player, abilityObj, Board.board.enemy.abilities[abilityObj.name]);
+                        PrintAbilityTooltip(board.enemy, board.player, abilityObj, board.enemy.abilities[abilityObj.name]);
                     }
                 );
             }
@@ -1079,7 +1078,7 @@ public class Blueprint
             AddHeaderRegion(
                 () =>
                 {
-                    AddLine(Board.board.enemy.name + "'s Loot");
+                    AddLine(board.enemy.name + "'s Loot");
                     AddSmallButton("OtherClose", (h) =>
                     {
                         PlaySound("DesktopInventoryClose");
@@ -1089,48 +1088,48 @@ public class Blueprint
             );
         }),
         new("BattleBoard", () => {
-            SetAnchor(Top, 0, -34 + 19 * (Board.board.field.GetLength(1) - 7));
+            SetAnchor(Top, 0, -34 + 19 * (board.field.GetLength(1) - 7));
             var boardBackground = new GameObject("BoardBackground", typeof(SpriteRenderer), typeof(SpriteMask));
             boardBackground.transform.parent = CDesktop.LBWindow.transform;
             boardBackground.transform.localPosition = new Vector2(-17, 17);
-            boardBackground.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Textures/BoardBackground" + Board.board.field.GetLength(0) + "x" + Board.board.field.GetLength(1));
+            boardBackground.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Textures/BoardBackground" + board.field.GetLength(0) + "x" + board.field.GetLength(1));
             var mask = boardBackground.GetComponent<SpriteMask>();
-            mask.sprite = Resources.Load<Sprite>("Sprites/Textures/BoardMask" + Board.board.field.GetLength(0) + "x" + Board.board.field.GetLength(1));
+            mask.sprite = Resources.Load<Sprite>("Sprites/Textures/BoardMask" + board.field.GetLength(0) + "x" + board.field.GetLength(1));
             mask.isCustomRangeActive = true;
             mask.frontSortingLayerID = SortingLayer.NameToID("Missile");
             mask.backSortingLayerID = SortingLayer.NameToID("Default");
             boardBackground = new GameObject("BoardInShadow", typeof(SpriteRenderer));
             boardBackground.transform.parent = CDesktop.LBWindow.transform;
             boardBackground.transform.localPosition = new Vector2(-17, 17);
-            boardBackground.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Textures/BoardShadow" + Board.board.field.GetLength(0) + "x" + Board.board.field.GetLength(1));
+            boardBackground.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Textures/BoardShadow" + board.field.GetLength(0) + "x" + board.field.GetLength(1));
             boardBackground.GetComponent<SpriteRenderer>().sortingLayerName = "CameraShadow";
             DisableGeneralSprites();
             AddRegionGroup();
-            for (int i = 0; i < Board.board.field.GetLength(1); i++)
+            for (int i = 0; i < board.field.GetLength(1); i++)
             {
                 AddPaddingRegion(() =>
                 {
-                    for (int j = 0; j < Board.board.field.GetLength(0); j++)
+                    for (int j = 0; j < board.field.GetLength(0); j++)
                     {
-                        AddBigButton(Board.board.GetFieldButton(),
+                        AddBigButton(board.GetFieldButton(),
                         (h) =>
                         {
-                            var list = Board.board.FloodCount(h.region.bigButtons.FindIndex(x => x.GetComponent<Highlightable>() == h), h.region.regionGroup.regions.IndexOf(h.region));
-                            Board.board.temporaryElementsPlayer = new();
-                            Board.board.playerFinishedMoving = true;
-                            Board.board.FloodDestroy(list);
+                            var list = board.FloodCount(h.region.bigButtons.FindIndex(x => x.GetComponent<Highlightable>() == h), h.region.regionGroup.regions.IndexOf(h.region));
+                            board.temporaryElementsPlayer = new();
+                            board.playerFinishedMoving = true;
+                            board.FloodDestroy(list);
                         });
                         //(h) => () =>
                         //{
                         //    var coords = (h.region.bigButtons.FindIndex(x => x.GetComponent<Highlightable>() == h), h.region.regionGroup.regions.IndexOf(h.region));
-                        //    var count = Board.board.FloodCount(coords.Item1, coords.Item2).Count;
+                        //    var count = board.FloodCount(coords.Item1, coords.Item2).Count;
                         //    SetAnchor(Bottom);
                         //    AddRegionGroup();
                         //    AddHeaderRegion(
                         //        () =>
                         //        {
                         //            AddLine("x" + count + " ", LightGray);
-                        //            AddText(Board.board.GetFieldName(coords.Item1, coords.Item2), Board.board.GetFieldColor(coords.Item1, coords.Item2));
+                        //            AddText(board.GetFieldName(coords.Item1, coords.Item2), board.GetFieldColor(coords.Item1, coords.Item2));
                         //        }
                         //    );s
                         //});
@@ -2465,16 +2464,16 @@ public class Blueprint
             });
             AddPaddingRegion(() =>
             {
-                if (Board.board.results.experience > 0)
-                    AddLine("You earned " + Board.board.results.experience + " experience", "", "Center");
+                if (board.results.experience > 0)
+                    AddLine("You earned " + board.results.experience + " experience", "", "Center");
                 else AddLine("You earned no experience", "", "Center");
                 SetRegionAsGroupExtender();
             });
             AddButtonRegion(() =>
             {
-                if (Board.board.results.result == "Won")
+                if (board.results.result == "Won")
                 {
-                    if (Board.board.results.inventory.items.Count > 0)
+                    if (board.results.inventory.items.Count > 0)
                         AddLine("Show Loot", "", "Center");
                     else AddLine("OK", "", "Center");
                 }
@@ -2489,7 +2488,7 @@ public class Blueprint
             (h) =>
             {
                 CloseDesktop("CombatResults");
-                if (Board.board.results.inventory.items.Count > 0)
+                if (board.results.inventory.items.Count > 0)
                 {
                     PlaySound("DesktopInventoryOpen");
                     SpawnDesktopBlueprint("CombatResultsLoot");
@@ -2560,8 +2559,8 @@ public class Blueprint
                 () =>
                 {
                     for (int j = 0; j < 6; j++)
-                        if (j < Board.board.results.inventory.items.Count)
-                            PrintLootItem(Board.board.results.inventory.items[j]);
+                        if (j < board.results.inventory.items.Count)
+                            PrintLootItem(board.results.inventory.items[j]);
                         else AddBigButton("OtherEmpty", (h) => { });
                 }
             );
@@ -2588,7 +2587,7 @@ public class Blueprint
                             });
                             AddPaddingRegion(() =>
                             {
-                                AddLine(Board.board.player.resources.ToList().Find(x => x.Key == element).Value + " / " + Board.board.player.MaxResource(element), "Gray");
+                                AddLine(board.player.resources.ToList().Find(x => x.Key == element).Value + " / " + board.player.MaxResource(element), "Gray");
                             });
                         }
                     );
@@ -2598,8 +2597,8 @@ public class Blueprint
             foreach (var element in elements1)
                 AddHeaderRegion(() =>
                 {
-                    var value = Board.board.player.resources.ToList().Find(x => x.Key == element).Value;
-                    AddLine(value + "", value == 0 ? "DarkGray" : (value < Board.board.player.MaxResource(element) ? "Gray" : "Green"));
+                    var value = board.player.resources.ToList().Find(x => x.Key == element).Value;
+                    AddLine(value + "", value == 0 ? "DarkGray" : (value < board.player.MaxResource(element) ? "Gray" : "Green"));
                     AddSmallButton("Element" + elements2[elements1.IndexOf(element)] + "Rousing",
                         null,
                         null,
@@ -2614,7 +2613,7 @@ public class Blueprint
                             });
                             AddPaddingRegion(() =>
                             {
-                                AddLine(Board.board.player.resources.ToList().Find(x => x.Key == elements2[elements1.IndexOf(element)]).Value + " / " + Board.board.player.MaxResource(elements2[elements1.IndexOf(element)]), "Gray");
+                                AddLine(board.player.resources.ToList().Find(x => x.Key == elements2[elements1.IndexOf(element)]).Value + " / " + board.player.MaxResource(elements2[elements1.IndexOf(element)]), "Gray");
                             });
                         }
                     );
@@ -2624,8 +2623,8 @@ public class Blueprint
             foreach (var element in elements2)
                 AddHeaderRegion(() =>
                 {
-                    var value = Board.board.player.resources.ToList().Find(x => x.Key == element).Value;
-                    AddLine(value + "", value == 0 ? "DarkGray" : (value < Board.board.player.MaxResource(element) ? "Gray" : "Green"));
+                    var value = board.player.resources.ToList().Find(x => x.Key == element).Value;
+                    AddLine(value + "", value == 0 ? "DarkGray" : (value < board.player.MaxResource(element) ? "Gray" : "Green"));
                 });
         }),
         new("EnemyResources", () => {
@@ -2650,7 +2649,7 @@ public class Blueprint
                             });
                             AddPaddingRegion(() =>
                             {
-                                AddLine(Board.board.enemy.resources.ToList().Find(x => x.Key == element).Value + " / " + Board.board.enemy.MaxResource(element), "Gray");
+                                AddLine(board.enemy.resources.ToList().Find(x => x.Key == element).Value + " / " + board.enemy.MaxResource(element), "Gray");
                             });
                         }
                     );
@@ -2660,8 +2659,8 @@ public class Blueprint
             foreach (var element in elements1)
                 AddHeaderRegion(() =>
                 {
-                    var value = Board.board.enemy.resources.ToList().Find(x => x.Key == element).Value;
-                    AddLine(value + "", value == 0 ? "DarkGray" : (value < Board.board.enemy.MaxResource(element) ? "Gray" : "Green"));
+                    var value = board.enemy.resources.ToList().Find(x => x.Key == element).Value;
+                    AddLine(value + "", value == 0 ? "DarkGray" : (value < board.enemy.MaxResource(element) ? "Gray" : "Green"));
                     AddSmallButton("Element" + elements2[elements1.IndexOf(element)] + "Rousing",
                         null,
                         null,
@@ -2676,7 +2675,7 @@ public class Blueprint
                             });
                             AddPaddingRegion(() =>
                             {
-                                AddLine(Board.board.enemy.resources.ToList().Find(x => x.Key == elements2[elements1.IndexOf(element)]).Value + " / " + Board.board.enemy.MaxResource(elements2[elements1.IndexOf(element)]), "Gray");
+                                AddLine(board.enemy.resources.ToList().Find(x => x.Key == elements2[elements1.IndexOf(element)]).Value + " / " + board.enemy.MaxResource(elements2[elements1.IndexOf(element)]), "Gray");
                             });
                         }
                     );
@@ -2686,8 +2685,8 @@ public class Blueprint
             foreach (var element in elements2)
                 AddHeaderRegion(() =>
                 {
-                    var value = Board.board.enemy.resources.ToList().Find(x => x.Key == element).Value;
-                    AddLine(value + "", value == 0 ? "DarkGray" : (value < Board.board.enemy.MaxResource(element) ? "Gray" : "Green"));
+                    var value = board.enemy.resources.ToList().Find(x => x.Key == element).Value;
+                    AddLine(value + "", value == 0 ? "DarkGray" : (value < board.enemy.MaxResource(element) ? "Gray" : "Green"));
                 });
         }),
         new("Console", () => {
@@ -6245,7 +6244,7 @@ public class Blueprint
             },
             (h) =>
             {
-                abilities = abilities.OrderBy(x => currentSave.player.actionBars.Exists(y => y.ability == x.name)).ToList();
+                abilities = abilities.OrderBy(x => currentSave.player.actionBars.Contains(x.name)).ToList();
                 CloseWindow("AbilitiesSort");
                 CDesktop.RespawnAll();
                 PlaySound("DesktopInventorySort", 0.2f);
@@ -6582,7 +6581,7 @@ public class Blueprint
                 AddSmallButton("OtherSound",
                 (h) =>
                 {
-                    Board.NewBoard(ability);
+                    NewBoard(ability);
                     SpawnDesktopBlueprint("GameSimulation");
                 });
             });
@@ -7986,13 +7985,13 @@ public class Blueprint
         }),
         new("CombatResults", () =>
         {
-            SetDesktopBackground(Board.board.area.Background());
+            SetDesktopBackground(board.area.Background());
             SpawnWindowBlueprint("CombatResults");
             SpawnWindowBlueprint("ExperienceBar");
         }),
         new("CombatLog", () =>
         {
-            SetDesktopBackground(Board.board.area.Background());
+            SetDesktopBackground(board.area.Background());
             SpawnWindowBlueprint("CombatResultsChart");
             SpawnWindowBlueprint("CombatResultsChartLeftArrow");
             SpawnWindowBlueprint("CombatResultsChartRightArrow");
@@ -8026,8 +8025,8 @@ public class Blueprint
         }),
         new("CombatResultsLoot", () =>
         {
-            SetDesktopBackground(Board.board.area.Background());
-            locationName = Board.board.enemy.name + "'s Loot";
+            SetDesktopBackground(board.area.Background());
+            locationName = board.enemy.name + "'s Loot";
             SpawnWindowBlueprint("MapToolbarShadow");
             SpawnWindowBlueprint("MapToolbarClockLeft");
             SpawnWindowBlueprint("MapToolbar");
@@ -8126,9 +8125,9 @@ public class Blueprint
         }),
         new("Game", () =>
         {
-            locationName = Board.board.area.name;
+            locationName = board.area.name;
             PlaySound("DesktopEnterCombat");
-            SetDesktopBackground(Board.board.area.Background());
+            SetDesktopBackground(board.area.Background());
             SpawnWindowBlueprint("BattleBoard");
             SpawnWindowBlueprint("BufferBoard");
             SpawnWindowBlueprint("PlayerBattleInfo");
@@ -8136,9 +8135,9 @@ public class Blueprint
             SpawnWindowBlueprint("EnemyBattleInfo");
             SpawnWindowBlueprint("PlayerResources");
             SpawnWindowBlueprint("EnemyResources");
-            Board.board.Reset();
+            board.Reset();
             AddHotkey(PageUp, () => {
-                Board.board.player.resources = new Dictionary<string, int>
+                board.player.resources = new Dictionary<string, int>
                 {
                     { "Earth", 99 },
                     { "Fire", 99 },
@@ -8154,7 +8153,7 @@ public class Blueprint
                 CDesktop.RebuildAll();
             });
             AddHotkey(PageDown, () => {
-                Board.board.enemy.resources = new Dictionary<string, int>
+                board.enemy.resources = new Dictionary<string, int>
                 {
                     { "Earth", 99 },
                     { "Fire", 99 },
@@ -8175,7 +8174,7 @@ public class Blueprint
                 SpawnDesktopBlueprint("GameMenu");
             });
             AddHotkey(BackQuote, () => { SpawnDesktopBlueprint("DevPanel"); });
-            AddHotkey(KeypadMultiply, () => { Board.board.EndCombat("Won"); });
+            AddHotkey(KeypadMultiply, () => { board.EndCombat("Won"); });
         }),
         new("CharacterSheet", () =>
         {
@@ -8365,9 +8364,9 @@ public class Blueprint
         }),
         new("GameSimulation", () =>
         {
-            locationName = Board.board.area.name;
+            locationName = board.area.name;
             PlaySound("DesktopEnterCombat");
-            SetDesktopBackground(Board.board.area.Background());
+            SetDesktopBackground(board.area.Background());
             SpawnWindowBlueprint("BattleBoard");
             SpawnWindowBlueprint("BufferBoard");
             SpawnWindowBlueprint("PlayerBattleInfo");
@@ -8375,9 +8374,9 @@ public class Blueprint
             SpawnWindowBlueprint("EnemyBattleInfo");
             SpawnWindowBlueprint("PlayerResources");
             SpawnWindowBlueprint("EnemyResources");
-            Board.board.Reset();
+            board.Reset();
             AddHotkey(PageUp, () => {
-                Board.board.player.resources = new Dictionary<string, int>
+                board.player.resources = new Dictionary<string, int>
                 {
                     { "Earth", 99 },
                     { "Fire", 99 },
@@ -8393,7 +8392,7 @@ public class Blueprint
                 CDesktop.RebuildAll();
             });
             AddHotkey(PageDown, () => {
-                Board.board.enemy.resources = new Dictionary<string, int>
+                board.enemy.resources = new Dictionary<string, int>
                 {
                     { "Earth", 99 },
                     { "Fire", 99 },

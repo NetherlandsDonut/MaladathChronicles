@@ -1,5 +1,32 @@
 [
   {
+    "name": "Prismatic Light",
+    "icon": "AbilityPrismaticLight",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Holy Bolts",
+    "icon": "AbilityHolyBolts",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Light's Grace",
+    "icon": "AbilityLightsGrace",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
     "name": "Aftermath",
     "icon": "AbilityFire",
     "tags": [],
@@ -585,7 +612,7 @@
   },
   {
     "name": "Avenger's Shield",
-    "icon": "AbilityAvenger'sShield",
+    "icon": "AbilityAvengersShield",
     "tags": [],
     "ranks": [
       {}
@@ -1112,6 +1139,7 @@
       "regions": [
         {
           "regionType": "Padding",
+          "isExtender": true,
           "contents": [
             {
               "Color": "Gray",
@@ -1559,7 +1587,7 @@
   },
   {
     "name": "Converging Storms",
-    "icon": "AbilityAcid",
+    "icon": "AbilityConvergingStorms",
     "tags": [],
     "ranks": [
       {}
@@ -1782,7 +1810,7 @@
   },
   {
     "name": "Crusader's Resolve",
-    "icon": "AbilityCrusader'sResolve",
+    "icon": "AbilityCrusadersResolve",
     "tags": [],
     "ranks": [
       {}
@@ -2297,7 +2325,7 @@
   },
   {
     "name": "Downpour",
-    "icon": "AbilityAcid",
+    "icon": "AbilityDownpour",
     "tags": [],
     "ranks": [
       {}
@@ -4099,6 +4127,7 @@
   {
     "name": "Ice Lance",
     "icon": "AbilityIceLance",
+    "cooldown": 1,
     "tags": [
       "Damage"
     ],
@@ -4118,14 +4147,26 @@
         ],
         "effects": [
           {
+            "SoundEffect": "AbilityIceLanceCast",
+            "AnimationType": "None",
+            "ShatterType": "Directional",
+            "ShatterDegree": "5",
+            "ShatterTarget": "Effector"
+          },
+          {
             "Effect": "Damage",
             "Affect": "Other",
             "PowerType": "Spell",
             "PowerSource": "Effector",
-            "PowerScale": "1.5"
-          },
-          {
-            "Effect": "EndTurn"
+            "PowerScale": "3,5",
+            "AnimationType": "Missile",
+            "ShatterType": "Central",
+            "SoundEffect": "AbilityIceLanceImpact",
+            "ShatterTarget": "Other",
+            "ShatterDegree": "30",
+            "ShatterSpeed": "20",
+            "AnimationSpeed": "1,2",
+            "Await": "5"
           }
         ]
       }
@@ -6484,6 +6525,7 @@
   {
     "name": "Splitting Ice",
     "icon": "AbilitySplittingIce",
+    "cooldown": 2,
     "tags": [],
     "ranks": [
       {}
@@ -6492,23 +6534,39 @@
       {
         "triggers": [
           {
-            "Trigger": "AbilityCast"
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector",
+            "AbilityName": "Ice Lance"
           }
         ],
         "effects": [
           {
-            "Effect": "Damage",
+            "Effect": "ChangeElements",
             "Affect": "Other",
             "PowerType": "Spell",
             "PowerSource": "Effector",
-            "PowerScale": "1.5"
-          },
-          {
-            "Effect": "EndTurn"
+            "PowerScale": "1.5",
+            "ElementTo": "Frost",
+            "ElementShatterDegree": "10",
+            "SoundEffect": "AbilityFreezingNovaImpact"
           }
         ]
       }
-    ]
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "isExtender": true,
+          "contents": [
+            {
+              "Color": "Gray",
+              "Text": "Every time damage is dealt using Ice Lance, one element on the board changes into an Frost element."
+            }
+	  ]
+        }
+      ]
+    }
   },
   {
     "name": "Spore Cloud",
@@ -6648,7 +6706,7 @@
   },
   {
     "name": "Stormflurry",
-    "icon": "AbilityLightningBolt2",
+    "icon": "AbilityStormflurry",
     "tags": [],
     "ranks": [
       {}
@@ -7099,7 +7157,7 @@
   },
   {
     "name": "Truth's Wake",
-    "icon": "AbilityTruth'sWake",
+    "icon": "AbilityTruthsWake",
     "tags": [],
     "ranks": [
       {}
@@ -7644,7 +7702,7 @@
   },
   {
     "name": "Zealot's Fervor",
-    "icon": "AbilityZealot'sFervor",
+    "icon": "AbilityZealotsFervor",
     "tags": [],
     "ranks": [
       {}

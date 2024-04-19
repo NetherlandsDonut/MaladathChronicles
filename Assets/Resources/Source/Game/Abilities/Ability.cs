@@ -31,15 +31,16 @@ public class Ability
 
     #region Execution
 
-    public void ExecuteEvents(Board board, FutureBoard futureBoard, Dictionary<string, string> trigger, int abilityRank)
+    public void ExecuteEvents(Board board, FutureBoard futureBoard, Dictionary<string, string> trigger, int abilityRank, bool sourcedFromPlayer)
     {
         //In case of this ability having no events just return
         if (events == null) return;
         foreach (var eve in events)
+        {
+            bool execute = false;
             foreach (var triggerData in eve.triggers)
                 if (triggerData.ContainsKey("Trigger") && triggerData["Trigger"] == trigger["Trigger"])
                 {
-                    bool execute = false;
                     if (trigger["Trigger"] == "BuffAdd" || trigger["Trigger"] == "BuffRemove" || trigger["Trigger"] == "BuffFlare")
                     {
                         string buffName = trigger.ContainsKey("BuffName") ? trigger["BuffName"] : "None";
@@ -102,8 +103,14 @@ public class Ability
                     else if (trigger["Trigger"] == "CombatBegin") execute = true;
                     else if (trigger["Trigger"] == "TurnBegin") execute = true;
                     else if (trigger["Trigger"] == "TurnEnd") execute = true;
-                    if (execute) eve.ExecuteEffects(board, futureBoard, icon, trigger, RankVariables(abilityRank), name, abilityRank);
                 }
+            if (execute && (board != null ? board.CooldownOn(sourcedFromPlayer, name) : futureBoard.CooldownOn(sourcedFromPlayer, name)) <= 0)
+            {
+                if (board != null) board.PutOnCooldown(sourcedFromPlayer, this);
+                else futureBoard.PutOnCooldown(sourcedFromPlayer, this);
+                eve.ExecuteEffects(board, futureBoard, icon, trigger, RankVariables(abilityRank), name, abilityRank);
+            }
+        }
     }
 
     public Dictionary<string, string> RankVariables(int abilityRank)
@@ -151,13 +158,13 @@ public class Ability
                 AddBigButton(ability.icon, (h) => { });
                 AddLine("Cooldown: ", "DarkGray");
                 AddText(ability.cooldown == 0 ? "None" : ability.cooldown + (ability.cooldown == 1 ? " turn" : " turns"), "Gray");
-                if (effector != null && effector.actionBars != null)
+                if (Board.board != null)
                 {
-                    var find = effector.actionBars.Find(x => x.ability == ability.name);
-                    if (find != null && find.cooldown > 0)
+                    var c = Board.board.CooldownOn(effector == Board.board.player, ability.name);
+                    if (c > 0)
                     {
                         AddLine("Cooldown left: ", "DarkGray");
-                        AddText(find.cooldown + (find.cooldown == 1 ? " turn" : " turns"), "Gray");
+                        AddText(c + (c == 1 ? " turn" : " turns"), "Gray");
                     }
                 }
             });

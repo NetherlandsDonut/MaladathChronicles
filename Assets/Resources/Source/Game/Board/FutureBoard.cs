@@ -13,6 +13,8 @@ public class FutureBoard
         playerTurn = board.playerTurn;
         enemyFinishedMoving = board.enemyFinishedMoving;
         playerFinishedMoving = board.playerFinishedMoving;
+        playerCooldowns = board.playerCooldowns.Select(x => (x.Item1, x.Item2)).ToList();
+        enemyCooldowns = board.enemyCooldowns.Select(x => (x.Item1, x.Item2)).ToList();
         if (TurnEnded()) EndTurn();
     }
 
@@ -24,6 +26,8 @@ public class FutureBoard
         playerTurn = board.playerTurn;
         enemyFinishedMoving = board.enemyFinishedMoving;
         playerFinishedMoving = board.playerFinishedMoving;
+        playerCooldowns = board.playerCooldowns.Select(x => (x.Item1, x.Item2)).ToList();
+        enemyCooldowns = board.enemyCooldowns.Select(x => (x.Item1, x.Item2)).ToList();
     }
 
     public int bonusTurnStreak;
@@ -31,6 +35,7 @@ public class FutureBoard
     public FutureEntity player, enemy;
     public bool playerTurn, enemyFinishedMoving, playerFinishedMoving, finishedAnimation;
     public Dictionary<string, double> playerElementImportance, enemyElementImportance;
+    public List<(string, int)> playerCooldowns, enemyCooldowns;
 
     public Dictionary<string, double> EnemyElementImportance()
     {
@@ -42,6 +47,27 @@ public class FutureBoard
     {
         playerElementImportance ??= player.ElementImportance(player.health / player.MaxHealth(), enemy.health / enemy.MaxHealth());
         return playerElementImportance;
+    }
+
+    public void PutOnCooldown(bool player, Ability ability)
+    {
+        var list = player ? playerCooldowns : enemyCooldowns;
+        list.RemoveAll(x => x.Item1 == ability.name);
+        list.Add((ability.name, ability.cooldown));
+    }
+
+    public int CooldownOn(bool player, string ability) => (player ? playerCooldowns : enemyCooldowns).Find(x => x.Item1 == ability).Item2;
+
+    //Cooldowns all action bar abilities and used passives by 1 turn
+    public void Cooldown(bool player)
+    {
+        ref var abilities = ref (player ? ref playerCooldowns : ref enemyCooldowns);
+        for (int i = abilities.Count - 1; i >= 0; i--)
+        {
+            abilities[i] = (abilities[i].Item1, abilities[i].Item2 - 1);
+            if (abilities[i].Item2 == 0)
+                CallEvents(player ? this.player : enemy, new() { { "Trigger", "Cooldown" }, { "Triggerer", "Effector" }, { "AbilityName", abilities[i].Item1 } });
+        }
     }
 
     public double Desiredness(FutureBoard baseBoard = null)
@@ -119,31 +145,31 @@ public class FutureBoard
         else
         {
             var entity = temp.playerTurn ? player : enemy;
-            var abilities = entity.actionBars.Select(x => (x, Ability.abilities.Find(y => y.name == x.ability))).ToList();
+            var abilities = entity.actionBars.Select(x => Ability.abilities.Find(y => y.name == x)).ToList();
             if (!temp.playerTurn) //THIS PREVENTS ENEMY FROM CALCULATING PLAYER ABILITIES
                 foreach (var ability in abilities)
-                    if (ability.x.cooldown == 0 && ability.Item2.EnoughResources(entity))
+                    if (CooldownOn(false, ability.name) <= 0 && ability.EnoughResources(entity))
                     {
-                        var board = new FutureBoard(this);
-                        entity = board.playerTurn ? board.player : board.enemy;
-                        list.Add(new FutureMove(ability.Item2.name, board));
-                        entity.actionBars.Find(x => x.ability == ability.Item2.name).cooldown = ability.Item2.cooldown;
-                        CallEvents(entity, board, new() { { "Trigger", "AbilityCast" }, { "Triggerer", "Effector" }, { "AbilityName", ability.Item2.name } });
-                        CallEvents(entity == player ? enemy : player, board, new() { { "Trigger", "AbilityCast" }, { "Triggerer", "Effector" }, { "AbilityName", ability.Item2.name } });
-                        entity.DetractResources(board, ability.Item2.cost);
-                        while (!board.finishedAnimation)
-                            board.AnimateBoard();
+                        var futureBoard = new FutureBoard(this);
+                        entity = futureBoard.playerTurn ? futureBoard.player : futureBoard.enemy;
+                        list.Add(new FutureMove(ability.name, futureBoard));
+                        //futureBoard.PutOnCooldown(false, ability);
+                        futureBoard.CallEvents(entity, new() { { "Trigger", "AbilityCast" }, { "Triggerer", "Effector" }, { "AbilityName", ability.name } });
+                        futureBoard.CallEvents(entity == player ? enemy : player, new() { { "Trigger", "AbilityCast" }, { "Triggerer", "Effector" }, { "AbilityName", ability.name } });
+                        entity.DetractResources(futureBoard, ability.cost);
+                        while (!futureBoard.finishedAnimation)
+                            futureBoard.AnimateBoard();
                     }
             var differentFloodings = PossibleFloodings();
             foreach (var flooding in differentFloodings)
             {
-                var board = new FutureBoard(this);
-                list.Add(new FutureMove(flooding.Item1, flooding.Item2, board));
-                board.FloodDestroy(flooding.Item3);
-                if (board.playerTurn) board.playerFinishedMoving = true;
-                else board.enemyFinishedMoving = true;
-                while (!board.finishedAnimation)
-                    board.AnimateBoard();
+                var futureBoard = new FutureBoard(this);
+                list.Add(new FutureMove(flooding.Item1, flooding.Item2, futureBoard));
+                futureBoard.FloodDestroy(flooding.Item3);
+                if (futureBoard.playerTurn) futureBoard.playerFinishedMoving = true;
+                else futureBoard.enemyFinishedMoving = true;
+                while (!futureBoard.finishedAnimation)
+                    futureBoard.AnimateBoard();
             }
         }
         list = list.OrderBy(x => (list[0].board.playerTurn ? 1 : -1) * x.board.Desiredness(this)).ToList();
@@ -157,32 +183,32 @@ public class FutureBoard
     }
 
     //Call all events in combat that can be triggered by a specified trigger
-    public void CallEvents(FutureEntity entity, FutureBoard board, Dictionary<string, string> triggerData)
+    public void CallEvents(FutureEntity entity, Dictionary<string, string> triggerData)
     {
         foreach (var ability in entity == player ? Board.board.playerCombatAbilities : Board.board.enemyCombatAbilities)
-            ability.Key.ExecuteEvents(null, board, triggerData, ability.Value);
+            ability.Key.ExecuteEvents(null, this, triggerData, ability.Value, entity == player);
         foreach (var buff in entity.buffs)
-            buff.Item1.ExecuteEvents(null, board, triggerData, (buff.Item1, buff.Item2, null, buff.Item3));
+            buff.Item1.ExecuteEvents(null, this, triggerData, (buff.Item1, buff.Item2, null, buff.Item3));
     }
 
     public void EndTurn()
     {
         if (playerTurn)
         {
-            CallEvents(player, this, new() { { "Trigger", "TurnEnd" } });
+            CallEvents(player, new() { { "Trigger", "TurnEnd" } });
             playerTurn = false;
             playerFinishedMoving = false;
-            enemy.Cooldown(this);
-            CallEvents(enemy, this, new() { { "Trigger", "TurnBegin" } });
+            Cooldown(false);
+            CallEvents(enemy, new() { { "Trigger", "TurnBegin" } });
             enemy.FlareBuffs(this);
         }
         else
         {
-            CallEvents(enemy, this, new() { { "Trigger", "TurnEnd" } });
+            CallEvents(enemy, new() { { "Trigger", "TurnEnd" } });
             playerTurn = true;
             enemyFinishedMoving = false;
-            player.Cooldown(this);
-            CallEvents(player, this, new() { { "Trigger", "TurnBegin" } });
+            Cooldown(true);
+            CallEvents(player, new() { { "Trigger", "TurnBegin" } });
             player.FlareBuffs(this);
         }
     }

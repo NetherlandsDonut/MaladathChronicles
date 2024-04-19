@@ -35,6 +35,9 @@ public class Event
         var futureEffector = futureBoard == null ? null : (futureBoard.playerTurn ? futureBoard.player : futureBoard.enemy);
         var futureOther = futureBoard == null ? null : (futureBoard.playerTurn ? futureBoard.enemy : futureBoard.player);
 
+        //If we are in realtime combat then print name of the ability of which effects are being executed
+        //board?.actions.Add(() => SpawnFallingText(new Vector2(0, 14), sourceName, effector == board.player ? "White" : "Red"));
+
         //Main loop of executing effects, each effect is calculated here separately
         foreach (var effect in effects)
         {
@@ -243,13 +246,13 @@ public class Event
                 {
                     var target = affect == "Effector" ? futureEffector : futureOther;
                     target.AddBuff(buffs.Find(x => x.name == buffName), buffDuration, sourceRank);
-                    futureBoard.CallEvents(target, futureBoard, new()
+                    futureBoard.CallEvents(target, new()
                     {
                         { "Trigger", "BuffAdd" },
                         { "Triggerer", "Effector" },
                         { "BuffName", buffName }
                     });
-                    futureBoard.CallEvents(target == futureEffector ? futureOther : futureEffector, futureBoard, new()
+                    futureBoard.CallEvents(target == futureEffector ? futureOther : futureEffector, new()
                     {
                         { "Trigger", "BuffAdd" },
                         { "Triggerer", "Other" },
@@ -285,13 +288,13 @@ public class Event
                 {
                     var target = affect == "Effector" ? futureEffector : futureOther;
                     target.RemoveBuff(target.buffs.Find(x => x.Item1.name == buffName));
-                    futureBoard.CallEvents(target, futureBoard, new()
+                    futureBoard.CallEvents(target, new()
                     {
                         { "Trigger", "BuffRemove" },
                         { "Triggerer", "Effector" },
                         { "BuffName", buffName }
                     });
-                    futureBoard.CallEvents(target == futureEffector ? futureOther : futureEffector, futureBoard, new()
+                    futureBoard.CallEvents(target == futureEffector ? futureOther : futureEffector, new()
                     {
                         { "Trigger", "BuffRemove" },
                         { "Triggerer", "Other" },

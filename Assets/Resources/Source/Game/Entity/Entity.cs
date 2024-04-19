@@ -38,7 +38,7 @@ public class Entity
         }
         equipment = new Dictionary<string, Item>();
         EquipAllItems();
-        actionBars = Ability.abilities.FindAll(x => abilities.ContainsKey(x.name) && x.cost != null).OrderBy(x => x.cost.Sum(y => y.Value)).OrderBy(x => x.putOnEnd).Select(x => new ActionBar(x.name)).Take(ActionBarsAmount()).ToList();
+        actionBars = Ability.abilities.FindAll(x => abilities.ContainsKey(x.name) && x.cost != null).OrderBy(x => x.cost.Sum(y => y.Value)).OrderBy(x => x.putOnEnd).Select(x => x.name).Take(ActionBarsAmount()).ToList();
         Initialise();
     }
 
@@ -49,7 +49,7 @@ public class Entity
         kind = race.kind;
         this.race = name = race.name;
         abilities = race.abilities.ToDictionary(x => x.Key, x => x.Value);
-        actionBars = Ability.abilities.FindAll(x => abilities.ContainsKey(x.name) && x.cost != null).OrderBy(x => x.cost.Sum(y => y.Value)).OrderBy(x => x.putOnEnd).Select(x => new ActionBar(x.name)).ToList();
+        actionBars = Ability.abilities.FindAll(x => abilities.ContainsKey(x.name) && x.cost != null).OrderBy(x => x.cost.Sum(y => y.Value)).OrderBy(x => x.putOnEnd).Select(x => x.name).ToList();
         stats = new Stats(
             new()
             {
@@ -693,21 +693,8 @@ public class Entity
     {
         if (fullReset)
             health = MaxHealth();
-        actionBars.ForEach(x => x.cooldown = 0);
         buffs = new();
         ResetResources();
-    }
-
-    //Cooldowns all action bar abilities by 1 turn
-    public void Cooldown()
-    {
-        foreach (var actionBar in actionBars)
-            if (actionBar.cooldown > 0)
-            {
-                actionBar.cooldown -= 1;
-                if (actionBar.cooldown == 0)
-                    Board.board.CallEvents(this, new() { { "Trigger", "Cooldown" }, { "Triggerer", "Effector" }, { "AbilityName", actionBar.ability } });
-            }
     }
 
     //Deals given amount of damage to this entity
@@ -748,7 +735,7 @@ public class Entity
 
     public Dictionary<Ability, int> AbilitiesInCombat()
     {
-        var temp = Ability.abilities.FindAll(x => abilities.ContainsKey(x.name) && (x.cost == null || actionBars.Exists(y => y.ability == x.name)));
+        var temp = Ability.abilities.FindAll(x => abilities.ContainsKey(x.name) && (x.cost == null || actionBars.Contains(x.name)));
         return temp.ToDictionary(x => x, x => abilities[x.name]);
     }
 
@@ -839,7 +826,7 @@ public class Entity
     public Dictionary<string, int> abilities;
 
     //Set action bars in spellbook
-    public List<ActionBar> actionBars;
+    public List<string> actionBars;
 
     //"Naked" stats of the entity
     public Stats stats;

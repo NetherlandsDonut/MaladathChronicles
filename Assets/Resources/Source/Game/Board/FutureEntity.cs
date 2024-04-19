@@ -16,9 +16,7 @@ public class FutureEntity
         inventory = entity.inventory;
         equipment = entity.equipment;
         stats = entity.stats;
-        actionBars = new();
-        foreach (var actionBar in entity.actionBars)
-            actionBars.Add(new ActionBar(actionBar.ability, actionBar.cooldown));
+        actionBars = entity.actionBars.ToList();
         buffs = new();
         foreach (var buff in entity.buffs)
             buffs.Add((buff.Item1, buff.Item2, buff.Item3));
@@ -36,9 +34,7 @@ public class FutureEntity
         inventory = entity.inventory;
         equipment = entity.equipment;
         stats = entity.stats;
-        actionBars = new();
-        foreach (var actionBar in entity.actionBars)
-            actionBars.Add(new ActionBar(actionBar.ability, actionBar.cooldown));
+        actionBars = entity.actionBars.ToList();
         buffs = new();
         foreach (var buff in entity.buffs)
             buffs.Add((buff.Item1, buff.Item2, buff.Item4));
@@ -55,7 +51,7 @@ public class FutureEntity
 
     public Spec Spec() => global::Spec.specs.Find(x => x.name == spec);
 
-    public List<ActionBar> actionBars;
+    public List<string> actionBars;
 
     public Stats stats;
 
@@ -71,7 +67,7 @@ public class FutureEntity
 
     public Dictionary<string, double> ElementImportance(double healthPerc, double otherHealthPerc)
     {
-        var abilities = Ability.abilities.FindAll(x => actionBars.Exists(y => y.ability == x.name));
+        var abilities = Ability.abilities.FindAll(x => actionBars.Exists(y => y == x.name));
         var elementCostsSeparate = abilities.SelectMany(x => x.cost.ToList()).GroupBy(x => x.Key, x => x.Value).ToDictionary(x => x.Key, x => x.Sum(x => x));
         double elementCosts = elementCostsSeparate.Sum(x => x.Value);
         var sheet = new Dictionary<string, double>();
@@ -255,12 +251,11 @@ public class FutureEntity
                 this.resources[resource.Key] += resource.Value;
                 if (this.resources[resource.Key] > MaxResource(resource.Key))
                     this.resources[resource.Key] = MaxResource(resource.Key);
-                futureBoard.CallEvents(this, futureBoard, new() { { "Trigger", "ResourceCollected" }, { "Triggerer", "Effector" }, { "ResourceType", resource.Key }, { "ResourceAmount", resource.Value + "" } });
-                futureBoard.CallEvents(this == futureBoard.player ? futureBoard.enemy : futureBoard.player, futureBoard, new() { { "Trigger", "ResourceCollected" }, { "Triggerer", "Other" }, { "ResourceType", resource.Key }, { "ResourceAmount", resource.Value + "" } });
+                futureBoard.CallEvents(this, new() { { "Trigger", "ResourceCollected" }, { "Triggerer", "Effector" }, { "ResourceType", resource.Key }, { "ResourceAmount", resource.Value + "" } });
+                futureBoard.CallEvents(this == futureBoard.player ? futureBoard.enemy : futureBoard.player, new() { { "Trigger", "ResourceCollected" }, { "Triggerer", "Other" }, { "ResourceType", resource.Key }, { "ResourceAmount", resource.Value + "" } });
                 if (this.resources[resource.Key] == MaxResource(resource.Key) && this.resources[resource.Key] != before)
                 {
-                    futureBoard.CallEvents(this, futureBoard, new() { { "Trigger", "ResourceMaxed" }, { "Triggerer", "Effector" }, { "ResourceType", resource.Key } });
-                    futureBoard.CallEvents(this == futureBoard.player ? futureBoard.enemy : futureBoard.player, futureBoard, new() { { "Trigger", "ResourceMaxed" }, { "Triggerer", "Other" }, { "ResourceType", resource.Key } });
+                    futureBoard.CallEvents(this == futureBoard.player ? futureBoard.enemy : futureBoard.player, new() { { "Trigger", "ResourceMaxed" }, { "Triggerer", "Other" }, { "ResourceType", resource.Key } });
                 }
             }
     }
@@ -276,12 +271,12 @@ public class FutureEntity
                 this.resources[resource.Key] -= resource.Value;
                 if (this.resources[resource.Key] < 0)
                     this.resources[resource.Key] = 0;
-                futureBoard.CallEvents(this, futureBoard, new() { { "Trigger", "ResourceLost" }, { "Triggerer", "Effector" }, { "ResourceType", resource.Key }, { "ResourceAmount", resource.Value + "" } });
-                futureBoard.CallEvents(this == futureBoard.player ? futureBoard.enemy : futureBoard.player, futureBoard, new() { { "Trigger", "ResourceLost" }, { "Triggerer", "Other" }, { "ResourceType", resource.Key }, { "ResourceAmount", resource.Value + "" } });
+                futureBoard.CallEvents(this, new() { { "Trigger", "ResourceLost" }, { "Triggerer", "Effector" }, { "ResourceType", resource.Key }, { "ResourceAmount", resource.Value + "" } });
+                futureBoard.CallEvents(this == futureBoard.player ? futureBoard.enemy : futureBoard.player, new() { { "Trigger", "ResourceLost" }, { "Triggerer", "Other" }, { "ResourceType", resource.Key }, { "ResourceAmount", resource.Value + "" } });
                 if (this.resources[resource.Key] == 0 && this.resources[resource.Key] != before)
                 {
-                    futureBoard.CallEvents(this, futureBoard, new() { { "Trigger", "ResourceDeplated" }, { "Triggerer", "Effector" }, { "ResourceType", resource.Key } });
-                    futureBoard.CallEvents(this == futureBoard.player ? futureBoard.enemy : futureBoard.player, futureBoard, new() { { "Trigger", "ResourceDeplated" }, { "Triggerer", "Other" }, { "ResourceType", resource.Key } });
+                    futureBoard.CallEvents(this, new() { { "Trigger", "ResourceDeplated" }, { "Triggerer", "Effector" }, { "ResourceType", resource.Key } });
+                    futureBoard.CallEvents(this == futureBoard.player ? futureBoard.enemy : futureBoard.player, new() { { "Trigger", "ResourceDeplated" }, { "Triggerer", "Other" }, { "ResourceType", resource.Key } });
                 }
             }
     }
@@ -303,17 +298,6 @@ public class FutureEntity
         return 0.30 * Mathf.Abs(n - 1) * (n > 3 ? 3 : 1);
     }
 
-    public void Cooldown(FutureBoard futureBoard)
-    {
-        foreach (var actionBar in actionBars)
-            if (actionBar.cooldown > 0)
-            {
-                actionBar.cooldown -= 1;
-                if (actionBar.cooldown == 0)
-                    futureBoard.CallEvents(this, futureBoard, new() { { "Trigger", "Cooldown" }, { "Triggerer", "Effector" }, { "AbilityName", actionBar.ability } });
-            }
-    }
-
     public void Heal(FutureBoard futureBoard, double heal, bool dontCall)
     {
         var before = health;
@@ -322,13 +306,13 @@ public class FutureEntity
             health = MaxHealth();
         if (!dontCall)
         {
-            futureBoard.CallEvents(this, futureBoard, new() { { "Trigger", "Heal" }, { "Triggerer", "Effector" }, { "HealAmount", heal + "" } });
-            futureBoard.CallEvents(this == futureBoard.player ? futureBoard.enemy : futureBoard.player, futureBoard, new() { { "Trigger", "Heal" }, { "Triggerer", "Other" }, { "HealAmount", heal + "" } });
+            futureBoard.CallEvents(this, new() { { "Trigger", "Heal" }, { "Triggerer", "Effector" }, { "HealAmount", heal + "" } });
+            futureBoard.CallEvents(this == futureBoard.player ? futureBoard.enemy : futureBoard.player, new() { { "Trigger", "Heal" }, { "Triggerer", "Other" }, { "HealAmount", heal + "" } });
         }
         if (health == MaxHealth() && before != health)
         {
-            futureBoard.CallEvents(this, futureBoard, new() { { "Trigger", "HealthMaxed" }, { "Triggerer", "Effector" } });
-            futureBoard.CallEvents(this == futureBoard.player ? futureBoard.enemy : futureBoard.player, futureBoard, new() { { "Trigger", "HealthMaxed" }, { "Triggerer", "Other" } });
+            futureBoard.CallEvents(this, new() { { "Trigger", "HealthMaxed" }, { "Triggerer", "Effector" } });
+            futureBoard.CallEvents(this == futureBoard.player ? futureBoard.enemy : futureBoard.player, new() { { "Trigger", "HealthMaxed" }, { "Triggerer", "Other" } });
         }
     }
 
@@ -338,25 +322,25 @@ public class FutureEntity
         health -= (int)Math.Ceiling(damage);
         if (!dontCall)
         {
-            futureBoard.CallEvents(this, futureBoard, new() { { "Trigger", "Damage" }, { "Triggerer", "Effector" }, { "DamageAmount", damage + "" } });
-            futureBoard.CallEvents(this == futureBoard.player ? futureBoard.enemy : futureBoard.player, futureBoard, new() { { "Trigger", "Damage" }, { "Triggerer", "Other" }, { "DamageAmount", damage + "" } });
+            futureBoard.CallEvents(this, new() { { "Trigger", "Damage" }, { "Triggerer", "Effector" }, { "DamageAmount", damage + "" } });
+            futureBoard.CallEvents(this == futureBoard.player ? futureBoard.enemy : futureBoard.player, new() { { "Trigger", "Damage" }, { "Triggerer", "Other" }, { "DamageAmount", damage + "" } });
         }
         if (health <= 0 && before > 0)
         {
-            futureBoard.CallEvents(this, futureBoard, new() { { "Trigger", "HealthDeplated" }, { "Triggerer", "Effector" } });
-            futureBoard.CallEvents(this == futureBoard.player ? futureBoard.enemy : futureBoard.player, futureBoard, new() { { "Trigger", "HealthDeplated" }, { "Triggerer", "Other" } });
+            futureBoard.CallEvents(this, new() { { "Trigger", "HealthDeplated" }, { "Triggerer", "Effector" } });
+            futureBoard.CallEvents(this == futureBoard.player ? futureBoard.enemy : futureBoard.player, new() { { "Trigger", "HealthDeplated" }, { "Triggerer", "Other" } });
         }
     }
 
-    public void FlareBuffs(FutureBoard board)
+    public void FlareBuffs(FutureBoard futureBoard)
     {
         for (int i = buffs.Count - 1; i >= 0; i--)
         {
             var index = i;
             if (buffs[index].Item2 == 1)
             {
-                board.CallEvents(this, board, new() { { "Trigger", "BuffRemove" }, { "Triggerer", "Effector" }, { "BuffName", buffs[index].Item1.name } });
-                board.CallEvents(board.player == this ? board.enemy : board.player, board, new() { { "Trigger", "BuffRemove" }, { "Triggerer", "Other" }, { "BuffName", buffs[index].Item1.name } });
+                futureBoard.CallEvents(this, new() { { "Trigger", "BuffRemove" }, { "Triggerer", "Effector" }, { "BuffName", buffs[index].Item1.name } });
+                futureBoard.CallEvents(futureBoard.player == this ? futureBoard.enemy : futureBoard.player, new() { { "Trigger", "BuffRemove" }, { "Triggerer", "Other" }, { "BuffName", buffs[index].Item1.name } });
             }
             buffs[index] = (buffs[index].Item1, buffs[index].Item2 - 1, buffs[index].Item3);
             if (buffs[index].Item2 <= 0) RemoveBuff(buffs[index]);

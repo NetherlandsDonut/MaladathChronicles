@@ -26,7 +26,9 @@ public class Board
         playerTurn = true;
         this.area = area;
         playerCombatAbilities = player.AbilitiesInCombat();
+        playerCooldowns = new();
         enemyCombatAbilities = this.enemy.AbilitiesInCombat();
+        enemyCooldowns = new();
         temporaryElementsPlayer = new();
         temporaryElementsEnemy = new();
         temporaryBuffsPlayer = new();
@@ -46,7 +48,9 @@ public class Board
         playerTurn = true;
         area = areas[random.Next(areas.Count)];
         playerCombatAbilities = abilities;
+        playerCooldowns = new();
         enemyCombatAbilities = abilities;
+        enemyCooldowns = new();
         temporaryElementsPlayer = new();
         temporaryElementsEnemy = new();
         temporaryBuffsPlayer = new();
@@ -135,8 +139,14 @@ public class Board
     //Abilities (Active and passive) that player has in the combat
     public Dictionary<Ability, int> playerCombatAbilities;
 
+    //List of passive abilities owned by player that are on cooldown
+    public List<(string, int)> playerCooldowns;
+
     //Abilities (Active and passive) that enemy has in the combat
     public Dictionary<Ability, int> enemyCombatAbilities;
+
+    //List of passive abilities owned by the enemy that are on cooldown
+    public List<(string, int)> enemyCooldowns;
 
     //Queue of actions to do on the board and the combatants
     public List<Action> actions;
@@ -144,12 +154,33 @@ public class Board
     //Are where the combat takes place
     public SiteHostileArea area;
 
+    public void PutOnCooldown(bool player, Ability ability)
+    {
+        var list = player ? playerCooldowns : enemyCooldowns;
+        list.RemoveAll(x => x.Item1 == ability.name);
+        list.Add((ability.name, ability.cooldown));
+    }
+
+    public int CooldownOn(bool player, string ability) => (player ? playerCooldowns : enemyCooldowns).Find(x => x.Item1 == ability).Item2;
+
+    //Cooldowns all action bar abilities and used passives by 1 turn
+    public void Cooldown(bool player)
+    {
+        ref var abilities = ref (player ? ref playerCooldowns : ref enemyCooldowns);
+        for (int i = abilities.Count - 1; i >= 0; i--)
+        {
+            abilities[i] = (abilities[i].Item1, abilities[i].Item2 - 1);
+            if (abilities[i].Item2 == 0)
+                board.CallEvents(player ? this.player : enemy, new() { { "Trigger", "Cooldown" }, { "Triggerer", "Effector" }, { "AbilityName", abilities[i].Item1 } });
+        }
+    }
+
     public void CallEvents(Entity entity, Dictionary<string, string> trigger)
     {
         foreach (var ability in entity == player ? playerCombatAbilities : enemyCombatAbilities)
-            ability.Key.ExecuteEvents(board, null, trigger, ability.Value);
+            ability.Key.ExecuteEvents(this, null, trigger, ability.Value, entity == player);
         foreach (var buff in entity.buffs)
-            buff.Item1.ExecuteEvents(board, null, trigger, buff);
+            buff.Item1.ExecuteEvents(this, null, trigger, buff);
     }
 
     //ENDS THE CURRENT PLAYER'S TURN
@@ -161,7 +192,7 @@ public class Board
             cursorEnemy.fadeIn = true;
             playerTurn = false;
             playerFinishedMoving = false;
-            enemy.Cooldown();
+            Cooldown(false);
             CallEvents(enemy, new() { { "Trigger", "TurnBegin" } });
             enemy.FlareBuffs();
         }
@@ -171,7 +202,7 @@ public class Board
             cursorEnemy.fadeOut = true;
             playerTurn = true;
             enemyFinishedMoving = false;
-            player.Cooldown();
+            Cooldown(true);
             CallEvents(player, new() { { "Trigger", "TurnBegin" } });
             player.FlareBuffs();
         }
@@ -393,11 +424,11 @@ public class Board
             }
 
         //IF PLAYER DIED..
-        if (player.health <= 0)
+        if (player.health <= 0 && window.desktop.title == "Game")
             EndCombat("Lost");
 
         //IF ENEMY DIED..
-        else if (enemy.health <= 0)
+        else if (enemy.health <= 0 && window.desktop.title == "Game")
             EndCombat("Won");
 
         //IF IT'S ENEMY'S TURN..
@@ -492,19 +523,18 @@ public class Board
                 if (bestMove.ability != "")
                 {
                     var abilityObj = Ability.abilities.Find(x => x.name == bestMove.ability);
-                    var actionBar = enemy.actionBars.Find(x => x.ability == bestMove.ability);
                     board.actions.Add(() =>
                     {
-                        cursorEnemy.Move(CDesktop.windows.Find(x => x.title == "EnemyBattleInfo").regionGroups[0].regions[enemy.actionBars.IndexOf(actionBar) + 2].transform.position + new Vector3(139, -10));
+                        cursorEnemy.Move(CDesktop.windows.Find(x => x.title == "EnemyBattleInfo").regionGroups[0].regions[enemy.actionBars.IndexOf(abilityObj.name) + 2].transform.position + new Vector3(139, -10));
                         animationTime += defines.frameTime * 9;
                     });
                     board.actions.Add(() => { cursorEnemy.SetCursor(CursorType.Click); });
                     board.actions.Add(() =>
                     {
                         cursorEnemy.SetCursor(CursorType.Default);
-                        AddRegionOverlay(CDesktop.windows.Find(x => x.title == "EnemyBattleInfo").regionGroups[0].regions[enemy.actionBars.IndexOf(actionBar) + 2], "Black", 0.1f);
+                        AddRegionOverlay(CDesktop.windows.Find(x => x.title == "EnemyBattleInfo").regionGroups[0].regions[enemy.actionBars.IndexOf(abilityObj.name) + 2], "Black", 0.1f);
                         animationTime += defines.frameTime;
-                        actionBar.cooldown = abilityObj.cooldown;
+                        //PutOnCooldown(false, abilityObj);
                         board.CallEvents(board.enemy, new() { { "Trigger", "AbilityCast" }, {"Triggerer", "Effector" }, { "AbilityName", abilityObj.name } });
                         board.CallEvents(board.player, new() { { "Trigger", "AbilityCast" }, { "Triggerer", "Other" }, { "AbilityName", abilityObj.name } });
                         board.enemy.DetractResources(abilityObj.cost);

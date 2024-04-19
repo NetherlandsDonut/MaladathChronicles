@@ -1809,6 +1809,7 @@
           },
           {
             "row": 3,
+            "col": 1,
             "ability": "Holy Nova"
           },
           {
@@ -1827,9 +1828,21 @@
           },
           {
             "row": 1,
+            "col": 2,
+            "tree": 1,
+            "ability": "Light's Grace"
+          },
+          {
+            "row": 1,
             "col": 1,
             "tree": 1,
             "ability": "Searing Light"
+          },
+          {
+            "row": 2,
+            "col": 1,
+            "tree": 1,
+            "ability": "Holy Bolts"
           },
           {
             "row": 2,
@@ -1852,6 +1865,12 @@
             "row": 4,
             "tree": 1,
             "ability": "Spirit of Redemption"
+          },
+          {
+            "row": 4,
+            "col": 1,
+            "tree": 1,
+            "ability": "Prismatic Light"
           }
         ]
       },
