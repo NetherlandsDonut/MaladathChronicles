@@ -158,7 +158,7 @@ public class Ability
                 AddBigButton(ability.icon, (h) => { });
                 AddLine("Cooldown: ", "DarkGray");
                 AddText(ability.cooldown == 0 ? "None" : ability.cooldown + (ability.cooldown == 1 ? " turn" : " turns"), "Gray");
-                if (Board.board != null)
+                if (CDesktop.title == "Game" || CDesktop.title == "GameSimulation")
                 {
                     var c = Board.board.CooldownOn(effector == Board.board.player, ability.name);
                     if (c > 0)

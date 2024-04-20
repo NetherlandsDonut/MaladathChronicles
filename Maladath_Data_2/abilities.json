@@ -11,11 +11,187 @@
   {
     "name": "Holy Bolts",
     "icon": "AbilityHolyBolts",
+    "cooldown": 7,
     "tags": [],
+    "cost": {
+      "Air": 4,
+      "Order": 10
+    },
     "ranks": [
       {}
     ],
-    "events": []
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector"
+          }
+        ],
+        "effects": [
+          {
+            "SoundEffect": "AbilityHolyFireCast"
+          },
+          {
+            "AnimationType": "None",
+            "ShatterType": "Directional",
+            "ShatterTarget": "Effector",
+            "ShatterDegree": "5"
+          },
+          {
+            "AnimationType": "Missile",
+            "ShatterType": "Central",
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerSource": "Effector",
+            "PowerType": "Spell",
+            "SoundEffect": "AbilityHolyBoltsImpact2",
+            "ShatterTarget": "Other",
+            "Await": "2",
+            "AnimationSpeed": "1,3"
+          },
+          {
+            "AnimationType": "None",
+            "ShatterType": "Directional",
+            "ShatterTarget": "Effector",
+            "ShatterDegree": "5"
+          },
+          {
+            "AnimationType": "Missile",
+            "ShatterType": "Central",
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerSource": "Effector",
+            "PowerType": "Spell",
+            "SoundEffect": "AbilityHolyBoltsImpact3",
+            "ShatterTarget": "Other",
+            "AnimationSpeed": "1,5",
+            "ShatterSpeed": "7",
+            "Await": "1"
+          },
+          {
+            "AnimationType": "None",
+            "ShatterType": "Directional",
+            "ShatterTarget": "Effector",
+            "ShatterDegree": "5"
+          },
+          {
+            "AnimationType": "Missile",
+            "ShatterType": "Central",
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerSource": "Effector",
+            "PowerType": "Spell",
+            "SoundEffect": "AbilityHolyBoltsImpact4",
+            "ShatterTarget": "Other",
+            "AnimationSpeed": "1,7",
+            "Await": "1",
+            "AnimationArc": "25",
+            "ShatterSpeed": "8"
+          },
+          {
+            "AnimationType": "None",
+            "ShatterType": "Directional",
+            "ShatterTarget": "Effector",
+            "ShatterDegree": "5"
+          },
+          {
+            "AnimationType": "Missile",
+            "ShatterType": "Central",
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerSource": "Effector",
+            "PowerType": "Spell",
+            "SoundEffect": "AbilityHolyBoltsImpact1",
+            "ShatterTarget": "Other",
+            "AnimationSpeed": "2",
+            "AnimationArc": "30",
+            "ShatterSpeed": "9",
+            "Await": "1"
+          },
+          {
+            "AnimationType": "None",
+            "ShatterType": "Directional",
+            "ShatterTarget": "Effector",
+            "ShatterDegree": "5"
+          },
+          {
+            "AnimationType": "Missile",
+            "ShatterType": "Central",
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerSource": "Effector",
+            "PowerType": "Spell",
+            "SoundEffect": "AbilityHolyBoltsImpact2",
+            "ShatterTarget": "Other",
+            "AnimationSpeed": "2,3",
+            "ShatterSpeed": "10",
+            "Await": "1"
+          },
+          {
+            "AnimationType": "None",
+            "ShatterType": "Directional",
+            "ShatterTarget": "Effector",
+            "ShatterDegree": "5"
+          },
+          {
+            "AnimationType": "Missile",
+            "ShatterType": "Central",
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerSource": "Effector",
+            "PowerType": "Spell",
+            "SoundEffect": "AbilityHolyBoltsImpact3",
+            "ShatterTarget": "Other",
+            "AnimationSpeed": "2,5",
+            "AnimationArc": "25",
+            "ShatterSpeed": "11",
+            "Await": "1"
+          },
+          {
+            "AnimationType": "None",
+            "ShatterType": "Directional",
+            "ShatterTarget": "Effector",
+            "ShatterDegree": "5"
+          },
+          {
+            "AnimationType": "Missile",
+            "ShatterType": "Central",
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerSource": "Effector",
+            "PowerType": "Spell",
+            "SoundEffect": "AbilityHolyBoltsImpact4",
+            "ShatterTarget": "Other",
+            "AnimationSpeed": "2,7",
+            "AnimationArc": "15",
+            "ShatterSpeed": "12",
+            "Await": "1"
+          },
+          {
+            "AnimationType": "None",
+            "ShatterType": "Directional",
+            "ShatterTarget": "Effector",
+            "ShatterDegree": "5"
+          },
+          {
+            "AnimationType": "Missile",
+            "ShatterType": "Central",
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerSource": "Effector",
+            "PowerType": "Spell",
+            "SoundEffect": "AbilityHolyBoltsImpact2",
+            "ShatterTarget": "Other",
+            "AnimationSpeed": "3",
+            "AnimationArc": "15",
+            "ShatterSpeed": "12",
+            "Await": "5",
+            "ShatterDegree": "25"
+          }
+        ]
+      }
+    ]
   },
   {
     "name": "Light's Grace",
@@ -3936,14 +4112,27 @@
         ],
         "effects": [
           {
+            "ShatterType": "Central",
+            "ShatterDegree": "5",
+            "ShatterTarget": "Effector",
+            "ShatterSpeed": "2",
+            "Effect": "AddBuff",
+            "BuffName": "Holy Fire",
+            "BuffDuration": "2",
+            "Affect": "Other"
+          },
+          {
             "Effect": "Damage",
             "Affect": "Other",
             "PowerType": "Spell",
             "PowerSource": "Effector",
-            "PowerScale": "1.5"
-          },
-          {
-            "Effect": "EndTurn"
+            "PowerScale": "1.5",
+            "ShatterType": "Central",
+            "ShatterTarget": "Other",
+            "SoundEffect": "AbilityHolyFireImpact",
+            "ShatterDegree": "30",
+            "ShatterSpeed": "15",
+            "Await": "5"
           }
         ]
       }
@@ -6563,7 +6752,7 @@
               "Color": "Gray",
               "Text": "Every time damage is dealt using Ice Lance, one element on the board changes into an Frost element."
             }
-	  ]
+          ]
         }
       ]
     }

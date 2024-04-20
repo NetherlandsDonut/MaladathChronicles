@@ -59,7 +59,7 @@
             "ShatterSpeed": "20",
             "ShatterDegree": "40",
             "SoundEffect": "AbilityCorruptionFlare",
-            "Await": "4"
+            "Await": "5"
           }
         ]
       }
@@ -239,16 +239,21 @@
       {
         "triggers": [
           {
-            "Trigger": "TurnBegin"
+            "Trigger": "TurnBegin",
+            "Triggerer": "Effector"
           }
         ],
         "effects": [
           {
             "Effect": "Damage",
-            "Affect": "Other",
+            "Affect": "Effector",
             "PowerType": "Spell",
             "PowerSource": "Effector",
-            "PowerScale": "1.5"
+            "PowerScale": "1.5",
+            "SoundEffect": "AbilityHolyFireFlare",
+            "ShatterType": "Central",
+            "ShatterTarget": "Effector",
+            "Await": "5"
           }
         ]
       }

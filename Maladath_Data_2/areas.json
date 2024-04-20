@@ -1,10 +1,38 @@
 [
   {
-    "areaSize": 3,
+    "commonEncounters": [
+      {
+        "who": "Reanimated Corpse",
+        "levelMin": 58,
+        "levelMax": 59
+      },
+      {
+        "who": "Risen Aberration",
+        "levelMin": 58,
+        "levelMax": 59
+      },
+      {
+        "who": "Diseased Ghoul",
+        "levelMin": 58,
+        "levelMax": 59
+      }
+    ],
+    "eliteEncounters": [
+      {
+        "who": "Jandice Barov",
+        "levelMin": 60
+      }
+    ],
+    "areaSize": 2,
     "progression": [
       {
+        "type": "Boss",
+        "bossName": "Jandice Barov",
+        "point": 1
+      },
+      {
         "type": "Treasure",
-        "point": 3
+        "point": 2
       }
     ],
     "name": "Hall of Illusions",
@@ -17032,19 +17060,19 @@
   {
     "commonEncounters": [
       {
-        "who": "Defias Taskmaster",
-        "levelMin": 18,
-        "levelMax": 19
+        "who": "Scholomance Dark Summoner",
+        "levelMin": 59,
+        "levelMax": 60
       },
       {
-        "who": "Defias Wizard",
-        "levelMin": 18,
-        "levelMax": 19
+        "who": "Scholomance Necrolyte",
+        "levelMin": 58,
+        "levelMax": 59
       },
       {
-        "who": "Defias Strip Miner",
-        "levelMin": 18,
-        "levelMax": 19
+        "who": "Risen Guard",
+        "levelMin": 57,
+        "levelMax": 58
       }
     ],
     "eliteEncounters": [
@@ -17164,19 +17192,9 @@
   {
     "commonEncounters": [
       {
-        "who": "Defias Blackguard",
-        "levelMin": 19,
-        "levelMax": 20
-      },
-      {
-        "who": "Defias Squallshaper",
-        "levelMin": 19,
-        "levelMax": 20
-      },
-      {
-        "who": "Defias Pirate",
-        "levelMin": 19,
-        "levelMax": 20
+        "who": "Diseased Ghoul",
+        "levelMin": 58,
+        "levelMax": 60
       }
     ],
     "eliteEncounters": [
@@ -17214,16 +17232,11 @@
         "levelMin": 61
       }
     ],
-    "areaSize": 3,
+    "areaSize": 1,
     "progression": [
       {
         "type": "Boss",
-        "bossName": "Darkmaster Gandling",
-        "point": 2
-      },
-      {
-        "type": "Treasure",
-        "point": 3
+        "bossName": "Darkmaster Gandling"
       }
     ],
     "name": "Headmaster's Study",
@@ -17285,14 +17298,19 @@
   {
     "commonEncounters": [
       {
-        "who": "Defias Squallshaper",
-        "levelMin": 19,
-        "levelMax": 20
+        "who": "Spectral Researcher",
+        "levelMin": 58,
+        "levelMax": 60
       },
       {
-        "who": "Defias Pirate",
-        "levelMin": 19,
-        "levelMax": 20
+        "who": "Scholomance Acolyte",
+        "levelMin": 57,
+        "levelMax": 58
+      },
+      {
+        "who": "Scholomance Neophyte",
+        "levelMin": 57,
+        "levelMax": 58
       }
     ],
     "eliteEncounters": [

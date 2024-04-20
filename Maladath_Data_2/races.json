@@ -1,10 +1,55 @@
 [
   {
+    "name": "Spectral Researcher",
+    "category": "Undead",
+    "subcategory": "Ghost",
+    "kind": "Common",
+    "portrait": "PortraitWraith",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Scholomance Necrolyte",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "kind": "Common",
+    "portrait": "PortraitScholomanceNecrolyte",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Scholomance Dark Summoner",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "kind": "Common",
+    "portrait": "PortraitScholomanceDarkSummoner",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Jandice Barov",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "kind": "Elite",
+    "portrait": "PortraitJandiceBarov",
+    "vitality": 3.0,
+    "abilities": {}
+  },
+  {
+    "name": "Diseased Ghoul",
+    "category": "Undead",
+    "subcategory": "Ghoul",
+    "kind": "Common",
+    "portrait": "PortraitGhoulBlue",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
     "name": "Captain Beld",
     "category": "Humanoid",
     "subcategory": "Dwarf",
     "kind": "Elite",
-    "portrait": "PortraitDarkIronAmbassador",
+    "portrait": "PortraitCaptainBeld",
     "vitality": 3.0,
     "abilities": {}
   },
@@ -13,7 +58,7 @@
     "category": "Humanoid",
     "subcategory": "Dwarf",
     "kind": "Common",
-    "portrait": "PortraitDarkIronAmbusher",
+    "portrait": "PortraitDarkIronSpy",
     "vitality": 1.0,
     "abilities": {}
   },
@@ -31,7 +76,7 @@
     "category": "Humanoid",
     "subcategory": "Human",
     "kind": "Rare",
-    "portrait": "PortraitParrot",
+    "portrait": "PortraitSkhowl",
     "vitality": 2.0,
     "abilities": {}
   },
@@ -76,7 +121,7 @@
     "category": "Humanoid",
     "subcategory": "Human",
     "kind": "Common",
-    "portrait": "PortraitChicken",
+    "portrait": "PortraitAnvilrageWarden",
     "vitality": 1.0,
     "abilities": {}
   },
@@ -85,7 +130,7 @@
     "category": "Humanoid",
     "subcategory": "Human",
     "kind": "Common",
-    "portrait": "PortraitChicken",
+    "portrait": "PortraitAnvilrageOverseer",
     "vitality": 1.0,
     "abilities": {}
   },
@@ -121,7 +166,7 @@
     "category": "Elemental",
     "subcategory": "Elemental",
     "kind": "Common",
-    "portrait": "PortraitAirElemental",
+    "portrait": "PortraitStormElemental",
     "vitality": 1.0,
     "abilities": {}
   },

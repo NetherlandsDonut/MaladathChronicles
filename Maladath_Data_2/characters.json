@@ -5,32 +5,41 @@
   "Whitemane": [
     {
       "player": {
-        "level": 5,
-        "experience": 2152,
-        "name": "Delilah",
+        "level": 13,
+        "experience": 1920,
+        "name": "Delaney",
         "race": "Human",
-        "spec": "Mage",
+        "spec": "Priest",
         "gender": "Female",
         "abilities": {
           "Staff Proficiency": 1,
           "Cloth Proficiency": 1,
-          "One Handed Sword Proficiency": 1,
+          "One Handed Mace Proficiency": 1,
           "Off Hand Proficiency": 1,
           "Dagger Proficiency": 1,
           "Wand Proficiency": 1,
-          "Fireball": 0,
-          "Frostbolt": 0,
-          "Arcane Missiles": 0,
-          "Freezing Nova": 0,
-          "Ice Lance": 0,
-          "Wintertide": 0,
-          "Splitting Ice": 0
+          "Smite": 0,
+          "Power Word: Shield": 0,
+          "Shadow Word: Pain": 0,
+          "Spell Warding": 0,
+          "Holy Fire": 0,
+          "Spiritual Guidance": 0,
+          "Holy Nova": 0,
+          "Renew": 0,
+          "Healing Focus": 0,
+          "Lesser Heal": 0,
+          "Heal": 0,
+          "Blessed Recovery": 0,
+          "Spiritual Healing": 0,
+          "Searing Light": 0,
+          "Holy Bolts": 0
         },
         "actionBars": [
-          "Fireball",
-          "Frostbolt",
-          "Freezing Nova",
-          "Ice Lance"
+          "Smite",
+          "Power Word: Shield",
+          "Shadow Word: Pain",
+          "Holy Fire",
+          "Holy Bolts"
         ],
         "stats": {
           "stats": {
@@ -72,7 +81,7 @@
               "source": "Rare Drop",
               "ilvl": 5,
               "lvl": 1,
-              "amount": 8,
+              "amount": 16,
               "maxStack": 20,
               "price": 0.0013,
               "stats": {
@@ -95,22 +104,6 @@
               "stats": {
                 "stats": {}
               }
-            },
-            {
-              "rarity": "Uncommon",
-              "name": "Traveler's Backpack",
-              "icon": "itemmiscbag08",
-              "type": "Bag",
-              "source": "Rare Drop",
-              "ilvl": 55,
-              "lvl": 1,
-              "amount": 1,
-              "maxStack": 1,
-              "price": 0.875,
-              "bagSpace": 8,
-              "stats": {
-                "stats": {}
-              }
             }
           ]
         },
@@ -118,25 +111,25 @@
         "equipment": {
           "Main Hand": {
             "rarity": "Common",
-            "name": "Bent Staff",
-            "icon": "itemstaff08",
-            "detailedType": "Staff",
-            "type": "Two Handed",
+            "name": "Worn Mace",
+            "icon": "itemmace03",
+            "detailedType": "Mace",
+            "type": "One Handed",
             "ilvl": 2,
             "lvl": 1,
-            "minDamage": 3,
-            "maxDamage": 5,
+            "minDamage": 1,
+            "maxDamage": 3,
             "maxStack": 1,
-            "price": 0.0009,
-            "speed": 2.9,
+            "price": 0.0007,
+            "speed": 1.9,
             "stats": {
               "stats": {}
             }
           },
           "Feet": {
             "rarity": "Common",
-            "name": "Apprentice's Boots",
-            "icon": "itemboots09",
+            "name": "Neophyte's Boots",
+            "icon": "itemboots04",
             "type": "Feet",
             "ilvl": 1,
             "lvl": 1,
@@ -148,8 +141,8 @@
           },
           "Legs": {
             "rarity": "Poor",
-            "name": "Apprentice's Pants",
-            "icon": "itempants01",
+            "name": "Neophyte's Pants",
+            "icon": "itempants02",
             "type": "Legs",
             "armorClass": "Cloth",
             "ilvl": 1,
@@ -163,8 +156,8 @@
           },
           "Chest": {
             "rarity": "Poor",
-            "name": "Apprentice's Robe",
-            "icon": "itemchestcloth23",
+            "name": "Neophyte's Robe",
+            "icon": "itemchestcloth13",
             "type": "Chest",
             "armorClass": "Cloth",
             "ilvl": 1,
@@ -182,23 +175,23 @@
       "second": 24,
       "currentSite": "Northshire Valley",
       "siteProgress": {
-        "Northshire Valley": 2
+        "Northshire Valley": 4
       },
       "commonsKilled": {
-        "Young Wolf": 2
+        "Young Wolf": 3,
+        "Kobold Vermin": 1
       },
       "raresKilled": {},
       "elitesKilled": {},
       "siteVisits": {
-        "Northshire Abbey": 1,
-        "Northshire Valley": 1
+        "Northshire Abbey": 2,
+        "Northshire Valley": 5
       },
       "unlockedAreas": [],
-      "startDate": "2024-04-19T15:00:24.5628381+02:00",
-      "lastLoaded": "2024-04-19T15:19:55.6376409+02:00",
-      "lastPlayed": "2024-04-19T15:21:06.4752548+02:00",
-      "timePlayed": "00:01:28.5798988",
-      "lastVisitedTalents": 1
+      "startDate": "2024-04-20T16:57:39.4594058+02:00",
+      "lastLoaded": "2024-04-20T17:08:07.155245+02:00",
+      "lastPlayed": "2024-04-20T17:08:36.4926003+02:00",
+      "timePlayed": "00:04:13.1096754"
     }
   ]
 }
