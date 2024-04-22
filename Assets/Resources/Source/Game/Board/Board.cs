@@ -231,9 +231,9 @@ public class Board
         results = new CombatResults(result);
         if (result == "Won")
         {
+            var enemyRace = Race.races.Find(x => x.name == enemy.race);
             if (currentSave.player.WillGetExperience(enemy.level) && currentSave.player.level < defines.maxPlayerLevel)
             {
-                var enemyRace = Race.races.Find(x => x.name == enemy.race);
                 float amount = currentSave.player.ExperienceForEqualEnemy();
                 if (Coloring.ColorEntityLevel(enemy.level) == "Green") amount *= 0.5f;
                 else if (Coloring.ColorEntityLevel(enemy.level) == "DarkGray") amount *= 0;
@@ -285,19 +285,20 @@ public class Board
             else
                 SwitchDesktop("HostileArea");
             CDesktop.RespawnAll();
-            var directDrop = Race.races.Find(x => x.name == enemy.race).droppedItems.Select(x => Item.GetItem(x)).ToList();
+
+            var directDrop = enemyRace.droppedItems.Select(x => Item.GetItem(x)).ToList();
             var worldDrop = Item.items.FindAll(x => x.lvl >= enemy.level - 6 && x.lvl <= enemy.level && x.source == "Rare Drop");
             var instance = area.instancePart ? SiteInstance.instances.Find(x => x.wings.Any(y => y.areas.Any(z => z["AreaName"] == area.name))) : null;
             var zoneDrop = instance == null || instance.zoneDrop == null ? new() : Item.items.FindAll(x => instance.zoneDrop.Contains(x.name));
             var everything = zoneDrop.Concat(worldDrop).Where(x => x.CanEquip(currentSave.player));
-            var dropOther = directDrop.Where(x => x.rarity == "Common" || x.rarity == "Poor").ToList();
+            var dropOther = directDrop.Where(x => (x.rarity == "Common" || x.rarity == "Poor") && (x.type == "Miscellaneous" || x.type == "Trade Good")).ToList();
             var dropGray = everything.Where(x => x.rarity == "Poor").ToList();
             var dropWhite = everything.Where(x => x.rarity == "Common").ToList();
             var dropGreen = everything.Where(x => x.rarity == "Uncommon").ToList();
             var dropBlue = everything.Where(x => x.rarity == "Rare").ToList();
             var dropPurple = everything.Where(x => x.rarity == "Epic").ToList();
             var equippable = directDrop.Where(x => x.CanEquip(currentSave.player)).ToList();
-            var notEquippable = directDrop.Where(x => !equippable.Contains(x) && x.type != "Miscellaneous").ToList();
+            var notEquippable = directDrop.Where(x => !equippable.Contains(x) && x.type != "Miscellaneous" && x.type != "Trade Good").ToList();
             if (equippable.Count + notEquippable.Count == 0)
             {
                 if (dropPurple.Count > 0 && Roll(0.05))
@@ -326,9 +327,25 @@ public class Board
                 results.inventory.AddItem(dropOther[random.Next(dropOther.Count)].CopyItem());
             else if (dropOther.Count > 0 && Roll(40))
                 results.inventory.AddItem(dropOther[random.Next(dropOther.Count)].CopyItem());
-            results.inventory.AddItem(Item.items.Find(x => x.name == "Linen Cloth").CopyItem());
-            results.inventory.AddItem(Item.items.Find(x => x.name == "Linen Cloth").CopyItem());
-            results.inventory.AddItem(Item.items.Find(x => x.name == "Linen Cloth").CopyItem(2));
+            var possibleClothDrop = ClothType.clothTypes.FindAll(x => x.DoesLevelFit(enemy.level));
+            if (possibleClothDrop.Count > 0)
+            {
+                var rares = possibleClothDrop.FindAll(x => x.rarity == "Rare");
+                var common = possibleClothDrop.FindAll(x => x.rarity == "Common");
+                var amount = 0;
+                ClothType cloth = null;
+                if (Roll(20) && rares.Count > 0)
+                {
+                    cloth = rares[random.Next(rares.Count)];
+                    for (int i = 0; i < cloth.dropCount; i++) amount += Roll(50) ? 1 : 0;
+                }
+                else if (common.Count > 0)
+                {
+                    cloth = common[random.Next(common.Count)];
+                    for (int i = 0; i < cloth.dropCount; i++) amount += Roll(50) ? 1 : 0;
+                }
+                if (cloth != null) results.inventory.AddItem(Item.items.Find(x => x.name == cloth.item).CopyItem(amount));
+            }
             results.inventory.items.ForEach(x => x.SetRandomEnchantment());
             chartPage = "Damage Dealt";
             currentSave.player.ReceiveExperience(board.results.experience);

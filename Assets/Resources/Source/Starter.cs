@@ -157,6 +157,8 @@ public class Starter : MonoBehaviour
         Buff.buffs ??= new();
         Deserialize(ref Mount.mounts, "mounts", false, prefix);
         Mount.mounts ??= new();
+        Deserialize(ref ClothType.clothTypes, "clothtypes", false, prefix);
+        ClothType.clothTypes ??= new();
         Deserialize(ref Faction.factions, "factions", false, prefix);
         Faction.factions ??= new();
         Deserialize(ref spiritHealers, "spirithealers", false, prefix);
@@ -282,6 +284,8 @@ public class Starter : MonoBehaviour
             Buff.buffs[i].Initialise();
         for (int i = 0; i < Mount.mounts.Count; i++)
             Mount.mounts[i].Initialise();
+        for (int i = 0; i < ClothType.clothTypes.Count; i++)
+            ClothType.clothTypes[i].Initialise();
         for (int i = 0; i < spiritHealers.Count; i++)
             spiritHealers[i].Initialise();
         for (int i = 0; i < paths.Count; i++)

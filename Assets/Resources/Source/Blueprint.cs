@@ -28,6 +28,7 @@ using static Ability;
 using static SitePath;
 using static SaveGame;
 using static Coloring;
+using static ClothType;
 using static PersonType;
 using static GameSettings;
 using static Serialization;
@@ -2979,6 +2980,11 @@ public class Blueprint
                 mountsSearch = mounts;
                 SpawnDesktopBlueprint("ObjectManagerMounts");
             });
+            AddButtonRegion(() => { AddLine("Cloth types"); }, (h) =>
+            {
+                clothTypesSearch = clothTypes;
+                //SpawnDesktopBlueprint("ObjectManagerClothTypes");
+            });
             AddButtonRegion(() => { AddLine("Factions"); }, (h) =>
             {
                 factionsSearch = factions;
@@ -2998,6 +3004,7 @@ public class Blueprint
                 Serialize(items, "items", false, false, prefix);
                 Serialize(itemSets, "sets", false, false, prefix);
                 Serialize(mounts, "mounts", false, false, prefix);
+                Serialize(clothTypes, "clothtypes", false, false, prefix);
                 Serialize(factions, "factions", false, false, prefix);
                 Serialize(personTypes, "persontypes", false, false, prefix);
                 Serialize(spiritHealers, "spirithealers", false, false, prefix);

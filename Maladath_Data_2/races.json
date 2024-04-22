@@ -47,7 +47,7 @@
   {
     "name": "Captain Beld",
     "category": "Humanoid",
-    "subcategory": "Dwarf",
+    "subcategory": "Human",
     "kind": "Elite",
     "portrait": "PortraitCaptainBeld",
     "vitality": 3.0,
@@ -73,8 +73,8 @@
   },
   {
     "name": "Skhowl",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Beast",
+    "subcategory": "Owl",
     "kind": "Rare",
     "portrait": "PortraitSkhowl",
     "vitality": 2.0,
@@ -2774,6 +2774,8 @@
   {
     "name": "Burning Blade Felsworn",
     "category": "Demon",
+    "subcategory": "Orc",
+    "faction": "Burning Blade Clan",
     "kind": "Common",
     "portrait": "PortraitBurningBladeFelsworn",
     "vitality": 1.0,
@@ -14464,7 +14466,7 @@
   },
   {
     "name": "Alzzin the Wildshaper",
-    "category": "Humanoid",
+    "category": "Demon",
     "subcategory": "Satyr",
     "kind": "Elite",
     "portrait": "PortraitSatyrBlue",
@@ -14473,7 +14475,7 @@
   },
   {
     "name": "Prince Kellen",
-    "category": "Humanoid",
+    "category": "Demon",
     "subcategory": "Satyr",
     "kind": "Rare",
     "portrait": "PortraitSatyrBlue",
@@ -14482,7 +14484,7 @@
   },
   {
     "name": "Jadefire Felsworn",
-    "category": "Humanoid",
+    "category": "Demon",
     "subcategory": "Satyr",
     "kind": "Common",
     "portrait": "PortraitSatyrBlue",
@@ -14491,7 +14493,7 @@
   },
   {
     "name": "Jadefire Rogue",
-    "category": "Humanoid",
+    "category": "Demon",
     "subcategory": "Satyr",
     "kind": "Common",
     "portrait": "PortraitSatyrBlue",
@@ -14500,7 +14502,7 @@
   },
   {
     "name": "Legashi Hellcaller",
-    "category": "Humanoid",
+    "category": "Demon",
     "subcategory": "Satyr",
     "kind": "Common",
     "portrait": "PortraitSatyrBlue",
@@ -14509,7 +14511,7 @@
   },
   {
     "name": "Legashi Rogue",
-    "category": "Humanoid",
+    "category": "Demon",
     "subcategory": "Satyr",
     "kind": "Common",
     "portrait": "PortraitSatyrBlue",
@@ -14518,7 +14520,7 @@
   },
   {
     "name": "Legashi Satyr",
-    "category": "Humanoid",
+    "category": "Demon",
     "subcategory": "Satyr",
     "kind": "Common",
     "portrait": "PortraitSatyrBlue",
@@ -14527,7 +14529,7 @@
   },
   {
     "name": "Xavaric",
-    "category": "Humanoid",
+    "category": "Demon",
     "subcategory": "Satyr",
     "kind": "Rare",
     "portrait": "PortraitSatyrPink",
@@ -14536,7 +14538,7 @@
   },
   {
     "name": "Felmusk Rogue",
-    "category": "Humanoid",
+    "category": "Demon",
     "subcategory": "Satyr",
     "kind": "Common",
     "portrait": "PortraitSatyrPink",
@@ -14545,7 +14547,7 @@
   },
   {
     "name": "Felmusk Satyr",
-    "category": "Humanoid",
+    "category": "Demon",
     "subcategory": "Satyr",
     "kind": "Common",
     "portrait": "PortraitSatyrPink",
@@ -14554,7 +14556,7 @@
   },
   {
     "name": "Felmusk Shadowhunter",
-    "category": "Humanoid",
+    "category": "Demon",
     "subcategory": "Satyr",
     "kind": "Common",
     "portrait": "PortraitSatyrPink",
@@ -14563,7 +14565,7 @@
   },
   {
     "name": "Felmusk Shadowstalker",
-    "category": "Humanoid",
+    "category": "Demon",
     "subcategory": "Satyr",
     "kind": "Common",
     "portrait": "PortraitSatyrPink",
@@ -14572,7 +14574,7 @@
   },
   {
     "name": "Hatefury Felsworn",
-    "category": "Humanoid",
+    "category": "Demon",
     "subcategory": "Satyr",
     "kind": "Common",
     "portrait": "PortraitSatyrDarkPink",
@@ -14581,7 +14583,7 @@
   },
   {
     "name": "Hatefury Hellcaller",
-    "category": "Humanoid",
+    "category": "Demon",
     "subcategory": "Satyr",
     "kind": "Common",
     "portrait": "PortraitSatyrPink",
@@ -14590,7 +14592,7 @@
   },
   {
     "name": "Hatefury Rogue",
-    "category": "Humanoid",
+    "category": "Demon",
     "subcategory": "Satyr",
     "kind": "Common",
     "portrait": "PortraitSatyrPink",
@@ -14599,7 +14601,7 @@
   },
   {
     "name": "Hatefury Shadowstalker",
-    "category": "Humanoid",
+    "category": "Demon",
     "subcategory": "Satyr",
     "kind": "Common",
     "portrait": "PortraitSatyrPink",
@@ -14608,7 +14610,7 @@
   },
   {
     "name": "Hatefury Trickster",
-    "category": "Humanoid",
+    "category": "Demon",
     "subcategory": "Satyr",
     "kind": "Common",
     "portrait": "PortraitSatyrDarkPink",
@@ -14617,7 +14619,7 @@
   },
   {
     "name": "Geltharis",
-    "category": "Humanoid",
+    "category": "Demon",
     "subcategory": "Satyr",
     "kind": "Rare",
     "portrait": "PortraitSatyrPurple",
@@ -14626,7 +14628,7 @@
   },
   {
     "name": "Deth'ryll Satyr",
-    "category": "Humanoid",
+    "category": "Demon",
     "subcategory": "Satyr",
     "kind": "Common",
     "portrait": "PortraitSatyrPurple",
@@ -14635,7 +14637,7 @@
   },
   {
     "name": "Haldarr Felsworn",
-    "category": "Humanoid",
+    "category": "Demon",
     "subcategory": "Satyr",
     "kind": "Common",
     "portrait": "PortraitSatyrPurple",
@@ -14644,7 +14646,7 @@
   },
   {
     "name": "Haldarr Satyr",
-    "category": "Humanoid",
+    "category": "Demon",
     "subcategory": "Satyr",
     "kind": "Common",
     "portrait": "PortraitSatyrPurple",
@@ -14653,7 +14655,7 @@
   },
   {
     "name": "Haldarr Trickster",
-    "category": "Humanoid",
+    "category": "Demon",
     "subcategory": "Satyr",
     "kind": "Common",
     "portrait": "PortraitSatyrPurple",
@@ -14662,7 +14664,7 @@
   },
   {
     "name": "Putridus Satyr",
-    "category": "Humanoid",
+    "category": "Demon",
     "subcategory": "Satyr",
     "kind": "Common",
     "portrait": "PortraitSatyrPurple",
@@ -14671,7 +14673,7 @@
   },
   {
     "name": "Putridus Shadowstalker",
-    "category": "Humanoid",
+    "category": "Demon",
     "subcategory": "Satyr",
     "kind": "Common",
     "portrait": "PortraitSatyrPurple",
@@ -14680,7 +14682,7 @@
   },
   {
     "name": "Putridus Trickster",
-    "category": "Humanoid",
+    "category": "Demon",
     "subcategory": "Satyr",
     "kind": "Common",
     "portrait": "PortraitSatyrPurple",
@@ -14689,7 +14691,7 @@
   },
   {
     "name": "Prince Xavalis",
-    "category": "Humanoid",
+    "category": "Demon",
     "subcategory": "Satyr",
     "kind": "Elite",
     "portrait": "PortraitSatyrRed",
@@ -14698,7 +14700,7 @@
   },
   {
     "name": "Zevrim Thornhoof",
-    "category": "Humanoid",
+    "category": "Demon",
     "subcategory": "Satyr",
     "kind": "Elite",
     "portrait": "PortraitSatyrRed",
@@ -14707,7 +14709,7 @@
   },
   {
     "name": "Blackheart Hellcaller",
-    "category": "Humanoid",
+    "category": "Demon",
     "subcategory": "Satyr",
     "kind": "Common",
     "portrait": "PortraitSatyrRed",
@@ -14716,7 +14718,7 @@
   },
   {
     "name": "Blackheart Satyr",
-    "category": "Humanoid",
+    "category": "Demon",
     "subcategory": "Satyr",
     "kind": "Common",
     "portrait": "PortraitSatyrRed",
@@ -14725,7 +14727,7 @@
   },
   {
     "name": "Blackheart Shadowstalker",
-    "category": "Humanoid",
+    "category": "Demon",
     "subcategory": "Satyr",
     "kind": "Common",
     "portrait": "PortraitSatyrRed",
@@ -14734,7 +14736,7 @@
   },
   {
     "name": "Blackheart Trickster",
-    "category": "Humanoid",
+    "category": "Demon",
     "subcategory": "Satyr",
     "kind": "Common",
     "portrait": "PortraitSatyrRed",
@@ -14743,7 +14745,7 @@
   },
   {
     "name": "Jadefire Hellcaller",
-    "category": "Humanoid",
+    "category": "Demon",
     "subcategory": "Satyr",
     "kind": "Common",
     "portrait": "PortraitSatyrRed",
@@ -14752,7 +14754,7 @@
   },
   {
     "name": "Jadefire Trickster",
-    "category": "Humanoid",
+    "category": "Demon",
     "subcategory": "Satyr",
     "kind": "Common",
     "portrait": "PortraitSatyrRed",
@@ -14761,7 +14763,7 @@
   },
   {
     "name": "Wildspawn Betrayer",
-    "category": "Humanoid",
+    "category": "Demon",
     "subcategory": "Satyr",
     "kind": "Common",
     "portrait": "PortraitSatyrRed",
@@ -14770,7 +14772,7 @@
   },
   {
     "name": "Wildspawn Felsworn",
-    "category": "Humanoid",
+    "category": "Demon",
     "subcategory": "Satyr",
     "kind": "Common",
     "portrait": "PortraitSatyrRed",
@@ -14779,7 +14781,7 @@
   },
   {
     "name": "Wildspawn Shadowstalker",
-    "category": "Humanoid",
+    "category": "Demon",
     "subcategory": "Satyr",
     "kind": "Common",
     "portrait": "PortraitSatyrRed",
@@ -14788,7 +14790,7 @@
   },
   {
     "name": "Xavian Hellcaller",
-    "category": "Humanoid",
+    "category": "Demon",
     "subcategory": "Satyr",
     "kind": "Common",
     "portrait": "PortraitSatyrRed",
@@ -14797,7 +14799,7 @@
   },
   {
     "name": "Xavian Rogue",
-    "category": "Humanoid",
+    "category": "Demon",
     "subcategory": "Satyr",
     "kind": "Common",
     "portrait": "PortraitSatyrRed",
@@ -15007,7 +15009,7 @@
     "subcategory": "Human",
     "faction": "Scourge",
     "kind": "Common",
-    "portrait": "PortraitScarletConjuror",
+    "portrait": "PortraitDarkSummoner",
     "vitality": 1.0,
     "abilities": {
       "Corruption": 0,

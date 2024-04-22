@@ -6,7 +6,7 @@
     {
       "player": {
         "level": 13,
-        "experience": 1920,
+        "experience": 7620,
         "name": "Delaney",
         "race": "Human",
         "spec": "Priest",
@@ -84,6 +84,21 @@
               "amount": 16,
               "maxStack": 20,
               "price": 0.0013,
+              "stats": {
+                "stats": {}
+              }
+            },
+            {
+              "rarity": "Common",
+              "name": "Wool Cloth",
+              "icon": "itemfabricwool01",
+              "type": "Trade Good",
+              "source": "Rare Drop",
+              "ilvl": 15,
+              "lvl": 1,
+              "amount": 3,
+              "maxStack": 20,
+              "price": 0.0033,
               "stats": {
                 "stats": {}
               }
@@ -173,25 +188,186 @@
       },
       "minute": 1,
       "second": 24,
-      "currentSite": "Northshire Valley",
+      "currentSite": "The Deadmines",
       "siteProgress": {
-        "Northshire Valley": 4
+        "Northshire Valley": 4,
+        "Defias Hideout": 2
       },
       "commonsKilled": {
         "Young Wolf": 3,
-        "Kobold Vermin": 1
+        "Kobold Vermin": 1,
+        "Defias Evoker": 1,
+        "Defias Overseer": 1
       },
       "raresKilled": {},
       "elitesKilled": {},
       "siteVisits": {
         "Northshire Abbey": 2,
-        "Northshire Valley": 5
+        "Northshire Valley": 5,
+        "The Deadmines": 3
       },
       "unlockedAreas": [],
       "startDate": "2024-04-20T16:57:39.4594058+02:00",
-      "lastLoaded": "2024-04-20T17:08:07.155245+02:00",
-      "lastPlayed": "2024-04-20T17:08:36.4926003+02:00",
-      "timePlayed": "00:04:13.1096754"
+      "lastLoaded": "2024-04-22T16:04:12.9030659+02:00",
+      "lastPlayed": "2024-04-22T16:05:10.520197+02:00",
+      "timePlayed": "00:05:10.7268065"
+    },
+    {
+      "player": {
+        "level": 1,
+        "experience": 40,
+        "name": "Lixui",
+        "race": "Pandaren",
+        "spec": "Mage",
+        "gender": "Female",
+        "abilities": {
+          "Staff Proficiency": 1,
+          "Cloth Proficiency": 1,
+          "One Handed Sword Proficiency": 1,
+          "Off Hand Proficiency": 1,
+          "Dagger Proficiency": 1,
+          "Wand Proficiency": 1,
+          "Fireball": 0,
+          "Frostbolt": 0,
+          "Arcane Missiles": 0
+        },
+        "actionBars": [
+          "Fireball",
+          "Frostbolt",
+          "Arcane Missiles"
+        ],
+        "stats": {
+          "stats": {
+            "Stamina": 6,
+            "Strength": 6,
+            "Agility": 6,
+            "Intellect": 6,
+            "Spirit": 0,
+            "Earth Mastery": 2,
+            "Fire Mastery": 2,
+            "Air Mastery": 2,
+            "Water Mastery": 3,
+            "Frost Mastery": 1,
+            "Lightning Mastery": 2,
+            "Arcane Mastery": 1,
+            "Decay Mastery": 1,
+            "Shadow Mastery": 2,
+            "Order Mastery": 3
+          }
+        },
+        "inventory": {
+          "items": [
+            {
+              "rarity": "Common",
+              "name": "Hearthstone",
+              "icon": "itemmiscrune01",
+              "type": "Miscellaneous",
+              "ilvl": 1,
+              "maxStack": 1,
+              "stats": {
+                "stats": {}
+              }
+            }
+          ],
+          "bags": [
+            {
+              "rarity": "Uncommon",
+              "name": "Traveler's Backpack",
+              "icon": "itemmiscbag08",
+              "type": "Bag",
+              "source": "Rare Drop",
+              "ilvl": 55,
+              "lvl": 1,
+              "maxStack": 1,
+              "price": 0.875,
+              "bagSpace": 8,
+              "stats": {
+                "stats": {}
+              }
+            }
+          ]
+        },
+        "mounts": [],
+        "equipment": {
+          "Main Hand": {
+            "rarity": "Common",
+            "name": "Bent Staff",
+            "icon": "itemstaff08",
+            "detailedType": "Staff",
+            "type": "Two Handed",
+            "ilvl": 2,
+            "lvl": 1,
+            "minDamage": 3,
+            "maxDamage": 5,
+            "maxStack": 1,
+            "price": 0.0009,
+            "speed": 2.9,
+            "stats": {
+              "stats": {}
+            }
+          },
+          "Feet": {
+            "rarity": "Common",
+            "name": "Apprentice's Boots",
+            "icon": "itemboots09",
+            "type": "Feet",
+            "ilvl": 1,
+            "lvl": 1,
+            "maxStack": 1,
+            "price": 0.0001,
+            "stats": {
+              "stats": {}
+            }
+          },
+          "Legs": {
+            "rarity": "Poor",
+            "name": "Apprentice's Pants",
+            "icon": "itempants01",
+            "type": "Legs",
+            "armorClass": "Cloth",
+            "ilvl": 1,
+            "lvl": 1,
+            "armor": 2,
+            "maxStack": 1,
+            "price": 0.0001,
+            "stats": {
+              "stats": {}
+            }
+          },
+          "Chest": {
+            "rarity": "Poor",
+            "name": "Apprentice's Robe",
+            "icon": "itemchestcloth23",
+            "type": "Chest",
+            "armorClass": "Cloth",
+            "ilvl": 1,
+            "lvl": 1,
+            "armor": 3,
+            "maxStack": 1,
+            "price": 0.0001,
+            "stats": {
+              "stats": {}
+            }
+          }
+        }
+      },
+      "minute": 4,
+      "second": 12,
+      "currentSite": "Rocky Desert",
+      "siteProgress": {},
+      "commonsKilled": {},
+      "raresKilled": {},
+      "elitesKilled": {},
+      "siteVisits": {
+        "Scuttle Coast": 1,
+        "Tiragarde Keep": 2,
+        "Rocky Desert": 1
+      },
+      "unlockedAreas": [],
+      "startDate": "2024-04-21T14:40:41.863247+02:00",
+      "lastLoaded": "2024-04-21T14:40:42.693944+02:00",
+      "lastPlayed": "2024-04-21T14:41:24.5114764+02:00",
+      "timePlayed": "00:00:41.8175324"
     }
   ]
 }

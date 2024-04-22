@@ -9903,6 +9903,11 @@
         "who": "Stitched Horror",
         "levelMin": 56,
         "levelMax": 57
+      },
+      {
+        "who": "Dark Summoner",
+        "levelMin": 56,
+        "levelMax": 57
       }
     ],
     "areaSize": 3,
@@ -10245,6 +10250,11 @@
         "who": "Cursed Mage",
         "levelMin": 54,
         "levelMax": 55
+      },
+      {
+        "who": "Dark Summoner",
+        "levelMin": 56,
+        "levelMax": 57
       },
       {
         "who": "Hate Shrieker",

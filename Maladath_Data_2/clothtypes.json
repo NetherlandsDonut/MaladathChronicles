@@ -1,0 +1,50 @@
+[
+  {
+    "item": "Linen Cloth",
+    "rarity": "Common",
+    "category": "Humanoid",
+    "dropStart": 5,
+    "dropEnd": 20,
+    "dropCount": 2
+  },
+  {
+    "item": "Wool Cloth",
+    "rarity": "Common",
+    "category": "Humanoid",
+    "dropStart": 16,
+    "dropEnd": 30,
+    "dropCount": 2
+  },
+  {
+    "item": "Silk Cloth",
+    "rarity": "Common",
+    "category": "Humanoid",
+    "dropStart": 28,
+    "dropEnd": 40,
+    "dropCount": 2
+  },
+  {
+    "item": "Mageweave Cloth",
+    "rarity": "Common",
+    "category": "Humanoid",
+    "dropStart": 38,
+    "dropEnd": 50,
+    "dropCount": 2
+  },
+  {
+    "item": "Runecloth",
+    "rarity": "Common",
+    "category": "Humanoid",
+    "dropStart": 50,
+    "dropEnd": 60,
+    "dropCount": 2
+  },
+  {
+    "item": "Felcloth",
+    "rarity": "Rare",
+    "category": "Demon",
+    "dropStart": 50,
+    "dropEnd": 60,
+    "dropCount": 1
+  }
+]
