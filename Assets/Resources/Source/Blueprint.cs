@@ -19,6 +19,7 @@ using static Sound;
 using static Event;
 using static Mount;
 using static Board;
+using static Recipe;
 using static Person;
 using static Defines;
 using static MapGrid;
@@ -2980,10 +2981,15 @@ public class Blueprint
                 mountsSearch = mounts;
                 SpawnDesktopBlueprint("ObjectManagerMounts");
             });
+            AddButtonRegion(() => { AddLine("Recipes"); }, (h) =>
+            {
+                recipesSearch = recipes;
+                SpawnDesktopBlueprint("ObjectManagerRecipes");
+            });
             AddButtonRegion(() => { AddLine("Cloth types"); }, (h) =>
             {
                 clothTypesSearch = clothTypes;
-                //SpawnDesktopBlueprint("ObjectManagerClothTypes");
+                SpawnDesktopBlueprint("ObjectManagerClothTypes");
             });
             AddButtonRegion(() => { AddLine("Factions"); }, (h) =>
             {
@@ -3005,6 +3011,7 @@ public class Blueprint
                 Serialize(itemSets, "sets", false, false, prefix);
                 Serialize(mounts, "mounts", false, false, prefix);
                 Serialize(clothTypes, "clothtypes", false, false, prefix);
+                Serialize(recipes, "recipes", false, false, prefix);
                 Serialize(factions, "factions", false, false, prefix);
                 Serialize(personTypes, "persontypes", false, false, prefix);
                 Serialize(spiritHealers, "spirithealers", false, false, prefix);
@@ -7415,15 +7422,15 @@ public class Blueprint
                 });
                 AddSmallButton("OtherReverse", (h) =>
                 {
-                    factions.Reverse();
-                    factionsSearch.Reverse();
+                    mounts.Reverse();
+                    mountsSearch.Reverse();
                     Respawn("ObjectManagerMounts");
                     PlaySound("DesktopInventorySort", 0.2f);
                 });
-                if (!CDesktop.windows.Exists(x => x.title == "FactionsSort"))
+                if (!CDesktop.windows.Exists(x => x.title == "MountsSort"))
                     AddSmallButton("OtherSort", (h) =>
                     {
-                        SpawnWindowBlueprint("FactionsSort");
+                        SpawnWindowBlueprint("MountsSort");
                         Respawn("ObjectManagerMounts");
                     });
                 else
@@ -7512,6 +7519,179 @@ public class Blueprint
             });
             AddPaddingRegion(() => { AddLine("Speed:", "DarkGray"); });
             AddPaddingRegion(() => { AddInputLine(String.mountSpeed); });
+            AddPaddingRegion(() => { });
+        }),
+        new("RecipesSort", () => {
+            SetAnchor(Center);
+            AddRegionGroup();
+            SetRegionGroupWidth(162);
+            AddHeaderRegion(() =>
+            {
+                AddLine("Sort recipes:");
+                AddSmallButton("OtherClose", (h) =>
+                {
+                    CloseWindow("RecipesSort");
+                    Respawn("ObjectManagerRecipes");
+                });
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("By name", "Black");
+            },
+            (h) =>
+            {
+                recipes = recipes.OrderBy(x => x.name).ToList();
+                recipesSearch = recipesSearch.OrderBy(x => x.name).ToList();
+                CloseWindow("RecipesSort");
+                Respawn("ObjectManagerRecipes");
+                PlaySound("DesktopInventorySort", 0.2f);
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("By profession", "Black");
+            },
+            (h) =>
+            {
+                recipes = recipes.OrderBy(x => x.profession).ToList();
+                recipesSearch = recipesSearch.OrderBy(x => x.profession).ToList();
+                CloseWindow("RecipesSort");
+                Respawn("ObjectManagerRecipes");
+                PlaySound("DesktopInventorySort", 0.2f);
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("By skill required", "Black");
+            },
+            (h) =>
+            {
+                recipes = recipes.OrderByDescending(x => x.learnedAt).ToList();
+                recipesSearch = recipesSearch.OrderByDescending(x => x.learnedAt).ToList();
+                CloseWindow("RecipesSort");
+                Respawn("ObjectManagerRecipes");
+                PlaySound("DesktopInventorySort", 0.2f);
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("By reagents required", "Black");
+            },
+            (h) =>
+            {
+                recipes = recipes.OrderByDescending(x => x.reagents.Count == 0 ? 0 : x.reagents.Sum(y => y.Value)).ToList();
+                recipesSearch = recipesSearch.OrderByDescending(x => x.reagents.Count == 0 ? 0 : x.reagents.Sum(y => y.Value)).ToList();
+                CloseWindow("RecipesSort");
+                Respawn("ObjectManagerRecipes");
+                PlaySound("DesktopInventorySort", 0.2f);
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("By training cost", "Black");
+            },
+            (h) =>
+            {
+                recipes = recipes.OrderByDescending(x => x.trainingCost).ToList();
+                recipesSearch = recipesSearch.OrderByDescending(x => x.trainingCost).ToList();
+                CloseWindow("RecipesSort");
+                Respawn("ObjectManagerRecipes");
+                PlaySound("DesktopInventorySort", 0.2f);
+            });
+        }),
+        new("ObjectManagerRecipes", () => {
+            SetAnchor(TopLeft);
+            AddRegionGroup(() => recipesSearch.Count);
+            SetRegionGroupWidth(171);
+            SetRegionGroupHeight(358);
+            if (recipe != null)
+            {
+                var index = recipesSearch.IndexOf(recipe);
+                if (index >= 10) CDesktop.LBWindow.LBRegionGroup.pagination = index / 10;
+            }
+            AddHeaderRegion(() =>
+            {
+                AddLine("Recipes:");
+                AddSmallButton("OtherClose", (h) =>
+                {
+                    recipe = null; recipesSearch = null;
+                    CloseDesktop("ObjectManagerRecipes");
+                });
+                AddSmallButton("OtherReverse", (h) =>
+                {
+                    recipes.Reverse();
+                    recipesSearch.Reverse();
+                    Respawn("ObjectManagerRecipes");
+                    PlaySound("DesktopInventorySort", 0.2f);
+                });
+                if (!CDesktop.windows.Exists(x => x.title == "RecipesSort"))
+                    AddSmallButton("OtherSort", (h) =>
+                    {
+                        SpawnWindowBlueprint("RecipesSort");
+                        Respawn("ObjectManagerRecipes");
+                    });
+                else
+                    AddSmallButton("OtherSortOff", (h) => { });
+            });
+            AddPaddingRegion(() =>
+            {
+                AddLine("Search:", "DarkGray");
+                AddInputLine(String.search);
+            });
+            var regionGroup = CDesktop.LBWindow.LBRegionGroup;
+            AddPaginationLine(regionGroup);
+            for (int i = 0; i < 10; i++)
+            {
+                var index = i;
+                AddButtonRegion(() =>
+                {
+                    if (recipesSearch.Count > index + 10 * regionGroup.pagination)
+                    {
+                        SetRegionBackground(RegionBackgroundType.Button);
+                        var foo = recipesSearch[index + 10 * regionGroup.pagination];
+                        AddLine(foo.name);
+                        AddSmallButton(foo.Icon(), (h) => { });
+                    }
+                    else
+                    {
+                        SetRegionBackground(RegionBackgroundType.Padding);
+                        AddLine();
+                    }
+                },
+                (h) =>
+                {
+                    recipe = recipesSearch[index + 10 * regionGroup.pagination];
+                    String.objectName.Set(recipe.name);
+                    Respawn("ObjectManagerRecipe");
+                });
+            }
+            AddPaddingRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+                AddLine(recipes.Count + " recipes", "DarkGray");
+                if (recipes.Count != recipesSearch.Count)
+                    AddLine(recipesSearch.Count + " found in search", "DarkGray");
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("Create a new recipe");
+            },
+            (h) =>
+            {
+                recipe = new Recipe()
+                {
+                    name = "Recipe #" + recipes.Count
+                };
+                recipes.Add(recipe);
+                recipesSearch = recipes.FindAll(x => x.name.ToLower().Contains(String.search.Value().ToLower()));
+                String.objectName.Set(recipe.name);
+                Respawn("ObjectManagerRecipe");
+                h.window.Respawn();
+            });
+        }),
+        new("ObjectManagerRecipe", () => {
+            SetAnchor(TopRight);
+            AddRegionGroup();
+            SetRegionGroupWidth(171);
+            SetRegionGroupHeight(354);
+            AddPaddingRegion(() => { AddLine("Recipe:", "DarkGray"); });
+            AddPaddingRegion(() => { AddInputLine(String.objectName); });
             AddPaddingRegion(() => { });
         }),
         new("FactionsSort", () => {
@@ -8359,6 +8539,8 @@ public class Blueprint
             Serialize(items, "items", true, false, prefix);
             Serialize(itemSets, "sets", true, false, prefix);
             Serialize(mounts, "mounts", true, false, prefix);
+            Serialize(clothTypes, "clothtypes", true, false, prefix);
+            Serialize(recipes, "recipes", true, false, prefix);
             Serialize(factions, "factions", true, false, prefix);
             Serialize(spiritHealers, "spirithealers", true, false, prefix);
             Serialize(personTypes, "personTypes", true, false, prefix);
@@ -8515,6 +8697,20 @@ public class Blueprint
             SetDesktopBackground("Areas/AreaTheCelestialPlanetarium");
             SpawnWindowBlueprint("ObjectManagerMounts");
             AddHotkey(Escape, () => { mount = null; mountsSearch = null; CloseDesktop("ObjectManagerMounts"); });
+            AddPaginationHotkeys();
+        }),
+        new("ObjectManagerRecipes", () =>
+        {
+            SetDesktopBackground("Areas/AreaTheCelestialPlanetarium");
+            SpawnWindowBlueprint("ObjectManagerRecipes");
+            AddHotkey(Escape, () => { recipe = null; recipesSearch = null; CloseDesktop("ObjectManagerRecipes"); });
+            AddPaginationHotkeys();
+        }),
+        new("ObjectManagerClothTypes", () =>
+        {
+            SetDesktopBackground("Areas/AreaTheCelestialPlanetarium");
+            SpawnWindowBlueprint("ObjectManagerClothTypes");
+            AddHotkey(Escape, () => { clothType = null; clothTypesSearch = null; CloseDesktop("ObjectManagerClothTypes"); });
             AddPaginationHotkeys();
         }),
         new("ObjectManagerFactions", () =>

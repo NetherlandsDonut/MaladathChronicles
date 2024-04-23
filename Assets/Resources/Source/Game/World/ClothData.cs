@@ -30,7 +30,7 @@ public class ClothType
     public int dropCount;
 
     //Currently opened cloth
-    public static ClothType cloth;
+    public static ClothType clothType;
 
     //EXTERNAL FILE: List containing all cloths in-game
     public static List<ClothType> clothTypes;

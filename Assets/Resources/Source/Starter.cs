@@ -157,6 +157,8 @@ public class Starter : MonoBehaviour
         Buff.buffs ??= new();
         Deserialize(ref Mount.mounts, "mounts", false, prefix);
         Mount.mounts ??= new();
+        Deserialize(ref Recipe.recipes, "recipes", false, prefix);
+        Recipe.recipes ??= new();
         Deserialize(ref ClothType.clothTypes, "clothtypes", false, prefix);
         ClothType.clothTypes ??= new();
         Deserialize(ref Faction.factions, "factions", false, prefix);
@@ -284,6 +286,8 @@ public class Starter : MonoBehaviour
             Buff.buffs[i].Initialise();
         for (int i = 0; i < Mount.mounts.Count; i++)
             Mount.mounts[i].Initialise();
+        for (int i = 0; i < Recipe.recipes.Count; i++)
+            Recipe.recipes[i].Initialise();
         for (int i = 0; i < ClothType.clothTypes.Count; i++)
             ClothType.clothTypes[i].Initialise();
         for (int i = 0; i < spiritHealers.Count; i++)
