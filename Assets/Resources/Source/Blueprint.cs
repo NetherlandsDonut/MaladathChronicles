@@ -1173,6 +1173,7 @@ public class Blueprint
                 CloseDesktop("SpellbookScreen");
                 CloseDesktop("EquipmentScreen");
                 CloseDesktop("BestiaryScreen");
+                CloseDesktop("CraftingScreen");
                 if (CDesktop.title != "TalentScreen")
                 {
                     PlaySound("DesktopTalentScreenOpen");
@@ -1189,6 +1190,7 @@ public class Blueprint
                 CloseDesktop("TalentScreen");
                 CloseDesktop("EquipmentScreen");
                 CloseDesktop("BestiaryScreen");
+                CloseDesktop("CraftingScreen");
                 if (CDesktop.title != "SpellbookScreen")
                     SpawnDesktopBlueprint("SpellbookScreen");
                 else
@@ -1202,6 +1204,7 @@ public class Blueprint
                 CloseDesktop("TalentScreen");
                 CloseDesktop("SpellbookScreen");
                 CloseDesktop("BestiaryScreen");
+                CloseDesktop("CraftingScreen");
                 if (CDesktop.title != "EquipmentScreen")
                     SpawnDesktopBlueprint("EquipmentScreen");
                 else
@@ -1215,8 +1218,23 @@ public class Blueprint
                 CloseDesktop("TalentScreen");
                 CloseDesktop("SpellbookScreen");
                 CloseDesktop("EquipmentScreen");
+                CloseDesktop("CraftingScreen");
                 if (CDesktop.title != "BestiaryScreen")
                     SpawnDesktopBlueprint("BestiaryScreen");
+                else
+                {
+                    CloseDesktop(CDesktop.title);
+                    PlaySound("DesktopInstanceClose");
+                }
+            });
+            AddHotkey(R, () =>
+            {
+                CloseDesktop("TalentScreen");
+                CloseDesktop("SpellbookScreen");
+                CloseDesktop("EquipmentScreen");
+                CloseDesktop("BestiaryScreen");
+                if (CDesktop.title != "CraftingScreen")
+                    SpawnDesktopBlueprint("CraftingScreen");
                 else
                 {
                     CloseDesktop(CDesktop.title);
@@ -1237,6 +1255,7 @@ public class Blueprint
                     CloseDesktop("BestiaryScreen");
                     CloseDesktop("SpellbookScreen");
                     CloseDesktop("TalentScreen");
+                    CloseDesktop("CraftingScreen");
                     if (CDesktop.title != "EquipmentScreen")
                         SpawnDesktopBlueprint("EquipmentScreen");
                     else
@@ -1250,6 +1269,7 @@ public class Blueprint
                     CloseDesktop("BestiaryScreen");
                     CloseDesktop("EquipmentScreen");
                     CloseDesktop("TalentScreen");
+                    CloseDesktop("CraftingScreen");
                     if (CDesktop.title != "SpellbookScreen")
                         SpawnDesktopBlueprint("SpellbookScreen");
                     else
@@ -1258,19 +1278,12 @@ public class Blueprint
                         PlaySound("DesktopSpellbookScreenClose");
                     }
                 });
-                //AddSmallButton(CDesktop.title == "PetScreen" ? "OtherClose" : "MenuSpellbook", (h) =>
-                //{
-                //    var temp = CDesktop.title;
-                //    if (CDesktop.title != "Map" && CDesktop.title != "CombatResults")
-                //        CloseDesktop(CDesktop.title);
-                //    if (temp != "SpellbookScreen")
-                //        SpawnDesktopBlueprint("SpellbookScreen");
-                //});
                 AddSmallButton(CDesktop.title == "TalentScreen" ? "OtherClose" : "MenuClasses", (h) =>
                 {
                     CloseDesktop("BestiaryScreen");
                     CloseDesktop("SpellbookScreen");
                     CloseDesktop("EquipmentScreen");
+                    CloseDesktop("CraftingScreen");
                     if (CDesktop.title != "TalentScreen")
                     {
                         PlaySound("DesktopTalentScreenOpen");
@@ -1287,8 +1300,23 @@ public class Blueprint
                     CloseDesktop("TalentScreen");
                     CloseDesktop("SpellbookScreen");
                     CloseDesktop("EquipmentScreen");
+                    CloseDesktop("CraftingScreen");
                     if (CDesktop.title != "BestiaryScreen")
                         SpawnDesktopBlueprint("BestiaryScreen");
+                    else
+                    {
+                        CloseDesktop(CDesktop.title);
+                        PlaySound("DesktopInstanceClose");
+                    }
+                });
+                AddSmallButton(CDesktop.title == "CraftingScreen" ? "OtherClose" : "MenuCrafting", (h) =>
+                {
+                    CloseDesktop("TalentScreen");
+                    CloseDesktop("SpellbookScreen");
+                    CloseDesktop("EquipmentScreen");
+                    CloseDesktop("BestiaryScreen");
+                    if (CDesktop.title != "CraftingScreen")
+                        SpawnDesktopBlueprint("CraftingScreen");
                     else
                     {
                         CloseDesktop(CDesktop.title);
@@ -1298,20 +1326,20 @@ public class Blueprint
             });
         }, true),
         new("MapToolbarClockLeft", () => {
-            SetAnchor(Top, -183, 0);
+            SetAnchor(TopLeft);
             DisableShadows();
             AddRegionGroup();
-            SetRegionGroupWidth(272);
+            SetRegionGroupWidth(262);
             AddPaddingRegion(() =>
             {
                 AddLine("Day " + (currentSave.day + 1), "", "Right");
             });
         }, true),
         new("MapToolbarStatusLeft", () => {
-            SetAnchor(Top, -183, 0);
+            SetAnchor(TopLeft);
             DisableGeneralSprites();
             AddRegionGroup();
-            SetRegionGroupWidth(272);
+            SetRegionGroupWidth(262);
             AddPaddingRegion(() =>
             {
                 if (currentSave.player.unspentTalentPoints > 0)
@@ -1323,10 +1351,10 @@ public class Blueprint
             });
         }, true),
         new("MapToolbarStatusRight", () => {
-            SetAnchor(Top, 183, 0);
+            SetAnchor(TopRight);
             DisableGeneralSprites();
             AddRegionGroup();
-            SetRegionGroupWidth(272);
+            SetRegionGroupWidth(262);
             AddPaddingRegion(() =>
             {
                 AddSmallButton("OtherSettings", (h) =>
@@ -1337,10 +1365,10 @@ public class Blueprint
             });
         }, true),
         new("MapToolbarClockRight", () => {
-            SetAnchor(Top, 183, 0);
+            SetAnchor(TopRight);
             DisableShadows();
             AddRegionGroup();
-            SetRegionGroupWidth(272);
+            SetRegionGroupWidth(262);
             AddPaddingRegion(() =>
             {
                 AddLine(currentSave.hour + (currentSave.minute < 10 ? ":0" : ":") + currentSave.minute, "", "Left");
@@ -8472,6 +8500,23 @@ public class Blueprint
             {
                 PlaySound("DesktopInstanceClose");
                 CloseDesktop("BestiaryScreen");
+            });
+        }),
+        new("CraftingScreen", () =>
+        {
+            PlaySound("DesktopInstanceOpen");
+            SetDesktopBackground("Stone");
+            SpawnWindowBlueprint("MapToolbarShadow");
+            SpawnWindowBlueprint("MapToolbarClockLeft");
+            SpawnWindowBlueprint("MapToolbar");
+            SpawnWindowBlueprint("MapToolbarClockRight");
+            SpawnWindowBlueprint("MapToolbarStatusLeft");
+            SpawnWindowBlueprint("MapToolbarStatusRight");
+            SpawnWindowBlueprint("ExperienceBar");
+            AddHotkey(Escape, () =>
+            {
+                PlaySound("DesktopInstanceClose");
+                CloseDesktop("CraftingScreen");
             });
         }),
         new("Bank", () =>
