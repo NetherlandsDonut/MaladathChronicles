@@ -441,5 +441,42 @@ v0.5.0
           Fixed Ghamoo-ra not having any drop
     13.04 Added dynamic footsteps sound during travel
           Added stacking items
+v0.5.1
+    14.04 Added mounts
+          Started adding nighttime visuals
+          Splitting item stacks
+          Time passing with movement
+v0.5.2
+    16.04 Beta stable master interface
+          Added more nighttime visuals
+          Made map change color during nighttime
+v0.5.3
+    17.04 Added health bars
+          Made the nighttime texture color appear smoothly
+          Logging screen now handles nighttime visuals
+          Four new sites in Eastern Kingdoms
+          More nighttime visuals
+          Two new sites in Dustwallow Marsh
+v0.5.4
+    18.04 Added price to mounts
+          Fixed a bug that player could equip trade goods
+          Class restrictions to items are back
+          Finished Eastern Kingdoms nighttime visuals
+          Reduced build size by 40%
+v0.5.5
+    19.04 Added cooldowns for passive abilities
+v0.5.6
+    20.04 Added Holy Bolts and Holy Fire
+          Fixed that cooldown left was showing outside of combat
+          High resolution Scholomance textures + filled with enemies
+v0.5.7
+    22.04 Added cloth types information to game
+          Moved satyrs from humanoids to demons
+v0.5.8
+    23.04 Added recipes to the game
+          Imported all recipes from the game
+v0.5.9
+    25.04 Added Quel'Thalas texture to the map
+          Crafting menu is possible to open now but it's empty
 ```
 </details>
