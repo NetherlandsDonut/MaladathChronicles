@@ -6,7 +6,7 @@
     {
       "player": {
         "level": 13,
-        "experience": 7620,
+        "experience": 7680,
         "name": "Delaney",
         "race": "Human",
         "spec": "Priest",
@@ -186,9 +186,9 @@
           }
         }
       },
-      "minute": 1,
-      "second": 24,
-      "currentSite": "The Deadmines",
+      "minute": 8,
+      "second": 52,
+      "currentSite": "The Dagger Hills",
       "siteProgress": {
         "Northshire Valley": 4,
         "Defias Hideout": 2
@@ -204,13 +204,17 @@
       "siteVisits": {
         "Northshire Abbey": 2,
         "Northshire Valley": 5,
-        "The Deadmines": 3
+        "The Deadmines": 3,
+        "Moonbrook": 0,
+        "Stendel's Pond": 0,
+        "The Dagger Hills": 2
       },
       "unlockedAreas": [],
       "startDate": "2024-04-20T16:57:39.4594058+02:00",
-      "lastLoaded": "2024-04-22T16:04:12.9030659+02:00",
-      "lastPlayed": "2024-04-22T16:05:10.520197+02:00",
-      "timePlayed": "00:05:10.7268065"
+      "lastLoaded": "2024-04-26T13:54:00.1066058+02:00",
+      "lastPlayed": "2024-04-26T14:14:48.7225449+02:00",
+      "timePlayed": "00:25:59.3427456",
+      "lastVisitedTalents": 2
     },
     {
       "player": {
@@ -351,9 +355,9 @@
           }
         }
       },
-      "minute": 4,
-      "second": 12,
-      "currentSite": "Rocky Desert",
+      "minute": 15,
+      "second": 52,
+      "currentSite": "Plaguewood",
       "siteProgress": {},
       "commonsKilled": {},
       "raresKilled": {},
@@ -361,13 +365,20 @@
       "siteVisits": {
         "Scuttle Coast": 1,
         "Tiragarde Keep": 2,
-        "Rocky Desert": 1
+        "Rocky Desert": 1,
+        "Plaguewood": 5,
+        "Blackwood Lake": 2
       },
       "unlockedAreas": [],
       "startDate": "2024-04-21T14:40:41.863247+02:00",
-      "lastLoaded": "2024-04-21T14:40:42.693944+02:00",
-      "lastPlayed": "2024-04-21T14:41:24.5114764+02:00",
-      "timePlayed": "00:00:41.8175324"
+      "lastLoaded": "2024-04-26T14:43:18.490543+02:00",
+      "lastPlayed": "2024-04-26T14:43:45.519979+02:00",
+      "deathInfo": {
+        "source": "Scourge Warder",
+        "area": "Plaguewood"
+      },
+      "playerDead": true,
+      "timePlayed": "00:02:20.2259890"
     }
   ]
 }

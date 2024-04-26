@@ -66,7 +66,7 @@ public class Blueprint
                 AddLine("", "Gray");
                 AddLine("Maladath", "Epic", "Center");
                 AddLine("Chronicles", "Epic", "Center");
-                AddLine("0.5.0", "Black", "Center");
+                AddLine("0.5.9", "DimGray", "Center");
                 AddLine("", "Gray");
                 AddLine("", "Gray");
                 AddLine("", "Gray");
@@ -230,34 +230,34 @@ public class Blueprint
                 });
             }
         }, true),
-        new("GameOver", () =>
-        {
-            SetAnchor(Center);
-            AddHeaderGroup();
-            AddHeaderRegion(() =>
-            {
-                AddLine("Game over:");
-            });
-            AddPaddingRegion(() =>
-            {
-                AddLine(currentSave.player.name + " died ");
-            });
-            AddButtonRegion(() =>
-            {
-                AddLine("Return to title screen", "", "Center");
-            },
-            (h) =>
-            {
-                CloseSave();
-                SaveGames();
-                saves[settings.selectedRealm].Remove(currentSave);
-                //graveyard.Add(currentSave);
-                CloseDesktop("GameOver");
-                CloseDesktop("Map");
-                CloseDesktop("TitleScreen");
-                SpawnDesktopBlueprint("TitleScreen");
-            });
-        }, true),
+        //new("GameOver", () =>
+        //{
+        //    SetAnchor(Center);
+        //    AddHeaderGroup();
+        //    AddHeaderRegion(() =>
+        //    {
+        //        AddLine("Game over:");
+        //    });
+        //    AddPaddingRegion(() =>
+        //    {
+        //        AddLine(currentSave.player.name + " died ");
+        //    });
+        //    AddButtonRegion(() =>
+        //    {
+        //        AddLine("Return to title screen", "", "Center");
+        //    },
+        //    (h) =>
+        //    {
+        //        CloseSave();
+        //        SaveGames();
+        //        saves[settings.selectedRealm].Remove(currentSave);
+        //        //graveyard.Add(currentSave);
+        //        CloseDesktop("GameOver");
+        //        CloseDesktop("Map");
+        //        CloseDesktop("TitleScreen");
+        //        SpawnDesktopBlueprint("TitleScreen");
+        //    });
+        //}, true),
         new("ConfirmDeleteCharacter", () => {
             SetAnchor(Center);
             AddRegionGroup();
@@ -2517,11 +2517,26 @@ public class Blueprint
             },
             (h) =>
             {
-                CloseDesktop("CombatResults");
-                if (board.results.inventory.items.Count > 0)
+                var hard = Realm.realms.Find(x => x.name == settings.selectedRealm).hardcore;
+                if (hard && board.results.result == "Lost")
                 {
-                    PlaySound("DesktopInventoryOpen");
-                    SpawnDesktopBlueprint("CombatResultsLoot");
+                    saves[settings.selectedRealm].Remove(currentSave);
+                    CloseSave();
+                    SaveGames();
+                    //graveyard.Add(currentSave);
+                    CloseDesktop("CombatResults");
+                    CloseDesktop("Map");
+                    CloseDesktop("TitleScreen");
+                    SpawnDesktopBlueprint("TitleScreen");
+                }
+                else
+                {
+                    CloseDesktop("CombatResults");
+                    if (board.results.inventory.items.Count > 0)
+                    {
+                        PlaySound("DesktopInventoryOpen");
+                        SpawnDesktopBlueprint("CombatResultsLoot");
+                    }
                 }
             });
         }),
@@ -2732,7 +2747,7 @@ public class Blueprint
         },  true),
         new("ExperienceBar", () => {
             SetAnchor(Bottom);
-            var experience = (int)(319 * (currentSave.player.experience / (double)currentSave.player.ExperienceNeeded()));
+            var experience = currentSave == null ? 0 : (int)(319 * (currentSave.player.experience / (double)currentSave.player.ExperienceNeeded()));
             AddRegionGroup();
             SetRegionGroupWidth(experience * 2);
             SetRegionGroupHeight(12);
