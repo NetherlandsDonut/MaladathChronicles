@@ -1,5 +1,1509 @@
 [
   {
+    "name": "Basic Campfire",
+    "profession": "Cooking",
+    "learnedAt": 1,
+    "reagents": {
+      "Simple Wood": 1
+    },
+    "results": {}
+  },
+  {
+    "name": "Charred Wolf Meat",
+    "profession": "Cooking",
+    "skillUpYellow": 45,
+    "skillUpGreen": 65,
+    "skillUpGray": 85,
+    "learnedAt": 1,
+    "reagents": {
+      "Stringy Wolf Meat": 1
+    },
+    "results": {
+      "Charred Wolf Meat": 1
+    }
+  },
+  {
+    "name": "Roasted Boar Meat",
+    "profession": "Cooking",
+    "skillUpYellow": 45,
+    "skillUpGreen": 65,
+    "skillUpGray": 85,
+    "learnedAt": 1,
+    "reagents": {
+      "Chunk of Boar Meat": 1
+    },
+    "results": {
+      "Roasted Boar Meat": 1
+    }
+  },
+  {
+    "name": "Brilliant Smallfish",
+    "profession": "Cooking",
+    "skillUpOrange": 1,
+    "skillUpYellow": 45,
+    "skillUpGreen": 65,
+    "skillUpGray": 85,
+    "learnedAt": 1,
+    "reagents": {
+      "Raw Brilliant Smallfish": 1
+    },
+    "results": {
+      "Brilliant Smallfish": 1
+    }
+  },
+  {
+    "name": "Slitherskin Mackerel",
+    "profession": "Cooking",
+    "skillUpOrange": 1,
+    "skillUpYellow": 45,
+    "skillUpGreen": 65,
+    "skillUpGray": 85,
+    "learnedAt": 1,
+    "reagents": {
+      "Raw Slitherskin Mackerel": 1
+    },
+    "results": {
+      "Slitherskin Mackerel": 1
+    }
+  },
+  {
+    "name": "Herb Baked Egg",
+    "profession": "Cooking",
+    "skillUpOrange": 1,
+    "skillUpYellow": 45,
+    "skillUpGreen": 65,
+    "skillUpGray": 85,
+    "learnedAt": 1,
+    "reagents": {
+      "Small Egg": 1,
+      "Mild Spices": 1
+    },
+    "results": {
+      "Herb Baked Egg": 1
+    }
+  },
+  {
+    "name": "Crispy Bat Wing",
+    "profession": "Cooking",
+    "skillUpOrange": 1,
+    "skillUpYellow": 45,
+    "skillUpGreen": 65,
+    "skillUpGray": 85,
+    "learnedAt": 1,
+    "reagents": {
+      "Meaty Bat Wing": 1,
+      "Mild Spices": 1
+    },
+    "results": {
+      "Crispy Bat Wing": 1
+    }
+  },
+  {
+    "name": "Gingerbread Cookie",
+    "profession": "Cooking",
+    "skillUpOrange": 1,
+    "skillUpYellow": 45,
+    "skillUpGreen": 65,
+    "skillUpGray": 85,
+    "learnedAt": 1,
+    "reagents": {
+      "Small Egg": 1,
+      "Holiday Spices": 1
+    },
+    "results": {
+      "Gingerbread Cookie": 1
+    }
+  },
+  {
+    "name": "Linen Bandage",
+    "profession": "First Aid",
+    "skillUpOrange": 1,
+    "skillUpYellow": 30,
+    "skillUpGreen": 45,
+    "skillUpGray": 60,
+    "learnedAt": 1,
+    "reagents": {
+      "Linen Cloth": 1
+    },
+    "results": {
+      "Linen Bandage": 1
+    }
+  },
+  {
+    "name": "Spiced Wolf Meat",
+    "profession": "Cooking",
+    "skillUpOrange": 10,
+    "skillUpYellow": 50,
+    "skillUpGreen": 70,
+    "skillUpGray": 90,
+    "learnedAt": 10,
+    "trainingCost": 50,
+    "reagents": {
+      "Stringy Wolf Meat": 1,
+      "Mild Spices": 1
+    },
+    "results": {
+      "Spiced Wolf Meat": 1
+    }
+  },
+  {
+    "name": "Kaldorei Spider Kabob",
+    "profession": "Cooking",
+    "skillUpOrange": 10,
+    "skillUpYellow": 50,
+    "skillUpGreen": 70,
+    "skillUpGray": 90,
+    "learnedAt": 10,
+    "reagents": {
+      "Small Spider Leg": 1
+    },
+    "results": {
+      "Kaldorei Spider Kabob": 1
+    }
+  },
+  {
+    "name": "Scorpid Surprise",
+    "profession": "Cooking",
+    "skillUpOrange": 20,
+    "skillUpYellow": 60,
+    "skillUpGreen": 80,
+    "skillUpGray": 100,
+    "learnedAt": 20,
+    "reagents": {
+      "Scorpid Stinger": 1
+    },
+    "results": {
+      "Scorpid Surprise": 1
+    }
+  },
+  {
+    "name": "Beer Basted Boar Ribs",
+    "profession": "Cooking",
+    "skillUpOrange": 25,
+    "skillUpYellow": 60,
+    "skillUpGreen": 80,
+    "skillUpGray": 100,
+    "learnedAt": 25,
+    "reagents": {
+      "Crag Boar Rib": 1,
+      "Rhapsody Malt": 1
+    },
+    "results": {
+      "Beer Basted Boar Ribs": 1
+    }
+  },
+  {
+    "name": "Roasted Kodo Meat",
+    "profession": "Cooking",
+    "skillUpOrange": 35,
+    "skillUpYellow": 75,
+    "skillUpGreen": 95,
+    "skillUpGray": 115,
+    "learnedAt": 35,
+    "reagents": {
+      "Kodo Meat": 1,
+      "Mild Spices": 1
+    },
+    "results": {
+      "Roasted Kodo Meat": 2
+    }
+  },
+  {
+    "name": "Egg Nog",
+    "profession": "Cooking",
+    "skillUpOrange": 35,
+    "skillUpYellow": 75,
+    "skillUpGreen": 95,
+    "skillUpGray": 115,
+    "learnedAt": 35,
+    "reagents": {
+      "Small Egg": 1,
+      "Ice Cold Milk": 1,
+      "Holiday Spirits": 1,
+      "Holiday Spices": 1
+    },
+    "results": {
+      "Egg Nog": 1
+    }
+  },
+  {
+    "name": "Smoked Bear Meat",
+    "profession": "Cooking",
+    "skillUpOrange": 40,
+    "skillUpYellow": 80,
+    "skillUpGreen": 100,
+    "skillUpGray": 120,
+    "learnedAt": 40,
+    "reagents": {
+      "Bear Meat": 1
+    },
+    "results": {
+      "Smoked Bear Meat": 1
+    }
+  },
+  {
+    "name": "Heavy Linen Bandage",
+    "profession": "First Aid",
+    "skillUpOrange": 40,
+    "skillUpYellow": 50,
+    "skillUpGreen": 75,
+    "skillUpGray": 100,
+    "learnedAt": 40,
+    "reagents": {
+      "Linen Cloth": 2
+    },
+    "results": {
+      "Heavy Linen Bandage": 1
+    }
+  },
+  {
+    "name": "Coyote Steak",
+    "profession": "Cooking",
+    "skillUpOrange": 50,
+    "skillUpYellow": 90,
+    "skillUpGreen": 110,
+    "skillUpGray": 130,
+    "learnedAt": 50,
+    "trainingCost": 100,
+    "reagents": {
+      "Coyote Meat": 1
+    },
+    "results": {
+      "Coyote Steak": 1
+    }
+  },
+  {
+    "name": "Goretusk Liver Pie",
+    "profession": "Cooking",
+    "skillUpOrange": 50,
+    "skillUpYellow": 90,
+    "skillUpGreen": 110,
+    "skillUpGray": 130,
+    "learnedAt": 50,
+    "reagents": {
+      "Goretusk Liver": 1,
+      "Mild Spices": 1
+    },
+    "results": {
+      "Goretusk Liver Pie": 1
+    }
+  },
+  {
+    "name": "Fillet of Frenzy",
+    "profession": "Cooking",
+    "skillUpOrange": 50,
+    "skillUpYellow": 90,
+    "skillUpGreen": 110,
+    "skillUpGray": 130,
+    "learnedAt": 50,
+    "reagents": {
+      "Soft Frenzy Flesh": 1,
+      "Mild Spices": 1
+    },
+    "results": {
+      "Fillet of Frenzy": 2
+    }
+  },
+  {
+    "name": "Strider Stew",
+    "profession": "Cooking",
+    "skillUpOrange": 50,
+    "skillUpYellow": 90,
+    "skillUpGreen": 110,
+    "skillUpGray": 130,
+    "learnedAt": 50,
+    "reagents": {
+      "Strider Meat": 1,
+      "Shiny Red Apple": 1
+    },
+    "results": {
+      "Strider Stew": 2
+    }
+  },
+  {
+    "name": "Boiled Clams",
+    "profession": "Cooking",
+    "skillUpOrange": 50,
+    "skillUpYellow": 90,
+    "skillUpGreen": 110,
+    "skillUpGray": 130,
+    "learnedAt": 50,
+    "trainingCost": 100,
+    "reagents": {
+      "Clam Meat": 1,
+      "Refreshing Spring Water": 1
+    },
+    "results": {
+      "Boiled Clams": 1
+    }
+  },
+  {
+    "name": "Longjaw Mud Snapper",
+    "profession": "Cooking",
+    "skillUpOrange": 50,
+    "skillUpYellow": 90,
+    "skillUpGreen": 110,
+    "skillUpGray": 130,
+    "learnedAt": 50,
+    "reagents": {
+      "Raw Longjaw Mud Snapper": 1
+    },
+    "results": {
+      "Longjaw Mud Snapper": 1
+    }
+  },
+  {
+    "name": "Loch Frenzy Delight",
+    "profession": "Cooking",
+    "skillUpOrange": 50,
+    "skillUpYellow": 90,
+    "skillUpGreen": 110,
+    "skillUpGray": 130,
+    "learnedAt": 50,
+    "reagents": {
+      "Raw Loch Frenzy": 1,
+      "Mild Spices": 1
+    },
+    "results": {
+      "Loch Frenzy Delight": 1
+    }
+  },
+  {
+    "name": "Rainbow Fin Albacore",
+    "profession": "Cooking",
+    "skillUpOrange": 50,
+    "skillUpYellow": 90,
+    "skillUpGreen": 110,
+    "skillUpGray": 130,
+    "learnedAt": 50,
+    "reagents": {
+      "Raw Rainbow Fin Albacore": 1
+    },
+    "results": {
+      "Rainbow Fin Albacore": 1
+    }
+  },
+  {
+    "name": "Blood Sausage",
+    "profession": "Cooking",
+    "skillUpOrange": 60,
+    "skillUpYellow": 100,
+    "skillUpGreen": 120,
+    "skillUpGray": 140,
+    "learnedAt": 60,
+    "reagents": {
+      "Bear Meat": 1,
+      "Boar Intestines": 1,
+      "Spider Ichor": 1
+    },
+    "results": {
+      "Blood Sausage": 2
+    }
+  },
+  {
+    "name": "Thistle Tea",
+    "profession": "Cooking",
+    "skillUpOrange": 60,
+    "skillUpYellow": 100,
+    "skillUpGreen": 120,
+    "skillUpGray": 140,
+    "learnedAt": 60,
+    "reagents": {
+      "Swiftthistle": 1,
+      "Refreshing Spring Water": 1
+    },
+    "results": {
+      "Thistle Tea": 1
+    }
+  },
+  {
+    "name": "Westfall Stew",
+    "profession": "Cooking",
+    "skillUpOrange": 75,
+    "skillUpYellow": 115,
+    "skillUpGreen": 135,
+    "skillUpGray": 155,
+    "learnedAt": 75,
+    "reagents": {
+      "Stringy Vulture Meat": 1,
+      "Murloc Eye": 1,
+      "Goretusk Snout": 1
+    },
+    "results": {
+      "Westfall Stew": 1
+    }
+  },
+  {
+    "name": "Crab Cake",
+    "profession": "Cooking",
+    "skillUpOrange": 75,
+    "skillUpYellow": 115,
+    "skillUpGreen": 135,
+    "skillUpGray": 155,
+    "learnedAt": 75,
+    "trainingCost": 200,
+    "reagents": {
+      "Crawler Meat": 1,
+      "Mild Spices": 1
+    },
+    "results": {
+      "Crab Cake": 1
+    }
+  },
+  {
+    "name": "Dry Pork Ribs",
+    "profession": "Cooking",
+    "skillUpOrange": 80,
+    "skillUpYellow": 120,
+    "skillUpGreen": 140,
+    "skillUpGray": 160,
+    "learnedAt": 80,
+    "trainingCost": 150,
+    "reagents": {
+      "Boar Ribs": 1,
+      "Mild Spices": 1
+    },
+    "results": {
+      "Dry Pork Ribs": 1
+    }
+  },
+  {
+    "name": "Crocolisk Steak",
+    "profession": "Cooking",
+    "skillUpOrange": 80,
+    "skillUpYellow": 120,
+    "skillUpGreen": 140,
+    "skillUpGray": 160,
+    "learnedAt": 80,
+    "reagents": {
+      "Crocolisk Meat": 1,
+      "Mild Spices": 1
+    },
+    "results": {
+      "Crocolisk Steak": 1
+    }
+  },
+  {
+    "name": "Smoked Sagefish",
+    "profession": "Cooking",
+    "skillUpOrange": 80,
+    "skillUpYellow": 120,
+    "skillUpGreen": 140,
+    "skillUpGray": 160,
+    "learnedAt": 80,
+    "reagents": {
+      "Raw Sagefish": 1,
+      "Mild Spices": 1
+    },
+    "results": {
+      "Smoked Sagefish": 1
+    }
+  },
+  {
+    "name": "Wool Bandage",
+    "profession": "First Aid",
+    "skillUpOrange": 80,
+    "skillUpYellow": 80,
+    "skillUpGreen": 115,
+    "skillUpGray": 150,
+    "learnedAt": 80,
+    "trainingCost": 250,
+    "reagents": {
+      "Wool Cloth": 1
+    },
+    "results": {
+      "Wool Bandage": 1
+    }
+  },
+  {
+    "name": "Anti-Venom",
+    "profession": "First Aid",
+    "skillUpOrange": 80,
+    "skillUpYellow": 80,
+    "skillUpGreen": 115,
+    "skillUpGray": 150,
+    "learnedAt": 80,
+    "trainingCost": 250,
+    "reagents": {
+      "Small Venom Sac": 1
+    },
+    "results": {
+      "Anti-Venom": 3
+    }
+  },
+  {
+    "name": "Cooked Crab Claw",
+    "profession": "Cooking",
+    "skillUpOrange": 85,
+    "skillUpYellow": 125,
+    "skillUpGreen": 145,
+    "skillUpGray": 165,
+    "learnedAt": 85,
+    "reagents": {
+      "Crawler Claw": 1,
+      "Mild Spices": 1
+    },
+    "results": {
+      "Cooked Crab Claw": 1
+    }
+  },
+  {
+    "name": "Savory Deviate Delight",
+    "profession": "Cooking",
+    "skillUpOrange": 85,
+    "skillUpYellow": 125,
+    "skillUpGreen": 145,
+    "skillUpGray": 165,
+    "learnedAt": 85,
+    "reagents": {
+      "Deviate Fish": 1,
+      "Mild Spices": 1
+    },
+    "results": {
+      "Savory Deviate Delight": 1
+    }
+  },
+  {
+    "name": "Murloc Fin Soup",
+    "profession": "Cooking",
+    "skillUpOrange": 90,
+    "skillUpYellow": 130,
+    "skillUpGreen": 150,
+    "skillUpGray": 170,
+    "learnedAt": 90,
+    "reagents": {
+      "Murloc Fin": 2,
+      "Hot Spices": 1
+    },
+    "results": {
+      "Murloc Fin Soup": 1
+    }
+  },
+  {
+    "name": "Dig Rat Stew",
+    "profession": "Cooking",
+    "skillUpOrange": 90,
+    "skillUpYellow": 130,
+    "skillUpGreen": 150,
+    "skillUpGray": 170,
+    "learnedAt": 90,
+    "reagents": {
+      "Dig Rat": 1
+    },
+    "results": {
+      "Dig Rat Stew": 2
+    }
+  },
+  {
+    "name": "Clam Chowder",
+    "profession": "Cooking",
+    "skillUpOrange": 90,
+    "skillUpYellow": 130,
+    "skillUpGreen": 150,
+    "skillUpGray": 170,
+    "learnedAt": 90,
+    "reagents": {
+      "Clam Meat": 1,
+      "Ice Cold Milk": 1,
+      "Mild Spices": 1
+    },
+    "results": {
+      "Clam Chowder": 1
+    }
+  },
+  {
+    "name": "Redridge Goulash",
+    "profession": "Cooking",
+    "skillUpOrange": 100,
+    "skillUpYellow": 135,
+    "skillUpGreen": 155,
+    "skillUpGray": 175,
+    "learnedAt": 100,
+    "reagents": {
+      "Crisp Spider Meat": 1,
+      "Tough Condor Meat": 1
+    },
+    "results": {
+      "Redridge Goulash": 1
+    }
+  },
+  {
+    "name": "Seasoned Wolf Kabob",
+    "profession": "Cooking",
+    "skillUpOrange": 100,
+    "skillUpYellow": 140,
+    "skillUpGreen": 160,
+    "skillUpGray": 180,
+    "learnedAt": 100,
+    "reagents": {
+      "Lean Wolf Flank": 2,
+      "Stormwind Seasoning Herbs": 1
+    },
+    "results": {
+      "Seasoned Wolf Kabob": 3
+    }
+  },
+  {
+    "name": "Crispy Lizard Tail",
+    "profession": "Cooking",
+    "skillUpOrange": 100,
+    "skillUpYellow": 140,
+    "skillUpGreen": 160,
+    "skillUpGray": 180,
+    "learnedAt": 100,
+    "reagents": {
+      "Thunder Lizard Tail": 1,
+      "Hot Spices": 1
+    },
+    "results": {
+      "Crispy Lizard Tail": 2
+    }
+  },
+  {
+    "name": "Bristle Whisker Catfish",
+    "profession": "Cooking",
+    "skillUpOrange": 100,
+    "skillUpYellow": 140,
+    "skillUpGreen": 160,
+    "skillUpGray": 180,
+    "learnedAt": 100,
+    "reagents": {
+      "Raw Bristle Whisker Catfish": 1
+    },
+    "results": {
+      "Bristle Whisker Catfish": 1
+    }
+  },
+  {
+    "name": "Succulent Pork Ribs",
+    "profession": "Cooking",
+    "skillUpOrange": 110,
+    "skillUpYellow": 130,
+    "skillUpGreen": 150,
+    "skillUpGray": 170,
+    "learnedAt": 110,
+    "reagents": {
+      "Boar Ribs": 2,
+      "Hot Spices": 1
+    },
+    "results": {
+      "Succulent Pork Ribs": 1
+    }
+  },
+  {
+    "name": "Gooey Spider Cake",
+    "profession": "Cooking",
+    "skillUpOrange": 110,
+    "skillUpYellow": 150,
+    "skillUpGreen": 170,
+    "skillUpGray": 190,
+    "learnedAt": 110,
+    "reagents": {
+      "Gooey Spider Leg": 2,
+      "Hot Spices": 1
+    },
+    "results": {
+      "Gooey Spider Cake": 1
+    }
+  },
+  {
+    "name": "Big Bear Steak",
+    "profession": "Cooking",
+    "skillUpOrange": 110,
+    "skillUpYellow": 150,
+    "skillUpGreen": 170,
+    "skillUpGray": 190,
+    "learnedAt": 110,
+    "reagents": {
+      "Big Bear Meat": 1,
+      "Hot Spices": 1
+    },
+    "results": {
+      "Big Bear Steak": 1
+    }
+  },
+  {
+    "name": "Lean Venison",
+    "profession": "Cooking",
+    "skillUpOrange": 110,
+    "skillUpYellow": 150,
+    "skillUpGreen": 170,
+    "skillUpGray": 190,
+    "learnedAt": 110,
+    "reagents": {
+      "Stag Meat": 1,
+      "Mild Spices": 4
+    },
+    "results": {
+      "Lean Venison": 2
+    }
+  },
+  {
+    "name": "Heavy Wool Bandage",
+    "profession": "First Aid",
+    "skillUpOrange": 115,
+    "skillUpYellow": 115,
+    "skillUpGreen": 150,
+    "skillUpGray": 185,
+    "learnedAt": 115,
+    "trainingCost": 1000,
+    "reagents": {
+      "Wool Cloth": 2
+    },
+    "results": {
+      "Heavy Wool Bandage": 1
+    }
+  },
+  {
+    "name": "Crocolisk Gumbo",
+    "profession": "Cooking",
+    "skillUpOrange": 120,
+    "skillUpYellow": 160,
+    "skillUpGreen": 180,
+    "skillUpGray": 200,
+    "learnedAt": 120,
+    "reagents": {
+      "Tender Crocolisk Meat": 1,
+      "Hot Spices": 1
+    },
+    "results": {
+      "Crocolisk Gumbo": 1
+    }
+  },
+  {
+    "name": "Hot Lion Chops",
+    "profession": "Cooking",
+    "skillUpOrange": 125,
+    "skillUpYellow": 175,
+    "skillUpGreen": 195,
+    "skillUpGray": 215,
+    "learnedAt": 125,
+    "reagents": {
+      "Lion Meat": 1,
+      "Hot Spices": 1
+    },
+    "results": {
+      "Hot Lion Chops": 1
+    }
+  },
+  {
+    "name": "Goblin Deviled Clams",
+    "profession": "Cooking",
+    "skillUpOrange": 125,
+    "skillUpYellow": 165,
+    "skillUpGreen": 185,
+    "skillUpGray": 205,
+    "learnedAt": 125,
+    "trainingCost": 300,
+    "reagents": {
+      "Tangy Clam Meat": 1,
+      "Hot Spices": 1
+    },
+    "results": {
+      "Goblin Deviled Clams": 1
+    }
+  },
+  {
+    "name": "Lean Wolf Steak",
+    "profession": "Cooking",
+    "skillUpOrange": 125,
+    "skillUpYellow": 165,
+    "skillUpGreen": 185,
+    "skillUpGray": 205,
+    "learnedAt": 125,
+    "reagents": {
+      "Lean Wolf Flank": 1,
+      "Mild Spices": 1
+    },
+    "results": {
+      "Lean Wolf Steak": 1
+    }
+  },
+  {
+    "name": "Curiously Tasty Omelet",
+    "profession": "Cooking",
+    "skillUpOrange": 130,
+    "skillUpYellow": 170,
+    "skillUpGreen": 190,
+    "skillUpGray": 210,
+    "learnedAt": 130,
+    "reagents": {
+      "Raptor Egg": 1,
+      "Hot Spices": 1
+    },
+    "results": {
+      "Curiously Tasty Omelet": 1
+    }
+  },
+  {
+    "name": "Strong Anti-Venom",
+    "profession": "First Aid",
+    "skillUpOrange": 130,
+    "skillUpYellow": 130,
+    "skillUpGreen": 165,
+    "skillUpGray": 200,
+    "learnedAt": 130,
+    "reagents": {
+      "Large Venom Sac": 1
+    },
+    "results": {
+      "Strong Anti-Venom": 3
+    }
+  },
+  {
+    "name": "Tasty Lion Steak",
+    "profession": "Cooking",
+    "skillUpOrange": 150,
+    "skillUpYellow": 190,
+    "skillUpGreen": 210,
+    "skillUpGray": 230,
+    "learnedAt": 150,
+    "reagents": {
+      "Lion Meat": 2,
+      "Soothing Spices": 1
+    },
+    "results": {
+      "Tasty Lion Steak": 1
+    }
+  },
+  {
+    "name": "Heavy Crocolisk Stew",
+    "profession": "Cooking",
+    "skillUpOrange": 150,
+    "skillUpYellow": 160,
+    "skillUpGreen": 180,
+    "skillUpGray": 200,
+    "learnedAt": 150,
+    "reagents": {
+      "Tender Crocolisk Meat": 2,
+      "Soothing Spices": 1
+    },
+    "results": {
+      "Heavy Crocolisk Stew": 1
+    }
+  },
+  {
+    "name": "Silk Bandage",
+    "profession": "First Aid",
+    "skillUpOrange": 150,
+    "skillUpYellow": 150,
+    "skillUpGreen": 180,
+    "skillUpGray": 210,
+    "learnedAt": 150,
+    "trainingCost": 5000,
+    "reagents": {
+      "Silk Cloth": 1
+    },
+    "results": {
+      "Silk Bandage": 1
+    }
+  },
+  {
+    "name": "Soothing Turtle Bisque",
+    "profession": "Cooking",
+    "skillUpOrange": 175,
+    "skillUpYellow": 215,
+    "skillUpGreen": 235,
+    "skillUpGray": 255,
+    "learnedAt": 175,
+    "reagents": {
+      "Turtle Meat": 1,
+      "Soothing Spices": 1
+    },
+    "results": {
+      "Soothing Turtle Bisque": 1
+    }
+  },
+  {
+    "name": "Barbecued Buzzard Wing",
+    "profession": "Cooking",
+    "skillUpOrange": 175,
+    "skillUpYellow": 215,
+    "skillUpGreen": 235,
+    "skillUpGray": 255,
+    "learnedAt": 175,
+    "trainingCost": 450,
+    "reagents": {
+      "Buzzard Wing": 1,
+      "Hot Spices": 1
+    },
+    "results": {
+      "Barbecued Buzzard Wing": 1
+    }
+  },
+  {
+    "name": "Giant Clam Scorcho",
+    "profession": "Cooking",
+    "skillUpOrange": 175,
+    "skillUpYellow": 215,
+    "skillUpGreen": 235,
+    "skillUpGray": 255,
+    "learnedAt": 175,
+    "reagents": {
+      "Giant Clam Meat": 1,
+      "Hot Spices": 1
+    },
+    "results": {
+      "Giant Clam Scorcho": 1
+    }
+  },
+  {
+    "name": "Rockscale Cod",
+    "profession": "Cooking",
+    "skillUpOrange": 175,
+    "skillUpYellow": 190,
+    "skillUpGreen": 210,
+    "skillUpGray": 230,
+    "learnedAt": 175,
+    "reagents": {
+      "Raw Rockscale Cod": 1
+    },
+    "results": {
+      "Rockscale Cod": 1
+    }
+  },
+  {
+    "name": "Goldthorn Tea",
+    "profession": "Cooking",
+    "skillUpOrange": 175,
+    "skillUpYellow": 215,
+    "skillUpGreen": 235,
+    "skillUpGray": 255,
+    "learnedAt": 175,
+    "reagents": {
+      "Goldthorn": 1,
+      "Refreshing Spring Water": 1
+    },
+    "results": {
+      "Goldthorn Tea": 4
+    }
+  },
+  {
+    "name": "Roast Raptor",
+    "profession": "Cooking",
+    "skillUpOrange": 175,
+    "skillUpYellow": 215,
+    "skillUpGreen": 235,
+    "skillUpGray": 255,
+    "learnedAt": 175,
+    "reagents": {
+      "Raptor Flesh": 1,
+      "Hot Spices": 1
+    },
+    "results": {
+      "Roast Raptor": 1
+    }
+  },
+  {
+    "name": "Hot Wolf Ribs",
+    "profession": "Cooking",
+    "skillUpOrange": 175,
+    "skillUpYellow": 215,
+    "skillUpGreen": 235,
+    "skillUpGray": 255,
+    "learnedAt": 175,
+    "reagents": {
+      "Red Wolf Meat": 1,
+      "Hot Spices": 1
+    },
+    "results": {
+      "Hot Wolf Ribs": 1
+    }
+  },
+  {
+    "name": "Jungle Stew",
+    "profession": "Cooking",
+    "skillUpOrange": 175,
+    "skillUpYellow": 215,
+    "skillUpGreen": 235,
+    "skillUpGray": 255,
+    "learnedAt": 175,
+    "reagents": {
+      "Tiger Meat": 1,
+      "Refreshing Spring Water": 1,
+      "Shiny Red Apple": 2
+    },
+    "results": {
+      "Jungle Stew": 2
+    }
+  },
+  {
+    "name": "Carrion Surprise",
+    "profession": "Cooking",
+    "skillUpOrange": 175,
+    "skillUpYellow": 215,
+    "skillUpGreen": 235,
+    "skillUpGray": 255,
+    "learnedAt": 175,
+    "reagents": {
+      "Mystery Meat": 1,
+      "Hot Spices": 1
+    },
+    "results": {
+      "Carrion Surprise": 1
+    }
+  },
+  {
+    "name": "Mystery Stew",
+    "profession": "Cooking",
+    "skillUpOrange": 175,
+    "skillUpYellow": 215,
+    "skillUpGreen": 235,
+    "skillUpGray": 255,
+    "learnedAt": 175,
+    "reagents": {
+      "Mystery Meat": 1,
+      "Skin of Dwarven Stout": 1
+    },
+    "results": {
+      "Mystery Stew": 1
+    }
+  },
+  {
+    "name": "Mithril Headed Trout",
+    "profession": "Cooking",
+    "skillUpOrange": 175,
+    "skillUpYellow": 215,
+    "skillUpGreen": 235,
+    "skillUpGray": 255,
+    "learnedAt": 175,
+    "reagents": {
+      "Raw Mithril Head Trout": 1
+    },
+    "results": {
+      "Mithril Head Trout": 1
+    }
+  },
+  {
+    "name": "Sagefish Delight",
+    "profession": "Cooking",
+    "skillUpOrange": 175,
+    "skillUpYellow": 215,
+    "skillUpGreen": 235,
+    "skillUpGray": 255,
+    "learnedAt": 175,
+    "reagents": {
+      "Raw Greater Sagefish": 1,
+      "Hot Spices": 1
+    },
+    "results": {
+      "Sagefish Delight": 1
+    }
+  },
+  {
+    "name": "Heavy Silk Bandage",
+    "profession": "First Aid",
+    "skillUpOrange": 180,
+    "skillUpYellow": 180,
+    "skillUpGreen": 210,
+    "skillUpGray": 240,
+    "learnedAt": 180,
+    "reagents": {
+      "Silk Cloth": 2
+    },
+    "results": {
+      "Heavy Silk Bandage": 1
+    }
+  },
+  {
+    "name": "Dragonbreath Chili",
+    "profession": "Cooking",
+    "skillUpOrange": 200,
+    "skillUpYellow": 240,
+    "skillUpGreen": 260,
+    "skillUpGray": 280,
+    "learnedAt": 200,
+    "reagents": {
+      "Mystery Meat": 1,
+      "Small Flame Sac": 1,
+      "Hot Spices": 1
+    },
+    "results": {
+      "Dragonbreath Chili": 1
+    }
+  },
+  {
+    "name": "Heavy Kodo Stew",
+    "profession": "Cooking",
+    "skillUpOrange": 200,
+    "skillUpYellow": 240,
+    "skillUpGreen": 260,
+    "skillUpGray": 280,
+    "learnedAt": 200,
+    "reagents": {
+      "Heavy Kodo Meat": 2,
+      "Soothing Spices": 1,
+      "Refreshing Spring Water": 1
+    },
+    "results": {
+      "Heavy Kodo Stew": 2
+    }
+  },
+  {
+    "name": "Spider Sausage",
+    "profession": "Cooking",
+    "skillUpOrange": 200,
+    "skillUpYellow": 240,
+    "skillUpGreen": 260,
+    "skillUpGray": 280,
+    "learnedAt": 200,
+    "trainingCost": 4000,
+    "reagents": {
+      "White Spider Meat": 2
+    },
+    "results": {
+      "Spider Sausage": 1
+    }
+  },
+  {
+    "name": "Mageweave Bandage",
+    "profession": "First Aid",
+    "skillUpOrange": 210,
+    "skillUpYellow": 210,
+    "skillUpGreen": 240,
+    "skillUpGray": 270,
+    "learnedAt": 210,
+    "reagents": {
+      "Mageweave Cloth": 1
+    },
+    "results": {
+      "Mageweave Bandage": 1
+    }
+  },
+  {
+    "name": "Spiced Chili Crab",
+    "profession": "Cooking",
+    "skillUpOrange": 225,
+    "skillUpYellow": 265,
+    "skillUpGreen": 285,
+    "skillUpGray": 305,
+    "learnedAt": 225,
+    "reagents": {
+      "Tender Crab Meat": 1,
+      "Hot Spices": 2
+    },
+    "results": {
+      "Spiced Chili Crab": 1
+    }
+  },
+  {
+    "name": "Monster Omelet",
+    "profession": "Cooking",
+    "skillUpOrange": 225,
+    "skillUpYellow": 265,
+    "skillUpGreen": 285,
+    "skillUpGray": 305,
+    "learnedAt": 225,
+    "reagents": {
+      "Giant Egg": 1,
+      "Soothing Spices": 2
+    },
+    "results": {
+      "Monster Omelet": 1
+    }
+  },
+  {
+    "name": "Spotted Yellowtail",
+    "profession": "Cooking",
+    "skillUpOrange": 225,
+    "skillUpYellow": 265,
+    "skillUpGreen": 285,
+    "skillUpGray": 305,
+    "learnedAt": 225,
+    "reagents": {
+      "Raw Spotted Yellowtail": 1
+    },
+    "results": {
+      "Spotted Yellowtail": 1
+    }
+  },
+  {
+    "name": "Cooked Glossy Mightfish",
+    "profession": "Cooking",
+    "skillUpOrange": 225,
+    "skillUpYellow": 265,
+    "skillUpGreen": 285,
+    "skillUpGray": 305,
+    "learnedAt": 225,
+    "reagents": {
+      "Raw Glossy Mightfish": 1,
+      "Soothing Spices": 1
+    },
+    "results": {
+      "Cooked Glossy Mightfish": 1
+    }
+  },
+  {
+    "name": "Filet of Redgill",
+    "profession": "Cooking",
+    "skillUpOrange": 225,
+    "skillUpYellow": 265,
+    "skillUpGreen": 285,
+    "skillUpGray": 305,
+    "learnedAt": 225,
+    "reagents": {
+      "Raw Redgill": 1
+    },
+    "results": {
+      "Filet of Redgill": 1
+    }
+  },
+  {
+    "name": "Undermine Clam Chowder",
+    "profession": "Cooking",
+    "skillUpOrange": 225,
+    "skillUpYellow": 265,
+    "skillUpGreen": 285,
+    "skillUpGray": 305,
+    "learnedAt": 225,
+    "reagents": {
+      "Zesty Clam Meat": 2,
+      "Hot Spices": 1,
+      "Ice Cold Milk": 1
+    },
+    "results": {
+      "Undermine Clam Chowder": 2
+    }
+  },
+  {
+    "name": "Tender Wolf Steak",
+    "profession": "Cooking",
+    "skillUpOrange": 225,
+    "skillUpYellow": 265,
+    "skillUpGreen": 285,
+    "skillUpGray": 305,
+    "learnedAt": 225,
+    "reagents": {
+      "Tender Wolf Meat": 1,
+      "Soothing Spices": 1
+    },
+    "results": {
+      "Tender Wolf Steak": 1
+    }
+  },
+  {
+    "name": "Grilled Squid",
+    "profession": "Cooking",
+    "skillUpOrange": 240,
+    "skillUpYellow": 280,
+    "skillUpGreen": 300,
+    "skillUpGray": 320,
+    "learnedAt": 240,
+    "reagents": {
+      "Winter Squid": 1,
+      "Soothing Spices": 1
+    },
+    "results": {
+      "Grilled Squid": 1
+    }
+  },
+  {
+    "name": "Hot Smoked Bass",
+    "profession": "Cooking",
+    "skillUpOrange": 240,
+    "skillUpYellow": 280,
+    "skillUpGreen": 300,
+    "skillUpGray": 320,
+    "learnedAt": 240,
+    "reagents": {
+      "Raw Summer Bass": 1,
+      "Hot Spices": 2
+    },
+    "results": {
+      "Hot Smoked Bass": 1
+    }
+  },
+  {
+    "name": "Heavy Mageweave Bandage",
+    "profession": "First Aid",
+    "skillUpOrange": 240,
+    "skillUpYellow": 240,
+    "skillUpGreen": 270,
+    "skillUpGray": 300,
+    "learnedAt": 240,
+    "reagents": {
+      "Mageweave Cloth": 2
+    },
+    "results": {
+      "Heavy Mageweave Bandage": 1
+    }
+  },
+  {
+    "name": "Nightfin Soup",
+    "profession": "Cooking",
+    "skillUpOrange": 250,
+    "skillUpYellow": 290,
+    "skillUpGreen": 310,
+    "skillUpGray": 330,
+    "learnedAt": 250,
+    "reagents": {
+      "Raw Nightfin Snapper": 1,
+      "Refreshing Spring Water": 1
+    },
+    "results": {
+      "Nightfin Soup": 1
+    }
+  },
+  {
+    "name": "Poached Sunscale Salmon",
+    "profession": "Cooking",
+    "skillUpOrange": 250,
+    "skillUpYellow": 290,
+    "skillUpGreen": 310,
+    "skillUpGray": 330,
+    "learnedAt": 250,
+    "reagents": {
+      "Raw Sunscale Salmon": 1
+    },
+    "results": {
+      "Poached Sunscale Salmon": 1
+    }
+  },
+  {
+    "name": "Runecloth Bandage",
+    "profession": "First Aid",
+    "skillUpOrange": 260,
+    "skillUpYellow": 260,
+    "skillUpGreen": 290,
+    "skillUpGray": 320,
+    "learnedAt": 260,
+    "reagents": {
+      "Runecloth": 1
+    },
+    "results": {
+      "Runecloth Bandage": 1
+    }
+  },
+  {
+    "name": "Lobster Stew",
+    "profession": "Cooking",
+    "skillUpOrange": 275,
+    "skillUpYellow": 315,
+    "skillUpGreen": 335,
+    "skillUpGray": 355,
+    "learnedAt": 275,
+    "reagents": {
+      "Darkclaw Lobster": 1,
+      "Refreshing Spring Water": 1
+    },
+    "results": {
+      "Lobster Stew": 1
+    }
+  },
+  {
+    "name": "Mightfish Steak",
+    "profession": "Cooking",
+    "skillUpOrange": 275,
+    "skillUpYellow": 315,
+    "skillUpGreen": 335,
+    "skillUpGray": 355,
+    "learnedAt": 275,
+    "reagents": {
+      "Large Raw Mightfish": 1,
+      "Hot Spices": 1,
+      "Soothing Spices": 1
+    },
+    "results": {
+      "Mightfish Steak": 1
+    }
+  },
+  {
+    "name": "Baked Salmon",
+    "profession": "Cooking",
+    "skillUpOrange": 275,
+    "skillUpYellow": 315,
+    "skillUpGreen": 335,
+    "skillUpGray": 355,
+    "learnedAt": 275,
+    "reagents": {
+      "Raw Whitescale Salmon": 1,
+      "Soothing Spices": 1
+    },
+    "results": {
+      "Baked Salmon": 1
+    }
+  },
+  {
+    "name": "Runn Tum Tuber Surprise",
+    "profession": "Cooking",
+    "skillUpOrange": 275,
+    "skillUpYellow": 315,
+    "skillUpGreen": 335,
+    "skillUpGray": 355,
+    "learnedAt": 275,
+    "reagents": {
+      "Runn Tum Tuber": 1,
+      "Soothing Spices": 1
+    },
+    "results": {
+      "Runn Tum Tuber Surprise": 1
+    }
+  },
+  {
+    "name": "Smoked Desert Dumplings",
+    "profession": "Cooking",
+    "skillUpOrange": 285,
+    "skillUpYellow": 325,
+    "skillUpGreen": 345,
+    "skillUpGray": 365,
+    "learnedAt": 285,
+    "reagents": {
+      "Sandworm Meat": 1,
+      "Soothing Spices": 1
+    },
+    "results": {
+      "Smoked Desert Dumplings": 1
+    }
+  },
+  {
+    "name": "Heavy Runecloth Bandage",
+    "profession": "First Aid",
+    "skillUpOrange": 290,
+    "skillUpYellow": 290,
+    "skillUpGreen": 320,
+    "skillUpGray": 350,
+    "learnedAt": 290,
+    "reagents": {
+      "Runecloth": 2
+    },
+    "results": {
+      "Heavy Runecloth Bandage": 1
+    }
+  },
+  {
+    "name": "Dirge's Kickin' Chimaerok Chops",
+    "profession": "Cooking",
+    "skillUpOrange": 300,
+    "skillUpYellow": 325,
+    "skillUpGreen": 345,
+    "skillUpGray": 365,
+    "learnedAt": 300,
+    "reagents": {
+      "Hot Spices": 1,
+      "Goblin Rocket Fuel": 1,
+      "Deeprock Salt": 1,
+      "Chimaerok Tenderloin": 1
+    },
+    "results": {
+      "Dirge's Kickin' Chimaerok Chops": 5
+    }
+  },
+  {
+    "name": "Powerful Anti-Venom",
+    "profession": "First Aid",
+    "skillUpOrange": 300,
+    "skillUpYellow": 300,
+    "skillUpGreen": 330,
+    "skillUpGray": 360,
+    "learnedAt": 300,
+    "reagents": {
+      "Huge Venom Sac": 1
+    },
+    "results": {
+      "Powerful Anti-Venom": 1
+    }
+  },
+  {
     "name": "Elixir of Lion's Strength",
     "profession": "Alchemy",
     "skillUpOrange": 1,
@@ -72,7 +1576,7 @@
     "skillUpGreen": 70,
     "skillUpGray": 90,
     "learnedAt": 1,
-    "trainingCost": 0.005,
+    "trainingCost": 50,
     "reagents": {
       "Copper Bar": 4
     },
@@ -292,7 +1796,7 @@
     "skillUpGreen": 47,
     "skillUpGray": 60,
     "learnedAt": 1,
-    "trainingCost": 0.0025,
+    "trainingCost": 25,
     "reagents": {
       "Bolt of Linen Cloth": 1,
       "Coarse Thread": 1,
@@ -357,7 +1861,7 @@
     "skillUpGreen": 95,
     "skillUpGray": 115,
     "learnedAt": 10,
-    "trainingCost": 0.005,
+    "trainingCost": 50,
     "reagents": {
       "Simple Wood": 1,
       "Lesser Magic Essence": 1
@@ -374,7 +1878,7 @@
     "skillUpGreen": 57,
     "skillUpGray": 70,
     "learnedAt": 10,
-    "trainingCost": 0.005,
+    "trainingCost": 50,
     "reagents": {
       "Bolt of Linen Cloth": 1,
       "Coarse Thread": 1
@@ -391,7 +1895,7 @@
     "skillUpGreen": 80,
     "skillUpGray": 100,
     "learnedAt": 15,
-    "trainingCost": 0.005,
+    "trainingCost": 50,
     "reagents": {
       "Peacebloom": 1,
       "Earthroot": 2,
@@ -409,7 +1913,7 @@
     "skillUpGreen": 75,
     "skillUpGray": 95,
     "learnedAt": 15,
-    "trainingCost": 0.005,
+    "trainingCost": 50,
     "reagents": {
       "Copper Bar": 6,
       "Weak Flux": 1,
@@ -427,7 +1931,7 @@
     "skillUpGreen": 90,
     "skillUpGray": 110,
     "learnedAt": 15,
-    "trainingCost": 0.005,
+    "trainingCost": 50,
     "reagents": {
       "Strange Dust": 1
     },
@@ -441,7 +1945,7 @@
     "skillUpGreen": 60,
     "skillUpGray": 75,
     "learnedAt": 15,
-    "trainingCost": 0.005,
+    "trainingCost": 50,
     "reagents": {
       "Light Leather": 4,
       "Coarse Thread": 1
@@ -458,7 +1962,7 @@
     "skillUpGreen": 67,
     "skillUpGray": 85,
     "learnedAt": 15,
-    "trainingCost": 0.005,
+    "trainingCost": 50,
     "reagents": {
       "Bolt of Linen Cloth": 1,
       "Coarse Thread": 1
@@ -475,7 +1979,7 @@
     "skillUpGreen": 80,
     "skillUpGray": 100,
     "learnedAt": 20,
-    "trainingCost": 0.005,
+    "trainingCost": 50,
     "reagents": {
       "Copper Bar": 6,
       "Weak Flux": 1,
@@ -493,7 +1997,7 @@
     "skillUpGreen": 80,
     "skillUpGray": 100,
     "learnedAt": 20,
-    "trainingCost": 0.005,
+    "trainingCost": 50,
     "reagents": {
       "Copper Bar": 8
     },
@@ -522,7 +2026,7 @@
     "skillUpGreen": 67,
     "skillUpGray": 85,
     "learnedAt": 20,
-    "trainingCost": 0.005,
+    "trainingCost": 50,
     "reagents": {
       "Bolt of Linen Cloth": 2,
       "Light Leather": 1,
@@ -540,7 +2044,7 @@
     "skillUpGreen": 85,
     "skillUpGray": 105,
     "learnedAt": 25,
-    "trainingCost": 0.01,
+    "trainingCost": 100,
     "reagents": {
       "Mageroyal": 1,
       "Silverleaf": 1,
@@ -558,7 +2062,7 @@
     "skillUpGreen": 85,
     "skillUpGray": 105,
     "learnedAt": 25,
-    "trainingCost": 0.005,
+    "trainingCost": 50,
     "reagents": {
       "Copper Bar": 6,
       "Weak Flux": 1,
@@ -576,7 +2080,7 @@
     "skillUpGreen": 65,
     "skillUpGray": 85,
     "learnedAt": 25,
-    "trainingCost": 0.01,
+    "trainingCost": 100,
     "reagents": {
       "Rough Stone": 2
     },
@@ -592,7 +2096,7 @@
     "skillUpGreen": 70,
     "skillUpGray": 85,
     "learnedAt": 25,
-    "trainingCost": 0.0075,
+    "trainingCost": 75,
     "reagents": {
       "Light Leather": 6,
       "Coarse Thread": 1
@@ -623,7 +2127,7 @@
     "skillUpGreen": 90,
     "skillUpGray": 110,
     "learnedAt": 30,
-    "trainingCost": 0.01,
+    "trainingCost": 100,
     "reagents": {
       "Copper Bar": 6,
       "Weak Flux": 1,
@@ -642,7 +2146,7 @@
     "skillUpGreen": 90,
     "skillUpGray": 110,
     "learnedAt": 30,
-    "trainingCost": 0.01,
+    "trainingCost": 100,
     "reagents": {
       "Copper Bar": 10,
       "Weak Flux": 2,
@@ -676,7 +2180,7 @@
     "skillUpGreen": 52,
     "skillUpGray": 60,
     "learnedAt": 30,
-    "trainingCost": 0.0115,
+    "trainingCost": 115,
     "reagents": {
       "Copper Bar": 1
     },
@@ -692,7 +2196,7 @@
     "skillUpGreen": 75,
     "skillUpGray": 90,
     "learnedAt": 30,
-    "trainingCost": 0.013,
+    "trainingCost": 130,
     "reagents": {
       "Copper Bar": 1,
       "Handful of Copper Bolts": 1,
@@ -711,7 +2215,7 @@
     "skillUpGreen": 75,
     "skillUpGray": 90,
     "learnedAt": 30,
-    "trainingCost": 0.01,
+    "trainingCost": 100,
     "reagents": {
       "Light Leather": 4,
       "Coarse Thread": 2
@@ -728,7 +2232,7 @@
     "skillUpGreen": 75,
     "skillUpGray": 90,
     "learnedAt": 30,
-    "trainingCost": 0.01,
+    "trainingCost": 100,
     "reagents": {
       "Light Leather": 3,
       "Coarse Thread": 4
@@ -745,7 +2249,7 @@
     "skillUpGreen": 72,
     "skillUpGray": 90,
     "learnedAt": 30,
-    "trainingCost": 0.005,
+    "trainingCost": 50,
     "reagents": {
       "Bolt of Linen Cloth": 2,
       "Coarse Thread": 1
@@ -762,7 +2266,7 @@
     "skillUpGreen": 72,
     "skillUpGray": 90,
     "learnedAt": 30,
-    "trainingCost": 0.005,
+    "trainingCost": 50,
     "reagents": {
       "Bolt of Linen Cloth": 3,
       "Coarse Thread": 1
@@ -779,7 +2283,7 @@
     "skillUpGreen": 72,
     "skillUpGray": 90,
     "learnedAt": 30,
-    "trainingCost": 0.005,
+    "trainingCost": 50,
     "reagents": {
       "Bolt of Linen Cloth": 3,
       "Coarse Thread": 1,
@@ -797,7 +2301,7 @@
     "skillUpGreen": 95,
     "skillUpGray": 115,
     "learnedAt": 35,
-    "trainingCost": 0.01,
+    "trainingCost": 100,
     "reagents": {
       "Copper Bar": 6
     },
@@ -813,7 +2317,7 @@
     "skillUpGreen": 95,
     "skillUpGray": 115,
     "learnedAt": 35,
-    "trainingCost": 0.025,
+    "trainingCost": 250,
     "reagents": {
       "Copper Bar": 12,
       "Weak Flux": 2,
@@ -850,7 +2354,7 @@
     "skillUpGreen": 65,
     "skillUpGray": 75,
     "learnedAt": 35,
-    "trainingCost": 0.005,
+    "trainingCost": 50,
     "reagents": {
       "Light Hide": 1,
       "Salt": 1
@@ -883,7 +2387,7 @@
     "skillUpGreen": 77,
     "skillUpGray": 95,
     "learnedAt": 35,
-    "trainingCost": 0.01,
+    "trainingCost": 100,
     "reagents": {
       "Bolt of Linen Cloth": 2,
       "Coarse Thread": 1
@@ -900,7 +2404,7 @@
     "skillUpGreen": 90,
     "skillUpGray": 110,
     "learnedAt": 40,
-    "trainingCost": 0.015,
+    "trainingCost": 150,
     "reagents": {
       "Mageroyal": 2,
       "Peacebloom": 1,
@@ -918,7 +2422,7 @@
     "skillUpGreen": 100,
     "skillUpGray": 120,
     "learnedAt": 40,
-    "trainingCost": 0.01,
+    "trainingCost": 100,
     "reagents": {
       "Copper Bar": 8,
       "Rough Grinding Stone": 2
@@ -935,7 +2439,7 @@
     "skillUpGreen": 110,
     "skillUpGray": 130,
     "learnedAt": 40,
-    "trainingCost": 0.01,
+    "trainingCost": 100,
     "reagents": {
       "Strange Dust": 2,
       "Lesser Magic Essence": 1
@@ -950,7 +2454,7 @@
     "skillUpGreen": 85,
     "skillUpGray": 100,
     "learnedAt": 40,
-    "trainingCost": 0.01,
+    "trainingCost": 100,
     "reagents": {
       "Light Leather": 8,
       "Coarse Thread": 4
@@ -1001,7 +2505,7 @@
     "skillUpGreen": 82,
     "skillUpGray": 100,
     "learnedAt": 40,
-    "trainingCost": 0.005,
+    "trainingCost": 50,
     "reagents": {
       "Bolt of Linen Cloth": 2,
       "Coarse Thread": 1,
@@ -1019,7 +2523,7 @@
     "skillUpGreen": 82,
     "skillUpGray": 100,
     "learnedAt": 40,
-    "trainingCost": 0.005,
+    "trainingCost": 50,
     "reagents": {
       "Bolt of Linen Cloth": 2,
       "Coarse Thread": 1,
@@ -1037,7 +2541,7 @@
     "skillUpGreen": 82,
     "skillUpGray": 100,
     "learnedAt": 40,
-    "trainingCost": 0.005,
+    "trainingCost": 50,
     "reagents": {
       "Bolt of Linen Cloth": 2,
       "Coarse Thread": 1,
@@ -1056,7 +2560,7 @@
     "skillUpGreen": 105,
     "skillUpGray": 125,
     "learnedAt": 45,
-    "trainingCost": 0.02,
+    "trainingCost": 200,
     "reagents": {
       "Copper Bar": 8,
       "Fine Thread": 2,
@@ -1074,7 +2578,7 @@
     "skillUpGreen": 115,
     "skillUpGray": 135,
     "learnedAt": 45,
-    "trainingCost": 0.01,
+    "trainingCost": 100,
     "reagents": {
       "Strange Dust": 1,
       "Lesser Magic Essence": 2
@@ -1106,7 +2610,7 @@
     "skillUpGreen": 87,
     "skillUpGray": 105,
     "learnedAt": 45,
-    "trainingCost": 0.01,
+    "trainingCost": 100,
     "reagents": {
       "Bolt of Linen Cloth": 3,
       "Coarse Thread": 3
@@ -1123,7 +2627,7 @@
     "skillUpGreen": 100,
     "skillUpGray": 120,
     "learnedAt": 50,
-    "trainingCost": 0.025,
+    "trainingCost": 250,
     "reagents": {
       "Earthroot": 2,
       "Peacebloom": 1,
@@ -1175,7 +2679,7 @@
     "skillUpGreen": 120,
     "skillUpGray": 140,
     "learnedAt": 50,
-    "trainingCost": 0.025,
+    "trainingCost": 250,
     "reagents": {
       "Strange Dust": 3
     },
@@ -1189,7 +2693,7 @@
     "skillUpGreen": 95,
     "skillUpGray": 110,
     "learnedAt": 50,
-    "trainingCost": 0.015,
+    "trainingCost": 150,
     "reagents": {
       "Copper Bar": 2,
       "Weak Flux": 1
@@ -1206,7 +2710,7 @@
     "skillUpGreen": 95,
     "skillUpGray": 110,
     "learnedAt": 50,
-    "trainingCost": 0.015,
+    "trainingCost": 150,
     "reagents": {
       "Copper Tube": 1,
       "Handful of Copper Bolts": 1,
@@ -1224,7 +2728,7 @@
     "skillUpGreen": 80,
     "skillUpGray": 90,
     "learnedAt": 50,
-    "trainingCost": 0.015,
+    "trainingCost": 150,
     "reagents": {
       "Copper Bar": 6
     },
@@ -1240,7 +2744,7 @@
     "skillUpGreen": 105,
     "skillUpGray": 125,
     "learnedAt": 55,
-    "trainingCost": 0.1,
+    "trainingCost": 1000,
     "reagents": {
       "Minor Healing Potion": 1,
       "Briarthorn": 1
@@ -1257,7 +2761,7 @@
     "skillUpGreen": 100,
     "skillUpGray": 115,
     "learnedAt": 55,
-    "trainingCost": 0.01,
+    "trainingCost": 100,
     "reagents": {
       "Light Leather": 8,
       "Coarse Thread": 5
@@ -1274,7 +2778,7 @@
     "skillUpGreen": 100,
     "skillUpGray": 115,
     "learnedAt": 55,
-    "trainingCost": 0.015,
+    "trainingCost": 150,
     "reagents": {
       "Light Leather": 3,
       "Coarse Thread": 2
@@ -1376,7 +2880,7 @@
     "skillUpGreen": 125,
     "skillUpGray": 145,
     "learnedAt": 60,
-    "trainingCost": 0.025,
+    "trainingCost": 250,
     "reagents": {
       "Strange Dust": 2,
       "Lesser Magic Essence": 2
@@ -1404,7 +2908,7 @@
     "skillUpGreen": 105,
     "skillUpGray": 120,
     "learnedAt": 60,
-    "trainingCost": 0.02,
+    "trainingCost": 200,
     "reagents": {
       "Copper Tube": 1,
       "Malachite": 1,
@@ -1422,7 +2926,7 @@
     "skillUpGreen": 105,
     "skillUpGray": 120,
     "learnedAt": 60,
-    "trainingCost": 0.01,
+    "trainingCost": 100,
     "reagents": {
       "Light Leather": 5,
       "Coarse Thread": 2
@@ -1456,7 +2960,7 @@
     "skillUpGreen": 102,
     "skillUpGray": 120,
     "learnedAt": 60,
-    "trainingCost": 0.02,
+    "trainingCost": 200,
     "reagents": {
       "Bolt of Linen Cloth": 2,
       "Coarse Thread": 3
@@ -1473,7 +2977,7 @@
     "skillUpGreen": 102,
     "skillUpGray": 120,
     "learnedAt": 60,
-    "trainingCost": 0.02,
+    "trainingCost": 200,
     "reagents": {
       "Bolt of Linen Cloth": 3,
       "Coarse Thread": 2,
@@ -1491,7 +2995,7 @@
     "skillUpGreen": 72,
     "skillUpGray": 80,
     "learnedAt": 65,
-    "trainingCost": 0.01,
+    "trainingCost": 100,
     "reagents": {
       "Coarse Stone": 1
     },
@@ -1507,7 +3011,7 @@
     "skillUpGreen": 72,
     "skillUpGray": 80,
     "learnedAt": 65,
-    "trainingCost": 0.01,
+    "trainingCost": 100,
     "reagents": {
       "Coarse Stone": 1,
       "Wool Cloth": 1
@@ -1524,7 +3028,7 @@
     "skillUpGreen": 125,
     "skillUpGray": 145,
     "learnedAt": 65,
-    "trainingCost": 0.03,
+    "trainingCost": 300,
     "reagents": {
       "Copper Bar": 12,
       "Weak Flux": 2,
@@ -1542,7 +3046,7 @@
     "skillUpGreen": 110,
     "skillUpGray": 125,
     "learnedAt": 65,
-    "trainingCost": 0.0225,
+    "trainingCost": 225,
     "reagents": {
       "Handful of Copper Bolts": 2,
       "Copper Bar": 1,
@@ -1560,7 +3064,7 @@
     "skillUpGreen": 90,
     "skillUpGray": 115,
     "learnedAt": 65,
-    "trainingCost": 0.02,
+    "trainingCost": 200,
     "reagents": {
       "Copper Bar": 1,
       "Tin Bar": 1
@@ -1575,7 +3079,7 @@
     "skillUpGreen": 65,
     "skillUpGray": 75,
     "learnedAt": 65,
-    "trainingCost": 0.005,
+    "trainingCost": 50,
     "reagents": {
       "Tin Ore": 1
     },
@@ -1591,7 +3095,7 @@
     "skillUpGreen": 107,
     "skillUpGray": 125,
     "learnedAt": 65,
-    "trainingCost": 0.02,
+    "trainingCost": 200,
     "reagents": {
       "Bolt of Linen Cloth": 3,
       "Coarse Thread": 1,
@@ -1609,7 +3113,7 @@
     "skillUpGreen": 130,
     "skillUpGray": 150,
     "learnedAt": 70,
-    "trainingCost": 0.02,
+    "trainingCost": 200,
     "reagents": {
       "Copper Bar": 10
     },
@@ -1625,7 +3129,7 @@
     "skillUpGreen": 130,
     "skillUpGray": 150,
     "learnedAt": 70,
-    "trainingCost": 0.05,
+    "trainingCost": 500,
     "reagents": {
       "Copper Bar": 10,
       "Weak Flux": 2,
@@ -1657,7 +3161,7 @@
     "skillUpGreen": 130,
     "skillUpGray": 150,
     "learnedAt": 70,
-    "trainingCost": 0.02,
+    "trainingCost": 200,
     "reagents": {
       "Strange Dust": 3,
       "Greater Magic Essence": 1
@@ -1672,7 +3176,7 @@
     "skillUpGreen": 130,
     "skillUpGray": 150,
     "learnedAt": 70,
-    "trainingCost": 0.02,
+    "trainingCost": 200,
     "reagents": {
       "Simple Wood": 1,
       "Greater Magic Essence": 1
@@ -1689,7 +3193,7 @@
     "skillUpGreen": 115,
     "skillUpGray": 130,
     "learnedAt": 70,
-    "trainingCost": 0.015,
+    "trainingCost": 150,
     "reagents": {
       "Light Leather": 6,
       "Coarse Thread": 4
@@ -1706,7 +3210,7 @@
     "skillUpGreen": 112,
     "skillUpGray": 130,
     "learnedAt": 70,
-    "trainingCost": 0.03,
+    "trainingCost": 300,
     "reagents": {
       "Bolt of Linen Cloth": 4,
       "Light Leather": 1,
@@ -1724,7 +3228,7 @@
     "skillUpGreen": 112,
     "skillUpGray": 130,
     "learnedAt": 70,
-    "trainingCost": 0.02,
+    "trainingCost": 200,
     "reagents": {
       "Bolt of Linen Cloth": 3,
       "Fine Thread": 1,
@@ -1742,7 +3246,7 @@
     "skillUpGreen": 112,
     "skillUpGray": 130,
     "learnedAt": 70,
-    "trainingCost": 0.03,
+    "trainingCost": 300,
     "reagents": {
       "Bolt of Linen Cloth": 4,
       "Fine Thread": 2
@@ -1793,7 +3297,7 @@
     "skillUpGreen": 87,
     "skillUpGray": 100,
     "learnedAt": 75,
-    "trainingCost": 0.025,
+    "trainingCost": 250,
     "reagents": {
       "Coarse Stone": 2
     },
@@ -1827,7 +3331,7 @@
     "skillUpGreen": 90,
     "skillUpGray": 95,
     "learnedAt": 75,
-    "trainingCost": 0.025,
+    "trainingCost": 250,
     "reagents": {
       "Coarse Stone": 1
     },
@@ -1843,7 +3347,7 @@
     "skillUpGreen": 90,
     "skillUpGray": 95,
     "learnedAt": 75,
-    "trainingCost": 0.025,
+    "trainingCost": 250,
     "reagents": {
       "Coarse Blasting Powder": 1,
       "Copper Bar": 1
@@ -1860,7 +3364,7 @@
     "skillUpGreen": 97,
     "skillUpGray": 105,
     "learnedAt": 75,
-    "trainingCost": 0.025,
+    "trainingCost": 250,
     "reagents": {
       "Coarse Blasting Powder": 3,
       "Linen Cloth": 1
@@ -1894,7 +3398,7 @@
     "skillUpGreen": 120,
     "skillUpGray": 135,
     "learnedAt": 75,
-    "trainingCost": 0.02,
+    "trainingCost": 200,
     "reagents": {
       "Cured Light Hide": 1,
       "Light Leather": 6,
@@ -1912,7 +3416,7 @@
     "skillUpGreen": 112,
     "skillUpGray": 125,
     "learnedAt": 75,
-    "trainingCost": 0.02,
+    "trainingCost": 200,
     "reagents": {
       "Silver Ore": 1
     },
@@ -1928,7 +3432,7 @@
     "skillUpGreen": 117,
     "skillUpGray": 135,
     "learnedAt": 75,
-    "trainingCost": 0.025,
+    "trainingCost": 250,
     "reagents": {
       "Bolt of Woolen Cloth": 1,
       "Fine Thread": 1
@@ -1945,7 +3449,7 @@
     "skillUpGreen": 97,
     "skillUpGray": 105,
     "learnedAt": 75,
-    "trainingCost": 0.01,
+    "trainingCost": 100,
     "reagents": {
       "Wool Cloth": 3
     },
@@ -1961,7 +3465,7 @@
     "skillUpGreen": 117,
     "skillUpGray": 135,
     "learnedAt": 75,
-    "trainingCost": 0.03,
+    "trainingCost": 300,
     "reagents": {
       "Bolt of Linen Cloth": 4,
       "Fine Thread": 1
@@ -1978,7 +3482,7 @@
     "skillUpGreen": 90,
     "skillUpGray": 100,
     "learnedAt": 80,
-    "trainingCost": 0.025,
+    "trainingCost": 250,
     "reagents": {
       "Oily Blackmouth": 2,
       "Empty Vial": 1
@@ -2039,7 +3543,7 @@
     "skillUpGreen": 135,
     "skillUpGray": 155,
     "learnedAt": 80,
-    "trainingCost": 0.04,
+    "trainingCost": 400,
     "reagents": {
       "Strange Dust": 2,
       "Greater Magic Essence": 1
@@ -2067,7 +3571,7 @@
     "skillUpGreen": 125,
     "skillUpGray": 140,
     "learnedAt": 80,
-    "trainingCost": 0.03,
+    "trainingCost": 300,
     "reagents": {
       "Light Leather": 6,
       "Coarse Thread": 2
@@ -2084,7 +3588,7 @@
     "skillUpGreen": 122,
     "skillUpGray": 140,
     "learnedAt": 80,
-    "trainingCost": 0.02,
+    "trainingCost": 200,
     "reagents": {
       "Bolt of Woolen Cloth": 3,
       "Fine Thread": 1
@@ -2101,7 +3605,7 @@
     "skillUpGreen": 122,
     "skillUpGray": 140,
     "learnedAt": 80,
-    "trainingCost": 0.03,
+    "trainingCost": 300,
     "reagents": {
       "Bolt of Linen Cloth": 5,
       "Light Leather": 2,
@@ -2119,7 +3623,7 @@
     "skillUpGreen": 130,
     "skillUpGray": 145,
     "learnedAt": 85,
-    "trainingCost": 0.03,
+    "trainingCost": 300,
     "reagents": {
       "Copper Modulator": 1,
       "Handful of Copper Bolts": 2,
@@ -2138,7 +3642,7 @@
     "skillUpGreen": 120,
     "skillUpGray": 135,
     "learnedAt": 85,
-    "trainingCost": 0.025,
+    "trainingCost": 250,
     "reagents": {
       "Light Leather": 10,
       "Fine Thread": 2
@@ -2155,7 +3659,7 @@
     "skillUpGreen": 130,
     "skillUpGray": 145,
     "learnedAt": 85,
-    "trainingCost": 0.035,
+    "trainingCost": 350,
     "reagents": {
       "Cured Light Hide": 3,
       "Light Leather": 6,
@@ -2173,7 +3677,7 @@
     "skillUpGreen": 127,
     "skillUpGray": 145,
     "learnedAt": 85,
-    "trainingCost": 0.03,
+    "trainingCost": 300,
     "reagents": {
       "Bolt of Woolen Cloth": 2,
       "Fine Thread": 2,
@@ -2191,7 +3695,7 @@
     "skillUpGreen": 127,
     "skillUpGray": 145,
     "learnedAt": 85,
-    "trainingCost": 0.04,
+    "trainingCost": 400,
     "reagents": {
       "Bolt of Woolen Cloth": 3,
       "Fine Thread": 1
@@ -2208,7 +3712,7 @@
     "skillUpGreen": 140,
     "skillUpGray": 160,
     "learnedAt": 90,
-    "trainingCost": 0.05,
+    "trainingCost": 500,
     "reagents": {
       "Mageroyal": 1,
       "Briarthorn": 2,
@@ -2226,7 +3730,7 @@
     "skillUpGreen": 140,
     "skillUpGray": 160,
     "learnedAt": 90,
-    "trainingCost": 0.045,
+    "trainingCost": 450,
     "reagents": {
       "Stranglekelp": 1,
       "Blackmouth Oil": 2,
@@ -2278,7 +3782,7 @@
     "skillUpGreen": 127,
     "skillUpGray": 140,
     "learnedAt": 90,
-    "trainingCost": 0.05,
+    "trainingCost": 500,
     "reagents": {
       "Copper Bar": 10,
       "Rough Grinding Stone": 3
@@ -2309,7 +3813,7 @@
     "skillUpGreen": 140,
     "skillUpGray": 160,
     "learnedAt": 90,
-    "trainingCost": 0.05,
+    "trainingCost": 500,
     "reagents": {
       "Strange Dust": 2,
       "Greater Magic Essence": 1,
@@ -2325,7 +3829,7 @@
     "skillUpGreen": 125,
     "skillUpGray": 140,
     "learnedAt": 90,
-    "trainingCost": 0.03,
+    "trainingCost": 300,
     "reagents": {
       "Silver Bar": 1
     },
@@ -2409,7 +3913,7 @@
     "skillUpGreen": 132,
     "skillUpGray": 150,
     "learnedAt": 90,
-    "trainingCost": 0.04,
+    "trainingCost": 400,
     "reagents": {
       "Bolt of Woolen Cloth": 3,
       "Fine Thread": 2,
@@ -2427,7 +3931,7 @@
     "skillUpGreen": 155,
     "skillUpGray": 175,
     "learnedAt": 95,
-    "trainingCost": 0.05,
+    "trainingCost": 500,
     "reagents": {
       "Copper Bar": 14,
       "Weak Flux": 2,
@@ -2446,7 +3950,7 @@
     "skillUpGreen": 140,
     "skillUpGray": 155,
     "learnedAt": 95,
-    "trainingCost": 0.02,
+    "trainingCost": 200,
     "reagents": {
       "Bronze Bar": 6,
       "Rough Grinding Stone": 6
@@ -2481,7 +3985,7 @@
     "skillUpGreen": 140,
     "skillUpGray": 155,
     "learnedAt": 95,
-    "trainingCost": 0.04,
+    "trainingCost": 400,
     "reagents": {
       "Light Leather": 10,
       "Cured Light Hide": 1,
@@ -2499,7 +4003,7 @@
     "skillUpGreen": 137,
     "skillUpGray": 155,
     "learnedAt": 95,
-    "trainingCost": 0.03,
+    "trainingCost": 300,
     "reagents": {
       "Bolt of Woolen Cloth": 4,
       "Fine Thread": 2,
@@ -2569,7 +4073,7 @@
     "skillUpGreen": 150,
     "skillUpGray": 170,
     "learnedAt": 100,
-    "trainingCost": 0.1,
+    "trainingCost": 1000,
     "reagents": {
       "Swiftthistle": 1,
       "Blackmouth Oil": 1,
@@ -2587,7 +4091,7 @@
     "skillUpGreen": 150,
     "skillUpGray": 165,
     "learnedAt": 100,
-    "trainingCost": 0.06,
+    "trainingCost": 600,
     "reagents": {
       "Bronze Bar": 6,
       "Weak Flux": 4,
@@ -2607,7 +4111,7 @@
     "skillUpGreen": 107,
     "skillUpGray": 110,
     "learnedAt": 100,
-    "trainingCost": 0.01,
+    "trainingCost": 100,
     "reagents": {
       "Silver Bar": 1,
       "Rough Grinding Stone": 2
@@ -2641,7 +4145,7 @@
     "skillUpGreen": 110,
     "skillUpGray": 120,
     "learnedAt": 100,
-    "trainingCost": 0.01,
+    "trainingCost": 100,
     "reagents": {
       "Silver Bar": 1,
       "Rough Grinding Stone": 1
@@ -2673,7 +4177,7 @@
     "skillUpGreen": 150,
     "skillUpGray": 170,
     "learnedAt": 100,
-    "trainingCost": 0.05,
+    "trainingCost": 500,
     "reagents": {
       "Strange Dust": 4,
       "Small Glimmering Shard": 1
@@ -2701,7 +4205,7 @@
     "skillUpGreen": 150,
     "skillUpGray": 170,
     "learnedAt": 100,
-    "trainingCost": 0.1,
+    "trainingCost": 1000,
     "reagents": {
       "Silver Rod": 1,
       "Strange Dust": 6,
@@ -2754,7 +4258,7 @@
     "skillUpGreen": 145,
     "skillUpGray": 160,
     "learnedAt": 100,
-    "trainingCost": 0.04,
+    "trainingCost": 400,
     "reagents": {
       "Light Leather": 6,
       "Tigerseye": 2
@@ -2771,7 +4275,7 @@
     "skillUpGreen": 122,
     "skillUpGray": 130,
     "learnedAt": 100,
-    "trainingCost": 0.03,
+    "trainingCost": 300,
     "reagents": {
       "Bronze Bar": 1,
       "Handful of Copper Bolts": 2,
@@ -2805,7 +4309,7 @@
     "skillUpGreen": 122,
     "skillUpGray": 130,
     "learnedAt": 100,
-    "trainingCost": 0.025,
+    "trainingCost": 250,
     "reagents": {
       "Medium Leather": 4,
       "Coarse Thread": 1
@@ -2822,7 +4326,7 @@
     "skillUpGreen": 137,
     "skillUpGray": 150,
     "learnedAt": 100,
-    "trainingCost": 0.035,
+    "trainingCost": 350,
     "reagents": {
       "Medium Leather": 4,
       "Fine Thread": 2,
@@ -2874,7 +4378,7 @@
     "skillUpGreen": 122,
     "skillUpGray": 130,
     "learnedAt": 100,
-    "trainingCost": 0.02,
+    "trainingCost": 200,
     "reagents": {
       "Medium Hide": 1,
       "Salt": 1
@@ -2908,7 +4412,7 @@
     "skillUpGreen": 105,
     "skillUpGray": 110,
     "learnedAt": 100,
-    "trainingCost": 0.05,
+    "trainingCost": 500,
     "reagents": {
       "Light Leather": 4
     },
@@ -2942,7 +4446,7 @@
     "skillUpGreen": 120,
     "skillUpGray": 130,
     "learnedAt": 100,
-    "trainingCost": 0.02,
+    "trainingCost": 200,
     "reagents": {
       "Bolt of Woolen Cloth": 2,
       "Fine Thread": 1,
@@ -2994,7 +4498,7 @@
     "skillUpGreen": 160,
     "skillUpGray": 175,
     "learnedAt": 105,
-    "trainingCost": 0.03,
+    "trainingCost": 300,
     "reagents": {
       "Bronze Bar": 6
     },
@@ -3010,7 +4514,7 @@
     "skillUpGreen": 160,
     "skillUpGray": 175,
     "learnedAt": 105,
-    "trainingCost": 0.05,
+    "trainingCost": 500,
     "reagents": {
       "Bronze Bar": 7
     },
@@ -3026,7 +4530,7 @@
     "skillUpGreen": 150,
     "skillUpGray": 170,
     "learnedAt": 105,
-    "trainingCost": 0.06,
+    "trainingCost": 600,
     "reagents": {
       "Lesser Astral Essence": 1,
       "Strange Dust": 2
@@ -3041,7 +4545,7 @@
     "skillUpGreen": 142,
     "skillUpGray": 155,
     "learnedAt": 105,
-    "trainingCost": 0.042,
+    "trainingCost": 420,
     "reagents": {
       "Copper Tube": 2,
       "Handful of Copper Bolts": 4,
@@ -3060,7 +4564,7 @@
     "skillUpGreen": 130,
     "skillUpGray": 155,
     "learnedAt": 105,
-    "trainingCost": 0.045,
+    "trainingCost": 450,
     "reagents": {
       "Copper Bar": 3,
       "Coarse Blasting Powder": 4,
@@ -3078,7 +4582,7 @@
     "skillUpGreen": 130,
     "skillUpGray": 155,
     "learnedAt": 105,
-    "trainingCost": 0.045,
+    "trainingCost": 450,
     "reagents": {
       "Bronze Bar": 2,
       "Weak Flux": 1
@@ -3163,7 +4667,7 @@
     "skillUpGreen": 155,
     "skillUpGray": 175,
     "learnedAt": 110,
-    "trainingCost": 0.4,
+    "trainingCost": 4000,
     "reagents": {
       "Bruiseweed": 1,
       "Briarthorn": 1,
@@ -3181,7 +4685,7 @@
     "skillUpGreen": 155,
     "skillUpGray": 170,
     "learnedAt": 110,
-    "trainingCost": 0.02,
+    "trainingCost": 200,
     "reagents": {
       "Bronze Bar": 6,
       "Weak Flux": 4,
@@ -3199,7 +4703,7 @@
     "skillUpGreen": 155,
     "skillUpGray": 170,
     "learnedAt": 110,
-    "trainingCost": 0.05,
+    "trainingCost": 500,
     "reagents": {
       "Bronze Bar": 5,
       "Shadowgem": 1,
@@ -3217,7 +4721,7 @@
     "skillUpGreen": 155,
     "skillUpGray": 170,
     "learnedAt": 110,
-    "trainingCost": 0.08,
+    "trainingCost": 800,
     "reagents": {
       "Bronze Bar": 6,
       "Strong Flux": 1,
@@ -3263,7 +4767,7 @@
     "skillUpGreen": 147,
     "skillUpGray": 160,
     "learnedAt": 110,
-    "trainingCost": 0.0475,
+    "trainingCost": 475,
     "reagents": {
       "Bronze Tube": 1,
       "Moss Agate": 1
@@ -3280,7 +4784,7 @@
     "skillUpGreen": 147,
     "skillUpGray": 160,
     "learnedAt": 110,
-    "trainingCost": 0.035,
+    "trainingCost": 350,
     "reagents": {
       "Medium Leather": 8,
       "Fine Thread": 1,
@@ -3298,7 +4802,7 @@
     "skillUpGreen": 152,
     "skillUpGray": 170,
     "learnedAt": 110,
-    "trainingCost": 0.05,
+    "trainingCost": 500,
     "reagents": {
       "Bolt of Woolen Cloth": 3,
       "Fine Thread": 2
@@ -3315,7 +4819,7 @@
     "skillUpGreen": 152,
     "skillUpGray": 170,
     "learnedAt": 110,
-    "trainingCost": 0.05,
+    "trainingCost": 500,
     "reagents": {
       "Bolt of Woolen Cloth": 5,
       "Fine Thread": 4
@@ -3332,7 +4836,7 @@
     "skillUpGreen": 152,
     "skillUpGray": 170,
     "learnedAt": 110,
-    "trainingCost": 0.025,
+    "trainingCost": 250,
     "reagents": {
       "Bolt of Woolen Cloth": 3,
       "Red Dye": 2,
@@ -3350,7 +4854,7 @@
     "skillUpGreen": 152,
     "skillUpGray": 170,
     "learnedAt": 110,
-    "trainingCost": 0.025,
+    "trainingCost": 250,
     "reagents": {
       "Bolt of Woolen Cloth": 3,
       "Bleach": 4,
@@ -3368,7 +4872,7 @@
     "skillUpGreen": 160,
     "skillUpGray": 175,
     "learnedAt": 115,
-    "trainingCost": 0.02,
+    "trainingCost": 200,
     "reagents": {
       "Bronze Bar": 7,
       "Weak Flux": 4,
@@ -3386,7 +4890,7 @@
     "skillUpGreen": 160,
     "skillUpGray": 180,
     "learnedAt": 115,
-    "trainingCost": 0.08,
+    "trainingCost": 800,
     "reagents": {
       "Strange Dust": 6,
       "Small Glimmering Shard": 1
@@ -3416,7 +4920,7 @@
     "skillUpGreen": 152,
     "skillUpGray": 165,
     "learnedAt": 115,
-    "trainingCost": 0.04,
+    "trainingCost": 400,
     "reagents": {
       "Medium Leather": 12,
       "Gray Dye": 1,
@@ -3485,7 +4989,7 @@
     "skillUpGreen": 165,
     "skillUpGray": 185,
     "learnedAt": 120,
-    "trainingCost": 0.15,
+    "trainingCost": 1500,
     "reagents": {
       "Mageroyal": 1,
       "Stranglekelp": 1,
@@ -3520,7 +5024,7 @@
     "skillUpGreen": 165,
     "skillUpGray": 180,
     "learnedAt": 120,
-    "trainingCost": 0.05,
+    "trainingCost": 500,
     "reagents": {
       "Bronze Bar": 5,
       "Coarse Grinding Stone": 2
@@ -3537,7 +5041,7 @@
     "skillUpGreen": 165,
     "skillUpGray": 180,
     "learnedAt": 120,
-    "trainingCost": 0.02,
+    "trainingCost": 200,
     "reagents": {
       "Bronze Bar": 5,
       "Weak Flux": 4,
@@ -3555,7 +5059,7 @@
     "skillUpGreen": 165,
     "skillUpGray": 185,
     "learnedAt": 120,
-    "trainingCost": 0.1,
+    "trainingCost": 1000,
     "reagents": {
       "Strange Dust": 4,
       "Lesser Astral Essence": 1
@@ -3632,7 +5136,7 @@
     "skillUpGreen": 145,
     "skillUpGray": 170,
     "learnedAt": 120,
-    "trainingCost": 0.05,
+    "trainingCost": 500,
     "reagents": {
       "Coarse Blasting Powder": 4,
       "Bronze Bar": 2,
@@ -3651,7 +5155,7 @@
     "skillUpGreen": 157,
     "skillUpGray": 170,
     "learnedAt": 120,
-    "trainingCost": 0.045,
+    "trainingCost": 450,
     "reagents": {
       "Medium Leather": 10,
       "Cured Light Hide": 2,
@@ -3721,7 +5225,7 @@
     "skillUpGreen": 157,
     "skillUpGray": 170,
     "learnedAt": 120,
-    "trainingCost": 0.05,
+    "trainingCost": 500,
     "reagents": {
       "Elixir of Minor Agility": 1,
       "Medium Leather": 6,
@@ -3809,7 +5313,7 @@
     "skillUpGreen": 170,
     "skillUpGray": 190,
     "learnedAt": 125,
-    "trainingCost": 0.15,
+    "trainingCost": 1500,
     "reagents": {
       "Bruiseweed": 2,
       "Briarthorn": 2,
@@ -3827,7 +5331,7 @@
     "skillUpGreen": 132,
     "skillUpGray": 140,
     "learnedAt": 125,
-    "trainingCost": 0.1,
+    "trainingCost": 1000,
     "reagents": {
       "Heavy Stone": 1
     },
@@ -3843,7 +5347,7 @@
     "skillUpGreen": 132,
     "skillUpGray": 140,
     "learnedAt": 125,
-    "trainingCost": 0.1,
+    "trainingCost": 1000,
     "reagents": {
       "Heavy Stone": 1,
       "Wool Cloth": 1
@@ -3897,7 +5401,7 @@
     "skillUpGreen": 137,
     "skillUpGray": 150,
     "learnedAt": 125,
-    "trainingCost": 0.1,
+    "trainingCost": 1000,
     "reagents": {
       "Heavy Stone": 3
     },
@@ -3913,7 +5417,7 @@
     "skillUpGreen": 170,
     "skillUpGray": 185,
     "learnedAt": 125,
-    "trainingCost": 0.025,
+    "trainingCost": 250,
     "reagents": {
       "Bronze Bar": 8,
       "Strong Flux": 1,
@@ -3931,7 +5435,7 @@
     "skillUpGreen": 170,
     "skillUpGray": 190,
     "learnedAt": 125,
-    "trainingCost": 0.125,
+    "trainingCost": 1250,
     "reagents": {
       "Fire Oil": 1,
       "Lesser Astral Essence": 1
@@ -3946,7 +5450,7 @@
     "skillUpGreen": 170,
     "skillUpGray": 190,
     "learnedAt": 125,
-    "trainingCost": 0.14,
+    "trainingCost": 1400,
     "reagents": {
       "Strange Dust": 8
     },
@@ -3974,7 +5478,7 @@
     "skillUpGreen": 150,
     "skillUpGray": 175,
     "learnedAt": 125,
-    "trainingCost": 0.05,
+    "trainingCost": 500,
     "reagents": {
       "Bronze Bar": 2,
       "Wool Cloth": 1
@@ -4007,7 +5511,7 @@
     "skillUpGreen": 135,
     "skillUpGray": 145,
     "learnedAt": 125,
-    "trainingCost": 0.05,
+    "trainingCost": 500,
     "reagents": {
       "Heavy Stone": 1
     },
@@ -4023,7 +5527,7 @@
     "skillUpGreen": 135,
     "skillUpGray": 145,
     "learnedAt": 125,
-    "trainingCost": 0.05,
+    "trainingCost": 500,
     "reagents": {
       "Heavy Blasting Powder": 2,
       "Wool Cloth": 1
@@ -4040,7 +5544,7 @@
     "skillUpGreen": 135,
     "skillUpGray": 145,
     "learnedAt": 125,
-    "trainingCost": 0.03,
+    "trainingCost": 300,
     "reagents": {
       "Heavy Blasting Powder": 1,
       "Bronze Bar": 1
@@ -4124,7 +5628,7 @@
     "skillUpGreen": 162,
     "skillUpGray": 175,
     "learnedAt": 125,
-    "trainingCost": 0.04,
+    "trainingCost": 400,
     "reagents": {
       "Fine Leather Belt": 1,
       "Cured Medium Hide": 1,
@@ -4143,7 +5647,7 @@
     "skillUpGreen": 162,
     "skillUpGray": 175,
     "learnedAt": 125,
-    "trainingCost": 0.05,
+    "trainingCost": 500,
     "reagents": {
       "Medium Leather": 8,
       "Long Tail Feather": 4,
@@ -4161,7 +5665,7 @@
     "skillUpGreen": 135,
     "skillUpGray": 140,
     "learnedAt": 125,
-    "trainingCost": 0.05,
+    "trainingCost": 500,
     "reagents": {
       "Iron Ore": 1
     },
@@ -4177,7 +5681,7 @@
     "skillUpGreen": 140,
     "skillUpGray": 145,
     "learnedAt": 125,
-    "trainingCost": 0.05,
+    "trainingCost": 500,
     "reagents": {
       "Silk Cloth": 4
     },
@@ -4210,7 +5714,7 @@
     "skillUpGreen": 167,
     "skillUpGray": 185,
     "learnedAt": 125,
-    "trainingCost": 0.075,
+    "trainingCost": 750,
     "reagents": {
       "Bolt of Silk Cloth": 2,
       "Medium Leather": 4,
@@ -4263,7 +5767,7 @@
     "skillUpGreen": 175,
     "skillUpGray": 195,
     "learnedAt": 130,
-    "trainingCost": 0.2,
+    "trainingCost": 2000,
     "reagents": {
       "Wild Steelbloom": 1,
       "Stranglekelp": 1,
@@ -4281,7 +5785,7 @@
     "skillUpGreen": 160,
     "skillUpGray": 170,
     "learnedAt": 130,
-    "trainingCost": 0.1,
+    "trainingCost": 1000,
     "reagents": {
       "Firefin Snapper": 2,
       "Empty Vial": 1
@@ -4316,7 +5820,7 @@
     "skillUpGreen": 175,
     "skillUpGray": 190,
     "learnedAt": 130,
-    "trainingCost": 0.1,
+    "trainingCost": 1000,
     "reagents": {
       "Bronze Bar": 8,
       "Strong Flux": 1,
@@ -4337,7 +5841,7 @@
     "skillUpGreen": 175,
     "skillUpGray": 190,
     "learnedAt": 130,
-    "trainingCost": 0.05,
+    "trainingCost": 500,
     "reagents": {
       "Bronze Bar": 6,
       "Silver Bar": 1,
@@ -4355,7 +5859,7 @@
     "skillUpGreen": 175,
     "skillUpGray": 190,
     "learnedAt": 130,
-    "trainingCost": 0.05,
+    "trainingCost": 500,
     "reagents": {
       "Bronze Bar": 12,
       "Strong Flux": 2,
@@ -4373,7 +5877,7 @@
     "skillUpGreen": 175,
     "skillUpGray": 195,
     "learnedAt": 130,
-    "trainingCost": 0.15,
+    "trainingCost": 1500,
     "reagents": {
       "Lesser Astral Essence": 2,
       "Strange Dust": 4
@@ -4388,7 +5892,7 @@
     "skillUpGreen": 175,
     "skillUpGray": 195,
     "learnedAt": 130,
-    "trainingCost": 0.15,
+    "trainingCost": 1500,
     "reagents": {
       "Soul Dust": 2
     },
@@ -4402,7 +5906,7 @@
     "skillUpGreen": 167,
     "skillUpGray": 180,
     "learnedAt": 130,
-    "trainingCost": 0.055,
+    "trainingCost": 550,
     "reagents": {
       "Bronze Tube": 2,
       "Whirring Bronze Gizmo": 2,
@@ -4421,7 +5925,7 @@
     "skillUpGreen": 167,
     "skillUpGray": 180,
     "learnedAt": 130,
-    "trainingCost": 0.05,
+    "trainingCost": 500,
     "reagents": {
       "Cured Medium Hide": 1,
       "Medium Leather": 4,
@@ -4439,7 +5943,7 @@
     "skillUpGreen": 165,
     "skillUpGray": 180,
     "learnedAt": 130,
-    "trainingCost": 0.075,
+    "trainingCost": 750,
     "reagents": {
       "Bolt of Woolen Cloth": 4,
       "Fine Thread": 3,
@@ -4474,7 +5978,7 @@
     "skillUpGreen": 180,
     "skillUpGray": 195,
     "learnedAt": 135,
-    "trainingCost": 0.1,
+    "trainingCost": 1000,
     "reagents": {
       "Bronze Bar": 8,
       "Silver Bar": 1,
@@ -4492,7 +5996,7 @@
     "skillUpGreen": 180,
     "skillUpGray": 195,
     "learnedAt": 135,
-    "trainingCost": 0.05,
+    "trainingCost": 500,
     "reagents": {
       "Bronze Bar": 14,
       "Strong Flux": 1,
@@ -4524,7 +6028,7 @@
     "skillUpGreen": 172,
     "skillUpGray": 185,
     "learnedAt": 135,
-    "trainingCost": 0.04,
+    "trainingCost": 400,
     "reagents": {
       "Bronze Tube": 2,
       "Whirring Bronze Gizmo": 2,
@@ -4559,7 +6063,7 @@
     "skillUpGreen": 172,
     "skillUpGray": 185,
     "learnedAt": 135,
-    "trainingCost": 0.05,
+    "trainingCost": 500,
     "reagents": {
       "Medium Leather": 4,
       "Cured Medium Hide": 2,
@@ -4630,7 +6134,7 @@
     "skillUpGreen": 170,
     "skillUpGray": 185,
     "learnedAt": 135,
-    "trainingCost": 0.1,
+    "trainingCost": 1000,
     "reagents": {
       "Bolt of Silk Cloth": 2,
       "Fine Thread": 2,
@@ -4665,7 +6169,7 @@
     "skillUpGreen": 185,
     "skillUpGray": 205,
     "learnedAt": 140,
-    "trainingCost": 0.3,
+    "trainingCost": 3000,
     "reagents": {
       "Fire Oil": 2,
       "Kingsblood": 1,
@@ -4720,7 +6224,7 @@
     "skillUpGreen": 185,
     "skillUpGray": 205,
     "learnedAt": 140,
-    "trainingCost": 0.2,
+    "trainingCost": 2000,
     "reagents": {
       "Soul Dust": 2,
       "Large Glimmering Shard": 1
@@ -4748,7 +6252,7 @@
     "skillUpGreen": 185,
     "skillUpGray": 205,
     "learnedAt": 140,
-    "trainingCost": 0.25,
+    "trainingCost": 2500,
     "reagents": {
       "Strange Dust": 2,
       "Greater Astral Essence": 1,
@@ -4764,7 +6268,7 @@
     "skillUpGreen": 165,
     "skillUpGray": 190,
     "learnedAt": 140,
-    "trainingCost": 0.06,
+    "trainingCost": 600,
     "reagents": {
       "Heavy Blasting Powder": 2,
       "Bronze Bar": 3,
@@ -4852,7 +6356,7 @@
     "skillUpGreen": 175,
     "skillUpGray": 190,
     "learnedAt": 140,
-    "trainingCost": 0.06,
+    "trainingCost": 600,
     "reagents": {
       "Bolt of Silk Cloth": 4,
       "Blue Dye": 2,
@@ -4870,7 +6374,7 @@
     "skillUpGreen": 190,
     "skillUpGray": 205,
     "learnedAt": 145,
-    "trainingCost": 0.1,
+    "trainingCost": 1000,
     "reagents": {
       "Bronze Bar": 20,
       "Moss Agate": 2,
@@ -4928,7 +6432,7 @@
     "skillUpGreen": 190,
     "skillUpGray": 210,
     "learnedAt": 145,
-    "trainingCost": 0.24,
+    "trainingCost": 2400,
     "reagents": {
       "Soul Dust": 3,
       "Large Glimmering Shard": 1
@@ -4943,7 +6447,7 @@
     "skillUpGreen": 190,
     "skillUpGray": 210,
     "learnedAt": 145,
-    "trainingCost": 0.24,
+    "trainingCost": 2400,
     "reagents": {
       "Greater Astral Essence": 1,
       "Lesser Astral Essence": 2
@@ -5000,7 +6504,7 @@
     "skillUpGreen": 170,
     "skillUpGray": 195,
     "learnedAt": 145,
-    "trainingCost": 0.06,
+    "trainingCost": 600,
     "reagents": {
       "Bronze Bar": 2,
       "Medium Leather": 1,
@@ -5036,7 +6540,7 @@
     "skillUpGreen": 182,
     "skillUpGray": 195,
     "learnedAt": 145,
-    "trainingCost": 0.05,
+    "trainingCost": 500,
     "reagents": {
       "Medium Leather": 14,
       "Fine Thread": 4
@@ -5089,7 +6593,7 @@
     "skillUpGreen": 160,
     "skillUpGray": 165,
     "learnedAt": 145,
-    "trainingCost": 0.06,
+    "trainingCost": 600,
     "reagents": {
       "Bolt of Silk Cloth": 2,
       "Blue Dye": 2,
@@ -5193,7 +6697,7 @@
     "skillUpGreen": 152,
     "skillUpGray": 155,
     "learnedAt": 150,
-    "trainingCost": 0.025,
+    "trainingCost": 250,
     "reagents": {
       "Iron Bar": 1
     },
@@ -5209,7 +6713,7 @@
     "skillUpGreen": 157,
     "skillUpGray": 160,
     "learnedAt": 150,
-    "trainingCost": 0.025,
+    "trainingCost": 250,
     "reagents": {
       "Gold Bar": 1,
       "Coarse Grinding Stone": 2
@@ -5226,7 +6730,7 @@
     "skillUpGreen": 160,
     "skillUpGray": 170,
     "learnedAt": 150,
-    "trainingCost": 0.025,
+    "trainingCost": 250,
     "reagents": {
       "Gold Bar": 1,
       "Heavy Grinding Stone": 1
@@ -5243,7 +6747,7 @@
     "skillUpGreen": 195,
     "skillUpGray": 215,
     "learnedAt": 150,
-    "trainingCost": 0.25,
+    "trainingCost": 2500,
     "reagents": {
       "Greater Astral Essence": 2
     },
@@ -5257,7 +6761,7 @@
     "skillUpGreen": 195,
     "skillUpGray": 215,
     "learnedAt": 150,
-    "trainingCost": 0.25,
+    "trainingCost": 2500,
     "reagents": {
       "Greater Astral Essence": 1,
       "Soul Dust": 1,
@@ -5273,7 +6777,7 @@
     "skillUpGreen": 195,
     "skillUpGray": 215,
     "learnedAt": 150,
-    "trainingCost": 0.25,
+    "trainingCost": 2500,
     "reagents": {
       "Golden Rod": 1,
       "Iridescent Pearl": 1,
@@ -5309,7 +6813,7 @@
     "skillUpGreen": 187,
     "skillUpGray": 200,
     "learnedAt": 150,
-    "trainingCost": 0.075,
+    "trainingCost": 750,
     "reagents": {
       "Bronze Framework": 1,
       "Whirring Bronze Gizmo": 1,
@@ -5328,7 +6832,7 @@
     "skillUpGreen": 187,
     "skillUpGray": 200,
     "learnedAt": 150,
-    "trainingCost": 0.075,
+    "trainingCost": 750,
     "reagents": {
       "Medium Leather": 4,
       "Moss Agate": 2,
@@ -5346,7 +6850,7 @@
     "skillUpGreen": 160,
     "skillUpGray": 170,
     "learnedAt": 150,
-    "trainingCost": 0.05,
+    "trainingCost": 500,
     "reagents": {
       "Bronze Bar": 2,
       "Nightcrawlers": 1,
@@ -5364,7 +6868,7 @@
     "skillUpGreen": 170,
     "skillUpGray": 190,
     "learnedAt": 150,
-    "trainingCost": 0.1,
+    "trainingCost": 1000,
     "reagents": {
       "Gold Bar": 1
     },
@@ -5428,7 +6932,7 @@
     "skillUpGreen": 180,
     "skillUpGray": 190,
     "learnedAt": 150,
-    "trainingCost": 0.06,
+    "trainingCost": 600,
     "reagents": {
       "Heavy Leather": 5,
       "Fine Thread": 2
@@ -5462,7 +6966,7 @@
     "skillUpGreen": 180,
     "skillUpGray": 190,
     "learnedAt": 150,
-    "trainingCost": 0.075,
+    "trainingCost": 750,
     "reagents": {
       "Heavy Leather": 5,
       "Fine Thread": 1
@@ -5479,7 +6983,7 @@
     "skillUpGreen": 165,
     "skillUpGray": 170,
     "learnedAt": 150,
-    "trainingCost": 0.05,
+    "trainingCost": 500,
     "reagents": {
       "Heavy Hide": 1,
       "Salt": 3
@@ -5496,7 +7000,7 @@
     "skillUpGreen": 180,
     "skillUpGray": 190,
     "learnedAt": 150,
-    "trainingCost": 0.05,
+    "trainingCost": 500,
     "reagents": {
       "Heavy Leather": 8,
       "Fine Thread": 2
@@ -5513,7 +7017,7 @@
     "skillUpGreen": 180,
     "skillUpGray": 190,
     "learnedAt": 150,
-    "trainingCost": 0.05,
+    "trainingCost": 500,
     "reagents": {
       "Heavy Leather": 8,
       "Fine Thread": 2
@@ -5530,7 +7034,7 @@
     "skillUpGreen": 155,
     "skillUpGray": 160,
     "learnedAt": 150,
-    "trainingCost": 0.1,
+    "trainingCost": 1000,
     "reagents": {
       "Medium Leather": 5
     },
@@ -5562,7 +7066,7 @@
     "skillUpGreen": 185,
     "skillUpGray": 200,
     "learnedAt": 150,
-    "trainingCost": 0.08,
+    "trainingCost": 800,
     "reagents": {
       "Bolt of Silk Cloth": 3,
       "Heavy Leather": 2,
@@ -5580,7 +7084,7 @@
     "skillUpGreen": 185,
     "skillUpGray": 200,
     "learnedAt": 150,
-    "trainingCost": 0.075,
+    "trainingCost": 750,
     "reagents": {
       "Bolt of Silk Cloth": 5,
       "Blue Dye": 4
@@ -5647,7 +7151,7 @@
     "skillUpGreen": 195,
     "skillUpGray": 215,
     "learnedAt": 155,
-    "trainingCost": 0.5,
+    "trainingCost": 5000,
     "reagents": {
       "Liferoot": 1,
       "Kingsblood": 1,
@@ -5684,7 +7188,7 @@
     "skillUpGreen": 192,
     "skillUpGray": 205,
     "learnedAt": 155,
-    "trainingCost": 0.5,
+    "trainingCost": 5000,
     "reagents": {
       "Iron Bar": 8,
       "Heavy Grinding Stone": 1,
@@ -5719,7 +7223,7 @@
     "skillUpGreen": 195,
     "skillUpGray": 215,
     "learnedAt": 155,
-    "trainingCost": 0.26,
+    "trainingCost": 2600,
     "reagents": {
       "Lesser Mystic Essence": 1,
       "Soul Dust": 1
@@ -5734,7 +7238,7 @@
     "skillUpGreen": 195,
     "skillUpGray": 215,
     "learnedAt": 155,
-    "trainingCost": 0.26,
+    "trainingCost": 2600,
     "reagents": {
       "Small Glowing Shard": 1,
       "Soul Dust": 3
@@ -5749,7 +7253,7 @@
     "skillUpGreen": 195,
     "skillUpGray": 215,
     "learnedAt": 155,
-    "trainingCost": 0.26,
+    "trainingCost": 2600,
     "reagents": {
       "Star Wood": 1,
       "Lesser Mystic Essence": 1,
@@ -5819,7 +7323,7 @@
     "skillUpGreen": 177,
     "skillUpGray": 185,
     "learnedAt": 155,
-    "trainingCost": 0.25,
+    "trainingCost": 2500,
     "reagents": {
       "Gold Ore": 1
     },
@@ -5852,7 +7356,7 @@
     "skillUpGreen": 200,
     "skillUpGray": 220,
     "learnedAt": 160,
-    "trainingCost": 0.5,
+    "trainingCost": 5000,
     "reagents": {
       "Stranglekelp": 1,
       "Kingsblood": 1,
@@ -5940,7 +7444,7 @@
     "skillUpGreen": 200,
     "skillUpGray": 220,
     "learnedAt": 160,
-    "trainingCost": 0.28,
+    "trainingCost": 2800,
     "reagents": {
       "Soul Dust": 1,
       "Lesser Mystic Essence": 1
@@ -5955,7 +7459,7 @@
     "skillUpGreen": 200,
     "skillUpGray": 220,
     "learnedAt": 160,
-    "trainingCost": 0.27,
+    "trainingCost": 2700,
     "reagents": {
       "Soul Dust": 3
     },
@@ -5969,7 +7473,7 @@
     "skillUpGreen": 170,
     "skillUpGray": 180,
     "learnedAt": 160,
-    "trainingCost": 0.08,
+    "trainingCost": 800,
     "reagents": {
       "Iron Bar": 2
     },
@@ -6003,7 +7507,7 @@
     "skillUpGreen": 190,
     "skillUpGray": 200,
     "learnedAt": 160,
-    "trainingCost": 0.09,
+    "trainingCost": 900,
     "reagents": {
       "Cured Heavy Hide": 1,
       "Heavy Leather": 5,
@@ -6023,7 +7527,7 @@
     "skillUpGreen": 190,
     "skillUpGray": 200,
     "learnedAt": 160,
-    "trainingCost": 0.1,
+    "trainingCost": 1000,
     "reagents": {
       "Heavy Leather": 12,
       "Bolt of Silk Cloth": 2,
@@ -6071,7 +7575,7 @@
     "skillUpGreen": 190,
     "skillUpGray": 200,
     "learnedAt": 160,
-    "trainingCost": 0.09,
+    "trainingCost": 900,
     "reagents": {
       "Heavy Leather": 12,
       "Bolt of Silk Cloth": 2,
@@ -6089,7 +7593,7 @@
     "skillUpGreen": 175,
     "skillUpGray": 180,
     "learnedAt": 160,
-    "trainingCost": 0.045,
+    "trainingCost": 450,
     "reagents": {
       "Bolt of Silk Cloth": 3,
       "Bleach": 2,
@@ -6107,7 +7611,7 @@
     "skillUpGreen": 175,
     "skillUpGray": 180,
     "learnedAt": 160,
-    "trainingCost": 0.0675,
+    "trainingCost": 675,
     "reagents": {
       "Bolt of Silk Cloth": 3,
       "Fine Thread": 2
@@ -6124,7 +7628,7 @@
     "skillUpGreen": 205,
     "skillUpGray": 225,
     "learnedAt": 165,
-    "trainingCost": 0.45,
+    "trainingCost": 4500,
     "reagents": {
       "Fadeleaf": 1,
       "Wild Steelbloom": 1,
@@ -6176,7 +7680,7 @@
     "skillUpGreen": 202,
     "skillUpGray": 215,
     "learnedAt": 165,
-    "trainingCost": 0.1,
+    "trainingCost": 1000,
     "reagents": {
       "Iron Bar": 6,
       "Green Dye": 1
@@ -6210,7 +7714,7 @@
     "skillUpGreen": 205,
     "skillUpGray": 225,
     "learnedAt": 165,
-    "trainingCost": 0.28,
+    "trainingCost": 2800,
     "reagents": {
       "Lesser Mystic Essence": 1
     },
@@ -6313,7 +7817,7 @@
     "skillUpGreen": 165,
     "skillUpGray": 165,
     "learnedAt": 165,
-    "trainingCost": 0.25,
+    "trainingCost": 2500,
     "reagents": {
       "Iron Bar": 1,
       "Coal": 1
@@ -6384,7 +7888,7 @@
     "skillUpGreen": 207,
     "skillUpGray": 220,
     "learnedAt": 170,
-    "trainingCost": 0.125,
+    "trainingCost": 1250,
     "reagents": {
       "Iron Bar": 12,
       "Citrine": 1,
@@ -6419,7 +7923,7 @@
     "skillUpGreen": 210,
     "skillUpGray": 230,
     "learnedAt": 170,
-    "trainingCost": 0.28,
+    "trainingCost": 2800,
     "reagents": {
       "Soul Dust": 4
     },
@@ -6447,7 +7951,7 @@
     "skillUpGreen": 210,
     "skillUpGray": 230,
     "learnedAt": 170,
-    "trainingCost": 0.28,
+    "trainingCost": 2800,
     "reagents": {
       "Soul Dust": 6
     },
@@ -6461,7 +7965,7 @@
     "skillUpGreen": 190,
     "skillUpGray": 210,
     "learnedAt": 170,
-    "trainingCost": 0.09,
+    "trainingCost": 900,
     "reagents": {
       "Iron Bar": 1,
       "Gold Power Core": 1
@@ -6548,7 +8052,7 @@
     "skillUpGreen": 185,
     "skillUpGray": 190,
     "learnedAt": 170,
-    "trainingCost": 0.045,
+    "trainingCost": 450,
     "reagents": {
       "Bolt of Silk Cloth": 3,
       "Bleach": 2,
@@ -6566,7 +8070,7 @@
     "skillUpGreen": 205,
     "skillUpGray": 220,
     "learnedAt": 170,
-    "trainingCost": 0.081,
+    "trainingCost": 810,
     "reagents": {
       "Bolt of Silk Cloth": 3,
       "Elemental Earth": 1,
@@ -6618,7 +8122,7 @@
     "skillUpGreen": 205,
     "skillUpGray": 220,
     "learnedAt": 170,
-    "trainingCost": 0.081,
+    "trainingCost": 810,
     "reagents": {
       "Bolt of Silk Cloth": 3,
       "Elemental Earth": 1,
@@ -6636,7 +8140,7 @@
     "skillUpGreen": 215,
     "skillUpGray": 235,
     "learnedAt": 175,
-    "trainingCost": 0.54,
+    "trainingCost": 5400,
     "reagents": {
       "Wild Steelbloom": 1,
       "Goldthorn": 1,
@@ -6769,7 +8273,7 @@
     "skillUpGreen": 215,
     "skillUpGray": 235,
     "learnedAt": 175,
-    "trainingCost": 0.3,
+    "trainingCost": 3000,
     "reagents": {
       "Lesser Mystic Essence": 1,
       "Elemental Fire": 1
@@ -6784,7 +8288,7 @@
     "skillUpGreen": 215,
     "skillUpGray": 235,
     "learnedAt": 175,
-    "trainingCost": 0.3,
+    "trainingCost": 3000,
     "reagents": {
       "Star Wood": 1,
       "Greater Mystic Essence": 1,
@@ -6802,7 +8306,7 @@
     "skillUpGreen": 215,
     "skillUpGray": 235,
     "learnedAt": 175,
-    "trainingCost": 0.3,
+    "trainingCost": 3000,
     "reagents": {
       "Star Wood": 1,
       "Greater Mystic Essence": 1,
@@ -6820,7 +8324,7 @@
     "skillUpGreen": 195,
     "skillUpGray": 215,
     "learnedAt": 175,
-    "trainingCost": 0.1,
+    "trainingCost": 1000,
     "reagents": {
       "Iron Bar": 1,
       "Heavy Blasting Powder": 1,
@@ -6838,7 +8342,7 @@
     "skillUpGreen": 195,
     "skillUpGray": 215,
     "learnedAt": 175,
-    "trainingCost": 0.1,
+    "trainingCost": 1000,
     "reagents": {
       "Iron Strut": 2,
       "Bronze Framework": 1,
@@ -6857,7 +8361,7 @@
     "skillUpGreen": 185,
     "skillUpGray": 195,
     "learnedAt": 175,
-    "trainingCost": 0.1,
+    "trainingCost": 1000,
     "reagents": {
       "Solid Stone": 2
     },
@@ -6873,7 +8377,7 @@
     "skillUpGreen": 185,
     "skillUpGray": 195,
     "learnedAt": 175,
-    "trainingCost": 0.1,
+    "trainingCost": 1000,
     "reagents": {
       "Solid Blasting Powder": 1,
       "Silk Cloth": 1
@@ -6906,7 +8410,7 @@
     "skillUpGreen": 195,
     "skillUpGray": 215,
     "learnedAt": 175,
-    "trainingCost": 0.1,
+    "trainingCost": 1000,
     "reagents": {
       "Steel Bar": 4
     },
@@ -6988,7 +8492,7 @@
     "skillUpGreen": 205,
     "skillUpGray": 215,
     "learnedAt": 175,
-    "trainingCost": 0.108,
+    "trainingCost": 1080,
     "reagents": {
       "Heavy Leather": 8,
       "Cured Heavy Hide": 1,
@@ -7006,7 +8510,7 @@
     "skillUpGreen": 205,
     "skillUpGray": 215,
     "learnedAt": 175,
-    "trainingCost": 0.135,
+    "trainingCost": 1350,
     "reagents": {
       "Heavy Leather": 10,
       "Shadow Oil": 1,
@@ -7041,7 +8545,7 @@
     "skillUpGreen": 175,
     "skillUpGray": 175,
     "learnedAt": 175,
-    "trainingCost": 0.5,
+    "trainingCost": 5000,
     "reagents": {
       "Mithril Ore": 1
     },
@@ -7074,7 +8578,7 @@
     "skillUpGreen": 182,
     "skillUpGray": 185,
     "learnedAt": 175,
-    "trainingCost": 0.09,
+    "trainingCost": 900,
     "reagents": {
       "Mageweave Cloth": 5
     },
@@ -7108,7 +8612,7 @@
     "skillUpGreen": 190,
     "skillUpGray": 195,
     "learnedAt": 175,
-    "trainingCost": 0.0675,
+    "trainingCost": 675,
     "reagents": {
       "Bolt of Silk Cloth": 3,
       "Red Dye": 2,
@@ -7126,7 +8630,7 @@
     "skillUpGreen": 210,
     "skillUpGray": 225,
     "learnedAt": 175,
-    "trainingCost": 0.09,
+    "trainingCost": 900,
     "reagents": {
       "Bolt of Silk Cloth": 4,
       "Elemental Water": 1,
@@ -7146,7 +8650,7 @@
     "skillUpGreen": 210,
     "skillUpGray": 225,
     "learnedAt": 175,
-    "trainingCost": 0.09,
+    "trainingCost": 900,
     "reagents": {
       "Bolt of Silk Cloth": 4,
       "Iron Buckle": 1,
@@ -7182,7 +8686,7 @@
     "skillUpGreen": 210,
     "skillUpGray": 225,
     "learnedAt": 175,
-    "trainingCost": 0.09,
+    "trainingCost": 900,
     "reagents": {
       "Bolt of Silk Cloth": 4,
       "Iron Buckle": 1,
@@ -7237,7 +8741,7 @@
     "skillUpGreen": 217,
     "skillUpGray": 230,
     "learnedAt": 180,
-    "trainingCost": 0.75,
+    "trainingCost": 7500,
     "reagents": {
       "Iron Bar": 20,
       "Heavy Grinding Stone": 4,
@@ -7275,7 +8779,7 @@
     "skillUpGreen": 217,
     "skillUpGray": 230,
     "learnedAt": 180,
-    "trainingCost": 0.75,
+    "trainingCost": 7500,
     "reagents": {
       "Steel Bar": 10,
       "Strong Flux": 2,
@@ -7295,7 +8799,7 @@
     "skillUpGreen": 220,
     "skillUpGray": 240,
     "learnedAt": 180,
-    "trainingCost": 0.32,
+    "trainingCost": 3200,
     "reagents": {
       "Greater Mystic Essence": 1,
       "Vision Dust": 1
@@ -7310,7 +8814,7 @@
     "skillUpGreen": 220,
     "skillUpGray": 240,
     "learnedAt": 180,
-    "trainingCost": 0.36,
+    "trainingCost": 3600,
     "reagents": {
       "Vision Dust": 1
     },
@@ -7341,7 +8845,7 @@
     "skillUpGreen": 210,
     "skillUpGray": 220,
     "learnedAt": 180,
-    "trainingCost": 0.108,
+    "trainingCost": 1080,
     "reagents": {
       "Cured Heavy Hide": 2,
       "Heavy Leather": 6,
@@ -7360,7 +8864,7 @@
     "skillUpGreen": 210,
     "skillUpGray": 220,
     "learnedAt": 180,
-    "trainingCost": 0.18,
+    "trainingCost": 1800,
     "reagents": {
       "Heavy Leather": 6,
       "Elemental Earth": 2,
@@ -7396,7 +8900,7 @@
     "skillUpGreen": 215,
     "skillUpGray": 230,
     "learnedAt": 180,
-    "trainingCost": 0.09,
+    "trainingCost": 900,
     "reagents": {
       "Bolt of Silk Cloth": 5,
       "Silken Thread": 2
@@ -7431,7 +8935,7 @@
     "skillUpGreen": 225,
     "skillUpGray": 245,
     "learnedAt": 185,
-    "trainingCost": 0.585,
+    "trainingCost": 5850,
     "reagents": {
       "Stranglekelp": 1,
       "Goldthorn": 1,
@@ -7486,7 +8990,7 @@
     "skillUpGreen": 222,
     "skillUpGray": 235,
     "learnedAt": 185,
-    "trainingCost": 0.1,
+    "trainingCost": 1000,
     "reagents": {
       "Steel Bar": 5,
       "Heavy Grinding Stone": 2
@@ -7520,7 +9024,7 @@
     "skillUpGreen": 225,
     "skillUpGray": 245,
     "learnedAt": 185,
-    "trainingCost": 0.38,
+    "trainingCost": 3800,
     "reagents": {
       "Greater Mystic Essence": 1
     },
@@ -7534,7 +9038,7 @@
     "skillUpGreen": 205,
     "skillUpGray": 225,
     "learnedAt": 185,
-    "trainingCost": 0.12,
+    "trainingCost": 1200,
     "reagents": {
       "Iron Strut": 1,
       "Bronze Framework": 1,
@@ -7622,7 +9126,7 @@
     "skillUpGreen": 215,
     "skillUpGray": 225,
     "learnedAt": 185,
-    "trainingCost": 0.18,
+    "trainingCost": 1800,
     "reagents": {
       "Heavy Leather": 16,
       "Black Dye": 1,
@@ -7640,7 +9144,7 @@
     "skillUpGreen": 220,
     "skillUpGray": 235,
     "learnedAt": 185,
-    "trainingCost": 0.09,
+    "trainingCost": 900,
     "reagents": {
       "Bolt of Silk Cloth": 4,
       "Mana Potion": 1,
@@ -7692,7 +9196,7 @@
     "skillUpGreen": 215,
     "skillUpGray": 225,
     "learnedAt": 185,
-    "trainingCost": 0.225,
+    "trainingCost": 2250,
     "reagents": {
       "Bolt of Silk Cloth": 4,
       "Red Dye": 2,
@@ -7710,14 +9214,14 @@
     "skillUpGreen": 220,
     "skillUpGray": 235,
     "learnedAt": 185,
-    "trainingCost": 0.09,
+    "trainingCost": 900,
     "reagents": {
       "Bolt of Silk Cloth": 4,
       "Mana Potion": 1,
       "Silken Thread": 1
     },
     "results": {
-      "Long Silken Cloak": 1
+      "217252": 1
     }
   },
   {
@@ -7896,7 +9400,7 @@
     "skillUpGreen": 210,
     "skillUpGray": 230,
     "learnedAt": 190,
-    "trainingCost": 0.14,
+    "trainingCost": 1400,
     "reagents": {
       "Iron Bar": 3,
       "Heavy Blasting Powder": 3,
@@ -7932,7 +9436,7 @@
     "skillUpGreen": 220,
     "skillUpGray": 230,
     "learnedAt": 190,
-    "trainingCost": 0.18,
+    "trainingCost": 1800,
     "reagents": {
       "Heavy Leather": 14,
       "Fine Thread": 2,
@@ -7968,7 +9472,7 @@
     "skillUpGreen": 220,
     "skillUpGray": 230,
     "learnedAt": 190,
-    "trainingCost": 0.216,
+    "trainingCost": 2160,
     "reagents": {
       "Heavy Leather": 4,
       "Cured Heavy Hide": 1,
@@ -8037,7 +9541,7 @@
     "skillUpGreen": 225,
     "skillUpGray": 240,
     "learnedAt": 190,
-    "trainingCost": 0.09,
+    "trainingCost": 900,
     "reagents": {
       "Bolt of Mageweave": 2,
       "Elemental Earth": 2,
@@ -8128,7 +9632,7 @@
     "skillUpGreen": 235,
     "skillUpGray": 255,
     "learnedAt": 195,
-    "trainingCost": 0.675,
+    "trainingCost": 6750,
     "reagents": {
       "Wild Steelbloom": 1,
       "Goldthorn": 1,
@@ -8195,7 +9699,7 @@
     "skillUpGreen": 235,
     "skillUpGray": 255,
     "learnedAt": 195,
-    "trainingCost": 0.4,
+    "trainingCost": 4000,
     "reagents": {
       "Greater Mystic Essence": 2,
       "Large Glowing Shard": 1
@@ -8227,7 +9731,7 @@
     "skillUpGreen": 215,
     "skillUpGray": 235,
     "learnedAt": 195,
-    "trainingCost": 0.13,
+    "trainingCost": 1300,
     "reagents": {
       "Mithril Bar": 3
     },
@@ -8260,7 +9764,7 @@
     "skillUpGreen": 225,
     "skillUpGray": 235,
     "learnedAt": 195,
-    "trainingCost": 0.225,
+    "trainingCost": 2250,
     "reagents": {
       "Heavy Leather": 10,
       "Bolt of Silk Cloth": 2,
@@ -8298,7 +9802,7 @@
     "skillUpGreen": 225,
     "skillUpGray": 235,
     "learnedAt": 195,
-    "trainingCost": 0.27,
+    "trainingCost": 2700,
     "reagents": {
       "Bolt of Silk Cloth": 4,
       "Red Dye": 2,
@@ -8349,7 +9853,7 @@
     "skillUpGreen": 240,
     "skillUpGray": 260,
     "learnedAt": 200,
-    "trainingCost": 0.72,
+    "trainingCost": 7200,
     "reagents": {
       "Goldthorn": 1,
       "Fadeleaf": 1,
@@ -8440,7 +9944,7 @@
     "skillUpGreen": 237,
     "skillUpGray": 250,
     "learnedAt": 200,
-    "trainingCost": 0.25,
+    "trainingCost": 2500,
     "reagents": {
       "Steel Bar": 16,
       "Heavy Grinding Stone": 3
@@ -8457,7 +9961,7 @@
     "skillUpGreen": 205,
     "skillUpGray": 210,
     "learnedAt": 200,
-    "trainingCost": 0.25,
+    "trainingCost": 2500,
     "reagents": {
       "Solid Stone": 1
     },
@@ -8473,7 +9977,7 @@
     "skillUpGreen": 205,
     "skillUpGray": 210,
     "learnedAt": 200,
-    "trainingCost": 0.25,
+    "trainingCost": 2500,
     "reagents": {
       "Solid Stone": 4
     },
@@ -8489,7 +9993,7 @@
     "skillUpGreen": 205,
     "skillUpGray": 210,
     "learnedAt": 200,
-    "trainingCost": 0.25,
+    "trainingCost": 2500,
     "reagents": {
       "Solid Stone": 1,
       "Silk Cloth": 1
@@ -8523,7 +10027,7 @@
     "skillUpGreen": 207,
     "skillUpGray": 210,
     "learnedAt": 200,
-    "trainingCost": 0.25,
+    "trainingCost": 2500,
     "reagents": {
       "Truesilver Bar": 1,
       "Heavy Grinding Stone": 1
@@ -8540,7 +10044,7 @@
     "skillUpGreen": 210,
     "skillUpGray": 220,
     "learnedAt": 200,
-    "trainingCost": 0.25,
+    "trainingCost": 2500,
     "reagents": {
       "Truesilver Bar": 1,
       "Solid Grinding Stone": 1
@@ -8588,7 +10092,7 @@
     "skillUpGreen": 240,
     "skillUpGray": 260,
     "learnedAt": 200,
-    "trainingCost": 0.4,
+    "trainingCost": 4000,
     "reagents": {
       "Vision Dust": 4,
       "Large Glowing Shard": 1
@@ -8617,7 +10121,7 @@
     "skillUpGreen": 240,
     "skillUpGray": 260,
     "learnedAt": 200,
-    "trainingCost": 0.4,
+    "trainingCost": 4000,
     "reagents": {
       "Greater Mystic Essence": 2,
       "Vision Dust": 2,
@@ -8633,7 +10137,7 @@
     "skillUpGreen": 240,
     "skillUpGray": 260,
     "learnedAt": 200,
-    "trainingCost": 0.4,
+    "trainingCost": 4000,
     "reagents": {
       "Truesilver Rod": 1,
       "Black Pearl": 1,
@@ -8751,7 +10255,7 @@
     "skillUpGreen": 220,
     "skillUpGray": 240,
     "learnedAt": 200,
-    "trainingCost": 0.15,
+    "trainingCost": 1500,
     "reagents": {
       "Mithril Bar": 1,
       "Mageweave Cloth": 1,
@@ -8769,7 +10273,7 @@
     "skillUpGreen": 220,
     "skillUpGray": 240,
     "learnedAt": 200,
-    "trainingCost": 0.15,
+    "trainingCost": 1500,
     "reagents": {
       "Mithril Bar": 1,
       "Mageweave Cloth": 1,
@@ -8874,7 +10378,7 @@
     "skillUpGreen": 200,
     "skillUpGray": 200,
     "learnedAt": 200,
-    "trainingCost": 0.18,
+    "trainingCost": 1800,
     "reagents": {
       "Thick Hide": 1,
       "Deeprock Salt": 1
@@ -8891,7 +10395,7 @@
     "skillUpGreen": 230,
     "skillUpGray": 240,
     "learnedAt": 200,
-    "trainingCost": 0.18,
+    "trainingCost": 1800,
     "reagents": {
       "Thick Leather": 5,
       "Silken Thread": 1
@@ -8925,7 +10429,7 @@
     "skillUpGreen": 202,
     "skillUpGray": 205,
     "learnedAt": 200,
-    "trainingCost": 0.4,
+    "trainingCost": 4000,
     "reagents": {
       "Heavy Leather": 6
     },
@@ -9046,7 +10550,7 @@
     "skillUpGreen": 240,
     "skillUpGray": 260,
     "learnedAt": 205,
-    "trainingCost": 0.81,
+    "trainingCost": 8100,
     "reagents": {
       "Khadgar's Whisker": 1,
       "Goldthorn": 1,
@@ -9064,7 +10568,7 @@
     "skillUpGreen": 240,
     "skillUpGray": 260,
     "learnedAt": 205,
-    "trainingCost": 0.72,
+    "trainingCost": 7200,
     "reagents": {
       "Firebloom": 1,
       "Goldthorn": 1,
@@ -9082,7 +10586,7 @@
     "skillUpGreen": 235,
     "skillUpGray": 245,
     "learnedAt": 205,
-    "trainingCost": 0.5,
+    "trainingCost": 5000,
     "reagents": {
       "Mithril Bar": 8,
       "Heavy Leather": 6
@@ -9099,7 +10603,7 @@
     "skillUpGreen": 235,
     "skillUpGray": 245,
     "learnedAt": 205,
-    "trainingCost": 0.5,
+    "trainingCost": 5000,
     "reagents": {
       "Mithril Bar": 6,
       "Mageweave Cloth": 4
@@ -9152,7 +10656,7 @@
     "skillUpGreen": 245,
     "skillUpGray": 265,
     "learnedAt": 205,
-    "trainingCost": 0.42,
+    "trainingCost": 4200,
     "reagents": {
       "Vision Dust": 3
     },
@@ -9166,7 +10670,7 @@
     "skillUpGreen": 245,
     "skillUpGray": 265,
     "learnedAt": 205,
-    "trainingCost": 0.42,
+    "trainingCost": 4200,
     "reagents": {
       "Lesser Nether Essence": 1
     },
@@ -9180,7 +10684,7 @@
     "skillUpGreen": 235,
     "skillUpGray": 245,
     "learnedAt": 205,
-    "trainingCost": 0.16,
+    "trainingCost": 1600,
     "reagents": {
       "Green Tinted Goggles": 1,
       "Citrine": 2,
@@ -9199,7 +10703,7 @@
     "skillUpGreen": 235,
     "skillUpGray": 245,
     "learnedAt": 205,
-    "trainingCost": 0.16,
+    "trainingCost": 1600,
     "reagents": {
       "Mithril Tube": 1,
       "Unstable Trigger": 1,
@@ -9219,7 +10723,7 @@
     "skillUpGreen": 205,
     "skillUpGray": 205,
     "learnedAt": 205,
-    "trainingCost": 0.1,
+    "trainingCost": 1000,
     "reagents": {
       "Blank Parchment": 1,
       "Engineer's Ink": 1
@@ -9236,7 +10740,7 @@
     "skillUpGreen": 235,
     "skillUpGray": 245,
     "learnedAt": 205,
-    "trainingCost": 0.15,
+    "trainingCost": 1500,
     "reagents": {
       "Mithril Bar": 8,
       "Citrine": 1,
@@ -9254,7 +10758,7 @@
     "skillUpGreen": 235,
     "skillUpGray": 245,
     "learnedAt": 205,
-    "trainingCost": 0.15,
+    "trainingCost": 1500,
     "reagents": {
       "Mithril Bar": 8,
       "Citrine": 1,
@@ -9272,7 +10776,7 @@
     "skillUpGreen": 225,
     "skillUpGray": 245,
     "learnedAt": 205,
-    "trainingCost": 0.15,
+    "trainingCost": 1500,
     "reagents": {
       "Mageweave Cloth": 1,
       "Solid Blasting Powder": 3,
@@ -9290,7 +10794,7 @@
     "skillUpGreen": 205,
     "skillUpGray": 205,
     "learnedAt": 205,
-    "trainingCost": 0.15,
+    "trainingCost": 1500,
     "reagents": {
       "Blank Parchment": 1,
       "Engineer's Ink": 1
@@ -9307,7 +10811,7 @@
     "skillUpGreen": 235,
     "skillUpGray": 245,
     "learnedAt": 205,
-    "trainingCost": 0.15,
+    "trainingCost": 1500,
     "reagents": {
       "Mithril Tube": 1,
       "Unstable Trigger": 1,
@@ -9323,7 +10827,7 @@
     "name": "The Mortar Reloaded",
     "profession": "Engineering",
     "learnedAt": 205,
-    "trainingCost": 0.15,
+    "trainingCost": 1500,
     "reagents": {
       "Goblin Mortar": 1,
       "Mithril Bar": 1,
@@ -9378,7 +10882,7 @@
     "skillUpGreen": 235,
     "skillUpGray": 245,
     "learnedAt": 205,
-    "trainingCost": 0.27,
+    "trainingCost": 2700,
     "reagents": {
       "Thick Leather": 7,
       "Silken Thread": 2
@@ -9395,7 +10899,7 @@
     "skillUpGreen": 235,
     "skillUpGray": 245,
     "learnedAt": 205,
-    "trainingCost": 0.27,
+    "trainingCost": 2700,
     "reagents": {
       "Thick Leather": 5,
       "Silken Thread": 2
@@ -9448,7 +10952,7 @@
     "skillUpGreen": 235,
     "skillUpGray": 250,
     "learnedAt": 205,
-    "trainingCost": 0.36,
+    "trainingCost": 3600,
     "reagents": {
       "Bolt of Mageweave": 2,
       "Silken Thread": 3
@@ -9465,7 +10969,7 @@
     "skillUpGreen": 235,
     "skillUpGray": 250,
     "learnedAt": 205,
-    "trainingCost": 0.36,
+    "trainingCost": 3600,
     "reagents": {
       "Bolt of Mageweave": 2,
       "Silken Thread": 3
@@ -9482,7 +10986,7 @@
     "skillUpGreen": 235,
     "skillUpGray": 250,
     "learnedAt": 205,
-    "trainingCost": 0.36,
+    "trainingCost": 3600,
     "reagents": {
       "Bolt of Mageweave": 2,
       "Silken Thread": 3
@@ -9499,7 +11003,7 @@
     "skillUpGreen": 235,
     "skillUpGray": 250,
     "learnedAt": 205,
-    "trainingCost": 0.36,
+    "trainingCost": 3600,
     "reagents": {
       "Bolt of Mageweave": 2,
       "Silken Thread": 3
@@ -9566,7 +11070,7 @@
     "skillUpGreen": 240,
     "skillUpGray": 250,
     "learnedAt": 210,
-    "trainingCost": 0.5,
+    "trainingCost": 5000,
     "reagents": {
       "Mithril Bar": 12
     },
@@ -9598,7 +11102,7 @@
     "skillUpGreen": 247,
     "skillUpGray": 260,
     "learnedAt": 210,
-    "trainingCost": 1.0,
+    "trainingCost": 10000,
     "reagents": {
       "Mithril Bar": 12,
       "Citrine": 2,
@@ -9617,7 +11121,7 @@
     "skillUpGreen": 250,
     "skillUpGray": 270,
     "learnedAt": 210,
-    "trainingCost": 0.44,
+    "trainingCost": 4400,
     "reagents": {
       "Lesser Nether Essence": 1,
       "Vision Dust": 1
@@ -9645,7 +11149,7 @@
     "skillUpGreen": 250,
     "skillUpGray": 270,
     "learnedAt": 210,
-    "trainingCost": 0.44,
+    "trainingCost": 4400,
     "reagents": {
       "Lesser Nether Essence": 2
     },
@@ -9659,7 +11163,7 @@
     "skillUpGreen": 230,
     "skillUpGray": 250,
     "learnedAt": 210,
-    "trainingCost": 0.17,
+    "trainingCost": 1700,
     "reagents": {
       "Mithril Bar": 1,
       "Solid Blasting Powder": 1
@@ -9693,7 +11197,7 @@
     "skillUpGreen": 240,
     "skillUpGray": 250,
     "learnedAt": 210,
-    "trainingCost": 0.15,
+    "trainingCost": 1500,
     "reagents": {
       "Fire Goggles": 1,
       "Mithril Tube": 1,
@@ -9713,7 +11217,7 @@
     "skillUpGreen": 240,
     "skillUpGray": 250,
     "learnedAt": 210,
-    "trainingCost": 0.18,
+    "trainingCost": 1800,
     "reagents": {
       "Mithril Tube": 1,
       "Shadow Silk": 2,
@@ -9733,7 +11237,7 @@
     "skillUpGreen": 240,
     "skillUpGray": 250,
     "learnedAt": 210,
-    "trainingCost": 0.3,
+    "trainingCost": 3000,
     "reagents": {
       "Thick Leather": 6,
       "Turtle Scale": 12,
@@ -9768,7 +11272,7 @@
     "skillUpGreen": 240,
     "skillUpGray": 250,
     "learnedAt": 210,
-    "trainingCost": 0.315,
+    "trainingCost": 3150,
     "reagents": {
       "Thick Leather": 8,
       "Turtle Scale": 12,
@@ -9786,7 +11290,7 @@
     "skillUpGreen": 240,
     "skillUpGray": 250,
     "learnedAt": 210,
-    "trainingCost": 0.27,
+    "trainingCost": 2700,
     "reagents": {
       "Thick Leather": 6,
       "Turtle Scale": 12,
@@ -9804,7 +11308,7 @@
     "skillUpGreen": 240,
     "skillUpGray": 255,
     "learnedAt": 210,
-    "trainingCost": 0.45,
+    "trainingCost": 4500,
     "reagents": {
       "Bolt of Silk Cloth": 6,
       "Elemental Fire": 2,
@@ -9825,7 +11329,7 @@
     "skillUpGreen": 240,
     "skillUpGray": 255,
     "learnedAt": 210,
-    "trainingCost": 0.36,
+    "trainingCost": 3600,
     "reagents": {
       "Bolt of Mageweave": 3,
       "Heavy Silken Thread": 1
@@ -9842,7 +11346,7 @@
     "skillUpGreen": 240,
     "skillUpGray": 255,
     "learnedAt": 210,
-    "trainingCost": 0.45,
+    "trainingCost": 4500,
     "reagents": {
       "Bolt of Mageweave": 3,
       "Shadow Silk": 2,
@@ -9911,7 +11415,7 @@
     "skillUpGreen": 250,
     "skillUpGray": 270,
     "learnedAt": 215,
-    "trainingCost": 0.9,
+    "trainingCost": 9000,
     "reagents": {
       "Sungrass": 1,
       "Khadgar's Whisker": 1,
@@ -9929,7 +11433,7 @@
     "skillUpGreen": 250,
     "skillUpGray": 270,
     "learnedAt": 215,
-    "trainingCost": 0.9,
+    "trainingCost": 9000,
     "reagents": {
       "Ichor of Undeath": 1,
       "Purple Lotus": 2,
@@ -9947,7 +11451,7 @@
     "skillUpGreen": 245,
     "skillUpGray": 255,
     "learnedAt": 215,
-    "trainingCost": 0.5,
+    "trainingCost": 5000,
     "reagents": {
       "Steel Bar": 14,
       "Solid Grinding Stone": 1
@@ -10013,7 +11517,7 @@
     "skillUpGreen": 255,
     "skillUpGray": 275,
     "learnedAt": 215,
-    "trainingCost": 0.46,
+    "trainingCost": 4600,
     "reagents": {
       "Vision Dust": 5
     },
@@ -10041,7 +11545,7 @@
     "skillUpGreen": 235,
     "skillUpGray": 255,
     "learnedAt": 215,
-    "trainingCost": 0.18,
+    "trainingCost": 1800,
     "reagents": {
       "Mithril Bar": 3
     },
@@ -10057,7 +11561,7 @@
     "skillUpGreen": 235,
     "skillUpGray": 255,
     "learnedAt": 215,
-    "trainingCost": 0.18,
+    "trainingCost": 1800,
     "reagents": {
       "Mithril Casing": 1,
       "Unstable Trigger": 1,
@@ -10075,7 +11579,7 @@
     "skillUpGreen": 245,
     "skillUpGray": 255,
     "learnedAt": 215,
-    "trainingCost": 0.2,
+    "trainingCost": 2000,
     "reagents": {
       "Dusky Belt": 1,
       "Mithril Bar": 4,
@@ -10128,7 +11632,7 @@
     "skillUpGreen": 245,
     "skillUpGray": 260,
     "learnedAt": 215,
-    "trainingCost": 0.45,
+    "trainingCost": 4500,
     "reagents": {
       "Bolt of Mageweave": 2,
       "Heavy Silken Thread": 2
@@ -10145,7 +11649,7 @@
     "skillUpGreen": 245,
     "skillUpGray": 260,
     "learnedAt": 215,
-    "trainingCost": 0.495,
+    "trainingCost": 4950,
     "reagents": {
       "Bolt of Mageweave": 3,
       "Shadow Silk": 2,
@@ -10214,7 +11718,7 @@
     "skillUpGreen": 225,
     "skillUpGray": 230,
     "learnedAt": 215,
-    "trainingCost": 0.225,
+    "trainingCost": 2250,
     "reagents": {
       "Bolt of Mageweave": 1,
       "Orange Dye": 1,
@@ -10335,7 +11839,7 @@
     "skillUpGreen": 260,
     "skillUpGray": 280,
     "learnedAt": 220,
-    "trainingCost": 0.48,
+    "trainingCost": 4800,
     "reagents": {
       "Vision Dust": 6
     },
@@ -10538,7 +12042,7 @@
     "skillUpGreen": 260,
     "skillUpGray": 280,
     "learnedAt": 225,
-    "trainingCost": 1.0,
+    "trainingCost": 10000,
     "reagents": {
       "Mithril Bar": 1
     },
@@ -10588,7 +12092,7 @@
     "skillUpGreen": 255,
     "skillUpGray": 265,
     "learnedAt": 225,
-    "trainingCost": 0.9,
+    "trainingCost": 9000,
     "reagents": {
       "Mithril Bar": 10,
       "Truesilver Bar": 8,
@@ -10722,7 +12226,7 @@
     "skillUpGreen": 265,
     "skillUpGray": 285,
     "learnedAt": 225,
-    "trainingCost": 0.5,
+    "trainingCost": 5000,
     "reagents": {
       "Lesser Nether Essence": 2,
       "Vision Dust": 3
@@ -10737,7 +12241,7 @@
     "skillUpGreen": 265,
     "skillUpGray": 285,
     "learnedAt": 225,
-    "trainingCost": 0.5,
+    "trainingCost": 5000,
     "reagents": {
       "Small Radiant Shard": 1,
       "Aquamarine": 1,
@@ -10767,7 +12271,7 @@
     "skillUpGreen": 255,
     "skillUpGray": 265,
     "learnedAt": 225,
-    "trainingCost": 0.22,
+    "trainingCost": 2200,
     "reagents": {
       "Black Mageweave Boots": 1,
       "Mithril Tube": 2,
@@ -10839,7 +12343,7 @@
     "skillUpGreen": 255,
     "skillUpGray": 265,
     "learnedAt": 225,
-    "trainingCost": 0.22,
+    "trainingCost": 2200,
     "reagents": {
       "Black Mageweave Boots": 1,
       "Mithril Tube": 2,
@@ -11044,7 +12548,7 @@
     "skillUpGreen": 255,
     "skillUpGray": 265,
     "learnedAt": 225,
-    "trainingCost": 0.9,
+    "trainingCost": 9000,
     "reagents": {
       "Thick Leather": 24,
       "Worn Dragonscale": 12,
@@ -11063,7 +12567,7 @@
     "skillUpGreen": 255,
     "skillUpGray": 265,
     "learnedAt": 225,
-    "trainingCost": 0.9,
+    "trainingCost": 9000,
     "reagents": {
       "Thick Leather": 18,
       "Thick Wolfhide": 2,
@@ -11083,7 +12587,7 @@
     "skillUpGreen": 255,
     "skillUpGray": 265,
     "learnedAt": 225,
-    "trainingCost": 0.324,
+    "trainingCost": 3240,
     "reagents": {
       "Thick Leather": 12,
       "Cured Thick Hide": 1,
@@ -11102,7 +12606,7 @@
     "skillUpGreen": 255,
     "skillUpGray": 265,
     "learnedAt": 225,
-    "trainingCost": 0.324,
+    "trainingCost": 3240,
     "reagents": {
       "Thick Leather": 10,
       "Cured Thick Hide": 1,
@@ -11205,7 +12709,7 @@
     "skillUpGreen": 255,
     "skillUpGray": 270,
     "learnedAt": 225,
-    "trainingCost": 0.45,
+    "trainingCost": 4500,
     "reagents": {
       "Bolt of Mageweave": 4,
       "Silken Thread": 2
@@ -11239,7 +12743,7 @@
     "skillUpGreen": 255,
     "skillUpGray": 270,
     "learnedAt": 225,
-    "trainingCost": 0.45,
+    "trainingCost": 4500,
     "reagents": {
       "Bolt of Mageweave": 4,
       "Wildvine": 4,
@@ -11258,7 +12762,7 @@
     "skillUpGreen": 255,
     "skillUpGray": 270,
     "learnedAt": 225,
-    "trainingCost": 0.45,
+    "trainingCost": 4500,
     "reagents": {
       "Bolt of Mageweave": 5,
       "Heart of Fire": 2,
@@ -11276,7 +12780,7 @@
     "skillUpGreen": 255,
     "skillUpGray": 270,
     "learnedAt": 225,
-    "trainingCost": 0.45,
+    "trainingCost": 4500,
     "reagents": {
       "Bolt of Mageweave": 6,
       "Wildvine": 6,
@@ -11295,7 +12799,7 @@
     "skillUpGreen": 255,
     "skillUpGray": 270,
     "learnedAt": 225,
-    "trainingCost": 0.54,
+    "trainingCost": 5400,
     "reagents": {
       "Bolt of Mageweave": 5,
       "Shadow Silk": 5,
@@ -11348,7 +12852,7 @@
     "skillUpGreen": 265,
     "skillUpGray": 285,
     "learnedAt": 230,
-    "trainingCost": 0.45,
+    "trainingCost": 4500,
     "reagents": {
       "Arthas' Tears": 1,
       "Crystal Vial": 1
@@ -11365,7 +12869,7 @@
     "skillUpGreen": 265,
     "skillUpGray": 285,
     "learnedAt": 230,
-    "trainingCost": 0.9,
+    "trainingCost": 9000,
     "reagents": {
       "Purple Lotus": 3,
       "Crystal Vial": 1
@@ -11398,7 +12902,7 @@
     "skillUpGreen": 260,
     "skillUpGray": 270,
     "learnedAt": 230,
-    "trainingCost": 1.5,
+    "trainingCost": 15000,
     "reagents": {
       "Mithril Bar": 16
     },
@@ -11414,7 +12918,7 @@
     "skillUpGreen": 260,
     "skillUpGray": 270,
     "learnedAt": 230,
-    "trainingCost": 1.5,
+    "trainingCost": 15000,
     "reagents": {
       "Mithril Bar": 10,
       "Mageweave Cloth": 6
@@ -11431,7 +12935,7 @@
     "skillUpGreen": 267,
     "skillUpGray": 280,
     "learnedAt": 230,
-    "trainingCost": 1.5,
+    "trainingCost": 15000,
     "reagents": {
       "Mithril Bar": 16,
       "Black Pearl": 1,
@@ -11451,7 +12955,7 @@
     "skillUpGreen": 270,
     "skillUpGray": 290,
     "learnedAt": 230,
-    "trainingCost": 0.54,
+    "trainingCost": 5400,
     "reagents": {
       "Greater Nether Essence": 1,
       "Dream Dust": 2
@@ -11481,7 +12985,7 @@
     "skillUpGreen": 270,
     "skillUpGray": 290,
     "learnedAt": 230,
-    "trainingCost": 0.54,
+    "trainingCost": 5400,
     "reagents": {
       "Greater Nether Essence": 1,
       "Lesser Nether Essence": 2
@@ -11515,7 +13019,7 @@
     "skillUpGreen": 260,
     "skillUpGray": 270,
     "learnedAt": 230,
-    "trainingCost": 0.22,
+    "trainingCost": 2200,
     "reagents": {
       "Thick Leather": 6,
       "Star Ruby": 2
@@ -11532,7 +13036,7 @@
     "skillUpGreen": 250,
     "skillUpGray": 270,
     "learnedAt": 230,
-    "trainingCost": 0.24,
+    "trainingCost": 2400,
     "reagents": {
       "Mithril Casing": 2,
       "Solid Blasting Powder": 4,
@@ -11552,7 +13056,7 @@
     "skillUpGreen": 260,
     "skillUpGray": 270,
     "learnedAt": 230,
-    "trainingCost": 0.24,
+    "trainingCost": 2400,
     "reagents": {
       "Mithril Casing": 1,
       "Truesilver Bar": 6,
@@ -11573,7 +13077,7 @@
     "skillUpGreen": 260,
     "skillUpGray": 270,
     "learnedAt": 230,
-    "trainingCost": 0.4,
+    "trainingCost": 4000,
     "reagents": {
       "Thick Leather": 14,
       "Silken Thread": 4
@@ -11590,7 +13094,7 @@
     "skillUpGreen": 260,
     "skillUpGray": 270,
     "learnedAt": 230,
-    "trainingCost": 0.4,
+    "trainingCost": 4000,
     "reagents": {
       "Thick Leather": 14,
       "Turtle Scale": 24,
@@ -11608,7 +13112,7 @@
     "skillUpGreen": 260,
     "skillUpGray": 270,
     "learnedAt": 230,
-    "trainingCost": 0.9,
+    "trainingCost": 9000,
     "reagents": {
       "Thick Leather": 20,
       "Globe of Water": 8,
@@ -11656,7 +13160,7 @@
     "skillUpGreen": 260,
     "skillUpGray": 275,
     "learnedAt": 230,
-    "trainingCost": 0.6,
+    "trainingCost": 6000,
     "reagents": {
       "Bolt of Mageweave": 3,
       "Heavy Silken Thread": 2
@@ -11673,7 +13177,7 @@
     "skillUpGreen": 260,
     "skillUpGray": 275,
     "learnedAt": 230,
-    "trainingCost": 0.6,
+    "trainingCost": 6000,
     "reagents": {
       "Bolt of Mageweave": 3,
       "Heavy Silken Thread": 2,
@@ -11691,7 +13195,7 @@
     "skillUpGreen": 260,
     "skillUpGray": 275,
     "learnedAt": 230,
-    "trainingCost": 0.6,
+    "trainingCost": 6000,
     "reagents": {
       "Bolt of Mageweave": 3,
       "Heavy Silken Thread": 2
@@ -11725,7 +13229,7 @@
     "skillUpGreen": 270,
     "skillUpGray": 290,
     "learnedAt": 235,
-    "trainingCost": 0.9,
+    "trainingCost": 9000,
     "reagents": {
       "Blindweed": 1,
       "Goldthorn": 1,
@@ -11760,7 +13264,7 @@
     "skillUpGreen": 270,
     "skillUpGray": 290,
     "learnedAt": 235,
-    "trainingCost": 1.08,
+    "trainingCost": 10800,
     "reagents": {
       "Blindweed": 1,
       "Khadgar's Whisker": 1,
@@ -11811,7 +13315,7 @@
     "skillUpGreen": 265,
     "skillUpGray": 275,
     "learnedAt": 235,
-    "trainingCost": 2.0,
+    "trainingCost": 20000,
     "reagents": {
       "Mithril Bar": 14,
       "Thick Leather": 4
@@ -11828,7 +13332,7 @@
     "skillUpGreen": 272,
     "skillUpGray": 285,
     "learnedAt": 235,
-    "trainingCost": 1.35,
+    "trainingCost": 13500,
     "reagents": {
       "Mithril Bar": 24,
       "Core of Earth": 4,
@@ -11878,7 +13382,7 @@
     "skillUpGreen": 275,
     "skillUpGray": 295,
     "learnedAt": 235,
-    "trainingCost": 0.58,
+    "trainingCost": 5800,
     "reagents": {
       "Greater Nether Essence": 2
     },
@@ -11892,7 +13396,7 @@
     "skillUpGreen": 255,
     "skillUpGray": 275,
     "learnedAt": 235,
-    "trainingCost": 0.24,
+    "trainingCost": 2400,
     "reagents": {
       "Mithril Casing": 2,
       "Unstable Trigger": 1,
@@ -11910,7 +13414,7 @@
     "skillUpGreen": 255,
     "skillUpGray": 275,
     "learnedAt": 235,
-    "trainingCost": 0.26,
+    "trainingCost": 2600,
     "reagents": {
       "Mithril Casing": 1,
       "Goblin Rocket Fuel": 1,
@@ -11929,7 +13433,7 @@
     "skillUpGreen": 265,
     "skillUpGray": 275,
     "learnedAt": 235,
-    "trainingCost": 0.26,
+    "trainingCost": 2600,
     "reagents": {
       "Mithril Bar": 10,
       "Truesilver Bar": 4,
@@ -11966,7 +13470,7 @@
     "skillUpGreen": 265,
     "skillUpGray": 275,
     "learnedAt": 235,
-    "trainingCost": 0.45,
+    "trainingCost": 4500,
     "reagents": {
       "Thick Leather": 14,
       "Turtle Scale": 28,
@@ -11984,7 +13488,7 @@
     "skillUpGreen": 265,
     "skillUpGray": 275,
     "learnedAt": 235,
-    "trainingCost": 0.45,
+    "trainingCost": 4500,
     "reagents": {
       "Thick Leather": 16,
       "Heavy Silken Thread": 2
@@ -12017,7 +13521,7 @@
     "skillUpGreen": 265,
     "skillUpGray": 280,
     "learnedAt": 235,
-    "trainingCost": 0.585,
+    "trainingCost": 5850,
     "reagents": {
       "Bolt of Mageweave": 5,
       "Shadow Silk": 4,
@@ -12035,7 +13539,7 @@
     "skillUpGreen": 245,
     "skillUpGray": 250,
     "learnedAt": 235,
-    "trainingCost": 0.5,
+    "trainingCost": 5000,
     "reagents": {
       "Bolt of Mageweave": 3,
       "Black Dye": 1,
@@ -12071,7 +13575,7 @@
     "skillUpGreen": 265,
     "skillUpGray": 280,
     "learnedAt": 235,
-    "trainingCost": 0.65,
+    "trainingCost": 6500,
     "reagents": {
       "Bolt of Mageweave": 4,
       "Red Dye": 2,
@@ -12123,7 +13627,7 @@
     "skillUpGreen": 275,
     "skillUpGray": 295,
     "learnedAt": 240,
-    "trainingCost": 1.08,
+    "trainingCost": 10800,
     "reagents": {
       "Sungrass": 1,
       "Goldthorn": 1,
@@ -12195,7 +13699,7 @@
     "skillUpGreen": 280,
     "skillUpGray": 300,
     "learnedAt": 240,
-    "trainingCost": 0.62,
+    "trainingCost": 6200,
     "reagents": {
       "Large Radiant Shard": 2,
       "Dream Dust": 2
@@ -12210,7 +13714,7 @@
     "skillUpGreen": 280,
     "skillUpGray": 300,
     "learnedAt": 240,
-    "trainingCost": 0.62,
+    "trainingCost": 6200,
     "reagents": {
       "Dream Dust": 2,
       "Greater Nether Essence": 1
@@ -12242,7 +13746,7 @@
     "skillUpGreen": 270,
     "skillUpGray": 280,
     "learnedAt": 240,
-    "trainingCost": 0.28,
+    "trainingCost": 2800,
     "reagents": {
       "Mithril Tube": 2,
       "Unstable Trigger": 1,
@@ -12262,7 +13766,7 @@
     "skillUpGreen": 270,
     "skillUpGray": 280,
     "learnedAt": 240,
-    "trainingCost": 0.28,
+    "trainingCost": 2800,
     "reagents": {
       "Mithril Tube": 2,
       "Goblin Rocket Fuel": 4,
@@ -12366,7 +13870,7 @@
     "skillUpGreen": 270,
     "skillUpGray": 285,
     "learnedAt": 240,
-    "trainingCost": 0.63,
+    "trainingCost": 6300,
     "reagents": {
       "Bolt of Mageweave": 6,
       "Shadow Silk": 6,
@@ -12468,7 +13972,7 @@
     "skillUpGreen": 275,
     "skillUpGray": 285,
     "learnedAt": 245,
-    "trainingCost": 0.9,
+    "trainingCost": 9000,
     "reagents": {
       "Mithril Bar": 12,
       "Truesilver Bar": 24,
@@ -12525,7 +14029,7 @@
     "skillUpGreen": 282,
     "skillUpGray": 295,
     "learnedAt": 245,
-    "trainingCost": 1.35,
+    "trainingCost": 13500,
     "reagents": {
       "Mithril Bar": 28,
       "Breath of Wind": 6,
@@ -12565,7 +14069,7 @@
     "skillUpGreen": 285,
     "skillUpGray": 305,
     "learnedAt": 245,
-    "trainingCost": 0.62,
+    "trainingCost": 6200,
     "reagents": {
       "Large Radiant Shard": 1,
       "Dream Dust": 3,
@@ -12581,7 +14085,7 @@
     "skillUpGreen": 285,
     "skillUpGray": 305,
     "learnedAt": 245,
-    "trainingCost": 0.62,
+    "trainingCost": 6200,
     "reagents": {
       "Large Radiant Shard": 2,
       "Greater Nether Essence": 2
@@ -12609,7 +14113,7 @@
     "skillUpGreen": 265,
     "skillUpGray": 285,
     "learnedAt": 245,
-    "trainingCost": 0.28,
+    "trainingCost": 2800,
     "reagents": {
       "Mithril Bar": 2,
       "Solid Blasting Powder": 2
@@ -12626,7 +14130,7 @@
     "skillUpGreen": 275,
     "skillUpGray": 285,
     "learnedAt": 245,
-    "trainingCost": 0.28,
+    "trainingCost": 2800,
     "reagents": {
       "Thick Leather": 8,
       "Jade": 3,
@@ -12646,7 +14150,7 @@
     "skillUpGreen": 275,
     "skillUpGray": 285,
     "learnedAt": 245,
-    "trainingCost": 0.3,
+    "trainingCost": 3000,
     "reagents": {
       "Goblin Construction Helmet": 1,
       "Goblin Rocket Fuel": 4,
@@ -12716,7 +14220,7 @@
     "skillUpGreen": 275,
     "skillUpGray": 290,
     "learnedAt": 245,
-    "trainingCost": 0.75,
+    "trainingCost": 7500,
     "reagents": {
       "Bolt of Mageweave": 5,
       "Heart of Fire": 1,
@@ -12801,7 +14305,7 @@
     "skillUpGreen": 285,
     "skillUpGray": 305,
     "learnedAt": 250,
-    "trainingCost": 1.26,
+    "trainingCost": 12600,
     "reagents": {
       "Gromsblood": 2,
       "Crystal Vial": 1
@@ -12818,7 +14322,7 @@
     "skillUpGreen": 255,
     "skillUpGray": 260,
     "learnedAt": 250,
-    "trainingCost": 1.35,
+    "trainingCost": 13500,
     "reagents": {
       "Stonescale Eel": 1,
       "Leaded Vial": 1
@@ -12900,7 +14404,7 @@
     "skillUpGreen": 287,
     "skillUpGray": 300,
     "learnedAt": 250,
-    "trainingCost": 1.35,
+    "trainingCost": 13500,
     "reagents": {
       "Mithril Bar": 28,
       "Ichor of Undeath": 10,
@@ -12920,7 +14424,7 @@
     "skillUpGreen": 257,
     "skillUpGray": 260,
     "learnedAt": 250,
-    "trainingCost": 1.0,
+    "trainingCost": 10000,
     "reagents": {
       "Dense Stone": 4
     },
@@ -12936,7 +14440,7 @@
     "skillUpGreen": 257,
     "skillUpGray": 260,
     "learnedAt": 250,
-    "trainingCost": 1.0,
+    "trainingCost": 10000,
     "reagents": {
       "Dense Stone": 1,
       "Runecloth": 1
@@ -12953,7 +14457,7 @@
     "skillUpGreen": 257,
     "skillUpGray": 260,
     "learnedAt": 250,
-    "trainingCost": 1.0,
+    "trainingCost": 10000,
     "reagents": {
       "Dense Stone": 1
     },
@@ -13061,7 +14565,7 @@
     "skillUpGreen": 290,
     "skillUpGray": 310,
     "learnedAt": 250,
-    "trainingCost": 0.65,
+    "trainingCost": 6500,
     "reagents": {
       "Large Radiant Shard": 2,
       "Wildvine": 2
@@ -13076,7 +14580,7 @@
     "skillUpGreen": 255,
     "skillUpGray": 260,
     "learnedAt": 250,
-    "trainingCost": 1.0,
+    "trainingCost": 10000,
     "reagents": {
       "Thorium Bar": 1,
       "Dream Dust": 3
@@ -13093,7 +14597,7 @@
     "skillUpGreen": 255,
     "skillUpGray": 260,
     "learnedAt": 250,
-    "trainingCost": 1.0,
+    "trainingCost": 10000,
     "reagents": {
       "Rugged Leather": 1,
       "Lesser Eternal Essence": 1
@@ -13161,7 +14665,7 @@
     "skillUpGreen": 280,
     "skillUpGray": 290,
     "learnedAt": 250,
-    "trainingCost": 0.4,
+    "trainingCost": 4000,
     "reagents": {
       "Mithril Casing": 1,
       "Thorium Bar": 6,
@@ -13180,7 +14684,7 @@
     "skillUpGreen": 255,
     "skillUpGray": 260,
     "learnedAt": 250,
-    "trainingCost": 0.4,
+    "trainingCost": 4000,
     "reagents": {
       "Dense Stone": 2
     },
@@ -13196,7 +14700,7 @@
     "skillUpGreen": 260,
     "skillUpGray": 270,
     "learnedAt": 250,
-    "trainingCost": 0.5,
+    "trainingCost": 5000,
     "reagents": {
       "Dense Blasting Powder": 2,
       "Runecloth": 3
@@ -13354,7 +14858,7 @@
     "skillUpGreen": 280,
     "skillUpGray": 290,
     "learnedAt": 250,
-    "trainingCost": 0.9,
+    "trainingCost": 9000,
     "reagents": {
       "Thick Leather": 40,
       "Heart of Fire": 8,
@@ -13374,7 +14878,7 @@
     "skillUpGreen": 280,
     "skillUpGray": 290,
     "learnedAt": 250,
-    "trainingCost": 0.9,
+    "trainingCost": 9000,
     "reagents": {
       "Thick Leather": 40,
       "Jet Black Feather": 40,
@@ -13394,7 +14898,7 @@
     "skillUpGreen": 255,
     "skillUpGray": 260,
     "learnedAt": 250,
-    "trainingCost": 0.5,
+    "trainingCost": 5000,
     "reagents": {
       "Rugged Hide": 1,
       "Refined Deeprock Salt": 1
@@ -13411,7 +14915,7 @@
     "skillUpGreen": 260,
     "skillUpGray": 270,
     "learnedAt": 250,
-    "trainingCost": 0.5,
+    "trainingCost": 5000,
     "reagents": {
       "Rugged Leather": 5
     },
@@ -13427,7 +14931,7 @@
     "skillUpGreen": 250,
     "skillUpGray": 250,
     "learnedAt": 250,
-    "trainingCost": 0.5,
+    "trainingCost": 5000,
     "reagents": {
       "Thick Leather": 6
     },
@@ -13545,7 +15049,7 @@
     "skillUpGreen": 250,
     "skillUpGray": 250,
     "learnedAt": 250,
-    "trainingCost": 2.0,
+    "trainingCost": 20000,
     "reagents": {
       "Thorium Ore": 1
     },
@@ -13578,7 +15082,7 @@
     "skillUpGreen": 280,
     "skillUpGray": 295,
     "learnedAt": 250,
-    "trainingCost": 0.75,
+    "trainingCost": 7500,
     "reagents": {
       "Bolt of Mageweave": 8,
       "Wildvine": 4,
@@ -13615,7 +15119,7 @@
     "skillUpGreen": 257,
     "skillUpGray": 260,
     "learnedAt": 250,
-    "trainingCost": 1.0,
+    "trainingCost": 10000,
     "reagents": {
       "Runecloth": 5
     },
@@ -13798,7 +15302,7 @@
     "skillUpGreen": 285,
     "skillUpGray": 295,
     "learnedAt": 255,
-    "trainingCost": 0.9,
+    "trainingCost": 9000,
     "reagents": {
       "Thick Leather": 40,
       "Worn Dragonscale": 30,
@@ -13834,7 +15338,7 @@
     "skillUpGreen": 285,
     "skillUpGray": 300,
     "learnedAt": 255,
-    "trainingCost": 1.0,
+    "trainingCost": 10000,
     "reagents": {
       "Bolt of Runecloth": 3,
       "Rune Thread": 1
@@ -13902,7 +15406,7 @@
     "skillUpGreen": 297,
     "skillUpGray": 310,
     "learnedAt": 260,
-    "trainingCost": 1.35,
+    "trainingCost": 13500,
     "reagents": {
       "Mithril Bar": 30,
       "Truesilver Bar": 16,
@@ -15031,7 +16535,7 @@
     "skillUpGreen": 280,
     "skillUpGray": 285,
     "learnedAt": 275,
-    "trainingCost": 1.0,
+    "trainingCost": 10000,
     "reagents": {
       "Arcanite Bar": 1,
       "Dense Grinding Stone": 1
@@ -15048,7 +16552,7 @@
     "skillUpGreen": 280,
     "skillUpGray": 285,
     "learnedAt": 275,
-    "trainingCost": 1.0,
+    "trainingCost": 10000,
     "reagents": {
       "Arcanite Bar": 3,
       "Dense Grinding Stone": 1
@@ -15765,7 +17269,7 @@
     "skillUpGreen": 310,
     "skillUpGray": 320,
     "learnedAt": 280,
-    "trainingCost": 2.7,
+    "trainingCost": 27000,
     "reagents": {
       "Rugged Leather": 20,
       "Green Dragonscale": 30,
@@ -19739,7 +21243,7 @@
     "skillUpGreen": 330,
     "skillUpGray": 340,
     "learnedAt": 300,
-    "trainingCost": 4.5,
+    "trainingCost": 45000,
     "reagents": {
       "Rugged Leather": 28,
       "Blue Dragonscale": 36,
@@ -20906,1501 +22410,6 @@
     },
     "results": {
       "Gurubashi Mojo Madness": 3
-    }
-  },
-  {
-    "name": "Charred Wolf Meat",
-    "profession": "Cooking",
-    "skillUpYellow": 45,
-    "skillUpGreen": 65,
-    "skillUpGray": 85,
-    "learnedAt": 1,
-    "reagents": {
-      "Stringy Wolf Meat": 1
-    },
-    "results": {
-      "Charred Wolf Meat": 1
-    }
-  },
-  {
-    "name": "Roasted Boar Meat",
-    "profession": "Cooking",
-    "skillUpYellow": 45,
-    "skillUpGreen": 65,
-    "skillUpGray": 85,
-    "learnedAt": 1,
-    "reagents": {
-      "Chunk of Boar Meat": 1
-    },
-    "results": {
-      "Roasted Boar Meat": 1
-    }
-  },
-  {
-    "name": "Brilliant Smallfish",
-    "profession": "Cooking",
-    "skillUpOrange": 1,
-    "skillUpYellow": 45,
-    "skillUpGreen": 65,
-    "skillUpGray": 85,
-    "learnedAt": 1,
-    "reagents": {
-      "Raw Brilliant Smallfish": 1
-    },
-    "results": {
-      "Brilliant Smallfish": 1
-    }
-  },
-  {
-    "name": "Slitherskin Mackerel",
-    "profession": "Cooking",
-    "skillUpOrange": 1,
-    "skillUpYellow": 45,
-    "skillUpGreen": 65,
-    "skillUpGray": 85,
-    "learnedAt": 1,
-    "reagents": {
-      "Raw Slitherskin Mackerel": 1
-    },
-    "results": {
-      "Slitherskin Mackerel": 1
-    }
-  },
-  {
-    "name": "Herb Baked Egg",
-    "profession": "Cooking",
-    "skillUpOrange": 1,
-    "skillUpYellow": 45,
-    "skillUpGreen": 65,
-    "skillUpGray": 85,
-    "learnedAt": 1,
-    "reagents": {
-      "Small Egg": 1,
-      "Mild Spices": 1
-    },
-    "results": {
-      "Herb Baked Egg": 1
-    }
-  },
-  {
-    "name": "Crispy Bat Wing",
-    "profession": "Cooking",
-    "skillUpOrange": 1,
-    "skillUpYellow": 45,
-    "skillUpGreen": 65,
-    "skillUpGray": 85,
-    "learnedAt": 1,
-    "reagents": {
-      "Meaty Bat Wing": 1,
-      "Mild Spices": 1
-    },
-    "results": {
-      "Crispy Bat Wing": 1
-    }
-  },
-  {
-    "name": "Gingerbread Cookie",
-    "profession": "Cooking",
-    "skillUpOrange": 1,
-    "skillUpYellow": 45,
-    "skillUpGreen": 65,
-    "skillUpGray": 85,
-    "learnedAt": 1,
-    "reagents": {
-      "Small Egg": 1,
-      "Holiday Spices": 1
-    },
-    "results": {
-      "Gingerbread Cookie": 1
-    }
-  },
-  {
-    "name": "Linen Bandage",
-    "profession": "First Aid",
-    "skillUpOrange": 1,
-    "skillUpYellow": 30,
-    "skillUpGreen": 45,
-    "skillUpGray": 60,
-    "learnedAt": 1,
-    "reagents": {
-      "Linen Cloth": 1
-    },
-    "results": {
-      "Linen Bandage": 1
-    }
-  },
-  {
-    "name": "Spiced Wolf Meat",
-    "profession": "Cooking",
-    "skillUpOrange": 10,
-    "skillUpYellow": 50,
-    "skillUpGreen": 70,
-    "skillUpGray": 90,
-    "learnedAt": 10,
-    "trainingCost": 0.005,
-    "reagents": {
-      "Stringy Wolf Meat": 1,
-      "Mild Spices": 1
-    },
-    "results": {
-      "Spiced Wolf Meat": 1
-    }
-  },
-  {
-    "name": "Kaldorei Spider Kabob",
-    "profession": "Cooking",
-    "skillUpOrange": 10,
-    "skillUpYellow": 50,
-    "skillUpGreen": 70,
-    "skillUpGray": 90,
-    "learnedAt": 10,
-    "reagents": {
-      "Small Spider Leg": 1
-    },
-    "results": {
-      "Kaldorei Spider Kabob": 1
-    }
-  },
-  {
-    "name": "Scorpid Surprise",
-    "profession": "Cooking",
-    "skillUpOrange": 20,
-    "skillUpYellow": 60,
-    "skillUpGreen": 80,
-    "skillUpGray": 100,
-    "learnedAt": 20,
-    "reagents": {
-      "Scorpid Stinger": 1
-    },
-    "results": {
-      "Scorpid Surprise": 1
-    }
-  },
-  {
-    "name": "Beer Basted Boar Ribs",
-    "profession": "Cooking",
-    "skillUpOrange": 25,
-    "skillUpYellow": 60,
-    "skillUpGreen": 80,
-    "skillUpGray": 100,
-    "learnedAt": 25,
-    "reagents": {
-      "Crag Boar Rib": 1,
-      "Rhapsody Malt": 1
-    },
-    "results": {
-      "Beer Basted Boar Ribs": 1
-    }
-  },
-  {
-    "name": "Roasted Kodo Meat",
-    "profession": "Cooking",
-    "skillUpOrange": 35,
-    "skillUpYellow": 75,
-    "skillUpGreen": 95,
-    "skillUpGray": 115,
-    "learnedAt": 35,
-    "reagents": {
-      "Kodo Meat": 1,
-      "Mild Spices": 1
-    },
-    "results": {
-      "Roasted Kodo Meat": 2
-    }
-  },
-  {
-    "name": "Egg Nog",
-    "profession": "Cooking",
-    "skillUpOrange": 35,
-    "skillUpYellow": 75,
-    "skillUpGreen": 95,
-    "skillUpGray": 115,
-    "learnedAt": 35,
-    "reagents": {
-      "Small Egg": 1,
-      "Ice Cold Milk": 1,
-      "Holiday Spirits": 1,
-      "Holiday Spices": 1
-    },
-    "results": {
-      "Egg Nog": 1
-    }
-  },
-  {
-    "name": "Smoked Bear Meat",
-    "profession": "Cooking",
-    "skillUpOrange": 40,
-    "skillUpYellow": 80,
-    "skillUpGreen": 100,
-    "skillUpGray": 120,
-    "learnedAt": 40,
-    "reagents": {
-      "Bear Meat": 1
-    },
-    "results": {
-      "Smoked Bear Meat": 1
-    }
-  },
-  {
-    "name": "Heavy Linen Bandage",
-    "profession": "First Aid",
-    "skillUpOrange": 40,
-    "skillUpYellow": 50,
-    "skillUpGreen": 75,
-    "skillUpGray": 100,
-    "learnedAt": 40,
-    "reagents": {
-      "Linen Cloth": 2
-    },
-    "results": {
-      "Heavy Linen Bandage": 1
-    }
-  },
-  {
-    "name": "Coyote Steak",
-    "profession": "Cooking",
-    "skillUpOrange": 50,
-    "skillUpYellow": 90,
-    "skillUpGreen": 110,
-    "skillUpGray": 130,
-    "learnedAt": 50,
-    "trainingCost": 0.01,
-    "reagents": {
-      "Coyote Meat": 1
-    },
-    "results": {
-      "Coyote Steak": 1
-    }
-  },
-  {
-    "name": "Goretusk Liver Pie",
-    "profession": "Cooking",
-    "skillUpOrange": 50,
-    "skillUpYellow": 90,
-    "skillUpGreen": 110,
-    "skillUpGray": 130,
-    "learnedAt": 50,
-    "reagents": {
-      "Goretusk Liver": 1,
-      "Mild Spices": 1
-    },
-    "results": {
-      "Goretusk Liver Pie": 1
-    }
-  },
-  {
-    "name": "Fillet of Frenzy",
-    "profession": "Cooking",
-    "skillUpOrange": 50,
-    "skillUpYellow": 90,
-    "skillUpGreen": 110,
-    "skillUpGray": 130,
-    "learnedAt": 50,
-    "reagents": {
-      "Soft Frenzy Flesh": 1,
-      "Mild Spices": 1
-    },
-    "results": {
-      "Fillet of Frenzy": 2
-    }
-  },
-  {
-    "name": "Strider Stew",
-    "profession": "Cooking",
-    "skillUpOrange": 50,
-    "skillUpYellow": 90,
-    "skillUpGreen": 110,
-    "skillUpGray": 130,
-    "learnedAt": 50,
-    "reagents": {
-      "Strider Meat": 1,
-      "Shiny Red Apple": 1
-    },
-    "results": {
-      "Strider Stew": 2
-    }
-  },
-  {
-    "name": "Boiled Clams",
-    "profession": "Cooking",
-    "skillUpOrange": 50,
-    "skillUpYellow": 90,
-    "skillUpGreen": 110,
-    "skillUpGray": 130,
-    "learnedAt": 50,
-    "trainingCost": 0.01,
-    "reagents": {
-      "Clam Meat": 1,
-      "Refreshing Spring Water": 1
-    },
-    "results": {
-      "Boiled Clams": 1
-    }
-  },
-  {
-    "name": "Longjaw Mud Snapper",
-    "profession": "Cooking",
-    "skillUpOrange": 50,
-    "skillUpYellow": 90,
-    "skillUpGreen": 110,
-    "skillUpGray": 130,
-    "learnedAt": 50,
-    "reagents": {
-      "Raw Longjaw Mud Snapper": 1
-    },
-    "results": {
-      "Longjaw Mud Snapper": 1
-    }
-  },
-  {
-    "name": "Loch Frenzy Delight",
-    "profession": "Cooking",
-    "skillUpOrange": 50,
-    "skillUpYellow": 90,
-    "skillUpGreen": 110,
-    "skillUpGray": 130,
-    "learnedAt": 50,
-    "reagents": {
-      "Raw Loch Frenzy": 1,
-      "Mild Spices": 1
-    },
-    "results": {
-      "Loch Frenzy Delight": 1
-    }
-  },
-  {
-    "name": "Rainbow Fin Albacore",
-    "profession": "Cooking",
-    "skillUpOrange": 50,
-    "skillUpYellow": 90,
-    "skillUpGreen": 110,
-    "skillUpGray": 130,
-    "learnedAt": 50,
-    "reagents": {
-      "Raw Rainbow Fin Albacore": 1
-    },
-    "results": {
-      "Rainbow Fin Albacore": 1
-    }
-  },
-  {
-    "name": "Blood Sausage",
-    "profession": "Cooking",
-    "skillUpOrange": 60,
-    "skillUpYellow": 100,
-    "skillUpGreen": 120,
-    "skillUpGray": 140,
-    "learnedAt": 60,
-    "reagents": {
-      "Bear Meat": 1,
-      "Boar Intestines": 1,
-      "Spider Ichor": 1
-    },
-    "results": {
-      "Blood Sausage": 2
-    }
-  },
-  {
-    "name": "Thistle Tea",
-    "profession": "Cooking",
-    "skillUpOrange": 60,
-    "skillUpYellow": 100,
-    "skillUpGreen": 120,
-    "skillUpGray": 140,
-    "learnedAt": 60,
-    "reagents": {
-      "Swiftthistle": 1,
-      "Refreshing Spring Water": 1
-    },
-    "results": {
-      "Thistle Tea": 1
-    }
-  },
-  {
-    "name": "Westfall Stew",
-    "profession": "Cooking",
-    "skillUpOrange": 75,
-    "skillUpYellow": 115,
-    "skillUpGreen": 135,
-    "skillUpGray": 155,
-    "learnedAt": 75,
-    "reagents": {
-      "Stringy Vulture Meat": 1,
-      "Murloc Eye": 1,
-      "Goretusk Snout": 1
-    },
-    "results": {
-      "Westfall Stew": 1
-    }
-  },
-  {
-    "name": "Crab Cake",
-    "profession": "Cooking",
-    "skillUpOrange": 75,
-    "skillUpYellow": 115,
-    "skillUpGreen": 135,
-    "skillUpGray": 155,
-    "learnedAt": 75,
-    "trainingCost": 0.02,
-    "reagents": {
-      "Crawler Meat": 1,
-      "Mild Spices": 1
-    },
-    "results": {
-      "Crab Cake": 1
-    }
-  },
-  {
-    "name": "Dry Pork Ribs",
-    "profession": "Cooking",
-    "skillUpOrange": 80,
-    "skillUpYellow": 120,
-    "skillUpGreen": 140,
-    "skillUpGray": 160,
-    "learnedAt": 80,
-    "trainingCost": 0.015,
-    "reagents": {
-      "Boar Ribs": 1,
-      "Mild Spices": 1
-    },
-    "results": {
-      "Dry Pork Ribs": 1
-    }
-  },
-  {
-    "name": "Crocolisk Steak",
-    "profession": "Cooking",
-    "skillUpOrange": 80,
-    "skillUpYellow": 120,
-    "skillUpGreen": 140,
-    "skillUpGray": 160,
-    "learnedAt": 80,
-    "reagents": {
-      "Crocolisk Meat": 1,
-      "Mild Spices": 1
-    },
-    "results": {
-      "Crocolisk Steak": 1
-    }
-  },
-  {
-    "name": "Smoked Sagefish",
-    "profession": "Cooking",
-    "skillUpOrange": 80,
-    "skillUpYellow": 120,
-    "skillUpGreen": 140,
-    "skillUpGray": 160,
-    "learnedAt": 80,
-    "reagents": {
-      "Raw Sagefish": 1,
-      "Mild Spices": 1
-    },
-    "results": {
-      "Smoked Sagefish": 1
-    }
-  },
-  {
-    "name": "Wool Bandage",
-    "profession": "First Aid",
-    "skillUpOrange": 80,
-    "skillUpYellow": 80,
-    "skillUpGreen": 115,
-    "skillUpGray": 150,
-    "learnedAt": 80,
-    "trainingCost": 0.025,
-    "reagents": {
-      "Wool Cloth": 1
-    },
-    "results": {
-      "Wool Bandage": 1
-    }
-  },
-  {
-    "name": "Anti-Venom",
-    "profession": "First Aid",
-    "skillUpOrange": 80,
-    "skillUpYellow": 80,
-    "skillUpGreen": 115,
-    "skillUpGray": 150,
-    "learnedAt": 80,
-    "trainingCost": 0.025,
-    "reagents": {
-      "Small Venom Sac": 1
-    },
-    "results": {
-      "Anti-Venom": 3
-    }
-  },
-  {
-    "name": "Cooked Crab Claw",
-    "profession": "Cooking",
-    "skillUpOrange": 85,
-    "skillUpYellow": 125,
-    "skillUpGreen": 145,
-    "skillUpGray": 165,
-    "learnedAt": 85,
-    "reagents": {
-      "Crawler Claw": 1,
-      "Mild Spices": 1
-    },
-    "results": {
-      "Cooked Crab Claw": 1
-    }
-  },
-  {
-    "name": "Savory Deviate Delight",
-    "profession": "Cooking",
-    "skillUpOrange": 85,
-    "skillUpYellow": 125,
-    "skillUpGreen": 145,
-    "skillUpGray": 165,
-    "learnedAt": 85,
-    "reagents": {
-      "Deviate Fish": 1,
-      "Mild Spices": 1
-    },
-    "results": {
-      "Savory Deviate Delight": 1
-    }
-  },
-  {
-    "name": "Murloc Fin Soup",
-    "profession": "Cooking",
-    "skillUpOrange": 90,
-    "skillUpYellow": 130,
-    "skillUpGreen": 150,
-    "skillUpGray": 170,
-    "learnedAt": 90,
-    "reagents": {
-      "Murloc Fin": 2,
-      "Hot Spices": 1
-    },
-    "results": {
-      "Murloc Fin Soup": 1
-    }
-  },
-  {
-    "name": "Dig Rat Stew",
-    "profession": "Cooking",
-    "skillUpOrange": 90,
-    "skillUpYellow": 130,
-    "skillUpGreen": 150,
-    "skillUpGray": 170,
-    "learnedAt": 90,
-    "reagents": {
-      "Dig Rat": 1
-    },
-    "results": {
-      "Dig Rat Stew": 2
-    }
-  },
-  {
-    "name": "Clam Chowder",
-    "profession": "Cooking",
-    "skillUpOrange": 90,
-    "skillUpYellow": 130,
-    "skillUpGreen": 150,
-    "skillUpGray": 170,
-    "learnedAt": 90,
-    "reagents": {
-      "Clam Meat": 1,
-      "Ice Cold Milk": 1,
-      "Mild Spices": 1
-    },
-    "results": {
-      "Clam Chowder": 1
-    }
-  },
-  {
-    "name": "Redridge Goulash",
-    "profession": "Cooking",
-    "skillUpOrange": 100,
-    "skillUpYellow": 135,
-    "skillUpGreen": 155,
-    "skillUpGray": 175,
-    "learnedAt": 100,
-    "reagents": {
-      "Crisp Spider Meat": 1,
-      "Tough Condor Meat": 1
-    },
-    "results": {
-      "Redridge Goulash": 1
-    }
-  },
-  {
-    "name": "Seasoned Wolf Kabob",
-    "profession": "Cooking",
-    "skillUpOrange": 100,
-    "skillUpYellow": 140,
-    "skillUpGreen": 160,
-    "skillUpGray": 180,
-    "learnedAt": 100,
-    "reagents": {
-      "Lean Wolf Flank": 2,
-      "Stormwind Seasoning Herbs": 1
-    },
-    "results": {
-      "Seasoned Wolf Kabob": 3
-    }
-  },
-  {
-    "name": "Crispy Lizard Tail",
-    "profession": "Cooking",
-    "skillUpOrange": 100,
-    "skillUpYellow": 140,
-    "skillUpGreen": 160,
-    "skillUpGray": 180,
-    "learnedAt": 100,
-    "reagents": {
-      "Thunder Lizard Tail": 1,
-      "Hot Spices": 1
-    },
-    "results": {
-      "Crispy Lizard Tail": 2
-    }
-  },
-  {
-    "name": "Bristle Whisker Catfish",
-    "profession": "Cooking",
-    "skillUpOrange": 100,
-    "skillUpYellow": 140,
-    "skillUpGreen": 160,
-    "skillUpGray": 180,
-    "learnedAt": 100,
-    "reagents": {
-      "Raw Bristle Whisker Catfish": 1
-    },
-    "results": {
-      "Bristle Whisker Catfish": 1
-    }
-  },
-  {
-    "name": "Succulent Pork Ribs",
-    "profession": "Cooking",
-    "skillUpOrange": 110,
-    "skillUpYellow": 130,
-    "skillUpGreen": 150,
-    "skillUpGray": 170,
-    "learnedAt": 110,
-    "reagents": {
-      "Boar Ribs": 2,
-      "Hot Spices": 1
-    },
-    "results": {
-      "Succulent Pork Ribs": 1
-    }
-  },
-  {
-    "name": "Gooey Spider Cake",
-    "profession": "Cooking",
-    "skillUpOrange": 110,
-    "skillUpYellow": 150,
-    "skillUpGreen": 170,
-    "skillUpGray": 190,
-    "learnedAt": 110,
-    "reagents": {
-      "Gooey Spider Leg": 2,
-      "Hot Spices": 1
-    },
-    "results": {
-      "Gooey Spider Cake": 1
-    }
-  },
-  {
-    "name": "Big Bear Steak",
-    "profession": "Cooking",
-    "skillUpOrange": 110,
-    "skillUpYellow": 150,
-    "skillUpGreen": 170,
-    "skillUpGray": 190,
-    "learnedAt": 110,
-    "reagents": {
-      "Big Bear Meat": 1,
-      "Hot Spices": 1
-    },
-    "results": {
-      "Big Bear Steak": 1
-    }
-  },
-  {
-    "name": "Lean Venison",
-    "profession": "Cooking",
-    "skillUpOrange": 110,
-    "skillUpYellow": 150,
-    "skillUpGreen": 170,
-    "skillUpGray": 190,
-    "learnedAt": 110,
-    "reagents": {
-      "Stag Meat": 1,
-      "Mild Spices": 4
-    },
-    "results": {
-      "Lean Venison": 2
-    }
-  },
-  {
-    "name": "Heavy Wool Bandage",
-    "profession": "First Aid",
-    "skillUpOrange": 115,
-    "skillUpYellow": 115,
-    "skillUpGreen": 150,
-    "skillUpGray": 185,
-    "learnedAt": 115,
-    "trainingCost": 0.1,
-    "reagents": {
-      "Wool Cloth": 2
-    },
-    "results": {
-      "Heavy Wool Bandage": 1
-    }
-  },
-  {
-    "name": "Crocolisk Gumbo",
-    "profession": "Cooking",
-    "skillUpOrange": 120,
-    "skillUpYellow": 160,
-    "skillUpGreen": 180,
-    "skillUpGray": 200,
-    "learnedAt": 120,
-    "reagents": {
-      "Tender Crocolisk Meat": 1,
-      "Hot Spices": 1
-    },
-    "results": {
-      "Crocolisk Gumbo": 1
-    }
-  },
-  {
-    "name": "Hot Lion Chops",
-    "profession": "Cooking",
-    "skillUpOrange": 125,
-    "skillUpYellow": 175,
-    "skillUpGreen": 195,
-    "skillUpGray": 215,
-    "learnedAt": 125,
-    "reagents": {
-      "Lion Meat": 1,
-      "Hot Spices": 1
-    },
-    "results": {
-      "Hot Lion Chops": 1
-    }
-  },
-  {
-    "name": "Goblin Deviled Clams",
-    "profession": "Cooking",
-    "skillUpOrange": 125,
-    "skillUpYellow": 165,
-    "skillUpGreen": 185,
-    "skillUpGray": 205,
-    "learnedAt": 125,
-    "trainingCost": 0.03,
-    "reagents": {
-      "Tangy Clam Meat": 1,
-      "Hot Spices": 1
-    },
-    "results": {
-      "Goblin Deviled Clams": 1
-    }
-  },
-  {
-    "name": "Lean Wolf Steak",
-    "profession": "Cooking",
-    "skillUpOrange": 125,
-    "skillUpYellow": 165,
-    "skillUpGreen": 185,
-    "skillUpGray": 205,
-    "learnedAt": 125,
-    "reagents": {
-      "Lean Wolf Flank": 1,
-      "Mild Spices": 1
-    },
-    "results": {
-      "Lean Wolf Steak": 1
-    }
-  },
-  {
-    "name": "Curiously Tasty Omelet",
-    "profession": "Cooking",
-    "skillUpOrange": 130,
-    "skillUpYellow": 170,
-    "skillUpGreen": 190,
-    "skillUpGray": 210,
-    "learnedAt": 130,
-    "reagents": {
-      "Raptor Egg": 1,
-      "Hot Spices": 1
-    },
-    "results": {
-      "Curiously Tasty Omelet": 1
-    }
-  },
-  {
-    "name": "Strong Anti-Venom",
-    "profession": "First Aid",
-    "skillUpOrange": 130,
-    "skillUpYellow": 130,
-    "skillUpGreen": 165,
-    "skillUpGray": 200,
-    "learnedAt": 130,
-    "reagents": {
-      "Large Venom Sac": 1
-    },
-    "results": {
-      "Strong Anti-Venom": 3
-    }
-  },
-  {
-    "name": "Tasty Lion Steak",
-    "profession": "Cooking",
-    "skillUpOrange": 150,
-    "skillUpYellow": 190,
-    "skillUpGreen": 210,
-    "skillUpGray": 230,
-    "learnedAt": 150,
-    "reagents": {
-      "Lion Meat": 2,
-      "Soothing Spices": 1
-    },
-    "results": {
-      "Tasty Lion Steak": 1
-    }
-  },
-  {
-    "name": "Heavy Crocolisk Stew",
-    "profession": "Cooking",
-    "skillUpOrange": 150,
-    "skillUpYellow": 160,
-    "skillUpGreen": 180,
-    "skillUpGray": 200,
-    "learnedAt": 150,
-    "reagents": {
-      "Tender Crocolisk Meat": 2,
-      "Soothing Spices": 1
-    },
-    "results": {
-      "Heavy Crocolisk Stew": 1
-    }
-  },
-  {
-    "name": "Silk Bandage",
-    "profession": "First Aid",
-    "skillUpOrange": 150,
-    "skillUpYellow": 150,
-    "skillUpGreen": 180,
-    "skillUpGray": 210,
-    "learnedAt": 150,
-    "trainingCost": 0.5,
-    "reagents": {
-      "Silk Cloth": 1
-    },
-    "results": {
-      "Silk Bandage": 1
-    }
-  },
-  {
-    "name": "Soothing Turtle Bisque",
-    "profession": "Cooking",
-    "skillUpOrange": 175,
-    "skillUpYellow": 215,
-    "skillUpGreen": 235,
-    "skillUpGray": 255,
-    "learnedAt": 175,
-    "reagents": {
-      "Turtle Meat": 1,
-      "Soothing Spices": 1
-    },
-    "results": {
-      "Soothing Turtle Bisque": 1
-    }
-  },
-  {
-    "name": "Barbecued Buzzard Wing",
-    "profession": "Cooking",
-    "skillUpOrange": 175,
-    "skillUpYellow": 215,
-    "skillUpGreen": 235,
-    "skillUpGray": 255,
-    "learnedAt": 175,
-    "trainingCost": 0.045,
-    "reagents": {
-      "Buzzard Wing": 1,
-      "Hot Spices": 1
-    },
-    "results": {
-      "Barbecued Buzzard Wing": 1
-    }
-  },
-  {
-    "name": "Giant Clam Scorcho",
-    "profession": "Cooking",
-    "skillUpOrange": 175,
-    "skillUpYellow": 215,
-    "skillUpGreen": 235,
-    "skillUpGray": 255,
-    "learnedAt": 175,
-    "reagents": {
-      "Giant Clam Meat": 1,
-      "Hot Spices": 1
-    },
-    "results": {
-      "Giant Clam Scorcho": 1
-    }
-  },
-  {
-    "name": "Rockscale Cod",
-    "profession": "Cooking",
-    "skillUpOrange": 175,
-    "skillUpYellow": 190,
-    "skillUpGreen": 210,
-    "skillUpGray": 230,
-    "learnedAt": 175,
-    "reagents": {
-      "Raw Rockscale Cod": 1
-    },
-    "results": {
-      "Rockscale Cod": 1
-    }
-  },
-  {
-    "name": "Goldthorn Tea",
-    "profession": "Cooking",
-    "skillUpOrange": 175,
-    "skillUpYellow": 215,
-    "skillUpGreen": 235,
-    "skillUpGray": 255,
-    "learnedAt": 175,
-    "reagents": {
-      "Goldthorn": 1,
-      "Refreshing Spring Water": 1
-    },
-    "results": {
-      "Goldthorn Tea": 4
-    }
-  },
-  {
-    "name": "Roast Raptor",
-    "profession": "Cooking",
-    "skillUpOrange": 175,
-    "skillUpYellow": 215,
-    "skillUpGreen": 235,
-    "skillUpGray": 255,
-    "learnedAt": 175,
-    "reagents": {
-      "Raptor Flesh": 1,
-      "Hot Spices": 1
-    },
-    "results": {
-      "Roast Raptor": 1
-    }
-  },
-  {
-    "name": "Hot Wolf Ribs",
-    "profession": "Cooking",
-    "skillUpOrange": 175,
-    "skillUpYellow": 215,
-    "skillUpGreen": 235,
-    "skillUpGray": 255,
-    "learnedAt": 175,
-    "reagents": {
-      "Red Wolf Meat": 1,
-      "Hot Spices": 1
-    },
-    "results": {
-      "Hot Wolf Ribs": 1
-    }
-  },
-  {
-    "name": "Jungle Stew",
-    "profession": "Cooking",
-    "skillUpOrange": 175,
-    "skillUpYellow": 215,
-    "skillUpGreen": 235,
-    "skillUpGray": 255,
-    "learnedAt": 175,
-    "reagents": {
-      "Tiger Meat": 1,
-      "Refreshing Spring Water": 1,
-      "Shiny Red Apple": 2
-    },
-    "results": {
-      "Jungle Stew": 2
-    }
-  },
-  {
-    "name": "Carrion Surprise",
-    "profession": "Cooking",
-    "skillUpOrange": 175,
-    "skillUpYellow": 215,
-    "skillUpGreen": 235,
-    "skillUpGray": 255,
-    "learnedAt": 175,
-    "reagents": {
-      "Mystery Meat": 1,
-      "Hot Spices": 1
-    },
-    "results": {
-      "Carrion Surprise": 1
-    }
-  },
-  {
-    "name": "Mystery Stew",
-    "profession": "Cooking",
-    "skillUpOrange": 175,
-    "skillUpYellow": 215,
-    "skillUpGreen": 235,
-    "skillUpGray": 255,
-    "learnedAt": 175,
-    "reagents": {
-      "Mystery Meat": 1,
-      "Skin of Dwarven Stout": 1
-    },
-    "results": {
-      "Mystery Stew": 1
-    }
-  },
-  {
-    "name": "Mithril Headed Trout",
-    "profession": "Cooking",
-    "skillUpOrange": 175,
-    "skillUpYellow": 215,
-    "skillUpGreen": 235,
-    "skillUpGray": 255,
-    "learnedAt": 175,
-    "reagents": {
-      "Raw Mithril Head Trout": 1
-    },
-    "results": {
-      "Mithril Head Trout": 1
-    }
-  },
-  {
-    "name": "Sagefish Delight",
-    "profession": "Cooking",
-    "skillUpOrange": 175,
-    "skillUpYellow": 215,
-    "skillUpGreen": 235,
-    "skillUpGray": 255,
-    "learnedAt": 175,
-    "reagents": {
-      "Raw Greater Sagefish": 1,
-      "Hot Spices": 1
-    },
-    "results": {
-      "Sagefish Delight": 1
-    }
-  },
-  {
-    "name": "Heavy Silk Bandage",
-    "profession": "First Aid",
-    "skillUpOrange": 180,
-    "skillUpYellow": 180,
-    "skillUpGreen": 210,
-    "skillUpGray": 240,
-    "learnedAt": 180,
-    "reagents": {
-      "Silk Cloth": 2
-    },
-    "results": {
-      "Heavy Silk Bandage": 1
-    }
-  },
-  {
-    "name": "Dragonbreath Chili",
-    "profession": "Cooking",
-    "skillUpOrange": 200,
-    "skillUpYellow": 240,
-    "skillUpGreen": 260,
-    "skillUpGray": 280,
-    "learnedAt": 200,
-    "reagents": {
-      "Mystery Meat": 1,
-      "Small Flame Sac": 1,
-      "Hot Spices": 1
-    },
-    "results": {
-      "Dragonbreath Chili": 1
-    }
-  },
-  {
-    "name": "Heavy Kodo Stew",
-    "profession": "Cooking",
-    "skillUpOrange": 200,
-    "skillUpYellow": 240,
-    "skillUpGreen": 260,
-    "skillUpGray": 280,
-    "learnedAt": 200,
-    "reagents": {
-      "Heavy Kodo Meat": 2,
-      "Soothing Spices": 1,
-      "Refreshing Spring Water": 1
-    },
-    "results": {
-      "Heavy Kodo Stew": 2
-    }
-  },
-  {
-    "name": "Spider Sausage",
-    "profession": "Cooking",
-    "skillUpOrange": 200,
-    "skillUpYellow": 240,
-    "skillUpGreen": 260,
-    "skillUpGray": 280,
-    "learnedAt": 200,
-    "trainingCost": 0.4,
-    "reagents": {
-      "White Spider Meat": 2
-    },
-    "results": {
-      "Spider Sausage": 1
-    }
-  },
-  {
-    "name": "Mageweave Bandage",
-    "profession": "First Aid",
-    "skillUpOrange": 210,
-    "skillUpYellow": 210,
-    "skillUpGreen": 240,
-    "skillUpGray": 270,
-    "learnedAt": 210,
-    "reagents": {
-      "Mageweave Cloth": 1
-    },
-    "results": {
-      "Mageweave Bandage": 1
-    }
-  },
-  {
-    "name": "Spiced Chili Crab",
-    "profession": "Cooking",
-    "skillUpOrange": 225,
-    "skillUpYellow": 265,
-    "skillUpGreen": 285,
-    "skillUpGray": 305,
-    "learnedAt": 225,
-    "reagents": {
-      "Tender Crab Meat": 1,
-      "Hot Spices": 2
-    },
-    "results": {
-      "Spiced Chili Crab": 1
-    }
-  },
-  {
-    "name": "Monster Omelet",
-    "profession": "Cooking",
-    "skillUpOrange": 225,
-    "skillUpYellow": 265,
-    "skillUpGreen": 285,
-    "skillUpGray": 305,
-    "learnedAt": 225,
-    "reagents": {
-      "Giant Egg": 1,
-      "Soothing Spices": 2
-    },
-    "results": {
-      "Monster Omelet": 1
-    }
-  },
-  {
-    "name": "Spotted Yellowtail",
-    "profession": "Cooking",
-    "skillUpOrange": 225,
-    "skillUpYellow": 265,
-    "skillUpGreen": 285,
-    "skillUpGray": 305,
-    "learnedAt": 225,
-    "reagents": {
-      "Raw Spotted Yellowtail": 1
-    },
-    "results": {
-      "Spotted Yellowtail": 1
-    }
-  },
-  {
-    "name": "Cooked Glossy Mightfish",
-    "profession": "Cooking",
-    "skillUpOrange": 225,
-    "skillUpYellow": 265,
-    "skillUpGreen": 285,
-    "skillUpGray": 305,
-    "learnedAt": 225,
-    "reagents": {
-      "Raw Glossy Mightfish": 1,
-      "Soothing Spices": 1
-    },
-    "results": {
-      "Cooked Glossy Mightfish": 1
-    }
-  },
-  {
-    "name": "Filet of Redgill",
-    "profession": "Cooking",
-    "skillUpOrange": 225,
-    "skillUpYellow": 265,
-    "skillUpGreen": 285,
-    "skillUpGray": 305,
-    "learnedAt": 225,
-    "reagents": {
-      "Raw Redgill": 1
-    },
-    "results": {
-      "Filet of Redgill": 1
-    }
-  },
-  {
-    "name": "Undermine Clam Chowder",
-    "profession": "Cooking",
-    "skillUpOrange": 225,
-    "skillUpYellow": 265,
-    "skillUpGreen": 285,
-    "skillUpGray": 305,
-    "learnedAt": 225,
-    "reagents": {
-      "Zesty Clam Meat": 2,
-      "Hot Spices": 1,
-      "Ice Cold Milk": 1
-    },
-    "results": {
-      "Undermine Clam Chowder": 2
-    }
-  },
-  {
-    "name": "Tender Wolf Steak",
-    "profession": "Cooking",
-    "skillUpOrange": 225,
-    "skillUpYellow": 265,
-    "skillUpGreen": 285,
-    "skillUpGray": 305,
-    "learnedAt": 225,
-    "reagents": {
-      "Tender Wolf Meat": 1,
-      "Soothing Spices": 1
-    },
-    "results": {
-      "Tender Wolf Steak": 1
-    }
-  },
-  {
-    "name": "Grilled Squid",
-    "profession": "Cooking",
-    "skillUpOrange": 240,
-    "skillUpYellow": 280,
-    "skillUpGreen": 300,
-    "skillUpGray": 320,
-    "learnedAt": 240,
-    "reagents": {
-      "Winter Squid": 1,
-      "Soothing Spices": 1
-    },
-    "results": {
-      "Grilled Squid": 1
-    }
-  },
-  {
-    "name": "Hot Smoked Bass",
-    "profession": "Cooking",
-    "skillUpOrange": 240,
-    "skillUpYellow": 280,
-    "skillUpGreen": 300,
-    "skillUpGray": 320,
-    "learnedAt": 240,
-    "reagents": {
-      "Raw Summer Bass": 1,
-      "Hot Spices": 2
-    },
-    "results": {
-      "Hot Smoked Bass": 1
-    }
-  },
-  {
-    "name": "Heavy Mageweave Bandage",
-    "profession": "First Aid",
-    "skillUpOrange": 240,
-    "skillUpYellow": 240,
-    "skillUpGreen": 270,
-    "skillUpGray": 300,
-    "learnedAt": 240,
-    "reagents": {
-      "Mageweave Cloth": 2
-    },
-    "results": {
-      "Heavy Mageweave Bandage": 1
-    }
-  },
-  {
-    "name": "Nightfin Soup",
-    "profession": "Cooking",
-    "skillUpOrange": 250,
-    "skillUpYellow": 290,
-    "skillUpGreen": 310,
-    "skillUpGray": 330,
-    "learnedAt": 250,
-    "reagents": {
-      "Raw Nightfin Snapper": 1,
-      "Refreshing Spring Water": 1
-    },
-    "results": {
-      "Nightfin Soup": 1
-    }
-  },
-  {
-    "name": "Poached Sunscale Salmon",
-    "profession": "Cooking",
-    "skillUpOrange": 250,
-    "skillUpYellow": 290,
-    "skillUpGreen": 310,
-    "skillUpGray": 330,
-    "learnedAt": 250,
-    "reagents": {
-      "Raw Sunscale Salmon": 1
-    },
-    "results": {
-      "Poached Sunscale Salmon": 1
-    }
-  },
-  {
-    "name": "Runecloth Bandage",
-    "profession": "First Aid",
-    "skillUpOrange": 260,
-    "skillUpYellow": 260,
-    "skillUpGreen": 290,
-    "skillUpGray": 320,
-    "learnedAt": 260,
-    "reagents": {
-      "Runecloth": 1
-    },
-    "results": {
-      "Runecloth Bandage": 1
-    }
-  },
-  {
-    "name": "Lobster Stew",
-    "profession": "Cooking",
-    "skillUpOrange": 275,
-    "skillUpYellow": 315,
-    "skillUpGreen": 335,
-    "skillUpGray": 355,
-    "learnedAt": 275,
-    "reagents": {
-      "Darkclaw Lobster": 1,
-      "Refreshing Spring Water": 1
-    },
-    "results": {
-      "Lobster Stew": 1
-    }
-  },
-  {
-    "name": "Mightfish Steak",
-    "profession": "Cooking",
-    "skillUpOrange": 275,
-    "skillUpYellow": 315,
-    "skillUpGreen": 335,
-    "skillUpGray": 355,
-    "learnedAt": 275,
-    "reagents": {
-      "Large Raw Mightfish": 1,
-      "Hot Spices": 1,
-      "Soothing Spices": 1
-    },
-    "results": {
-      "Mightfish Steak": 1
-    }
-  },
-  {
-    "name": "Baked Salmon",
-    "profession": "Cooking",
-    "skillUpOrange": 275,
-    "skillUpYellow": 315,
-    "skillUpGreen": 335,
-    "skillUpGray": 355,
-    "learnedAt": 275,
-    "reagents": {
-      "Raw Whitescale Salmon": 1,
-      "Soothing Spices": 1
-    },
-    "results": {
-      "Baked Salmon": 1
-    }
-  },
-  {
-    "name": "Runn Tum Tuber Surprise",
-    "profession": "Cooking",
-    "skillUpOrange": 275,
-    "skillUpYellow": 315,
-    "skillUpGreen": 335,
-    "skillUpGray": 355,
-    "learnedAt": 275,
-    "reagents": {
-      "Runn Tum Tuber": 1,
-      "Soothing Spices": 1
-    },
-    "results": {
-      "Runn Tum Tuber Surprise": 1
-    }
-  },
-  {
-    "name": "Smoked Desert Dumplings",
-    "profession": "Cooking",
-    "skillUpOrange": 285,
-    "skillUpYellow": 325,
-    "skillUpGreen": 345,
-    "skillUpGray": 365,
-    "learnedAt": 285,
-    "reagents": {
-      "Sandworm Meat": 1,
-      "Soothing Spices": 1
-    },
-    "results": {
-      "Smoked Desert Dumplings": 1
-    }
-  },
-  {
-    "name": "Heavy Runecloth Bandage",
-    "profession": "First Aid",
-    "skillUpOrange": 290,
-    "skillUpYellow": 290,
-    "skillUpGreen": 320,
-    "skillUpGray": 350,
-    "learnedAt": 290,
-    "reagents": {
-      "Runecloth": 2
-    },
-    "results": {
-      "Heavy Runecloth Bandage": 1
-    }
-  },
-  {
-    "name": "Dirge's Kickin' Chimaerok Chops",
-    "profession": "Cooking",
-    "skillUpOrange": 300,
-    "skillUpYellow": 325,
-    "skillUpGreen": 345,
-    "skillUpGray": 365,
-    "learnedAt": 300,
-    "reagents": {
-      "Hot Spices": 1,
-      "Goblin Rocket Fuel": 1,
-      "Deeprock Salt": 1,
-      "Chimaerok Tenderloin": 1
-    },
-    "results": {
-      "Dirge's Kickin' Chimaerok Chops": 5
-    }
-  },
-  {
-    "name": "Powerful Anti-Venom",
-    "profession": "First Aid",
-    "skillUpOrange": 300,
-    "skillUpYellow": 300,
-    "skillUpGreen": 330,
-    "skillUpGray": 360,
-    "learnedAt": 300,
-    "reagents": {
-      "Huge Venom Sac": 1
-    },
-    "results": {
-      "Powerful Anti-Venom": 1
     }
   }
 ]

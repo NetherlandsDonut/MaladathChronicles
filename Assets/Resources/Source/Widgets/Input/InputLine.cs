@@ -29,9 +29,9 @@ public class InputLine : MonoBehaviour
     {
         cursor.SetCursor(CursorType.None);
         UnityEngine.Cursor.lockState = CursorLockMode.Locked;
-        inputLineMarker = marker;
         inputLineName = text.inputLine.name;
         inputDestination = text.inputLine.text.text;
+        inputLineMarker = marker == 0 ? text.inputLine.text.text.value.Length : marker;
         region.regionGroup.window.Respawn();
     }
 
@@ -458,7 +458,11 @@ public class InputLine : MonoBehaviour
         {
             if (CDesktop.title == "ObjectManagerItems")
             {
-                Item.item.price = double.Parse(foo.Value());
+                Item.item.price = int.Parse(foo.Value());
+            }
+            else if (CDesktop.title == "ObjectManagerMounts")
+            {
+                Mount.mount.price = int.Parse(foo.Value());
             }
         }
         else if (foo == itemPower)
@@ -591,7 +595,7 @@ public class InputLine : MonoBehaviour
             }
             else if (foo.Value().StartsWith("money"))
             {
-                var amount = double.Parse(foo.Value().Substring(5));
+                var amount = int.Parse(foo.Value().Substring(5));
                 currentSave.player.inventory.money += amount;
             }
             else if (foo.Value().StartsWith("addtime"))

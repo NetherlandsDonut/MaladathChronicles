@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 public class Mount
@@ -29,7 +30,7 @@ public class Mount
     public int speed;
 
     //Price of the mount
-    public float price;
+    public int price;
 
     //List of abilities provided by the mount
     public List<string> abilities;

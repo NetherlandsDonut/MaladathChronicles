@@ -5975,7 +5975,7 @@ public class Blueprint
                     icon = "ItemEgg03",
                     type = "Miscellaneous",
                     rarity = "Common",
-                    price = 0.0001
+                    price = 1
                 };
                 items.Add(item);
                 itemsSearch = items.FindAll(x => x.name.ToLower().Contains(String.search.Value().ToLower()));
@@ -7488,6 +7488,8 @@ public class Blueprint
                 mounts.Add(mount);
                 mountsSearch = mounts.FindAll(x => x.name.ToLower().Contains(String.search.Value().ToLower()));
                 String.objectName.Set(mount.name);
+                String.price.Set(mount.price + "");
+                String.mountSpeed.Set(mount.speed + "");
                 Respawn("ObjectManagerMount");
                 h.window.Respawn();
             });
@@ -7514,6 +7516,11 @@ public class Blueprint
                     Assets.assets.mountIconsSearch = Assets.assets.mountIcons;
                     list = SpawnWindowBlueprint("ObjectManagerMountIconList");
                 }
+            });
+            AddPaddingRegion(() =>
+            {
+                AddLine("Price:", "DarkGray");
+                AddInputLine(String.price);
             });
             AddPaddingRegion(() => { AddLine("Speed:", "DarkGray"); });
             AddPaddingRegion(() => { AddInputLine(String.mountSpeed); });

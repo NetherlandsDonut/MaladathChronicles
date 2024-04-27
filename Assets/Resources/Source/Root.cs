@@ -462,19 +462,13 @@ public static class Root
         CDesktop.LBWindow.LBRegionGroup.LBRegion.backgroundImage = Resources.Load<Sprite>(path);
     }
 
-    public static void PrintPriceRegion(double price)
+    public static void PrintPriceRegion(int price)
     {
         int width = CDesktop.LBWindow.LBRegionGroup.setWidth;
         var lacking = 0;
-        if ((int)price > 0)
-            Foo("ItemCoinsGold", (int)price + "", "Gold");
-        else lacking++;
-        if ((int)(price * 100 % 100) > 0)
-            Foo("ItemCoinsSilver", (int)(price * 100 % 100) + "", "Silver");
-        else lacking++;
-        if ((int)(price * 10000 % 100) > 0 || price == 0)
-            Foo("ItemCoinsCopper", (int)(price * 10000 % 100) + "", "Copper");
-        else lacking++;
+        if (price > 9999) Foo("ItemCoinsGold", price / 10000 + "", "Gold"); else lacking++;
+        if (price > 99) Foo("ItemCoinsSilver", price / 100 % 100 + "", "Silver"); else lacking++;
+        if (price % 100 > 0 || price == 0) Foo("ItemCoinsCopper", price % 100 + "", "Copper"); else lacking++;
         AddRegionGroup();
         SetRegionGroupWidth(width - (3 - lacking) * 52);
         AddPaddingRegion(() => { AddLine(""); });

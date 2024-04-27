@@ -7,7 +7,7 @@
       "player": {
         "level": 1,
         "experience": 20,
-        "name": "Jennine",
+        "name": "Delaney",
         "race": "Human",
         "spec": "Mage",
         "gender": "Female",
@@ -47,7 +47,7 @@
           }
         },
         "inventory": {
-          "money": 1.0,
+          "money": 25773,
           "items": [
             {
               "rarity": "Common",
@@ -71,7 +71,7 @@
               "ilvl": 55,
               "lvl": 1,
               "maxStack": 1,
-              "price": 0.875,
+              "price": 8750,
               "bagSpace": 8,
               "stats": {
                 "stats": {}
@@ -92,7 +92,7 @@
             "minDamage": 3,
             "maxDamage": 5,
             "maxStack": 1,
-            "price": 0.0009,
+            "price": 9,
             "speed": 2.9,
             "stats": {
               "stats": {}
@@ -106,7 +106,7 @@
             "ilvl": 1,
             "lvl": 1,
             "maxStack": 1,
-            "price": 0.0001,
+            "price": 1,
             "stats": {
               "stats": {}
             }
@@ -121,7 +121,7 @@
             "lvl": 1,
             "armor": 2,
             "maxStack": 1,
-            "price": 0.0001,
+            "price": 1,
             "stats": {
               "stats": {}
             }
@@ -136,7 +136,7 @@
             "lvl": 1,
             "armor": 3,
             "maxStack": 1,
-            "price": 0.0001,
+            "price": 1,
             "stats": {
               "stats": {}
             }
@@ -152,7 +152,7 @@
       "elitesKilled": {},
       "siteVisits": {
         "Northshire Abbey": 1,
-        "Goldshire": 2
+        "Goldshire": 0
       },
       "unlockedAreas": [],
       "vendorStock": {
@@ -233,14 +233,10 @@
           }
         ]
       },
-      "buyback": {
-        "items": [],
-        "bags": []
-      },
-      "startDate": "2024-04-27T04:12:43.1078047+02:00",
-      "lastLoaded": "2024-04-27T05:08:32.8617229+02:00",
-      "lastPlayed": "2024-04-27T05:08:48.9838178+02:00",
-      "timePlayed": "00:00:19.4511517"
+      "startDate": "2024-04-27T13:26:34.6371625+02:00",
+      "lastLoaded": "2024-04-27T13:34:58.4444729+02:00",
+      "lastPlayed": "2024-04-27T13:35:08.7388715+02:00",
+      "timePlayed": "00:00:37.8142472"
     }
   ]
 }

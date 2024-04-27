@@ -97,6 +97,9 @@ public class PersonType
     //Indicates whether this person type has different icons depending on faction
     public bool factionVariant;
 
+    //Range of the profession recipes this person can teach the player
+    public int skillCap;
+
     //EXTERNAL FILE: List containing all person types in-game
     public static List<PersonType> personTypes;
 }

@@ -142,7 +142,7 @@ public class Item
     public List<string> specs;
     
     //Price of the item for it to be bought, the sell price is 1/4 of that
-    public double price;
+    public int price;
 
     //Weapon attack speed
     public double speed;
@@ -394,22 +394,81 @@ public class Item
             {
                 if (currentSave.player.inventory.CanAddItem(item))
                 {
-                    if (buyback != null && currentSave.player.inventory.money >= item.price)
+                    if (buyback != null)
                     {
-                        PlaySound("DesktopTransportPay");
-                        currentSave.buyback.items.Remove(item);
-                        currentSave.player.inventory.AddItem(item);
-                        currentSave.player.inventory.money -= item.price;
-                        Respawn("Inventory");
+                        if (item.amount > 1 && Input.GetKey(KeyCode.LeftShift))
+                        {
+                            String.splitAmount.Set("1");
+                            SpawnWindowBlueprint("SplitItem");
+                            CDesktop.LBWindow.LBRegionGroup.LBRegion.inputLine.Activate();
+                            splitDelegate = () =>
+                            {
+                                var amount = int.Parse(String.splitAmount.value == "" ? "0" : String.splitAmount.value);
+                                if (amount <= 0) return;
+                                if (amount > item.amount) amount = item.amount;
+                                if (currentSave.player.inventory.money >= item.price * amount)
+                                {
+                                    PlaySound("DesktopTransportPay");
+                                    if (amount == item.amount)
+                                    {
+                                        currentSave.buyback.items.Remove(item);
+                                        currentSave.player.inventory.AddItem(item);
+                                    }
+                                    else
+                                    {
+                                        currentSave.player.inventory.AddItem(item.CopyItem(amount));
+                                        item.amount -= amount;
+                                    }
+                                    currentSave.player.inventory.money -= item.price * amount;
+                                    Respawn("Inventory");
+                                    Respawn("VendorBuyback");
+                                    Respawn("ExperienceBar");
+                                }
+                            };
+                        }
+                        else if (currentSave.player.inventory.money >= item.price * item.amount)
+                        {
+                            PlaySound("DesktopTransportPay");
+                            currentSave.buyback.items.Remove(item);
+                            currentSave.player.inventory.AddItem(item);
+                            currentSave.player.inventory.money -= item.price * item.amount;
+                            Respawn("Inventory");
+                        }
                     }
-                    else if (stockItem != null && stockItem.amount > 0 && currentSave.player.inventory.money >= item.price * 4)
+                    else if (stockItem != null && stockItem.amount > 0)
                     {
-                        PlaySound("DesktopTransportPay");
-                        stockItem.amount -= 1;
-                        if (stockItem.minutesLeft == 0) stockItem.minutesLeft = stockItem.restockSpeed;
-                        currentSave.player.inventory.AddItem(item.CopyItem(1));
-                        currentSave.player.inventory.money -= item.price * 4;
-                        Respawn("Inventory");
+                        if (item.amount > 1 && Input.GetKey(KeyCode.LeftShift))
+                        {
+                            String.splitAmount.Set(item.amount + "");
+                            SpawnWindowBlueprint("SplitItem");
+                            CDesktop.LBWindow.LBRegionGroup.LBRegion.inputLine.Activate();
+                            splitDelegate = () =>
+                            {
+                                var amount = int.Parse(String.splitAmount.value == "" ? "0" : String.splitAmount.value);
+                                if (amount <= 0) return;
+                                if (amount > item.amount) amount = item.amount;
+                                if (currentSave.player.inventory.money >= item.price * amount * 4)
+                                {
+                                    PlaySound("DesktopTransportPay");
+                                    stockItem.amount -= amount;
+                                    if (stockItem.minutesLeft == 0) stockItem.minutesLeft = stockItem.restockSpeed;
+                                    currentSave.player.inventory.AddItem(item.CopyItem(amount));
+                                    currentSave.player.inventory.money -= item.price * amount * 4;
+                                    Respawn("Inventory");
+                                    Respawn("Vendor");
+                                    Respawn("ExperienceBar");
+                                }
+                            };
+                        }
+                        else if (currentSave.player.inventory.money >= item.price * 4)
+                        {
+                            PlaySound("DesktopTransportPay");
+                            stockItem.amount -= 1;
+                            if (stockItem.minutesLeft == 0) stockItem.minutesLeft = stockItem.restockSpeed;
+                            currentSave.player.inventory.AddItem(item.CopyItem(1));
+                            currentSave.player.inventory.money -= item.price * 4;
+                            Respawn("Inventory");
+                        }
                     }
                 }
             },
@@ -433,45 +492,46 @@ public class Item
             {
                 if (CDesktop.windows.Exists(x => x.title.StartsWith("Vendor")))
                 {
-                    if (item.amount > 1 && Input.GetKey(KeyCode.LeftShift))
-                    {
-                        String.splitAmount.Set("");
-                        SpawnWindowBlueprint("SplitItem");
-                        CDesktop.LBWindow.LBRegionGroup.LBRegion.inputLine.Activate();
-                        splitDelegate = () =>
+                    if (item.price > 0)
+                        if (item.amount > 1 && Input.GetKey(KeyCode.LeftShift))
                         {
-                            var amount = int.Parse(String.splitAmount.value == "" ? "0" : String.splitAmount.value);
-                            if (amount <= 0) return;
+                            String.splitAmount.Set("1");
+                            SpawnWindowBlueprint("SplitItem");
+                            CDesktop.LBWindow.LBRegionGroup.LBRegion.inputLine.Activate();
+                            splitDelegate = () =>
+                            {
+                                var amount = int.Parse(String.splitAmount.value == "" ? "0" : String.splitAmount.value);
+                                if (amount <= 0) return;
+                                PlaySound("DesktopTransportPay");
+                                if (amount > item.amount) amount = item.amount;
+                                currentSave.buyback ??= new(true);
+                                if (amount == item.amount)
+                                {
+                                    currentSave.buyback.AddItem(item);
+                                    currentSave.player.inventory.items.Remove(item);
+                                }
+                                else
+                                {
+                                    currentSave.buyback.AddItem(item.CopyItem(amount));
+                                    item.amount -= amount;
+                                }
+                                currentSave.player.inventory.money += item.price * amount;
+                                Respawn("Inventory");
+                                CloseWindow("Vendor");
+                                Respawn("VendorBuyback");
+                                Respawn("ExperienceBar");
+                            };
+                        }
+                        else
+                        {
                             PlaySound("DesktopTransportPay");
-                            if (amount > item.amount) amount = item.amount;
                             currentSave.buyback ??= new(true);
-                            if (amount == item.amount)
-                            {
-                                currentSave.buyback.AddItem(item);
-                                currentSave.player.inventory.items.Remove(item);
-                            }
-                            else
-                            {
-                                currentSave.buyback.AddItem(item.CopyItem(amount));
-                                item.amount -= amount;
-                            }
-                            currentSave.player.inventory.money += item.price * amount;
-                            Respawn("Inventory");
+                            currentSave.player.inventory.money += item.price * item.amount;
+                            currentSave.buyback.AddItem(item);
+                            currentSave.player.inventory.items.Remove(item);
                             CloseWindow("Vendor");
                             Respawn("VendorBuyback");
-                        };
-                    }
-                    else
-                    {
-                        PlaySound("DesktopTransportPay");
-                        currentSave.buyback ??= new(true);
-                        currentSave.buyback.AddItem(item);
-                        currentSave.player.inventory.items.Remove(item);
-                        currentSave.player.inventory.money += item.price * item.amount;
-                        Respawn("Inventory");
-                        CloseWindow("Vendor");
-                        Respawn("VendorBuyback");
-                    }
+                        }
                 }
                 else if (CDesktop.windows.Exists(x => x.title == "Bank"))
                 {
@@ -479,7 +539,7 @@ public class Item
                     {
                         if (item.amount > 1 && Input.GetKey(KeyCode.LeftShift))
                         {
-                            String.splitAmount.Set("");
+                            String.splitAmount.Set("1");
                             SpawnWindowBlueprint("SplitItem");
                             CDesktop.LBWindow.LBRegionGroup.LBRegion.inputLine.Activate();
                             splitDelegate = () =>
@@ -500,6 +560,7 @@ public class Item
                                 }
                                 Respawn("Inventory");
                                 Respawn("Bank");
+                                Respawn("ExperienceBar");
                             };
                         }
                         else
@@ -554,7 +615,7 @@ public class Item
             AddBigButtonOverlay(settings.newSlotIndicators.Value() ? "OtherItemNewSlot" : "OtherItemUpgrade", 0, 2);
         else if (settings.upgradeIndicators.Value() && item.CanEquip(currentSave.player) && currentSave.player.IsItemAnUpgrade(item))
             AddBigButtonOverlay("OtherItemUpgrade", 0, 2);
-        if (item.amount > 1)
+        if (item.maxStack > 1)
             SpawnFloatingText(CDesktop.LBWindow.LBRegionGroup.LBRegion.transform.position + new Vector3(32, -27) + new Vector3(38, 0) * (currentSave.player.inventory.items.IndexOf(item) % 5), item.amount + "", "", "Right");
     }
 
@@ -703,7 +764,7 @@ public class Item
                 AddText(item.lvl + "", ColorItemRequiredLevel(item.lvl));
             });
         if (item.price > 0)
-            PrintPriceRegion(item.price * priceMultiplier);
+            PrintPriceRegion((int)(item.price * priceMultiplier));
     }
 
     public Item CopyItem(int amount = 1)

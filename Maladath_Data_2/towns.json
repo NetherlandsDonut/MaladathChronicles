@@ -105,6 +105,12 @@
         "gender": "Male",
         "race": "Human",
         "type": "Banker"
+      },
+      {
+        "name": "Georgio Bolero",
+        "gender": "Male",
+        "race": "Human",
+        "type": "Artisan Tailor"
       }
     ],
     "x": 260,
@@ -397,6 +403,18 @@
         "gender": "Male",
         "race": "Human",
         "type": "Stable Master"
+      },
+      {
+        "name": "Timothy Worthington",
+        "gender": "Male",
+        "race": "Human",
+        "type": "Master Tailor"
+      },
+      {
+        "name": "Alchemist Narett",
+        "gender": "Male",
+        "race": "Human",
+        "type": "Expert Alchemist"
       }
     ],
     "x": 124,

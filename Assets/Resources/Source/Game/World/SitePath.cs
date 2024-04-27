@@ -39,7 +39,7 @@ public class SitePath
     public string means;
 
     //Price of taking this path
-    public double price;
+    public int price;
 
     //Time required to take this path
     public int fixedDuration;

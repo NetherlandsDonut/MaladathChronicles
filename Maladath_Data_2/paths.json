@@ -41,7 +41,7 @@
       "Undercity"
     ],
     "means": "Zeppelin",
-    "price": 1.5,
+    "price": 15000,
     "spacing": 9999,
     "points": [
       {
@@ -60,7 +60,7 @@
       "Orgrimmar"
     ],
     "means": "Zeppelin",
-    "price": 1.5,
+    "price": 15000,
     "spacing": 9999,
     "points": [
       {
@@ -79,7 +79,7 @@
       "Ratchet"
     ],
     "means": "Ship",
-    "price": 1.5,
+    "price": 15000,
     "spacing": 9999,
     "points": [
       {

@@ -21,7 +21,7 @@ public class Inventory
     }
 
     //Amount of money in the bags
-    public double money;
+    public int money;
 
     //If true, functions don't look at empty space in bags
     public bool ignoreSpaceChecks;
@@ -56,7 +56,7 @@ public class Inventory
         if (item.amount > 0 && (ignoreSpaceChecks || items.Count < BagSpace()))
         {
             items.Add(item.CopyItem(item.amount));
-            item.amount = 0;
+            return true;
         }
         return item.amount == 0;
     }

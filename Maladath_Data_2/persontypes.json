@@ -95,34 +95,148 @@
     "category": "Class Trainer"
   },
   {
-    "type": "Leatherworker",
+    "type": "Master Leatherworker",
     "icon": "TradeLeatherWorking",
-    "category": "Profession Trainer"
+    "category": "Profession Trainer",
+    "skillCap": 255
   },
   {
-    "type": "Blacksmith",
+    "type": "Artisan Leatherworker",
+    "icon": "TradeLeatherWorking",
+    "category": "Profession Trainer",
+    "skillCap": 225
+  },
+  {
+    "type": "Expert Leatherworker",
+    "icon": "TradeLeatherWorking",
+    "category": "Profession Trainer",
+    "skillCap": 150
+  },
+  {
+    "type": "Journeyman Leatherworker",
+    "icon": "TradeLeatherWorking",
+    "category": "Profession Trainer",
+    "skillCap": 75
+  },
+  {
+    "type": "Master Blacksmith",
     "icon": "TradeBlacksmithing",
-    "category": "Profession Trainer"
+    "category": "Profession Trainer",
+    "skillCap": 255
   },
   {
-    "type": "Alchemist",
+    "type": "Artisan Blacksmith",
+    "icon": "TradeBlacksmithing",
+    "category": "Profession Trainer",
+    "skillCap": 225
+  },
+  {
+    "type": "Expert Blacksmith",
+    "icon": "TradeBlacksmithing",
+    "category": "Profession Trainer",
+    "skillCap": 150
+  },
+  {
+    "type": "Journeyman Blacksmith",
+    "icon": "TradeBlacksmithing",
+    "category": "Profession Trainer",
+    "skillCap": 75
+  },
+  {
+    "type": "Master Alchemist",
     "icon": "TradeAlchemy",
-    "category": "Profession Trainer"
+    "category": "Profession Trainer",
+    "skillCap": 255
   },
   {
-    "type": "Tailor",
+    "type": "Artisan Alchemist",
+    "icon": "TradeAlchemy",
+    "category": "Profession Trainer",
+    "skillCap": 225
+  },
+  {
+    "type": "Expert Alchemist",
+    "icon": "TradeAlchemy",
+    "category": "Profession Trainer",
+    "skillCap": 150
+  },
+  {
+    "type": "Journeyman Alchemist",
+    "icon": "TradeAlchemy",
+    "category": "Profession Trainer",
+    "skillCap": 75
+  },
+  {
+    "type": "Master Tailor",
     "icon": "TradeTailoring",
-    "category": "Profession Trainer"
+    "category": "Profession Trainer",
+    "skillCap": 255
   },
   {
-    "type": "Enchanter",
+    "type": "Artisan Tailor",
+    "icon": "TradeTailoring",
+    "category": "Profession Trainer",
+    "skillCap": 225
+  },
+  {
+    "type": "Expert Tailor",
+    "icon": "TradeTailoring",
+    "category": "Profession Trainer",
+    "skillCap": 150
+  },
+  {
+    "type": "Journeyman Tailor",
+    "icon": "TradeTailoring",
+    "category": "Profession Trainer",
+    "skillCap": 75
+  },
+  {
+    "type": "Master Enchanter",
     "icon": "TradeEnchanting",
-    "category": "Profession Trainer"
+    "category": "Profession Trainer",
+    "skillCap": 255
   },
   {
-    "type": "Engineer",
+    "type": "Artisan Enchanter",
+    "icon": "TradeEnchanting",
+    "category": "Profession Trainer",
+    "skillCap": 225
+  },
+  {
+    "type": "Expert Enchanter",
+    "icon": "TradeEnchanting",
+    "category": "Profession Trainer",
+    "skillCap": 150
+  },
+  {
+    "type": "Journeyman Enchanter",
+    "icon": "TradeEnchanting",
+    "category": "Profession Trainer",
+    "skillCap": 75
+  },
+  {
+    "type": "Master Engineer",
     "icon": "TradeEngineering",
-    "category": "Profession Trainer"
+    "category": "Profession Trainer",
+    "skillCap": 255
+  },
+  {
+    "type": "Artisan Engineer",
+    "icon": "TradeEngineering",
+    "category": "Profession Trainer",
+    "skillCap": 225
+  },
+  {
+    "type": "Expert Engineer",
+    "icon": "TradeEngineering",
+    "category": "Profession Trainer",
+    "skillCap": 150
+  },
+  {
+    "type": "Journeyman Engineer",
+    "icon": "TradeEngineering",
+    "category": "Profession Trainer",
+    "skillCap": 75
   },
   {
     "type": "Portal Trainer",
