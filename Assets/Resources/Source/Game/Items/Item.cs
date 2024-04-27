@@ -131,6 +131,9 @@ public class Item
     //Amount of this item
     public int amount;
 
+    //Drop range, it's automatic if set to default
+    public string dropRange;
+
     //Max amount of this item per stack
     public int maxStack;
 
@@ -381,8 +384,7 @@ public class Item
         );
         if (settings.rarityIndicators.Value())
             AddBigButtonOverlay("OtherRarity" + item.rarity + (settings.bigRarityIndicators.Value() ? "Big" : ""), 0, 2);
-        if (item.amount > 1)
-            SpawnFloatingText(CDesktop.LBWindow.LBRegionGroup.LBRegion.transform.position + new Vector3(32, -27) + new Vector3(38, 0) * (currentSave.banks[town.name].items.IndexOf(item) % 5), item.amount + "", "", "Right");
+        if (item.maxStack > 1) SpawnFloatingText(CDesktop.LBWindow.LBRegionGroup.LBRegion.transform.position + new Vector3(32, -27) + new Vector3(38, 0) * (currentSave.banks[town.name].items.IndexOf(item) % 5), item.amount + "", "", "Right");
     }
 
     public static void PrintVendorItem(StockItem stockItem, Item buyback)
@@ -481,7 +483,7 @@ public class Item
         if (settings.rarityIndicators.Value())
             AddBigButtonOverlay("OtherRarity" + item.rarity + (settings.bigRarityIndicators.Value() ? "Big" : ""), 0, 2);
         if (item.amount == 0) SetBigButtonToGrayscale();
-        SpawnFloatingText(CDesktop.LBWindow.LBRegionGroup.LBRegion.transform.position + new Vector3(32, -27) + new Vector3(38, 0) * (buyback != null ? currentSave.buyback.items.IndexOf(buyback) : (currentSave.vendorStock[town.name + ":" + Person.person.name].FindIndex(x => x.item == item.name)) % 5), item.amount + "", "", "Right");
+        if (item.maxStack > 1) SpawnFloatingText(CDesktop.LBWindow.LBRegionGroup.LBRegion.transform.position + new Vector3(32, -27) + new Vector3(38, 0) * ((buyback != null ? currentSave.buyback.items.IndexOf(buyback) : currentSave.vendorStock[town.name + ":" + Person.person.name].FindIndex(x => x.item == item.name)) % 5), item.amount + "", "", "Right");
     }
 
     public static void PrintInventoryItem(Item item)
@@ -615,8 +617,7 @@ public class Item
             AddBigButtonOverlay(settings.newSlotIndicators.Value() ? "OtherItemNewSlot" : "OtherItemUpgrade", 0, 2);
         else if (settings.upgradeIndicators.Value() && item.CanEquip(currentSave.player) && currentSave.player.IsItemAnUpgrade(item))
             AddBigButtonOverlay("OtherItemUpgrade", 0, 2);
-        if (item.maxStack > 1)
-            SpawnFloatingText(CDesktop.LBWindow.LBRegionGroup.LBRegion.transform.position + new Vector3(32, -27) + new Vector3(38, 0) * (currentSave.player.inventory.items.IndexOf(item) % 5), item.amount + "", "", "Right");
+        if (item.maxStack > 1) SpawnFloatingText(CDesktop.LBWindow.LBRegionGroup.LBRegion.transform.position + new Vector3(32, -27) + new Vector3(38, 0) * (currentSave.player.inventory.items.IndexOf(item) % 5), item.amount + "", "", "Right");
     }
 
     public static void PrintLootItem(Item item)
@@ -660,8 +661,7 @@ public class Item
             AddBigButtonOverlay(settings.newSlotIndicators.Value() ? "OtherItemNewSlot" : "OtherItemUpgrade", 0, 2);
         else if (settings.upgradeIndicators.Value() && item.CanEquip(currentSave.player) && currentSave.player.IsItemAnUpgrade(item))
             AddBigButtonOverlay("OtherItemUpgrade", 0, 2);
-        if (item.amount > 1)
-            SpawnFloatingText(CDesktop.LBWindow.LBRegionGroup.LBRegion.transform.position + new Vector3(32, -27) + new Vector3(38, 0) * Board.board.results.inventory.items.IndexOf(item), item.amount + "", "", "Right");
+        if (item.maxStack > 1) SpawnFloatingText(CDesktop.LBWindow.LBRegionGroup.LBRegion.transform.position + new Vector3(32, -27) + new Vector3(38, 0) * Board.board.results.inventory.items.IndexOf(item), item.amount + "", "", "Right");
     }
 
     public static void PrintItemTooltip(Item item, bool compare = false, double priceMultiplier = 1)
@@ -773,8 +773,6 @@ public class Item
         newItem.amount = amount;
         return newItem;
     }
-
-    public static Item GetItem(string name) => items.Find(x => x.name == name);
 
     //Currently opened item
     public static Item item;

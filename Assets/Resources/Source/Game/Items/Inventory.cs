@@ -17,7 +17,7 @@ public class Inventory
     public Inventory(List<string> items)
     {
         bags = new();
-        this.items = items.Select(x => Item.GetItem(x)).ToList();
+        this.items = items.Select(x => Item.items.Find(y => y.name == x).CopyItem(1)).ToList();
     }
 
     //Amount of money in the bags

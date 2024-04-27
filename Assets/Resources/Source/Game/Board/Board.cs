@@ -286,8 +286,8 @@ public class Board
                 SwitchDesktop("HostileArea");
             CDesktop.RespawnAll();
 
-            var directDrop = enemyRace.droppedItems.Select(x => Item.GetItem(x)).ToList();
-            var worldDrop = Item.items.FindAll(x => x.lvl >= enemy.level - 6 && x.lvl <= enemy.level && x.source == "Rare Drop");
+            var directDrop = enemyRace.droppedItems.Select(x => Item.items.Find(y => y.name == x)).ToList();
+            var worldDrop = Item.items.FindAll(x => (x.dropRange == null && x.lvl >= enemy.level - 6 && x.lvl <= enemy.level || x.dropRange != null && enemy.level >= int.Parse(x.dropRange.Split('-')[0]) && enemy.level <= int.Parse(x.dropRange.Split('-')[1])) && x.source == "Rare Drop");
             var instance = area.instancePart ? SiteInstance.instances.Find(x => x.wings.Any(y => y.areas.Any(z => z["AreaName"] == area.name))) : null;
             var zoneDrop = instance == null || instance.zoneDrop == null ? new() : Item.items.FindAll(x => instance.zoneDrop.Contains(x.name));
             var everything = zoneDrop.Concat(worldDrop).Where(x => x.CanEquip(currentSave.player));

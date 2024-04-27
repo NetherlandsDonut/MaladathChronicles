@@ -6,8 +6,8 @@
     {
       "player": {
         "level": 1,
-        "experience": 20,
-        "name": "Delaney",
+        "experience": 40,
+        "name": "Lisette",
         "race": "Human",
         "spec": "Mage",
         "gender": "Female",
@@ -47,7 +47,7 @@
           }
         },
         "inventory": {
-          "money": 25773,
+          "money": 21563,
           "items": [
             {
               "rarity": "Common",
@@ -55,6 +55,7 @@
               "icon": "itemmiscrune01",
               "type": "Miscellaneous",
               "ilvl": 1,
+              "amount": 1,
               "maxStack": 1,
               "stats": {
                 "stats": {}
@@ -70,6 +71,8 @@
               "source": "Rare Drop",
               "ilvl": 55,
               "lvl": 1,
+              "amount": 1,
+              "dropRange": "47-60",
               "maxStack": 1,
               "price": 8750,
               "bagSpace": 8,
@@ -91,6 +94,7 @@
             "lvl": 1,
             "minDamage": 3,
             "maxDamage": 5,
+            "amount": 1,
             "maxStack": 1,
             "price": 9,
             "speed": 2.9,
@@ -105,6 +109,7 @@
             "type": "Feet",
             "ilvl": 1,
             "lvl": 1,
+            "amount": 1,
             "maxStack": 1,
             "price": 1,
             "stats": {
@@ -120,6 +125,7 @@
             "ilvl": 1,
             "lvl": 1,
             "armor": 2,
+            "amount": 1,
             "maxStack": 1,
             "price": 1,
             "stats": {
@@ -135,6 +141,7 @@
             "ilvl": 1,
             "lvl": 1,
             "armor": 3,
+            "amount": 1,
             "maxStack": 1,
             "price": 1,
             "stats": {
@@ -143,8 +150,8 @@
           }
         }
       },
-      "minute": 3,
-      "second": 30,
+      "minute": 8,
+      "second": 38,
       "currentSite": "Goldshire",
       "siteProgress": {},
       "commonsKilled": {},
@@ -152,45 +159,52 @@
       "elitesKilled": {},
       "siteVisits": {
         "Northshire Abbey": 1,
-        "Goldshire": 0
+        "Goldshire": 7,
+        "Crystal Lake": 2
       },
       "unlockedAreas": [],
       "vendorStock": {
         "Goldshire:Toddrick": [
           {
             "item": "Tough Jerky",
-            "amount": 5,
+            "amount": 3,
             "maxAmount": 5,
+            "minutesLeft": 25,
             "restockSpeed": 30
           },
           {
             "item": "Haunch of Meat",
-            "amount": 5,
+            "amount": 2,
             "maxAmount": 5,
+            "minutesLeft": 25,
             "restockSpeed": 30
           },
           {
             "item": "Mutton Chop",
-            "amount": 5,
+            "amount": 3,
             "maxAmount": 5,
+            "minutesLeft": 25,
             "restockSpeed": 30
           },
           {
             "item": "Wild Hog Shank",
-            "amount": 5,
+            "amount": 2,
             "maxAmount": 5,
+            "minutesLeft": 25,
             "restockSpeed": 30
           },
           {
             "item": "Cured Ham Steak",
-            "amount": 5,
+            "amount": 4,
             "maxAmount": 5,
+            "minutesLeft": 25,
             "restockSpeed": 30
           },
           {
             "item": "Roasted Quail",
-            "amount": 5,
+            "amount": 4,
             "maxAmount": 5,
+            "minutesLeft": 25,
             "restockSpeed": 30
           }
         ],
@@ -233,10 +247,100 @@
           }
         ]
       },
-      "startDate": "2024-04-27T13:26:34.6371625+02:00",
-      "lastLoaded": "2024-04-27T13:34:58.4444729+02:00",
-      "lastPlayed": "2024-04-27T13:35:08.7388715+02:00",
-      "timePlayed": "00:00:37.8142472"
+      "buyback": {
+        "ignoreSpaceChecks": true,
+        "items": [
+          {
+            "rarity": "Common",
+            "name": "Cured Ham Steak",
+            "icon": "itemmiscfood14",
+            "type": "Miscellaneous",
+            "source": "Rare Drop",
+            "ilvl": 45,
+            "amount": 1,
+            "maxStack": 20,
+            "price": 100,
+            "stats": {
+              "stats": {}
+            }
+          },
+          {
+            "rarity": "Common",
+            "name": "Wild Hog Shank",
+            "icon": "itemmiscfood13",
+            "type": "Miscellaneous",
+            "source": "Rare Drop",
+            "ilvl": 35,
+            "amount": 3,
+            "maxStack": 20,
+            "price": 50,
+            "stats": {
+              "stats": {}
+            }
+          },
+          {
+            "rarity": "Common",
+            "name": "Roasted Quail",
+            "icon": "itemmiscfood15",
+            "type": "Miscellaneous",
+            "source": "Rare Drop",
+            "ilvl": 55,
+            "amount": 1,
+            "maxStack": 20,
+            "price": 200,
+            "stats": {
+              "stats": {}
+            }
+          },
+          {
+            "rarity": "Common",
+            "name": "Mutton Chop",
+            "icon": "itemmiscfood14",
+            "type": "Miscellaneous",
+            "source": "Rare Drop",
+            "ilvl": 25,
+            "amount": 2,
+            "maxStack": 20,
+            "price": 25,
+            "stats": {
+              "stats": {}
+            }
+          },
+          {
+            "rarity": "Common",
+            "name": "Tough Jerky",
+            "icon": "itemmiscfood16",
+            "type": "Miscellaneous",
+            "source": "Quest",
+            "ilvl": 5,
+            "amount": 2,
+            "maxStack": 20,
+            "price": 1,
+            "stats": {
+              "stats": {}
+            }
+          },
+          {
+            "rarity": "Common",
+            "name": "Haunch of Meat",
+            "icon": "itemmiscfood18",
+            "type": "Miscellaneous",
+            "source": "Rare Drop",
+            "ilvl": 15,
+            "amount": 3,
+            "maxStack": 20,
+            "price": 6,
+            "stats": {
+              "stats": {}
+            }
+          }
+        ],
+        "bags": []
+      },
+      "startDate": "2024-04-27T16:31:59.5832995+02:00",
+      "lastLoaded": "2024-04-27T16:46:18.0306167+02:00",
+      "lastPlayed": "2024-04-27T16:49:49.6999253+02:00",
+      "timePlayed": "00:06:51.0238455"
     }
   ]
 }

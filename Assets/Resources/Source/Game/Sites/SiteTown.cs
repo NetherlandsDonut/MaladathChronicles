@@ -53,7 +53,7 @@ public class SiteTown : Site
                         if (transportationConnectedToSite.ContainsKey(name))
                         {
                             var transportOptions = transportationConnectedToSite[name];
-                            AddHeaderRegion(() => { AddLine("Transportation:"); });
+                            AddPaddingRegion(() => { AddLine("Transportation:"); });
                             foreach (var transport in transportOptions)
                             {
                                 var desitnationName = transport.sites.Find(x => x != name);
@@ -92,7 +92,7 @@ public class SiteTown : Site
                         if (people != null)
                         {
                             var groups = people.GroupBy(x => x.category);
-                            AddHeaderRegion(() => { AddLine("Points of interest:"); });
+                            AddPaddingRegion(() => { AddLine("Points of interest:", "Gray"); });
                             foreach (var group in groups)
                                 if (group.Count() == 1)
                                     foreach (var person in group)
@@ -122,7 +122,6 @@ public class SiteTown : Site
                                     (h) =>
                                     {
                                         PersonCategory.personCategory = group.Key;
-                                        CloseWindow(h.window.title);
                                         CloseWindow("Person");
                                         Respawn("Persons");
                                         PlaySound("DesktopInstanceOpen");

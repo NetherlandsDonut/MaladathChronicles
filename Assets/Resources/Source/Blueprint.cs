@@ -1661,7 +1661,7 @@ public class Blueprint
             AddPaddingRegion(() => SetRegionAsGroupExtender());
         }, true),
         new("Vendor", () => {
-            currentSave.buyback ??= new();
+            currentSave.buyback ??= new(true);
             SetAnchor(TopLeft, 0, -19);
             AddHeaderGroup();
             SetRegionGroupWidth(190);
@@ -1681,7 +1681,10 @@ public class Blueprint
             });
             AddHeaderRegion(() =>
             {
-                AddLine("");
+                var type = personTypes.Find(x => x.type == person.type);
+                AddLine(person.type + " ", "Gray");
+                AddText(person.name);
+                AddSmallButton(type.icon + (type.factionVariant ? factions.Find(x => x.name == town.faction).side : ""), (h) => { });
             });
             for (int i = 0; i < 7; i++)
             {
@@ -1701,7 +1704,7 @@ public class Blueprint
             AddPaddingRegion(() => AddLine("Merchant", "", "Center"));
             AddRegionGroup();
             SetRegionGroupWidth(95);
-            AddButtonRegion(() => AddLine("Buyback", "", "Center"), (h) => { CloseWindow("Vendor"); CloseWindow("VendorSort"); SpawnWindowBlueprint("VendorBuyback"); });
+            AddButtonRegion(() => AddLine("Buyback", "", "Center"), (h) => { CloseWindow("Vendor"); SpawnWindowBlueprint("VendorBuyback"); PlaySound("VendorSwitchTab"); });
         }, true),
         new("VendorBuyback", () => {
             SetAnchor(TopLeft, 0, -19);
@@ -1723,7 +1726,10 @@ public class Blueprint
             });
             AddHeaderRegion(() =>
             {
-                AddLine("");
+                var type = personTypes.Find(x => x.type == person.type);
+                AddLine(person.type + " ", "Gray");
+                AddText(person.name);
+                AddSmallButton(type.icon + (type.factionVariant ? factions.Find(x => x.name == town.faction).side : ""), (h) => { });
             });
             for (int i = 0; i < 7; i++)
             {
@@ -1739,13 +1745,13 @@ public class Blueprint
             }
             AddRegionGroup();
             SetRegionGroupWidth(95);
-            AddButtonRegion(() => AddLine("Merchant", "", "Center"), (h) => { CloseWindow("VendorBuyback"); SpawnWindowBlueprint("Vendor"); });
+            AddButtonRegion(() => AddLine("Merchant", "", "Center"), (h) => { CloseWindow("VendorBuyback"); SpawnWindowBlueprint("Vendor"); PlaySound("VendorSwitchTab"); });
             AddRegionGroup();
             SetRegionGroupWidth(95);
             AddPaddingRegion(() => AddLine("Buyback", "", "Center"));
         }, true),
         new("CharacterInfoEquipment", () => {
-            currentSave.buyback ??= new();
+            currentSave.buyback ??= new(true);
             SetAnchor(TopLeft, 0, -19);
             AddHeaderGroup();
             SetRegionGroupWidth(190);
@@ -1824,7 +1830,7 @@ public class Blueprint
             {
                 AddLine(person.type + " ", "Gray");
                 AddText(person.name);
-                AddSmallButton(type.icon + (type.category == "Battlemaster" ? factions.Find(x => x.name == town.faction).side : ""), (h) => { });
+                AddSmallButton(type.icon + (type.factionVariant ? factions.Find(x => x.name == town.faction).side : ""), (h) => { });
             });
             if (type.category == "Trainer")
             {
@@ -2885,22 +2891,21 @@ public class Blueprint
             });
         }),
         new("Persons", () => {
-            SetAnchor(TopRight, -19, -38);
+            SetAnchor(TopRight, -19, -57);
             AddRegionGroup();
             SetRegionGroupWidth(171);
-            AddHeaderRegion(() =>
+            AddPaddingRegion(() =>
             {
-                AddLine(town.name);
-                AddSmallButton("OtherClose",
+                AddLine(personCategory.category + "s:", "Gray");
+                AddSmallButton("OtherReverse",
                 (h) =>
                 {
+                    personCategory = null;
                     CloseWindow(h.window.title);
-                    SpawnWindowBlueprint("Town: " + town.name);
                     PlaySound("DesktopInstanceClose");
                 });
             });
             var people = town.people.FindAll(x => x.category == personCategory);
-            AddHeaderRegion(() => { AddLine(personCategory + "s:"); });
             foreach (var person in people)
             {
                 var personType = personTypes.Find(x => x.type == person.type);
@@ -2917,7 +2922,7 @@ public class Blueprint
                     PlaySound("DesktopInstanceOpen");
                 });
             }
-        }),
+        }, true),
 
         #region Dev Panel
 
@@ -8247,6 +8252,19 @@ public class Blueprint
             SpawnWindowBlueprint("MapToolbarStatusRight");
             SpawnWindowBlueprint("ExperienceBar");
             SpawnWindowBlueprint("Town: " + town.name);
+            AddHotkey(Tab, () =>
+            {
+                if (CloseWindow("Vendor"))
+                {
+                    PlaySound("VendorSwitchTab");
+                    Respawn("VendorBuyback");
+                }
+                else if (CloseWindow("VendorBuyback"))
+                {
+                    PlaySound("VendorSwitchTab");
+                    Respawn("Vendor");
+                }
+            });
             AddHotkey(Escape, () =>
             {
                 if (CloseWindow("MountList"))
