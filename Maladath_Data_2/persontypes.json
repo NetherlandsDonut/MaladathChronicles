@@ -1,157 +1,158 @@
 [
   {
-    "name": "Butcher",
+    "type": "Butcher",
     "icon": "ItemMiscFood13",
-    "type": "Vendor"
+    "category": "Vendor"
   },
   {
-    "name": "Meat Vendor",
+    "type": "Meat Vendor",
     "icon": "ItemMiscFood13",
-    "type": "Vendor"
+    "category": "Vendor"
   },
   {
-    "name": "Food Vendor",
+    "type": "Food Vendor",
     "icon": "ItemMiscFood11",
-    "type": "Vendor"
+    "category": "Vendor"
   },
   {
-    "name": "General Goods",
+    "type": "General Goods",
     "icon": "ItemBox01",
-    "type": "Vendor"
+    "category": "Vendor"
   },
   {
-    "name": "Trade Goods",
+    "type": "Trade Goods",
     "icon": "ItemCrate05",
-    "type": "Vendor"
+    "category": "Vendor"
   },
   {
-    "name": "Bag Vendor",
+    "type": "Bag Vendor",
     "icon": "ItemMiscBag07",
-    "type": "Vendor"
+    "category": "Vendor"
   },
   {
-    "name": "Cloth Armor Merchant",
+    "type": "Cloth Armor Merchant",
     "icon": "ItemChestCloth21",
-    "type": "Vendor"
+    "category": "Vendor"
   },
   {
-    "name": "Leather Armor Merchant",
+    "type": "Leather Armor Merchant",
     "icon": "ItemChestLeather02",
-    "type": "Vendor"
+    "category": "Vendor"
   },
   {
-    "name": "Heavy Armor Merchant",
+    "type": "Heavy Armor Merchant",
     "icon": "ItemChestPlate04",
-    "type": "Vendor"
+    "category": "Vendor"
   },
   {
-    "name": "Weapon Merchant",
+    "type": "Weapon Merchant",
     "icon": "ItemAxe01",
-    "type": "Vendor"
+    "category": "Vendor"
   },
   {
-    "name": "Warrior Trainer",
+    "type": "Warrior Trainer",
     "icon": "ClassWarrior",
-    "type": "Trainer"
+    "category": "Class Trainer"
   },
   {
-    "name": "Paladin Trainer",
+    "type": "Paladin Trainer",
     "icon": "ClassPaladin",
-    "type": "Trainer"
+    "category": "Class Trainer"
   },
   {
-    "name": "Shaman Trainer",
+    "type": "Shaman Trainer",
     "icon": "ClassShaman",
-    "type": "Trainer"
+    "category": "Class Trainer"
   },
   {
-    "name": "Mage Trainer",
+    "type": "Mage Trainer",
     "icon": "ClassMage",
-    "type": "Trainer"
+    "category": "Class Trainer"
   },
   {
-    "name": "Warlock Trainer",
+    "type": "Warlock Trainer",
     "icon": "ClassWarlock",
-    "type": "Trainer"
+    "category": "Class Trainer"
   },
   {
-    "name": "Priest Trainer",
+    "type": "Priest Trainer",
     "icon": "ClassPriest",
-    "type": "Trainer"
+    "category": "Class Trainer"
   },
   {
-    "name": "Druid Trainer",
+    "type": "Druid Trainer",
     "icon": "ClassDruid",
-    "type": "Trainer"
+    "category": "Class Trainer"
   },
   {
-    "name": "Rogue Trainer",
+    "type": "Rogue Trainer",
     "icon": "ClassRogue",
-    "type": "Trainer"
+    "category": "Class Trainer"
   },
   {
-    "name": "Hunter Trainer",
+    "type": "Hunter Trainer",
     "icon": "ClassHunter",
-    "type": "Trainer"
+    "category": "Class Trainer"
   },
   {
-    "name": "Leatherworker",
+    "type": "Leatherworker",
     "icon": "TradeLeatherWorking",
-    "type": "Crafter"
+    "category": "Profession Trainer"
   },
   {
-    "name": "Blacksmith",
+    "type": "Blacksmith",
     "icon": "TradeBlacksmithing",
-    "type": "Crafter"
+    "category": "Profession Trainer"
   },
   {
-    "name": "Alchemist",
+    "type": "Alchemist",
     "icon": "TradeAlchemy",
-    "type": "Crafter"
+    "category": "Profession Trainer"
   },
   {
-    "name": "Tailor",
+    "type": "Tailor",
     "icon": "TradeTailoring",
-    "type": "Crafter"
+    "category": "Profession Trainer"
   },
   {
-    "name": "Enchanter",
+    "type": "Enchanter",
     "icon": "TradeEnchanting",
-    "type": "Crafter"
+    "category": "Profession Trainer"
   },
   {
-    "name": "Engineer",
+    "type": "Engineer",
     "icon": "TradeEngineering",
-    "type": "Crafter"
+    "category": "Profession Trainer"
   },
   {
-    "name": "Portal Trainer",
+    "type": "Portal Trainer",
     "icon": "TradeTrainerClass",
-    "type": "Trainer"
+    "category": "Class Trainer"
   },
   {
-    "name": "Banker",
+    "type": "Banker",
     "icon": "TradeBank",
-    "type": "Banker"
+    "category": "Banker"
   },
   {
-    "name": "Flight Master",
+    "type": "Flight Master",
     "icon": "TradeFlightMaster",
-    "type": "Other"
+    "category": "Flight Master"
   },
   {
-    "name": "Battlemaster",
+    "type": "Battlemaster",
     "icon": "TradeBattlemaster",
-    "type": "Battlemaster"
+    "category": "Battlemaster",
+    "factionVariant": "True"
   },
   {
-    "name": "Innkeeper",
+    "type": "Innkeeper",
     "icon": "TradeInnkeeper",
-    "type": "Innkeeper"
+    "category": "Innkeeper"
   },
   {
-    "name": "Stable Master",
+    "type": "Stable Master",
     "icon": "TradeStableMaster",
-    "type": "StableMaster"
+    "category": "Stable Master"
   }
 ]

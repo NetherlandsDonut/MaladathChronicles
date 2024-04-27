@@ -143,6 +143,8 @@ public class Starter : MonoBehaviour
         Realm.realms ??= new();
         Deserialize(ref PersonType.personTypes, "persontypes", false, prefix);
         PersonType.personTypes ??= new();
+        Deserialize(ref PersonCategory.personCategories, "personcategories", false, prefix);
+        PersonCategory.personCategories ??= new();
         Deserialize(ref Spec.specs, "specs", false, prefix);
         Spec.specs ??= new();
         Deserialize(ref Race.races, "races", false, prefix);

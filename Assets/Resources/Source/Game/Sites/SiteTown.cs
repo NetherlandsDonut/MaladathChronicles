@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using System.Collections.Generic;
 
 using UnityEngine;
@@ -18,11 +19,8 @@ public class SiteTown : Site
     //and remove empty collections to avoid serialising them later
     public override void Initialise()
     {
-        //if (people != null && people.Exists(x => x.type == "Flight Master"))
-        //{
-        //    var sites = flightPathGroups.FindAll(x => x.sitesConnected.Contains(name)).SelectMany(x => x.sitesConnected).Distinct().ToList().FindAll(x => x != name).Select(x => new Transport() { means = "Flight", destination = x }).ToList();
-        //    flightPaths = sites.Count == 0 ? new() : sites.OrderBy(x => factions.Find(z => z.name == towns.Find(y => y.name == x.destination).faction).Icon()).ThenBy(x => x.destination).ToList();
-        //}
+        if (people != null)
+            people.ForEach(x => x.Initialise());
         if (faction != null)
             if (!factions.Exists(x => x.name == faction))
                 factions.Insert(0, new Faction()
@@ -93,33 +91,43 @@ public class SiteTown : Site
                         }
                         if (people != null)
                         {
+                            var groups = people.GroupBy(x => x.category);
                             AddHeaderRegion(() => { AddLine("Points of interest:"); });
-                            foreach (var person in people)
-                            {
-                                var personType = PersonType.personTypes.Find(x => x.name == person.type);
-                                if (personType.type == "Battlemaster")
+                            foreach (var group in groups)
+                                if (group.Count() == 1)
+                                    foreach (var person in group)
+                                    {
+                                        var personType = PersonType.personTypes.Find(x => x.type == person.type);
+                                        AddButtonRegion(() =>
+                                        {
+                                            AddLine(person.name, "Black");
+                                            AddSmallButton(personType != null ? personType.icon + (personType.factionVariant ? factions.Find(x => x.name == faction).side : "") : "OtherUnknown", (h) => { });
+                                        },
+                                        (h) =>
+                                        {
+                                            Person.person = person;
+                                            CloseWindow(h.window.title);
+                                            Respawn("Person");
+                                            PlaySound("DesktopInstanceOpen");
+                                        });
+                                    }
+                                else
+                                {
+                                    var person = group.First();
                                     AddButtonRegion(() =>
                                     {
-                                        AddLine(person.name, "Black");
-                                        AddSmallButton(personType.icon + factions.Find(x => x.name == faction).side, (h) => { });
+                                        AddLine(group.Key.category + "s (" + group.Count() + ")", "Black");
+                                        AddSmallButton(person.category != null ? person.category.icon + (person.category.factionVariant ? factions.Find(x => x.name == faction).side : "") : "OtherUnknown", (h) => { });
                                     },
                                     (h) =>
                                     {
-                                        Person.person = person;
-                                        Respawn("Person");
+                                        PersonCategory.personCategory = group.Key;
+                                        CloseWindow(h.window.title);
+                                        CloseWindow("Person");
+                                        Respawn("Persons");
+                                        PlaySound("DesktopInstanceOpen");
                                     });
-                                else if (personType.type != "Other" && (!person.type.Contains("Trainer") || person.type.Contains(currentSave.player.spec) || currentSave.player.spec == "Mage" && person.type.Contains("Portal")))
-                                    AddButtonRegion(() =>
-                                    {
-                                        AddLine(person.name, "Black");
-                                        AddSmallButton(personType != null ? personType.icon : "OtherUnknown", (h) => { });
-                                    },
-                                    (h) =>
-                                    {
-                                        Person.person = person;
-                                        Respawn("Person");
-                                    });
-                            }
+                                }
                         }
                     }
                 )

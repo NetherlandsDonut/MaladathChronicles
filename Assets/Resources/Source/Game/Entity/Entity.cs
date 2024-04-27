@@ -32,7 +32,7 @@ public class Entity
         for (int i = 0; i < 0; i++)
         {
             Item item;
-            do item = Item.items[random.Next(Item.items.Count)];
+            do item = Item.items[random.Next(Item.items.Count)].CopyItem();
             while (!item.CanEquip(this) || item.lvl - level < -5 || item.lvl > level);
             inventory.items.Add(item);
         }

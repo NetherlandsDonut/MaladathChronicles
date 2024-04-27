@@ -212,7 +212,7 @@ public class Window : MonoBehaviour
             int extendOffset = 0;
             CDesktop.LBWindow.LBRegionGroup = regionGroup;
             int index = CDesktop.LBWindow.regionGroups.IndexOf(regionGroup);
-            if (index != -1 && paginations?.Count > index)
+            if (index != -1 && paginations?.Count > index + (headerGroup != null ? 1 : 0))
                 if (regionGroup.maxPagination() < paginations[index + (headerGroup != null ? 1 : 0)]) regionGroup.pagination = regionGroup.maxPagination() - 1;
                 else regionGroup.pagination = paginations[index + (headerGroup != null ? 1 : 0)];
             else if (headerGroup == regionGroup && paginations?.Count > 0)

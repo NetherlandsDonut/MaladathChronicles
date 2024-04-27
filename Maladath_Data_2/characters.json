@@ -5,223 +5,10 @@
   "Whitemane": [
     {
       "player": {
-        "level": 13,
-        "experience": 7680,
-        "name": "Delaney",
-        "race": "Human",
-        "spec": "Priest",
-        "gender": "Female",
-        "abilities": {
-          "Staff Proficiency": 1,
-          "Cloth Proficiency": 1,
-          "One Handed Mace Proficiency": 1,
-          "Off Hand Proficiency": 1,
-          "Dagger Proficiency": 1,
-          "Wand Proficiency": 1,
-          "Smite": 0,
-          "Power Word: Shield": 0,
-          "Shadow Word: Pain": 0,
-          "Spell Warding": 0,
-          "Holy Fire": 0,
-          "Spiritual Guidance": 0,
-          "Holy Nova": 0,
-          "Renew": 0,
-          "Healing Focus": 0,
-          "Lesser Heal": 0,
-          "Heal": 0,
-          "Blessed Recovery": 0,
-          "Spiritual Healing": 0,
-          "Searing Light": 0,
-          "Holy Bolts": 0
-        },
-        "actionBars": [
-          "Smite",
-          "Power Word: Shield",
-          "Shadow Word: Pain",
-          "Holy Fire",
-          "Holy Bolts"
-        ],
-        "stats": {
-          "stats": {
-            "Stamina": 6,
-            "Strength": 6,
-            "Agility": 6,
-            "Intellect": 6,
-            "Spirit": 0,
-            "Earth Mastery": 1,
-            "Fire Mastery": 3,
-            "Air Mastery": 2,
-            "Water Mastery": 1,
-            "Frost Mastery": 2,
-            "Lightning Mastery": 1,
-            "Arcane Mastery": 3,
-            "Decay Mastery": 1,
-            "Shadow Mastery": 2,
-            "Order Mastery": 3
-          }
-        },
-        "inventory": {
-          "items": [
-            {
-              "rarity": "Common",
-              "name": "Hearthstone",
-              "icon": "itemmiscrune01",
-              "type": "Miscellaneous",
-              "ilvl": 1,
-              "maxStack": 1,
-              "stats": {
-                "stats": {}
-              }
-            },
-            {
-              "rarity": "Common",
-              "name": "Linen Cloth",
-              "icon": "itemfabriclinen01",
-              "type": "Trade Good",
-              "source": "Rare Drop",
-              "ilvl": 5,
-              "lvl": 1,
-              "amount": 16,
-              "maxStack": 20,
-              "price": 0.0013,
-              "stats": {
-                "stats": {}
-              }
-            },
-            {
-              "rarity": "Common",
-              "name": "Wool Cloth",
-              "icon": "itemfabricwool01",
-              "type": "Trade Good",
-              "source": "Rare Drop",
-              "ilvl": 15,
-              "lvl": 1,
-              "amount": 3,
-              "maxStack": 20,
-              "price": 0.0033,
-              "stats": {
-                "stats": {}
-              }
-            }
-          ],
-          "bags": [
-            {
-              "rarity": "Uncommon",
-              "name": "Traveler's Backpack",
-              "icon": "itemmiscbag08",
-              "type": "Bag",
-              "source": "Rare Drop",
-              "ilvl": 55,
-              "lvl": 1,
-              "maxStack": 1,
-              "price": 0.875,
-              "bagSpace": 8,
-              "stats": {
-                "stats": {}
-              }
-            }
-          ]
-        },
-        "mounts": [],
-        "equipment": {
-          "Main Hand": {
-            "rarity": "Common",
-            "name": "Worn Mace",
-            "icon": "itemmace03",
-            "detailedType": "Mace",
-            "type": "One Handed",
-            "ilvl": 2,
-            "lvl": 1,
-            "minDamage": 1,
-            "maxDamage": 3,
-            "maxStack": 1,
-            "price": 0.0007,
-            "speed": 1.9,
-            "stats": {
-              "stats": {}
-            }
-          },
-          "Feet": {
-            "rarity": "Common",
-            "name": "Neophyte's Boots",
-            "icon": "itemboots04",
-            "type": "Feet",
-            "ilvl": 1,
-            "lvl": 1,
-            "maxStack": 1,
-            "price": 0.0001,
-            "stats": {
-              "stats": {}
-            }
-          },
-          "Legs": {
-            "rarity": "Poor",
-            "name": "Neophyte's Pants",
-            "icon": "itempants02",
-            "type": "Legs",
-            "armorClass": "Cloth",
-            "ilvl": 1,
-            "lvl": 1,
-            "armor": 2,
-            "maxStack": 1,
-            "price": 0.0001,
-            "stats": {
-              "stats": {}
-            }
-          },
-          "Chest": {
-            "rarity": "Poor",
-            "name": "Neophyte's Robe",
-            "icon": "itemchestcloth13",
-            "type": "Chest",
-            "armorClass": "Cloth",
-            "ilvl": 1,
-            "lvl": 1,
-            "armor": 3,
-            "maxStack": 1,
-            "price": 0.0001,
-            "stats": {
-              "stats": {}
-            }
-          }
-        }
-      },
-      "minute": 8,
-      "second": 52,
-      "currentSite": "The Dagger Hills",
-      "siteProgress": {
-        "Northshire Valley": 4,
-        "Defias Hideout": 2
-      },
-      "commonsKilled": {
-        "Young Wolf": 3,
-        "Kobold Vermin": 1,
-        "Defias Evoker": 1,
-        "Defias Overseer": 1
-      },
-      "raresKilled": {},
-      "elitesKilled": {},
-      "siteVisits": {
-        "Northshire Abbey": 2,
-        "Northshire Valley": 5,
-        "The Deadmines": 3,
-        "Moonbrook": 0,
-        "Stendel's Pond": 0,
-        "The Dagger Hills": 2
-      },
-      "unlockedAreas": [],
-      "startDate": "2024-04-20T16:57:39.4594058+02:00",
-      "lastLoaded": "2024-04-26T13:54:00.1066058+02:00",
-      "lastPlayed": "2024-04-26T14:14:48.7225449+02:00",
-      "timePlayed": "00:25:59.3427456",
-      "lastVisitedTalents": 2
-    },
-    {
-      "player": {
         "level": 1,
-        "experience": 40,
-        "name": "Lixui",
-        "race": "Pandaren",
+        "experience": 20,
+        "name": "Jennine",
+        "race": "Human",
         "spec": "Mage",
         "gender": "Female",
         "abilities": {
@@ -247,19 +34,20 @@
             "Agility": 6,
             "Intellect": 6,
             "Spirit": 0,
-            "Earth Mastery": 2,
-            "Fire Mastery": 2,
+            "Earth Mastery": 1,
+            "Fire Mastery": 3,
             "Air Mastery": 2,
-            "Water Mastery": 3,
-            "Frost Mastery": 1,
-            "Lightning Mastery": 2,
-            "Arcane Mastery": 1,
+            "Water Mastery": 1,
+            "Frost Mastery": 2,
+            "Lightning Mastery": 1,
+            "Arcane Mastery": 3,
             "Decay Mastery": 1,
             "Shadow Mastery": 2,
             "Order Mastery": 3
           }
         },
         "inventory": {
+          "money": 1.0,
           "items": [
             {
               "rarity": "Common",
@@ -355,30 +143,104 @@
           }
         }
       },
-      "minute": 15,
-      "second": 52,
-      "currentSite": "Plaguewood",
+      "minute": 3,
+      "second": 30,
+      "currentSite": "Goldshire",
       "siteProgress": {},
       "commonsKilled": {},
       "raresKilled": {},
       "elitesKilled": {},
       "siteVisits": {
-        "Scuttle Coast": 1,
-        "Tiragarde Keep": 2,
-        "Rocky Desert": 1,
-        "Plaguewood": 5,
-        "Blackwood Lake": 2
+        "Northshire Abbey": 1,
+        "Goldshire": 2
       },
       "unlockedAreas": [],
-      "startDate": "2024-04-21T14:40:41.863247+02:00",
-      "lastLoaded": "2024-04-26T14:43:18.490543+02:00",
-      "lastPlayed": "2024-04-26T14:43:45.519979+02:00",
-      "deathInfo": {
-        "source": "Scourge Warder",
-        "area": "Plaguewood"
+      "vendorStock": {
+        "Goldshire:Toddrick": [
+          {
+            "item": "Tough Jerky",
+            "amount": 5,
+            "maxAmount": 5,
+            "restockSpeed": 30
+          },
+          {
+            "item": "Haunch of Meat",
+            "amount": 5,
+            "maxAmount": 5,
+            "restockSpeed": 30
+          },
+          {
+            "item": "Mutton Chop",
+            "amount": 5,
+            "maxAmount": 5,
+            "restockSpeed": 30
+          },
+          {
+            "item": "Wild Hog Shank",
+            "amount": 5,
+            "maxAmount": 5,
+            "restockSpeed": 30
+          },
+          {
+            "item": "Cured Ham Steak",
+            "amount": 5,
+            "maxAmount": 5,
+            "restockSpeed": 30
+          },
+          {
+            "item": "Roasted Quail",
+            "amount": 5,
+            "maxAmount": 5,
+            "restockSpeed": 30
+          }
+        ],
+        "Orgrimmar:Borstan": [
+          {
+            "item": "Tough Jerky",
+            "amount": 5,
+            "maxAmount": 5,
+            "restockSpeed": 30
+          },
+          {
+            "item": "Haunch of Meat",
+            "amount": 5,
+            "maxAmount": 5,
+            "restockSpeed": 30
+          },
+          {
+            "item": "Mutton Chop",
+            "amount": 5,
+            "maxAmount": 5,
+            "restockSpeed": 30
+          },
+          {
+            "item": "Wild Hog Shank",
+            "amount": 5,
+            "maxAmount": 5,
+            "restockSpeed": 30
+          },
+          {
+            "item": "Cured Ham Steak",
+            "amount": 5,
+            "maxAmount": 5,
+            "restockSpeed": 30
+          },
+          {
+            "item": "Roasted Quail",
+            "amount": 5,
+            "maxAmount": 5,
+            "restockSpeed": 30
+          }
+        ]
       },
-      "playerDead": true,
-      "timePlayed": "00:02:20.2259890"
+      "buyback": {
+        "items": [],
+        "bags": []
+      },
+      "startDate": "2024-04-27T04:12:43.1078047+02:00",
+      "lastLoaded": "2024-04-27T05:08:32.8617229+02:00",
+      "lastPlayed": "2024-04-27T05:08:48.9838178+02:00",
+      "timePlayed": "00:00:19.4511517"
     }
   ]
 }

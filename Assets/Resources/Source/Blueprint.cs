@@ -33,6 +33,7 @@ using static ClothType;
 using static PersonType;
 using static GameSettings;
 using static Serialization;
+using static PersonCategory;
 using static PermanentEnchant;
 using static SiteSpiritHealer;
 using static SiteHostileArea;
@@ -1661,27 +1662,26 @@ public class Blueprint
         }, true),
         new("Vendor", () => {
             currentSave.buyback ??= new();
-            SetAnchor(TopLeft, 19, -38);
+            SetAnchor(TopLeft, 0, -19);
             AddHeaderGroup();
-            var items = new List<Item>();
+            SetRegionGroupWidth(190);
+            var items = currentSave.vendorStock[town.name + ":" + person.name];
             AddHeaderRegion(() =>
             {
                 AddLine("Vendor:");
                 AddSmallButton("OtherClose", (h) =>
                 {
-                    CloseDesktop("Vendor");
-                    SwitchDesktop("Town");
-                    //PlaySound("DesktopBankClose");
+                    CloseWindow("Vendor");
+                    CloseWindow("Inventory");
+                    Respawn("Person");
+                    if (personCategory != null) Respawn("Persons");
+                    else Respawn("Town: " + town.name);
+                    PlaySound("DesktopInventoryClose");
                 });
-                if (!CDesktop.windows.Exists(x => x.title == "InventorySettings") && !CDesktop.windows.Exists(x => x.title == "InventorySort") && !CDesktop.windows.Exists(x => x.title == "VendorSort"))
-                    AddSmallButton("OtherSort", (h) =>
-                    {
-                        SpawnWindowBlueprint("VendorSort");
-                        Respawn("Vendor");
-                        Respawn("Inventory");
-                    });
-                else
-                    AddSmallButton("OtherSortOff", (h) => { });
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("");
             });
             for (int i = 0; i < 7; i++)
             {
@@ -1691,7 +1691,7 @@ public class Blueprint
                     {
                         for (int j = 0; j < 5; j++)
                             if (index * 5 + j >= 999) AddBigButton("OtherNoSlot", (h) => { });
-                            else if (items.Count > index * 5 + j) PrintVendorItem(items[index * 5 + j]);
+                            else if (items.Count > index * 5 + j) PrintVendorItem(items[index * 5 + j], null);
                             else AddBigButton("OtherEmpty", (h) => { });
                     }
                 );
@@ -1704,7 +1704,7 @@ public class Blueprint
             AddButtonRegion(() => AddLine("Buyback", "", "Center"), (h) => { CloseWindow("Vendor"); CloseWindow("VendorSort"); SpawnWindowBlueprint("VendorBuyback"); });
         }, true),
         new("VendorBuyback", () => {
-            SetAnchor(TopLeft);
+            SetAnchor(TopLeft, 0, -19);
             AddHeaderGroup();
             SetRegionGroupWidth(190);
             var items = new List<Item>();
@@ -1713,10 +1713,17 @@ public class Blueprint
                 AddLine("Vendor:");
                 AddSmallButton("OtherClose", (h) =>
                 {
-                    CloseDesktop("Vendor");
-                    SwitchDesktop("Town");
-                    //PlaySound("DesktopBankClose");
+                    CloseWindow("VendorBuyback");
+                    CloseWindow("Inventory");
+                    Respawn("Person");
+                    if (personCategory != null) Respawn("Persons");
+                    else Respawn("Town: " + town.name);
+                    PlaySound("DesktopInventoryClose");
                 });
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("");
             });
             for (int i = 0; i < 7; i++)
             {
@@ -1725,7 +1732,7 @@ public class Blueprint
                     () =>
                     {
                         for (int j = 0; j < 5; j++)
-                            if (currentSave.buyback.items.Count > index * 5 + j) PrintVendorItem(currentSave.buyback.items[index * 5 + j]);
+                            if (currentSave.buyback.items.Count > index * 5 + j) PrintVendorItem(null, currentSave.buyback.items[index * 5 + j]);
                             else AddBigButton("OtherEmpty", (h) => { });
                     }
                 );
@@ -1808,38 +1815,18 @@ public class Blueprint
             SetRegionGroupWidth(95);
             AddButtonRegion(() => AddLine("Stats", "", "Center"), (h) => { CloseWindow(h.window); SpawnWindowBlueprint("CharacterInfoStats"); Respawn("ExperienceBar"); });
         }, true),
-        new("PersonBattlemaster", () => {
-            SetAnchor(TopLeft, 19, -38);
-            AddHeaderGroup();
-            SetRegionGroupWidth(250);
-            var personType = personTypes.Find(x => x.name == person.type);
-            AddHeaderRegion(() =>
-            {
-                AddLine(person.type + " " + person.name);
-                AddSmallButton(personType.icon, (h) => { });
-            });
-            AddButtonRegion(() =>
-            {
-                AddLine("Goodbye.");
-            },
-            (h) =>
-            {
-                person = null;
-                CloseWindow(h.window);
-            });
-        }, true),
         new("Person", () => {
             SetAnchor(TopLeft, 19, -38);
             AddHeaderGroup();
             SetRegionGroupWidth(250);
-            var type = personTypes.Find(x => x.name == person.type);
+            var type = personTypes.Find(x => x.type == person.type);
             AddHeaderRegion(() =>
             {
                 AddLine(person.type + " ", "Gray");
                 AddText(person.name);
-                AddSmallButton(type.icon + (type.type == "Battlemaster" ? factions.Find(x => x.name == town.faction).side : ""), (h) => { });
+                AddSmallButton(type.icon + (type.category == "Battlemaster" ? factions.Find(x => x.name == town.faction).side : ""), (h) => { });
             });
-            if (type.type == "Trainer")
+            if (type.category == "Trainer")
             {
                 AddButtonRegion(() =>
                 {
@@ -1852,7 +1839,7 @@ public class Blueprint
                 },
                 (h) => { });
             }
-            else if (type.type == "Banker")
+            else if (type.category == "Banker")
             {
                 AddButtonRegion(() =>
                 {
@@ -1876,7 +1863,7 @@ public class Blueprint
                 },
                 (h) => { });
             }
-            else if (type.type == "Innkeeper")
+            else if (type.category == "Innkeeper")
             {
                 AddButtonRegion(() =>
                 {
@@ -1902,7 +1889,7 @@ public class Blueprint
                 },
                 (h) => { currentSave.player.homeLocation = town.name; });
             }
-            else if (type.type == "Vendor")
+            else if (type.category == "Vendor")
             {
                 AddButtonRegion(() =>
                 {
@@ -1918,7 +1905,7 @@ public class Blueprint
                     Respawn("ExperienceBar");
                 });
             }
-            else if (type.type == "Battlemaster")
+            else if (type.category == "Battlemaster")
             {
                 AddButtonRegion(() =>
                 {
@@ -1931,7 +1918,7 @@ public class Blueprint
                 },
                 (h) => { });
             }
-            else if (type.type == "StableMaster")
+            else if (type.category == "StableMaster")
             {
                 AddButtonRegion(() =>
                 {
@@ -1959,6 +1946,8 @@ public class Blueprint
             {
                 person = null;
                 CloseWindow(h.window);
+                if (personCategory != null) Respawn("Persons");
+                else Respawn("Town: " + town.name);
             });
         }, true),
         new("CharacterInfoStats", () => {
@@ -2030,75 +2019,6 @@ public class Blueprint
             AddButtonRegion(() =>
             {
                 AddLine("By name", "Black");
-            },
-            (h) =>
-            {
-                currentSave.banks[town.name].items = currentSave.banks[town.name].items.OrderBy(x => x.amount).ToList();
-                CloseWindow("BankSort");
-                CDesktop.RespawnAll();
-                PlaySound("DesktopInventorySort", 0.2f);
-            });
-            AddButtonRegion(() =>
-            {
-                AddLine("By item power", "Black");
-            },
-            (h) =>
-            {
-                currentSave.banks[town.name].items = currentSave.banks[town.name].items.OrderByDescending(x => x.ilvl).ToList();
-                CloseWindow("BankSort");
-                CDesktop.RespawnAll();
-                PlaySound("DesktopInventorySort", 0.2f);
-            });
-            AddButtonRegion(() =>
-            {
-                AddLine("By price", "Black");
-            },
-            (h) =>
-            {
-                currentSave.banks[town.name].items = currentSave.banks[town.name].items.OrderByDescending(x => x.price).ToList();
-                CloseWindow("BankSort");
-                CDesktop.RespawnAll();
-                PlaySound("DesktopInventorySort", 0.2f);
-            });
-            AddButtonRegion(() =>
-            {
-                AddLine("By type", "Black");
-            },
-            (h) =>
-            {
-                currentSave.banks[town.name].items = currentSave.banks[town.name].items.OrderByDescending(x => x.type).ToList();
-                CloseWindow("BankSort");
-                CDesktop.RespawnAll();
-                PlaySound("DesktopInventorySort", 0.2f);
-            });
-        }),
-        new("VendorSort", () => {
-            SetAnchor(Center);
-            AddRegionGroup();
-            SetRegionGroupWidth(162);
-            AddHeaderRegion(() =>
-            {
-                AddLine("Sort vendor inventory:");
-                AddSmallButton("OtherClose", (h) =>
-                {
-                    CloseWindow("VendorSort");
-                    CDesktop.RespawnAll();
-                });
-            });
-            AddButtonRegion(() =>
-            {
-                AddLine("By name", "Black");
-            },
-            (h) =>
-            {
-                currentSave.banks[town.name].items = currentSave.banks[town.name].items.OrderBy(x => x.name).ToList();
-                CloseWindow("BankSort");
-                CDesktop.RespawnAll();
-                PlaySound("DesktopInventorySort", 0.2f);
-            });
-            AddButtonRegion(() =>
-            {
-                AddLine("By amount", "Black");
             },
             (h) =>
             {
@@ -2964,6 +2884,40 @@ public class Blueprint
                 PlaySound("DesktopInventorySort", 0.2f);
             });
         }),
+        new("Persons", () => {
+            SetAnchor(TopRight, -19, -38);
+            AddRegionGroup();
+            SetRegionGroupWidth(171);
+            AddHeaderRegion(() =>
+            {
+                AddLine(town.name);
+                AddSmallButton("OtherClose",
+                (h) =>
+                {
+                    CloseWindow(h.window.title);
+                    SpawnWindowBlueprint("Town: " + town.name);
+                    PlaySound("DesktopInstanceClose");
+                });
+            });
+            var people = town.people.FindAll(x => x.category == personCategory);
+            AddHeaderRegion(() => { AddLine(personCategory + "s:"); });
+            foreach (var person in people)
+            {
+                var personType = personTypes.Find(x => x.type == person.type);
+                AddButtonRegion(() =>
+                {
+                    AddLine(person.name, "Black");
+                    AddSmallButton(personType != null ? personType.icon + (personType.factionVariant ? factions.Find(x => x.name == town.faction).side : "") : "OtherUnknown", (h) => { });
+                },
+                (h) =>
+                {
+                    Person.person = person;
+                    Respawn("Person");
+                    CloseWindow("Persons");
+                    PlaySound("DesktopInstanceOpen");
+                });
+            }
+        }),
 
         #region Dev Panel
 
@@ -3057,6 +3011,7 @@ public class Blueprint
                 Serialize(recipes, "recipes", false, false, prefix);
                 Serialize(factions, "factions", false, false, prefix);
                 Serialize(personTypes, "persontypes", false, false, prefix);
+                Serialize(personCategories, "personcategories", false, false, prefix);
                 Serialize(spiritHealers, "spirithealers", false, false, prefix);
                 Serialize(pEnchants, "permanentenchants", false, false, prefix);
                 Serialize(zones, "zones", false, false, prefix);
@@ -8287,8 +8242,37 @@ public class Blueprint
             SpawnWindowBlueprint("Town: " + town.name);
             AddHotkey(Escape, () =>
             {
-                PlaySound("DesktopInstanceClose");
-                CloseDesktop("Town");
+                if (CloseWindow("MountList"))
+                {
+                    PlaySound("DesktopInstanceClose");
+                    Respawn("Person");
+                }
+                else if (CloseWindow("Inventory"))
+                {
+                    PlaySound("DesktopInventoryClose");
+                    CloseWindow("Vendor");
+                    CloseWindow("VendorBuyback");
+                    Respawn("Person");
+                }
+                else if (CloseWindow("Person"))
+                {
+                    PlaySound("DesktopInstanceClose");
+                    person = null;
+                    if (personCategory != null) Respawn("Persons");
+                    else Respawn("Town: " + town.name);
+                }
+                else if (CloseWindow("Persons"))
+                {
+                    PlaySound("DesktopInstanceClose");
+                    personCategory = null;
+                    Respawn("Town: " + town.name);
+                }
+                else
+                {
+                    PlaySound("DesktopInstanceClose");
+                    town = null;
+                    CloseDesktop("Town");
+                }
             });
         }),
         new("Instance", () =>
@@ -8532,33 +8516,6 @@ public class Blueprint
             {
                 PlaySound("DesktopInstanceClose");
                 CloseDesktop("CraftingScreen");
-            });
-        }),
-        new("Bank", () =>
-        {
-            SetDesktopBackground(town.Background() + "Bank");
-            SpawnWindowBlueprint("Bank");
-            SpawnWindowBlueprint("Inventory");
-            SpawnWindowBlueprint("ExperienceBar");
-            AddHotkey(Escape, () =>
-            {
-                PlaySound("DesktopBankClose");
-                CloseDesktop("Bank");
-                SwitchDesktop("Town");
-            });
-        }),
-        new("Vendor", () =>
-        {
-            //PlaySound("DesktopBankOpen", 0.2f);
-            SetDesktopBackground(town.Background());
-            SpawnWindowBlueprint("Vendor");
-            SpawnWindowBlueprint("Inventory");
-            SpawnWindowBlueprint("ExperienceBar");
-            AddHotkey(Escape, () =>
-            {
-                //PlaySound("DesktopBankClose");
-                CloseDesktop("Vendor");
-                SwitchDesktop("Town");
             });
         }),
         new("GameMenu", () =>

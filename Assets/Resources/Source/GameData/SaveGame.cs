@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 using static Root;
 using static GameSettings;
+using System.Linq;
 
 public class SaveGame
 {
@@ -27,6 +28,7 @@ public class SaveGame
         var prev = minute + ":" + hour + ":" + day;
         second += seconds;
         minute += minutes + second / 60;
+        Restock(minutes + second / 60);
         second %= 60;
         hour += hours + minute / 60;
         minute %= 60;
@@ -40,6 +42,31 @@ public class SaveGame
         Respawn("MapToolbarClockRight", true);
         Respawn("MapToolbarStatusLeft", true);
         Respawn("MapToolbarStatusRight", true);
+    }
+
+    public void Restock(int minutes)
+    {
+        var keys = vendorStock.Keys.ToList();
+        foreach (var key in keys)
+            vendorStock[key].ForEach(x =>
+            {
+                var min = minutes;
+                while (min > 0)
+                {
+                    if (x.amount == x.maxAmount)
+                    {
+                        x.minutesLeft = 0;
+                        break;
+                    }
+                    x.minutesLeft--;
+                    min--;
+                    if (x.minutesLeft == 0)
+                    {
+                        x.amount++;
+                        x.minutesLeft = x.restockSpeed;
+                    }
+                }
+            });
     }
 
     //Site at which player currently resides
@@ -67,6 +94,9 @@ public class SaveGame
     //Stores information about all unlocked areas in instances
     public List<string> unlockedAreas;
 
+    //Stores all inventory of all vendors in game
+    public Dictionary<string, List<StockItem>> vendorStock;
+    
     //Stores all bank accounts of this character in towns
     public Dictionary<string, Inventory> banks;
 
@@ -132,6 +162,7 @@ public class SaveGame
             raresKilled = new(),
             elitesKilled = new(),
             unlockedAreas = new(),
+            vendorStock = new(),
             startDate = DateTime.Now,
             player = new Entity
             (
@@ -142,6 +173,11 @@ public class SaveGame
                 spec.startingEquipment[creationRace]
             )
         };
+        foreach (var town in SiteTown.towns)
+            if (town.people != null)
+                foreach (var person in town.people)
+                    if (person.itemsSold != null && person.itemsSold.Count > 0)
+                        newSlot.vendorStock.Add(town.name + ":" + person.name, person.ExportStock());
         newSlot.currentSite = race.startingSite;
         newSlot.siteVisits = new() { { race.startingSite, 1 } };
         saves[settings.selectedRealm].Add(newSlot);

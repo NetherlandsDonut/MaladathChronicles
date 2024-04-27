@@ -1,0 +1,35 @@
+[
+  {
+    "category": "Vendor",
+    "icon": "ItemMiscBag07"
+  },
+  {
+    "category": "Class Trainer",
+    "icon": "TradeTrainerClass"
+  },
+  {
+    "category": "Profession Trainer",
+    "icon": "AbilityRepair"
+  },
+  {
+    "category": "Banker",
+    "icon": "TradeBank"
+  },
+  {
+    "category": "Flight Master",
+    "icon": "TradeFlightMaster"
+  },
+  {
+    "category": "Battlemaster",
+    "icon": "TradeBattlemaster",
+    "factionVariant": "True"
+  },
+  {
+    "category": "Innkeeper",
+    "icon": "TradeInnkeeper"
+  },
+  {
+    "category": "Stable Master",
+    "icon": "TradeStableMaster"
+  }
+]
