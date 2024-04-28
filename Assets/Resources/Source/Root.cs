@@ -567,7 +567,30 @@ public static class Root
     {
         var region = CDesktop.LBWindow.LBRegionGroup.LBRegion;
         var button = region.LBBigButton.gameObject;
-        return AddBigButtonOverlay(button, overlay, time, sortingOrder);
+        return AddBigButtonOverlay(button, "Sprites/Building/BigButtons/" + overlay, time, sortingOrder);
+    }
+
+    public static GameObject AddBigButtonCooldownOverlay(double percentage)
+    {
+        var region = CDesktop.LBWindow.LBRegionGroup.LBRegion;
+        var button = region.LBBigButton.gameObject;
+        var newObject = new GameObject("BigButtonGrid", typeof(SpriteRenderer));
+        newObject.transform.parent = button.transform;
+        newObject.transform.localPosition = Vector3.zero;
+        var sprites = Resources.LoadAll<Sprite>("Sprites/Building/Shadows/CooldownBig");
+        newObject.GetComponent<SpriteRenderer>().sortingOrder = 1;
+        newObject.GetComponent<SpriteRenderer>().sortingLayerName = CDesktop.LBWindow.layer;
+        var value = 1.0 / sprites.Length;
+        var first = 0;
+        for (int i = 0; i < sprites.Length - 1; i++)
+            if (percentage > value)
+            {
+                percentage -= value;
+                first++;
+            }
+        newObject.GetComponent<SpriteRenderer>().color = new Color32(255, 255, 255, 164);
+        newObject.GetComponent<SpriteRenderer>().sprite = sprites[Math.Abs(sprites.Length - 1 - first)];
+        return newObject;
     }
 
     public static GameObject AddBigButtonOverlay(GameObject onWhat, string overlay, float time = 0, int sortingOrder = 1)
@@ -575,7 +598,7 @@ public static class Root
         var newObject = new GameObject("BigButtonGrid", typeof(SpriteRenderer));
         newObject.transform.parent = onWhat.transform;
         newObject.transform.localPosition = Vector3.zero;
-        newObject.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/BigButtons/" + overlay);
+        newObject.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>(overlay);
         newObject.GetComponent<SpriteRenderer>().sortingOrder = sortingOrder;
         newObject.GetComponent<SpriteRenderer>().sortingLayerName = CDesktop.LBWindow.layer;
         if (time > 0)

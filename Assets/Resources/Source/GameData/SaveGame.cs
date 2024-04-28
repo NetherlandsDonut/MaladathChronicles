@@ -29,6 +29,7 @@ public class SaveGame
         second += seconds;
         minute += minutes + second / 60;
         Restock(minutes + second / 60);
+        DecayItems(minutes + second / 60);
         second %= 60;
         hour += hours + minute / 60;
         minute %= 60;
@@ -44,6 +45,7 @@ public class SaveGame
         Respawn("MapToolbarStatusRight", true);
     }
 
+    //Restocks items to vendors
     public void Restock(int minutes)
     {
         var keys = vendorStock.Keys.ToList();
@@ -67,6 +69,14 @@ public class SaveGame
                     }
                 }
             });
+    }
+
+    //Decays items that have duration left of their existance
+    //This is used mainly for buyback items from vendors
+    public void DecayItems(int minutes)
+    {
+        buyback?.DecayItems(minutes);
+        player.inventory.DecayItems(minutes);
     }
 
     //Site at which player currently resides

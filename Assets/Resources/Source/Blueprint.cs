@@ -231,34 +231,6 @@ public class Blueprint
                 });
             }
         }, true),
-        //new("GameOver", () =>
-        //{
-        //    SetAnchor(Center);
-        //    AddHeaderGroup();
-        //    AddHeaderRegion(() =>
-        //    {
-        //        AddLine("Game over:");
-        //    });
-        //    AddPaddingRegion(() =>
-        //    {
-        //        AddLine(currentSave.player.name + " died ");
-        //    });
-        //    AddButtonRegion(() =>
-        //    {
-        //        AddLine("Return to title screen", "", "Center");
-        //    },
-        //    (h) =>
-        //    {
-        //        CloseSave();
-        //        SaveGames();
-        //        saves[settings.selectedRealm].Remove(currentSave);
-        //        //graveyard.Add(currentSave);
-        //        CloseDesktop("GameOver");
-        //        CloseDesktop("Map");
-        //        CloseDesktop("TitleScreen");
-        //        SpawnDesktopBlueprint("TitleScreen");
-        //    });
-        //}, true),
         new("ConfirmDeleteCharacter", () => {
             SetAnchor(Center);
             AddRegionGroup();
@@ -1674,8 +1646,6 @@ public class Blueprint
                     CloseWindow("Vendor");
                     CloseWindow("Inventory");
                     Respawn("Person");
-                    if (personCategory != null) Respawn("Persons");
-                    else Respawn("Town: " + town.name);
                     PlaySound("DesktopInventoryClose");
                 });
             });
@@ -1684,7 +1654,7 @@ public class Blueprint
                 var type = personTypes.Find(x => x.type == person.type);
                 AddLine(person.type + " ", "Gray");
                 AddText(person.name);
-                AddSmallButton(type.icon + (type.factionVariant ? factions.Find(x => x.name == town.faction).side : ""), (h) => { });
+                //AddSmallButton(type.icon + (type.factionVariant ? factions.Find(x => x.name == town.faction).side : ""), (h) => { });
             });
             for (int i = 0; i < 7; i++)
             {
@@ -1719,8 +1689,6 @@ public class Blueprint
                     CloseWindow("VendorBuyback");
                     CloseWindow("Inventory");
                     Respawn("Person");
-                    if (personCategory != null) Respawn("Persons");
-                    else Respawn("Town: " + town.name);
                     PlaySound("DesktopInventoryClose");
                 });
             });
@@ -1729,7 +1697,7 @@ public class Blueprint
                 var type = personTypes.Find(x => x.type == person.type);
                 AddLine(person.type + " ", "Gray");
                 AddText(person.name);
-                AddSmallButton(type.icon + (type.factionVariant ? factions.Find(x => x.name == town.faction).side : ""), (h) => { });
+                //AddSmallButton(type.icon + (type.factionVariant ? factions.Find(x => x.name == town.faction).side : ""), (h) => { });
             });
             for (int i = 0; i < 7; i++)
             {
@@ -1756,10 +1724,6 @@ public class Blueprint
             AddHeaderGroup();
             SetRegionGroupWidth(190);
             SetRegionGroupHeight(290);
-            //AddHeaderRegion(() =>
-            //{
-            //    AddLine("Character equipment:");
-            //});
             Foo("Head", currentSave.player.GetItemInSlot("Head"));
             Foo("Shoulders", currentSave.player.GetItemInSlot("Shoulders"));
             Foo("Back", currentSave.player.GetItemInSlot("Back"));
@@ -1950,6 +1914,7 @@ public class Blueprint
             },
             (h) =>
             {
+                PlaySound("DesktopInstanceClose");
                 person = null;
                 CloseWindow(h.window);
                 if (personCategory != null) Respawn("Persons");

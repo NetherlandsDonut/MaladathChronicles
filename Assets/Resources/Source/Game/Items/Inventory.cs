@@ -32,6 +32,19 @@ public class Inventory
     //Bags equipped in this inventory
     public List<Item> bags;
 
+    //Decays items that have duration left of their existance
+    //This is used mainly for buyback items from vendors
+    public void DecayItems(int minutes)
+    {
+        for (int i = items.Count - 1; i >= 0; i--)
+            if (items[i].minutesLeft > 0)
+            {
+                items[i].minutesLeft -= minutes;
+                if (items[i].minutesLeft <= 0)
+                    items.RemoveAt(i);
+            }
+    }
+
     //Tells whether the player can fit the item in the inventory
     public bool CanAddItem(Item item)
     {

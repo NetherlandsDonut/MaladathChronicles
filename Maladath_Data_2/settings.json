@@ -1,6 +1,6 @@
 {
   "selectedRealm": "Whitemane",
-  "selectedCharacter": "Lisette",
+  "selectedCharacter": "Christine",
   "shadows": {
     "value": "True"
   },
@@ -17,7 +17,7 @@
     "value": "True"
   },
   "bigRarityIndicators": {
-    "value": "True"
+    "value": "False"
   },
   "upgradeIndicators": {
     "value": "False"

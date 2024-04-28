@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 using static Root;
-using static Root.Anchor;
 
 using static Sound;
 using static ItemSet;
@@ -130,6 +129,9 @@ public class Item
 
     //Amount of this item
     public int amount;
+
+    //Time left for this item to be removed from buyback
+    public int minutesLeft;
 
     //Drop range, it's automatic if set to default
     public string dropRange;
@@ -413,12 +415,15 @@ public class Item
                                     PlaySound("DesktopTransportPay");
                                     if (amount == item.amount)
                                     {
+                                        item.minutesLeft = 0;
                                         currentSave.buyback.items.Remove(item);
                                         currentSave.player.inventory.AddItem(item);
                                     }
                                     else
                                     {
-                                        currentSave.player.inventory.AddItem(item.CopyItem(amount));
+                                        var newItem = item.CopyItem(amount);
+                                        currentSave.player.inventory.AddItem(newItem);
+                                        newItem.minutesLeft = 0;
                                         item.amount -= amount;
                                     }
                                     currentSave.player.inventory.money -= item.price * amount;
@@ -483,7 +488,9 @@ public class Item
         if (settings.rarityIndicators.Value())
             AddBigButtonOverlay("OtherRarity" + item.rarity + (settings.bigRarityIndicators.Value() ? "Big" : ""), 0, 2);
         if (item.amount == 0) SetBigButtonToGrayscale();
-        if (item.maxStack > 1) SpawnFloatingText(CDesktop.LBWindow.LBRegionGroup.LBRegion.transform.position + new Vector3(32, -27) + new Vector3(38, 0) * ((buyback != null ? currentSave.buyback.items.IndexOf(buyback) : currentSave.vendorStock[town.name + ":" + Person.person.name].FindIndex(x => x.item == item.name)) % 5), item.amount + "", "", "Right");
+        if (item.maxStack > 1) SpawnFloatingText(CDesktop.LBWindow.LBRegionGroup.LBRegion.transform.position + new Vector3(32, -27) + new Vector3(38, 0) * ((buyback != null ? currentSave.buyback.items.IndexOf(buyback) : currentSave.vendorStock[town.name + ":" + Person.person.name].FindIndex(x => x.item == item.name)) % 5), item.amount + (false && buyback == null ?  "/" + currentSave.vendorStock[town.name + ":" + Person.person.name].Find(x => x.item == item.name).maxAmount : ""), "", "Right");
+        if (stockItem != null && stockItem.minutesLeft > 0) AddBigButtonCooldownOverlay(stockItem.minutesLeft / (double)stockItem.restockSpeed);
+        else if (buyback != null && buyback.minutesLeft > 0) AddBigButtonCooldownOverlay(buyback.minutesLeft / (double)defines.buybackDecay);
     }
 
     public static void PrintInventoryItem(Item item)
@@ -509,12 +516,15 @@ public class Item
                                 currentSave.buyback ??= new(true);
                                 if (amount == item.amount)
                                 {
-                                    currentSave.buyback.AddItem(item);
+                                    item.minutesLeft = defines.buybackDecay;
+                                    currentSave.buyback.items.Add(item);
                                     currentSave.player.inventory.items.Remove(item);
                                 }
                                 else
                                 {
-                                    currentSave.buyback.AddItem(item.CopyItem(amount));
+                                    var newItem = item.CopyItem(amount);
+                                    currentSave.buyback.items.Add(newItem);
+                                    newItem.minutesLeft = defines.buybackDecay;
                                     item.amount -= amount;
                                 }
                                 currentSave.player.inventory.money += item.price * amount;
@@ -529,7 +539,8 @@ public class Item
                             PlaySound("DesktopTransportPay");
                             currentSave.buyback ??= new(true);
                             currentSave.player.inventory.money += item.price * item.amount;
-                            currentSave.buyback.AddItem(item);
+                            item.minutesLeft = defines.buybackDecay;
+                            currentSave.buyback.items.Add(item);
                             currentSave.player.inventory.items.Remove(item);
                             CloseWindow("Vendor");
                             Respawn("VendorBuyback");

@@ -30,6 +30,8 @@ public class Defines
             adeptTreeRequirement = 10;
         if (mapGridSize < 0)
             mapGridSize = 19;
+        if (buybackDecay < 0)
+            buybackDecay = 30;
         if (markerCharacter == null || markerCharacter == "")
             markerCharacter ??= "_";
         if (textWrapEnding == null || textWrapEnding == "")
@@ -49,6 +51,7 @@ public class Defines
     public int shadowSystem;
     public int adeptTreeRequirement;
     public int mapGridSize;
+    public int buybackDecay;
     public string markerCharacter;
     public string textWrapEnding;
     public float frameTime;

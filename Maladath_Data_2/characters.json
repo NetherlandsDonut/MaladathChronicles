@@ -7,7 +7,7 @@
       "player": {
         "level": 1,
         "experience": 40,
-        "name": "Lisette",
+        "name": "Christine",
         "race": "Human",
         "spec": "Mage",
         "gender": "Female",
@@ -47,7 +47,7 @@
           }
         },
         "inventory": {
-          "money": 21563,
+          "money": 10772,
           "items": [
             {
               "rarity": "Common",
@@ -57,6 +57,20 @@
               "ilvl": 1,
               "amount": 1,
               "maxStack": 1,
+              "stats": {
+                "stats": {}
+              }
+            },
+            {
+              "rarity": "Common",
+              "name": "Tough Jerky",
+              "icon": "itemmiscfood16",
+              "type": "Miscellaneous",
+              "source": "Quest",
+              "ilvl": 5,
+              "amount": 3,
+              "maxStack": 20,
+              "price": 1,
               "stats": {
                 "stats": {}
               }
@@ -150,8 +164,9 @@
           }
         }
       },
-      "minute": 8,
-      "second": 38,
+      "hour": 1,
+      "minute": 13,
+      "second": 46,
       "currentSite": "Goldshire",
       "siteProgress": {},
       "commonsKilled": {},
@@ -160,51 +175,47 @@
       "siteVisits": {
         "Northshire Abbey": 1,
         "Goldshire": 7,
-        "Crystal Lake": 2
+        "Crystal Lake": 0
       },
       "unlockedAreas": [],
       "vendorStock": {
         "Goldshire:Toddrick": [
           {
             "item": "Tough Jerky",
-            "amount": 3,
+            "amount": 4,
             "maxAmount": 5,
-            "minutesLeft": 25,
+            "minutesLeft": 20,
             "restockSpeed": 30
           },
           {
             "item": "Haunch of Meat",
-            "amount": 2,
+            "amount": 5,
             "maxAmount": 5,
-            "minutesLeft": 25,
             "restockSpeed": 30
           },
           {
             "item": "Mutton Chop",
-            "amount": 3,
+            "amount": 5,
             "maxAmount": 5,
-            "minutesLeft": 25,
             "restockSpeed": 30
           },
           {
             "item": "Wild Hog Shank",
-            "amount": 2,
+            "amount": 5,
             "maxAmount": 5,
-            "minutesLeft": 25,
             "restockSpeed": 30
           },
           {
             "item": "Cured Ham Steak",
             "amount": 4,
             "maxAmount": 5,
-            "minutesLeft": 25,
+            "minutesLeft": 20,
             "restockSpeed": 30
           },
           {
             "item": "Roasted Quail",
-            "amount": 4,
+            "amount": 5,
             "maxAmount": 5,
-            "minutesLeft": 25,
             "restockSpeed": 30
           }
         ],
@@ -249,98 +260,13 @@
       },
       "buyback": {
         "ignoreSpaceChecks": true,
-        "items": [
-          {
-            "rarity": "Common",
-            "name": "Cured Ham Steak",
-            "icon": "itemmiscfood14",
-            "type": "Miscellaneous",
-            "source": "Rare Drop",
-            "ilvl": 45,
-            "amount": 1,
-            "maxStack": 20,
-            "price": 100,
-            "stats": {
-              "stats": {}
-            }
-          },
-          {
-            "rarity": "Common",
-            "name": "Wild Hog Shank",
-            "icon": "itemmiscfood13",
-            "type": "Miscellaneous",
-            "source": "Rare Drop",
-            "ilvl": 35,
-            "amount": 3,
-            "maxStack": 20,
-            "price": 50,
-            "stats": {
-              "stats": {}
-            }
-          },
-          {
-            "rarity": "Common",
-            "name": "Roasted Quail",
-            "icon": "itemmiscfood15",
-            "type": "Miscellaneous",
-            "source": "Rare Drop",
-            "ilvl": 55,
-            "amount": 1,
-            "maxStack": 20,
-            "price": 200,
-            "stats": {
-              "stats": {}
-            }
-          },
-          {
-            "rarity": "Common",
-            "name": "Mutton Chop",
-            "icon": "itemmiscfood14",
-            "type": "Miscellaneous",
-            "source": "Rare Drop",
-            "ilvl": 25,
-            "amount": 2,
-            "maxStack": 20,
-            "price": 25,
-            "stats": {
-              "stats": {}
-            }
-          },
-          {
-            "rarity": "Common",
-            "name": "Tough Jerky",
-            "icon": "itemmiscfood16",
-            "type": "Miscellaneous",
-            "source": "Quest",
-            "ilvl": 5,
-            "amount": 2,
-            "maxStack": 20,
-            "price": 1,
-            "stats": {
-              "stats": {}
-            }
-          },
-          {
-            "rarity": "Common",
-            "name": "Haunch of Meat",
-            "icon": "itemmiscfood18",
-            "type": "Miscellaneous",
-            "source": "Rare Drop",
-            "ilvl": 15,
-            "amount": 3,
-            "maxStack": 20,
-            "price": 6,
-            "stats": {
-              "stats": {}
-            }
-          }
-        ],
+        "items": [],
         "bags": []
       },
-      "startDate": "2024-04-27T16:31:59.5832995+02:00",
-      "lastLoaded": "2024-04-27T16:46:18.0306167+02:00",
-      "lastPlayed": "2024-04-27T16:49:49.6999253+02:00",
-      "timePlayed": "00:06:51.0238455"
+      "startDate": "2024-04-28T15:32:42.6947584+02:00",
+      "lastLoaded": "2024-04-28T15:59:38.820092+02:00",
+      "lastPlayed": "2024-04-28T16:00:25.2990377+02:00",
+      "timePlayed": "00:02:23.0037452"
     }
   ]
 }

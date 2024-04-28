@@ -10,6 +10,7 @@
   "shadowSystem": 1,
   "adeptTreeRequirement": 10,
   "mapGridSize": 19,
+  "buybackDecay": 30,
   "markerCharacter": "_",
   "textWrapEnding": "...",
   "frameTime": 0.08
