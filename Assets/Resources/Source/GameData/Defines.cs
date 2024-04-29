@@ -17,7 +17,7 @@ public class Defines
         if (backpackSpace < 1)
             backpackSpace = 3;
         if (aiDepth < 1)
-            aiDepth = 5;
+            aiDepth = 7;
         if (aiManualBranches < 1)
             aiManualBranches = 1;
         if (textPaddingLeft < 0)
@@ -32,6 +32,14 @@ public class Defines
             mapGridSize = 19;
         if (buybackDecay < 0)
             buybackDecay = 30;
+        if (scoreForExploredSite < 0)
+            scoreForExploredSite = 2;
+        if (scoreForKilledCommon < 0)
+            scoreForKilledCommon = 1;
+        if (scoreForKilledRare < 0)
+            scoreForKilledRare = 5;
+        if (scoreForKilledElite < 0)
+            scoreForKilledElite = 10;
         if (markerCharacter == null || markerCharacter == "")
             markerCharacter ??= "_";
         if (textWrapEnding == null || textWrapEnding == "")
@@ -52,6 +60,10 @@ public class Defines
     public int adeptTreeRequirement;
     public int mapGridSize;
     public int buybackDecay;
+    public int scoreForExploredSite;
+    public int scoreForKilledCommon;
+    public int scoreForKilledRare;
+    public int scoreForKilledElite;
     public string markerCharacter;
     public string textWrapEnding;
     public float frameTime;

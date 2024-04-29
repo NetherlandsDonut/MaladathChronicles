@@ -2888,6 +2888,87 @@ public class Blueprint
                 });
             }
         }, true),
+        new("CharacterRanking", () =>
+        {
+            SetAnchor(Top);
+            AddRegionGroup();
+            SetRegionGroupWidth(171);
+            SetRegionGroupHeight(354);
+            AddHeaderRegion(() =>
+            {
+                AddLine("Ranking", "Gray", "Center");
+                AddSmallButton("OtherClose", (h) =>
+                {
+                    CloseWindow(h.window);
+                    CloseWindow("RealmRoster");
+                    CloseWindow("CharacterInfo");
+                    CloseWindow("TitleScreenSingleplayer");
+                    RemoveDesktopBackground();
+                    Respawn("TitleScreenMenu");
+                });
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine(settings.selectedRealm == "" ? "None" : settings.selectedRealm);
+            },
+            (h) =>
+            {
+                Respawn("RealmRoster");
+            });
+            if (settings.selectedRealmRanking != "")
+            {
+                if (saves.ContainsKey(settings.selectedRealm))
+                {
+                    foreach (var slot in saves[settings.selectedRealm])
+                    {
+                        AddPaddingRegion(() =>
+                        {
+                            AddBigButton("Portrait" + slot.player.race.Clean() + (slot.player.Race().genderedPortrait ? slot.player.gender : ""), (h) =>
+                            {
+                                CloseWindow("RealmRoster");
+                                if (settings.selectedCharacter != slot.player.name)
+                                {
+                                    settings.selectedCharacter = slot.player.name;
+                                    SetDesktopBackground(slot.LoginBackground(), true);
+                                    Respawn("CharacterInfo");
+                                }
+                            });
+                            if (settings.selectedCharacter != slot.player.name)
+                            {
+                                SetBigButtonToGrayscale();
+                                AddBigButtonOverlay("OtherGridBlurred");
+                            }
+                            AddLine(slot.player.name);
+                            AddLine("Level: " + slot.player.level + " ");
+                            AddText(slot.player.spec, slot.player.spec);
+                        });
+                    }
+                    AddPaddingRegion(() => { SetRegionAsGroupExtender(); });
+                    if (saves[settings.selectedRealm].Count < 7)
+                        AddButtonRegion(() =>
+                        {
+                            AddLine("Create a new character", "Black");
+                        },
+                        (h) =>
+                        {
+                            CloseWindow(h.window);
+                            CloseWindow("RealmRoster");
+                            CloseWindow("CharacterInfo");
+                            CloseWindow("TitleScreenSingleplayer");
+                            creationName = "";
+                            creationSide = "";
+                            creationGender = "";
+                            creationRace = "";
+                            creationSpec = "";
+                            SpawnWindowBlueprint("CharacterCreation");
+                            SpawnWindowBlueprint("CharacterCreationRightSide");
+                        });
+                    else AddPaddingRegion(() => AddLine("Create a new character", "DarkGray"));
+                }
+                else AddPaddingRegion(() => AddLine("No characters ", "DarkGray"));
+            }
+            else AddPaddingRegion(() => { });
+        }, true),
 
         #region Dev Panel
 

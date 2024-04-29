@@ -26,6 +26,9 @@ public class GameSettings
     //Currently selected realm in login screen
     public string selectedRealm;
 
+    //Currently selected realm in ranking screen
+    public string selectedRealmRanking;
+
     //Currently character in the login screen
     public string selectedCharacter;
 

@@ -1,15 +1,85 @@
 ﻿using System;
-using UnityEngine;
+using System.Linq;
 using System.Collections.Generic;
 
+using UnityEditor;
+
 using static Root;
+using static Defines;
+using static SiteTown;
+using static SiteComplex;
+using static SiteInstance;
+using static SiteHostileArea;
 using static GameSettings;
-using System.Linq;
 
 public class SaveGame
 {
     //Player character in the save
     public Entity player;
+
+    #region Creation
+
+    //Creates a new character
+    public static void AddNewSave()
+    {
+        var race = Race.races.Find(x => x.name == creationRace);
+        var spec = Spec.specs.Find(x => x.name == creationSpec);
+        var newSlot = new SaveGame
+        {
+            siteProgress = new(),
+            commonsKilled = new(),
+            raresKilled = new(),
+            elitesKilled = new(),
+            unlockedAreas = new(),
+            vendorStock = new(),
+            startDate = DateTime.Now,
+            player = new Entity
+            (
+                creationName,
+                creationGender,
+                race,
+                spec,
+                spec.startingEquipment[creationRace]
+            )
+        };
+        foreach (var town in towns)
+            if (town.people != null)
+                foreach (var person in town.people)
+                    if (person.itemsSold != null && person.itemsSold.Count > 0)
+                        newSlot.vendorStock.Add(town.name + ":" + person.name, person.ExportStock());
+        newSlot.currentSite = race.startingSite;
+        newSlot.siteVisits = new() { { race.startingSite, 1 } };
+        saves[settings.selectedRealm].Add(newSlot);
+        settings.selectedCharacter = newSlot.player.name;
+    }
+
+    #endregion
+
+    #region Score
+
+    //Tells the player what is their current score
+    public int Score(bool maxScore = false)
+    {
+        var sum = 0;
+        var allSites = new List<Site>();
+        for (int i = 0; i < towns.Count; i++) allSites.Add(towns[i]);
+        for (int i = 0; i < areas.Count; i++) allSites.Add(areas[i]);
+        for (int i = 0; i < complexes.Count; i++) allSites.Add(complexes[i]);
+        for (int i = 0; i < instances.Count; i++) allSites.Add(instances[i]);
+        allSites.RemoveAll(x => x.x == 0 && x.y == 0);
+        sum += defines.scoreForExploredSite * allSites.Count(x => currentSave.siteVisits.ContainsKey(x.name) || maxScore);
+        var commons = areas.SelectMany(x => x.commonEncounters ?? new()).Select(x => x.who).Distinct().ToList();
+        sum += defines.scoreForKilledCommon * commons.Count(x => currentSave.commonsKilled.ContainsKey(x) || maxScore);
+        var rares = areas.SelectMany(x => x.rareEncounters ?? new()).Select(x => x.who).Distinct().ToList();
+        sum += defines.scoreForKilledRare * rares.Count(x => currentSave.raresKilled.ContainsKey(x) || maxScore);
+        var elites = areas.SelectMany(x => x.eliteEncounters ?? new()).Select(x => x.who).Distinct().ToList();
+        sum += defines.scoreForKilledElite * elites.Count(x => currentSave.elitesKilled.ContainsKey(x) || maxScore);
+        return sum;
+    }
+
+    #endregion
+
+    #region Time and day
 
     //Day in-game
     public int day;
@@ -23,13 +93,17 @@ public class SaveGame
     //Seconds in-game
     public int second;
 
+    //Indicates whether it is night at the moment or not
+    public bool IsNight() => hour >= 20 || hour < 6;
+
+    //Adds time to the world ing-game clock
     public void AddTime(int seconds, int minutes = 0, int hours = 0, int days = 0)
     {
         var prev = minute + ":" + hour + ":" + day;
         second += seconds;
         minute += minutes + second / 60;
-        Restock(minutes + second / 60);
         DecayItems(minutes + second / 60);
+        Restock(minutes + second / 60);
         second %= 60;
         hour += hours + minute / 60;
         minute %= 60;
@@ -43,6 +117,14 @@ public class SaveGame
         Respawn("MapToolbarClockRight", true);
         Respawn("MapToolbarStatusLeft", true);
         Respawn("MapToolbarStatusRight", true);
+    }
+
+    //Decays items that have duration left of their existance
+    //This is used mainly for buyback items from vendors
+    public void DecayItems(int minutes)
+    {
+        buyback?.DecayItems(minutes);
+        player.inventory.DecayItems(minutes);
     }
 
     //Restocks items to vendors
@@ -71,13 +153,9 @@ public class SaveGame
             });
     }
 
-    //Decays items that have duration left of their existance
-    //This is used mainly for buyback items from vendors
-    public void DecayItems(int minutes)
-    {
-        buyback?.DecayItems(minutes);
-        player.inventory.DecayItems(minutes);
-    }
+    #endregion
+
+    #region Progress
 
     //Site at which player currently resides
     public string currentSite;
@@ -104,6 +182,10 @@ public class SaveGame
     //Stores information about all unlocked areas in instances
     public List<string> unlockedAreas;
 
+    #endregion
+
+    #region World
+
     //Stores all inventory of all vendors in game
     public Dictionary<string, List<StockItem>> vendorStock;
     
@@ -113,6 +195,10 @@ public class SaveGame
     //List of items available for buying back from vendors
     public Inventory buyback;
 
+    #endregion
+
+    #region Management
+
     //Date of the character creation
     public DateTime startDate;
 
@@ -121,23 +207,14 @@ public class SaveGame
 
     //Date of the last time this character was logging out
     public DateTime lastPlayed;
-    
-    //This variable stores information about entity's death
-    public DeathInfo deathInfo;
-
-    //Indicates whether the character is dead at the momentt
-    public bool playerDead;
 
     //Overall time player played this character
     public TimeSpan timePlayed;
 
     //Keeps information about last visited talents page
+    //so that when talent screen is reopened it opens on the last
+    //visited page of it to not favorize specs based on order
     public int lastVisitedTalents;
-
-    public bool IsNight()
-    {
-        return hour >= 20 || hour < 6;
-    }
 
     //Provides information which background should be used for character
     //logging screen which will depend on the place of the logout
@@ -145,53 +222,6 @@ public class SaveGame
     {
         var find = Site.FindSite(x => x.name == currentSite);
         return find != null ? find.Background() : "Sky";
-    }
-
-    //Revives the player
-    public void RevivePlayer()
-    {
-        if (!playerDead) return;
-        playerDead = false;
-        grid.SwitchMapTexture(false);
-        SpawnTransition();
-        SpawnTransition();
-        SpawnTransition();
-        SpawnTransition();
-        SpawnTransition();
-    }
-
-    //Creates a new character
-    public static void AddNewSave()
-    {
-        var race = Race.races.Find(x => x.name == creationRace);
-        var spec = Spec.specs.Find(x => x.name == creationSpec);
-        var newSlot = new SaveGame
-        {
-            siteProgress = new(),
-            commonsKilled = new(),
-            raresKilled = new(),
-            elitesKilled = new(),
-            unlockedAreas = new(),
-            vendorStock = new(),
-            startDate = DateTime.Now,
-            player = new Entity
-            (
-                creationName,
-                creationGender,
-                race,
-                spec,
-                spec.startingEquipment[creationRace]
-            )
-        };
-        foreach (var town in SiteTown.towns)
-            if (town.people != null)
-                foreach (var person in town.people)
-                    if (person.itemsSold != null && person.itemsSold.Count > 0)
-                        newSlot.vendorStock.Add(town.name + ":" + person.name, person.ExportStock());
-        newSlot.currentSite = race.startingSite;
-        newSlot.siteVisits = new() { { race.startingSite, 1 } };
-        saves[settings.selectedRealm].Add(newSlot);
-        settings.selectedCharacter = newSlot.player.name;
     }
 
     //Logs a character out of the world
@@ -228,6 +258,31 @@ public class SaveGame
         Serialization.Serialize(saves, "characters", false, false, prefix);
         Serialization.Serialize(settings, "settings", false, false, prefix);
     }
+
+    #endregion
+
+    #region Death
+
+    //This variable stores information about entity's death
+    public DeathInfo deathInfo;
+
+    //Indicates whether the character is dead at the momentt
+    public bool playerDead;
+
+    //Revives the player
+    public void RevivePlayer()
+    {
+        if (!playerDead) return;
+        playerDead = false;
+        grid.SwitchMapTexture(false);
+        SpawnTransition();
+        SpawnTransition();
+        SpawnTransition();
+        SpawnTransition();
+        SpawnTransition();
+    }
+
+    #endregion
 
     //Currently opened save
     public static SaveGame currentSave;

@@ -11,6 +11,10 @@
   "adeptTreeRequirement": 10,
   "mapGridSize": 19,
   "buybackDecay": 30,
+  "scoreForExploredSite": 2,
+  "scoreForKilledCommon": 1,
+  "scoreForKilledRare": 5,
+  "scoreForKilledElite": 10,
   "markerCharacter": "_",
   "textWrapEnding": "...",
   "frameTime": 0.08
