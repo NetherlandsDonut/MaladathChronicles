@@ -9,6 +9,7 @@ public class GameSettings
     public void FillNulls()
     {
         selectedRealm ??= "";
+        selectedRealmRanking ??= "";
         selectedCharacter ??= "";
         shadows ??= new Bool(true);
         pixelPerfectVision ??= new Bool(false);

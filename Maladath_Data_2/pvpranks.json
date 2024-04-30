@@ -1,0 +1,92 @@
+[
+  {
+    "rank": 0,
+    "nameAlliance": "",
+    "nameHorde": "",
+    "honorRequired": 0
+  },
+  {
+    "rank": 1,
+    "nameAlliance": "Private",
+    "nameHorde": "Scout",
+    "honorRequired": 200
+  },
+  {
+    "rank": 2,
+    "nameAlliance": "Corporal",
+    "nameHorde": "Grunt",
+    "honorRequired": 400
+  },
+  {
+    "rank": 3,
+    "nameAlliance": "Sergeant",
+    "nameHorde": "Sergeant",
+    "honorRequired": 800
+  },
+  {
+    "rank": 4,
+    "nameAlliance": "Master Sergeant",
+    "nameHorde": "Senior Sergeant",
+    "honorRequired": 1600
+  },
+  {
+    "rank": 5,
+    "nameAlliance": "Sergeant Major",
+    "nameHorde": "First Sergeant",
+    "honorRequired": 3200
+  },
+  {
+    "rank": 6,
+    "nameAlliance": "Knight",
+    "nameHorde": "Stone Guard",
+    "honorRequired": 6400
+  },
+  {
+    "rank": 7,
+    "nameAlliance": "Knight-Lieutenant",
+    "nameHorde": "Blood Guard",
+    "honorRequired": 12800
+  },
+  {
+    "rank": 8,
+    "nameAlliance": "Knight-Captain",
+    "nameHorde": "Legionnaire",
+    "honorRequired": 25600
+  },
+  {
+    "rank": 9,
+    "nameAlliance": "Knight-Champion",
+    "nameHorde": "Centurion",
+    "honorRequired": 51200
+  },
+  {
+    "rank": 10,
+    "nameAlliance": "Lieutenant Commander",
+    "nameHorde": "Champion",
+    "honorRequired": 102400
+  },
+  {
+    "rank": 11,
+    "nameAlliance": "Commander",
+    "nameHorde": "Lieutenant General",
+    "honorRequired": 204800
+  },
+  {
+    "rank": 12,
+    "nameAlliance": "Marshal",
+    "nameHorde": "General",
+    "honorRequired": 409600
+  },
+  {
+    "rank": 13,
+    "nameAlliance": "Field Marshal",
+    "nameHorde": "Warlord",
+    "honorRequired": 819200
+  },
+  {
+    "rank": 14,
+    "nameAlliance": "Grand Marshal",
+    "nameHorde": "High Warlord",
+    "honorRequired": 1638400
+  },
+]

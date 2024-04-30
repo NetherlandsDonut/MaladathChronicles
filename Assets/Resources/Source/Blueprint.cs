@@ -26,6 +26,7 @@ using static MapGrid;
 using static Faction;
 using static ItemSet;
 using static Ability;
+using static PVPRank;
 using static SitePath;
 using static SaveGame;
 using static Coloring;
@@ -104,11 +105,11 @@ public class Blueprint
             });
             AddButtonRegion(() =>
             {
-                AddLine("Graveyard", "", "Center");
+                AddLine("Rankings", "", "Center");
             },
             (h) =>
             {
-
+                SpawnDesktopBlueprint("RankingScreen");
             });
             AddButtonRegion(() =>
             {
@@ -418,7 +419,8 @@ public class Blueprint
                 });
                 if (saves.ContainsKey(settings.selectedRealm))
                 {
-                    foreach (var slot in saves[settings.selectedRealm])
+                    var aliveSlots = saves[settings.selectedRealm].FindAll(x => !x.playerDead);
+                    foreach (var slot in aliveSlots)
                     {
                         AddPaddingRegion(() =>
                         {
@@ -443,7 +445,7 @@ public class Blueprint
                         });
                     }
                     AddPaddingRegion(() => { SetRegionAsGroupExtender(); });
-                    if (saves[settings.selectedRealm].Count < 7)
+                    if (aliveSlots.Count < 7)
                         AddButtonRegion(() =>
                         {
                             AddLine("Create a new character", "Black");
@@ -2411,10 +2413,8 @@ public class Blueprint
                 var hard = Realm.realms.Find(x => x.name == settings.selectedRealm).hardcore;
                 if (hard && board.results.result == "Lost")
                 {
-                    saves[settings.selectedRealm].Remove(currentSave);
                     CloseSave();
                     SaveGames();
-                    //graveyard.Add(currentSave);
                     CloseDesktop("CombatResults");
                     CloseDesktop("Map");
                     CloseDesktop("TitleScreen");
@@ -2888,86 +2888,93 @@ public class Blueprint
                 });
             }
         }, true),
-        new("CharacterRanking", () =>
+        new("CharacterRankingTop", () =>
         {
-            SetAnchor(Top);
-            AddRegionGroup();
-            SetRegionGroupWidth(171);
-            SetRegionGroupHeight(354);
+            SetAnchor(-293, 153);
+            AddHeaderGroup();
+            SetRegionGroupWidth(588);
             AddHeaderRegion(() =>
             {
                 AddLine("Ranking", "Gray", "Center");
                 AddSmallButton("OtherClose", (h) =>
                 {
-                    CloseWindow(h.window);
-                    CloseWindow("RealmRoster");
-                    CloseWindow("CharacterInfo");
-                    CloseWindow("TitleScreenSingleplayer");
-                    RemoveDesktopBackground();
-                    Respawn("TitleScreenMenu");
+                    CloseDesktop("RankingScreen");
                 });
             });
-            AddButtonRegion(() =>
+            if (settings.selectedRealmRanking == "")
+                settings.selectedRealmRanking = Realm.realms[0].name;
+            foreach (var realmRef in Realm.realms)
             {
-                AddLine(settings.selectedRealm == "" ? "None" : settings.selectedRealm);
-            },
-            (h) =>
-            {
-                Respawn("RealmRoster");
-            });
-            if (settings.selectedRealmRanking != "")
-            {
-                if (saves.ContainsKey(settings.selectedRealm))
-                {
-                    foreach (var slot in saves[settings.selectedRealm])
+                var realm = realmRef;
+                AddRegionGroup();
+                SetRegionGroupWidth(147);
+                if (settings.selectedRealmRanking == realm.name)
+                    AddPaddingRegion(() =>
                     {
-                        AddPaddingRegion(() =>
-                        {
-                            AddBigButton("Portrait" + slot.player.race.Clean() + (slot.player.Race().genderedPortrait ? slot.player.gender : ""), (h) =>
-                            {
-                                CloseWindow("RealmRoster");
-                                if (settings.selectedCharacter != slot.player.name)
-                                {
-                                    settings.selectedCharacter = slot.player.name;
-                                    SetDesktopBackground(slot.LoginBackground(), true);
-                                    Respawn("CharacterInfo");
-                                }
-                            });
-                            if (settings.selectedCharacter != slot.player.name)
-                            {
-                                SetBigButtonToGrayscale();
-                                AddBigButtonOverlay("OtherGridBlurred");
-                            }
-                            AddLine(slot.player.name);
-                            AddLine("Level: " + slot.player.level + " ");
-                            AddText(slot.player.spec, slot.player.spec);
-                        });
-                    }
-                    AddPaddingRegion(() => { SetRegionAsGroupExtender(); });
-                    if (saves[settings.selectedRealm].Count < 7)
-                        AddButtonRegion(() =>
-                        {
-                            AddLine("Create a new character", "Black");
-                        },
-                        (h) =>
-                        {
-                            CloseWindow(h.window);
-                            CloseWindow("RealmRoster");
-                            CloseWindow("CharacterInfo");
-                            CloseWindow("TitleScreenSingleplayer");
-                            creationName = "";
-                            creationSide = "";
-                            creationGender = "";
-                            creationRace = "";
-                            creationSpec = "";
-                            SpawnWindowBlueprint("CharacterCreation");
-                            SpawnWindowBlueprint("CharacterCreationRightSide");
-                        });
-                    else AddPaddingRegion(() => AddLine("Create a new character", "DarkGray"));
-                }
-                else AddPaddingRegion(() => AddLine("No characters ", "DarkGray"));
+                        AddLine(realm.name, "", "Center");
+                    });
+                else
+                    AddButtonRegion(() =>
+                    {
+                        AddLine(realm.name, "", "Center");
+                    },
+                    (h) =>
+                    {
+                        settings.selectedRealmRanking = realm.name;
+                        Respawn("CharacterRankingList");
+                        Respawn("CharacterRankingListRight");
+                    });
             }
-            else AddPaddingRegion(() => { });
+        }, true),
+        new("CharacterRankingList", () =>
+        {
+            SetAnchor(-293, 115);
+            AddRegionGroup();
+            SetRegionGroupWidth(550);
+            SetRegionGroupHeight(262);
+            var slots = saves[settings.selectedRealmRanking].OrderByDescending(x => x.Score()).ToList();
+            for (int i = 0; i < 7; i++)
+                if (i < slots.Count)
+                {
+                    var slot = slots[i];
+                    AddPaddingRegion(() =>
+                    {
+                        AddBigButton("Portrait" + slot.player.race.Clean() + (slot.player.Race().genderedPortrait ? slot.player.gender : ""), (h) => { });
+                        AddBigButton("Class" + slot.player.spec, (h) => { });
+                        AddLine(slot.player.name + ", a level " + slot.player.level + " ");
+                        AddText(slot.player.spec, slot.player.spec);
+                        AddLine("Score: " + slot.Score());
+                        if (slot.playerDead) AddText(", died while fighting " + slot.deathInfo.source + " in " + slot.deathInfo.area);
+                    });
+                }
+                else
+                    AddPaddingRegion(() =>
+                    {
+                        AddBigButton("OtherBlank", (h) => { });
+                        AddBigButton("OtherBlank", (h) => { });
+                    });
+        }, true),
+        new("CharacterRankingListRight", () =>
+        {
+            SetAnchor(257, 115);
+            AddRegionGroup();
+            SetRegionGroupWidth(38);
+            SetRegionGroupHeight(262);
+            var slots = saves[settings.selectedRealmRanking].OrderByDescending(x => x.Score()).ToList();
+            for (int i = 0; i < 7; i++)
+                if (i < slots.Count)
+                {
+                    var slot = slots[i];
+                    AddPaddingRegion(() =>
+                    {
+                        AddBigButton("PVP" + (slot.player.Side() == "Alliance" ? "A" : "H") + slot.player.Rank().rank, (h) => { });
+                    });
+                }
+                else
+                    AddPaddingRegion(() =>
+                    {
+                        AddBigButton("OtherBlank", (h) => { });
+                    });
         }, true),
 
         #region Dev Panel
@@ -3065,6 +3072,7 @@ public class Blueprint
                 Serialize(personCategories, "personcategories", false, false, prefix);
                 Serialize(spiritHealers, "spirithealers", false, false, prefix);
                 Serialize(pEnchants, "permanentenchants", false, false, prefix);
+                Serialize(pvpRanks, "pvpranks", false, false, prefix);
                 Serialize(zones, "zones", false, false, prefix);
                 Serialize(paths, "paths", false, false, prefix);
                 Serialize(defines, "defines", false, false, prefix);
@@ -8605,6 +8613,18 @@ public class Blueprint
                     PlaySound("DesktopMenuClose");
                     CloseDesktop("GameMenu");
                 }
+            });
+        }),
+        new("RankingScreen", () =>
+        {
+            SetDesktopBackground("SkyRed");
+            SpawnWindowBlueprint("CharacterRankingTop");
+            SpawnWindowBlueprint("CharacterRankingList");
+            SpawnWindowBlueprint("CharacterRankingListRight");
+            AddHotkey(Escape, () =>
+            {
+                PlaySound("DesktopButtonClose");
+                CloseDesktop("RankingScreen");
             });
         }),
 

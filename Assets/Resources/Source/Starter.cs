@@ -151,6 +151,8 @@ public class Starter : MonoBehaviour
         Race.races ??= new();
         Deserialize(ref ItemSet.itemSets, "sets", false, prefix);
         ItemSet.itemSets ??= new();
+        Deserialize(ref PVPRank.pvpRanks, "pvpranks", false, prefix);
+        PVPRank.pvpRanks ??= new();
         Deserialize(ref Item.items, "items", false, prefix);
         Item.items ??= new();
         Deserialize(ref Ability.abilities, "abilities", false, prefix);

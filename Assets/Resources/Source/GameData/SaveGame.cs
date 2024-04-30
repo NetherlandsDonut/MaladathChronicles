@@ -67,13 +67,13 @@ public class SaveGame
         for (int i = 0; i < complexes.Count; i++) allSites.Add(complexes[i]);
         for (int i = 0; i < instances.Count; i++) allSites.Add(instances[i]);
         allSites.RemoveAll(x => x.x == 0 && x.y == 0);
-        sum += defines.scoreForExploredSite * allSites.Count(x => currentSave.siteVisits.ContainsKey(x.name) || maxScore);
+        sum += defines.scoreForExploredSite * allSites.Count(x => siteVisits.ContainsKey(x.name) || maxScore);
         var commons = areas.SelectMany(x => x.commonEncounters ?? new()).Select(x => x.who).Distinct().ToList();
-        sum += defines.scoreForKilledCommon * commons.Count(x => currentSave.commonsKilled.ContainsKey(x) || maxScore);
+        sum += defines.scoreForKilledCommon * commons.Count(x => commonsKilled.ContainsKey(x) || maxScore);
         var rares = areas.SelectMany(x => x.rareEncounters ?? new()).Select(x => x.who).Distinct().ToList();
-        sum += defines.scoreForKilledRare * rares.Count(x => currentSave.raresKilled.ContainsKey(x) || maxScore);
+        sum += defines.scoreForKilledRare * rares.Count(x => raresKilled.ContainsKey(x) || maxScore);
         var elites = areas.SelectMany(x => x.eliteEncounters ?? new()).Select(x => x.who).Distinct().ToList();
-        sum += defines.scoreForKilledElite * elites.Count(x => currentSave.elitesKilled.ContainsKey(x) || maxScore);
+        sum += defines.scoreForKilledElite * elites.Count(x => elitesKilled.ContainsKey(x) || maxScore);
         return sum;
     }
 
@@ -227,6 +227,7 @@ public class SaveGame
     //Logs a character out of the world
     public static void CloseSave()
     {
+        if (currentSave.playerDead) settings.selectedCharacter = "";
         Save();
         grid.SwitchMapTexture(false);
         currentSave = null;

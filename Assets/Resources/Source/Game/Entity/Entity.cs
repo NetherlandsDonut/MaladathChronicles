@@ -24,6 +24,7 @@ public class Entity
         if (name != "") this.name = name;
         else this.name = gender == "Female" ? race.femaleNames[random.Next(race.femaleNames.Count)] : race.maleNames[random.Next(race.maleNames.Count)];
         this.spec = spec.name;
+        faction = race.faction;
         abilities = race.abilities.Merge(spec.abilities).Merge(spec.talentTrees.SelectMany(x => x.talents.FindAll(y => y.defaultTaken)).ToDictionary(x => x.ability, x => 0));
         stats = new Stats(race.stats.stats.ToDictionary(x => x.Key, x => x.Value));
         mounts = new();
@@ -75,6 +76,12 @@ public class Entity
     }
 
     #region Experience & Leveling
+
+    //Level of this entity
+    public int level;
+
+    //Current amount of experience this unit has
+    public int experience;
 
     //Tells whether this entity will get experience from
     //killing an enemy that was at given level
@@ -782,14 +789,40 @@ public class Entity
 
     #endregion
 
-    //Level of this entity
-    public int level;
+    #region Faction
+
+    //Faction of the entity
+    public string faction;
+
+    //Which side of the conflict is this entity on
+    public string Side() => Faction.factions.Find(x => x.name == faction).side;
+
+    #endregion
+
+    #region PVP
+
+    //Amount of honor this character has
+    public int currentHonor;
+
+    //Amount of honor this character has
+    public int honor;
+
+    //Current PVP rank of this entity
+    public PVPRank Rank() => PVPRank.pvpRanks.OrderBy(x => x.rank).Last(x => x.honorRequired <= honor);
+
+    #endregion
+
+    #region Enemy Exclusives
+
+    //This variable is only for enemies
+    //and can have three different values:
+    //Common, Rare and Elite
+    public string kind;
+
+    #endregion
 
     //Amount of currently unspent talent points for this entity
     public int unspentTalentPoints;
-
-    //Current amount of experience this unit has
-    public int experience;
 
     //Name of the entity
     public string name;
@@ -812,11 +845,6 @@ public class Entity
 
     //Gender of this entity
     public string gender;
-
-    //This variable is only for enemies
-    //and can have three different values:
-    //Common, Rare and Elite
-    public string kind;
 
     //Set hearthstone home location
     public string homeLocation;
