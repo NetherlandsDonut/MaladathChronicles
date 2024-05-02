@@ -163,6 +163,8 @@ public class Starter : MonoBehaviour
         Mount.mounts ??= new();
         Deserialize(ref Recipe.recipes, "recipes", false, prefix);
         Recipe.recipes ??= new();
+        Deserialize(ref Profession.professions, "professions", false, prefix);
+        Profession.professions ??= new();
         Deserialize(ref ClothType.clothTypes, "clothtypes", false, prefix);
         ClothType.clothTypes ??= new();
         Deserialize(ref Faction.factions, "factions", false, prefix);

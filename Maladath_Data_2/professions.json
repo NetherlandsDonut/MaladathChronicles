@@ -1,0 +1,308 @@
+[
+  {
+    "name": "Leatherworking",
+    "icon": "TradeLeatherworking",
+    "levels": [
+      {
+        "levelName": "Apprentice",
+        "trainingCost": 10,
+        "requiredLevel": 5,
+        "requiredSkill": 0,
+        "maxSkill": 75
+      },
+      {
+        "levelName": "Journeyman",
+        "trainingCost": 500,
+        "requiredLevel": 10,
+        "requiredSkill": 50,
+        "maxSkill": 150
+      },
+      {
+        "levelName": "Expert",
+        "trainingCost": 5000,
+        "requiredLevel": 20,
+        "requiredSkill": 125,
+        "maxSkill": 225
+      },
+      {
+        "levelName": "Artisan",
+        "trainingCost": 50000,
+        "requiredLevel": 35,
+        "requiredSkill": 200,
+        "maxSkill": 300
+      }
+    ]
+  },
+  {
+    "name": "Blacksmithing",
+    "icon": "TradeBlacksmithing",
+    "levels": [
+      {
+        "levelName": "Apprentice",
+        "trainingCost": 10,
+        "requiredLevel": 5,
+        "requiredSkill": 0,
+        "maxSkill": 75
+      },
+      {
+        "levelName": "Journeyman",
+        "trainingCost": 500,
+        "requiredLevel": 10,
+        "requiredSkill": 50,
+        "maxSkill": 150
+      },
+      {
+        "levelName": "Expert",
+        "trainingCost": 5000,
+        "requiredLevel": 20,
+        "requiredSkill": 125,
+        "maxSkill": 225
+      },
+      {
+        "levelName": "Artisan",
+        "trainingCost": 50000,
+        "requiredLevel": 35,
+        "requiredSkill": 200,
+        "maxSkill": 300
+      }
+    ]
+  },
+  {
+    "name": "Alchemy",
+    "icon": "TradeAlchemy",
+    "levels": [
+      {
+        "levelName": "Apprentice",
+        "trainingCost": 10,
+        "requiredLevel": 5,
+        "requiredSkill": 0,
+        "maxSkill": 75
+      },
+      {
+        "levelName": "Journeyman",
+        "trainingCost": 500,
+        "requiredLevel": 10,
+        "requiredSkill": 50,
+        "maxSkill": 150
+      },
+      {
+        "levelName": "Expert",
+        "trainingCost": 5000,
+        "requiredLevel": 20,
+        "requiredSkill": 125,
+        "maxSkill": 225
+      },
+      {
+        "levelName": "Artisan",
+        "trainingCost": 50000,
+        "requiredLevel": 35,
+        "requiredSkill": 200,
+        "maxSkill": 300
+      }
+    ]
+  },
+  {
+    "name": "Tailoring",
+    "icon": "TradeTailoring",
+    "levels": [
+      {
+        "levelName": "Apprentice",
+        "trainingCost": 10,
+        "requiredLevel": 5,
+        "requiredSkill": 0,
+        "maxSkill": 75
+      },
+      {
+        "levelName": "Journeyman",
+        "trainingCost": 500,
+        "requiredLevel": 10,
+        "requiredSkill": 50,
+        "maxSkill": 150
+      },
+      {
+        "levelName": "Expert",
+        "trainingCost": 5000,
+        "requiredLevel": 20,
+        "requiredSkill": 125,
+        "maxSkill": 225
+      },
+      {
+        "levelName": "Artisan",
+        "trainingCost": 50000,
+        "requiredLevel": 35,
+        "requiredSkill": 200,
+        "maxSkill": 300
+      }
+    ]
+  },
+  {
+    "name": "Enchanting",
+    "icon": "TradeEnchanting",
+    "levels": [
+      {
+        "levelName": "Apprentice",
+        "trainingCost": 10,
+        "requiredLevel": 5,
+        "requiredSkill": 0,
+        "maxSkill": 75
+      },
+      {
+        "levelName": "Journeyman",
+        "trainingCost": 500,
+        "requiredLevel": 10,
+        "requiredSkill": 50,
+        "maxSkill": 150
+      },
+      {
+        "levelName": "Expert",
+        "trainingCost": 5000,
+        "requiredLevel": 20,
+        "requiredSkill": 125,
+        "maxSkill": 225
+      },
+      {
+        "levelName": "Artisan",
+        "trainingCost": 50000,
+        "requiredLevel": 35,
+        "requiredSkill": 200,
+        "maxSkill": 300
+      }
+    ]
+  },
+  {
+    "name": "Engineering",
+    "icon": "TradeEngineering",
+    "levels": [
+      {
+        "levelName": "Apprentice",
+        "trainingCost": 10,
+        "requiredLevel": 5,
+        "requiredSkill": 0,
+        "maxSkill": 75
+      },
+      {
+        "levelName": "Journeyman",
+        "trainingCost": 500,
+        "requiredLevel": 10,
+        "requiredSkill": 50,
+        "maxSkill": 150
+      },
+      {
+        "levelName": "Expert",
+        "trainingCost": 5000,
+        "requiredLevel": 20,
+        "requiredSkill": 125,
+        "maxSkill": 225
+      },
+      {
+        "levelName": "Artisan",
+        "trainingCost": 50000,
+        "requiredLevel": 35,
+        "requiredSkill": 200,
+        "maxSkill": 300
+      }
+    ]
+  },
+  {
+    "name": "Cooking",
+    "icon": "TradeCooking",
+    "levels": [
+      {
+        "levelName": "Apprentice",
+        "trainingCost": 10,
+        "requiredLevel": 5,
+        "requiredSkill": 0,
+        "maxSkill": 75
+      },
+      {
+        "levelName": "Journeyman",
+        "trainingCost": 500,
+        "requiredLevel": 10,
+        "requiredSkill": 50,
+        "maxSkill": 150
+      },
+      {
+        "levelName": "Expert",
+        "trainingCost": 5000,
+        "requiredLevel": 20,
+        "requiredSkill": 125,
+        "maxSkill": 225
+      },
+      {
+        "levelName": "Artisan",
+        "trainingCost": 50000,
+        "requiredLevel": 35,
+        "requiredSkill": 200,
+        "maxSkill": 300
+      }
+    ]
+  },
+  {
+    "name": "Fishing",
+    "icon": "TradeFishing",
+    "levels": [
+      {
+        "levelName": "Apprentice",
+        "trainingCost": 10,
+        "requiredLevel": 5,
+        "requiredSkill": 0,
+        "maxSkill": 75
+      },
+      {
+        "levelName": "Journeyman",
+        "trainingCost": 500,
+        "requiredLevel": 10,
+        "requiredSkill": 50,
+        "maxSkill": 150
+      },
+      {
+        "levelName": "Expert",
+        "trainingCost": 5000,
+        "requiredLevel": 20,
+        "requiredSkill": 125,
+        "maxSkill": 225
+      },
+      {
+        "levelName": "Artisan",
+        "trainingCost": 50000,
+        "requiredLevel": 35,
+        "requiredSkill": 200,
+        "maxSkill": 300
+      }
+    ]
+  },
+  {
+    "name": "First Aid",
+    "icon": "TradeFirstAid",
+    "levels": [
+      {
+        "levelName": "Apprentice",
+        "trainingCost": 10,
+        "requiredLevel": 5,
+        "requiredSkill": 0,
+        "maxSkill": 75
+      },
+      {
+        "levelName": "Journeyman",
+        "trainingCost": 500,
+        "requiredLevel": 10,
+        "requiredSkill": 50,
+        "maxSkill": 150
+      },
+      {
+        "levelName": "Expert",
+        "trainingCost": 5000,
+        "requiredLevel": 20,
+        "requiredSkill": 125,
+        "maxSkill": 225
+      },
+      {
+        "levelName": "Artisan",
+        "trainingCost": 50000,
+        "requiredLevel": 35,
+        "requiredSkill": 200,
+        "maxSkill": 300
+      }
+    ]
+  }
+]

@@ -22,7 +22,7 @@
   {
     "category": "Battlemaster",
     "icon": "TradeBattlemaster",
-    "factionVariant": "True"
+    "factionVariant": true
   },
   {
     "category": "Innkeeper",

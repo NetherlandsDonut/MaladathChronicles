@@ -210,35 +210,41 @@
         "gender": "Male",
         "race": "Human",
         "type": "Meat Vendor",
-	"itemsSold": [
+        "itemsSold": [
           {
             "item": "Tough Jerky",
             "amount": 5,
+            "maxAmount": 5,
             "restockSpeed": 30
           },
           {
             "item": "Haunch of Meat",
             "amount": 5,
+            "maxAmount": 5,
             "restockSpeed": 30
           },
           {
             "item": "Mutton Chop",
             "amount": 5,
+            "maxAmount": 5,
             "restockSpeed": 30
           },
           {
             "item": "Wild Hog Shank",
             "amount": 5,
+            "maxAmount": 5,
             "restockSpeed": 30
           },
           {
             "item": "Cured Ham Steak",
             "amount": 5,
+            "maxAmount": 5,
             "restockSpeed": 30
           },
           {
             "item": "Roasted Quail",
             "amount": 5,
+            "maxAmount": 5,
             "restockSpeed": 30
           }
         ]
@@ -1212,35 +1218,41 @@
         "gender": "Male",
         "race": "Orc",
         "type": "Meat Vendor",
-	"itemsSold": [
+        "itemsSold": [
           {
             "item": "Tough Jerky",
             "amount": 5,
+            "maxAmount": 5,
             "restockSpeed": 30
           },
           {
             "item": "Haunch of Meat",
             "amount": 5,
+            "maxAmount": 5,
             "restockSpeed": 30
           },
           {
             "item": "Mutton Chop",
             "amount": 5,
+            "maxAmount": 5,
             "restockSpeed": 30
           },
           {
             "item": "Wild Hog Shank",
             "amount": 5,
+            "maxAmount": 5,
             "restockSpeed": 30
           },
           {
             "item": "Cured Ham Steak",
             "amount": 5,
+            "maxAmount": 5,
             "restockSpeed": 30
           },
           {
             "item": "Roasted Quail",
             "amount": 5,
+            "maxAmount": 5,
             "restockSpeed": 30
           }
         ]

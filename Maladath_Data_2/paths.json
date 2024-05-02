@@ -37,6 +37,24 @@
   },
   {
     "sites": [
+      "Rut'theran Village",
+      "Darnassus"
+    ],
+    "means": "Portal",
+    "spacing": 9999,
+    "points": [
+      {
+        "Item1": 1254,
+        "Item2": -741
+      },
+      {
+        "Item1": 969,
+        "Item2": -513
+      }
+    ]
+  },
+  {
+    "sites": [
       "Orgrimmar",
       "Undercity"
     ],
@@ -6528,136 +6546,6 @@
   },
   {
     "sites": [
-      "Camp Kosh",
-      "The Maker's Terrace"
-    ],
-    "means": "Land",
-    "points": [
-      {
-        "Item1": 5814,
-        "Item2": -2945
-      },
-      {
-        "Item1": 5804,
-        "Item2": -2949
-      },
-      {
-        "Item1": 5796,
-        "Item2": -2956
-      },
-      {
-        "Item1": 5787,
-        "Item2": -2960
-      },
-      {
-        "Item1": 5776,
-        "Item2": -2961
-      },
-      {
-        "Item1": 5766,
-        "Item2": -2956
-      },
-      {
-        "Item1": 5758,
-        "Item2": -2950
-      },
-      {
-        "Item1": 5758,
-        "Item2": -2940
-      },
-      {
-        "Item1": 5754,
-        "Item2": -2930
-      },
-      {
-        "Item1": 5745,
-        "Item2": -2926
-      },
-      {
-        "Item1": 5738,
-        "Item2": -2926
-      }
-    ]
-  },
-  {
-    "sites": [
-      "Grizzlepaw Ridge",
-      "The Maker's Terrace"
-    ],
-    "means": "Land",
-    "points": [
-      {
-        "Item1": 5738,
-        "Item2": -2926
-      },
-      {
-        "Item1": 5738,
-        "Item2": -2915
-      },
-      {
-        "Item1": 5739,
-        "Item2": -2905
-      },
-      {
-        "Item1": 5737,
-        "Item2": -2895
-      },
-      {
-        "Item1": 5735,
-        "Item2": -2885
-      },
-      {
-        "Item1": 5735,
-        "Item2": -2875
-      },
-      {
-        "Item1": 5738,
-        "Item2": -2866
-      },
-      {
-        "Item1": 5741,
-        "Item2": -2856
-      },
-      {
-        "Item1": 5736,
-        "Item2": -2847
-      },
-      {
-        "Item1": 5732,
-        "Item2": -2837
-      },
-      {
-        "Item1": 5726,
-        "Item2": -2829
-      },
-      {
-        "Item1": 5717,
-        "Item2": -2825
-      },
-      {
-        "Item1": 5707,
-        "Item2": -2827
-      },
-      {
-        "Item1": 5700,
-        "Item2": -2834
-      },
-      {
-        "Item1": 5692,
-        "Item2": -2841
-      },
-      {
-        "Item1": 5683,
-        "Item2": -2845
-      },
-      {
-        "Item1": 5681,
-        "Item2": -2850
-      }
-    ]
-  },
-  {
-    "sites": [
       "Grizzlepaw Ridge",
       "Stonesplinter Valley"
     ],
@@ -10659,104 +10547,6 @@
       {
         "Item1": 5738,
         "Item2": -2926
-      }
-    ]
-  },
-  {
-    "sites": [
-      "The Maker's Terrace",
-      "Uldaman"
-    ],
-    "means": "Land",
-    "points": [
-      {
-        "Item1": 5738,
-        "Item2": -2926
-      },
-      {
-        "Item1": 5737,
-        "Item2": -2916
-      },
-      {
-        "Item1": 5727,
-        "Item2": -2915
-      },
-      {
-        "Item1": 5717,
-        "Item2": -2912
-      },
-      {
-        "Item1": 5708,
-        "Item2": -2906
-      },
-      {
-        "Item1": 5703,
-        "Item2": -2897
-      },
-      {
-        "Item1": 5700,
-        "Item2": -2888
-      }
-    ]
-  },
-  {
-    "sites": [
-      "South Hillside",
-      "The Maker's Terrace"
-    ],
-    "means": "Land",
-    "points": [
-      {
-        "Item1": 5738,
-        "Item2": -2926
-      },
-      {
-        "Item1": 5740,
-        "Item2": -2916
-      },
-      {
-        "Item1": 5737,
-        "Item2": -2906
-      },
-      {
-        "Item1": 5733,
-        "Item2": -2896
-      },
-      {
-        "Item1": 5735,
-        "Item2": -2886
-      },
-      {
-        "Item1": 5732,
-        "Item2": -2876
-      },
-      {
-        "Item1": 5736,
-        "Item2": -2867
-      },
-      {
-        "Item1": 5745,
-        "Item2": -2862
-      },
-      {
-        "Item1": 5755,
-        "Item2": -2861
-      },
-      {
-        "Item1": 5763,
-        "Item2": -2867
-      },
-      {
-        "Item1": 5773,
-        "Item2": -2872
-      },
-      {
-        "Item1": 5783,
-        "Item2": -2873
-      },
-      {
-        "Item1": 5795,
-        "Item2": -2869
       }
     ]
   },
@@ -86961,6 +86751,280 @@
       {
         "Item1": 1957,
         "Item2": -3268
+      }
+    ]
+  },
+  {
+    "sites": [
+      "The Maker's Terrace",
+      "Uldaman"
+    ],
+    "means": "Land",
+    "spacing": 10,
+    "points": [
+      {
+        "Item1": 5700,
+        "Item2": -2888
+      },
+      {
+        "Item1": 5707,
+        "Item2": -2894
+      },
+      {
+        "Item1": 5711,
+        "Item2": -2903
+      },
+      {
+        "Item1": 5720,
+        "Item2": -2908
+      },
+      {
+        "Item1": 5730,
+        "Item2": -2907
+      },
+      {
+        "Item1": 5738,
+        "Item2": -2907
+      }
+    ]
+  },
+  {
+    "sites": [
+      "Grizzlepaw Ridge",
+      "The Maker's Terrace"
+    ],
+    "means": "Land",
+    "spacing": 10,
+    "points": [
+      {
+        "Item1": 5681,
+        "Item2": -2850
+      },
+      {
+        "Item1": 5690,
+        "Item2": -2845
+      },
+      {
+        "Item1": 5696,
+        "Item2": -2837
+      },
+      {
+        "Item1": 5701,
+        "Item2": -2827
+      },
+      {
+        "Item1": 5710,
+        "Item2": -2825
+      },
+      {
+        "Item1": 5719,
+        "Item2": -2830
+      },
+      {
+        "Item1": 5726,
+        "Item2": -2837
+      },
+      {
+        "Item1": 5732,
+        "Item2": -2846
+      },
+      {
+        "Item1": 5731,
+        "Item2": -2856
+      },
+      {
+        "Item1": 5731,
+        "Item2": -2866
+      },
+      {
+        "Item1": 5735,
+        "Item2": -2875
+      },
+      {
+        "Item1": 5733,
+        "Item2": -2885
+      },
+      {
+        "Item1": 5732,
+        "Item2": -2895
+      },
+      {
+        "Item1": 5738,
+        "Item2": -2907
+      }
+    ]
+  },
+  {
+    "sites": [
+      "South Hillside",
+      "The Maker's Terrace"
+    ],
+    "means": "Land",
+    "spacing": 10,
+    "points": [
+      {
+        "Item1": 5738,
+        "Item2": -2907
+      },
+      {
+        "Item1": 5738,
+        "Item2": -2896
+      },
+      {
+        "Item1": 5733,
+        "Item2": -2887
+      },
+      {
+        "Item1": 5730,
+        "Item2": -2878
+      },
+      {
+        "Item1": 5735,
+        "Item2": -2869
+      },
+      {
+        "Item1": 5743,
+        "Item2": -2862
+      },
+      {
+        "Item1": 5753,
+        "Item2": -2861
+      },
+      {
+        "Item1": 5763,
+        "Item2": -2864
+      },
+      {
+        "Item1": 5771,
+        "Item2": -2870
+      },
+      {
+        "Item1": 5780,
+        "Item2": -2875
+      },
+      {
+        "Item1": 5790,
+        "Item2": -2873
+      },
+      {
+        "Item1": 5795,
+        "Item2": -2869
+      }
+    ]
+  },
+  {
+    "sites": [
+      "Hammertoe's Digsite",
+      "The Maker's Terrace"
+    ],
+    "means": "Land",
+    "spacing": 10,
+    "points": [
+      {
+        "Item1": 5738,
+        "Item2": -2907
+      },
+      {
+        "Item1": 5741,
+        "Item2": -2917
+      },
+      {
+        "Item1": 5750,
+        "Item2": -2923
+      },
+      {
+        "Item1": 5759,
+        "Item2": -2927
+      },
+      {
+        "Item1": 5759,
+        "Item2": -2938
+      },
+      {
+        "Item1": 5754,
+        "Item2": -2946
+      },
+      {
+        "Item1": 5753,
+        "Item2": -2956
+      },
+      {
+        "Item1": 5757,
+        "Item2": -2965
+      },
+      {
+        "Item1": 5759,
+        "Item2": -2975
+      },
+      {
+        "Item1": 5757,
+        "Item2": -2983
+      }
+    ]
+  },
+  {
+    "sites": [
+      "Camp Kosh",
+      "The Maker's Terrace"
+    ],
+    "means": "Land",
+    "spacing": 10,
+    "points": [
+      {
+        "Item1": 5738,
+        "Item2": -2907
+      },
+      {
+        "Item1": 5743,
+        "Item2": -2915
+      },
+      {
+        "Item1": 5752,
+        "Item2": -2919
+      },
+      {
+        "Item1": 5760,
+        "Item2": -2925
+      },
+      {
+        "Item1": 5759,
+        "Item2": -2936
+      },
+      {
+        "Item1": 5756,
+        "Item2": -2945
+      },
+      {
+        "Item1": 5757,
+        "Item2": -2955
+      },
+      {
+        "Item1": 5766,
+        "Item2": -2962
+      },
+      {
+        "Item1": 5776,
+        "Item2": -2962
+      },
+      {
+        "Item1": 5786,
+        "Item2": -2959
+      },
+      {
+        "Item1": 5793,
+        "Item2": -2952
+      },
+      {
+        "Item1": 5802,
+        "Item2": -2947
+      },
+      {
+        "Item1": 5812,
+        "Item2": -2944
+      },
+      {
+        "Item1": 5814,
+        "Item2": -2945
       }
     ]
   }

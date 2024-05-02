@@ -97,6 +97,9 @@ public class PersonType
     //Indicates whether this person type has different icons depending on faction
     public bool factionVariant;
 
+    //Affiliation of the npc with a specific profession
+    public string profession;
+
     //Range of the profession recipes this person can teach the player
     public int skillCap;
 

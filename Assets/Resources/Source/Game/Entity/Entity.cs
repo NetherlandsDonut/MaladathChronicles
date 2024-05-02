@@ -29,6 +29,8 @@ public class Entity
         stats = new Stats(race.stats.stats.ToDictionary(x => x.Key, x => x.Value));
         mounts = new();
         inventory = new Inventory(items);
+        learnedRecipes = new();
+        professionSkills = new();
         inventory.items.RemoveAll(x => x == null);
         for (int i = 0; i < 0; i++)
         {
@@ -450,6 +452,16 @@ public class Entity
         inventory.items.Add(inventory.bags[index]);
         inventory.bags.RemoveAt(index);
     }
+
+    #endregion
+
+    #region Professions
+
+    //List of all professions skill
+    public Dictionary<string, (int, List<string>)> professionSkills;
+
+    //List of all learned recipes grouped by profession
+    public Dictionary<string, List<string>> learnedRecipes;
 
     #endregion
 

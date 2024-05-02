@@ -96,146 +96,170 @@
   },
   {
     "type": "Master Leatherworker",
-    "icon": "TradeLeatherWorking",
+    "icon": "TradeLeatherworking",
     "category": "Profession Trainer",
+    "profession": "Leatherworking",
     "skillCap": 255
   },
   {
     "type": "Artisan Leatherworker",
-    "icon": "TradeLeatherWorking",
+    "icon": "TradeLeatherworking",
     "category": "Profession Trainer",
+    "profession": "Leatherworking",
     "skillCap": 225
   },
   {
     "type": "Expert Leatherworker",
-    "icon": "TradeLeatherWorking",
+    "icon": "TradeLeatherworking",
     "category": "Profession Trainer",
+    "profession": "Leatherworking",
     "skillCap": 150
   },
   {
     "type": "Journeyman Leatherworker",
-    "icon": "TradeLeatherWorking",
+    "icon": "TradeLeatherworking",
     "category": "Profession Trainer",
+    "profession": "Leatherworking",
     "skillCap": 75
   },
   {
     "type": "Master Blacksmith",
     "icon": "TradeBlacksmithing",
     "category": "Profession Trainer",
+    "profession": "Blacksmithing",
     "skillCap": 255
   },
   {
     "type": "Artisan Blacksmith",
     "icon": "TradeBlacksmithing",
     "category": "Profession Trainer",
+    "profession": "Blacksmithing",
     "skillCap": 225
   },
   {
     "type": "Expert Blacksmith",
     "icon": "TradeBlacksmithing",
     "category": "Profession Trainer",
+    "profession": "Blacksmithing",
     "skillCap": 150
   },
   {
     "type": "Journeyman Blacksmith",
     "icon": "TradeBlacksmithing",
     "category": "Profession Trainer",
+    "profession": "Blacksmithing",
     "skillCap": 75
   },
   {
     "type": "Master Alchemist",
     "icon": "TradeAlchemy",
     "category": "Profession Trainer",
+    "profession": "Alchemy",
     "skillCap": 255
   },
   {
     "type": "Artisan Alchemist",
     "icon": "TradeAlchemy",
     "category": "Profession Trainer",
+    "profession": "Alchemy",
     "skillCap": 225
   },
   {
     "type": "Expert Alchemist",
     "icon": "TradeAlchemy",
     "category": "Profession Trainer",
+    "profession": "Alchemy",
     "skillCap": 150
   },
   {
     "type": "Journeyman Alchemist",
     "icon": "TradeAlchemy",
     "category": "Profession Trainer",
+    "profession": "Alchemy",
     "skillCap": 75
   },
   {
     "type": "Master Tailor",
     "icon": "TradeTailoring",
     "category": "Profession Trainer",
+    "profession": "Tailoring",
     "skillCap": 255
   },
   {
     "type": "Artisan Tailor",
     "icon": "TradeTailoring",
     "category": "Profession Trainer",
+    "profession": "Tailoring",
     "skillCap": 225
   },
   {
     "type": "Expert Tailor",
     "icon": "TradeTailoring",
     "category": "Profession Trainer",
+    "profession": "Tailoring",
     "skillCap": 150
   },
   {
     "type": "Journeyman Tailor",
     "icon": "TradeTailoring",
     "category": "Profession Trainer",
+    "profession": "Tailoring",
     "skillCap": 75
   },
   {
     "type": "Master Enchanter",
     "icon": "TradeEnchanting",
     "category": "Profession Trainer",
+    "profession": "Enchanting",
     "skillCap": 255
   },
   {
     "type": "Artisan Enchanter",
     "icon": "TradeEnchanting",
     "category": "Profession Trainer",
+    "profession": "Enchanting",
     "skillCap": 225
   },
   {
     "type": "Expert Enchanter",
     "icon": "TradeEnchanting",
     "category": "Profession Trainer",
+    "profession": "Enchanting",
     "skillCap": 150
   },
   {
     "type": "Journeyman Enchanter",
     "icon": "TradeEnchanting",
     "category": "Profession Trainer",
+    "profession": "Enchanting",
     "skillCap": 75
   },
   {
     "type": "Master Engineer",
     "icon": "TradeEngineering",
     "category": "Profession Trainer",
+    "profession": "Engineering",
     "skillCap": 255
   },
   {
     "type": "Artisan Engineer",
     "icon": "TradeEngineering",
     "category": "Profession Trainer",
+    "profession": "Engineering",
     "skillCap": 225
   },
   {
     "type": "Expert Engineer",
     "icon": "TradeEngineering",
     "category": "Profession Trainer",
+    "profession": "Engineering",
     "skillCap": 150
   },
   {
     "type": "Journeyman Engineer",
     "icon": "TradeEngineering",
     "category": "Profession Trainer",
+    "profession": "Engineering",
     "skillCap": 75
   },
   {
@@ -257,7 +281,7 @@
     "type": "Battlemaster",
     "icon": "TradeBattlemaster",
     "category": "Battlemaster",
-    "factionVariant": "True"
+    "factionVariant": true
   },
   {
     "type": "Innkeeper",

@@ -1,9 +1,7 @@
 [
   {
-    "rank": 0,
     "nameAlliance": "",
-    "nameHorde": "",
-    "honorRequired": 0
+    "nameHorde": ""
   },
   {
     "rank": 1,
@@ -88,5 +86,5 @@
     "nameAlliance": "Grand Marshal",
     "nameHorde": "High Warlord",
     "honorRequired": 1638400
-  },
+  }
 ]
