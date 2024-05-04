@@ -1835,16 +1835,22 @@ public class Blueprint
                 {
                     PlaySound("DesktopInventoryOpen");
                     CloseWindow(h.window);
-                    CloseWindow("Town: " + town.name);
                     SpawnWindowBlueprint("Vendor");
                     SpawnWindowBlueprint("Inventory");
                     Respawn("ExperienceBar");
                 });
-                AddButtonRegion(() =>
-                {
-                    AddLine("I want this inn to be my home.");
-                },
-                (h) => { currentSave.player.homeLocation = town.name; });
+                if (currentSave.player.homeLocation != town.name)
+                    AddButtonRegion(() =>
+                    {
+                        AddLine("I want this inn to be my home.");
+                    },
+                    (h) =>
+                    {
+                        PlaySound("DesktopInstanceOpen");
+                        CloseWindow(h.window);
+                        SpawnWindowBlueprint("MakeInnHome");
+                        Respawn("ExperienceBar");
+                    });
             }
             else if (type.category == "Vendor")
             {
@@ -2858,6 +2864,52 @@ public class Blueprint
                     currentSave.player.mount = "";
                     Respawn("MountList");
                 });
+        }),
+        new("MakeInnHome", () => {
+            SetAnchor(TopLeft, 19, -38);
+            AddHeaderGroup();
+            SetRegionGroupWidth(190);
+            var type = personTypes.Find(x => x.type == person.type);
+            AddHeaderRegion(() =>
+            {
+                AddLine(person.type + " ", "Gray");
+                AddText(person.name);
+                AddSmallButton(type.icon + (type.factionVariant ? factions.Find(x => x.name == town.faction).side : ""), (h) => { });
+            });
+            AddPaddingRegion(() =>
+            {
+                AddLine("Do you want to change your", "DarkGray");
+                AddLine("home from ", "DarkGray");
+                AddText(currentSave.player.homeLocation, "LightGray");
+                AddLine("to ", "DarkGray");
+                AddText(town.name, "LightGray");
+                AddLine("");
+            });
+            AddRegionGroup();
+            SetRegionGroupWidth(95);
+            AddButtonRegion(() =>
+            {
+                AddLine("Cancel", "", "Center");
+            },
+            (h) =>
+            {
+                PlaySound("DesktopInstanceClose");
+                CloseWindow("MakeInnHome");
+                Respawn("Person");
+            });
+            AddRegionGroup();
+            SetRegionGroupWidth(95);
+            AddButtonRegion(() =>
+            {
+                AddLine("Yes", "", "Center");
+            },
+            (h) =>
+            {
+                PlaySound("DesktopHomeLocation");
+                currentSave.player.homeLocation = town.name;
+                CloseWindow("MakeInnHome");
+                Respawn("Person");
+            });
         }),
         new("MountsSort", () => {
             SetAnchor(Center);
@@ -8558,6 +8610,12 @@ public class Blueprint
                     CloseWindow("Bank");
                     CloseWindow("Vendor");
                     CloseWindow("VendorBuyback");
+                    Respawn("Person");
+                }
+                else if (CloseWindow("MakeInnHome"))
+                {
+                    PlaySound("DesktopInstanceClose");
+                    CloseWindow("MakeInnHome");
                     Respawn("Person");
                 }
                 else if (CloseWindow("ProfessionRecipeTrainer"))

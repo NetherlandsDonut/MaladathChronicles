@@ -161,6 +161,18 @@ public class Item
     //This is a list of races that are eligible to drop this item
     public List<string> droppedBy;
 
+    //Amount of cooldown in minutes for the item to be usable again
+    public int useCooldown;
+
+    //Whether the item is consumed after use
+    public bool notConsumedOnUse;
+
+    //Item cooldown group to prevent player from using 6 different healing potions
+    public string cooldownGroup;
+
+    //List of effects triggered on using the item
+    public List<Dictionary<string, string>> useEffects;
+
     //Those two are unused right now but will serve the role of loot
     public List<string> possibleItems;
     public List<string> alternateItems;
