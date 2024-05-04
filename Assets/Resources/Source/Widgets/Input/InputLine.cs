@@ -7,6 +7,7 @@ using static Event;
 using static Cursor;
 using static String;
 using static SaveGame;
+using UnityEngine.Playables;
 
 public class InputLine : MonoBehaviour
 {
@@ -598,6 +599,24 @@ public class InputLine : MonoBehaviour
                 var amount = int.Parse(foo.Value().Substring(5));
                 currentSave.player.inventory.money += amount;
             }
+            else if (foo.Value().StartsWith("bla"))
+                ProfessionSetter("Blacksmithing");
+            else if (foo.Value().StartsWith("fir"))
+                ProfessionSetter("First Aid");
+            else if (foo.Value().StartsWith("lea"))
+                ProfessionSetter("Leatherworking");
+            else if (foo.Value().StartsWith("alc"))
+                ProfessionSetter("Alchemy");
+            else if (foo.Value().StartsWith("her"))
+                ProfessionSetter("Herbalism");
+            else if (foo.Value().StartsWith("min"))
+                ProfessionSetter("Mining");
+            else if (foo.Value().StartsWith("enc"))
+                ProfessionSetter("Enchanting");
+            else if (foo.Value().StartsWith("coo"))
+                ProfessionSetter("Cooking");
+            else if (foo.Value().StartsWith("tai"))
+                ProfessionSetter("Tailoring");
             else if (foo.Value().StartsWith("addtime"))
             {
                 var amount = int.Parse(foo.Value().Substring(7));
@@ -644,6 +663,23 @@ public class InputLine : MonoBehaviour
         {
             var find = encounterLevels.ToList().Find(x => x.Value.Item2 == foo);
             find.Key.levelMax = int.Parse(foo.Value());
+        }
+
+        void ProfessionSetter(string profession)
+        {
+            if (foo.Value().Substring(3).StartsWith("r"))
+            {
+                if (currentSave.player.professionSkills.ContainsKey(profession))
+                    currentSave.player.professionSkills.Remove(profession);
+                Sound.PlaySound("DesktopCantClick");
+            }
+            else
+            {
+                var amount = int.Parse(foo.Value().Substring(3));
+                if (currentSave.player.professionSkills.ContainsKey(profession))
+                    currentSave.player.professionSkills[profession] = (amount, currentSave.player.professionSkills[profession].Item2);
+                Sound.PlaySound("DesktopButtonPressRight");
+            }
         }
     }
 }

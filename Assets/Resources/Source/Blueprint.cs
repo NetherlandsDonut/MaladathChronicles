@@ -630,10 +630,10 @@ public class Blueprint
             }
         }),
         new("PlayerEquipmentInfo", () => {
-            SetAnchor(TopLeft, 0, -19);
+            SetAnchor(TopLeft, 19, -38);
             AddRegionGroup();
             SetRegionGroupWidth(190);
-            SetRegionGroupHeight(290);
+            SetRegionGroupHeight(252);
             AddHeaderRegion(() => AddLine("Equipment:"));
             Foo("Head", currentSave.player.GetItemInSlot("Head"));
             Foo("Shoulders", currentSave.player.GetItemInSlot("Shoulders"));
@@ -645,18 +645,19 @@ public class Blueprint
             Foo("Legs", currentSave.player.GetItemInSlot("Legs"));
             Foo("Feet", currentSave.player.GetItemInSlot("Feet"));
             Foo("Main Hand", currentSave.player.GetItemInSlot("Main Hand"));
-            if (currentSave.player.GetItemInSlot("Main Hand") == null || currentSave.player.GetItemInSlot("Main Hand") != null && currentSave.player.GetItemInSlot("Main Hand").type != "Two Handed")
-                Foo("Off Hand", currentSave.player.GetItemInSlot("Off Hand"));
+            bool showOff = currentSave.player.GetItemInSlot("Main Hand") == null || currentSave.player.GetItemInSlot("Main Hand") != null && currentSave.player.GetItemInSlot("Main Hand").type != "Two Handed";
+            if (showOff) Foo("Off Hand", currentSave.player.GetItemInSlot("Off Hand"));
             Foo("Neck", currentSave.player.GetItemInSlot("Neck"));
             Foo("Finger", currentSave.player.GetItemInSlot("Finger"));
             Foo("Trinket", currentSave.player.GetItemInSlot("Trinket"));
-            if (currentSave.player.spec == "Druid")
-                Foo("Idol", currentSave.player.GetItemInSlot("Special"));
-            if (currentSave.player.spec == "Paladin")
-                Foo("Libram", currentSave.player.GetItemInSlot("Special"));
-            if (currentSave.player.spec == "Shaman")
-                Foo("Totem", currentSave.player.GetItemInSlot("Special"));
-            AddPaddingRegion(() => { AddLine(); AddLine(); AddLine(); AddLine(); });
+            if (!showOff) AddPaddingRegion(() => { AddLine(""); });
+            //if (currentSave.player.spec == "Druid")
+            //    Foo("Idol", currentSave.player.GetItemInSlot("Special"));
+            //if (currentSave.player.spec == "Paladin")
+            //    Foo("Libram", currentSave.player.GetItemInSlot("Special"));
+            //if (currentSave.player.spec == "Shaman")
+            //    Foo("Totem", currentSave.player.GetItemInSlot("Special"));
+            //AddPaddingRegion(() => { AddLine(); AddLine(); AddLine(); AddLine(); });
 
             void Foo(string slot, Item item)
             {
@@ -1050,13 +1051,13 @@ public class Blueprint
             );
         }),
         new("LootInfo", () => {
-            SetAnchor(-115, -90);
+            SetAnchor(-92, -86);
             AddRegionGroup();
-            SetRegionGroupWidth(228);
+            SetRegionGroupWidth(182);
             AddHeaderRegion(
                 () =>
                 {
-                    AddLine(board.enemy.name + "'s Loot");
+                    AddLine(board.enemy.name + "'s loot:");
                     AddSmallButton("OtherClose", (h) =>
                     {
                         PlaySound("DesktopInventoryClose");
@@ -1433,7 +1434,7 @@ public class Blueprint
             AddPaddingRegion(() => { });
         }),
         new("Inventory", () => {
-            SetAnchor(TopRight, 0, -19);
+            SetAnchor(TopRight, -19, -38);
             AddHeaderGroup();
             SetRegionGroupWidth(190);
             var items = currentSave.player.inventory.items;
@@ -1468,7 +1469,7 @@ public class Blueprint
                 else
                     AddSmallButton("OtherSettingsOff", (h) => { });
             });
-            for (int i = 0; i < 7; i++)
+            for (int i = 0; i < 6; i++)
             {
                 var index = i;
                 AddPaddingRegion(
@@ -1588,9 +1589,9 @@ public class Blueprint
             });
         }),
         new("Bank", () => {
-            SetAnchor(TopLeft, 0, -19);
+            SetAnchor(TopLeft, 19, -38);
             AddRegionGroup();
-            SetRegionGroupHeight(319);
+            SetRegionGroupHeight(281);
             var items = currentSave.banks[town.name].items;
             AddHeaderRegion(() =>
             {
@@ -1633,7 +1634,6 @@ public class Blueprint
                     }
                 );
             }
-            AddPaddingRegion(() => SetRegionAsGroupExtender());
         }, true),
         new("Vendor", () => {
             currentSave.buyback ??= new(true);
@@ -1723,10 +1723,10 @@ public class Blueprint
         }, true),
         new("CharacterInfoEquipment", () => {
             currentSave.buyback ??= new(true);
-            SetAnchor(TopLeft, 0, -19);
+            SetAnchor(TopLeft, 19, -38);
             AddHeaderGroup();
             SetRegionGroupWidth(190);
-            SetRegionGroupHeight(290);
+            SetRegionGroupHeight(252);
             Foo("Head", currentSave.player.GetItemInSlot("Head"));
             Foo("Shoulders", currentSave.player.GetItemInSlot("Shoulders"));
             Foo("Back", currentSave.player.GetItemInSlot("Back"));
@@ -1737,18 +1737,19 @@ public class Blueprint
             Foo("Legs", currentSave.player.GetItemInSlot("Legs"));
             Foo("Feet", currentSave.player.GetItemInSlot("Feet"));
             Foo("Main Hand", currentSave.player.GetItemInSlot("Main Hand"));
-            if (currentSave.player.GetItemInSlot("Main Hand") == null || currentSave.player.GetItemInSlot("Main Hand") != null && currentSave.player.GetItemInSlot("Main Hand").type != "Two Handed")
-                Foo("Off Hand", currentSave.player.GetItemInSlot("Off Hand"));
+            bool showOff = currentSave.player.GetItemInSlot("Main Hand") == null || currentSave.player.GetItemInSlot("Main Hand") != null && currentSave.player.GetItemInSlot("Main Hand").type != "Two Handed";
+            if (showOff) Foo("Off Hand", currentSave.player.GetItemInSlot("Off Hand"));
             Foo("Neck", currentSave.player.GetItemInSlot("Neck"));
             Foo("Finger", currentSave.player.GetItemInSlot("Finger"));
             Foo("Trinket", currentSave.player.GetItemInSlot("Trinket"));
-            if (currentSave.player.spec == "Druid")
-                Foo("Idol", currentSave.player.GetItemInSlot("Special"));
-            if (currentSave.player.spec == "Paladin")
-                Foo("Libram", currentSave.player.GetItemInSlot("Special"));
-            if (currentSave.player.spec == "Shaman")
-                Foo("Totem", currentSave.player.GetItemInSlot("Special"));
-            AddPaddingRegion(() => SetRegionAsGroupExtender());
+            if (!showOff) AddPaddingRegion(() => { AddLine(""); });
+            //if (currentSave.player.spec == "Druid")
+            //    Foo("Idol", currentSave.player.GetItemInSlot("Special"));
+            //if (currentSave.player.spec == "Paladin")
+            //    Foo("Libram", currentSave.player.GetItemInSlot("Special"));
+            //if (currentSave.player.spec == "Shaman")
+            //    Foo("Totem", currentSave.player.GetItemInSlot("Special"));
+            //AddPaddingRegion(() => SetRegionAsGroupExtender());
 
             void Foo(string slot, Item item)
             {
@@ -1791,7 +1792,7 @@ public class Blueprint
         new("Person", () => {
             SetAnchor(TopLeft, 19, -38);
             AddHeaderGroup();
-            SetRegionGroupWidth(250);
+            SetRegionGroupWidth(190);
             var type = personTypes.Find(x => x.type == person.type);
             AddHeaderRegion(() =>
             {
@@ -2516,16 +2517,14 @@ public class Blueprint
             });
         }, true),
         new("CombatResultsLoot", () => {
-            SetAnchor(-115, -109);
+            SetAnchor(-92, -105);
             AddRegionGroup();
-            SetRegionGroupWidth(228);
+            SetRegionGroupWidth(182);
             AddPaddingRegion(
                 () =>
                 {
-                    for (int j = 0; j < 6; j++)
-                        if (j < board.results.inventory.items.Count)
-                            PrintLootItem(board.results.inventory.items[j]);
-                        else AddBigButton("OtherEmpty", (h) => { });
+                    for (int j = 0; j < 4 && j < board.results.inventory.items.Count; j++)
+                        PrintLootItem(board.results.inventory.items[j]);
                 }
             );
         }),
@@ -3016,39 +3015,40 @@ public class Blueprint
             AddPaddingRegion(() => { });
         }),
         new("ProfessionRecipeTrainer", () => {
-            SetAnchor(TopLeft, 0, -19);
+            SetAnchor(TopLeft, 19, -38);
             var type = personTypes.Find(x => x.type == person.type);
             var recipes = Recipe.recipes.FindAll(x => x.profession == type.profession && x.trainingCost > 0 && (x.learnedAt <= type.skillCap || type.skillCap == 0));
             if (currentSave.player.learnedRecipes.ContainsKey(type.profession))
                 recipes = recipes.FindAll(x => !currentSave.player.learnedRecipes[type.profession].Contains(x.name));
-            AddHeaderGroup(() => recipes.Count, 7);
+            AddHeaderGroup(() => recipes.Count, 6);
             SetRegionGroupWidth(190);
-            SetRegionGroupHeight(342);
+            SetRegionGroupHeight(288);
             AddHeaderRegion(() =>
             {
-                var type = personTypes.Find(x => x.type == person.type);
-                AddLine(person.name);
-                AddSmallButton("OtherClose", (h) =>
-                {
-                    CloseWindow("ProfessionRecipeTrainer");
-                    Respawn("Person");
-                    PlaySound("DesktopInstanceClose");
-                });
+                AddLine(person.type + " ", "Gray");
+                AddText(person.name);
+                AddSmallButton(type.icon + (type.factionVariant ? factions.Find(x => x.name == town.faction).side : ""), (h) => { });
             });
             AddHeaderRegion(() =>
             {
                 AddLine("Learnable recipes:");
+                AddSmallButton("OtherClose", (h) =>
+                {
+                    CloseWindow(h.window.title);
+                    Respawn("Person");
+                    PlaySound("DesktopInstanceClose");
+                });
             });
             var regionGroup = CDesktop.LBWindow.LBRegionGroup;
             AddPaginationLine(regionGroup);
-            for (int i = 0; i < 7; i++)
+            for (int i = 0; i < 6; i++)
             {
                 var index = i;
                 AddPaddingRegion(() =>
                 {
-                    if (recipes.Count > index + 7 * regionGroup.pagination)
+                    if (recipes.Count > index + 6 * regionGroup.pagination)
                     {
-                        var key = recipes[index + 7 * regionGroup.pagination];
+                        var key = recipes[index + 6 * regionGroup.pagination];
                         AddLine(key.name);
                         AddLine("", "DarkGray");
                         if (key.learnedAt > 0)
@@ -3059,18 +3059,16 @@ public class Blueprint
                         AddBigButton(key.Icon(),
                             (h) =>
                             {
-                                var key = recipes[index + 7 * regionGroup.pagination];
+                                var key = recipes[index + 6 * regionGroup.pagination];
 
                                 //If has the profession and at a proper level..
                                 if (currentSave.player.professionSkills.ContainsKey(key.profession) && currentSave.player.professionSkills[key.profession].Item1 >= key.learnedAt)
                                 {
                                     //If doesnt have the recipe..
-                                    if (!currentSave.player.learnedRecipes.ContainsKey(type.profession) || currentSave.player.learnedRecipes.ContainsKey(type.profession) && currentSave.player.learnedRecipes[type.profession].Contains(key.name))
+                                    if (!currentSave.player.learnedRecipes.ContainsKey(type.profession) || currentSave.player.learnedRecipes.ContainsKey(type.profession) && !currentSave.player.learnedRecipes[type.profession].Contains(key.name))
                                     {
                                         //Add the recipe
-                                        if (!currentSave.player.learnedRecipes.ContainsKey(type.profession))
-                                            currentSave.player.learnedRecipes.Add(type.profession, new());
-                                        currentSave.player.learnedRecipes[type.profession].Add(key.name);
+                                        currentSave.player.LearnRecipe(key);
                                         Respawn(h.window.title);
                                         PlaySound("DesktopSkillLearned");
                                     }
@@ -3080,19 +3078,21 @@ public class Blueprint
                             (h) => () =>
                             {
                                 SetAnchor(Center);
-                                var key = recipes[index + 7 * regionGroup.pagination];
+                                var key = recipes[index + 6 * regionGroup.pagination];
                                 PrintItemTooltip(items.Find(x => x.name == key.results.First().Key), Input.GetKey(KeyCode.LeftShift));
                             }
                         );
                         var can = false;
                         if (currentSave.player.professionSkills.ContainsKey(key.profession) && currentSave.player.professionSkills[key.profession].Item1 >= key.learnedAt)
-                            if (!currentSave.player.learnedRecipes.ContainsKey(type.profession) || currentSave.player.learnedRecipes.ContainsKey(type.profession) && currentSave.player.learnedRecipes[type.profession].Contains(key.name))
+                            if (!currentSave.player.learnedRecipes.ContainsKey(type.profession) || currentSave.player.learnedRecipes.ContainsKey(type.profession) && !currentSave.player.learnedRecipes[type.profession].Contains(key.name))
                                 can = true;
                         if (!can)
                         {
                             SetBigButtonToGrayscale();
                             AddBigButtonOverlay("OtherGridBlurred");
                         }
+                        else
+                            AddBigButtonOverlay("OtherGlowLearnable");
                     }
                     else
                     {
@@ -3101,48 +3101,43 @@ public class Blueprint
                     }
                 });
             }
-            AddRegionGroup();
-            SetRegionGroupWidth(86);
-            AddPaddingRegion(() => AddLine("Activated", "", "Center"));
-            AddRegionGroup();
-            SetRegionGroupWidth(85);
-            AddButtonRegion(() => AddLine("Passive", "", "Center"), (h) => { CloseWindow("SpellbookAbilityListActivated"); SpawnWindowBlueprint("SpellbookAbilityListPassive"); });
         }),
         new("ProfessionLevelTrainer", () => {
-            SetAnchor(TopLeft, 0, -19);
+            SetAnchor(TopLeft, 19, -38);
             var type = personTypes.Find(x => x.type == person.type);
             var profession = professions.Find(x => x.name == type.profession);
             var levels = profession.levels.OrderBy(x => x.requiredSkill).ToList();
             if (currentSave.player.professionSkills.ContainsKey(profession.name))
                 levels = levels.FindAll(x => !currentSave.player.professionSkills[profession.name].Item2.Contains(x.levelName));
-            AddHeaderGroup(() => levels.Count, 7);
+            AddHeaderGroup(() => levels.Count, 6);
             SetRegionGroupWidth(190);
-            SetRegionGroupHeight(342);
+            SetRegionGroupHeight(288);
             AddHeaderRegion(() =>
             {
-                var type = personTypes.Find(x => x.type == person.type);
-                AddLine(person.name);
-                AddSmallButton("OtherClose", (h) =>
-                {
-                    CloseWindow("ProfessionLevelTrainer");
-                    Respawn("Person");
-                    PlaySound("DesktopInventoryClose");
-                });
+                AddLine(person.type + " ", "Gray");
+                AddText(person.name);
+                AddSmallButton(type.icon + (type.factionVariant ? factions.Find(x => x.name == town.faction).side : ""), (h) => { });
             });
             AddHeaderRegion(() =>
             {
                 AddLine("Learnable levels:");
+                AddSmallButton("OtherClose", (h) =>
+                {
+                    CloseWindow(h.window.title);
+                    Respawn("Person");
+                    PlaySound("DesktopInstanceClose");
+                });
             });
             var regionGroup = CDesktop.LBWindow.LBRegionGroup;
             AddPaginationLine(regionGroup);
-            for (int i = 0; i < 7; i++)
+            for (int i = 0; i < 6; i++)
             {
                 var index = i;
                 AddPaddingRegion(() =>
                 {
-                    if (levels.Count > index + 7 * regionGroup.pagination)
+                    if (levels.Count > index + 6 * regionGroup.pagination)
                     {
-                        var key = levels[index + 7 * regionGroup.pagination];
+                        var key = levels[index + 6 * regionGroup.pagination];
                         AddLine(key.levelName);
                         AddLine("", "DarkGray");
                         if (key.requiredLevel > 0)
@@ -3158,7 +3153,7 @@ public class Blueprint
                         AddBigButton(profession.icon,
                             (h) =>
                             {
-                                var key = levels[index + 7 * regionGroup.pagination];
+                                var key = levels[index + 6 * regionGroup.pagination];
 
                                 //If player is high enough level..
                                 if (currentSave.player.level >= key.requiredLevel)
@@ -3167,7 +3162,7 @@ public class Blueprint
                                     if (key.requiredSkill == 0 || currentSave.player.professionSkills.ContainsKey(type.profession) && currentSave.player.professionSkills[type.profession].Item1 >= key.requiredSkill)
                                     {
                                         //If doesnt have the level yet..
-                                        if (!currentSave.player.professionSkills.ContainsKey(type.profession) || currentSave.player.learnedRecipes.ContainsKey(type.profession) && currentSave.player.professionSkills[type.profession].Item2.Contains(key.levelName))
+                                        if (!currentSave.player.professionSkills.ContainsKey(type.profession) || currentSave.player.professionSkills.ContainsKey(type.profession) && !currentSave.player.professionSkills[type.profession].Item2.Contains(key.levelName))
                                         {
                                             //Learn the level
                                             if (!currentSave.player.professionSkills.ContainsKey(type.profession))
@@ -3183,13 +3178,15 @@ public class Blueprint
                         var can = false;
                         if (currentSave.player.level >= key.requiredLevel)
                             if (key.requiredSkill == 0 || currentSave.player.professionSkills.ContainsKey(type.profession) && currentSave.player.professionSkills[type.profession].Item1 >= key.requiredSkill)
-                                if (!currentSave.player.professionSkills.ContainsKey(type.profession) || currentSave.player.learnedRecipes.ContainsKey(type.profession) && currentSave.player.professionSkills[type.profession].Item2.Contains(key.levelName))
+                                if (!currentSave.player.professionSkills.ContainsKey(type.profession) || currentSave.player.learnedRecipes.ContainsKey(type.profession) && !currentSave.player.professionSkills[type.profession].Item2.Contains(key.levelName))
                                     can = true;
                         if (!can)
                         {
                             SetBigButtonToGrayscale();
                             AddBigButtonOverlay("OtherGridBlurred");
                         }
+                        else
+                            AddBigButtonOverlay("OtherGlowLearnable");
                     }
                     else
                     {
@@ -3198,12 +3195,6 @@ public class Blueprint
                     }
                 });
             }
-            AddRegionGroup();
-            SetRegionGroupWidth(86);
-            AddPaddingRegion(() => AddLine("Activated", "", "Center"));
-            AddRegionGroup();
-            SetRegionGroupWidth(85);
-            AddButtonRegion(() => AddLine("Passive", "", "Center"), (h) => { CloseWindow("SpellbookAbilityListActivated"); SpawnWindowBlueprint("SpellbookAbilityListPassive"); });
         }),
 
         #region Dev Panel
@@ -8561,6 +8552,18 @@ public class Blueprint
                     PlaySound("DesktopInventoryClose");
                     CloseWindow("Vendor");
                     CloseWindow("VendorBuyback");
+                    Respawn("Person");
+                }
+                else if (CloseWindow("ProfessionRecipeTrainer"))
+                {
+                    PlaySound("DesktopInstanceClose");
+                    CloseWindow("ProfessionRecipeTrainer");
+                    Respawn("Person");
+                }
+                else if (CloseWindow("ProfessionLevelTrainer"))
+                {
+                    PlaySound("DesktopInstanceClose");
+                    CloseWindow("ProfessionLevelTrainer");
                     Respawn("Person");
                 }
                 else if (CloseWindow("Person"))

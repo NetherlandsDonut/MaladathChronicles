@@ -1,7 +1,7 @@
 {
   "selectedRealm": "Whitemane",
   "selectedRealmRanking": "Whitemane",
-  "selectedCharacter": "Ember",
+  "selectedCharacter": "Jennine",
   "shadows": {
     "value": "True"
   },
@@ -18,10 +18,10 @@
     "value": "True"
   },
   "bigRarityIndicators": {
-    "value": "False"
+    "value": "True"
   },
   "upgradeIndicators": {
-    "value": "False"
+    "value": "True"
   },
   "newSlotIndicators": {
     "value": "False"

@@ -13,9 +13,9 @@ public class Defines
         if (maxPlayerLevel < 1)
             maxPlayerLevel = 60;
         if (maxBagsEquipped < 1)
-            maxBagsEquipped = 4;
+            maxBagsEquipped = 3;
         if (backpackSpace < 1)
-            backpackSpace = 3;
+            backpackSpace = 9;
         if (aiDepth < 1)
             aiDepth = 7;
         if (aiManualBranches < 1)

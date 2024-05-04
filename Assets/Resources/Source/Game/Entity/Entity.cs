@@ -463,9 +463,20 @@ public class Entity
     //List of all learned recipes grouped by profession
     public Dictionary<string, List<string>> learnedRecipes;
 
+    //Learns a recipe
+    public void LearnRecipe(Recipe recipe)
+    {
+        if (!learnedRecipes.ContainsKey(recipe.profession))
+            learnedRecipes.Add(recipe.profession, new());
+        learnedRecipes[recipe.profession].Add(recipe.name);
+    }
+
     #endregion
 
     #region Talents & Spec
+
+    //Amount of currently unspent talent points for this entity
+    public int unspentTalentPoints;
 
     //Checks whether entity can pick specific talent
     public bool CanPickTalent(int spec, Talent talent)
@@ -832,9 +843,6 @@ public class Entity
     public string kind;
 
     #endregion
-
-    //Amount of currently unspent talent points for this entity
-    public int unspentTalentPoints;
 
     //Name of the entity
     public string name;

@@ -5,13 +5,13 @@
   "Whitemane": [
     {
       "player": {
-        "level": 5,
-        "experience": 1240,
+        "level": 2,
+        "experience": 619,
         "professionSkills": {},
         "learnedRecipes": {},
+        "unspentTalentPoints": 1,
         "faction": "Stormwind",
-        "unspentTalentPoints": 4,
-        "name": "Ember",
+        "name": "Jennine",
         "race": "Human",
         "spec": "Mage",
         "gender": "Female",
@@ -63,44 +63,85 @@
               "stats": {
                 "stats": {}
               }
-            }
-          ],
-          "bags": [
+            },
             {
-              "rarity": "Uncommon",
-              "name": "Traveler's Backpack",
-              "icon": "itemmiscbag08",
-              "type": "Bag",
-              "source": "Rare Drop",
-              "ilvl": 55,
-              "lvl": 1,
+              "rarity": "Common",
+              "name": "Pattern: Glacial Cloak",
+              "icon": "itemscroll03",
+              "type": "Recipe",
               "amount": 1,
-              "dropRange": "47-60",
               "maxStack": 1,
-              "price": 8750,
-              "bagSpace": 8,
+              "price": 30000,
+              "stats": {
+                "stats": {}
+              }
+            },
+            {
+              "rarity": "Epic",
+              "name": "Plans: Sulfuron Hammer",
+              "icon": "itemscroll03",
+              "type": "Recipe",
+              "source": "Quest",
+              "amount": 1,
+              "maxStack": 1,
+              "price": 20000,
+              "speed": 3.7,
+              "stats": {
+                "stats": {}
+              }
+            },
+            {
+              "rarity": "Epic",
+              "name": "Sulfuron Hammer",
+              "icon": "itemhammeruniquesulfuras",
+              "detailedType": "Mace",
+              "type": "Two Handed",
+              "ilvl": 67,
+              "lvl": 60,
+              "minDamage": 176,
+              "maxDamage": 295,
+              "amount": 1,
+              "maxStack": 1,
+              "price": 122311,
+              "speed": 3.7,
+              "stats": {
+                "stats": {}
+              }
+            },
+            {
+              "rarity": "Common",
+              "name": "Bent Staff",
+              "icon": "itemstaff08",
+              "detailedType": "Staff",
+              "type": "Two Handed",
+              "ilvl": 2,
+              "lvl": 1,
+              "minDamage": 3,
+              "maxDamage": 5,
+              "amount": 1,
+              "maxStack": 1,
+              "price": 9,
+              "speed": 2.9,
               "stats": {
                 "stats": {}
               }
             }
-          ]
+          ],
+          "bags": []
         },
         "mounts": [],
         "equipment": {
-          "Main Hand": {
-            "rarity": "Common",
-            "name": "Bent Staff",
-            "icon": "itemstaff08",
-            "detailedType": "Staff",
-            "type": "Two Handed",
-            "ilvl": 2,
+          "Head": {
+            "rarity": "Uncommon",
+            "name": "Red Winter Hat",
+            "icon": "itemhelmet67",
+            "type": "Head",
+            "source": "Rare Drop",
+            "ilvl": 1,
             "lvl": 1,
-            "minDamage": 3,
-            "maxDamage": 5,
             "amount": 1,
             "maxStack": 1,
-            "price": 9,
-            "speed": 2.9,
+            "price": 1,
             "stats": {
               "stats": {}
             }
@@ -153,17 +194,21 @@
           }
         }
       },
-      "minute": 7,
-      "second": 42,
-      "currentSite": "Stormwind City",
-      "siteProgress": {},
-      "commonsKilled": {},
+      "minute": 1,
+      "second": 24,
+      "currentSite": "Northshire Valley",
+      "siteProgress": {
+        "Northshire Valley": 5
+      },
+      "commonsKilled": {
+        "Kobold Vermin": 4,
+        "Young Wolf": 1
+      },
       "raresKilled": {},
       "elitesKilled": {},
       "siteVisits": {
         "Northshire Abbey": 1,
-        "Goldshire": 0,
-        "Stormwind City": 3
+        "Northshire Valley": 1
       },
       "unlockedAreas": [],
       "vendorStock": {
@@ -244,10 +289,15 @@
           }
         ]
       },
-      "startDate": "2024-05-02T13:02:09.0894566+02:00",
-      "lastLoaded": "2024-05-02T13:55:25.6083544+02:00",
-      "lastPlayed": "2024-05-02T13:56:26.8495273+02:00",
-      "timePlayed": "00:01:17.6223699"
+      "buyback": {
+        "ignoreSpaceChecks": true,
+        "items": [],
+        "bags": []
+      },
+      "startDate": "2024-05-03T22:52:18.4481479+02:00",
+      "lastLoaded": "2024-05-04T02:33:31.210606+02:00",
+      "lastPlayed": "2024-05-04T02:41:09.909676+02:00",
+      "timePlayed": "00:08:27.9514190"
     }
   ]
 }

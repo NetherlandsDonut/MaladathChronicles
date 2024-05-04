@@ -199,7 +199,7 @@ public class Item
 
     public bool CanEquip(Entity entity)
     {
-        if (type == "Miscellaneous" || type == "Trade Good")
+        if (type == "Miscellaneous" || type == "Trade Good" || type == "Recipe")
             return false;
         if (specs != null && !specs.Contains(entity.spec))
             return false;
@@ -270,8 +270,13 @@ public class Item
     {
         if (type == "Miscellaneous")
             return abilities != null;
-        else
-            return false;
+        else if (type == "Recipe")
+        {
+            var recipe = Recipe.recipes.Find(x => name.Contains(x.name));
+            if (recipe != null) return entity.professionSkills.ContainsKey(recipe.profession) && entity.professionSkills[recipe.profession].Item1 >= recipe.learnedAt && entity.learnedRecipes.ContainsKey(recipe.name);
+            else Debug.Log("ERROR 007: Did not find a dedicated recipe to item: \"" + name + "\"");
+        }
+        return false;
     }
 
     private void Equip(Entity entity, string slot)
@@ -332,7 +337,14 @@ public class Item
 
     public void Use(Entity entity)
     {
-
+        if (type == "Recipe")
+        {
+            var recipe = Recipe.recipes.Find(x => name.Contains(x.name));
+            entity.LearnRecipe(recipe);
+            PlaySound("DesktopSkillLearned");
+            if (amount > 1) amount--;
+            else entity.inventory.items.Remove(this);
+        }
     }
 
     public static void PrintBankItem(Item item)
@@ -677,12 +689,12 @@ public class Item
 
     public static void PrintItemTooltip(Item item, bool compare = false, double priceMultiplier = 1)
     {
-        SetAnchor(-115, 146);
+        SetAnchor(-92, 142);
         AddHeaderGroup();
-        SetRegionGroupWidth(228);
+        SetRegionGroupWidth(182);
         var split = item.name.Split(", ");
-        AddHeaderRegion(() => { AddLine(split[0], item.rarity); });
-        if (split.Length > 1) AddHeaderRegion(() => { AddLine("\"" + split[1] + "\"", item.rarity); AddSmallButton(item.icon, (h) => { }); });
+        AddHeaderRegion(() => { AddLine(split[0], item.rarity); AddSmallButton(item.icon, (h) => { }); });
+        if (split.Length > 1) AddHeaderRegion(() => { AddLine("\"" + split[1] + "\"", item.rarity); });
         AddPaddingRegion(() =>
         {
             if (item.armorClass != null)
@@ -696,7 +708,13 @@ public class Item
                 AddLine(item.minDamage + " - " + item.maxDamage + " Damage");
             }
             else if (item.bagSpace != 0) AddLine(item.bagSpace + " Slot Bag");
-            else AddLine(item.type == null ? "" : item.type);
+            else if (item.type == "Recipe")
+            {
+                var recipe = Recipe.recipes.Find(x => item.name.Contains(x.name));
+                var result = items.Find(x => x.name == recipe.results.First().Key);
+                AddLine(recipe.profession + " " + item.name.Split(':')[0].ToLower());
+            }
+            else AddLine(item.type ?? "");
         });
         if (item.stats != null && item.stats.stats.Count > 0)
             AddPaddingRegion(() =>
@@ -705,7 +723,7 @@ public class Item
                     AddLine("+" + stat.Value + " " + stat.Key);
             });
         var current = currentSave != null && currentSave.player.equipment.ContainsKey(item.type) ? currentSave.player.equipment[item.type] : null;
-        if (compare)
+        if (compare && item.CanEquip(currentSave.player))
         {
             AddHeaderRegion(() =>
             {
@@ -767,6 +785,34 @@ public class Item
                     }
                 });
             }
+        }
+        if (item.type == "Recipe")
+        {
+            var recipe = Recipe.recipes.Find(x => item.name.Contains(x.name));
+            var result = items.Find(x => x.name == recipe.results.First().Key);
+            AddHeaderRegion(() =>
+            {
+                AddLine("Results:", "DarkGray");
+            });
+            AddPaddingRegion(() =>
+            {
+                foreach (var result in recipe.results)
+                    AddLine(result.Key + " x" + result.Value);
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Reagents:", "DarkGray");
+            });
+            AddPaddingRegion(() =>
+            {
+                foreach (var reagent in recipe.reagents)
+                    AddLine(reagent.Key + " x" + reagent.Value);
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Required skill: ", "DarkGray");
+                AddText(recipe.learnedAt + "", currentSave.player.professionSkills.ContainsKey(recipe.profession) && recipe.learnedAt <= currentSave.player.professionSkills[recipe.profession].Item1 ? "DarkGray" : "DangerousRed");
+            });
         }
         if (item.lvl > 1)
             AddHeaderRegion(() =>
