@@ -669,15 +669,19 @@ public class Blueprint
                             AddSmallButton(item.icon,
                             (h) =>
                             {
-                                PlaySound(item.ItemSound("PutDown"), 0.6f);
-                                currentSave.player.Unequip(new() { slot });
-                                Respawn("PlayerEquipmentInfo");
-                                Respawn("Inventory");
+                                if (CDesktop.title == "EquipmentScreen")
+                                {
+                                    PlaySound(item.ItemSound("PutDown"), 0.6f);
+                                    currentSave.player.Unequip(new() { slot });
+                                    Respawn("PlayerEquipmentInfo");
+                                    Respawn("Inventory");
+                                }
                             },
                             null,
                             (h) => () =>
                             {
-                                PrintItemTooltip(item);
+                                if (CDesktop.title == "EquipmentScreen")
+                                    PrintItemTooltip(item);
                             });
                             if (settings.rarityIndicators.Value())
                                 AddSmallButtonOverlay("OtherRarity" + item.rarity + (settings.bigRarityIndicators.Value() ? "Big" : ""), 0, 2);
@@ -1137,6 +1141,7 @@ public class Blueprint
                 CloseDesktop("EquipmentScreen");
                 CloseDesktop("BestiaryScreen");
                 CloseDesktop("CraftingScreen");
+                CloseDesktop("CharacterSheet");
                 if (CDesktop.title != "TalentScreen")
                 {
                     PlaySound("DesktopTalentScreenOpen");
@@ -1154,6 +1159,7 @@ public class Blueprint
                 CloseDesktop("EquipmentScreen");
                 CloseDesktop("BestiaryScreen");
                 CloseDesktop("CraftingScreen");
+                CloseDesktop("CharacterSheet");
                 if (CDesktop.title != "SpellbookScreen")
                     SpawnDesktopBlueprint("SpellbookScreen");
                 else
@@ -1168,6 +1174,7 @@ public class Blueprint
                 CloseDesktop("SpellbookScreen");
                 CloseDesktop("BestiaryScreen");
                 CloseDesktop("CraftingScreen");
+                CloseDesktop("CharacterSheet");
                 if (CDesktop.title != "EquipmentScreen")
                     SpawnDesktopBlueprint("EquipmentScreen");
                 else
@@ -1182,6 +1189,7 @@ public class Blueprint
                 CloseDesktop("SpellbookScreen");
                 CloseDesktop("EquipmentScreen");
                 CloseDesktop("CraftingScreen");
+                CloseDesktop("CharacterSheet");
                 if (CDesktop.title != "BestiaryScreen")
                     SpawnDesktopBlueprint("BestiaryScreen");
                 else
@@ -1196,6 +1204,7 @@ public class Blueprint
                 CloseDesktop("SpellbookScreen");
                 CloseDesktop("EquipmentScreen");
                 CloseDesktop("BestiaryScreen");
+                CloseDesktop("CharacterSheet");
                 if (CDesktop.title != "CraftingScreen")
                     SpawnDesktopBlueprint("CraftingScreen");
                 else
@@ -1204,14 +1213,40 @@ public class Blueprint
                     PlaySound("DesktopInstanceClose");
                 }
             });
+            AddHotkey(C, () =>
+            {
+                CloseDesktop("TalentScreen");
+                CloseDesktop("SpellbookScreen");
+                CloseDesktop("EquipmentScreen");
+                CloseDesktop("BestiaryScreen");
+                CloseDesktop("CraftingScreen");
+                if (CDesktop.title != "CharacterSheet")
+                    SpawnDesktopBlueprint("CharacterSheet");
+                else
+                {
+                    CloseDesktop(CDesktop.title);
+                    PlaySound("DesktopCharacterSheetClose");
+                }
+            });
             SetAnchor(Top);
             DisableShadows();
             AddRegionGroup();
             AddPaddingRegion(() =>
             {
-                AddSmallButton("MenuCharacterSheet", (h) =>
+                AddSmallButton(CDesktop.title == "CharacterSheet" ? "OtherClose" : "MenuCharacterSheet", (h) =>
                 {
-                    SpawnDesktopBlueprint("CharacterSheet");
+                    CloseDesktop("BestiaryScreen");
+                    CloseDesktop("EquipmentScreen");
+                    CloseDesktop("SpellbookScreen");
+                    CloseDesktop("TalentScreen");
+                    CloseDesktop("CraftingScreen");
+                    if (CDesktop.title != "CharacterSheet")
+                        SpawnDesktopBlueprint("CharacterSheet");
+                    else
+                    {
+                        CloseDesktop(CDesktop.title);
+                        PlaySound("DesktopCharacterSheetClose");
+                    }
                 });
                 AddSmallButton(CDesktop.title == "EquipmentScreen" ? "OtherClose" : "MenuInventory", (h) =>
                 {
@@ -1219,6 +1254,7 @@ public class Blueprint
                     CloseDesktop("SpellbookScreen");
                     CloseDesktop("TalentScreen");
                     CloseDesktop("CraftingScreen");
+                    CloseDesktop("CharacterSheet");
                     if (CDesktop.title != "EquipmentScreen")
                         SpawnDesktopBlueprint("EquipmentScreen");
                     else
@@ -1233,6 +1269,7 @@ public class Blueprint
                     CloseDesktop("EquipmentScreen");
                     CloseDesktop("TalentScreen");
                     CloseDesktop("CraftingScreen");
+                    CloseDesktop("CharacterSheet");
                     if (CDesktop.title != "SpellbookScreen")
                         SpawnDesktopBlueprint("SpellbookScreen");
                     else
@@ -1247,6 +1284,7 @@ public class Blueprint
                     CloseDesktop("SpellbookScreen");
                     CloseDesktop("EquipmentScreen");
                     CloseDesktop("CraftingScreen");
+                    CloseDesktop("CharacterSheet");
                     if (CDesktop.title != "TalentScreen")
                     {
                         PlaySound("DesktopTalentScreenOpen");
@@ -1264,6 +1302,7 @@ public class Blueprint
                     CloseDesktop("SpellbookScreen");
                     CloseDesktop("EquipmentScreen");
                     CloseDesktop("CraftingScreen");
+                    CloseDesktop("CharacterSheet");
                     if (CDesktop.title != "BestiaryScreen")
                         SpawnDesktopBlueprint("BestiaryScreen");
                     else
@@ -1278,6 +1317,7 @@ public class Blueprint
                     CloseDesktop("SpellbookScreen");
                     CloseDesktop("EquipmentScreen");
                     CloseDesktop("BestiaryScreen");
+                    CloseDesktop("CharacterSheet");
                     if (CDesktop.title != "CraftingScreen")
                         SpawnDesktopBlueprint("CraftingScreen");
                     else
@@ -1705,74 +1745,6 @@ public class Blueprint
             SetRegionGroupWidth(95);
             AddPaddingRegion(() => AddLine("Buyback", "", "Center"));
         }, true),
-        new("CharacterInfoEquipment", () => {
-            currentSave.buyback ??= new(true);
-            SetAnchor(TopLeft, 19, -38);
-            AddHeaderGroup();
-            SetRegionGroupWidth(190);
-            SetRegionGroupHeight(252);
-            Foo("Head", currentSave.player.GetItemInSlot("Head"));
-            Foo("Shoulders", currentSave.player.GetItemInSlot("Shoulders"));
-            Foo("Back", currentSave.player.GetItemInSlot("Back"));
-            Foo("Chest", currentSave.player.GetItemInSlot("Chest"));
-            Foo("Wrists", currentSave.player.GetItemInSlot("Wrists"));
-            Foo("Hands", currentSave.player.GetItemInSlot("Hands"));
-            Foo("Waist", currentSave.player.GetItemInSlot("Waist"));
-            Foo("Legs", currentSave.player.GetItemInSlot("Legs"));
-            Foo("Feet", currentSave.player.GetItemInSlot("Feet"));
-            Foo("Main Hand", currentSave.player.GetItemInSlot("Main Hand"));
-            bool showOff = currentSave.player.GetItemInSlot("Main Hand") == null || currentSave.player.GetItemInSlot("Main Hand") != null && currentSave.player.GetItemInSlot("Main Hand").type != "Two Handed";
-            if (showOff) Foo("Off Hand", currentSave.player.GetItemInSlot("Off Hand"));
-            Foo("Neck", currentSave.player.GetItemInSlot("Neck"));
-            Foo("Finger", currentSave.player.GetItemInSlot("Finger"));
-            Foo("Trinket", currentSave.player.GetItemInSlot("Trinket"));
-            if (!showOff) AddPaddingRegion(() => { AddLine(""); });
-            //if (currentSave.player.spec == "Druid")
-            //    Foo("Idol", currentSave.player.GetItemInSlot("Special"));
-            //if (currentSave.player.spec == "Paladin")
-            //    Foo("Libram", currentSave.player.GetItemInSlot("Special"));
-            //if (currentSave.player.spec == "Shaman")
-            //    Foo("Totem", currentSave.player.GetItemInSlot("Special"));
-            //AddPaddingRegion(() => SetRegionAsGroupExtender());
-
-            void Foo(string slot, Item item)
-            {
-                if (item != null)
-                    AddHeaderRegion(
-                        () =>
-                        {
-                            AddLine(item.name, item.rarity, "Right");
-                            AddSmallButton(item.icon,
-                            (h) =>
-                            {
-                                PlaySound(item.ItemSound("PutDown"), 0.6f);
-                                currentSave.player.Unequip(new() { slot });
-                                Respawn("PlayerEquipmentInfo");
-                                Respawn("Inventory");
-                            },
-                            null,
-                            (h) => () =>
-                            {
-                                PrintItemTooltip(item);
-                            });
-                            if (settings.rarityIndicators.Value())
-                                AddSmallButtonOverlay("OtherRarity" + item.rarity + (settings.bigRarityIndicators.Value() ? "Big" : ""), 0, 2);
-                        }
-                    );
-                else
-                    AddPaddingRegion(() =>
-                    {
-                        AddLine(slot, "DarkGray", "Right");
-                        AddSmallButton("OtherEmpty", (h) => { });
-                    });
-            }
-            AddRegionGroup();
-            SetRegionGroupWidth(95);
-            AddPaddingRegion(() => AddLine("Equipment", "", "Center"));
-            AddRegionGroup();
-            SetRegionGroupWidth(95);
-            AddButtonRegion(() => AddLine("Stats", "", "Center"), (h) => { CloseWindow(h.window); SpawnWindowBlueprint("CharacterInfoStats"); Respawn("ExperienceBar"); });
-        }, true),
         new("Person", () => {
             SetAnchor(TopLeft, 19, -38);
             AddHeaderGroup();
@@ -1844,7 +1816,7 @@ public class Blueprint
                 });
                 AddButtonRegion(() =>
                 {
-                    AddLine("I want to buy additional vault space.");
+                    AddLine("I want to buy more vault space.");
                 },
                 (h) => { });
             }
@@ -1933,20 +1905,20 @@ public class Blueprint
                 PlaySound("DesktopInstanceClose");
                 person = null;
                 CloseWindow(h.window);
+                Respawn("Town: " + town.name);
                 if (personCategory != null) Respawn("Persons");
-                else Respawn("Town: " + town.name);
             });
         }, true),
         new("CharacterInfoStats", () => {
-            SetAnchor(TopLeft, 0, -19);
+            SetAnchor(-92, 142);
             AddHeaderGroup();
-            SetRegionGroupWidth(190);
-            SetRegionGroupHeight(290);
+            SetRegionGroupWidth(182);
+            SetRegionGroupHeight(271);
             var stats = currentSave.player.Stats();
-            //AddHeaderRegion(() =>
-            //{
-            //    AddLine("Character stats:");
-            //});
+            AddHeaderRegion(() =>
+            {
+                AddLine("Character stats:");
+            });
             AddHeaderRegion(() =>
             {
                 foreach (var foo in stats)
@@ -1958,26 +1930,41 @@ public class Blueprint
             });
             AddHeaderRegion(() =>
             {
-                AddLine("Melee Attack Power: ", "Gray", "Right");
-                AddText(currentSave.player.MeleeAttackPower() + "", "Uncommon");
-                AddLine("Ranged Attack Power: ", "Gray", "Right");
-                AddText(currentSave.player.RangedAttackPower() + "", "Uncommon");
-                AddLine("Spell Power: ", "Gray", "Right");
-                AddText(currentSave.player.SpellPower() + "", "Uncommon");
-                AddLine("Critical Strike: ", "Gray", "Right");
-                AddText(currentSave.player.CriticalStrike().ToString("0.00") + "%", "Uncommon");
-                AddLine("Spell Critical: ", "Gray", "Right");
-                AddText(currentSave.player.SpellCritical().ToString("0.00") + "%", "Uncommon");
-                AddLine("Health From Stamina: ", "Gray", "Right");
+                AddLine("Max health: ", "Gray", "Right");
                 AddText(currentSave.player.MaxHealth() + "", "Uncommon");
+                AddLine("Melee attack power: ", "Gray", "Right");
+                AddText(currentSave.player.MeleeAttackPower() + "", "Uncommon");
+                AddLine("Ranged attack power: ", "Gray", "Right");
+                AddText(currentSave.player.RangedAttackPower() + "", "Uncommon");
+                AddLine("Spell power: ", "Gray", "Right");
+                AddText(currentSave.player.SpellPower() + "", "Uncommon");
+                AddLine("Critical strike: ", "Gray", "Right");
+                AddText(currentSave.player.CriticalStrike().ToString("0.00") + "%", "Uncommon");
+                AddLine("Spell critical: ", "Gray", "Right");
+                AddText(currentSave.player.SpellCritical().ToString("0.00") + "%", "Uncommon");
             });
             AddPaddingRegion(() => SetRegionAsGroupExtender());
-            AddRegionGroup();
-            SetRegionGroupWidth(95);
-            AddButtonRegion(() => AddLine("Equipment", "", "Center"), (h) => { CloseWindow(h.window); SpawnWindowBlueprint("CharacterInfoEquipment"); Respawn("ExperienceBar"); });
-            AddRegionGroup();
-            SetRegionGroupWidth(95);
-            AddPaddingRegion(() => AddLine("Stats", "", "Center"));
+        }, true),
+        new("CharacterInfoStatsRight", () => {
+            SetAnchor(TopRight, -19, -38);
+            AddHeaderGroup();
+            SetRegionGroupWidth(190);
+            SetRegionGroupHeight(271);
+            var stats = currentSave.player.Stats();
+            AddHeaderRegion(() =>
+            {
+                AddLine("Character mastery:");
+            });
+            AddHeaderRegion(() =>
+            {
+                var ordered = stats.ToList().FindAll(x => x.Key.Contains("Mastery")).OrderBy(x => x.Key).OrderByDescending(x => x.Value).ToList();
+                foreach (var foo in ordered)
+                {
+                    AddLine(foo.Key + ": ", "Gray", "Right");
+                    AddText(foo.Value + "", "Uncommon");
+                }
+            });
+            AddPaddingRegion(() => SetRegionAsGroupExtender());
         }, true),
         new("BankSort", () => {
             SetAnchor(Center);
@@ -8413,16 +8400,6 @@ public class Blueprint
             AddHotkey(A, () => { MoveCamera(new Vector2(-EuelerGrowth(), 0)); }, false);
             AddHotkey(S, () => { MoveCamera(new Vector2(0, -EuelerGrowth())); }, false);
             AddHotkey(D, () => { MoveCamera(new Vector2(EuelerGrowth(), 0)); }, false);
-            AddHotkey(C, () =>
-            {
-                if (!CloseWindow("CharacterInfoEquipment") && !CloseWindow("CharacterInfoStats"))
-                {
-                    SpawnWindowBlueprint("CharacterInfoEquipment");
-                    PlaySound("DesktopCharacterSheetOpen");
-                    Respawn("ExperienceBar");
-                }
-                else PlaySound("DesktopCharacterSheetClose");
-            });
             AddHotkey(Escape, () =>
             {
                 PlaySound("DesktopMenuOpen");
@@ -8446,14 +8423,14 @@ public class Blueprint
             });
             AddHotkey(KeyCode.Space, () =>
             {
-                var whereTo = Site.FindSite(x => x.name == currentSave.currentSite);
+                var whereTo = FindSite(x => x.name == currentSave.currentSite);
                 CDesktop.cameraDestination = new Vector2(whereTo.x * mapGridSize, whereTo.y * mapGridSize);
             });
 
             void MoveCamera(Vector2 amount)
             {
                 var temp = CDesktop.cameraDestination + amount * 2;
-                //temp = new Vector2Int((int)temp.x, (int)temp.y) / mapGridSize;
+                temp = new Vector2Int((int)temp.x, (int)temp.y) / mapGridSize;
                 CDesktop.cameraDestination = new Vector2(temp.x, temp.y);
             }
         }),
@@ -8578,6 +8555,7 @@ public class Blueprint
                 else if (CloseWindow("Inventory"))
                 {
                     PlaySound("DesktopInventoryClose");
+                    CloseWindow("Bank");
                     CloseWindow("Vendor");
                     CloseWindow("VendorBuyback");
                     Respawn("Person");
@@ -8732,14 +8710,18 @@ public class Blueprint
         }),
         new("CharacterSheet", () =>
         {
+            PlaySound("DesktopCharacterSheetOpen");
             SetDesktopBackground("Stone");
-            SpawnWindowBlueprint("CharacterStats");
+            SpawnWindowBlueprint("MapToolbarShadow");
+            SpawnWindowBlueprint("MapToolbarClockLeft");
+            SpawnWindowBlueprint("MapToolbar");
+            SpawnWindowBlueprint("MapToolbarClockRight");
+            SpawnWindowBlueprint("MapToolbarStatusLeft");
+            SpawnWindowBlueprint("MapToolbarStatusRight");
+            SpawnWindowBlueprint("PlayerEquipmentInfo");
+            SpawnWindowBlueprint("CharacterInfoStats");
+            SpawnWindowBlueprint("CharacterInfoStatsRight");
             SpawnWindowBlueprint("ExperienceBar");
-            AddHotkey(C, () =>
-            {
-                PlaySound("DesktopCharacterSheetClose");
-                CloseDesktop("CharacterSheet");
-            });
             AddHotkey(Escape, () =>
             {
                 PlaySound("DesktopCharacterSheetClose");
@@ -8806,7 +8788,6 @@ public class Blueprint
         new("EquipmentScreen", () =>
         {
             PlaySound("DesktopInventoryOpen");
-            //SetDesktopBackground(FindSite(x => x.name == currentSave.currentSite).Background());
             SetDesktopBackground("Leather");
             SpawnWindowBlueprint("MapToolbarShadow");
             SpawnWindowBlueprint("MapToolbarClockLeft");

@@ -97,19 +97,22 @@ public class SiteTown : Site
                                 if (group.Count() == 1)
                                     foreach (var person in group)
                                     {
-                                        var personType = PersonType.personTypes.Find(x => x.type == person.type);
-                                        AddButtonRegion(() =>
+                                        if (person.type != "Flight Master")
                                         {
-                                            AddLine(person.name, "Black");
-                                            AddSmallButton(personType != null ? personType.icon + (personType.factionVariant ? factions.Find(x => x.name == faction).side : "") : "OtherUnknown", (h) => { });
-                                        },
-                                        (h) =>
-                                        {
-                                            Person.person = person;
-                                            CloseWindow(h.window.title);
-                                            Respawn("Person");
-                                            PlaySound("DesktopInstanceOpen");
-                                        });
+                                            var personType = PersonType.personTypes.Find(x => x.type == person.type);
+                                            AddButtonRegion(() =>
+                                            {
+                                                AddLine(person.name, "Black");
+                                                AddSmallButton(personType != null ? personType.icon + (personType.factionVariant ? factions.Find(x => x.name == faction).side : "") : "OtherUnknown", (h) => { });
+                                            },
+                                            (h) =>
+                                            {
+                                                Person.person = person;
+                                                CloseWindow(h.window.title);
+                                                Respawn("Person");
+                                                PlaySound("DesktopInstanceOpen");
+                                            });
+                                        }
                                     }
                                 else
                                 {

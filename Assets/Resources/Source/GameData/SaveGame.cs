@@ -47,6 +47,7 @@ public class SaveGame
                 foreach (var person in town.people)
                     if (person.itemsSold != null && person.itemsSold.Count > 0)
                         newSlot.vendorStock.Add(town.name + ":" + person.name, person.ExportStock());
+        newSlot.hour = 7;
         newSlot.currentSite = race.startingSite;
         newSlot.siteVisits = new() { { race.startingSite, 1 } };
         saves[settings.selectedRealm].Add(newSlot);

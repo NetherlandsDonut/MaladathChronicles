@@ -6,7 +6,7 @@
     {
       "player": {
         "level": 2,
-        "experience": 639,
+        "experience": 659,
         "professionSkills": {},
         "learnedRecipes": {},
         "unspentTalentPoints": 1,
@@ -15,6 +15,7 @@
         "race": "Human",
         "spec": "Mage",
         "gender": "Female",
+        "homeLocation": "Stormwind City",
         "abilities": {
           "Staff Proficiency": 1,
           "Cloth Proficiency": 1,
@@ -194,9 +195,9 @@
           }
         }
       },
-      "minute": 6,
-      "second": 18,
-      "currentSite": "Goldshire",
+      "minute": 10,
+      "second": 30,
+      "currentSite": "Stormwind City",
       "siteProgress": {
         "Northshire Valley": 5
       },
@@ -209,7 +210,8 @@
       "siteVisits": {
         "Northshire Abbey": 1,
         "Northshire Valley": 1,
-        "Goldshire": 2
+        "Goldshire": 4,
+        "Stormwind City": 1
       },
       "unlockedAreas": [],
       "vendorStock": {
@@ -290,15 +292,21 @@
           }
         ]
       },
+      "banks": {
+        "Stormwind City": {
+          "items": [],
+          "bags": []
+        }
+      },
       "buyback": {
         "ignoreSpaceChecks": true,
         "items": [],
         "bags": []
       },
       "startDate": "2024-05-03T22:52:18.4481479+02:00",
-      "lastLoaded": "2024-05-04T12:27:50.5665972+02:00",
-      "lastPlayed": "2024-05-04T12:28:32.2848027+02:00",
-      "timePlayed": "00:14:10.4147196"
+      "lastLoaded": "2024-05-04T14:04:03.1513486+02:00",
+      "lastPlayed": "2024-05-04T14:05:31.7889928+02:00",
+      "timePlayed": "00:15:39.0523638"
     }
   ]
 }
