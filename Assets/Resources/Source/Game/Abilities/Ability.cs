@@ -130,12 +130,26 @@ public class Ability
 
     public static void PrintAbilityTooltip(Entity effector, Entity other, Ability ability, int rank)
     {
-        SetAnchor(Top, 0, -53);
         AddHeaderGroup();
+        var width = 220;
         if (CDesktop.title == "Game")
+        {
+            SetAnchor(Top, 0, -53);
             DisableShadows();
-        SetRegionGroupWidth(228);
-        SetRegionGroupHeight(199);
+            width = 228;
+            SetRegionGroupHeight(199);
+        }
+        if (CDesktop.title == "TalentScreen")
+        {
+            SetAnchor(Top, 0, -57);
+            SetRegionGroupHeight(191);
+        }
+        else
+        {
+            SetAnchor(Top, 0, -38);
+            SetRegionGroupHeight(191);
+        }
+        SetRegionGroupWidth(width);
         if (ability == null)
         {
             AddHeaderRegion(() =>
@@ -143,7 +157,7 @@ public class Ability
                 AddLine("Ability not found.", "Red");
             });
             AddRegionGroup();
-            SetRegionGroupWidth(228);
+            SetRegionGroupWidth(width);
             AddPaddingRegion(() => { AddLine(); });
         }
         else
@@ -168,7 +182,7 @@ public class Ability
                     }
                 }
             });
-            ability.PrintDescription(effector, other, 228, rank);
+            ability.PrintDescription(effector, other, width, rank);
             if (ability.cost != null)
                 foreach (var cost in ability.cost)
                     if (cost.Value > 0)
@@ -186,7 +200,7 @@ public class Ability
                         });
                     }
             AddRegionGroup();
-            SetRegionGroupWidth(228 - (ability.cost == null ? 0 : ability.cost.Count(x => x.Value > 0)) * 52);
+            SetRegionGroupWidth(width - (ability.cost == null ? 0 : ability.cost.Count(x => x.Value > 0)) * 52);
             AddPaddingRegion(() => { AddLine(); });
         }
     }

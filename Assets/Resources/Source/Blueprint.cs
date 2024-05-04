@@ -718,11 +718,11 @@ public class Blueprint
             });
         }),
         new("SpellbookAbilityListActivated", () => {
-            SetAnchor(TopRight, 0, -19);
+            SetAnchor(TopRight, -19, -38);
             var activeAbilities = abilities.FindAll(x => !x.hide && x.cost != null && currentSave.player.abilities.ContainsKey(x.name)).ToDictionary(x => x, x => currentSave.player.abilities[x.name]);
             AddHeaderGroup(() => abilities.Count(x => !x.hide && x.cost != null && currentSave.player.abilities.ContainsKey(x.name)), 7);
             SetRegionGroupWidth(171);
-            SetRegionGroupHeight(342);
+            SetRegionGroupHeight(288);
             AddHeaderRegion(() =>
             {
                 AddLine("Active abilities:");
@@ -743,21 +743,21 @@ public class Blueprint
             });
             var regionGroup = CDesktop.LBWindow.LBRegionGroup;
             AddPaginationLine(regionGroup);
-            for (int i = 0; i < 7; i++)
+            for (int i = 0; i < 6; i++)
             {
                 var index = i;
                 AddPaddingRegion(() =>
                 {
-                    if (activeAbilities.Count > index + 7 * regionGroup.pagination)
+                    if (activeAbilities.Count > index + 6 * regionGroup.pagination)
                     {
-                        var key = activeAbilities.ToList()[index + 7 * regionGroup.pagination];
+                        var key = activeAbilities.ToList()[index + 6 * regionGroup.pagination];
                         AddLine(key.Key.name);
                         AddLine("Rank: ", "DarkGray");
                         AddText("" + ToRoman(key.Value + 1));
                         AddBigButton(key.Key.icon,
                             (h) =>
                             {
-                                var key = activeAbilities.ToList()[index + 7 * regionGroup.pagination];
+                                var key = activeAbilities.ToList()[index + 6 * regionGroup.pagination];
                                 if (!currentSave.player.actionBars.Contains(key.Key.name) && currentSave.player.actionBars.Count < currentSave.player.ActionBarsAmount())
                                 {
                                     currentSave.player.actionBars.Add(key.Key.name);
@@ -770,7 +770,7 @@ public class Blueprint
                             (h) => () =>
                             {
                                 SetAnchor(Center);
-                                var key = activeAbilities.ToList()[index + 7 * regionGroup.pagination].Key;
+                                var key = activeAbilities.ToList()[index + 6 * regionGroup.pagination].Key;
                                 PrintAbilityTooltip(currentSave.player, null, key, activeAbilities[key]);
                             }
                         );
@@ -797,11 +797,11 @@ public class Blueprint
             AddButtonRegion(() => AddLine("Passive", "", "Center"), (h) => { CloseWindow("SpellbookAbilityListActivated"); SpawnWindowBlueprint("SpellbookAbilityListPassive"); });
         }),
         new("SpellbookAbilityListPassive", () => {
-            SetAnchor(TopRight, 0, -19);
+            SetAnchor(TopRight, -19, -38);
             var passiveAbilities = abilities.FindAll(x => !x.hide && x.cost == null && currentSave.player.abilities.ContainsKey(x.name)).ToDictionary(x => x, x => currentSave.player.abilities[x.name]);
             AddHeaderGroup(() => abilities.Count(x => !x.hide && x.cost == null && currentSave.player.abilities.ContainsKey(x.name)), 7);
             SetRegionGroupWidth(171);
-            SetRegionGroupHeight(342);
+            SetRegionGroupHeight(288);
             AddHeaderRegion(() =>
             {
                 AddLine("Passive abilities:");
@@ -822,14 +822,14 @@ public class Blueprint
             });
             var regionGroup = CDesktop.LBWindow.LBRegionGroup;
             AddPaginationLine(regionGroup);
-            for (int i = 0; i < 7; i++)
+            for (int i = 0; i < 6; i++)
             {
                 var index = i;
                 AddPaddingRegion(() =>
                 {
-                    if (passiveAbilities.Count > index + 7 * regionGroup.pagination)
+                    if (passiveAbilities.Count > index + 6 * regionGroup.pagination)
                     {
-                        var key = passiveAbilities.ToList()[index + 7 * regionGroup.pagination];
+                        var key = passiveAbilities.ToList()[index + 6 * regionGroup.pagination];
                         AddLine(key.Key.name);
                         AddLine("Rank: ", "DarkGray");
                         AddText("" + ToRoman(key.Value + 1));
@@ -839,7 +839,7 @@ public class Blueprint
                             (h) => () =>
                             {
                                 SetAnchor(Center);
-                                var key = passiveAbilities.ToList()[index + 7 * regionGroup.pagination].Key;
+                                var key = passiveAbilities.ToList()[index + 6 * regionGroup.pagination].Key;
                                 PrintAbilityTooltip(currentSave.player, null, key, passiveAbilities[key]);
                             }
                         );
@@ -864,27 +864,13 @@ public class Blueprint
             AddPaddingRegion(() => AddLine("Passive", "", "Center"));
         }),
         new("PlayerSpellbookInfo", () => {
-            SetAnchor(TopLeft);
+            SetAnchor(TopLeft, 19, -38);
             AddRegionGroup();
             SetRegionGroupWidth(171);
-            SetRegionGroupHeight(354);
-            AddButtonRegion(
-                () =>
-                {
-                    AddLine(currentSave.player.name, "Black");
-                },
-                (h) =>
-                {
-
-                }
-            );
+            SetRegionGroupHeight(281);
             AddHeaderRegion(() =>
             {
-                AddBigButton(currentSave.player.Spec().icon,
-                    (h) => { }
-                );
-                AddLine("Level: " + currentSave.player.level, "Gray");
-                AddLine("Health: " + currentSave.player.health + "/" + currentSave.player.MaxHealth(), "Gray");
+                AddLine("Action bars:");
             });
             for (int i = 0; i < currentSave.player.ActionBarsAmount(); i++)
             {
@@ -923,10 +909,10 @@ public class Blueprint
             AddPaddingRegion(() => SetRegionAsGroupExtender());
         }),
         new("SpellbookResources", () => {
-            SetAnchor(-320, -48);
+            SetAnchor(-301, -29);
             DisableShadows();
             AddHeaderGroup();
-            AddHeaderRegion(() => { AddLine("Starting resources:", "DarkGray"); });
+            AddHeaderRegion(() => { AddLine("Starting elements:"); });
             AddRegionGroup();
             var elements1 = new List<string> { "Fire", "Water", "Earth", "Air", "Frost" };
             var elements2 = new List<string> { "Lightning", "Arcane", "Decay", "Order", "Shadow" };
@@ -980,7 +966,7 @@ public class Blueprint
                 {
                     var value = 0;
                     AddLine(value + "", value == 0 ? "DarkGray" : (value > currentSave.player.MaxResource(element) ? "Red" : "Green"));
-                    AddText("/" + currentSave.player.MaxResource(element), "DarkGray");
+                    AddText(" / " + currentSave.player.MaxResource(element), "DarkGray");
                 });
         }, true),
         new("EnemyBattleInfo", () => {
@@ -1637,7 +1623,7 @@ public class Blueprint
         }, true),
         new("Vendor", () => {
             currentSave.buyback ??= new(true);
-            SetAnchor(TopLeft, 0, -19);
+            SetAnchor(TopLeft, 19, -38);
             AddHeaderGroup();
             SetRegionGroupWidth(190);
             var items = currentSave.vendorStock[town.name + ":" + person.name];
@@ -1657,9 +1643,8 @@ public class Blueprint
             AddHeaderRegion(() =>
             {
                 AddLine("Vendor goods:");
-                //AddSmallButton(type.icon + (type.factionVariant ? factions.Find(x => x.name == town.faction).side : ""), (h) => { });
             });
-            for (int i = 0; i < 7; i++)
+            for (int i = 0; i < 6; i++)
             {
                 var index = i;
                 AddPaddingRegion(
@@ -1680,7 +1665,7 @@ public class Blueprint
             AddButtonRegion(() => AddLine("Buyback", "", "Center"), (h) => { CloseWindow("Vendor"); SpawnWindowBlueprint("VendorBuyback"); PlaySound("VendorSwitchTab"); });
         }, true),
         new("VendorBuyback", () => {
-            SetAnchor(TopLeft, 0, -19);
+            SetAnchor(TopLeft, 19, -38);
             AddHeaderGroup();
             SetRegionGroupWidth(190);
             var items = new List<Item>();
@@ -1700,9 +1685,8 @@ public class Blueprint
             AddHeaderRegion(() =>
             {
                 AddLine("Buyback stock:");
-                //AddSmallButton(type.icon + (type.factionVariant ? factions.Find(x => x.name == town.faction).side : ""), (h) => { });
             });
-            for (int i = 0; i < 7; i++)
+            for (int i = 0; i < 6; i++)
             {
                 var index = i;
                 AddPaddingRegion(
@@ -1886,7 +1870,7 @@ public class Blueprint
                 });
                 AddButtonRegion(() =>
                 {
-                    AddLine("I want to make this inn my home.");
+                    AddLine("I want this inn to be my home.");
                 },
                 (h) => { currentSave.player.homeLocation = town.name; });
             }
@@ -1919,11 +1903,11 @@ public class Blueprint
                 },
                 (h) => { });
             }
-            else if (type.category == "StableMaster")
+            else if (type.category == "Stable Master")
             {
                 AddButtonRegion(() =>
                 {
-                    AddLine("I want to swap my current mount.");
+                    AddLine("I want to swap my mount.");
                 },
                 (h) =>
                 {
@@ -1931,6 +1915,7 @@ public class Blueprint
                     CloseWindow(h.window);
                     CloseWindow("Town: " + town.name);
                     SpawnWindowBlueprint("MountList");
+                    SpawnWindowBlueprint("CurrentMount");
                     Respawn("ExperienceBar");
                 });
                 AddButtonRegion(() =>
@@ -2774,13 +2759,13 @@ public class Blueprint
             });
         }),
         new("MountList", () => {
-            SetAnchor(TopRight, 0, -19);
-            AddHeaderGroup(() => currentSave.player.mounts.Count, 7);
-            SetRegionGroupWidth(171);
-            SetRegionGroupHeight(342);
+            SetAnchor(TopLeft, 19, -38);
+            AddHeaderGroup(() => currentSave.player.mounts.Count, 6);
+            SetRegionGroupWidth(190);
+            SetRegionGroupHeight(288);
             AddHeaderRegion(() =>
             {
-                AddLine("Mounts:");
+                AddLine("Stabled mounts:");
                 AddSmallButton("OtherReverse", (h) =>
                 {
                     currentSave.player.mounts.Reverse();
@@ -2799,25 +2784,27 @@ public class Blueprint
             var regionGroup = CDesktop.LBWindow.LBRegionGroup;
             AddPaginationLine(regionGroup);
             var mounts = currentSave.player.mounts.Select(x => Mount.mounts.Find(y => y.name == x)).ToList();
-            for (int i = 0; i < 7; i++)
+            mounts.RemoveAll(x => x.name == currentSave.player.mount);
+            for (int i = 0; i < 6; i++)
             {
                 var index = i;
                 AddPaddingRegion(() =>
                 {
-                    if (mounts.Count > index + 7 * regionGroup.pagination)
+                    if (mounts.Count > index + 6 * regionGroup.pagination)
                     {
-                        var mount = mounts[index + 7 * regionGroup.pagination];
+                        var mount = mounts[index + 6 * regionGroup.pagination];
                         AddLine(mount.name);
                         AddLine("Speed: ", "DarkGray");
-                        AddText(mount.speed == 7 ? "Fast" : (mount.speed == 9 ? "Very Fast" : "Normal"));
+                        AddText(mount.speed == 6 ? "Fast" : (mount.speed == 9 ? "Very Fast" : "Normal"));
                         AddBigButton(mount.icon,
                             (h) =>
                             {
-                                var mount = mounts[index + 7 * regionGroup.pagination];
+                                var mount = mounts[index + 6 * regionGroup.pagination];
                                 if (currentSave.player.mount != mount.name)
                                 {
                                     currentSave.player.mount = mount.name;
                                     Respawn("MountList");
+                                    Respawn("CurrentMount");
                                     PlaySound("DesktopActionbarAdd", 0.7f);
                                 }
                             },
@@ -2825,7 +2812,7 @@ public class Blueprint
                             (h) => () =>
                             {
                                 SetAnchor(Center);
-                                var mount = mounts[index + 7 * regionGroup.pagination];
+                                var mount = mounts[index + 6 * regionGroup.pagination];
                                 if (mount.abilities != null && mount.abilities.Count > 0)
                                     PrintAbilityTooltip(currentSave.player, null, abilities.Find(x => x.name == mount.abilities[0]), 0);
                             }
@@ -2843,8 +2830,47 @@ public class Blueprint
                 });
             }
             AddRegionGroup();
-            SetRegionGroupWidth(171);
-            AddPaddingRegion(() => AddLine("Mounts collected: " + mounts.Count));
+            SetRegionGroupWidth(190);
+            AddPaddingRegion(() => AddLine("Mounts collected: " + currentSave.player.mounts.Count(x => Mount.mounts.Find(y => y.name == x) != null)));
+        }),
+        new("CurrentMount", () => {
+            SetAnchor(-92, 142);
+            AddHeaderGroup();
+            SetRegionGroupWidth(190);
+            AddHeaderRegion(() =>
+            {
+                AddLine("Current mount:");
+                AddSmallButton("OtherClose", (h) =>
+                {
+                    CloseWindow("MountList");
+                    CloseWindow("CurrentMount");
+                    Respawn("Person");
+                    PlaySound("DesktopInstanceClose");
+                });
+            });
+            AddPaddingRegion(() =>
+            {
+                var mount = mounts.Find(x => x.name == currentSave.player.mount);
+                if (mount != null)
+                {
+                    AddLine(mount.name);
+                    AddLine("Speed: ", "DarkGray");
+                    AddText(mount.speed == 6 ? "Fast" : (mount.speed == 9 ? "Very Fast" : "Normal"));
+                    AddBigButton(mount.icon, (h) => { });
+                }
+                else AddBigButton("OtherDisabled", (h) => { });
+            });
+            var mount = mounts.Find(x => x.name == currentSave.player.mount);
+            if (mount != null)
+                AddButtonRegion(() =>
+                {
+                    AddLine("Dismount");
+                },
+                (h) =>
+                {
+                    currentSave.player.mount = "";
+                    Respawn("MountList");
+                });
         }),
         new("MountsSort", () => {
             SetAnchor(Center);
@@ -2911,6 +2937,7 @@ public class Blueprint
                     Person.person = person;
                     Respawn("Person");
                     CloseWindow("Persons");
+                    CloseWindow("Town: " + town.name);
                     PlaySound("DesktopInstanceOpen");
                 });
             }
@@ -3054,7 +3081,7 @@ public class Blueprint
                         if (key.learnedAt > 0)
                         {
                             AddText("Required skill: ", "DarkGray");
-                            AddText(key.learnedAt + " ", currentSave.player.professionSkills.ContainsKey(key.profession) && key.learnedAt <= currentSave.player.professionSkills[key.profession].Item1 ? "DarkGray" : "DangerousRed");
+                            AddText(key.learnedAt + " ", ColorProfessionRequiredSkill(key.profession, key.learnedAt));
                         }
                         AddBigButton(key.Icon(),
                             (h) =>
@@ -3143,12 +3170,12 @@ public class Blueprint
                         if (key.requiredLevel > 0)
                         {
                             AddText("Level: ", "DarkGray");
-                            AddText(key.requiredLevel + "", currentSave.player.level >= key.requiredLevel ? "DarkGray" : "DangerousRed");
+                            AddText(key.requiredLevel + "", ColorRequiredLevel(key.requiredLevel));
                         }
                         if (key.requiredSkill > 0)
                         {
                             AddText(", Skill: ", "DarkGray");
-                            AddText(key.requiredSkill + "", currentSave.player.professionSkills.ContainsKey(profession.name) && key.requiredSkill <= currentSave.player.professionSkills[profession.name].Item1 ? "DarkGray" : "DangerousRed");
+                            AddText(key.requiredSkill + "", ColorProfessionRequiredSkill(profession.name, key.requiredSkill));
                         }
                         AddBigButton(profession.icon,
                             (h) =>
@@ -8545,6 +8572,7 @@ public class Blueprint
                 if (CloseWindow("MountList"))
                 {
                     PlaySound("DesktopInstanceClose");
+                    CloseWindow("CurrentMount");
                     Respawn("Person");
                 }
                 else if (CloseWindow("Inventory"))
@@ -8778,6 +8806,7 @@ public class Blueprint
         new("EquipmentScreen", () =>
         {
             PlaySound("DesktopInventoryOpen");
+            //SetDesktopBackground(FindSite(x => x.name == currentSave.currentSite).Background());
             SetDesktopBackground("Leather");
             SpawnWindowBlueprint("MapToolbarShadow");
             SpawnWindowBlueprint("MapToolbarClockLeft");

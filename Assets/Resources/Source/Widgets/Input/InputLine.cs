@@ -7,7 +7,6 @@ using static Event;
 using static Cursor;
 using static String;
 using static SaveGame;
-using UnityEngine.Playables;
 
 public class InputLine : MonoBehaviour
 {
@@ -598,6 +597,26 @@ public class InputLine : MonoBehaviour
             {
                 var amount = int.Parse(foo.Value().Substring(5));
                 currentSave.player.inventory.money += amount;
+            }
+            else if (foo.Value().StartsWith("mount"))
+            {
+                var which = foo.Value().Substring(5).Trim();
+                var mount = Mount.mounts.Find(x => x.name.ToLower() == which);
+                if (mount != null && !currentSave.player.mounts.Contains(mount.name))
+                {
+                    Sound.PlaySound("DesktopButtonPressRight");
+                    currentSave.player.mounts.Add(mount.name);
+                }
+            }
+            else if (foo.Value().StartsWith("rmount"))
+            {
+                var which = foo.Value().Substring(6).Trim();
+                var mount = Mount.mounts.Find(x => x.name.ToLower() == which);
+                if (mount != null && currentSave.player.mounts.Contains(mount.name))
+                {
+                    Sound.PlaySound("DesktopButtonPressRight");
+                    currentSave.player.mounts.Remove(mount.name);
+                }
             }
             else if (foo.Value().StartsWith("bla"))
                 ProfessionSetter("Blacksmithing");

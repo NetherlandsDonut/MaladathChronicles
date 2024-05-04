@@ -6,7 +6,7 @@
     {
       "player": {
         "level": 2,
-        "experience": 619,
+        "experience": 639,
         "professionSkills": {},
         "learnedRecipes": {},
         "unspentTalentPoints": 1,
@@ -194,9 +194,9 @@
           }
         }
       },
-      "minute": 1,
-      "second": 24,
-      "currentSite": "Northshire Valley",
+      "minute": 6,
+      "second": 18,
+      "currentSite": "Goldshire",
       "siteProgress": {
         "Northshire Valley": 5
       },
@@ -208,7 +208,8 @@
       "elitesKilled": {},
       "siteVisits": {
         "Northshire Abbey": 1,
-        "Northshire Valley": 1
+        "Northshire Valley": 1,
+        "Goldshire": 2
       },
       "unlockedAreas": [],
       "vendorStock": {
@@ -295,9 +296,9 @@
         "bags": []
       },
       "startDate": "2024-05-03T22:52:18.4481479+02:00",
-      "lastLoaded": "2024-05-04T02:33:31.210606+02:00",
-      "lastPlayed": "2024-05-04T02:41:09.909676+02:00",
-      "timePlayed": "00:08:27.9514190"
+      "lastLoaded": "2024-05-04T12:27:50.5665972+02:00",
+      "lastPlayed": "2024-05-04T12:28:32.2848027+02:00",
+      "timePlayed": "00:14:10.4147196"
     }
   ]
 }

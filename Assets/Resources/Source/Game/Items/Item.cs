@@ -818,7 +818,7 @@ public class Item
             AddHeaderRegion(() =>
             {
                 AddLine("Required level: ", "DarkGray");
-                AddText(item.lvl + "", ColorItemRequiredLevel(item.lvl));
+                AddText(item.lvl + "", ColorRequiredLevel(item.lvl));
             });
         if (item.price > 0)
             PrintPriceRegion((int)(item.price * priceMultiplier));
