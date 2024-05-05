@@ -157,6 +157,8 @@ public class Starter : MonoBehaviour
         Item.items ??= new();
         Deserialize(ref Ability.abilities, "abilities", false, prefix);
         Ability.abilities ??= new();
+        Deserialize(ref WorldAbility.worldAbilities, "worldabilities", false, prefix);
+        WorldAbility.worldAbilities ??= new();
         Deserialize(ref Buff.buffs, "buffs", false, prefix);
         Buff.buffs ??= new();
         Deserialize(ref Mount.mounts, "mounts", false, prefix);
@@ -280,6 +282,8 @@ public class Starter : MonoBehaviour
             Spec.specs[i].Initialise();
         for (int i = 0; i < Item.items.Count; i++)
             Item.items[i].Initialise();
+        for (int i = 0; i < WorldAbility.worldAbilities.Count; i++)
+            WorldAbility.worldAbilities[i].Initialise();
         for (int i = 0; i < ItemSet.itemSets.Count; i++)
             ItemSet.itemSets[i].Initialise();
         for (int i = 0; i < Race.races.Count; i++)

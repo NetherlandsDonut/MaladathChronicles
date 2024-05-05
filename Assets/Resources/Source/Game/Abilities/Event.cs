@@ -426,10 +426,7 @@ public class Event
         "HealthDeplated",
         "CombatBegin",
         "TurnBegin",
-        "TurnEnd",
-        "WorldBuffAdd",
-        "WorldBuffRemove",
-        "ItemUsed"
+        "TurnEnd"
     };
 
     //List of all possible effects in the event system
@@ -449,7 +446,6 @@ public class Event
         "DestroyRows",
         "DestroyColumns",
         "DestroyRegion",
-        "ChangeElements",
-        "TeleportPlayer"
+        "ChangeElements"
     };
 }

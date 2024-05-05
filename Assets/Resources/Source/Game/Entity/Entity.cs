@@ -822,6 +822,12 @@ public class Entity
 
     #endregion
 
+    #region World Events
+
+    public Dictionary<string, int> worldCooldowns;
+
+    #endregion
+
     #region PVP
 
     //Amount of honor this character has

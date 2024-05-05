@@ -1,0 +1,118 @@
+[
+  {
+    "item": "Hearthstone",
+    "cooldownGroup": "Hearthstone",
+    "worldEvents": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "BuffName": "Curse of Agony",
+            "BuffDurationUnit": "Combat",
+            "BuffDuration": "10",
+            "ShatterDensity": "1",
+            "ApplyCooldown": "30",
+            "SoundEffect": "AbilityCurseOfAgonyCast",
+            "Await": "5",
+            "ShatterSpeed": "30",
+            "ShatterDegree": "40"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Gray",
+              "Text": "Curses the target with agony, causing"
+            },
+            {
+              "Color": "Shadow",
+              "Text": "PowerRange(Effector, Spell, 0.9, 1)",
+              "Split": "No"
+            },
+            {
+              "Color": "Gray",
+              "Text": "damage each turn for 10 turns."
+            }
+          ]
+        },
+        {
+          "regionType": "Padding",
+          "isExtender": true,
+          "contents": [
+            {
+              "Color": "Gray",
+              "Text": "This ability ends caster's turn."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "item": "Roasted Kodo Meat",
+    "worldEvents": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Well Fed@Roasted Kodo Meat",
+            "WorldBuffDurationUnits": "Combat",
+            "WorldBuffDuration": "10",
+            "ShatterDensity": "1",
+            "SoundEffect": "DesktopFoodEat",
+            "Await": "5",
+            "ShatterSpeed": "30",
+            "ShatterDegree": "40"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Gray",
+              "Text": "Curses the target with agony, causing"
+            },
+            {
+              "Color": "Shadow",
+              "Text": "PowerRange(Effector, Spell, 0.9, 1)",
+              "Split": "No"
+            },
+            {
+              "Color": "Gray",
+              "Text": "damage each turn for 10 turns."
+            }
+          ]
+        },
+        {
+          "regionType": "Padding",
+          "isExtender": true,
+          "contents": [
+            {
+              "Color": "Gray",
+              "Text": "This ability ends caster's turn."
+            }
+          ]
+        }
+      ]
+    }
+  }
+]

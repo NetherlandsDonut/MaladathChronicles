@@ -34,6 +34,7 @@ using static ClothType;
 using static PersonType;
 using static Profession;
 using static GameSettings;
+using static WorldAbility;
 using static Serialization;
 using static PersonCategory;
 using static PermanentEnchant;
@@ -3343,6 +3344,7 @@ public class Blueprint
                 Serialize(races, "races", false, false, prefix);
                 Serialize(specs, "Specs", false, false, prefix);
                 Serialize(abilities, "abilities", false, false, prefix);
+                Serialize(worldAbilities, "worldabilities", false, false, prefix);
                 Serialize(buffs, "buffs", false, false, prefix);
                 Serialize(areas, "areas", false, false, prefix);
                 Serialize(instances, "instances", false, false, prefix);

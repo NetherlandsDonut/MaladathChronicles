@@ -13,6 +13,7 @@ using static SiteTown;
 using static Coloring;
 using static GameSettings;
 using static PermanentEnchant;
+using System;
 
 public class Item
 {
@@ -141,6 +142,9 @@ public class Item
 
     //List of abilities provided to the wearer of this item
     public Dictionary<string, int> abilities;
+
+    //List of world abilities of this item
+    [NonSerialized] public List<WorldAbility> worldAbilities;
 
     //Spec restrictions for this item
     //Specs listed in it are the specs that exclusively can use this item
@@ -772,6 +776,11 @@ public class Item
                     if (spec != item.specs.Last())
                         AddText(", ", "DarkGray");
                 }
+            });
+        if (item.worldAbilities != null)
+            AddHeaderRegion(() =>
+            {
+                AddLine("WORLDABILITIES: " + item.worldAbilities.Count, "Red");
             });
         if (item.set != null)
         {
