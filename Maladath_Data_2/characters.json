@@ -13,6 +13,7 @@
         "race": "Human",
         "spec": "Mage",
         "gender": "Female",
+        "homeLocation": "Northshire Abbey",
         "abilities": {
           "Staff Proficiency": 1,
           "Cloth Proficiency": 1,
@@ -57,18 +58,6 @@
               "ilvl": 1,
               "amount": 1,
               "maxStack": 1,
-              "stats": {
-                "stats": {}
-              }
-            },
-            {
-              "name": "Roasted Kodo Meat",
-              "icon": "itemmiscfood60",
-              "type": "Miscellaneous",
-              "ilvl": 10,
-              "amount": 1,
-              "maxStack": 20,
-              "price": 9,
               "stats": {
                 "stats": {}
               }
@@ -141,13 +130,14 @@
         }
       },
       "hour": 7,
-      "currentSite": "Northshire Abbey",
+      "currentSite": "Drywhisker Gorge",
       "siteProgress": {},
       "commonsKilled": {},
       "raresKilled": {},
       "elitesKilled": {},
       "siteVisits": {
-        "Northshire Abbey": 1
+        "Northshire Abbey": 1,
+        "Drywhisker Gorge": 3
       },
       "unlockedAreas": [],
       "vendorStock": {
@@ -229,9 +219,9 @@
         ]
       },
       "startDate": "2024-05-05T23:08:29.7758447+02:00",
-      "lastLoaded": "2024-05-05T23:08:32.1375151+02:00",
-      "lastPlayed": "2024-05-05T23:08:48.3034865+02:00",
-      "timePlayed": "00:00:17.3113237"
+      "lastLoaded": "2024-05-06T17:56:47.4115081+02:00",
+      "lastPlayed": "2024-05-06T17:58:50.1404463+02:00",
+      "timePlayed": "00:09:06.6362328"
     }
   ]
 }

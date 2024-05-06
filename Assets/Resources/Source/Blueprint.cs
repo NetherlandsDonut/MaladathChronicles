@@ -253,16 +253,16 @@ public class Blueprint
             });
         }, true),
         new("ConfirmItemDestroy", () => {
-            SetAnchor(-115, 146);
+            SetAnchor(-92, 142);
             AddHeaderGroup();
-            SetRegionGroupWidth(228);
+            SetRegionGroupWidth(182);
             AddPaddingRegion(() =>
             {
                 AddLine("You are about to destroy", "", "Center");
                 AddLine(item.name, item.rarity, "Center");
             });
             AddRegionGroup();
-            SetRegionGroupWidth(114);
+            SetRegionGroupWidth(91);
             AddButtonRegion(() =>
             {
                 SetRegionBackground(RegionBackgroundType.RedButton);
@@ -276,7 +276,7 @@ public class Blueprint
                 CDesktop.RespawnAll();
             });
             AddRegionGroup();
-            SetRegionGroupWidth(114);
+            SetRegionGroupWidth(91);
             AddButtonRegion(() =>
             {
                 AddLine("Cancel", "", "Center");
@@ -8502,7 +8502,7 @@ public class Blueprint
             void MoveCamera(Vector2 amount)
             {
                 var temp = CDesktop.cameraDestination + amount * 2;
-                temp = new Vector2Int((int)temp.x, (int)temp.y) / mapGridSize;
+                //temp = new Vector2Int((int)temp.x, (int)temp.y) / mapGridSize;
                 CDesktop.cameraDestination = new Vector2(temp.x, temp.y);
             }
         }),
