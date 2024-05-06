@@ -5,17 +5,14 @@
   "Whitemane": [
     {
       "player": {
-        "level": 2,
-        "experience": 659,
+        "level": 1,
         "professionSkills": {},
         "learnedRecipes": {},
-        "unspentTalentPoints": 1,
         "faction": "Stormwind",
-        "name": "Jennine",
+        "name": "Tine",
         "race": "Human",
         "spec": "Mage",
         "gender": "Female",
-        "homeLocation": "Stormwind City",
         "abilities": {
           "Staff Proficiency": 1,
           "Cloth Proficiency": 1,
@@ -54,7 +51,6 @@
         "inventory": {
           "items": [
             {
-              "rarity": "Common",
               "name": "Hearthstone",
               "icon": "itemmiscrune01",
               "type": "Miscellaneous",
@@ -66,45 +62,13 @@
               }
             },
             {
-              "rarity": "Common",
-              "name": "Pattern: Glacial Cloak",
-              "icon": "itemscroll03",
-              "type": "Recipe",
+              "name": "Roasted Kodo Meat",
+              "icon": "itemmiscfood60",
+              "type": "Miscellaneous",
+              "ilvl": 10,
               "amount": 1,
-              "maxStack": 1,
-              "price": 30000,
-              "stats": {
-                "stats": {}
-              }
-            },
-            {
-              "rarity": "Epic",
-              "name": "Plans: Sulfuron Hammer",
-              "icon": "itemscroll03",
-              "type": "Recipe",
-              "source": "Quest",
-              "amount": 1,
-              "maxStack": 1,
-              "price": 20000,
-              "speed": 3.7,
-              "stats": {
-                "stats": {}
-              }
-            },
-            {
-              "rarity": "Epic",
-              "name": "Sulfuron Hammer",
-              "icon": "itemhammeruniquesulfuras",
-              "detailedType": "Mace",
-              "type": "Two Handed",
-              "ilvl": 67,
-              "lvl": 60,
-              "minDamage": 176,
-              "maxDamage": 295,
-              "amount": 1,
-              "maxStack": 1,
-              "price": 122311,
-              "speed": 3.7,
+              "maxStack": 20,
+              "price": 9,
               "stats": {
                 "stats": {}
               }
@@ -114,69 +78,7 @@
         },
         "mounts": [],
         "equipment": {
-          "Head": {
-            "rarity": "Uncommon",
-            "name": "Red Winter Hat",
-            "icon": "itemhelmet67",
-            "type": "Head",
-            "source": "Rare Drop",
-            "ilvl": 1,
-            "lvl": 1,
-            "amount": 1,
-            "maxStack": 1,
-            "price": 1,
-            "stats": {
-              "stats": {}
-            }
-          },
-          "Feet": {
-            "rarity": "Common",
-            "name": "Apprentice's Boots",
-            "icon": "itemboots09",
-            "type": "Feet",
-            "ilvl": 1,
-            "lvl": 1,
-            "amount": 1,
-            "maxStack": 1,
-            "price": 1,
-            "stats": {
-              "stats": {}
-            }
-          },
-          "Legs": {
-            "rarity": "Poor",
-            "name": "Apprentice's Pants",
-            "icon": "itempants01",
-            "type": "Legs",
-            "armorClass": "Cloth",
-            "ilvl": 1,
-            "lvl": 1,
-            "armor": 2,
-            "amount": 1,
-            "maxStack": 1,
-            "price": 1,
-            "stats": {
-              "stats": {}
-            }
-          },
-          "Chest": {
-            "rarity": "Poor",
-            "name": "Apprentice's Robe",
-            "icon": "itemchestcloth23",
-            "type": "Chest",
-            "armorClass": "Cloth",
-            "ilvl": 1,
-            "lvl": 1,
-            "armor": 3,
-            "amount": 1,
-            "maxStack": 1,
-            "price": 1,
-            "stats": {
-              "stats": {}
-            }
-          },
           "Main Hand": {
-            "rarity": "Common",
             "name": "Bent Staff",
             "icon": "itemstaff08",
             "detailedType": "Staff",
@@ -192,26 +94,60 @@
             "stats": {
               "stats": {}
             }
+          },
+          "Feet": {
+            "name": "Apprentice's Boots",
+            "icon": "itemboots09",
+            "type": "Feet",
+            "ilvl": 1,
+            "lvl": 1,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 1,
+            "stats": {
+              "stats": {}
+            }
+          },
+          "Legs": {
+            "name": "Apprentice's Pants",
+            "icon": "itempants01",
+            "type": "Legs",
+            "armorClass": "Cloth",
+            "ilvl": 1,
+            "lvl": 1,
+            "armor": 2,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 1,
+            "stats": {
+              "stats": {}
+            }
+          },
+          "Chest": {
+            "name": "Apprentice's Robe",
+            "icon": "itemchestcloth23",
+            "type": "Chest",
+            "armorClass": "Cloth",
+            "ilvl": 1,
+            "lvl": 1,
+            "armor": 3,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 1,
+            "stats": {
+              "stats": {}
+            }
           }
         }
       },
-      "minute": 10,
-      "second": 30,
-      "currentSite": "Stormwind City",
-      "siteProgress": {
-        "Northshire Valley": 5
-      },
-      "commonsKilled": {
-        "Kobold Vermin": 4,
-        "Young Wolf": 1
-      },
+      "hour": 7,
+      "currentSite": "Northshire Abbey",
+      "siteProgress": {},
+      "commonsKilled": {},
       "raresKilled": {},
       "elitesKilled": {},
       "siteVisits": {
-        "Northshire Abbey": 1,
-        "Northshire Valley": 1,
-        "Goldshire": 4,
-        "Stormwind City": 2
+        "Northshire Abbey": 1
       },
       "unlockedAreas": [],
       "vendorStock": {
@@ -292,21 +228,10 @@
           }
         ]
       },
-      "banks": {
-        "Stormwind City": {
-          "items": [],
-          "bags": []
-        }
-      },
-      "buyback": {
-        "ignoreSpaceChecks": true,
-        "items": [],
-        "bags": []
-      },
-      "startDate": "2024-05-03T22:52:18.4481479+02:00",
-      "lastLoaded": "2024-05-04T14:14:30.1148541+02:00",
-      "lastPlayed": "2024-05-04T14:18:17.2051075+02:00",
-      "timePlayed": "00:19:26.1426172"
+      "startDate": "2024-05-05T23:08:29.7758447+02:00",
+      "lastLoaded": "2024-05-05T23:08:32.1375151+02:00",
+      "lastPlayed": "2024-05-05T23:08:48.3034865+02:00",
+      "timePlayed": "00:00:17.3113237"
     }
   ]
 }

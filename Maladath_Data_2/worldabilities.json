@@ -11,16 +11,8 @@
         ],
         "effects": [
           {
-            "Effect": "AddWorldBuff",
-            "BuffName": "Curse of Agony",
-            "BuffDurationUnit": "Combat",
-            "BuffDuration": "10",
-            "ShatterDensity": "1",
-            "ApplyCooldown": "30",
-            "SoundEffect": "AbilityCurseOfAgonyCast",
-            "Await": "5",
-            "ShatterSpeed": "30",
-            "ShatterDegree": "40"
+            "Effect": "HearthstonePlayer",
+            "SoundEffect": "AbilityTeleport"
           }
         ]
       }
@@ -31,27 +23,17 @@
           "regionType": "Padding",
           "contents": [
             {
-              "Color": "Gray",
-              "Text": "Curses the target with agony, causing"
+              "Color": "Uncommon",
+              "Text": "Use: Returns you to"
             },
             {
-              "Color": "Shadow",
-              "Text": "PowerRange(Effector, Spell, 0.9, 1)",
-              "Split": "No"
+              "Color": "Uncommon",
+              "Text": "Hearthstone()",
+              "Spacing": "No"
             },
             {
-              "Color": "Gray",
-              "Text": "damage each turn for 10 turns."
-            }
-          ]
-        },
-        {
-          "regionType": "Padding",
-          "isExtender": true,
-          "contents": [
-            {
-              "Color": "Gray",
-              "Text": "This ability ends caster's turn."
+              "Color": "Uncommon",
+              "Text": ". Speak to an Innkeeper in a different place to change your home location."
             }
           ]
         }
@@ -78,6 +60,9 @@
             "Await": "5",
             "ShatterSpeed": "30",
             "ShatterDegree": "40"
+          },
+          {
+            "Effect": "ConsumeItem"
           }
         ]
       }
@@ -88,27 +73,8 @@
           "regionType": "Padding",
           "contents": [
             {
-              "Color": "Gray",
-              "Text": "Curses the target with agony, causing"
-            },
-            {
-              "Color": "Shadow",
-              "Text": "PowerRange(Effector, Spell, 0.9, 1)",
-              "Split": "No"
-            },
-            {
-              "Color": "Gray",
-              "Text": "damage each turn for 10 turns."
-            }
-          ]
-        },
-        {
-          "regionType": "Padding",
-          "isExtender": true,
-          "contents": [
-            {
-              "Color": "Gray",
-              "Text": "This ability ends caster's turn."
+              "Color": "Uncommon",
+              "Text": "Use: Restores 62 health. Gain 2 Stamina and Spirit for the next 10 fights."
             }
           ]
         }

@@ -1852,6 +1852,22 @@ public class Blueprint
                         SpawnWindowBlueprint("MakeInnHome");
                         Respawn("ExperienceBar");
                     });
+                if (!currentSave.player.inventory.items.Exists(x => x.name == "Hearthstone"))
+                    AddButtonRegion(() =>
+                    {
+                        AddLine("I lost my hearthstone.");
+                    },
+                    (h) =>
+                    {
+                        var item = items.Find(x => x.name == "Hearthstone");
+                        if (currentSave.player.inventory.CanAddItem(item))
+                        {
+                            PlaySound(item.ItemSound("PickUp"));
+                            currentSave.player.inventory.AddItem(item.CopyItem(1));
+                        }
+                        h.window.Respawn();
+                        Respawn("ExperienceBar");
+                    });
             }
             else if (type.category == "Vendor")
             {

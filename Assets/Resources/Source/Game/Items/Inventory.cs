@@ -74,6 +74,20 @@ public class Inventory
         return item.amount == 0;
     }
 
+    //Relinks references to static lists for items loaded from saved games
+    public void RelinkReferences()
+    {
+        foreach (var item in items)
+            item.RelinkReferences();
+    }
+
+    //Relinks references to static lists for items loaded from saved games
+    public void DelinkReferences()
+    {
+        foreach (var item in items)
+            item.RelinkReferences();
+    }
+
     //Returns the amount of bag space inventory has
     public int BagSpace()
     {

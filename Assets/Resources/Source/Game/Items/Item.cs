@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using System.Collections.Generic;
 
@@ -13,10 +14,24 @@ using static SiteTown;
 using static Coloring;
 using static GameSettings;
 using static PermanentEnchant;
-using System;
 
 public class Item
 {
+    //Relinks references to static lists for items loaded from saved games
+    public void RelinkReferences()
+    {
+        if (items == null) return;
+        var origin = items.Find(x => x.name == name);
+        if (origin != this && origin.worldAbilities != null)
+            worldAbilities = origin.worldAbilities.ToList();
+    }
+
+    //Delinks references to static lists for items loaded from saved games
+    public void DelinkReferences()
+    {
+        worldAbilities = null;
+    }
+
     //Initialisation method to fill automatic values
     //and remove empty collections to avoid serialising them later
     public void Initialise()
@@ -165,22 +180,6 @@ public class Item
     //This is a list of races that are eligible to drop this item
     public List<string> droppedBy;
 
-    //Amount of cooldown in minutes for the item to be usable again
-    public int useCooldown;
-
-    //Whether the item is consumed after use
-    public bool notConsumedOnUse;
-
-    //Item cooldown group to prevent player from using 6 different healing potions
-    public string cooldownGroup;
-
-    //List of effects triggered on using the item
-    public List<Dictionary<string, string>> useEffects;
-
-    //Those two are unused right now but will serve the role of loot
-    public List<string> possibleItems;
-    public List<string> alternateItems;
-
     //This function returns the type of sound that this item makes when it is being manipulated
     public string ItemSound(string soundType)
     {
@@ -285,7 +284,7 @@ public class Item
     public bool CanUse(Entity entity)
     {
         if (type == "Miscellaneous")
-            return abilities != null;
+            return worldAbilities != null;
         else if (type == "Recipe")
         {
             var recipe = Recipe.recipes.Find(x => name.Contains(x.name));
@@ -361,6 +360,7 @@ public class Item
             if (amount > 1) amount--;
             else entity.inventory.items.Remove(this);
         }
+        else currentSave.CallEvents(currentSave.player, new() { { "Trigger", "ItemUsed" }, { "ItemName", name } });
     }
 
     public static void PrintBankItem(Item item)
@@ -778,10 +778,10 @@ public class Item
                 }
             });
         if (item.worldAbilities != null)
-            AddHeaderRegion(() =>
-            {
-                AddLine("WORLDABILITIES: " + item.worldAbilities.Count, "Red");
-            });
+        {
+            foreach (var ability in item.worldAbilities)
+                ability.PrintDescription(currentSave.player, 182, true);
+        }
         if (item.set != null)
         {
             var set = itemSets.Find(x => x.name == item.set);
@@ -847,8 +847,35 @@ public class Item
 
     public Item CopyItem(int amount = 1)
     {
-        var newItem = this.Copy<Item>();
+        var newItem = new Item();
+        newItem.abilities = abilities?.ToDictionary(x => x.Key, x => x.Value);
         newItem.amount = amount;
+        newItem.armor = armor;
+        newItem.armorClass = armorClass;
+        newItem.bagSpace = bagSpace;
+        newItem.block = block;
+        newItem.detailedType = detailedType;
+        newItem.droppedBy = droppedBy;
+        newItem.dropRange = dropRange;
+        newItem.faction = faction;
+        newItem.icon = icon;
+        newItem.ilvl = ilvl;
+        newItem.lvl = lvl;
+        newItem.maxDamage = maxDamage;
+        newItem.maxStack = maxStack;
+        newItem.minDamage = minDamage;
+        newItem.minutesLeft = minutesLeft;
+        newItem.name = name;
+        newItem.price = price;
+        newItem.randomEnchantment = randomEnchantment;
+        newItem.reputationRequired = reputationRequired;
+        newItem.set = set;
+        newItem.source = source;
+        newItem.specs = specs?.ToList();
+        newItem.speed = speed;
+        newItem.stats = new Stats(stats.stats?.ToDictionary(x => x.Key, x => x.Value));
+        newItem.type = type;
+        newItem.worldAbilities = worldAbilities?.ToList();
         return newItem;
     }
 

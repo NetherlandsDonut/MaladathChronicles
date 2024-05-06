@@ -28,7 +28,7 @@ public class WorldAbility
 
     #region Execution
 
-    public void ExecuteEvents(Board board, FutureBoard futureBoard, Dictionary<string, string> trigger, int abilityRank, bool sourcedFromPlayer)
+    public void ExecuteEvents(Item item, Dictionary<string, string> trigger)
     {
         //In case of this ability having no events just return
         if (worldEvents == null) return;
@@ -46,14 +46,17 @@ public class WorldAbility
                         string triggererData = triggerData.ContainsKey("Triggerer") ? triggerData["Triggerer"] : "None";
                         execute = (buffName == buffNameData || buffNameData == "Any") && triggerer == triggererData;
                     }
-                    else if (trigger["Trigger"] == "ItemUsed") execute = true;
+                    else if (trigger["Trigger"] == "ItemUsed")
+                    {
+                        string itemName = trigger.ContainsKey("ItemName") ? trigger["ItemName"] : "None";
+                        string itemNameData = triggerData.ContainsKey("ItemName") ? (triggerData["ItemName"] == "This" ? this.item : triggerData["ItemName"]) : this.item;
+                        execute = itemName == itemNameData || itemNameData == "Any";
+                    }
                 }
-            //if (execute && (board != null ? board.CooldownOn(sourcedFromPlayer, name) : futureBoard.CooldownOn(sourcedFromPlayer, name)) <= 0)
-            //{
-            //    if (board != null) board.PutOnCooldown(sourcedFromPlayer, this);
-            //    else futureBoard.PutOnCooldown(sourcedFromPlayer, this);
-            //    eve.ExecuteEffects(board, futureBoard, icon, trigger, RankVariables(abilityRank), name, abilityRank);
-            //}
+            if (execute)
+            {
+                eve.ExecuteEffects(icon, trigger, item);
+            }
         }
     }
 
@@ -61,15 +64,14 @@ public class WorldAbility
 
     #region Description
 
-    public void PrintDescription(Entity effector, Entity other, int width, int rank)
+    public void PrintDescription(Entity effector, int width, bool showEmpty = true)
     {
-
-        //if (description != null) description.Print(effector, other, width);
-        //else AddHeaderRegion(() =>
-        //{
-        //    SetRegionAsGroupExtender();
-        //    AddLine("No description", "DarkGray");
-        //});
+        if (description != null) description.Print(effector, null, width, null);
+        else if (showEmpty) AddHeaderRegion(() =>
+        {
+            SetRegionAsGroupExtender();
+            AddLine("No description", "DarkGray");
+        });
     }
 
     #endregion

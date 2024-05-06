@@ -24,7 +24,7 @@ public class WorldEvent
 
     #region Execution
 
-    public void ExecuteEffects(string icon, Dictionary<string, string> triggerBase, Dictionary<string, string> variables, string sourceName, int sourceRank)
+    public void ExecuteEffects(string icon, Dictionary<string, string> triggerBase, Item itemSource)
     {
         //Define entities that take place in the event's effects
         var effector = currentSave.player;
@@ -39,7 +39,7 @@ public class WorldEvent
             int worldBuffDuration = effect.ContainsKey("WorldBuffDuration") ? int.Parse(effect["WorldBuffDuration"]) : 1;
             string powerSource = effect.ContainsKey("PowerSource") ? effect["PowerSource"] : "Effector";
             string powerType = effect.ContainsKey("PowerType") ? effect["PowerType"] : "None";
-            double powerScale = effect.ContainsKey("PowerScale") ? double.Parse(effect["PowerScale"].StartsWith("#") ? variables[effect["PowerScale"]] : effect["PowerScale"].Replace(".", ",")) : 1;
+            double powerScale = effect.ContainsKey("PowerScale") ? double.Parse(effect["PowerScale"].Replace(".", ",")) : 1;
             double chance = effect.ContainsKey("Chance") ? double.Parse(effect["Chance"].Replace(".", ",")) : 0;
             double chanceBase = effect.ContainsKey("ChanceBase") ? double.Parse(effect["ChanceBase"].Replace(".", ",")) : 100;
             string chanceSource = effect.ContainsKey("ChanceSource") ? effect["ChanceSource"] : powerSource;
@@ -57,8 +57,8 @@ public class WorldEvent
             //board.actions.Add(() => ExecuteEffect());
             //board.actions.Add(() => ExecuteAwait());
             ExecuteEffect();
-            ExecuteAwait();
-            CDesktop.LockScreen();
+            //ExecuteAwait();
+            //CDesktop.LockScreen();
 
             //Checks whether the effects failed to present themselves
             //bool CheckFailChance()
@@ -79,10 +79,13 @@ public class WorldEvent
                 //Execute a specific effect
                 if (type == "Damage") EffectDamage();
                 else if (type == "Heal") EffectHeal();
+                else if (type == "ConsumeItem") EffectConsumeItem();
                 //else if (type == "StatMod") EffectStatMod();
                 //else if (type == "ItemMod") EffectItemMod();
                 else if (type == "AddWorldBuff") EffectAddWorldBuff();
                 else if (type == "RemoveWorldBuff") EffectRemoveWorldBuff();
+                else if (type == "TeleportPlayer") EffectTeleportPlayer();
+                else if (type == "HearthstonePlayer") EffectHearthstonePlayer();
                 //else if (type == "Alcohol") EffectAlcohol();
                 //else if (type == "Container") EffectContainer();
 
@@ -134,6 +137,15 @@ public class WorldEvent
                 //board.UpdateHealthBars();
             }
 
+            //This effect consumes one stack of the item
+            void EffectConsumeItem()
+            {
+                var target = effector;
+                var item = target.inventory.items.Find(x => x == itemSource);
+                item.amount--;
+                if (item.amount == 0) target.inventory.items.Remove(item);
+            }
+
             //This effect gives a buff to the targetted entity
             void EffectAddWorldBuff()
             {
@@ -172,6 +184,22 @@ public class WorldEvent
                 //    { "Triggerer", "Other" },
                 //    { "BuffName", worldBuffName }
                 //});
+            }
+
+            //This effect consumes one stack of the item
+            void EffectTeleportPlayer()
+            {
+                CloseDesktop("EquipmentScreen");
+                currentSave.currentSite = currentSave.player.homeLocation;
+            }
+
+            //This effect consumes one stack of the item
+            void EffectHearthstonePlayer()
+            {
+                CloseDesktop("EquipmentScreen");
+                currentSave.currentSite = currentSave.player.homeLocation;
+                SiteTown.town = (SiteTown)Site.FindSite(x => x.name == currentSave.currentSite);
+                SpawnDesktopBlueprint("Town");
             }
         }
     }

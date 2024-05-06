@@ -48,6 +48,8 @@ public class LineText : MonoBehaviour
         newCharacter.transform.localPosition = new Vector3(offset, 0, 0.2f);
         var glyph = fonts[font].GetGlyph(character);
         newCharacter.GetComponent<SpriteRenderer>().sprite = glyph;
+        if (color == null) { Debug.Log("ERROR 009: Color was not set"); color = "Gray"; }
+        else if (!colors.ContainsKey(color)) { Debug.Log("ERROR 008: Color not found: \"" + color + "\""); color = "Gray"; }
         newCharacter.GetComponent<SpriteRenderer>().color = colors[color];
         newCharacter.GetComponent<SpriteRenderer>().sortingLayerName = line == null ? "FallingText" : line.region.regionGroup.window.layer;
         characters.Add(newCharacter);

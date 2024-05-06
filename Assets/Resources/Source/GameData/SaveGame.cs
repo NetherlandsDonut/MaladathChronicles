@@ -217,6 +217,27 @@ public class SaveGame
     //visited page of it to not favorize specs based on order
     public int lastVisitedTalents;
 
+    //Relinks references to static lists for items loaded from saved games
+    public void Initialise()
+    {
+        if (currentSite != null && Site.FindSite(x => x.name == currentSite) == null) currentSite = null;
+        currentSite ??= player.Race().startingSite;
+        player.homeLocation ??= player.Race().startingSite;
+        if (banks != null)
+            foreach (var bank in banks)
+                bank.Value.RelinkReferences();
+        player.inventory.RelinkReferences();
+    }
+
+    //Delinks references to static lists for items loaded from saved games
+    public void Flush()
+    {
+        if (banks != null)
+            foreach (var bank in banks)
+                bank.Value.DelinkReferences();
+        player.inventory.DelinkReferences();
+    }
+
     //Provides information which background should be used for character
     //logging screen which will depend on the place of the logout
     public string LoginBackground()
@@ -228,10 +249,21 @@ public class SaveGame
     //Logs a character out of the world
     public static void CloseSave()
     {
-        if (currentSave.playerDead) settings.selectedCharacter = "";
+        currentSave.Flush();
+        if (currentSave.playerDead)
+            settings.selectedCharacter = "";
         Save();
         grid.SwitchMapTexture(false);
         currentSave = null;
+    }
+
+    //Logs the character into the world
+    //Map can now be opened to start playing
+    public static void Login()
+    {
+        currentSave = saves[settings.selectedRealm].Find(x => x.player.name == settings.selectedCharacter);
+        currentSave.lastLoaded = DateTime.Now;
+        currentSave.Initialise();
     }
 
     //Saves the character in the database
@@ -241,16 +273,6 @@ public class SaveGame
         currentSave.timePlayed = currentSave.timePlayed.Add(DateTime.Now - currentSave.lastLoaded);
         currentSave.lastPlayed = DateTime.Now;
         var temp = desktops.Find(x => x.title.Contains("Map"));
-    }
-
-    //Logs the character into the world
-    //Map can now be opened to start playing
-    public static void Login()
-    {
-        currentSave = saves[settings.selectedRealm].Find(x => x.player.name == settings.selectedCharacter);
-        currentSave.lastLoaded = DateTime.Now;
-        if (currentSave.currentSite != null && Site.FindSite(x => x.name == currentSave.currentSite) == null) currentSave.currentSite = null;
-        currentSave.currentSite ??= currentSave.player.Race().startingSite;
     }
 
     //Saves all characters on the account
@@ -282,6 +304,21 @@ public class SaveGame
         SpawnTransition();
         SpawnTransition();
         SpawnTransition();
+    }
+
+    #endregion
+
+    #region World Events
+
+    public void CallEvents(Entity entity, Dictionary<string, string> trigger)
+    {
+        var items = entity.inventory.items.ToList();
+        foreach (var item in items) 
+            if (item.worldAbilities != null)
+                foreach (var ability in item.worldAbilities)
+                    ability.ExecuteEvents(item, trigger);
+        //foreach (var worldBuff in entity.worldCooldowns)
+        //    buff.Item1.ExecuteEvents(this, null, trigger, buff);
     }
 
     #endregion

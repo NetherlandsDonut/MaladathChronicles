@@ -824,6 +824,8 @@ public class Entity
 
     #region World Events
 
+    //public List<WorldBuff> worldBuffs;
+
     public Dictionary<string, int> worldCooldowns;
 
     #endregion

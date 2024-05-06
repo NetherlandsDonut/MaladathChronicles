@@ -2,10 +2,7 @@
 
 public class Stats
 {
-    public Stats(Dictionary<string, int> stats)
-    {
-        this.stats = stats;
-    }
+    public Stats(Dictionary<string, int> stats) => this.stats = stats ?? new();
 
     public Dictionary<string, int> stats;
 }

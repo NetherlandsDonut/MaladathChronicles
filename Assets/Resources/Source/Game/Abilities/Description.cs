@@ -37,7 +37,9 @@ public class DescriptionRegion
 
     public void PrintContents(Entity effector, Entity other, int width, Dictionary<string, string> variables)
     {
-        var list = contents.Select(x => (Process(x["Text"]), x["Color"], x.ContainsKey("Split") ? x["Split"] : "Yes")).SelectMany(x => x.Item3 == "No" ? new() { (x.Item1 + " ", x.Item2) } : x.Item1.Split(" ").Select(y => (y + " ", x.Item2)).ToList()).Select(x => (x.Item1, x.Item2, fonts["Tahoma Bold"].Length(x.Item1))).ToList();
+        var li = contents.Select(x => (Process(x["Text"]), x["Color"], x.ContainsKey("Split") ? x["Split"] : "Yes", x.ContainsKey("Spacing") ? x["Spacing"] : "Yes"));
+        var lis = li.SelectMany(x => x.Item3 == "No" ? new() { (x.Item1 + (x.Item4 == "No" ? "" : " "), x.Item2) } : x.Item1.Split(" ").Select(y => (y + " ", x.Item2)).ToList());
+        var list = lis.Select(x => (x.Item1, x.Item2, fonts["Tahoma Bold"].Length(x.Item1))).ToList();
         if (isExtender) SetRegionAsGroupExtender();
         var sum = width;
         while (list.Count > 0)
@@ -80,6 +82,11 @@ public class DescriptionRegion
                         var stat = stats.ContainsKey(split[1]) ? stats[split[1]] : 1;
                         return stat * multiplier + "%";
                     }
+            }
+            else if (text.StartsWith("Hearthstone("))
+            {
+                if (effector == null) return "?";
+                return effector.homeLocation;
             }
             return text;
         }
