@@ -96,6 +96,13 @@ public static class Root
 
     public static T Copy<T>(this object obj) => Newtonsoft.Json.JsonConvert.DeserializeObject<T>(Newtonsoft.Json.JsonConvert.SerializeObject(obj));
 
+    public static List<(string, string)> TrimLast(this List<(string, string)> list, bool should)
+    {
+        if (should == false) return list;
+        list[^1] = (list[^1].Item1.TrimEnd(), list[^1].Item2);
+        return list;
+    }
+
     public static bool Roll(double chance) => random.Next(0, 100000) < chance * 1000;
 
     public static string Clean(this string text) => text.Replace("'", "").Replace(".", "").Replace(" ", "");

@@ -7,49 +7,36 @@ using static Defines;
 //It's used by entities and banks
 public class Inventory
 {
-    public Inventory() { bags ??= new(); items ??= new(); }
+    #region Creation
+
+    public Inventory()
+    {
+        bags ??= new();
+        items ??= new();
+    }
+
     public Inventory(bool ignoreSpaceChecks)
     {
         this.ignoreSpaceChecks = ignoreSpaceChecks;
         bags = new();
         items = new();
     }
+
     public Inventory(List<string> items)
     {
         bags = new();
         this.items = items.Select(x => Item.items.Find(y => y.name == x).CopyItem(1)).ToList();
     }
 
-    //Amount of money in the bags
-    public int money;
+    #endregion
 
-    //If true, functions don't look at empty space in bags
-    public bool ignoreSpaceChecks;
-
-    //List of all items contained in the bags
-    public List<Item> items;
-
-    //Bags equipped in this inventory
-    public List<Item> bags;
-
-    //Decays items that have duration left of their existance
-    //This is used mainly for buyback items from vendors
-    public void DecayItems(int minutes)
-    {
-        for (int i = items.Count - 1; i >= 0; i--)
-            if (items[i].minutesLeft > 0)
-            {
-                items[i].minutesLeft -= minutes;
-                if (items[i].minutesLeft <= 0)
-                    items.RemoveAt(i);
-            }
-    }
+    #region Manipulation
 
     //Tells whether the player can fit the item in the inventory
     public bool CanAddItem(Item item)
     {
         if (ignoreSpaceChecks) return true;
-        if (items.Count < BagSpace()) return true; 
+        if (items.Count < BagSpace()) return true;
         var find = items.FindAll(x => x.name == item.name);
         if (find.Count > 0) return find.Sum(x => x.maxStack - x.amount) > 0;
         else return false;
@@ -74,6 +61,45 @@ public class Inventory
         return item.amount == 0;
     }
 
+    //Decays items that have duration left of their existance
+    //This is used mainly for buyback items from vendors
+    public void DecayItems(int minutes)
+    {
+        for (int i = items.Count - 1; i >= 0; i--)
+            if (items[i].minutesLeft > 0)
+            {
+                items[i].minutesLeft -= minutes;
+                if (items[i].minutesLeft <= 0)
+                    items.RemoveAt(i);
+            }
+    }
+
+    #endregion
+
+    #region Storage
+
+    //Amount of money in the bags
+    public int money;
+
+    //List of all items contained in the bags
+    public List<Item> items;
+
+    //Bags equipped in this inventory
+    public List<Item> bags;
+
+    #endregion
+
+    #region Management
+
+    //Returns the amount of bag space inventory has
+    public int BagSpace()
+    {
+        return bags.Sum(x => x.bagSpace) + defines.backpackSpace;
+    }
+
+    //If true, functions don't look at empty space in bags
+    public bool ignoreSpaceChecks;
+
     //Relinks references to static lists for items loaded from saved games
     public void RelinkReferences()
     {
@@ -88,9 +114,5 @@ public class Inventory
             item.RelinkReferences();
     }
 
-    //Returns the amount of bag space inventory has
-    public int BagSpace()
-    {
-        return bags.Sum(x => x.bagSpace) + defines.backpackSpace;
-    }
+    #endregion
 }

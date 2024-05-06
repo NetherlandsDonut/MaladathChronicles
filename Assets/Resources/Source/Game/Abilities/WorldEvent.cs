@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 using static Root;
 using static Sound;
-using static Shatter;
+using static MapGrid;
 using static Defines;
 using static SaveGame;
 
@@ -189,17 +189,21 @@ public class WorldEvent
             //This effect consumes one stack of the item
             void EffectTeleportPlayer()
             {
-                CloseDesktop("EquipmentScreen");
-                currentSave.currentSite = currentSave.player.homeLocation;
+                //CloseDesktop("EquipmentScreen");
+                //currentSave.currentSite = currentSave.player.homeLocation;
             }
 
             //This effect consumes one stack of the item
             void EffectHearthstonePlayer()
             {
                 CloseDesktop("EquipmentScreen");
+                SwitchDesktop("Map");
+                var prevSite = currentSave.currentSite;
                 currentSave.currentSite = currentSave.player.homeLocation;
                 SiteTown.town = (SiteTown)Site.FindSite(x => x.name == currentSave.currentSite);
-                SpawnDesktopBlueprint("Town");
+                Respawn("Site: " + prevSite);
+                Respawn("Site: " + currentSave.currentSite);
+                CDesktop.cameraDestination = new Vector2(SiteTown.town.x * mapGridSize, SiteTown.town.y * mapGridSize);
             }
         }
     }

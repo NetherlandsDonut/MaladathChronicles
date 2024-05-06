@@ -631,6 +631,7 @@ public class Blueprint
             }
         }),
         new("PlayerEquipmentInfo", () => {
+            if (CDesktop.title == "Map") return;
             SetAnchor(TopLeft, 19, -38);
             AddRegionGroup();
             SetRegionGroupWidth(190);
@@ -1461,6 +1462,7 @@ public class Blueprint
             AddPaddingRegion(() => { });
         }),
         new("Inventory", () => {
+            if (CDesktop.title == "Map") return;
             SetAnchor(TopRight, -19, -38);
             AddHeaderGroup();
             SetRegionGroupWidth(190);
