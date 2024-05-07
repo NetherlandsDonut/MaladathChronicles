@@ -1436,7 +1436,8 @@
     "y": -75,
     "name": "Dandred's Fold",
     "zone": "Alterac Mountains",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -1520,7 +1521,8 @@
     "y": -79,
     "name": "Misty Shore",
     "zone": "Alterac Mountains",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -2107,7 +2109,8 @@
     "y": -112,
     "name": "Thandol Span",
     "zone": "Arathi Highlands",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -2429,7 +2432,8 @@
     "y": -105,
     "name": "Falfarren River",
     "zone": "Ashenvale",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -2455,7 +2459,8 @@
     "y": -116,
     "name": "Fallen Sky Lake",
     "zone": "Ashenvale",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -2579,7 +2584,8 @@
     "y": -102,
     "name": "Iris Lake",
     "zone": "Ashenvale",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -2616,7 +2622,8 @@
     "y": -100,
     "name": "Lake Falathim",
     "zone": "Ashenvale",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -2637,7 +2644,8 @@
     "y": -112,
     "name": "Mystral Lake",
     "zone": "Ashenvale",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -2948,7 +2956,8 @@
     "y": -93,
     "name": "The Zoram Strand",
     "zone": "Ashenvale",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -3099,7 +3108,8 @@
     "y": -100,
     "name": "Bay of Storms",
     "zone": "Azshara",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -3204,7 +3214,8 @@
     "y": -95,
     "name": "Hetaera's Clutch",
     "zone": "Azshara",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -3240,7 +3251,8 @@
     "y": -80,
     "name": "Jagged Reef",
     "zone": "Azshara",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -3271,7 +3283,8 @@
     "y": -104,
     "name": "Lake Mennar",
     "zone": "Azshara",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -3359,7 +3372,8 @@
     "y": -110,
     "name": "Rethress Sanctum",
     "zone": "Azshara",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -3464,7 +3478,8 @@
     "y": -98,
     "name": "Southridge Beach",
     "zone": "Azshara",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -3495,7 +3510,8 @@
     "y": -92,
     "name": "Temple of Arkkoran",
     "zone": "Azshara",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -3535,7 +3551,8 @@
     "y": -108,
     "name": "The Ruined Reaches",
     "zone": "Azshara",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -3561,7 +3578,8 @@
     "y": -93,
     "name": "The Shattered Strand",
     "zone": "Azshara",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -3592,7 +3610,8 @@
     "y": -88,
     "name": "Tower of Eldara",
     "zone": "Azshara",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "areaSize": 3,
@@ -4130,7 +4149,8 @@
     "name": "Moonshrine Ruins",
     "zone": "Blackfathom Deeps",
     "type": "HostileArea",
-    "noNightVariant": true
+    "noNightVariant": true,
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -4226,7 +4246,8 @@
     "name": "Pool of Ask'ar",
     "zone": "Blackfathom Deeps",
     "type": "HostileArea",
-    "noNightVariant": true
+    "noNightVariant": true,
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -6020,7 +6041,8 @@
     "y": -57,
     "name": "Cliffspring River",
     "zone": "Darkshore",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -6046,7 +6068,8 @@
     "y": -48,
     "name": "Mist's Edge",
     "zone": "Darkshore",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -6160,7 +6183,8 @@
     "y": -68,
     "name": "The Long Wash",
     "zone": "Darkshore",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -6249,7 +6273,8 @@
     "y": -76,
     "name": "Twilight Shore",
     "zone": "Darkshore",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -6344,7 +6369,8 @@
     "y": -207,
     "name": "Karazhan",
     "zone": "Deadwind Pass",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -6723,7 +6749,8 @@
     "y": -152,
     "name": "Magram Village",
     "zone": "Desolace",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -6764,7 +6791,8 @@
     "y": -153,
     "name": "Mannoroc Coven",
     "zone": "Desolace",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -6800,7 +6828,8 @@
     "y": -131,
     "name": "Ranazjar Isle",
     "zone": "Desolace",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -6878,7 +6907,8 @@
     "y": -154,
     "name": "Sar'theris Strand",
     "zone": "Desolace",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -7751,7 +7781,8 @@
     "y": -148,
     "name": "Helm's Bed Lake",
     "zone": "Dun Morogh",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -7843,7 +7874,8 @@
     "y": -144,
     "name": "Ice Flow Lake",
     "zone": "Dun Morogh",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "areaSize": 3,
@@ -8050,7 +8082,8 @@
     "y": -124,
     "name": "Bladefist Bay",
     "zone": "Durotar",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -8107,7 +8140,8 @@
     "y": -144,
     "name": "Darkspear Strand",
     "zone": "Durotar",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -8169,7 +8203,8 @@
     "y": -146,
     "name": "Echo Isles",
     "zone": "Durotar",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -8351,7 +8386,8 @@
     "y": -133,
     "name": "Scuttle Coast",
     "zone": "Durotar",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -8743,7 +8779,8 @@
     "y": -196,
     "name": "Gloom Reach",
     "zone": "Duskwood",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -8900,7 +8937,8 @@
     "y": -197,
     "name": "The Hushed Bank",
     "zone": "Duskwood",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -8932,7 +8970,8 @@
     "y": -196,
     "name": "The Darkened Bank",
     "zone": "Duskwood",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -9313,7 +9352,8 @@
     "y": -162,
     "name": "Bluefen",
     "zone": "Dustwallow Marsh",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -9391,7 +9431,8 @@
     "y": -160,
     "name": "Dreadmurk Shore",
     "zone": "Dustwallow Marsh",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "eliteEncounters": [
@@ -9515,7 +9556,8 @@
     "y": -168,
     "name": "Dustwallow Bay",
     "zone": "Dustwallow Marsh",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -9684,7 +9726,8 @@
     "y": -169,
     "name": "Northern Quagmire",
     "zone": "Dustwallow Marsh",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -9725,7 +9768,8 @@
     "y": -173,
     "name": "Southern Quagmire",
     "zone": "Dustwallow Marsh",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -9782,7 +9826,8 @@
     "y": -180,
     "name": "Tidefury Cove",
     "zone": "Dustwallow Marsh",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -9808,7 +9853,8 @@
     "y": -165,
     "name": "Swamplight Manor",
     "zone": "Dustwallow Marsh",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -9875,7 +9921,8 @@
     "y": -60,
     "name": "Blackwood Lake",
     "zone": "Eastern Plaguelands",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -10128,7 +10175,8 @@
     "y": -69,
     "name": "Lake Mereldar",
     "zone": "Eastern Plaguelands",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -10606,7 +10654,8 @@
     "y": -67,
     "name": "Thondroril River",
     "zone": "Eastern Plaguelands",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -10809,7 +10858,8 @@
     "y": -189,
     "name": "Crystal Lake",
     "zone": "Elwynn Forest",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -10878,7 +10928,8 @@
     "y": -184,
     "name": "Stone Cairn Lake",
     "zone": "Elwynn Forest",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -10961,7 +11012,8 @@
     "y": -188,
     "name": "Mirror Lake",
     "zone": "Elwynn Forest",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -11160,7 +11212,8 @@
     "y": -78,
     "name": "Bloodvenom Falls",
     "zone": "Felwood",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -11191,7 +11244,8 @@
     "y": -76,
     "name": "Bloodvenom River",
     "zone": "Felwood",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -11382,7 +11436,8 @@
     "y": -66,
     "name": "Irontree Woods",
     "zone": "Felwood",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -11821,7 +11876,8 @@
     "y": -196,
     "name": "Isle of Dread",
     "zone": "Feralas",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "areaSize": 3,
@@ -12091,7 +12147,8 @@
     "y": -179,
     "name": "The Forgotten Coast",
     "zone": "Feralas",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -12117,7 +12174,8 @@
     "y": -168,
     "name": "The Twin Colossals",
     "zone": "Feralas",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -12167,7 +12225,8 @@
     "y": -184,
     "name": "Verdantis River",
     "zone": "Feralas",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "areaSize": 3,
@@ -12181,7 +12240,8 @@
     "y": -183,
     "name": "Wildwind Lake",
     "zone": "Feralas",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -12708,7 +12768,8 @@
     "y": -99,
     "name": "Eastern Strand",
     "zone": "Hillsbrad Foothills",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -12766,7 +12827,8 @@
     "y": -93,
     "name": "Darrowmere Crossing",
     "zone": "Hillsbrad Foothills",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -12806,7 +12868,8 @@
     "y": -102,
     "name": "Purgation Isle",
     "zone": "Hillsbrad Foothills",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -12874,7 +12937,8 @@
     "y": -99,
     "name": "Western Strand",
     "zone": "Hillsbrad Foothills",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -13206,7 +13270,8 @@
     "y": -85,
     "name": "Quel'Danil Lodge",
     "zone": "Hinterlands",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -13407,7 +13472,8 @@
     "y": -90,
     "name": "The Overlook Cliffs",
     "zone": "Hinterlands",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -13433,7 +13499,8 @@
     "y": -88,
     "name": "Valorwind Lake",
     "zone": "Hinterlands",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -13622,7 +13689,8 @@
     "y": -143,
     "name": "Loch Shore",
     "zone": "Loch Modan",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -13747,7 +13815,8 @@
     "y": -146,
     "name": "The Loch",
     "zone": "Loch Modan",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -13955,7 +14024,8 @@
     "name": "Earth Song Falls",
     "zone": "Maraudon",
     "type": "HostileArea",
-    "noNightVariant": true
+    "noNightVariant": true,
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -14054,7 +14124,8 @@
     "name": "Poison Falls",
     "zone": "Maraudon",
     "type": "HostileArea",
-    "noNightVariant": true
+    "noNightVariant": true,
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -14192,7 +14263,8 @@
     "name": "Wicked Grotto",
     "zone": "Maraudon",
     "type": "HostileArea",
-    "noNightVariant": true
+    "noNightVariant": true,
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -14238,7 +14310,8 @@
     "name": "Zaetar's Grave",
     "zone": "Maraudon",
     "type": "HostileArea",
-    "noNightVariant": true
+    "noNightVariant": true,
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -14815,7 +14888,8 @@
     "y": -155,
     "name": "Stonebull Lake",
     "zone": "Mulgore",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -15718,7 +15792,8 @@
     "y": -190,
     "name": "Lake Everstill",
     "zone": "Redridge Mountains",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -15980,7 +16055,8 @@
     "y": -189,
     "name": "Stonewatch Falls",
     "zone": "Redridge Mountains",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -16283,7 +16359,8 @@
     "name": "The Reservoir",
     "zone": "Ruins of Ahn'Qiraj",
     "type": "HostileArea",
-    "noNightVariant": true
+    "noNightVariant": true,
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -18509,7 +18586,8 @@
     "y": -218,
     "name": "Hive'Regal",
     "zone": "Silithus",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -19029,7 +19107,8 @@
     "y": -83,
     "name": "Vile Fin Village",
     "zone": "Silverpine Forest",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -19233,7 +19312,8 @@
     "y": -78,
     "name": "North Tide's Run",
     "zone": "Silverpine Forest",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -19352,7 +19432,8 @@
     "y": -80,
     "name": "The Dawning Isles",
     "zone": "Silverpine Forest",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -19404,7 +19485,8 @@
     "y": -80,
     "name": "The Decrepit Ferry",
     "zone": "Silverpine Forest",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -19481,7 +19563,8 @@
     "y": -76,
     "name": "The Shining Strand",
     "zone": "Silverpine Forest",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -19601,7 +19684,8 @@
     "y": -116,
     "name": "Cragpool Lake",
     "zone": "Stonetalon Mountains",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -19690,7 +19774,8 @@
     "y": -116,
     "name": "Mirkfallon Lake",
     "zone": "Stonetalon Mountains",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -19949,7 +20034,8 @@
     "y": -232,
     "name": "Bloodsail Compound",
     "zone": "Stranglethorn Vale",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "eliteEncounters": [
@@ -19974,7 +20060,8 @@
     "y": -238,
     "name": "Crystal Shore",
     "zone": "Stranglethorn Vale",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -20073,7 +20160,8 @@
     "y": -245,
     "name": "Jaguero Isle",
     "zone": "Stranglethorn Vale",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -20183,7 +20271,8 @@
     "y": -216,
     "name": "Lake Nazferiti",
     "zone": "Stranglethorn Vale",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -20235,7 +20324,8 @@
     "y": -221,
     "name": "Mizjah Ruins",
     "zone": "Stranglethorn Vale",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -20312,7 +20402,8 @@
     "y": -240,
     "name": "Janeiro's Point",
     "zone": "Stranglethorn Vale",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -20339,7 +20430,8 @@
     "y": -236,
     "name": "Nek'mani Wellspring",
     "zone": "Stranglethorn Vale",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -20569,7 +20661,8 @@
     "y": -215,
     "name": "The Savage Coast",
     "zone": "Stranglethorn Vale",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -20599,7 +20692,8 @@
     ],
     "name": "Southern Savage Coast",
     "zone": "Stranglethorn Vale",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -20649,9 +20743,10 @@
     ],
     "x": 272,
     "y": -216,
-    "name": "Venture Co. Operations Center",
+    "name": "Venture Co. Base Camp",
     "zone": "Stranglethorn Vale",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -20682,7 +20777,8 @@
     "y": -245,
     "name": "Wild Shore",
     "zone": "Stranglethorn Vale",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -21269,7 +21365,8 @@
     "y": -204,
     "name": "Southern Misty Reed Strand",
     "zone": "Swamp of Sorrows",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -21301,7 +21398,8 @@
     "y": -193,
     "name": "Northern Misty Reed Strand",
     "zone": "Swamp of Sorrows",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -21389,7 +21487,8 @@
     "y": -200,
     "name": "Pool of Tears",
     "zone": "Swamp of Sorrows",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -21425,7 +21524,8 @@
     "y": -197,
     "name": "Sorrowmurk",
     "zone": "Swamp of Sorrows",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -21625,7 +21725,8 @@
     "y": -197,
     "name": "The Shifting Mire",
     "zone": "Swamp of Sorrows",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -21838,7 +21939,8 @@
     "y": -241,
     "name": "Land's End Beach",
     "zone": "Tanaris",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -21875,7 +21977,8 @@
     "y": -218,
     "name": "Lost Rigger Cove",
     "zone": "Tanaris",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -21953,7 +22056,8 @@
     "y": -226,
     "name": "Southbreak Shore",
     "zone": "Tanaris",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -22003,7 +22107,8 @@
     "y": -207,
     "name": "Steamwheedle Port",
     "zone": "Tanaris",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -22230,7 +22335,8 @@
     "y": -210,
     "name": "Wavestrider Beach",
     "zone": "Tanaris",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -22415,7 +22521,8 @@
     "y": -31,
     "name": "Lake Al'Ameth",
     "zone": "Teldrassil",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -22446,7 +22553,8 @@
     "y": -30,
     "name": "Pools of Arlithrien",
     "zone": "Teldrassil",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -22568,7 +22676,8 @@
     "y": -22,
     "name": "Wellspring Lake",
     "zone": "Teldrassil",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -22600,7 +22709,8 @@
     "y": -18,
     "name": "Wellspring River",
     "zone": "Teldrassil",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "eliteEncounters": [
@@ -22822,7 +22932,8 @@
     "name": "The Hive Undergrounds",
     "zone": "Temple of Ahn'Qiraj",
     "type": "HostileArea",
-    "noNightVariant": true
+    "noNightVariant": true,
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -23319,7 +23430,8 @@
     "name": "Pit of Refuse",
     "zone": "Temple of Atal'Hakkar",
     "type": "HostileArea",
-    "noNightVariant": true
+    "noNightVariant": true,
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -23812,7 +23924,8 @@
     ],
     "name": "Fray Island",
     "zone": "The Barrens",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -24005,7 +24118,8 @@
     "y": -146,
     "name": "Lushwater Oasis",
     "zone": "The Barrens",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -24123,7 +24237,8 @@
     "y": -126,
     "name": "Southfury River",
     "zone": "The Barrens",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -24251,7 +24366,8 @@
     "y": -132,
     "name": "The Forgotten Pools",
     "zone": "The Barrens",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -24277,7 +24393,8 @@
     "y": -150,
     "name": "The Merchant Coast",
     "zone": "The Barrens",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -24298,7 +24415,8 @@
     "y": -148,
     "name": "The Tidus Stair",
     "zone": "The Barrens",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -24343,7 +24461,8 @@
     "y": -122,
     "name": "The Sludge Fen",
     "zone": "The Barrens",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -24374,7 +24493,8 @@
     "y": -146,
     "name": "The Stagnant Oasis",
     "zone": "The Barrens",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -24598,7 +24718,8 @@
     "name": "Ironclad Cove",
     "zone": "The Deadmines",
     "type": "HostileArea",
-    "noNightVariant": true
+    "noNightVariant": true,
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -25182,7 +25303,8 @@
     "y": -61,
     "name": "Brightwater Lake",
     "zone": "Tirisfal Glades",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -25219,7 +25341,8 @@
     "y": -63,
     "name": "Stillwater Pond",
     "zone": "Tirisfal Glades",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -25444,7 +25567,8 @@
     "y": -57,
     "name": "The North Coast",
     "zone": "Tirisfal Glades",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -25465,7 +25589,8 @@
     "y": -69,
     "name": "The Ruins of Lordaeron",
     "zone": "Tirisfal Glades",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -25533,7 +25658,8 @@
     "y": -60,
     "name": "Whispering Shore",
     "zone": "Tirisfal Glades",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -26074,7 +26200,8 @@
     "y": -211,
     "name": "Golakka Hot Springs",
     "zone": "Un'Goro Crater",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -26105,7 +26232,8 @@
     "y": -204,
     "name": "Lakkari Tar Pits",
     "zone": "Un'Goro Crater",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -26224,7 +26352,8 @@
     "y": -210,
     "name": "The Marshlands",
     "zone": "Un'Goro Crater",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -27107,7 +27236,8 @@
     "y": -202,
     "name": "Longshore",
     "zone": "Westfall",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -27164,7 +27294,8 @@
     "y": -203,
     "name": "Stendel's Pond",
     "zone": "Westfall",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -27336,7 +27467,8 @@
     "y": -204,
     "name": "Westfall Crossing",
     "zone": "Westfall",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -27392,7 +27524,8 @@
     "y": -210,
     "name": "Westfall Lighthouse",
     "zone": "Westfall",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -27459,7 +27592,8 @@
     "y": -125,
     "name": "Black Channel Marsh",
     "zone": "Wetlands",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -27738,7 +27872,8 @@
     "y": -131,
     "name": "Dam Waterfalls",
     "zone": "Wetlands",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -27817,7 +27952,8 @@
     "y": -118,
     "name": "Saltspray Glen",
     "zone": "Wetlands",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -27854,7 +27990,8 @@
     "y": -121,
     "name": "Sundown Marsh",
     "zone": "Wetlands",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -27911,7 +28048,8 @@
     "y": -123,
     "name": "The Green Belt",
     "zone": "Wetlands",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -28062,7 +28200,8 @@
     "y": -62,
     "name": "Frostfire Hot Springs",
     "zone": "Winterspring",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [
@@ -28756,7 +28895,8 @@
     ],
     "name": "Pagle's Pointe",
     "zone": "Zul'Gurub",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "fishing": true
   },
   {
     "commonEncounters": [

@@ -40899,7 +40899,7 @@
   {
     "sites": [
       "Mosh'Ogg Ogre Mound",
-      "Venture Co. Operations Center"
+      "Venture Co. Base Camp"
     ],
     "means": "Land",
     "points": [
@@ -40960,7 +40960,7 @@
   {
     "sites": [
       "Lake Nazferiti",
-      "Venture Co. Operations Center"
+      "Venture Co. Base Camp"
     ],
     "means": "Land",
     "points": [
@@ -41029,7 +41029,7 @@
   {
     "sites": [
       "Kurzen's Compound",
-      "Venture Co. Operations Center"
+      "Venture Co. Base Camp"
     ],
     "means": "Land",
     "points": [
@@ -41078,7 +41078,7 @@
   {
     "sites": [
       "Rebel Camp",
-      "Venture Co. Operations Center"
+      "Venture Co. Base Camp"
     ],
     "means": "Land",
     "points": [
@@ -41159,7 +41159,7 @@
   {
     "sites": [
       "Balia'mah Ruins",
-      "Venture Co. Operations Center"
+      "Venture Co. Base Camp"
     ],
     "means": "Land",
     "points": [
@@ -41227,7 +41227,7 @@
   },
   {
     "sites": [
-      "Venture Co. Operations Center",
+      "Venture Co. Base Camp",
       "Zul'Gurub"
     ],
     "means": "Land",
@@ -41593,7 +41593,7 @@
   {
     "sites": [
       "Mizjah Ruins",
-      "Venture Co. Operations Center"
+      "Venture Co. Base Camp"
     ],
     "means": "Land",
     "points": [
@@ -87025,6 +87025,142 @@
       {
         "Item1": 5814,
         "Item2": -2945
+      }
+    ]
+  },
+  {
+    "sites": [
+      "Razor Hill",
+      "Scuttle Coast"
+    ],
+    "means": "Land",
+    "spacing": 10,
+    "points": [
+      {
+        "Item1": 2527,
+        "Item2": -2527
+      },
+      {
+        "Item1": 2517,
+        "Item2": -2529
+      },
+      {
+        "Item1": 2507,
+        "Item2": -2530
+      },
+      {
+        "Item1": 2497,
+        "Item2": -2534
+      },
+      {
+        "Item1": 2487,
+        "Item2": -2530
+      },
+      {
+        "Item1": 2481,
+        "Item2": -2522
+      },
+      {
+        "Item1": 2476,
+        "Item2": -2513
+      },
+      {
+        "Item1": 2469,
+        "Item2": -2506
+      },
+      {
+        "Item1": 2459,
+        "Item2": -2505
+      },
+      {
+        "Item1": 2449,
+        "Item2": -2509
+      },
+      {
+        "Item1": 2439,
+        "Item2": -2508
+      },
+      {
+        "Item1": 2434,
+        "Item2": -2500
+      },
+      {
+        "Item1": 2430,
+        "Item2": -2490
+      },
+      {
+        "Item1": 2421,
+        "Item2": -2486
+      },
+      {
+        "Item1": 2417,
+        "Item2": -2477
+      },
+      {
+        "Item1": 2413,
+        "Item2": -2470
+      }
+    ]
+  },
+  {
+    "sites": [
+      "Rocky Desert",
+      "Scuttle Coast"
+    ],
+    "means": "Land",
+    "spacing": 10,
+    "points": [
+      {
+        "Item1": 2413,
+        "Item2": -2546
+      },
+      {
+        "Item1": 2422,
+        "Item2": -2542
+      },
+      {
+        "Item1": 2430,
+        "Item2": -2535
+      },
+      {
+        "Item1": 2439,
+        "Item2": -2530
+      },
+      {
+        "Item1": 2449,
+        "Item2": -2531
+      },
+      {
+        "Item1": 2458,
+        "Item2": -2534
+      },
+      {
+        "Item1": 2468,
+        "Item2": -2531
+      },
+      {
+        "Item1": 2477,
+        "Item2": -2525
+      },
+      {
+        "Item1": 2487,
+        "Item2": -2526
+      },
+      {
+        "Item1": 2496,
+        "Item2": -2530
+      },
+      {
+        "Item1": 2506,
+        "Item2": -2531
+      },
+      {
+        "Item1": 2517,
+        "Item2": -2530
+      },
+      {
+        "Item1": 2527,
+        "Item2": -2527
       }
     ]
   }

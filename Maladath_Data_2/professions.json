@@ -7,7 +7,6 @@
         "levelName": "Apprentice",
         "trainingCost": 10,
         "requiredLevel": 5,
-        "requiredSkill": 0,
         "maxSkill": 75
       },
       {
@@ -41,7 +40,6 @@
         "levelName": "Apprentice",
         "trainingCost": 10,
         "requiredLevel": 5,
-        "requiredSkill": 0,
         "maxSkill": 75
       },
       {
@@ -75,7 +73,6 @@
         "levelName": "Apprentice",
         "trainingCost": 10,
         "requiredLevel": 5,
-        "requiredSkill": 0,
         "maxSkill": 75
       },
       {
@@ -109,7 +106,6 @@
         "levelName": "Apprentice",
         "trainingCost": 10,
         "requiredLevel": 5,
-        "requiredSkill": 0,
         "maxSkill": 75
       },
       {
@@ -143,7 +139,6 @@
         "levelName": "Apprentice",
         "trainingCost": 10,
         "requiredLevel": 5,
-        "requiredSkill": 0,
         "maxSkill": 75
       },
       {
@@ -177,7 +172,6 @@
         "levelName": "Apprentice",
         "trainingCost": 10,
         "requiredLevel": 5,
-        "requiredSkill": 0,
         "maxSkill": 75
       },
       {
@@ -211,7 +205,6 @@
         "levelName": "Apprentice",
         "trainingCost": 10,
         "requiredLevel": 5,
-        "requiredSkill": 0,
         "maxSkill": 75
       },
       {
@@ -245,7 +238,6 @@
         "levelName": "Apprentice",
         "trainingCost": 10,
         "requiredLevel": 5,
-        "requiredSkill": 0,
         "maxSkill": 75
       },
       {
@@ -279,7 +271,6 @@
         "levelName": "Apprentice",
         "trainingCost": 10,
         "requiredLevel": 5,
-        "requiredSkill": 0,
         "maxSkill": 75
       },
       {

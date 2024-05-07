@@ -46,6 +46,9 @@ public class Site
     //Sites marked with this boolean as true keep it always the same.
     public bool noNightVariant;
 
+    //Is fishing possible at this site
+    public bool fishing;
+
     //Initialisation method to fill automatic values
     //and remove empty collections to avoid serialising them later
     public virtual void Initialise() { }
