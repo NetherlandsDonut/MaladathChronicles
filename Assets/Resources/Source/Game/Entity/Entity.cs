@@ -388,7 +388,8 @@ public class Entity
         {
             var item1 = GetItemInSlot("Main Hand");
             var item2 = GetItemInSlot("Off Hand");
-            var item3 = inventory.items.OrderByDescending(x => x.ilvl).First(x => x.CanEquip(this) && x.type == "One Handed");
+            var temp = inventory.items.OrderByDescending(x => x.ilvl);
+            var item3 = temp.Count() > 0 ? temp.First(x => x.CanEquip(this) && x.type == "One Handed") : null;
             if (item1 != null && item2 == null)
                 return item1.type == "Two Handed" && item3 != null ? item.ilvl / 2 + item3.ilvl / 2 > item1.ilvl : false;
             else if (item2 != null)

@@ -724,6 +724,10 @@ public class Blueprint
                 });
             });
         }),
+        new("Chest", () => {
+            SetAnchor(259, -111);
+            Chest.SpawnChestObject(new Vector2(0, 0), "Chest");
+        }),
         new("FishingAnchor", () => {
             SetAnchor(BottomLeft, 19, 35);
             AddHeaderGroup();
@@ -1064,6 +1068,22 @@ public class Blueprint
                 () =>
                 {
                     AddLine(board.enemy.name + "'s loot:");
+                    AddSmallButton("OtherClose", (h) =>
+                    {
+                        PlaySound("DesktopInventoryClose");
+                        CloseDesktop("CombatResultsLoot");
+                    });
+                }
+            );
+        }),
+        new("ChestInfo", () => {
+            SetAnchor(-92, -86);
+            AddRegionGroup();
+            SetRegionGroupWidth(182);
+            AddHeaderRegion(
+                () =>
+                {
+                    AddLine(area.name + " spoils:");
                     AddSmallButton("OtherClose", (h) =>
                     {
                         PlaySound("DesktopInventoryClose");
@@ -2591,6 +2611,18 @@ public class Blueprint
                 {
                     for (int j = 0; j < 4 && j < board.results.inventory.items.Count; j++)
                         PrintLootItem(board.results.inventory.items[j]);
+                }
+            );
+        }),
+        new("ChestLoot", () => {
+            SetAnchor(-92, -105);
+            AddRegionGroup();
+            SetRegionGroupWidth(182);
+            AddPaddingRegion(
+                () =>
+                {
+                    for (int j = 0; j < 4 && j < currentSave.lastChest.inventory.items.Count; j++)
+                        PrintLootItem(currentSave.lastChest.inventory.items[j]);
                 }
             );
         }),
@@ -8587,6 +8619,8 @@ public class Blueprint
             SpawnWindowBlueprint("MapToolbarStatusLeft");
             SpawnWindowBlueprint("MapToolbarStatusRight");
             SpawnWindowBlueprint("ExperienceBar");
+            if (currentSave.siteProgress.ContainsKey(area.name) && area.progression.First(x => x.type == "Treasure").point == currentSave.siteProgress[area.name])
+                SpawnWindowBlueprint("Chest");
             AddHotkey(Escape, () =>
             {
                 if (area.complexPart)
@@ -8644,7 +8678,6 @@ public class Blueprint
         new("CombatResultsLoot", () =>
         {
             SetDesktopBackground(board.area.Background());
-            locationName = board.enemy.name + "'s Loot";
             SpawnWindowBlueprint("MapToolbarShadow");
             SpawnWindowBlueprint("MapToolbarClockLeft");
             SpawnWindowBlueprint("MapToolbar");
@@ -8654,6 +8687,26 @@ public class Blueprint
             SpawnWindowBlueprint("PlayerEquipmentInfo");
             SpawnWindowBlueprint("LootInfo");
             SpawnWindowBlueprint("CombatResultsLoot");
+            SpawnWindowBlueprint("Inventory");
+            SpawnWindowBlueprint("ExperienceBar");
+            AddHotkey(Escape, () =>
+            {
+                PlaySound("DesktopInventoryClose");
+                CloseDesktop("CombatResultsLoot");
+            });
+        }),
+        new("ChestLoot", () =>
+        {
+            SetDesktopBackground(area.Background());
+            SpawnWindowBlueprint("MapToolbarShadow");
+            SpawnWindowBlueprint("MapToolbarClockLeft");
+            SpawnWindowBlueprint("MapToolbar");
+            SpawnWindowBlueprint("MapToolbarClockRight");
+            SpawnWindowBlueprint("MapToolbarStatusLeft");
+            SpawnWindowBlueprint("MapToolbarStatusRight");
+            SpawnWindowBlueprint("PlayerEquipmentInfo");
+            SpawnWindowBlueprint("ChestInfo");
+            SpawnWindowBlueprint("ChestLoot");
             SpawnWindowBlueprint("Inventory");
             SpawnWindowBlueprint("ExperienceBar");
             AddHotkey(Escape, () =>

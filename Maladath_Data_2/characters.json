@@ -5,11 +5,11 @@
   "Whitemane": [
     {
       "player": {
-        "level": 2,
+        "level": 3,
         "experience": 59,
         "professionSkills": {},
         "learnedRecipes": {},
-        "unspentTalentPoints": 1,
+        "unspentTalentPoints": 2,
         "faction": "Stormwind",
         "name": "Tine",
         "race": "Human",
@@ -163,16 +163,18 @@
           }
         }
       },
-      "hour": 7,
-      "minute": 58,
-      "second": 48,
-      "currentSite": "Northshire Abbey",
+      "hour": 8,
+      "second": 12,
+      "currentSite": "Northshire Valley",
       "siteProgress": {
-        "Echo Isles": 2
+        "Echo Isles": 2,
+        "Northshire Valley": 3
       },
       "commonsKilled": {
         "Hexed Troll": 1,
-        "Bloodtalon Taillasher": 2
+        "Bloodtalon Taillasher": 2,
+        "Kobold Vermin": 2,
+        "Young Wolf": 1
       },
       "raresKilled": {},
       "elitesKilled": {},
@@ -500,7 +502,7 @@
         "Mirror Lake": 1,
         "Mirror Lake Orchard": 1,
         "Northshire Vineyards": 1,
-        "Northshire Valley": 1,
+        "Northshire Valley": 2,
         "Ridgepoint Tower": 1,
         "Stonefield Farm": 1,
         "The Maclure Vineyards": 1,
@@ -1234,9 +1236,9 @@
         ]
       },
       "startDate": "2024-05-05T23:08:29.7758447+02:00",
-      "lastLoaded": "2024-05-09T10:36:38.1228058+02:00",
-      "lastPlayed": "2024-05-09T10:45:35.3249549+02:00",
-      "timePlayed": "03:47:54.4595487"
+      "lastLoaded": "2024-05-09T18:03:21.2206489+02:00",
+      "lastPlayed": "2024-05-09T18:03:34.9897833+02:00",
+      "timePlayed": "03:48:08.2286831"
     }
   ]
 }

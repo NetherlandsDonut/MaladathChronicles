@@ -183,6 +183,9 @@ public class SaveGame
     //Stores information about all unlocked areas in instances
     public List<string> unlockedAreas;
 
+    //Last opened chest is always saved here
+    public Chest lastChest;
+
     #endregion
 
     #region World
