@@ -8185,15 +8185,21 @@
         "who": "Hexed Troll",
         "levelMin": 8,
         "levelMax": 9
-      },
+      }
+    ],
+    "eliteEncounters": [
       {
         "who": "Zalazane",
-        "levelMin": 10,
-        "levelMax": 10
+        "levelMin": 10
       }
     ],
     "areaSize": 3,
     "progression": [
+      {
+        "type": "Boss",
+        "bossName": "Zalazane",
+        "point": 2
+      },
       {
         "type": "Treasure",
         "point": 3

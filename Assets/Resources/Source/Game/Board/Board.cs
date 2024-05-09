@@ -21,7 +21,7 @@ public class Board
     {
         field = new int[x, y];
         player = currentSave.player;
-        player.Initialise();
+        player.InitialiseCombat();
         this.enemy = enemy;
         playerTurn = true;
         this.area = area;
@@ -43,7 +43,7 @@ public class Board
     {
         field = new int[x, y];
         player = new Entity(60, null);
-        player.Initialise();
+        player.InitialiseCombat();
         enemy = new Entity(60, null);
         playerTurn = true;
         area = areas[random.Next(areas.Count)];

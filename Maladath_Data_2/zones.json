@@ -2,195 +2,235 @@
   {
     "name": "Azshara",
     "continent": "Kalimdor",
-    "ambience": "AmbienceForestHighNight"
+    "ambienceDay": "AmbienceForestHighNight",
+    "ambienceNight": "AmbienceForestHighNight"
   },
   {
     "name": "Winterspring",
     "continent": "Kalimdor",
-    "ambience": "AmbienceForestHighNight"
+    "ambienceDay": "AmbienceForestHighNight",
+    "ambienceNight": "AmbienceForestHighNight"
   },
   {
     "name": "Moonglade",
     "continent": "Kalimdor",
-    "ambience": "AmbienceForestHighNight"
+    "ambienceDay": "AmbienceForestHighNight",
+    "ambienceNight": "AmbienceForestHighNight"
   },
   {
     "name": "Darkshore",
     "continent": "Kalimdor",
-    "ambience": "AmbienceForestHighNight"
+    "ambienceDay": "AmbienceForestHighNight",
+    "ambienceNight": "AmbienceForestHighNight"
   },
   {
     "name": "Teldrassil",
     "continent": "Kalimdor",
-    "ambience": "AmbienceMarshNight"
+    "ambienceDay": "AmbienceMarshDay",
+    "ambienceNight": "AmbienceMarshNight"
   },
   {
     "name": "Ashenvale",
     "continent": "Kalimdor",
-    "ambience": "AmbienceForestHighNight"
+    "ambienceDay": "AmbienceForestHighNight",
+    "ambienceNight": "AmbienceForestHighNight"
   },
   {
     "name": "Tanaris",
     "continent": "Kalimdor",
-    "ambience": "AmbienceDesert"
+    "ambienceDay": "AmbienceDesert",
+    "ambienceNight": "AmbienceDesert"
   },
   {
     "name": "The Barrens",
     "continent": "Kalimdor",
-    "ambience": "AmbienceGrasslandsDay"
+    "ambienceDay": "AmbienceGrasslandsDay",
+    "ambienceNight": "AmbienceForestNormalNight"
   },
   {
     "name": "Stonetalon Mountains",
     "continent": "Kalimdor",
-    "ambience": "AmbienceForestNormalDay"
+    "ambienceDay": "AmbienceForestNormalDay",
+    "ambienceNight": "AmbienceForestNormalNight"
   },
   {
     "name": "Mulgore",
     "continent": "Kalimdor",
-    "ambience": "AmbienceGrasslandsDay"
+    "ambienceDay": "AmbienceGrasslandsDay",
+    "ambienceNight": "AmbienceForestNormalNight"
   },
   {
     "name": "Desolace",
     "continent": "Kalimdor",
-    "ambience": "AmbienceDesert"
+    "ambienceDay": "AmbienceDesert",
+    "ambienceNight": "AmbienceDesert"
   },
   {
     "name": "Thousand Needles",
     "continent": "Kalimdor",
-    "ambience": "AmbienceStrongWind"
+    "ambienceDay": "AmbienceStrongWind",
+    "ambienceNight": "AmbienceStrongWind"
   },
   {
     "name": "Dustwallow Marsh",
     "continent": "Kalimdor",
-    "ambience": "AmbienceMarshNight"
+    "ambienceDay": "AmbienceMarshDay",
+    "ambienceNight": "AmbienceMarshNight"
   },
   {
     "name": "Feralas",
     "continent": "Kalimdor",
-    "ambience": "AmbienceJungleNight"
+    "ambienceDay": "AmbienceJungleDay",
+    "ambienceNight": "AmbienceJungleNight"
   },
   {
     "name": "Silithus",
     "continent": "Kalimdor",
-    "ambience": "AmbienceDesert"
+    "ambienceDay": "AmbienceDesert",
+    "ambienceNight": "AmbienceDesert"
   },
   {
     "name": "Un'Goro Crater",
     "continent": "Kalimdor",
-    "ambience": "AmbienceJungleNight"
+    "ambienceDay": "AmbienceJungleDay",
+    "ambienceNight": "AmbienceJungleNight"
   },
   {
     "name": "Durotar",
     "continent": "Kalimdor",
-    "ambience": "AmbienceDesert"
+    "ambienceDay": "AmbienceDesert",
+    "ambienceNight": "AmbienceDesert"
   },
   {
     "name": "Felwood",
     "continent": "Kalimdor",
-    "ambience": "AmbienceForestScaryNight"
+    "ambienceDay": "AmbienceForestScaryDay",
+    "ambienceNight": "AmbienceForestScaryNight"
   },
   {
     "name": "Eastern Plaguelands",
     "continent": "Eastern Kingdoms",
-    "ambience": "AmbiencePlaguelandsNight"
+    "ambienceDay": "AmbiencePlaguelandsDay",
+    "ambienceNight": "AmbiencePlaguelandsNight"
   },
   {
     "name": "Western Plaguelands",
     "continent": "Eastern Kingdoms",
-    "ambience": "AmbiencePlaguelandsDay"
+    "ambienceDay": "AmbiencePlaguelandsDay",
+    "ambienceNight": "AmbiencePlaguelandsNight"
   },
   {
     "name": "Tirisfal Glades",
     "continent": "Eastern Kingdoms",
-    "ambience": "AmbienceForestScaryNight"
+    "ambienceDay": "AmbienceForestScaryDay",
+    "ambienceNight": "AmbienceForestScaryNight"
   },
   {
     "name": "Silverpine Forest",
     "continent": "Eastern Kingdoms",
-    "ambience": "AmbienceForestScaryDay"
+    "ambienceDay": "AmbienceForestScaryDay",
+    "ambienceNight": "AmbienceForestScaryNight"
   },
   {
     "name": "Arathi Highlands",
     "continent": "Eastern Kingdoms",
-    "ambience": "AmbienceGrasslandsDay"
+    "ambienceDay": "AmbienceGrasslandsDay",
+    "ambienceNight": "AmbienceForestNormalNight"
   },
   {
     "name": "Hinterlands",
     "continent": "Eastern Kingdoms",
-    "ambience": "AmbienceForestNormalDay"
+    "ambienceDay": "AmbienceForestNormalDay",
+    "ambienceNight": "AmbienceForestNormalNight"
   },
   {
     "name": "Hillsbrad Foothills",
     "continent": "Eastern Kingdoms",
-    "ambience": "AmbienceForestNormalDay"
+    "ambienceDay": "AmbienceForestNormalDay",
+    "ambienceNight": "AmbienceForestNormalNight"
   },
   {
     "name": "Loch Modan",
     "continent": "Eastern Kingdoms",
-    "ambience": "AmbienceForestNormalDay"
+    "ambienceDay": "AmbienceForestNormalDay",
+    "ambienceNight": "AmbienceForestNormalNight"
   },
   {
     "name": "Redridge Mountains",
     "continent": "Eastern Kingdoms",
-    "ambience": "AmbienceForestNormalDay"
+    "ambienceDay": "AmbienceForestNormalDay",
+    "ambienceNight": "AmbienceForestNormalNight"
   },
   {
     "name": "Dun Morogh",
     "continent": "Eastern Kingdoms",
-    "ambience": "AmbienceForestSnowDay"
+    "ambienceDay": "AmbienceForestSnowDay",
+    "ambienceNight": "AmbienceForestSnowDay"
   },
   {
     "name": "Wetlands",
-    "ambience": "AmbienceSwampDay"
+    "continent": "Eastern Kingdoms",
+    "ambienceDay": "AmbienceSwampDay",
+    "ambienceNight": "AmbienceSwampNight"
   },
   {
     "name": "Searing Gorge",
     "continent": "Eastern Kingdoms",
-    "ambience": "AmbienceVolcanicDay"
+    "ambienceDay": "AmbienceVolcanicDay",
+    "ambienceNight": "AmbienceVolcanicNight"
   },
   {
     "name": "Burning Steppes",
     "continent": "Eastern Kingdoms",
-    "ambience": "AmbienceVolcanicDay"
+    "ambienceDay": "AmbienceVolcanicDay",
+    "ambienceNight": "AmbienceVolcanicNight"
   },
   {
     "name": "Duskwood",
     "continent": "Eastern Kingdoms",
-    "ambience": "AmbienceForestScaryDay"
+    "ambienceDay": "AmbienceForestScaryDay",
+    "ambienceNight": "AmbienceForestScaryNight"
   },
   {
     "name": "Westfall",
     "continent": "Eastern Kingdoms",
-    "ambience": "AmbiencePlainsDay"
+    "ambienceDay": "AmbiencePlainsDay",
+    "ambienceNight": "AmbiencePlainsNight"
   },
   {
     "name": "Elwynn Forest",
     "continent": "Eastern Kingdoms",
-    "ambience": "AmbienceForestNormalDay"
+    "ambienceDay": "AmbienceForestNormalDay",
+    "ambienceNight": "AmbienceForestNormalNight"
   },
   {
     "name": "Badlands",
     "continent": "Eastern Kingdoms",
-    "ambience": "AmbienceStrongWind"
+    "ambienceDay": "AmbienceStrongWind",
+    "ambienceNight": "AmbienceStrongWind"
   },
   {
     "name": "Swamp of Sorrows",
     "continent": "Eastern Kingdoms",
-    "ambience": "AmbienceSwampNight"
+    "ambienceDay": "AmbienceSwampDay",
+    "ambienceNight": "AmbienceSwampNight"
   },
   {
     "name": "Deadwind Pass",
     "continent": "Eastern Kingdoms",
-    "ambience": "AmbienceDeadwindPass"
+    "ambienceDay": "AmbienceDeadwindPass",
+    "ambienceNight": "AmbienceDeadwindPass"
   },
   {
     "name": "Blasted Lands",
     "continent": "Eastern Kingdoms",
-    "ambience": "AmbienceBlastedLands"
+    "ambienceDay": "AmbienceBlastedLands",
+    "ambienceNight": "AmbienceBlastedLands"
   },
   {
     "name": "Stranglethorn Vale",
     "continent": "Eastern Kingdoms",
-    "ambience": "AmbienceJungleDay"
+    "ambienceDay": "AmbienceJungleDay",
+    "ambienceNight": "AmbienceJungleNight"
   }
 ]

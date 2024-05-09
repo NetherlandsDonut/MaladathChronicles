@@ -5,10 +5,11 @@
   "Whitemane": [
     {
       "player": {
-        "level": 1,
-        "experience": 60,
+        "level": 2,
+        "experience": 59,
         "professionSkills": {},
         "learnedRecipes": {},
+        "unspentTalentPoints": 1,
         "faction": "Stormwind",
         "name": "Tine",
         "race": "Human",
@@ -62,6 +63,37 @@
               "stats": {
                 "stats": {}
               }
+            },
+            {
+              "name": "Linen Cloth",
+              "icon": "itemfabriclinen01",
+              "type": "Trade Good",
+              "source": "Rare Drop",
+              "ilvl": 5,
+              "lvl": 1,
+              "amount": 2,
+              "maxStack": 20,
+              "price": 13,
+              "stats": {
+                "stats": {}
+              }
+            },
+            {
+              "name": "Bent Staff",
+              "icon": "itemstaff08",
+              "detailedType": "Staff",
+              "type": "Two Handed",
+              "ilvl": 2,
+              "lvl": 1,
+              "minDamage": 3,
+              "maxDamage": 5,
+              "amount": 1,
+              "maxStack": 1,
+              "price": 9,
+              "speed": 2.9,
+              "stats": {
+                "stats": {}
+              }
             }
           ],
           "bags": []
@@ -69,18 +101,19 @@
         "mounts": [],
         "equipment": {
           "Main Hand": {
-            "name": "Bent Staff",
-            "icon": "itemstaff08",
+            "name": "Rough Wooden Staff",
+            "icon": "itemstaff09",
             "detailedType": "Staff",
             "type": "Two Handed",
-            "ilvl": 2,
-            "lvl": 1,
-            "minDamage": 3,
-            "maxDamage": 5,
+            "source": "Rare Drop",
+            "ilvl": 12,
+            "lvl": 7,
+            "minDamage": 13,
+            "maxDamage": 20,
             "amount": 1,
             "maxStack": 1,
-            "price": 9,
-            "speed": 2.9,
+            "price": 196,
+            "speed": 3.3,
             "stats": {
               "stats": {}
             }
@@ -131,15 +164,20 @@
         }
       },
       "hour": 7,
-      "minute": 35,
-      "second": 14,
-      "currentSite": "Scuttle Coast",
-      "siteProgress": {},
-      "commonsKilled": {},
+      "minute": 58,
+      "second": 48,
+      "currentSite": "Northshire Abbey",
+      "siteProgress": {
+        "Echo Isles": 2
+      },
+      "commonsKilled": {
+        "Hexed Troll": 1,
+        "Bloodtalon Taillasher": 2
+      },
       "raresKilled": {},
       "elitesKilled": {},
       "siteVisits": {
-        "Northshire Abbey": 1,
+        "Northshire Abbey": 2,
         "Drywhisker Gorge": 3,
         "Western Grassland": 1,
         "Witherbark Village": 2,
@@ -372,19 +410,19 @@
         "The Tundrid Hills": 1,
         "Bladefist Bay": 1,
         "Burning Blade Coven": 1,
-        "Darkspear Strand": 4,
+        "Darkspear Strand": 7,
         "Drygulch Ravine": 1,
-        "Echo Isles": 2,
+        "Echo Isles": 5,
         "Kolkar Crag": 1,
         "Razormane Grounds": 1,
         "Southfury Scree": 1,
         "Razorwind Canyon": 1,
         "The Placid Dune": 1,
-        "Scuttle Coast": 2,
+        "Scuttle Coast": 3,
         "Skull Rock": 1,
         "Dustwind Cave": 1,
         "Thunder Ridge": 1,
-        "Tiragarde Keep": 1,
+        "Tiragarde Keep": 2,
         "Rocky Desert": 1,
         "Valley of Trials": 1,
         "Addle's Stead": 1,
@@ -1041,7 +1079,7 @@
         "Kargath": 1,
         "Stonard": 1,
         "Brackenwall Village": 1,
-        "Sen'jin Village": 4,
+        "Sen'jin Village": 5,
         "Shadowprey Village": 1,
         "Revantusk Village": 1,
         "Malaka'jin": 1,
@@ -1196,9 +1234,9 @@
         ]
       },
       "startDate": "2024-05-05T23:08:29.7758447+02:00",
-      "lastLoaded": "2024-05-07T13:21:15.2943295+02:00",
-      "lastPlayed": "2024-05-07T13:39:19.9608732+02:00",
-      "timePlayed": "00:27:11.3027765"
+      "lastLoaded": "2024-05-09T10:36:38.1228058+02:00",
+      "lastPlayed": "2024-05-09T10:45:35.3249549+02:00",
+      "timePlayed": "03:47:54.4595487"
     }
   ]
 }

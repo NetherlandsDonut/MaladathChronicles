@@ -1,17 +1,17 @@
 [
   {
     "name": "Booty Bay",
-    "icon": "FactionBooty Bay",
+    "icon": "FactionBootyBay",
     "side": "Neutral"
   },
   {
     "name": "Southsea Pirates",
-    "icon": "FactionSouthsea Pirates",
+    "icon": "FactionSouthseaPirates",
     "side": "Hostile"
   },
   {
     "name": "Razormane Tribe",
-    "icon": "FactionRazormane Tribe",
+    "icon": "FactionRazormaneTribe",
     "side": "Hostile"
   },
   {
@@ -21,22 +21,22 @@
   },
   {
     "name": "Grimtotem Tribe",
-    "icon": "FactionGrimtotem Tribe",
+    "icon": "FactionGrimtotemTribe",
     "side": "Hostile"
   },
   {
     "name": "Woodpaw Tribe",
-    "icon": "FactionWoodpaw Tribe",
+    "icon": "FactionWoodpawTribe",
     "side": "Hostile"
   },
   {
     "name": "The Burning Legion",
-    "icon": "FactionThe Burning Legion",
+    "icon": "FactionTheBurningLegion",
     "side": "Hostile"
   },
   {
     "name": "Assassin's League",
-    "icon": "FactionAssassin's League",
+    "icon": "FactionAssassinsLeague",
     "side": "Neutral"
   },
   {
@@ -46,7 +46,7 @@
   },
   {
     "name": "Darkspear Tribe",
-    "icon": "FactionDarkspear Tribe",
+    "icon": "FactionDarkspearTribe",
     "side": "Horde"
   },
   {

@@ -34,6 +34,7 @@ using static ClothType;
 using static PersonType;
 using static Profession;
 using static GameSettings;
+using static FishingBoard;
 using static WorldAbility;
 using static Serialization;
 using static PersonCategory;
@@ -723,6 +724,19 @@ public class Blueprint
                 });
             });
         }),
+        new("FishingAnchor", () => {
+            SetAnchor(BottomLeft, 19, 35);
+            AddHeaderGroup();
+            AddPaddingRegion(() =>
+            {
+                AddBigButton("TradeFishing",
+                (h) =>
+                {
+                    NewFishingBoard(FindSite(x => x.name == currentSave.currentSite));
+                    SpawnDesktopBlueprint("FishingGame");
+                });
+            });
+        }),
         new("SpellbookAbilityListActivated", () => {
             SetAnchor(TopRight, -19, -38);
             var activeAbilities = abilities.FindAll(x => !x.hide && x.cost != null && currentSave.player.abilities.ContainsKey(x.name)).ToDictionary(x => x, x => currentSave.player.abilities[x.name]);
@@ -1058,7 +1072,7 @@ public class Blueprint
                 }
             );
         }),
-        new("BattleBoard", () => {
+        new("Board", () => {
             SetAnchor(Top, 0, -34 + 19 * (board.field.GetLength(1) - 7));
             var boardBackground = new GameObject("BoardBackground", typeof(SpriteRenderer), typeof(SpriteMask));
             boardBackground.transform.parent = CDesktop.LBWindow.transform;
@@ -1121,6 +1135,61 @@ public class Blueprint
                     for (int j = 0; j < BufferBoard.bufferBoard.field.GetLength(0); j++)
                     {
                         AddBigButton(BufferBoard.bufferBoard.GetFieldButton(),
+                        (h) =>
+                        {
+
+                        });
+                    }
+                });
+            }
+        }, true),
+        new("FishingBoard", () => {
+            SetAnchor(Top, 0, -34 + 19 * (fishingBoard.field.GetLength(1) - 7));
+            var boardBackground = new GameObject("BoardBackground", typeof(SpriteRenderer), typeof(SpriteMask));
+            boardBackground.transform.parent = CDesktop.LBWindow.transform;
+            boardBackground.transform.localPosition = new Vector2(-17, 17);
+            boardBackground.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Textures/BoardBackground" + fishingBoard.field.GetLength(0) + "x" + fishingBoard.field.GetLength(1));
+            var mask = boardBackground.GetComponent<SpriteMask>();
+            mask.sprite = Resources.Load<Sprite>("Sprites/Textures/BoardMask" + fishingBoard.field.GetLength(0) + "x" + fishingBoard.field.GetLength(1));
+            mask.isCustomRangeActive = true;
+            mask.frontSortingLayerID = SortingLayer.NameToID("Missile");
+            mask.backSortingLayerID = SortingLayer.NameToID("Default");
+            boardBackground = new GameObject("BoardInShadow", typeof(SpriteRenderer));
+            boardBackground.transform.parent = CDesktop.LBWindow.transform;
+            boardBackground.transform.localPosition = new Vector2(-17, 17);
+            boardBackground.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Textures/BoardShadow" + fishingBoard.field.GetLength(0) + "x" + fishingBoard.field.GetLength(1));
+            boardBackground.GetComponent<SpriteRenderer>().sortingLayerName = "CameraShadow";
+            DisableGeneralSprites();
+            AddRegionGroup();
+            for (int i = 0; i < fishingBoard.field.GetLength(1); i++)
+            {
+                AddPaddingRegion(() =>
+                {
+                    for (int j = 0; j < fishingBoard.field.GetLength(0); j++)
+                    {
+                        AddBigButton(fishingBoard.GetFieldButton(),
+                        (h) =>
+                        {
+                            var list = fishingBoard.FloodCount(h.region.bigButtons.FindIndex(x => x.GetComponent<Highlightable>() == h), h.region.regionGroup.regions.IndexOf(h.region));
+                            //fishingBoard.FloodDestroy(list);
+                        });
+                    }
+                });
+            }
+        }),
+        new("FishingBufferBoard", () => {
+            SetAnchor(Top, 0, 194 + 19 * (FishingBufferBoard.fishingBufferBoard.field.GetLength(1) - 7));
+            MaskWindow();
+            DisableGeneralSprites();
+            DisableCollisions();
+            AddRegionGroup();
+            for (int i = 0; i < FishingBufferBoard.fishingBufferBoard.field.GetLength(1); i++)
+            {
+                AddPaddingRegion(() =>
+                {
+                    for (int j = 0; j < FishingBufferBoard.fishingBufferBoard.field.GetLength(0); j++)
+                    {
+                        AddBigButton(FishingBufferBoard.fishingBufferBoard.GetFieldButton(),
                         (h) =>
                         {
 
@@ -8510,6 +8579,7 @@ public class Blueprint
         {
             SetDesktopBackground(area.Background());
             SpawnWindowBlueprint("HostileArea: " + area.name);
+            if (area.fishing) SpawnWindowBlueprint("FishingAnchor");
             SpawnWindowBlueprint("MapToolbarShadow");
             SpawnWindowBlueprint("MapToolbarClockLeft");
             SpawnWindowBlueprint("MapToolbar");
@@ -8738,7 +8808,7 @@ public class Blueprint
             locationName = board.area.name;
             PlaySound("DesktopEnterCombat");
             SetDesktopBackground(board.area.Background());
-            SpawnWindowBlueprint("BattleBoard");
+            SpawnWindowBlueprint("Board");
             SpawnWindowBlueprint("BufferBoard");
             SpawnWindowBlueprint("PlayerBattleInfo");
             SpawnWindowBlueprint("LocationInfo");
@@ -8785,6 +8855,26 @@ public class Blueprint
             });
             AddHotkey(BackQuote, () => { SpawnDesktopBlueprint("DevPanel"); });
             AddHotkey(KeypadMultiply, () => { board.EndCombat("Won"); });
+        }),
+        new("FishingGame", () =>
+        {
+            locationName = fishingBoard.site.name;
+            PlaySound("DesktopEnterCombat");
+            SetDesktopBackground(fishingBoard.site.Background());
+            SpawnWindowBlueprint("FishingBoard");
+            SpawnWindowBlueprint("FishingBufferBoard");
+            //SpawnWindowBlueprint("PlayerBattleInfo");
+            SpawnWindowBlueprint("LocationInfo");
+            //SpawnWindowBlueprint("EnemyBattleInfo");
+            //SpawnWindowBlueprint("PlayerResources");
+            //SpawnWindowBlueprint("EnemyResources");
+            fishingBoard.Reset();
+            AddHotkey(Escape, () =>
+            {
+                PlaySound("DesktopMenuOpen");
+                CloseDesktop("FishingGame");
+            });
+            //AddHotkey(KeypadMultiply, () => { board.EndCombat("Won"); });
         }),
         new("CharacterSheet", () =>
         {
@@ -8986,7 +9076,7 @@ public class Blueprint
             locationName = board.area.name;
             PlaySound("DesktopEnterCombat");
             SetDesktopBackground(board.area.Background());
-            SpawnWindowBlueprint("BattleBoard");
+            SpawnWindowBlueprint("Board");
             SpawnWindowBlueprint("BufferBoard");
             SpawnWindowBlueprint("PlayerBattleInfo");
             SpawnWindowBlueprint("LocationInfo");

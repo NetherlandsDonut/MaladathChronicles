@@ -110,7 +110,7 @@ public class SiteHostileArea : Site
                         if (ambience == null)
                         {
                             var zone = Zone.zones.Find(x => x.name == this.zone);
-                            if (zone != null) PlayAmbience(zone.ambience);
+                            if (zone != null) PlayAmbience(currentSave.IsNight() ? zone.ambienceNight : zone.ambienceDay);
                         }
                         else PlayAmbience(ambience);
                         SetAnchor(TopLeft, 19, -38);

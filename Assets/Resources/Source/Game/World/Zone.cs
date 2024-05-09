@@ -11,7 +11,7 @@ public class Zone
     //General ambience track played when entering sites
     //in this specific zone. It can be overwritten with
     //site-specific ambience tracks
-    public string ambience, dayAmbience, nightAmbience;
+    public string ambienceDay, ambienceNight;
 
     //Currently opened zone
     public static Zone zone;

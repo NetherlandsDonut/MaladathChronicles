@@ -42,7 +42,7 @@ public class Entity
         equipment = new Dictionary<string, Item>();
         EquipAllItems();
         actionBars = Ability.abilities.FindAll(x => abilities.ContainsKey(x.name) && x.cost != null).OrderBy(x => x.cost.Sum(y => y.Value)).OrderBy(x => x.putOnEnd).Select(x => x.name).Take(ActionBarsAmount()).ToList();
-        Initialise();
+        InitialiseCombat();
     }
 
     public Entity(int level, Race race)
@@ -74,7 +74,7 @@ public class Entity
                 { "Order Mastery", 10 },
             }
         );
-        Initialise();
+        InitialiseCombat();
     }
 
     #region Experience & Leveling
@@ -719,10 +719,17 @@ public class Entity
     #region Combat
 
     //Prepares this entity for combat
-    public void Initialise(bool fullReset = true)
+    public void InitialiseCombat(bool fullReset = true)
     {
         if (fullReset)
             health = MaxHealth();
+        buffs = new();
+        ResetResources();
+    }
+
+    //Prepares this entity for fishing
+    public void InitialiseFishing()
+    {
         buffs = new();
         ResetResources();
     }
