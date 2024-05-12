@@ -327,24 +327,37 @@ public class Board
                 results.inventory.AddItem(dropOther[random.Next(dropOther.Count)].CopyItem());
             else if (dropOther.Count > 0 && Roll(40))
                 results.inventory.AddItem(dropOther[random.Next(dropOther.Count)].CopyItem());
-            var possibleClothDrop = ClothType.clothTypes.FindAll(x => x.DoesLevelFit(enemy.level) && (x.requiredProfession == null || (player.professionSkills.ContainsKey(x.requiredProfession) && (x.requiredSkill == 0 || x.requiredSkill <= player.professionSkills[x.requiredProfession].Item1))) && (x.category == null || x.category == enemy.Race().category));
-            if (possibleClothDrop.Count > 0)
+            var generalDrops = GeneralDrop.generalDrops.FindAll(x => x.DoesLevelFit(enemy.level) && (x.requiredProfession == null || (player.professionSkills.ContainsKey(x.requiredProfession) && (x.requiredSkill == 0 || x.requiredSkill <= player.professionSkills[x.requiredProfession].Item1))) && (x.category == null || x.category == enemy.Race().category) && x.inclusive);
+            if (generalDrops.Count > 0)
             {
-                var rares = possibleClothDrop.FindAll(x => x.rarity == "Rare");
-                var common = possibleClothDrop.FindAll(x => x.rarity == "Common");
+                var veryRares = generalDrops.FindAll(x => x.rarity == "VeryRare");
                 var amount = 0;
-                ClothType cloth = null;
+                GeneralDrop drop = null;
+                if (Roll(1) && veryRares.Count > 0)
+                {
+                    drop = veryRares[random.Next(veryRares.Count)];
+                    for (int i = 0; i < drop.dropCount; i++) amount += Roll(20) ? 1 : 0;
+                }
+                if (drop != null) results.inventory.AddItem(Item.items.Find(x => x.name == drop.item).CopyItem(amount));
+            }
+            var possibleGeneralDrops = GeneralDrop.generalDrops.FindAll(x => x.DoesLevelFit(enemy.level) && (x.requiredProfession == null || (player.professionSkills.ContainsKey(x.requiredProfession) && (x.requiredSkill == 0 || x.requiredSkill <= player.professionSkills[x.requiredProfession].Item1))) && (x.category == null || x.category == enemy.Race().category) && !x.inclusive);
+            if (possibleGeneralDrops.Count > 0)
+            {
+                var rares = possibleGeneralDrops.FindAll(x => x.rarity == "Rare");
+                var common = possibleGeneralDrops.FindAll(x => x.rarity == "Common");
+                var amount = 0;
+                GeneralDrop drop = null;
                 if (Roll(20) && rares.Count > 0)
                 {
-                    cloth = rares[random.Next(rares.Count)];
-                    for (int i = 0; i < cloth.dropCount; i++) amount += Roll(50) ? 1 : 0;
+                    drop = rares[random.Next(rares.Count)];
+                    for (int i = 0; i < drop.dropCount; i++) amount += Roll(50) ? 1 : 0;
                 }
                 else if (common.Count > 0)
                 {
-                    cloth = common[random.Next(common.Count)];
-                    for (int i = 0; i < cloth.dropCount; i++) amount += Roll(50) ? 1 : 0;
+                    drop = common[random.Next(common.Count)];
+                    for (int i = 0; i < drop.dropCount; i++) amount += Roll(50) ? 1 : 0;
                 }
-                if (cloth != null) results.inventory.AddItem(Item.items.Find(x => x.name == cloth.item).CopyItem(amount));
+                if (drop != null) results.inventory.AddItem(Item.items.Find(x => x.name == drop.item).CopyItem(amount));
             }
             results.inventory.items.ForEach(x => x.SetRandomEnchantment());
             chartPage = "Damage Dealt";

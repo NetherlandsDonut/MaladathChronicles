@@ -167,8 +167,8 @@ public class Starter : MonoBehaviour
         Recipe.recipes ??= new();
         Deserialize(ref Profession.professions, "professions", false, prefix);
         Profession.professions ??= new();
-        Deserialize(ref ClothType.clothTypes, "clothtypes", false, prefix);
-        ClothType.clothTypes ??= new();
+        Deserialize(ref GeneralDrop.generalDrops, "generaldrops", false, prefix);
+        GeneralDrop.generalDrops ??= new();
         Deserialize(ref Faction.factions, "factions", false, prefix);
         Faction.factions ??= new();
         Deserialize(ref spiritHealers, "spirithealers", false, prefix);
@@ -298,8 +298,8 @@ public class Starter : MonoBehaviour
             Mount.mounts[i].Initialise();
         for (int i = 0; i < Recipe.recipes.Count; i++)
             Recipe.recipes[i].Initialise();
-        for (int i = 0; i < ClothType.clothTypes.Count; i++)
-            ClothType.clothTypes[i].Initialise();
+        for (int i = 0; i < GeneralDrop.generalDrops.Count; i++)
+            GeneralDrop.generalDrops[i].Initialise();
         for (int i = 0; i < spiritHealers.Count; i++)
             spiritHealers[i].Initialise();
         for (int i = 0; i < paths.Count; i++)

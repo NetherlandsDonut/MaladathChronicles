@@ -156,5 +156,141 @@
     "dropStart": 46,
     "dropEnd": 60,
     "dropCount": 2
+  },
+  {
+    "item": "Traveler's Backpack",
+    "inclusive": true,
+    "rarity": "VeryRare",
+    "dropStart": 46,
+    "dropEnd": 60,
+    "dropCount": 1
+  },
+  {
+    "item": "Troll-hide Bag",
+    "inclusive": true,
+    "rarity": "VeryRare",
+    "dropStart": 39,
+    "dropEnd": 53,
+    "dropCount": 1
+  },
+  {
+    "item": "Journeyman's Backpack",
+    "inclusive": true,
+    "rarity": "VeryRare",
+    "dropStart": 39,
+    "dropEnd": 60,
+    "dropCount": 1
+  },
+  {
+    "item": "Large Knapsack",
+    "inclusive": true,
+    "rarity": "VeryRare",
+    "dropStart": 30,
+    "dropEnd": 49,
+    "dropCount": 1
+  },
+  {
+    "item": "Large Blue Sack",
+    "inclusive": true,
+    "rarity": "VeryRare",
+    "dropStart": 19,
+    "dropEnd": 32,
+    "dropCount": 1
+  },
+  {
+    "item": "Large Red Sack",
+    "inclusive": true,
+    "rarity": "VeryRare",
+    "dropStart": 19,
+    "dropEnd": 32,
+    "dropCount": 1
+  },
+  {
+    "item": "Large Brown Sack",
+    "inclusive": true,
+    "rarity": "VeryRare",
+    "dropStart": 19,
+    "dropEnd": 32,
+    "dropCount": 1
+  },
+  {
+    "item": "Large Green Sack",
+    "inclusive": true,
+    "rarity": "VeryRare",
+    "dropStart": 19,
+    "dropEnd": 32,
+    "dropCount": 1
+  },
+  {
+    "item": "Blue Leather Bag",
+    "inclusive": true,
+    "rarity": "VeryRare",
+    "dropStart": 9,
+    "dropEnd": 25,
+    "dropCount": 1
+  },
+  {
+    "item": "Red Leather Bag",
+    "inclusive": true,
+    "rarity": "VeryRare",
+    "dropStart": 9,
+    "dropEnd": 25,
+    "dropCount": 1
+  },
+  {
+    "item": "Green Leather Bag",
+    "inclusive": true,
+    "rarity": "VeryRare",
+    "dropStart": 9,
+    "dropEnd": 25,
+    "dropCount": 1
+  },
+  {
+    "item": "White Leather Bag",
+    "inclusive": true,
+    "rarity": "VeryRare",
+    "dropStart": 9,
+    "dropEnd": 25,
+    "dropCount": 1
+  },
+  {
+    "item": "Small Red Pouch",
+    "inclusive": true,
+    "rarity": "VeryRare",
+    "dropStart": 1,
+    "dropEnd": 17,
+    "dropCount": 1
+  },
+  {
+    "item": "Small Blue Pouch",
+    "inclusive": true,
+    "rarity": "VeryRare",
+    "dropStart": 1,
+    "dropEnd": 17,
+    "dropCount": 1
+  },
+  {
+    "item": "Small Brown Pouch",
+    "inclusive": true,
+    "rarity": "VeryRare",
+    "dropStart": 1,
+    "dropEnd": 17,
+    "dropCount": 1
+  },
+  {
+    "item": "Small Green Pouch",
+    "inclusive": true,
+    "rarity": "VeryRare",
+    "dropStart": 1,
+    "dropEnd": 17,
+    "dropCount": 1
+  },
+  {
+    "item": "Small Black Pouch",
+    "inclusive": true,
+    "rarity": "VeryRare",
+    "dropStart": 1,
+    "dropEnd": 17,
+    "dropCount": 1
   }
 ]

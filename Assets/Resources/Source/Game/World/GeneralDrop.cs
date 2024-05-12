@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-public class ClothType
+public class GeneralDrop
 {
     //Initialisation method to fill automatic values
     //and remove empty collections to avoid serialising them later
@@ -26,6 +26,9 @@ public class ClothType
     //Required enemy category for this cloth item to drop
     public string category;
 
+    //Determines whether this drops regardless of whether other items dropped
+    public bool inclusive;
+
     //Level of enemies from which this cloth starts dropping
     public int dropStart;
 
@@ -36,11 +39,11 @@ public class ClothType
     public int dropCount;
 
     //Currently opened cloth
-    public static ClothType clothType;
+    public static GeneralDrop generalDrop;
 
     //EXTERNAL FILE: List containing all cloths in-game
-    public static List<ClothType> clothTypes;
+    public static List<GeneralDrop> generalDrops;
 
     //List of all filtered cloths by input search
-    public static List<ClothType> clothTypesSearch;
+    public static List<GeneralDrop> generalDropsSearch;
 }

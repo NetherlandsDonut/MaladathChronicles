@@ -30,7 +30,7 @@ using static PVPRank;
 using static SitePath;
 using static SaveGame;
 using static Coloring;
-using static ClothType;
+using static GeneralDrop;
 using static PersonType;
 using static Profession;
 using static GameSettings;
@@ -1713,6 +1713,19 @@ public class Blueprint
             var items = currentSave.banks[town.name].items;
             AddHeaderRegion(() =>
             {
+                var type = personTypes.Find(x => x.type == person.type);
+                AddLine(person.type + " ", "Gray");
+                AddText(person.name);
+                AddSmallButton("OtherClose", (h) =>
+                {
+                    CloseWindow("Bank");
+                    CloseWindow("Inventory");
+                    Respawn("Person");
+                    PlaySound("DesktopInventoryClose");
+                });
+            });
+            AddHeaderRegion(() =>
+            {
                 AddLine("Bank:");
                 AddSmallButton("OtherClose", (h) =>
                 {
@@ -1739,7 +1752,7 @@ public class Blueprint
                 else
                     AddSmallButton("OtherSortOff", (h) => { });
             });
-            for (int i = 0; i < 7; i++)
+            for (int i = 0; i < 6; i++)
             {
                 var index = i;
                 AddPaddingRegion(
@@ -2019,8 +2032,9 @@ public class Blueprint
                 PlaySound("DesktopInstanceClose");
                 person = null;
                 CloseWindow(h.window);
-                Respawn("Town: " + town.name);
                 if (personCategory != null) Respawn("Persons");
+                Respawn("Town: " + town.name);
+                Respawn("Persons", true);
             });
         }, true),
         new("CharacterInfoStats", () => {
@@ -3083,6 +3097,7 @@ public class Blueprint
                 {
                     personCategory = null;
                     CloseWindow(h.window.title);
+                    Respawn("Town: " + town.name);
                     PlaySound("DesktopInstanceClose");
                 });
             });
@@ -3453,7 +3468,7 @@ public class Blueprint
             });
             AddButtonRegion(() => { AddLine("Cloth types"); }, (h) =>
             {
-                clothTypesSearch = clothTypes;
+                generalDropsSearch = generalDrops;
                 SpawnDesktopBlueprint("ObjectManagerClothTypes");
             });
             AddButtonRegion(() => { AddLine("Factions"); }, (h) =>
@@ -3476,7 +3491,7 @@ public class Blueprint
                 Serialize(items, "items", false, false, prefix);
                 Serialize(itemSets, "sets", false, false, prefix);
                 Serialize(mounts, "mounts", false, false, prefix);
-                Serialize(clothTypes, "clothtypes", false, false, prefix);
+                Serialize(generalDrops, "generaldrops", false, false, prefix);
                 Serialize(recipes, "recipes", false, false, prefix);
                 Serialize(professions, "professions", false, false, prefix);
                 Serialize(factions, "factions", false, false, prefix);
@@ -9116,7 +9131,7 @@ public class Blueprint
             Serialize(items, "items", true, false, prefix);
             Serialize(itemSets, "sets", true, false, prefix);
             Serialize(mounts, "mounts", true, false, prefix);
-            Serialize(clothTypes, "clothtypes", true, false, prefix);
+            Serialize(generalDrops, "generaldrops", true, false, prefix);
             Serialize(recipes, "recipes", true, false, prefix);
             Serialize(factions, "factions", true, false, prefix);
             Serialize(spiritHealers, "spirithealers", true, false, prefix);
@@ -9287,7 +9302,7 @@ public class Blueprint
         {
             SetDesktopBackground("Areas/AreaTheCelestialPlanetarium");
             SpawnWindowBlueprint("ObjectManagerClothTypes");
-            AddHotkey(Escape, () => { clothType = null; clothTypesSearch = null; CloseDesktop("ObjectManagerClothTypes"); });
+            AddHotkey(Escape, () => { generalDrop = null; generalDropsSearch = null; CloseDesktop("ObjectManagerClothTypes"); });
             AddPaginationHotkeys();
         }),
         new("ObjectManagerFactions", () =>
