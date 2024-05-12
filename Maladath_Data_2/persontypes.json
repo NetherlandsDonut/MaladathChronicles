@@ -263,6 +263,13 @@
     "skillCap": 75
   },
   {
+    "type": "Skinner",
+    "icon": "TradeSkinning",
+    "category": "Profession Trainer",
+    "profession": "Skinning",
+    "skillCap": 300
+  },
+  {
     "type": "Portal Trainer",
     "icon": "TradeTrainerClass",
     "category": "Class Trainer"

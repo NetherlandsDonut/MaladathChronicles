@@ -1,7 +1,7 @@
 {
   "selectedRealm": "Whitemane",
   "selectedRealmRanking": "Whitemane",
-  "selectedCharacter": "Tine",
+  "selectedCharacter": "Valerie",
   "shadows": {
     "value": "True"
   },
@@ -21,7 +21,7 @@
     "value": "True"
   },
   "upgradeIndicators": {
-    "value": "True"
+    "value": "False"
   },
   "newSlotIndicators": {
     "value": "False"

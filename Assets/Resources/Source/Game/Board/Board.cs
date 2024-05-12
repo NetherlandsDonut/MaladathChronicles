@@ -327,7 +327,7 @@ public class Board
                 results.inventory.AddItem(dropOther[random.Next(dropOther.Count)].CopyItem());
             else if (dropOther.Count > 0 && Roll(40))
                 results.inventory.AddItem(dropOther[random.Next(dropOther.Count)].CopyItem());
-            var possibleClothDrop = ClothType.clothTypes.FindAll(x => x.DoesLevelFit(enemy.level));
+            var possibleClothDrop = ClothType.clothTypes.FindAll(x => x.DoesLevelFit(enemy.level) && (x.requiredProfession == null || (player.professionSkills.ContainsKey(x.requiredProfession) && (x.requiredSkill == 0 || x.requiredSkill <= player.professionSkills[x.requiredProfession].Item1))) && (x.category == null || x.category == enemy.Race().category));
             if (possibleClothDrop.Count > 0)
             {
                 var rares = possibleClothDrop.FindAll(x => x.rarity == "Rare");

@@ -46,5 +46,115 @@
     "dropStart": 50,
     "dropEnd": 60,
     "dropCount": 1
+  },
+  {
+    "requiredProfession": "Skinning",
+    "requiredSkill": 1,
+    "item": "Ruined Leather Scraps",
+    "rarity": "Common",
+    "category": "Beast",
+    "dropStart": 6,
+    "dropEnd": 13,
+    "dropCount": 2
+  },
+  {
+    "requiredProfession": "Skinning",
+    "requiredSkill": 50,
+    "item": "Light Leather",
+    "rarity": "Common",
+    "category": "Beast",
+    "dropStart": 6,
+    "dropEnd": 17,
+    "dropCount": 2
+  },
+  {
+    "requiredProfession": "Skinning",
+    "requiredSkill": 50,
+    "item": "Light Hide",
+    "rarity": "Rare",
+    "category": "Beast",
+    "dropStart": 11,
+    "dropEnd": 25,
+    "dropCount": 2
+  },
+  {
+    "requiredProfession": "Skinning",
+    "requiredSkill": 105,
+    "item": "Medium Leather",
+    "rarity": "Common",
+    "category": "Beast",
+    "dropStart": 16,
+    "dropEnd": 35,
+    "dropCount": 2
+  },
+  {
+    "requiredProfession": "Skinning",
+    "requiredSkill": 105,
+    "item": "Medium Hide",
+    "rarity": "Rare",
+    "category": "Beast",
+    "dropStart": 16,
+    "dropEnd": 35,
+    "dropCount": 2
+  },
+  {
+    "requiredProfession": "Skinning",
+    "requiredSkill": 150,
+    "item": "Heavy Leather",
+    "rarity": "Common",
+    "category": "Beast",
+    "dropStart": 25,
+    "dropEnd": 45,
+    "dropCount": 2
+  },
+  {
+    "requiredProfession": "Skinning",
+    "requiredSkill": 150,
+    "item": "Heavy Hide",
+    "rarity": "Rare",
+    "category": "Beast",
+    "dropStart": 25,
+    "dropEnd": 45,
+    "dropCount": 2
+  },
+  {
+    "requiredProfession": "Skinning",
+    "requiredSkill": 200,
+    "item": "Thick Leather",
+    "rarity": "Common",
+    "category": "Beast",
+    "dropStart": 36,
+    "dropEnd": 60,
+    "dropCount": 2
+  },
+  {
+    "requiredProfession": "Skinning",
+    "requiredSkill": 200,
+    "item": "Thick Hide",
+    "rarity": "Rare",
+    "category": "Beast",
+    "dropStart": 40,
+    "dropEnd": 60,
+    "dropCount": 2
+  },
+  {
+    "requiredProfession": "Skinning",
+    "requiredSkill": 250,
+    "item": "Rugged Leather",
+    "rarity": "Common",
+    "category": "Beast",
+    "dropStart": 46,
+    "dropEnd": 60,
+    "dropCount": 2
+  },
+  {
+    "requiredProfession": "Skinning",
+    "requiredSkill": 250,
+    "item": "Rugged Hide",
+    "rarity": "Rare",
+    "category": "Beast",
+    "dropStart": 46,
+    "dropEnd": 60,
+    "dropCount": 2
   }
 ]

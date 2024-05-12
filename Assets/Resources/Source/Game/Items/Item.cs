@@ -867,6 +867,7 @@ public class Item
         newItem.minutesLeft = minutesLeft;
         newItem.name = name;
         newItem.price = price;
+        newItem.rarity = rarity;
         newItem.randomEnchantment = randomEnchantment;
         newItem.reputationRequired = reputationRequired;
         newItem.set = set;

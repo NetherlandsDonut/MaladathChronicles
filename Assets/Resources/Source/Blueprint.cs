@@ -1997,7 +1997,7 @@ public class Blueprint
                 },
                 (h) =>
                 {
-                    PlaySound("DesktopBankOpen", 0.2f);
+                    PlaySound("DesktopInventoryOpen");
                     CloseWindow(h.window);
                     CloseWindow("Town: " + town.name);
                     SpawnWindowBlueprint("MountList");
@@ -2876,6 +2876,19 @@ public class Blueprint
             AddHeaderGroup(() => currentSave.player.mounts.Count, 6);
             SetRegionGroupWidth(190);
             SetRegionGroupHeight(288);
+            var type = personTypes.Find(x => x.type == person.type);
+            AddHeaderRegion(() =>
+            {
+                AddLine(person.type + " ", "Gray");
+                AddText(person.name);
+                AddSmallButton("OtherClose", (h) =>
+                {
+                    CloseWindow("MountList");
+                    CloseWindow("CurrentMount");
+                    Respawn("Person");
+                    PlaySound("DesktopInventoryClose");
+                });
+            });
             AddHeaderRegion(() =>
             {
                 AddLine("Stabled mounts:");
@@ -2942,9 +2955,6 @@ public class Blueprint
                     }
                 });
             }
-            AddRegionGroup();
-            SetRegionGroupWidth(190);
-            AddPaddingRegion(() => AddLine("Mounts collected: " + currentSave.player.mounts.Count(x => Mount.mounts.Find(y => y.name == x) != null)));
         }),
         new("CurrentMount", () => {
             SetAnchor(-92, 142);
@@ -2953,13 +2963,6 @@ public class Blueprint
             AddHeaderRegion(() =>
             {
                 AddLine("Current mount:");
-                AddSmallButton("OtherClose", (h) =>
-                {
-                    CloseWindow("MountList");
-                    CloseWindow("CurrentMount");
-                    Respawn("Person");
-                    PlaySound("DesktopInstanceClose");
-                });
             });
             AddPaddingRegion(() =>
             {
@@ -2984,6 +2987,7 @@ public class Blueprint
                     currentSave.player.mount = "";
                     Respawn("MountList");
                 });
+            AddPaddingRegion(() => AddLine("Mounts collected: " + currentSave.player.mounts.Count(x => Mount.mounts.Find(y => y.name == x) != null)));
         }),
         new("MakeInnHome", () => {
             SetAnchor(TopLeft, 19, -38);

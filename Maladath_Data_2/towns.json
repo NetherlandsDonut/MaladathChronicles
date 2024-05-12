@@ -111,6 +111,12 @@
         "gender": "Male",
         "race": "Human",
         "type": "Artisan Tailor"
+      },
+      {
+        "name": "Maris Granger",
+        "gender": "Female",
+        "race": "Human",
+        "type": "Skinner"
       }
     ],
     "x": 260,

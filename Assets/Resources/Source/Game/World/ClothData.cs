@@ -11,6 +11,12 @@ public class ClothType
 
     public bool DoesLevelFit(int level) => dropStart <= level && level <= dropEnd;
 
+    //Required profession in order to drop this item
+    public string requiredProfession;
+
+    //Required skill of the profession
+    public int requiredSkill;
+
     //Name of the cloth item
     public string item;
 

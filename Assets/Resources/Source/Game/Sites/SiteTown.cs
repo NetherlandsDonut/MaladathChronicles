@@ -50,6 +50,7 @@ public class SiteTown : Site
                                 SwitchDesktop("Map");
                             });
                         });
+                        if (CDesktop.windows.Exists(x => x.title == "Persons")) return;
                         if (transportationConnectedToSite.ContainsKey(name))
                         {
                             var transportOptions = transportationConnectedToSite[name];
@@ -127,6 +128,7 @@ public class SiteTown : Site
                                         PersonCategory.personCategory = group.Key;
                                         CloseWindow("Person");
                                         Respawn("Persons");
+                                        Respawn("Town: " + town.name);
                                         PlaySound("DesktopInstanceOpen");
                                     });
                                 }
