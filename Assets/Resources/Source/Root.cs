@@ -59,6 +59,8 @@ public static class Root
     public static Desktop CDesktop, LBDesktop;
     public static List<Dictionary<string, string>> triggersCopy, effectsCopy;
 
+    public static List<T> Shuffle<T>(this IList<T> list) => list.OrderBy(x => random.Next(0, 4096)).ToList();
+
     public static Dictionary<T, U> Merge<T, U>(this Dictionary<T, U> A, Dictionary<T, U> B)
     {
         var temp = A.ToDictionary(x => x.Key, x => x.Value);
@@ -206,12 +208,15 @@ public static class Root
     {
         cameraBoundaryPoints = new();
         loadSites = windowBlueprints.FindAll(x => x.title.StartsWith("Site: "));
-        var hoobabooba = loadSites.Find(x => x.title.Contains("Corrupted Moonwell"));
         if (!showSitesUnconditional)
             for (int i = loadSites.Count - 1; i >= 0; i--)
             {
                 var site = Site.FindSite(x => "Site: " + x.name == loadSites[i].title);
-                if (site != null && !site.CanBeSeen()) loadSites.RemoveAt(i);
+                if (site != null && !site.CanBeSeen())
+                {
+                    cameraBoundaryPoints.Add(new Vector2(site.x * MapGrid.mapGridSize, site.y * MapGrid.mapGridSize));
+                    loadSites.RemoveAt(i);
+                }
             }
         loadingScreenObjectLoad = 0;
         loadingScreenObjectLoadAim = loadSites.Count;

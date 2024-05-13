@@ -287,7 +287,7 @@ public class Board
             CDesktop.RespawnAll();
 
             var directDrop = enemyRace.droppedItems.Select(x => Item.items.Find(y => y.name == x)).ToList();
-            var worldDrop = Item.items.FindAll(x => (x.dropRange == null && x.lvl >= enemy.level - 6 && x.lvl <= enemy.level || x.dropRange != null && enemy.level >= int.Parse(x.dropRange.Split('-')[0]) && enemy.level <= int.Parse(x.dropRange.Split('-')[1])) && x.source == "Rare Drop");
+            var worldDrop = Item.items.FindAll(x => (x.dropRange == null && x.lvl >= enemy.level - 6 && x.lvl <= enemy.level || x.dropRange != null && enemy.level >= int.Parse(x.dropRange.Split('-')[0]) && enemy.level <= int.Parse(x.dropRange.Split('-')[1])) && x.source == "RareDrop");
             var instance = area.instancePart ? SiteInstance.instances.Find(x => x.wings.Any(y => y.areas.Any(z => z["AreaName"] == area.name))) : null;
             var zoneDrop = instance == null || instance.zoneDrop == null ? new() : Item.items.FindAll(x => instance.zoneDrop.Contains(x.name));
             var everything = zoneDrop.Concat(worldDrop).Where(x => x.CanEquip(currentSave.player));
@@ -329,36 +329,23 @@ public class Board
                 results.inventory.AddItem(dropOther[random.Next(dropOther.Count)].CopyItem());
             var generalDrops = GeneralDrop.generalDrops.FindAll(x => x.DoesLevelFit(enemy.level) && (x.requiredProfession == null || (player.professionSkills.ContainsKey(x.requiredProfession) && (x.requiredSkill == 0 || x.requiredSkill <= player.professionSkills[x.requiredProfession].Item1))) && (x.category == null || x.category == enemy.Race().category) && x.inclusive);
             if (generalDrops.Count > 0)
-            {
-                var veryRares = generalDrops.FindAll(x => x.rarity == "VeryRare");
-                var amount = 0;
-                GeneralDrop drop = null;
-                if (Roll(1) && veryRares.Count > 0)
-                {
-                    drop = veryRares[random.Next(veryRares.Count)];
-                    for (int i = 0; i < drop.dropCount; i++) amount += Roll(20) ? 1 : 0;
-                }
-                if (drop != null) results.inventory.AddItem(Item.items.Find(x => x.name == drop.item).CopyItem(amount));
-            }
+                foreach (var drop in generalDrops)
+                    if (Roll(drop.rarity))
+                    {
+                        int amount = 1;
+                        for (int i = 1; i < drop.dropCount; i++) amount += Roll(10) ? 1 : 0;
+                        results.inventory.AddItem(Item.items.Find(x => x.name == drop.item).CopyItem(amount));
+                    }
             var possibleGeneralDrops = GeneralDrop.generalDrops.FindAll(x => x.DoesLevelFit(enemy.level) && (x.requiredProfession == null || (player.professionSkills.ContainsKey(x.requiredProfession) && (x.requiredSkill == 0 || x.requiredSkill <= player.professionSkills[x.requiredProfession].Item1))) && (x.category == null || x.category == enemy.Race().category) && !x.inclusive);
             if (possibleGeneralDrops.Count > 0)
-            {
-                var rares = possibleGeneralDrops.FindAll(x => x.rarity == "Rare");
-                var common = possibleGeneralDrops.FindAll(x => x.rarity == "Common");
-                var amount = 0;
-                GeneralDrop drop = null;
-                if (Roll(20) && rares.Count > 0)
-                {
-                    drop = rares[random.Next(rares.Count)];
-                    for (int i = 0; i < drop.dropCount; i++) amount += Roll(50) ? 1 : 0;
-                }
-                else if (common.Count > 0)
-                {
-                    drop = common[random.Next(common.Count)];
-                    for (int i = 0; i < drop.dropCount; i++) amount += Roll(50) ? 1 : 0;
-                }
-                if (drop != null) results.inventory.AddItem(Item.items.Find(x => x.name == drop.item).CopyItem(amount));
-            }
+                foreach (var drop in possibleGeneralDrops.Shuffle().OrderBy(x => x.rarity))
+                    if (Roll(drop.rarity))
+                    {
+                        int amount = 1;
+                        for (int i = 1; i < drop.dropCount; i++) amount += Roll(50) ? 1 : 0;
+                        results.inventory.AddItem(Item.items.Find(x => x.name == drop.item).CopyItem(amount));
+                        break;
+                    }
             results.inventory.items.ForEach(x => x.SetRandomEnchantment());
             chartPage = "Damage Dealt";
             currentSave.player.ReceiveExperience(board.results.experience);

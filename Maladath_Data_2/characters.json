@@ -5,8 +5,8 @@
   "Whitemane": [
     {
       "player": {
-        "level": 16,
-        "experience": 6360,
+        "level": 21,
+        "experience": 15323,
         "professionSkills": {
           "Skinning": {
             "Item1": 1,
@@ -16,7 +16,7 @@
           }
         },
         "learnedRecipes": {},
-        "unspentTalentPoints": 3,
+        "unspentTalentPoints": 8,
         "faction": "Stormwind",
         "name": "Valerie",
         "race": "Human",
@@ -72,6 +72,7 @@
           }
         },
         "inventory": {
+          "money": 9824,
           "items": [
             {
               "name": "Hearthstone",
@@ -97,6 +98,110 @@
               "stats": {
                 "stats": {}
               }
+            },
+            {
+              "rarity": "Uncommon",
+              "name": "Mystic's Bracelets",
+              "icon": "itembracer07",
+              "type": "Wrists",
+              "armorClass": "Cloth",
+              "source": "Rare Drop",
+              "ilvl": 17,
+              "lvl": 12,
+              "armor": 13,
+              "amount": 1,
+              "maxStack": 1,
+              "price": 189,
+              "stats": {
+                "stats": {
+                  "Intellect": 2,
+                  "Stamina": 1
+                }
+              }
+            },
+            {
+              "rarity": "Poor",
+              "name": "Ornamental Mace",
+              "icon": "itemmace03",
+              "detailedType": "Mace",
+              "type": "One Handed",
+              "source": "Rare Drop",
+              "ilvl": 17,
+              "lvl": 12,
+              "minDamage": 10,
+              "maxDamage": 19,
+              "amount": 1,
+              "maxStack": 1,
+              "price": 366,
+              "speed": 2.8,
+              "stats": {
+                "stats": {}
+              }
+            },
+            {
+              "rarity": "Common",
+              "name": "Rugged Spaulders",
+              "icon": "itemshoulder08",
+              "type": "Shoulders",
+              "armorClass": "Leather",
+              "source": "DirectDrop",
+              "ilvl": 20,
+              "lvl": 15,
+              "armor": 55,
+              "amount": 1,
+              "maxStack": 1,
+              "price": 308,
+              "stats": {
+                "stats": {}
+              },
+              "droppedBy": [
+                "Rethilgore"
+              ]
+            },
+            {
+              "rarity": "Common",
+              "name": "Scroll of Strength",
+              "icon": "itemscroll02",
+              "type": "Miscellaneous",
+              "source": "RareDrop",
+              "ilvl": 20,
+              "amount": 1,
+              "maxStack": 5,
+              "price": 50,
+              "stats": {
+                "stats": {}
+              }
+            },
+            {
+              "rarity": "Common",
+              "name": "Lesser Mana Potion",
+              "icon": "itempotion71",
+              "type": "Miscellaneous",
+              "source": "Profession",
+              "ilvl": 24,
+              "amount": 1,
+              "maxStack": 5,
+              "price": 30,
+              "stats": {
+                "stats": {}
+              }
+            },
+            {
+              "rarity": "Common",
+              "name": "Ritual Amice",
+              "icon": "itemshoulder09",
+              "type": "Shoulders",
+              "armorClass": "Cloth",
+              "source": "RareDrop",
+              "ilvl": 23,
+              "lvl": 18,
+              "armor": 26,
+              "amount": 1,
+              "maxStack": 1,
+              "price": 396,
+              "stats": {
+                "stats": {}
+              }
             }
           ],
           "bags": [
@@ -115,10 +220,26 @@
               "stats": {
                 "stats": {}
               }
+            },
+            {
+              "rarity": "Common",
+              "name": "Red Leather Bag",
+              "icon": "itemmiscbag02",
+              "type": "Bag",
+              "source": "GeneralDrop",
+              "ilvl": 15,
+              "lvl": 1,
+              "amount": 1,
+              "maxStack": 1,
+              "price": 875,
+              "bagSpace": 3,
+              "stats": {
+                "stats": {}
+              }
             }
           ]
         },
-        "mount": "Swift Palomino",
+        "mount": "",
         "mounts": [
           "Swift Palomino"
         ],
@@ -205,14 +326,17 @@
         }
       },
       "hour": 7,
-      "minute": 23,
+      "minute": 38,
       "second": 44,
-      "currentSite": "Thunder Ridge",
+      "currentSite": "Shadowfang Keep",
       "siteProgress": {
         "Northshire Valley": 3,
         "The Sea of Cinders": 11,
         "Southfury Scree": 8,
-        "Far Watch Post": 1
+        "Far Watch Post": 1,
+        "The Ruins of Lordaeron": 27,
+        "Jail": 2,
+        "The Courtyard": 2
       },
       "commonsKilled": {
         "Kobold Vermin": 2,
@@ -223,10 +347,17 @@
         "Bloodtalon Scythemaw": 3,
         "Elder Mottled Boar": 1,
         "Corrupted Bloodtalon Scythemaw": 1,
-        "Sunscale Screecher": 1
+        "Sunscale Screecher": 1,
+        "Lordaeron Citizen": 27,
+        "Bleak Worg": 2,
+        "Shadowfang Whitescalp": 1,
+        "Slavering Worg": 2,
+        "Shadow Charger": 1
       },
       "raresKilled": {},
-      "elitesKilled": {},
+      "elitesKilled": {
+        "Rethilgore": 1
+      },
       "siteVisits": {
         "Northshire Abbey": 1,
         "Northshire Valley": 3,
@@ -243,11 +374,17 @@
         "Grol'dom Farm": 0,
         "Thorn Hill": 0,
         "The Crossroads": 2,
-        "Orgrimmar": 5,
+        "Orgrimmar": 8,
         "The Placid Dune": 0,
-        "Thunder Ridge": 1
+        "Thunder Ridge": 1,
+        "Ragefire Chasm": 1,
+        "Undercity": 2,
+        "The Ruins of Lordaeron": 2,
+        "Shadowfang Keep": 3
       },
-      "unlockedAreas": [],
+      "unlockedAreas": [
+        "The Courtyard"
+      ],
       "vendorStock": {
         "Goldshire:Toddrick": [
           {
@@ -326,15 +463,21 @@
           }
         ]
       },
+      "banks": {
+        "Undercity": {
+          "items": [],
+          "bags": []
+        }
+      },
       "buyback": {
         "items": [],
         "bags": [],
         "ignoreSpaceChecks": true
       },
       "startDate": "2024-05-10T13:56:57.3904176+02:00",
-      "lastLoaded": "2024-05-12T15:26:08.9368893+02:00",
-      "lastPlayed": "2024-05-12T15:26:10.2149466+02:00",
-      "timePlayed": "00:12:46.9984254"
+      "lastLoaded": "2024-05-14T00:28:55.9951957+02:00",
+      "lastPlayed": "2024-05-14T00:30:23.5231023+02:00",
+      "timePlayed": "00:25:30.7281793"
     }
   ]
 }

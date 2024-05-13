@@ -507,11 +507,6 @@ public class Blueprint
                 AddCheckbox(settings.soundEffects);
                 AddLine("Sound effects", "Gray");
             });
-            AddPaddingRegion(() =>
-            {
-                AddCheckbox(settings.snapCamera);
-                AddLine("Snap camera to sites", "Gray");
-            });
         }, true),
         new("GameMenu", () => {
             SetAnchor(Center);
@@ -1727,14 +1722,6 @@ public class Blueprint
             AddHeaderRegion(() =>
             {
                 AddLine("Bank:");
-                AddSmallButton("OtherClose", (h) =>
-                {
-                    CloseWindow("Bank");
-                    Respawn("Person");
-                    Respawn("Town: " + town.name);
-                    CloseWindow("Inventory");
-                    PlaySound("DesktopBankClose");
-                });
                 AddSmallButton("OtherReverse", (h) =>
                 {
                     currentSave.banks[town.name].items.Reverse();

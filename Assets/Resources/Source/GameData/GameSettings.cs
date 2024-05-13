@@ -15,7 +15,6 @@ public class GameSettings
         pixelPerfectVision ??= new Bool(false);
         music ??= new Bool(true);
         soundEffects ??= new Bool(true);
-        snapCamera ??= new Bool(true);
         chartBigIcons ??= new Bool(true);
 
         rarityIndicators ??= new Bool(true);
@@ -56,9 +55,6 @@ public class GameSettings
 
     //Indicates whether the item in the inventory is a new slot item for the player character
     public Bool newSlotIndicators;
-
-    //Indicates whether the camera in the adventure map snaps to nearest sites
-    public Bool snapCamera;
 
     //Indicates whether the camera in the adventure map snaps to nearest sites
     public Bool chartBigIcons;

@@ -20,8 +20,8 @@ public class GeneralDrop
     //Name of the cloth item
     public string item;
 
-    //Rarity of this type of cloth
-    public string rarity;
+    //Rarity of this type of cloth (1 - 100)
+    public int rarity;
 
     //Required enemy category for this cloth item to drop
     public string category;

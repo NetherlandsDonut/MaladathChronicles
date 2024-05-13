@@ -3638,7 +3638,9 @@
         "who": "Stonevault Shaman",
         "levelMin": 40,
         "levelMax": 41
-      },
+      }
+    ],
+    "rareEncounters": [
       {
         "who": "Murdaloc",
         "levelMin": 42,
@@ -23602,7 +23604,9 @@
         "who": "Bristleback Geomancer",
         "levelMin": 18,
         "levelMax": 19
-      },
+      }
+    ],
+    "rareEncounters": [
       {
         "who": "Swinegart Spearhide",
         "levelMin": 22,
@@ -26446,7 +26450,9 @@
         "who": "Druid of the Fang",
         "levelMin": 19,
         "levelMax": 20
-      },
+      }
+    ],
+    "rareEncounters": [
       {
         "who": "Deviate Faerie Dragon",
         "levelMin": 20,

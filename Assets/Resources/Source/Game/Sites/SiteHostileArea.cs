@@ -44,6 +44,8 @@ public class SiteHostileArea : Site
                         portrait = "PortraitChicken",
                         vitality = 1.0,
                     });
+                else if (races.Find(x => x.name == encounter.who).kind != "Common")
+                    Debug.Log("ERROR 010: " + encounter.who + " isn't a common enemy");
         if (rareEncounters != null)
             foreach (var encounter in rareEncounters)
                 if (!races.Exists(x => x.name == encounter.who))
@@ -55,6 +57,8 @@ public class SiteHostileArea : Site
                         portrait = "PortraitParrot",
                         vitality = 2.0,
                     });
+                else if (races.Find(x => x.name == encounter.who).kind != "Rare")
+                    Debug.Log("ERROR 011: " + encounter.who + " isn't a rare enemy");
         if (eliteEncounters != null)
             foreach (var encounter in eliteEncounters)
                 if (!races.Exists(x => x.name == encounter.who))
@@ -66,6 +70,8 @@ public class SiteHostileArea : Site
                         portrait = "PortraitCow",
                         vitality = 3.0,
                     });
+                else if (races.Find(x => x.name == encounter.who).kind != "Elite")
+                    Debug.Log("ERROR 012: " + encounter.who + " isn't an elite enemy");
         var all = new List<Encounter>();
         if (commonEncounters != null)
             if (commonEncounters.Count > 0)

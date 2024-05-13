@@ -1,7 +1,7 @@
 [
   {
     "item": "Linen Cloth",
-    "rarity": "Common",
+    "rarity": 50,
     "category": "Humanoid",
     "dropStart": 5,
     "dropEnd": 20,
@@ -9,7 +9,7 @@
   },
   {
     "item": "Wool Cloth",
-    "rarity": "Common",
+    "rarity": 50,
     "category": "Humanoid",
     "dropStart": 16,
     "dropEnd": 30,
@@ -17,7 +17,7 @@
   },
   {
     "item": "Silk Cloth",
-    "rarity": "Common",
+    "rarity": 50,
     "category": "Humanoid",
     "dropStart": 28,
     "dropEnd": 40,
@@ -25,7 +25,7 @@
   },
   {
     "item": "Mageweave Cloth",
-    "rarity": "Common",
+    "rarity": 50,
     "category": "Humanoid",
     "dropStart": 38,
     "dropEnd": 50,
@@ -33,7 +33,7 @@
   },
   {
     "item": "Runecloth",
-    "rarity": "Common",
+    "rarity": 50,
     "category": "Humanoid",
     "dropStart": 50,
     "dropEnd": 60,
@@ -41,7 +41,7 @@
   },
   {
     "item": "Felcloth",
-    "rarity": "Rare",
+    "rarity": 10,
     "category": "Demon",
     "dropStart": 50,
     "dropEnd": 60,
@@ -51,7 +51,7 @@
     "requiredProfession": "Skinning",
     "requiredSkill": 1,
     "item": "Ruined Leather Scraps",
-    "rarity": "Common",
+    "rarity": 50,
     "category": "Beast",
     "dropStart": 6,
     "dropEnd": 13,
@@ -61,7 +61,7 @@
     "requiredProfession": "Skinning",
     "requiredSkill": 50,
     "item": "Light Leather",
-    "rarity": "Common",
+    "rarity": 50,
     "category": "Beast",
     "dropStart": 6,
     "dropEnd": 17,
@@ -71,7 +71,7 @@
     "requiredProfession": "Skinning",
     "requiredSkill": 50,
     "item": "Light Hide",
-    "rarity": "Rare",
+    "rarity": 10,
     "category": "Beast",
     "dropStart": 11,
     "dropEnd": 25,
@@ -81,7 +81,7 @@
     "requiredProfession": "Skinning",
     "requiredSkill": 105,
     "item": "Medium Leather",
-    "rarity": "Common",
+    "rarity": 50,
     "category": "Beast",
     "dropStart": 16,
     "dropEnd": 35,
@@ -91,7 +91,7 @@
     "requiredProfession": "Skinning",
     "requiredSkill": 105,
     "item": "Medium Hide",
-    "rarity": "Rare",
+    "rarity": 10,
     "category": "Beast",
     "dropStart": 16,
     "dropEnd": 35,
@@ -101,7 +101,7 @@
     "requiredProfession": "Skinning",
     "requiredSkill": 150,
     "item": "Heavy Leather",
-    "rarity": "Common",
+    "rarity": 50,
     "category": "Beast",
     "dropStart": 25,
     "dropEnd": 45,
@@ -111,7 +111,7 @@
     "requiredProfession": "Skinning",
     "requiredSkill": 150,
     "item": "Heavy Hide",
-    "rarity": "Rare",
+    "rarity": 10,
     "category": "Beast",
     "dropStart": 25,
     "dropEnd": 45,
@@ -121,7 +121,7 @@
     "requiredProfession": "Skinning",
     "requiredSkill": 200,
     "item": "Thick Leather",
-    "rarity": "Common",
+    "rarity": 50,
     "category": "Beast",
     "dropStart": 36,
     "dropEnd": 60,
@@ -131,7 +131,7 @@
     "requiredProfession": "Skinning",
     "requiredSkill": 200,
     "item": "Thick Hide",
-    "rarity": "Rare",
+    "rarity": 10,
     "category": "Beast",
     "dropStart": 40,
     "dropEnd": 60,
@@ -141,7 +141,7 @@
     "requiredProfession": "Skinning",
     "requiredSkill": 250,
     "item": "Rugged Leather",
-    "rarity": "Common",
+    "rarity": 50,
     "category": "Beast",
     "dropStart": 46,
     "dropEnd": 60,
@@ -151,7 +151,7 @@
     "requiredProfession": "Skinning",
     "requiredSkill": 250,
     "item": "Rugged Hide",
-    "rarity": "Rare",
+    "rarity": 10,
     "category": "Beast",
     "dropStart": 46,
     "dropEnd": 60,
@@ -159,138 +159,410 @@
   },
   {
     "item": "Traveler's Backpack",
+    "rarity": 1,
     "inclusive": true,
-    "rarity": "VeryRare",
     "dropStart": 46,
     "dropEnd": 60,
     "dropCount": 1
   },
   {
     "item": "Troll-hide Bag",
+    "rarity": 1,
     "inclusive": true,
-    "rarity": "VeryRare",
     "dropStart": 39,
     "dropEnd": 53,
     "dropCount": 1
   },
   {
     "item": "Journeyman's Backpack",
+    "rarity": 1,
     "inclusive": true,
-    "rarity": "VeryRare",
     "dropStart": 39,
     "dropEnd": 60,
     "dropCount": 1
   },
   {
     "item": "Large Knapsack",
+    "rarity": 1,
     "inclusive": true,
-    "rarity": "VeryRare",
     "dropStart": 30,
     "dropEnd": 49,
     "dropCount": 1
   },
   {
     "item": "Large Blue Sack",
+    "rarity": 1,
     "inclusive": true,
-    "rarity": "VeryRare",
     "dropStart": 19,
     "dropEnd": 32,
     "dropCount": 1
   },
   {
     "item": "Large Red Sack",
+    "rarity": 1,
     "inclusive": true,
-    "rarity": "VeryRare",
     "dropStart": 19,
     "dropEnd": 32,
     "dropCount": 1
   },
   {
     "item": "Large Brown Sack",
+    "rarity": 1,
     "inclusive": true,
-    "rarity": "VeryRare",
     "dropStart": 19,
     "dropEnd": 32,
     "dropCount": 1
   },
   {
     "item": "Large Green Sack",
+    "rarity": 1,
     "inclusive": true,
-    "rarity": "VeryRare",
     "dropStart": 19,
     "dropEnd": 32,
     "dropCount": 1
   },
   {
     "item": "Blue Leather Bag",
+    "rarity": 1,
     "inclusive": true,
-    "rarity": "VeryRare",
     "dropStart": 9,
     "dropEnd": 25,
     "dropCount": 1
   },
   {
     "item": "Red Leather Bag",
+    "rarity": 1,
     "inclusive": true,
-    "rarity": "VeryRare",
     "dropStart": 9,
     "dropEnd": 25,
     "dropCount": 1
   },
   {
     "item": "Green Leather Bag",
+    "rarity": 1,
     "inclusive": true,
-    "rarity": "VeryRare",
     "dropStart": 9,
     "dropEnd": 25,
     "dropCount": 1
   },
   {
     "item": "White Leather Bag",
+    "rarity": 1,
     "inclusive": true,
-    "rarity": "VeryRare",
     "dropStart": 9,
     "dropEnd": 25,
     "dropCount": 1
   },
   {
     "item": "Small Red Pouch",
+    "rarity": 1,
     "inclusive": true,
-    "rarity": "VeryRare",
     "dropStart": 1,
     "dropEnd": 17,
     "dropCount": 1
   },
   {
     "item": "Small Blue Pouch",
+    "rarity": 1,
     "inclusive": true,
-    "rarity": "VeryRare",
     "dropStart": 1,
     "dropEnd": 17,
     "dropCount": 1
   },
   {
     "item": "Small Brown Pouch",
+    "rarity": 1,
     "inclusive": true,
-    "rarity": "VeryRare",
     "dropStart": 1,
     "dropEnd": 17,
     "dropCount": 1
   },
   {
     "item": "Small Green Pouch",
+    "rarity": 1,
     "inclusive": true,
-    "rarity": "VeryRare",
     "dropStart": 1,
     "dropEnd": 17,
     "dropCount": 1
   },
   {
     "item": "Small Black Pouch",
+    "rarity": 1,
     "inclusive": true,
-    "rarity": "VeryRare",
     "dropStart": 1,
     "dropEnd": 17,
+    "dropCount": 1
+  },
+  {
+    "item": "Minor Healing Potion",
+    "rarity": 2,
+    "inclusive": true,
+    "dropStart": 5,
+    "dropEnd": 12,
+    "dropCount": 1
+  },
+  {
+    "item": "Lesser Healing Potion",
+    "rarity": 2,
+    "inclusive": true,
+    "dropStart": 13,
+    "dropEnd": 24,
+    "dropCount": 1
+  },
+  {
+    "item": "Healing Potion",
+    "rarity": 2,
+    "inclusive": true,
+    "dropStart": 25,
+    "dropEnd": 36,
+    "dropCount": 1
+  },
+  {
+    "item": "Greater Healing Potion",
+    "rarity": 2,
+    "inclusive": true,
+    "dropStart": 37,
+    "dropEnd": 48,
+    "dropCount": 1
+  },
+  {
+    "item": "Major Healing Potion",
+    "rarity": 2,
+    "inclusive": true,
+    "dropStart": 49,
+    "dropEnd": 60,
+    "dropCount": 1
+  },
+  {
+    "item": "Minor Mana Potion",
+    "rarity": 2,
+    "inclusive": true,
+    "dropStart": 5,
+    "dropEnd": 12,
+    "dropCount": 1
+  },
+  {
+    "item": "Lesser Mana Potion",
+    "rarity": 2,
+    "inclusive": true,
+    "dropStart": 13,
+    "dropEnd": 24,
+    "dropCount": 1
+  },
+  {
+    "item": "Mana Potion",
+    "rarity": 2,
+    "inclusive": true,
+    "dropStart": 25,
+    "dropEnd": 36,
+    "dropCount": 1
+  },
+  {
+    "item": "Greater Mana Potion",
+    "rarity": 2,
+    "inclusive": true,
+    "dropStart": 37,
+    "dropEnd": 48,
+    "dropCount": 1
+  },
+  {
+    "item": "Major Mana Potion",
+    "rarity": 2,
+    "inclusive": true,
+    "dropStart": 49,
+    "dropEnd": 60,
+    "dropCount": 1
+  },
+  {
+    "item": "Scroll of Spirit",
+    "rarity": 2,
+    "inclusive": true,
+    "dropStart": 5,
+    "dropEnd": 15,
+    "dropCount": 1
+  },
+  {
+    "item": "Scroll of Protection",
+    "rarity": 2,
+    "inclusive": true,
+    "dropStart": 5,
+    "dropEnd": 15,
+    "dropCount": 1
+  },
+  {
+    "item": "Scroll of Intellect",
+    "rarity": 2,
+    "inclusive": true,
+    "dropStart": 10,
+    "dropEnd": 20,
+    "dropCount": 1
+  },
+  {
+    "item": "Scroll of Stamina",
+    "rarity": 2,
+    "inclusive": true,
+    "dropStart": 10,
+    "dropEnd": 20,
+    "dropCount": 1
+  },
+  {
+    "item": "Scroll of Strength",
+    "rarity": 2,
+    "inclusive": true,
+    "dropStart": 15,
+    "dropEnd": 25,
+    "dropCount": 1
+  },
+  {
+    "item": "Scroll of Agility",
+    "rarity": 2,
+    "inclusive": true,
+    "dropStart": 15,
+    "dropEnd": 25,
+    "dropCount": 1
+  },
+  {
+    "item": "Scroll of Spirit II",
+    "rarity": 2,
+    "inclusive": true,
+    "dropStart": 16,
+    "dropEnd": 30,
+    "dropCount": 1
+  },
+  {
+    "item": "Scroll of Protection II",
+    "rarity": 2,
+    "inclusive": true,
+    "dropStart": 16,
+    "dropEnd": 30,
+    "dropCount": 1
+  },
+  {
+    "item": "Scroll of Intellect II",
+    "rarity": 2,
+    "inclusive": true,
+    "dropStart": 21,
+    "dropEnd": 35,
+    "dropCount": 1
+  },
+  {
+    "item": "Scroll of Stamina II",
+    "rarity": 2,
+    "inclusive": true,
+    "dropStart": 21,
+    "dropEnd": 35,
+    "dropCount": 1
+  },
+  {
+    "item": "Scroll of Strength II",
+    "rarity": 2,
+    "inclusive": true,
+    "dropStart": 26,
+    "dropEnd": 40,
+    "dropCount": 1
+  },
+  {
+    "item": "Scroll of Agility II",
+    "rarity": 2,
+    "inclusive": true,
+    "dropStart": 26,
+    "dropEnd": 40,
+    "dropCount": 1
+  },
+  {
+    "item": "Scroll of Spirit III",
+    "rarity": 2,
+    "inclusive": true,
+    "dropStart": 31,
+    "dropEnd": 45,
+    "dropCount": 1
+  },
+  {
+    "item": "Scroll of Protection III",
+    "rarity": 2,
+    "inclusive": true,
+    "dropStart": 31,
+    "dropEnd": 45,
+    "dropCount": 1
+  },
+  {
+    "item": "Scroll of Intellect III",
+    "rarity": 2,
+    "inclusive": true,
+    "dropStart": 36,
+    "dropEnd": 50,
+    "dropCount": 1
+  },
+  {
+    "item": "Scroll of Stamina III",
+    "rarity": 2,
+    "inclusive": true,
+    "dropStart": 36,
+    "dropEnd": 50,
+    "dropCount": 1
+  },
+  {
+    "item": "Scroll of Strength III",
+    "rarity": 2,
+    "inclusive": true,
+    "dropStart": 41,
+    "dropEnd": 55,
+    "dropCount": 1
+  },
+  {
+    "item": "Scroll of Agility III",
+    "rarity": 2,
+    "inclusive": true,
+    "dropStart": 41,
+    "dropEnd": 55,
+    "dropCount": 1
+  },
+  {
+    "item": "Scroll of Spirit IV",
+    "rarity": 2,
+    "inclusive": true,
+    "dropStart": 46,
+    "dropEnd": 60,
+    "dropCount": 1
+  },
+  {
+    "item": "Scroll of Protection IV",
+    "rarity": 2,
+    "inclusive": true,
+    "dropStart": 46,
+    "dropEnd": 60,
+    "dropCount": 1
+  },
+  {
+    "item": "Scroll of Intellect IV",
+    "rarity": 2,
+    "inclusive": true,
+    "dropStart": 51,
+    "dropEnd": 60,
+    "dropCount": 1
+  },
+  {
+    "item": "Scroll of Stamina IV",
+    "rarity": 2,
+    "inclusive": true,
+    "dropStart": 51,
+    "dropEnd": 60,
+    "dropCount": 1
+  },
+  {
+    "item": "Scroll of Strength IV",
+    "rarity": 2,
+    "inclusive": true,
+    "dropStart": 56,
+    "dropEnd": 60,
+    "dropCount": 1
+  },
+  {
+    "item": "Scroll of Agility IV",
+    "rarity": 2,
+    "inclusive": true,
+    "dropStart": 56,
+    "dropEnd": 60,
     "dropCount": 1
   }
 ]

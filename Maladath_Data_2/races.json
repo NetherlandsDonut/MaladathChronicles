@@ -110,7 +110,6 @@
   {
     "name": "Burning Spirit",
     "category": "Elemental",
-    "subcategory": "Elemental",
     "kind": "Common",
     "portrait": "PortraitFireElemental",
     "vitality": 1.0,
@@ -145,8 +144,8 @@
   },
   {
     "name": "Hulking Gritjaw Basilisk",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Beast",
+    "subcategory": "Basilisk",
     "kind": "Common",
     "portrait": "PortraitBasiliskYellow",
     "vitality": 1.0,
@@ -164,7 +163,6 @@
   {
     "name": "Whirlwind Ripper",
     "category": "Elemental",
-    "subcategory": "Elemental",
     "kind": "Common",
     "portrait": "PortraitStormElemental",
     "vitality": 1.0,
@@ -280,8 +278,8 @@
   },
   {
     "name": "Lok Orcbane",
-    "category": "Beast",
-    "subcategory": "Boar",
+    "category": "Humanoid",
+    "subcategory": "Quilboar",
     "kind": "Rare",
     "portrait": "PortraitQuilboarArmored",
     "vitality": 2.0,
@@ -428,7 +426,6 @@
   {
     "name": "Huricanian",
     "category": "Elemental",
-    "subcategory": "Elemental",
     "kind": "Rare",
     "portrait": "PortraitAirElemental",
     "vitality": 2.0,
@@ -437,7 +434,6 @@
   {
     "name": "Arcane Torrent",
     "category": "Elemental",
-    "subcategory": "Elemental",
     "kind": "Common",
     "portrait": "PortraitAirElemental",
     "vitality": 1.0,
@@ -446,7 +442,6 @@
   {
     "name": "Cyclone Warrior",
     "category": "Elemental",
-    "subcategory": "Elemental",
     "kind": "Common",
     "portrait": "PortraitAirElemental",
     "vitality": 1.0,
@@ -455,7 +450,6 @@
   {
     "name": "Thundering Exile",
     "category": "Elemental",
-    "subcategory": "Elemental",
     "kind": "Common",
     "portrait": "PortraitAirElemental",
     "vitality": 1.0,
@@ -464,7 +458,6 @@
   {
     "name": "Whirling Invader",
     "category": "Elemental",
-    "subcategory": "Elemental",
     "kind": "Common",
     "portrait": "PortraitAirElemental",
     "vitality": 1.0,
@@ -863,8 +856,8 @@
   },
   {
     "name": "Glasshide Petrifier",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Beast",
+    "subcategory": "Basilisk",
     "kind": "Common",
     "portrait": "PortraitBasilisk",
     "vitality": 1.0,
@@ -872,8 +865,8 @@
   },
   {
     "name": "Glasshide Basilisk",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Beast",
+    "subcategory": "Basilisk",
     "kind": "Common",
     "portrait": "PortraitBasilisk",
     "vitality": 1.0,
@@ -881,8 +874,8 @@
   },
   {
     "name": "Glasshide Gazer",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Beast",
+    "subcategory": "Basilisk",
     "kind": "Common",
     "portrait": "PortraitBasilisk",
     "vitality": 1.0,
@@ -890,8 +883,8 @@
   },
   {
     "name": "Redstone Basilisk",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Beast",
+    "subcategory": "Basilisk",
     "kind": "Common",
     "portrait": "PortraitBasilisk",
     "vitality": 1.0,
@@ -899,8 +892,8 @@
   },
   {
     "name": "Scorched Basilisk",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Beast",
+    "subcategory": "Basilisk",
     "kind": "Common",
     "portrait": "PortraitBasilisk",
     "vitality": 1.0,
@@ -908,8 +901,8 @@
   },
   {
     "name": "Cold Eye Basilisk",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Beast",
+    "subcategory": "Basilisk",
     "kind": "Common",
     "portrait": "PortraitBasiliskTeal",
     "vitality": 1.0,
@@ -917,8 +910,8 @@
   },
   {
     "name": "Ironjaw Basilisk",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Beast",
+    "subcategory": "Basilisk",
     "kind": "Common",
     "portrait": "PortraitBasiliskTeal",
     "vitality": 1.0,
@@ -926,8 +919,8 @@
   },
   {
     "name": "Thrashtail Basilisk",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Beast",
+    "subcategory": "Basilisk",
     "kind": "Common",
     "portrait": "PortraitBasiliskTeal",
     "vitality": 1.0,
@@ -935,8 +928,8 @@
   },
   {
     "name": "Saltstone Basilisk",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Beast",
+    "subcategory": "Basilisk",
     "kind": "Common",
     "portrait": "PortraitBasiliskWhite",
     "vitality": 1.0,
@@ -944,8 +937,8 @@
   },
   {
     "name": "Saltstone Crystalhide",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Beast",
+    "subcategory": "Basilisk",
     "kind": "Common",
     "portrait": "PortraitBasiliskWhite",
     "vitality": 1.0,
@@ -953,8 +946,8 @@
   },
   {
     "name": "Saltstone Gazer",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Beast",
+    "subcategory": "Basilisk",
     "kind": "Common",
     "portrait": "PortraitBasiliskWhite",
     "vitality": 1.0,
@@ -962,8 +955,8 @@
   },
   {
     "name": "Scalebelly",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Beast",
+    "subcategory": "Basilisk",
     "kind": "Rare",
     "portrait": "PortraitBasiliskYellow",
     "vitality": 2.0,
@@ -971,8 +964,8 @@
   },
   {
     "name": "Gritjaw Basilisk",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Beast",
+    "subcategory": "Basilisk",
     "kind": "Common",
     "portrait": "PortraitBasiliskYellow",
     "vitality": 1.0,
@@ -980,8 +973,8 @@
   },
   {
     "name": "Jadespine Basilisk",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Beast",
+    "subcategory": "Basilisk",
     "kind": "Common",
     "portrait": "PortraitBasiliskYellow",
     "vitality": 1.0,
@@ -989,8 +982,8 @@
   },
   {
     "name": "Sul'lithuz Sandcrawler",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Beast",
+    "subcategory": "Basilisk",
     "kind": "Common",
     "portrait": "PortraitBasiliskYellow",
     "vitality": 1.0,
@@ -2605,8 +2598,8 @@
   },
   {
     "name": "Risen Construct",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Undead",
+    "subcategory": "Undead",
     "kind": "Common",
     "portrait": "PortraitBoneConstruct",
     "vitality": 1.0,
@@ -2614,8 +2607,8 @@
   },
   {
     "name": "Rattlegore",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Undead",
+    "subcategory": "Undead",
     "faction": "Scourge",
     "kind": "Elite",
     "portrait": "PortraitBoneConstruct",
@@ -2756,9 +2749,9 @@
     "name": "Gazz'uz",
     "category": "Humanoid",
     "subcategory": "Orc",
-    "kind": "Common",
+    "kind": "Elite",
     "portrait": "PortraitBurningBladeCultist",
-    "vitality": 1.0,
+    "vitality": 2.1,
     "abilities": {}
   },
   {
@@ -5426,7 +5419,6 @@
   {
     "name": "Land Rager",
     "category": "Elemental",
-    "subcategory": "Elemental",
     "kind": "Common",
     "portrait": "PortraitEarthElemental",
     "vitality": 1.0,
@@ -5435,7 +5427,6 @@
   {
     "name": "Stone Fury",
     "category": "Elemental",
-    "subcategory": "Elemental",
     "kind": "Rare",
     "portrait": "PortraitEarthElemental",
     "vitality": 2.0,
@@ -5444,7 +5435,6 @@
   {
     "name": "Desert Rumbler",
     "category": "Elemental",
-    "subcategory": "Elemental",
     "kind": "Common",
     "portrait": "PortraitEarthElemental",
     "vitality": 1.0,
@@ -5453,7 +5443,6 @@
   {
     "name": "Elemental Slave",
     "category": "Elemental",
-    "subcategory": "Elemental",
     "kind": "Common",
     "portrait": "PortraitEarthElemental",
     "vitality": 1.0,
@@ -5462,7 +5451,6 @@
   {
     "name": "Rumbling Exile",
     "category": "Elemental",
-    "subcategory": "Elemental",
     "kind": "Common",
     "portrait": "PortraitEarthElemental",
     "vitality": 1.0,
@@ -5471,7 +5459,6 @@
   {
     "name": "Theradrim Guardian",
     "category": "Elemental",
-    "subcategory": "Elemental",
     "kind": "Common",
     "portrait": "PortraitEarthElemental",
     "vitality": 1.0,
@@ -5480,7 +5467,6 @@
   {
     "name": "Thundering Boulderkin",
     "category": "Elemental",
-    "subcategory": "Elemental",
     "kind": "Common",
     "portrait": "PortraitEarthElemental",
     "vitality": 1.0,
@@ -5500,7 +5486,7 @@
     "category": "Humanoid",
     "subcategory": "Human",
     "faction": "Defias Brotherhood",
-    "kind": "Common",
+    "kind": "Elite",
     "portrait": "PortraitEdwin",
     "vitality": 3.0,
     "abilities": {}
@@ -5749,9 +5735,9 @@
   {
     "name": "Shadow Charger",
     "category": "Demon",
-    "kind": "Common",
+    "kind": "Elite",
     "portrait": "PortraitFelsteed",
-    "vitality": 1.0,
+    "vitality": 2.3,
     "abilities": {}
   },
   {
@@ -5767,7 +5753,6 @@
   {
     "name": "Firelord",
     "category": "Elemental",
-    "subcategory": "Elemental",
     "kind": "Common",
     "portrait": "PortraitFireElemental",
     "vitality": 1.0,
@@ -5776,7 +5761,6 @@
   {
     "name": "Ambassador Infernus",
     "category": "Elemental",
-    "subcategory": "Elemental",
     "kind": "Elite",
     "portrait": "PortraitFireElemental",
     "vitality": 3.0,
@@ -5785,7 +5769,6 @@
   {
     "name": "Baron Geddon",
     "category": "Elemental",
-    "subcategory": "Elemental",
     "kind": "Elite",
     "portrait": "PortraitFireElemental",
     "vitality": 3.0,
@@ -5794,7 +5777,6 @@
   {
     "name": "Blazerunner",
     "category": "Elemental",
-    "subcategory": "Elemental",
     "kind": "Elite",
     "portrait": "PortraitFireElemental",
     "vitality": 3.0,
@@ -5803,7 +5785,6 @@
   {
     "name": "Lord Incendius",
     "category": "Elemental",
-    "subcategory": "Elemental",
     "kind": "Elite",
     "portrait": "PortraitFireElemental",
     "vitality": 3.0,
@@ -5812,7 +5793,6 @@
   {
     "name": "Pyroguard Emberseer",
     "category": "Elemental",
-    "subcategory": "Elemental",
     "kind": "Elite",
     "portrait": "PortraitFireElemental",
     "vitality": 1.0,
@@ -5821,7 +5801,6 @@
   {
     "name": "Blazing Fireguard",
     "category": "Elemental",
-    "subcategory": "Elemental",
     "kind": "Common",
     "portrait": "PortraitFireElemental",
     "vitality": 1.0,
@@ -5830,7 +5809,6 @@
   {
     "name": "Burning Exile",
     "category": "Elemental",
-    "subcategory": "Elemental",
     "kind": "Common",
     "portrait": "PortraitFireElemental",
     "vitality": 1.0,
@@ -5839,7 +5817,6 @@
   {
     "name": "Burning Ravager",
     "category": "Elemental",
-    "subcategory": "Elemental",
     "kind": "Common",
     "portrait": "PortraitFireElemental",
     "vitality": 1.0,
@@ -5848,7 +5825,6 @@
   {
     "name": "Fireguard",
     "category": "Elemental",
-    "subcategory": "Elemental",
     "kind": "Common",
     "portrait": "PortraitFireElemental",
     "vitality": 1.0,
@@ -5857,7 +5833,6 @@
   {
     "name": "Fireguard Destroyer",
     "category": "Elemental",
-    "subcategory": "Elemental",
     "kind": "Common",
     "portrait": "PortraitFireElemental",
     "vitality": 1.0,
@@ -5866,7 +5841,6 @@
   {
     "name": "Living Blaze",
     "category": "Elemental",
-    "subcategory": "Elemental",
     "kind": "Common",
     "portrait": "PortraitFireElemental",
     "vitality": 1.0,
@@ -5875,7 +5849,6 @@
   {
     "name": "Scorching Elemental",
     "category": "Elemental",
-    "subcategory": "Elemental",
     "kind": "Common",
     "portrait": "PortraitFireElemental",
     "vitality": 1.0,
@@ -5884,7 +5857,6 @@
   {
     "name": "Son of Flame",
     "category": "Elemental",
-    "subcategory": "Elemental",
     "kind": "Common",
     "portrait": "PortraitFireElemental",
     "vitality": 1.0,
@@ -6796,7 +6768,8 @@
   },
   {
     "name": "Viscidus",
-    "category": "Giant",
+    "category": "Elemental",
+    "subcategory": "Ooze",
     "kind": "Elite",
     "portrait": "PortraitGiantSlime",
     "vitality": 4.0,
@@ -8681,9 +8654,9 @@
     "category": "Humanoid",
     "subcategory": "Human",
     "faction": "Scarlet Crusade",
-    "kind": "Rare",
+    "kind": "Elite",
     "portrait": "PortraitHighProtectorTarsen",
-    "vitality": 2.0,
+    "vitality": 2.4,
     "abilities": {}
   },
   {
@@ -9397,7 +9370,7 @@
     "name": "Goldtooth",
     "category": "Humanoid",
     "subcategory": "Kobold",
-    "kind": "Rare",
+    "kind": "Elite",
     "portrait": "PortraitKoboldSurveyor",
     "vitality": 2.0,
     "abilities": {}
@@ -9852,7 +9825,6 @@
   {
     "name": "Lava Surger",
     "category": "Elemental",
-    "subcategory": "Elemental",
     "kind": "Common",
     "portrait": "PortraitLavaElemental",
     "vitality": 1.0,
@@ -9861,7 +9833,6 @@
   {
     "name": "Lava Reaver",
     "category": "Elemental",
-    "subcategory": "Elemental",
     "kind": "Common",
     "portrait": "PortraitLavaElemental",
     "vitality": 1.0,
@@ -9870,7 +9841,6 @@
   {
     "name": "Lava Annihilator",
     "category": "Elemental",
-    "subcategory": "Elemental",
     "kind": "Common",
     "portrait": "PortraitLavaElemental",
     "vitality": 1.0,
@@ -9879,7 +9849,6 @@
   {
     "name": "Garr",
     "category": "Elemental",
-    "subcategory": "Elemental",
     "kind": "Elite",
     "portrait": "PortraitLavaElemental",
     "vitality": 3.0,
@@ -9888,7 +9857,6 @@
   {
     "name": "Lord Roccor",
     "category": "Elemental",
-    "subcategory": "Elemental",
     "kind": "Elite",
     "portrait": "PortraitLavaElemental",
     "vitality": 3.0,
@@ -9897,7 +9865,6 @@
   {
     "name": "Smoldar",
     "category": "Elemental",
-    "subcategory": "Elemental",
     "kind": "Rare",
     "portrait": "PortraitLavaElemental",
     "vitality": 2.0,
@@ -9906,7 +9873,6 @@
   {
     "name": "Inferno Elemental",
     "category": "Elemental",
-    "subcategory": "Elemental",
     "kind": "Common",
     "portrait": "PortraitLavaElemental",
     "vitality": 1.0,
@@ -9915,7 +9881,6 @@
   {
     "name": "Molten Elemental",
     "category": "Elemental",
-    "subcategory": "Elemental",
     "kind": "Common",
     "portrait": "PortraitLavaElemental",
     "vitality": 1.0,
@@ -9924,7 +9889,6 @@
   {
     "name": "Obsidian Elemental",
     "category": "Elemental",
-    "subcategory": "Elemental",
     "kind": "Common",
     "portrait": "PortraitLavaElemental",
     "vitality": 1.0,
@@ -11097,9 +11061,9 @@
     "name": "Lord Shalzaru",
     "category": "Humanoid",
     "subcategory": "Naga",
-    "kind": "Rare",
+    "kind": "Elite",
     "portrait": "PortraitNagaDark",
-    "vitality": 2.0,
+    "vitality": 2.5,
     "abilities": {}
   },
   {
@@ -11507,7 +11471,6 @@
   {
     "name": "Noxxion",
     "category": "Elemental",
-    "subcategory": "Elemental",
     "kind": "Elite",
     "portrait": "PortraitNoxiousElemental",
     "vitality": 2.0,
@@ -11516,7 +11479,6 @@
   {
     "name": "Viscous Fallout",
     "category": "Elemental",
-    "subcategory": "Elemental",
     "kind": "Elite",
     "portrait": "PortraitNoxiousElemental",
     "vitality": 1.0,
@@ -11525,7 +11487,6 @@
   {
     "name": "Blighted Horror",
     "category": "Elemental",
-    "subcategory": "Elemental",
     "kind": "Common",
     "portrait": "PortraitNoxiousElemental",
     "vitality": 1.0,
@@ -11534,7 +11495,6 @@
   {
     "name": "Blighted Surge",
     "category": "Elemental",
-    "subcategory": "Elemental",
     "kind": "Common",
     "portrait": "PortraitNoxiousElemental",
     "vitality": 1.0,
@@ -11547,7 +11507,6 @@
   {
     "name": "Corrosive Lurker",
     "category": "Elemental",
-    "subcategory": "Elemental",
     "kind": "Common",
     "portrait": "PortraitNoxiousElemental",
     "vitality": 1.0,
@@ -11556,7 +11515,6 @@
   {
     "name": "Plague Monstrosity",
     "category": "Elemental",
-    "subcategory": "Elemental",
     "kind": "Common",
     "portrait": "PortraitNoxiousElemental",
     "vitality": 1.0,
@@ -11565,7 +11523,6 @@
   {
     "name": "Plague Ravager",
     "category": "Elemental",
-    "subcategory": "Elemental",
     "faction": "Scourge",
     "kind": "Common",
     "portrait": "PortraitNoxiousElemental",
@@ -13403,8 +13360,8 @@
   },
   {
     "name": "Death Speaker Jargba",
-    "category": "Beast",
-    "subcategory": "Boar",
+    "category": "Humanoid",
+    "subcategory": "Quilboar",
     "kind": "Elite",
     "portrait": "PortraitQuilboarArmored",
     "vitality": 3.0,
@@ -13412,8 +13369,8 @@
   },
   {
     "name": "Overlord Ramtusk",
-    "category": "Beast",
-    "subcategory": "Boar",
+    "category": "Humanoid",
+    "subcategory": "Quilboar",
     "kind": "Elite",
     "portrait": "PortraitQuilboarArmored",
     "vitality": 3.0,
@@ -13421,8 +13378,8 @@
   },
   {
     "name": "Ragglesnout",
-    "category": "Beast",
-    "subcategory": "Boar",
+    "category": "Humanoid",
+    "subcategory": "Quilboar",
     "kind": "Elite",
     "portrait": "PortraitQuilboarArmored",
     "vitality": 3.0,
@@ -13430,8 +13387,8 @@
   },
   {
     "name": "Warlord Ramtusk",
-    "category": "Beast",
-    "subcategory": "Boar",
+    "category": "Humanoid",
+    "subcategory": "Quilboar",
     "kind": "Elite",
     "portrait": "PortraitQuilboarArmored",
     "vitality": 3.0,
@@ -13439,8 +13396,8 @@
   },
   {
     "name": "Swinegart Spearhide",
-    "category": "Beast",
-    "subcategory": "Boar",
+    "category": "Humanoid",
+    "subcategory": "Quilboar",
     "kind": "Rare",
     "portrait": "PortraitQuilboarArmored",
     "vitality": 2.0,
@@ -13448,17 +13405,17 @@
   },
   {
     "name": "Hagg Taurenbane",
-    "category": "Beast",
-    "subcategory": "Boar",
-    "kind": "Common",
+    "category": "Humanoid",
+    "subcategory": "Quilboar",
+    "kind": "Elite",
     "portrait": "PortraitQuilboarArmored",
-    "vitality": 1.0,
+    "vitality": 2.6,
     "abilities": {}
   },
   {
     "name": "Quilguard Champion",
-    "category": "Beast",
-    "subcategory": "Boar",
+    "category": "Humanoid",
+    "subcategory": "Quilboar",
     "kind": "Common",
     "portrait": "PortraitQuilboarArmored",
     "vitality": 1.0,
@@ -13466,8 +13423,8 @@
   },
   {
     "name": "Razorfen Defender",
-    "category": "Beast",
-    "subcategory": "Boar",
+    "category": "Humanoid",
+    "subcategory": "Quilboar",
     "kind": "Common",
     "portrait": "PortraitQuilboarArmored",
     "vitality": 1.0,
@@ -13475,8 +13432,8 @@
   },
   {
     "name": "Ward Guardian",
-    "category": "Beast",
-    "subcategory": "Boar",
+    "category": "Humanoid",
+    "subcategory": "Quilboar",
     "kind": "Common",
     "portrait": "PortraitQuilboarArmoredGreen",
     "vitality": 1.0,
@@ -13484,8 +13441,8 @@
   },
   {
     "name": "Razorfen Groundshaker",
-    "category": "Beast",
-    "subcategory": "Boar",
+    "category": "Humanoid",
+    "subcategory": "Quilboar",
     "kind": "Common",
     "portrait": "PortraitQuilboarBlue",
     "vitality": 1.0,
@@ -13493,8 +13450,8 @@
   },
   {
     "name": "Aggem Thorncurse",
-    "category": "Beast",
-    "subcategory": "Boar",
+    "category": "Humanoid",
+    "subcategory": "Quilboar",
     "kind": "Elite",
     "portrait": "PortraitQuilboarDark",
     "vitality": 3.0,
@@ -13502,8 +13459,8 @@
   },
   {
     "name": "Hunter Bonetusk",
-    "category": "Beast",
-    "subcategory": "Boar",
+    "category": "Humanoid",
+    "subcategory": "Quilboar",
     "kind": "Elite",
     "portrait": "PortraitQuilboarDark",
     "vitality": 3.0,
@@ -13511,8 +13468,8 @@
   },
   {
     "name": "Plaguemaw",
-    "category": "Beast",
-    "subcategory": "Boar",
+    "category": "Humanoid",
+    "subcategory": "Quilboar",
     "kind": "Elite",
     "portrait": "PortraitQuilboarDark",
     "vitality": 3.0,
@@ -13520,8 +13477,8 @@
   },
   {
     "name": "Chief Sharptusk Thornmantle",
-    "category": "Beast",
-    "subcategory": "Boar",
+    "category": "Humanoid",
+    "subcategory": "Quilboar",
     "kind": "Rare",
     "portrait": "PortraitQuilboarDark",
     "vitality": 2.0,
@@ -13529,8 +13486,8 @@
   },
   {
     "name": "Kreenig Snarlsnout",
-    "category": "Beast",
-    "subcategory": "Boar",
+    "category": "Humanoid",
+    "subcategory": "Quilboar",
     "kind": "Rare",
     "portrait": "PortraitQuilboarDark",
     "vitality": 2.0,
@@ -13538,8 +13495,8 @@
   },
   {
     "name": "Razorfen Hidecrusher",
-    "category": "Beast",
-    "subcategory": "Boar",
+    "category": "Humanoid",
+    "subcategory": "Quilboar",
     "kind": "Common",
     "portrait": "PortraitQuilboarDark",
     "vitality": 1.0,
@@ -13547,8 +13504,8 @@
   },
   {
     "name": "Razorfen Huntmaster",
-    "category": "Beast",
-    "subcategory": "Boar",
+    "category": "Humanoid",
+    "subcategory": "Quilboar",
     "faction": "Razorfen Tribe",
     "kind": "Common",
     "portrait": "PortraitQuilboarDark",
@@ -13557,8 +13514,8 @@
   },
   {
     "name": "Razorfen Scarbalde",
-    "category": "Beast",
-    "subcategory": "Boar",
+    "category": "Humanoid",
+    "subcategory": "Quilboar",
     "faction": "Razorfen Tribe",
     "kind": "Common",
     "portrait": "PortraitQuilboarDark",
@@ -13567,8 +13524,8 @@
   },
   {
     "name": "Razorfen Spearhead",
-    "category": "Beast",
-    "subcategory": "Boar",
+    "category": "Humanoid",
+    "subcategory": "Quilboar",
     "kind": "Common",
     "portrait": "PortraitQuilboarDark",
     "vitality": 1.0,
@@ -13576,8 +13533,8 @@
   },
   {
     "name": "Razorfen Stalker",
-    "category": "Beast",
-    "subcategory": "Boar",
+    "category": "Humanoid",
+    "subcategory": "Quilboar",
     "kind": "Common",
     "portrait": "PortraitQuilboarDark",
     "vitality": 1.0,
@@ -13585,8 +13542,8 @@
   },
   {
     "name": "Razormane Stalker",
-    "category": "Beast",
-    "subcategory": "Boar",
+    "category": "Humanoid",
+    "subcategory": "Quilboar",
     "faction": "Razormane Tribe",
     "kind": "Common",
     "portrait": "PortraitQuilboarDark",
@@ -13595,8 +13552,8 @@
   },
   {
     "name": "Razormane Warfrenzy",
-    "category": "Beast",
-    "subcategory": "Boar",
+    "category": "Humanoid",
+    "subcategory": "Quilboar",
     "faction": "Razormane Tribe",
     "kind": "Common",
     "portrait": "PortraitQuilboarDark",
@@ -13605,8 +13562,8 @@
   },
   {
     "name": "Bristleback Geomancer",
-    "category": "Beast",
-    "subcategory": "Boar",
+    "category": "Humanoid",
+    "subcategory": "Quilboar",
     "faction": "Bristleback Tribe",
     "kind": "Common",
     "portrait": "PortraitQuilboarFemale",
@@ -13615,8 +13572,8 @@
   },
   {
     "name": "Bristleback Shaman",
-    "category": "Beast",
-    "subcategory": "Boar",
+    "category": "Humanoid",
+    "subcategory": "Quilboar",
     "kind": "Common",
     "portrait": "PortraitQuilboarFemale",
     "vitality": 1.0,
@@ -13624,8 +13581,8 @@
   },
   {
     "name": "Death's Head Adept",
-    "category": "Beast",
-    "subcategory": "Boar",
+    "category": "Humanoid",
+    "subcategory": "Quilboar",
     "kind": "Common",
     "portrait": "PortraitQuilboarFemale",
     "vitality": 1.0,
@@ -13633,8 +13590,8 @@
   },
   {
     "name": "Death's Head Necromancer",
-    "category": "Beast",
-    "subcategory": "Boar",
+    "category": "Humanoid",
+    "subcategory": "Quilboar",
     "kind": "Common",
     "portrait": "PortraitQuilboarFemale",
     "vitality": 1.0,
@@ -13642,8 +13599,8 @@
   },
   {
     "name": "Death's Head Sage",
-    "category": "Beast",
-    "subcategory": "Boar",
+    "category": "Humanoid",
+    "subcategory": "Quilboar",
     "kind": "Common",
     "portrait": "PortraitQuilboarFemale",
     "vitality": 1.0,
@@ -13651,8 +13608,8 @@
   },
   {
     "name": "Death's Head Seer",
-    "category": "Beast",
-    "subcategory": "Boar",
+    "category": "Humanoid",
+    "subcategory": "Quilboar",
     "kind": "Common",
     "portrait": "PortraitQuilboarFemale",
     "vitality": 1.0,
@@ -13660,8 +13617,8 @@
   },
   {
     "name": "Razorfen Geomagus",
-    "category": "Beast",
-    "subcategory": "Boar",
+    "category": "Humanoid",
+    "subcategory": "Quilboar",
     "kind": "Common",
     "portrait": "PortraitQuilboarFemale",
     "vitality": 1.0,
@@ -13669,8 +13626,8 @@
   },
   {
     "name": "Razorfen Thornbolt",
-    "category": "Beast",
-    "subcategory": "Boar",
+    "category": "Humanoid",
+    "subcategory": "Quilboar",
     "faction": "Razorfen Tribe",
     "kind": "Common",
     "portrait": "PortraitQuilboarFemale",
@@ -13679,8 +13636,8 @@
   },
   {
     "name": "Razormane Geomancer",
-    "category": "Beast",
-    "subcategory": "Boar",
+    "category": "Humanoid",
+    "subcategory": "Quilboar",
     "faction": "Razormane Tribe",
     "kind": "Common",
     "portrait": "PortraitQuilboarFemale",
@@ -13689,8 +13646,8 @@
   },
   {
     "name": "Razormane Seer",
-    "category": "Beast",
-    "subcategory": "Boar",
+    "category": "Humanoid",
+    "subcategory": "Quilboar",
     "faction": "Razormane Tribe",
     "kind": "Common",
     "portrait": "PortraitQuilboarFemale",
@@ -13699,8 +13656,8 @@
   },
   {
     "name": "Roogog",
-    "category": "Beast",
-    "subcategory": "Boar",
+    "category": "Humanoid",
+    "subcategory": "Quilboar",
     "kind": "Elite",
     "portrait": "PortraitQuilboarFemaleAlternate",
     "vitality": 3.0,
@@ -13708,8 +13665,8 @@
   },
   {
     "name": "Roogug",
-    "category": "Beast",
-    "subcategory": "Boar",
+    "category": "Humanoid",
+    "subcategory": "Quilboar",
     "kind": "Elite",
     "portrait": "PortraitQuilboarFemaleAlternate",
     "vitality": 3.0,
@@ -13717,8 +13674,8 @@
   },
   {
     "name": "Bristleback Thornweaver",
-    "category": "Beast",
-    "subcategory": "Boar",
+    "category": "Humanoid",
+    "subcategory": "Quilboar",
     "faction": "Bristleback Tribe",
     "kind": "Common",
     "portrait": "PortraitQuilboarFemaleAlternate",
@@ -13727,17 +13684,17 @@
   },
   {
     "name": "Geolord Mottle",
-    "category": "Beast",
-    "subcategory": "Boar",
-    "kind": "Common",
+    "category": "Humanoid",
+    "subcategory": "Quilboar",
+    "kind": "Rare",
     "portrait": "PortraitQuilboarFemaleAlternate",
-    "vitality": 1.0,
+    "vitality": 2.0,
     "abilities": {}
   },
   {
     "name": "Geomancer Acolyte",
-    "category": "Beast",
-    "subcategory": "Boar",
+    "category": "Humanoid",
+    "subcategory": "Quilboar",
     "kind": "Common",
     "portrait": "PortraitQuilboarFemaleAlternate",
     "vitality": 1.0,
@@ -13745,8 +13702,8 @@
   },
   {
     "name": "Razorfen Dustweaver",
-    "category": "Beast",
-    "subcategory": "Boar",
+    "category": "Humanoid",
+    "subcategory": "Quilboar",
     "kind": "Common",
     "portrait": "PortraitQuilboarFemaleAlternate",
     "vitality": 1.0,
@@ -13754,8 +13711,8 @@
   },
   {
     "name": "Razorfen Earthbraker",
-    "category": "Beast",
-    "subcategory": "Boar",
+    "category": "Humanoid",
+    "subcategory": "Quilboar",
     "kind": "Common",
     "portrait": "PortraitQuilboarFemaleAlternate",
     "vitality": 1.0,
@@ -13763,8 +13720,8 @@
   },
   {
     "name": "Razorfen Stonechanter",
-    "category": "Beast",
-    "subcategory": "Boar",
+    "category": "Humanoid",
+    "subcategory": "Quilboar",
     "faction": "Razorfen Tribe",
     "kind": "Common",
     "portrait": "PortraitQuilboarFemaleAlternate",
@@ -13773,8 +13730,8 @@
   },
   {
     "name": "Razorfen Totemic",
-    "category": "Beast",
-    "subcategory": "Boar",
+    "category": "Humanoid",
+    "subcategory": "Quilboar",
     "kind": "Common",
     "portrait": "PortraitQuilboarFemaleAlternate",
     "vitality": 1.0,
@@ -13782,8 +13739,8 @@
   },
   {
     "name": "Razormane Mystic",
-    "category": "Beast",
-    "subcategory": "Boar",
+    "category": "Humanoid",
+    "subcategory": "Quilboar",
     "faction": "Razormane Tribe",
     "kind": "Common",
     "portrait": "PortraitQuilboarFemaleAlternate",
@@ -13792,8 +13749,8 @@
   },
   {
     "name": "Bristleback Hunter",
-    "category": "Beast",
-    "subcategory": "Boar",
+    "category": "Humanoid",
+    "subcategory": "Quilboar",
     "faction": "Bristleback Tribe",
     "kind": "Common",
     "portrait": "PortraitQuilboarMale",
@@ -13802,8 +13759,8 @@
   },
   {
     "name": "Bristleback Interloper",
-    "category": "Beast",
-    "subcategory": "Boar",
+    "category": "Humanoid",
+    "subcategory": "Quilboar",
     "kind": "Common",
     "portrait": "PortraitQuilboarMale",
     "vitality": 1.0,
@@ -13811,8 +13768,8 @@
   },
   {
     "name": "Bristleback Quilboar",
-    "category": "Beast",
-    "subcategory": "Boar",
+    "category": "Humanoid",
+    "subcategory": "Quilboar",
     "kind": "Common",
     "portrait": "PortraitQuilboarMale",
     "vitality": 1.0,
@@ -13820,8 +13777,8 @@
   },
   {
     "name": "Bristleback Water Seeker",
-    "category": "Beast",
-    "subcategory": "Boar",
+    "category": "Humanoid",
+    "subcategory": "Quilboar",
     "faction": "Bristleback Tribe",
     "kind": "Common",
     "portrait": "PortraitQuilboarMale",
@@ -13830,8 +13787,8 @@
   },
   {
     "name": "Razorfen Beast Stalker",
-    "category": "Beast",
-    "subcategory": "Boar",
+    "category": "Humanoid",
+    "subcategory": "Quilboar",
     "kind": "Common",
     "portrait": "PortraitQuilboarMale",
     "vitality": 1.0,
@@ -13839,8 +13796,8 @@
   },
   {
     "name": "Razorfen Beast Trainer",
-    "category": "Beast",
-    "subcategory": "Boar",
+    "category": "Humanoid",
+    "subcategory": "Quilboar",
     "kind": "Common",
     "portrait": "PortraitQuilboarMale",
     "vitality": 1.0,
@@ -13848,8 +13805,8 @@
   },
   {
     "name": "Razorfen Beastmaster",
-    "category": "Beast",
-    "subcategory": "Boar",
+    "category": "Humanoid",
+    "subcategory": "Quilboar",
     "kind": "Common",
     "portrait": "PortraitQuilboarMale",
     "vitality": 1.0,
@@ -13857,8 +13814,8 @@
   },
   {
     "name": "Razorfen Kraulshaper",
-    "category": "Beast",
-    "subcategory": "Boar",
+    "category": "Humanoid",
+    "subcategory": "Quilboar",
     "faction": "Razorfen Tribe",
     "kind": "Common",
     "portrait": "PortraitQuilboarMale",
@@ -13867,8 +13824,8 @@
   },
   {
     "name": "Razormane Battleguard",
-    "category": "Beast",
-    "subcategory": "Boar",
+    "category": "Humanoid",
+    "subcategory": "Quilboar",
     "faction": "Razormane Tribe",
     "kind": "Common",
     "portrait": "PortraitQuilboarMale",
@@ -13877,8 +13834,8 @@
   },
   {
     "name": "Razormane Defender",
-    "category": "Beast",
-    "subcategory": "Boar",
+    "category": "Humanoid",
+    "subcategory": "Quilboar",
     "faction": "Razormane Tribe",
     "kind": "Common",
     "portrait": "PortraitQuilboarMale",
@@ -13887,8 +13844,8 @@
   },
   {
     "name": "Razormane Dustrunner",
-    "category": "Beast",
-    "subcategory": "Boar",
+    "category": "Humanoid",
+    "subcategory": "Quilboar",
     "faction": "Razormane Tribe",
     "kind": "Common",
     "portrait": "PortraitQuilboarMale",
@@ -13897,8 +13854,8 @@
   },
   {
     "name": "Razormane Hunter",
-    "category": "Beast",
-    "subcategory": "Boar",
+    "category": "Humanoid",
+    "subcategory": "Quilboar",
     "faction": "Razormane Tribe",
     "kind": "Common",
     "portrait": "PortraitQuilboarMale",
@@ -13907,8 +13864,8 @@
   },
   {
     "name": "Razormane Pathfinder",
-    "category": "Beast",
-    "subcategory": "Boar",
+    "category": "Humanoid",
+    "subcategory": "Quilboar",
     "faction": "Razormane Tribe",
     "kind": "Common",
     "portrait": "PortraitQuilboarMale",
@@ -13917,8 +13874,8 @@
   },
   {
     "name": "Razormane Scout",
-    "category": "Beast",
-    "subcategory": "Boar",
+    "category": "Humanoid",
+    "subcategory": "Quilboar",
     "faction": "Razormane Tribe",
     "kind": "Common",
     "portrait": "PortraitQuilboarMale",
@@ -13927,8 +13884,8 @@
   },
   {
     "name": "Withered Spearhide",
-    "category": "Beast",
-    "subcategory": "Boar",
+    "category": "Humanoid",
+    "subcategory": "Quilboar",
     "kind": "Common",
     "portrait": "PortraitQuilboarUndead",
     "vitality": 1.0,
@@ -13936,8 +13893,8 @@
   },
   {
     "name": "Withered Quilguard",
-    "category": "Beast",
-    "subcategory": "Boar",
+    "category": "Humanoid",
+    "subcategory": "Quilboar",
     "kind": "Common",
     "portrait": "PortraitQuilboarUndeadArmored",
     "vitality": 1.0,
@@ -13945,8 +13902,8 @@
   },
   {
     "name": "Withered Reaver",
-    "category": "Beast",
-    "subcategory": "Boar",
+    "category": "Humanoid",
+    "subcategory": "Quilboar",
     "kind": "Common",
     "portrait": "PortraitQuilboarUndeadArmored",
     "vitality": 1.0,
@@ -13954,8 +13911,8 @@
   },
   {
     "name": "Withered Warrior",
-    "category": "Beast",
-    "subcategory": "Boar",
+    "category": "Humanoid",
+    "subcategory": "Quilboar",
     "kind": "Common",
     "portrait": "PortraitQuilboarUndeadArmored",
     "vitality": 1.0,
@@ -17902,7 +17859,7 @@
     "subcategory": "Trogg",
     "kind": "Rare",
     "portrait": "PortraitTrogg",
-    "vitality": 1.0,
+    "vitality": 2.0,
     "abilities": {}
   },
   {
@@ -18810,7 +18767,6 @@
   {
     "name": "Baron Aquanis",
     "category": "Elemental",
-    "subcategory": "Elemental",
     "kind": "Elite",
     "portrait": "PortraitWaterElemental",
     "vitality": 3.0,
@@ -18819,7 +18775,6 @@
   {
     "name": "Hydrospawn",
     "category": "Elemental",
-    "subcategory": "Elemental",
     "kind": "Elite",
     "portrait": "PortraitWaterElemental",
     "vitality": 3.0,
@@ -18828,7 +18783,6 @@
   {
     "name": "Aqua Guardian",
     "category": "Elemental",
-    "subcategory": "Elemental",
     "kind": "Common",
     "portrait": "PortraitWaterElemental",
     "vitality": 1.0,
@@ -18837,7 +18791,6 @@
   {
     "name": "Befouled Water Elemental",
     "category": "Elemental",
-    "subcategory": "Elemental",
     "kind": "Common",
     "portrait": "PortraitWaterElemental",
     "vitality": 1.0,
@@ -18846,7 +18799,6 @@
   {
     "name": "Cresting Exile",
     "category": "Elemental",
-    "subcategory": "Elemental",
     "kind": "Common",
     "portrait": "PortraitWaterElemental",
     "vitality": 1.0,
@@ -18855,7 +18807,6 @@
   {
     "name": "Sea Elemental",
     "category": "Elemental",
-    "subcategory": "Elemental",
     "kind": "Common",
     "portrait": "PortraitWaterElemental",
     "vitality": 1.0,
@@ -18864,7 +18815,6 @@
   {
     "name": "Watery Invader",
     "category": "Elemental",
-    "subcategory": "Elemental",
     "kind": "Common",
     "portrait": "PortraitWaterElemental",
     "vitality": 1.0,
@@ -20135,9 +20085,9 @@
     "name": "Zalazane",
     "category": "Humanoid",
     "subcategory": "Human",
-    "kind": "Common",
+    "kind": "Elite",
     "portrait": "PortraitZalazane",
-    "vitality": 1.0,
+    "vitality": 2.0,
     "abilities": {}
   },
   {
@@ -20178,7 +20128,7 @@
   },
   {
     "name": "Zhevra Charger",
-    "category": "Humanoid",
+    "category": "Beast",
     "subcategory": "Human",
     "kind": "Common",
     "portrait": "PortraitZhevra",
@@ -20187,7 +20137,7 @@
   },
   {
     "name": "Zhevra Courser",
-    "category": "Humanoid",
+    "category": "Beast",
     "subcategory": "Human",
     "kind": "Common",
     "portrait": "PortraitZhevra",
@@ -20196,7 +20146,7 @@
   },
   {
     "name": "Zhevra Runner",
-    "category": "Humanoid",
+    "category": "Beast",
     "subcategory": "Human",
     "kind": "Common",
     "portrait": "PortraitZhevra",
