@@ -21,7 +21,7 @@ public class GeneralDrop
     public string item;
 
     //Rarity of this type of cloth (1 - 100)
-    public int rarity;
+    public double rarity;
 
     //Required enemy category for this cloth item to drop
     public string category;
@@ -37,6 +37,9 @@ public class GeneralDrop
 
     //This indicates maximum yield of cloth per one kill
     public int dropCount;
+
+    //Tags help program choose specific drops for specific occasions
+    public List<string> tags;
 
     //Currently opened cloth
     public static GeneralDrop generalDrop;

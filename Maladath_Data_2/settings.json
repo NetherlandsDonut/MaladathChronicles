@@ -1,15 +1,15 @@
 {
   "selectedRealm": "Whitemane",
   "selectedRealmRanking": "Whitemane",
-  "selectedCharacter": "Valerie",
+  "selectedCharacter": "Kha'ma",
   "shadows": {
     "value": "True"
   },
   "pixelPerfectVision": {
-    "value": "True"
+    "value": "False"
   },
   "music": {
-    "value": "False"
+    "value": "True"
   },
   "soundEffects": {
     "value": "True"

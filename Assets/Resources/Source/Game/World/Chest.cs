@@ -34,6 +34,33 @@ public class Chest
         else if (dropGreen.Count > 0) chest.inventory.AddItem(dropGreen[random.Next(dropGreen.Count)].CopyItem());
         else if (dropWhite.Count > 0) chest.inventory.AddItem(dropWhite[random.Next(dropWhite.Count)].CopyItem());
         chest.inventory.items.ForEach(x => x.SetRandomEnchantment());
+        var dropsWithinLevelRange = GeneralDrop.generalDrops.FindAll(x => x.dropStart <= area.recommendedLevel && x.dropEnd >= area.recommendedLevel);
+        if (dropsWithinLevelRange.Count > 0)
+        {
+            dropsWithinLevelRange.Shuffle();
+            var find = dropsWithinLevelRange.Find(x => x.tags != null && x.tags.Contains("CommonMaterial"));
+            if (find != null) chest.inventory.AddItem(Item.items.Find(x => x.name == find.item).CopyItem(random.Next(1, find.dropCount + 1)));
+            if (Roll(50))
+            {
+                find = dropsWithinLevelRange.Find(x => x.tags != null && x.tags.Contains("RareMaterial"));
+                if (find != null) chest.inventory.AddItem(Item.items.Find(x => x.name == find.item).CopyItem(random.Next(1, find.dropCount + 1)));
+            }
+            else
+            {
+                find = dropsWithinLevelRange.FindLast(x => x.tags != null && x.tags.Contains("CommonMaterial"));
+                if (find != null) chest.inventory.AddItem(Item.items.Find(x => x.name == find.item).CopyItem(random.Next(1, find.dropCount + 1)));
+            }
+            if (Roll(25))
+            {
+                find = dropsWithinLevelRange.Find(x => x.tags != null && x.tags.Contains("Potion"));
+                if (find != null) chest.inventory.AddItem(Item.items.Find(x => x.name == find.item).CopyItem(random.Next(1, find.dropCount + 1)));
+            }
+            else
+            {
+                find = dropsWithinLevelRange.Find(x => x.tags != null && x.tags.Contains("Scroll"));
+                if (find != null) chest.inventory.AddItem(Item.items.Find(x => x.name == find.item).CopyItem(random.Next(1, find.dropCount + 1)));
+            }
+        }
         return chest;
     }
 
@@ -46,8 +73,8 @@ public class Chest
         chest.GetComponent<Highlightable>().Initialise(null,
             (h) =>
             {
-                if (currentSave.lastChest == null || currentSave.lastChest.area != currentSave.currentSite)
-                    currentSave.lastChest = GenerateChest(SiteHostileArea.areas.Find(x => x.name == currentSave.currentSite));
+                if (!currentSave.openedChests.ContainsKey(currentSave.currentSite))
+                    currentSave.openedChests.Add(currentSave.currentSite, GenerateChest(SiteHostileArea.areas.Find(x => x.name == currentSave.currentSite)));
                 Sound.PlaySound("DesktopOpenChest");
                 SpawnDesktopBlueprint("ChestLoot");
             },

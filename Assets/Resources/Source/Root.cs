@@ -59,7 +59,16 @@ public static class Root
     public static Desktop CDesktop, LBDesktop;
     public static List<Dictionary<string, string>> triggersCopy, effectsCopy;
 
-    public static List<T> Shuffle<T>(this IList<T> list) => list.OrderBy(x => random.Next(0, 4096)).ToList();
+    public static void Shuffle<T>(this IList<T> list)
+    {
+        for (int i = list.Count; i > 1;)
+        {
+            int rnd = random.Next(i--);
+            T value = list[rnd];
+            list[rnd] = list[i];
+            list[i] = value;
+        }
+    }
 
     public static Dictionary<T, U> Merge<T, U>(this Dictionary<T, U> A, Dictionary<T, U> B)
     {

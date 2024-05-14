@@ -32,6 +32,7 @@ public class SaveGame
             elitesKilled = new(),
             unlockedAreas = new(),
             vendorStock = new(),
+            openedChests = new(),
             startDate = DateTime.Now,
             player = new Entity
             (
@@ -161,6 +162,9 @@ public class SaveGame
     //Site at which player currently resides
     public string currentSite;
 
+    //All chests opened in the game are saved here
+    public Dictionary<string, Chest> openedChests;
+
     //Stores progress done while exploring sites in the world
     public Dictionary<string, int> siteProgress;
 
@@ -182,9 +186,6 @@ public class SaveGame
 
     //Stores information about all unlocked areas in instances
     public List<string> unlockedAreas;
-
-    //Last opened chest is always saved here
-    public Chest lastChest;
 
     #endregion
 

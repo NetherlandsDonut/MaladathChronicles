@@ -5,7 +5,11 @@
     "category": "Humanoid",
     "dropStart": 5,
     "dropEnd": 20,
-    "dropCount": 2
+    "dropCount": 2,
+    "tags": [
+      "Cloth",
+      "CommonMaterial"
+    ]
   },
   {
     "item": "Wool Cloth",
@@ -13,7 +17,11 @@
     "category": "Humanoid",
     "dropStart": 16,
     "dropEnd": 30,
-    "dropCount": 2
+    "dropCount": 2,
+    "tags": [
+      "Cloth",
+      "CommonMaterial"
+    ]
   },
   {
     "item": "Silk Cloth",
@@ -21,7 +29,11 @@
     "category": "Humanoid",
     "dropStart": 28,
     "dropEnd": 40,
-    "dropCount": 2
+    "dropCount": 2,
+    "tags": [
+      "Cloth",
+      "CommonMaterial"
+    ]
   },
   {
     "item": "Mageweave Cloth",
@@ -29,7 +41,11 @@
     "category": "Humanoid",
     "dropStart": 38,
     "dropEnd": 50,
-    "dropCount": 2
+    "dropCount": 2,
+    "tags": [
+      "Cloth",
+      "CommonMaterial"
+    ]
   },
   {
     "item": "Runecloth",
@@ -37,7 +53,11 @@
     "category": "Humanoid",
     "dropStart": 50,
     "dropEnd": 60,
-    "dropCount": 2
+    "dropCount": 2,
+    "tags": [
+      "Cloth",
+      "CommonMaterial"
+    ]
   },
   {
     "item": "Felcloth",
@@ -45,7 +65,11 @@
     "category": "Demon",
     "dropStart": 50,
     "dropEnd": 60,
-    "dropCount": 1
+    "dropCount": 1,
+    "tags": [
+      "Cloth",
+      "RareMaterial"
+    ]
   },
   {
     "requiredProfession": "Skinning",
@@ -55,7 +79,10 @@
     "category": "Beast",
     "dropStart": 6,
     "dropEnd": 13,
-    "dropCount": 2
+    "dropCount": 2,
+    "tags": [
+      "Leather"
+    ]
   },
   {
     "requiredProfession": "Skinning",
@@ -65,7 +92,11 @@
     "category": "Beast",
     "dropStart": 6,
     "dropEnd": 17,
-    "dropCount": 2
+    "dropCount": 2,
+    "tags": [
+      "Leather",
+      "CommonMaterial"
+    ]
   },
   {
     "requiredProfession": "Skinning",
@@ -75,7 +106,11 @@
     "category": "Beast",
     "dropStart": 11,
     "dropEnd": 25,
-    "dropCount": 2
+    "dropCount": 2,
+    "tags": [
+      "Leather",
+      "CommonMaterial"
+    ]
   },
   {
     "requiredProfession": "Skinning",
@@ -85,7 +120,11 @@
     "category": "Beast",
     "dropStart": 16,
     "dropEnd": 35,
-    "dropCount": 2
+    "dropCount": 2,
+    "tags": [
+      "Leather",
+      "CommonMaterial"
+    ]
   },
   {
     "requiredProfession": "Skinning",
@@ -95,7 +134,11 @@
     "category": "Beast",
     "dropStart": 16,
     "dropEnd": 35,
-    "dropCount": 2
+    "dropCount": 2,
+    "tags": [
+      "Leather",
+      "CommonMaterial"
+    ]
   },
   {
     "requiredProfession": "Skinning",
@@ -105,7 +148,11 @@
     "category": "Beast",
     "dropStart": 25,
     "dropEnd": 45,
-    "dropCount": 2
+    "dropCount": 2,
+    "tags": [
+      "Leather",
+      "CommonMaterial"
+    ]
   },
   {
     "requiredProfession": "Skinning",
@@ -115,7 +162,11 @@
     "category": "Beast",
     "dropStart": 25,
     "dropEnd": 45,
-    "dropCount": 2
+    "dropCount": 2,
+    "tags": [
+      "Leather",
+      "CommonMaterial"
+    ]
   },
   {
     "requiredProfession": "Skinning",
@@ -125,7 +176,11 @@
     "category": "Beast",
     "dropStart": 36,
     "dropEnd": 60,
-    "dropCount": 2
+    "dropCount": 2,
+    "tags": [
+      "Leather",
+      "CommonMaterial"
+    ]
   },
   {
     "requiredProfession": "Skinning",
@@ -135,7 +190,11 @@
     "category": "Beast",
     "dropStart": 40,
     "dropEnd": 60,
-    "dropCount": 2
+    "dropCount": 2,
+    "tags": [
+      "Leather",
+      "CommonMaterial"
+    ]
   },
   {
     "requiredProfession": "Skinning",
@@ -145,7 +204,11 @@
     "category": "Beast",
     "dropStart": 46,
     "dropEnd": 60,
-    "dropCount": 2
+    "dropCount": 2,
+    "tags": [
+      "Leather",
+      "CommonMaterial"
+    ]
   },
   {
     "requiredProfession": "Skinning",
@@ -155,75 +218,103 @@
     "category": "Beast",
     "dropStart": 46,
     "dropEnd": 60,
-    "dropCount": 2
+    "dropCount": 2,
+    "tags": [
+      "Leather",
+      "CommonMaterial"
+    ]
   },
   {
     "item": "Traveler's Backpack",
-    "rarity": 1,
+    "rarity": 0.5,
     "inclusive": true,
     "dropStart": 46,
     "dropEnd": 60,
-    "dropCount": 1
+    "dropCount": 1,
+    "tags": [
+      "Bag"
+    ]
   },
   {
     "item": "Troll-hide Bag",
-    "rarity": 1,
+    "rarity": 0.5,
     "inclusive": true,
     "dropStart": 39,
     "dropEnd": 53,
-    "dropCount": 1
+    "dropCount": 1,
+    "tags": [
+      "Bag"
+    ]
   },
   {
     "item": "Journeyman's Backpack",
-    "rarity": 1,
+    "rarity": 0.5,
     "inclusive": true,
     "dropStart": 39,
     "dropEnd": 60,
-    "dropCount": 1
+    "dropCount": 1,
+    "tags": [
+      "Bag"
+    ]
   },
   {
     "item": "Large Knapsack",
-    "rarity": 1,
+    "rarity": 0.5,
     "inclusive": true,
     "dropStart": 30,
     "dropEnd": 49,
-    "dropCount": 1
+    "dropCount": 1,
+    "tags": [
+      "Bag"
+    ]
   },
   {
     "item": "Large Blue Sack",
-    "rarity": 1,
+    "rarity": 0.5,
     "inclusive": true,
     "dropStart": 19,
     "dropEnd": 32,
-    "dropCount": 1
+    "dropCount": 1,
+    "tags": [
+      "Bag"
+    ]
   },
   {
     "item": "Large Red Sack",
-    "rarity": 1,
+    "rarity": 0.5,
     "inclusive": true,
     "dropStart": 19,
     "dropEnd": 32,
-    "dropCount": 1
+    "dropCount": 1,
+    "tags": [
+      "Bag"
+    ]
   },
   {
     "item": "Large Brown Sack",
-    "rarity": 1,
+    "rarity": 0.5,
     "inclusive": true,
     "dropStart": 19,
     "dropEnd": 32,
-    "dropCount": 1
+    "dropCount": 1,
+    "tags": [
+      "Bag"
+    ]
   },
   {
     "item": "Large Green Sack",
-    "rarity": 1,
+    "rarity": 0.5,
     "inclusive": true,
     "dropStart": 19,
     "dropEnd": 32,
-    "dropCount": 1
+    "dropCount": 1,
+    "tags": [
+      "Bag"
+    ]
   },
   {
     "item": "Blue Leather Bag",
-    "rarity": 1,
+    "rarity": 0.5,
     "inclusive": true,
     "dropStart": 9,
     "dropEnd": 25,
@@ -231,47 +322,62 @@
   },
   {
     "item": "Red Leather Bag",
-    "rarity": 1,
+    "rarity": 0.5,
     "inclusive": true,
     "dropStart": 9,
     "dropEnd": 25,
-    "dropCount": 1
+    "dropCount": 1,
+    "tags": [
+      "Bag"
+    ]
   },
   {
     "item": "Green Leather Bag",
-    "rarity": 1,
+    "rarity": 0.5,
     "inclusive": true,
     "dropStart": 9,
     "dropEnd": 25,
-    "dropCount": 1
+    "dropCount": 1,
+    "tags": [
+      "Bag"
+    ]
   },
   {
     "item": "White Leather Bag",
-    "rarity": 1,
+    "rarity": 0.5,
     "inclusive": true,
     "dropStart": 9,
     "dropEnd": 25,
-    "dropCount": 1
+    "dropCount": 1,
+    "tags": [
+      "Bag"
+    ]
   },
   {
     "item": "Small Red Pouch",
-    "rarity": 1,
+    "rarity": 0.5,
     "inclusive": true,
     "dropStart": 1,
     "dropEnd": 17,
-    "dropCount": 1
+    "dropCount": 1,
+    "tags": [
+      "Bag"
+    ]
   },
   {
     "item": "Small Blue Pouch",
-    "rarity": 1,
+    "rarity": 0.5,
     "inclusive": true,
     "dropStart": 1,
     "dropEnd": 17,
-    "dropCount": 1
+    "dropCount": 1,
+    "tags": [
+      "Bag"
+    ]
   },
   {
     "item": "Small Brown Pouch",
-    "rarity": 1,
+    "rarity": 0.5,
     "inclusive": true,
     "dropStart": 1,
     "dropEnd": 17,
@@ -279,19 +385,25 @@
   },
   {
     "item": "Small Green Pouch",
-    "rarity": 1,
+    "rarity": 0.5,
     "inclusive": true,
     "dropStart": 1,
     "dropEnd": 17,
-    "dropCount": 1
+    "dropCount": 1,
+    "tags": [
+      "Bag"
+    ]
   },
   {
     "item": "Small Black Pouch",
-    "rarity": 1,
+    "rarity": 0.5,
     "inclusive": true,
     "dropStart": 1,
     "dropEnd": 17,
-    "dropCount": 1
+    "dropCount": 1,
+    "tags": [
+      "Bag"
+    ]
   },
   {
     "item": "Minor Healing Potion",
@@ -299,7 +411,10 @@
     "inclusive": true,
     "dropStart": 5,
     "dropEnd": 12,
-    "dropCount": 1
+    "dropCount": 1,
+    "tags": [
+      "Potion"
+    ]
   },
   {
     "item": "Lesser Healing Potion",
@@ -307,7 +422,10 @@
     "inclusive": true,
     "dropStart": 13,
     "dropEnd": 24,
-    "dropCount": 1
+    "dropCount": 1,
+    "tags": [
+      "Potion"
+    ]
   },
   {
     "item": "Healing Potion",
@@ -315,7 +433,10 @@
     "inclusive": true,
     "dropStart": 25,
     "dropEnd": 36,
-    "dropCount": 1
+    "dropCount": 1,
+    "tags": [
+      "Potion"
+    ]
   },
   {
     "item": "Greater Healing Potion",
@@ -323,7 +444,10 @@
     "inclusive": true,
     "dropStart": 37,
     "dropEnd": 48,
-    "dropCount": 1
+    "dropCount": 1,
+    "tags": [
+      "Potion"
+    ]
   },
   {
     "item": "Major Healing Potion",
@@ -331,7 +455,10 @@
     "inclusive": true,
     "dropStart": 49,
     "dropEnd": 60,
-    "dropCount": 1
+    "dropCount": 1,
+    "tags": [
+      "Potion"
+    ]
   },
   {
     "item": "Minor Mana Potion",
@@ -339,7 +466,10 @@
     "inclusive": true,
     "dropStart": 5,
     "dropEnd": 12,
-    "dropCount": 1
+    "dropCount": 1,
+    "tags": [
+      "Potion"
+    ]
   },
   {
     "item": "Lesser Mana Potion",
@@ -347,7 +477,10 @@
     "inclusive": true,
     "dropStart": 13,
     "dropEnd": 24,
-    "dropCount": 1
+    "dropCount": 1,
+    "tags": [
+      "Potion"
+    ]
   },
   {
     "item": "Mana Potion",
@@ -355,7 +488,10 @@
     "inclusive": true,
     "dropStart": 25,
     "dropEnd": 36,
-    "dropCount": 1
+    "dropCount": 1,
+    "tags": [
+      "Potion"
+    ]
   },
   {
     "item": "Greater Mana Potion",
@@ -363,7 +499,10 @@
     "inclusive": true,
     "dropStart": 37,
     "dropEnd": 48,
-    "dropCount": 1
+    "dropCount": 1,
+    "tags": [
+      "Potion"
+    ]
   },
   {
     "item": "Major Mana Potion",
@@ -371,131 +510,179 @@
     "inclusive": true,
     "dropStart": 49,
     "dropEnd": 60,
-    "dropCount": 1
+    "dropCount": 1,
+    "tags": [
+      "Potion"
+    ]
   },
   {
     "item": "Scroll of Spirit",
-    "rarity": 2,
+    "rarity": 1,
     "inclusive": true,
     "dropStart": 5,
     "dropEnd": 15,
-    "dropCount": 1
+    "dropCount": 1,
+    "tags": [
+      "Scroll"
+    ]
   },
   {
     "item": "Scroll of Protection",
-    "rarity": 2,
+    "rarity": 1,
     "inclusive": true,
     "dropStart": 5,
     "dropEnd": 15,
-    "dropCount": 1
+    "dropCount": 1,
+    "tags": [
+      "Scroll"
+    ]
   },
   {
     "item": "Scroll of Intellect",
-    "rarity": 2,
+    "rarity": 1,
     "inclusive": true,
     "dropStart": 10,
     "dropEnd": 20,
-    "dropCount": 1
+    "dropCount": 1,
+    "tags": [
+      "Scroll"
+    ]
   },
   {
     "item": "Scroll of Stamina",
-    "rarity": 2,
+    "rarity": 1,
     "inclusive": true,
     "dropStart": 10,
     "dropEnd": 20,
-    "dropCount": 1
+    "dropCount": 1,
+    "tags": [
+      "Scroll"
+    ]
   },
   {
     "item": "Scroll of Strength",
-    "rarity": 2,
+    "rarity": 1,
     "inclusive": true,
     "dropStart": 15,
     "dropEnd": 25,
-    "dropCount": 1
+    "dropCount": 1,
+    "tags": [
+      "Scroll"
+    ]
   },
   {
     "item": "Scroll of Agility",
-    "rarity": 2,
+    "rarity": 1,
     "inclusive": true,
     "dropStart": 15,
     "dropEnd": 25,
-    "dropCount": 1
+    "dropCount": 1,
+    "tags": [
+      "Scroll"
+    ]
   },
   {
     "item": "Scroll of Spirit II",
-    "rarity": 2,
+    "rarity": 1,
     "inclusive": true,
     "dropStart": 16,
     "dropEnd": 30,
-    "dropCount": 1
+    "dropCount": 1,
+    "tags": [
+      "Scroll"
+    ]
   },
   {
     "item": "Scroll of Protection II",
-    "rarity": 2,
+    "rarity": 1,
     "inclusive": true,
     "dropStart": 16,
     "dropEnd": 30,
-    "dropCount": 1
+    "dropCount": 1,
+    "tags": [
+      "Scroll"
+    ]
   },
   {
     "item": "Scroll of Intellect II",
-    "rarity": 2,
+    "rarity": 1,
     "inclusive": true,
     "dropStart": 21,
     "dropEnd": 35,
-    "dropCount": 1
+    "dropCount": 1,
+    "tags": [
+      "Scroll"
+    ]
   },
   {
     "item": "Scroll of Stamina II",
-    "rarity": 2,
+    "rarity": 1,
     "inclusive": true,
     "dropStart": 21,
     "dropEnd": 35,
-    "dropCount": 1
+    "dropCount": 1,
+    "tags": [
+      "Scroll"
+    ]
   },
   {
     "item": "Scroll of Strength II",
-    "rarity": 2,
+    "rarity": 1,
     "inclusive": true,
     "dropStart": 26,
     "dropEnd": 40,
-    "dropCount": 1
+    "dropCount": 1,
+    "tags": [
+      "Scroll"
+    ]
   },
   {
     "item": "Scroll of Agility II",
-    "rarity": 2,
+    "rarity": 1,
     "inclusive": true,
     "dropStart": 26,
     "dropEnd": 40,
-    "dropCount": 1
+    "dropCount": 1,
+    "tags": [
+      "Scroll"
+    ]
   },
   {
     "item": "Scroll of Spirit III",
-    "rarity": 2,
+    "rarity": 1,
     "inclusive": true,
     "dropStart": 31,
     "dropEnd": 45,
-    "dropCount": 1
+    "dropCount": 1,
+    "tags": [
+      "Scroll"
+    ]
   },
   {
     "item": "Scroll of Protection III",
-    "rarity": 2,
+    "rarity": 1,
     "inclusive": true,
     "dropStart": 31,
     "dropEnd": 45,
-    "dropCount": 1
+    "dropCount": 1,
+    "tags": [
+      "Scroll"
+    ]
   },
   {
     "item": "Scroll of Intellect III",
-    "rarity": 2,
+    "rarity": 1,
     "inclusive": true,
     "dropStart": 36,
     "dropEnd": 50,
-    "dropCount": 1
+    "dropCount": 1,
+    "tags": [
+      "Scroll"
+    ]
   },
   {
     "item": "Scroll of Stamina III",
-    "rarity": 2,
+    "rarity": 1,
     "inclusive": true,
     "dropStart": 36,
     "dropEnd": 50,
@@ -503,23 +690,29 @@
   },
   {
     "item": "Scroll of Strength III",
-    "rarity": 2,
+    "rarity": 1,
     "inclusive": true,
     "dropStart": 41,
     "dropEnd": 55,
-    "dropCount": 1
+    "dropCount": 1,
+    "tags": [
+      "Scroll"
+    ]
   },
   {
     "item": "Scroll of Agility III",
-    "rarity": 2,
+    "rarity": 1,
     "inclusive": true,
     "dropStart": 41,
     "dropEnd": 55,
-    "dropCount": 1
+    "dropCount": 1,
+    "tags": [
+      "Scroll"
+    ]
   },
   {
     "item": "Scroll of Spirit IV",
-    "rarity": 2,
+    "rarity": 1,
     "inclusive": true,
     "dropStart": 46,
     "dropEnd": 60,
@@ -527,42 +720,1022 @@
   },
   {
     "item": "Scroll of Protection IV",
-    "rarity": 2,
+    "rarity": 1,
     "inclusive": true,
     "dropStart": 46,
     "dropEnd": 60,
-    "dropCount": 1
+    "dropCount": 1,
+    "tags": [
+      "Scroll"
+    ]
   },
   {
     "item": "Scroll of Intellect IV",
-    "rarity": 2,
+    "rarity": 1,
     "inclusive": true,
     "dropStart": 51,
     "dropEnd": 60,
-    "dropCount": 1
+    "dropCount": 1,
+    "tags": [
+      "Scroll"
+    ]
   },
   {
     "item": "Scroll of Stamina IV",
-    "rarity": 2,
+    "rarity": 1,
     "inclusive": true,
     "dropStart": 51,
     "dropEnd": 60,
-    "dropCount": 1
+    "dropCount": 1,
+    "tags": [
+      "Scroll"
+    ]
   },
   {
     "item": "Scroll of Strength IV",
-    "rarity": 2,
+    "rarity": 1,
     "inclusive": true,
     "dropStart": 56,
     "dropEnd": 60,
-    "dropCount": 1
+    "dropCount": 1,
+    "tags": [
+      "Scroll"
+    ]
   },
   {
     "item": "Scroll of Agility IV",
-    "rarity": 2,
+    "rarity": 1,
     "inclusive": true,
     "dropStart": 56,
     "dropEnd": 60,
-    "dropCount": 1
+    "dropCount": 1,
+    "tags": [
+      "Scroll"
+    ]
+  },
+  {
+    "requiredProfession": "Mining",
+    "requiredSkill": 1,
+    "item": "Copper Ore",
+    "rarity": 100,
+    "category": "Copper Ore",
+    "dropStart": 1,
+    "dropEnd": 15,
+    "dropCount": 3,
+    "tags": [
+      "Ore",
+      "CommonMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Mining",
+    "requiredSkill": 1,
+    "item": "Rough Stone",
+    "rarity": 66,
+    "category": "Copper Ore",
+    "dropStart": 1,
+    "dropEnd": 15,
+    "dropCount": 2,
+    "tags": [
+      "Stone",
+      "CommonMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Mining",
+    "requiredSkill": 1,
+    "item": "Malachite",
+    "rarity": 1,
+    "category": "Copper Ore",
+    "dropStart": 1,
+    "dropEnd": 15,
+    "dropCount": 1,
+    "tags": [
+      "Gem",
+      "RareMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Mining",
+    "requiredSkill": 1,
+    "item": "Tigerseye",
+    "rarity": 1,
+    "category": "Copper Ore",
+    "dropStart": 1,
+    "dropEnd": 15,
+    "dropCount": 1,
+    "tags": [
+      "Gem",
+      "RareMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Mining",
+    "requiredSkill": 1,
+    "item": "Shadowgem",
+    "rarity": 1,
+    "category": "Copper Ore",
+    "dropStart": 1,
+    "dropEnd": 15,
+    "dropCount": 1,
+    "tags": [
+      "Gem",
+      "RareMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Mining",
+    "requiredSkill": 65,
+    "item": "Tin Ore",
+    "rarity": 100,
+    "category": "Tin Ore",
+    "dropStart": 16,
+    "dropEnd": 25,
+    "dropCount": 3,
+    "tags": [
+      "Ore",
+      "CommonMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Mining",
+    "requiredSkill": 65,
+    "item": "Coarse Stone",
+    "rarity": 66,
+    "category": "Tin Ore",
+    "dropStart": 16,
+    "dropEnd": 25,
+    "dropCount": 2,
+    "tags": [
+      "Stone",
+      "CommonMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Mining",
+    "requiredSkill": 65,
+    "item": "Jade",
+    "rarity": 1,
+    "category": "Tin Ore",
+    "dropStart": 16,
+    "dropEnd": 25,
+    "dropCount": 1,
+    "tags": [
+      "Gem",
+      "RareMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Mining",
+    "requiredSkill": 65,
+    "item": "Lesser Moonstone",
+    "rarity": 1,
+    "category": "Tin Ore",
+    "dropStart": 16,
+    "dropEnd": 25,
+    "dropCount": 1,
+    "tags": [
+      "Gem",
+      "RareMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Mining",
+    "requiredSkill": 65,
+    "item": "Moss Agate",
+    "rarity": 1,
+    "category": "Tin Ore",
+    "dropStart": 16,
+    "dropEnd": 25,
+    "dropCount": 1,
+    "tags": [
+      "Gem",
+      "RareMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Mining",
+    "requiredSkill": 65,
+    "item": "Shadowgem",
+    "rarity": 1,
+    "category": "Tin Ore",
+    "dropStart": 16,
+    "dropEnd": 25,
+    "dropCount": 1,
+    "tags": [
+      "Gem",
+      "RareMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Mining",
+    "requiredSkill": 75,
+    "item": "Silver Ore",
+    "rarity": 100,
+    "category": "Silver Ore",
+    "dropStart": 16,
+    "dropEnd": 25,
+    "dropCount": 2,
+    "tags": [
+      "Ore",
+      "RareMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Mining",
+    "requiredSkill": 75,
+    "item": "Lesser Moonstone",
+    "rarity": 2,
+    "category": "Silver Ore",
+    "dropStart": 16,
+    "dropEnd": 25,
+    "dropCount": 2,
+    "tags": [
+      "Gem",
+      "RareMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Mining",
+    "requiredSkill": 75,
+    "item": "Moss Agate",
+    "rarity": 2,
+    "category": "Silver Ore",
+    "dropStart": 16,
+    "dropEnd": 25,
+    "dropCount": 2,
+    "tags": [
+      "Gem",
+      "RareMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Mining",
+    "requiredSkill": 75,
+    "item": "Shadowgem",
+    "rarity": 2,
+    "category": "Silver Ore",
+    "dropStart": 16,
+    "dropEnd": 25,
+    "dropCount": 2,
+    "tags": [
+      "Gem",
+      "RareMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Mining",
+    "requiredSkill": 125,
+    "item": "Iron Ore",
+    "rarity": 100,
+    "category": "Iron Ore",
+    "dropStart": 26,
+    "dropEnd": 40,
+    "dropCount": 3,
+    "tags": [
+      "Ore",
+      "CommonMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Mining",
+    "requiredSkill": 125,
+    "item": "Heavy Stone",
+    "rarity": 66,
+    "category": "Iron Ore",
+    "dropStart": 26,
+    "dropEnd": 40,
+    "dropCount": 2,
+    "tags": [
+      "Stone",
+      "CommonMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Mining",
+    "requiredSkill": 125,
+    "item": "Aquamarine",
+    "rarity": 1,
+    "category": "Iron Ore",
+    "dropStart": 26,
+    "dropEnd": 40,
+    "dropCount": 1,
+    "tags": [
+      "Gem",
+      "RareMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Mining",
+    "requiredSkill": 125,
+    "item": "Citrine",
+    "rarity": 1,
+    "category": "Iron Ore",
+    "dropStart": 26,
+    "dropEnd": 40,
+    "dropCount": 1,
+    "tags": [
+      "Gem",
+      "RareMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Mining",
+    "requiredSkill": 125,
+    "item": "Jade",
+    "rarity": 1,
+    "category": "Iron Ore",
+    "dropStart": 26,
+    "dropEnd": 40,
+    "dropCount": 1,
+    "tags": [
+      "Gem",
+      "RareMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Mining",
+    "requiredSkill": 125,
+    "item": "Lesser Moonstone",
+    "rarity": 1,
+    "category": "Iron Ore",
+    "dropStart": 26,
+    "dropEnd": 40,
+    "dropCount": 1,
+    "tags": [
+      "Gem",
+      "RareMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Mining",
+    "requiredSkill": 155,
+    "item": "Gold Ore",
+    "rarity": 100,
+    "category": "Gold Ore",
+    "dropStart": 26,
+    "dropEnd": 40,
+    "dropCount": 2,
+    "tags": [
+      "Ore",
+      "RareMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Mining",
+    "requiredSkill": 155,
+    "item": "Citrine",
+    "rarity": 2,
+    "category": "Gold Ore",
+    "dropStart": 26,
+    "dropEnd": 40,
+    "dropCount": 2,
+    "tags": [
+      "Gem",
+      "RareMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Mining",
+    "requiredSkill": 155,
+    "item": "Jade",
+    "rarity": 2,
+    "category": "Gold Ore",
+    "dropStart": 26,
+    "dropEnd": 40,
+    "dropCount": 2,
+    "tags": [
+      "Gem",
+      "RareMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Mining",
+    "requiredSkill": 155,
+    "item": "Lesser Moonstone",
+    "rarity": 2,
+    "category": "Gold Ore",
+    "dropStart": 26,
+    "dropEnd": 40,
+    "dropCount": 2,
+    "tags": [
+      "Gem",
+      "RareMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Mining",
+    "requiredSkill": 175,
+    "item": "Mithril Ore",
+    "rarity": 100,
+    "category": "Mithril Ore",
+    "dropStart": 36,
+    "dropEnd": 50,
+    "dropCount": 3,
+    "tags": [
+      "Ore",
+      "CommonMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Mining",
+    "requiredSkill": 175,
+    "item": "Solid Stone",
+    "rarity": 66,
+    "category": "Mithril Ore",
+    "dropStart": 36,
+    "dropEnd": 50,
+    "dropCount": 2,
+    "tags": [
+      "Stone",
+      "CommonMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Mining",
+    "requiredSkill": 175,
+    "item": "Black Vitriol",
+    "rarity": 1,
+    "category": "Mithril Ore",
+    "dropStart": 36,
+    "dropEnd": 50,
+    "dropCount": 1,
+    "tags": [
+      "Gem",
+      "RareMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Mining",
+    "requiredSkill": 175,
+    "item": "Aquamarine",
+    "rarity": 1,
+    "category": "Mithril Ore",
+    "dropStart": 36,
+    "dropEnd": 50,
+    "dropCount": 1,
+    "tags": [
+      "Gem",
+      "RareMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Mining",
+    "requiredSkill": 175,
+    "item": "Citrine",
+    "rarity": 1,
+    "category": "Mithril Ore",
+    "dropStart": 36,
+    "dropEnd": 50,
+    "dropCount": 1,
+    "tags": [
+      "Gem",
+      "RareMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Mining",
+    "requiredSkill": 175,
+    "item": "Star Ruby",
+    "rarity": 1,
+    "category": "Mithril Ore",
+    "dropStart": 36,
+    "dropEnd": 50,
+    "dropCount": 1,
+    "tags": [
+      "Gem",
+      "RareMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Mining",
+    "requiredSkill": 230,
+    "item": "Truesilver Ore",
+    "rarity": 100,
+    "category": "Truesilver Ore",
+    "dropStart": 36,
+    "dropEnd": 50,
+    "dropCount": 2,
+    "tags": [
+      "Ore",
+      "RareMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Mining",
+    "requiredSkill": 230,
+    "item": "Aquamarine",
+    "rarity": 2,
+    "category": "Truesilver Ore",
+    "dropStart": 36,
+    "dropEnd": 50,
+    "dropCount": 1,
+    "tags": [
+      "Gem",
+      "RareMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Mining",
+    "requiredSkill": 230,
+    "item": "Citrine",
+    "rarity": 2,
+    "category": "Truesilver Ore",
+    "dropStart": 36,
+    "dropEnd": 50,
+    "dropCount": 1,
+    "tags": [
+      "Gem",
+      "RareMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Mining",
+    "requiredSkill": 230,
+    "item": "Star Ruby",
+    "rarity": 2,
+    "category": "Truesilver Ore",
+    "dropStart": 36,
+    "dropEnd": 50,
+    "dropCount": 1,
+    "tags": [
+      "Gem",
+      "RareMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Mining",
+    "requiredSkill": 250,
+    "item": "Thorium Ore",
+    "rarity": 100,
+    "category": "Thorium Ore",
+    "dropStart": 51,
+    "dropEnd": 60,
+    "dropCount": 3,
+    "tags": [
+      "Ore",
+      "CommonMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Mining",
+    "requiredSkill": 250,
+    "item": "Dense Stone",
+    "rarity": 66,
+    "category": "Thorium Ore",
+    "dropStart": 51,
+    "dropEnd": 60,
+    "dropCount": 2,
+    "tags": [
+      "Stone",
+      "CommonMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Mining",
+    "requiredSkill": 250,
+    "item": "Blue Sapphire",
+    "rarity": 1,
+    "category": "Thorium Ore",
+    "dropStart": 51,
+    "dropEnd": 60,
+    "dropCount": 1,
+    "tags": [
+      "Gem",
+      "RareMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Mining",
+    "requiredSkill": 250,
+    "item": "Large Opal",
+    "rarity": 1,
+    "category": "Thorium Ore",
+    "dropStart": 51,
+    "dropEnd": 60,
+    "dropCount": 1,
+    "tags": [
+      "Gem",
+      "RareMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Mining",
+    "requiredSkill": 250,
+    "item": "Star Ruby",
+    "rarity": 1,
+    "category": "Thorium Ore",
+    "dropStart": 51,
+    "dropEnd": 60,
+    "dropCount": 1,
+    "tags": [
+      "Gem",
+      "RareMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Mining",
+    "requiredSkill": 250,
+    "item": "Arcane Crystal",
+    "rarity": 1,
+    "category": "Thorium Ore",
+    "dropStart": 51,
+    "dropEnd": 60,
+    "dropCount": 1,
+    "tags": [
+      "Gem",
+      "RareMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Mining",
+    "requiredSkill": 250,
+    "item": "Azerothian Diamond",
+    "rarity": 1,
+    "category": "Thorium Ore",
+    "dropStart": 51,
+    "dropEnd": 60,
+    "dropCount": 1,
+    "tags": [
+      "Gem",
+      "RareMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Mining",
+    "requiredSkill": 250,
+    "item": "Huge Emerald",
+    "rarity": 1,
+    "category": "Thorium Ore",
+    "dropStart": 51,
+    "dropEnd": 60,
+    "dropCount": 1,
+    "tags": [
+      "Gem",
+      "RareMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Mining",
+    "requiredSkill": 250,
+    "item": "Black Vitriol",
+    "rarity": 1,
+    "category": "Thorium Ore",
+    "dropStart": 51,
+    "dropEnd": 60,
+    "dropCount": 2,
+    "tags": [
+      "Gem",
+      "RareMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Enchanting",
+    "requiredSkill": 1,
+    "item": "Strange Dust",
+    "rarity": 100,
+    "category": "Disenchant Uncommon",
+    "dropStart": 5,
+    "dropEnd": 25,
+    "dropCount": 3,
+    "tags": [
+      "Dust",
+      "CommonMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Enchanting",
+    "requiredSkill": 1,
+    "item": "Soul Dust",
+    "rarity": 100,
+    "category": "Disenchant Uncommon",
+    "dropStart": 26,
+    "dropEnd": 35,
+    "dropCount": 3,
+    "tags": [
+      "Dust",
+      "CommonMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Enchanting",
+    "requiredSkill": 1,
+    "item": "Vision Dust",
+    "rarity": 100,
+    "category": "Disenchant Uncommon",
+    "dropStart": 36,
+    "dropEnd": 45,
+    "dropCount": 3,
+    "tags": [
+      "Dust",
+      "CommonMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Enchanting",
+    "requiredSkill": 1,
+    "item": "Dream Dust",
+    "rarity": 100,
+    "category": "Disenchant Uncommon",
+    "dropStart": 46,
+    "dropEnd": 55,
+    "dropCount": 3,
+    "tags": [
+      "Dust",
+      "CommonMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Enchanting",
+    "requiredSkill": 1,
+    "item": "Illusion Dust",
+    "rarity": 100,
+    "category": "Disenchant Uncommon",
+    "dropStart": 56,
+    "dropEnd": 60,
+    "dropCount": 3,
+    "tags": [
+      "Dust",
+      "CommonMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Enchanting",
+    "requiredSkill": 1,
+    "item": "Lesser Magic Essence",
+    "rarity": 80,
+    "category": "Disenchant Uncommon",
+    "dropStart": 5,
+    "dropEnd": 15,
+    "dropCount": 1,
+    "tags": [
+      "Dust",
+      "CommonMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Enchanting",
+    "requiredSkill": 1,
+    "item": "Lesser Magic Essence",
+    "rarity": 80,
+    "category": "Disenchant Uncommon",
+    "dropStart": 5,
+    "dropEnd": 15,
+    "dropCount": 1,
+    "tags": [
+      "Essence",
+      "CommonMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Enchanting",
+    "requiredSkill": 1,
+    "item": "Greater Magic Essence",
+    "rarity": 80,
+    "category": "Disenchant Uncommon",
+    "dropStart": 16,
+    "dropEnd": 25,
+    "dropCount": 1,
+    "tags": [
+      "Essence",
+      "CommonMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Enchanting",
+    "requiredSkill": 1,
+    "item": "Lesser Astral Essence",
+    "rarity": 80,
+    "category": "Disenchant Uncommon",
+    "dropStart": 21,
+    "dropEnd": 25,
+    "dropCount": 1,
+    "tags": [
+      "Essence",
+      "CommonMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Enchanting",
+    "requiredSkill": 1,
+    "item": "Greater Astral Essence",
+    "rarity": 80,
+    "category": "Disenchant Uncommon",
+    "dropStart": 26,
+    "dropEnd": 30,
+    "dropCount": 1,
+    "tags": [
+      "Essence",
+      "CommonMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Enchanting",
+    "requiredSkill": 1,
+    "item": "Lesser Mystic Essence",
+    "rarity": 80,
+    "category": "Disenchant Uncommon",
+    "dropStart": 31,
+    "dropEnd": 35,
+    "dropCount": 1,
+    "tags": [
+      "Essence",
+      "CommonMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Enchanting",
+    "requiredSkill": 1,
+    "item": "Greater Mystic Essence",
+    "rarity": 80,
+    "category": "Disenchant Uncommon",
+    "dropStart": 36,
+    "dropEnd": 40,
+    "dropCount": 1,
+    "tags": [
+      "Essence",
+      "CommonMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Enchanting",
+    "requiredSkill": 1,
+    "item": "Lesser Nether Essence",
+    "rarity": 80,
+    "category": "Disenchant Uncommon",
+    "dropStart": 41,
+    "dropEnd": 45,
+    "dropCount": 1,
+    "tags": [
+      "Essence",
+      "CommonMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Enchanting",
+    "requiredSkill": 1,
+    "item": "Greater Nether Essence",
+    "rarity": 80,
+    "category": "Disenchant Uncommon",
+    "dropStart": 46,
+    "dropEnd": 50,
+    "dropCount": 1,
+    "tags": [
+      "Essence",
+      "CommonMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Enchanting",
+    "requiredSkill": 1,
+    "item": "Lesser Eternal Essence",
+    "rarity": 80,
+    "category": "Disenchant Uncommon",
+    "dropStart": 51,
+    "dropEnd": 55,
+    "dropCount": 1,
+    "tags": [
+      "Essence",
+      "CommonMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Enchanting",
+    "requiredSkill": 1,
+    "item": "Greater Eternal Essence",
+    "rarity": 80,
+    "category": "Disenchant Uncommon",
+    "dropStart": 56,
+    "dropEnd": 60,
+    "dropCount": 1,
+    "tags": [
+      "Essence",
+      "CommonMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Enchanting",
+    "requiredSkill": 1,
+    "item": "Small Glimmering Shard",
+    "rarity": 100,
+    "category": "Disenchant Rare",
+    "dropStart": 16,
+    "dropEnd": 25,
+    "dropCount": 1,
+    "tags": [
+      "Shard",
+      "RareMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Enchanting",
+    "requiredSkill": 1,
+    "item": "Large Glimmering Shard",
+    "rarity": 100,
+    "category": "Disenchant Rare",
+    "dropStart": 26,
+    "dropEnd": 30,
+    "dropCount": 1,
+    "tags": [
+      "Shard",
+      "RareMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Enchanting",
+    "requiredSkill": 1,
+    "item": "Small Glowing Shard",
+    "rarity": 100,
+    "category": "Disenchant Rare",
+    "dropStart": 31,
+    "dropEnd": 35,
+    "dropCount": 1,
+    "tags": [
+      "Shard",
+      "RareMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Enchanting",
+    "requiredSkill": 1,
+    "item": "Large Glowing Shard",
+    "rarity": 100,
+    "category": "Disenchant Rare",
+    "dropStart": 36,
+    "dropEnd": 40,
+    "dropCount": 1,
+    "tags": [
+      "Shard",
+      "RareMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Enchanting",
+    "requiredSkill": 1,
+    "item": "Small Radiant Shard",
+    "rarity": 100,
+    "category": "Disenchant Rare",
+    "dropStart": 41,
+    "dropEnd": 45,
+    "dropCount": 1,
+    "tags": [
+      "Shard",
+      "RareMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Enchanting",
+    "requiredSkill": 1,
+    "item": "Large Radiant Shard",
+    "rarity": 100,
+    "category": "Disenchant Rare",
+    "dropStart": 46,
+    "dropEnd": 50,
+    "dropCount": 1,
+    "tags": [
+      "Shard",
+      "RareMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Enchanting",
+    "requiredSkill": 1,
+    "item": "Small Brilliant Shard",
+    "rarity": 100,
+    "category": "Disenchant Rare",
+    "dropStart": 51,
+    "dropEnd": 55,
+    "dropCount": 1,
+    "tags": [
+      "Shard",
+      "RareMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Enchanting",
+    "requiredSkill": 1,
+    "item": "Large Brilliant Shard",
+    "rarity": 100,
+    "category": "Disenchant Rare",
+    "dropStart": 56,
+    "dropEnd": 60,
+    "dropCount": 1,
+    "tags": [
+      "Shard",
+      "RareMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Enchanting",
+    "requiredSkill": 1,
+    "item": "Nexus Crystal",
+    "rarity": 100,
+    "category": "Disenchant Epic",
+    "dropStart": 56,
+    "dropEnd": 60,
+    "dropCount": 1,
+    "tags": [
+      "Shard"
+    ]
   }
 ]

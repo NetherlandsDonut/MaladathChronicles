@@ -337,8 +337,9 @@ public class Board
                         results.inventory.AddItem(Item.items.Find(x => x.name == drop.item).CopyItem(amount));
                     }
             var possibleGeneralDrops = GeneralDrop.generalDrops.FindAll(x => x.DoesLevelFit(enemy.level) && (x.requiredProfession == null || (player.professionSkills.ContainsKey(x.requiredProfession) && (x.requiredSkill == 0 || x.requiredSkill <= player.professionSkills[x.requiredProfession].Item1))) && (x.category == null || x.category == enemy.Race().category) && !x.inclusive);
+            possibleGeneralDrops.Shuffle();
             if (possibleGeneralDrops.Count > 0)
-                foreach (var drop in possibleGeneralDrops.Shuffle().OrderBy(x => x.rarity))
+                foreach (var drop in possibleGeneralDrops.OrderBy(x => x.rarity))
                     if (Roll(drop.rarity))
                     {
                         int amount = 1;

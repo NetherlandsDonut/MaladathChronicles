@@ -5,76 +5,58 @@
   "Whitemane": [
     {
       "player": {
-        "level": 21,
-        "experience": 15323,
-        "professionSkills": {
-          "Skinning": {
-            "Item1": 1,
-            "Item2": [
-              "Apprentice"
-            ]
-          }
-        },
+        "level": 3,
+        "experience": 991,
+        "professionSkills": {},
         "learnedRecipes": {},
-        "unspentTalentPoints": 8,
-        "faction": "Stormwind",
-        "name": "Valerie",
-        "race": "Human",
-        "spec": "Priest",
+        "unspentTalentPoints": 2,
+        "faction": "Darkspear Tribe",
+        "name": "Kha'ma",
+        "race": "Troll",
+        "spec": "Shaman",
         "gender": "Female",
-        "homeLocation": "Orgrimmar",
+        "homeLocation": "Valley of Trials",
         "abilities": {
-          "Staff Proficiency": 1,
-          "Cloth Proficiency": 1,
+          "Dual Wielding Proficiency": 0,
+          "Two Handed Axe Proficiency": 1,
+          "Polearm Proficiency": 1,
+          "Leather Proficiency": 1,
+          "Mail Proficiency": 0,
+          "One Handed Axe Proficiency": 1,
           "One Handed Mace Proficiency": 1,
+          "Fist Weapon Proficiency": 1,
           "Off Hand Proficiency": 1,
           "Dagger Proficiency": 1,
-          "Wand Proficiency": 1,
-          "Smite": 0,
-          "Power Word: Shield": 0,
-          "Shadow Word: Pain": 0,
-          "Lesser Heal": 0,
-          "Heal": 0,
-          "Spell Warding": 0,
-          "Holy Fire": 0,
-          "Spiritual Guidance": 0,
-          "Blessed Recovery": 0,
-          "Holy Nova": 0,
-          "Renew": 0,
-          "Healing Focus": 0,
-          "Spiritual Healing": 0,
-          "Searing Light": 0,
-          "Holy Bolts": 0
+          "Lightning Bolt": 0,
+          "Stormstrike": 0,
+          "Healing Wave": 0
         },
         "actionBars": [
-          "Smite",
-          "Power Word: Shield",
-          "Shadow Word: Pain",
-          "Holy Bolts"
+          "Healing Wave"
         ],
         "stats": {
           "stats": {
-            "Stamina": 6,
+            "Stamina": 7,
             "Strength": 6,
-            "Agility": 6,
+            "Agility": 7,
             "Intellect": 6,
             "Spirit": 0,
-            "Earth Mastery": 1,
+            "Earth Mastery": 2,
             "Fire Mastery": 3,
             "Air Mastery": 2,
             "Water Mastery": 1,
-            "Frost Mastery": 2,
-            "Lightning Mastery": 1,
-            "Arcane Mastery": 3,
+            "Frost Mastery": 3,
+            "Lightning Mastery": 2,
+            "Arcane Mastery": 1,
             "Decay Mastery": 1,
-            "Shadow Mastery": 2,
-            "Order Mastery": 3
+            "Shadow Mastery": 3,
+            "Order Mastery": 1
           }
         },
         "inventory": {
-          "money": 9824,
           "items": [
             {
+              "rarity": "Common",
               "name": "Hearthstone",
               "icon": "itemmiscrune01",
               "type": "Miscellaneous",
@@ -86,119 +68,100 @@
               }
             },
             {
-              "name": "Ruined Leather Scraps",
-              "icon": "itemmiscpeltbearruin05",
+              "rarity": "Common",
+              "name": "Runecloth",
+              "icon": "itemfabricpurplefire01",
               "type": "Trade Good",
-              "source": "Rare Drop",
-              "ilvl": 5,
-              "lvl": 1,
-              "amount": 8,
-              "maxStack": 20,
-              "price": 7,
-              "stats": {
-                "stats": {}
-              }
-            },
-            {
-              "rarity": "Uncommon",
-              "name": "Mystic's Bracelets",
-              "icon": "itembracer07",
-              "type": "Wrists",
-              "armorClass": "Cloth",
-              "source": "Rare Drop",
-              "ilvl": 17,
-              "lvl": 12,
-              "armor": 13,
-              "amount": 1,
-              "maxStack": 1,
-              "price": 189,
-              "stats": {
-                "stats": {
-                  "Intellect": 2,
-                  "Stamina": 1
-                }
-              }
-            },
-            {
-              "rarity": "Poor",
-              "name": "Ornamental Mace",
-              "icon": "itemmace03",
-              "detailedType": "Mace",
-              "type": "One Handed",
-              "source": "Rare Drop",
-              "ilvl": 17,
-              "lvl": 12,
-              "minDamage": 10,
-              "maxDamage": 19,
-              "amount": 1,
-              "maxStack": 1,
-              "price": 366,
-              "speed": 2.8,
-              "stats": {
-                "stats": {}
-              }
-            },
-            {
-              "rarity": "Common",
-              "name": "Rugged Spaulders",
-              "icon": "itemshoulder08",
-              "type": "Shoulders",
-              "armorClass": "Leather",
-              "source": "DirectDrop",
-              "ilvl": 20,
-              "lvl": 15,
-              "armor": 55,
-              "amount": 1,
-              "maxStack": 1,
-              "price": 308,
-              "stats": {
-                "stats": {}
-              },
-              "droppedBy": [
-                "Rethilgore"
-              ]
-            },
-            {
-              "rarity": "Common",
-              "name": "Scroll of Strength",
-              "icon": "itemscroll02",
-              "type": "Miscellaneous",
               "source": "RareDrop",
-              "ilvl": 20,
+              "ilvl": 50,
+              "lvl": 1,
+              "amount": 2,
+              "maxStack": 20,
+              "price": 400,
+              "stats": {
+                "stats": {}
+              }
+            },
+            {
+              "rarity": "Common",
+              "name": "Major Mana Potion",
+              "icon": "itempotion76",
+              "type": "Miscellaneous",
+              "ilvl": 59,
               "amount": 1,
               "maxStack": 5,
-              "price": 50,
+              "price": 1500,
               "stats": {
                 "stats": {}
               }
             },
             {
               "rarity": "Common",
-              "name": "Lesser Mana Potion",
-              "icon": "itempotion71",
+              "name": "Scroll of Stamina IV",
+              "icon": "itemscroll07",
+              "type": "Miscellaneous",
+              "source": "RareDrop",
+              "ilvl": 60,
+              "amount": 1,
+              "maxStack": 5,
+              "price": 112,
+              "stats": {
+                "stats": {}
+              }
+            },
+            {
+              "rarity": "Common",
+              "name": "Dense Stone",
+              "icon": "itemmiscstonetablet07",
+              "type": "Trade Good",
+              "source": "RareDrop",
+              "ilvl": 45,
+              "lvl": 1,
+              "amount": 1,
+              "maxStack": 20,
+              "price": 250,
+              "stats": {
+                "stats": {}
+              }
+            },
+            {
+              "rarity": "Common",
+              "name": "Thick Leather",
+              "icon": "itemmiscleatherscrap08",
+              "type": "Trade Good",
+              "ilvl": 40,
+              "lvl": 1,
+              "amount": 2,
+              "maxStack": 20,
+              "price": 300,
+              "stats": {
+                "stats": {}
+              }
+            },
+            {
+              "rarity": "Common",
+              "name": "Scroll of Intellect IV",
+              "icon": "itemscroll01",
+              "type": "Miscellaneous",
+              "source": "RareDrop",
+              "ilvl": 60,
+              "amount": 1,
+              "maxStack": 5,
+              "price": 112,
+              "stats": {
+                "stats": {}
+              }
+            },
+            {
+              "rarity": "Common",
+              "name": "Mana Potion",
+              "icon": "itempotion72",
               "type": "Miscellaneous",
               "source": "Profession",
-              "ilvl": 24,
+              "ilvl": 32,
               "amount": 1,
               "maxStack": 5,
-              "price": 30,
-              "stats": {
-                "stats": {}
-              }
-            },
-            {
-              "rarity": "Common",
-              "name": "Ritual Amice",
-              "icon": "itemshoulder09",
-              "type": "Shoulders",
-              "armorClass": "Cloth",
-              "source": "RareDrop",
-              "ilvl": 23,
-              "lvl": 18,
-              "armor": 26,
-              "amount": 1,
-              "maxStack": 1,
-              "price": 396,
+              "price": 120,
               "stats": {
                 "stats": {}
               }
@@ -206,45 +169,27 @@
           ],
           "bags": [
             {
-              "name": "Large Knapsack",
-              "icon": "itemmiscbag07red",
-              "type": "Bag",
-              "source": "Rare Drop",
-              "ilvl": 35,
-              "lvl": 1,
-              "amount": 1,
-              "dropRange": "30-49",
-              "maxStack": 1,
-              "price": 5000,
-              "bagSpace": 5,
-              "stats": {
-                "stats": {}
-              }
-            },
-            {
               "rarity": "Common",
-              "name": "Red Leather Bag",
-              "icon": "itemmiscbag02",
+              "name": "Journeyman's Backpack",
+              "icon": "itemmiscbag07black",
               "type": "Bag",
               "source": "GeneralDrop",
-              "ilvl": 15,
+              "ilvl": 45,
               "lvl": 1,
               "amount": 1,
               "maxStack": 1,
-              "price": 875,
-              "bagSpace": 3,
+              "price": 6250,
+              "bagSpace": 6,
               "stats": {
                 "stats": {}
               }
             }
           ]
         },
-        "mount": "",
-        "mounts": [
-          "Swift Palomino"
-        ],
+        "mounts": [],
         "equipment": {
           "Main Hand": {
+            "rarity": "Common",
             "name": "Worn Mace",
             "icon": "itemmace03",
             "detailedType": "Mace",
@@ -261,27 +206,15 @@
               "stats": {}
             }
           },
-          "Feet": {
-            "name": "Neophyte's Boots",
-            "icon": "itemboots04",
-            "type": "Feet",
-            "ilvl": 1,
-            "lvl": 1,
-            "amount": 1,
-            "maxStack": 1,
-            "price": 1,
-            "stats": {
-              "stats": {}
-            }
-          },
           "Legs": {
-            "name": "Neophyte's Pants",
+            "rarity": "Poor",
+            "name": "Primitive Kilt",
             "icon": "itempants02",
             "type": "Legs",
-            "armorClass": "Cloth",
+            "armorClass": "Leather",
             "ilvl": 1,
             "lvl": 1,
-            "armor": 2,
+            "armor": 14,
             "amount": 1,
             "maxStack": 1,
             "price": 1,
@@ -290,13 +223,12 @@
             }
           },
           "Chest": {
-            "name": "Neophyte's Robe",
-            "icon": "itemchestcloth13",
+            "rarity": "Common",
+            "name": "Primitive Mantle",
+            "icon": "itemmisccape14",
             "type": "Chest",
-            "armorClass": "Cloth",
             "ilvl": 1,
             "lvl": 1,
-            "armor": 3,
             "amount": 1,
             "maxStack": 1,
             "price": 1,
@@ -304,87 +236,138 @@
               "stats": {}
             }
           },
-          "Shoulders": {
-            "name": "Hibernal Mantle",
-            "icon": "itemshoulder18",
-            "type": "Shoulders",
-            "armorClass": "Cloth",
-            "source": "Rare Drop",
-            "ilvl": 48,
-            "lvl": 43,
-            "armor": 47,
+          "Waist": {
+            "rarity": "Uncommon",
+            "name": "Steadfast Girdle of the Tiger",
+            "icon": "itembelt30",
+            "randomEnchantment": true,
+            "type": "Waist",
+            "armorClass": "Mail",
+            "source": "RareDrop",
+            "ilvl": 38,
+            "lvl": 33,
+            "armor": 125,
             "amount": 1,
             "maxStack": 1,
-            "price": 5890,
+            "price": 2763,
             "stats": {
               "stats": {
-                "Intellect": 10,
-                "Spirit": 10
+                "Agility": 8,
+                "Strength": 8
+              }
+            }
+          },
+          "Wrists": {
+            "rarity": "Uncommon",
+            "name": "Hero's Bracers",
+            "icon": "itembracer17",
+            "type": "Wrists",
+            "armorClass": "Mail",
+            "source": "RareDrop",
+            "ilvl": 58,
+            "lvl": 53,
+            "armor": 137,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 11060,
+            "stats": {
+              "stats": {
+                "Agility": 4,
+                "Intellect": 12
               }
             }
           }
         }
       },
       "hour": 7,
-      "minute": 38,
-      "second": 44,
-      "currentSite": "Shadowfang Keep",
+      "minute": 9,
+      "second": 6,
+      "currentSite": "Ruined Path",
+      "openedChests": {
+        "Dreadmaul Post": {
+          "area": "Dreadmaul Post",
+          "inventory": {
+            "items": [],
+            "bags": [],
+            "ignoreSpaceChecks": true
+          }
+        },
+        "Ruined Path": {
+          "area": "Ruined Path",
+          "inventory": {
+            "items": [
+              {
+                "rarity": "Common",
+                "name": "Heavy Leather",
+                "icon": "itemmiscleatherscrap07",
+                "type": "Trade Good",
+                "ilvl": 30,
+                "lvl": 1,
+                "amount": 1,
+                "maxStack": 20,
+                "price": 150,
+                "stats": {
+                  "stats": {}
+                }
+              },
+              {
+                "rarity": "Uncommon",
+                "name": "Greater Mystic Essence",
+                "icon": "itemenchantessencemysticallarge",
+                "type": "Trade Good",
+                "source": "RareDrop",
+                "ilvl": 35,
+                "lvl": 1,
+                "amount": 1,
+                "maxStack": 10,
+                "stats": {
+                  "stats": {}
+                }
+              },
+              {
+                "rarity": "Common",
+                "name": "Scroll of Protection III",
+                "icon": "itemscroll07",
+                "type": "Miscellaneous",
+                "source": "RareDrop",
+                "ilvl": 40,
+                "amount": 1,
+                "maxStack": 5,
+                "price": 100,
+                "stats": {
+                  "stats": {}
+                }
+              }
+            ],
+            "bags": [],
+            "ignoreSpaceChecks": true
+          }
+        }
+      },
       "siteProgress": {
-        "Northshire Valley": 3,
-        "The Sea of Cinders": 11,
-        "Southfury Scree": 8,
-        "Far Watch Post": 1,
-        "The Ruins of Lordaeron": 27,
-        "Jail": 2,
-        "The Courtyard": 2
+        "Serpent's Coil": 2,
+        "Dreadmaul Post": 3,
+        "Ruined Path": 3
       },
       "commonsKilled": {
-        "Kobold Vermin": 2,
-        "Young Wolf": 1,
-        "Searing Lava Spider": 7,
-        "Inferno Elemental": 4,
-        "Venomtail Scorpid": 3,
-        "Bloodtalon Scythemaw": 3,
-        "Elder Mottled Boar": 1,
-        "Corrupted Bloodtalon Scythemaw": 1,
-        "Sunscale Screecher": 1,
-        "Lordaeron Citizen": 27,
-        "Bleak Worg": 2,
-        "Shadowfang Whitescalp": 1,
-        "Slavering Worg": 2,
-        "Shadow Charger": 1
+        "Shadowsworn Thug": 1,
+        "Shadowsworn Cultist": 1,
+        "Dreadmaul Warlock": 2,
+        "Felbeast": 1,
+        "Sorrow Spinner": 2,
+        "Swamp Jaguar": 1
       },
       "raresKilled": {},
-      "elitesKilled": {
-        "Rethilgore": 1
-      },
+      "elitesKilled": {},
       "siteVisits": {
-        "Northshire Abbey": 1,
-        "Northshire Valley": 3,
-        "Stormwind City": 5,
-        "Zul'Mashar": 2,
-        "Slither Rock": 3,
-        "Terror Wing Path": 2,
-        "The Sea of Cinders": 5,
-        "Yorgen's Farmstead": 2,
-        "Mystral Lake": 2,
-        "Razormane Grounds": 2,
-        "Southfury Scree": 2,
-        "Far Watch Post": 1,
-        "Grol'dom Farm": 0,
-        "Thorn Hill": 0,
-        "The Crossroads": 2,
-        "Orgrimmar": 8,
-        "The Placid Dune": 0,
-        "Thunder Ridge": 1,
-        "Ragefire Chasm": 1,
-        "Undercity": 2,
-        "The Ruins of Lordaeron": 2,
-        "Shadowfang Keep": 3
+        "Valley of Trials": 1,
+        "Razormane Grounds": 3,
+        "Serpent's Coil": 3,
+        "Dreadmaul Post": 3,
+        "Red Wasteland": 0,
+        "Ruined Path": 1
       },
-      "unlockedAreas": [
-        "The Courtyard"
-      ],
+      "unlockedAreas": [],
       "vendorStock": {
         "Goldshire:Toddrick": [
           {
@@ -463,21 +446,10 @@
           }
         ]
       },
-      "banks": {
-        "Undercity": {
-          "items": [],
-          "bags": []
-        }
-      },
-      "buyback": {
-        "items": [],
-        "bags": [],
-        "ignoreSpaceChecks": true
-      },
-      "startDate": "2024-05-10T13:56:57.3904176+02:00",
-      "lastLoaded": "2024-05-14T00:28:55.9951957+02:00",
-      "lastPlayed": "2024-05-14T00:30:23.5231023+02:00",
-      "timePlayed": "00:25:30.7281793"
+      "startDate": "2024-05-14T14:34:14.2029011+02:00",
+      "lastLoaded": "2024-05-14T14:53:37.498375+02:00",
+      "lastPlayed": "2024-05-14T14:55:07.5544563+02:00",
+      "timePlayed": "00:03:37.3538109"
     }
   ]
 }

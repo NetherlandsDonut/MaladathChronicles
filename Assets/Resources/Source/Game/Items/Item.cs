@@ -667,15 +667,43 @@ public class Item
                 if (currentSave.player.inventory.CanAddItem(item))
                 {
                     PlaySound(item.ItemSound("PutDown"), 0.6f);
-                    if (currentSave.player.inventory.AddItem(item))
-                        Board.board.results.inventory.items.Remove(item);
-                    if (Board.board.results.exclusiveItems.Contains(item.name))
-                        Board.board.results.inventory.items.RemoveAll(x => Board.board.results.exclusiveItems.Contains(x.name));
-                    if (Board.board.results.inventory.items.Count == 0) CloseDesktop(CDesktop.title);
-                    else
+                    if (CDesktop.title == "CombatResultsLoot")
                     {
-                        Respawn("Inventory");
-                        Respawn("CombatResultsLoot");
+                        if (currentSave.player.inventory.AddItem(item))
+                            Board.board.results.inventory.items.Remove(item);
+                        if (Board.board.results.exclusiveItems.Contains(item.name))
+                            Board.board.results.inventory.items.RemoveAll(x => Board.board.results.exclusiveItems.Contains(x.name));
+                        if (Board.board.results.inventory.items.Count == 0)
+                            CloseDesktop("CombatResultsLoot");
+                        else
+                        {
+                            Respawn("Inventory");
+                            Respawn("CombatResultsLoot");
+                        }
+                    }
+                    else if (CDesktop.title == "ChestLoot")
+                    {
+                        if (currentSave.player.inventory.AddItem(item))
+                            currentSave.openedChests[SiteHostileArea.area.name].inventory.items.Remove(item);
+                        if (currentSave.openedChests[SiteHostileArea.area.name].inventory.items.Count == 0)
+                        {
+                            if (SiteHostileArea.area.instancePart)
+                            {
+                                CloseDesktop("Instance");
+                                SpawnDesktopBlueprint("Instance");
+                            }
+                            else
+                            {
+                                CloseDesktop("HostileArea");
+                                SpawnDesktopBlueprint("HostileArea");
+                            }
+                            CloseDesktop("ChestLoot");
+                        }
+                        else
+                        {
+                            Respawn("Inventory");
+                            Respawn("ChestLoot");
+                        }
                     }
                 }
             },
@@ -700,7 +728,7 @@ public class Item
             AddBigButtonOverlay(settings.newSlotIndicators.Value() ? "OtherItemNewSlot" : "OtherItemUpgrade", 0, 2);
         else if (settings.upgradeIndicators.Value() && item.CanEquip(currentSave.player) && currentSave.player.IsItemAnUpgrade(item))
             AddBigButtonOverlay("OtherItemUpgrade", 0, 2);
-        if (item.maxStack > 1) SpawnFloatingText(CDesktop.LBWindow.LBRegionGroup.LBRegion.transform.position + new Vector3(32, -27) + new Vector3(38, 0) * Board.board.results.inventory.items.IndexOf(item), item.amount + "", "", "Right");
+        if (item.maxStack > 1) SpawnFloatingText(CDesktop.LBWindow.LBRegionGroup.LBRegion.transform.position + new Vector3(32, -27) + new Vector3(38, 0) * (CDesktop.title == "ChestLoot" ? currentSave.openedChests[SiteHostileArea.area.name].inventory : Board.board.results.inventory).items.IndexOf(item), item.amount + "", "", "Right");
     }
 
     public static void PrintItemTooltip(Item item, bool compare = false, double priceMultiplier = 1)

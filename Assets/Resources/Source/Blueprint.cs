@@ -667,7 +667,7 @@ public class Blueprint
                             AddSmallButton(item.icon,
                             (h) =>
                             {
-                                if (CDesktop.title == "EquipmentScreen")
+                                if (CDesktop.windows.Exists(x => x.title == "Inventory"))
                                 {
                                     PlaySound(item.ItemSound("PutDown"), 0.6f);
                                     currentSave.player.Unequip(new() { slot });
@@ -678,7 +678,7 @@ public class Blueprint
                             null,
                             (h) => () =>
                             {
-                                if (CDesktop.title == "EquipmentScreen")
+                                if (CDesktop.windows.Exists(x => x.title == "Inventory"))
                                     PrintItemTooltip(item);
                             });
                             if (settings.rarityIndicators.Value())
@@ -1081,8 +1081,8 @@ public class Blueprint
                     AddLine(area.name + " spoils:");
                     AddSmallButton("OtherClose", (h) =>
                     {
-                        PlaySound("DesktopInventoryClose");
-                        CloseDesktop("CombatResultsLoot");
+                        PlaySound("DesktopCloseChest");
+                        CloseDesktop("ChestLoot");
                     });
                 }
             );
@@ -2538,6 +2538,16 @@ public class Blueprint
                 }
                 else
                 {
+                    if (area.instancePart)
+                    {
+                        CloseDesktop("Instance");
+                        SpawnDesktopBlueprint("Instance");
+                    }
+                    else
+                    {
+                        CloseDesktop("HostileArea");
+                        SpawnDesktopBlueprint("HostileArea");
+                    }
                     CloseDesktop("CombatResults");
                     if (board.results.inventory.items.Count > 0)
                     {
@@ -2622,8 +2632,8 @@ public class Blueprint
             AddPaddingRegion(
                 () =>
                 {
-                    for (int j = 0; j < 4 && j < currentSave.lastChest.inventory.items.Count; j++)
-                        PrintLootItem(currentSave.lastChest.inventory.items[j]);
+                    for (int j = 0; j < 4 && j < currentSave.openedChests[area.name].inventory.items.Count; j++)
+                        PrintLootItem(currentSave.openedChests[area.name].inventory.items[j]);
                 }
             );
         }),
@@ -8625,7 +8635,7 @@ public class Blueprint
             SpawnWindowBlueprint("MapToolbarStatusLeft");
             SpawnWindowBlueprint("MapToolbarStatusRight");
             SpawnWindowBlueprint("ExperienceBar");
-            if (currentSave.siteProgress.ContainsKey(area.name) && area.progression.First(x => x.type == "Treasure").point == currentSave.siteProgress[area.name])
+            if (currentSave.siteProgress.ContainsKey(area.name) && area.progression.First(x => x.type == "Treasure").point == currentSave.siteProgress[area.name] && (!currentSave.openedChests.ContainsKey(area.name) || currentSave.openedChests[area.name].inventory.items.Count > 0))
                 SpawnWindowBlueprint("Chest");
             AddHotkey(Escape, () =>
             {
@@ -8717,8 +8727,8 @@ public class Blueprint
             SpawnWindowBlueprint("ExperienceBar");
             AddHotkey(Escape, () =>
             {
-                PlaySound("DesktopInventoryClose");
-                CloseDesktop("CombatResultsLoot");
+                PlaySound("DesktopCloseChest");
+                CloseDesktop("ChestLoot");
             });
         }),
         new("Town", () =>
@@ -8812,6 +8822,8 @@ public class Blueprint
             SpawnWindowBlueprint("MapToolbarStatusRight");
             SpawnWindowBlueprint("ExperienceBar");
             SpawnWindowBlueprint("InstanceLeftSide");
+            //if (area != null && currentSave.siteProgress.ContainsKey(area.name) && area.progression.First(x => x.type == "Treasure").point == currentSave.siteProgress[area.name] && (!currentSave.openedChests.ContainsKey(area.name) || currentSave.openedChests[area.name].inventory.items.Count > 0))
+            //    SpawnWindowBlueprint("Chest");
             AddHotkey(Escape, () =>
             {
                 if (CloseWindow("HostileArea: " + area?.name))
