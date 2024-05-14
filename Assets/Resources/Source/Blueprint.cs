@@ -1561,7 +1561,7 @@ public class Blueprint
                     SpawnWindowBlueprint("Inventory");
                     PlaySound("DesktopInventorySort", 0.2f);
                 });
-                if (!CDesktop.windows.Exists(x => x.title == "InventorySettings") && !CDesktop.windows.Exists(x => x.title == "BankSort") && !CDesktop.windows.Exists(x => x.title == "VendorSort"))
+                if (!CDesktop.windows.Exists(x => x.title == "InventorySettings") && !CDesktop.windows.Exists(x => x.title == "BankSort") && !CDesktop.windows.Exists(x => x.title == "VendorSort") && !CDesktop.windows.Exists(x => x.title == "InventorySort"))
                     AddSmallButton("OtherSort", (h) =>
                     {
                         SpawnWindowBlueprint("InventorySort");
@@ -1571,7 +1571,7 @@ public class Blueprint
                     });
                 else
                     AddSmallButton("OtherSortOff", (h) => { });
-                if (!CDesktop.windows.Exists(x => x.title == "InventorySettings") && !CDesktop.windows.Exists(x => x.title == "BankSort") && !CDesktop.windows.Exists(x => x.title == "VendorSort"))
+                if (!CDesktop.windows.Exists(x => x.title == "InventorySettings") && !CDesktop.windows.Exists(x => x.title == "BankSort") && !CDesktop.windows.Exists(x => x.title == "VendorSort") && !CDesktop.windows.Exists(x => x.title == "InventorySort"))
                     AddSmallButton("OtherSettings", (h) =>
                     {
                         SpawnWindowBlueprint("InventorySettings");
@@ -2084,7 +2084,7 @@ public class Blueprint
         new("BankSort", () => {
             SetAnchor(Center);
             AddRegionGroup();
-            SetRegionGroupWidth(162);
+            SetRegionGroupWidth(182);
             AddHeaderRegion(() =>
             {
                 AddLine("Sort bank inventory:");
@@ -2153,7 +2153,7 @@ public class Blueprint
         new("InventorySort", () => {
             SetAnchor(Center);
             AddRegionGroup();
-            SetRegionGroupWidth(162);
+            SetRegionGroupWidth(182);
             AddHeaderRegion(() =>
             {
                 AddLine("Sort inventory:");
@@ -2181,6 +2181,17 @@ public class Blueprint
             (h) =>
             {
                 currentSave.player.inventory.items = currentSave.player.inventory.items.OrderBy(x => x.amount).ToList();
+                CloseWindow("InventorySort");
+                CDesktop.RespawnAll();
+                PlaySound("DesktopInventorySort", 0.2f);
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("By rarity", "Black");
+            },
+            (h) =>
+            {
+                currentSave.player.inventory.items = currentSave.player.inventory.items.OrderByDescending(x => x.rarity == "Poor" ? 0 : (x.rarity == "Common" ? 1 : (x.rarity == "Uncommon" ? 2 : (x.rarity == "Rare" ? 3 : (x.rarity == "Epic" ? 4 : 5))))).ToList();
                 CloseWindow("InventorySort");
                 CDesktop.RespawnAll();
                 PlaySound("DesktopInventorySort", 0.2f);
@@ -2222,7 +2233,7 @@ public class Blueprint
         new("InventorySettings", () => {
             SetAnchor(Center);
             AddRegionGroup();
-            SetRegionGroupWidth(162);
+            SetRegionGroupWidth(182);
             AddHeaderRegion(() =>
             {
                 AddLine("Inventory settings:");
@@ -3049,7 +3060,7 @@ public class Blueprint
         new("MountsSort", () => {
             SetAnchor(Center);
             AddRegionGroup();
-            SetRegionGroupWidth(162);
+            SetRegionGroupWidth(182);
             AddHeaderRegion(() =>
             {
                 AddLine("Sort mounts:");
@@ -3506,7 +3517,7 @@ public class Blueprint
         new("HostileAreasSort", () => {
             SetAnchor(Center);
             AddRegionGroup();
-            SetRegionGroupWidth(162);
+            SetRegionGroupWidth(182);
             AddHeaderRegion(() =>
             {
                 AddLine("Sort hostile areas:");
@@ -3846,7 +3857,7 @@ public class Blueprint
         new("InstancesSort", () => {
             SetAnchor(Center);
             AddRegionGroup();
-            SetRegionGroupWidth(162);
+            SetRegionGroupWidth(182);
             AddHeaderRegion(() =>
             {
                 AddLine("Sort instances:");
@@ -4022,7 +4033,7 @@ public class Blueprint
         new("ComplexesSort", () => {
             SetAnchor(Center);
             AddRegionGroup();
-            SetRegionGroupWidth(162);
+            SetRegionGroupWidth(182);
             AddHeaderRegion(() =>
             {
                 AddLine("Sort complexes:");
@@ -6303,7 +6314,7 @@ public class Blueprint
         new("ItemsSort", () => {
             SetAnchor(Center);
             AddRegionGroup();
-            SetRegionGroupWidth(162);
+            SetRegionGroupWidth(182);
             AddHeaderRegion(() =>
             {
                 AddLine("Sort items:");
@@ -6545,7 +6556,7 @@ public class Blueprint
         new("ItemSetsSort", () => {
             SetAnchor(Center);
             AddRegionGroup();
-            SetRegionGroupWidth(162);
+            SetRegionGroupWidth(182);
             AddHeaderRegion(() =>
             {
                 AddLine("Sort item sets:");
@@ -6712,7 +6723,7 @@ public class Blueprint
         new("AbilitiesSort", () => {
             SetAnchor(Center);
             AddRegionGroup();
-            SetRegionGroupWidth(162);
+            SetRegionGroupWidth(182);
             AddHeaderRegion(() =>
             {
                 AddLine("Sort abilities:");
@@ -7196,7 +7207,7 @@ public class Blueprint
         new("BuffsSort", () => {
             SetAnchor(Center);
             AddRegionGroup();
-            SetRegionGroupWidth(162);
+            SetRegionGroupWidth(182);
             AddHeaderRegion(() =>
             {
                 AddLine("Sort buffs:");
@@ -7528,7 +7539,7 @@ public class Blueprint
         new("RacesSort", () => {
             SetAnchor(Center);
             AddRegionGroup();
-            SetRegionGroupWidth(162);
+            SetRegionGroupWidth(182);
             AddHeaderRegion(() =>
             {
                 AddLine("Sort races:");
@@ -7848,7 +7859,7 @@ public class Blueprint
         new("MountsSort", () => {
             SetAnchor(Center);
             AddRegionGroup();
-            SetRegionGroupWidth(162);
+            SetRegionGroupWidth(182);
             AddHeaderRegion(() =>
             {
                 AddLine("Sort mounts:");
@@ -8012,7 +8023,7 @@ public class Blueprint
         new("RecipesSort", () => {
             SetAnchor(Center);
             AddRegionGroup();
-            SetRegionGroupWidth(162);
+            SetRegionGroupWidth(182);
             AddHeaderRegion(() =>
             {
                 AddLine("Sort recipes:");
@@ -8185,7 +8196,7 @@ public class Blueprint
         new("FactionsSort", () => {
             SetAnchor(Center);
             AddRegionGroup();
-            SetRegionGroupWidth(162);
+            SetRegionGroupWidth(182);
             AddHeaderRegion(() =>
             {
                 AddLine("Sort factions:");
