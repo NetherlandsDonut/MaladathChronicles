@@ -223,7 +223,7 @@ public static class Root
                 var site = Site.FindSite(x => "Site: " + x.name == loadSites[i].title);
                 if (site != null && !site.CanBeSeen())
                 {
-                    cameraBoundaryPoints.Add(new Vector2(site.x * MapGrid.mapGridSize, site.y * MapGrid.mapGridSize));
+                    cameraBoundaryPoints.Add(new Vector2(site.x, site.y));
                     loadSites.RemoveAt(i);
                 }
             }

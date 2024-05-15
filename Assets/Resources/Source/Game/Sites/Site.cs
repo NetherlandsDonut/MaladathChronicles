@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 using static Root;
-using static MapGrid;
 using static SiteTown;
 using static SaveGame;
 using static SitePath;
@@ -75,7 +74,7 @@ public class Site
         else if (siteType == "Town") town = (SiteTown)this;
         else if (siteType == "Complex") complex = (SiteComplex)this;
         else if (siteType == "SpiritHealer") spiritHealer = (SiteSpiritHealer)this;
-        CDesktop.cameraDestination = new Vector2(x, y) * mapGridSize;
+        CDesktop.cameraDestination = new Vector2(x, y);
         CDesktop.queuedSiteOpen = siteType;
         CDesktop.LockScreen();
     }
@@ -87,7 +86,7 @@ public class Site
     {
         CDesktop.queuedPath = new();
         var site = FindSite(x => x.name == currentSave.currentSite);
-        var newPoint = new Vector2(site.x, site.y) * 19;
+        var newPoint = new Vector2(site.x, site.y);
         foreach (var path in pathsDrawn)
         {
             if (path.Item2 == null) continue;
@@ -134,14 +133,18 @@ public class Site
         pathTest = (null, null);
         if (sitePathBuilder == null)
         {
-            pathBuilder = new() { new Vector2(x * 19, y * 19) };
+            pathBuilder = new() { new Vector2(x, y) };
             sitePathBuilder = this;
         }
         else if (sitePathBuilder == this) sitePathBuilder = null;
         else
         {
-            pathBuilder.Add(new Vector2(x * 19, y * 19));
+            pathBuilder.Add(new Vector2(x, y));
             paths.RemoveAll(x => x.sites.Contains(sitePathBuilder.name) && x.sites.Contains(name));
+            if (pathsConnectedToSite.ContainsKey(sitePathBuilder.name))
+                pathsConnectedToSite[sitePathBuilder.name].RemoveAll(x => x.sites.Contains(name));
+            if (pathsConnectedToSite.ContainsKey(name))
+                pathsConnectedToSite[name].RemoveAll(x => x.sites.Contains(sitePathBuilder.name));
             paths.Add(new SitePath()
             {
                 sites = new() { sitePathBuilder.name, name },
@@ -149,6 +152,12 @@ public class Site
                 spacing = builderSpacing <= 0 ? 10 : builderSpacing
             });
             paths.Last().Initialise();
+            if (pathsConnectedToSite.ContainsKey(sitePathBuilder.name))
+                pathsConnectedToSite[sitePathBuilder.name].Add(paths.Last());
+            else pathsConnectedToSite.Add(sitePathBuilder.name, new() { paths.Last() });
+            if (pathsConnectedToSite.ContainsKey(name))
+                pathsConnectedToSite[name].Add(paths.Last());
+            else pathsConnectedToSite.Add(name, new() { paths.Last() });
             pathsDrawn.Add(paths.Last().DrawPath());
             sitePathBuilder = null;
         }

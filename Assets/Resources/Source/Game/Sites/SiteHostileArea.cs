@@ -228,12 +228,13 @@ public class SiteHostileArea : Site
     //Function to print the site onto the map
     public override void PrintSite()
     {
-        SetAnchor(x * mapGridSize, y * mapGridSize);
+        SetAnchor(x, y);
+        DisableGeneralSprites();
         AddRegionGroup();
         AddPaddingRegion(() =>
         {
-            AddSmallButton(currentSave.siteVisits.ContainsKey(name) ? "Site" + type : "OtherUnknown",
-            (h) => { CDesktop.cameraDestination = new Vector2(x, y) * mapGridSize; },
+            AddSmallButton("Map" + (currentSave.siteVisits.ContainsKey(name) ? type : "Unknown"),
+            (h) => { CDesktop.cameraDestination = new Vector2(x, y); },
             (h) =>
             {
                 if (h == null) LeadPath();
@@ -242,7 +243,7 @@ public class SiteHostileArea : Site
             (h) => () =>
             {
                 if (!currentSave.siteVisits.ContainsKey(name)) return;
-                SetAnchor(TopRight, h.window);
+                SetAnchor(TopRight, -19, -38);
                 AddRegionGroup();
                 AddHeaderRegion(() =>
                 {
@@ -283,7 +284,7 @@ public class SiteHostileArea : Site
             },
             (h) => { BuildPath(); });
             if (currentSave.currentSite == name)
-                AddSmallButtonOverlay("PlayerLocation");
+                AddSmallButtonOverlay("PlayerLocation", 0, 2);
         });
     }
 

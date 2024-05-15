@@ -203,7 +203,7 @@ public class WorldEvent
                 SiteTown.town = (SiteTown)Site.FindSite(x => x.name == currentSave.currentSite);
                 Respawn("Site: " + prevSite);
                 Respawn("Site: " + currentSave.currentSite);
-                CDesktop.cameraDestination = new Vector2(SiteTown.town.x * mapGridSize, SiteTown.town.y * mapGridSize);
+                CDesktop.cameraDestination = new Vector2(SiteTown.town.x, SiteTown.town.y);
             }
         }
     }

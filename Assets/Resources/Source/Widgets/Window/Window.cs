@@ -285,6 +285,7 @@ public class Window : MonoBehaviour
                     var load = Resources.Load<Sprite>("Sprites/Building/Buttons/" + smallButton.buttonType);
                     smallButton.GetComponent<SpriteRenderer>().sprite = load == null ? Resources.Load<Sprite>("Sprites/Building/Buttons/OtherEmpty") : load;
                     smallButton.GetComponent<SpriteRenderer>().sortingLayerName = layer;
+                    if (title.StartsWith("Site: ")) smallButton.GetComponent<SpriteRenderer>().maskInteraction = SpriteMaskInteraction.VisibleInsideMask;
                     smallButton.transform.localPosition = new Vector3(regionGroup.AutoWidth() - 10 + region.xExtend + 1.5f - 19 * region.smallButtons.IndexOf(smallButton), -10.5f, 0.1f);
                     if (smallButton.gameObject.GetComponent<BoxCollider2D>() == null)
                         smallButton.gameObject.AddComponent<BoxCollider2D>();
@@ -292,8 +293,11 @@ public class Window : MonoBehaviour
                         smallButton.gameObject.AddComponent<Highlightable>().Initialise(region, null, null, null, null);
                     if (smallButton.frame == null)
                         smallButton.frame = new GameObject("ButtonFrame", typeof(SpriteRenderer));
-                    smallButton.frame.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/Borders/ButtonFrame");
+                    smallButton.frame.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>(title.StartsWith("Site: ") ? "Sprites/Building/Shadows/PremadeCircularSite" : "Sprites/Building/Borders/ButtonFrame");
+                    if (title.StartsWith("Site: ")) smallButton.frame.GetComponent<SpriteRenderer>().sortingOrder = 1;
                     smallButton.frame.GetComponent<SpriteRenderer>().sortingLayerName = layer;
+                    smallButton.frame.GetComponent<SpriteRenderer>().sortingLayerName = layer;
+                    smallButton.frame.AddComponent<SpriteMask>().sprite = Resources.Load<Sprite>("Sprites/Building/Borders/ButtonCircleFrameMask");
                     smallButton.frame.transform.parent = smallButton.transform;
                     smallButton.frame.transform.localPosition = new Vector3();
                     if (disabledCollisions) Destroy(smallButton.GetComponent<BoxCollider2D>());

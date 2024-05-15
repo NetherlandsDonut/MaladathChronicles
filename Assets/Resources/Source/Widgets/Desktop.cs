@@ -213,7 +213,7 @@ public class Desktop : MonoBehaviour
                         queuedPath.RemoveAll(x => x != queuedPath[0]);
                         var siteA = FindSite(x => x.name == queuedPath[0].Item1.sites[0]);
                         var siteB = FindSite(x => x.name == queuedPath[0].Item1.sites[1]);
-                        queuedSiteOpen = Vector2.Distance(new Vector2(siteA.x, siteA.y) * mapGridSize, queuedPath[0].Item2.Last().transform.position) < Vector2.Distance(new Vector2(siteB.x, siteB.y) * mapGridSize, queuedPath[0].Item2.Last().transform.position) ? siteA.name : siteB.name;
+                        queuedSiteOpen = Vector2.Distance(new Vector2(siteA.x, siteA.y), queuedPath[0].Item2.Last().transform.position) < Vector2.Distance(new Vector2(siteB.x, siteB.y), queuedPath[0].Item2.Last().transform.position) ? siteA.name : siteB.name;
                     }
                     if (Vector2.Distance(temp, cameraDestination) > 5)
                     {
@@ -259,7 +259,7 @@ public class Desktop : MonoBehaviour
                                 if (!didRespawn) LBWindow.GetComponentsInChildren<Renderer>().ToList().ForEach(x => x.gameObject.AddComponent<FadeIn>());
                             }
                             queuedSiteOpen = "";
-                            cameraDestination = new Vector2(find.x, find.y) * mapGridSize;
+                            cameraDestination = new Vector2(find.x, find.y);
                         }
                         else
                         {

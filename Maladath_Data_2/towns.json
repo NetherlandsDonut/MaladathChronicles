@@ -1,21 +1,21 @@
 [
   {
-    "x": 95,
-    "y": -104,
+    "x": 1805,
+    "y": -1976,
     "name": "Raynewood Retreat",
     "zone": "Ashenvale",
     "faction": "Darnassus"
   },
   {
-    "x": 283,
-    "y": -87,
+    "x": 5377,
+    "y": -1653,
     "name": "Ravenholdt Manor",
     "zone": "Hillsbrad Foothills",
     "faction": "Assassin's League"
   },
   {
-    "x": 310,
-    "y": -204,
+    "x": 5896,
+    "y": -3880,
     "name": "Misty Reed Post",
     "zone": "Swamp of Sorrows",
     "faction": "Orgrimmar"
@@ -119,8 +119,8 @@
         "type": "Skinner"
       }
     ],
-    "x": 260,
-    "y": -183,
+    "x": 4941,
+    "y": -3477,
     "name": "Stormwind City",
     "zone": "Elwynn Forest",
     "faction": "Stormwind",
@@ -128,36 +128,36 @@
     "fishing": true
   },
   {
-    "x": 72,
-    "y": -80,
+    "x": 1368,
+    "y": -1520,
     "name": "Grove of the Ancients",
     "zone": "Darkshore",
     "faction": "Darnassus"
   },
   {
-    "x": 299,
-    "y": -104,
+    "x": 5681,
+    "y": -1976,
     "name": "Go'Shek Farm",
     "zone": "Arathi Highlands",
     "faction": "Orgrimmar"
   },
   {
-    "x": 266,
-    "y": -93,
+    "x": 5054,
+    "y": -1767,
     "name": "Hillsbrad",
     "zone": "Hillsbrad Foothills",
     "faction": "Stormwind"
   },
   {
-    "x": 297,
-    "y": -99,
+    "x": 5643,
+    "y": -1881,
     "name": "Dabyrie's Farmstead",
     "zone": "Arathi Highlands",
     "faction": "Stormwind"
   },
   {
-    "x": 264,
-    "y": -97,
+    "x": 5016,
+    "y": -1843,
     "name": "Azurelode Mine",
     "zone": "Hillsbrad Foothills",
     "faction": "Stormwind"
@@ -257,8 +257,8 @@
         ]
       }
     ],
-    "x": 266,
-    "y": -189,
+    "x": 5046,
+    "y": -3599,
     "name": "Goldshire",
     "zone": "Elwynn Forest",
     "faction": "Stormwind"
@@ -284,15 +284,15 @@
         "type": "Stable Master"
       }
     ],
-    "x": 290,
-    "y": -186,
+    "x": 5510,
+    "y": -3543,
     "name": "Lakeshire",
     "zone": "Redridge Mountains",
     "faction": "Stormwind"
   },
   {
-    "x": 268,
-    "y": -183,
+    "x": 5104,
+    "y": -3478,
     "name": "Northshire Abbey",
     "zone": "Elwynn Forest",
     "faction": "Stormwind"
@@ -318,8 +318,8 @@
         "type": "Stable Master"
       }
     ],
-    "x": 272,
-    "y": -96,
+    "x": 5168,
+    "y": -1824,
     "name": "Southshore",
     "zone": "Hillsbrad Foothills",
     "faction": "Stormwind",
@@ -346,15 +346,15 @@
         "type": "Stable Master"
       }
     ],
-    "x": 279,
-    "y": -201,
+    "x": 5301,
+    "y": -3819,
     "name": "Darkshire",
     "zone": "Duskwood",
     "faction": "Stormwind"
   },
   {
-    "x": 268,
-    "y": -209,
+    "x": 5101,
+    "y": -3974,
     "name": "Rebel Camp",
     "zone": "Stranglethorn Vale",
     "faction": "Stormwind"
@@ -380,8 +380,8 @@
         "type": "Stable Master"
       }
     ],
-    "x": 255,
-    "y": -200,
+    "x": 4838,
+    "y": -3826,
     "name": "Sentinel Hill",
     "zone": "Westfall",
     "faction": "Stormwind"
@@ -431,8 +431,8 @@
         "type": "Expert Alchemist"
       }
     ],
-    "x": 124,
-    "y": -173,
+    "x": 2356,
+    "y": -3287,
     "name": "Theramore Isle",
     "zone": "Dustwallow Marsh",
     "faction": "Stormwind"
@@ -458,8 +458,8 @@
         "type": "Stable Master"
       }
     ],
-    "x": 275,
-    "y": -127,
+    "x": 5225,
+    "y": -2413,
     "name": "Menethil Harbor",
     "zone": "Wetlands",
     "faction": "Stormwind"
@@ -473,8 +473,8 @@
         "type": "Flight Master"
       }
     ],
-    "x": 303,
-    "y": -205,
+    "x": 5763,
+    "y": -3908,
     "name": "Nethergarde Keep",
     "zone": "Blasted Lands",
     "faction": "Stormwind"
@@ -488,8 +488,8 @@
         "type": "Flight Master"
       }
     ],
-    "x": 295,
-    "y": -177,
+    "x": 5620,
+    "y": -3367,
     "name": "Morgan's Vigil",
     "zone": "Burning Steppes",
     "faction": "Stormwind"
@@ -503,15 +503,15 @@
         "type": "Flight Master"
       }
     ],
-    "x": 290,
-    "y": -169,
+    "x": 5510,
+    "y": -3207,
     "name": "Flame Crest",
     "zone": "Burning Steppes",
     "faction": "Orgrimmar"
   },
   {
-    "x": 288,
-    "y": -110,
+    "x": 5472,
+    "y": -2090,
     "name": "Faldir's Cove",
     "zone": "Arathi Highlands",
     "faction": "Booty Bay",
@@ -526,8 +526,8 @@
         "type": "Flight Master"
       }
     ],
-    "x": 293,
-    "y": -101,
+    "x": 5567,
+    "y": -1919,
     "name": "Refuge Point",
     "zone": "Arathi Highlands",
     "faction": "Stormwind"
@@ -595,8 +595,8 @@
         "type": "Banker"
       }
     ],
-    "x": 51,
-    "y": -27,
+    "x": 969,
+    "y": -513,
     "name": "Darnassus",
     "zone": "Teldrassil",
     "faction": "Darnassus",
@@ -604,8 +604,8 @@
     "fishing": true
   },
   {
-    "x": 67,
-    "y": -21,
+    "x": 1273,
+    "y": -399,
     "name": "Aldrassil",
     "zone": "Teldrassil",
     "faction": "Darnassus"
@@ -619,8 +619,8 @@
         "type": "Flight Master"
       }
     ],
-    "x": 66,
-    "y": -39,
+    "x": 1254,
+    "y": -741,
     "name": "Rut'theran Village",
     "zone": "Teldrassil",
     "faction": "Darnassus",
@@ -671,15 +671,15 @@
         "type": "Stable Master"
       }
     ],
-    "x": 66,
-    "y": -27,
+    "x": 1254,
+    "y": -513,
     "name": "Dolanaar",
     "zone": "Teldrassil",
     "faction": "Darnassus"
   },
   {
-    "x": 74,
-    "y": -99,
+    "x": 1406,
+    "y": -1881,
     "name": "Maestra's Post",
     "zone": "Ashenvale",
     "faction": "Darnassus"
@@ -705,22 +705,22 @@
         "type": "Stable Master"
       }
     ],
-    "x": 81,
-    "y": -104,
+    "x": 1539,
+    "y": -1976,
     "name": "Astranaar",
     "zone": "Ashenvale",
     "faction": "Darnassus"
   },
   {
-    "x": 118,
-    "y": -57,
+    "x": 2242,
+    "y": -1083,
     "name": "Starfall Village",
     "zone": "Winterspring",
     "faction": "Darnassus"
   },
   {
-    "x": 98,
-    "y": -114,
+    "x": 1862,
+    "y": -2166,
     "name": "Silverwind Outpost",
     "zone": "Ashenvale",
     "faction": "Darnassus"
@@ -734,22 +734,22 @@
         "type": "Warrior Trainer"
       }
     ],
-    "x": 89,
-    "y": -110,
+    "x": 1691,
+    "y": -2090,
     "name": "Silverwind Refuge",
     "zone": "Ashenvale",
     "faction": "Darnassus"
   },
   {
-    "x": 96,
-    "y": -117,
+    "x": 1824,
+    "y": -2223,
     "name": "Silverwing Grove",
     "zone": "Ashenvale",
     "faction": "Darnassus"
   },
   {
-    "x": 111,
-    "y": -101,
+    "x": 2109,
+    "y": -1919,
     "name": "Forest Song",
     "zone": "Ashenvale",
     "faction": "Darnassus"
@@ -769,8 +769,8 @@
         "type": "Stable Master"
       }
     ],
-    "x": 71,
-    "y": -64,
+    "x": 1349,
+    "y": -1216,
     "name": "Auberdine",
     "zone": "Darkshore",
     "faction": "Darnassus",
@@ -785,8 +785,8 @@
         "type": "Flight Master"
       }
     ],
-    "x": 126,
-    "y": -105,
+    "x": 2394,
+    "y": -1995,
     "name": "Talrendis Point",
     "zone": "Azshara",
     "faction": "Darnassus"
@@ -812,8 +812,8 @@
         "type": "Flight Master"
       }
     ],
-    "x": 97,
-    "y": -66,
+    "x": 1843,
+    "y": -1254,
     "name": "Talonbranch Glade",
     "zone": "Felwood",
     "faction": "Darnassus"
@@ -839,8 +839,8 @@
         "type": "Stable Master"
       }
     ],
-    "x": 41,
-    "y": -180,
+    "x": 779,
+    "y": -3420,
     "name": "Feathermoon Stronghold",
     "zone": "Feralas",
     "faction": "Darnassus"
@@ -866,8 +866,8 @@
         "type": "Stable Master"
       }
     ],
-    "x": 63,
-    "y": -131,
+    "x": 1197,
+    "y": -2489,
     "name": "Nijel's Point",
     "zone": "Desolace",
     "faction": "Darnassus"
@@ -881,8 +881,8 @@
         "type": "Flight Master"
       }
     ],
-    "x": 84,
-    "y": -181,
+    "x": 1596,
+    "y": -3439,
     "name": "Thalanaar",
     "zone": "Thousand Needles",
     "faction": "Darnassus"
@@ -902,8 +902,8 @@
         "type": "Innkeeper"
       }
     ],
-    "x": 61,
-    "y": -104,
+    "x": 1159,
+    "y": -1976,
     "name": "Stonetalon Peak",
     "zone": "Stonetalon Mountains",
     "faction": "Darnassus"
@@ -929,8 +929,8 @@
         "type": "Stable Master"
       }
     ],
-    "x": 288,
-    "y": -85,
+    "x": 5472,
+    "y": -1615,
     "name": "Aerie Peak",
     "zone": "Hinterlands",
     "faction": "Wildhammer Clan"
@@ -1016,8 +1016,8 @@
         "type": "Banker"
       }
     ],
-    "x": 276,
-    "y": -142,
+    "x": 5244,
+    "y": -2698,
     "name": "Ironforge",
     "zone": "Dun Morogh",
     "faction": "Ironforge",
@@ -1044,8 +1044,8 @@
         "type": "Stable Master"
       }
     ],
-    "x": 298,
-    "y": -145,
+    "x": 5662,
+    "y": -2755,
     "name": "Thelsamar",
     "zone": "Loch Modan",
     "faction": "Ironforge"
@@ -1059,22 +1059,22 @@
         "type": "Hunter Trainer"
       }
     ],
-    "x": 312,
-    "y": -148,
+    "x": 5928,
+    "y": -2812,
     "name": "Farstrider Lodge",
     "zone": "Loch Modan",
     "faction": "Ironforge"
   },
   {
-    "x": 279,
-    "y": -101,
+    "x": 5301,
+    "y": -1919,
     "name": "Dun Garok",
     "zone": "Hillsbrad Foothills",
     "faction": "Ironforge"
   },
   {
-    "x": 263,
-    "y": -145,
+    "x": 4997,
+    "y": -2755,
     "name": "Brewnall Village",
     "zone": "Dun Morogh",
     "faction": "Ironforge"
@@ -1136,29 +1136,29 @@
         "type": "Stable Master"
       }
     ],
-    "x": 271,
-    "y": -148,
+    "x": 5149,
+    "y": -2812,
     "name": "Kharanos",
     "zone": "Dun Morogh",
     "faction": "Ironforge"
   },
   {
-    "x": 281,
-    "y": -147,
+    "x": 5339,
+    "y": -2793,
     "name": "Amberstill Ranch",
     "zone": "Dun Morogh",
     "faction": "Ironforge"
   },
   {
-    "x": 262,
-    "y": -154,
+    "x": 4978,
+    "y": -2926,
     "name": "Anvilmar",
     "zone": "Dun Morogh",
     "faction": "Ironforge"
   },
   {
-    "x": 295,
-    "y": -139,
+    "x": 5605,
+    "y": -2641,
     "name": "Algaz Station",
     "zone": "Loch Modan",
     "faction": "Ironforge"
@@ -1288,16 +1288,16 @@
         "type": "Banker"
       }
     ],
-    "x": 123,
-    "y": -118,
+    "x": 2337,
+    "y": -2242,
     "name": "Orgrimmar",
     "zone": "Durotar",
     "faction": "Orgrimmar",
     "ambience": "MusicOrgrimmar"
   },
   {
-    "x": 122,
-    "y": -140,
+    "x": 2318,
+    "y": -2660,
     "name": "The Den",
     "zone": "Durotar",
     "faction": "Orgrimmar"
@@ -1353,8 +1353,8 @@
         "type": "Stable Master"
       }
     ],
-    "x": 127,
-    "y": -130,
+    "x": 2413,
+    "y": -2470,
     "name": "Razor Hill",
     "zone": "Durotar",
     "faction": "Orgrimmar"
@@ -1368,8 +1368,8 @@
         "type": "Flight Master"
       }
     ],
-    "x": 65,
-    "y": -97,
+    "x": 1235,
+    "y": -1843,
     "name": "Zoram'gar Outpost",
     "zone": "Ashenvale",
     "faction": "Orgrimmar"
@@ -1389,8 +1389,8 @@
         "type": "Stable Master"
       }
     ],
-    "x": 105,
-    "y": -137,
+    "x": 1995,
+    "y": -2603,
     "name": "The Crossroads",
     "zone": "The Barrens",
     "faction": "Orgrimmar"
@@ -1404,8 +1404,8 @@
         "type": "Flight Master"
       }
     ],
-    "x": 80,
-    "y": -78,
+    "x": 1520,
+    "y": -1482,
     "name": "Bloodvenom Post",
     "zone": "Felwood",
     "faction": "Orgrimmar"
@@ -1419,15 +1419,15 @@
         "type": "Flight Master"
       }
     ],
-    "x": 123,
-    "y": -94,
+    "x": 2337,
+    "y": -1786,
     "name": "Valormok",
     "zone": "Azshara",
     "faction": "Orgrimmar"
   },
   {
-    "x": 101,
-    "y": -120,
+    "x": 1919,
+    "y": -2280,
     "name": "The Mor'shan Rampart",
     "zone": "The Barrens",
     "faction": "Orgrimmar"
@@ -1453,8 +1453,8 @@
         "type": "Stable Master"
       }
     ],
-    "x": 264,
-    "y": -220,
+    "x": 5023,
+    "y": -4194,
     "name": "Grom'gol Base Camp",
     "zone": "Stranglethorn Vale",
     "faction": "Orgrimmar"
@@ -1480,8 +1480,8 @@
         "type": "Stable Master"
       }
     ],
-    "x": 103,
-    "y": -109,
+    "x": 1957,
+    "y": -2071,
     "name": "Splintertree Post",
     "zone": "Ashenvale",
     "faction": "Orgrimmar"
@@ -1507,8 +1507,8 @@
         "type": "Stable Master"
       }
     ],
-    "x": 290,
-    "y": -159,
+    "x": 5510,
+    "y": -3024,
     "name": "Kargath",
     "zone": "Badlands",
     "faction": "Orgrimmar"
@@ -1558,8 +1558,8 @@
         "type": "Stable Master"
       }
     ],
-    "x": 301,
-    "y": -200,
+    "x": 5719,
+    "y": -3800,
     "name": "Stonard",
     "zone": "Swamp of Sorrows",
     "faction": "Orgrimmar"
@@ -1573,8 +1573,8 @@
         "type": "Flight Master"
       }
     ],
-    "x": 107,
-    "y": -167,
+    "x": 2033,
+    "y": -3173,
     "name": "Brackenwall Village",
     "zone": "Dustwallow Marsh",
     "faction": "Orgrimmar"
@@ -1588,8 +1588,8 @@
         "type": "Mage Trainer"
       }
     ],
-    "x": 129,
-    "y": -142,
+    "x": 2451,
+    "y": -2698,
     "name": "Sen'jin Village",
     "zone": "Durotar",
     "faction": "Darkspear Tribe"
@@ -1615,8 +1615,8 @@
         "type": "Stable Master"
       }
     ],
-    "x": 42,
-    "y": -150,
+    "x": 798,
+    "y": -2850,
     "name": "Shadowprey Village",
     "zone": "Desolace",
     "faction": "Darkspear Tribe",
@@ -1637,16 +1637,16 @@
         "type": "Stable Master"
       }
     ],
-    "x": 316,
-    "y": -94,
+    "x": 6004,
+    "y": -1786,
     "name": "Revantusk Village",
     "zone": "Hinterlands",
     "faction": "Revantusk Tribe",
     "fishing": true
   },
   {
-    "x": 80,
-    "y": -135,
+    "x": 1520,
+    "y": -2565,
     "name": "Malaka'jin",
     "zone": "Stonetalon Mountains",
     "faction": "Orgrimmar"
@@ -1720,8 +1720,8 @@
         "type": "Banker"
       }
     ],
-    "x": 76,
-    "y": -146,
+    "x": 1444,
+    "y": -2774,
     "name": "Thunder Bluff",
     "zone": "Mulgore",
     "faction": "Thunder Bluff",
@@ -1766,15 +1766,15 @@
         "type": "Stable Master"
       }
     ],
-    "x": 81,
-    "y": -158,
+    "x": 1539,
+    "y": -3002,
     "name": "Bloodhoof Village",
     "zone": "Mulgore",
     "faction": "Thunder Bluff"
   },
   {
-    "x": 79,
-    "y": -164,
+    "x": 1501,
+    "y": -3116,
     "name": "Camp Narache",
     "zone": "Mulgore",
     "faction": "Thunder Bluff"
@@ -1806,8 +1806,8 @@
         "type": "Stable Master"
       }
     ],
-    "x": 73,
-    "y": -179,
+    "x": 1387,
+    "y": -3401,
     "name": "Camp Mojache",
     "zone": "Feralas",
     "faction": "Thunder Bluff"
@@ -1833,8 +1833,8 @@
         "type": "Stable Master"
       }
     ],
-    "x": 98,
-    "y": -158,
+    "x": 1862,
+    "y": -3002,
     "name": "Camp Taurajo",
     "zone": "The Barrens",
     "faction": "Thunder Bluff"
@@ -1860,8 +1860,8 @@
         "type": "Stable Master"
       }
     ],
-    "x": 102,
-    "y": -191,
+    "x": 1938,
+    "y": -3629,
     "name": "Freewind Post",
     "zone": "Thousand Needles",
     "faction": "Thunder Bluff"
@@ -1887,15 +1887,15 @@
         "type": "Stable Master"
       }
     ],
-    "x": 66,
-    "y": -123,
+    "x": 1254,
+    "y": -2337,
     "name": "Sun Rock Retreat",
     "zone": "Stonetalon Mountains",
     "faction": "Thunder Bluff"
   },
   {
-    "x": 57,
-    "y": -146,
+    "x": 1083,
+    "y": -2774,
     "name": "Ghost Walker Post",
     "zone": "Desolace",
     "faction": "Thunder Bluff"
@@ -1969,8 +1969,8 @@
         "type": "Banker"
       }
     ],
-    "x": 264,
-    "y": -71,
+    "x": 5016,
+    "y": -1349,
     "name": "Undercity",
     "zone": "Tirisfal Glades",
     "faction": "Undercity",
@@ -1979,15 +1979,15 @@
     "fishing": true
   },
   {
-    "x": 273,
-    "y": -69,
+    "x": 5187,
+    "y": -1311,
     "name": "The Bulwark",
     "zone": "Tirisfal Glades",
     "faction": "Undercity"
   },
   {
-    "x": 248,
-    "y": -70,
+    "x": 4712,
+    "y": -1330,
     "name": "Shadow Grave",
     "zone": "Tirisfal Glades",
     "faction": "Undercity"
@@ -2037,8 +2037,8 @@
         "type": "Stable Master"
       }
     ],
-    "x": 263,
-    "y": -63,
+    "x": 4997,
+    "y": -1197,
     "name": "Brill",
     "zone": "Tirisfal Glades",
     "faction": "Undercity"
@@ -2064,8 +2064,8 @@
         "type": "Stable Master"
       }
     ],
-    "x": 303,
-    "y": -98,
+    "x": 5757,
+    "y": -1862,
     "name": "Hammerfall",
     "zone": "Arathi Highlands",
     "faction": "Undercity"
@@ -2091,8 +2091,8 @@
         "type": "Stable Master"
       }
     ],
-    "x": 275,
-    "y": -88,
+    "x": 5225,
+    "y": -1672,
     "name": "Tarren Mill",
     "zone": "Hillsbrad Foothills",
     "faction": "Undercity"
@@ -2118,8 +2118,8 @@
         "type": "Stable Master"
       }
     ],
-    "x": 248,
-    "y": -82,
+    "x": 4712,
+    "y": -1558,
     "name": "The Sepulcher",
     "zone": "Silverpine Forest",
     "faction": "Undercity"
@@ -2151,15 +2151,15 @@
         "type": "Stable Master"
       }
     ],
-    "x": 68,
-    "y": -206,
+    "x": 1292,
+    "y": -3914,
     "name": "Cenarion Hold",
     "zone": "Silithus",
     "faction": "Cenarion Circle"
   },
   {
-    "x": 87,
-    "y": -87,
+    "x": 1653,
+    "y": -1653,
     "name": "Emerald Sanctuary",
     "zone": "Felwood",
     "faction": "Cenarion Circle"
@@ -2185,8 +2185,8 @@
         "type": "Flight Master"
       }
     ],
-    "x": 103,
-    "y": -48,
+    "x": 1957,
+    "y": -912,
     "name": "Nighthaven",
     "zone": "Moonglade",
     "faction": "Cenarion Circle"
@@ -2212,8 +2212,8 @@
         "type": "Innkeeper"
       }
     ],
-    "x": 323,
-    "y": -63,
+    "x": 6137,
+    "y": -1197,
     "name": "Light's Hope Chapel",
     "zone": "Eastern Plaguelands",
     "faction": "Argent Dawn"
@@ -2227,15 +2227,15 @@
         "type": "Flight Master"
       }
     ],
-    "x": 282,
-    "y": -78,
+    "x": 5358,
+    "y": -1482,
     "name": "Chillwind Camp",
     "zone": "Western Plaguelands",
     "faction": "Argent Dawn"
   },
   {
-    "x": 280,
-    "y": -165,
+    "x": 5317,
+    "y": -3139,
     "name": "Nilith Camp",
     "zone": "Searing Gorge",
     "faction": "Thorium Brotherhood"
@@ -2255,8 +2255,8 @@
         "type": "Flight Master"
       }
     ],
-    "x": 279,
-    "y": -158,
+    "x": 5301,
+    "y": -3003,
     "name": "Thorium Point",
     "zone": "Searing Gorge",
     "faction": "Thorium Brotherhood"
@@ -2294,8 +2294,8 @@
         "type": "Banker"
       }
     ],
-    "x": 127,
-    "y": -61,
+    "x": 2413,
+    "y": -1159,
     "name": "Everlook",
     "zone": "Winterspring",
     "faction": "Steamwheedle Cartel"
@@ -2327,8 +2327,8 @@
         "type": "Banker"
       }
     ],
-    "x": 117,
-    "y": -210,
+    "x": 2223,
+    "y": -3990,
     "name": "Gadgetzan",
     "zone": "Tanaris",
     "faction": "Steamwheedle Cartel"
@@ -2360,8 +2360,8 @@
         "type": "Banker"
       }
     ],
-    "x": 116,
-    "y": -143,
+    "x": 2204,
+    "y": -2717,
     "name": "Ratchet",
     "zone": "The Barrens",
     "faction": "Steamwheedle Cartel",
@@ -2406,8 +2406,8 @@
         "type": "Banker"
       }
     ],
-    "x": 261,
-    "y": -241,
+    "x": 4970,
+    "y": -4586,
     "name": "Booty Bay",
     "zone": "Stranglethorn Vale",
     "faction": "Steamwheedle Cartel",
@@ -2422,57 +2422,57 @@
         "type": "Flight Master"
       }
     ],
-    "x": 90,
-    "y": -199,
+    "x": 1710,
+    "y": -3781,
     "name": "Marshal's Refuge",
     "zone": "Un'Goro Crater",
     "faction": "Neutral"
   },
   {
-    "x": 99,
-    "y": -58,
+    "x": 1881,
+    "y": -1102,
     "name": "Timbermaw Hold",
     "zone": "Felwood",
     "faction": "Timbermaw Tribe"
   },
   {
-    "x": 64,
-    "y": -218,
+    "x": 1216,
+    "y": -4142,
     "name": "Bronzebeard Encampment",
     "zone": "Silithus",
     "faction": "Neutral"
   },
   {
-    "x": 68,
-    "y": -214,
+    "x": 1292,
+    "y": -4066,
     "name": "Orgrimmar Legion Camp",
     "zone": "Silithus",
     "faction": "Orgrimmar"
   },
   {
-    "x": 79,
-    "y": -201,
+    "x": 1501,
+    "y": -3819,
     "name": "Valor's Rest",
     "zone": "Silithus",
     "faction": "Cenarion Circle"
   },
   {
-    "x": 61,
-    "y": -210,
+    "x": 1159,
+    "y": -3990,
     "name": "Ironforge Brigade Outpost",
     "zone": "Silithus",
     "faction": "Ironforge"
   },
   {
-    "x": 296,
-    "y": -196,
+    "x": 5634,
+    "y": -3729,
     "name": "The Harborage",
     "zone": "Swamp of Sorrows",
     "faction": "Broken"
   },
   {
-    "x": 267,
-    "y": -212,
+    "x": 5073,
+    "y": -4039,
     "name": "Nesingwary's Expedition",
     "zone": "Stranglethorn Vale",
     "faction": "Neutral"
@@ -2486,8 +2486,8 @@
         "type": "Arena Master"
       }
     ],
-    "x": 263,
-    "y": -229,
+    "x": 5006,
+    "y": -4359,
     "name": "Gurubashi Arena",
     "zone": "Stranglethorn Vale",
     "faction": "Neutral"

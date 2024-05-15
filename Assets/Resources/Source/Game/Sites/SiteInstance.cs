@@ -8,7 +8,6 @@ using static Root;
 using static Root.Anchor;
 
 using static Sound;
-using static MapGrid;
 using static Faction;
 using static Coloring;
 using static SaveGame;
@@ -123,12 +122,13 @@ public class SiteInstance : Site
     //Function to print the site onto the map
     public override void PrintSite()
     {
-        SetAnchor(x * mapGridSize, y * mapGridSize);
+        SetAnchor(x, y);
+        DisableGeneralSprites();
         AddRegionGroup();
         AddPaddingRegion(() =>
         {
-            AddSmallButton(currentSave.siteVisits.ContainsKey(name) ? "Site" + type : "OtherUnknown",
-            (h) => { CDesktop.cameraDestination = new Vector2(x, y) * mapGridSize; },
+            AddSmallButton(currentSave.siteVisits.ContainsKey(name) ? "Map" + type : "MapUnknown",
+            (h) => { CDesktop.cameraDestination = new Vector2(x, y); },
             (h) =>
             {
                 if (h == null) LeadPath();
@@ -137,7 +137,7 @@ public class SiteInstance : Site
             (h) => () =>
             {
                 if (!currentSave.siteVisits.ContainsKey(name)) return;
-                SetAnchor(TopRight, h.window);
+                SetAnchor(TopRight, -19, -38);
                 AddRegionGroup();
                 SetRegionGroupWidth(152);
                 AddHeaderRegion(() => { AddLine(name); });
@@ -170,7 +170,7 @@ public class SiteInstance : Site
             },
             (h) => { BuildPath(); });
             if (currentSave.currentSite == name)
-                AddSmallButtonOverlay("PlayerLocation");
+                AddSmallButtonOverlay("PlayerLocation", 0, 2);
         });
     }
 

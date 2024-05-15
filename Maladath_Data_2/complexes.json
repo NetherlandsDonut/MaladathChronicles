@@ -25,8 +25,8 @@
         "SiteName": "Blackwing Lair"
       }
     ],
-    "x": 278,
-    "y": -169,
+    "x": 5282,
+    "y": -3210,
     "name": "Blackrock Mountain",
     "zone": "Burning Steppes",
     "type": "Complex",
@@ -55,8 +55,8 @@
         "SiteName": "Keepers' Shrine"
       }
     ],
-    "x": 309,
-    "y": -92,
+    "x": 5871,
+    "y": -1748,
     "name": "Jintha'Alor",
     "zone": "Hinterlands",
     "type": "Complex",
@@ -84,8 +84,8 @@
         "SiteName": "Scarlet Basilica"
       }
     ],
-    "x": 325,
-    "y": -70,
+    "x": 6175,
+    "y": -1330,
     "name": "Tyr's Hand",
     "zone": "Eastern Plaguelands",
     "type": "Complex",
@@ -109,8 +109,8 @@
         "SiteName": "Mardenholde Keep"
       }
     ],
-    "x": 282,
-    "y": -57,
+    "x": 5358,
+    "y": -1083,
     "name": "Hearthglen",
     "zone": "Western Plaguelands",
     "type": "Complex",
@@ -142,8 +142,8 @@
         "SiteName": "Stromgarde Keep"
       }
     ],
-    "x": 285,
-    "y": -105,
+    "x": 5415,
+    "y": -1995,
     "name": "Ruins of Stromgarde",
     "zone": "Arathi Highlands",
     "type": "Complex",
@@ -167,8 +167,8 @@
         "SiteName": "Alterac Keep"
       }
     ],
-    "x": 270,
-    "y": -81,
+    "x": 5130,
+    "y": -1539,
     "name": "Ruins of Alterac",
     "zone": "Alterac Mountains",
     "type": "Complex",
@@ -196,8 +196,8 @@
         "SiteName": "Scarlet Monastery"
       }
     ],
-    "x": 274,
-    "y": -57,
+    "x": 5206,
+    "y": -1083,
     "name": "Scarlet Monastery Grounds",
     "zone": "Tirisfal Glades",
     "type": "Complex",
@@ -221,8 +221,8 @@
         "SiteName": "Shadow Hold"
       }
     ],
-    "x": 81,
-    "y": -81,
+    "x": 1539,
+    "y": -1539,
     "name": "Jaedenar Grounds",
     "zone": "Felwood",
     "type": "Complex",
@@ -242,8 +242,8 @@
         "SiteName": "Alcaz Dungeon"
       }
     ],
-    "x": 129,
-    "y": -162,
+    "x": 2451,
+    "y": -3078,
     "name": "Alcaz Island",
     "zone": "Dustwallow Marsh",
     "type": "Complex",

@@ -2,8 +2,6 @@ using System.Linq;
 
 using UnityEngine;
 
-using static UnityEngine.KeyCode;
-
 using static Site;
 using static Root;
 using static Sound;
@@ -27,8 +25,8 @@ public class MapGrid : MonoBehaviour
     //On mouse down pan the camera to the pressed square on the map
     void OnMouseDown()
     {
-        var temp = new Vector2Int((int)cursor.transform.position.x / mapGridSize, (int)cursor.transform.position.y / mapGridSize);
-        CDesktop.cameraDestination = new Vector2(temp.x, temp.y) * mapGridSize;
+        var temp = cursor.transform.position;
+        CDesktop.cameraDestination = new Vector2((int)temp.x, (int)temp.y);
     }
 
     //Updates color of the map texture based on time
@@ -69,8 +67,6 @@ public class MapGrid : MonoBehaviour
         texture.gameObject.SetActive(!deadOn);
         textureDead.gameObject.SetActive(deadOn);
     }
-
-    public static int mapGridSize = 19;
 
     //Bounds camera to be in a specified proximity of any sites in reach
     //Whenever camera is close enough to detect sites it will be dragged to their proximity

@@ -51,8 +51,8 @@
         ]
       }
     ],
-    "x": 307,
-    "y": -199,
+    "x": 5842,
+    "y": -3795,
     "name": "Temple of Atal'Hakkar",
     "zone": "Swamp of Sorrows",
     "type": "Dungeon",
@@ -77,8 +77,8 @@
         ]
       }
     ],
-    "x": 257,
-    "y": -182,
+    "x": 4891,
+    "y": -3459,
     "name": "The Stockade",
     "zone": "Elwynn Forest",
     "type": "Dungeon",
@@ -104,8 +104,8 @@
         ]
       }
     ],
-    "x": 122,
-    "y": -113,
+    "x": 2318,
+    "y": -2147,
     "name": "Ragefire Chasm",
     "zone": "Durotar",
     "type": "Dungeon",
@@ -137,8 +137,8 @@
         ]
       }
     ],
-    "x": 260,
-    "y": -143,
+    "x": 4940,
+    "y": -2717,
     "name": "Gnomeregan",
     "zone": "Dun Morogh",
     "type": "Dungeon",
@@ -193,8 +193,8 @@
       "Black Malice",
       "Eerie Stable Lantern"
     ],
-    "x": 248,
-    "y": -90,
+    "x": 4712,
+    "y": -1710,
     "name": "Shadowfang Keep",
     "zone": "Silverpine Forest",
     "type": "Dungeon",
@@ -319,8 +319,8 @@
       "Tattered Leather Hood",
       "Coldstone Slippers"
     ],
-    "x": 294,
-    "y": -74,
+    "x": 5586,
+    "y": -1406,
     "name": "Scholomance",
     "zone": "Western Plaguelands",
     "type": "Dungeon",
@@ -368,8 +368,8 @@
         ]
       }
     ],
-    "x": 45,
-    "y": -148,
+    "x": 855,
+    "y": -2812,
     "name": "Maraudon",
     "zone": "Desolace",
     "type": "Dungeon"
@@ -449,8 +449,8 @@
       "Sacred Cloth Leggings",
       "Frayed Abomination Stitching"
     ],
-    "x": 303,
-    "y": -48,
+    "x": 5757,
+    "y": -912,
     "name": "Stratholme",
     "zone": "Eastern Plaguelands",
     "type": "Dungeon",
@@ -481,8 +481,8 @@
         ]
       }
     ],
-    "x": 98,
-    "y": -142,
+    "x": 1862,
+    "y": -2698,
     "name": "Wailing Caverns",
     "zone": "The Barrens",
     "type": "Dungeon",
@@ -532,8 +532,8 @@
       "Obsidian Cleaver",
       "Annealed Blade"
     ],
-    "x": 300,
-    "y": -152,
+    "x": 5700,
+    "y": -2888,
     "name": "Uldaman",
     "zone": "Badlands",
     "type": "Dungeon",
@@ -576,8 +576,8 @@
       "Ebony Boneclub",
       "Boneslasher"
     ],
-    "x": 104,
-    "y": -184,
+    "x": 1976,
+    "y": -3496,
     "name": "Razorfen Downs",
     "zone": "The Barrens",
     "type": "Dungeon",
@@ -624,8 +624,8 @@
       "Wolfclaw Gloves",
       "Staff of the Shade"
     ],
-    "x": 94,
-    "y": -180,
+    "x": 1786,
+    "y": -3420,
     "name": "Razorfen Kraul",
     "zone": "The Barrens",
     "type": "Dungeon",
@@ -662,8 +662,8 @@
       "Blackened Defias Leggings",
       "Blackened Defias Gloves"
     ],
-    "x": 250,
-    "y": -208,
+    "x": 4748,
+    "y": -3931,
     "name": "The Deadmines",
     "zone": "Westfall",
     "type": "Dungeon",
@@ -712,8 +712,8 @@
       "Staff of the Blessed Seer",
       "Evocator's Blade"
     ],
-    "x": 67,
-    "y": -88,
+    "x": 1273,
+    "y": -1672,
     "name": "Blackfathom Deeps",
     "zone": "Ashenvale",
     "type": "Dungeon",
@@ -788,8 +788,8 @@
       "Cyclone Spaulders",
       "Elemental Plate Girdle"
     ],
-    "x": 62,
-    "y": -181,
+    "x": 1178,
+    "y": -3439,
     "name": "Dire Maul",
     "zone": "Feralas",
     "type": "Dungeon",
@@ -1184,8 +1184,8 @@
         ]
       }
     ],
-    "x": 108,
-    "y": -204,
+    "x": 2052,
+    "y": -3876,
     "name": "Zul'Farrak",
     "zone": "Tanaris",
     "type": "Dungeon",
@@ -1204,8 +1204,8 @@
         ]
       }
     ],
-    "x": 116,
-    "y": -183,
+    "x": 2204,
+    "y": -3477,
     "name": "Onyxia's Lair",
     "zone": "Dustwallow Marsh",
     "type": "Raid",
@@ -1362,8 +1362,8 @@
       "Band of Servitude",
       "Seal of the Gurubashi Berserker"
     ],
-    "x": 278,
-    "y": -216,
+    "x": 5291,
+    "y": -4097,
     "name": "Zul'Gurub",
     "zone": "Stranglethorn Vale",
     "type": "Raid",
@@ -1467,8 +1467,8 @@
       "Fury of the Forgotten Swarm",
       "Treads of the Wandering Nomad"
     ],
-    "x": 59,
-    "y": -228,
+    "x": 1121,
+    "y": -4332,
     "name": "Ruins of Ahn'Qiraj",
     "zone": "Silithus",
     "type": "Raid",
@@ -1515,8 +1515,8 @@
       "Gloves of the Redeemed Prophecy",
       "Shard of the Fallen Star"
     ],
-    "x": 55,
-    "y": -225,
+    "x": 1045,
+    "y": -4275,
     "name": "Temple of Ahn'Qiraj",
     "zone": "Silithus",
     "type": "Raid",

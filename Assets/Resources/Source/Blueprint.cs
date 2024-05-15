@@ -157,7 +157,7 @@ public class Blueprint
                     Login();
                     SpawnDesktopBlueprint("Map");
                     var find = FindSite(x => x.name == currentSave.currentSite);
-                    if (find != null) CDesktop.cameraDestination = new Vector2(find.x, find.y) * mapGridSize;
+                    if (find != null) CDesktop.cameraDestination = new Vector2(find.x, find.y);
                 });
             }
             else
@@ -8600,6 +8600,43 @@ public class Blueprint
             AddHotkey(A, () => { MoveCamera(new Vector2(-EuelerGrowth(), 0)); }, false);
             AddHotkey(S, () => { MoveCamera(new Vector2(0, -EuelerGrowth())); }, false);
             AddHotkey(D, () => { MoveCamera(new Vector2(EuelerGrowth(), 0)); }, false);
+            AddHotkey(UpArrow, () =>
+            {
+                var site = FindSite(x => x.name == currentSave.currentSite);
+                site.y += (int)Math.Sqrt(EuelerGrowth());
+                var find = windowBlueprints.Find(x => x.title == "Site: " + site.name);
+                windowBlueprints.Remove(find);
+                windowBlueprints.Add(new Blueprint("Site: " + site.name, () => site.PrintSite()));
+                CloseWindow("Site: " + site.name);
+                SpawnWindowBlueprint("Site: " + site.name);
+            }, false);
+            AddHotkey(LeftArrow, () =>
+            {
+                var site = FindSite(x => x.name == currentSave.currentSite);
+                site.x -= (int)Math.Sqrt(EuelerGrowth());
+                var find = windowBlueprints.Find(x => x.title == "Site: " + site.name);
+                windowBlueprints.Add(new Blueprint("Site: " + site.name, () => site.PrintSite()));
+                CloseWindow("Site: " + site.name);
+                SpawnWindowBlueprint("Site: " + site.name);
+            }, false);
+            AddHotkey(DownArrow, () =>
+            {
+                var site = FindSite(x => x.name == currentSave.currentSite);
+                site.y -= (int)Math.Sqrt(EuelerGrowth());
+                var find = windowBlueprints.Find(x => x.title == "Site: " + site.name);
+                windowBlueprints.Add(new Blueprint("Site: " + site.name, () => site.PrintSite()));
+                CloseWindow("Site: " + site.name);
+                SpawnWindowBlueprint("Site: " + site.name);
+            }, false);
+            AddHotkey(RightArrow, () =>
+            {
+                var site = FindSite(x => x.name == currentSave.currentSite);
+                site.x += (int)Math.Sqrt(EuelerGrowth());
+                var find = windowBlueprints.Find(x => x.title == "Site: " + site.name);
+                windowBlueprints.Add(new Blueprint("Site: " + site.name, () => site.PrintSite()));
+                CloseWindow("Site: " + site.name);
+                SpawnWindowBlueprint("Site: " + site.name);
+            }, false);
             AddHotkey(Escape, () =>
             {
                 PlaySound("DesktopMenuOpen");
@@ -8624,7 +8661,7 @@ public class Blueprint
             AddHotkey(KeyCode.Space, () =>
             {
                 var whereTo = FindSite(x => x.name == currentSave.currentSite);
-                CDesktop.cameraDestination = new Vector2(whereTo.x * mapGridSize, whereTo.y * mapGridSize);
+                CDesktop.cameraDestination = new Vector2(whereTo.x, whereTo.y);
             });
 
             void MoveCamera(Vector2 amount)
