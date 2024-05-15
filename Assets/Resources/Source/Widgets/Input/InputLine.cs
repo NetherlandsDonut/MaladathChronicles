@@ -67,6 +67,7 @@ public class InputLine : MonoBehaviour
                     Respawn("CharacterInfo");
                     Respawn("CharacterRoster");
                     Respawn("TitleScreenSingleplayer");
+                    SaveGames();
                 }
                 else
                     CloseWindow("ConfirmDeleteCharacter");
@@ -576,7 +577,7 @@ public class InputLine : MonoBehaviour
                     currentSave.currentSite = site.name;
                     if (!currentSave.siteVisits.ContainsKey(site.name))
                         currentSave.siteVisits.Add(site.name, 1);
-                    CDesktop.cameraDestination = new Vector2(site.x, site.y) * 19;
+                    CDesktop.cameraDestination = new Vector2(site.x, site.y);
                     Respawn("Site: " + prev);
                     if (!currentSave.siteVisits.ContainsKey(site.name))
                     {

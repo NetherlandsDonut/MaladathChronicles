@@ -319,8 +319,8 @@
       "Tattered Leather Hood",
       "Coldstone Slippers"
     ],
-    "x": 5586,
-    "y": -1406,
+    "x": 5585,
+    "y": -1411,
     "name": "Scholomance",
     "zone": "Western Plaguelands",
     "type": "Dungeon",
@@ -449,8 +449,8 @@
       "Sacred Cloth Leggings",
       "Frayed Abomination Stitching"
     ],
-    "x": 5757,
-    "y": -912,
+    "x": 5750,
+    "y": -984,
     "name": "Stratholme",
     "zone": "Eastern Plaguelands",
     "type": "Dungeon",
@@ -532,8 +532,8 @@
       "Obsidian Cleaver",
       "Annealed Blade"
     ],
-    "x": 5700,
-    "y": -2888,
+    "x": 5704,
+    "y": -2885,
     "name": "Uldaman",
     "zone": "Badlands",
     "type": "Dungeon",
@@ -576,8 +576,8 @@
       "Ebony Boneclub",
       "Boneslasher"
     ],
-    "x": 1976,
-    "y": -3496,
+    "x": 1982,
+    "y": -3506,
     "name": "Razorfen Downs",
     "zone": "The Barrens",
     "type": "Dungeon",
@@ -624,8 +624,8 @@
       "Wolfclaw Gloves",
       "Staff of the Shade"
     ],
-    "x": 1786,
-    "y": -3420,
+    "x": 1792,
+    "y": -3421,
     "name": "Razorfen Kraul",
     "zone": "The Barrens",
     "type": "Dungeon",
@@ -1184,8 +1184,8 @@
         ]
       }
     ],
-    "x": 2052,
-    "y": -3876,
+    "x": 2045,
+    "y": -3894,
     "name": "Zul'Farrak",
     "zone": "Tanaris",
     "type": "Dungeon",
@@ -1204,8 +1204,8 @@
         ]
       }
     ],
-    "x": 2204,
-    "y": -3477,
+    "x": 2209,
+    "y": -3485,
     "name": "Onyxia's Lair",
     "zone": "Dustwallow Marsh",
     "type": "Raid",
@@ -1467,8 +1467,8 @@
       "Fury of the Forgotten Swarm",
       "Treads of the Wandering Nomad"
     ],
-    "x": 1121,
-    "y": -4332,
+    "x": 1119,
+    "y": -4331,
     "name": "Ruins of Ahn'Qiraj",
     "zone": "Silithus",
     "type": "Raid",

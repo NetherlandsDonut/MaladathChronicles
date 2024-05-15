@@ -284,7 +284,7 @@
         "type": "Stable Master"
       }
     ],
-    "x": 5510,
+    "x": 5520,
     "y": -3543,
     "name": "Lakeshire",
     "zone": "Redridge Mountains",
@@ -380,8 +380,8 @@
         "type": "Stable Master"
       }
     ],
-    "x": 4838,
-    "y": -3826,
+    "x": 4852,
+    "y": -3837,
     "name": "Sentinel Hill",
     "zone": "Westfall",
     "faction": "Stormwind"
@@ -431,8 +431,8 @@
         "type": "Expert Alchemist"
       }
     ],
-    "x": 2356,
-    "y": -3287,
+    "x": 2360,
+    "y": -3294,
     "name": "Theramore Isle",
     "zone": "Dustwallow Marsh",
     "faction": "Stormwind"
@@ -1016,8 +1016,8 @@
         "type": "Banker"
       }
     ],
-    "x": 5244,
-    "y": -2698,
+    "x": 5231,
+    "y": -2694,
     "name": "Ironforge",
     "zone": "Dun Morogh",
     "faction": "Ironforge",
@@ -1136,15 +1136,15 @@
         "type": "Stable Master"
       }
     ],
-    "x": 5149,
-    "y": -2812,
+    "x": 5159,
+    "y": -2807,
     "name": "Kharanos",
     "zone": "Dun Morogh",
     "faction": "Ironforge"
   },
   {
-    "x": 5339,
-    "y": -2793,
+    "x": 5336,
+    "y": -2790,
     "name": "Amberstill Ranch",
     "zone": "Dun Morogh",
     "faction": "Ironforge"
@@ -1573,8 +1573,8 @@
         "type": "Flight Master"
       }
     ],
-    "x": 2033,
-    "y": -3173,
+    "x": 2036,
+    "y": -3169,
     "name": "Brackenwall Village",
     "zone": "Dustwallow Marsh",
     "faction": "Orgrimmar"
@@ -1860,8 +1860,8 @@
         "type": "Stable Master"
       }
     ],
-    "x": 1938,
-    "y": -3629,
+    "x": 1948,
+    "y": -3640,
     "name": "Freewind Post",
     "zone": "Thousand Needles",
     "faction": "Thunder Bluff"
@@ -2327,8 +2327,8 @@
         "type": "Banker"
       }
     ],
-    "x": 2223,
-    "y": -3990,
+    "x": 2225,
+    "y": -3982,
     "name": "Gadgetzan",
     "zone": "Tanaris",
     "faction": "Steamwheedle Cartel"
@@ -2423,7 +2423,7 @@
       }
     ],
     "x": 1710,
-    "y": -3781,
+    "y": -3783,
     "name": "Marshal's Refuge",
     "zone": "Un'Goro Crater",
     "faction": "Neutral"
@@ -2436,28 +2436,28 @@
     "faction": "Timbermaw Tribe"
   },
   {
-    "x": 1216,
-    "y": -4142,
+    "x": 1222,
+    "y": -4153,
     "name": "Bronzebeard Encampment",
     "zone": "Silithus",
     "faction": "Neutral"
   },
   {
-    "x": 1292,
-    "y": -4066,
+    "x": 1300,
+    "y": -4068,
     "name": "Orgrimmar Legion Camp",
     "zone": "Silithus",
     "faction": "Orgrimmar"
   },
   {
-    "x": 1501,
-    "y": -3819,
+    "x": 1505,
+    "y": -3832,
     "name": "Valor's Rest",
     "zone": "Silithus",
     "faction": "Cenarion Circle"
   },
   {
-    "x": 1159,
+    "x": 1168,
     "y": -3990,
     "name": "Ironforge Brigade Outpost",
     "zone": "Silithus",

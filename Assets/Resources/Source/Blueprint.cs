@@ -2465,7 +2465,8 @@ public class Blueprint
                     creationRace = race.name;
                     var temp = specs.FindAll(x => x.startingEquipment.ContainsKey(creationRace));
                     creationSpec = temp[random.Next(temp.Count)].name;
-                    creationName = creationGender == "Male" ? race.maleNames[random.Next(race.maleNames.Count)] : race.femaleNames[random.Next(race.femaleNames.Count)];
+                    do creationName = creationGender == "Male" ? race.maleNames[random.Next(race.maleNames.Count)] : race.femaleNames[random.Next(race.femaleNames.Count)];
+                    while (saves[settings.selectedRealm].Exists(x => x.player.name == creationName));
                     CDesktop.windows.Find(x => x.title == "CharacterCreation").Respawn();
                 });
             });
@@ -2483,6 +2484,7 @@ public class Blueprint
                 SpawnWindowBlueprint("CharacterRoster");
                 SpawnWindowBlueprint("CharacterInfo");
                 SpawnWindowBlueprint("TitleScreenSingleplayer");
+                SaveGames();
             });
         }),
         new("CharacterBaseStats", () => {
