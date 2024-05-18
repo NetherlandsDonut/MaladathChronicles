@@ -1,10 +1,7 @@
 {
   "selectedRealm": "Whitemane",
   "selectedRealmRanking": "Whitemane",
-  "selectedCharacter": "Kha'ma",
-  "shadows": {
-    "value": "True"
-  },
+  "selectedCharacter": "Eliane",
   "pixelPerfectVision": {
     "value": "True"
   },
@@ -28,5 +25,8 @@
   },
   "chartBigIcons": {
     "value": "True"
+  },
+  "fastCascading": {
+    "value": "False"
   }
 }

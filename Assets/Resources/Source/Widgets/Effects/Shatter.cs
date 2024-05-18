@@ -59,7 +59,7 @@ public class Shatter : MonoBehaviour
         else if (amount < 0) amount = 0;
         for (int i = 5; i < x - 4; i++)
             for (int j = 5; j < y - 4; j++)
-                if ((i + j) % 2 == 0 && random.Next(0, 100) < amount)
+                if ((i + j) % 3 == 0 && random.Next(0, 100) < amount)
                     SpawnDot(i, j, foo.texture.GetPixel(i, j));
 
         void SpawnDot(int c, int v, Color32 color)

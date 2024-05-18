@@ -115,9 +115,6 @@ public class Board
     //Tells whether the artificial time break for the enemy move was made already. For now it is used as an illusion that the enemy is thinking before making a move. It may not be useful in the future. We will see
     public bool breakForEnemy;
 
-    //Tells whether the time break was made in between element cascades on the board
-    public bool breakForCascade;
-
     //Indicates whether the enemy finished moving and whether turn can be switched to the player
     public bool enemyFinishedMoving;
 
@@ -427,16 +424,7 @@ public class Board
                 var list = FloodCount(i, j);
                 if (list.Count >= 3)
                 {
-                    if (!breakForCascade)
-                    {
-                        FloodDestroy(list);
-                        breakForCascade = true;
-                    }
-                    else
-                    {
-                        breakForCascade = false;
-                        animationTime += defines.frameTime * 2;
-                    }
+                    FloodDestroy(list);
                     return;
                 }
             }

@@ -458,8 +458,8 @@
         "type": "Stable Master"
       }
     ],
-    "x": 5225,
-    "y": -2413,
+    "x": 5232,
+    "y": -2416,
     "name": "Menethil Harbor",
     "zone": "Wetlands",
     "faction": "Stormwind"
@@ -1059,8 +1059,8 @@
         "type": "Hunter Trainer"
       }
     ],
-    "x": 5928,
-    "y": -2812,
+    "x": 5930,
+    "y": -2819,
     "name": "Farstrider Lodge",
     "zone": "Loch Modan",
     "faction": "Ironforge"
@@ -1073,8 +1073,8 @@
     "faction": "Ironforge"
   },
   {
-    "x": 4997,
-    "y": -2755,
+    "x": 5002,
+    "y": -2763,
     "name": "Brewnall Village",
     "zone": "Dun Morogh",
     "faction": "Ironforge"
@@ -1150,15 +1150,15 @@
     "faction": "Ironforge"
   },
   {
-    "x": 4978,
-    "y": -2926,
+    "x": 4986,
+    "y": -2933,
     "name": "Anvilmar",
     "zone": "Dun Morogh",
     "faction": "Ironforge"
   },
   {
-    "x": 5605,
-    "y": -2641,
+    "x": 5614,
+    "y": -2663,
     "name": "Algaz Station",
     "zone": "Loch Modan",
     "faction": "Ironforge"

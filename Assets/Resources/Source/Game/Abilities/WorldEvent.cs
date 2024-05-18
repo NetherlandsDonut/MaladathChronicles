@@ -68,10 +68,10 @@ public class WorldEvent
             //}
 
             //Prolongs wait time after effect
-            void ExecuteAwait()
-            {
-                animationTime = defines.frameTime * await;
-            }
+            //void ExecuteAwait()
+            //{
+            //    animationTime = defines.frameTime * await;
+            //}
 
             //Executes a single effect from the list
             void ExecuteEffect()

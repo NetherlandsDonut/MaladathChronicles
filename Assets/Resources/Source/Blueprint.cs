@@ -22,7 +22,6 @@ using static Board;
 using static Recipe;
 using static Person;
 using static Defines;
-using static MapGrid;
 using static Faction;
 using static ItemSet;
 using static Ability;
@@ -384,8 +383,7 @@ public class Blueprint
                 AddPaddingRegion(() => AddLine("Delete a character", "DarkGray"));
             }
         }, true),
-        new("CharacterRoster", () =>
-        {
+        new("CharacterRoster", () => {
             if (settings.selectedCharacter != "")
                 SetDesktopBackground(saves[settings.selectedRealm].Find(x => x.player.name == settings.selectedCharacter).LoginBackground(), true);
             else SetDesktopBackground("Sky", true);
@@ -473,8 +471,7 @@ public class Blueprint
             }
             else AddPaddingRegion(() => { });
         }, true),
-        new("GameSettings", () =>
-        {
+        new("GameSettings", () => {
             SetAnchor(Center);
             AddHeaderGroup();
             AddHeaderRegion(() =>
@@ -489,23 +486,51 @@ public class Blueprint
             AddRegionGroup();
             AddPaddingRegion(() =>
             {
-                AddCheckbox(settings.shadows);
-                AddLine("Shadows", "Gray");
+                AddLine("Visuals", "", "Center");
             });
-            AddPaddingRegion(() =>
+            AddButtonRegion(() =>
             {
                 AddCheckbox(settings.pixelPerfectVision);
-                AddLine("Pixel perfect vision", "Gray");
+                AddLine("Pixel perfect vision");
+            },
+            (h) =>
+            {
+                settings.pixelPerfectVision.Invert();
+                CDesktop.RespawnAll();
+            });
+            AddButtonRegion(() =>
+            {
+                AddCheckbox(settings.fastCascading);
+                AddLine("Fast cascading");
+            },
+            (h) =>
+            {
+                settings.fastCascading.Invert();
+                CDesktop.RespawnAll();
             });
             AddPaddingRegion(() =>
+            {
+                AddLine("Sound", "", "Center");
+            });
+            AddButtonRegion(() =>
             {
                 AddCheckbox(settings.music);
-                AddLine("Music", "Gray");
+                AddLine("Music");
+            },
+            (h) =>
+            {
+                settings.music.Invert();
+                CDesktop.RespawnAll();
             });
-            AddPaddingRegion(() =>
+            AddButtonRegion(() =>
             {
                 AddCheckbox(settings.soundEffects);
-                AddLine("Sound effects", "Gray");
+                AddLine("Sound effects");
+            },
+            (h) =>
+            {
+                settings.soundEffects.Invert();
+                CDesktop.RespawnAll();
             });
         }, true),
         new("GameMenu", () => {

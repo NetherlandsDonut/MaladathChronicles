@@ -28,8 +28,6 @@ public class Defines
             shadowSystem = 1;
         if (adeptTreeRequirement < 0)
             adeptTreeRequirement = 10;
-        if (mapGridSize < 0)
-            mapGridSize = 19;
         if (buybackDecay < 0)
             buybackDecay = 30;
         if (scoreForExploredSite < 0)
@@ -58,7 +56,6 @@ public class Defines
     public int textPaddingRight;
     public int shadowSystem;
     public int adeptTreeRequirement;
-    public int mapGridSize;
     public int buybackDecay;
     public int scoreForExploredSite;
     public int scoreForKilledCommon;

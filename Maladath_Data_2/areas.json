@@ -2105,8 +2105,8 @@
         "point": 3
       }
     ],
-    "x": 5567,
-    "y": -2128,
+    "x": 5572,
+    "y": -2151,
     "name": "Thandol Span",
     "zone": "Arathi Highlands",
     "type": "HostileArea",
@@ -2137,8 +2137,8 @@
         "point": 3
       }
     ],
-    "x": 5567,
-    "y": -1995,
+    "x": 5572,
+    "y": -1990,
     "name": "Devyr's Hill",
     "zone": "Arathi Highlands",
     "type": "HostileArea"
@@ -7624,8 +7624,8 @@
         "point": 3
       }
     ],
-    "x": 5054,
-    "y": -2812,
+    "x": 5067,
+    "y": -2813,
     "name": "Chill Breeze Valley",
     "zone": "Dun Morogh",
     "type": "HostileArea"
@@ -7650,8 +7650,8 @@
         "point": 3
       }
     ],
-    "x": 5035,
-    "y": -2907,
+    "x": 5039,
+    "y": -2911,
     "name": "Coldridge Pass",
     "zone": "Dun Morogh",
     "type": "HostileArea"
@@ -7686,8 +7686,8 @@
         "point": 3
       }
     ],
-    "x": 4940,
-    "y": -2964,
+    "x": 4947,
+    "y": -2965,
     "name": "Coldridge Valley",
     "zone": "Dun Morogh",
     "type": "HostileArea"
@@ -7722,8 +7722,8 @@
         "point": 3
       }
     ],
-    "x": 4959,
-    "y": -2793,
+    "x": 4949,
+    "y": -2785,
     "name": "Frostmane Hold",
     "zone": "Dun Morogh",
     "type": "HostileArea"
@@ -7872,8 +7872,8 @@
         "point": 3
       }
     ],
-    "x": 5035,
-    "y": -2736,
+    "x": 5044,
+    "y": -2732,
     "name": "Ice Flow Lake",
     "zone": "Dun Morogh",
     "type": "HostileArea",
@@ -7949,8 +7949,8 @@
         "point": 3
       }
     ],
-    "x": 5092,
-    "y": -2717,
+    "x": 5095,
+    "y": -2718,
     "name": "Shimmer Ridge",
     "zone": "Dun Morogh",
     "type": "HostileArea"
@@ -8012,8 +8012,8 @@
         "point": 3
       }
     ],
-    "x": 5111,
-    "y": -2831,
+    "x": 5114,
+    "y": -2816,
     "name": "The Grizzled Den",
     "zone": "Dun Morogh",
     "type": "HostileArea"
@@ -13542,7 +13542,7 @@
       }
     ],
     "x": 5852,
-    "y": -2831,
+    "y": -2826,
     "name": "Ironband's Excavation Site",
     "zone": "Loch Modan",
     "type": "HostileArea"
@@ -13626,8 +13626,8 @@
         "point": 2
       }
     ],
-    "x": 5852,
-    "y": -2679,
+    "x": 5868,
+    "y": -2671,
     "name": "Mo'grosh Stronghold",
     "zone": "Loch Modan",
     "type": "HostileArea"
@@ -13662,8 +13662,8 @@
         "point": 3
       }
     ],
-    "x": 5890,
-    "y": -2736,
+    "x": 5886,
+    "y": -2732,
     "name": "Mo'grosh Woods",
     "zone": "Loch Modan",
     "type": "HostileArea"
@@ -13693,8 +13693,8 @@
         "point": 3
       }
     ],
-    "x": 5814,
-    "y": -2717,
+    "x": 5818,
+    "y": -2720,
     "name": "Loch Shore",
     "zone": "Loch Modan",
     "type": "HostileArea",
@@ -13731,8 +13731,8 @@
         "point": 3
       }
     ],
-    "x": 5662,
-    "y": -2660,
+    "x": 5667,
+    "y": -2655,
     "name": "Silver Stream Mine",
     "zone": "Loch Modan",
     "type": "HostileArea"
@@ -13758,7 +13758,7 @@
       }
     ],
     "x": 5738,
-    "y": -2622,
+    "y": -2636,
     "name": "Stonewrought Dam",
     "zone": "Loch Modan",
     "type": "HostileArea"
@@ -13794,7 +13794,7 @@
       }
     ],
     "x": 5757,
-    "y": -2679,
+    "y": -2671,
     "name": "Isle Ruins",
     "zone": "Loch Modan",
     "type": "HostileArea"
@@ -13980,8 +13980,8 @@
         "point": 3
       }
     ],
-    "x": 5605,
-    "y": -2717,
+    "x": 5608,
+    "y": -2722,
     "name": "Tunnel Rat Camp",
     "zone": "Loch Modan",
     "type": "HostileArea"
@@ -27569,8 +27569,8 @@
         "point": 3
       }
     ],
-    "x": 5529,
-    "y": -2356,
+    "x": 5532,
+    "y": -2367,
     "name": "Angerfang Encampment",
     "zone": "Wetlands",
     "type": "HostileArea"
@@ -27600,8 +27600,8 @@
         "point": 3
       }
     ],
-    "x": 5320,
-    "y": -2375,
+    "x": 5329,
+    "y": -2352,
     "name": "Black Channel Marsh",
     "zone": "Wetlands",
     "type": "HostileArea",
@@ -27637,8 +27637,8 @@
         "point": 3
       }
     ],
-    "x": 5282,
-    "y": -2318,
+    "x": 5305,
+    "y": -2298,
     "name": "Bluegill Marsh",
     "zone": "Wetlands",
     "type": "HostileArea"
@@ -27668,8 +27668,8 @@
         "point": 3
       }
     ],
-    "x": 5624,
-    "y": -2242,
+    "x": 5644,
+    "y": -2259,
     "name": "Direforge Hill",
     "zone": "Wetlands",
     "type": "HostileArea"
@@ -27715,8 +27715,8 @@
         "point": 3
       }
     ],
-    "x": 5795,
-    "y": -2356,
+    "x": 5812,
+    "y": -2373,
     "name": "Dragonmaw Gates",
     "zone": "Wetlands",
     "type": "HostileArea"
@@ -27778,8 +27778,8 @@
         "point": 3
       }
     ],
-    "x": 5548,
-    "y": -2204,
+    "x": 5540,
+    "y": -2200,
     "name": "Dun Modr",
     "zone": "Wetlands",
     "type": "HostileArea"
@@ -27792,8 +27792,8 @@
         "point": 3
       }
     ],
-    "x": 5757,
-    "y": -2508,
+    "x": 5764,
+    "y": -2499,
     "name": "Grim Batol",
     "zone": "Wetlands",
     "type": "HostileArea"
@@ -27913,8 +27913,8 @@
         "point": 3
       }
     ],
-    "x": 5719,
-    "y": -2318,
+    "x": 5720,
+    "y": -2306,
     "name": "Raptor Ridge",
     "zone": "Wetlands",
     "type": "HostileArea"
@@ -27960,8 +27960,8 @@
         "point": 3
       }
     ],
-    "x": 5358,
-    "y": -2242,
+    "x": 5376,
+    "y": -2250,
     "name": "Saltspray Glen",
     "zone": "Wetlands",
     "type": "HostileArea",
@@ -27998,8 +27998,8 @@
         "point": 3
       }
     ],
-    "x": 5415,
-    "y": -2299,
+    "x": 5448,
+    "y": -2281,
     "name": "Sundown Marsh",
     "zone": "Wetlands",
     "type": "HostileArea",
@@ -28025,8 +28025,8 @@
         "point": 3
       }
     ],
-    "x": 5567,
-    "y": -2299,
+    "x": 5561,
+    "y": -2322,
     "name": "Marsh Crossing",
     "zone": "Wetlands",
     "type": "HostileArea"
@@ -28056,8 +28056,8 @@
         "point": 3
       }
     ],
-    "x": 5643,
-    "y": -2337,
+    "x": 5670,
+    "y": -2354,
     "name": "The Green Belt",
     "zone": "Wetlands",
     "type": "HostileArea",
@@ -28109,7 +28109,7 @@
         "point": 3
       }
     ],
-    "x": 5434,
+    "x": 5435,
     "y": -2375,
     "name": "Whelgar's Excavation Site",
     "zone": "Wetlands",

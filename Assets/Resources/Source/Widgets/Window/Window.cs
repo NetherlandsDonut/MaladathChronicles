@@ -143,7 +143,7 @@ public class Window : MonoBehaviour
         }
 
         //Draws window shadows
-        if (!disabledGeneralSprites && !disabledShadows && settings.shadows.Value() && (xOffset > 0 || yOffset > 0))
+        if (!disabledGeneralSprites && !disabledShadows && (xOffset > 0 || yOffset > 0))
             if (defines.shadowSystem == 0)
             {
                 var shadowSprites = Resources.LoadAll<Sprite>("Sprites/Building/Shadows/First");
@@ -320,10 +320,10 @@ public class Window : MonoBehaviour
                         bigButton.gameObject.AddComponent<Highlightable>().Initialise(region, null, null, null, null);
                     if (bigButton.frame == null)
                         bigButton.frame = new GameObject("BigButtonFrame", typeof(SpriteRenderer));
-                    bigButton.frame.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/Borders/BigButtonFrame");
+                    bigButton.frame.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/Borders/BigButtonFrame" + (title.Contains("Board") ? "Rounded" : ""));
                     bigButton.frame.GetComponent<SpriteRenderer>().sortingLayerName = layer;
                     bigButton.frame.transform.parent = bigButton.transform;
-                    bigButton.frame.transform.localPosition = new Vector3();
+                    bigButton.frame.transform.localPosition = new Vector3(0, 0, title.Contains("Board") ? -0.05f : 0);
                     if (disabledCollisions) Destroy(bigButton.GetComponent<BoxCollider2D>());
                 }
             }

@@ -21,7 +21,7 @@ public class FallingElement : MonoBehaviour
     public void Update()
     {
         timeAlive += Time.deltaTime;
-        transform.position = Vector3.Lerp(transform.position, destination, timeAlive * fallSpeed / (float)System.Math.Sqrt(howFar) * 0.9f);
+        transform.position = Vector3.Lerp(transform.position, destination, timeAlive * fallSpeed / (float)System.Math.Sqrt(howFar) * (GameSettings.settings.fastCascading.Value() ? 0.9f : 0.6f));
         if (Mathf.Abs(transform.position.x - destination.x) + Mathf.Abs(transform.position.y - destination.y) < 0.4f)
         {
             if (soundsPlayedThisFrame == 0)

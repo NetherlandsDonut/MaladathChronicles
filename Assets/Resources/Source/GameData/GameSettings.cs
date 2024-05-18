@@ -11,11 +11,11 @@ public class GameSettings
         selectedRealm ??= "";
         selectedRealmRanking ??= "";
         selectedCharacter ??= "";
-        shadows ??= new Bool(true);
         pixelPerfectVision ??= new Bool(false);
         music ??= new Bool(true);
         soundEffects ??= new Bool(true);
         chartBigIcons ??= new Bool(true);
+        fastCascading ??= new Bool(true);
 
         rarityIndicators ??= new Bool(true);
         bigRarityIndicators ??= new Bool(true);
@@ -31,9 +31,6 @@ public class GameSettings
 
     //Currently character in the login screen
     public string selectedCharacter;
-
-    //Indicates whether windows cast shadows
-    public Bool shadows;
     
     //Indicates whether camera rendering is being sharp to keep the pixel ratio
     public Bool pixelPerfectVision;
@@ -58,6 +55,9 @@ public class GameSettings
 
     //Indicates whether the camera in the adventure map snaps to nearest sites
     public Bool chartBigIcons;
+
+    //Tells whether the cascading process in boards will be fast or slow
+    public Bool fastCascading;
 
     //EXTERNAL FILE: Collection of all settings in game
     public static GameSettings settings;
