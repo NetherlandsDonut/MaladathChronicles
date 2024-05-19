@@ -1419,9 +1419,10 @@
         ]
       },
       "startDate": "2024-05-14T14:34:14.2029011+02:00",
-      "lastLoaded": "2024-05-18T15:31:33.4633141+02:00",
-      "lastPlayed": "2024-05-18T15:32:00.3814536+02:00",
-      "timePlayed": "05:37:40.0926290"
+      "lastLoaded": "2024-05-19T22:19:58.9707057+02:00",
+      "lastPlayed": "2024-05-19T22:20:14.9227183+02:00",
+      "timePlayed": "05:37:56.0446416",
+      "lastVisitedTalents": 2
     },
     {
       "player": {
@@ -1566,7 +1567,7 @@
       "hour": 7,
       "minute": 6,
       "second": 46,
-      "currentSite": "Crystal Lake",
+      "currentSite": "Plaguewood",
       "openedChests": {},
       "siteProgress": {},
       "commonsKilled": {},
@@ -1576,7 +1577,8 @@
         "Northshire Abbey": 1,
         "Northshire Valley": 4,
         "Goldshire": 0,
-        "Crystal Lake": 2
+        "Crystal Lake": 4,
+        "Plaguewood": 3
       },
       "unlockedAreas": [],
       "vendorStock": {
@@ -1658,10 +1660,248 @@
         ]
       },
       "startDate": "2024-05-18T15:32:03.8126949+02:00",
-      "lastLoaded": "2024-05-19T16:42:06.1043653+02:00",
-      "lastPlayed": "2024-05-19T16:45:41.6893753+02:00",
-      "timePlayed": "00:18:38.8088508",
-      "lastVisitedTalents": 1
+      "lastLoaded": "2024-05-19T17:07:45.3738276+02:00",
+      "lastPlayed": "2024-05-19T17:23:52.8432374+02:00",
+      "timePlayed": "00:34:46.2782606",
+      "lastVisitedTalents": 1,
+      "deathInfo": {
+        "source": "Necromancer",
+        "area": "Plaguewood"
+      },
+      "playerDead": true
+    },
+    {
+      "player": {
+        "level": 7,
+        "experience": 820,
+        "professionSkills": {},
+        "learnedRecipes": {},
+        "faction": "Stormwind",
+        "name": "Jennine",
+        "race": "Human",
+        "spec": "Mage",
+        "gender": "Female",
+        "homeLocation": "Northshire Abbey",
+        "abilities": {
+          "Staff Proficiency": 1,
+          "Cloth Proficiency": 1,
+          "One Handed Sword Proficiency": 1,
+          "Off Hand Proficiency": 1,
+          "Dagger Proficiency": 1,
+          "Wand Proficiency": 1,
+          "Fireball": 3,
+          "Frostbolt": 0,
+          "Arcane Missiles": 0,
+          "Blazing Barrier": 0,
+          "Flamestrike": 0,
+          "Scorch": 0
+        },
+        "actionBars": [
+          "Arcane Missiles",
+          "Blazing Barrier",
+          "Fireball",
+          "Frostbolt"
+        ],
+        "stats": {
+          "stats": {
+            "Stamina": 6,
+            "Strength": 6,
+            "Agility": 6,
+            "Intellect": 6,
+            "Spirit": 0,
+            "Earth Mastery": 1,
+            "Fire Mastery": 3,
+            "Air Mastery": 2,
+            "Water Mastery": 1,
+            "Frost Mastery": 2,
+            "Lightning Mastery": 1,
+            "Arcane Mastery": 3,
+            "Decay Mastery": 1,
+            "Shadow Mastery": 2,
+            "Order Mastery": 3
+          }
+        },
+        "inventory": {
+          "items": [
+            {
+              "rarity": "Common",
+              "name": "Hearthstone",
+              "icon": "itemmiscrune01",
+              "type": "Miscellaneous",
+              "ilvl": 1,
+              "amount": 1,
+              "maxStack": 1,
+              "stats": {
+                "stats": {}
+              }
+            }
+          ],
+          "bags": []
+        },
+        "mounts": [],
+        "equipment": {
+          "Main Hand": {
+            "rarity": "Common",
+            "name": "Bent Staff",
+            "icon": "itemstaff08",
+            "detailedType": "Staff",
+            "type": "Two Handed",
+            "ilvl": 2,
+            "lvl": 1,
+            "minDamage": 3,
+            "maxDamage": 5,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 9,
+            "speed": 2.9,
+            "stats": {
+              "stats": {}
+            }
+          },
+          "Feet": {
+            "rarity": "Common",
+            "name": "Apprentice's Boots",
+            "icon": "itemboots09",
+            "type": "Feet",
+            "ilvl": 1,
+            "lvl": 1,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 1,
+            "stats": {
+              "stats": {}
+            }
+          },
+          "Legs": {
+            "rarity": "Poor",
+            "name": "Apprentice's Pants",
+            "icon": "itempants01",
+            "type": "Legs",
+            "armorClass": "Cloth",
+            "ilvl": 1,
+            "lvl": 1,
+            "armor": 2,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 1,
+            "stats": {
+              "stats": {}
+            }
+          },
+          "Chest": {
+            "rarity": "Poor",
+            "name": "Apprentice's Robe",
+            "icon": "itemchestcloth23",
+            "type": "Chest",
+            "armorClass": "Cloth",
+            "ilvl": 1,
+            "lvl": 1,
+            "armor": 3,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 1,
+            "stats": {
+              "stats": {}
+            }
+          }
+        }
+      },
+      "hour": 7,
+      "minute": 3,
+      "second": 44,
+      "currentSite": "Goldshire",
+      "openedChests": {},
+      "siteProgress": {},
+      "commonsKilled": {},
+      "raresKilled": {},
+      "elitesKilled": {},
+      "siteVisits": {
+        "Northshire Abbey": 1,
+        "Goldshire": 0
+      },
+      "unlockedAreas": [],
+      "vendorStock": {
+        "Goldshire:Toddrick": [
+          {
+            "item": "Tough Jerky",
+            "amount": 5,
+            "maxAmount": 5,
+            "restockSpeed": 30
+          },
+          {
+            "item": "Haunch of Meat",
+            "amount": 5,
+            "maxAmount": 5,
+            "restockSpeed": 30
+          },
+          {
+            "item": "Mutton Chop",
+            "amount": 5,
+            "maxAmount": 5,
+            "restockSpeed": 30
+          },
+          {
+            "item": "Wild Hog Shank",
+            "amount": 5,
+            "maxAmount": 5,
+            "restockSpeed": 30
+          },
+          {
+            "item": "Cured Ham Steak",
+            "amount": 5,
+            "maxAmount": 5,
+            "restockSpeed": 30
+          },
+          {
+            "item": "Roasted Quail",
+            "amount": 5,
+            "maxAmount": 5,
+            "restockSpeed": 30
+          }
+        ],
+        "Orgrimmar:Borstan": [
+          {
+            "item": "Tough Jerky",
+            "amount": 5,
+            "maxAmount": 5,
+            "restockSpeed": 30
+          },
+          {
+            "item": "Haunch of Meat",
+            "amount": 5,
+            "maxAmount": 5,
+            "restockSpeed": 30
+          },
+          {
+            "item": "Mutton Chop",
+            "amount": 5,
+            "maxAmount": 5,
+            "restockSpeed": 30
+          },
+          {
+            "item": "Wild Hog Shank",
+            "amount": 5,
+            "maxAmount": 5,
+            "restockSpeed": 30
+          },
+          {
+            "item": "Cured Ham Steak",
+            "amount": 5,
+            "maxAmount": 5,
+            "restockSpeed": 30
+          },
+          {
+            "item": "Roasted Quail",
+            "amount": 5,
+            "maxAmount": 5,
+            "restockSpeed": 30
+          }
+        ]
+      },
+      "startDate": "2024-05-19T22:20:20.2741238+02:00",
+      "lastLoaded": "2024-05-20T01:52:28.2943843+02:00",
+      "lastPlayed": "2024-05-20T01:55:49.2119529+02:00",
+      "timePlayed": "00:03:20.9175686"
     }
   ]
 }

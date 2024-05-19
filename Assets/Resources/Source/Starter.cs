@@ -5,7 +5,6 @@ using UnityEditor;
 using UnityEngine;
 
 using static Root;
-
 using static Zone;
 using static Font;
 using static Sound;
@@ -309,24 +308,24 @@ public class Starter : MonoBehaviour
                 for (int k = 0; k < 3; k++)
                 {
                     var tree = i; var row = j; var col = k;
-                    if (Blueprint.windowBlueprints.Exists(x => x.title == "Talent" + tree + row + col)) continue;
-                    Blueprint.windowBlueprints.Add(new Blueprint("Talent" + tree + row + col, () =>
+                    if (Blueprint.windowBlueprints.Exists(x => x.title == "TalentButton" + tree + row + col)) continue;
+                    Blueprint.windowBlueprints.Add(new Blueprint("TalentButton" + tree + row + col, () =>
                     {
                         var talent = PrintTalent(currentSave.lastVisitedTalents, row, col, tree);
                         var advancement = (currentSave.player.abilities.ContainsKey(talent.ability) ? (currentSave.player.abilities[talent.ability] + 1) * 2 : 0) + (currentSave.player.CanPickTalent(currentSave.lastVisitedTalents, talent) ? 1 : 0);
                         var dotAmount = Ability.abilities.Find(x => x.name == talent.ability).ranks.Count;
-                        for (int i = 0; i < dotAmount; i++)
+                        for (int i = 0; i < dotAmount && i < 7; i++)
                         {
                             var dot = new GameObject("TalentDot", typeof(SpriteRenderer));
                             dot.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Other/TalentDot" + (dotAmount == 1 ? "Single" : (i == 0 ? "First" : (i < dotAmount - 1 ? "Next" : "Last"))));
                             dot.GetComponent<SpriteRenderer>().sortingLayerName = "Upper";
-                            dot.GetComponent<SpriteRenderer>().sortingOrder = 1;
+                            dot.GetComponent<SpriteRenderer>().sortingOrder = 5 + i * 2;
                             dot.transform.parent = LBDesktop.LBWindow.LBRegionGroup.LBRegion.transform;
-                            dot.transform.localPosition = new Vector3(38, -6 * i);
+                            dot.transform.localPosition = new Vector3(38, -5 * i - 5);
                             var fill = new GameObject("TalentDotFill", typeof(SpriteRenderer));
-                            fill.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Other/TalentDotFill" + (advancement >= (i + 1) * 2 ? "Picked" : (advancement >= (i + 1) * 2 - 1 ? "Available" : "Locked")));
+                            fill.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Other/TalentDotFill" + (advancement >= (i + 1) * 2 ? "Picked" : (currentSave.player.unspentTalentPoints > 0 && advancement >= (i + 1) * 2 - 1 ? "Available" : "Locked")) + (dotAmount == 1 ? "Single" : (i == 0 ? "First" : (i < dotAmount - 1 ? "Next" : "Last"))));
                             fill.GetComponent<SpriteRenderer>().sortingLayerName = "Upper";
-                            fill.GetComponent<SpriteRenderer>().sortingOrder = 1;
+                            fill.GetComponent<SpriteRenderer>().sortingOrder = 4 + i * 2;
                             fill.transform.parent = dot.transform;
                             fill.transform.localPosition = new Vector3(0, 0);
                         }

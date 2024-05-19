@@ -482,7 +482,6 @@ public class Entity
     //Checks whether entity can pick specific talent
     public bool CanPickTalent(int spec, Talent talent)
     {
-        if (unspentTalentPoints == 0) return false;
         if (abilities.ContainsKey(talent.ability) && abilities[talent.ability] >= Ability.abilities.Find(x => x.name == talent.ability).ranks.Count - 1) return false;
         if (talent.tree == 1 && TreeCompletion(spec, 0) < defines.adeptTreeRequirement) return false;
         var talentTree = Spec().talentTrees[spec];

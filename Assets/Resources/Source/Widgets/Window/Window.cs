@@ -9,8 +9,6 @@ using static Defines;
 using static Root.Anchor;
 using static Root.RegionBackgroundType;
 
-using static GameSettings;
-
 using static InputLine;
 
 public class Window : MonoBehaviour
@@ -320,8 +318,9 @@ public class Window : MonoBehaviour
                         bigButton.gameObject.AddComponent<Highlightable>().Initialise(region, null, null, null, null);
                     if (bigButton.frame == null)
                         bigButton.frame = new GameObject("BigButtonFrame", typeof(SpriteRenderer));
-                    bigButton.frame.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/Borders/BigButtonFrame" + (title.Contains("Board") ? "Rounded" : ""));
+                    bigButton.frame.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>(title.StartsWith("TalentButton") ? "Sprites/Building/Borders/PremadeTalent" : ("Sprites/Building/Borders/BigButtonFrame" + (title.Contains("Board") ? "Rounded" : "")));
                     bigButton.frame.GetComponent<SpriteRenderer>().sortingLayerName = layer;
+                    if (title.StartsWith("TalentButton")) bigButton.frame.GetComponent<SpriteRenderer>().sortingOrder = 3;
                     bigButton.frame.transform.parent = bigButton.transform;
                     bigButton.frame.transform.localPosition = new Vector3(0, 0, title.Contains("Board") ? -0.05f : 0);
                     if (disabledCollisions) Destroy(bigButton.GetComponent<BoxCollider2D>());

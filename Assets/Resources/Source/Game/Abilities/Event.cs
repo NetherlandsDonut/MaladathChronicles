@@ -12,7 +12,6 @@ using static Shatter;
 using static FlyingBuff;
 using static FlyingElement;
 using static FlyingMissile;
-using System.Xml.Linq;
 
 public class Event
 {

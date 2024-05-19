@@ -620,7 +620,7 @@ public class Board
         }
         if (playerTurn) player.AddResources(foo);
         else enemy.AddResources(foo);
-        bufferBoard.Reset();
+        bufferBoard.Generate();
         CDesktop.LockScreen();
     }
 

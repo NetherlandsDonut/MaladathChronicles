@@ -36,6 +36,7 @@ public class Talent
         var playerSpec = currentSave.player.Spec();
         var talent = playerSpec.talentTrees[spec].talents.Find(x => x.row == row && x.col == col && x.tree == tree);
         SetAnchor((tree == 0 ? -301 : 147) + 57 * col, -57 * row + 142);
+        DisableGeneralSprites();
         AddRegionGroup();
         AddPaddingRegion(() =>
         {
@@ -61,17 +62,18 @@ public class Talent
                     PrintAbilityTooltip(currentSave.player, null, abilities.Find(x => x.name == talent.ability), currentSave.player.abilities.ContainsKey(talent.ability) ? (currentSave.player.abilities[talent.ability] == abilities.Find(x => x.name == talent.ability).ranks.Count - 1 ? currentSave.player.abilities[talent.ability] : currentSave.player.abilities[talent.ability] + 1) : 0);
                 }
             );
+            if (!currentSave.player.abilities.ContainsKey(talent.ability) && (!currentSave.player.CanPickTalent(tree, talent) || currentSave.player.unspentTalentPoints == 0))
+            {
+                SetBigButtonToGrayscale();
+                AddBigButtonOverlay("OtherGridBlurred");
+            }
             if (currentSave.player.abilities.ContainsKey(talent.ability) && !currentSave.player.CanPickTalent(tree, talent))
                 AddBigButtonOverlay("OtherGlowLearned");
             else
             {
                 var canPick = currentSave.player.CanPickTalent(spec, talent);
-                if (currentSave.player.CanPickTalent(spec, talent)) AddBigButtonOverlay("OtherGlowLearnable");
-                else
-                {
-                    SetBigButtonToGrayscale();
-                    AddBigButtonOverlay("OtherGridBlurred");
-                }
+                if (currentSave.player.CanPickTalent(spec, talent) && currentSave.player.unspentTalentPoints > 0)
+                    AddBigButtonOverlay("OtherGlowLearnable");
             }
             if (talent.inherited)
             {

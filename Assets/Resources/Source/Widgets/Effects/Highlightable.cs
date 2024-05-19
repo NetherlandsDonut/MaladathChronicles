@@ -47,7 +47,7 @@ public class Highlightable : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.LeftAlt))
             {
-                var site = window.title.Substring(window.title.IndexOf("Site: ") + 6);
+                var site = window.title[(window.title.IndexOf("Site: ") + 6)..];
                 if (pathsConnectedToSite.ContainsKey(site))
                     pathsConnectedToSite[site].ForEach(x => pathsDrawn.Add(x.DrawPath()));
             }
@@ -65,12 +65,9 @@ public class Highlightable : MonoBehaviour
             cursor.SetCursor(Default);
         render.color = defaultColor;
         pressedState = "None";
-        if (window != null && window.title.StartsWith("Site: "))
-        {
-            for (int i = 0; i < pathsDrawn.Count; i++)
-                Destroy(pathsDrawn[i].Item2);
-            pathsDrawn = new();
-        }
+        for (int i = 0; i < pathsDrawn.Count; i++)
+            Destroy(pathsDrawn[i].Item2);
+        pathsDrawn = new();
     }
 
     public void MouseDown(string key)

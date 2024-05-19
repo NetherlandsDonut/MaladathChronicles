@@ -8,15 +8,24 @@ public class BufferBoard
     {
         fallingElements = new();
         field = new int[Board.board.field.GetLength(0), Board.board.field.GetLength(1)];
-        Reset(true);
+        Generate(true);
     }
 
-    public void Reset(bool noCascades = false)
+    //Resets the buffer board to be later filled
+    //with items to fill empty slots in the board
+    public void Reset()
     {
         field = new int[Board.board.field.GetLength(0), Board.board.field.GetLength(1)];
         for (int i = 0; i < field.GetLength(0); i++)
             for (int j = 0; j < field.GetLength(1); j++)
                 field[i, j] = -1;
+    }
+
+    //Generates elements on the buffer board that will
+    //then fall down into the board to fill empty spaces
+    public void Generate(bool noCascades = false)
+    {
+        Reset();
         for (int i = 0; i < field.GetLength(0); i++)
         {
             var column = new List<int>();
@@ -47,6 +56,8 @@ public class BufferBoard
         return r;
     }
 
+    //Fills the empty spaces in a specified field
+    //with this buffer board generated beforehand
     public void FillBoard(int[,] field)
     {
         for (int i = 0; i < field.GetLength(0); i++)

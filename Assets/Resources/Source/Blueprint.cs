@@ -9040,9 +9040,9 @@ public class Blueprint
             for (int tree = 0; tree < 2; tree++)
                 for (int row = 0; row < 5; row++)
                     for (int col = 0; col < 3; col++)
-                        if (windowBlueprints.Exists(x => x.title == "Talent" + tree + row + col))
+                        if (windowBlueprints.Exists(x => x.title == "TalentButton" + tree + row + col))
                             if (playerSpec.talentTrees[currentSave.lastVisitedTalents].talents.Exists(x => x.row == row && x.col == col && x.tree == tree))
-                                SpawnWindowBlueprint("Talent" + tree + row + col);
+                                SpawnWindowBlueprint("TalentButton" + tree + row + col);
             SpawnWindowBlueprint("ExperienceBar");
             AddHotkey(A, () =>
             {

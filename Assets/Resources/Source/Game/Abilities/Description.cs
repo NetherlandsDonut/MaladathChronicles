@@ -56,7 +56,7 @@ public class DescriptionRegion
 
         string Process(string text)
         {
-            if (text.StartsWith("PowerRange("))
+            if (Fn("PowerRange"))
             {
                 if (effector == null) return "? - ?";
                 var split = text.Split("(").Last().Split(",").Select(x => x.Trim().Replace(")", "")).ToArray();
@@ -70,7 +70,7 @@ public class DescriptionRegion
                             return Math.Ceiling(weaponPower.Item1 * scaler * powerScale * multiplier) + " - " + Math.Ceiling(weaponPower.Item2 * scaler * powerScale * multiplier);
                         }
             }
-            else if (text.StartsWith("Chance("))
+            else if (Fn("Chance"))
             {
                 if (effector == null) return "?";
                 var split = text.Split("(").Last().Split(",").Select(x => x.Trim().Replace(")", "")).ToArray();
@@ -83,12 +83,14 @@ public class DescriptionRegion
                         return stat * multiplier + "%";
                     }
             }
-            else if (text.StartsWith("Hearthstone("))
+            else if (Fn("Hearthstone"))
             {
                 if (effector == null) return "?";
                 return effector.homeLocation;
             }
             return text;
+
+            bool Fn(string functionName) => text.StartsWith(functionName + "(");
         }
     }
 }
