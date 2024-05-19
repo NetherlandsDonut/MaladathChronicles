@@ -254,9 +254,7 @@ public class FutureEntity
                 futureBoard.CallEvents(this, new() { { "Trigger", "ResourceCollected" }, { "Triggerer", "Effector" }, { "ResourceType", resource.Key }, { "ResourceAmount", resource.Value + "" } });
                 futureBoard.CallEvents(this == futureBoard.player ? futureBoard.enemy : futureBoard.player, new() { { "Trigger", "ResourceCollected" }, { "Triggerer", "Other" }, { "ResourceType", resource.Key }, { "ResourceAmount", resource.Value + "" } });
                 if (this.resources[resource.Key] == MaxResource(resource.Key) && this.resources[resource.Key] != before)
-                {
                     futureBoard.CallEvents(this == futureBoard.player ? futureBoard.enemy : futureBoard.player, new() { { "Trigger", "ResourceMaxed" }, { "Triggerer", "Other" }, { "ResourceType", resource.Key } });
-                }
             }
     }
 

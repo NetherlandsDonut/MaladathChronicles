@@ -18,7 +18,7 @@ public class FishingBufferBoard
         {
             var column = new List<int>();
             for (int j = 0; j < field.GetLength(1); j++)
-                if (FishingBoard.fishingBoard.field[i, j] == 0)
+                if (FishingBoard.fishingBoard.field[i, j] == -1)
                 {
                     int newElement;
                     newElement = 11;

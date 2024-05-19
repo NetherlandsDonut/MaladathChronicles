@@ -63,7 +63,7 @@ public class FishingBoard
         field = new int[field.GetLength(0), field.GetLength(1)];
         for (int i = 0; i < field.GetLength(0); i++)
             for (int j = 0; j < field.GetLength(1); j++)
-                field[i, j] = 0;
+                field[i, j] = -1;
         CDesktop.LockScreen();
     }
 
@@ -224,19 +224,19 @@ public class FishingBoard
         //MOVE ELEMENTS DOWN WITH GRAVITY
         for (int j = field.GetLength(1) - 2; j >= 0; j--)
             for (int i = field.GetLength(0) - 1; i >= 0; i--)
-                if (field[i, j] != 0)
+                if (field[i, j] != -1)
                 {
-                    var zeroes = 0;
+                    var empty = 0;
                     for (int q = 0; q + j < field.GetLength(1); q++)
-                        if (field[i, j + q] == 0) zeroes++;
-                    (field[i, j], field[i, j + zeroes]) = (0, field[i, j]);
-                    if (zeroes > 0) window.LBRegionGroup.regions[j].bigButtons[i].gameObject.AddComponent<FallingElement>().Initiate(zeroes);
+                        if (field[i, j + q] == 0) empty++;
+                    (field[i, j], field[i, j + empty]) = (-1, field[i, j]);
+                    if (empty > 0) window.LBRegionGroup.regions[j].bigButtons[i].gameObject.AddComponent<FallingElement>().Initiate(empty);
                 }
 
         //IF BOARD IS NOT YET FULL RETURN AND DO PREVIOUS STEPS AGAIN
         for (int j = field.GetLength(1) - 1; j >= 0; j--)
             for (int i = field.GetLength(0) - 1; i >= 0; i--)
-                if (field[i, j] == 0)
+                if (field[i, j] == -1)
                 {
                     fishingBufferBoard.FillBoard(field);
                     return;

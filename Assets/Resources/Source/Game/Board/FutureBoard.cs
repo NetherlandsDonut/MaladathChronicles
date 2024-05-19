@@ -126,7 +126,7 @@ public class FutureBoard
         var differentFloodings = new List<(int, int, List<(int, int, int)>)>();
         for (int i = 0; i < field.GetLength(0); i++)
             for (int j = 0; j < field.GetLength(1); j++)
-                if (field[i, j] != 0)
+                if (field[i, j] != -1)
                 {
                     var list2 = FloodCount(i, j);
                     if (!differentFloodings.Exists(x => x.Item3.All(y => list2.Contains((y.Item1, y.Item2, y.Item3)))))
@@ -221,13 +221,13 @@ public class FutureBoard
         //MOVE ELEMENTS DOWN WITH GRAVITY
         for (int j = field.GetLength(1) - 1; j > 0; j--)
             for (int i = field.GetLength(0) - 1; i >= 0; i--)
-                if (field[i, j] == 0 && field[i, j - 1] != 0)
-                    (field[i, j], field[i, j - 1]) = (field[i, j - 1], 0);
+                if (field[i, j] == -1 && field[i, j - 1] != -1)
+                    (field[i, j], field[i, j - 1]) = (field[i, j - 1], -1);
 
         //CASCADE FOR CURRENT PLAYER
         for (int j = 0; j < field.GetLength(1); j++)
             for (int i = 0; i < field.GetLength(0); i++)
-                if (field[i, j] != 0)
+                if (field[i, j] != -1)
                 {
                     var list = FloodCount(i, j);
                     if (list.Count >= 3)
@@ -252,10 +252,10 @@ public class FutureBoard
     public void FloodDestroy(List<(int, int, int)> list)
     {
         if (list.Count > 3) bonusTurnStreak++;
-        var types = list.Select(x => x.Item3).Distinct();
-        var foo = types.ToDictionary(x => Resource(x), x => list.Sum(y => y.Item3 == x ? 1 : 0));
+        var types = list.Select(x => x.Item3 % 10).Distinct();
+        var foo = types.ToDictionary(x => Resource(x), x => list.Sum(y => y.Item3 % 10 == x ? y.Item3 / 10 + 1 : 0));
         foreach (var a in list)
-            field[a.Item1, a.Item2] = 0;
+            field[a.Item1, a.Item2] = -1;
         if (playerTurn) player.AddResources(this, foo);
         else enemy.AddResources(this, foo);
     }
@@ -282,16 +282,16 @@ public class FutureBoard
 
     public string Resource(int id)
     {
-        if (id == 11) return "Earth";
-        else if (id == 12) return "Fire";
-        else if (id == 13) return "Water";
-        else if (id == 14) return "Air";
-        else if (id == 15) return "Lightning";
-        else if (id == 16) return "Frost";
-        else if (id == 17) return "Decay";
-        else if (id == 18) return "Arcane";
-        else if (id == 19) return "Order";
-        else if (id == 20) return "Shadow";
+        if (id % 10 == 1) return "Earth";
+        else if (id % 10 == 2) return "Fire";
+        else if (id % 10 == 3) return "Water";
+        else if (id % 10 == 4) return "Air";
+        else if (id % 10 == 5) return "Lightning";
+        else if (id % 10 == 6) return "Frost";
+        else if (id % 10 == 7) return "Decay";
+        else if (id % 10 == 8) return "Arcane";
+        else if (id % 10 == 9) return "Order";
+        else if (id % 10 == 0) return "Shadow";
         else return "None";
     }
 }

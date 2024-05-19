@@ -12,6 +12,7 @@ using static Shatter;
 using static FlyingBuff;
 using static FlyingElement;
 using static FlyingMissile;
+using System.Xml.Linq;
 
 public class Event
 {
@@ -355,7 +356,7 @@ public class Event
                         possible.Remove(list.Last());
                     }
                     foreach (var element in list)
-                        futureBoard.field[element.Item1, element.Item2] = to == "Random" ? random.Next(11, 21) : board.ResourceReverse(to);
+                        futureBoard.field[element.Item1, element.Item2] = (to == "Random" ? random.Next(0, 10) : board.ResourceReverse(to)) + futureBoard.field[element.Item1, element.Item2] / 10 * 10;
                 }
                 else if (board != null)
                 {
@@ -380,7 +381,7 @@ public class Event
                     foreach (var e in list)
                     {
                         var newValue = 0;
-                        do newValue = to == "Random" ? random.Next(11, 21) : board.ResourceReverse(to);
+                        do newValue = (to == "Random" ? random.Next(0, 10) : board.ResourceReverse(to)) + board.field[e.Item1, e.Item2] / 10 * 10;
                         while (newValue == board.field[e.Item1, e.Item2]);
                         board.field[e.Item1, e.Item2] = newValue;
                         for (int i = 0; i < shatterDensity; i++)

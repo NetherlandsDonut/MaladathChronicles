@@ -1425,8 +1425,8 @@
     },
     {
       "player": {
-        "level": 1,
-        "experience": 60,
+        "level": 8,
+        "experience": 4360,
         "professionSkills": {},
         "learnedRecipes": {},
         "faction": "Stormwind",
@@ -1444,12 +1444,20 @@
           "Wand Proficiency": 1,
           "Fireball": 0,
           "Frostbolt": 0,
-          "Arcane Missiles": 0
+          "Arcane Missiles": 0,
+          "Freezing Nova": 0,
+          "Fingers of Frost": 0,
+          "Wintertide": 0,
+          "Blizzard": 0,
+          "Ice Lance": 0,
+          "Frost Ward": 0,
+          "Brain Freeze": 0
         },
         "actionBars": [
           "Fireball",
           "Frostbolt",
-          "Arcane Missiles"
+          "Arcane Missiles",
+          "Freezing Nova"
         ],
         "stats": {
           "stats": {
@@ -1568,7 +1576,7 @@
         "Northshire Abbey": 1,
         "Northshire Valley": 4,
         "Goldshire": 0,
-        "Crystal Lake": 0
+        "Crystal Lake": 2
       },
       "unlockedAreas": [],
       "vendorStock": {
@@ -1650,9 +1658,10 @@
         ]
       },
       "startDate": "2024-05-18T15:32:03.8126949+02:00",
-      "lastLoaded": "2024-05-18T18:31:46.4763061+02:00",
-      "lastPlayed": "2024-05-18T18:37:36.3020875+02:00",
-      "timePlayed": "00:13:38.8862990"
+      "lastLoaded": "2024-05-19T16:42:06.1043653+02:00",
+      "lastPlayed": "2024-05-19T16:45:41.6893753+02:00",
+      "timePlayed": "00:18:38.8088508",
+      "lastVisitedTalents": 1
     }
   ]
 }

@@ -11,18 +11,21 @@ public class BufferBoard
         Reset(true);
     }
 
-    public void Reset(bool noCascade = false)
+    public void Reset(bool noCascades = false)
     {
         field = new int[Board.board.field.GetLength(0), Board.board.field.GetLength(1)];
+        for (int i = 0; i < field.GetLength(0); i++)
+            for (int j = 0; j < field.GetLength(1); j++)
+                field[i, j] = -1;
         for (int i = 0; i < field.GetLength(0); i++)
         {
             var column = new List<int>();
             for (int j = 0; j < field.GetLength(1); j++)
-                if (Board.board.field[i, j] == 0)
+                if (Board.board.field[i, j] == -1)
                 {
                     int newElement;
-                    do newElement = random.Next(11, 21);
-                    while (noCascade && ((j > 0 && column[j - 1] == newElement) || (i > 0 && field[i - 1, field.GetLength(1) - 1 - j] == newElement)));
+                    do newElement = random.Next(0, 20);
+                    while (noCascades && ((j > 0 && column[j - 1] % 10 == newElement % 10) || (i > 0 && field[i - 1, field.GetLength(1) - 1 - j] % 10 == newElement % 10)));
                     column.Add(newElement);
                 }
             for (int j = 0; j < column.Count; j++)
@@ -48,13 +51,13 @@ public class BufferBoard
     {
         for (int i = 0; i < field.GetLength(0); i++)
         {
-            var zeroes = 0;
+            var empty = 0;
             for (int q = 0; q < field.GetLength(1); q++)
-                if (field[i, q] == 0) zeroes++;
-            for (int j = 0; j < zeroes; j++)
+                if (field[i, q] == -1) empty++;
+            for (int j = 0; j < empty; j++)
             {
-                field[i, j] = this.field[i, j + field.GetLength(1) - zeroes];
-                window.LBRegionGroup.regions[j + field.GetLength(1) - zeroes].bigButtons[i].gameObject.AddComponent<FallingElement>().Initiate(zeroes);
+                field[i, j] = this.field[i, j + field.GetLength(1) - empty];
+                window.LBRegionGroup.regions[j + field.GetLength(1) - empty].bigButtons[i].gameObject.AddComponent<FallingElement>().Initiate(empty);
             }
         }
     }
@@ -63,27 +66,28 @@ public class BufferBoard
 
     public static Dictionary<int, string> bufferBoardButtonDictionary = new()
     {
-        { 00, null },
-        { 01, "ElementEarthAwakened" },
-        { 02, "ElementFireAwakened" },
-        { 03, "ElementWaterAwakened" },
-        { 04, "ElementAirAwakened" },
-        { 05, "ElementLightningAwakened" },
-        { 06, "ElementFrostAwakened" },
-        { 07, "ElementDecayAwakened" },
-        { 08, "ElementArcaneAwakened" },
-        { 09, "ElementOrderAwakened" },
+        { -1, null },
+        { 00, "ElementShadowRousing" },
+        { 01, "ElementEarthRousing" },
+        { 02, "ElementFireRousing" },
+        { 03, "ElementWaterRousing" },
+        { 04, "ElementAirRousing" },
+        { 05, "ElementLightningRousing" },
+        { 06, "ElementFrostRousing" },
+        { 07, "ElementDecayRousing" },
+        { 08, "ElementArcaneRousing" },
+        { 09, "ElementOrderRousing" },
         { 10, "ElementShadowAwakened" },
-        { 11, "ElementEarthRousing" },
-        { 12, "ElementFireRousing" },
-        { 13, "ElementWaterRousing" },
-        { 14, "ElementAirRousing" },
-        { 15, "ElementLightningRousing" },
-        { 16, "ElementFrostRousing" },
-        { 17, "ElementDecayRousing" },
-        { 18, "ElementArcaneRousing" },
-        { 19, "ElementOrderRousing" },
-        { 20, "ElementShadowRousing" },
+        { 11, "ElementEarthAwakened" },
+        { 12, "ElementFireAwakened" },
+        { 13, "ElementWaterAwakened" },
+        { 14, "ElementAirAwakened" },
+        { 15, "ElementLightningAwakened" },
+        { 16, "ElementFrostAwakened" },
+        { 17, "ElementDecayAwakened" },
+        { 18, "ElementArcaneAwakened" },
+        { 19, "ElementOrderAwakened" },
+        { 20, "ElementShadowSoul" },
         { 21, "ElementEarthSoul" },
         { 22, "ElementFireSoul" },
         { 23, "ElementWaterSoul" },
@@ -93,7 +97,6 @@ public class BufferBoard
         { 27, "ElementDecaySoul" },
         { 28, "ElementArcaneSoul" },
         { 29, "ElementOrderSoul" },
-        { 30, "ElementShadowSoul" },
     };
 
     public int[,] field;

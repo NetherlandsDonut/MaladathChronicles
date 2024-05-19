@@ -37,6 +37,7 @@ public class Board
         actions = new List<Action>();
         log = new();
         healthBars = new();
+        Reset();
     }
 
     public Board(int x, int y, Dictionary<Ability, int> abilities)
@@ -59,6 +60,7 @@ public class Board
         actions = new List<Action>();
         log = new();
         healthBars = new();
+        Reset();
     }
 
     public static void NewBoard(Entity entity, SiteHostileArea area)
@@ -211,7 +213,7 @@ public class Board
         field = new int[field.GetLength(0), field.GetLength(1)];
         for (int i = 0; i < field.GetLength(0); i++)
             for (int j = 0; j < field.GetLength(1); j++)
-                field[i, j] = 0;
+                field[i, j] = -1;
         CDesktop.LockScreen();
     }
 
@@ -391,19 +393,19 @@ public class Board
         //MOVE ELEMENTS DOWN WITH GRAVITY
         for (int j = field.GetLength(1) - 2; j >= 0; j--)
             for (int i = field.GetLength(0) - 1; i >= 0; i--)
-                if (field[i, j] != 0)
+                if (field[i, j] != -1)
                 {
-                    var zeroes = 0;
+                    var empty = 0;
                     for (int q = 0; q + j < field.GetLength(1); q++)
-                        if (field[i, j + q] == 0) zeroes++;
-                    (field[i, j], field[i, j + zeroes]) = (0, field[i, j]);
-                    if (zeroes > 0) window.LBRegionGroup.regions[j].bigButtons[i].gameObject.AddComponent<FallingElement>().Initiate(zeroes);
+                        if (field[i, j + q] == -1) empty++;
+                    (field[i, j], field[i, j + empty]) = (-1, field[i, j]);
+                    if (empty > 0) window.LBRegionGroup.regions[j].bigButtons[i].gameObject.AddComponent<FallingElement>().Initiate(empty);
                 }
 
         //IF BOARD IS NOT YET FULL RETURN AND DO PREVIOUS STEPS AGAIN
         for (int j = field.GetLength(1) - 1; j >= 0; j--)
             for (int i = field.GetLength(0) - 1; i >= 0; i--)
-                if (field[i, j] == 0)
+                if (field[i, j] == -1)
                 {
                     bufferBoard.FillBoard(field);
                     return;
@@ -609,12 +611,12 @@ public class Board
             PlaySound("BonusMove" + (bonusTurnStreak > 4 ? 4 : bonusTurnStreak), 0.4f);
             SpawnFallingText(new Vector2(0, 14), "Bonus Move", "White");
         }
-        var types = list.Select(x => x.Item3).Distinct();
-        var foo = types.ToDictionary(x => Resource(x), x => list.Sum(y => y.Item3 == x ? 1 : 0));
+        var types = list.Select(x => x.Item3 % 10).Distinct();
+        var foo = types.ToDictionary(x => Resource(x), x => list.Sum(y => y.Item3 % 10 == x ? y.Item3 / 10 + 1 : 0));
         foreach (var a in list)
         {
             SpawnFlyingElement(1, 9, window.LBRegionGroup.regions[a.Item2].bigButtons[a.Item1].transform.position + new Vector3(-17.5f, -17.5f), boardButtonDictionary[a.Item3], board.playerTurn);
-            field[a.Item1, a.Item2] = 0;
+            field[a.Item1, a.Item2] = -1;
         }
         if (playerTurn) player.AddResources(foo);
         else enemy.AddResources(foo);
@@ -624,32 +626,32 @@ public class Board
 
     public string Resource(int id)
     {
-        if (id == 11) return "Earth";
-        else if (id == 12) return "Fire";
-        else if (id == 13) return "Water";
-        else if (id == 14) return "Air";
-        else if (id == 15) return "Lightning";
-        else if (id == 16) return "Frost";
-        else if (id == 17) return "Decay";
-        else if (id == 18) return "Arcane";
-        else if (id == 19) return "Order";
-        else if (id == 20) return "Shadow";
+        if (id % 10 == 1) return "Earth";
+        else if (id % 10 == 2) return "Fire";
+        else if (id % 10 == 3) return "Water";
+        else if (id % 10 == 4) return "Air";
+        else if (id % 10 == 5) return "Lightning";
+        else if (id % 10 == 6) return "Frost";
+        else if (id % 10 == 7) return "Decay";
+        else if (id % 10 == 8) return "Arcane";
+        else if (id % 10 == 9) return "Order";
+        else if (id % 10 == 0) return "Shadow";
         else return "None";
     }
 
     public int ResourceReverse(string element)
     {
-        if (element == "Earth") return 11;
-        else if (element == "Fire") return 12;
-        else if (element == "Water") return 13;
-        else if (element == "Air") return 14;
-        else if (element == "Lightning") return 15;
-        else if (element == "Frost") return 16;
-        else if (element == "Decay") return 17;
-        else if (element == "Arcane") return 18;
-        else if (element == "Order") return 19;
-        else if (element == "Shadow") return 20;
-        else return 0;
+        if (element == "Earth") return 1;
+        else if (element == "Fire") return 2;
+        else if (element == "Water") return 3;
+        else if (element == "Air") return 4;
+        else if (element == "Lightning") return 5;
+        else if (element == "Frost") return 6;
+        else if (element == "Decay") return 7;
+        else if (element == "Arcane") return 8;
+        else if (element == "Order") return 9;
+        else if (element == "Shadow") return 0;
+        else return -1;
     }
 
     public List<(int, int, int)> FloodCount(int x, int y)
@@ -663,7 +665,7 @@ public class Board
         {
             if (visited.Contains((i, j))) return;
             visited.Add((i, j));
-            if (field[i, j] != field[x, y] && field[i, j] != field[x, y] - 10 && field[i, j] - 10 != field[x, y] || positives.Contains((i, j, field[i, j]))) return;
+            if (field[i, j] % 10 != field[x, y] % 10 || positives.Contains((i, j, field[i, j]))) return;
             positives.Add((i, j, field[i, j]));
             if (i > 0) Flood(i - 1, j);
             if (j > 0) Flood(i, j - 1);
@@ -674,27 +676,28 @@ public class Board
 
     public static Dictionary<int, string> boardNameDictionary = new()
     {
-        { 00, "Empty" },
-        { 01, "Awakened Earth" },
-        { 02, "Awakened Fire" },
-        { 03, "Awakened Water" },
-        { 04, "Awakened Air" },
-        { 05, "Awakened Lightning" },
-        { 06, "Awakened Frost" },
-        { 07, "Awakened Decay" },
-        { 08, "Awakened Arcane" },
-        { 09, "Awakened Order" },
+        { -1, "None" },
+        { 00, "Rousing Shadow" },
+        { 01, "Rousing Earth" },
+        { 02, "Rousing Fire" },
+        { 03, "Rousing Water" },
+        { 04, "Rousing Air" },
+        { 05, "Rousing Lightning" },
+        { 06, "Rousing Frost" },
+        { 07, "Rousing Decay" },
+        { 08, "Rousing Arcane" },
+        { 09, "Rousing Order" },
         { 10, "Awakened Shadow" },
-        { 11, "Rousing Earth" },
-        { 12, "Rousing Fire" },
-        { 13, "Rousing Water" },
-        { 14, "Rousing Air" },
-        { 15, "Rousing Lightning" },
-        { 16, "Rousing Frost" },
-        { 17, "Rousing Decay" },
-        { 18, "Rousing Arcane" },
-        { 19, "Rousing Order" },
-        { 20, "Rousing Shadow" },
+        { 11, "Awakened Earth" },
+        { 12, "Awakened Fire" },
+        { 13, "Awakened Water" },
+        { 14, "Awakened Air" },
+        { 15, "Awakened Lightning" },
+        { 16, "Awakened Frost" },
+        { 17, "Awakened Decay" },
+        { 18, "Awakened Arcane" },
+        { 19, "Awakened Order" },
+        { 20, "Soul of Shadow" },
         { 21, "Soul of Earth" },
         { 22, "Soul of Fire" },
         { 23, "Soul of Water" },
@@ -704,32 +707,32 @@ public class Board
         { 27, "Soul of Decay" },
         { 28, "Soul of Arcane" },
         { 29, "Soul of Order" },
-        { 30, "Soul of Shadow" },
     };
 
     public static Dictionary<int, string> boardButtonDictionary = new()
     {
-        { 00, null },
-        { 01, "ElementEarthAwakened" },
-        { 02, "ElementFireAwakened" },
-        { 03, "ElementWaterAwakened" },
-        { 04, "ElementAirAwakened" },
-        { 05, "ElementLightningAwakened" },
-        { 06, "ElementFrostAwakened" },
-        { 07, "ElementDecayAwakened" },
-        { 08, "ElementArcaneAwakened" },
-        { 09, "ElementOrderAwakened" },
+        { -1, null },
+        { 00, "ElementShadowRousing" },
+        { 01, "ElementEarthRousing" },
+        { 02, "ElementFireRousing" },
+        { 03, "ElementWaterRousing" },
+        { 04, "ElementAirRousing" },
+        { 05, "ElementLightningRousing" },
+        { 06, "ElementFrostRousing" },
+        { 07, "ElementDecayRousing" },
+        { 08, "ElementArcaneRousing" },
+        { 09, "ElementOrderRousing" },
         { 10, "ElementShadowAwakened" },
-        { 11, "ElementEarthRousing" },
-        { 12, "ElementFireRousing" },
-        { 13, "ElementWaterRousing" },
-        { 14, "ElementAirRousing" },
-        { 15, "ElementLightningRousing" },
-        { 16, "ElementFrostRousing" },
-        { 17, "ElementDecayRousing" },
-        { 18, "ElementArcaneRousing" },
-        { 19, "ElementOrderRousing" },
-        { 20, "ElementShadowRousing" },
+        { 11, "ElementEarthAwakened" },
+        { 12, "ElementFireAwakened" },
+        { 13, "ElementWaterAwakened" },
+        { 14, "ElementAirAwakened" },
+        { 15, "ElementLightningAwakened" },
+        { 16, "ElementFrostAwakened" },
+        { 17, "ElementDecayAwakened" },
+        { 18, "ElementArcaneAwakened" },
+        { 19, "ElementOrderAwakened" },
+        { 20, "ElementShadowSoul" },
         { 21, "ElementEarthSoul" },
         { 22, "ElementFireSoul" },
         { 23, "ElementWaterSoul" },
@@ -739,12 +742,12 @@ public class Board
         { 27, "ElementDecaySoul" },
         { 28, "ElementArcaneSoul" },
         { 29, "ElementOrderSoul" },
-        { 30, "ElementShadowSoul" },
     };
 
     public static Dictionary<int, string> collectSoundDictionary = new()
     {
-        { 00, "" },
+        { -1, "" },
+        { 00, "ElementShadow" },
         { 01, "ElementEarth" },
         { 02, "ElementFire" },
         { 03, "ElementWater" },
@@ -774,6 +777,5 @@ public class Board
         { 27, "ElementDecay" },
         { 28, "ElementArcane" },
         { 29, "ElementOrder" },
-        { 30, "ElementShadow" },
     };
 }

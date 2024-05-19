@@ -1131,11 +1131,9 @@ public class Blueprint
             DisableGeneralSprites();
             AddRegionGroup();
             for (int i = 0; i < board.field.GetLength(1); i++)
-            {
                 AddPaddingRegion(() =>
                 {
                     for (int j = 0; j < board.field.GetLength(0); j++)
-                    {
                         AddBigButton(board.GetFieldButton(),
                         (h) =>
                         {
@@ -1144,23 +1142,7 @@ public class Blueprint
                             board.playerFinishedMoving = true;
                             board.FloodDestroy(list);
                         });
-                        //(h) => () =>
-                        //{
-                        //    var coords = (h.region.bigButtons.FindIndex(x => x.GetComponent<Highlightable>() == h), h.region.regionGroup.regions.IndexOf(h.region));
-                        //    var count = board.FloodCount(coords.Item1, coords.Item2).Count;
-                        //    SetAnchor(Bottom);
-                        //    AddRegionGroup();
-                        //    AddHeaderRegion(
-                        //        () =>
-                        //        {
-                        //            AddLine("x" + count + " ", LightGray);
-                        //            AddText(board.GetFieldName(coords.Item1, coords.Item2), board.GetFieldColor(coords.Item1, coords.Item2));
-                        //        }
-                        //    );s
-                        //});
-                    }
                 });
-            }
         }),
         new("BufferBoard", () => {
             SetAnchor(Top, 0, 194 + 19 * (BufferBoard.bufferBoard.field.GetLength(1) - 7));
