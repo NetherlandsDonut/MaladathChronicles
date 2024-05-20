@@ -358,7 +358,7 @@ public class Board
             StopAmbience();
             if (Realm.realms.Find(x => x.name == settings.selectedRealm).hardcore)
             {
-                currentSave.deathInfo = new(enemy.name, area.name);
+                currentSave.deathInfo = new(enemy.name, enemy.Race().kind == "Common", area.name);
             }
             else
             {

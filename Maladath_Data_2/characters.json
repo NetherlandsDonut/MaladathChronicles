@@ -1673,7 +1673,7 @@
     {
       "player": {
         "level": 9,
-        "experience": 1545,
+        "experience": 1585,
         "professionSkills": {},
         "learnedRecipes": {},
         "faction": "Stormwind",
@@ -1804,14 +1804,18 @@
         }
       },
       "hour": 7,
-      "currentSite": "Northshire Abbey",
+      "minute": 5,
+      "second": 8,
+      "currentSite": "Goldshire",
       "openedChests": {},
       "siteProgress": {},
       "commonsKilled": {},
       "raresKilled": {},
       "elitesKilled": {},
       "siteVisits": {
-        "Northshire Abbey": 1
+        "Northshire Abbey": 1,
+        "Northshire Valley": 2,
+        "Goldshire": 2
       },
       "unlockedAreas": [],
       "vendorStock": {
@@ -1892,11 +1896,15 @@
           }
         ]
       },
+      "buyback": {
+        "items": [],
+        "bags": [],
+        "ignoreSpaceChecks": true
+      },
       "startDate": "2024-05-20T02:04:53.4516535+02:00",
-      "lastLoaded": "2024-05-20T02:29:48.2253014+02:00",
-      "lastPlayed": "2024-05-20T02:33:57.4132633+02:00",
-      "timePlayed": "00:04:09.1879619",
-      "lastVisitedTalents": 1
+      "lastLoaded": "2024-05-20T20:10:59.7156852+02:00",
+      "lastPlayed": "2024-05-20T20:11:52.5568614+02:00",
+      "timePlayed": "00:16:29.7071818"
     }
   ]
 }

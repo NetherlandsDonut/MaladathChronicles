@@ -17,8 +17,8 @@ public class GameSettings
         chartBigIcons ??= new Bool(true);
         fastCascading ??= new Bool(true);
 
-        rarityIndicators ??= new Bool(true);
-        bigRarityIndicators ??= new Bool(true);
+        rarityIndicators ??= new Bool(false);
+        bigRarityIndicators ??= new Bool(false);
         upgradeIndicators ??= new Bool(false);
         newSlotIndicators ??= new Bool(false);
     }

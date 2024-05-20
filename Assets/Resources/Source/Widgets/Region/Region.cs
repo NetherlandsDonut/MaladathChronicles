@@ -30,7 +30,7 @@ public class Region : MonoBehaviour
         lines = new();
         smallButtons = new();
         bigButtons = new();
-        borders = new GameObject[4];
+        borders = new GameObject[8];
         this.draw = draw;
         this.regionGroup = regionGroup;
         this.backgroundType = backgroundType;

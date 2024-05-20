@@ -1087,7 +1087,7 @@ public class Blueprint
             AddHeaderRegion(
                 () =>
                 {
-                    AddLine(board.enemy.name + "'s loot:");
+                    AddLine(board.enemy.name + ":");
                     AddSmallButton("OtherClose", (h) =>
                     {
                         PlaySound("DesktopInventoryClose");
@@ -1223,7 +1223,7 @@ public class Blueprint
         new("MapToolbarShadow", () => {
             SetAnchor(Top);
             AddRegionGroup();
-            SetRegionGroupWidth(640);
+            SetRegionGroupWidth(639);
             SetRegionGroupHeight(15);
             AddPaddingRegion(() => { });
         }),
@@ -1461,10 +1461,10 @@ public class Blueprint
             });
         }, true),
         new("MapToolbarClockRight", () => {
-            SetAnchor(TopRight);
+            SetAnchor(TopRight, -19);
             DisableShadows();
             AddRegionGroup();
-            SetRegionGroupWidth(262);
+            SetRegionGroupWidth(243);
             AddPaddingRegion(() =>
             {
                 AddLine(currentSave.hour + (currentSave.minute < 10 ? ":0" : ":") + currentSave.minute, "", "Left");
@@ -1673,6 +1673,10 @@ public class Blueprint
         }),
         new("TalentTreeRight", () => {
             SetAnchor(TopRight, 0, -19);
+            var specShadow = new GameObject("SpecShadow", typeof(SpriteRenderer));
+            specShadow.transform.parent = CDesktop.LBWindow.transform;
+            specShadow.transform.localPosition = new Vector3(2, -2, 0.1f);
+            specShadow.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Textures/Specs/SpecShadow");
             DisableShadows();
             AddHeaderGroup();
             SetRegionGroupWidth(190);
@@ -1693,6 +1697,10 @@ public class Blueprint
         }),
         new("TalentTreeLeft", () => {
             SetAnchor(TopLeft, 0, -19);
+            var specShadow = new GameObject("SpecShadow", typeof(SpriteRenderer));
+            specShadow.transform.parent = CDesktop.LBWindow.transform;
+            specShadow.transform.localPosition = new Vector3(2, -2, 0.1f);
+            specShadow.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Textures/Specs/SpecShadow");
             AddHeaderGroup();
             SetRegionGroupWidth(190);
             SetRegionGroupHeight(309);
@@ -2562,6 +2570,9 @@ public class Blueprint
                     {
                         CloseDesktop("Instance");
                         SpawnDesktopBlueprint("Instance");
+                        SpawnWindowBlueprint("HostileArea: " + area.name);
+                        SetDesktopBackground(area.Background());
+                        Respawn("BossQueue");
                     }
                     else
                     {
@@ -3195,7 +3206,7 @@ public class Blueprint
                         AddLine(slot.player.name + ", a level " + slot.player.level + " ");
                         AddText(slot.player.spec, slot.player.spec);
                         AddLine("Score: " + slot.Score());
-                        if (slot.playerDead) AddText(", died while fighting " + slot.deathInfo.source + " in " + slot.deathInfo.area);
+                        if (slot.playerDead) AddText(", died while fighting " + (slot.deathInfo.commonSource ? "a " : "") + slot.deathInfo.source + " in " + slot.deathInfo.area);
                     });
                 }
                 else

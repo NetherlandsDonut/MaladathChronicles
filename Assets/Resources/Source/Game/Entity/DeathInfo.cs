@@ -1,21 +1,18 @@
-using System;
-using System.Linq;
-using System.Collections.Generic;
-
-using UnityEngine;
-using UnityEditor;
-
-using static Root;
-using static Sound;
 
 public class DeathInfo
 {
     public DeathInfo() { }
-    public DeathInfo(string source, string area)
+    public DeathInfo(string source, bool commonSource, string area)
     {
         this.source = source;
+        this.commonSource = commonSource;
         this.area = area;
     }
     
-    public string source, area;
+    public string source;
+
+    public bool commonSource;
+
+    public string area;
+
 }

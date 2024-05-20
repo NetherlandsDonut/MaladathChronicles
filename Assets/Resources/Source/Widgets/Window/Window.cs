@@ -291,13 +291,13 @@ public class Window : MonoBehaviour
                         smallButton.gameObject.AddComponent<Highlightable>().Initialise(region, null, null, null, null);
                     if (smallButton.frame == null)
                         smallButton.frame = new GameObject("ButtonFrame", typeof(SpriteRenderer));
-                    smallButton.frame.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>(title.StartsWith("Site: ") ? "Sprites/Building/Shadows/PremadeCircularSite" : "Sprites/Building/Borders/ButtonFrame");
+                    smallButton.frame.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>(title.StartsWith("Site: ") ? "Sprites/Building/Shadows/PremadeCircularSite" : "Sprites/Building/Borders/ButtonFrame" + (smallButton.GetComponent<SpriteRenderer>().sprite.texture.name.StartsWith("Other") ? "" : "Shadowed"));
                     if (title.StartsWith("Site: ")) smallButton.frame.GetComponent<SpriteRenderer>().sortingOrder = 1;
                     smallButton.frame.GetComponent<SpriteRenderer>().sortingLayerName = layer;
                     smallButton.frame.GetComponent<SpriteRenderer>().sortingLayerName = layer;
                     smallButton.frame.AddComponent<SpriteMask>().sprite = Resources.Load<Sprite>("Sprites/Building/Borders/ButtonCircleFrameMask");
                     smallButton.frame.transform.parent = smallButton.transform;
-                    smallButton.frame.transform.localPosition = new Vector3();
+                    smallButton.frame.transform.localPosition = new Vector3(0, 0, -0.05f);
                     if (disabledCollisions) Destroy(smallButton.GetComponent<BoxCollider2D>());
                 }
 
@@ -318,11 +318,11 @@ public class Window : MonoBehaviour
                         bigButton.gameObject.AddComponent<Highlightable>().Initialise(region, null, null, null, null);
                     if (bigButton.frame == null)
                         bigButton.frame = new GameObject("BigButtonFrame", typeof(SpriteRenderer));
-                    bigButton.frame.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>(title.StartsWith("TalentButton") ? "Sprites/Building/Borders/PremadeTalent" : ("Sprites/Building/Borders/BigButtonFrame" + (title.Contains("Board") ? "Rounded" : "")));
+                    bigButton.frame.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>(title.StartsWith("TalentButton") ? "Sprites/Building/Borders/PremadeTalent" : ("Sprites/Building/Borders/BigButtonFrame" + (title.Contains("Board") ? "Rounded" : (title.Contains("Spellbook") ? "RoundedIn" : ""))));
                     bigButton.frame.GetComponent<SpriteRenderer>().sortingLayerName = layer;
                     if (title.StartsWith("TalentButton")) bigButton.frame.GetComponent<SpriteRenderer>().sortingOrder = 3;
                     bigButton.frame.transform.parent = bigButton.transform;
-                    bigButton.frame.transform.localPosition = new Vector3(0, 0, title.Contains("Board") ? -0.05f : 0);
+                    bigButton.frame.transform.localPosition = new Vector3(0, 0, -0.05f);
                     if (disabledCollisions) Destroy(bigButton.GetComponent<BoxCollider2D>());
                 }
             }
@@ -423,11 +423,31 @@ public class Window : MonoBehaviour
                             region.borders[i].GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/Borders/RegionBorder");
                             region.borders[i].GetComponent<SpriteRenderer>().sortingLayerName = layer;
                         }
+                    for (int i = 0; i < 4; i++)
+                        if (region.borders[i + 4] == null)
+                        {
+                            region.borders[i + 4] = new GameObject("BorderCorner", typeof(SpriteRenderer));
+                            region.borders[i + 4].transform.parent = region.transform;
+                            region.borders[i + 4].GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/Borders/RegionBorderCorner");
+                            region.borders[i + 4].GetComponent<SpriteRenderer>().sortingLayerName = layer;
+                            if (i == 1 || i == 3) region.borders[i + 4].GetComponent<SpriteRenderer>().flipX = true;
+                            if (i == 2 || i == 3) region.borders[i + 4].GetComponent<SpriteRenderer>().flipY = true;
+                        }
                     region.borders[0].transform.localScale = region.borders[3].transform.localScale = new Vector3(regionGroup.AutoWidth() + 2 + region.xExtend, 2, 2);
                     region.borders[1].transform.localScale = region.borders[2].transform.localScale = new Vector3(2, region.AutoHeight() + 4 + region.yExtend, 2);
                     region.borders[0].transform.localPosition = region.borders[1].transform.localPosition = new Vector3(0, 0, 0.5f);
                     region.borders[2].transform.localPosition = new Vector3(regionGroup.AutoWidth() + region.xExtend, 0, 0.5f);
                     region.borders[3].transform.localPosition = new Vector3(0, -region.AutoHeight() - 4 - region.yExtend, 0.5f);
+                    if (regionGroup.AutoWidth() + region.xExtend - 1.5f - 19 * region.smallButtons.Count < 0 || 3.5f + 38 * region.bigButtons.Count >= regionGroup.AutoWidth() + region.xExtend)
+                        for (int i = 0; i < 4; i++)
+                            region.borders[i + 4].GetComponent<SpriteRenderer>().sprite = null;
+                    else
+                    {
+                        region.borders[4].transform.localPosition = new Vector3((regionGroup.setHeight == 2 ? -1 : 0) + 3.5f + 38 * region.bigButtons.Count, -3.5f, 0.05f);
+                        region.borders[5].transform.localPosition = new Vector3((regionGroup.setHeight == 2 ? 1 : 0) + regionGroup.AutoWidth() + region.xExtend - 1.5f - 19 * region.smallButtons.Count, -3.5f, 0.05f);
+                        region.borders[6].transform.localPosition = new Vector3((regionGroup.setHeight == 2 ? -1 : 0) + 3.5f + 38 * region.bigButtons.Count, -region.AutoHeight() - 2.5f - region.yExtend, 0.05f);
+                        region.borders[7].transform.localPosition = new Vector3((regionGroup.setHeight == 2 ? 1 : 0) + regionGroup.AutoWidth() + region.xExtend - 1.5f - 19 * region.smallButtons.Count, -region.AutoHeight() - 2.5f - region.yExtend, 0.05f);
+                    }
                 }
 
             #endregion

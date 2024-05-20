@@ -314,21 +314,23 @@ public class Starter : MonoBehaviour
                         var talent = PrintTalent(currentSave.lastVisitedTalents, row, col, tree);
                         var advancement = (currentSave.player.abilities.ContainsKey(talent.ability) ? (currentSave.player.abilities[talent.ability] + 1) * 2 : 0) + (currentSave.player.CanPickTalent(currentSave.lastVisitedTalents, talent) ? 1 : 0);
                         var dotAmount = Ability.abilities.Find(x => x.name == talent.ability).ranks.Count;
-                        for (int i = 0; i < dotAmount && i < 7; i++)
-                        {
-                            var dot = new GameObject("TalentDot", typeof(SpriteRenderer));
-                            dot.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Other/TalentDot" + (dotAmount == 1 ? "Single" : (i == 0 ? "First" : (i < dotAmount - 1 ? "Next" : "Last"))));
-                            dot.GetComponent<SpriteRenderer>().sortingLayerName = "Upper";
-                            dot.GetComponent<SpriteRenderer>().sortingOrder = 5 + i * 2;
-                            dot.transform.parent = LBDesktop.LBWindow.LBRegionGroup.LBRegion.transform;
-                            dot.transform.localPosition = new Vector3(38, -5 * i - 5);
-                            var fill = new GameObject("TalentDotFill", typeof(SpriteRenderer));
-                            fill.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Other/TalentDotFill" + (advancement >= (i + 1) * 2 ? "Picked" : (currentSave.player.unspentTalentPoints > 0 && advancement >= (i + 1) * 2 - 1 ? "Available" : "Locked")) + (dotAmount == 1 ? "Single" : (i == 0 ? "First" : (i < dotAmount - 1 ? "Next" : "Last"))));
-                            fill.GetComponent<SpriteRenderer>().sortingLayerName = "Upper";
-                            fill.GetComponent<SpriteRenderer>().sortingOrder = 4 + i * 2;
-                            fill.transform.parent = dot.transform;
-                            fill.transform.localPosition = new Vector3(0, 0);
-                        }
+                        dotAmount = dotAmount == 0 ? 1 : dotAmount;
+                        if (dotAmount > 1)
+                            for (int i = 0; i < dotAmount && i < 7; i++)
+                            {
+                                var dot = new GameObject("TalentDot", typeof(SpriteRenderer));
+                                dot.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Other/TalentDot" + (dotAmount == 1 ? "Single" : (i == 0 ? "First" : (i < dotAmount - 1 ? "Next" : "Last"))));
+                                dot.GetComponent<SpriteRenderer>().sortingLayerName = "Upper";
+                                dot.GetComponent<SpriteRenderer>().sortingOrder = 5 + i * 2;
+                                dot.transform.parent = LBDesktop.LBWindow.LBRegionGroup.LBRegion.transform;
+                                dot.transform.localPosition = new Vector3(38, -5 * i - 5);
+                                var fill = new GameObject("TalentDotFill", typeof(SpriteRenderer));
+                                fill.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Other/TalentDotFill" + (advancement >= (i + 1) * 2 ? "Picked" : (currentSave.player.unspentTalentPoints > 0 && advancement >= (i + 1) * 2 - 1 ? "Available" : "Locked")) + (dotAmount == 1 ? "Single" : (i == 0 ? "First" : (i < dotAmount - 1 ? "Next" : "Last"))));
+                                fill.GetComponent<SpriteRenderer>().sortingLayerName = "Upper";
+                                fill.GetComponent<SpriteRenderer>().sortingOrder = 4 + i * 2;
+                                fill.transform.parent = dot.transform;
+                                fill.transform.localPosition = new Vector3(0, 0);
+                            }
                     }, true));
                 }
 

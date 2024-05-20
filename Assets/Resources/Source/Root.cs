@@ -236,7 +236,7 @@ public static class Root
         if (CDesktop.transition != null && single) return;
         var transition = new GameObject("CameraTransition", typeof(SpriteRenderer), typeof(Shatter));
         transition.transform.parent = CDesktop.screen.transform;
-        transition.transform.localPosition = Vector3.zero;
+        transition.transform.localPosition = new Vector3(0, 0, -0.01f);
         transition.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Textures/CameraTransition");
         transition.GetComponent<SpriteRenderer>().sortingLayerName = "CameraBorder";
         transition.GetComponent<Shatter>().Initiate(time, 0, transition.GetComponent<SpriteRenderer>());
@@ -540,18 +540,18 @@ public static class Root
         button.GetComponent<SpriteRenderer>().material = Resources.Load<Material>("Shaders/Grayscale");
     }
 
-    public static void AddSmallButtonOverlay(string overlay, float time = 0, int sortingOrder = 1)
+    public static void AddSmallButtonOverlay(string overlay, float time = 0, int sortingOrder = 0)
     {
         var region = CDesktop.LBWindow.LBRegionGroup.LBRegion;
         var button = region.LBSmallButton.gameObject;
         AddSmallButtonOverlay(button, overlay, time, sortingOrder);
     }
 
-    public static void AddSmallButtonOverlay(GameObject onWhat, string overlay, float time = 0, int sortingOrder = 1)
+    public static void AddSmallButtonOverlay(GameObject onWhat, string overlay, float time = 0, int sortingOrder = 0)
     {
         var newObject = new GameObject("SmallButtonOverlay", typeof(SpriteRenderer));
         newObject.transform.parent = onWhat.transform;
-        newObject.transform.localPosition = Vector3.zero;
+        newObject.transform.localPosition = new Vector3(0, 0, -0.01f);
         if (overlay == "Cooldown") newObject.AddComponent<AnimatedSprite>().Initiate("Sprites/Building/Shadows/Cooldown");
         else if (overlay == "YellowGlow") newObject.AddComponent<AnimatedSprite>().Initiate("Sprites/Building/Shadows/YellowGlow");
         else if (overlay == "PlayerLocation") newObject.AddComponent<AnimatedSprite>().Initiate("Sprites/Building/Shadows/PlayerLocation", 0.07f);
@@ -586,7 +586,7 @@ public static class Root
         button.GetComponent<SpriteRenderer>().material = Resources.Load<Material>("Shaders/Grayscale");
     }
 
-    public static GameObject AddBigButtonOverlay(string overlay, float time = 0, int sortingOrder = 1)
+    public static GameObject AddBigButtonOverlay(string overlay, float time = 0, int sortingOrder = 0)
     {
         var region = CDesktop.LBWindow.LBRegionGroup.LBRegion;
         var button = region.LBBigButton.gameObject;
@@ -599,9 +599,8 @@ public static class Root
         var button = region.LBBigButton.gameObject;
         var newObject = new GameObject("BigButtonGrid", typeof(SpriteRenderer));
         newObject.transform.parent = button.transform;
-        newObject.transform.localPosition = Vector3.zero;
+        newObject.transform.localPosition = new Vector3(0, 0, -0.01f);
         var sprites = Resources.LoadAll<Sprite>("Sprites/Building/Shadows/CooldownBig");
-        newObject.GetComponent<SpriteRenderer>().sortingOrder = 1;
         newObject.GetComponent<SpriteRenderer>().sortingLayerName = CDesktop.LBWindow.layer;
         var value = 1.0 / sprites.Length;
         var first = 0;
@@ -616,11 +615,11 @@ public static class Root
         return newObject;
     }
 
-    public static GameObject AddBigButtonOverlay(GameObject onWhat, string overlay, float time = 0, int sortingOrder = 1)
+    public static GameObject AddBigButtonOverlay(GameObject onWhat, string overlay, float time = 0, int sortingOrder = 0)
     {
         var newObject = new GameObject("BigButtonGrid", typeof(SpriteRenderer));
         newObject.transform.parent = onWhat.transform;
-        newObject.transform.localPosition = Vector3.zero;
+        newObject.transform.localPosition = new Vector3(0, 0, -0.01f);
         newObject.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>(overlay);
         newObject.GetComponent<SpriteRenderer>().sortingOrder = sortingOrder;
         newObject.GetComponent<SpriteRenderer>().sortingLayerName = CDesktop.LBWindow.layer;
@@ -632,11 +631,11 @@ public static class Root
         return newObject;
     }
 
-    public static GameObject AddBigButtonOverlay(Vector2 position, string overlay, float time = 0, int sortingOrder = 1)
+    public static GameObject AddBigButtonOverlay(Vector2 position, string overlay, float time = 0, int sortingOrder = 0)
     {
         var newObject = new GameObject("BigButtonGrid", typeof(SpriteRenderer));
         newObject.transform.parent = CDesktop.transform;
-        newObject.transform.localPosition = position;
+        newObject.transform.localPosition = new Vector3(position.x, position.y, -0.01f);
         newObject.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/BigButtons/" + overlay);
         newObject.GetComponent<SpriteRenderer>().sortingOrder = sortingOrder;
         newObject.GetComponent<SpriteRenderer>().sortingLayerName = CDesktop.LBWindow.layer;
