@@ -487,7 +487,11 @@ public class Entity
         var talentTree = Spec().talentTrees[spec];
         var temp = talentTree.talents.FindAll(x => x.tree == talent.tree && abilities.ContainsKey(x.ability));
         if (talent.row > (temp.Count > 0 ? temp.Max(x => x.row) + 1 : 0)) return false;
-        if (talent.inherited) if (!abilities.ContainsKey(PreviousTalent(spec, talent).ability)) return false;
+        if (talent.inherited)
+        {
+            var foo = Ability.abilities.Find(x => x.name == PreviousTalent(spec, talent).ability).ranks.Count;
+            if (!abilities.ContainsKey(PreviousTalent(spec, talent).ability) || abilities[PreviousTalent(spec, talent).ability] + 1 < (foo < 1 ? 1 : foo)) return false;
+        }
         return true;
     }
 

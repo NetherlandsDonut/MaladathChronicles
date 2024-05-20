@@ -46,7 +46,7 @@ public class Talent
             AddBigButton(abilities.Find(x => x.name == talent.ability).icon,
                 (h) =>
                 {
-                    if (currentSave.player.CanPickTalent(spec, talent))
+                    if (currentSave.player.unspentTalentPoints > 0 && currentSave.player.CanPickTalent(spec, talent))
                     {
                         currentSave.player.unspentTalentPoints--;
                         PlaySound("DesktopTalentAcquired", 0.2f);

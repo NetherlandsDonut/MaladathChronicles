@@ -1672,12 +1672,12 @@
     },
     {
       "player": {
-        "level": 7,
-        "experience": 820,
+        "level": 9,
+        "experience": 1545,
         "professionSkills": {},
         "learnedRecipes": {},
         "faction": "Stormwind",
-        "name": "Jennine",
+        "name": "Christine",
         "race": "Human",
         "spec": "Mage",
         "gender": "Female",
@@ -1693,15 +1693,12 @@
           "Frostbolt": 0,
           "Arcane Missiles": 0,
           "Blazing Barrier": 0,
-          "Flamestrike": 0,
-          "Scorch": 0
+          "Fire Blast": 0,
+          "Scorch": 0,
+          "Searing Touch": 0,
+          "Hot Streak": 0
         },
-        "actionBars": [
-          "Arcane Missiles",
-          "Blazing Barrier",
-          "Fireball",
-          "Frostbolt"
-        ],
+        "actionBars": [],
         "stats": {
           "stats": {
             "Stamina": 6,
@@ -1807,17 +1804,14 @@
         }
       },
       "hour": 7,
-      "minute": 3,
-      "second": 44,
-      "currentSite": "Goldshire",
+      "currentSite": "Northshire Abbey",
       "openedChests": {},
       "siteProgress": {},
       "commonsKilled": {},
       "raresKilled": {},
       "elitesKilled": {},
       "siteVisits": {
-        "Northshire Abbey": 1,
-        "Goldshire": 0
+        "Northshire Abbey": 1
       },
       "unlockedAreas": [],
       "vendorStock": {
@@ -1898,10 +1892,11 @@
           }
         ]
       },
-      "startDate": "2024-05-19T22:20:20.2741238+02:00",
-      "lastLoaded": "2024-05-20T01:52:28.2943843+02:00",
-      "lastPlayed": "2024-05-20T01:55:49.2119529+02:00",
-      "timePlayed": "00:03:20.9175686"
+      "startDate": "2024-05-20T02:04:53.4516535+02:00",
+      "lastLoaded": "2024-05-20T02:29:48.2253014+02:00",
+      "lastPlayed": "2024-05-20T02:33:57.4132633+02:00",
+      "timePlayed": "00:04:09.1879619",
+      "lastVisitedTalents": 1
     }
   ]
 }
