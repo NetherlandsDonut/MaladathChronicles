@@ -109,7 +109,7 @@ public class Board
     public Entity player, enemy;
 
     //Health bars for player and the enemy
-    public Dictionary<string, HealthBar> healthBars;
+    public Dictionary<string, FluidBar> healthBars;
 
     //Indicates whether it's currently the player's turn
     public bool playerTurn;

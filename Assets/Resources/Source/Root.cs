@@ -835,7 +835,7 @@ public static class Root
         var healthBar = UnityEngine.Object.Instantiate(Resources.Load<GameObject>("Prefabs/PrefabHealthBar"));
         healthBar.transform.parent = CDesktop.LBWindow.transform;
         healthBar.transform.localPosition = new Vector3(x, y, 0);
-        var thisBar = healthBar.GetComponent<HealthBar>();
+        var thisBar = healthBar.GetComponent<FluidBar>();
         if (Board.board.healthBars.ContainsKey(forWho)) Board.board.healthBars[forWho] = thisBar;
         else Board.board.healthBars.Add(forWho, thisBar);
         thisBar.entity = entity;

@@ -20,6 +20,7 @@ public class Shatter : MonoBehaviour
         this.time = time;
         delayLeft = delay;
         if (r != null) render = r;
+        else render = GetComponent<SpriteRenderer>();
         if (render == null) StartCoroutine(SelfDestruct(time));
     }
 

@@ -1,6 +1,7 @@
+using System.Linq;
 using UnityEngine;
 
-public class HealthBar : MonoBehaviour
+public class FluidBar : MonoBehaviour
 {
     //Entity this health bar referes to
     public Entity entity;
@@ -11,6 +12,7 @@ public class HealthBar : MonoBehaviour
     //Updates the length of the health bar
     public void UpdateHealthBar()
     {
+        if (split == null) split = GetComponentsInChildren<SpriteRenderer>().First(x => x.name == "BarSplit");
         var aim = (int)(131.0 / entity.MaxHealth() * entity.health);
         if (aim < 0) aim = 0;
         else if (aim < 2) aim = 2;
