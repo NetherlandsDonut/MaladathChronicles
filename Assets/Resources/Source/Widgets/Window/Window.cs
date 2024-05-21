@@ -10,6 +10,7 @@ using static Root.Anchor;
 using static Root.RegionBackgroundType;
 
 using static InputLine;
+using UnityEngine.Rendering;
 
 public class Window : MonoBehaviour
 {
@@ -129,15 +130,16 @@ public class Window : MonoBehaviour
             if (background == null)
                 background = new GameObject("Window Background", typeof(SpriteRenderer));
             background.transform.parent = transform;
+            if (background.GetComponent<SpriteRenderer>() == null)
+                background.AddComponent<SpriteRenderer>();
             background.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/Backgrounds/Window");
-            background.GetComponent<SpriteRenderer>().sortingLayerName = layer;
-            background.GetComponent<SpriteRenderer>().sortingOrder = -10;
             background.transform.localScale = new Vector3(xOffset + 2, PlannedHeight() + (headerGroup != null ? headerGroup.PlannedHeight() : 0) + 2, 1);
             background.transform.localPosition = new Vector3(0, 0, 0.9f);
             if (background.GetComponent<BoxCollider2D>() == null)
                 background.AddComponent<BoxCollider2D>();
             if (disabledCollisions)
                 Destroy(background.GetComponent<BoxCollider2D>());
+            Destroy(background.GetComponent<SpriteRenderer>());
         }
 
         //Draws window shadows
@@ -182,8 +184,19 @@ public class Window : MonoBehaviour
                 shadows[2].transform.localPosition = new Vector3(Width() + 2, -yOffset - 2, 0.9f);
                 shadows[3].transform.localPosition = new Vector3(4, -yOffset - 2, 0.9f);
                 shadows[4].transform.localPosition = new Vector3(0, -yOffset - 2, 0.9f);
+                if (false)
+                {
+                    shadows[0].transform.localPosition -= new Vector3(0, 5, 0);
+                    shadows[1].transform.localPosition -= new Vector3(0, 5, 0);
+                    shadows[2].transform.localPosition -= new Vector3(3, -3, 0);
+                    shadows[3].transform.localPosition += new Vector3(5, 0, 0);
+                    shadows[4].transform.localPosition += new Vector3(5, 0, 0);
+                    shadows[1].transform.localScale -= new Vector3(0, 11, 0);
+                    shadows[3].transform.localScale -= new Vector3(11, 0, 0);
+                    shadows[2].GetComponent<SpriteRenderer>().sprite = shadowSprites[5];
+                }
             }
-            else
+            else if (defines.shadowSystem == 2)
             {
                 var shadowSprites = Resources.LoadAll<Sprite>("Sprites/Building/Shadows/Third");
                 for (int i = 0; i < 8; i++)
@@ -438,6 +451,17 @@ public class Window : MonoBehaviour
                     region.borders[0].transform.localPosition = region.borders[1].transform.localPosition = new Vector3(0, 0, 0.5f);
                     region.borders[2].transform.localPosition = new Vector3(regionGroup.AutoWidth() + region.xExtend, 0, 0.5f);
                     region.borders[3].transform.localPosition = new Vector3(0, -region.AutoHeight() - 4 - region.yExtend, 0.5f);
+                    if (false)
+                    {
+                        region.borders[0].transform.localScale -= new Vector3(6, 0, 0);
+                        region.borders[3].transform.localScale -= new Vector3(6, 0, 0);
+                        region.borders[1].transform.localScale -= new Vector3(0, 4, 0);
+                        region.borders[2].transform.localScale -= new Vector3(0, 4, 0);
+                        region.borders[0].transform.localPosition += new Vector3(3, 0, 0);
+                        region.borders[3].transform.localPosition += new Vector3(3, 0, 0);
+                        region.borders[1].transform.localPosition -= new Vector3(0, 3, 0);
+                        region.borders[2].transform.localPosition -= new Vector3(0, 3, 0);
+                    }
                     if (regionGroup.AutoWidth() + region.xExtend - 1.5f - 19 * region.smallButtons.Count < 0 || 3.5f + 38 * region.bigButtons.Count >= regionGroup.AutoWidth() + region.xExtend)
                         for (int i = 0; i < 4; i++)
                             region.borders[i + 4].GetComponent<SpriteRenderer>().sprite = null;
@@ -449,6 +473,43 @@ public class Window : MonoBehaviour
                         region.borders[7].transform.localPosition = new Vector3((regionGroup.setHeight == 2 ? 1 : 0) + regionGroup.AutoWidth() + region.xExtend - 1.5f - 19 * region.smallButtons.Count, -region.AutoHeight() - 2.5f - region.yExtend, 0.05f);
                     }
                 }
+
+            ////Draws region shadows
+            //if (!disabledGeneralSprites && !disabledShadows)
+            //    if (defines.shadowSystem == 1)
+            //        foreach (var region in regionGroup.regions)
+            //        {
+            //            var shadowSprites = Resources.LoadAll<Sprite>("Sprites/Building/Shadows/Second");
+            //            for (int i = 0; i < 5; i++)
+            //                if (region.shadows[i] == null)
+            //                {
+            //                    region.shadows[i] = new GameObject("Shadow", typeof(SpriteRenderer));
+            //                    region.shadows[i].transform.parent = region.transform;
+            //                    region.shadows[i].GetComponent<SpriteRenderer>().sprite = shadowSprites[i];
+            //                    region.shadows[i].GetComponent<SpriteRenderer>().sortingLayerName = layer;
+            //                }
+            //            int w = regionGroups.Count > 0 ? regionGroups.Max(x => x.AutoWidth()) : 0;
+            //            int h = region.PlannedHeight() + (region.yExtend > 0 ? region.yExtend + 4 : 0);
+            //            if (w == 0 || h == 0) break;
+            //            region.shadows[1].transform.localScale = new Vector3(1, h - 2, 1);
+            //            region.shadows[3].transform.localScale = new Vector3(w - 2, 1, 1);
+            //            region.shadows[0].transform.localPosition = new Vector3(w + 2, -1, 0.9f);
+            //            region.shadows[1].transform.localPosition = new Vector3(w + 2, -3, 0.9f);
+            //            region.shadows[2].transform.localPosition = new Vector3(w + 2, -h - 2, 0.9f);
+            //            region.shadows[3].transform.localPosition = new Vector3(4, -h - 2, 0.9f);
+            //            region.shadows[4].transform.localPosition = new Vector3(0, -h - 2, 0.9f);
+            //            if (true)
+            //            {
+            //                region.shadows[0].transform.localPosition -= new Vector3(0, 3, 0);
+            //                region.shadows[1].transform.localPosition -= new Vector3(0, 5, 0);
+            //                region.shadows[2].transform.localPosition -= new Vector3(3, -3, 0);
+            //                region.shadows[3].transform.localPosition += new Vector3(4, 0, 0);
+            //                region.shadows[4].transform.localPosition += new Vector3(4, 0, 0);
+            //                region.shadows[1].transform.localScale -= new Vector3(0, 7, 0);
+            //                region.shadows[3].transform.localScale -= new Vector3(7, 0, 0);
+            //                region.shadows[2].GetComponent<SpriteRenderer>().sprite = shadowSprites[5];
+            //            }
+            //        }
 
             #endregion
 

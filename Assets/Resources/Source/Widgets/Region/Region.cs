@@ -23,6 +23,7 @@ public class Region : MonoBehaviour
     public RegionBackgroundType backgroundType;
     public Sprite backgroundImage;
     public GameObject background;
+    public GameObject[] shadows;
     public GameObject[] borders;
 
     public void Initialise(RegionGroup regionGroup, RegionBackgroundType backgroundType, Action draw)
@@ -31,6 +32,7 @@ public class Region : MonoBehaviour
         smallButtons = new();
         bigButtons = new();
         borders = new GameObject[8];
+        shadows = new GameObject[8];
         this.draw = draw;
         this.regionGroup = regionGroup;
         this.backgroundType = backgroundType;
