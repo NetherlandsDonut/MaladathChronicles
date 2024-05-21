@@ -183,6 +183,7 @@ public class SiteHostileArea : Site
                             SpawnDesktopBlueprint("Game");
                             SwitchDesktop("Game");
                         });
+                        var thickness = 6;
                         if (progression != null && progression.Count > 0)
                             for (int i = 0; i <= areaSize; i++)
                             {
@@ -201,14 +202,14 @@ public class SiteHostileArea : Site
                                         var marker = new GameObject("ProgressionMarker", typeof(SpriteRenderer));
                                         marker.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Other/Progress" + printType);
                                         marker.transform.parent = CDesktop.LBWindow.LBRegionGroup.LBRegion.transform;
-                                        marker.transform.localPosition = new Vector3(1 + CDesktop.LBWindow.LBRegionGroup.setWidth, -6);
+                                        marker.transform.localPosition = new Vector3(1 + CDesktop.LBWindow.LBRegionGroup.setWidth, -3 - thickness);
                                     }
                                 }
                                 if (i < areaSize)
                                 {
                                     AddRegionGroup();
                                     SetRegionGroupWidth((i == areaSize - 1 ? 200 % areaSize : 0) + 200 / areaSize);
-                                    SetRegionGroupHeight(2);
+                                    SetRegionGroupHeight(thickness);
                                     AddPaddingRegion(() =>
                                     {
                                         var temp = currentSave.siteProgress.ContainsKey(name) ? currentSave.siteProgress[name] : 0;
