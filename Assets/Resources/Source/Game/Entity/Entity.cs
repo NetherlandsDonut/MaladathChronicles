@@ -110,6 +110,7 @@ public class Entity
             unspentTalentPoints++;
             PlaySound("DesktopLevelUp", 0.3f);
         }
+        Respawn("ExperienceBarBorder", true);
         Respawn("ExperienceBar", true);
     }
 

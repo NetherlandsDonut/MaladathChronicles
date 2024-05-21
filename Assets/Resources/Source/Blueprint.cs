@@ -508,6 +508,16 @@ public class Blueprint
                 settings.fastCascading.Invert();
                 CDesktop.RespawnAll();
             });
+            AddButtonRegion(() =>
+            {
+                AddCheckbox(new Bool(defines.windowBorders));
+                AddLine("Window borders");
+            },
+            (h) =>
+            {
+                defines.windowBorders ^= true;
+                CDesktop.RespawnAll();
+            });
             AddPaddingRegion(() =>
             {
                 AddLine("Sound", "", "Center");
@@ -1223,10 +1233,10 @@ public class Blueprint
         new("MapToolbarShadow", () => {
             SetAnchor(Top);
             AddRegionGroup();
-            SetRegionGroupWidth(639);
+            SetRegionGroupWidth(638);
             SetRegionGroupHeight(15);
             AddPaddingRegion(() => { });
-        }),
+        }, true),
         new("MapToolbar", () => {
             AddHotkey(N, () =>
             {
@@ -1574,6 +1584,7 @@ public class Blueprint
                         SpawnWindowBlueprint("InventorySort");
                         Respawn("Inventory");
                         Respawn("Bank", true);
+                        Respawn("ExperienceBarBorder", true);
                         Respawn("ExperienceBar", true);
                     });
                 else
@@ -1584,6 +1595,7 @@ public class Blueprint
                         SpawnWindowBlueprint("InventorySettings");
                         Respawn("Inventory");
                         Respawn("Bank", true);
+                        Respawn("ExperienceBarBorder", true);
                         Respawn("ExperienceBar", true);
                     });
                 else
@@ -1643,11 +1655,17 @@ public class Blueprint
                 }
             );
             AddRegionGroup();
-            SetRegionGroupWidth(239);
+            SetRegionGroupWidth(220);
             AddHeaderRegion(
                 () =>
                 {
-                    AddLine(currentSave.player.Spec().talentTrees[currentSave.lastVisitedTalents].name + "    ", "", "Center");
+                    AddLine(currentSave.player.Spec().talentTrees[currentSave.lastVisitedTalents].name, "", "Center");
+                }
+            );
+            AddRegionGroup();
+            AddHeaderRegion(
+                () =>
+                {
                     AddSmallButton("OtherNextPage", (h) =>
                     {
                         PlaySound("DesktopSwitchPage");
@@ -1888,6 +1906,7 @@ public class Blueprint
                     CloseWindow(h.window);
                     CloseWindow("Town: " + town.name);
                     SpawnWindowBlueprint("ProfessionLevelTrainer");
+                    Respawn("ExperienceBarBorder");
                     Respawn("ExperienceBar");
                 });
                 AddButtonRegion(() =>
@@ -1900,6 +1919,7 @@ public class Blueprint
                     CloseWindow(h.window);
                     CloseWindow("Town: " + town.name);
                     SpawnWindowBlueprint("ProfessionRecipeTrainer");
+                    Respawn("ExperienceBarBorder");
                     Respawn("ExperienceBar");
                 });
             }
@@ -1919,6 +1939,7 @@ public class Blueprint
                     CloseWindow("Town: " + town.name);
                     SpawnWindowBlueprint("Bank");
                     SpawnWindowBlueprint("Inventory");
+                    Respawn("ExperienceBarBorder");
                     Respawn("ExperienceBar");
                 });
                 AddButtonRegion(() =>
@@ -1944,6 +1965,7 @@ public class Blueprint
                     CloseWindow(h.window);
                     SpawnWindowBlueprint("Vendor");
                     SpawnWindowBlueprint("Inventory");
+                    Respawn("ExperienceBarBorder");
                     Respawn("ExperienceBar");
                 });
                 if (currentSave.player.homeLocation != town.name)
@@ -1956,6 +1978,7 @@ public class Blueprint
                         PlaySound("DesktopInstanceOpen");
                         CloseWindow(h.window);
                         SpawnWindowBlueprint("MakeInnHome");
+                        Respawn("ExperienceBarBorder");
                         Respawn("ExperienceBar");
                     });
                 if (!currentSave.player.inventory.items.Exists(x => x.name == "Hearthstone"))
@@ -1972,6 +1995,7 @@ public class Blueprint
                             currentSave.player.inventory.AddItem(item.CopyItem(1));
                         }
                         h.window.Respawn();
+                        Respawn("ExperienceBarBorder");
                         Respawn("ExperienceBar");
                     });
             }
@@ -1988,6 +2012,7 @@ public class Blueprint
                     CloseWindow("Town: " + town.name);
                     SpawnWindowBlueprint("Vendor");
                     SpawnWindowBlueprint("Inventory");
+                    Respawn("ExperienceBarBorder");
                     Respawn("ExperienceBar");
                 });
             }
@@ -2017,6 +2042,7 @@ public class Blueprint
                     CloseWindow("Town: " + town.name);
                     SpawnWindowBlueprint("MountList");
                     SpawnWindowBlueprint("CurrentMount");
+                    Respawn("ExperienceBarBorder");
                     Respawn("ExperienceBar");
                 });
                 AddButtonRegion(() =>
@@ -2815,6 +2841,13 @@ public class Blueprint
             SetRegionGroupHeight(12);
             AddPaddingRegion(() => { SetRegionBackground(RegionBackgroundType.NoExperience); });
         },  true),
+        new("ExperienceBarBorder", () => {
+            SetAnchor(Bottom);
+            AddRegionGroup();
+            SetRegionGroupWidth(638);
+            SetRegionGroupHeight(12);
+            AddPaddingRegion(() => { });
+        }),
         new("BestiaryKalimdor", () => {
             SetAnchor(-210, 142);
             AddHeaderGroup();
@@ -8702,6 +8735,7 @@ public class Blueprint
             SpawnWindowBlueprint("MapToolbarClockRight");
             SpawnWindowBlueprint("MapToolbarStatusLeft");
             SpawnWindowBlueprint("MapToolbarStatusRight");
+            SpawnWindowBlueprint("ExperienceBarBorder");
             SpawnWindowBlueprint("ExperienceBar");
             if (currentSave.siteProgress.ContainsKey(area.name) && area.progression.First(x => x.type == "Treasure").point == currentSave.siteProgress[area.name] && (!currentSave.openedChests.ContainsKey(area.name) || currentSave.openedChests[area.name].inventory.items.Count > 0))
                 SpawnWindowBlueprint("Chest");
@@ -8723,6 +8757,7 @@ public class Blueprint
         {
             SetDesktopBackground(board.area.Background());
             SpawnWindowBlueprint("CombatResults");
+            SpawnWindowBlueprint("ExperienceBarBorder");
             SpawnWindowBlueprint("ExperienceBar");
         }),
         new("CombatLog", () =>
@@ -8732,6 +8767,7 @@ public class Blueprint
             SpawnWindowBlueprint("CombatResultsChartLeftArrow");
             SpawnWindowBlueprint("CombatResultsChartRightArrow");
             FillChart();
+            SpawnWindowBlueprint("ExperienceBarBorder");
             SpawnWindowBlueprint("ExperienceBar");
             AddHotkey(A, () =>
             {
@@ -8772,6 +8808,7 @@ public class Blueprint
             SpawnWindowBlueprint("LootInfo");
             SpawnWindowBlueprint("CombatResultsLoot");
             SpawnWindowBlueprint("Inventory");
+            SpawnWindowBlueprint("ExperienceBarBorder");
             SpawnWindowBlueprint("ExperienceBar");
             AddHotkey(Escape, () =>
             {
@@ -8792,6 +8829,7 @@ public class Blueprint
             SpawnWindowBlueprint("ChestInfo");
             SpawnWindowBlueprint("ChestLoot");
             SpawnWindowBlueprint("Inventory");
+            SpawnWindowBlueprint("ExperienceBarBorder");
             SpawnWindowBlueprint("ExperienceBar");
             AddHotkey(Escape, () =>
             {
@@ -8808,6 +8846,7 @@ public class Blueprint
             SpawnWindowBlueprint("MapToolbarClockRight");
             SpawnWindowBlueprint("MapToolbarStatusLeft");
             SpawnWindowBlueprint("MapToolbarStatusRight");
+            SpawnWindowBlueprint("ExperienceBarBorder");
             SpawnWindowBlueprint("ExperienceBar");
             SpawnWindowBlueprint("Town: " + town.name);
             AddHotkey(Tab, () =>
@@ -8888,6 +8927,7 @@ public class Blueprint
             SpawnWindowBlueprint("MapToolbarClockRight");
             SpawnWindowBlueprint("MapToolbarStatusLeft");
             SpawnWindowBlueprint("MapToolbarStatusRight");
+            SpawnWindowBlueprint("ExperienceBarBorder");
             SpawnWindowBlueprint("ExperienceBar");
             SpawnWindowBlueprint("InstanceLeftSide");
             //if (area != null && currentSave.siteProgress.ContainsKey(area.name) && area.progression.First(x => x.type == "Treasure").point == currentSave.siteProgress[area.name] && (!currentSave.openedChests.ContainsKey(area.name) || currentSave.openedChests[area.name].inventory.items.Count > 0))
@@ -8924,6 +8964,7 @@ public class Blueprint
             SpawnWindowBlueprint("MapToolbarClockRight");
             SpawnWindowBlueprint("MapToolbarStatusLeft");
             SpawnWindowBlueprint("MapToolbarStatusRight");
+            SpawnWindowBlueprint("ExperienceBarBorder");
             SpawnWindowBlueprint("ExperienceBar");
             SpawnWindowBlueprint("ComplexLeftSide");
             AddHotkey(Escape, () =>
@@ -9028,6 +9069,7 @@ public class Blueprint
             SpawnWindowBlueprint("PlayerEquipmentInfo");
             SpawnWindowBlueprint("CharacterInfoStats");
             SpawnWindowBlueprint("CharacterInfoStatsRight");
+            SpawnWindowBlueprint("ExperienceBarBorder");
             SpawnWindowBlueprint("ExperienceBar");
             AddHotkey(Escape, () =>
             {
@@ -9038,7 +9080,6 @@ public class Blueprint
         new("TalentScreen", () =>
         {
             SetDesktopBackground("Stone");
-            SpawnWindowBlueprint("MapToolbarShadow");
             SpawnWindowBlueprint("MapToolbarClockLeft");
             SpawnWindowBlueprint("MapToolbar");
             SpawnWindowBlueprint("MapToolbarClockRight");
@@ -9054,6 +9095,7 @@ public class Blueprint
                         if (windowBlueprints.Exists(x => x.title == "TalentButton" + tree + row + col))
                             if (playerSpec.talentTrees[currentSave.lastVisitedTalents].talents.Exists(x => x.row == row && x.col == col && x.tree == tree))
                                 SpawnWindowBlueprint("TalentButton" + tree + row + col);
+            SpawnWindowBlueprint("ExperienceBarBorder");
             SpawnWindowBlueprint("ExperienceBar");
             AddHotkey(A, () =>
             {
@@ -9088,6 +9130,7 @@ public class Blueprint
             SpawnWindowBlueprint("SpellbookAbilityListActivated");
             SpawnWindowBlueprint("PlayerSpellbookInfo");
             SpawnWindowBlueprint("SpellbookResources");
+            SpawnWindowBlueprint("ExperienceBarBorder");
             SpawnWindowBlueprint("ExperienceBar");
             AddHotkey(Escape, () => { SwitchDesktop("Map"); CloseDesktop("SpellbookScreen"); PlaySound("DesktopSpellbookScreenClose"); });
             AddPaginationHotkeys();
@@ -9104,6 +9147,7 @@ public class Blueprint
             SpawnWindowBlueprint("MapToolbarStatusRight");
             SpawnWindowBlueprint("PlayerEquipmentInfo");
             SpawnWindowBlueprint("Inventory");
+            SpawnWindowBlueprint("ExperienceBarBorder");
             SpawnWindowBlueprint("ExperienceBar");
             AddHotkey(Escape, () =>
             {
@@ -9123,6 +9167,7 @@ public class Blueprint
             SpawnWindowBlueprint("MapToolbarStatusRight");
             SpawnWindowBlueprint("BestiaryKalimdor");
             SpawnWindowBlueprint("BestiaryEasternKingdoms");
+            SpawnWindowBlueprint("ExperienceBarBorder");
             SpawnWindowBlueprint("ExperienceBar");
             AddHotkey(Escape, () =>
             {
@@ -9140,6 +9185,7 @@ public class Blueprint
             SpawnWindowBlueprint("MapToolbarClockRight");
             SpawnWindowBlueprint("MapToolbarStatusLeft");
             SpawnWindowBlueprint("MapToolbarStatusRight");
+            SpawnWindowBlueprint("ExperienceBarBorder");
             SpawnWindowBlueprint("ExperienceBar");
             AddHotkey(Escape, () =>
             {

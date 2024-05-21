@@ -24,8 +24,8 @@ public class FlyingElement : MonoBehaviour
         if (transform.localPosition.y < -190.5f)
             Destroy(gameObject);
         else if (turn && !Board.board.temporaryElementsPlayer.Contains(gameObject) || !turn && !Board.board.temporaryElementsEnemy.Contains(gameObject))
-            transform.position = Vector3.Lerp(transform.position, new Vector3(transform.position.x, -162.5f - 10 - 23 * Mathf.Abs(index % rowAmount - rowAmount)), Time.deltaTime * flySpeed);
-        else transform.position = Vector3.Lerp(transform.position, turn ? new Vector3(-204.5f + 23 * (index / rowAmount), -162.5f + 23 * (index % rowAmount)) : new Vector3(204.5f - 23 * (index / rowAmount), -162.5f + 23 * (index % rowAmount)), Time.deltaTime * flySpeed);
+            transform.position = Vector3.Lerp(transform.position, new Vector3(transform.position.x, -162.5f - 10 - 19 * Mathf.Abs(index % rowAmount - rowAmount)), Time.deltaTime * flySpeed);
+        else transform.position = Vector3.Lerp(transform.position, turn ? new Vector3(-204.5f + 19 * (index / rowAmount), -162.5f + 19 * (index % rowAmount)) : new Vector3(204.5f - 19 * (index / rowAmount), -162.5f + 19 * (index % rowAmount)), Time.deltaTime * flySpeed);
     }
 
     public static GameObject SpawnFlyingElement(double speed, double amount, Vector3 position, string sprite, bool forPlayer, string block = "0000")

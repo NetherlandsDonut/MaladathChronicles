@@ -457,6 +457,7 @@ public class Item
                                     currentSave.player.inventory.money -= item.price * amount;
                                     Respawn("Inventory");
                                     Respawn("VendorBuyback");
+                                    Respawn("ExperienceBarBorder");
                                     Respawn("ExperienceBar");
                                 }
                             };
@@ -491,6 +492,7 @@ public class Item
                                     currentSave.player.inventory.money -= item.price * amount * 4;
                                     Respawn("Inventory");
                                     Respawn("Vendor");
+                                    Respawn("ExperienceBarBorder");
                                     Respawn("ExperienceBar");
                                 }
                             };
@@ -559,6 +561,7 @@ public class Item
                                 Respawn("Inventory");
                                 CloseWindow("Vendor");
                                 Respawn("VendorBuyback");
+                                Respawn("ExperienceBarBorder");
                                 Respawn("ExperienceBar");
                             };
                         }
@@ -601,6 +604,7 @@ public class Item
                                 }
                                 Respawn("Inventory");
                                 Respawn("Bank");
+                                Respawn("ExperienceBarBorder");
                                 Respawn("ExperienceBar");
                             };
                         }

@@ -66,6 +66,7 @@ public class Defines
     public float frameTime;
     public bool fasterPathfinding;
     public bool splitExperienceBar;
+    public bool windowBorders;
 
     //EXTERNAL FILE: Collection of constant values or alternate ways of handling engine
     public static Defines defines;

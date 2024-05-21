@@ -1673,7 +1673,7 @@
     {
       "player": {
         "level": 9,
-        "experience": 1585,
+        "experience": 1605,
         "professionSkills": {},
         "learnedRecipes": {},
         "faction": "Stormwind",
@@ -1731,6 +1731,34 @@
               "stats": {
                 "stats": {}
               }
+            },
+            {
+              "rarity": "Epic",
+              "name": "Nemesis Robes",
+              "icon": "itemchestleather01",
+              "type": "Chest",
+              "armorClass": "Cloth",
+              "set": "Nemesis Raiment",
+              "source": "DirectDrop",
+              "ilvl": 76,
+              "lvl": 60,
+              "armor": 116,
+              "amount": 1,
+              "maxStack": 1,
+              "specs": [
+                "Warlock"
+              ],
+              "price": 55790,
+              "stats": {
+                "stats": {
+                  "Intellect": 16,
+                  "Stamina": 26,
+                  "Spirit": 8
+                }
+              },
+              "droppedBy": [
+                "Nefarian"
+              ]
             }
           ],
           "bags": []
@@ -1804,9 +1832,9 @@
         }
       },
       "hour": 7,
-      "minute": 5,
-      "second": 8,
-      "currentSite": "Goldshire",
+      "minute": 6,
+      "second": 46,
+      "currentSite": "Crystal Lake",
       "openedChests": {},
       "siteProgress": {},
       "commonsKilled": {},
@@ -1815,7 +1843,8 @@
       "siteVisits": {
         "Northshire Abbey": 1,
         "Northshire Valley": 2,
-        "Goldshire": 2
+        "Goldshire": 2,
+        "Crystal Lake": 1
       },
       "unlockedAreas": [],
       "vendorStock": {
@@ -1902,9 +1931,9 @@
         "ignoreSpaceChecks": true
       },
       "startDate": "2024-05-20T02:04:53.4516535+02:00",
-      "lastLoaded": "2024-05-20T20:10:59.7156852+02:00",
-      "lastPlayed": "2024-05-20T20:11:52.5568614+02:00",
-      "timePlayed": "00:16:29.7071818"
+      "lastLoaded": "2024-05-21T11:09:33.8362311+02:00",
+      "lastPlayed": "2024-05-21T11:12:16.0623403+02:00",
+      "timePlayed": "00:19:11.9332910"
     }
   ]
 }
