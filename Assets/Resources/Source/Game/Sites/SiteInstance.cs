@@ -203,7 +203,6 @@ public class SiteInstance : Site
                     if (window != null)
                         if (window.title == "HostileArea: " + area.Item1.name) return;
                         else CloseWindow(window);
-                    CloseWindow("InstanceLeftSide");
                     SpawnWindowBlueprint("HostileArea: " + area.Item1.name);
                     Respawn("BossQueue");
                     SetDesktopBackground("Areas/Area" + (instance.name + area.Item1.name).Clean() + (area.Item1.specialClearBackground && area.Item1.eliteEncounters.All(x => currentSave.elitesKilled.ContainsKey(x.who)) ? "Cleared" : ""));
@@ -211,7 +210,6 @@ public class SiteInstance : Site
             else
                 AddPaddingRegion(() =>
                 {
-                    //var name = area.Item1 != null ? area.Item1.name : "AREA NOT FOUND";
                     AddLine("?", "DimGray");
                 });
     }

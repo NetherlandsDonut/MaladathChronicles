@@ -257,7 +257,7 @@ public class Window : MonoBehaviour
                             if (regionGroup.setWidth == 0)
                                 foreach (var character in part)
                                     length = text.SpawnCharacter(character, length);
-                            else if (defines.textPaddingLeft + 6 + (line.align == "Right" ? 2 : 0) + length + Font.fonts["Tahoma Bold"].Length(part) + objectOffset < regionGroup.setWidth - region.smallButtons.Count * 19)
+                            else if (10 + (line.align == "Right" ? defines.textPaddingLeft : (line.align == "Right" ? defines.textPaddingRight : 0)) + length + (split.Last() == part ? 0 : Font.fonts["Tahoma Bold"].Length(defines.textWrapEnding)) + Font.fonts["Tahoma Bold"].Length(part) + objectOffset < regionGroup.setWidth - region.smallButtons.Count * 19)
                                 foreach (var character in part)
                                     length = text.SpawnCharacter(character, length);
                             else

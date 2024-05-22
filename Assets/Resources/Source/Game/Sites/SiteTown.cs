@@ -18,8 +18,7 @@ public class SiteTown : Site
     //and remove empty collections to avoid serialising them later
     public override void Initialise()
     {
-        if (people != null)
-            people.ForEach(x => x.Initialise());
+        people?.ForEach(x => x.Initialise());
         if (faction != null)
             if (!factions.Exists(x => x.name == faction))
                 factions.Insert(0, new Faction()
@@ -28,6 +27,15 @@ public class SiteTown : Site
                     icon = "Faction" + faction,
                     side = "Neutral"
                 });
+        flightPaths = new();
+        foreach (var foo in FlightPathGroup.flightPathGroups.FindAll(x => x.sitesConnected.Contains(name)))
+        {
+            if (!flightPaths.ContainsKey(foo.side))
+                flightPaths.Add(foo.side, new());
+            flightPaths[foo.side].AddRange(foo.sitesConnected.Select(x => towns.Find(y => y.name == x)));
+        }
+        foreach (var foo in flightPaths)
+            foo.Value?.Remove(this);
         if (!Blueprint.windowBlueprints.Exists(x => x.title == "Town: " + name))
             Blueprint.windowBlueprints.Add(
                 new Blueprint("Town: " + name,
@@ -94,16 +102,19 @@ public class SiteTown : Site
                             var groups = people.GroupBy(x => x.category);
                             AddPaddingRegion(() => { AddLine("Points of interest:", "Gray"); });
                             foreach (var group in groups)
-                                if (group.Count() == 1)
+                                if (group.Key.category == "Flight Master")
                                     foreach (var person in group)
                                     {
-                                        if (person.type != "Flight Master")
+                                        var faction = factions.Find(x => x.name == person.faction);
+                                        faction ??= factions.Find(x => x.name == Race.races.Find(y => y.name == person.race).faction);
+                                        faction ??= factions.Find(x => x.name == currentSave.player.faction);
+                                        if (faction.side == currentSave.player.Side())
                                         {
                                             var personType = PersonType.personTypes.Find(x => x.type == person.type);
                                             AddButtonRegion(() =>
                                             {
                                                 AddLine(person.name, "Black");
-                                                AddSmallButton(personType != null ? personType.icon + (personType.factionVariant ? factions.Find(x => x.name == faction).side : "") : "OtherUnknown", (h) => { });
+                                                AddSmallButton(personType != null ? personType.icon + (personType.factionVariant ? faction.side : "") : "OtherUnknown", (h) => { });
                                             },
                                             (h) =>
                                             {
@@ -113,6 +124,23 @@ public class SiteTown : Site
                                                 PlaySound("DesktopInstanceOpen");
                                             });
                                         }
+                                    }
+                                else if (group.Count() == 1)
+                                    foreach (var person in group)
+                                    {
+                                        var personType = PersonType.personTypes.Find(x => x.type == person.type);
+                                        AddButtonRegion(() =>
+                                        {
+                                            AddLine(person.name, "Black");
+                                            AddSmallButton(personType != null ? personType.icon + (personType.factionVariant ? factions.Find(x => x.name == faction).side : "") : "OtherUnknown", (h) => { });
+                                        },
+                                        (h) =>
+                                        {
+                                            Person.person = person;
+                                            CloseWindow(h.window.title);
+                                            Respawn("Person");
+                                            PlaySound("DesktopInstanceOpen");
+                                        });
                                     }
                                 else
                                 {
@@ -145,7 +173,7 @@ public class SiteTown : Site
     public List<Person> people;
 
     //List of town flight paths, these are generated automatically
-    [NonSerialized] public List<SitePath> flightPaths;
+    [NonSerialized] public Dictionary<string, List<SiteTown>> flightPaths;
 
     //Currently opened town
     public static SiteTown town;

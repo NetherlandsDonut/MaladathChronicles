@@ -4,11 +4,19 @@ using static Buff;
 
 public class FlyingBuff : MonoBehaviour
 {
+    //Is this buff on player or the enemy
     public bool onPlayer;
+
+    //I have no idea what that is
     public int dyingIndex;
+
+    //Renderer of this buff
     public SpriteRenderer render;
 
+    //Fly speed of the buff into the buff section
     public static int flySpeed = 4;
+
+    //Amount of buffs per row
     public static int rowAmount = 7;
 
     public void Initiate(bool targettedPlayer)

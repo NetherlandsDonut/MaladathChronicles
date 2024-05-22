@@ -2,6 +2,7 @@
   {
     "name": "Leatherworking",
     "icon": "TradeLeatherworking",
+    "recipeType": "Pattern",
     "levels": [
       {
         "levelName": "Apprentice",
@@ -35,6 +36,7 @@
   {
     "name": "Blacksmithing",
     "icon": "TradeBlacksmithing",
+    "recipeType": "Plans",
     "levels": [
       {
         "levelName": "Apprentice",
@@ -68,6 +70,7 @@
   {
     "name": "Alchemy",
     "icon": "TradeAlchemy",
+    "recipeType": "Recipe",
     "levels": [
       {
         "levelName": "Apprentice",
@@ -101,6 +104,7 @@
   {
     "name": "Tailoring",
     "icon": "TradeTailoring",
+    "recipeType": "Pattern",
     "levels": [
       {
         "levelName": "Apprentice",
@@ -134,6 +138,7 @@
   {
     "name": "Enchanting",
     "icon": "TradeEnchanting",
+    "recipeType": "Formula",
     "levels": [
       {
         "levelName": "Apprentice",
@@ -167,6 +172,7 @@
   {
     "name": "Engineering",
     "icon": "TradeEngineering",
+    "recipeType": "Schematic",
     "levels": [
       {
         "levelName": "Apprentice",
@@ -200,6 +206,7 @@
   {
     "name": "Cooking",
     "icon": "TradeCooking",
+    "recipeType": "Recipe",
     "levels": [
       {
         "levelName": "Apprentice",
@@ -266,6 +273,7 @@
   {
     "name": "First Aid",
     "icon": "TradeFirstAid",
+    "recipeType": "Pattern",
     "levels": [
       {
         "levelName": "Apprentice",

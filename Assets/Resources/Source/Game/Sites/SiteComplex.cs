@@ -174,7 +174,6 @@ public class SiteComplex : Site
                 if (window != null)
                     if (window.title == "HostileArea: " + area.name) return;
                     else CloseWindow(window);
-                CloseWindow("ComplexLeftSide");
                 SpawnWindowBlueprint("HostileArea: " + area.name);
                 Respawn("BossQueue");
                 SetDesktopBackground(area.Background());

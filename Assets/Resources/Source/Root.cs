@@ -264,7 +264,7 @@ public static class Root
     //Hotkeys can be added only on desktop creation!
     public static void AddHotkey(KeyCode key, Action action, bool keyDown = true)
     {
-        if (LBDesktop.hotkeys.Exists(x => x.key == key)) return;
+        if (LBDesktop.hotkeys.Exists(x => x.key == key && x.keyDown == keyDown)) return;
         LBDesktop.hotkeys.Add(new Hotkey(key, action, keyDown));
     }
 
@@ -288,8 +288,8 @@ public static class Root
         if (CDesktop.windows.Exists(x => x.title == blueprint.title)) return null;
         AddWindow(blueprint.title, blueprint.upperUI);
         blueprint.actions();
-        if (resetSearch && CDesktop.LBWindow.regionGroups.Any(x => x.maxPaginationReq != null))
-            String.search.Set("");
+        if (resetSearch && CDesktop.LBWindow.regionGroups.Any(x => x.maxPaginationReq != null)) String.search.Set("");
+        RegionGroup.staticPagination = new();
         CDesktop.LBWindow.Rebuild(paginations);
         CDesktop.LBWindow.ResetPosition();
         return CDesktop.LBWindow;
@@ -432,7 +432,7 @@ public static class Root
         AddRegion(Padding, draw, null, null, null, null);
     }
 
-    public static void AddPaginationLine(RegionGroup group)
+    public static void AddPaginationLine(RegionGroup group, string window = null)
     {
         AddPaddingRegion(() =>
         {
@@ -447,6 +447,11 @@ public static class Root
                     Sound.PlaySound("DesktopChangePage", 0.4f);
                     group.pagination++;
                 }
+                if (window != null)
+                {
+                    RegionGroup.SaveStaticPagination(group.window);
+                    Respawn(window, true);
+                }
             });
             AddSmallButton("OtherPreviousPage", (h) =>
             {
@@ -454,6 +459,11 @@ public static class Root
                 {
                     Sound.PlaySound("DesktopChangePage", 0.4f);
                     group.pagination--;
+                }
+                if (window != null)
+                {
+                    RegionGroup.SaveStaticPagination(group.window);
+                    Respawn(window, true);
                 }
             });
         });

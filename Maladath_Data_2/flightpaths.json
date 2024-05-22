@@ -1,0 +1,86 @@
+[
+    {
+      "side": "Alliance",
+      "priceMultiplier": 1.0,
+      "sitesConnected": [
+        "Ratchet",
+        "Everlook",
+        "Gadgetzan",
+        "Marshal's Refuge",
+        "Cenarion Hold",
+        "Rut'theran Village",
+        "Auberdine",
+        "Theramore Isle",
+        "Nijel's Point",
+        "Stonetalon Peak",
+        "Astranaar",
+        "Nighthaven",
+        "Talrendis Point",
+        "Talonbranch Glade",
+        "Thalanaar"
+      ]
+    },
+    {
+      "side": "Alliance",
+      "priceMultiplier": 1.0,
+      "sitesConnected": [
+        "Booty Bay",
+        "Light's Hope Chapel",
+        "Thorium Point",
+        "Chillwind Camp",
+        "Stormwind City",
+        "Ironforge",
+        "Refuge Point",
+        "Nethergarde Keep",
+        "Darkshire",
+        "Thelsamar",
+        "Lakeshire",
+        "Aerie Peak",
+        "Southshore",
+        "Sentinel Hill",
+        "Menethil Harbor"
+      ]
+    },
+    {
+      "side": "Horde",
+      "priceMultiplier": 1.0,
+      "sitesConnected": [
+        "Ratchet",
+        "Everlook",
+        "Gadgetzan",
+        "Marshal's Refuge",
+        "Cenarion Hold",
+        "Orgrimmar",
+        "The Crossroads",
+        "Thunder Bluff",
+        "Splintertree Post",
+        "Shadowprey Village",
+        "Sun Rock Retreat",
+        "Camp Mojache",
+        "Brackenwall Village",
+        "Valormok",
+        "Zoram'gar Outpost",
+        "Camp Taurajo",
+        "Freewind Post",
+        "Bloodvenom Post"
+      ]
+    },
+    {
+      "side": "Horde",
+      "priceMultiplier": 1.0,
+      "sitesConnected": [
+        "Booty Bay",
+        "Light's Hope Chapel",
+        "Thorium Point",
+        "Undercity",
+        "Hammerfall",
+        "Stonard",
+        "The Sepulcher",
+        "Kargath",
+        "Tarren Mill",
+        "Revantusk Village",
+        "Grom'gol Base Camp",
+        "Flame Crest"
+      ]
+    }
+]

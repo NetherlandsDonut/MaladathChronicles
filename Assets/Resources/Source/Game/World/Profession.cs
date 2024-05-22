@@ -17,6 +17,10 @@ public class Profession
     //Icon of the profession skill
     public string icon;
 
+    //Keyword of reference when referencing recipes for this profession
+    //When not specified, player cannot learn recipes directly from trainers
+    public string recipeType;
+
     //All possible learnable levels of the profession
     public List<ProfessionLevel> levels;
 

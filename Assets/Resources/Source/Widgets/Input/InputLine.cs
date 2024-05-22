@@ -594,14 +594,14 @@ public class InputLine : MonoBehaviour
                     CDesktop.LockScreen();
                 }
             }
-            else if (foo.Value().StartsWith("money"))
+            else if (foo.Value().StartsWith("money "))
             {
-                var amount = int.Parse(foo.Value().Substring(5));
+                var amount = int.Parse(foo.Value()[5..]);
                 currentSave.player.inventory.money += amount;
             }
-            else if (foo.Value().StartsWith("mount"))
+            else if (foo.Value().StartsWith("mount "))
             {
-                var which = foo.Value().Substring(5).Trim();
+                var which = foo.Value()[5..].Trim();
                 var mount = Mount.mounts.Find(x => x.name.ToLower() == which);
                 if (mount != null && !currentSave.player.mounts.Contains(mount.name))
                 {
@@ -609,9 +609,9 @@ public class InputLine : MonoBehaviour
                     currentSave.player.mounts.Add(mount.name);
                 }
             }
-            else if (foo.Value().StartsWith("rmount"))
+            else if (foo.Value().StartsWith("rmount "))
             {
-                var which = foo.Value().Substring(6).Trim();
+                var which = foo.Value()[6..].Trim();
                 var mount = Mount.mounts.Find(x => x.name.ToLower() == which);
                 if (mount != null && currentSave.player.mounts.Contains(mount.name))
                 {
@@ -637,12 +637,12 @@ public class InputLine : MonoBehaviour
                 ProfessionSetter("Cooking");
             else if (foo.Value().StartsWith("tai"))
                 ProfessionSetter("Tailoring");
-            else if (foo.Value().StartsWith("addtime"))
+            else if (foo.Value().StartsWith("addtime "))
             {
                 var amount = int.Parse(foo.Value().Substring(7));
                 currentSave.AddTime(amount);
             }
-            else if (foo.Value().StartsWith("builderspacing"))
+            else if (foo.Value().StartsWith("builderspacing "))
             {
                 builderSpacing = int.Parse(foo.Value()[15..]);
             }
@@ -663,11 +663,11 @@ public class InputLine : MonoBehaviour
                         SitePath.paths[i].Initialise();
                 }
             }
-            else if (foo.Value().StartsWith("exp"))
+            else if (foo.Value().StartsWith("exp "))
             {
                 currentSave.player.ReceiveExperience(int.Parse(foo.Value()[4..]));
             }
-            else if (foo.Value().StartsWith("additem"))
+            else if (foo.Value().StartsWith("additem "))
             {
                 var item = Item.items.Find(x => x.name.ToLower() == foo.Value()[8..].ToLower());
                 if (item != null) currentSave.player.inventory.AddItem(item.CopyItem(1));
