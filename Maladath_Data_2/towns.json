@@ -239,6 +239,12 @@
         "gender": "Female",
         "race": "Night Elf",
         "type": "Herbalist"
+      },
+      {
+        "name": "Fitch",
+        "gender": "Male",
+        "race": "Human",
+        "type": "Auctioneer"
       }
     ],
     "x": 4941,
@@ -927,6 +933,12 @@
         "gender": "Male",
         "race": "Night Elf",
         "type": "Expert Leatherworker"
+      },
+      {
+        "name": "Tolon",
+        "gender": "Male",
+        "race": "Night Elf",
+        "type": "Auctioneer"
       }
     ],
     "x": 969,
@@ -1587,6 +1599,12 @@
         "race": "Dwarf",
         "type": "Journeyman Alchemist",
         "hidden": true
+      },
+      {
+        "name": "Redmuse",
+        "gender": "Female",
+        "race": "Dwarf",
+        "type": "Auctioneer"
       }
     ],
     "x": 5231,
@@ -2048,6 +2066,12 @@
         "race": "Orc",
         "type": "Journeyman Enchanter",
         "hidden": true
+      },
+      {
+        "name": "Wabang",
+        "gender": "Male",
+        "race": "Orc",
+        "type": "Auctioneer"
       }
     ],
     "x": 2337,
@@ -2689,6 +2713,12 @@
         "gender": "Female",
         "race": "Tauren",
         "type": "Artisan Leatherworker"
+      },
+      {
+        "name": "Gullem",
+        "gender": "Male",
+        "race": "Tauren",
+        "type": "Auctioneer"
       }
     ],
     "x": 1444,
@@ -3152,6 +3182,12 @@
         "gender": "Male",
         "race": "Forsaken",
         "type": "Artisan Alchemist"
+      },
+      {
+        "name": "Leeka",
+        "gender": "Female",
+        "race": "Forsaken",
+        "type": "Auctioneer"
       }
     ],
     "x": 5016,
@@ -3575,6 +3611,12 @@
         "gender": "Male",
         "race": "Goblin",
         "type": "Banker"
+      },
+      {
+        "name": "Grizzlin",
+        "gender": "Female",
+        "race": "Goblin",
+        "type": "Auctioneer"
       }
     ],
     "x": 2413,
@@ -3626,6 +3668,12 @@
         "gender": "Male",
         "race": "Goblin",
         "type": "Miner"
+      },
+      {
+        "name": "Beardo",
+        "gender": "Male",
+        "race": "Goblin",
+        "type": "Auctioneer"
       }
     ],
     "x": 2225,
@@ -3753,6 +3801,12 @@
         "gender": "Male",
         "race": "Goblin",
         "type": "Expert Alchemist"
+      },
+      {
+        "name": "Kresky",
+        "gender": "Male",
+        "race": "Goblin",
+        "type": "Auctioneer"
       }
     ],
     "x": 4970,

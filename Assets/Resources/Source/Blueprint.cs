@@ -468,23 +468,6 @@ public class Blueprint
         }),
 
         //Character
-        new("CharacterBaseStats", () => {
-            SetAnchor(BottomLeft);
-            AddRegionGroup();
-            AddHeaderRegion(() =>
-            {
-                foreach (var foo in currentSave.player.Stats())
-                    if (!foo.Key.Contains("Mastery"))
-                        AddLine(foo.Key + ":", "Gray");
-            });
-            AddRegionGroup();
-            AddHeaderRegion(() =>
-            {
-                foreach (var foo in currentSave.player.Stats())
-                    if (!foo.Key.Contains("Mastery"))
-                        AddLine(foo.Value + "", foo.Value > currentSave.player.stats.stats[foo.Key] ? "Uncommon" : (foo.Value < currentSave.player.stats.stats[foo.Key] ? "DangerousRed" : "Gray"));
-            });
-        }),
         new("CharacterCreation", () => {
             SetAnchor(TopLeft);
             DisableShadows();
@@ -973,19 +956,6 @@ public class Blueprint
                 }
             );
         }),
-
-        //Console
-        new("Console", () => {
-            SetAnchor(Top);
-            if (CDesktop.windows.Exists(x => x.title == "MapToolbar"))
-                DisableShadows();
-            AddRegionGroup();
-            SetRegionGroupWidth(638);
-            AddPaddingRegion(() =>
-            {
-                AddInputLine(String.consoleInput);
-            });
-        },  true),
 
         //Login Screen
         new("CharacterRoster", () => {
@@ -1501,16 +1471,17 @@ public class Blueprint
                 else AddBigButton("OtherDisabled", (h) => { });
             });
             var mount = mounts.Find(x => x.name == currentSave.player.mount);
-            AddButtonRegion(() =>
-            {
-                AddLine("Dismount");
-            },
-            (h) =>
-            {
-                currentSave.player.mount = "";
-                Respawn("MountCollection");
-                CloseWindow(h.window);
-            });
+            if (CDesktop.windows.Exists(x => x.title == "MountCollection"))
+                AddButtonRegion(() =>
+                {
+                    AddLine("Dismount");
+                },
+                (h) =>
+                {
+                    currentSave.player.mount = "";
+                    Respawn("MountCollection");
+                    CloseWindow(h.window);
+                });
         }),
         new("SplitItem", () => {
             SetAnchor(-115, 146);
@@ -1928,6 +1899,8 @@ public class Blueprint
                     CloseWindow(h.window);
                     CloseWindow("Town: " + town.name);
                     SpawnWindowBlueprint("FlightMaster");
+                    if (mounts.Find(x => x.name == currentSave.player.mount) != null)
+                        SpawnWindowBlueprint("CurrentMount");
                     Respawn("ExperienceBarBorder");
                     Respawn("ExperienceBar");
                 });
@@ -2796,12 +2769,8 @@ public class Blueprint
             SetRegionGroupWidth(262);
             AddPaddingRegion(() =>
             {
-                if (currentSave.player.unspentTalentPoints > 0)
-                {
-                    AddLine("You have ", "", "Left");
-                    AddText(currentSave.player.unspentTalentPoints + "", "Uncommon");
-                    AddText(" talent point" + (currentSave.player.unspentTalentPoints == 1 ? "!" : "s!"));
-                }
+                AddLine("Level: ", "DarkGray", "Left");
+                AddText(currentSave.player.level + "", "Gray");
             });
         }, true),
         new("MapToolbarStatusRight", () => {
@@ -2811,6 +2780,12 @@ public class Blueprint
             SetRegionGroupWidth(262);
             AddPaddingRegion(() =>
             {
+                if (currentSave.player.unspentTalentPoints > 0)
+                {
+                    AddLine("You have ", "", "Right");
+                    AddText(currentSave.player.unspentTalentPoints + "", "Uncommon");
+                    AddText(" talent point" + (currentSave.player.unspentTalentPoints == 1 ? "!" : "s!"));
+                }
                 AddSmallButton("OtherSettings", (h) =>
                 {
                     PlaySound("DesktopMenuOpen");
@@ -3597,6 +3572,19 @@ public class Blueprint
                 AddText(currentSave.player.TreeSize(currentSave.lastVisitedTalents, 0) + "");
             });
         }),
+
+        //Console
+        new("Console", () => {
+            SetAnchor(Top);
+            if (CDesktop.windows.Exists(x => x.title == "MapToolbar"))
+                DisableShadows();
+            AddRegionGroup();
+            SetRegionGroupWidth(638);
+            AddPaddingRegion(() =>
+            {
+                AddInputLine(String.consoleInput);
+            });
+        },  true),
 
         #region Dev Panel
 

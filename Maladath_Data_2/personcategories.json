@@ -20,6 +20,16 @@
     "priority": 2
   },
   {
+    "category": "Auctioneer",
+    "icon": "TradeAuctioneer",
+    "priority": 2
+  },
+  {
+    "category": "Arena Master",
+    "icon": "TradeArenaMaster",
+    "priority": 2
+  },
+  {
     "category": "Battlemaster",
     "icon": "TradeBattlemaster",
     "factionVariant": true,

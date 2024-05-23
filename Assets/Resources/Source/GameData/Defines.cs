@@ -63,7 +63,11 @@ public class Defines
     public int scoreForKilledCommon;
     public int scoreForKilledRare;
     public int scoreForKilledElite;
+
+    //Default reputation standing for factions
     public int defaultStanding;
+
+    //Text displayed when an input field is active, this 
     public string markerCharacter;
     public string textWrapEnding;
     public float frameTime;

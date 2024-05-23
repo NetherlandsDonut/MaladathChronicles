@@ -334,5 +334,15 @@
     "type": "Stable Master",
     "icon": "TradeStableMaster",
     "category": "Stable Master"
+  },
+  {
+    "type": "Auctioneer",
+    "icon": "TradeAuctioneer",
+    "category": "Auctioneer"
+  },
+  {
+    "type": "Arena Master",
+    "icon": "TradeArenaMaster",
+    "category": "Arena Master"
   }
 ]
