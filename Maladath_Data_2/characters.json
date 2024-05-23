@@ -2741,7 +2741,7 @@
         "Freewind Post": 1,
         "Sun Rock Retreat": 1,
         "Ghost Walker Post": 1,
-        "Undercity": 1,
+        "Undercity": 4,
         "The Bulwark": 1,
         "Shadow Grave": 1,
         "Brill": 1,
@@ -2882,6 +2882,12 @@
           }
         ]
       },
+      "banks": {
+        "Undercity": {
+          "items": [],
+          "bags": []
+        }
+      },
       "buyback": {
         "items": [
           {
@@ -2918,9 +2924,9 @@
         "ignoreSpaceChecks": true
       },
       "startDate": "2024-05-20T02:04:53.4516535+02:00",
-      "lastLoaded": "2024-05-23T05:00:58.940971+02:00",
-      "lastPlayed": "2024-05-23T05:04:05.475486+02:00",
-      "timePlayed": "01:25:51.6878099"
+      "lastLoaded": "2024-05-23T05:06:27.5490907+02:00",
+      "lastPlayed": "2024-05-23T05:08:16.6187856+02:00",
+      "timePlayed": "01:27:40.7575048"
     },
     {
       "player": {
@@ -3042,7 +3048,7 @@
       "hour": 7,
       "minute": 3,
       "second": 44,
-      "currentSite": "Stormwind City",
+      "currentSite": "Ratchet",
       "openedChests": {},
       "siteProgress": {},
       "commonsKilled": {},
@@ -3948,7 +3954,7 @@
         "The Mor'shan Rampart": 1,
         "Grom'gol Base Camp": 1,
         "Splintertree Post": 1,
-        "Kargath": 1,
+        "Kargath": 3,
         "Stonard": 1,
         "Brackenwall Village": 1,
         "Sen'jin Village": 1,
@@ -3978,7 +3984,7 @@
         "Thorium Point": 1,
         "Everlook": 1,
         "Gadgetzan": 1,
-        "Ratchet": 1,
+        "Ratchet": 3,
         "Booty Bay": 1,
         "Marshal's Refuge": 1,
         "Timbermaw Hold": 1,
@@ -4106,9 +4112,9 @@
         ]
       },
       "startDate": "2024-05-22T19:22:54.5428725+02:00",
-      "lastLoaded": "2024-05-22T22:25:12.054123+02:00",
-      "lastPlayed": "2024-05-22T22:27:30.7883655+02:00",
-      "timePlayed": "00:36:31.2625825",
+      "lastLoaded": "2024-05-23T05:08:19.9986616+02:00",
+      "lastPlayed": "2024-05-23T05:10:17.8501397+02:00",
+      "timePlayed": "00:38:29.1140606",
       "lastVisitedTalents": 1
     }
   ]

@@ -2322,7 +2322,7 @@ public class Blueprint
             });
             var regionGroup = CDesktop.LBWindow.LBRegionGroup;
             AddPaginationLine(regionGroup, "FlightMaster");
-            var destinations = town.flightPaths[side].FindAll(x => x != town).OrderBy(x => x.name).ThenBy(x => currentSave.siteVisits.ContainsKey(x.name)).ToList();
+            var destinations = town.flightPaths[side].FindAll(x => x != town).OrderBy(x => x.name).OrderBy(x => x.zone).ThenBy(x => currentSave.siteVisits.ContainsKey(x.name)).ToList();
             for (int i = 0; i < 12; i++)
             {
                 var index = i;
