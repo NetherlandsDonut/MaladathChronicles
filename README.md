@@ -478,5 +478,31 @@ v0.5.8
 v0.5.9
     25.04 Added Quel'Thalas texture to the map
           Crafting menu is possible to open now but it's empty
+v0.5.10
+    26.04 Fixed death of hardcore characters
+v0.5.11
+    27.04 Fixed starting items having amount equal to 0
+          Changed all prices from float to int to avoid floating point errors
+          Added vendors with restocking supplies
+          Polished town, bank and vendor UI
+          Profession trainers now have different levels
+          Player can now split items to vendors
+v0.5.12
+    28.04 Added visual effect for restocking items
+          Made items available for buyback slowly decay
+v0.5.13
+    29.04 Added calculating score for characters
+v0.5.14
+    30.04 Added ranking system
+          Introduced PVP ranks
+v0.5.15
+    02.05 Player can now learn new professions
+          Player can now learn new recipes from trainers
+v0.5.16
+    04.05 Added prompt for making an inn a home
+          Set starting hour to 7am
+          Fixed bank not closing on pressing ESC
+          Current mount window added
+          Fixed silver coins being showed even when there's zero of them
 ```
 </details>
