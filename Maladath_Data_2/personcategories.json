@@ -1,35 +1,43 @@
 [
   {
-    "category": "Vendor",
-    "icon": "ItemMiscBag07"
-  },
-  {
-    "category": "Class Trainer",
-    "icon": "TradeTrainerClass"
-  },
-  {
-    "category": "Profession Trainer",
-    "icon": "AbilityRepair"
-  },
-  {
-    "category": "Banker",
-    "icon": "TradeBank"
+    "category": "Innkeeper",
+    "icon": "TradeInnkeeper",
+    "priority": 0
   },
   {
     "category": "Flight Master",
-    "icon": "TradeFlightMaster"
+    "icon": "TradeFlightMaster",
+    "priority": 1
+  },
+  {
+    "category": "Stable Master",
+    "icon": "TradeStableMaster",
+    "priority": 2
+  },
+  {
+    "category": "Banker",
+    "icon": "TradeBank",
+    "priority": 2
   },
   {
     "category": "Battlemaster",
     "icon": "TradeBattlemaster",
-    "factionVariant": true
+    "factionVariant": true,
+    "priority": 2
   },
   {
-    "category": "Innkeeper",
-    "icon": "TradeInnkeeper"
+    "category": "Vendor",
+    "icon": "ItemMiscBag07",
+    "priority": 3
   },
   {
-    "category": "Stable Master",
-    "icon": "TradeStableMaster"
+    "category": "Class Trainer",
+    "icon": "TradeTrainerClass",
+    "priority": 4
+  },
+  {
+    "category": "Profession Trainer",
+    "icon": "TradeTrainerProfession",
+    "priority": 5
   }
 ]

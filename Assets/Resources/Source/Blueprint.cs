@@ -1721,21 +1721,26 @@ public class Blueprint
                     Respawn("ExperienceBarBorder");
                     Respawn("ExperienceBar");
                 });
-                var rt = professions.Find(x => x.name == type.profession).recipeType;
-                if (rt != null)
-                    AddButtonRegion(() =>
-                    {
-                        AddLine("I would like to learn " + rt.ToLower() + (rt.Last() == 's' ? "." : "s."));
-                    },
-                    (h) =>
-                    {
-                        PlaySound("DesktopInstanceOpen", 0.2f);
-                        CloseWindow(h.window);
-                        CloseWindow("Town: " + town.name);
-                        SpawnWindowBlueprint("ProfessionRecipeTrainer");
-                        Respawn("ExperienceBarBorder");
-                        Respawn("ExperienceBar");
-                    });
+                var pr = professions.Find(x => x.name == type.profession);
+                if (pr == null) Debug.Log("ERROR 013: Profession was not found: \"" + type.profession + "\"");
+                else
+                {
+                    var rt = professions.Find(x => x.name == type.profession).recipeType;
+                    if (rt != null)
+                        AddButtonRegion(() =>
+                        {
+                            AddLine("I would like to learn " + rt.ToLower() + (rt.Last() == 's' ? "." : "s."));
+                        },
+                        (h) =>
+                        {
+                            PlaySound("DesktopInstanceOpen", 0.2f);
+                            CloseWindow(h.window);
+                            CloseWindow("Town: " + town.name);
+                            SpawnWindowBlueprint("ProfessionRecipeTrainer");
+                            Respawn("ExperienceBarBorder");
+                            Respawn("ExperienceBar");
+                        });
+                }
             }
             else if (type.category == "Banker")
             {
@@ -1892,7 +1897,7 @@ public class Blueprint
             });
         }, true),
         new("Persons", () => {
-            SetAnchor(TopRight, -19, -57);
+            SetAnchor(TopLeft, 19, -57);
             AddRegionGroup();
             SetRegionGroupWidth(171);
             AddPaddingRegion(() =>
@@ -1907,7 +1912,7 @@ public class Blueprint
                     PlaySound("DesktopInstanceClose");
                 });
             });
-            var people = town.people.FindAll(x => x.category == personCategory);
+            var people = town.people.FindAll(x => x.category == personCategory && !x.hidden);
             foreach (var person in people)
             {
                 var personType = personTypes.Find(x => x.type == person.type);

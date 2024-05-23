@@ -1819,7 +1819,7 @@
       "hour": 7,
       "minute": 13,
       "second": 18,
-      "currentSite": "Undercity",
+      "currentSite": "Theramore Isle",
       "openedChests": {},
       "siteProgress": {},
       "commonsKilled": {},
@@ -2677,11 +2677,11 @@
         "Dabyrie's Farmstead": 1,
         "Azurelode Mine": 1,
         "Lakeshire": 1,
-        "Southshore": 1,
+        "Southshore": 3,
         "Darkshire": 1,
         "Rebel Camp": 1,
         "Sentinel Hill": 1,
-        "Theramore Isle": 1,
+        "Theramore Isle": 3,
         "Menethil Harbor": 1,
         "Nethergarde Keep": 1,
         "Morgan's Vigil": 1,
@@ -2741,7 +2741,7 @@
         "Freewind Post": 1,
         "Sun Rock Retreat": 1,
         "Ghost Walker Post": 1,
-        "Undercity": 4,
+        "Undercity": 5,
         "The Bulwark": 1,
         "Shadow Grave": 1,
         "Brill": 1,
@@ -2924,9 +2924,9 @@
         "ignoreSpaceChecks": true
       },
       "startDate": "2024-05-20T02:04:53.4516535+02:00",
-      "lastLoaded": "2024-05-23T05:06:27.5490907+02:00",
-      "lastPlayed": "2024-05-23T05:08:16.6187856+02:00",
-      "timePlayed": "01:27:40.7575048"
+      "lastLoaded": "2024-05-23T05:13:58.6664334+02:00",
+      "lastPlayed": "2024-05-23T05:15:24.1652375+02:00",
+      "timePlayed": "01:29:06.2563089"
     },
     {
       "player": {
@@ -3048,7 +3048,7 @@
       "hour": 7,
       "minute": 3,
       "second": 44,
-      "currentSite": "Ratchet",
+      "currentSite": "The Crossroads",
       "openedChests": {},
       "siteProgress": {},
       "commonsKilled": {},
@@ -3948,7 +3948,7 @@
         "The Den": 1,
         "Razor Hill": 1,
         "Zoram'gar Outpost": 1,
-        "The Crossroads": 1,
+        "The Crossroads": 3,
         "Bloodvenom Post": 1,
         "Valormok": 1,
         "The Mor'shan Rampart": 1,
@@ -4112,9 +4112,9 @@
         ]
       },
       "startDate": "2024-05-22T19:22:54.5428725+02:00",
-      "lastLoaded": "2024-05-23T05:08:19.9986616+02:00",
-      "lastPlayed": "2024-05-23T05:10:17.8501397+02:00",
-      "timePlayed": "00:38:29.1140606",
+      "lastLoaded": "2024-05-23T05:15:25.9917486+02:00",
+      "lastPlayed": "2024-05-23T05:16:04.8293847+02:00",
+      "timePlayed": "00:39:07.9516967",
       "lastVisitedTalents": 1
     }
   ]

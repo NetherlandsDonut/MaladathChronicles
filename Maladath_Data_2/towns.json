@@ -176,7 +176,7 @@
         "name": "Sellandus",
         "gender": "Male",
         "race": "Night Elf",
-        "type": "Expert Alchemist"
+        "type": "Expert Tailor"
       },
       {
         "name": "Jalane Ayrole",
@@ -188,13 +188,15 @@
         "name": "Tel'Athir",
         "gender": "Male",
         "race": "Night Elf",
-        "type": "Journeyman Alchemist"
+        "type": "Journeyman Alchemist",
+        "hidden": true
       },
       {
         "name": "Dane Lindgren",
         "gender": "Male",
         "race": "Human",
-        "type": "Journeyman Blacksmith"
+        "type": "Journeyman Blacksmith",
+        "hidden": true
       },
       {
         "name": "Therum Deepforge",
@@ -206,13 +208,15 @@
         "name": "Sprite Jumpsprocket",
         "gender": "Female",
         "race": "Gnome",
-        "type": "Journeyman Engineer"
+        "type": "Journeyman Engineer",
+        "hidden": true
       },
       {
         "name": "Betty Quin",
         "gender": "Female",
         "race": "Human",
-        "type": "Journeyman Enchanter"
+        "type": "Journeyman Enchanter",
+        "hidden": true
       },
       {
         "name": "Shylamiir",
@@ -892,7 +896,8 @@
         "name": "Milla Fairancora",
         "gender": "Female",
         "race": "Night Elf",
-        "type": "Journeyman Alchemist"
+        "type": "Journeyman Alchemist",
+        "hidden": true
       },
       {
         "name": "Darianna",
@@ -916,7 +921,8 @@
         "name": "Sylvanna Forestmoon",
         "gender": "Female",
         "race": "Night Elf",
-        "type": "Expert Alchemist"
+        "type": "Expert Alchemist",
+        "hidden": true
       },
       {
         "name": "Faldron",
@@ -1097,7 +1103,20 @@
     "faction": "Darnassus"
   },
   {
+    "x": 1862,
+    "y": -2166,
+    "name": "Silverwind Outpost",
+    "zone": "Ashenvale",
+    "faction": "Darnassus"
+  },
+  {
     "people": [
+      {
+        "name": "Danlaar Nightstride",
+        "gender": "Male",
+        "race": "Night Elf",
+        "type": "Warrior Trainer"
+      },
       {
         "name": "Jayla",
         "gender": "Female",
@@ -1115,21 +1134,6 @@
         "gender": "Female",
         "race": "Night Elf",
         "type": "Herbalist"
-      }
-    ],
-    "x": 1862,
-    "y": -2166,
-    "name": "Silverwind Outpost",
-    "zone": "Ashenvale",
-    "faction": "Darnassus"
-  },
-  {
-    "people": [
-      {
-        "name": "Danlaar Nightstride",
-        "gender": "Male",
-        "race": "Night Elf",
-        "type": "Warrior Trainer"
       }
     ],
     "x": 1691,
@@ -1543,13 +1547,15 @@
         "name": "Groum Stonebeard",
         "gender": "Male",
         "race": "Dwarf",
-        "type": "Journeyman Blacksmith"
+        "type": "Journeyman Blacksmith",
+        "hidden": true
       },
       {
         "name": "Trixie Quikswitch",
         "gender": "Male",
         "race": "Dwarf",
-        "type": "Expert Engineer"
+        "type": "Expert Engineer",
+        "hidden": true
       },
       {
         "name": "Thonys Pillarstone",
@@ -1567,7 +1573,8 @@
         "name": "Jemma Quikswitch",
         "gender": "Female",
         "race": "Gnome",
-        "type": "Journeyman Engineer"
+        "type": "Journeyman Engineer",
+        "hidden": true
       },
       {
         "name": "Gretta Finespindle",
@@ -1579,7 +1586,8 @@
         "name": "Vosur Brakthel",
         "gender": "Male",
         "race": "Dwarf",
-        "type": "Journeyman Alchemist"
+        "type": "Journeyman Alchemist",
+        "hidden": true
       }
     ],
     "x": 5231,
@@ -1943,7 +1951,8 @@
         "name": "Nogg",
         "gender": "Male",
         "race": "Goblin",
-        "type": "Expert Engineer"
+        "type": "Expert Engineer",
+        "hidden": true
       },
       {
         "name": "Saru Steelfury",
@@ -2003,37 +2012,43 @@
         "name": "Snarl",
         "gender": "Male",
         "race": "Orc",
-        "type": "Expert Blacksmith"
+        "type": "Expert Blacksmith",
+        "hidden": true
       },
       {
         "name": "Thund",
         "gender": "Male",
         "race": "Orc",
-        "type": "Journeyman Engineer"
+        "type": "Journeyman Engineer",
+        "hidden": true
       },
       {
         "name": "Kamari",
         "gender": "Male",
         "race": "Orc",
-        "type": "Journeyman Leatherworker"
+        "type": "Journeyman Leatherworker",
+        "hidden": true
       },
       {
         "name": "Ug'thok",
         "gender": "Male",
         "race": "Orc",
-        "type": "Journeyman Blacksmith"
+        "type": "Journeyman Blacksmith",
+        "hidden": true
       },
       {
         "name": "Whuut",
         "gender": "Male",
         "race": "Orc",
-        "type": "Journeyman Alchemist"
+        "type": "Journeyman Alchemist",
+        "hidden": true
       },
       {
         "name": "Jhag",
         "gender": "Male",
         "race": "Orc",
-        "type": "Journeyman Enchanter"
+        "type": "Journeyman Enchanter",
+        "hidden": true
       }
     ],
     "x": 2337,
@@ -2591,25 +2606,29 @@
         "name": "Thrag Stonehoof",
         "gender": "Male",
         "race": "Tauren",
-        "type": "Journeyman Blacksmith"
+        "type": "Journeyman Blacksmith",
+        "hidden": true
       },
       {
         "name": "Mot Dawnstrider",
         "gender": "Male",
         "race": "Tauren",
-        "type": "Journeyman Enchanter"
+        "type": "Journeyman Enchanter",
+        "hidden": true
       },
       {
         "name": "Vhan",
         "gender": "Male",
         "race": "Tauren",
-        "type": "Journeyman Tailor"
+        "type": "Journeyman Tailor",
+        "hidden": true
       },
       {
         "name": "Tarn",
         "gender": "Male",
         "race": "Tauren",
-        "type": "Expert Leatherworker"
+        "type": "Expert Leatherworker",
+        "hidden": true
       },
       {
         "name": "Kray",
@@ -2621,19 +2640,14 @@
         "name": "Mak",
         "gender": "Male",
         "race": "Tauren",
-        "type": "Journeyman Leatherworker"
+        "type": "Journeyman Leatherworker",
+        "hidden": true
       },
       {
         "name": "Teg Dawnstrider",
         "gender": "Male",
         "race": "Tauren",
         "type": "Expert Enchanter"
-      },
-      {
-        "name": "Tepa",
-        "gender": "Female",
-        "race": "Tauren",
-        "type": "Expert Tailor"
       },
       {
         "name": "Tepa",
@@ -3007,12 +3021,6 @@
         "type": "Banker"
       },
       {
-        "name": "Doctor Herbert Halsey",
-        "gender": "Male",
-        "race": "Forsaken",
-        "type": "Artisan Alchemist"
-      },
-      {
         "name": "Josef Gregorian",
         "gender": "Male",
         "race": "Forsaken",
@@ -3022,37 +3030,43 @@
         "name": "Basil Frye",
         "gender": "Male",
         "race": "Forsaken",
-        "type": "Journeyman Blacksmith"
+        "type": "Journeyman Blacksmith",
+        "hidden": true
       },
       {
         "name": "Malcomb Wynn",
         "gender": "Male",
         "race": "Forsaken",
-        "type": "Journeyman Enchanter"
+        "type": "Journeyman Enchanter",
+        "hidden": true
       },
       {
         "name": "Dan Golthas",
         "gender": "Male",
         "race": "Forsaken",
-        "type": "Journeyman Leatherworker"
+        "type": "Journeyman Leatherworker",
+        "hidden": true
       },
       {
         "name": "Doctor Martin Felben",
         "gender": "Male",
         "race": "Forsaken",
-        "type": "Journeyman Alchemist"
+        "type": "Journeyman Alchemist",
+        "hidden": true
       },
       {
         "name": "Doctor Marsh",
         "gender": "Male",
         "race": "Forsaken",
-        "type": "Expert Alchemist"
+        "type": "Expert Alchemist",
+        "hidden": true
       },
       {
         "name": "Victor Ward",
         "gender": "Male",
         "race": "Forsaken",
-        "type": "Journeyman Tailor"
+        "type": "Journeyman Tailor",
+        "hidden": true
       },
       {
         "name": "Lavinia Crowe",
@@ -3100,7 +3114,8 @@
         "name": "Graham Van Talen",
         "gender": "Male",
         "race": "Forsaken",
-        "type": "Journeyman Engineer"
+        "type": "Journeyman Engineer",
+        "hidden": true
       },
       {
         "name": "Martha Alliestar",
@@ -3112,7 +3127,8 @@
         "name": "Rhiannon Davis",
         "gender": "Female",
         "race": "Forsaken",
-        "type": "Expert Tailor"
+        "type": "Expert Tailor",
+        "hidden": true
       },
       {
         "name": "Eunice Burch",
@@ -3656,12 +3672,6 @@
         "gender": "Male",
         "race": "Goblin",
         "type": "Master Goblin Engineer"
-      },
-      {
-        "name": "Tinkerwiz",
-        "gender": "Male",
-        "race": "Goblin",
-        "type": "Journeyman Engineer"
       }
     ],
     "x": 2204,

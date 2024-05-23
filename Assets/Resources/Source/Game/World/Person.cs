@@ -36,6 +36,9 @@ public class Person
     //Type of this person
     public string type;
 
+    //Is this person hidden in-game
+    public bool hidden;
+
     //Based on this variable vendor's stock will be resupplied
     public List<StockItem> itemsSold;
 
@@ -117,6 +120,9 @@ public class PersonCategory
 
     //Indicates whether persons of this category have different icons depending on faction
     public bool factionVariant;
+
+    //Importance of this category in site tooltips, the lower the more privileged
+    public int priority;
 
     //Currently opened person category
     public static PersonCategory personCategory;
