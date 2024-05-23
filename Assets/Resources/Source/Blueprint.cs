@@ -1104,9 +1104,9 @@ public class Blueprint
                     (h) =>
                     {
                         settings.selectedRealm = realm.name;
-                        if (saves[settings.selectedRealm].Count > 0)
+                        if (saves[settings.selectedRealm].Count(x => !x.playerDead) > 0)
                         {
-                            settings.selectedCharacter = saves[settings.selectedRealm][0].player.name;
+                            settings.selectedCharacter = saves[settings.selectedRealm].First(x => !x.playerDead).player.name;
                             SpawnTransition();
                         }
                         else if (settings.selectedCharacter != "")
@@ -1495,7 +1495,7 @@ public class Blueprint
                 {
                     AddLine(mount.name);
                     AddLine("Speed: ", "DarkGray");
-                    AddText(mount.speed == 6 ? "Fast" : (mount.speed == 9 ? "Very Fast" : "Normal"));
+                    AddText(mount.speed == 7 ? "Fast" : (mount.speed == 9 ? "Very Fast" : "Normal"));
                     AddBigButton(mount.icon, (h) => { });
                 }
                 else AddBigButton("OtherDisabled", (h) => { });
@@ -1508,7 +1508,7 @@ public class Blueprint
             (h) =>
             {
                 currentSave.player.mount = "";
-                Respawn("MountList");
+                Respawn("MountCollection");
                 CloseWindow(h.window);
             });
         }),
@@ -1682,6 +1682,47 @@ public class Blueprint
         }),
 
         //Town
+        new("TownHostile", () => 
+        {
+            PlayAmbience(town.ambience);
+            SetAnchor(TopLeft, 19, -38);
+            AddRegionGroup();
+            SetRegionGroupWidth(190);
+            AddHeaderRegion(() =>
+            {
+                AddLine(town.name);
+                AddSmallButton("OtherClose",
+                (h) =>
+                {
+                    var title = CDesktop.title;
+                    CloseDesktop(title);
+                    PlaySound("DesktopInstanceClose");
+                    SwitchDesktop("Map");
+                });
+            });
+            AddPaddingRegion(() =>
+            {
+                var rank = currentSave.player.ReputationRank(town.faction);
+                if (rank == "Hated")
+                {
+                    AddLine("This town's folk consider you");
+                    AddLine("to be their enemy.");
+                }
+                else if (rank == "Hostile")
+                {
+                    AddLine("This town's folk consider you");
+                    AddLine("to be an enemy.");
+                }
+                else if (rank == "Unfriendly")
+                {
+                    AddLine("This town's folk are reluctant");
+                    AddLine("towards you.");
+                    AddLine("Consider improving your reputation");
+                    AddLine("with " + town.faction + " in order");
+                    AddLine("to be welcomed here.");
+                }
+            });
+        }),
         new("Person", () => {
             SetAnchor(TopLeft, 19, -38);
             AddHeaderGroup();
@@ -1834,12 +1875,12 @@ public class Blueprint
             {
                 AddButtonRegion(() =>
                 {
-                    AddLine("I want to sign up for an arena match.");
+                    AddLine("I want to enter the arena.");
                 },
                 (h) => { });
                 AddButtonRegion(() =>
                 {
-                    AddLine("I want to buy gladiator equipment.");
+                    AddLine("I want to buy equipment.");
                 },
                 (h) => { });
             }
@@ -1854,17 +1895,26 @@ public class Blueprint
                     PlaySound("DesktopInventoryOpen");
                     CloseWindow(h.window);
                     CloseWindow("Town: " + town.name);
-                    SpawnWindowBlueprint("MountList");
+                    SpawnWindowBlueprint("MountCollection");
                     if (mounts.Find(x => x.name == currentSave.player.mount) != null)
                         SpawnWindowBlueprint("CurrentMount");
                     Respawn("ExperienceBarBorder");
                     Respawn("ExperienceBar");
                 });
-                AddButtonRegion(() =>
-                {
-                    AddLine("I want to buy a new mount.");
-                },
-                (h) => {  });
+                if (mounts.Count(x => !currentSave.player.mounts.Contains(x.name) && x.factions != null && x.factions.Contains(person.faction == null ? town.faction : person.faction)) > 0)
+                    AddButtonRegion(() =>
+                    {
+                        AddLine("I want to buy a new mount.");
+                    },
+                    (h) =>
+                    {
+                        PlaySound("DesktopInventoryOpen");
+                        CloseWindow(h.window);
+                        CloseWindow("Town: " + town.name);
+                        SpawnWindowBlueprint("MountVendor");
+                        Respawn("ExperienceBarBorder");
+                        Respawn("ExperienceBar");
+                    });
             }
             else if (type.category == "Flight Master")
             {
@@ -1899,7 +1949,7 @@ public class Blueprint
         new("Persons", () => {
             SetAnchor(TopLeft, 19, -57);
             AddRegionGroup();
-            SetRegionGroupWidth(171);
+            SetRegionGroupWidth(190);
             AddPaddingRegion(() =>
             {
                 AddLine(personCategory.category + "s:", "Gray");
@@ -2061,7 +2111,7 @@ public class Blueprint
                 Respawn("Person");
             });
         }),
-        new("MountList", () => {
+        new("MountCollection", () => {
             SetAnchor(TopLeft, 19, -38);
             AddHeaderGroup(() => currentSave.player.mounts.Count, 6);
             SetRegionGroupWidth(190);
@@ -2073,7 +2123,7 @@ public class Blueprint
                 AddText(person.name);
                 AddSmallButton("OtherClose", (h) =>
                 {
-                    CloseWindow("MountList");
+                    CloseWindow("MountCollection");
                     CloseWindow("CurrentMount");
                     Respawn("Person");
                     PlaySound("DesktopInventoryClose");
@@ -2085,14 +2135,14 @@ public class Blueprint
                 AddSmallButton("OtherReverse", (h) =>
                 {
                     currentSave.player.mounts.Reverse();
-                    Respawn("MountList");
+                    Respawn("MountCollection");
                     PlaySound("DesktopInventorySort", 0.2f);
                 });
                 if (!CDesktop.windows.Exists(x => x.title == "MountsSort"))
                     AddSmallButton("OtherSort", (h) =>
                     {
                         SpawnWindowBlueprint("MountsSort");
-                        Respawn("MountList");
+                        Respawn("MountCollection");
                     });
                 else
                     AddSmallButton("OtherSortOff", (h) => { });
@@ -2111,15 +2161,15 @@ public class Blueprint
                         var mount = mounts[index + 6 * regionGroup.pagination];
                         AddLine(mount.name);
                         AddLine("Speed: ", "DarkGray");
-                        AddText(mount.speed == 6 ? "Fast" : (mount.speed == 9 ? "Very Fast" : "Normal"));
+                        AddText(mount.speed == 7 ? "Fast" : (mount.speed == 9 ? "Very Fast" : "Normal"));
                         AddBigButton(mount.icon,
                             (h) =>
                             {
                                 var mount = mounts[index + 6 * regionGroup.pagination];
-                                if (currentSave.player.mount != mount.name)
+                                if (currentSave.player.mount != mount.name && currentSave.player.level >= (mount.speed == 7 ? 40 : 60))
                                 {
                                     currentSave.player.mount = mount.name;
-                                    Respawn("MountList");
+                                    Respawn("MountCollection");
                                     Respawn("CurrentMount");
                                     PlaySound("DesktopActionbarAdd", 0.7f);
                                 }
@@ -2127,12 +2177,11 @@ public class Blueprint
                             null,
                             (h) => () =>
                             {
-                                SetAnchor(Center);
                                 var mount = mounts[index + 6 * regionGroup.pagination];
-                                if (mount.abilities != null && mount.abilities.Count > 0)
-                                    PrintAbilityTooltip(currentSave.player, null, abilities.Find(x => x.name == mount.abilities[0]), 0);
+                                PrintMountTooltip(currentSave.player, mount);
                             }
                         );
+                        if (currentSave.player.level < (mount.speed == 7 ? 40 : 60)) SetBigButtonToRed();
                     }
                     else
                     {
@@ -2140,6 +2189,72 @@ public class Blueprint
                         AddBigButton("OtherDisabled", (h) => { });
                     }
                 });
+            }
+        }),
+        new("MountVendor", () => {
+            SetAnchor(TopLeft, 19, -38);
+            AddRegionGroup(() => Mount.mounts.Count(x => !currentSave.player.mounts.Contains(x.name) && x.factions != null && x.factions.Contains(person.faction == null ? town.faction : person.faction)), 6);
+            SetRegionGroupWidth(190);
+            SetRegionGroupHeight(285);
+            AddHeaderRegion(() =>
+            {
+                var type = personTypes.Find(x => x.type == person.type);
+                AddLine(person.type + " ", "Gray");
+                AddText(person.name);
+                AddSmallButton("OtherClose", (h) =>
+                {
+                    CloseWindow("MountVendor");
+                    Respawn("Person");
+                    PlaySound("DesktopInstanceClose");
+                });
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Available mounts:");
+            });
+            var regionGroup = CDesktop.LBWindow.LBRegionGroup;
+            AddPaginationLine(regionGroup, "MountVendor");
+            var mounts = Mount.mounts.FindAll(x => !currentSave.player.mounts.Contains(x.name) && x.factions != null && x.factions.Contains(person.faction == null ? town.faction : person.faction)).OrderBy(x => x.speed).ThenBy(x => x.price).ThenBy(x => x.name).ToList();
+            for (int i = 0; i < 6; i++)
+            {
+                var index = i;
+                if (mounts.Count >= index + 6 * RegionGroup.SavedStaticPagination(CDesktop.LBWindow.regionGroups.IndexOf(regionGroup)))
+                    AddPaddingRegion(() =>
+                    {
+                        if (mounts.Count > index + 6 * regionGroup.pagination)
+                        {
+                            var mount = mounts[index + 6 * regionGroup.pagination];
+                            AddLine(mount.name);
+                            AddLine("Speed: ", "DarkGray");
+                            AddText(mount.speed == 7 ? "Fast" : (mount.speed == 9 ? "Very Fast" : "Normal"));
+                            AddBigButton(mount.icon,
+                                (h) =>
+                                {
+                                    var mount = mounts[index + 6 * regionGroup.pagination];
+                                    if (currentSave.player.inventory.money >= mount.price)
+                                    {
+                                        currentSave.player.inventory.money -= mount.price;
+                                        currentSave.player.mounts.Add(mount.name);
+                                        Respawn("MountVendor");
+                                        PlaySound("DesktopTransportPay");
+                                    }
+                                },
+                                null,
+                                (h) => () =>
+                                {
+                                    var mount = mounts[index + 6 * regionGroup.pagination];
+                                    PrintMountTooltip(currentSave.player, mount);
+                                }
+                            );
+                            if (currentSave.player.level < (mount.speed == 7 ? 40 : 60))
+                                SetBigButtonToRed();
+                        }
+                        else if (mounts.Count == index + 6 * regionGroup.pagination)
+                        {
+                            SetRegionBackground(Padding);
+                            AddLine("");
+                        }
+                    });
             }
         }),
         new("MountsSort", () => {
@@ -2327,7 +2442,7 @@ public class Blueprint
             });
             var regionGroup = CDesktop.LBWindow.LBRegionGroup;
             AddPaginationLine(regionGroup, "FlightMaster");
-            var destinations = town.flightPaths[side].FindAll(x => x != town).OrderBy(x => x.name).OrderBy(x => x.zone).ThenBy(x => currentSave.siteVisits.ContainsKey(x.name)).ToList();
+            var destinations = town.flightPaths[side].FindAll(x => x != town).OrderBy(x => !currentSave.siteVisits.ContainsKey(x.name)).ThenBy(x => x.zone).ThenBy(x => x.name).ToList();
             for (int i = 0; i < 12; i++)
             {
                 var index = i;
@@ -2345,7 +2460,7 @@ public class Blueprint
                             else
                             {
                                 SetRegionBackground(Header);
-                                AddLine("Unknown", "DarkGray");
+                                AddLine("?", "DarkGray");
                                 AddSmallButton("OtherDisabled");
                             }
                         }
@@ -2357,16 +2472,37 @@ public class Blueprint
                     },
                     (h) =>
                     {
+                        var destination = destinations[index + 12 * regionGroup.pagination];
                         if (h.region.backgroundType != Button) return;
-                        CloseDesktop("Town");
-                        SwitchDesktop("Map");
-                        CDesktop.LockScreen();
-                        PlaySound("DesktopTransportPay");
-                        var temp = currentSave.currentSite;
-                        currentSave.currentSite = town.name;
-                        Respawn("Site: " + temp);
+                        currentSave.currentSite = destination.name;
+                        Respawn("Site: " + town.name);
                         Respawn("Site: " + currentSave.currentSite);
+                        town = destination;
+
+                        //if (transport.price > 0)
+                        //{
+                        //    if (transport.price > currentSave.player.inventory.money) return;
+                        //    PlaySound("DesktopTransportPay");
+                        //    currentSave.player.inventory.money -= transport.price;
+                        //}
+
+                        //Close town screen as we're beginning to travel on map
+                        CloseDesktop("Town");
+
+                        //Switch desktop to map
+                        SwitchDesktop("Map");
+
+                        //Move camera to the newly visited town
                         CDesktop.cameraDestination = new Vector2(town.x, town.y);
+
+                        ////Find current site
+                        //var current = FindSite(x => x.name == currentSave.currentSite);
+
+                        ////Lead path to the destination
+                        //LeadPath(new SitePath() { means = "Flight", sites = new() { current.name, town.name }, points = new() { (town.x, town.y), (current.x, current.y) }, spacing = 9999 }, true);
+
+                        ////Queue moving player to the destination
+                        //town.ExecutePath("Town");
                     });
             }
         }),
@@ -8847,79 +8983,93 @@ public class Blueprint
             SpawnWindowBlueprint("MapToolbarStatusRight");
             SpawnWindowBlueprint("ExperienceBarBorder");
             SpawnWindowBlueprint("ExperienceBar");
-            SpawnWindowBlueprint("Town: " + town.name);
-            AddHotkey(Tab, () =>
+            if (currentSave.player.Reputation(town.faction) >= 4200)
             {
-                if (CloseWindow("Vendor"))
+                SpawnWindowBlueprint("Town: " + town.name);
+                AddHotkey(Tab, () =>
                 {
-                    PlaySound("VendorSwitchTab");
-                    Respawn("VendorBuyback");
-                }
-                else if (CloseWindow("VendorBuyback"))
+                    if (CloseWindow("Vendor"))
+                    {
+                        PlaySound("VendorSwitchTab");
+                        Respawn("VendorBuyback");
+                    }
+                    else if (CloseWindow("VendorBuyback"))
+                    {
+                        PlaySound("VendorSwitchTab");
+                        Respawn("Vendor");
+                    }
+                });
+                AddHotkey(Escape, () =>
                 {
-                    PlaySound("VendorSwitchTab");
-                    Respawn("Vendor");
-                }
-            });
-            AddHotkey(Escape, () =>
+                    if (CloseWindow("MountCollection"))
+                    {
+                        PlaySound("DesktopInstanceClose");
+                        CloseWindow("CurrentMount");
+                        Respawn("Person");
+                    }
+                    else if (CloseWindow("Inventory"))
+                    {
+                        PlaySound("DesktopInventoryClose");
+                        CloseWindow("Bank");
+                        CloseWindow("Vendor");
+                        CloseWindow("VendorBuyback");
+                        Respawn("Person");
+                    }
+                    else if (CloseWindow("MakeInnHome"))
+                    {
+                        PlaySound("DesktopInstanceClose");
+                        CloseWindow("MakeInnHome");
+                        Respawn("Person");
+                    }
+                    else if (CloseWindow("FlightMaster"))
+                    {
+                        PlaySound("DesktopInstanceClose");
+                        Respawn("Person");
+                    }
+                    else if (CloseWindow("ProfessionRecipeTrainer"))
+                    {
+                        PlaySound("DesktopInstanceClose");
+                        CloseWindow("ProfessionRecipeTrainer");
+                        Respawn("Person");
+                    }
+                    else if (CloseWindow("ProfessionLevelTrainer"))
+                    {
+                        PlaySound("DesktopInstanceClose");
+                        CloseWindow("ProfessionLevelTrainer");
+                        Respawn("Person");
+                    }
+                    else if (CloseWindow("Person"))
+                    {
+                        PlaySound("DesktopInstanceClose");
+                        person = null;
+                        if (personCategory != null) Respawn("Persons");
+                        else Respawn("Town: " + town.name);
+                    }
+                    else if (CloseWindow("Persons"))
+                    {
+                        PlaySound("DesktopInstanceClose");
+                        personCategory = null;
+                        Respawn("Town: " + town.name);
+                    }
+                    else
+                    {
+                        PlaySound("DesktopInstanceClose");
+                        town = null;
+                        CloseDesktop("Town");
+                    }
+                });
+            }
+            else
             {
-                if (CloseWindow("MountList"))
-                {
-                    PlaySound("DesktopInstanceClose");
-                    CloseWindow("CurrentMount");
-                    Respawn("Person");
-                }
-                else if (CloseWindow("Inventory"))
-                {
-                    PlaySound("DesktopInventoryClose");
-                    CloseWindow("Bank");
-                    CloseWindow("Vendor");
-                    CloseWindow("VendorBuyback");
-                    Respawn("Person");
-                }
-                else if (CloseWindow("MakeInnHome"))
-                {
-                    PlaySound("DesktopInstanceClose");
-                    CloseWindow("MakeInnHome");
-                    Respawn("Person");
-                }
-                else if (CloseWindow("FlightMaster"))
-                {
-                    PlaySound("DesktopInstanceClose");
-                    Respawn("Person");
-                }
-                else if (CloseWindow("ProfessionRecipeTrainer"))
-                {
-                    PlaySound("DesktopInstanceClose");
-                    CloseWindow("ProfessionRecipeTrainer");
-                    Respawn("Person");
-                }
-                else if (CloseWindow("ProfessionLevelTrainer"))
-                {
-                    PlaySound("DesktopInstanceClose");
-                    CloseWindow("ProfessionLevelTrainer");
-                    Respawn("Person");
-                }
-                else if (CloseWindow("Person"))
-                {
-                    PlaySound("DesktopInstanceClose");
-                    person = null;
-                    if (personCategory != null) Respawn("Persons");
-                    else Respawn("Town: " + town.name);
-                }
-                else if (CloseWindow("Persons"))
-                {
-                    PlaySound("DesktopInstanceClose");
-                    personCategory = null;
-                    Respawn("Town: " + town.name);
-                }
-                else
+
+                SpawnWindowBlueprint("TownHostile");
+                AddHotkey(Escape, () =>
                 {
                     PlaySound("DesktopInstanceClose");
                     town = null;
                     CloseDesktop("Town");
-                }
-            });
+                });
+            }
         }),
         new("Instance", () =>
         {

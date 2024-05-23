@@ -503,7 +503,7 @@ public static class Root
         if (price / 100 % 100 > 0) Foo("ItemCoinsSilver", price / 100 % 100 + "", "Silver"); else lacking++;
         if (price % 100 > 0 || price == 0) Foo("ItemCoinsCopper", price % 100 + "", "Copper"); else lacking++;
         AddRegionGroup();
-        SetRegionGroupWidth(width - (3 - lacking) * 52);
+        SetRegionGroupWidth(width - (3 - lacking) * 54);
         AddPaddingRegion(() => { AddLine(""); });
 
         void Foo(string icon, string text, string color)
@@ -511,7 +511,7 @@ public static class Root
             AddRegionGroup();
             AddPaddingRegion(() => { AddSmallButton(icon, (h) => { }); });
             AddRegionGroup();
-            SetRegionGroupWidth(33);
+            SetRegionGroupWidth(35);
             AddPaddingRegion(() => { AddLine(text, color); });
         }
     }
@@ -588,6 +588,13 @@ public static class Root
     #endregion
 
     #region BigButtons
+
+    public static void SetBigButtonToRed()
+    {
+        var region = CDesktop.LBWindow.LBRegionGroup.LBRegion;
+        var button = region.LBBigButton.gameObject;
+        button.GetComponent<SpriteRenderer>().material = Resources.Load<Material>("Shaders/Red");
+    }
 
     public static void SetBigButtonToGrayscale()
     {

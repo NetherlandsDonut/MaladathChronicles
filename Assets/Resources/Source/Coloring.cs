@@ -26,6 +26,18 @@ public static class Coloring
         else return "Green";
     }
 
+    public static string ColorReputation(int progress)
+    {
+        if (progress >= 8400) return "Exalted";
+        else if (progress >= 6300) return "Revered";
+        else if (progress >= 5100) return "Honored";
+        else if (progress >= 4500) return "Friendly";
+        else if (progress >= 4200) return "Neutral";
+        else if (progress >= 3900) return "Unfriendly";
+        else if (progress >= 3600) return "Hostile";
+        else return "Hated";
+    }
+
     public static string ColorEntityLevel(int level)
     {
         if (currentSave == null) return "DarkGray";
@@ -80,8 +92,13 @@ public static class Coloring
         { "Decay",          new Color32(201, 208, 019, 255) },
         { "Arcane",         new Color32(204, 101, 221, 255) },
         { "Air",            new Color32(175, 190, 202, 255) },
-        { "Friendly",       new Color32(026, 201, 000, 255) },
-        { "Contested",      new Color32(198, 177, 091, 255) },
-        { "Hostile",        new Color32(173, 036, 045, 255) },
+        { "Exalted",        new Color32(000, 255, 255, 255) },
+        { "Revered",        new Color32(000, 255, 204, 255) },
+        { "Honored",        new Color32(090, 147, 204, 255) },
+        { "Friendly",       new Color32(000, 255, 000, 255) },
+        { "Neutral",        new Color32(254, 254, 000, 255) },
+        { "Unfriendly",     new Color32(237, 102, 034, 255) },
+        { "Hostile",        new Color32(255, 000, 000, 255) },
+        { "Hated",          new Color32(204, 034, 034, 255) },
     };
 }

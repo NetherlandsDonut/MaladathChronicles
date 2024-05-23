@@ -158,7 +158,8 @@
         "name": "Sellandus",
         "gender": "Male",
         "race": "Night Elf",
-        "type": "Expert Tailor"
+        "type": "Expert Tailor",
+        "hidden": true
       },
       {
         "name": "Arnold Leland",
@@ -171,12 +172,6 @@
         "gender": "Female",
         "race": "Night Elf",
         "type": "Expert Alchemist"
-      },
-      {
-        "name": "Sellandus",
-        "gender": "Male",
-        "race": "Night Elf",
-        "type": "Expert Tailor"
       },
       {
         "name": "Jalane Ayrole",
@@ -222,19 +217,22 @@
         "name": "Shylamiir",
         "gender": "Female",
         "race": "Night Elf",
-        "type": "Herbalist"
+        "type": "Herbalist",
+        "hidden": true
       },
       {
         "name": "Randal Worth",
         "gender": "Male",
         "race": "Human",
-        "type": "Journeyman Leatherworker"
+        "type": "Journeyman Leatherworker",
+        "hidden": true
       },
       {
         "name": "Lawrence Schneider",
         "gender": "Male",
         "race": "Human",
-        "type": "Journeyman Tailor"
+        "type": "Journeyman Tailor",
+        "hidden": true
       },
       {
         "name": "Tannysa",
@@ -1561,7 +1559,8 @@
         "name": "Thonys Pillarstone",
         "gender": "Male",
         "race": "Dwarf",
-        "type": "Journeyman Enchanter"
+        "type": "Journeyman Enchanter",
+        "hidden": true
       },
       {
         "name": "Uthrar Threx",

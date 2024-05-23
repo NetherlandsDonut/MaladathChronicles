@@ -12,7 +12,7 @@ public class SitePath
     //Initialisation method to fill automatic values
     public void Initialise()
     {
-        if (means == null) means = "Land";
+        means ??= "Land";
         var list = means == "Land" ? pathsConnectedToSite : transportationConnectedToSite;
         foreach (var site in sites)
             if (!list.ContainsKey(site))

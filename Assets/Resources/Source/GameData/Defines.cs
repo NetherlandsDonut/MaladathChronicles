@@ -38,6 +38,8 @@ public class Defines
             scoreForKilledRare = 5;
         if (scoreForKilledElite < 0)
             scoreForKilledElite = 10;
+        if (defaultStanding < 0)
+            defaultStanding = 4200;
         if (markerCharacter == null || markerCharacter == "")
             markerCharacter ??= "_";
         if (textWrapEnding == null || textWrapEnding == "")
@@ -61,6 +63,7 @@ public class Defines
     public int scoreForKilledCommon;
     public int scoreForKilledRare;
     public int scoreForKilledElite;
+    public int defaultStanding;
     public string markerCharacter;
     public string textWrapEnding;
     public float frameTime;

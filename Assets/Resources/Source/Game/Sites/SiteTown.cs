@@ -9,8 +9,9 @@ using static Root.Anchor;
 
 using static Sound;
 using static Faction;
-using static SitePath;
 using static SaveGame;
+using static SitePath;
+using static Coloring;
 
 public class SiteTown : Site
 {
@@ -44,7 +45,7 @@ public class SiteTown : Site
                         PlayAmbience(ambience);
                         SetAnchor(TopLeft, 19, -38);
                         AddRegionGroup();
-                        SetRegionGroupWidth(171);
+                        SetRegionGroupWidth(190);
                         AddHeaderRegion(() =>
                         {
                             AddLine(name);
@@ -99,7 +100,7 @@ public class SiteTown : Site
                         }
                         if (people != null)
                         {
-                            var groups = people.Where(x => !x.hidden).GroupBy(x => x.category).OrderBy(x => x.Count());
+                            var groups = people.Where(x => !x.hidden).OrderBy(x => x.type).GroupBy(x => x.category).OrderBy(x => x.Count()).ThenBy(x => x.Key != null ? x.Key.priority : 0);
                             AddPaddingRegion(() => { AddLine("Points of interest:", "Gray"); });
                             foreach (var group in groups)
                                 if (group.Key == null) continue;
@@ -208,7 +209,7 @@ public class SiteTown : Site
                 var side = factions.Find(x => x.name == faction).side;
                 AddHeaderRegion(() =>
                 {
-                    AddLine(name, side == currentSave.player.Side() ? "Friendly" : (side == "Neutral" ? "Contested" : "Hostile"));
+                    AddLine(name, ColorReputation(currentSave.player.Reputation(faction)));
                 });
                 if (people != null)
                 {

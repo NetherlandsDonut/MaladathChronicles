@@ -1,6 +1,24 @@
 [
   {
     "sites": [
+      "Ironforge",
+      "Stormwind City"
+    ],
+    "means": "Tram",
+    "spacing": 9999,
+    "points": [
+      {
+        "Item1": 5244,
+        "Item2": -2698
+      },
+      {
+        "Item1": 4940,
+        "Item2": -3477
+      }
+    ]
+  },
+  {
+    "sites": [
       "Auberdine",
       "Menethil Harbor"
     ],

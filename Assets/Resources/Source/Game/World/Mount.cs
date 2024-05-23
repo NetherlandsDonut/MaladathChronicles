@@ -1,5 +1,10 @@
 using System.Collections.Generic;
 
+using static Root;
+using static Root.Anchor;
+
+using static SaveGame;
+
 public class Mount
 {
     //Initialisation method to fill automatic values
@@ -18,6 +23,32 @@ public class Mount
                     });
     }
 
+    #region Description
+
+    public static void PrintMountTooltip(Entity rider, Mount mount)
+    {
+        SetAnchor(-92, CDesktop.windows.Exists(x => x.title == "CurrentMount") ? 47 : 142);
+        AddHeaderGroup();
+        SetRegionGroupWidth(190);
+        AddHeaderRegion(() =>
+        {
+            AddLine(mount.name, "Gray");
+        });
+        AddPaddingRegion(() =>
+        {
+            AddBigButton(mount.icon, (h) => { });
+            if (currentSave.player.level < (mount.speed == 7 ? 40 : 60)) SetBigButtonToRed();
+            AddLine("Required level: ", "DarkGray");
+            AddText((mount.speed == 7 ? 40 : 60) + "", Coloring.ColorRequiredLevel(mount.speed == 7 ? 40 : 60));
+            AddLine("Speed: ", "DarkGray");
+            AddText(mount.speed == 7 ? "Fast" : (mount.speed == 9 ? "Very Fast" : "Normal"));
+        });
+        PrintPriceRegion(mount.price);
+    }
+
+    #endregion
+
+
     //Name of the mount
     public string name;
 
@@ -33,6 +64,9 @@ public class Mount
 
     //List of abilities provided by the mount
     public List<string> abilities;
+
+    //List of factions that offer these mounts
+    public List<string> factions;
 
     //Currently opened mount
     public static Mount mount;

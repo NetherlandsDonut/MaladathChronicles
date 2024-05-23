@@ -14,7 +14,7 @@ using static Defines;
 public class Entity
 {
     public Entity() { }
-    
+
     public Entity(string name, string creationGender, Race race, Spec spec, List<string> items)
     {
         level = 1;
@@ -31,6 +31,15 @@ public class Entity
         inventory = new Inventory(items);
         learnedRecipes = new();
         professionSkills = new();
+        reputation = new();
+        var side = Side();
+        foreach (var faction in Faction.factions)
+            if (faction.name == this.faction)
+                reputation.Add(faction.name, 4600);
+            else if (faction.side == side)
+                reputation.Add(faction.name, 4250);
+            else if (faction.side != side && faction.side != "Neutral")
+                reputation.Add(faction.name, 0);
         inventory.items.RemoveAll(x => x == null);
         for (int i = 0; i < 0; i++)
         {
@@ -454,6 +463,27 @@ public class Entity
         inventory.items.Add(inventory.bags[index]);
         inventory.bags.RemoveAt(index);
     }
+
+    #endregion
+
+    #region Reputation
+
+    public string ReputationRank(string faction)
+    {
+        int amount = Reputation(faction);
+        if (amount >= 8400) return "Exalted";
+        else if (amount >= 6300) return "Revered";
+        else if (amount >= 5100) return "Honored";
+        else if (amount >= 4500) return "Friendly";
+        else if (amount >= 4200) return "Neutral";
+        else if (amount >= 3900) return "Unfriendly";
+        else if (amount >= 3600) return "Hostile";
+        else return "Hated";
+    }
+
+    public int Reputation(string faction) => reputation.ContainsKey(faction) ? reputation[faction] : defines.defaultStanding;
+
+    public Dictionary<string, int> reputation;
 
     #endregion
 
