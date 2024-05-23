@@ -242,7 +242,7 @@ public class SiteHostileArea : Site
             (h) => () =>
             {
                 if (!currentSave.siteVisits.ContainsKey(name)) return;
-                SetAnchor(TopRight, -19, -38);
+                SetAnchor(TopLeft, 19, -38);
                 AddRegionGroup();
                 AddHeaderRegion(() =>
                 {
@@ -250,7 +250,7 @@ public class SiteHostileArea : Site
                 });
                 AddHeaderRegion(() =>
                 {
-                    AddLine("Recommended level: ");
+                    AddLine("Recommended level: ", "Gray");
                     AddText(recommendedLevel + "", ColorEntityLevel(recommendedLevel));
                 });
                 if (commonEncounters != null && commonEncounters.Count > 0)

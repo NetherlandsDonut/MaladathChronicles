@@ -270,6 +270,41 @@
     "skillCap": 300
   },
   {
+    "type": "Herbalist",
+    "icon": "TradeHerbalism",
+    "category": "Profession Trainer",
+    "profession": "Herbalism",
+    "skillCap": 300
+  },
+  {
+    "type": "Miner",
+    "icon": "TradeMining",
+    "category": "Profession Trainer",
+    "profession": "Mining",
+    "skillCap": 300
+  },
+  {
+    "type": "Fisherman",
+    "icon": "TradeFishing",
+    "category": "Profession Trainer",
+    "profession": "Fishing",
+    "skillCap": 300
+  },
+  {
+    "type": "Cook",
+    "icon": "TradeCooking",
+    "category": "Profession Trainer",
+    "profession": "Cooking",
+    "skillCap": 300
+  },
+  {
+    "type": "Physician",
+    "icon": "TradeFirstAid",
+    "category": "Profession Trainer",
+    "profession": "First Aid",
+    "skillCap": 300
+  },
+  {
     "type": "Portal Trainer",
     "icon": "TradeTrainerClass",
     "category": "Class Trainer"

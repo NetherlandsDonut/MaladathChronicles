@@ -140,10 +140,9 @@ public class SiteComplex : Site
             (h) => () =>
             {
                 if (!currentSave.siteVisits.ContainsKey(name)) return;
-                SetAnchor(TopRight, -19, -38);
+                SetAnchor(TopLeft, 19, -38);
                 AddRegionGroup();
                 AddHeaderRegion(() => { AddLine(name, "Gray"); });
-                AddPaddingRegion(() => { AddLine("Contains sites:", "DarkGray"); });
                 complex = this;
                 foreach (var site in complex.sites)
                     AddHeaderRegion(() =>

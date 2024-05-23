@@ -99,10 +99,11 @@ public class SiteTown : Site
                         }
                         if (people != null)
                         {
-                            var groups = people.GroupBy(x => x.category);
+                            var groups = people.GroupBy(x => x.category).OrderBy(x => x.Count());
                             AddPaddingRegion(() => { AddLine("Points of interest:", "Gray"); });
                             foreach (var group in groups)
-                                if (group.Key.category == "Flight Master")
+                                if (group.Key == null) continue;
+                                else if (group.Key.category == "Flight Master")
                                     foreach (var person in group)
                                     {
                                         var faction = factions.Find(x => x.name == person.faction);
@@ -202,12 +203,33 @@ public class SiteTown : Site
             (h) => () =>
             {
                 if (!currentSave.siteVisits.ContainsKey(name)) return;
-                SetAnchor(TopRight, -19, -38);
+                SetAnchor(TopLeft, 19, -38);
                 AddRegionGroup();
+                var side = factions.Find(x => x.name == faction).side;
                 AddHeaderRegion(() =>
                 {
-                    AddLine(name);
+                    AddLine(name, side == currentSave.player.Side() ? "Friendly" : (side == "Neutral" ? "Contested" : "Hostile"));
                 });
+                if (people != null)
+                {
+                    var types = people.Select(x => PersonType.personTypes.Find(y => y.type == x.type)).ToList();
+                    types.Remove(null);
+                    var icons = types.Distinct().Select(x => x.icon + (x.factionVariant ? factions.Find(x => x.name == faction).side : "")).ToList();
+                    var amount = icons.Count % 9 == 0 ? 9 : (icons.Count % 8 == 0 ? 8 : 7);
+                    if (icons.Count > 0)
+                        for (int i = 0; i < Math.Ceiling(icons.Count / (double)amount); i++)
+                        {
+                            var ind = i;
+                            AddPaddingRegion(() =>
+                            {
+                                for (int j = 0; j < amount && j < icons.Count - ind * amount; j++)
+                                {
+                                    var jnd = j;
+                                    AddSmallButton(icons[jnd + ind * amount], (h) => { });
+                                }
+                            });
+                        }
+                }
             },
             (h) => { BuildPath(); });
             if (currentSave.currentSite == name)

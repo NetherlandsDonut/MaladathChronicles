@@ -575,7 +575,7 @@ public static class Root
         }
     }
 
-    public static void AddSmallButton(string type, Action<Highlightable> pressEvent, Action<Highlightable> rightPressEvent = null, Func<Highlightable, Action> tooltip = null, Action<Highlightable> middlePressEvent = null)
+    public static void AddSmallButton(string type, Action<Highlightable> pressEvent = null, Action<Highlightable> rightPressEvent = null, Func<Highlightable, Action> tooltip = null, Action<Highlightable> middlePressEvent = null)
     {
         var region = CDesktop.LBWindow.LBRegionGroup.LBRegion;
         var newObject = new GameObject("SmallButton: " + type.ToString(), typeof(LineSmallButton), typeof(SpriteRenderer));

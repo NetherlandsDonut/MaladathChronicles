@@ -137,9 +137,8 @@ public class SiteInstance : Site
             (h) => () =>
             {
                 if (!currentSave.siteVisits.ContainsKey(name)) return;
-                SetAnchor(TopRight, -19, -38);
+                SetAnchor(TopLeft, 19, -38);
                 AddRegionGroup();
-                SetRegionGroupWidth(152);
                 AddHeaderRegion(() => { AddLine(name); });
                 AddPaddingRegion(() =>
                 {

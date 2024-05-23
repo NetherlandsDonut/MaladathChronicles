@@ -80,5 +80,8 @@ public static class Coloring
         { "Decay",          new Color32(201, 208, 019, 255) },
         { "Arcane",         new Color32(204, 101, 221, 255) },
         { "Air",            new Color32(175, 190, 202, 255) },
+        { "Friendly",       new Color32(026, 201, 000, 255) },
+        { "Contested",      new Color32(198, 177, 091, 255) },
+        { "Hostile",        new Color32(173, 036, 045, 255) },
     };
 }

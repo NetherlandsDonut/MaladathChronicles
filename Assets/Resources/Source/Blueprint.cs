@@ -1725,7 +1725,7 @@ public class Blueprint
                 if (rt != null)
                     AddButtonRegion(() =>
                     {
-                        AddLine("I would like to learn " + rt.ToLower() + "s.");
+                        AddLine("I would like to learn " + rt.ToLower() + (rt.Last() == 's' ? "." : "s."));
                     },
                     (h) =>
                     {
@@ -1756,11 +1756,6 @@ public class Blueprint
                     Respawn("ExperienceBarBorder");
                     Respawn("ExperienceBar");
                 });
-                AddButtonRegion(() =>
-                {
-                    AddLine("I want to buy more vault space.");
-                },
-                (h) => { });
             }
             else if (type.category == "Innkeeper")
             {
@@ -2229,6 +2224,10 @@ public class Blueprint
                     }
                 );
             }
+            AddHeaderRegion(() =>
+            {
+                AddLine("");
+            });
         }, true),
         new("BankSort", () => {
             SetAnchor(Center);
@@ -2336,13 +2335,13 @@ public class Blueprint
                             if (currentSave.siteVisits.ContainsKey(destination.name))
                             {
                                 AddLine(destination.name);
-                                AddSmallButton("Zone" + destination.zone.Clean()/*faction.Icon()*/, (h) => { });
+                                AddSmallButton("Zone" + destination.zone.Clean());
                             }
                             else
                             {
                                 SetRegionBackground(Header);
                                 AddLine("Unknown", "DarkGray");
-                                AddSmallButton("OtherDisabled", (h) => { });
+                                AddSmallButton("OtherDisabled");
                             }
                         }
                         else if (destinations.Count == index + 12 * regionGroup.pagination)
@@ -3283,7 +3282,7 @@ public class Blueprint
                 {
                     var value = 0;
                     AddLine(value + "", value == 0 ? "DarkGray" : (value > currentSave.player.MaxResource(element) ? "Red" : "Green"));
-                    AddText("/" + currentSave.player.MaxResource(element), "DarkGray");
+                    AddText(" / " + currentSave.player.MaxResource(element), "DarkGray");
                     AddSmallButton("Element" + elements2[elements1.IndexOf(element)] + "Rousing",
                         null,
                         null,
