@@ -76,8 +76,28 @@
           "Bloodtooth Tribe": 0,
           "Bristleback Tribe": 0
         },
-        "professionSkills": {},
-        "learnedRecipes": {},
+        "professionSkills": {
+          "Tailoring": {
+            "Item1": 1,
+            "Item2": [
+              "Apprentice"
+            ]
+          },
+          "Enchanting": {
+            "Item1": 1,
+            "Item2": [
+              "Apprentice"
+            ]
+          }
+        },
+        "learnedRecipes": {
+          "Tailoring": [
+            "Bolt of Linen Cloth",
+            "Brown Linen Shirt",
+            "Linen Cloak",
+            "Simple Linen Pants"
+          ]
+        },
         "unspentTalentPoints": 26,
         "faction": "Stormwind",
         "name": "Abbigail",
@@ -218,7 +238,7 @@
         "Northshire Abbey": 1,
         "Northshire Vineyards": 0,
         "Goldshire": 0,
-        "Stormwind City": 9,
+        "Stormwind City": 10,
         "Ironforge": 1
       },
       "unlockedAreas": [],
@@ -301,9 +321,9 @@
         ]
       },
       "startDate": "2024-05-23T19:54:33.3673184+02:00",
-      "lastLoaded": "2024-05-23T23:16:11.2339608+02:00",
-      "lastPlayed": "2024-05-23T23:16:15.9632178+02:00",
-      "timePlayed": "00:18:39.8177336"
+      "lastLoaded": "2024-05-24T16:43:30.5384325+02:00",
+      "lastPlayed": "2024-05-24T16:43:55.3919754+02:00",
+      "timePlayed": "00:19:04.6712765"
     },
     {
       "player": {
@@ -1427,7 +1447,7 @@
         "Freewind Post": 1,
         "Sun Rock Retreat": 1,
         "Ghost Walker Post": 1,
-        "Undercity": 2,
+        "Undercity": 3,
         "The Bulwark": 1,
         "Brill": 1,
         "Hammerfall": 1,
@@ -1570,9 +1590,10 @@
         ]
       },
       "startDate": "2024-05-23T23:16:22.9839232+02:00",
-      "lastLoaded": "2024-05-24T02:06:11.9629039+02:00",
-      "lastPlayed": "2024-05-24T02:06:49.3938749+02:00",
-      "timePlayed": "00:00:40.2843218"
+      "lastLoaded": "2024-05-24T14:09:06.088533+02:00",
+      "lastPlayed": "2024-05-24T14:09:31.3440181+02:00",
+      "timePlayed": "00:01:05.5398069",
+      "lastVisitedTalents": 1
     },
     {
       "player": {

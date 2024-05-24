@@ -2,6 +2,7 @@ using System.Linq;
 using System.Collections.Generic;
 
 using static Defines;
+using UnityEditorInternal.VersionControl;
 
 //Iventory is a space for storing money and items
 //It's used by entities and banks
@@ -40,6 +41,42 @@ public class Inventory
         var find = items.FindAll(x => x.name == item.name);
         if (find.Count > 0) return find.Sum(x => x.maxStack - x.amount) > 0;
         else return false;
+    }
+
+    //Tells whether the player can fit specific items in the inventory
+    public bool CanAddItems(List<Item> list)
+    {
+        if (ignoreSpaceChecks) return true;
+        var copyList = list.ToList();
+        var copyInventory = items.ToList();
+        int emptySlots = BagSpace();
+        if (items.Count + list.Count < emptySlots) return true;
+        foreach (var item in copyList)
+        {
+            var slots = copyInventory.FindAll(x => x.name == item.name);
+            foreach (var depositSlot in slots)
+                if (depositSlot.amount < depositSlot.maxStack)
+                {
+                    var howMuch = depositSlot.maxStack - depositSlot.amount;
+                    if (howMuch <= item.amount)
+                    {
+                        depositSlot.amount += howMuch;
+                        item.amount -= howMuch;
+                    }
+                    else
+                    {
+                        depositSlot.amount += item.amount;
+                        item.amount = 0;
+                        break;
+                    }
+                }
+            if (item.amount > 0 && emptySlots > 0)
+            {
+                copyInventory.Add(item);
+                emptySlots--;
+            }
+        }
+        return copyList.Count(x => x.amount > 0) == 0;
     }
 
     //Adds item to the inventory and automatically fills stacks

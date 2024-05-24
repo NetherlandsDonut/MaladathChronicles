@@ -14,6 +14,10 @@
   "scoreForKilledCommon": 1,
   "scoreForKilledRare": 5,
   "scoreForKilledElite": 10,
+  "lvlRequiredFastMounts": 40,
+  "lvlRequiredVeryFastMounts": 60,
+  "defaultStanding": 4200,
+  "maxPrimaryProfessions": 2,
   "markerCharacter": "_",
   "textWrapEnding": "...",
   "frameTime": 0.08

@@ -500,7 +500,50 @@ public class Entity
     {
         if (!learnedRecipes.ContainsKey(recipe.profession))
             learnedRecipes.Add(recipe.profession, new());
-        learnedRecipes[recipe.profession].Add(recipe.name);
+        if (!learnedRecipes[recipe.profession].Contains(recipe.name))
+            learnedRecipes[recipe.profession].Add(recipe.name);
+    }
+
+    //Learns a recipe
+    public void LearnRecipe(string profession, string recipe)
+    {
+        if (!learnedRecipes.ContainsKey(profession))
+            learnedRecipes.Add(profession, new());
+        if (!learnedRecipes[profession].Contains(recipe))
+            learnedRecipes[profession].Add(recipe);
+    }
+
+    //Checks if the player can craft a recipe taking into
+    //consideration empty space in the player inventory and reagents required
+    public bool CanCraft(Recipe recipe)
+    {
+        var can = true;
+        foreach (var reagent in recipe.reagents)
+            if (inventory.items.Sum(x => x.name == reagent.Key ? x.amount : 0) < reagent.Value)
+                can = false;
+        if (!inventory.CanAddItems(recipe.results.Select(x => Item.items.Find(y => x.Key == y.name).CopyItem(x.Value)).ToList()))
+            can = false;
+        return can;
+    }
+
+    //Crafts a recipe and gives player all the resulting benefits
+    public List<Item> Craft(Recipe recipe)
+    {
+        foreach (var reagent in recipe.reagents)
+        {
+            int left = reagent.Value;
+            var items = inventory.items.FindAll(x => x.name == reagent.Key);
+            for (int i = items.Count - 1; i >= 0 && left > 0; i--)
+            {
+                var temp = items[i].amount;
+                items[i].amount -= items[i].amount >= left ? left : items[i].amount;
+                if (items[i].amount <= 0)
+                    inventory.items.Remove(items[i]);
+                left -= temp;
+            }
+        }
+        var crafted = recipe.results.Select(x => Item.items.Find(y => x.Key == y.name).CopyItem(x.Value)).ToList();
+        return crafted;
     }
 
     #endregion

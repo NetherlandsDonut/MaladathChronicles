@@ -44,6 +44,8 @@ public class Defines
             lvlRequiredFastMounts = 40;
         if (lvlRequiredVeryFastMounts < 0)
             lvlRequiredVeryFastMounts = 60;
+        if (maxPrimaryProfessions < 0)
+            maxPrimaryProfessions = 2;
         if (markerCharacter == null || markerCharacter == "")
             markerCharacter ??= "_";
         if (textWrapEnding == null || textWrapEnding == "")
@@ -72,6 +74,9 @@ public class Defines
 
     //Default reputation standing for factions
     public int defaultStanding;
+
+    //Max amount of primary professions that player can have at once
+    public int maxPrimaryProfessions;
 
     //Text displayed when an input field is active, this 
     public string markerCharacter;

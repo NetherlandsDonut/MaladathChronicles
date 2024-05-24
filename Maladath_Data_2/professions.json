@@ -3,6 +3,15 @@
     "name": "Leatherworking",
     "icon": "TradeLeatherworking",
     "recipeType": "Pattern",
+    "primary": true,
+    "defaultRecipes": [
+      "Light Leather",
+      "Light Armor Kit",
+      "Handstitched Leather Vest",
+      "Handstitched Leather Cloak",
+      "Handstitched Leather Bracers",
+      "Handstitched Leather Boots"
+    ],
     "levels": [
       {
         "levelName": "Apprentice",
@@ -37,6 +46,13 @@
     "name": "Blacksmithing",
     "icon": "TradeBlacksmithing",
     "recipeType": "Plans",
+    "primary": true,
+    "defaultRecipes": [
+      "Rough Sharpening Stone",
+      "Rough Wightstone",
+      "Rough Copper Vest",
+      "Copper Bracers",
+    ],
     "levels": [
       {
         "levelName": "Apprentice",
@@ -71,6 +87,12 @@
     "name": "Alchemy",
     "icon": "TradeAlchemy",
     "recipeType": "Recipe",
+    "primary": true,
+    "defaultRecipes": [
+      "Minor Healing Potion",
+      "Elixir of Lion's Strength",
+      "Elixir of Minor Defense"
+    ],
     "levels": [
       {
         "levelName": "Apprentice",
@@ -105,6 +127,13 @@
     "name": "Tailoring",
     "icon": "TradeTailoring",
     "recipeType": "Pattern",
+    "primary": true,
+    "defaultRecipes": [
+      "Bolt of Linen Cloth",
+      "Brown Linen Shirt",
+      "Linen Cloak",
+      "Simple Linen Pants"
+    ],
     "levels": [
       {
         "levelName": "Apprentice",
@@ -139,6 +168,8 @@
     "name": "Enchanting",
     "icon": "TradeEnchanting",
     "recipeType": "Formula",
+    "primary": true,
+    "defaultRecipes": [],
     "levels": [
       {
         "levelName": "Apprentice",
@@ -173,6 +204,12 @@
     "name": "Engineering",
     "icon": "TradeEngineering",
     "recipeType": "Schematic",
+    "primary": true,
+    "defaultRecipes": [
+      "Rough Blasting Powder",
+      "Rough Dynamite",
+      "Crafted Light Shot"
+    ],
     "levels": [
       {
         "levelName": "Apprentice",
@@ -214,6 +251,11 @@
     "name": "Cooking",
     "icon": "TradeCooking",
     "recipeType": "Recipe",
+    "defaultRecipes": [
+      "Roasted Wolf Meat",
+      "Roasted Boar Meat",
+      "Crafted Light Shot"
+    ],
     "levels": [
       {
         "levelName": "Apprentice",
@@ -247,6 +289,7 @@
   {
     "name": "Fishing",
     "icon": "TradeFishing",
+    "defaultRecipes": [],
     "levels": [
       {
         "levelName": "Apprentice",
@@ -281,6 +324,9 @@
     "name": "First Aid",
     "icon": "TradeFirstAid",
     "recipeType": "Pattern",
+    "defaultRecipes": [
+      "Linen Bandage"
+    ],
     "levels": [
       {
         "levelName": "Apprentice",
@@ -314,6 +360,8 @@
   {
     "name": "Skinning",
     "icon": "TradeSkinning",
+    "primary": true,
+    "defaultRecipes": [],
     "levels": [
       {
         "levelName": "Apprentice",
@@ -347,6 +395,10 @@
   {
     "name": "Mining",
     "icon": "TradeMining",
+    "primary": true,
+    "defaultRecipes": [
+      "Smelt Copper"
+    ],
     "levels": [
       {
         "levelName": "Apprentice",
@@ -380,6 +432,8 @@
   {
     "name": "Herbalism",
     "icon": "TradeHerbalism",
+    "primary": true,
+    "defaultRecipes": [],
     "levels": [
       {
         "levelName": "Apprentice",

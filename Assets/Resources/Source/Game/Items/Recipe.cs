@@ -14,10 +14,17 @@ public class Recipe
     //Provides an icon for the recipe in the interface
     public string Icon()
     {
-        if (results.Count == 0) return "TradeEnchanting";
-        var find = Item.items.Find(x => x.name == results.Keys.First());
-        if (find != null) return find.icon;
-        return "OtherUnknown";
+        if (results.Count == 0)
+        {
+            if (name.Contains("Enchant")) return "AbilityGreaterHeal";
+            else return "OtherUnknown";
+        }
+        else
+        {
+            var find = Item.items.Find(x => x.name == results.Keys.First());
+            if (find != null) return find.icon;
+            return "OtherUnknown";
+        }
     }
 
     //Name of this recipe

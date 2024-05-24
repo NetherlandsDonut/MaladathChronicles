@@ -21,6 +21,12 @@ public class Profession
     //When not specified, player cannot learn recipes directly from trainers
     public string recipeType;
 
+    //Indicates whether this profession is a primary one
+    public bool primary;
+
+    //List of recipes player learns with the profession at start
+    public List<string> defaultRecipes;
+
     //All possible learnable levels of the profession
     public List<ProfessionLevel> levels;
 
@@ -28,7 +34,7 @@ public class Profession
     [NonSerialized] public int maxLevel;
 
     //Currently opened profession
-    public static Race profession;
+    public static Profession profession;
 
     //EXTERNAL FILE: List containing all professions in-game
     public static List<Profession> professions;
