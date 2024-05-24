@@ -2139,7 +2139,7 @@ public class Blueprint
                             (h) =>
                             {
                                 var mount = mounts[index + 6 * regionGroup.pagination];
-                                if (currentSave.player.mount != mount.name && currentSave.player.level >= (mount.speed == 7 ? 40 : 60))
+                                if (currentSave.player.mount != mount.name && currentSave.player.level >= (mount.speed == 7 ? defines.lvlRequiredFastMounts : defines.lvlRequiredVeryFastMounts))
                                 {
                                     currentSave.player.mount = mount.name;
                                     Respawn("MountCollection");
@@ -2154,7 +2154,7 @@ public class Blueprint
                                 PrintMountTooltip(currentSave.player, mount);
                             }
                         );
-                        if (currentSave.player.level < (mount.speed == 7 ? 40 : 60)) SetBigButtonToRed();
+                        if (currentSave.player.level < (mount.speed == 7 ? defines.lvlRequiredFastMounts : defines.lvlRequiredVeryFastMounts)) SetBigButtonToRed();
                     }
                     else
                     {
@@ -2219,7 +2219,7 @@ public class Blueprint
                                     PrintMountTooltip(currentSave.player, mount);
                                 }
                             );
-                            if (currentSave.player.level < (mount.speed == 7 ? 40 : 60))
+                            if (currentSave.player.level < (mount.speed == 7 ? defines.lvlRequiredFastMounts : defines.lvlRequiredVeryFastMounts))
                                 SetBigButtonToRed();
                         }
                         else if (mounts.Count == index + 6 * regionGroup.pagination)

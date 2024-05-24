@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 
 using static Root;
-using static Root.Anchor;
+using static Defines;
 
 using static SaveGame;
 
@@ -37,9 +37,9 @@ public class Mount
         AddPaddingRegion(() =>
         {
             AddBigButton(mount.icon, (h) => { });
-            if (currentSave.player.level < (mount.speed == 7 ? 40 : 60)) SetBigButtonToRed();
+            if (currentSave.player.level < (mount.speed == 7 ? defines.lvlRequiredFastMounts : defines.lvlRequiredVeryFastMounts)) SetBigButtonToRed();
             AddLine("Required level: ", "DarkGray");
-            AddText((mount.speed == 7 ? 40 : 60) + "", Coloring.ColorRequiredLevel(mount.speed == 7 ? 40 : 60));
+            AddText((mount.speed == 7 ? defines.lvlRequiredFastMounts : defines.lvlRequiredVeryFastMounts) + "", Coloring.ColorRequiredLevel(mount.speed == 7 ? defines.lvlRequiredFastMounts : defines.lvlRequiredVeryFastMounts));
             AddLine("Speed: ", "DarkGray");
             AddText(mount.speed == 7 ? "Fast" : (mount.speed == 9 ? "Very Fast" : "Normal"));
         });

@@ -40,6 +40,10 @@ public class Defines
             scoreForKilledElite = 10;
         if (defaultStanding < 0)
             defaultStanding = 4200;
+        if (lvlRequiredFastMounts < 0)
+            lvlRequiredFastMounts = 40;
+        if (lvlRequiredVeryFastMounts < 0)
+            lvlRequiredVeryFastMounts = 60;
         if (markerCharacter == null || markerCharacter == "")
             markerCharacter ??= "_";
         if (textWrapEnding == null || textWrapEnding == "")
@@ -63,6 +67,8 @@ public class Defines
     public int scoreForKilledCommon;
     public int scoreForKilledRare;
     public int scoreForKilledElite;
+    public int lvlRequiredFastMounts;
+    public int lvlRequiredVeryFastMounts;
 
     //Default reputation standing for factions
     public int defaultStanding;

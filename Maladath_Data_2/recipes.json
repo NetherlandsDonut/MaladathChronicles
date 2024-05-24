@@ -136,7 +136,7 @@
     "skillUpYellow": 50,
     "skillUpGreen": 70,
     "skillUpGray": 90,
-    "trainingCost": 50.0,
+    "trainingCost": 50,
     "learnedAt": 10,
     "reagents": {
       "Stringy Wolf Meat": 1,
@@ -263,7 +263,7 @@
     "skillUpYellow": 90,
     "skillUpGreen": 110,
     "skillUpGray": 130,
-    "trainingCost": 100.0,
+    "trainingCost": 100,
     "learnedAt": 50,
     "reagents": {
       "Coyote Meat": 1
@@ -327,7 +327,7 @@
     "skillUpYellow": 90,
     "skillUpGreen": 110,
     "skillUpGray": 130,
-    "trainingCost": 100.0,
+    "trainingCost": 100,
     "learnedAt": 50,
     "reagents": {
       "Clam Meat": 1,
@@ -440,7 +440,7 @@
     "skillUpYellow": 115,
     "skillUpGreen": 135,
     "skillUpGray": 155,
-    "trainingCost": 200.0,
+    "trainingCost": 200,
     "learnedAt": 75,
     "reagents": {
       "Crawler Meat": 1,
@@ -457,7 +457,7 @@
     "skillUpYellow": 120,
     "skillUpGreen": 140,
     "skillUpGray": 160,
-    "trainingCost": 150.0,
+    "trainingCost": 150,
     "learnedAt": 80,
     "reagents": {
       "Boar Ribs": 1,
@@ -506,7 +506,7 @@
     "skillUpYellow": 80,
     "skillUpGreen": 115,
     "skillUpGray": 150,
-    "trainingCost": 250.0,
+    "trainingCost": 250,
     "learnedAt": 80,
     "reagents": {
       "Wool Cloth": 1
@@ -522,7 +522,7 @@
     "skillUpYellow": 80,
     "skillUpGreen": 115,
     "skillUpGray": 150,
-    "trainingCost": 250.0,
+    "trainingCost": 250,
     "learnedAt": 80,
     "reagents": {
       "Small Venom Sac": 1
@@ -745,7 +745,7 @@
     "skillUpYellow": 115,
     "skillUpGreen": 150,
     "skillUpGray": 185,
-    "trainingCost": 1000.0,
+    "trainingCost": 1000,
     "learnedAt": 115,
     "reagents": {
       "Wool Cloth": 2
@@ -793,7 +793,7 @@
     "skillUpYellow": 165,
     "skillUpGreen": 185,
     "skillUpGray": 205,
-    "trainingCost": 300.0,
+    "trainingCost": 300,
     "learnedAt": 125,
     "reagents": {
       "Tangy Clam Meat": 1,
@@ -889,7 +889,7 @@
     "skillUpYellow": 150,
     "skillUpGreen": 180,
     "skillUpGray": 210,
-    "trainingCost": 5000.0,
+    "trainingCost": 5000,
     "learnedAt": 150,
     "reagents": {
       "Silk Cloth": 1
@@ -921,7 +921,7 @@
     "skillUpYellow": 215,
     "skillUpGreen": 235,
     "skillUpGray": 255,
-    "trainingCost": 450.0,
+    "trainingCost": 450,
     "learnedAt": 175,
     "reagents": {
       "Buzzard Wing": 1,
@@ -1146,7 +1146,7 @@
     "skillUpYellow": 240,
     "skillUpGreen": 260,
     "skillUpGray": 280,
-    "trainingCost": 4000.0,
+    "trainingCost": 4000,
     "learnedAt": 200,
     "reagents": {
       "White Spider Meat": 2
@@ -1575,7 +1575,7 @@
     "skillUpYellow": 50,
     "skillUpGreen": 70,
     "skillUpGray": 90,
-    "trainingCost": 50.0,
+    "trainingCost": 50,
     "learnedAt": 1,
     "reagents": {
       "Copper Bar": 4
@@ -1860,7 +1860,7 @@
     "skillUpYellow": 75,
     "skillUpGreen": 95,
     "skillUpGray": 115,
-    "trainingCost": 50.0,
+    "trainingCost": 50,
     "learnedAt": 10,
     "reagents": {
       "Simple Wood": 1,
@@ -1877,7 +1877,7 @@
     "skillUpYellow": 45,
     "skillUpGreen": 57,
     "skillUpGray": 70,
-    "trainingCost": 50.0,
+    "trainingCost": 50,
     "learnedAt": 10,
     "reagents": {
       "Bolt of Linen Cloth": 1,
@@ -1894,7 +1894,7 @@
     "skillUpYellow": 60,
     "skillUpGreen": 80,
     "skillUpGray": 100,
-    "trainingCost": 50.0,
+    "trainingCost": 50,
     "learnedAt": 15,
     "reagents": {
       "Peacebloom": 1,
@@ -1912,7 +1912,7 @@
     "skillUpYellow": 55,
     "skillUpGreen": 75,
     "skillUpGray": 95,
-    "trainingCost": 50.0,
+    "trainingCost": 50,
     "learnedAt": 15,
     "reagents": {
       "Copper Bar": 6,
@@ -1930,7 +1930,7 @@
     "skillUpYellow": 70,
     "skillUpGreen": 90,
     "skillUpGray": 110,
-    "trainingCost": 50.0,
+    "trainingCost": 50,
     "learnedAt": 15,
     "reagents": {
       "Strange Dust": 1
@@ -1944,7 +1944,7 @@
     "skillUpYellow": 45,
     "skillUpGreen": 60,
     "skillUpGray": 75,
-    "trainingCost": 50.0,
+    "trainingCost": 50,
     "learnedAt": 15,
     "reagents": {
       "Light Leather": 4,
@@ -1961,7 +1961,7 @@
     "skillUpYellow": 50,
     "skillUpGreen": 67,
     "skillUpGray": 85,
-    "trainingCost": 50.0,
+    "trainingCost": 50,
     "learnedAt": 15,
     "reagents": {
       "Bolt of Linen Cloth": 1,
@@ -1978,7 +1978,7 @@
     "skillUpYellow": 60,
     "skillUpGreen": 80,
     "skillUpGray": 100,
-    "trainingCost": 50.0,
+    "trainingCost": 50,
     "learnedAt": 20,
     "reagents": {
       "Copper Bar": 6,
@@ -1996,7 +1996,7 @@
     "skillUpYellow": 60,
     "skillUpGreen": 80,
     "skillUpGray": 100,
-    "trainingCost": 50.0,
+    "trainingCost": 50,
     "learnedAt": 20,
     "reagents": {
       "Copper Bar": 8
@@ -2025,7 +2025,7 @@
     "skillUpYellow": 50,
     "skillUpGreen": 67,
     "skillUpGray": 85,
-    "trainingCost": 50.0,
+    "trainingCost": 50,
     "learnedAt": 20,
     "reagents": {
       "Bolt of Linen Cloth": 2,
@@ -2043,7 +2043,7 @@
     "skillUpYellow": 65,
     "skillUpGreen": 85,
     "skillUpGray": 105,
-    "trainingCost": 100.0,
+    "trainingCost": 100,
     "learnedAt": 25,
     "reagents": {
       "Mageroyal": 1,
@@ -2061,7 +2061,7 @@
     "skillUpYellow": 65,
     "skillUpGreen": 85,
     "skillUpGray": 105,
-    "trainingCost": 50.0,
+    "trainingCost": 50,
     "learnedAt": 25,
     "reagents": {
       "Copper Bar": 6,
@@ -2079,7 +2079,7 @@
     "skillUpYellow": 45,
     "skillUpGreen": 65,
     "skillUpGray": 85,
-    "trainingCost": 100.0,
+    "trainingCost": 100,
     "learnedAt": 25,
     "reagents": {
       "Rough Stone": 2
@@ -2126,7 +2126,7 @@
     "skillUpYellow": 70,
     "skillUpGreen": 90,
     "skillUpGray": 110,
-    "trainingCost": 100.0,
+    "trainingCost": 100,
     "learnedAt": 30,
     "reagents": {
       "Copper Bar": 6,
@@ -2145,7 +2145,7 @@
     "skillUpYellow": 70,
     "skillUpGreen": 90,
     "skillUpGray": 110,
-    "trainingCost": 100.0,
+    "trainingCost": 100,
     "learnedAt": 30,
     "reagents": {
       "Copper Bar": 10,
@@ -2195,7 +2195,7 @@
     "skillUpYellow": 60,
     "skillUpGreen": 75,
     "skillUpGray": 90,
-    "trainingCost": 130.0,
+    "trainingCost": 130,
     "learnedAt": 30,
     "reagents": {
       "Copper Bar": 1,
@@ -2214,7 +2214,7 @@
     "skillUpYellow": 60,
     "skillUpGreen": 75,
     "skillUpGray": 90,
-    "trainingCost": 100.0,
+    "trainingCost": 100,
     "learnedAt": 30,
     "reagents": {
       "Light Leather": 4,
@@ -2231,7 +2231,7 @@
     "skillUpYellow": 60,
     "skillUpGreen": 75,
     "skillUpGray": 90,
-    "trainingCost": 100.0,
+    "trainingCost": 100,
     "learnedAt": 30,
     "reagents": {
       "Light Leather": 3,
@@ -2248,7 +2248,7 @@
     "skillUpYellow": 55,
     "skillUpGreen": 72,
     "skillUpGray": 90,
-    "trainingCost": 50.0,
+    "trainingCost": 50,
     "learnedAt": 30,
     "reagents": {
       "Bolt of Linen Cloth": 2,
@@ -2265,7 +2265,7 @@
     "skillUpYellow": 55,
     "skillUpGreen": 72,
     "skillUpGray": 90,
-    "trainingCost": 50.0,
+    "trainingCost": 50,
     "learnedAt": 30,
     "reagents": {
       "Bolt of Linen Cloth": 3,
@@ -2282,7 +2282,7 @@
     "skillUpYellow": 55,
     "skillUpGreen": 72,
     "skillUpGray": 90,
-    "trainingCost": 50.0,
+    "trainingCost": 50,
     "learnedAt": 30,
     "reagents": {
       "Bolt of Linen Cloth": 3,
@@ -2300,7 +2300,7 @@
     "skillUpYellow": 75,
     "skillUpGreen": 95,
     "skillUpGray": 115,
-    "trainingCost": 100.0,
+    "trainingCost": 100,
     "learnedAt": 35,
     "reagents": {
       "Copper Bar": 6
@@ -2316,7 +2316,7 @@
     "skillUpYellow": 75,
     "skillUpGreen": 95,
     "skillUpGray": 115,
-    "trainingCost": 250.0,
+    "trainingCost": 250,
     "learnedAt": 35,
     "reagents": {
       "Copper Bar": 12,
@@ -2353,7 +2353,7 @@
     "skillUpYellow": 55,
     "skillUpGreen": 65,
     "skillUpGray": 75,
-    "trainingCost": 50.0,
+    "trainingCost": 50,
     "learnedAt": 35,
     "reagents": {
       "Light Hide": 1,
@@ -2386,7 +2386,7 @@
     "skillUpYellow": 60,
     "skillUpGreen": 77,
     "skillUpGray": 95,
-    "trainingCost": 100.0,
+    "trainingCost": 100,
     "learnedAt": 35,
     "reagents": {
       "Bolt of Linen Cloth": 2,
@@ -2403,7 +2403,7 @@
     "skillUpYellow": 70,
     "skillUpGreen": 90,
     "skillUpGray": 110,
-    "trainingCost": 150.0,
+    "trainingCost": 150,
     "learnedAt": 40,
     "reagents": {
       "Mageroyal": 2,
@@ -2421,7 +2421,7 @@
     "skillUpYellow": 80,
     "skillUpGreen": 100,
     "skillUpGray": 120,
-    "trainingCost": 100.0,
+    "trainingCost": 100,
     "learnedAt": 40,
     "reagents": {
       "Copper Bar": 8,
@@ -2438,7 +2438,7 @@
     "skillUpYellow": 90,
     "skillUpGreen": 110,
     "skillUpGray": 130,
-    "trainingCost": 100.0,
+    "trainingCost": 100,
     "learnedAt": 40,
     "reagents": {
       "Strange Dust": 2,
@@ -2453,7 +2453,7 @@
     "skillUpYellow": 70,
     "skillUpGreen": 85,
     "skillUpGray": 100,
-    "trainingCost": 100.0,
+    "trainingCost": 100,
     "learnedAt": 40,
     "reagents": {
       "Light Leather": 8,
@@ -2504,7 +2504,7 @@
     "skillUpYellow": 65,
     "skillUpGreen": 82,
     "skillUpGray": 100,
-    "trainingCost": 50.0,
+    "trainingCost": 50,
     "learnedAt": 40,
     "reagents": {
       "Bolt of Linen Cloth": 2,
@@ -2522,7 +2522,7 @@
     "skillUpYellow": 65,
     "skillUpGreen": 82,
     "skillUpGray": 100,
-    "trainingCost": 50.0,
+    "trainingCost": 50,
     "learnedAt": 40,
     "reagents": {
       "Bolt of Linen Cloth": 2,
@@ -2540,7 +2540,7 @@
     "skillUpYellow": 65,
     "skillUpGreen": 82,
     "skillUpGray": 100,
-    "trainingCost": 50.0,
+    "trainingCost": 50,
     "learnedAt": 40,
     "reagents": {
       "Bolt of Linen Cloth": 2,
@@ -2559,7 +2559,7 @@
     "skillUpYellow": 85,
     "skillUpGreen": 105,
     "skillUpGray": 125,
-    "trainingCost": 200.0,
+    "trainingCost": 200,
     "learnedAt": 45,
     "reagents": {
       "Copper Bar": 8,
@@ -2577,7 +2577,7 @@
     "skillUpYellow": 95,
     "skillUpGreen": 115,
     "skillUpGray": 135,
-    "trainingCost": 100.0,
+    "trainingCost": 100,
     "learnedAt": 45,
     "reagents": {
       "Strange Dust": 1,
@@ -2609,7 +2609,7 @@
     "skillUpYellow": 70,
     "skillUpGreen": 87,
     "skillUpGray": 105,
-    "trainingCost": 100.0,
+    "trainingCost": 100,
     "learnedAt": 45,
     "reagents": {
       "Bolt of Linen Cloth": 3,
@@ -2626,7 +2626,7 @@
     "skillUpYellow": 80,
     "skillUpGreen": 100,
     "skillUpGray": 120,
-    "trainingCost": 250.0,
+    "trainingCost": 250,
     "learnedAt": 50,
     "reagents": {
       "Earthroot": 2,
@@ -2678,7 +2678,7 @@
     "skillUpYellow": 100,
     "skillUpGreen": 120,
     "skillUpGray": 140,
-    "trainingCost": 250.0,
+    "trainingCost": 250,
     "learnedAt": 50,
     "reagents": {
       "Strange Dust": 3
@@ -2692,7 +2692,7 @@
     "skillUpYellow": 80,
     "skillUpGreen": 95,
     "skillUpGray": 110,
-    "trainingCost": 150.0,
+    "trainingCost": 150,
     "learnedAt": 50,
     "reagents": {
       "Copper Bar": 2,
@@ -2709,7 +2709,7 @@
     "skillUpYellow": 80,
     "skillUpGreen": 95,
     "skillUpGray": 110,
-    "trainingCost": 150.0,
+    "trainingCost": 150,
     "learnedAt": 50,
     "reagents": {
       "Copper Tube": 1,
@@ -2727,7 +2727,7 @@
     "skillUpYellow": 70,
     "skillUpGreen": 80,
     "skillUpGray": 90,
-    "trainingCost": 150.0,
+    "trainingCost": 150,
     "learnedAt": 50,
     "reagents": {
       "Copper Bar": 6
@@ -2743,7 +2743,7 @@
     "skillUpYellow": 85,
     "skillUpGreen": 105,
     "skillUpGray": 125,
-    "trainingCost": 1000.0,
+    "trainingCost": 1000,
     "learnedAt": 55,
     "reagents": {
       "Minor Healing Potion": 1,
@@ -2760,7 +2760,7 @@
     "skillUpYellow": 85,
     "skillUpGreen": 100,
     "skillUpGray": 115,
-    "trainingCost": 100.0,
+    "trainingCost": 100,
     "learnedAt": 55,
     "reagents": {
       "Light Leather": 8,
@@ -2777,7 +2777,7 @@
     "skillUpYellow": 85,
     "skillUpGreen": 100,
     "skillUpGray": 115,
-    "trainingCost": 150.0,
+    "trainingCost": 150,
     "learnedAt": 55,
     "reagents": {
       "Light Leather": 3,
@@ -2879,7 +2879,7 @@
     "skillUpYellow": 105,
     "skillUpGreen": 125,
     "skillUpGray": 145,
-    "trainingCost": 250.0,
+    "trainingCost": 250,
     "learnedAt": 60,
     "reagents": {
       "Strange Dust": 2,
@@ -2907,7 +2907,7 @@
     "skillUpYellow": 90,
     "skillUpGreen": 105,
     "skillUpGray": 120,
-    "trainingCost": 200.0,
+    "trainingCost": 200,
     "learnedAt": 60,
     "reagents": {
       "Copper Tube": 1,
@@ -2925,7 +2925,7 @@
     "skillUpYellow": 90,
     "skillUpGreen": 105,
     "skillUpGray": 120,
-    "trainingCost": 100.0,
+    "trainingCost": 100,
     "learnedAt": 60,
     "reagents": {
       "Light Leather": 5,
@@ -2959,7 +2959,7 @@
     "skillUpYellow": 85,
     "skillUpGreen": 102,
     "skillUpGray": 120,
-    "trainingCost": 200.0,
+    "trainingCost": 200,
     "learnedAt": 60,
     "reagents": {
       "Bolt of Linen Cloth": 2,
@@ -2976,7 +2976,7 @@
     "skillUpYellow": 85,
     "skillUpGreen": 102,
     "skillUpGray": 120,
-    "trainingCost": 200.0,
+    "trainingCost": 200,
     "learnedAt": 60,
     "reagents": {
       "Bolt of Linen Cloth": 3,
@@ -2994,7 +2994,7 @@
     "skillUpYellow": 65,
     "skillUpGreen": 72,
     "skillUpGray": 80,
-    "trainingCost": 100.0,
+    "trainingCost": 100,
     "learnedAt": 65,
     "reagents": {
       "Coarse Stone": 1
@@ -3010,7 +3010,7 @@
     "skillUpYellow": 65,
     "skillUpGreen": 72,
     "skillUpGray": 80,
-    "trainingCost": 100.0,
+    "trainingCost": 100,
     "learnedAt": 65,
     "reagents": {
       "Coarse Stone": 1,
@@ -3027,7 +3027,7 @@
     "skillUpYellow": 105,
     "skillUpGreen": 125,
     "skillUpGray": 145,
-    "trainingCost": 300.0,
+    "trainingCost": 300,
     "learnedAt": 65,
     "reagents": {
       "Copper Bar": 12,
@@ -3063,7 +3063,7 @@
     "skillUpYellow": 65,
     "skillUpGreen": 90,
     "skillUpGray": 115,
-    "trainingCost": 200.0,
+    "trainingCost": 200,
     "learnedAt": 65,
     "reagents": {
       "Copper Bar": 1,
@@ -3078,7 +3078,7 @@
     "profession": "Mining",
     "skillUpGreen": 65,
     "skillUpGray": 75,
-    "trainingCost": 50.0,
+    "trainingCost": 50,
     "learnedAt": 65,
     "reagents": {
       "Tin Ore": 1
@@ -3094,7 +3094,7 @@
     "skillUpYellow": 90,
     "skillUpGreen": 107,
     "skillUpGray": 125,
-    "trainingCost": 200.0,
+    "trainingCost": 200,
     "learnedAt": 65,
     "reagents": {
       "Bolt of Linen Cloth": 3,
@@ -3112,7 +3112,7 @@
     "skillUpYellow": 110,
     "skillUpGreen": 130,
     "skillUpGray": 150,
-    "trainingCost": 200.0,
+    "trainingCost": 200,
     "learnedAt": 70,
     "reagents": {
       "Copper Bar": 10
@@ -3128,7 +3128,7 @@
     "skillUpYellow": 110,
     "skillUpGreen": 130,
     "skillUpGray": 150,
-    "trainingCost": 500.0,
+    "trainingCost": 500,
     "learnedAt": 70,
     "reagents": {
       "Copper Bar": 10,
@@ -3160,7 +3160,7 @@
     "skillUpYellow": 110,
     "skillUpGreen": 130,
     "skillUpGray": 150,
-    "trainingCost": 200.0,
+    "trainingCost": 200,
     "learnedAt": 70,
     "reagents": {
       "Strange Dust": 3,
@@ -3175,7 +3175,7 @@
     "skillUpYellow": 110,
     "skillUpGreen": 130,
     "skillUpGray": 150,
-    "trainingCost": 200.0,
+    "trainingCost": 200,
     "learnedAt": 70,
     "reagents": {
       "Simple Wood": 1,
@@ -3192,7 +3192,7 @@
     "skillUpYellow": 100,
     "skillUpGreen": 115,
     "skillUpGray": 130,
-    "trainingCost": 150.0,
+    "trainingCost": 150,
     "learnedAt": 70,
     "reagents": {
       "Light Leather": 6,
@@ -3209,7 +3209,7 @@
     "skillUpYellow": 95,
     "skillUpGreen": 112,
     "skillUpGray": 130,
-    "trainingCost": 300.0,
+    "trainingCost": 300,
     "learnedAt": 70,
     "reagents": {
       "Bolt of Linen Cloth": 4,
@@ -3227,7 +3227,7 @@
     "skillUpYellow": 95,
     "skillUpGreen": 112,
     "skillUpGray": 130,
-    "trainingCost": 200.0,
+    "trainingCost": 200,
     "learnedAt": 70,
     "reagents": {
       "Bolt of Linen Cloth": 3,
@@ -3245,7 +3245,7 @@
     "skillUpYellow": 95,
     "skillUpGreen": 112,
     "skillUpGray": 130,
-    "trainingCost": 300.0,
+    "trainingCost": 300,
     "learnedAt": 70,
     "reagents": {
       "Bolt of Linen Cloth": 4,
@@ -3296,7 +3296,7 @@
     "skillUpYellow": 75,
     "skillUpGreen": 87,
     "skillUpGray": 100,
-    "trainingCost": 250.0,
+    "trainingCost": 250,
     "learnedAt": 75,
     "reagents": {
       "Coarse Stone": 2
@@ -3330,7 +3330,7 @@
     "skillUpYellow": 85,
     "skillUpGreen": 90,
     "skillUpGray": 95,
-    "trainingCost": 250.0,
+    "trainingCost": 250,
     "learnedAt": 75,
     "reagents": {
       "Coarse Stone": 1
@@ -3346,7 +3346,7 @@
     "skillUpYellow": 85,
     "skillUpGreen": 90,
     "skillUpGray": 95,
-    "trainingCost": 250.0,
+    "trainingCost": 250,
     "learnedAt": 75,
     "reagents": {
       "Coarse Blasting Powder": 1,
@@ -3363,7 +3363,7 @@
     "skillUpYellow": 90,
     "skillUpGreen": 97,
     "skillUpGray": 105,
-    "trainingCost": 250.0,
+    "trainingCost": 250,
     "learnedAt": 75,
     "reagents": {
       "Coarse Blasting Powder": 3,
@@ -3397,7 +3397,7 @@
     "skillUpYellow": 105,
     "skillUpGreen": 120,
     "skillUpGray": 135,
-    "trainingCost": 200.0,
+    "trainingCost": 200,
     "learnedAt": 75,
     "reagents": {
       "Cured Light Hide": 1,
@@ -3415,7 +3415,7 @@
     "skillUpYellow": 100,
     "skillUpGreen": 112,
     "skillUpGray": 125,
-    "trainingCost": 200.0,
+    "trainingCost": 200,
     "learnedAt": 75,
     "reagents": {
       "Silver Ore": 1
@@ -3431,7 +3431,7 @@
     "skillUpYellow": 100,
     "skillUpGreen": 117,
     "skillUpGray": 135,
-    "trainingCost": 250.0,
+    "trainingCost": 250,
     "learnedAt": 75,
     "reagents": {
       "Bolt of Woolen Cloth": 1,
@@ -3448,7 +3448,7 @@
     "skillUpYellow": 90,
     "skillUpGreen": 97,
     "skillUpGray": 105,
-    "trainingCost": 100.0,
+    "trainingCost": 100,
     "learnedAt": 75,
     "reagents": {
       "Wool Cloth": 3
@@ -3464,7 +3464,7 @@
     "skillUpYellow": 100,
     "skillUpGreen": 117,
     "skillUpGray": 135,
-    "trainingCost": 300.0,
+    "trainingCost": 300,
     "learnedAt": 75,
     "reagents": {
       "Bolt of Linen Cloth": 4,
@@ -3481,7 +3481,7 @@
     "skillUpYellow": 80,
     "skillUpGreen": 90,
     "skillUpGray": 100,
-    "trainingCost": 250.0,
+    "trainingCost": 250,
     "learnedAt": 80,
     "reagents": {
       "Oily Blackmouth": 2,
@@ -3542,7 +3542,7 @@
     "skillUpYellow": 115,
     "skillUpGreen": 135,
     "skillUpGray": 155,
-    "trainingCost": 400.0,
+    "trainingCost": 400,
     "learnedAt": 80,
     "reagents": {
       "Strange Dust": 2,
@@ -3570,7 +3570,7 @@
     "skillUpYellow": 110,
     "skillUpGreen": 125,
     "skillUpGray": 140,
-    "trainingCost": 300.0,
+    "trainingCost": 300,
     "learnedAt": 80,
     "reagents": {
       "Light Leather": 6,
@@ -3587,7 +3587,7 @@
     "skillUpYellow": 105,
     "skillUpGreen": 122,
     "skillUpGray": 140,
-    "trainingCost": 200.0,
+    "trainingCost": 200,
     "learnedAt": 80,
     "reagents": {
       "Bolt of Woolen Cloth": 3,
@@ -3604,7 +3604,7 @@
     "skillUpYellow": 105,
     "skillUpGreen": 122,
     "skillUpGray": 140,
-    "trainingCost": 300.0,
+    "trainingCost": 300,
     "learnedAt": 80,
     "reagents": {
       "Bolt of Linen Cloth": 5,
@@ -3622,7 +3622,7 @@
     "skillUpYellow": 115,
     "skillUpGreen": 130,
     "skillUpGray": 145,
-    "trainingCost": 300.0,
+    "trainingCost": 300,
     "learnedAt": 85,
     "reagents": {
       "Copper Modulator": 1,
@@ -3641,7 +3641,7 @@
     "skillUpYellow": 105,
     "skillUpGreen": 120,
     "skillUpGray": 135,
-    "trainingCost": 250.0,
+    "trainingCost": 250,
     "learnedAt": 85,
     "reagents": {
       "Light Leather": 10,
@@ -3658,7 +3658,7 @@
     "skillUpYellow": 115,
     "skillUpGreen": 130,
     "skillUpGray": 145,
-    "trainingCost": 350.0,
+    "trainingCost": 350,
     "learnedAt": 85,
     "reagents": {
       "Cured Light Hide": 3,
@@ -3676,7 +3676,7 @@
     "skillUpYellow": 110,
     "skillUpGreen": 127,
     "skillUpGray": 145,
-    "trainingCost": 300.0,
+    "trainingCost": 300,
     "learnedAt": 85,
     "reagents": {
       "Bolt of Woolen Cloth": 2,
@@ -3694,7 +3694,7 @@
     "skillUpYellow": 110,
     "skillUpGreen": 127,
     "skillUpGray": 145,
-    "trainingCost": 400.0,
+    "trainingCost": 400,
     "learnedAt": 85,
     "reagents": {
       "Bolt of Woolen Cloth": 3,
@@ -3711,7 +3711,7 @@
     "skillUpYellow": 120,
     "skillUpGreen": 140,
     "skillUpGray": 160,
-    "trainingCost": 500.0,
+    "trainingCost": 500,
     "learnedAt": 90,
     "reagents": {
       "Mageroyal": 1,
@@ -3729,7 +3729,7 @@
     "skillUpYellow": 120,
     "skillUpGreen": 140,
     "skillUpGray": 160,
-    "trainingCost": 450.0,
+    "trainingCost": 450,
     "learnedAt": 90,
     "reagents": {
       "Stranglekelp": 1,
@@ -3781,7 +3781,7 @@
     "skillUpYellow": 115,
     "skillUpGreen": 127,
     "skillUpGray": 140,
-    "trainingCost": 500.0,
+    "trainingCost": 500,
     "learnedAt": 90,
     "reagents": {
       "Copper Bar": 10,
@@ -3812,7 +3812,7 @@
     "skillUpYellow": 120,
     "skillUpGreen": 140,
     "skillUpGray": 160,
-    "trainingCost": 500.0,
+    "trainingCost": 500,
     "learnedAt": 90,
     "reagents": {
       "Strange Dust": 2,
@@ -3828,7 +3828,7 @@
     "skillUpYellow": 110,
     "skillUpGreen": 125,
     "skillUpGray": 140,
-    "trainingCost": 300.0,
+    "trainingCost": 300,
     "learnedAt": 90,
     "reagents": {
       "Silver Bar": 1
@@ -3912,7 +3912,7 @@
     "skillUpYellow": 115,
     "skillUpGreen": 132,
     "skillUpGray": 150,
-    "trainingCost": 400.0,
+    "trainingCost": 400,
     "learnedAt": 90,
     "reagents": {
       "Bolt of Woolen Cloth": 3,
@@ -3930,7 +3930,7 @@
     "skillUpYellow": 135,
     "skillUpGreen": 155,
     "skillUpGray": 175,
-    "trainingCost": 500.0,
+    "trainingCost": 500,
     "learnedAt": 95,
     "reagents": {
       "Copper Bar": 14,
@@ -3949,7 +3949,7 @@
     "skillUpYellow": 125,
     "skillUpGreen": 140,
     "skillUpGray": 155,
-    "trainingCost": 200.0,
+    "trainingCost": 200,
     "learnedAt": 95,
     "reagents": {
       "Bronze Bar": 6,
@@ -3984,7 +3984,7 @@
     "skillUpYellow": 125,
     "skillUpGreen": 140,
     "skillUpGray": 155,
-    "trainingCost": 400.0,
+    "trainingCost": 400,
     "learnedAt": 95,
     "reagents": {
       "Light Leather": 10,
@@ -4002,7 +4002,7 @@
     "skillUpYellow": 120,
     "skillUpGreen": 137,
     "skillUpGray": 155,
-    "trainingCost": 300.0,
+    "trainingCost": 300,
     "learnedAt": 95,
     "reagents": {
       "Bolt of Woolen Cloth": 4,
@@ -4072,7 +4072,7 @@
     "skillUpYellow": 130,
     "skillUpGreen": 150,
     "skillUpGray": 170,
-    "trainingCost": 1000.0,
+    "trainingCost": 1000,
     "learnedAt": 100,
     "reagents": {
       "Swiftthistle": 1,
@@ -4090,7 +4090,7 @@
     "skillUpYellow": 135,
     "skillUpGreen": 150,
     "skillUpGray": 165,
-    "trainingCost": 600.0,
+    "trainingCost": 600,
     "learnedAt": 100,
     "reagents": {
       "Bronze Bar": 6,
@@ -4110,7 +4110,7 @@
     "skillUpYellow": 105,
     "skillUpGreen": 107,
     "skillUpGray": 110,
-    "trainingCost": 100.0,
+    "trainingCost": 100,
     "learnedAt": 100,
     "reagents": {
       "Silver Bar": 1,
@@ -4144,7 +4144,7 @@
     "skillUpYellow": 100,
     "skillUpGreen": 110,
     "skillUpGray": 120,
-    "trainingCost": 100.0,
+    "trainingCost": 100,
     "learnedAt": 100,
     "reagents": {
       "Silver Bar": 1,
@@ -4176,7 +4176,7 @@
     "skillUpYellow": 130,
     "skillUpGreen": 150,
     "skillUpGray": 170,
-    "trainingCost": 500.0,
+    "trainingCost": 500,
     "learnedAt": 100,
     "reagents": {
       "Strange Dust": 4,
@@ -4204,7 +4204,7 @@
     "skillUpYellow": 130,
     "skillUpGreen": 150,
     "skillUpGray": 170,
-    "trainingCost": 1000.0,
+    "trainingCost": 1000,
     "learnedAt": 100,
     "reagents": {
       "Silver Rod": 1,
@@ -4257,7 +4257,7 @@
     "skillUpYellow": 130,
     "skillUpGreen": 145,
     "skillUpGray": 160,
-    "trainingCost": 400.0,
+    "trainingCost": 400,
     "learnedAt": 100,
     "reagents": {
       "Light Leather": 6,
@@ -4274,7 +4274,7 @@
     "skillUpYellow": 115,
     "skillUpGreen": 122,
     "skillUpGray": 130,
-    "trainingCost": 300.0,
+    "trainingCost": 300,
     "learnedAt": 100,
     "reagents": {
       "Bronze Bar": 1,
@@ -4308,7 +4308,7 @@
     "skillUpYellow": 115,
     "skillUpGreen": 122,
     "skillUpGray": 130,
-    "trainingCost": 250.0,
+    "trainingCost": 250,
     "learnedAt": 100,
     "reagents": {
       "Medium Leather": 4,
@@ -4325,7 +4325,7 @@
     "skillUpYellow": 125,
     "skillUpGreen": 137,
     "skillUpGray": 150,
-    "trainingCost": 350.0,
+    "trainingCost": 350,
     "learnedAt": 100,
     "reagents": {
       "Medium Leather": 4,
@@ -4377,7 +4377,7 @@
     "skillUpYellow": 115,
     "skillUpGreen": 122,
     "skillUpGray": 130,
-    "trainingCost": 200.0,
+    "trainingCost": 200,
     "learnedAt": 100,
     "reagents": {
       "Medium Hide": 1,
@@ -4411,7 +4411,7 @@
     "skillUpYellow": 100,
     "skillUpGreen": 105,
     "skillUpGray": 110,
-    "trainingCost": 500.0,
+    "trainingCost": 500,
     "learnedAt": 100,
     "reagents": {
       "Light Leather": 4
@@ -4445,7 +4445,7 @@
     "skillUpYellow": 110,
     "skillUpGreen": 120,
     "skillUpGray": 130,
-    "trainingCost": 200.0,
+    "trainingCost": 200,
     "learnedAt": 100,
     "reagents": {
       "Bolt of Woolen Cloth": 2,
@@ -4497,7 +4497,7 @@
     "skillUpYellow": 145,
     "skillUpGreen": 160,
     "skillUpGray": 175,
-    "trainingCost": 300.0,
+    "trainingCost": 300,
     "learnedAt": 105,
     "reagents": {
       "Bronze Bar": 6
@@ -4513,7 +4513,7 @@
     "skillUpYellow": 145,
     "skillUpGreen": 160,
     "skillUpGray": 175,
-    "trainingCost": 500.0,
+    "trainingCost": 500,
     "learnedAt": 105,
     "reagents": {
       "Bronze Bar": 7
@@ -4529,7 +4529,7 @@
     "skillUpYellow": 130,
     "skillUpGreen": 150,
     "skillUpGray": 170,
-    "trainingCost": 600.0,
+    "trainingCost": 600,
     "learnedAt": 105,
     "reagents": {
       "Lesser Astral Essence": 1,
@@ -4544,7 +4544,7 @@
     "skillUpYellow": 130,
     "skillUpGreen": 142,
     "skillUpGray": 155,
-    "trainingCost": 420.0,
+    "trainingCost": 420,
     "learnedAt": 105,
     "reagents": {
       "Copper Tube": 2,
@@ -4563,7 +4563,7 @@
     "skillUpYellow": 105,
     "skillUpGreen": 130,
     "skillUpGray": 155,
-    "trainingCost": 450.0,
+    "trainingCost": 450,
     "learnedAt": 105,
     "reagents": {
       "Copper Bar": 3,
@@ -4581,7 +4581,7 @@
     "skillUpYellow": 105,
     "skillUpGreen": 130,
     "skillUpGray": 155,
-    "trainingCost": 450.0,
+    "trainingCost": 450,
     "learnedAt": 105,
     "reagents": {
       "Bronze Bar": 2,
@@ -4666,7 +4666,7 @@
     "skillUpYellow": 135,
     "skillUpGreen": 155,
     "skillUpGray": 175,
-    "trainingCost": 4000.0,
+    "trainingCost": 4000,
     "learnedAt": 110,
     "reagents": {
       "Bruiseweed": 1,
@@ -4684,7 +4684,7 @@
     "skillUpYellow": 140,
     "skillUpGreen": 155,
     "skillUpGray": 170,
-    "trainingCost": 200.0,
+    "trainingCost": 200,
     "learnedAt": 110,
     "reagents": {
       "Bronze Bar": 6,
@@ -4702,7 +4702,7 @@
     "skillUpYellow": 140,
     "skillUpGreen": 155,
     "skillUpGray": 170,
-    "trainingCost": 500.0,
+    "trainingCost": 500,
     "learnedAt": 110,
     "reagents": {
       "Bronze Bar": 5,
@@ -4720,7 +4720,7 @@
     "skillUpYellow": 140,
     "skillUpGreen": 155,
     "skillUpGray": 170,
-    "trainingCost": 800.0,
+    "trainingCost": 800,
     "learnedAt": 110,
     "reagents": {
       "Bronze Bar": 6,
@@ -4783,7 +4783,7 @@
     "skillUpYellow": 135,
     "skillUpGreen": 147,
     "skillUpGray": 160,
-    "trainingCost": 350.0,
+    "trainingCost": 350,
     "learnedAt": 110,
     "reagents": {
       "Medium Leather": 8,
@@ -4801,7 +4801,7 @@
     "skillUpYellow": 135,
     "skillUpGreen": 152,
     "skillUpGray": 170,
-    "trainingCost": 500.0,
+    "trainingCost": 500,
     "learnedAt": 110,
     "reagents": {
       "Bolt of Woolen Cloth": 3,
@@ -4818,7 +4818,7 @@
     "skillUpYellow": 135,
     "skillUpGreen": 152,
     "skillUpGray": 170,
-    "trainingCost": 500.0,
+    "trainingCost": 500,
     "learnedAt": 110,
     "reagents": {
       "Bolt of Woolen Cloth": 5,
@@ -4835,7 +4835,7 @@
     "skillUpYellow": 135,
     "skillUpGreen": 152,
     "skillUpGray": 170,
-    "trainingCost": 250.0,
+    "trainingCost": 250,
     "learnedAt": 110,
     "reagents": {
       "Bolt of Woolen Cloth": 3,
@@ -4853,7 +4853,7 @@
     "skillUpYellow": 135,
     "skillUpGreen": 152,
     "skillUpGray": 170,
-    "trainingCost": 250.0,
+    "trainingCost": 250,
     "learnedAt": 110,
     "reagents": {
       "Bolt of Woolen Cloth": 3,
@@ -4871,7 +4871,7 @@
     "skillUpYellow": 145,
     "skillUpGreen": 160,
     "skillUpGray": 175,
-    "trainingCost": 200.0,
+    "trainingCost": 200,
     "learnedAt": 115,
     "reagents": {
       "Bronze Bar": 7,
@@ -4889,7 +4889,7 @@
     "skillUpYellow": 140,
     "skillUpGreen": 160,
     "skillUpGray": 180,
-    "trainingCost": 800.0,
+    "trainingCost": 800,
     "learnedAt": 115,
     "reagents": {
       "Strange Dust": 6,
@@ -4919,7 +4919,7 @@
     "skillUpYellow": 140,
     "skillUpGreen": 152,
     "skillUpGray": 165,
-    "trainingCost": 400.0,
+    "trainingCost": 400,
     "learnedAt": 115,
     "reagents": {
       "Medium Leather": 12,
@@ -4988,7 +4988,7 @@
     "skillUpYellow": 145,
     "skillUpGreen": 165,
     "skillUpGray": 185,
-    "trainingCost": 1500.0,
+    "trainingCost": 1500,
     "learnedAt": 120,
     "reagents": {
       "Mageroyal": 1,
@@ -5023,7 +5023,7 @@
     "skillUpYellow": 150,
     "skillUpGreen": 165,
     "skillUpGray": 180,
-    "trainingCost": 500.0,
+    "trainingCost": 500,
     "learnedAt": 120,
     "reagents": {
       "Bronze Bar": 5,
@@ -5040,7 +5040,7 @@
     "skillUpYellow": 150,
     "skillUpGreen": 165,
     "skillUpGray": 180,
-    "trainingCost": 200.0,
+    "trainingCost": 200,
     "learnedAt": 120,
     "reagents": {
       "Bronze Bar": 5,
@@ -5058,7 +5058,7 @@
     "skillUpYellow": 145,
     "skillUpGreen": 165,
     "skillUpGray": 185,
-    "trainingCost": 1000.0,
+    "trainingCost": 1000,
     "learnedAt": 120,
     "reagents": {
       "Strange Dust": 4,
@@ -5135,7 +5135,7 @@
     "skillUpYellow": 120,
     "skillUpGreen": 145,
     "skillUpGray": 170,
-    "trainingCost": 500.0,
+    "trainingCost": 500,
     "learnedAt": 120,
     "reagents": {
       "Coarse Blasting Powder": 4,
@@ -5154,7 +5154,7 @@
     "skillUpYellow": 145,
     "skillUpGreen": 157,
     "skillUpGray": 170,
-    "trainingCost": 450.0,
+    "trainingCost": 450,
     "learnedAt": 120,
     "reagents": {
       "Medium Leather": 10,
@@ -5224,7 +5224,7 @@
     "skillUpYellow": 145,
     "skillUpGreen": 157,
     "skillUpGray": 170,
-    "trainingCost": 500.0,
+    "trainingCost": 500,
     "learnedAt": 120,
     "reagents": {
       "Elixir of Minor Agility": 1,
@@ -5312,7 +5312,7 @@
     "skillUpYellow": 150,
     "skillUpGreen": 170,
     "skillUpGray": 190,
-    "trainingCost": 1500.0,
+    "trainingCost": 1500,
     "learnedAt": 125,
     "reagents": {
       "Bruiseweed": 2,
@@ -5330,7 +5330,7 @@
     "skillUpYellow": 125,
     "skillUpGreen": 132,
     "skillUpGray": 140,
-    "trainingCost": 1000.0,
+    "trainingCost": 1000,
     "learnedAt": 125,
     "reagents": {
       "Heavy Stone": 1
@@ -5346,7 +5346,7 @@
     "skillUpYellow": 125,
     "skillUpGreen": 132,
     "skillUpGray": 140,
-    "trainingCost": 1000.0,
+    "trainingCost": 1000,
     "learnedAt": 125,
     "reagents": {
       "Heavy Stone": 1,
@@ -5400,7 +5400,7 @@
     "skillUpYellow": 125,
     "skillUpGreen": 137,
     "skillUpGray": 150,
-    "trainingCost": 1000.0,
+    "trainingCost": 1000,
     "learnedAt": 125,
     "reagents": {
       "Heavy Stone": 3
@@ -5416,7 +5416,7 @@
     "skillUpYellow": 155,
     "skillUpGreen": 170,
     "skillUpGray": 185,
-    "trainingCost": 250.0,
+    "trainingCost": 250,
     "learnedAt": 125,
     "reagents": {
       "Bronze Bar": 8,
@@ -5434,7 +5434,7 @@
     "skillUpYellow": 150,
     "skillUpGreen": 170,
     "skillUpGray": 190,
-    "trainingCost": 1250.0,
+    "trainingCost": 1250,
     "learnedAt": 125,
     "reagents": {
       "Fire Oil": 1,
@@ -5449,7 +5449,7 @@
     "skillUpYellow": 150,
     "skillUpGreen": 170,
     "skillUpGray": 190,
-    "trainingCost": 1400.0,
+    "trainingCost": 1400,
     "learnedAt": 125,
     "reagents": {
       "Strange Dust": 8
@@ -5477,7 +5477,7 @@
     "skillUpYellow": 125,
     "skillUpGreen": 150,
     "skillUpGray": 175,
-    "trainingCost": 500.0,
+    "trainingCost": 500,
     "learnedAt": 125,
     "reagents": {
       "Bronze Bar": 2,
@@ -5510,7 +5510,7 @@
     "skillUpYellow": 125,
     "skillUpGreen": 135,
     "skillUpGray": 145,
-    "trainingCost": 500.0,
+    "trainingCost": 500,
     "learnedAt": 125,
     "reagents": {
       "Heavy Stone": 1
@@ -5526,7 +5526,7 @@
     "skillUpYellow": 125,
     "skillUpGreen": 135,
     "skillUpGray": 145,
-    "trainingCost": 500.0,
+    "trainingCost": 500,
     "learnedAt": 125,
     "reagents": {
       "Heavy Blasting Powder": 2,
@@ -5543,7 +5543,7 @@
     "skillUpYellow": 125,
     "skillUpGreen": 135,
     "skillUpGray": 145,
-    "trainingCost": 300.0,
+    "trainingCost": 300,
     "learnedAt": 125,
     "reagents": {
       "Heavy Blasting Powder": 1,
@@ -5627,7 +5627,7 @@
     "skillUpYellow": 150,
     "skillUpGreen": 162,
     "skillUpGray": 175,
-    "trainingCost": 400.0,
+    "trainingCost": 400,
     "learnedAt": 125,
     "reagents": {
       "Fine Leather Belt": 1,
@@ -5646,7 +5646,7 @@
     "skillUpYellow": 150,
     "skillUpGreen": 162,
     "skillUpGray": 175,
-    "trainingCost": 500.0,
+    "trainingCost": 500,
     "learnedAt": 125,
     "reagents": {
       "Medium Leather": 8,
@@ -5664,7 +5664,7 @@
     "skillUpYellow": 130,
     "skillUpGreen": 135,
     "skillUpGray": 140,
-    "trainingCost": 500.0,
+    "trainingCost": 500,
     "learnedAt": 125,
     "reagents": {
       "Iron Ore": 1
@@ -5680,7 +5680,7 @@
     "skillUpYellow": 135,
     "skillUpGreen": 140,
     "skillUpGray": 145,
-    "trainingCost": 500.0,
+    "trainingCost": 500,
     "learnedAt": 125,
     "reagents": {
       "Silk Cloth": 4
@@ -5713,7 +5713,7 @@
     "skillUpYellow": 150,
     "skillUpGreen": 167,
     "skillUpGray": 185,
-    "trainingCost": 750.0,
+    "trainingCost": 750,
     "learnedAt": 125,
     "reagents": {
       "Bolt of Silk Cloth": 2,
@@ -5766,7 +5766,7 @@
     "skillUpYellow": 155,
     "skillUpGreen": 175,
     "skillUpGray": 195,
-    "trainingCost": 2000.0,
+    "trainingCost": 2000,
     "learnedAt": 130,
     "reagents": {
       "Wild Steelbloom": 1,
@@ -5784,7 +5784,7 @@
     "skillUpYellow": 150,
     "skillUpGreen": 160,
     "skillUpGray": 170,
-    "trainingCost": 1000.0,
+    "trainingCost": 1000,
     "learnedAt": 130,
     "reagents": {
       "Firefin Snapper": 2,
@@ -5819,7 +5819,7 @@
     "skillUpYellow": 160,
     "skillUpGreen": 175,
     "skillUpGray": 190,
-    "trainingCost": 1000.0,
+    "trainingCost": 1000,
     "learnedAt": 130,
     "reagents": {
       "Bronze Bar": 8,
@@ -5840,7 +5840,7 @@
     "skillUpYellow": 160,
     "skillUpGreen": 175,
     "skillUpGray": 190,
-    "trainingCost": 500.0,
+    "trainingCost": 500,
     "learnedAt": 130,
     "reagents": {
       "Bronze Bar": 6,
@@ -5858,7 +5858,7 @@
     "skillUpYellow": 160,
     "skillUpGreen": 175,
     "skillUpGray": 190,
-    "trainingCost": 500.0,
+    "trainingCost": 500,
     "learnedAt": 130,
     "reagents": {
       "Bronze Bar": 12,
@@ -5876,7 +5876,7 @@
     "skillUpYellow": 155,
     "skillUpGreen": 175,
     "skillUpGray": 195,
-    "trainingCost": 1500.0,
+    "trainingCost": 1500,
     "learnedAt": 130,
     "reagents": {
       "Lesser Astral Essence": 2,
@@ -5891,7 +5891,7 @@
     "skillUpYellow": 155,
     "skillUpGreen": 175,
     "skillUpGray": 195,
-    "trainingCost": 1500.0,
+    "trainingCost": 1500,
     "learnedAt": 130,
     "reagents": {
       "Soul Dust": 2
@@ -5905,7 +5905,7 @@
     "skillUpYellow": 155,
     "skillUpGreen": 167,
     "skillUpGray": 180,
-    "trainingCost": 550.0,
+    "trainingCost": 550,
     "learnedAt": 130,
     "reagents": {
       "Bronze Tube": 2,
@@ -5924,7 +5924,7 @@
     "skillUpYellow": 155,
     "skillUpGreen": 167,
     "skillUpGray": 180,
-    "trainingCost": 500.0,
+    "trainingCost": 500,
     "learnedAt": 130,
     "reagents": {
       "Cured Medium Hide": 1,
@@ -5942,7 +5942,7 @@
     "skillUpYellow": 150,
     "skillUpGreen": 165,
     "skillUpGray": 180,
-    "trainingCost": 750.0,
+    "trainingCost": 750,
     "learnedAt": 130,
     "reagents": {
       "Bolt of Woolen Cloth": 4,
@@ -5977,7 +5977,7 @@
     "skillUpYellow": 165,
     "skillUpGreen": 180,
     "skillUpGray": 195,
-    "trainingCost": 1000.0,
+    "trainingCost": 1000,
     "learnedAt": 135,
     "reagents": {
       "Bronze Bar": 8,
@@ -5995,7 +5995,7 @@
     "skillUpYellow": 165,
     "skillUpGreen": 180,
     "skillUpGray": 195,
-    "trainingCost": 500.0,
+    "trainingCost": 500,
     "learnedAt": 135,
     "reagents": {
       "Bronze Bar": 14,
@@ -6027,7 +6027,7 @@
     "skillUpYellow": 160,
     "skillUpGreen": 172,
     "skillUpGray": 185,
-    "trainingCost": 400.0,
+    "trainingCost": 400,
     "learnedAt": 135,
     "reagents": {
       "Bronze Tube": 2,
@@ -6062,7 +6062,7 @@
     "skillUpYellow": 160,
     "skillUpGreen": 172,
     "skillUpGray": 185,
-    "trainingCost": 500.0,
+    "trainingCost": 500,
     "learnedAt": 135,
     "reagents": {
       "Medium Leather": 4,
@@ -6133,7 +6133,7 @@
     "skillUpYellow": 155,
     "skillUpGreen": 170,
     "skillUpGray": 185,
-    "trainingCost": 1000.0,
+    "trainingCost": 1000,
     "learnedAt": 135,
     "reagents": {
       "Bolt of Silk Cloth": 2,
@@ -6168,7 +6168,7 @@
     "skillUpYellow": 165,
     "skillUpGreen": 185,
     "skillUpGray": 205,
-    "trainingCost": 3000.0,
+    "trainingCost": 3000,
     "learnedAt": 140,
     "reagents": {
       "Fire Oil": 2,
@@ -6223,7 +6223,7 @@
     "skillUpYellow": 165,
     "skillUpGreen": 185,
     "skillUpGray": 205,
-    "trainingCost": 2000.0,
+    "trainingCost": 2000,
     "learnedAt": 140,
     "reagents": {
       "Soul Dust": 2,
@@ -6251,7 +6251,7 @@
     "skillUpYellow": 165,
     "skillUpGreen": 185,
     "skillUpGray": 205,
-    "trainingCost": 2500.0,
+    "trainingCost": 2500,
     "learnedAt": 140,
     "reagents": {
       "Strange Dust": 2,
@@ -6267,7 +6267,7 @@
     "skillUpYellow": 140,
     "skillUpGreen": 165,
     "skillUpGray": 190,
-    "trainingCost": 600.0,
+    "trainingCost": 600,
     "learnedAt": 140,
     "reagents": {
       "Heavy Blasting Powder": 2,
@@ -6355,7 +6355,7 @@
     "skillUpYellow": 160,
     "skillUpGreen": 175,
     "skillUpGray": 190,
-    "trainingCost": 600.0,
+    "trainingCost": 600,
     "learnedAt": 140,
     "reagents": {
       "Bolt of Silk Cloth": 4,
@@ -6373,7 +6373,7 @@
     "skillUpYellow": 175,
     "skillUpGreen": 190,
     "skillUpGray": 205,
-    "trainingCost": 1000.0,
+    "trainingCost": 1000,
     "learnedAt": 145,
     "reagents": {
       "Bronze Bar": 20,
@@ -6431,7 +6431,7 @@
     "skillUpYellow": 170,
     "skillUpGreen": 190,
     "skillUpGray": 210,
-    "trainingCost": 2400.0,
+    "trainingCost": 2400,
     "learnedAt": 145,
     "reagents": {
       "Soul Dust": 3,
@@ -6446,7 +6446,7 @@
     "skillUpYellow": 170,
     "skillUpGreen": 190,
     "skillUpGray": 210,
-    "trainingCost": 2400.0,
+    "trainingCost": 2400,
     "learnedAt": 145,
     "reagents": {
       "Greater Astral Essence": 1,
@@ -6503,7 +6503,7 @@
     "skillUpYellow": 145,
     "skillUpGreen": 170,
     "skillUpGray": 195,
-    "trainingCost": 600.0,
+    "trainingCost": 600,
     "learnedAt": 145,
     "reagents": {
       "Bronze Bar": 2,
@@ -6539,7 +6539,7 @@
     "skillUpYellow": 170,
     "skillUpGreen": 182,
     "skillUpGray": 195,
-    "trainingCost": 500.0,
+    "trainingCost": 500,
     "learnedAt": 145,
     "reagents": {
       "Medium Leather": 14,
@@ -6592,7 +6592,7 @@
     "skillUpYellow": 155,
     "skillUpGreen": 160,
     "skillUpGray": 165,
-    "trainingCost": 600.0,
+    "trainingCost": 600,
     "learnedAt": 145,
     "reagents": {
       "Bolt of Silk Cloth": 2,
@@ -6696,7 +6696,7 @@
     "skillUpYellow": 150,
     "skillUpGreen": 152,
     "skillUpGray": 155,
-    "trainingCost": 250.0,
+    "trainingCost": 250,
     "learnedAt": 150,
     "reagents": {
       "Iron Bar": 1
@@ -6712,7 +6712,7 @@
     "skillUpYellow": 155,
     "skillUpGreen": 157,
     "skillUpGray": 160,
-    "trainingCost": 250.0,
+    "trainingCost": 250,
     "learnedAt": 150,
     "reagents": {
       "Gold Bar": 1,
@@ -6729,7 +6729,7 @@
     "skillUpYellow": 150,
     "skillUpGreen": 160,
     "skillUpGray": 170,
-    "trainingCost": 250.0,
+    "trainingCost": 250,
     "learnedAt": 150,
     "reagents": {
       "Gold Bar": 1,
@@ -6746,7 +6746,7 @@
     "skillUpYellow": 175,
     "skillUpGreen": 195,
     "skillUpGray": 215,
-    "trainingCost": 2500.0,
+    "trainingCost": 2500,
     "learnedAt": 150,
     "reagents": {
       "Greater Astral Essence": 2
@@ -6760,7 +6760,7 @@
     "skillUpYellow": 175,
     "skillUpGreen": 195,
     "skillUpGray": 215,
-    "trainingCost": 2500.0,
+    "trainingCost": 2500,
     "learnedAt": 150,
     "reagents": {
       "Greater Astral Essence": 1,
@@ -6776,7 +6776,7 @@
     "skillUpYellow": 175,
     "skillUpGreen": 195,
     "skillUpGray": 215,
-    "trainingCost": 2500.0,
+    "trainingCost": 2500,
     "learnedAt": 150,
     "reagents": {
       "Golden Rod": 1,
@@ -6812,7 +6812,7 @@
     "skillUpYellow": 175,
     "skillUpGreen": 187,
     "skillUpGray": 200,
-    "trainingCost": 750.0,
+    "trainingCost": 750,
     "learnedAt": 150,
     "reagents": {
       "Bronze Framework": 1,
@@ -6831,7 +6831,7 @@
     "skillUpYellow": 175,
     "skillUpGreen": 187,
     "skillUpGray": 200,
-    "trainingCost": 750.0,
+    "trainingCost": 750,
     "learnedAt": 150,
     "reagents": {
       "Medium Leather": 4,
@@ -6849,7 +6849,7 @@
     "skillUpYellow": 150,
     "skillUpGreen": 160,
     "skillUpGray": 170,
-    "trainingCost": 500.0,
+    "trainingCost": 500,
     "learnedAt": 150,
     "reagents": {
       "Bronze Bar": 2,
@@ -6867,7 +6867,7 @@
     "skillUpYellow": 150,
     "skillUpGreen": 170,
     "skillUpGray": 190,
-    "trainingCost": 1000.0,
+    "trainingCost": 1000,
     "learnedAt": 150,
     "reagents": {
       "Gold Bar": 1
@@ -6931,7 +6931,7 @@
     "skillUpYellow": 170,
     "skillUpGreen": 180,
     "skillUpGray": 190,
-    "trainingCost": 600.0,
+    "trainingCost": 600,
     "learnedAt": 150,
     "reagents": {
       "Heavy Leather": 5,
@@ -6965,7 +6965,7 @@
     "skillUpYellow": 170,
     "skillUpGreen": 180,
     "skillUpGray": 190,
-    "trainingCost": 750.0,
+    "trainingCost": 750,
     "learnedAt": 150,
     "reagents": {
       "Heavy Leather": 5,
@@ -6982,7 +6982,7 @@
     "skillUpYellow": 160,
     "skillUpGreen": 165,
     "skillUpGray": 170,
-    "trainingCost": 500.0,
+    "trainingCost": 500,
     "learnedAt": 150,
     "reagents": {
       "Heavy Hide": 1,
@@ -6999,7 +6999,7 @@
     "skillUpYellow": 170,
     "skillUpGreen": 180,
     "skillUpGray": 190,
-    "trainingCost": 500.0,
+    "trainingCost": 500,
     "learnedAt": 150,
     "reagents": {
       "Heavy Leather": 8,
@@ -7016,7 +7016,7 @@
     "skillUpYellow": 170,
     "skillUpGreen": 180,
     "skillUpGray": 190,
-    "trainingCost": 500.0,
+    "trainingCost": 500,
     "learnedAt": 150,
     "reagents": {
       "Heavy Leather": 8,
@@ -7033,7 +7033,7 @@
     "skillUpYellow": 150,
     "skillUpGreen": 155,
     "skillUpGray": 160,
-    "trainingCost": 1000.0,
+    "trainingCost": 1000,
     "learnedAt": 150,
     "reagents": {
       "Medium Leather": 5
@@ -7065,7 +7065,7 @@
     "skillUpYellow": 170,
     "skillUpGreen": 185,
     "skillUpGray": 200,
-    "trainingCost": 800.0,
+    "trainingCost": 800,
     "learnedAt": 150,
     "reagents": {
       "Bolt of Silk Cloth": 3,
@@ -7083,7 +7083,7 @@
     "skillUpYellow": 170,
     "skillUpGreen": 185,
     "skillUpGray": 200,
-    "trainingCost": 750.0,
+    "trainingCost": 750,
     "learnedAt": 150,
     "reagents": {
       "Bolt of Silk Cloth": 5,
@@ -7150,7 +7150,7 @@
     "skillUpYellow": 175,
     "skillUpGreen": 195,
     "skillUpGray": 215,
-    "trainingCost": 5000.0,
+    "trainingCost": 5000,
     "learnedAt": 155,
     "reagents": {
       "Liferoot": 1,
@@ -7187,7 +7187,7 @@
     "skillUpYellow": 180,
     "skillUpGreen": 192,
     "skillUpGray": 205,
-    "trainingCost": 5000.0,
+    "trainingCost": 5000,
     "learnedAt": 155,
     "reagents": {
       "Iron Bar": 8,
@@ -7222,7 +7222,7 @@
     "skillUpYellow": 175,
     "skillUpGreen": 195,
     "skillUpGray": 215,
-    "trainingCost": 2600.0,
+    "trainingCost": 2600,
     "learnedAt": 155,
     "reagents": {
       "Lesser Mystic Essence": 1,
@@ -7237,7 +7237,7 @@
     "skillUpYellow": 175,
     "skillUpGreen": 195,
     "skillUpGray": 215,
-    "trainingCost": 2600.0,
+    "trainingCost": 2600,
     "learnedAt": 155,
     "reagents": {
       "Small Glowing Shard": 1,
@@ -7252,7 +7252,7 @@
     "skillUpYellow": 175,
     "skillUpGreen": 195,
     "skillUpGray": 215,
-    "trainingCost": 2600.0,
+    "trainingCost": 2600,
     "learnedAt": 155,
     "reagents": {
       "Star Wood": 1,
@@ -7322,7 +7322,7 @@
     "skillUpYellow": 170,
     "skillUpGreen": 177,
     "skillUpGray": 185,
-    "trainingCost": 2500.0,
+    "trainingCost": 2500,
     "learnedAt": 155,
     "reagents": {
       "Gold Ore": 1
@@ -7355,7 +7355,7 @@
     "skillUpYellow": 180,
     "skillUpGreen": 200,
     "skillUpGray": 220,
-    "trainingCost": 5000.0,
+    "trainingCost": 5000,
     "learnedAt": 160,
     "reagents": {
       "Stranglekelp": 1,
@@ -7443,7 +7443,7 @@
     "skillUpYellow": 180,
     "skillUpGreen": 200,
     "skillUpGray": 220,
-    "trainingCost": 2800.0,
+    "trainingCost": 2800,
     "learnedAt": 160,
     "reagents": {
       "Soul Dust": 1,
@@ -7458,7 +7458,7 @@
     "skillUpYellow": 180,
     "skillUpGreen": 200,
     "skillUpGray": 220,
-    "trainingCost": 2700.0,
+    "trainingCost": 2700,
     "learnedAt": 160,
     "reagents": {
       "Soul Dust": 3
@@ -7472,7 +7472,7 @@
     "skillUpYellow": 160,
     "skillUpGreen": 170,
     "skillUpGray": 180,
-    "trainingCost": 800.0,
+    "trainingCost": 800,
     "learnedAt": 160,
     "reagents": {
       "Iron Bar": 2
@@ -7506,7 +7506,7 @@
     "skillUpYellow": 180,
     "skillUpGreen": 190,
     "skillUpGray": 200,
-    "trainingCost": 900.0,
+    "trainingCost": 900,
     "learnedAt": 160,
     "reagents": {
       "Cured Heavy Hide": 1,
@@ -7526,7 +7526,7 @@
     "skillUpYellow": 180,
     "skillUpGreen": 190,
     "skillUpGray": 200,
-    "trainingCost": 1000.0,
+    "trainingCost": 1000,
     "learnedAt": 160,
     "reagents": {
       "Heavy Leather": 12,
@@ -7574,7 +7574,7 @@
     "skillUpYellow": 180,
     "skillUpGreen": 190,
     "skillUpGray": 200,
-    "trainingCost": 900.0,
+    "trainingCost": 900,
     "learnedAt": 160,
     "reagents": {
       "Heavy Leather": 12,
@@ -7592,7 +7592,7 @@
     "skillUpYellow": 170,
     "skillUpGreen": 175,
     "skillUpGray": 180,
-    "trainingCost": 450.0,
+    "trainingCost": 450,
     "learnedAt": 160,
     "reagents": {
       "Bolt of Silk Cloth": 3,
@@ -7627,7 +7627,7 @@
     "skillUpYellow": 185,
     "skillUpGreen": 205,
     "skillUpGray": 225,
-    "trainingCost": 4500.0,
+    "trainingCost": 4500,
     "learnedAt": 165,
     "reagents": {
       "Fadeleaf": 1,
@@ -7679,7 +7679,7 @@
     "skillUpYellow": 190,
     "skillUpGreen": 202,
     "skillUpGray": 215,
-    "trainingCost": 1000.0,
+    "trainingCost": 1000,
     "learnedAt": 165,
     "reagents": {
       "Iron Bar": 6,
@@ -7713,7 +7713,7 @@
     "skillUpYellow": 185,
     "skillUpGreen": 205,
     "skillUpGray": 225,
-    "trainingCost": 2800.0,
+    "trainingCost": 2800,
     "learnedAt": 165,
     "reagents": {
       "Lesser Mystic Essence": 1
@@ -7816,7 +7816,7 @@
     "skillUpYellow": 165,
     "skillUpGreen": 165,
     "skillUpGray": 165,
-    "trainingCost": 2500.0,
+    "trainingCost": 2500,
     "learnedAt": 165,
     "reagents": {
       "Iron Bar": 1,
@@ -7887,7 +7887,7 @@
     "skillUpYellow": 195,
     "skillUpGreen": 207,
     "skillUpGray": 220,
-    "trainingCost": 1250.0,
+    "trainingCost": 1250,
     "learnedAt": 170,
     "reagents": {
       "Iron Bar": 12,
@@ -7922,7 +7922,7 @@
     "skillUpYellow": 190,
     "skillUpGreen": 210,
     "skillUpGray": 230,
-    "trainingCost": 2800.0,
+    "trainingCost": 2800,
     "learnedAt": 170,
     "reagents": {
       "Soul Dust": 4
@@ -7950,7 +7950,7 @@
     "skillUpYellow": 190,
     "skillUpGreen": 210,
     "skillUpGray": 230,
-    "trainingCost": 2800.0,
+    "trainingCost": 2800,
     "learnedAt": 170,
     "reagents": {
       "Soul Dust": 6
@@ -7964,7 +7964,7 @@
     "skillUpYellow": 170,
     "skillUpGreen": 190,
     "skillUpGray": 210,
-    "trainingCost": 900.0,
+    "trainingCost": 900,
     "learnedAt": 170,
     "reagents": {
       "Iron Bar": 1,
@@ -8051,7 +8051,7 @@
     "skillUpYellow": 180,
     "skillUpGreen": 185,
     "skillUpGray": 190,
-    "trainingCost": 450.0,
+    "trainingCost": 450,
     "learnedAt": 170,
     "reagents": {
       "Bolt of Silk Cloth": 3,
@@ -8069,7 +8069,7 @@
     "skillUpYellow": 190,
     "skillUpGreen": 205,
     "skillUpGray": 220,
-    "trainingCost": 810.0,
+    "trainingCost": 810,
     "learnedAt": 170,
     "reagents": {
       "Bolt of Silk Cloth": 3,
@@ -8121,7 +8121,7 @@
     "skillUpYellow": 190,
     "skillUpGreen": 205,
     "skillUpGray": 220,
-    "trainingCost": 810.0,
+    "trainingCost": 810,
     "learnedAt": 170,
     "reagents": {
       "Bolt of Silk Cloth": 3,
@@ -8139,7 +8139,7 @@
     "skillUpYellow": 195,
     "skillUpGreen": 215,
     "skillUpGray": 235,
-    "trainingCost": 5400.0,
+    "trainingCost": 5400,
     "learnedAt": 175,
     "reagents": {
       "Wild Steelbloom": 1,
@@ -8272,7 +8272,7 @@
     "skillUpYellow": 195,
     "skillUpGreen": 215,
     "skillUpGray": 235,
-    "trainingCost": 3000.0,
+    "trainingCost": 3000,
     "learnedAt": 175,
     "reagents": {
       "Lesser Mystic Essence": 1,
@@ -8287,7 +8287,7 @@
     "skillUpYellow": 195,
     "skillUpGreen": 215,
     "skillUpGray": 235,
-    "trainingCost": 3000.0,
+    "trainingCost": 3000,
     "learnedAt": 175,
     "reagents": {
       "Star Wood": 1,
@@ -8305,7 +8305,7 @@
     "skillUpYellow": 195,
     "skillUpGreen": 215,
     "skillUpGray": 235,
-    "trainingCost": 3000.0,
+    "trainingCost": 3000,
     "learnedAt": 175,
     "reagents": {
       "Star Wood": 1,
@@ -8323,7 +8323,7 @@
     "skillUpYellow": 175,
     "skillUpGreen": 195,
     "skillUpGray": 215,
-    "trainingCost": 1000.0,
+    "trainingCost": 1000,
     "learnedAt": 175,
     "reagents": {
       "Iron Bar": 1,
@@ -8341,7 +8341,7 @@
     "skillUpYellow": 175,
     "skillUpGreen": 195,
     "skillUpGray": 215,
-    "trainingCost": 1000.0,
+    "trainingCost": 1000,
     "learnedAt": 175,
     "reagents": {
       "Iron Strut": 2,
@@ -8360,7 +8360,7 @@
     "skillUpYellow": 175,
     "skillUpGreen": 185,
     "skillUpGray": 195,
-    "trainingCost": 1000.0,
+    "trainingCost": 1000,
     "learnedAt": 175,
     "reagents": {
       "Solid Stone": 2
@@ -8376,7 +8376,7 @@
     "skillUpYellow": 175,
     "skillUpGreen": 185,
     "skillUpGray": 195,
-    "trainingCost": 1000.0,
+    "trainingCost": 1000,
     "learnedAt": 175,
     "reagents": {
       "Solid Blasting Powder": 1,
@@ -8409,7 +8409,7 @@
     "skillUpYellow": 175,
     "skillUpGreen": 195,
     "skillUpGray": 215,
-    "trainingCost": 1000.0,
+    "trainingCost": 1000,
     "learnedAt": 175,
     "reagents": {
       "Steel Bar": 4
@@ -8491,7 +8491,7 @@
     "skillUpYellow": 195,
     "skillUpGreen": 205,
     "skillUpGray": 215,
-    "trainingCost": 1080.0,
+    "trainingCost": 1080,
     "learnedAt": 175,
     "reagents": {
       "Heavy Leather": 8,
@@ -8509,7 +8509,7 @@
     "skillUpYellow": 195,
     "skillUpGreen": 205,
     "skillUpGray": 215,
-    "trainingCost": 1350.0,
+    "trainingCost": 1350,
     "learnedAt": 175,
     "reagents": {
       "Heavy Leather": 10,
@@ -8544,7 +8544,7 @@
     "skillUpYellow": 175,
     "skillUpGreen": 175,
     "skillUpGray": 175,
-    "trainingCost": 5000.0,
+    "trainingCost": 5000,
     "learnedAt": 175,
     "reagents": {
       "Mithril Ore": 1
@@ -8577,7 +8577,7 @@
     "skillUpYellow": 180,
     "skillUpGreen": 182,
     "skillUpGray": 185,
-    "trainingCost": 900.0,
+    "trainingCost": 900,
     "learnedAt": 175,
     "reagents": {
       "Mageweave Cloth": 5
@@ -8629,7 +8629,7 @@
     "skillUpYellow": 195,
     "skillUpGreen": 210,
     "skillUpGray": 225,
-    "trainingCost": 900.0,
+    "trainingCost": 900,
     "learnedAt": 175,
     "reagents": {
       "Bolt of Silk Cloth": 4,
@@ -8649,7 +8649,7 @@
     "skillUpYellow": 195,
     "skillUpGreen": 210,
     "skillUpGray": 225,
-    "trainingCost": 900.0,
+    "trainingCost": 900,
     "learnedAt": 175,
     "reagents": {
       "Bolt of Silk Cloth": 4,
@@ -8685,7 +8685,7 @@
     "skillUpYellow": 195,
     "skillUpGreen": 210,
     "skillUpGray": 225,
-    "trainingCost": 900.0,
+    "trainingCost": 900,
     "learnedAt": 175,
     "reagents": {
       "Bolt of Silk Cloth": 4,
@@ -8740,7 +8740,7 @@
     "skillUpYellow": 205,
     "skillUpGreen": 217,
     "skillUpGray": 230,
-    "trainingCost": 7500.0,
+    "trainingCost": 7500,
     "learnedAt": 180,
     "reagents": {
       "Iron Bar": 20,
@@ -8778,7 +8778,7 @@
     "skillUpYellow": 205,
     "skillUpGreen": 217,
     "skillUpGray": 230,
-    "trainingCost": 7500.0,
+    "trainingCost": 7500,
     "learnedAt": 180,
     "reagents": {
       "Steel Bar": 10,
@@ -8798,7 +8798,7 @@
     "skillUpYellow": 200,
     "skillUpGreen": 220,
     "skillUpGray": 240,
-    "trainingCost": 3200.0,
+    "trainingCost": 3200,
     "learnedAt": 180,
     "reagents": {
       "Greater Mystic Essence": 1,
@@ -8813,7 +8813,7 @@
     "skillUpYellow": 200,
     "skillUpGreen": 220,
     "skillUpGray": 240,
-    "trainingCost": 3600.0,
+    "trainingCost": 3600,
     "learnedAt": 180,
     "reagents": {
       "Vision Dust": 1
@@ -8844,7 +8844,7 @@
     "skillUpYellow": 200,
     "skillUpGreen": 210,
     "skillUpGray": 220,
-    "trainingCost": 1080.0,
+    "trainingCost": 1080,
     "learnedAt": 180,
     "reagents": {
       "Cured Heavy Hide": 2,
@@ -8863,7 +8863,7 @@
     "skillUpYellow": 200,
     "skillUpGreen": 210,
     "skillUpGray": 220,
-    "trainingCost": 1800.0,
+    "trainingCost": 1800,
     "learnedAt": 180,
     "reagents": {
       "Heavy Leather": 6,
@@ -8899,7 +8899,7 @@
     "skillUpYellow": 200,
     "skillUpGreen": 215,
     "skillUpGray": 230,
-    "trainingCost": 900.0,
+    "trainingCost": 900,
     "learnedAt": 180,
     "reagents": {
       "Bolt of Silk Cloth": 5,
@@ -8934,7 +8934,7 @@
     "skillUpYellow": 205,
     "skillUpGreen": 225,
     "skillUpGray": 245,
-    "trainingCost": 5850.0,
+    "trainingCost": 5850,
     "learnedAt": 185,
     "reagents": {
       "Stranglekelp": 1,
@@ -8989,7 +8989,7 @@
     "skillUpYellow": 210,
     "skillUpGreen": 222,
     "skillUpGray": 235,
-    "trainingCost": 1000.0,
+    "trainingCost": 1000,
     "learnedAt": 185,
     "reagents": {
       "Steel Bar": 5,
@@ -9023,7 +9023,7 @@
     "skillUpYellow": 205,
     "skillUpGreen": 225,
     "skillUpGray": 245,
-    "trainingCost": 3800.0,
+    "trainingCost": 3800,
     "learnedAt": 185,
     "reagents": {
       "Greater Mystic Essence": 1
@@ -9037,7 +9037,7 @@
     "skillUpYellow": 185,
     "skillUpGreen": 205,
     "skillUpGray": 225,
-    "trainingCost": 1200.0,
+    "trainingCost": 1200,
     "learnedAt": 185,
     "reagents": {
       "Iron Strut": 1,
@@ -9125,7 +9125,7 @@
     "skillUpYellow": 205,
     "skillUpGreen": 215,
     "skillUpGray": 225,
-    "trainingCost": 1800.0,
+    "trainingCost": 1800,
     "learnedAt": 185,
     "reagents": {
       "Heavy Leather": 16,
@@ -9143,7 +9143,7 @@
     "skillUpYellow": 205,
     "skillUpGreen": 220,
     "skillUpGray": 235,
-    "trainingCost": 900.0,
+    "trainingCost": 900,
     "learnedAt": 185,
     "reagents": {
       "Bolt of Silk Cloth": 4,
@@ -9195,7 +9195,7 @@
     "skillUpYellow": 205,
     "skillUpGreen": 215,
     "skillUpGray": 225,
-    "trainingCost": 2250.0,
+    "trainingCost": 2250,
     "learnedAt": 185,
     "reagents": {
       "Bolt of Silk Cloth": 4,
@@ -9213,7 +9213,7 @@
     "skillUpYellow": 205,
     "skillUpGreen": 220,
     "skillUpGray": 235,
-    "trainingCost": 900.0,
+    "trainingCost": 900,
     "learnedAt": 185,
     "reagents": {
       "Bolt of Silk Cloth": 4,
@@ -9399,7 +9399,7 @@
     "skillUpYellow": 190,
     "skillUpGreen": 210,
     "skillUpGray": 230,
-    "trainingCost": 1400.0,
+    "trainingCost": 1400,
     "learnedAt": 190,
     "reagents": {
       "Iron Bar": 3,
@@ -9435,7 +9435,7 @@
     "skillUpYellow": 210,
     "skillUpGreen": 220,
     "skillUpGray": 230,
-    "trainingCost": 1800.0,
+    "trainingCost": 1800,
     "learnedAt": 190,
     "reagents": {
       "Heavy Leather": 14,
@@ -9471,7 +9471,7 @@
     "skillUpYellow": 210,
     "skillUpGreen": 220,
     "skillUpGray": 230,
-    "trainingCost": 2160.0,
+    "trainingCost": 2160,
     "learnedAt": 190,
     "reagents": {
       "Heavy Leather": 4,
@@ -9540,7 +9540,7 @@
     "skillUpYellow": 210,
     "skillUpGreen": 225,
     "skillUpGray": 240,
-    "trainingCost": 900.0,
+    "trainingCost": 900,
     "learnedAt": 190,
     "reagents": {
       "Bolt of Mageweave": 2,
@@ -9631,7 +9631,7 @@
     "skillUpYellow": 215,
     "skillUpGreen": 235,
     "skillUpGray": 255,
-    "trainingCost": 6750.0,
+    "trainingCost": 6750,
     "learnedAt": 195,
     "reagents": {
       "Wild Steelbloom": 1,
@@ -9698,7 +9698,7 @@
     "skillUpYellow": 215,
     "skillUpGreen": 235,
     "skillUpGray": 255,
-    "trainingCost": 4000.0,
+    "trainingCost": 4000,
     "learnedAt": 195,
     "reagents": {
       "Greater Mystic Essence": 2,
@@ -9730,7 +9730,7 @@
     "skillUpYellow": 195,
     "skillUpGreen": 215,
     "skillUpGray": 235,
-    "trainingCost": 1300.0,
+    "trainingCost": 1300,
     "learnedAt": 195,
     "reagents": {
       "Mithril Bar": 3
@@ -9763,7 +9763,7 @@
     "skillUpYellow": 215,
     "skillUpGreen": 225,
     "skillUpGray": 235,
-    "trainingCost": 2250.0,
+    "trainingCost": 2250,
     "learnedAt": 195,
     "reagents": {
       "Heavy Leather": 10,
@@ -9801,7 +9801,7 @@
     "skillUpYellow": 215,
     "skillUpGreen": 225,
     "skillUpGray": 235,
-    "trainingCost": 2700.0,
+    "trainingCost": 2700,
     "learnedAt": 195,
     "reagents": {
       "Bolt of Silk Cloth": 4,
@@ -9852,7 +9852,7 @@
     "skillUpYellow": 220,
     "skillUpGreen": 240,
     "skillUpGray": 260,
-    "trainingCost": 7200.0,
+    "trainingCost": 7200,
     "learnedAt": 200,
     "reagents": {
       "Goldthorn": 1,
@@ -9943,7 +9943,7 @@
     "skillUpYellow": 225,
     "skillUpGreen": 237,
     "skillUpGray": 250,
-    "trainingCost": 2500.0,
+    "trainingCost": 2500,
     "learnedAt": 200,
     "reagents": {
       "Steel Bar": 16,
@@ -9960,7 +9960,7 @@
     "skillUpYellow": 200,
     "skillUpGreen": 205,
     "skillUpGray": 210,
-    "trainingCost": 2500.0,
+    "trainingCost": 2500,
     "learnedAt": 200,
     "reagents": {
       "Solid Stone": 1
@@ -9976,7 +9976,7 @@
     "skillUpYellow": 200,
     "skillUpGreen": 205,
     "skillUpGray": 210,
-    "trainingCost": 2500.0,
+    "trainingCost": 2500,
     "learnedAt": 200,
     "reagents": {
       "Solid Stone": 4
@@ -9992,7 +9992,7 @@
     "skillUpYellow": 200,
     "skillUpGreen": 205,
     "skillUpGray": 210,
-    "trainingCost": 2500.0,
+    "trainingCost": 2500,
     "learnedAt": 200,
     "reagents": {
       "Solid Stone": 1,
@@ -10026,7 +10026,7 @@
     "skillUpYellow": 205,
     "skillUpGreen": 207,
     "skillUpGray": 210,
-    "trainingCost": 2500.0,
+    "trainingCost": 2500,
     "learnedAt": 200,
     "reagents": {
       "Truesilver Bar": 1,
@@ -10043,7 +10043,7 @@
     "skillUpYellow": 200,
     "skillUpGreen": 210,
     "skillUpGray": 220,
-    "trainingCost": 2500.0,
+    "trainingCost": 2500,
     "learnedAt": 200,
     "reagents": {
       "Truesilver Bar": 1,
@@ -10091,7 +10091,7 @@
     "skillUpYellow": 220,
     "skillUpGreen": 240,
     "skillUpGray": 260,
-    "trainingCost": 4000.0,
+    "trainingCost": 4000,
     "learnedAt": 200,
     "reagents": {
       "Vision Dust": 4,
@@ -10120,7 +10120,7 @@
     "skillUpYellow": 220,
     "skillUpGreen": 240,
     "skillUpGray": 260,
-    "trainingCost": 4000.0,
+    "trainingCost": 4000,
     "learnedAt": 200,
     "reagents": {
       "Greater Mystic Essence": 2,
@@ -10136,7 +10136,7 @@
     "skillUpYellow": 220,
     "skillUpGreen": 240,
     "skillUpGray": 260,
-    "trainingCost": 4000.0,
+    "trainingCost": 4000,
     "learnedAt": 200,
     "reagents": {
       "Truesilver Rod": 1,
@@ -10254,7 +10254,7 @@
     "skillUpYellow": 200,
     "skillUpGreen": 220,
     "skillUpGray": 240,
-    "trainingCost": 1500.0,
+    "trainingCost": 1500,
     "learnedAt": 200,
     "reagents": {
       "Mithril Bar": 1,
@@ -10272,7 +10272,7 @@
     "skillUpYellow": 200,
     "skillUpGreen": 220,
     "skillUpGray": 240,
-    "trainingCost": 1500.0,
+    "trainingCost": 1500,
     "learnedAt": 200,
     "reagents": {
       "Mithril Bar": 1,
@@ -10377,7 +10377,7 @@
     "skillUpYellow": 200,
     "skillUpGreen": 200,
     "skillUpGray": 200,
-    "trainingCost": 1800.0,
+    "trainingCost": 1800,
     "learnedAt": 200,
     "reagents": {
       "Thick Hide": 1,
@@ -10394,7 +10394,7 @@
     "skillUpYellow": 220,
     "skillUpGreen": 230,
     "skillUpGray": 240,
-    "trainingCost": 1800.0,
+    "trainingCost": 1800,
     "learnedAt": 200,
     "reagents": {
       "Thick Leather": 5,
@@ -10428,7 +10428,7 @@
     "skillUpYellow": 200,
     "skillUpGreen": 202,
     "skillUpGray": 205,
-    "trainingCost": 4000.0,
+    "trainingCost": 4000,
     "learnedAt": 200,
     "reagents": {
       "Heavy Leather": 6
@@ -10549,7 +10549,7 @@
     "skillUpYellow": 220,
     "skillUpGreen": 240,
     "skillUpGray": 260,
-    "trainingCost": 8100.0,
+    "trainingCost": 8100,
     "learnedAt": 205,
     "reagents": {
       "Khadgar's Whisker": 1,
@@ -10567,7 +10567,7 @@
     "skillUpYellow": 220,
     "skillUpGreen": 240,
     "skillUpGray": 260,
-    "trainingCost": 7200.0,
+    "trainingCost": 7200,
     "learnedAt": 205,
     "reagents": {
       "Firebloom": 1,
@@ -10585,7 +10585,7 @@
     "skillUpYellow": 225,
     "skillUpGreen": 235,
     "skillUpGray": 245,
-    "trainingCost": 5000.0,
+    "trainingCost": 5000,
     "learnedAt": 205,
     "reagents": {
       "Mithril Bar": 8,
@@ -10602,7 +10602,7 @@
     "skillUpYellow": 225,
     "skillUpGreen": 235,
     "skillUpGray": 245,
-    "trainingCost": 5000.0,
+    "trainingCost": 5000,
     "learnedAt": 205,
     "reagents": {
       "Mithril Bar": 6,
@@ -10655,7 +10655,7 @@
     "skillUpYellow": 225,
     "skillUpGreen": 245,
     "skillUpGray": 265,
-    "trainingCost": 4200.0,
+    "trainingCost": 4200,
     "learnedAt": 205,
     "reagents": {
       "Vision Dust": 3
@@ -10669,7 +10669,7 @@
     "skillUpYellow": 225,
     "skillUpGreen": 245,
     "skillUpGray": 265,
-    "trainingCost": 4200.0,
+    "trainingCost": 4200,
     "learnedAt": 205,
     "reagents": {
       "Lesser Nether Essence": 1
@@ -10683,7 +10683,7 @@
     "skillUpYellow": 225,
     "skillUpGreen": 235,
     "skillUpGray": 245,
-    "trainingCost": 1600.0,
+    "trainingCost": 1600,
     "learnedAt": 205,
     "reagents": {
       "Green Tinted Goggles": 1,
@@ -10702,7 +10702,7 @@
     "skillUpYellow": 225,
     "skillUpGreen": 235,
     "skillUpGray": 245,
-    "trainingCost": 1600.0,
+    "trainingCost": 1600,
     "learnedAt": 205,
     "reagents": {
       "Mithril Tube": 1,
@@ -10722,7 +10722,7 @@
     "skillUpYellow": 205,
     "skillUpGreen": 205,
     "skillUpGray": 205,
-    "trainingCost": 1000.0,
+    "trainingCost": 1000,
     "learnedAt": 205,
     "reagents": {
       "Blank Parchment": 1,
@@ -10739,7 +10739,7 @@
     "skillUpYellow": 225,
     "skillUpGreen": 235,
     "skillUpGray": 245,
-    "trainingCost": 1500.0,
+    "trainingCost": 1500,
     "learnedAt": 205,
     "reagents": {
       "Mithril Bar": 8,
@@ -10757,7 +10757,7 @@
     "skillUpYellow": 225,
     "skillUpGreen": 235,
     "skillUpGray": 245,
-    "trainingCost": 1500.0,
+    "trainingCost": 1500,
     "learnedAt": 205,
     "reagents": {
       "Mithril Bar": 8,
@@ -10775,7 +10775,7 @@
     "skillUpYellow": 205,
     "skillUpGreen": 225,
     "skillUpGray": 245,
-    "trainingCost": 1500.0,
+    "trainingCost": 1500,
     "learnedAt": 205,
     "reagents": {
       "Mageweave Cloth": 1,
@@ -10793,7 +10793,7 @@
     "skillUpYellow": 205,
     "skillUpGreen": 205,
     "skillUpGray": 205,
-    "trainingCost": 1500.0,
+    "trainingCost": 1500,
     "learnedAt": 205,
     "reagents": {
       "Blank Parchment": 1,
@@ -10810,7 +10810,7 @@
     "skillUpYellow": 225,
     "skillUpGreen": 235,
     "skillUpGray": 245,
-    "trainingCost": 1500.0,
+    "trainingCost": 1500,
     "learnedAt": 205,
     "reagents": {
       "Mithril Tube": 1,
@@ -10826,7 +10826,7 @@
   {
     "name": "The Mortar Reloaded",
     "profession": "Engineering",
-    "trainingCost": 1500.0,
+    "trainingCost": 1500,
     "learnedAt": 205,
     "reagents": {
       "Goblin Mortar": 1,
@@ -10881,7 +10881,7 @@
     "skillUpYellow": 225,
     "skillUpGreen": 235,
     "skillUpGray": 245,
-    "trainingCost": 2700.0,
+    "trainingCost": 2700,
     "learnedAt": 205,
     "reagents": {
       "Thick Leather": 7,
@@ -10898,7 +10898,7 @@
     "skillUpYellow": 225,
     "skillUpGreen": 235,
     "skillUpGray": 245,
-    "trainingCost": 2700.0,
+    "trainingCost": 2700,
     "learnedAt": 205,
     "reagents": {
       "Thick Leather": 5,
@@ -10951,7 +10951,7 @@
     "skillUpYellow": 220,
     "skillUpGreen": 235,
     "skillUpGray": 250,
-    "trainingCost": 3600.0,
+    "trainingCost": 3600,
     "learnedAt": 205,
     "reagents": {
       "Bolt of Mageweave": 2,
@@ -10968,7 +10968,7 @@
     "skillUpYellow": 220,
     "skillUpGreen": 235,
     "skillUpGray": 250,
-    "trainingCost": 3600.0,
+    "trainingCost": 3600,
     "learnedAt": 205,
     "reagents": {
       "Bolt of Mageweave": 2,
@@ -10985,7 +10985,7 @@
     "skillUpYellow": 220,
     "skillUpGreen": 235,
     "skillUpGray": 250,
-    "trainingCost": 3600.0,
+    "trainingCost": 3600,
     "learnedAt": 205,
     "reagents": {
       "Bolt of Mageweave": 2,
@@ -11002,7 +11002,7 @@
     "skillUpYellow": 220,
     "skillUpGreen": 235,
     "skillUpGray": 250,
-    "trainingCost": 3600.0,
+    "trainingCost": 3600,
     "learnedAt": 205,
     "reagents": {
       "Bolt of Mageweave": 2,
@@ -11069,7 +11069,7 @@
     "skillUpYellow": 230,
     "skillUpGreen": 240,
     "skillUpGray": 250,
-    "trainingCost": 5000.0,
+    "trainingCost": 5000,
     "learnedAt": 210,
     "reagents": {
       "Mithril Bar": 12
@@ -11101,7 +11101,7 @@
     "skillUpYellow": 235,
     "skillUpGreen": 247,
     "skillUpGray": 260,
-    "trainingCost": 10000.0,
+    "trainingCost": 10000,
     "learnedAt": 210,
     "reagents": {
       "Mithril Bar": 12,
@@ -11120,7 +11120,7 @@
     "skillUpYellow": 230,
     "skillUpGreen": 250,
     "skillUpGray": 270,
-    "trainingCost": 4400.0,
+    "trainingCost": 4400,
     "learnedAt": 210,
     "reagents": {
       "Lesser Nether Essence": 1,
@@ -11148,7 +11148,7 @@
     "skillUpYellow": 230,
     "skillUpGreen": 250,
     "skillUpGray": 270,
-    "trainingCost": 4400.0,
+    "trainingCost": 4400,
     "learnedAt": 210,
     "reagents": {
       "Lesser Nether Essence": 2
@@ -11162,7 +11162,7 @@
     "skillUpYellow": 210,
     "skillUpGreen": 230,
     "skillUpGray": 250,
-    "trainingCost": 1700.0,
+    "trainingCost": 1700,
     "learnedAt": 210,
     "reagents": {
       "Mithril Bar": 1,
@@ -11196,7 +11196,7 @@
     "skillUpYellow": 230,
     "skillUpGreen": 240,
     "skillUpGray": 250,
-    "trainingCost": 1500.0,
+    "trainingCost": 1500,
     "learnedAt": 210,
     "reagents": {
       "Fire Goggles": 1,
@@ -11216,7 +11216,7 @@
     "skillUpYellow": 230,
     "skillUpGreen": 240,
     "skillUpGray": 250,
-    "trainingCost": 1800.0,
+    "trainingCost": 1800,
     "learnedAt": 210,
     "reagents": {
       "Mithril Tube": 1,
@@ -11236,7 +11236,7 @@
     "skillUpYellow": 230,
     "skillUpGreen": 240,
     "skillUpGray": 250,
-    "trainingCost": 3000.0,
+    "trainingCost": 3000,
     "learnedAt": 210,
     "reagents": {
       "Thick Leather": 6,
@@ -11271,7 +11271,7 @@
     "skillUpYellow": 230,
     "skillUpGreen": 240,
     "skillUpGray": 250,
-    "trainingCost": 3150.0,
+    "trainingCost": 3150,
     "learnedAt": 210,
     "reagents": {
       "Thick Leather": 8,
@@ -11289,7 +11289,7 @@
     "skillUpYellow": 230,
     "skillUpGreen": 240,
     "skillUpGray": 250,
-    "trainingCost": 2700.0,
+    "trainingCost": 2700,
     "learnedAt": 210,
     "reagents": {
       "Thick Leather": 6,
@@ -11307,7 +11307,7 @@
     "skillUpYellow": 225,
     "skillUpGreen": 240,
     "skillUpGray": 255,
-    "trainingCost": 4500.0,
+    "trainingCost": 4500,
     "learnedAt": 210,
     "reagents": {
       "Bolt of Silk Cloth": 6,
@@ -11328,7 +11328,7 @@
     "skillUpYellow": 225,
     "skillUpGreen": 240,
     "skillUpGray": 255,
-    "trainingCost": 3600.0,
+    "trainingCost": 3600,
     "learnedAt": 210,
     "reagents": {
       "Bolt of Mageweave": 3,
@@ -11345,7 +11345,7 @@
     "skillUpYellow": 225,
     "skillUpGreen": 240,
     "skillUpGray": 255,
-    "trainingCost": 4500.0,
+    "trainingCost": 4500,
     "learnedAt": 210,
     "reagents": {
       "Bolt of Mageweave": 3,
@@ -11414,7 +11414,7 @@
     "skillUpYellow": 230,
     "skillUpGreen": 250,
     "skillUpGray": 270,
-    "trainingCost": 9000.0,
+    "trainingCost": 9000,
     "learnedAt": 215,
     "reagents": {
       "Sungrass": 1,
@@ -11432,7 +11432,7 @@
     "skillUpYellow": 230,
     "skillUpGreen": 250,
     "skillUpGray": 270,
-    "trainingCost": 9000.0,
+    "trainingCost": 9000,
     "learnedAt": 215,
     "reagents": {
       "Ichor of Undeath": 1,
@@ -11450,7 +11450,7 @@
     "skillUpYellow": 235,
     "skillUpGreen": 245,
     "skillUpGray": 255,
-    "trainingCost": 5000.0,
+    "trainingCost": 5000,
     "learnedAt": 215,
     "reagents": {
       "Steel Bar": 14,
@@ -11516,7 +11516,7 @@
     "skillUpYellow": 235,
     "skillUpGreen": 255,
     "skillUpGray": 275,
-    "trainingCost": 4600.0,
+    "trainingCost": 4600,
     "learnedAt": 215,
     "reagents": {
       "Vision Dust": 5
@@ -11544,7 +11544,7 @@
     "skillUpYellow": 215,
     "skillUpGreen": 235,
     "skillUpGray": 255,
-    "trainingCost": 1800.0,
+    "trainingCost": 1800,
     "learnedAt": 215,
     "reagents": {
       "Mithril Bar": 3
@@ -11560,7 +11560,7 @@
     "skillUpYellow": 215,
     "skillUpGreen": 235,
     "skillUpGray": 255,
-    "trainingCost": 1800.0,
+    "trainingCost": 1800,
     "learnedAt": 215,
     "reagents": {
       "Mithril Casing": 1,
@@ -11578,7 +11578,7 @@
     "skillUpYellow": 235,
     "skillUpGreen": 245,
     "skillUpGray": 255,
-    "trainingCost": 2000.0,
+    "trainingCost": 2000,
     "learnedAt": 215,
     "reagents": {
       "Dusky Belt": 1,
@@ -11631,7 +11631,7 @@
     "skillUpYellow": 230,
     "skillUpGreen": 245,
     "skillUpGray": 260,
-    "trainingCost": 4500.0,
+    "trainingCost": 4500,
     "learnedAt": 215,
     "reagents": {
       "Bolt of Mageweave": 2,
@@ -11648,7 +11648,7 @@
     "skillUpYellow": 230,
     "skillUpGreen": 245,
     "skillUpGray": 260,
-    "trainingCost": 4950.0,
+    "trainingCost": 4950,
     "learnedAt": 215,
     "reagents": {
       "Bolt of Mageweave": 3,
@@ -11717,7 +11717,7 @@
     "skillUpYellow": 220,
     "skillUpGreen": 225,
     "skillUpGray": 230,
-    "trainingCost": 2250.0,
+    "trainingCost": 2250,
     "learnedAt": 215,
     "reagents": {
       "Bolt of Mageweave": 1,
@@ -11838,7 +11838,7 @@
     "skillUpYellow": 240,
     "skillUpGreen": 260,
     "skillUpGray": 280,
-    "trainingCost": 4800.0,
+    "trainingCost": 4800,
     "learnedAt": 220,
     "reagents": {
       "Vision Dust": 6
@@ -12041,7 +12041,7 @@
     "skillUpYellow": 240,
     "skillUpGreen": 260,
     "skillUpGray": 280,
-    "trainingCost": 10000.0,
+    "trainingCost": 10000,
     "learnedAt": 225,
     "reagents": {
       "Mithril Bar": 1
@@ -12091,7 +12091,7 @@
     "skillUpYellow": 245,
     "skillUpGreen": 255,
     "skillUpGray": 265,
-    "trainingCost": 9000.0,
+    "trainingCost": 9000,
     "learnedAt": 225,
     "reagents": {
       "Mithril Bar": 10,
@@ -12225,7 +12225,7 @@
     "skillUpYellow": 245,
     "skillUpGreen": 265,
     "skillUpGray": 285,
-    "trainingCost": 5000.0,
+    "trainingCost": 5000,
     "learnedAt": 225,
     "reagents": {
       "Lesser Nether Essence": 2,
@@ -12240,7 +12240,7 @@
     "skillUpYellow": 245,
     "skillUpGreen": 265,
     "skillUpGray": 285,
-    "trainingCost": 5000.0,
+    "trainingCost": 5000,
     "learnedAt": 225,
     "reagents": {
       "Small Radiant Shard": 1,
@@ -12270,7 +12270,7 @@
     "skillUpYellow": 245,
     "skillUpGreen": 255,
     "skillUpGray": 265,
-    "trainingCost": 2200.0,
+    "trainingCost": 2200,
     "learnedAt": 225,
     "reagents": {
       "Black Mageweave Boots": 1,
@@ -12342,7 +12342,7 @@
     "skillUpYellow": 245,
     "skillUpGreen": 255,
     "skillUpGray": 265,
-    "trainingCost": 2200.0,
+    "trainingCost": 2200,
     "learnedAt": 225,
     "reagents": {
       "Black Mageweave Boots": 1,
@@ -12547,7 +12547,7 @@
     "skillUpYellow": 245,
     "skillUpGreen": 255,
     "skillUpGray": 265,
-    "trainingCost": 9000.0,
+    "trainingCost": 9000,
     "learnedAt": 225,
     "reagents": {
       "Thick Leather": 24,
@@ -12566,7 +12566,7 @@
     "skillUpYellow": 245,
     "skillUpGreen": 255,
     "skillUpGray": 265,
-    "trainingCost": 9000.0,
+    "trainingCost": 9000,
     "learnedAt": 225,
     "reagents": {
       "Thick Leather": 18,
@@ -12586,7 +12586,7 @@
     "skillUpYellow": 245,
     "skillUpGreen": 255,
     "skillUpGray": 265,
-    "trainingCost": 3240.0,
+    "trainingCost": 3240,
     "learnedAt": 225,
     "reagents": {
       "Thick Leather": 12,
@@ -12605,7 +12605,7 @@
     "skillUpYellow": 245,
     "skillUpGreen": 255,
     "skillUpGray": 265,
-    "trainingCost": 3240.0,
+    "trainingCost": 3240,
     "learnedAt": 225,
     "reagents": {
       "Thick Leather": 10,
@@ -12708,7 +12708,7 @@
     "skillUpYellow": 240,
     "skillUpGreen": 255,
     "skillUpGray": 270,
-    "trainingCost": 4500.0,
+    "trainingCost": 4500,
     "learnedAt": 225,
     "reagents": {
       "Bolt of Mageweave": 4,
@@ -12742,7 +12742,7 @@
     "skillUpYellow": 240,
     "skillUpGreen": 255,
     "skillUpGray": 270,
-    "trainingCost": 4500.0,
+    "trainingCost": 4500,
     "learnedAt": 225,
     "reagents": {
       "Bolt of Mageweave": 4,
@@ -12761,7 +12761,7 @@
     "skillUpYellow": 240,
     "skillUpGreen": 255,
     "skillUpGray": 270,
-    "trainingCost": 4500.0,
+    "trainingCost": 4500,
     "learnedAt": 225,
     "reagents": {
       "Bolt of Mageweave": 5,
@@ -12779,7 +12779,7 @@
     "skillUpYellow": 240,
     "skillUpGreen": 255,
     "skillUpGray": 270,
-    "trainingCost": 4500.0,
+    "trainingCost": 4500,
     "learnedAt": 225,
     "reagents": {
       "Bolt of Mageweave": 6,
@@ -12798,7 +12798,7 @@
     "skillUpYellow": 240,
     "skillUpGreen": 255,
     "skillUpGray": 270,
-    "trainingCost": 5400.0,
+    "trainingCost": 5400,
     "learnedAt": 225,
     "reagents": {
       "Bolt of Mageweave": 5,
@@ -12851,7 +12851,7 @@
     "skillUpYellow": 245,
     "skillUpGreen": 265,
     "skillUpGray": 285,
-    "trainingCost": 4500.0,
+    "trainingCost": 4500,
     "learnedAt": 230,
     "reagents": {
       "Arthas' Tears": 1,
@@ -12868,7 +12868,7 @@
     "skillUpYellow": 245,
     "skillUpGreen": 265,
     "skillUpGray": 285,
-    "trainingCost": 9000.0,
+    "trainingCost": 9000,
     "learnedAt": 230,
     "reagents": {
       "Purple Lotus": 3,
@@ -12901,7 +12901,7 @@
     "skillUpYellow": 250,
     "skillUpGreen": 260,
     "skillUpGray": 270,
-    "trainingCost": 15000.0,
+    "trainingCost": 15000,
     "learnedAt": 230,
     "reagents": {
       "Mithril Bar": 16
@@ -12917,7 +12917,7 @@
     "skillUpYellow": 250,
     "skillUpGreen": 260,
     "skillUpGray": 270,
-    "trainingCost": 15000.0,
+    "trainingCost": 15000,
     "learnedAt": 230,
     "reagents": {
       "Mithril Bar": 10,
@@ -12934,7 +12934,7 @@
     "skillUpYellow": 255,
     "skillUpGreen": 267,
     "skillUpGray": 280,
-    "trainingCost": 15000.0,
+    "trainingCost": 15000,
     "learnedAt": 230,
     "reagents": {
       "Mithril Bar": 16,
@@ -12954,7 +12954,7 @@
     "skillUpYellow": 250,
     "skillUpGreen": 270,
     "skillUpGray": 290,
-    "trainingCost": 5400.0,
+    "trainingCost": 5400,
     "learnedAt": 230,
     "reagents": {
       "Greater Nether Essence": 1,
@@ -12984,7 +12984,7 @@
     "skillUpYellow": 250,
     "skillUpGreen": 270,
     "skillUpGray": 290,
-    "trainingCost": 5400.0,
+    "trainingCost": 5400,
     "learnedAt": 230,
     "reagents": {
       "Greater Nether Essence": 1,
@@ -13018,7 +13018,7 @@
     "skillUpYellow": 250,
     "skillUpGreen": 260,
     "skillUpGray": 270,
-    "trainingCost": 2200.0,
+    "trainingCost": 2200,
     "learnedAt": 230,
     "reagents": {
       "Thick Leather": 6,
@@ -13035,7 +13035,7 @@
     "skillUpYellow": 230,
     "skillUpGreen": 250,
     "skillUpGray": 270,
-    "trainingCost": 2400.0,
+    "trainingCost": 2400,
     "learnedAt": 230,
     "reagents": {
       "Mithril Casing": 2,
@@ -13055,7 +13055,7 @@
     "skillUpYellow": 250,
     "skillUpGreen": 260,
     "skillUpGray": 270,
-    "trainingCost": 2400.0,
+    "trainingCost": 2400,
     "learnedAt": 230,
     "reagents": {
       "Mithril Casing": 1,
@@ -13076,7 +13076,7 @@
     "skillUpYellow": 250,
     "skillUpGreen": 260,
     "skillUpGray": 270,
-    "trainingCost": 4000.0,
+    "trainingCost": 4000,
     "learnedAt": 230,
     "reagents": {
       "Thick Leather": 14,
@@ -13093,7 +13093,7 @@
     "skillUpYellow": 250,
     "skillUpGreen": 260,
     "skillUpGray": 270,
-    "trainingCost": 4000.0,
+    "trainingCost": 4000,
     "learnedAt": 230,
     "reagents": {
       "Thick Leather": 14,
@@ -13111,7 +13111,7 @@
     "skillUpYellow": 250,
     "skillUpGreen": 260,
     "skillUpGray": 270,
-    "trainingCost": 9000.0,
+    "trainingCost": 9000,
     "learnedAt": 230,
     "reagents": {
       "Thick Leather": 20,
@@ -13159,7 +13159,7 @@
     "skillUpYellow": 245,
     "skillUpGreen": 260,
     "skillUpGray": 275,
-    "trainingCost": 6000.0,
+    "trainingCost": 6000,
     "learnedAt": 230,
     "reagents": {
       "Bolt of Mageweave": 3,
@@ -13176,7 +13176,7 @@
     "skillUpYellow": 245,
     "skillUpGreen": 260,
     "skillUpGray": 275,
-    "trainingCost": 6000.0,
+    "trainingCost": 6000,
     "learnedAt": 230,
     "reagents": {
       "Bolt of Mageweave": 3,
@@ -13194,7 +13194,7 @@
     "skillUpYellow": 245,
     "skillUpGreen": 260,
     "skillUpGray": 275,
-    "trainingCost": 6000.0,
+    "trainingCost": 6000,
     "learnedAt": 230,
     "reagents": {
       "Bolt of Mageweave": 3,
@@ -13228,7 +13228,7 @@
     "skillUpYellow": 250,
     "skillUpGreen": 270,
     "skillUpGray": 290,
-    "trainingCost": 9000.0,
+    "trainingCost": 9000,
     "learnedAt": 235,
     "reagents": {
       "Blindweed": 1,
@@ -13263,7 +13263,7 @@
     "skillUpYellow": 250,
     "skillUpGreen": 270,
     "skillUpGray": 290,
-    "trainingCost": 10800.0,
+    "trainingCost": 10800,
     "learnedAt": 235,
     "reagents": {
       "Blindweed": 1,
@@ -13314,7 +13314,7 @@
     "skillUpYellow": 255,
     "skillUpGreen": 265,
     "skillUpGray": 275,
-    "trainingCost": 20000.0,
+    "trainingCost": 20000,
     "learnedAt": 235,
     "reagents": {
       "Mithril Bar": 14,
@@ -13331,7 +13331,7 @@
     "skillUpYellow": 260,
     "skillUpGreen": 272,
     "skillUpGray": 285,
-    "trainingCost": 13500.0,
+    "trainingCost": 13500,
     "learnedAt": 235,
     "reagents": {
       "Mithril Bar": 24,
@@ -13381,7 +13381,7 @@
     "skillUpYellow": 255,
     "skillUpGreen": 275,
     "skillUpGray": 295,
-    "trainingCost": 5800.0,
+    "trainingCost": 5800,
     "learnedAt": 235,
     "reagents": {
       "Greater Nether Essence": 2
@@ -13395,7 +13395,7 @@
     "skillUpYellow": 235,
     "skillUpGreen": 255,
     "skillUpGray": 275,
-    "trainingCost": 2400.0,
+    "trainingCost": 2400,
     "learnedAt": 235,
     "reagents": {
       "Mithril Casing": 2,
@@ -13413,7 +13413,7 @@
     "skillUpYellow": 235,
     "skillUpGreen": 255,
     "skillUpGray": 275,
-    "trainingCost": 2600.0,
+    "trainingCost": 2600,
     "learnedAt": 235,
     "reagents": {
       "Mithril Casing": 1,
@@ -13432,7 +13432,7 @@
     "skillUpYellow": 255,
     "skillUpGreen": 265,
     "skillUpGray": 275,
-    "trainingCost": 2600.0,
+    "trainingCost": 2600,
     "learnedAt": 235,
     "reagents": {
       "Mithril Bar": 10,
@@ -13469,7 +13469,7 @@
     "skillUpYellow": 255,
     "skillUpGreen": 265,
     "skillUpGray": 275,
-    "trainingCost": 4500.0,
+    "trainingCost": 4500,
     "learnedAt": 235,
     "reagents": {
       "Thick Leather": 14,
@@ -13487,7 +13487,7 @@
     "skillUpYellow": 255,
     "skillUpGreen": 265,
     "skillUpGray": 275,
-    "trainingCost": 4500.0,
+    "trainingCost": 4500,
     "learnedAt": 235,
     "reagents": {
       "Thick Leather": 16,
@@ -13520,7 +13520,7 @@
     "skillUpYellow": 250,
     "skillUpGreen": 265,
     "skillUpGray": 280,
-    "trainingCost": 5850.0,
+    "trainingCost": 5850,
     "learnedAt": 235,
     "reagents": {
       "Bolt of Mageweave": 5,
@@ -13538,7 +13538,7 @@
     "skillUpYellow": 240,
     "skillUpGreen": 245,
     "skillUpGray": 250,
-    "trainingCost": 5000.0,
+    "trainingCost": 5000,
     "learnedAt": 235,
     "reagents": {
       "Bolt of Mageweave": 3,
@@ -13574,7 +13574,7 @@
     "skillUpYellow": 250,
     "skillUpGreen": 265,
     "skillUpGray": 280,
-    "trainingCost": 6500.0,
+    "trainingCost": 6500,
     "learnedAt": 235,
     "reagents": {
       "Bolt of Mageweave": 4,
@@ -13626,7 +13626,7 @@
     "skillUpYellow": 255,
     "skillUpGreen": 275,
     "skillUpGray": 295,
-    "trainingCost": 10800.0,
+    "trainingCost": 10800,
     "learnedAt": 240,
     "reagents": {
       "Sungrass": 1,
@@ -13698,7 +13698,7 @@
     "skillUpYellow": 260,
     "skillUpGreen": 280,
     "skillUpGray": 300,
-    "trainingCost": 6200.0,
+    "trainingCost": 6200,
     "learnedAt": 240,
     "reagents": {
       "Large Radiant Shard": 2,
@@ -13713,7 +13713,7 @@
     "skillUpYellow": 260,
     "skillUpGreen": 280,
     "skillUpGray": 300,
-    "trainingCost": 6200.0,
+    "trainingCost": 6200,
     "learnedAt": 240,
     "reagents": {
       "Dream Dust": 2,
@@ -13745,7 +13745,7 @@
     "skillUpYellow": 260,
     "skillUpGreen": 270,
     "skillUpGray": 280,
-    "trainingCost": 2800.0,
+    "trainingCost": 2800,
     "learnedAt": 240,
     "reagents": {
       "Mithril Tube": 2,
@@ -13765,7 +13765,7 @@
     "skillUpYellow": 260,
     "skillUpGreen": 270,
     "skillUpGray": 280,
-    "trainingCost": 2800.0,
+    "trainingCost": 2800,
     "learnedAt": 240,
     "reagents": {
       "Mithril Tube": 2,
@@ -13869,7 +13869,7 @@
     "skillUpYellow": 255,
     "skillUpGreen": 270,
     "skillUpGray": 285,
-    "trainingCost": 6300.0,
+    "trainingCost": 6300,
     "learnedAt": 240,
     "reagents": {
       "Bolt of Mageweave": 6,
@@ -13971,7 +13971,7 @@
     "skillUpYellow": 265,
     "skillUpGreen": 275,
     "skillUpGray": 285,
-    "trainingCost": 9000.0,
+    "trainingCost": 9000,
     "learnedAt": 245,
     "reagents": {
       "Mithril Bar": 12,
@@ -14028,7 +14028,7 @@
     "skillUpYellow": 270,
     "skillUpGreen": 282,
     "skillUpGray": 295,
-    "trainingCost": 13500.0,
+    "trainingCost": 13500,
     "learnedAt": 245,
     "reagents": {
       "Mithril Bar": 28,
@@ -14068,7 +14068,7 @@
     "skillUpYellow": 265,
     "skillUpGreen": 285,
     "skillUpGray": 305,
-    "trainingCost": 6200.0,
+    "trainingCost": 6200,
     "learnedAt": 245,
     "reagents": {
       "Large Radiant Shard": 1,
@@ -14084,7 +14084,7 @@
     "skillUpYellow": 265,
     "skillUpGreen": 285,
     "skillUpGray": 305,
-    "trainingCost": 6200.0,
+    "trainingCost": 6200,
     "learnedAt": 245,
     "reagents": {
       "Large Radiant Shard": 2,
@@ -14112,7 +14112,7 @@
     "skillUpYellow": 245,
     "skillUpGreen": 265,
     "skillUpGray": 285,
-    "trainingCost": 2800.0,
+    "trainingCost": 2800,
     "learnedAt": 245,
     "reagents": {
       "Mithril Bar": 2,
@@ -14129,7 +14129,7 @@
     "skillUpYellow": 265,
     "skillUpGreen": 275,
     "skillUpGray": 285,
-    "trainingCost": 2800.0,
+    "trainingCost": 2800,
     "learnedAt": 245,
     "reagents": {
       "Thick Leather": 8,
@@ -14149,7 +14149,7 @@
     "skillUpYellow": 265,
     "skillUpGreen": 275,
     "skillUpGray": 285,
-    "trainingCost": 3000.0,
+    "trainingCost": 3000,
     "learnedAt": 245,
     "reagents": {
       "Goblin Construction Helmet": 1,
@@ -14219,7 +14219,7 @@
     "skillUpYellow": 260,
     "skillUpGreen": 275,
     "skillUpGray": 290,
-    "trainingCost": 7500.0,
+    "trainingCost": 7500,
     "learnedAt": 245,
     "reagents": {
       "Bolt of Mageweave": 5,
@@ -14304,7 +14304,7 @@
     "skillUpYellow": 265,
     "skillUpGreen": 285,
     "skillUpGray": 305,
-    "trainingCost": 12600.0,
+    "trainingCost": 12600,
     "learnedAt": 250,
     "reagents": {
       "Gromsblood": 2,
@@ -14321,7 +14321,7 @@
     "skillUpYellow": 250,
     "skillUpGreen": 255,
     "skillUpGray": 260,
-    "trainingCost": 13500.0,
+    "trainingCost": 13500,
     "learnedAt": 250,
     "reagents": {
       "Stonescale Eel": 1,
@@ -14403,7 +14403,7 @@
     "skillUpYellow": 275,
     "skillUpGreen": 287,
     "skillUpGray": 300,
-    "trainingCost": 13500.0,
+    "trainingCost": 13500,
     "learnedAt": 250,
     "reagents": {
       "Mithril Bar": 28,
@@ -14423,7 +14423,7 @@
     "skillUpYellow": 255,
     "skillUpGreen": 257,
     "skillUpGray": 260,
-    "trainingCost": 10000.0,
+    "trainingCost": 10000,
     "learnedAt": 250,
     "reagents": {
       "Dense Stone": 4
@@ -14439,7 +14439,7 @@
     "skillUpYellow": 255,
     "skillUpGreen": 257,
     "skillUpGray": 260,
-    "trainingCost": 10000.0,
+    "trainingCost": 10000,
     "learnedAt": 250,
     "reagents": {
       "Dense Stone": 1,
@@ -14456,7 +14456,7 @@
     "skillUpYellow": 255,
     "skillUpGreen": 257,
     "skillUpGray": 260,
-    "trainingCost": 10000.0,
+    "trainingCost": 10000,
     "learnedAt": 250,
     "reagents": {
       "Dense Stone": 1
@@ -14564,7 +14564,7 @@
     "skillUpYellow": 270,
     "skillUpGreen": 290,
     "skillUpGray": 310,
-    "trainingCost": 6500.0,
+    "trainingCost": 6500,
     "learnedAt": 250,
     "reagents": {
       "Large Radiant Shard": 2,
@@ -14579,7 +14579,7 @@
     "skillUpYellow": 250,
     "skillUpGreen": 255,
     "skillUpGray": 260,
-    "trainingCost": 10000.0,
+    "trainingCost": 10000,
     "learnedAt": 250,
     "reagents": {
       "Thorium Bar": 1,
@@ -14596,7 +14596,7 @@
     "skillUpYellow": 250,
     "skillUpGreen": 255,
     "skillUpGray": 260,
-    "trainingCost": 10000.0,
+    "trainingCost": 10000,
     "learnedAt": 250,
     "reagents": {
       "Rugged Leather": 1,
@@ -14664,7 +14664,7 @@
     "skillUpYellow": 270,
     "skillUpGreen": 280,
     "skillUpGray": 290,
-    "trainingCost": 4000.0,
+    "trainingCost": 4000,
     "learnedAt": 250,
     "reagents": {
       "Mithril Casing": 1,
@@ -14683,7 +14683,7 @@
     "skillUpYellow": 250,
     "skillUpGreen": 255,
     "skillUpGray": 260,
-    "trainingCost": 4000.0,
+    "trainingCost": 4000,
     "learnedAt": 250,
     "reagents": {
       "Dense Stone": 2
@@ -14699,7 +14699,7 @@
     "skillUpYellow": 250,
     "skillUpGreen": 260,
     "skillUpGray": 270,
-    "trainingCost": 5000.0,
+    "trainingCost": 5000,
     "learnedAt": 250,
     "reagents": {
       "Dense Blasting Powder": 2,
@@ -14857,7 +14857,7 @@
     "skillUpYellow": 270,
     "skillUpGreen": 280,
     "skillUpGray": 290,
-    "trainingCost": 9000.0,
+    "trainingCost": 9000,
     "learnedAt": 250,
     "reagents": {
       "Thick Leather": 40,
@@ -14877,7 +14877,7 @@
     "skillUpYellow": 270,
     "skillUpGreen": 280,
     "skillUpGray": 290,
-    "trainingCost": 9000.0,
+    "trainingCost": 9000,
     "learnedAt": 250,
     "reagents": {
       "Thick Leather": 40,
@@ -14897,7 +14897,7 @@
     "skillUpYellow": 250,
     "skillUpGreen": 255,
     "skillUpGray": 260,
-    "trainingCost": 5000.0,
+    "trainingCost": 5000,
     "learnedAt": 250,
     "reagents": {
       "Rugged Hide": 1,
@@ -14914,7 +14914,7 @@
     "skillUpYellow": 250,
     "skillUpGreen": 260,
     "skillUpGray": 270,
-    "trainingCost": 5000.0,
+    "trainingCost": 5000,
     "learnedAt": 250,
     "reagents": {
       "Rugged Leather": 5
@@ -14930,7 +14930,7 @@
     "skillUpYellow": 250,
     "skillUpGreen": 250,
     "skillUpGray": 250,
-    "trainingCost": 5000.0,
+    "trainingCost": 5000,
     "learnedAt": 250,
     "reagents": {
       "Thick Leather": 6
@@ -15048,7 +15048,7 @@
     "skillUpYellow": 250,
     "skillUpGreen": 250,
     "skillUpGray": 250,
-    "trainingCost": 20000.0,
+    "trainingCost": 20000,
     "learnedAt": 250,
     "reagents": {
       "Thorium Ore": 1
@@ -15081,7 +15081,7 @@
     "skillUpYellow": 265,
     "skillUpGreen": 280,
     "skillUpGray": 295,
-    "trainingCost": 7500.0,
+    "trainingCost": 7500,
     "learnedAt": 250,
     "reagents": {
       "Bolt of Mageweave": 8,
@@ -15118,7 +15118,7 @@
     "skillUpYellow": 255,
     "skillUpGreen": 257,
     "skillUpGray": 260,
-    "trainingCost": 10000.0,
+    "trainingCost": 10000,
     "learnedAt": 250,
     "reagents": {
       "Runecloth": 5
@@ -15301,7 +15301,7 @@
     "skillUpYellow": 275,
     "skillUpGreen": 285,
     "skillUpGray": 295,
-    "trainingCost": 9000.0,
+    "trainingCost": 9000,
     "learnedAt": 255,
     "reagents": {
       "Thick Leather": 40,
@@ -15337,7 +15337,7 @@
     "skillUpYellow": 270,
     "skillUpGreen": 285,
     "skillUpGray": 300,
-    "trainingCost": 10000.0,
+    "trainingCost": 10000,
     "learnedAt": 255,
     "reagents": {
       "Bolt of Runecloth": 3,
@@ -15405,7 +15405,7 @@
     "skillUpYellow": 285,
     "skillUpGreen": 297,
     "skillUpGray": 310,
-    "trainingCost": 13500.0,
+    "trainingCost": 13500,
     "learnedAt": 260,
     "reagents": {
       "Mithril Bar": 30,
@@ -16534,7 +16534,7 @@
     "skillUpYellow": 275,
     "skillUpGreen": 280,
     "skillUpGray": 285,
-    "trainingCost": 10000.0,
+    "trainingCost": 10000,
     "learnedAt": 275,
     "reagents": {
       "Arcanite Bar": 1,
@@ -16551,7 +16551,7 @@
     "skillUpYellow": 275,
     "skillUpGreen": 280,
     "skillUpGray": 285,
-    "trainingCost": 10000.0,
+    "trainingCost": 10000,
     "learnedAt": 275,
     "reagents": {
       "Arcanite Bar": 3,
@@ -17268,7 +17268,7 @@
     "skillUpYellow": 300,
     "skillUpGreen": 310,
     "skillUpGray": 320,
-    "trainingCost": 27000.0,
+    "trainingCost": 27000,
     "learnedAt": 280,
     "reagents": {
       "Rugged Leather": 20,
@@ -21242,7 +21242,7 @@
     "skillUpYellow": 320,
     "skillUpGreen": 330,
     "skillUpGray": 340,
-    "trainingCost": 45000.0,
+    "trainingCost": 45000,
     "learnedAt": 300,
     "reagents": {
       "Rugged Leather": 28,

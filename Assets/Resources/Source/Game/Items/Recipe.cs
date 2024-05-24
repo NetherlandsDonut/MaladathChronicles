@@ -30,7 +30,7 @@ public class Recipe
     public int skillUpOrange, skillUpYellow, skillUpGreen, skillUpGray;
 
     //Price of training this recipe at a trainer
-    public double trainingCost;
+    public int trainingCost;
 
     //Indicates at what skill level of profession player can learn this recipe
     public int learnedAt;
