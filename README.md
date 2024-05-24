@@ -562,5 +562,12 @@ v0.5.28
           Remade site tooltip
           Added all profession trainers
           Fixed some zone icons
+v0.5.29
+    24.05 Added auctioneers, without function yet
+          Added starting recipes for professions that are newly learned
+          Added crafting items by players
+          Profession skill raises now when crafting items
+          Changed icon for enchanting recipes
+          Moved level barriers required for riding to defines
 ```
 </details>
