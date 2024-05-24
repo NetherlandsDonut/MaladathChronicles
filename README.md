@@ -478,5 +478,89 @@ v0.5.8
 v0.5.9
     25.04 Added Quel'Thalas texture to the map
           Crafting menu is possible to open now but it's empty
+v0.5.10
+    26.04 Fixed death of hardcore characters
+v0.5.11
+    27.04 Fixed starting items having amount equal to 0
+          Changed all prices from float to int to avoid floating point errors
+          Added vendors with restocking supplies
+          Polished town, bank and vendor UI
+          Profession trainers now have different levels
+          Player can now split items to vendors
+v0.5.12
+    28.04 Added visual effect for restocking items
+          Made items available for buyback slowly decay
+v0.5.13
+    29.04 Added calculating score for characters
+v0.5.14
+    30.04 Added ranking system
+          Introduced PVP ranks
+v0.5.15
+    02.05 Player can now learn new professions
+          Player can now learn new recipes from trainers
+v0.5.16
+    04.05 Added prompt for making an inn a home
+          Added character sheet screen
+          Set starting hour to 7am
+          Fixed bank not closing on pressing ESC
+          Added recipe tooltips
+          Current mount window added
+          Fixed silver coins being showed even when there's zero of them
+v0.5.17
+    05.05 Added base for world abilities
+v0.5.18
+    06.05 Fixed size of the item destroy menu
+          Beta world event system
+          Finished work on hearthstone
+          Fixed ability tooltip in combat not being aligned correctly
+v0.5.19
+    07.05 Marked sites with fishing capabilities
+v0.5.20
+    09.05 Ambience now varies depending on time of day
+          Base for chest opening
+v0.5.21
+    12.05 Renamed cloth types into general drops
+          Finished work on chests
+v0.5.22
+    14.05 Fixed quilboars being asigned beast category
+          Fixed camera locking out randomly because of error with loading sites
+          Aligned all sorting and settings windows to better fit the screen
+          Added sorting items by rarity
+          Added scrolls and potions to random drop
+v0.5.23
+    15.05 Game state is now saved whenever a character is created or deleted
+          New name for characters don't repeat
+          Changed sites on map to circles from squares
+          Removed grid from the map
+v0.5.24
+    18.05 Removed possibility of disabling shadows by user
+          Added option for slower falling of the elements on the screen
+          Removed cascade await
+v0.5.24
+    19.05 Added bigger elements to the board
+v0.5.25
+    20.05 Moved project to Unity 6
+          Made all of the UI rounded
+          Hidden single rank talent dots
+          Fixed errors with prefabs in Unity 6
+          Polishing of talent screen
+          Redid visuals for talent dots and talent dots
+v0.5.26
+    21.05 Improved health bars
+          Finished rounded UI
+v0.5.27
+    22.05 Brang back flight masters
+          Fixed text not fitting into boxes
+          Rounded board corners
+          Varied recipe types in the profession UI
+v0.5.28
+    23.05 Added buying mounts
+          Added a fixed order for NPC's in towns
+          Restricted access to towns based on reputation
+          Added starting faction standings
+          Fixed order of flight paths
+          Remade site tooltip
+          Added all profession trainers
+          Fixed some zone icons
 ```
 </details>
