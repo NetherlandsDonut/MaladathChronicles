@@ -44,7 +44,6 @@ using static SiteHostileArea;
 using static SiteInstance;
 using static SiteComplex;
 using static SiteTown;
-using System.Xml.Linq;
 
 public class Blueprint
 {
@@ -1158,11 +1157,14 @@ public class Blueprint
                     {
                         AddLine(primary[index].name);
                         AddLine("Skill: ", "DarkGray");
-                        AddText(currentSave.player.professionSkills[primary[index].name].Item1 + " / " + primary[index].levels.FindAll(x => currentSave.player.professionSkills[primary[index].name].Item2.Contains(x.levelName)).Max(x => x.maxSkill));
+                        AddText(currentSave.player.professionSkills[primary[index].name].Item1 + "", "Gray");
+                        AddText(" / ", "DarkGray");
+                        AddText(primary[index].levels.FindAll(x => currentSave.player.professionSkills[primary[index].name].Item2.Contains(x.levelName)).Max(x => x.maxSkill) + "", "Gray");
                         AddBigButton(primary[index].icon,
                         (h) =>
                         {
                             profession = primary[index];
+                            if (profession.recipeType == null) return;
                             CloseWindow("ProfessionListPrimary");
                             CloseWindow("ProfessionListSecondary");
                             Respawn("CraftingList");
@@ -1191,11 +1193,14 @@ public class Blueprint
                     {
                         AddLine(secondary[index].name);
                         AddLine("Skill: ", "DarkGray");
-                        AddText(currentSave.player.professionSkills[secondary[index].name].Item1 + " / " + secondary[index].levels.FindAll(x => currentSave.player.professionSkills[secondary[index].name].Item2.Contains(x.levelName)).Max(x => x.maxSkill));
+                        AddText(currentSave.player.professionSkills[secondary[index].name].Item1 + "", "Gray");
+                        AddText(" / ", "DarkGray");
+                        AddText(secondary[index].levels.FindAll(x => currentSave.player.professionSkills[secondary[index].name].Item2.Contains(x.levelName)).Max(x => x.maxSkill) + "", "Gray");
                         AddBigButton(secondary[index].icon,
                         (h) =>
                         {
                             profession = secondary[index];
+                            if (profession.recipeType == null) return;
                             CloseWindow("ProfessionListPrimary");
                             CloseWindow("ProfessionListSecondary");
                             Respawn("CraftingList");
@@ -1208,13 +1213,18 @@ public class Blueprint
         }),
         new("CraftingList", () => {
             SetAnchor(TopLeft, 19, -38);
-            var side = currentSave.player.Side();
-            AddRegionGroup(() => currentSave.player.learnedRecipes[profession.name].Count, 12);
+            var recipes = currentSave.player.learnedRecipes[profession.name].Select(x => Recipe.recipes.Find(y => y.name == x)).Where(x => (!settings.onlyHavingMaterials.Value() || currentSave.player.CanCraft(x, true, true) > 0) && (!settings.onlySkillUp.Value() || x.skillUpGray > currentSave.player.professionSkills[profession.name].Item1)).ToList();
+            AddRegionGroup(() => recipes.Count, 11);
             SetRegionGroupWidth(190);
             SetRegionGroupHeight(285);
             AddHeaderRegion(() =>
             {
-                AddLine(profession.name + " " + profession.recipeType.ToLower() + (profession.recipeType.Last() == 's' ? ":" : "s:"), "Gray");
+                AddLine(profession.name);
+                //AddLine("Skill: ", "DarkGray");
+                //AddText(currentSave.player.professionSkills[profession.name].Item1 + "", "Gray");
+                //AddText(" / ", "DarkGray");
+                //AddText(profession.levels.FindAll(x => currentSave.player.professionSkills[profession.name].Item2.Contains(x.levelName)).Max(x => x.maxSkill) + "", "Gray");
+                AddBigButton(profession.icon);
                 AddSmallButton("OtherClose", (h) =>
                 {
                     CloseWindow("CraftingList");
@@ -1222,42 +1232,83 @@ public class Blueprint
                     Respawn("ProfessionListSecondary");
                     PlaySound("DesktopInstanceClose");
                 });
+                AddSkillBar(40, -19, profession, currentSave.player);
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Known " + profession.recipeType.ToLower() + (profession.recipeType.Last() == 's' ? ":" : "s:"), "Gray");
+                AddSmallButton("OtherReverse", (h) =>
+                {
+                    currentSave.player.learnedRecipes[profession.name].Reverse();
+                    CloseWindow("CraftingList");
+                    Respawn("CraftingList");
+                    PlaySound("DesktopInventorySort", 0.2f);
+                });
+                if (!CDesktop.windows.Exists(x => x.title == "CraftingSettings") && !CDesktop.windows.Exists(x => x.title == "CraftingSort"))
+                    AddSmallButton("OtherSort", (h) =>
+                    {
+                        SpawnWindowBlueprint("CraftingSort");
+                        CloseWindow("CraftingList");
+                        Respawn("CraftingList");
+                    });
+                else
+                    AddSmallButton("OtherSortOff", (h) => { });
+                if (!CDesktop.windows.Exists(x => x.title == "CraftingSettings") && !CDesktop.windows.Exists(x => x.title == "CraftingSort"))
+                    AddSmallButton("OtherSettings", (h) =>
+                    {
+                        SpawnWindowBlueprint("CraftingSettings");
+                        CloseWindow("CraftingList");
+                        Respawn("CraftingList");
+                    });
+                else
+                    AddSmallButton("OtherSettingsOff", (h) => { });
             });
             var regionGroup = CDesktop.LBWindow.LBRegionGroup;
-            AddPaginationLine(regionGroup, "CraftingList");
-            var recipes = currentSave.player.learnedRecipes[profession.name].Select(x => Recipe.recipes.Find(y => y.name == x)).OrderByDescending(x => x.skillUpOrange).ThenByDescending(x => x.learnedAt).ThenBy(x => x.name).ToList();
-            for (int i = 0; i < 12; i++)
+            for (int i = 0; i < 11; i++)
             {
                 var index = i;
-                if (recipes.Count >= index + 12 * RegionGroup.SavedStaticPagination(CDesktop.LBWindow.regionGroups.IndexOf(regionGroup)))
+                if (recipes.Count > index + 11 * RegionGroup.SavedStaticPagination(CDesktop.LBWindow.regionGroups.IndexOf(regionGroup)))
+                {
                     AddButtonRegion(() =>
                     {
-                        if (recipes.Count > index + 12 * regionGroup.pagination)
-                        {
-                            var recipe = recipes[index + 12 * regionGroup.pagination];
-                            AddLine(recipe.name);
-                            AddSmallButton(recipe.Icon());
-                        }
-                        else
-                        {
-                            SetRegionBackground(Padding);
-                            AddLine("");
-                        }
+                        var recipe = recipes[index + 11 * regionGroup.pagination];
+                        AddLine(recipe.name, "Black");
+                        var amountPossible = currentSave.player.CanCraft(recipe, false, true);
+                        AddText(amountPossible > 0 ? " [" + amountPossible + "]" : "", "Black");
+                        AddSmallButton(recipe.Icon());
+                        if (settings.rarityIndicators.Value() && recipe.results.Count > 0)
+                            AddSmallButtonOverlay("OtherRarity" + items.Find(x => x.name == recipe.results.ToList()[0].Key) + (settings.bigRarityIndicators.Value() ? "Big" : ""), 0, 2);
                     },
                     (h) =>
                     {
-                        if (h.region.backgroundType != Button) return;
-                        recipe = recipes[index + 12 * regionGroup.pagination];
+                        recipe = recipes[index + 11 * regionGroup.pagination];
                         Respawn("CraftingRecipe");
                         PlaySound("DesktopInstanceOpen");
                     });
+                    var skill = currentSave.player.professionSkills[profession.name].Item1;
+                    if (recipes[index + 11 * RegionGroup.SavedStaticPagination(CDesktop.LBWindow.regionGroups.IndexOf(regionGroup))].skillUpYellow > skill)
+                        SetRegionBackgroundAsImage("Sprites/Textures/SkillUpOrange");
+                    else if (recipes[index + 11 * RegionGroup.SavedStaticPagination(CDesktop.LBWindow.regionGroups.IndexOf(regionGroup))].skillUpGreen > skill)
+                        SetRegionBackgroundAsImage("Sprites/Textures/SkillUpYellow");
+                    else if (recipes[index + 11 * RegionGroup.SavedStaticPagination(CDesktop.LBWindow.regionGroups.IndexOf(regionGroup))].skillUpGray > skill)
+                        SetRegionBackgroundAsImage("Sprites/Textures/SkillUpGreen");
+                }
+                else if (recipes.Count == index + 11 * RegionGroup.SavedStaticPagination(CDesktop.LBWindow.regionGroups.IndexOf(regionGroup)))
+                {
+                    AddPaddingRegion(() =>
+                    {
+                        SetRegionAsGroupExtender();
+                        AddLine("");
+                    });
+                }
             }
+            AddPaginationLine(regionGroup, "CraftingList");
         }),
         new("CraftingRecipe", () => {
-            SetAnchor(-92, 142);
+            SetAnchor(TopRight, -19, -38);
             AddRegionGroup();
             SetRegionGroupWidth(190);
-            SetRegionGroupHeight(281);
+            SetRegionGroupHeight(277);
             AddHeaderRegion(() =>
             {
                 AddLine(recipe.name + ":", "Gray");
@@ -1276,7 +1327,12 @@ public class Blueprint
                 var results = recipe.results.Select(x => items.Find(y => y.name == x.Key).CopyItem(x.Value)).ToList();
                 foreach (var result in results)
                 {
-                    AddBigButton(result.icon, (h) => { });
+                    AddBigButton(result.icon, null, null, (h) => () =>
+                    {
+                        if (CDesktop.windows.Exists(x => x.title == "CraftingSort")) return;
+                        if (CDesktop.windows.Exists(x => x.title == "CraftingSettings")) return;
+                        PrintItemTooltip(result, Input.GetKey(LeftShift));
+                    });
                     SpawnFloatingText(CDesktop.LBWindow.LBRegionGroup.LBRegion.transform.position + new Vector3(32, -27) + new Vector3(38, 0) * (results.IndexOf(result) % 5), result.amount + "", "", "Right");
                 }
             });
@@ -1289,34 +1345,125 @@ public class Blueprint
                 var reagents = recipe.reagents.Select(x => items.Find(y => y.name == x.Key).CopyItem(x.Value)).ToList();
                 foreach (var reagent in reagents)
                 {
-                    AddBigButton(reagent.icon, (h) => { });
-                    SpawnFloatingText(CDesktop.LBWindow.LBRegionGroup.LBRegion.transform.position + new Vector3(32, -27) + new Vector3(38, 0) * (reagents.IndexOf(reagent) % 5), reagent.amount + "", "", "Right");
+                    AddBigButton(reagent.icon, null, null, (h) => () =>
+                    {
+                        if (CDesktop.windows.Exists(x => x.title == "CraftingSort")) return;
+                        if (CDesktop.windows.Exists(x => x.title == "CraftingSettings")) return;
+                        PrintItemTooltip(reagent, Input.GetKey(LeftShift));
+                    });
+                    SpawnFloatingText(CDesktop.LBWindow.LBRegionGroup.LBRegion.transform.position + new Vector3(32, -27) + new Vector3(38, 0) * (reagents.IndexOf(reagent) % 5), currentSave.player.inventory.items.Sum(x => x.name == reagent.name ? x.amount : 0) + "/" + reagent.amount, "", "Right");
                 }
             });
             AddPaddingRegion(() => { SetRegionAsGroupExtender(); });
-            AddButtonRegion(() =>
-            {
-                AddLine("Craft");
-            },
-            (h) =>
-            {
-                if (currentSave.player.CanCraft(recipe))
+            if (currentSave.player.CanCraft(recipe) > 0)
+                AddButtonRegion(() =>
+                {
+                    AddLine("Craft");
+                },
+                (h) =>
                 {
                     var crafted = currentSave.player.Craft(recipe);
                     var skill = currentSave.player.professionSkills;
-                    if (recipe.skillUpOrange >= skill[recipe.profession].Item1)
+                    if (recipe.skillUpYellow > skill[recipe.profession].Item1)
                         skill[recipe.profession] = (skill[recipe.profession].Item1 + 1, skill[recipe.profession].Item2);
-                    else if (recipe.skillUpYellow >= skill[recipe.profession].Item1 && Roll(75))
+                    else if (recipe.skillUpGreen > skill[recipe.profession].Item1 && Roll(75))
                         skill[recipe.profession] = (skill[recipe.profession].Item1 + 1, skill[recipe.profession].Item2);
-                    else if (recipe.skillUpGreen >= skill[recipe.profession].Item1 && Roll(25))
+                    else if (recipe.skillUpGray > skill[recipe.profession].Item1 && Roll(25))
                         skill[recipe.profession] = (skill[recipe.profession].Item1 + 1, skill[recipe.profession].Item2);
                     foreach (var item in crafted)
                     {
                         currentSave.player.inventory.AddItem(item);
-                        PlaySound(item.ItemSound("PickUp"), 0.6f);
+                        PlaySound(item.ItemSound("PutDown"), 0.6f);
                     }
                     Respawn("CraftingList");
-                }
+                    CloseWindow("CraftingRecipe");
+                    SpawnWindowBlueprint("CraftingRecipe");
+                });
+            else
+                AddPaddingRegion(() =>
+                {
+                    AddLine("Craft", "DarkGray");
+                });
+        }),
+        new("CraftingSort", () => {
+            SetAnchor(Center);
+            AddRegionGroup();
+            SetRegionGroupWidth(182);
+            AddHeaderRegion(() =>
+            {
+                AddLine("Sort " + profession.recipeType.ToLower() + (profession.recipeType.Last() == 's' ? ":" : "s:"), "Gray");
+                AddSmallButton("OtherClose", (h) =>
+                {
+                    CloseWindow("CraftingSort");
+                    CDesktop.RespawnAll();
+                });
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("By name", "Black");
+            },
+            (h) =>
+            {
+                currentSave.player.learnedRecipes[profession.name] = currentSave.player.learnedRecipes[profession.name].OrderBy(x => recipes.Find(y => y.name == x).name).ToList();
+                CloseWindow("CraftingSort");
+                CDesktop.RespawnAll();
+                PlaySound("DesktopInventorySort", 0.2f);
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("By possible crafts", "Black");
+            },
+            (h) =>
+            {
+                currentSave.player.learnedRecipes[profession.name] = currentSave.player.learnedRecipes[profession.name].OrderByDescending(x => currentSave.player.CanCraft(recipes.Find(y => y.name == x), false, true)).ToList();
+                CloseWindow("CraftingSort");
+                CDesktop.RespawnAll();
+                PlaySound("DesktopInventorySort", 0.2f);
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("By skill up", "Black");
+            },
+            (h) =>
+            {
+                currentSave.player.learnedRecipes[profession.name] = currentSave.player.learnedRecipes[profession.name].OrderByDescending(x => recipes.Find(y => y.name == x).skillUpYellow).ToList();
+                CloseWindow("CraftingSort");
+                CDesktop.RespawnAll();
+                PlaySound("DesktopInventorySort", 0.2f);
+            });
+        }),
+        new("CraftingSettings", () => {
+            SetAnchor(Center);
+            AddRegionGroup();
+            SetRegionGroupWidth(182);
+            AddHeaderRegion(() =>
+            {
+                AddLine("Recipe list settings:");
+                AddSmallButton("OtherClose", (h) =>
+                {
+                    CloseWindow("CraftingSettings");
+                    CDesktop.RespawnAll();
+                });
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("Has materials", "Black");
+                AddCheckbox(settings.onlyHavingMaterials);
+            },
+            (h) =>
+            {
+                settings.onlyHavingMaterials.Invert();
+                CDesktop.RespawnAll();
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("Has skill up", "Black");
+                AddCheckbox(settings.onlySkillUp);
+            },
+            (h) =>
+            {
+                settings.onlySkillUp.Invert();
+                CDesktop.RespawnAll();
             });
         }),
 
@@ -2577,7 +2724,8 @@ public class Blueprint
         new("FlightMaster", () => {
             SetAnchor(TopLeft, 19, -38);
             var side = currentSave.player.Side();
-            AddRegionGroup(() => town.flightPaths[side].Count - 1, 12);
+            var destinations = town.flightPaths[side].FindAll(x => x != town).OrderBy(x => !currentSave.siteVisits.ContainsKey(x.name)).ThenBy(x => x.zone).ThenBy(x => x.name).ToList();
+            AddRegionGroup(() => destinations.Count, 12);
             SetRegionGroupWidth(190);
             SetRegionGroupHeight(285);
             AddHeaderRegion(() =>
@@ -2597,39 +2745,28 @@ public class Blueprint
                 AddLine("Possible destinations:");
             });
             var regionGroup = CDesktop.LBWindow.LBRegionGroup;
-            AddPaginationLine(regionGroup, "FlightMaster");
-            var destinations = town.flightPaths[side].FindAll(x => x != town).OrderBy(x => !currentSave.siteVisits.ContainsKey(x.name)).ThenBy(x => x.zone).ThenBy(x => x.name).ToList();
             for (int i = 0; i < 12; i++)
             {
                 var index = i;
-                if (destinations.Count >= index + 12 * RegionGroup.SavedStaticPagination(CDesktop.LBWindow.regionGroups.IndexOf(regionGroup)))
+                if (destinations.Count > index + 12 * RegionGroup.SavedStaticPagination(CDesktop.LBWindow.regionGroups.IndexOf(regionGroup)))
                     AddButtonRegion(() =>
                     {
-                        if (destinations.Count > index + 12 * regionGroup.pagination)
+                        var destination = destinations[index + 12 * regionGroup.pagination];
+                        if (currentSave.siteVisits.ContainsKey(destination.name))
                         {
-                            var destination = destinations[index + 12 * regionGroup.pagination];
-                            if (currentSave.siteVisits.ContainsKey(destination.name))
-                            {
-                                AddLine(destination.name);
-                                AddSmallButton("Zone" + destination.zone.Clean());
-                            }
-                            else
-                            {
-                                SetRegionBackground(Header);
-                                AddLine("?", "DarkGray");
-                                AddSmallButton("OtherDisabled");
-                            }
+                            AddLine(destination.name);
+                            AddSmallButton("Zone" + destination.zone.Clean());
                         }
-                        else if (destinations.Count == index + 12 * regionGroup.pagination)
+                        else
                         {
-                            SetRegionBackground(Padding);
-                            AddLine("");
+                            SetRegionBackground(Header);
+                            AddLine("?", "DarkGray");
+                            AddSmallButton("OtherDisabled");
                         }
                     },
                     (h) =>
                     {
                         var destination = destinations[index + 12 * regionGroup.pagination];
-                        if (h.region.backgroundType != Button) return;
                         currentSave.currentSite = destination.name;
                         Respawn("Site: " + town.name);
                         Respawn("Site: " + currentSave.currentSite);
@@ -2660,7 +2797,14 @@ public class Blueprint
                         ////Queue moving player to the destination
                         //town.ExecutePath("Town");
                     });
+                else if (destinations.Count == index + 12 * RegionGroup.SavedStaticPagination(CDesktop.LBWindow.regionGroups.IndexOf(regionGroup)))
+                    AddPaddingRegion(() =>
+                    {
+                        SetRegionAsGroupExtender();
+                        AddLine("");
+                    });
             }
+            AddPaginationLine(regionGroup, "FlightMaster");
         }),
         new("ProfessionLevelTrainer", () => {
             SetAnchor(TopLeft, 19, -38);
@@ -2689,7 +2833,6 @@ public class Blueprint
                 });
             });
             var regionGroup = CDesktop.LBWindow.LBRegionGroup;
-            AddPaginationLine(regionGroup);
             for (int i = 0; i < 6; i++)
             {
                 var index = i;
@@ -2728,7 +2871,9 @@ public class Blueprint
                                             if (!currentSave.player.professionSkills.ContainsKey(type.profession))
                                             {
                                                 currentSave.player.professionSkills.Add(type.profession, (1, new()));
-                                                foreach (var recipe in Profession.professions.Find(x => x.name == type.profession).defaultRecipes)
+                                                if (!currentSave.player.learnedRecipes.ContainsKey(type.profession))
+                                                    currentSave.player.learnedRecipes.Add(type.profession, new());
+                                                foreach (var recipe in professions.Find(x => x.name == type.profession).defaultRecipes)
                                                     currentSave.player.LearnRecipe(type.profession, recipe);
                                             }
                                             currentSave.player.professionSkills[type.profession].Item2.Add(key.levelName);
@@ -2759,6 +2904,7 @@ public class Blueprint
                     }
                 });
             }
+            AddPaginationLine(regionGroup);
         }),
         new("ProfessionRecipeTrainer", () => {
             SetAnchor(TopLeft, 19, -38);
@@ -2786,7 +2932,6 @@ public class Blueprint
                 });
             });
             var regionGroup = CDesktop.LBWindow.LBRegionGroup;
-            AddPaginationLine(regionGroup);
             for (int i = 0; i < 6; i++)
             {
                 var index = i;
@@ -2848,6 +2993,7 @@ public class Blueprint
                     }
                 });
             }
+            AddPaginationLine(regionGroup);
         }),
 
         //Fishing
@@ -3009,15 +3155,15 @@ public class Blueprint
             });
             AddHotkey(C, () =>
             {
-                CloseDesktop("TalentScreen");
-                CloseDesktop("SpellbookScreen");
-                CloseDesktop("EquipmentScreen");
-                CloseDesktop("BestiaryScreen");
-                CloseDesktop("CraftingScreen");
                 if (CDesktop.title != "CharacterSheet")
                     SpawnDesktopBlueprint("CharacterSheet");
                 else
                 {
+                    CloseDesktop("TalentScreen");
+                    CloseDesktop("SpellbookScreen");
+                    CloseDesktop("EquipmentScreen");
+                    CloseDesktop("BestiaryScreen");
+                    CloseDesktop("CraftingScreen");
                     CloseDesktop(CDesktop.title);
                     PlaySound("DesktopCharacterSheetClose");
                 }

@@ -3147,7 +3147,7 @@
     "skillUpYellow": 70,
     "skillUpGreen": 90,
     "skillUpGray": 110,
-    "learnedAt": 70,
+    "learnedAt": 1,
     "reagents": {
       "Strange Dust": 1
     },
@@ -3514,7 +3514,7 @@
     "skillUpYellow": 80,
     "skillUpGreen": 100,
     "skillUpGray": 120,
-    "learnedAt": 80,
+    "learnedAt": 1,
     "reagents": {
       "Lesser Magic Essence": 1,
       "Strange Dust": 1

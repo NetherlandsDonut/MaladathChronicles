@@ -21,7 +21,7 @@ public class FloatingText : MonoBehaviour
         else if (align == "Right")
             newObject.transform.localPosition = new Vector2(-fonts[floatingTextFont].Length(text), 7);
         var temp = newObject.GetComponent<LineText>();
-        temp.Initialise(this, text, color == "" ? "Gray" : color);
+        temp.Initialise(Root.CDesktop.LBWindow, text, color == "" ? "Gray" : color);
         int length = 0;
         temp.Erase();
         foreach (var character in temp.text)
@@ -88,7 +88,7 @@ public class FloatingText : MonoBehaviour
         }
         var textBorder = new GameObject("TextBorder", typeof(SpriteRenderer));
         textBorder.transform.parent = transform;
-        textBorder.transform.localPosition = new Vector3(newObject.transform.localPosition.x - 2, 9, 1);
+        textBorder.transform.localPosition = new Vector3(newObject.transform.localPosition.x - 2, text.Contains("/") ? 10 : 9, -0.04f);
         var xPlus = pixelList.Min(x => x.Item1);
         var yPlus = pixelList.Min(x => x.Item2);
         var texture = new Texture2D(pixelList.Max(x => x.Item1) - xPlus + 5, pixelList.Max(x => x.Item2) - yPlus + 5, TextureFormat.ARGB32, true) { filterMode = FilterMode.Point };
@@ -101,6 +101,6 @@ public class FloatingText : MonoBehaviour
         var sprite = Sprite.Create(texture, new Rect(Vector2.zero, new Vector2(texture.width, texture.height)), new Vector2(0, 1), 1);
         if (fall) textBorder.AddComponent<Shatter>().Initiate(0.015f, 0, textBorder.GetComponent<SpriteRenderer>());
         textBorder.GetComponent<SpriteRenderer>().sprite = sprite;
-        textBorder.GetComponent<SpriteRenderer>().sortingLayerName = "FallingText";
+        textBorder.GetComponent<SpriteRenderer>().sortingLayerName = fall ? "FallingText" : transform.parent.GetComponent<Region>().regionGroup.window.layer;
     }
 }

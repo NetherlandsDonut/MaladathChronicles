@@ -220,7 +220,7 @@ public class Board
     public void UpdateHealthBars()
     {
         foreach (var foo in healthBars)
-            foo.Value.UpdateHealthBar();
+            foo.Value.UpdateFluidBar();
     }
 
     public void EndCombat(string result)

@@ -496,34 +496,37 @@ public class Entity
     public Dictionary<string, List<string>> learnedRecipes;
 
     //Learns a recipe
-    public void LearnRecipe(Recipe recipe)
-    {
-        if (!learnedRecipes.ContainsKey(recipe.profession))
-            learnedRecipes.Add(recipe.profession, new());
-        if (!learnedRecipes[recipe.profession].Contains(recipe.name))
-            learnedRecipes[recipe.profession].Add(recipe.name);
-    }
-
-    //Learns a recipe
+    public void LearnRecipe(Recipe recipe) => LearnRecipe(recipe.profession, recipe.name);
     public void LearnRecipe(string profession, string recipe)
     {
-        if (!learnedRecipes.ContainsKey(profession))
-            learnedRecipes.Add(profession, new());
         if (!learnedRecipes[profession].Contains(recipe))
             learnedRecipes[profession].Add(recipe);
     }
 
     //Checks if the player can craft a recipe taking into
     //consideration empty space in the player inventory and reagents required
-    public bool CanCraft(Recipe recipe)
+    public int CanCraft(Recipe recipe, bool singleCheck = true, bool ignoreSpaceChecks = false)
     {
-        var can = true;
-        foreach (var reagent in recipe.reagents)
-            if (inventory.items.Sum(x => x.name == reagent.Key ? x.amount : 0) < reagent.Value)
-                can = false;
-        if (!inventory.CanAddItems(recipe.results.Select(x => Item.items.Find(y => x.Key == y.name).CopyItem(x.Value)).ToList()))
-            can = false;
-        return can;
+        return Iterate(1);
+
+        int Iterate(int multiplier)
+        {
+            var can = true;
+            foreach (var reagent in recipe.reagents)
+            {
+                var has = inventory.items.Sum(x => x.name == reagent.Key ? x.amount : 0);
+                if (has < reagent.Value * multiplier)
+                    can = false;
+            }
+            if (!ignoreSpaceChecks)
+            {
+                var baseAdd = recipe.results.Select(x => Item.items.Find(y => x.Key == y.name).CopyItem(x.Value)).ToList();
+                var toBeAdded = baseAdd.Multilate(multiplier);
+                if (!inventory.CanAddItems(toBeAdded))
+                    can = false;
+            }
+            return can ? (singleCheck ? multiplier : Iterate(multiplier + 1)) : multiplier - 1;
+        }
     }
 
     //Crafts a recipe and gives player all the resulting benefits
@@ -537,7 +540,7 @@ public class Entity
             {
                 var temp = items[i].amount;
                 items[i].amount -= items[i].amount >= left ? left : items[i].amount;
-                if (items[i].amount <= 0)
+                if (items[i].amount == 0)
                     inventory.items.Remove(items[i]);
                 left -= temp;
             }

@@ -673,8 +673,8 @@ public class Item
                     PlaySound(item.ItemSound("PutDown"), 0.6f);
                     if (CDesktop.title == "CombatResultsLoot")
                     {
-                        if (currentSave.player.inventory.AddItem(item))
-                            Board.board.results.inventory.items.Remove(item);
+                        currentSave.player.inventory.AddItem(item);
+                        Board.board.results.inventory.items.Remove(item);
                         if (Board.board.results.exclusiveItems.Contains(item.name))
                             Board.board.results.inventory.items.RemoveAll(x => Board.board.results.exclusiveItems.Contains(x.name));
                         if (Board.board.results.inventory.items.Count == 0)
@@ -687,8 +687,8 @@ public class Item
                     }
                     else if (CDesktop.title == "ChestLoot")
                     {
-                        if (currentSave.player.inventory.AddItem(item))
-                            currentSave.openedChests[SiteHostileArea.area.name].inventory.items.Remove(item);
+                        currentSave.player.inventory.AddItem(item);
+                        currentSave.openedChests[SiteHostileArea.area.name].inventory.items.Remove(item);
                         if (currentSave.openedChests[SiteHostileArea.area.name].inventory.items.Count == 0)
                         {
                             if (SiteHostileArea.area.instancePart)

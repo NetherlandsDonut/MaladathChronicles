@@ -7,7 +7,7 @@ using static Coloring;
 public class LineText : MonoBehaviour
 {
     //Parent
-    public Line line;
+    public Window window;
 
     //Children
     public List<GameObject> characters;
@@ -19,16 +19,17 @@ public class LineText : MonoBehaviour
     {
         this.color = color;
         this.text = text;
-        this.line = line;
+        window = line.region.regionGroup.window;
         characters = new();
         line.LBText = this;
         line.texts.Add(this);
     }
 
-    public void Initialise(FloatingText fallingtext, string text, string color)
+    public void Initialise(Window window, string text, string color)
     {
         this.color = color;
         this.text = text;
+        this.window = window;
         characters = new();
     }
 
@@ -45,13 +46,13 @@ public class LineText : MonoBehaviour
     {
         var newCharacter = new GameObject("Character", typeof(SpriteRenderer));
         newCharacter.transform.parent = transform;
-        newCharacter.transform.localPosition = new Vector3(offset, 0, 0.2f);
+        newCharacter.transform.localPosition = new Vector3(offset, 0, -0.05f);
         var glyph = fonts[font].GetGlyph(character);
         newCharacter.GetComponent<SpriteRenderer>().sprite = glyph;
         if (color == null) { Debug.Log("ERROR 009: Color was not set"); color = "Gray"; }
         else if (!colors.ContainsKey(color)) { Debug.Log("ERROR 008: Color not found: \"" + color + "\""); color = "Gray"; }
         newCharacter.GetComponent<SpriteRenderer>().color = colors[color];
-        newCharacter.GetComponent<SpriteRenderer>().sortingLayerName = line == null ? "FallingText" : line.region.regionGroup.window.layer;
+        newCharacter.GetComponent<SpriteRenderer>().sortingLayerName = window.layer;
         characters.Add(newCharacter);
         return offset + (int)glyph.rect.width + 1;
     }

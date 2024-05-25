@@ -169,7 +169,11 @@
     "icon": "TradeEnchanting",
     "recipeType": "Formula",
     "primary": true,
-    "defaultRecipes": [],
+    "defaultRecipes": [
+      "Runed Copper Rod",
+      "Enchant Bracer - Minor Deflect",
+      "Enchant Bracer - Minor Health"
+    ],
     "levels": [
       {
         "levelName": "Apprentice",

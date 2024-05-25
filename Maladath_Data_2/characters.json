@@ -78,9 +78,10 @@
         },
         "professionSkills": {
           "Tailoring": {
-            "Item1": 1,
+            "Item1": 53,
             "Item2": [
-              "Apprentice"
+              "Apprentice",
+              "Journeyman"
             ]
           },
           "Enchanting": {
@@ -92,10 +93,22 @@
         },
         "learnedRecipes": {
           "Tailoring": [
-            "Bolt of Linen Cloth",
-            "Brown Linen Shirt",
+            "Linen Bag",
+            "Simple Dress",
+            "Blue Linen Shirt",
+            "Red Linen Shirt",
+            "Heavy Linen Gloves",
+            "White Linen Robe",
+            "Brown Linen Robe",
+            "Brown Linen Pants",
+            "Simple Linen Boots",
+            "Linen Belt",
+            "Brown Linen Vest",
+            "White Linen Shirt",
+            "Simple Linen Pants",
             "Linen Cloak",
-            "Simple Linen Pants"
+            "Brown Linen Shirt",
+            "Bolt of Linen Cloth"
           ]
         },
         "unspentTalentPoints": 26,
@@ -153,9 +166,110 @@
               "stats": {
                 "stats": {}
               }
+            },
+            {
+              "rarity": "Common",
+              "name": "Linen Belt",
+              "icon": "itembelt05",
+              "type": "Waist",
+              "armorClass": "Cloth",
+              "source": "Profession",
+              "ilvl": 9,
+              "lvl": 4,
+              "armor": 9,
+              "amount": 1,
+              "maxStack": 1,
+              "price": 22,
+              "stats": {
+                "stats": {}
+              }
+            },
+            {
+              "rarity": "Common",
+              "name": "Linen Belt",
+              "icon": "itembelt05",
+              "type": "Waist",
+              "armorClass": "Cloth",
+              "source": "Profession",
+              "ilvl": 9,
+              "lvl": 4,
+              "armor": 9,
+              "amount": 1,
+              "maxStack": 1,
+              "price": 22,
+              "stats": {
+                "stats": {}
+              }
+            },
+            {
+              "rarity": "Common",
+              "name": "Linen Belt",
+              "icon": "itembelt05",
+              "type": "Waist",
+              "armorClass": "Cloth",
+              "source": "Profession",
+              "ilvl": 9,
+              "lvl": 4,
+              "armor": 9,
+              "amount": 1,
+              "maxStack": 1,
+              "price": 22,
+              "stats": {
+                "stats": {}
+              }
+            },
+            {
+              "rarity": "Common",
+              "name": "Linen Belt",
+              "icon": "itembelt05",
+              "type": "Waist",
+              "armorClass": "Cloth",
+              "source": "Profession",
+              "ilvl": 9,
+              "lvl": 4,
+              "armor": 9,
+              "amount": 1,
+              "maxStack": 1,
+              "price": 22,
+              "stats": {
+                "stats": {}
+              }
             }
           ],
-          "bags": []
+          "bags": [
+            {
+              "rarity": "Common",
+              "name": "Linen Bag",
+              "icon": "itemmiscbag01",
+              "type": "Bag",
+              "source": "Profession",
+              "ilvl": 5,
+              "lvl": 1,
+              "amount": 1,
+              "maxStack": 1,
+              "price": 200,
+              "bagSpace": 2,
+              "stats": {
+                "stats": {}
+              }
+            },
+            {
+              "rarity": "Common",
+              "name": "Linen Bag",
+              "icon": "itemmiscbag01",
+              "type": "Bag",
+              "source": "Profession",
+              "ilvl": 5,
+              "lvl": 1,
+              "amount": 1,
+              "maxStack": 1,
+              "price": 200,
+              "bagSpace": 2,
+              "stats": {
+                "stats": {}
+              }
+            }
+          ]
         },
         "mounts": [],
         "equipment": {
@@ -222,6 +336,38 @@
             "stats": {
               "stats": {}
             }
+          },
+          "Back": {
+            "rarity": "Common",
+            "name": "Linen Cloak",
+            "icon": "itemmisccape14",
+            "type": "Back",
+            "source": "Profession",
+            "ilvl": 6,
+            "lvl": 1,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 11,
+            "stats": {
+              "stats": {}
+            }
+          },
+          "Waist": {
+            "rarity": "Common",
+            "name": "Linen Belt",
+            "icon": "itembelt05",
+            "type": "Waist",
+            "armorClass": "Cloth",
+            "source": "Profession",
+            "ilvl": 9,
+            "lvl": 4,
+            "armor": 9,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 22,
+            "stats": {
+              "stats": {}
+            }
           }
         }
       },
@@ -238,7 +384,7 @@
         "Northshire Abbey": 1,
         "Northshire Vineyards": 0,
         "Goldshire": 0,
-        "Stormwind City": 10,
+        "Stormwind City": 14,
         "Ironforge": 1
       },
       "unlockedAreas": [],
@@ -321,13 +467,14 @@
         ]
       },
       "startDate": "2024-05-23T19:54:33.3673184+02:00",
-      "lastLoaded": "2024-05-24T16:43:30.5384325+02:00",
-      "lastPlayed": "2024-05-24T16:43:55.3919754+02:00",
-      "timePlayed": "00:19:04.6712765"
+      "lastLoaded": "2024-05-25T02:42:29.3680026+02:00",
+      "lastPlayed": "2024-05-25T02:43:32.8740116+02:00",
+      "timePlayed": "00:45:02.7094218"
     },
     {
       "player": {
-        "level": 1,
+        "level": 5,
+        "experience": 2200,
         "reputation": {
           "Southsea Pirates": 0,
           "Razormane Tribe": 0,
@@ -397,8 +544,29 @@
           "Bloodtooth Tribe": 0,
           "Bristleback Tribe": 0
         },
-        "professionSkills": {},
-        "learnedRecipes": {},
+        "professionSkills": {
+          "Alchemy": {
+            "Item1": 1,
+            "Item2": [
+              "Apprentice"
+            ]
+          },
+          "Herbalism": {
+            "Item1": 1,
+            "Item2": [
+              "Apprentice"
+            ]
+          }
+        },
+        "learnedRecipes": {
+          "Alchemy": [
+            "Minor Healing Potion",
+            "Elixir of Lion's Strength",
+            "Elixir of Minor Defense"
+          ],
+          "Herbalism": []
+        },
+        "unspentTalentPoints": 4,
         "faction": "Undercity",
         "name": "Loraina",
         "race": "Forsaken",
@@ -441,6 +609,7 @@
           }
         },
         "inventory": {
+          "money": 123123,
           "items": [
             {
               "rarity": "Common",
@@ -1447,7 +1616,7 @@
         "Freewind Post": 1,
         "Sun Rock Retreat": 1,
         "Ghost Walker Post": 1,
-        "Undercity": 3,
+        "Undercity": 5,
         "The Bulwark": 1,
         "Brill": 1,
         "Hammerfall": 1,
@@ -1590,9 +1759,9 @@
         ]
       },
       "startDate": "2024-05-23T23:16:22.9839232+02:00",
-      "lastLoaded": "2024-05-24T14:09:06.088533+02:00",
-      "lastPlayed": "2024-05-24T14:09:31.3440181+02:00",
-      "timePlayed": "00:01:05.5398069",
+      "lastLoaded": "2024-05-25T02:04:19.1556603+02:00",
+      "lastPlayed": "2024-05-25T02:04:45.6393572+02:00",
+      "timePlayed": "00:02:17.7353149",
       "lastVisitedTalents": 1
     },
     {
@@ -2869,9 +3038,9 @@
         }
       },
       "startDate": "2024-05-23T23:16:31.0484571+02:00",
-      "lastLoaded": "2024-05-24T01:54:59.5907158+02:00",
-      "lastPlayed": "2024-05-24T01:58:18.4267434+02:00",
-      "timePlayed": "00:10:20.2200502"
+      "lastLoaded": "2024-05-25T01:54:39.6705772+02:00",
+      "lastPlayed": "2024-05-25T01:54:43.673603+02:00",
+      "timePlayed": "00:10:24.2230760"
     },
     {
       "player": {

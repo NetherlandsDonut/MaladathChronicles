@@ -431,7 +431,7 @@ public class Window : MonoBehaviour
                             region.borders[i + 4] = new GameObject("BorderCorner", typeof(SpriteRenderer));
                             region.borders[i + 4].transform.parent = region.transform;
                             region.borders[i + 4].GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/Borders/RegionBorderCorner");
-                            region.borders[i + 4].GetComponent<SpriteRenderer>().sortingLayerName = title.Contains("BattleInfo") ? "Upper" : layer;
+                            region.borders[i + 4].GetComponent<SpriteRenderer>().sortingLayerName = "Upper";
                             if (i == 1 || i == 3) region.borders[i + 4].GetComponent<SpriteRenderer>().flipX = true;
                             if (i == 2 || i == 3) region.borders[i + 4].GetComponent<SpriteRenderer>().flipY = true;
                         }
@@ -459,7 +459,7 @@ public class Window : MonoBehaviour
                         region.borders[4].transform.localPosition = new Vector3(3.5f + 38 * region.bigButtons.Count, -3.5f, 0.05f);
                         region.borders[5].transform.localPosition = new Vector3(regionGroup.AutoWidth() + region.xExtend - 1.5f - 19 * region.smallButtons.Count, -3.5f, 0.05f);
                         region.borders[6].transform.localPosition = new Vector3(3.5f + 38 * region.bigButtons.Count, -region.AutoHeight() - 2.5f - region.yExtend, 0.05f);
-                        region.borders[7].transform.localPosition = new Vector3(regionGroup.AutoWidth() + region.xExtend - 1.5f - 19 * region.smallButtons.Count, -region.AutoHeight() - 2.5f - region.yExtend, 0.05f);
+                        region.borders[7].transform.localPosition = new Vector3(regionGroup.AutoWidth() + region.xExtend - 1.5f - (region.bigButtons.Count > 0 || region.lines.Count > 1 ? 0 : 19 * region.smallButtons.Count), -region.AutoHeight() - 2.5f - region.yExtend, 0.05f);
                     }
                 }
 

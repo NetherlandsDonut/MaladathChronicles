@@ -28,5 +28,11 @@
   },
   "fastCascading": {
     "value": "False"
+  },
+  "onlyHavingMaterials": {
+    "value": "False"
+  },
+  "onlySkillUp": {
+    "value": "False"
   }
 }

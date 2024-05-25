@@ -70,6 +70,14 @@ public static class Root
         }
     }
 
+    public static List<Item> Multilate(this List<Item> list, int times)
+    {
+        var output = list.ToList();
+        for (int i = 0; i < times - 1; i++)
+            output.AddRange(list.Select(x => x.CopyItem(x.amount)));
+        return output;
+    }
+
     public static Dictionary<T, U> Merge<T, U>(this Dictionary<T, U> A, Dictionary<T, U> B)
     {
         var temp = A.ToDictionary(x => x.Key, x => x.Value);
@@ -126,10 +134,11 @@ public static class Root
     {
         var blueprint = desktopBlueprints.Find(x => x.title == blueprintTitle);
         if (blueprint == null) return;
-        AddDesktop(blueprint.title);
-        if (autoSwitch)
-            SwitchDesktop(blueprintTitle);
-        blueprint.actions();
+        var spawnedNew = false;
+        if (!desktops.Exists(x => x.title == blueprintTitle))
+            { AddDesktop(blueprint.title); spawnedNew = true; }
+        if (autoSwitch) SwitchDesktop(blueprintTitle);
+        if (spawnedNew) blueprint.actions();
     }
 
     public static bool CloseDesktop(string desktopName)
@@ -844,7 +853,17 @@ public static class Root
 
     #endregion
 
-    #region HealthBar
+    #region FluidBar
+
+    public static void AddSkillBar(int x, int y, Profession profession, Entity entity)
+    {
+        var skillBar = UnityEngine.Object.Instantiate(Resources.Load<GameObject>("Prefabs/PrefabSkillBar"));
+        skillBar.transform.parent = CDesktop.LBWindow.transform;
+        skillBar.transform.localPosition = new Vector3(x, y, 0);
+        var thisBar = skillBar.GetComponent<FluidBar>();
+        thisBar.Initialise(150, () => profession.levels.Where(x => entity.professionSkills[profession.name].Item2.Contains(x.levelName)).Max(x => x.maxSkill), () => entity.professionSkills[profession.name].Item1);
+        thisBar.UpdateFluidBar();
+    }
 
     public static void AddHealthBar(int x, int y, string forWho, Entity entity)
     {
@@ -852,10 +871,10 @@ public static class Root
         healthBar.transform.parent = CDesktop.LBWindow.transform;
         healthBar.transform.localPosition = new Vector3(x, y, 0);
         var thisBar = healthBar.GetComponent<FluidBar>();
+        thisBar.Initialise(131, () => entity.MaxHealth(), () => entity.health);
         if (Board.board.healthBars.ContainsKey(forWho)) Board.board.healthBars[forWho] = thisBar;
         else Board.board.healthBars.Add(forWho, thisBar);
-        thisBar.entity = entity;
-        thisBar.UpdateHealthBar();
+        thisBar.UpdateFluidBar();
     }
 
     #endregion

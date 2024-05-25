@@ -16,6 +16,8 @@ public class GameSettings
         soundEffects ??= new Bool(true);
         chartBigIcons ??= new Bool(true);
         fastCascading ??= new Bool(true);
+        onlyHavingMaterials ??= new Bool(false);
+        onlySkillUp ??= new Bool(false);
 
         rarityIndicators ??= new Bool(false);
         bigRarityIndicators ??= new Bool(false);
@@ -58,6 +60,12 @@ public class GameSettings
 
     //Tells whether the cascading process in boards will be fast or slow
     public Bool fastCascading;
+
+    //Tells whether the cascading process in boards will be fast or slow
+    public Bool onlyHavingMaterials;
+
+    //Tells whether the cascading process in boards will be fast or slow
+    public Bool onlySkillUp;
 
     //EXTERNAL FILE: Collection of all settings in game
     public static GameSettings settings;

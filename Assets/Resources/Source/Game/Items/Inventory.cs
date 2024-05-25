@@ -2,7 +2,6 @@ using System.Linq;
 using System.Collections.Generic;
 
 using static Defines;
-using UnityEditorInternal.VersionControl;
 
 //Iventory is a space for storing money and items
 //It's used by entities and banks
@@ -47,10 +46,10 @@ public class Inventory
     public bool CanAddItems(List<Item> list)
     {
         if (ignoreSpaceChecks) return true;
-        var copyList = list.ToList();
-        var copyInventory = items.ToList();
-        int emptySlots = BagSpace();
+        int emptySlots = BagSpace() - items.Count;
         if (items.Count + list.Count < emptySlots) return true;
+        var copyList = list.Select(x => x.CopyItem(x.amount)).ToList();
+        var copyInventory = items.Select(x => x.CopyItem(x.amount)).ToList();
         foreach (var item in copyList)
         {
             var slots = copyInventory.FindAll(x => x.name == item.name);
@@ -70,17 +69,18 @@ public class Inventory
                         break;
                     }
                 }
-            if (item.amount > 0 && emptySlots > 0)
+            if (item.amount > 0)
             {
                 copyInventory.Add(item);
-                emptySlots--;
+                if (--emptySlots < 0)
+                    return false;
             }
         }
-        return copyList.Count(x => x.amount > 0) == 0;
+        return true;
     }
 
     //Adds item to the inventory and automatically fills stacks
-    public bool AddItem(Item item)
+    public void AddItem(Item item)
     {
         var find = items.FindAll(x => x.name == item.name);
         foreach (var stack in find)
@@ -91,11 +91,7 @@ public class Inventory
                 else { (item.amount, stack.amount) = (0, stack.amount + item.amount); break; }
         }
         if (item.amount > 0 && (ignoreSpaceChecks || items.Count < BagSpace()))
-        {
             items.Add(item.CopyItem(item.amount));
-            return true;
-        }
-        return item.amount == 0;
     }
 
     //Decays items that have duration left of their existance
