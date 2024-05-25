@@ -1926,6 +1926,7 @@
   {
     "name": "Enchant Chest - Minor Health",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 15,
     "skillUpYellow": 70,
     "skillUpGreen": 90,
@@ -2008,6 +2009,7 @@
   {
     "name": "Enchant Chest - Minor Mana",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 20,
     "skillUpYellow": 80,
     "skillUpGreen": 100,
@@ -2434,6 +2436,7 @@
   {
     "name": "Enchant Chest - Minor Absorption",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 40,
     "skillUpYellow": 90,
     "skillUpGreen": 110,
@@ -2573,6 +2576,7 @@
   {
     "name": "Enchant Cloak - Minor Resistance",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 45,
     "skillUpYellow": 95,
     "skillUpGreen": 115,
@@ -2674,6 +2678,7 @@
   {
     "name": "Enchant Bracer - Minor Stamina",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 50,
     "skillUpYellow": 100,
     "skillUpGreen": 120,
@@ -2875,6 +2880,7 @@
   {
     "name": "Enchant Chest - Lesser Health",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 60,
     "skillUpYellow": 105,
     "skillUpGreen": 125,
@@ -2890,6 +2896,7 @@
   {
     "name": "Enchant Bracer - Minor Spirit",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 60,
     "skillUpYellow": 105,
     "skillUpGreen": 125,
@@ -3144,6 +3151,7 @@
   {
     "name": "Enchant Bracer - Minor Health",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpYellow": 70,
     "skillUpGreen": 90,
     "skillUpGray": 110,
@@ -3156,6 +3164,7 @@
   {
     "name": "Enchant Cloak - Minor Protection",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 70,
     "skillUpYellow": 110,
     "skillUpGreen": 130,
@@ -3511,6 +3520,7 @@
   {
     "name": "Enchant Bracer - Minor Deflect",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpYellow": 80,
     "skillUpGreen": 100,
     "skillUpGray": 120,
@@ -3524,6 +3534,7 @@
   {
     "name": "Enchant Chest - Lesser Mana",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 80,
     "skillUpYellow": 115,
     "skillUpGreen": 135,
@@ -3538,6 +3549,7 @@
   {
     "name": "Enchant Bracer - Minor Agility",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 80,
     "skillUpYellow": 115,
     "skillUpGreen": 135,
@@ -3553,6 +3565,7 @@
   {
     "name": "Enchant Bracer - Minor Strength",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 80,
     "skillUpYellow": 115,
     "skillUpGreen": 135,
@@ -3794,6 +3807,7 @@
   {
     "name": "Enchant Weapon - Minor Beastslayer",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 90,
     "skillUpYellow": 120,
     "skillUpGreen": 140,
@@ -3808,6 +3822,7 @@
   {
     "name": "Enchant Weapon - Minor Striking",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 90,
     "skillUpYellow": 120,
     "skillUpGreen": 140,
@@ -4172,6 +4187,7 @@
   {
     "name": "Enchant 2H Weapon - Minor Impact",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 100,
     "skillUpYellow": 130,
     "skillUpGreen": 150,
@@ -4187,6 +4203,7 @@
   {
     "name": "Enchant 2H Weapon - Lesser Intellect",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 100,
     "skillUpYellow": 130,
     "skillUpGreen": 150,
@@ -4525,6 +4542,7 @@
   {
     "name": "Enchant Shield - Minor Stamina",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 105,
     "skillUpYellow": 130,
     "skillUpGreen": 150,
@@ -4735,6 +4753,7 @@
   {
     "name": "Enchant 2H Weapon - Lesser Spirit",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 110,
     "skillUpYellow": 135,
     "skillUpGreen": 155,
@@ -4749,6 +4768,7 @@
   {
     "name": "Enchant Cloak - Minor Agility",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 110,
     "skillUpYellow": 135,
     "skillUpGreen": 155,
@@ -4885,6 +4905,7 @@
   {
     "name": "Enchant Cloak - Lesser Protection",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 115,
     "skillUpYellow": 140,
     "skillUpGreen": 160,
@@ -4900,6 +4921,7 @@
   {
     "name": "Enchant Shield - Lesser Protection",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 115,
     "skillUpYellow": 140,
     "skillUpGreen": 160,
@@ -5054,6 +5076,7 @@
   {
     "name": "Enchant Chest - Health",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 120,
     "skillUpYellow": 145,
     "skillUpGreen": 165,
@@ -5069,6 +5092,7 @@
   {
     "name": "Enchant Bracer - Lesser Spirit",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 120,
     "skillUpYellow": 145,
     "skillUpGreen": 165,
@@ -5078,21 +5102,6 @@
       "Lesser Astral Essence": 2
     },
     "results": {}
-  },
-  {
-    "name": "Scroll of Spatial Mending",
-    "profession": "Enchanting",
-    "skillUpYellow": 120,
-    "skillUpGreen": 125,
-    "skillUpGray": 130,
-    "learnedAt": 120,
-    "reagents": {
-      "Simple Wood": 1,
-      "Strange Dust": 4
-    },
-    "results": {
-      "220792": 1
-    }
   },
   {
     "name": "Lovingly Crafted Boomstick",
@@ -5430,6 +5439,7 @@
   {
     "name": "Enchant Cloak - Lesser Fire Resistance",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 125,
     "skillUpYellow": 150,
     "skillUpGreen": 170,
@@ -5445,6 +5455,7 @@
   {
     "name": "Enchant Boots - Minor Stamina",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 125,
     "skillUpYellow": 150,
     "skillUpGreen": 170,
@@ -5459,6 +5470,7 @@
   {
     "name": "Enchant Boots - Minor Agility",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 125,
     "skillUpYellow": 150,
     "skillUpGreen": 170,
@@ -5872,6 +5884,7 @@
   {
     "name": "Enchant Shield - Lesser Spirit",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 130,
     "skillUpYellow": 155,
     "skillUpGreen": 175,
@@ -5887,6 +5900,7 @@
   {
     "name": "Enchant Bracer - Lesser Stamina",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 130,
     "skillUpYellow": 155,
     "skillUpGreen": 175,
@@ -6009,6 +6023,7 @@
   {
     "name": "Enchant Cloak - Lesser Shadow Resistance",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 135,
     "skillUpYellow": 160,
     "skillUpGreen": 180,
@@ -6219,6 +6234,7 @@
   {
     "name": "Enchant Weapon - Lesser Striking",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 140,
     "skillUpYellow": 165,
     "skillUpGreen": 185,
@@ -6234,6 +6250,7 @@
   {
     "name": "Enchant Bracer - Lesser Strength",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 140,
     "skillUpYellow": 165,
     "skillUpGreen": 185,
@@ -6247,6 +6264,7 @@
   {
     "name": "Enchant Chest - Lesser Absorption",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 140,
     "skillUpYellow": 165,
     "skillUpGreen": 185,
@@ -6427,6 +6445,7 @@
   {
     "name": "Enchant 2H Weapon - Lesser Impact",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 145,
     "skillUpYellow": 170,
     "skillUpGreen": 190,
@@ -6442,6 +6461,7 @@
   {
     "name": "Enchant Chest - Mana",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 145,
     "skillUpYellow": 170,
     "skillUpGreen": 190,
@@ -6457,6 +6477,7 @@
   {
     "name": "Enchant Gloves - Mining",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 145,
     "skillUpYellow": 170,
     "skillUpGreen": 190,
@@ -6471,6 +6492,7 @@
   {
     "name": "Enchant Gloves - Herbalism",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 145,
     "skillUpYellow": 170,
     "skillUpGreen": 190,
@@ -6485,6 +6507,7 @@
   {
     "name": "Enchant Gloves - Fishing",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 145,
     "skillUpYellow": 170,
     "skillUpGreen": 190,
@@ -6742,6 +6765,7 @@
   {
     "name": "Enchant Bracer - Lesser Intellect",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 150,
     "skillUpYellow": 175,
     "skillUpGreen": 195,
@@ -6756,6 +6780,7 @@
   {
     "name": "Enchant Chest - Minor Stats",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 150,
     "skillUpYellow": 175,
     "skillUpGreen": 195,
@@ -7218,6 +7243,7 @@
   {
     "name": "Enchant Shield - Lesser Stamina",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 155,
     "skillUpYellow": 175,
     "skillUpGreen": 195,
@@ -7233,6 +7259,7 @@
   {
     "name": "Enchant Cloak - Defense",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 155,
     "skillUpYellow": 175,
     "skillUpGreen": 195,
@@ -7439,6 +7466,7 @@
   {
     "name": "Enchant Boots - Lesser Agility",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 160,
     "skillUpYellow": 180,
     "skillUpGreen": 200,
@@ -7454,6 +7482,7 @@
   {
     "name": "Enchant Chest - Greater Health",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 160,
     "skillUpYellow": 180,
     "skillUpGreen": 200,
@@ -7709,6 +7738,7 @@
   {
     "name": "Enchant Bracer - Spirit",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 165,
     "skillUpYellow": 185,
     "skillUpGreen": 205,
@@ -7918,6 +7948,7 @@
   {
     "name": "Enchant Boots - Lesser Stamina",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 170,
     "skillUpYellow": 190,
     "skillUpGreen": 210,
@@ -7932,6 +7963,7 @@
   {
     "name": "Enchant Bracer - Lesser Deflection",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 170,
     "skillUpYellow": 190,
     "skillUpGreen": 210,
@@ -7946,6 +7978,7 @@
   {
     "name": "Enchant Bracer - Stamina",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 170,
     "skillUpYellow": 190,
     "skillUpGreen": 210,
@@ -8238,6 +8271,7 @@
   {
     "name": "Enchant Weapon - Lesser Beastslayer",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 175,
     "skillUpYellow": 195,
     "skillUpGreen": 215,
@@ -8253,6 +8287,7 @@
   {
     "name": "Enchant Weapon - Lesser Elemental Slayer",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 175,
     "skillUpYellow": 195,
     "skillUpGreen": 215,
@@ -8268,6 +8303,7 @@
   {
     "name": "Enchant Cloak - Fire Resistance",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 175,
     "skillUpYellow": 195,
     "skillUpGreen": 215,
@@ -8794,6 +8830,7 @@
   {
     "name": "Enchant Shield - Spirit",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 180,
     "skillUpYellow": 200,
     "skillUpGreen": 220,
@@ -8809,6 +8846,7 @@
   {
     "name": "Enchant Bracer - Strength",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 180,
     "skillUpYellow": 200,
     "skillUpGreen": 220,
@@ -9019,6 +9057,7 @@
   {
     "name": "Enchant Chest - Greater Mana",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 185,
     "skillUpYellow": 205,
     "skillUpGreen": 225,
@@ -9365,6 +9404,7 @@
   {
     "name": "Enchant Boots - Lesser Spirit",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 190,
     "skillUpYellow": 210,
     "skillUpGreen": 230,
@@ -9379,6 +9419,7 @@
   {
     "name": "Enchant Weapon - Winter's Might",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 190,
     "skillUpYellow": 210,
     "skillUpGreen": 230,
@@ -9679,6 +9720,7 @@
   {
     "name": "Enchant Shield - Lesser Block",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 195,
     "skillUpYellow": 215,
     "skillUpGreen": 235,
@@ -9694,6 +9736,7 @@
   {
     "name": "Enchant Weapon - Striking",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 195,
     "skillUpYellow": 215,
     "skillUpGreen": 235,
@@ -10087,6 +10130,7 @@
   {
     "name": "Enchant 2H Weapon - Impact",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 200,
     "skillUpYellow": 220,
     "skillUpGreen": 240,
@@ -10102,6 +10146,7 @@
   {
     "name": "Enchant Gloves - Skinning",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 200,
     "skillUpYellow": 220,
     "skillUpGreen": 240,
@@ -10116,6 +10161,7 @@
   {
     "name": "Enchant Chest - Lesser Stats",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 200,
     "skillUpYellow": 220,
     "skillUpGreen": 240,
@@ -10168,6 +10214,7 @@
   {
     "name": "Enchant Weapon - Dismantle",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpYellow": 200,
     "skillUpGreen": 217,
     "skillUpGray": 235,
@@ -10182,6 +10229,7 @@
   {
     "name": "Enchant Chest - Retricutioner",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpYellow": 200,
     "skillUpGreen": 220,
     "skillUpGray": 240,
@@ -10651,6 +10699,7 @@
   {
     "name": "Enchant Cloak - Greater Defense",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 205,
     "skillUpYellow": 225,
     "skillUpGreen": 245,
@@ -10665,6 +10714,7 @@
   {
     "name": "Enchant Cloak - Resistance",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 205,
     "skillUpYellow": 225,
     "skillUpGreen": 245,
@@ -11116,6 +11166,7 @@
   {
     "name": "Enchant Gloves - Agility",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 210,
     "skillUpYellow": 230,
     "skillUpGreen": 250,
@@ -11131,6 +11182,7 @@
   {
     "name": "Enchant Shield - Stamina",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 210,
     "skillUpYellow": 230,
     "skillUpGreen": 250,
@@ -11144,6 +11196,7 @@
   {
     "name": "Enchant Bracer - Intellect",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 210,
     "skillUpYellow": 230,
     "skillUpGreen": 250,
@@ -11512,6 +11565,7 @@
   {
     "name": "Enchant Boots - Stamina",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 215,
     "skillUpYellow": 235,
     "skillUpGreen": 255,
@@ -11526,6 +11580,7 @@
   {
     "name": "Enchant Gloves - Advanced Mining",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 215,
     "skillUpYellow": 235,
     "skillUpGreen": 255,
@@ -11820,6 +11875,7 @@
   {
     "name": "Enchant Bracer - Greater Spirit",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 220,
     "skillUpYellow": 240,
     "skillUpGreen": 260,
@@ -11834,6 +11890,7 @@
   {
     "name": "Enchant Chest - Superior Health",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 220,
     "skillUpYellow": 240,
     "skillUpGreen": 260,
@@ -12194,6 +12251,7 @@
   {
     "name": "Enchant Gloves - Advanced Herbalism",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 225,
     "skillUpYellow": 245,
     "skillUpGreen": 265,
@@ -12208,6 +12266,7 @@
   {
     "name": "Enchant Cloak - Lesser Agility",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 225,
     "skillUpYellow": 245,
     "skillUpGreen": 265,
@@ -12221,6 +12280,7 @@
   {
     "name": "Enchant Gloves - Strength",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 225,
     "skillUpYellow": 245,
     "skillUpGreen": 265,
@@ -12236,6 +12296,7 @@
   {
     "name": "Enchant Boots - Minor Speed",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 225,
     "skillUpYellow": 245,
     "skillUpGreen": 265,
@@ -12950,6 +13011,7 @@
   {
     "name": "Enchant Shield - Greater Spirit",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 230,
     "skillUpYellow": 250,
     "skillUpGreen": 270,
@@ -12965,6 +13027,7 @@
   {
     "name": "Enchant Weapon - Demonslaying",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 230,
     "skillUpYellow": 250,
     "skillUpGreen": 270,
@@ -12980,6 +13043,7 @@
   {
     "name": "Enchant Chest - Superior Mana",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 230,
     "skillUpYellow": 250,
     "skillUpGreen": 270,
@@ -13349,6 +13413,7 @@
   {
     "name": "Enchant Bracer - Deflection",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 235,
     "skillUpYellow": 255,
     "skillUpGreen": 275,
@@ -13363,6 +13428,7 @@
   {
     "name": "Enchant Shield - Frost Resistance",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 235,
     "skillUpYellow": 255,
     "skillUpGreen": 275,
@@ -13377,6 +13443,7 @@
   {
     "name": "Enchant Boots - Agility",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 235,
     "skillUpYellow": 255,
     "skillUpGreen": 275,
@@ -13694,6 +13761,7 @@
   {
     "name": "Enchant 2H Weapon - Greater Impact",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 240,
     "skillUpYellow": 260,
     "skillUpGreen": 280,
@@ -13709,6 +13777,7 @@
   {
     "name": "Enchant Bracer - Greater Strength",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 240,
     "skillUpYellow": 260,
     "skillUpGreen": 280,
@@ -14064,6 +14133,7 @@
   {
     "name": "Enchant Chest - Stats",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 245,
     "skillUpYellow": 265,
     "skillUpGreen": 285,
@@ -14080,6 +14150,7 @@
   {
     "name": "Enchant Weapon - Greater Striking",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 245,
     "skillUpYellow": 265,
     "skillUpGreen": 285,
@@ -14095,6 +14166,7 @@
   {
     "name": "Enchant Bracer - Greater Stamina",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 245,
     "skillUpYellow": 265,
     "skillUpGreen": 285,
@@ -14546,6 +14618,7 @@
   {
     "name": "Enchant Gloves - Riding Skill",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 250,
     "skillUpYellow": 270,
     "skillUpGreen": 290,
@@ -14560,6 +14633,7 @@
   {
     "name": "Enchant Gloves - Minor Haste",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 250,
     "skillUpYellow": 270,
     "skillUpGreen": 290,
@@ -15284,6 +15358,7 @@
   {
     "name": "Enchant Bracer - Greater Intellect",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 255,
     "skillUpYellow": 275,
     "skillUpGreen": 295,
@@ -15438,6 +15513,7 @@
   {
     "name": "Enchant Boots - Greater Stamina",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 260,
     "skillUpYellow": 280,
     "skillUpGreen": 300,
@@ -15747,6 +15823,7 @@
   {
     "name": "Enchant Weapon - Fiery Weapon",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 265,
     "skillUpYellow": 285,
     "skillUpGreen": 305,
@@ -15778,6 +15855,7 @@
   {
     "name": "Enchant Cloak - Greater Resistance",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 265,
     "skillUpYellow": 285,
     "skillUpGreen": 305,
@@ -15796,6 +15874,7 @@
   {
     "name": "Enchant Shield - Greater Stamina",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 265,
     "skillUpYellow": 285,
     "skillUpGreen": 305,
@@ -16053,6 +16132,7 @@
   {
     "name": "Enchant Bracer - Superior Spirit",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 270,
     "skillUpYellow": 290,
     "skillUpGreen": 310,
@@ -16067,6 +16147,7 @@
   {
     "name": "Enchant Gloves - Greater Agility",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 270,
     "skillUpYellow": 290,
     "skillUpGreen": 310,
@@ -16564,6 +16645,7 @@
   {
     "name": "Enchant Boots - Spirit",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 275,
     "skillUpYellow": 295,
     "skillUpGreen": 315,
@@ -16578,6 +16660,7 @@
   {
     "name": "Enchant Chest - Major Health",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 275,
     "skillUpYellow": 295,
     "skillUpGreen": 315,
@@ -17182,6 +17265,7 @@
   {
     "name": "Enchant Shield - Superior Spirit",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 280,
     "skillUpYellow": 300,
     "skillUpGreen": 320,
@@ -17457,6 +17541,7 @@
   {
     "name": "Enchant Cloak - Superior Defense",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 285,
     "skillUpYellow": 305,
     "skillUpGreen": 325,
@@ -17470,6 +17555,7 @@
   {
     "name": "Enchant Weapon - Icy Chill",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 285,
     "skillUpYellow": 305,
     "skillUpGreen": 325,
@@ -18030,6 +18116,7 @@
   {
     "name": "Enchant Chest - Major Mana",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 290,
     "skillUpYellow": 310,
     "skillUpGreen": 330,
@@ -18064,6 +18151,7 @@
   {
     "name": "Enchant Weapon - Strength",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 290,
     "skillUpYellow": 310,
     "skillUpGreen": 330,
@@ -18080,6 +18168,7 @@
   {
     "name": "Enchant Weapon - Agility",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 290,
     "skillUpYellow": 310,
     "skillUpGreen": 330,
@@ -18096,6 +18185,7 @@
   {
     "name": "Enchant Bracer - Mana Regeneration",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 290,
     "skillUpYellow": 310,
     "skillUpGreen": 330,
@@ -18111,6 +18201,7 @@
   {
     "name": "Enchant 2H Weapon - Agility",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 290,
     "skillUpYellow": 310,
     "skillUpGreen": 330,
@@ -18567,6 +18658,7 @@
   {
     "name": "Enchant Bracer - Superior Strength",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 295,
     "skillUpYellow": 315,
     "skillUpGreen": 335,
@@ -18581,6 +18673,7 @@
   {
     "name": "Enchant Gloves - Greater Strength",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 295,
     "skillUpYellow": 315,
     "skillUpGreen": 335,
@@ -18595,6 +18688,7 @@
   {
     "name": "Enchant Boots - Greater Agility",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 295,
     "skillUpYellow": 315,
     "skillUpGreen": 335,
@@ -18608,6 +18702,7 @@
   {
     "name": "Enchant 2H Weapon - Superior Impact",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 295,
     "skillUpYellow": 315,
     "skillUpGreen": 335,
@@ -18622,6 +18717,7 @@
   {
     "name": "Enchant Weapon - Unholy Weapon",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 295,
     "skillUpYellow": 315,
     "skillUpGreen": 335,
@@ -20041,6 +20137,7 @@
   {
     "name": "Enchant Bracer - Superior Stamina",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 300,
     "skillUpYellow": 320,
     "skillUpGreen": 340,
@@ -20054,6 +20151,7 @@
   {
     "name": "Enchant Chest - Greater Stats",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 300,
     "skillUpYellow": 320,
     "skillUpGreen": 340,
@@ -20069,6 +20167,7 @@
   {
     "name": "Enchant Weapon - Superior Striking",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 300,
     "skillUpYellow": 320,
     "skillUpGreen": 340,
@@ -20083,6 +20182,7 @@
   {
     "name": "Enchant Weapon - Lifestealing",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 300,
     "skillUpYellow": 320,
     "skillUpGreen": 340,
@@ -20098,6 +20198,7 @@
   {
     "name": "Enchant Weapon - Crusader",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 300,
     "skillUpYellow": 320,
     "skillUpGreen": 340,
@@ -20112,6 +20213,7 @@
   {
     "name": "Enchant 2H Weapon - Major Spirit",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 300,
     "skillUpYellow": 320,
     "skillUpGreen": 340,
@@ -20126,6 +20228,7 @@
   {
     "name": "Enchant 2H Weapon - Major Intellect",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 300,
     "skillUpYellow": 320,
     "skillUpGreen": 340,
@@ -20140,6 +20243,7 @@
   {
     "name": "Enchant Weapon - Spell Power",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 300,
     "skillUpYellow": 320,
     "skillUpGreen": 340,
@@ -20158,6 +20262,7 @@
   {
     "name": "Enchant Weapon - Healing Power",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 300,
     "skillUpYellow": 320,
     "skillUpGreen": 340,
@@ -20175,6 +20280,7 @@
   {
     "name": "Enchant Bracer - Healing Power",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 300,
     "skillUpYellow": 320,
     "skillUpGreen": 340,
@@ -20191,6 +20297,7 @@
   {
     "name": "Enchant Weapon - Mighty Spirit",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 300,
     "skillUpYellow": 320,
     "skillUpGreen": 340,
@@ -20206,6 +20313,7 @@
   {
     "name": "Enchant Weapon - Mighty Intellect",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 300,
     "skillUpYellow": 320,
     "skillUpGreen": 340,
@@ -20221,6 +20329,7 @@
   {
     "name": "Enchant Gloves - Threat",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 300,
     "skillUpYellow": 320,
     "skillUpGreen": 340,
@@ -20236,6 +20345,7 @@
   {
     "name": "Enchant Gloves - Shadow Power",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 300,
     "skillUpYellow": 320,
     "skillUpGreen": 340,
@@ -20251,6 +20361,7 @@
   {
     "name": "Enchant Gloves - Frost Power",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 300,
     "skillUpYellow": 320,
     "skillUpGreen": 340,
@@ -20266,6 +20377,7 @@
   {
     "name": "Enchant Gloves - Fire Power",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 300,
     "skillUpYellow": 320,
     "skillUpGreen": 340,
@@ -20281,6 +20393,7 @@
   {
     "name": "Enchant Gloves - Healing Power",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 300,
     "skillUpYellow": 320,
     "skillUpGreen": 340,
@@ -20296,6 +20409,7 @@
   {
     "name": "Enchant Gloves - Superior Agility",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 300,
     "skillUpYellow": 320,
     "skillUpGreen": 340,
@@ -20311,6 +20425,7 @@
   {
     "name": "Enchant Cloak - Greater Fire Resistance",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 300,
     "skillUpYellow": 320,
     "skillUpGreen": 340,
@@ -20326,6 +20441,7 @@
   {
     "name": "Enchant Cloak - Greater Nature Resistance",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 300,
     "skillUpYellow": 320,
     "skillUpGreen": 340,
@@ -20341,6 +20457,7 @@
   {
     "name": "Enchant Cloak - Stealth",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 300,
     "skillUpYellow": 320,
     "skillUpGreen": 340,
@@ -20356,6 +20473,7 @@
   {
     "name": "Enchant Cloak - Subtlety",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 300,
     "skillUpYellow": 320,
     "skillUpGreen": 340,
@@ -20371,6 +20489,7 @@
   {
     "name": "Enchant Cloak - Dodge",
     "profession": "Enchanting",
+    "enchantment": true,
     "skillUpOrange": 300,
     "skillUpYellow": 320,
     "skillUpGreen": 340,

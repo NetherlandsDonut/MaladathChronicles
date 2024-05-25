@@ -124,6 +124,9 @@ public class Item
 
     //Reputation standing required from the player to use this item
     public string reputationRequired;
+
+    //Enchant applied by an enchanter
+    public Enchant enchant;
     
     //Item power / level of this item, helps in calculating which item is better than other
     public int ilvl;
@@ -651,11 +654,6 @@ public class Item
         );
         if (settings.rarityIndicators.Value())
             AddBigButtonOverlay("OtherRarity" + item.rarity + (settings.bigRarityIndicators.Value() ? "Big" : ""), 0, 2);
-        if (currentSave.player.HasItemEquipped(item.name))
-        {
-            SetBigButtonToGrayscale();
-            AddBigButtonOverlay("OtherGridBlurred", 0, 2);
-        }
         if (item.CanEquip(currentSave.player) && currentSave.player.IsItemNewSlot(item) && (settings.upgradeIndicators.Value() || settings.newSlotIndicators.Value()))
             AddBigButtonOverlay(settings.newSlotIndicators.Value() ? "OtherItemNewSlot" : "OtherItemUpgrade", 0, 2);
         else if (settings.upgradeIndicators.Value() && item.CanEquip(currentSave.player) && currentSave.player.IsItemAnUpgrade(item))
@@ -866,6 +864,18 @@ public class Item
                 AddLine("Required skill: ", "DarkGray");
                 AddText(recipe.learnedAt + "", currentSave.player.professionSkills.ContainsKey(recipe.profession) && recipe.learnedAt <= currentSave.player.professionSkills[recipe.profession].Item1 ? "DarkGray" : "DangerousRed");
             });
+        }
+        if (item.enchant != null)
+        {
+            AddHeaderRegion(() =>
+            {
+                AddLine("Enchanted: " + item.enchant.name.Split("-").Last().Trim(), "Uncommon");
+            });
+            //AddPaddingRegion(() =>
+            //{
+            //    foreach (var gain in item.enchant.gains)
+            //        AddLine(gain.Key + " +" + gain.Value, "Uncommon");
+            //});
         }
         if (item.lvl > 1)
             AddHeaderRegion(() =>

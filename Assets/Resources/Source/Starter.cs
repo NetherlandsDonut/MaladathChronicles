@@ -11,6 +11,7 @@ using static Sound;
 using static Cursor;
 using static Talent;
 using static Defines;
+using static Enchant;
 using static SaveGame;
 using static SitePath;
 using static GameSettings;
@@ -179,6 +180,8 @@ public class Starter : MonoBehaviour
         flightPathGroups ??= new();
         Deserialize(ref pEnchants, "permanentenchants", false, prefix);
         pEnchants ??= new();
+        Deserialize(ref enchants, "enchants", false, prefix);
+        enchants ??= new();
         Deserialize(ref zones, "zones", false, prefix);
         zones ??= new();
         Deserialize(ref paths, "paths", false, prefix);

@@ -1,8 +1,7 @@
 [
   {
     "category": "Innkeeper",
-    "icon": "TradeInnkeeper",
-    "priority": 0
+    "icon": "TradeInnkeeper"
   },
   {
     "category": "Flight Master",

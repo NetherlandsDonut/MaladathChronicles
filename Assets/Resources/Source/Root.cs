@@ -114,6 +114,20 @@ public static class Root
         return "";
     }
 
+    public static Blueprint FindWindowBlueprint(string name)
+    {
+        var find = windowBlueprints.Find(x => x.title == name);
+        find ??= BlueprintDev.windowBlueprints.Find(x => x.title == name);
+        return find;
+    }
+
+    public static Blueprint FindDesktopBlueprint(string name)
+    {
+        var find = desktopBlueprints.Find(x => x.title == name);
+        find ??= BlueprintDev.desktopBlueprints.Find(x => x.title == name);
+        return find;
+    }
+
     public static T Copy<T>(this object obj) => Newtonsoft.Json.JsonConvert.DeserializeObject<T>(Newtonsoft.Json.JsonConvert.SerializeObject(obj));
 
     public static List<(string, string)> TrimLast(this List<(string, string)> list, bool should)
@@ -133,7 +147,7 @@ public static class Root
 
     public static void SpawnDesktopBlueprint(string blueprintTitle, bool autoSwitch = true)
     {
-        var blueprint = desktopBlueprints.Find(x => x.title == blueprintTitle);
+        var blueprint = FindDesktopBlueprint(blueprintTitle);
         if (blueprint == null) return;
         var spawnedNew = false;
         if (!desktops.Exists(x => x.title == blueprintTitle))
@@ -289,7 +303,7 @@ public static class Root
 
     public static Window SpawnWindowBlueprint(string blueprintTitle, bool resetSearch = true)
     {
-        return SpawnWindowBlueprint(windowBlueprints.Find(x => x.title == blueprintTitle), resetSearch);
+        return SpawnWindowBlueprint(FindWindowBlueprint(blueprintTitle), resetSearch);
     }
 
     public static Window SpawnWindowBlueprint(Blueprint blueprint, bool resetSearch = true)

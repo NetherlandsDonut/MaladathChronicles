@@ -253,6 +253,7 @@ public class SaveGame
     //Logs a character out of the world
     public static void CloseSave()
     {
+        if (currentSave == null) return;
         currentSave.Flush();
         if (currentSave.playerDead)
             settings.selectedCharacter = "";

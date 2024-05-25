@@ -243,8 +243,8 @@ public class Window : MonoBehaviour
                         text.Erase();
                         var split = new List<string>();
                         foreach (var character in text.text)
-                            if (split.Count > 0 && split[split.Count - 1] == " ")
-                                split[split.Count - 1] += character;
+                            if (split.Count > 0 && split[^1] == " ")
+                                split[^1] += character;
                             else split.Add(character + "");
                         foreach (var part in split)
                             if (regionGroup.setWidth == 0)
@@ -255,8 +255,9 @@ public class Window : MonoBehaviour
                                     length = text.SpawnCharacter(character, length);
                             else
                             {
-                                for (int i = 0; i < defines.textWrapEnding.Length; i++)
-                                    length = text.SpawnCharacter(defines.textWrapEnding[i], length);
+                                if (9 + (line.align == "Right" ? defines.textPaddingLeft : (line.align == "Right" ? defines.textPaddingRight : 0)) + length + objectOffset < regionGroup.setWidth - region.smallButtons.Count * 19)
+                                    for (int i = 0; i < defines.textWrapEnding.Length; i++)
+                                        length = text.SpawnCharacter(defines.textWrapEnding[i], length);
                                 break;
                             }
                     }
@@ -374,11 +375,11 @@ public class Window : MonoBehaviour
                 if (regionGroup == headerGroup)
                 {
                     if (regionGroup.stretchRegion == region && regionGroup.setHeight != 0)
-                        region.yExtend = regionGroup.setHeight - regionGroup.PlannedHeight() + 10;
+                        region.yExtend = regionGroup.setHeight - regionGroup.PlannedHeight() + 10 + (region.lines.Count > 0 ? 4 : 0);
                 }
                 else if (regionGroup.PlannedHeight() < regionGroup.setHeight)
                     if (regionGroup.stretchRegion == region || regionGroup.stretchRegion == null && region == regionGroup.regions.Last())
-                        region.yExtend = regionGroup.setHeight - regionGroup.PlannedHeight();
+                        region.yExtend = regionGroup.setHeight - regionGroup.PlannedHeight() + (region.lines.Count > 0 ? 4 : 0);
                 if (region.yExtend > 0) extendOffset += region.yExtend;
                 regionGroup.currentHeight += 4 + region.currentHeight;
             }

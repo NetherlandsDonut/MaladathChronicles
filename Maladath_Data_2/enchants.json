@@ -1,0 +1,814 @@
+[
+  {
+    "name": "Enchant Chest - Minor Health",
+    "gains": {
+      "Health": 5
+    },
+    "type": "Chest"
+  },
+  {
+    "name": "Enchant Chest - Minor Mana",
+    "gains": {},
+    "type": "Chest"
+  },
+  {
+    "name": "Enchant Chest - Minor Absorption",
+    "gains": {},
+    "type": "Chest"
+  },
+  {
+    "name": "Enchant Cloak - Minor Resistance",
+    "gains": {},
+    "type": "Back"
+  },
+  {
+    "name": "Enchant Bracer - Minor Stamina",
+    "gains": {
+      "Stamina": 1
+    },
+    "type": "Wrists"
+  },
+  {
+    "name": "Enchant Chest - Lesser Health",
+    "gains": {
+      "Health": 15
+    },
+    "type": "Chest"
+  },
+  {
+    "name": "Enchant Bracer - Minor Spirit",
+    "gains": {
+      "Spirit": 1
+    },
+    "type": "Wrists"
+  },
+  {
+    "name": "Enchant Bracer - Minor Health",
+    "gains": {
+      "Health": 5
+    },
+    "type": "Wrists"
+  },
+  {
+    "name": "Enchant Cloak - Minor Protection",
+    "gains": {
+      "Armor": 10
+    },
+    "type": "Back"
+  },
+  {
+    "name": "Enchant Bracer - Minor Deflect",
+    "gains": {},
+    "type": "Wrists"
+  },
+  {
+    "name": "Enchant Chest - Lesser Mana",
+    "gains": {},
+    "type": "Chest"
+  },
+  {
+    "name": "Enchant Bracer - Minor Agility",
+    "gains": {
+      "Agility": 1
+    },
+    "type": "Wrists"
+  },
+  {
+    "name": "Enchant Bracer - Minor Strength",
+    "gains": {
+      "Strength": 1
+    },
+    "type": "Wrists"
+  },
+  {
+    "name": "Enchant Weapon - Minor Beastslayer",
+    "gains": {},
+    "type": "One Handed"
+  },
+  {
+    "name": "Enchant Weapon - Minor Striking",
+    "gains": {},
+    "type": "One Handed"
+  },
+  {
+    "name": "Enchant 2H Weapon - Minor Impact",
+    "gains": {},
+    "type": "Two Handed"
+  },
+  {
+    "name": "Enchant 2H Weapon - Lesser Intellect",
+    "gains": {
+      "Intellect": 3
+    },
+    "type": "Two Handed"
+  },
+  {
+    "name": "Enchant Shield - Minor Stamina",
+    "gains": {
+      "Stamina": 1
+    },
+    "type": "Shield"
+  },
+  {
+    "name": "Enchant 2H Weapon - Lesser Spirit",
+    "gains": {
+      "Spirit": 3
+    },
+    "type": "Two Handed"
+  },
+  {
+    "name": "Enchant Cloak - Minor Agility",
+    "gains": {
+      "Agility": 1
+    },
+    "type": "Back"
+  },
+  {
+    "name": "Enchant Cloak - Lesser Protection",
+    "gains": {
+      "Armor": 20
+    },
+    "type": "Back"
+  },
+  {
+    "name": "Enchant Shield - Lesser Protection",
+    "gains": {
+      "Armor": 30
+    },
+    "type": "Shield"
+  },
+  {
+    "name": "Enchant Chest - Health",
+    "gains": {
+      "Health": 25
+    },
+    "type": "Chest"
+  },
+  {
+    "name": "Enchant Bracer - Lesser Spirit",
+    "gains": {
+      "Spirit": 3
+    },
+    "type": "Wrists"
+  },
+  {
+    "name": "Enchant Cloak - Lesser Fire Resistance",
+    "gains": {},
+    "type": "Back"
+  },
+  {
+    "name": "Enchant Boots - Minor Stamina",
+    "gains": {
+      "Stamina": 1
+    },
+    "type": "Feet"
+  },
+  {
+    "name": "Enchant Boots - Minor Agility",
+    "gains": {
+      "Agility": 1
+    },
+    "type": "Feet"
+  },
+  {
+    "name": "Enchant Shield - Lesser Spirit",
+    "gains": {
+      "Spirit": 3
+    },
+    "type": "Shield"
+  },
+  {
+    "name": "Enchant Bracer - Lesser Stamina",
+    "gains": {
+      "Stamina": 3
+    },
+    "type": "Wrists"
+  },
+  {
+    "name": "Enchant Cloak - Lesser Shadow Resistance",
+    "gains": {},
+    "type": "Back"
+  },
+  {
+    "name": "Enchant Weapon - Lesser Striking",
+    "gains": {},
+    "type": "One Handed"
+  },
+  {
+    "name": "Enchant Bracer - Lesser Strength",
+    "gains": {
+      "Strength": 3
+    },
+    "type": "Wrists"
+  },
+  {
+    "name": "Enchant Chest - Lesser Absorption",
+    "gains": {},
+    "type": "Chest"
+  },
+  {
+    "name": "Enchant 2H Weapon - Lesser Impact",
+    "gains": {},
+    "type": "Two Handed"
+  },
+  {
+    "name": "Enchant Chest - Mana",
+    "gains": {},
+    "type": "Chest"
+  },
+  {
+    "name": "Enchant Gloves - Mining",
+    "gains": {},
+    "type": "Hands"
+  },
+  {
+    "name": "Enchant Gloves - Herbalism",
+    "gains": {},
+    "type": "Hands"
+  },
+  {
+    "name": "Enchant Gloves - Fishing",
+    "gains": {},
+    "type": "Hands"
+  },
+  {
+    "name": "Enchant Bracer - Lesser Intellect",
+    "gains": {
+      "Intellect": 3
+    },
+    "type": "Wrists"
+  },
+  {
+    "name": "Enchant Chest - Minor Stats",
+    "gains": {
+      "Agility": 1,
+      "Stamina": 1,
+      "Strength": 1,
+      "Spirit": 1,
+      "Intellect": 1
+    },
+    "type": "Chest"
+  },
+  {
+    "name": "Enchant Shield - Lesser Stamina",
+    "gains": {
+      "Stamina": 3
+    },
+    "type": "Shield"
+  },
+  {
+    "name": "Enchant Cloak - Defense",
+    "gains": {},
+    "type": "Back"
+  },
+  {
+    "name": "Enchant Boots - Lesser Agility",
+    "gains": {
+      "Agility": 3
+    },
+    "type": "Feet"
+  },
+  {
+    "name": "Enchant Chest - Greater Health",
+    "gains": {
+      "Health": 35
+    },
+    "type": "Chest"
+  },
+  {
+    "name": "Enchant Bracer - Spirit",
+    "gains": {},
+    "type": "Wrists"
+  },
+  {
+    "name": "Enchant Boots - Lesser Stamina",
+    "gains": {
+      "Stamina": 3
+    },
+    "type": "Feet"
+  },
+  {
+    "name": "Enchant Bracer - Lesser Deflection",
+    "gains": {},
+    "type": "Wrists"
+  },
+  {
+    "name": "Enchant Bracer - Stamina",
+    "gains": {},
+    "type": "Wrists"
+  },
+  {
+    "name": "Enchant Weapon - Lesser Beastslayer",
+    "gains": {},
+    "type": "One Handed"
+  },
+  {
+    "name": "Enchant Weapon - Lesser Elemental Slayer",
+    "gains": {},
+    "type": "One Handed"
+  },
+  {
+    "name": "Enchant Cloak - Fire Resistance",
+    "gains": {},
+    "type": "Back"
+  },
+  {
+    "name": "Enchant Shield - Spirit",
+    "gains": {},
+    "type": "Shield"
+  },
+  {
+    "name": "Enchant Bracer - Strength",
+    "gains": {},
+    "type": "Wrists"
+  },
+  {
+    "name": "Enchant Chest - Greater Mana",
+    "gains": {},
+    "type": "Chest"
+  },
+  {
+    "name": "Enchant Boots - Lesser Spirit",
+    "gains": {
+      "Spirit": 3
+    },
+    "type": "Feet"
+  },
+  {
+    "name": "Enchant Weapon - Winter's Might",
+    "gains": {
+      "Frost Mastery": 1
+    },
+    "type": "One Handed"
+  },
+  {
+    "name": "Enchant Shield - Lesser Block",
+    "gains": {},
+    "type": "Shield"
+  },
+  {
+    "name": "Enchant Weapon - Striking",
+    "gains": {},
+    "type": "One Handed"
+  },
+  {
+    "name": "Enchant 2H Weapon - Impact",
+    "gains": {},
+    "type": "Two Handed"
+  },
+  {
+    "name": "Enchant Gloves - Skinning",
+    "gains": {},
+    "type": "Hands"
+  },
+  {
+    "name": "Enchant Chest - Lesser Stats",
+    "gains": {
+      "Agility": 2,
+      "Stamina": 2,
+      "Strength": 2,
+      "Spirit": 2,
+      "Intellect": 2
+    },
+    "type": "Chest"
+  },
+  {
+    "name": "Enchant Weapon - Dismantle",
+    "gains": {},
+    "type": "One Handed"
+  },
+  {
+    "name": "Enchant Chest - Retricutioner",
+    "gains": {},
+    "type": "Chest"
+  },
+  {
+    "name": "Enchant Cloak - Greater Defense",
+    "gains": {
+      "Armor": 50
+    },
+    "type": "Back"
+  },
+  {
+    "name": "Enchant Cloak - Resistance",
+    "gains": {},
+    "type": "Back"
+  },
+  {
+    "name": "Enchant Gloves - Agility",
+    "gains": {},
+    "type": "Hands"
+  },
+  {
+    "name": "Enchant Shield - Stamina",
+    "gains": {},
+    "type": "Shield"
+  },
+  {
+    "name": "Enchant Bracer - Intellect",
+    "gains": {},
+    "type": "Wrists"
+  },
+  {
+    "name": "Enchant Boots - Stamina",
+    "gains": {},
+    "type": "Feet"
+  },
+  {
+    "name": "Enchant Gloves - Advanced Mining",
+    "gains": {},
+    "type": "Hands"
+  },
+  {
+    "name": "Enchant Bracer - Greater Spirit",
+    "gains": {
+      "Spirit": 7
+    },
+    "type": "Wrists"
+  },
+  {
+    "name": "Enchant Chest - Superior Health",
+    "gains": {
+      "Health": 50
+    },
+    "type": "Chest"
+  },
+  {
+    "name": "Enchant Gloves - Advanced Herbalism",
+    "gains": {},
+    "type": "Hands"
+  },
+  {
+    "name": "Enchant Cloak - Lesser Agility",
+    "gains": {
+      "Agility": 3
+    },
+    "type": "Back"
+  },
+  {
+    "name": "Enchant Gloves - Strength",
+    "gains": {},
+    "type": "Hands"
+  },
+  {
+    "name": "Enchant Boots - Minor Speed",
+    "gains": {},
+    "type": "Feet"
+  },
+  {
+    "name": "Enchant Shield - Greater Spirit",
+    "gains": {
+      "Spirit": 7
+    },
+    "type": "Shield"
+  },
+  {
+    "name": "Enchant Weapon - Demonslaying",
+    "gains": {},
+    "type": "One Handed"
+  },
+  {
+    "name": "Enchant Chest - Superior Mana",
+    "gains": {},
+    "type": "Chest"
+  },
+  {
+    "name": "Enchant Bracer - Deflection",
+    "gains": {},
+    "type": "Wrists"
+  },
+  {
+    "name": "Enchant Shield - Frost Resistance",
+    "gains": {},
+    "type": "Shield"
+  },
+  {
+    "name": "Enchant Boots - Agility",
+    "gains": {},
+    "type": "Feet"
+  },
+  {
+    "name": "Enchant 2H Weapon - Greater Impact",
+    "gains": {},
+    "type": "Two Handed"
+  },
+  {
+    "name": "Enchant Bracer - Greater Strength",
+    "gains": {
+      "Strength": 7
+    },
+    "type": "Wrists"
+  },
+  {
+    "name": "Enchant Chest - Stats",
+    "gains": {
+      "Agility": 3,
+      "Stamina": 3,
+      "Strength": 3,
+      "Spirit": 3,
+      "Intellect": 3
+    },
+    "type": "Chest"
+  },
+  {
+    "name": "Enchant Weapon - Greater Striking",
+    "gains": {},
+    "type": "One Handed"
+  },
+  {
+    "name": "Enchant Bracer - Greater Stamina",
+    "gains": {
+      "Stamina": 7
+    },
+    "type": "Wrists"
+  },
+  {
+    "name": "Enchant Gloves - Riding Skill",
+    "gains": {},
+    "type": "Hands"
+  },
+  {
+    "name": "Enchant Gloves - Minor Haste",
+    "gains": {},
+    "type": "Hands"
+  },
+  {
+    "name": "Enchanted Thorium",
+    "gains": {},
+    "type": "Thorium"
+  },
+  {
+    "name": "Enchanted Leather",
+    "gains": {},
+    "type": "Leather"
+  },
+  {
+    "name": "Enchant Bracer - Greater Intellect",
+    "gains": {
+      "Intellect": 7
+    },
+    "type": "Wrists"
+  },
+  {
+    "name": "Enchant Boots - Greater Stamina",
+    "gains": {
+      "Stamina": 7
+    },
+    "type": "Feet"
+  },
+  {
+    "name": "Enchant Weapon - Fiery Weapon",
+    "gains": {},
+    "type": "One Handed"
+  },
+  {
+    "name": "Enchant Cloak - Greater Resistance",
+    "gains": {},
+    "type": "Back"
+  },
+  {
+    "name": "Enchant Shield - Greater Stamina",
+    "gains": {
+      "Stamina": 7
+    },
+    "type": "Shield"
+  },
+  {
+    "name": "Enchant Bracer - Superior Spirit",
+    "gains": {
+      "Spirit": 9
+    },
+    "type": "Wrists"
+  },
+  {
+    "name": "Enchant Gloves - Greater Agility",
+    "gains": {
+      "Agility": 7
+    },
+    "type": "Hands"
+  },
+  {
+    "name": "Enchant Boots - Spirit",
+    "gains": {},
+    "type": "Feet"
+  },
+  {
+    "name": "Enchant Chest - Major Health",
+    "gains": {
+      "Health": 100
+    },
+    "type": "Chest"
+  },
+  {
+    "name": "Enchant Shield - Superior Spirit",
+    "gains": {
+      "Spirit": 9
+    },
+    "type": "Shield"
+  },
+  {
+    "name": "Enchant Cloak - Superior Defense",
+    "gains": {
+      "Armor": 70
+    },
+    "type": "Back"
+  },
+  {
+    "name": "Enchant Weapon - Icy Chill",
+    "gains": {},
+    "type": "One Handed"
+  },
+  {
+    "name": "Enchant Chest - Major Mana",
+    "gains": {},
+    "type": "Chest"
+  },
+  {
+    "name": "Enchant Weapon - Strength",
+    "gains": {},
+    "type": "One Handed"
+  },
+  {
+    "name": "Enchant Weapon - Agility",
+    "gains": {},
+    "type": "One Handed"
+  },
+  {
+    "name": "Enchant Bracer - Mana Regeneration",
+    "gains": {},
+    "type": "Wrists"
+  },
+  {
+    "name": "Enchant 2H Weapon - Agility",
+    "gains": {},
+    "type": "Two Handed"
+  },
+  {
+    "name": "Enchant Bracer - Superior Strength",
+    "gains": {
+      "Strength": 9
+    },
+    "type": "Wrists"
+  },
+  {
+    "name": "Enchant Gloves - Greater Strength",
+    "gains": {
+      "Strength": 7
+    },
+    "type": "Hands"
+  },
+  {
+    "name": "Enchant Boots - Greater Agility",
+    "gains": {
+      "Agility": 7
+    },
+    "type": "Feet"
+  },
+  {
+    "name": "Enchant 2H Weapon - Superior Impact",
+    "gains": {},
+    "type": "Two Handed"
+  },
+  {
+    "name": "Enchant Weapon - Unholy Weapon",
+    "gains": {},
+    "type": "One Handed"
+  },
+  {
+    "name": "Enchant Bracer - Superior Stamina",
+    "gains": {
+      "Stamina": 9
+    },
+    "type": "Wrists"
+  },
+  {
+    "name": "Enchant Chest - Greater Stats",
+    "gains": {
+      "Agility": 4,
+      "Stamina": 4,
+      "Strength": 4,
+      "Spirit": 4,
+      "Intellect": 4
+    },
+    "type": "Chest"
+  },
+  {
+    "name": "Enchant Weapon - Superior Striking",
+    "gains": {},
+    "type": "One Handed"
+  },
+  {
+    "name": "Enchant Weapon - Lifestealing",
+    "gains": {},
+    "type": "One Handed"
+  },
+  {
+    "name": "Enchant Weapon - Crusader",
+    "gains": {},
+    "type": "One Handed"
+  },
+  {
+    "name": "Enchant 2H Weapon - Major Spirit",
+    "gains": {},
+    "type": "Two Handed"
+  },
+  {
+    "name": "Enchant 2H Weapon - Major Intellect",
+    "gains": {},
+    "type": "Two Handed"
+  },
+  {
+    "name": "Enchant Weapon - Spell Power",
+    "gains": {
+      "Spell Power": 30
+    },
+    "type": "One Handed"
+  },
+  {
+    "name": "Enchant Weapon - Healing Power",
+    "gains": {},
+    "type": "One Handed"
+  },
+  {
+    "name": "Enchant Bracer - Healing Power",
+    "gains": {},
+    "type": "Wrists"
+  },
+  {
+    "name": "Enchant Weapon - Mighty Spirit",
+    "gains": {
+      "Spirit": 20
+    },
+    "type": "One Handed"
+  },
+  {
+    "name": "Enchant Weapon - Mighty Intellect",
+    "gains": {
+      "Intellect": 20
+    },
+    "type": "One Handed"
+  },
+  {
+    "name": "Enchant Gloves - Threat",
+    "gains": {},
+    "type": "Hands"
+  },
+  {
+    "name": "Enchant Gloves - Shadow Power",
+    "gains": {
+      "Shadow Mastery": 2
+    },
+    "type": "Hands"
+  },
+  {
+    "name": "Enchant Gloves - Frost Power",
+    "gains": {
+      "Frost Mastery": 2
+    },
+    "type": "Hands"
+  },
+  {
+    "name": "Enchant Gloves - Fire Power",
+    "gains": {
+      "Fire Mastery": 2
+    },
+    "type": "Hands"
+  },
+  {
+    "name": "Enchant Gloves - Healing Power",
+    "gains": {},
+    "type": "Hands"
+  },
+  {
+    "name": "Enchant Gloves - Superior Agility",
+    "gains": {
+      "Agility": 9
+    },
+    "type": "Hands"
+  },
+  {
+    "name": "Enchant Cloak - Greater Fire Resistance",
+    "gains": {},
+    "type": "Back"
+  },
+  {
+    "name": "Enchant Cloak - Greater Nature Resistance",
+    "gains": {},
+    "type": "Back"
+  },
+  {
+    "name": "Enchant Cloak - Stealth",
+    "gains": {},
+    "type": "Back"
+  },
+  {
+    "name": "Enchant Cloak - Subtlety",
+    "gains": {},
+    "type": "Back"
+  },
+  {
+    "name": "Enchant Cloak - Dodge",
+    "gains": {},
+    "type": "Back"
+  }
+]

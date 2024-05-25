@@ -16,7 +16,7 @@ public class Recipe
     {
         if (results.Count == 0)
         {
-            if (name.Contains("Enchant")) return "AbilityGreaterHeal";
+            if (enchantment) return "AbilityGreaterHeal";
             else return "OtherUnknown";
         }
         else
@@ -32,6 +32,9 @@ public class Recipe
 
     //Profession this recipe belongs to
     public string profession;
+
+    //Whether this recipe is a an enchantment process
+    public bool enchantment;
 
     //Thresholds of getting skill ups
     public int skillUpOrange, skillUpYellow, skillUpGreen, skillUpGray;

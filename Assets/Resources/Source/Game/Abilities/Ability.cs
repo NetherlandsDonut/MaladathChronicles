@@ -137,17 +137,17 @@ public class Ability
             SetAnchor(Top, 0, -53);
             DisableShadows();
             width = 228;
-            SetRegionGroupHeight(199);
+            SetRegionGroupHeight(195);
         }
         else if (CDesktop.title == "TalentScreen")
         {
             SetAnchor(Top, 0, -57);
-            SetRegionGroupHeight(191);
+            SetRegionGroupHeight(187);
         }
         else
         {
             SetAnchor(Top, 0, -38);
-            SetRegionGroupHeight(191);
+            SetRegionGroupHeight(187);
         }
         SetRegionGroupWidth(width);
         if (ability == null)

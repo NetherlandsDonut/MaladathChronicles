@@ -85,7 +85,7 @@
             ]
           },
           "Enchanting": {
-            "Item1": 1,
+            "Item1": 2,
             "Item2": [
               "Apprentice"
             ]
@@ -93,22 +93,27 @@
         },
         "learnedRecipes": {
           "Tailoring": [
-            "Linen Bag",
-            "Simple Dress",
-            "Blue Linen Shirt",
-            "Red Linen Shirt",
-            "Heavy Linen Gloves",
-            "White Linen Robe",
-            "Brown Linen Robe",
-            "Brown Linen Pants",
-            "Simple Linen Boots",
-            "Linen Belt",
-            "Brown Linen Vest",
-            "White Linen Shirt",
-            "Simple Linen Pants",
-            "Linen Cloak",
+            "Bolt of Linen Cloth",
             "Brown Linen Shirt",
-            "Bolt of Linen Cloth"
+            "Linen Cloak",
+            "Simple Linen Pants",
+            "White Linen Shirt",
+            "Brown Linen Vest",
+            "Linen Belt",
+            "Simple Linen Boots",
+            "Brown Linen Pants",
+            "Brown Linen Robe",
+            "White Linen Robe",
+            "Heavy Linen Gloves",
+            "Red Linen Shirt",
+            "Blue Linen Shirt",
+            "Simple Dress",
+            "Linen Bag"
+          ],
+          "Enchanting": [
+            "Runed Copper Rod",
+            "Enchant Bracer - Minor Deflect",
+            "Enchant Bracer - Minor Health"
           ]
         },
         "unspentTalentPoints": 26,
@@ -231,6 +236,56 @@
               "amount": 1,
               "maxStack": 1,
               "price": 22,
+              "stats": {
+                "stats": {}
+              }
+            },
+            {
+              "rarity": "Common",
+              "name": "Runed Copper Bracers",
+              "icon": "itembracer03",
+              "type": "Wrists",
+              "armorClass": "Mail",
+              "source": "Profession",
+              "enchant": {
+                "name": "Enchant Bracer - Minor Health",
+                "gains": {
+                  "Health": 5
+                },
+                "type": "Wrists"
+              },
+              "ilvl": 19,
+              "lvl": 14,
+              "armor": 68,
+              "amount": 1,
+              "maxStack": 1,
+              "price": 225,
+              "stats": {
+                "stats": {}
+              }
+            },
+            {
+              "rarity": "Uncommon",
+              "name": "Lesser Magic Essence",
+              "icon": "itemenchantessencemagicsmall",
+              "type": "Trade Good",
+              "ilvl": 10,
+              "lvl": 1,
+              "amount": 1,
+              "maxStack": 10,
+              "stats": {
+                "stats": {}
+              }
+            },
+            {
+              "rarity": "Common",
+              "name": "Dream Dust",
+              "icon": "itemenchantdustdream",
+              "type": "Trade Good",
+              "ilvl": 45,
+              "lvl": 1,
+              "amount": 1,
+              "maxStack": 20,
               "stats": {
                 "stats": {}
               }
@@ -384,7 +439,7 @@
         "Northshire Abbey": 1,
         "Northshire Vineyards": 0,
         "Goldshire": 0,
-        "Stormwind City": 15,
+        "Stormwind City": 16,
         "Ironforge": 2
       },
       "unlockedAreas": [],
@@ -467,9 +522,9 @@
         ]
       },
       "startDate": "2024-05-23T19:54:33.3673184+02:00",
-      "lastLoaded": "2024-05-25T03:39:05.1309023+02:00",
-      "lastPlayed": "2024-05-25T03:45:16.9608191+02:00",
-      "timePlayed": "00:51:35.0403987"
+      "lastLoaded": "2024-05-25T19:14:38.2006147+02:00",
+      "lastPlayed": "2024-05-25T19:21:47.0188553+02:00",
+      "timePlayed": "01:11:45.0916920"
     },
     {
       "player": {
@@ -1759,9 +1814,9 @@
         ]
       },
       "startDate": "2024-05-23T23:16:22.9839232+02:00",
-      "lastLoaded": "2024-05-25T02:04:19.1556603+02:00",
-      "lastPlayed": "2024-05-25T02:04:45.6393572+02:00",
-      "timePlayed": "00:02:17.7353149",
+      "lastLoaded": "2024-05-25T16:26:39.0595517+02:00",
+      "lastPlayed": "2024-05-25T16:26:41.6034048+02:00",
+      "timePlayed": "00:02:43.0481125",
       "lastVisitedTalents": 1
     },
     {
