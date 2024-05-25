@@ -373,7 +373,7 @@
       },
       "hour": 7,
       "minute": 11,
-      "second": 12,
+      "second": 26,
       "currentSite": "Stormwind City",
       "openedChests": {},
       "siteProgress": {},
@@ -384,8 +384,8 @@
         "Northshire Abbey": 1,
         "Northshire Vineyards": 0,
         "Goldshire": 0,
-        "Stormwind City": 14,
-        "Ironforge": 1
+        "Stormwind City": 15,
+        "Ironforge": 2
       },
       "unlockedAreas": [],
       "vendorStock": {
@@ -467,9 +467,9 @@
         ]
       },
       "startDate": "2024-05-23T19:54:33.3673184+02:00",
-      "lastLoaded": "2024-05-25T02:42:29.3680026+02:00",
-      "lastPlayed": "2024-05-25T02:43:32.8740116+02:00",
-      "timePlayed": "00:45:02.7094218"
+      "lastLoaded": "2024-05-25T03:39:05.1309023+02:00",
+      "lastPlayed": "2024-05-25T03:45:16.9608191+02:00",
+      "timePlayed": "00:51:35.0403987"
     },
     {
       "player": {

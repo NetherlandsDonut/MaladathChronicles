@@ -99,13 +99,13 @@ public class Window : MonoBehaviour
     {
         if (CDesktop != desktop || onlyWhenActive && !desktop.windows.Contains(this)) return;
         CDesktop.windows.FindAll(x => x.title == "Tooltip").ForEach(x => CloseWindow(x));
-        var paginations = regionGroups.Select(x => x.pagination).ToList();
-        if (headerGroup != null) paginations.Insert(0, headerGroup.pagination);
-        CloseWindow(this);
-        SpawnWindowBlueprint(title, false, paginations);
+        var paginations = regionGroups.Select(x => x.pagination()).ToList();
+        if (headerGroup != null) paginations.Insert(0, headerGroup.pagination());
+        CloseWindow(this, false);
+        SpawnWindowBlueprint(title, false);
     }
 
-    public void Rebuild(List<int> paginations)
+    public void Rebuild()
     {
         CDesktop.LBWindow = this;
         xOffset = 0;
@@ -213,13 +213,6 @@ public class Window : MonoBehaviour
         {
             int extendOffset = 0;
             CDesktop.LBWindow.LBRegionGroup = regionGroup;
-            int index = CDesktop.LBWindow.regionGroups.IndexOf(regionGroup);
-            if (index != -1 && paginations?.Count > index + (headerGroup != null ? 1 : 0))
-                if (regionGroup.maxPagination() < paginations[index + (headerGroup != null ? 1 : 0)]) regionGroup.pagination = regionGroup.maxPagination() - 1;
-                else regionGroup.pagination = paginations[index + (headerGroup != null ? 1 : 0)];
-            else if (headerGroup == regionGroup && paginations?.Count > 0)
-                if (regionGroup.maxPagination() < paginations[0]) regionGroup.pagination = regionGroup.maxPagination() - 1;
-                else regionGroup.pagination = paginations[0];
 
             #region CREATING REGIONS
 

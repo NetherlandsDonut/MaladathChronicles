@@ -13,9 +13,9 @@ public class RegionGroup : MonoBehaviour
     public List<Region> regions;
 
     public Region LBRegion, stretchRegion;
-    public int setWidth, setHeight, currentHeight, pagination, perPage;
+    public int setWidth, setHeight, currentHeight, perPage;
     public Func<double> maxPaginationReq;
-    public Func<int> maxPagination;
+    public Func<int> maxPagination, pagination;
 
     public void Initialise(Window window, bool header, Func<double> maxPagination, int perPage)
     {
@@ -31,6 +31,7 @@ public class RegionGroup : MonoBehaviour
                 else return max;
             };
         else this.maxPagination = () => 1;
+        pagination = () => window != null && Root.staticPagination.ContainsKey(window.title) && Root.staticPagination[window.title].Length > window.regionGroups.IndexOf(this) ? Root.staticPagination[window.title][window.regionGroups.IndexOf(this)] : 0;
         if (header) window.headerGroup = this;
         else window.regionGroups.Add(this);
         window.LBRegionGroup = this;
@@ -47,18 +48,4 @@ public class RegionGroup : MonoBehaviour
         var regionMax = regions.Max(x => x.AutoWidth());
         return setWidth != 0 ? setWidth : regionMax;
     }
-
-    #region Static Pagination
-
-    //Saved static pagination
-    public static List<int> staticPagination;
-
-    //Loads the static pagination at specific index
-    public static int SavedStaticPagination(int index) => staticPagination.Count > index ? staticPagination[index] : 0;
-
-    //Saves the pagination for the window total rebuilt
-    public static void SaveStaticPagination(Window window) => staticPagination = window.regionGroups.Select(x => x.pagination).ToList();
-
-    #endregion
-
 }

@@ -34,6 +34,9 @@ public class Starter : MonoBehaviour
         //things such as damage / heal rolls or chance for effects to happen
         random = new System.Random();
 
+        //Initialise storage for pagination
+        staticPagination = new();
+
         //This is the font that will be used
         //by the game's UI system and is the basis of the program
         fonts = new()

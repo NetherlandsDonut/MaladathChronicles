@@ -1227,6 +1227,7 @@ public class Blueprint
                 AddBigButton(profession.icon);
                 AddSmallButton("OtherClose", (h) =>
                 {
+                    CloseWindow("CraftingRecipe");
                     CloseWindow("CraftingList");
                     Respawn("ProfessionListPrimary");
                     Respawn("ProfessionListSecondary");
@@ -1267,11 +1268,11 @@ public class Blueprint
             for (int i = 0; i < 11; i++)
             {
                 var index = i;
-                if (recipes.Count > index + 11 * RegionGroup.SavedStaticPagination(CDesktop.LBWindow.regionGroups.IndexOf(regionGroup)))
+                if (recipes.Count > index + 11 * regionGroup.pagination())
                 {
                     AddButtonRegion(() =>
                     {
-                        var recipe = recipes[index + 11 * regionGroup.pagination];
+                        var recipe = recipes[index + 11 * regionGroup.pagination()];
                         AddLine(recipe.name, "Black");
                         var amountPossible = currentSave.player.CanCraft(recipe, false, true);
                         AddText(amountPossible > 0 ? " [" + amountPossible + "]" : "", "Black");
@@ -1281,19 +1282,19 @@ public class Blueprint
                     },
                     (h) =>
                     {
-                        recipe = recipes[index + 11 * regionGroup.pagination];
+                        recipe = recipes[index + 11 * regionGroup.pagination()];
                         Respawn("CraftingRecipe");
                         PlaySound("DesktopInstanceOpen");
                     });
                     var skill = currentSave.player.professionSkills[profession.name].Item1;
-                    if (recipes[index + 11 * RegionGroup.SavedStaticPagination(CDesktop.LBWindow.regionGroups.IndexOf(regionGroup))].skillUpYellow > skill)
+                    if (recipes[index + 11 * regionGroup.pagination()].skillUpYellow > skill)
                         SetRegionBackgroundAsImage("Sprites/Textures/SkillUpOrange");
-                    else if (recipes[index + 11 * RegionGroup.SavedStaticPagination(CDesktop.LBWindow.regionGroups.IndexOf(regionGroup))].skillUpGreen > skill)
+                    else if (recipes[index + 11 * regionGroup.pagination()].skillUpGreen > skill)
                         SetRegionBackgroundAsImage("Sprites/Textures/SkillUpYellow");
-                    else if (recipes[index + 11 * RegionGroup.SavedStaticPagination(CDesktop.LBWindow.regionGroups.IndexOf(regionGroup))].skillUpGray > skill)
+                    else if (recipes[index + 11 * regionGroup.pagination()].skillUpGray > skill)
                         SetRegionBackgroundAsImage("Sprites/Textures/SkillUpGreen");
                 }
-                else if (recipes.Count == index + 11 * RegionGroup.SavedStaticPagination(CDesktop.LBWindow.regionGroups.IndexOf(regionGroup)))
+                else if (recipes.Count == index + 11 * regionGroup.pagination())
                 {
                     AddPaddingRegion(() =>
                     {
@@ -1302,7 +1303,7 @@ public class Blueprint
                     });
                 }
             }
-            AddPaginationLine(regionGroup, "CraftingList");
+            AddPaginationLine(regionGroup);
         }),
         new("CraftingRecipe", () => {
             SetAnchor(TopRight, -19, -38);
@@ -2426,16 +2427,16 @@ public class Blueprint
                 var index = i;
                 AddPaddingRegion(() =>
                 {
-                    if (mounts.Count > index + 6 * regionGroup.pagination)
+                    if (mounts.Count > index + 6 * regionGroup.pagination())
                     {
-                        var mount = mounts[index + 6 * regionGroup.pagination];
+                        var mount = mounts[index + 6 * regionGroup.pagination()];
                         AddLine(mount.name);
                         AddLine("Speed: ", "DarkGray");
                         AddText(mount.speed == 7 ? "Fast" : (mount.speed == 9 ? "Very Fast" : "Normal"));
                         AddBigButton(mount.icon,
                             (h) =>
                             {
-                                var mount = mounts[index + 6 * regionGroup.pagination];
+                                var mount = mounts[index + 6 * regionGroup.pagination()];
                                 if (currentSave.player.mount != mount.name && currentSave.player.level >= (mount.speed == 7 ? defines.lvlRequiredFastMounts : defines.lvlRequiredVeryFastMounts))
                                 {
                                     currentSave.player.mount = mount.name;
@@ -2447,7 +2448,7 @@ public class Blueprint
                             null,
                             (h) => () =>
                             {
-                                var mount = mounts[index + 6 * regionGroup.pagination];
+                                var mount = mounts[index + 6 * regionGroup.pagination()];
                                 PrintMountTooltip(currentSave.player, mount);
                             }
                         );
@@ -2483,24 +2484,24 @@ public class Blueprint
                 AddLine("Available mounts:");
             });
             var regionGroup = CDesktop.LBWindow.LBRegionGroup;
-            AddPaginationLine(regionGroup, "MountVendor");
+            AddPaginationLine(regionGroup);
             var mounts = Mount.mounts.FindAll(x => !currentSave.player.mounts.Contains(x.name) && x.factions != null && x.factions.Contains(person.faction == null ? town.faction : person.faction)).OrderBy(x => x.speed).ThenBy(x => x.price).ThenBy(x => x.name).ToList();
             for (int i = 0; i < 6; i++)
             {
                 var index = i;
-                if (mounts.Count >= index + 6 * RegionGroup.SavedStaticPagination(CDesktop.LBWindow.regionGroups.IndexOf(regionGroup)))
+                if (mounts.Count >= index + 6 * regionGroup.pagination())
                     AddPaddingRegion(() =>
                     {
-                        if (mounts.Count > index + 6 * regionGroup.pagination)
+                        if (mounts.Count > index + 6 * regionGroup.pagination())
                         {
-                            var mount = mounts[index + 6 * regionGroup.pagination];
+                            var mount = mounts[index + 6 * regionGroup.pagination()];
                             AddLine(mount.name);
                             AddLine("Speed: ", "DarkGray");
                             AddText(mount.speed == 7 ? "Fast" : (mount.speed == 9 ? "Very Fast" : "Normal"));
                             AddBigButton(mount.icon,
                                 (h) =>
                                 {
-                                    var mount = mounts[index + 6 * regionGroup.pagination];
+                                    var mount = mounts[index + 6 * regionGroup.pagination()];
                                     if (currentSave.player.inventory.money >= mount.price)
                                     {
                                         currentSave.player.inventory.money -= mount.price;
@@ -2512,14 +2513,14 @@ public class Blueprint
                                 null,
                                 (h) => () =>
                                 {
-                                    var mount = mounts[index + 6 * regionGroup.pagination];
+                                    var mount = mounts[index + 6 * regionGroup.pagination()];
                                     PrintMountTooltip(currentSave.player, mount);
                                 }
                             );
                             if (currentSave.player.level < (mount.speed == 7 ? defines.lvlRequiredFastMounts : defines.lvlRequiredVeryFastMounts))
                                 SetBigButtonToRed();
                         }
-                        else if (mounts.Count == index + 6 * regionGroup.pagination)
+                        else if (mounts.Count == index + 6 * regionGroup.pagination())
                         {
                             SetRegionBackground(Padding);
                             AddLine("");
@@ -2748,10 +2749,10 @@ public class Blueprint
             for (int i = 0; i < 12; i++)
             {
                 var index = i;
-                if (destinations.Count > index + 12 * RegionGroup.SavedStaticPagination(CDesktop.LBWindow.regionGroups.IndexOf(regionGroup)))
+                if (destinations.Count > index + 12 * regionGroup.pagination())
                     AddButtonRegion(() =>
                     {
-                        var destination = destinations[index + 12 * regionGroup.pagination];
+                        var destination = destinations[index + 12 * regionGroup.pagination()];
                         if (currentSave.siteVisits.ContainsKey(destination.name))
                         {
                             AddLine(destination.name);
@@ -2766,7 +2767,7 @@ public class Blueprint
                     },
                     (h) =>
                     {
-                        var destination = destinations[index + 12 * regionGroup.pagination];
+                        var destination = destinations[index + 12 * regionGroup.pagination()];
                         currentSave.currentSite = destination.name;
                         Respawn("Site: " + town.name);
                         Respawn("Site: " + currentSave.currentSite);
@@ -2797,14 +2798,14 @@ public class Blueprint
                         ////Queue moving player to the destination
                         //town.ExecutePath("Town");
                     });
-                else if (destinations.Count == index + 12 * RegionGroup.SavedStaticPagination(CDesktop.LBWindow.regionGroups.IndexOf(regionGroup)))
+                else if (destinations.Count == index + 12 * regionGroup.pagination())
                     AddPaddingRegion(() =>
                     {
                         SetRegionAsGroupExtender();
                         AddLine("");
                     });
             }
-            AddPaginationLine(regionGroup, "FlightMaster");
+            AddPaginationLine(regionGroup);
         }),
         new("ProfessionLevelTrainer", () => {
             SetAnchor(TopLeft, 19, -38);
@@ -2838,9 +2839,9 @@ public class Blueprint
                 var index = i;
                 AddPaddingRegion(() =>
                 {
-                    if (levels.Count > index + 6 * regionGroup.pagination)
+                    if (levels.Count > index + 6 * regionGroup.pagination())
                     {
-                        var key = levels[index + 6 * regionGroup.pagination];
+                        var key = levels[index + 6 * regionGroup.pagination()];
                         AddLine(key.levelName);
                         AddLine("", "DarkGray");
                         if (key.requiredLevel > 0)
@@ -2856,7 +2857,7 @@ public class Blueprint
                         AddBigButton(profession.icon,
                             (h) =>
                             {
-                                var key = levels[index + 6 * regionGroup.pagination];
+                                var key = levels[index + 6 * regionGroup.pagination()];
 
                                 //If player is high enough level..
                                 if (currentSave.player.level >= key.requiredLevel)
@@ -2937,9 +2938,9 @@ public class Blueprint
                 var index = i;
                 AddPaddingRegion(() =>
                 {
-                    if (recipes.Count > index + 6 * regionGroup.pagination)
+                    if (recipes.Count > index + 6 * regionGroup.pagination())
                     {
-                        var key = recipes[index + 6 * regionGroup.pagination];
+                        var key = recipes[index + 6 * regionGroup.pagination()];
                         AddLine(key.name);
                         AddLine("", "DarkGray");
                         if (key.learnedAt > 0)
@@ -2950,7 +2951,7 @@ public class Blueprint
                         AddBigButton(key.Icon(),
                             (h) =>
                             {
-                                var key = recipes[index + 6 * regionGroup.pagination];
+                                var key = recipes[index + 6 * regionGroup.pagination()];
 
                                 //If has the profession and at a proper level..
                                 if (currentSave.player.professionSkills.ContainsKey(key.profession) && currentSave.player.professionSkills[key.profession].Item1 >= key.learnedAt)
@@ -2969,7 +2970,7 @@ public class Blueprint
                             (h) => () =>
                             {
                                 SetAnchor(Center);
-                                var key = recipes[index + 6 * regionGroup.pagination];
+                                var key = recipes[index + 6 * regionGroup.pagination()];
                                 if (key.results.Count > 0)
                                     PrintItemTooltip(items.Find(x => x.name == key.results.First().Key), Input.GetKey(KeyCode.LeftShift));
                             }
@@ -3586,16 +3587,16 @@ public class Blueprint
                 var index = i;
                 AddPaddingRegion(() =>
                 {
-                    if (activeAbilities.Count > index + 6 * regionGroup.pagination)
+                    if (activeAbilities.Count > index + 6 * regionGroup.pagination())
                     {
-                        var key = activeAbilities.ToList()[index + 6 * regionGroup.pagination];
+                        var key = activeAbilities.ToList()[index + 6 * regionGroup.pagination()];
                         AddLine(key.Key.name);
                         AddLine("Rank: ", "DarkGray");
                         AddText("" + ToRoman(key.Value + 1));
                         AddBigButton(key.Key.icon,
                             (h) =>
                             {
-                                var key = activeAbilities.ToList()[index + 6 * regionGroup.pagination];
+                                var key = activeAbilities.ToList()[index + 6 * regionGroup.pagination()];
                                 if (!currentSave.player.actionBars.Contains(key.Key.name) && currentSave.player.actionBars.Count < currentSave.player.ActionBarsAmount())
                                 {
                                     currentSave.player.actionBars.Add(key.Key.name);
@@ -3608,7 +3609,7 @@ public class Blueprint
                             (h) => () =>
                             {
                                 SetAnchor(Center);
-                                var key = activeAbilities.ToList()[index + 6 * regionGroup.pagination].Key;
+                                var key = activeAbilities.ToList()[index + 6 * regionGroup.pagination()].Key;
                                 PrintAbilityTooltip(currentSave.player, null, key, activeAbilities[key]);
                             }
                         );
@@ -3665,9 +3666,9 @@ public class Blueprint
                 var index = i;
                 AddPaddingRegion(() =>
                 {
-                    if (passiveAbilities.Count > index + 6 * regionGroup.pagination)
+                    if (passiveAbilities.Count > index + 6 * regionGroup.pagination())
                     {
-                        var key = passiveAbilities.ToList()[index + 6 * regionGroup.pagination];
+                        var key = passiveAbilities.ToList()[index + 6 * regionGroup.pagination()];
                         AddLine(key.Key.name);
                         AddLine("Rank: ", "DarkGray");
                         AddText("" + ToRoman(key.Value + 1));
@@ -3677,7 +3678,7 @@ public class Blueprint
                             (h) => () =>
                             {
                                 SetAnchor(Center);
-                                var key = passiveAbilities.ToList()[index + 6 * regionGroup.pagination].Key;
+                                var key = passiveAbilities.ToList()[index + 6 * regionGroup.pagination()].Key;
                                 PrintAbilityTooltip(currentSave.player, null, key, passiveAbilities[key]);
                             }
                         );
@@ -4107,7 +4108,7 @@ public class Blueprint
             {
                 var index = areas.IndexOf(area);
                 if (index >= 10)
-                    CDesktop.LBWindow.LBRegionGroup.pagination = index / 10;
+                    CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
             }
             AddHeaderRegion(() =>
             {
@@ -4141,10 +4142,10 @@ public class Blueprint
                 var index = i;
                 AddButtonRegion(() =>
                 {
-                    if (areasSearch.Count > index + 10 * regionGroup.pagination)
+                    if (areasSearch.Count > index + 10 * regionGroup.pagination())
                     {
                         SetRegionBackground(Button);
-                        var foo = areasSearch[index + 10 * regionGroup.pagination];
+                        var foo = areasSearch[index + 10 * regionGroup.pagination()];
                         AddLine(foo.name);
                         AddSmallButton("Site" + foo.type, (h) => { });
                     }
@@ -4156,7 +4157,7 @@ public class Blueprint
                 },
                 (h) =>
                 {
-                    area = areasSearch[index + 10 * regionGroup.pagination];
+                    area = areasSearch[index + 10 * regionGroup.pagination()];
                     instance = null;
                     complex = null;
                     SetDesktopBackground(area.Background());
@@ -4258,7 +4259,7 @@ public class Blueprint
             if (town != null)
             {
                 var index = towns.IndexOf(town);
-                if (index >= 10) CDesktop.LBWindow.LBRegionGroup.pagination = index / 10;
+                if (index >= 10) CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
             }
             AddHeaderRegion(() =>
             {
@@ -4292,10 +4293,10 @@ public class Blueprint
                 var index = i;
                 AddButtonRegion(() =>
                 {
-                    if (townsSearch.Count > index + 10 * regionGroup.pagination)
+                    if (townsSearch.Count > index + 10 * regionGroup.pagination())
                     {
                         SetRegionBackground(Button);
-                        var foo = townsSearch[index + 10 * regionGroup.pagination];
+                        var foo = townsSearch[index + 10 * regionGroup.pagination()];
                         AddLine(foo.name);
                         AddSmallButton(factions.Find(x => x.name == foo.faction).Icon(), (h) => { });
                     }
@@ -4307,7 +4308,7 @@ public class Blueprint
                 },
                 (h) =>
                 {
-                    town = townsSearch[index + 10 * regionGroup.pagination];
+                    town = townsSearch[index + 10 * regionGroup.pagination()];
                     SetDesktopBackground(town.Background());
                     Respawn("ObjectManagerTown");
                 });
@@ -4447,7 +4448,7 @@ public class Blueprint
             {
                 var index = instances.IndexOf(instance);
                 if (index >= 10)
-                    CDesktop.LBWindow.LBRegionGroup.pagination = index / 10;
+                    CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
             }
             AddHeaderRegion(() =>
             {
@@ -4481,10 +4482,10 @@ public class Blueprint
                 var index = i;
                 AddButtonRegion(() =>
                 {
-                    if (instancesSearch.Count > index + 10 * regionGroup.pagination)
+                    if (instancesSearch.Count > index + 10 * regionGroup.pagination())
                     {
                         SetRegionBackground(Button);
-                        var foo = instancesSearch[index + 10 * regionGroup.pagination];
+                        var foo = instancesSearch[index + 10 * regionGroup.pagination()];
                         AddLine(foo.name);
                         AddSmallButton("Site" + foo.type, (h) => { });
                     }
@@ -4497,7 +4498,7 @@ public class Blueprint
                 (h) =>
                 {
                     area = null;
-                    instance = instancesSearch[index + 10 * regionGroup.pagination];
+                    instance = instancesSearch[index + 10 * regionGroup.pagination()];
                     complex = null;
                     SetDesktopBackground(instance.Background());
                     Respawn("ObjectManagerInstance");
@@ -4603,7 +4604,7 @@ public class Blueprint
             {
                 var index = complexes.IndexOf(complex);
                 if (index >= 10)
-                    CDesktop.LBWindow.LBRegionGroup.pagination = index / 10;
+                    CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
             }
             AddHeaderRegion(() =>
             {
@@ -4639,10 +4640,10 @@ public class Blueprint
                 var index = i;
                 AddButtonRegion(() =>
                 {
-                    if (complexesSearch.Count > index + regionGroup.perPage * regionGroup.pagination)
+                    if (complexesSearch.Count > index + regionGroup.perPage * regionGroup.pagination())
                     {
                         SetRegionBackground(Button);
-                        var foo = complexesSearch[index + 10 * regionGroup.pagination];
+                        var foo = complexesSearch[index + 10 * regionGroup.pagination()];
                         AddLine(foo.name);
                         AddSmallButton("SiteComplex", (h) => { });
                     }
@@ -4656,7 +4657,7 @@ public class Blueprint
                 {
                     area = null;
                     instance = null;
-                    complex = complexesSearch[index + regionGroup.perPage * regionGroup.pagination];
+                    complex = complexesSearch[index + regionGroup.perPage * regionGroup.pagination()];
                     SetDesktopBackground(complex.Background());
                     CloseWindow("ObjectManagerComplex");
                     SpawnWindowBlueprint("ObjectManagerComplex");
@@ -4707,17 +4708,17 @@ public class Blueprint
             if (area != null)
             {
                 var index = Assets.assets.ambienceSearch.IndexOf(area.ambience + ".ogg");
-                if (index >= 10) CDesktop.LBWindow.LBRegionGroup.pagination = index / 10;
+                if (index >= 10) CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
             }
             else if (instance != null)
             {
                 var index = Assets.assets.ambienceSearch.IndexOf(instance.ambience + ".ogg");
-                if (index >= 10) CDesktop.LBWindow.LBRegionGroup.pagination = index / 10;
+                if (index >= 10) CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
             }
             else if (complex != null)
             {
                 var index = Assets.assets.ambienceSearch.IndexOf(complex.ambience + ".ogg");
-                if (index >= 10) CDesktop.LBWindow.LBRegionGroup.pagination = index / 10;
+                if (index >= 10) CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
             }
             AddHeaderRegion(() =>
             {
@@ -4751,10 +4752,10 @@ public class Blueprint
                 var index = i;
                 AddButtonRegion(() =>
                 {
-                    if (Assets.assets.ambienceSearch.Count > index + regionGroup.perPage * regionGroup.pagination)
+                    if (Assets.assets.ambienceSearch.Count > index + regionGroup.perPage * regionGroup.pagination())
                     {
                         SetRegionBackground(Button);
-                        var foo = Assets.assets.ambienceSearch[index + 10 * regionGroup.pagination];
+                        var foo = Assets.assets.ambienceSearch[index + 10 * regionGroup.pagination()];
                         AddLine(foo.Substring(8));
                         AddSmallButton("OtherSound", (h) =>
                         {
@@ -4769,7 +4770,7 @@ public class Blueprint
                 },
                 (h) =>
                 {
-                    var foo = Assets.assets.ambience[index + 10 * regionGroup.pagination];
+                    var foo = Assets.assets.ambience[index + 10 * regionGroup.pagination()];
                     CloseWindow("ObjectManagerAmbienceList");
                     if (area != null)
                     {
@@ -4807,7 +4808,7 @@ public class Blueprint
             {
                 var temp = eventEdit.effects[selectedEffect];
                 var index = temp.ContainsKey("SoundEffect") && temp["SoundEffect"] != "None" ? Assets.assets.soundsSearch.IndexOf(temp["SoundEffect"] + ".ogg") : 0;
-                if (index >= 10) CDesktop.LBWindow.LBRegionGroup.pagination = index / 10;
+                if (index >= 10) CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
             }
             AddHeaderRegion(() =>
             {
@@ -4837,10 +4838,10 @@ public class Blueprint
                 var index = i;
                 AddButtonRegion(() =>
                 {
-                    if (Assets.assets.soundsSearch.Count > index + regionGroup.perPage * regionGroup.pagination)
+                    if (Assets.assets.soundsSearch.Count > index + regionGroup.perPage * regionGroup.pagination())
                     {
                         SetRegionBackground(Button);
-                        var foo = Assets.assets.soundsSearch[index + regionGroup.perPage * regionGroup.pagination];
+                        var foo = Assets.assets.soundsSearch[index + regionGroup.perPage * regionGroup.pagination()];
                         AddLine(foo);
                         AddSmallButton("OtherSound", (h) =>
                         {
@@ -4855,7 +4856,7 @@ public class Blueprint
                 },
                 (h) =>
                 {
-                    var foo = Assets.assets.soundsSearch[index + regionGroup.perPage * regionGroup.pagination];
+                    var foo = Assets.assets.soundsSearch[index + regionGroup.perPage * regionGroup.pagination()];
                     CloseWindow("ObjectManagerSoundsList");
                     if (eventEdit != null)
                     {
@@ -4883,7 +4884,7 @@ public class Blueprint
             if (item != null)
             {
                 var index = Assets.assets.itemIconsSearch.IndexOf(item.icon + ".png");
-                if (index >= 10) CDesktop.LBWindow.LBRegionGroup.pagination = index / 10;
+                if (index >= 10) CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
             }
             AddHeaderRegion(() =>
             {
@@ -4915,12 +4916,12 @@ public class Blueprint
                 var index = i;
                 AddButtonRegion(() =>
                 {
-                    if (Assets.assets.itemIconsSearch.Count > index + regionGroup.perPage * regionGroup.pagination)
+                    if (Assets.assets.itemIconsSearch.Count > index + regionGroup.perPage * regionGroup.pagination())
                     {
                         SetRegionBackground(Button);
-                        var foo = Assets.assets.itemIconsSearch[index + 10 * regionGroup.pagination];
+                        var foo = Assets.assets.itemIconsSearch[index + 10 * regionGroup.pagination()];
                         AddLine(foo.Substring(4));
-                        AddSmallButton(Assets.assets.itemIconsSearch[index + 10 * regionGroup.pagination].Replace(".png", ""), (h) => { });
+                        AddSmallButton(Assets.assets.itemIconsSearch[index + 10 * regionGroup.pagination()].Replace(".png", ""), (h) => { });
                     }
                     else
                     {
@@ -4930,7 +4931,7 @@ public class Blueprint
                 },
                 (h) =>
                 {
-                    var foo = Assets.assets.itemIconsSearch[index + 10 * regionGroup.pagination];
+                    var foo = Assets.assets.itemIconsSearch[index + 10 * regionGroup.pagination()];
                     CloseWindow("ObjectManagerItemIconList");
                     if (item != null)
                     {
@@ -4955,12 +4956,12 @@ public class Blueprint
             if (ability != null)
             {
                 var index = Assets.assets.abilityIconsSearch.IndexOf(ability.icon + ".png");
-                if (index >= 10) CDesktop.LBWindow.LBRegionGroup.pagination = index / 10;
+                if (index >= 10) CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
             }
             else if (buff != null)
             {
                 var index = Assets.assets.abilityIconsSearch.IndexOf(buff.icon + ".png");
-                if (index >= 10) CDesktop.LBWindow.LBRegionGroup.pagination = index / 10;
+                if (index >= 10) CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
             }
             AddHeaderRegion(() =>
             {
@@ -4990,12 +4991,12 @@ public class Blueprint
                 var index = i;
                 AddButtonRegion(() =>
                 {
-                    if (Assets.assets.abilityIconsSearch.Count > index + regionGroup.perPage * regionGroup.pagination)
+                    if (Assets.assets.abilityIconsSearch.Count > index + regionGroup.perPage * regionGroup.pagination())
                     {
                         SetRegionBackground(Button);
-                        var foo = Assets.assets.abilityIconsSearch[index + regionGroup.perPage * regionGroup.pagination];
+                        var foo = Assets.assets.abilityIconsSearch[index + regionGroup.perPage * regionGroup.pagination()];
                         AddLine(foo.Substring(7));
-                        AddSmallButton(Assets.assets.abilityIconsSearch[index + regionGroup.perPage * regionGroup.pagination].Replace(".png", ""), (h) => { });
+                        AddSmallButton(Assets.assets.abilityIconsSearch[index + regionGroup.perPage * regionGroup.pagination()].Replace(".png", ""), (h) => { });
                     }
                     else
                     {
@@ -5005,7 +5006,7 @@ public class Blueprint
                 },
                 (h) =>
                 {
-                    var foo = Assets.assets.abilityIconsSearch[index + regionGroup.perPage * regionGroup.pagination];
+                    var foo = Assets.assets.abilityIconsSearch[index + regionGroup.perPage * regionGroup.pagination()];
                     CloseWindow("ObjectManagerAbilityIconList");
                     if (ability != null)
                     {
@@ -5036,7 +5037,7 @@ public class Blueprint
             if (faction != null)
             {
                 var index = Assets.assets.factionIconsSearch.IndexOf(faction.icon + ".png");
-                if (index >= 10) CDesktop.LBWindow.LBRegionGroup.pagination = index / 10;
+                if (index >= 10) CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
             }
             AddHeaderRegion(() =>
             {
@@ -5065,12 +5066,12 @@ public class Blueprint
                 var index = i;
                 AddButtonRegion(() =>
                 {
-                    if (Assets.assets.factionIconsSearch.Count > index + regionGroup.perPage * regionGroup.pagination)
+                    if (Assets.assets.factionIconsSearch.Count > index + regionGroup.perPage * regionGroup.pagination())
                     {
                         SetRegionBackground(Button);
-                        var foo = Assets.assets.factionIconsSearch[index + regionGroup.perPage * regionGroup.pagination];
+                        var foo = Assets.assets.factionIconsSearch[index + regionGroup.perPage * regionGroup.pagination()];
                         AddLine(foo.Substring(7));
-                        AddSmallButton(Assets.assets.factionIconsSearch[index + regionGroup.perPage * regionGroup.pagination].Replace(".png", ""), (h) => { });
+                        AddSmallButton(Assets.assets.factionIconsSearch[index + regionGroup.perPage * regionGroup.pagination()].Replace(".png", ""), (h) => { });
                     }
                     else
                     {
@@ -5080,7 +5081,7 @@ public class Blueprint
                 },
                 (h) =>
                 {
-                    var foo = Assets.assets.factionIconsSearch[index + regionGroup.perPage * regionGroup.pagination];
+                    var foo = Assets.assets.factionIconsSearch[index + regionGroup.perPage * regionGroup.pagination()];
                     CloseWindow("ObjectManagerFactionIconList");
                     if (faction != null)
                     {
@@ -5105,7 +5106,7 @@ public class Blueprint
             if (mount != null)
             {
                 var index = Assets.assets.mountIconsSearch.IndexOf(mount.icon + ".png");
-                if (index >= 10) CDesktop.LBWindow.LBRegionGroup.pagination = index / 10;
+                if (index >= 10) CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
             }
             AddHeaderRegion(() =>
             {
@@ -5134,12 +5135,12 @@ public class Blueprint
                 var index = i;
                 AddButtonRegion(() =>
                 {
-                    if (Assets.assets.mountIconsSearch.Count > index + regionGroup.perPage * regionGroup.pagination)
+                    if (Assets.assets.mountIconsSearch.Count > index + regionGroup.perPage * regionGroup.pagination())
                     {
                         SetRegionBackground(Button);
-                        var foo = Assets.assets.mountIconsSearch[index + regionGroup.perPage * regionGroup.pagination];
+                        var foo = Assets.assets.mountIconsSearch[index + regionGroup.perPage * regionGroup.pagination()];
                         AddLine(foo.Substring(5));
-                        AddSmallButton(Assets.assets.mountIconsSearch[index + regionGroup.perPage * regionGroup.pagination].Replace(".png", ""), (h) => { });
+                        AddSmallButton(Assets.assets.mountIconsSearch[index + regionGroup.perPage * regionGroup.pagination()].Replace(".png", ""), (h) => { });
                     }
                     else
                     {
@@ -5149,7 +5150,7 @@ public class Blueprint
                 },
                 (h) =>
                 {
-                    var foo = Assets.assets.mountIconsSearch[index + regionGroup.perPage * regionGroup.pagination];
+                    var foo = Assets.assets.mountIconsSearch[index + regionGroup.perPage * regionGroup.pagination()];
                     CloseWindow("ObjectManagerMountIconList");
                     if (mount != null)
                     {
@@ -5174,7 +5175,7 @@ public class Blueprint
             if (race != null)
             {
                 var index = Assets.assets.portraitsSearch.IndexOf(race.portrait + ".png");
-                if (index >= 10) CDesktop.LBWindow.LBRegionGroup.pagination = index / 10;
+                if (index >= 10) CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
             }
             AddHeaderRegion(() =>
             {
@@ -5203,12 +5204,12 @@ public class Blueprint
                 var index = i;
                 AddButtonRegion(() =>
                 {
-                    if (Assets.assets.portraitsSearch.Count > index + regionGroup.perPage * regionGroup.pagination)
+                    if (Assets.assets.portraitsSearch.Count > index + regionGroup.perPage * regionGroup.pagination())
                     {
                         SetRegionBackground(Button);
-                        var foo = Assets.assets.portraitsSearch[index + 10 * regionGroup.pagination];
+                        var foo = Assets.assets.portraitsSearch[index + 10 * regionGroup.pagination()];
                         AddLine(foo.Replace("Portrait", ""));
-                        AddSmallButton(Assets.assets.portraitsSearch[index + 10 * regionGroup.pagination].Replace(".png", ""), (h) => { });
+                        AddSmallButton(Assets.assets.portraitsSearch[index + 10 * regionGroup.pagination()].Replace(".png", ""), (h) => { });
                     }
                     else
                     {
@@ -5218,7 +5219,7 @@ public class Blueprint
                 },
                 (h) =>
                 {
-                    var foo = Assets.assets.portraitsSearch[index + regionGroup.perPage * regionGroup.pagination];
+                    var foo = Assets.assets.portraitsSearch[index + regionGroup.perPage * regionGroup.pagination()];
                     CloseWindow("ObjectManagerPortraitList");
                     if (race != null)
                     {
@@ -5267,10 +5268,10 @@ public class Blueprint
                 var index = i;
                 AddButtonRegion(() =>
                 {
-                    if (possibleEffects.Count > index + regionGroup.perPage * regionGroup.pagination)
+                    if (possibleEffects.Count > index + regionGroup.perPage * regionGroup.pagination())
                     {
                         SetRegionBackground(Button);
-                        var foo = possibleEffects[index + 10 * regionGroup.pagination];
+                        var foo = possibleEffects[index + 10 * regionGroup.pagination()];
                         AddLine(foo);
                     }
                     else
@@ -5281,7 +5282,7 @@ public class Blueprint
                 },
                 (h) =>
                 {
-                    var foo = possibleEffects[index + 10 * regionGroup.pagination];
+                    var foo = possibleEffects[index + 10 * regionGroup.pagination()];
                     CloseWindow("ObjectManagerEffectList");
                     if (eventEdit.effects[selectedEffect].ContainsKey("Effect"))
                         eventEdit.effects[selectedEffect]["Effect"] = foo;
@@ -5327,10 +5328,10 @@ public class Blueprint
                 var index = i;
                 AddButtonRegion(() =>
                 {
-                    if (possibleTriggers.Count > index + regionGroup.perPage * regionGroup.pagination)
+                    if (possibleTriggers.Count > index + regionGroup.perPage * regionGroup.pagination())
                     {
                         SetRegionBackground(Button);
-                        var foo = possibleTriggers[index + 10 * regionGroup.pagination];
+                        var foo = possibleTriggers[index + 10 * regionGroup.pagination()];
                         AddLine(foo);
                     }
                     else
@@ -5341,7 +5342,7 @@ public class Blueprint
                 },
                 (h) =>
                 {
-                    var foo = possibleTriggers[index + 10 * regionGroup.pagination];
+                    var foo = possibleTriggers[index + 10 * regionGroup.pagination()];
                     CloseWindow("ObjectManagerTriggerList");
                     if (eventEdit.triggers[selectedTrigger].ContainsKey("Trigger"))
                         eventEdit.triggers[selectedTrigger]["Trigger"] = foo;
@@ -6891,7 +6892,7 @@ public class Blueprint
             if (item != null)
             {
                 var index = itemsSearch.IndexOf(item);
-                if (index >= 10) CDesktop.LBWindow.LBRegionGroup.pagination = index / 10;
+                if (index >= 10) CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
             }
             AddHeaderRegion(() =>
             {
@@ -6929,10 +6930,10 @@ public class Blueprint
                 var index = i;
                 AddButtonRegion(() =>
                 {
-                    if (itemsSearch.Count > index + 10 * regionGroup.pagination)
+                    if (itemsSearch.Count > index + 10 * regionGroup.pagination())
                     {
                         SetRegionBackground(Button);
-                        var foo = itemsSearch[index + 10 * regionGroup.pagination];
+                        var foo = itemsSearch[index + 10 * regionGroup.pagination()];
                         AddLine(foo.name);
                         AddSmallButton(foo.icon, (h) => { });
                         AddSmallButtonOverlay("OtherRarity" + foo.rarity + "Big");
@@ -6945,7 +6946,7 @@ public class Blueprint
                 },
                 (h) =>
                 {
-                    item = itemsSearch[index + 10 * regionGroup.pagination];
+                    item = itemsSearch[index + 10 * regionGroup.pagination()];
                     String.objectName.Set(item.name);
                     String.price.Set(item.price + "");
                     String.itemPower.Set(item.ilvl + "");
@@ -6955,7 +6956,7 @@ public class Blueprint
                 null,
                 (h) => () =>
                 {
-                    PrintItemTooltip(items[index + 10 * regionGroup.pagination]);
+                    PrintItemTooltip(items[index + 10 * regionGroup.pagination()]);
                 });
             }
             AddPaddingRegion(() =>
@@ -7121,7 +7122,7 @@ public class Blueprint
             if (itemSet != null)
             {
                 var index = itemSetsSearch.IndexOf(itemSet);
-                if (index >= 5) CDesktop.LBWindow.LBRegionGroup.pagination = index / 5;
+                if (index >= 5) CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 5);
             }
             AddHeaderRegion(() =>
             {
@@ -7159,10 +7160,10 @@ public class Blueprint
                 var index = i;
                 AddButtonRegion(() =>
                 {
-                    if (itemSetsSearch.Count > index + 5 * regionGroup.pagination)
+                    if (itemSetsSearch.Count > index + 5 * regionGroup.pagination())
                     {
                         SetRegionBackground(Button);
-                        var foo = itemSetsSearch[index + 5 * regionGroup.pagination];
+                        var foo = itemSetsSearch[index + 5 * regionGroup.pagination()];
                         AddLine(foo.name);
                     }
                     else
@@ -7173,16 +7174,16 @@ public class Blueprint
                 },
                 (h) =>
                 {
-                    itemSet = itemSetsSearch[index + 5 * regionGroup.pagination];
+                    itemSet = itemSetsSearch[index + 5 * regionGroup.pagination()];
                     String.objectName.Set(itemSet.name);
                     Respawn("ObjectManagerItemSet");
                 });
                 AddPaddingRegion(() =>
                 {
                     AddLine();
-                    if (itemSetsSearch.Count > index + 5 * regionGroup.pagination)
+                    if (itemSetsSearch.Count > index + 5 * regionGroup.pagination())
                     {
-                        var foo = itemSetsSearch[index + 5 * regionGroup.pagination];
+                        var foo = itemSetsSearch[index + 5 * regionGroup.pagination()];
                         var setItems = items.FindAll(x => x.set == foo.name);
                         for (var j = 0; j < setItems.Count && j < 9; j++)
                         {
@@ -7443,7 +7444,7 @@ public class Blueprint
             if (ability != null)
             {
                 var index = abilitiesSearch.IndexOf(ability);
-                if (index >= 10) CDesktop.LBWindow.LBRegionGroup.pagination = index / 10;
+                if (index >= 10) CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
             }
             if (eventEdit != null)
             {
@@ -7451,12 +7452,12 @@ public class Blueprint
                 if (editingEffects)
                 {
                     var index = abilitiesSearch.IndexOf(eventEdit.effects[selectedEffect].ContainsKey("AbilityName") ? abilities.Find(x => x.name == eventEdit.effects[selectedEffect]["AbilityName"]) : null);
-                    if (index >= 10) CDesktop.LBWindow.LBRegionGroup.pagination = index / 10;
+                    if (index >= 10) CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
                 }
                 else
                 {
                     var index = abilitiesSearch.IndexOf(eventEdit.triggers[selectedTrigger].ContainsKey("AbilityName") ? abilities.Find(x => x.name == eventEdit.triggers[selectedTrigger]["AbilityName"]) : null);
-                    if (index >= 10) CDesktop.LBWindow.LBRegionGroup.pagination = index / 10;
+                    if (index >= 10) CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
                 }
             }
             AddHeaderRegion(() =>
@@ -7505,10 +7506,10 @@ public class Blueprint
                 var index = i;
                 AddButtonRegion(() =>
                 {
-                    if (abilitiesSearch.Count > index + 10 * regionGroup.pagination)
+                    if (abilitiesSearch.Count > index + 10 * regionGroup.pagination())
                     {
                         SetRegionBackground(Button);
-                        var foo = abilitiesSearch[index + 10 * regionGroup.pagination];
+                        var foo = abilitiesSearch[index + 10 * regionGroup.pagination()];
                         AddLine(foo.name);
                         AddSmallButton(foo.icon, (h) => { });
                     }
@@ -7526,8 +7527,8 @@ public class Blueprint
                         if (editingEffects)
                         {
                             if (eventEdit.effects[selectedEffect].ContainsKey("AbilityName"))
-                                eventEdit.effects[selectedEffect]["AbilityName"] = abilitiesSearch[index + 10 * regionGroup.pagination].name;
-                            else eventEdit.effects[selectedEffect].Add("AbilityName", abilitiesSearch[index + 10 * regionGroup.pagination].name);
+                                eventEdit.effects[selectedEffect]["AbilityName"] = abilitiesSearch[index + 10 * regionGroup.pagination()].name;
+                            else eventEdit.effects[selectedEffect].Add("AbilityName", abilitiesSearch[index + 10 * regionGroup.pagination()].name);
                             CloseWindow(h.window);
                             Respawn("ObjectManagerEventEffect");
                             Respawn("ObjectManagerEventEffects");
@@ -7535,8 +7536,8 @@ public class Blueprint
                         else
                         {
                             if (eventEdit.triggers[selectedTrigger].ContainsKey("AbilityName"))
-                                eventEdit.triggers[selectedTrigger]["AbilityName"] = abilitiesSearch[index + 10 * regionGroup.pagination].name;
-                            else eventEdit.triggers[selectedTrigger].Add("AbilityName", abilitiesSearch[index + 10 * regionGroup.pagination].name);
+                                eventEdit.triggers[selectedTrigger]["AbilityName"] = abilitiesSearch[index + 10 * regionGroup.pagination()].name;
+                            else eventEdit.triggers[selectedTrigger].Add("AbilityName", abilitiesSearch[index + 10 * regionGroup.pagination()].name);
                             CloseWindow(h.window);
                             Respawn("ObjectManagerEventTrigger");
                             Respawn("ObjectManagerEventTriggers");
@@ -7544,7 +7545,7 @@ public class Blueprint
                     }
                     else
                     {
-                        ability = abilitiesSearch[index + 10 * regionGroup.pagination];
+                        ability = abilitiesSearch[index + 10 * regionGroup.pagination()];
                         String.objectName.Set(ability.name);
                         String.cooldown.Set(ability.cooldown + "");
                         Respawn("ObjectManagerAbility");
@@ -7554,7 +7555,7 @@ public class Blueprint
                 (h) => () =>
                 {
                     SetAnchor(Center);
-                    var key = abilitiesSearch.ToList()[index + 10 * regionGroup.pagination];
+                    var key = abilitiesSearch.ToList()[index + 10 * regionGroup.pagination()];
                     PrintAbilityTooltip(null, null, key, 0);
                 });
             }
@@ -7772,7 +7773,7 @@ public class Blueprint
             if (buff != null)
             {
                 var index = buffsSearch.IndexOf(buff);
-                if (index >= 10) CDesktop.LBWindow.LBRegionGroup.pagination = index / 10;
+                if (index >= 10) CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
             }
             if (eventEdit != null)
             {
@@ -7780,12 +7781,12 @@ public class Blueprint
                 if (editingEffects)
                 {
                     var index = buffsSearch.IndexOf(eventEdit.effects[selectedEffect].ContainsKey("BuffName") ? buffs.Find(x => x.name == eventEdit.effects[selectedEffect]["BuffName"]) : null);
-                    if (index >= 10) CDesktop.LBWindow.LBRegionGroup.pagination = index / 10;
+                    if (index >= 10) CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
                 }
                 else
                 {
                     var index = buffsSearch.IndexOf(eventEdit.triggers[selectedTrigger].ContainsKey("BuffName") ? buffs.Find(x => x.name == eventEdit.triggers[selectedTrigger]["BuffName"]) : null);
-                    if (index >= 10) CDesktop.LBWindow.LBRegionGroup.pagination = index / 10;
+                    if (index >= 10) CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
                 }
             }
             AddHeaderRegion(() =>
@@ -7834,10 +7835,10 @@ public class Blueprint
                 var index = i;
                 AddButtonRegion(() =>
                 {
-                    if (buffsSearch.Count > index + 10 * regionGroup.pagination)
+                    if (buffsSearch.Count > index + 10 * regionGroup.pagination())
                     {
                         SetRegionBackground(Button);
-                        var foo = buffsSearch[index + 10 * regionGroup.pagination];
+                        var foo = buffsSearch[index + 10 * regionGroup.pagination()];
                         AddLine(foo.name);
                         AddSmallButton(foo.icon, (h) => { });
                     }
@@ -7855,8 +7856,8 @@ public class Blueprint
                         if (editingEffects)
                         {
                             if (eventEdit.effects[selectedEffect].ContainsKey("BuffName"))
-                                eventEdit.effects[selectedEffect]["BuffName"] = buffsSearch[index + 10 * regionGroup.pagination].name;
-                            else eventEdit.effects[selectedEffect].Add("BuffName", buffsSearch[index + 10 * regionGroup.pagination].name);
+                                eventEdit.effects[selectedEffect]["BuffName"] = buffsSearch[index + 10 * regionGroup.pagination()].name;
+                            else eventEdit.effects[selectedEffect].Add("BuffName", buffsSearch[index + 10 * regionGroup.pagination()].name);
                             CloseWindow(h.window);
                             Respawn("ObjectManagerEventEffects");
                             Respawn("ObjectManagerEventEffect");
@@ -7864,8 +7865,8 @@ public class Blueprint
                         else
                         {
                             if (eventEdit.triggers[selectedTrigger].ContainsKey("BuffName"))
-                                eventEdit.triggers[selectedTrigger]["BuffName"] = buffsSearch[index + 10 * regionGroup.pagination].name;
-                            else eventEdit.triggers[selectedTrigger].Add("BuffName", buffsSearch[index + 10 * regionGroup.pagination].name);
+                                eventEdit.triggers[selectedTrigger]["BuffName"] = buffsSearch[index + 10 * regionGroup.pagination()].name;
+                            else eventEdit.triggers[selectedTrigger].Add("BuffName", buffsSearch[index + 10 * regionGroup.pagination()].name);
                             CloseWindow(h.window);
                             Respawn("ObjectManagerEventTriggers");
                             Respawn("ObjectManagerEventTrigger");
@@ -7873,7 +7874,7 @@ public class Blueprint
                     }
                     else
                     {
-                        buff = buffsSearch[index + 10 * regionGroup.pagination];
+                        buff = buffsSearch[index + 10 * regionGroup.pagination()];
                         String.objectName.Set(buff.name);
                         Respawn("ObjectManagerBuff");
                     }
@@ -7882,7 +7883,7 @@ public class Blueprint
                 (h) => () =>
                 {
                     SetAnchor(Center);
-                    PrintBuffTooltip(null, null, (buffsSearch[index + 10 * regionGroup.pagination], 0, null, 0));
+                    PrintBuffTooltip(null, null, (buffsSearch[index + 10 * regionGroup.pagination()], 0, null, 0));
                 });
             }
             AddPaddingRegion(() =>
@@ -8121,7 +8122,7 @@ public class Blueprint
             });
         }),
         new("ObjectManagerRaces", () => {
-            if (racesSearch == null) racesSearch = races;
+            racesSearch ??= races;
             SetAnchor(TopLeft);
             AddRegionGroup(() => racesSearch.Count);
             SetRegionGroupWidth(171);
@@ -8129,7 +8130,7 @@ public class Blueprint
             if (race != null)
             {
                 var index = racesSearch.IndexOf(race);
-                if (index >= 10) CDesktop.LBWindow.LBRegionGroup.pagination = index / 10;
+                if (index >= 10) CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
             }
             AddHeaderRegion(() =>
             {
@@ -8176,10 +8177,10 @@ public class Blueprint
                 var index = i;
                 AddButtonRegion(() =>
                 {
-                    if (racesSearch.Count > index + 10 * regionGroup.pagination)
+                    if (racesSearch.Count > index + 10 * regionGroup.pagination())
                     {
                         SetRegionBackground(Button);
-                        var foo = racesSearch[index + 10 * regionGroup.pagination];
+                        var foo = racesSearch[index + 10 * regionGroup.pagination()];
                         AddLine(foo.name);
                         AddSmallButton(foo.portrait + (foo.genderedPortrait ? "Female" : ""), (h) => { });
                     }
@@ -8193,10 +8194,10 @@ public class Blueprint
                 {
                     if (CDesktop.title == "ObjectManagerHostileAreas")
                     {
-                        if (Encounter.encounter != null) Encounter.encounter.who = racesSearch[index + 10 * regionGroup.pagination].name;
+                        if (Encounter.encounter != null) Encounter.encounter.who = racesSearch[index + 10 * regionGroup.pagination()].name;
                         else
                         {
-                            var enc = new Encounter() { who = racesSearch[index + 10 * regionGroup.pagination].name, levelMin = 1, levelMax = 0 };
+                            var enc = new Encounter() { who = racesSearch[index + 10 * regionGroup.pagination()].name, levelMin = 1, levelMax = 0 };
                             if (CDesktop.windows.Exists(x => x.title == "ObjectManagerHostileAreaCommonEncounters"))
                                 area.commonEncounters.Add(enc);
                             else if (CDesktop.windows.Exists(x => x.title == "ObjectManagerHostileAreaRareEncounters"))
@@ -8210,7 +8211,7 @@ public class Blueprint
                     }
                     else
                     {
-                        race = racesSearch[index + 10 * regionGroup.pagination];
+                        race = racesSearch[index + 10 * regionGroup.pagination()];
                         String.objectName.Set(race.name);
                         String.vitality.Set(race.vitality + "");
                         Respawn("ObjectManagerRace");
@@ -8412,7 +8413,7 @@ public class Blueprint
             if (mount != null)
             {
                 var index = mountsSearch.IndexOf(mount);
-                if (index >= 10) CDesktop.LBWindow.LBRegionGroup.pagination = index / 10;
+                if (index >= 10) CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
             }
             AddHeaderRegion(() =>
             {
@@ -8450,10 +8451,10 @@ public class Blueprint
                 var index = i;
                 AddButtonRegion(() =>
                 {
-                    if (mountsSearch.Count > index + 10 * regionGroup.pagination)
+                    if (mountsSearch.Count > index + 10 * regionGroup.pagination())
                     {
                         SetRegionBackground(Button);
-                        var foo = mountsSearch[index + 10 * regionGroup.pagination];
+                        var foo = mountsSearch[index + 10 * regionGroup.pagination()];
                         AddLine(foo.name);
                         AddSmallButton(foo.icon, (h) => { });
                     }
@@ -8465,7 +8466,7 @@ public class Blueprint
                 },
                 (h) =>
                 {
-                    mount = mountsSearch[index + 10 * regionGroup.pagination];
+                    mount = mountsSearch[index + 10 * regionGroup.pagination()];
                     String.objectName.Set(mount.name);
                     Respawn("ObjectManagerMount");
                 });
@@ -8612,7 +8613,7 @@ public class Blueprint
             if (recipe != null)
             {
                 var index = recipesSearch.IndexOf(recipe);
-                if (index >= 10) CDesktop.LBWindow.LBRegionGroup.pagination = index / 10;
+                if (index >= 10) CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
             }
             AddHeaderRegion(() =>
             {
@@ -8650,10 +8651,10 @@ public class Blueprint
                 var index = i;
                 AddButtonRegion(() =>
                 {
-                    if (recipesSearch.Count > index + 10 * regionGroup.pagination)
+                    if (recipesSearch.Count > index + 10 * regionGroup.pagination())
                     {
                         SetRegionBackground(Button);
-                        var foo = recipesSearch[index + 10 * regionGroup.pagination];
+                        var foo = recipesSearch[index + 10 * regionGroup.pagination()];
                         AddLine(foo.name);
                         AddSmallButton(foo.Icon(), (h) => { });
                     }
@@ -8665,7 +8666,7 @@ public class Blueprint
                 },
                 (h) =>
                 {
-                    recipe = recipesSearch[index + 10 * regionGroup.pagination];
+                    recipe = recipesSearch[index + 10 * regionGroup.pagination()];
                     String.objectName.Set(recipe.name);
                     Respawn("ObjectManagerRecipe");
                 });
@@ -8749,17 +8750,17 @@ public class Blueprint
             if (faction != null)
             {
                 var index = factionsSearch.IndexOf(faction);
-                if (index >= 10) CDesktop.LBWindow.LBRegionGroup.pagination = index / 10;
+                if (index >= 10) CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
             }
             else if (town != null)
             {
                 var index = factionsSearch.FindIndex(x => x.name == town.faction);
-                if (index >= 10) CDesktop.LBWindow.LBRegionGroup.pagination = index / 10;
+                if (index >= 10) CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
             }
             else if (race != null)
             {
                 var index = factionsSearch.FindIndex(x => x.name == race.faction);
-                if (index >= 10) CDesktop.LBWindow.LBRegionGroup.pagination = index / 10;
+                if (index >= 10) CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
             }
             AddHeaderRegion(() =>
             {
@@ -8810,10 +8811,10 @@ public class Blueprint
                 var index = i;
                 AddButtonRegion(() =>
                 {
-                    if (factionsSearch.Count > index + 10 * regionGroup.pagination)
+                    if (factionsSearch.Count > index + 10 * regionGroup.pagination())
                     {
                         SetRegionBackground(Button);
-                        var foo = factionsSearch[index + 10 * regionGroup.pagination];
+                        var foo = factionsSearch[index + 10 * regionGroup.pagination()];
                         AddLine(foo.name);
                         AddSmallButton(foo.Icon(), (h) => { });
                     }
@@ -8827,21 +8828,21 @@ public class Blueprint
                 {
                     if (town != null)
                     {
-                        town.faction = factionsSearch[index + 10 * regionGroup.pagination].name;
+                        town.faction = factionsSearch[index + 10 * regionGroup.pagination()].name;
                         CloseWindow(h.window);
                         Respawn("ObjectManagerTown");
                         Respawn("ObjectManagerTowns");
                     }
                     else if (race != null)
                     {
-                        race.faction = factionsSearch[index + 10 * regionGroup.pagination].name;
+                        race.faction = factionsSearch[index + 10 * regionGroup.pagination()].name;
                         CloseWindow(h.window);
                         Respawn("ObjectManagerRace");
                         Respawn("ObjectManagerRaces");
                     }
                     else
                     {
-                        faction = factionsSearch[index + 10 * regionGroup.pagination];
+                        faction = factionsSearch[index + 10 * regionGroup.pagination()];
                         String.objectName.Set(faction.name);
                         Respawn("ObjectManagerFaction");
                     }
@@ -8923,7 +8924,7 @@ public class Blueprint
             {
                 var index = specs.IndexOf(spec);
                 if (index >= 10)
-                    CDesktop.LBWindow.LBRegionGroup.pagination = index / 10;
+                    CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
             }
             AddHeaderRegion(() =>
             {
@@ -8953,10 +8954,10 @@ public class Blueprint
                 var index = i;
                 AddButtonRegion(() =>
                 {
-                    if (specsSearch.Count > index + 10 * regionGroup.pagination)
+                    if (specsSearch.Count > index + 10 * regionGroup.pagination())
                     {
                         SetRegionBackground(Button);
-                        var foo = specsSearch[index + 10 * regionGroup.pagination];
+                        var foo = specsSearch[index + 10 * regionGroup.pagination()];
                         AddLine(foo.name);
                         AddSmallButton(foo.icon, (h) => { });
                     }
@@ -8968,7 +8969,7 @@ public class Blueprint
                 },
                 (h) =>
                 {
-                    spec = specsSearch[index + 10 * regionGroup.pagination];
+                    spec = specsSearch[index + 10 * regionGroup.pagination()];
                     String.objectName.Set(spec.name);
                     Respawn("ObjectManagerSpec");
                 });
@@ -9666,6 +9667,7 @@ public class Blueprint
                 PlaySound("DesktopInstanceClose");
                 CloseDesktop("CraftingScreen");
             });
+            AddPaginationHotkeys();
         }),
         new("GameMenu", () =>
         {
@@ -9914,10 +9916,10 @@ public class Blueprint
                 if (window == null) return;
             }
             var group = window.regionGroups.Find(x => x.maxPaginationReq != null);
-            group.pagination += 1;
-            var max = group.maxPagination();
-            if (group.pagination >= max)
-                group.pagination = max - 1;
+            var temp = group.pagination();
+            group.IncrementPagination();
+            if (temp != group.pagination())
+                PlaySound("DesktopChangePage", 0.4f);
             window.Respawn();
         });
         AddHotkey(D, () =>
@@ -9925,10 +9927,10 @@ public class Blueprint
             var window = CDesktop.windows.Find(x => x.regionGroups.Any(y => y.maxPaginationReq != null));
             if (window == null) return;
             var group = window.regionGroups.Find(x => x.maxPaginationReq != null);
-            group.pagination += (int)Math.Round(EuelerGrowth()) / 2;
-            var max = group.maxPagination();
-            if (group.pagination >= max)
-                group.pagination = max - 1;
+            var temp = group.pagination();
+            group.IncrementPaginationEuler();
+            if (temp != group.pagination())
+                PlaySound("DesktopChangePage", 0.4f);
             window.Respawn();
         }, false);
         AddHotkey(A, () =>
@@ -9940,9 +9942,10 @@ public class Blueprint
                 if (window == null) return;
             }
             var group = window.regionGroups.Find(x => x.maxPaginationReq != null);
-            group.pagination -= 1;
-            if (group.pagination < 0)
-                group.pagination = 0;
+            var temp = group.pagination();
+            group.DecrementPagination();
+            if (temp != group.pagination())
+                PlaySound("DesktopChangePage", 0.4f);
             window.Respawn();
         });
         AddHotkey(A, () =>
@@ -9954,139 +9957,140 @@ public class Blueprint
                 if (window == null) return;
             }
             var group = window.regionGroups.Find(x => x.maxPaginationReq != null);
-            group.pagination -= (int)Math.Round(EuelerGrowth()) / 2;
-            if (group.pagination < 0)
-                group.pagination = 0;
+            var temp = group.pagination();
+            group.DecrementPaginationEuler();
+            if (temp != group.pagination())
+                PlaySound("DesktopChangePage", 0.4f);
             window.Respawn();
         }, false);
-        AddHotkey(Alpha1, () =>
-        {
-            var window = CDesktop.windows.Find(x => x.regionGroups.Any(y => y.maxPaginationReq != null));
-            if (window == null)
-            {
-                window = CDesktop.windows.Find(x => x.headerGroup.maxPaginationReq != null);
-                if (window == null) return;
-            }
-            var group = window.regionGroups.Find(x => x.maxPaginationReq != null);
-            group.pagination = 0;
-            window.Respawn();
-        });
-        AddHotkey(Alpha2, () =>
-        {
-            var window = CDesktop.windows.Find(x => x.regionGroups.Any(y => y.maxPaginationReq != null));
-            if (window == null)
-            {
-                window = CDesktop.windows.Find(x => x.headerGroup.maxPaginationReq != null);
-                if (window == null) return;
-            }
-            var group = window.regionGroups.Find(x => x.maxPaginationReq != null);
-            var max = group.maxPagination();
-            group.pagination = (int)(max / 10 * 1.1);
-            window.Respawn();
-        });
-        AddHotkey(Alpha3, () =>
-        {
-            var window = CDesktop.windows.Find(x => x.regionGroups.Any(y => y.maxPaginationReq != null));
-            if (window == null)
-            {
-                window = CDesktop.windows.Find(x => x.headerGroup.maxPaginationReq != null);
-                if (window == null) return;
-            }
-            var group = window.regionGroups.Find(x => x.maxPaginationReq != null);
-            var max = group.maxPagination();
-            group.pagination = (int)(max / 10 * 2.2);
-            window.Respawn();
-        });
-        AddHotkey(Alpha4, () =>
-        {
-            var window = CDesktop.windows.Find(x => x.regionGroups.Any(y => y.maxPaginationReq != null));
-            if (window == null)
-            {
-                window = CDesktop.windows.Find(x => x.headerGroup.maxPaginationReq != null);
-                if (window == null) return;
-            }
-            var group = window.regionGroups.Find(x => x.maxPaginationReq != null);
-            var max = group.maxPagination();
-            group.pagination = (int)(max / 10 * 3.3);
-            window.Respawn();
-        });
-        AddHotkey(Alpha5, () =>
-        {
-            var window = CDesktop.windows.Find(x => x.regionGroups.Any(y => y.maxPaginationReq != null));
-            if (window == null)
-            {
-                window = CDesktop.windows.Find(x => x.headerGroup.maxPaginationReq != null);
-                if (window == null) return;
-            }
-            var group = window.regionGroups.Find(x => x.maxPaginationReq != null);
-            var max = group.maxPagination();
-            group.pagination = (int)(max / 10 * 4.4);
-            window.Respawn();
-        });
-        AddHotkey(Alpha6, () =>
-        {
-            var window = CDesktop.windows.Find(x => x.regionGroups.Any(y => y.maxPaginationReq != null));
-            if (window == null)
-            {
-                window = CDesktop.windows.Find(x => x.headerGroup.maxPaginationReq != null);
-                if (window == null) return;
-            }
-            var group = window.regionGroups.Find(x => x.maxPaginationReq != null);
-            var max = group.maxPagination();
-            group.pagination = (int)(max / 10 * 5.5);
-            window.Respawn();
-        });
-        AddHotkey(Alpha7, () =>
-        {
-            var window = CDesktop.windows.Find(x => x.regionGroups.Any(y => y.maxPaginationReq != null));
-            if (window == null)
-            {
-                window = CDesktop.windows.Find(x => x.headerGroup.maxPaginationReq != null);
-                if (window == null) return;
-            }
-            var group = window.regionGroups.Find(x => x.maxPaginationReq != null);
-            var max = group.maxPagination();
-            group.pagination = (int)(max / 10 * 6.6);
-            window.Respawn();
-        });
-        AddHotkey(Alpha8, () =>
-        {
-            var window = CDesktop.windows.Find(x => x.regionGroups.Any(y => y.maxPagination != null));
-            if (window == null)
-            {
-                window = CDesktop.windows.Find(x => x.headerGroup.maxPaginationReq != null);
-                if (window == null) return;
-            }
-            var group = window.regionGroups.Find(x => x.maxPaginationReq != null);
-            var max = group.maxPagination();
-            group.pagination = (int)(max / 10 * 7.7);
-            window.Respawn();
-        });
-        AddHotkey(Alpha9, () =>
-        {
-            var window = CDesktop.windows.Find(x => x.regionGroups.Any(y => y.maxPaginationReq != null));
-            if (window == null)
-            {
-                window = CDesktop.windows.Find(x => x.headerGroup.maxPaginationReq != null);
-                if (window == null) return;
-            }
-            var group = window.regionGroups.Find(x => x.maxPaginationReq != null);
-            var max = group.maxPagination();
-            group.pagination = (int)(max / 10 * 8.8);
-            window.Respawn();
-        });
-        AddHotkey(Alpha0, () =>
-        {
-            var window = CDesktop.windows.Find(x => x.regionGroups.Any(y => y.maxPaginationReq != null));
-            if (window == null)
-            {
-                window = CDesktop.windows.Find(x => x.headerGroup.maxPaginationReq != null);
-                if (window == null) return;
-            }
-            var group = window.regionGroups.Find(x => x.maxPaginationReq != null);
-            var max = group.maxPagination();
-            group.pagination = max - 1;
-            window.Respawn();
-        });
+        //AddHotkey(Alpha1, () =>
+        //{
+        //    var window = CDesktop.windows.Find(x => x.regionGroups.Any(y => y.maxPaginationReq != null));
+        //    if (window == null)
+        //    {
+        //        window = CDesktop.windows.Find(x => x.headerGroup.maxPaginationReq != null);
+        //        if (window == null) return;
+        //    }
+        //    var group = window.regionGroups.Find(x => x.maxPaginationReq != null);
+        //    //group.pagination() = 0;
+        //    window.Respawn();
+        //});
+        //AddHotkey(Alpha2, () =>
+        //{
+        //    var window = CDesktop.windows.Find(x => x.regionGroups.Any(y => y.maxPaginationReq != null));
+        //    if (window == null)
+        //    {
+        //        window = CDesktop.windows.Find(x => x.headerGroup.maxPaginationReq != null);
+        //        if (window == null) return;
+        //    }
+        //    var group = window.regionGroups.Find(x => x.maxPaginationReq != null);
+        //    var max = group.maxPagination();
+        //    //group.pagination() = (int)(max / 10 * 1.1);
+        //    window.Respawn();
+        //});
+        //AddHotkey(Alpha3, () =>
+        //{
+        //    var window = CDesktop.windows.Find(x => x.regionGroups.Any(y => y.maxPaginationReq != null));
+        //    if (window == null)
+        //    {
+        //        window = CDesktop.windows.Find(x => x.headerGroup.maxPaginationReq != null);
+        //        if (window == null) return;
+        //    }
+        //    var group = window.regionGroups.Find(x => x.maxPaginationReq != null);
+        //    var max = group.maxPagination();
+        //    //group.pagination() = (int)(max / 10 * 2.2);
+        //    window.Respawn();
+        //});
+        //AddHotkey(Alpha4, () =>
+        //{
+        //    var window = CDesktop.windows.Find(x => x.regionGroups.Any(y => y.maxPaginationReq != null));
+        //    if (window == null)
+        //    {
+        //        window = CDesktop.windows.Find(x => x.headerGroup.maxPaginationReq != null);
+        //        if (window == null) return;
+        //    }
+        //    var group = window.regionGroups.Find(x => x.maxPaginationReq != null);
+        //    var max = group.maxPagination();
+        //    //group.pagination() = (int)(max / 10 * 3.3);
+        //    window.Respawn();
+        //});
+        //AddHotkey(Alpha5, () =>
+        //{
+        //    var window = CDesktop.windows.Find(x => x.regionGroups.Any(y => y.maxPaginationReq != null));
+        //    if (window == null)
+        //    {
+        //        window = CDesktop.windows.Find(x => x.headerGroup.maxPaginationReq != null);
+        //        if (window == null) return;
+        //    }
+        //    var group = window.regionGroups.Find(x => x.maxPaginationReq != null);
+        //    var max = group.maxPagination();
+        //    //group.pagination() = (int)(max / 10 * 4.4);
+        //    window.Respawn();
+        //});
+        //AddHotkey(Alpha6, () =>
+        //{
+        //    var window = CDesktop.windows.Find(x => x.regionGroups.Any(y => y.maxPaginationReq != null));
+        //    if (window == null)
+        //    {
+        //        window = CDesktop.windows.Find(x => x.headerGroup.maxPaginationReq != null);
+        //        if (window == null) return;
+        //    }
+        //    var group = window.regionGroups.Find(x => x.maxPaginationReq != null);
+        //    var max = group.maxPagination();
+        //    //group.pagination() = (int)(max / 10 * 5.5);
+        //    window.Respawn();
+        //});
+        //AddHotkey(Alpha7, () =>
+        //{
+        //    var window = CDesktop.windows.Find(x => x.regionGroups.Any(y => y.maxPaginationReq != null));
+        //    if (window == null)
+        //    {
+        //        window = CDesktop.windows.Find(x => x.headerGroup.maxPaginationReq != null);
+        //        if (window == null) return;
+        //    }
+        //    var group = window.regionGroups.Find(x => x.maxPaginationReq != null);
+        //    var max = group.maxPagination();
+        //    //group.pagination() = (int)(max / 10 * 6.6);
+        //    window.Respawn();
+        //});
+        //AddHotkey(Alpha8, () =>
+        //{
+        //    var window = CDesktop.windows.Find(x => x.regionGroups.Any(y => y.maxPagination != null));
+        //    if (window == null)
+        //    {
+        //        window = CDesktop.windows.Find(x => x.headerGroup.maxPaginationReq != null);
+        //        if (window == null) return;
+        //    }
+        //    var group = window.regionGroups.Find(x => x.maxPaginationReq != null);
+        //    var max = group.maxPagination();
+        //    //group.pagination() = (int)(max / 10 * 7.7);
+        //    window.Respawn();
+        //});
+        //AddHotkey(Alpha9, () =>
+        //{
+        //    var window = CDesktop.windows.Find(x => x.regionGroups.Any(y => y.maxPaginationReq != null));
+        //    if (window == null)
+        //    {
+        //        window = CDesktop.windows.Find(x => x.headerGroup.maxPaginationReq != null);
+        //        if (window == null) return;
+        //    }
+        //    var group = window.regionGroups.Find(x => x.maxPaginationReq != null);
+        //    var max = group.maxPagination();
+        //    //group.pagination() = (int)(max / 10 * 8.8);
+        //    window.Respawn();
+        //});
+        //AddHotkey(Alpha0, () =>
+        //{
+        //    var window = CDesktop.windows.Find(x => x.regionGroups.Any(y => y.maxPaginationReq != null));
+        //    if (window == null)
+        //    {
+        //        window = CDesktop.windows.Find(x => x.headerGroup.maxPaginationReq != null);
+        //        if (window == null) return;
+        //    }
+        //    var group = window.regionGroups.Find(x => x.maxPaginationReq != null);
+        //    var max = group.maxPagination();
+        //    //group.pagination() = max - 1;
+        //    window.Respawn();
+        //});
     }
 }
