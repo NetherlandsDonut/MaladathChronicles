@@ -15,9 +15,17 @@ public class Highlightable : MonoBehaviour
     public Window window;
     public Region region;
     public Tooltip tooltip;
+
+    //Saved reference to the renderer to avoid
     public SpriteRenderer render;
+
+    //Events regarding 
     public Action<Highlightable> pressEvent, rightPressEvent, middlePressEvent;
+
+    //Used to come back to default colour when mouse exits the collider
     public Color defaultColor;
+
+    //Indicates the current state of the button
     public string pressedState;
 
     public void Initialise(Region region, Action<Highlightable> pressEvent, Action<Highlightable> rightPressEvent, Func<Highlightable, Action> tooltip, Action<Highlightable> middlePressEvent)

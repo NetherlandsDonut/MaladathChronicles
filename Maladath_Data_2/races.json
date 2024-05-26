@@ -1,5 +1,50 @@
 [
   {
+    "name": "Vicious Gray Bear",
+    "category": "Beast",
+    "subcategory": "Bear",
+    "kind": "Common",
+    "portrait": "PortraitBearGray",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Forest Moss Creeper",
+    "category": "Beast",
+    "subcategory": "Spider",
+    "kind": "Common",
+    "portrait": "PortraitTarantula",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Gray Bear",
+    "category": "Beast",
+    "subcategory": "Bear",
+    "kind": "Common",
+    "portrait": "PortraitBearGray",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Starving Mountain Lion",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "kind": "Common",
+    "portrait": "PortraitCougar",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Ferocious Yeti",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "kind": "Common",
+    "portrait": "PortraitYetiBrown",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
     "name": "Spectral Researcher",
     "category": "Undead",
     "subcategory": "Ghost",
@@ -1204,7 +1249,7 @@
     "category": "Beast",
     "subcategory": "Bear",
     "kind": "Common",
-    "portrait": "PortraitBlackBear",
+    "portrait": "PortraitBearBlack",
     "vitality": 1.0,
     "abilities": {}
   },
@@ -1213,7 +1258,7 @@
     "category": "Beast",
     "subcategory": "Bear",
     "kind": "Common",
-    "portrait": "PortraitBlackBear",
+    "portrait": "PortraitBearBlack",
     "vitality": 1.0,
     "abilities": {}
   },
@@ -1222,7 +1267,7 @@
     "category": "Beast",
     "subcategory": "Bear",
     "kind": "Common",
-    "portrait": "PortraitBlackBear",
+    "portrait": "PortraitBear",
     "vitality": 1.0,
     "abilities": {}
   },
@@ -1231,7 +1276,7 @@
     "category": "Beast",
     "subcategory": "Bear",
     "kind": "Common",
-    "portrait": "PortraitBlackBear",
+    "portrait": "PortraitBear",
     "vitality": 1.0,
     "abilities": {}
   },
@@ -1240,7 +1285,7 @@
     "category": "Beast",
     "subcategory": "Bear",
     "kind": "Common",
-    "portrait": "PortraitBlackBear",
+    "portrait": "PortraitBearBlack",
     "vitality": 1.0,
     "abilities": {}
   },
@@ -1249,7 +1294,7 @@
     "category": "Beast",
     "subcategory": "Bear",
     "kind": "Common",
-    "portrait": "PortraitBlackBear",
+    "portrait": "PortraitBearGray",
     "vitality": 1.0,
     "abilities": {}
   },
@@ -1258,7 +1303,7 @@
     "category": "Beast",
     "subcategory": "Bear",
     "kind": "Common",
-    "portrait": "PortraitBlackBear",
+    "portrait": "PortraitBearBlack",
     "vitality": 1.0,
     "abilities": {}
   },
@@ -1267,7 +1312,7 @@
     "category": "Beast",
     "subcategory": "Bear",
     "kind": "Common",
-    "portrait": "PortraitBlackBear",
+    "portrait": "PortraitBearGray",
     "vitality": 1.0,
     "abilities": {}
   },
@@ -5962,6 +6007,23 @@
     "portrait": "PortraitForemanRigger",
     "vitality": 2.0,
     "abilities": {}
+  },
+  {
+    "name": "Goblin",
+    "category": "Humanoid",
+    "subcategory": "Goblin",
+    "kind": "Common",
+    "portrait": "PortraitBearGray",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Goblin",
+    "category": "Humanoid",
+    "subcategory": "Goblin",
+    "faction": "Steamwheedle Cartel",
+    "genderedPortrait": true,
+    "portrait": "PortraitGoblin"
   },
   {
     "name": "Forsaken",

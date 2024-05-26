@@ -1,5 +1,10 @@
 [
   {
+    "name": "Steamwheedle Cartel",
+    "icon": "FactionSteamwheedleCartel",
+    "side": "Neutral"
+  },
+  {
     "name": "Booty Bay",
     "icon": "FactionBootyBay",
     "side": "Neutral"

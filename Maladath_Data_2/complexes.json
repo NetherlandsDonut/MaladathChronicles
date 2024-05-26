@@ -55,8 +55,8 @@
         "SiteName": "Keepers' Shrine"
       }
     ],
-    "x": 5871,
-    "y": -1748,
+    "x": 5906,
+    "y": -1718,
     "name": "Jintha'Alor",
     "zone": "Hinterlands",
     "type": "Complex",
@@ -84,8 +84,8 @@
         "SiteName": "Scarlet Basilica"
       }
     ],
-    "x": 6175,
-    "y": -1330,
+    "x": 6125,
+    "y": -1326,
     "name": "Tyr's Hand",
     "zone": "Eastern Plaguelands",
     "type": "Complex",
@@ -109,8 +109,8 @@
         "SiteName": "Mardenholde Keep"
       }
     ],
-    "x": 5358,
-    "y": -1083,
+    "x": 5395,
+    "y": -1108,
     "name": "Hearthglen",
     "zone": "Western Plaguelands",
     "type": "Complex",
@@ -142,8 +142,8 @@
         "SiteName": "Stromgarde Keep"
       }
     ],
-    "x": 5415,
-    "y": -1995,
+    "x": 5428,
+    "y": -1977,
     "name": "Ruins of Stromgarde",
     "zone": "Arathi Highlands",
     "type": "Complex",
@@ -167,8 +167,8 @@
         "SiteName": "Alterac Keep"
       }
     ],
-    "x": 5130,
-    "y": -1539,
+    "x": 5147,
+    "y": -1543,
     "name": "Ruins of Alterac",
     "zone": "Alterac Mountains",
     "type": "Complex",
@@ -196,8 +196,8 @@
         "SiteName": "Scarlet Monastery"
       }
     ],
-    "x": 5206,
-    "y": -1083,
+    "x": 5204,
+    "y": -1104,
     "name": "Scarlet Monastery Grounds",
     "zone": "Tirisfal Glades",
     "type": "Complex",

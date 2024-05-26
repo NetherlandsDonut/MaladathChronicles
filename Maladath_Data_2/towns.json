@@ -7,8 +7,8 @@
     "faction": "Darnassus"
   },
   {
-    "x": 5377,
-    "y": -1653,
+    "x": 5388,
+    "y": -1666,
     "name": "Ravenholdt Manor",
     "zone": "Hillsbrad Foothills",
     "faction": "Assassin's League"
@@ -263,29 +263,29 @@
     "faction": "Darnassus"
   },
   {
-    "x": 5681,
-    "y": -1976,
+    "x": 5691,
+    "y": -1983,
     "name": "Go'Shek Farm",
     "zone": "Arathi Highlands",
     "faction": "Orgrimmar"
   },
   {
-    "x": 5054,
-    "y": -1767,
+    "x": 5055,
+    "y": -1768,
     "name": "Hillsbrad",
     "zone": "Hillsbrad Foothills",
     "faction": "Stormwind"
   },
   {
-    "x": 5643,
-    "y": -1881,
+    "x": 5646,
+    "y": -1888,
     "name": "Dabyrie's Farmstead",
     "zone": "Arathi Highlands",
     "faction": "Stormwind"
   },
   {
-    "x": 5016,
-    "y": -1843,
+    "x": 5019,
+    "y": -1841,
     "name": "Azurelode Mine",
     "zone": "Hillsbrad Foothills",
     "faction": "Stormwind"
@@ -524,8 +524,8 @@
         "type": "Fisherman"
       }
     ],
-    "x": 5168,
-    "y": -1824,
+    "x": 5171,
+    "y": -1830,
     "name": "Southshore",
     "zone": "Hillsbrad Foothills",
     "faction": "Stormwind",
@@ -758,8 +758,8 @@
     "faction": "Orgrimmar"
   },
   {
-    "x": 5472,
-    "y": -2090,
+    "x": 5486,
+    "y": -2089,
     "name": "Faldir's Cove",
     "zone": "Arathi Highlands",
     "faction": "Booty Bay",
@@ -774,7 +774,7 @@
         "type": "Flight Master"
       }
     ],
-    "x": 5567,
+    "x": 5572,
     "y": -1919,
     "name": "Refuge Point",
     "zone": "Arathi Highlands",
@@ -1395,8 +1395,8 @@
         "type": "Master Leatherworker"
       }
     ],
-    "x": 5472,
-    "y": -1615,
+    "x": 5491,
+    "y": -1621,
     "name": "Aerie Peak",
     "zone": "Hinterlands",
     "faction": "Wildhammer Clan"
@@ -1687,8 +1687,8 @@
     "faction": "Ironforge"
   },
   {
-    "x": 5301,
-    "y": -1919,
+    "x": 5303,
+    "y": -1927,
     "name": "Dun Garok",
     "zone": "Hillsbrad Foothills",
     "faction": "Ironforge"
@@ -2543,8 +2543,8 @@
         "type": "Fisherman"
       }
     ],
-    "x": 6004,
-    "y": -1786,
+    "x": 5992,
+    "y": -1781,
     "name": "Revantusk Village",
     "zone": "Hinterlands",
     "faction": "Revantusk Tribe",
@@ -3190,8 +3190,8 @@
         "type": "Auctioneer"
       }
     ],
-    "x": 5016,
-    "y": -1349,
+    "x": 5011,
+    "y": -1341,
     "name": "Undercity",
     "zone": "Tirisfal Glades",
     "faction": "Undercity",
@@ -3200,15 +3200,15 @@
     "fishing": true
   },
   {
-    "x": 5187,
-    "y": -1311,
+    "x": 5210,
+    "y": -1318,
     "name": "The Bulwark",
     "zone": "Tirisfal Glades",
     "faction": "Undercity"
   },
   {
-    "x": 4712,
-    "y": -1330,
+    "x": 4715,
+    "y": -1327,
     "name": "Shadow Grave",
     "zone": "Tirisfal Glades",
     "faction": "Undercity"
@@ -3306,8 +3306,8 @@
         "type": "Skinner"
       }
     ],
-    "x": 4997,
-    "y": -1197,
+    "x": 4996,
+    "y": -1203,
     "name": "Brill",
     "zone": "Tirisfal Glades",
     "faction": "Undercity"
@@ -3339,8 +3339,8 @@
         "type": "Butcher"
       }
     ],
-    "x": 5757,
-    "y": -1862,
+    "x": 5781,
+    "y": -1861,
     "name": "Hammerfall",
     "zone": "Arathi Highlands",
     "faction": "Undercity"
@@ -3384,8 +3384,8 @@
         "type": "Herbalist"
       }
     ],
-    "x": 5225,
-    "y": -1672,
+    "x": 5253,
+    "y": -1674,
     "name": "Tarren Mill",
     "zone": "Hillsbrad Foothills",
     "faction": "Undercity"
@@ -3423,8 +3423,8 @@
         "type": "Journeyman Blacksmith"
       }
     ],
-    "x": 4712,
-    "y": -1558,
+    "x": 4728,
+    "y": -1566,
     "name": "The Sepulcher",
     "zone": "Silverpine Forest",
     "faction": "Undercity"
@@ -3523,8 +3523,8 @@
         "type": "Innkeeper"
       }
     ],
-    "x": 6137,
-    "y": -1197,
+    "x": 6149,
+    "y": -1205,
     "name": "Light's Hope Chapel",
     "zone": "Eastern Plaguelands",
     "faction": "Argent Dawn"
@@ -3538,8 +3538,8 @@
         "type": "Flight Master"
       }
     ],
-    "x": 5358,
-    "y": -1482,
+    "x": 5360,
+    "y": -1485,
     "name": "Chillwind Camp",
     "zone": "Western Plaguelands",
     "faction": "Argent Dawn"
