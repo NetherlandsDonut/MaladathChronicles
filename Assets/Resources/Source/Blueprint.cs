@@ -616,54 +616,6 @@ public class Blueprint
             SetRegionGroupHeight(300);
             AddPaddingRegion(() => { });
         }),
-        new("CharacterStats", () => {
-            SetAnchor(TopLeft);
-            AddRegionGroup();
-            var stats = currentSave.player.Stats();
-            AddHeaderRegion(() =>
-            {
-                foreach (var foo in stats)
-                    if (!foo.Key.Contains("Mastery"))
-                        AddLine(foo.Key + ":", "Gray", "Right");
-            });
-            AddHeaderRegion(() =>
-            {
-                foreach (var foo in stats)
-                    if (foo.Key.Contains("Mastery"))
-                        AddLine(foo.Key + ":", "Gray", "Right");
-            });
-            AddHeaderRegion(() =>
-            {
-                AddLine("Melee Attack Power:", "Gray", "Right");
-                AddLine("Ranged Attack Power:", "Gray", "Right");
-                AddLine("Spell Power:", "Gray", "Right");
-                AddLine("Critical Strike:", "Gray", "Right");
-                AddLine("Spell Critical:", "Gray", "Right");
-                AddLine("Health From Stamina:", "Gray", "Right");
-            });
-            AddRegionGroup();
-            AddHeaderRegion(() =>
-            {
-                foreach (var foo in stats)
-                    if (!foo.Key.Contains("Mastery"))
-                        AddLine(foo.Value + "", foo.Value > currentSave.player.stats.stats[foo.Key] ? "Uncommon" : (foo.Value < currentSave.player.stats.stats[foo.Key] ? "DangerousRed" : "Gray"));
-            });
-            AddHeaderRegion(() =>
-            {
-                foreach (var foo in stats)
-                    if (foo.Key.Contains("Mastery"))
-                        AddLine(foo.Value + "", foo.Value > currentSave.player.stats.stats[foo.Key] ? "Uncommon" : (foo.Value < currentSave.player.stats.stats[foo.Key] ? "DangerousRed" : "Gray"));
-            });
-            AddHeaderRegion(() =>
-            {
-                AddLine(currentSave.player.MeleeAttackPower() + "", "Gray");
-                AddLine(currentSave.player.RangedAttackPower() + "", "Gray");
-                AddLine(currentSave.player.SpellPower() + "", "Gray");
-                AddLine(currentSave.player.CriticalStrike().ToString("0.00") + "%", "Gray");
-                AddLine(currentSave.player.SpellCritical().ToString("0.00") + "%", "Gray");
-                AddLine(currentSave.player.MaxHealth() + "", "Gray");
-            });
-        }),
         new("ExperienceBar", () => {
             SetAnchor(Bottom);
             var experience = currentSave == null ? 0 : (int)(319 * (currentSave.player.experience / (double)currentSave.player.ExperienceNeeded()));
@@ -789,17 +741,19 @@ public class Blueprint
                         },
                         (h) =>
                         {
+                            creationRace = "";
+                            creationSpec = "";
+                            creationGender = "";
+                            String.creationName.Set("");
                             CloseWindow(h.window);
                             CloseWindow("RealmRoster");
                             CloseWindow("CharacterInfo");
                             CloseWindow("TitleScreenSingleplayer");
-                            creationName = "";
-                            creationSide = "";
-                            creationGender = "";
-                            creationRace = "";
-                            creationSpec = "";
-                            SpawnWindowBlueprint("CharacterCreation");
-                            SpawnWindowBlueprint("CharacterCreationRightSide");
+                            SpawnWindowBlueprint("CharacterCreationWho");
+                            SpawnWindowBlueprint("CharacterCreationFinish");
+                            SpawnWindowBlueprint("CharacterCreationFactionHorde");
+                            SpawnWindowBlueprint("CharacterCreationFactionAlliance");
+                            SetDesktopBackground("Leather");
                         });
                     else AddPaddingRegion(() => AddLine("Create a new character", "DarkGray"));
                 }
@@ -897,160 +851,6 @@ public class Blueprint
                 AddInputLine(String.promptConfirm, "DangerousRed");
             });
         }, true),
-        new("CharacterCreation", () => {
-            SetAnchor(TopLeft);
-            DisableShadows();
-            AddRegionGroup();
-            SetRegionGroupWidth(228);
-            SetRegionGroupHeight(354);
-            AddHeaderRegion(() =>
-            {
-                AddLine("Side: " + creationSide);
-                AddSmallButton("ActionReroll", (h) =>
-                {
-                    creationSide = random.Next(2) == 1 ? "Horde" : "Alliance";
-                    creationRace = "";
-                    creationSpec = "";
-                    h.window.Respawn();
-                });
-            });
-            AddHeaderRegion(() =>
-            {
-                AddBigButton("HonorAlliance", (h) => { creationSide = "Alliance"; creationRace = ""; creationSpec = ""; h.window.Respawn(); });
-                if (creationSide != "Alliance") { AddBigButtonOverlay("OtherGridBlurred"); SetBigButtonToGrayscale(); }
-                AddBigButton("HonorHorde", (h) => { creationSide = "Horde"; creationRace = ""; creationSpec = ""; h.window.Respawn(); });
-                if (creationSide != "Horde") { AddBigButtonOverlay("OtherGridBlurred"); SetBigButtonToGrayscale(); }
-            });
-            AddHeaderRegion(() =>
-            {
-                AddLine("Gender: " + creationGender);
-                AddSmallButton("ActionReroll", (h) =>
-                {
-                    creationGender = random.Next(2) == 1 ? "Female" : "Male";
-                    h.window.Respawn();
-                });
-            });
-            AddHeaderRegion(() =>
-            {
-                AddBigButton("OtherGenderMale", (h) => { creationGender = "Male"; h.window.Respawn(); });
-                if (creationGender != "Male") { AddBigButtonOverlay("OtherGridBlurred"); SetBigButtonToGrayscale(); }
-                AddBigButton("OtherGenderFemale", (h) => { creationGender = "Female"; h.window.Respawn(); });
-                if (creationGender != "Female") { AddBigButtonOverlay("OtherGridBlurred"); SetBigButtonToGrayscale(); }
-            });
-            if (creationSide != "" && creationGender != "")
-            {
-                AddHeaderRegion(() =>
-                {
-                    var races = Race.races.FindAll(x => x.Faction() != null && x.Faction().side == creationSide);
-                    AddLine("Race: " + creationRace);
-                    AddSmallButton("ActionReroll", (h) =>
-                    {
-                        creationRace = races[random.Next(races.Count)].name;
-                        creationSpec = "";
-                        h.window.Respawn();
-                    });
-                });
-                AddHeaderRegion(() =>
-                {
-                    if (creationSide == "Alliance")
-                    {
-                        AddBigButton("PortraitDwarf" + creationGender, (h) => { creationRace = "Dwarf"; creationSpec = ""; h.window.Respawn(); });
-                        if (creationRace != "Dwarf") { AddBigButtonOverlay("OtherGridBlurred"); SetBigButtonToGrayscale(); }
-                        AddBigButton("PortraitGnome" + creationGender, (h) => { creationRace = "Gnome"; creationSpec = ""; h.window.Respawn(); });
-                        if (creationRace != "Gnome") { AddBigButtonOverlay("OtherGridBlurred"); SetBigButtonToGrayscale(); }
-                        AddBigButton("PortraitHuman" + creationGender, (h) => { creationRace = "Human"; creationSpec = ""; h.window.Respawn(); });
-                        if (creationRace != "Human") { AddBigButtonOverlay("OtherGridBlurred"); SetBigButtonToGrayscale(); }
-                        AddBigButton("PortraitNightElf" + creationGender, (h) => { creationRace = "Night Elf"; creationSpec = ""; h.window.Respawn(); });
-                        if (creationRace != "Night Elf") { AddBigButtonOverlay("OtherGridBlurred"); SetBigButtonToGrayscale(); }
-                        AddBigButton("PortraitPandaren" + creationGender, (h) => { creationRace = "Pandaren"; creationSpec = ""; h.window.Respawn(); });
-                        if (creationRace != "Pandaren") { AddBigButtonOverlay("OtherGridBlurred"); SetBigButtonToGrayscale(); }
-                    }
-                    else if (creationSide == "Horde")
-                    {
-                        AddBigButton("PortraitOrc" + creationGender, (h) => { creationRace = "Orc"; creationSpec = ""; h.window.Respawn(); });
-                        if (creationRace != "Orc") { AddBigButtonOverlay("OtherGridBlurred"); SetBigButtonToGrayscale(); }
-                        AddBigButton("PortraitTauren" + creationGender, (h) => { creationRace = "Tauren"; creationSpec = ""; h.window.Respawn(); });
-                        if (creationRace != "Tauren") { AddBigButtonOverlay("OtherGridBlurred"); SetBigButtonToGrayscale(); }
-                        AddBigButton("PortraitTroll" + creationGender, (h) => { creationRace = "Troll"; creationSpec = ""; h.window.Respawn(); });
-                        if (creationRace != "Troll") { AddBigButtonOverlay("OtherGridBlurred"); SetBigButtonToGrayscale(); }
-                        AddBigButton("PortraitForsaken" + creationGender, (h) => { creationRace = "Forsaken"; creationSpec = ""; h.window.Respawn(); });
-                        if (creationRace != "Forsaken") { AddBigButtonOverlay("OtherGridBlurred"); SetBigButtonToGrayscale(); }
-                        AddBigButton("PortraitPandaren" + creationGender, (h) => { creationRace = "Pandaren"; creationSpec = ""; h.window.Respawn(); });
-                        if (creationRace != "Pandaren") { AddBigButtonOverlay("OtherGridBlurred"); SetBigButtonToGrayscale(); }
-                    }
-                });
-            }
-            if (creationRace != "")
-            {
-                AddHeaderRegion(() =>
-                {
-                    AddLine("Class: " + creationSpec);
-                    AddSmallButton("ActionReroll", (h) =>
-                    {
-                        var temp = specs.FindAll(x => x.startingEquipment.ContainsKey(creationRace));
-                        creationSpec = temp[random.Next(temp.Count)].name;
-                        h.window.Respawn();
-                    });
-                });
-                AddHeaderRegion(() =>
-                {
-                    foreach (var foo in specs.FindAll(x => x.startingEquipment.ContainsKey(creationRace)))
-                    {
-                        AddBigButton(foo.icon, (h) => { creationSpec = foo.name; });
-                        if (creationSpec != foo.name) { AddBigButtonOverlay("OtherGridBlurred"); SetBigButtonToGrayscale(); }
-                    }
-                });
-            }
-            AddPaddingRegion(() => { });
-        }),
-        new("CharacterCreationRightSide", () => {
-            SetAnchor(TopRight);
-            DisableShadows();
-            AddRegionGroup();
-            SetRegionGroupWidth(410);
-            SetRegionGroupHeight(354);
-            AddHeaderRegion(() =>
-            {
-                AddLine("Character creation: " + creationSide);
-                AddSmallButton("OtherClose", (h) =>
-                {
-                    CloseWindow("CharacterCreation");
-                    CloseWindow("CharacterCreationRightSide");
-                    SpawnWindowBlueprint("CharacterRoster");
-                    SpawnWindowBlueprint("CharacterInfo");
-                    SpawnWindowBlueprint("TitleScreenSingleplayer");
-                });
-                AddSmallButton("ActionReroll", (h) =>
-                {
-                    creationSide = random.Next(2) == 1 ? "Horde" : "Alliance";
-                    creationGender = random.Next(2) == 1 ? "Male" : "Female";
-                    var races = Race.races.FindAll(x => x.faction == creationSide || x.faction == "Both");
-                    var race = races[random.Next(races.Count)];
-                    creationRace = race.name;
-                    var temp = specs.FindAll(x => x.startingEquipment.ContainsKey(creationRace));
-                    creationSpec = temp[random.Next(temp.Count)].name;
-                    do creationName = creationGender == "Male" ? race.maleNames[random.Next(race.maleNames.Count)] : race.femaleNames[random.Next(race.femaleNames.Count)];
-                    while (saves[settings.selectedRealm].Exists(x => x.player.name == creationName));
-                    CDesktop.windows.Find(x => x.title == "CharacterCreation").Respawn();
-                });
-            });
-            AddPaddingRegion(() => { SetRegionAsGroupExtender(); });
-            AddButtonRegion(() =>
-            {
-                AddLine("Finish creation");
-            },
-            (h) =>
-            {
-                PlaySound("DesktopCreateCharacter");
-                AddNewSave();
-                CloseWindow("CharacterCreation");
-                CloseWindow("CharacterCreationRightSide");
-                SpawnWindowBlueprint("CharacterRoster");
-                SpawnWindowBlueprint("CharacterInfo");
-                SpawnWindowBlueprint("TitleScreenSingleplayer");
-                SaveGames();
-            });
-        }),
         new("CharacterInfo", () => {
             SetAnchor(TopLeft);
             AddRegionGroup();
@@ -1060,28 +860,13 @@ public class Blueprint
             {
                 var slot = saves[settings.selectedRealm].Find(x => x.player.name == settings.selectedCharacter);
                 var spec = slot.player.Spec();
-                AddHeaderRegion(() => { AddLine(slot.player.name); });
+                AddHeaderRegion(() => { AddLine("Character:"); });
                 AddHeaderRegion(() =>
                 {
                     AddBigButton("Portrait" + slot.player.race.Clean() + (slot.player.Race().genderedPortrait ? slot.player.gender : ""), (h) => { });
-                    AddBigButton(spec.icon, (h) => { });
-                    AddLine("Level: " + slot.player.level, "Gray");
-                    AddLine(spec.name, "Gray");
-                });
-                AddHeaderRegion(() => { AddLine("Stats:"); });
-                var stats = slot.player.Stats();
-                AddPaddingRegion(() =>
-                {
-                    AddLine("Stamina: ", "DarkGray");
-                    AddText(stats["Stamina"] + "");
-                    AddLine("Strength: ", "DarkGray");
-                    AddText(stats["Strength"] + "");
-                    AddLine("Agility: ", "DarkGray");
-                    AddText(stats["Agility"] + "");
-                    AddLine("Intellect: ", "DarkGray");
-                    AddText(stats["Intellect"] + "");
-                    AddLine("Spirit: ", "DarkGray");
-                    AddText(stats["Spirit"] + "");
+                    AddLine(slot.player.name, "Gray");
+                    AddLine("Level: " + slot.player.level + " ", "Gray");
+                    AddText(spec.name, spec.name);
                 });
                 AddHeaderRegion(() => { AddLine("Talents:"); });
                 AddPaddingRegion(() =>
@@ -1128,6 +913,596 @@ public class Blueprint
                 AddPaddingRegion(() => AddLine("Delete a character", "DarkGray"));
             }
         }, true),
+        new("CharacterCreationFactionHorde", () => {
+            SetAnchor(BottomLeft, 19, 19);
+            AddRegionGroup();
+            SetRegionGroupWidth(152);
+            AddHeaderRegion(() =>
+            {
+                AddBigButton("TabardOrgrimmar",
+                (h) =>
+                {
+                    if (creationRace == "Orc") return;
+                    creationRace = "Orc";
+                    creationSpec = "";
+                    SpawnTransition();
+                    SetDesktopBackground(FindSite(y => y.name == races.Find(x => x.name == "Orc").previewSite).Background());
+                    Respawn("CharacterCreationWho");
+                    Respawn("CharacterCreationFactionAlliance");
+                    CloseWindow("CharacterCreationFinish");
+                    SpawnWindowBlueprint("CharacterCreationFinish");
+                    CloseWindow("CharacterCreationSpec");
+                    SpawnWindowBlueprint("CharacterCreationSpec");
+                },
+                null, (h) => () =>
+                {
+                    SetAnchor(Bottom, 0, 114);
+                    AddRegionGroup();
+                    SetRegionGroupWidth(258);
+                    AddHeaderRegion(() => AddLine("Orcs of Orgrimmar", "", "Center"));
+                    new Description()
+                    { regions = new() { new() { regionType = "Padding", contents = new() { new ()
+                        {
+                            { "Color", "DarkGray" },
+                            { "Align", "Center" },
+                            { "Text", "Orcs are a proud and powerful race with warrior culture deeply rooted in honor and combat. Originally from the shattered world of Draenor, they now inhabit the harsh landscapes of Durotar, with their capital at Orgrimmar. They strive to overcome their dark past and build a new future for their people." }
+                        }
+                    } } } }.Print(null, null, 258, null);
+                });
+                if (creationRace != "Orc")
+                {
+                    AddBigButtonOverlay("OtherGridBlurred");
+                    SetBigButtonToGrayscale();
+                }
+                AddBigButton("TabardDarkspearTribe",
+                (h) =>
+                {
+                    if (creationRace == "Troll") return;
+                    creationRace = "Troll";
+                    creationSpec = "";
+                    SpawnTransition();
+                    SetDesktopBackground(FindSite(y => y.name == races.Find(x => x.name == "Troll").previewSite).Background());
+                    Respawn("CharacterCreationWho");
+                    Respawn("CharacterCreationFactionAlliance");
+                    CloseWindow("CharacterCreationFinish");
+                    SpawnWindowBlueprint("CharacterCreationFinish");
+                    CloseWindow("CharacterCreationSpec");
+                    SpawnWindowBlueprint("CharacterCreationSpec");
+                },
+                null, (h) => () =>
+                {
+                    SetAnchor(Bottom, 0, 114);
+                    AddRegionGroup();
+                    SetRegionGroupWidth(258);
+                    AddHeaderRegion(() => AddLine("Trolls of the Darkspear Tribe", "", "Center"));
+                    new Description()
+                    { regions = new() { new() { regionType = "Padding", contents = new() { new ()
+                        {
+                            { "Color", "DarkGray" },
+                            { "Align", "Center" },
+                            { "Text", "Trolls are a fierce and agile race with a long history of mysticism and shamanism. The Darkspear Tribe, having allied with the Horde, has established itself in the Echo Isles and the coastal regions of Durotar. Known for their cunning and resourcefulness, they are formidable warriors and mystics." }
+                        }
+                    } } } }.Print(null, null, 258, null);
+                });
+                if (creationRace != "Troll")
+                {
+                    AddBigButtonOverlay("OtherGridBlurred");
+                    SetBigButtonToGrayscale();
+                }
+                AddBigButton("TabardThunderBluff",
+                (h) =>
+                {
+                    if (creationRace == "Tauren") return;
+                    creationRace = "Tauren";
+                    creationSpec = "";
+                    SpawnTransition();
+                    SetDesktopBackground(FindSite(y => y.name == races.Find(x => x.name == "Tauren").previewSite).Background());
+                    Respawn("CharacterCreationWho");
+                    Respawn("CharacterCreationFactionAlliance");
+                    CloseWindow("CharacterCreationFinish");
+                    SpawnWindowBlueprint("CharacterCreationFinish");
+                    CloseWindow("CharacterCreationSpec");
+                    SpawnWindowBlueprint("CharacterCreationSpec");
+                },
+                null, (h) => () =>
+                {
+                    SetAnchor(Bottom, 0, 114);
+                    AddRegionGroup();
+                    SetRegionGroupWidth(258);
+                    AddHeaderRegion(() => AddLine("Tauren of Thunder Bluff", "", "Center"));
+                    new Description()
+                    { regions = new() { new() { regionType = "Padding", contents = new() { new ()
+                        {
+                            { "Color", "DarkGray" },
+                            { "Align", "Center" },
+                            { "Text", "Tauren are massive, bovine-like beings with a deep spiritual connection to nature and the Earth Mother. They dwell in the grassy plains of Mulgore, with their capital in Thunder Bluff. Renowned for their strength and wisdom, they serve as staunch protectors of the natural world." }
+                        }
+                    } } } }.Print(null, null, 258, null);
+                });
+                if (creationRace != "Tauren")
+                {
+                    AddBigButtonOverlay("OtherGridBlurred");
+                    SetBigButtonToGrayscale();
+                }
+                AddBigButton("TabardUndercity",
+                (h) =>
+                {
+                    if (creationRace == "Forsaken") return;
+                    creationRace = "Forsaken";
+                    creationSpec = "";
+                    SpawnTransition();
+                    SetDesktopBackground(FindSite(y => y.name == races.Find(x => x.name == "Forsaken").previewSite).Background());
+                    Respawn("CharacterCreationWho");
+                    Respawn("CharacterCreationFactionAlliance");
+                    CloseWindow("CharacterCreationFinish");
+                    SpawnWindowBlueprint("CharacterCreationFinish");
+                    CloseWindow("CharacterCreationSpec");
+                    SpawnWindowBlueprint("CharacterCreationSpec");
+                },
+                null, (h) => () =>
+                {
+                    SetAnchor(Bottom, 0, 114);
+                    AddRegionGroup();
+                    SetRegionGroupWidth(258);
+                    AddHeaderRegion(() => AddLine("Forsaken of the Undercity", "", "Center"));
+                    new Description()
+                    { regions = new() { new() { regionType = "Padding", contents = new() { new ()
+                        {
+                            { "Color", "DarkGray" },
+                            { "Align", "Center" },
+                            { "Text", "The Forsaken are former humans who have broken free from the Lich King's control, now seeking vengeance and a place in the world. They inhabit the eerie and decaying ruins of the Undercity, beneath the fallen kingdom of Lordaeron. Driven by a desire for autonomy and revenge, they are both feared and misunderstood by the living." }
+                        }
+                    } } } }.Print(null, null, 258, null);
+                });
+                if (creationRace != "Forsaken")
+                {
+                    AddBigButtonOverlay("OtherGridBlurred");
+                    SetBigButtonToGrayscale();
+                }
+            });
+        }),
+        new("CharacterCreationFactionAlliance", () => {
+            SetAnchor(BottomRight, -19, 19);
+            AddRegionGroup();
+            SetRegionGroupWidth(152);
+            AddHeaderRegion(() =>
+            {
+                AddBigButton("TabardStormwind",
+                (h) =>
+                {
+                    if (creationRace == "Human") return;
+                    creationRace = "Human";
+                    creationSpec = "";
+                    SpawnTransition();
+                    SetDesktopBackground(FindSite(y => y.name == races.Find(x => x.name == "Human").previewSite).Background());
+                    Respawn("CharacterCreationWho");
+                    Respawn("CharacterCreationFactionHorde");
+                    CloseWindow("CharacterCreationFinish");
+                    SpawnWindowBlueprint("CharacterCreationFinish");
+                    CloseWindow("CharacterCreationSpec");
+                    SpawnWindowBlueprint("CharacterCreationSpec");
+
+                },
+                null, (h) => () =>
+                {
+                    SetAnchor(Bottom, 0, 114);
+                    AddRegionGroup();
+                    SetRegionGroupWidth(258);
+                    AddHeaderRegion(() => AddLine("Humans of Stormwind", "", "Center"));
+                    new Description()
+                    { regions = new() { new() { regionType = "Padding", contents = new() { new ()
+                        {
+                            { "Color", "DarkGray" },
+                            { "Align", "Center" },
+                            { "Text", "Humans are a resilient and versatile race known for their unyielding spirit and strong sense of justice. They have a rich history of surviving numerous wars and catastrophes, making them natural leaders in the Alliance. Their capital city is Stormwind, a bustling hub of trade and governance." }
+                        }
+                    } } } }.Print(null, null, 258, null);
+                });
+                if (creationRace != "Human")
+                {
+                    AddBigButtonOverlay("OtherGridBlurred");
+                    SetBigButtonToGrayscale();
+                }
+                AddBigButton("TabardIronforge",
+                (h) =>
+                {
+                    if (creationRace == "Dwarf") return;
+                    creationRace = "Dwarf";
+                    creationSpec = "";
+                    SpawnTransition();
+                    SetDesktopBackground(FindSite(y => y.name == races.Find(x => x.name == "Dwarf").previewSite).Background());
+                    Respawn("CharacterCreationWho");
+                    Respawn("CharacterCreationFactionHorde");
+                    CloseWindow("CharacterCreationFinish");
+                    SpawnWindowBlueprint("CharacterCreationFinish");
+                    CloseWindow("CharacterCreationSpec");
+                    SpawnWindowBlueprint("CharacterCreationSpec");
+                },
+                null, (h) => () =>
+                {
+                    SetAnchor(Bottom, 0, 114);
+                    AddRegionGroup();
+                    SetRegionGroupWidth(258);
+                    AddHeaderRegion(() => AddLine("Dwarfs of Ironforge", "", "Center"));
+                    new Description()
+                    { regions = new() { new() { regionType = "Padding", contents = new() { new ()
+                        {
+                            { "Color", "DarkGray" },
+                            { "Align", "Center" },
+                            { "Text", "Dwarves are hardy and stout creatures famed for their skills in mining and blacksmithing. They hail from the snowy peaks of Dun Morogh and are deeply connected to their ancestral homeland of Ironforge. Their adventurous nature drives them to uncover ancient relics and forgotten lore." }
+                        }
+                    } } } }.Print(null, null, 258, null);
+                });
+                if (creationRace != "Dwarf")
+                {
+                    AddBigButtonOverlay("OtherGridBlurred");
+                    SetBigButtonToGrayscale();
+                }
+                AddBigButton("TabardGnomeregan",
+                (h) =>
+                {
+                    if (creationRace == "Gnome") return;
+                    creationRace = "Gnome";
+                    creationSpec = "";
+                    SpawnTransition();
+                    SetDesktopBackground(FindSite(y => y.name == races.Find(x => x.name == "Gnome").previewSite).Background());
+                    Respawn("CharacterCreationWho");
+                    Respawn("CharacterCreationFactionHorde");
+                    CloseWindow("CharacterCreationFinish");
+                    SpawnWindowBlueprint("CharacterCreationFinish");
+                    CloseWindow("CharacterCreationSpec");
+                    SpawnWindowBlueprint("CharacterCreationSpec");
+                },
+                null, (h) => () =>
+                {
+                    SetAnchor(Bottom, 0, 114);
+                    AddRegionGroup();
+                    SetRegionGroupWidth(258);
+                    AddHeaderRegion(() => AddLine("Gnomes of Gnomeregan", "", "Center"));
+                    new Description()
+                    { regions = new() { new() { regionType = "Padding", contents = new() { new ()
+                        {
+                            { "Color", "DarkGray" },
+                            { "Align", "Center" },
+                            { "Text", "Gnomes are brilliant inventors and tinkerers, known for their technological prowess and innovative gadgets. Originally from the subterranean city of Gnomeregan, many now reside with their Dwarven allies in Ironforge. Despite their small stature, they possess an insatiable curiosity and boundless energy." }
+                        }
+                    } } } }.Print(null, null, 258, null);
+                });
+                if (creationRace != "Gnome")
+                {
+                    AddBigButtonOverlay("OtherGridBlurred");
+                    SetBigButtonToGrayscale();
+                }
+                AddBigButton("TabardDarnassus",
+                (h) =>
+                {
+                    if (creationRace == "Night Elf") return;
+                    creationRace = "Night Elf";
+                    creationSpec = "";
+                    SpawnTransition();
+                    SetDesktopBackground(FindSite(y => y.name == races.Find(x => x.name == "Night Elf").previewSite).Background());
+                    Respawn("CharacterCreationWho");
+                    Respawn("CharacterCreationFactionHorde");
+                    CloseWindow("CharacterCreationFinish");
+                    SpawnWindowBlueprint("CharacterCreationFinish");
+                    CloseWindow("CharacterCreationSpec");
+                    SpawnWindowBlueprint("CharacterCreationSpec");
+                },
+                null, (h) => () =>
+                {
+                    SetAnchor(Bottom, 0, 114);
+                    AddRegionGroup();
+                    SetRegionGroupWidth(258);
+                    AddHeaderRegion(() => AddLine("Night Elfs of Darnassus", "", "Center"));
+                    new Description()
+                    { regions = new() { new() { regionType = "Padding", contents = new() { new ()
+                        {
+                            { "Color", "DarkGray" },
+                            { "Align", "Center" },
+                            { "Text", "Night Elves are an ancient and mystical race with a profound connection to nature and druidic magic. They once lived in isolation in the lush forests of Kalimdor with their majestic city of Darnassus. Renowned for their agility and wisdom, they strive to protect the world of nature from harm." }
+                        }
+                    } } } }.Print(null, null, 258, null);
+                });
+                if (creationRace != "Night Elf")
+                {
+                    AddBigButtonOverlay("OtherGridBlurred");
+                    SetBigButtonToGrayscale();
+                }
+            });
+        }),
+        //new("CharacterCreationFactionRaceChoice", () => {
+        //    SetAnchor(TopLeft, 19, -19);
+        //    AddRegionGroup();
+        //    SetRegionGroupWidth(152);
+        //    SetRegionGroupHeight(240);
+        //    AddHeaderRegion(() =>
+        //    {
+        //        AddLine("Character stats:");
+        //    });
+        //    AddHeaderRegion(() =>
+        //    {
+        //        AddLine(creationRace, "", "Left");
+        //    });
+        //    var race = races.Find(x => x.name == creationRace);
+        //    var spec = specs.Find(x => x.name == creationSpec);
+        //    AddHeaderRegion(() =>
+        //    {
+        //        foreach (var foo in race.stats.stats)
+        //            if (!foo.Key.Contains("Mastery"))
+        //            {
+        //                AddLine(foo.Key + ": ", "Gray", "Right");
+        //                AddText(foo.Value + (spec != null && spec.stats.stats.ContainsKey(foo.Key) ? spec.stats.stats[foo.Key] : 0) + "", "Uncommon");
+        //            }
+        //    });
+        //    AddPaddingRegion(() => SetRegionAsGroupExtender());
+        //}),
+        new("CharacterCreationSpec", () => {
+            SetAnchor(Top, 0, -19);
+            AddRegionGroup();
+            AddHeaderRegion(() =>
+            {
+                var availableSpecs = specs.FindAll(x => x.startingEquipment.ContainsKey(creationRace));
+                foreach (var foo in availableSpecs)
+                {
+                    var spec = foo;
+                    AddBigButton(spec.icon,
+                    (h) =>
+                    {
+                        if (creationSpec == spec.name) return;
+                        creationSpec = spec.name;
+                        Respawn("CharacterCreationWho");
+                        Respawn("CharacterCreationFactionRaceChoice");
+                        CloseWindow("CharacterCreationFinish");
+                        SpawnWindowBlueprint("CharacterCreationFinish");
+                    },
+                    null, (h) => () =>
+                    {
+                        SetAnchor(Top, 0, -76);
+                        AddRegionGroup();
+                        SetRegionGroupWidth(296);
+                        AddHeaderRegion(() => AddLine(spec.name, "", "Center"));
+                        Description desc = null;
+                        if (spec.name == "Warlock")
+                            desc = new Description()
+                            { regions = new() { new() { regionType = "Padding", contents = new() { new ()
+                                {
+                                    { "Color", "DarkGray" },
+                                    { "Align", "Center" },
+                                    { "Text", "Warlocks are feared practitioners of dark magic, summoning demons and wielding fel energies that corrupt and destroy. Often shunned by mainstream society, they are driven by a desire for power and knowledge forbidden to others. Warlocks walk a perilous path, balancing the destructive forces they command with the ever-present risk of their own corruption." }
+                                }
+                            } } } };
+                        else if (spec.name == "Mage")
+                            desc = new Description()
+                            { regions = new() { new() { regionType = "Padding", contents = new() { new ()
+                                {
+                                    { "Color", "DarkGray" },
+                                    { "Align", "Center" },
+                                    { "Text", "Mages are scholarly spellcasters who delve into the arcane arts, harnessing the raw energies of magic to alter reality. They are often members of esteemed magical institutions like the Kirin Tor, dedicating their lives to the pursuit of knowledge and mastery of the arcane. Mages wield immense power, capable of both creating wonders and unleashing devastating destruction." }
+                                }
+                            } } } };
+                        else if (spec.name == "Priest")
+                            desc = new Description()
+                            { regions = new() { new() { regionType = "Padding", contents = new() { new ()
+                                {
+                                    { "Color", "DarkGray" },
+                                    { "Align", "Center" },
+                                    { "Text", "Priests are devout servants of the divine, channeling the powers of the Light or the Void to heal and guide their followers. They serve as spiritual leaders within their communities, offering solace and wisdom in times of need. Whether upholding the Light's purity or delving into the shadows of the Void, priests are driven by their faith and commitment to their spiritual path." }
+                                }
+                            } } } };
+                        else if (spec.name == "Rogue")
+                            desc = new Description()
+                            { regions = new() { new() { regionType = "Padding", contents = new() { new ()
+                                {
+                                    { "Color", "DarkGray" },
+                                    { "Align", "Center" },
+                                    { "Text", "Rogues are shadowy figures who thrive in the underbelly of society, mastering the arts of stealth, subterfuge, and assassination. They are often found as spies, thieves, and mercenaries, using their cunning and agility to outmaneuver their foes. Rogues are the unseen enforcers of their factions, executing their tasks with lethal precision and leaving no trace behind." }
+                                }
+                            } } } };
+                        else if (spec.name == "Warrior")
+                            desc = new Description()
+                            { regions = new() { new() { regionType = "Padding", contents = new() { new ()
+                                {
+                                    { "Color", "DarkGray" },
+                                    { "Align", "Center" },
+                                    { "Text", "Warriors are the embodiment of physical strength and martial prowess, drawing on centuries-old traditions of combat and honor. They are often seen as the backbone of their respective societies, respected for their bravery and skill in battle. From the disciplined ranks of Stormwind's knights to the fierce clans of orcish berserkers, warriors are found in every culture, upholding their people's martial heritage." }
+                                }
+                            } } } };
+                        else if (spec.name == "Druid")
+                            desc = new Description()
+                            { regions = new() { new() { regionType = "Padding", contents = new() { new ()
+                                {
+                                    { "Color", "DarkGray" },
+                                    { "Align", "Center" },
+                                    { "Text", "Druids are guardians of nature who draw their strength from the natural world and the primal forces that govern it. They follow the teachings of ancient demigods like Cenarius, learning to shapeshift and harness the power of the wild. Druids are deeply connected to the balance of nature, serving as its protectors and stewards in a world often threatened by chaos and destruction." }
+                                }
+                            } } } };
+                        else if (spec.name == "Shaman")
+                            desc = new Description()
+                            { regions = new() { new() { regionType = "Padding", contents = new() { new ()
+                                {
+                                    { "Color", "DarkGray" },
+                                    { "Align", "Center" },
+                                    { "Text", "Shamans are spiritual mediators who commune with the elemental forces of nature, invoking the power of earth, fire, water, and air. They are deeply respected within their societies as guides and visionaries, capable of bridging the physical and spiritual worlds. Shamans draw upon ancient traditions and rituals, channeling the elements to maintain balance and harmony within the world." }
+                                }
+                            } } } };
+                        else if (spec.name == "Paladin")
+                            desc = new Description()
+                            { regions = new() { new() { regionType = "Padding", contents = new() { new ()
+                                {
+                                    { "Color", "DarkGray" },
+                                    { "Align", "Center" },
+                                    { "Text", "Paladins are holy warriors dedicated to the Light, wielding divine power to vanquish evil and protect the innocent. Originating from the ancient orders such as the Knights of the Silver Hand, they are bound by a sacred oath to uphold justice and righteousness. Paladins are revered as champions of their faith, standing as beacons of hope in the darkest times." }
+                                }
+                            } } } };
+                        else if (spec.name == "Hunter")
+                            desc = new Description()
+                            { regions = new() { new() { regionType = "Padding", contents = new() { new ()
+                                {
+                                    { "Color", "DarkGray" },
+                                    { "Align", "Center" },
+                                    { "Text", "Hunters are expert survivalists and marksmen, deeply attuned to the wilderness and the creatures that inhabit it. Often raised in the wilds, they form profound bonds with their animal companions and learn to navigate and master their environment. From the forests of Ashenvale to the savannas of the Barrens, hunters are the quintessential rangers and protectors of the natural world." }
+                                }
+                            } } } };
+                        desc?.Print(null, null, 296, null);
+                    });
+                    if (creationSpec != spec.name)
+                    {
+                        AddBigButtonOverlay("OtherGridBlurred");
+                        SetBigButtonToGrayscale();
+                    }
+                }
+            });
+        }),
+        new("CharacterCreationFinish", () => {
+            SetAnchor(Bottom, 0, 76);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                AddSmallButton("ActionReroll",
+                (h) =>
+                {
+                    var temp = random.Next(8);
+                    creationRace = temp == 0 ? "Orc" : (temp == 1 ? "Troll" : (temp == 2 ? "Tauren" : (temp == 3 ? "Forsaken" : (temp == 4 ? "Human" : (temp == 5 ? "Dwarf" : (temp == 6 ? "Gnome" : "Night Elf"))))));
+                    creationGender = random.Next(2) == 0 ? "Male" : "Female";
+                    var availableSpecs = specs.FindAll(x => x.startingEquipment.ContainsKey(creationRace));
+                    creationSpec = availableSpecs[random.Next(availableSpecs.Count)].name;
+                    var name = "";
+                    var race = races.Find(x => x.name == creationRace);
+                    do name = creationGender == "Female" ? race.femaleNames[random.Next(race.femaleNames.Count)] : race.maleNames[random.Next(race.maleNames.Count)];
+                    while (saves[settings.selectedRealm].Any(x => x.player.name == name));
+                    String.creationName.Set(name);
+                    SpawnTransition();
+                    SetDesktopBackground(FindSite(y => y.name == races.Find(x => x.name == creationRace).previewSite).Background());
+                    CloseWindow("CharacterCreationFactionHorde");
+                    CloseWindow("CharacterCreationFactionAlliance");
+                    CloseWindow("CharacterCreationFactionRaceChoice");
+                    CloseWindow("CharacterCreationFinish");
+                    CloseWindow("CharacterCreationSpec");
+                    CloseWindow("CharacterCreationWho");
+                    SpawnWindowBlueprint("CharacterCreationFactionHorde");
+                    SpawnWindowBlueprint("CharacterCreationFactionAlliance");
+                    SpawnWindowBlueprint("CharacterCreationFactionRaceChoice");
+                    SpawnWindowBlueprint("CharacterCreationFinish");
+                    SpawnWindowBlueprint("CharacterCreationSpec");
+                    SpawnWindowBlueprint("CharacterCreationWho");
+                    PlaySound("DesktopReroll" + random.Next(1, 3), 0.4f);
+                });
+            });
+            AddRegionGroup();
+            SetRegionGroupWidth(114);
+            if (creationSpec != "" && creationGender != "" && creationRace != "" && String.creationName.Value().Length < 3) AddButtonRegion(() => { SetRegionBackground(RedButton); AddLine("Finish Creation", "Black", "Center"); }, (h) => { });
+            else if (creationSpec != "" && creationGender != "" && creationRace != "")
+            {
+                AddButtonRegion(() =>
+                {
+                    AddLine("Finish Creation", "", "Center");
+                },
+                (h) =>
+                {
+                    PlaySound("DesktopCreateCharacter");
+                    AddNewSave();
+                    CloseWindow("CharacterCreationFactionHorde");
+                    CloseWindow("CharacterCreationFactionAlliance");
+                    CloseWindow("CharacterCreationFactionRaceChoice");
+                    CloseWindow("CharacterCreationFinish");
+                    CloseWindow("CharacterCreationSpec");
+                    CloseWindow("CharacterCreationWho");
+                    SpawnWindowBlueprint("CharacterRoster");
+                    SpawnWindowBlueprint("CharacterInfo");
+                    SpawnWindowBlueprint("TitleScreenSingleplayer");
+                    SaveGames();
+                });
+            }
+            else AddPaddingRegion(() => AddLine("Finish Creation", "DarkGray", "Center"));
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                AddSmallButton("OtherClose",
+                (h) =>
+                {
+                    CloseWindow("CharacterCreationFactionHorde");
+                    CloseWindow("CharacterCreationFactionAlliance");
+                    CloseWindow("CharacterCreationFactionRaceChoice");
+                    CloseWindow("CharacterCreationFinish");
+                    CloseWindow("CharacterCreationSpec");
+                    CloseWindow("CharacterCreationWho");
+                    SpawnWindowBlueprint("CharacterRoster");
+                    SpawnWindowBlueprint("CharacterInfo");
+                    SpawnWindowBlueprint("TitleScreenSingleplayer");
+                });
+            });
+        }),
+        new("CharacterCreationWho", () => {
+            SetAnchor(Bottom, 0, 19);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                AddBigButton("Portrait" + creationRace.Clean() + "Male",
+                (h) =>
+                {
+                    if (creationRace != "")
+                    {
+                        creationGender = "Male";
+                        var oldName = String.creationName.Value();
+                        var name = "";
+                        var race = races.Find(x => x.name == creationRace);
+                        do name = race.maleNames[random.Next(race.maleNames.Count)];
+                        while (name == oldName || saves[settings.selectedRealm].Any(x => x.player.name == name));
+                        String.creationName.Set(name);
+                        CloseWindow("CharacterCreationWho");
+                        Respawn("CharacterCreationWho");
+                        CloseWindow("CharacterCreationFinish");
+                        Respawn("CharacterCreationFinish");
+                    }
+                });
+                if (creationRace != "" && creationGender != "Male")
+                {
+                    AddBigButtonOverlay("OtherGridBlurred");
+                    SetBigButtonToGrayscale();
+                }
+            });
+            AddRegionGroup();
+            SetRegionGroupWidth(182);
+            AddHeaderRegion(() =>
+            {
+                if (creationRace == "") AddLine("Choose Race", "DarkGray", "Center");
+                else if (creationGender == "" && creationSpec == "") AddLine("Choose Portrait and Class", "DarkGray", "Center");
+                else if (creationSpec == "") AddLine("Choose Class", "DarkGray", "Center");
+                else if (creationGender == "") AddLine("Choose Portrait", "DarkGray", "Center");
+                else AddInputLine(String.creationName, "White", "Center");
+            });
+            AddPaddingRegion(() =>
+            {
+                AddLine(creationRace != "" ? creationRace + (creationSpec != "" ? " " + creationSpec : "") : "?", "", "Center");
+            });
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                AddBigButton("Portrait" + creationRace.Clean() + "Female",
+                (h) =>
+                {
+                    if (creationRace != "")
+                    {
+                        creationGender = "Female";
+                        var oldName = String.creationName.Value();
+                        var name = "";
+                        var race = races.Find(x => x.name == creationRace);
+                        do name = race.femaleNames[random.Next(race.femaleNames.Count)];
+                        while (name == oldName || saves[settings.selectedRealm].Any(x => x.player.name == name));
+                        String.creationName.Set(name);
+                        CloseWindow("CharacterCreationWho");
+                        Respawn("CharacterCreationWho");
+                        CloseWindow("CharacterCreationFinish");
+                        Respawn("CharacterCreationFinish");
+                    }
+                });
+                if (creationRace != "" && creationGender != "Female")
+                {
+                    AddBigButtonOverlay("OtherGridBlurred");
+                    SetBigButtonToGrayscale();
+                }
+            });
+        }),
 
         //Crafting Screen
         new("ProfessionListPrimary", () => {
@@ -2220,7 +2595,6 @@ public class Blueprint
                             PlaySound(item.ItemSound("PickUp"));
                             currentSave.player.inventory.AddItem(item.CopyItem(1));
                         }
-                        h.window.Respawn();
                         Respawn("ExperienceBarBorder");
                         Respawn("ExperienceBar");
                     });
@@ -4045,13 +4419,18 @@ public class Blueprint
                     PlaySound("DesktopButtonClose");
                     SpawnWindowBlueprint("TitleScreenMenu");
                 }
-                else if (CloseWindow("CharacterCreation"))
+                else if (CloseWindow("CharacterCreationFinish"))
                 {
                     PlaySound("DesktopButtonClose");
-                    CloseWindow("CharacterCreationRightSide");
+                    CloseWindow("CharacterCreationFactionHorde");
+                    CloseWindow("CharacterCreationFactionAlliance");
+                    CloseWindow("CharacterCreationFactionRaceChoice");
+                    CloseWindow("CharacterCreationFinish");
+                    CloseWindow("CharacterCreationWho");
                     SpawnWindowBlueprint("CharacterRoster");
                     SpawnWindowBlueprint("CharacterInfo");
                     SpawnWindowBlueprint("TitleScreenSingleplayer");
+                    RemoveDesktopBackground();
                 }
                 else if (CloseWindow("TitleScreenSingleplayer"))
                 {

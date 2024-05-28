@@ -9,6 +9,7 @@ public class Race
     //and remove empty collections to avoid serialising them later
     public void Initialise()
     {
+        side = Faction().side;
         if (abilities != null)
             foreach (var ability in abilities)
                 if (!Ability.abilities.Exists(x => x.name == ability.Key))
@@ -155,10 +156,10 @@ public class Race
     //Faction of the race
     //Killing entities of this race will grant negative reputation with this faction
     //and grant positive reputation standing with factions that are it's main enemies
-    public string faction;
+    public string faction, side;
     public Faction Faction()
     {
-        if (faction == null) return null;
+        if (faction == null) return new Faction() { name = "None", side = "Neutral" };
         return factions.Find(x => x.name == faction);
     }
 
@@ -166,6 +167,10 @@ public class Race
     //This is useful only to races playable by player
     //as it provides position to center camera on when creating a new character
     public string startingSite;
+
+    //Preview site of a race.
+    //This is the site that is shown in the background while in character creation screen
+    public string previewSite;
 
     //Indicates whether this race uses separate gender portraits.
     //On this value being true program will search for portraits based on entity's gender

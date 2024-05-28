@@ -33,11 +33,9 @@ public static class Root
     public static Region iconRow;
 
     public static string locationName;
-    public static string creationName;
-    public static string creationSide;
-    public static string creationGender;
     public static string creationRace;
     public static string creationSpec;
+    public static string creationGender;
 
     public static Highlightable mouseOver;
     public static GameObject[] loadingBar;
@@ -130,16 +128,16 @@ public static class Root
 
     public static T Copy<T>(this object obj) => Newtonsoft.Json.JsonConvert.DeserializeObject<T>(Newtonsoft.Json.JsonConvert.SerializeObject(obj));
 
-    public static List<(string, string)> TrimLast(this List<(string, string)> list, bool should)
+    public static List<(string, string, string)> TrimLast(this List<(string, string, string)> list, bool should)
     {
         if (should == false) return list;
-        list[^1] = (list[^1].Item1.TrimEnd(), list[^1].Item2);
+        list[^1] = (list[^1].Item1.TrimEnd(), list[^1].Item2, list[^1].Item3);
         return list;
     }
 
     public static bool Roll(double chance) => random.Next(0, 100000) < chance * 1000;
 
-    public static string Clean(this string text) => text.Replace("'", "").Replace(".", "").Replace(" ", "");
+    public static string Clean(this string text) => text?.Replace("'", "").Replace(".", "").Replace(" ", "");
 
     public static void SetMouseOver(Highlightable highlightable) => mouseOver = highlightable;
 
@@ -572,6 +570,20 @@ public static class Root
         AddSmallButtonOverlay(button, overlay, time, sortingOrder);
     }
 
+    public static void SmallButtonFlipX()
+    {
+        var region = CDesktop.LBWindow.LBRegionGroup.LBRegion;
+        var button = region.LBSmallButton.gameObject;
+        button.GetComponent<SpriteRenderer>().flipX ^= true;
+    }
+
+    public static void SmallButtonFlipY()
+    {
+        var region = CDesktop.LBWindow.LBRegionGroup.LBRegion;
+        var button = region.LBSmallButton.gameObject;
+        button.GetComponent<SpriteRenderer>().flipY ^= true;
+    }
+
     public static void AddSmallButtonOverlay(GameObject onWhat, string overlay, float time = 0, int sortingOrder = 0)
     {
         var newObject = new GameObject("SmallButtonOverlay", typeof(SpriteRenderer));
@@ -623,6 +635,20 @@ public static class Root
         var region = CDesktop.LBWindow.LBRegionGroup.LBRegion;
         var button = region.LBBigButton.gameObject;
         return AddBigButtonOverlay(button, "Sprites/Building/BigButtons/" + overlay, time, sortingOrder);
+    }
+
+    public static void BigButtonFlipX()
+    {
+        var region = CDesktop.LBWindow.LBRegionGroup.LBRegion;
+        var button = region.LBBigButton.gameObject;
+        button.GetComponent<SpriteRenderer>().flipX ^= true;
+    }
+
+    public static void BigButtonFlipY()
+    {
+        var region = CDesktop.LBWindow.LBRegionGroup.LBRegion;
+        var button = region.LBBigButton.gameObject;
+        button.GetComponent<SpriteRenderer>().flipY ^= true;
     }
 
     public static GameObject AddBigButtonCooldownOverlay(double percentage)
@@ -741,13 +767,13 @@ public static class Root
 
     #region InputLines
 
-    public static void AddInputLine(String refText, string color = "")
+    public static void AddInputLine(String refText, string color = "", string align = "")
     {
         var region = CDesktop.LBWindow.LBRegionGroup.LBRegion;
         if (region.lines.Count > 0 && region.checkbox != null) return;
         var newObject = new GameObject("InputLine", typeof(InputLine));
         newObject.transform.parent = region.transform;
-        newObject.GetComponent<InputLine>().Initialise(region, refText, color);
+        newObject.GetComponent<InputLine>().Initialise(region, refText, color, align);
     }
 
     #endregion
@@ -973,6 +999,7 @@ public static class Root
     {
         Everything,
         Letters,
+        StrictLetters,
         Capitals,
         Numbers,
         Decimal

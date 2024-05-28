@@ -27,6 +27,8 @@ public class Entity
         faction = race.faction;
         abilities = race.abilities.Merge(spec.abilities).Merge(spec.talentTrees.SelectMany(x => x.talents.FindAll(y => y.defaultTaken)).ToDictionary(x => x.ability, x => 0));
         stats = new Stats(race.stats.stats.ToDictionary(x => x.Key, x => x.Value));
+        foreach (var stat in spec.stats.stats)
+            stats.stats.Inc(stat.Key, stat.Value);
         mounts = new();
         inventory = new Inventory(items);
         learnedRecipes = new();
@@ -117,7 +119,8 @@ public class Entity
             experience -= ExperienceNeeded();
             level++;
             unspentTalentPoints++;
-            PlaySound("DesktopLevelUp", 0.3f);
+            if (soundsPlayedThisFrame < 3)
+                PlaySound("DesktopLevelUp", 0.3f);
         }
         Respawn("ExperienceBarBorder", true);
         Respawn("ExperienceBar", true);

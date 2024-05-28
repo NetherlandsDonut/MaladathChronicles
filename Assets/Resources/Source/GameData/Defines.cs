@@ -46,6 +46,8 @@ public class Defines
             lvlRequiredVeryFastMounts = 60;
         if (maxPrimaryProfessions < 0)
             maxPrimaryProfessions = 2;
+        if (expForExploration < 20)
+            expForExploration = 20;
         if (markerCharacter == null || markerCharacter == "")
             markerCharacter ??= "_";
         if (textWrapEnding == null || textWrapEnding == "")
@@ -77,6 +79,9 @@ public class Defines
 
     //Max amount of primary professions that player can have at once
     public int maxPrimaryProfessions;
+
+    //Amount of experience given to player when they explore a new area
+    public int expForExploration;
 
     //Text displayed when an input field is active, this 
     public string markerCharacter;

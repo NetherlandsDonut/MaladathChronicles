@@ -41,6 +41,8 @@ public class Spec
     //EXAMPLE: { "Troll": [ "Trapper's Shirt", "Worn Axe" ] } 
     public Dictionary<string, List<string>> startingEquipment;
 
+    public Stats stats;
+
     //Rules for calculating stats for this class
     //EXAMPLE: "Melee Attack Power per Agility": 2.0
     public Dictionary<string, double> rules;

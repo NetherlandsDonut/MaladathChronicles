@@ -119,7 +119,7 @@ public class SiteComplex : Site
     public override string Background()
     {
         var save = currentSave ?? saves[settings.selectedRealm].Find(x => x.player.name == settings.selectedCharacter);
-        return "Areas/Complex" + name.Clean() + (save.IsNight() && !noNightVariant ? "Night" : "");
+        return "Areas/Complex" + name.Clean() + (save != null && save.IsNight() && !noNightVariant ? "Night" : "");
     }
 
     //Function to print the site onto the map

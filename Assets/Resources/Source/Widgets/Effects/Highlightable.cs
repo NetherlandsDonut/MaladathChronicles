@@ -96,7 +96,8 @@ public class Highlightable : MonoBehaviour
         render.color = defaultColor - (mouseOver == this ? new Color(0.1f, 0.1f, 0.1f, 0) : new Color(0, 0, 0, 0));
         if (pressedState == "Left" && pressEvent != null)
         {
-            PlaySound("DesktopButtonPress", 0.6f);
+            if (GetComponent<LineSmallButton>()?.buttonType == "OtherClose") PlaySound("DesktopButtonClose");
+            else PlaySound("DesktopButtonPress", 0.6f);
             pressEvent(this);
         }
         else if (pressedState == "Right" && rightPressEvent != null)

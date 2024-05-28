@@ -29,9 +29,11 @@ public class String
         switch (inputType)
         {
             case Letters:
-                return char.IsLetter(letter) || letter == ' ' && value.Last() != ' ';
+                return char.IsLetter(letter) || letter == ' ' && value.Length != 0 && value.Last() != ' ' || letter == '\'' && value.Length != 0 && value.Last() != '\'';
+            case StrictLetters:
+                return char.IsLetter(letter) || letter == '\'' && value.Length != 0 && value.Last() != '\'';
             case Capitals:
-                return char.IsLetter(letter) || letter == ' ' && value.Last() != ' ';
+                return char.IsLetter(letter) || letter == ' ' && value.Length != 0 && value.Last() != ' ';
             case Numbers:
                 return char.IsDigit(letter);
             case Decimal:
@@ -44,6 +46,7 @@ public class String
     public static String promptConfirm = new() { inputType = Capitals };
     public static String consoleInput = new() { inputType = Everything };
     public static String search = new() { inputType = Everything };
+    public static String creationName = new() { inputType = StrictLetters };
     public static String objectName = new() { inputType = Everything };
     public static String vitality = new() { inputType = Decimal };
     public static String price = new() { inputType = Decimal };

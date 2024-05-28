@@ -104,8 +104,8 @@
         ]
       }
     ],
-    "x": 2318,
-    "y": -2147,
+    "x": 2348,
+    "y": -2158,
     "name": "Ragefire Chasm",
     "zone": "Durotar",
     "type": "Dungeon",
@@ -368,8 +368,8 @@
         ]
       }
     ],
-    "x": 855,
-    "y": -2812,
+    "x": 859,
+    "y": -2816,
     "name": "Maraudon",
     "zone": "Desolace",
     "type": "Dungeon"
@@ -481,8 +481,8 @@
         ]
       }
     ],
-    "x": 1862,
-    "y": -2698,
+    "x": 1866,
+    "y": -2706,
     "name": "Wailing Caverns",
     "zone": "The Barrens",
     "type": "Dungeon",
@@ -576,8 +576,8 @@
       "Ebony Boneclub",
       "Boneslasher"
     ],
-    "x": 1982,
-    "y": -3506,
+    "x": 1980,
+    "y": -3502,
     "name": "Razorfen Downs",
     "zone": "The Barrens",
     "type": "Dungeon",
@@ -712,8 +712,8 @@
       "Staff of the Blessed Seer",
       "Evocator's Blade"
     ],
-    "x": 1273,
-    "y": -1672,
+    "x": 1275,
+    "y": -1687,
     "name": "Blackfathom Deeps",
     "zone": "Ashenvale",
     "type": "Dungeon",

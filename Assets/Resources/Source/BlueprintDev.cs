@@ -1512,16 +1512,14 @@ public static class BlueprintDev
                 {
                     PlaySound("DesktopTooltipHide", 0.4f);
                     triggersCopy = eventEdit.triggers.Select(x => x.ToDictionary(y => y.Key, y => y.Value)).ToList();
-                    h.window.Respawn();
-                });
+                    });
                 AddSmallButton("OtherPaste", (h) =>
                 {
                     if (effectsCopy != null)
                     {
                         PlaySound("DesktopWeirdClick3", 0.4f);
                         eventEdit.triggers.AddRange(triggersCopy.Select(x => x.ToDictionary(y => y.Key, y => y.Value)).ToList());
-                        h.window.Respawn();
-                    }
+                        }
                 });
             });
             foreach (var trigger in eventEdit.triggers)
@@ -1548,8 +1546,7 @@ public static class BlueprintDev
                 (h) =>
                 {
                     eventEdit.triggers.Add(new Dictionary<string, string>());
-                    h.window.Respawn();
-                });
+                    });
             else
                 AddPaddingRegion(() =>
                 {
@@ -1582,7 +1579,6 @@ public static class BlueprintDev
             },
             (h) =>
             {
-                h.window.Respawn();
                 CloseWindow("ObjectManagerEventTriggers");
                 Respawn("ObjectManagerTriggerList");
             });
@@ -1596,8 +1592,7 @@ public static class BlueprintDev
                 {
                     if (trigger.ContainsKey("Triggerer"))
                         trigger["Triggerer"] = "Any";
-                    h.window.Respawn();
-                });
+                    });
             });
             if (trigger.ContainsKey("Trigger") && trigger["Trigger"] != "CombatBegin")
                 AddButtonRegion(() =>
@@ -1614,8 +1609,7 @@ public static class BlueprintDev
                         trigger["Triggerer"] = "Any";
                     else if (trigger["Triggerer"] == "Any")
                         trigger["Triggerer"] = "Effector";
-                    h.window.Respawn();
-                });
+                    });
             if (trigger.ContainsKey("Trigger") && (trigger["Trigger"] == "AbilityCast" || trigger["Trigger"] == "Cooldown"))
             {
                 AddPaddingRegion(() =>
@@ -1625,8 +1619,7 @@ public static class BlueprintDev
                     {
                         if (trigger.ContainsKey("AbilityName"))
                             trigger["AbilityName"] = eventParentType == "Ability" ? "This" : "Any";
-                        h.window.Respawn();
-                    });
+                        });
                 });
                 AddButtonRegion(() =>
                 {
@@ -1654,8 +1647,7 @@ public static class BlueprintDev
                     {
                         if (trigger.ContainsKey("BuffName"))
                             trigger["BuffName"] = eventParentType == "Buff" ? "This" : "Any";
-                        h.window.Respawn();
-                    });
+                        });
                 });
                 AddButtonRegion(() =>
                 {
@@ -1684,8 +1676,7 @@ public static class BlueprintDev
                     {
                         if (trigger.ContainsKey("ResourceType"))
                             trigger["ResourceType"] = "Any";
-                        h.window.Respawn();
-                    });
+                        });
                 });
                 AddButtonRegion(() =>
                 {
@@ -1719,8 +1710,7 @@ public static class BlueprintDev
                         trigger["ResourceType"] = "Any";
                     else if (trigger["ResourceType"] == "Any")
                         trigger["ResourceType"] = "Fire";
-                    h.window.Respawn();
-                });
+                    });
                 if (trigger["Trigger"] == "ResourceCollected" || trigger["Trigger"] == "ResourceDetracted")
                     AddPaddingRegion(() =>
                     {
@@ -1731,8 +1721,7 @@ public static class BlueprintDev
                             if (trigger.ContainsKey("ResourceAmount"))
                                 trigger["ResourceAmount"] = "1";
                             String.resourceAmount.Set("1");
-                            h.window.Respawn();
-                        });
+                            });
                     });
             }
             AddPaddingRegion(() => { SetRegionAsGroupExtender(); });
@@ -1776,16 +1765,14 @@ public static class BlueprintDev
                 {
                     PlaySound("DesktopTooltipHide", 0.4f);
                     effectsCopy = eventEdit.effects.Select(x => x.ToDictionary(y => y.Key, y => y.Value)).ToList();
-                    h.window.Respawn();
-                });
+                    });
                 AddSmallButton("OtherPaste", (h) =>
                 {
                     if (effectsCopy != null)
                     {
                         PlaySound("DesktopWeirdClick3", 0.4f);
                         eventEdit.effects.AddRange(effectsCopy.Select(x => x.ToDictionary(y => y.Key, y => y.Value)).ToList());
-                        h.window.Respawn();
-                    }
+                        }
                 });
             });
             foreach (var effect in eventEdit.effects)
@@ -1797,16 +1784,14 @@ public static class BlueprintDev
                     AddSmallButton("OtherCopy", (h) =>
                     {
                         eventEdit.effects.Insert(eventEdit.effects.IndexOf(effect) + 1, effect.ToDictionary(x => x.Key, x => x.Value));
-                        h.window.Respawn();
-                    });
+                        });
                     if (eventEdit.effects[0] != effect)
                         AddSmallButton("OtherMoveUp", (h) =>
                         {
                             var index = eventEdit.effects.IndexOf(effect);
                             eventEdit.effects.RemoveAt(index);
                             eventEdit.effects.Insert(index - 1, effect);
-                            h.window.Respawn();
-                        });
+                            });
                 },
                 (h) =>
                 {
@@ -1841,8 +1826,7 @@ public static class BlueprintDev
                 (h) =>
                 {
                     eventEdit.effects.Add(new Dictionary<string, string>());
-                    h.window.Respawn();
-                });
+                    });
             else
                 AddPaddingRegion(() =>
                 {
@@ -1875,7 +1859,6 @@ public static class BlueprintDev
             },
             (h) =>
             {
-                h.window.Respawn();
                 CloseWindow("ObjectManagerEventEffects");
                 Respawn("ObjectManagerEffectList");
             });
@@ -1891,8 +1874,7 @@ public static class BlueprintDev
                     {
                         if (effect.ContainsKey("Affect"))
                             effect["Affect"] = "None";
-                        h.window.Respawn();
-                    });
+                        });
                 });
                 AddButtonRegion(() =>
                 {
@@ -1908,8 +1890,7 @@ public static class BlueprintDev
                         effect["Affect"] = "None";
                     else if (effect["Affect"] == "None")
                         effect["Affect"] = "Effector";
-                    h.window.Respawn();
-                });
+                    });
             }
             if (effect.ContainsKey("Effect") && (effect["Effect"] == "Damage" || effect["Effect"] == "Heal"))
             {
@@ -1920,8 +1901,7 @@ public static class BlueprintDev
                     {
                         if (effect.ContainsKey("PowerSource"))
                             effect["PowerSource"] = "None";
-                        h.window.Respawn();
-                    });
+                        });
                 });
                 AddButtonRegion(() =>
                 {
@@ -1935,8 +1915,7 @@ public static class BlueprintDev
                         effect["PowerSource"] = "Other";
                     else if (effect["PowerSource"] == "Other")
                         effect["PowerSource"] = "Effector";
-                    h.window.Respawn();
-                });
+                    });
                 AddPaddingRegion(() =>
                 {
                     AddLine("Power type:", "DarkGray");
@@ -1944,8 +1923,7 @@ public static class BlueprintDev
                     {
                         if (effect.ContainsKey("PowerType"))
                             effect["PowerType"] = "None";
-                        h.window.Respawn();
-                    });
+                        });
                 });
                 AddButtonRegion(() =>
                 {
@@ -1961,8 +1939,7 @@ public static class BlueprintDev
                         effect["PowerType"] = "Ranged";
                     else if (effect["PowerType"] == "Ranged")
                         effect["PowerType"] = "Spell";
-                    h.window.Respawn();
-                });
+                    });
                 AddPaddingRegion(() =>
                 {
                     AddLine("Power scale:", "DarkGray");
@@ -1972,8 +1949,7 @@ public static class BlueprintDev
                         if (effect.ContainsKey("PowerScale"))
                             effect["PowerScale"] = "1,0";
                         String.powerScale.Set("1,0");
-                        h.window.Respawn();
-                    });
+                        });
                 });
             }
             else if (effect.ContainsKey("Effect") && effect["Effect"] == "RemoveBuff")
@@ -1985,8 +1961,7 @@ public static class BlueprintDev
                     {
                         if (effect.ContainsKey("BuffName"))
                             effect["BuffName"] = "None";
-                        h.window.Respawn();
-                    });
+                        });
                 });
                 AddButtonRegion(() =>
                 {
@@ -2015,8 +1990,7 @@ public static class BlueprintDev
                     {
                         if (effect.ContainsKey("BuffName"))
                             effect["BuffName"] = "None";
-                        h.window.Respawn();
-                    });
+                        });
                 });
                 AddButtonRegion(() =>
                 {
@@ -2043,8 +2017,7 @@ public static class BlueprintDev
                         if (effect.ContainsKey("PowerScale"))
                             effect["PowerScale"] = "3";
                         String.buffDuration.Set("3");
-                        h.window.Respawn();
-                    });
+                        });
                 });
             }
             else if (effect.ContainsKey("Effect") && (effect["Effect"] == "GiveResource" || effect["Effect"] == "DetractResource"))
@@ -2056,8 +2029,7 @@ public static class BlueprintDev
                     {
                         if (effect.ContainsKey("ResourceType"))
                             effect.Remove("ResourceType");
-                        h.window.Respawn();
-                    });
+                        });
                 });
                 AddButtonRegion(() =>
                 {
@@ -2089,8 +2061,7 @@ public static class BlueprintDev
                         effect["ResourceType"] = "Lightning";
                     else if (effect["ResourceType"] == "Lightning")
                         effect["ResourceType"] = "Fire";
-                    h.window.Respawn();
-                });
+                    });
                 AddPaddingRegion(() =>
                 {
                     AddLine("Resource amount:", "DarkGray");
@@ -2100,8 +2071,7 @@ public static class BlueprintDev
                         if (effect.ContainsKey("ResourceAmount"))
                             effect["ResourceAmount"] = "1";
                         String.resourceAmount.Set("1");
-                        h.window.Respawn();
-                    });
+                        });
                 });
             }
             else if (effect.ContainsKey("Effect") && (effect["Effect"] == "ChangeElements"))
@@ -2115,8 +2085,7 @@ public static class BlueprintDev
                         if (effect.ContainsKey("ChangeAmount"))
                             effect["ChangeAmount"] = "1";
                         String.changeAmount.Set("1");
-                        h.window.Respawn();
-                    });
+                        });
                 });
                 AddPaddingRegion(() =>
                 {
@@ -2125,8 +2094,7 @@ public static class BlueprintDev
                     {
                         if (effect.ContainsKey("ElementFrom"))
                             effect.Remove("ElementFrom");
-                        h.window.Respawn();
-                    });
+                        });
                 });
                 AddButtonRegion(() =>
                 {
@@ -2158,8 +2126,7 @@ public static class BlueprintDev
                         effect["ElementFrom"] = "Lightning";
                     else if (effect["ElementFrom"] == "Lightning")
                         effect["ElementFrom"] = "Fire";
-                    h.window.Respawn();
-                });
+                    });
                 AddPaddingRegion(() =>
                 {
                     AddLine("Element to:", "DarkGray");
@@ -2167,8 +2134,7 @@ public static class BlueprintDev
                     {
                         if (effect.ContainsKey("ElementTo"))
                             effect.Remove("ElementTo");
-                        h.window.Respawn();
-                    });
+                        });
                 });
                 AddButtonRegion(() =>
                 {
@@ -2200,8 +2166,7 @@ public static class BlueprintDev
                         effect["ElementTo"] = "Lightning";
                     else if (effect["ElementTo"] == "Lightning")
                         effect["ElementTo"] = "Fire";
-                    h.window.Respawn();
-                });
+                    });
             }
             AddPaddingRegion(() =>
             {
@@ -2212,8 +2177,7 @@ public static class BlueprintDev
                     if (effect.ContainsKey("Await"))
                         effect["Await"] = "0";
                     String.await.Set("0");
-                    h.window.Respawn();
-                });
+                    });
             });
             AddPaddingRegion(() =>
             {
@@ -2224,8 +2188,7 @@ public static class BlueprintDev
                     if (effect.ContainsKey("ChanceBase"))
                         effect["ChanceBase"] = "100";
                     String.chanceBase.Set("100");
-                    h.window.Respawn();
-                });
+                    });
             });
             AddPaddingRegion(() =>
             {
@@ -2236,8 +2199,7 @@ public static class BlueprintDev
                     if (effect.ContainsKey("Chance"))
                         effect["Chance"] = "0";
                     String.chance.Set("0");
-                    h.window.Respawn();
-                });
+                    });
             });
             AddPaddingRegion(() =>
             {
@@ -2246,8 +2208,7 @@ public static class BlueprintDev
                 {
                     if (effect.ContainsKey("ChanceScale"))
                         effect["ChanceScale"] = "None";
-                    h.window.Respawn();
-                });
+                    });
             });
             AddButtonRegion(() =>
             {
@@ -2285,8 +2246,7 @@ public static class BlueprintDev
                     effect["ChanceScale"] = "None";
                 else if (effect["ChanceScale"] == "None")
                     effect["ChanceScale"] = "Fire Mastery";
-                h.window.Respawn();
-            });
+                });
             AddPaddingRegion(() => { SetRegionAsGroupExtender(); });
             AddRegionGroup();
             SetRegionGroupWidth(148);
@@ -2298,8 +2258,7 @@ public static class BlueprintDev
                 {
                     if (effect.ContainsKey("SoundEffect"))
                         effect["SoundEffect"] = "None";
-                    h.window.Respawn();
-                });
+                    });
             });
             AddButtonRegion(() =>
             {
@@ -2327,8 +2286,7 @@ public static class BlueprintDev
                 {
                     if (effect.ContainsKey("AnimationType"))
                         effect["AnimationType"] = "None";
-                    h.window.Respawn();
-                });
+                    });
             });
             AddButtonRegion(() =>
             {
@@ -2342,8 +2300,7 @@ public static class BlueprintDev
                     effect["AnimationType"] = "None";
                 else if (effect["AnimationType"] == "None")
                     effect["AnimationType"] = "Missile";
-                h.window.Respawn();
-            });
+                });
             if (effect.ContainsKey("AnimationType") && effect["AnimationType"] != "None")
             {
                 AddPaddingRegion(() =>
@@ -2355,8 +2312,7 @@ public static class BlueprintDev
                         if (effect.ContainsKey("AnimationSpeed"))
                             effect["AnimationSpeed"] = "1,5";
                         String.animationSpeed.Set("1,5");
-                        h.window.Respawn();
-                    });
+                        });
                 });
                 AddPaddingRegion(() =>
                 {
@@ -2367,8 +2323,7 @@ public static class BlueprintDev
                         if (effect.ContainsKey("AnimationArc"))
                             effect["AnimationArc"] = "20";
                         String.animationArc.Set("20");
-                        h.window.Respawn();
-                    });
+                        });
                 });
                 AddPaddingRegion(() =>
                 {
@@ -2379,8 +2334,7 @@ public static class BlueprintDev
                         if (effect.ContainsKey("TrailStrength"))
                             effect["TrailStrength"] = "5";
                         String.trailStrength.Set("5");
-                        h.window.Respawn();
-                    });
+                        });
                 });
             }
             AddPaddingRegion(() =>
@@ -2390,8 +2344,7 @@ public static class BlueprintDev
                 {
                     if (effect.ContainsKey("ShatterType"))
                         effect["ShatterType"] = "None";
-                    h.window.Respawn();
-                });
+                    });
             });
             AddButtonRegion(() =>
             {
@@ -2407,8 +2360,7 @@ public static class BlueprintDev
                     effect["ShatterType"] = "None";
                 else if (effect["ShatterType"] == "None")
                     effect["ShatterType"] = "Central";
-                h.window.Respawn();
-            });
+                });
             if (effect.ContainsKey("ShatterType") && effect["ShatterType"] != "None")
             {
                 AddPaddingRegion(() =>
@@ -2418,8 +2370,7 @@ public static class BlueprintDev
                     {
                         if (effect.ContainsKey("ShatterTarget"))
                             effect["ShatterTarget"] = "Effector";
-                        h.window.Respawn();
-                    });
+                        });
                 });
                 AddButtonRegion(() =>
                 {
@@ -2433,8 +2384,7 @@ public static class BlueprintDev
                         effect["ShatterTarget"] = "Other";
                     else if (effect["ShatterTarget"] == "Other")
                         effect["ShatterTarget"] = "Effector";
-                    h.window.Respawn();
-                });
+                    });
                 AddPaddingRegion(() =>
                 {
                     AddLine("Shatter degree:", "DarkGray");
@@ -2444,8 +2394,7 @@ public static class BlueprintDev
                         if (effect.ContainsKey("ShatterDegree"))
                             effect["ShatterDegree"] = "20";
                         String.shatterDegree.Set("20");
-                        h.window.Respawn();
-                    });
+                        });
                 });
                 AddPaddingRegion(() =>
                 {
@@ -2456,8 +2405,7 @@ public static class BlueprintDev
                         if (effect.ContainsKey("ShatterDensity"))
                             effect["ShatterDensity"] = "1";
                         String.shatterDensity.Set("1");
-                        h.window.Respawn();
-                    });
+                        });
                 });
                 AddPaddingRegion(() =>
                 {
@@ -2468,8 +2416,7 @@ public static class BlueprintDev
                         if (effect.ContainsKey("ShatterSpeed"))
                             effect["ShatterSpeed"] = "6";
                         String.shatterSpeed.Set("6");
-                        h.window.Respawn();
-                    });
+                        });
                 });
             }
             if (effect.ContainsKey("Effect") && (effect["Effect"] == "ChangeElements"))
@@ -2483,8 +2430,7 @@ public static class BlueprintDev
                         if (effect.ContainsKey("ElementShatterDegree"))
                             effect["ElementShatterDegree"] = "8";
                         String.elementShatterDegree.Set("8");
-                        h.window.Respawn();
-                    });
+                        });
                 });
                 AddPaddingRegion(() =>
                 {
@@ -2495,8 +2441,7 @@ public static class BlueprintDev
                         if (effect.ContainsKey("ElementShatterDensity"))
                             effect["ElementShatterDensity"] = "1";
                         String.elementShatterDensity.Set("1");
-                        h.window.Respawn();
-                    });
+                        });
                 });
                 AddPaddingRegion(() =>
                 {
@@ -2507,8 +2452,7 @@ public static class BlueprintDev
                         if (effect.ContainsKey("ElementShatterSpeed"))
                             effect["ElementShatterSpeed"] = "5";
                         String.elementShatterSpeed.Set("5");
-                        h.window.Respawn();
-                    });
+                        });
                 });
             }
             AddPaddingRegion(() => { SetRegionAsGroupExtender(); });
@@ -2542,7 +2486,6 @@ public static class BlueprintDev
                 },
                 (h) =>
                 {
-                    h.window.Respawn();
                     Encounter.encounter = ce;
                     CloseWindow("ObjectManagerHostileAreas");
                     Respawn("ObjectManagerRaces");
@@ -2555,7 +2498,6 @@ public static class BlueprintDev
             },
             (h) =>
             {
-                h.window.Respawn();
                 CloseWindow("ObjectManagerHostileAreas");
                 Respawn("ObjectManagerRaces");
             });
@@ -2570,8 +2512,7 @@ public static class BlueprintDev
                     {
                         ce.levelMin = 1;
                         String.encounterLevels[ce].Item1.Set("1");
-                        h.window.Respawn();
-                    });
+                        });
                 });
             AddPaddingRegion(() => { SetRegionAsGroupExtender(); });
             AddRegionGroup();
@@ -2585,8 +2526,7 @@ public static class BlueprintDev
                     {
                         ce.levelMax = 0;
                         String.encounterLevels[ce].Item2.Set("0");
-                        h.window.Respawn();
-                    });
+                        });
                 });
             AddPaddingRegion(() => { SetRegionAsGroupExtender(); });
             AddRegionGroup();
@@ -2598,8 +2538,7 @@ public static class BlueprintDev
                     AddSmallButton("OtherTrash", (h) =>
                     {
                         area.commonEncounters.Remove(ce);
-                        h.window.Respawn();
-                    });
+                        });
                 });
             AddPaddingRegion(() => { SetRegionAsGroupExtender(); });
         }),
@@ -2632,7 +2571,6 @@ public static class BlueprintDev
                 },
                 (h) =>
                 {
-                    h.window.Respawn();
                     Encounter.encounter = ce;
                     CloseWindow("ObjectManagerHostileAreas");
                     Respawn("ObjectManagerRaces");
@@ -2645,7 +2583,6 @@ public static class BlueprintDev
             },
             (h) =>
             {
-                h.window.Respawn();
                 CloseWindow("ObjectManagerHostileAreas");
                 Respawn("ObjectManagerRaces");
             });
@@ -2660,8 +2597,7 @@ public static class BlueprintDev
                     {
                         ce.levelMin = 1;
                         String.encounterLevels[ce].Item1.Set("1");
-                        h.window.Respawn();
-                    });
+                        });
                 });
             AddPaddingRegion(() => { SetRegionAsGroupExtender(); });
             AddRegionGroup();
@@ -2675,8 +2611,7 @@ public static class BlueprintDev
                     {
                         ce.levelMax = 0;
                         String.encounterLevels[ce].Item2.Set("0");
-                        h.window.Respawn();
-                    });
+                        });
                 });
             AddPaddingRegion(() => { SetRegionAsGroupExtender(); });
             AddRegionGroup();
@@ -2688,8 +2623,7 @@ public static class BlueprintDev
                     AddSmallButton("OtherTrash", (h) =>
                     {
                         area.rareEncounters.Remove(ce);
-                        h.window.Respawn();
-                    });
+                        });
                 });
             AddPaddingRegion(() => { SetRegionAsGroupExtender(); });
         }),
@@ -2722,7 +2656,6 @@ public static class BlueprintDev
                 },
                 (h) =>
                 {
-                    h.window.Respawn();
                     Encounter.encounter = ce;
                     CloseWindow("ObjectManagerHostileAreas");
                     Respawn("ObjectManagerRaces");
@@ -2735,7 +2668,6 @@ public static class BlueprintDev
             },
             (h) =>
             {
-                h.window.Respawn();
                 CloseWindow("ObjectManagerHostileAreas");
                 Respawn("ObjectManagerRaces");
             });
@@ -2750,8 +2682,7 @@ public static class BlueprintDev
                     {
                         ce.levelMin = 1;
                         String.encounterLevels[ce].Item1.Set("1");
-                        h.window.Respawn();
-                    });
+                        });
                 });
             AddPaddingRegion(() => { SetRegionAsGroupExtender(); });
             AddRegionGroup();
@@ -2765,8 +2696,7 @@ public static class BlueprintDev
                     {
                         ce.levelMax = 0;
                         String.encounterLevels[ce].Item2.Set("0");
-                        h.window.Respawn();
-                    });
+                        });
                 });
             AddPaddingRegion(() => { SetRegionAsGroupExtender(); });
             AddRegionGroup();
@@ -2778,8 +2708,7 @@ public static class BlueprintDev
                     AddSmallButton("OtherTrash", (h) =>
                     {
                         area.eliteEncounters.Remove(ce);
-                        h.window.Respawn();
-                    });
+                        });
                 });
             AddPaddingRegion(() => { SetRegionAsGroupExtender(); });
         }),
@@ -3110,8 +3039,7 @@ public static class BlueprintDev
                 String.itemPower.Set(item.ilvl + "");
                 String.requiredLevel.Set(item.lvl + "");
                 Respawn("ObjectManagerItem");
-                h.window.Respawn();
-            });
+                });
         }),
         new("ObjectManagerItem", () => {
             SetAnchor(TopRight);
@@ -3340,8 +3268,7 @@ public static class BlueprintDev
                 itemSetsSearch = itemSets.FindAll(x => x.name.ToLower().Contains(String.search.Value().ToLower()));
                 String.objectName.Set(itemSet.name);
                 Respawn("ObjectManagerItemSet");
-                h.window.Respawn();
-            });
+                });
         }),
         new("ObjectManagerItemSet", () => {
             SetAnchor(TopRight);
@@ -3705,8 +3632,7 @@ public static class BlueprintDev
                 String.objectName.Set(ability.name);
                 String.cooldown.Set(ability.cooldown + "");
                 Respawn("ObjectManagerAbility");
-                h.window.Respawn();
-            });
+                });
         }),
         new("ObjectManagerAbility", () => {
             SetAnchor(TopRight);
@@ -3756,7 +3682,6 @@ public static class BlueprintDev
                     {
                         eventEdit = null;
                         ability.events.Remove(foo);
-                        h.window.Respawn();
                         CloseWindow("ObjectManagerEventTriggers");
                         CloseWindow("ObjectManagerEventEffects");
                         Respawn("ObjectManagerAbilities");
@@ -4066,8 +3991,7 @@ public static class BlueprintDev
                     };
                     buffs.Add(buff);
                     buffsSearch = buffs.FindAll(x => x.name.ToLower().Contains(String.search.Value().ToLower()));
-                    h.window.Respawn();
-                }
+                    }
                 else
                 {
                     buff = new Buff()
@@ -4081,8 +4005,7 @@ public static class BlueprintDev
                     buffsSearch = buffs.FindAll(x => x.name.ToLower().Contains(String.search.Value().ToLower()));
                     String.objectName.Set(buff.name);
                     Respawn("ObjectManagerBuff");
-                    h.window.Respawn();
-                }
+                    }
             });
         }),
         new("ObjectManagerBuff", () => {
@@ -4365,8 +4288,7 @@ public static class BlueprintDev
                 String.objectName.Set(race.name);
                 String.vitality.Set(race.vitality + "");
                 Respawn("ObjectManagerRace");
-                h.window.Respawn();
-            });
+                });
         }),
         new("ObjectManagerRace", () => {
             SetAnchor(TopRight);
@@ -4392,8 +4314,7 @@ public static class BlueprintDev
             (h) =>
             {
                 race.genderedPortrait ^= true;
-                h.window.Respawn();
-            });
+                });
             if (race.genderedPortrait)
             {
                 AddPaddingRegion(() => { AddLine("Portraits:", "DarkGray"); });
@@ -4617,8 +4538,7 @@ public static class BlueprintDev
                 String.price.Set(mount.price + "");
                 String.mountSpeed.Set(mount.speed + "");
                 Respawn("ObjectManagerMount");
-                h.window.Respawn();
-            });
+                });
         }),
         new("ObjectManagerMount", () => {
             SetAnchor(TopRight);
@@ -4813,8 +4733,7 @@ public static class BlueprintDev
                 recipesSearch = recipes.FindAll(x => x.name.ToLower().Contains(String.search.Value().ToLower()));
                 String.objectName.Set(recipe.name);
                 Respawn("ObjectManagerRecipe");
-                h.window.Respawn();
-            });
+                });
         }),
         new("ObjectManagerRecipe", () => {
             SetAnchor(TopRight);
@@ -4992,8 +4911,7 @@ public static class BlueprintDev
                 factionsSearch = factions.FindAll(x => x.name.ToLower().Contains(String.search.Value().ToLower()));
                 String.objectName.Set(faction.name);
                 Respawn("ObjectManagerFaction");
-                h.window.Respawn();
-            });
+                });
         }),
         new("ObjectManagerFaction", () => {
             SetAnchor(TopRight);

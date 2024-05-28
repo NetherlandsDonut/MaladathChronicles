@@ -36,7 +36,7 @@ public class SaveGame
             startDate = DateTime.Now,
             player = new Entity
             (
-                creationName,
+                String.creationName.Value(),
                 creationGender,
                 race,
                 spec,

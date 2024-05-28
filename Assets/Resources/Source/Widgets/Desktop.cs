@@ -251,7 +251,7 @@ public class Desktop : MonoBehaviour
                             {
                                 currentSave.siteVisits.Add(queuedSiteOpen, 0);
                                 PlaySound("DesktopZoneDiscovered", 1f);
-                                currentSave.player.ReceiveExperience(20);
+                                currentSave.player.ReceiveExperience(defines.expForExploration);
                             }
                             Respawn("Site: " + queuedSiteOpen);
                             foreach (var connection in paths.FindAll(x => x.sites.Contains(queuedSiteOpen)))
@@ -440,7 +440,7 @@ public class Desktop : MonoBehaviour
                         }
                         else if (c != '\n' && c != '\r' && inputDestination.CheckInput(c))
                         {
-                                inputDestination.Insert(inputLineMarker, inputDestination.inputType == InputType.Capitals ? char.ToUpper(c) : c);
+                            inputDestination.Insert(inputLineMarker, inputDestination.inputType == InputType.StrictLetters ? (inputDestination.Value().Length == 0 ? char.ToUpper(c) : char.ToLower(c)) : (inputDestination.inputType == InputType.Capitals ? char.ToUpper(c) : c));
                             inputLineMarker++;
                         }
                         if (length == inputDestination.Value().Length)

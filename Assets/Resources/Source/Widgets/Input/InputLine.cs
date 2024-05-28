@@ -6,6 +6,7 @@ using static Font;
 using static Event;
 using static Cursor;
 using static String;
+using static Defines;
 using static SaveGame;
 
 public class InputLine : MonoBehaviour
@@ -13,11 +14,13 @@ public class InputLine : MonoBehaviour
     public Region region;
     public InputText text;
     public string color;
+    public string align;
 
-    public void Initialise(Region region, String refText, string color = "")
+    public void Initialise(Region region, String refText, string color = "", string align = "Left")
     {
         this.region = region;
         this.color = Coloring.colors.ContainsKey(color) ? color : "";
+        this.align = align;
         text = new GameObject("InputText", typeof(InputText)).GetComponent<InputText>();
         text.transform.parent = transform;
         text.Initialise(this, refText);
@@ -72,6 +75,11 @@ public class InputLine : MonoBehaviour
                 else
                     CloseWindow("ConfirmDeleteCharacter");
             }
+        }
+        else if (foo == creationName)
+        {
+            CloseWindow("CharacterCreationFinish");
+            Respawn("CharacterCreationFinish");
         }
         else if (foo == splitAmount)
         {
@@ -703,18 +711,32 @@ public class InputLine : MonoBehaviour
             }
             else if (foo.Value() == "exploreall")
             {
+                var expSum = 0;
                 foreach (var site in SiteHostileArea.areas)
                     if (!currentSave.siteVisits.ContainsKey(site.name))
+                    {
                         currentSave.siteVisits.Add(site.name, 1);
+                        expSum += defines.expForExploration;
+                    }
                 foreach (var site in SiteTown.towns)
                     if (!currentSave.siteVisits.ContainsKey(site.name))
+                    {
                         currentSave.siteVisits.Add(site.name, 1);
+                        expSum += defines.expForExploration;
+                    }
                 foreach (var site in SiteInstance.instances)
                     if (!currentSave.siteVisits.ContainsKey(site.name))
+                    {
                         currentSave.siteVisits.Add(site.name, 1);
+                        expSum += defines.expForExploration;
+                    }
                 foreach (var site in SiteComplex.complexes)
                     if (!currentSave.siteVisits.ContainsKey(site.name))
+                    {
                         currentSave.siteVisits.Add(site.name, 1);
+                        expSum += defines.expForExploration;
+                    }
+                currentSave.player.ReceiveExperience(expSum);
                 CDesktop.ReloadAssets();
             }
             else if (foo.Value().StartsWith("tele"))
@@ -732,7 +754,7 @@ public class InputLine : MonoBehaviour
                     {
                         currentSave.siteVisits.Add(site.name, 0);
                         Sound.PlaySound("DesktopZoneDiscovered", 0.3f);
-                        currentSave.player.ReceiveExperience(20);
+                        currentSave.player.ReceiveExperience(defines.expForExploration);
                     }
                     Respawn("Site: " + site.name);
                     foreach (var connection in SitePath.paths.FindAll(x => x.sites.Contains(site.name)))

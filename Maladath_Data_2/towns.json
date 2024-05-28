@@ -1,7 +1,7 @@
 [
   {
-    "x": 1805,
-    "y": -1976,
+    "x": 1830,
+    "y": -1979,
     "name": "Raynewood Retreat",
     "zone": "Ashenvale",
     "faction": "Darnassus"
@@ -256,8 +256,8 @@
     "fishing": true
   },
   {
-    "x": 1368,
-    "y": -1520,
+    "x": 1434,
+    "y": -1515,
     "name": "Grove of the Ancients",
     "zone": "Darkshore",
     "faction": "Darnassus"
@@ -941,8 +941,8 @@
         "type": "Auctioneer"
       }
     ],
-    "x": 969,
-    "y": -513,
+    "x": 938,
+    "y": -504,
     "name": "Darnassus",
     "zone": "Teldrassil",
     "faction": "Darnassus",
@@ -950,8 +950,8 @@
     "fishing": true
   },
   {
-    "x": 1273,
-    "y": -399,
+    "x": 1291,
+    "y": -401,
     "name": "Aldrassil",
     "zone": "Teldrassil",
     "faction": "Darnassus"
@@ -965,8 +965,8 @@
         "type": "Flight Master"
       }
     ],
-    "x": 1254,
-    "y": -741,
+    "x": 1255,
+    "y": -742,
     "name": "Rut'theran Village",
     "zone": "Teldrassil",
     "faction": "Darnassus",
@@ -1059,15 +1059,15 @@
         "type": "Journeyman Leatherworker"
       }
     ],
-    "x": 1254,
-    "y": -513,
+    "x": 1258,
+    "y": -518,
     "name": "Dolanaar",
     "zone": "Teldrassil",
     "faction": "Darnassus"
   },
   {
-    "x": 1406,
-    "y": -1881,
+    "x": 1409,
+    "y": -1873,
     "name": "Maestra's Post",
     "zone": "Ashenvale",
     "faction": "Darnassus"
@@ -1099,7 +1099,7 @@
         "type": "Expert Leatherworker"
       }
     ],
-    "x": 1539,
+    "x": 1534,
     "y": -1976,
     "name": "Astranaar",
     "zone": "Ashenvale",
@@ -1113,8 +1113,8 @@
     "faction": "Darnassus"
   },
   {
-    "x": 1862,
-    "y": -2166,
+    "x": 1868,
+    "y": -2169,
     "name": "Silverwind Outpost",
     "zone": "Ashenvale",
     "faction": "Darnassus"
@@ -1146,22 +1146,22 @@
         "type": "Herbalist"
       }
     ],
-    "x": 1691,
-    "y": -2090,
+    "x": 1694,
+    "y": -2095,
     "name": "Silverwind Refuge",
     "zone": "Ashenvale",
     "faction": "Darnassus"
   },
   {
-    "x": 1824,
-    "y": -2223,
+    "x": 1827,
+    "y": -2233,
     "name": "Silverwing Grove",
     "zone": "Ashenvale",
     "faction": "Darnassus"
   },
   {
-    "x": 2109,
-    "y": -1919,
+    "x": 2114,
+    "y": -1921,
     "name": "Forest Song",
     "zone": "Ashenvale",
     "faction": "Darnassus"
@@ -1199,8 +1199,8 @@
         "type": "Journeyman Engineer"
       }
     ],
-    "x": 1349,
-    "y": -1216,
+    "x": 1367,
+    "y": -1220,
     "name": "Auberdine",
     "zone": "Darkshore",
     "faction": "Darnassus",
@@ -1221,8 +1221,8 @@
         "type": "Master Dragonscale Leatherworker"
       }
     ],
-    "x": 2394,
-    "y": -1995,
+    "x": 2393,
+    "y": -1997,
     "name": "Talrendis Point",
     "zone": "Azshara",
     "faction": "Darnassus"
@@ -1248,8 +1248,8 @@
         "type": "Flight Master"
       }
     ],
-    "x": 1843,
-    "y": -1254,
+    "x": 1849,
+    "y": -1276,
     "name": "Talonbranch Glade",
     "zone": "Felwood",
     "faction": "Darnassus"
@@ -1320,8 +1320,8 @@
         "type": "Stable Master"
       }
     ],
-    "x": 1197,
-    "y": -2489,
+    "x": 1196,
+    "y": -2487,
     "name": "Nijel's Point",
     "zone": "Desolace",
     "faction": "Darnassus"
@@ -1341,8 +1341,8 @@
         "type": "Tribal Leatherworking Trainer"
       }
     ],
-    "x": 1596,
-    "y": -3439,
+    "x": 1613,
+    "y": -3445,
     "name": "Thalanaar",
     "zone": "Thousand Needles",
     "faction": "Darnassus"
@@ -1362,8 +1362,8 @@
         "type": "Innkeeper"
       }
     ],
-    "x": 1159,
-    "y": -1976,
+    "x": 1153,
+    "y": -1977,
     "name": "Stonetalon Peak",
     "zone": "Stonetalon Mountains",
     "faction": "Darnassus"
@@ -2074,16 +2074,16 @@
         "type": "Auctioneer"
       }
     ],
-    "x": 2337,
-    "y": -2242,
+    "x": 2343,
+    "y": -2248,
     "name": "Orgrimmar",
     "zone": "Durotar",
     "faction": "Orgrimmar",
     "ambience": "MusicOrgrimmar"
   },
   {
-    "x": 2318,
-    "y": -2660,
+    "x": 2334,
+    "y": -2654,
     "name": "The Den",
     "zone": "Durotar",
     "faction": "Orgrimmar"
@@ -2163,8 +2163,8 @@
         "type": "Journeyman Engineer"
       }
     ],
-    "x": 2413,
-    "y": -2470,
+    "x": 2419,
+    "y": -2468,
     "name": "Razor Hill",
     "zone": "Durotar",
     "faction": "Orgrimmar"
@@ -2184,8 +2184,8 @@
         "type": "Fisherman"
       }
     ],
-    "x": 1235,
-    "y": -1843,
+    "x": 1249,
+    "y": -1842,
     "name": "Zoram'gar Outpost",
     "zone": "Ashenvale",
     "faction": "Orgrimmar"
@@ -2224,7 +2224,7 @@
       }
     ],
     "x": 1995,
-    "y": -2603,
+    "y": -2622,
     "name": "The Crossroads",
     "zone": "The Barrens",
     "faction": "Orgrimmar"
@@ -2238,8 +2238,8 @@
         "type": "Flight Master"
       }
     ],
-    "x": 1520,
-    "y": -1482,
+    "x": 1529,
+    "y": -1488,
     "name": "Bloodvenom Post",
     "zone": "Felwood",
     "faction": "Orgrimmar"
@@ -2253,15 +2253,15 @@
         "type": "Flight Master"
       }
     ],
-    "x": 2337,
-    "y": -1786,
+    "x": 2328,
+    "y": -1782,
     "name": "Valormok",
     "zone": "Azshara",
     "faction": "Orgrimmar"
   },
   {
-    "x": 1919,
-    "y": -2280,
+    "x": 1906,
+    "y": -2274,
     "name": "The Mor'shan Rampart",
     "zone": "The Barrens",
     "faction": "Orgrimmar"
@@ -2338,8 +2338,8 @@
         "type": "Stable Master"
       }
     ],
-    "x": 1957,
-    "y": -2071,
+    "x": 1969,
+    "y": -2061,
     "name": "Splintertree Post",
     "zone": "Ashenvale",
     "faction": "Orgrimmar"
@@ -2476,7 +2476,7 @@
         "type": "Journeyman Alchemist"
       }
     ],
-    "x": 2451,
+    "x": 2452,
     "y": -2698,
     "name": "Sen'jin Village",
     "zone": "Durotar",
@@ -2515,8 +2515,8 @@
         "type": "Fisherman"
       }
     ],
-    "x": 798,
-    "y": -2850,
+    "x": 812,
+    "y": -2867,
     "name": "Shadowprey Village",
     "zone": "Desolace",
     "faction": "Darkspear Tribe",
@@ -2722,7 +2722,7 @@
       }
     ],
     "x": 1444,
-    "y": -2774,
+    "y": -2778,
     "name": "Thunder Bluff",
     "zone": "Mulgore",
     "faction": "Thunder Bluff",
@@ -2797,15 +2797,15 @@
         "type": "Journeyman Leatherworker"
       }
     ],
-    "x": 1539,
-    "y": -3002,
+    "x": 1541,
+    "y": -3001,
     "name": "Bloodhoof Village",
     "zone": "Mulgore",
     "faction": "Thunder Bluff"
   },
   {
-    "x": 1501,
-    "y": -3116,
+    "x": 1508,
+    "y": -3130,
     "name": "Camp Narache",
     "zone": "Mulgore",
     "faction": "Thunder Bluff"
@@ -2855,8 +2855,8 @@
         "type": "Skinner"
       }
     ],
-    "x": 1387,
-    "y": -3401,
+    "x": 1409,
+    "y": -3424,
     "name": "Camp Mojache",
     "zone": "Feralas",
     "faction": "Thunder Bluff"
@@ -2900,8 +2900,8 @@
         "type": "Skinner"
       }
     ],
-    "x": 1862,
-    "y": -3002,
+    "x": 1888,
+    "y": -3004,
     "name": "Camp Taurajo",
     "zone": "The Barrens",
     "faction": "Thunder Bluff"
@@ -2960,8 +2960,8 @@
         "type": "Artisan Enchanter"
       }
     ],
-    "x": 1254,
-    "y": -2337,
+    "x": 1255,
+    "y": -2342,
     "name": "Sun Rock Retreat",
     "zone": "Stonetalon Mountains",
     "faction": "Thunder Bluff"
@@ -2975,8 +2975,8 @@
         "type": "Expert Leatherworker"
       }
     ],
-    "x": 1083,
-    "y": -2774,
+    "x": 1103,
+    "y": -2785,
     "name": "Ghost Walker Post",
     "zone": "Desolace",
     "faction": "Thunder Bluff"
@@ -3463,8 +3463,8 @@
     "faction": "Cenarion Circle"
   },
   {
-    "x": 1653,
-    "y": -1653,
+    "x": 1673,
+    "y": -1671,
     "name": "Emerald Sanctuary",
     "zone": "Felwood",
     "faction": "Cenarion Circle"
@@ -3496,8 +3496,8 @@
         "type": "Herbalist"
       }
     ],
-    "x": 1957,
-    "y": -912,
+    "x": 1945,
+    "y": -909,
     "name": "Nighthaven",
     "zone": "Moonglade",
     "faction": "Cenarion Circle"
@@ -3832,8 +3832,8 @@
     "faction": "Neutral"
   },
   {
-    "x": 1881,
-    "y": -1102,
+    "x": 1892,
+    "y": -1104,
     "name": "Timbermaw Hold",
     "zone": "Felwood",
     "faction": "Timbermaw Tribe"

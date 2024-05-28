@@ -347,6 +347,7 @@ public class Window : MonoBehaviour
             foreach (var region in regionGroup.regions)
                 if (region.inputLine != null)
                 {
+                    var objectOffset = (region.checkbox != null ? 15 : 0) + region.bigButtons.Count * 38;
                     if (region.lines.Count > 0)
                         region.inputLine.transform.localPosition = new Vector3(11 + region.lines[0].Length(), -region.currentHeight + 12, 0);
                     else
@@ -359,9 +360,21 @@ public class Window : MonoBehaviour
                     var print = region.inputLine.text.text.Value();
                     if (inputDestination == region.inputLine.text.text && inputLineName == region.inputLine.name)
                         print = print.Insert(inputLineMarker > print.Length ? print.Length : inputLineMarker, defines.markerCharacter);
-                    else print += " ";
+                    else
+                    {
+                        if (region.inputLine.align != "Right")
+                            print += " ";
+                        if (region.inputLine.align != "Left")
+                            print = " " + print;
+                    }
                     foreach (var character in print)
                         length = region.inputLine.text.SpawnCharacter(character, length, region.inputLine.color);
+                    if (region.inputLine.align == "Left")
+                        region.inputLine.transform.localPosition = new Vector3(2 + defines.textPaddingLeft + objectOffset, -region.currentHeight + 12, 0);
+                    else if (region.inputLine.align == "Center")
+                        region.inputLine.transform.localPosition = new Vector3(2 + (region.regionGroup.AutoWidth() / 2) - (length / 2), -region.currentHeight + 12, 0);
+                    else if (region.inputLine.align == "Right")
+                        region.inputLine.transform.localPosition = new Vector3(-defines.textPaddingLeft + region.regionGroup.AutoWidth() - (region.smallButtons.Count * 19) - length, -region.currentHeight + 12, 0);
                 }
 
             #endregion

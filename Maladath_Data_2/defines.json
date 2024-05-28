@@ -18,6 +18,7 @@
   "lvlRequiredVeryFastMounts": 60,
   "defaultStanding": 4200,
   "maxPrimaryProfessions": 2,
+  "expForExploration": 20,
   "markerCharacter": "_",
   "textWrapEnding": "...",
   "frameTime": 0.08

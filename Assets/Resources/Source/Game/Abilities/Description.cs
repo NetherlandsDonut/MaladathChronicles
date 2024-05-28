@@ -37,9 +37,9 @@ public class DescriptionRegion
 
     public void PrintContents(Entity effector, Entity other, int width, Dictionary<string, string> variables)
     {
-        var li = contents.Select(x => (Process(x["Text"]), x["Color"], x.ContainsKey("Split") ? x["Split"] : "Yes", x.ContainsKey("Spacing") ? x["Spacing"] : "Yes"));
-        var lis = li.SelectMany(x => x.Item3 == "No" ? new() { (x.Item1 + (x.Item4 == "No" ? "" : " "), x.Item2) } : x.Item1.Split(" ").Select(y => (y + " ", x.Item2)).ToList().TrimLast(x.Item4 == "No"));
-        var list = lis.Select(x => (x.Item1, x.Item2, fonts["Tahoma Bold"].Length(x.Item1))).ToList();
+        var li = contents.Select(x => (Process(x.ContainsKey("Text") ? x["Text"] : ""), x.ContainsKey("Color") ? x["Color"] : "", x.ContainsKey("Split") ? x["Split"] : "Yes", x.ContainsKey("Spacing") ? x["Spacing"] : "Yes", x.ContainsKey("Align") ? x["Align"] : "Left")).Where(x => x.Item1 != null && x.Item1.Length > 0);
+        var lis = li.SelectMany(x => x.Item3 == "No" ? new() { (x.Item1 + (x.Item4 == "No" ? "" : " "), x.Item2, x.Item5) } : x.Item1.Split(" ").Select(y => (y + " ", x.Item2, x.Item5)).ToList().TrimLast(x.Item4 == "No"));
+        var list = lis.Select(x => (x.Item1, x.Item2, fonts["Tahoma Bold"].Length(x.Item1), x.Item3)).ToList();
         if (isExtender) SetRegionAsGroupExtender();
         var sum = width;
         while (list.Count > 0)
@@ -47,7 +47,7 @@ public class DescriptionRegion
             if (sum + list[0].Item3 >= width - 17)
             {
                 sum = 0;
-                AddLine();
+                AddLine("", "", list[0].Item4);
             }
             AddText(list[0].Item1, list[0].Item2);
             sum += list[0].Item3;
