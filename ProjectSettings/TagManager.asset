@@ -2,7 +2,7 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!78 &1
 TagManager:
-  serializedVersion: 2
+  serializedVersion: 3
   tags: []
   layers:
   - Default
@@ -47,11 +47,17 @@ TagManager:
   - name: CameraShadow
     uniqueID: 4241744009
     locked: 0
+  - name: DefaultShadows
+    uniqueID: 711779179
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
   - name: ScaledBars
     uniqueID: 2262292729
+    locked: 0
+  - name: UpperShadows
+    uniqueID: 4196828451
     locked: 0
   - name: Upper
     uniqueID: 143456597
@@ -68,3 +74,5 @@ TagManager:
   - name: Cursor
     uniqueID: 3056468255
     locked: 0
+  m_RenderingLayers:
+  - Default

@@ -31,7 +31,13 @@ public class RegionGroup : MonoBehaviour
                 else return max;
             };
         else this.maxPagination = () => 1;
-        pagination = () => window != null && Root.staticPagination.ContainsKey(window.title) && Root.staticPagination[window.title].Length > window.regionGroups.IndexOf(this) ? Root.staticPagination[window.title][window.regionGroups.IndexOf(this)] : 0;
+        pagination = () =>
+        {
+            if (window == null || !Root.staticPagination.ContainsKey(window.title)) return 0;
+            var dx = window.regionGroups.IndexOf(this);
+            if (dx == -1) dx = Root.staticPagination[window.title].Length - 1;
+            return Root.staticPagination[window.title][dx];
+        };
         if (header) window.headerGroup = this;
         else window.regionGroups.Add(this);
         window.LBRegionGroup = this;

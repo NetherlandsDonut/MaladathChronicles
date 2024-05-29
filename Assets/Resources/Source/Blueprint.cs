@@ -5343,6 +5343,8 @@ public class Blueprint
                 if (window == null) return;
             }
             var group = window.regionGroups.Find(x => x.maxPaginationReq != null);
+            if (group == null && window.headerGroup != null && window.headerGroup.maxPaginationReq != null)
+                group = window.headerGroup;
             if (group == null) return;
             var temp = group.pagination();
             group.IncrementPagination();
@@ -5359,6 +5361,8 @@ public class Blueprint
                 if (window == null) return;
             }
             var group = window.regionGroups.Find(x => x.maxPaginationReq != null);
+            if (group == null && window.headerGroup != null && window.headerGroup.maxPaginationReq != null)
+                group = window.headerGroup;
             if (group == null) return;
             var temp = group.pagination();
             group.IncrementPaginationEuler();
@@ -5376,6 +5380,8 @@ public class Blueprint
                 if (window == null) return;
             }
             var group = window.regionGroups.Find(x => x.maxPaginationReq != null);
+            if (group == null && window.headerGroup != null && window.headerGroup.maxPaginationReq != null)
+                group = window.headerGroup;
             if (group == null) return;
             var temp = group.pagination();
             group.DecrementPagination();
@@ -5392,6 +5398,8 @@ public class Blueprint
                 if (window == null) return;
             }
             var group = window.regionGroups.Find(x => x.maxPaginationReq != null);
+            if (group == null && window.headerGroup != null && window.headerGroup.maxPaginationReq != null)
+                group = window.headerGroup;
             if (group == null) return;
             var temp = group.pagination();
             group.DecrementPaginationEuler();
