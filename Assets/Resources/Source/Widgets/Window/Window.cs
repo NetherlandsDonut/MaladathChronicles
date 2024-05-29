@@ -5,12 +5,10 @@ using UnityEngine;
 
 using static Root;
 using static Defines;
+using static InputLine;
 
 using static Root.Anchor;
 using static Root.RegionBackgroundType;
-
-using static InputLine;
-using UnityEngine.Rendering;
 
 public class Window : MonoBehaviour
 {
@@ -458,6 +456,32 @@ public class Window : MonoBehaviour
                         region.borders[1].transform.localPosition -= new Vector3(0, 3, 0);
                         region.borders[2].transform.localPosition -= new Vector3(0, 3, 0);
                     }
+                    if (title == "HostileAreaProgress")
+                        if (regionGroup != headerGroup)
+                        {
+                            Destroy(region.borders[4]);
+                            Destroy(region.borders[5]);
+                            if (regionGroup != regionGroups.First())
+                            {
+                                Destroy(region.borders[6]);
+                            }
+                            if (regionGroup != regionGroups.Last())
+                            {
+                                Destroy(region.borders[7]);
+                                region.borders[3].transform.localScale += new Vector3(4, 0, 0);
+                                region.borders[2].transform.localScale += new Vector3(0, 2, 0);
+                                region.borders[2].transform.localPosition += new Vector3(0, 1, 0);
+                            }
+                        }
+                        else
+                        {
+                            region.borders[1].transform.localScale += new Vector3(0, 4, 0);
+                            region.borders[2].transform.localScale += new Vector3(0, 4, 0);
+                            region.borders[3].transform.localScale += new Vector3(2, 0, 0);
+                            region.borders[3].transform.localPosition -= new Vector3(1, 0, 0);
+                            Destroy(region.borders[6]);
+                            Destroy(region.borders[7]);
+                        }
                     if (regionGroup.AutoWidth() + region.xExtend - 1.5f - 19 * region.smallButtons.Count < 0 || 3.5f + 38 * region.bigButtons.Count >= regionGroup.AutoWidth() + region.xExtend)
                         for (int i = 0; i < 4; i++)
                             region.borders[i + 4].GetComponent<SpriteRenderer>().sprite = null;
@@ -492,6 +516,25 @@ public class Window : MonoBehaviour
                         region.shadows[3].transform.localPosition = new Vector3(8, region.borders[3].transform.localPosition.y - 2, 0.9f);
                         region.shadows[4].transform.localPosition = new Vector3(4, region.borders[3].transform.localPosition.y - 2, 0.9f);
                         region.shadows[2].GetComponent<SpriteRenderer>().sprite = shadowSprites[5];
+                        if (title == "HostileAreaProgress")
+                            if (regionGroup != headerGroup)
+                            {
+                                Destroy(region.shadows[0]);
+                                if (regionGroup != regionGroups.First())
+                                {
+                                    Destroy(region.shadows[4]);
+                                }
+                                if (regionGroup != regionGroups.Last())
+                                {
+                                    region.shadows[3].transform.localScale += new Vector3(5, 0, 0);
+                                    Destroy(region.shadows[2]);
+                                }
+                            }
+                            else
+                            {
+                                region.shadows[1].transform.localScale += new Vector3(0, 5, 0);
+                                Destroy(region.shadows[2]);
+                            }
                     }
 
             #endregion

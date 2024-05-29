@@ -329,10 +329,13 @@ public class Desktop : MonoBehaviour
                     {
                         if (!Board.board.playerTurn && CursorRemote.cursorEnemy.fadeIn)
                             animationTime += defines.frameTime;
-                        if (fallingElements.Count == 0) RebuildAll();
+                        if (fallingElements.Count == 0)
+                        {
+                            Respawn("Board");
+                            Respawn("BufferBoard");
+                        }
                         if (canUnlockScreen) UnlockScreen();
                         else Board.board.AnimateBoard();
-                        if (fallingElements.Count == 0) RebuildAll();
                     }
                 }
             }
@@ -344,10 +347,13 @@ public class Desktop : MonoBehaviour
                         animationTime -= Time.deltaTime;
                     if (animationTime <= 0 && fallingElements.Count == 0)
                     {
-                        if (fallingElements.Count == 0) RebuildAll();
+                        if (fallingElements.Count == 0)
+                        {
+                            Respawn("FishingBoard");
+                            Respawn("FishingBufferBoard");
+                        }
                         if (canUnlockScreen) UnlockScreen();
                         else FishingBoard.fishingBoard.AnimateBoard();
-                        if (fallingElements.Count == 0) RebuildAll();
                     }
                 }
             }

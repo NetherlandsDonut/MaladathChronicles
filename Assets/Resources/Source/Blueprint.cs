@@ -36,6 +36,8 @@ using static SiteHostileArea;
 using static SiteInstance;
 using static SiteComplex;
 using static SiteTown;
+using System.Xml.Linq;
+using System.Net.NetworkInformation;
 
 public class Blueprint
 {
@@ -153,8 +155,8 @@ public class Blueprint
         }),
 
         //Game
-        new("Board", () => {
-            SetAnchor(Top, 0, -34 + 19 * (board.field.GetLength(1) - 7));
+        new("BoardFrame", () => {
+            SetAnchor(-115, 127);
             var boardBackground = new GameObject("BoardBackground", typeof(SpriteRenderer), typeof(SpriteMask));
             boardBackground.transform.parent = CDesktop.LBWindow.transform;
             boardBackground.transform.localPosition = new Vector2(-17, 17);
@@ -169,6 +171,9 @@ public class Blueprint
             boardBackground.transform.localPosition = new Vector2(-17, 17);
             boardBackground.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Textures/BoardShadow" + board.field.GetLength(0) + "x" + board.field.GetLength(1));
             boardBackground.GetComponent<SpriteRenderer>().sortingLayerName = "CameraShadow";
+        }, true),
+        new("Board", () => {
+            SetAnchor(Top, 0, -34 + 19 * (board.field.GetLength(1) - 7));
             DisableGeneralSprites();
             AddRegionGroup();
             for (int i = 0; i < board.field.GetLength(1); i++)
@@ -192,19 +197,11 @@ public class Blueprint
             DisableCollisions();
             AddRegionGroup();
             for (int i = 0; i < BufferBoard.bufferBoard.field.GetLength(1); i++)
-            {
                 AddPaddingRegion(() =>
                 {
                     for (int j = 0; j < BufferBoard.bufferBoard.field.GetLength(0); j++)
-                    {
-                        AddBigButton(BufferBoard.bufferBoard.GetFieldButton(),
-                        (h) =>
-                        {
-
-                        });
-                    }
+                        AddBigButton(BufferBoard.bufferBoard.GetFieldButton());
                 });
-            }
         }, true),
         new("EnemyResources", () => {
             SetAnchor(BottomRight);
@@ -1210,32 +1207,6 @@ public class Blueprint
                 }
             });
         }),
-        //new("CharacterCreationFactionRaceChoice", () => {
-        //    SetAnchor(TopLeft, 19, -19);
-        //    AddRegionGroup();
-        //    SetRegionGroupWidth(152);
-        //    SetRegionGroupHeight(240);
-        //    AddHeaderRegion(() =>
-        //    {
-        //        AddLine("Character stats:");
-        //    });
-        //    AddHeaderRegion(() =>
-        //    {
-        //        AddLine(creationRace, "", "Left");
-        //    });
-        //    var race = races.Find(x => x.name == creationRace);
-        //    var spec = specs.Find(x => x.name == creationSpec);
-        //    AddHeaderRegion(() =>
-        //    {
-        //        foreach (var foo in race.stats.stats)
-        //            if (!foo.Key.Contains("Mastery"))
-        //            {
-        //                AddLine(foo.Key + ": ", "Gray", "Right");
-        //                AddText(foo.Value + (spec != null && spec.stats.stats.ContainsKey(foo.Key) ? spec.stats.stats[foo.Key] : 0) + "", "Uncommon");
-        //            }
-        //    });
-        //    AddPaddingRegion(() => SetRegionAsGroupExtender());
-        //}),
         new("CharacterCreationSpec", () => {
             SetAnchor(Top, 0, -19);
             AddRegionGroup();
@@ -2324,7 +2295,9 @@ public class Blueprint
                     {
                         CloseDesktop("Instance");
                         SpawnDesktopBlueprint("Instance");
-                        SpawnWindowBlueprint("HostileArea: " + area.name);
+                        Respawn("HostileArea");
+                        Respawn("HostileAreaProgress");
+                        Respawn("HostileAreaDenizens");
                         SetDesktopBackground(area.Background());
                         Respawn("BossQueue");
                     }
@@ -2426,8 +2399,305 @@ public class Blueprint
                 }
             );
         }),
+        
+        //Complex
+        new("Complex", () =>
+        {
+            PlayAmbience(complex.ambience);
+            SetAnchor(TopRight, -19, -38);
+            AddRegionGroup();
+            SetRegionGroupWidth(171);
+            AddHeaderRegion(() =>
+            {
+                AddLine(complex.name);
+                AddSmallButton("OtherClose",
+                (h) =>
+                {
+                    var title = CDesktop.title;
+                    PlaySound("DesktopInstanceClose");
+                    CloseDesktop(title);
+                    SwitchDesktop("Map");
+                });
+            });
+            AddPaddingRegion(() => { AddLine("Sites: "); });
+            foreach (var site in complex.sites)
+                PrintComplexSite(site);
+        }),
+
+        //Instance
+        new("Instance", () =>
+        {
+            PlayAmbience(instance.ambience);
+            SetAnchor(TopRight, -19, -38);
+            AddRegionGroup();
+            SetRegionGroupWidth(171);
+            AddHeaderRegion(() =>
+            {
+                AddLine(instance.name);
+                AddSmallButton("OtherClose",
+                (h) =>
+                {
+                    var title = CDesktop.title;
+                    CloseDesktop(title);
+                    if (instance.complexPart)
+                        SpawnDesktopBlueprint("Complex");
+                    else
+                    {
+                        PlaySound("DesktopInstanceClose");
+                        SwitchDesktop("Map");
+                    }
+                });
+            });
+            AddPaddingRegion(() =>
+            {
+                AddLine("Level range: ", "DarkGray");
+                var range = instance.LevelRange();
+                AddText(range.Item1 + "", ColorEntityLevel(range.Item1));
+                AddText(" - ", "DarkGray");
+                AddText(range.Item2 + "", ColorEntityLevel(range.Item2));
+            });
+            foreach (var wing in instance.wings)
+                PrintInstanceWing(instance, wing);
+        }),
+
+        //Hostile Area
+        new("HostileArea", () =>
+        {
+            if (area.ambience == null)
+            {
+                var zone = zones.Find(x => x.name == area.zone);
+                if (zone != null) PlayAmbience(currentSave.IsNight() ? zone.ambienceNight : zone.ambienceDay);
+            }
+            else PlayAmbience(area.ambience);
+            SetAnchor(TopLeft, 19, -38);
+            AddHeaderGroup();
+            SetRegionGroupWidth(190);
+            AddHeaderRegion(() =>
+            {
+                AddLine(area.name);
+                AddSmallButton("OtherClose",
+                (h) =>
+                {
+                    PlaySound("DesktopInstanceClose");
+                    if (area.instancePart)
+                    {
+                        SetDesktopBackground(instance.Background());
+                        CloseWindow(h.window);
+                        CloseWindow("BossQueue");
+                        CloseWindow("HostileAreaProgress");
+                        CloseWindow("HostileAreaDenizens");
+                    }
+                    else if (area.complexPart)
+                    {
+                        SetDesktopBackground(complex.Background());
+                        CloseWindow(h.window);
+                        CloseWindow("BossQueue");
+                        CloseWindow("HostileAreaProgress");
+                        CloseWindow("HostileAreaDenizens");
+                    }
+                    else CloseDesktop("HostileArea");
+                });
+            });
+            AddPaddingRegion(() =>
+            {
+                AddLine("Recommended level: ", "DarkGray");
+                AddText(area.recommendedLevel + "", ColorEntityLevel(area.recommendedLevel));
+            });
+            AddButtonRegion(() => { AddLine("Explore", "Black"); },
+            (h) =>
+            {
+                NewBoard(area.RollEncounter(), area);
+                SpawnDesktopBlueprint("Game");
+                SwitchDesktop("Game");
+            });
+        }),
+        new("HostileAreaProgress", () =>
+        {
+            SetAnchor(BottomLeft, 19, 35);
+            AddHeaderGroup();
+            SetRegionGroupWidth(190);
+            AddHeaderRegion(() =>
+            {
+                AddLine("Exploration progress:", "Gray");
+            });
+            var thickness = 5;
+            if (area.progression != null && area.progression.Count > 0)
+                for (int i = 0; i <= area.areaSize; i++)
+                {
+                    var index = i;
+                    if (index > 0)
+                    {
+                        var progressions = area.progression.FindAll(x => x.point == index);
+                        var printType = "";
+                        if (progressions.Exists(x => x.type == "Boss") && progressions.Exists(x => x.type == "Area")) printType = "BossArea";
+                        else if (progressions.Exists(x => x.type == "Treasure") && progressions.Exists(x => x.type == "Area")) printType = "TreasureArea";
+                        else if (progressions.Exists(x => x.type == "Boss")) printType = "Boss";
+                        else if (progressions.Exists(x => x.type == "Treasure")) printType = "Treasure";
+                        else if (progressions.Exists(x => x.type == "Area")) printType = "Area";
+                        if (printType != "")
+                        {
+                            var marker = new GameObject("ProgressionMarker", typeof(SpriteRenderer));
+                            marker.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Other/Progress" + printType);
+                            marker.transform.parent = CDesktop.LBWindow.LBRegionGroup.LBRegion.transform;
+                            marker.transform.localPosition = new Vector3(1 + CDesktop.LBWindow.LBRegionGroup.setWidth, -3 - thickness);
+                        }
+                    }
+                    if (i < area.areaSize)
+                    {
+                        AddRegionGroup();
+                        SetRegionGroupWidth((i == area.areaSize - 1 ? 190 % area.areaSize : 0) + 190 / area.areaSize);
+                        SetRegionGroupHeight(thickness);
+                        AddPaddingRegion(() =>
+                        {
+                            var temp = currentSave.siteProgress.ContainsKey(area.name) ? currentSave.siteProgress[area.name] : 0;
+                            if (temp > index) SetRegionBackground(ProgressDone);
+                            else SetRegionBackground(ProgressEmpty);
+                        });
+                    }
+                }
+        }),
+        new("HostileAreaDenizens", () =>
+        {
+            SetAnchor(TopLeft, 19, -95);
+            AddHeaderGroup();
+            SetRegionGroupWidth(190);
+            //AddHeaderRegion(() =>
+            //{
+            //    AddLine("Area denizens:", "Gray");
+            //});
+            if (area.commonEncounters != null && area.commonEncounters.Count > 0)
+                foreach (var encounter in area.commonEncounters)
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine(encounter.who, "DarkGray", "Right");
+                        var race = races.Find(x => x.name == encounter.who);
+                        AddSmallButton(race == null ? "OtherUnknown" : race.portrait, (h) => { });
+                    });
+        }),
 
         //Town
+        new("Town", () =>
+        {
+            PlayAmbience(town.ambience);
+            SetAnchor(TopLeft, 19, -38);
+            AddRegionGroup();
+            SetRegionGroupWidth(190);
+            AddHeaderRegion(() =>
+            {
+                AddLine(town.name);
+                AddSmallButton("OtherClose",
+                (h) =>
+                {
+                    var title = CDesktop.title;
+                    CloseDesktop(title);
+                    PlaySound("DesktopInstanceClose");
+                    SwitchDesktop("Map");
+                });
+            });
+            if (CDesktop.windows.Exists(x => x.title == "Persons")) return;
+            if (transportationConnectedToSite.ContainsKey(town.name))
+            {
+                var transportOptions = transportationConnectedToSite[town.name];
+                AddPaddingRegion(() => { AddLine("Transportation:"); });
+                foreach (var transport in transportOptions)
+                {
+                    var desitnationName = transport.sites.Find(x => x != town.name);
+                    var destination = towns.Find(x => x.name == desitnationName);
+                    if (destination == null) continue;
+                    AddButtonRegion(() =>
+                    {
+                        AddLine(desitnationName, "Black");
+                        AddSmallButton("Transport" + transport.means, (h) => { });
+                    },
+                    (h) =>
+                    {
+                        if (transport.price > 0)
+                        {
+                            if (transport.price > currentSave.player.inventory.money) return;
+                            PlaySound("DesktopTransportPay");
+                            currentSave.player.inventory.money -= transport.price;
+                        }
+
+                        //Close town screen as we're beginning to travel on map
+                        CloseDesktop("Town");
+
+                        //Switch desktop to map
+                        SwitchDesktop("Map");
+
+                        //Lead path to the destination
+                        LeadPath(transport, true);
+
+                        //Queue moving player to the destination
+                        destination.ExecutePath("Town");
+                    },
+                    null,
+                    (h) => () => { transport.PrintTooltip(); });
+                }
+            }
+            if (town.people != null)
+            {
+                var groups = town.people.Where(x => !x.hidden).OrderBy(x => x.type).GroupBy(x => x.category).OrderBy(x => x.Count()).ThenBy(x => x.Key != null ? x.Key.priority : 0);
+                AddPaddingRegion(() => { AddLine("Points of interest:", "Gray"); });
+                foreach (var group in groups)
+                    if (group.Key == null) continue;
+                    else if (group.Key.category == "Flight Master")
+                        foreach (var person in group)
+                        {
+                            var faction = factions.Find(x => x.name == person.faction);
+                            faction ??= factions.Find(x => x.name == races.Find(y => y.name == person.race).faction);
+                            faction ??= factions.Find(x => x.name == currentSave.player.faction);
+                            if (faction.side == currentSave.player.Side())
+                            {
+                                var personType = personTypes.Find(x => x.type == person.type);
+                                AddButtonRegion(() =>
+                                {
+                                    AddLine(person.name, "Black");
+                                    AddSmallButton(personType != null ? personType.icon + (personType.factionVariant ? faction.side : "") : "OtherUnknown", (h) => { });
+                                },
+                                (h) =>
+                                {
+                                    Person.person = person;
+                                    CloseWindow(h.window.title);
+                                    Respawn("Person");
+                                    PlaySound("DesktopInstanceOpen");
+                                });
+                            }
+                        }
+                    else if (group.Count() == 1)
+                        foreach (var person in group)
+                        {
+                            var personType = personTypes.Find(x => x.type == person.type);
+                            AddButtonRegion(() =>
+                            {
+                                AddLine(person.name, "Black");
+                                AddSmallButton(personType != null ? personType.icon + (personType.factionVariant ? factions.Find(x => x.name == town.faction).side : "") : "OtherUnknown", (h) => { });
+                            },
+                            (h) =>
+                            {
+                                Person.person = person;
+                                CloseWindow(h.window.title);
+                                Respawn("Person");
+                                PlaySound("DesktopInstanceOpen");
+                            });
+                        }
+                    else
+                    {
+                        var person = group.First();
+                        AddButtonRegion(() =>
+                        {
+                            AddLine(group.Key.category + "s (" + group.Count() + ")", "Black");
+                            AddSmallButton(person.category != null ? person.category.icon + (person.category.factionVariant ? factions.Find(x => x.name == town.faction).side : "") : "OtherUnknown", (h) => { });
+                        },
+                        (h) =>
+                        {
+                            personCategory = group.Key;
+                            CloseWindow("Person");
+                            Respawn("Persons");
+                            PlaySound("DesktopInstanceOpen");
+                        });
+                    }
+            }
+        }),
         new("TownHostile", () => 
         {
             PlayAmbience(town.ambience);
@@ -2503,7 +2773,7 @@ public class Blueprint
                 {
                     PlaySound("DesktopInstanceOpen", 0.2f);
                     CloseWindow(h.window);
-                    CloseWindow("Town: " + town.name);
+                    CloseWindow("Town");
                     SpawnWindowBlueprint("ProfessionLevelTrainer");
                     Respawn("ExperienceBarBorder");
                     Respawn("ExperienceBar");
@@ -2522,7 +2792,7 @@ public class Blueprint
                         {
                             PlaySound("DesktopInstanceOpen", 0.2f);
                             CloseWindow(h.window);
-                            CloseWindow("Town: " + town.name);
+                            CloseWindow("Town");
                             SpawnWindowBlueprint("ProfessionRecipeTrainer");
                             Respawn("ExperienceBarBorder");
                             Respawn("ExperienceBar");
@@ -2542,7 +2812,7 @@ public class Blueprint
                         currentSave.banks.Add(town.name, new() { items = new() });
                     PlaySound("DesktopBankOpen", 0.2f);
                     CloseWindow(h.window);
-                    CloseWindow("Town: " + town.name);
+                    CloseWindow("Town");
                     SpawnWindowBlueprint("Bank");
                     SpawnWindowBlueprint("Inventory");
                     Respawn("ExperienceBarBorder");
@@ -2609,7 +2879,7 @@ public class Blueprint
                 {
                     PlaySound("DesktopInventoryOpen");
                     CloseWindow(h.window);
-                    CloseWindow("Town: " + town.name);
+                    CloseWindow("Town");
                     SpawnWindowBlueprint("Vendor");
                     SpawnWindowBlueprint("Inventory");
                     Respawn("ExperienceBarBorder");
@@ -2639,7 +2909,7 @@ public class Blueprint
                 {
                     PlaySound("DesktopInventoryOpen");
                     CloseWindow(h.window);
-                    CloseWindow("Town: " + town.name);
+                    CloseWindow("Town");
                     SpawnWindowBlueprint("MountCollection");
                     if (mounts.Find(x => x.name == currentSave.player.mount) != null)
                         SpawnWindowBlueprint("CurrentMount");
@@ -2655,7 +2925,7 @@ public class Blueprint
                     {
                         PlaySound("DesktopInventoryOpen");
                         CloseWindow(h.window);
-                        CloseWindow("Town: " + town.name);
+                        CloseWindow("Town");
                         SpawnWindowBlueprint("MountVendor");
                         Respawn("ExperienceBarBorder");
                         Respawn("ExperienceBar");
@@ -2671,7 +2941,7 @@ public class Blueprint
                 {
                     PlaySound("DesktopInventoryOpen");
                     CloseWindow(h.window);
-                    CloseWindow("Town: " + town.name);
+                    CloseWindow("Town");
                     SpawnWindowBlueprint("FlightMaster");
                     if (mounts.Find(x => x.name == currentSave.player.mount) != null)
                         SpawnWindowBlueprint("CurrentMount");
@@ -2689,7 +2959,7 @@ public class Blueprint
                 person = null;
                 CloseWindow(h.window);
                 if (personCategory != null) Respawn("Persons");
-                Respawn("Town: " + town.name);
+                Respawn("Town");
                 Respawn("Persons", true);
             });
         }, true),
@@ -2705,7 +2975,7 @@ public class Blueprint
                 {
                     personCategory = null;
                     CloseWindow(h.window.title);
-                    Respawn("Town: " + town.name);
+                    Respawn("Town");
                     PlaySound("DesktopInstanceClose");
                 });
             });
@@ -2723,7 +2993,7 @@ public class Blueprint
                     Person.person = person;
                     Respawn("Person");
                     CloseWindow("Persons");
-                    CloseWindow("Town: " + town.name);
+                    CloseWindow("Town");
                     PlaySound("DesktopInstanceOpen");
                 });
             }
@@ -3487,7 +3757,7 @@ public class Blueprint
                 });
             });
         }),
-        new("FishingBoard", () => {
+        new("BoardFrame", () => {
             SetAnchor(Top, 0, -34 + 19 * (fishingBoard.field.GetLength(1) - 7));
             var boardBackground = new GameObject("BoardBackground", typeof(SpriteRenderer), typeof(SpriteMask));
             boardBackground.transform.parent = CDesktop.LBWindow.transform;
@@ -3503,6 +3773,9 @@ public class Blueprint
             boardBackground.transform.localPosition = new Vector2(-17, 17);
             boardBackground.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Textures/BoardShadow" + fishingBoard.field.GetLength(0) + "x" + fishingBoard.field.GetLength(1));
             boardBackground.GetComponent<SpriteRenderer>().sortingLayerName = "CameraShadow";
+        }),
+        new("FishingBoard", () => {
+            SetAnchor(Top, 0, -34 + 19 * (fishingBoard.field.GetLength(1) - 7));
             DisableGeneralSprites();
             AddRegionGroup();
             for (int i = 0; i < fishingBoard.field.GetLength(1); i++)
@@ -4426,11 +4699,11 @@ public class Blueprint
                     CloseWindow("CharacterCreationFactionAlliance");
                     CloseWindow("CharacterCreationFactionRaceChoice");
                     CloseWindow("CharacterCreationFinish");
+                    CloseWindow("CharacterCreationSpec");
                     CloseWindow("CharacterCreationWho");
                     SpawnWindowBlueprint("CharacterRoster");
                     SpawnWindowBlueprint("CharacterInfo");
                     SpawnWindowBlueprint("TitleScreenSingleplayer");
-                    RemoveDesktopBackground();
                 }
                 else if (CloseWindow("TitleScreenSingleplayer"))
                 {
@@ -4533,8 +4806,10 @@ public class Blueprint
         new("HostileArea", () =>
         {
             SetDesktopBackground(area.Background());
-            SpawnWindowBlueprint("HostileArea: " + area.name);
-            if (area.fishing) SpawnWindowBlueprint("FishingAnchor");
+            SpawnWindowBlueprint("HostileArea");
+            SpawnWindowBlueprint("HostileAreaProgress");
+            SpawnWindowBlueprint("HostileAreaDenizens");
+            //if (area.fishing) SpawnWindowBlueprint("FishingAnchor");
             SpawnWindowBlueprint("MapToolbarShadow");
             SpawnWindowBlueprint("MapToolbarClockLeft");
             SpawnWindowBlueprint("MapToolbar");
@@ -4656,7 +4931,7 @@ public class Blueprint
             SpawnWindowBlueprint("ExperienceBar");
             if (currentSave.player.Reputation(town.faction) >= 4200)
             {
-                SpawnWindowBlueprint("Town: " + town.name);
+                SpawnWindowBlueprint("Town");
                 AddHotkey(Tab, () =>
                 {
                     if (CloseWindow("Vendor"))
@@ -4713,14 +4988,14 @@ public class Blueprint
                     {
                         PlaySound("DesktopInstanceClose");
                         person = null;
-                        Respawn("Town: " + town.name);
+                        Respawn("Town");
                         if (personCategory != null) Respawn("Persons");
                     }
                     else if (CloseWindow("Persons"))
                     {
                         PlaySound("DesktopInstanceClose");
                         personCategory = null;
-                        Respawn("Town: " + town.name);
+                        Respawn("Town");
                     }
                     else
                     {
@@ -4745,7 +5020,7 @@ public class Blueprint
         new("Instance", () =>
         {
             SetDesktopBackground(instance.Background());
-            SpawnWindowBlueprint(instance.type + ": " + instance.name);
+            SpawnWindowBlueprint("Instance");
             SpawnWindowBlueprint("MapToolbarShadow");
             SpawnWindowBlueprint("MapToolbarClockLeft");
             SpawnWindowBlueprint("MapToolbar");
@@ -4758,10 +5033,12 @@ public class Blueprint
             //    SpawnWindowBlueprint("Chest");
             AddHotkey(Escape, () =>
             {
-                if (CloseWindow("HostileArea: " + area?.name))
+                if (CloseWindow("HostileArea"))
                 {
                     area = null;
                     CloseWindow("BossQueue");
+                    CloseWindow("HostileAreaProgress");
+                    CloseWindow("HostileAreaDenizens");
                     PlaySound("DesktopButtonClose");
                     SetDesktopBackground(instance.Background());
                 }
@@ -4780,7 +5057,7 @@ public class Blueprint
         new("Complex", () =>
         {
             SetDesktopBackground(complex.Background());
-            SpawnWindowBlueprint("Complex: " + complex.name);
+            SpawnWindowBlueprint("Complex");
             SpawnWindowBlueprint("MapToolbarShadow");
             SpawnWindowBlueprint("MapToolbarClockLeft");
             SpawnWindowBlueprint("MapToolbar");
@@ -4791,10 +5068,12 @@ public class Blueprint
             SpawnWindowBlueprint("ExperienceBar");
             AddHotkey(Escape, () =>
             {
-                if (CloseWindow("HostileArea: " + area?.name))
+                if (CloseWindow("HostileArea"))
                 {
                     area = null;
                     PlaySound("DesktopButtonClose");
+                    CloseWindow("HostileAreaProgress");
+                    CloseWindow("HostileAreaDenizens");
                     SetDesktopBackground(complex.Background());
                 }
                 else
@@ -4806,9 +5085,12 @@ public class Blueprint
         }),
         new("Game", () =>
         {
+            SpawnTransition();
             locationName = board.area.name;
             PlaySound("DesktopEnterCombat");
             SetDesktopBackground(board.area.Background());
+            board.Reset();
+            SpawnWindowBlueprint("BoardFrame");
             SpawnWindowBlueprint("Board");
             SpawnWindowBlueprint("BufferBoard");
             SpawnWindowBlueprint("PlayerBattleInfo");
@@ -4816,7 +5098,6 @@ public class Blueprint
             SpawnWindowBlueprint("EnemyBattleInfo");
             SpawnWindowBlueprint("PlayerResources");
             SpawnWindowBlueprint("EnemyResources");
-            board.Reset();
             AddHotkey(PageUp, () => {
                 board.player.resources = new Dictionary<string, int>
                 {
@@ -4862,6 +5143,7 @@ public class Blueprint
             locationName = fishingBoard.site.name;
             PlaySound("DesktopEnterCombat");
             SetDesktopBackground(fishingBoard.site.Background());
+            SpawnWindowBlueprint("FishingBoardFrame");
             SpawnWindowBlueprint("FishingBoard");
             SpawnWindowBlueprint("FishingBufferBoard");
             //SpawnWindowBlueprint("PlayerBattleInfo");

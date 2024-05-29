@@ -6560,8 +6560,8 @@
         "point": 3
       }
     ],
-    "x": 914,
-    "y": -2929,
+    "x": 948,
+    "y": -2923,
     "name": "Gelkis Village",
     "zone": "Desolace",
     "type": "HostileArea"
@@ -7052,6 +7052,8 @@
         "point": 3
       }
     ],
+    "x": 1169,
+    "y": -2991,
     "name": "Valley of Bones",
     "zone": "Desolace",
     "type": "HostileArea"
@@ -7326,7 +7328,8 @@
     ],
     "name": "Halls of Destruction",
     "zone": "Dire Maul",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -7405,7 +7408,8 @@
     ],
     "name": "The Athenaeum",
     "zone": "Dire Maul",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -7455,7 +7459,8 @@
     ],
     "name": "Warpwood Vestibule",
     "zone": "Dire Maul",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -7500,7 +7505,8 @@
     ],
     "name": "The Conservatory",
     "zone": "Dire Maul",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "noNightVariant": true
   },
   {
     "commonEncounters": [
@@ -18725,7 +18731,7 @@
         "point": 3
       }
     ],
-    "x": 1235,
+    "x": 1243,
     "y": -4047,
     "name": "Pincer Sands",
     "zone": "Silithus",

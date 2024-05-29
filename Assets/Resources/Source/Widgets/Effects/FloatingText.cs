@@ -21,7 +21,7 @@ public class FloatingText : MonoBehaviour
         else if (align == "Right")
             newObject.transform.localPosition = new Vector2(-fonts[floatingTextFont].Length(text), 7);
         var temp = newObject.GetComponent<LineText>();
-        temp.Initialise(Root.CDesktop.LBWindow, text, color == "" ? "Gray" : color);
+        temp.Initialise(Root.CDesktop.LBWindow, text, color == "" ? "Gray" : color, "FallingText");
         int length = 0;
         temp.Erase();
         foreach (var character in temp.text)
@@ -30,7 +30,7 @@ public class FloatingText : MonoBehaviour
             length = temp.SpawnCharacter(character, length, floatingTextFont);
             var ch = temp.characters.Last();
             var chs = ch.GetComponent<SpriteRenderer>();
-            if (fall) ch.AddComponent<Shatter>().Initiate(0.015f, 0, chs);
+            if (fall) ch.AddComponent<Shatter>().Initiate(1.7f, 1f, chs);
             for (int i = 0; i < chs.sprite.textureRect.width; i++)
                 for (int j = 0; j < chs.sprite.textureRect.height; j++)
                 {
@@ -99,7 +99,7 @@ public class FloatingText : MonoBehaviour
                 else texture.SetPixel(i, j, new Color(0, 0, 0, 0));
         texture.Apply();
         var sprite = Sprite.Create(texture, new Rect(Vector2.zero, new Vector2(texture.width, texture.height)), new Vector2(0, 1), 1);
-        if (fall) textBorder.AddComponent<Shatter>().Initiate(0.015f, 0, textBorder.GetComponent<SpriteRenderer>());
+        if (fall) textBorder.AddComponent<Shatter>().Initiate(1.7f, 1f, textBorder.GetComponent<SpriteRenderer>());
         textBorder.GetComponent<SpriteRenderer>().sprite = sprite;
         textBorder.GetComponent<SpriteRenderer>().sortingLayerName = fall ? "FallingText" : transform.parent.GetComponent<Region>().regionGroup.window.layer;
     }

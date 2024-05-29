@@ -155,7 +155,7 @@ public class Event
                     var target = affect == "Effector" ? effector : other;
                     var amount = (int)Math.Round(source.RollWeaponDamage() * ((powerType == "Melee" ? source.MeleeAttackPower() : (powerType == "Spell" ? source.SpellPower() : (powerType == "Ranged" ? source.RangedAttackPower() : 1))) / 10.0 + 1) * powerScale);
                     target.Damage(amount, trigger["Trigger"] == "Damage");
-                    AddBigButtonOverlay(new Vector2(target == board.player ? -300 : 167, 141), "OtherDamaged", 0.1f, 5);
+                    AddBigButtonOverlay(new Vector2(target == board.player ? -300 : 167, 141), "OtherDamaged", 1f, -1);
                     SpawnFallingText(new Vector2(target == board.player ? -300 : 167, 141), "" + amount, "White");
                     if (target == board.player) board.log.damageTaken.Inc(sourceName, amount);
                     else board.log.damageDealt.Inc(sourceName, amount);
@@ -179,7 +179,7 @@ public class Event
                     var target = affect == "Effector" ? effector : other;
                     var amount = (int)Math.Round(source.RollWeaponDamage() * ((powerType == "Melee" ? source.MeleeAttackPower() : (powerType == "Spell" ? source.SpellPower() : (powerType == "Ranged" ? source.RangedAttackPower() : 1))) / 10.0 + 1) * powerScale);
                     target.Heal(amount, trigger["Trigger"] == "Heal");
-                    AddBigButtonOverlay(new Vector2(target == board.player ? -300 : 167, 141), "OtherHealed", 0.1f, 5);
+                    AddBigButtonOverlay(new Vector2(target == board.player ? -300 : 167, 141), "OtherHealed", 1f, 5);
                     SpawnFallingText(new Vector2(target == board.player ? -300 : 167, 141), "" + amount, "Uncommon");
                     if (target == board.player) board.log.healingReceived.Inc(sourceName, amount);
                     board.UpdateHealthBars();

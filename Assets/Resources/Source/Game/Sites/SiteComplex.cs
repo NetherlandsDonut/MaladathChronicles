@@ -65,33 +65,6 @@ public class SiteComplex : Site
                     }
         instances.FindAll(x => sites.Exists(y => (y["SiteType"] == "Raid" || y["SiteType"] == "Dungeon") && y["SiteName"] == x.name)).ForEach(x => x.complexPart = true);
         areas.FindAll(x => sites.Exists(y => y["SiteType"] == "HostileArea" && y["SiteName"] == x.name)).ForEach(x => x.complexPart = true);
-        if (!Blueprint.windowBlueprints.Exists(x => x.title == "Complex: " + name))
-            Blueprint.windowBlueprints.Add(
-                new Blueprint("Complex: " + name,
-                    () =>
-                    {
-                        PlayAmbience(ambience);
-                        SetAnchor(TopRight, -19, -38);
-                        AddRegionGroup();
-                        SetRegionGroupWidth(171);
-                        AddHeaderRegion(() =>
-                        {
-                            AddLine(name);
-                            AddSmallButton("OtherClose",
-                            (h) =>
-                            {
-                                var title = CDesktop.title;
-                                PlaySound("DesktopInstanceClose");
-                                CloseDesktop(title);
-                                SwitchDesktop("Map");
-                            });
-                        });
-                        AddPaddingRegion(() => { AddLine("Sites: "); });
-                        foreach (var site in sites)
-                            PrintComplexSite(site);
-                    }
-                )
-            );
         SitePath.pathsConnectedToSite.Remove(name);
         if (x != 0 && y != 0)
             Blueprint.windowBlueprints.Add(new Blueprint("Site: " + name, () => PrintSite()));
@@ -169,11 +142,7 @@ public class SiteComplex : Site
             if (site["SiteType"] == "HostileArea")
             {
                 area = areas.Find(x => x.name == site["SiteName"]);
-                var window = CDesktop.windows.Find(x => x.title.StartsWith("HostileArea: "));
-                if (window != null)
-                    if (window.title == "HostileArea: " + area.name) return;
-                    else CloseWindow(window);
-                SpawnWindowBlueprint("HostileArea: " + area.name);
+                Respawn("HostileArea");
                 Respawn("BossQueue");
                 SetDesktopBackground(area.Background());
             }

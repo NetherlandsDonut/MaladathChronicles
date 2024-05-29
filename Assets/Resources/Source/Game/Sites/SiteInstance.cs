@@ -7,7 +7,6 @@ using UnityEngine;
 using static Root;
 using static Root.Anchor;
 
-using static Sound;
 using static Faction;
 using static Coloring;
 using static SaveGame;
@@ -46,45 +45,6 @@ public class SiteInstance : Site
         var localAreas = wings.SelectMany(x => x.areas.Select(y => y.ContainsKey("AreaName") ? y["AreaName"] : ""));
         var temp = areas.FindAll(x => localAreas.Contains(x.name));
         temp.ForEach(x => x.instancePart = true);
-        if (!Blueprint.windowBlueprints.Exists(x => x.title == type + ": " + name))
-            Blueprint.windowBlueprints.Add(
-                new Blueprint(type + ": " + name,
-                    () =>
-                    {
-                        PlayAmbience(ambience);
-                        SetAnchor(TopRight, -19, -38);
-                        AddRegionGroup();
-                        SetRegionGroupWidth(171);
-                        AddHeaderRegion(() =>
-                        {
-                            AddLine(name);
-                            AddSmallButton("OtherClose",
-                            (h) =>
-                            {
-                                var title = CDesktop.title;
-                                CloseDesktop(title);
-                                if (complexPart)
-                                    SpawnDesktopBlueprint("Complex");
-                                else
-                                {
-                                    PlaySound("DesktopInstanceClose");
-                                    SwitchDesktop("Map");
-                                }
-                            });
-                        });
-                        AddPaddingRegion(() =>
-                        {
-                            AddLine("Level range: ", "DarkGray");
-                            var range = LevelRange();
-                            AddText(range.Item1 + "", ColorEntityLevel(range.Item1));
-                            AddText(" - ", "DarkGray");
-                            AddText(range.Item2 + "", ColorEntityLevel(range.Item2));
-                        });
-                        foreach (var wing in wings)
-                            PrintInstanceWing(this, wing);
-                    }
-                )
-            );
         SitePath.pathsConnectedToSite.Remove(name);
         if (x != 0 && y != 0) Blueprint.windowBlueprints.Add(new Blueprint("Site: " + name, () => PrintSite()));
     }
@@ -198,11 +158,9 @@ public class SiteInstance : Site
                 {
                     if (area.Item1 == null) return;
                     SiteHostileArea.area = area.Item1;
-                    var window = CDesktop.windows.Find(x => x.title.StartsWith("HostileArea: "));
-                    if (window != null)
-                        if (window.title == "HostileArea: " + area.Item1.name) return;
-                        else CloseWindow(window);
-                    SpawnWindowBlueprint("HostileArea: " + area.Item1.name);
+                    Respawn("HostileArea");
+                    Respawn("HostileAreaProgress");
+                    Respawn("HostileAreaDenizens");
                     Respawn("BossQueue");
                     SetDesktopBackground("Areas/Area" + (instance.name + area.Item1.name).Clean() + (area.Item1.specialClearBackground && area.Item1.eliteEncounters.All(x => currentSave.elitesKilled.ContainsKey(x.who)) ? "Cleared" : ""));
                 });

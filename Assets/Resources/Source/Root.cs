@@ -69,6 +69,8 @@ public static class Root
         }
     }
 
+    public static float Grayscale(this Color32 color) => (0.299f * color.r) + (0.587f * color.g) + (0.114f * color.b);
+
     public static List<Item> Multilate(this List<Item> list, int times)
     {
         var output = list.ToList();
@@ -253,7 +255,7 @@ public static class Root
         loadingScreenObjectLoadAim = loadSites.Count;
     }
 
-    public static void SpawnTransition(bool single = true, float time = 0.1f)
+    public static void SpawnTransition(bool single = true, float speed = 2f)
     {
         if (CDesktop.transition != null && single) return;
         var transition = new GameObject("CameraTransition", typeof(SpriteRenderer), typeof(Shatter));
@@ -261,7 +263,7 @@ public static class Root
         transition.transform.localPosition = new Vector3(0, 0, -0.01f);
         transition.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Textures/CameraTransition");
         transition.GetComponent<SpriteRenderer>().sortingLayerName = "CameraBorder";
-        transition.GetComponent<Shatter>().Initiate(time, 0, transition.GetComponent<SpriteRenderer>());
+        transition.GetComponent<Shatter>().Initiate(speed, 0, transition.GetComponent<SpriteRenderer>());
         CDesktop.transition = transition;
     }
 
@@ -871,7 +873,7 @@ public static class Root
             DisableShadows();
             AddRegionGroup();
             SetRegionGroupWidth(settings.chartBigIcons.Value() ? 38 : 19);
-            SetRegionGroupHeight(height + (settings.chartBigIcons.Value() ? 4 : 0));
+            SetRegionGroupHeight(height);
             AddPaddingRegion(() =>
             {
                 SetRegionBackground(Button);

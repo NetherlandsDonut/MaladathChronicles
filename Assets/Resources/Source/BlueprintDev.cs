@@ -5124,6 +5124,7 @@ public static class BlueprintDev
             locationName = board.area.name;
             PlaySound("DesktopEnterCombat");
             SetDesktopBackground(board.area.Background());
+            SpawnWindowBlueprint("BoardFrame");
             SpawnWindowBlueprint("Board");
             SpawnWindowBlueprint("BufferBoard");
             SpawnWindowBlueprint("PlayerBattleInfo");
@@ -5132,38 +5133,6 @@ public static class BlueprintDev
             SpawnWindowBlueprint("PlayerResources");
             SpawnWindowBlueprint("EnemyResources");
             board.Reset();
-            AddHotkey(PageUp, () => {
-                board.player.resources = new Dictionary<string, int>
-                {
-                    { "Earth", 99 },
-                    { "Fire", 99 },
-                    { "Air", 99 },
-                    { "Water", 99 },
-                    { "Frost", 99 },
-                    { "Lightning", 99 },
-                    { "Arcane", 99 },
-                    { "Decay", 99 },
-                    { "Order", 99 },
-                    { "Shadow", 99 },
-                };
-                CDesktop.RebuildAll();
-            });
-            AddHotkey(PageDown, () => {
-                board.enemy.resources = new Dictionary<string, int>
-                {
-                    { "Earth", 99 },
-                    { "Fire", 99 },
-                    { "Air", 99 },
-                    { "Water", 99 },
-                    { "Frost", 99 },
-                    { "Lightning", 99 },
-                    { "Arcane", 99 },
-                    { "Decay", 99 },
-                    { "Order", 99 },
-                    { "Shadow", 99 },
-                };
-                CDesktop.RebuildAll();
-            });
         }),
         new("ObjectManagerHostileAreas", () =>
         {

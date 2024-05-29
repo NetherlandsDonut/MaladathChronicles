@@ -2,15 +2,6 @@
   {
     "name": "Rogue",
     "icon": "ClassRogue",
-    "stats": {
-      "stats": {
-        "Stamina": 1,
-        "Strength": 1,
-        "Agility": 3,
-        "Intellect": 0,
-        "Spirit": 0
-      }
-    },
     "startingEquipment": {
       "Pandaren": [
         "Hearthstone",
@@ -71,6 +62,15 @@
         "Worn Dagger"
       ]
     },
+    "stats": {
+      "stats": {
+        "Stamina": 1,
+        "Strength": 1,
+        "Agility": 3,
+        "Intellect": 0,
+        "Spirit": 0
+      }
+    },
     "rules": {
       "Melee Attack Power per Strength": 2.0,
       "Ranged Attack Power per Strength": 0.0,
@@ -114,15 +114,6 @@
   {
     "name": "Hunter",
     "icon": "ClassHunter",
-    "stats": {
-      "stats": {
-        "Stamina": 1,
-        "Strength": 0,
-        "Agility": 3,
-        "Intellect": 0,
-        "Spirit": 1
-      }
-    },
     "startingEquipment": {
       "Pandaren": [
         "Hearthstone",
@@ -170,6 +161,15 @@
         "Worn Axe",
         "Worn Shortbow"
       ]
+    },
+    "stats": {
+      "stats": {
+        "Stamina": 1,
+        "Strength": 0,
+        "Agility": 3,
+        "Intellect": 0,
+        "Spirit": 1
+      }
     },
     "rules": {
       "Melee Attack Power per Strength": 2.0,
@@ -223,15 +223,6 @@
   {
     "name": "Shaman",
     "icon": "ClassShaman",
-    "stats": {
-      "stats": {
-        "Stamina": 1,
-        "Strength": 1,
-        "Agility": 0,
-        "Intellect": 1,
-        "Spirit": 1
-      }
-    },
     "startingEquipment": {
       "Orc": [
         "Hearthstone",
@@ -251,6 +242,15 @@
         "Primitive Kilt",
         "Worn Mace"
       ]
+    },
+    "stats": {
+      "stats": {
+        "Stamina": 1,
+        "Strength": 1,
+        "Agility": 0,
+        "Intellect": 1,
+        "Spirit": 1
+      }
     },
     "rules": {
       "Melee Attack Power per Strength": 2.0,
@@ -605,15 +605,6 @@
   {
     "name": "Warrior",
     "icon": "ClassWarrior",
-    "stats": {
-      "stats": {
-        "Stamina": 2,
-        "Strength": 3,
-        "Agility": 0,
-        "Intellect": 0,
-        "Spirit": 0
-      }
-    },
     "startingEquipment": {
       "Pandaren": [
         "Hearthstone",
@@ -680,6 +671,15 @@
         "Worn Shortsword",
         "Worn Wooden Shield"
       ]
+    },
+    "stats": {
+      "stats": {
+        "Stamina": 2,
+        "Strength": 3,
+        "Agility": 0,
+        "Intellect": 0,
+        "Spirit": 0
+      }
     },
     "rules": {
       "Melee Attack Power per Strength": 3.0,
@@ -966,15 +966,6 @@
   {
     "name": "Paladin",
     "icon": "ClassPaladin",
-    "stats": {
-      "stats": {
-        "Stamina": 1,
-        "Strength": 2,
-        "Agility": 0,
-        "Intellect": 1,
-        "Spirit": 1
-      }
-    },
     "startingEquipment": {
       "Dwarf": [
         "Hearthstone",
@@ -990,6 +981,15 @@
         "Squire's Boots",
         "Battleworn Hammer"
       ]
+    },
+    "stats": {
+      "stats": {
+        "Stamina": 1,
+        "Strength": 2,
+        "Agility": 0,
+        "Intellect": 1,
+        "Spirit": 1
+      }
     },
     "rules": {
       "Melee Attack Power per Strength": 2.0,
@@ -1343,15 +1343,6 @@
   {
     "name": "Druid",
     "icon": "ClassDruid",
-    "stats": {
-      "stats": {
-        "Stamina": 1,
-        "Strength": 0,
-        "Agility": 0,
-        "Intellect": 2,
-        "Spirit": 2
-      }
-    },
     "startingEquipment": {
       "Night Elf": [
         "Hearthstone",
@@ -1365,6 +1356,15 @@
         "Novice's Pants",
         "Bent Staff"
       ]
+    },
+    "stats": {
+      "stats": {
+        "Stamina": 1,
+        "Strength": 0,
+        "Agility": 0,
+        "Intellect": 2,
+        "Spirit": 2
+      }
     },
     "rules": {
       "Melee Attack Power per Strength": 2.0,
@@ -1724,15 +1724,6 @@
   {
     "name": "Priest",
     "icon": "ClassPriest",
-    "stats": {
-      "stats": {
-        "Stamina": 0,
-        "Strength": 0,
-        "Agility": 0,
-        "Intellect": 2,
-        "Spirit": 3
-      }
-    },
     "startingEquipment": {
       "Dwarf": [
         "Hearthstone",
@@ -1769,6 +1760,15 @@
         "Neophyte's Boots",
         "Worn Mace"
       ]
+    },
+    "stats": {
+      "stats": {
+        "Stamina": 0,
+        "Strength": 0,
+        "Agility": 0,
+        "Intellect": 2,
+        "Spirit": 3
+      }
     },
     "rules": {
       "Melee Attack Power per Strength": 1.0,
@@ -2022,15 +2022,6 @@
   {
     "name": "Warlock",
     "icon": "ClassWarlock",
-    "stats": {
-      "stats": {
-        "Stamina": 1,
-        "Strength": 0,
-        "Agility": 0,
-        "Intellect": 2,
-        "Spirit": 2
-      }
-    },
     "startingEquipment": {
       "Gnome": [
         "Hearthstone",
@@ -2060,6 +2051,15 @@
         "Acolyte's Shoes",
         "Worn Dagger"
       ]
+    },
+    "stats": {
+      "stats": {
+        "Stamina": 1,
+        "Strength": 0,
+        "Agility": 0,
+        "Intellect": 2,
+        "Spirit": 2
+      }
     },
     "rules": {
       "Melee Attack Power per Strength": 1.0,
@@ -2307,15 +2307,6 @@
   {
     "name": "Mage",
     "icon": "ClassMage",
-    "stats": {
-      "stats": {
-        "Stamina": 0,
-        "Strength": 0,
-        "Agility": 0,
-        "Intellect": 3,
-        "Spirit": 2
-      }
-    },
     "startingEquipment": {
       "Pandaren": [
         "Hearthstone",
@@ -2352,6 +2343,15 @@
         "Apprentice's Boots",
         "Bent Staff"
       ]
+    },
+    "stats": {
+      "stats": {
+        "Stamina": 0,
+        "Strength": 0,
+        "Agility": 0,
+        "Intellect": 3,
+        "Spirit": 2
+      }
     },
     "rules": {
       "Melee Attack Power per Strength": 1.0,
@@ -2715,15 +2715,6 @@
   {
     "name": "Monk",
     "icon": "ClassMonk",
-    "stats": {
-      "stats": {
-        "Stamina": 1,
-        "Strength": 0,
-        "Agility": 2,
-        "Intellect": 1,
-        "Spirit": 1
-      }
-    },
     "startingEquipment": {
       "Pandaren": [
         "Hearthstone",
@@ -2732,6 +2723,15 @@
         "Footpad's Shoes",
         "Bent Staff"
       ]
+    },
+    "stats": {
+      "stats": {
+        "Stamina": 1,
+        "Strength": 0,
+        "Agility": 2,
+        "Intellect": 1,
+        "Spirit": 1
+      }
     },
     "rules": {
       "Melee Attack Power per Strength": 2.0,

@@ -163,15 +163,21 @@ public class Board
     public int CooldownOn(bool player, string ability) => (player ? playerCooldowns : enemyCooldowns).Find(x => x.Item1 == ability).Item2;
 
     //Cooldowns all action bar abilities and used passives by 1 turn
-    public void Cooldown(bool player)
+    public int Cooldown(bool player)
     {
+        int off = 0;
         ref var abilities = ref (player ? ref playerCooldowns : ref enemyCooldowns);
         for (int i = abilities.Count - 1; i >= 0; i--)
-        {
-            abilities[i] = (abilities[i].Item1, abilities[i].Item2 - 1);
-            if (abilities[i].Item2 == 0)
-                board.CallEvents(player ? this.player : enemy, new() { { "Trigger", "Cooldown" }, { "Triggerer", "Effector" }, { "AbilityName", abilities[i].Item1 } });
-        }
+            if (abilities[i].Item2 > 0)
+            {
+                abilities[i] = (abilities[i].Item1, abilities[i].Item2 - 1);
+                if (abilities[i].Item2 == 0)
+                {
+                    off++;
+                    board.CallEvents(player ? this.player : enemy, new() { { "Trigger", "Cooldown" }, { "Triggerer", "Effector" }, { "AbilityName", abilities[i].Item1 } });
+                }
+            }
+        return off;
     }
 
     public void CallEvents(Entity entity, Dictionary<string, string> trigger)
@@ -191,7 +197,7 @@ public class Board
             cursorEnemy.fadeIn = true;
             playerTurn = false;
             playerFinishedMoving = false;
-            Cooldown(false);
+            if (Cooldown(false) > 0) Respawn("EnemyBattleInfo");
             CallEvents(enemy, new() { { "Trigger", "TurnBegin" } });
             enemy.FlareBuffs();
         }
@@ -201,7 +207,7 @@ public class Board
             cursorEnemy.fadeOut = true;
             playerTurn = true;
             enemyFinishedMoving = false;
-            Cooldown(true);
+            if (Cooldown(true) > 0) Respawn("PlayerBattleInfo");
             CallEvents(player, new() { { "Trigger", "TurnBegin" } });
             player.FlareBuffs();
         }
@@ -382,7 +388,6 @@ public class Board
                 SwitchDesktop("Complex");
             else
                 SwitchDesktop("HostileArea");
-            CDesktop.RebuildAll();
         }
         if (CDesktop.screenLocked)
             CDesktop.UnlockScreen();

@@ -29,8 +29,9 @@ public class FluidBar : MonoBehaviour
     //Updates the length of the fluid bar
     public void UpdateFluidBar()
     {
-        var aim = (int)((double)barWidth / max() * current());
-        if (aim < 2) aim = 2;
+        var aim = (int)Math.Ceiling((double)barWidth / max() * current());
+        if (aim <= 0) aim = -2;
+        else if (aim < 2) aim = 2;
         else if (aim > barWidth - 4) aim = barWidth;
         split.transform.localPosition = new Vector2(aim - 2, -2);
     }

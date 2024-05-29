@@ -13,22 +13,24 @@ public class LineText : MonoBehaviour
     public List<GameObject> characters;
 
     //Fields
-    public string text, color;
+    public string text, color, layer;
 
-    public void Initialise(Line line, string text, string color)
+    public void Initialise(Line line, string text, string color, string layer = "")
     {
         this.color = color;
         this.text = text;
+        this.layer = layer;
         window = line.region.regionGroup.window;
         characters = new();
         line.LBText = this;
         line.texts.Add(this);
     }
 
-    public void Initialise(Window window, string text, string color)
+    public void Initialise(Window window, string text, string color, string layer = "")
     {
         this.color = color;
         this.text = text;
+        this.layer = layer;
         this.window = window;
         characters = new();
     }
@@ -52,7 +54,7 @@ public class LineText : MonoBehaviour
         if (color == null) { Debug.Log("ERROR 009: Color was not set"); color = "Gray"; }
         else if (!colors.ContainsKey(color)) { Debug.Log("ERROR 008: Color not found: \"" + color + "\""); color = "Gray"; }
         newCharacter.GetComponent<SpriteRenderer>().color = colors[color];
-        newCharacter.GetComponent<SpriteRenderer>().sortingLayerName = window.layer;
+        newCharacter.GetComponent<SpriteRenderer>().sortingLayerName = layer == "" ? window.layer : layer;
         characters.Add(newCharacter);
         return offset + (int)glyph.rect.width + 1;
     }
