@@ -151,7 +151,7 @@ public class Window : MonoBehaviour
                         shadows[i] = new GameObject("Shadow", typeof(SpriteRenderer));
                         shadows[i].transform.parent = transform;
                         shadows[i].GetComponent<SpriteRenderer>().sprite = shadowSprites[i];
-                        shadows[i].GetComponent<SpriteRenderer>().sortingLayerName = layer;
+                        shadows[i].GetComponent<SpriteRenderer>().sortingLayerName = layer + "Shadows";
                     }
                 shadows[1].transform.localScale = shadows[6].transform.localScale = new Vector3(Width() + 2, 1, 1);
                 shadows[3].transform.localScale = shadows[4].transform.localScale = new Vector3(1, yOffset + 2, 1);
@@ -173,7 +173,7 @@ public class Window : MonoBehaviour
                         shadows[i] = new GameObject("Shadow", typeof(SpriteRenderer));
                         shadows[i].transform.parent = transform;
                         shadows[i].GetComponent<SpriteRenderer>().sprite = shadowSprites[i];
-                        shadows[i].GetComponent<SpriteRenderer>().sortingLayerName = layer;
+                        shadows[i].GetComponent<SpriteRenderer>().sortingLayerName = layer + "Shadows";
                     }
                 shadows[1].transform.localScale = new Vector3(1, yOffset - 2, 1);
                 shadows[3].transform.localScale = new Vector3(Width() - 2, 1, 1);
@@ -192,7 +192,7 @@ public class Window : MonoBehaviour
                         shadows[i] = new GameObject("Shadow", typeof(SpriteRenderer));
                         shadows[i].transform.parent = transform;
                         shadows[i].GetComponent<SpriteRenderer>().sprite = shadowSprites[i];
-                        shadows[i].GetComponent<SpriteRenderer>().sortingLayerName = layer;
+                        shadows[i].GetComponent<SpriteRenderer>().sortingLayerName = layer + "Shadows";
                     }
                 shadows[1].transform.localScale = shadows[6].transform.localScale = new Vector3(Width() + 2, 1, 1);
                 shadows[3].transform.localScale = shadows[4].transform.localScale = new Vector3(1, yOffset + 2, 1);
@@ -506,7 +506,7 @@ public class Window : MonoBehaviour
                                 region.shadows[i] = new GameObject("Shadow", typeof(SpriteRenderer));
                                 region.shadows[i].transform.parent = region.transform;
                                 region.shadows[i].GetComponent<SpriteRenderer>().sprite = shadowSprites[i];
-                                region.shadows[i].GetComponent<SpriteRenderer>().sortingLayerName = layer;
+                                region.shadows[i].GetComponent<SpriteRenderer>().sortingLayerName = layer + "Shadows";
                             }
                         region.shadows[1].transform.localScale = new Vector3(1, region.borders[2].transform.localScale.y - 5, 1);
                         region.shadows[3].transform.localScale = new Vector3(region.borders[3].transform.localScale.x - 5, 1, 1);
