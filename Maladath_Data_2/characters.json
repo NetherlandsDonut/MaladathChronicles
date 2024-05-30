@@ -5,8 +5,8 @@
   "Whitemane": [
     {
       "player": {
-        "level": 13,
-        "experience": 5440,
+        "level": 14,
+        "experience": 1165,
         "reputation": {
           "Southsea Pirates": 0,
           "Razormane Tribe": 0,
@@ -76,8 +76,31 @@
           "Bloodtooth Tribe": 0,
           "Bristleback Tribe": 0
         },
-        "professionSkills": {},
-        "learnedRecipes": {},
+        "professionSkills": {
+          "Leatherworking": {
+            "Item1": 2,
+            "Item2": [
+              "Apprentice"
+            ]
+          },
+          "Skinning": {
+            "Item1": 1,
+            "Item2": [
+              "Apprentice"
+            ]
+          }
+        },
+        "learnedRecipes": {
+          "Leatherworking": [
+            "Light Leather",
+            "Light Armor Kit",
+            "Handstitched Leather Vest",
+            "Handstitched Leather Cloak",
+            "Handstitched Leather Bracers",
+            "Handstitched Leather Boots"
+          ],
+          "Skinning": []
+        },
         "faction": "Stormwind",
         "name": "Christine",
         "race": "Human",
@@ -105,7 +128,8 @@
           "Brain Freeze": 0,
           "Permafrost": 0,
           "Icy Veins": 0,
-          "Deep Freeze": 0
+          "Deep Freeze": 0,
+          "Cruel Winter": 0
         },
         "actionBars": [
           "Fireball",
@@ -143,6 +167,81 @@
               "ilvl": 1,
               "amount": 1,
               "maxStack": 1,
+              "stats": {
+                "stats": {}
+              }
+            },
+            {
+              "rarity": "Common",
+              "name": "Linen Cloth",
+              "icon": "itemfabriclinen01",
+              "type": "Trade Good",
+              "source": "RareDrop",
+              "ilvl": 5,
+              "lvl": 1,
+              "amount": 2,
+              "maxStack": 20,
+              "price": 13,
+              "stats": {
+                "stats": {}
+              }
+            },
+            {
+              "rarity": "Common",
+              "name": "Scroll of Spirit",
+              "icon": "itemscroll01",
+              "type": "Miscellaneous",
+              "source": "RareDrop",
+              "ilvl": 10,
+              "amount": 1,
+              "maxStack": 5,
+              "price": 25,
+              "stats": {
+                "stats": {}
+              }
+            },
+            {
+              "rarity": "Common",
+              "name": "Copper Ore",
+              "icon": "itemorecopper01",
+              "type": "Trade Good",
+              "source": "RareDrop",
+              "ilvl": 10,
+              "lvl": 1,
+              "amount": 2,
+              "maxStack": 10,
+              "price": 5,
+              "stats": {
+                "stats": {}
+              }
+            },
+            {
+              "rarity": "Poor",
+              "name": "Apprentice's Robe",
+              "icon": "itemchestcloth23",
+              "type": "Chest",
+              "armorClass": "Cloth",
+              "ilvl": 1,
+              "lvl": 1,
+              "armor": 3,
+              "amount": 1,
+              "maxStack": 1,
+              "price": 1,
+              "stats": {
+                "stats": {}
+              }
+            },
+            {
+              "rarity": "Common",
+              "name": "Light Leather",
+              "icon": "itemmiscleatherscrap03",
+              "type": "Trade Good",
+              "source": "Profession",
+              "ilvl": 10,
+              "lvl": 1,
+              "amount": 1,
+              "maxStack": 20,
+              "price": 15,
               "stats": {
                 "stats": {}
               }
@@ -201,17 +300,39 @@
             }
           },
           "Chest": {
-            "rarity": "Poor",
-            "name": "Apprentice's Robe",
-            "icon": "itemchestcloth23",
+            "rarity": "Uncommon",
+            "name": "Beaded Robe of the Whale",
+            "icon": "itemchestcloth22",
+            "randomEnchantment": true,
             "type": "Chest",
             "armorClass": "Cloth",
-            "ilvl": 1,
-            "lvl": 1,
-            "armor": 3,
+            "source": "RareDrop",
+            "ilvl": 11,
+            "lvl": 6,
+            "armor": 21,
             "amount": 1,
             "maxStack": 1,
-            "price": 1,
+            "price": 119,
+            "stats": {
+              "stats": {
+                "Stamina": 3,
+                "Spirit": 3
+              }
+            }
+          },
+          "Shoulders": {
+            "rarity": "Common",
+            "name": "Seer's Mantle",
+            "icon": "itemshoulder09",
+            "type": "Shoulders",
+            "armorClass": "Cloth",
+            "source": "RareDrop",
+            "ilvl": 21,
+            "lvl": 16,
+            "armor": 25,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 301,
             "stats": {
               "stats": {}
             }
@@ -219,12 +340,29 @@
         }
       },
       "hour": 7,
-      "minute": 23,
-      "second": 48,
-      "currentSite": "Ruins of Jubuwal",
-      "openedChests": {},
-      "siteProgress": {},
-      "commonsKilled": {},
+      "minute": 32,
+      "second": 54,
+      "currentSite": "Stormwind City",
+      "openedChests": {
+        "Pools of Arlithrien": {
+          "area": "Pools of Arlithrien",
+          "inventory": {
+            "items": [],
+            "bags": [],
+            "ignoreSpaceChecks": true
+          }
+        }
+      },
+      "siteProgress": {
+        "Greatwood Vale": 1,
+        "Pools of Arlithrien": 5
+      },
+      "commonsKilled": {
+        "Antlered Courser": 1,
+        "Webwood Venomfang": 3,
+        "Strigid Screecher": 1,
+        "Gnarlpine Defender": 1
+      },
       "raresKilled": {},
       "elitesKilled": {},
       "siteVisits": {
@@ -292,9 +430,9 @@
         "Bloodtooth Camp": 1,
         "Bough Shadow": 1,
         "Demon Fall Canyon": 1,
-        "Falfarren River": 1,
+        "Falfarren River": 2,
         "Fallen Sky Lake": 1,
-        "Felfire Hill": 1,
+        "Felfire Hill": 2,
         "Fire Scar Shrine": 1,
         "Greenpaw Village": 1,
         "Iris Lake": 1,
@@ -384,7 +522,7 @@
         "Kazzak's Seat": 1,
         "The Tainted Scar": 1,
         "Altar of Storms": 1,
-        "Blackrock Pass": 1,
+        "Blackrock Pass": 2,
         "Blackrock Stronghold": 1,
         "Gates of Blackrock": 1,
         "Draco'dar": 1,
@@ -657,7 +795,7 @@
         "Ragnaros' Lair": 1,
         "The Lavafalls": 1,
         "Smoldering Hollow": 1,
-        "Shrine of Remulos": 1,
+        "Shrine of Remulos": 2,
         "Stormrage Barrow Dens": 1,
         "Baeldun Digsite": 1,
         "Brambleblade Ravine": 1,
@@ -800,7 +938,7 @@
         "Boulderslide Ravine": 1,
         "Camp Aparaje": 1,
         "Cragpool Lake": 1,
-        "Greatwood Vale": 1,
+        "Greatwood Vale": 3,
         "Grimtotem Post": 1,
         "Mirkfallon Lake": 1,
         "Sishir Canyon": 1,
@@ -884,7 +1022,7 @@
         "Fel Rock": 1,
         "Gnarlpine Hold": 1,
         "Lake Al'Ameth": 1,
-        "Pools of Arlithrien": 1,
+        "Pools of Arlithrien": 2,
         "Shadowglen": 1,
         "Shadowthread Cave": 1,
         "The Oracle Glade": 1,
@@ -1043,21 +1181,21 @@
         "The Green Belt": 1,
         "Thelgen Rock": 1,
         "Whelgar's Excavation Site": 1,
-        "Darkwhisper Gorge": 1,
-        "Dun Mandarr": 1,
-        "Frostfire Hot Springs": 1,
-        "Frostsaber Rock": 1,
-        "Frostwhisper Gorge": 1,
-        "Hidden Grove": 1,
-        "Ice Thistle Hills": 1,
+        "Darkwhisper Gorge": 2,
+        "Dun Mandarr": 2,
+        "Frostfire Hot Springs": 2,
+        "Frostsaber Rock": 2,
+        "Frostwhisper Gorge": 2,
+        "Hidden Grove": 2,
+        "Ice Thistle Hills": 2,
         "Mazthoril": 1,
-        "Moon Horror Den": 1,
-        "Northern Vale": 1,
-        "Owl Wing Thicket": 1,
-        "Ruins of Kel'Theril": 1,
-        "Timbermaw Post": 1,
-        "Winterfall Village": 1,
-        "Yeti Caverns": 1,
+        "Moon Horror Den": 2,
+        "Northern Vale": 2,
+        "Owl Wing Thicket": 2,
+        "Ruins of Kel'Theril": 2,
+        "Timbermaw Post": 2,
+        "Winterfall Village": 2,
+        "Yeti Caverns": 2,
         "Altar of Hir'eek": 1,
         "Altar of the Blood God": 1,
         "Edge of Madness": 1,
@@ -1068,11 +1206,11 @@
         "Temple of Bethekk": 1,
         "The Bloodfire Pit": 1,
         "The Coil": 1,
-        "Raynewood Retreat": 1,
+        "Raynewood Retreat": 2,
         "Ravenholdt Manor": 1,
         "Misty Reed Post": 1,
-        "Stormwind City": 1,
-        "Grove of the Ancients": 1,
+        "Stormwind City": 2,
+        "Grove of the Ancients": 2,
         "Go'Shek Farm": 1,
         "Hillsbrad": 1,
         "Dabyrie's Farmstead": 1,
@@ -1090,7 +1228,7 @@
         "Flame Crest": 1,
         "Faldir's Cove": 1,
         "Refuge Point": 1,
-        "Darnassus": 1,
+        "Darnassus": 6,
         "Aldrassil": 1,
         "Rut'theran Village": 1,
         "Dolanaar": 1,
@@ -1134,7 +1272,7 @@
         "Sen'jin Village": 1,
         "Shadowprey Village": 2,
         "Revantusk Village": 1,
-        "Malaka'jin": 1,
+        "Malaka'jin": 2,
         "Thunder Bluff": 1,
         "Bloodhoof Village": 1,
         "Camp Narache": 1,
@@ -1286,10 +1424,16 @@
           }
         ]
       },
+      "banks": {
+        "Darnassus": {
+          "items": [],
+          "bags": []
+        }
+      },
       "startDate": "2024-05-28T16:24:44.3999465+02:00",
-      "lastLoaded": "2024-05-29T16:45:43.2614624+02:00",
-      "lastPlayed": "2024-05-29T16:49:11.3606753+02:00",
-      "timePlayed": "01:55:35.7172557",
+      "lastLoaded": "2024-05-30T01:51:19.7908135+02:00",
+      "lastPlayed": "2024-05-30T03:18:50.3557919+02:00",
+      "timePlayed": "06:02:58.1526262",
       "lastVisitedTalents": 1
     },
     {

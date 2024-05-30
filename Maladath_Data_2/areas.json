@@ -2397,8 +2397,8 @@
         "point": 3
       }
     ],
-    "x": 2092,
-    "y": -2143,
+    "x": 2093,
+    "y": -2183,
     "name": "Demon Fall Canyon",
     "zone": "Ashenvale",
     "type": "HostileArea"
@@ -2428,8 +2428,8 @@
         "point": 3
       }
     ],
-    "x": 1953,
-    "y": -2002,
+    "x": 1854,
+    "y": -2126,
     "name": "Falfarren River",
     "zone": "Ashenvale",
     "type": "HostileArea",
@@ -2487,8 +2487,8 @@
         "point": 3
       }
     ],
-    "x": 2100,
-    "y": -2093,
+    "x": 2088,
+    "y": -2107,
     "name": "Felfire Hill",
     "zone": "Ashenvale",
     "type": "HostileArea"
@@ -14710,8 +14710,8 @@
         "point": 3
       }
     ],
-    "x": 1902,
-    "y": -932,
+    "x": 1893,
+    "y": -924,
     "name": "Shrine of Remulos",
     "zone": "Moonglade",
     "type": "HostileArea"
@@ -19793,8 +19793,8 @@
         "point": 3
       }
     ],
-    "x": 1482,
-    "y": -2527,
+    "x": 1465,
+    "y": -2514,
     "name": "Greatwood Vale",
     "zone": "Stonetalon Mountains",
     "type": "HostileArea"
@@ -28218,8 +28218,8 @@
         "point": 3
       }
     ],
-    "x": 2280,
-    "y": -1634,
+    "x": 2379,
+    "y": -1524,
     "name": "Darkwhisper Gorge",
     "zone": "Winterspring",
     "type": "HostileArea",
@@ -28255,8 +28255,8 @@
         "point": 3
       }
     ],
-    "x": 2375,
-    "y": -1368,
+    "x": 2371,
+    "y": -1362,
     "name": "Dun Mandarr",
     "zone": "Winterspring",
     "type": "HostileArea"
@@ -28286,8 +28286,8 @@
         "point": 3
       }
     ],
-    "x": 1995,
-    "y": -1178,
+    "x": 2062,
+    "y": -1158,
     "name": "Frostfire Hot Springs",
     "zone": "Winterspring",
     "type": "HostileArea",
@@ -28353,8 +28353,8 @@
         "point": 3
       }
     ],
-    "x": 2413,
-    "y": -1444,
+    "x": 2414,
+    "y": -1459,
     "name": "Frostwhisper Gorge",
     "zone": "Winterspring",
     "type": "HostileArea"
@@ -28379,8 +28379,8 @@
         "point": 3
       }
     ],
-    "x": 2451,
-    "y": -950,
+    "x": 2445,
+    "y": -955,
     "name": "Hidden Grove",
     "zone": "Winterspring",
     "type": "HostileArea"
@@ -28410,8 +28410,8 @@
         "point": 3
       }
     ],
-    "x": 2470,
-    "y": -1254,
+    "x": 2453,
+    "y": -1271,
     "name": "Ice Thistle Hills",
     "zone": "Winterspring",
     "type": "HostileArea"
@@ -28484,8 +28484,8 @@
         "point": 3
       }
     ],
-    "x": 2394,
-    "y": -1083,
+    "x": 2400,
+    "y": -1078,
     "name": "Moon Horror Den",
     "zone": "Winterspring",
     "type": "HostileArea"
@@ -28515,7 +28515,7 @@
         "point": 3
       }
     ],
-    "x": 2356,
+    "x": 2368,
     "y": -988,
     "name": "Northern Vale",
     "zone": "Winterspring",
@@ -28546,8 +28546,8 @@
         "point": 3
       }
     ],
-    "x": 2451,
-    "y": -1368,
+    "x": 2472,
+    "y": -1384,
     "name": "Owl Wing Thicket",
     "zone": "Winterspring",
     "type": "HostileArea"
@@ -28577,8 +28577,8 @@
         "point": 3
       }
     ],
-    "x": 2280,
-    "y": -1197,
+    "x": 2257,
+    "y": -1237,
     "name": "Ruins of Kel'Theril",
     "zone": "Winterspring",
     "type": "HostileArea"
@@ -28608,8 +28608,8 @@
         "point": 3
       }
     ],
-    "x": 2109,
-    "y": -1197,
+    "x": 2101,
+    "y": -1188,
     "name": "Timbermaw Post",
     "zone": "Winterspring",
     "type": "HostileArea"
@@ -28651,8 +28651,8 @@
         "point": 3
       }
     ],
-    "x": 2489,
-    "y": -1140,
+    "x": 2485,
+    "y": -1130,
     "name": "Winterfall Village",
     "zone": "Winterspring",
     "type": "HostileArea"
@@ -28682,8 +28682,8 @@
         "point": 3
       }
     ],
-    "x": 2489,
-    "y": -1197,
+    "x": 2496,
+    "y": -1194,
     "name": "Yeti Caverns",
     "zone": "Winterspring",
     "type": "HostileArea"

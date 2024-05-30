@@ -1,7 +1,7 @@
 [
   {
-    "x": 1830,
-    "y": -1979,
+    "x": 1826,
+    "y": -1981,
     "name": "Raynewood Retreat",
     "zone": "Ashenvale",
     "faction": "Darnassus"
@@ -256,7 +256,7 @@
     "fishing": true
   },
   {
-    "x": 1434,
+    "x": 1408,
     "y": -1515,
     "name": "Grove of the Ancients",
     "zone": "Darkshore",
@@ -907,19 +907,22 @@
         "name": "Darianna",
         "gender": "Female",
         "race": "Night Elf",
-        "type": "Journeyman Leatherworker"
+        "type": "Journeyman Leatherworker",
+        "hidden": true
       },
       {
         "name": "Trianna",
         "gender": "Female",
         "race": "Night Elf",
-        "type": "Journeyman Tailor"
+        "type": "Journeyman Tailor",
+        "hidden": true
       },
       {
         "name": "Lalina Summermoon",
         "gender": "Female",
         "race": "Night Elf",
-        "type": "Journeyman Enchanter"
+        "type": "Journeyman Enchanter",
+        "hidden": true
       },
       {
         "name": "Sylvanna Forestmoon",
@@ -932,7 +935,8 @@
         "name": "Faldron",
         "gender": "Male",
         "race": "Night Elf",
-        "type": "Expert Leatherworker"
+        "type": "Expert Leatherworker",
+        "hidden": true
       },
       {
         "name": "Tolon",

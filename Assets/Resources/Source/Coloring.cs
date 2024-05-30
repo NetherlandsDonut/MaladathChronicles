@@ -63,6 +63,7 @@ public static class Coloring
         { "Orange",         new Color32(185, 104, 057, 255) },
         { "LightOrange",    new Color32(168, 110, 038, 255) },
         { "Green",          new Color32(081, 181, 077, 255) },
+
         { "Druid",          new Color32(184, 090, 007, 255) },
         { "Warrior",        new Color32(144, 113, 079, 255) },
         { "Rogue",          new Color32(184, 177, 076, 255) },
@@ -73,15 +74,18 @@ public static class Coloring
         { "Paladin",        new Color32(177, 101, 134, 255) },
         { "Priest",         new Color32(191, 175, 164, 255) },
         { "Monk",           new Color32(007, 209, 124, 255) },
+
         { "Copper",         new Color32(184, 080, 041, 255) },
         { "Silver",         new Color32(170, 188, 210, 255) },
         { "Gold",           new Color32(255, 210, 011, 255) },
+
         { "Poor",           new Color32(114, 114, 114, 255) },
         { "Common",         new Color32(183, 183, 183, 255) },
         { "Uncommon",       new Color32(026, 201, 000, 255) },
         { "Rare",           new Color32(000, 117, 226, 255) },
         { "Epic",           new Color32(163, 053, 238, 255) },
         { "Legendary",      new Color32(221, 110, 000, 255) },
+
         { "Fire",           new Color32(227, 099, 050, 255) },
         { "Water",          new Color32(066, 169, 167, 255) },
         { "Earth",          new Color32(128, 094, 068, 255) },
@@ -92,13 +96,14 @@ public static class Coloring
         { "Decay",          new Color32(201, 208, 019, 255) },
         { "Arcane",         new Color32(204, 101, 221, 255) },
         { "Air",            new Color32(175, 190, 202, 255) },
-        { "Exalted",        new Color32(000, 255, 255, 255) },
-        { "Revered",        new Color32(000, 255, 204, 255) },
-        { "Honored",        new Color32(090, 147, 204, 255) },
-        { "Friendly",       new Color32(000, 255, 000, 255) },
-        { "Neutral",        new Color32(254, 254, 000, 255) },
-        { "Unfriendly",     new Color32(237, 102, 034, 255) },
-        { "Hostile",        new Color32(255, 000, 000, 255) },
+
+        { "Exalted",        new Color32(055, 105, 221, 255) },
+        { "Revered",        new Color32(048, 169, 193, 255) },
+        { "Honored",        new Color32(049, 196, 149, 255) },
+        { "Friendly",       new Color32(070, 201, 050, 255) },
+        { "Neutral",        new Color32(203, 203, 050, 255) },
+        { "Unfriendly",     new Color32(201, 098, 050, 255) },
+        { "Hostile",        new Color32(196, 061, 049, 255) },
         { "Hated",          new Color32(204, 034, 034, 255) },
     };
 }
