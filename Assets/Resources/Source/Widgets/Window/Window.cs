@@ -289,7 +289,7 @@ public class Window : MonoBehaviour
                     if (title.StartsWith("Site: ")) smallButton.frame.GetComponent<SpriteRenderer>().sortingOrder = 1;
                     smallButton.frame.GetComponent<SpriteRenderer>().sortingLayerName = layer;
                     smallButton.frame.GetComponent<SpriteRenderer>().sortingLayerName = layer;
-                    smallButton.frame.AddComponent<SpriteMask>().sprite = Resources.Load<Sprite>("Sprites/Building/Borders/ButtonCircleFrameMask");
+                    if (title.StartsWith("Site: ")) smallButton.frame.AddComponent<SpriteMask>().sprite = Resources.Load<Sprite>("Sprites/Building/Borders/ButtonCircleFrameMask");
                     smallButton.frame.transform.parent = smallButton.transform;
                     smallButton.frame.transform.localPosition = new Vector3(0, 0, -0.05f);
                     if (disabledCollisions) Destroy(smallButton.GetComponent<BoxCollider2D>());

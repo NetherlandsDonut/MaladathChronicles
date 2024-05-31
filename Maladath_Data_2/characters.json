@@ -78,12 +78,30 @@
         },
         "professionSkills": {
           "Leatherworking": {
-            "Item1": 2,
+            "Item1": 3,
             "Item2": [
               "Apprentice"
             ]
           },
           "Skinning": {
+            "Item1": 1,
+            "Item2": [
+              "Apprentice"
+            ]
+          },
+          "Fishing": {
+            "Item1": 1,
+            "Item2": [
+              "Apprentice"
+            ]
+          },
+          "First Aid": {
+            "Item1": 1,
+            "Item2": [
+              "Apprentice"
+            ]
+          },
+          "Cooking": {
             "Item1": 1,
             "Item2": [
               "Apprentice"
@@ -99,7 +117,16 @@
             "Handstitched Leather Bracers",
             "Handstitched Leather Boots"
           ],
-          "Skinning": []
+          "Skinning": [],
+          "Fishing": [],
+          "First Aid": [
+            "Linen Bandage"
+          ],
+          "Cooking": [
+            "Roasted Wolf Meat",
+            "Roasted Boar Meat",
+            "Crafted Light Shot"
+          ]
         },
         "faction": "Stormwind",
         "name": "Christine",
@@ -233,18 +260,20 @@
             },
             {
               "rarity": "Common",
-              "name": "Light Leather",
-              "icon": "itemmiscleatherscrap03",
-              "type": "Trade Good",
-              "source": "Profession",
-              "ilvl": 10,
-              "lvl": 1,
+              "name": "Light Armor Kit",
+              "icon": "itemmiscarmorkit17",
+              "type": "Miscellaneous",
+              "source": "DirectDrop",
+              "ilvl": 5,
               "amount": 1,
-              "maxStack": 20,
+              "maxStack": 10,
               "price": 15,
               "stats": {
                 "stats": {}
-              }
+              },
+              "droppedBy": [
+                "Olaf"
+              ]
             }
           ],
           "bags": []
@@ -340,8 +369,8 @@
         }
       },
       "hour": 7,
-      "minute": 32,
-      "second": 54,
+      "minute": 33,
+      "second": 22,
       "currentSite": "Stormwind City",
       "openedChests": {
         "Pools of Arlithrien": {
@@ -1209,7 +1238,7 @@
         "Raynewood Retreat": 2,
         "Ravenholdt Manor": 1,
         "Misty Reed Post": 1,
-        "Stormwind City": 2,
+        "Stormwind City": 4,
         "Grove of the Ancients": 2,
         "Go'Shek Farm": 1,
         "Hillsbrad": 1,
@@ -1247,7 +1276,7 @@
         "Thalanaar": 1,
         "Stonetalon Peak": 1,
         "Aerie Peak": 1,
-        "Ironforge": 1,
+        "Ironforge": 2,
         "Thelsamar": 1,
         "Farstrider Lodge": 1,
         "Dun Garok": 1,
@@ -1431,9 +1460,9 @@
         }
       },
       "startDate": "2024-05-28T16:24:44.3999465+02:00",
-      "lastLoaded": "2024-05-30T01:51:19.7908135+02:00",
-      "lastPlayed": "2024-05-30T03:18:50.3557919+02:00",
-      "timePlayed": "06:02:58.1526262",
+      "lastLoaded": "2024-05-30T11:45:21.6378571+02:00",
+      "lastPlayed": "2024-05-30T11:46:43.6032933+02:00",
+      "timePlayed": "06:19:57.0134302",
       "lastVisitedTalents": 1
     },
     {

@@ -51,6 +51,7 @@ public static class Coloring
     //Color pallete of the UI
     public static Dictionary<string, Color32> colors = new()
     {
+        //Basic UI colors
         { "White",          new Color32(234, 234, 234, 255) },
         { "LightGray",      new Color32(202, 202, 202, 255) },
         { "Gray",           new Color32(183, 183, 183, 255) },
@@ -64,6 +65,7 @@ public static class Coloring
         { "LightOrange",    new Color32(168, 110, 038, 255) },
         { "Green",          new Color32(081, 181, 077, 255) },
 
+        //Class colors
         { "Druid",          new Color32(184, 090, 007, 255) },
         { "Warrior",        new Color32(144, 113, 079, 255) },
         { "Rogue",          new Color32(184, 177, 076, 255) },
@@ -75,10 +77,12 @@ public static class Coloring
         { "Priest",         new Color32(191, 175, 164, 255) },
         { "Monk",           new Color32(007, 209, 124, 255) },
 
+        //Currency colors
         { "Copper",         new Color32(184, 080, 041, 255) },
         { "Silver",         new Color32(170, 188, 210, 255) },
         { "Gold",           new Color32(255, 210, 011, 255) },
 
+        //Item rarity colors
         { "Poor",           new Color32(114, 114, 114, 255) },
         { "Common",         new Color32(183, 183, 183, 255) },
         { "Uncommon",       new Color32(026, 201, 000, 255) },
@@ -86,6 +90,7 @@ public static class Coloring
         { "Epic",           new Color32(163, 053, 238, 255) },
         { "Legendary",      new Color32(221, 110, 000, 255) },
 
+        //Colors of the elements
         { "Fire",           new Color32(227, 099, 050, 255) },
         { "Water",          new Color32(066, 169, 167, 255) },
         { "Earth",          new Color32(128, 094, 068, 255) },
@@ -97,6 +102,7 @@ public static class Coloring
         { "Arcane",         new Color32(204, 101, 221, 255) },
         { "Air",            new Color32(175, 190, 202, 255) },
 
+        //Reputation colors
         { "Exalted",        new Color32(055, 105, 221, 255) },
         { "Revered",        new Color32(048, 169, 193, 255) },
         { "Honored",        new Color32(049, 196, 149, 255) },

@@ -900,13 +900,25 @@ public static class Root
         thisBar.UpdateFluidBar();
     }
 
+    public static void AddResourceBar(int x, int y, string resource, Entity entity)
+    {
+        var resourceBar = UnityEngine.Object.Instantiate(Resources.Load<GameObject>("Prefabs/PrefabResourceBar" + (x > 100 ? "Second" : "")));
+        resourceBar.transform.parent = CDesktop.LBWindow.transform;
+        resourceBar.transform.localPosition = new Vector3(x, y, 0);
+        var thisBar = resourceBar.GetComponent<FluidBar>();
+        resourceBar.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Textures/Bars/Resource" + resource + "Bar/FilledBar");
+        thisBar.Initialise(65, () => entity.MaxResource(resource), () => entity.resources[resource]);
+        thisBar.split.sprite = Resources.Load<Sprite>("Sprites/Textures/Bars/Resource" + resource + "Bar/Splitter");
+        thisBar.UpdateFluidBar();
+    }
+
     public static void AddHealthBar(int x, int y, string forWho, Entity entity)
     {
         var healthBar = UnityEngine.Object.Instantiate(Resources.Load<GameObject>("Prefabs/PrefabHealthBar"));
         healthBar.transform.parent = CDesktop.LBWindow.transform;
         healthBar.transform.localPosition = new Vector3(x, y, 0);
         var thisBar = healthBar.GetComponent<FluidBar>();
-        thisBar.Initialise(131, () => entity.MaxHealth(), () => entity.health);
+        thisBar.Initialise(132, () => entity.MaxHealth(), () => entity.health);
         if (Board.board.healthBars.ContainsKey(forWho)) Board.board.healthBars[forWho] = thisBar;
         else Board.board.healthBars.Add(forWho, thisBar);
         thisBar.UpdateFluidBar();

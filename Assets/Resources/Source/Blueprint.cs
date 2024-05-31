@@ -156,7 +156,7 @@ public class Blueprint
 
         //Game
         new("BoardFrame", () => {
-            SetAnchor(-115, 127);
+            SetAnchor(-115, 128);
             var boardBackground = new GameObject("BoardBackground", typeof(SpriteRenderer), typeof(SpriteMask));
             boardBackground.transform.parent = CDesktop.LBWindow.transform;
             boardBackground.transform.localPosition = new Vector2(-17, 17);
@@ -173,7 +173,7 @@ public class Blueprint
             boardBackground.GetComponent<SpriteRenderer>().sortingLayerName = "CameraShadow";
         }, true),
         new("Board", () => {
-            SetAnchor(Top, 0, -34 + 19 * (board.field.GetLength(1) - 7));
+            SetAnchor(Top, 0, -33 + 19 * (board.field.GetLength(1) - 7));
             DisableGeneralSprites();
             AddRegionGroup();
             for (int i = 0; i < board.field.GetLength(1); i++)
@@ -191,7 +191,7 @@ public class Blueprint
                 });
         }),
         new("BufferBoard", () => {
-            SetAnchor(Top, 0, 194 + 19 * (BufferBoard.bufferBoard.field.GetLength(1) - 7));
+            SetAnchor(Top, 0, 195 + 19 * (BufferBoard.bufferBoard.field.GetLength(1) - 7));
             MaskWindow();
             DisableGeneralSprites();
             DisableCollisions();
@@ -231,7 +231,7 @@ public class Blueprint
                     );
                 });
             AddRegionGroup();
-            SetRegionGroupWidth(49);
+            SetRegionGroupWidth(86);
             foreach (var element in elements1)
                 AddHeaderRegion(() =>
                 {
@@ -257,7 +257,7 @@ public class Blueprint
                     );
                 });
             AddRegionGroup();
-            SetRegionGroupWidth(30);
+            SetRegionGroupWidth(67);
             foreach (var element in elements2)
                 AddHeaderRegion(() =>
                 {
@@ -268,7 +268,7 @@ public class Blueprint
         new("EnemyBattleInfo", () => {
             SetAnchor(TopRight);
             AddRegionGroup();
-            SetRegionGroupWidth(171);
+            SetRegionGroupWidth(172);
             AddButtonRegion(
                 () =>
                 {
@@ -349,7 +349,7 @@ public class Blueprint
                     );
                 });
             AddRegionGroup();
-            SetRegionGroupWidth(49);
+            SetRegionGroupWidth(86);
             foreach (var element in elements1)
                 AddHeaderRegion(() =>
                 {
@@ -373,20 +373,22 @@ public class Blueprint
                             });
                         }
                     );
+                    AddResourceBar(21, -19 * elements1.IndexOf(element), element, board.player);
                 });
             AddRegionGroup();
-            SetRegionGroupWidth(30);
+            SetRegionGroupWidth(67);
             foreach (var element in elements2)
                 AddHeaderRegion(() =>
                 {
                     var value = board.player.resources.ToList().Find(x => x.Key == element).Value;
                     AddLine(value + "", value == 0 ? "DarkGray" : (value < board.player.MaxResource(element) ? "Gray" : "Green"));
+                    AddResourceBar(107, -19 * elements2.IndexOf(element), element, board.player);
                 });
         }),
         new("PlayerBattleInfo", () => {
             SetAnchor(TopLeft);
             AddRegionGroup();
-            SetRegionGroupWidth(171);
+            SetRegionGroupWidth(172);
             AddButtonRegion(
                 () =>
                 {
@@ -3758,7 +3760,7 @@ public class Blueprint
             });
         }),
         new("BoardFrame", () => {
-            SetAnchor(Top, 0, -34 + 19 * (fishingBoard.field.GetLength(1) - 7));
+            SetAnchor(-115, 128);
             var boardBackground = new GameObject("BoardBackground", typeof(SpriteRenderer), typeof(SpriteMask));
             boardBackground.transform.parent = CDesktop.LBWindow.transform;
             boardBackground.transform.localPosition = new Vector2(-17, 17);
@@ -3775,7 +3777,7 @@ public class Blueprint
             boardBackground.GetComponent<SpriteRenderer>().sortingLayerName = "CameraShadow";
         }),
         new("FishingBoard", () => {
-            SetAnchor(Top, 0, -34 + 19 * (fishingBoard.field.GetLength(1) - 7));
+            SetAnchor(Top, 0, -33 + 19 * (fishingBoard.field.GetLength(1) - 7));
             DisableGeneralSprites();
             AddRegionGroup();
             for (int i = 0; i < fishingBoard.field.GetLength(1); i++)
@@ -3795,7 +3797,7 @@ public class Blueprint
             }
         }),
         new("FishingBufferBoard", () => {
-            SetAnchor(Top, 0, 194 + 19 * (FishingBufferBoard.fishingBufferBoard.field.GetLength(1) - 7));
+            SetAnchor(Top, 0, 195 + 19 * (FishingBufferBoard.fishingBufferBoard.field.GetLength(1) - 7));
             MaskWindow();
             DisableGeneralSprites();
             DisableCollisions();

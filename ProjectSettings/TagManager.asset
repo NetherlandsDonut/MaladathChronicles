@@ -56,6 +56,9 @@ TagManager:
   - name: ScaledBars
     uniqueID: 2262292729
     locked: 0
+  - name: ScaledBarsSecond
+    uniqueID: 2180983635
+    locked: 0
   - name: UpperShadows
     uniqueID: 4196828451
     locked: 0
