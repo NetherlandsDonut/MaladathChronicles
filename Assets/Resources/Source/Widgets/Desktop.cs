@@ -6,6 +6,7 @@ using UnityEngine;
 
 using static Site;
 using static Root;
+using static Quest;
 using static Sound;
 using static Cursor;
 using static Defines;
@@ -205,6 +206,12 @@ public class Desktop : MonoBehaviour
             }
             else if (title == "Map")
             {
+                if (sitesToRespawn != null)
+                {
+                    foreach (var site in sitesToRespawn)
+                        Respawn("Site:" + site.name);
+                    sitesToRespawn = null;
+                }
                 var temp = screen.transform.localPosition;
                 if (queuedPath.Count > 0)
                 {
@@ -279,9 +286,12 @@ public class Desktop : MonoBehaviour
                     screen.transform.localPosition = newPosition;
                     if (screenLocked && Vector3.Distance(screen.transform.localPosition, cameraDestination) <= 5)
                     {
-                        if (currentSave.siteVisits == null) currentSave.siteVisits = new();
+                        currentSave.siteVisits ??= new();
                         if (currentSave.siteVisits.ContainsKey(currentSave.currentSite))
+                        {
                             currentSave.siteVisits[currentSave.currentSite]++;
+                            currentSave.player.QuestVisit(currentSave.currentSite);
+                        }
                         else currentSave.siteVisits.Add(currentSave.currentSite, 1);
                         Respawn("Site: " + currentSave.currentSite);
                         UnlockScreen();

@@ -43,4 +43,10 @@ public class Quest
 
     //List of all filtered quests by input search
     public static List<Quest> questsSearch;
+
+    //All sites that currently have quest markers on them
+    public static List<Site> sitesWithQuestMarkers;
+
+    //All the sites that need to be respawned after entering the map again
+    public static List<Site> sitesToRespawn;
 }

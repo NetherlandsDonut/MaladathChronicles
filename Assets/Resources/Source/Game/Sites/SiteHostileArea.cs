@@ -6,15 +6,12 @@ using UnityEngine;
 
 using static Root;
 using static Root.Anchor;
-using static Root.RegionBackgroundType;
 
 using static Race;
-using static Sound;
+using static Quest;
 using static Faction;
-using static MapGrid;
 using static SaveGame;
 using static Coloring;
-using static SiteComplex;
 using static SiteInstance;
 
 public class SiteHostileArea : Site
@@ -171,6 +168,12 @@ public class SiteHostileArea : Site
             (h) => { BuildPath(); });
             if (currentSave.currentSite == name)
                 AddSmallButtonOverlay("PlayerLocation", 0, 2);
+            if (currentSave.player.QuestsAt(this, true).Count > 0)
+            {
+                AddSmallButtonOverlay("QuestMarker", 0, 2);
+                if (!sitesWithQuestMarkers.Contains(this))
+                    sitesWithQuestMarkers.Add(this);
+            }
         });
     }
 

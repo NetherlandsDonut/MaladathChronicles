@@ -8,8 +8,10 @@ using UnityEditor;
 using static Root;
 using static Race;
 using static Spec;
+using static Quest;
 using static Sound;
 using static Defines;
+using static SaveGame;
 
 public class Entity
 {
@@ -31,7 +33,7 @@ public class Entity
             stats.stats.Inc(stat.Key, stat.Value);
         mounts = new();
         inventory = new Inventory(items);
-        currentQuests = new() { Quest.quests[0] };
+        currentQuests = new() { quests[0] };
         completedQuests = new();
         learnedRecipes = new();
         professionSkills = new();
@@ -99,6 +101,65 @@ public class Entity
     //Also thanks to this you can accept quests that require
     //another quest in line first to be completed
     public List<string> completedQuests;
+
+    //Check if any quest can be done at a target site
+    public List<Quest> QuestsAt(Site site, bool oneIsEnough = false)
+    {
+        var list = new List<Quest>();
+        foreach (var quest in currentQuests)
+            foreach (var condition in quest.conditions)
+                if (!condition.IsDone())
+                {
+                    if (condition.type == "Visit" && condition.name == site.name)
+                        list.Add(quest);
+                    else if (condition.type == "Kill")
+                    {
+                        var h = (SiteHostileArea)site;
+                        if (h.commonEncounters != null && h.commonEncounters.Exists(x => x.who == condition.name))
+                            list.Add(quest);
+                        else if (h.rareEncounters != null && h.rareEncounters.Exists(x => x.who == condition.name))
+                            list.Add(quest);
+                        else if (h.eliteEncounters != null && h.eliteEncounters.Exists(x => x.who == condition.name))
+                            list.Add(quest);
+                    }
+                    if (oneIsEnough && list.Count > 0)
+                        return list;
+                }
+        return list;
+    }
+
+    public void QuestKill(string who)
+    {
+        var changed = false;
+        foreach (var quest in currentQuests)
+            foreach (var condition in quest.conditions)
+                if (condition.status != "Done" && condition.type == "Kill" && condition.name == who)
+                {
+                    condition.amountDone++;
+                    if (condition.amount <= condition.amountDone)
+                    {
+                        condition.status = "Done";
+                        changed = true;
+                    }
+                }
+        if (changed)
+        {
+            sitesToRespawn = sitesWithQuestMarkers.ToList();
+            sitesWithQuestMarkers = new();
+        }
+    }
+
+    public void QuestVisit(string site)
+    {
+        foreach (var quest in currentQuests)
+            foreach (var condition in quest.conditions)
+                if (condition.type == "Visit" && condition.name == site)
+                {
+                    condition.status = "Done";
+                    sitesWithQuestMarkers.RemoveAll(x => x.name == site);
+                    Respawn("Site:" + site);
+                }
+    }
 
     #endregion
 

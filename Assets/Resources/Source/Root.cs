@@ -240,6 +240,7 @@ public static class Root
 
     public static void OrderLoadingMap()
     {
+        Quest.sitesWithQuestMarkers = new();
         cameraBoundaryPoints = new();
         loadSites = windowBlueprints.FindAll(x => x.title.StartsWith("Site: "));
         if (!showSitesUnconditional)

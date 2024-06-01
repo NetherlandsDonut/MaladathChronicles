@@ -259,6 +259,7 @@ public class Board
                     else currentSave.siteProgress[area.name]++;
                 }
             }
+            player.QuestKill(enemy.name);
             if (enemy.kind == "Common")
             {
                 if (!currentSave.commonsKilled.ContainsKey(enemy.name))
