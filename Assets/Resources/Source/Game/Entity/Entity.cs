@@ -31,6 +31,8 @@ public class Entity
             stats.stats.Inc(stat.Key, stat.Value);
         mounts = new();
         inventory = new Inventory(items);
+        currentQuests = new() { Quest.quests[0] };
+        completedQuests = new();
         learnedRecipes = new();
         professionSkills = new();
         reputation = new();
@@ -87,6 +89,18 @@ public class Entity
         );
         InitialiseCombat();
     }
+
+    #region Questing
+
+    //List of all accepted quests
+    public List<Quest> currentQuests;
+    
+    //List of all completed quests so they cannot be taken again
+    //Also thanks to this you can accept quests that require
+    //another quest in line first to be completed
+    public List<string> completedQuests;
+
+    #endregion
 
     #region Experience & Leveling
 

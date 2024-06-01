@@ -21,6 +21,7 @@ public class FlyingElement : MonoBehaviour
 
     public void Update()
     {
+        Destroy(gameObject);
         if (transform.localPosition.y < -190.5f)
             Destroy(gameObject);
         else if (turn && !Board.board.temporaryElementsPlayer.Contains(gameObject) || !turn && !Board.board.temporaryElementsEnemy.Contains(gameObject))

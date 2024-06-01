@@ -14,6 +14,7 @@ using static Zone;
 using static Spec;
 using static Sound;
 using static Event;
+using static Quest;
 using static Mount;
 using static Board;
 using static Recipe;
@@ -141,6 +142,7 @@ public static class BlueprintDev
                 Serialize(enchants, "enchants", false, false, prefix);
                 Serialize(pvpRanks, "pvpranks", false, false, prefix);
                 Serialize(zones, "zones", false, false, prefix);
+                Serialize(quests, "quests", false, false, prefix);
                 Serialize(paths, "paths", false, false, prefix);
                 Serialize(defines, "defines", false, false, prefix);
             });

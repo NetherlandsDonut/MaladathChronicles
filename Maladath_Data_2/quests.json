@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Funny quest",
+    "requiredLevel": 1,
+    "faction": "Stormwind",
+    "requiredRank": "Neutral",
+    "money": 100,
+    "experience": 200,
+    "reputation": 2000,
+    "siteStart": "Northshire Abbey",
+    "sideEnd": "Northshire Abbey",
+    "conditions": [
+      {
+        "type": "Kill",
+        "name": "Kobold Vermin",
+        "amount": 3
+      }
+    ]
+  }
+]

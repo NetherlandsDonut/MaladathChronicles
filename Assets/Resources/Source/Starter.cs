@@ -7,6 +7,7 @@ using UnityEngine;
 using static Root;
 using static Zone;
 using static Font;
+using static Quest;
 using static Sound;
 using static Cursor;
 using static Talent;
@@ -184,6 +185,8 @@ public class Starter : MonoBehaviour
         enchants ??= new();
         Deserialize(ref zones, "zones", false, prefix);
         zones ??= new();
+        Deserialize(ref quests, "quests", false, prefix);
+        quests ??= new();
         Deserialize(ref paths, "paths", false, prefix);
         paths ??= new();
         Deserialize(ref defines, "defines", false, prefix);

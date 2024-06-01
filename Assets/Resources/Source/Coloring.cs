@@ -38,6 +38,16 @@ public static class Coloring
         else return "Hated";
     }
 
+    public static string ColorQuestLevel(int level)
+    {
+        if (currentSave == null) return null;
+        if (level - 4 > currentSave.player.level) return "Red";
+        else if (level - 2 > currentSave.player.level) return "Orange";
+        else if (level + 2 < currentSave.player.level && currentSave.player.WillGetExperience(level)) return "Green";
+        else if (!currentSave.player.WillGetExperience(level)) return null;
+        else return "Yellow";
+    }
+
     public static string ColorEntityLevel(int level)
     {
         if (currentSave == null) return "DarkGray";
