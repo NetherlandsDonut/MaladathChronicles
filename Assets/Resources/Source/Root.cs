@@ -89,7 +89,7 @@ public static class Root
         return temp;
     }
 
-    public static void Inc<TKey>(this Dictionary<TKey, int> dic, TKey source, int amount)
+    public static void Inc<TKey>(this Dictionary<TKey, int> dic, TKey source, int amount = 1)
     {
         if (dic.ContainsKey(source)) dic[source] += amount;
         else dic.Add(source, amount);

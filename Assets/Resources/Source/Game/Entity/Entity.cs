@@ -33,7 +33,7 @@ public class Entity
             stats.stats.Inc(stat.Key, stat.Value);
         mounts = new();
         inventory = new Inventory(items);
-        currentQuests = new() { quests[0] };
+        currentQuests = new() { quests[124], quests[24], quests[53], quests[153] };
         completedQuests = new();
         learnedRecipes = new();
         professionSkills = new();

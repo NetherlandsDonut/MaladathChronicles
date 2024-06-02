@@ -27,4 +27,13 @@ public class QuestCondition
             return currentSave.player.inventory.items.Sum(x => x.name == name ? x.amount : 0) >= amount;
         return status == "Done";
     }
+
+    //Checks whether this condition is already fulfilled
+    public string Print()
+    {
+        if (type == "Item") return name + ": " + amountDone + " / " + amount;
+        else if (type == "Kill") return name + ": " + amountDone + " / " + amount;
+        else if (type == "Visit") return name + " visited: " + (status == "Done" ? 1 : 0) + " / 1";
+        return "";
+    }
 }

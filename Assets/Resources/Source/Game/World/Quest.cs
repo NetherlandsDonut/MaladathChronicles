@@ -8,6 +8,9 @@ public class Quest
     //Required level to have this quest
     public int requiredLevel;
 
+    //Level of the quest
+    public int questLevel;
+
     //Reputation connected with the quest
     public string faction;
 
@@ -22,7 +25,19 @@ public class Quest
     public int experience;
 
     //Amount of reputation awarded to the quest faction
-    public int reputation;
+    public Dictionary<string, int> reputationGain;
+
+    //Eligble races for this quest
+    public List<string> races;
+
+    //Eligble classes for this quest
+    public List<string> classes;
+
+    //Description of the quest
+    public string description;
+
+    //Zone of the quest
+    public string zone;
 
     //Site where the quest is available for pickup
     public string siteStart;
@@ -33,7 +48,8 @@ public class Quest
     //Conditions for completing the quest
     public List<QuestCondition> conditions;
 
-    public string Icon() => "Zone" + Site.FindSite(x => x.name == siteStart).zone.Clean();
+    //Icon for the quest
+    public string Icon() => "Zone" + zone.Clean();
 
     //Currently selected quest
     public static Quest quest;

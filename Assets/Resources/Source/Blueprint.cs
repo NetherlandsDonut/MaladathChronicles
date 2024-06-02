@@ -51,7 +51,7 @@ public class Blueprint
 
     public string title;
     public Action actions;
-    public bool upperUI;
+    public bool upperUI;    
 
     public static List<Blueprint> windowBlueprints = new()
     {
@@ -1933,8 +1933,9 @@ public class Blueprint
             SetRegionGroupHeight(281);
             AddHeaderRegion(() =>
             {
-                AddLine("Quest log");
-                //AddLine("Quest amount: " + currentSave.player.currentQuests.Count);
+                AddLine("Quest Log");
+                AddLine("Current quests: ", "DarkGray");
+                AddText("" + currentSave.player.currentQuests.Count, "Gray");
                 AddBigButton("MenuQuestLog");
             });
             AddHeaderRegion(() =>
@@ -1966,7 +1967,7 @@ public class Blueprint
                     AddButtonRegion(() =>
                     {
                         var quest = quests[index + 11 * regionGroup.pagination()];
-                        AddLine("[" + quest.requiredLevel + "] " + quest.name, "Black");
+                        AddLine("[" + quest.questLevel + "] " + quest.name, "Black");
                         AddSmallButton(quest.Icon());
                     },
                     (h) =>
@@ -1975,7 +1976,7 @@ public class Blueprint
                         Respawn("Quest");
                         PlaySound("DesktopInstanceOpen");
                     });
-                    var color = ColorQuestLevel(quests[index + 11 * regionGroup.pagination()].requiredLevel);
+                    var color = ColorQuestLevel(quests[index + 11 * regionGroup.pagination()].questLevel);
                     if (color != null) SetRegionBackgroundAsImage("Sprites/Textures/SkillUp" + color);
                 }
                 else if (quests.Count == index + 11 * regionGroup.pagination())
@@ -1994,16 +1995,38 @@ public class Blueprint
             SetRegionGroupHeight(281);
             AddHeaderRegion(() =>
             {
-                AddLine(quest.name + ":", "Gray");
+                AddLine(quest.name, "Black");
                 AddSmallButton("OtherClose", (h) =>
                 {
                     CloseWindow("Quest");
                     PlaySound("DesktopInstanceClose");
                 });
             });
+            var color = ColorQuestLevel(quest.requiredLevel);
+            if (color != null) SetRegionBackgroundAsImage("Sprites/Textures/SkillUp" + color);
+            if (quest.description != null)
+            {
+                AddHeaderRegion(() =>
+                {
+                    AddLine("Description:");
+                });
+                new Description()
+                { regions = new() { new() { regionType = "Padding", contents = new() { new ()
+                    {
+                        { "Color", "DarkGray" },
+                        { "Text", quest.description }
+                    }
+                } } } }.Print(null, null, 190, null);
+            }
+            AddHeaderRegion(() =>
+            {
+                AddLine("Details:");
+            });
             AddPaddingRegion(() =>
             {
-                AddLine("", "Gray");
+                foreach (var condition in quest.conditions)
+                    AddLine(condition.Print());
+                SetRegionAsGroupExtender();
             });
         }),
         new("QuestSort", () => {

@@ -250,48 +250,43 @@ public class Board
             var nextProgression = area.progression.FindAll(x => x.point - 1 == (currentSave.siteProgress.ContainsKey(area.name) ? currentSave.siteProgress[area.name] : 0));
             var progBosses = progression.FindAll(x => x.type == "Boss");
             var nextProgBosses = nextProgression.FindAll(x => x.type == "Boss");
-            if (area != null && enemy.kind != "Elite")
+
+            //If you just defeated an enemy that wasn't a boss and none bosses block your way
+            //in progression then increase your progression in the area by one point
+            if (area != null && enemy.kind != "Elite" && progBosses.Count > 0 && progBosses.All(x => currentSave.elitesKilled.ContainsKey(x.bossName)) || progBosses.Count == 0)
             {
-                if (progBosses.Count > 0 && progBosses.All(x => currentSave.elitesKilled.ContainsKey(x.bossName)) || progBosses.Count == 0)
-                {
-                    if (!currentSave.siteProgress.ContainsKey(area.name))
-                        currentSave.siteProgress.Add(area.name, 1);
-                    else currentSave.siteProgress[area.name]++;
-                }
+                if (!currentSave.siteProgress.ContainsKey(area.name))
+                    currentSave.siteProgress.Add(area.name, 1);
+                else currentSave.siteProgress[area.name]++;
             }
+
+            //Make progress on quests requiring you to kill certain enemies
             player.QuestKill(enemy.name);
-            if (enemy.kind == "Common")
+
+            //Add +1 to the amount of times you defeated this enemy
+            //Depending on the rarity of the enemy add +1 to the right list
+            switch (enemy.kind)
             {
-                if (!currentSave.commonsKilled.ContainsKey(enemy.name))
-                    currentSave.commonsKilled.Add(enemy.name, 1);
-                else currentSave.commonsKilled[enemy.name]++;
+                case "Common": currentSave.commonsKilled.Inc(enemy.name); break;
+                case "Rare": currentSave.raresKilled.Inc(enemy.name); break;
+                case "Elite": currentSave.elitesKilled.Inc(enemy.name); break;
             }
-            else if (enemy.kind == "Rare")
-            {
-                if (!currentSave.raresKilled.ContainsKey(enemy.name))
-                    currentSave.raresKilled.Add(enemy.name, 1);
-                else currentSave.raresKilled[enemy.name]++;
-            }
-            else if (enemy.kind == "Elite")
-            {
-                if (!currentSave.elitesKilled.ContainsKey(enemy.name))
-                    currentSave.elitesKilled.Add(enemy.name, 1);
-                else currentSave.elitesKilled[enemy.name]++;
-            }
+
+            //Unlock new areas
             foreach (var unlockArea in progression.FindAll(x => x.type == "Area"))
                 if (!currentSave.unlockedAreas.Contains(unlockArea.areaName) && progBosses.Count > 0 && progBosses.All(x => currentSave.elitesKilled.ContainsKey(x.bossName)))
                     currentSave.unlockedAreas.Add(unlockArea.areaName);
             foreach (var unlockArea in nextProgression.FindAll(x => x.type == "Area"))
                 if (!currentSave.unlockedAreas.Contains(unlockArea.areaName) && nextProgBosses.Count == 0)
                     currentSave.unlockedAreas.Add(unlockArea.areaName);
-            if (area != null && area.instancePart)
-                SwitchDesktop("Instance");
-            else if (area != null && area.complexPart)
-                SwitchDesktop("Complex");
-            else
-                SwitchDesktop("HostileArea");
+
+            //Exit board view
+            if (area != null && area.instancePart) SwitchDesktop("Instance");
+            else if (area != null && area.complexPart) SwitchDesktop("Complex");
+            else SwitchDesktop("HostileArea");
             CDesktop.RespawnAll();
 
+            //Drop items
             var directDrop = enemyRace.droppedItems.Select(x => Item.items.Find(y => y.name == x)).ToList();
             var worldDrop = Item.items.FindAll(x => (x.dropRange == null && x.lvl >= enemy.level - 6 && x.lvl <= enemy.level || x.dropRange != null && enemy.level >= int.Parse(x.dropRange.Split('-')[0]) && enemy.level <= int.Parse(x.dropRange.Split('-')[1])) && x.source == "RareDrop");
             var instance = area.instancePart ? SiteInstance.instances.Find(x => x.wings.Any(y => y.areas.Any(z => z["AreaName"] == area.name))) : null;

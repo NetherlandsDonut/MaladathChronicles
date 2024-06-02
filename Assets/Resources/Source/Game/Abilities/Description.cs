@@ -56,6 +56,7 @@ public class DescriptionRegion
 
         string Process(string text)
         {
+            if (text == null) return "";
             if (Fn("PowerRange"))
             {
                 if (effector == null) return "? - ?";
