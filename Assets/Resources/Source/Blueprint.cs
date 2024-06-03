@@ -1948,7 +1948,7 @@ public class Blueprint
                     Respawn("QuestList");
                     PlaySound("DesktopInventorySort", 0.2f);
                 });
-                if (!CDesktop.windows.Exists(x => x.title == "QuestSort"))
+                if (!CDesktop.windows.Exists(x => x.title == "QuestSettings") && !CDesktop.windows.Exists(x => x.title == "QuestSort"))
                     AddSmallButton("OtherSort", (h) =>
                     {
                         SpawnWindowBlueprint("QuestSort");
@@ -1957,6 +1957,15 @@ public class Blueprint
                     });
                 else
                     AddSmallButton("OtherSortOff", (h) => { });
+                if (!CDesktop.windows.Exists(x => x.title == "QuestSettings") && !CDesktop.windows.Exists(x => x.title == "QuestSort"))
+                    AddSmallButton("OtherSettings", (h) =>
+                    {
+                        SpawnWindowBlueprint("QuestSettings");
+                        CloseWindow("QuestList");
+                        Respawn("QuestList");
+                    });
+                else
+                    AddSmallButton("OtherSettingsOff", (h) => { });
             });
             var regionGroup = CDesktop.LBWindow.LBRegionGroup;
             for (int i = 0; i < 11; i++)
@@ -1967,7 +1976,7 @@ public class Blueprint
                     AddButtonRegion(() =>
                     {
                         var quest = quests[index + 11 * regionGroup.pagination()];
-                        AddLine("[" + quest.questLevel + "] " + quest.name, "Black");
+                        AddLine((settings.questLevel.Value() ? "[" + quest.questLevel + "] " : "") + quest.name, "Black");
                         AddSmallButton(quest.Icon());
                     },
                     (h) =>
@@ -2002,7 +2011,7 @@ public class Blueprint
                     PlaySound("DesktopInstanceClose");
                 });
             });
-            var color = ColorQuestLevel(quest.requiredLevel);
+            var color = ColorQuestLevel(quest.questLevel);
             if (color != null) SetRegionBackgroundAsImage("Sprites/Textures/SkillUp" + color);
             if (quest.description != null)
             {
@@ -2022,12 +2031,8 @@ public class Blueprint
             {
                 AddLine("Details:");
             });
-            AddPaddingRegion(() =>
-            {
-                foreach (var condition in quest.conditions)
-                    AddLine(condition.Print());
-                SetRegionAsGroupExtender();
-            });
+            foreach (var condition in quest.conditions)
+                condition.Print();
         }),
         new("QuestSort", () => {
             SetAnchor(Center);
@@ -2055,14 +2060,49 @@ public class Blueprint
             });
             AddButtonRegion(() =>
             {
-                AddLine("By minimum level", "Black");
+                AddLine("By quest level", "Black");
             },
             (h) =>
             {
-                currentSave.player.currentQuests = currentSave.player.currentQuests.OrderBy(x => x.requiredLevel).ToList();
+                currentSave.player.currentQuests = currentSave.player.currentQuests.OrderBy(x => x.questLevel).ToList();
                 CloseWindow("QuestSort");
                 CDesktop.RespawnAll();
                 PlaySound("DesktopInventorySort", 0.2f);
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("By zone", "Black");
+            },
+            (h) =>
+            {
+                currentSave.player.currentQuests = currentSave.player.currentQuests.OrderBy(x => x.zone).ToList();
+                CloseWindow("QuestSort");
+                CDesktop.RespawnAll();
+                PlaySound("DesktopInventorySort", 0.2f);
+            });
+        }),
+        new("QuestSettings", () => {
+            SetAnchor(Center);
+            AddRegionGroup();
+            SetRegionGroupWidth(182);
+            AddHeaderRegion(() =>
+            {
+                AddLine("Quest Log settings:");
+                AddSmallButton("OtherClose", (h) =>
+                {
+                    CloseWindow("QuestSettings");
+                    CDesktop.RespawnAll();
+                });
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("Show quest level", "Black");
+                AddCheckbox(settings.questLevel);
+            },
+            (h) =>
+            {
+                settings.questLevel.Invert();
+                CDesktop.RespawnAll();
             });
         }),
 

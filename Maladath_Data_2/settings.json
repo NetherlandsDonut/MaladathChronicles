@@ -1,7 +1,7 @@
 {
   "selectedRealm": "Whitemane",
   "selectedRealmRanking": "Whitemane",
-  "selectedCharacter": "Vuzundah",
+  "selectedCharacter": "Ember",
   "pixelPerfectVision": {
     "value": "False"
   },
@@ -15,6 +15,9 @@
     "value": "False"
   },
   "bigRarityIndicators": {
+    "value": "False"
+  },
+  "questLevel": {
     "value": "False"
   },
   "upgradeIndicators": {

@@ -7,6 +7,7 @@ using UnityEngine;
 using static Root;
 using static Root.Anchor;
 
+using static Quest;
 using static Faction;
 using static Coloring;
 using static SaveGame;
@@ -126,10 +127,33 @@ public class SiteInstance : Site
                             }
                         });
                     }
+                AddHeaderRegion(() =>
+                {
+                    AddLine("Quests:", "Gray");
+                });
+                foreach (var quest in currentSave.player.QuestsAt(this))
+                {
+                    var con = quest.conditions.FindAll(x => !x.IsDone() && x.Where().Contains(this));
+                    if (con.Count > 0)
+                    {
+                        AddPaddingRegion(() =>
+                        {
+                            AddLine(quest.name);
+                        });
+                        foreach (var condition in quest.conditions)
+                            condition.Print(false);
+                    }
+                }
             },
             (h) => { BuildPath(); });
             if (currentSave.currentSite == name)
                 AddSmallButtonOverlay("PlayerLocation", 0, 2);
+            if (currentSave.player.QuestsAt(this, true).Count > 0)
+            {
+                AddSmallButtonOverlay("QuestMarker", 0, 2);
+                if (!sitesWithQuestMarkers.Contains(this))
+                    sitesWithQuestMarkers.Add(this);
+            }
         });
     }
 

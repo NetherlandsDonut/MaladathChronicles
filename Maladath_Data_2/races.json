@@ -8360,7 +8360,7 @@
     "subcategory": "Goblin",
     "side": "Neutral",
     "kind": "Common",
-    "portrait": "PortraitGoblinAlternate",
+    "portrait": "PortraitGoblinMale",
     "vitality": 1.0,
     "abilities": {}
   },

@@ -2,6 +2,9 @@ using System.Collections.Generic;
 
 public class Quest
 {
+    //ID of the quest
+    public int questID;
+
     //Name of the quest
     public string name;
 

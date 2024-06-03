@@ -11,7 +11,6 @@ using static Spec;
 using static Quest;
 using static Sound;
 using static Defines;
-using static SaveGame;
 
 public class Entity
 {
@@ -34,6 +33,9 @@ public class Entity
         mounts = new();
         inventory = new Inventory(items);
         currentQuests = new() { quests[124], quests[24], quests[53], quests[153] };
+        currentQuests.Add(quests.Find(x => x.conditions.Count > 1 && x.conditions.Any(y => y.type == "Kill")));
+        currentQuests.Add(quests.Find(x => x.conditions.Count > 1 && x.conditions.Any(y => y.type == "Item")));
+        currentQuests.Add(quests.Find(x => x.conditions.Count == 1 && x.conditions.Any(y => y.type == "Item")));
         completedQuests = new();
         learnedRecipes = new();
         professionSkills = new();
@@ -100,7 +102,7 @@ public class Entity
     //List of all completed quests so they cannot be taken again
     //Also thanks to this you can accept quests that require
     //another quest in line first to be completed
-    public List<string> completedQuests;
+    public List<int> completedQuests;
 
     //Check if any quest can be done at a target site
     public List<Quest> QuestsAt(Site site, bool oneIsEnough = false)
@@ -110,22 +112,46 @@ public class Entity
             foreach (var condition in quest.conditions)
                 if (!condition.IsDone())
                 {
+                    var yes = false;
                     if (condition.type == "Visit" && condition.name == site.name)
-                        list.Add(quest);
+                        yes = true;
                     else if (condition.type == "Kill")
                     {
                         var h = (SiteHostileArea)site;
                         if (h.commonEncounters != null && h.commonEncounters.Exists(x => x.who == condition.name))
-                            list.Add(quest);
+                            yes = true;
                         else if (h.rareEncounters != null && h.rareEncounters.Exists(x => x.who == condition.name))
-                            list.Add(quest);
+                            yes = true;
                         else if (h.eliteEncounters != null && h.eliteEncounters.Exists(x => x.who == condition.name))
-                            list.Add(quest);
+                            yes = true;
+                    }
+                    if (yes)
+                    {
+                        list.Add(quest);
+                        break;
                     }
                     if (oneIsEnough && list.Count > 0)
                         return list;
                 }
         return list;
+    }
+
+    //Check if any quest can be done at a target site
+    public List<Quest> QuestsAt(SiteComplex complex, bool oneIsEnough = false)
+    {
+        var list = new List<Quest>();
+        foreach (var site in complex.sites.Select(x => Site.FindSite(y => y.name == x["SiteName"])))
+            list = list.Concat(QuestsAt(site, oneIsEnough)).ToList();
+        return list.Distinct().ToList();
+    }
+
+    //Check if any quest can be done at a target site
+    public List<Quest> QuestsAt(SiteInstance instance, bool oneIsEnough = false)
+    {
+        var list = new List<Quest>();
+        foreach (var site in instance.wings.SelectMany(x => x.areas.Select(z => Site.FindSite(y => y.name == z["AreaName"]))))
+            list = list.Concat(QuestsAt(site, oneIsEnough)).ToList();
+        return list.Distinct().ToList();
     }
 
     public void QuestKill(string who)

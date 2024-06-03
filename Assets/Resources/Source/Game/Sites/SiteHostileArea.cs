@@ -164,6 +164,23 @@ public class SiteHostileArea : Site
                         foreach (var enemy in rareEncounters)
                             AddSmallButton("OtherUnknown", (h) => { });
                     });
+                AddHeaderRegion(() =>
+                {
+                    AddLine("Quests:", "Gray");
+                });
+                foreach (var quest in currentSave.player.QuestsAt(this))
+                {
+                    var con = quest.conditions.FindAll(x => !x.IsDone() && x.Where().Contains(this));
+                    if (con.Count > 0)
+                    {
+                        AddPaddingRegion(() =>
+                        {
+                            AddLine(quest.name);
+                        });
+                        foreach (var condition in quest.conditions)
+                            condition.Print(false);
+                    }
+                }
             },
             (h) => { BuildPath(); });
             if (currentSave.currentSite == name)

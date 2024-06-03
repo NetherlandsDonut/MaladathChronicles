@@ -18,6 +18,7 @@ public class GameSettings
         fastCascading ??= new Bool(true);
         onlyHavingMaterials ??= new Bool(false);
         onlySkillUp ??= new Bool(false);
+        questLevel ??= new Bool(false);
 
         rarityIndicators ??= new Bool(false);
         bigRarityIndicators ??= new Bool(false);
@@ -48,6 +49,9 @@ public class GameSettings
 
     //Indicates whether the rarity indicators in the items are big or small
     public Bool bigRarityIndicators;
+
+    //Indicates whether quest level is shown in the quest log list
+    public Bool questLevel;
 
     //Indicates whether the items in the inventory show green arrows indicating that an item is an upgrade
     public Bool upgradeIndicators;
