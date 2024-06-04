@@ -17,6 +17,12 @@ public class FluidBar : MonoBehaviour
     //Reference to the splitter
     public SpriteRenderer split;
 
+    //Where to move the splitter slowly
+    public Vector3 newAim;
+
+    //Time the splitter is moving
+    public float time;
+
     //Initialises the fluid bars parameters
     public void Initialise(int barWidth, Func<int> max, Func<int> current)
     {
@@ -24,15 +30,27 @@ public class FluidBar : MonoBehaviour
         this.max = max;
         this.current = current;
         split = GetComponentsInChildren<SpriteRenderer>().First(x => x.name == "BarSplit");
+        UpdateFluidBar();
+        split.transform.localPosition = newAim;
     }
 
     //Updates the length of the fluid bar
     public void UpdateFluidBar()
     {
         var aim = (int)Math.Ceiling((double)barWidth / max() * current());
-        if (aim <= 0) aim = -2;
-        else if (aim < 2) aim = 2;
-        else if (aim > barWidth - 4) aim = barWidth;
-        split.transform.localPosition = new Vector2(aim - 2, -2);
+        if (aim <= 0) aim = -4;
+        else if (aim < 2) aim = 0;
+        else if (aim > barWidth - 4) aim = barWidth - 2;
+        newAim = new Vector3(aim, -2);
+        time = 0; 
+    }
+
+    public void Update()
+    {
+        if (Math.Abs((split.transform.localPosition - newAim).x) > 0.1f)
+        {
+            time += Time.deltaTime;
+            split.transform.localPosition = Vector3.Lerp(split.transform.localPosition, newAim, time / 6);
+        }
     }
 }

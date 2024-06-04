@@ -94986,6 +94986,947 @@
       "lastLoaded": "2024-06-04T09:15:43.1281215+02:00",
       "lastPlayed": "2024-06-04T09:18:54.4791114+02:00",
       "timePlayed": "00:34:36.5753779"
+    },
+    {
+      "player": {
+        "currentQuests": [
+          {
+            "questID": 136,
+            "name": "Captain Sander's Hidden Treasure",
+            "requiredLevel": 10,
+            "questLevel": 16,
+            "description": "Find Captain Sanders' footlocker and search it for the next clue.",
+            "zone": "Westfall",
+            "conditions": [
+              {
+                "type": "Visit",
+                "name": "?"
+              }
+            ]
+          },
+          {
+            "questID": 26,
+            "name": "A Lesson to Learn",
+            "requiredLevel": 16,
+            "questLevel": 16,
+            "races": [
+              "Tauren"
+            ],
+            "classes": [
+              "Druid"
+            ],
+            "description": "Speak with Dendrite Starblaze in the village of Nighthaven, Moonglade.",
+            "conditions": [
+              {
+                "type": "Visit",
+                "name": "?"
+              }
+            ]
+          },
+          {
+            "questID": 63,
+            "name": "Call of Water (Part 6)",
+            "requiredLevel": 20,
+            "questLevel": 23,
+            "races": [
+              "Troll",
+              "Tauren",
+              "Undead",
+              "Orc"
+            ],
+            "classes": [
+              "Shaman"
+            ],
+            "description": "Defeat the Corrupt Manifestation of Water and place the Corrupted Manifestation's Bracers along with the Remaining Drops of Purest Water on the Brazier of Everfount in Silverpine Forest.",
+            "conditions": [
+              {
+                "type": "Item",
+                "name": "Corrupt Manifestation's Bracers",
+                "amount": 1
+              },
+              {
+                "type": "Item",
+                "name": "Remaining Drops of Purest Water",
+                "amount": 1
+              }
+            ]
+          },
+          {
+            "questID": 166,
+            "name": "The Defias Brotherhood",
+            "requiredLevel": 14,
+            "questLevel": 22,
+            "reputationGain": {
+              "Stormwind": 500
+            },
+            "races": [
+              "Gnome",
+              "Night Elf",
+              "Dwarf",
+              "Human"
+            ],
+            "description": "Kill Edwin VanCleef and bring his head to Gryan Stoutmantle.",
+            "zone": "The Deadmines",
+            "conditions": [
+              {
+                "type": "Item",
+                "name": "Head of VanCleef",
+                "amount": 1
+              }
+            ]
+          },
+          {
+            "questID": 12,
+            "name": "The People's Militia",
+            "requiredLevel": 9,
+            "questLevel": 12,
+            "reputationGain": {
+              "Stormwind": 250
+            },
+            "races": [
+              "Gnome",
+              "Night Elf",
+              "Dwarf",
+              "Human"
+            ],
+            "description": "Gryan Stoutmantle wants you to kill 15 Defias Trappers and 15 Defias Smugglers then return to him on Sentinel Hill.",
+            "zone": "Westfall",
+            "conditions": [
+              {
+                "type": "Kill",
+                "name": "Defias Trapper",
+                "amount": 1
+              },
+              {
+                "type": "Kill",
+                "name": "Defias Smuggler",
+                "amount": 1
+              }
+            ]
+          },
+          {
+            "questID": 38,
+            "name": "Westfall Stew",
+            "requiredLevel": 9,
+            "questLevel": 13,
+            "reputationGain": {
+              "Stormwind": 250
+            },
+            "races": [
+              "Gnome",
+              "Night Elf",
+              "Dwarf",
+              "Human"
+            ],
+            "description": "Salma Saldean wants 3 Stringy Vulture Meat, 3 Goretusk Snouts, 3 Murloc Eyes, 3 Okra.",
+            "zone": "Westfall",
+            "conditions": [
+              {
+                "type": "Item",
+                "name": "Stringy Vulture Meat",
+                "amount": 1
+              },
+              {
+                "type": "Item",
+                "name": "Murloc Eye",
+                "amount": 1
+              },
+              {
+                "type": "Item",
+                "name": "Goretusk Snout",
+                "amount": 1
+              },
+              {
+                "type": "Item",
+                "name": "Okra",
+                "amount": 1
+              }
+            ]
+          },
+          {
+            "questID": 6,
+            "name": "Bounty on Garrick Padfoot",
+            "requiredLevel": 2,
+            "questLevel": 5,
+            "reputationGain": {
+              "Stormwind": 150
+            },
+            "races": [
+              "Gnome",
+              "Night Elf",
+              "Dwarf",
+              "Human"
+            ],
+            "description": "Kill Garrick Padfoot and bring his head to Deputy Willem at Northshire Abbey.",
+            "zone": "Elwynn Forest",
+            "conditions": [
+              {
+                "type": "Item",
+                "name": "Garrick's Head",
+                "amount": 1
+              }
+            ]
+          }
+        ],
+        "completedQuests": [],
+        "level": 1,
+        "experience": 20,
+        "reputation": {
+          "Southsea Pirates": 0,
+          "Razormane Tribe": 0,
+          "Pandaren": 0,
+          "Grimtotem Tribe": 0,
+          "Woodpaw Tribe": 0,
+          "The Burning Legion": 0,
+          "Darkspear Tribe": 4600,
+          "Stormwind": 0,
+          "Magram Clan": 0,
+          "Gelkis Clan": 0,
+          "Kolkar Clan": 0,
+          "Orgrimmar": 4250,
+          "Frostwolf Clan": 4250,
+          "The Defiler's": 4250,
+          "Thunder Bluff": 4250,
+          "Undercity": 4250,
+          "Ironforge": 0,
+          "Dark Iron Clan": 0,
+          "Wildhammer Clan": 0,
+          "Winterfall Tribe": 0,
+          "Gnomeregan": 0,
+          "Darnassus": 0,
+          "Bloodsail Buccaneers": 0,
+          "Syndicate": 0,
+          "Warsong Outriders": 4250,
+          "Stormpike Guard": 0,
+          "Silverwing Sentinels": 0,
+          "The League of Arathor": 0,
+          "Defias Brotherhood": 0,
+          "Dalaran": 0,
+          "Burning Blade Clan": 0,
+          "Burning Legion": 0,
+          "Shadow Council": 0,
+          "Gordunni Ogres": 0,
+          "Blackrock Clan": 0,
+          "Dragonmaw Clan": 0,
+          "Black Tooth Grin Clan": 0,
+          "Gurubashi Tribe": 0,
+          "Sandfury Tribe": 0,
+          "Twilight's Hammer": 0,
+          "Grimtotem Clan": 0,
+          "Razorfen Tribe": 0,
+          "Stonemaul Ogres": 4250,
+          "Dustbelcher Ogres": 0,
+          "Deadwind Ogres": 0,
+          "Venture Co.": 0,
+          "Southsea Freebooters": 0,
+          "Atal'ai Tribe": 0,
+          "Qiraji Empire": 0,
+          "Scarlet Crusade": 0,
+          "Vilebranch Tribe": 0,
+          "Witherbark Tribe": 0,
+          "Mossflayer Tribe": 0,
+          "Frostmane Tribe": 0,
+          "Bloodscalp Tribe": 0,
+          "Skullsplitter Tribe": 0,
+          "Shatterspear Tribe": 0,
+          "Rot Hide Tribe": 0,
+          "Scourge": 0,
+          "Smolderthorn Tribe": 0,
+          "Revantusk Tribe": 4250,
+          "Blackpaw Tribe": 0,
+          "Maraudine Clan": 0,
+          "Mosshide Tribe": 0,
+          "Deadwood Tribe": 0,
+          "Bloodtooth Tribe": 0,
+          "Bristleback Tribe": 0
+        },
+        "professionSkills": {},
+        "learnedRecipes": {},
+        "faction": "Darkspear Tribe",
+        "name": "Vuzundah",
+        "race": "Troll",
+        "spec": "Rogue",
+        "gender": "Female",
+        "homeLocation": "The Den",
+        "abilities": {
+          "Dual Wielding Proficiency": 0,
+          "One Handed Axe Proficiency": 1,
+          "One Handed Mace Proficiency": 1,
+          "One Handed Sword Proficiency": 1,
+          "Fist Weapon Proficiency": 1,
+          "Off Hand Proficiency": 1,
+          "Dagger Proficiency": 1,
+          "Leather Proficiency": 1
+        },
+        "actionBars": [],
+        "stats": {
+          "stats": {
+            "Stamina": 22,
+            "Strength": 22,
+            "Agility": 25,
+            "Intellect": 16,
+            "Spirit": 21,
+            "Earth Mastery": 2,
+            "Fire Mastery": 3,
+            "Air Mastery": 2,
+            "Water Mastery": 1,
+            "Frost Mastery": 3,
+            "Lightning Mastery": 2,
+            "Arcane Mastery": 1,
+            "Decay Mastery": 1,
+            "Shadow Mastery": 3,
+            "Order Mastery": 1
+          }
+        },
+        "inventory": {
+          "items": [
+            {
+              "rarity": "Common",
+              "name": "Hearthstone",
+              "icon": "itemmiscrune01",
+              "type": "Miscellaneous",
+              "ilvl": 1,
+              "amount": 1,
+              "maxStack": 1,
+              "stats": {
+                "stats": {}
+              }
+            },
+            {
+              "rarity": "Poor",
+              "name": "Thug Pants",
+              "icon": "itempants02",
+              "type": "Legs",
+              "armorClass": "Cloth",
+              "ilvl": 1,
+              "lvl": 1,
+              "armor": 2,
+              "amount": 1,
+              "maxStack": 1,
+              "price": 1,
+              "stats": {
+                "stats": {}
+              }
+            }
+          ],
+          "bags": []
+        },
+        "mounts": [],
+        "equipment": {
+          "Main Hand": {
+            "rarity": "Common",
+            "name": "Worn Dagger",
+            "icon": "itemshortblade05",
+            "detailedType": "Dagger",
+            "type": "One Handed",
+            "ilvl": 2,
+            "lvl": 1,
+            "minDamage": 1,
+            "maxDamage": 2,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 7,
+            "speed": 1.6,
+            "stats": {
+              "stats": {}
+            }
+          },
+          "Feet": {
+            "rarity": "Common",
+            "name": "Thug Boots",
+            "icon": "itemboots05",
+            "type": "Feet",
+            "ilvl": 1,
+            "lvl": 1,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 1,
+            "stats": {
+              "stats": {}
+            }
+          },
+          "Chest": {
+            "rarity": "Common",
+            "name": "Thug Shirt",
+            "icon": "itemshirt14",
+            "type": "Chest",
+            "ilvl": 1,
+            "lvl": 1,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 1,
+            "stats": {
+              "stats": {}
+            }
+          }
+        }
+      },
+      "hour": 7,
+      "minute": 1,
+      "second": 24,
+      "currentSite": "Valley of Trials",
+      "openedChests": {},
+      "siteProgress": {},
+      "commonsKilled": {},
+      "raresKilled": {},
+      "elitesKilled": {},
+      "siteVisits": {
+        "The Den": 1,
+        "Valley of Trials": 1
+      },
+      "unlockedAreas": [],
+      "vendorStock": {
+        "Goldshire:Toddrick": [
+          {
+            "item": "Tough Jerky",
+            "amount": 5,
+            "maxAmount": 5,
+            "restockSpeed": 30
+          },
+          {
+            "item": "Haunch of Meat",
+            "amount": 5,
+            "maxAmount": 5,
+            "restockSpeed": 30
+          },
+          {
+            "item": "Mutton Chop",
+            "amount": 5,
+            "maxAmount": 5,
+            "restockSpeed": 30
+          },
+          {
+            "item": "Wild Hog Shank",
+            "amount": 5,
+            "maxAmount": 5,
+            "restockSpeed": 30
+          },
+          {
+            "item": "Cured Ham Steak",
+            "amount": 5,
+            "maxAmount": 5,
+            "restockSpeed": 30
+          },
+          {
+            "item": "Roasted Quail",
+            "amount": 5,
+            "maxAmount": 5,
+            "restockSpeed": 30
+          }
+        ],
+        "Orgrimmar:Borstan": [
+          {
+            "item": "Tough Jerky",
+            "amount": 5,
+            "maxAmount": 5,
+            "restockSpeed": 30
+          },
+          {
+            "item": "Haunch of Meat",
+            "amount": 5,
+            "maxAmount": 5,
+            "restockSpeed": 30
+          },
+          {
+            "item": "Mutton Chop",
+            "amount": 5,
+            "maxAmount": 5,
+            "restockSpeed": 30
+          },
+          {
+            "item": "Wild Hog Shank",
+            "amount": 5,
+            "maxAmount": 5,
+            "restockSpeed": 30
+          },
+          {
+            "item": "Cured Ham Steak",
+            "amount": 5,
+            "maxAmount": 5,
+            "restockSpeed": 30
+          },
+          {
+            "item": "Roasted Quail",
+            "amount": 5,
+            "maxAmount": 5,
+            "restockSpeed": 30
+          }
+        ]
+      },
+      "startDate": "2024-06-04T09:56:40.4992438+02:00",
+      "lastLoaded": "2024-06-04T10:06:27.9602743+02:00",
+      "lastPlayed": "2024-06-04T10:06:54.3084204+02:00",
+      "timePlayed": "00:00:26.3481461"
+    },
+    {
+      "player": {
+        "currentQuests": [
+          {
+            "questID": 136,
+            "name": "Captain Sander's Hidden Treasure",
+            "requiredLevel": 10,
+            "questLevel": 16,
+            "description": "Find Captain Sanders' footlocker and search it for the next clue.",
+            "zone": "Westfall",
+            "conditions": [
+              {
+                "type": "Visit",
+                "name": "?"
+              }
+            ]
+          },
+          {
+            "questID": 26,
+            "name": "A Lesson to Learn",
+            "requiredLevel": 16,
+            "questLevel": 16,
+            "races": [
+              "Tauren"
+            ],
+            "classes": [
+              "Druid"
+            ],
+            "description": "Speak with Dendrite Starblaze in the village of Nighthaven, Moonglade.",
+            "conditions": [
+              {
+                "type": "Visit",
+                "name": "?"
+              }
+            ]
+          },
+          {
+            "questID": 63,
+            "name": "Call of Water (Part 6)",
+            "requiredLevel": 20,
+            "questLevel": 23,
+            "races": [
+              "Troll",
+              "Tauren",
+              "Undead",
+              "Orc"
+            ],
+            "classes": [
+              "Shaman"
+            ],
+            "description": "Defeat the Corrupt Manifestation of Water and place the Corrupted Manifestation's Bracers along with the Remaining Drops of Purest Water on the Brazier of Everfount in Silverpine Forest.",
+            "conditions": [
+              {
+                "type": "Item",
+                "name": "Corrupt Manifestation's Bracers",
+                "amount": 1
+              },
+              {
+                "type": "Item",
+                "name": "Remaining Drops of Purest Water",
+                "amount": 1
+              }
+            ]
+          },
+          {
+            "questID": 166,
+            "name": "The Defias Brotherhood",
+            "requiredLevel": 14,
+            "questLevel": 22,
+            "reputationGain": {
+              "Stormwind": 500
+            },
+            "races": [
+              "Gnome",
+              "Night Elf",
+              "Dwarf",
+              "Human"
+            ],
+            "description": "Kill Edwin VanCleef and bring his head to Gryan Stoutmantle.",
+            "zone": "The Deadmines",
+            "conditions": [
+              {
+                "type": "Item",
+                "name": "Head of VanCleef",
+                "amount": 1
+              }
+            ]
+          },
+          {
+            "questID": 12,
+            "name": "The People's Militia",
+            "requiredLevel": 9,
+            "questLevel": 12,
+            "reputationGain": {
+              "Stormwind": 250
+            },
+            "races": [
+              "Gnome",
+              "Night Elf",
+              "Dwarf",
+              "Human"
+            ],
+            "description": "Gryan Stoutmantle wants you to kill 15 Defias Trappers and 15 Defias Smugglers then return to him on Sentinel Hill.",
+            "zone": "Westfall",
+            "conditions": [
+              {
+                "type": "Kill",
+                "name": "Defias Trapper",
+                "amount": 1
+              },
+              {
+                "type": "Kill",
+                "name": "Defias Smuggler",
+                "amount": 1
+              }
+            ]
+          },
+          {
+            "questID": 38,
+            "name": "Westfall Stew",
+            "requiredLevel": 9,
+            "questLevel": 13,
+            "reputationGain": {
+              "Stormwind": 250
+            },
+            "races": [
+              "Gnome",
+              "Night Elf",
+              "Dwarf",
+              "Human"
+            ],
+            "description": "Salma Saldean wants 3 Stringy Vulture Meat, 3 Goretusk Snouts, 3 Murloc Eyes, 3 Okra.",
+            "zone": "Westfall",
+            "conditions": [
+              {
+                "type": "Item",
+                "name": "Stringy Vulture Meat",
+                "amount": 1
+              },
+              {
+                "type": "Item",
+                "name": "Murloc Eye",
+                "amount": 1
+              },
+              {
+                "type": "Item",
+                "name": "Goretusk Snout",
+                "amount": 1
+              },
+              {
+                "type": "Item",
+                "name": "Okra",
+                "amount": 1
+              }
+            ]
+          },
+          {
+            "questID": 6,
+            "name": "Bounty on Garrick Padfoot",
+            "requiredLevel": 2,
+            "questLevel": 5,
+            "reputationGain": {
+              "Stormwind": 150
+            },
+            "races": [
+              "Gnome",
+              "Night Elf",
+              "Dwarf",
+              "Human"
+            ],
+            "description": "Kill Garrick Padfoot and bring his head to Deputy Willem at Northshire Abbey.",
+            "zone": "Elwynn Forest",
+            "conditions": [
+              {
+                "type": "Item",
+                "name": "Garrick's Head",
+                "amount": 1
+              }
+            ]
+          }
+        ],
+        "completedQuests": [],
+        "level": 1,
+        "reputation": {
+          "Southsea Pirates": 0,
+          "Razormane Tribe": 0,
+          "Pandaren": 0,
+          "Grimtotem Tribe": 0,
+          "Woodpaw Tribe": 0,
+          "The Burning Legion": 0,
+          "Darkspear Tribe": 0,
+          "Stormwind": 4600,
+          "Magram Clan": 0,
+          "Gelkis Clan": 0,
+          "Kolkar Clan": 0,
+          "Orgrimmar": 0,
+          "Frostwolf Clan": 0,
+          "The Defiler's": 0,
+          "Thunder Bluff": 0,
+          "Undercity": 0,
+          "Ironforge": 4250,
+          "Dark Iron Clan": 0,
+          "Wildhammer Clan": 4250,
+          "Winterfall Tribe": 0,
+          "Gnomeregan": 4250,
+          "Darnassus": 4250,
+          "Bloodsail Buccaneers": 0,
+          "Syndicate": 0,
+          "Warsong Outriders": 0,
+          "Stormpike Guard": 4250,
+          "Silverwing Sentinels": 4250,
+          "The League of Arathor": 4250,
+          "Defias Brotherhood": 0,
+          "Dalaran": 4250,
+          "Burning Blade Clan": 0,
+          "Burning Legion": 0,
+          "Shadow Council": 0,
+          "Gordunni Ogres": 0,
+          "Blackrock Clan": 0,
+          "Dragonmaw Clan": 0,
+          "Black Tooth Grin Clan": 0,
+          "Gurubashi Tribe": 0,
+          "Sandfury Tribe": 0,
+          "Twilight's Hammer": 0,
+          "Grimtotem Clan": 0,
+          "Razorfen Tribe": 0,
+          "Stonemaul Ogres": 0,
+          "Dustbelcher Ogres": 0,
+          "Deadwind Ogres": 0,
+          "Venture Co.": 0,
+          "Southsea Freebooters": 0,
+          "Atal'ai Tribe": 0,
+          "Qiraji Empire": 0,
+          "Scarlet Crusade": 0,
+          "Vilebranch Tribe": 0,
+          "Witherbark Tribe": 0,
+          "Mossflayer Tribe": 0,
+          "Frostmane Tribe": 0,
+          "Bloodscalp Tribe": 0,
+          "Skullsplitter Tribe": 0,
+          "Shatterspear Tribe": 0,
+          "Rot Hide Tribe": 0,
+          "Scourge": 0,
+          "Smolderthorn Tribe": 0,
+          "Revantusk Tribe": 0,
+          "Blackpaw Tribe": 0,
+          "Maraudine Clan": 0,
+          "Mosshide Tribe": 0,
+          "Deadwood Tribe": 0,
+          "Bloodtooth Tribe": 0,
+          "Bristleback Tribe": 0
+        },
+        "professionSkills": {},
+        "learnedRecipes": {},
+        "faction": "Stormwind",
+        "name": "Delaney",
+        "race": "Human",
+        "spec": "Mage",
+        "gender": "Female",
+        "abilities": {
+          "Staff Proficiency": 1,
+          "Cloth Proficiency": 1,
+          "One Handed Sword Proficiency": 1,
+          "Off Hand Proficiency": 1,
+          "Dagger Proficiency": 1,
+          "Wand Proficiency": 1,
+          "Fireball": 0,
+          "Frostbolt": 0,
+          "Arcane Missiles": 0
+        },
+        "actionBars": [
+          "Fireball",
+          "Frostbolt",
+          "Arcane Missiles"
+        ],
+        "stats": {
+          "stats": {
+            "Stamina": 20,
+            "Strength": 20,
+            "Agility": 20,
+            "Intellect": 23,
+            "Spirit": 23,
+            "Earth Mastery": 1,
+            "Fire Mastery": 3,
+            "Air Mastery": 2,
+            "Water Mastery": 1,
+            "Frost Mastery": 2,
+            "Lightning Mastery": 1,
+            "Arcane Mastery": 3,
+            "Decay Mastery": 1,
+            "Shadow Mastery": 2,
+            "Order Mastery": 3
+          }
+        },
+        "inventory": {
+          "items": [
+            {
+              "rarity": "Common",
+              "name": "Hearthstone",
+              "icon": "itemmiscrune01",
+              "type": "Miscellaneous",
+              "ilvl": 1,
+              "amount": 1,
+              "maxStack": 1,
+              "stats": {
+                "stats": {}
+              }
+            }
+          ],
+          "bags": []
+        },
+        "mounts": [],
+        "equipment": {
+          "Main Hand": {
+            "rarity": "Common",
+            "name": "Bent Staff",
+            "icon": "itemstaff08",
+            "detailedType": "Staff",
+            "type": "Two Handed",
+            "ilvl": 2,
+            "lvl": 1,
+            "minDamage": 3,
+            "maxDamage": 5,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 9,
+            "speed": 2.9,
+            "stats": {
+              "stats": {}
+            }
+          },
+          "Feet": {
+            "rarity": "Common",
+            "name": "Apprentice's Boots",
+            "icon": "itemboots09",
+            "type": "Feet",
+            "ilvl": 1,
+            "lvl": 1,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 1,
+            "stats": {
+              "stats": {}
+            }
+          },
+          "Legs": {
+            "rarity": "Poor",
+            "name": "Apprentice's Pants",
+            "icon": "itempants01",
+            "type": "Legs",
+            "armorClass": "Cloth",
+            "ilvl": 1,
+            "lvl": 1,
+            "armor": 2,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 1,
+            "stats": {
+              "stats": {}
+            }
+          },
+          "Chest": {
+            "rarity": "Poor",
+            "name": "Apprentice's Robe",
+            "icon": "itemchestcloth23",
+            "type": "Chest",
+            "armorClass": "Cloth",
+            "ilvl": 1,
+            "lvl": 1,
+            "armor": 3,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 1,
+            "stats": {
+              "stats": {}
+            }
+          }
+        }
+      },
+      "hour": 7,
+      "currentSite": "Northshire Abbey",
+      "openedChests": {},
+      "siteProgress": {},
+      "commonsKilled": {},
+      "raresKilled": {},
+      "elitesKilled": {},
+      "siteVisits": {
+        "Northshire Abbey": 1
+      },
+      "unlockedAreas": [],
+      "vendorStock": {
+        "Goldshire:Toddrick": [
+          {
+            "item": "Tough Jerky",
+            "amount": 5,
+            "maxAmount": 5,
+            "restockSpeed": 30
+          },
+          {
+            "item": "Haunch of Meat",
+            "amount": 5,
+            "maxAmount": 5,
+            "restockSpeed": 30
+          },
+          {
+            "item": "Mutton Chop",
+            "amount": 5,
+            "maxAmount": 5,
+            "restockSpeed": 30
+          },
+          {
+            "item": "Wild Hog Shank",
+            "amount": 5,
+            "maxAmount": 5,
+            "restockSpeed": 30
+          },
+          {
+            "item": "Cured Ham Steak",
+            "amount": 5,
+            "maxAmount": 5,
+            "restockSpeed": 30
+          },
+          {
+            "item": "Roasted Quail",
+            "amount": 5,
+            "maxAmount": 5,
+            "restockSpeed": 30
+          }
+        ],
+        "Orgrimmar:Borstan": [
+          {
+            "item": "Tough Jerky",
+            "amount": 5,
+            "maxAmount": 5,
+            "restockSpeed": 30
+          },
+          {
+            "item": "Haunch of Meat",
+            "amount": 5,
+            "maxAmount": 5,
+            "restockSpeed": 30
+          },
+          {
+            "item": "Mutton Chop",
+            "amount": 5,
+            "maxAmount": 5,
+            "restockSpeed": 30
+          },
+          {
+            "item": "Wild Hog Shank",
+            "amount": 5,
+            "maxAmount": 5,
+            "restockSpeed": 30
+          },
+          {
+            "item": "Cured Ham Steak",
+            "amount": 5,
+            "maxAmount": 5,
+            "restockSpeed": 30
+          },
+          {
+            "item": "Roasted Quail",
+            "amount": 5,
+            "maxAmount": 5,
+            "restockSpeed": 30
+          }
+        ]
+      },
+      "startDate": "2024-06-04T10:06:59.4419723+02:00"
     }
   ]
 }

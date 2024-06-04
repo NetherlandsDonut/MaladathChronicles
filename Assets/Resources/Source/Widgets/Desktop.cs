@@ -43,6 +43,7 @@ public class Desktop : MonoBehaviour
 
     public void RespawnAll(bool onlyThoseWithMatchingInput = false)
     {
+        Debug.Log("RESPAWNED ALL");
         for (int i = windows.Count - 1; i >= 0; i--)
             if (!onlyThoseWithMatchingInput || windows[i].regionGroups.Any(x => x.regions.Any(y => y.inputLine != null && y.inputLine.text.text == inputDestination)))
                 windows[i].Respawn();
@@ -50,8 +51,9 @@ public class Desktop : MonoBehaviour
 
     public void RebuildAll()
     {
-        for (int i = windows.Count - 1; i >= 0; i--)
-            windows[i].Respawn();
+        //Debug.Log("REBUILT ALL");
+        //for (int i = windows.Count - 1; i >= 0; i--)
+        //    windows[i].Respawn();
     }
 
     public void SetTooltip(Tooltip tooltip)

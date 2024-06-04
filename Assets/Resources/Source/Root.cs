@@ -901,7 +901,7 @@ public static class Root
         thisBar.UpdateFluidBar();
     }
 
-    public static void AddResourceBar(int x, int y, string resource, Entity entity)
+    public static void AddResourceBar(int x, int y, string resource, string forWho, Entity entity)
     {
         var resourceBar = UnityEngine.Object.Instantiate(Resources.Load<GameObject>("Prefabs/PrefabResourceBar" + (x > 100 ? "Second" : "")));
         resourceBar.transform.parent = CDesktop.LBWindow.transform;
@@ -910,6 +910,8 @@ public static class Root
         resourceBar.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Textures/Bars/Resource" + resource + "Bar/FilledBar");
         thisBar.Initialise(65, () => entity.MaxResource(resource), () => entity.resources[resource]);
         thisBar.split.sprite = Resources.Load<Sprite>("Sprites/Textures/Bars/Resource" + resource + "Bar/Splitter");
+        if (Board.board.resourceBars.ContainsKey(forWho)) Board.board.resourceBars[forWho].Add(resource, thisBar);
+        else Board.board.resourceBars.Add(forWho, new() { { resource, thisBar } });
         thisBar.UpdateFluidBar();
     }
 

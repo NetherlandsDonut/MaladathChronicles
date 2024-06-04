@@ -115,10 +115,6 @@ public class SiteInstance : Site
                             }
                         });
                     }
-                AddHeaderRegion(() =>
-                {
-                    AddLine("Quests:", "Gray");
-                });
                 var q = currentSave.player.QuestsAt(this);
                 if (q.Count > 0)
                 {

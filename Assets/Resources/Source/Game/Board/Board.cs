@@ -37,6 +37,7 @@ public class Board
         actions = new List<Action>();
         log = new();
         healthBars = new();
+        resourceBars = new();
         Reset();
     }
 
@@ -60,6 +61,7 @@ public class Board
         actions = new List<Action>();
         log = new();
         healthBars = new();
+        resourceBars = new();
         Reset();
     }
 
@@ -110,6 +112,9 @@ public class Board
 
     //Health bars for player and the enemy
     public Dictionary<string, FluidBar> healthBars;
+
+    //Resource bars for player and the enemy
+    public Dictionary<string, Dictionary<string, FluidBar>> resourceBars;
 
     //Indicates whether it's currently the player's turn
     public bool playerTurn;
@@ -227,6 +232,13 @@ public class Board
     {
         foreach (var foo in healthBars)
             foo.Value.UpdateFluidBar();
+    }
+
+    public void UpdateResourceBars(string forWho, List<string> elements)
+    {
+        foreach (var foo in resourceBars[forWho])
+            if (elements.Contains(foo.Key))
+                foo.Value.UpdateFluidBar();
     }
 
     public void EndCombat(string result)

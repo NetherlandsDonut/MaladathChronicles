@@ -232,12 +232,18 @@ public class Blueprint
                     );
                 });
             AddRegionGroup();
-            SetRegionGroupWidth(86);
+            SetRegionGroupWidth(67);
             foreach (var element in elements1)
                 AddHeaderRegion(() =>
                 {
                     var value = board.enemy.resources.ToList().Find(x => x.Key == element).Value;
                     AddLine(value + "", value == 0 ? "DarkGray" : (value < board.enemy.MaxResource(element) ? "Gray" : "Green"));
+                    AddResourceBar(21, -19 * elements1.IndexOf(element), element, "Enemy", board.enemy);
+                });
+            AddRegionGroup();
+            foreach (var element in elements1)
+                AddHeaderRegion(() =>
+                {
                     AddSmallButton("Element" + elements2[elements1.IndexOf(element)] + "Rousing",
                         null,
                         null,
@@ -264,6 +270,7 @@ public class Blueprint
                 {
                     var value = board.enemy.resources.ToList().Find(x => x.Key == element).Value;
                     AddLine(value + "", value == 0 ? "DarkGray" : (value < board.enemy.MaxResource(element) ? "Gray" : "Green"));
+                    AddResourceBar(107, -19 * elements2.IndexOf(element), element, "Enemy", board.enemy);
                 });
         }),
         new("EnemyBattleInfo", () => {
@@ -356,7 +363,7 @@ public class Blueprint
                 {
                     var value = board.player.resources.ToList().Find(x => x.Key == element).Value;
                     AddLine(value + "", value == 0 ? "DarkGray" : (value < board.player.MaxResource(element) ? "Gray" : "Green"));
-                    AddResourceBar(21, -19 * elements1.IndexOf(element), element, board.player);
+                    AddResourceBar(21, -19 * elements1.IndexOf(element), element, "Player", board.player);
                 });
             AddRegionGroup();
             foreach (var element in elements1)
@@ -388,7 +395,7 @@ public class Blueprint
                 {
                     var value = board.player.resources.ToList().Find(x => x.Key == element).Value;
                     AddLine(value + "", value == 0 ? "DarkGray" : (value < board.player.MaxResource(element) ? "Gray" : "Green"));
-                    AddResourceBar(107, -19 * elements2.IndexOf(element), element, board.player);
+                    AddResourceBar(107, -19 * elements2.IndexOf(element), element, "Player", board.player);
                 });
         }),
         new("PlayerBattleInfo", () => {

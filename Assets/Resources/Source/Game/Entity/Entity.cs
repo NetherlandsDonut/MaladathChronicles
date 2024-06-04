@@ -388,8 +388,8 @@ public class Entity
             else if (this.resources[resource] < 0)
                 this.resources[resource] = 0;
         }
+        Board.board.UpdateResourceBars(Board.board.player == this ? "Player" : "Enemy", resources.Keys.ToList());
         Respawn((Board.board.player == this ? "Player" : "Enemy") + "BattleInfo");
-        Respawn((Board.board.player == this ? "Player" : "Enemy") + "Resources");
     }
 
     //Detracts specific resource in given amount from the entity
@@ -414,8 +414,8 @@ public class Entity
             else if (this.resources[resource] < 0)
                 this.resources[resource] = 0;
         }
+        Board.board.UpdateResourceBars(Board.board.player == this ? "Player" : "Enemy", resources.Keys.ToList());
         Respawn((Board.board.player == this ? "Player" : "Enemy") + "BattleInfo");
-        Respawn((Board.board.player == this ? "Player" : "Enemy") + "Resources");
     }
 
     //Resets entity's resources to their base amount
