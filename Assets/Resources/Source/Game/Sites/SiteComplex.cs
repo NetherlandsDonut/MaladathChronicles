@@ -71,15 +71,6 @@ public class SiteComplex : Site
             Blueprint.windowBlueprints.Add(new Blueprint("Site: " + name, () => PrintSite()));
     }
 
-    //Complex description showed in the left side of the screen
-    public List<string> description;
-
-    //List of all sites that this complex contains
-    //Keys provide information what type of site it is
-    //Values provide information what is the name of the site
-    //EXAMPLE: { "SiteType": "Raid", "SiteName": "Molten Core" } 
-    public List<Dictionary<string, string>> sites;
-
     //Currently opened complex
     public static SiteComplex complex;
 
@@ -124,21 +115,17 @@ public class SiteComplex : Site
                         AddLine(site["SiteName"], "DarkGray");
                         AddSmallButton("Site" + site["SiteType"], (h) => { });
                     });
-                AddHeaderRegion(() =>
+                var q = currentSave.player.QuestsAt(this);
+                if (q.Count > 0)
                 {
-                    AddLine("Quests:", "Gray");
-                });
-                foreach (var quest in currentSave.player.QuestsAt(this))
-                {
-                    var con = quest.conditions.FindAll(x => !x.IsDone() && x.Where().Contains(this));
-                    if (con.Count > 0)
+                    AddHeaderRegion(() => { AddLine("Quests:", "Gray"); });
+                    foreach (var quest in q)
                     {
-                        AddPaddingRegion(() =>
-                        {
-                            AddLine(quest.name);
-                        });
-                        foreach (var condition in quest.conditions)
-                            condition.Print(false);
+                        var con = quest.conditions.FindAll(x => !x.IsDone() && x.Where().Contains(this));
+                        AddPaddingRegion(() => { AddLine(quest.name); });
+                        if (con.Count > 0)
+                            foreach (var condition in con)
+                                condition.Print(false);
                     }
                 }
             },

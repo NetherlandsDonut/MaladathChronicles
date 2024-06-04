@@ -164,21 +164,17 @@ public class SiteHostileArea : Site
                         foreach (var enemy in rareEncounters)
                             AddSmallButton("OtherUnknown", (h) => { });
                     });
-                AddHeaderRegion(() =>
+                var q = currentSave.player.QuestsAt(this);
+                if (q.Count > 0)
                 {
-                    AddLine("Quests:", "Gray");
-                });
-                foreach (var quest in currentSave.player.QuestsAt(this))
-                {
-                    var con = quest.conditions.FindAll(x => !x.IsDone() && x.Where().Contains(this));
-                    if (con.Count > 0)
+                    AddHeaderRegion(() => { AddLine("Quests:", "Gray"); });
+                    foreach (var quest in q)
                     {
-                        AddPaddingRegion(() =>
-                        {
-                            AddLine(quest.name);
-                        });
-                        foreach (var condition in quest.conditions)
-                            condition.Print(false);
+                        var con = quest.conditions.FindAll(x => !x.IsDone() && x.Where().Contains(this));
+                        AddPaddingRegion(() => { AddLine(quest.name); });
+                        if (con.Count > 0)
+                            foreach (var condition in con)
+                                condition.Print(false);
                     }
                 }
             },
@@ -217,46 +213,6 @@ public class SiteHostileArea : Site
     {
         return new Entity(boss.levelMax != 0 ? random.Next(boss.levelMin, boss.levelMax + 1) : boss.levelMin, races.Find(x => x.name == boss.who));
     }
-
-    //Tells program whether this area has a special
-    //clear background that is shown only after clearing the area
-    public bool specialClearBackground;
-
-    //List of possible common encounters in this area
-    public List<Encounter> commonEncounters;
-
-    //List of possible rare encounters in this area
-    public List<Encounter> rareEncounters;
-
-    //List of special elite encounters in this area
-    public List<Encounter> eliteEncounters;
-
-    //Size of the area
-    public int areaSize;
-
-    //Names for area sizes
-    public static Dictionary<int, string> areaSizeNames = new()
-    {
-        { 1, "Tiny" },
-        { 2, "Tiny" },
-        { 3, "Small" },
-        { 4, "Medium" },
-        { 5, "Large" },
-        { 6, "Huge" },
-    };
-
-    //List of of progression points in the area
-    public List<AreaProgression> progression;
-
-    //Automatically calculated number that suggests
-    //at which level player should enter this area
-    [NonSerialized] public int recommendedLevel;
-
-    //Determines whether this area is part of an instance
-    [NonSerialized] public bool instancePart;
-
-    //Determines whether this area is part of a complex
-    [NonSerialized] public bool complexPart;
 
     //Currently opened hostile area
     public static SiteHostileArea area;

@@ -117,12 +117,11 @@ public class Entity
                         yes = true;
                     else if (condition.type == "Kill")
                     {
-                        var h = (SiteHostileArea)site;
-                        if (h.commonEncounters != null && h.commonEncounters.Exists(x => x.who == condition.name))
+                        if (site.commonEncounters != null && site.commonEncounters.Exists(x => x.who == condition.name))
                             yes = true;
-                        else if (h.rareEncounters != null && h.rareEncounters.Exists(x => x.who == condition.name))
+                        else if (site.rareEncounters != null && site.rareEncounters.Exists(x => x.who == condition.name))
                             yes = true;
-                        else if (h.eliteEncounters != null && h.eliteEncounters.Exists(x => x.who == condition.name))
+                        else if (site.eliteEncounters != null && site.eliteEncounters.Exists(x => x.who == condition.name))
                             yes = true;
                     }
                     if (yes)

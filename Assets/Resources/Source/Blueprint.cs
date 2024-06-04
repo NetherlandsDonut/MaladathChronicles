@@ -5432,6 +5432,7 @@ public class Blueprint
                 PlaySound("DesktopCharacterSheetClose");
                 CloseDesktop("QuestLog");
             });
+            AddPaginationHotkeys();
         }),
         new("TalentScreen", () =>
         {

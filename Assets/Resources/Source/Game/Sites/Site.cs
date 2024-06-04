@@ -48,6 +48,47 @@ public class Site
     //Is fishing possible at this site
     public bool fishing;
 
+    //Tells program whether this area has a special
+    //clear background that is shown only after clearing the area
+    public bool specialClearBackground;
+
+    //List of possible common encounters in this area
+    public List<Encounter> commonEncounters;
+
+    //List of possible rare encounters in this area
+    public List<Encounter> rareEncounters;
+
+    //List of special elite encounters in this area
+    public List<Encounter> eliteEncounters;
+
+    //Size of the area
+    public int areaSize;
+
+    //List of of progression points in the area
+    public List<AreaProgression> progression;
+
+    //Automatically calculated number that suggests
+    //at which level player should enter this area
+    [NonSerialized] public int recommendedLevel;
+
+    //Determines whether this area is part of an instance
+    [NonSerialized] public bool instancePart;
+
+    //Determines whether this area is part of a complex
+    [NonSerialized] public bool complexPart;
+
+    //Instance wings that store all the instance's areas
+    public List<InstanceWing> wings;
+
+    //List of items that can drop from enemies in this instance
+    public List<string> zoneDrop;
+
+    //List of all sites that this complex contains
+    //Keys provide information what type of site it is
+    //Values provide information what is the name of the site
+    //EXAMPLE: { "SiteType": "Raid", "SiteName": "Molten Core" } 
+    public List<Dictionary<string, string>> sites;
+
     //Initialisation method to fill automatic values
     //and remove empty collections to avoid serialising them later
     public virtual void Initialise() { }

@@ -50,18 +50,6 @@ public class SiteInstance : Site
         if (x != 0 && y != 0) Blueprint.windowBlueprints.Add(new Blueprint("Site: " + name, () => PrintSite()));
     }
 
-    //Determines whether this instance is a part of a complex
-    public bool complexPart;
-
-    //Instance description showed in the left side of the screen
-    public List<string> description;
-
-    //Instance wings that store all the instance's areas
-    public List<InstanceWing> wings;
-
-    //List of items that can drop from enemies in this instance
-    public List<string> zoneDrop;
-
     //Suggested level range for the player to enter this instance
     public (int, int) LevelRange()
     {
@@ -131,17 +119,17 @@ public class SiteInstance : Site
                 {
                     AddLine("Quests:", "Gray");
                 });
-                foreach (var quest in currentSave.player.QuestsAt(this))
+                var q = currentSave.player.QuestsAt(this);
+                if (q.Count > 0)
                 {
-                    var con = quest.conditions.FindAll(x => !x.IsDone() && x.Where().Contains(this));
-                    if (con.Count > 0)
+                    AddHeaderRegion(() => { AddLine("Quests:", "Gray"); });
+                    foreach (var quest in q)
                     {
-                        AddPaddingRegion(() =>
-                        {
-                            AddLine(quest.name);
-                        });
-                        foreach (var condition in quest.conditions)
-                            condition.Print(false);
+                        var con = quest.conditions.FindAll(x => !x.IsDone() && x.Where().Contains(this));
+                        AddPaddingRegion(() => { AddLine(quest.name); });
+                        if (con.Count > 0)
+                            foreach (var condition in con)
+                                condition.Print(false);
                     }
                 }
             },

@@ -37,15 +37,23 @@ public class QuestCondition
     {
         var list = new List<Site>();
         if (type == "Kill") list = SiteHostileArea.areas.FindAll(x => x.commonEncounters != null && x.commonEncounters.Exists(x => x.who == name) || x.rareEncounters != null && x.rareEncounters.Exists(x => x.who == name) || x.eliteEncounters != null && x.eliteEncounters.Exists(x => x.who == name)).Select(x => (Site)x).ToList();
-        else if (type == "Visit") list = new() { Site.FindSite(x => x.name == name) };
-        var com = list.FindAll(x => ((SiteHostileArea)x).complexPart);
-        var ins = list.FindAll(x => ((SiteHostileArea)x).instancePart);
-        var instances = ins.Select(x => SiteInstance.instances.Find(y => y.wings.Any(z => z.areas.Any(c => c["AreaName"] == x.name)))).ToList();
-        var complexes = com.Concat(instances.Where(x => x.complexPart).Select(x => SiteComplex.complexes.Find(y => y.sites.Any(z => z["SiteName"] == x.name))));
-        instances.RemoveAll(x => x.complexPart);
-        list.RemoveAll(x => com.Contains(x) || ins.Contains(x));
-        list = list.Concat(complexes).Concat(instances).ToList();
-        return list.FindAll(x => x != null && currentSave.siteVisits.ContainsKey(x.name));
+        else if (type == "Visit")
+        {
+            var find = Site.FindSite(x => x.name == name);
+            if (find != null) list = new() { find };
+        }
+        if (list.Count > 0)
+        {
+            var com = list.FindAll(x => x.complexPart);
+            var ins = list.FindAll(x => x.instancePart);
+            var instances = ins.Select(x => SiteInstance.instances.Find(y => y.wings.Any(z => z.areas.Any(c => c["AreaName"] == x.name)))).ToList();
+            var complexes = com.Concat(instances.Where(x => x.complexPart).Select(x => SiteComplex.complexes.Find(y => y.sites.Any(z => z["SiteName"] == x.name))));
+            instances.RemoveAll(x => x.complexPart);
+            list.RemoveAll(x => com.Contains(x) || ins.Contains(x));
+            list = list.Concat(complexes).Concat(instances).ToList();
+            return list.FindAll(x => x != null && currentSave.siteVisits.ContainsKey(x.name));
+        }
+        else return list;
     }
 
     //Checks whether this condition is already fulfilled
