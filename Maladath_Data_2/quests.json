@@ -1785,7 +1785,7 @@
     "name": "A Sticky Situation",
     "requiredLevel": "42",
     "questLevel": "48",
-    "zone": "The Hinterlands",
+    "zone": "Hinterlands",
     "previous": "650",
     "description": "Recover 10 bottles of Hinterlands Honey Ripple from the crates located around the abandoned Horde base in Skulk Rock.",
     "reputationGain": {
@@ -1887,7 +1887,7 @@
     "name": "Ripple Delivery",
     "requiredLevel": "42",
     "questLevel": "48",
-    "zone": "Orgrimmar",
+    "zone": "Durotar",
     "previous": "77",
     "description": "Deliver the barrel to Dran Droffers in Orgrimmar.",
     "reputationGain": {
@@ -5151,7 +5151,7 @@
     "name": "A Meal Served Cold",
     "requiredLevel": "35",
     "questLevel": "40",
-    "zone": "Stormwind City",
+    "zone": "Elwynn Forest",
     "description": "Kill a Cold Eye Basilisk, get a Chilled Basilisk Haunch, and return it to Angus Stern in the Blue Recluse.",
     "reputationGain": {
       "Stormwind": 500
@@ -5692,7 +5692,7 @@
     "name": "Errand for Apothecary Zinge",
     "requiredLevel": "38",
     "questLevel": "45",
-    "zone": "Undercity",
+    "zone": "Tirisfal Glades",
     "description": "Take the purchase order to Alessandro Luca in the Undercity.",
     "reputationGain": {
       "Undercity": 10
@@ -5773,7 +5773,7 @@
     "name": "The Ashenvale Hunt",
     "requiredLevel": "20",
     "questLevel": "20",
-    "zone": "Orgrimmar",
+    "zone": "Durotar",
     "description": "Speak with Senani Thunderheart at Splintertree Post, Ashenvale.",
     "races": [
       "Troll",
@@ -5828,7 +5828,7 @@
     "name": "Errand for Apothecary Zinge",
     "requiredLevel": "38",
     "questLevel": "45",
-    "zone": "Undercity",
+    "zone": "Tirisfal Glades",
     "previous": "232",
     "description": "Bring the Field Sampling Kit to Apothecary Zinge in the Undercity.",
     "reputationGain": {
@@ -6413,7 +6413,7 @@
     "name": "Until Death Do Us Part",
     "requiredLevel": "12",
     "questLevel": "15",
-    "zone": "Thunder Bluff",
+    "zone": "Mulgore",
     "description": "Place Clarice's Pendant on Yuriv's Tomb in Silverpine.",
     "races": [
       "Troll",
@@ -8139,7 +8139,7 @@
     "name": "Wine Shop Advert",
     "requiredLevel": "1",
     "questLevel": "2",
-    "zone": "Stormwind City",
+    "zone": "Elwynn Forest",
     "description": "Go to the Gallina Winery, and bring Suzetta Gallina the Wine Ticket for a free bottle of wine.",
     "reputationGain": {
       "Stormwind": 150
@@ -8165,7 +8165,7 @@
     "name": "Harlan Needs a Resupply",
     "requiredLevel": "1",
     "questLevel": "2",
-    "zone": "Stormwind City",
+    "zone": "Elwynn Forest",
     "description": "Go to the Canal Tailor Shop and bring Rema Schneider the Cloth Request from Harlan Bagley.",
     "reputationGain": {
       "Stormwind": 75
@@ -8191,7 +8191,7 @@
     "name": "Package for Thurman",
     "requiredLevel": "1",
     "questLevel": "2",
-    "zone": "Stormwind City",
+    "zone": "Elwynn Forest",
     "description": "Go to the Larson Clothiers in the Stormwind Mage Quarter, and give Thurman Schneider his Sewing Kit.",
     "reputationGain": {
       "Stormwind": 150
@@ -8217,7 +8217,7 @@
     "name": "A Noble Brew",
     "requiredLevel": "25",
     "questLevel": "30",
-    "zone": "Stormwind City",
+    "zone": "Elwynn Forest",
     "description": "Zardeth the Black Claw wants you to bring him a Tear of Tilloa from Darkshire and a Musquash Root from the Wetlands.",
     "races": [
       "Gnome",
@@ -8245,7 +8245,7 @@
     "name": "A Noble Brew",
     "requiredLevel": "25",
     "questLevel": "30",
-    "zone": "Stormwind City",
+    "zone": "Elwynn Forest",
     "previous": "335",
     "description": "Take the Black Claw Stout to Lord Wishock in the Hall of Petitioners.",
     "races": [
@@ -8451,7 +8451,7 @@
     "name": "Speaking of Fortitude",
     "requiredLevel": "20",
     "questLevel": "24",
-    "zone": "Stormwind City",
+    "zone": "Elwynn Forest",
     "description": "Go to the Royal Library in Stormwind Keep and speak with Milton Sheaf.  He can find for you the book on metallurgy that Brother Kristoff needs for his speech.",
     "reputationGain": {
       "Stormwind": 10
@@ -8477,7 +8477,7 @@
     "name": "Brother Paxton",
     "requiredLevel": "20",
     "questLevel": "24",
-    "zone": "Stormwind City",
+    "zone": "Elwynn Forest",
     "previous": "343",
     "description": "Speak with Brother Paxton in the Northshire Abbey.",
     "reputationGain": {
@@ -8504,7 +8504,7 @@
     "name": "Ink Supplies",
     "requiredLevel": "20",
     "questLevel": "24",
-    "zone": "Stormwind City",
+    "zone": "Elwynn Forest",
     "previous": "344",
     "description": "Speak with Foreman Oslow in Lakeshire and ask him for Rethban Iron Ore.",
     "reputationGain": {
@@ -8531,7 +8531,7 @@
     "name": "Return to Kristoff",
     "requiredLevel": "20",
     "questLevel": "24",
-    "zone": "Stormwind City",
+    "zone": "Elwynn Forest",
     "previous": "347",
     "description": "Return to Brother Kristoff in the Cathedral Square.  Give him the book The Stresses of Iron.",
     "reputationGain": {
@@ -8558,7 +8558,7 @@
     "name": "Rethban Ore",
     "requiredLevel": "20",
     "questLevel": "24",
-    "zone": "Stormwind City",
+    "zone": "Elwynn Forest",
     "previous": "345",
     "description": "Gather 5 loads of Rethban Ore and bring it to Brother Paxton in the Northshire Library.",
     "reputationGain": {
@@ -8605,7 +8605,7 @@
     "name": "Look to an Old Friend",
     "requiredLevel": "16",
     "questLevel": "31",
-    "zone": "Stormwind City",
+    "zone": "Elwynn Forest",
     "previous": "393",
     "description": "Speak to Elling Trias in Stormwind.",
     "races": [
@@ -8649,7 +8649,7 @@
     "name": "Stormpike's Delivery",
     "requiredLevel": "9",
     "questLevel": "15",
-    "zone": "Stormwind City",
+    "zone": "Elwynn Forest",
     "previous": "1097",
     "description": "Deliver the Package for Stormpike to Mountaineer Stormpike in Loch Modan.",
     "reputationGain": {
@@ -8752,7 +8752,7 @@
     "name": "The Lich's Identity",
     "requiredLevel": "5",
     "questLevel": "8",
-    "zone": "Undercity",
+    "zone": "Tirisfal Glades",
     "previous": "405",
     "description": "Bring the Lich's Spellbook to Bethor Iceshard in the Undercity.",
     "reputationGain": {
@@ -9150,7 +9150,7 @@
     "name": "The Unsent Letter",
     "requiredLevel": "16",
     "questLevel": "22",
-    "zone": "Stormwind City",
+    "zone": "Elwynn Forest",
     "description": "Deliver the Letter to the City Architect to Baros Alexston in Stormwind.",
     "reputationGain": {
       "Stormwind": 75
@@ -9566,7 +9566,7 @@
     "name": "Bazil Thredd",
     "requiredLevel": "16",
     "questLevel": "22",
-    "zone": "Stormwind City",
+    "zone": "Elwynn Forest",
     "previous": "373",
     "description": "Speak with Warden Thelwater in the Stockade.",
     "races": [
@@ -9617,7 +9617,7 @@
     "name": "The Curious Visitor",
     "requiredLevel": "16",
     "questLevel": "29",
-    "zone": "Stormwind City",
+    "zone": "Elwynn Forest",
     "previous": "391",
     "description": "Bring the Sealed Description of Thredd's Visitor to Baros Alexston in Stormwind.",
     "reputationGain": {
@@ -9644,7 +9644,7 @@
     "name": "Shadow of the Past",
     "requiredLevel": "16",
     "questLevel": "29",
-    "zone": "Stormwind City",
+    "zone": "Elwynn Forest",
     "previous": "392",
     "description": "Bring the Sealed Description of Thredd's Visitor to Master Mathias Shaw in Stormwind.",
     "reputationGain": {
@@ -9671,7 +9671,7 @@
     "name": "The Head of the Beast",
     "requiredLevel": "16",
     "questLevel": "31",
-    "zone": "Stormwind City",
+    "zone": "Elwynn Forest",
     "previous": "434",
     "description": "Speak to Mathias Shaw in Stormwind.",
     "races": [
@@ -9695,7 +9695,7 @@
     "name": "Brotherhood's End",
     "requiredLevel": "16",
     "questLevel": "31",
-    "zone": "Stormwind City",
+    "zone": "Elwynn Forest",
     "previous": "394",
     "description": "Speak with Baros Alexston in Stormwind.",
     "reputationGain": {
@@ -9722,7 +9722,7 @@
     "name": "An Audience with the King",
     "requiredLevel": "16",
     "questLevel": "31",
-    "zone": "Stormwind City",
+    "zone": "Elwynn Forest",
     "previous": "395",
     "description": "Deliver Baros Alexston's report on the Defias Brotherhood to King Varian Wrynn in Stormwind Keep.",
     "reputationGain": {
@@ -9749,7 +9749,7 @@
     "name": "You Have Served Us Well",
     "requiredLevel": "25",
     "questLevel": "30",
-    "zone": "Stormwind City",
+    "zone": "Elwynn Forest",
     "previous": "336",
     "description": "Speak with Zggi, the servant of Zardeth the Blackclaw, to claim your reward.",
     "races": [
@@ -9796,7 +9796,7 @@
     "name": "Humble Beginnings",
     "requiredLevel": "10",
     "questLevel": "15",
-    "zone": "Stormwind City",
+    "zone": "Elwynn Forest",
     "description": "Go to Baros Alexston's house in Westfall and search for his compass, then return it to him in Cathedral Square of Stormwind.",
     "reputationGain": {
       "Stormwind": 250
@@ -10595,7 +10595,7 @@
     "name": "The Attack!",
     "requiredLevel": "16",
     "questLevel": "31",
-    "zone": "Stormwind City",
+    "zone": "Elwynn Forest",
     "previous": "2746",
     "description": "Remain in the garden until Lord Gregor Lescovar and Marzon the Silent Blade have had their conversation. Afterwards, kill them both before returning to Elling Trias in Stormwind.",
     "reputationGain": {
@@ -11737,7 +11737,7 @@
     "name": "Find OOX-09/HL!",
     "requiredLevel": "43",
     "questLevel": "48",
-    "zone": "The Hinterlands",
+    "zone": "Hinterlands",
     "description": "Take the distress beacon to Oglethorpe's homing robot at the head of the river in the Hinterlands, near Skulk Rock.",
     "reputationGain": {
       "Booty Bay": 250
@@ -11940,7 +11940,7 @@
     "name": "The Crown of Will",
     "requiredLevel": "34",
     "questLevel": "39",
-    "zone": "Undercity",
+    "zone": "Tirisfal Glades",
     "description": "Report to Melisara at Tarren Mill in the Hillsbrad Foothills.",
     "races": [
       "Troll",
@@ -13068,7 +13068,7 @@
     "name": "Southshore",
     "requiredLevel": "20",
     "questLevel": "38",
-    "zone": "Stormwind City",
+    "zone": "Elwynn Forest",
     "previous": "337",
     "description": "Speak with Loremaster Dibbs in Southshore.",
     "reputationGain": {
@@ -13121,7 +13121,7 @@
     "name": "Preserving Knowledge",
     "requiredLevel": "20",
     "questLevel": "38",
-    "zone": "Stormwind City",
+    "zone": "Elwynn Forest",
     "previous": "538",
     "description": "Bring 5 Recovered Tomes and the Worn Leather Book containing The Arm of Gri'lek to Loremaster Dibbs in Southshore.",
     "reputationGain": {
@@ -13189,7 +13189,7 @@
     "name": "Return to Milton",
     "requiredLevel": "20",
     "questLevel": "38",
-    "zone": "Stormwind City",
+    "zone": "Elwynn Forest",
     "previous": "540",
     "description": "Bring the Tomes of Alterac to Milton Sheaf in Stormwind.",
     "reputationGain": {
@@ -13210,7 +13210,7 @@
     "name": "The Perenolde Tiara",
     "requiredLevel": "30",
     "questLevel": "40",
-    "zone": "Stormwind City",
+    "zone": "Elwynn Forest",
     "description": "Bring the Perenolde Tiara to Remington Ridgewell in Stormwind.",
     "reputationGain": {
       "Stormwind": 500
@@ -14180,7 +14180,7 @@
     "name": "Stormwind Library",
     "requiredLevel": "1",
     "questLevel": "1",
-    "zone": "Stormwind City",
+    "zone": "Elwynn Forest",
     "description": "",
     "races": [
       "Gnome",
@@ -15516,7 +15516,7 @@
     "name": "Sully Balloo's Letter",
     "requiredLevel": "25",
     "questLevel": "30",
-    "zone": "Ironforge",
+    "zone": "Dun Morogh",
     "description": "Deliver Sully Balloo's Letter to Sara Balloo.",
     "reputationGain": {
       "Ironforge": 250
@@ -15785,7 +15785,7 @@
     "name": "Ripple Recovery",
     "requiredLevel": "42",
     "questLevel": "48",
-    "zone": "Orgrimmar",
+    "zone": "Durotar",
     "description": "Talk to Malton Droffers in Orgrimmar.",
     "money": 0,
     "experience": 0,
@@ -15802,7 +15802,7 @@
     "name": "Ripple Recovery",
     "requiredLevel": "42",
     "questLevel": "48",
-    "zone": "Orgrimmar",
+    "zone": "Durotar",
     "previous": "649",
     "description": "Talk to Gilveradin Sunchaser; his camp is located in the Hinterlands.",
     "reputationGain": {
@@ -16648,7 +16648,7 @@
     "name": "Sara Balloo's Plea",
     "requiredLevel": "25",
     "questLevel": "30",
-    "zone": "Ironforge",
+    "zone": "Dun Morogh",
     "previous": "637",
     "description": "Take Sara Balloo's note to King Magni Bronzebeard of Ironforge.",
     "reputationGain": {
@@ -16732,7 +16732,7 @@
     "name": "A King's Tribute",
     "requiredLevel": "25",
     "questLevel": "30",
-    "zone": "Ironforge",
+    "zone": "Dun Morogh",
     "previous": "683",
     "description": "King Magni Bronzebeard wants you to speak with Grand Mason Marblesten.",
     "reputationGain": {
@@ -16800,7 +16800,7 @@
     "name": "A King's Tribute",
     "requiredLevel": "25",
     "questLevel": "31",
-    "zone": "Ironforge",
+    "zone": "Dun Morogh",
     "previous": "686",
     "description": "Grand Mason Marblesten of Ironforge wants 5 pieces of Alterac Granite.",
     "reputationGain": {
@@ -16827,7 +16827,7 @@
     "name": "Malin's Request",
     "requiredLevel": "30",
     "questLevel": "32",
-    "zone": "Stormwind City",
+    "zone": "Elwynn Forest",
     "description": "Find Skuerto at Refuge Pointe in the Arathi Highlands.",
     "reputationGain": {
       "Ironforge": 150
@@ -17116,7 +17116,7 @@
     "name": "A King's Tribute",
     "requiredLevel": "25",
     "questLevel": "31",
-    "zone": "Ironforge",
+    "zone": "Dun Morogh",
     "previous": "689",
     "description": "Report to King Magni Bronzebeard.",
     "reputationGain": {
@@ -17290,7 +17290,7 @@
     "name": "Ironband Wants You!",
     "requiredLevel": "30",
     "questLevel": "37",
-    "zone": "Ironforge",
+    "zone": "Dun Morogh",
     "description": "Speak with Prospector Ironband at Ironband's Excavation Site in Loch Modan.",
     "reputationGain": {
       "Ironforge": 25
@@ -17830,7 +17830,7 @@
     "name": "Trouble In Darkshore?",
     "requiredLevel": "14",
     "questLevel": "14",
-    "zone": "Darnassus",
+    "zone": "Teldrassil",
     "description": "Travel to Auberdine and look for signs of the dwarven excavation team.",
     "reputationGain": {
       "Ironforge": 75
@@ -17976,7 +17976,7 @@
     "name": "The Star, the Hand and the Heart",
     "requiredLevel": "30",
     "questLevel": "44",
-    "zone": "Undercity",
+    "zone": "Tirisfal Glades",
     "previous": "728",
     "description": "Bring the items on Bel'dugur's Note to Keeper Bel'dugur in the Undercity.",
     "races": [
@@ -18107,7 +18107,7 @@
     "name": "The Ashenvale Hunt",
     "requiredLevel": "20",
     "questLevel": "20",
-    "zone": "Thunder Bluff",
+    "zone": "Mulgore",
     "description": "Speak with Senani Thunderheart at Splintertree Post, Ashenvale.",
     "races": [
       "Troll",
@@ -18150,7 +18150,7 @@
     "name": "Preparation for Ceremony",
     "requiredLevel": "7",
     "questLevel": "11",
-    "zone": "Thunder Bluff",
+    "zone": "Mulgore",
     "description": "Collect 6 Azure Feathers and 6 Bronze Feathers, and bring them to Eyahn Eagletalon in Thunder Bluff.",
     "reputationGain": {
       "Thunder Bluff": 250
@@ -18713,7 +18713,7 @@
     "name": "Gathering Leather",
     "requiredLevel": "4",
     "questLevel": "8",
-    "zone": "Thunder Bluff",
+    "zone": "Mulgore",
     "description": "Bring 12 pieces of Light Leather to Veren Tallstrider in Thunder Bluff.",
     "reputationGain": {
       "Thunder Bluff": 350
@@ -18739,7 +18739,7 @@
     "name": "Kodo Hide Bag",
     "requiredLevel": "4",
     "questLevel": "10",
-    "zone": "Thunder Bluff",
+    "zone": "Mulgore",
     "previous": "768",
     "description": "Bring 4 Light Leather and 4 Coarse Thread to Veren Tallstrider in Thunder Bluff.",
     "reputationGain": {
@@ -19980,7 +19980,7 @@
     "name": "Rescue OOX-09/HL!",
     "requiredLevel": "43",
     "questLevel": "48",
-    "zone": "The Hinterlands",
+    "zone": "Hinterlands",
     "previous": "485",
     "description": "Escort OOX-09/HL to the shoreline beyond Overlook Cliff, then report to Oglethorpe Obnoticus in Booty Bay.",
     "reputationGain": {
@@ -20620,7 +20620,7 @@
     "name": "Return to Apothecary Zinge",
     "requiredLevel": "38",
     "questLevel": "46",
-    "zone": "Undercity",
+    "zone": "Tirisfal Glades",
     "previous": "654",
     "description": "Bring the Sealed Field Testing Kit to Apothecary Zinge in the Undercity.",
     "reputationGain": {
@@ -22117,7 +22117,7 @@
     "name": "Battle of Warsong Gulch",
     "requiredLevel": "50",
     "questLevel": "59",
-    "zone": "Warsong Gulch",
+    "zone": "Ashenvale",
     "previous": "8429",
     "description": "Bring 3 Warsong Marks of Honor to a Horde Warbringer outside the battlegrounds.",
     "reputationGain": {
@@ -22368,7 +22368,7 @@
     "name": "Assisting Arch Druid Runetotem",
     "requiredLevel": "47",
     "questLevel": "50",
-    "zone": "Orgrimmar",
+    "zone": "Durotar",
     "description": "Speak with Arch Druid Hamuul Runetotem in Thunder Bluff.",
     "races": [
       "Troll",
@@ -22704,7 +22704,7 @@
     "name": "Grove of the Ancients",
     "requiredLevel": "6",
     "questLevel": "11",
-    "zone": "Darnassus",
+    "zone": "Teldrassil",
     "previous": "940",
     "description": "Deliver Fandral's message to Onu in the Grove of the Ancients in Darkshore, south of Auberdine.",
     "reputationGain": {
@@ -23594,7 +23594,7 @@
     "name": "The New Frontier",
     "requiredLevel": "54",
     "questLevel": "55",
-    "zone": "Thunder Bluff",
+    "zone": "Mulgore",
     "description": "Speak with Arch Druid Hamuul Runetotem on the Elder Rise of Thunder Bluff about the Cenarion Circle's call to explore the frontiers of Kalimdor.",
     "races": [
       "Troll",
@@ -23680,7 +23680,7 @@
     "name": "The New Frontier",
     "requiredLevel": "54",
     "questLevel": "55",
-    "zone": "Undercity",
+    "zone": "Tirisfal Glades",
     "description": "Speak with Arch Druid Hamuul Runetotem on the Elder Rise of Thunder Bluff about the Cenarion Circle's call to explore the frontiers of Kalimdor.",
     "races": [
       "Troll",
@@ -23918,7 +23918,7 @@
     "name": "The New Frontier",
     "requiredLevel": "54",
     "questLevel": "55",
-    "zone": "Stormwind City",
+    "zone": "Elwynn Forest",
     "description": "Speak with Arch Druid Fandral Staghelm at the Cenarion Enclave of Darnassus about the Cenarion Circle's call to explore the frontiers of Kalimdor.",
     "races": [
       "Gnome",
@@ -23994,7 +23994,7 @@
     "name": "The New Frontier",
     "requiredLevel": "54",
     "questLevel": "55",
-    "zone": "Orgrimmar",
+    "zone": "Durotar",
     "description": "Speak with Arch Druid Hamuul Runetotem on the Elder Rise of Thunder Bluff about the Cenarion Circle's call to explore the frontiers of Kalimdor.",
     "races": [
       "Troll",
@@ -24017,7 +24017,7 @@
     "name": "The New Frontier",
     "requiredLevel": "54",
     "questLevel": "55",
-    "zone": "Ironforge",
+    "zone": "Dun Morogh",
     "description": "Speak with Arch Druid Fandral Staghelm at the Cenarion Enclave of Darnassus about the Cenarion Circle's call to explore the frontiers of Kalimdor.",
     "races": [
       "Gnome",
@@ -24784,7 +24784,7 @@
     "name": "The New Frontier",
     "requiredLevel": "54",
     "questLevel": "55",
-    "zone": "Darnassus",
+    "zone": "Teldrassil",
     "description": "Speak with Arch Druid Fandral Staghelm at the Cenarion Enclave of Darnassus about the Cenarion Circle's call to explore the frontiers of Kalimdor.",
     "races": [
       "Gnome",
@@ -24807,7 +24807,7 @@
     "name": "Into The Scarlet Monastery",
     "requiredLevel": "33",
     "questLevel": "42",
-    "zone": "Scarlet Monastery",
+    "zone": "Tirisfal Glades",
     "description": "Kill High Inquisitor Whitemane, Scarlet Commander Mograine, Herod, the Scarlet Champion and Houndmaster Loksey and then report back to Varimathras in the Undercity.",
     "reputationGain": {
       "Undercity": 500
@@ -24848,7 +24848,7 @@
     "name": "Compendium of the Fallen",
     "requiredLevel": "28",
     "questLevel": "38",
-    "zone": "Scarlet Monastery",
+    "zone": "Tirisfal Glades",
     "description": "Retrieve the Compendium of the Fallen from the Monastery in Tirisfal Glades and return to Sage Truthseeker in Thunder Bluff.",
     "reputationGain": {
       "Thunder Bluff": 350
@@ -24873,7 +24873,7 @@
     "name": "Mythology of the Titans",
     "requiredLevel": "28",
     "questLevel": "38",
-    "zone": "Scarlet Monastery",
+    "zone": "Tirisfal Glades",
     "description": "Retrieve Mythology of the Titans from the Monastery and bring it to Librarian Mae Paledust in Ironforge.",
     "reputationGain": {
       "Ironforge": 350
@@ -24899,7 +24899,7 @@
     "name": "Vorrel's Revenge",
     "requiredLevel": "25",
     "questLevel": "33",
-    "zone": "Scarlet Monastery",
+    "zone": "Tirisfal Glades",
     "description": "Return Vorrel Sengutz's wedding ring to Monika Sengutz in Tarren Mill.",
     "reputationGain": {
       "Undercity": 350
@@ -24946,7 +24946,7 @@
     "name": "In the Name of the Light",
     "requiredLevel": "34",
     "questLevel": "40",
-    "zone": "Scarlet Monastery",
+    "zone": "Tirisfal Glades",
     "previous": "1052",
     "description": "Kill High Inquisitor Whitemane, Scarlet Commander Mograine,  Herod, the Scarlet Champion and Houndmaster Loksey and then report back to Raleigh the Devout in Southshore.",
     "reputationGain": {
@@ -25279,7 +25279,7 @@
     "name": "Forsaken Aid",
     "requiredLevel": "13",
     "questLevel": "18",
-    "zone": "Thunder Bluff",
+    "zone": "Mulgore",
     "previous": "1063",
     "description": "Speak with Apothecary Zamah in the Pools of Vision in Thunder Bluff.",
     "reputationGain": {
@@ -25306,7 +25306,7 @@
     "name": "Journey to Tarren Mill",
     "requiredLevel": "13",
     "questLevel": "18",
-    "zone": "Thunder Bluff",
+    "zone": "Mulgore",
     "previous": "1064",
     "description": "Bring Zamah's Note to Apothecary Lydon in Tarren Mill.",
     "reputationGain": {
@@ -25327,7 +25327,7 @@
     "name": "Blood of Innocents",
     "requiredLevel": "13",
     "questLevel": "23",
-    "zone": "Thunder Bluff",
+    "zone": "Mulgore",
     "previous": "1065",
     "description": "Bring 5 Vials of Innocent Blood to Apothecary Lydon in Tarren Mill.",
     "reputationGain": {
@@ -25354,7 +25354,7 @@
     "name": "Return to Thunder Bluff",
     "requiredLevel": "13",
     "questLevel": "23",
-    "zone": "Thunder Bluff",
+    "zone": "Mulgore",
     "previous": "1066",
     "description": "Bring Lydon's Toxin to Apothecary Zamah in Thunder Bluff.",
     "reputationGain": {
@@ -25878,7 +25878,7 @@
     "name": "The Flying Machine Airport",
     "requiredLevel": "13",
     "questLevel": "23",
-    "zone": "Thunder Bluff",
+    "zone": "Mulgore",
     "previous": "1067",
     "description": "Bring the Toxic Fogger to the Venture Co. sky port, then return to Apothecary Zamah.",
     "reputationGain": {
@@ -26147,7 +26147,7 @@
     "name": "Elmore's Task",
     "requiredLevel": "9",
     "questLevel": "15",
-    "zone": "Stormwind City",
+    "zone": "Elwynn Forest",
     "description": "Speak with Grimand Elmore.",
     "races": [
       "Gnome",
@@ -26448,7 +26448,7 @@
     "name": "Hearts of Zeal",
     "requiredLevel": "30",
     "questLevel": "33",
-    "zone": "Scarlet Monastery",
+    "zone": "Tirisfal Glades",
     "previous": "1109",
     "description": "Master Apothecary Faranell in the Undercity wants 20 Hearts of Zeal.",
     "reputationGain": {
@@ -26635,7 +26635,7 @@
     "name": "Rabine Saturna",
     "requiredLevel": "54",
     "questLevel": "55",
-    "zone": "Thunder Bluff",
+    "zone": "Mulgore",
     "description": "Speak with Rabine Saturna in the village of Nighthaven, Moonglade.  Moonglade lies between Felwood and Winterspring, accessible through a path out of Timbermaw Hold.",
     "reputationGain": {
       "Cenarion Circle": 25
@@ -26745,7 +26745,7 @@
     "name": "Melor Sends Word",
     "requiredLevel": "20",
     "questLevel": "30",
-    "zone": "Thunder Bluff",
+    "zone": "Mulgore",
     "description": "Speak with Melor Stonehoof in Thunder Bluff.",
     "races": [
       "Troll",
@@ -26768,7 +26768,7 @@
     "name": "Steelsnap",
     "requiredLevel": "20",
     "questLevel": "30",
-    "zone": "Thunder Bluff",
+    "zone": "Mulgore",
     "previous": "1130",
     "description": "Bring Steelsnap's Rib to Melor Stonehoof in Thunder Bluff.",
     "reputationGain": {
@@ -26891,7 +26891,7 @@
     "name": "Frostmaw",
     "requiredLevel": "26",
     "questLevel": "37",
-    "zone": "Thunder Bluff",
+    "zone": "Mulgore",
     "previous": "1131",
     "description": "Bring Frostmaw's Mane to Melor Stonehoof in Thunder Bluff.",
     "reputationGain": {
@@ -27111,7 +27111,7 @@
     "name": "The Swarm Grows",
     "requiredLevel": "29",
     "questLevel": "33",
-    "zone": "Orgrimmar",
+    "zone": "Durotar",
     "previous": "1145",
     "description": "Deliver Belgrom's Sealed Note to Moktar Krin in Thousand Needles.",
     "reputationGain": {
@@ -27399,7 +27399,7 @@
     "name": "Test of Lore",
     "requiredLevel": "25",
     "questLevel": "36",
-    "zone": "Scarlet Monastery",
+    "zone": "Tirisfal Glades",
     "previous": "1159",
     "description": "Find The Beginnings of the Undead Threat, and return it to Parqual Fintallas in Undercity.",
     "reputationGain": {
@@ -27426,7 +27426,7 @@
     "name": "To Steal From Thieves",
     "requiredLevel": "27",
     "questLevel": "36",
-    "zone": "Undercity",
+    "zone": "Tirisfal Glades",
     "description": "Bring Kenata, Fardel, and Marcel Dabyrie's Heads to Genavie Callow in Undercity.",
     "reputationGain": {
       "Undercity": 250
@@ -28091,7 +28091,7 @@
     "name": "The Sacred Flame",
     "requiredLevel": "20",
     "questLevel": "25",
-    "zone": "Thunder Bluff",
+    "zone": "Mulgore",
     "description": "Return a Filled Etched Phial to Zangen Stonehoof in Thunder Bluff.",
     "reputationGain": {
       "Thunder Bluff": 350
@@ -28117,7 +28117,7 @@
     "name": "The Sacred Flame",
     "requiredLevel": "20",
     "questLevel": "29",
-    "zone": "Thunder Bluff",
+    "zone": "Mulgore",
     "previous": "1195",
     "description": "Deliver the Filled Etched Phial to Rau Cliffrunner at the Freewind Post.",
     "reputationGain": {
@@ -28144,7 +28144,7 @@
     "name": "The Sacred Flame",
     "requiredLevel": "20",
     "questLevel": "29",
-    "zone": "Thunder Bluff",
+    "zone": "Mulgore",
     "previous": "1196",
     "description": "Retrieve the Cloven Hoof for Rau Cliffrunner at the Freewind Post.",
     "reputationGain": {
@@ -28606,7 +28606,7 @@
     "name": "The Missing Diplomat",
     "requiredLevel": "28",
     "questLevel": "28",
-    "zone": "Stormwind City",
+    "zone": "Elwynn Forest",
     "previous": "1274",
     "description": "Find Jorgen in Stormwind City.",
     "races": [
@@ -28630,7 +28630,7 @@
     "name": "The Missing Diplomat",
     "requiredLevel": "28",
     "questLevel": "28",
-    "zone": "Stormwind City",
+    "zone": "Elwynn Forest",
     "previous": "1241",
     "description": "Delivery Jorgen's Sealed Note to Elling Trias in Stormwind City.",
     "money": 0,
@@ -28648,7 +28648,7 @@
     "name": "The Missing Diplomat",
     "requiredLevel": "28",
     "questLevel": "28",
-    "zone": "Stormwind City",
+    "zone": "Elwynn Forest",
     "previous": "1242",
     "description": "Give the Sealed Note to Watcher Backus in Duskwood.",
     "races": [
@@ -28672,7 +28672,7 @@
     "name": "The Missing Diplomat",
     "requiredLevel": "28",
     "questLevel": "30",
-    "zone": "Stormwind City",
+    "zone": "Elwynn Forest",
     "previous": "1243",
     "description": "Find the Defias Docket and return it to Watcher Backus in Duskwood.",
     "races": [
@@ -28696,7 +28696,7 @@
     "name": "The Missing Diplomat",
     "requiredLevel": "28",
     "questLevel": "30",
-    "zone": "Stormwind City",
+    "zone": "Elwynn Forest",
     "previous": "1244",
     "description": "Bring the Defias Docket to Elling Trias in Stormwind.",
     "races": [
@@ -28720,7 +28720,7 @@
     "name": "The Missing Diplomat",
     "requiredLevel": "28",
     "questLevel": "31",
-    "zone": "Stormwind City",
+    "zone": "Elwynn Forest",
     "previous": "1245",
     "description": "Speak to Dashel Stonefist in Stormwind.",
     "races": [
@@ -28744,7 +28744,7 @@
     "name": "The Missing Diplomat",
     "requiredLevel": "28",
     "questLevel": "31",
-    "zone": "Stormwind City",
+    "zone": "Elwynn Forest",
     "previous": "1447",
     "description": "Speak to Elling Trias in Stormwind.",
     "races": [
@@ -28768,7 +28768,7 @@
     "name": "The Missing Diplomat",
     "requiredLevel": "28",
     "questLevel": "33",
-    "zone": "Stormwind City",
+    "zone": "Elwynn Forest",
     "previous": "1247",
     "description": "Speak to Mikhail in the Wetlands.",
     "reputationGain": {
@@ -28795,7 +28795,7 @@
     "name": "The Missing Diplomat",
     "requiredLevel": "28",
     "questLevel": "33",
-    "zone": "Stormwind City",
+    "zone": "Elwynn Forest",
     "previous": "1248",
     "description": "Subdue Tapoke Jahn before he escapes, and then return to Mikhail in Menethil.",
     "reputationGain": {
@@ -28822,7 +28822,7 @@
     "name": "The Missing Diplomat",
     "requiredLevel": "28",
     "questLevel": "33",
-    "zone": "Stormwind City",
+    "zone": "Elwynn Forest",
     "previous": "1249",
     "description": "Speak to Mikhail in the Wetlands.",
     "reputationGain": {
@@ -29049,7 +29049,7 @@
     "name": "The Missing Diplomat",
     "requiredLevel": "28",
     "questLevel": "33",
-    "zone": "Stormwind City",
+    "zone": "Elwynn Forest",
     "previous": "1250",
     "description": "Find Commander Samaul in Dustwallow Marsh.",
     "reputationGain": {
@@ -29076,7 +29076,7 @@
     "name": "The Missing Diplomat",
     "requiredLevel": "28",
     "questLevel": "35",
-    "zone": "Stormwind City",
+    "zone": "Elwynn Forest",
     "previous": "1264",
     "description": "Search Sentry Point for any sign of Private Hendel.",
     "races": [
@@ -29100,7 +29100,7 @@
     "name": "The Missing Diplomat",
     "requiredLevel": "28",
     "questLevel": "36",
-    "zone": "Stormwind City",
+    "zone": "Elwynn Forest",
     "previous": "1265",
     "description": "Find Private Hendel in Dustwallow Marsh.",
     "reputationGain": {
@@ -29127,7 +29127,7 @@
     "name": "The Missing Diplomat",
     "requiredLevel": "28",
     "questLevel": "38",
-    "zone": "Stormwind City",
+    "zone": "Elwynn Forest",
     "previous": "1324",
     "description": "",
     "races": [
@@ -29258,7 +29258,7 @@
     "name": "The Missing Diplomat",
     "requiredLevel": "28",
     "questLevel": "28",
-    "zone": "Stormwind City",
+    "zone": "Elwynn Forest",
     "description": "Find Bishop DeLavey in Stormwind Keep.",
     "races": [
       "Gnome",
@@ -29473,7 +29473,7 @@
     "name": "James Hyal",
     "requiredLevel": "30",
     "questLevel": "35",
-    "zone": "Stormwind City",
+    "zone": "Elwynn Forest",
     "description": "Speak with Vincent Hyal in Menethil Harbor.",
     "races": [
       "Gnome",
@@ -29657,7 +29657,7 @@
     "name": "The Missing Diplomat",
     "requiredLevel": "28",
     "questLevel": "38",
-    "zone": "Stormwind City",
+    "zone": "Elwynn Forest",
     "previous": "1266",
     "description": "Defeat Private Hendel in Dustwallow Marsh.",
     "reputationGain": {
@@ -29736,7 +29736,7 @@
     "name": "Sample for Helbrim",
     "requiredLevel": "10",
     "questLevel": "15",
-    "zone": "Undercity",
+    "zone": "Tirisfal Glades",
     "previous": "1359",
     "description": "Bring the Wolf Heart Sample to Apothecary Helbrim in the Barrens.",
     "reputationGain": {
@@ -29757,7 +29757,7 @@
     "name": "Zinge's Delivery",
     "requiredLevel": "10",
     "questLevel": "15",
-    "zone": "Undercity",
+    "zone": "Tirisfal Glades",
     "previous": "3221",
     "description": "Bring the Wolf Heart Samples to Apothecary Zinge in the Undercity.",
     "reputationGain": {
@@ -29856,7 +29856,7 @@
     "name": "Mazen's Behest",
     "requiredLevel": "37",
     "questLevel": "41",
-    "zone": "Stormwind City",
+    "zone": "Elwynn Forest",
     "description": "Speak with Acolyte Dellis in Stormwind.",
     "reputationGain": {
       "Stormwind": 25
@@ -29882,7 +29882,7 @@
     "name": "Mazen's Behest",
     "requiredLevel": "37",
     "questLevel": "41",
-    "zone": "Stormwind City",
+    "zone": "Elwynn Forest",
     "description": "Retrieve Khadgar's Essays on Dimensional Convergence and deliver them to Watcher Mahar Ba in Nethergarde Keep.",
     "reputationGain": {
       "Stormwind": 250
@@ -30931,7 +30931,7 @@
     "name": "Alliance Relations",
     "requiredLevel": "30",
     "questLevel": "30",
-    "zone": "Orgrimmar",
+    "zone": "Durotar",
     "description": "Speak to Keldran in Orgrimmar.",
     "reputationGain": {
       "Orgrimmar": 25
@@ -30951,7 +30951,7 @@
     "name": "Alliance Relations",
     "requiredLevel": "30",
     "questLevel": "30",
-    "zone": "Orgrimmar",
+    "zone": "Durotar",
     "previous": "1431",
     "description": "Speak to Takata Steelblade in Desolace.",
     "reputationGain": {
@@ -30972,7 +30972,7 @@
     "name": "Alliance Relations",
     "requiredLevel": "30",
     "questLevel": "33",
-    "zone": "Orgrimmar",
+    "zone": "Durotar",
     "previous": "1432",
     "description": "Speak to Maurin Bonesplitter in Desolace.",
     "races": [
@@ -30996,7 +30996,7 @@
     "name": "Befouled by Satyr",
     "requiredLevel": "25",
     "questLevel": "33",
-    "zone": "Orgrimmar",
+    "zone": "Durotar",
     "previous": "1432",
     "description": "Slay 7 Hatefury Rogues, 7 Hatefury Felsworn, 7 Hatefury Betrayers, and 7 Hatefury Hellcallers, and return to Takata Steelblade in Desolace.",
     "reputationGain": {
@@ -31038,7 +31038,7 @@
     "name": "The Burning of Spirits",
     "requiredLevel": "25",
     "questLevel": "33",
-    "zone": "Orgrimmar",
+    "zone": "Durotar",
     "previous": "1433",
     "description": "Return the Burning Gem and 15 Infused Burning Gems to Maurin Bonesplitter in Desolace.",
     "reputationGain": {
@@ -31070,7 +31070,7 @@
     "name": "Alliance Relations",
     "requiredLevel": "30",
     "questLevel": "33",
-    "zone": "Orgrimmar",
+    "zone": "Durotar",
     "previous": "1435",
     "description": "Speak to Keldran in Orgrimmar.",
     "reputationGain": {
@@ -31230,7 +31230,7 @@
     "name": "Return to Fel'Zerul",
     "requiredLevel": "38",
     "questLevel": "44",
-    "zone": "The Hinterlands",
+    "zone": "Hinterlands",
     "previous": "1429",
     "description": "Return to Fel'Zerul in Stonard.",
     "reputationGain": {
@@ -31257,7 +31257,7 @@
     "name": "The Temple of Atal'Hakkar",
     "requiredLevel": "38",
     "questLevel": "50",
-    "zone": "Sunken Temple",
+    "zone": "Temple of Atal'Hakkar",
     "previous": "1444",
     "description": "Collect 20 Fetishes of Hakkar and bring them to Fel'Zerul in Stonard.",
     "reputationGain": {
@@ -31278,7 +31278,7 @@
     "name": "Jammal'an the Prophet",
     "requiredLevel": "38",
     "questLevel": "53",
-    "zone": "Sunken Temple",
+    "zone": "Temple of Atal'Hakkar",
     "description": "The Atal'ai Exile in The Hinterlands wants the Head of Jammal'an.",
     "money": 0,
     "experience": 0,
@@ -31295,7 +31295,7 @@
     "name": "The Missing Diplomat",
     "requiredLevel": "28",
     "questLevel": "31",
-    "zone": "Stormwind City",
+    "zone": "Elwynn Forest",
     "previous": "1246",
     "description": "Defeat Dashel Stonefist in Stormwind.",
     "reputationGain": {
@@ -31322,7 +31322,7 @@
     "name": "In Search of The Temple",
     "requiredLevel": "38",
     "questLevel": "43",
-    "zone": "Stormwind City",
+    "zone": "Elwynn Forest",
     "description": "Brohann Caskbelly in Stormwind wants you to search for the Temple of Atal'Hakkar.",
     "reputationGain": {
       "Ironforge": 250,
@@ -31349,7 +31349,7 @@
     "name": "To The Hinterlands",
     "requiredLevel": "38",
     "questLevel": "43",
-    "zone": "Stormwind City",
+    "zone": "Elwynn Forest",
     "previous": "1448",
     "description": "Speak with High Thane Falstad Wildhammer at Aerie Peak in the Hinterlands.",
     "races": [
@@ -31373,7 +31373,7 @@
     "name": "Gryphon Master Talonaxe",
     "requiredLevel": "38",
     "questLevel": "43",
-    "zone": "The Hinterlands",
+    "zone": "Hinterlands",
     "previous": "1449",
     "description": "Speak with Gryphon Master Talonaxe inside the Aerie Peak Aviary.",
     "races": [
@@ -31397,7 +31397,7 @@
     "name": "Rhapsody Shindigger",
     "requiredLevel": "38",
     "questLevel": "43",
-    "zone": "The Hinterlands",
+    "zone": "Hinterlands",
     "previous": "1450",
     "description": "Seek out Rhapsody Shindigger in The Hinterlands.",
     "races": [
@@ -31421,7 +31421,7 @@
     "name": "Rhapsody's Kalimdor Kocktail",
     "requiredLevel": "38",
     "questLevel": "43",
-    "zone": "The Hinterlands",
+    "zone": "Hinterlands",
     "previous": "1451",
     "description": "Rhapsody Shindigger in The Hinterlands wants you to bring him 3 Roc Gizzards, 3 Groddoc Livers and 3 Ironfur Livers.",
     "races": [
@@ -31455,7 +31455,7 @@
     "name": "Reclaimers' Business in Desolace",
     "requiredLevel": "30",
     "questLevel": "33",
-    "zone": "Ironforge",
+    "zone": "Dun Morogh",
     "description": "Speak to Kreldig Ungor in Desolace.",
     "reputationGain": {
       "Ironforge": 75
@@ -31797,7 +31797,7 @@
     "name": "Rhapsody's Tale",
     "requiredLevel": "38",
     "questLevel": "43",
-    "zone": "The Hinterlands",
+    "zone": "Hinterlands",
     "previous": "1452",
     "description": "Bring the Atal'ai Tablet Fragment to Brohann Caskbelly in Stormwind.",
     "reputationGain": {
@@ -31964,7 +31964,7 @@
     "name": "Into The Temple of Atal'Hakkar",
     "requiredLevel": "38",
     "questLevel": "50",
-    "zone": "Sunken Temple",
+    "zone": "Temple of Atal'Hakkar",
     "previous": "1469",
     "description": "Gather 10 Atal'ai Tablets for Brohann Caskbelly in Stormwind.",
     "reputationGain": {
@@ -32022,7 +32022,7 @@
     "name": "Vital Supplies",
     "requiredLevel": "40",
     "questLevel": "45",
-    "zone": "Stormwind City",
+    "zone": "Elwynn Forest",
     "description": "Speak with Watchmaster Sorigal.",
     "reputationGain": {
       "Stormwind": 25
@@ -37823,7 +37823,7 @@
     "name": "Find Bingles",
     "requiredLevel": "12",
     "questLevel": "15",
-    "zone": "Ironforge",
+    "zone": "Dun Morogh",
     "description": "Find Bingles Blastenheimer in Loch Modan.",
     "reputationGain": {
       "Gnomeregan": 25
@@ -37875,7 +37875,7 @@
     "name": "Speak with Shoni",
     "requiredLevel": "15",
     "questLevel": "15",
-    "zone": "Ironforge",
+    "zone": "Dun Morogh",
     "description": "Speak with Shoni the Shilent in Stormwind.",
     "reputationGain": {
       "Gnomeregan": 25
@@ -39345,7 +39345,7 @@
     "name": "The Platinum Discs",
     "requiredLevel": "40",
     "questLevel": "47",
-    "zone": "Ironforge",
+    "zone": "Dun Morogh",
     "previous": "2279",
     "description": "Take your reward voucher to Dinita Stonemantle in the Vault of Ironforge.",
     "races": [
@@ -39369,7 +39369,7 @@
     "name": "The Platinum Discs",
     "requiredLevel": "40",
     "questLevel": "47",
-    "zone": "Thunder Bluff",
+    "zone": "Mulgore",
     "previous": "2280",
     "description": "Take the reward voucher to Bena Winterhoof in Thunder Bluff.",
     "reputationGain": {
@@ -39629,7 +39629,7 @@
     "name": "Tears of the Moon",
     "requiredLevel": "5",
     "questLevel": "12",
-    "zone": "Darnassus",
+    "zone": "Teldrassil",
     "previous": "2519",
     "description": "Priestess A'moora in the Temple of the Moon at Darnassus wants you to bring her Lady Sathrah's Silvery Spinnerets.",
     "reputationGain": {
@@ -39656,7 +39656,7 @@
     "name": "The Temple of the Moon",
     "requiredLevel": "5",
     "questLevel": "10",
-    "zone": "Darnassus",
+    "zone": "Teldrassil",
     "description": "Sister Aquinne wants you to speak with Priestess A'moora in the Temple of the Moon.",
     "reputationGain": {
       "Darnassus": 10
@@ -39682,7 +39682,7 @@
     "name": "Sathrah's Sacrifice",
     "requiredLevel": "5",
     "questLevel": "12",
-    "zone": "Darnassus",
+    "zone": "Teldrassil",
     "previous": "2518",
     "description": "Priestess A'moora wants you to place Lady Sathrah's silvery spinnerets at the fountain inside the temple, and then return to her.",
     "reputationGain": {
@@ -40424,7 +40424,7 @@
     "name": "Rin'ji is Trapped!",
     "requiredLevel": "42",
     "questLevel": "47",
-    "zone": "The Hinterlands",
+    "zone": "Hinterlands",
     "description": "Escort Rin'ji out of the Quel'Danil Lodge, then find his hidden secret at the Overlook Cliffs to the east.",
     "reputationGain": {
       "Darkspear Trolls": 250
@@ -40486,7 +40486,7 @@
     "name": "Infiltrating the Castle",
     "requiredLevel": "16",
     "questLevel": "31",
-    "zone": "Stormwind City",
+    "zone": "Elwynn Forest",
     "previous": "350",
     "description": "Speak to Tyrion in Stormwind Castle.",
     "races": [
@@ -40510,7 +40510,7 @@
     "name": "Items of Some Consequence",
     "requiredLevel": "16",
     "questLevel": "31",
-    "zone": "Stormwind City",
+    "zone": "Elwynn Forest",
     "previous": "2745",
     "description": "Bring 3 Silk Cloth and 2 of Clara's Fresh Apples to Tyrion in Stormwind.",
     "reputationGain": {
@@ -41162,7 +41162,7 @@
     "name": "Rin'ji's Secret",
     "requiredLevel": "42",
     "questLevel": "47",
-    "zone": "The Hinterlands",
+    "zone": "Hinterlands",
     "previous": "2742",
     "description": "Oran Snakewrithe, a well known scholar on matters concerning the Witherbark trolls, may be able to decipher the tablet. She is known to reside within the Magic Quarter of the Undercity.",
     "reputationGain": {
@@ -42174,7 +42174,7 @@
     "name": "Skulk Rock Clean-up",
     "requiredLevel": "40",
     "questLevel": "48",
-    "zone": "The Hinterlands",
+    "zone": "Hinterlands",
     "description": "Kill 10 Green Sludges and 10 Jade Oozes, and then report back to Fraggar Thundermantle in Aerie Peak.",
     "races": [
       "Gnome",
@@ -42246,7 +42246,7 @@
     "name": "Troll Necklace Bounty",
     "requiredLevel": "40",
     "questLevel": "45",
-    "zone": "The Hinterlands",
+    "zone": "Hinterlands",
     "description": "Bring 5 Troll Tribal Necklaces to Fraggar Thundermantle in Aerie Peak.",
     "money": 0,
     "experience": 0,
@@ -42263,7 +42263,7 @@
     "name": "Troll Necklace Bounty",
     "requiredLevel": "40",
     "questLevel": "45",
-    "zone": "The Hinterlands",
+    "zone": "Hinterlands",
     "description": "",
     "money": 0,
     "experience": 0,
@@ -42606,7 +42606,7 @@
     "name": "Grim Message",
     "requiredLevel": "35",
     "questLevel": "42",
-    "zone": "The Hinterlands",
+    "zone": "Hinterlands",
     "description": "Gather Witherbark Skulls and place on Nimboya's Pike.  Place Nimboya's Laden Pike at one of the Witherbark Villages in the Hinterlands, then return to Nimboya in Stranglethorn.",
     "reputationGain": {
       "Darkspear Trolls": 250
@@ -42626,7 +42626,7 @@
     "name": "Venom Bottles",
     "requiredLevel": "40",
     "questLevel": "43",
-    "zone": "The Hinterlands",
+    "zone": "Hinterlands",
     "description": "Bring a Venom Bottle to an apothecary in Tarren Mill.",
     "reputationGain": {
       "Undercity": 250
@@ -42652,7 +42652,7 @@
     "name": "Undamaged Venom Sac",
     "requiredLevel": "40",
     "questLevel": "45",
-    "zone": "The Hinterlands",
+    "zone": "Hinterlands",
     "previous": "2933",
     "description": "Bring an Undamaged Venom Sac to Apothecary Lydon in Tarren Mill.",
     "reputationGain": {
@@ -42679,7 +42679,7 @@
     "name": "Consult Master Gadrin",
     "requiredLevel": "40",
     "questLevel": "45",
-    "zone": "The Hinterlands",
+    "zone": "Hinterlands",
     "previous": "2934",
     "description": "Speak with Master Gadrin in Sen'jin Village.",
     "reputationGain": {
@@ -42727,7 +42727,7 @@
     "name": "Summoning Shadra",
     "requiredLevel": "40",
     "questLevel": "55",
-    "zone": "The Hinterlands",
+    "zone": "Hinterlands",
     "previous": "2936",
     "description": "Defeat Shadra at the altar of Shadra'Alor, then bring her venom to Apothecary Lydon in Tarren Mill.",
     "reputationGain": {
@@ -42748,7 +42748,7 @@
     "name": "Venom to the Undercity",
     "requiredLevel": "40",
     "questLevel": "55",
-    "zone": "The Hinterlands",
+    "zone": "Hinterlands",
     "previous": "2937",
     "description": "Bring Faranell's Parcel to Master Apothecary Faranell in the Undercity.",
     "reputationGain": {
@@ -42936,7 +42936,7 @@
     "name": "Seeing What Happens",
     "requiredLevel": "45",
     "questLevel": "50",
-    "zone": "Ironforge",
+    "zone": "Dun Morogh",
     "previous": "2963",
     "description": "Bring the miniature platinum discs to the gates of Uldum in Tanaris and look for clues as to the connection between the two.",
     "reputationGain": {
@@ -42987,7 +42987,7 @@
     "name": "Gnome Improvement",
     "requiredLevel": "28",
     "questLevel": "35",
-    "zone": "Ironforge",
+    "zone": "Dun Morogh",
     "previous": "2947",
     "description": "Bring the Brilliant Gold Ring, a Silver Bar, a Moss Agate, and 30 silver coins to Talvash del Kissel in Ironforge.",
     "reputationGain": {
@@ -43049,7 +43049,7 @@
     "name": "Nogg's Ring Redo",
     "requiredLevel": "28",
     "questLevel": "35",
-    "zone": "Orgrimmar",
+    "zone": "Durotar",
     "previous": "2949",
     "description": "Bring the Brilliant Gold Ring, a Silver Bar, a Moss Agate, and 30 silver coins to Nogg in Orgrimmar.",
     "reputationGain": {
@@ -43179,7 +43179,7 @@
     "name": "Portents of Uldum",
     "requiredLevel": "45",
     "questLevel": "50",
-    "zone": "Ironforge",
+    "zone": "Dun Morogh",
     "previous": "2439",
     "description": "Speak with Historian Karnik in the Hall of Explorers within Ironforge.",
     "reputationGain": {
@@ -43206,7 +43206,7 @@
     "name": "A Future Task",
     "requiredLevel": "45",
     "questLevel": "50",
-    "zone": "Ironforge",
+    "zone": "Dun Morogh",
     "previous": "2977",
     "description": "Speak with High Explorer Magellas in Ironforge.",
     "reputationGain": {
@@ -43233,7 +43233,7 @@
     "name": "Portents of Uldum",
     "requiredLevel": "45",
     "questLevel": "50",
-    "zone": "Thunder Bluff",
+    "zone": "Mulgore",
     "previous": "2440",
     "description": "Speak with Nara Wildmane on the Elder Rise in Thunder Bluff.",
     "reputationGain": {
@@ -43260,7 +43260,7 @@
     "name": "Seeing What Happens",
     "requiredLevel": "45",
     "questLevel": "50",
-    "zone": "Thunder Bluff",
+    "zone": "Mulgore",
     "previous": "2965",
     "description": "Bring the miniature platinum discs to the gates of Uldum in Tanaris and look for clues as to the connection between the two.",
     "reputationGain": {
@@ -43287,7 +43287,7 @@
     "name": "Return to Thunder Bluff",
     "requiredLevel": "45",
     "questLevel": "50",
-    "zone": "Thunder Bluff",
+    "zone": "Mulgore",
     "previous": "2954",
     "description": "Speak with Nara Wildmane in Thunder Bluff.",
     "reputationGain": {
@@ -43314,7 +43314,7 @@
     "name": "A Future Task",
     "requiredLevel": "45",
     "questLevel": "50",
-    "zone": "Thunder Bluff",
+    "zone": "Mulgore",
     "previous": "2967",
     "description": "Speak with Sage Truthseeker in Thunder Bluff.",
     "reputationGain": {
@@ -43541,7 +43541,7 @@
     "name": "Return to Ironforge",
     "requiredLevel": "45",
     "questLevel": "50",
-    "zone": "Ironforge",
+    "zone": "Dun Morogh",
     "previous": "2954",
     "description": "Speak with Historian Karnik in Ironforge.",
     "reputationGain": {
@@ -43652,7 +43652,7 @@
     "name": "A Threat in Feralas",
     "requiredLevel": "38",
     "questLevel": "43",
-    "zone": "Orgrimmar",
+    "zone": "Durotar",
     "description": "Belgrom Rockmaul wants you to speak with Rok Orhan in Camp Mojache.",
     "reputationGain": {
       "Orgrimmar": 25
@@ -43837,7 +43837,7 @@
     "name": "Witherbark Cages",
     "requiredLevel": "40",
     "questLevel": "45",
-    "zone": "The Hinterlands",
+    "zone": "Hinterlands",
     "description": "Check the cages at the two Witherbark villages, then return to Gryphon  Master Talonaxe.",
     "races": [
       "Gnome",
@@ -43860,7 +43860,7 @@
     "name": "The Altar of Zul",
     "requiredLevel": "40",
     "questLevel": "48",
-    "zone": "The Hinterlands",
+    "zone": "Hinterlands",
     "previous": "2988",
     "description": "Check the top of the Altar of Zul, then return to Gryphon Master Talonaxe.",
     "races": [
@@ -43884,7 +43884,7 @@
     "name": "Thadius Grimshade",
     "requiredLevel": "40",
     "questLevel": "47",
-    "zone": "The Hinterlands",
+    "zone": "Hinterlands",
     "previous": "2989",
     "description": "Bring Sharpbeak's Feather to Thadius Grimshade in the Blasted Lands.",
     "reputationGain": {
@@ -43938,7 +43938,7 @@
     "name": "The Divination",
     "requiredLevel": "40",
     "questLevel": "47",
-    "zone": "The Hinterlands",
+    "zone": "Hinterlands",
     "previous": "2991",
     "description": "Wait until Grimshade performs the ritual of divination.",
     "reputationGain": {
@@ -43965,7 +43965,7 @@
     "name": "Return to the Hinterlands",
     "requiredLevel": "40",
     "questLevel": "47",
-    "zone": "The Hinterlands",
+    "zone": "Hinterlands",
     "previous": "2992",
     "description": "Speak with Gryphon Master Talonaxe.",
     "races": [
@@ -43989,7 +43989,7 @@
     "name": "Saving Sharpbeak",
     "requiredLevel": "40",
     "questLevel": "53",
-    "zone": "The Hinterlands",
+    "zone": "Hinterlands",
     "previous": "2993",
     "description": "Fight to the top of Jintha'Alor, kill Vile Priestess Hexx for the key to Sharpbeak's cage, and save Sharpbeak.",
     "races": [
@@ -44013,7 +44013,7 @@
     "name": "Lines of Communication",
     "requiredLevel": "42",
     "questLevel": "47",
-    "zone": "Undercity",
+    "zone": "Tirisfal Glades",
     "description": "Oran Snakewrithe in Undercity wants you to travel to the Hinterlands and burn the Highvale Records, Highvale Report, and Highvale Notes.",
     "reputationGain": {
       "Undercity": 250
@@ -44366,7 +44366,7 @@
     "name": "Battle of Warsong Gulch",
     "requiredLevel": "40",
     "questLevel": "49",
-    "zone": "Warsong Gulch",
+    "zone": "Ashenvale",
     "previous": "8428",
     "description": "Bring 3 Warsong Marks of Honor to a Horde Warbringer outside the battlegrounds.",
     "reputationGain": {
@@ -44393,7 +44393,7 @@
     "name": "Battle of Warsong Gulch",
     "requiredLevel": "30",
     "questLevel": "39",
-    "zone": "Warsong Gulch",
+    "zone": "Ashenvale",
     "previous": "8427",
     "description": "Bring 3 Warsong Marks of Honor to a Horde Warbringer outside the battlegrounds.",
     "reputationGain": {
@@ -44506,7 +44506,7 @@
     "name": "Battle of Warsong Gulch",
     "requiredLevel": "20",
     "questLevel": "29",
-    "zone": "Warsong Gulch",
+    "zone": "Ashenvale",
     "previous": "8426",
     "description": "Bring 3 Warsong Marks of Honor to a Horde Warbringer outside the battlegrounds.",
     "reputationGain": {
@@ -44533,7 +44533,7 @@
     "name": "Battle of Warsong Gulch",
     "requiredLevel": "60",
     "questLevel": "60",
-    "zone": "Warsong Gulch",
+    "zone": "Ashenvale",
     "description": "Bring 3 Warsong Marks of Honor to a Horde Warbringer outside the battlegrounds.",
     "reputationGain": {
       "Warsong Outriders": 100
@@ -45753,7 +45753,7 @@
     "name": "At Last!",
     "requiredLevel": "40",
     "questLevel": "48",
-    "zone": "Ironforge",
+    "zone": "Dun Morogh",
     "previous": "3182",
     "description": "Take the Proof of Deed back to Mountaineer Pebblebitty.",
     "reputationGain": {
@@ -46193,7 +46193,7 @@
     "name": "Dwarven Justice",
     "requiredLevel": "40",
     "questLevel": "55",
-    "zone": "Ironforge",
+    "zone": "Dun Morogh",
     "previous": "3368",
     "description": "Return to the Searing Gorge and find Dorius's archaeology unit. ",
     "reputationGain": {
@@ -46247,7 +46247,7 @@
     "name": "The Essence of Eranikus",
     "requiredLevel": "48",
     "questLevel": "55",
-    "zone": "Sunken Temple",
+    "zone": "Temple of Atal'Hakkar",
     "description": "Place the Essence of Eranikus in the Essence Font located in this lair in the Sunken Temple.",
     "money": 0,
     "experience": 0,
@@ -46400,7 +46400,7 @@
     "name": "The Sunken Temple",
     "requiredLevel": "46",
     "questLevel": "51",
-    "zone": "Sunken Temple",
+    "zone": "Temple of Atal'Hakkar",
     "description": "Find Marvon Rivetseeker in Tanaris.",
     "races": [
       "Troll",
@@ -46616,7 +46616,7 @@
     "name": "Into the Depths",
     "requiredLevel": "46",
     "questLevel": "51",
-    "zone": "Sunken Temple",
+    "zone": "Temple of Atal'Hakkar",
     "previous": "3444",
     "description": "Find the Altar of Hakkar in the Sunken Temple in Swamp of Sorrows.",
     "money": 0,
@@ -46634,7 +46634,7 @@
     "name": "Secret of the Circle",
     "requiredLevel": "46",
     "questLevel": "51",
-    "zone": "Sunken Temple",
+    "zone": "Temple of Atal'Hakkar",
     "previous": "3446",
     "description": "Travel into the Sunken Temple and discover the secret hidden in the circle of statues.",
     "money": 0,
@@ -46652,7 +46652,7 @@
     "name": "Passing the Burden",
     "requiredLevel": "45",
     "questLevel": "52",
-    "zone": "Ironforge",
+    "zone": "Dun Morogh",
     "description": "Speak to Tymor in Ironforge.",
     "races": [
       "Gnome",
@@ -46675,7 +46675,7 @@
     "name": "Arcane Runes",
     "requiredLevel": "45",
     "questLevel": "52",
-    "zone": "Ironforge",
+    "zone": "Dun Morogh",
     "previous": "3448",
     "description": "Using the Drawing Kit, make rubbings of the Rune of Beth'Amara, the Rune of Jin'yael, the Rune of Markri, and the Rune of Sael'hai before heading to the small island off of the southern peninsula of Azshara and signaling Pilot Xiggs Fuselighter to pick them up.",
     "reputationGain": {
@@ -46717,7 +46717,7 @@
     "name": "An Easy Pickup",
     "requiredLevel": "45",
     "questLevel": "52",
-    "zone": "Ironforge",
+    "zone": "Dun Morogh",
     "previous": "3448",
     "description": "Speak to Xiggs Fuselighter in Ironforge.",
     "races": [
@@ -46741,7 +46741,7 @@
     "name": "Signal for Pickup",
     "requiredLevel": "45",
     "questLevel": "52",
-    "zone": "Ironforge",
+    "zone": "Dun Morogh",
     "previous": "3450",
     "description": "Speak to Xiggs Fuselighter and get a Standard Issue Flare Gun from him in Ironforge.",
     "races": [
@@ -46819,7 +46819,7 @@
     "name": "Return to Tymor",
     "requiredLevel": "45",
     "questLevel": "52",
-    "zone": "Ironforge",
+    "zone": "Dun Morogh",
     "previous": "3449",
     "description": "Return Tymor's Drawing Kit to him in Ironforge.",
     "reputationGain": {
@@ -46900,7 +46900,7 @@
     "name": "Signal for Pickup",
     "requiredLevel": "45",
     "questLevel": "52",
-    "zone": "Ironforge",
+    "zone": "Dun Morogh",
     "previous": "3451",
     "description": "",
     "money": 0,
@@ -46969,7 +46969,7 @@
     "name": "Betrayed",
     "requiredLevel": "44",
     "questLevel": "53",
-    "zone": "Orgrimmar",
+    "zone": "Durotar",
     "description": "Deliver the Sealed Letter to Ag'tor to Ag'tor Bloodfist in Azshara.",
     "reputationGain": {
       "Orgrimmar": 75
@@ -46989,7 +46989,7 @@
     "name": "Betrayed",
     "requiredLevel": "44",
     "questLevel": "53",
-    "zone": "Orgrimmar",
+    "zone": "Durotar",
     "previous": "3504",
     "description": "Kill 10 Blood Elf Reclaimers, and 10 Blood Elf Surveyors before seeking out Magus Rimtori's camp. Once you've found it, look for something that might be important to her that can be used to draw her into a fight.",
     "reputationGain": {
@@ -47015,7 +47015,7 @@
     "name": "Betrayed",
     "requiredLevel": "44",
     "questLevel": "56",
-    "zone": "Orgrimmar",
+    "zone": "Durotar",
     "previous": "3505",
     "description": "Destroy the arcane focusing crystal tied to Magus Rimtori and then slay her. Afterwards, take the Head of Magus Rimtori to Ag'tor Bloodfist in Azshara.",
     "reputationGain": {
@@ -47036,7 +47036,7 @@
     "name": "Betrayed",
     "requiredLevel": "44",
     "questLevel": "56",
-    "zone": "Orgrimmar",
+    "zone": "Durotar",
     "previous": "3506",
     "description": "Speak to Belgrom Rockmaul in Orgrimmar.",
     "reputationGain": {
@@ -47465,7 +47465,7 @@
     "name": "The God Hakkar",
     "requiredLevel": "40",
     "questLevel": "53",
-    "zone": "Sunken Temple",
+    "zone": "Temple of Atal'Hakkar",
     "previous": "4787",
     "description": "Bring the Filled Egg of Hakkar to Yeh'kinya in Tanaris.",
     "money": 0,
@@ -47664,7 +47664,7 @@
     "name": "Seeping Corruption",
     "requiredLevel": "45",
     "questLevel": "52",
-    "zone": "Undercity",
+    "zone": "Tirisfal Glades",
     "description": "Fill all 4 Empty Vials at the tide pools along the coast of the Ruins of Eldarath in Azshara before returning to Chemist Cuely.",
     "reputationGain": {
       "Undercity": 75
@@ -47705,7 +47705,7 @@
     "name": "Seeping Corruption",
     "requiredLevel": "45",
     "questLevel": "52",
-    "zone": "Undercity",
+    "zone": "Tirisfal Glades",
     "previous": "3568",
     "description": "Give Cuely's Elixir to Thersa Windsong in Undercity.",
     "races": [
@@ -47729,7 +47729,7 @@
     "name": "Seeping Corruption",
     "requiredLevel": "45",
     "questLevel": "52",
-    "zone": "Undercity",
+    "zone": "Tirisfal Glades",
     "previous": "3569",
     "description": "",
     "reputationGain": {
@@ -48376,7 +48376,7 @@
     "name": "The Smoldering Ruins of Thaurissan",
     "requiredLevel": "50",
     "questLevel": "54",
-    "zone": "Ironforge",
+    "zone": "Dun Morogh",
     "previous": "3702",
     "description": "Venture to the Ruins of Thaurissan in the Burning Steppes and recover information from the Thaurissan Relics. Return to Royal Historian Archesonus when you have recovered the information.",
     "reputationGain": {
@@ -48403,7 +48403,7 @@
     "name": "The Smoldering Ruins of Thaurissan",
     "requiredLevel": "50",
     "questLevel": "54",
-    "zone": "Ironforge",
+    "zone": "Dun Morogh",
     "description": "Listen to Royal Historian Archesonus recant the history of Thaurissan.",
     "reputationGain": {
       "Ironforge": 10
@@ -48475,7 +48475,7 @@
     "name": "Un'Goro Soil",
     "requiredLevel": "47",
     "questLevel": "50",
-    "zone": "Thunder Bluff",
+    "zone": "Mulgore",
     "description": "Bring 20 Un'Goro Soil samples to Ghede on the Elder Rise of Thunder Bluff.",
     "reputationGain": {
       "Thunder Bluff": 250
@@ -48501,7 +48501,7 @@
     "name": "Assisting Arch Druid Runetotem",
     "requiredLevel": "47",
     "questLevel": "50",
-    "zone": "Thunder Bluff",
+    "zone": "Mulgore",
     "description": "Speak with Arch Druid Hamuul Runetotem in Thunder Bluff.",
     "races": [
       "Troll",
@@ -48524,7 +48524,7 @@
     "name": "Assisting Arch Druid Staghelm",
     "requiredLevel": "47",
     "questLevel": "50",
-    "zone": "Darnassus",
+    "zone": "Teldrassil",
     "description": "Speak with Arch Druid Fandral Staghelm in Darnassus.",
     "races": [
       "Gnome",
@@ -48547,7 +48547,7 @@
     "name": "Un'Goro Soil",
     "requiredLevel": "47",
     "questLevel": "50",
-    "zone": "Darnassus",
+    "zone": "Teldrassil",
     "description": "Bring 20 Un'Goro Soil samples to Jenal at the Cenarion Enclave in Darnassus.",
     "reputationGain": {
       "Darnassus": 250
@@ -48573,7 +48573,7 @@
     "name": "The Corruption Abroad",
     "requiredLevel": "18",
     "questLevel": "24",
-    "zone": "Stormwind City",
+    "zone": "Elwynn Forest",
     "description": "Travel to Gershala Nightwhisper in Auberdine.",
     "reputationGain": {
       "Darnassus": 150
@@ -48599,7 +48599,7 @@
     "name": "Morrowgrain Research",
     "requiredLevel": "47",
     "questLevel": "50",
-    "zone": "Darnassus",
+    "zone": "Teldrassil",
     "previous": "3764",
     "description": "Take the Arch Druid's Seed Voucher to Mathrengyl Bearwalker in the Cenarion Enclave of Darnassus.",
     "reputationGain": {
@@ -48626,7 +48626,7 @@
     "name": "Morrowgrain Research",
     "requiredLevel": "47",
     "questLevel": "50",
-    "zone": "Thunder Bluff",
+    "zone": "Mulgore",
     "previous": "3761",
     "description": "Take the Seed Voucher to Bashana Runetotem in Thunder Bluff.",
     "reputationGain": {
@@ -48673,7 +48673,7 @@
     "name": "Assisting Arch Druid Runetotem",
     "requiredLevel": "47",
     "questLevel": "50",
-    "zone": "Undercity",
+    "zone": "Tirisfal Glades",
     "description": "Speak with Arch Druid Hamuul Runetotem in Thunder Bluff.",
     "races": [
       "Troll",
@@ -48696,7 +48696,7 @@
     "name": "Morrowgrain Research",
     "requiredLevel": "47",
     "questLevel": "50",
-    "zone": "Darnassus",
+    "zone": "Teldrassil",
     "previous": "3781",
     "description": "Use an Evergreen Pouch with a Packet of Tharlendis Seeds and two Un'Goro Soil samples to try and cultivate samples of Morrowgrain.$B$BBring 10 Morrowgrain to Mathrengyl Bearwalker in Darnassus.",
     "reputationGain": {
@@ -48723,7 +48723,7 @@
     "name": "Morrowgrain Research",
     "requiredLevel": "47",
     "questLevel": "50",
-    "zone": "Thunder Bluff",
+    "zone": "Mulgore",
     "previous": "3782",
     "description": "Use an Evergreen Pouch with a Packet of Tharlendis Seeds and two Un'Goro Soil samples to try and cultivate samples of Morrowgrain.$B$BBring 10 Morrowgrain to Bashana Runetotem in Thunder Bluff.",
     "reputationGain": {
@@ -48750,7 +48750,7 @@
     "name": "Jonespyre's Request",
     "requiredLevel": "47",
     "questLevel": "50",
-    "zone": "Stormwind City",
+    "zone": "Elwynn Forest",
     "previous": "3785",
     "description": "Speak with Quintis Jonespyre in Feathermoon Stronghold.",
     "reputationGain": {
@@ -48798,7 +48798,7 @@
     "name": "Assisting Arch Druid Staghelm",
     "requiredLevel": "47",
     "questLevel": "50",
-    "zone": "Stormwind City",
+    "zone": "Elwynn Forest",
     "description": "Speak with Arch Druid Fandral Staghelm in Darnassus.",
     "races": [
       "Gnome",
@@ -48821,7 +48821,7 @@
     "name": "Assisting Arch Druid Staghelm",
     "requiredLevel": "47",
     "questLevel": "50",
-    "zone": "Ironforge",
+    "zone": "Dun Morogh",
     "description": "Speak with Arch Druid Fandral Staghelm in Darnassus.",
     "races": [
       "Gnome",
@@ -51098,7 +51098,7 @@
     "name": "Zapper Fuel",
     "requiredLevel": "47",
     "questLevel": "52",
-    "zone": "Sunken Temple",
+    "zone": "Temple of Atal'Hakkar",
     "previous": "4147",
     "description": "Deliver the Unloaded Zapper and 5 samples of Atal'ai Haze to Larion in Marshal's Refuge.",
     "races": [
@@ -52049,7 +52049,7 @@
     "name": "A Sample of Slime...",
     "requiredLevel": "48",
     "questLevel": "52",
-    "zone": "Undercity",
+    "zone": "Tirisfal Glades",
     "description": "Gather Felwood Slime Samples from any of the slimes in Felwood. Then, using the Testing Equipment next to Chemist Fuely in Undercity, see which of your samples are the most corrupt. Bring 5 of the Corrupted Felwood Samples you find to Chemist Fuely.",
     "reputationGain": {
       "Undercity": 250
@@ -52075,7 +52075,7 @@
     "name": "... and a Batch of Ooze",
     "requiredLevel": "48",
     "questLevel": "56",
-    "zone": "Undercity",
+    "zone": "Tirisfal Glades",
     "description": "Gather Un'Goro Slime Samples from any of the slimes in Un'Goro Crater. Then, using the Testing Equipment next to Chemist Fuely in Undercity, see which of your samples are the most pure. Bring 5 of the Pure Un'Goro Samples you find to Chemist Fuely.",
     "reputationGain": {
       "Undercity": 250
@@ -52189,7 +52189,7 @@
     "name": "Bone-Bladed Weapons",
     "requiredLevel": "48",
     "questLevel": "52",
-    "zone": "Orgrimmar",
+    "zone": "Durotar",
     "description": "Bring 8 White Ravasaur Claws to Jes'rimon in Orgrimmar.",
     "reputationGain": {
       "Darkspear Trolls": 250
@@ -53332,7 +53332,7 @@
     "name": "March of the Silithid",
     "requiredLevel": "50",
     "questLevel": "53",
-    "zone": "Darnassus",
+    "zone": "Teldrassil",
     "description": "Speak to Alchemist Pestlezugg in Gadgetzan.",
     "money": 0,
     "experience": 0,
@@ -53349,7 +53349,7 @@
     "name": "March of the Silithid",
     "requiredLevel": "50",
     "questLevel": "53",
-    "zone": "Orgrimmar",
+    "zone": "Durotar",
     "description": "Speak to Alchemist Pestlezugg in Gadgetzan.",
     "money": 0,
     "experience": 0,
@@ -53614,7 +53614,7 @@
     "name": "Calm Before the Storm",
     "requiredLevel": "50",
     "questLevel": "54",
-    "zone": "Darnassus",
+    "zone": "Teldrassil",
     "previous": "4508",
     "description": "Bring the Bank Voucher to Idriana in the bank of Darnassus.",
     "reputationGain": {
@@ -53644,7 +53644,7 @@
     "name": "Calm Before the Storm",
     "requiredLevel": "50",
     "questLevel": "54",
-    "zone": "Orgrimmar",
+    "zone": "Durotar",
     "previous": "4509",
     "description": "Bring the Bank Voucher to Karus in the bank of Orgrimmar.",
     "reputationGain": {
@@ -53674,7 +53674,7 @@
     "name": "A Little Slime Goes a Long Way",
     "requiredLevel": "48",
     "questLevel": "52",
-    "zone": "Ironforge",
+    "zone": "Dun Morogh",
     "description": "Bring 6 Filled Cursed Ooze Jars and 6 Filled Tainted Ooze Jars to Laris Geardawdle in Ironforge.",
     "reputationGain": {
       "Gnomeregan": 350
@@ -53705,7 +53705,7 @@
     "name": "A Little Slime Goes a Long Way",
     "requiredLevel": "48",
     "questLevel": "54",
-    "zone": "Ironforge",
+    "zone": "Dun Morogh",
     "previous": "4512",
     "description": "Bring 10 Filled Pure Sample Jars to Laris Geardawdle in Ironforge.$B$BIf you have trouble finding them, perhaps try to get more clues from Laris.",
     "reputationGain": {
@@ -53789,7 +53789,7 @@
     "name": "Testing for Impurities - Un'Goro Crater",
     "requiredLevel": "48",
     "questLevel": "52",
-    "zone": "Undercity",
+    "zone": "Tirisfal Glades",
     "description": "",
     "races": [
       "Troll",
@@ -53991,7 +53991,7 @@
     "name": "Melding of Influences",
     "requiredLevel": "48",
     "questLevel": "55",
-    "zone": "Undercity",
+    "zone": "Tirisfal Glades",
     "description": "Bring a Merged Ooze Sample to Chemist Fuely in Undercity.",
     "reputationGain": {
       "Undercity": 350
@@ -54017,7 +54017,7 @@
     "name": "Testing for Corruption - Felwood",
     "requiredLevel": "48",
     "questLevel": "52",
-    "zone": "Undercity",
+    "zone": "Tirisfal Glades",
     "description": "",
     "races": [
       "Troll",
@@ -55013,7 +55013,7 @@
     "name": "The Ancient Egg",
     "requiredLevel": "40",
     "questLevel": "50",
-    "zone": "The Hinterlands",
+    "zone": "Hinterlands",
     "previous": "3527",
     "description": "Bring the Ancient Egg to Yeh'kinya in Tanaris.",
     "money": 0,
@@ -55850,7 +55850,7 @@
     "name": "Eitrigg's Wisdom",
     "requiredLevel": "55",
     "questLevel": "60",
-    "zone": "Orgrimmar",
+    "zone": "Durotar",
     "previous": "4903",
     "description": "Speak with Eitrigg in Orgrimmar. When you have discussed matters with Eitrigg, seek council from Thrall.$B$BYou recall having seen Eitrigg in Thrall's chamber.",
     "money": 0,
@@ -56671,7 +56671,7 @@
     "name": "Good Natured Emma",
     "requiredLevel": "50",
     "questLevel": "52",
-    "zone": "Stormwind City",
+    "zone": "Elwynn Forest",
     "previous": "5022",
     "description": "Find Ol' Emma in Stormwind and see if she is in fact Emma Felstone.  If she is, then perhaps she'd like the package Janice Felstone made for her.",
     "reputationGain": {
@@ -56692,7 +56692,7 @@
     "name": "The Jeremiah Blues",
     "requiredLevel": "50",
     "questLevel": "52",
-    "zone": "Undercity",
+    "zone": "Tirisfal Glades",
     "previous": "5023",
     "description": "Find Jeremiah Payson in the Undercity and see if he is in fact Jeremiah Felstone.  If he is, then perhaps he'd like the package Janice Felstone made for him.",
     "reputationGain": {
@@ -57050,7 +57050,7 @@
     "name": "A Call to Arms: The Plaguelands!",
     "requiredLevel": "50",
     "questLevel": "50",
-    "zone": "Stormwind City",
+    "zone": "Elwynn Forest",
     "description": "Seek out Commander Ashlam Valorfist.  His base camp is located at Chillwind Camp, north of the Alterac Mountains.",
     "races": [
       "Gnome",
@@ -57366,7 +57366,7 @@
     "name": "A Call to Arms: The Plaguelands!",
     "requiredLevel": "50",
     "questLevel": "50",
-    "zone": "Ironforge",
+    "zone": "Dun Morogh",
     "description": "Seek out Commander Ashlam Valorfist.  His base camp is located at Chillwind Camp, north of the Alterac Mountains.",
     "races": [
       "Gnome",
@@ -57389,7 +57389,7 @@
     "name": "A Call to Arms: The Plaguelands!",
     "requiredLevel": "50",
     "questLevel": "50",
-    "zone": "Darnassus",
+    "zone": "Teldrassil",
     "description": "Seek out Commander Ashlam Valorfist.  His base camp is located at Chillwind Camp, north of the Alterac Mountains.",
     "races": [
       "Gnome",
@@ -58834,7 +58834,7 @@
     "name": "Battle of Warsong Gulch",
     "requiredLevel": "50",
     "questLevel": "59",
-    "zone": "Warsong Gulch",
+    "zone": "Ashenvale",
     "description": "Bring 3 Warsong Marks of Honor to a Horde Warbringer outside the battlegrounds.",
     "reputationGain": {
       "Warsong Outriders": 100
@@ -58921,7 +58921,7 @@
     "name": "Battle of Warsong Gulch",
     "requiredLevel": "40",
     "questLevel": "49",
-    "zone": "Warsong Gulch",
+    "zone": "Ashenvale",
     "description": "Bring 3 Warsong Marks of Honor to a Horde Warbringer outside the battlegrounds.",
     "reputationGain": {
       "Warsong Outriders": 100
@@ -59069,7 +59069,7 @@
     "name": "Battle of Warsong Gulch",
     "requiredLevel": "30",
     "questLevel": "39",
-    "zone": "Warsong Gulch",
+    "zone": "Ashenvale",
     "description": "Bring 3 Warsong Marks of Honor to a Horde Warbringer outside the battlegrounds.",
     "reputationGain": {
       "Warsong Outriders": 100
@@ -62850,7 +62850,7 @@
     "name": "Hidden Enemies",
     "requiredLevel": "9",
     "questLevel": "12",
-    "zone": "Orgrimmar",
+    "zone": "Durotar",
     "description": "Bring a Lieutenant's Insignia to Thrall in Orgrimmar.",
     "reputationGain": {
       "Orgrimmar": 250
@@ -62870,7 +62870,7 @@
     "name": "Hidden Enemies",
     "requiredLevel": "9",
     "questLevel": "12",
-    "zone": "Orgrimmar",
+    "zone": "Durotar",
     "previous": "5726",
     "description": "Take the Lieutenant's Insignia to Neeru Fireblade and speak to him. Gauge if he believes you are a member of the Burning Blade and then return to Thrall in Orgrimmar.",
     "reputationGain": {
@@ -62917,7 +62917,7 @@
     "name": "Hidden Enemies",
     "requiredLevel": "9",
     "questLevel": "15",
-    "zone": "Orgrimmar",
+    "zone": "Durotar",
     "previous": "5728",
     "description": "Speak to Neeru Fireblade in Orgrimmar.",
     "money": 0,
@@ -62935,7 +62935,7 @@
     "name": "Hidden Enemies",
     "requiredLevel": "9",
     "questLevel": "16",
-    "zone": "Orgrimmar",
+    "zone": "Durotar",
     "previous": "5729",
     "description": "Speak to Thrall in Orgrimmar and tell him what you've learned.",
     "reputationGain": {
@@ -63623,7 +63623,7 @@
     "name": "Irondeep Supplies",
     "requiredLevel": "51",
     "questLevel": "55",
-    "zone": "Alterac Valley",
+    "zone": "Alterac Mountains",
     "description": "Bring 10 Irondeep Supplies to the Alliance Quartermaster in Dun Baldar.",
     "reputationGain": {
       "Ironforge": 25
@@ -63649,7 +63649,7 @@
     "name": "Coldtooth Supplies",
     "requiredLevel": "51",
     "questLevel": "55",
-    "zone": "Alterac Valley",
+    "zone": "Alterac Mountains",
     "description": "Bring 10 Coldtooth Supplies to the Horde Quatermaster in Frostwolf Keep.",
     "reputationGain": {
       "Orgrimmar": 25
@@ -64184,7 +64184,7 @@
     "name": "The Champion of the Banshee Queen",
     "requiredLevel": "54",
     "questLevel": "56",
-    "zone": "Undercity",
+    "zone": "Tirisfal Glades",
     "description": "Speak with Nathanos Blightcaller in the Eastern Plaguelands. He is said to have taken up residence at the Marris Stead.\n",
     "reputationGain": {
       "Undercity": 25
@@ -66026,7 +66026,7 @@
     "name": "The First and the Last",
     "requiredLevel": "56",
     "questLevel": "60",
-    "zone": "Stormwind City",
+    "zone": "Elwynn Forest",
     "description": "Speak with Mathias Shaw in Old Town Stormwind. He resides in the Barracks.",
     "reputationGain": {
       "Stormwind": 1
@@ -66052,7 +66052,7 @@
     "name": "Honor the Dead",
     "requiredLevel": "56",
     "questLevel": "60",
-    "zone": "Stormwind City",
+    "zone": "Elwynn Forest",
     "previous": "6182",
     "description": "Speak with Mathias Shaw again if you wish to accept his task.",
     "reputationGain": {
@@ -66137,7 +66137,7 @@
     "name": "The Blightcaller Cometh",
     "requiredLevel": "56",
     "questLevel": "60",
-    "zone": "Stormwind City",
+    "zone": "Elwynn Forest",
     "previous": "6185",
     "description": "Return to Stormwind and inform Highlord Bolvar Fordragon of the fate of Nathanos Marris.",
     "races": [
@@ -66598,7 +66598,7 @@
     "name": "Nessa Shadowsong",
     "requiredLevel": "10",
     "questLevel": "10",
-    "zone": "Darnassus",
+    "zone": "Teldrassil",
     "description": "Speak with Nessa Shadowsong.",
     "reputationGain": {
       "Darnassus": 25
@@ -67160,7 +67160,7 @@
     "name": "Stormwind Rendezvous",
     "requiredLevel": "50",
     "questLevel": "60",
-    "zone": "Stormwind City",
+    "zone": "Elwynn Forest",
     "previous": "4322",
     "description": "Travel to Stormwind City and venture to the city gates. Speak with Squire Rowe so that he may let Marshal Windsor know that you have arrived.",
     "races": [
@@ -67184,7 +67184,7 @@
     "name": "The Great Masquerade",
     "requiredLevel": "50",
     "questLevel": "60",
-    "zone": "Stormwind City",
+    "zone": "Elwynn Forest",
     "previous": "6402",
     "description": "Follow Reginald Windsor through Stormwind. Protect him from harm!",
     "reputationGain": {
@@ -67429,7 +67429,7 @@
     "name": "The Dragon's Eye",
     "requiredLevel": "50",
     "questLevel": "60",
-    "zone": "Stormwind City",
+    "zone": "Elwynn Forest",
     "previous": "6403",
     "description": "You must search the world for a being capable of restoring the power to the Fragment of the Dragon's Eye. The only information you possess about such a being is that they exist.",
     "races": [
@@ -67950,7 +67950,7 @@
     "name": "What the Wind Carries",
     "requiredLevel": "55",
     "questLevel": "60",
-    "zone": "Orgrimmar",
+    "zone": "Durotar",
     "previous": "4974",
     "description": "Listen to Thrall.",
     "money": 0,
@@ -67968,7 +67968,7 @@
     "name": "The Champion of the Horde",
     "requiredLevel": "55",
     "questLevel": "60",
-    "zone": "Orgrimmar",
+    "zone": "Durotar",
     "previous": "6566",
     "description": "Seek out Rexxar. The Warchief has instructed you as to his whereabouts. Search the paths of Desolace, between the Stonetalon Mountains and Feralas.",
     "money": 0,
@@ -68784,7 +68784,7 @@
     "name": "Deeprun Rat Roundup",
     "requiredLevel": "10",
     "questLevel": "12",
-    "zone": "Deeprun Tram",
+    "zone": "Dun Morogh",
     "description": "Capture 5 Deeprun Rats by using the Rat Catcher's Flute. Lead the rats back to Monty. Don't forget to turn in the flute when you're finished.",
     "races": [
       "Gnome",
@@ -68812,7 +68812,7 @@
     "name": "Me Brother, Nipsy",
     "requiredLevel": "10",
     "questLevel": "12",
-    "zone": "Deeprun Tram",
+    "zone": "Dun Morogh",
     "previous": "6661",
     "description": "Take the Carton of Mystery Meat to Nipsy at the Stormwind Deeprun Tram Depot.",
     "races": [
@@ -68886,7 +68886,7 @@
     "name": "The Hunter's Path",
     "requiredLevel": "10",
     "questLevel": "10",
-    "zone": "Ironforge",
+    "zone": "Dun Morogh",
     "description": "Speak with Dazalar in Dolanaar.",
     "races": [
       "Night Elf"
@@ -68932,7 +68932,7 @@
     "name": "More Booty!",
     "requiredLevel": "51",
     "questLevel": "60",
-    "zone": "Alterac Valley",
+    "zone": "Alterac Mountains",
     "previous": "7224",
     "description": "",
     "reputationGain": {
@@ -68959,7 +68959,7 @@
     "name": "The New Frontier",
     "requiredLevel": "54",
     "questLevel": "55",
-    "zone": "Darnassus",
+    "zone": "Teldrassil",
     "description": "Speak with Mathrengyl Bearwalker at the Cenarion Enclave of Darnassus.",
     "reputationGain": {
       "Darnassus": 10
@@ -68985,7 +68985,7 @@
     "name": "Rabine Saturna",
     "requiredLevel": "54",
     "questLevel": "55",
-    "zone": "Darnassus",
+    "zone": "Teldrassil",
     "previous": "6761",
     "description": "Speak with Rabine Saturna in the village of Nighthaven, Moonglade.  Moonglade lies between Felwood and Winterspring, accessible through a path out of Timbermaw Hold.",
     "reputationGain": {
@@ -69012,7 +69012,7 @@
     "name": "More Armor Scraps",
     "requiredLevel": "51",
     "questLevel": "60",
-    "zone": "Alterac Valley",
+    "zone": "Alterac Mountains",
     "previous": "7223",
     "description": "",
     "reputationGain": {
@@ -69039,7 +69039,7 @@
     "name": "Lokholar the Ice Lord",
     "requiredLevel": "51",
     "questLevel": "60",
-    "zone": "Alterac Valley",
+    "zone": "Alterac Mountains",
     "description": "",
     "reputationGain": {
       "Orgrimmar": 10
@@ -69214,7 +69214,7 @@
     "name": "Call of Air - Guse's Fleet",
     "requiredLevel": "51",
     "questLevel": "60",
-    "zone": "Alterac Valley",
+    "zone": "Alterac Mountains",
     "description": "",
     "reputationGain": {
       "Orgrimmar": 10
@@ -69240,7 +69240,7 @@
     "name": "Call of Air - Jeztor's Fleet",
     "requiredLevel": "51",
     "questLevel": "60",
-    "zone": "Alterac Valley",
+    "zone": "Alterac Mountains",
     "description": "",
     "reputationGain": {
       "Orgrimmar": 10
@@ -69266,7 +69266,7 @@
     "name": "Call of Air - Mulverick's Fleet",
     "requiredLevel": "51",
     "questLevel": "60",
-    "zone": "Alterac Valley",
+    "zone": "Alterac Mountains",
     "description": "",
     "reputationGain": {
       "Orgrimmar": 10
@@ -69334,7 +69334,7 @@
     "name": "Begin the Attack!",
     "requiredLevel": "1",
     "questLevel": "60",
-    "zone": "Alterac Valley",
+    "zone": "Alterac Mountains",
     "description": "",
     "reputationGain": {
       "Ironforge": 10
@@ -69360,7 +69360,7 @@
     "name": "Master Ryson's All Seeing Eye",
     "requiredLevel": "51",
     "questLevel": "60",
-    "zone": "Alterac Valley",
+    "zone": "Alterac Mountains",
     "description": "Recover Master Ryson's All Seeing Eye from the Winterax caves and return it to Master Ryson.$B$BBe warned, it is said that Master Ryson's All Seeing Eye carries with it a terrible curse!",
     "races": [
       "Troll",
@@ -69383,7 +69383,7 @@
     "name": "Master Ryson's All Seeing Eye",
     "requiredLevel": "51",
     "questLevel": "60",
-    "zone": "Alterac Valley",
+    "zone": "Alterac Mountains",
     "description": "Recover Master Ryson's All Seeing Eye from the Winterax caves and return it to Master Ryson.$B$BBe warned, it is said that Master Ryson's All Seeing Eye carries with it a terrible curse!",
     "races": [
       "Gnome",
@@ -69406,7 +69406,7 @@
     "name": "Zinfizzlex's Portable Shredder Unit",
     "requiredLevel": "51",
     "questLevel": "60",
-    "zone": "Alterac Valley",
+    "zone": "Alterac Mountains",
     "description": "",
     "races": [
       "Troll",
@@ -69444,7 +69444,7 @@
     "name": "Zinfizzlex's Portable Shredder Unit",
     "requiredLevel": "51",
     "questLevel": "60",
-    "zone": "Alterac Valley",
+    "zone": "Alterac Mountains",
     "description": "",
     "races": [
       "Gnome",
@@ -69482,7 +69482,7 @@
     "name": "Ivus the Forest Lord",
     "requiredLevel": "51",
     "questLevel": "60",
-    "zone": "Alterac Valley",
+    "zone": "Alterac Mountains",
     "description": "",
     "reputationGain": {
       "Ironforge": 10
@@ -69508,7 +69508,7 @@
     "name": "Launch the Attack!",
     "requiredLevel": "1",
     "questLevel": "60",
-    "zone": "Alterac Valley",
+    "zone": "Alterac Mountains",
     "description": "",
     "reputationGain": {
       "Orgrimmar": 10
@@ -69586,7 +69586,7 @@
     "name": "Call of Air - Vipore's Fleet",
     "requiredLevel": "51",
     "questLevel": "60",
-    "zone": "Alterac Valley",
+    "zone": "Alterac Mountains",
     "description": "",
     "reputationGain": {
       "Ironforge": 10
@@ -69612,7 +69612,7 @@
     "name": "Call of Air - Slidore's Fleet",
     "requiredLevel": "51",
     "questLevel": "60",
-    "zone": "Alterac Valley",
+    "zone": "Alterac Mountains",
     "description": "",
     "reputationGain": {
       "Ironforge": 10
@@ -69638,7 +69638,7 @@
     "name": "Call of Air - Ichman's Fleet",
     "requiredLevel": "51",
     "questLevel": "60",
-    "zone": "Alterac Valley",
+    "zone": "Alterac Mountains",
     "description": "",
     "reputationGain": {
       "Ironforge": 10
@@ -69774,7 +69774,7 @@
     "name": "Coldtooth Supplies",
     "requiredLevel": "51",
     "questLevel": "55",
-    "zone": "Alterac Valley",
+    "zone": "Alterac Mountains",
     "description": "Bring 10 Coldtooth Supplies to the Alliance Quartermaster in Dun Baldar.",
     "reputationGain": {
       "Ironforge": 25
@@ -69834,7 +69834,7 @@
     "name": "Irondeep Supplies",
     "requiredLevel": "51",
     "questLevel": "55",
-    "zone": "Alterac Valley",
+    "zone": "Alterac Mountains",
     "description": "Bring 10 Irondeep Supplies to the Horde Quartermaster in Frostwolf Keep.",
     "reputationGain": {
       "Orgrimmar": 25
@@ -69860,7 +69860,7 @@
     "name": "Empty Stables",
     "requiredLevel": "51",
     "questLevel": "60",
-    "zone": "Alterac Valley",
+    "zone": "Alterac Mountains",
     "description": "Locate a Frostwolf in Alterac Valley. Use the Frostwolf Muzzle when you are near the Frostwolf to 'tame' the beast. Once tamed, the Frostwolf will follow you back to the Frostwolf Stable Master. Speak with the Frostwolf Stable Master to earn credit for the capture.",
     "reputationGain": {
       "Orgrimmar": 10
@@ -69886,7 +69886,7 @@
     "name": "Ram Hide Harnesses",
     "requiredLevel": "51",
     "questLevel": "60",
-    "zone": "Alterac Valley",
+    "zone": "Alterac Mountains",
     "description": "null",
     "reputationGain": {
       "Orgrimmar": 10
@@ -70056,7 +70056,7 @@
     "name": "Ram Riding Harnesses",
     "requiredLevel": "51",
     "questLevel": "60",
-    "zone": "Alterac Valley",
+    "zone": "Alterac Mountains",
     "description": "null",
     "reputationGain": {
       "Ironforge": 10
@@ -70082,7 +70082,7 @@
     "name": "Empty Stables",
     "requiredLevel": "51",
     "questLevel": "60",
-    "zone": "Alterac Valley",
+    "zone": "Alterac Mountains",
     "description": "Locate an Alterac Ram in Alterac Valley. Use the Stormpike Training Collar when you are near the Alterac Ram to 'tame' the beast. Once tamed, the Alterac Ram will follow you back to the Stable Master. Speak with the Stable Master to earn credit for the capture.\n",
     "reputationGain": {
       "Ironforge": 10
@@ -70498,7 +70498,7 @@
     "name": "Alterac Valley Graveyards",
     "requiredLevel": "51",
     "questLevel": "60",
-    "zone": "Alterac Valley",
+    "zone": "Alterac Mountains",
     "description": "Assault a graveyard, then return to Sergeant Durgen Stormpike in the Alterac Mountains.",
     "reputationGain": {
       "Ironforge": 250,
@@ -70525,7 +70525,7 @@
     "name": "The Graveyards of Alterac",
     "requiredLevel": "51",
     "questLevel": "60",
-    "zone": "Alterac Valley",
+    "zone": "Alterac Mountains",
     "description": "Assault a graveyard, then return to Corporal Teeka Bloodsnarl in the Alterac Mountains.",
     "races": [
       "Troll",
@@ -70548,7 +70548,7 @@
     "name": "Towers and Bunkers",
     "requiredLevel": "51",
     "questLevel": "60",
-    "zone": "Alterac Valley",
+    "zone": "Alterac Mountains",
     "description": "Capture an enemy tower, then return to Corporal Teeka Bloodsnarl in the Alterac Mountains.",
     "races": [
       "Troll",
@@ -70571,7 +70571,7 @@
     "name": "Towers and Bunkers",
     "requiredLevel": "51",
     "questLevel": "60",
-    "zone": "Alterac Valley",
+    "zone": "Alterac Mountains",
     "description": "Destroy the banner at an enemy tower or bunker, then return to Sergeant Durgen Stormpike in the Alterac Mountains.",
     "reputationGain": {
       "Ironforge": 250,
@@ -70598,7 +70598,7 @@
     "name": "The Quartermaster",
     "requiredLevel": "51",
     "questLevel": "60",
-    "zone": "Alterac Valley",
+    "zone": "Alterac Mountains",
     "description": "Speak with the Stormpike Quartermaster.",
     "reputationGain": {
       "Ironforge": 10,
@@ -70625,7 +70625,7 @@
     "name": "Capture a Mine",
     "requiredLevel": "51",
     "questLevel": "60",
-    "zone": "Alterac Valley",
+    "zone": "Alterac Mountains",
     "description": "Capture a mine that the Stormpike does not control, then return to Sergeant Durgen Stormpike in the Alterac Mountains.",
     "reputationGain": {
       "Ironforge": 250,
@@ -70652,7 +70652,7 @@
     "name": "Speak with our Quartermaster",
     "requiredLevel": "51",
     "questLevel": "60",
-    "zone": "Alterac Valley",
+    "zone": "Alterac Mountains",
     "description": "Speak with the Frostwolf Quartermaster.",
     "reputationGain": {
       "Frostwolf Clan": 10,
@@ -70679,7 +70679,7 @@
     "name": "Capture a Mine",
     "requiredLevel": "51",
     "questLevel": "60",
-    "zone": "Alterac Valley",
+    "zone": "Alterac Mountains",
     "description": "Capture a mine, then return to Corporal Teeka Bloodsnarl in the Alterac Mountains.",
     "races": [
       "Troll",
@@ -70702,7 +70702,7 @@
     "name": "The Battle of Alterac",
     "requiredLevel": "51",
     "questLevel": "60",
-    "zone": "Alterac Valley",
+    "zone": "Alterac Mountains",
     "description": "Enter Alterac Valley, defeat the Horde general Drek'thar, and then return to Prospector Stonehewer in the Alterac Mountains.",
     "reputationGain": {
       "Ironforge": 500,
@@ -70723,7 +70723,7 @@
     "name": "The Battle for Alterac",
     "requiredLevel": "51",
     "questLevel": "60",
-    "zone": "Alterac Valley",
+    "zone": "Alterac Mountains",
     "description": "Enter Alterac Valley and defeat the dwarven general, Vanndar Stormpike.  Then, return to Voggah Deathgrip in the Alterac Mountains.",
     "money": 0,
     "experience": 0,
@@ -70740,7 +70740,7 @@
     "name": "Battle of Warsong Gulch",
     "requiredLevel": "20",
     "questLevel": "29",
-    "zone": "Warsong Gulch",
+    "zone": "Ashenvale",
     "description": "Bring 3 Warsong Marks of Honor to a Horde Warbringer outside the battlegrounds.",
     "reputationGain": {
       "Warsong Outriders": 100
@@ -70766,7 +70766,7 @@
     "name": "Fight for Warsong Gulch",
     "requiredLevel": "50",
     "questLevel": "59",
-    "zone": "Warsong Gulch",
+    "zone": "Ashenvale",
     "previous": "8402",
     "description": "Bring 3 Warsong Gulch Marks of Honor to an Alliance Brigadier General outside the battlegrounds.",
     "reputationGain": {
@@ -70793,7 +70793,7 @@
     "name": "Fight for Warsong Gulch",
     "requiredLevel": "60",
     "questLevel": "60",
-    "zone": "Warsong Gulch",
+    "zone": "Ashenvale",
     "previous": "8403",
     "description": "Bring 3 Warsong Gulch Marks of Honor to an Alliance Brigadier General outside the battlegrounds.",
     "reputationGain": {
@@ -70820,7 +70820,7 @@
     "name": "Fight for Warsong Gulch",
     "requiredLevel": "40",
     "questLevel": "49",
-    "zone": "Warsong Gulch",
+    "zone": "Ashenvale",
     "previous": "8401",
     "description": "Bring 3 Warsong Gulch Marks of Honor to an Alliance Brigadier General outside the battlegrounds.",
     "reputationGain": {
@@ -70847,7 +70847,7 @@
     "name": "Fight for Warsong Gulch",
     "requiredLevel": "30",
     "questLevel": "39",
-    "zone": "Warsong Gulch",
+    "zone": "Ashenvale",
     "previous": "8400",
     "description": "Bring 3 Warsong Gulch Marks of Honor to an Alliance Brigadier General outside the battlegrounds.",
     "reputationGain": {
@@ -70874,7 +70874,7 @@
     "name": "Fight for Warsong Gulch",
     "requiredLevel": "20",
     "questLevel": "29",
-    "zone": "Warsong Gulch",
+    "zone": "Ashenvale",
     "previous": "8399",
     "description": "Bring 3 Warsong Gulch Marks of Honor to an Alliance Brigadier General outside the battlegrounds.",
     "reputationGain": {
@@ -70901,7 +70901,7 @@
     "name": "Fight for Warsong Gulch",
     "requiredLevel": "60",
     "questLevel": "60",
-    "zone": "Warsong Gulch",
+    "zone": "Ashenvale",
     "description": "Bring 3 Warsong Gulch Marks of Honor to an Alliance Brigadier General outside the battlegrounds.",
     "reputationGain": {
       "890": 100
@@ -70927,7 +70927,7 @@
     "name": "Fight for Warsong Gulch",
     "requiredLevel": "50",
     "questLevel": "59",
-    "zone": "Warsong Gulch",
+    "zone": "Ashenvale",
     "description": "Bring 3 Warsong Gulch Marks of Honor to an Alliance Brigadier General outside the battlegrounds.",
     "reputationGain": {
       "890": 100
@@ -70953,7 +70953,7 @@
     "name": "Fight for Warsong Gulch",
     "requiredLevel": "40",
     "questLevel": "49",
-    "zone": "Warsong Gulch",
+    "zone": "Ashenvale",
     "description": "Bring 3 Warsong Gulch Marks of Honor to an Alliance Brigadier General outside the battlegrounds.",
     "reputationGain": {
       "890": 100
@@ -71006,7 +71006,7 @@
     "name": "Fight for Warsong Gulch",
     "requiredLevel": "30",
     "questLevel": "39",
-    "zone": "Warsong Gulch",
+    "zone": "Ashenvale",
     "description": "Bring 3 Warsong Gulch Marks of Honor to an Alliance Brigadier General outside the battlegrounds.",
     "reputationGain": {
       "890": 100
@@ -71032,7 +71032,7 @@
     "name": "Armor Scraps",
     "requiredLevel": "51",
     "questLevel": "60",
-    "zone": "Alterac Valley",
+    "zone": "Alterac Mountains",
     "description": "Bring 20 Armor Scraps to Murgot Deepforge in Dun Baldar.",
     "reputationGain": {
       "Ironforge": 250,
@@ -71059,7 +71059,7 @@
     "name": "Enemy Booty",
     "requiredLevel": "51",
     "questLevel": "60",
-    "zone": "Alterac Valley",
+    "zone": "Alterac Mountains",
     "description": "Bring 20 Armor Scraps to Smith Regzar in Frostwolf Village.",
     "reputationGain": {
       "Frostwolf Clan": 1,
@@ -71086,7 +71086,7 @@
     "name": "In Defense of Frostwolf",
     "requiredLevel": "51",
     "questLevel": "60",
-    "zone": "Alterac Valley",
+    "zone": "Alterac Mountains",
     "description": "Venture to Alterac Valley, located in the Alterac Mountains. Find and speak with Warmaster Laggrond - who stands outside the tunnel entrance - to begin your career as a soldier of Frostwolf. You will find Alterac Valley north of Tarren Mill at the base of the Alterac Mountains.",
     "reputationGain": {
       "Frostwolf Clan": 250,
@@ -71113,7 +71113,7 @@
     "name": "The Sovereign Imperative",
     "requiredLevel": "51",
     "questLevel": "60",
-    "zone": "Alterac Valley",
+    "zone": "Alterac Mountains",
     "description": "Travel to Alterac Valley in the Hillsbrad Foothills. Outside of the entrance tunnel, find and speak with Lieutenant Haggerdin.$B$BFor the glory of Bronzebeard!",
     "reputationGain": {
       "Ironforge": 250,
@@ -71140,7 +71140,7 @@
     "name": "Brotherly Love",
     "requiredLevel": "51",
     "questLevel": "60",
-    "zone": "Alterac Valley",
+    "zone": "Alterac Mountains",
     "description": "Travel into Stormpike territory and slay Commander Karl Philips. Return to Commander Louis Philips when the task is complete.\n",
     "reputationGain": {
       "Frostwolf Clan": 250,
@@ -71161,7 +71161,7 @@
     "name": "Brotherly Love",
     "requiredLevel": "51",
     "questLevel": "60",
-    "zone": "Alterac Valley",
+    "zone": "Alterac Mountains",
     "description": "Travel into Frostwolf territory and slay Commander Louis Philips. Return to Commander Karl Philips when the task is complete.\n",
     "reputationGain": {
       "469": 250,
@@ -71188,7 +71188,7 @@
     "name": "Fallen Sky Lords",
     "requiredLevel": "51",
     "questLevel": "60",
-    "zone": "Alterac Valley",
+    "zone": "Alterac Mountains",
     "description": "Travel to Frostwolf territory and search for Wing Commander Slidore, Wing Commander Vipore, and Wing Commander Ichman. Return to Commander Duffy should you complete your mission.",
     "reputationGain": {
       "Ironforge": 250,
@@ -71225,7 +71225,7 @@
     "name": "Fallen Sky Lords",
     "requiredLevel": "51",
     "questLevel": "60",
-    "zone": "Alterac Valley",
+    "zone": "Alterac Mountains",
     "description": "Find out what became of Wing Commander Guse, Wing Commander Jeztor, and Wing Commander Mulverick. Return to Commander Mulfort should you complete your mission.",
     "reputationGain": {
       "Frostwolf Clan": 250,
@@ -71292,7 +71292,7 @@
     "name": "A Fair Trade",
     "requiredLevel": "52",
     "questLevel": "60",
-    "zone": "Orgrimmar",
+    "zone": "Durotar",
     "description": "",
     "money": 0,
     "experience": 0,
@@ -71309,7 +71309,7 @@
     "name": "Arrows Are For Sissies",
     "requiredLevel": "52",
     "questLevel": "60",
-    "zone": "Ironforge",
+    "zone": "Dun Morogh",
     "description": "",
     "races": [
       "Gnome",
@@ -71332,7 +71332,7 @@
     "name": "Favor Amongst the Darkspear",
     "requiredLevel": "51",
     "questLevel": "60",
-    "zone": "Alterac Valley",
+    "zone": "Alterac Mountains",
     "description": "You have been tasked with slaying opposing night elf players in Alterac Valley.$B$BKill a night elf and return to Najak Hexxen at Frostwolf Keep with a Severed Night Elf Head.",
     "reputationGain": {
       "Frostwolf Clan": 250,
@@ -71359,7 +71359,7 @@
     "name": "Ally of the Tauren",
     "requiredLevel": "51",
     "questLevel": "60",
-    "zone": "Alterac Valley",
+    "zone": "Alterac Mountains",
     "description": "You have been tasked with slaying opposing gnome players in Alterac Valley.$B$BKill a gnome and return to Ravak Grimtotem at Frostwolf Keep with a Tuft of Gnome Hair.",
     "reputationGain": {
       "Frostwolf Clan": 250,
@@ -71386,7 +71386,7 @@
     "name": "The Human Condition",
     "requiredLevel": "51",
     "questLevel": "60",
-    "zone": "Alterac Valley",
+    "zone": "Alterac Mountains",
     "description": "You have been tasked with slaying opposing human players in Alterac Valley.$B$BKill a human and return to Commander Louis Philips (who wanders between the front lines and Frostwolf keep) with a  Human Bone Chip.$B$BA cure for the human condition is close at hand!",
     "reputationGain": {
       "Frostwolf Clan": 250,
@@ -71413,7 +71413,7 @@
     "name": "Gnomeregan Bounty",
     "requiredLevel": "51",
     "questLevel": "60",
-    "zone": "Alterac Valley",
+    "zone": "Alterac Mountains",
     "description": "You have been tasked with slaying opposing tauren players in Alterac Valley.$B$BKill a tauren and return to Dirk Swindle at Dun'Baldar with a  Tauren Hoof.",
     "reputationGain": {
       "Stormpike Guard": 250,
@@ -71440,7 +71440,7 @@
     "name": "Staghelm's Requiem",
     "requiredLevel": "51",
     "questLevel": "60",
-    "zone": "Alterac Valley",
+    "zone": "Alterac Mountains",
     "description": "You have been tasked with slaying opposing troll players in Alterac Valley.$B$BKill a troll and return to Athramanis at Dun'Baldar with Darkspear Troll Mojo.",
     "reputationGain": {
       "Stormpike Guard": 250,
@@ -71467,7 +71467,7 @@
     "name": "The Archbishop's Mercy",
     "requiredLevel": "51",
     "questLevel": "60",
-    "zone": "Alterac Valley",
+    "zone": "Alterac Mountains",
     "description": "You have been tasked with slaying opposing Forsaken players in Alterac Valley.$B$BKill a Forsaken and return to Commander Karl Philips (who wanders between the lumber mill and the mine) with a Forsaken Heart.",
     "reputationGain": {
       "Stormpike Guard": 250,
@@ -71494,7 +71494,7 @@
     "name": "Defusing the Threat",
     "requiredLevel": "51",
     "questLevel": "60",
-    "zone": "Alterac Valley",
+    "zone": "Alterac Mountains",
     "description": "Find the Frostwolf Explosives Expert and kill him. Return to the Stormpike Explosives Expert when the task is complete.",
     "reputationGain": {
       "Stormpike Guard": 250,
@@ -71521,7 +71521,7 @@
     "name": "Defusing the Threat",
     "requiredLevel": "51",
     "questLevel": "60",
-    "zone": "Alterac Valley",
+    "zone": "Alterac Mountains",
     "description": "Find the Stormpike Explosives Expert and kill him. Return to the Frostwolf Explosives Expert when the task is complete.",
     "races": [
       "Troll",
@@ -71544,7 +71544,7 @@
     "name": "Fight for Warsong Gulch",
     "requiredLevel": "20",
     "questLevel": "29",
-    "zone": "Warsong Gulch",
+    "zone": "Ashenvale",
     "description": "Bring 3 Warsong Gulch Marks of Honor to an Alliance Brigadier General outside the battlegrounds.",
     "reputationGain": {
       "890": 100
@@ -71570,7 +71570,7 @@
     "name": "Claiming Arathi Basin",
     "requiredLevel": "60",
     "questLevel": "60",
-    "zone": "Arathi Basin",
+    "zone": "Arathi Highlands",
     "previous": "8396",
     "description": "Bring 3 Arathi Basin Marks of Honor to an Alliance Brigadier General outside the battlegrounds.",
     "reputationGain": {
@@ -71597,7 +71597,7 @@
     "name": "A Gallon of Blood",
     "requiredLevel": "51",
     "questLevel": "60",
-    "zone": "Alterac Valley",
+    "zone": "Alterac Mountains",
     "description": "null",
     "reputationGain": {
       "Orgrimmar": 75
@@ -71623,7 +71623,7 @@
     "name": "Crystal Cluster",
     "requiredLevel": "51",
     "questLevel": "60",
-    "zone": "Alterac Valley",
+    "zone": "Alterac Mountains",
     "description": "null",
     "reputationGain": {
       "Ironforge": 75
@@ -71649,7 +71649,7 @@
     "name": "Wanted: DWARVES!",
     "requiredLevel": "51",
     "questLevel": "60",
-    "zone": "Alterac Valley",
+    "zone": "Alterac Mountains",
     "description": "You have been tasked with slaying opposing Dwarf players in Alterac Valley.$B$BKill a Dwarf and rip out their spine. Take the Dwarf Spine to Sergeant Yazra Bloodsnarl at Frostwolf Keep.",
     "reputationGain": {
       "Frostwolf Clan": 250,
@@ -71676,7 +71676,7 @@
     "name": "Wanted: ORCS!",
     "requiredLevel": "51",
     "questLevel": "60",
-    "zone": "Alterac Valley",
+    "zone": "Alterac Mountains",
     "description": "You have been tasked with slaying opposing Orc players in Alterac Valley.$B$BKill an Orc and take their Orc Tooth back to Corporal Noreg Stormpike at Dun Baldar.",
     "reputationGain": {
       "Stormpike Guard": 250,
@@ -71703,7 +71703,7 @@
     "name": "Darkspear Defense",
     "requiredLevel": "51",
     "questLevel": "60",
-    "zone": "Alterac Valley",
+    "zone": "Alterac Mountains",
     "previous": "7361",
     "description": "",
     "reputationGain": {
@@ -71730,7 +71730,7 @@
     "name": "Tuft it Out",
     "requiredLevel": "51",
     "questLevel": "60",
-    "zone": "Alterac Valley",
+    "zone": "Alterac Mountains",
     "previous": "7362",
     "description": "",
     "reputationGain": {
@@ -71758,7 +71758,7 @@
     "name": "I've Got A Fever For More Bone Chips",
     "requiredLevel": "51",
     "questLevel": "60",
-    "zone": "Alterac Valley",
+    "zone": "Alterac Mountains",
     "previous": "7363",
     "description": "",
     "reputationGain": {
@@ -71786,7 +71786,7 @@
     "name": "What the Hoof?",
     "requiredLevel": "51",
     "questLevel": "60",
-    "zone": "Alterac Valley",
+    "zone": "Alterac Mountains",
     "previous": "7364",
     "description": "",
     "reputationGain": {
@@ -71813,7 +71813,7 @@
     "name": "Staghelm's Mojo Jamboree",
     "requiredLevel": "51",
     "questLevel": "60",
-    "zone": "Alterac Valley",
+    "zone": "Alterac Mountains",
     "previous": "7365",
     "description": "",
     "reputationGain": {
@@ -71841,7 +71841,7 @@
     "name": "One Man's Love",
     "requiredLevel": "51",
     "questLevel": "60",
-    "zone": "Alterac Valley",
+    "zone": "Alterac Mountains",
     "previous": "7366",
     "description": "",
     "reputationGain": {
@@ -71869,7 +71869,7 @@
     "name": "Wanted: MORE DWARVES!",
     "requiredLevel": "51",
     "questLevel": "60",
-    "zone": "Alterac Valley",
+    "zone": "Alterac Mountains",
     "previous": "7401",
     "description": "",
     "reputationGain": {
@@ -71897,7 +71897,7 @@
     "name": "Wanted: MORE ORCS!",
     "requiredLevel": "51",
     "questLevel": "60",
-    "zone": "Alterac Valley",
+    "zone": "Alterac Mountains",
     "previous": "7402",
     "description": "",
     "reputationGain": {
@@ -72305,7 +72305,7 @@
     "name": "Victory for the Horde",
     "requiredLevel": "60",
     "questLevel": "60",
-    "zone": "Orgrimmar",
+    "zone": "Durotar",
     "description": "Take the Head of Onyxia to Thrall in Orgrimmar.",
     "reputationGain": {
       "Orgrimmar": 500
@@ -72331,7 +72331,7 @@
     "name": "For All To See",
     "requiredLevel": "60",
     "questLevel": "60",
-    "zone": "Orgrimmar",
+    "zone": "Durotar",
     "previous": "7490",
     "description": "Seek out Overlord Runthak in the Valley of Strength.",
     "reputationGain": {
@@ -72375,7 +72375,7 @@
     "name": "The Journey Has Just Begun",
     "requiredLevel": "60",
     "questLevel": "60",
-    "zone": "Orgrimmar",
+    "zone": "Durotar",
     "previous": "7491",
     "description": "",
     "money": 0,
@@ -72416,7 +72416,7 @@
     "name": "Victory for the Alliance",
     "requiredLevel": "60",
     "questLevel": "60",
-    "zone": "Stormwind City",
+    "zone": "Elwynn Forest",
     "description": "Take the Head of Onyxia to Highlord Bolvar Fordragon in Stormwind.",
     "reputationGain": {
       "Stormwind": 500
@@ -72442,7 +72442,7 @@
     "name": "Celebrating Good Times",
     "requiredLevel": "60",
     "questLevel": "60",
-    "zone": "Stormwind City",
+    "zone": "Elwynn Forest",
     "previous": "7495",
     "description": "Seek out Major Mattingly in the Valley of Heroes.",
     "reputationGain": {
@@ -72463,7 +72463,7 @@
     "name": "The Journey Has Just Begun",
     "requiredLevel": "60",
     "questLevel": "60",
-    "zone": "Stormwind City",
+    "zone": "Elwynn Forest",
     "previous": "7496",
     "description": "",
     "money": 0,
@@ -72702,7 +72702,7 @@
     "name": "The Forging of Quel'Serrar",
     "requiredLevel": "60",
     "questLevel": "60",
-    "zone": "Onyxia's Lair",
+    "zone": "Dustwallow Marsh",
     "previous": "7508",
     "description": "You must get Onyxia to breathe fire on the Unfired Ancient Blade. Once this is done, pick up the now Heated Ancient Blade. Be warned, a Heated Ancient Blade will not remain heated forever - time is of the essence.$B$BThe last step before returning to me is to slay the beast and drive the Heated Ancient Blade into her corpse.$B$BDo this and Quel'Serrar will be yours.",
     "reputationGain": {
@@ -73922,7 +73922,7 @@
     "name": "Wolf Swapping - Arctic Wolf",
     "requiredLevel": "60",
     "questLevel": "1",
-    "zone": "Orgrimmar",
+    "zone": "Durotar",
     "description": "",
     "races": [
       "Troll",
@@ -73945,7 +73945,7 @@
     "name": "Wolf Swapping - Red Wolf",
     "requiredLevel": "60",
     "questLevel": "1",
-    "zone": "Orgrimmar",
+    "zone": "Durotar",
     "description": "",
     "races": [
       "Troll",
@@ -73968,7 +73968,7 @@
     "name": "New Kodo - Teal",
     "requiredLevel": "60",
     "questLevel": "1",
-    "zone": "Thunder Bluff",
+    "zone": "Mulgore",
     "description": "",
     "races": [
       "Troll",
@@ -73991,7 +73991,7 @@
     "name": "New Kodo - Green",
     "requiredLevel": "60",
     "questLevel": "1",
-    "zone": "Thunder Bluff",
+    "zone": "Mulgore",
     "description": "",
     "races": [
       "Troll",
@@ -74122,7 +74122,7 @@
     "name": "Frostsaber Replacement",
     "requiredLevel": "60",
     "questLevel": "1",
-    "zone": "Darnassus",
+    "zone": "Teldrassil",
     "description": "",
     "races": [
       "Gnome",
@@ -74145,7 +74145,7 @@
     "name": "Nightsaber Replacement",
     "requiredLevel": "60",
     "questLevel": "1",
-    "zone": "Darnassus",
+    "zone": "Teldrassil",
     "description": "",
     "races": [
       "Gnome",
@@ -74784,7 +74784,7 @@
     "name": "The Lord of Blackrock",
     "requiredLevel": "60",
     "questLevel": "60",
-    "zone": "Stormwind City",
+    "zone": "Elwynn Forest",
     "description": "Return the Head of Nefarian to Highlord Bolvar Fordragon in Stormwind.",
     "reputationGain": {
       "Darnassus": 500,
@@ -74813,7 +74813,7 @@
     "name": "The Lord of Blackrock",
     "requiredLevel": "60",
     "questLevel": "60",
-    "zone": "Stormwind City",
+    "zone": "Elwynn Forest",
     "previous": "7781",
     "description": "Venture to the Valley of Heroes in Stormwind City and speak with Field Marshal Afrasiabi.",
     "reputationGain": {
@@ -74843,7 +74843,7 @@
     "name": "The Lord of Blackrock",
     "requiredLevel": "60",
     "questLevel": "60",
-    "zone": "Orgrimmar",
+    "zone": "Durotar",
     "description": "Return the Head of Nefarian to Thrall in Orgrimmar.",
     "reputationGain": {
       "Undercity": 200
@@ -74869,7 +74869,7 @@
     "name": "The Lord of Blackrock",
     "requiredLevel": "60",
     "questLevel": "60",
-    "zone": "Orgrimmar",
+    "zone": "Durotar",
     "previous": "7783",
     "description": "Speak with High Overlord Saurfang in Orgrimmar. He stands waiting for you in the Valley of Strength.",
     "reputationGain": {
@@ -74929,7 +74929,7 @@
     "name": "More Resource Crates",
     "requiredLevel": "50",
     "questLevel": "55",
-    "zone": "Arathi Basin",
+    "zone": "Arathi Highlands",
     "previous": "8080",
     "description": "Win the battle for Arathi Basin, get an Arathi Resource Crate, and return it to Sergeant Maclear at Refuge Pointe.",
     "reputationGain": {
@@ -74956,7 +74956,7 @@
     "name": "Claiming Arathi Basin",
     "requiredLevel": "50",
     "questLevel": "59",
-    "zone": "Arathi Basin",
+    "zone": "Arathi Highlands",
     "previous": "8395",
     "description": "Bring 3 Arathi Basin Marks of Honor to an Alliance Brigadier General outside the battlegrounds.",
     "reputationGain": {
@@ -74983,7 +74983,7 @@
     "name": "Additional Runecloth",
     "requiredLevel": "50",
     "questLevel": "60",
-    "zone": "Stormwind City",
+    "zone": "Elwynn Forest",
     "previous": "7795",
     "description": "",
     "reputationGain": {
@@ -75010,7 +75010,7 @@
     "name": "Claiming Arathi Basin",
     "requiredLevel": "60",
     "questLevel": "60",
-    "zone": "Arathi Basin",
+    "zone": "Arathi Highlands",
     "description": "Bring 3 Arathi Basin Marks of Honor to an Alliance Brigadier General outside the battlegrounds.",
     "reputationGain": {
       "The League of Arathor": 100
@@ -75036,7 +75036,7 @@
     "name": "Claiming Arathi Basin",
     "requiredLevel": "50",
     "questLevel": "59",
-    "zone": "Arathi Basin",
+    "zone": "Arathi Highlands",
     "description": "Bring 3 Arathi Basin Marks of Honor to an Alliance Brigadier General outside the battlegrounds.",
     "reputationGain": {
       "The League of Arathor": 100
@@ -75062,7 +75062,7 @@
     "name": "Additional Runecloth",
     "requiredLevel": "50",
     "questLevel": "60",
-    "zone": "Darnassus",
+    "zone": "Teldrassil",
     "previous": "7800",
     "description": "",
     "reputationGain": {
@@ -75089,7 +75089,7 @@
     "name": "Claiming Arathi Basin",
     "requiredLevel": "40",
     "questLevel": "49",
-    "zone": "Arathi Basin",
+    "zone": "Arathi Highlands",
     "description": "Bring 3 Arathi Basin Marks of Honor to an Alliance Brigadier General outside the battlegrounds.",
     "reputationGain": {
       "The League of Arathor": 100
@@ -75115,7 +75115,7 @@
     "name": "Claiming Arathi Basin",
     "requiredLevel": "30",
     "questLevel": "39",
-    "zone": "Arathi Basin",
+    "zone": "Arathi Highlands",
     "description": "Bring 3 Arathi Basin Marks of Honor to an Alliance Brigadier General outside the battlegrounds.",
     "reputationGain": {
       "The League of Arathor": 100
@@ -75141,7 +75141,7 @@
     "name": "Additional Runecloth",
     "requiredLevel": "50",
     "questLevel": "60",
-    "zone": "Ironforge",
+    "zone": "Dun Morogh",
     "previous": "7805",
     "description": "",
     "reputationGain": {
@@ -75168,7 +75168,7 @@
     "name": "Claiming Arathi Basin",
     "requiredLevel": "40",
     "questLevel": "49",
-    "zone": "Arathi Basin",
+    "zone": "Arathi Highlands",
     "previous": "8394",
     "description": "Bring 3 Arathi Basin Marks of Honor to an Alliance Brigadier General outside the battlegrounds.",
     "reputationGain": {
@@ -75212,7 +75212,7 @@
     "name": "Claiming Arathi Basin",
     "requiredLevel": "30",
     "questLevel": "39",
-    "zone": "Arathi Basin",
+    "zone": "Arathi Highlands",
     "previous": "8393",
     "description": "Bring 3 Arathi Basin Marks of Honor to an Alliance Brigadier General outside the battlegrounds.",
     "reputationGain": {
@@ -75239,7 +75239,7 @@
     "name": "Additional Runecloth",
     "requiredLevel": "50",
     "questLevel": "60",
-    "zone": "Ironforge",
+    "zone": "Dun Morogh",
     "previous": "7811",
     "description": "",
     "reputationGain": {
@@ -75266,7 +75266,7 @@
     "name": "Conquering Arathi Basin",
     "requiredLevel": "20",
     "questLevel": "29",
-    "zone": "Arathi Basin",
+    "zone": "Arathi Highlands",
     "previous": "8370",
     "description": "Bring 3 Arathi Basin Mark of Honor to a Horde Warbringer outside the battlegrounds.",
     "reputationGain": {
@@ -75293,7 +75293,7 @@
     "name": "Snapjaws, Mon!",
     "requiredLevel": "44",
     "questLevel": "50",
-    "zone": "The Hinterlands",
+    "zone": "Hinterlands",
     "description": "Katoom the Angler at Revantusk Village in the Hinterlands wants you to kill 15 Saltwater Snapjaw turtles. Return to him when you have completed this task.",
     "races": [
       "Troll",
@@ -75316,7 +75316,7 @@
     "name": "Gammerita, Mon!",
     "requiredLevel": "44",
     "questLevel": "48",
-    "zone": "The Hinterlands",
+    "zone": "Hinterlands",
     "description": "Katoom the Angler at Revantusk Village in the Hinterlands wants you to kill Gammerita and retrieve Katoom's Best Lure from her corpse.$B$BKatoom mentioned that Gammerita hangs out on the coast with the other turtles.",
     "races": [
       "Troll",
@@ -75339,7 +75339,7 @@
     "name": "Battle of Warsong Gulch",
     "requiredLevel": "10",
     "questLevel": "19",
-    "zone": "Warsong Gulch",
+    "zone": "Ashenvale",
     "previous": "8368",
     "description": "Bring 3 Warsong Marks of Honor to a Horde Warbringer outside the battlegrounds.",
     "reputationGain": {
@@ -75366,7 +75366,7 @@
     "name": "Additional Runecloth",
     "requiredLevel": "50",
     "questLevel": "60",
-    "zone": "Undercity",
+    "zone": "Tirisfal Glades",
     "previous": "7818",
     "description": "",
     "reputationGain": {
@@ -75393,7 +75393,7 @@
     "name": "For Great Honor",
     "requiredLevel": "51",
     "questLevel": "60",
-    "zone": "Orgrimmar",
+    "zone": "Durotar",
     "previous": "8367",
     "description": "Bring 3 Alterac Valley Marks of Honor, 3 Arathi Basin Marks of Honor and 3 Warsong Gulch Marks of Honor to a Horde Warbringer outside the battlegrounds.",
     "reputationGain": {
@@ -75497,7 +75497,7 @@
     "name": "Fight for Warsong Gulch",
     "requiredLevel": "10",
     "questLevel": "19",
-    "zone": "Warsong Gulch",
+    "zone": "Ashenvale",
     "previous": "8372",
     "description": "Bring 3 Warsong Gulch Marks of Honor to an Alliance Brigadier General outside the battlegrounds.",
     "reputationGain": {
@@ -75551,7 +75551,7 @@
     "name": "Additional Runecloth",
     "requiredLevel": "50",
     "questLevel": "60",
-    "zone": "Thunder Bluff",
+    "zone": "Mulgore",
     "previous": "7823",
     "description": "",
     "reputationGain": {
@@ -75605,7 +75605,7 @@
     "name": "Stalking the Stalkers",
     "requiredLevel": "44",
     "questLevel": "48",
-    "zone": "The Hinterlands",
+    "zone": "Hinterlands",
     "description": "Huntsman Markhor at Revantusk Village in the Hinterlands wants you to kill 10 Silvermane Stalkers and 10 Silvermane Howlers. Return to him once the task is complete.$B$BMarkhor mentioned that the wolves hide in the wilds of the Hinterlands.",
     "races": [
       "Troll",
@@ -75633,7 +75633,7 @@
     "name": "Hunt the Savages",
     "requiredLevel": "44",
     "questLevel": "48",
-    "zone": "The Hinterlands",
+    "zone": "Hinterlands",
     "description": "Huntsman Markhor at Revantusk Village in the Hinterlands wants you to kill 20 Savage Owlbeasts. Return to him once the task is complete.$B$BMarkhor mentioned that the Savage Owlbeasts occupy the wilds of the Hinterlands.",
     "races": [
       "Troll",
@@ -75656,7 +75656,7 @@
     "name": "Avenging the Fallen",
     "requiredLevel": "44",
     "questLevel": "48",
-    "zone": "The Hinterlands",
+    "zone": "Hinterlands",
     "description": "Huntsman Markhor at Revantusk Village in the Hinterlands wants you to kill a Razorbeak Skylord and retrieve its Skylord Plume. Return to him once the task is complete.$B$BMarkhor mentioned that the Razorbeak Skylord are a rare breed that tend to occupy the wilds of the Hinterlands.",
     "races": [
       "Troll",
@@ -75705,7 +75705,7 @@
     "name": "Additional Runecloth",
     "requiredLevel": "50",
     "questLevel": "60",
-    "zone": "Orgrimmar",
+    "zone": "Durotar",
     "previous": "7824",
     "description": "",
     "reputationGain": {
@@ -75732,7 +75732,7 @@
     "name": "Claiming Arathi Basin",
     "requiredLevel": "20",
     "questLevel": "29",
-    "zone": "Arathi Basin",
+    "zone": "Arathi Highlands",
     "description": "Bring 3 Arathi Basin Marks of Honor to an Alliance Brigadier General outside the battlegrounds.",
     "reputationGain": {
       "The League of Arathor": 100
@@ -75758,7 +75758,7 @@
     "name": "Fight for Warsong Gulch",
     "requiredLevel": "10",
     "questLevel": "19",
-    "zone": "Warsong Gulch",
+    "zone": "Ashenvale",
     "description": "Bring 3 Warsong Gulch Marks of Honor to an Alliance Brigadier General outside the battlegrounds.",
     "reputationGain": {
       "890": 100
@@ -75784,7 +75784,7 @@
     "name": "Additional Runecloth",
     "requiredLevel": "50",
     "questLevel": "60",
-    "zone": "Orgrimmar",
+    "zone": "Durotar",
     "previous": "7836",
     "description": "",
     "reputationGain": {
@@ -75829,7 +75829,7 @@
     "name": "Vilebranch Hooligans",
     "requiredLevel": "44",
     "questLevel": "48",
-    "zone": "The Hinterlands",
+    "zone": "Hinterlands",
     "description": "Smith Slagtree at Revantusk Village in the Hinterlands wants you to find Slagtree's Lost Tools. Return to him once this task is complete.$B$BYou recall Smith Slagtree mentioning that the tools might be at one of the Vilebranch temples in the northeastern region of the Hinterlands. You should also check Skulk Rock.",
     "races": [
       "Troll",
@@ -75852,7 +75852,7 @@
     "name": "Lard Lost His Lunch",
     "requiredLevel": "44",
     "questLevel": "49",
-    "zone": "The Hinterlands",
+    "zone": "Hinterlands",
     "description": "Lard at Revantusk Village in the Hinterlands wants you to find Lard's Lunch. Return to him when this task is complete.$B$BLard mentioned that he left it on the island to the north. Watch out for Vilebranch trolls.",
     "races": [
       "Troll",
@@ -75875,7 +75875,7 @@
     "name": "Message to the Wildhammer",
     "requiredLevel": "44",
     "questLevel": "48",
-    "zone": "The Hinterlands",
+    "zone": "Hinterlands",
     "description": "Otho Moji'ko at Revantusk Village in the Hinterlands wants you to slaughter 15 Highvale Outrunners, 15 Highvale Scouts, 15 Highvale Marksman and 15 Highvale Rangers. Return to him when this task is complete.$B$BYou can find the Highvale high elves at the Quel'Danil Lodge in the northwestern region of the Hinterlands.",
     "races": [
       "Troll",
@@ -75913,7 +75913,7 @@
     "name": "Another Message to the Wildhammer",
     "requiredLevel": "44",
     "questLevel": "48",
-    "zone": "The Hinterlands",
+    "zone": "Hinterlands",
     "previous": "7841",
     "description": "Otho Moji'ko at Revantusk Village in the Hinterlands wants you to bring him 10 Long Elegant Feathers from the gryphons that inhabit the Hinterlands. Return to him once this task is complete.$B$BGryphons are known to inhabit every region of the Hinterlands.",
     "races": [
@@ -75937,7 +75937,7 @@
     "name": "The Final Message to the Wildhammer",
     "requiredLevel": "44",
     "questLevel": "50",
-    "zone": "The Hinterlands",
+    "zone": "Hinterlands",
     "previous": "7842",
     "description": "Otho Moji'ko at Revantusk Village in the Hinterlands wants you to travel to Aerie Peak in the western region of the Hinterlands and place the Final Message to the Wildhammer by the well in the center of town. Return to him once this task is complete.$B$BBeware of angry Wildhammer dwarves and unruly members of the Alliance.",
     "races": [
@@ -75961,7 +75961,7 @@
     "name": "Cannibalistic Cousins",
     "requiredLevel": "44",
     "questLevel": "48",
-    "zone": "The Hinterlands",
+    "zone": "Hinterlands",
     "description": "Mystic Yayo'jin at Revantusk Village in the Hinterlands wants you to kill 15 Vilebranch Scalpers and 10 Vilebranch Soothsayers. Return to her when this task is complete.$B$BYayo'jin indicated that these trolls could be found near the Shaol'watha and Agol'watha temples in the north by northeastern region of the Hinterlands.",
     "races": [
       "Troll",
@@ -75989,7 +75989,7 @@
     "name": "Kidnapped Elder Torntusk!",
     "requiredLevel": "46",
     "questLevel": "51",
-    "zone": "The Hinterlands",
+    "zone": "Hinterlands",
     "description": "Primal Torntusk at Revantusk Village in the Hinterlands wants you to rescue her mate, Elder Torntusk, from Jintha'alor.$B$BYou have been told that he is being held prisoner atop Jintha'alor, the Vilebranch capital city located in the southern region of the Hinterlands.",
     "races": [
       "Troll",
@@ -76012,7 +76012,7 @@
     "name": "Recover the Key!",
     "requiredLevel": "46",
     "questLevel": "51",
-    "zone": "The Hinterlands",
+    "zone": "Hinterlands",
     "previous": "7845",
     "description": "Elder Torntusk at Jintha'alor wants you to kill Hitah'ya the Keeper to get the Shackle Key to his bindings. Return to Elder Torntusk when you have recovered the key.",
     "races": [
@@ -76036,7 +76036,7 @@
     "name": "Return to Primal Torntusk",
     "requiredLevel": "46",
     "questLevel": "51",
-    "zone": "The Hinterlands",
+    "zone": "Hinterlands",
     "previous": "7846",
     "description": "Elder Torntusk at Jintha'alor wants you to return to Primal Torntusk at Revantusk Village with news of his rescue.",
     "races": [
@@ -76083,7 +76083,7 @@
     "name": "Separation Anxiety",
     "requiredLevel": "46",
     "questLevel": "50",
-    "zone": "The Hinterlands",
+    "zone": "Hinterlands",
     "description": "Huntsman Markhor at Revantusk Village in the Hinterlands wants you to recover his twin brother's remains. Find and return Huntsman Malkhor's Skull and Huntsman Malkhor's Bones to Huntsman Markhor.$B$BMarkhor mentioned that his brother's remains were fed to the oozes and wolves of the Vilebranch. He also mentioned that there is a refuse pit filled with oozes in Jintha'alor as well as a wolf den. Both of these places are near the top of the temple.",
     "races": [
       "Troll",
@@ -76111,7 +76111,7 @@
     "name": "Dark Vessels",
     "requiredLevel": "46",
     "questLevel": "50",
-    "zone": "The Hinterlands",
+    "zone": "Hinterlands",
     "description": "Primal Torntusk at Revantusk Village in the Hinterlands wants you to recover 10 Vessels of Tainted Blood from Jintha'alor. Return to Primal Torntusk when this task is complete.",
     "races": [
       "Troll",
@@ -76134,7 +76134,7 @@
     "name": "Wanted: Vile Priestess Hexx and Her Minions",
     "requiredLevel": "46",
     "questLevel": "51",
-    "zone": "The Hinterlands",
+    "zone": "Hinterlands",
     "description": "You have been ordered to slay Vile Priestess Hexx and 10 Vilebranch Aman'zasi Guards. See Primal Torntusk at Revantusk Village in the Hinterlands once this task is complete.$B$BVile Priestess Hexx and the Aman'zasi Guards can be found atop Jintha'alor in the Hinterlands.",
     "races": [
       "Troll",
@@ -76162,7 +76162,7 @@
     "name": "Job Opening: Guard Captain of Revantusk Village",
     "requiredLevel": "46",
     "questLevel": "51",
-    "zone": "The Hinterlands",
+    "zone": "Hinterlands",
     "description": "You have been tasked with the decimation of 20 Vilebranch Berserkers, 20 Vilebranch Shadow Hunters, 20 Vilebranch Blood Drinkers, and 20 Vilebranch Soul Eaters.$B$BShould you complete this task, return to Primal Torntusk at Revantusk Village in the Hinterlands.",
     "races": [
       "Troll",
@@ -76356,7 +76356,7 @@
     "name": "Arathi Basin Resources!",
     "requiredLevel": "50",
     "questLevel": "55",
-    "zone": "Arathi Basin",
+    "zone": "Arathi Highlands",
     "description": "Win the battle for Arathi Basin, get an Arathi Resource Crate, and return it to Sergeant Maclear at Refuge Pointe.",
     "reputationGain": {
       "The League of Arathor": 500
@@ -76382,7 +76382,7 @@
     "name": "Mark of Honor",
     "requiredLevel": "20",
     "questLevel": "25",
-    "zone": "Warsong Gulch",
+    "zone": "Ashenvale",
     "previous": "7789",
     "description": "You obtained a Warsong Mark of Honor for your last task, talk to me again, and you gain your reward.",
     "reputationGain": {
@@ -76409,7 +76409,7 @@
     "name": "Mark of Honor",
     "requiredLevel": "30",
     "questLevel": "35",
-    "zone": "Warsong Gulch",
+    "zone": "Ashenvale",
     "previous": "7874",
     "description": "You obtained a Warsong Mark of Honor for your last task, talk to me again, and you gain your reward.",
     "reputationGain": {
@@ -76436,7 +76436,7 @@
     "name": "Mark of Honor",
     "requiredLevel": "50",
     "questLevel": "55",
-    "zone": "Warsong Gulch",
+    "zone": "Ashenvale",
     "description": "",
     "reputationGain": {
       "Warsong Outriders": 75
@@ -76462,7 +76462,7 @@
     "name": "Mark of Honor",
     "requiredLevel": "40",
     "questLevel": "45",
-    "zone": "Warsong Gulch",
+    "zone": "Ashenvale",
     "previous": "7875",
     "description": "You obtained a Warsong Mark of Honor for your last task, talk to me again, and you gain your reward.",
     "reputationGain": {
@@ -76489,7 +76489,7 @@
     "name": "Talismans of Merit",
     "requiredLevel": "20",
     "questLevel": "25",
-    "zone": "Warsong Gulch",
+    "zone": "Ashenvale",
     "description": "",
     "reputationGain": {
       "890": 75
@@ -76938,7 +76938,7 @@
     "name": "The Darkmoon Faire",
     "requiredLevel": "6",
     "questLevel": "60",
-    "zone": "Orgrimmar",
+    "zone": "Durotar",
     "description": "Deliver the Free Ticket Voucher to Gelvas Grimgate, located inside the Darkmoon Faire carnival.",
     "reputationGain": {
       "Darkmoon Faire": 50
@@ -77303,7 +77303,7 @@
     "name": "Zombie Cleansing",
     "requiredLevel": "1",
     "questLevel": "3",
-    "zone": "Warsong Gulch",
+    "zone": "Ashenvale",
     "description": "Kill 5 Wretched Zombies",
     "money": 0,
     "experience": 0,
@@ -78119,7 +78119,7 @@
     "name": "Talismans of Merit",
     "requiredLevel": "40",
     "questLevel": "45",
-    "zone": "Warsong Gulch",
+    "zone": "Ashenvale",
     "previous": "7872",
     "description": "You obtained a Silverwing Talisman of Merit for your last task, talk to me again, and you gain your reward.",
     "reputationGain": {
@@ -78468,7 +78468,7 @@
     "name": "Control Four Bases",
     "requiredLevel": "60",
     "questLevel": "60",
-    "zone": "Arathi Basin",
+    "zone": "Arathi Highlands",
     "description": "Enter Arathi Basin, capture and control four bases at the same time, and then return to Field Marshal Oslight at Refuge Pointe.",
     "reputationGain": {
       "The League of Arathor": 100
@@ -78494,7 +78494,7 @@
     "name": "Control Five Bases",
     "requiredLevel": "60",
     "questLevel": "60",
-    "zone": "Arathi Basin",
+    "zone": "Arathi Highlands",
     "previous": "8114",
     "description": "Control 5 bases in Arathi Basin at the same time, then return to Field Marshal Oslight at Refuge Pointe.",
     "reputationGain": {
@@ -78616,7 +78616,7 @@
     "name": "Conquering Arathi Basin",
     "requiredLevel": "20",
     "questLevel": "29",
-    "zone": "Arathi Basin",
+    "zone": "Arathi Highlands",
     "description": "Bring 3 Arathi Basin Mark of Honor to a Horde Warbringer outside the battlegrounds.",
     "reputationGain": {
       "The Defilers": 100
@@ -78642,7 +78642,7 @@
     "name": "Take Four Bases",
     "requiredLevel": "60",
     "questLevel": "60",
-    "zone": "Arathi Basin",
+    "zone": "Arathi Highlands",
     "description": "Hold four bases at the same time in Arathi Basin, and then return to Deathmaster Dwire in Hammerfall.",
     "reputationGain": {
       "The Defilers": 1000
@@ -78668,7 +78668,7 @@
     "name": "Take Five Bases",
     "requiredLevel": "60",
     "questLevel": "60",
-    "zone": "Arathi Basin",
+    "zone": "Arathi Highlands",
     "previous": "8121",
     "description": "Hold five bases in Arathi Basin at the same time, then return to Deathmaster Dwire in Hammerfall.",
     "reputationGain": {
@@ -78695,7 +78695,7 @@
     "name": "Talismans of Merit",
     "requiredLevel": "50",
     "questLevel": "55",
-    "zone": "Warsong Gulch",
+    "zone": "Ashenvale",
     "description": "",
     "reputationGain": {
       "890": 75
@@ -78721,7 +78721,7 @@
     "name": "Talismans of Merit",
     "requiredLevel": "30",
     "questLevel": "35",
-    "zone": "Warsong Gulch",
+    "zone": "Ashenvale",
     "previous": "7871",
     "description": "You obtained a Silverwing Talisman of Merit for your last task, talk to me again, and you gain your reward.",
     "reputationGain": {
@@ -79021,7 +79021,7 @@
     "name": "Quell the Silverwing Usurpers",
     "requiredLevel": "50",
     "questLevel": "55",
-    "zone": "Warsong Gulch",
+    "zone": "Ashenvale",
     "description": "Enter Warsong Gulch and defeat the Alliance, gain a Warsong Mark of Honor, and bring it to Captain Shatterskull at the Mor'shan Base Camp.",
     "reputationGain": {
       "Warsong Outriders": 500
@@ -79047,7 +79047,7 @@
     "name": "Quell the Silverwing Usurpers",
     "requiredLevel": "40",
     "questLevel": "49",
-    "zone": "Warsong Gulch",
+    "zone": "Ashenvale",
     "description": "Enter Warsong Gulch and defeat the Alliance, gain a Warsong Gulch Mark of Honor, and bring it to Captain Shatterskull at the Mor'shan Base Camp.",
     "reputationGain": {
       "Warsong Outriders": 500
@@ -79073,7 +79073,7 @@
     "name": "Quell the Silverwing Usurpers",
     "requiredLevel": "30",
     "questLevel": "35",
-    "zone": "Warsong Gulch",
+    "zone": "Ashenvale",
     "description": "Enter Warsong Gulch and defeat the Alliance, gain a Warsong Mark of Honor, and bring it to Captain Shatterskull at the Mor'shan Base Camp.",
     "reputationGain": {
       "Warsong Outriders": 500
@@ -79099,7 +79099,7 @@
     "name": "Invaders of Alterac Valley",
     "requiredLevel": "51",
     "questLevel": "60",
-    "zone": "Alterac Valley",
+    "zone": "Alterac Mountains",
     "description": "Bring 3 Alterac Valley Marks of Honor to a Horde Warbringer outside the battlegrounds.",
     "reputationGain": {
       "Frostwolf Clan": 150
@@ -79125,7 +79125,7 @@
     "name": "Battle of Warsong Gulch",
     "requiredLevel": "10",
     "questLevel": "19",
-    "zone": "Warsong Gulch",
+    "zone": "Ashenvale",
     "description": "Bring 3 Warsong Marks of Honor to a Horde Warbringer outside the battlegrounds.",
     "reputationGain": {
       "Warsong Outriders": 100
@@ -79208,7 +79208,7 @@
     "name": "The Battle for Arathi Basin!",
     "requiredLevel": "20",
     "questLevel": "25",
-    "zone": "Arathi Basin",
+    "zone": "Arathi Highlands",
     "description": "Assault the Arathi Basin mine, lumber mill, blacksmith and stable, and then return to Deathmaster Dwire in Hammerfall.",
     "reputationGain": {
       "The Defilers": 500
@@ -79867,7 +79867,7 @@
     "name": "Arathor Basic Care Package",
     "requiredLevel": "25",
     "questLevel": "34",
-    "zone": "Arathi Basin",
+    "zone": "Arathi Highlands",
     "description": "",
     "races": [
       "Gnome",
@@ -79890,7 +79890,7 @@
     "name": "Arathor Standard Care Package",
     "requiredLevel": "35",
     "questLevel": "44",
-    "zone": "Arathi Basin",
+    "zone": "Arathi Highlands",
     "description": "",
     "races": [
       "Gnome",
@@ -79913,7 +79913,7 @@
     "name": "Arathor Advanced Care Package",
     "requiredLevel": "45",
     "questLevel": "60",
-    "zone": "Arathi Basin",
+    "zone": "Arathi Highlands",
     "description": "",
     "reputationGain": {
       "The League of Arathor": 10
@@ -79939,7 +79939,7 @@
     "name": "Defiler's Basic Care Package",
     "requiredLevel": "25",
     "questLevel": "34",
-    "zone": "Arathi Basin",
+    "zone": "Arathi Highlands",
     "description": "",
     "races": [
       "Troll",
@@ -79962,7 +79962,7 @@
     "name": "Defiler's Standard Care Package",
     "requiredLevel": "35",
     "questLevel": "44",
-    "zone": "Arathi Basin",
+    "zone": "Arathi Highlands",
     "description": "",
     "reputationGain": {
       "The Defilers": 10
@@ -79988,7 +79988,7 @@
     "name": "Defiler's Advanced Care Package",
     "requiredLevel": "45",
     "questLevel": "60",
-    "zone": "Arathi Basin",
+    "zone": "Arathi Highlands",
     "description": "",
     "races": [
       "Troll",
@@ -80011,7 +80011,7 @@
     "name": "Vanquish the Invaders!",
     "requiredLevel": "50",
     "questLevel": "55",
-    "zone": "Warsong Gulch",
+    "zone": "Ashenvale",
     "description": "Enter Warsong Gulch and defeat the Horde, obtain a Silverwing Talisman of Merit, and return to Sentinel Farsong at the Silverwing Grove.",
     "reputationGain": {
       "890": 500
@@ -80037,7 +80037,7 @@
     "name": "Vanquish the Invaders!",
     "requiredLevel": "40",
     "questLevel": "45",
-    "zone": "Warsong Gulch",
+    "zone": "Ashenvale",
     "description": "Enter Warsong Gulch and defeat the Horde, obtain a Silverwing Talisman of Merit, and return to Sentinel Farsong at the Silverwing Grove.",
     "reputationGain": {
       "890": 500
@@ -80063,7 +80063,7 @@
     "name": "Taking Back Silithus",
     "requiredLevel": "54",
     "questLevel": "55",
-    "zone": "Ironforge",
+    "zone": "Dun Morogh",
     "description": "Talk to Windcaller Proudhorn at Cenarion Hold in Silithus.",
     "reputationGain": {
       "Cenarion Circle": 10
@@ -80089,7 +80089,7 @@
     "name": "Taking Back Silithus",
     "requiredLevel": "54",
     "questLevel": "55",
-    "zone": "Orgrimmar",
+    "zone": "Durotar",
     "description": "Talk to Windcaller Proudhorn at Cenarion Hold in Silithus.",
     "reputationGain": {
       "Cenarion Circle": 10
@@ -80384,7 +80384,7 @@
     "name": "Vanquish the Invaders!",
     "requiredLevel": "30",
     "questLevel": "35",
-    "zone": "Warsong Gulch",
+    "zone": "Ashenvale",
     "description": "Enter Warsong Gulch and defeat the Horde, obtain a Silverwing Talisman of Merit, and return to Sentinel Farsong at the Silverwing Grove.",
     "reputationGain": {
       "890": 500
@@ -80410,7 +80410,7 @@
     "name": "Quell the Silverwing Usurpers",
     "requiredLevel": "20",
     "questLevel": "25",
-    "zone": "Warsong Gulch",
+    "zone": "Ashenvale",
     "description": "Enter Warsong Gulch and defeat the Alliance, gain a Warsong Mark of Honor, and bring it to Captain Shatterskull at the Mor'shan Base Camp.",
     "reputationGain": {
       "Warsong Outriders": 500
@@ -80436,7 +80436,7 @@
     "name": "Vanquish the Invaders!",
     "requiredLevel": "20",
     "questLevel": "25",
-    "zone": "Warsong Gulch",
+    "zone": "Ashenvale",
     "description": "Enter Warsong Gulch and defeat the Horde, obtain a Silverwing Talisman of Merit, and return to Sentinel Farsong at the Silverwing Grove.",
     "reputationGain": {
       "890": 500
@@ -81217,7 +81217,7 @@
     "name": "The Battle for Arathi Basin!",
     "requiredLevel": "20",
     "questLevel": "25",
-    "zone": "Arathi Basin",
+    "zone": "Arathi Highlands",
     "description": "Assault the mine, the lumber mill, the blacksmith and the farm, then return to Field Marshal Oslight in Refuge Pointe.",
     "reputationGain": {
       "The League of Arathor": 500
@@ -81258,7 +81258,7 @@
     "name": "The Battle for Arathi Basin!",
     "requiredLevel": "40",
     "questLevel": "45",
-    "zone": "Arathi Basin",
+    "zone": "Arathi Highlands",
     "description": "Assault the Arathi Basin mine, lumber mill, blacksmith and stable, and then return to Deathmaster Dwire in Hammerfall.",
     "reputationGain": {
       "The Defilers": 500
@@ -81299,7 +81299,7 @@
     "name": "The Battle for Arathi Basin!",
     "requiredLevel": "30",
     "questLevel": "35",
-    "zone": "Arathi Basin",
+    "zone": "Arathi Highlands",
     "description": "Assault the mine, the lumber mill, the blacksmith and the farm, then return to Field Marshal Oslight in Refuge Pointe.",
     "reputationGain": {
       "The League of Arathor": 500
@@ -81340,7 +81340,7 @@
     "name": "The Battle for Arathi Basin!",
     "requiredLevel": "40",
     "questLevel": "45",
-    "zone": "Arathi Basin",
+    "zone": "Arathi Highlands",
     "description": "Assault the mine, the lumber mill, the blacksmith and the farm, then return to Field Marshal Oslight in Refuge Pointe.",
     "reputationGain": {
       "The League of Arathor": 500
@@ -81381,7 +81381,7 @@
     "name": "The Battle for Arathi Basin!",
     "requiredLevel": "50",
     "questLevel": "55",
-    "zone": "Arathi Basin",
+    "zone": "Arathi Highlands",
     "description": "Assault the Arathi Basin mine, lumber mill, blacksmith and stable, and then return to Deathmaster Dwire in Hammerfall.",
     "reputationGain": {
       "The Defilers": 500
@@ -81422,7 +81422,7 @@
     "name": "The Battle for Arathi Basin!",
     "requiredLevel": "50",
     "questLevel": "55",
-    "zone": "Arathi Basin",
+    "zone": "Arathi Highlands",
     "description": "Assault the mine, the lumber mill, the blacksmith and the farm, then return to Field Marshal Oslight in Refuge Pointe.",
     "reputationGain": {
       "The League of Arathor": 500
@@ -81463,7 +81463,7 @@
     "name": "A Donation of Runecloth",
     "requiredLevel": "50",
     "questLevel": "60",
-    "zone": "Orgrimmar",
+    "zone": "Durotar",
     "previous": "7831",
     "description": "",
     "reputationGain": {
@@ -81490,7 +81490,7 @@
     "name": "A Donation of Mageweave",
     "requiredLevel": "40",
     "questLevel": "60",
-    "zone": "Stormwind City",
+    "zone": "Elwynn Forest",
     "previous": "7793",
     "description": "",
     "reputationGain": {
@@ -81517,7 +81517,7 @@
     "name": "A Donation of Wool",
     "requiredLevel": "12",
     "questLevel": "60",
-    "zone": "Stormwind City",
+    "zone": "Elwynn Forest",
     "description": "",
     "reputationGain": {
       "Stormwind": 150
@@ -81543,7 +81543,7 @@
     "name": "A Donation of Silk",
     "requiredLevel": "26",
     "questLevel": "60",
-    "zone": "Stormwind City",
+    "zone": "Elwynn Forest",
     "previous": "7791",
     "description": "",
     "reputationGain": {
@@ -81570,7 +81570,7 @@
     "name": "A Donation of Runecloth",
     "requiredLevel": "50",
     "questLevel": "60",
-    "zone": "Orgrimmar",
+    "zone": "Durotar",
     "previous": "7835",
     "description": "",
     "reputationGain": {
@@ -81597,7 +81597,7 @@
     "name": "A Donation of Runecloth",
     "requiredLevel": "50",
     "questLevel": "60",
-    "zone": "Thunder Bluff",
+    "zone": "Mulgore",
     "previous": "7822",
     "description": "",
     "reputationGain": {
@@ -81624,7 +81624,7 @@
     "name": "A Donation of Silk",
     "requiredLevel": "26",
     "questLevel": "60",
-    "zone": "Darnassus",
+    "zone": "Teldrassil",
     "previous": "7797",
     "description": "",
     "reputationGain": {
@@ -81651,7 +81651,7 @@
     "name": "A Donation of Mageweave",
     "requiredLevel": "40",
     "questLevel": "60",
-    "zone": "Darnassus",
+    "zone": "Teldrassil",
     "description": "",
     "reputationGain": {
       "Darnassus": 150
@@ -81677,7 +81677,7 @@
     "name": "A Donation of Wool",
     "requiredLevel": "12",
     "questLevel": "60",
-    "zone": "Darnassus",
+    "zone": "Teldrassil",
     "description": "",
     "reputationGain": {
       "Darnassus": 150
@@ -81703,7 +81703,7 @@
     "name": "A Donation of Runecloth",
     "requiredLevel": "50",
     "questLevel": "60",
-    "zone": "Undercity",
+    "zone": "Tirisfal Glades",
     "previous": "7817",
     "description": "",
     "reputationGain": {
@@ -81730,7 +81730,7 @@
     "name": "A Donation of Runecloth",
     "requiredLevel": "50",
     "questLevel": "60",
-    "zone": "Ironforge",
+    "zone": "Dun Morogh",
     "previous": "7809",
     "description": "",
     "reputationGain": {
@@ -81757,7 +81757,7 @@
     "name": "A Donation of Mageweave",
     "requiredLevel": "40",
     "questLevel": "60",
-    "zone": "Ironforge",
+    "zone": "Dun Morogh",
     "previous": "7808",
     "description": "",
     "reputationGain": {
@@ -81784,7 +81784,7 @@
     "name": "A Donation of Wool",
     "requiredLevel": "12",
     "questLevel": "60",
-    "zone": "Ironforge",
+    "zone": "Dun Morogh",
     "description": "",
     "reputationGain": {
       "Gnomeregan": 150
@@ -81810,7 +81810,7 @@
     "name": "A Donation of Silk",
     "requiredLevel": "26",
     "questLevel": "60",
-    "zone": "Ironforge",
+    "zone": "Dun Morogh",
     "previous": "7802",
     "description": "",
     "reputationGain": {
@@ -81837,7 +81837,7 @@
     "name": "A Donation of Runecloth",
     "requiredLevel": "50",
     "questLevel": "60",
-    "zone": "Ironforge",
+    "zone": "Dun Morogh",
     "previous": "7804",
     "description": "",
     "reputationGain": {
@@ -81864,7 +81864,7 @@
     "name": "A Donation of Mageweave",
     "requiredLevel": "40",
     "questLevel": "60",
-    "zone": "Ironforge",
+    "zone": "Dun Morogh",
     "previous": "7803",
     "description": "",
     "reputationGain": {
@@ -81891,7 +81891,7 @@
     "name": "A Donation of Runecloth",
     "requiredLevel": "50",
     "questLevel": "60",
-    "zone": "Darnassus",
+    "zone": "Teldrassil",
     "previous": "7799",
     "description": "",
     "reputationGain": {
@@ -81918,7 +81918,7 @@
     "name": "A Donation of Runecloth",
     "requiredLevel": "50",
     "questLevel": "60",
-    "zone": "Stormwind City",
+    "zone": "Elwynn Forest",
     "previous": "7794",
     "description": "",
     "reputationGain": {
@@ -81945,7 +81945,7 @@
     "name": "A Donation of Mageweave",
     "requiredLevel": "40",
     "questLevel": "60",
-    "zone": "Undercity",
+    "zone": "Tirisfal Glades",
     "previous": "7814",
     "description": "",
     "reputationGain": {
@@ -81972,7 +81972,7 @@
     "name": "A Donation of Wool",
     "requiredLevel": "12",
     "questLevel": "15",
-    "zone": "Ironforge",
+    "zone": "Dun Morogh",
     "description": "",
     "reputationGain": {
       "Ironforge": 150
@@ -81998,7 +81998,7 @@
     "name": "A Donation of Silk",
     "requiredLevel": "26",
     "questLevel": "30",
-    "zone": "Ironforge",
+    "zone": "Dun Morogh",
     "previous": "7807",
     "description": "",
     "reputationGain": {
@@ -82025,7 +82025,7 @@
     "name": "Korrak the Everliving",
     "requiredLevel": "51",
     "questLevel": "60",
-    "zone": "Alterac Valley",
+    "zone": "Alterac Mountains",
     "previous": "7202",
     "description": "Should Korrak the Bloodrager make a return to the Field of Strife, seek him out and destroy him.$B$BReturn the Skull of Korrak to Lieutenant Haggerdin in the Hillsbrad Foothills.",
     "races": [
@@ -82049,7 +82049,7 @@
     "name": "The Return of Korrak",
     "requiredLevel": "51",
     "questLevel": "60",
-    "zone": "Alterac Valley",
+    "zone": "Alterac Mountains",
     "previous": "7181",
     "description": "Should Korrak the Bloodrager make a return to the Field of Strife, seek him out and destroy him.$B$BReturn the Skull of Korrak to Warmaster Laggrond in the Hillsbrad Foothills.",
     "races": [
@@ -82073,7 +82073,7 @@
     "name": "Korrak the Bloodrager",
     "requiredLevel": "51",
     "questLevel": "60",
-    "zone": "Alterac Valley",
+    "zone": "Alterac Mountains",
     "description": "According to legend, the leader of the mighty Winterax trolls appears at will to wreak havoc on the denizens of Alterac Valley.$B$BShould Korrak make himself known, destroy him and return to Lieutenant Haggerdin in the Alterac Mountains.",
     "races": [
       "Gnome",
@@ -82096,7 +82096,7 @@
     "name": "The Legend of Korrak",
     "requiredLevel": "51",
     "questLevel": "60",
-    "zone": "Alterac Valley",
+    "zone": "Alterac Mountains",
     "description": "According to legend, the leader of the mighty Winterax trolls appears at will to wreak havoc on the denizens of Alterac Valley.$B$BShould Korrak make himself known, destroy him and return to Warmaster Laggrond.",
     "races": [
       "Troll",
@@ -82608,7 +82608,7 @@
     "name": "Legendary Heroes",
     "requiredLevel": "51",
     "questLevel": "60",
-    "zone": "Alterac Valley",
+    "zone": "Alterac Mountains",
     "previous": "7170",
     "description": "",
     "money": 0,
@@ -82626,7 +82626,7 @@
     "name": "The Eye of Command",
     "requiredLevel": "51",
     "questLevel": "60",
-    "zone": "Alterac Valley",
+    "zone": "Alterac Mountains",
     "previous": "7171",
     "description": "",
     "money": 0,
@@ -82644,7 +82644,7 @@
     "name": "Honored Amongst the Guard",
     "requiredLevel": "51",
     "questLevel": "60",
-    "zone": "Alterac Valley",
+    "zone": "Alterac Mountains",
     "previous": "7168",
     "description": "",
     "reputationGain": {
@@ -82666,7 +82666,7 @@
     "name": "Earned Reverence",
     "requiredLevel": "51",
     "questLevel": "60",
-    "zone": "Alterac Valley",
+    "zone": "Alterac Mountains",
     "previous": "7169",
     "description": "",
     "money": 0,
@@ -82684,7 +82684,7 @@
     "name": "Legendary Heroes",
     "requiredLevel": "51",
     "questLevel": "60",
-    "zone": "Alterac Valley",
+    "zone": "Alterac Mountains",
     "previous": "7165",
     "description": "",
     "money": 0,
@@ -82702,7 +82702,7 @@
     "name": "The Eye of Command",
     "requiredLevel": "51",
     "questLevel": "60",
-    "zone": "Alterac Valley",
+    "zone": "Alterac Mountains",
     "previous": "7166",
     "description": "",
     "money": 0,
@@ -82720,7 +82720,7 @@
     "name": "Rise and Be Recognized",
     "requiredLevel": "51",
     "questLevel": "60",
-    "zone": "Alterac Valley",
+    "zone": "Alterac Mountains",
     "previous": "7162",
     "description": "",
     "money": 0,
@@ -82738,7 +82738,7 @@
     "name": "Honored Amongst the Clan",
     "requiredLevel": "51",
     "questLevel": "60",
-    "zone": "Alterac Valley",
+    "zone": "Alterac Mountains",
     "previous": "7161",
     "description": "",
     "reputationGain": {
@@ -82760,7 +82760,7 @@
     "name": "Earned Reverence",
     "requiredLevel": "51",
     "questLevel": "60",
-    "zone": "Alterac Valley",
+    "zone": "Alterac Mountains",
     "previous": "7164",
     "description": "",
     "money": 0,
@@ -82778,7 +82778,7 @@
     "name": "Rise and Be Recognized",
     "requiredLevel": "51",
     "questLevel": "60",
-    "zone": "Alterac Valley",
+    "zone": "Alterac Mountains",
     "previous": "7161",
     "description": "",
     "money": 0,
@@ -82796,7 +82796,7 @@
     "name": "Proving Grounds",
     "requiredLevel": "51",
     "questLevel": "60",
-    "zone": "Alterac Valley",
+    "zone": "Alterac Mountains",
     "description": "Travel to the Icewing Caverns located southwest of Dun Baldar in Alterac Valley and recover the Stormpike Banner. Return the Stormpike Banner to Lieutenant Haggerdin in the Alterac Mountains.",
     "reputationGain": {
       "Ironforge": 250,
@@ -82817,7 +82817,7 @@
     "name": "Proving Grounds",
     "requiredLevel": "51",
     "questLevel": "60",
-    "zone": "Alterac Valley",
+    "zone": "Alterac Mountains",
     "description": "Travel to the Wildpaw cavern located southeast of the main base in Alterac Valley and find the Frostwolf Banner. Return the Frostwolf Banner to Warmaster Laggrond. ",
     "reputationGain": {
       "Frostwolf Clan": 250,
@@ -87906,7 +87906,7 @@
     "name": "Eranikus, Tyrant of the Dream",
     "requiredLevel": "60",
     "questLevel": "60",
-    "zone": "Sunken Temple",
+    "zone": "Temple of Atal'Hakkar",
     "previous": "8555",
     "description": "Travel to the continent of Teldrassil and find Malfurion's agent somewhere outside the walls of Darnassus.\n",
     "reputationGain": {
@@ -88709,7 +88709,7 @@
     "name": "The Fall of Ossirian",
     "requiredLevel": "60",
     "questLevel": "60",
-    "zone": "Ruins of Ahn'Qiraj",
+    "zone": "Ahn'Qiraj",
     "description": "Deliver the Head of Ossirian the Unscarred to Commander Mar'alith at Cenarion Hold in Silithus.\n",
     "reputationGain": {
       "Brood of Nozdormu": 500,
@@ -90331,7 +90331,7 @@
     "name": "An Earnest Proposition",
     "requiredLevel": "58",
     "questLevel": "60",
-    "zone": "Ironforge",
+    "zone": "Dun Morogh",
     "description": "Acquire 15 Winterspring Blood Samples and 20 gold and bring them along with a set of Wildheart Bracers to Deliana in Ironforge.",
     "races": [
       "Gnome",
@@ -90362,7 +90362,7 @@
     "name": "An Earnest Proposition",
     "requiredLevel": "58",
     "questLevel": "60",
-    "zone": "Ironforge",
+    "zone": "Dun Morogh",
     "description": "Acquire 15 Winterspring Blood Samples and 20 gold and bring them along with a set of Beaststalker's Bindings to Deliana in Ironforge.",
     "races": [
       "Gnome",
@@ -90393,7 +90393,7 @@
     "name": "An Earnest Proposition",
     "requiredLevel": "58",
     "questLevel": "60",
-    "zone": "Ironforge",
+    "zone": "Dun Morogh",
     "description": "Acquire 15 Winterspring Blood Samples and 20 gold and bring them along with a set of Magister's Bindings to Deliana in Ironforge.",
     "races": [
       "Gnome",
@@ -90424,7 +90424,7 @@
     "name": "An Earnest Proposition",
     "requiredLevel": "58",
     "questLevel": "60",
-    "zone": "Ironforge",
+    "zone": "Dun Morogh",
     "description": "Acquire 15 Winterspring Blood Samples and 20 gold and bring them along with a set of Lightforge Bracers to Deliana in Ironforge.",
     "races": [
       "Gnome",
@@ -90455,7 +90455,7 @@
     "name": "An Earnest Proposition",
     "requiredLevel": "58",
     "questLevel": "60",
-    "zone": "Ironforge",
+    "zone": "Dun Morogh",
     "description": "Acquire 15 Winterspring Blood Samples and 20 gold and bring them along with 1 set of Devout Bracers to Deliana in Ironforge.",
     "races": [
       "Gnome",
@@ -90486,7 +90486,7 @@
     "name": "An Earnest Proposition",
     "requiredLevel": "58",
     "questLevel": "60",
-    "zone": "Ironforge",
+    "zone": "Dun Morogh",
     "description": "Acquire 15 Winterspring Blood Samples and 20 gold and bring them along with a set of Shadowcraft Bracers to Deliana in Ironforge.\n",
     "races": [
       "Gnome",
@@ -90517,7 +90517,7 @@
     "name": "An Earnest Proposition",
     "requiredLevel": "58",
     "questLevel": "60",
-    "zone": "Ironforge",
+    "zone": "Dun Morogh",
     "description": "Acquire 15 Winterspring Blood Samples and 20 gold and bring them along with a set of Dreadmist Bracers to Deliana in Ironforge.\n",
     "races": [
       "Gnome",
@@ -90548,7 +90548,7 @@
     "name": "An Earnest Proposition",
     "requiredLevel": "58",
     "questLevel": "60",
-    "zone": "Ironforge",
+    "zone": "Dun Morogh",
     "description": "Acquire 15 Winterspring Blood Samples and 20 gold and bring them along with a set of Bracers of Valor to Deliana in Ironforge.",
     "races": [
       "Gnome",
@@ -90579,7 +90579,7 @@
     "name": "An Earnest Proposition",
     "requiredLevel": "58",
     "questLevel": "60",
-    "zone": "Orgrimmar",
+    "zone": "Durotar",
     "description": "Acquire 15 Silithus Venom Samples and 20 gold and bring them along with a set of Wildheart Bracers to Mokvar in Orgrimmar.",
     "races": [
       "Troll",
@@ -90610,7 +90610,7 @@
     "name": "An Earnest Proposition",
     "requiredLevel": "58",
     "questLevel": "60",
-    "zone": "Orgrimmar",
+    "zone": "Durotar",
     "description": "Acquire 15 Silithus Venom Samples and 20 gold and bring them along with a set of Beaststalker's Bindings to Mokvar in Orgrimmar.",
     "races": [
       "Troll",
@@ -90641,7 +90641,7 @@
     "name": "An Earnest Proposition",
     "requiredLevel": "58",
     "questLevel": "60",
-    "zone": "Orgrimmar",
+    "zone": "Durotar",
     "description": "Acquire 15 Silithus Venom Samples and 20 gold and bring them along with a set of Magister's Bindings to Mokvar in Orgrimmar.\n",
     "races": [
       "Troll",
@@ -90672,7 +90672,7 @@
     "name": "An Earnest Proposition",
     "requiredLevel": "58",
     "questLevel": "60",
-    "zone": "Orgrimmar",
+    "zone": "Durotar",
     "description": "Acquire 15 Silithus Venom Samples and 20 gold and bring them along with a set of Devout Bracers to Mokvar in Orgrimmar.\n",
     "races": [
       "Troll",
@@ -90703,7 +90703,7 @@
     "name": "An Earnest Proposition",
     "requiredLevel": "58",
     "questLevel": "60",
-    "zone": "Orgrimmar",
+    "zone": "Durotar",
     "description": "Acquire 15 Silithus Venom Samples and 20 gold and bring them along with a set of Shadowcraft Bracers to Mokvar in Orgrimmar.\n",
     "races": [
       "Troll",
@@ -90734,7 +90734,7 @@
     "name": "An Earnest Proposition",
     "requiredLevel": "58",
     "questLevel": "60",
-    "zone": "Orgrimmar",
+    "zone": "Durotar",
     "description": "Acquire 15 Silithus Venom Samples and 20 gold and bring them along with a set of Bindings of Elements to Mokvar in Orgrimmar.\n",
     "races": [
       "Troll",
@@ -90765,7 +90765,7 @@
     "name": "An Earnest Proposition",
     "requiredLevel": "58",
     "questLevel": "60",
-    "zone": "Orgrimmar",
+    "zone": "Durotar",
     "description": "Acquire 15 Silithus Venom Samples and 20 gold and bring them along with a set of Dreadmist Bracers to Mokvar in Orgrimmar.",
     "races": [
       "Troll",
@@ -90796,7 +90796,7 @@
     "name": "An Earnest Proposition",
     "requiredLevel": "58",
     "questLevel": "60",
-    "zone": "Orgrimmar",
+    "zone": "Durotar",
     "description": "Acquire 15 Silithus Venom Samples and 20 gold and bring them along with a set of Bracers of Valor to Mokvar in Orgrimmar.\n",
     "races": [
       "Troll",
@@ -90956,7 +90956,7 @@
     "name": "Just Compensation",
     "requiredLevel": "58",
     "questLevel": "60",
-    "zone": "Ironforge",
+    "zone": "Dun Morogh",
     "previous": "8977",
     "description": "Bring a Wildheart Belt and a set of Wildheart Gloves Deliana in Ironforge.",
     "classes": [
@@ -90982,7 +90982,7 @@
     "name": "Just Compensation",
     "requiredLevel": "58",
     "questLevel": "60",
-    "zone": "Orgrimmar",
+    "zone": "Durotar",
     "previous": "8978",
     "description": "Bring a Wildheart Belt and a set of Wildheart Gloves to Mokvar in Orgrimmar.",
     "classes": [
@@ -91072,7 +91072,7 @@
     "name": "Just Compensation",
     "requiredLevel": "58",
     "questLevel": "60",
-    "zone": "Ironforge",
+    "zone": "Dun Morogh",
     "previous": "8977",
     "description": "Bring a Beaststalker's Belt and a set of Beaststalker's Gloves to Deliana in Ironforge.",
     "classes": [
@@ -91098,7 +91098,7 @@
     "name": "Just Compensation",
     "requiredLevel": "58",
     "questLevel": "60",
-    "zone": "Ironforge",
+    "zone": "Dun Morogh",
     "previous": "8977",
     "description": "Bring a Magister's Belt and a set of Magister's Gloves to Deliana in Ironforge.\n",
     "classes": [
@@ -91124,7 +91124,7 @@
     "name": "Just Compensation",
     "requiredLevel": "58",
     "questLevel": "60",
-    "zone": "Ironforge",
+    "zone": "Dun Morogh",
     "previous": "8977",
     "description": "Bring a Lightforge Belt and a set of Lightforge Gauntlets to Deliana in Ironforge.\n",
     "classes": [
@@ -91150,7 +91150,7 @@
     "name": "Just Compensation",
     "requiredLevel": "58",
     "questLevel": "60",
-    "zone": "Ironforge",
+    "zone": "Dun Morogh",
     "previous": "8977",
     "description": "Bring a Devout Belt and a set of Devout Gloves to Deliana in Ironforge.",
     "classes": [
@@ -91176,7 +91176,7 @@
     "name": "Just Compensation",
     "requiredLevel": "58",
     "questLevel": "60",
-    "zone": "Ironforge",
+    "zone": "Dun Morogh",
     "previous": "8977",
     "description": "Bring a Shadowcraft Belt and a set of Shadowcraft Gloves to Deliana in Ironforge.",
     "classes": [
@@ -91202,7 +91202,7 @@
     "name": "Just Compensation",
     "requiredLevel": "58",
     "questLevel": "60",
-    "zone": "Ironforge",
+    "zone": "Dun Morogh",
     "previous": "8977",
     "description": "Bring a Dreadmist Belt and a set of Dreadmist Wraps to Deliana in Ironforge.",
     "classes": [
@@ -91228,7 +91228,7 @@
     "name": "Just Compensation",
     "requiredLevel": "58",
     "questLevel": "60",
-    "zone": "Ironforge",
+    "zone": "Dun Morogh",
     "previous": "8977",
     "description": "Bring a Belt of Valor and a set of Gauntlets of Valor to Deliana in Ironforge.",
     "classes": [
@@ -91254,7 +91254,7 @@
     "name": "Just Compensation",
     "requiredLevel": "58",
     "questLevel": "60",
-    "zone": "Orgrimmar",
+    "zone": "Durotar",
     "previous": "8978",
     "description": "Bring a Beaststalker's Belt and a set of Beaststalker's Gloves to Mokvar in Orgrimmar.",
     "classes": [
@@ -91280,7 +91280,7 @@
     "name": "Just Compensation",
     "requiredLevel": "58",
     "questLevel": "60",
-    "zone": "Orgrimmar",
+    "zone": "Durotar",
     "previous": "8978",
     "description": "Bring a Magister's Belt and a set of Magister's Gloves to Mokvar in Orgrimmar.",
     "classes": [
@@ -91306,7 +91306,7 @@
     "name": "Just Compensation",
     "requiredLevel": "58",
     "questLevel": "60",
-    "zone": "Orgrimmar",
+    "zone": "Durotar",
     "previous": "8978",
     "description": "Bring a Devout Belt and a set of Devout Gloves to Mokvar in Orgrimmar.",
     "classes": [
@@ -91332,7 +91332,7 @@
     "name": "Just Compensation",
     "requiredLevel": "58",
     "questLevel": "60",
-    "zone": "Orgrimmar",
+    "zone": "Durotar",
     "previous": "8978",
     "description": "Bring a Shadowcraft Belt and a set of Shadowcraft Gloves to Mokvar in Orgrimmar.",
     "classes": [
@@ -91358,7 +91358,7 @@
     "name": "Just Compensation",
     "requiredLevel": "58",
     "questLevel": "60",
-    "zone": "Orgrimmar",
+    "zone": "Durotar",
     "previous": "8978",
     "description": "Bring a Cord of Elements and a set of Gauntlets of Elements to Mokvar in Orgrimmar.\n",
     "classes": [
@@ -91384,7 +91384,7 @@
     "name": "Just Compensation",
     "requiredLevel": "58",
     "questLevel": "60",
-    "zone": "Orgrimmar",
+    "zone": "Durotar",
     "previous": "8978",
     "description": "Bring a Dreadmist Belt and a set of Dreadmist Wraps to Mokvar in Orgrimmar.\n",
     "classes": [
@@ -91410,7 +91410,7 @@
     "name": "Just Compensation",
     "requiredLevel": "58",
     "questLevel": "60",
-    "zone": "Orgrimmar",
+    "zone": "Durotar",
     "previous": "8978",
     "description": "Bring a Belt of Valor and a set of Gauntlets of Valor to Mokvar in Orgrimmar.\n",
     "classes": [
@@ -91571,7 +91571,7 @@
     "name": "Anthion's Parting Words",
     "requiredLevel": "58",
     "questLevel": "60",
-    "zone": "Ironforge",
+    "zone": "Dun Morogh",
     "previous": "9015",
     "description": "Return to Deliana in Ironforge with a set of Wildheart Boots, a Wildheart Kilt and Wildheart Spaulders.",
     "races": [
@@ -91608,7 +91608,7 @@
     "name": "Anthion's Parting Words",
     "requiredLevel": "58",
     "questLevel": "60",
-    "zone": "Ironforge",
+    "zone": "Dun Morogh",
     "previous": "9015",
     "description": "Return to Deliana in Ironforge with a set of Beaststalker's Boots, Beaststalker's Pants and Beaststalker's Mantle.",
     "races": [
@@ -91645,7 +91645,7 @@
     "name": "Anthion's Parting Words",
     "requiredLevel": "58",
     "questLevel": "60",
-    "zone": "Ironforge",
+    "zone": "Dun Morogh",
     "previous": "9015",
     "description": "Return to Deliana in Ironforge with a set of Magister's Boots, Magister's Leggings and Magister's Mantle.",
     "races": [
@@ -91682,7 +91682,7 @@
     "name": "Anthion's Parting Words",
     "requiredLevel": "58",
     "questLevel": "60",
-    "zone": "Ironforge",
+    "zone": "Dun Morogh",
     "previous": "9015",
     "description": "Return to Deliana in Ironforge with a set of Lightforge Boots, Lightforge Legplates and Lightforge Spaulders.",
     "races": [
@@ -91719,7 +91719,7 @@
     "name": "Anthion's Parting Words",
     "requiredLevel": "58",
     "questLevel": "60",
-    "zone": "Ironforge",
+    "zone": "Dun Morogh",
     "previous": "9015",
     "description": "Return to Deliana in Ironforge with a set of Devout Sandals, Devout Skirt and Devout Mantle.",
     "races": [
@@ -91756,7 +91756,7 @@
     "name": "Anthion's Parting Words",
     "requiredLevel": "58",
     "questLevel": "60",
-    "zone": "Ironforge",
+    "zone": "Dun Morogh",
     "previous": "9015",
     "description": "Return to Deliana in Ironforge with a set of Shadowcraft Boots, Shadowcraft Pants and Shadowcraft Spaulders.",
     "races": [
@@ -91793,7 +91793,7 @@
     "name": "Anthion's Parting Words",
     "requiredLevel": "58",
     "questLevel": "60",
-    "zone": "Orgrimmar",
+    "zone": "Durotar",
     "previous": "9015",
     "description": "Return to Mokvar in Orgimmar with a set of Boots of Elements, Kilt of Elements and Pauldrons of Elements.",
     "races": [
@@ -91830,7 +91830,7 @@
     "name": "Anthion's Parting Words",
     "requiredLevel": "58",
     "questLevel": "60",
-    "zone": "Ironforge",
+    "zone": "Dun Morogh",
     "previous": "9015",
     "description": "Return to Deliana in Ironforge with a set of Dreadmist Sandals, Dreadmist Leggings and Dreadmist Mantle.",
     "races": [
@@ -91867,7 +91867,7 @@
     "name": "Anthion's Parting Words",
     "requiredLevel": "58",
     "questLevel": "60",
-    "zone": "Ironforge",
+    "zone": "Dun Morogh",
     "previous": "9015",
     "description": "Return to Deliana in Ironforge with a set of Boots of Valor, Legplates of Valor and Spaulders of Valor.",
     "races": [
@@ -92193,7 +92193,7 @@
     "name": "Return to Deliana",
     "requiredLevel": "58",
     "questLevel": "60",
-    "zone": "Ironforge",
+    "zone": "Dun Morogh",
     "previous": "8928",
     "description": "Bring the Extra-Dimensional Ghost Revealer  to Deliana in Ironforge.",
     "races": [
@@ -92217,7 +92217,7 @@
     "name": "Return to Mokvar",
     "requiredLevel": "58",
     "questLevel": "60",
-    "zone": "Orgrimmar",
+    "zone": "Durotar",
     "previous": "8928",
     "description": "Return to Mokvar in Orgrimmar with the Extra-Dimensional Ghost Revealer.",
     "races": [
@@ -92624,7 +92624,7 @@
     "name": "Back to the Beginning",
     "requiredLevel": "58",
     "questLevel": "60",
-    "zone": "Ironforge",
+    "zone": "Dun Morogh",
     "previous": "8996",
     "description": "Speak with Deliana at The High Seat in Ironforge.",
     "races": [
@@ -92648,7 +92648,7 @@
     "name": "Back to the Beginning",
     "requiredLevel": "58",
     "questLevel": "60",
-    "zone": "Orgrimmar",
+    "zone": "Durotar",
     "previous": "8996",
     "description": "Speak with Mokvar at Grommash Hold in Orgrimmar's Valley of Wisdom.",
     "races": [
@@ -92672,7 +92672,7 @@
     "name": "Saving the Best for Last",
     "requiredLevel": "58",
     "questLevel": "60",
-    "zone": "Ironforge",
+    "zone": "Dun Morogh",
     "previous": "8997",
     "description": "Give Deliana your Wildheart Cowl and Wildheart Vest.",
     "races": [
@@ -92704,7 +92704,7 @@
     "name": "Saving the Best for Last",
     "requiredLevel": "58",
     "questLevel": "60",
-    "zone": "Ironforge",
+    "zone": "Dun Morogh",
     "previous": "8997",
     "description": "Give Deliana your Beaststalker's Cap and Beaststalker's Tunic.",
     "races": [
@@ -92736,7 +92736,7 @@
     "name": "Saving the Best for Last",
     "requiredLevel": "58",
     "questLevel": "60",
-    "zone": "Ironforge",
+    "zone": "Dun Morogh",
     "previous": "8997",
     "description": "Give Deliana your Magister's Crown and Magister's Robes.",
     "races": [
@@ -92768,7 +92768,7 @@
     "name": "Saving the Best for Last",
     "requiredLevel": "58",
     "questLevel": "60",
-    "zone": "Ironforge",
+    "zone": "Dun Morogh",
     "previous": "8997",
     "description": "Give Deliana your Lightforge Helm and Lightforge Breastplate.",
     "races": [
@@ -92800,7 +92800,7 @@
     "name": "Saving the Best for Last",
     "requiredLevel": "58",
     "questLevel": "60",
-    "zone": "Ironforge",
+    "zone": "Dun Morogh",
     "previous": "8997",
     "description": "Give Deliana your Devout Crown and Devout Robe.",
     "races": [
@@ -92832,7 +92832,7 @@
     "name": "Saving the Best for Last",
     "requiredLevel": "58",
     "questLevel": "60",
-    "zone": "Ironforge",
+    "zone": "Dun Morogh",
     "previous": "8997",
     "description": "Give Deliana your Shadowcraft Cap and Shadowcraft Tunic.",
     "races": [
@@ -92864,7 +92864,7 @@
     "name": "Saving the Best for Last",
     "requiredLevel": "58",
     "questLevel": "60",
-    "zone": "Ironforge",
+    "zone": "Dun Morogh",
     "previous": "8997",
     "description": "Give Deliana your Dreadmist Mask and Dreadmist Robe.",
     "races": [
@@ -92896,7 +92896,7 @@
     "name": "Saving the Best for Last",
     "requiredLevel": "58",
     "questLevel": "60",
-    "zone": "Ironforge",
+    "zone": "Dun Morogh",
     "previous": "8997",
     "description": "Give Deliana your Helm of Valor and Breastplate of Valor.",
     "races": [
@@ -92928,7 +92928,7 @@
     "name": "Saving the Best for Last",
     "requiredLevel": "58",
     "questLevel": "60",
-    "zone": "Orgrimmar",
+    "zone": "Durotar",
     "previous": "8998",
     "description": "Give Mokvar your Wildheart Cowl and Wildheart Vest.",
     "races": [
@@ -92960,7 +92960,7 @@
     "name": "Saving the Best for Last",
     "requiredLevel": "58",
     "questLevel": "60",
-    "zone": "Orgrimmar",
+    "zone": "Durotar",
     "previous": "8998",
     "description": "Give Mokvar your Beaststalker's Cap and Beaststalker's Tunic.",
     "races": [
@@ -92992,7 +92992,7 @@
     "name": "Saving the Best for Last",
     "requiredLevel": "58",
     "questLevel": "60",
-    "zone": "Orgrimmar",
+    "zone": "Durotar",
     "previous": "8998",
     "description": "Give Mokvar your Devout Crown and Devout Robe.",
     "races": [
@@ -93024,7 +93024,7 @@
     "name": "Saving the Best for Last",
     "requiredLevel": "58",
     "questLevel": "60",
-    "zone": "Orgrimmar",
+    "zone": "Durotar",
     "previous": "8998",
     "description": "Give Mokvar your Shadowcraft Cap and Shadowcraft Tunic.",
     "races": [
@@ -93056,7 +93056,7 @@
     "name": "Saving the Best for Last",
     "requiredLevel": "58",
     "questLevel": "60",
-    "zone": "Orgrimmar",
+    "zone": "Durotar",
     "previous": "8998",
     "description": "Give Mokvar your Coif of Elements and Vest of Elements.",
     "races": [
@@ -93088,7 +93088,7 @@
     "name": "Saving the Best for Last",
     "requiredLevel": "58",
     "questLevel": "60",
-    "zone": "Orgrimmar",
+    "zone": "Durotar",
     "previous": "8998",
     "description": "Give Mokvar your Dreadmist Mask and Dreadmist Robe.",
     "races": [
@@ -93120,7 +93120,7 @@
     "name": "Saving the Best for Last",
     "requiredLevel": "58",
     "questLevel": "60",
-    "zone": "Orgrimmar",
+    "zone": "Durotar",
     "previous": "8998",
     "description": "Give Mokvar your Helm of Valor and Breastplate of Valor.",
     "races": [
@@ -93152,7 +93152,7 @@
     "name": "Saving the Best for Last",
     "requiredLevel": "58",
     "questLevel": "60",
-    "zone": "Orgrimmar",
+    "zone": "Durotar",
     "previous": "8998",
     "description": "Give Mokvar your Magister's Crown and Magister's Robes.",
     "races": [
@@ -93202,7 +93202,7 @@
     "name": "Anthion's Parting Words",
     "requiredLevel": "58",
     "questLevel": "60",
-    "zone": "Orgrimmar",
+    "zone": "Durotar",
     "previous": "9015",
     "description": "Return to Mokvar in Orgimmar with a set of Wildheart Boots, a Wildheart Kilt and Wildheart Spaulders.\n",
     "races": [
@@ -93239,7 +93239,7 @@
     "name": "Anthion's Parting Words",
     "requiredLevel": "58",
     "questLevel": "60",
-    "zone": "Orgrimmar",
+    "zone": "Durotar",
     "previous": "9015",
     "description": "Return to Mokvar in Orgimmar with a set of Beaststalker's Boots, Beaststalker's Pants and Beaststalker's Mantle.",
     "races": [
@@ -93276,7 +93276,7 @@
     "name": "Anthion's Parting Words",
     "requiredLevel": "58",
     "questLevel": "60",
-    "zone": "Orgrimmar",
+    "zone": "Durotar",
     "previous": "9015",
     "description": "Return to Mokvar in Orgimmar with a set of Magister's Boots, Magister's Leggings and Magister's Mantle.",
     "races": [
@@ -93313,7 +93313,7 @@
     "name": "Anthion's Parting Words",
     "requiredLevel": "58",
     "questLevel": "60",
-    "zone": "Orgrimmar",
+    "zone": "Durotar",
     "previous": "9015",
     "description": "Return to Mokvar in Orgimmar with a set of Devout Sandals, Devout Skirt and Devout Mantle.",
     "races": [
@@ -93350,7 +93350,7 @@
     "name": "Anthion's Parting Words",
     "requiredLevel": "58",
     "questLevel": "60",
-    "zone": "Orgrimmar",
+    "zone": "Durotar",
     "previous": "9015",
     "description": "Return to Mokvar in Orgimmar with a set of  Shadowcraft Boots, Shadowcraft Pants and Shadowcraft Spaulders.",
     "races": [
@@ -93387,7 +93387,7 @@
     "name": "Anthion's Parting Words",
     "requiredLevel": "58",
     "questLevel": "60",
-    "zone": "Orgrimmar",
+    "zone": "Durotar",
     "previous": "9015",
     "description": "Return to Mokvar in Orgimmar with a set of Dreadmist Sandals, Dreadmist Leggings and Dreadmist Mantle.",
     "races": [
@@ -93424,7 +93424,7 @@
     "name": "Anthion's Parting Words",
     "requiredLevel": "58",
     "questLevel": "60",
-    "zone": "Orgrimmar",
+    "zone": "Durotar",
     "previous": "9015",
     "description": "Return to Mokvar in Orgimmar with a set of Boots of Valor, Legplates of Valor and Spaulders of Valor.",
     "races": [
@@ -99461,7 +99461,7 @@
     "name": "The Darkmoon Faire",
     "requiredLevel": "6",
     "questLevel": "60",
-    "zone": "Ironforge",
+    "zone": "Dun Morogh",
     "description": "Deliver the Free Ticket Voucher to Gelvas Grimgate, located inside the Darkmoon Faire carnival.",
     "reputationGain": {
       "Darkmoon Faire": 75
@@ -99888,7 +99888,7 @@
     "name": "The Battle for Arathi Basin!",
     "requiredLevel": "30",
     "questLevel": "35",
-    "zone": "Arathi Basin",
+    "zone": "Arathi Highlands",
     "description": "Assault the Arathi Basin mine, lumber mill, blacksmith and stable, and then return to Deathmaster Dwire in Hammerfall.",
     "reputationGain": {
       "The Defilers": 500
@@ -99946,7 +99946,7 @@
     "name": "Hero of the Stormpike",
     "requiredLevel": "51",
     "questLevel": "60",
-    "zone": "Alterac Valley",
+    "zone": "Alterac Mountains",
     "previous": "7141",
     "description": "",
     "reputationGain": {
@@ -99968,7 +99968,7 @@
     "name": "Oran's Gratitude",
     "requiredLevel": "42",
     "questLevel": "47",
-    "zone": "The Hinterlands",
+    "zone": "Hinterlands",
     "previous": "2782",
     "description": "",
     "reputationGain": {
@@ -102131,7 +102131,7 @@
     "name": "Plainsrunning",
     "requiredLevel": "45",
     "questLevel": "60",
-    "zone": "Thunder Bluff",
+    "zone": "Mulgore",
     "description": "Speak to Saern Priderunner again to learn the Plainsrunning skill.",
     "races": [
       "Troll",
@@ -102230,7 +102230,7 @@
     "name": "Bodleys Unfortunate Fate",
     "requiredLevel": "58",
     "questLevel": "60",
-    "zone": "Orgrimmar",
+    "zone": "Durotar",
     "description": "Travel to Blackrock Mountain and use the Extra-Dimensional Ghost Revealer to find Bodley near Blackrock Spire.",
     "money": 0,
     "experience": 0,
@@ -102268,7 +102268,7 @@
     "name": "Hero of the Frostwolf",
     "requiredLevel": "51",
     "questLevel": "60",
-    "zone": "Alterac Valley",
+    "zone": "Alterac Mountains",
     "previous": "7142",
     "description": "",
     "reputationGain": {
@@ -102568,7 +102568,7 @@
     "name": "Battle of Warsong Gulch",
     "requiredLevel": "60",
     "questLevel": "60",
-    "zone": "Warsong Gulch",
+    "zone": "Ashenvale",
     "previous": "8430",
     "description": "Bring 3 Warsong Marks of Honor to a Horde Warbringer outside the battlegrounds.",
     "reputationGain": {
@@ -102595,7 +102595,7 @@
     "name": "Conquering Arathi Basin",
     "requiredLevel": "30",
     "questLevel": "39",
-    "zone": "Arathi Basin",
+    "zone": "Arathi Highlands",
     "description": "Bring 3 Arathi Basin Mark of Honor to a Horde Warbringer outside the battlegrounds.",
     "reputationGain": {
       "The Defilers": 100
@@ -102621,7 +102621,7 @@
     "name": "Conquering Arathi Basin",
     "requiredLevel": "40",
     "questLevel": "49",
-    "zone": "Arathi Basin",
+    "zone": "Arathi Highlands",
     "description": "Bring 3 Arathi Basin Mark of Honor to a Horde Warbringer outside the battlegrounds.",
     "reputationGain": {
       "The Defilers": 100
@@ -102673,7 +102673,7 @@
     "name": "Conquering Arathi Basin",
     "requiredLevel": "60",
     "questLevel": "60",
-    "zone": "Arathi Basin",
+    "zone": "Arathi Highlands",
     "description": "Bring 3 Arathi Basin Mark of Honor to a Horde Warbringer outside the battlegrounds.",
     "reputationGain": {
       "The Defilers": 100
@@ -102699,7 +102699,7 @@
     "name": "Conquering Arathi Basin",
     "requiredLevel": "30",
     "questLevel": "39",
-    "zone": "Arathi Basin",
+    "zone": "Arathi Highlands",
     "previous": "8436",
     "description": "Bring 3 Arathi Basin Mark of Honor to a Horde Warbringer outside the battlegrounds.",
     "reputationGain": {
@@ -102726,7 +102726,7 @@
     "name": "Conquering Arathi Basin",
     "requiredLevel": "40",
     "questLevel": "49",
-    "zone": "Arathi Basin",
+    "zone": "Arathi Highlands",
     "previous": "8437",
     "description": "Bring 3 Arathi Basin Mark of Honor to a Horde Warbringer outside the battlegrounds.",
     "reputationGain": {
@@ -102753,7 +102753,7 @@
     "name": "Conquering Arathi Basin",
     "requiredLevel": "50",
     "questLevel": "59",
-    "zone": "Arathi Basin",
+    "zone": "Arathi Highlands",
     "previous": "8438",
     "description": "Bring 3 Arathi Basin Mark of Honor to a Horde Warbringer outside the battlegrounds.",
     "reputationGain": {
@@ -102780,7 +102780,7 @@
     "name": "Conquering Arathi Basin",
     "requiredLevel": "60",
     "questLevel": "60",
-    "zone": "Arathi Basin",
+    "zone": "Arathi Highlands",
     "previous": "8439",
     "description": "Bring 3 Arathi Basin Mark of Honor to a Horde Warbringer outside the battlegrounds.",
     "reputationGain": {
@@ -103593,7 +103593,7 @@
     "name": "Cut Arathor Supply Lines",
     "requiredLevel": "50",
     "questLevel": "59",
-    "zone": "Arathi Basin",
+    "zone": "Arathi Highlands",
     "description": "Win the battle for Arathi Basin, get an Arathi Basin Mark of Honor, and return it to Deathstalker Mortis at Hammerfall.",
     "reputationGain": {
       "The Defilers": 500
@@ -103619,7 +103619,7 @@
     "name": "More Resource Crates",
     "requiredLevel": "50",
     "questLevel": "55",
-    "zone": "Arathi Basin",
+    "zone": "Arathi Highlands",
     "previous": "8123",
     "description": "Win the battle for Arathi Basin, get an Arathi Resource Crate, and return it to Deathstalker Mortis at Hammerfall.",
     "reputationGain": {
@@ -103646,7 +103646,7 @@
     "name": "Arathi Basin Mark of Honor!",
     "requiredLevel": "40",
     "questLevel": "49",
-    "zone": "Arathi Basin",
+    "zone": "Arathi Highlands",
     "description": "Win the battle for Arathi Basin, get an Arathi Basin Mark of Honor, and return it to Sergeant Maclear at Refuge Pointe.",
     "reputationGain": {
       "The League of Arathor": 500
@@ -103672,7 +103672,7 @@
     "name": "Arathi Basin Mark of Honor!",
     "requiredLevel": "20",
     "questLevel": "29",
-    "zone": "Arathi Basin",
+    "zone": "Arathi Highlands",
     "description": "Win the battle for Arathi Basin, get an Arathi Basin Mark of Honor, and return it to Sergeant Maclear at Refuge Pointe.",
     "reputationGain": {
       "The League of Arathor": 500
@@ -103698,7 +103698,7 @@
     "name": "Arathi Basin Mark of Honor!",
     "requiredLevel": "30",
     "questLevel": "39",
-    "zone": "Arathi Basin",
+    "zone": "Arathi Highlands",
     "description": "Win the battle for Arathi Basin, get an Arathi Basin Mark of Honor, and return it to Sergeant Maclear at Refuge Pointe.",
     "reputationGain": {
       "The League of Arathor": 500
@@ -103724,7 +103724,7 @@
     "name": "More Resource Crates",
     "requiredLevel": "40",
     "questLevel": "45",
-    "zone": "Arathi Basin",
+    "zone": "Arathi Highlands",
     "previous": "8154",
     "description": "Win the battle for Arathi Basin, get an Arathi Resource Crate, and return it to Sergeant Maclear at Refuge Pointe.",
     "reputationGain": {
@@ -103751,7 +103751,7 @@
     "name": "More Resource Crates",
     "requiredLevel": "20",
     "questLevel": "25",
-    "zone": "Arathi Basin",
+    "zone": "Arathi Highlands",
     "previous": "8155",
     "description": "Win the battle for Arathi Basin, get an Arathi Resource Crate, and return it to Sergeant Maclear at Refuge Pointe.",
     "reputationGain": {
@@ -103778,7 +103778,7 @@
     "name": "More Resource Crates",
     "requiredLevel": "30",
     "questLevel": "35",
-    "zone": "Arathi Basin",
+    "zone": "Arathi Highlands",
     "previous": "8156",
     "description": "Win the battle for Arathi Basin, get an Arathi Resource Crate, and return it to Sergeant Maclear at Refuge Pointe.",
     "reputationGain": {
@@ -103805,7 +103805,7 @@
     "name": "Cut Arathor Supply Lines",
     "requiredLevel": "40",
     "questLevel": "49",
-    "zone": "Arathi Basin",
+    "zone": "Arathi Highlands",
     "description": "Win the battle for Arathi Basin, get an Arathi Basin Mark of Honor, and return it to Deathstalker Mortis at Hammerfall.",
     "reputationGain": {
       "The Defilers": 500
@@ -103831,7 +103831,7 @@
     "name": "Cut Arathor Supply Lines",
     "requiredLevel": "30",
     "questLevel": "39",
-    "zone": "Arathi Basin",
+    "zone": "Arathi Highlands",
     "description": "Win the battle for Arathi Basin, get an Arathi Basin Mark of Honor, and return it to Deathstalker Mortis at Hammerfall.",
     "reputationGain": {
       "The Defilers": 500
@@ -103857,7 +103857,7 @@
     "name": "Cut Arathor Supply Lines",
     "requiredLevel": "20",
     "questLevel": "29",
-    "zone": "Arathi Basin",
+    "zone": "Arathi Highlands",
     "description": "Win the battle for Arathi Basin, get an Arathi Basin Mark of Honor, and return it to Deathstalker Mortis at Hammerfall.",
     "reputationGain": {
       "The Defilers": 500
@@ -103883,7 +103883,7 @@
     "name": "More Resource Crates",
     "requiredLevel": "40",
     "questLevel": "45",
-    "zone": "Arathi Basin",
+    "zone": "Arathi Highlands",
     "previous": "8160",
     "description": "Win the battle for Arathi Basin, get an Arathi Resource Crate, and return it to Deathstalker Mortis at Hammerfall.",
     "reputationGain": {
@@ -103910,7 +103910,7 @@
     "name": "More Resource Crates",
     "requiredLevel": "30",
     "questLevel": "35",
-    "zone": "Arathi Basin",
+    "zone": "Arathi Highlands",
     "previous": "8161",
     "description": "Win the battle for Arathi Basin, get an Arathi Resource Crate, and return it to Deathstalker Mortis at Hammerfall.",
     "reputationGain": {
@@ -103937,7 +103937,7 @@
     "name": "More Resource Crates",
     "requiredLevel": "20",
     "questLevel": "25",
-    "zone": "Arathi Basin",
+    "zone": "Arathi Highlands",
     "previous": "8162",
     "description": "Win the battle for Arathi Basin, get an Arathi Resource Crate, and return it to Deathstalker Mortis at Hammerfall.",
     "reputationGain": {
@@ -103964,7 +103964,7 @@
     "name": "Ribbons of Sacrifice",
     "requiredLevel": "10",
     "questLevel": "39",
-    "zone": "Warsong Gulch",
+    "zone": "Ashenvale",
     "description": "Bring the Ribbons of Sacrifice to Captain Shatterskull so that the Outriders may reward you for acting on our behalf.",
     "reputationGain": {
       "Warsong Outriders": 25
@@ -103990,7 +103990,7 @@
     "name": "Ribbons of Sacrifice",
     "requiredLevel": "40",
     "questLevel": "60",
-    "zone": "Warsong Gulch",
+    "zone": "Ashenvale",
     "description": "Bring the Ribbons of Sacrifice to Captain Shatterskull so that the Outriders may reward you for acting on our behalf.",
     "reputationGain": {
       "Warsong Outriders": 25
@@ -104016,7 +104016,7 @@
     "name": "Ribbons of Sacrifice",
     "requiredLevel": "10",
     "questLevel": "39",
-    "zone": "Warsong Gulch",
+    "zone": "Ashenvale",
     "description": "Bring the Ribbons of Sacrifice to Sentinel Farsong so that the Sentinels may reward you for acting on our behalf.",
     "reputationGain": {
       "890": 25
@@ -104042,7 +104042,7 @@
     "name": "Ribbons of Sacrifice",
     "requiredLevel": "40",
     "questLevel": "60",
-    "zone": "Warsong Gulch",
+    "zone": "Ashenvale",
     "description": "Bring the Ribbons of Sacrifice to Sentinel Farsong so that the Sentinels may reward you for acting on our behalf.",
     "reputationGain": {
       "890": 25
@@ -104068,7 +104068,7 @@
     "name": "Talismans of Merit",
     "requiredLevel": "10",
     "questLevel": "15",
-    "zone": "Warsong Gulch",
+    "zone": "Ashenvale",
     "description": "",
     "reputationGain": {
       "890": 75
@@ -104088,7 +104088,7 @@
     "name": "Vanquish the Invaders!",
     "requiredLevel": "60",
     "questLevel": "60",
-    "zone": "Warsong Gulch",
+    "zone": "Ashenvale",
     "description": "Enter Warsong Gulch and defeat the Horde, obtain a Warsong Gulch Mark of Honor, and return to Sentinel Farsong at the Silverwing Grove.",
     "reputationGain": {
       "890": 500
@@ -104114,7 +104114,7 @@
     "name": "Marks of Honor",
     "requiredLevel": "10",
     "questLevel": "60",
-    "zone": "Warsong Gulch",
+    "zone": "Ashenvale",
     "reputationGain": {
       "890": 75
     },
@@ -104139,7 +104139,7 @@
     "name": "Marks of Honor",
     "requiredLevel": "10",
     "questLevel": "60",
-    "zone": "Warsong Gulch",
+    "zone": "Ashenvale",
     "reputationGain": {
       "Warsong Outriders": 75
     },
@@ -104164,7 +104164,7 @@
     "name": "Quell the Silverwing Usurpers",
     "requiredLevel": "60",
     "questLevel": "60",
-    "zone": "Warsong Gulch",
+    "zone": "Ashenvale",
     "description": "Enter Warsong Gulch and defeat the Alliance, gain a Warsong Gulch Mark of Honor, and bring it to Captain Shatterskull at the Mor'shan Base Camp.",
     "reputationGain": {
       "Warsong Outriders": 500
@@ -104190,7 +104190,7 @@
     "name": "Mark of Honor",
     "requiredLevel": "10",
     "questLevel": "15",
-    "zone": "Warsong Gulch",
+    "zone": "Ashenvale",
     "description": "",
     "reputationGain": {
       "Warsong Outriders": 75
@@ -104210,7 +104210,7 @@
     "name": "Arathi Basin Mark of Honor!",
     "requiredLevel": "60",
     "questLevel": "60",
-    "zone": "Arathi Basin",
+    "zone": "Arathi Highlands",
     "description": "Win the battle for Arathi Basin, get an Arathi Basin Mark of Honor, and return it to Sergeant Maclear at Refuge Pointe.",
     "reputationGain": {
       "The League of Arathor": 500
@@ -104236,7 +104236,7 @@
     "name": "More Arathi Basin Marks of Honor",
     "requiredLevel": "20",
     "questLevel": "60",
-    "zone": "Arathi Basin",
+    "zone": "Arathi Highlands",
     "reputationGain": {
       "The League of Arathor": 75
     },
@@ -104261,7 +104261,7 @@
     "name": "Cut Arathor Supply Lines",
     "requiredLevel": "60",
     "questLevel": "60",
-    "zone": "Arathi Basin",
+    "zone": "Arathi Highlands",
     "description": "Win the battle for Arathi Basin, get an Arathi Basin Mark of Honor, and return it to Deathstalker Mortis at Hammerfall.",
     "reputationGain": {
       "The Defilers": 500
@@ -104287,7 +104287,7 @@
     "name": "More Arathi Basin Marks of Honor",
     "requiredLevel": "20",
     "questLevel": "60",
-    "zone": "Arathi Basin",
+    "zone": "Arathi Highlands",
     "reputationGain": {
       "The Defilers": 75
     },
@@ -104312,7 +104312,7 @@
     "name": "Past Victories in Arathi",
     "requiredLevel": "1",
     "questLevel": "1",
-    "zone": "Arathi Basin",
+    "zone": "Arathi Highlands",
     "description": "",
     "races": [
       "Gnome",
@@ -104335,7 +104335,7 @@
     "name": "Past Victories in Arathi",
     "requiredLevel": "1",
     "questLevel": "1",
-    "zone": "Arathi Basin",
+    "zone": "Arathi Highlands",
     "description": "",
     "races": [
       "Troll",
@@ -104358,7 +104358,7 @@
     "name": "Past Victories in Warsong Gulch",
     "requiredLevel": "1",
     "questLevel": "1",
-    "zone": "Warsong Gulch",
+    "zone": "Ashenvale",
     "description": "",
     "races": [
       "Gnome",
@@ -104381,7 +104381,7 @@
     "name": "Past Victories in Warsong Gulch",
     "requiredLevel": "1",
     "questLevel": "1",
-    "zone": "Warsong Gulch",
+    "zone": "Ashenvale",
     "description": "",
     "races": [
       "Troll",
@@ -104404,7 +104404,7 @@
     "name": "Past Efforts in Warsong Gulch",
     "requiredLevel": "1",
     "questLevel": "1",
-    "zone": "Warsong Gulch",
+    "zone": "Ashenvale",
     "description": "",
     "races": [
       "Gnome",
@@ -104427,7 +104427,7 @@
     "name": "Past Efforts in Warsong Gulch",
     "requiredLevel": "1",
     "questLevel": "1",
-    "zone": "Warsong Gulch",
+    "zone": "Ashenvale",
     "description": "",
     "races": [
       "Troll",
@@ -105237,7 +105237,7 @@
     "name": "A Donation of Wool",
     "requiredLevel": "12",
     "questLevel": "60",
-    "zone": "Undercity",
+    "zone": "Tirisfal Glades",
     "description": "",
     "reputationGain": {
       "Undercity": 150
@@ -105263,7 +105263,7 @@
     "name": "A Donation of Wool",
     "requiredLevel": "12",
     "questLevel": "60",
-    "zone": "Thunder Bluff",
+    "zone": "Mulgore",
     "description": "",
     "reputationGain": {
       "Thunder Bluff": 150
@@ -105289,7 +105289,7 @@
     "name": "A Donation of Wool",
     "requiredLevel": "12",
     "questLevel": "60",
-    "zone": "Orgrimmar",
+    "zone": "Durotar",
     "description": "",
     "reputationGain": {
       "Orgrimmar": 150
@@ -105315,7 +105315,7 @@
     "name": "A Donation of Wool",
     "requiredLevel": "12",
     "questLevel": "60",
-    "zone": "Orgrimmar",
+    "zone": "Durotar",
     "description": "",
     "reputationGain": {
       "Darkspear Trolls": 150
@@ -105341,7 +105341,7 @@
     "name": "A Donation of Silk",
     "requiredLevel": "26",
     "questLevel": "60",
-    "zone": "Undercity",
+    "zone": "Tirisfal Glades",
     "previous": "7813",
     "description": "",
     "reputationGain": {
@@ -105368,7 +105368,7 @@
     "name": "A Donation of Silk",
     "requiredLevel": "26",
     "questLevel": "60",
-    "zone": "Thunder Bluff",
+    "zone": "Mulgore",
     "previous": "7820",
     "description": "",
     "reputationGain": {
@@ -105395,7 +105395,7 @@
     "name": "A Donation of Silk",
     "requiredLevel": "26",
     "questLevel": "60",
-    "zone": "Orgrimmar",
+    "zone": "Durotar",
     "previous": "7826",
     "description": "",
     "reputationGain": {
@@ -105422,7 +105422,7 @@
     "name": "A Donation of Silk",
     "requiredLevel": "26",
     "questLevel": "60",
-    "zone": "Orgrimmar",
+    "zone": "Durotar",
     "previous": "7833",
     "description": "",
     "reputationGain": {
@@ -105449,7 +105449,7 @@
     "name": "A Donation of Mageweave",
     "requiredLevel": "40",
     "questLevel": "60",
-    "zone": "Thunder Bluff",
+    "zone": "Mulgore",
     "previous": "7821",
     "description": "",
     "reputationGain": {
@@ -105476,7 +105476,7 @@
     "name": "A Donation of Mageweave",
     "requiredLevel": "40",
     "questLevel": "60",
-    "zone": "Orgrimmar",
+    "zone": "Durotar",
     "previous": "7827",
     "description": "",
     "reputationGain": {
@@ -105503,7 +105503,7 @@
     "name": "A Donation of Mageweave",
     "requiredLevel": "40",
     "questLevel": "60",
-    "zone": "Orgrimmar",
+    "zone": "Durotar",
     "previous": "7834",
     "description": "",
     "reputationGain": {
@@ -105530,7 +105530,7 @@
     "name": "Morrowgrain to Darnassus",
     "requiredLevel": "47",
     "questLevel": "55",
-    "zone": "Darnassus",
+    "zone": "Teldrassil",
     "previous": "3785",
     "description": "",
     "reputationGain": {
@@ -105557,7 +105557,7 @@
     "name": "Morrowgrain to Thunder Bluff",
     "requiredLevel": "47",
     "questLevel": "55",
-    "zone": "Thunder Bluff",
+    "zone": "Mulgore",
     "previous": "3786",
     "description": "",
     "reputationGain": {

@@ -312,6 +312,11 @@ public class Starter : MonoBehaviour
             spiritHealers[i].Initialise();
         for (int i = 0; i < paths.Count; i++)
             paths[i].Initialise();
+        //var deb = "";
+        //var groups = quests.GroupBy(x => x.zone).Where(x => Resources.Load<Sprite>("Sprites/Building/Buttons/Zone" + x.Key.Clean()) == null).OrderByDescending(x => x.Count()).ToList();
+        //for (int i = 0; i < groups.Count; i++)
+        //    deb += groups[i].Key + " (" + groups[i].Count() + ")\n";
+        //Debug.Log(deb);
         for (int i = 0; i < 2; i++)
             for (int j = 0; j < 5; j++)
                 for (int k = 0; k < 3; k++)
