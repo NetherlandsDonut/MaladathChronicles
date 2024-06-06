@@ -94897,7 +94897,7 @@
         "Jintha'Alor": 1,
         "Tyr's Hand": 1,
         "Hearthglen": 1,
-        "Ruins of Stromgarde": 2,
+        "Ruins of Stromgarde": 3,
         "Ruins of Alterac": 1,
         "Scarlet Monastery Grounds": 1,
         "Jaedenar Grounds": 1,
@@ -94983,9 +94983,9 @@
         ]
       },
       "startDate": "2024-06-04T02:06:54.7596341+02:00",
-      "lastLoaded": "2024-06-06T10:29:06.8679552+02:00",
-      "lastPlayed": "2024-06-06T10:29:16.2257187+02:00",
-      "timePlayed": "00:34:50.8664729"
+      "lastLoaded": "2024-06-06T16:32:26.8678279+02:00",
+      "lastPlayed": "2024-06-06T16:32:39.2347587+02:00",
+      "timePlayed": "00:35:03.2334037"
     },
     {
       "player": {
@@ -95640,7 +95640,8 @@
           }
         ],
         "completedQuests": [],
-        "level": 1,
+        "level": 13,
+        "experience": 7940,
         "reputation": {
           "Southsea Pirates": 0,
           "Razormane Tribe": 0,
@@ -95717,6 +95718,7 @@
         "race": "Human",
         "spec": "Mage",
         "gender": "Female",
+        "homeLocation": "Northshire Abbey",
         "abilities": {
           "Staff Proficiency": 1,
           "Cloth Proficiency": 1,
@@ -95726,12 +95728,26 @@
           "Wand Proficiency": 1,
           "Fireball": 0,
           "Frostbolt": 0,
-          "Arcane Missiles": 0
+          "Arcane Missiles": 0,
+          "Frost Ward": 0,
+          "Freezing Nova": 0,
+          "Brain Freeze": 0,
+          "Ice Lance": 0,
+          "Wintertide": 0,
+          "Fingers of Frost": 0,
+          "Blizzard": 0,
+          "Frostbite": 0,
+          "Splitting Ice": 0,
+          "Permafrost": 0,
+          "Icy Veins": 0,
+          "Deep Freeze": 0
         },
         "actionBars": [
           "Fireball",
           "Frostbolt",
-          "Arcane Missiles"
+          "Arcane Missiles",
+          "Freezing Nova",
+          "Deep Freeze"
         ],
         "stats": {
           "stats": {
@@ -95834,18 +95850,41 @@
             "stats": {
               "stats": {}
             }
+          },
+          "Head": {
+            "rarity": "Uncommon",
+            "name": "Red Winter Hat",
+            "icon": "itemhelmet67",
+            "type": "Head",
+            "source": "RareDrop",
+            "ilvl": 1,
+            "lvl": 1,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 1,
+            "stats": {
+              "stats": {}
+            }
           }
         }
       },
       "hour": 7,
-      "currentSite": "Northshire Abbey",
+      "minute": 4,
+      "second": 12,
+      "currentSite": "Echo Ridge Mine",
       "openedChests": {},
-      "siteProgress": {},
-      "commonsKilled": {},
+      "siteProgress": {
+        "Echo Ridge Mine": 1
+      },
+      "commonsKilled": {
+        "Kobold Laborer": 1
+      },
       "raresKilled": {},
       "elitesKilled": {},
       "siteVisits": {
-        "Northshire Abbey": 1
+        "Northshire Abbey": 1,
+        "Northshire Valley": 2,
+        "Echo Ridge Mine": 1
       },
       "unlockedAreas": [],
       "vendorStock": {
@@ -95926,7 +95965,11 @@
           }
         ]
       },
-      "startDate": "2024-06-04T10:06:59.4419723+02:00"
+      "startDate": "2024-06-04T10:06:59.4419723+02:00",
+      "lastLoaded": "2024-06-06T18:16:43.677414+02:00",
+      "lastPlayed": "2024-06-06T18:17:51.7063452+02:00",
+      "timePlayed": "00:01:45.1713036",
+      "lastVisitedTalents": 1
     },
     {
       "player": {

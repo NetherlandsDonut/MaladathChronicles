@@ -103,6 +103,15 @@ public class Desktop : MonoBehaviour
 
     public void FixedUpdate()
     {
+        if (animatedSpriteTime > 0)
+            animatedSpriteTime -= Time.deltaTime;
+        if (animatedSpriteTime <= 0)
+        {
+            animatedSpriteTime = 0.1f;
+            AnimatedSprite.globalIndex++;
+            if (AnimatedSprite.globalIndex == 24)
+                AnimatedSprite.globalIndex = 0;
+        }
         soundsPlayedThisFrame = 0;
     }
 

@@ -227,7 +227,7 @@ public class Blueprint
             {
                 var race = races.Find(x => x.name == board.enemy.race);
                 AddBigButton(race.portrait == "" ? "OtherUnknown" : race.portrait + (race.genderedPortrait ? board.enemy.gender : ""), (h) => { });
-                AddLine("Level: ", "Gray");
+                AddLine("Level: ", "DarkGray");
                 AddText(board.enemy.level - 10 > board.player.level ? "??" : "" + board.enemy.level, ColorEntityLevel(board.enemy.level));
             });
             AddHealthBar(40, -38, "Enemy", board.enemy);
@@ -246,7 +246,7 @@ public class Blueprint
                             AddSmallButtonOverlay("OtherGridBlurred");
                         }
                         if (board.CooldownOn(false, actionBar) > 0)
-                            AddSmallButtonOverlay("OtherGrid");
+                            AddSmallButtonOverlay("AutoCast");
                     },
                     (h) =>
                     {
@@ -291,7 +291,8 @@ public class Blueprint
                     var race = races.Find(x => x.name == board.enemy.race);
                     AddBigButton(race.portrait == "" ? "OtherUnknown" : race.portrait + (race.genderedPortrait ? board.enemy.gender : ""), (h) => { });
                 }
-                AddLine("Level: " + board.player.level, "Gray");
+                AddLine("Level: " , "DarkGray");
+                AddText("" + board.player.level, "Gray");
             });
             AddHealthBar(40, -38, "Player", board.player);
             foreach (var actionBar in board.player.actionBars)
@@ -309,7 +310,7 @@ public class Blueprint
                             AddSmallButtonOverlay("OtherGridBlurred");
                         }
                         if (board.CooldownOn(true, actionBar) > 0)
-                            AddSmallButtonOverlay("OtherGrid");
+                            AddSmallButtonOverlay("AutoCast");
                     },
                     (h) =>
                     {
@@ -2468,7 +2469,7 @@ public class Blueprint
             SetRegionGroupWidth(171);
             AddHeaderRegion(() =>
             {
-                AddLine(complex.name);
+                AddLine(complex.name, "Gray");
                 AddSmallButton("OtherClose",
                 (h) =>
                 {
@@ -2492,7 +2493,7 @@ public class Blueprint
             SetRegionGroupWidth(171);
             AddHeaderRegion(() =>
             {
-                AddLine(instance.name);
+                AddLine(instance.name, "Gray");
                 AddSmallButton("OtherClose",
                 (h) =>
                 {
@@ -2533,7 +2534,7 @@ public class Blueprint
             SetRegionGroupWidth(190);
             AddHeaderRegion(() =>
             {
-                AddLine(area.name);
+                AddLine(area.name, "Gray");
                 AddSmallButton("OtherClose",
                 (h) =>
                 {
@@ -2643,7 +2644,7 @@ public class Blueprint
             SetRegionGroupWidth(190);
             AddHeaderRegion(() =>
             {
-                AddLine(town.name);
+                AddLine(town.name, "Gray");
                 AddSmallButton("OtherClose",
                 (h) =>
                 {
@@ -4398,11 +4399,11 @@ public class Blueprint
         new("LocationInfo", () => {
             SetAnchor(Top);
             AddRegionGroup();
-            SetRegionGroupWidth(258);
-            AddHeaderRegion(
+            SetRegionGroupWidth(242);
+            AddPaddingRegion(
                 () =>
                 {
-                    AddLine(locationName, "", "Center");
+                    AddLine(locationName, "Gray", "Center");
                 }
             );
         }),

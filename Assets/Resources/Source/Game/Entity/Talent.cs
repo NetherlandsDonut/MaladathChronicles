@@ -53,7 +53,7 @@ public class Talent
                         if (currentSave.player.abilities.ContainsKey(talent.ability))
                             currentSave.player.abilities[talent.ability]++;
                         else currentSave.player.abilities.Add(talent.ability, 0);
-                        CDesktop.RebuildAll();
+                        CDesktop.RespawnAll();
                     }
                 },
                 null,

@@ -97,8 +97,6 @@ public class Window : MonoBehaviour
     {
         if (CDesktop != desktop || onlyWhenActive && !desktop.windows.Contains(this)) return;
         CDesktop.windows.FindAll(x => x.title == "Tooltip").ForEach(x => CloseWindow(x));
-        var paginations = regionGroups.Select(x => x.pagination()).ToList();
-        if (headerGroup != null) paginations.Insert(0, headerGroup.pagination());
         CloseWindow(this, false);
         SpawnWindowBlueprint(title, false);
     }

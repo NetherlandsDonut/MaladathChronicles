@@ -9,8 +9,6 @@ using static GameSettings;
 
 using static Root.Anchor;
 using static Root.RegionBackgroundType;
-using Newtonsoft.Json.Linq;
-using JetBrains.Annotations;
 
 public static class Root
 {
@@ -55,6 +53,7 @@ public static class Root
     public static int titleScreenCameraDirection;
     public static float heldKeyTime;
     public static float animationTime;
+    public static float animatedSpriteTime;
     public static List<Desktop> desktops;
     public static Desktop CDesktop, LBDesktop;
     public static List<Dictionary<string, string>> triggersCopy, effectsCopy;
@@ -549,7 +548,7 @@ public static class Root
 
     public static string DefaultTextColorForRegion(RegionBackgroundType type)
     {
-        if (type == Header) return "LightGray";
+        if (type == Header) return "Gray";
         if (type == Padding) return "Gray";
         if (type == Button) return "Black";
         if (type == RedButton) return "Black";
@@ -593,9 +592,10 @@ public static class Root
         var newObject = new GameObject("SmallButtonOverlay", typeof(SpriteRenderer));
         newObject.transform.parent = onWhat.transform;
         newObject.transform.localPosition = new Vector3(0, 0, -0.01f);
-        if (overlay == "Cooldown") newObject.AddComponent<AnimatedSprite>().Initiate("Sprites/Building/Shadows/Cooldown");
-        else if (overlay == "YellowGlow") newObject.AddComponent<AnimatedSprite>().Initiate("Sprites/Building/Shadows/YellowGlow");
-        else if (overlay == "PlayerLocation") newObject.AddComponent<AnimatedSprite>().Initiate("Sprites/Building/Shadows/PlayerLocation", 0.07f);
+        if (overlay == "Cooldown") newObject.AddComponent<AnimatedSprite>().Initiate("Sprites/Building/Shadows/Cooldown", true);
+        else if (overlay == "YellowGlow") newObject.AddComponent<AnimatedSprite>().Initiate("Sprites/Building/Shadows/YellowGlow", true);
+        else if (overlay == "AutoCast") newObject.AddComponent<AnimatedSprite>().Initiate("Sprites/Building/Shadows/AutoCastFull", true);
+        else if (overlay == "PlayerLocation") newObject.AddComponent<AnimatedSprite>().Initiate("Sprites/Building/Shadows/PlayerLocation", false, 0.07f);
         else newObject.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/Buttons/" + overlay);
         newObject.GetComponent<SpriteRenderer>().sortingOrder = sortingOrder;
         newObject.GetComponent<SpriteRenderer>().sortingLayerName = CDesktop.LBWindow.layer;
