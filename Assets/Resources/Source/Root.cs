@@ -443,7 +443,7 @@ public static class Root
         }
     }
 
-    public static void AddButtonRegion(Action draw, Action<Highlightable> pressEvent, Action<Highlightable> rightPressEvent = null, Func<Highlightable, Action> tooltip = null, Action<Highlightable> middlePressEvent = null)
+    public static void AddButtonRegion(Action draw, Action<Highlightable> pressEvent = null, Action<Highlightable> rightPressEvent = null, Func<Highlightable, Action> tooltip = null, Action<Highlightable> middlePressEvent = null)
     {
         AddRegion(Button, draw, pressEvent, rightPressEvent, tooltip, middlePressEvent);
     }
@@ -525,7 +525,7 @@ public static class Root
         void Foo(string icon, string text, string color)
         {
             AddRegionGroup();
-            AddPaddingRegion(() => { AddSmallButton(icon, (h) => { }); });
+            AddPaddingRegion(() => { AddSmallButton(icon); });
             AddRegionGroup();
             SetRegionGroupWidth(35);
             AddPaddingRegion(() => { AddLine(text, color); });
@@ -714,7 +714,7 @@ public static class Root
         var region = CDesktop.LBWindow.LBRegionGroup.LBRegion;
         var newObject = new GameObject("BigButton: " + (type == null ? "Empty" : type.ToString()), typeof(LineBigButton), typeof(SpriteRenderer));
         newObject.transform.parent = region.transform;
-        newObject.GetComponent<LineBigButton>().Initialise(region, type, pressEvent, tooltip);
+        newObject.GetComponent<LineBigButton>().Initialise(region, type);
         if (pressEvent != null || rightPressEvent != null || tooltip != null)
             newObject.AddComponent<Highlightable>().Initialise(region, pressEvent, rightPressEvent, tooltip, middlePressEvent);
     }
@@ -826,11 +826,11 @@ public static class Root
             AddHeaderRegion(() =>
             {
                 if (settings.chartBigIcons.Value()) for (int i = list.Count - 1; i >= 0 && i - list.Count > -15; i--)
-                    if (chartPage == "Elements Used") AddBigButton("Element" + list[i].Key + "Rousing", (h) => { });
-                    else AddBigButton(Ability.abilities.Find(y => y.name == list[i].Key).icon, (h) => { });
+                    if (chartPage == "Elements Used") AddBigButton("Element" + list[i].Key + "Rousing");
+                    else AddBigButton(Ability.abilities.Find(y => y.name == list[i].Key).icon);
                 else for (int i = 0; i < list.Count && i < 30; i++)
-                    if (chartPage == "Elements Used") AddSmallButton("Element" + list[i].Key + "Rousing", (h) => { });
-                    else AddSmallButton(Ability.abilities.Find(y => y.name == list[i].Key).icon, (h) => { });
+                    if (chartPage == "Elements Used") AddSmallButton("Element" + list[i].Key + "Rousing");
+                    else AddSmallButton(Ability.abilities.Find(y => y.name == list[i].Key).icon);
             });
             iconRow = CDesktop.LBWindow.LBRegionGroup.LBRegion;
             AddRegionGroup();

@@ -99,7 +99,7 @@ public class SiteTown : Site
                                     if (j < icons.Count - ind * amount)
                                     {
                                         var jnd = j;
-                                        AddSmallButton(icons[jnd + ind * amount], (h) => { });
+                                        AddSmallButton(icons[jnd + ind * amount]);
                                     }
                             });
                         }

@@ -169,7 +169,7 @@ public class Ability
             });
             AddPaddingRegion(() =>
             {
-                AddBigButton(ability.icon, (h) => { });
+                AddBigButton(ability.icon);
                 AddLine("Cooldown: ", "DarkGray");
                 AddText(ability.cooldown == 0 ? "None" : ability.cooldown + (ability.cooldown == 1 ? " turn" : " turns"), "Gray");
                 if (CDesktop.title == "Game" || CDesktop.title == "GameSimulation")
@@ -190,7 +190,7 @@ public class Ability
                         AddRegionGroup();
                         AddHeaderRegion(() =>
                         {
-                            AddSmallButton("Element" + cost.Key + "Rousing", (h) => { });
+                            AddSmallButton("Element" + cost.Key + "Rousing");
                         });
                         AddRegionGroup();
                         SetRegionGroupWidth(33);

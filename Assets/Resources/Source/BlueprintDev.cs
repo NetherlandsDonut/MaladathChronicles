@@ -251,7 +251,7 @@ public static class BlueprintDev
                         Respawn("ObjectManagerHostileAreas");
                     });
                 else
-                    AddSmallButton("OtherSortOff", (h) => { });
+                    AddSmallButton("OtherSortOff");
             });
             AddPaddingRegion(() =>
             {
@@ -270,7 +270,7 @@ public static class BlueprintDev
                         SetRegionBackground(Button);
                         var foo = areasSearch[index + 10 * regionGroup.pagination()];
                         AddLine(foo.name);
-                        AddSmallButton("Site" + foo.type, (h) => { });
+                        AddSmallButton("Site" + foo.type);
                     }
                     else
                     {
@@ -310,7 +310,7 @@ public static class BlueprintDev
             AddButtonRegion(() =>
             {
                 AddLine(area.type);
-                AddSmallButton("Site" + area.type, (h) => { });
+                AddSmallButton("Site" + area.type);
             },
             (h) =>
             {
@@ -402,7 +402,7 @@ public static class BlueprintDev
                         Respawn("ObjectManagerHostileAreas");
                     });
                 else
-                    AddSmallButton("OtherSortOff", (h) => { });
+                    AddSmallButton("OtherSortOff");
             });
             AddPaddingRegion(() =>
             {
@@ -421,7 +421,7 @@ public static class BlueprintDev
                         SetRegionBackground(Button);
                         var foo = townsSearch[index + 10 * regionGroup.pagination()];
                         AddLine(foo.name);
-                        AddSmallButton(factions.Find(x => x.name == foo.faction).Icon(), (h) => { });
+                        AddSmallButton(factions.Find(x => x.name == foo.faction).Icon());
                     }
                     else
                     {
@@ -456,7 +456,7 @@ public static class BlueprintDev
             AddButtonRegion(() =>
             {
                 AddLine(town.faction);
-                AddSmallButton(factions.Find(x => x.name == town.faction).Icon(), (h) => { });
+                AddSmallButton(factions.Find(x => x.name == town.faction).Icon());
             },
             (h) =>
             {
@@ -591,7 +591,7 @@ public static class BlueprintDev
                         Respawn("ObjectManagerInstances");
                     });
                 else
-                    AddSmallButton("OtherSortOff", (h) => { });
+                    AddSmallButton("OtherSortOff");
             });
             AddPaddingRegion(() =>
             {
@@ -610,7 +610,7 @@ public static class BlueprintDev
                         SetRegionBackground(Button);
                         var foo = instancesSearch[index + 10 * regionGroup.pagination()];
                         AddLine(foo.name);
-                        AddSmallButton("Site" + foo.type, (h) => { });
+                        AddSmallButton("Site" + foo.type);
                     }
                     else
                     {
@@ -749,7 +749,7 @@ public static class BlueprintDev
                         SpawnWindowBlueprint("ObjectManagerComplexes");
                     });
                 else
-                    AddSmallButton("OtherSortOff", (h) => { });
+                    AddSmallButton("OtherSortOff");
             });
             AddPaddingRegion(() =>
             {
@@ -768,7 +768,7 @@ public static class BlueprintDev
                         SetRegionBackground(Button);
                         var foo = complexesSearch[index + 10 * regionGroup.pagination()];
                         AddLine(foo.name);
-                        AddSmallButton("SiteComplex", (h) => { });
+                        AddSmallButton("SiteComplex");
                     }
                     else
                     {
@@ -1044,7 +1044,7 @@ public static class BlueprintDev
                         SetRegionBackground(Button);
                         var foo = Assets.assets.itemIconsSearch[index + 10 * regionGroup.pagination()];
                         AddLine(foo.Substring(4));
-                        AddSmallButton(Assets.assets.itemIconsSearch[index + 10 * regionGroup.pagination()].Replace(".png", ""), (h) => { });
+                        AddSmallButton(Assets.assets.itemIconsSearch[index + 10 * regionGroup.pagination()].Replace(".png", ""));
                     }
                     else
                     {
@@ -1119,7 +1119,7 @@ public static class BlueprintDev
                         SetRegionBackground(Button);
                         var foo = Assets.assets.abilityIconsSearch[index + regionGroup.perPage * regionGroup.pagination()];
                         AddLine(foo.Substring(7));
-                        AddSmallButton(Assets.assets.abilityIconsSearch[index + regionGroup.perPage * regionGroup.pagination()].Replace(".png", ""), (h) => { });
+                        AddSmallButton(Assets.assets.abilityIconsSearch[index + regionGroup.perPage * regionGroup.pagination()].Replace(".png", ""));
                     }
                     else
                     {
@@ -1194,7 +1194,7 @@ public static class BlueprintDev
                         SetRegionBackground(Button);
                         var foo = Assets.assets.factionIconsSearch[index + regionGroup.perPage * regionGroup.pagination()];
                         AddLine(foo.Substring(7));
-                        AddSmallButton(Assets.assets.factionIconsSearch[index + regionGroup.perPage * regionGroup.pagination()].Replace(".png", ""), (h) => { });
+                        AddSmallButton(Assets.assets.factionIconsSearch[index + regionGroup.perPage * regionGroup.pagination()].Replace(".png", ""));
                     }
                     else
                     {
@@ -1263,7 +1263,7 @@ public static class BlueprintDev
                         SetRegionBackground(Button);
                         var foo = Assets.assets.mountIconsSearch[index + regionGroup.perPage * regionGroup.pagination()];
                         AddLine(foo.Substring(5));
-                        AddSmallButton(Assets.assets.mountIconsSearch[index + regionGroup.perPage * regionGroup.pagination()].Replace(".png", ""), (h) => { });
+                        AddSmallButton(Assets.assets.mountIconsSearch[index + regionGroup.perPage * regionGroup.pagination()].Replace(".png", ""));
                     }
                     else
                     {
@@ -1332,7 +1332,7 @@ public static class BlueprintDev
                         SetRegionBackground(Button);
                         var foo = Assets.assets.portraitsSearch[index + 10 * regionGroup.pagination()];
                         AddLine(foo.Replace("Portrait", ""));
-                        AddSmallButton(Assets.assets.portraitsSearch[index + 10 * regionGroup.pagination()].Replace(".png", ""), (h) => { });
+                        AddSmallButton(Assets.assets.portraitsSearch[index + 10 * regionGroup.pagination()].Replace(".png", ""));
                     }
                     else
                     {
@@ -1627,7 +1627,7 @@ public static class BlueprintDev
                 {
                     AddLine(trigger.ContainsKey("AbilityName") ? trigger["AbilityName"] : (eventParentType == "Ability" ? "This" : "Any"));
                     if (trigger.ContainsKey("AbilityName") && trigger["AbilityName"] != (eventParentType == "Ability" ? "This" : "Any"))
-                        AddSmallButton(abilities.Find(x => x.name == trigger["AbilityName"]).icon, (h) => { });
+                        AddSmallButton(abilities.Find(x => x.name == trigger["AbilityName"]).icon);
                 },
                 (h) =>
                 {
@@ -1655,7 +1655,7 @@ public static class BlueprintDev
                 {
                     AddLine(trigger.ContainsKey("BuffName") ? trigger["BuffName"] : (eventParentType == "Buff" ? "This" : "Any"));
                     if (trigger.ContainsKey("BuffName") && trigger["BuffName"] != (eventParentType == "Buff" ? "This" : "Any"))
-                        AddSmallButton(buffs.Find(x => x.name == trigger["BuffName"]).icon, (h) => { });
+                        AddSmallButton(buffs.Find(x => x.name == trigger["BuffName"]).icon);
                 },
                 (h) =>
                 {
@@ -1684,7 +1684,7 @@ public static class BlueprintDev
                 {
                     AddLine(trigger.ContainsKey("ResourceType") ? trigger["ResourceType"] : "Any");
                     if (trigger.ContainsKey("ResourceType") && trigger["ResourceType"] != "Any")
-                        AddSmallButton("Element" + trigger["ResourceType"] + "Rousing", (h) => { });
+                        AddSmallButton("Element" + trigger["ResourceType"] + "Rousing");
                 },
                 (h) =>
                 {
@@ -1969,7 +1969,7 @@ public static class BlueprintDev
                 {
                     AddLine(effect.ContainsKey("BuffName") ? effect["BuffName"] : "None");
                     if (effect.ContainsKey("BuffName") && effect["BuffName"] != "None")
-                        AddSmallButton(buffs.Find(x => x.name == effect["BuffName"]).icon, (h) => { });
+                        AddSmallButton(buffs.Find(x => x.name == effect["BuffName"]).icon);
                 },
                 (h) =>
                 {
@@ -1998,7 +1998,7 @@ public static class BlueprintDev
                 {
                     AddLine(effect.ContainsKey("BuffName") ? effect["BuffName"] : "None");
                     if (effect.ContainsKey("BuffName") && effect["BuffName"] != "None")
-                        AddSmallButton(buffs.Find(x => x.name == effect["BuffName"]).icon, (h) => { });
+                        AddSmallButton(buffs.Find(x => x.name == effect["BuffName"]).icon);
                 },
                 (h) =>
                 {
@@ -2037,7 +2037,7 @@ public static class BlueprintDev
                 {
                     AddLine(effect.ContainsKey("ResourceType") ? effect["ResourceType"] : "None");
                     if (effect.ContainsKey("ResourceType") && effect["ResourceType"] != "None")
-                        AddSmallButton("Element" + effect["ResourceType"] + "Rousing", (h) => { });
+                        AddSmallButton("Element" + effect["ResourceType"] + "Rousing");
                 },
                 (h) =>
                 {
@@ -2102,7 +2102,7 @@ public static class BlueprintDev
                 {
                     AddLine(effect.ContainsKey("ElementFrom") ? effect["ElementFrom"] : "Random");
                     if (effect.ContainsKey("ElementFrom") && effect["ElementFrom"] != "Random")
-                        AddSmallButton("Element" + effect["ElementFrom"] + "Rousing", (h) => { });
+                        AddSmallButton("Element" + effect["ElementFrom"] + "Rousing");
                 },
                 (h) =>
                 {
@@ -2142,7 +2142,7 @@ public static class BlueprintDev
                 {
                     AddLine(effect.ContainsKey("ElementTo") ? effect["ElementTo"] : "Random");
                     if (effect.ContainsKey("ElementTo") && effect["ElementTo"] != "Random")
-                        AddSmallButton("Element" + effect["ElementTo"] + "Rousing", (h) => { });
+                        AddSmallButton("Element" + effect["ElementTo"] + "Rousing");
                 },
                 (h) =>
                 {
@@ -2484,7 +2484,7 @@ public static class BlueprintDev
                 {
                     AddLine(ce.who);
                     var race = races.Find(x => x.name == ce.who);
-                    AddSmallButton(race == null ? "OtherUnknown" : race.portrait, (h) => { });
+                    AddSmallButton(race == null ? "OtherUnknown" : race.portrait);
                 },
                 (h) =>
                 {
@@ -2569,7 +2569,7 @@ public static class BlueprintDev
                 {
                     AddLine(ce.who);
                     var race = races.Find(x => x.name == ce.who);
-                    AddSmallButton(race == null ? "OtherUnknown" : race.portrait, (h) => { });
+                    AddSmallButton(race == null ? "OtherUnknown" : race.portrait);
                 },
                 (h) =>
                 {
@@ -2654,7 +2654,7 @@ public static class BlueprintDev
                 {
                     AddLine(ce.who);
                     var race = races.Find(x => x.name == ce.who);
-                    AddSmallButton(race == null ? "OtherUnknown" : race.portrait, (h) => { });
+                    AddSmallButton(race == null ? "OtherUnknown" : race.portrait);
                 },
                 (h) =>
                 {
@@ -2733,7 +2733,7 @@ public static class BlueprintDev
             AddButtonRegion(() =>
             {
                 AddLine("HostileArea");
-                AddSmallButton("SiteHostileArea", (h) => { });
+                AddSmallButton("SiteHostileArea");
             },
             (h) =>
             {
@@ -2748,7 +2748,7 @@ public static class BlueprintDev
             AddButtonRegion(() =>
             {
                 AddLine("EmeraldBough");
-                AddSmallButton("SiteEmeraldBough", (h) => { });
+                AddSmallButton("SiteEmeraldBough");
             },
             (h) =>
             {
@@ -2968,7 +2968,7 @@ public static class BlueprintDev
                         Respawn("ObjectManagerItems");
                     });
                 else
-                    AddSmallButton("OtherSortOff", (h) => { });
+                    AddSmallButton("OtherSortOff");
             });
             AddPaddingRegion(() =>
             {
@@ -2987,7 +2987,7 @@ public static class BlueprintDev
                         SetRegionBackground(Button);
                         var foo = itemsSearch[index + 10 * regionGroup.pagination()];
                         AddLine(foo.name);
-                        AddSmallButton(foo.icon, (h) => { });
+                        AddSmallButton(foo.icon);
                         AddSmallButtonOverlay("OtherRarity" + foo.rarity + "Big");
                     }
                     else
@@ -3054,7 +3054,7 @@ public static class BlueprintDev
             AddButtonRegion(() =>
             {
                 AddLine(item.icon.Substring(4) + ".png");
-                AddSmallButton(item.icon, (h) => { });
+                AddSmallButton(item.icon);
             },
             (h) =>
             {
@@ -3197,7 +3197,7 @@ public static class BlueprintDev
                         Respawn("ObjectManagerItemSets");
                     });
                 else
-                    AddSmallButton("OtherSortOff", (h) => { });
+                    AddSmallButton("OtherSortOff");
             });
             AddPaddingRegion(() =>
             {
@@ -3380,61 +3380,61 @@ public static class BlueprintDev
             {
                 AddLine("Fire: ", "DarkGray");
                 AddInputLine(String.fire, String.fire.Value() == "0" ? "DarkGray" : "Gray");
-                AddSmallButton("ElementFireRousing", (h) => { });
+                AddSmallButton("ElementFireRousing");
             });
             AddPaddingRegion(() =>
             {
                 AddLine("Earth: ", "DarkGray");
                 AddInputLine(String.earth, String.earth.Value() == "0" ? "DarkGray" : "Gray");
-                AddSmallButton("ElementEarthRousing", (h) => { });
+                AddSmallButton("ElementEarthRousing");
             });
             AddPaddingRegion(() =>
             {
                 AddLine("Water: ", "DarkGray");
                 AddInputLine(String.water, String.water.Value() == "0" ? "DarkGray" : "Gray");
-                AddSmallButton("ElementWaterRousing", (h) => { });
+                AddSmallButton("ElementWaterRousing");
             });
             AddPaddingRegion(() =>
             {
                 AddLine("Air: ", "DarkGray");
                 AddInputLine(String.air, String.air.Value() == "0" ? "DarkGray" : "Gray");
-                AddSmallButton("ElementAirRousing", (h) => { });
+                AddSmallButton("ElementAirRousing");
             });
             AddPaddingRegion(() =>
             {
                 AddLine("Frost: ", "DarkGray");
                 AddInputLine(String.frost, String.frost.Value() == "0" ? "DarkGray" : "Gray");
-                AddSmallButton("ElementFrostRousing", (h) => { });
+                AddSmallButton("ElementFrostRousing");
             });
             AddPaddingRegion(() =>
             {
                 AddLine("Decay: ", "DarkGray");
                 AddInputLine(String.decay, String.decay.Value() == "0" ? "DarkGray" : "Gray");
-                AddSmallButton("ElementDecayRousing", (h) => { });
+                AddSmallButton("ElementDecayRousing");
             });
             AddPaddingRegion(() =>
             {
                 AddLine("Shadow: ", "DarkGray");
                 AddInputLine(String.shadow, String.shadow.Value() == "0" ? "DarkGray" : "Gray");
-                AddSmallButton("ElementShadowRousing", (h) => { });
+                AddSmallButton("ElementShadowRousing");
             });
             AddPaddingRegion(() =>
             {
                 AddLine("Order: ", "DarkGray");
                 AddInputLine(String.order, String.order.Value() == "0" ? "DarkGray" : "Gray");
-                AddSmallButton("ElementOrderRousing", (h) => { });
+                AddSmallButton("ElementOrderRousing");
             });
             AddPaddingRegion(() =>
             {
                 AddLine("Arcane: ", "DarkGray");
                 AddInputLine(String.arcane, String.arcane.Value() == "0" ? "DarkGray" : "Gray");
-                AddSmallButton("ElementArcaneRousing", (h) => { });
+                AddSmallButton("ElementArcaneRousing");
             });
             AddPaddingRegion(() =>
             {
                 AddLine("Lightning: ", "DarkGray");
                 AddInputLine(String.lightning, String.lightning.Value() == "0" ? "DarkGray" : "Gray");
-                AddSmallButton("ElementLightningRousing", (h) => { });
+                AddSmallButton("ElementLightningRousing");
             });
             AddPaddingRegion(() => { });
         }),
@@ -3542,7 +3542,7 @@ public static class BlueprintDev
                         Respawn("ObjectManagerAbilities");
                     });
                 else
-                    AddSmallButton("OtherSortOff", (h) => { });
+                    AddSmallButton("OtherSortOff");
             });
             AddPaddingRegion(() =>
             {
@@ -3561,7 +3561,7 @@ public static class BlueprintDev
                         SetRegionBackground(Button);
                         var foo = abilitiesSearch[index + 10 * regionGroup.pagination()];
                         AddLine(foo.name);
-                        AddSmallButton(foo.icon, (h) => { });
+                        AddSmallButton(foo.icon);
                     }
                     else
                     {
@@ -3656,7 +3656,7 @@ public static class BlueprintDev
             AddButtonRegion(() =>
             {
                 AddLine(ability.icon.Substring(7) + ".png");
-                AddSmallButton(ability.icon, (h) => { });
+                AddSmallButton(ability.icon);
             },
             (h) =>
             {
@@ -3869,7 +3869,7 @@ public static class BlueprintDev
                         Respawn("ObjectManagerBuffs");
                     });
                 else
-                    AddSmallButton("OtherSortOff", (h) => { });
+                    AddSmallButton("OtherSortOff");
             });
             AddPaddingRegion(() =>
             {
@@ -3888,7 +3888,7 @@ public static class BlueprintDev
                         SetRegionBackground(Button);
                         var foo = buffsSearch[index + 10 * regionGroup.pagination()];
                         AddLine(foo.name);
-                        AddSmallButton(foo.icon, (h) => { });
+                        AddSmallButton(foo.icon);
                     }
                     else
                     {
@@ -4030,7 +4030,7 @@ public static class BlueprintDev
             AddButtonRegion(() =>
             {
                 AddLine(buff.icon.Substring(7) + ".png");
-                AddSmallButton(buff.icon, (h) => { });
+                AddSmallButton(buff.icon);
             },
             (h) =>
             {
@@ -4209,7 +4209,7 @@ public static class BlueprintDev
                         Respawn("ObjectManagerRaces");
                     });
                 else
-                    AddSmallButton("OtherSortOff", (h) => { });
+                    AddSmallButton("OtherSortOff");
             });
             AddPaddingRegion(() =>
             {
@@ -4228,7 +4228,7 @@ public static class BlueprintDev
                         SetRegionBackground(Button);
                         var foo = racesSearch[index + 10 * regionGroup.pagination()];
                         AddLine(foo.name);
-                        AddSmallButton(foo.portrait + (foo.genderedPortrait ? "Female" : ""), (h) => { });
+                        AddSmallButton(foo.portrait + (foo.genderedPortrait ? "Female" : ""));
                     }
                     else
                     {
@@ -4323,8 +4323,8 @@ public static class BlueprintDev
                 AddHeaderRegion(() =>
                 {
                     AddLine(race.portrait.Substring(8) + ".png");
-                    AddSmallButton(race.portrait + "Female", (h) => { });
-                    AddSmallButton(race.portrait + "Male", (h) => { });
+                    AddSmallButton(race.portrait + "Female");
+                    AddSmallButton(race.portrait + "Male");
                 });
                 AddPaddingRegion(() =>
                 {
@@ -4339,7 +4339,7 @@ public static class BlueprintDev
                 {
                     AddLine(race.faction ?? "None");
                     if (race.faction != null)
-                        AddSmallButton(race.Faction().Icon(), (h) => { });
+                        AddSmallButton(race.Faction().Icon());
                 },
                 (h) =>
                 {
@@ -4356,7 +4356,7 @@ public static class BlueprintDev
                 AddButtonRegion(() =>
                 {
                     AddLine(race.portrait.Replace("Portrait", "") + ".png");
-                    AddSmallButton(race.portrait, (h) => { });
+                    AddSmallButton(race.portrait);
                 },
                 (h) =>
                 {
@@ -4393,7 +4393,7 @@ public static class BlueprintDev
                 {
                     AddLine(race.faction ?? "None");
                     if (race.faction != null)
-                        AddSmallButton(race.Faction().Icon(), (h) => { });
+                        AddSmallButton(race.Faction().Icon());
                 },
                 (h) =>
                 {
@@ -4481,7 +4481,7 @@ public static class BlueprintDev
                         Respawn("ObjectManagerMounts");
                     });
                 else
-                    AddSmallButton("OtherSortOff", (h) => { });
+                    AddSmallButton("OtherSortOff");
             });
             AddPaddingRegion(() =>
             {
@@ -4500,7 +4500,7 @@ public static class BlueprintDev
                         SetRegionBackground(Button);
                         var foo = mountsSearch[index + 10 * regionGroup.pagination()];
                         AddLine(foo.name);
-                        AddSmallButton(foo.icon, (h) => { });
+                        AddSmallButton(foo.icon);
                     }
                     else
                     {
@@ -4553,7 +4553,7 @@ public static class BlueprintDev
             AddButtonRegion(() =>
             {
                 AddLine(mount.icon.Replace("Mount", "") + ".png");
-                AddSmallButton(mount.icon, (h) => { });
+                AddSmallButton(mount.icon);
             },
             (h) =>
             {
@@ -4680,7 +4680,7 @@ public static class BlueprintDev
                         Respawn("ObjectManagerRecipes");
                     });
                 else
-                    AddSmallButton("OtherSortOff", (h) => { });
+                    AddSmallButton("OtherSortOff");
             });
             AddPaddingRegion(() =>
             {
@@ -4699,7 +4699,7 @@ public static class BlueprintDev
                         SetRegionBackground(Button);
                         var foo = recipesSearch[index + 10 * regionGroup.pagination()];
                         AddLine(foo.name);
-                        AddSmallButton(foo.Icon(), (h) => { });
+                        AddSmallButton(foo.Icon());
                     }
                     else
                     {
@@ -4839,7 +4839,7 @@ public static class BlueprintDev
                         Respawn("ObjectManagerFactions");
                     });
                 else
-                    AddSmallButton("OtherSortOff", (h) => { });
+                    AddSmallButton("OtherSortOff");
             });
             AddPaddingRegion(() =>
             {
@@ -4858,7 +4858,7 @@ public static class BlueprintDev
                         SetRegionBackground(Button);
                         var foo = factionsSearch[index + 10 * regionGroup.pagination()];
                         AddLine(foo.name);
-                        AddSmallButton(foo.Icon(), (h) => { });
+                        AddSmallButton(foo.Icon());
                     }
                     else
                     {
@@ -4926,7 +4926,7 @@ public static class BlueprintDev
             AddButtonRegion(() =>
             {
                 AddLine(faction.icon.Replace("Faction", "") + ".png");
-                AddSmallButton(faction.Icon(), (h) => { });
+                AddSmallButton(faction.Icon());
             },
             (h) =>
             {
@@ -5000,7 +5000,7 @@ public static class BlueprintDev
                         SetRegionBackground(Button);
                         var foo = specsSearch[index + 10 * regionGroup.pagination()];
                         AddLine(foo.name);
-                        AddSmallButton(foo.icon, (h) => { });
+                        AddSmallButton(foo.icon);
                     }
                     else
                     {
@@ -5073,12 +5073,12 @@ public static class BlueprintDev
             AddHeaderRegion(() =>
             {
                 AddLine(spec.icon + ".png");
-                AddSmallButton(spec.icon, (h) => { });
+                AddSmallButton(spec.icon);
             });
             //AddButtonRegion(() =>
             //{
             //    AddLine(spec.icon + ".png");
-            //    AddSmallButton(spec.icon, (h) => { });
+            //    AddSmallButton(spec.icon);
             //},
             //(h) =>
             //{

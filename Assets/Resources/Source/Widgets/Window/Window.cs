@@ -290,7 +290,9 @@ public class Window : MonoBehaviour
                     if (title.StartsWith("Site: ")) smallButton.frame.AddComponent<SpriteMask>().sprite = Resources.Load<Sprite>("Sprites/Building/Borders/ButtonCircleFrameMask");
                     smallButton.frame.transform.parent = smallButton.transform;
                     smallButton.frame.transform.localPosition = new Vector3(0, 0, -0.05f);
-                    if (disabledCollisions) Destroy(smallButton.GetComponent<BoxCollider2D>());
+                    var h = smallButton.gameObject.GetComponent<Highlightable>();
+                    if (disabledCollisions || h.pressEvent == null && h.middlePressEvent == null && h.rightPressEvent == null && h.tooltip == null)
+                        Destroy(smallButton.GetComponent<BoxCollider2D>());
                 }
 
             //Draws big buttons for single lined regions
@@ -315,7 +317,9 @@ public class Window : MonoBehaviour
                     if (title.StartsWith("TalentButton")) bigButton.frame.GetComponent<SpriteRenderer>().sortingOrder = 3;
                     bigButton.frame.transform.parent = bigButton.transform;
                     bigButton.frame.transform.localPosition = new Vector3(0, 0, -0.05f);
-                    if (disabledCollisions) Destroy(bigButton.GetComponent<BoxCollider2D>());
+                    var h = bigButton.gameObject.GetComponent<Highlightable>();
+                    if (disabledCollisions || h.pressEvent == null && h.middlePressEvent == null && h.rightPressEvent == null && h.tooltip == null)
+                        Destroy(bigButton.GetComponent<BoxCollider2D>());
                 }
             }
 

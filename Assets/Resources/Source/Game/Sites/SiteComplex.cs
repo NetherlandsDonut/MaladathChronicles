@@ -113,7 +113,7 @@ public class SiteComplex : Site
                     AddHeaderRegion(() =>
                     {
                         AddLine(site["SiteName"], "DarkGray");
-                        AddSmallButton("Site" + site["SiteType"], (h) => { });
+                        AddSmallButton("Site" + site["SiteType"]);
                     });
                 var q = currentSave.player.QuestsAt(this);
                 if (q.Count > 0)
@@ -146,7 +146,7 @@ public class SiteComplex : Site
         AddButtonRegion(() =>
         {
             AddLine(site["SiteName"], "", "Right");
-            AddSmallButton("Site" + site["SiteType"], (h) => { });
+            AddSmallButton("Site" + site["SiteType"]);
         },
         (h) =>
         {

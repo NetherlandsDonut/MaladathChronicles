@@ -111,7 +111,7 @@ public class SiteInstance : Site
                             for (int j = 0; j < 8 && j < races.Count - ind * 8; j++)
                             {
                                 var jnd = j;
-                                AddSmallButton(races[jnd + ind * 8], (h) => { });
+                                AddSmallButton(races[jnd + ind * 8]);
                             }
                         });
                     }

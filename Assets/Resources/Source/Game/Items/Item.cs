@@ -739,7 +739,7 @@ public class Item
         AddHeaderGroup();
         SetRegionGroupWidth(182);
         var split = item.name.Split(", ");
-        AddHeaderRegion(() => { AddLine(split[0], item.rarity); AddSmallButton(item.icon, (h) => { }); });
+        AddHeaderRegion(() => { AddLine(split[0], item.rarity); AddSmallButton(item.icon); });
         if (split.Length > 1) AddHeaderRegion(() => { AddLine("\"" + split[1] + "\"", item.rarity); });
         AddPaddingRegion(() =>
         {

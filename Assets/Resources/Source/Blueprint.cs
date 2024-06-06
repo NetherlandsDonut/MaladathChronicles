@@ -226,7 +226,7 @@ public class Blueprint
             AddHeaderRegion(() =>
             {
                 var race = races.Find(x => x.name == board.enemy.race);
-                AddBigButton(race.portrait == "" ? "OtherUnknown" : race.portrait + (race.genderedPortrait ? board.enemy.gender : ""), (h) => { });
+                AddBigButton(race.portrait == "" ? "OtherUnknown" : race.portrait + (race.genderedPortrait ? board.enemy.gender : ""));
                 AddLine("Level: ", "DarkGray");
                 AddText(board.enemy.level - 10 > board.player.level ? "??" : "" + board.enemy.level, ColorEntityLevel(board.enemy.level));
             });
@@ -239,7 +239,7 @@ public class Blueprint
                     () =>
                     {
                         AddLine(actionBar, "", "Right");
-                        AddSmallButton(abilityObj.icon, (h) => { });
+                        AddSmallButton(abilityObj.icon);
                         if (!abilityObj.EnoughResources(board.enemy))
                         {
                             SetSmallButtonToGrayscale();
@@ -281,15 +281,11 @@ public class Blueprint
             AddHeaderRegion(() =>
             {
                 if (board.player.spec != null)
-                {
-                    AddBigButton(board.player.Spec().icon,
-                        (h) => { }
-                    );
-                }
+                    AddBigButton(board.player.Spec().icon);
                 else
                 {
                     var race = races.Find(x => x.name == board.enemy.race);
-                    AddBigButton(race.portrait == "" ? "OtherUnknown" : race.portrait + (race.genderedPortrait ? board.enemy.gender : ""), (h) => { });
+                    AddBigButton(race.portrait == "" ? "OtherUnknown" : race.portrait + (race.genderedPortrait ? board.enemy.gender : ""));
                 }
                 AddLine("Level: " , "DarkGray");
                 AddText("" + board.player.level, "Gray");
@@ -303,7 +299,7 @@ public class Blueprint
                     () =>
                     {
                         AddLine(actionBar, "", "Right");
-                        AddSmallButton(abilityObj.icon, (h) => { });
+                        AddSmallButton(abilityObj.icon);
                         if (!abilityObj.EnoughResources(board.player))
                         {
                             SetSmallButtonToGrayscale();
@@ -445,8 +441,8 @@ public class Blueprint
                     var slot = slots[i];
                     AddPaddingRegion(() =>
                     {
-                        AddBigButton("Portrait" + slot.player.race.Clean() + (slot.player.Race().genderedPortrait ? slot.player.gender : ""), (h) => { });
-                        AddBigButton("Class" + slot.player.spec, (h) => { });
+                        AddBigButton("Portrait" + slot.player.race.Clean() + (slot.player.Race().genderedPortrait ? slot.player.gender : ""));
+                        AddBigButton("Class" + slot.player.spec);
                         AddLine(slot.player.name + ", a level " + slot.player.level + " ");
                         AddText(slot.player.spec, slot.player.spec);
                         AddLine("Score: " + slot.Score());
@@ -456,8 +452,8 @@ public class Blueprint
                 else
                     AddPaddingRegion(() =>
                     {
-                        AddBigButton("OtherBlank", (h) => { });
-                        AddBigButton("OtherBlank", (h) => { });
+                        AddBigButton("OtherBlank");
+                        AddBigButton("OtherBlank");
                     });
         }),
         new("CharacterRankingListRight", () =>
@@ -474,13 +470,13 @@ public class Blueprint
                     var slot = slots[i];
                     AddPaddingRegion(() =>
                     {
-                        AddBigButton("PVP" + (slot.player.Side() == "Alliance" ? "A" : "H") + slot.player.Rank().rank, (h) => { });
+                        AddBigButton("PVP" + (slot.player.Side() == "Alliance" ? "A" : "H") + slot.player.Rank().rank);
                     });
                 }
                 else
                     AddPaddingRegion(() =>
                     {
-                        AddBigButton("OtherBlank", (h) => { });
+                        AddBigButton("OtherBlank");
                     });
         }),
         new("CharacterRankingShadow", () =>
@@ -738,7 +734,7 @@ public class Blueprint
                 AddHeaderRegion(() => { AddLine("Character:"); });
                 AddHeaderRegion(() =>
                 {
-                    AddBigButton("Portrait" + slot.player.race.Clean() + (slot.player.Race().genderedPortrait ? slot.player.gender : ""), (h) => { });
+                    AddBigButton("Portrait" + slot.player.race.Clean() + (slot.player.Race().genderedPortrait ? slot.player.gender : ""));
                     AddLine(slot.player.name, "Gray");
                     AddLine("Level: " + slot.player.level + " ", "Gray");
                     AddText(spec.name, spec.name);
@@ -1239,7 +1235,7 @@ public class Blueprint
             });
             AddRegionGroup();
             SetRegionGroupWidth(114);
-            if (creationSpec != "" && creationGender != "" && creationRace != "" && String.creationName.Value().Length < 3) AddButtonRegion(() => { SetRegionBackground(RedButton); AddLine("Finish Creation", "Black", "Center"); }, (h) => { });
+            if (creationSpec != "" && creationGender != "" && creationRace != "" && String.creationName.Value().Length < 3) AddButtonRegion(() => { SetRegionBackground(RedButton); AddLine("Finish Creation", "Black", "Center"); });
             else if (creationSpec != "" && creationGender != "" && creationRace != "")
             {
                 AddButtonRegion(() =>
@@ -1387,7 +1383,7 @@ public class Blueprint
                             PlaySound("DesktopInstanceOpen");
                         });
                     }
-                    else AddBigButton("OtherDisabled", (h) => { });
+                    else AddBigButton("OtherDisabled");
                 });
             }
         }),
@@ -1423,7 +1419,7 @@ public class Blueprint
                             PlaySound("DesktopInstanceOpen");
                         });
                     }
-                    else AddBigButton("OtherDisabled", (h) => { });
+                    else AddBigButton("OtherDisabled");
                 });
             }
         }),
@@ -1469,7 +1465,7 @@ public class Blueprint
                         Respawn("CraftingList");
                     });
                 else
-                    AddSmallButton("OtherSortOff", (h) => { });
+                    AddSmallButton("OtherSortOff");
                 if (!CDesktop.windows.Exists(x => x.title == "CraftingSettings") && !CDesktop.windows.Exists(x => x.title == "CraftingSort"))
                     AddSmallButton("OtherSettings", (h) =>
                     {
@@ -1478,7 +1474,7 @@ public class Blueprint
                         Respawn("CraftingList");
                     });
                 else
-                    AddSmallButton("OtherSettingsOff", (h) => { });
+                    AddSmallButton("OtherSettingsOff");
             });
             var regionGroup = CDesktop.LBWindow.LBRegionGroup;
             for (int i = 0; i < 11; i++)
@@ -1826,7 +1822,7 @@ public class Blueprint
                         Respawn("QuestList");
                     });
                 else
-                    AddSmallButton("OtherSortOff", (h) => { });
+                    AddSmallButton("OtherSortOff");
                 if (!CDesktop.windows.Exists(x => x.title == "QuestSettings") && !CDesktop.windows.Exists(x => x.title == "QuestSort"))
                     AddSmallButton("OtherSettings", (h) =>
                     {
@@ -1835,7 +1831,7 @@ public class Blueprint
                         Respawn("QuestList");
                     });
                 else
-                    AddSmallButton("OtherSettingsOff", (h) => { });
+                    AddSmallButton("OtherSettingsOff");
             });
             var regionGroup = CDesktop.LBWindow.LBRegionGroup;
             for (int i = 0; i < 11; i++)
@@ -2040,7 +2036,7 @@ public class Blueprint
                     AddPaddingRegion(() =>
                     {
                         AddLine(slot, "DarkGray", "Right");
-                        AddSmallButton("OtherEmpty", (h) => { });
+                        AddSmallButton("OtherEmpty");
                     });
             }
         }),
@@ -2070,7 +2066,7 @@ public class Blueprint
                         Respawn("ExperienceBar", true);
                     });
                 else
-                    AddSmallButton("OtherSortOff", (h) => { });
+                    AddSmallButton("OtherSortOff");
                 if (!CDesktop.windows.Exists(x => x.title == "InventorySettings") && !CDesktop.windows.Exists(x => x.title == "BankSort") && !CDesktop.windows.Exists(x => x.title == "VendorSort") && !CDesktop.windows.Exists(x => x.title == "InventorySort"))
                     AddSmallButton("OtherSettings", (h) =>
                     {
@@ -2081,7 +2077,7 @@ public class Blueprint
                         Respawn("ExperienceBar", true);
                     });
                 else
-                    AddSmallButton("OtherSettingsOff", (h) => { });
+                    AddSmallButton("OtherSettingsOff");
             });
             for (int i = 0; i < 6; i++)
             {
@@ -2090,9 +2086,9 @@ public class Blueprint
                     () =>
                     {
                         for (int j = 0; j < 5; j++)
-                            if (index * 5 + j >= currentSave.player.inventory.BagSpace()) AddBigButton("OtherDisabled", (h) => { });
+                            if (index * 5 + j >= currentSave.player.inventory.BagSpace()) AddBigButton("OtherDisabled");
                             else if (items.Count > index * 5 + j) PrintInventoryItem(items[index * 5 + j]);
-                            else AddBigButton("OtherEmpty", (h) => { });
+                            else AddBigButton("OtherEmpty");
                     }
                 );
             }
@@ -2631,7 +2627,7 @@ public class Blueprint
                     {
                         AddLine(encounter.who, "DarkGray", "Right");
                         var race = races.Find(x => x.name == encounter.who);
-                        AddSmallButton(race == null ? "OtherUnknown" : race.portrait, (h) => { });
+                        AddSmallButton(race == null ? "OtherUnknown" : race.portrait);
                     });
         }),
 
@@ -2667,7 +2663,7 @@ public class Blueprint
                     AddButtonRegion(() =>
                     {
                         AddLine(desitnationName, "Black");
-                        AddSmallButton("Transport" + transport.means, (h) => { });
+                        AddSmallButton("Transport" + transport.means);
                     },
                     (h) =>
                     {
@@ -2712,7 +2708,7 @@ public class Blueprint
                                 AddButtonRegion(() =>
                                 {
                                     AddLine(person.name, "Black");
-                                    AddSmallButton(personType != null ? personType.icon + (personType.factionVariant ? faction.side : "") : "OtherUnknown", (h) => { });
+                                    AddSmallButton(personType != null ? personType.icon + (personType.factionVariant ? faction.side : "") : "OtherUnknown");
                                 },
                                 (h) =>
                                 {
@@ -2730,7 +2726,7 @@ public class Blueprint
                             AddButtonRegion(() =>
                             {
                                 AddLine(person.name, "Black");
-                                AddSmallButton(personType != null ? personType.icon + (personType.factionVariant ? factions.Find(x => x.name == town.faction).side : "") : "OtherUnknown", (h) => { });
+                                AddSmallButton(personType != null ? personType.icon + (personType.factionVariant ? factions.Find(x => x.name == town.faction).side : "") : "OtherUnknown");
                             },
                             (h) =>
                             {
@@ -2746,7 +2742,7 @@ public class Blueprint
                         AddButtonRegion(() =>
                         {
                             AddLine(group.Key.category + "s (" + group.Count() + ")", "Black");
-                            AddSmallButton(person.category != null ? person.category.icon + (person.category.factionVariant ? factions.Find(x => x.name == town.faction).side : "") : "OtherUnknown", (h) => { });
+                            AddSmallButton(person.category != null ? person.category.icon + (person.category.factionVariant ? factions.Find(x => x.name == town.faction).side : "") : "OtherUnknown");
                         },
                         (h) =>
                         {
@@ -2808,20 +2804,18 @@ public class Blueprint
             {
                 AddLine(person.type + " ", "Gray");
                 AddText(person.name);
-                AddSmallButton(type.icon + (type.factionVariant ? factions.Find(x => x.name == town.faction).side : ""), (h) => { });
+                AddSmallButton(type.icon + (type.factionVariant ? factions.Find(x => x.name == town.faction).side : ""));
             });
             if (type.category == "Trainer")
             {
                 AddButtonRegion(() =>
                 {
                     AddLine("I seek training.");
-                },
-                (h) => { });
+                });
                 AddButtonRegion(() =>
                 {
                     AddLine("I want to reset my talents.");
-                },
-                (h) => { });
+                });
             }
             else if (type.category == "Profession Trainer")
             {
@@ -2884,8 +2878,7 @@ public class Blueprint
                 AddButtonRegion(() =>
                 {
                     AddLine("I want to rest in this inn.");
-                },
-                (h) => { });
+                });
                 AddButtonRegion(() =>
                 {
                     AddLine("I want to browse your goods.");
@@ -2951,13 +2944,11 @@ public class Blueprint
                 AddButtonRegion(() =>
                 {
                     AddLine("I want to enter the arena.");
-                },
-                (h) => { });
+                });
                 AddButtonRegion(() =>
                 {
                     AddLine("I want to buy equipment.");
-                },
-                (h) => { });
+                });
             }
             else if (type.category == "Stable Master")
             {
@@ -3046,7 +3037,7 @@ public class Blueprint
                 AddButtonRegion(() =>
                 {
                     AddLine(person.name, "Black");
-                    AddSmallButton(personType != null ? personType.icon + (personType.factionVariant ? factions.Find(x => x.name == town.faction).side : "") : "OtherUnknown", (h) => { });
+                    AddSmallButton(personType != null ? personType.icon + (personType.factionVariant ? factions.Find(x => x.name == town.faction).side : "") : "OtherUnknown");
                 },
                 (h) =>
                 {
@@ -3088,9 +3079,9 @@ public class Blueprint
                     () =>
                     {
                         for (int j = 0; j < 5; j++)
-                            if (index * 5 + j >= 999) AddBigButton("OtherNoSlot", (h) => { });
+                            if (index * 5 + j >= 999) AddBigButton("OtherNoSlot");
                             else if (items.Count > index * 5 + j) PrintVendorItem(items[index * 5 + j], null);
-                            else AddBigButton("OtherEmpty", (h) => { });
+                            else AddBigButton("OtherEmpty");
                     }
                 );
             }
@@ -3131,7 +3122,7 @@ public class Blueprint
                     {
                         for (int j = 0; j < 5; j++)
                             if (currentSave.buyback.items.Count > index * 5 + j) PrintVendorItem(null, currentSave.buyback.items[index * 5 + j]);
-                            else AddBigButton("OtherEmpty", (h) => { });
+                            else AddBigButton("OtherEmpty");
                     }
                 );
             }
@@ -3151,7 +3142,7 @@ public class Blueprint
             {
                 AddLine(person.type + " ", "Gray");
                 AddText(person.name);
-                AddSmallButton(type.icon + (type.factionVariant ? factions.Find(x => x.name == town.faction).side : ""), (h) => { });
+                AddSmallButton(type.icon + (type.factionVariant ? factions.Find(x => x.name == town.faction).side : ""));
             });
             AddPaddingRegion(() =>
             {
@@ -3222,7 +3213,7 @@ public class Blueprint
                         Respawn("MountCollection");
                     });
                 else
-                    AddSmallButton("OtherSortOff", (h) => { });
+                    AddSmallButton("OtherSortOff");
             });
             var regionGroup = CDesktop.LBWindow.LBRegionGroup;
             AddPaginationLine(regionGroup);
@@ -3263,7 +3254,7 @@ public class Blueprint
                     else
                     {
                         SetRegionBackground(Padding);
-                        AddBigButton("OtherDisabled", (h) => { });
+                        AddBigButton("OtherDisabled");
                     }
                 });
             }
@@ -3386,9 +3377,9 @@ public class Blueprint
                     AddLine(mount.name);
                     AddLine("Speed: ", "DarkGray");
                     AddText(mount.speed == 7 ? "Fast" : (mount.speed == 9 ? "Very Fast" : "Normal"));
-                    AddBigButton(mount.icon, (h) => { });
+                    AddBigButton(mount.icon);
                 }
-                else AddBigButton("OtherDisabled", (h) => { });
+                else AddBigButton("OtherDisabled");
             });
             var mount = mounts.Find(x => x.name == currentSave.player.mount);
             if (CDesktop.windows.Exists(x => x.title == "MountCollection"))
@@ -3439,7 +3430,7 @@ public class Blueprint
                         Respawn("Inventory");
                     });
                 else
-                    AddSmallButton("OtherSortOff", (h) => { });
+                    AddSmallButton("OtherSortOff");
             });
             for (int i = 0; i < 6; i++)
             {
@@ -3448,9 +3439,9 @@ public class Blueprint
                     () =>
                     {
                         for (int j = 0; j < 5; j++)
-                            if (index * 5 + j >= currentSave.banks[town.name].BagSpace()) AddBigButton("OtherNoSlot", (h) => { });
+                            if (index * 5 + j >= currentSave.banks[town.name].BagSpace()) AddBigButton("OtherNoSlot");
                             else if (items.Count > index * 5 + j) PrintBankItem(items[index * 5 + j]);
-                            else AddBigButton("OtherEmpty", (h) => { });
+                            else AddBigButton("OtherEmpty");
                     }
                 );
             }
@@ -3627,7 +3618,7 @@ public class Blueprint
             {
                 AddLine(person.type + " ", "Gray");
                 AddText(person.name);
-                AddSmallButton(type.icon + (type.factionVariant ? factions.Find(x => x.name == town.faction).side : ""), (h) => { });
+                AddSmallButton(type.icon + (type.factionVariant ? factions.Find(x => x.name == town.faction).side : ""));
             });
             AddHeaderRegion(() =>
             {
@@ -3707,7 +3698,7 @@ public class Blueprint
                     else
                     {
                         SetRegionBackground(Padding);
-                        AddBigButton("OtherDisabled", (h) => { });
+                        AddBigButton("OtherDisabled");
                     }
                 });
             }
@@ -3726,7 +3717,7 @@ public class Blueprint
             {
                 AddLine(person.type + " ", "Gray");
                 AddText(person.name);
-                AddSmallButton(type.icon + (type.factionVariant ? factions.Find(x => x.name == town.faction).side : ""), (h) => { });
+                AddSmallButton(type.icon + (type.factionVariant ? factions.Find(x => x.name == town.faction).side : ""));
             });
             AddHeaderRegion(() =>
             {
@@ -3796,7 +3787,7 @@ public class Blueprint
                     else
                     {
                         SetRegionBackground(Padding);
-                        AddBigButton("OtherDisabled", (h) => { });
+                        AddBigButton("OtherDisabled");
                     }
                 });
             }
@@ -4431,7 +4422,7 @@ public class Blueprint
                         Respawn("SpellbookAbilityListActivated");
                     });
                 else
-                    AddSmallButton("OtherSortOff", (h) => { });
+                    AddSmallButton("OtherSortOff");
             });
             var regionGroup = CDesktop.LBWindow.LBRegionGroup;
             AddPaginationLine(regionGroup);
@@ -4477,7 +4468,7 @@ public class Blueprint
                     else
                     {
                         SetRegionBackground(Padding);
-                        AddBigButton("OtherDisabled", (h) => { });
+                        AddBigButton("OtherDisabled");
                     }
                 });
             }
@@ -4510,7 +4501,7 @@ public class Blueprint
                         Respawn("SpellbookAbilityListPassive");
                     });
                 else
-                    AddSmallButton("OtherSortOff", (h) => { });
+                    AddSmallButton("OtherSortOff");
             });
             var regionGroup = CDesktop.LBWindow.LBRegionGroup;
             AddPaginationLine(regionGroup);
@@ -4544,7 +4535,7 @@ public class Blueprint
                     else
                     {
                         SetRegionBackground(Padding);
-                        AddBigButton("OtherDisabled", (h) => { });
+                        AddBigButton("OtherDisabled");
                     }
                 });
             }
@@ -4634,7 +4625,7 @@ public class Blueprint
                         () =>
                         {
                             AddLine(abilityObj.name, "", "Right");
-                            AddSmallButton(abilityObj.icon, (h) => { });
+                            AddSmallButton(abilityObj.icon);
                         },
                         (h) =>
                         {
@@ -4655,7 +4646,7 @@ public class Blueprint
                         () =>
                         {
                             AddLine("", "Black");
-                            AddSmallButton("OtherEmpty", (h) => { });
+                            AddSmallButton("OtherEmpty");
                         }
                     );
             }

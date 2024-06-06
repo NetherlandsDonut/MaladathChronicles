@@ -36,7 +36,7 @@ public class Mount
         });
         AddPaddingRegion(() =>
         {
-            AddBigButton(mount.icon, (h) => { });
+            AddBigButton(mount.icon);
             if (currentSave.player.level < (mount.speed == 7 ? defines.lvlRequiredFastMounts : defines.lvlRequiredVeryFastMounts)) SetBigButtonToRed();
             AddLine("Required level: ", "DarkGray");
             AddText((mount.speed == 7 ? defines.lvlRequiredFastMounts : defines.lvlRequiredVeryFastMounts) + "", Coloring.ColorRequiredLevel(mount.speed == 7 ? defines.lvlRequiredFastMounts : defines.lvlRequiredVeryFastMounts));

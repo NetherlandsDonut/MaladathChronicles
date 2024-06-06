@@ -144,7 +144,7 @@ public class SiteHostileArea : Site
                         foreach (var enemy in commonEncounters)
                         {
                             var race = races.Find(x => x.name == enemy.who);
-                            AddSmallButton(race == null ? "OtherUnknown" : race.portrait, (h) => { });
+                            AddSmallButton(race == null ? "OtherUnknown" : race.portrait);
                         }
                     });
                 if (eliteEncounters != null && eliteEncounters.Count > 0)
@@ -154,7 +154,7 @@ public class SiteHostileArea : Site
                         foreach (var enemy in eliteEncounters)
                         {
                             var race = races.Find(x => x.name == enemy.who);
-                            AddSmallButton(race == null ? "OtherUnknown" : race.portrait, (h) => { });
+                            AddSmallButton(race == null ? "OtherUnknown" : race.portrait);
                         }
                     });
                 if (rareEncounters != null && rareEncounters.Count > 0)
@@ -162,7 +162,7 @@ public class SiteHostileArea : Site
                     {
                         AddLine("Rare: ");
                         foreach (var enemy in rareEncounters)
-                            AddSmallButton("OtherUnknown", (h) => { });
+                            AddSmallButton("OtherUnknown");
                     });
                 var q = currentSave.player.QuestsAt(this);
                 if (q.Count > 0)

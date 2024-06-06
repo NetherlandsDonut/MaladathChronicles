@@ -34,7 +34,7 @@ public class Font
     public Sprite GetGlyph(char character)
     {
         var index = charset.IndexOf(character);
-        if (index == -1) { Debug.LogError("This character was not found in the font character data: " + character); return null; }
+        if (index == -1) { Debug.LogError("This character was not found in the charset: " + character); return null; }
         else if (fonts[name].glyphs.Length < index) { Debug.LogError("This character was not found in the font glyph set: " + character); return null; }
         return fonts[name].glyphs[index];
     }

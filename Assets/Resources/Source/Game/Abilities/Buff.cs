@@ -154,7 +154,7 @@ public class Buff
         AddHeaderRegion(() => { AddLine(buff.Item1.name); });
         AddPaddingRegion(() =>
         {
-            AddBigButton(buff.Item1.icon, (h) => { });
+            AddBigButton(buff.Item1.icon);
             AddLine("Dispellable: ", "DarkGray");
             AddText(buff.Item1.dispelType != "None" ? "Yes" : "No");
             if (buff.Item3 != null)
