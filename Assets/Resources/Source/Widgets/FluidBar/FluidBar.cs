@@ -51,7 +51,7 @@ public class FluidBar : MonoBehaviour
         {
             if (aim < 2) aim = 0;
             else if (aim <= 8) aim = 8;
-            else if (aim > barWidth - 4) aim = barWidth - 2;
+            else if (aim > barWidth - 2) aim = barWidth;
             newAim = new Vector3(0, -10 - aim);
         }
         else
@@ -66,7 +66,7 @@ public class FluidBar : MonoBehaviour
 
     public void Update()
     {
-        if (Vector3.Distance(split.transform.localPosition, newAim) > 0.01f)
+        if (Vector3.Distance(split.transform.localPosition, newAim) > 0.001f)
         {
             time += Time.deltaTime;
             split.transform.localPosition = Vector3.Lerp(split.transform.localPosition, newAim, time / 6);
