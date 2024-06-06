@@ -602,7 +602,7 @@ public static class Root
         if (time > 0)
         {
             newObject.AddComponent<Shatter>().render = newObject.GetComponent<SpriteRenderer>();
-            newObject.GetComponent<Shatter>().Initiate(0.1f);
+            newObject.GetComponent<Shatter>().Initiate(time);
         }
     }
 
@@ -897,19 +897,20 @@ public static class Root
         skillBar.transform.parent = CDesktop.LBWindow.transform;
         skillBar.transform.localPosition = new Vector3(x, y, 0);
         var thisBar = skillBar.GetComponent<FluidBar>();
-        thisBar.Initialise(150, () => profession.levels.Where(x => entity.professionSkills[profession.name].Item2.Contains(x.levelName)).Max(x => x.maxSkill), () => entity.professionSkills[profession.name].Item1);
+        thisBar.Initialise(150, () => profession.levels.Where(x => entity.professionSkills[profession.name].Item2.Contains(x.levelName)).Max(x => x.maxSkill), () => entity.professionSkills[profession.name].Item1, false);
         thisBar.UpdateFluidBar();
     }
 
     public static void AddResourceBar(int x, int y, string resource, string forWho, Entity entity)
     {
-        var resourceBar = UnityEngine.Object.Instantiate(Resources.Load<GameObject>("Prefabs/PrefabResourceBar" + (x > 100 ? "Second" : "")));
+        var resourceBar = UnityEngine.Object.Instantiate(Resources.Load<GameObject>("Prefabs/PrefabResourceBar"));
         resourceBar.transform.parent = CDesktop.LBWindow.transform;
         resourceBar.transform.localPosition = new Vector3(x, y, 0);
         var thisBar = resourceBar.GetComponent<FluidBar>();
-        resourceBar.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Textures/Bars/Resource" + resource + "Bar/FilledBar");
-        thisBar.Initialise(65, () => entity.MaxResource(resource), () => entity.resources[resource]);
-        thisBar.split.sprite = Resources.Load<Sprite>("Sprites/Textures/Bars/Resource" + resource + "Bar/Splitter");
+        resourceBar.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Textures/Bars/ResourceBar/Resource" + resource + "Bar/FilledBar");
+        thisBar.Initialise(/*69*/entity.MaxResource(resource) * 8, () => entity.MaxResource(resource), () => entity.resources[resource], true);
+        thisBar.split.sprite = Resources.Load<Sprite>("Sprites/Textures/Bars/ResourceBar/Resource" + resource + "Bar/Splitter");
+        thisBar.GetComponentsInChildren<SpriteRenderer>().First(x => x.name == "Capstone").sprite = Resources.Load<Sprite>("Sprites/Textures/Bars/ResourceBar/Resource" + resource + "Bar/Capstone");
         if (Board.board.resourceBars.ContainsKey(forWho)) Board.board.resourceBars[forWho].Add(resource, thisBar);
         else Board.board.resourceBars.Add(forWho, new() { { resource, thisBar } });
         thisBar.UpdateFluidBar();
@@ -921,7 +922,7 @@ public static class Root
         healthBar.transform.parent = CDesktop.LBWindow.transform;
         healthBar.transform.localPosition = new Vector3(x, y, 0);
         var thisBar = healthBar.GetComponent<FluidBar>();
-        thisBar.Initialise(132, () => entity.MaxHealth(), () => entity.health);
+        thisBar.Initialise(150, () => entity.MaxHealth(), () => entity.health, false);
         if (Board.board.healthBars.ContainsKey(forWho)) Board.board.healthBars[forWho] = thisBar;
         else Board.board.healthBars.Add(forWho, thisBar);
         thisBar.UpdateFluidBar();

@@ -21,5 +21,5 @@ public class Line : MonoBehaviour
         region.lines.Add(this);
     }
 
-    public int Length() => texts.Sum(x => fonts["Tahoma Bold"].Length(x.text));
+    public int Length() => texts.Sum(x => x.text.Length == 0 ? 0 : fonts["Tahoma Bold"].Length(x.text));
 }

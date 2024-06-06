@@ -24,6 +24,8 @@ using static Serialization;
 using static SiteInstance;
 using static SiteComplex;
 
+using static Root.Anchor;
+
 public class Starter : MonoBehaviour
 {
     void Start()
@@ -317,6 +319,34 @@ public class Starter : MonoBehaviour
         //for (int i = 0; i < groups.Count; i++)
         //    deb += groups[i].Key + " (" + groups[i].Count() + ")\n";
         //Debug.Log(deb);
+        var elements = new List<string> { "Fire", "Water", "Earth", "Air", "Frost", "Lightning", "Arcane", "Decay", "Order", "Shadow" };
+        foreach (var element in elements)
+        {
+            Blueprint.windowBlueprints.Add(new Blueprint("Player" + element + "Resource", () =>
+            {
+                SetAnchor(-320 + 19 * elements.IndexOf(element), 123 - 19 * Board.board.player.actionBars.Count);
+                AddRegionGroup();
+                SetRegionGroupHeight(Board.board.player.MaxResource(element) * 8);
+                SetRegionGroupWidth(19);
+                AddPaddingRegion(() =>
+                {
+                    AddLine("");
+                    AddResourceBar(2, -2, element, "Player", Board.board.player);
+                });
+            }));
+            Blueprint.windowBlueprints.Add(new Blueprint("Enemy" + element + "Resource", () =>
+            {
+                SetAnchor(299 - 19 * elements.IndexOf(element), 123 - 19 * Board.board.enemy.actionBars.Count);
+                AddRegionGroup();
+                SetRegionGroupHeight(Board.board.enemy.MaxResource(element) * 8);
+                SetRegionGroupWidth(19);
+                AddPaddingRegion(() =>
+                {
+                    AddLine("");
+                    AddResourceBar(2, -2, element, "Enemy", Board.board.enemy);
+                });
+            }));
+        }
         for (int i = 0; i < 2; i++)
             for (int j = 0; j < 5; j++)
                 for (int k = 0; k < 3; k++)

@@ -25,12 +25,12 @@ public class FlyingMissile : MonoBehaviour
             from = new Vector3(-300, 141);
             through1 = new Vector3(-155, 141 + (arc <= 40 && !up ? arc : -arc));
             through2 = new Vector3(5, 141 + (arc <= 40 && !up ? arc : -arc));
-            to = new Vector3(167, 141);
+            to = new Vector3(148, 141);
             transform.position = from;
         }
         else
         {
-            from = new Vector3(167, 141);
+            from = new Vector3(148, 141);
             through1 = new Vector3(5, 141 + (arc <= 40 && !up ? arc : -arc));
             through2 = new Vector3(-155, 141 + (arc <= 40 && !up ? arc : -arc));
             to = new Vector3(-300, 141);

@@ -134,7 +134,7 @@ public class Ability
         var width = 220;
         if (CDesktop.title == "Game")
         {
-            SetAnchor(Top, 0, -53);
+            SetAnchor(Top, 0, -34);
             DisableShadows();
             width = 228;
             SetRegionGroupHeight(195);

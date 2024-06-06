@@ -157,7 +157,7 @@ public class Blueprint
 
         //Game
         new("BoardFrame", () => {
-            SetAnchor(-115, 128);
+            SetAnchor(-115, 146);
             var boardBackground = new GameObject("BoardBackground", typeof(SpriteRenderer), typeof(SpriteMask));
             boardBackground.transform.parent = CDesktop.LBWindow.transform;
             boardBackground.transform.localPosition = new Vector2(-17, 17);
@@ -174,7 +174,7 @@ public class Blueprint
             boardBackground.GetComponent<SpriteRenderer>().sortingLayerName = "CameraShadow";
         }, true),
         new("Board", () => {
-            SetAnchor(Top, 0, -33 + 19 * (board.field.GetLength(1) - 7));
+            SetAnchor(Top, 0, -15 + 19 * (board.field.GetLength(1) - 7));
             DisableGeneralSprites();
             AddRegionGroup();
             for (int i = 0; i < board.field.GetLength(1); i++)
@@ -192,7 +192,7 @@ public class Blueprint
                 });
         }),
         new("BufferBoard", () => {
-            SetAnchor(Top, 0, 195 + 19 * (BufferBoard.bufferBoard.field.GetLength(1) - 7));
+            SetAnchor(Top, 0, 213 + 19 * (BufferBoard.bufferBoard.field.GetLength(1) - 7));
             MaskWindow();
             DisableGeneralSprites();
             DisableCollisions();
@@ -204,79 +204,10 @@ public class Blueprint
                         AddBigButton(BufferBoard.bufferBoard.GetFieldButton());
                 });
         }, true),
-        new("EnemyResources", () => {
-            SetAnchor(BottomRight);
-            AddRegionGroup();
-            var elements1 = new List<string> { "Fire", "Water", "Earth", "Air", "Frost" };
-            var elements2 = new List<string> { "Lightning", "Arcane", "Decay", "Order", "Shadow" };
-            foreach (var element in elements1)
-                AddHeaderRegion(() =>
-                {
-                    AddSmallButton("Element" + element + "Rousing",
-                        null,
-                        null,
-                        (h) => () =>
-                        {
-                            SetAnchor(Top, h.window);
-                            AddRegionGroup();
-                            SetRegionGroupWidth(98);
-                            AddHeaderRegion(() =>
-                            {
-                                AddLine(element + ":", "Gray");
-                            });
-                            AddPaddingRegion(() =>
-                            {
-                                AddLine(board.enemy.resources.ToList().Find(x => x.Key == element).Value + " / " + board.enemy.MaxResource(element), "Gray");
-                            });
-                        }
-                    );
-                });
-            AddRegionGroup();
-            SetRegionGroupWidth(67);
-            foreach (var element in elements1)
-                AddHeaderRegion(() =>
-                {
-                    var value = board.enemy.resources.ToList().Find(x => x.Key == element).Value;
-                    AddLine(value + "", value == 0 ? "DarkGray" : (value < board.enemy.MaxResource(element) ? "Gray" : "Green"));
-                    AddResourceBar(21, -19 * elements1.IndexOf(element), element, "Enemy", board.enemy);
-                });
-            AddRegionGroup();
-            foreach (var element in elements1)
-                AddHeaderRegion(() =>
-                {
-                    AddSmallButton("Element" + elements2[elements1.IndexOf(element)] + "Rousing",
-                        null,
-                        null,
-                        (h) => () =>
-                        {
-                            SetAnchor(Top, h.window);
-                            AddRegionGroup();
-                            SetRegionGroupWidth(98);
-                            AddHeaderRegion(() =>
-                            {
-                                AddLine(elements2[elements1.IndexOf(element)] + ":", "Gray");
-                            });
-                            AddPaddingRegion(() =>
-                            {
-                                AddLine(board.enemy.resources.ToList().Find(x => x.Key == elements2[elements1.IndexOf(element)]).Value + " / " + board.enemy.MaxResource(elements2[elements1.IndexOf(element)]), "Gray");
-                            });
-                        }
-                    );
-                });
-            AddRegionGroup();
-            SetRegionGroupWidth(67);
-            foreach (var element in elements2)
-                AddHeaderRegion(() =>
-                {
-                    var value = board.enemy.resources.ToList().Find(x => x.Key == element).Value;
-                    AddLine(value + "", value == 0 ? "DarkGray" : (value < board.enemy.MaxResource(element) ? "Gray" : "Green"));
-                    AddResourceBar(107, -19 * elements2.IndexOf(element), element, "Enemy", board.enemy);
-                });
-        }),
         new("EnemyBattleInfo", () => {
             SetAnchor(TopRight);
             AddRegionGroup();
-            SetRegionGroupWidth(172);
+            SetRegionGroupWidth(190);
             AddButtonRegion(
                 () =>
                 {
@@ -329,79 +260,10 @@ public class Blueprint
                 );
             }
         }),
-        new("PlayerResources", () => {
-            SetAnchor(BottomLeft);
-            AddRegionGroup();
-            var elements1 = new List<string> { "Fire", "Water", "Earth", "Air", "Frost" };
-            var elements2 = new List<string> { "Lightning", "Arcane", "Decay", "Order", "Shadow" };
-            foreach (var element in elements1)
-                AddHeaderRegion(() =>
-                {
-                    AddSmallButton("Element" + element + "Rousing",
-                        null,
-                        null,
-                        (h) => () =>
-                        {
-                            SetAnchor(Top, h.window);
-                            AddRegionGroup();
-                            SetRegionGroupWidth(98);
-                            AddHeaderRegion(() =>
-                            {
-                                AddLine(element + ":", "Gray");
-                            });
-                            AddPaddingRegion(() =>
-                            {
-                                AddLine(board.player.resources.ToList().Find(x => x.Key == element).Value + " / " + board.player.MaxResource(element), "Gray");
-                            });
-                        }
-                    );
-                });
-            AddRegionGroup();
-            SetRegionGroupWidth(67);
-            foreach (var element in elements1)
-                AddHeaderRegion(() =>
-                {
-                    var value = board.player.resources.ToList().Find(x => x.Key == element).Value;
-                    AddLine(value + "", value == 0 ? "DarkGray" : (value < board.player.MaxResource(element) ? "Gray" : "Green"));
-                    AddResourceBar(21, -19 * elements1.IndexOf(element), element, "Player", board.player);
-                });
-            AddRegionGroup();
-            foreach (var element in elements1)
-                AddHeaderRegion(() =>
-                {
-                    AddSmallButton("Element" + elements2[elements1.IndexOf(element)] + "Rousing",
-                        null,
-                        null,
-                        (h) => () =>
-                        {
-                            SetAnchor(Top, h.window);
-                            AddRegionGroup();
-                            SetRegionGroupWidth(98);
-                            AddHeaderRegion(() =>
-                            {
-                                AddLine(elements2[elements1.IndexOf(element)] + ":", "Gray");
-                            });
-                            AddPaddingRegion(() =>
-                            {
-                                AddLine(board.player.resources.ToList().Find(x => x.Key == elements2[elements1.IndexOf(element)]).Value + " / " + board.player.MaxResource(elements2[elements1.IndexOf(element)]), "Gray");
-                            });
-                        }
-                    );
-                });
-            AddRegionGroup();
-            SetRegionGroupWidth(67);
-            foreach (var element in elements2)
-                AddHeaderRegion(() =>
-                {
-                    var value = board.player.resources.ToList().Find(x => x.Key == element).Value;
-                    AddLine(value + "", value == 0 ? "DarkGray" : (value < board.player.MaxResource(element) ? "Gray" : "Green"));
-                    AddResourceBar(107, -19 * elements2.IndexOf(element), element, "Player", board.player);
-                });
-        }),
         new("PlayerBattleInfo", () => {
             SetAnchor(TopLeft);
             AddRegionGroup();
-            SetRegionGroupWidth(172);
+            SetRegionGroupWidth(190);
             AddButtonRegion(
                 () =>
                 {
@@ -3955,7 +3817,7 @@ public class Blueprint
             });
         }),
         new("BoardFrame", () => {
-            SetAnchor(-115, 128);
+            SetAnchor(-115, 146);
             var boardBackground = new GameObject("BoardBackground", typeof(SpriteRenderer), typeof(SpriteMask));
             boardBackground.transform.parent = CDesktop.LBWindow.transform;
             boardBackground.transform.localPosition = new Vector2(-17, 17);
@@ -3972,7 +3834,7 @@ public class Blueprint
             boardBackground.GetComponent<SpriteRenderer>().sortingLayerName = "CameraShadow";
         }),
         new("FishingBoard", () => {
-            SetAnchor(Top, 0, -33 + 19 * (fishingBoard.field.GetLength(1) - 7));
+            SetAnchor(Top, 0, -15 + 19 * (fishingBoard.field.GetLength(1) - 7));
             DisableGeneralSprites();
             AddRegionGroup();
             for (int i = 0; i < fishingBoard.field.GetLength(1); i++)
@@ -3992,7 +3854,7 @@ public class Blueprint
             }
         }),
         new("FishingBufferBoard", () => {
-            SetAnchor(Top, 0, 195 + 19 * (FishingBufferBoard.fishingBufferBoard.field.GetLength(1) - 7));
+            SetAnchor(Top, 0, 213 + 19 * (FishingBufferBoard.fishingBufferBoard.field.GetLength(1) - 7));
             MaskWindow();
             DisableGeneralSprites();
             DisableCollisions();
@@ -4536,7 +4398,7 @@ public class Blueprint
         new("LocationInfo", () => {
             SetAnchor(Top);
             AddRegionGroup();
-            SetRegionGroupWidth(296);
+            SetRegionGroupWidth(258);
             AddHeaderRegion(
                 () =>
                 {
@@ -5337,8 +5199,12 @@ public class Blueprint
             SpawnWindowBlueprint("PlayerBattleInfo");
             SpawnWindowBlueprint("LocationInfo");
             SpawnWindowBlueprint("EnemyBattleInfo");
-            SpawnWindowBlueprint("PlayerResources");
-            SpawnWindowBlueprint("EnemyResources");
+            var elements = new List<string> { "Fire", "Water", "Earth", "Air", "Frost", "Lightning", "Arcane", "Decay", "Order", "Shadow" };
+            foreach (var element in elements)
+            {
+                SpawnWindowBlueprint("Player" + element + "Resource");
+                SpawnWindowBlueprint("Enemy" + element + "Resource");
+            }
             AddHotkey(PageUp, () => {
                 board.player.resources = new Dictionary<string, int>
                 {

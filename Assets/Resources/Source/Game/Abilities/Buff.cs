@@ -145,7 +145,7 @@ public class Buff
 
     public static void PrintBuffTooltip(Entity Effector, Entity other, (Buff, int, GameObject, int) buff)
     {
-        SetAnchor(Top, 0, -53);
+        SetAnchor(Top, 0, -34);
         AddHeaderGroup();
         if (CDesktop.title == "Game")
             DisableShadows();

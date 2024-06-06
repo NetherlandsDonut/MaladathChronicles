@@ -32,10 +32,7 @@ public class Entity
             stats.stats.Inc(stat.Key, stat.Value);
         mounts = new();
         inventory = new Inventory(items);
-        currentQuests = new() { quests[124], quests[24], quests[53], quests[153] };
-        currentQuests.Add(quests.Find(x => x.conditions.Count > 1 && x.conditions.Any(y => y.type == "Kill")));
-        currentQuests.Add(quests.Find(x => x.conditions.Count > 1 && x.conditions.Any(y => y.type == "Item")));
-        currentQuests.Add(quests.Find(x => x.conditions.Count == 1 && x.conditions.Any(y => y.type == "Item")));
+        currentQuests = new();
         completedQuests = new();
         learnedRecipes = new();
         professionSkills = new();
@@ -79,16 +76,16 @@ public class Entity
                 { "Intellect", 3 * this.level },
                 { "Spirit", 0 },
 
-                { "Earth Mastery", 10 },
-                { "Fire Mastery", 10 },
-                { "Air Mastery", 10 },
-                { "Water Mastery", 10 },
-                { "Frost Mastery", 10 },
-                { "Lightning Mastery", 10 },
-                { "Arcane Mastery", 10 },
-                { "Decay Mastery", 10 },
-                { "Shadow Mastery", 10 },
-                { "Order Mastery", 10 },
+                { "Earth Mastery", random.Next(1, 6) },
+                { "Fire Mastery", random.Next(1, 6) },
+                { "Air Mastery", random.Next(1, 6) },
+                { "Water Mastery", random.Next(1, 6) },
+                { "Frost Mastery", random.Next(1, 6) },
+                { "Lightning Mastery", random.Next(1, 6) },
+                { "Arcane Mastery", random.Next(1, 6) },
+                { "Decay Mastery", random.Next(1, 6) },
+                { "Shadow Mastery", random.Next(1, 6) },
+                { "Order Mastery", random.Next(1, 6) },
             }
         );
         InitialiseCombat();

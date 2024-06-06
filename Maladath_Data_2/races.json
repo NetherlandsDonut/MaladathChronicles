@@ -3146,7 +3146,10 @@
     "kind": "Common",
     "portrait": "PortraitBurningBladeInvoker",
     "vitality": 1.0,
-    "abilities": {}
+    "abilities": {
+      "Corruption": 0,
+      "Shadow Bolt": 0
+    }
   },
   {
     "name": "Burning Blade Reaver",
