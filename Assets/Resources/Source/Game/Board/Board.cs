@@ -144,13 +144,13 @@ public class Board
     public Dictionary<Ability, int> playerCombatAbilities;
 
     //List of passive abilities owned by player that are on cooldown
-    public List<(string, int)> playerCooldowns;
+    public Dictionary<string, int> playerCooldowns;
 
     //Abilities (Active and passive) that enemy has in the combat
     public Dictionary<Ability, int> enemyCombatAbilities;
 
     //List of passive abilities owned by the enemy that are on cooldown
-    public List<(string, int)> enemyCooldowns;
+    public Dictionary<string, int> enemyCooldowns;
 
     //Queue of actions to do on the board and the combatants
     public List<Action> actions;
@@ -161,27 +161,31 @@ public class Board
     public void PutOnCooldown(bool player, Ability ability)
     {
         var list = player ? playerCooldowns : enemyCooldowns;
-        list.RemoveAll(x => x.Item1 == ability.name);
-        list.Add((ability.name, ability.cooldown));
+        list.Remove(ability.name);
+        list.Add(ability.name, ability.cooldown);
     }
 
-    public int CooldownOn(bool player, string ability) => (player ? playerCooldowns : enemyCooldowns).Find(x => x.Item1 == ability).Item2;
+    public int CooldownOn(bool player, string ability) => (player ? playerCooldowns : enemyCooldowns).Get(ability);
 
     //Cooldowns all action bar abilities and used passives by 1 turn
     public int Cooldown(bool player)
     {
         int off = 0;
         ref var abilities = ref (player ? ref playerCooldowns : ref enemyCooldowns);
-        for (int i = abilities.Count - 1; i >= 0; i--)
-            if (abilities[i].Item2 > 0)
+        var names = (player ? playerCooldowns : enemyCooldowns).Keys.ToList();
+        foreach (var name in names)
+        {
+            if (abilities[name] > 0)
             {
-                abilities[i] = (abilities[i].Item1, abilities[i].Item2 - 1);
-                if (abilities[i].Item2 == 0)
+                off++;
+                if (--abilities[name] <= 0)
                 {
-                    off++;
-                    board.CallEvents(player ? this.player : enemy, new() { { "Trigger", "Cooldown" }, { "Triggerer", "Effector" }, { "AbilityName", abilities[i].Item1 } });
+                    abilities.Remove(name);
+                    board.CallEvents(player ? this.player : enemy, new() { { "Trigger", "Cooldown" }, { "Triggerer", "Effector" }, { "AbilityName", name } });
                 }
             }
+            else abilities.Remove(name);
+        }
         return off;
     }
 

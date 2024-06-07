@@ -238,7 +238,12 @@ public class Blueprint
                 AddButtonRegion(
                     () =>
                     {
-                        AddLine(actionBar, "", "Right");
+                        if (board.enemyCooldowns.ContainsKey(actionBar))
+                        {
+                            AddLine("" + board.enemyCooldowns[actionBar] + " / ", "DimGray", "Right");
+                            AddText(actionBar, "Black");
+                        }
+                        else AddLine(actionBar, "", "Right");
                         AddSmallButton(abilityObj.icon);
                         if (!abilityObj.EnoughResources(board.enemy))
                         {
@@ -272,10 +277,6 @@ public class Blueprint
                     {
                         board.EndCombat("Fled");
                     });
-                },
-                (h) =>
-                {
-
                 }
             );
             AddHeaderRegion(() =>
@@ -298,7 +299,12 @@ public class Blueprint
                 AddButtonRegion(
                     () =>
                     {
-                        AddLine(actionBar, "", "Right");
+                        if (board.playerCooldowns.ContainsKey(actionBar))
+                        {
+                            AddLine("" + board.playerCooldowns[actionBar] + " / ", "DimGray", "Right");
+                            AddText(actionBar, "Black");
+                        }
+                        else AddLine(actionBar, "", "Right");
                         AddSmallButton(abilityObj.icon);
                         if (!abilityObj.EnoughResources(board.player))
                         {
@@ -388,7 +394,7 @@ public class Blueprint
             });
             AddPaddingRegion(() => SetRegionAsGroupExtender());
         }, true),
-        new("CharacterRankingTop", () =>
+        new("CharacterRankingTop", () => 
         {
             SetAnchor(-293, 153);
             DisableShadows();
@@ -427,7 +433,7 @@ public class Blueprint
                     });
             }
         }),
-        new("CharacterRankingList", () =>
+        new("CharacterRankingList", () => 
         {
             SetAnchor(-293, 115);
             DisableShadows();
@@ -456,7 +462,7 @@ public class Blueprint
                         AddBigButton("OtherBlank");
                     });
         }),
-        new("CharacterRankingListRight", () =>
+        new("CharacterRankingListRight", () => 
         {
             SetAnchor(257, 115);
             DisableShadows();
@@ -479,7 +485,7 @@ public class Blueprint
                         AddBigButton("OtherBlank");
                     });
         }),
-        new("CharacterRankingShadow", () =>
+        new("CharacterRankingShadow", () => 
         {
             SetAnchor(-293, 153);
             AddRegionGroup();
@@ -498,7 +504,7 @@ public class Blueprint
             SetRegionGroupWidth((319 - experience) * 2);
             SetRegionGroupHeight(12);
             AddPaddingRegion(() => { SetRegionBackground(NoExperience); });
-        },  true),
+        }, true),
         new("ExperienceBarBorder", () => {
             SetAnchor(Bottom);
             AddRegionGroup();
@@ -632,7 +638,7 @@ public class Blueprint
             }
             else AddPaddingRegion(() => { });
         }, true),
-        new("RealmRoster", () =>
+        new("RealmRoster", () => 
         {
             SetAnchor(Center, 0, 117);
             AddHeaderGroup();
@@ -2457,7 +2463,7 @@ public class Blueprint
         }),
         
         //Complex
-        new("Complex", () =>
+        new("Complex", () => 
         {
             PlayAmbience(complex.ambience);
             SetAnchor(TopRight, -19, -38);
@@ -2481,7 +2487,7 @@ public class Blueprint
         }),
 
         //Instance
-        new("Instance", () =>
+        new("Instance", () => 
         {
             PlayAmbience(instance.ambience);
             SetAnchor(TopRight, -19, -38);
@@ -2517,7 +2523,7 @@ public class Blueprint
         }),
 
         //Hostile Area
-        new("HostileArea", () =>
+        new("HostileArea", () => 
         {
             if (area.ambience == null)
             {
@@ -2567,7 +2573,7 @@ public class Blueprint
                 SwitchDesktop("Game");
             });
         }),
-        new("HostileAreaProgress", () =>
+        new("HostileAreaProgress", () => 
         {
             SetAnchor(BottomLeft, 19, 35);
             AddHeaderGroup();
@@ -2612,7 +2618,7 @@ public class Blueprint
                     }
                 }
         }),
-        new("HostileAreaDenizens", () =>
+        new("HostileAreaDenizens", () => 
         {
             SetAnchor(TopLeft, 19, -95);
             AddHeaderGroup();
@@ -2632,7 +2638,7 @@ public class Blueprint
         }),
 
         //Town
-        new("Town", () =>
+        new("Town", () => 
         {
             PlayAmbience(town.ambience);
             SetAnchor(TopLeft, 19, -38);
@@ -2879,19 +2885,6 @@ public class Blueprint
                 {
                     AddLine("I want to rest in this inn.");
                 });
-                AddButtonRegion(() =>
-                {
-                    AddLine("I want to browse your goods.");
-                },
-                (h) =>
-                {
-                    PlaySound("DesktopInventoryOpen");
-                    CloseWindow(h.window);
-                    SpawnWindowBlueprint("Vendor");
-                    SpawnWindowBlueprint("Inventory");
-                    Respawn("ExperienceBarBorder");
-                    Respawn("ExperienceBar");
-                });
                 if (currentSave.player.homeLocation != town.name)
                     AddButtonRegion(() =>
                     {
@@ -2921,23 +2914,6 @@ public class Blueprint
                         Respawn("ExperienceBarBorder");
                         Respawn("ExperienceBar");
                     });
-            }
-            else if (type.category == "Vendor")
-            {
-                AddButtonRegion(() =>
-                {
-                    AddLine("I want to browse your goods.");
-                },
-                (h) =>
-                {
-                    PlaySound("DesktopInventoryOpen");
-                    CloseWindow(h.window);
-                    CloseWindow("Town");
-                    SpawnWindowBlueprint("Vendor");
-                    SpawnWindowBlueprint("Inventory");
-                    Respawn("ExperienceBarBorder");
-                    Respawn("ExperienceBar");
-                });
             }
             else if (type.category == "Battlemaster")
             {
@@ -2996,6 +2972,25 @@ public class Blueprint
                     SpawnWindowBlueprint("FlightMaster");
                     if (mounts.Find(x => x.name == currentSave.player.mount) != null)
                         SpawnWindowBlueprint("CurrentMount");
+                    Respawn("ExperienceBarBorder");
+                    Respawn("ExperienceBar");
+                });
+            }
+            if (person.itemsSold != null && person.itemsSold.Count > 0)
+            {
+                AddButtonRegion(() =>
+                {
+                    AddLine("I want to browse your goods.");
+                },
+                (h) =>
+                {
+                    if (!currentSave.vendorStock.ContainsKey(town.name + ":" + person.name) && person.itemsSold != null && person.itemsSold.Count > 0)
+                        currentSave.vendorStock.Add(town.name + ":" + person.name, person.ExportStock());
+                    PlaySound("DesktopInventoryOpen");
+                    CloseWindow(h.window);
+                    CloseWindow("Town");
+                    SpawnWindowBlueprint("Vendor");
+                    SpawnWindowBlueprint("Inventory");
                     Respawn("ExperienceBarBorder");
                     Respawn("ExperienceBar");
                 });
@@ -4763,12 +4758,12 @@ public class Blueprint
             {
                 AddInputLine(String.consoleInput);
             });
-        },  true),
+        }, true),
     };
 
     public static List<Blueprint> desktopBlueprints = new()
     {
-        new("TitleScreen", () =>
+        new("TitleScreen", () => 
         {
             PlayAmbience("AmbienceMainScreen", 0.5f, true);
             SpawnWindowBlueprint("TitleScreenMenu");
@@ -4811,7 +4806,7 @@ public class Blueprint
                 }
             });
         }),
-        new("Map", () =>
+        new("Map", () => 
         {
             PlaySound("DesktopOpenSave", 0.2f);
             SetDesktopBackground("LoadingScreens/LoadingScreen" + (CDesktop.cameraDestination.x < 2470 ? "Kalimdor" : "EasternKingdoms"));
@@ -4898,7 +4893,7 @@ public class Blueprint
                 CDesktop.cameraDestination = new Vector2(temp.x, temp.y);
             }
         }),
-        new("HostileArea", () =>
+        new("HostileArea", () => 
         {
             SetDesktopBackground(area.Background());
             SpawnWindowBlueprint("HostileArea");
@@ -4929,14 +4924,14 @@ public class Blueprint
                 }
             });
         }),
-        new("CombatResults", () =>
+        new("CombatResults", () => 
         {
             SetDesktopBackground(board.area.Background());
             SpawnWindowBlueprint("CombatResults");
             SpawnWindowBlueprint("ExperienceBarBorder");
             SpawnWindowBlueprint("ExperienceBar");
         }),
-        new("CombatLog", () =>
+        new("CombatLog", () => 
         {
             SetDesktopBackground(board.area.Background());
             SpawnWindowBlueprint("CombatResultsChart");
@@ -4971,7 +4966,7 @@ public class Blueprint
                 CloseDesktop("CombatLog");
             });
         }),
-        new("CombatResultsLoot", () =>
+        new("CombatResultsLoot", () => 
         {
             SetDesktopBackground(board.area.Background());
             SpawnWindowBlueprint("MapToolbarShadow");
@@ -4992,7 +4987,7 @@ public class Blueprint
                 CloseDesktop("CombatResultsLoot");
             });
         }),
-        new("ChestLoot", () =>
+        new("ChestLoot", () => 
         {
             SetDesktopBackground(area.Background());
             SpawnWindowBlueprint("MapToolbarShadow");
@@ -5013,7 +5008,7 @@ public class Blueprint
                 CloseDesktop("ChestLoot");
             });
         }),
-        new("Town", () =>
+        new("Town", () => 
         {
             SetDesktopBackground(town.Background());
             SpawnWindowBlueprint("MapToolbarShadow");
@@ -5112,7 +5107,7 @@ public class Blueprint
                 });
             }
         }),
-        new("Instance", () =>
+        new("Instance", () => 
         {
             SetDesktopBackground(instance.Background());
             SpawnWindowBlueprint("Instance");
@@ -5149,7 +5144,7 @@ public class Blueprint
                 }
             });
         }),
-        new("Complex", () =>
+        new("Complex", () => 
         {
             SetDesktopBackground(complex.Background());
             SpawnWindowBlueprint("Complex");
@@ -5178,7 +5173,7 @@ public class Blueprint
                 }
             });
         }),
-        new("Game", () =>
+        new("Game", () => 
         {
             SpawnTransition();
             locationName = board.area.name;
@@ -5237,7 +5232,7 @@ public class Blueprint
             AddHotkey(BackQuote, () => { SpawnDesktopBlueprint("DevPanel"); });
             AddHotkey(KeypadMultiply, () => { board.EndCombat("Won"); });
         }),
-        new("FishingGame", () =>
+        new("FishingGame", () => 
         {
             locationName = fishingBoard.site.name;
             PlaySound("DesktopEnterCombat");
@@ -5258,7 +5253,7 @@ public class Blueprint
             });
             //AddHotkey(KeypadMultiply, () => { board.EndCombat("Won"); });
         }),
-        new("CharacterSheet", () =>
+        new("CharacterSheet", () => 
         {
             PlaySound("DesktopCharacterSheetOpen");
             SetDesktopBackground("Stone");
@@ -5279,7 +5274,7 @@ public class Blueprint
                 CloseDesktop("CharacterSheet");
             });
         }),
-        new("QuestLog", () =>
+        new("QuestLog", () => 
         {
             PlaySound("DesktopCharacterSheetOpen");
             SetDesktopBackground("Skin");
@@ -5299,7 +5294,7 @@ public class Blueprint
             });
             AddPaginationHotkeys();
         }),
-        new("TalentScreen", () =>
+        new("TalentScreen", () => 
         {
             SetDesktopBackground("Stone");
             SpawnWindowBlueprint("MapToolbarClockLeft");
@@ -5339,7 +5334,7 @@ public class Blueprint
             });
             AddHotkey(Escape, () => { CloseDesktop("TalentScreen"); PlaySound("DesktopTalentScreenClose"); });
         }),
-        new("SpellbookScreen", () =>
+        new("SpellbookScreen", () => 
         {
             PlaySound("DesktopSpellbookScreenOpen");
             SetDesktopBackground("Skin");
@@ -5357,7 +5352,7 @@ public class Blueprint
             AddHotkey(Escape, () => { SwitchDesktop("Map"); CloseDesktop("SpellbookScreen"); PlaySound("DesktopSpellbookScreenClose"); });
             AddPaginationHotkeys();
         }),
-        new("EquipmentScreen", () =>
+        new("EquipmentScreen", () => 
         {
             PlaySound("DesktopInventoryOpen");
             SetDesktopBackground("Leather");
@@ -5377,7 +5372,7 @@ public class Blueprint
                 CloseDesktop("EquipmentScreen");
             });
         }),
-        new("BestiaryScreen", () =>
+        new("BestiaryScreen", () => 
         {
             PlaySound("DesktopInstanceOpen");
             SetDesktopBackground("Stone");
@@ -5397,7 +5392,7 @@ public class Blueprint
                 CloseDesktop("BestiaryScreen");
             });
         }),
-        new("CraftingScreen", () =>
+        new("CraftingScreen", () => 
         {
             PlaySound("DesktopInstanceOpen");
             SetDesktopBackground("Skin");
@@ -5418,7 +5413,7 @@ public class Blueprint
             });
             AddPaginationHotkeys();
         }),
-        new("GameMenu", () =>
+        new("GameMenu", () => 
         {
             SetDesktopBackground("Leather");
             SpawnWindowBlueprint("GameMenu");
@@ -5436,7 +5431,7 @@ public class Blueprint
                 }
             });
         }),
-        new("RankingScreen", () =>
+        new("RankingScreen", () => 
         {
             SetDesktopBackground("SkyRed");
             SpawnWindowBlueprint("CharacterRankingShadow");
@@ -5453,7 +5448,7 @@ public class Blueprint
 
     public static void AddPaginationHotkeys()
     {
-        AddHotkey(D, () =>
+        AddHotkey(D, () => 
         {
             var window = CDesktop.windows.Find(x => x.regionGroups.Any(y => y.maxPaginationReq != null));
             if (window == null)
@@ -5471,7 +5466,7 @@ public class Blueprint
                 PlaySound("DesktopChangePage", 0.4f);
             window.Respawn();
         });
-        AddHotkey(D, () =>
+        AddHotkey(D, () => 
         {
             var window = CDesktop.windows.Find(x => x.regionGroups.Any(y => y.maxPaginationReq != null));
             if (window == null)
@@ -5488,9 +5483,8 @@ public class Blueprint
             if (temp != group.pagination())
                 PlaySound("DesktopChangePage", 0.4f);
             window.Respawn();
-        },
-        false);
-        AddHotkey(A, () =>
+        }, false);
+        AddHotkey(A, () => 
         {
             var window = CDesktop.windows.Find(x => x.regionGroups.Any(y => y.maxPaginationReq != null));
             if (window == null)
@@ -5508,7 +5502,7 @@ public class Blueprint
                 PlaySound("DesktopChangePage", 0.4f);
             window.Respawn();
         });
-        AddHotkey(A, () =>
+        AddHotkey(A, () => 
         {
             var window = CDesktop.windows.Find(x => x.regionGroups.Any(y => y.maxPaginationReq != null));
             if (window == null)
@@ -5525,7 +5519,6 @@ public class Blueprint
             if (temp != group.pagination())
                 PlaySound("DesktopChangePage", 0.4f);
             window.Respawn();
-        },
-        false);
+        }, false);
     }
 }

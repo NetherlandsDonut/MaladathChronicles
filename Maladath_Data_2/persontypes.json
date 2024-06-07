@@ -1,5 +1,15 @@
 [
   {
+    "type": "Vendor",
+    "icon": "ItemMiscBag07",
+    "category": "Vendor"
+  },
+  {
+    "type": "Baker",
+    "icon": "ItemMiscFood12",
+    "category": "Vendor"
+  },
+  {
     "type": "Butcher",
     "icon": "ItemMiscFood13",
     "category": "Vendor"

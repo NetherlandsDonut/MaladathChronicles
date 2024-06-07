@@ -1,8 +1,12 @@
 [
   {
-    "description": [
-      ""
-    ],
+    "x": 5282,
+    "y": -3210,
+    "name": "Blackrock Mountain",
+    "zone": "Burning Steppes",
+    "type": "Complex",
+    "ambience": "AmbienceBlackrock",
+    "noNightVariant": true,
     "sites": [
       {
         "SiteType": "Dungeon",
@@ -24,19 +28,15 @@
         "SiteType": "Raid",
         "SiteName": "Blackwing Lair"
       }
-    ],
-    "x": 5282,
-    "y": -3210,
-    "name": "Blackrock Mountain",
-    "zone": "Burning Steppes",
-    "type": "Complex",
-    "ambience": "AmbienceBlackrock",
-    "noNightVariant": true
+    ]
   },
   {
-    "description": [
-      ""
-    ],
+    "x": 5906,
+    "y": -1718,
+    "name": "Jintha'Alor",
+    "zone": "Hinterlands",
+    "type": "Complex",
+    "ambience": "AmbienceJungleDay",
     "sites": [
       {
         "SiteType": "HostileArea",
@@ -54,18 +54,15 @@
         "SiteType": "HostileArea",
         "SiteName": "Keepers' Shrine"
       }
-    ],
-    "x": 5906,
-    "y": -1718,
-    "name": "Jintha'Alor",
-    "zone": "Hinterlands",
-    "type": "Complex",
-    "ambience": "AmbienceJungleDay"
+    ]
   },
   {
-    "description": [
-      ""
-    ],
+    "x": 6125,
+    "y": -1326,
+    "name": "Tyr's Hand",
+    "zone": "Eastern Plaguelands",
+    "type": "Complex",
+    "ambience": "AmbienceScary",
     "sites": [
       {
         "SiteType": "HostileArea",
@@ -83,18 +80,15 @@
         "SiteType": "HostileArea",
         "SiteName": "Scarlet Basilica"
       }
-    ],
-    "x": 6125,
-    "y": -1326,
-    "name": "Tyr's Hand",
-    "zone": "Eastern Plaguelands",
-    "type": "Complex",
-    "ambience": "AmbienceScary"
+    ]
   },
   {
-    "description": [
-      ""
-    ],
+    "x": 5395,
+    "y": -1108,
+    "name": "Hearthglen",
+    "zone": "Western Plaguelands",
+    "type": "Complex",
+    "ambience": "AmbienceScary",
     "sites": [
       {
         "SiteType": "HostileArea",
@@ -108,18 +102,15 @@
         "SiteType": "HostileArea",
         "SiteName": "Mardenholde Keep"
       }
-    ],
-    "x": 5395,
-    "y": -1108,
-    "name": "Hearthglen",
-    "zone": "Western Plaguelands",
-    "type": "Complex",
-    "ambience": "AmbienceScary"
+    ]
   },
   {
-    "description": [
-      ""
-    ],
+    "x": 5428,
+    "y": -1977,
+    "name": "Ruins of Stromgarde",
+    "zone": "Arathi Highlands",
+    "type": "Complex",
+    "ambience": "AmbienceScary",
     "sites": [
       {
         "SiteType": "HostileArea",
@@ -141,18 +132,15 @@
         "SiteType": "HostileArea",
         "SiteName": "Stromgarde Keep"
       }
-    ],
-    "x": 5428,
-    "y": -1977,
-    "name": "Ruins of Stromgarde",
-    "zone": "Arathi Highlands",
-    "type": "Complex",
-    "ambience": "AmbienceScary"
+    ]
   },
   {
-    "description": [
-      ""
-    ],
+    "x": 5147,
+    "y": -1543,
+    "name": "Ruins of Alterac",
+    "zone": "Alterac Mountains",
+    "type": "Complex",
+    "ambience": "AmbienceScary",
     "sites": [
       {
         "SiteType": "HostileArea",
@@ -166,18 +154,15 @@
         "SiteType": "HostileArea",
         "SiteName": "Alterac Keep"
       }
-    ],
-    "x": 5147,
-    "y": -1543,
-    "name": "Ruins of Alterac",
-    "zone": "Alterac Mountains",
-    "type": "Complex",
-    "ambience": "AmbienceScary"
+    ]
   },
   {
-    "description": [
-      ""
-    ],
+    "x": 5204,
+    "y": -1104,
+    "name": "Scarlet Monastery Grounds",
+    "zone": "Tirisfal Glades",
+    "type": "Complex",
+    "ambience": "AmbienceScary",
     "sites": [
       {
         "SiteType": "HostileArea",
@@ -195,18 +180,15 @@
         "SiteType": "Dungeon",
         "SiteName": "Scarlet Monastery"
       }
-    ],
-    "x": 5204,
-    "y": -1104,
-    "name": "Scarlet Monastery Grounds",
-    "zone": "Tirisfal Glades",
-    "type": "Complex",
-    "ambience": "AmbienceScary"
+    ]
   },
   {
-    "description": [
-      ""
-    ],
+    "x": 1559,
+    "y": -1549,
+    "name": "Jaedenar Grounds",
+    "zone": "Felwood",
+    "type": "Complex",
+    "ambience": "AmbienceScary",
     "sites": [
       {
         "SiteType": "HostileArea",
@@ -220,18 +202,15 @@
         "SiteType": "Dungeon",
         "SiteName": "Shadow Hold"
       }
-    ],
-    "x": 1559,
-    "y": -1549,
-    "name": "Jaedenar Grounds",
-    "zone": "Felwood",
-    "type": "Complex",
-    "ambience": "AmbienceScary"
+    ]
   },
   {
-    "description": [
-      ""
-    ],
+    "x": 2470,
+    "y": -3074,
+    "name": "Alcaz Island",
+    "zone": "Dustwallow Marsh",
+    "type": "Complex",
+    "ambience": "AmbienceScary",
     "sites": [
       {
         "SiteType": "HostileArea",
@@ -241,12 +220,6 @@
         "SiteType": "HostileArea",
         "SiteName": "Alcaz Dungeon"
       }
-    ],
-    "x": 2470,
-    "y": -3074,
-    "name": "Alcaz Island",
-    "zone": "Dustwallow Marsh",
-    "type": "Complex",
-    "ambience": "AmbienceScary"
+    ]
   }
 ]

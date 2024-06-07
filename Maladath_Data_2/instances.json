@@ -1,6 +1,11 @@
 [
   {
-    "description": [],
+    "x": 5842,
+    "y": -3795,
+    "name": "Temple of Atal'Hakkar",
+    "zone": "Swamp of Sorrows",
+    "type": "Dungeon",
+    "ambience": "AmbienceSunkenTemple",
     "wings": [
       {
         "name": "Temple of Atal'Hakkar",
@@ -50,16 +55,16 @@
           }
         ]
       }
-    ],
-    "x": 5842,
-    "y": -3795,
-    "name": "Temple of Atal'Hakkar",
-    "zone": "Swamp of Sorrows",
-    "type": "Dungeon",
-    "ambience": "AmbienceSunkenTemple"
+    ]
   },
   {
-    "description": [],
+    "x": 4891,
+    "y": -3459,
+    "name": "The Stockade",
+    "zone": "Elwynn Forest",
+    "type": "Dungeon",
+    "ambience": "AmbienceTheStockade",
+    "noNightVariant": true,
     "wings": [
       {
         "name": "The Stockade",
@@ -76,17 +81,16 @@
           }
         ]
       }
-    ],
-    "x": 4891,
-    "y": -3459,
-    "name": "The Stockade",
-    "zone": "Elwynn Forest",
-    "type": "Dungeon",
-    "ambience": "AmbienceTheStockade",
-    "noNightVariant": true
+    ]
   },
   {
-    "description": [],
+    "x": 2348,
+    "y": -2158,
+    "name": "Ragefire Chasm",
+    "zone": "Durotar",
+    "type": "Dungeon",
+    "ambience": "AmbienceVolcanicDay",
+    "noNightVariant": true,
     "wings": [
       {
         "name": "Ragefire Chasm",
@@ -103,17 +107,16 @@
           }
         ]
       }
-    ],
-    "x": 2348,
-    "y": -2158,
-    "name": "Ragefire Chasm",
-    "zone": "Durotar",
-    "type": "Dungeon",
-    "ambience": "AmbienceVolcanicDay",
-    "noNightVariant": true
+    ]
   },
   {
-    "description": [],
+    "x": 4935,
+    "y": -2725,
+    "name": "Gnomeregan",
+    "zone": "Dun Morogh",
+    "type": "Dungeon",
+    "ambience": "AmbienceGnomeregan",
+    "noNightVariant": true,
     "wings": [
       {
         "name": "Gnomeregan",
@@ -136,17 +139,15 @@
           }
         ]
       }
-    ],
-    "x": 4935,
-    "y": -2725,
-    "name": "Gnomeregan",
-    "zone": "Dun Morogh",
-    "type": "Dungeon",
-    "ambience": "AmbienceGnomeregan",
-    "noNightVariant": true
+    ]
   },
   {
-    "description": [],
+    "x": 4734,
+    "y": -1715,
+    "name": "Shadowfang Keep",
+    "zone": "Silverpine Forest",
+    "type": "Dungeon",
+    "ambience": "AmbienceShadowfangKeep",
     "wings": [
       {
         "name": "Shadowfang Keep",
@@ -192,17 +193,13 @@
       "Face Smasher",
       "Black Malice",
       "Eerie Stable Lantern"
-    ],
-    "x": 4734,
-    "y": -1715,
-    "name": "Shadowfang Keep",
-    "zone": "Silverpine Forest",
-    "type": "Dungeon",
-    "ambience": "AmbienceShadowfangKeep"
+    ]
   },
   {
-    "complexPart": true,
-    "description": [],
+    "name": "Shadow Hold",
+    "zone": "Jaedenar",
+    "type": "Dungeon",
+    "ambience": "AmbienceScary",
     "wings": [
       {
         "name": "Shadow Hold",
@@ -225,14 +222,15 @@
           }
         ]
       }
-    ],
-    "name": "Shadow Hold",
-    "zone": "Jaedenar",
-    "type": "Dungeon",
-    "ambience": "AmbienceScary"
+    ]
   },
   {
-    "description": [],
+    "x": 5585,
+    "y": -1411,
+    "name": "Scholomance",
+    "zone": "Western Plaguelands",
+    "type": "Dungeon",
+    "ambience": "AmbienceSpooky",
     "wings": [
       {
         "name": "Scholomance",
@@ -318,16 +316,14 @@
       "Icy Tomb Spaulders",
       "Tattered Leather Hood",
       "Coldstone Slippers"
-    ],
-    "x": 5585,
-    "y": -1411,
-    "name": "Scholomance",
-    "zone": "Western Plaguelands",
-    "type": "Dungeon",
-    "ambience": "AmbienceSpooky"
+    ]
   },
   {
-    "description": [],
+    "x": 859,
+    "y": -2816,
+    "name": "Maraudon",
+    "zone": "Desolace",
+    "type": "Dungeon",
     "wings": [
       {
         "name": "Orange Crystal Caverns",
@@ -367,15 +363,15 @@
           }
         ]
       }
-    ],
-    "x": 859,
-    "y": -2816,
-    "name": "Maraudon",
-    "zone": "Desolace",
-    "type": "Dungeon"
+    ]
   },
   {
-    "description": [],
+    "x": 5750,
+    "y": -984,
+    "name": "Stratholme",
+    "zone": "Eastern Plaguelands",
+    "type": "Dungeon",
+    "ambience": "AmbienceStratholme",
     "wings": [
       {
         "name": "Main Gate",
@@ -448,16 +444,16 @@
       "Devout Bracers",
       "Sacred Cloth Leggings",
       "Frayed Abomination Stitching"
-    ],
-    "x": 5750,
-    "y": -984,
-    "name": "Stratholme",
-    "zone": "Eastern Plaguelands",
-    "type": "Dungeon",
-    "ambience": "AmbienceStratholme"
+    ]
   },
   {
-    "description": [],
+    "x": 1866,
+    "y": -2706,
+    "name": "Wailing Caverns",
+    "zone": "The Barrens",
+    "type": "Dungeon",
+    "ambience": "AmbienceWailingCaverns",
+    "noNightVariant": true,
     "wings": [
       {
         "name": "Wailing Caverns",
@@ -480,17 +476,16 @@
           }
         ]
       }
-    ],
-    "x": 1866,
-    "y": -2706,
-    "name": "Wailing Caverns",
-    "zone": "The Barrens",
-    "type": "Dungeon",
-    "ambience": "AmbienceWailingCaverns",
-    "noNightVariant": true
+    ]
   },
   {
-    "description": [],
+    "x": 5704,
+    "y": -2885,
+    "name": "Uldaman",
+    "zone": "Badlands",
+    "type": "Dungeon",
+    "ambience": "AmbienceUldaman",
+    "noNightVariant": true,
     "wings": [
       {
         "name": "Uldaman",
@@ -531,17 +526,16 @@
       "Monolithic Bow",
       "Obsidian Cleaver",
       "Annealed Blade"
-    ],
-    "x": 5704,
-    "y": -2885,
-    "name": "Uldaman",
-    "zone": "Badlands",
-    "type": "Dungeon",
-    "ambience": "AmbienceUldaman",
-    "noNightVariant": true
+    ]
   },
   {
-    "description": [],
+    "x": 1980,
+    "y": -3502,
+    "name": "Razorfen Downs",
+    "zone": "The Barrens",
+    "type": "Dungeon",
+    "ambience": "AmbienceRazorfenKraul",
+    "noNightVariant": true,
     "wings": [
       {
         "name": "Razorfen Downs",
@@ -575,17 +569,15 @@
       "Thoughtcast Boots",
       "Ebony Boneclub",
       "Boneslasher"
-    ],
-    "x": 1980,
-    "y": -3502,
-    "name": "Razorfen Downs",
+    ]
+  },
+  {
+    "x": 1792,
+    "y": -3421,
+    "name": "Razorfen Kraul",
     "zone": "The Barrens",
     "type": "Dungeon",
     "ambience": "AmbienceRazorfenKraul",
-    "noNightVariant": true
-  },
-  {
-    "description": [],
     "wings": [
       {
         "name": "Razorfen Kraul",
@@ -623,16 +615,16 @@
       "Pysan's Old Greatsword",
       "Wolfclaw Gloves",
       "Staff of the Shade"
-    ],
-    "x": 1792,
-    "y": -3421,
-    "name": "Razorfen Kraul",
-    "zone": "The Barrens",
-    "type": "Dungeon",
-    "ambience": "AmbienceRazorfenKraul"
+    ]
   },
   {
-    "description": [],
+    "x": 4748,
+    "y": -3931,
+    "name": "The Deadmines",
+    "zone": "Westfall",
+    "type": "Dungeon",
+    "ambience": "AmbienceDeadmines",
+    "noNightVariant": true,
     "wings": [
       {
         "name": "The Deadmines",
@@ -661,17 +653,16 @@
       "Silk-threaded Trousers",
       "Blackened Defias Leggings",
       "Blackened Defias Gloves"
-    ],
-    "x": 4748,
-    "y": -3931,
-    "name": "The Deadmines",
-    "zone": "Westfall",
-    "type": "Dungeon",
-    "ambience": "AmbienceDeadmines",
-    "noNightVariant": true
+    ]
   },
   {
-    "description": [],
+    "x": 1275,
+    "y": -1687,
+    "name": "Blackfathom Deeps",
+    "zone": "Ashenvale",
+    "type": "Dungeon",
+    "ambience": "AmbienceBlackfathom",
+    "noNightVariant": true,
     "wings": [
       {
         "name": "Blackfathom Deeps",
@@ -711,17 +702,15 @@
       "Staff of the Friar",
       "Staff of the Blessed Seer",
       "Evocator's Blade"
-    ],
-    "x": 1275,
-    "y": -1687,
-    "name": "Blackfathom Deeps",
-    "zone": "Ashenvale",
-    "type": "Dungeon",
-    "ambience": "AmbienceBlackfathom",
-    "noNightVariant": true
+    ]
   },
   {
-    "description": [],
+    "x": 1178,
+    "y": -3439,
+    "name": "Dire Maul",
+    "zone": "Feralas",
+    "type": "Dungeon",
+    "ambience": "AmbienceDireMaul",
     "wings": [
       {
         "name": "Eastern Wing",
@@ -787,40 +776,13 @@
       "Tarnished Elven Ring",
       "Cyclone Spaulders",
       "Elemental Plate Girdle"
-    ],
-    "x": 1178,
-    "y": -3439,
-    "name": "Dire Maul",
-    "zone": "Feralas",
-    "type": "Dungeon",
-    "ambience": "AmbienceDireMaul"
+    ]
   },
   {
-    "complexPart": true,
-    "description": [
-      "The smoldering Blackrock",
-      "Depths are home to the",
-      "Dark Iron dwarves and",
-      "their emperor, Dagran",
-      "Thaurissan. Like his",
-      "predecessors, he serves",
-      "under the iron rule of",
-      "Ragnaros the Firelord,",
-      "a merciless being",
-      "summoned into the world",
-      "centuries ago.",
-      "The presence of chaotic",
-      "elementals has attracted",
-      "Twilight's Hammer cultists",
-      "to the mountain domain.",
-      "Along with Ragnaros'",
-      "servants, they have",
-      "pushed the dwarves ",
-      "toward increasingly",
-      "destructive ends that",
-      "could soon spell doom",
-      "for all of Azeroth."
-    ],
+    "name": "Scarlet Monastery",
+    "zone": "Scarlet Monastery Grounds",
+    "type": "Dungeon",
+    "ambience": "AmbienceScary",
     "wings": [
       {
         "name": "Graveyard",
@@ -900,38 +862,14 @@
       "Chesterfall Musket",
       "Watchman Pauldrons",
       "Resplendent Guardian"
-    ],
-    "name": "Scarlet Monastery",
-    "zone": "Scarlet Monastery Grounds",
-    "type": "Dungeon",
-    "ambience": "AmbienceScary"
+    ]
   },
   {
-    "complexPart": true,
-    "description": [
-      "The smoldering Blackrock",
-      "Depths are home to the",
-      "Dark Iron dwarves and",
-      "their emperor, Dagran",
-      "Thaurissan. Like his",
-      "predecessors, he serves",
-      "under the iron rule of",
-      "Ragnaros the Firelord,",
-      "a merciless being",
-      "summoned into the world",
-      "centuries ago.",
-      "The presence of chaotic",
-      "elementals has attracted",
-      "Twilight's Hammer cultists",
-      "to the mountain domain.",
-      "Along with Ragnaros'",
-      "servants, they have",
-      "pushed the dwarves ",
-      "toward increasingly",
-      "destructive ends that",
-      "could soon spell doom",
-      "for all of Azeroth."
-    ],
+    "name": "Blackrock Depths",
+    "zone": "Blackrock Mountain",
+    "type": "Dungeon",
+    "ambience": "AmbienceBlackrock",
+    "noNightVariant": true,
     "wings": [
       {
         "name": "Blackrock Depths",
@@ -1012,29 +950,14 @@
       "Braincage",
       "Searing Needle",
       "Funeral Pyre Vestment"
-    ],
-    "name": "Blackrock Depths",
+    ]
+  },
+  {
+    "name": "Lower Blackrock Spire",
     "zone": "Blackrock Mountain",
     "type": "Dungeon",
     "ambience": "AmbienceBlackrock",
-    "noNightVariant": true
-  },
-  {
-    "complexPart": true,
-    "description": [
-      "The majority of Rend's",
-      "Dark Horde reside in",
-      "Lower Blackrock Spire,",
-      "making the city a sort of",
-      "sprawling barracks.",
-      "Only the elite members of",
-      "the Dark Horde are allowed",
-      "to live in the upper",
-      "reaches of the city.",
-      "Overlord Wyrmthalak acts as",
-      "the ruler and taskmaster",
-      "of these soldiers."
-    ],
+    "noNightVariant": true,
     "wings": [
       {
         "name": "Lower Wing",
@@ -1083,27 +1006,14 @@
       "Dreadmist Bracers",
       "Shadowcraft Belt",
       "Bracers of Valor"
-    ],
-    "name": "Lower Blackrock Spire",
+    ]
+  },
+  {
+    "name": "Upper Blackrock Spire",
     "zone": "Blackrock Mountain",
     "type": "Dungeon",
     "ambience": "AmbienceBlackrock",
-    "noNightVariant": true
-  },
-  {
-    "complexPart": true,
-    "description": [
-      "The smoldering Blackrock",
-      "The history of this",
-      "fortress is long and",
-      "complex. Carved into the",
-      "fiery core of Blackrock",
-      "Mountain by the Dark Iron",
-      "clan centuries ago, and",
-      "eventually taken by",
-      "the black dragon Nefarian",
-      "and his brood"
-    ],
+    "noNightVariant": true,
     "wings": [
       {
         "name": "Upper Wing",
@@ -1149,15 +1059,15 @@
       "Dreadmist Bracers",
       "Shadowcraft Belt",
       "Bracers of Valor"
-    ],
-    "name": "Upper Blackrock Spire",
-    "zone": "Blackrock Mountain",
-    "type": "Dungeon",
-    "ambience": "AmbienceBlackrock",
-    "noNightVariant": true
+    ]
   },
   {
-    "description": [],
+    "x": 2045,
+    "y": -3894,
+    "name": "Zul'Farrak",
+    "zone": "Tanaris",
+    "type": "Dungeon",
+    "ambience": "AmbienceDesert",
     "wings": [
       {
         "name": "Zul'Farrak",
@@ -1183,16 +1093,16 @@
           }
         ]
       }
-    ],
-    "x": 2045,
-    "y": -3894,
-    "name": "Zul'Farrak",
-    "zone": "Tanaris",
-    "type": "Dungeon",
-    "ambience": "AmbienceDesert"
+    ]
   },
   {
-    "description": [],
+    "x": 2209,
+    "y": -3485,
+    "name": "Onyxia's Lair",
+    "zone": "Dustwallow Marsh",
+    "type": "Raid",
+    "ambience": "AmbienceOnyxiasLair",
+    "noNightVariant": true,
     "wings": [
       {
         "name": "Onyxia's Lair",
@@ -1203,38 +1113,14 @@
           }
         ]
       }
-    ],
-    "x": 2209,
-    "y": -3485,
-    "name": "Onyxia's Lair",
-    "zone": "Dustwallow Marsh",
-    "type": "Raid",
-    "ambience": "AmbienceOnyxiasLair",
-    "noNightVariant": true
+    ]
   },
   {
-    "complexPart": true,
-    "description": [
-      "The Molten Core lies at",
-      "the very bottom of",
-      "Blackrock Depths.",
-      "It is the heart of",
-      "Blackrock Mountain and",
-      "the exact spot where,",
-      "long ago in a desperate",
-      "bid to turn the tide of",
-      "the dwarven civil war,",
-      "Emperor Thaurissan",
-      "summoned the elemental",
-      "Firelord, Ragnaros, into",
-      "the world. The burning",
-      "lake where Ragnaros lies",
-      "sleeping acts as a rift",
-      "connecting to the plane",
-      "of fire, allowing the",
-      "malicious elementals to",
-      "pass through."
-    ],
+    "name": "Molten Core",
+    "zone": "Blackrock Mountain",
+    "type": "Raid",
+    "ambience": "AmbienceMoltenCore",
+    "noNightVariant": true,
     "wings": [
       {
         "name": "Molten Core",
@@ -1280,35 +1166,15 @@
       "Lawbringer Belt",
       "Bracers of Might",
       "Belt of Might"
-    ],
-    "name": "Molten Core",
-    "zone": "Blackrock Mountain",
-    "type": "Raid",
-    "ambience": "AmbienceMoltenCore",
-    "noNightVariant": true
+    ]
   },
   {
-    "description": [
-      "The Molten Core lies at",
-      "the very bottom of",
-      "Blackrock Depths.",
-      "It is the heart of",
-      "Blackrock Mountain and",
-      "the exact spot where,",
-      "long ago in a desperate",
-      "bid to turn the tide of",
-      "the dwarven civil war,",
-      "Emperor Thaurissan",
-      "summoned the elemental",
-      "Firelord, Ragnaros, into",
-      "the world. The burning",
-      "lake where Ragnaros lies",
-      "sleeping acts as a rift",
-      "connecting to the plane",
-      "of fire, allowing the",
-      "malicious elementals to",
-      "pass through."
-    ],
+    "x": 5291,
+    "y": -4097,
+    "name": "Zul'Gurub",
+    "zone": "Stranglethorn Vale",
+    "type": "Raid",
+    "ambience": "AmbienceJungleDay",
     "wings": [
       {
         "name": "Lower",
@@ -1361,33 +1227,14 @@
       "Zulian Headdress",
       "Band of Servitude",
       "Seal of the Gurubashi Berserker"
-    ],
-    "x": 5291,
-    "y": -4097,
-    "name": "Zul'Gurub",
-    "zone": "Stranglethorn Vale",
-    "type": "Raid",
-    "ambience": "AmbienceJungleDay"
+    ]
   },
   {
-    "complexPart": true,
-    "description": [
-      "In the dark recesses of",
-      "the mountain's peak,",
-      "Nefarian, the eldest son",
-      "of Deathwing, conducts",
-      "some of his most awful",
-      "experimentation,",
-      "controlling mighty beings",
-      "like puppets and combining",
-      "the eggs of different",
-      "dragonflights with",
-      "horrific results.",
-      "Should he prove",
-      "successful, even darker",
-      "pursuits rest",
-      "on the horizon."
-    ],
+    "name": "Blackwing Lair",
+    "zone": "Blackrock Mountain",
+    "type": "Raid",
+    "ambience": "AmbienceBlackwingLair",
+    "noNightVariant": true,
     "wings": [
       {
         "name": "Lower",
@@ -1421,15 +1268,16 @@
       "Essence Gatherer",
       "Cloak of Draconic Might",
       "Boots of Pure Thought"
-    ],
-    "name": "Blackwing Lair",
-    "zone": "Blackrock Mountain",
-    "type": "Raid",
-    "ambience": "AmbienceBlackwingLair",
-    "noNightVariant": true
+    ]
   },
   {
-    "description": [],
+    "x": 1119,
+    "y": -4331,
+    "name": "Ruins of Ahn'Qiraj",
+    "zone": "Silithus",
+    "type": "Raid",
+    "ambience": "AmbienceAhnQirajExterior",
+    "noNightVariant": true,
     "wings": [
       {
         "name": "Ruins of Ahn'Qiraj",
@@ -1466,17 +1314,16 @@
       "Gavel of Qiraji Authority",
       "Fury of the Forgotten Swarm",
       "Treads of the Wandering Nomad"
-    ],
-    "x": 1119,
-    "y": -4331,
-    "name": "Ruins of Ahn'Qiraj",
-    "zone": "Silithus",
-    "type": "Raid",
-    "ambience": "AmbienceAhnQirajExterior",
-    "noNightVariant": true
+    ]
   },
   {
-    "description": [],
+    "x": 1045,
+    "y": -4275,
+    "name": "Temple of Ahn'Qiraj",
+    "zone": "Silithus",
+    "type": "Raid",
+    "ambience": "AmbienceAhnQirajUndergrounds",
+    "noNightVariant": true,
     "wings": [
       {
         "name": "Temple of Ahn'Qiraj",
@@ -1514,13 +1361,6 @@
       "Gloves of the Immortal",
       "Gloves of the Redeemed Prophecy",
       "Shard of the Fallen Star"
-    ],
-    "x": 1045,
-    "y": -4275,
-    "name": "Temple of Ahn'Qiraj",
-    "zone": "Silithus",
-    "type": "Raid",
-    "ambience": "AmbienceAhnQirajUndergrounds",
-    "noNightVariant": true
+    ]
   }
 ]

@@ -13,8 +13,8 @@ public class FutureBoard
         playerTurn = board.playerTurn;
         enemyFinishedMoving = board.enemyFinishedMoving;
         playerFinishedMoving = board.playerFinishedMoving;
-        playerCooldowns = board.playerCooldowns.Select(x => (x.Item1, x.Item2)).ToList();
-        enemyCooldowns = board.enemyCooldowns.Select(x => (x.Item1, x.Item2)).ToList();
+        playerCooldowns = board.playerCooldowns.ToDictionary(x => x.Key, x => x.Value);
+        enemyCooldowns = board.enemyCooldowns.ToDictionary(x => x.Key, x => x.Value);
         if (TurnEnded()) EndTurn();
     }
 
@@ -26,8 +26,8 @@ public class FutureBoard
         playerTurn = board.playerTurn;
         enemyFinishedMoving = board.enemyFinishedMoving;
         playerFinishedMoving = board.playerFinishedMoving;
-        playerCooldowns = board.playerCooldowns.Select(x => (x.Item1, x.Item2)).ToList();
-        enemyCooldowns = board.enemyCooldowns.Select(x => (x.Item1, x.Item2)).ToList();
+        playerCooldowns = board.playerCooldowns.ToDictionary(x => x.Key, x => x.Value);
+        enemyCooldowns = board.enemyCooldowns.ToDictionary(x => x.Key, x => x.Value);
     }
 
     public int bonusTurnStreak;
@@ -35,7 +35,7 @@ public class FutureBoard
     public FutureEntity player, enemy;
     public bool playerTurn, enemyFinishedMoving, playerFinishedMoving, finishedAnimation;
     public Dictionary<string, double> playerElementImportance, enemyElementImportance;
-    public List<(string, int)> playerCooldowns, enemyCooldowns;
+    public Dictionary<string, int> playerCooldowns, enemyCooldowns;
 
     public Dictionary<string, double> EnemyElementImportance()
     {
@@ -52,22 +52,27 @@ public class FutureBoard
     public void PutOnCooldown(bool player, Ability ability)
     {
         var list = player ? playerCooldowns : enemyCooldowns;
-        list.RemoveAll(x => x.Item1 == ability.name);
-        list.Add((ability.name, ability.cooldown));
+        list.Remove(ability.name);
+        list.Add(ability.name, ability.cooldown);
     }
 
-    public int CooldownOn(bool player, string ability) => (player ? playerCooldowns : enemyCooldowns).Find(x => x.Item1 == ability).Item2;
+    public int CooldownOn(bool player, string ability) => (player ? playerCooldowns : enemyCooldowns).Get(ability);
 
     //Cooldowns all action bar abilities and used passives by 1 turn
     public void Cooldown(bool player)
     {
         ref var abilities = ref (player ? ref playerCooldowns : ref enemyCooldowns);
-        for (int i = abilities.Count - 1; i >= 0; i--)
-        {
-            abilities[i] = (abilities[i].Item1, abilities[i].Item2 - 1);
-            if (abilities[i].Item2 == 0)
-                CallEvents(player ? this.player : enemy, new() { { "Trigger", "Cooldown" }, { "Triggerer", "Effector" }, { "AbilityName", abilities[i].Item1 } });
-        }
+        var names = (player ? playerCooldowns : enemyCooldowns).Keys.ToList();
+        foreach (var name in names)
+            if (abilities[name] > 0)
+            {
+                if (--abilities[name] <= 0)
+                {
+                    abilities.Remove(name);
+                    CallEvents(player ? this.player : enemy, new() { { "Trigger", "Cooldown" }, { "Triggerer", "Effector" }, { "AbilityName", name } });
+                }
+            }
+            else abilities.Remove(name);
     }
 
     public double Desiredness(FutureBoard baseBoard = null)

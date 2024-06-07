@@ -585,7 +585,7 @@ public class Entity
         else return "Hated";
     }
 
-    public int Reputation(string faction) => reputation.ContainsKey(faction) ? reputation[faction] : defines.defaultStanding;
+    public int Reputation(string faction) => faction != null && reputation.ContainsKey(faction) ? reputation[faction] : defines.defaultStanding;
 
     public Dictionary<string, int> reputation;
 

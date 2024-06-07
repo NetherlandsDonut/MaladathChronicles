@@ -63,7 +63,8 @@
       "Two Handed Gun",
       "Two Handed Bow",
       "Two Handed Crossbow",
-      "Cloth Armor"
+      "Cloth Armor",
+      "Off Hand"
     ],
     "rarelyOn": [
       "Two Handed Polearm",
@@ -93,7 +94,8 @@
       "Two Handed Bow",
       "Two Handed Crossbow",
       "Cloth Armor",
-      "Leather Armor"
+      "Leather Armor",
+      "Off Hand"
     ],
     "rarelyOn": [
       "Mail Armor",
@@ -113,7 +115,8 @@
       "One Handed Wand",
       "Two Handed Staff",
       "Cloth Armor",
-      "Leather Armor"
+      "Leather Armor",
+      "Off Hand"
     ]
   },
   {
@@ -184,7 +187,8 @@
       "Finger",
       "Neck",
       "One Handed Wand",
-      "Leather Armor"
+      "Leather Armor",
+      "Off Hand"
     ],
     "rarelyOn": [
       "One Handed Fist Weapon",
@@ -207,7 +211,8 @@
       "Two Handed Axe",
       "Two Handed Gun",
       "Two Handed Bow",
-      "Two Handed Crossbow"
+      "Two Handed Crossbow",
+      "Off Hand"
     ],
     "rarelyOn": [
       "One Handed Dagger",

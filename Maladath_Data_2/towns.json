@@ -7,6 +7,90 @@
     "faction": "Darnassus"
   },
   {
+    "people": [
+      {
+        "name": "Masterson",
+        "gender": "Male",
+        "race": "Human",
+        "type": "Baker",
+        "itemsSold": [
+          {
+            "item": "Soft Banana Bread",
+            "amount": 5,
+            "maxAmount": 5,
+            "restockSpeed": 30
+          },
+          {
+            "item": "Homemade Cherry Pie",
+            "amount": 5,
+            "maxAmount": 5,
+            "restockSpeed": 30
+          },
+          {
+            "item": "Moonberry Juice",
+            "amount": 5,
+            "maxAmount": 5,
+            "restockSpeed": 30
+          },
+          {
+            "item": "Morning Glory Dew",
+            "amount": 5,
+            "maxAmount": 5,
+            "restockSpeed": 30
+          }
+        ]
+      },
+      {
+        "name": "Magnus Frostwake",
+        "gender": "Male",
+        "race": "Dwarf",
+        "type": "Vendor",
+        "itemsSold": [
+          {
+            "item": "Plans: Huge Thorium Battleaxe",
+            "amount": 1,
+            "maxAmount": 1,
+            "restockSpeed": 60
+          },
+          {
+            "item": "Plans: Ornate Thorium Handaxe",
+            "amount": 1,
+            "maxAmount": 1,
+            "restockSpeed": 60
+          },
+          {
+            "item": "Plans: Ebon Shiv",
+            "amount": 1,
+            "maxAmount": 1,
+            "restockSpeed": 60
+          },
+          {
+            "item": "Plans: Storm Gauntlets",
+            "amount": 1,
+            "maxAmount": 1,
+            "restockSpeed": 60
+          },
+          {
+            "item": "Recipe: Major Mana Potion",
+            "amount": 1,
+            "maxAmount": 1,
+            "restockSpeed": 60
+          },
+          {
+            "item": "Recipe: Transmute Water to Air",
+            "amount": 1,
+            "maxAmount": 1,
+            "restockSpeed": 60
+          }
+        ]
+      }
+    ],
+    "x": 5574,
+    "y": -1458,
+    "name": "Caer Darrow",
+    "zone": "Western Plaguelands"
+  },
+  {
     "x": 5388,
     "y": -1666,
     "name": "Ravenholdt Manor",
@@ -1203,8 +1287,8 @@
         "type": "Journeyman Engineer"
       }
     ],
-    "x": 1367,
-    "y": -1220,
+    "x": 1362,
+    "y": -1215,
     "name": "Auberdine",
     "zone": "Darkshore",
     "faction": "Darnassus",

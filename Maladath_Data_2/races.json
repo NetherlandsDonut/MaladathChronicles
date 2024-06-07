@@ -1,5 +1,55 @@
 [
   {
+    "name": "Groddoc Thunderer",
+    "category": "Beast",
+    "subcategory": "Gorilla",
+    "side": "Neutral",
+    "kind": "Common",
+    "portrait": "PortraitGorillaWhite",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Rabid Longtooth",
+    "category": "Beast",
+    "subcategory": "Wolf",
+    "side": "Neutral",
+    "kind": "Common",
+    "portrait": "PortraitWolfBlack",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Wandering Forest Walker",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "side": "Neutral",
+    "kind": "Common",
+    "portrait": "PortraitCorruptedTreantPurple",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Cliff Giant",
+    "category": "Giant",
+    "subcategory": "Human",
+    "side": "Neutral",
+    "kind": "Common",
+    "portrait": "PortraitMountainGiant",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Land Walker",
+    "category": "Giant",
+    "subcategory": "Human",
+    "side": "Neutral",
+    "kind": "Common",
+    "portrait": "PortraitMountainGiantBrown",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
     "name": "Vicious Gray Bear",
     "category": "Beast",
     "subcategory": "Bear",

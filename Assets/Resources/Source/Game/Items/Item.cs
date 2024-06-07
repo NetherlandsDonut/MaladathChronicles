@@ -746,7 +746,6 @@ public class Item
             if (item.armorClass != null)
             {
                 AddLine(item.armorClass + " " + item.type);
-                AddLine(item.armor + " Armor");
             }
             else if (item.maxDamage != 0)
             {
@@ -761,6 +760,8 @@ public class Item
                 AddLine(recipe.profession + " " + item.name.Split(':')[0].ToLower());
             }
             else AddLine(item.type ?? "");
+            if (item.armor > 0)
+                AddLine(item.armor + " Armor");
         });
         if (item.stats != null && item.stats.stats.Count > 0)
             AddPaddingRegion(() =>

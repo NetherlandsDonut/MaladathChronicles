@@ -94,6 +94,12 @@ public static class Root
         else dic.Add(source, amount);
     }
 
+    public static TValue Get<TKey, TValue>(this Dictionary<TKey, TValue> dic, TKey source)
+    {
+        if (dic.ContainsKey(source)) return dic[source];
+        else return default;
+    }
+
     public static string ToRoman(int number)
     {
         if (number < 0 || number > 3999) return "";

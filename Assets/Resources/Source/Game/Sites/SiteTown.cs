@@ -43,6 +43,13 @@ public class SiteTown : Site
             Blueprint.windowBlueprints.Add(new Blueprint("Site: " + name, () => PrintSite()));
     }
 
+    public string Icon() 
+    {
+        var f = factions.Find(x => x.name == faction);
+        if (f != null) return f.Icon();
+        else return "HostileArea";
+    }
+
     //List of NPC's that are inside of this town
     public List<Person> people;
 
@@ -66,7 +73,7 @@ public class SiteTown : Site
         AddRegionGroup();
         AddPaddingRegion(() =>
         {
-            AddSmallButton("Map" + (currentSave.siteVisits.ContainsKey(name) ? factions.Find(x => x.name == faction).Icon() : "Unknown"),
+            AddSmallButton("Map" + (currentSave.siteVisits.ContainsKey(name) ? Icon() : "Unknown"),
             (h) => { CDesktop.cameraDestination = new Vector2(x, y); },
             (h) =>
             {
@@ -78,7 +85,8 @@ public class SiteTown : Site
                 if (!currentSave.siteVisits.ContainsKey(name)) return;
                 SetAnchor(TopLeft, 19, -38);
                 AddRegionGroup();
-                var side = factions.Find(x => x.name == faction).side;
+                var f = factions.Find(x => x.name == faction);
+                var side = f == null ? "Neutral" : f.side;
                 AddHeaderRegion(() =>
                 {
                     AddLine(name, ColorReputation(currentSave.player.Reputation(faction)));
