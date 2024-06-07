@@ -53,7 +53,8 @@ public class FutureBoard
     {
         var list = player ? playerCooldowns : enemyCooldowns;
         list.Remove(ability.name);
-        list.Add(ability.name, ability.cooldown);
+        if (ability.cooldown > 0)
+            list.Add(ability.name, ability.cooldown);
     }
 
     public int CooldownOn(bool player, string ability) => (player ? playerCooldowns : enemyCooldowns).Get(ability);
