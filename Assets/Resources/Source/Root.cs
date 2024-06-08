@@ -597,11 +597,13 @@ public static class Root
     {
         var newObject = new GameObject("SmallButtonOverlay", typeof(SpriteRenderer));
         newObject.transform.parent = onWhat.transform;
-        newObject.transform.localPosition = new Vector3(0, 0, -0.01f);
+        newObject.transform.localPosition = new Vector3(overlay == "PlayerLocation" || overlay == "PlayerLocationWithQuest" || overlay == "AvailableQuest" ? 1 : 0, overlay == "AvailableQuest" ? -8.5f : 0, -0.01f);
         if (overlay == "Cooldown") newObject.AddComponent<AnimatedSprite>().Initiate("Sprites/Building/Shadows/Cooldown", true);
         else if (overlay == "YellowGlow") newObject.AddComponent<AnimatedSprite>().Initiate("Sprites/Building/Shadows/YellowGlow", true);
         else if (overlay == "AutoCast") newObject.AddComponent<AnimatedSprite>().Initiate("Sprites/Building/Shadows/AutoCastFull", true);
         else if (overlay == "PlayerLocation") newObject.AddComponent<AnimatedSprite>().Initiate("Sprites/Building/Shadows/PlayerLocation", false, 0.07f);
+        else if (overlay == "PlayerLocationWithQuest") newObject.AddComponent<AnimatedSprite>().Initiate("Sprites/Building/Shadows/PlayerLocationWithQuest", false, 0.07f);
+        else if (overlay == "AvailableQuest") newObject.AddComponent<AnimatedSprite>().Initiate("Sprites/Building/Shadows/AvailableQuest", false, 0.07f);
         else newObject.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/Buttons/" + overlay);
         newObject.GetComponent<SpriteRenderer>().sortingOrder = sortingOrder;
         newObject.GetComponent<SpriteRenderer>().sortingLayerName = CDesktop.LBWindow.layer;

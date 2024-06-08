@@ -310,6 +310,8 @@ public class Starter : MonoBehaviour
             Recipe.recipes[i].Initialise();
         for (int i = 0; i < GeneralDrop.generalDrops.Count; i++)
             GeneralDrop.generalDrops[i].Initialise();
+        for (int i = 0; i < quests.Count; i++)
+            quests[i].Initialise();
         for (int i = 0; i < spiritHealers.Count; i++)
             spiritHealers[i].Initialise();
         for (int i = 0; i < paths.Count; i++)

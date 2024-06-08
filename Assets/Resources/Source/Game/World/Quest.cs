@@ -2,17 +2,42 @@ using System.Collections.Generic;
 
 public class Quest
 {
+    public void Initialise()
+    {
+        if (siteStart != null)
+        {
+            var find = Site.FindSite(x => x.name == siteStart);
+            find.questsStarted ??= new();
+            find.questsStarted.Add(this);
+        }
+    }
+
     //ID of the quest
     public int questID;
 
-    //Name of the quest
-    public string name;
+    //Prerequisite quest needed to be done before this becomes available
+    public int previous;
 
     //Required level to have this quest
     public int requiredLevel;
 
     //Level of the quest
     public int questLevel;
+
+    //Name of the quest
+    public string name;
+
+    //Description of the quest
+    public string description;
+
+    //Site where the quest is available for pickup
+    public string siteStart;
+
+    //Site where the quest can be handed in
+    public string siteEnd;
+
+    //Zone of the quest
+    public string zone;
 
     //Reputation connected with the quest
     public string faction;
@@ -27,29 +52,17 @@ public class Quest
     //Amount of experience awarded
     public int experience;
 
-    //Amount of reputation awarded to the quest faction
-    public Dictionary<string, int> reputationGain;
-
-    //Items provided by the quest when player accepts it
-    public Dictionary<string, int> providedItems;
-
     //Eligble races for this quest
     public List<string> races;
 
     //Eligble classes for this quest
     public List<string> classes;
 
-    //Description of the quest
-    public string description;
+    //Amount of reputation awarded to the quest faction
+    public Dictionary<string, int> reputationGain;
 
-    //Zone of the quest
-    public string zone;
-
-    //Site where the quest is available for pickup
-    public string siteStart;
-
-    //Site where the quest can be handed in
-    public string siteEnd;
+    //Items provided by the quest when player accepts it
+    public Dictionary<string, int> providedItems;
 
     //Conditions for completing the quest
     public List<QuestCondition> conditions;

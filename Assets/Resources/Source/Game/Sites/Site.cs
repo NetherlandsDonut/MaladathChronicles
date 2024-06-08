@@ -77,6 +77,9 @@ public class Site
     //Determines whether this area is part of a complex
     [NonSerialized] public bool complexPart;
 
+    //List of quests that can be started here
+    [NonSerialized] public List<Quest> questsStarted;
+
     //Instance wings that store all the instance's areas
     public List<InstanceWing> wings;
 

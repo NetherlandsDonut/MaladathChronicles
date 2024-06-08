@@ -101,6 +101,50 @@ public class Entity
     //another quest in line first to be completed
     public List<int> completedQuests;
 
+    //Check if this entity can pick up a specific quest
+    public bool CanPickQuest(Quest quest)
+    {
+        if (completedQuests.Contains(quest.questID)) return false;
+        if (quest.requiredLevel > level) return false;
+        if (quest.previous != 0 && !completedQuests.Contains(quest.previous)) return false;
+        if (quest.races != null && !quest.races.Contains(race)) return false;
+        if (quest.classes != null && !quest.classes.Contains(spec)) return false;
+        if (quest.faction != null && !IsRankHighEnough(ReputationRank(quest.faction), quest.requiredRank)) return false;
+        return true;
+    }
+
+    public bool IsRankHighEnough(string current, string required)
+    {
+        return Conv(current) >= Conv(required);
+
+        int Conv(string value) => value switch
+        {
+            "Exalted" => 7,
+            "Revered" => 6,
+            "Honored" => 5,
+            "Friendly" => 4,
+            "Neutral" => 3,
+            "Unfriendly" => 2,
+            "Hostile" => 1,
+            _ => 0
+        };
+    }
+
+    //Check if any new quest can be got at a target site
+    public List<Quest> AvailableQuestsAt(Site site, bool oneIsEnough = false)
+    {
+        var list = new List<Quest>();
+        if (site.questsStarted != null)
+            foreach (var quest in site.questsStarted)
+                if (CanPickQuest(quest))
+                {
+                    list.Add(quest);
+                    if (oneIsEnough)
+                        return list;
+                }
+        return list;
+    }
+
     //Check if any quest can be done at a target site
     public List<Quest> QuestsAt(Site site, bool oneIsEnough = false)
     {
