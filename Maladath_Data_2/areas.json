@@ -8796,6 +8796,32 @@
     ]
   },
   {
+    "x": 4939,
+    "y": -3776,
+    "name": "Sven's Camp",
+    "zone": "Duskwood",
+    "type": "HostileArea",
+    "commonEncounters": [
+      {
+        "who": "Rabid Dire Wolf",
+        "levelMin": 20,
+        "levelMax": 21
+      },
+      {
+        "who": "Pygmy Venom Web Spider",
+        "levelMin": 19,
+        "levelMax": 20
+      }
+    ],
+    "areaSize": 3,
+    "progression": [
+      {
+        "type": "Treasure",
+        "point": 3
+      }
+    ]
+  },
+  {
     "x": 5365,
     "y": -3719,
     "name": "Gloom Reach",
@@ -11070,6 +11096,33 @@
     ]
   },
   {
+    "x": 5270,
+    "y": -3574,
+    "name": "Southern Stone Cairn Lake",
+    "zone": "Elwynn Forest",
+    "type": "HostileArea",
+    "fishing": true,
+    "commonEncounters": [
+      {
+        "who": "Murloc Forager",
+        "levelMin": 8,
+        "levelMax": 9
+      },
+      {
+        "who": "Murloc Lurker",
+        "levelMin": 8,
+        "levelMax": 9
+      }
+    ],
+    "areaSize": 3,
+    "progression": [
+      {
+        "type": "Treasure",
+        "point": 3
+      }
+    ]
+  },
+  {
     "x": 5275,
     "y": -3528,
     "name": "Heroes' Vigil",
@@ -11306,6 +11359,58 @@
         "who": "Young Forest Bear",
         "levelMin": 6,
         "levelMax": 7
+      }
+    ],
+    "areaSize": 3,
+    "progression": [
+      {
+        "type": "Treasure",
+        "point": 3
+      }
+    ]
+  },
+  {
+    "x": 5089,
+    "y": -3690,
+    "name": "Jerod's Landing",
+    "zone": "Elwynn Forest",
+    "type": "HostileArea",
+    "commonEncounters": [
+      {
+        "who": "Defias Dockworker",
+        "levelMin": 8,
+        "levelMax": 9
+      },
+      {
+        "who": "Defias Bandit",
+        "levelMin": 8,
+        "levelMax": 9
+      }
+    ],
+    "areaSize": 3,
+    "progression": [
+      {
+        "type": "Treasure",
+        "point": 3
+      }
+    ]
+  },
+  {
+    "x": 5278,
+    "y": -3629,
+    "name": "East Elwynn Bridge",
+    "zone": "Elwynn Forest",
+    "type": "HostileArea",
+    "commonEncounters": [
+      {
+        "who": "Gray Forest Wolf",
+        "levelMin": 7,
+        "levelMax": 8
+      },
+      {
+        "who": "Young Forest Bear",
+        "levelMin": 7,
+        "levelMax": 8
       }
     ],
     "areaSize": 3,
@@ -21146,6 +21251,37 @@
     ]
   },
   {
+    "x": 5146,
+    "y": -4212,
+    "name": "Central Jungle",
+    "zone": "Stranglethorn Vale",
+    "type": "HostileArea",
+    "commonEncounters": [
+      {
+        "who": "Jungle Thunderer",
+        "levelMin": 37,
+        "levelMax": 38
+      },
+      {
+        "who": "Stranglethorn Tigress",
+        "levelMin": 37,
+        "levelMax": 38
+      },
+      {
+        "who": "Shadowmaw Panther",
+        "levelMin": 37,
+        "levelMax": 38
+      }
+    ],
+    "areaSize": 3,
+    "progression": [
+      {
+        "type": "Treasure",
+        "point": 3
+      }
+    ]
+  },
+  {
     "x": 4872,
     "y": -4047,
     "name": "Zuuldaia Ruins",
@@ -22455,9 +22591,6 @@
     "name": "The Gaping Chasm",
     "zone": "Tanaris",
     "type": "HostileArea",
-    "chestBonus": {
-      "Scrimshank's Surveying Gear": 1
-    },
     "commonEncounters": [
       {
         "who": "Hazzali Swarmer",
@@ -22491,7 +22624,10 @@
         "type": "Treasure",
         "point": 3
       }
-    ]
+    ],
+    "chestBonus": {
+      "Scrimshank's Surveying Gear": 1
+    }
   },
   {
     "x": 1976,
@@ -25915,8 +26051,39 @@
     ]
   },
   {
+    "x": 5018,
+    "y": -1260,
+    "name": "Capital City Gates",
+    "zone": "Tirisfal Glades",
+    "type": "HostileArea",
+    "commonEncounters": [
+      {
+        "who": "Greater Duskbat",
+        "levelMin": 6,
+        "levelMax": 7
+      },
+      {
+        "who": "Cursed Darkhound",
+        "levelMin": 7,
+        "levelMax": 8
+      },
+      {
+        "who": "Decrepit Darkhound",
+        "levelMin": 5,
+        "levelMax": 6
+      }
+    ],
+    "areaSize": 3,
+    "progression": [
+      {
+        "type": "Treasure",
+        "point": 3
+      }
+    ]
+  },
+  {
     "x": 5011,
-    "y": -1296,
+    "y": -1299,
     "name": "The Ruins of Lordaeron",
     "zone": "Tirisfal Glades",
     "type": "HostileArea",
@@ -25957,6 +26124,58 @@
         "who": "Vicious Night Web Spider",
         "levelMin": 9,
         "levelMax": 10
+      }
+    ],
+    "areaSize": 3,
+    "progression": [
+      {
+        "type": "Treasure",
+        "point": 3
+      }
+    ]
+  },
+  {
+    "x": 5163,
+    "y": -1135,
+    "name": "Faol's Rest",
+    "zone": "Tirisfal Glades",
+    "type": "HostileArea",
+    "commonEncounters": [
+      {
+        "who": "Scarlet Zealot",
+        "levelMin": 8,
+        "levelMax": 9
+      },
+      {
+        "who": "Scarlet Friar",
+        "levelMin": 9,
+        "levelMax": 10
+      }
+    ],
+    "areaSize": 3,
+    "progression": [
+      {
+        "type": "Treasure",
+        "point": 3
+      }
+    ]
+  },
+  {
+    "x": 5123,
+    "y": -1189,
+    "name": "Eastern Woods",
+    "zone": "Tirisfal Glades",
+    "type": "HostileArea",
+    "commonEncounters": [
+      {
+        "who": "Vampiric Duskbat",
+        "levelMin": 8,
+        "levelMax": 9
+      },
+      {
+        "who": "Cursed Darkhound",
+        "levelMin": 7,
+        "levelMax": 8
       }
     ],
     "areaSize": 3,

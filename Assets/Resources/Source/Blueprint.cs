@@ -2545,7 +2545,6 @@ public class Blueprint
                     {
                         SetDesktopBackground(instance.Background());
                         CloseWindow(h.window);
-                        CloseWindow("BossQueue");
                         CloseWindow("HostileAreaProgress");
                         CloseWindow("HostileAreaDenizens");
                         CloseWindow("HostileAreaElites");
@@ -2554,7 +2553,6 @@ public class Blueprint
                     {
                         SetDesktopBackground(complex.Background());
                         CloseWindow(h.window);
-                        CloseWindow("BossQueue");
                         CloseWindow("HostileAreaProgress");
                         CloseWindow("HostileAreaDenizens");
                         CloseWindow("HostileAreaElites");
@@ -2637,25 +2635,27 @@ public class Blueprint
         new("HostileAreaElites", () =>
         {
             if (area.eliteEncounters == null || area.eliteEncounters.Count == 0) return;
+            var boss = area.progression.Find(x => x.type == "Boss" && currentSave.siteProgress.ContainsKey(area.name) && x.point == currentSave.siteProgress[area.name]);
+            if (boss == null || currentSave.elitesKilled.ContainsKey(boss.bossName)) return;
+            var encounter = area.eliteEncounters.Find(x => x.who == boss.bossName);
             SetAnchor(BottomLeft, 19, 82);
             AddHeaderGroup();
             SetRegionGroupWidth(190);
-            foreach (var encounter in area.eliteEncounters)
-                AddPaddingRegion(() =>
-                {
-                    AddLine(encounter.who);
-                    AddLine("Level: ", "DarkGray");
-                    AddText("" + encounter.levelMin, ColorEntityLevel(encounter.levelMin));
-                    var race = races.Find(x => x.name == encounter.who);
-                    AddBigButton(race == null ? "OtherUnknown" : race.portrait,
-                        (h) =>
-                        {
-                            NewBoard(area.RollEncounter(encounter), area);
-                            SpawnDesktopBlueprint("Game");
-                            SwitchDesktop("Game");
-                        }
-                    );
-                });
+            AddPaddingRegion(() =>
+            {
+                AddLine(encounter.who);
+                AddLine("Level: ", "DarkGray");
+                AddText("" + encounter.levelMin, ColorEntityLevel(encounter.levelMin));
+                var race = races.Find(x => x.name == encounter.who);
+                AddBigButton(race == null ? "OtherUnknown" : race.portrait,
+                    (h) =>
+                    {
+                        NewBoard(area.RollEncounter(encounter), area);
+                        SpawnDesktopBlueprint("Game");
+                        SwitchDesktop("Game");
+                    }
+                );
+            });
         }),
 
         //Town
@@ -5148,7 +5148,6 @@ public class Blueprint
                 if (CloseWindow("HostileArea"))
                 {
                     area = null;
-                    CloseWindow("BossQueue");
                     CloseWindow("HostileAreaProgress");
                     CloseWindow("HostileAreaDenizens");
                     CloseWindow("HostileAreaElites");

@@ -375,6 +375,13 @@
     "faction": "Stormwind"
   },
   {
+    "x": 4925,
+    "y": -3631,
+    "name": "Westbrook Garrison",
+    "zone": "Elwynn Forest",
+    "faction": "Stormwind"
+  },
+  {
     "people": [
       {
         "name": "Lyria Du Lac",

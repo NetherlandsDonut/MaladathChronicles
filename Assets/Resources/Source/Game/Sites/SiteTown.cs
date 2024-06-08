@@ -7,6 +7,7 @@ using UnityEngine;
 using static Root;
 using static Root.Anchor;
 
+using static Quest;
 using static Faction;
 using static SaveGame;
 using static SitePath;
@@ -113,8 +114,21 @@ public class SiteTown : Site
                 }
             },
             (h) => { BuildPath(); });
+            var q = currentSave.player.AvailableQuestsAt(this, true).Count;
             if (currentSave.currentSite == name)
-                AddSmallButtonOverlay("PlayerLocation", 0, 2);
+                AddSmallButtonOverlay("PlayerLocation" + (q > 0 ? "WithQuest" : ""), 0, 2);
+            else if (q > 0)
+            {
+                AddSmallButtonOverlay("AvailableQuest", 0, 2);
+                if (!sitesWithQuestMarkers.Contains(this))
+                    sitesWithQuestMarkers.Add(this);
+            }
+            if (currentSave.player.QuestsAt(this, true).Count > 0)
+            {
+                AddSmallButtonOverlay("QuestMarker", 0, 2);
+                if (!sitesWithQuestMarkers.Contains(this))
+                    sitesWithQuestMarkers.Add(this);
+            }
         });
     }
 

@@ -1,5 +1,55 @@
 [
   {
+    "name": "Scarlet Zealot",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "side": "Neutral",
+    "kind": "Common",
+    "portrait": "PortraitScarletHoundmaster",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Shadowmaw Panther",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "side": "Neutral",
+    "kind": "Common",
+    "portrait": "PortraitPanther",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Stranglethorn Tigress",
+    "category": "Beast",
+    "subcategory": "Cat",
+    "side": "Neutral",
+    "kind": "Common",
+    "portrait": "PortraitTiger",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Jungle Thunderer",
+    "category": "Beast",
+    "subcategory": "Gorilla",
+    "side": "Neutral",
+    "kind": "Common",
+    "portrait": "PortraitGorilla",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Defias Dockworker",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "side": "Neutral",
+    "kind": "Common",
+    "portrait": "PortraitDefiasDockworker",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
     "name": "Garrick Padfoot",
     "category": "Humanoid",
     "subcategory": "Human",
@@ -18813,7 +18863,7 @@
     "subcategory": "Spider",
     "side": "Neutral",
     "kind": "Common",
-    "portrait": "PortraitSpiderGreen",
+    "portrait": "PortraitSpiderWhite",
     "vitality": 1.0,
     "abilities": {}
   },

@@ -5099,7 +5099,7 @@ public static class BlueprintDev
             #if (!UNITY_EDITOR)
 
             Serialize(races, "races", true, false, prefix);
-            Serialize(specs, "Specs", true, false, prefix);
+            Serialize(specs, "specs", true, false, prefix);
             Serialize(abilities, "abilities", true, false, prefix);
             Serialize(buffs, "buffs", true, false, prefix);
             Serialize(areas, "areas", true, false, prefix);
@@ -5112,8 +5112,17 @@ public static class BlueprintDev
             Serialize(generalDrops, "generaldrops", true, false, prefix);
             Serialize(recipes, "recipes", true, false, prefix);
             Serialize(factions, "factions", true, false, prefix);
+            Serialize(quests, "quests", true, false, prefix);
             Serialize(spiritHealers, "spirithealers", true, false, prefix);
             Serialize(personTypes, "personTypes", true, false, prefix);
+            Serialize(enchants, "enchants", true, false, prefix);
+            Serialize(zones, "zones", true, false, prefix);
+            Serialize(professions, "professions", true, false, prefix);
+            Serialize(worldAbilities, "worldabilities", true, false, prefix);
+            Serialize(pEnchants, "permanentenchants", true, false, prefix);
+            Serialize(pvpRanks, "pvpranks", true, false, prefix);
+            Serialize(personCategories, "personcategories", true, false, prefix);
+            Serialize(FlightPathGroup.flightPathGroups, "flightpaths", true, false, prefix);
 
             #endif
 

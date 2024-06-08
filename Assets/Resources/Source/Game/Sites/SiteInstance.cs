@@ -130,8 +130,15 @@ public class SiteInstance : Site
                 }
             },
             (h) => { BuildPath(); });
+            var q = currentSave.player.AvailableQuestsAt(this, true).Count;
             if (currentSave.currentSite == name)
-                AddSmallButtonOverlay("PlayerLocation", 0, 2);
+                AddSmallButtonOverlay("PlayerLocation" + (q > 0 ? "WithQuest" : ""), 0, 2);
+            else if (q > 0)
+            {
+                AddSmallButtonOverlay("AvailableQuest", 0, 2);
+                if (!sitesWithQuestMarkers.Contains(this))
+                    sitesWithQuestMarkers.Add(this);
+            }
             if (currentSave.player.QuestsAt(this, true).Count > 0)
             {
                 AddSmallButtonOverlay("QuestMarker", 0, 2);
@@ -170,7 +177,6 @@ public class SiteInstance : Site
                     Respawn("HostileAreaProgress");
                     Respawn("HostileAreaDenizens");
                     Respawn("HostileAreaElites");
-                    Respawn("BossQueue");
                     SetDesktopBackground("Areas/Area" + (instance.name + area.Item1.name).Clean() + (area.Item1.specialClearBackground && area.Item1.eliteEncounters.All(x => currentSave.elitesKilled.ContainsKey(x.who)) ? "Cleared" : ""));
                 });
             else

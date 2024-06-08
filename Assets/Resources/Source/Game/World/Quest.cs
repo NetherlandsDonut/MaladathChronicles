@@ -1,5 +1,7 @@
 using System.Collections.Generic;
 
+using UnityEngine;
+
 public class Quest
 {
     public void Initialise()
@@ -7,8 +9,12 @@ public class Quest
         if (siteStart != null)
         {
             var find = Site.FindSite(x => x.name == siteStart);
-            find.questsStarted ??= new();
-            find.questsStarted.Add(this);
+            if (find != null)
+            {
+                find.questsStarted ??= new();
+                find.questsStarted.Add(this);
+            }
+            else Debug.Log("ERROR 013: Starting site for quest was not found: \"" + siteStart + "\"");
         }
     }
 

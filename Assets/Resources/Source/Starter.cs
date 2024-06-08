@@ -24,8 +24,6 @@ using static Serialization;
 using static SiteInstance;
 using static SiteComplex;
 
-using static Root.Anchor;
-
 public class Starter : MonoBehaviour
 {
     void Start()
