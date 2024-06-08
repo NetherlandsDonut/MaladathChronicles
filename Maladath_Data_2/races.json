@@ -1,5 +1,55 @@
 [
   {
+    "name": "Withered Ancient",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "side": "Neutral",
+    "kind": "Common",
+    "portrait": "PortraitCorruptedTreant",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Ghostpaw Alpha",
+    "category": "Beast",
+    "subcategory": "Wolf",
+    "side": "Neutral",
+    "kind": "Common",
+    "portrait": "PortraitWolf",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Angerclaw Mauler",
+    "category": "Beast",
+    "subcategory": "Bear",
+    "side": "Neutral",
+    "kind": "Common",
+    "portrait": "PortraitBearDiseased",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Ironbeak Screecher",
+    "category": "Beast",
+    "subcategory": "Owl",
+    "side": "Neutral",
+    "kind": "Common",
+    "portrait": "PortraitOwl",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Angerclaw Grizzly",
+    "category": "Beast",
+    "subcategory": "Bear",
+    "side": "Neutral",
+    "kind": "Common",
+    "portrait": "PortraitBearDiseased",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
     "name": "Groddoc Thunderer",
     "category": "Beast",
     "subcategory": "Gorilla",
@@ -4144,7 +4194,7 @@
     "subcategory": "Human",
     "side": "Neutral",
     "kind": "Common",
-    "portrait": "PortraitCorruptedAncient",
+    "portrait": "PortraitTreant",
     "vitality": 1.0,
     "abilities": {}
   },

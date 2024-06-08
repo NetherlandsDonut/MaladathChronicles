@@ -1194,8 +1194,8 @@
     "faction": "Darnassus"
   },
   {
-    "x": 2242,
-    "y": -1083,
+    "x": 2251,
+    "y": -1080,
     "name": "Starfall Village",
     "zone": "Winterspring",
     "faction": "Darnassus"
@@ -3551,8 +3551,8 @@
     "faction": "Cenarion Circle"
   },
   {
-    "x": 1673,
-    "y": -1671,
+    "x": 1727,
+    "y": -1739,
     "name": "Emerald Sanctuary",
     "zone": "Felwood",
     "faction": "Cenarion Circle"
@@ -3707,8 +3707,8 @@
         "type": "Auctioneer"
       }
     ],
-    "x": 2413,
-    "y": -1159,
+    "x": 2403,
+    "y": -1175,
     "name": "Everlook",
     "zone": "Winterspring",
     "faction": "Steamwheedle Cartel"

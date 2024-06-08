@@ -2746,6 +2746,37 @@
     ]
   },
   {
+    "x": 1830,
+    "y": -1930,
+    "name": "Northern Nightsong Woods",
+    "zone": "Ashenvale",
+    "type": "HostileArea",
+    "commonEncounters": [
+      {
+        "who": "Ghostpaw Alpha",
+        "levelMin": 26,
+        "levelMax": 27
+      },
+      {
+        "who": "Withered Ancient",
+        "levelMin": 26,
+        "levelMax": 27
+      },
+      {
+        "who": "Elder Shadowhorn Stag",
+        "levelMin": 25,
+        "levelMax": 26
+      }
+    ],
+    "areaSize": 3,
+    "progression": [
+      {
+        "type": "Treasure",
+        "point": 3
+      }
+    ]
+  },
+  {
     "x": 1494,
     "y": -1805,
     "name": "Ruins of Ordil'Aran",
@@ -11301,8 +11332,8 @@
     ]
   },
   {
-    "x": 1638,
-    "y": -1479,
+    "x": 1596,
+    "y": -1455,
     "name": "Bloodvenom Falls",
     "zone": "Felwood",
     "type": "HostileArea",
@@ -11323,8 +11354,8 @@
     ]
   },
   {
-    "x": 1597,
-    "y": -1450,
+    "x": 1627,
+    "y": -1663,
     "name": "Bloodvenom River",
     "zone": "Felwood",
     "type": "HostileArea",
@@ -11355,8 +11386,8 @@
     ]
   },
   {
-    "x": 1705,
-    "y": -1736,
+    "x": 1760,
+    "y": -1802,
     "name": "Corrupted Woods",
     "zone": "Felwood",
     "type": "HostileArea",
@@ -11386,8 +11417,8 @@
     ]
   },
   {
-    "x": 1663,
-    "y": -1787,
+    "x": 1682,
+    "y": -1788,
     "name": "Deadwood Village",
     "zone": "Felwood",
     "type": "HostileArea",
@@ -11489,8 +11520,8 @@
     ]
   },
   {
-    "x": 1770,
-    "y": -1210,
+    "x": 1769,
+    "y": -1218,
     "name": "Irontree Cavern",
     "zone": "Felwood",
     "type": "HostileArea",
@@ -11536,6 +11567,68 @@
         "who": "Toxic Horror",
         "levelMin": 53,
         "levelMax": 54
+      }
+    ],
+    "areaSize": 3,
+    "progression": [
+      {
+        "type": "Treasure",
+        "point": 3
+      }
+    ]
+  },
+  {
+    "x": 1692,
+    "y": -1344,
+    "name": "Diseased Glen",
+    "zone": "Felwood",
+    "type": "HostileArea",
+    "commonEncounters": [
+      {
+        "who": "Felpaw Scavenger",
+        "levelMin": 49,
+        "levelMax": 50
+      },
+      {
+        "who": "Angerclaw Grizzly",
+        "levelMin": 51,
+        "levelMax": 52
+      },
+      {
+        "who": "Ironbeak Screecher",
+        "levelMin": 50,
+        "levelMax": 51
+      }
+    ],
+    "areaSize": 3,
+    "progression": [
+      {
+        "type": "Treasure",
+        "point": 3
+      }
+    ]
+  },
+  {
+    "x": 1599,
+    "y": -1299,
+    "name": "Felpaw Vale",
+    "zone": "Felwood",
+    "type": "HostileArea",
+    "commonEncounters": [
+      {
+        "who": "Felpaw Scavenger",
+        "levelMin": 49,
+        "levelMax": 50
+      },
+      {
+        "who": "Angerclaw Mauler",
+        "levelMin": 49,
+        "levelMax": 50
+      },
+      {
+        "who": "Ironbeak Hunter",
+        "levelMin": 49,
+        "levelMax": 50
       }
     ],
     "areaSize": 3,
@@ -14833,6 +14926,20 @@
       {
         "type": "Treasure",
         "point": 5
+      }
+    ]
+  },
+  {
+    "x": 1908,
+    "y": -980,
+    "name": "Moonglade Woods",
+    "zone": "Moonglade",
+    "type": "HostileArea",
+    "areaSize": 3,
+    "progression": [
+      {
+        "type": "Treasure",
+        "point": 3
       }
     ]
   },
@@ -20029,6 +20136,7 @@
     "name": "Talondeep Path",
     "zone": "Stonetalon Mountains",
     "type": "HostileArea",
+    "noNightVariant": true,
     "areaSize": 3,
     "progression": [
       {
@@ -28382,8 +28490,8 @@
     ]
   },
   {
-    "x": 2062,
-    "y": -1158,
+    "x": 2044,
+    "y": -1195,
     "name": "Frostfire Hot Springs",
     "zone": "Winterspring",
     "type": "HostileArea",
@@ -28585,8 +28693,8 @@
     ]
   },
   {
-    "x": 2400,
-    "y": -1078,
+    "x": 2395,
+    "y": -1080,
     "name": "Moon Horror Den",
     "zone": "Winterspring",
     "type": "HostileArea",
@@ -28611,8 +28719,8 @@
     ]
   },
   {
-    "x": 2368,
-    "y": -988,
+    "x": 2405,
+    "y": -1019,
     "name": "Northern Vale",
     "zone": "Winterspring",
     "type": "HostileArea",
@@ -28673,6 +28781,37 @@
     ]
   },
   {
+    "x": 2296,
+    "y": -1123,
+    "name": "Frigid Crossway",
+    "zone": "Winterspring",
+    "type": "HostileArea",
+    "commonEncounters": [
+      {
+        "who": "Ragged Owlbeast",
+        "levelMin": 55,
+        "levelMax": 56
+      },
+      {
+        "who": "Shardtooth Bear",
+        "levelMin": 53,
+        "levelMax": 54
+      },
+      {
+        "who": "Fledgling Chillwind",
+        "levelMin": 54,
+        "levelMax": 55
+      }
+    ],
+    "areaSize": 3,
+    "progression": [
+      {
+        "type": "Treasure",
+        "point": 3
+      }
+    ]
+  },
+  {
     "x": 2257,
     "y": -1237,
     "name": "Ruins of Kel'Theril",
@@ -28704,8 +28843,8 @@
     ]
   },
   {
-    "x": 2101,
-    "y": -1188,
+    "x": 2125,
+    "y": -1214,
     "name": "Timbermaw Post",
     "zone": "Winterspring",
     "type": "HostileArea",
