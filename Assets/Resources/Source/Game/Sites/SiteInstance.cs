@@ -169,6 +169,7 @@ public class SiteInstance : Site
                     Respawn("HostileArea");
                     Respawn("HostileAreaProgress");
                     Respawn("HostileAreaDenizens");
+                    Respawn("HostileAreaElites");
                     Respawn("BossQueue");
                     SetDesktopBackground("Areas/Area" + (instance.name + area.Item1.name).Clean() + (area.Item1.specialClearBackground && area.Item1.eliteEncounters.All(x => currentSave.elitesKilled.ContainsKey(x.who)) ? "Cleared" : ""));
                 });

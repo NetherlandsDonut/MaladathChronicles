@@ -16,7 +16,7 @@ public class InputLine : MonoBehaviour
     public string color;
     public string align;
 
-    public void Initialise(Region region, String refText, string color = "", string align = "Left")
+    public void Initialise(Region region, String refText, string color, string align)
     {
         this.region = region;
         this.color = Coloring.colors.ContainsKey(color) ? color : "";

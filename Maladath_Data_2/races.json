@@ -1,5 +1,15 @@
 [
   {
+    "name": "Garrick Padfoot",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "side": "Neutral",
+    "kind": "Elite",
+    "portrait": "PortraitGarrickPadfoot",
+    "vitality": 3.0,
+    "abilities": {}
+  },
+  {
     "name": "Withered Ancient",
     "category": "Humanoid",
     "subcategory": "Human",

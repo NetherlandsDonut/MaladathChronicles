@@ -369,12 +369,8 @@ public class Window : MonoBehaviour
                     }
                     foreach (var character in print)
                         length = region.inputLine.text.SpawnCharacter(character, length, region.inputLine.color);
-                    if (region.inputLine.align == "Left")
-                        region.inputLine.transform.localPosition = new Vector3(2 + defines.textPaddingLeft + objectOffset, -region.currentHeight + 12, 0);
-                    else if (region.inputLine.align == "Center")
-                        region.inputLine.transform.localPosition = new Vector3(2 + (region.regionGroup.AutoWidth() / 2) - (length / 2), -region.currentHeight + 12, 0);
-                    else if (region.inputLine.align == "Right")
-                        region.inputLine.transform.localPosition = new Vector3(-defines.textPaddingLeft + region.regionGroup.AutoWidth() - (region.smallButtons.Count * 19) - length, -region.currentHeight + 12, 0);
+                    if (region.inputLine.align == "Center") region.inputLine.transform.localPosition = new Vector3(2 + (region.regionGroup.AutoWidth() / 2) - (length / 2), -region.currentHeight + 12, 0);
+                    else if (region.inputLine.align == "Right") region.inputLine.transform.localPosition = new Vector3(-defines.textPaddingLeft + region.regionGroup.AutoWidth() - (region.smallButtons.Count * 19) - length, -region.currentHeight + 12, 0);
                 }
 
             #endregion

@@ -13,7 +13,7 @@ public class String
     private string backupValue = "";
 
     public string Value() => value;
-    public string Insert(int i, char x) => value = value.Length == 0 ? value += x : value.Insert(i, x + "");
+    public string Insert(int i, char x) => value = value.Length <= i ? value += x : value.Insert(i, x + "");
     public string Add(char x) => value += x;
     public string RemovePreviousOne(int i) => value = value.Remove(i - 1, 1);
     public string RemoveNextOne(int i) => value = value.Remove(i, 1);
@@ -24,24 +24,15 @@ public class String
     public void Confirm() => backupValue = value;
     public void Reset() => value = backupValue;
 
-    public bool CheckInput(char letter)
+    public bool CheckInput(char letter) => inputType switch
     {
-        switch (inputType)
-        {
-            case Letters:
-                return char.IsLetter(letter) || letter == ' ' && value.Length != 0 && value.Last() != ' ' || letter == '\'' && value.Length != 0 && value.Last() != '\'';
-            case StrictLetters:
-                return char.IsLetter(letter) || letter == '\'' && value.Length != 0 && value.Last() != '\'';
-            case Capitals:
-                return char.IsLetter(letter) || letter == ' ' && value.Length != 0 && value.Last() != ' ';
-            case Numbers:
-                return char.IsDigit(letter);
-            case Decimal:
-                return char.IsDigit(letter) || letter == ',' && !Value().Contains(',');
-            default:
-                return true;
-        }
-    }
+        Letters => char.IsLetter(letter) || letter == ' ' && value.Length != 0 && value.Last() != ' ' || letter == '\'' && value.Length != 0 && value.Last() != '\'',
+        StrictLetters => char.IsLetter(letter) || letter == '\'' && value.Length != 0 && value.Last() != '\'',
+        Capitals => char.IsLetter(letter) || letter == ' ' && value.Length != 0 && value.Last() != ' ',
+        Numbers => char.IsDigit(letter),
+        Decimal => char.IsDigit(letter) || letter == ',' && !Value().Contains(','),
+        _ => true,
+    };
 
     public static String promptConfirm = new() { inputType = Capitals };
     public static String consoleInput = new() { inputType = Everything };

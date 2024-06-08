@@ -97985,8 +97985,8 @@
       "player": {
         "currentQuests": [],
         "completedQuests": [],
-        "level": 8,
-        "experience": 3840,
+        "level": 9,
+        "experience": 4572,
         "reputation": {
           "Southsea Pirates": 0,
           "Razormane Tribe": 0,
@@ -98058,7 +98058,7 @@
         },
         "professionSkills": {},
         "learnedRecipes": {},
-        "unspentTalentPoints": 7,
+        "unspentTalentPoints": 8,
         "faction": "Stormwind",
         "name": "Jennine",
         "race": "Human",
@@ -98113,9 +98113,58 @@
               "stats": {
                 "stats": {}
               }
+            },
+            {
+              "rarity": "Rare",
+              "name": "Formula: Enchant Weapon - Lifestealing",
+              "icon": "itemmiscnote01",
+              "type": "Recipe",
+              "source": "DirectDrop",
+              "amount": 1,
+              "maxStack": 1,
+              "price": 7500,
+              "stats": {
+                "stats": {}
+              },
+              "droppedBy": [
+                "Spectral Researcher"
+              ]
+            },
+            {
+              "rarity": "Common",
+              "name": "Garrick's Head",
+              "icon": "itemmischeadhuman01",
+              "type": "Miscellaneous",
+              "source": "DirectDrop",
+              "ilvl": 1,
+              "amount": 1,
+              "maxStack": 1,
+              "stats": {
+                "stats": {}
+              },
+              "droppedBy": [
+                "Garrick Padfoot"
+              ]
             }
           ],
-          "bags": []
+          "bags": [
+            {
+              "rarity": "Common",
+              "name": "Small Red Pouch",
+              "icon": "itemmiscbag09red",
+              "type": "Bag",
+              "source": "GeneralDrop",
+              "ilvl": 5,
+              "lvl": 1,
+              "amount": 1,
+              "maxStack": 1,
+              "price": 250,
+              "bagSpace": 2,
+              "stats": {
+                "stats": {}
+              }
+            }
+          ]
         },
         "mounts": [],
         "equipment": {
@@ -98186,14 +98235,22 @@
         }
       },
       "hour": 7,
-      "minute": 7,
-      "second": 56,
-      "currentSite": "Caer Darrow",
+      "minute": 9,
+      "second": 34,
+      "currentSite": "Northshire Vineyards",
       "openedChests": {},
-      "siteProgress": {},
-      "commonsKilled": {},
+      "siteProgress": {
+        "Reliquary": 2,
+        "Northshire Vineyards": 1
+      },
+      "commonsKilled": {
+        "Scholomance Acolyte": 1,
+        "Spectral Researcher": 1
+      },
       "raresKilled": {},
-      "elitesKilled": {},
+      "elitesKilled": {
+        "Garrick Padfoot": 1
+      },
       "siteVisits": {
         "Northshire Abbey": 2,
         "Northshire Valley": 2,
@@ -98517,7 +98574,7 @@
         "Jasperlode Mine": 1,
         "Mirror Lake": 1,
         "Mirror Lake Orchard": 1,
-        "Northshire Vineyards": 1,
+        "Northshire Vineyards": 4,
         "Ridgepoint Tower": 1,
         "Stonefield Farm": 1,
         "The Maclure Vineyards": 1,
@@ -99143,7 +99200,7 @@
         "Gnomeregan": 1,
         "Shadowfang Keep": 1,
         "Shadow Hold": 1,
-        "Scholomance": 1,
+        "Scholomance": 3,
         "Maraudon": 1,
         "Stratholme": 1,
         "Wailing Caverns": 1,
@@ -99323,9 +99380,9 @@
         "ignoreSpaceChecks": true
       },
       "startDate": "2024-06-07T13:43:59.0215103+02:00",
-      "lastLoaded": "2024-06-07T14:41:41.3789655+02:00",
-      "lastPlayed": "2024-06-07T14:43:20.6639213+02:00",
-      "timePlayed": "00:38:24.1049671"
+      "lastLoaded": "2024-06-08T13:24:17.3376254+02:00",
+      "lastPlayed": "2024-06-08T13:24:55.4712588+02:00",
+      "timePlayed": "00:44:53.3712638"
     }
   ]
 }

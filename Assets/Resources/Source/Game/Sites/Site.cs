@@ -83,10 +83,13 @@ public class Site
     //List of items that can drop from enemies in this instance
     public List<string> zoneDrop;
 
+    //Additional items inside of the exploration chest
+    public Dictionary<string, int> chestBonus;
+
     //List of all sites that this complex contains
     //Keys provide information what type of site it is
     //Values provide information what is the name of the site
-    //EXAMPLE: { "SiteType": "Raid", "SiteName": "Molten Core" } 
+    //EXAMPLE: { "SiteType": "Raid", "SiteName": "Molten Core" }
     public List<Dictionary<string, string>> sites;
 
     //Initialisation method to fill automatic values

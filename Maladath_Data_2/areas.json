@@ -11198,8 +11198,19 @@
         "levelMax": 4
       }
     ],
+    "eliteEncounters": [
+      {
+        "who": "Garrick Padfoot",
+        "levelMin": 5
+      }
+    ],
     "areaSize": 3,
     "progression": [
+      {
+        "type": "Boss",
+        "bossName": "Garrick Padfoot",
+        "point": 2
+      },
       {
         "type": "Treasure",
         "point": 3
@@ -22444,6 +22455,9 @@
     "name": "The Gaping Chasm",
     "zone": "Tanaris",
     "type": "HostileArea",
+    "chestBonus": {
+      "Scrimshank's Surveying Gear": 1
+    },
     "commonEncounters": [
       {
         "who": "Hazzali Swarmer",

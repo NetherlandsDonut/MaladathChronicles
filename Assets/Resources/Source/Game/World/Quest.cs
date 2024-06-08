@@ -30,6 +30,9 @@ public class Quest
     //Amount of reputation awarded to the quest faction
     public Dictionary<string, int> reputationGain;
 
+    //Items provided by the quest when player accepts it
+    public Dictionary<string, int> providedItems;
+
     //Eligble races for this quest
     public List<string> races;
 

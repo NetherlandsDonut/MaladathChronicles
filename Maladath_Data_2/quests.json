@@ -15,12 +15,8 @@
     ],
     "description": "Speak with Chef Grual.",
     "zone": "Duskwood",
-    "conditions": [
-      {
-        "type": "Visit",
-        "name": "?"
-      }
-    ]
+    "siteStart": "Raven Hill",
+    "siteEnd": "Darkshire"
   },
   {
     "questID": 6,
@@ -38,6 +34,8 @@
     ],
     "description": "Kill Garrick Padfoot and bring his head to Deputy Willem at Northshire Abbey.",
     "zone": "Elwynn Forest",
+    "siteStart": "Northshire Abbey",
+    "siteEnd": "Northshire Abbey",
     "conditions": [
       {
         "type": "Item",
@@ -60,13 +58,15 @@
       "Dwarf",
       "Human"
     ],
-    "description": "Kill 10 Kobold Vermin, then return to Marshal McBride.",
+    "description": "Kill 3 Kobold Vermin, then return to Marshal McBride.",
     "zone": "Elwynn Forest",
+    "siteStart": "Northshire Abbey",
+    "siteEnd": "Northshire Abbey",
     "conditions": [
       {
         "type": "Kill",
         "name": "Kobold Vermin",
-        "amount": 1
+        "amount": 3
       }
     ]
   },
@@ -80,6 +80,11 @@
     },
     "description": "Deliver the Nondescript Letter to Innkeeper Renee in Tirisfal Glades.",
     "zone": "Tirisfal Glades",
+    "siteStart": "Deathknell",
+    "siteEnd": "Brill",
+    "providedItems": {
+      "Nondescript Letter": 1
+    },
     "conditions": [
       {
         "type": "Item",
@@ -102,13 +107,15 @@
       "Dwarf",
       "Human"
     ],
-    "description": "Farmer Saldean wants you to kill 20 Harvest Watchers.",
+    "description": "Farmer Saldean wants you to kill 5 Harvest Watchers.",
     "zone": "Westfall",
+    "siteStart": "Saldean's Farm",
+    "siteEnd": "Saldean's Farm",
     "conditions": [
       {
         "type": "Kill",
         "name": "Harvest Watcher",
-        "amount": 1
+        "amount": 5
       }
     ]
   },
@@ -122,6 +129,8 @@
     },
     "description": "Discover the fate of Junior Surveyor Scrimshank, and bring either him or his surveying equipment to Senior Surveyor Fizzledowser in Gadgetzan.",
     "zone": "Tanaris",
+    "siteStart": "Gadgetzan",
+    "siteEnd": "Gadgetzan",
     "conditions": [
       {
         "type": "Item",

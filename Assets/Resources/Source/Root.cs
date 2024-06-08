@@ -777,7 +777,7 @@ public static class Root
 
     #region InputLines
 
-    public static void AddInputLine(String refText, string color = "", string align = "")
+    public static void AddInputLine(String refText, string color = "", string align = "Left")
     {
         var region = CDesktop.LBWindow.LBRegionGroup.LBRegion;
         if (region.lines.Count > 0 && region.checkbox != null) return;

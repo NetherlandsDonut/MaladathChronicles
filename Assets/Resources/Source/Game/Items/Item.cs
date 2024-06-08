@@ -744,9 +744,7 @@ public class Item
         AddPaddingRegion(() =>
         {
             if (item.armorClass != null)
-            {
                 AddLine(item.armorClass + " " + item.type);
-            }
             else if (item.maxDamage != 0)
             {
                 AddLine(item.type + " " + item.detailedType);
@@ -756,7 +754,6 @@ public class Item
             else if (item.type == "Recipe")
             {
                 var recipe = Recipe.recipes.Find(x => item.name.Contains(x.name));
-                var result = items.Find(x => x.name == recipe.results.First().Key);
                 AddLine(recipe.profession + " " + item.name.Split(':')[0].ToLower());
             }
             else AddLine(item.type ?? "");
@@ -841,16 +838,31 @@ public class Item
         if (item.type == "Recipe")
         {
             var recipe = Recipe.recipes.Find(x => item.name.Contains(x.name));
-            var result = items.Find(x => x.name == recipe.results.First().Key);
-            AddHeaderRegion(() =>
+            if (recipe.results.Count > 0)
             {
-                AddLine("Results:", "DarkGray");
-            });
-            AddPaddingRegion(() =>
+                AddHeaderRegion(() =>
+                {
+                    AddLine("Results:", "DarkGray");
+                });
+                AddPaddingRegion(() =>
+                {
+                    foreach (var result in recipe.results)
+                        AddLine(result.Key + " x" + result.Value);
+                });
+            }
+            else if (recipe.enchantment)
             {
-                foreach (var result in recipe.results)
-                    AddLine(result.Key + " x" + result.Value);
-            });
+                AddHeaderRegion(() =>
+                {
+                    AddLine("Enchantment:", "DarkGray");
+                });
+                var e = Enchant.enchants.Find(x => x.name == recipe.name);
+                AddPaddingRegion(() =>
+                {
+                    AddLine(e.type);
+                    AddLine(e.Name());
+                });
+            }
             AddHeaderRegion(() =>
             {
                 AddLine("Reagents:", "DarkGray");
@@ -870,7 +882,7 @@ public class Item
         {
             AddHeaderRegion(() =>
             {
-                AddLine("Enchanted: " + item.enchant.name.Split("-").Last().Trim(), "Uncommon");
+                AddLine("Enchanted: " + item.enchant.Name(), "Uncommon");
             });
             //AddPaddingRegion(() =>
             //{

@@ -2360,8 +2360,8 @@ public class Blueprint
                         Respawn("HostileArea");
                         Respawn("HostileAreaProgress");
                         Respawn("HostileAreaDenizens");
+                        Respawn("HostileAreaElites");
                         SetDesktopBackground(area.Background());
-                        Respawn("BossQueue");
                     }
                     else
                     {
@@ -2548,6 +2548,7 @@ public class Blueprint
                         CloseWindow("BossQueue");
                         CloseWindow("HostileAreaProgress");
                         CloseWindow("HostileAreaDenizens");
+                        CloseWindow("HostileAreaElites");
                     }
                     else if (area.complexPart)
                     {
@@ -2556,6 +2557,7 @@ public class Blueprint
                         CloseWindow("BossQueue");
                         CloseWindow("HostileAreaProgress");
                         CloseWindow("HostileAreaDenizens");
+                        CloseWindow("HostileAreaElites");
                     }
                     else CloseDesktop("HostileArea");
                 });
@@ -2623,10 +2625,6 @@ public class Blueprint
             SetAnchor(TopLeft, 19, -95);
             AddHeaderGroup();
             SetRegionGroupWidth(190);
-            //AddHeaderRegion(() =>
-            //{
-            //    AddLine("Area denizens:", "Gray");
-            //});
             if (area.commonEncounters != null && area.commonEncounters.Count > 0)
                 foreach (var encounter in area.commonEncounters)
                     AddPaddingRegion(() =>
@@ -2635,6 +2633,29 @@ public class Blueprint
                         var race = races.Find(x => x.name == encounter.who);
                         AddSmallButton(race == null ? "OtherUnknown" : race.portrait);
                     });
+        }),
+        new("HostileAreaElites", () =>
+        {
+            if (area.eliteEncounters == null || area.eliteEncounters.Count == 0) return;
+            SetAnchor(BottomLeft, 19, 82);
+            AddHeaderGroup();
+            SetRegionGroupWidth(190);
+            foreach (var encounter in area.eliteEncounters)
+                AddPaddingRegion(() =>
+                {
+                    AddLine(encounter.who);
+                    AddLine("Level: ", "DarkGray");
+                    AddText("" + encounter.levelMin, ColorEntityLevel(encounter.levelMin));
+                    var race = races.Find(x => x.name == encounter.who);
+                    AddBigButton(race == null ? "OtherUnknown" : race.portrait,
+                        (h) =>
+                        {
+                            NewBoard(area.RollEncounter(encounter), area);
+                            SpawnDesktopBlueprint("Game");
+                            SwitchDesktop("Game");
+                        }
+                    );
+                });
         }),
 
         //Town
@@ -4899,6 +4920,7 @@ public class Blueprint
             SpawnWindowBlueprint("HostileArea");
             SpawnWindowBlueprint("HostileAreaProgress");
             SpawnWindowBlueprint("HostileAreaDenizens");
+            SpawnWindowBlueprint("HostileAreaElites");
             //if (area.fishing) SpawnWindowBlueprint("FishingAnchor");
             SpawnWindowBlueprint("MapToolbarShadow");
             SpawnWindowBlueprint("MapToolbarClockLeft");
@@ -5129,6 +5151,7 @@ public class Blueprint
                     CloseWindow("BossQueue");
                     CloseWindow("HostileAreaProgress");
                     CloseWindow("HostileAreaDenizens");
+                    CloseWindow("HostileAreaElites");
                     PlaySound("DesktopButtonClose");
                     SetDesktopBackground(instance.Background());
                 }
@@ -5164,6 +5187,7 @@ public class Blueprint
                     PlaySound("DesktopButtonClose");
                     CloseWindow("HostileAreaProgress");
                     CloseWindow("HostileAreaDenizens");
+                    CloseWindow("HostileAreaElites");
                     SetDesktopBackground(complex.Background());
                 }
                 else

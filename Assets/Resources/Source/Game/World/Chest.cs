@@ -33,6 +33,7 @@ public class Chest
         else if (dropBlue.Count > 0 && Roll(5)) chest.inventory.AddItem(dropBlue[random.Next(dropBlue.Count)].CopyItem());
         else if (dropGreen.Count > 0) chest.inventory.AddItem(dropGreen[random.Next(dropGreen.Count)].CopyItem());
         else if (dropWhite.Count > 0) chest.inventory.AddItem(dropWhite[random.Next(dropWhite.Count)].CopyItem());
+        if (area.chestBonus != null) chest.inventory.items.AddRange(area.chestBonus.Select(x => Item.items.Find(y => y.name == x.Key).CopyItem(x.Value)));
         chest.inventory.items.ForEach(x => x.SetRandomEnchantment());
         var dropsWithinLevelRange = GeneralDrop.generalDrops.FindAll(x => x.dropStart <= area.recommendedLevel && x.dropEnd >= area.recommendedLevel);
         if (dropsWithinLevelRange.Count > 0)

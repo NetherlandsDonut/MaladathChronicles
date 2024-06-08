@@ -1,10 +1,14 @@
+using System.Linq;
 using System.Collections.Generic;
 
 public class Enchant
 {
     //Name of the enchantment
     public string name;
-    
+
+    //Shortened name of the enchantment
+    public string Name() => name.Split("-").Last().Trim();
+
     //Stats provided by this enchantment
     public Dictionary<string, int> gains;
 

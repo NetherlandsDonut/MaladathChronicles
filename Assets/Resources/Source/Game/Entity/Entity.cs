@@ -121,6 +121,11 @@ public class Entity
                         else if (site.eliteEncounters != null && site.eliteEncounters.Exists(x => x.who == condition.name))
                             yes = true;
                     }
+                    else if (condition.type == "Item")
+                    {
+                        if (site.chestBonus != null && site.chestBonus.ContainsKey(condition.name))
+                            yes = true;
+                    }
                     if (yes)
                     {
                         list.Add(quest);
