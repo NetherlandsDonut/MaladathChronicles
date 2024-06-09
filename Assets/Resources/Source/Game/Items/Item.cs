@@ -158,6 +158,12 @@ public class Item
     //Max amount of this item per stack
     public int maxStack;
 
+    //Can player get rid of this item
+    public bool indestructible;
+
+    //Can player have more than one of these items
+    public bool unique;
+
     //List of abilities provided to the wearer of this item
     public Dictionary<string, int> abilities;
 
@@ -647,6 +653,7 @@ public class Item
             },
             (h) =>
             {
+                if (item.indestructible) return;
                 Item.item = item;
                 PlaySound("DesktopMenuOpen");
                 SpawnWindowBlueprint("ConfirmItemDestroy");
@@ -927,6 +934,8 @@ public class Item
         newItem.reputationRequired = reputationRequired;
         newItem.set = set;
         newItem.source = source;
+        newItem.indestructible = indestructible;
+        newItem.unique = unique;
         newItem.specs = specs?.ToList();
         newItem.speed = speed;
         newItem.stats = new Stats(stats.stats?.ToDictionary(x => x.Key, x => x.Value));

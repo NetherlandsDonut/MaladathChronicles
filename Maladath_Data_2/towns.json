@@ -3931,7 +3931,8 @@
     "y": -1104,
     "name": "Timbermaw Hold",
     "zone": "Felwood",
-    "faction": "Timbermaw Tribe"
+    "faction": "Timbermaw Tribe",
+    "noNightVariant": true
   },
   {
     "x": 1222,

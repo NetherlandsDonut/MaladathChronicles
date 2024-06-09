@@ -97985,8 +97985,8 @@
       "player": {
         "currentQuests": [],
         "completedQuests": [],
-        "level": 9,
-        "experience": 4932,
+        "level": 48,
+        "experience": 116272,
         "reputation": {
           "Southsea Pirates": 0,
           "Razormane Tribe": 0,
@@ -98058,7 +98058,7 @@
         },
         "professionSkills": {},
         "learnedRecipes": {},
-        "unspentTalentPoints": 8,
+        "unspentTalentPoints": 47,
         "faction": "Stormwind",
         "name": "Jennine",
         "race": "Human",
@@ -98234,10 +98234,10 @@
           }
         }
       },
-      "hour": 8,
-      "minute": 9,
-      "second": 46,
-      "currentSite": "Scarlet Monastery Grounds",
+      "hour": 21,
+      "minute": 45,
+      "second": 38,
+      "currentSite": "Demon Fall Canyon",
       "openedChests": {},
       "siteProgress": {
         "Reliquary": 2,
@@ -98315,10 +98315,10 @@
         "Bathran's Haunt": 1,
         "Bloodtooth Camp": 1,
         "Bough Shadow": 1,
-        "Demon Fall Canyon": 1,
+        "Demon Fall Canyon": 4,
         "Falfarren River": 1,
         "Fallen Sky Lake": 1,
-        "Felfire Hill": 1,
+        "Felfire Hill": 2,
         "Fire Scar Shrine": 1,
         "Greenpaw Village": 1,
         "Iris Lake": 1,
@@ -98905,9 +98905,9 @@
         "Wavestrider Beach": 1,
         "Ban'ethil Hollow": 1,
         "Starbreeze Village": 1,
-        "Fel Rock": 1,
+        "Fel Rock": 2,
         "Gnarlpine Hold": 1,
-        "Lake Al'Ameth": 1,
+        "Lake Al'Ameth": 3,
         "Pools of Arlithrien": 1,
         "Shadowglen": 1,
         "Shadowthread Cave": 1,
@@ -99114,7 +99114,7 @@
         "Flame Crest": 1,
         "Faldir's Cove": 1,
         "Refuge Point": 1,
-        "Darnassus": 1,
+        "Darnassus": 2,
         "Aldrassil": 1,
         "Rut'theran Village": 1,
         "Dolanaar": 1,
@@ -99247,7 +99247,9 @@
         "Central Jungle": 4,
         "Capital City Gates": 2,
         "Faol's Rest": 3,
-        "Eastern Woods": 3
+        "Eastern Woods": 3,
+        "Ban'ethil Moonwell": 3,
+        "Demon Fall Ridge": 4
       },
       "unlockedAreas": [],
       "vendorStock": {
@@ -99398,9 +99400,10 @@
         "ignoreSpaceChecks": true
       },
       "startDate": "2024-06-07T13:43:59.0215103+02:00",
-      "lastLoaded": "2024-06-08T23:42:19.8153324+02:00",
-      "lastPlayed": "2024-06-08T23:42:28.954658+02:00",
-      "timePlayed": "02:01:51.7102880"
+      "lastLoaded": "2024-06-09T01:47:13.9944065+02:00",
+      "lastPlayed": "2024-06-09T01:51:00.1329907+02:00",
+      "timePlayed": "02:20:17.0088786",
+      "lastVisitedTalents": 1
     }
   ]
 }

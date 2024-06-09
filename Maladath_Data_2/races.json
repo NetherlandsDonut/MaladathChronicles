@@ -1,5 +1,55 @@
 [
   {
+    "name": "Oakenscowl",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "side": "Neutral",
+    "kind": "Elite",
+    "portrait": "PortraitBogBeastOrange",
+    "vitality": 3.0,
+    "abilities": {}
+  },
+  {
+    "name": "Diathorus the Seeker",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "side": "Neutral",
+    "kind": "Elite",
+    "portrait": "PortraitNatherezim",
+    "vitality": 3.0,
+    "abilities": {}
+  },
+  {
+    "name": "Vorlus Vilehoof",
+    "category": "Demon",
+    "subcategory": "Satyr",
+    "side": "Neutral",
+    "kind": "Elite",
+    "portrait": "PortraitSatyrRed",
+    "vitality": 3.0,
+    "abilities": {}
+  },
+  {
+    "name": "Alshirr Banebreath",
+    "category": "Demon",
+    "subcategory": "Satyr",
+    "side": "Neutral",
+    "kind": "Rare",
+    "portrait": "PortraitSatyrBlue",
+    "vitality": 2.0,
+    "abilities": {}
+  },
+  {
+    "name": "Jadefire Satyr",
+    "category": "Demon",
+    "subcategory": "Satyr",
+    "side": "Neutral",
+    "kind": "Common",
+    "portrait": "PortraitSatyrRed",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
     "name": "Scarlet Zealot",
     "category": "Humanoid",
     "subcategory": "Human",

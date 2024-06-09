@@ -2381,6 +2381,32 @@
       },
       {
         "who": "Felguard",
+        "levelMin": 29,
+        "levelMax": 30
+      },
+      {
+        "who": "Legion Hound",
+        "levelMin": 29,
+        "levelMax": 30
+      }
+    ],
+    "areaSize": 3,
+    "progression": [
+      {
+        "type": "Treasure",
+        "point": 3
+      }
+    ]
+  },
+  {
+    "x": 2028,
+    "y": -2215,
+    "name": "Demon Fall Ridge",
+    "zone": "Ashenvale",
+    "type": "HostileArea",
+    "commonEncounters": [
+      {
+        "who": "Felguard",
         "levelMin": 30,
         "levelMax": 31
       },
@@ -2395,11 +2421,22 @@
         "levelMax": 31
       }
     ],
+    "eliteEncounters": [
+      {
+        "who": "Diathorus the Seeker",
+        "levelMin": 34
+      }
+    ],
     "areaSize": 3,
     "progression": [
       {
         "type": "Treasure",
         "point": 3
+      },
+      {
+        "type": "Boss",
+        "bossName": "Diathorus the Seeker",
+        "point": 2
       }
     ]
   },
@@ -11581,19 +11618,20 @@
     "type": "HostileArea",
     "commonEncounters": [
       {
-        "who": "Deadwood Pathfinder",
+        "who": "Jadefire Felsworn",
+        "levelMin": 50,
+        "levelMax": 51
+      },
+      {
+        "who": "Jadefire Satyr",
         "levelMin": 49,
         "levelMax": 50
-      },
+      }
+    ],
+    "rareEncounters": [
       {
-        "who": "Deadwood Gardener",
-        "levelMin": 48,
-        "levelMax": 49
-      },
-      {
-        "who": "Deadwood Warrior",
-        "levelMin": 48,
-        "levelMax": 49
+        "who": "Alshirr Banebreath",
+        "levelMin": 54
       }
     ],
     "areaSize": 3,
@@ -22817,6 +22855,43 @@
     ]
   },
   {
+    "x": 1160,
+    "y": -563,
+    "name": "Ban'ethil Moonwell",
+    "zone": "Teldrassil",
+    "type": "HostileArea",
+    "commonEncounters": [
+      {
+        "who": "Vicious Grell",
+        "levelMin": 7,
+        "levelMax": 8
+      },
+      {
+        "who": "Dark Sprite",
+        "levelMin": 8,
+        "levelMax": 9
+      }
+    ],
+    "eliteEncounters": [
+      {
+        "who": "Vorlus Vilehoof",
+        "levelMin": 10
+      }
+    ],
+    "areaSize": 3,
+    "progression": [
+      {
+        "type": "Treasure",
+        "point": 3
+      },
+      {
+        "type": "Boss",
+        "bossName": "Vorlus Vilehoof",
+        "point": 2
+      }
+    ]
+  },
+  {
     "x": 1136,
     "y": -524,
     "name": "Ban'ethil Hollow",
@@ -22911,11 +22986,6 @@
         "who": "Vicious Grell",
         "levelMin": 6,
         "levelMax": 7
-      },
-      {
-        "who": "Dark Sprite",
-        "levelMin": 6,
-        "levelMax": 7
       }
     ],
     "rareEncounters": [
@@ -22994,11 +23064,22 @@
         "levelMin": 9
       }
     ],
+    "eliteEncounters": [
+      {
+        "who": "Oakenscowl",
+        "levelMin": 9
+      }
+    ],
     "areaSize": 3,
     "progression": [
       {
         "type": "Treasure",
         "point": 3
+      },
+      {
+        "type": "Boss",
+        "bossName": "Oakenscowl",
+        "point": 2
       }
     ]
   },
