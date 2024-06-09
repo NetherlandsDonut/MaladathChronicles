@@ -103,7 +103,7 @@ public class Entity
     public List<int> completedQuests;
 
     //Check if this entity can pick up a specific quest
-    public bool CanPickQuest(Quest quest)
+    public bool CanPickQuest(Quest quest, Site site)
     {
         if (completedQuests.Contains(quest.questID)) return false;
         if (quest.requiredLevel > level) return false;
@@ -111,9 +111,12 @@ public class Entity
         if (quest.races != null && !quest.races.Contains(race)) return false;
         if (quest.classes != null && !quest.classes.Contains(spec)) return false;
         if (quest.faction != null && !IsRankHighEnough(ReputationRank(quest.faction), quest.requiredRank)) return false;
+        else if (site.faction != null && !IsRankHighEnough(ReputationRank(site.faction), "Neutral")) return false;
         return true;
     }
 
+    //Checks if entity has high enough rank with a faction
+    //Used for quest availability and reputation locked items
     public bool IsRankHighEnough(string current, string required)
     {
         return Conv(current) >= Conv(required);
@@ -137,7 +140,7 @@ public class Entity
         var list = new List<Quest>();
         if (site.questsStarted != null)
             foreach (var quest in site.questsStarted)
-                if (CanPickQuest(quest))
+                if (CanPickQuest(quest, site))
                 {
                     list.Add(quest);
                     if (oneIsEnough)

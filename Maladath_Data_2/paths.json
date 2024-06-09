@@ -142513,5 +142513,43 @@
         "Item2": -2183
       }
     ]
+  },
+  {
+    "sites": [
+      "Den Overhill",
+      "Valley of Trials"
+    ],
+    "means": "Land",
+    "spacing": 10,
+    "points": [
+      {
+        "Item1": 2289,
+        "Item2": -2646
+      },
+      {
+        "Item1": 2294,
+        "Item2": -2637
+      },
+      {
+        "Item1": 2293,
+        "Item2": -2627
+      },
+      {
+        "Item1": 2291,
+        "Item2": -2617
+      },
+      {
+        "Item1": 2299,
+        "Item2": -2611
+      },
+      {
+        "Item1": 2309,
+        "Item2": -2609
+      },
+      {
+        "Item1": 2311,
+        "Item2": -2607
+      }
+    ]
   }
 ]

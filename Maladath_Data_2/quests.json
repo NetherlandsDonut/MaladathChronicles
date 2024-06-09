@@ -774,7 +774,7 @@
     "questLevel": 10,
     "name": "Westfall Stew",
     "description": "Verna Furlbrow wants you to deliver her recipe for Westfall Stew to Salma Saldean.",
-    "siteStart": "Janses Stead",
+    "siteStart": "Jansen Stead",
     "siteEnd": "Saldean's Farm",
     "zone": "Westfall",
     "races": [

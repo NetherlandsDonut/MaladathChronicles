@@ -8647,6 +8647,42 @@
     ]
   },
   {
+    "x": 2289,
+    "y": -2646,
+    "name": "Den Overhill",
+    "zone": "Durotar",
+    "type": "HostileArea",
+    "commonEncounters": [
+      {
+        "who": "Clattering Scorpid",
+        "levelMin": 3
+      },
+      {
+        "who": "Scorpid Worker",
+        "levelMin": 2,
+        "levelMax": 3
+      }
+    ],
+    "eliteEncounters": [
+      {
+        "who": "Sarkoth",
+        "levelMin": 4
+      }
+    ],
+    "areaSize": 3,
+    "progression": [
+      {
+        "type": "Treasure",
+        "point": 3
+      },
+      {
+        "type": "Boss",
+        "bossName": "Sarkoth",
+        "point": 2
+      }
+    ]
+  },
+  {
     "x": 2311,
     "y": -2607,
     "name": "Valley of Trials",
@@ -17230,6 +17266,11 @@
     ],
     "areaSize": 3,
     "progression": [
+      {
+        "type": "Area",
+        "areaName": "Crusader's Chapel",
+        "point": 2
+      },
       {
         "type": "Treasure",
         "point": 3

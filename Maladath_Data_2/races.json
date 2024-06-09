@@ -1,8 +1,18 @@
 [
   {
+    "name": "Sarkoth",
+    "category": "Beast",
+    "subcategory": "Scorpid",
+    "side": "Neutral",
+    "kind": "Elite",
+    "portrait": "PortraitScorpidBlack",
+    "vitality": 3.0,
+    "abilities": {}
+  },
+  {
     "name": "Oakenscowl",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Elemental",
+    "subcategory": "Bog Beast",
     "side": "Neutral",
     "kind": "Elite",
     "portrait": "PortraitBogBeastOrange",
@@ -111,8 +121,8 @@
   },
   {
     "name": "Withered Ancient",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Elemental",
+    "subcategory": "Treant",
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitCorruptedTreant",
@@ -181,8 +191,8 @@
   },
   {
     "name": "Wandering Forest Walker",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Elemental",
+    "subcategory": "Treant",
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitCorruptedTreantPurple",
@@ -3567,7 +3577,7 @@
     "subcategory": "Human",
     "side": "Neutral",
     "kind": "Elite",
-    "portrait": "PortraitCenarian",
+    "portrait": "PortraitCelebras",
     "vitality": 1.0,
     "abilities": {}
   },
@@ -3587,7 +3597,7 @@
     "subcategory": "Human",
     "side": "Neutral",
     "kind": "Common",
-    "portrait": "PortraitCenarianFemale",
+    "portrait": "PortraitDryad",
     "vitality": 1.0,
     "abilities": {}
   },
@@ -3597,7 +3607,7 @@
     "subcategory": "Human",
     "side": "Neutral",
     "kind": "Common",
-    "portrait": "PortraitCenarianFemale",
+    "portrait": "PortraitDryad",
     "vitality": 1.0,
     "abilities": {}
   },
@@ -4290,8 +4300,8 @@
   },
   {
     "name": "Tendris Warpwood",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Elemental",
+    "subcategory": "Ancient",
     "side": "Neutral",
     "kind": "Elite",
     "portrait": "PortraitCorruptedAncient",
@@ -4300,8 +4310,8 @@
   },
   {
     "name": "Crazed Ancient",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Elemental",
+    "subcategory": "Treant",
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitTreant",
@@ -4310,8 +4320,8 @@
   },
   {
     "name": "Ironbark Protector",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Elemental",
+    "subcategory": "Ancient",
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitCorruptedAncient",
@@ -4320,8 +4330,8 @@
   },
   {
     "name": "Warpwood Crusher",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Elemental",
+    "subcategory": "Ancient",
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitCorruptedAncient",
@@ -4330,8 +4340,8 @@
   },
   {
     "name": "Withered Protector",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Elemental",
+    "subcategory": "Ancient",
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitCorruptedAncient",
@@ -4340,8 +4350,8 @@
   },
   {
     "name": "Blackened Ancient",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Elemental",
+    "subcategory": "Treant",
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitCorruptedTreant",
@@ -4350,8 +4360,8 @@
   },
   {
     "name": "Deeprot Stomper",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Elemental",
+    "subcategory": "Treant",
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitCorruptedTreant",
@@ -4360,8 +4370,8 @@
   },
   {
     "name": "Deeprot Tangler",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Elemental",
+    "subcategory": "Treant",
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitCorruptedTreant",
@@ -4370,8 +4380,8 @@
   },
   {
     "name": "Irontree Stomper",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Elemental",
+    "subcategory": "Treant",
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitCorruptedTreant",
@@ -4380,8 +4390,8 @@
   },
   {
     "name": "Petrified Guardian",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Elemental",
+    "subcategory": "Treant",
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitCorruptedTreant",
@@ -4390,8 +4400,8 @@
   },
   {
     "name": "Petrified Treant",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Elemental",
+    "subcategory": "Treant",
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitCorruptedTreant",
@@ -4400,8 +4410,8 @@
   },
   {
     "name": "Warpwood Guardian",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Elemental",
+    "subcategory": "Treant",
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitCorruptedTreant",
@@ -4410,8 +4420,8 @@
   },
   {
     "name": "Warpwood Stomper",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Elemental",
+    "subcategory": "Treant",
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitCorruptedTreant",
@@ -4420,8 +4430,8 @@
   },
   {
     "name": "Warpwood Tangler",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Elemental",
+    "subcategory": "Treant",
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitCorruptedTreant",
@@ -11069,8 +11079,8 @@
   },
   {
     "name": "Bloodpetal Tresher",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Elemental",
+    "subcategory": "Lasher",
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitLasherPink",
@@ -11079,8 +11089,8 @@
   },
   {
     "name": "Bloodpetal Trapper",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Elemental",
+    "subcategory": "Lasher",
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitLasherPink",
@@ -11089,8 +11099,8 @@
   },
   {
     "name": "Barbed Lasher",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Elemental",
+    "subcategory": "Lasher",
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitLasherBlack",
@@ -11099,8 +11109,8 @@
   },
   {
     "name": "Constrictor Vine",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Elemental",
+    "subcategory": "Lasher",
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitLasher",
@@ -11109,8 +11119,8 @@
   },
   {
     "name": "Death Lash",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Elemental",
+    "subcategory": "Lasher",
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitLasherWhite",
@@ -11119,8 +11129,8 @@
   },
   {
     "name": "Deviate Lasher",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Elemental",
+    "subcategory": "Lasher",
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitLasher",
@@ -11129,8 +11139,8 @@
   },
   {
     "name": "Phase Lasher",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Elemental",
+    "subcategory": "Lasher",
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitLasherBlack",
@@ -11139,8 +11149,8 @@
   },
   {
     "name": "Razorlash",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Elemental",
+    "subcategory": "Lasher",
     "side": "Neutral",
     "kind": "Elite",
     "portrait": "PortraitLasherWhite",
@@ -11149,8 +11159,8 @@
   },
   {
     "name": "Fel Lash",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Elemental",
+    "subcategory": "Lasher",
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitLasherPink",
@@ -16703,7 +16713,7 @@
     "faction": "Scarlet Crusade",
     "side": "Hostile",
     "kind": "Common",
-    "portrait": "PortraitScarletAdept",
+    "portrait": "PortraitScarletDefender",
     "vitality": 1.0,
     "abilities": {}
   },
@@ -16776,7 +16786,7 @@
     "faction": "Scarlet Crusade",
     "side": "Hostile",
     "kind": "Elite",
-    "portrait": "PortraitScarletChampion",
+    "portrait": "PortraitScarletCommanderMograine",
     "vitality": 3.0,
     "abilities": {}
   },
@@ -16787,7 +16797,7 @@
     "faction": "Scarlet Crusade",
     "side": "Hostile",
     "kind": "Common",
-    "portrait": "PortraitScarletChampion",
+    "portrait": "PortraitScarletCenturion",
     "vitality": 1.0,
     "abilities": {}
   },
@@ -16809,7 +16819,7 @@
     "faction": "Scarlet Crusade",
     "side": "Hostile",
     "kind": "Common",
-    "portrait": "PortraitScarletChampion",
+    "portrait": "PortraitScarletKnight",
     "vitality": 1.0,
     "abilities": {}
   },
@@ -16835,7 +16845,7 @@
     "faction": "Scarlet Crusade",
     "side": "Hostile",
     "kind": "Common",
-    "portrait": "PortraitScarletChaplain",
+    "portrait": "PortraitScarletPreserver",
     "vitality": 1.0,
     "abilities": {}
   },
@@ -16872,7 +16882,7 @@
     "faction": "Scarlet Crusade",
     "side": "Hostile",
     "kind": "Common",
-    "portrait": "PortraitScarletConjuror",
+    "portrait": "PortraitScarletPreserver",
     "vitality": 1.0,
     "abilities": {}
   },
@@ -16883,7 +16893,7 @@
     "faction": "Scarlet Crusade",
     "side": "Hostile",
     "kind": "Common",
-    "portrait": "PortraitScarletConjuror",
+    "portrait": "PortraitScarletMagician",
     "vitality": 1.0,
     "abilities": {}
   },
@@ -16894,7 +16904,7 @@
     "faction": "Scarlet Crusade",
     "side": "Hostile",
     "kind": "Common",
-    "portrait": "PortraitScarletConjuror",
+    "portrait": "PortraitScarletMonk",
     "vitality": 1.0,
     "abilities": {}
   },
@@ -16915,7 +16925,7 @@
     "faction": "Scarlet Crusade",
     "side": "Hostile",
     "kind": "Common",
-    "portrait": "PortraitScarletEnchanter",
+    "portrait": "PortraitScarletWizard",
     "vitality": 1.0,
     "abilities": {}
   },
@@ -16940,7 +16950,7 @@
     "subcategory": "Human",
     "side": "Neutral",
     "kind": "Common",
-    "portrait": "PortraitScarletEnchanter",
+    "portrait": "PortraitScarletMagician",
     "vitality": 1.0,
     "abilities": {}
   },
@@ -17003,7 +17013,7 @@
     "faction": "Scarlet Crusade",
     "side": "Hostile",
     "kind": "Common",
-    "portrait": "PortraitScarletMyrmidon",
+    "portrait": "PortraitScarletAugur",
     "vitality": 1.0,
     "abilities": {}
   },
@@ -17025,7 +17035,7 @@
     "faction": "Scarlet Crusade",
     "side": "Hostile",
     "kind": "Common",
-    "portrait": "PortraitScarletMyrmidon",
+    "portrait": "PortraitScarletWarder",
     "vitality": 1.0,
     "abilities": {
       "Corruption": 0,
@@ -17040,7 +17050,7 @@
     "faction": "Scarlet Crusade",
     "side": "Hostile",
     "kind": "Common",
-    "portrait": "PortraitScarletMyrmidon",
+    "portrait": "PortraitScarletWarrior",
     "vitality": 1.0,
     "abilities": {}
   },
@@ -17218,7 +17228,7 @@
     "subcategory": "Scorpid",
     "side": "Neutral",
     "kind": "Common",
-    "portrait": "PortraitScorpid",
+    "portrait": "PortraitScorpidGray",
     "vitality": 1.0,
     "abilities": {}
   },
@@ -17248,7 +17258,7 @@
     "subcategory": "Scorpid",
     "side": "Neutral",
     "kind": "Common",
-    "portrait": "PortraitScorpid",
+    "portrait": "PortraitScorpidGray",
     "vitality": 1.0,
     "abilities": {}
   },

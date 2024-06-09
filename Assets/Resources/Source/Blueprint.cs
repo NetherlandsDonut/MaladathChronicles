@@ -1324,7 +1324,7 @@ public class Blueprint
             });
             AddPaddingRegion(() =>
             {
-                AddLine(creationRace != "" ? creationRace + (creationSpec != "" ? " " + creationSpec : "") : "?", "", "Center");
+                AddLine(creationRace != "" ? creationRace + (creationSpec != "" ? " " + creationSpec : "") : "", "", "Center");
             });
             AddRegionGroup();
             AddPaddingRegion(() =>

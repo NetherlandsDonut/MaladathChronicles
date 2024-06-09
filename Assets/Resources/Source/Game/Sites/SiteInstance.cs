@@ -157,8 +157,8 @@ public class SiteInstance : Site
 
     public static void PrintInstanceWing(SiteInstance instance, InstanceWing wing)
     {
-        if (instance.wings.Count > 1)
-            AddHeaderRegion(() => { AddLine(wing.name); });
+        //if (instance.wings.Count > 1)
+        //    AddHeaderRegion(() => { AddLine(wing.name); });
         var temp = wing.areas.Select(x => (areas.Find(y => x.ContainsKey("AreaName") && y.name == x["AreaName"]), x)).ToList();
         foreach (var area in temp)
             if (showAreasUnconditional || area.x.ContainsKey("OpenByDefault") && area.x["OpenByDefault"] == "True" || currentSave.unlockedAreas.Contains(area.Item1.name))
