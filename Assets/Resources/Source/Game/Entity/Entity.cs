@@ -36,6 +36,7 @@ public class Entity
         completedQuests = new();
         learnedRecipes = new();
         professionSkills = new();
+        uniquesGotten = new();
         reputation = new();
         var side = Side();
         foreach (var faction in Faction.factions)
@@ -488,6 +489,9 @@ public class Entity
     #endregion
 
     #region Inventory & Equipment
+
+    //List of all unique items this player received
+    public List<string> uniquesGotten;
 
     //Provides list of abilities gained from equipped items
     public Dictionary<string, int> ItemAbilities()

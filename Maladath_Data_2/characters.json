@@ -98139,6 +98139,8 @@
               "ilvl": 1,
               "amount": 1,
               "maxStack": 1,
+              "indestructible": true,
+              "unique": true,
               "stats": {
                 "stats": {}
               },
@@ -98315,7 +98317,7 @@
         "Bathran's Haunt": 1,
         "Bloodtooth Camp": 1,
         "Bough Shadow": 1,
-        "Demon Fall Canyon": 4,
+        "Demon Fall Canyon": 5,
         "Falfarren River": 1,
         "Fallen Sky Lake": 1,
         "Felfire Hill": 2,
@@ -99400,9 +99402,9 @@
         "ignoreSpaceChecks": true
       },
       "startDate": "2024-06-07T13:43:59.0215103+02:00",
-      "lastLoaded": "2024-06-09T01:47:13.9944065+02:00",
-      "lastPlayed": "2024-06-09T01:51:00.1329907+02:00",
-      "timePlayed": "02:20:17.0088786",
+      "lastLoaded": "2024-06-09T02:19:09.6737516+02:00",
+      "lastPlayed": "2024-06-09T02:20:07.6882828+02:00",
+      "timePlayed": "02:21:15.0234098",
       "lastVisitedTalents": 1
     }
   ]

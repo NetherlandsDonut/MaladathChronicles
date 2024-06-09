@@ -23,7 +23,7 @@ public class Chest
         var worldDrop = Item.items.FindAll(x => x.lvl >= area.recommendedLevel - 6 && x.lvl <= area.recommendedLevel && x.source == "RareDrop");
         var instance = area.instancePart ? SiteInstance.instances.Find(x => x.wings.Any(y => y.areas.Any(z => z["AreaName"] == area.name))) : null;
         var zoneDrop = instance == null || instance.zoneDrop == null ? new() : Item.items.FindAll(x => instance.zoneDrop.Contains(x.name));
-        var everything = zoneDrop.Concat(worldDrop).Where(x => x.CanEquip(currentSave.player));
+        var everything = zoneDrop.Concat(worldDrop).Where(x => x.CanEquip(currentSave.player) && (!x.unique || !currentSave.player.uniquesGotten.Contains(x.name)));
         var dropGray = everything.Where(x => x.rarity == "Poor").ToList();
         var dropWhite = everything.Where(x => x.rarity == "Common").ToList();
         var dropGreen = everything.Where(x => x.rarity == "Uncommon").ToList();
@@ -62,6 +62,9 @@ public class Chest
                 if (find != null) chest.inventory.AddItem(Item.items.Find(x => x.name == find.item).CopyItem(random.Next(1, find.dropCount + 1)));
             }
         }
+        foreach (var item in chest.inventory.items)
+            if (item.unique && !currentSave.player.uniquesGotten.Contains(item.name))
+                currentSave.player.uniquesGotten.Add(item.name);
         return chest;
     }
 

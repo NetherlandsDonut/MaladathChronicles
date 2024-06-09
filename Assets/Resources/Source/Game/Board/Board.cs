@@ -304,11 +304,11 @@ public class Board
             CDesktop.RespawnAll();
 
             //Drop items
-            var directDrop = enemyRace.droppedItems.Select(x => Item.items.Find(y => y.name == x)).ToList();
+            var directDrop = enemyRace.droppedItems.Select(x => Item.items.Find(y => y.name == x)).Where(x => (!x.unique || !currentSave.player.uniquesGotten.Contains(x.name))).ToList();
             var worldDrop = Item.items.FindAll(x => (x.dropRange == null && x.lvl >= enemy.level - 6 && x.lvl <= enemy.level || x.dropRange != null && enemy.level >= int.Parse(x.dropRange.Split('-')[0]) && enemy.level <= int.Parse(x.dropRange.Split('-')[1])) && x.source == "RareDrop");
             var instance = area.instancePart ? SiteInstance.instances.Find(x => x.wings.Any(y => y.areas.Any(z => z["AreaName"] == area.name))) : null;
             var zoneDrop = instance == null || instance.zoneDrop == null ? new() : Item.items.FindAll(x => instance.zoneDrop.Contains(x.name));
-            var everything = zoneDrop.Concat(worldDrop).Where(x => x.CanEquip(currentSave.player));
+            var everything = zoneDrop.Concat(worldDrop).Where(x => x.CanEquip(currentSave.player) && (!x.unique || !currentSave.player.uniquesGotten.Contains(x.name)));
             var dropOther = directDrop.Where(x => (x.rarity == "Common" || x.rarity == "Poor") && (x.type == "Miscellaneous" || x.type == "Trade Good")).ToList();
             var dropGray = everything.Where(x => x.rarity == "Poor").ToList();
             var dropWhite = everything.Where(x => x.rarity == "Common").ToList();
@@ -366,6 +366,9 @@ public class Board
                         break;
                     }
             results.inventory.items.ForEach(x => x.SetRandomEnchantment());
+            foreach (var item in results.inventory.items)
+                if (item.unique && !currentSave.player.uniquesGotten.Contains(item.name))
+                    currentSave.player.uniquesGotten.Add(item.name);
             chartPage = "Damage Dealt";
             currentSave.player.ReceiveExperience(board.results.experience);
             SpawnDesktopBlueprint("CombatResults");
