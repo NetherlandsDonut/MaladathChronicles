@@ -2636,8 +2636,11 @@ public class Blueprint
         {
             if (area.eliteEncounters == null || area.eliteEncounters.Count == 0) return;
             var boss = area.progression.Find(x => x.type == "Boss" && currentSave.siteProgress.ContainsKey(area.name) && x.point == currentSave.siteProgress[area.name]);
-            if (boss == null || currentSave.elitesKilled.ContainsKey(boss.bossName)) return;
-            var encounter = area.eliteEncounters.Find(x => x.who == boss.bossName);
+            if (boss == null) return;
+            var bossName = boss.bossName == "<RingofLaw>" ? currentSave.ringOfLaw : boss.bossName;
+            if (boss == null || currentSave.elitesKilled.ContainsKey(bossName)) return;
+            var encounter = area.eliteEncounters.Find(x => x.who == bossName);
+            if (encounter == null) return;
             SetAnchor(BottomLeft, 19, 82);
             AddHeaderGroup();
             SetRegionGroupWidth(190);

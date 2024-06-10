@@ -20525,44 +20525,6 @@
   {
     "sites": [
       "Helm's Bed Lake",
-      "Ironband's Compound"
-    ],
-    "means": "Land",
-    "spacing": 10,
-    "points": [
-      {
-        "Item1": 5472,
-        "Item2": -2869
-      },
-      {
-        "Item1": 5467,
-        "Item2": -2860
-      },
-      {
-        "Item1": 5462,
-        "Item2": -2851
-      },
-      {
-        "Item1": 5463,
-        "Item2": -2841
-      },
-      {
-        "Item1": 5464,
-        "Item2": -2831
-      },
-      {
-        "Item1": 5461,
-        "Item2": -2821
-      },
-      {
-        "Item1": 5465,
-        "Item2": -2815
-      }
-    ]
-  },
-  {
-    "sites": [
-      "Helm's Bed Lake",
       "South Gate Pass"
     ],
     "means": "Land",
@@ -20715,64 +20677,6 @@
       {
         "Item1": 5510,
         "Item2": -2736
-      }
-    ]
-  },
-  {
-    "sites": [
-      "South Gate Pass",
-      "Valley of Kings"
-    ],
-    "means": "Land",
-    "spacing": 10,
-    "points": [
-      {
-        "Item1": 5605,
-        "Item2": -2850
-      },
-      {
-        "Item1": 5597,
-        "Item2": -2842
-      },
-      {
-        "Item1": 5591,
-        "Item2": -2834
-      },
-      {
-        "Item1": 5589,
-        "Item2": -2824
-      },
-      {
-        "Item1": 5580,
-        "Item2": -2818
-      },
-      {
-        "Item1": 5571,
-        "Item2": -2813
-      },
-      {
-        "Item1": 5566,
-        "Item2": -2805
-      },
-      {
-        "Item1": 5556,
-        "Item2": -2800
-      },
-      {
-        "Item1": 5546,
-        "Item2": -2798
-      },
-      {
-        "Item1": 5538,
-        "Item2": -2805
-      },
-      {
-        "Item1": 5529,
-        "Item2": -2810
-      },
-      {
-        "Item1": 5529,
-        "Item2": -2812
       }
     ]
   },
@@ -142549,6 +142453,94 @@
       {
         "Item1": 2311,
         "Item2": -2607
+      }
+    ]
+  },
+  {
+    "sites": [
+      "Helm's Bed Lake",
+      "Ironband's Compound"
+    ],
+    "means": "Land",
+    "spacing": 10,
+    "points": [
+      {
+        "Item1": 5468,
+        "Item2": -2861
+      },
+      {
+        "Item1": 5465,
+        "Item2": -2850
+      },
+      {
+        "Item1": 5467,
+        "Item2": -2840
+      },
+      {
+        "Item1": 5467,
+        "Item2": -2830
+      },
+      {
+        "Item1": 5466,
+        "Item2": -2820
+      },
+      {
+        "Item1": 5465,
+        "Item2": -2815
+      }
+    ]
+  },
+  {
+    "sites": [
+      "South Gate Pass",
+      "Valley of Kings"
+    ],
+    "means": "Land",
+    "spacing": 10,
+    "points": [
+      {
+        "Item1": 5605,
+        "Item2": -2850
+      },
+      {
+        "Item1": 5594,
+        "Item2": -2848
+      },
+      {
+        "Item1": 5589,
+        "Item2": -2839
+      },
+      {
+        "Item1": 5589,
+        "Item2": -2829
+      },
+      {
+        "Item1": 5583,
+        "Item2": -2820
+      },
+      {
+        "Item1": 5575,
+        "Item2": -2814
+      },
+      {
+        "Item1": 5567,
+        "Item2": -2808
+      },
+      {
+        "Item1": 5557,
+        "Item2": -2803
+      },
+      {
+        "Item1": 5547,
+        "Item2": -2801
+      },
+      {
+        "Item1": 5539,
+        "Item2": -2808
+      },
+      {
+        "Item1": 5529,
+        "Item2": -2812
       }
     ]
   }

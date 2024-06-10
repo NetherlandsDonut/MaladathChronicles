@@ -818,7 +818,6 @@
         "name": "Armory",
         "areas": [
           {
-            "OpenByDefault": "True",
             "AreaName": "Training Grounds"
           },
           {
@@ -833,7 +832,6 @@
         "name": "Cathedral",
         "areas": [
           {
-            "OpenByDefault": "True",
             "AreaName": "Chapel Gardens"
           },
           {

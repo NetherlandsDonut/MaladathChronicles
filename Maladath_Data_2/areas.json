@@ -4637,9 +4637,14 @@
     "noNightVariant": true,
     "commonEncounters": [
       {
-        "who": "Cannibal Ghoul",
-        "levelMin": 56,
-        "levelMax": 57
+        "who": "Dark Screecher",
+        "levelMin": 52,
+        "levelMax": 53
+      },
+      {
+        "who": "Burrowing Thundersnout",
+        "levelMin": 52,
+        "levelMax": 53
       }
     ],
     "eliteEncounters": [
@@ -4668,46 +4673,16 @@
         "levelMin": 54
       }
     ],
-    "areaSize": 13,
+    "areaSize": 3,
     "progression": [
       {
         "type": "Boss",
-        "bossName": "Anub'shiah",
+        "bossName": "<RingofLaw>",
         "point": 2
       },
       {
-        "type": "Boss",
-        "bossName": "Eviscerator",
-        "point": 4
-      },
-      {
-        "type": "Boss",
-        "bossName": "Gorosh the Dervish",
-        "point": 6
-      },
-      {
-        "type": "Boss",
-        "bossName": "Grizzle",
-        "point": 8
-      },
-      {
-        "type": "Boss",
-        "bossName": "Hedrum the Creeper",
-        "point": 10
-      },
-      {
-        "type": "Boss",
-        "bossName": "Ok'thor the Breaker",
-        "point": 12
-      },
-      {
-        "type": "Area",
-        "areaName": "Dark Iron Highway",
-        "point": 12
-      },
-      {
         "type": "Treasure",
-        "point": 13
+        "point": 3
       }
     ]
   },
@@ -7861,8 +7836,8 @@
     ]
   },
   {
-    "x": 5472,
-    "y": -2869,
+    "x": 5468,
+    "y": -2861,
     "name": "Ironband's Compound",
     "zone": "Dun Morogh",
     "type": "HostileArea",
@@ -17183,15 +17158,20 @@
     "type": "HostileArea",
     "commonEncounters": [
       {
-        "who": "Cannibal Ghoul",
-        "levelMin": 32,
-        "levelMax": 32
+        "who": "Scarlet Monk",
+        "levelMin": 35,
+        "levelMax": 36
+      },
+      {
+        "who": "Scarlet Diviner",
+        "levelMin": 35,
+        "levelMax": 36
       }
     ],
     "eliteEncounters": [
       {
         "who": "Arcanist Doan",
-        "levelMin": 32
+        "levelMin": 37
       }
     ],
     "areaSize": 3,
@@ -17199,6 +17179,16 @@
       {
         "type": "Boss",
         "bossName": "Arcanist Doan",
+        "point": 2
+      },
+      {
+        "type": "Area",
+        "areaName": "Training Grounds",
+        "point": 2
+      },
+      {
+        "type": "Area",
+        "areaName": "Chapel Gardens",
         "point": 2
       },
       {
@@ -17214,9 +17204,19 @@
     "noNightVariant": true,
     "commonEncounters": [
       {
-        "who": "Cannibal Ghoul",
-        "levelMin": 32,
-        "levelMax": 32
+        "who": "Scarlet Torturer",
+        "levelMin": 30,
+        "levelMax": 31
+      },
+      {
+        "who": "Scarlet Scryer",
+        "levelMin": 30,
+        "levelMax": 31
+      },
+      {
+        "who": "Scarlet Sentry",
+        "levelMin": 30,
+        "levelMax": 31
       }
     ],
     "eliteEncounters": [
@@ -17250,18 +17250,17 @@
     "commonEncounters": [
       {
         "who": "Scarlet Myrmidon",
-        "levelMin": 39,
-        "levelMax": 40
-      },
-      {
-        "who": "Scarlet Defender",
-        "levelMin": 39,
-        "levelMax": 40
+        "levelMin": 38
       },
       {
         "who": "Scarlet Wizard",
-        "levelMin": 39,
-        "levelMax": 40
+        "levelMin": 38,
+        "levelMax": 39
+      },
+      {
+        "who": "Scarlet Centurion",
+        "levelMin": 38,
+        "levelMax": 39
       }
     ],
     "areaSize": 3,
@@ -17284,24 +17283,18 @@
     "noNightVariant": true,
     "commonEncounters": [
       {
-        "who": "Cannibal Ghoul",
-        "levelMin": 32,
-        "levelMax": 32
-      }
-    ],
-    "eliteEncounters": [
+        "who": "Scarlet Myrmidon",
+        "levelMin": 37,
+        "levelMax": 38
+      },
       {
-        "who": "Arcanist Doan",
-        "levelMin": 32
+        "who": "Scarlet Defender",
+        "levelMin": 36,
+        "levelMax": 37
       }
     ],
     "areaSize": 3,
     "progression": [
-      {
-        "type": "Boss",
-        "bossName": "Arcanist Doan",
-        "point": 2
-      },
       {
         "type": "Area",
         "areaName": "Hall of Champions",
@@ -17325,12 +17318,12 @@
         "levelMax": 40
       },
       {
-        "who": "Scarlet Champion",
+        "who": "Scarlet Abbot",
         "levelMin": 39,
         "levelMax": 40
       },
       {
-        "who": "Scarlet Centurion",
+        "who": "Scarlet Champion",
         "levelMin": 39,
         "levelMax": 40
       }
@@ -17369,24 +17362,18 @@
     "type": "HostileArea",
     "commonEncounters": [
       {
-        "who": "Cannibal Ghoul",
+        "who": "Unfettered Spirit",
         "levelMin": 32,
-        "levelMax": 32
-      }
-    ],
-    "eliteEncounters": [
+        "levelMax": 33
+      },
       {
-        "who": "Bloodmage Thalnos",
-        "levelMin": 32
+        "who": "Anguished Dead",
+        "levelMin": 32,
+        "levelMax": 33
       }
     ],
     "areaSize": 3,
     "progression": [
-      {
-        "type": "Boss",
-        "bossName": "Bloodmage Thalnos",
-        "point": 2
-      },
       {
         "type": "Area",
         "areaName": "Honor's Tomb",
@@ -17404,13 +17391,28 @@
     "type": "HostileArea",
     "commonEncounters": [
       {
-        "who": "Cannibal Ghoul",
-        "levelMin": 32,
-        "levelMax": 32
+        "who": "Scarlet Gallant",
+        "levelMin": 34,
+        "levelMax": 35
+      },
+      {
+        "who": "Scarlet Chaplain",
+        "levelMin": 35,
+        "levelMax": 36
+      },
+      {
+        "who": "Scarlet Adept",
+        "levelMin": 35,
+        "levelMax": 36
       }
     ],
     "areaSize": 3,
     "progression": [
+      {
+        "type": "Area",
+        "areaName": "Athenaeum",
+        "point": 2
+      },
       {
         "type": "Treasure",
         "point": 3
@@ -17423,9 +17425,14 @@
     "type": "HostileArea",
     "commonEncounters": [
       {
-        "who": "Cannibal Ghoul",
-        "levelMin": 32,
-        "levelMax": 32
+        "who": "Scarlet Evoker",
+        "levelMin": 37,
+        "levelMax": 38
+      },
+      {
+        "who": "Scarlet Myrmidon",
+        "levelMin": 37,
+        "levelMax": 38
       }
     ],
     "eliteEncounters": [
@@ -17453,9 +17460,14 @@
     "type": "HostileArea",
     "commonEncounters": [
       {
-        "who": "Cannibal Ghoul",
+        "who": "Haunting Phantasm",
         "levelMin": 32,
-        "levelMax": 32
+        "levelMax": 33
+      },
+      {
+        "who": "Anguished Dead",
+        "levelMin": 32,
+        "levelMax": 33
       }
     ],
     "eliteEncounters": [
@@ -17483,15 +17495,25 @@
     "type": "HostileArea",
     "commonEncounters": [
       {
-        "who": "Cannibal Ghoul",
-        "levelMin": 32,
-        "levelMax": 32
+        "who": "Scarlet Gallant",
+        "levelMin": 33,
+        "levelMax": 34
+      },
+      {
+        "who": "Scarlet Adept",
+        "levelMin": 33,
+        "levelMax": 34
+      },
+      {
+        "who": "Scarlet Beastmaster",
+        "levelMin": 34,
+        "levelMax": 35
       }
     ],
     "eliteEncounters": [
       {
         "who": "Houndmaster Loksey",
-        "levelMin": 32
+        "levelMin": 35
       }
     ],
     "areaSize": 3,
@@ -17518,24 +17540,22 @@
     "type": "HostileArea",
     "commonEncounters": [
       {
-        "who": "Cannibal Ghoul",
-        "levelMin": 32,
-        "levelMax": 32
-      }
-    ],
-    "eliteEncounters": [
+        "who": "Scarlet Soldier",
+        "levelMin": 35,
+        "levelMax": 36
+      },
       {
-        "who": "Arcanist Doan",
-        "levelMin": 32
+        "who": "Scarlet Conjuror",
+        "levelMin": 35,
+        "levelMax": 36
+      },
+      {
+        "who": "Scarlet Evoker",
+        "levelMin": 36
       }
     ],
     "areaSize": 3,
     "progression": [
-      {
-        "type": "Boss",
-        "bossName": "Arcanist Doan",
-        "point": 2
-      },
       {
         "type": "Area",
         "areaName": "Crusader's Armory",
@@ -21429,24 +21449,23 @@
     "noNightVariant": true,
     "commonEncounters": [
       {
-        "who": "Cannibal Ghoul",
-        "levelMin": 56,
-        "levelMax": 56
-      }
-    ],
-    "eliteEncounters": [
+        "who": "Crimson Gallant",
+        "levelMin": 59,
+        "levelMax": 60
+      },
       {
-        "who": "Timmy the Cruel",
-        "levelMin": 58
+        "who": "Crimson Guardsman",
+        "levelMin": 59,
+        "levelMax": 60
+      },
+      {
+        "who": "Crimson Initiate",
+        "levelMin": 59,
+        "levelMax": 60
       }
     ],
     "areaSize": 3,
     "progression": [
-      {
-        "type": "Boss",
-        "bossName": "Timmy the Cruel",
-        "point": 2
-      },
       {
         "type": "Area",
         "areaName": "The Hoard",
@@ -21465,15 +21484,20 @@
     "noNightVariant": true,
     "commonEncounters": [
       {
-        "who": "Cannibal Ghoul",
-        "levelMin": 59,
-        "levelMax": 60
+        "who": "Mangled Cadaver",
+        "levelMin": 55,
+        "levelMax": 56
+      },
+      {
+        "who": "Skeletal Guardian",
+        "levelMin": 55,
+        "levelMax": 56
       }
     ],
     "eliteEncounters": [
       {
         "who": "Magistrate Barthilas",
-        "levelMin": 60
+        "levelMin": 58
       }
     ],
     "areaSize": 3,
@@ -21502,47 +21526,27 @@
     "noNightVariant": true,
     "commonEncounters": [
       {
-        "who": "Scourge Warder",
-        "levelMin": 55,
-        "levelMax": 56
+        "who": "Ravaged Cadaver",
+        "levelMin": 56,
+        "levelMax": 57
       },
       {
-        "who": "Putrid Gargoyle",
-        "levelMin": 55,
-        "levelMax": 56
-      },
-      {
-        "who": "Necromancer",
-        "levelMin": 55,
-        "levelMax": 56
-      },
-      {
-        "who": "Cursed Mage",
-        "levelMin": 55,
-        "levelMax": 56
-      },
-      {
-        "who": "Cannibal Ghoul",
-        "levelMin": 55,
-        "levelMax": 56
-      },
-      {
-        "who": "Death Cultist",
-        "levelMin": 55,
-        "levelMax": 56
+        "who": "Plague Ghoul",
+        "levelMin": 57,
+        "levelMax": 58
       }
     ],
     "eliteEncounters": [
       {
-        "who": "Postmaster Malown",
-        "levelMin": 56
+        "who": "Skul",
+        "levelMin": 58
       }
     ],
     "areaSize": 3,
     "progression": [
       {
         "type": "Boss",
-        "bossName": "Postmaster Malown",
+        "bossName": "Skul",
         "point": 2
       },
       {
@@ -21563,18 +21567,27 @@
     "noNightVariant": true,
     "commonEncounters": [
       {
-        "who": "Cannibal Ghoul",
-        "levelMin": 56,
-        "levelMax": 57
+        "who": "Skeletal Berserker",
+        "levelMin": 57,
+        "levelMax": 58
+      },
+      {
+        "who": "Patchwork Horror",
+        "levelMin": 58
+      },
+      {
+        "who": "Plague Ghoul",
+        "levelMin": 57,
+        "levelMax": 58
       }
     ],
     "eliteEncounters": [
       {
         "who": "The Unforgiven",
-        "levelMin": 57
+        "levelMin": 58
       }
     ],
-    "areaSize": 3,
+    "areaSize": 5,
     "progression": [
       {
         "type": "Boss",
@@ -21582,13 +21595,18 @@
         "point": 2
       },
       {
+        "type": "Boss",
+        "bossName": "Timmy the Cruel",
+        "point": 4
+      },
+      {
         "type": "Area",
         "areaName": "Crusaders' Square",
-        "point": 2
+        "point": 4
       },
       {
         "type": "Treasure",
-        "point": 3
+        "point": 5
       }
     ]
   },
@@ -21599,9 +21617,12 @@
     "noNightVariant": true,
     "commonEncounters": [
       {
-        "who": "Cannibal Ghoul",
-        "levelMin": 59,
-        "levelMax": 60
+        "who": "Venom Belcher",
+        "levelMin": 60
+      },
+      {
+        "who": "Bile Spewer",
+        "levelMin": 60
       }
     ],
     "eliteEncounters": [
@@ -21635,9 +21656,12 @@
     "noNightVariant": true,
     "commonEncounters": [
       {
-        "who": "Cannibal Ghoul",
-        "levelMin": 59,
-        "levelMax": 60
+        "who": "Crimson Monk",
+        "levelMin": 60
+      },
+      {
+        "who": "Crimson Inquisitor",
+        "levelMin": 60
       }
     ],
     "eliteEncounters": [
@@ -21666,9 +21690,28 @@
     "noNightVariant": true,
     "commonEncounters": [
       {
-        "who": "Cannibal Ghoul",
-        "levelMin": 59,
-        "levelMax": 60
+        "who": "Wailing Banshee",
+        "levelMin": 58,
+        "levelMax": 59
+      },
+      {
+        "who": "Shrieking Banshee",
+        "levelMin": 57,
+        "levelMax": 58
+      },
+      {
+        "who": "Rockwing Gargoyle",
+        "levelMin": 58,
+        "levelMax": 59
+      },
+      {
+        "who": "Fleshflayer Ghoul",
+        "levelMin": 58,
+        "levelMax": 59
+      },
+      {
+        "who": "Crypt Beast",
+        "levelMin": 59
       }
     ],
     "eliteEncounters": [
@@ -21685,7 +21728,7 @@
         "levelMin": 61
       }
     ],
-    "areaSize": 7,
+    "areaSize": 6,
     "progression": [
       {
         "type": "Boss",
@@ -21695,21 +21738,21 @@
       {
         "type": "Boss",
         "bossName": "Nerub'enkan",
-        "point": 4
+        "point": 3
       },
       {
         "type": "Boss",
         "bossName": "Maleki the Pallid",
-        "point": 6
+        "point": 5
       },
       {
         "type": "Area",
         "areaName": "Slaughter Square",
-        "point": 6
+        "point": 5
       },
       {
         "type": "Treasure",
-        "point": 7
+        "point": 6
       }
     ]
   },
@@ -21720,9 +21763,19 @@
     "noNightVariant": true,
     "commonEncounters": [
       {
-        "who": "Cannibal Ghoul",
-        "levelMin": 59,
-        "levelMax": 60
+        "who": "Crimson Conjuror",
+        "levelMin": 57,
+        "levelMax": 58
+      },
+      {
+        "who": "Crimson Initiate",
+        "levelMin": 57,
+        "levelMax": 58
+      },
+      {
+        "who": "Crimson Guardsman",
+        "levelMin": 57,
+        "levelMax": 58
       }
     ],
     "eliteEncounters": [
@@ -21756,9 +21809,19 @@
     "noNightVariant": true,
     "commonEncounters": [
       {
-        "who": "Cannibal Ghoul",
-        "levelMin": 59,
-        "levelMax": 60
+        "who": "Crimson Priest",
+        "levelMin": 58,
+        "levelMax": 59
+      },
+      {
+        "who": "Crimson Battle Mage",
+        "levelMin": 58,
+        "levelMax": 59
+      },
+      {
+        "who": "Crimson Defender",
+        "levelMin": 58,
+        "levelMax": 59
       }
     ],
     "eliteEncounters": [
@@ -21792,7 +21855,17 @@
     "noNightVariant": true,
     "commonEncounters": [
       {
-        "who": "Cannibal Ghoul",
+        "who": "Crimson Gallant",
+        "levelMin": 59,
+        "levelMax": 60
+      },
+      {
+        "who": "Crimson Battle Mage",
+        "levelMin": 59,
+        "levelMax": 60
+      },
+      {
+        "who": "Crimson Sorcerer",
         "levelMin": 59,
         "levelMax": 60
       }
@@ -21803,19 +21876,8 @@
         "levelMin": 60
       }
     ],
-    "eliteEncounters": [
-      {
-        "who": "Malor the Zealous",
-        "levelMin": 60
-      }
-    ],
     "areaSize": 3,
     "progression": [
-      {
-        "type": "Boss",
-        "bossName": "Malor the Zealous",
-        "point": 2
-      },
       {
         "type": "Area",
         "areaName": "The Crimson Throne",
@@ -21834,9 +21896,8 @@
     "noNightVariant": true,
     "commonEncounters": [
       {
-        "who": "Cannibal Ghoul",
-        "levelMin": 59,
-        "levelMax": 60
+        "who": "Black Guard",
+        "levelMin": 60
       }
     ],
     "eliteEncounters": [

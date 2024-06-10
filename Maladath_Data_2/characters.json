@@ -81,7 +81,7 @@
         },
         "professionSkills": {},
         "learnedRecipes": {},
-        "unspentTalentPoints": 8,
+        "unspentTalentPoints": 2,
         "faction": "Stormwind",
         "name": "Allesha",
         "race": "Human",
@@ -95,14 +95,18 @@
           "Off Hand Proficiency": 1,
           "Dagger Proficiency": 1,
           "Wand Proficiency": 1,
-          "Fireball": 0,
+          "Fireball": 3,
           "Frostbolt": 0,
-          "Arcane Missiles": 0
+          "Arcane Missiles": 0,
+          "Hot Streak": 0,
+          "Fire Blast": 0,
+          "Flamestrike": 0
         },
         "actionBars": [
           "Fireball",
           "Frostbolt",
-          "Arcane Missiles"
+          "Arcane Missiles",
+          "Fire Blast"
         ],
         "stats": {
           "stats": {
@@ -211,9 +215,9 @@
         }
       },
       "hour": 7,
-      "minute": 1,
-      "second": 38,
-      "currentSite": "Faol's Rest",
+      "minute": 16,
+      "second": 34,
+      "currentSite": "Blackrock Mountain",
       "openedChests": {},
       "siteProgress": {
         "Wicked Grotto": 1
@@ -341,7 +345,7 @@
         "Lethlor Ravine": 1,
         "Mirage Flats": 1,
         "The Dustbowl": 1,
-        "The Maker's Terrace": 1,
+        "The Maker's Terrace": 2,
         "Valley of Fangs": 1,
         "Aku'mai's Lair": 1,
         "Forgotten Pool": 1,
@@ -446,7 +450,7 @@
         "Frostmane Hold": 1,
         "Gol'Bolar Quarry": 1,
         "Helm's Bed Lake": 1,
-        "Ironband's Compound": 1,
+        "Ironband's Compound": 2,
         "South Gate Pass": 1,
         "North Gate Pass": 1,
         "Ice Flow Lake": 1,
@@ -1195,9 +1199,9 @@
         "Shadow Hold": 1,
         "Scholomance": 1,
         "Maraudon": 4,
-        "Stratholme": 1,
+        "Stratholme": 10,
         "Wailing Caverns": 1,
-        "Uldaman": 1,
+        "Uldaman": 5,
         "Razorfen Downs": 1,
         "Razorfen Kraul": 1,
         "The Deadmines": 1,
@@ -1214,22 +1218,292 @@
         "Blackwing Lair": 1,
         "Ruins of Ahn'Qiraj": 1,
         "Temple of Ahn'Qiraj": 1,
-        "Blackrock Mountain": 1,
+        "Blackrock Mountain": 7,
         "Jintha'Alor": 1,
         "Tyr's Hand": 1,
         "Hearthglen": 1,
         "Ruins of Stromgarde": 1,
         "Ruins of Alterac": 1,
-        "Scarlet Monastery Grounds": 4,
+        "Scarlet Monastery Grounds": 11,
         "Jaedenar Grounds": 1,
         "Alcaz Island": 1
       },
       "unlockedAreas": [],
       "vendorStock": {},
       "startDate": "2024-06-09T14:12:27.0144066+02:00",
-      "lastLoaded": "2024-06-09T15:01:05.5374133+02:00",
-      "lastPlayed": "2024-06-09T15:03:31.6247681+02:00",
-      "timePlayed": "00:05:46.5741354"
+      "lastLoaded": "2024-06-10T03:10:01.6976773+02:00",
+      "lastPlayed": "2024-06-10T03:10:43.7870795+02:00",
+      "timePlayed": "01:21:12.6909390",
+      "lastVisitedTalents": 1
+    },
+    {
+      "player": {
+        "currentQuests": [],
+        "completedQuests": [],
+        "level": 1,
+        "experience": 399,
+        "uniquesGotten": [],
+        "reputation": {
+          "Southsea Pirates": 0,
+          "Razormane Tribe": 0,
+          "Pandaren": 0,
+          "Grimtotem Tribe": 0,
+          "Woodpaw Tribe": 0,
+          "The Burning Legion": 0,
+          "Darkspear Tribe": 4250,
+          "Stormwind": 0,
+          "Magram Clan": 0,
+          "Gelkis Clan": 0,
+          "Kolkar Clan": 0,
+          "Orgrimmar": 4250,
+          "Frostwolf Clan": 4250,
+          "The Defiler's": 4250,
+          "Thunder Bluff": 4250,
+          "Undercity": 4600,
+          "Ironforge": 0,
+          "Dark Iron Clan": 0,
+          "Wildhammer Clan": 0,
+          "Winterfall Tribe": 0,
+          "Gnomeregan": 0,
+          "Darnassus": 0,
+          "Bloodsail Buccaneers": 0,
+          "Syndicate": 0,
+          "Warsong Outriders": 4250,
+          "Stormpike Guard": 0,
+          "Silverwing Sentinels": 0,
+          "The League of Arathor": 0,
+          "Defias Brotherhood": 0,
+          "Dalaran": 0,
+          "Burning Blade Clan": 0,
+          "Burning Legion": 0,
+          "Shadow Council": 0,
+          "Gordunni Ogres": 0,
+          "Blackrock Clan": 0,
+          "Dragonmaw Clan": 0,
+          "Black Tooth Grin Clan": 0,
+          "Gurubashi Tribe": 0,
+          "Sandfury Tribe": 0,
+          "Twilight's Hammer": 0,
+          "Grimtotem Clan": 0,
+          "Razorfen Tribe": 0,
+          "Stonemaul Ogres": 4250,
+          "Dustbelcher Ogres": 0,
+          "Deadwind Ogres": 0,
+          "Venture Co.": 0,
+          "Southsea Freebooters": 0,
+          "Atal'ai Tribe": 0,
+          "Qiraji Empire": 0,
+          "Scarlet Crusade": 0,
+          "Vilebranch Tribe": 0,
+          "Witherbark Tribe": 0,
+          "Mossflayer Tribe": 0,
+          "Frostmane Tribe": 0,
+          "Bloodscalp Tribe": 0,
+          "Skullsplitter Tribe": 0,
+          "Shatterspear Tribe": 0,
+          "Rot Hide Tribe": 0,
+          "Scourge": 0,
+          "Smolderthorn Tribe": 0,
+          "Revantusk Tribe": 4250,
+          "Blackpaw Tribe": 0,
+          "Maraudine Clan": 0,
+          "Mosshide Tribe": 0,
+          "Deadwood Tribe": 0,
+          "Bloodtooth Tribe": 0,
+          "Bristleback Tribe": 0
+        },
+        "professionSkills": {},
+        "learnedRecipes": {},
+        "faction": "Undercity",
+        "name": "Cornelius",
+        "race": "Forsaken",
+        "spec": "Warlock",
+        "gender": "Male",
+        "homeLocation": "Shadow Grave",
+        "abilities": {
+          "Staff Proficiency": 1,
+          "Cloth Proficiency": 1,
+          "One Handed Sword Proficiency": 1,
+          "Off Hand Proficiency": 1,
+          "Dagger Proficiency": 1,
+          "Wand Proficiency": 1,
+          "Corruption": 0,
+          "Summon Imp": 0,
+          "Shadow Bolt": 0
+        },
+        "actionBars": [
+          "Shadow Bolt",
+          "Corruption",
+          "Summon Imp"
+        ],
+        "stats": {
+          "stats": {
+            "Stamina": 22,
+            "Strength": 19,
+            "Agility": 18,
+            "Intellect": 20,
+            "Spirit": 27,
+            "Earth Mastery": 2,
+            "Fire Mastery": 2,
+            "Air Mastery": 2,
+            "Water Mastery": 1,
+            "Frost Mastery": 3,
+            "Lightning Mastery": 1,
+            "Arcane Mastery": 1,
+            "Decay Mastery": 3,
+            "Shadow Mastery": 3,
+            "Order Mastery": 1
+          }
+        },
+        "inventory": {
+          "items": [
+            {
+              "rarity": "Common",
+              "name": "Hearthstone",
+              "icon": "itemmiscrune01",
+              "type": "Miscellaneous",
+              "ilvl": 1,
+              "amount": 1,
+              "maxStack": 1,
+              "indestructible": true,
+              "unique": true,
+              "stats": {
+                "stats": {}
+              }
+            },
+            {
+              "rarity": "Common",
+              "name": "Scroll of Strength III",
+              "icon": "itemscroll02",
+              "type": "Miscellaneous",
+              "source": "RareDrop",
+              "ilvl": 50,
+              "amount": 1,
+              "maxStack": 5,
+              "price": 125,
+              "stats": {
+                "stats": {}
+              }
+            },
+            {
+              "rarity": "Rare",
+              "name": "Rubicund Armguards",
+              "icon": "itembracer13",
+              "type": "Wrists",
+              "armorClass": "Mail",
+              "source": "DirectDrop",
+              "ilvl": 55,
+              "lvl": 50,
+              "armor": 143,
+              "amount": 1,
+              "maxStack": 1,
+              "price": 11738,
+              "stats": {
+                "stats": {
+                  "Agility": 8,
+                  "Stamina": 14
+                }
+              },
+              "droppedBy": [
+                "Eviscerator"
+              ]
+            }
+          ],
+          "bags": []
+        },
+        "mounts": [],
+        "equipment": {
+          "Main Hand": {
+            "rarity": "Common",
+            "name": "Worn Dagger",
+            "icon": "itemshortblade05",
+            "detailedType": "Dagger",
+            "type": "One Handed",
+            "ilvl": 2,
+            "lvl": 1,
+            "minDamage": 1,
+            "maxDamage": 2,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 7,
+            "speed": 1.6,
+            "stats": {
+              "stats": {}
+            }
+          },
+          "Feet": {
+            "rarity": "Common",
+            "name": "Acolyte's Shoes",
+            "icon": "itemboots01",
+            "type": "Feet",
+            "ilvl": 1,
+            "lvl": 1,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 1,
+            "stats": {
+              "stats": {}
+            }
+          },
+          "Legs": {
+            "rarity": "Poor",
+            "name": "Acolyte's Pants",
+            "icon": "itempants01",
+            "type": "Legs",
+            "armorClass": "Cloth",
+            "ilvl": 1,
+            "lvl": 1,
+            "armor": 2,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 1,
+            "stats": {
+              "stats": {}
+            }
+          },
+          "Chest": {
+            "rarity": "Poor",
+            "name": "Acolyte's Robe",
+            "icon": "itemchestcloth24",
+            "type": "Chest",
+            "armorClass": "Cloth",
+            "ilvl": 1,
+            "lvl": 1,
+            "armor": 3,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 1,
+            "stats": {
+              "stats": {}
+            }
+          }
+        }
+      },
+      "hour": 7,
+      "currentSite": "Blackrock Mountain",
+      "ringOfLaw": "Eviscerator",
+      "openedChests": {},
+      "siteProgress": {
+        "Ring of Law": 2
+      },
+      "commonsKilled": {
+        "Burrowing Thundersnout": 1,
+        "Dark Screecher": 1
+      },
+      "raresKilled": {},
+      "elitesKilled": {
+        "Eviscerator": 1
+      },
+      "siteVisits": {
+        "Shadow Grave": 1,
+        "Blackrock Mountain": 6
+      },
+      "unlockedAreas": [],
+      "vendorStock": {},
+      "startDate": "2024-06-10T03:15:00.6242447+02:00",
+      "lastLoaded": "2024-06-10T03:18:38.28866+02:00",
+      "lastPlayed": "2024-06-10T03:19:31.0336969+02:00",
+      "timePlayed": "00:01:46.9139972"
     }
   ]
 }

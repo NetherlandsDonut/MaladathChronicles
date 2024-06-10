@@ -48,6 +48,16 @@ public class SaveGame
         //        foreach (var person in town.people)
         //            if (person.itemsSold != null && person.itemsSold.Count > 0)
         //                newSlot.vendorStock.Add(town.name + ":" + person.name, person.ExportStock());
+        var possibleBosses = new List<string>()
+        {
+            "Anub'shiah",
+            "Eviscerator",
+            "Gorosh the Dervish",
+            "Grizzle",
+            "Hedrum the Creeper",
+            "Ok'thor the Breaker"
+        };
+        newSlot.ringOfLaw = possibleBosses[random.Next(possibleBosses.Count)];
         newSlot.hour = 7;
         newSlot.currentSite = race.startingSite;
         newSlot.siteVisits = new() { { race.startingSite, 1 } };
@@ -161,6 +171,9 @@ public class SaveGame
 
     //Site at which player currently resides
     public string currentSite;
+
+    //What will be the randomly generated boss at ring of the law
+    public string ringOfLaw;
 
     //All chests opened in the game are saved here
     public Dictionary<string, Chest> openedChests;
