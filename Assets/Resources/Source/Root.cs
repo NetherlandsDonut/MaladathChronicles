@@ -4,6 +4,9 @@ using System.Collections.Generic;
 
 using UnityEngine;
 
+using static Sound;
+using static SaveGame;
+using static Coloring;
 using static Blueprint;
 using static GameSettings;
 
@@ -896,6 +899,42 @@ public static class Root
     }
 
     #endregion
+
+    public static void AddQuestList(List<Quest> quests)
+    {
+        SetAnchor(Top, 0, -38);
+        AddHeaderGroup();
+        SetRegionGroupWidth(182);
+        AddHeaderRegion(() =>
+        {
+            AddLine("Available quests:");
+        });
+        foreach (var quest in quests)
+            AddPaddingRegion(() =>
+            {
+                AddLine(quest.name);
+                AddLine("Level: ", "DarkGray");
+                AddText("" + quest.questLevel, ColorQuestLevel(quest.questLevel));
+                AddBigButton(quest.Icon(), (h) =>
+                {
+                    var can = false;
+                    if (quest.providedItems != null)
+                    {
+                        var provided = new List<Item>();
+                        foreach (var item in quest.providedItems)
+                            provided.Add(Item.items.Find(x => x.name == item.Key).CopyItem(item.Value));
+                        can = currentSave.player.inventory.CanAddItems(provided);
+                    }
+                    else can = true;
+                    if (can)
+                    {
+                        PlaySound("QuestAdd");
+                        currentSave.player.AddQuest(quest);
+                    }
+                    else PlaySound("QuestFailed");
+                });
+            });
+    }
 
     #region FluidBar
 

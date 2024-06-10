@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-
+using System.Linq;
 using UnityEngine;
 
 public class Quest
@@ -73,8 +73,23 @@ public class Quest
     //Conditions for completing the quest
     public List<QuestCondition> conditions;
 
+    //Zone icon for the quest
+    public string ZoneIcon() => "Zone" + zone.Clean();
+
     //Icon for the quest
-    public string Icon() => "Zone" + zone.Clean();
+    public string Icon()
+    {
+        var r = "Quest";
+        if (races == null || races.Count == 0) r += "Neutral";
+        else if (races.Contains("Orc") || races.Contains("Troll") || races.Contains("Tauren") || races.Contains("Forsaken")) r += "Red";
+        else if (races.Contains("Human") || races.Contains("Dwarf") || races.Contains("Gnome") || races.Contains("Night Elf")) r += "Blue";
+        else r += "Neutral";
+        if (conditions == null) r += "Sealed";
+        else if (conditions.Count == 1) r += "";
+        else if (conditions.Count >= 2) r += "Big";
+        else r += "Sealed";
+        return r;
+    }
 
     //Currently selected quest
     public static Quest quest;
@@ -90,4 +105,36 @@ public class Quest
 
     //All the sites that need to be respawned after entering the map again
     public static List<Site> sitesToRespawn;
+
+    //Copies a quest to a new one for the player to take
+    public Quest CopyQuest()
+    {
+        var newQuest = new Quest();
+        newQuest.name = name;
+        if (classes != null)
+            newQuest.classes = classes.ToList();
+        if (races != null)
+            newQuest.races = races.ToList();
+        newQuest.previous = previous;
+        newQuest.questLevel = questLevel;
+        newQuest.requiredLevel = requiredLevel;
+        if (reputationGain != null)
+            newQuest.reputationGain = reputationGain.ToDictionary(x => x.Key, x => x.Value);
+        newQuest.description = description;
+        newQuest.conditions = new();
+        if (conditions != null)
+            foreach (var condition in conditions)
+                newQuest.conditions.Add(new() { name = condition.name, amount = condition.amount, type = condition.type });
+        newQuest.faction = faction;
+        newQuest.requiredRank = requiredRank;
+        newQuest.experience = experience;
+        newQuest.money = money;
+        newQuest.siteStart = siteStart;
+        newQuest.siteEnd = siteEnd;
+        if (providedItems != null)
+            newQuest.providedItems = providedItems.ToDictionary(x => x.Key, x => x.Value);
+        newQuest.questID = questID;
+        newQuest.zone = zone;
+        return newQuest;
+    }
 }

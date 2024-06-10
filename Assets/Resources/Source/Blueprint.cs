@@ -1874,16 +1874,16 @@ public class Blueprint
             AddRegionGroup();
             SetRegionGroupWidth(190);
             SetRegionGroupHeight(281);
+            var color = ColorQuestLevel(quest.questLevel);
             AddHeaderRegion(() =>
             {
-                AddLine(quest.name, "Black");
+                AddLine(quest.name, color != null ? "Black" : "Gray");
                 AddSmallButton("OtherClose", (h) =>
                 {
                     CloseWindow("Quest");
                     PlaySound("DesktopInstanceClose");
                 });
             });
-            var color = ColorQuestLevel(quest.questLevel);
             if (color != null) SetRegionBackgroundAsImage("Sprites/Textures/SkillUp" + color);
             if (quest.description != null)
             {
@@ -1905,7 +1905,55 @@ public class Blueprint
             });
             foreach (var condition in quest.conditions)
                 condition.Print();
+            AddButtonRegion(() =>
+            {
+                SetRegionBackground(RedButton);
+                AddLine("Abandon Quest");
+            },
+            (h) =>
+            {
+                PlaySound("DesktopMenuOpen");
+                SpawnWindowBlueprint("QuestConfirmAbandon");
+            });
         }),
+        new("QuestConfirmAbandon", () => {
+            SetAnchor(-92, 142);
+            AddHeaderGroup();
+            SetRegionGroupWidth(182);
+            AddPaddingRegion(() =>
+            {
+                AddLine("You are about to abandon", "", "Center");
+                AddLine(quest.name, "", "Center");
+            });
+            AddRegionGroup();
+            SetRegionGroupWidth(91);
+            AddButtonRegion(() =>
+            {
+                SetRegionBackground(RedButton);
+                AddLine("Proceed", "", "Center");
+            },
+            (h) =>
+            {
+                PlaySound("DesktopMenuClose");
+                PlaySound("QuestFailed");
+                currentSave.player.RemoveQuest(quest);
+                quest = null;
+                CloseWindow("QuestConfirmAbandon");
+                CloseWindow("Quest");
+                CDesktop.RespawnAll();
+            });
+            AddRegionGroup();
+            SetRegionGroupWidth(91);
+            AddButtonRegion(() =>
+            {
+                AddLine("Cancel", "", "Center");
+            },
+            (h) =>
+            {
+                PlaySound("DesktopMenuClose");
+                CloseWindow("QuestConfirmAbandon");
+            });
+        }, true),
         new("QuestSort", () => {
             SetAnchor(Center);
             AddRegionGroup();
@@ -2462,6 +2510,7 @@ public class Blueprint
             );
         }),
         
+
         //Complex
         new("Complex", () => 
         {
@@ -2484,6 +2533,12 @@ public class Blueprint
             AddPaddingRegion(() => { AddLine("Sites: "); });
             foreach (var site in complex.sites)
                 PrintComplexSite(site);
+        }),
+        new("ComplexQuestAvailable", () =>
+        {
+            var quests = currentSave.player.AvailableQuestsAt(complex).OrderBy(x => x.questLevel).ToList();
+            if (quests.Count == 0) return;
+            AddQuestList(quests);
         }),
 
         //Instance
@@ -2520,6 +2575,12 @@ public class Blueprint
             });
             foreach (var wing in instance.wings)
                 PrintInstanceWing(instance, wing);
+        }),
+        new("InstanceQuestAvailable", () =>
+        {
+            var quests = currentSave.player.AvailableQuestsAt(instance).OrderBy(x => x.questLevel).ToList();
+            if (quests.Count == 0) return;
+            AddQuestList(quests);
         }),
 
         //Hostile Area
@@ -2659,6 +2720,12 @@ public class Blueprint
                     }
                 );
             });
+        }),
+        new("HostileAreaQuestAvailable", () =>
+        {
+            var quests = currentSave.player.AvailableQuestsAt(area).OrderBy(x => x.questLevel).ToList();
+            if (quests.Count == 0) return;
+            AddQuestList(quests);
         }),
 
         //Town
@@ -2825,6 +2892,12 @@ public class Blueprint
                 }
             });
         }),
+        new("TownQuestAvailable", () =>
+        {
+            var quests = currentSave.player.AvailableQuestsAt(town).OrderBy(x => x.questLevel).ToList();
+            if (quests.Count == 0) return;
+            AddQuestList(quests);
+        }),
         new("Person", () => {
             SetAnchor(TopLeft, 19, -38);
             AddHeaderGroup();
@@ -2891,7 +2964,6 @@ public class Blueprint
                 },
                 (h) =>
                 {
-                    currentSave.banks ??= new();
                     if (!currentSave.banks.ContainsKey(town.name))
                         currentSave.banks.Add(town.name, new() { items = new() });
                     PlaySound("DesktopBankOpen", 0.2f);
@@ -4924,6 +4996,7 @@ public class Blueprint
             SpawnWindowBlueprint("HostileAreaProgress");
             SpawnWindowBlueprint("HostileAreaDenizens");
             SpawnWindowBlueprint("HostileAreaElites");
+            SpawnWindowBlueprint("HostileAreaQuestAvailable");
             //if (area.fishing) SpawnWindowBlueprint("FishingAnchor");
             SpawnWindowBlueprint("MapToolbarShadow");
             SpawnWindowBlueprint("MapToolbarClockLeft");
@@ -5036,6 +5109,7 @@ public class Blueprint
         new("Town", () => 
         {
             SetDesktopBackground(town.Background());
+            SpawnWindowBlueprint("TownQuestAvailable");
             SpawnWindowBlueprint("MapToolbarShadow");
             SpawnWindowBlueprint("MapToolbarClockLeft");
             SpawnWindowBlueprint("MapToolbar");
@@ -5136,6 +5210,7 @@ public class Blueprint
         {
             SetDesktopBackground(instance.Background());
             SpawnWindowBlueprint("Instance");
+            SpawnWindowBlueprint("InstanceQuestAvailable");
             SpawnWindowBlueprint("MapToolbarShadow");
             SpawnWindowBlueprint("MapToolbarClockLeft");
             SpawnWindowBlueprint("MapToolbar");
@@ -5151,11 +5226,13 @@ public class Blueprint
                 if (CloseWindow("HostileArea"))
                 {
                     area = null;
+                    CloseWindow("HostileAreaQuestAvailable");
                     CloseWindow("HostileAreaProgress");
                     CloseWindow("HostileAreaDenizens");
                     CloseWindow("HostileAreaElites");
                     PlaySound("DesktopButtonClose");
                     SetDesktopBackground(instance.Background());
+                    SpawnWindowBlueprint("InstanceQuestAvailable");
                 }
                 else if (instance.complexPart)
                 {
@@ -5173,6 +5250,7 @@ public class Blueprint
         {
             SetDesktopBackground(complex.Background());
             SpawnWindowBlueprint("Complex");
+            SpawnWindowBlueprint("ComplexQuestAvailable");
             SpawnWindowBlueprint("MapToolbarShadow");
             SpawnWindowBlueprint("MapToolbarClockLeft");
             SpawnWindowBlueprint("MapToolbar");
@@ -5187,10 +5265,12 @@ public class Blueprint
                 {
                     area = null;
                     PlaySound("DesktopButtonClose");
+                    CloseWindow("HostileAreaQuestAvailable");
                     CloseWindow("HostileAreaProgress");
                     CloseWindow("HostileAreaDenizens");
                     CloseWindow("HostileAreaElites");
                     SetDesktopBackground(complex.Background());
+                    SpawnWindowBlueprint("ComplexQuestAvailable");
                 }
                 else
                 {

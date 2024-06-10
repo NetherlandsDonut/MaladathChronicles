@@ -102,9 +102,35 @@ public class Entity
     //another quest in line first to be completed
     public List<int> completedQuests;
 
+    //Removes a quest from the quest log
+    public void RemoveQuest(Quest quest)
+    {
+        currentQuests.Remove(quest);
+        if (quest.providedItems != null)
+        {
+            var all = inventory.items.Concat(SaveGame.currentSave.banks.SelectMany(x => x.Value.items)).ToList();
+            var find = all.FindAll(x => quest.providedItems.ContainsKey(x.name));
+            foreach (var item in find)
+                item.amount -= quest.providedItems[item.name];
+            inventory.items.RemoveAll(x => x.amount <= 0);
+            foreach (var bank in SaveGame.currentSave.banks)
+                bank.Value.items.RemoveAll(x => x.amount <= 0);
+        }
+    }
+
+    //Adds new quest to the quest log
+    public void AddQuest(Quest quest)
+    {
+        currentQuests.Add(quest.CopyQuest());
+        if (quest.providedItems != null)
+            foreach (var item in quest.providedItems)
+                inventory.AddItem(Item.items.Find(x => x.name == item.Key).CopyItem(item.Value));
+    }
+
     //Check if this entity can pick up a specific quest
     public bool CanPickQuest(Quest quest, Site site)
     {
+        if (currentQuests.Exists(x => x.questID == quest.questID)) return false;
         if (completedQuests.Contains(quest.questID)) return false;
         if (quest.requiredLevel > level) return false;
         if (quest.previous != 0 && !completedQuests.Contains(quest.previous)) return false;

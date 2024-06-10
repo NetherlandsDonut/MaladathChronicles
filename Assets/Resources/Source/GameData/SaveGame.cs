@@ -33,6 +33,7 @@ public class SaveGame
             unlockedAreas = new(),
             vendorStock = new(),
             openedChests = new(),
+            banks = new(),
             startDate = DateTime.Now,
             player = new Entity
             (

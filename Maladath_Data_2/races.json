@@ -2,7 +2,7 @@
   {
     "name": "Carnivous the Breaker",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Furbolg",
     "side": "Neutral",
     "kind": "Rare",
     "portrait": "PortraitFurbolgBlack",
@@ -12,7 +12,7 @@
   {
     "name": "Blackwood Pathfinder",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Furbolg",
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitFurbolgBlack",
@@ -22,7 +22,7 @@
   {
     "name": "Blackwood Windtalker",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Furbolg",
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitFurbolgBlack",
