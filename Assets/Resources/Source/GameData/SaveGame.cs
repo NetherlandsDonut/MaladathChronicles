@@ -261,7 +261,7 @@ public class SaveGame
     public string LoginBackground()
     {
         var find = Site.FindSite(x => x.name == currentSite);
-        return find != null ? find.Background() : "Sky";
+        return find != null ? find.Background() : "Backgrounds/Sky";
     }
 
     //Logs a character out of the world

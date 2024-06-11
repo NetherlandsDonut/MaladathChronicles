@@ -16,7 +16,7 @@ public class Font
     //Name of the font
     public string name;
 
-    //Textures of all characters provided by the font in the order of the charset variable
+    //Fullscreen of all characters provided by the font in the order of the charset variable
     public Sprite[] glyphs;
 
     //Widths of the textures, later used in calculating overall text length

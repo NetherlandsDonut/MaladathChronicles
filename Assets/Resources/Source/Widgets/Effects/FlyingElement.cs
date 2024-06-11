@@ -38,7 +38,7 @@ public class FlyingElement : MonoBehaviour
     public static GameObject SpawnFlyingElement(Vector3 position, string sprite, bool forPlayer)
     {
         var element = Instantiate(Resources.Load<GameObject>("Prefabs/PrefabElement"));
-        element.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/Buttons/" + sprite);
+        element.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Buttons/" + sprite);
         element.transform.parent = Board.board.window.desktop.transform;
         element.transform.position = position + new Vector3(17, 17);
         element.GetComponent<FlyingElement>().Initiate(forPlayer);

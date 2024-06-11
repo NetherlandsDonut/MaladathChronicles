@@ -62,7 +62,7 @@ public class Shatter : MonoBehaviour
         shatter.transform.parent = Board.board.window.desktop.transform;
         shatter.transform.position = position + new Vector3(-2, -8);
         shatter.layer = 1;
-        var foo = Resources.Load<Sprite>("Sprites/Building/Buttons/" + sprite);
+        var foo = Resources.Load<Sprite>("Sprites/Buttons/" + sprite);
         if (foo == null)
         {
             Destroy(shatter);
@@ -93,7 +93,7 @@ public class Shatter : MonoBehaviour
 
     public static void SpawnShatter(double speed, double amount, Vector3 position, string sprite, string block = "0000")
     {
-        var foo = Resources.Load<Sprite>("Sprites/Building/BigButtons/" + sprite);
+        var foo = Resources.Load<Sprite>("Sprites/ButtonsBig/" + sprite);
         if (foo == null) return;
         var shatter = new GameObject("Shatter", typeof(Shatter));
         shatter.GetComponent<Shatter>().Initiate(7);

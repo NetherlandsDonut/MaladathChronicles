@@ -67,7 +67,7 @@ public class Blueprint
             });
             AddPaddingRegion(() =>
             {
-                SetRegionBackgroundAsImage("Sprites/Textures/Kalimdor");
+                SetRegionBackgroundAsImage("BestiaryKalimdor");
                 SetRegionAsGroupExtender();
             });
             AddRegionGroup();
@@ -116,7 +116,7 @@ public class Blueprint
             });
             AddPaddingRegion(() =>
             {
-                SetRegionBackgroundAsImage("Sprites/Textures/EasternKingdoms");
+                SetRegionBackgroundAsImage("BestiaryEasternKingdoms");
                 SetRegionAsGroupExtender();
             });
             AddRegionGroup();
@@ -161,16 +161,16 @@ public class Blueprint
             var boardBackground = new GameObject("BoardBackground", typeof(SpriteRenderer), typeof(SpriteMask));
             boardBackground.transform.parent = CDesktop.LBWindow.transform;
             boardBackground.transform.localPosition = new Vector2(-17, 17);
-            boardBackground.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Textures/BoardBackground" + board.field.GetLength(0) + "x" + board.field.GetLength(1));
+            boardBackground.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/BoardFrames/BoardBackground" + board.field.GetLength(0) + "x" + board.field.GetLength(1));
             var mask = boardBackground.GetComponent<SpriteMask>();
-            mask.sprite = Resources.Load<Sprite>("Sprites/Textures/BoardMask" + board.field.GetLength(0) + "x" + board.field.GetLength(1));
+            mask.sprite = Resources.Load<Sprite>("Sprites/BoardFrames/BoardMask" + board.field.GetLength(0) + "x" + board.field.GetLength(1));
             mask.isCustomRangeActive = true;
             mask.frontSortingLayerID = SortingLayer.NameToID("Missile");
             mask.backSortingLayerID = SortingLayer.NameToID("Default");
             boardBackground = new GameObject("BoardInShadow", typeof(SpriteRenderer));
             boardBackground.transform.parent = CDesktop.LBWindow.transform;
             boardBackground.transform.localPosition = new Vector2(-17, 17);
-            boardBackground.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Textures/BoardShadow" + board.field.GetLength(0) + "x" + board.field.GetLength(1));
+            boardBackground.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/BoardFrames/BoardShadow" + board.field.GetLength(0) + "x" + board.field.GetLength(1));
             boardBackground.GetComponent<SpriteRenderer>().sortingLayerName = "CameraShadow";
         }, true),
         new("Board", () => {
@@ -503,7 +503,7 @@ public class Blueprint
             AddRegionGroup();
             SetRegionGroupWidth((319 - experience) * 2);
             SetRegionGroupHeight(12);
-            AddPaddingRegion(() => { SetRegionBackground(NoExperience); });
+            AddPaddingRegion(() => { SetRegionBackground(ExperienceNone); });
         }, true),
         new("ExperienceBarBorder", () => {
             SetAnchor(Bottom);
@@ -551,7 +551,7 @@ public class Blueprint
         new("CharacterRoster", () => {
             if (settings.selectedCharacter != "")
                 SetDesktopBackground(saves[settings.selectedRealm].Find(x => x.player.name == settings.selectedCharacter).LoginBackground(), true);
-            else SetDesktopBackground("Sky", true);
+            else SetDesktopBackground("Backgrounds/Sky", true);
             SetAnchor(TopRight);
             AddRegionGroup();
             SetRegionGroupWidth(171);
@@ -630,7 +630,7 @@ public class Blueprint
                             SpawnWindowBlueprint("CharacterCreationFinish");
                             SpawnWindowBlueprint("CharacterCreationFactionHorde");
                             SpawnWindowBlueprint("CharacterCreationFactionAlliance");
-                            SetDesktopBackground("Leather");
+                            SetDesktopBackground("Backgrounds/Leather");
                         });
                     else AddPaddingRegion(() => AddLine("Create a new character", "DarkGray"));
                 }
@@ -1241,7 +1241,7 @@ public class Blueprint
             });
             AddRegionGroup();
             SetRegionGroupWidth(114);
-            if (creationSpec != "" && creationGender != "" && creationRace != "" && String.creationName.Value().Length < 3) AddButtonRegion(() => { SetRegionBackground(RedButton); AddLine("Finish Creation", "Black", "Center"); });
+            if (creationSpec != "" && creationGender != "" && creationRace != "" && String.creationName.Value().Length < 3) AddButtonRegion(() => { SetRegionBackground(ButtonRed); AddLine("Finish Creation", "Black", "Center"); });
             else if (creationSpec != "" && creationGender != "" && creationRace != "")
             {
                 AddButtonRegion(() =>
@@ -1509,11 +1509,11 @@ public class Blueprint
                     });
                     var skill = currentSave.player.professionSkills[profession.name].Item1;
                     if (recipes[index + 11 * regionGroup.pagination()].skillUpYellow > skill)
-                        SetRegionBackgroundAsImage("Sprites/Textures/SkillUpOrange");
+                        SetRegionBackgroundAsImage("SkillUpOrange");
                     else if (recipes[index + 11 * regionGroup.pagination()].skillUpGreen > skill)
-                        SetRegionBackgroundAsImage("Sprites/Textures/SkillUpYellow");
+                        SetRegionBackgroundAsImage("SkillUpYellow");
                     else if (recipes[index + 11 * regionGroup.pagination()].skillUpGray > skill)
-                        SetRegionBackgroundAsImage("Sprites/Textures/SkillUpGreen");
+                        SetRegionBackgroundAsImage("SkillUpGreen");
                 }
                 else if (recipes.Count == index + 11 * regionGroup.pagination())
                 {
@@ -1863,7 +1863,7 @@ public class Blueprint
                         PlaySound("DesktopInstanceOpen");
                     });
                     var color = ColorQuestLevel(quests[index + 11 * regionGroup.pagination()].questLevel);
-                    if (color != null) SetRegionBackgroundAsImage("Sprites/Textures/SkillUp" + color);
+                    if (color != null) SetRegionBackgroundAsImage("SkillUp" + color);
                 }
                 else if (quests.Count == index + 11 * regionGroup.pagination())
                     AddPaddingRegion(() =>
@@ -1891,7 +1891,7 @@ public class Blueprint
             SetRegionGroupWidth(91);
             AddButtonRegion(() =>
             {
-                SetRegionBackground(RedButton);
+                SetRegionBackground(ButtonRed);
                 AddLine("Proceed", "", "Center");
             },
             (h) =>
@@ -2281,7 +2281,7 @@ public class Blueprint
             SetRegionGroupWidth(91);
             AddButtonRegion(() =>
             {
-                SetRegionBackground(RedButton);
+                SetRegionBackground(ButtonRed);
                 AddLine("Proceed", "", "Center");
             },
             (h) =>
@@ -2345,7 +2345,7 @@ public class Blueprint
                 }
                 else if (Realm.realms.Find(x => x.name == settings.selectedRealm).hardcore)
                 {
-                    SetRegionBackground(RedButton);
+                    SetRegionBackground(ButtonRed);
                     AddLine("Game Over", "", "Center");
                 }
                 else
@@ -3868,16 +3868,16 @@ public class Blueprint
             var boardBackground = new GameObject("BoardBackground", typeof(SpriteRenderer), typeof(SpriteMask));
             boardBackground.transform.parent = CDesktop.LBWindow.transform;
             boardBackground.transform.localPosition = new Vector2(-17, 17);
-            boardBackground.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Textures/BoardBackground" + fishingBoard.field.GetLength(0) + "x" + fishingBoard.field.GetLength(1));
+            boardBackground.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/BoardFrames/BoardBackground" + fishingBoard.field.GetLength(0) + "x" + fishingBoard.field.GetLength(1));
             var mask = boardBackground.GetComponent<SpriteMask>();
-            mask.sprite = Resources.Load<Sprite>("Sprites/Textures/BoardMask" + fishingBoard.field.GetLength(0) + "x" + fishingBoard.field.GetLength(1));
+            mask.sprite = Resources.Load<Sprite>("Sprites/BoardFrames/BoardMask" + fishingBoard.field.GetLength(0) + "x" + fishingBoard.field.GetLength(1));
             mask.isCustomRangeActive = true;
             mask.frontSortingLayerID = SortingLayer.NameToID("Missile");
             mask.backSortingLayerID = SortingLayer.NameToID("Default");
             boardBackground = new GameObject("BoardInShadow", typeof(SpriteRenderer));
             boardBackground.transform.parent = CDesktop.LBWindow.transform;
             boardBackground.transform.localPosition = new Vector2(-17, 17);
-            boardBackground.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Textures/BoardShadow" + fishingBoard.field.GetLength(0) + "x" + fishingBoard.field.GetLength(1));
+            boardBackground.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/BoardFrames/BoardShadow" + fishingBoard.field.GetLength(0) + "x" + fishingBoard.field.GetLength(1));
             boardBackground.GetComponent<SpriteRenderer>().sortingLayerName = "CameraShadow";
         }),
         new("FishingBoard", () => {
@@ -4296,7 +4296,7 @@ public class Blueprint
             });
             AddPaddingRegion(() => { });
             var maladathIcon = new GameObject("MaladathIcon", typeof(SpriteRenderer));
-            maladathIcon.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Textures/MaladathIcon");
+            maladathIcon.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Other/MaladathIcon");
             maladathIcon.GetComponent<SpriteRenderer>().sortingLayerName = "Upper";
             maladathIcon.GetComponent<SpriteRenderer>().sortingOrder = 1;
             maladathIcon.transform.parent = CDesktop.LBWindow.transform;
@@ -4766,7 +4766,7 @@ public class Blueprint
             var specShadow = new GameObject("SpecShadow", typeof(SpriteRenderer));
             specShadow.transform.parent = CDesktop.LBWindow.transform;
             specShadow.transform.localPosition = new Vector3(2, -2, 0.1f);
-            specShadow.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Textures/Specs/SpecShadow");
+            specShadow.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Other/SpecShadow");
             DisableShadows();
             AddHeaderGroup();
             SetRegionGroupWidth(190);
@@ -4774,7 +4774,7 @@ public class Blueprint
             AddPaddingRegion(() =>
             {
                 SetRegionAsGroupExtender();
-                SetRegionBackgroundAsImage("Sprites/Textures/Specs/" + currentSave.player.spec + currentSave.player.Spec().talentTrees[currentSave.lastVisitedTalents].name + "Right");
+                SetRegionBackgroundAsImage("Specs/" + currentSave.player.spec + currentSave.player.Spec().talentTrees[currentSave.lastVisitedTalents].name + "Right");
                 if (currentSave.player.TreeCompletion(currentSave.lastVisitedTalents, 0) < defines.adeptTreeRequirement)
                     SetRegionBackgroundToGrayscale();
             });
@@ -4790,14 +4790,14 @@ public class Blueprint
             var specShadow = new GameObject("SpecShadow", typeof(SpriteRenderer));
             specShadow.transform.parent = CDesktop.LBWindow.transform;
             specShadow.transform.localPosition = new Vector3(2, -2, 0.1f);
-            specShadow.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Textures/Specs/SpecShadow");
+            specShadow.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Other/SpecShadow");
             AddHeaderGroup();
             SetRegionGroupWidth(190);
             SetRegionGroupHeight(309);
             AddPaddingRegion(() =>
             {
                 SetRegionAsGroupExtender();
-                SetRegionBackgroundAsImage("Sprites/Textures/Specs/" + currentSave.player.spec + currentSave.player.Spec().talentTrees[currentSave.lastVisitedTalents].name + "Left");
+                SetRegionBackgroundAsImage("Specs/" + currentSave.player.spec + currentSave.player.Spec().talentTrees[currentSave.lastVisitedTalents].name + "Left");
             });
             AddHeaderRegion(() =>
             {
@@ -4869,13 +4869,13 @@ public class Blueprint
         new("Map", () => 
         {
             PlaySound("DesktopOpenSave", 0.2f);
-            SetDesktopBackground("LoadingScreens/LoadingScreen" + (CDesktop.cameraDestination.x < 2470 ? "Kalimdor" : "EasternKingdoms"));
+            SetDesktopBackground("LoadingScreens/" + (CDesktop.cameraDestination.x < 2470 ? "Kalimdor" : "EasternKingdoms"));
             loadingBar = new GameObject[2];
             loadingBar[0] = new GameObject("LoadingBarBegin", typeof(SpriteRenderer));
-            loadingBar[0].GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Textures/LoadingBarEnd");
+            loadingBar[0].GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Other/LoadingBarEnd");
             loadingBar[0].transform.position = new Vector3(-1171, 854);
             loadingBar[1] = new GameObject("LoadingBar", typeof(SpriteRenderer));
-            loadingBar[1].GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Textures/LoadingBarStretch");
+            loadingBar[1].GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Other/LoadingBarStretch");
             loadingBar[1].transform.position = new Vector3(-1168, 854);
             OrderLoadingMap();
             AddHotkey(W, () => { MoveCamera(new Vector2(0, EuelerGrowth())); }, false);
@@ -5326,7 +5326,7 @@ public class Blueprint
         new("CharacterSheet", () => 
         {
             PlaySound("DesktopCharacterSheetOpen");
-            SetDesktopBackground("RedWood");
+            SetDesktopBackground("Backgrounds/RedWood");
             SpawnWindowBlueprint("MapToolbarShadow");
             SpawnWindowBlueprint("MapToolbarClockLeft");
             SpawnWindowBlueprint("MapToolbar");
@@ -5347,7 +5347,7 @@ public class Blueprint
         new("QuestLog", () => 
         {
             PlaySound("DesktopInventoryOpen");
-            SetDesktopBackground("RedLeather");
+            SetDesktopBackground("Backgrounds/RedLeather");
             SpawnWindowBlueprint("MapToolbarShadow");
             SpawnWindowBlueprint("MapToolbarClockLeft");
             SpawnWindowBlueprint("MapToolbar");
@@ -5391,7 +5391,7 @@ public class Blueprint
         }),
         new("TalentScreen", () => 
         {
-            SetDesktopBackground("Stone");
+            SetDesktopBackground("Backgrounds/Stone");
             SpawnWindowBlueprint("MapToolbarClockLeft");
             SpawnWindowBlueprint("MapToolbar");
             SpawnWindowBlueprint("MapToolbarClockRight");
@@ -5432,7 +5432,7 @@ public class Blueprint
         new("SpellbookScreen", () => 
         {
             PlaySound("DesktopSpellbookScreenOpen");
-            SetDesktopBackground("Skin");
+            SetDesktopBackground("Backgrounds/Skin");
             SpawnWindowBlueprint("MapToolbarShadow");
             SpawnWindowBlueprint("MapToolbarClockLeft");
             SpawnWindowBlueprint("MapToolbar");
@@ -5450,7 +5450,7 @@ public class Blueprint
         new("EquipmentScreen", () => 
         {
             PlaySound("DesktopInventoryOpen");
-            SetDesktopBackground("Leather");
+            SetDesktopBackground("Backgrounds/Leather");
             SpawnWindowBlueprint("MapToolbarShadow");
             SpawnWindowBlueprint("MapToolbarClockLeft");
             SpawnWindowBlueprint("MapToolbar");
@@ -5470,7 +5470,7 @@ public class Blueprint
         new("BestiaryScreen", () => 
         {
             PlaySound("DesktopInstanceOpen");
-            SetDesktopBackground("Stone");
+            SetDesktopBackground("Backgrounds/Stone");
             SpawnWindowBlueprint("MapToolbarShadow");
             SpawnWindowBlueprint("MapToolbarClockLeft");
             SpawnWindowBlueprint("MapToolbar");
@@ -5490,7 +5490,7 @@ public class Blueprint
         new("CraftingScreen", () => 
         {
             PlaySound("DesktopInstanceOpen");
-            SetDesktopBackground("Skin");
+            SetDesktopBackground("Backgrounds/Skin");
             SpawnWindowBlueprint("ProfessionListPrimary");
             SpawnWindowBlueprint("ProfessionListSecondary");
             SpawnWindowBlueprint("MapToolbarShadow");
@@ -5510,7 +5510,7 @@ public class Blueprint
         }),
         new("GameMenu", () => 
         {
-            SetDesktopBackground("Leather");
+            SetDesktopBackground("Backgrounds/Leather");
             SpawnWindowBlueprint("GameMenu");
             AddHotkey(Escape, () =>
             {
@@ -5528,7 +5528,7 @@ public class Blueprint
         }),
         new("RankingScreen", () => 
         {
-            SetDesktopBackground("SkyRed");
+            SetDesktopBackground("Backgrounds/SkyRed");
             SpawnWindowBlueprint("CharacterRankingShadow");
             SpawnWindowBlueprint("CharacterRankingTop");
             SpawnWindowBlueprint("CharacterRankingList");

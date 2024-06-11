@@ -203,12 +203,12 @@ public static class Root
         var cameraBorder = new GameObject("CameraBorder", typeof(SpriteRenderer));
         var cameraShadow = new GameObject("CameraShadow", typeof(SpriteRenderer));
         cameraShadow.transform.parent = cameraBorder.transform.parent = newDesktop.screen.transform;
-        cameraBorder.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Textures/CameraBorder");
-        cameraShadow.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Textures/CameraShadow");
+        cameraBorder.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Fullscreen/Camera/CameraBorder");
+        cameraShadow.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Fullscreen/Camera/CameraShadow");
         cameraBorder.GetComponent<SpriteRenderer>().sortingLayerName = "CameraBorder";
         cameraShadow.GetComponent<SpriteRenderer>().sortingLayerName = "CameraShadow";
         newDesktop.screenlock = new GameObject("Screenlock", typeof(BoxCollider2D), typeof(SpriteRenderer));
-        newDesktop.screenlock.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Textures/Screenlock");
+        newDesktop.screenlock.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Camera/CameraScreenlock");
         newDesktop.screenlock.GetComponent<SpriteRenderer>().sortingLayerName = "DesktopBackground";
         newDesktop.screenlock.GetComponent<SpriteRenderer>().sortingOrder = 1;
         newDesktop.screenlock.GetComponent<BoxCollider2D>().size = new Vector2(640, 360);
@@ -272,7 +272,7 @@ public static class Root
         var transition = new GameObject("CameraTransition", typeof(SpriteRenderer), typeof(Shatter));
         transition.transform.parent = CDesktop.screen.transform;
         transition.transform.localPosition = new Vector3(0, 0, -0.01f);
-        transition.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Textures/CameraTransition");
+        transition.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Fullscreen/Camera/CameraTransition");
         transition.GetComponent<SpriteRenderer>().sortingLayerName = "CameraBorder";
         transition.GetComponent<Shatter>().Initiate(speed, 0, transition.GetComponent<SpriteRenderer>());
         CDesktop.transition = transition;
@@ -286,9 +286,9 @@ public static class Root
 
     public static void SetDesktopBackground(string texture, bool followCamera = true)
     {
-        var sprite = Resources.Load<Sprite>("Sprites/Textures/" + texture);
+        var sprite = Resources.Load<Sprite>("Sprites/Fullscreen/" + texture);
         var temp = (followCamera ? CDesktop.screen.gameObject : CDesktop.gameObject).GetComponent<SpriteRenderer>();
-        if (sprite == null) Debug.Log("ERROR 004: Desktop background not found: \"Sprites/Textures/" + texture + "\"");
+        if (sprite == null) Debug.Log("ERROR 004: Desktop background not found: \"Sprites/Fullscreen/" + texture + "\"");
         if (temp.sprite != sprite)
         {
             SpawnTransition();
@@ -445,7 +445,7 @@ public static class Root
         newObject.transform.parent = onWhat.transform;
         newObject.transform.localPosition = onWhat.background.transform.localPosition - new Vector3(0, 0, 0.1f);
         newObject.transform.localScale = onWhat.background.transform.localScale - new Vector3(19 * onWhat.smallButtons.Count, 0);
-        newObject.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/Backgrounds/" + overlay);
+        newObject.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Fills/" + overlay);
         if (time > 0)
         {
             newObject.AddComponent<Shatter>().render = newObject.GetComponent<SpriteRenderer>();
@@ -515,10 +515,10 @@ public static class Root
         CDesktop.LBWindow.LBRegionGroup.LBRegion.backgroundType = backgroundType;
     }
 
-    public static void SetRegionBackgroundAsImage(string path)
+    public static void SetRegionBackgroundAsImage(string replacement)
     {
         SetRegionBackground(Image);
-        CDesktop.LBWindow.LBRegionGroup.LBRegion.backgroundImage = Resources.Load<Sprite>(path);
+        CDesktop.LBWindow.LBRegionGroup.LBRegion.backgroundImage = Resources.Load<Sprite>("Sprites/RegionReplacements/" + replacement);
     }
 
     public static void PrintPriceRegion(int price)
@@ -561,7 +561,7 @@ public static class Root
         if (type == Header) return "Gray";
         if (type == Padding) return "Gray";
         if (type == Button) return "Black";
-        if (type == RedButton) return "Black";
+        if (type == ButtonRed) return "Black";
         else return "Gray";
     }
 
@@ -602,13 +602,13 @@ public static class Root
         var newObject = new GameObject("SmallButtonOverlay", typeof(SpriteRenderer));
         newObject.transform.parent = onWhat.transform;
         newObject.transform.localPosition = new Vector3(overlay == "PlayerLocationFromBelow" || overlay == "PlayerLocationSmall" || overlay == "AvailableQuest" ? 1 : 0, overlay == "AvailableQuest" ? -8.5f : (overlay == "PlayerLocationSmall" || overlay == "PlayerLocationFromBelow" ? -6f : 0), -0.01f);
-        if (overlay == "Cooldown") newObject.AddComponent<AnimatedSprite>().Initiate("Sprites/Building/Shadows/Cooldown", true);
-        else if (overlay == "YellowGlow") newObject.AddComponent<AnimatedSprite>().Initiate("Sprites/Building/Shadows/YellowGlow", true);
-        else if (overlay == "AutoCast") newObject.AddComponent<AnimatedSprite>().Initiate("Sprites/Building/Shadows/AutoCastFull", true);
-        else if (overlay == "PlayerLocationFromBelow") newObject.AddComponent<AnimatedSprite>().Initiate("Sprites/Building/Shadows/PlayerLocationFromBelow", false, 0.07f);
-        else if (overlay == "PlayerLocationSmall") newObject.AddComponent<AnimatedSprite>().Initiate("Sprites/Building/Shadows/PlayerLocationSmall", false, 0.07f);
-        else if (overlay == "AvailableQuest") newObject.AddComponent<AnimatedSprite>().Initiate("Sprites/Building/Shadows/AvailableQuest", false, 0.07f);
-        else newObject.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/Buttons/" + overlay);
+        if (overlay == "Cooldown") newObject.AddComponent<AnimatedSprite>().Initiate("Sprites/Other/Cooldown", true);
+        else if (overlay == "YellowGlow") newObject.AddComponent<AnimatedSprite>().Initiate("Sprites/Other/YellowGlow", true);
+        else if (overlay == "AutoCast") newObject.AddComponent<AnimatedSprite>().Initiate("Sprites/Other/AutoCastFull", true);
+        else if (overlay == "PlayerLocationFromBelow") newObject.AddComponent<AnimatedSprite>().Initiate("Sprites/Other/PlayerLocationFromBelow", false, 0.07f);
+        else if (overlay == "PlayerLocationSmall") newObject.AddComponent<AnimatedSprite>().Initiate("Sprites/Other/PlayerLocationSmall", false, 0.07f);
+        else if (overlay == "AvailableQuest") newObject.AddComponent<AnimatedSprite>().Initiate("Sprites/Other/AvailableQuest", false, 0.07f);
+        else newObject.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Buttons/" + overlay);
         newObject.GetComponent<SpriteRenderer>().sortingOrder = sortingOrder;
         newObject.GetComponent<SpriteRenderer>().sortingLayerName = CDesktop.LBWindow.layer;
         if (time > 0)
@@ -650,7 +650,7 @@ public static class Root
     {
         var region = CDesktop.LBWindow.LBRegionGroup.LBRegion;
         var button = region.LBBigButton.gameObject;
-        return AddBigButtonOverlay(button, "Sprites/Building/BigButtons/" + overlay, time, sortingOrder);
+        return AddBigButtonOverlay(button, "Sprites/ButtonsBig/" + overlay, time, sortingOrder);
     }
 
     public static void BigButtonFlipX()
@@ -674,7 +674,7 @@ public static class Root
         var newObject = new GameObject("BigButtonGrid", typeof(SpriteRenderer));
         newObject.transform.parent = button.transform;
         newObject.transform.localPosition = new Vector3(0, 0, -0.01f);
-        var sprites = Resources.LoadAll<Sprite>("Sprites/Building/Shadows/CooldownBig");
+        var sprites = Resources.LoadAll<Sprite>("Sprites/Other/CooldownBig");
         newObject.GetComponent<SpriteRenderer>().sortingLayerName = CDesktop.LBWindow.layer;
         var value = 1.0 / sprites.Length;
         var first = 0;
@@ -710,7 +710,7 @@ public static class Root
         var newObject = new GameObject("BigButtonGrid", typeof(SpriteRenderer));
         newObject.transform.parent = CDesktop.transform;
         newObject.transform.localPosition = new Vector3(position.x, position.y, -0.01f);
-        newObject.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/BigButtons/" + overlay);
+        newObject.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/ButtonsBig/" + overlay);
         newObject.GetComponent<SpriteRenderer>().sortingOrder = sortingOrder;
         newObject.GetComponent<SpriteRenderer>().sortingLayerName = CDesktop.LBWindow.layer;
         if (time > 0)
@@ -941,7 +941,7 @@ public static class Root
                 quest.Print();
             });
             var color = ColorQuestLevel(quest.questLevel);
-            if (color != null) SetRegionBackgroundAsImage("Sprites/Textures/SkillUp" + color);
+            if (color != null) SetRegionBackgroundAsImage("SkillUp" + color);
         }
     }
 
@@ -963,10 +963,10 @@ public static class Root
         resourceBar.transform.parent = CDesktop.LBWindow.transform;
         resourceBar.transform.localPosition = new Vector3(x, y, 0);
         var thisBar = resourceBar.GetComponent<FluidBar>();
-        resourceBar.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Textures/Bars/ResourceBar/Resource" + resource + "Bar/FilledBar");
-        thisBar.Initialise(/*69*/entity.MaxResource(resource) * 8, () => entity.MaxResource(resource), () => entity.resources[resource], true);
-        thisBar.split.sprite = Resources.Load<Sprite>("Sprites/Textures/Bars/ResourceBar/Resource" + resource + "Bar/Splitter");
-        thisBar.GetComponentsInChildren<SpriteRenderer>().First(x => x.name == "Capstone").sprite = Resources.Load<Sprite>("Sprites/Textures/Bars/ResourceBar/Resource" + resource + "Bar/Capstone");
+        resourceBar.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/FluidBars/ResourceBar/Resource" + resource + "Bar/FilledBar");
+        thisBar.Initialise(entity.MaxResource(resource) * 8, () => entity.MaxResource(resource), () => entity.resources[resource], true);
+        thisBar.split.sprite = Resources.Load<Sprite>("Sprites/FluidBars/ResourceBar/Resource" + resource + "Bar/Splitter");
+        thisBar.GetComponentsInChildren<SpriteRenderer>().First(x => x.name == "Capstone").sprite = Resources.Load<Sprite>("Sprites/FluidBars/ResourceBar/Resource" + resource + "Bar/Capstone");
         if (Board.board.resourceBars.ContainsKey(forWho)) Board.board.resourceBars[forWho].Add(resource, thisBar);
         else Board.board.resourceBars.Add(forWho, new() { { resource, thisBar } });
         thisBar.UpdateFluidBar();
@@ -1095,16 +1095,15 @@ public static class Root
     public enum RegionBackgroundType
     {
         Image,
-        Button,
-        Header,
         Padding,
-        RedButton,
+        Header,
+        Button,
+        ButtonRed,
         Experience,
-        RestedExperience,
-        NoExperience,
+        ExperienceNone,
+        ExperienceRested,
         ProgressDone,
         ProgressEmpty,
-        ProgressPossible,
         ChartBackground
     }
 

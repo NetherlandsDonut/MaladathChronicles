@@ -2829,27 +2829,6 @@
             "siteEnd": "The Den",
             "zone": "Durotar",
             "conditions": []
-          },
-          {
-            "questID": 794,
-            "requiredLevel": 1,
-            "questLevel": 5,
-            "name": "Burning Blade Medallion",
-            "description": "Bring the Burning Blade Medallion to Zureetha Fargaze, outside The Den.",
-            "siteStart": "The Den",
-            "siteEnd": "The Den",
-            "zone": "Durotar",
-            "reputationGain": {
-              "Darkspear Trolls": 500,
-              "Orgrimmar": 500
-            },
-            "conditions": [
-              {
-                "type": "Item",
-                "name": "Burning Blade Medallion",
-                "amount": 1
-              }
-            ]
           }
         ],
         "completedQuests": [],
@@ -4067,9 +4046,10 @@
       "vendorStock": {},
       "banks": {},
       "startDate": "2024-06-10T16:47:20.2390264+02:00",
-      "lastLoaded": "2024-06-12T00:25:04.4987827+02:00",
-      "lastPlayed": "2024-06-12T00:49:52.0069467+02:00",
-      "timePlayed": "01:03:24.8731564"
+      "lastLoaded": "2024-06-11T16:15:43.1748114+02:00",
+      "lastPlayed": "2024-06-11T16:16:05.2692768+02:00",
+      "timePlayed": "01:03:46.9676218",
+      "lastVisitedTalents": 2
     }
   ]
 }

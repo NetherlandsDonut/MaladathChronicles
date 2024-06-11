@@ -33,7 +33,7 @@ public class CursorRemote : MonoBehaviour
     public void SetCursor(CursorType cursor)
     {
         if (cursor == CursorType.None) render.sprite = null;
-        else render.sprite = Resources.Load<Sprite>("Sprites/Cursors/" + cursor);
+        else render.sprite = Resources.Load<Sprite>("Sprites/Cursor/" + cursor);
     }
 
     public void Move(Vector3 where) => target = where;

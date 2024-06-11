@@ -128,7 +128,7 @@ public class Window : MonoBehaviour
             background.transform.parent = transform;
             if (background.GetComponent<SpriteRenderer>() == null)
                 background.AddComponent<SpriteRenderer>();
-            background.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/Backgrounds/Window");
+            background.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Fills/Window");
             background.transform.localScale = new Vector3(xOffset + 2, PlannedHeight() + (headerGroup != null ? headerGroup.PlannedHeight() : 0) + 2, 1);
             background.transform.localPosition = new Vector3(0, 0, 0.9f);
             if (background.GetComponent<BoxCollider2D>() == null)
@@ -142,7 +142,7 @@ public class Window : MonoBehaviour
         if (!disabledGeneralSprites && !disabledShadows && (xOffset > 0 || yOffset > 0))
             if (defines.shadowSystem == 0)
             {
-                var shadowSprites = Resources.LoadAll<Sprite>("Sprites/Building/Shadows/First");
+                var shadowSprites = Resources.LoadAll<Sprite>("Sprites/Other/First");
                 for (int i = 0; i < 8; i++)
                     if (shadows[i] == null)
                     {
@@ -164,7 +164,7 @@ public class Window : MonoBehaviour
             }
             else if (defines.shadowSystem == 1 && defines.windowBorders)
             {
-                var shadowSprites = Resources.LoadAll<Sprite>("Sprites/Building/Shadows/Second");
+                var shadowSprites = Resources.LoadAll<Sprite>("Sprites/Other/Second");
                 for (int i = 0; i < 5; i++)
                     if (shadows[i] == null)
                     {
@@ -183,7 +183,7 @@ public class Window : MonoBehaviour
             }
             else if (defines.shadowSystem == 2)
             {
-                var shadowSprites = Resources.LoadAll<Sprite>("Sprites/Building/Shadows/Third");
+                var shadowSprites = Resources.LoadAll<Sprite>("Sprites/Other/Third");
                 for (int i = 0; i < 8; i++)
                     if (shadows[i] == null)
                     {
@@ -272,8 +272,8 @@ public class Window : MonoBehaviour
                 {
                     if (region.currentHeight < 15) region.currentHeight = 15;
                     if (smallButton.buttonType == null) continue;
-                    var load = Resources.Load<Sprite>("Sprites/Building/Buttons/" + smallButton.buttonType);
-                    smallButton.GetComponent<SpriteRenderer>().sprite = load == null ? Resources.Load<Sprite>("Sprites/Building/Buttons/OtherEmpty") : load;
+                    var load = Resources.Load<Sprite>("Sprites/Buttons/" + smallButton.buttonType);
+                    smallButton.GetComponent<SpriteRenderer>().sprite = load == null ? Resources.Load<Sprite>("Sprites/Buttons/OtherEmpty") : load;
                     smallButton.GetComponent<SpriteRenderer>().sortingLayerName = layer;
                     if (title.StartsWith("Site: ")) smallButton.GetComponent<SpriteRenderer>().maskInteraction = SpriteMaskInteraction.VisibleInsideMask;
                     smallButton.transform.localPosition = new Vector3(regionGroup.AutoWidth() - 10 + region.xExtend + 1.5f - 19 * region.smallButtons.IndexOf(smallButton), -10.5f, 0.1f);
@@ -283,11 +283,11 @@ public class Window : MonoBehaviour
                         smallButton.gameObject.AddComponent<Highlightable>().Initialise(region, null, null, null, null);
                     if (smallButton.frame == null)
                         smallButton.frame = new GameObject("ButtonFrame", typeof(SpriteRenderer));
-                    smallButton.frame.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>(title.StartsWith("Site: ") ? "Sprites/Building/Shadows/PremadeCircularSite" : "Sprites/Building/Borders/ButtonFrame" + (smallButton.GetComponent<SpriteRenderer>().sprite.texture.name.StartsWith("Other") ? "" : "Shadowed"));
+                    smallButton.frame.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>(title.StartsWith("Site: ") ? "Sprites/Other/PremadeCircularSite" : "Sprites/PremadeBorders/ButtonFrame" + (smallButton.GetComponent<SpriteRenderer>().sprite.texture.name.StartsWith("Other") ? "" : "Shadowed"));
                     if (title.StartsWith("Site: ")) smallButton.frame.GetComponent<SpriteRenderer>().sortingOrder = 1;
                     smallButton.frame.GetComponent<SpriteRenderer>().sortingLayerName = layer;
                     smallButton.frame.GetComponent<SpriteRenderer>().sortingLayerName = layer;
-                    if (title.StartsWith("Site: ")) smallButton.frame.AddComponent<SpriteMask>().sprite = Resources.Load<Sprite>("Sprites/Building/Borders/ButtonCircleFrameMask");
+                    if (title.StartsWith("Site: ")) smallButton.frame.AddComponent<SpriteMask>().sprite = Resources.Load<Sprite>("Sprites/PremadeBorders/ButtonCircleFrameMask");
                     smallButton.frame.transform.parent = smallButton.transform;
                     smallButton.frame.transform.localPosition = new Vector3(0, 0, -0.05f);
                     var h = smallButton.gameObject.GetComponent<Highlightable>();
@@ -302,8 +302,8 @@ public class Window : MonoBehaviour
                 foreach (var bigButton in region.bigButtons)
                 {
                     if (bigButton.buttonType == null) continue;
-                    var load = Resources.Load<Sprite>("Sprites/Building/BigButtons/" + bigButton.buttonType);
-                    bigButton.GetComponent<SpriteRenderer>().sprite = load == null ? Resources.Load<Sprite>("Sprites/Building/BigButtons/OtherEmpty") : load;
+                    var load = Resources.Load<Sprite>("Sprites/ButtonsBig/" + bigButton.buttonType);
+                    bigButton.GetComponent<SpriteRenderer>().sprite = load == null ? Resources.Load<Sprite>("Sprites/ButtonsBig/OtherEmpty") : load;
                     bigButton.GetComponent<SpriteRenderer>().sortingLayerName = layer;
                     bigButton.transform.localPosition = new Vector3(20 + 38 * region.bigButtons.IndexOf(bigButton), -20f, 0.1f);
                     if (bigButton.gameObject.GetComponent<BoxCollider2D>() == null)
@@ -312,7 +312,7 @@ public class Window : MonoBehaviour
                         bigButton.gameObject.AddComponent<Highlightable>().Initialise(region, null, null, null, null);
                     if (bigButton.frame == null)
                         bigButton.frame = new GameObject("BigButtonFrame", typeof(SpriteRenderer));
-                    bigButton.frame.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>(title.StartsWith("TalentButton") ? "Sprites/Building/Borders/PremadeTalent" : ("Sprites/Building/Borders/BigButtonFrame" + (title.Contains("Board") ? "Rounded" : (title.Contains("Spellbook") ? "RoundedIn" : ""))));
+                    bigButton.frame.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>(title.StartsWith("TalentButton") ? "Sprites/PremadeBorders/PremadeTalent" : ("Sprites/PremadeBorders/BigButtonFrame" + (title.Contains("Board") ? "Rounded" : (title.Contains("Spellbook") ? "RoundedIn" : ""))));
                     bigButton.frame.GetComponent<SpriteRenderer>().sortingLayerName = layer;
                     if (title.StartsWith("TalentButton")) bigButton.frame.GetComponent<SpriteRenderer>().sortingOrder = 3;
                     bigButton.frame.transform.parent = bigButton.transform;
@@ -327,16 +327,16 @@ public class Window : MonoBehaviour
             foreach (var region in regionGroup.regions)
                 if (region.checkbox != null)
                 {
-                    region.checkbox.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/Checkboxes/" + (region.backgroundType == RedButton || region.backgroundType == Button ? "Dark" : "Bright") + (region.checkbox.value.Value() ? "On" : "Off"));
+                    region.checkbox.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Checkbox/" + (region.backgroundType == ButtonRed || region.backgroundType == Button ? "Dark" : "Bright") + (region.checkbox.value.Value() ? "On" : "Off"));
                     region.checkbox.GetComponent<SpriteRenderer>().sortingLayerName = layer;
                     region.checkbox.transform.localPosition = new Vector3(10.5f, -10.5f, 0.1f);
                     if (region.checkbox.gameObject.GetComponent<BoxCollider2D>() == null)
                         region.checkbox.gameObject.AddComponent<BoxCollider2D>();
-                    if (region.checkbox.gameObject.GetComponent<Highlightable>() == null && region.backgroundType != RedButton && region.backgroundType != Button)
+                    if (region.checkbox.gameObject.GetComponent<Highlightable>() == null && region.backgroundType != ButtonRed && region.backgroundType != Button)
                         region.checkbox.gameObject.AddComponent<Highlightable>().Initialise(region, null, null, null, null);
                     if (region.checkbox.frame == null)
                         region.checkbox.frame = new GameObject("CheckboxFrame", typeof(SpriteRenderer));
-                    region.checkbox.frame.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/Borders/CheckboxFrame");
+                    region.checkbox.frame.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/PremadeBorders/CheckboxFrame");
                     region.checkbox.frame.GetComponent<SpriteRenderer>().sortingLayerName = layer;
                     region.checkbox.frame.transform.parent = region.checkbox.transform;
                     region.checkbox.frame.transform.localPosition = new Vector3();
@@ -403,12 +403,12 @@ public class Window : MonoBehaviour
                 {
                     region.background.transform.parent = region.transform;
                     region.background.GetComponent<RegionBackground>().Initialise(region);
-                    region.background.GetComponent<SpriteRenderer>().sprite = region.backgroundType == Image ? region.backgroundImage : Resources.Load<Sprite>("Sprites/Building/Backgrounds/" + region.backgroundType);
+                    region.background.GetComponent<SpriteRenderer>().sprite = region.backgroundType == Image ? region.backgroundImage : Resources.Load<Sprite>("Sprites/Fills/" + region.backgroundType);
                     region.background.GetComponent<SpriteRenderer>().sortingLayerName = layer;
                     if (region.backgroundType == Image) region.background.transform.localScale = new Vector3(1, 1, 1);
                     else region.background.transform.localScale = new Vector3(regionGroup.AutoWidth() - 2 + region.xExtend, region.AutoHeight() + 2 + region.yExtend, 1);
                     region.background.transform.localPosition = new Vector3(2, -2, 0.8f);
-                    if (region.backgroundType == Button || region.backgroundType == RedButton || region.backgroundType == Image)
+                    if (region.backgroundType == Button || region.backgroundType == ButtonRed || region.backgroundType == Image)
                     {
                         if (region.background.GetComponent<BoxCollider2D>() == null)
                             region.background.AddComponent<BoxCollider2D>();
@@ -425,7 +425,7 @@ public class Window : MonoBehaviour
                         {
                             region.borders[i] = new GameObject("Border", typeof(SpriteRenderer));
                             region.borders[i].transform.parent = region.transform;
-                            region.borders[i].GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/Borders/RegionBorder");
+                            region.borders[i].GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/PremadeBorders/RegionBorder");
                             region.borders[i].GetComponent<SpriteRenderer>().sortingLayerName = layer;
                         }
                     for (int i = 0; i < 4; i++)
@@ -433,7 +433,7 @@ public class Window : MonoBehaviour
                         {
                             region.borders[i + 4] = new GameObject("BorderCorner", typeof(SpriteRenderer));
                             region.borders[i + 4].transform.parent = region.transform;
-                            region.borders[i + 4].GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/Borders/RegionBorderCorner");
+                            region.borders[i + 4].GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/PremadeBorders/RegionBorderCorner");
                             region.borders[i + 4].GetComponent<SpriteRenderer>().sortingLayerName = "Upper";
                             if (i == 1 || i == 3) region.borders[i + 4].GetComponent<SpriteRenderer>().flipX = true;
                             if (i == 2 || i == 3) region.borders[i + 4].GetComponent<SpriteRenderer>().flipY = true;
@@ -497,7 +497,7 @@ public class Window : MonoBehaviour
                 if (defines.shadowSystem == 1)
                     foreach (var region in regionGroup.regions)
                     {
-                        var shadowSprites = Resources.LoadAll<Sprite>("Sprites/Building/Shadows/Second");
+                        var shadowSprites = Resources.LoadAll<Sprite>("Sprites/Other/Second");
                         for (int i = 0; i < 5; i++)
                             if (region.shadows[i] == null)
                             {

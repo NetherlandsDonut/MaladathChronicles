@@ -18,7 +18,7 @@ public class LineCheckbox : MonoBehaviour
 
     public void OnMouseUp()
     {
-        if (region.backgroundType != Button && region.backgroundType != RedButton)
+        if (region.backgroundType != Button && region.backgroundType != ButtonRed)
         {
             value.Invert();
             Root.CDesktop.RebuildAll();

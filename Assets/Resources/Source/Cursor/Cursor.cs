@@ -22,7 +22,7 @@ public class Cursor : MonoBehaviour
     {
         if (UnityEngine.Cursor.lockState == CursorLockMode.Locked) return;
         if (type == CursorType.None) render.sprite = null;
-        else render.sprite = Resources.Load<Sprite>("Sprites/Cursors/" + type);
+        else render.sprite = Resources.Load<Sprite>("Sprites/Cursor/" + type);
     }
 
     public bool IsNow(CursorType type)

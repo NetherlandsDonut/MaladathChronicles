@@ -151,7 +151,7 @@ public class Quest
                     });
                 }
         });
-        if (color != null) SetRegionBackgroundAsImage("Sprites/Textures/SkillUpLong" + color);
+        if (color != null) SetRegionBackgroundAsImage("SkillUpLong" + color);
         if (description != null)
         {
             AddHeaderRegion(() => AddLine("Description:"));

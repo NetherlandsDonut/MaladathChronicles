@@ -191,7 +191,7 @@ public class Starter : MonoBehaviour
         paths ??= new();
         Deserialize(ref defines, "defines", false, prefix);
         defines ??= new();
-        var file = Resources.Load<Sprite>("Sprites/Textures/Map/Ground").texture;
+        var file = Resources.Load<Sprite>("Sprites/Map/Ground").texture;
         groundData = new string[file.width, file.height];
         for (int i = 0; i < file.width; i++)
             for (int j = 0; j < file.height; j++)
@@ -233,11 +233,11 @@ public class Starter : MonoBehaviour
 
         var ambienceList = AssetDatabase.FindAssets("t:AudioClip Ambience", new[] { "Assets/Resources/Ambience/" }).Select(x => AssetDatabase.GUIDToAssetPath(x).Replace("Assets/Resources/Ambience/", "")).ToList();
         var soundList = AssetDatabase.FindAssets("t:AudioClip", new[] { "Assets/Resources/Sounds/" }).Select(x => AssetDatabase.GUIDToAssetPath(x).Replace("Assets/Resources/Sounds/", "")).ToList();
-        var itemIconList = AssetDatabase.FindAssets("t:Texture Item", new[] { "Assets/Resources/Sprites/Building/BigButtons/" }).Select(x => AssetDatabase.GUIDToAssetPath(x).Replace("Assets/Resources/Sprites/Building/BigButtons/", "")).ToList();
-        var abilityIconList = AssetDatabase.FindAssets("t:Texture Ability", new[] { "Assets/Resources/Sprites/Building/BigButtons/" }).Select(x => AssetDatabase.GUIDToAssetPath(x).Replace("Assets/Resources/Sprites/Building/BigButtons/", "")).ToList();
-        var mountIconList = AssetDatabase.FindAssets("t:Texture Mount", new[] { "Assets/Resources/Sprites/Building/BigButtons/" }).Select(x => AssetDatabase.GUIDToAssetPath(x).Replace("Assets/Resources/Sprites/Building/BigButtons/", "")).ToList();
-        var factionIconList = AssetDatabase.FindAssets("t:Texture Faction", new[] { "Assets/Resources/Sprites/Building/BigButtons/" }).Select(x => AssetDatabase.GUIDToAssetPath(x).Replace("Assets/Resources/Sprites/Building/BigButtons/", "")).ToList();
-        var portraitList = AssetDatabase.FindAssets("t:Texture Portrait", new[] { "Assets/Resources/Sprites/Building/BigButtons/" }).Select(x => AssetDatabase.GUIDToAssetPath(x).Replace("Assets/Resources/Sprites/Building/BigButtons/", "")).ToList();
+        var itemIconList = AssetDatabase.FindAssets("t:Texture Item", new[] { "Assets/Resources/Sprites/ButtonsBig/" }).Select(x => AssetDatabase.GUIDToAssetPath(x).Replace("Assets/Resources/Sprites/ButtonsBig/", "")).ToList();
+        var abilityIconList = AssetDatabase.FindAssets("t:Texture Ability", new[] { "Assets/Resources/Sprites/ButtonsBig/" }).Select(x => AssetDatabase.GUIDToAssetPath(x).Replace("Assets/Resources/Sprites/ButtonsBig/", "")).ToList();
+        var mountIconList = AssetDatabase.FindAssets("t:Texture Mount", new[] { "Assets/Resources/Sprites/ButtonsBig/" }).Select(x => AssetDatabase.GUIDToAssetPath(x).Replace("Assets/Resources/Sprites/ButtonsBig/", "")).ToList();
+        var factionIconList = AssetDatabase.FindAssets("t:Texture Faction", new[] { "Assets/Resources/Sprites/ButtonsBig/" }).Select(x => AssetDatabase.GUIDToAssetPath(x).Replace("Assets/Resources/Sprites/ButtonsBig/", "")).ToList();
+        var portraitList = AssetDatabase.FindAssets("t:Texture Portrait", new[] { "Assets/Resources/Sprites/ButtonsBig/" }).Select(x => AssetDatabase.GUIDToAssetPath(x).Replace("Assets/Resources/Sprites/ButtonsBig/", "")).ToList();
         ambienceList.RemoveAll(x => !x.StartsWith("Ambience"));
         itemIconList.RemoveAll(x => !x.StartsWith("Item"));
         abilityIconList.RemoveAll(x => !x.StartsWith("Ability"));
@@ -315,7 +315,7 @@ public class Starter : MonoBehaviour
         for (int i = 0; i < paths.Count; i++)
             paths[i].Initialise();
         //var deb = "";
-        //var groups = quests.GroupBy(x => x.zone).Where(x => Resources.Load<Sprite>("Sprites/Building/Buttons/Zone" + x.Key.Clean()) == null).OrderByDescending(x => x.Count()).ToList();
+        //var groups = quests.GroupBy(x => x.zone).Where(x => Resources.Load<Sprite>("Sprites/Buttons/Zone" + x.Key.Clean()) == null).OrderByDescending(x => x.Count()).ToList();
         //for (int i = 0; i < groups.Count; i++)
         //    deb += groups[i].Key + " (" + groups[i].Count() + ")\n";
         //Debug.Log(deb);

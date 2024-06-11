@@ -64,7 +64,7 @@ public class FlyingMissile : MonoBehaviour
 
     public static GameObject SpawnFlyingMissile(string sprite, bool fromPlayer, double arc, double flySpeed, double trailStrength)
     {
-        var foo = Resources.Load<Sprite>("Sprites/Building/Buttons/" + sprite);
+        var foo = Resources.Load<Sprite>("Sprites/Buttons/" + sprite);
         if (foo == null) return null;
         var missile = Instantiate(Resources.Load<GameObject>("Prefabs/PrefabMissile"));
         missile.GetComponent<SpriteRenderer>().sprite = foo;
