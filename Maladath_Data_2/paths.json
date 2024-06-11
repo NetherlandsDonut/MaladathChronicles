@@ -58,7 +58,7 @@
       "Rut'theran Village",
       "Darnassus"
     ],
-    "means": "Portal",
+    "means": "Darnassus",
     "spacing": 9999,
     "points": [
       {
@@ -93558,68 +93558,6 @@
   },
   {
     "sites": [
-      "Grove of the Ancients",
-      "Twilight Shore"
-    ],
-    "means": "Land",
-    "spacing": 10,
-    "points": [
-      {
-        "Item1": 1408,
-        "Item2": -1515
-      },
-      {
-        "Item1": 1404,
-        "Item2": -1505
-      },
-      {
-        "Item1": 1404,
-        "Item2": -1494
-      },
-      {
-        "Item1": 1404,
-        "Item2": -1484
-      },
-      {
-        "Item1": 1403,
-        "Item2": -1474
-      },
-      {
-        "Item1": 1400,
-        "Item2": -1464
-      },
-      {
-        "Item1": 1390,
-        "Item2": -1464
-      },
-      {
-        "Item1": 1380,
-        "Item2": -1468
-      },
-      {
-        "Item1": 1371,
-        "Item2": -1465
-      },
-      {
-        "Item1": 1363,
-        "Item2": -1458
-      },
-      {
-        "Item1": 1355,
-        "Item2": -1451
-      },
-      {
-        "Item1": 1345,
-        "Item2": -1447
-      },
-      {
-        "Item1": 1344,
-        "Item2": -1447
-      }
-    ]
-  },
-  {
-    "sites": [
       "Bathran's Haunt",
       "Ruins of Ordil'Aran"
     ],
@@ -120568,172 +120506,6 @@
   },
   {
     "sites": [
-      "Grove of the Ancients",
-      "The Master's Glaive"
-    ],
-    "means": "Land",
-    "spacing": 10,
-    "points": [
-      {
-        "Item1": 1388,
-        "Item2": -1602
-      },
-      {
-        "Item1": 1393,
-        "Item2": -1593
-      },
-      {
-        "Item1": 1396,
-        "Item2": -1583
-      },
-      {
-        "Item1": 1400,
-        "Item2": -1574
-      },
-      {
-        "Item1": 1405,
-        "Item2": -1566
-      },
-      {
-        "Item1": 1409,
-        "Item2": -1555
-      },
-      {
-        "Item1": 1410,
-        "Item2": -1545
-      },
-      {
-        "Item1": 1407,
-        "Item2": -1536
-      },
-      {
-        "Item1": 1407,
-        "Item2": -1525
-      },
-      {
-        "Item1": 1408,
-        "Item2": -1515
-      }
-    ]
-  },
-  {
-    "sites": [
-      "Blackwood Den",
-      "Grove of the Ancients"
-    ],
-    "means": "Land",
-    "spacing": 10,
-    "points": [
-      {
-        "Item1": 1441,
-        "Item2": -1591
-      },
-      {
-        "Item1": 1435,
-        "Item2": -1581
-      },
-      {
-        "Item1": 1429,
-        "Item2": -1573
-      },
-      {
-        "Item1": 1420,
-        "Item2": -1569
-      },
-      {
-        "Item1": 1413,
-        "Item2": -1560
-      },
-      {
-        "Item1": 1409,
-        "Item2": -1550
-      },
-      {
-        "Item1": 1409,
-        "Item2": -1540
-      },
-      {
-        "Item1": 1408,
-        "Item2": -1530
-      },
-      {
-        "Item1": 1407,
-        "Item2": -1520
-      },
-      {
-        "Item1": 1408,
-        "Item2": -1515
-      }
-    ]
-  },
-  {
-    "sites": [
-      "Grove of the Ancients",
-      "Remtravel's Excavation"
-    ],
-    "means": "Land",
-    "spacing": 10,
-    "points": [
-      {
-        "Item1": 1327,
-        "Item2": -1590
-      },
-      {
-        "Item1": 1335,
-        "Item2": -1584
-      },
-      {
-        "Item1": 1342,
-        "Item2": -1576
-      },
-      {
-        "Item1": 1347,
-        "Item2": -1566
-      },
-      {
-        "Item1": 1357,
-        "Item2": -1562
-      },
-      {
-        "Item1": 1367,
-        "Item2": -1559
-      },
-      {
-        "Item1": 1377,
-        "Item2": -1557
-      },
-      {
-        "Item1": 1387,
-        "Item2": -1555
-      },
-      {
-        "Item1": 1398,
-        "Item2": -1554
-      },
-      {
-        "Item1": 1406,
-        "Item2": -1549
-      },
-      {
-        "Item1": 1408,
-        "Item2": -1539
-      },
-      {
-        "Item1": 1407,
-        "Item2": -1528
-      },
-      {
-        "Item1": 1407,
-        "Item2": -1518
-      },
-      {
-        "Item1": 1408,
-        "Item2": -1515
-      }
-    ]
-  },
-  {
-    "sites": [
       "The Master's Glaive",
       "Zoram'gar Outpost"
     ],
@@ -121581,138 +121353,6 @@
       {
         "Item1": 1441,
         "Item2": -1591
-      }
-    ]
-  },
-  {
-    "sites": [
-      "Blackwood Den",
-      "Remtravel's Excavation"
-    ],
-    "means": "Land",
-    "spacing": 10,
-    "points": [
-      {
-        "Item1": 1327,
-        "Item2": -1590
-      },
-      {
-        "Item1": 1332,
-        "Item2": -1580
-      },
-      {
-        "Item1": 1338,
-        "Item2": -1571
-      },
-      {
-        "Item1": 1345,
-        "Item2": -1563
-      },
-      {
-        "Item1": 1353,
-        "Item2": -1558
-      },
-      {
-        "Item1": 1363,
-        "Item2": -1558
-      },
-      {
-        "Item1": 1374,
-        "Item2": -1555
-      },
-      {
-        "Item1": 1382,
-        "Item2": -1548
-      },
-      {
-        "Item1": 1392,
-        "Item2": -1548
-      },
-      {
-        "Item1": 1402,
-        "Item2": -1552
-      },
-      {
-        "Item1": 1409,
-        "Item2": -1560
-      },
-      {
-        "Item1": 1416,
-        "Item2": -1568
-      },
-      {
-        "Item1": 1425,
-        "Item2": -1574
-      },
-      {
-        "Item1": 1433,
-        "Item2": -1580
-      },
-      {
-        "Item1": 1437,
-        "Item2": -1590
-      },
-      {
-        "Item1": 1441,
-        "Item2": -1591
-      }
-    ]
-  },
-  {
-    "sites": [
-      "Grove of the Ancients",
-      "Twilight Vale"
-    ],
-    "means": "Land",
-    "spacing": 10,
-    "points": [
-      {
-        "Item1": 1408,
-        "Item2": -1515
-      },
-      {
-        "Item1": 1407,
-        "Item2": -1504
-      },
-      {
-        "Item1": 1405,
-        "Item2": -1494
-      },
-      {
-        "Item1": 1402,
-        "Item2": -1484
-      },
-      {
-        "Item1": 1402,
-        "Item2": -1474
-      },
-      {
-        "Item1": 1402,
-        "Item2": -1464
-      },
-      {
-        "Item1": 1399,
-        "Item2": -1454
-      },
-      {
-        "Item1": 1393,
-        "Item2": -1446
-      },
-      {
-        "Item1": 1392,
-        "Item2": -1436
-      },
-      {
-        "Item1": 1392,
-        "Item2": -1425
-      },
-      {
-        "Item1": 1393,
-        "Item2": -1415
-      },
-      {
-        "Item1": 1395,
-        "Item2": -1411
       }
     ]
   },
@@ -142541,6 +142181,874 @@
       {
         "Item1": 5529,
         "Item2": -2812
+      }
+    ]
+  },
+  {
+    "sites": [
+      "Twilight Vale",
+      "Wildbend River"
+    ],
+    "means": "Land",
+    "spacing": 10,
+    "points": [
+      {
+        "Item1": 1403,
+        "Item2": -1489
+      },
+      {
+        "Item1": 1404,
+        "Item2": -1478
+      },
+      {
+        "Item1": 1404,
+        "Item2": -1468
+      },
+      {
+        "Item1": 1403,
+        "Item2": -1458
+      },
+      {
+        "Item1": 1398,
+        "Item2": -1449
+      },
+      {
+        "Item1": 1394,
+        "Item2": -1439
+      },
+      {
+        "Item1": 1394,
+        "Item2": -1429
+      },
+      {
+        "Item1": 1396,
+        "Item2": -1419
+      },
+      {
+        "Item1": 1395,
+        "Item2": -1411
+      }
+    ]
+  },
+  {
+    "sites": [
+      "Twilight Shore",
+      "Wildbend River"
+    ],
+    "means": "Land",
+    "spacing": 10,
+    "points": [
+      {
+        "Item1": 1403,
+        "Item2": -1489
+      },
+      {
+        "Item1": 1403,
+        "Item2": -1478
+      },
+      {
+        "Item1": 1405,
+        "Item2": -1468
+      },
+      {
+        "Item1": 1403,
+        "Item2": -1458
+      },
+      {
+        "Item1": 1394,
+        "Item2": -1453
+      },
+      {
+        "Item1": 1384,
+        "Item2": -1452
+      },
+      {
+        "Item1": 1374,
+        "Item2": -1454
+      },
+      {
+        "Item1": 1364,
+        "Item2": -1454
+      },
+      {
+        "Item1": 1353,
+        "Item2": -1450
+      },
+      {
+        "Item1": 1344,
+        "Item2": -1447
+      }
+    ]
+  },
+  {
+    "sites": [
+      "Blackwood Den",
+      "Remtravel's Excavation"
+    ],
+    "means": "Land",
+    "spacing": 10,
+    "points": [
+      {
+        "Item1": 1441,
+        "Item2": -1591
+      },
+      {
+        "Item1": 1430,
+        "Item2": -1589
+      },
+      {
+        "Item1": 1421,
+        "Item2": -1582
+      },
+      {
+        "Item1": 1413,
+        "Item2": -1575
+      },
+      {
+        "Item1": 1403,
+        "Item2": -1574
+      },
+      {
+        "Item1": 1393,
+        "Item2": -1575
+      },
+      {
+        "Item1": 1384,
+        "Item2": -1570
+      },
+      {
+        "Item1": 1375,
+        "Item2": -1565
+      },
+      {
+        "Item1": 1364,
+        "Item2": -1563
+      },
+      {
+        "Item1": 1354,
+        "Item2": -1564
+      },
+      {
+        "Item1": 1344,
+        "Item2": -1568
+      },
+      {
+        "Item1": 1336,
+        "Item2": -1575
+      },
+      {
+        "Item1": 1330,
+        "Item2": -1583
+      },
+      {
+        "Item1": 1327,
+        "Item2": -1590
+      }
+    ]
+  },
+  {
+    "sites": [
+      "Grove of the Ancients",
+      "Remtravel's Excavation"
+    ],
+    "means": "Land",
+    "spacing": 10,
+    "points": [
+      {
+        "Item1": 1327,
+        "Item2": -1590
+      },
+      {
+        "Item1": 1332,
+        "Item2": -1581
+      },
+      {
+        "Item1": 1340,
+        "Item2": -1575
+      },
+      {
+        "Item1": 1347,
+        "Item2": -1568
+      },
+      {
+        "Item1": 1356,
+        "Item2": -1562
+      },
+      {
+        "Item1": 1365,
+        "Item2": -1559
+      },
+      {
+        "Item1": 1376,
+        "Item2": -1558
+      },
+      {
+        "Item1": 1386,
+        "Item2": -1556
+      },
+      {
+        "Item1": 1396,
+        "Item2": -1555
+      },
+      {
+        "Item1": 1406,
+        "Item2": -1551
+      },
+      {
+        "Item1": 1412,
+        "Item2": -1543
+      },
+      {
+        "Item1": 1419,
+        "Item2": -1536
+      },
+      {
+        "Item1": 1428,
+        "Item2": -1531
+      },
+      {
+        "Item1": 1432,
+        "Item2": -1521
+      },
+      {
+        "Item1": 1434,
+        "Item2": -1517
+      }
+    ]
+  },
+  {
+    "sites": [
+      "Grove of the Ancients",
+      "Wildbend River"
+    ],
+    "means": "Land",
+    "spacing": 10,
+    "points": [
+      {
+        "Item1": 1434,
+        "Item2": -1517
+      },
+      {
+        "Item1": 1424,
+        "Item2": -1520
+      },
+      {
+        "Item1": 1413,
+        "Item2": -1518
+      },
+      {
+        "Item1": 1405,
+        "Item2": -1511
+      },
+      {
+        "Item1": 1405,
+        "Item2": -1501
+      },
+      {
+        "Item1": 1404,
+        "Item2": -1491
+      },
+      {
+        "Item1": 1403,
+        "Item2": -1489
+      }
+    ]
+  },
+  {
+    "sites": [
+      "Grove of the Ancients",
+      "The Master's Glaive"
+    ],
+    "means": "Land",
+    "spacing": 10,
+    "points": [
+      {
+        "Item1": 1434,
+        "Item2": -1517
+      },
+      {
+        "Item1": 1429,
+        "Item2": -1526
+      },
+      {
+        "Item1": 1423,
+        "Item2": -1535
+      },
+      {
+        "Item1": 1413,
+        "Item2": -1539
+      },
+      {
+        "Item1": 1407,
+        "Item2": -1547
+      },
+      {
+        "Item1": 1405,
+        "Item2": -1557
+      },
+      {
+        "Item1": 1405,
+        "Item2": -1567
+      },
+      {
+        "Item1": 1399,
+        "Item2": -1576
+      },
+      {
+        "Item1": 1395,
+        "Item2": -1585
+      },
+      {
+        "Item1": 1393,
+        "Item2": -1595
+      },
+      {
+        "Item1": 1388,
+        "Item2": -1602
+      }
+    ]
+  },
+  {
+    "sites": [
+      "The Master's Glaive",
+      "Wildbend River"
+    ],
+    "means": "Land",
+    "spacing": 10,
+    "points": [
+      {
+        "Item1": 1403,
+        "Item2": -1489
+      },
+      {
+        "Item1": 1404,
+        "Item2": -1498
+      },
+      {
+        "Item1": 1404,
+        "Item2": -1509
+      },
+      {
+        "Item1": 1407,
+        "Item2": -1519
+      },
+      {
+        "Item1": 1408,
+        "Item2": -1529
+      },
+      {
+        "Item1": 1407,
+        "Item2": -1539
+      },
+      {
+        "Item1": 1407,
+        "Item2": -1550
+      },
+      {
+        "Item1": 1409,
+        "Item2": -1560
+      },
+      {
+        "Item1": 1404,
+        "Item2": -1569
+      },
+      {
+        "Item1": 1397,
+        "Item2": -1576
+      },
+      {
+        "Item1": 1394,
+        "Item2": -1586
+      },
+      {
+        "Item1": 1393,
+        "Item2": -1596
+      },
+      {
+        "Item1": 1388,
+        "Item2": -1602
+      }
+    ]
+  },
+  {
+    "sites": [
+      "Blackwood Den",
+      "Wildbend River"
+    ],
+    "means": "Land",
+    "spacing": 10,
+    "points": [
+      {
+        "Item1": 1441,
+        "Item2": -1591
+      },
+      {
+        "Item1": 1432,
+        "Item2": -1585
+      },
+      {
+        "Item1": 1424,
+        "Item2": -1577
+      },
+      {
+        "Item1": 1416,
+        "Item2": -1571
+      },
+      {
+        "Item1": 1411,
+        "Item2": -1562
+      },
+      {
+        "Item1": 1410,
+        "Item2": -1552
+      },
+      {
+        "Item1": 1408,
+        "Item2": -1542
+      },
+      {
+        "Item1": 1408,
+        "Item2": -1532
+      },
+      {
+        "Item1": 1409,
+        "Item2": -1522
+      },
+      {
+        "Item1": 1408,
+        "Item2": -1512
+      },
+      {
+        "Item1": 1406,
+        "Item2": -1502
+      },
+      {
+        "Item1": 1404,
+        "Item2": -1492
+      },
+      {
+        "Item1": 1403,
+        "Item2": -1489
+      }
+    ]
+  },
+  {
+    "sites": [
+      "Blackwood Den",
+      "Grove of the Ancients"
+    ],
+    "means": "Land",
+    "spacing": 10,
+    "points": [
+      {
+        "Item1": 1441,
+        "Item2": -1591
+      },
+      {
+        "Item1": 1440,
+        "Item2": -1580
+      },
+      {
+        "Item1": 1438,
+        "Item2": -1570
+      },
+      {
+        "Item1": 1439,
+        "Item2": -1560
+      },
+      {
+        "Item1": 1442,
+        "Item2": -1551
+      },
+      {
+        "Item1": 1439,
+        "Item2": -1541
+      },
+      {
+        "Item1": 1437,
+        "Item2": -1531
+      },
+      {
+        "Item1": 1435,
+        "Item2": -1521
+      },
+      {
+        "Item1": 1434,
+        "Item2": -1517
+      }
+    ]
+  },
+  {
+    "sites": [
+      "Blackwood Den",
+      "Twilight Shore"
+    ],
+    "means": "Land",
+    "spacing": 10,
+    "points": [
+      {
+        "Item1": 1441,
+        "Item2": -1591
+      },
+      {
+        "Item1": 1432,
+        "Item2": -1585
+      },
+      {
+        "Item1": 1423,
+        "Item2": -1579
+      },
+      {
+        "Item1": 1415,
+        "Item2": -1572
+      },
+      {
+        "Item1": 1412,
+        "Item2": -1562
+      },
+      {
+        "Item1": 1405,
+        "Item2": -1554
+      },
+      {
+        "Item1": 1397,
+        "Item2": -1548
+      },
+      {
+        "Item1": 1388,
+        "Item2": -1543
+      },
+      {
+        "Item1": 1383,
+        "Item2": -1534
+      },
+      {
+        "Item1": 1379,
+        "Item2": -1524
+      },
+      {
+        "Item1": 1371,
+        "Item2": -1519
+      },
+      {
+        "Item1": 1365,
+        "Item2": -1510
+      },
+      {
+        "Item1": 1365,
+        "Item2": -1500
+      },
+      {
+        "Item1": 1362,
+        "Item2": -1490
+      },
+      {
+        "Item1": 1358,
+        "Item2": -1481
+      },
+      {
+        "Item1": 1358,
+        "Item2": -1470
+      },
+      {
+        "Item1": 1352,
+        "Item2": -1462
+      },
+      {
+        "Item1": 1347,
+        "Item2": -1453
+      },
+      {
+        "Item1": 1344,
+        "Item2": -1447
+      }
+    ]
+  },
+  {
+    "sites": [
+      "The Master's Glaive",
+      "Twilight Shore"
+    ],
+    "means": "Land",
+    "spacing": 10,
+    "points": [
+      {
+        "Item1": 1388,
+        "Item2": -1602
+      },
+      {
+        "Item1": 1393,
+        "Item2": -1592
+      },
+      {
+        "Item1": 1394,
+        "Item2": -1582
+      },
+      {
+        "Item1": 1399,
+        "Item2": -1573
+      },
+      {
+        "Item1": 1404,
+        "Item2": -1565
+      },
+      {
+        "Item1": 1403,
+        "Item2": -1555
+      },
+      {
+        "Item1": 1399,
+        "Item2": -1545
+      },
+      {
+        "Item1": 1395,
+        "Item2": -1536
+      },
+      {
+        "Item1": 1391,
+        "Item2": -1526
+      },
+      {
+        "Item1": 1382,
+        "Item2": -1521
+      },
+      {
+        "Item1": 1374,
+        "Item2": -1514
+      },
+      {
+        "Item1": 1369,
+        "Item2": -1505
+      },
+      {
+        "Item1": 1367,
+        "Item2": -1495
+      },
+      {
+        "Item1": 1359,
+        "Item2": -1488
+      },
+      {
+        "Item1": 1354,
+        "Item2": -1479
+      },
+      {
+        "Item1": 1354,
+        "Item2": -1469
+      },
+      {
+        "Item1": 1351,
+        "Item2": -1458
+      },
+      {
+        "Item1": 1344,
+        "Item2": -1447
+      }
+    ]
+  },
+  {
+    "sites": [
+      "Grove of the Ancients",
+      "Twilight Shore"
+    ],
+    "means": "Land",
+    "spacing": 10,
+    "points": [
+      {
+        "Item1": 1434,
+        "Item2": -1517
+      },
+      {
+        "Item1": 1424,
+        "Item2": -1519
+      },
+      {
+        "Item1": 1413,
+        "Item2": -1517
+      },
+      {
+        "Item1": 1403,
+        "Item2": -1518
+      },
+      {
+        "Item1": 1393,
+        "Item2": -1514
+      },
+      {
+        "Item1": 1384,
+        "Item2": -1510
+      },
+      {
+        "Item1": 1374,
+        "Item2": -1506
+      },
+      {
+        "Item1": 1366,
+        "Item2": -1499
+      },
+      {
+        "Item1": 1364,
+        "Item2": -1489
+      },
+      {
+        "Item1": 1365,
+        "Item2": -1479
+      },
+      {
+        "Item1": 1360,
+        "Item2": -1470
+      },
+      {
+        "Item1": 1354,
+        "Item2": -1462
+      },
+      {
+        "Item1": 1349,
+        "Item2": -1452
+      },
+      {
+        "Item1": 1344,
+        "Item2": -1447
+      }
+    ]
+  },
+  {
+    "sites": [
+      "Remtravel's Excavation",
+      "Wildbend River"
+    ],
+    "means": "Land",
+    "spacing": 10,
+    "points": [
+      {
+        "Item1": 1327,
+        "Item2": -1590
+      },
+      {
+        "Item1": 1334,
+        "Item2": -1582
+      },
+      {
+        "Item1": 1341,
+        "Item2": -1575
+      },
+      {
+        "Item1": 1347,
+        "Item2": -1566
+      },
+      {
+        "Item1": 1356,
+        "Item2": -1561
+      },
+      {
+        "Item1": 1365,
+        "Item2": -1558
+      },
+      {
+        "Item1": 1371,
+        "Item2": -1549
+      },
+      {
+        "Item1": 1378,
+        "Item2": -1542
+      },
+      {
+        "Item1": 1384,
+        "Item2": -1534
+      },
+      {
+        "Item1": 1382,
+        "Item2": -1524
+      },
+      {
+        "Item1": 1391,
+        "Item2": -1518
+      },
+      {
+        "Item1": 1400,
+        "Item2": -1513
+      },
+      {
+        "Item1": 1406,
+        "Item2": -1505
+      },
+      {
+        "Item1": 1404,
+        "Item2": -1494
+      },
+      {
+        "Item1": 1403,
+        "Item2": -1489
+      }
+    ]
+  },
+  {
+    "sites": [
+      "Ameth'Aran",
+      "Wildbend River"
+    ],
+    "means": "Land",
+    "spacing": 10,
+    "points": [
+      {
+        "Item1": 1403,
+        "Item2": -1489
+      },
+      {
+        "Item1": 1406,
+        "Item2": -1479
+      },
+      {
+        "Item1": 1405,
+        "Item2": -1469
+      },
+      {
+        "Item1": 1402,
+        "Item2": -1459
+      },
+      {
+        "Item1": 1408,
+        "Item2": -1451
+      },
+      {
+        "Item1": 1417,
+        "Item2": -1447
+      },
+      {
+        "Item1": 1426,
+        "Item2": -1442
+      },
+      {
+        "Item1": 1430,
+        "Item2": -1433
+      },
+      {
+        "Item1": 1428,
+        "Item2": -1422
+      },
+      {
+        "Item1": 1429,
+        "Item2": -1412
+      },
+      {
+        "Item1": 1433,
+        "Item2": -1403
+      },
+      {
+        "Item1": 1430,
+        "Item2": -1393
+      },
+      {
+        "Item1": 1426,
+        "Item2": -1383
+      },
+      {
+        "Item1": 1425,
+        "Item2": -1373
+      },
+      {
+        "Item1": 1424,
+        "Item2": -1372
       }
     ]
   }

@@ -6334,12 +6334,49 @@
         "levelMax": 14
       },
       {
-        "who": "Foreststrider Fledgling",
+        "who": "Blackwood Windtalker",
         "levelMin": 13,
         "levelMax": 14
       },
       {
+        "who": "Blackwood Pathfinder",
+        "levelMin": 13,
+        "levelMax": 14
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Carnivous the Breaker",
+        "levelMin": 16
+      }
+    ],
+    "areaSize": 3,
+    "progression": [
+      {
+        "type": "Treasure",
+        "point": 3
+      }
+    ]
+  },
+  {
+    "x": 1403,
+    "y": -1489,
+    "name": "Wildbend River",
+    "zone": "Darkshore",
+    "type": "HostileArea",
+    "commonEncounters": [
+      {
+        "who": "Foreststrider",
+        "levelMin": 15,
+        "levelMax": 16
+      },
+      {
         "who": "Moonstalker",
+        "levelMin": 14,
+        "levelMax": 15
+      },
+      {
+        "who": "Rabid Thistle Bear",
         "levelMin": 14,
         "levelMax": 15
       }
@@ -12329,9 +12366,19 @@
     "noNightVariant": true,
     "commonEncounters": [
       {
-        "who": "Jademir Oracle",
-        "levelMin": 60,
-        "levelMax": 61
+        "who": "Rage Scar Yeti",
+        "levelMin": 46,
+        "levelMax": 47
+      },
+      {
+        "who": "Ferocious Rage Scar",
+        "levelMin": 47,
+        "levelMax": 48
+      },
+      {
+        "who": "Elder Rage Scar",
+        "levelMin": 48,
+        "levelMax": 49
       }
     ],
     "areaSize": 3,

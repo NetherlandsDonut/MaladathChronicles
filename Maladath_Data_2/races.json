@@ -1,5 +1,65 @@
 [
   {
+    "name": "Carnivous the Breaker",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "side": "Neutral",
+    "kind": "Rare",
+    "portrait": "PortraitFurbolgBlack",
+    "vitality": 2.0,
+    "abilities": {}
+  },
+  {
+    "name": "Blackwood Pathfinder",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "side": "Neutral",
+    "kind": "Common",
+    "portrait": "PortraitFurbolgBlack",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Blackwood Windtalker",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "side": "Neutral",
+    "kind": "Common",
+    "portrait": "PortraitFurbolgBlack",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Elder Rage Scar",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "side": "Neutral",
+    "kind": "Common",
+    "portrait": "PortraitYetiDark",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Ferocious Rage Scar",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "side": "Neutral",
+    "kind": "Common",
+    "portrait": "PortraitYetiDark",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Rage Scar Yeti",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "side": "Neutral",
+    "kind": "Common",
+    "portrait": "PortraitYetiDark",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
     "name": "Burrowing Thundersnout",
     "category": "Humanoid",
     "subcategory": "Human",
@@ -11,8 +71,8 @@
   },
   {
     "name": "Dark Screecher",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Beast",
+    "subcategory": "Bat",
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitBatRed",
@@ -4754,7 +4814,7 @@
     "subcategory": "Dwarf",
     "side": "Neutral",
     "kind": "Common",
-    "portrait": "PortraitDarkIronAgent",
+    "portrait": "PortraitDarkIronWarrior",
     "vitality": 1.0,
     "abilities": {}
   },
@@ -9321,7 +9381,7 @@
     "subcategory": "Human",
     "side": "Neutral",
     "kind": "Common",
-    "portrait": "PortraitHarpy",
+    "portrait": "PortraitHarpyRed",
     "vitality": 1.0,
     "abilities": {}
   },
@@ -9331,7 +9391,7 @@
     "subcategory": "Human",
     "side": "Neutral",
     "kind": "Common",
-    "portrait": "PortraitHarpy",
+    "portrait": "PortraitHarpyPink",
     "vitality": 1.0,
     "abilities": {}
   },

@@ -8,7 +8,7 @@
         "currentQuests": [],
         "completedQuests": [],
         "level": 9,
-        "experience": 660,
+        "experience": 680,
         "uniquesGotten": [],
         "reputation": {
           "Southsea Pirates": 0,
@@ -215,9 +215,9 @@
         }
       },
       "hour": 7,
-      "minute": 16,
-      "second": 34,
-      "currentSite": "Blackrock Mountain",
+      "minute": 26,
+      "second": 22,
+      "currentSite": "Darnassus",
       "openedChests": {},
       "siteProgress": {
         "Wicked Grotto": 1
@@ -408,7 +408,7 @@
         "The Master's Glaive": 1,
         "Tower of Althalaxx": 1,
         "Twilight Shore": 1,
-        "Twilight Vale": 1,
+        "Twilight Vale": 2,
         "Ariden's Camp": 1,
         "Deadman's Crossing": 1,
         "Karazhan": 1,
@@ -1092,7 +1092,7 @@
         "Ravenholdt Manor": 1,
         "Misty Reed Post": 1,
         "Stormwind City": 1,
-        "Grove of the Ancients": 1,
+        "Grove of the Ancients": 3,
         "Go'Shek Farm": 1,
         "Hillsbrad": 1,
         "Dabyrie's Farmstead": 1,
@@ -1111,9 +1111,9 @@
         "Flame Crest": 1,
         "Faldir's Cove": 1,
         "Refuge Point": 1,
-        "Darnassus": 1,
+        "Darnassus": 6,
         "Aldrassil": 1,
-        "Rut'theran Village": 1,
+        "Rut'theran Village": 3,
         "Dolanaar": 1,
         "Maestra's Post": 1,
         "Astranaar": 1,
@@ -1122,7 +1122,7 @@
         "Silverwind Refuge": 1,
         "Silverwing Grove": 1,
         "Forest Song": 1,
-        "Auberdine": 1,
+        "Auberdine": 2,
         "Talrendis Point": 1,
         "Talonbranch Glade": 1,
         "Feathermoon Stronghold": 1,
@@ -1226,14 +1226,21 @@
         "Ruins of Alterac": 1,
         "Scarlet Monastery Grounds": 11,
         "Jaedenar Grounds": 1,
-        "Alcaz Island": 1
+        "Alcaz Island": 1,
+        "Wildbend River": 4
       },
       "unlockedAreas": [],
       "vendorStock": {},
+      "banks": {
+        "Darnassus": {
+          "items": [],
+          "bags": []
+        }
+      },
       "startDate": "2024-06-09T14:12:27.0144066+02:00",
-      "lastLoaded": "2024-06-10T03:10:01.6976773+02:00",
-      "lastPlayed": "2024-06-10T03:10:43.7870795+02:00",
-      "timePlayed": "01:21:12.6909390",
+      "lastLoaded": "2024-06-11T01:51:23.0845083+02:00",
+      "lastPlayed": "2024-06-11T02:05:27.9952123+02:00",
+      "timePlayed": "01:44:31.2071653",
       "lastVisitedTalents": 1
     },
     {
@@ -1480,7 +1487,7 @@
         }
       },
       "hour": 7,
-      "currentSite": "Blackrock Mountain",
+      "currentSite": "Ruins of Ravenwind",
       "ringOfLaw": "Eviscerator",
       "openedChests": {},
       "siteProgress": {
@@ -1496,14 +1503,15 @@
       },
       "siteVisits": {
         "Shadow Grave": 1,
-        "Blackrock Mountain": 6
+        "Blackrock Mountain": 6,
+        "Ruins of Ravenwind": 3
       },
       "unlockedAreas": [],
       "vendorStock": {},
       "startDate": "2024-06-10T03:15:00.6242447+02:00",
-      "lastLoaded": "2024-06-10T03:18:38.28866+02:00",
-      "lastPlayed": "2024-06-10T03:19:31.0336969+02:00",
-      "timePlayed": "00:01:46.9139972"
+      "lastLoaded": "2024-06-11T01:40:09.2466391+02:00",
+      "lastPlayed": "2024-06-11T01:40:12.8466637+02:00",
+      "timePlayed": "00:03:56.0292444"
     }
   ]
 }
