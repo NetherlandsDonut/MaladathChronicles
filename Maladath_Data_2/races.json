@@ -1,5 +1,45 @@
 [
   {
+    "name": "Thunderhead Skystormer",
+    "category": "Beast",
+    "subcategory": "Hippogryph",
+    "side": "Neutral",
+    "kind": "Common",
+    "portrait": "PortraitHippogryph",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Timberweb Recluse",
+    "category": "Beast",
+    "subcategory": "Spider",
+    "side": "Neutral",
+    "kind": "Common",
+    "portrait": "PortraitTarantulaOrange",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Antilos",
+    "category": "Beast",
+    "subcategory": "Hippogryph",
+    "side": "Neutral",
+    "kind": "Rare",
+    "portrait": "PortraitHippogryphSpotted",
+    "vitality": 2.0,
+    "abilities": {}
+  },
+  {
+    "name": "Master Feardread",
+    "category": "Demon",
+    "subcategory": "Satyr",
+    "side": "Neutral",
+    "kind": "Rare",
+    "portrait": "PortraitSatyrGreen",
+    "vitality": 2.0,
+    "abilities": {}
+  },
+  {
     "name": "Carnivous the Breaker",
     "category": "Humanoid",
     "subcategory": "Furbolg",

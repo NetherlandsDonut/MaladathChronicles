@@ -1316,8 +1316,8 @@
         "type": "Master Dragonscale Leatherworker"
       }
     ],
-    "x": 2393,
-    "y": -1997,
+    "x": 2243,
+    "y": -1996,
     "name": "Talrendis Point",
     "zone": "Azshara",
     "faction": "Darnassus"
@@ -3933,6 +3933,13 @@
     "zone": "Felwood",
     "faction": "Timbermaw Tribe",
     "noNightVariant": true
+  },
+  {
+    "x": 2422,
+    "y": -1770,
+    "name": "Bear's Head",
+    "zone": "Azshara",
+    "faction": "Timbermaw Tribe"
   },
   {
     "x": 1222,

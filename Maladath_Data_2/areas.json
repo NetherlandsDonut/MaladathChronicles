@@ -3197,14 +3197,15 @@
         "levelMax": 53
       },
       {
-        "who": "Mosshoof Stag",
-        "levelMin": 50,
-        "levelMax": 51
-      },
-      {
         "who": "Cliff Breaker",
         "levelMin": 53,
         "levelMax": 54
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Antilos",
+        "levelMin": 53
       }
     ],
     "areaSize": 3,
@@ -3355,8 +3356,8 @@
     ]
   },
   {
-    "x": 2832,
-    "y": -1546,
+    "x": 2799,
+    "y": -1562,
     "name": "Legash Encampment",
     "zone": "Azshara",
     "type": "HostileArea",
@@ -3370,11 +3371,38 @@
         "who": "Legashi Satyr",
         "levelMin": 51,
         "levelMax": 52
+      }
+    ],
+    "areaSize": 3,
+    "progression": [
+      {
+        "type": "Treasure",
+        "point": 3
+      }
+    ]
+  },
+  {
+    "x": 2759,
+    "y": -1612,
+    "name": "Legash Head Camp",
+    "zone": "Azshara",
+    "type": "HostileArea",
+    "commonEncounters": [
+      {
+        "who": "Legashi Rogue",
+        "levelMin": 52,
+        "levelMax": 53
       },
       {
         "who": "Legashi Hellcaller",
         "levelMin": 52,
         "levelMax": 53
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Master Feardread",
+        "levelMin": 53
       }
     ],
     "areaSize": 3,
@@ -3682,11 +3710,28 @@
     ]
   },
   {
-    "x": 2568,
+    "x": 2566,
     "y": -1582,
     "name": "Ursolan",
     "zone": "Azshara",
     "type": "HostileArea",
+    "commonEncounters": [
+      {
+        "who": "Timberweb Recluse",
+        "levelMin": 48,
+        "levelMax": 49
+      },
+      {
+        "who": "Thunderhead Stagwing",
+        "levelMin": 48,
+        "levelMax": 49
+      },
+      {
+        "who": "Thunderhead Skystormer",
+        "levelMin": 50,
+        "levelMax": 51
+      }
+    ],
     "areaSize": 3,
     "progression": [
       {
@@ -12137,8 +12182,7 @@
     "rareEncounters": [
       {
         "who": "Antillus the Soarer",
-        "levelMin": 48,
-        "levelMax": 48
+        "levelMin": 48
       }
     ],
     "areaSize": 3,
