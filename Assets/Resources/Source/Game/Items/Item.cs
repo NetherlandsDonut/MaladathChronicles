@@ -555,7 +555,8 @@ public class Item
                                 currentSave.buyback ??= new(true);
                                 if (amount == item.amount)
                                 {
-                                    item.minutesLeft = defines.buybackDecay;
+                                    if (!item.indestructible)
+                                        item.minutesLeft = defines.buybackDecay;
                                     currentSave.buyback.items.Add(item);
                                     currentSave.player.inventory.items.Remove(item);
                                 }
@@ -563,7 +564,8 @@ public class Item
                                 {
                                     var newItem = item.CopyItem(amount);
                                     currentSave.buyback.items.Add(newItem);
-                                    newItem.minutesLeft = defines.buybackDecay;
+                                    if (!newItem.indestructible)
+                                        newItem.minutesLeft = defines.buybackDecay;
                                     item.amount -= amount;
                                 }
                                 currentSave.player.inventory.money += item.price * amount;
@@ -579,7 +581,8 @@ public class Item
                             PlaySound("DesktopTransportPay");
                             currentSave.buyback ??= new(true);
                             currentSave.player.inventory.money += item.price * item.amount;
-                            item.minutesLeft = defines.buybackDecay;
+                            if (!item.indestructible)
+                                item.minutesLeft = defines.buybackDecay;
                             currentSave.buyback.items.Add(item);
                             currentSave.player.inventory.items.Remove(item);
                             CloseWindow("Vendor");

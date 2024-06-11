@@ -109,7 +109,7 @@ public class WorldEvent
                 void ExecuteSoundEffect()
                 {
                     if (!effect.ContainsKey("SoundEffect")) return;
-                    PlaySound(effect["SoundEffect"]);
+                    PlaySound(effect["SoundEffect"], 0.4f);
                 }
             }
 

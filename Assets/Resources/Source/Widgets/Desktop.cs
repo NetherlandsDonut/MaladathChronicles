@@ -260,6 +260,8 @@ public class Desktop : MonoBehaviour
                                     PlaySound("ZeppelinStop", 0.25f);
                                 else if (queuedPath[0].Item1.means == "Ship")
                                     PlaySound("ShipStop", 0.25f);
+                                else if (queuedPath[0].Item1.means == "Darnassus")
+                                    PlaySound("TeleportStop", 0.3f);
                                 queuedPath.RemoveAt(0);
                             }
                         }
