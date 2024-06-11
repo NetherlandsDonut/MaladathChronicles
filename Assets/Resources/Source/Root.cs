@@ -12,6 +12,7 @@ using static GameSettings;
 
 using static Root.Anchor;
 using static Root.RegionBackgroundType;
+using System.Reflection;
 
 public static class Root
 {
@@ -600,12 +601,12 @@ public static class Root
     {
         var newObject = new GameObject("SmallButtonOverlay", typeof(SpriteRenderer));
         newObject.transform.parent = onWhat.transform;
-        newObject.transform.localPosition = new Vector3(overlay == "PlayerLocation" || overlay == "PlayerLocationWithQuest" || overlay == "AvailableQuest" ? 1 : 0, overlay == "AvailableQuest" ? -8.5f : 0, -0.01f);
+        newObject.transform.localPosition = new Vector3(overlay == "PlayerLocationFromBelow" || overlay == "PlayerLocationSmall" || overlay == "AvailableQuest" ? 1 : 0, overlay == "AvailableQuest" ? -8.5f : (overlay == "PlayerLocationSmall" || overlay == "PlayerLocationFromBelow" ? -6f : 0), -0.01f);
         if (overlay == "Cooldown") newObject.AddComponent<AnimatedSprite>().Initiate("Sprites/Building/Shadows/Cooldown", true);
         else if (overlay == "YellowGlow") newObject.AddComponent<AnimatedSprite>().Initiate("Sprites/Building/Shadows/YellowGlow", true);
         else if (overlay == "AutoCast") newObject.AddComponent<AnimatedSprite>().Initiate("Sprites/Building/Shadows/AutoCastFull", true);
-        else if (overlay == "PlayerLocation") newObject.AddComponent<AnimatedSprite>().Initiate("Sprites/Building/Shadows/PlayerLocation", false, 0.07f);
-        else if (overlay == "PlayerLocationWithQuest") newObject.AddComponent<AnimatedSprite>().Initiate("Sprites/Building/Shadows/PlayerLocationWithQuest", false, 0.07f);
+        else if (overlay == "PlayerLocationFromBelow") newObject.AddComponent<AnimatedSprite>().Initiate("Sprites/Building/Shadows/PlayerLocationFromBelow", false, 0.07f);
+        else if (overlay == "PlayerLocationSmall") newObject.AddComponent<AnimatedSprite>().Initiate("Sprites/Building/Shadows/PlayerLocationSmall", false, 0.07f);
         else if (overlay == "AvailableQuest") newObject.AddComponent<AnimatedSprite>().Initiate("Sprites/Building/Shadows/AvailableQuest", false, 0.07f);
         else newObject.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Building/Buttons/" + overlay);
         newObject.GetComponent<SpriteRenderer>().sortingOrder = sortingOrder;
@@ -910,30 +911,38 @@ public static class Root
             AddLine("Available quests:");
         });
         foreach (var quest in quests)
-            AddPaddingRegion(() =>
+        {
+            AddButtonRegion(() =>
             {
-                AddLine(quest.name);
-                AddLine("Level: ", "DarkGray");
-                AddText("" + quest.questLevel, ColorQuestLevel(quest.questLevel));
-                AddBigButton(quest.Icon(), (h) =>
+                AddLine((settings.questLevel.Value() ? "[" + quest.questLevel + "] " : "") + quest.name, "Black");
+                AddSmallButton(quest.ZoneIcon());
+            },
+            (h) =>
+            {
+                var can = false;
+                if (quest.providedItems != null)
                 {
-                    var can = false;
-                    if (quest.providedItems != null)
-                    {
-                        var provided = new List<Item>();
-                        foreach (var item in quest.providedItems)
-                            provided.Add(Item.items.Find(x => x.name == item.Key).CopyItem(item.Value));
-                        can = currentSave.player.inventory.CanAddItems(provided);
-                    }
-                    else can = true;
-                    if (can)
-                    {
-                        PlaySound("QuestAdd");
-                        currentSave.player.AddQuest(quest);
-                    }
-                    else PlaySound("QuestFailed");
-                });
+                    var provided = new List<Item>();
+                    foreach (var item in quest.providedItems)
+                        provided.Add(Item.items.Find(x => x.name == item.Key).CopyItem(item.Value));
+                    can = currentSave.player.inventory.CanAddItems(provided);
+                }
+                else can = true;
+                if (can)
+                {
+                    PlaySound("QuestAdd");
+                    currentSave.player.AddQuest(quest);
+                }
+                else PlaySound("QuestFailed");
+            },
+            null, (h) => () =>
+            {
+                SetAnchor(TopRight, -19, -38);
+                quest.Print();
             });
+            var color = ColorQuestLevel(quest.questLevel);
+            if (color != null) SetRegionBackgroundAsImage("Sprites/Textures/SkillUp" + color);
+        }
     }
 
     #region FluidBar

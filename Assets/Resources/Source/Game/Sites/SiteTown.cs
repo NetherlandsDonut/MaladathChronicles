@@ -116,8 +116,8 @@ public class SiteTown : Site
             (h) => { BuildPath(); });
             var q = currentSave.player.AvailableQuestsAt(this, true).Count;
             if (currentSave.currentSite == name)
-                AddSmallButtonOverlay("PlayerLocation" + (q > 0 ? "WithQuest" : ""), 0, 2);
-            else if (q > 0)
+                AddSmallButtonOverlay("PlayerLocationFromBelow", 0, 2);
+            if (q > 0)
             {
                 AddSmallButtonOverlay("AvailableQuest", 0, 2);
                 if (!sitesWithQuestMarkers.Contains(this))

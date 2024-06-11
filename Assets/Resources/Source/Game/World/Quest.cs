@@ -2,6 +2,12 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
+using static Root;
+using static Root.Anchor;
+
+using static Sound;
+using static Coloring;
+
 public class Quest
 {
     public void Initialise()
@@ -105,6 +111,67 @@ public class Quest
 
     //All the sites that need to be respawned after entering the map again
     public static List<Site> sitesToRespawn;
+
+    public void Print()
+    {
+        AddRegionGroup();
+        SetRegionGroupWidth(190);
+        SetRegionGroupHeight(281);
+        var color = ColorQuestLevel(questLevel);
+        AddHeaderRegion(() =>
+        {
+            AddLine(name, color != null ? "Black" : "Gray");
+            if (CDesktop.title == "QuestLog")
+                if (CDesktop.windows.Exists(x => x.title == "QuestConfirmAbandon"))
+                {
+                    AddSmallButton("OtherCloseOff");
+                    AddSmallButton("OtherTrashOff");
+                }
+                else if (CDesktop.windows.Exists(x => x.title == "QuestConfirmAbandon") || CDesktop.windows.Exists(x => x.title == "QuestSort") || CDesktop.windows.Exists(x => x.title == "QuestSettings"))
+                {
+                    AddSmallButton("OtherClose", (h) =>
+                    {
+                        CloseWindow("Quest");
+                        PlaySound("DesktopInstanceClose");
+                    });
+                    AddSmallButton("OtherTrashOff");
+                }
+                else
+                {
+                    AddSmallButton("OtherClose", (h) =>
+                    {
+                        CloseWindow("Quest");
+                        PlaySound("DesktopInstanceClose");
+                    });
+                    AddSmallButton("OtherTrash", (h) =>
+                    {
+                        PlaySound("DesktopMenuOpen");
+                        SpawnWindowBlueprint("QuestConfirmAbandon");
+                        Respawn("QuestList");
+                    });
+                }
+        });
+        if (color != null) SetRegionBackgroundAsImage("Sprites/Textures/SkillUpLong" + color);
+        if (description != null)
+        {
+            AddHeaderRegion(() => AddLine("Description:"));
+            new Description()
+            {
+                regions = new() { new() { regionType = "Padding", contents = new() { new ()
+                    {
+                        { "Color", "DarkGray" },
+                        { "Text", description }
+                    }
+                } } }
+            }.Print(null, null, 190, null);
+        }
+        if (conditions != null)
+        {
+            AddHeaderRegion(() => AddLine("Details:"));
+            foreach (var condition in conditions)
+                condition.Print(CDesktop.title == "QuestLog");
+        }
+    }
 
     //Copies a quest to a new one for the player to take
     public Quest CopyQuest()

@@ -1805,14 +1805,17 @@ public class Blueprint
             SetRegionGroupHeight(281);
             AddHeaderRegion(() =>
             {
-                AddLine("Quest Log");
-                AddLine("Current quests: ", "DarkGray");
-                AddText("" + currentSave.player.currentQuests.Count, "Gray");
-                AddBigButton("MenuQuestLog");
+                AddLine("Quest Log:");
             });
             AddHeaderRegion(() =>
             {
-                AddLine("Current quests:", "Gray");
+                AddLine("Completed quests: ", "DarkGray");
+                AddText("" + currentSave.player.completedQuests.Count, "Gray");
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Current quests: ", "DarkGray");
+                AddText("" + currentSave.player.currentQuests.Count, "Gray");
                 AddSmallButton("OtherReverse", (h) =>
                 {
                     currentSave.player.currentQuests.Reverse();
@@ -1820,20 +1823,22 @@ public class Blueprint
                     Respawn("QuestList");
                     PlaySound("DesktopInventorySort", 0.2f);
                 });
-                if (!CDesktop.windows.Exists(x => x.title == "QuestSettings") && !CDesktop.windows.Exists(x => x.title == "QuestSort"))
+                if (!CDesktop.windows.Exists(x => x.title == "QuestConfirmAbandon") && !CDesktop.windows.Exists(x => x.title == "QuestSettings") && !CDesktop.windows.Exists(x => x.title == "QuestSort"))
                     AddSmallButton("OtherSort", (h) =>
                     {
                         SpawnWindowBlueprint("QuestSort");
                         CloseWindow("QuestList");
+                        Respawn("Quest", true);
                         Respawn("QuestList");
                     });
                 else
                     AddSmallButton("OtherSortOff");
-                if (!CDesktop.windows.Exists(x => x.title == "QuestSettings") && !CDesktop.windows.Exists(x => x.title == "QuestSort"))
+                if (!CDesktop.windows.Exists(x => x.title == "QuestConfirmAbandon") && !CDesktop.windows.Exists(x => x.title == "QuestSettings") && !CDesktop.windows.Exists(x => x.title == "QuestSort"))
                     AddSmallButton("OtherSettings", (h) =>
                     {
                         SpawnWindowBlueprint("QuestSettings");
                         CloseWindow("QuestList");
+                        Respawn("Quest", true);
                         Respawn("QuestList");
                     });
                 else
@@ -1849,7 +1854,7 @@ public class Blueprint
                     {
                         var quest = quests[index + 11 * regionGroup.pagination()];
                         AddLine((settings.questLevel.Value() ? "[" + quest.questLevel + "] " : "") + quest.name, "Black");
-                        AddSmallButton(quest.Icon());
+                        AddSmallButton(quest.ZoneIcon());
                     },
                     (h) =>
                     {
@@ -1871,50 +1876,7 @@ public class Blueprint
         }),
         new("Quest", () => {
             SetAnchor(TopRight, -19, -38);
-            AddRegionGroup();
-            SetRegionGroupWidth(190);
-            SetRegionGroupHeight(281);
-            var color = ColorQuestLevel(quest.questLevel);
-            AddHeaderRegion(() =>
-            {
-                AddLine(quest.name, color != null ? "Black" : "Gray");
-                AddSmallButton("OtherClose", (h) =>
-                {
-                    CloseWindow("Quest");
-                    PlaySound("DesktopInstanceClose");
-                });
-            });
-            if (color != null) SetRegionBackgroundAsImage("Sprites/Textures/SkillUp" + color);
-            if (quest.description != null)
-            {
-                AddHeaderRegion(() =>
-                {
-                    AddLine("Description:");
-                });
-                new Description()
-                { regions = new() { new() { regionType = "Padding", contents = new() { new ()
-                    {
-                        { "Color", "DarkGray" },
-                        { "Text", quest.description }
-                    }
-                } } } }.Print(null, null, 190, null);
-            }
-            AddHeaderRegion(() =>
-            {
-                AddLine("Details:");
-            });
-            foreach (var condition in quest.conditions)
-                condition.Print();
-            AddButtonRegion(() =>
-            {
-                SetRegionBackground(RedButton);
-                AddLine("Abandon Quest");
-            },
-            (h) =>
-            {
-                PlaySound("DesktopMenuOpen");
-                SpawnWindowBlueprint("QuestConfirmAbandon");
-            });
+            quest.Print();
         }),
         new("QuestConfirmAbandon", () => {
             SetAnchor(-92, 142);
@@ -1940,7 +1902,7 @@ public class Blueprint
                 quest = null;
                 CloseWindow("QuestConfirmAbandon");
                 CloseWindow("Quest");
-                CDesktop.RespawnAll();
+                Respawn("QuestList");
             });
             AddRegionGroup();
             SetRegionGroupWidth(91);
@@ -1952,6 +1914,8 @@ public class Blueprint
             {
                 PlaySound("DesktopMenuClose");
                 CloseWindow("QuestConfirmAbandon");
+                Respawn("Quest");
+                Respawn("QuestList");
             });
         }, true),
         new("QuestSort", () => {
@@ -4079,7 +4043,7 @@ public class Blueprint
                 else
                 {
                     CloseDesktop(CDesktop.title);
-                    PlaySound("DesktopCharacterSheetClose");
+                    PlaySound("DesktopSpellbookScreenClose");
                 }
             });
             SetAnchor(Top);
@@ -4167,7 +4131,7 @@ public class Blueprint
                     else
                     {
                         CloseDesktop(CDesktop.title);
-                        PlaySound("DesktopInventoryClose");
+                        PlaySound("DesktopSpellbookScreenClose");
                     }
                 });
                 AddSmallButton(CDesktop.title == "CraftingScreen" ? "OtherClose" : "MenuCrafting", (h) =>
@@ -5362,7 +5326,7 @@ public class Blueprint
         new("CharacterSheet", () => 
         {
             PlaySound("DesktopCharacterSheetOpen");
-            SetDesktopBackground("Stone");
+            SetDesktopBackground("RedWood");
             SpawnWindowBlueprint("MapToolbarShadow");
             SpawnWindowBlueprint("MapToolbarClockLeft");
             SpawnWindowBlueprint("MapToolbar");
@@ -5382,8 +5346,8 @@ public class Blueprint
         }),
         new("QuestLog", () => 
         {
-            PlaySound("DesktopCharacterSheetOpen");
-            SetDesktopBackground("Skin");
+            PlaySound("DesktopInventoryOpen");
+            SetDesktopBackground("RedLeather");
             SpawnWindowBlueprint("MapToolbarShadow");
             SpawnWindowBlueprint("MapToolbarClockLeft");
             SpawnWindowBlueprint("MapToolbar");
@@ -5395,8 +5359,33 @@ public class Blueprint
             SpawnWindowBlueprint("QuestList");
             AddHotkey(Escape, () =>
             {
-                PlaySound("DesktopCharacterSheetClose");
-                CloseDesktop("QuestLog");
+                if (CloseWindow("QuestSort"))
+                {
+                    PlaySound("DesktopInstanceClose");
+                    Respawn("QuestList");
+                }
+                else if (CloseWindow("QuestSettings"))
+                {
+                    PlaySound("DesktopInstanceClose");
+                    Respawn("QuestList");
+                }
+                else if (CloseWindow("QuestConfirmAbandon"))
+                {
+                    PlaySound("DesktopMenuClose");
+                    Respawn("Quest");
+                    Respawn("QuestList");
+                }
+                else if (CloseWindow("Quest"))
+                {
+                    quest = null;
+                    Respawn("QuestList");
+                    PlaySound("DesktopInstanceClose");
+                }
+                else
+                {
+                    PlaySound("DesktopSpellbookScreenClose");
+                    CloseDesktop("QuestLog");
+                }
             });
             AddPaginationHotkeys();
         }),

@@ -2818,9 +2818,43 @@
     },
     {
       "player": {
-        "currentQuests": [],
+        "currentQuests": [
+          {
+            "questID": 787,
+            "requiredLevel": 1,
+            "questLevel": 1,
+            "name": "The New Horde",
+            "description": "Report to Gornek in the Den.",
+            "siteStart": "The Den",
+            "siteEnd": "The Den",
+            "zone": "Durotar",
+            "conditions": []
+          },
+          {
+            "questID": 794,
+            "requiredLevel": 1,
+            "questLevel": 5,
+            "name": "Burning Blade Medallion",
+            "description": "Bring the Burning Blade Medallion to Zureetha Fargaze, outside The Den.",
+            "siteStart": "The Den",
+            "siteEnd": "The Den",
+            "zone": "Durotar",
+            "reputationGain": {
+              "Darkspear Trolls": 500,
+              "Orgrimmar": 500
+            },
+            "conditions": [
+              {
+                "type": "Item",
+                "name": "Burning Blade Medallion",
+                "amount": 1
+              }
+            ]
+          }
+        ],
         "completedQuests": [],
         "level": 1,
+        "experience": 60,
         "uniquesGotten": [],
         "reputation": {
           "Southsea Pirates": 0,
@@ -2898,6 +2932,7 @@
         "race": "Forsaken",
         "spec": "Rogue",
         "gender": "Female",
+        "homeLocation": "Shadow Grave",
         "abilities": {
           "Dual Wielding Proficiency": 0,
           "One Handed Axe Proficiency": 1,
@@ -3014,7 +3049,9 @@
         }
       },
       "hour": 7,
-      "currentSite": "Shadow Grave",
+      "minute": 13,
+      "second": 4,
+      "currentSite": "Valley of Trials",
       "ringOfLaw": "Ok'thor the Breaker",
       "openedChests": {},
       "siteProgress": {},
@@ -3022,12 +3059,21 @@
       "raresKilled": {},
       "elitesKilled": {},
       "siteVisits": {
-        "Shadow Grave": 1
+        "Shadow Grave": 1,
+        "The Dor'Danil Barrow Den": 2,
+        "The Den of Flame": 2,
+        "Valley of Trials": 2,
+        "The Den": 2,
+        "Sen'jin Village": 0,
+        "Darkspear Strand": 1
       },
       "unlockedAreas": [],
       "vendorStock": {},
       "banks": {},
-      "startDate": "2024-06-10T16:47:20.2390264+02:00"
+      "startDate": "2024-06-10T16:47:20.2390264+02:00",
+      "lastLoaded": "2024-06-11T03:49:53.5425993+02:00",
+      "lastPlayed": "2024-06-11T03:50:38.2653015+02:00",
+      "timePlayed": "00:01:16.4939004"
     }
   ]
 }
