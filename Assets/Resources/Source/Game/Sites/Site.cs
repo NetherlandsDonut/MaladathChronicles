@@ -116,6 +116,17 @@ public class Site
             currentSave.currentSite = name;
             if (refreshWindow != null) refreshWindow.Respawn();
         }
+        if (siteType == null)
+        {
+            var fI = instances.Find(x => x.name == name);
+            if (fI != null) siteType = "Instance";
+            var fH = areas.Find(x => x.name == name);
+            if (fH != null) siteType = "HostileArea";
+            var fT = towns.Find(x => x.name == name);
+            if (fT != null) siteType = "Town";
+            var fC = complexes.Find(x => x.name == name);
+            if (fC != null) siteType = "Complex";
+        }
         if (siteType == "Instance") instance = (SiteInstance)this;
         else if (siteType == "HostileArea") area = (SiteHostileArea)this;
         else if (siteType == "Town") town = (SiteTown)this;
@@ -154,6 +165,9 @@ public class Site
 
         //Set current site to none because the player is traveling between sites
         currentSave.currentSite = "";
+
+        //Respawn the map location
+        Respawn("MapLocationInfo");
 
         //Respawn the site the player was at a moment ago so that it doesn't have
         //the green arrow indicating that the player would be still there
@@ -223,7 +237,7 @@ public class Site
         if (path != null) pathsDrawn.Add(path.DrawPath(hidden));
     }
 
-    public void ExecutePath(string siteType)
+    public void ExecutePath(string siteType = null)
     {
         if (currentSave.currentSite != name && pathsDrawn.Count > 0) QueueSitePathTravel();
         else QueueSiteOpen(siteType);

@@ -249,6 +249,7 @@ public static class Root
 
     public static void OrderLoadingMap()
     {
+        Quest.sitesToRespawn = new();
         Quest.sitesWithQuestMarkers = new();
         cameraBoundaryPoints = new();
         loadSites = windowBlueprints.FindAll(x => x.title.StartsWith("Site: "));

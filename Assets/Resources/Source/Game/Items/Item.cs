@@ -592,7 +592,6 @@ public class Item
                 else if (CDesktop.windows.Exists(x => x.title == "Bank"))
                 {
                     if (currentSave.banks[town.name].CanAddItem(item))
-                    {
                         if (item.amount > 1 && Input.GetKey(KeyCode.LeftShift))
                         {
                             String.splitAmount.Set("1");
@@ -628,7 +627,6 @@ public class Item
                             Respawn("Inventory");
                             Respawn("Bank");
                         }
-                    }
                 }
                 else
                 {

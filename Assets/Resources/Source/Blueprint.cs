@@ -630,7 +630,8 @@ public class Blueprint
                             SpawnWindowBlueprint("CharacterCreationFinish");
                             SpawnWindowBlueprint("CharacterCreationFactionHorde");
                             SpawnWindowBlueprint("CharacterCreationFactionAlliance");
-                            SetDesktopBackground("Backgrounds/Leather");
+                            SpawnTransition();
+                            SetDesktopBackground("Backgrounds/Sky");
                         });
                     else AddPaddingRegion(() => AddLine("Create a new character", "DarkGray"));
                 }
@@ -1280,6 +1281,7 @@ public class Blueprint
                     SpawnWindowBlueprint("CharacterRoster");
                     SpawnWindowBlueprint("CharacterInfo");
                     SpawnWindowBlueprint("TitleScreenSingleplayer");
+                    SpawnTransition();
                 });
             });
         }),
@@ -1387,6 +1389,7 @@ public class Blueprint
                             CloseWindow("ProfessionListSecondary");
                             Respawn("CraftingList");
                             PlaySound("DesktopInstanceOpen");
+                            SetDesktopBackground("Backgrounds/Profession");
                         });
                     }
                     else AddBigButton("OtherDisabled");
@@ -1423,6 +1426,7 @@ public class Blueprint
                             CloseWindow("ProfessionListSecondary");
                             Respawn("CraftingList");
                             PlaySound("DesktopInstanceOpen");
+                            SetDesktopBackground("Backgrounds/Profession");
                         });
                     }
                     else AddBigButton("OtherDisabled");
@@ -1450,6 +1454,7 @@ public class Blueprint
                     Respawn("ProfessionListPrimary");
                     Respawn("ProfessionListSecondary");
                     PlaySound("DesktopInstanceClose");
+                    SetDesktopBackground("Backgrounds/Professions");
                 });
                 AddSkillBar(40, -19, profession, currentSave.player);
             });
@@ -1533,12 +1538,20 @@ public class Blueprint
             SetRegionGroupHeight(281);
             AddHeaderRegion(() =>
             {
-                AddLine(recipe.name + ":", "Gray");
-                AddSmallButton("OtherClose", (h) =>
+                var skill = currentSave.player.professionSkills[profession.name].Item1;
+                AddLine(recipe.name + ":", recipe.skillUpGray > skill ? "Black" : "Gray");
+                AddSmallButton("OtherClose", (h) => 
                 {
                     CloseWindow("CraftingRecipe");
                     PlaySound("DesktopInstanceClose");
                 });
+                if (recipe.skillUpYellow > skill)
+                    SetRegionBackgroundAsImage("SkillUpOrange");
+                else if (recipe.skillUpGreen > skill)
+                    SetRegionBackgroundAsImage("SkillUpYellow");
+                else if (recipe.skillUpGray > skill)
+                    SetRegionBackgroundAsImage("SkillUpGreen");
+                
             });
             if (recipe.results.Count > 0)
             {
@@ -3963,7 +3976,7 @@ public class Blueprint
                 else
                 {
                     CloseDesktop(CDesktop.title);
-                    PlaySound("DesktopSpellbookScreenClose");
+                    PlaySound("DesktopSpellbookClose");
                 }
             });
             AddHotkey(B, () =>
@@ -4011,7 +4024,7 @@ public class Blueprint
                 else
                 {
                     CloseDesktop(CDesktop.title);
-                    PlaySound("DesktopInstanceClose");
+                    PlaySound("DesktopSpellbookClose");
                 }
             });
             AddHotkey(C, () =>
@@ -4043,7 +4056,7 @@ public class Blueprint
                 else
                 {
                     CloseDesktop(CDesktop.title);
-                    PlaySound("DesktopSpellbookScreenClose");
+                    PlaySound("DesktopSpellbookClose");
                 }
             });
             SetAnchor(Top);
@@ -4096,7 +4109,7 @@ public class Blueprint
                     else
                     {
                         CloseDesktop(CDesktop.title);
-                        PlaySound("DesktopSpellbookScreenClose");
+                        PlaySound("DesktopSpellbookClose");
                     }
                 });
                 AddSmallButton(CDesktop.title == "TalentScreen" ? "OtherClose" : "MenuClasses", (h) =>
@@ -4131,7 +4144,7 @@ public class Blueprint
                     else
                     {
                         CloseDesktop(CDesktop.title);
-                        PlaySound("DesktopSpellbookScreenClose");
+                        PlaySound("DesktopSpellbookClose");
                     }
                 });
                 AddSmallButton(CDesktop.title == "CraftingScreen" ? "OtherClose" : "MenuCrafting", (h) =>
@@ -4147,7 +4160,7 @@ public class Blueprint
                     else
                     {
                         CloseDesktop(CDesktop.title);
-                        PlaySound("DesktopInstanceClose");
+                        PlaySound("DesktopSpellbookClose");
                     }
                 });
                 AddSmallButton(CDesktop.title == "BestiaryScreen" ? "OtherClose" : "MenuCompletion", (h) =>
@@ -4453,6 +4466,13 @@ public class Blueprint
                 }
             );
         }),
+        new("MapLocationInfo", () => {
+            if (currentSave.currentSite != "") return;
+            if (currentSave.currentSite == "") return;
+            SetAnchor(BottomRight, 0, 16);
+            AddRegionGroup();
+            AddPaddingRegion(() => AddSmallButton("MenuFlag", (h) => FindSite(x => x.name == currentSave.currentSite).ExecutePath()));
+        }, true),
 
         //Spellbook
         new("SpellbookAbilityListActivated", () => {
@@ -4854,6 +4874,7 @@ public class Blueprint
                     SpawnWindowBlueprint("CharacterRoster");
                     SpawnWindowBlueprint("CharacterInfo");
                     SpawnWindowBlueprint("TitleScreenSingleplayer");
+                    SpawnTransition();
                 }
                 else if (CloseWindow("TitleScreenSingleplayer"))
                 {
@@ -5383,7 +5404,7 @@ public class Blueprint
                 }
                 else
                 {
-                    PlaySound("DesktopSpellbookScreenClose");
+                    PlaySound("DesktopSpellbookClose");
                     CloseDesktop("QuestLog");
                 }
             });
@@ -5431,7 +5452,7 @@ public class Blueprint
         }),
         new("SpellbookScreen", () => 
         {
-            PlaySound("DesktopSpellbookScreenOpen");
+            PlaySound("DesktopSpellbookOpen");
             SetDesktopBackground("Backgrounds/Skin");
             SpawnWindowBlueprint("MapToolbarShadow");
             SpawnWindowBlueprint("MapToolbarClockLeft");
@@ -5444,7 +5465,7 @@ public class Blueprint
             SpawnWindowBlueprint("SpellbookResources");
             SpawnWindowBlueprint("ExperienceBarBorder");
             SpawnWindowBlueprint("ExperienceBar");
-            AddHotkey(Escape, () => { SwitchDesktop("Map"); CloseDesktop("SpellbookScreen"); PlaySound("DesktopSpellbookScreenClose"); });
+            AddHotkey(Escape, () => { SwitchDesktop("Map"); CloseDesktop("SpellbookScreen"); PlaySound("DesktopSpellbookClose"); });
             AddPaginationHotkeys();
         }),
         new("EquipmentScreen", () => 
@@ -5470,7 +5491,7 @@ public class Blueprint
         new("BestiaryScreen", () => 
         {
             PlaySound("DesktopInstanceOpen");
-            SetDesktopBackground("Backgrounds/Stone");
+            SetDesktopBackground("Backgrounds/SkinDark");
             SpawnWindowBlueprint("MapToolbarShadow");
             SpawnWindowBlueprint("MapToolbarClockLeft");
             SpawnWindowBlueprint("MapToolbar");
@@ -5489,8 +5510,8 @@ public class Blueprint
         }),
         new("CraftingScreen", () => 
         {
-            PlaySound("DesktopInstanceOpen");
-            SetDesktopBackground("Backgrounds/Skin");
+            PlaySound("DesktopSpellbookOpen");
+            SetDesktopBackground("Backgrounds/Professions");
             SpawnWindowBlueprint("ProfessionListPrimary");
             SpawnWindowBlueprint("ProfessionListSecondary");
             SpawnWindowBlueprint("MapToolbarShadow");
@@ -5503,14 +5524,28 @@ public class Blueprint
             SpawnWindowBlueprint("ExperienceBar");
             AddHotkey(Escape, () =>
             {
-                PlaySound("DesktopInstanceClose");
-                CloseDesktop("CraftingScreen");
+                if (CloseWindow("CraftingRecipe"))
+                {
+                    PlaySound("DesktopInstanceClose");
+                }
+                else if (CloseWindow("CraftingList"))
+                {
+                    Respawn("ProfessionListPrimary");
+                    Respawn("ProfessionListSecondary");
+                    PlaySound("DesktopInstanceClose");
+                    SetDesktopBackground("Backgrounds/Professions");
+                }
+                else
+                {
+                    PlaySound("DesktopSpellbookClose");
+                    CloseDesktop("CraftingScreen");
+                }
             });
             AddPaginationHotkeys();
         }),
         new("GameMenu", () => 
         {
-            SetDesktopBackground("Backgrounds/Leather");
+            SetDesktopBackground("Backgrounds/RuggedLeather");
             SpawnWindowBlueprint("GameMenu");
             AddHotkey(Escape, () =>
             {

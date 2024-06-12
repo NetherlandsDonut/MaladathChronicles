@@ -125,6 +125,9 @@ public class Entity
         if (quest.providedItems != null)
             foreach (var item in quest.providedItems)
                 inventory.AddItem(Item.items.Find(x => x.name == item.Key).CopyItem(item.Value));
+        foreach (var site in sitesWithQuestMarkers)
+            if (!sitesToRespawn.Contains(site))
+                sitesToRespawn.Add(site);
     }
 
     //Check if this entity can pick up a specific quest
@@ -245,8 +248,9 @@ public class Entity
                 }
         if (changed)
         {
-            sitesToRespawn = sitesWithQuestMarkers.ToList();
-            sitesWithQuestMarkers = new();
+            foreach (var site in sitesWithQuestMarkers)
+                if (!sitesToRespawn.Contains(site))
+                    sitesToRespawn.Add(site);
         }
     }
 

@@ -49,7 +49,7 @@
     "primary": true,
     "defaultRecipes": [
       "Rough Sharpening Stone",
-      "Rough Wightstone",
+      "Rough Weightstone",
       "Rough Copper Vest",
       "Copper Bracers"
     ],
@@ -241,13 +241,6 @@
         "requiredLevel": 35,
         "requiredSkill": 200,
         "maxSkill": 300
-      },
-      {
-        "levelName": "Goblin",
-        "trainingCost": 50000,
-        "requiredLevel": 30,
-        "requiredSkill": 200,
-        "maxSkill": 300
       }
     ]
   },
@@ -256,9 +249,8 @@
     "icon": "TradeCooking",
     "recipeType": "Recipe",
     "defaultRecipes": [
-      "Roasted Wolf Meat",
-      "Roasted Boar Meat",
-      "Crafted Light Shot"
+      "Charred Wolf Meat",
+      "Roasted Boar Meat"
     ],
     "levels": [
       {
@@ -399,6 +391,7 @@
   {
     "name": "Mining",
     "icon": "TradeMining",
+    "recipeType": "Pattern",
     "primary": true,
     "defaultRecipes": [
       "Smelt Copper"

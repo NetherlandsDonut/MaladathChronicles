@@ -1364,31 +1364,17 @@
         "levelMax": 35
       }
     ],
-    "eliteEncounters": [
+    "rareEncounters": [
       {
-        "who": "Nagaz",
-        "levelMin": 40
-      },
-      {
-        "who": "Lord Aliden Perenolde",
-        "levelMin": 41
+        "who": "Narillasanz",
+        "levelMin": 44
       }
     ],
-    "areaSize": 5,
+    "areaSize": 3,
     "progression": [
       {
-        "type": "Boss",
-        "bossName": "Nagaz",
-        "point": 2
-      },
-      {
-        "type": "Boss",
-        "bossName": "Lord Aliden Perenolde",
-        "point": 4
-      },
-      {
         "type": "Treasure",
-        "point": 5
+        "point": 3
       }
     ]
   },
@@ -2019,6 +2005,12 @@
         "levelMax": 27
       }
     ],
+    "rareEncounters": [
+      {
+        "who": "Big Samras",
+        "levelMin": 27
+      }
+    ],
     "areaSize": 3,
     "progression": [
       {
@@ -2550,12 +2542,14 @@
     ],
     "rareEncounters": [
       {
-        "who": "Ilkrud Magthrull",
-        "levelMin": 24
-      },
-      {
         "who": "Akkrilus",
         "levelMin": 26
+      }
+    ],
+    "eliteEncounters": [
+      {
+        "who": "Ilkrud Magthrull",
+        "levelMin": 24
       }
     ],
     "areaSize": 3,
@@ -2563,6 +2557,11 @@
       {
         "type": "Treasure",
         "point": 3
+      },
+      {
+        "type": "Boss",
+        "bossName": "Ilkrud Magthrull",
+        "point": 2
       }
     ]
   },
@@ -2587,6 +2586,12 @@
         "who": "Foulweald Ursa",
         "levelMin": 24,
         "levelMax": 25
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Oakpaw",
+        "levelMin": 27
       }
     ],
     "areaSize": 3,
@@ -2614,6 +2619,12 @@
         "who": "Ashenvale Bear",
         "levelMin": 21,
         "levelMax": 22
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Branch Snapper",
+        "levelMin": 25
       }
     ],
     "areaSize": 3,
@@ -2674,6 +2685,12 @@
         "who": "Befouled Water Elemental",
         "levelMin": 24,
         "levelMax": 25
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Eck'alom",
+        "levelMin": 27
       }
     ],
     "areaSize": 3,
@@ -3019,6 +3036,12 @@
         "levelMax": 18
       }
     ],
+    "rareEncounters": [
+      {
+        "who": "Lady Vespia",
+        "levelMin": 22
+      }
+    ],
     "areaSize": 3,
     "progression": [
       {
@@ -3048,6 +3071,12 @@
         "who": "Thistlefur Pathfinder",
         "levelMin": 23,
         "levelMax": 24
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Rorgish Jowl",
+        "levelMin": 25
       }
     ],
     "areaSize": 3,
@@ -3135,6 +3164,12 @@
     ],
     "rareEncounters": [
       {
+        "who": "Prince Raze",
+        "levelMin": 32
+      }
+    ],
+    "eliteEncounters": [
+      {
         "who": "Geltharis",
         "levelMin": 32
       }
@@ -3144,6 +3179,11 @@
       {
         "type": "Treasure",
         "point": 3
+      },
+      {
+        "type": "Boss",
+        "bossName": "Geltharis",
+        "point": 2
       }
     ]
   },
@@ -5788,6 +5828,12 @@
         "levelMax": 56
       }
     ],
+    "rareEncounters": [
+      {
+        "who": "Hematos",
+        "levelMin": 60
+      }
+    ],
     "areaSize": 3,
     "progression": [
       {
@@ -5838,6 +5884,12 @@
         "who": "Firegut Brute",
         "levelMin": 51,
         "levelMax": 52
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Hahk'Zor",
+        "levelMin": 54
       }
     ],
     "areaSize": 3,
@@ -5913,6 +5965,16 @@
         "levelMax": 55
       }
     ],
+    "rareEncounters": [
+      {
+        "who": "Thauris Balgarr",
+        "levelMin": 57
+      },
+      {
+        "who": "Terrorspark",
+        "levelMin": 56
+      }
+    ],
     "areaSize": 3,
     "progression": [
       {
@@ -5937,6 +5999,12 @@
         "who": "Venomtip Scorpid",
         "levelMin": 52,
         "levelMax": 53
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Deathmaw",
+        "levelMin": 54
       }
     ],
     "areaSize": 3,
@@ -5968,6 +6036,12 @@
         "who": "Ember Worg",
         "levelMin": 52,
         "levelMax": 53
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Volchan",
+        "levelMin": 60
       }
     ],
     "areaSize": 3,
@@ -6032,6 +6106,12 @@
         "levelMax": 12
       }
     ],
+    "rareEncounters": [
+      {
+        "who": "Lady Moongazer",
+        "levelMin": 16
+      }
+    ],
     "areaSize": 3,
     "progression": [
       {
@@ -6061,6 +6141,12 @@
         "who": "Wild Grell",
         "levelMin": 11,
         "levelMax": 12
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Licillin",
+        "levelMin": 14
       }
     ],
     "areaSize": 3,
@@ -6124,6 +6210,38 @@
         "who": "Moonstalker",
         "levelMin": 15,
         "levelMax": 16
+      }
+    ],
+    "areaSize": 3,
+    "progression": [
+      {
+        "type": "Treasure",
+        "point": 3
+      }
+    ]
+  },
+  {
+    "x": 1588,
+    "y": -1130,
+    "name": "Cliffspring Caves",
+    "zone": "Darkshore",
+    "type": "HostileArea",
+    "commonEncounters": [
+      {
+        "who": "Stormscale Wave Rider",
+        "levelMin": 15,
+        "levelMax": 16
+      },
+      {
+        "who": "Stormscale Siren",
+        "levelMin": 15,
+        "levelMax": 16
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Lord Sinslayer",
+        "levelMin": 17
       }
     ],
     "areaSize": 3,
@@ -6236,6 +6354,12 @@
         "levelMax": 19
       }
     ],
+    "rareEncounters": [
+      {
+        "who": "Lady Vespira",
+        "levelMin": 22
+      }
+    ],
     "areaSize": 3,
     "progression": [
       {
@@ -6292,6 +6416,12 @@
         "who": "Twilight Thug",
         "levelMin": 16,
         "levelMax": 17
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Firecaller Radison",
+        "levelMin": 19
       }
     ],
     "areaSize": 3,
@@ -6356,6 +6486,12 @@
         "who": "Greymist Hunter",
         "levelMin": 16,
         "levelMax": 17
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Flagglemurk the Cruel",
+        "levelMin": 17
       }
     ],
     "areaSize": 3,
@@ -6424,6 +6560,12 @@
         "who": "Rabid Thistle Bear",
         "levelMin": 14,
         "levelMax": 15
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Strider Clutchmother",
+        "levelMin": 20
       }
     ],
     "areaSize": 3,
@@ -7851,6 +7993,16 @@
         "levelMax": 10
       }
     ],
+    "rareEncounters": [
+      {
+        "who": "Gibblewilt",
+        "levelMin": 11
+      },
+      {
+        "who": "Great Father Arctikus",
+        "levelMin": 11
+      }
+    ],
     "areaSize": 3,
     "progression": [
       {
@@ -7875,6 +8027,12 @@
         "who": "Rockjaw Bonesnapper",
         "levelMin": 8,
         "levelMax": 10
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Hammerspine",
+        "levelMin": 12
       }
     ],
     "areaSize": 3,
@@ -8175,7 +8333,7 @@
     "rareEncounters": [
       {
         "who": "Bjarn",
-        "levelMin": 12
+        "levelMin": 11
       }
     ],
     "areaSize": 3,
@@ -8402,6 +8560,10 @@
     ],
     "rareEncounters": [
       {
+        "who": "Captain Flat Tusk",
+        "levelMin": 11
+      },
+      {
         "who": "Geolord Mottle",
         "levelMin": 9
       }
@@ -8544,6 +8706,12 @@
         "who": "Burning Blade Apprentice",
         "levelMin": 10,
         "levelMax": 11
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Felweaver Scornn",
+        "levelMin": 12
       }
     ],
     "eliteEncounters": [
@@ -8824,6 +8992,12 @@
         "levelMax": 23
       }
     ],
+    "rareEncounters": [
+      {
+        "who": "Fenros",
+        "levelMin": 32
+      }
+    ],
     "areaSize": 3,
     "progression": [
       {
@@ -8859,6 +9033,10 @@
       {
         "who": "Commander Felstrom",
         "levelMin": 32
+      },
+      {
+        "who": "Lord Malathrom",
+        "levelMin": 31
       }
     ],
     "areaSize": 3,
@@ -9190,6 +9368,12 @@
         "who": "Nightbane Dark Runner",
         "levelMin": 28,
         "levelMax": 29
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Nefaru",
+        "levelMin": 33
       }
     ],
     "areaSize": 3,
@@ -9792,6 +9976,12 @@
     "name": "Shady Rest Inn",
     "zone": "Dustwallow Marsh",
     "type": "HostileArea",
+    "rareEncounters": [
+      {
+        "who": "Azzere the Skyblade",
+        "levelMin": 25
+      }
+    ],
     "areaSize": 3,
     "progression": [
       {
@@ -10272,6 +10462,12 @@
         "levelMax": 55
       }
     ],
+    "rareEncounters": [
+      {
+        "who": "Gish the Unmoving",
+        "levelMin": 56
+      }
+    ],
     "areaSize": 3,
     "progression": [
       {
@@ -10627,6 +10823,12 @@
         "who": "Ziggurat Protector",
         "levelMin": 58,
         "levelMax": 59
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Lord Darkscythe",
+        "levelMin": 58
       }
     ],
     "areaSize": 3,
@@ -11217,6 +11419,12 @@
         "levelMax": 10
       }
     ],
+    "rareEncounters": [
+      {
+        "who": "Fedfennel",
+        "levelMin": 12
+      }
+    ],
     "areaSize": 3,
     "progression": [
       {
@@ -11300,10 +11508,6 @@
       {
         "who": "Mother Fang",
         "levelMin": 10
-      },
-      {
-        "who": "Ruklar the Trapper",
-        "levelMin": 8
       }
     ],
     "areaSize": 3,
@@ -11442,6 +11646,12 @@
         "who": "Prowler",
         "levelMin": 9,
         "levelMax": 10
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Thuros Lightfingers",
+        "levelMin": 11
       }
     ],
     "areaSize": 3,
@@ -11591,6 +11801,12 @@
         "levelMax": 53
       }
     ],
+    "rareEncounters": [
+      {
+        "who": "The Ongar",
+        "levelMin": 52
+      }
+    ],
     "areaSize": 3,
     "progression": [
       {
@@ -11623,6 +11839,12 @@
         "levelMax": 52
       }
     ],
+    "rareEncounters": [
+      {
+        "who": "Death Howl",
+        "levelMin": 51
+      }
+    ],
     "areaSize": 3,
     "progression": [
       {
@@ -11652,6 +11874,12 @@
         "who": "Deadwood Warrior",
         "levelMin": 48,
         "levelMax": 49
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Mongress",
+        "levelMin": 50
       }
     ],
     "areaSize": 3,
@@ -11689,7 +11917,9 @@
       {
         "who": "Ragepaw",
         "levelMin": 51
-      },
+      }
+    ],
+    "eliteEncounters": [
       {
         "who": "Overlord Ror",
         "levelMin": 51
@@ -11700,6 +11930,11 @@
       {
         "type": "Treasure",
         "point": 3
+      },
+      {
+        "type": "Boss",
+        "bossName": "Overlord Ror",
+        "point": 2
       }
     ]
   },
@@ -11784,6 +12019,12 @@
         "levelMax": 55
       }
     ],
+    "rareEncounters": [
+      {
+        "who": "Dessecus",
+        "levelMin": 56
+      }
+    ],
     "areaSize": 3,
     "progression": [
       {
@@ -11825,8 +12066,8 @@
     ]
   },
   {
-    "x": 1692,
-    "y": -1344,
+    "x": 1599,
+    "y": -1299,
     "name": "Diseased Glen",
     "zone": "Felwood",
     "type": "HostileArea",
@@ -11856,8 +12097,8 @@
     ]
   },
   {
-    "x": 1599,
-    "y": -1299,
+    "x": 1692,
+    "y": -1344,
     "name": "Felpaw Vale",
     "zone": "Felwood",
     "type": "HostileArea",
@@ -11876,6 +12117,12 @@
         "who": "Ironbeak Hunter",
         "levelMin": 49,
         "levelMax": 50
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Olm the Wise",
+        "levelMin": 52
       }
     ],
     "areaSize": 3,
@@ -12056,6 +12303,12 @@
         "who": "Entropic Horror",
         "levelMin": 53,
         "levelMax": 54
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Immolatus",
+        "levelMin": 56
       }
     ],
     "areaSize": 3,
@@ -13260,6 +13513,12 @@
         "levelMax": 31
       }
     ],
+    "rareEncounters": [
+      {
+        "who": "Lady Zephris",
+        "levelMin": 33
+      }
+    ],
     "areaSize": 3,
     "progression": [
       {
@@ -13449,13 +13708,19 @@
     "commonEncounters": [
       {
         "who": "Elder Gray Bear",
-        "levelMin": 25,
-        "levelMax": 26
+        "levelMin": 21,
+        "levelMax": 22
       },
       {
         "who": "Giant Moss Creeper",
-        "levelMin": 25,
-        "levelMax": 26
+        "levelMin": 22,
+        "levelMax": 23
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Creepthess",
+        "levelMin": 24
       }
     ],
     "areaSize": 3,
@@ -13498,7 +13763,7 @@
     "rareEncounters": [
       {
         "who": "Scargil",
-        "levelMin": 32
+        "levelMin": 31
       }
     ],
     "areaSize": 3,
@@ -14096,6 +14361,10 @@
     ],
     "rareEncounters": [
       {
+        "who": "Magosh",
+        "levelMin": 21
+      },
+      {
         "who": "Boss Galgosh",
         "levelMin": 22
       }
@@ -14219,6 +14488,12 @@
         "who": "Black Bear Patriarch",
         "levelMin": 16,
         "levelMax": 17
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Shanda the Spinner",
+        "levelMin": 19
       }
     ],
     "areaSize": 3,
@@ -14379,6 +14654,12 @@
         "levelMax": 17
       }
     ],
+    "rareEncounters": [
+      {
+        "who": "Large Loch Crocolisk",
+        "levelMin": 21
+      }
+    ],
     "areaSize": 3,
     "progression": [
       {
@@ -14441,11 +14722,22 @@
         "levelMax": 13
       }
     ],
+    "eliteEncounters": [
+      {
+        "who": "Ol' Sooty",
+        "levelMin": 18
+      }
+    ],
     "areaSize": 3,
     "progression": [
       {
         "type": "Treasure",
         "point": 3
+      },
+      {
+        "type": "Boss",
+        "bossName": "Ol' Sooty",
+        "point": 2
       }
     ]
   },
@@ -15424,6 +15716,10 @@
     ],
     "rareEncounters": [
       {
+        "who": "Ghost Howl",
+        "levelMin": 12
+      },
+      {
         "who": "The Rake",
         "levelMin": 10
       }
@@ -15667,8 +15963,8 @@
     ],
     "rareEncounters": [
       {
-        "who": "Ghost Howl",
-        "levelMin": 12
+        "who": "Sister Hatelash",
+        "levelMin": 11
       }
     ],
     "areaSize": 3,
@@ -16334,6 +16630,12 @@
     ],
     "rareEncounters": [
       {
+        "who": "Rohh the Silent",
+        "levelMin": 26
+      }
+    ],
+    "eliteEncounters": [
+      {
         "who": "Lieutenant Fangore",
         "levelMin": 26
       }
@@ -16343,6 +16645,11 @@
       {
         "type": "Treasure",
         "point": 3
+      },
+      {
+        "type": "Boss",
+        "bossName": "Lieutenant Fangore",
+        "point": 2
       }
     ]
   },
@@ -16368,6 +16675,12 @@
         "who": "Murloc Shorestriker",
         "levelMin": 17,
         "levelMax": 18
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Squiddic",
+        "levelMin": 19
       }
     ],
     "areaSize": 3,
@@ -16404,6 +16717,16 @@
         "who": "Redridge Mongrel",
         "levelMin": 15,
         "levelMax": 16
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Ribchaser",
+        "levelMin": 17
+      },
+      {
+        "who": "Snarlflare",
+        "levelMin": 18
       }
     ],
     "areaSize": 3,
@@ -16631,6 +16954,10 @@
       {
         "who": "Boulderheart",
         "levelMin": 25
+      },
+      {
+        "who": "Seeker Aqualon",
+        "levelMin": 22
       }
     ],
     "areaSize": 3,
@@ -19172,6 +19499,12 @@
         "levelMax": 58
       }
     ],
+    "rareEncounters": [
+      {
+        "who": "Rex Ashil",
+        "levelMin": 58
+      }
+    ],
     "areaSize": 3,
     "progression": [
       {
@@ -19214,6 +19547,12 @@
         "levelMax": 61
       }
     ],
+    "rareEncounters": [
+      {
+        "who": "Lapress",
+        "levelMin": 60
+      }
+    ],
     "areaSize": 3,
     "progression": [
       {
@@ -19250,6 +19589,12 @@
         "levelMax": 59
       }
     ],
+    "rareEncounters": [
+      {
+        "who": "Zora",
+        "levelMin": 60
+      }
+    ],
     "areaSize": 3,
     "progression": [
       {
@@ -19274,6 +19619,12 @@
         "who": "Stonelash Pincer",
         "levelMin": 56,
         "levelMax": 57
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Grubthor",
+        "levelMin": 58
       }
     ],
     "areaSize": 3,
@@ -19305,6 +19656,16 @@
         "who": "Dredge Stalker",
         "levelMin": 55,
         "levelMax": 56
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Gretheer",
+        "levelMin": 57
+      },
+      {
+        "who": "Krellack",
+        "levelMin": 56
       }
     ],
     "areaSize": 3,
@@ -19761,6 +20122,12 @@
         "levelMax": 14
       }
     ],
+    "rareEncounters": [
+      {
+        "who": "Old Vicejaw",
+        "levelMin": 14
+      }
+    ],
     "areaSize": 3,
     "progression": [
       {
@@ -19821,6 +20188,12 @@
         "who": "Rot Hide Plagueweaver",
         "levelMin": 18,
         "levelMax": 19
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Snarlmane",
+        "levelMin": 23
       }
     ],
     "eliteEncounters": [
@@ -19906,6 +20279,12 @@
         "who": "Worg",
         "levelMin": 10,
         "levelMax": 11
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Gorefang",
+        "levelMin": 13
       }
     ],
     "areaSize": 3,
@@ -20217,6 +20596,12 @@
         "levelMax": 14
       }
     ],
+    "rareEncounters": [
+      {
+        "who": "Krethis Shadowspinner",
+        "levelMin": 14
+      }
+    ],
     "areaSize": 3,
     "progression": [
       {
@@ -20400,6 +20785,10 @@
       {
         "who": "Pridewing Patriarch",
         "levelMin": 25
+      },
+      {
+        "who": "Sorrow Wing",
+        "levelMin": 27
       }
     ],
     "areaSize": 3,
@@ -20489,6 +20878,16 @@
         "levelMax": 28
       }
     ],
+    "rareEncounters": [
+      {
+        "who": "Sister Riven",
+        "levelMin": 28
+      },
+      {
+        "who": "Vengeful Ancient",
+        "levelMin": 29
+      }
+    ],
     "areaSize": 3,
     "progression": [
       {
@@ -20574,6 +20973,10 @@
       }
     ],
     "rareEncounters": [
+      {
+        "who": "Taskmaster Whipfang",
+        "levelMin": 22
+      },
       {
         "who": "Foreman Rigger",
         "levelMin": 24
@@ -23220,6 +23623,12 @@
     ],
     "rareEncounters": [
       {
+        "who": "Grimmaw",
+        "levelMin": 12
+      }
+    ],
+    "eliteEncounters": [
+      {
         "who": "Ursal the Mauler",
         "levelMin": 12
       }
@@ -23229,6 +23638,11 @@
       {
         "type": "Treasure",
         "point": 3
+      },
+      {
+        "type": "Boss",
+        "bossName": "Ursal the Mauler",
+        "point": 2
       }
     ]
   },
@@ -23452,6 +23866,12 @@
     ],
     "rareEncounters": [
       {
+        "who": "Blackmoss the Fetid",
+        "levelMin": 13
+      }
+    ],
+    "eliteEncounters": [
+      {
         "who": "Lady Sathrah",
         "levelMin": 12
       }
@@ -23461,6 +23881,11 @@
       {
         "type": "Treasure",
         "point": 3
+      },
+      {
+        "type": "Boss",
+        "bossName": "Lady Sathrah",
+        "point": 2
       }
     ]
   },
@@ -24358,8 +24783,11 @@
     "rareEncounters": [
       {
         "who": "Swinegart Spearhide",
-        "levelMin": 22,
-        "levelMax": 22
+        "levelMin": 22
+      },
+      {
+        "who": "Geopriest Gukk'rok",
+        "levelMin": 20
       }
     ],
     "areaSize": 3,
@@ -24424,6 +24852,12 @@
         "who": "Bael'dun Officer",
         "levelMin": 26,
         "levelMax": 26
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Captain Gerogg Hammertoe",
+        "levelMin": 27
       }
     ],
     "eliteEncounters": [
@@ -24620,11 +25054,12 @@
         "who": "Burning Blade Acolyte",
         "levelMin": 11,
         "levelMax": 12
-      },
+      }
+    ],
+    "rareEncounters": [
       {
         "who": "Rathorian",
-        "levelMin": 15,
-        "levelMax": 15
+        "levelMin": 15
       }
     ],
     "areaSize": 3,
@@ -24735,6 +25170,16 @@
         "levelMax": 14
       }
     ],
+    "rareEncounters": [
+      {
+        "who": "Swiftmane",
+        "levelMin": 14
+      },
+      {
+        "who": "Humar the Pridelord",
+        "levelMin": 23
+      }
+    ],
     "areaSize": 3,
     "progression": [
       {
@@ -24764,6 +25209,12 @@
         "who": "Zhevra Runner",
         "levelMin": 13,
         "levelMax": 14
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Dishu",
+        "levelMin": 14
       }
     ],
     "areaSize": 3,
@@ -24828,6 +25279,12 @@
         "levelMax": 15
       }
     ],
+    "rareEncounters": [
+      {
+        "who": "Snort the Heckler",
+        "levelMin": 17
+      }
+    ],
     "areaSize": 3,
     "progression": [
       {
@@ -24863,8 +25320,7 @@
     "rareEncounters": [
       {
         "who": "Gesharahan",
-        "levelMin": 20,
-        "levelMax": 20
+        "levelMin": 20
       }
     ],
     "areaSize": 3,
@@ -24933,6 +25389,12 @@
         "levelMax": 17
       }
     ],
+    "rareEncounters": [
+      {
+        "who": "Takk the Leaper",
+        "levelMin": 19
+      }
+    ],
     "areaSize": 3,
     "progression": [
       {
@@ -24962,6 +25424,16 @@
         "who": "Thunderhawk Cloudscraper",
         "levelMin": 21,
         "levelMax": 22
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Brontus",
+        "levelMin": 25
+      },
+      {
+        "who": "Thunderstomp",
+        "levelMin": 24
       }
     ],
     "areaSize": 3,
@@ -25081,6 +25553,12 @@
         "levelMax": 16
       }
     ],
+    "rareEncounters": [
+      {
+        "who": "Sister Rathtalon",
+        "levelMin": 19
+      }
+    ],
     "areaSize": 3,
     "progression": [
       {
@@ -25110,9 +25588,14 @@
     ],
     "rareEncounters": [
       {
+        "who": "Stonearm",
+        "levelMin": 16
+      }
+    ],
+    "eliteEncounters": [
+      {
         "who": "Barak Kodobane",
-        "levelMin": 16,
-        "levelMax": 16
+        "levelMin": 16
       }
     ],
     "areaSize": 3,
@@ -25120,6 +25603,11 @@
       {
         "type": "Treasure",
         "point": 3
+      },
+      {
+        "type": "Boss",
+        "bossName": "Barak Kodobane",
+        "point": 2
       }
     ]
   },
@@ -25194,8 +25682,11 @@
     "rareEncounters": [
       {
         "who": "Engineer Whirleygig",
-        "levelMin": 19,
-        "levelMax": 19
+        "levelMin": 19
+      },
+      {
+        "who": "Sludge Beast",
+        "levelMin": 19
       }
     ],
     "eliteEncounters": [
@@ -25240,6 +25731,16 @@
         "who": "Kolkar Bloodcharger",
         "levelMin": 15,
         "levelMax": 16
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Rocklance",
+        "levelMin": 17
+      },
+      {
+        "who": "Brokespear",
+        "levelMin": 17
       }
     ],
     "areaSize": 3,
@@ -25948,7 +26449,7 @@
     ],
     "eliteEncounters": [
       {
-        "who": "Ceptain Dargol",
+        "who": "Captain Dargol",
         "levelMin": 13
       }
     ],
@@ -25956,7 +26457,7 @@
     "progression": [
       {
         "type": "Boss",
-        "bossName": "Ceptain Dargol",
+        "bossName": "Captain Dargol",
         "point": 2
       },
       {
@@ -26316,6 +26817,12 @@
         "levelMax": 8
       }
     ],
+    "rareEncounters": [
+      {
+        "who": "Deeb",
+        "levelMin": 12
+      }
+    ],
     "areaSize": 3,
     "progression": [
       {
@@ -26398,6 +26905,12 @@
         "who": "Vicious Night Web Spider",
         "levelMin": 9,
         "levelMax": 10
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Sri'skulk",
+        "levelMin": 13
       }
     ],
     "areaSize": 3,
@@ -26918,11 +27431,16 @@
         "levelMax": 55
       }
     ],
+    "rareEncounters": [
+      {
+        "who": "Baron Charr",
+        "levelMin": 58
+      }
+    ],
     "eliteEncounters": [
       {
         "who": "Blazerunner",
-        "levelMin": 55,
-        "levelMax": 56
+        "levelMin": 56
       }
     ],
     "areaSize": 3,
@@ -26964,8 +27482,13 @@
     "rareEncounters": [
       {
         "who": "Uhk'loc",
-        "levelMin": 52,
-        "levelMax": 53
+        "levelMin": 53
+      }
+    ],
+    "eliteEncounters": [
+      {
+        "who": "U'cha",
+        "levelMin": 54
       }
     ],
     "areaSize": 3,
@@ -26973,6 +27496,11 @@
       {
         "type": "Treasure",
         "point": 3
+      },
+      {
+        "type": "Boss",
+        "bossName": "U'cha",
+        "point": 2
       }
     ]
   },
@@ -27114,6 +27642,10 @@
       {
         "who": "King Mosh",
         "levelMin": 60
+      },
+      {
+        "who": "Gruff",
+        "levelMin": 58
       }
     ],
     "areaSize": 3,
@@ -27239,8 +27771,7 @@
     "rareEncounters": [
       {
         "who": "Clutchmother Zavas",
-        "levelMin": 53,
-        "levelMax": 54
+        "levelMin": 54
       }
     ],
     "areaSize": 3,
@@ -27988,6 +28519,12 @@
         "levelMax": 15
       }
     ],
+    "rareEncounters": [
+      {
+        "who": "Foe Reaper 4000",
+        "levelMin": 20
+      }
+    ],
     "areaSize": 3,
     "progression": [
       {
@@ -28056,6 +28593,16 @@
         "levelMax": 14
       }
     ],
+    "rareEncounters": [
+      {
+        "who": "Slark",
+        "levelMin": 15
+      },
+      {
+        "who": "Brack",
+        "levelMin": 16
+      }
+    ],
     "areaSize": 3,
     "progression": [
       {
@@ -28112,6 +28659,12 @@
         "who": "Riverpaw Brute",
         "levelMin": 16,
         "levelMax": 17
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Sergeant Brashclaw",
+        "levelMin": 18
       }
     ],
     "areaSize": 3,
@@ -28256,8 +28809,8 @@
     ],
     "rareEncounters": [
       {
-        "who": "Vultros",
-        "levelMin": 26
+        "who": "Leprithus",
+        "levelMin": 19
       }
     ],
     "areaSize": 3,
@@ -28315,6 +28868,12 @@
       {
         "who": "Riverpaw Overseer",
         "levelMin": 19
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Vultros",
+        "levelMin": 22
       }
     ],
     "areaSize": 3,
@@ -28380,6 +28939,16 @@
         "levelMax": 29
       }
     ],
+    "rareEncounters": [
+      {
+        "who": "Garneg Charskull",
+        "levelMin": 29
+      },
+      {
+        "who": "Dragonmaw Battlemaster",
+        "levelMin": 30
+      }
+    ],
     "areaSize": 3,
     "progression": [
       {
@@ -28410,6 +28979,12 @@
         "who": "Young Wetlands Crocolisk",
         "levelMin": 21,
         "levelMax": 22
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Sludginn",
+        "levelMin": 30
       }
     ],
     "areaSize": 3,
@@ -28894,6 +29469,12 @@
         "levelMax": 22
       }
     ],
+    "rareEncounters": [
+      {
+        "who": "Leech Widow",
+        "levelMin": 24
+      }
+    ],
     "areaSize": 3,
     "progression": [
       {
@@ -28950,6 +29531,12 @@
         "who": "Hederine Manastalker",
         "levelMin": 59,
         "levelMax": 60
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Lady Hederine",
+        "levelMin": 61
       }
     ],
     "areaSize": 3,
@@ -29020,6 +29607,12 @@
         "levelMax": 55
       }
     ],
+    "rareEncounters": [
+      {
+        "who": "Mezzir the Howler",
+        "levelMin": 55
+      }
+    ],
     "areaSize": 3,
     "progression": [
       {
@@ -29049,8 +29642,7 @@
     "rareEncounters": [
       {
         "who": "Rak'shiri",
-        "levelMin": 59,
-        "levelMax": 59
+        "levelMin": 59
       }
     ],
     "areaSize": 3,
@@ -29082,8 +29674,7 @@
     "rareEncounters": [
       {
         "who": "Kashoch the Reaver",
-        "levelMin": 60,
-        "levelMax": 60
+        "levelMin": 60
       }
     ],
     "areaSize": 3,
@@ -29143,6 +29734,12 @@
         "levelMax": 57
       }
     ],
+    "rareEncounters": [
+      {
+        "who": "Azurous",
+        "levelMin": 59
+      }
+    ],
     "areaSize": 3,
     "progression": [
       {
@@ -29169,16 +29766,20 @@
         "levelMax": 57
       }
     ],
+    "rareEncounters": [
+      {
+        "who": "General Colbatann",
+        "levelMin": 58
+      }
+    ],
     "eliteEncounters": [
       {
         "who": "Manaclaw",
-        "levelMin": 58,
-        "levelMax": 58
+        "levelMin": 58
       },
       {
         "who": "Scryer",
-        "levelMin": 60,
-        "levelMax": 60
+        "levelMin": 60
       }
     ],
     "areaSize": 5,
@@ -29341,6 +29942,12 @@
         "levelMax": 57
       }
     ],
+    "rareEncounters": [
+      {
+        "who": "Princess Tempestria",
+        "levelMin": 59
+      }
+    ],
     "areaSize": 3,
     "progression": [
       {
@@ -29401,6 +30008,12 @@
         "who": "Winterfall Ursa",
         "levelMin": 58,
         "levelMax": 58
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Grizzle Snowpaw",
+        "levelMin": 59
       }
     ],
     "eliteEncounters": [

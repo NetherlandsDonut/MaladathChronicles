@@ -185,6 +185,7 @@ public class Desktop : MonoBehaviour
                     SpawnWindowBlueprint("MapToolbarClockRight");
                     SpawnWindowBlueprint("MapToolbarStatusLeft");
                     SpawnWindowBlueprint("MapToolbarStatusRight");
+                    SpawnWindowBlueprint("MapLocationInfo");
                     SpawnWindowBlueprint("ExperienceBarBorder");
                     SpawnWindowBlueprint("ExperienceBar");
                     grid.SwitchMapTexture(currentSave.playerDead);
@@ -217,11 +218,13 @@ public class Desktop : MonoBehaviour
             }
             else if (title == "Map")
             {
-                if (sitesToRespawn != null)
+                if (sitesToRespawn.Count > 0)
                 {
-                    foreach (var site in sitesToRespawn)
-                        Respawn("Site:" + site.name);
-                    sitesToRespawn = null;
+                    for (int i = sitesToRespawn.Count - 1; i >= 0; i--)
+                    {
+                        Respawn("Site:" + sitesToRespawn[i].name);
+                        sitesToRespawn.RemoveAt(i);
+                    }
                 }
                 var temp = screen.transform.localPosition;
                 if (queuedPath.Count > 0)
@@ -279,11 +282,14 @@ public class Desktop : MonoBehaviour
                             Respawn("Site: " + queuedSiteOpen);
                             foreach (var connection in paths.FindAll(x => x.sites.Contains(queuedSiteOpen)))
                             {
-                                var didRespawn = Respawn("Site: " + connection.sites.Find(x => x != queuedSiteOpen));
-                                if (!didRespawn) LBWindow.GetComponentsInChildren<Renderer>().ToList().ForEach(x => x.gameObject.AddComponent<FadeIn>());
+                                var site = connection.sites.Find(x => x != queuedSiteOpen);
+                                if (!CDesktop.windows.Exists(x => x.title == "Site: " + site))
+                                    if (Respawn("Site: " + connection.sites.Find(x => x != queuedSiteOpen)))
+                                        LBWindow.GetComponentsInChildren<Renderer>().ToList().ForEach(x => x.gameObject.AddComponent<FadeIn>());
                             }
                             queuedSiteOpen = "";
                             cameraDestination = new Vector2(find.x, find.y);
+                            Respawn("MapLocationInfo");
                         }
                         else
                         {

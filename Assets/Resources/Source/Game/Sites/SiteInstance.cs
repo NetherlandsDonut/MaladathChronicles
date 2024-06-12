@@ -131,20 +131,14 @@ public class SiteInstance : Site
             },
             (h) => { BuildPath(); });
             var q = currentSave.player.AvailableQuestsAt(this, true).Count;
+            sitesWithQuestMarkers.Remove(this);
             if (currentSave.currentSite == name)
                 AddSmallButtonOverlay("PlayerLocationFromBelow", 0, 2);
-            if (q > 0)
-            {
-                AddSmallButtonOverlay("AvailableQuest", 0, 2);
-                if (!sitesWithQuestMarkers.Contains(this))
-                    sitesWithQuestMarkers.Add(this);
-            }
-            if (currentSave.player.QuestsAt(this, true).Count > 0)
-            {
-                AddSmallButtonOverlay("QuestMarker", 0, 2);
-                if (!sitesWithQuestMarkers.Contains(this))
-                    sitesWithQuestMarkers.Add(this);
-            }
+            var a = q > 0;
+            var b = currentSave.player.QuestsAt(this, true).Count > 0;
+            if (a || b) sitesWithQuestMarkers.Add(this);
+            if (a) AddSmallButtonOverlay("AvailableQuest", 0, 2);
+            if (b) AddSmallButtonOverlay("QuestMarker", 0, 2);
         });
     }
 
