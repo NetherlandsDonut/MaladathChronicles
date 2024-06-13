@@ -2268,6 +2268,38 @@
     ]
   },
   {
+    "x": 1419,
+    "y": -1763,
+    "name": "Orendil's Retreat",
+    "zone": "Ashenvale",
+    "type": "HostileArea",
+    "commonEncounters": [
+      {
+        "who": "Ghostpaw Runner",
+        "levelMin": 19,
+        "levelMax": 20
+      },
+      {
+        "who": "Wild Buck",
+        "levelMin": 18,
+        "levelMax": 19
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Mist Howler",
+        "levelMin": 22
+      }
+    ],
+    "areaSize": 3,
+    "progression": [
+      {
+        "type": "Treasure",
+        "point": 3
+      }
+    ]
+  },
+  {
     "x": 1769,
     "y": -2189,
     "name": "Bloodtooth Camp",
@@ -3211,6 +3243,12 @@
         "levelMax": 52
       }
     ],
+    "rareEncounters": [
+      {
+        "who": "Scalebeard",
+        "levelMin": 52
+      }
+    ],
     "areaSize": 3,
     "progression": [
       {
@@ -3536,7 +3574,11 @@
     ],
     "rareEncounters": [
       {
-        "who": "General Fangterror",
+        "who": "General Fangferror",
+        "levelMin": 52
+      },
+      {
+        "who": "Lady Sesspira",
         "levelMin": 52
       }
     ],
@@ -3575,6 +3617,16 @@
         "who": "Highborne Lichling",
         "levelMin": 46,
         "levelMax": 47
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "The Evalcharr",
+        "levelMin": 48
+      },
+      {
+        "who": "Varo'then's Ghost",
+        "levelMin": 48
       }
     ],
     "areaSize": 3,
@@ -3667,6 +3719,12 @@
         "levelMax": 53
       }
     ],
+    "rareEncounters": [
+      {
+        "who": "Magister Hawkhelm",
+        "levelMin": 52
+      }
+    ],
     "areaSize": 3,
     "progression": [
       {
@@ -3682,6 +3740,24 @@
     "zone": "Azshara",
     "type": "HostileArea",
     "fishing": true,
+    "commonEncounters": [
+      {
+        "who": "Spitelash Siren",
+        "levelMin": 52,
+        "levelMax": 53
+      },
+      {
+        "who": "Spitelash Myrmidon",
+        "levelMin": 52,
+        "levelMax": 53
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Monnos the Elder",
+        "levelMin": 54
+      }
+    ],
     "areaSize": 3,
     "progression": [
       {
@@ -5410,6 +5486,14 @@
       {
         "who": "Grunter",
         "levelMin": 51
+      },
+      {
+        "who": "Clack the Reaver",
+        "levelMin": 53
+      },
+      {
+        "who": "Deatheye",
+        "levelMin": 49
       }
     ],
     "eliteEncounters": [
@@ -5454,6 +5538,12 @@
         "levelMax": 47
       }
     ],
+    "rareEncounters": [
+      {
+        "who": "Mojo the Twisted",
+        "levelMin": 48
+      }
+    ],
     "eliteEncounters": [
       {
         "who": "Grol the Destroyer",
@@ -5496,6 +5586,16 @@
         "levelMax": 53
       }
     ],
+    "rareEncounters": [
+      {
+        "who": "Ravage",
+        "levelMin": 52
+      },
+      {
+        "who": "Magronos the Unyielding",
+        "levelMin": 56
+      }
+    ],
     "areaSize": 3,
     "progression": [
       {
@@ -5525,6 +5625,12 @@
         "who": "Shadowsworn Cultist",
         "levelMin": 52,
         "levelMax": 53
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Spiteflayer",
+        "levelMin": 52
       }
     ],
     "eliteEncounters": [
@@ -5578,6 +5684,12 @@
         "levelMax": 55
       }
     ],
+    "rareEncounters": [
+      {
+        "who": "Dreadscorn",
+        "levelMin": 57
+      }
+    ],
     "areaSize": 3,
     "progression": [
       {
@@ -5607,6 +5719,12 @@
         "who": "Doomguard Commander",
         "levelMin": 61,
         "levelMax": 62
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Akubar the Seer",
+        "levelMin": 54
       }
     ],
     "areaSize": 3,
@@ -6226,6 +6344,7 @@
     "name": "Cliffspring Caves",
     "zone": "Darkshore",
     "type": "HostileArea",
+    "noNightVariant": true,
     "commonEncounters": [
       {
         "who": "Stormscale Wave Rider",
@@ -11442,6 +11561,11 @@
     "fishing": true,
     "commonEncounters": [
       {
+        "who": "Gray Forest Wolf",
+        "levelMin": 7,
+        "levelMax": 8
+      },
+      {
         "who": "Murloc Forager",
         "levelMin": 8,
         "levelMax": 9
@@ -11643,6 +11767,11 @@
         "levelMax": 9
       },
       {
+        "who": "Defias Bandit",
+        "levelMin": 8,
+        "levelMax": 9
+      },
+      {
         "who": "Prowler",
         "levelMin": 9,
         "levelMax": 10
@@ -11751,6 +11880,16 @@
         "who": "Young Forest Bear",
         "levelMin": 7,
         "levelMax": 8
+      },
+      {
+        "who": "Rockhide Boar",
+        "levelMin": 7,
+        "levelMax": 8
+      },
+      {
+        "who": "Prowler",
+        "levelMin": 8,
+        "levelMax": 9
       }
     ],
     "areaSize": 3,
@@ -12401,6 +12540,12 @@
         "levelMax": 47
       }
     ],
+    "rareEncounters": [
+      {
+        "who": "Bloodroar the Stalker",
+        "levelMin": 48
+      }
+    ],
     "areaSize": 3,
     "progression": [
       {
@@ -12584,6 +12729,18 @@
     "name": "Lariss Pavillion",
     "zone": "Feralas",
     "type": "HostileArea",
+    "commonEncounters": [
+      {
+        "who": "Ironfur Bear",
+        "levelMin": 41,
+        "levelMax": 42
+      },
+      {
+        "who": "Longtooth Runner",
+        "levelMin": 42,
+        "levelMax": 43
+      }
+    ],
     "areaSize": 3,
     "progression": [
       {
@@ -12613,6 +12770,13 @@
         "who": "Grimtotem Shaman",
         "levelMin": 43,
         "levelMax": 44
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Snarler",
+        "levelMin": 40,
+        "levelMax": 41
       }
     ],
     "areaSize": 3,
@@ -12817,6 +12981,12 @@
         "levelMax": 43
       }
     ],
+    "rareEncounters": [
+      {
+        "who": "Diamond Head",
+        "levelMin": 45
+      }
+    ],
     "areaSize": 3,
     "progression": [
       {
@@ -12848,11 +13018,16 @@
         "levelMax": 44
       }
     ],
+    "rareEncounters": [
+      {
+        "who": "Lady Szallah",
+        "levelMin": 46
+      }
+    ],
     "eliteEncounters": [
       {
         "who": "Lord Shalzaru",
-        "levelMin": 47,
-        "levelMax": 47
+        "levelMin": 47
       }
     ],
     "areaSize": 3,
@@ -12919,6 +13094,12 @@
         "levelMax": 50
       }
     ],
+    "rareEncounters": [
+      {
+        "who": "Arash-ethis",
+        "levelMin": 51
+      }
+    ],
     "areaSize": 3,
     "progression": [
       {
@@ -12955,6 +13136,12 @@
         "levelMax": 46
       }
     ],
+    "rareEncounters": [
+      {
+        "who": "Qirot",
+        "levelMin": 47
+      }
+    ],
     "areaSize": 3,
     "progression": [
       {
@@ -12970,6 +13157,29 @@
     "zone": "Feralas",
     "type": "HostileArea",
     "fishing": true,
+    "commonEncounters": [
+      {
+        "who": "Longtooth Howler",
+        "levelMin": 43,
+        "levelMax": 44
+      },
+      {
+        "who": "Sprite Darter",
+        "levelMin": 43,
+        "levelMax": 44
+      },
+      {
+        "who": "Grizzled Ironfur Bear",
+        "levelMin": 44,
+        "levelMax": 45
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Old Grizzlegut",
+        "levelMin": 43
+      }
+    ],
     "areaSize": 3,
     "progression": [
       {
@@ -12985,6 +13195,24 @@
     "zone": "Feralas",
     "type": "HostileArea",
     "fishing": true,
+    "commonEncounters": [
+      {
+        "who": "Ironfur Bear",
+        "levelMin": 41,
+        "levelMax": 42
+      },
+      {
+        "who": "Longtooth Runner",
+        "levelMin": 41,
+        "levelMax": 42
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Gnarl Leafbrother",
+        "levelMin": 44
+      }
+    ],
     "areaSize": 3,
     "progression": [
       {
@@ -13002,23 +13230,23 @@
     "commonEncounters": [
       {
         "who": "Woodpaw Mongrel",
-        "levelMin": 40,
-        "levelMax": 41
+        "levelMin": 42,
+        "levelMax": 43
       },
       {
         "who": "Woodpaw Trapper",
-        "levelMin": 41,
-        "levelMax": 42
+        "levelMin": 42,
+        "levelMax": 43
       },
       {
         "who": "Woodpaw Mystic",
-        "levelMin": 42,
-        "levelMax": 43
+        "levelMin": 43,
+        "levelMax": 44
       },
       {
         "who": "Woodpaw Alpha",
-        "levelMin": 42,
-        "levelMax": 43
+        "levelMin": 43,
+        "levelMax": 44
       },
       {
         "who": "Woodpaw Reaver",
@@ -13902,6 +14130,12 @@
         "levelMax": 42
       }
     ],
+    "rareEncounters": [
+      {
+        "who": "Old Cliff Jumper",
+        "levelMin": 42
+      }
+    ],
     "areaSize": 3,
     "progression": [
       {
@@ -14022,6 +14256,12 @@
         "levelMax": 49
       }
     ],
+    "rareEncounters": [
+      {
+        "who": "Mith'rethis the Enchanter",
+        "levelMin": 52
+      }
+    ],
     "areaSize": 3,
     "progression": [
       {
@@ -14097,6 +14337,12 @@
         "who": "Highvale Ranger",
         "levelMin": 46,
         "levelMax": 47
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Jalinde Summerdrake",
+        "levelMin": 49
       }
     ],
     "areaSize": 3,
@@ -14212,9 +14458,25 @@
     "type": "HostileArea",
     "commonEncounters": [
       {
-        "who": "Rivermane Stalker",
-        "levelMin": 37,
-        "levelMax": 38
+        "who": "Silvermane Stalker",
+        "levelMin": 47,
+        "levelMax": 48
+      },
+      {
+        "who": "Vilebranch Scalper",
+        "levelMin": 47,
+        "levelMax": 48
+      },
+      {
+        "who": "Vilebranch Soothsayer",
+        "levelMin": 47,
+        "levelMax": 48
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Grimungous",
+        "levelMin": 50
       }
     ],
     "areaSize": 3,
@@ -14295,7 +14557,9 @@
       {
         "who": "Ironback",
         "levelMin": 51
-      },
+      }
+    ],
+    "eliteEncounters": [
       {
         "who": "Gammerita",
         "levelMin": 50
@@ -14306,6 +14570,11 @@
       {
         "type": "Treasure",
         "point": 3
+      },
+      {
+        "type": "Boss",
+        "bossName": "Gammerita",
+        "point": 2
       }
     ]
   },
@@ -14326,6 +14595,12 @@
         "who": "Silvermane Howler",
         "levelMin": 45,
         "levelMax": 46
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Razortalon",
+        "levelMin": 45
       }
     ],
     "areaSize": 3,
@@ -18566,6 +18841,12 @@
         "levelMax": 48
       }
     ],
+    "rareEncounters": [
+      {
+        "who": "Rekk'tilac",
+        "levelMin": 48
+      }
+    ],
     "areaSize": 3,
     "progression": [
       {
@@ -18595,6 +18876,12 @@
         "who": "Tempered War Golem",
         "levelMin": 44,
         "levelMax": 45
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Shleipnarr",
+        "levelMin": 47
       }
     ],
     "areaSize": 3,
@@ -18761,6 +19048,10 @@
       {
         "who": "Smoldar",
         "levelMin": 50
+      },
+      {
+        "who": "Slave Master Blackheart",
+        "levelMin": 50
       }
     ],
     "areaSize": 3,
@@ -18783,6 +19074,12 @@
         "who": "Incendosaur",
         "levelMin": 48,
         "levelMax": 49
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Scald",
+        "levelMin": 49
       }
     ],
     "eliteEncounters": [
@@ -19727,11 +20024,6 @@
       },
       {
         "who": "Dust Stormer",
-        "levelMin": 56,
-        "levelMax": 57
-      },
-      {
-        "who": "Whirling Invader",
         "levelMin": 56,
         "levelMax": 57
       }
@@ -27431,12 +27723,6 @@
         "levelMax": 55
       }
     ],
-    "rareEncounters": [
-      {
-        "who": "Baron Charr",
-        "levelMin": 58
-      }
-    ],
     "eliteEncounters": [
       {
         "who": "Blazerunner",
@@ -28080,6 +28366,12 @@
         "levelMax": 54
       }
     ],
+    "rareEncounters": [
+      {
+        "who": "Foulmane",
+        "levelMin": 53
+      }
+    ],
     "areaSize": 3,
     "progression": [
       {
@@ -28114,8 +28406,7 @@
     "rareEncounters": [
       {
         "who": "Lord Maldazzar",
-        "levelMin": 56,
-        "levelMax": 52
+        "levelMin": 56
       }
     ],
     "areaSize": 3,
@@ -28502,6 +28793,43 @@
     ]
   },
   {
+    "x": 4690,
+    "y": -3721,
+    "name": "Riverpaw Camp",
+    "zone": "Westfall",
+    "type": "HostileArea",
+    "commonEncounters": [
+      {
+        "who": "Riverpaw Scout",
+        "levelMin": 13,
+        "levelMax": 14
+      },
+      {
+        "who": "Riverpaw Mongrel",
+        "levelMin": 13,
+        "levelMax": 14
+      },
+      {
+        "who": "Riverpaw Herbalist",
+        "levelMin": 14,
+        "levelMax": 15
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Sergeant Brashclaw",
+        "levelMin": 18
+      }
+    ],
+    "areaSize": 3,
+    "progression": [
+      {
+        "type": "Treasure",
+        "point": 3
+      }
+    ]
+  },
+  {
     "x": 4718,
     "y": -3834,
     "name": "Alexton Farmstead",
@@ -28659,12 +28987,6 @@
         "who": "Riverpaw Brute",
         "levelMin": 16,
         "levelMax": 17
-      }
-    ],
-    "rareEncounters": [
-      {
-        "who": "Sergeant Brashclaw",
-        "levelMin": 18
       }
     ],
     "areaSize": 3,
@@ -29933,11 +30255,6 @@
       },
       {
         "who": "Anguished Highborne",
-        "levelMin": 56,
-        "levelMax": 57
-      },
-      {
-        "who": "Watery Invader",
         "levelMin": 56,
         "levelMax": 57
       }

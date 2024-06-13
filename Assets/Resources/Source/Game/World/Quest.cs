@@ -3,7 +3,6 @@ using System.Linq;
 using UnityEngine;
 
 using static Root;
-using static Root.Anchor;
 
 using static Sound;
 using static Coloring;
@@ -69,6 +68,9 @@ public class Quest
 
     //Eligble classes for this quest
     public List<string> classes;
+
+    //Item rewards for this quest
+    public Dictionary<string, int> rewards;
 
     //Amount of reputation awarded to the quest faction
     public Dictionary<string, int> reputationGain;
@@ -171,6 +173,22 @@ public class Quest
             foreach (var condition in conditions)
                 condition.Print(CDesktop.title == "QuestLog");
         }
+        if (rewards != null)
+        {
+            AddHeaderRegion(() => AddLine("Rewards:"));
+            AddPaddingRegion(() => { });
+            foreach (var item in rewards)
+            {
+                var find = Item.items.Find(x => x.name == item.Key);
+                AddBigButton(find.icon, null, null, (h) => () =>
+                {
+                    if (CDesktop.windows.Exists(x => x.title == "CraftingSort")) return;
+                    if (CDesktop.windows.Exists(x => x.title == "CraftingSettings")) return;
+                    Item.PrintItemTooltip(find, Input.GetKey(KeyCode.LeftShift));
+                });
+                if (find.maxStack > 1) SpawnFloatingText(CDesktop.LBWindow.LBRegionGroup.LBRegion.transform.position + new Vector3(32, -27) + new Vector3(38, 0) * (rewards.Keys.ToList().IndexOf(item.Key) % 5), item.Value + "", "", "Right");
+            }
+        }
     }
 
     //Copies a quest to a new one for the player to take
@@ -182,6 +200,8 @@ public class Quest
             newQuest.classes = classes.ToList();
         if (races != null)
             newQuest.races = races.ToList();
+        if (rewards != null)
+            newQuest.rewards = rewards.ToDictionary(x => x.Key, x => x.Value);
         newQuest.previous = previous;
         newQuest.questLevel = questLevel;
         newQuest.requiredLevel = requiredLevel;

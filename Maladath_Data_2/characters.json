@@ -5,10 +5,57 @@
   "Whitemane": [
     {
       "player": {
-        "currentQuests": [],
+        "currentQuests": [
+          {
+            "questID": 47,
+            "requiredLevel": 4,
+            "questLevel": 7,
+            "name": "Gold Dust Exchange",
+            "description": "Bring 4 Gold Dust to Remy \"Two Times\" in Goldshire. Gold Dust is gathered from Kobolds in Elwynn Forest.",
+            "siteStart": "Goldshire",
+            "siteEnd": "Goldshire",
+            "zone": "Elwynn Forest",
+            "races": [
+              "Gnome",
+              "Night Elf",
+              "Dwarf",
+              "Human"
+            ],
+            "reputationGain": {
+              "Stormwind": 250
+            },
+            "conditions": [
+              {
+                "type": "Item",
+                "name": "Gold Dust",
+                "amount": 4
+              }
+            ]
+          },
+          {
+            "questID": 40,
+            "requiredLevel": 7,
+            "questLevel": 10,
+            "name": "A Fishy Peril",
+            "description": "Remy \"Two Times\" wants you to speak with Marshal Dughan in Goldshire.",
+            "siteStart": "Goldshire",
+            "siteEnd": "Goldshire",
+            "zone": "Elwynn Forest",
+            "races": [
+              "Gnome",
+              "Night Elf",
+              "Dwarf",
+              "Human"
+            ],
+            "reputationGain": {
+              "Stormwind": 10
+            },
+            "conditions": []
+          }
+        ],
         "completedQuests": [],
         "level": 9,
-        "experience": 740,
+        "experience": 780,
         "uniquesGotten": [],
         "reputation": {
           "Southsea Pirates": 0,
@@ -79,8 +126,32 @@
           "Bloodtooth Tribe": 0,
           "Bristleback Tribe": 0
         },
-        "professionSkills": {},
-        "learnedRecipes": {},
+        "professionSkills": {
+          "Blacksmithing": {
+            "Item1": 1,
+            "Item2": [
+              "Apprentice"
+            ]
+          },
+          "Mining": {
+            "Item1": 1,
+            "Item2": [
+              "Apprentice"
+            ]
+          }
+        },
+        "learnedRecipes": {
+          "Blacksmithing": [
+            "Rough Sharpening Stone",
+            "Rough Weightstone",
+            "Rough Copper Vest",
+            "Copper Bracers",
+            "Copper Chain Pants"
+          ],
+          "Mining": [
+            "Smelt Copper"
+          ]
+        },
         "unspentTalentPoints": 2,
         "faction": "Stormwind",
         "name": "Allesha",
@@ -104,9 +175,9 @@
         },
         "actionBars": [
           "Fireball",
-          "Frostbolt",
           "Arcane Missiles",
-          "Fire Blast"
+          "Fire Blast",
+          "Frostbolt"
         ],
         "stats": {
           "stats": {
@@ -215,9 +286,9 @@
         }
       },
       "hour": 8,
-      "minute": 38,
-      "second": 28,
-      "currentSite": "Stormwind City",
+      "minute": 44,
+      "second": 18,
+      "currentSite": "Scholomance",
       "openedChests": {},
       "siteProgress": {
         "Wicked Grotto": 1
@@ -549,7 +620,7 @@
         "Eastvale Logging Camp": 1,
         "Echo Ridge Mine": 1,
         "Fargodeep Mine": 1,
-        "Crystal Lake": 1,
+        "Crystal Lake": 2,
         "Forest's Edge": 1,
         "Stone Cairn Lake": 3,
         "Southern Stone Cairn Lake": 2,
@@ -563,7 +634,7 @@
         "Stonefield Farm": 1,
         "The Maclure Vineyards": 1,
         "Jerod's Landing": 1,
-        "East Elwynn Bridge": 1,
+        "East Elwynn Bridge": 3,
         "Tower of Azora": 1,
         "Bloodvenom Falls": 1,
         "Bloodvenom River": 1,
@@ -602,7 +673,7 @@
         "The Twin Colossals": 1,
         "The Writhing Deep": 1,
         "Verdantis River": 1,
-        "Wildwind Lake": 1,
+        "Wildwind Lake": 2,
         "Woodpaw Hills": 1,
         "Engineering Labs": 1,
         "Hall of Gears": 1,
@@ -1091,14 +1162,14 @@
         "Caer Darrow": 1,
         "Ravenholdt Manor": 1,
         "Misty Reed Post": 1,
-        "Stormwind City": 3,
+        "Stormwind City": 4,
         "Grove of the Ancients": 3,
         "Go'Shek Farm": 1,
         "Hillsbrad": 1,
         "Dabyrie's Farmstead": 1,
         "Azurelode Mine": 1,
         "Westbrook Garrison": 1,
-        "Goldshire": 1,
+        "Goldshire": 2,
         "Lakeshire": 1,
         "Southshore": 1,
         "Darkshire": 1,
@@ -1116,7 +1187,7 @@
         "Rut'theran Village": 12,
         "Dolanaar": 1,
         "Maestra's Post": 1,
-        "Astranaar": 1,
+        "Astranaar": 2,
         "Starfall Village": 1,
         "Silverwind Outpost": 1,
         "Silverwind Refuge": 1,
@@ -1197,7 +1268,7 @@
         "Gnomeregan": 2,
         "Shadowfang Keep": 2,
         "Shadow Hold": 1,
-        "Scholomance": 1,
+        "Scholomance": 2,
         "Maraudon": 4,
         "Stratholme": 10,
         "Wailing Caverns": 1,
@@ -1206,7 +1277,7 @@
         "Razorfen Kraul": 1,
         "The Deadmines": 1,
         "Blackfathom Deeps": 1,
-        "Dire Maul": 1,
+        "Dire Maul": 2,
         "Scarlet Monastery": 1,
         "Blackrock Depths": 1,
         "Lower Blackrock Spire": 1,
@@ -1230,7 +1301,9 @@
         "Wildbend River": 4,
         "Legash Head Camp": 1,
         "Cliffspring Caves": 2,
-        "Bear's Head": 1
+        "Bear's Head": 1,
+        "Orendil's Retreat": 3,
+        "Riverpaw Camp": 3
       },
       "unlockedAreas": [],
       "vendorStock": {},
@@ -1241,9 +1314,9 @@
         }
       },
       "startDate": "2024-06-09T14:12:27.0144066+02:00",
-      "lastLoaded": "2024-06-12T19:25:42.3471032+02:00",
-      "lastPlayed": "2024-06-12T19:28:02.4197426+02:00",
-      "timePlayed": "05:09:27.0468784",
+      "lastLoaded": "2024-06-13T04:22:08.5454807+02:00",
+      "lastPlayed": "2024-06-13T04:25:42.4771326+02:00",
+      "timePlayed": "06:50:53.5786295",
       "lastVisitedTalents": 1
     },
     {
