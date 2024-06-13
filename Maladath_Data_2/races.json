@@ -1,250 +1,11 @@
 [
   {
-    "name": "Scald",
-    "category": "Elemental",
-    "side": "Neutral",
-    "kind": "Rare",
-    "portrait": "PortraitFireElemental",
-    "vitality": 2.0,
-    "abilities": {}
-  },
-  {
-    "name": "Slave Master Blackheart",
+    "name": "7:XT",
     "category": "Humanoid",
     "subcategory": "Human",
     "side": "Neutral",
     "kind": "Rare",
-    "portrait": "PortraitAnvilrageOverseer",
-    "vitality": 2.0,
-    "abilities": {}
-  },
-  {
-    "name": "Shleipnarr",
-    "category": "Demon",
-    "subcategory": "Human",
-    "side": "Neutral",
-    "kind": "Rare",
-    "portrait": "PortraitFelsteed",
-    "vitality": 2.0,
-    "abilities": {}
-  },
-  {
-    "name": "Rekk'tilac",
-    "category": "Beast",
-    "subcategory": "Spider",
-    "side": "Neutral",
-    "kind": "Rare",
-    "portrait": "PortraitTarantulaOrange",
-    "vitality": 2.0,
-    "abilities": {}
-  },
-  {
-    "name": "Razortalon",
-    "category": "Humanoid",
-    "subcategory": "Wildkin",
-    "side": "Neutral",
-    "kind": "Rare",
-    "portrait": "PortraitWildkin",
-    "vitality": 2.0,
-    "abilities": {}
-  },
-  {
-    "name": "Grimungous",
-    "category": "Giant",
-    "subcategory": "Human",
-    "side": "Neutral",
-    "kind": "Rare",
-    "portrait": "PortraitMountainGiantBrown",
-    "vitality": 2.0,
-    "abilities": {}
-  },
-  {
-    "name": "Silvermane Stalker",
-    "category": "Beast",
-    "subcategory": "Worg",
-    "side": "Neutral",
-    "kind": "Common",
-    "portrait": "PortraitWorgWhite",
-    "vitality": 1.0,
-    "abilities": {}
-  },
-  {
-    "name": "Jalinde Summerdrake",
-    "category": "Humanoid",
-    "subcategory": "Human",
-    "side": "Neutral",
-    "kind": "Rare",
-    "portrait": "PortraitHighElfPathstrider",
-    "vitality": 2.0,
-    "abilities": {}
-  },
-  {
-    "name": "Mith'rethis the Enchanter",
-    "category": "Humanoid",
-    "subcategory": "Human",
-    "side": "Neutral",
-    "kind": "Rare",
-    "portrait": "PortraitSmolderthornHeadhunter",
-    "vitality": 2.0,
-    "abilities": {}
-  },
-  {
-    "name": "Old Cliff Jumper",
-    "category": "Beast",
-    "subcategory": "Worg",
-    "side": "Neutral",
-    "kind": "Rare",
-    "portrait": "PortraitWorg",
-    "vitality": 2.0,
-    "abilities": {}
-  },
-  {
-    "name": "Monnos the Elder",
-    "category": "Giant",
-    "subcategory": "Human",
-    "side": "Neutral",
-    "kind": "Rare",
-    "portrait": "PortraitMountainGiantDark",
-    "vitality": 2.0,
-    "abilities": {}
-  },
-  {
-    "name": "Magister Hawkhelm",
-    "category": "Humanoid",
-    "subcategory": "Human",
-    "side": "Neutral",
-    "kind": "Rare",
-    "portrait": "PortraitBloodElfReclaimer",
-    "vitality": 2.0,
-    "abilities": {}
-  },
-  {
-    "name": "Varo'then's Ghost",
-    "category": "Undead",
-    "subcategory": "Ghost",
-    "side": "Neutral",
-    "kind": "Rare",
-    "portrait": "PortraitWraith",
-    "vitality": 2.0,
-    "abilities": {}
-  },
-  {
-    "name": "The Evalcharr",
-    "category": "Humanoid",
-    "subcategory": "Human",
-    "side": "Neutral",
-    "kind": "Rare",
-    "portrait": "PortraitChimaeraBlue",
-    "vitality": 2.0,
-    "abilities": {}
-  },
-  {
-    "name": "Lady Sesspira",
-    "category": "Humanoid",
-    "subcategory": "Naga",
-    "side": "Neutral",
-    "kind": "Rare",
-    "portrait": "PortraitNagaFemale",
-    "vitality": 2.0,
-    "abilities": {}
-  },
-  {
-    "name": "Scalebeard",
-    "category": "Beast",
-    "subcategory": "Turtle",
-    "side": "Neutral",
-    "kind": "Rare",
-    "portrait": "PortraitTurtleBlue",
-    "vitality": 2.0,
-    "abilities": {}
-  },
-  {
-    "name": "Foulmane",
-    "category": "Undead",
-    "subcategory": "Ghoul",
-    "side": "Neutral",
-    "kind": "Rare",
-    "portrait": "PortraitGhoulWhite",
-    "vitality": 2.0,
-    "abilities": {}
-  },
-  {
-    "name": "Akubar the Seer",
-    "category": "Humanoid",
-    "subcategory": "Human",
-    "side": "Neutral",
-    "kind": "Rare",
-    "portrait": "PortraitBroken",
-    "vitality": 2.0,
-    "abilities": {}
-  },
-  {
-    "name": "Dreadscorn",
-    "category": "Humanoid",
-    "subcategory": "Human",
-    "side": "Neutral",
-    "kind": "Rare",
-    "portrait": "PortraitDreadscorn",
-    "vitality": 2.0,
-    "abilities": {}
-  },
-  {
-    "name": "Spiteflayer",
-    "category": "Beast",
-    "subcategory": "Carrion Bird",
-    "side": "Neutral",
-    "kind": "Rare",
-    "portrait": "PortraitCarrionBird",
-    "vitality": 2.0,
-    "abilities": {}
-  },
-  {
-    "name": "Magronos the Unyielding",
-    "category": "Humanoid",
-    "subcategory": "Ogre",
-    "side": "Neutral",
-    "kind": "Rare",
-    "portrait": "PortraitOgreArmored",
-    "vitality": 2.0,
-    "abilities": {}
-  },
-  {
-    "name": "Ravage",
-    "category": "Beast",
-    "subcategory": "Hyena",
-    "side": "Neutral",
-    "kind": "Rare",
-    "portrait": "PortraitHyenaPurple",
-    "vitality": 2.0,
-    "abilities": {}
-  },
-  {
-    "name": "Mojo the Twisted",
-    "category": "Humanoid",
-    "subcategory": "Ogre",
-    "side": "Neutral",
-    "kind": "Rare",
-    "portrait": "PortraitOgreTwoheads",
-    "vitality": 2.0,
-    "abilities": {}
-  },
-  {
-    "name": "Deatheye",
-    "category": "Beast",
-    "subcategory": "Basilisk",
-    "side": "Neutral",
-    "kind": "Rare",
-    "portrait": "PortraitBasiliskTeal",
-    "vitality": 2.0,
-    "abilities": {}
-  },
-  {
-    "name": "Clack the Reaver",
-    "category": "Beast",
-    "subcategory": "Scorpid",
-    "side": "Neutral",
-    "kind": "Rare",
-    "portrait": "PortraitScorpidBlue",
+    "portrait": "Portrait7XT",
     "vitality": 2.0,
     "abilities": {}
   },
@@ -507,6 +268,16 @@
     "abilities": {}
   },
   {
+    "name": "Slave Master Blackheart",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "side": "Neutral",
+    "kind": "Rare",
+    "portrait": "PortraitAnvilrageOverseer",
+    "vitality": 2.0,
+    "abilities": {}
+  },
+  {
     "name": "Anvilrage Overseer",
     "category": "Humanoid",
     "subcategory": "Human",
@@ -683,6 +454,16 @@
     "side": "Neutral",
     "kind": "Elite",
     "portrait": "PortraitAthrikusNarassin",
+    "vitality": 3.0,
+    "abilities": {}
+  },
+  {
+    "name": "Azshir the Sleepless",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "side": "Neutral",
+    "kind": "Elite",
+    "portrait": "PortraitAzshir",
     "vitality": 3.0,
     "abilities": {}
   },
@@ -960,6 +741,46 @@
     "abilities": {}
   },
   {
+    "name": "Jadespine Basilisk",
+    "category": "Beast",
+    "subcategory": "Basilisk",
+    "side": "Neutral",
+    "kind": "Common",
+    "portrait": "PortraitBasiliskGreen",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Ironeye the Invincible",
+    "category": "Beast",
+    "subcategory": "Basilisk",
+    "side": "Neutral",
+    "kind": "Rare",
+    "portrait": "PortraitBasiliskTeal",
+    "vitality": 2.0,
+    "abilities": {}
+  },
+  {
+    "name": "Hissperak",
+    "category": "Beast",
+    "subcategory": "Basilisk",
+    "side": "Neutral",
+    "kind": "Rare",
+    "portrait": "PortraitBasiliskTeal",
+    "vitality": 2.0,
+    "abilities": {}
+  },
+  {
+    "name": "Deatheye",
+    "category": "Beast",
+    "subcategory": "Basilisk",
+    "side": "Neutral",
+    "kind": "Rare",
+    "portrait": "PortraitBasiliskTeal",
+    "vitality": 2.0,
+    "abilities": {}
+  },
+  {
     "name": "Cold Eye Basilisk",
     "category": "Beast",
     "subcategory": "Basilisk",
@@ -976,16 +797,6 @@
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitBasiliskTeal",
-    "vitality": 1.0,
-    "abilities": {}
-  },
-  {
-    "name": "Jadespine Basilisk",
-    "category": "Beast",
-    "subcategory": "Basilisk",
-    "side": "Neutral",
-    "kind": "Common",
-    "portrait": "PortraitBasiliskGreen",
     "vitality": 1.0,
     "abilities": {}
   },
@@ -1612,6 +1423,16 @@
     "abilities": {}
   },
   {
+    "name": "Lord Captain Wyrmak",
+    "category": "Dragonkin",
+    "subcategory": "Dragonspawn",
+    "side": "Neutral",
+    "kind": "Rare",
+    "portrait": "PortraitBlackDragonSpawnArmored",
+    "vitality": 2.0,
+    "abilities": {}
+  },
+  {
     "name": "Overlord Wyrmthalak",
     "category": "Dragonkin",
     "subcategory": "Dragonspawn",
@@ -1822,6 +1643,16 @@
     "abilities": {}
   },
   {
+    "name": "Brimgore",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "side": "Neutral",
+    "kind": "Rare",
+    "portrait": "PortraitBlackDrake",
+    "vitality": 2.0,
+    "abilities": {}
+  },
+  {
     "name": "Ebonroc",
     "category": "Humanoid",
     "subcategory": "Human",
@@ -1953,6 +1784,17 @@
     "side": "Hostile",
     "kind": "Common",
     "portrait": "PortraitBlackhandIronGuard",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Blackhand Veteran",
+    "category": "Humanoid",
+    "subcategory": "Orc",
+    "faction": "Blackrock Clan",
+    "side": "Hostile",
+    "kind": "Common",
+    "portrait": "PortraitBlackhandVeteran",
     "vitality": 1.0,
     "abilities": {}
   },
@@ -2097,16 +1939,6 @@
     "abilities": {}
   },
   {
-    "name": "Blackwing Spellbinder",
-    "category": "Humanoid",
-    "subcategory": "Orc",
-    "side": "Neutral",
-    "kind": "Common",
-    "portrait": "PortraitBlackwingSpellbinder",
-    "vitality": 1.0,
-    "abilities": {}
-  },
-  {
     "name": "Blackwing Guardsman",
     "category": "Humanoid",
     "subcategory": "Orc",
@@ -2133,6 +1965,16 @@
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitBlackwingMage",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Blackwing Spellbinder",
+    "category": "Humanoid",
+    "subcategory": "Orc",
+    "side": "Neutral",
+    "kind": "Common",
+    "portrait": "PortraitBlackwingSpellbinder",
     "vitality": 1.0,
     "abilities": {}
   },
@@ -2180,17 +2022,6 @@
     "abilities": {}
   },
   {
-    "name": "Blackhand Veteran",
-    "category": "Humanoid",
-    "subcategory": "Orc",
-    "faction": "Blackrock Clan",
-    "side": "Hostile",
-    "kind": "Common",
-    "portrait": "PortraitBlackhandVeteran",
-    "vitality": 1.0,
-    "abilities": {}
-  },
-  {
     "name": "Bloodaxe Veteran",
     "category": "Humanoid",
     "subcategory": "Human",
@@ -2210,6 +2041,16 @@
     "kind": "Common",
     "portrait": "PortraitBloodaxeWarmonger",
     "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Magister Hawkhelm",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "side": "Neutral",
+    "kind": "Rare",
+    "portrait": "PortraitBloodElfReclaimer",
+    "vitality": 2.0,
     "abilities": {}
   },
   {
@@ -2753,6 +2594,16 @@
     "abilities": {}
   },
   {
+    "name": "Drogoth the Roamer",
+    "category": "Elemental",
+    "subcategory": "Bog Beast",
+    "side": "Neutral",
+    "kind": "Rare",
+    "portrait": "PortraitBogBeastGreen",
+    "vitality": 2.0,
+    "abilities": {}
+  },
+  {
     "name": "Branch Snapper",
     "category": "Elemental",
     "subcategory": "Bog Beast",
@@ -3144,12 +2995,42 @@
     "abilities": {}
   },
   {
+    "name": "Oozeworm",
+    "category": "Beast",
+    "subcategory": "Borer",
+    "side": "Neutral",
+    "kind": "Rare",
+    "portrait": "PortraitBorerYellow",
+    "vitality": 2.0,
+    "abilities": {}
+  },
+  {
     "name": "Grubthor",
     "category": "Beast",
     "subcategory": "Borer",
     "side": "Neutral",
     "kind": "Rare",
     "portrait": "PortraitBorerYellow",
+    "vitality": 2.0,
+    "abilities": {}
+  },
+  {
+    "name": "Akubar the Seer",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "side": "Neutral",
+    "kind": "Rare",
+    "portrait": "PortraitBroken",
+    "vitality": 2.0,
+    "abilities": {}
+  },
+  {
+    "name": "Bruegal Ironknuckle",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "side": "Neutral",
+    "kind": "Rare",
+    "portrait": "PortraitBruegalIronknuckle",
     "vitality": 2.0,
     "abilities": {}
   },
@@ -3214,16 +3095,6 @@
     "kind": "Common",
     "portrait": "PortraitBurningBladeConjuror",
     "vitality": 1.0,
-    "abilities": {}
-  },
-  {
-    "name": "Gazz'uz",
-    "category": "Humanoid",
-    "subcategory": "Human",
-    "side": "Neutral",
-    "kind": "Elite",
-    "portrait": "PortraitGazzuz",
-    "vitality": 2.1,
     "abilities": {}
   },
   {
@@ -3349,6 +3220,26 @@
     "side": "Neutral",
     "kind": "Rare",
     "portrait": "PortraitCaptainHammertoe",
+    "vitality": 2.0,
+    "abilities": {}
+  },
+  {
+    "name": "Zaricotl",
+    "category": "Beast",
+    "subcategory": "Carrion Bird",
+    "side": "Neutral",
+    "kind": "Rare",
+    "portrait": "PortraitCarrionBird",
+    "vitality": 2.0,
+    "abilities": {}
+  },
+  {
+    "name": "Spiteflayer",
+    "category": "Beast",
+    "subcategory": "Carrion Bird",
+    "side": "Neutral",
+    "kind": "Rare",
+    "portrait": "PortraitCarrionBird",
     "vitality": 2.0,
     "abilities": {}
   },
@@ -3480,6 +3371,16 @@
     "kind": "Common",
     "portrait": "PortraitCarrionBirdBlue",
     "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Greater Firebird",
+    "category": "Beast",
+    "subcategory": "Carrion Bird",
+    "side": "Neutral",
+    "kind": "Rare",
+    "portrait": "PortraitCarrionBirdBrown",
+    "vitality": 2.0,
     "abilities": {}
   },
   {
@@ -3899,6 +3800,16 @@
     "abilities": {}
   },
   {
+    "name": "Achellios the Banished",
+    "category": "Humanoid",
+    "subcategory": "Centaur",
+    "side": "Neutral",
+    "kind": "Rare",
+    "portrait": "PortraitCentaurPaleKhan",
+    "vitality": 2.0,
+    "abilities": {}
+  },
+  {
     "name": "Magram Maurader",
     "category": "Humanoid",
     "subcategory": "Centaur",
@@ -4107,6 +4018,16 @@
     "kind": "Common",
     "portrait": "PortraitChimaera",
     "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "The Evalcharr",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "side": "Neutral",
+    "kind": "Rare",
+    "portrait": "PortraitChimaeraBlue",
+    "vitality": 2.0,
     "abilities": {}
   },
   {
@@ -4417,6 +4338,26 @@
     "kind": "Common",
     "portrait": "PortraitCorruptedTreantPurple",
     "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Broken Tooth",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "side": "Neutral",
+    "kind": "Rare",
+    "portrait": "PortraitCougar",
+    "vitality": 2.0,
+    "abilities": {}
+  },
+  {
+    "name": "Araga",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "side": "Neutral",
+    "kind": "Rare",
+    "portrait": "PortraitCougar",
+    "vitality": 2.0,
     "abilities": {}
   },
   {
@@ -4920,6 +4861,16 @@
     "abilities": {}
   },
   {
+    "name": "Ripscale",
+    "category": "Beast",
+    "subcategory": "Crocolisk",
+    "side": "Neutral",
+    "kind": "Rare",
+    "portrait": "PortraitCrocoliskDark",
+    "vitality": 2.0,
+    "abilities": {}
+  },
+  {
     "name": "Dreadmaw Crocolisk",
     "category": "Beast",
     "subcategory": "Crocolisk",
@@ -5182,6 +5133,26 @@
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitDalaranWizard",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Darbel Montrose",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "side": "Neutral",
+    "kind": "Rare",
+    "portrait": "PortraitDarbel",
+    "vitality": 2.0,
+    "abilities": {}
+  },
+  {
+    "name": "Dark Adept",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "side": "Neutral",
+    "kind": "Common",
+    "portrait": "PortraitDarkAdept",
     "vitality": 1.0,
     "abilities": {}
   },
@@ -6095,16 +6066,6 @@
     "abilities": {}
   },
   {
-    "name": "Dark Adept",
-    "category": "Humanoid",
-    "subcategory": "Human",
-    "side": "Neutral",
-    "kind": "Common",
-    "portrait": "PortraitDarkAdept",
-    "vitality": 1.0,
-    "abilities": {}
-  },
-  {
     "name": "Diemetradon",
     "category": "Humanoid",
     "subcategory": "Human",
@@ -6325,6 +6286,16 @@
     "abilities": {}
   },
   {
+    "name": "Dreadscorn",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "side": "Neutral",
+    "kind": "Rare",
+    "portrait": "PortraitDreadscorn",
+    "vitality": 2.0,
+    "abilities": {}
+  },
+  {
     "name": "Druid of the Fang",
     "category": "Humanoid",
     "subcategory": "Human",
@@ -6452,15 +6423,6 @@
     ]
   },
   {
-    "name": "Stone Fury",
-    "category": "Elemental",
-    "side": "Neutral",
-    "kind": "Rare",
-    "portrait": "PortraitEarthElemental",
-    "vitality": 2.0,
-    "abilities": {}
-  },
-  {
     "name": "Desert Rumbler",
     "category": "Elemental",
     "side": "Neutral",
@@ -6512,6 +6474,15 @@
     "kind": "Common",
     "portrait": "PortraitEarthElemental",
     "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Stone Fury",
+    "category": "Elemental",
+    "side": "Neutral",
+    "kind": "Rare",
+    "portrait": "PortraitEarthElementalDark",
+    "vitality": 2.0,
     "abilities": {}
   },
   {
@@ -6644,6 +6615,16 @@
     "abilities": {}
   },
   {
+    "name": "Fallen Champion",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "side": "Neutral",
+    "kind": "Elite",
+    "portrait": "PortraitFallenChampion",
+    "vitality": 3.0,
+    "abilities": {}
+  },
+  {
     "name": "Farmer Solliden",
     "category": "Humanoid",
     "subcategory": "Human",
@@ -6693,6 +6674,16 @@
     "kind": "Common",
     "portrait": "PortraitFelGuard",
     "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Kaskk",
+    "category": "Demon",
+    "subcategory": "Fel Guard",
+    "side": "Neutral",
+    "kind": "Rare",
+    "portrait": "PortraitFelGuardBlack",
+    "vitality": 2.0,
     "abilities": {}
   },
   {
@@ -6822,6 +6813,16 @@
     "abilities": {}
   },
   {
+    "name": "Shleipnarr",
+    "category": "Demon",
+    "subcategory": "Human",
+    "side": "Neutral",
+    "kind": "Rare",
+    "portrait": "PortraitFelsteed",
+    "vitality": 2.0,
+    "abilities": {}
+  },
+  {
     "name": "Shadow Charger",
     "category": "Demon",
     "side": "Neutral",
@@ -6858,6 +6859,15 @@
     "side": "Neutral",
     "kind": "Rare",
     "portrait": "PortraitFirecallerRadison",
+    "vitality": 2.0,
+    "abilities": {}
+  },
+  {
+    "name": "Scald",
+    "category": "Elemental",
+    "side": "Neutral",
+    "kind": "Rare",
+    "portrait": "PortraitFireElemental",
     "vitality": 2.0,
     "abilities": {}
   },
@@ -7831,6 +7841,16 @@
     "abilities": {}
   },
   {
+    "name": "Gazz'uz",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "side": "Neutral",
+    "kind": "Elite",
+    "portrait": "PortraitGazzuz",
+    "vitality": 2.1,
+    "abilities": {}
+  },
+  {
     "name": "General Angerforge",
     "category": "Humanoid",
     "subcategory": "Human",
@@ -8053,6 +8073,16 @@
     "kind": "Common",
     "portrait": "PortraitGhoulBlue",
     "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Foulmane",
+    "category": "Undead",
+    "subcategory": "Ghoul",
+    "side": "Neutral",
+    "kind": "Rare",
+    "portrait": "PortraitGhoulWhite",
+    "vitality": 2.0,
     "abilities": {}
   },
   {
@@ -8911,6 +8941,36 @@
     "abilities": {}
   },
   {
+    "name": "Kregg Keelhaul",
+    "category": "Humanoid",
+    "subcategory": "Goblin",
+    "side": "Neutral",
+    "kind": "Rare",
+    "portrait": "PortraitGoblin",
+    "vitality": 2.0,
+    "abilities": {}
+  },
+  {
+    "name": "Gibblesnik",
+    "category": "Humanoid",
+    "subcategory": "Goblin",
+    "side": "Neutral",
+    "kind": "Rare",
+    "portrait": "PortraitGoblin",
+    "vitality": 2.0,
+    "abilities": {}
+  },
+  {
+    "name": "Verifonix",
+    "category": "Humanoid",
+    "subcategory": "Goblin",
+    "side": "Neutral",
+    "kind": "Rare",
+    "portrait": "PortraitGoblin",
+    "vitality": 2.0,
+    "abilities": {}
+  },
+  {
     "name": "Boss Copperplug",
     "category": "Humanoid",
     "subcategory": "Goblin",
@@ -9174,6 +9234,26 @@
     "abilities": {}
   },
   {
+    "name": "War Golem",
+    "category": "Mechanical",
+    "subcategory": "Golem",
+    "side": "Neutral",
+    "kind": "Rare",
+    "portrait": "PortraitGolemDark",
+    "vitality": 2.0,
+    "abilities": {}
+  },
+  {
+    "name": "Siege Golem",
+    "category": "Mechanical",
+    "subcategory": "Golem",
+    "side": "Neutral",
+    "kind": "Rare",
+    "portrait": "PortraitGolemDark",
+    "vitality": 2.0,
+    "abilities": {}
+  },
+  {
     "name": "Obsidion",
     "category": "Mechanical",
     "subcategory": "Golem",
@@ -9387,6 +9467,16 @@
     "abilities": {}
   },
   {
+    "name": "Kurmokk",
+    "category": "Beast",
+    "subcategory": "Gorilla",
+    "side": "Neutral",
+    "kind": "Rare",
+    "portrait": "PortraitGorillaBrown",
+    "vitality": 2.0,
+    "abilities": {}
+  },
+  {
     "name": "U'cha",
     "category": "Beast",
     "subcategory": "Gorilla",
@@ -9434,6 +9524,16 @@
     "kind": "Elite",
     "portrait": "PortraitGorosh",
     "vitality": 3.0,
+    "abilities": {}
+  },
+  {
+    "name": "Gravis Slipknot",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "side": "Neutral",
+    "kind": "Rare",
+    "portrait": "PortraitGravisSlipknot",
+    "vitality": 2.0,
     "abilities": {}
   },
   {
@@ -9955,6 +10055,16 @@
     "abilities": {}
   },
   {
+    "name": "Harb Foulmountain",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "side": "Neutral",
+    "kind": "Rare",
+    "portrait": "PortraitHarbFoulmountain",
+    "vitality": 2.0,
+    "abilities": {}
+  },
+  {
     "name": "Bloodfeather Fury",
     "category": "Humanoid",
     "subcategory": "Human",
@@ -10313,6 +10423,16 @@
     "kind": "Common",
     "portrait": "PortraitHighborneSummoner",
     "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Jalinde Summerdrake",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "side": "Neutral",
+    "kind": "Rare",
+    "portrait": "PortraitHighElfPathstrider",
+    "vitality": 2.0,
     "abilities": {}
   },
   {
@@ -10735,6 +10855,16 @@
     "abilities": {}
   },
   {
+    "name": "Ravage",
+    "category": "Beast",
+    "subcategory": "Hyena",
+    "side": "Neutral",
+    "kind": "Rare",
+    "portrait": "PortraitHyenaPurple",
+    "vitality": 2.0,
+    "abilities": {}
+  },
+  {
     "name": "Snort the Heckler",
     "category": "Beast",
     "subcategory": "Hyena",
@@ -10765,6 +10895,16 @@
     "abilities": {}
   },
   {
+    "name": "Giggler",
+    "category": "Beast",
+    "subcategory": "Hyena",
+    "side": "Neutral",
+    "kind": "Rare",
+    "portrait": "PortraitHyenaWhite",
+    "vitality": 2.0,
+    "abilities": {}
+  },
+  {
     "name": "Magram Bonepaw",
     "category": "Beast",
     "subcategory": "Hyena",
@@ -10782,6 +10922,16 @@
     "kind": "Common",
     "portrait": "PortraitHyenaWhite",
     "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Murderous Blisterpaw",
+    "category": "Beast",
+    "subcategory": "Hyena",
+    "side": "Neutral",
+    "kind": "Rare",
+    "portrait": "PortraitHyenaYellow",
+    "vitality": 2.0,
     "abilities": {}
   },
   {
@@ -11237,6 +11387,16 @@
     "abilities": {}
   },
   {
+    "name": "Jin'Zallah the Sandbringer",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "side": "Neutral",
+    "kind": "Rare",
+    "portrait": "PortraitJinZallah",
+    "vitality": 2.0,
+    "abilities": {}
+  },
+  {
     "name": "Kazkaz the Unholy",
     "category": "Humanoid",
     "subcategory": "Human",
@@ -11589,6 +11749,16 @@
     "side": "Neutral",
     "kind": "Rare",
     "portrait": "PortraitKodoYellow",
+    "vitality": 2.0,
+    "abilities": {}
+  },
+  {
+    "name": "Warleader Krazzilak",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "side": "Neutral",
+    "kind": "Rare",
+    "portrait": "PortraitKrazzilak",
     "vitality": 2.0,
     "abilities": {}
   },
@@ -12217,6 +12387,16 @@
     "abilities": {}
   },
   {
+    "name": "Lord Angler",
+    "category": "Beast",
+    "subcategory": "Makrura",
+    "side": "Neutral",
+    "kind": "Rare",
+    "portrait": "PortraitMakruraBlue",
+    "vitality": 2.0,
+    "abilities": {}
+  },
+  {
     "name": "Diamond Head",
     "category": "Beast",
     "subcategory": "Makrura",
@@ -12525,6 +12705,16 @@
     "abilities": {}
   },
   {
+    "name": "Grimungous",
+    "category": "Giant",
+    "subcategory": "Human",
+    "side": "Neutral",
+    "kind": "Rare",
+    "portrait": "PortraitMountainGiantBrown",
+    "vitality": 2.0,
+    "abilities": {}
+  },
+  {
     "name": "Boulderheart",
     "category": "Giant",
     "side": "Neutral",
@@ -12550,6 +12740,16 @@
     "kind": "Common",
     "portrait": "PortraitMountainGiantBrown",
     "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Monnos the Elder",
+    "category": "Giant",
+    "subcategory": "Human",
+    "side": "Neutral",
+    "kind": "Rare",
+    "portrait": "PortraitMountainGiantDark",
+    "vitality": 2.0,
     "abilities": {}
   },
   {
@@ -13144,6 +13344,16 @@
     "abilities": {}
   },
   {
+    "name": "Gluggle",
+    "category": "Humanoid",
+    "subcategory": "Murloc",
+    "side": "Neutral",
+    "kind": "Rare",
+    "portrait": "PortraitMurlocWhite",
+    "vitality": 2.0,
+    "abilities": {}
+  },
+  {
     "name": "Mutantus the Devourer",
     "category": "Humanoid",
     "subcategory": "Murloc",
@@ -13224,6 +13434,16 @@
     "abilities": {}
   },
   {
+    "name": "Prince Nazjak",
+    "category": "Humanoid",
+    "subcategory": "Naga",
+    "side": "Neutral",
+    "kind": "Rare",
+    "portrait": "PortraitNagaBright",
+    "vitality": 2.0,
+    "abilities": {}
+  },
+  {
     "name": "Stormscale Wave Rider",
     "category": "Humanoid",
     "subcategory": "Naga",
@@ -13291,6 +13511,16 @@
     "kind": "Common",
     "portrait": "PortraitNagaBright",
     "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Accursed Slitherblade",
+    "category": "Humanoid",
+    "subcategory": "Naga",
+    "side": "Neutral",
+    "kind": "Rare",
+    "portrait": "PortraitNagaDark",
+    "vitality": 2.0,
     "abilities": {}
   },
   {
@@ -13491,6 +13721,16 @@
     "kind": "Common",
     "portrait": "PortraitNagaDark",
     "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Lady Sesspira",
+    "category": "Humanoid",
+    "subcategory": "Naga",
+    "side": "Neutral",
+    "kind": "Rare",
+    "portrait": "PortraitNagaFemale",
+    "vitality": 2.0,
     "abilities": {}
   },
   {
@@ -13864,6 +14104,16 @@
     ]
   },
   {
+    "name": "Nimar the Slayer",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "side": "Neutral",
+    "kind": "Rare",
+    "portrait": "PortraitNimartheSlayer",
+    "vitality": 2.0,
+    "abilities": {}
+  },
+  {
     "name": "Noxxion",
     "category": "Elemental",
     "side": "Neutral",
@@ -13987,6 +14237,26 @@
     "kind": "Elite",
     "portrait": "PortraitOgomtheWretched",
     "vitality": 3.0,
+    "abilities": {}
+  },
+  {
+    "name": "Omgorn the Lost",
+    "category": "Humanoid",
+    "subcategory": "Ogre",
+    "side": "Neutral",
+    "kind": "Rare",
+    "portrait": "PortraitOgre",
+    "vitality": 2.0,
+    "abilities": {}
+  },
+  {
+    "name": "Roloch",
+    "category": "Humanoid",
+    "subcategory": "Ogre",
+    "side": "Neutral",
+    "kind": "Rare",
+    "portrait": "PortraitOgre",
+    "vitality": 2.0,
     "abilities": {}
   },
   {
@@ -14550,6 +14820,16 @@
     "abilities": {}
   },
   {
+    "name": "Magronos the Unyielding",
+    "category": "Humanoid",
+    "subcategory": "Ogre",
+    "side": "Neutral",
+    "kind": "Rare",
+    "portrait": "PortraitOgreArmored",
+    "vitality": 2.0,
+    "abilities": {}
+  },
+  {
     "name": "Captain Kromcrush",
     "category": "Humanoid",
     "subcategory": "Ogre",
@@ -14800,6 +15080,16 @@
     "abilities": {}
   },
   {
+    "name": "Cyclok the Mad",
+    "category": "Humanoid",
+    "subcategory": "Ogre",
+    "side": "Neutral",
+    "kind": "Rare",
+    "portrait": "PortraitOgreBlueTwoheads",
+    "vitality": 2.0,
+    "abilities": {}
+  },
+  {
     "name": "Cho'Rush the Observer",
     "category": "Humanoid",
     "subcategory": "Ogre",
@@ -15018,6 +15308,16 @@
     "kind": "Common",
     "portrait": "PortraitOgreRedTwoheads",
     "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Mojo the Twisted",
+    "category": "Humanoid",
+    "subcategory": "Ogre",
+    "side": "Neutral",
+    "kind": "Rare",
+    "portrait": "PortraitOgreTwoheads",
+    "vitality": 2.0,
     "abilities": {}
   },
   {
@@ -16159,6 +16459,16 @@
     "abilities": {}
   },
   {
+    "name": "Earthcaller Halmgar",
+    "category": "Humanoid",
+    "subcategory": "Quilboar",
+    "side": "Neutral",
+    "kind": "Rare",
+    "portrait": "PortraitQuilboarBlue",
+    "vitality": 2.0,
+    "abilities": {}
+  },
+  {
     "name": "Razorfen Groundshaker",
     "category": "Humanoid",
     "subcategory": "Quilboar",
@@ -16826,6 +17136,16 @@
     "kind": "Common",
     "portrait": "PortraitRaptorDark",
     "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Dart",
+    "category": "Beast",
+    "subcategory": "Raptor",
+    "side": "Neutral",
+    "kind": "Rare",
+    "portrait": "PortraitRaptorOrange",
+    "vitality": 2.0,
     "abilities": {}
   },
   {
@@ -18522,6 +18842,26 @@
     "abilities": {}
   },
   {
+    "name": "Vile Sting",
+    "category": "Beast",
+    "subcategory": "Scorpid",
+    "side": "Neutral",
+    "kind": "Rare",
+    "portrait": "PortraitScorpidBlue",
+    "vitality": 2.0,
+    "abilities": {}
+  },
+  {
+    "name": "Clack the Reaver",
+    "category": "Beast",
+    "subcategory": "Scorpid",
+    "side": "Neutral",
+    "kind": "Rare",
+    "portrait": "PortraitScorpidBlue",
+    "vitality": 2.0,
+    "abilities": {}
+  },
+  {
     "name": "Scorpid Tail Lasher",
     "category": "Beast",
     "subcategory": "Scorpid",
@@ -18957,6 +19297,16 @@
     "abilities": {}
   },
   {
+    "name": "Soriid the Devourer",
+    "category": "Insect",
+    "subcategory": "Silithid",
+    "side": "Neutral",
+    "kind": "Rare",
+    "portrait": "PortraitSilithidTankRed",
+    "vitality": 2.0,
+    "abilities": {}
+  },
+  {
     "name": "Lapress",
     "category": "Insect",
     "subcategory": "Silithid",
@@ -19004,6 +19354,16 @@
     "kind": "Common",
     "portrait": "PortraitSilithidTankRed",
     "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Haarka the Ravenous",
+    "category": "Insect",
+    "subcategory": "Silithid",
+    "side": "Neutral",
+    "kind": "Rare",
+    "portrait": "PortraitSilithidTankTeal",
+    "vitality": 2.0,
     "abilities": {}
   },
   {
@@ -19437,6 +19797,16 @@
     "abilities": {}
   },
   {
+    "name": "Singer",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "side": "Neutral",
+    "kind": "Rare",
+    "portrait": "PortraitSinger",
+    "vitality": 2.0,
+    "abilities": {}
+  },
+  {
     "name": "Bloodmage Thalnos",
     "category": "Undead",
     "subcategory": "Skeleton",
@@ -19684,6 +20054,16 @@
     "kind": "Common",
     "portrait": "PortraitSkeletalWarrior",
     "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Ironspine",
+    "category": "Undead",
+    "subcategory": "Skeleton",
+    "side": "Neutral",
+    "kind": "Elite",
+    "portrait": "PortraitSkeletalWarriorYellow",
+    "vitality": 3.0,
     "abilities": {}
   },
   {
@@ -20009,6 +20389,16 @@
     "abilities": {}
   },
   {
+    "name": "Mith'rethis the Enchanter",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "side": "Neutral",
+    "kind": "Rare",
+    "portrait": "PortraitSmolderthornHeadhunter",
+    "vitality": 2.0,
+    "abilities": {}
+  },
+  {
     "name": "Smolderthorn Headhunter",
     "category": "Humanoid",
     "subcategory": "Human",
@@ -20235,6 +20625,16 @@
     "kind": "Common",
     "portrait": "PortraitSpiderCrystal",
     "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Darkmist Widow",
+    "category": "Beast",
+    "subcategory": "Spider",
+    "side": "Neutral",
+    "kind": "Rare",
+    "portrait": "PortraitSpiderGreen",
+    "vitality": 2.0,
     "abilities": {}
   },
   {
@@ -20567,16 +20967,6 @@
     "abilities": {}
   },
   {
-    "name": "Gravis Slipknot",
-    "category": "Beast",
-    "subcategory": "Cat",
-    "side": "Neutral",
-    "kind": "Rare",
-    "portrait": "PortraitSyndicateEnforcer",
-    "vitality": 2.0,
-    "abilities": {}
-  },
-  {
     "name": "Syndicate Enforcer",
     "category": "Beast",
     "subcategory": "Cat",
@@ -20654,6 +21044,16 @@
     "kind": "Common",
     "portrait": "PortraitSyndicateRogue",
     "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Jimmy the Bleeder",
+    "category": "Beast",
+    "subcategory": "Cat",
+    "side": "Neutral",
+    "kind": "Rare",
+    "portrait": "PortraitSyndicateSaboteur",
+    "vitality": 2.0,
     "abilities": {}
   },
   {
@@ -21021,6 +21421,16 @@
     "kind": "Common",
     "portrait": "PortraitTarantulaGray",
     "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Rekk'tilac",
+    "category": "Beast",
+    "subcategory": "Spider",
+    "side": "Neutral",
+    "kind": "Rare",
+    "portrait": "PortraitTarantulaOrange",
+    "vitality": 2.0,
     "abilities": {}
   },
   {
@@ -22055,6 +22465,16 @@
     "abilities": {}
   },
   {
+    "name": "Scalebeard",
+    "category": "Beast",
+    "subcategory": "Turtle",
+    "side": "Neutral",
+    "kind": "Rare",
+    "portrait": "PortraitTurtleBlue",
+    "vitality": 2.0,
+    "abilities": {}
+  },
+  {
     "name": "Gammerita",
     "category": "Beast",
     "subcategory": "Turtle",
@@ -22092,6 +22512,16 @@
     "kind": "Common",
     "portrait": "PortraitTurtleBlue",
     "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Cranky Benj",
+    "category": "Beast",
+    "subcategory": "Turtle",
+    "side": "Neutral",
+    "kind": "Rare",
+    "portrait": "PortraitTurtleOrange",
+    "vitality": 2.0,
     "abilities": {}
   },
   {
@@ -22827,6 +23257,16 @@
     "abilities": {}
   },
   {
+    "name": "Razortalon",
+    "category": "Humanoid",
+    "subcategory": "Wildkin",
+    "side": "Neutral",
+    "kind": "Rare",
+    "portrait": "PortraitWildkin",
+    "vitality": 2.0,
+    "abilities": {}
+  },
+  {
     "name": "Berserk Owlbeast",
     "category": "Humanoid",
     "subcategory": "Wildkin",
@@ -22974,6 +23414,16 @@
     "kind": "Common",
     "portrait": "PortraitWindSerpentRed",
     "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Hayoc",
+    "category": "Beast",
+    "subcategory": "Wind Serpent",
+    "side": "Neutral",
+    "kind": "Rare",
+    "portrait": "PortraitWindSerpentWhite",
+    "vitality": 2.0,
     "abilities": {}
   },
   {
@@ -23419,6 +23869,16 @@
     "abilities": {}
   },
   {
+    "name": "Old Cliff Jumper",
+    "category": "Beast",
+    "subcategory": "Worg",
+    "side": "Neutral",
+    "kind": "Rare",
+    "portrait": "PortraitWorg",
+    "vitality": 2.0,
+    "abilities": {}
+  },
+  {
     "name": "Deathmaw",
     "category": "Beast",
     "subcategory": "Worg",
@@ -23819,6 +24279,16 @@
     "abilities": {}
   },
   {
+    "name": "Silvermane Stalker",
+    "category": "Beast",
+    "subcategory": "Worg",
+    "side": "Neutral",
+    "kind": "Common",
+    "portrait": "PortraitWorgWhite",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
     "name": "Gorefang",
     "category": "Beast",
     "subcategory": "Worg",
@@ -23896,6 +24366,16 @@
     "kind": "Common",
     "portrait": "PortraitWorgWhite",
     "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Varo'then's Ghost",
+    "category": "Undead",
+    "subcategory": "Ghost",
+    "side": "Neutral",
+    "kind": "Rare",
+    "portrait": "PortraitWraith",
+    "vitality": 2.0,
     "abilities": {}
   },
   {
@@ -24115,16 +24595,6 @@
     "abilities": {}
   },
   {
-    "name": "Heartrazor",
-    "category": "Beast",
-    "subcategory": "Wyvern",
-    "side": "Neutral",
-    "kind": "Rare",
-    "portrait": "PortraitWyvern",
-    "vitality": 2.0,
-    "abilities": {}
-  },
-  {
     "name": "Pridewing Patriarch",
     "category": "Beast",
     "subcategory": "Wyvern",
@@ -24181,6 +24651,16 @@
     "side": "Neutral",
     "kind": "Rare",
     "portrait": "PortraitWyvernBlue",
+    "vitality": 2.0,
+    "abilities": {}
+  },
+  {
+    "name": "Heartrazor",
+    "category": "Beast",
+    "subcategory": "Wyvern",
+    "side": "Neutral",
+    "kind": "Rare",
+    "portrait": "PortraitWyvernGreen",
     "vitality": 2.0,
     "abilities": {}
   },

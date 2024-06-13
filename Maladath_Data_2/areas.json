@@ -231,6 +231,12 @@
         "levelMax": 25
       }
     ],
+    "rareEncounters": [
+      {
+        "who": "Bruegal Ironknuckle",
+        "levelMin": 26
+      }
+    ],
     "eliteEncounters": [
       {
         "who": "Dextren Ward",
@@ -1502,6 +1508,12 @@
         "levelMax": 31
       }
     ],
+    "rareEncounters": [
+      {
+        "who": "Cranky Benj",
+        "levelMin": 32
+      }
+    ],
     "areaSize": 3,
     "progression": [
       {
@@ -1558,6 +1570,12 @@
         "who": "Hulking Mountain Lion",
         "levelMin": 33,
         "levelMax": 34
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Araga",
+        "levelMin": 35
       }
     ],
     "areaSize": 3,
@@ -1646,6 +1664,12 @@
         "who": "Syndicate Footpad",
         "levelMin": 33,
         "levelMax": 34
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Jimmy the Bleeder",
+        "levelMin": 33
       }
     ],
     "areaSize": 3,
@@ -1880,6 +1904,12 @@
         "levelMax": 39
       }
     ],
+    "rareEncounters": [
+      {
+        "who": "Prince Nazjak",
+        "levelMin": 41
+      }
+    ],
     "areaSize": 3,
     "progression": [
       {
@@ -2074,6 +2104,12 @@
         "levelMax": 31
       }
     ],
+    "rareEncounters": [
+      {
+        "who": "Singer",
+        "levelMin": 34
+      }
+    ],
     "areaSize": 3,
     "progression": [
       {
@@ -2156,6 +2192,12 @@
         "who": "Witherbark Headhunter",
         "levelMin": 34,
         "levelMax": 35
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Nimar the Slayer",
+        "levelMin": 37
       }
     ],
     "areaSize": 3,
@@ -3954,8 +3996,7 @@
     "rareEncounters": [
       {
         "who": "Anathemus",
-        "levelMin": 45,
-        "levelMax": 45
+        "levelMin": 45
       }
     ],
     "areaSize": 3,
@@ -4074,7 +4115,13 @@
       {
         "who": "Rabid Crag Coyote",
         "levelMin": 40,
-        "levelMax": 42
+        "levelMax": 41
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Broken Tooth",
+        "levelMin": 39
       }
     ],
     "areaSize": 3,
@@ -4170,6 +4217,12 @@
         "levelMax": 41
       }
     ],
+    "rareEncounters": [
+      {
+        "who": "7:XT",
+        "levelMin": 41
+      }
+    ],
     "areaSize": 3,
     "progression": [
       {
@@ -4206,6 +4259,12 @@
         "levelMax": 41
       }
     ],
+    "rareEncounters": [
+      {
+        "who": "Siege Golem",
+        "levelMin": 40
+      }
+    ],
     "areaSize": 3,
     "progression": [
       {
@@ -4237,6 +4296,12 @@
         "levelMax": 37
       }
     ],
+    "rareEncounters": [
+      {
+        "who": "War Golem",
+        "levelMin": 37
+      }
+    ],
     "areaSize": 3,
     "progression": [
       {
@@ -4261,6 +4326,12 @@
         "who": "Ridge Huntress",
         "levelMin": 38,
         "levelMax": 39
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Zaricotl",
+        "levelMin": 55
       }
     ],
     "areaSize": 3,
@@ -6908,6 +6979,12 @@
         "levelMax": 34
       }
     ],
+    "rareEncounters": [
+      {
+        "who": "Hissperak",
+        "levelMin": 37
+      }
+    ],
     "areaSize": 3,
     "progression": [
       {
@@ -7174,6 +7251,12 @@
         "levelMax": 40
       }
     ],
+    "rareEncounters": [
+      {
+        "who": "Kaskk",
+        "levelMin": 40
+      }
+    ],
     "areaSize": 3,
     "progression": [
       {
@@ -7209,6 +7292,12 @@
         "who": "Slitherblade Seawitch",
         "levelMin": 35,
         "levelMax": 36
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Accursed Slitherblade",
+        "levelMin": 35
       }
     ],
     "areaSize": 3,
@@ -7345,6 +7434,12 @@
         "who": "Dread Swoop",
         "levelMin": 31,
         "levelMax": 32
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Giggler",
+        "levelMin": 34
       }
     ],
     "areaSize": 3,
@@ -9851,6 +9946,12 @@
         "levelMax": 37
       }
     ],
+    "rareEncounters": [
+      {
+        "who": "Drogoth the Roamer",
+        "levelMin": 37
+      }
+    ],
     "areaSize": 3,
     "progression": [
       {
@@ -9880,6 +9981,12 @@
         "who": "Darkmist Silkspinner",
         "levelMin": 38,
         "levelMax": 39
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Darkmist Widow",
+        "levelMin": 40
       }
     ],
     "areaSize": 3,
@@ -10023,6 +10130,12 @@
         "levelMax": 36
       }
     ],
+    "rareEncounters": [
+      {
+        "who": "Dart",
+        "levelMin": 38
+      }
+    ],
     "areaSize": 3,
     "progression": [
       {
@@ -10158,6 +10271,16 @@
         "levelMax": 43
       }
     ],
+    "rareEncounters": [
+      {
+        "who": "Oozeworm",
+        "levelMin": 43
+      },
+      {
+        "who": "Brimgore",
+        "levelMin": 45
+      }
+    ],
     "areaSize": 3,
     "progression": [
       {
@@ -10273,6 +10396,12 @@
         "levelMax": 38
       }
     ],
+    "rareEncounters": [
+      {
+        "who": "Ripscale",
+        "levelMin": 39
+      }
+    ],
     "areaSize": 3,
     "progression": [
       {
@@ -10304,6 +10433,12 @@
         "levelMax": 43
       }
     ],
+    "rareEncounters": [
+      {
+        "who": "Hayoc",
+        "levelMin": 43
+      }
+    ],
     "areaSize": 3,
     "progression": [
       {
@@ -10329,6 +10464,12 @@
         "who": "Muckshell Scrabbler",
         "levelMin": 42,
         "levelMax": 43
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Lord Angler",
+        "levelMin": 44
       }
     ],
     "areaSize": 3,
@@ -13279,6 +13420,12 @@
         "levelMax": 33
       }
     ],
+    "rareEncounters": [
+      {
+        "who": "Dark Iron Ambassador",
+        "levelMin": 33
+      }
+    ],
     "eliteEncounters": [
       {
         "who": "Crowd Pummeler 9-60",
@@ -13369,13 +13516,6 @@
         "who": "Mechanized Sentry",
         "levelMin": 31,
         "levelMax": 32
-      }
-    ],
-    "rareEncounters": [
-      {
-        "who": "Dark Iron Ambassador",
-        "levelMin": 32,
-        "levelMax": 33
       }
     ],
     "eliteEncounters": [
@@ -15135,8 +15275,7 @@
     "rareEncounters": [
       {
         "who": "Rotgrip",
-        "levelMin": 50,
-        "levelMax": 50
+        "levelMin": 50
       }
     ],
     "eliteEncounters": [
@@ -16623,6 +16762,12 @@
         "levelMax": 30
       }
     ],
+    "rareEncounters": [
+      {
+        "who": "Earthcaller Halmgar",
+        "levelMin": 32
+      }
+    ],
     "eliteEncounters": [
       {
         "who": "Overlord Ramtusk",
@@ -17726,6 +17871,12 @@
         "levelMax": 38
       }
     ],
+    "rareEncounters": [
+      {
+        "who": "Darbel Montrose",
+        "levelMin": 39
+      }
+    ],
     "eliteEncounters": [
       {
         "who": "Lord Falconcrest",
@@ -18065,8 +18216,27 @@
         "levelMax": 33
       }
     ],
+    "eliteEncounters": [
+      {
+        "who": "Azshir the Sleepless",
+        "levelMin": 33
+      },
+      {
+        "who": "Fallen Champion",
+        "levelMin": 33
+      },
+      {
+        "who": "Ironspine",
+        "levelMin": 33
+      }
+    ],
     "areaSize": 3,
     "progression": [
+      {
+        "type": "Boss",
+        "bossName": "<ForlornCloister>",
+        "point": 2
+      },
       {
         "type": "Area",
         "areaName": "Honor's Tomb",
@@ -21515,6 +21685,12 @@
         "levelMax": 37
       }
     ],
+    "rareEncounters": [
+      {
+        "who": "Gluggle",
+        "levelMin": 38
+      }
+    ],
     "areaSize": 3,
     "progression": [
       {
@@ -21621,6 +21797,16 @@
         "levelMax": 42
       }
     ],
+    "rareEncounters": [
+      {
+        "who": "Verifonix",
+        "levelMin": 42
+      },
+      {
+        "who": "Kurmokk",
+        "levelMin": 42
+      }
+    ],
     "areaSize": 3,
     "progression": [
       {
@@ -21646,6 +21832,12 @@
         "who": "Mosh'Ogg Witch Doctor",
         "levelMin": 36,
         "levelMax": 37
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Roloch",
+        "levelMin": 38
       }
     ],
     "areaSize": 3,
@@ -22863,6 +23055,12 @@
         "levelMax": 45
       }
     ],
+    "rareEncounters": [
+      {
+        "who": "Lord Captain Wyrmak",
+        "levelMin": 46
+      }
+    ],
     "eliteEncounters": [
       {
         "who": "Jade",
@@ -23157,6 +23355,12 @@
         "levelMax": 45
       }
     ],
+    "rareEncounters": [
+      {
+        "who": "Greater Firebird",
+        "levelMin": 46
+      }
+    ],
     "areaSize": 3,
     "progression": [
       {
@@ -23191,6 +23395,12 @@
         "who": "Land Rager",
         "levelMin": 45,
         "levelMax": 46
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Omgorn the Lost",
+        "levelMin": 50
       }
     ],
     "areaSize": 3,
@@ -23313,6 +23523,12 @@
         "levelMax": 48
       }
     ],
+    "rareEncounters": [
+      {
+        "who": "Cyclok the Mad",
+        "levelMin": 48
+      }
+    ],
     "areaSize": 3,
     "progression": [
       {
@@ -23371,6 +23587,10 @@
       {
         "who": "Andre Firebeard",
         "levelMin": 45
+      },
+      {
+        "who": "Kregg Keelhaul",
+        "levelMin": 47
       }
     ],
     "areaSize": 3,
@@ -23399,6 +23619,12 @@
         "levelMax": 42
       }
     ],
+    "rareEncounters": [
+      {
+        "who": "Murderous Blisterpaw",
+        "levelMin": 43
+      }
+    ],
     "areaSize": 3,
     "progression": [
       {
@@ -23423,6 +23649,16 @@
         "who": "Sandfury Firecaller",
         "levelMin": 43,
         "levelMax": 44
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Jin'Zallah the Sandbringer",
+        "levelMin": 46
+      },
+      {
+        "who": "Warleader Krazzilak",
+        "levelMin": 45
       }
     ],
     "areaSize": 3,
@@ -23544,6 +23780,12 @@
         "levelMax": 49
       }
     ],
+    "rareEncounters": [
+      {
+        "who": "Haarka the Ravenous",
+        "levelMin": 50
+      }
+    ],
     "areaSize": 3,
     "progression": [
       {
@@ -23581,6 +23823,12 @@
         "who": "Centipaar Swarmer",
         "levelMin": 48,
         "levelMax": 50
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Soriid the Devourer",
+        "levelMin": 50
       }
     ],
     "areaSize": 3,
@@ -26418,6 +26666,12 @@
         "levelMax": 28
       }
     ],
+    "rareEncounters": [
+      {
+        "who": "Harb Foulmountain",
+        "levelMin": 27
+      }
+    ],
     "areaSize": 3,
     "progression": [
       {
@@ -26448,6 +26702,10 @@
       {
         "who": "Heartrazor",
         "levelMin": 32
+      },
+      {
+        "who": "Achellios the Banished",
+        "levelMin": 31
       }
     ],
     "areaSize": 3,
@@ -26615,6 +26873,12 @@
         "levelMax": 35
       }
     ],
+    "rareEncounters": [
+      {
+        "who": "Ironeye the Invincible",
+        "levelMin": 37
+      }
+    ],
     "areaSize": 3,
     "progression": [
       {
@@ -26677,6 +26941,12 @@
         "levelMax": 34
       }
     ],
+    "rareEncounters": [
+      {
+        "who": "Vile Sting",
+        "levelMin": 35
+      }
+    ],
     "areaSize": 3,
     "progression": [
       {
@@ -26711,6 +26981,12 @@
         "who": "Elder Cloud Serpent",
         "levelMin": 29,
         "levelMax": 30
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Gibblesnik",
+        "levelMin": 29
       }
     ],
     "areaSize": 3,
