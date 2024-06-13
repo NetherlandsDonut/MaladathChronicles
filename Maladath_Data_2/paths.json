@@ -2566,52 +2566,6 @@
   },
   {
     "sites": [
-      "Stonard",
-      "The Shifting Mire"
-    ],
-    "means": "Land",
-    "spacing": 10,
-    "points": [
-      {
-        "Item1": 5719,
-        "Item2": -3800
-      },
-      {
-        "Item1": 5726,
-        "Item2": -3792
-      },
-      {
-        "Item1": 5736,
-        "Item2": -3792
-      },
-      {
-        "Item1": 5745,
-        "Item2": -3787
-      },
-      {
-        "Item1": 5750,
-        "Item2": -3778
-      },
-      {
-        "Item1": 5752,
-        "Item2": -3768
-      },
-      {
-        "Item1": 5750,
-        "Item2": -3758
-      },
-      {
-        "Item1": 5745,
-        "Item2": -3750
-      },
-      {
-        "Item1": 5746,
-        "Item2": -3752
-      }
-    ]
-  },
-  {
-    "sites": [
       "Splinterspear Junction",
       "Stonard"
     ],
@@ -151261,6 +151215,308 @@
       {
         "Item1": 4690,
         "Item2": -3721
+      }
+    ]
+  },
+  {
+    "sites": [
+      "Pool of Tears",
+      "Stagalbog"
+    ],
+    "means": "Land",
+    "spacing": 10,
+    "points": [
+      {
+        "Item1": 5908,
+        "Item2": -3813
+      },
+      {
+        "Item1": 5899,
+        "Item2": -3818
+      },
+      {
+        "Item1": 5889,
+        "Item2": -3819
+      },
+      {
+        "Item1": 5885,
+        "Item2": -3828
+      },
+      {
+        "Item1": 5878,
+        "Item2": -3836
+      },
+      {
+        "Item1": 5868,
+        "Item2": -3838
+      },
+      {
+        "Item1": 5858,
+        "Item2": -3840
+      },
+      {
+        "Item1": 5848,
+        "Item2": -3837
+      },
+      {
+        "Item1": 5838,
+        "Item2": -3838
+      },
+      {
+        "Item1": 5829,
+        "Item2": -3835
+      },
+      {
+        "Item1": 5820,
+        "Item2": -3829
+      },
+      {
+        "Item1": 5811,
+        "Item2": -3825
+      },
+      {
+        "Item1": 5809,
+        "Item2": -3815
+      },
+      {
+        "Item1": 5812,
+        "Item2": -3806
+      },
+      {
+        "Item1": 5811,
+        "Item2": -3800
+      }
+    ]
+  },
+  {
+    "sites": [
+      "Fallow Sanctuary",
+      "Pool of Tears"
+    ],
+    "means": "Land",
+    "spacing": 10,
+    "points": [
+      {
+        "Item1": 5811,
+        "Item2": -3800
+      },
+      {
+        "Item1": 5801,
+        "Item2": -3793
+      },
+      {
+        "Item1": 5800,
+        "Item2": -3783
+      },
+      {
+        "Item1": 5805,
+        "Item2": -3774
+      },
+      {
+        "Item1": 5810,
+        "Item2": -3765
+      },
+      {
+        "Item1": 5808,
+        "Item2": -3755
+      },
+      {
+        "Item1": 5812,
+        "Item2": -3746
+      },
+      {
+        "Item1": 5817,
+        "Item2": -3737
+      },
+      {
+        "Item1": 5817,
+        "Item2": -3725
+      },
+      {
+        "Item1": 5812,
+        "Item2": -3716
+      },
+      {
+        "Item1": 5810,
+        "Item2": -3706
+      },
+      {
+        "Item1": 5810,
+        "Item2": -3697
+      }
+    ]
+  },
+  {
+    "sites": [
+      "Fallow Sanctuary",
+      "Northern Misty Reed Strand"
+    ],
+    "means": "Land",
+    "spacing": 10,
+    "points": [
+      {
+        "Item1": 5810,
+        "Item2": -3697
+      },
+      {
+        "Item1": 5820,
+        "Item2": -3696
+      },
+      {
+        "Item1": 5830,
+        "Item2": -3692
+      },
+      {
+        "Item1": 5831,
+        "Item2": -3682
+      },
+      {
+        "Item1": 5834,
+        "Item2": -3672
+      },
+      {
+        "Item1": 5844,
+        "Item2": -3668
+      },
+      {
+        "Item1": 5853,
+        "Item2": -3665
+      },
+      {
+        "Item1": 5863,
+        "Item2": -3666
+      },
+      {
+        "Item1": 5873,
+        "Item2": -3665
+      },
+      {
+        "Item1": 5883,
+        "Item2": -3667
+      },
+      {
+        "Item1": 5893,
+        "Item2": -3671
+      },
+      {
+        "Item1": 5903,
+        "Item2": -3671
+      },
+      {
+        "Item1": 5914,
+        "Item2": -3671
+      },
+      {
+        "Item1": 5924,
+        "Item2": -3669
+      },
+      {
+        "Item1": 5925,
+        "Item2": -3668
+      }
+    ]
+  },
+  {
+    "sites": [
+      "Stonard",
+      "The Harborage"
+    ],
+    "means": "Land",
+    "spacing": 10,
+    "points": [
+      {
+        "Item1": 5719,
+        "Item2": -3800
+      },
+      {
+        "Item1": 5713,
+        "Item2": -3791
+      },
+      {
+        "Item1": 5704,
+        "Item2": -3785
+      },
+      {
+        "Item1": 5697,
+        "Item2": -3778
+      },
+      {
+        "Item1": 5694,
+        "Item2": -3768
+      },
+      {
+        "Item1": 5685,
+        "Item2": -3763
+      },
+      {
+        "Item1": 5674,
+        "Item2": -3762
+      },
+      {
+        "Item1": 5664,
+        "Item2": -3763
+      },
+      {
+        "Item1": 5654,
+        "Item2": -3762
+      },
+      {
+        "Item1": 5644,
+        "Item2": -3758
+      },
+      {
+        "Item1": 5642,
+        "Item2": -3748
+      },
+      {
+        "Item1": 5639,
+        "Item2": -3739
+      },
+      {
+        "Item1": 5634,
+        "Item2": -3730
+      },
+      {
+        "Item1": 5634,
+        "Item2": -3729
+      }
+    ]
+  },
+  {
+    "sites": [
+      "Stonard",
+      "The Shifting Mire"
+    ],
+    "means": "Land",
+    "spacing": 10,
+    "points": [
+      {
+        "Item1": 5719,
+        "Item2": -3800
+      },
+      {
+        "Item1": 5725,
+        "Item2": -3791
+      },
+      {
+        "Item1": 5733,
+        "Item2": -3786
+      },
+      {
+        "Item1": 5738,
+        "Item2": -3776
+      },
+      {
+        "Item1": 5740,
+        "Item2": -3766
+      },
+      {
+        "Item1": 5746,
+        "Item2": -3757
+      },
+      {
+        "Item1": 5746,
+        "Item2": -3752
       }
     ]
   }

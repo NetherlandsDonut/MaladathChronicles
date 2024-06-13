@@ -85,6 +85,7 @@ public class SiteTown : Site
                 if (!currentSave.siteVisits.ContainsKey(name)) return;
                 SetAnchor(TopLeft, 19, -38);
                 AddRegionGroup();
+                SetRegionGroupWidth(171);
                 var f = factions.Find(x => x.name == faction);
                 var side = f == null ? "Neutral" : f.side;
                 AddHeaderRegion(() =>
@@ -111,6 +112,25 @@ public class SiteTown : Site
                                     }
                             });
                         }
+                }
+                var q = currentSave.player.QuestsAt(this);
+                if (q.Count > 0)
+                {
+                    AddEmptyRegion();
+                    foreach (var quest in q)
+                    {
+                        var con = quest.conditions.FindAll(x => !x.IsDone() && x.Where().Contains(this));
+                        AddPaddingRegion(() =>
+                        {
+                            AddLine(quest.name, "Black");
+                            AddSmallButton(quest.ZoneIcon());
+                        });
+                        var color = ColorQuestLevel(quest.questLevel);
+                        if (color != null) SetRegionBackgroundAsImage("SkillUp" + color);
+                        if (con.Count > 0)
+                            foreach (var condition in con)
+                                condition.Print(false);
+                    }
                 }
             },
             (h) => { BuildPath(); });

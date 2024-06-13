@@ -1910,7 +1910,7 @@ public class Blueprint
             (h) =>
             {
                 PlaySound("DesktopMenuClose");
-                PlaySound("QuestFailed");
+                PlaySound("QuestFailed", 0.2f);
                 currentSave.player.RemoveQuest(quest);
                 quest = null;
                 CloseWindow("QuestConfirmAbandon");
@@ -2129,19 +2129,16 @@ public class Blueprint
                 for (int i = 0; i < defines.maxBagsEquipped; i++)
                 {
                     var index = i;
-                    AddSmallButton(currentSave.player.inventory.bags.Count > index ? currentSave.player.inventory.bags[index].icon : "OtherEmpty",
-                        (h) =>
-                        {
-                            if (currentSave.player.inventory.bags.Count > index && currentSave.player.inventory.items.Count < currentSave.player.inventory.BagSpace() - currentSave.player.inventory.bags[index].bagSpace)
-                                currentSave.player.UnequipBag(index);
-                        },
-                        null,
-                        (h) => () =>
-                        {
-                            if (currentSave.player.inventory.bags.Count > index)
-                                PrintItemTooltip(currentSave.player.inventory.bags[index]);
-                        }
-                    );
+                    if (currentSave.player.inventory.bags.Count > index)
+                        AddSmallButton(currentSave.player.inventory.bags[index].icon,
+                            (h) =>
+                            {
+                                if (currentSave.player.inventory.items.Count < currentSave.player.inventory.BagSpace() - currentSave.player.inventory.bags[index].bagSpace)
+                                    currentSave.player.UnequipBag(index);
+                            },
+                            null,
+                            (h) => () => PrintItemTooltip(currentSave.player.inventory.bags[index]));
+                    else AddSmallButton("OtherEmpty");
                 }
             });
             PrintPriceRegion(currentSave.player.inventory.money);
@@ -2487,7 +2484,6 @@ public class Blueprint
             );
         }),
         
-
         //Complex
         new("Complex", () => 
         {

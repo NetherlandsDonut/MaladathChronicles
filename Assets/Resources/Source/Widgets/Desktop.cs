@@ -222,7 +222,7 @@ public class Desktop : MonoBehaviour
                 {
                     for (int i = sitesToRespawn.Count - 1; i >= 0; i--)
                     {
-                        Respawn("Site:" + sitesToRespawn[i].name);
+                        Respawn("Site: " + sitesToRespawn[i].name);
                         sitesToRespawn.RemoveAt(i);
                     }
                 }

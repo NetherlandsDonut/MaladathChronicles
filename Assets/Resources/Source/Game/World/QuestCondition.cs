@@ -60,13 +60,15 @@ public class QuestCondition
     public void Print(bool markerButton = true)
     {
         var line = "";
+        var then = "";
         var where = markerButton ? Where() : new();
-        if (type == "Item") line = name + ": " + amountDone + " / " + amount;
-        else if (type == "Kill") line = name + ": " + amountDone + " / " + amount;
-        else if (type == "Visit") line = name + " visited: " + (status == "Done" ? 1 : 0) + " / 1";
+        if (type == "Item") (line, then) = (name + ": ", amountDone + "/" + amount);
+        else if (type == "Kill") (line, then) = (name + ": ", amountDone + "/" + amount);
+        else if (type == "Visit") (line, then) = (name + " visited: ", (status == "Done" ? 1 : 0) + "/1");
         AddPaddingRegion(() =>
         {
-            AddLine(line);
+            AddLine(line, "DarkGray");
+            AddText(then, "Gray");
             if (markerButton && where.Count > 0)
                 AddSmallButton("ItemMiscMap01", (h) =>
                 {

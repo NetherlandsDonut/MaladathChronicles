@@ -119,90 +119,6 @@ public class Window : MonoBehaviour
         if (headerGroup != null) BuildRegionGroup(headerGroup);
         yOffset = (regionGroups.Count > 0 ? regionGroups.Max(x => x.currentHeight) : 0) + (headerGroup != null ? headerGroup.currentHeight : 0);
         groupGrouping.transform.localPosition = new Vector3(0, headerGroup != null ? -headerGroup.currentHeight : 0, 0);
-
-        //Draws window background
-        if (!disabledGeneralSprites && xOffset > 0)
-        {
-            if (background == null)
-                background = new GameObject("Window Background", typeof(SpriteRenderer));
-            background.transform.parent = transform;
-            if (background.GetComponent<SpriteRenderer>() == null)
-                background.AddComponent<SpriteRenderer>();
-            background.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Fills/Window");
-            background.transform.localScale = new Vector3(xOffset + 2, PlannedHeight() + (headerGroup != null ? headerGroup.PlannedHeight() : 0) + 2, 1);
-            background.transform.localPosition = new Vector3(0, 0, 0.9f);
-            if (background.GetComponent<BoxCollider2D>() == null)
-                background.AddComponent<BoxCollider2D>();
-            if (disabledCollisions)
-                Destroy(background.GetComponent<BoxCollider2D>());
-            Destroy(background.GetComponent<SpriteRenderer>());
-        }
-
-        //Draws window shadows
-        if (!disabledGeneralSprites && !disabledShadows && (xOffset > 0 || yOffset > 0))
-            if (defines.shadowSystem == 0)
-            {
-                var shadowSprites = Resources.LoadAll<Sprite>("Sprites/Other/First");
-                for (int i = 0; i < 8; i++)
-                    if (shadows[i] == null)
-                    {
-                        shadows[i] = new GameObject("Shadow", typeof(SpriteRenderer));
-                        shadows[i].transform.parent = transform;
-                        shadows[i].GetComponent<SpriteRenderer>().sprite = shadowSprites[i];
-                        shadows[i].GetComponent<SpriteRenderer>().sortingLayerName = layer + "Shadows";
-                    }
-                shadows[1].transform.localScale = shadows[6].transform.localScale = new Vector3(Width() + 2, 1, 1);
-                shadows[3].transform.localScale = shadows[4].transform.localScale = new Vector3(1, yOffset + 2, 1);
-                shadows[0].transform.localPosition = new Vector3(-18, 18, 0.9f);
-                shadows[1].transform.localPosition = new Vector3(0, 18, 0.9f);
-                shadows[2].transform.localPosition = new Vector3(Width() + 2, 18, 0.9f);
-                shadows[3].transform.localPosition = new Vector3(-18, 0, 0.9f);
-                shadows[4].transform.localPosition = new Vector3(Width() + 2, 0, 0.9f);
-                shadows[5].transform.localPosition = new Vector3(-18, -yOffset - 2, 0.9f);
-                shadows[6].transform.localPosition = new Vector3(0, -yOffset - 2, 0.9f);
-                shadows[7].transform.localPosition = new Vector3(Width() + 2, -yOffset - 2, 0.9f);
-            }
-            else if (defines.shadowSystem == 1 && defines.windowBorders)
-            {
-                var shadowSprites = Resources.LoadAll<Sprite>("Sprites/Other/Second");
-                for (int i = 0; i < 5; i++)
-                    if (shadows[i] == null)
-                    {
-                        shadows[i] = new GameObject("Shadow", typeof(SpriteRenderer));
-                        shadows[i].transform.parent = transform;
-                        shadows[i].GetComponent<SpriteRenderer>().sprite = shadowSprites[i];
-                        shadows[i].GetComponent<SpriteRenderer>().sortingLayerName = layer + "Shadows";
-                    }
-                shadows[1].transform.localScale = new Vector3(1, yOffset - 2, 1);
-                shadows[3].transform.localScale = new Vector3(Width() - 2, 1, 1);
-                shadows[0].transform.localPosition = new Vector3(Width() + 2, 0, 0.9f);
-                shadows[1].transform.localPosition = new Vector3(Width() + 2, -4, 0.9f);
-                shadows[2].transform.localPosition = new Vector3(Width() + 2, -yOffset - 2, 0.9f);
-                shadows[3].transform.localPosition = new Vector3(4, -yOffset - 2, 0.9f);
-                shadows[4].transform.localPosition = new Vector3(0, -yOffset - 2, 0.9f);
-            }
-            else if (defines.shadowSystem == 2)
-            {
-                var shadowSprites = Resources.LoadAll<Sprite>("Sprites/Other/Third");
-                for (int i = 0; i < 8; i++)
-                    if (shadows[i] == null)
-                    {
-                        shadows[i] = new GameObject("Shadow", typeof(SpriteRenderer));
-                        shadows[i].transform.parent = transform;
-                        shadows[i].GetComponent<SpriteRenderer>().sprite = shadowSprites[i];
-                        shadows[i].GetComponent<SpriteRenderer>().sortingLayerName = layer + "Shadows";
-                    }
-                shadows[1].transform.localScale = shadows[6].transform.localScale = new Vector3(Width() + 2, 1, 1);
-                shadows[3].transform.localScale = shadows[4].transform.localScale = new Vector3(1, yOffset + 2, 1);
-                shadows[0].transform.localPosition = new Vector3(-5, 5, 0.9f);
-                shadows[1].transform.localPosition = new Vector3(0, 5, 0.9f);
-                shadows[2].transform.localPosition = new Vector3(Width() + 2, 5, 0.9f);
-                shadows[3].transform.localPosition = new Vector3(-5, 0, 0.9f);
-                shadows[4].transform.localPosition = new Vector3(Width() + 2, 0, 0.9f);
-                shadows[5].transform.localPosition = new Vector3(-5, -yOffset - 2, 0.9f);
-                shadows[6].transform.localPosition = new Vector3(0, -yOffset - 2, 0.9f);
-                shadows[7].transform.localPosition = new Vector3(Width() + 2, -yOffset - 2, 0.9f);
-            }
         if (masked) GetComponentsInChildren<SpriteRenderer>().ToList().ForEach(x => x.maskInteraction = SpriteMaskInteraction.VisibleInsideMask);
 
         void BuildRegionGroup(RegionGroup regionGroup)
@@ -400,140 +316,139 @@ public class Window : MonoBehaviour
             //Draws region backgrounds
             if (!disabledGeneralSprites)
                 foreach (var region in regionGroup.regions)
-                {
-                    region.background.transform.parent = region.transform;
-                    region.background.GetComponent<RegionBackground>().Initialise(region);
-                    region.background.GetComponent<SpriteRenderer>().sprite = region.backgroundType == Image ? region.backgroundImage : Resources.Load<Sprite>("Sprites/Fills/" + region.backgroundType);
-                    region.background.GetComponent<SpriteRenderer>().sortingLayerName = layer;
-                    if (region.backgroundType == Image) region.background.transform.localScale = new Vector3(1, 1, 1);
-                    else region.background.transform.localScale = new Vector3(regionGroup.AutoWidth() - 2 + region.xExtend, region.AutoHeight() + 2 + region.yExtend, 1);
-                    region.background.transform.localPosition = new Vector3(2, -2, 0.8f);
-                    if (region.backgroundType == Button || region.backgroundType == ButtonRed || region.backgroundType == Image)
+                    if (region.backgroundType != Empty)
                     {
-                        if (region.background.GetComponent<BoxCollider2D>() == null)
-                            region.background.AddComponent<BoxCollider2D>();
-                        region.background.GetComponent<BoxCollider2D>().enabled = !disabledCollisions;
+                        region.background.transform.parent = region.transform;
+                        region.background.GetComponent<RegionBackground>().Initialise(region);
+                        region.background.GetComponent<SpriteRenderer>().sprite = region.backgroundType == Image ? region.backgroundImage : Resources.Load<Sprite>("Sprites/Fills/" + region.backgroundType);
+                        region.background.GetComponent<SpriteRenderer>().sortingLayerName = layer;
+                        if (region.backgroundType == Image) region.background.transform.localScale = new Vector3(1, 1, 1);
+                        else region.background.transform.localScale = new Vector3(regionGroup.AutoWidth() - 2 + region.xExtend, region.AutoHeight() + 2 + region.yExtend, 1);
+                        region.background.transform.localPosition = new Vector3(2, -2, 0.8f);
+                        if (region.backgroundType == Button || region.backgroundType == ButtonRed || region.backgroundType == Image)
+                        {
+                            if (region.background.GetComponent<BoxCollider2D>() == null)
+                                region.background.AddComponent<BoxCollider2D>();
+                            region.background.GetComponent<BoxCollider2D>().enabled = !disabledCollisions;
+                        }
                     }
-                }
 
             //Draws region borders
             if (!disabledGeneralSprites)
                 foreach (var region in regionGroup.regions)
-                {
-                    for (int i = 0; i < 4; i++)
-                        if (region.borders[i] == null)
-                        {
-                            region.borders[i] = new GameObject("Border", typeof(SpriteRenderer));
-                            region.borders[i].transform.parent = region.transform;
-                            region.borders[i].GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/PremadeBorders/RegionBorder");
-                            region.borders[i].GetComponent<SpriteRenderer>().sortingLayerName = layer;
-                        }
-                    for (int i = 0; i < 4; i++)
-                        if (region.borders[i + 4] == null)
-                        {
-                            region.borders[i + 4] = new GameObject("BorderCorner", typeof(SpriteRenderer));
-                            region.borders[i + 4].transform.parent = region.transform;
-                            region.borders[i + 4].GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/PremadeBorders/RegionBorderCorner");
-                            region.borders[i + 4].GetComponent<SpriteRenderer>().sortingLayerName = "Upper";
-                            if (i == 1 || i == 3) region.borders[i + 4].GetComponent<SpriteRenderer>().flipX = true;
-                            if (i == 2 || i == 3) region.borders[i + 4].GetComponent<SpriteRenderer>().flipY = true;
-                        }
-                    region.borders[0].transform.localScale = region.borders[3].transform.localScale = new Vector3(regionGroup.AutoWidth() + 2 + region.xExtend, 2, 2);
-                    region.borders[1].transform.localScale = region.borders[2].transform.localScale = new Vector3(2, region.AutoHeight() + 4 + region.yExtend, 2);
-                    region.borders[0].transform.localPosition = region.borders[1].transform.localPosition = new Vector3(0, 0, 0.5f);
-                    region.borders[2].transform.localPosition = new Vector3(regionGroup.AutoWidth() + region.xExtend, 0, 0.5f);
-                    region.borders[3].transform.localPosition = new Vector3(0, -region.AutoHeight() - 4 - region.yExtend, 0.5f);
-                    if (!defines.windowBorders)
+                    if (region.backgroundType != Empty)
                     {
-                        region.borders[0].transform.localScale -= new Vector3(6, 0, 0);
-                        region.borders[3].transform.localScale -= new Vector3(6, 0, 0);
-                        region.borders[1].transform.localScale -= new Vector3(0, 4, 0);
-                        region.borders[2].transform.localScale -= new Vector3(0, 4, 0);
-                        region.borders[0].transform.localPosition += new Vector3(3, 0, 0);
-                        region.borders[3].transform.localPosition += new Vector3(3, 0, 0);
-                        region.borders[1].transform.localPosition -= new Vector3(0, 3, 0);
-                        region.borders[2].transform.localPosition -= new Vector3(0, 3, 0);
-                    }
-                    if (title == "HostileAreaProgress")
-                        if (regionGroup != headerGroup)
+                        for (int i = 0; i < 4; i++)
+                            if (region.borders[i] == null)
+                            {
+                                region.borders[i] = new GameObject("Border", typeof(SpriteRenderer));
+                                region.borders[i].transform.parent = region.transform;
+                                region.borders[i].GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/PremadeBorders/RegionBorder");
+                                region.borders[i].GetComponent<SpriteRenderer>().sortingLayerName = layer;
+                            }
+                        for (int i = 0; i < 4; i++)
+                            if (region.borders[i + 4] == null)
+                            {
+                                region.borders[i + 4] = new GameObject("BorderCorner", typeof(SpriteRenderer));
+                                region.borders[i + 4].transform.parent = region.transform;
+                                region.borders[i + 4].GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/PremadeBorders/RegionBorderCorner");
+                                region.borders[i + 4].GetComponent<SpriteRenderer>().sortingLayerName = "Upper";
+                                if (i == 1 || i == 3) region.borders[i + 4].GetComponent<SpriteRenderer>().flipX = true;
+                                if (i == 2 || i == 3) region.borders[i + 4].GetComponent<SpriteRenderer>().flipY = true;
+                            }
+                        region.borders[0].transform.localScale = region.borders[3].transform.localScale = new Vector3(regionGroup.AutoWidth() + 2 + region.xExtend, 2, 2);
+                        region.borders[1].transform.localScale = region.borders[2].transform.localScale = new Vector3(2, region.AutoHeight() + 4 + region.yExtend, 2);
+                        region.borders[0].transform.localPosition = region.borders[1].transform.localPosition = new Vector3(0, 0, 0.5f);
+                        region.borders[2].transform.localPosition = new Vector3(regionGroup.AutoWidth() + region.xExtend, 0, 0.5f);
+                        region.borders[3].transform.localPosition = new Vector3(0, -region.AutoHeight() - 4 - region.yExtend, 0.5f);
+                        if (!defines.windowBorders)
                         {
-                            Destroy(region.borders[4]);
-                            Destroy(region.borders[5]);
-                            if (regionGroup != regionGroups.First())
-                            {
-                                Destroy(region.borders[6]);
-                            }
-                            if (regionGroup != regionGroups.Last())
-                            {
-                                Destroy(region.borders[7]);
-                                region.borders[3].transform.localScale += new Vector3(4, 0, 0);
-                                region.borders[2].transform.localScale += new Vector3(0, 2, 0);
-                                region.borders[2].transform.localPosition += new Vector3(0, 1, 0);
-                            }
+                            region.borders[0].transform.localScale -= new Vector3(6, 0, 0);
+                            region.borders[3].transform.localScale -= new Vector3(6, 0, 0);
+                            region.borders[1].transform.localScale -= new Vector3(0, 4, 0);
+                            region.borders[2].transform.localScale -= new Vector3(0, 4, 0);
+                            region.borders[0].transform.localPosition += new Vector3(3, 0, 0);
+                            region.borders[3].transform.localPosition += new Vector3(3, 0, 0);
+                            region.borders[1].transform.localPosition -= new Vector3(0, 3, 0);
+                            region.borders[2].transform.localPosition -= new Vector3(0, 3, 0);
                         }
+                        if (title == "HostileAreaProgress")
+                            if (regionGroup != headerGroup)
+                            {
+                                Destroy(region.borders[4]);
+                                Destroy(region.borders[5]);
+                                if (regionGroup != regionGroups.First())
+                                    Destroy(region.borders[6]);
+                                if (regionGroup != regionGroups.Last())
+                                {
+                                    Destroy(region.borders[7]);
+                                    region.borders[3].transform.localScale += new Vector3(4, 0, 0);
+                                    region.borders[2].transform.localScale += new Vector3(0, 2, 0);
+                                    region.borders[2].transform.localPosition += new Vector3(0, 1, 0);
+                                }
+                            }
+                            else
+                            {
+                                region.borders[1].transform.localScale += new Vector3(0, 4, 0);
+                                region.borders[2].transform.localScale += new Vector3(0, 4, 0);
+                                region.borders[3].transform.localScale += new Vector3(2, 0, 0);
+                                region.borders[3].transform.localPosition -= new Vector3(1, 0, 0);
+                                Destroy(region.borders[6]);
+                                Destroy(region.borders[7]);
+                            }
+                        if (regionGroup.AutoWidth() + region.xExtend - 1.5f - 19 * region.smallButtons.Count < 0 || 3.5f + 38 * region.bigButtons.Count >= regionGroup.AutoWidth() + region.xExtend)
+                            for (int i = 0; i < 4; i++)
+                                region.borders[i + 4].GetComponent<SpriteRenderer>().sprite = null;
                         else
                         {
-                            region.borders[1].transform.localScale += new Vector3(0, 4, 0);
-                            region.borders[2].transform.localScale += new Vector3(0, 4, 0);
-                            region.borders[3].transform.localScale += new Vector3(2, 0, 0);
-                            region.borders[3].transform.localPosition -= new Vector3(1, 0, 0);
-                            Destroy(region.borders[6]);
-                            Destroy(region.borders[7]);
+                            region.borders[4].transform.localPosition = new Vector3(3.5f + 38 * region.bigButtons.Count, -3.5f, 0.05f);
+                            region.borders[5].transform.localPosition = new Vector3(regionGroup.AutoWidth() + region.xExtend - 1.5f - 19 * region.smallButtons.Count, -3.5f, 0.05f);
+                            region.borders[6].transform.localPosition = new Vector3(3.5f + 38 * region.bigButtons.Count, -region.AutoHeight() - 2.5f - region.yExtend, 0.05f);
+                            region.borders[7].transform.localPosition = new Vector3(regionGroup.AutoWidth() + region.xExtend - 1.5f - (region.bigButtons.Count > 0 || region.lines.Count > 1 ? 0 : 19 * region.smallButtons.Count), -region.AutoHeight() - 2.5f - region.yExtend, 0.05f);
                         }
-                    if (regionGroup.AutoWidth() + region.xExtend - 1.5f - 19 * region.smallButtons.Count < 0 || 3.5f + 38 * region.bigButtons.Count >= regionGroup.AutoWidth() + region.xExtend)
-                        for (int i = 0; i < 4; i++)
-                            region.borders[i + 4].GetComponent<SpriteRenderer>().sprite = null;
-                    else
-                    {
-                        region.borders[4].transform.localPosition = new Vector3(3.5f + 38 * region.bigButtons.Count, -3.5f, 0.05f);
-                        region.borders[5].transform.localPosition = new Vector3(regionGroup.AutoWidth() + region.xExtend - 1.5f - 19 * region.smallButtons.Count, -3.5f, 0.05f);
-                        region.borders[6].transform.localPosition = new Vector3(3.5f + 38 * region.bigButtons.Count, -region.AutoHeight() - 2.5f - region.yExtend, 0.05f);
-                        region.borders[7].transform.localPosition = new Vector3(regionGroup.AutoWidth() + region.xExtend - 1.5f - (region.bigButtons.Count > 0 || region.lines.Count > 1 ? 0 : 19 * region.smallButtons.Count), -region.AutoHeight() - 2.5f - region.yExtend, 0.05f);
                     }
-                }
 
             //Draws region shadows
             if (!defines.windowBorders && !disabledGeneralSprites && !disabledShadows)
                 if (defines.shadowSystem == 1)
                     foreach (var region in regionGroup.regions)
-                    {
-                        var shadowSprites = Resources.LoadAll<Sprite>("Sprites/Other/Second");
-                        for (int i = 0; i < 5; i++)
-                            if (region.shadows[i] == null)
-                            {
-                                region.shadows[i] = new GameObject("Shadow", typeof(SpriteRenderer));
-                                region.shadows[i].transform.parent = region.transform;
-                                region.shadows[i].GetComponent<SpriteRenderer>().sprite = shadowSprites[i];
-                                region.shadows[i].GetComponent<SpriteRenderer>().sortingLayerName = layer + "Shadows";
-                            }
-                        region.shadows[1].transform.localScale = new Vector3(1, region.borders[2].transform.localScale.y - 5, 1);
-                        region.shadows[3].transform.localScale = new Vector3(region.borders[3].transform.localScale.x - 5, 1, 1);
-                        region.shadows[0].transform.localPosition = new Vector3(region.borders[2].transform.localPosition.x + 2, -4, 0.9f);
-                        region.shadows[1].transform.localPosition = new Vector3(region.borders[2].transform.localPosition.x + 2, -8, 0.9f);
-                        region.shadows[2].transform.localPosition = new Vector3(region.borders[2].transform.localPosition.x - 1, region.borders[3].transform.localPosition.y + 1, 0.9f);
-                        region.shadows[3].transform.localPosition = new Vector3(8, region.borders[3].transform.localPosition.y - 2, 0.9f);
-                        region.shadows[4].transform.localPosition = new Vector3(4, region.borders[3].transform.localPosition.y - 2, 0.9f);
-                        region.shadows[2].GetComponent<SpriteRenderer>().sprite = shadowSprites[5];
-                        if (title == "HostileAreaProgress")
-                            if (regionGroup != headerGroup)
-                            {
-                                Destroy(region.shadows[0]);
-                                if (regionGroup != regionGroups.First())
+                        if (region.backgroundType != Empty)
+                        {
+                            var shadowSprites = Resources.LoadAll<Sprite>("Sprites/Other/Second");
+                            for (int i = 0; i < 5; i++)
+                                if (region.shadows[i] == null)
                                 {
-                                    Destroy(region.shadows[4]);
+                                    region.shadows[i] = new GameObject("Shadow", typeof(SpriteRenderer));
+                                    region.shadows[i].transform.parent = region.transform;
+                                    region.shadows[i].GetComponent<SpriteRenderer>().sprite = shadowSprites[i];
+                                    region.shadows[i].GetComponent<SpriteRenderer>().sortingLayerName = layer + "Shadows";
                                 }
-                                if (regionGroup != regionGroups.Last())
+                            region.shadows[1].transform.localScale = new Vector3(1, region.borders[2].transform.localScale.y - 5, 1);
+                            region.shadows[3].transform.localScale = new Vector3(region.borders[3].transform.localScale.x - 5, 1, 1);
+                            region.shadows[0].transform.localPosition = new Vector3(region.borders[2].transform.localPosition.x + 2, -4, 0.9f);
+                            region.shadows[1].transform.localPosition = new Vector3(region.borders[2].transform.localPosition.x + 2, -8, 0.9f);
+                            region.shadows[2].transform.localPosition = new Vector3(region.borders[2].transform.localPosition.x - 1, region.borders[3].transform.localPosition.y + 1, 0.9f);
+                            region.shadows[3].transform.localPosition = new Vector3(8, region.borders[3].transform.localPosition.y - 2, 0.9f);
+                            region.shadows[4].transform.localPosition = new Vector3(4, region.borders[3].transform.localPosition.y - 2, 0.9f);
+                            region.shadows[2].GetComponent<SpriteRenderer>().sprite = shadowSprites[5];
+                            if (title == "HostileAreaProgress")
+                                if (regionGroup != headerGroup)
                                 {
-                                    region.shadows[3].transform.localScale += new Vector3(5, 0, 0);
+                                    Destroy(region.shadows[0]);
+                                    if (regionGroup != regionGroups.First())
+                                        Destroy(region.shadows[4]);
+                                    if (regionGroup != regionGroups.Last())
+                                    {
+                                        region.shadows[3].transform.localScale += new Vector3(5, 0, 0);
+                                        Destroy(region.shadows[2]);
+                                    }
+                                }
+                                else
+                                {
+                                    region.shadows[1].transform.localScale += new Vector3(0, 5, 0);
                                     Destroy(region.shadows[2]);
                                 }
-                            }
-                            else
-                            {
-                                region.shadows[1].transform.localScale += new Vector3(0, 5, 0);
-                                Destroy(region.shadows[2]);
-                            }
-                    }
+                        }
 
             #endregion
 

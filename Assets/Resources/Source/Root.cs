@@ -459,6 +459,11 @@ public static class Root
         AddRegion(Button, draw, pressEvent, rightPressEvent, tooltip, middlePressEvent);
     }
 
+    public static void AddEmptyRegion()
+    {
+        AddRegion(Empty, () => { AddLine(""); }, null, null, null, null);
+    }
+
     public static void AddHeaderRegion(Action draw)
     {
         AddRegion(Header, draw, null, null, null, null);
@@ -931,10 +936,10 @@ public static class Root
                 else can = true;
                 if (can)
                 {
-                    PlaySound("QuestAdd");
+                    PlaySound("QuestAdd", 0.2f);
                     currentSave.player.AddQuest(quest);
                 }
-                else PlaySound("QuestFailed");
+                else PlaySound("QuestFailed", 0.2f);
             },
             null, (h) => () =>
             {
@@ -1095,6 +1100,7 @@ public static class Root
 
     public enum RegionBackgroundType
     {
+        Empty,
         Image,
         Padding,
         Header,

@@ -127,19 +127,20 @@ public class SiteHostileArea : Site
                 if (!currentSave.siteVisits.ContainsKey(name)) return;
                 SetAnchor(TopLeft, 19, -38);
                 AddRegionGroup();
+                SetRegionGroupWidth(171);
                 AddHeaderRegion(() =>
                 {
                     AddLine(name);
                 });
                 AddHeaderRegion(() =>
                 {
-                    AddLine("Recommended level: ", "Gray");
+                    AddLine("Recommended level: ", "DarkGray");
                     AddText(recommendedLevel + "", ColorEntityLevel(recommendedLevel));
                 });
                 if (commonEncounters != null && commonEncounters.Count > 0)
                     AddPaddingRegion(() =>
                     {
-                        AddLine("Common: ");
+                        AddLine("Common: ", "DarkGray");
                         foreach (var enemy in commonEncounters)
                         {
                             var race = races.Find(x => x.name == enemy.who);
@@ -149,28 +150,34 @@ public class SiteHostileArea : Site
                 if (eliteEncounters != null && eliteEncounters.Count > 0)
                     AddPaddingRegion(() =>
                     {
-                        AddLine("Elite: ");
+                        AddLine("Elite: ", "DarkGray");
                         foreach (var enemy in eliteEncounters)
                         {
                             var race = races.Find(x => x.name == enemy.who);
                             AddSmallButton(race == null ? "OtherUnknown" : race.portrait);
                         }
                     });
-                if (rareEncounters != null && rareEncounters.Count > 0)
-                    AddPaddingRegion(() =>
-                    {
-                        AddLine("Rare: ");
-                        foreach (var enemy in rareEncounters)
-                            AddSmallButton("OtherUnknown");
-                    });
+                //if (rareEncounters != null && rareEncounters.Count > 0)
+                //    AddPaddingRegion(() =>
+                //    {
+                //        AddLine("Rare: ", "DarkGray");
+                //        foreach (var enemy in rareEncounters)
+                //            AddSmallButton("OtherUnknown");
+                //    });
                 var q = currentSave.player.QuestsAt(this);
                 if (q.Count > 0)
                 {
-                    AddHeaderRegion(() => { AddLine("Quests:", "Gray"); });
+                    AddEmptyRegion();
                     foreach (var quest in q)
                     {
                         var con = quest.conditions.FindAll(x => !x.IsDone() && x.Where().Contains(this));
-                        AddPaddingRegion(() => { AddLine(quest.name); });
+                        AddPaddingRegion(() =>
+                        {
+                            AddLine(quest.name, "Black");
+                            AddSmallButton(quest.ZoneIcon());
+                        });
+                        var color = ColorQuestLevel(quest.questLevel);
+                        if (color != null) SetRegionBackgroundAsImage("SkillUp" + color);
                         if (con.Count > 0)
                             foreach (var condition in con)
                                 condition.Print(false);

@@ -8,6 +8,7 @@ using static Root.Anchor;
 using static Quest;
 using static Faction;
 using static SaveGame;
+using static Coloring;
 using static SiteInstance;
 using static GameSettings;
 using static SiteHostileArea;
@@ -106,6 +107,7 @@ public class SiteComplex : Site
                 if (!currentSave.siteVisits.ContainsKey(name)) return;
                 SetAnchor(TopLeft, 19, -38);
                 AddRegionGroup();
+                SetRegionGroupWidth(171);
                 AddHeaderRegion(() => { AddLine(name, "Gray"); });
                 complex = this;
                 foreach (var site in complex.sites)
@@ -117,11 +119,17 @@ public class SiteComplex : Site
                 var q = currentSave.player.QuestsAt(this);
                 if (q.Count > 0)
                 {
-                    AddHeaderRegion(() => { AddLine("Quests:", "Gray"); });
+                    AddEmptyRegion();
                     foreach (var quest in q)
                     {
                         var con = quest.conditions.FindAll(x => !x.IsDone() && x.Where().Contains(this));
-                        AddPaddingRegion(() => { AddLine(quest.name); });
+                        AddPaddingRegion(() =>
+                        {
+                            AddLine(quest.name, "Black");
+                            AddSmallButton(quest.ZoneIcon());
+                        });
+                        var color = ColorQuestLevel(quest.questLevel);
+                        if (color != null) SetRegionBackgroundAsImage("SkillUp" + color);
                         if (con.Count > 0)
                             foreach (var condition in con)
                                 condition.Print(false);

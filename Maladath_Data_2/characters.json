@@ -51,6 +51,92 @@
               "Stormwind": 10
             },
             "conditions": []
+          },
+          {
+            "questID": 36,
+            "requiredLevel": 9,
+            "questLevel": 10,
+            "name": "Westfall Stew",
+            "description": "Verna Furlbrow wants you to deliver her recipe for Westfall Stew to Salma Saldean.",
+            "siteStart": "Jansen Stead",
+            "siteEnd": "Saldean's Farm",
+            "zone": "Westfall",
+            "races": [
+              "Gnome",
+              "Night Elf",
+              "Dwarf",
+              "Human"
+            ],
+            "reputationGain": {
+              "Stormwind": 75
+            },
+            "conditions": [
+              {
+                "type": "Item",
+                "name": "Verna's Westfall Stew Recipe",
+                "amount": 1
+              }
+            ]
+          },
+          {
+            "questID": 9,
+            "requiredLevel": 8,
+            "questLevel": 15,
+            "name": "The Killing Fields",
+            "description": "Farmer Saldean wants you to kill 5 Harvest Watchers.",
+            "siteStart": "Saldean's Farm",
+            "siteEnd": "Saldean's Farm",
+            "zone": "Westfall",
+            "races": [
+              "Gnome",
+              "Night Elf",
+              "Dwarf",
+              "Human"
+            ],
+            "rewards": {
+              "Harvester's Pants": 1,
+              "Harvester's Robe": 1
+            },
+            "reputationGain": {
+              "Stormwind": 250
+            },
+            "conditions": [
+              {
+                "type": "Kill",
+                "name": "Harvest Watcher",
+                "amount": 5
+              }
+            ]
+          },
+          {
+            "questID": 22,
+            "requiredLevel": 9,
+            "questLevel": 12,
+            "name": "Goretusk Liver Pie",
+            "description": "Salma Saldean needs 3 Goretusk livers to make a Goretusk Liver Pie.",
+            "siteStart": "Saldean's Farm",
+            "siteEnd": "Saldean's Farm",
+            "zone": "Westfall",
+            "races": [
+              "Gnome",
+              "Night Elf",
+              "Dwarf",
+              "Human"
+            ],
+            "rewards": {
+              "Goretusk Liver Pie": 1,
+              "Recipe: Goretusk Liver Pie": 1
+            },
+            "reputationGain": {
+              "Stormwind": 250
+            },
+            "conditions": [
+              {
+                "type": "Item",
+                "name": "Goretusk Liver",
+                "amount": 3
+              }
+            ]
           }
         ],
         "completedQuests": [],
@@ -175,9 +261,9 @@
         },
         "actionBars": [
           "Fireball",
-          "Arcane Missiles",
+          "Frostbolt",
           "Fire Blast",
-          "Frostbolt"
+          "Arcane Missiles"
         ],
         "stats": {
           "stats": {
@@ -215,7 +301,24 @@
               }
             }
           ],
-          "bags": []
+          "bags": [
+            {
+              "rarity": "Uncommon",
+              "name": "Traveler's Backpack",
+              "icon": "itemmiscbag08",
+              "type": "Bag",
+              "source": "GeneralDrop",
+              "ilvl": 55,
+              "lvl": 1,
+              "amount": 1,
+              "maxStack": 1,
+              "price": 8750,
+              "bagSpace": 7,
+              "stats": {
+                "stats": {}
+              }
+            }
+          ]
         },
         "mounts": [],
         "equipment": {
@@ -285,10 +388,10 @@
           }
         }
       },
-      "hour": 8,
-      "minute": 59,
-      "second": 56,
-      "currentSite": "Stagalbog",
+      "hour": 9,
+      "minute": 15,
+      "second": 6,
+      "currentSite": "Saldean's Farm",
       "openedChests": {},
       "siteProgress": {
         "Wicked Grotto": 1
@@ -938,10 +1041,10 @@
         "Southern Misty Reed Strand": 1,
         "Northern Misty Reed Strand": 1,
         "Misty Valley": 1,
-        "Pool of Tears": 1,
+        "Pool of Tears": 2,
         "Sorrowmurk": 1,
         "Splinterspear Junction": 1,
-        "Stagalbog": 2,
+        "Stagalbog": 3,
         "Stagalbog Cave": 1,
         "Fallow Sanctuary": 1,
         "Ruined Path": 1,
@@ -1102,13 +1205,13 @@
         "Gold Coast Quarry": 1,
         "Jangolode Mine": 1,
         "Alexton Farmstead": 1,
-        "Jansen Stead": 1,
+        "Jansen Stead": 2,
         "Longshore": 1,
         "Molsen Farm": 1,
         "Stendel's Pond": 1,
         "Demont's Place": 1,
         "Moonbrook": 1,
-        "Saldean's Farm": 2,
+        "Saldean's Farm": 3,
         "The Dagger Hills": 1,
         "The Dead Acre": 1,
         "Westfall Crossing": 1,
@@ -1314,9 +1417,9 @@
         }
       },
       "startDate": "2024-06-09T14:12:27.0144066+02:00",
-      "lastLoaded": "2024-06-13T16:22:46.9463648+02:00",
-      "lastPlayed": "2024-06-13T17:06:18.2749488+02:00",
-      "timePlayed": "07:58:34.1237983",
+      "lastLoaded": "2024-06-13T17:50:29.4794726+02:00",
+      "lastPlayed": "2024-06-13T17:51:20.6533599+02:00",
+      "timePlayed": "08:14:17.3662417",
       "lastVisitedTalents": 1
     },
     {

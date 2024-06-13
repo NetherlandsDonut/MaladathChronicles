@@ -116,6 +116,9 @@ public class Entity
             foreach (var bank in SaveGame.currentSave.banks)
                 bank.Value.items.RemoveAll(x => x.amount <= 0);
         }
+        foreach (var site in WhereCanQuestBeDone(quest))
+            if (!sitesToRespawn.Contains(site))
+                sitesToRespawn.Add(site);
     }
 
     //Adds new quest to the quest log
@@ -125,7 +128,7 @@ public class Entity
         if (quest.providedItems != null)
             foreach (var item in quest.providedItems)
                 inventory.AddItem(Item.items.Find(x => x.name == item.Key).CopyItem(item.Value));
-        foreach (var site in sitesWithQuestMarkers)
+        foreach (var site in WhereCanQuestBeDone(quest))
             if (!sitesToRespawn.Contains(site))
                 sitesToRespawn.Add(site);
     }
@@ -161,6 +164,28 @@ public class Entity
             "Hostile" => 1,
             _ => 0
         };
+    }
+
+    //Check if any quest can be done at a target site
+    public List<Site> WhereCanQuestBeDone(Quest quest)
+    {
+        var list = new List<Site>();
+        foreach (var condition in quest.conditions)
+            if (!condition.IsDone())
+            {
+                if (condition.type == "Visit")
+                    list.Add(Site.FindSite(x => x.name == condition.name));
+                else if (condition.type == "Kill")
+                {
+                    foreach (var common in SiteHostileArea.areas.Where(x => x.commonEncounters != null))
+                        if (common.commonEncounters.Exists(y => y.who == condition.name))
+                            list.Add(common);
+                    foreach (var elite in SiteHostileArea.areas.Where(x => x.eliteEncounters != null))
+                        if (elite.eliteEncounters.Exists(y => y.who == condition.name))
+                            list.Add(elite);
+                }
+            }
+        return list;
     }
 
     //Check if any new quest can be got at a target site
