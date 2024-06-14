@@ -102,7 +102,7 @@ public class WorldEvent
                     //double shatterSpeed = effect.ContainsKey("ShatterSpeed") ? double.Parse(effect["ShatterSpeed"].Replace(".", ",")) : 6;
                     //if (shatterTarget == "None") return;
                     //for (int i = 0; i < shatterDensity; i++)
-                    //    SpawnShatter(shatterSpeed, shatterDegree, new Vector3(shatterTarget == "Other" ? (board.playerTurn ? 148 : -318) : (board.playerTurn ? -318 : 148), 124), icon, shatterType == "Directional" ? shatterTarget == "Other" ? (board.playerTurn ? "1011" : "1110") : (board.playerTurn ? "1011" : "1110") : "0000");
+                    //    SpawnShatter(shatterSpeed, shatterDegree, new Vector3(shatterTarget == "Other" ? (board.playerTurn ? 148 : -167) : (board.playerTurn ? -167 : 148), 124), icon, shatterType == "Directional" ? shatterTarget == "Other" ? (board.playerTurn ? "1011" : "1110") : (board.playerTurn ? "1011" : "1110") : "0000");
                 }
 
                 //Plays a sound effect if it was specified in the effect
@@ -120,8 +120,8 @@ public class WorldEvent
                 var target = effector;
                 var amount = (int)Math.Round(source.RollWeaponDamage() * ((powerType == "Melee" ? source.MeleeAttackPower() : (powerType == "Spell" ? source.SpellPower() : (powerType == "Ranged" ? source.RangedAttackPower() : 1))) / 10.0 + 1) * powerScale);
                 target.Damage(amount, trigger["Trigger"] == "Damage");
-                //AddBigButtonOverlay(new Vector2(target == board.player ? -300 : 167, 141), "OtherDamaged", 0.1f, 5);
-                //SpawnFallingText(new Vector2(target == board.player ? -300 : 167, 141), "" + amount, "White");
+                //AddBigButtonOverlay(new Vector2(target == board.player ? -148 : 167, 141), "OtherDamaged", 0.1f, 5);
+                //SpawnFallingText(new Vector2(target == board.player ? -148 : 167, 141), "" + amount, "White");
                 //board.UpdateHealthBars();
             }
 
@@ -132,8 +132,8 @@ public class WorldEvent
                 var target = effector;
                 var amount = (int)Math.Round(source.RollWeaponDamage() * ((powerType == "Melee" ? source.MeleeAttackPower() : (powerType == "Spell" ? source.SpellPower() : (powerType == "Ranged" ? source.RangedAttackPower() : 1))) / 10.0 + 1) * powerScale);
                 target.Heal(amount, trigger["Trigger"] == "Heal");
-                //AddBigButtonOverlay(new Vector2(target == board.player ? -300 : 167, 141), "OtherHealed", 0.1f, 5);
-                //SpawnFallingText(new Vector2(target == board.player ? -300 : 167, 141), "" + amount, "Uncommon");
+                //AddBigButtonOverlay(new Vector2(target == board.player ? -148 : 167, 141), "OtherHealed", 0.1f, 5);
+                //SpawnFallingText(new Vector2(target == board.player ? -148 : 167, 141), "" + amount, "Uncommon");
                 //board.UpdateHealthBars();
             }
 
@@ -164,7 +164,7 @@ public class WorldEvent
                 //    { "Triggerer", "Other" },
                 //    { "BuffName", worldBuffName }
                 //});
-                //SpawnFallingText(new Vector2(target == board.player ? -300 : 167, 141), worldBuffDuration + " turn" + (worldBuffDuration > 1 ? "s" : ""), "White");
+                //SpawnFallingText(new Vector2(target == board.player ? -148 : 167, 141), worldBuffDuration + " turn" + (worldBuffDuration > 1 ? "s" : ""), "White");
             }
 
             //This effect removes a buff from the targetted entity

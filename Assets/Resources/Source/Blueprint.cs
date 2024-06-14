@@ -281,6 +281,7 @@ public class Blueprint
             );
             AddHeaderRegion(() =>
             {
+                ReverseButtons();
                 if (board.player.spec != null)
                     AddBigButton(board.player.Spec().icon);
                 else
@@ -291,7 +292,7 @@ public class Blueprint
                 AddLine("Level: " , "DarkGray");
                 AddText("" + board.player.level, "Gray");
             });
-            AddHealthBar(40, -38, "Player", board.player);
+            AddHealthBar(2, -38, "Player", board.player);
             foreach (var actionBar in board.player.actionBars)
             {
                 var abilityObj = abilities.Find(x => x.name == actionBar);

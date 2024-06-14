@@ -241,9 +241,10 @@ public class Board
 
     public void UpdateResourceBars(string forWho, List<string> elements)
     {
-        foreach (var foo in resourceBars[forWho])
-            if (elements.Contains(foo.Key))
-                foo.Value.UpdateFluidBar();
+        if (resourceBars.ContainsKey(forWho))
+            foreach (var foo in resourceBars[forWho])
+                if (elements.Contains(foo.Key))
+                    foo.Value.UpdateFluidBar();
     }
 
     public void EndCombat(string result)

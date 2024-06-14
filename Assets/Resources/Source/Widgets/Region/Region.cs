@@ -23,8 +23,9 @@ public class Region : MonoBehaviour
     public RegionBackgroundType backgroundType;
     public Sprite backgroundImage;
     public GameObject background;
-    public GameObject[] shadows;
     public GameObject[] borders;
+    public GameObject[] shadows;
+    public bool reverseButtons;
 
     public void Initialise(RegionGroup regionGroup, RegionBackgroundType backgroundType, Action draw)
     {

@@ -148,7 +148,7 @@ public class Window : MonoBehaviour
             foreach (var region in regionGroup.regions)
                 foreach (var line in region.lines)
                 {
-                    var objectOffset = (region.checkbox != null ? 15 : 0) + region.bigButtons.Count * 38;
+                    var objectOffset = (region.checkbox != null ? 15 : 0) + (!region.reverseButtons ? region.bigButtons.Count * 38 : 0);
                     int length = 0;
                     foreach (var text in line.texts)
                     {
@@ -192,7 +192,7 @@ public class Window : MonoBehaviour
                     smallButton.GetComponent<SpriteRenderer>().sprite = load == null ? Resources.Load<Sprite>("Sprites/Buttons/OtherEmpty") : load;
                     smallButton.GetComponent<SpriteRenderer>().sortingLayerName = layer;
                     if (title.StartsWith("Site: ")) smallButton.GetComponent<SpriteRenderer>().maskInteraction = SpriteMaskInteraction.VisibleInsideMask;
-                    smallButton.transform.localPosition = new Vector3(regionGroup.AutoWidth() - 10 + region.xExtend + 1.5f - 19 * region.smallButtons.IndexOf(smallButton), -10.5f, 0.1f);
+                    smallButton.transform.localPosition = region.reverseButtons ? new Vector3(10 + 19 * region.smallButtons.IndexOf(smallButton), -10.5f, 0.1f) : new Vector3(regionGroup.AutoWidth() - 10 + region.xExtend + 1.5f - 19 * region.smallButtons.IndexOf(smallButton), -10.5f, 0.1f);
                     if (smallButton.gameObject.GetComponent<BoxCollider2D>() == null)
                         smallButton.gameObject.AddComponent<BoxCollider2D>();
                     if (smallButton.gameObject.GetComponent<Highlightable>() == null)
@@ -221,7 +221,7 @@ public class Window : MonoBehaviour
                     var load = Resources.Load<Sprite>("Sprites/ButtonsBig/" + bigButton.buttonType);
                     bigButton.GetComponent<SpriteRenderer>().sprite = load == null ? Resources.Load<Sprite>("Sprites/ButtonsBig/OtherEmpty") : load;
                     bigButton.GetComponent<SpriteRenderer>().sortingLayerName = layer;
-                    bigButton.transform.localPosition = new Vector3(20 + 38 * region.bigButtons.IndexOf(bigButton), -20f, 0.1f);
+                    bigButton.transform.localPosition = region.reverseButtons ? new Vector3(regionGroup.AutoWidth() - 20 + region.xExtend + 2f - 38 * region.bigButtons.IndexOf(bigButton), -20f, 0.1f) : new Vector3(20 + 38 * region.bigButtons.IndexOf(bigButton), -20f, 0.1f);
                     if (bigButton.gameObject.GetComponent<BoxCollider2D>() == null)
                         bigButton.gameObject.AddComponent<BoxCollider2D>();
                     if (bigButton.gameObject.GetComponent<Highlightable>() == null)
@@ -401,10 +401,10 @@ public class Window : MonoBehaviour
                                 region.borders[i + 4].GetComponent<SpriteRenderer>().sprite = null;
                         else
                         {
-                            region.borders[4].transform.localPosition = new Vector3(3.5f + 38 * region.bigButtons.Count, -3.5f, 0.05f);
-                            region.borders[5].transform.localPosition = new Vector3(regionGroup.AutoWidth() + region.xExtend - 1.5f - 19 * region.smallButtons.Count, -3.5f, 0.05f);
-                            region.borders[6].transform.localPosition = new Vector3(3.5f + 38 * region.bigButtons.Count, -region.AutoHeight() - 2.5f - region.yExtend, 0.05f);
-                            region.borders[7].transform.localPosition = new Vector3(regionGroup.AutoWidth() + region.xExtend - 1.5f - (region.bigButtons.Count > 0 || region.lines.Count > 1 ? 0 : 19 * region.smallButtons.Count), -region.AutoHeight() - 2.5f - region.yExtend, 0.05f);
+                            region.borders[4].transform.localPosition = new Vector3(3.5f + (region.reverseButtons ? 0 : 38 * region.bigButtons.Count), -3.5f, 0.05f);
+                            region.borders[5].transform.localPosition = new Vector3(regionGroup.AutoWidth() + region.xExtend - 1.5f - (region.reverseButtons && region.bigButtons.Count > 0 ? region.bigButtons.Count * 38 : 19 * region.smallButtons.Count), -3.5f, 0.05f);
+                            region.borders[6].transform.localPosition = new Vector3(3.5f + (region.reverseButtons ? 0 : 38 * region.bigButtons.Count), -region.AutoHeight() - 2.5f - region.yExtend, 0.05f);
+                            region.borders[7].transform.localPosition = new Vector3(regionGroup.AutoWidth() + region.xExtend - 1.5f - (region.reverseButtons && region.bigButtons.Count > 0 ? region.bigButtons.Count * 38 : (region.bigButtons.Count > 0 || region.lines.Count > 1 ? 0 : 19 * region.smallButtons.Count)), -region.AutoHeight() - 2.5f - region.yExtend, 0.05f);
                         }
                     }
 

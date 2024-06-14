@@ -486,7 +486,7 @@ public static class Root
             {
                 if (group.pagination() < group.maxPagination() - 1)
                 {
-                    Sound.PlaySound("DesktopChangePage", 0.4f);
+                    PlaySound("DesktopChangePage", 0.4f);
                     group.IncrementPagination();
                 }
             });
@@ -494,11 +494,16 @@ public static class Root
             {
                 if (group.pagination() > 0)
                 {
-                    Sound.PlaySound("DesktopChangePage", 0.4f);
+                    PlaySound("DesktopChangePage", 0.4f);
                     group.DecrementPagination();
                 }
             });
         });
+    }
+
+    public static void ReverseButtons()
+    {
+        CDesktop.LBWindow.LBRegionGroup.LBRegion.reverseButtons = true;
     }
 
     public static void SetRegionBackgroundToGrayscale()

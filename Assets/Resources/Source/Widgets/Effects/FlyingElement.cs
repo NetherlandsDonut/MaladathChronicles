@@ -31,7 +31,7 @@ public class FlyingElement : MonoBehaviour
 
     public static GameObject SpawnFlyingElement(double speed, double amount, Vector3 position, string sprite, bool forPlayer, string block = "0000")
     {
-        SpawnShatter(speed, amount, position, sprite, block);
+        SpawnShatter(speed, amount, position, sprite, true, block);
         return SpawnFlyingElement(position, sprite, forPlayer);
     }
 

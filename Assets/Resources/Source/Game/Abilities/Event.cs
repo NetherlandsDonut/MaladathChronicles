@@ -128,7 +128,7 @@ public class Event
                     double shatterSpeed = effect.ContainsKey("ShatterSpeed") ? double.Parse(effect["ShatterSpeed"].Replace(".", ",")) : 6;
                     if (shatterTarget == "None") return;
                     for (int i = 0; i < shatterDensity; i++)
-                        SpawnShatter(shatterSpeed, shatterDegree, new Vector3(shatterTarget == "Other" ? (board.playerTurn ? 129 : -318) : (board.playerTurn ? -318 : 129), 124), icon, shatterType == "Directional" ? shatterTarget == "Other" ? (board.playerTurn ? "1011" : "1110") : (board.playerTurn ? "1011" : "1110") : "0000");
+                        SpawnShatter(shatterSpeed, shatterDegree, new Vector3(shatterTarget == "Other" ? (board.playerTurn ? 129 : -167) : (board.playerTurn ? -167 : 129), 124), icon, false, shatterType == "Directional" ? shatterTarget == "Other" ? (board.playerTurn ? "1011" : "1110") : (board.playerTurn ? "1011" : "1110") : "0000");
                 }
 
                 //Plays a sound effect if it was specified in the effect
@@ -155,8 +155,8 @@ public class Event
                     var target = affect == "Effector" ? effector : other;
                     var amount = (int)Math.Round(source.RollWeaponDamage() * ((powerType == "Melee" ? source.MeleeAttackPower() : (powerType == "Spell" ? source.SpellPower() : (powerType == "Ranged" ? source.RangedAttackPower() : 1))) / 10.0 + 1) * powerScale);
                     target.Damage(amount, trigger["Trigger"] == "Damage");
-                    AddBigButtonOverlay(new Vector2(target == board.player ? -300 : 148, 141), "OtherDamaged", 1f, -1);
-                    SpawnFallingText(new Vector2(target == board.player ? -300 : 148, 141), "" + amount, "White");
+                    AddBigButtonOverlay(new Vector2(target == board.player ? -148 : 148, 141), "OtherDamaged", 1f, -1);
+                    SpawnFallingText(new Vector2(target == board.player ? -148 : 148, 141), "" + amount, "White");
                     if (target == board.player) board.log.damageTaken.Inc(sourceName, amount);
                     else board.log.damageDealt.Inc(sourceName, amount);
                     board.UpdateHealthBars();
@@ -179,8 +179,8 @@ public class Event
                     var target = affect == "Effector" ? effector : other;
                     var amount = (int)Math.Round(source.RollWeaponDamage() * ((powerType == "Melee" ? source.MeleeAttackPower() : (powerType == "Spell" ? source.SpellPower() : (powerType == "Ranged" ? source.RangedAttackPower() : 1))) / 10.0 + 1) * powerScale);
                     target.Heal(amount, trigger["Trigger"] == "Heal");
-                    AddBigButtonOverlay(new Vector2(target == board.player ? -300 : 148, 141), "OtherHealed", 1f, 5);
-                    SpawnFallingText(new Vector2(target == board.player ? -300 : 148, 141), "" + amount, "Uncommon");
+                    AddBigButtonOverlay(new Vector2(target == board.player ? -148 : 148, 141), "OtherHealed", 1f, 5);
+                    SpawnFallingText(new Vector2(target == board.player ? -148 : 148, 141), "" + amount, "Uncommon");
                     if (target == board.player) board.log.healingReceived.Inc(sourceName, amount);
                     board.UpdateHealthBars();
                 }
@@ -262,7 +262,7 @@ public class Event
                 else if (board != null)
                 {
                     var target = affect == "Effector" ? effector : other;
-                    var pos = new Vector3(affect == "Other" ? (board.playerTurn ? 166 : -302) : (board.playerTurn ? -302 : 166), 142);
+                    var pos = new Vector3(affect == "Other" ? (board.playerTurn ? 148 : -148) : (board.playerTurn ? -148 : 148), 142);
                     target.AddBuff(buffs.Find(x => x.name == buffName), buffDuration, SpawnBuffObject(pos, icon, target), sourceRank);
                     board.CallEvents(target, new()
                     {
@@ -276,7 +276,7 @@ public class Event
                         { "Triggerer", "Other" },
                         { "BuffName", buffName }
                     });
-                    SpawnFallingText(new Vector2(target == board.player ? -300 : 148, 141), buffDuration + " turn" + (buffDuration > 1 ? "s" : ""), "White");
+                    SpawnFallingText(new Vector2(target == board.player ? -148 : 148, 142), buffDuration + " turn" + (buffDuration > 1 ? "s" : ""), "White");
                 }
             }
 
@@ -384,7 +384,7 @@ public class Event
                         while (newValue == board.field[e.Item1, e.Item2]);
                         board.field[e.Item1, e.Item2] = newValue;
                         for (int i = 0; i < shatterDensity; i++)
-                            SpawnShatter(shatterSpeed, shatterDegree, board.window.LBRegionGroup.regions[e.Item2].bigButtons[e.Item1].transform.position + new Vector3(-17.5f, -17.5f), Board.boardButtonDictionary[board.field[e.Item1, e.Item2]]);
+                            SpawnShatter(shatterSpeed, shatterDegree, board.window.LBRegionGroup.regions[e.Item2].bigButtons[e.Item1].transform.position + new Vector3(-17.5f, -17.5f), Board.boardButtonDictionary[board.field[e.Item1, e.Item2]], false);
                     }
                 }
             }
