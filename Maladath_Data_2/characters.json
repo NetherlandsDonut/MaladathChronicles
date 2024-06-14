@@ -141,7 +141,7 @@
         ],
         "completedQuests": [],
         "level": 9,
-        "experience": 780,
+        "experience": 800,
         "uniquesGotten": [],
         "reputation": {
           "Southsea Pirates": 0,
@@ -238,7 +238,7 @@
             "Smelt Copper"
           ]
         },
-        "unspentTalentPoints": 2,
+        "unspentTalentPoints": 1,
         "faction": "Stormwind",
         "name": "Allesha",
         "race": "Human",
@@ -257,7 +257,8 @@
           "Arcane Missiles": 0,
           "Hot Streak": 0,
           "Fire Blast": 0,
-          "Flamestrike": 0
+          "Flamestrike": 0,
+          "Freezing Nova": 0
         },
         "actionBars": [
           "Fireball",
@@ -389,9 +390,9 @@
         }
       },
       "hour": 9,
-      "minute": 15,
-      "second": 6,
-      "currentSite": "Saldean's Farm",
+      "minute": 29,
+      "second": 34,
+      "currentSite": "Northern Tract",
       "openedChests": {},
       "siteProgress": {
         "Wicked Grotto": 1
@@ -633,7 +634,7 @@
         "Shimmer Ridge": 2,
         "Frozen Crossing": 1,
         "The Grizzled Den": 1,
-        "The Tundrid Hills": 1,
+        "The Tundrid Hills": 2,
         "Bladefist Bay": 1,
         "Burning Blade Coven": 1,
         "Darkspear Strand": 1,
@@ -1406,7 +1407,8 @@
         "Cliffspring Caves": 2,
         "Bear's Head": 1,
         "Orendil's Retreat": 3,
-        "Riverpaw Camp": 3
+        "Riverpaw Camp": 3,
+        "Gnomeregan Outskirts": 2
       },
       "unlockedAreas": [],
       "vendorStock": {},
@@ -1417,9 +1419,9 @@
         }
       },
       "startDate": "2024-06-09T14:12:27.0144066+02:00",
-      "lastLoaded": "2024-06-13T17:50:29.4794726+02:00",
-      "lastPlayed": "2024-06-13T17:51:20.6533599+02:00",
-      "timePlayed": "08:14:17.3662417",
+      "lastLoaded": "2024-06-14T15:27:26.8270444+02:00",
+      "lastPlayed": "2024-06-14T15:31:32.7940165+02:00",
+      "timePlayed": "08:26:17.2676354",
       "lastVisitedTalents": 1
     },
     {

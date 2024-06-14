@@ -103,16 +103,17 @@ public class SiteInstance : Site
                 total.AddRange(areas.SelectMany(x => x.eliteEncounters ?? new()).Distinct().ToList());
                 total.AddRange(areas.SelectMany(x => x.rareEncounters ?? new()).Distinct().ToList());
                 var races = total.Select(x => Race.races.Find(y => y.name == x.who).portrait).Distinct().ToList();
+                var perRow = 9;
                 if (races.Count > 0)
-                    for (int i = 0; i < Math.Ceiling(races.Count / 8.0); i++)
+                    for (int i = 0; i < Math.Ceiling(races.Count / (double)perRow); i++)
                     {
                         var ind = i;
                         AddPaddingRegion(() =>
                         {
-                            for (int j = 0; j < 8 && j < races.Count - ind * 8; j++)
+                            for (int j = 0; j < perRow && j < races.Count - ind * perRow; j++)
                             {
                                 var jnd = j;
-                                AddSmallButton(races[jnd + ind * 8]);
+                                AddSmallButton(races[jnd + ind * perRow]);
                             }
                         });
                     }
@@ -140,12 +141,14 @@ public class SiteInstance : Site
             var q = currentSave.player.AvailableQuestsAt(this, true).Count;
             sitesWithQuestMarkers.Remove(this);
             if (currentSave.currentSite == name)
-                AddSmallButtonOverlay("PlayerLocationFromBelow", 0, 2);
+                AddSmallButtonOverlay("PlayerLocationFromBelow", 0, 3);
             var a = q > 0;
             var b = currentSave.player.QuestsAt(this, true).Count > 0;
             if (a || b) sitesWithQuestMarkers.Add(this);
-            if (a) AddSmallButtonOverlay("AvailableQuest", 0, 2);
-            if (b) AddSmallButtonOverlay("QuestMarker", 0, 2);
+            if (a) AddSmallButtonOverlay("AvailableQuest", 0, 3);
+            if (b) AddSmallButtonOverlay("QuestMarker", 0, 3);
+            if (currentSave.player.QuestsDoneAt(this, true).Count > 0)
+                AddSmallButtonOverlay("YellowGlowBig", 0, 2);
         });
     }
 

@@ -11,6 +11,7 @@ using static Spec;
 using static Quest;
 using static Sound;
 using static Defines;
+using System.Runtime.CompilerServices;
 
 public class Entity
 {
@@ -119,6 +120,7 @@ public class Entity
         foreach (var site in WhereCanQuestBeDone(quest))
             if (!sitesToRespawn.Contains(site))
                 sitesToRespawn.Add(site);
+        sitesToRespawn.Add(Site.FindSite(x => x.name == quest.siteStart));
     }
 
     //Adds new quest to the quest log
@@ -131,7 +133,11 @@ public class Entity
         foreach (var site in WhereCanQuestBeDone(quest))
             if (!sitesToRespawn.Contains(site))
                 sitesToRespawn.Add(site);
+        sitesToRespawn.Add(Site.FindSite(x => x.name == quest.siteStart));
     }
+
+    //Check if a specific quest is done
+    public void CanHandQuest(Quest quest) => quest.conditions.All(x => x.IsDone());
 
     //Check if this entity can pick up a specific quest
     public bool CanPickQuest(Quest quest, Site site)
@@ -143,7 +149,7 @@ public class Entity
         if (quest.races != null && !quest.races.Contains(race)) return false;
         if (quest.classes != null && !quest.classes.Contains(spec)) return false;
         if (quest.faction != null && !IsRankHighEnough(ReputationRank(quest.faction), quest.requiredRank)) return false;
-        else if (site.faction != null && !IsRankHighEnough(ReputationRank(site.faction), "Neutral")) return false;
+        else if (quest.faction == null && site.faction != null && !IsRankHighEnough(ReputationRank(site.faction), "Neutral")) return false;
         return true;
     }
 
@@ -203,6 +209,38 @@ public class Entity
         return list;
     }
 
+    //Check if any quest can be handed in at a target site
+    public List<Quest> QuestsDoneAt(Site site, bool oneIsEnough = false)
+    {
+        var list = new List<Quest>();
+        foreach (var quest in currentQuests)
+            if (quest.conditions.All(x => x.IsDone()) && quest.siteEnd == site.name)
+            {
+                list.Add(quest);
+                if (oneIsEnough)
+                    return list;
+            }
+        return list;
+    }
+
+    //Check if any quest can be done at a target site
+    public List<Quest> QuestsDoneAt(SiteComplex complex, bool oneIsEnough = false)
+    {
+        var list = new List<Quest>();
+        foreach (var site in complex.sites.Select(x => Site.FindSite(y => y.name == x["SiteName"])))
+            list = list.Concat(QuestsDoneAt(site, oneIsEnough)).ToList();
+        return list.Distinct().ToList();
+    }
+
+    //Check if any quest can be done at a target site
+    public List<Quest> QuestsDoneAt(SiteInstance instance, bool oneIsEnough = false)
+    {
+        var list = new List<Quest>();
+        foreach (var site in instance.wings.SelectMany(x => x.areas.Select(z => Site.FindSite(y => y.name == z["AreaName"]))))
+            list = list.Concat(QuestsDoneAt(site, oneIsEnough)).ToList();
+        return list.Distinct().ToList();
+    }
+
     //Check if any quest can be done at a target site
     public List<Quest> QuestsAt(Site site, bool oneIsEnough = false)
     {
@@ -259,7 +297,7 @@ public class Entity
 
     public void QuestKill(string who)
     {
-        var changed = false;
+        var changed = new List<Quest>();
         foreach (var quest in currentQuests)
             foreach (var condition in quest.conditions)
                 if (condition.status != "Done" && condition.type == "Kill" && condition.name == who)
@@ -268,27 +306,35 @@ public class Entity
                     if (condition.amount <= condition.amountDone)
                     {
                         condition.status = "Done";
-                        changed = true;
+                        if (!changed.Contains(quest))
+                            changed.Add(quest);
                     }
                 }
-        if (changed)
+        if (changed.Count > 0)
         {
             foreach (var site in sitesWithQuestMarkers)
                 if (!sitesToRespawn.Contains(site))
                     sitesToRespawn.Add(site);
+            foreach (var quest in changed)
+                if (quest.conditions.All(x => x.IsDone()))
+                    sitesToRespawn.Add(Site.FindSite(x => x.name == quest.siteEnd));
         }
     }
 
     public void QuestVisit(string site)
     {
+        var changed = new List<Quest>();
         foreach (var quest in currentQuests)
             foreach (var condition in quest.conditions)
                 if (condition.type == "Visit" && condition.name == site)
                 {
                     condition.status = "Done";
-                    sitesWithQuestMarkers.RemoveAll(x => x.name == site);
-                    Respawn("Site:" + site);
+                    if (!changed.Contains(quest))
+                        changed.Add(quest);
                 }
+        foreach (var quest in changed)
+            if (quest.conditions.All(x => x.IsDone()))
+                sitesToRespawn.Add(Site.FindSite(x => x.name == quest.siteEnd));
     }
 
     #endregion

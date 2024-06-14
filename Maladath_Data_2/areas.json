@@ -8180,6 +8180,38 @@
     ]
   },
   {
+    "x": 4970,
+    "y": -2717,
+    "name": "Gnomeregan Outskirts",
+    "zone": "Dun Morogh",
+    "type": "HostileArea",
+    "commonEncounters": [
+      {
+        "who": "Snow Leopard",
+        "levelMin": 8,
+        "levelMax": 9
+      },
+      {
+        "who": "Leper Gnome",
+        "levelMin": 8,
+        "levelMax": 10
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Gibblewilt",
+        "levelMin": 11
+      }
+    ],
+    "areaSize": 3,
+    "progression": [
+      {
+        "type": "Treasure",
+        "point": 3
+      }
+    ]
+  },
+  {
     "x": 4949,
     "y": -2785,
     "name": "Frostmane Hold",
@@ -8208,10 +8240,6 @@
       }
     ],
     "rareEncounters": [
-      {
-        "who": "Gibblewilt",
-        "levelMin": 11
-      },
       {
         "who": "Great Father Arctikus",
         "levelMin": 11

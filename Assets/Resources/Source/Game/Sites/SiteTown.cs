@@ -97,23 +97,42 @@ public class SiteTown : Site
                     var legit = people.Where(x => !x.hidden && PersonType.personTypes.Exists(y => y.type == x.type)).OrderBy(x => x.category.priority).ThenBy(x => x.type).ToList();
                     var types = legit.Select(x => PersonType.personTypes.Find(y => y.type == x.type)).Where(x => x != null).ToList();
                     var icons = types.Distinct().Select(x => x.icon + (x.factionVariant ? factions.Find(x => x.name == faction)?.side : "")).ToList();
-                    var amount = icons.Count % 9 == 0 ? 9 : (icons.Count % 8 == 0 ? 8 : 7);
+                    var perRow = 9;
                     if (icons.Count > 0)
-                        for (int i = 0; i < Math.Ceiling(icons.Count / (double)amount); i++)
+                        for (int i = 0; i < Math.Ceiling(icons.Count / (double)perRow); i++)
                         {
                             var ind = i;
                             AddPaddingRegion(() =>
                             {
-                                for (int j = amount - 1; j >= 0; j--)
-                                    if (j < icons.Count - ind * amount)
+                                for (int j = perRow - 1; j >= 0; j--)
+                                    if (j < icons.Count - ind * perRow)
                                     {
                                         var jnd = j;
-                                        AddSmallButton(icons[jnd + ind * amount]);
+                                        AddSmallButton(icons[jnd + ind * perRow]);
                                     }
                             });
                         }
                 }
-                var q = currentSave.player.QuestsAt(this);
+                var q = currentSave.player.QuestsDoneAt(this);
+                if (q.Count > 0)
+                {
+                    AddEmptyRegion();
+                    foreach (var quest in q)
+                    {
+                        AddPaddingRegion(() =>
+                        {
+                            AddLine(quest.name, "Black");
+                            AddSmallButton(quest.ZoneIcon());
+                        });
+                        var color = ColorQuestLevel(quest.questLevel);
+                        if (color != null) SetRegionBackgroundAsImage("SkillUp" + color);
+                        AddPaddingRegion(() =>
+                        {
+                            AddLine("Completed", "Uncommon");
+                        });
+                    }
+                }
+                q = currentSave.player.QuestsAt(this);
                 if (q.Count > 0)
                 {
                     AddEmptyRegion();
@@ -137,12 +156,14 @@ public class SiteTown : Site
             var q = currentSave.player.AvailableQuestsAt(this, true).Count;
             sitesWithQuestMarkers.Remove(this);
             if (currentSave.currentSite == name)
-                AddSmallButtonOverlay("PlayerLocationFromBelow", 0, 2);
+                AddSmallButtonOverlay("PlayerLocationFromBelow", 0, 3);
             var a = q > 0;
             var b = currentSave.player.QuestsAt(this, true).Count > 0;
             if (a || b) sitesWithQuestMarkers.Add(this);
-            if (a) AddSmallButtonOverlay("AvailableQuest", 0, 2);
-            if (b) AddSmallButtonOverlay("QuestMarker", 0, 2);
+            if (a) AddSmallButtonOverlay("AvailableQuest", 0, 3);
+            if (b) AddSmallButtonOverlay("QuestMarker", 0, 3);
+            if (currentSave.player.QuestsDoneAt(this, true).Count > 0)
+                AddSmallButtonOverlay("YellowGlowBig", 0, 2);
         });
     }
 

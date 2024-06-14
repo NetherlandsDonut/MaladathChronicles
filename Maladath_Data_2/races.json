@@ -1,5 +1,15 @@
 [
   {
+    "name": "Leper Gnome",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "side": "Neutral",
+    "kind": "Common",
+    "portrait": "PortraitLeperGnome",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
     "name": "7:XT",
     "category": "Humanoid",
     "subcategory": "Human",
@@ -7404,7 +7414,7 @@
     "subcategory": "Furbolg",
     "side": "Neutral",
     "kind": "Common",
-    "portrait": "PortraitFurbolg",
+    "portrait": "PortraitFurbolgWhite",
     "vitality": 1.0,
     "abilities": {}
   },

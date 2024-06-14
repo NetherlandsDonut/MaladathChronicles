@@ -73,9 +73,12 @@ public class Highlightable : MonoBehaviour
             cursor.SetCursor(Default);
         render.color = defaultColor;
         pressedState = "None";
-        for (int i = 0; i < pathsDrawn.Count; i++)
-            Destroy(pathsDrawn[i].Item2);
-        pathsDrawn = new();
+        if (window != null && window.title.StartsWith("Site: "))
+        {
+            for (int i = 0; i < pathsDrawn.Count; i++)
+                Destroy(pathsDrawn[i].Item2);
+            pathsDrawn = new();
+        }
     }
 
     public void MouseDown(string key)

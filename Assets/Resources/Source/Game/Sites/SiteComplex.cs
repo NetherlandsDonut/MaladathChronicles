@@ -140,12 +140,14 @@ public class SiteComplex : Site
             var q = currentSave.player.AvailableQuestsAt(this, true).Count;
             sitesWithQuestMarkers.Remove(this);
             if (currentSave.currentSite == name)
-                AddSmallButtonOverlay("PlayerLocationFromBelow", 0, 2);
+                AddSmallButtonOverlay("PlayerLocationFromBelow", 0, 3);
             var a = q > 0;
             var b = currentSave.player.QuestsAt(this, true).Count > 0;
             if (a || b) sitesWithQuestMarkers.Add(this);
-            if (a) AddSmallButtonOverlay("AvailableQuest", 0, 2);
-            if (b) AddSmallButtonOverlay("QuestMarker", 0, 2);
+            if (a) AddSmallButtonOverlay("AvailableQuest", 0, 3);
+            if (b) AddSmallButtonOverlay("QuestMarker", 0, 3);
+            if (currentSave.player.QuestsDoneAt(this, true).Count > 0)
+                AddSmallButtonOverlay("YellowGlowBig", 0, 2);
         });
     }
 
