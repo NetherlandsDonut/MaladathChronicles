@@ -77,8 +77,8 @@ public class Chest
         chest.GetComponent<Highlightable>().Initialise(null,
             (h) =>
             {
-                if (!currentSave.openedChests.ContainsKey(currentSave.currentSite))
-                    currentSave.openedChests.Add(currentSave.currentSite, GenerateChest(SiteHostileArea.areas.Find(x => x.name == currentSave.currentSite)));
+                if (!currentSave.openedChests.ContainsKey(SiteHostileArea.area.name))
+                    currentSave.openedChests.Add(SiteHostileArea.area.name, GenerateChest(SiteHostileArea.area));
                 Sound.PlaySound("DesktopOpenChest");
                 SpawnDesktopBlueprint("ChestLoot");
             },

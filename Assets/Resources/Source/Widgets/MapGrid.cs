@@ -25,6 +25,7 @@ public class MapGrid : MonoBehaviour
     //On mouse down pan the camera to the pressed square on the map
     void OnMouseDown()
     {
+        if (CDesktop.title != "Map") return;
         var temp = cursor.transform.position;
         CDesktop.cameraDestination = new Vector2((int)temp.x, (int)temp.y);
     }

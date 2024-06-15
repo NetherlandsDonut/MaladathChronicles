@@ -11,7 +11,6 @@ using static Spec;
 using static Quest;
 using static Sound;
 using static Defines;
-using System.Runtime.CompilerServices;
 
 public class Entity
 {

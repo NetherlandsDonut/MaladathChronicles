@@ -159,6 +159,33 @@ public class SiteInstance : Site
         return "Areas/Area" + name.Clean() + (save != null && save.IsNight() && !noNightVariant ? "Night" : "");
     }
 
+    public static void PrintInstanceSite(Dictionary<string, string> site)
+    {
+        var find = areas.Find(x => x.name == site["AreaName"]);
+        if (find != null && (showAreasUnconditional || site.ContainsKey("OpenByDefault") && site["OpenByDefault"] == "True" || currentSave.unlockedAreas.Contains(find.name)))
+            AddButtonRegion(() =>
+            {
+                AddLine(find.name);
+                if (currentSave.siteProgress.ContainsKey(find.name) && find.areaSize == currentSave.siteProgress[find.name])
+                    SetRegionBackgroundAsImage("ClearedArea");
+            },
+            (h) =>
+            {
+                area = find;
+                Respawn("HostileArea");
+                Respawn("HostileAreaProgress");
+                Respawn("HostileAreaDenizens");
+                Respawn("HostileAreaElites");
+                Respawn("Chest");
+                SetDesktopBackground(area.Background());
+            });
+        else
+            AddPaddingRegion(() =>
+            {
+                AddLine("?", "DimGray");
+            });
+    }
+
     public static void PrintInstanceWing(SiteInstance instance, InstanceWing wing)
     {
         //if (instance.wings.Count > 1)
@@ -181,6 +208,7 @@ public class SiteInstance : Site
                     Respawn("HostileAreaProgress");
                     Respawn("HostileAreaDenizens");
                     Respawn("HostileAreaElites");
+                    Respawn("Chest");
                     SetDesktopBackground("Areas/Area" + (instance.name + area.Item1.name).Clean() + (area.Item1.specialClearBackground && area.Item1.eliteEncounters.All(x => currentSave.elitesKilled.ContainsKey(x.who)) ? "Cleared" : ""));
                 });
             else

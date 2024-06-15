@@ -59,6 +59,13 @@ public class SaveGame
             "Ok'thor the Breaker"
         };
         newSlot.ringOfLaw = possibleBosses[random.Next(possibleBosses.Count)];
+        possibleBosses = new List<string>()
+        {
+            "Azshir the Sleepless",
+            "Fallen Champion",
+            "Ironspine"
+        };
+        newSlot.forlornCloister = possibleBosses[random.Next(possibleBosses.Count)];
         newSlot.hour = 7;
         newSlot.currentSite = race.startingSite;
         newSlot.siteVisits = new() { { race.startingSite, 1 } };
@@ -173,8 +180,8 @@ public class SaveGame
     //Site at which player currently resides
     public string currentSite;
 
-    //What will be the randomly generated boss at ring of the law
-    public string ringOfLaw;
+    //Randomly generated bosses for this run
+    public string ringOfLaw, forlornCloister;
 
     //All chests opened in the game are saved here
     public Dictionary<string, Chest> openedChests;

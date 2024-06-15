@@ -7,78 +7,6 @@
       "player": {
         "currentQuests": [
           {
-            "questID": 47,
-            "requiredLevel": 4,
-            "questLevel": 7,
-            "name": "Gold Dust Exchange",
-            "description": "Bring 4 Gold Dust to Remy \"Two Times\" in Goldshire. Gold Dust is gathered from Kobolds in Elwynn Forest.",
-            "siteStart": "Goldshire",
-            "siteEnd": "Goldshire",
-            "zone": "Elwynn Forest",
-            "races": [
-              "Gnome",
-              "Night Elf",
-              "Dwarf",
-              "Human"
-            ],
-            "reputationGain": {
-              "Stormwind": 250
-            },
-            "conditions": [
-              {
-                "type": "Item",
-                "name": "Gold Dust",
-                "amount": 4
-              }
-            ]
-          },
-          {
-            "questID": 40,
-            "requiredLevel": 7,
-            "questLevel": 10,
-            "name": "A Fishy Peril",
-            "description": "Remy \"Two Times\" wants you to speak with Marshal Dughan in Goldshire.",
-            "siteStart": "Goldshire",
-            "siteEnd": "Goldshire",
-            "zone": "Elwynn Forest",
-            "races": [
-              "Gnome",
-              "Night Elf",
-              "Dwarf",
-              "Human"
-            ],
-            "reputationGain": {
-              "Stormwind": 10
-            },
-            "conditions": []
-          },
-          {
-            "questID": 36,
-            "requiredLevel": 9,
-            "questLevel": 10,
-            "name": "Westfall Stew",
-            "description": "Verna Furlbrow wants you to deliver her recipe for Westfall Stew to Salma Saldean.",
-            "siteStart": "Jansen Stead",
-            "siteEnd": "Saldean's Farm",
-            "zone": "Westfall",
-            "races": [
-              "Gnome",
-              "Night Elf",
-              "Dwarf",
-              "Human"
-            ],
-            "reputationGain": {
-              "Stormwind": 75
-            },
-            "conditions": [
-              {
-                "type": "Item",
-                "name": "Verna's Westfall Stew Recipe",
-                "amount": 1
-              }
-            ]
-          },
-          {
             "questID": 9,
             "requiredLevel": 8,
             "questLevel": 15,
@@ -137,11 +65,83 @@
                 "amount": 3
               }
             ]
+          },
+          {
+            "questID": 36,
+            "requiredLevel": 9,
+            "questLevel": 10,
+            "name": "Westfall Stew",
+            "description": "Verna Furlbrow wants you to deliver her recipe for Westfall Stew to Salma Saldean.",
+            "siteStart": "Jansen Stead",
+            "siteEnd": "Saldean's Farm",
+            "zone": "Westfall",
+            "races": [
+              "Gnome",
+              "Night Elf",
+              "Dwarf",
+              "Human"
+            ],
+            "reputationGain": {
+              "Stormwind": 75
+            },
+            "conditions": [
+              {
+                "type": "Item",
+                "name": "Verna's Westfall Stew Recipe",
+                "amount": 1
+              }
+            ]
+          },
+          {
+            "questID": 40,
+            "requiredLevel": 7,
+            "questLevel": 10,
+            "name": "A Fishy Peril",
+            "description": "Remy \"Two Times\" wants you to speak with Marshal Dughan in Goldshire.",
+            "siteStart": "Goldshire",
+            "siteEnd": "Goldshire",
+            "zone": "Elwynn Forest",
+            "races": [
+              "Gnome",
+              "Night Elf",
+              "Dwarf",
+              "Human"
+            ],
+            "reputationGain": {
+              "Stormwind": 10
+            },
+            "conditions": []
+          },
+          {
+            "questID": 47,
+            "requiredLevel": 4,
+            "questLevel": 7,
+            "name": "Gold Dust Exchange",
+            "description": "Bring 4 Gold Dust to Remy \"Two Times\" in Goldshire. Gold Dust is gathered from Kobolds in Elwynn Forest.",
+            "siteStart": "Goldshire",
+            "siteEnd": "Goldshire",
+            "zone": "Elwynn Forest",
+            "races": [
+              "Gnome",
+              "Night Elf",
+              "Dwarf",
+              "Human"
+            ],
+            "reputationGain": {
+              "Stormwind": 250
+            },
+            "conditions": [
+              {
+                "type": "Item",
+                "name": "Gold Dust",
+                "amount": 4
+              }
+            ]
           }
         ],
         "completedQuests": [],
         "level": 10,
-        "experience": 798,
+        "experience": 6498,
         "uniquesGotten": [],
         "reputation": {
           "Southsea Pirates": 0,
@@ -214,13 +214,13 @@
         },
         "professionSkills": {
           "Blacksmithing": {
-            "Item1": 1,
+            "Item1": 55,
             "Item2": [
               "Apprentice"
             ]
           },
           "Mining": {
-            "Item1": 1,
+            "Item1": 3,
             "Item2": [
               "Apprentice"
             ]
@@ -228,11 +228,22 @@
         },
         "learnedRecipes": {
           "Blacksmithing": [
+            "Runed Copper Pants",
+            "Runed Copper Gauntlets",
+            "Copper Chain Belt",
+            "Copper Battle Axe",
+            "Copper Dagger",
+            "Copper Claymore",
+            "Copper Shortsword",
+            "Copper Axe",
+            "Copper Chain Boots",
+            "Copper Mace",
+            "Copper Chain Pants",
+            "Rough Grinding Stone",
+            "Copper Bracers",
             "Rough Sharpening Stone",
             "Rough Weightstone",
-            "Rough Copper Vest",
-            "Copper Bracers",
-            "Copper Chain Pants"
+            "Rough Copper Vest"
           ],
           "Mining": [
             "Smelt Copper"
@@ -300,6 +311,232 @@
               "stats": {
                 "stats": {}
               }
+            },
+            {
+              "rarity": "Common",
+              "name": "Scroll of Protection",
+              "icon": "itemscroll07",
+              "type": "Miscellaneous",
+              "source": "RareDrop",
+              "ilvl": 10,
+              "amount": 1,
+              "maxStack": 5,
+              "price": 25,
+              "stats": {
+                "stats": {}
+              }
+            },
+            {
+              "rarity": "Uncommon",
+              "name": "Malachite",
+              "icon": "itemmiscgememerald03",
+              "type": "Trade Good",
+              "source": "RareDrop",
+              "ilvl": 7,
+              "lvl": 1,
+              "amount": 1,
+              "maxStack": 20,
+              "price": 15,
+              "stats": {
+                "stats": {}
+              }
+            },
+            {
+              "rarity": "Poor",
+              "name": "Apprentice's Pants",
+              "icon": "itempants01",
+              "type": "Legs",
+              "armorClass": "Cloth",
+              "ilvl": 1,
+              "lvl": 1,
+              "armor": 2,
+              "amount": 1,
+              "maxStack": 1,
+              "price": 1,
+              "stats": {
+                "stats": {}
+              }
+            },
+            {
+              "rarity": "Common",
+              "name": "Rough Sharpening Stone",
+              "icon": "itemstonesharpeningstone01",
+              "type": "Trade Good",
+              "source": "Profession",
+              "ilvl": 5,
+              "lvl": 1,
+              "amount": 20,
+              "maxStack": 20,
+              "price": 3,
+              "stats": {
+                "stats": {}
+              }
+            },
+            {
+              "rarity": "Common",
+              "name": "Rough Sharpening Stone",
+              "icon": "itemstonesharpeningstone01",
+              "type": "Trade Good",
+              "source": "Profession",
+              "ilvl": 5,
+              "lvl": 1,
+              "amount": 20,
+              "maxStack": 20,
+              "price": 3,
+              "stats": {
+                "stats": {}
+              }
+            },
+            {
+              "rarity": "Common",
+              "name": "Rough Sharpening Stone",
+              "icon": "itemstonesharpeningstone01",
+              "type": "Trade Good",
+              "source": "Profession",
+              "ilvl": 5,
+              "lvl": 1,
+              "amount": 20,
+              "maxStack": 20,
+              "price": 3,
+              "stats": {
+                "stats": {}
+              }
+            },
+            {
+              "rarity": "Common",
+              "name": "Copper Chain Pants",
+              "icon": "itempants03",
+              "type": "Legs",
+              "armorClass": "Mail",
+              "source": "Profession",
+              "ilvl": 9,
+              "lvl": 4,
+              "armor": 83,
+              "amount": 1,
+              "maxStack": 1,
+              "price": 67,
+              "stats": {
+                "stats": {}
+              }
+            },
+            {
+              "rarity": "Common",
+              "name": "Copper Chain Pants",
+              "icon": "itempants03",
+              "type": "Legs",
+              "armorClass": "Mail",
+              "source": "Profession",
+              "ilvl": 9,
+              "lvl": 4,
+              "armor": 83,
+              "amount": 1,
+              "maxStack": 1,
+              "price": 67,
+              "stats": {
+                "stats": {}
+              }
+            },
+            {
+              "rarity": "Common",
+              "name": "Copper Chain Pants",
+              "icon": "itempants03",
+              "type": "Legs",
+              "armorClass": "Mail",
+              "source": "Profession",
+              "ilvl": 9,
+              "lvl": 4,
+              "armor": 83,
+              "amount": 1,
+              "maxStack": 1,
+              "price": 67,
+              "stats": {
+                "stats": {}
+              }
+            },
+            {
+              "rarity": "Common",
+              "name": "Copper Chain Pants",
+              "icon": "itempants03",
+              "type": "Legs",
+              "armorClass": "Mail",
+              "source": "Profession",
+              "ilvl": 9,
+              "lvl": 4,
+              "armor": 83,
+              "amount": 1,
+              "maxStack": 1,
+              "price": 67,
+              "stats": {
+                "stats": {}
+              }
+            },
+            {
+              "rarity": "Common",
+              "name": "Copper Chain Pants",
+              "icon": "itempants03",
+              "type": "Legs",
+              "armorClass": "Mail",
+              "source": "Profession",
+              "ilvl": 9,
+              "lvl": 4,
+              "armor": 83,
+              "amount": 1,
+              "maxStack": 1,
+              "price": 67,
+              "stats": {
+                "stats": {}
+              }
+            },
+            {
+              "rarity": "Common",
+              "name": "Copper Chain Pants",
+              "icon": "itempants03",
+              "type": "Legs",
+              "armorClass": "Mail",
+              "source": "Profession",
+              "ilvl": 9,
+              "lvl": 4,
+              "armor": 83,
+              "amount": 1,
+              "maxStack": 1,
+              "price": 67,
+              "stats": {
+                "stats": {}
+              }
+            },
+            {
+              "rarity": "Common",
+              "name": "Copper Chain Pants",
+              "icon": "itempants03",
+              "type": "Legs",
+              "armorClass": "Mail",
+              "source": "Profession",
+              "ilvl": 9,
+              "lvl": 4,
+              "armor": 83,
+              "amount": 1,
+              "maxStack": 1,
+              "price": 67,
+              "stats": {
+                "stats": {}
+              }
+            },
+            {
+              "rarity": "Common",
+              "name": "Copper Bracers",
+              "icon": "itembracer03",
+              "type": "Wrists",
+              "armorClass": "Mail",
+              "source": "Profession",
+              "ilvl": 7,
+              "lvl": 2,
+              "armor": 35,
+              "amount": 1,
+              "maxStack": 1,
+              "price": 17,
+              "stats": {
+                "stats": {}
+              }
             }
           ],
           "bags": [
@@ -315,6 +552,22 @@
               "maxStack": 1,
               "price": 8750,
               "bagSpace": 7,
+              "stats": {
+                "stats": {}
+              }
+            },
+            {
+              "rarity": "Common",
+              "name": "Small Green Pouch",
+              "icon": "itemmiscbag09green",
+              "type": "Bag",
+              "source": "GeneralDrop",
+              "ilvl": 5,
+              "lvl": 1,
+              "amount": 1,
+              "maxStack": 1,
+              "price": 250,
+              "bagSpace": 2,
               "stats": {
                 "stats": {}
               }
@@ -356,19 +609,22 @@
             }
           },
           "Legs": {
-            "rarity": "Poor",
-            "name": "Apprentice's Pants",
-            "icon": "itempants01",
+            "rarity": "Uncommon",
+            "name": "Journeyman's Pants",
+            "icon": "itempants10",
             "type": "Legs",
             "armorClass": "Cloth",
-            "ilvl": 1,
-            "lvl": 1,
-            "armor": 2,
+            "source": "RareDrop",
+            "ilvl": 10,
+            "lvl": 5,
+            "armor": 17,
             "amount": 1,
             "maxStack": 1,
-            "price": 1,
+            "price": 94,
             "stats": {
-              "stats": {}
+              "stats": {
+                "Spirit": 1
+              }
             }
           },
           "Chest": {
@@ -390,19 +646,29 @@
         }
       },
       "hour": 9,
-      "minute": 32,
-      "second": 22,
-      "currentSite": "Gnomeregan Outskirts",
-      "openedChests": {},
+      "minute": 34,
+      "second": 14,
+      "currentSite": "Blackrock Mountain",
+      "openedChests": {
+        "Gnomeregan Outskirts": {
+          "area": "Gnomeregan Outskirts",
+          "inventory": {
+            "items": [],
+            "bags": [],
+            "ignoreSpaceChecks": true
+          }
+        }
+      },
       "siteProgress": {
         "Wicked Grotto": 1,
         "Northern Tract": 1,
-        "Gnomeregan Outskirts": 2
+        "Gnomeregan Outskirts": 5
       },
       "commonsKilled": {
         "Deeprot Tangler": 1,
         "Large Crag Boar": 1,
-        "Snow Leopard": 1
+        "Snow Leopard": 3,
+        "Leper Gnome": 1
       },
       "raresKilled": {
         "Gibblewilt": 1
@@ -1272,7 +1538,7 @@
         "Caer Darrow": 1,
         "Ravenholdt Manor": 1,
         "Misty Reed Post": 1,
-        "Stormwind City": 4,
+        "Stormwind City": 6,
         "Grove of the Ancients": 3,
         "Go'Shek Farm": 1,
         "Hillsbrad": 1,
@@ -1373,7 +1639,7 @@
         "Nesingwary's Expedition": 1,
         "Gurubashi Arena": 1,
         "Temple of Atal'Hakkar": 1,
-        "The Stockade": 1,
+        "The Stockade": 2,
         "Ragefire Chasm": 1,
         "Gnomeregan": 2,
         "Shadowfang Keep": 2,
@@ -1399,7 +1665,7 @@
         "Blackwing Lair": 1,
         "Ruins of Ahn'Qiraj": 1,
         "Temple of Ahn'Qiraj": 1,
-        "Blackrock Mountain": 7,
+        "Blackrock Mountain": 11,
         "Jintha'Alor": 1,
         "Tyr's Hand": 1,
         "Hearthglen": 1,
@@ -1414,7 +1680,7 @@
         "Bear's Head": 1,
         "Orendil's Retreat": 3,
         "Riverpaw Camp": 3,
-        "Gnomeregan Outskirts": 4
+        "Gnomeregan Outskirts": 7
       },
       "unlockedAreas": [],
       "vendorStock": {},
@@ -1425,9 +1691,9 @@
         }
       },
       "startDate": "2024-06-09T14:12:27.0144066+02:00",
-      "lastLoaded": "2024-06-15T03:13:46.3797719+02:00",
-      "lastPlayed": "2024-06-15T03:13:50.5581933+02:00",
-      "timePlayed": "08:31:47.2145823",
+      "lastLoaded": "2024-06-15T16:46:37.3339348+02:00",
+      "lastPlayed": "2024-06-15T16:58:15.0280954+02:00",
+      "timePlayed": "08:58:42.7353955",
       "lastVisitedTalents": 1
     },
     {
@@ -4303,8 +4569,8 @@
       "player": {
         "currentQuests": [],
         "completedQuests": [],
-        "level": 1,
-        "experience": 40,
+        "level": 4,
+        "experience": 1303,
         "uniquesGotten": [],
         "reputation": {
           "Southsea Pirates": 0,
@@ -4377,6 +4643,7 @@
         },
         "professionSkills": {},
         "learnedRecipes": {},
+        "unspentTalentPoints": 3,
         "faction": "Ironforge",
         "name": "Dulfak",
         "race": "Dwarf",
@@ -4456,6 +4723,109 @@
               "stats": {
                 "stats": {}
               }
+            },
+            {
+              "rarity": "Uncommon",
+              "name": "Tigerseye",
+              "icon": "itemmiscgemopal03",
+              "type": "Trade Good",
+              "source": "RareDrop",
+              "ilvl": 15,
+              "lvl": 1,
+              "amount": 1,
+              "maxStack": 20,
+              "price": 100,
+              "stats": {
+                "stats": {}
+              }
+            },
+            {
+              "rarity": "Common",
+              "name": "Copper Ore",
+              "icon": "itemorecopper01",
+              "type": "Trade Good",
+              "source": "RareDrop",
+              "ilvl": 10,
+              "lvl": 1,
+              "amount": 3,
+              "maxStack": 10,
+              "price": 5,
+              "stats": {
+                "stats": {}
+              }
+            },
+            {
+              "rarity": "Common",
+              "name": "Mageweave Cloth",
+              "icon": "itemfabricmageweave01",
+              "type": "Trade Good",
+              "source": "Quest",
+              "ilvl": 40,
+              "lvl": 1,
+              "amount": 1,
+              "maxStack": 20,
+              "price": 250,
+              "stats": {
+                "stats": {}
+              }
+            },
+            {
+              "rarity": "Common",
+              "name": "Greater Healing Potion",
+              "icon": "itempotion52",
+              "type": "Miscellaneous",
+              "source": "Profession",
+              "ilvl": 31,
+              "amount": 1,
+              "maxStack": 5,
+              "price": 125,
+              "stats": {
+                "stats": {}
+              }
+            },
+            {
+              "rarity": "Common",
+              "name": "Scroll of Strength II",
+              "icon": "itemscroll02",
+              "type": "Miscellaneous",
+              "source": "RareDrop",
+              "ilvl": 35,
+              "amount": 1,
+              "maxStack": 5,
+              "price": 87,
+              "stats": {
+                "stats": {}
+              }
+            },
+            {
+              "rarity": "Uncommon",
+              "name": "Aquamarine",
+              "icon": "itemmiscgemcrystal02",
+              "type": "Trade Good",
+              "source": "RareDrop",
+              "ilvl": 45,
+              "lvl": 1,
+              "amount": 1,
+              "maxStack": 20,
+              "price": 1000,
+              "stats": {
+                "stats": {}
+              }
+            },
+            {
+              "rarity": "Common",
+              "name": "Heavy Hide",
+              "icon": "itemmiscpeltwolfruin03",
+              "type": "Trade Good",
+              "source": "RareDrop",
+              "ilvl": 30,
+              "lvl": 1,
+              "amount": 2,
+              "maxStack": 10,
+              "price": 200,
+              "stats": {
+                "stats": {}
+              }
             }
           ],
           "bags": []
@@ -4464,18 +4834,19 @@
         "equipment": {
           "Main Hand": {
             "rarity": "Common",
-            "name": "Battleworn Hammer",
-            "icon": "itemhammer15",
-            "detailedType": "Mace",
-            "type": "Two Handed",
-            "ilvl": 2,
+            "name": "Pitted Defias Shortsword",
+            "icon": "itemsword04",
+            "detailedType": "Sword",
+            "type": "One Handed",
+            "source": "RareDrop",
+            "ilvl": 4,
             "lvl": 1,
-            "minDamage": 3,
-            "maxDamage": 5,
+            "minDamage": 2,
+            "maxDamage": 4,
             "amount": 1,
             "maxStack": 1,
-            "price": 9,
-            "speed": 2.9,
+            "price": 16,
+            "speed": 2.0,
             "stats": {
               "stats": {}
             }
@@ -4507,30 +4878,91 @@
             "stats": {
               "stats": {}
             }
+          },
+          "Off Hand": {
+            "rarity": "Uncommon",
+            "name": "Glyphed Buckler",
+            "icon": "itemshield10",
+            "detailedType": "Shield",
+            "type": "Off Hand",
+            "source": "RareDrop",
+            "ilvl": 39,
+            "lvl": 34,
+            "armor": 728,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 6381,
+            "stats": {
+              "stats": {
+                "Stamina": 4,
+                "Spirit": 7
+              }
+            }
           }
         }
       },
       "hour": 7,
-      "minute": 7,
-      "currentSite": "Coldridge Valley",
+      "minute": 25,
+      "second": 12,
+      "currentSite": "Scarlet Monastery Grounds",
       "ringOfLaw": "Anub'shiah",
-      "openedChests": {},
-      "siteProgress": {},
-      "commonsKilled": {},
+      "openedChests": {
+        "Coldridge Valley": {
+          "area": "Coldridge Valley",
+          "inventory": {
+            "items": [],
+            "bags": [],
+            "ignoreSpaceChecks": true
+          }
+        },
+        "Dustwind Gulch": {
+          "area": "Dustwind Gulch",
+          "inventory": {
+            "items": [],
+            "bags": [],
+            "ignoreSpaceChecks": true
+          }
+        }
+      },
+      "siteProgress": {
+        "Coldridge Valley": 3,
+        "Dustwind Gulch": 3,
+        "Hall of the Keepers": 3
+      },
+      "commonsKilled": {
+        "Burly Rockjaw Trogg": 2,
+        "Small Crag Boar": 1,
+        "Ridge Stalker": 2,
+        "Rabid Crag Coyote": 1,
+        "Stonevault Pillager": 2,
+        "Stonevault Oracle": 1
+      },
       "raresKilled": {},
-      "elitesKilled": {},
+      "elitesKilled": {
+        "Revelosh": 1
+      },
       "siteVisits": {
         "Anvilmar": 1,
         "Coldridge Pass": 1,
-        "Coldridge Valley": 1
+        "Coldridge Valley": 2,
+        "Dustwind Gulch": 4,
+        "The Maker's Terrace": 0,
+        "Uldaman": 2,
+        "South Hillside": 0,
+        "Blackrock Mountain": 3,
+        "Nilith Camp": 0,
+        "The Sea of Cinders": 0,
+        "Scarlet Monastery Grounds": 3
       },
-      "unlockedAreas": [],
+      "unlockedAreas": [
+        "Map Chamber"
+      ],
       "vendorStock": {},
       "banks": {},
       "startDate": "2024-06-14T18:07:06.2505989+02:00",
-      "lastLoaded": "2024-06-14T18:16:18.4279261+02:00",
-      "lastPlayed": "2024-06-14T18:16:19.7659941+02:00",
-      "timePlayed": "00:00:51.1600813"
+      "lastLoaded": "2024-06-15T16:33:37.8311696+02:00",
+      "lastPlayed": "2024-06-15T16:37:06.9388623+02:00",
+      "timePlayed": "00:12:32.7379046"
     },
     {
       "player": {

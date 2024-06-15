@@ -41,7 +41,10 @@ public class Inventory
             var temp = matching[i].amount;
             matching[i].amount -= matching[i].amount >= left ? left : matching[i].amount;
             if (matching[i].amount == 0)
+            {
+                items.Remove(matching[i]);
                 matching.Remove(matching[i]);
+            }
             left -= temp;
         }
     }

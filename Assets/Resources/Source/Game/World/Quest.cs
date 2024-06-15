@@ -162,7 +162,7 @@ public class Quest
                     PlaySound("DesktopInstanceClose");
                 });
         });
-        if (color != null) SetRegionBackgroundAsImage("SkillUpLong" + color);
+        if (color != null) SetRegionBackgroundAsImage("SkillUp" + color + "Long");
         if (description != null)
         {
             AddHeaderRegion(() => AddLine("Description:"));

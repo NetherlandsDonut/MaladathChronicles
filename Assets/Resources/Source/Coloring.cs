@@ -44,7 +44,7 @@ public static class Coloring
         if (level - 4 > currentSave.player.level) return "Red";
         else if (level - 2 > currentSave.player.level) return "Orange";
         else if (level + 2 < currentSave.player.level && currentSave.player.WillGetExperience(level)) return "Green";
-        else if (!currentSave.player.WillGetExperience(level)) return null;
+        else if (!currentSave.player.WillGetExperience(level)) return "Gray";
         else return "Yellow";
     }
 
@@ -65,6 +65,7 @@ public static class Coloring
         { "White",          new Color32(234, 234, 234, 255) },
         { "LightGray",      new Color32(202, 202, 202, 255) },
         { "Gray",           new Color32(183, 183, 183, 255) },
+        { "HalfGray",       new Color32(140, 140, 140, 255) },
         { "DarkGray",       new Color32(114, 114, 114, 255) },
         { "DimGray",        new Color32(045, 045, 045, 255) },
         { "Black",          new Color32(031, 031, 031, 255) },

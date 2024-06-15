@@ -140,7 +140,7 @@ public class SiteHostileArea : Site
                 if (commonEncounters != null && commonEncounters.Count > 0)
                     AddPaddingRegion(() =>
                     {
-                        AddLine("Common: ", "DarkGray");
+                        AddLine("Common: ", "HalfGray");
                         foreach (var enemy in commonEncounters)
                         {
                             var race = races.Find(x => x.name == enemy.who);
@@ -150,7 +150,7 @@ public class SiteHostileArea : Site
                 if (eliteEncounters != null && eliteEncounters.Count > 0)
                     AddPaddingRegion(() =>
                     {
-                        AddLine("Elite: ", "DarkGray");
+                        AddLine("Elite: ", "HalfGray");
                         foreach (var enemy in eliteEncounters)
                         {
                             var race = races.Find(x => x.name == enemy.who);

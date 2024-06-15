@@ -127,7 +127,12 @@ public class Site
             var fC = complexes.Find(x => x.name == name);
             if (fC != null) siteType = "Complex";
         }
-        if (siteType == "Instance") instance = (SiteInstance)this;
+        if (siteType == "Instance")
+        {
+            instance = (SiteInstance)this;
+            if (staticPagination.ContainsKey("Instance"))
+                staticPagination.Remove("Instance");
+        }
         else if (siteType == "HostileArea") area = (SiteHostileArea)this;
         else if (siteType == "Town") town = (SiteTown)this;
         else if (siteType == "Complex") complex = (SiteComplex)this;

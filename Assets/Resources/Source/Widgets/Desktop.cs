@@ -579,6 +579,8 @@ public class Desktop : MonoBehaviour
                     foreach (var hotkey in hotkeys.OrderByDescending(x => x.keyDown))
                         if (Input.GetKeyDown(hotkey.key) && hotkey.keyDown || Input.GetKey(hotkey.key) && !hotkey.keyDown)
                         {
+                            CloseWindow("Tooltip");
+                            CDesktop.tooltip = null;
                             if (Input.GetKeyDown(hotkey.key)) keyStack = 0;
                             else helds++;
                             hotkey.action();

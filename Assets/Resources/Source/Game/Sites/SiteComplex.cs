@@ -12,6 +12,7 @@ using static Coloring;
 using static SiteInstance;
 using static GameSettings;
 using static SiteHostileArea;
+using System.Linq;
 
 public class SiteComplex : Site
 {
@@ -110,10 +111,34 @@ public class SiteComplex : Site
                 SetRegionGroupWidth(171);
                 AddHeaderRegion(() => { AddLine(name, "Gray"); });
                 complex = this;
+                AddPaddingRegion(() =>
+                {
+                    AddLine("Level range: ", "DarkGray");
+                    var range = (0, 0);
+                    var areas = sites.Where(x => x["SiteType"] == "HostileArea").Select(x => SiteHostileArea.areas.Find(y => y.name == x["SiteName"]).recommendedLevel).ToList();
+                    if (areas.Count > 0)
+                    {
+                        var min = areas.Min(x => x);
+                        var max = areas.Max(x => x);
+                        if (range.Item1 < min) range = (min, range.Item2);
+                        if (range.Item2 < max) range = (range.Item1, max);
+                    }
+                    var ranges = sites.Where(x => x["SiteType"] == "Dungeon" || x["SiteType"] == "Raid").Select(x => instances.Find(y => y.name == x["SiteName"]).LevelRange()).ToList();
+                    if (ranges.Count > 0)
+                    {
+                        var min = ranges.Min(x => x.Item1);
+                        var max = ranges.Max(x => x.Item2);
+                        if (range.Item1 < min) range = (min, range.Item2);
+                        if (range.Item2 < max) range = (range.Item1, max);
+                    }
+                    AddText(range.Item1 + "", ColorEntityLevel(range.Item1));
+                    AddText(" - ", "DarkGray");
+                    AddText(range.Item2 + "", ColorEntityLevel(range.Item2));
+                });
                 foreach (var site in complex.sites)
                     AddHeaderRegion(() =>
                     {
-                        AddLine(site["SiteName"], "DarkGray");
+                        AddLine(site["SiteName"], "HalfGray");
                         AddSmallButton("Site" + site["SiteType"]);
                     });
                 var q = currentSave.player.QuestsAt(this);
@@ -167,12 +192,15 @@ public class SiteComplex : Site
                 Respawn("HostileAreaProgress");
                 Respawn("HostileAreaDenizens");
                 Respawn("HostileAreaElites");
+                Respawn("Chest");
                 SetDesktopBackground(area.Background());
             }
             else
             {
                 CloseDesktop("Complex");
                 instance = instances.Find(x => x.name == site["SiteName"]);
+                if (staticPagination.ContainsKey("Instance"))
+                    staticPagination.Remove("Instance");
                 SpawnDesktopBlueprint("Instance");
             }
         });
