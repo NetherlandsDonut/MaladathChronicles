@@ -124,6 +124,21 @@ public class Entity
     }
 
     //Adds new quest to the quest log
+    public bool CanAddQuest(Quest quest)
+    {
+        var can = false;
+        if (quest.providedItems != null)
+        {
+            var provided = new List<Item>();
+            foreach (var item in quest.providedItems)
+                provided.Add(Item.items.Find(x => x.name == item.Key).CopyItem(item.Value));
+            can = inventory.CanAddItems(provided);
+        }
+        else can = true;
+        return can;
+    }
+
+    //Adds new quest to the quest log
     public void AddQuest(Quest quest)
     {
         currentQuests.Add(quest.CopyQuest());
@@ -133,14 +148,38 @@ public class Entity
         foreach (var site in WhereCanQuestBeDone(quest))
             if (!sitesToRespawn.Contains(site))
                 sitesToRespawn.Add(site);
-        sitesToRespawn.Add(Site.FindSite(x => x.name == quest.siteStart));
+        var find = Site.FindSite(x => x.name == quest.siteStart);
+        if (!sitesToRespawn.Contains(find))
+            sitesToRespawn.Add(find);
+        find = Site.FindSite(x => x.name == quest.siteEnd);
+        if (!sitesToRespawn.Contains(find))
+            sitesToRespawn.Add(find);
     }
 
     //Check if a specific quest is done
-    public void CanHandQuest(Quest quest) => quest.conditions.All(x => x.IsDone());
+    public void CanTurnQuest(Quest quest) => quest.conditions.All(x => x.IsDone());
+
+    //Adds new quest to the quest log
+    public void TurnQuest(Quest quest)
+    {
+        currentQuests.Remove(quest);
+        completedQuests.Add(quest.questID);
+        foreach (var item in quest.conditions.Where(x => x.type == "Item"))
+            inventory.RemoveItem(item.name, item.amount);
+        var find = Site.FindSite(x => x.name == quest.siteEnd);
+        if (!sitesToRespawn.Contains(find))
+            sitesToRespawn.Add(find);
+        var nextQuests = quests.FindAll(x => x.previous == quest.questID);
+        foreach (var nextQuest in nextQuests)
+        {
+            find = Site.FindSite(x => x.name == quest.siteStart);
+            if (!sitesToRespawn.Contains(find))
+                sitesToRespawn.Add(find);
+        }
+    }
 
     //Check if this entity can pick up a specific quest
-    public bool CanPickQuest(Quest quest, Site site)
+    public bool CanSeeQuest(Quest quest, Site site)
     {
         if (currentQuests.Exists(x => x.questID == quest.questID)) return false;
         if (completedQuests.Contains(quest.questID)) return false;
@@ -176,21 +215,22 @@ public class Entity
     public List<Site> WhereCanQuestBeDone(Quest quest)
     {
         var list = new List<Site>();
-        foreach (var condition in quest.conditions)
-            if (!condition.IsDone())
-            {
-                if (condition.type == "Visit")
-                    list.Add(Site.FindSite(x => x.name == condition.name));
-                else if (condition.type == "Kill")
+        if (quest.conditions != null)
+            foreach (var condition in quest.conditions)
+                if (!condition.IsDone())
                 {
-                    foreach (var common in SiteHostileArea.areas.Where(x => x.commonEncounters != null))
-                        if (common.commonEncounters.Exists(y => y.who == condition.name))
-                            list.Add(common);
-                    foreach (var elite in SiteHostileArea.areas.Where(x => x.eliteEncounters != null))
-                        if (elite.eliteEncounters.Exists(y => y.who == condition.name))
-                            list.Add(elite);
+                    if (condition.type == "Visit")
+                        list.Add(Site.FindSite(x => x.name == condition.name));
+                    else if (condition.type == "Kill")
+                    {
+                        foreach (var common in SiteHostileArea.areas.Where(x => x.commonEncounters != null))
+                            if (common.commonEncounters.Exists(y => y.who == condition.name))
+                                list.Add(common);
+                        foreach (var elite in SiteHostileArea.areas.Where(x => x.eliteEncounters != null))
+                            if (elite.eliteEncounters.Exists(y => y.who == condition.name))
+                                list.Add(elite);
+                    }
                 }
-            }
         return list;
     }
 
@@ -200,7 +240,7 @@ public class Entity
         var list = new List<Quest>();
         if (site.questsStarted != null)
             foreach (var quest in site.questsStarted)
-                if (CanPickQuest(quest, site))
+                if (CanSeeQuest(quest, site))
                 {
                     list.Add(quest);
                     if (oneIsEnough)
@@ -794,18 +834,7 @@ public class Entity
     public List<Item> Craft(Recipe recipe)
     {
         foreach (var reagent in recipe.reagents)
-        {
-            int left = reagent.Value;
-            var items = inventory.items.FindAll(x => x.name == reagent.Key);
-            for (int i = items.Count - 1; i >= 0 && left > 0; i--)
-            {
-                var temp = items[i].amount;
-                items[i].amount -= items[i].amount >= left ? left : items[i].amount;
-                if (items[i].amount == 0)
-                    inventory.items.Remove(items[i]);
-                left -= temp;
-            }
-        }
+            inventory.RemoveItem(reagent.Key, reagent.Value);
         var crafted = recipe.results.Select(x => Item.items.Find(y => x.Key == y.name).CopyItem(x.Value)).ToList();
         return crafted;
     }

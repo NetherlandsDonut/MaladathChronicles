@@ -503,7 +503,7 @@ public static class Root
 
     public static void ReverseButtons()
     {
-        CDesktop.LBWindow.LBRegionGroup.LBRegion.reverseButtons = true;
+        CDesktop.LBWindow.LBRegionGroup.LBRegion.reverseButtons ^= true;
     }
 
     public static void SetRegionBackgroundToGrayscale()
@@ -913,14 +913,16 @@ public static class Root
 
     #endregion
 
-    public static void AddQuestList(List<Quest> quests)
+    public static void AddQuestList(List<Quest> quests, string f = "Add")
     {
-        SetAnchor(Top, 0, -38);
         AddHeaderGroup();
         SetRegionGroupWidth(182);
         AddHeaderRegion(() =>
         {
-            AddLine("Available quests:");
+            if (f == "Add")
+                AddLine("Available quests:");
+            else if (f == "Turn")
+                AddLine("Quests ready to turn in:");
         });
         foreach (var quest in quests)
         {
@@ -931,24 +933,17 @@ public static class Root
             },
             (h) =>
             {
-                var can = false;
-                if (quest.providedItems != null)
-                {
-                    var provided = new List<Item>();
-                    foreach (var item in quest.providedItems)
-                        provided.Add(Item.items.Find(x => x.name == item.Key).CopyItem(item.Value));
-                    can = currentSave.player.inventory.CanAddItems(provided);
-                }
-                else can = true;
-                if (can)
-                {
-                    PlaySound("QuestAdd", 0.2f);
-                    currentSave.player.AddQuest(quest);
-                }
-                else PlaySound("QuestFailed", 0.2f);
+                Quest.quest = quest;
+                CloseWindow("Instance");
+                CloseWindow("Complex");
+                if (f == "Add") Respawn("QuestAdd");
+                else if (f == "Turn") Respawn("QuestTurn");
             },
             null, (h) => () =>
             {
+                if (CDesktop.windows.Exists(x => x.title == "Quest")) return;
+                if (CDesktop.windows.Exists(x => x.title == "QuestAdd")) return;
+                if (CDesktop.windows.Exists(x => x.title == "QuestTurn")) return;
                 SetAnchor(TopRight, -19, -38);
                 quest.Print();
             });

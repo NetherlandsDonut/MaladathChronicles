@@ -66,7 +66,7 @@ public class Shatter : MonoBehaviour
 
     public void Update()
     {
-        if (travelEnabled)
+        if (travelEnabled && Defines.defines.animatedResourceParticles)
             if (travelDelay > 0)
             {
                 travelDelay -= Time.deltaTime;
@@ -154,7 +154,7 @@ public class Shatter : MonoBehaviour
         else if (amount < 0) amount = 0;
         for (int i = 2; i < x - 1; i++)
             for (int j = 2; j < y - 1; j++)
-                if ((i + j) % (foo.texture.name.Contains("Rousing") ? 4 : 2) == 0 && random.Next(0, 100) < amount)
+                if ((i + j) % (Defines.defines.animatedResourceParticles && travel && foo.texture.name.Contains("Rousing") ? 4 : 2) == 0 && random.Next(0, 100) < amount)
                     SpawnDot(i, j, foo.texture.GetPixel(i, j));
 
         void SpawnDot(int c, int v, Color32 color)
@@ -164,14 +164,14 @@ public class Shatter : MonoBehaviour
             newObject.transform.parent = shatter.transform;
             newObject.transform.localPosition = new Vector3(c, v);
             newObject.GetComponent<SpriteRenderer>().color = color;
-            if (travel)
+            if (travel && Defines.defines.animatedResourceParticles)
             {
                 newObject.GetComponent<Shatter>().Initiate(random.Next(1, 10) / 5f, random.Next(3, 5) / 3f);
                 newObject.GetComponent<Shatter>().Travel(Board.board.playerTurn ? new Vector3(-148, 141) : new Vector3(148, 141), 0.4f);
                 newObject.GetComponent<Rigidbody2D>().AddRelativeForce((direction / 2 + Random.insideUnitCircle) * (int)(100 * speed));
             }
             else newObject.GetComponent<Shatter>().Initiate(random.Next(1, 7), random.Next(1, 3) / 3f);
-            newObject.GetComponent<Rigidbody2D>().AddRelativeForce((direction / 2 + Random.insideUnitCircle / 6) * (int)(100 * speed));
+            newObject.GetComponent<Rigidbody2D>().AddRelativeForce((direction / 2 + Random.insideUnitCircle) * (int)(100 * speed));
             if (block == "0000") direction = RollDirection();
         }
 

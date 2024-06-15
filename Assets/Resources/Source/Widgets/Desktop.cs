@@ -219,13 +219,12 @@ public class Desktop : MonoBehaviour
             else if (title == "Map")
             {
                 if (sitesToRespawn.Count > 0)
-                {
                     for (int i = sitesToRespawn.Count - 1; i >= 0; i--)
                     {
-                        Respawn("Site: " + sitesToRespawn[i].name);
+                        if (sitesToRespawn[i] != null)
+                            Respawn("Site: " + sitesToRespawn[i].name);
                         sitesToRespawn.RemoveAt(i);
                     }
-                }
                 var temp = screen.transform.localPosition;
                 if (queuedPath.Count > 0)
                 {

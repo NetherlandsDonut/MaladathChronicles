@@ -32,6 +32,20 @@ public class Inventory
 
     #region Manipulation
 
+    public void RemoveItem(string name, int amount)
+    {
+        int left = amount;
+        var matching = items.FindAll(x => x.name == name);
+        for (int i = matching.Count - 1; i >= 0 && left > 0; i--)
+        {
+            var temp = matching[i].amount;
+            matching[i].amount -= matching[i].amount >= left ? left : matching[i].amount;
+            if (matching[i].amount == 0)
+                matching.Remove(matching[i]);
+            left -= temp;
+        }
+    }
+
     //Tells whether the player can fit the item in the inventory
     public bool CanAddItem(Item item)
     {

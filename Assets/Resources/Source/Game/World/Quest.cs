@@ -5,6 +5,7 @@ using UnityEngine;
 using static Root;
 
 using static Sound;
+using static SaveGame;
 using static Coloring;
 
 public class Quest
@@ -114,7 +115,7 @@ public class Quest
     //All the sites that need to be respawned after entering the map again
     public static List<Site> sitesToRespawn;
 
-    public void Print()
+    public void Print(string f = "Log")
     {
         AddRegionGroup();
         SetRegionGroupWidth(190);
@@ -123,7 +124,7 @@ public class Quest
         AddHeaderRegion(() =>
         {
             AddLine(name, color != null ? "Black" : "Gray");
-            if (CDesktop.title == "QuestLog")
+            if (f == "Log")
                 if (CDesktop.windows.Exists(x => x.title == "QuestConfirmAbandon"))
                 {
                     AddSmallButton("OtherCloseOff");
@@ -148,10 +149,18 @@ public class Quest
                     AddSmallButton("OtherTrash", (h) =>
                     {
                         PlaySound("DesktopMenuOpen");
-                        SpawnWindowBlueprint("QuestConfirmAbandon");
+                        Respawn("QuestConfirmAbandon");
                         Respawn("QuestList");
                     });
                 }
+            else
+                AddSmallButton("OtherClose", (h) =>
+                {
+                    CloseWindow("Quest" + f);
+                    if (SiteComplex.complex != null) Respawn("Complex");
+                    else if (SiteInstance.instance != null) Respawn("Instance");
+                    PlaySound("DesktopInstanceClose");
+                });
         });
         if (color != null) SetRegionBackgroundAsImage("SkillUpLong" + color);
         if (description != null)
@@ -188,6 +197,36 @@ public class Quest
                 });
                 if (find.maxStack > 1) SpawnFloatingText(CDesktop.LBWindow.LBRegionGroup.LBRegion.transform.position + new Vector3(32, -27) + new Vector3(38, 0) * (rewards.Keys.ToList().IndexOf(item.Key) % 5), item.Value + "", "", "Right");
             }
+        }
+        if (f == "Turn")
+        {
+            AddButtonRegion(() => { AddLine("Complete the Quest"); }, (h) =>
+            {
+                currentSave.player.TurnQuest(this);
+                PlaySound("QuestTurn");
+                CloseWindow(h.window);
+                var find = CDesktop.windows.Find(x => x.title.Contains("QuestAvailable"));
+                if (find != null) find.Respawn();
+                find = CDesktop.windows.Find(x => x.title.Contains("QuestDone"));
+                if (find != null) find.Respawn();
+            });
+        }
+        if (f == "Add")
+        {
+            AddButtonRegion(() => { AddLine("Accept Quest"); }, (h) =>
+            {
+                if (currentSave.player.CanAddQuest(this))
+                {
+                    PlaySound("QuestAdd", 0.2f);
+                    currentSave.player.AddQuest(quest);
+                    CloseWindow(h.window);
+                    var find = CDesktop.windows.Find(x => x.title.Contains("QuestAvailable"));
+                    if (find != null) find.Respawn();
+                    find = CDesktop.windows.Find(x => x.title.Contains("QuestDone"));
+                    if (find != null) find.Respawn();
+                }
+                else PlaySound("QuestFailed", 0.2f);
+            });
         }
     }
 

@@ -140,8 +140,8 @@
           }
         ],
         "completedQuests": [],
-        "level": 9,
-        "experience": 1883,
+        "level": 10,
+        "experience": 798,
         "uniquesGotten": [],
         "reputation": {
           "Southsea Pirates": 0,
@@ -238,7 +238,7 @@
             "Smelt Copper"
           ]
         },
-        "unspentTalentPoints": 1,
+        "unspentTalentPoints": 2,
         "faction": "Stormwind",
         "name": "Allesha",
         "race": "Human",
@@ -390,19 +390,23 @@
         }
       },
       "hour": 9,
-      "minute": 29,
-      "second": 34,
-      "currentSite": "Northern Tract",
+      "minute": 32,
+      "second": 22,
+      "currentSite": "Gnomeregan Outskirts",
       "openedChests": {},
       "siteProgress": {
         "Wicked Grotto": 1,
-        "Northern Tract": 1
+        "Northern Tract": 1,
+        "Gnomeregan Outskirts": 2
       },
       "commonsKilled": {
         "Deeprot Tangler": 1,
-        "Large Crag Boar": 1
+        "Large Crag Boar": 1,
+        "Snow Leopard": 1
       },
-      "raresKilled": {},
+      "raresKilled": {
+        "Gibblewilt": 1
+      },
       "elitesKilled": {},
       "siteVisits": {
         "Northshire Abbey": 1,
@@ -1410,7 +1414,7 @@
         "Bear's Head": 1,
         "Orendil's Retreat": 3,
         "Riverpaw Camp": 3,
-        "Gnomeregan Outskirts": 2
+        "Gnomeregan Outskirts": 4
       },
       "unlockedAreas": [],
       "vendorStock": {},
@@ -1421,9 +1425,9 @@
         }
       },
       "startDate": "2024-06-09T14:12:27.0144066+02:00",
-      "lastLoaded": "2024-06-14T17:57:33.9061668+02:00",
-      "lastPlayed": "2024-06-14T17:58:46.5525932+02:00",
-      "timePlayed": "08:27:29.9140618",
+      "lastLoaded": "2024-06-15T03:13:46.3797719+02:00",
+      "lastPlayed": "2024-06-15T03:13:50.5581933+02:00",
+      "timePlayed": "08:31:47.2145823",
       "lastVisitedTalents": 1
     },
     {
@@ -4527,6 +4531,226 @@
       "lastLoaded": "2024-06-14T18:16:18.4279261+02:00",
       "lastPlayed": "2024-06-14T18:16:19.7659941+02:00",
       "timePlayed": "00:00:51.1600813"
+    },
+    {
+      "player": {
+        "currentQuests": [],
+        "completedQuests": [],
+        "level": 1,
+        "uniquesGotten": [],
+        "reputation": {
+          "Southsea Pirates": 0,
+          "Razormane Tribe": 0,
+          "Pandaren": 0,
+          "Grimtotem Tribe": 0,
+          "Woodpaw Tribe": 0,
+          "The Burning Legion": 0,
+          "Darkspear Tribe": 0,
+          "Stormwind": 4600,
+          "Magram Clan": 0,
+          "Gelkis Clan": 0,
+          "Kolkar Clan": 0,
+          "Orgrimmar": 0,
+          "Frostwolf Clan": 0,
+          "The Defiler's": 0,
+          "Thunder Bluff": 0,
+          "Undercity": 0,
+          "Ironforge": 4250,
+          "Dark Iron Clan": 0,
+          "Wildhammer Clan": 4250,
+          "Winterfall Tribe": 0,
+          "Gnomeregan": 4250,
+          "Darnassus": 4250,
+          "Bloodsail Buccaneers": 0,
+          "Syndicate": 0,
+          "Warsong Outriders": 0,
+          "Stormpike Guard": 4250,
+          "Silverwing Sentinels": 4250,
+          "The League of Arathor": 4250,
+          "Defias Brotherhood": 0,
+          "Dalaran": 4250,
+          "Burning Blade Clan": 0,
+          "Burning Legion": 0,
+          "Shadow Council": 0,
+          "Gordunni Ogres": 0,
+          "Blackrock Clan": 0,
+          "Dragonmaw Clan": 0,
+          "Black Tooth Grin Clan": 0,
+          "Gurubashi Tribe": 0,
+          "Sandfury Tribe": 0,
+          "Twilight's Hammer": 0,
+          "Grimtotem Clan": 0,
+          "Razorfen Tribe": 0,
+          "Stonemaul Ogres": 0,
+          "Dustbelcher Ogres": 0,
+          "Deadwind Ogres": 0,
+          "Venture Co.": 0,
+          "Southsea Freebooters": 0,
+          "Atal'ai Tribe": 0,
+          "Qiraji Empire": 0,
+          "Scarlet Crusade": 0,
+          "Vilebranch Tribe": 0,
+          "Witherbark Tribe": 0,
+          "Mossflayer Tribe": 0,
+          "Frostmane Tribe": 0,
+          "Bloodscalp Tribe": 0,
+          "Skullsplitter Tribe": 0,
+          "Shatterspear Tribe": 0,
+          "Rot Hide Tribe": 0,
+          "Scourge": 0,
+          "Smolderthorn Tribe": 0,
+          "Revantusk Tribe": 0,
+          "Blackpaw Tribe": 0,
+          "Maraudine Clan": 0,
+          "Mosshide Tribe": 0,
+          "Deadwood Tribe": 0,
+          "Bloodtooth Tribe": 0,
+          "Bristleback Tribe": 0
+        },
+        "professionSkills": {},
+        "learnedRecipes": {},
+        "faction": "Stormwind",
+        "name": "Tine",
+        "race": "Human",
+        "spec": "Mage",
+        "gender": "Female",
+        "abilities": {
+          "Staff Proficiency": 1,
+          "Cloth Proficiency": 1,
+          "One Handed Sword Proficiency": 1,
+          "Off Hand Proficiency": 1,
+          "Dagger Proficiency": 1,
+          "Wand Proficiency": 1,
+          "Fireball": 0,
+          "Frostbolt": 0,
+          "Arcane Missiles": 0
+        },
+        "actionBars": [
+          "Fireball",
+          "Frostbolt",
+          "Arcane Missiles"
+        ],
+        "stats": {
+          "stats": {
+            "Stamina": 20,
+            "Strength": 20,
+            "Agility": 20,
+            "Intellect": 23,
+            "Spirit": 23,
+            "Earth Mastery": 1,
+            "Fire Mastery": 3,
+            "Air Mastery": 2,
+            "Water Mastery": 1,
+            "Frost Mastery": 2,
+            "Lightning Mastery": 1,
+            "Arcane Mastery": 3,
+            "Decay Mastery": 1,
+            "Shadow Mastery": 2,
+            "Order Mastery": 3
+          }
+        },
+        "inventory": {
+          "items": [
+            {
+              "rarity": "Common",
+              "name": "Hearthstone",
+              "icon": "itemmiscrune01",
+              "type": "Miscellaneous",
+              "ilvl": 1,
+              "amount": 1,
+              "maxStack": 1,
+              "indestructible": true,
+              "unique": true,
+              "stats": {
+                "stats": {}
+              }
+            }
+          ],
+          "bags": []
+        },
+        "mounts": [],
+        "equipment": {
+          "Main Hand": {
+            "rarity": "Common",
+            "name": "Bent Staff",
+            "icon": "itemstaff08",
+            "detailedType": "Staff",
+            "type": "Two Handed",
+            "ilvl": 2,
+            "lvl": 1,
+            "minDamage": 3,
+            "maxDamage": 5,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 9,
+            "speed": 2.9,
+            "stats": {
+              "stats": {}
+            }
+          },
+          "Feet": {
+            "rarity": "Common",
+            "name": "Apprentice's Boots",
+            "icon": "itemboots09",
+            "type": "Feet",
+            "ilvl": 1,
+            "lvl": 1,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 1,
+            "stats": {
+              "stats": {}
+            }
+          },
+          "Legs": {
+            "rarity": "Poor",
+            "name": "Apprentice's Pants",
+            "icon": "itempants01",
+            "type": "Legs",
+            "armorClass": "Cloth",
+            "ilvl": 1,
+            "lvl": 1,
+            "armor": 2,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 1,
+            "stats": {
+              "stats": {}
+            }
+          },
+          "Chest": {
+            "rarity": "Poor",
+            "name": "Apprentice's Robe",
+            "icon": "itemchestcloth23",
+            "type": "Chest",
+            "armorClass": "Cloth",
+            "ilvl": 1,
+            "lvl": 1,
+            "armor": 3,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 1,
+            "stats": {
+              "stats": {}
+            }
+          }
+        }
+      },
+      "hour": 7,
+      "currentSite": "Northshire Abbey",
+      "ringOfLaw": "Hedrum the Creeper",
+      "openedChests": {},
+      "siteProgress": {},
+      "commonsKilled": {},
+      "raresKilled": {},
+      "elitesKilled": {},
+      "siteVisits": {
+        "Northshire Abbey": 1
+      },
+      "unlockedAreas": [],
+      "vendorStock": {},
+      "banks": {},
+      "startDate": "2024-06-15T03:13:56.8190559+02:00"
     }
   ]
 }

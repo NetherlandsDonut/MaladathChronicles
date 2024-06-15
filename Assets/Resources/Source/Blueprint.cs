@@ -37,8 +37,6 @@ using static SiteHostileArea;
 using static SiteInstance;
 using static SiteComplex;
 using static SiteTown;
-using System.Xml.Linq;
-using System.Net.NetworkInformation;
 
 public class Blueprint
 {
@@ -1892,6 +1890,14 @@ public class Blueprint
             SetAnchor(TopRight, -19, -38);
             quest.Print();
         }),
+        new("QuestAdd", () => {
+            SetAnchor(TopRight, -19, -38);
+            quest.Print("Add");
+        }),
+        new("QuestTurn", () => {
+            SetAnchor(TopRight, -19, -38);
+            quest.Print("Turn");
+        }),
         new("QuestConfirmAbandon", () => {
             SetAnchor(-92, 142);
             AddHeaderGroup();
@@ -2512,7 +2518,15 @@ public class Blueprint
         {
             var quests = currentSave.player.AvailableQuestsAt(complex).OrderBy(x => x.questLevel).ToList();
             if (quests.Count == 0) return;
+            SetAnchor(Top, 0, -38);
             AddQuestList(quests);
+        }),
+        new("ComplexQuestDone", () =>
+        {
+            var quests = currentSave.player.QuestsDoneAt(complex).OrderBy(x => x.questLevel).ToList();
+            if (quests.Count == 0) return;
+            SetAnchor(Bottom, 0, 34);
+            AddQuestList(quests, "Turn");
         }),
 
         //Instance
@@ -2554,7 +2568,15 @@ public class Blueprint
         {
             var quests = currentSave.player.AvailableQuestsAt(instance).OrderBy(x => x.questLevel).ToList();
             if (quests.Count == 0) return;
+            SetAnchor(Top, 0, -38);
             AddQuestList(quests);
+        }),
+        new("InstanceQuestDone", () =>
+        {
+            var quests = currentSave.player.QuestsDoneAt(instance).OrderBy(x => x.questLevel).ToList();
+            if (quests.Count == 0) return;
+            SetAnchor(Bottom, 0, 34);
+            AddQuestList(quests, "Turn");
         }),
 
         //Hostile Area
@@ -2699,7 +2721,15 @@ public class Blueprint
         {
             var quests = currentSave.player.AvailableQuestsAt(area).OrderBy(x => x.questLevel).ToList();
             if (quests.Count == 0) return;
+            SetAnchor(Top, 0, -38);
             AddQuestList(quests);
+        }),
+        new("HostileAreaQuestDone", () =>
+        {
+            var quests = currentSave.player.QuestsDoneAt(area).OrderBy(x => x.questLevel).ToList();
+            if (quests.Count == 0) return;
+            SetAnchor(Bottom, 0, 34);
+            AddQuestList(quests, "Turn");
         }),
 
         //Town
@@ -2870,7 +2900,15 @@ public class Blueprint
         {
             var quests = currentSave.player.AvailableQuestsAt(town).OrderBy(x => x.questLevel).ToList();
             if (quests.Count == 0) return;
+            SetAnchor(Top, 0, -38);
             AddQuestList(quests);
+        }),
+        new("TownQuestDone", () =>
+        {
+            var quests = currentSave.player.QuestsDoneAt(town).OrderBy(x => x.questLevel).ToList();
+            if (quests.Count == 0) return;
+            SetAnchor(Bottom, 0, 34);
+            AddQuestList(quests, "Turn");
         }),
         new("Person", () => {
             SetAnchor(TopLeft, 19, -38);
@@ -4979,6 +5017,7 @@ public class Blueprint
             SpawnWindowBlueprint("HostileAreaDenizens");
             SpawnWindowBlueprint("HostileAreaElites");
             SpawnWindowBlueprint("HostileAreaQuestAvailable");
+            SpawnWindowBlueprint("HostileAreaQuestDone");
             //if (area.fishing) SpawnWindowBlueprint("FishingAnchor");
             SpawnWindowBlueprint("MapToolbarShadow");
             SpawnWindowBlueprint("MapToolbarClockLeft");
@@ -5092,6 +5131,7 @@ public class Blueprint
         {
             SetDesktopBackground(town.Background());
             SpawnWindowBlueprint("TownQuestAvailable");
+            SpawnWindowBlueprint("TownQuestDone");
             SpawnWindowBlueprint("MapToolbarShadow");
             SpawnWindowBlueprint("MapToolbarClockLeft");
             SpawnWindowBlueprint("MapToolbar");
@@ -5193,6 +5233,7 @@ public class Blueprint
             SetDesktopBackground(instance.Background());
             SpawnWindowBlueprint("Instance");
             SpawnWindowBlueprint("InstanceQuestAvailable");
+            SpawnWindowBlueprint("InstanceQuestDone");
             SpawnWindowBlueprint("MapToolbarShadow");
             SpawnWindowBlueprint("MapToolbarClockLeft");
             SpawnWindowBlueprint("MapToolbar");
@@ -5233,6 +5274,7 @@ public class Blueprint
             SetDesktopBackground(complex.Background());
             SpawnWindowBlueprint("Complex");
             SpawnWindowBlueprint("ComplexQuestAvailable");
+            SpawnWindowBlueprint("ComplexQuestDone");
             SpawnWindowBlueprint("MapToolbarShadow");
             SpawnWindowBlueprint("MapToolbarClockLeft");
             SpawnWindowBlueprint("MapToolbar");

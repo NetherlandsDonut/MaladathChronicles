@@ -148,7 +148,7 @@ public class Window : MonoBehaviour
             foreach (var region in regionGroup.regions)
                 foreach (var line in region.lines)
                 {
-                    var objectOffset = (region.checkbox != null ? 15 : 0) + (!region.reverseButtons ? region.bigButtons.Count * 38 : 0);
+                    var objectOffset = (region.checkbox != null ? 15 : 0) + (region.reverseButtons ? region.smallButtons.Count * 19 : region.bigButtons.Count * 38);
                     int length = 0;
                     foreach (var text in line.texts)
                     {
@@ -162,7 +162,7 @@ public class Window : MonoBehaviour
                             if (regionGroup.setWidth == 0)
                                 foreach (var character in part)
                                     length = text.SpawnCharacter(character, length);
-                            else if (9 + (line.align == "Right" ? defines.textPaddingLeft : (line.align == "Right" ? defines.textPaddingRight : 0)) + length + (split.Last() == part ? 0 : Font.fonts["Tahoma Bold"].Length(defines.textWrapEnding)) + Font.fonts["Tahoma Bold"].Length(part) + objectOffset < regionGroup.setWidth - region.smallButtons.Count * 19)
+                            else if (9 + (line.align == "Right" ? defines.textPaddingLeft : (line.align == "Right" ? defines.textPaddingRight : 0)) + length + (split.Last() == part ? 0 : Font.fonts["Tahoma Bold"].Length(defines.textWrapEnding)) + Font.fonts["Tahoma Bold"].Length(part) + objectOffset < regionGroup.setWidth - (region.reverseButtons ? region.bigButtons.Count * 19 : region.smallButtons.Count * 19))
                                 foreach (var character in part)
                                     length = text.SpawnCharacter(character, length);
                             else
@@ -178,7 +178,7 @@ public class Window : MonoBehaviour
                     else if (line.align == "Center")
                         line.transform.localPosition = new Vector3(2 + (region.regionGroup.AutoWidth() / 2) - (length / 2), -region.currentHeight - 3, 0);
                     else if (line.align == "Right")
-                        line.transform.localPosition = new Vector3(-defines.textPaddingLeft + region.regionGroup.AutoWidth() - (region.smallButtons.Count * 19) - length, -region.currentHeight - 3, 0);
+                        line.transform.localPosition = new Vector3(-defines.textPaddingLeft + region.regionGroup.AutoWidth() - (region.reverseButtons ? region.bigButtons.Count * 38 : region.smallButtons.Count * 19) - length, -region.currentHeight - 3, 0);
                     region.currentHeight += 15;
                 }
 
@@ -192,7 +192,7 @@ public class Window : MonoBehaviour
                     smallButton.GetComponent<SpriteRenderer>().sprite = load == null ? Resources.Load<Sprite>("Sprites/Buttons/OtherEmpty") : load;
                     smallButton.GetComponent<SpriteRenderer>().sortingLayerName = layer;
                     if (title.StartsWith("Site: ")) smallButton.GetComponent<SpriteRenderer>().maskInteraction = SpriteMaskInteraction.VisibleInsideMask;
-                    smallButton.transform.localPosition = region.reverseButtons ? new Vector3(10 + 19 * region.smallButtons.IndexOf(smallButton), -10.5f, 0.1f) : new Vector3(regionGroup.AutoWidth() - 10 + region.xExtend + 1.5f - 19 * region.smallButtons.IndexOf(smallButton), -10.5f, 0.1f);
+                    smallButton.transform.localPosition = region.reverseButtons ? new Vector3(10.5f + 19 * region.smallButtons.IndexOf(smallButton), -10.5f, 0.1f) : new Vector3(regionGroup.AutoWidth() - 10 + region.xExtend + 1.5f - 19 * region.smallButtons.IndexOf(smallButton), -10.5f, 0.1f);
                     if (smallButton.gameObject.GetComponent<BoxCollider2D>() == null)
                         smallButton.gameObject.AddComponent<BoxCollider2D>();
                     if (smallButton.gameObject.GetComponent<Highlightable>() == null)
@@ -401,10 +401,10 @@ public class Window : MonoBehaviour
                                 region.borders[i + 4].GetComponent<SpriteRenderer>().sprite = null;
                         else
                         {
-                            region.borders[4].transform.localPosition = new Vector3(3.5f + (region.reverseButtons ? 0 : 38 * region.bigButtons.Count), -3.5f, 0.05f);
-                            region.borders[5].transform.localPosition = new Vector3(regionGroup.AutoWidth() + region.xExtend - 1.5f - (region.reverseButtons && region.bigButtons.Count > 0 ? region.bigButtons.Count * 38 : 19 * region.smallButtons.Count), -3.5f, 0.05f);
-                            region.borders[6].transform.localPosition = new Vector3(3.5f + (region.reverseButtons ? 0 : 38 * region.bigButtons.Count), -region.AutoHeight() - 2.5f - region.yExtend, 0.05f);
-                            region.borders[7].transform.localPosition = new Vector3(regionGroup.AutoWidth() + region.xExtend - 1.5f - (region.reverseButtons && region.bigButtons.Count > 0 ? region.bigButtons.Count * 38 : (region.bigButtons.Count > 0 || region.lines.Count > 1 ? 0 : 19 * region.smallButtons.Count)), -region.AutoHeight() - 2.5f - region.yExtend, 0.05f);
+                            region.borders[4].transform.localPosition = new Vector3(3.5f + (region.reverseButtons ? 19 * region.smallButtons.Count : 38 * region.bigButtons.Count), -3.5f, 0.05f);
+                            region.borders[5].transform.localPosition = new Vector3(regionGroup.AutoWidth() + region.xExtend - 1.5f - (region.reverseButtons ? region.bigButtons.Count * 38 : 19 * region.smallButtons.Count), -3.5f, 0.05f);
+                            region.borders[6].transform.localPosition = new Vector3(3.5f + (region.reverseButtons ? 19 * region.smallButtons.Count : 38 * region.bigButtons.Count), -region.AutoHeight() - 2.5f - region.yExtend, 0.05f);
+                            region.borders[7].transform.localPosition = new Vector3(regionGroup.AutoWidth() + region.xExtend - 1.5f - (region.reverseButtons ? region.bigButtons.Count * 38 : (region.bigButtons.Count > 0 || region.lines.Count > 1 ? 0 : 19 * region.smallButtons.Count)), -region.AutoHeight() - 2.5f - region.yExtend, 0.05f);
                         }
                     }
 

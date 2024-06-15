@@ -87,6 +87,7 @@ public class Defines
     public string markerCharacter;
     public string textWrapEnding;
     public float frameTime;
+    public bool animatedResourceParticles;
     public bool fasterPathfinding;
     public bool splitExperienceBar;
     public bool windowBorders;

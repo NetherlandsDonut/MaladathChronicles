@@ -21,5 +21,6 @@
   "expForExploration": 20,
   "markerCharacter": "_",
   "textWrapEnding": "...",
-  "frameTime": 0.08
+  "frameTime": 0.08,
+  "animatedResourceParticles": true
 }
