@@ -4891,7 +4891,7 @@ public class Blueprint
             AddPaddingRegion(() =>
             {
                 SetRegionAsGroupExtender();
-                SetRegionBackgroundAsImage("Specs/" + currentSave.player.spec + currentSave.player.Spec().talentTrees[currentSave.lastVisitedTalents].name + "Right");
+                SetRegionBackgroundAsImage("Specs/" + currentSave.player.spec.Clean() + currentSave.player.Spec().talentTrees[currentSave.lastVisitedTalents].name.Clean() + "Right");
                 if (currentSave.player.TreeCompletion(currentSave.lastVisitedTalents, 0) < defines.adeptTreeRequirement)
                     SetRegionBackgroundToGrayscale();
             });
@@ -4914,7 +4914,7 @@ public class Blueprint
             AddPaddingRegion(() =>
             {
                 SetRegionAsGroupExtender();
-                SetRegionBackgroundAsImage("Specs/" + currentSave.player.spec + currentSave.player.Spec().talentTrees[currentSave.lastVisitedTalents].name + "Left");
+                SetRegionBackgroundAsImage("Specs/" + currentSave.player.spec.Clean() + currentSave.player.Spec().talentTrees[currentSave.lastVisitedTalents].name.Clean() + "Left");
             });
             AddHeaderRegion(() =>
             {

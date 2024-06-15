@@ -1691,9 +1691,9 @@
         }
       },
       "startDate": "2024-06-09T14:12:27.0144066+02:00",
-      "lastLoaded": "2024-06-15T16:46:37.3339348+02:00",
-      "lastPlayed": "2024-06-15T16:58:15.0280954+02:00",
-      "timePlayed": "08:58:42.7353955",
+      "lastLoaded": "2024-06-15T18:37:54.0083138+02:00",
+      "lastPlayed": "2024-06-15T18:37:59.579732+02:00",
+      "timePlayed": "08:58:56.0502447",
       "lastVisitedTalents": 1
     },
     {
@@ -3327,9 +3327,10 @@
       "unlockedAreas": [],
       "vendorStock": {},
       "startDate": "2024-06-10T03:15:00.6242447+02:00",
-      "lastLoaded": "2024-06-14T18:05:54.4765572+02:00",
-      "lastPlayed": "2024-06-14T18:06:56.3705908+02:00",
-      "timePlayed": "00:25:27.3340508"
+      "lastLoaded": "2024-06-15T18:38:01.0078618+02:00",
+      "lastPlayed": "2024-06-15T18:38:14.898145+02:00",
+      "timePlayed": "00:25:41.2243340",
+      "lastVisitedTalents": 2
     },
     {
       "player": {
@@ -4960,9 +4961,9 @@
       "vendorStock": {},
       "banks": {},
       "startDate": "2024-06-14T18:07:06.2505989+02:00",
-      "lastLoaded": "2024-06-15T16:33:37.8311696+02:00",
-      "lastPlayed": "2024-06-15T16:37:06.9388623+02:00",
-      "timePlayed": "00:12:32.7379046"
+      "lastLoaded": "2024-06-15T19:14:06.6494679+02:00",
+      "lastPlayed": "2024-06-15T19:14:14.6717865+02:00",
+      "timePlayed": "00:23:51.6689819"
     },
     {
       "player": {
@@ -5183,6 +5184,428 @@
       "vendorStock": {},
       "banks": {},
       "startDate": "2024-06-15T03:13:56.8190559+02:00"
+    },
+    {
+      "player": {
+        "currentQuests": [],
+        "completedQuests": [],
+        "level": 1,
+        "uniquesGotten": [],
+        "reputation": {
+          "Southsea Pirates": 0,
+          "Razormane Tribe": 0,
+          "Pandaren": 0,
+          "Grimtotem Tribe": 0,
+          "Woodpaw Tribe": 0,
+          "The Burning Legion": 0,
+          "Darkspear Tribe": 4250,
+          "Stormwind": 0,
+          "Magram Clan": 0,
+          "Gelkis Clan": 0,
+          "Kolkar Clan": 0,
+          "Orgrimmar": 4250,
+          "Frostwolf Clan": 4250,
+          "The Defiler's": 4250,
+          "Thunder Bluff": 4600,
+          "Undercity": 4250,
+          "Ironforge": 0,
+          "Dark Iron Clan": 0,
+          "Wildhammer Clan": 0,
+          "Winterfall Tribe": 0,
+          "Gnomeregan": 0,
+          "Darnassus": 0,
+          "Bloodsail Buccaneers": 0,
+          "Syndicate": 0,
+          "Warsong Outriders": 4250,
+          "Stormpike Guard": 0,
+          "Silverwing Sentinels": 0,
+          "The League of Arathor": 0,
+          "Defias Brotherhood": 0,
+          "Dalaran": 0,
+          "Burning Blade Clan": 0,
+          "Burning Legion": 0,
+          "Shadow Council": 0,
+          "Gordunni Ogres": 0,
+          "Blackrock Clan": 0,
+          "Dragonmaw Clan": 0,
+          "Black Tooth Grin Clan": 0,
+          "Gurubashi Tribe": 0,
+          "Sandfury Tribe": 0,
+          "Twilight's Hammer": 0,
+          "Grimtotem Clan": 0,
+          "Razorfen Tribe": 0,
+          "Stonemaul Ogres": 4250,
+          "Dustbelcher Ogres": 0,
+          "Deadwind Ogres": 0,
+          "Venture Co.": 0,
+          "Southsea Freebooters": 0,
+          "Atal'ai Tribe": 0,
+          "Qiraji Empire": 0,
+          "Scarlet Crusade": 0,
+          "Vilebranch Tribe": 0,
+          "Witherbark Tribe": 0,
+          "Mossflayer Tribe": 0,
+          "Frostmane Tribe": 0,
+          "Bloodscalp Tribe": 0,
+          "Skullsplitter Tribe": 0,
+          "Shatterspear Tribe": 0,
+          "Rot Hide Tribe": 0,
+          "Scourge": 0,
+          "Smolderthorn Tribe": 0,
+          "Revantusk Tribe": 4250,
+          "Blackpaw Tribe": 0,
+          "Maraudine Clan": 0,
+          "Mosshide Tribe": 0,
+          "Deadwood Tribe": 0,
+          "Bloodtooth Tribe": 0,
+          "Bristleback Tribe": 0
+        },
+        "professionSkills": {},
+        "learnedRecipes": {},
+        "faction": "Thunder Bluff",
+        "name": "Urimu",
+        "race": "Tauren",
+        "spec": "Shaman",
+        "gender": "Female",
+        "homeLocation": "Camp Narache",
+        "abilities": {
+          "Dual Wielding Proficiency": 0,
+          "Two Handed Axe Proficiency": 1,
+          "Polearm Proficiency": 1,
+          "Leather Proficiency": 1,
+          "Mail Proficiency": 0,
+          "One Handed Axe Proficiency": 1,
+          "One Handed Mace Proficiency": 1,
+          "Fist Weapon Proficiency": 1,
+          "Off Hand Proficiency": 1,
+          "Dagger Proficiency": 1,
+          "Lightning Bolt": 0,
+          "Stormstrike": 0,
+          "Healing Wave": 0
+        },
+        "actionBars": [
+          "Healing Wave"
+        ],
+        "stats": {
+          "stats": {
+            "Stamina": 23,
+            "Strength": 26,
+            "Agility": 15,
+            "Intellect": 16,
+            "Spirit": 23,
+            "Earth Mastery": 3,
+            "Fire Mastery": 2,
+            "Air Mastery": 3,
+            "Water Mastery": 3,
+            "Frost Mastery": 1,
+            "Lightning Mastery": 1,
+            "Arcane Mastery": 2,
+            "Decay Mastery": 1,
+            "Shadow Mastery": 1,
+            "Order Mastery": 2
+          }
+        },
+        "inventory": {
+          "items": [
+            {
+              "rarity": "Common",
+              "name": "Hearthstone",
+              "icon": "itemmiscrune01",
+              "type": "Miscellaneous",
+              "ilvl": 1,
+              "amount": 1,
+              "maxStack": 1,
+              "indestructible": true,
+              "unique": true,
+              "stats": {
+                "stats": {}
+              }
+            }
+          ],
+          "bags": []
+        },
+        "mounts": [],
+        "equipment": {
+          "Main Hand": {
+            "rarity": "Common",
+            "name": "Worn Mace",
+            "icon": "itemmace03",
+            "detailedType": "Mace",
+            "type": "One Handed",
+            "ilvl": 2,
+            "lvl": 1,
+            "minDamage": 1,
+            "maxDamage": 3,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 7,
+            "speed": 1.9,
+            "stats": {
+              "stats": {}
+            }
+          },
+          "Legs": {
+            "rarity": "Poor",
+            "name": "Primitive Kilt",
+            "icon": "itempants02",
+            "type": "Legs",
+            "armorClass": "Leather",
+            "ilvl": 1,
+            "lvl": 1,
+            "armor": 14,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 1,
+            "stats": {
+              "stats": {}
+            }
+          },
+          "Chest": {
+            "rarity": "Common",
+            "name": "Primitive Mantle",
+            "icon": "itemmisccape14",
+            "type": "Chest",
+            "ilvl": 1,
+            "lvl": 1,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 1,
+            "stats": {
+              "stats": {}
+            }
+          }
+        }
+      },
+      "hour": 7,
+      "currentSite": "Camp Narache",
+      "ringOfLaw": "Eviscerator",
+      "forlornCloister": "Azshir the Sleepless",
+      "openedChests": {},
+      "siteProgress": {},
+      "commonsKilled": {},
+      "raresKilled": {},
+      "elitesKilled": {},
+      "siteVisits": {
+        "Camp Narache": 1
+      },
+      "unlockedAreas": [],
+      "vendorStock": {},
+      "banks": {},
+      "startDate": "2024-06-15T18:49:33.8074026+02:00",
+      "lastLoaded": "2024-06-15T19:13:58.7680446+02:00",
+      "lastPlayed": "2024-06-15T19:14:04.4177452+02:00",
+      "timePlayed": "00:03:43.5257981",
+      "lastVisitedTalents": 1
+    },
+    {
+      "player": {
+        "currentQuests": [],
+        "completedQuests": [],
+        "level": 1,
+        "uniquesGotten": [],
+        "reputation": {
+          "Southsea Pirates": 0,
+          "Razormane Tribe": 0,
+          "Pandaren": 0,
+          "Grimtotem Tribe": 0,
+          "Woodpaw Tribe": 0,
+          "The Burning Legion": 0,
+          "Darkspear Tribe": 0,
+          "Stormwind": 4250,
+          "Magram Clan": 0,
+          "Gelkis Clan": 0,
+          "Kolkar Clan": 0,
+          "Orgrimmar": 0,
+          "Frostwolf Clan": 0,
+          "The Defiler's": 0,
+          "Thunder Bluff": 0,
+          "Undercity": 0,
+          "Ironforge": 4250,
+          "Dark Iron Clan": 0,
+          "Wildhammer Clan": 4250,
+          "Winterfall Tribe": 0,
+          "Gnomeregan": 4250,
+          "Darnassus": 4600,
+          "Bloodsail Buccaneers": 0,
+          "Syndicate": 0,
+          "Warsong Outriders": 0,
+          "Stormpike Guard": 4250,
+          "Silverwing Sentinels": 4250,
+          "The League of Arathor": 4250,
+          "Defias Brotherhood": 0,
+          "Dalaran": 4250,
+          "Burning Blade Clan": 0,
+          "Burning Legion": 0,
+          "Shadow Council": 0,
+          "Gordunni Ogres": 0,
+          "Blackrock Clan": 0,
+          "Dragonmaw Clan": 0,
+          "Black Tooth Grin Clan": 0,
+          "Gurubashi Tribe": 0,
+          "Sandfury Tribe": 0,
+          "Twilight's Hammer": 0,
+          "Grimtotem Clan": 0,
+          "Razorfen Tribe": 0,
+          "Stonemaul Ogres": 0,
+          "Dustbelcher Ogres": 0,
+          "Deadwind Ogres": 0,
+          "Venture Co.": 0,
+          "Southsea Freebooters": 0,
+          "Atal'ai Tribe": 0,
+          "Qiraji Empire": 0,
+          "Scarlet Crusade": 0,
+          "Vilebranch Tribe": 0,
+          "Witherbark Tribe": 0,
+          "Mossflayer Tribe": 0,
+          "Frostmane Tribe": 0,
+          "Bloodscalp Tribe": 0,
+          "Skullsplitter Tribe": 0,
+          "Shatterspear Tribe": 0,
+          "Rot Hide Tribe": 0,
+          "Scourge": 0,
+          "Smolderthorn Tribe": 0,
+          "Revantusk Tribe": 0,
+          "Blackpaw Tribe": 0,
+          "Maraudine Clan": 0,
+          "Mosshide Tribe": 0,
+          "Deadwood Tribe": 0,
+          "Bloodtooth Tribe": 0,
+          "Bristleback Tribe": 0
+        },
+        "professionSkills": {},
+        "learnedRecipes": {},
+        "faction": "Darnassus",
+        "name": "Shyl'las",
+        "race": "Night Elf",
+        "spec": "Druid",
+        "gender": "Male",
+        "homeLocation": "Aldrassil",
+        "abilities": {
+          "Two Handed Mace Proficiency": 1,
+          "Staff Proficiency": 1,
+          "Leather Proficiency": 1,
+          "One Handed Mace Proficiency": 1,
+          "Off Hand Proficiency": 1,
+          "Fist Weapon Proficiency": 1,
+          "Dagger Proficiency": 1,
+          "Idol Proficiency": 1,
+          "Wrath": 0,
+          "Rake": 0,
+          "Regrowth": 0
+        },
+        "actionBars": [],
+        "stats": {
+          "stats": {
+            "Stamina": 20,
+            "Strength": 17,
+            "Agility": 25,
+            "Intellect": 22,
+            "Spirit": 22,
+            "Earth Mastery": 2,
+            "Fire Mastery": 1,
+            "Air Mastery": 3,
+            "Water Mastery": 3,
+            "Frost Mastery": 1,
+            "Lightning Mastery": 1,
+            "Arcane Mastery": 3,
+            "Decay Mastery": 1,
+            "Shadow Mastery": 2,
+            "Order Mastery": 2
+          }
+        },
+        "inventory": {
+          "items": [
+            {
+              "rarity": "Common",
+              "name": "Hearthstone",
+              "icon": "itemmiscrune01",
+              "type": "Miscellaneous",
+              "ilvl": 1,
+              "amount": 1,
+              "maxStack": 1,
+              "indestructible": true,
+              "unique": true,
+              "stats": {
+                "stats": {}
+              }
+            },
+            {
+              "rarity": "Poor",
+              "name": "Novice's Robe",
+              "icon": "itemchestcloth13",
+              "type": "Chest",
+              "armorClass": "Cloth",
+              "ilvl": 1,
+              "lvl": 1,
+              "armor": 3,
+              "amount": 1,
+              "maxStack": 1,
+              "price": 1,
+              "stats": {
+                "stats": {}
+              }
+            },
+            {
+              "rarity": "Poor",
+              "name": "Novice's Pants",
+              "icon": "itempants01",
+              "type": "Legs",
+              "armorClass": "Cloth",
+              "ilvl": 1,
+              "lvl": 1,
+              "armor": 2,
+              "amount": 1,
+              "maxStack": 1,
+              "price": 1,
+              "stats": {
+                "stats": {}
+              }
+            }
+          ],
+          "bags": []
+        },
+        "mounts": [],
+        "equipment": {
+          "Main Hand": {
+            "rarity": "Common",
+            "name": "Handcrafted Staff",
+            "icon": "itemstaff21",
+            "detailedType": "Staff",
+            "type": "Two Handed",
+            "ilvl": 2,
+            "lvl": 1,
+            "minDamage": 3,
+            "maxDamage": 5,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 9,
+            "speed": 2.9,
+            "stats": {
+              "stats": {}
+            }
+          }
+        }
+      },
+      "hour": 7,
+      "currentSite": "Aldrassil",
+      "ringOfLaw": "Grizzle",
+      "forlornCloister": "Ironspine",
+      "openedChests": {},
+      "siteProgress": {},
+      "commonsKilled": {},
+      "raresKilled": {},
+      "elitesKilled": {},
+      "siteVisits": {
+        "Aldrassil": 1
+      },
+      "unlockedAreas": [],
+      "vendorStock": {},
+      "banks": {},
+      "startDate": "2024-06-15T19:17:11.4512344+02:00",
+      "lastLoaded": "2024-06-15T19:17:11.9302088+02:00",
+      "lastPlayed": "2024-06-15T19:17:17.3707063+02:00",
+      "timePlayed": "00:00:05.4404975",
+      "lastVisitedTalents": 2
     }
   ]
 }
