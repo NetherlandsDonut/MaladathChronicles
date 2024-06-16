@@ -5401,7 +5401,8 @@
       "player": {
         "currentQuests": [],
         "completedQuests": [],
-        "level": 1,
+        "level": 11,
+        "experience": 4800,
         "uniquesGotten": [],
         "reputation": {
           "Southsea Pirates": 0,
@@ -5491,7 +5492,17 @@
           "Idol Proficiency": 1,
           "Wrath": 0,
           "Rake": 0,
-          "Regrowth": 0
+          "Regrowth": 0,
+          "Moonfire": 0,
+          "Light of the Sun": 0,
+          "Sunfire": 0,
+          "Star Surge": 0,
+          "Lunar Shrapnel": 0,
+          "Cosmic Rapidity": 0,
+          "Faerie Fire": 0,
+          "Shooting Stars": 0,
+          "Eclipse": 0,
+          "Cyclone": 0
         },
         "actionBars": [],
         "stats": {
@@ -5602,9 +5613,9 @@
       "vendorStock": {},
       "banks": {},
       "startDate": "2024-06-15T19:17:11.4512344+02:00",
-      "lastLoaded": "2024-06-15T19:17:11.9302088+02:00",
-      "lastPlayed": "2024-06-15T19:17:17.3707063+02:00",
-      "timePlayed": "00:00:05.4404975",
+      "lastLoaded": "2024-06-16T04:07:47.480574+02:00",
+      "lastPlayed": "2024-06-16T04:07:50.868541+02:00",
+      "timePlayed": "00:00:42.1953274",
       "lastVisitedTalents": 2
     }
   ]

@@ -778,11 +778,12 @@
     "requiredSkill": 1,
     "item": "Copper Ore",
     "rarity": 100.0,
-    "category": "Copper Ore",
+    "category": "Copper Vein",
     "dropStart": 1,
     "dropEnd": 15,
     "dropCount": 3,
     "tags": [
+      "Main",
       "Ore",
       "CommonMaterial"
     ]
@@ -792,7 +793,7 @@
     "requiredSkill": 1,
     "item": "Rough Stone",
     "rarity": 66.0,
-    "category": "Copper Ore",
+    "category": "Copper Vein",
     "dropStart": 1,
     "dropEnd": 15,
     "dropCount": 2,
@@ -806,7 +807,7 @@
     "requiredSkill": 1,
     "item": "Malachite",
     "rarity": 1.0,
-    "category": "Copper Ore",
+    "category": "Copper Vein",
     "dropStart": 1,
     "dropEnd": 15,
     "dropCount": 1,
@@ -820,7 +821,7 @@
     "requiredSkill": 1,
     "item": "Tigerseye",
     "rarity": 1.0,
-    "category": "Copper Ore",
+    "category": "Copper Vein",
     "dropStart": 1,
     "dropEnd": 15,
     "dropCount": 1,
@@ -834,7 +835,7 @@
     "requiredSkill": 1,
     "item": "Shadowgem",
     "rarity": 1.0,
-    "category": "Copper Ore",
+    "category": "Copper Vein",
     "dropStart": 1,
     "dropEnd": 15,
     "dropCount": 1,
@@ -848,11 +849,12 @@
     "requiredSkill": 65,
     "item": "Tin Ore",
     "rarity": 100.0,
-    "category": "Tin Ore",
+    "category": "Tin Vein",
     "dropStart": 16,
     "dropEnd": 25,
     "dropCount": 3,
     "tags": [
+      "Main",
       "Ore",
       "CommonMaterial"
     ]
@@ -862,7 +864,7 @@
     "requiredSkill": 65,
     "item": "Coarse Stone",
     "rarity": 66.0,
-    "category": "Tin Ore",
+    "category": "Tin Vein",
     "dropStart": 16,
     "dropEnd": 25,
     "dropCount": 2,
@@ -876,7 +878,7 @@
     "requiredSkill": 65,
     "item": "Jade",
     "rarity": 1.0,
-    "category": "Tin Ore",
+    "category": "Tin Vein",
     "dropStart": 16,
     "dropEnd": 25,
     "dropCount": 1,
@@ -890,7 +892,7 @@
     "requiredSkill": 65,
     "item": "Lesser Moonstone",
     "rarity": 1.0,
-    "category": "Tin Ore",
+    "category": "Tin Vein",
     "dropStart": 16,
     "dropEnd": 25,
     "dropCount": 1,
@@ -904,7 +906,7 @@
     "requiredSkill": 65,
     "item": "Moss Agate",
     "rarity": 1.0,
-    "category": "Tin Ore",
+    "category": "Tin Vein",
     "dropStart": 16,
     "dropEnd": 25,
     "dropCount": 1,
@@ -918,7 +920,7 @@
     "requiredSkill": 65,
     "item": "Shadowgem",
     "rarity": 1.0,
-    "category": "Tin Ore",
+    "category": "Tin Vein",
     "dropStart": 16,
     "dropEnd": 25,
     "dropCount": 1,
@@ -932,11 +934,12 @@
     "requiredSkill": 75,
     "item": "Silver Ore",
     "rarity": 100.0,
-    "category": "Silver Ore",
+    "category": "Silver Vein",
     "dropStart": 16,
     "dropEnd": 25,
     "dropCount": 2,
     "tags": [
+      "Main",
       "Ore",
       "RareMaterial"
     ]
@@ -946,7 +949,7 @@
     "requiredSkill": 75,
     "item": "Lesser Moonstone",
     "rarity": 2.0,
-    "category": "Silver Ore",
+    "category": "Silver Vein",
     "dropStart": 16,
     "dropEnd": 25,
     "dropCount": 2,
@@ -960,7 +963,7 @@
     "requiredSkill": 75,
     "item": "Moss Agate",
     "rarity": 2.0,
-    "category": "Silver Ore",
+    "category": "Silver Vein",
     "dropStart": 16,
     "dropEnd": 25,
     "dropCount": 2,
@@ -974,7 +977,7 @@
     "requiredSkill": 75,
     "item": "Shadowgem",
     "rarity": 2.0,
-    "category": "Silver Ore",
+    "category": "Silver Vein",
     "dropStart": 16,
     "dropEnd": 25,
     "dropCount": 2,
@@ -988,11 +991,12 @@
     "requiredSkill": 125,
     "item": "Iron Ore",
     "rarity": 100.0,
-    "category": "Iron Ore",
+    "category": "Iron Vein",
     "dropStart": 26,
     "dropEnd": 40,
     "dropCount": 3,
     "tags": [
+      "Main",
       "Ore",
       "CommonMaterial"
     ]
@@ -1002,7 +1006,7 @@
     "requiredSkill": 125,
     "item": "Heavy Stone",
     "rarity": 66.0,
-    "category": "Iron Ore",
+    "category": "Iron Vein",
     "dropStart": 26,
     "dropEnd": 40,
     "dropCount": 2,
@@ -1016,7 +1020,7 @@
     "requiredSkill": 125,
     "item": "Aquamarine",
     "rarity": 1.0,
-    "category": "Iron Ore",
+    "category": "Iron Vein",
     "dropStart": 26,
     "dropEnd": 40,
     "dropCount": 1,
@@ -1030,7 +1034,7 @@
     "requiredSkill": 125,
     "item": "Citrine",
     "rarity": 1.0,
-    "category": "Iron Ore",
+    "category": "Iron Vein",
     "dropStart": 26,
     "dropEnd": 40,
     "dropCount": 1,
@@ -1044,7 +1048,7 @@
     "requiredSkill": 125,
     "item": "Jade",
     "rarity": 1.0,
-    "category": "Iron Ore",
+    "category": "Iron Vein",
     "dropStart": 26,
     "dropEnd": 40,
     "dropCount": 1,
@@ -1058,7 +1062,7 @@
     "requiredSkill": 125,
     "item": "Lesser Moonstone",
     "rarity": 1.0,
-    "category": "Iron Ore",
+    "category": "Iron Vein",
     "dropStart": 26,
     "dropEnd": 40,
     "dropCount": 1,
@@ -1072,11 +1076,12 @@
     "requiredSkill": 155,
     "item": "Gold Ore",
     "rarity": 100.0,
-    "category": "Gold Ore",
+    "category": "Gold Vein",
     "dropStart": 26,
     "dropEnd": 40,
     "dropCount": 2,
     "tags": [
+      "Main",
       "Ore",
       "RareMaterial"
     ]
@@ -1086,7 +1091,7 @@
     "requiredSkill": 155,
     "item": "Citrine",
     "rarity": 2.0,
-    "category": "Gold Ore",
+    "category": "Gold Vein",
     "dropStart": 26,
     "dropEnd": 40,
     "dropCount": 2,
@@ -1100,7 +1105,7 @@
     "requiredSkill": 155,
     "item": "Jade",
     "rarity": 2.0,
-    "category": "Gold Ore",
+    "category": "Gold Vein",
     "dropStart": 26,
     "dropEnd": 40,
     "dropCount": 2,
@@ -1114,7 +1119,7 @@
     "requiredSkill": 155,
     "item": "Lesser Moonstone",
     "rarity": 2.0,
-    "category": "Gold Ore",
+    "category": "Gold Vein",
     "dropStart": 26,
     "dropEnd": 40,
     "dropCount": 2,
@@ -1128,11 +1133,12 @@
     "requiredSkill": 175,
     "item": "Mithril Ore",
     "rarity": 100.0,
-    "category": "Mithril Ore",
+    "category": "Mithril Vein",
     "dropStart": 36,
     "dropEnd": 50,
     "dropCount": 3,
     "tags": [
+      "Main",
       "Ore",
       "CommonMaterial"
     ]
@@ -1142,7 +1148,7 @@
     "requiredSkill": 175,
     "item": "Solid Stone",
     "rarity": 66.0,
-    "category": "Mithril Ore",
+    "category": "Mithril Vein",
     "dropStart": 36,
     "dropEnd": 50,
     "dropCount": 2,
@@ -1156,7 +1162,7 @@
     "requiredSkill": 175,
     "item": "Black Vitriol",
     "rarity": 1.0,
-    "category": "Mithril Ore",
+    "category": "Mithril Vein",
     "dropStart": 36,
     "dropEnd": 50,
     "dropCount": 1,
@@ -1170,7 +1176,7 @@
     "requiredSkill": 175,
     "item": "Aquamarine",
     "rarity": 1.0,
-    "category": "Mithril Ore",
+    "category": "Mithril Vein",
     "dropStart": 36,
     "dropEnd": 50,
     "dropCount": 1,
@@ -1184,7 +1190,7 @@
     "requiredSkill": 175,
     "item": "Citrine",
     "rarity": 1.0,
-    "category": "Mithril Ore",
+    "category": "Mithril Vein",
     "dropStart": 36,
     "dropEnd": 50,
     "dropCount": 1,
@@ -1198,7 +1204,7 @@
     "requiredSkill": 175,
     "item": "Star Ruby",
     "rarity": 1.0,
-    "category": "Mithril Ore",
+    "category": "Mithril Vein",
     "dropStart": 36,
     "dropEnd": 50,
     "dropCount": 1,
@@ -1212,11 +1218,12 @@
     "requiredSkill": 230,
     "item": "Truesilver Ore",
     "rarity": 100.0,
-    "category": "Truesilver Ore",
+    "category": "Truesilver Vein",
     "dropStart": 36,
     "dropEnd": 50,
     "dropCount": 2,
     "tags": [
+      "Main",
       "Ore",
       "RareMaterial"
     ]
@@ -1226,7 +1233,7 @@
     "requiredSkill": 230,
     "item": "Aquamarine",
     "rarity": 2.0,
-    "category": "Truesilver Ore",
+    "category": "Truesilver Vein",
     "dropStart": 36,
     "dropEnd": 50,
     "dropCount": 1,
@@ -1240,7 +1247,7 @@
     "requiredSkill": 230,
     "item": "Citrine",
     "rarity": 2.0,
-    "category": "Truesilver Ore",
+    "category": "Truesilver Vein",
     "dropStart": 36,
     "dropEnd": 50,
     "dropCount": 1,
@@ -1254,7 +1261,7 @@
     "requiredSkill": 230,
     "item": "Star Ruby",
     "rarity": 2.0,
-    "category": "Truesilver Ore",
+    "category": "Truesilver Vein",
     "dropStart": 36,
     "dropEnd": 50,
     "dropCount": 1,
@@ -1268,11 +1275,12 @@
     "requiredSkill": 250,
     "item": "Thorium Ore",
     "rarity": 100.0,
-    "category": "Thorium Ore",
+    "category": "Thorium Vein",
     "dropStart": 51,
     "dropEnd": 60,
     "dropCount": 3,
     "tags": [
+      "Main",
       "Ore",
       "CommonMaterial"
     ]
@@ -1282,7 +1290,7 @@
     "requiredSkill": 250,
     "item": "Dense Stone",
     "rarity": 66.0,
-    "category": "Thorium Ore",
+    "category": "Thorium Vein",
     "dropStart": 51,
     "dropEnd": 60,
     "dropCount": 2,
@@ -1296,7 +1304,7 @@
     "requiredSkill": 250,
     "item": "Blue Sapphire",
     "rarity": 1.0,
-    "category": "Thorium Ore",
+    "category": "Thorium Vein",
     "dropStart": 51,
     "dropEnd": 60,
     "dropCount": 1,
@@ -1310,7 +1318,7 @@
     "requiredSkill": 250,
     "item": "Large Opal",
     "rarity": 1.0,
-    "category": "Thorium Ore",
+    "category": "Thorium Vein",
     "dropStart": 51,
     "dropEnd": 60,
     "dropCount": 1,
@@ -1324,7 +1332,7 @@
     "requiredSkill": 250,
     "item": "Star Ruby",
     "rarity": 1.0,
-    "category": "Thorium Ore",
+    "category": "Thorium Vein",
     "dropStart": 51,
     "dropEnd": 60,
     "dropCount": 1,
@@ -1338,7 +1346,7 @@
     "requiredSkill": 250,
     "item": "Arcane Crystal",
     "rarity": 1.0,
-    "category": "Thorium Ore",
+    "category": "Thorium Vein",
     "dropStart": 51,
     "dropEnd": 60,
     "dropCount": 1,
@@ -1352,7 +1360,7 @@
     "requiredSkill": 250,
     "item": "Azerothian Diamond",
     "rarity": 1.0,
-    "category": "Thorium Ore",
+    "category": "Thorium Vein",
     "dropStart": 51,
     "dropEnd": 60,
     "dropCount": 1,
@@ -1366,7 +1374,7 @@
     "requiredSkill": 250,
     "item": "Huge Emerald",
     "rarity": 1.0,
-    "category": "Thorium Ore",
+    "category": "Thorium Vein",
     "dropStart": 51,
     "dropEnd": 60,
     "dropCount": 1,
@@ -1380,13 +1388,533 @@
     "requiredSkill": 250,
     "item": "Black Vitriol",
     "rarity": 1.0,
-    "category": "Thorium Ore",
+    "category": "Thorium Vein",
     "dropStart": 51,
     "dropEnd": 60,
     "dropCount": 2,
     "tags": [
       "Gem",
       "RareMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Mining",
+    "requiredSkill": 230,
+    "item": "Dark Iron Ore",
+    "rarity": 100.0,
+    "category": "Dark Iron Vein",
+    "dropStart": 43,
+    "dropEnd": 60,
+    "dropCount": 3,
+    "tags": [
+      "Main",
+      "Ore",
+      "CommonMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Mining",
+    "requiredSkill": 230,
+    "item": "Blood of the Mountain",
+    "rarity": 1.0,
+    "category": "Dark Iron Vein",
+    "dropStart": 51,
+    "dropEnd": 60,
+    "dropCount": 1,
+    "tags": [
+      "Gem",
+      "RareMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Mining",
+    "requiredSkill": 230,
+    "item": "Black Diamond",
+    "rarity": 1.0,
+    "category": "Dark Iron Vein",
+    "dropStart": 51,
+    "dropEnd": 60,
+    "dropCount": 1,
+    "tags": [
+      "Gem",
+      "RareMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Mining",
+    "requiredSkill": 230,
+    "item": "Black Vitriol",
+    "rarity": 1.0,
+    "category": "Dark Iron Vein",
+    "dropStart": 51,
+    "dropEnd": 60,
+    "dropCount": 2,
+    "tags": [
+      "Gem",
+      "RareMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Herbalism",
+    "requiredSkill": 1,
+    "item": "Peacebloom",
+    "rarity": 100.0,
+    "category": "Peacebloom",
+    "dropStart": 1,
+    "dropEnd": 60,
+    "dropCount": 3,
+    "tags": [
+      "Main",
+      "Herb",
+      "CommonMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Herbalism",
+    "requiredSkill": 1,
+    "item": "Silverleaf",
+    "rarity": 100.0,
+    "category": "Silverleaf",
+    "dropStart": 1,
+    "dropEnd": 60,
+    "dropCount": 3,
+    "tags": [
+      "Main",
+      "Herb",
+      "CommonMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Herbalism",
+    "requiredSkill": 15,
+    "item": "Earthroot",
+    "rarity": 100.0,
+    "category": "Earthroot",
+    "dropStart": 1,
+    "dropEnd": 60,
+    "dropCount": 3,
+    "tags": [
+      "Main",
+      "Herb",
+      "CommonMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Herbalism",
+    "requiredSkill": 50,
+    "item": "Mageroyal",
+    "rarity": 100.0,
+    "category": "Mageroyal",
+    "dropStart": 1,
+    "dropEnd": 60,
+    "dropCount": 3,
+    "tags": [
+      "Main",
+      "Herb",
+      "CommonMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Herbalism",
+    "requiredSkill": 50,
+    "item": "Swiftthistle",
+    "rarity": 100.0,
+    "category": "Mageroyal",
+    "dropStart": 1,
+    "dropEnd": 60,
+    "dropCount": 2,
+    "tags": [
+      "Herb",
+      "CommonMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Herbalism",
+    "requiredSkill": 70,
+    "item": "Briarthorn",
+    "rarity": 100.0,
+    "category": "Briarthorn",
+    "dropStart": 1,
+    "dropEnd": 60,
+    "dropCount": 3,
+    "tags": [
+      "Main",
+      "Herb",
+      "CommonMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Herbalism",
+    "requiredSkill": 70,
+    "item": "Swiftthistle",
+    "rarity": 100.0,
+    "category": "Briarthorn",
+    "dropStart": 1,
+    "dropEnd": 60,
+    "dropCount": 2,
+    "tags": [
+      "Herb",
+      "CommonMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Herbalism",
+    "requiredSkill": 85,
+    "item": "Stranglekelp",
+    "rarity": 100.0,
+    "category": "Stranglekelp",
+    "dropStart": 1,
+    "dropEnd": 60,
+    "dropCount": 3,
+    "tags": [
+      "Main",
+      "Herb",
+      "CommonMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Herbalism",
+    "requiredSkill": 100,
+    "item": "Bruiseweed",
+    "rarity": 100.0,
+    "category": "Bruiseweed",
+    "dropStart": 1,
+    "dropEnd": 60,
+    "dropCount": 3,
+    "tags": [
+      "Main",
+      "Herb",
+      "CommonMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Herbalism",
+    "requiredSkill": 115,
+    "item": "Wild Steelbloom",
+    "rarity": 100.0,
+    "category": "Wild Steelbloom",
+    "dropStart": 1,
+    "dropEnd": 60,
+    "dropCount": 3,
+    "tags": [
+      "Main",
+      "Herb",
+      "CommonMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Herbalism",
+    "requiredSkill": 120,
+    "item": "Grave Moss",
+    "rarity": 100.0,
+    "category": "Grave Moss",
+    "dropStart": 1,
+    "dropEnd": 60,
+    "dropCount": 3,
+    "tags": [
+      "Main",
+      "Herb",
+      "CommonMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Herbalism",
+    "requiredSkill": 125,
+    "item": "Kingsblood",
+    "rarity": 100.0,
+    "category": "Kingsblood",
+    "dropStart": 1,
+    "dropEnd": 60,
+    "dropCount": 3,
+    "tags": [
+      "Main",
+      "Herb",
+      "CommonMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Herbalism",
+    "requiredSkill": 150,
+    "item": "Liferoot",
+    "rarity": 100.0,
+    "category": "Liferoot",
+    "dropStart": 1,
+    "dropEnd": 60,
+    "dropCount": 3,
+    "tags": [
+      "Main",
+      "Herb",
+      "CommonMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Herbalism",
+    "requiredSkill": 160,
+    "item": "Fadeleaf",
+    "rarity": 100.0,
+    "category": "Fadeleaf",
+    "dropStart": 1,
+    "dropEnd": 60,
+    "dropCount": 3,
+    "tags": [
+      "Main",
+      "Herb",
+      "CommonMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Herbalism",
+    "requiredSkill": 170,
+    "item": "Goldthorn",
+    "rarity": 100.0,
+    "category": "Goldthorn",
+    "dropStart": 1,
+    "dropEnd": 60,
+    "dropCount": 3,
+    "tags": [
+      "Main",
+      "Herb",
+      "CommonMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Herbalism",
+    "requiredSkill": 185,
+    "item": "Khadgar's Whisker",
+    "rarity": 100.0,
+    "category": "Khadgar's Whisker",
+    "dropStart": 1,
+    "dropEnd": 60,
+    "dropCount": 3,
+    "tags": [
+      "Main",
+      "Herb",
+      "CommonMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Herbalism",
+    "requiredSkill": 195,
+    "item": "Wintersbite",
+    "rarity": 100.0,
+    "category": "Wintersbite",
+    "dropStart": 1,
+    "dropEnd": 60,
+    "dropCount": 3,
+    "tags": [
+      "Main",
+      "Herb",
+      "CommonMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Herbalism",
+    "requiredSkill": 205,
+    "item": "Firebloom",
+    "rarity": 100.0,
+    "category": "Firebloom",
+    "dropStart": 1,
+    "dropEnd": 60,
+    "dropCount": 3,
+    "tags": [
+      "Main",
+      "Herb",
+      "CommonMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Herbalism",
+    "requiredSkill": 210,
+    "item": "Purple Lotus",
+    "rarity": 100.0,
+    "category": "Purple Lotus",
+    "dropStart": 1,
+    "dropEnd": 60,
+    "dropCount": 2,
+    "tags": [
+      "Main",
+      "Herb",
+      "CommonMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Herbalism",
+    "requiredSkill": 210,
+    "item": "Wildvine",
+    "rarity": 100.0,
+    "category": "Purple Lotus",
+    "dropStart": 1,
+    "dropEnd": 60,
+    "dropCount": 2,
+    "tags": [
+      "Main",
+      "Herb",
+      "CommonMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Herbalism",
+    "requiredSkill": 220,
+    "item": "Arthas' Tears",
+    "rarity": 100.0,
+    "category": "Arthas' Tears",
+    "dropStart": 1,
+    "dropEnd": 60,
+    "dropCount": 3,
+    "tags": [
+      "Main",
+      "Herb",
+      "CommonMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Herbalism",
+    "requiredSkill": 230,
+    "item": "Sungrass",
+    "rarity": 100.0,
+    "category": "Sungrass",
+    "dropStart": 1,
+    "dropEnd": 60,
+    "dropCount": 3,
+    "tags": [
+      "Main",
+      "Herb",
+      "CommonMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Herbalism",
+    "requiredSkill": 235,
+    "item": "Blindweed",
+    "rarity": 100.0,
+    "category": "Blindweed",
+    "dropStart": 1,
+    "dropEnd": 60,
+    "dropCount": 3,
+    "tags": [
+      "Main",
+      "Herb",
+      "CommonMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Herbalism",
+    "requiredSkill": 245,
+    "item": "Ghost Mushroom",
+    "rarity": 100.0,
+    "category": "Ghost Mushroom",
+    "dropStart": 1,
+    "dropEnd": 60,
+    "dropCount": 3,
+    "tags": [
+      "Main",
+      "Herb",
+      "CommonMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Herbalism",
+    "requiredSkill": 250,
+    "item": "Gromsblood",
+    "rarity": 100.0,
+    "category": "Gromsblood",
+    "dropStart": 1,
+    "dropEnd": 60,
+    "dropCount": 3,
+    "tags": [
+      "Main",
+      "Herb",
+      "CommonMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Herbalism",
+    "requiredSkill": 260,
+    "item": "Golden Sansam",
+    "rarity": 100.0,
+    "category": "Golden Sansam",
+    "dropStart": 1,
+    "dropEnd": 60,
+    "dropCount": 3,
+    "tags": [
+      "Main",
+      "Herb",
+      "CommonMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Herbalism",
+    "requiredSkill": 270,
+    "item": "Dreamfoil",
+    "rarity": 100.0,
+    "category": "Dreamfoil",
+    "dropStart": 1,
+    "dropEnd": 60,
+    "dropCount": 3,
+    "tags": [
+      "Main",
+      "Herb",
+      "CommonMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Herbalism",
+    "requiredSkill": 285,
+    "item": "Plaguebloom",
+    "rarity": 100.0,
+    "category": "Plaguebloom",
+    "dropStart": 1,
+    "dropEnd": 60,
+    "dropCount": 3,
+    "tags": [
+      "Main",
+      "Herb",
+      "CommonMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Herbalism",
+    "requiredSkill": 290,
+    "item": "Icecap",
+    "rarity": 100.0,
+    "category": "Icecap",
+    "dropStart": 1,
+    "dropEnd": 60,
+    "dropCount": 3,
+    "tags": [
+      "Main",
+      "Herb",
+      "CommonMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Herbalism",
+    "requiredSkill": 300,
+    "item": "Black Lotus",
+    "rarity": 100.0,
+    "category": "Black Lotus",
+    "dropStart": 1,
+    "dropEnd": 60,
+    "dropCount": 1,
+    "tags": [
+      "Main",
+      "Herb",
+      "RareMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Herbalism",
+    "requiredSkill": 280,
+    "item": "Mountain Silversage",
+    "rarity": 100.0,
+    "category": "Mountain Silversage",
+    "dropStart": 1,
+    "dropEnd": 60,
+    "dropCount": 3,
+    "tags": [
+      "Main",
+      "Herb",
+      "CommonMaterial"
     ]
   },
   {

@@ -13,6 +13,8 @@ public class Zone
     //site-specific ambience tracks
     public string ambienceDay, ambienceNight;
 
+    public List<string> miningNodes, herbs;
+
     //Currently opened zone
     public static Zone zone;
 

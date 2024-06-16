@@ -691,6 +691,38 @@ public class Item
                             Respawn("CombatResultsLoot");
                         }
                     }
+                    else if (CDesktop.title == "MiningLoot")
+                    {
+                        PlaySound("Mining" + random.Next(1, 6));
+                        currentSave.player.inventory.AddItem(item);
+                        Board.board.results.miningLoot.items.Remove(item);
+                        if (Board.board.results.miningLoot.items.Count == 0)
+                        {
+                            CloseDesktop("MiningLoot");
+                            Respawn("CombatResultsMining");
+                        }
+                        else
+                        {
+                            Respawn("Inventory");
+                            Respawn("MiningLoot");
+                        }
+                    }
+                    else if (CDesktop.title == "HerbalismLoot")
+                    {
+                        PlaySound("HerbGather" + random.Next(1, 5));
+                        currentSave.player.inventory.AddItem(item);
+                        Board.board.results.herbalismLoot.items.Remove(item);
+                        if (Board.board.results.herbalismLoot.items.Count == 0)
+                        {
+                            CloseDesktop("HerbalismLoot");
+                            Respawn("CombatResultsHerbalism");
+                        }
+                        else
+                        {
+                            Respawn("Inventory");
+                            Respawn("HerbalismLoot");
+                        }
+                    }
                     else if (CDesktop.title == "ChestLoot")
                     {
                         currentSave.player.inventory.AddItem(item);
@@ -738,7 +770,7 @@ public class Item
             AddBigButtonOverlay(settings.newSlotIndicators.Value() ? "OtherItemNewSlot" : "OtherItemUpgrade", 0, 2);
         else if (settings.upgradeIndicators.Value() && item.CanEquip(currentSave.player) && currentSave.player.IsItemAnUpgrade(item))
             AddBigButtonOverlay("OtherItemUpgrade", 0, 2);
-        if (item.maxStack > 1) SpawnFloatingText(CDesktop.LBWindow.LBRegionGroup.LBRegion.transform.position + new Vector3(32, -27) + new Vector3(38, 0) * (CDesktop.title == "ChestLoot" ? currentSave.openedChests[SiteHostileArea.area.name].inventory : Board.board.results.inventory).items.IndexOf(item), item.amount + "", "", "Right");
+        if (item.maxStack > 1) SpawnFloatingText(CDesktop.LBWindow.LBRegionGroup.LBRegion.transform.position + new Vector3(32, -27) + new Vector3(38, 0) * (CDesktop.title == "ChestLoot" ? currentSave.openedChests[SiteHostileArea.area.name].inventory : (CDesktop.title == "MiningLoot" ? Board.board.results.miningLoot : (CDesktop.title == "HerbalismLoot" ? Board.board.results.herbalismLoot : Board.board.results.inventory))).items.IndexOf(item), item.amount + "", "", "Right");
     }
 
     public static void PrintItemTooltip(Item item, bool compare = false, double priceMultiplier = 1)

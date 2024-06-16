@@ -821,7 +821,7 @@ public static class Root
         {
             AddRegionGroup();
             SetRegionGroupWidth(600);
-            SetRegionGroupHeight(261);
+            SetRegionGroupHeight(242);
             AddPaddingRegion(() =>
             {
                 SetRegionBackground(ChartBackground);
@@ -834,7 +834,7 @@ public static class Root
             AddRegionGroup();
             var left = 600 - temp;
             SetRegionGroupWidth((int)Math.Floor(left / 2.0));
-            SetRegionGroupHeight(261);
+            SetRegionGroupHeight(242);
             AddPaddingRegion(() =>
             {
                 SetRegionBackground(ChartBackground);
@@ -842,7 +842,7 @@ public static class Root
             });
             AddRegionGroup();
             SetRegionGroupWidth(temp);
-            SetRegionGroupHeight(261);
+            SetRegionGroupHeight(242);
             AddPaddingRegion(() =>
             {
                 SetRegionAsGroupExtender();
@@ -891,7 +891,7 @@ public static class Root
 
     public static void AddChartColumn(int amount, int index, int total, int highestValue, int value)
     {
-        var height = (int)((242.0 - (settings.chartBigIcons.Value() ? 19 : 0)) / highestValue * value);
+        var height = (int)((223.0 - (settings.chartBigIcons.Value() ? 19 : 0)) / highestValue * value);
         SpawnWindowBlueprint(new Blueprint("ChartColumn" + index, () =>
         {
             var foo = (settings.chartBigIcons.Value() ? iconRow.bigButtons.Select(x => x.transform) : iconRow.smallButtons.Select(x => x.transform)).Last().position;

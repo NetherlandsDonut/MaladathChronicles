@@ -251,7 +251,7 @@ public class Board
     {
         cursorEnemy.fadeOut = true;
         CloseDesktop("Game");
-        results = new CombatResults(result);
+        results = new CombatResults(result, area.zone, area.recommendedLevel);
         if (result == "Won")
         {
             var enemyRace = Race.races.Find(x => x.name == enemy.race);

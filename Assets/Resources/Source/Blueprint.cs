@@ -2339,7 +2339,7 @@ public class Blueprint
             SetAnchor(Center);
             AddRegionGroup();
             SetRegionGroupWidth(200);
-            SetRegionGroupHeight(94);
+            SetRegionGroupHeight(113);
             AddHeaderRegion(() =>
             {
                 AddLine("Combat Results", "", "Center");
@@ -2407,8 +2407,100 @@ public class Blueprint
                 }
             });
         }),
+        new("CombatResultsMining", () => {
+            if (board.results.result != "Won") return;
+            if (board.results.miningNode.Item1 == null) return;
+            if (board.results.miningLoot.items.Count == 0) return;
+            SetAnchor(TopLeft, 19, -141);
+            AddRegionGroup();
+            SetRegionGroupWidth(181);
+            AddHeaderRegion(() =>
+            {
+                AddLine("Mining");
+                AddSmallButton("TradeMining");
+            });
+            var can = currentSave.player.professionSkills.ContainsKey("Mining") && board.results.miningNode.Item2 <= currentSave.player.professionSkills["Mining"].Item1;
+            AddPaddingRegion(() =>
+            {
+                AddLine(board.results.miningNode.Item1);
+                AddLine("Required skill: ", "DarkGray");
+                AddText("" + board.results.miningNode.Item2, can ? "Gray" : "DangerousRed");
+                AddBigButton("MiningNode" + board.results.miningNode.Item1.Clean());
+            });
+            if (can)
+            {
+                AddButtonRegion(() =>
+                {
+                    AddLine("Gather");
+                },
+                (h) =>
+                {
+                    PlaySound("VeinCrack" + random.Next(1, 4), 0.4f);
+                    SpawnDesktopBlueprint("MiningLoot");
+                });
+            }
+            else AddPaddingRegion(() => AddLine("Gather", "DarkGray"));
+        }),
+        new("MiningLoot", () => {
+            SetAnchor(-92, -105);
+            AddRegionGroup();
+            SetRegionGroupWidth(182);
+            AddPaddingRegion(
+                () =>
+                {
+                    for (int j = 0; j < 4 && j < board.results.miningLoot.items.Count; j++)
+                        PrintLootItem(board.results.miningLoot.items[j]);
+                }
+            );
+        }),
+        new("CombatResultsHerbalism", () => {
+            if (board.results.result != "Won") return;
+            if (board.results.herb.Item1 == null) return;
+            if (board.results.herbalismLoot.items.Count == 0) return;
+            SetAnchor(TopRight, -19, -141);
+            AddRegionGroup();
+            SetRegionGroupWidth(181);
+            AddHeaderRegion(() =>
+            {
+                AddLine("Herbalism");
+                AddSmallButton("TradeHerbalism");
+            });
+            var can = currentSave.player.professionSkills.ContainsKey("Herbalism") && board.results.herb.Item2 <= currentSave.player.professionSkills["Herbalism"].Item1;
+            AddPaddingRegion(() =>
+            {
+                AddLine(board.results.herb.Item1);
+                AddLine("Required skill: ", "DarkGray");
+                AddText("" + board.results.herb.Item2, can ? "Gray" : "DangerousRed");
+                AddBigButton("Herb" + board.results.herb.Item1.Clean());
+            });
+            if (can)
+            {
+                AddButtonRegion(() =>
+                {
+                    AddLine("Gather");
+                },
+                (h) =>
+                {
+                    PlaySound("HerbGather" + random.Next(1, 5));
+                    SpawnDesktopBlueprint("HerbalismLoot");
+                });
+            }
+            else AddPaddingRegion(() => AddLine("Gather", "DarkGray"));
+        }),
+        new("HerbalismLoot", () => {
+            SetAnchor(-92, -105);
+            AddRegionGroup();
+            SetRegionGroupWidth(182);
+            AddPaddingRegion(
+                () =>
+                {
+                    for (int j = 0; j < 4 && j < board.results.herbalismLoot.items.Count; j++)
+                        PrintLootItem(board.results.herbalismLoot.items[j]);
+                }
+            );
+        }),
         new("CombatResultsChart", () => {
-            SetAnchor(-301, 161);
+            SetAnchor(-301, 142);
             AddHeaderGroup();
             SetRegionGroupWidth(600);
             AddHeaderRegion(() =>
@@ -2429,7 +2521,7 @@ public class Blueprint
         }),
         new("CombatResultsChartLeftArrow", () => {
             DisableShadows();
-            SetAnchor(-301, 142);
+            SetAnchor(-301, 123);
             AddRegionGroup();
             AddHeaderRegion(() =>
             {
@@ -2447,7 +2539,7 @@ public class Blueprint
         }, true),
         new("CombatResultsChartRightArrow", () => {
             DisableShadows();
-            SetAnchor(280, 142);
+            SetAnchor(280, 123);
             AddRegionGroup();
             AddHeaderRegion(() =>
             {
@@ -2482,12 +2574,35 @@ public class Blueprint
             AddHeaderRegion(
                 () =>
                 {
-                    AddLine(board.enemy.name + ":");
-                    AddSmallButton("OtherClose", (h) =>
+                    if (CDesktop.title == "MiningLoot")
                     {
-                        PlaySound("DesktopInventoryClose");
-                        CloseDesktop("CombatResultsLoot");
-                    });
+                        AddLine(board.results.miningNode.Item1 + ":");
+                        AddSmallButton("OtherClose", (h) =>
+                        {
+                            PlaySound("DesktopInventoryClose");
+                            CloseDesktop("MiningLoot");
+                            Respawn("CombatResultsMining");
+                        });
+                    }
+                    else if (CDesktop.title == "HerbalismLoot")
+                    {
+                        AddLine(board.results.herb.Item1 + ":");
+                        AddSmallButton("OtherClose", (h) =>
+                        {
+                            PlaySound("DesktopInventoryClose");
+                            CloseDesktop("HerbalismLoot");
+                            Respawn("CombatResultsHerbalism");
+                        });
+                    }
+                    else
+                    {
+                        AddLine(board.enemy.name + ":");
+                        AddSmallButton("OtherClose", (h) =>
+                        {
+                            PlaySound("DesktopInventoryClose");
+                            CloseDesktop("CombatResultsLoot");
+                        });
+                    }
                 }
             );
         }),
@@ -5107,13 +5222,27 @@ public class Blueprint
         new("CombatResults", () => 
         {
             SetDesktopBackground(board.area.Background());
+            SpawnWindowBlueprint("MapToolbarShadow");
+            SpawnWindowBlueprint("MapToolbarClockLeft");
+            SpawnWindowBlueprint("MapToolbar");
+            SpawnWindowBlueprint("MapToolbarClockRight");
+            SpawnWindowBlueprint("MapToolbarStatusLeft");
+            SpawnWindowBlueprint("MapToolbarStatusRight");
             SpawnWindowBlueprint("CombatResults");
+            SpawnWindowBlueprint("CombatResultsMining");
+            SpawnWindowBlueprint("CombatResultsHerbalism");
             SpawnWindowBlueprint("ExperienceBarBorder");
             SpawnWindowBlueprint("ExperienceBar");
         }),
         new("CombatLog", () => 
         {
             SetDesktopBackground(board.area.Background());
+            SpawnWindowBlueprint("MapToolbarShadow");
+            SpawnWindowBlueprint("MapToolbarClockLeft");
+            SpawnWindowBlueprint("MapToolbar");
+            SpawnWindowBlueprint("MapToolbarClockRight");
+            SpawnWindowBlueprint("MapToolbarStatusLeft");
+            SpawnWindowBlueprint("MapToolbarStatusRight");
             SpawnWindowBlueprint("CombatResultsChart");
             SpawnWindowBlueprint("CombatResultsChartLeftArrow");
             SpawnWindowBlueprint("CombatResultsChartRightArrow");
@@ -5165,6 +5294,50 @@ public class Blueprint
             {
                 PlaySound("DesktopInventoryClose");
                 CloseDesktop("CombatResultsLoot");
+            });
+        }),
+        new("MiningLoot", () =>
+        {
+            SetDesktopBackground(board.area.Background());
+            SpawnWindowBlueprint("MapToolbarShadow");
+            SpawnWindowBlueprint("MapToolbarClockLeft");
+            SpawnWindowBlueprint("MapToolbar");
+            SpawnWindowBlueprint("MapToolbarClockRight");
+            SpawnWindowBlueprint("MapToolbarStatusLeft");
+            SpawnWindowBlueprint("MapToolbarStatusRight");
+            SpawnWindowBlueprint("PlayerEquipmentInfo");
+            SpawnWindowBlueprint("LootInfo");
+            SpawnWindowBlueprint("MiningLoot");
+            SpawnWindowBlueprint("Inventory");
+            SpawnWindowBlueprint("ExperienceBarBorder");
+            SpawnWindowBlueprint("ExperienceBar");
+            AddHotkey(Escape, () =>
+            {
+                PlaySound("DesktopInventoryClose");
+                CloseDesktop("MiningLoot");
+                Respawn("CombatResultsMining");
+            });
+        }),
+        new("HerbalismLoot", () =>
+        {
+            SetDesktopBackground(board.area.Background());
+            SpawnWindowBlueprint("MapToolbarShadow");
+            SpawnWindowBlueprint("MapToolbarClockLeft");
+            SpawnWindowBlueprint("MapToolbar");
+            SpawnWindowBlueprint("MapToolbarClockRight");
+            SpawnWindowBlueprint("MapToolbarStatusLeft");
+            SpawnWindowBlueprint("MapToolbarStatusRight");
+            SpawnWindowBlueprint("PlayerEquipmentInfo");
+            SpawnWindowBlueprint("LootInfo");
+            SpawnWindowBlueprint("HerbalismLoot");
+            SpawnWindowBlueprint("Inventory");
+            SpawnWindowBlueprint("ExperienceBarBorder");
+            SpawnWindowBlueprint("ExperienceBar");
+            AddHotkey(Escape, () =>
+            {
+                PlaySound("DesktopInventoryClose");
+                CloseDesktop("HerbalismLoot");
+                Respawn("CombatResultsHerbalism");
             });
         }),
         new("ChestLoot", () => 
