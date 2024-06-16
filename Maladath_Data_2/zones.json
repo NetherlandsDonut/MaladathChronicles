@@ -714,5 +714,218 @@
       "Kingsblood",
       "Kadgar's Whisker"
     ]
+  },
+  {
+    "name": "Temple of Ahn'Qiraj",
+    "continent": "Kalimdor",
+    "ambienceDay": "AmbienceAhnQirajUndergrounds",
+    "ambienceNight": "AmbienceAhnQirajUndergrounds"
+  },
+  {
+    "name": "Ruins of Ahn'Qiraj",
+    "continent": "Kalimdor",
+    "ambienceDay": "AmbienceAhnQirajExterior",
+    "ambienceNight": "AmbienceAhnQirajExterior"
+  },
+  {
+    "name": "Onyxia's Lair",
+    "continent": "Kalimdor",
+    "ambienceDay": "AmbienceOnyxiasLair",
+    "ambienceNight": "AmbienceOnyxiasLair"
+  },
+  {
+    "name": "Alcaz Island",
+    "continent": "Kalimdor",
+    "ambienceDay": "AmbienceMarshDay",
+    "ambienceNight": "AmbienceMarshNight"
+  },
+  {
+    "name": "Dire Maul",
+    "continent": "Kalimdor",
+    "ambienceDay": "AmbienceDireMaul",
+    "ambienceNight": "AmbienceDireMaul"
+  },
+  {
+    "name": "Shadow Hold",
+    "continent": "Kalimdor",
+    "ambienceDay": "AmbienceScary",
+    "ambienceNight": "AmbienceScary"
+  },
+  {
+    "name": "Zul'Farrak",
+    "continent": "Kalimdor",
+    "ambienceDay": "AmbienceDesert",
+    "ambienceNight": "AmbienceDesert"
+  },
+  {
+    "name": "Ragefire Chasm",
+    "continent": "Kalimdor",
+    "ambienceDay": "AmbienceVolcanicDay",
+    "ambienceNight": "AmbienceVolcanicDay"
+  },
+  {
+    "name": "Blackfathom Deeps",
+    "continent": "Kalimdor",
+    "ambienceDay": "AmbienceBlackfathom",
+    "ambienceNight": "AmbienceBlackfathom"
+  },
+  {
+    "name": "Razorfen Kraul",
+    "continent": "Kalimdor",
+    "ambienceDay": "AmbienceRazorfenKraul",
+    "ambienceNight": "AmbienceRazorfenKraul"
+  },
+  {
+    "name": "Razorfen Downs",
+    "continent": "Kalimdor",
+    "ambienceDay": "AmbienceRazorfenKraul",
+    "ambienceNight": "AmbienceRazorfenKraul"
+  },
+  {
+    "name": "Maraudon",
+    "continent": "Kalimdor",
+    "ambienceDay": "AmbienceMineshaft",
+    "ambienceNight": "AmbienceMineshaft"
+  },
+  {
+    "name": "Wailing Caverns",
+    "continent": "Kalimdor",
+    "ambienceDay": "AmbienceWailingCaverns",
+    "ambienceNight": "AmbienceWailingCaverns"
+  },
+  {
+    "name": "Molten Core",
+    "continent": "Eastern Kingdoms",
+    "ambienceDay": "AmbienceMoltenCore",
+    "ambienceNight": "AmbienceMoltenCore",
+    "miningNodes": [
+      "Dark Iron Vein"
+    ]
+  },
+  {
+    "name": "Blackwing Lair",
+    "continent": "Eastern Kingdoms",
+    "ambienceDay": "AmbienceBlackwingLair",
+    "ambienceNight": "AmbienceBlackwingLair"
+  },
+  {
+    "name": "The Deadmines",
+    "continent": "Eastern Kingdoms",
+    "ambienceDay": "AmbienceDeadmines",
+    "ambienceNight": "AmbienceDeadmines"
+  },
+  {
+    "name": "Zul'Gurub",
+    "continent": "Eastern Kingdoms",
+    "ambienceDay": "AmbienceJungleDay",
+    "ambienceNight": "AmbienceJungleDay"
+  },
+  {
+    "name": "Scarlet Monastery Grounds",
+    "continent": "Eastern Kingdoms",
+    "ambienceDay": "AmbienceScary",
+    "ambienceNight": "AmbienceScary"
+  },
+  {
+    "name": "Scarlet Monastery",
+    "continent": "Eastern Kingdoms",
+    "ambienceDay": "AmbienceScary",
+    "ambienceNight": "AmbienceScary"
+  },
+  {
+    "name": "Ruins of Stromgarde",
+    "continent": "Eastern Kingdoms",
+    "ambienceDay": "AmbienceShadowfangKeep",
+    "ambienceNight": "AmbienceShadowfangKeep"
+  },
+  {
+    "name": "Ruins of Alterac",
+    "continent": "Eastern Kingdoms",
+    "ambienceDay": "AmbienceForestSnowDay",
+    "ambienceNight": "AmbienceForestSnowDay"
+  },
+  {
+    "name": "Shadowfang Keep",
+    "continent": "Eastern Kingdoms",
+    "ambienceDay": "AmbienceShadowfangKeep",
+    "ambienceNight": "AmbienceShadowfangKeep"
+  },
+  {
+    "name": "The Stockade",
+    "continent": "Eastern Kingdoms",
+    "ambienceDay": "AmbienceTheStockade",
+    "ambienceNight": "AmbienceTheStockade"
+  },
+  {
+    "name": "Gnomeregan",
+    "continent": "Eastern Kingdoms",
+    "ambienceDay": "AmbienceGnomeregan",
+    "ambienceNight": "AmbienceGnomeregan"
+  },
+  {
+    "name": "Uldaman",
+    "continent": "Eastern Kingdoms",
+    "ambienceDay": "AmbienceUldaman",
+    "ambienceNight": "AmbienceUldaman"
+  },
+  {
+    "name": "Temple of Atal'Hakkar",
+    "continent": "Eastern Kingdoms",
+    "ambienceDay": "AmbienceSunkenTemple",
+    "ambienceNight": "AmbienceSunkenTemple"
+  },
+  {
+    "name": "Jintha'Alor",
+    "continent": "Eastern Kingdoms",
+    "ambienceDay": "AmbienceForestNormalDay",
+    "ambienceNight": "AmbienceForestNormalNight"
+  },
+  {
+    "name": "Blackrock Depths",
+    "continent": "Eastern Kingdoms",
+    "ambienceDay": "AmbienceBlackrock",
+    "ambienceNight": "AmbienceBlackrock"
+  },
+  {
+    "name": "Blackrock Mountain",
+    "continent": "Eastern Kingdoms",
+    "ambienceDay": "AmbienceBlackrock",
+    "ambienceNight": "AmbienceBlackrock"
+  },
+  {
+    "name": "Tyr's Hand",
+    "continent": "Eastern Kingdoms",
+    "ambienceDay": "AmbiencePlaguelandsDay",
+    "ambienceNight": "AmbiencePlaguelandsNight"
+  },
+  {
+    "name": "Lower Blackrock Spire",
+    "continent": "Eastern Kingdoms",
+    "ambienceDay": "AmbienceBlackrock",
+    "ambienceNight": "AmbienceBlackrock"
+  },
+  {
+    "name": "Hearthglen",
+    "continent": "Eastern Kingdoms",
+    "ambienceDay": "AmbiencePlaguelandsDay",
+    "ambienceNight": "AmbiencePlaguelandsNight"
+  },
+  {
+    "name": "Stratholme",
+    "continent": "Eastern Kingdoms",
+    "ambienceDay": "AmbienceStratholme",
+    "ambienceNight": "AmbienceStratholme"
+  },
+  {
+    "name": "Scholomance",
+    "continent": "Eastern Kingdoms",
+    "ambienceDay": "AmbienceSpooky",
+    "ambienceNight": "AmbienceSpooky"
+  },
+  {
+    "name": "Upper Blackrock Spire",
+    "continent": "Eastern Kingdoms",
+    "ambienceDay": "AmbienceBlackrock",
+    "ambienceNight": "AmbienceBlackrock"
   }
 ]

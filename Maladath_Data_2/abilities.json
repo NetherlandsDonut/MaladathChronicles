@@ -1403,11 +1403,67 @@
   {
     "name": "Chain Lightning",
     "icon": "AbilityChainLightning",
+    "cooldown": 3,
     "tags": [],
+    "cost": {
+      "Air": 2,
+      "Lightning": 6
+    },
     "ranks": [
       {}
     ],
-    "events": []
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector"
+          }
+        ],
+        "effects": [
+          {
+            "SoundEffect": "LightningBoltCast",
+            "ShatterType": "Directional",
+            "ShatterTarget": "Effector",
+            "ShatterDegree": "5",
+            "ShatterSpeed": "1"
+          },
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "SoundEffect": "ChainLightningImpact2",
+            "AnimationType": "Missile",
+            "ShatterType": "Central",
+            "ShatterTarget": "Other",
+            "PowerSource": "Effector",
+            "PowerType": "Spell",
+            "Await": "0",
+            "TrailStrength": "10",
+            "AnimationSpeed": "1,6",
+            "ShatterSpeed": "20",
+            "AnimationArc": "15",
+            "ShatterDegree": "40"
+          },
+          {
+            "Effect": "ChangeElements",
+            "ElementFrom": "Water",
+            "ElementTo": "Lightning",
+            "ChangeAmount": "2",
+            "Await": "5",
+            "AnimationType": "None",
+            "ShatterType": "None",
+            "ShatterTarget": "Effector",
+            "ElementShatterSpeed": "5",
+            "ElementShatterDensity": "1",
+            "ElementShatterDegree": "5",
+            "SoundEffect": "ChainLightningImpact1"
+          },
+          {
+            "Effect": "EndTurn"
+          }
+        ]
+      }
+    ]
   },
   {
     "name": "Channel Demonfire",
@@ -4760,7 +4816,11 @@
   {
     "name": "Lightning Bolt",
     "icon": "AbilityLightningBolt",
+    "cooldown": 1,
     "tags": [],
+    "cost": {
+      "Lightning": 4
+    },
     "ranks": [
       {}
     ],
@@ -4773,27 +4833,27 @@
         ],
         "effects": [
           {
-            "SoundEffect": "ElementLightning",
+            "SoundEffect": "LightningBoltCast",
             "ShatterType": "Directional",
             "ShatterTarget": "Effector",
             "ShatterDegree": "5",
-            "ShatterSpeed": "4"
+            "ShatterSpeed": "1"
           },
           {
             "Effect": "Damage",
             "Affect": "Other",
-            "SoundEffect": "AbilityThunderstormImpact4",
+            "SoundEffect": "LightningBoltImpact",
             "AnimationType": "Missile",
             "ShatterType": "Central",
             "ShatterTarget": "Other",
             "PowerSource": "Effector",
             "PowerType": "Spell",
             "Await": "5",
-            "TrailStrength": "5",
-            "AnimationSpeed": "1,8",
-            "ShatterSpeed": "30",
+            "TrailStrength": "10",
+            "AnimationSpeed": "1,5",
+            "ShatterSpeed": "15",
             "AnimationArc": "15",
-            "ShatterDegree": "40"
+            "ShatterDegree": "50"
           },
           {
             "Effect": "EndTurn"
@@ -7229,11 +7289,66 @@
   {
     "name": "Thunder Clap",
     "icon": "AbilityThunderClap",
+    "cooldown": 4,
     "tags": [],
+    "cost": {
+      "Fire": 0,
+      "Earth": 4,
+      "Water": 0,
+      "Air": 0,
+      "Frost": 0,
+      "Decay": 0,
+      "Shadow": 0,
+      "Order": 0,
+      "Arcane": 0,
+      "Lightning": 6
+    },
     "ranks": [
       {}
     ],
-    "events": []
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "ChangeElements",
+            "ChangeAmount": "1",
+            "ElementTo": "Earth",
+            "ElementShatterDegree": "4",
+            "ElementShatterSpeed": "3",
+            "SoundEffect": "None",
+            "ElementFrom": "Fire"
+          },
+          {
+            "Effect": "ChangeElements",
+            "ChangeAmount": "4",
+            "ElementTo": "Lightning",
+            "ElementShatterDegree": "4",
+            "ElementShatterSpeed": "3",
+            "SoundEffect": "AbilityThunderstormImpact4",
+            "Await": "0"
+          },
+          {
+            "Effect": "Damage",
+            "ShatterType": "Central",
+            "ShatterTarget": "Other",
+            "Await": "5",
+            "Affect": "Other",
+            "PowerSource": "Effector",
+            "PowerType": "Spell"
+          },
+          {
+            "Effect": "EndTurn",
+            "Affect": "Effector"
+          }
+        ]
+      }
+    ]
   },
   {
     "name": "Thunderstorm",
@@ -7258,7 +7373,7 @@
         ],
         "effects": [
           {
-            "Effect": "Damage",
+            "Effect": "DestroyRegion",
             "Affect": "Other",
             "PowerType": "Spell",
             "PowerSource": "Effector",

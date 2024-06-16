@@ -165,8 +165,9 @@ public class Desktop : MonoBehaviour
             else ambience.volume += 0.002f;
         }
         if (loadSites != null && loadSites.Count > 0)
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 100; i++)
             {
+                titleScreenFunnyEffect = new();
                 var site = loadSites[0];
                 loadingScreenObjectLoad++;
                 var spawn = SpawnWindowBlueprint(site);
@@ -204,16 +205,36 @@ public class Desktop : MonoBehaviour
             }
         else
         {
-            if (title == "TitleScreen" && screen.GetComponent<SpriteRenderer>().sprite == null && !windows.Exists(x => x.name == "CharacterCreation"))
+            if (title == "TitleScreen" && screen.GetComponent<SpriteRenderer>().sprite == null)
             {
-                var amount = new Vector3(titleScreenCameraDirection < 2 ? -1 / 3f : 1 / 3f, titleScreenCameraDirection > 2 ? -1 / 3f : (titleScreenCameraDirection < 1 ? -1 / 3f : 1 / 3f));
-                screen.transform.localPosition += amount;
-                cursor.transform.localPosition += amount;
-                if (Math.Abs(screen.transform.localPosition.x - 1762) > 750 && screen.transform.localPosition.x < 3774 || Math.Abs(screen.transform.localPosition.x - 5374) > 750 && screen.transform.localPosition.x >= 3774)
+                if (titleScreenFunnyEffect.Count == 0)
                 {
-                    titleScreenCameraDirection = random.Next(0, 4);
-                    screen.transform.localPosition = new Vector3(random.Next(0, 2) == 0 ? 1762 : 5374, random.Next(-3683, -1567));
+                    Site rSite;
+                    do rSite = SiteHostileArea.areas[random.Next(SiteHostileArea.areas.Count)];
+                    while (!pathsConnectedToSite.ContainsKey(rSite.name) || pathsConnectedToSite[rSite.name].All(x => x.points.Count < 15));
+                    var foo = pathsConnectedToSite[rSite.name].Where(x => x.points.Count >= 15).ToList();
+                    titleScreenFunnyEffect = foo[random.Next(foo.Count)].points;
+                    lastFunnyEffectTime = 0;
+                    lastFunnyEffectPosition = screen.transform.localPosition = new Vector3(titleScreenFunnyEffect[0].Item1, titleScreenFunnyEffect[0].Item2);
                     SpawnTransition();
+                }
+                else
+                {
+                    var temp = screen.transform.localPosition;
+                    var where = new Vector2(titleScreenFunnyEffect[0].Item1, titleScreenFunnyEffect[0].Item2);
+                    if (Vector2.Distance(temp, where) > 1f)
+                    {
+                        lastFunnyEffectTime += Time.deltaTime * 2;
+                        var newPosition = Vector3.Lerp(lastFunnyEffectPosition, where, lastFunnyEffectTime);
+                        cursor.transform.position += newPosition - temp;
+                        screen.transform.localPosition = newPosition;
+                    }
+                    else
+                    {
+                        lastFunnyEffectTime = 0;
+                        lastFunnyEffectPosition = screen.transform.localPosition;
+                        titleScreenFunnyEffect.RemoveAt(0);
+                    }
                 }
             }
             else if (title == "Map")

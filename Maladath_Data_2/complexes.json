@@ -3,9 +3,8 @@
     "x": 5282,
     "y": -3210,
     "name": "Blackrock Mountain",
-    "zone": "Burning Steppes",
+    "zone": "Blackrock Mountain",
     "type": "Complex",
-    "ambience": "AmbienceBlackrock",
     "noNightVariant": true,
     "sites": [
       {
@@ -34,9 +33,8 @@
     "x": 5906,
     "y": -1718,
     "name": "Jintha'Alor",
-    "zone": "Hinterlands",
+    "zone": "Jintha'Alor",
     "type": "Complex",
-    "ambience": "AmbienceJungleDay",
     "sites": [
       {
         "SiteType": "HostileArea",
@@ -60,9 +58,8 @@
     "x": 6125,
     "y": -1326,
     "name": "Tyr's Hand",
-    "zone": "Eastern Plaguelands",
+    "zone": "Tyr's Hand",
     "type": "Complex",
-    "ambience": "AmbienceScary",
     "sites": [
       {
         "SiteType": "HostileArea",
@@ -86,9 +83,8 @@
     "x": 5395,
     "y": -1108,
     "name": "Hearthglen",
-    "zone": "Western Plaguelands",
+    "zone": "Hearthglen",
     "type": "Complex",
-    "ambience": "AmbienceScary",
     "sites": [
       {
         "SiteType": "HostileArea",
@@ -108,9 +104,8 @@
     "x": 5428,
     "y": -1977,
     "name": "Ruins of Stromgarde",
-    "zone": "Arathi Highlands",
+    "zone": "Ruins of Stromgarde",
     "type": "Complex",
-    "ambience": "AmbienceScary",
     "sites": [
       {
         "SiteType": "HostileArea",
@@ -138,9 +133,8 @@
     "x": 5147,
     "y": -1543,
     "name": "Ruins of Alterac",
-    "zone": "Alterac Mountains",
+    "zone": "Ruins of Alterac",
     "type": "Complex",
-    "ambience": "AmbienceScary",
     "sites": [
       {
         "SiteType": "HostileArea",
@@ -160,9 +154,8 @@
     "x": 5204,
     "y": -1104,
     "name": "Scarlet Monastery Grounds",
-    "zone": "Tirisfal Glades",
+    "zone": "Scarlet Monastery Grounds",
     "type": "Complex",
-    "ambience": "AmbienceScary",
     "sites": [
       {
         "SiteType": "HostileArea",
@@ -186,9 +179,8 @@
     "x": 1559,
     "y": -1549,
     "name": "Jaedenar Grounds",
-    "zone": "Felwood",
+    "zone": "Jaedenar Grounds",
     "type": "Complex",
-    "ambience": "AmbienceScary",
     "sites": [
       {
         "SiteType": "HostileArea",
@@ -208,9 +200,8 @@
     "x": 2470,
     "y": -3074,
     "name": "Alcaz Island",
-    "zone": "Dustwallow Marsh",
+    "zone": "Alcaz Island",
     "type": "Complex",
-    "ambience": "AmbienceScary",
     "sites": [
       {
         "SiteType": "HostileArea",

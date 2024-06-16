@@ -27,7 +27,7 @@ public class CombatResults
     public void GenerateMiningNode(string zone, int level)
     {
         var find = Zone.zones.Find(x => x.name == zone);
-        if (find.miningNodes == null) return;
+        if (find == null || find.miningNodes == null) return;
         var possibleNodes = find.miningNodes.Select(x => GeneralDrop.generalDrops.Find(y => y.category == x && y.tags.Contains("Main"))).ToList();
         possibleNodes.RemoveAll(x => !x.DoesLevelFit(level));
         if (possibleNodes.Count > 0)
@@ -58,7 +58,7 @@ public class CombatResults
     public void GenerateHerb(string zone, int level)
     {
         var find = Zone.zones.Find(x => x.name == zone);
-        if (find.herbs == null) return;
+        if (find == null || find.herbs == null) return;
         var possibleNodes = find.herbs.Select(x => GeneralDrop.generalDrops.Find(y => y.category == x && y.tags.Contains("Main"))).ToList();
         possibleNodes.RemoveAll(x => x == null || !x.DoesLevelFit(level));
         if (possibleNodes.Count > 0)

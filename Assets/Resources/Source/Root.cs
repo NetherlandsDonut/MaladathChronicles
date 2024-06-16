@@ -5,14 +5,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 using static Sound;
-using static SaveGame;
 using static Coloring;
 using static Blueprint;
 using static GameSettings;
 
 using static Root.Anchor;
 using static Root.RegionBackgroundType;
-using System.Reflection;
 
 public static class Root
 {
@@ -54,7 +52,9 @@ public static class Root
     public static System.Random random;
     public static int inputLineMarker;
     public static int keyStack;
-    public static int titleScreenCameraDirection;
+    public static float lastFunnyEffectTime;
+    public static Vector3 lastFunnyEffectPosition;
+    public static List<(int, int)> titleScreenFunnyEffect = new();
     public static float heldKeyTime;
     public static float animationTime;
     public static float animatedSpriteTime;

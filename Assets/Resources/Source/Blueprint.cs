@@ -2608,9 +2608,14 @@ public class Blueprint
         }),
         
         //Complex
-        new("Complex", () => 
+        new("Complex", () =>
         {
-            PlayAmbience(complex.ambience);
+            if (complex.ambience == null)
+            {
+                var zone = zones.Find(x => x.name == complex.zone);
+                if (zone != null) PlayAmbience(currentSave.IsNight() ? zone.ambienceNight : zone.ambienceDay);
+            }
+            else PlayAmbience(complex.ambience);
             SetAnchor(TopRight, -19, -38);
             AddRegionGroup();
             SetRegionGroupWidth(190);
@@ -2669,9 +2674,14 @@ public class Blueprint
         }),
 
         //Instance
-        new("Instance", () => 
+        new("Instance", () =>
         {
-            PlayAmbience(instance.ambience);
+            if (instance.ambience == null)
+            {
+                var zone = zones.Find(x => x.name == instance.zone);
+                if (zone != null) PlayAmbience(currentSave.IsNight() ? zone.ambienceNight : zone.ambienceDay);
+            }
+            else PlayAmbience(instance.ambience);
             SetAnchor(TopRight, -19, -38);
             var areas = instance.wings.SelectMany(x => x.areas).ToList();
             var doPag = areas.Count() > 8;
@@ -4447,19 +4457,16 @@ public class Blueprint
 
         //Menu
         new("TitleScreenMenu", () => {
-            SetAnchor(Top);
+            SetAnchor(Top, 0, -19);
             AddRegionGroup();
             SetRegionGroupWidth(130);
-            SetRegionGroupHeight(354);
+            SetRegionGroupHeight(316);
             AddPaddingRegion(() =>
             {
-                AddLine("", "Gray");
                 AddLine("", "Gray");
                 AddLine("Maladath", "Epic", "Center");
                 AddLine("Chronicles", "Epic", "Center");
                 AddLine("0.5.9", "DimGray", "Center");
-                AddLine("", "Gray");
-                AddLine("", "Gray");
                 AddLine("", "Gray");
                 AddLine("", "Gray");
                 AddLine("", "Gray");
@@ -4525,7 +4532,7 @@ public class Blueprint
             maladathIcon.GetComponent<SpriteRenderer>().sortingLayerName = "Upper";
             maladathIcon.GetComponent<SpriteRenderer>().sortingOrder = 1;
             maladathIcon.transform.parent = CDesktop.LBWindow.transform;
-            maladathIcon.transform.localPosition = new Vector3(69, -184);
+            maladathIcon.transform.localPosition = new Vector3(69, -145);
         }, true),
         new("TitleScreenSingleplayer", () => {
             SetAnchor(Bottom);
@@ -4630,16 +4637,6 @@ public class Blueprint
             (h) =>
             {
                 settings.fastCascading.Invert();
-                CDesktop.RespawnAll();
-            });
-            AddButtonRegion(() =>
-            {
-                AddCheckbox(new Bool(defines.windowBorders));
-                AddLine("Window borders");
-            },
-            (h) =>
-            {
-                defines.windowBorders ^= true;
                 CDesktop.RespawnAll();
             });
             AddPaddingRegion(() =>
