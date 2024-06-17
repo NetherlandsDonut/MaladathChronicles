@@ -198,6 +198,7 @@ public class Desktop : MonoBehaviour
                     Destroy(loadingBar[1]);
                     loadingBar = null;
                     PlaySound("DesktopLoadSuccess");
+                    screen.transform.localPosition = cameraDestination;
                     break;
                 }
             }

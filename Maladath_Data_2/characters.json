@@ -2640,7 +2640,7 @@
         "Moonkin Caves": 1,
         "Remtravel's Excavation": 1,
         "Ruins of Mathystra": 1,
-        "The Long Wash": 3,
+        "The Long Wash": 4,
         "The Master's Glaive": 1,
         "Tower of Althalaxx": 1,
         "Twilight Shore": 1,
@@ -3480,9 +3480,9 @@
         }
       },
       "startDate": "2024-06-09T14:12:27.0144066+02:00",
-      "lastLoaded": "2024-06-17T15:47:25.679144+02:00",
-      "lastPlayed": "2024-06-17T15:51:55.4082249+02:00",
-      "timePlayed": "10:01:14.7592790",
+      "lastLoaded": "2024-06-17T16:02:21.6312157+02:00",
+      "lastPlayed": "2024-06-17T16:02:39.542035+02:00",
+      "timePlayed": "10:02:18.9764315",
       "lastVisitedTalents": 1
     },
     {
@@ -5117,9 +5117,9 @@
       "unlockedAreas": [],
       "vendorStock": {},
       "startDate": "2024-06-10T03:15:00.6242447+02:00",
-      "lastLoaded": "2024-06-17T15:47:18.8759016+02:00",
-      "lastPlayed": "2024-06-17T15:47:23.0965288+02:00",
-      "timePlayed": "00:26:40.7983856",
+      "lastLoaded": "2024-06-17T16:01:47.2282348+02:00",
+      "lastPlayed": "2024-06-17T16:01:49.7471946+02:00",
+      "timePlayed": "00:26:56.8876424",
       "lastVisitedTalents": 2
     },
     {
@@ -6751,9 +6751,9 @@
       "vendorStock": {},
       "banks": {},
       "startDate": "2024-06-14T18:07:06.2505989+02:00",
-      "lastLoaded": "2024-06-15T19:14:06.6494679+02:00",
-      "lastPlayed": "2024-06-15T19:14:14.6717865+02:00",
-      "timePlayed": "00:23:51.6689819"
+      "lastLoaded": "2024-06-17T16:01:51.3113014+02:00",
+      "lastPlayed": "2024-06-17T16:01:53.6075709+02:00",
+      "timePlayed": "00:23:53.9652514"
     },
     {
       "player": {
@@ -7182,9 +7182,9 @@
       "vendorStock": {},
       "banks": {},
       "startDate": "2024-06-15T18:49:33.8074026+02:00",
-      "lastLoaded": "2024-06-15T19:13:58.7680446+02:00",
-      "lastPlayed": "2024-06-15T19:14:04.4177452+02:00",
-      "timePlayed": "00:03:43.5257981",
+      "lastLoaded": "2024-06-17T16:02:01.1991411+02:00",
+      "lastPlayed": "2024-06-17T16:02:06.6636304+02:00",
+      "timePlayed": "00:03:48.9902874",
       "lastVisitedTalents": 1
     },
     {

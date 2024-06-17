@@ -4626,6 +4626,7 @@ public class Blueprint
                 {
                     Login();
                     SpawnDesktopBlueprint("Map");
+                    CloseDesktop("TitleScreen");
                     var find = FindSite(x => x.name == currentSave.currentSite);
                     if (find != null) CDesktop.cameraDestination = new Vector2(find.x, find.y);
                     Cursor.cursor.transform.position += (Vector3)CDesktop.cameraDestination - CDesktop.screen.transform.position;
@@ -4666,9 +4667,8 @@ public class Blueprint
                 CloseSave();
                 SaveGames();
                 CloseDesktop("GameMenu");
-                CloseDesktop("TitleScreen");
-                SpawnDesktopBlueprint("TitleScreen");
                 CloseDesktop("Map");
+                SpawnDesktopBlueprint("TitleScreen");
             });
             AddButtonRegion(() =>
             {

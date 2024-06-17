@@ -171,7 +171,7 @@ public static class Root
         var find = desktops.Find(x => x.title == desktopName);
         if (find == null) return false;
         desktops.Remove(find);
-        if (find == CDesktop)
+        if (find == CDesktop && desktops.Count > 0)
             SwitchDesktop(desktops[0].title);
         UnityEngine.Object.Destroy(find.gameObject);
         return true;
