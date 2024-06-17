@@ -1805,26 +1805,6 @@
             ]
           },
           {
-            "questID": 40,
-            "requiredLevel": 7,
-            "questLevel": 10,
-            "name": "A Fishy Peril",
-            "description": "Remy \"Two Times\" wants you to speak with Marshal Dughan in Goldshire.",
-            "siteStart": "Goldshire",
-            "siteEnd": "Goldshire",
-            "zone": "Elwynn Forest",
-            "races": [
-              "Gnome",
-              "Night Elf",
-              "Dwarf",
-              "Human"
-            ],
-            "reputationGain": {
-              "Stormwind": 10
-            },
-            "conditions": []
-          },
-          {
             "questID": 47,
             "requiredLevel": 4,
             "questLevel": 7,
@@ -1849,11 +1829,54 @@
                 "amount": 4
               }
             ]
+          },
+          {
+            "questID": 783,
+            "requiredLevel": 1,
+            "questLevel": 1,
+            "name": "A Threat Within",
+            "description": "Speak with Marshal McBride.",
+            "siteStart": "Northshire Abbey",
+            "siteEnd": "Northshire Abbey",
+            "zone": "Elwynn Forest",
+            "races": [
+              "Gnome",
+              "Night Elf",
+              "Dwarf",
+              "Human"
+            ],
+            "reputationGain": {
+              "Stormwind": 75
+            },
+            "conditions": []
+          },
+          {
+            "questID": 35,
+            "previous": 40,
+            "requiredLevel": 7,
+            "questLevel": 10,
+            "name": "Further Concerns",
+            "description": "Marshal Dughan wants you to speak with Guard Thomas.",
+            "siteStart": "Goldshire",
+            "siteEnd": "East Elwynn Bridge",
+            "zone": "Elwynn Forest",
+            "races": [
+              "Gnome",
+              "Night Elf",
+              "Dwarf",
+              "Human"
+            ],
+            "reputationGain": {
+              "Stormwind": 75
+            },
+            "conditions": []
           }
         ],
-        "completedQuests": [],
-        "level": 10,
-        "experience": 6498,
+        "completedQuests": [
+          40
+        ],
+        "level": 11,
+        "experience": 2998,
         "uniquesGotten": [],
         "reputation": {
           "Southsea Pirates": 0,
@@ -1932,7 +1955,7 @@
             ]
           },
           "Mining": {
-            "Item1": 3,
+            "Item1": 4,
             "Item2": [
               "Apprentice"
             ]
@@ -1961,7 +1984,7 @@
             "Smelt Copper"
           ]
         },
-        "unspentTalentPoints": 2,
+        "unspentTalentPoints": 3,
         "faction": "Stormwind",
         "name": "Allesha",
         "race": "Human",
@@ -2249,6 +2272,56 @@
               "stats": {
                 "stats": {}
               }
+            },
+            {
+              "rarity": "Uncommon",
+              "name": "Pattern: Heavy Scorpid Gauntlets",
+              "icon": "itemscroll03",
+              "type": "Recipe",
+              "source": "DirectDrop",
+              "amount": 1,
+              "maxStack": 1,
+              "price": 4000,
+              "stats": {
+                "stats": {}
+              },
+              "droppedBy": [
+                "Blackrock Soldier"
+              ]
+            },
+            {
+              "rarity": "Common",
+              "name": "Copper Ore",
+              "icon": "itemorecopper01",
+              "type": "Trade Good",
+              "source": "RareDrop",
+              "ilvl": 10,
+              "lvl": 1,
+              "amount": 1,
+              "maxStack": 10,
+              "price": 5,
+              "stats": {
+                "stats": {}
+              }
+            },
+            {
+              "rarity": "Uncommon",
+              "name": "Shadow Wand",
+              "icon": "itemshortblade09",
+              "detailedType": "Wand",
+              "type": "One Handed",
+              "source": "RareDrop",
+              "ilvl": 14,
+              "lvl": 9,
+              "minDamage": 10,
+              "maxDamage": 19,
+              "amount": 1,
+              "maxStack": 1,
+              "price": 443,
+              "speed": 1.4,
+              "stats": {
+                "stats": {}
+              }
             }
           ],
           "bags": [
@@ -2358,9 +2431,9 @@
         }
       },
       "hour": 9,
-      "minute": 40,
-      "second": 4,
-      "currentSite": "The Pillar of Ash",
+      "minute": 52,
+      "second": 12,
+      "currentSite": "The Long Wash",
       "openedChests": {
         "Gnomeregan Outskirts": {
           "area": "Gnomeregan Outskirts",
@@ -2374,20 +2447,24 @@
       "siteProgress": {
         "Wicked Grotto": 1,
         "Northern Tract": 1,
-        "Gnomeregan Outskirts": 5
+        "Gnomeregan Outskirts": 5,
+        "The Pillar of Ash": 1,
+        "The Long Wash": 1
       },
       "commonsKilled": {
         "Deeprot Tangler": 1,
         "Large Crag Boar": 1,
         "Snow Leopard": 3,
-        "Leper Gnome": 1
+        "Leper Gnome": 1,
+        "Blackrock Soldier": 1,
+        "Pygmy Tide Crawler": 1
       },
       "raresKilled": {
         "Gibblewilt": 1
       },
       "elitesKilled": {},
       "siteVisits": {
-        "Northshire Abbey": 1,
+        "Northshire Abbey": 2,
         "Hall of Illusions": 1,
         "Searing Blade Hideout": 1,
         "Main Chamber": 1,
@@ -2554,7 +2631,7 @@
         "Ruins of Thaurissan": 1,
         "Slither Rock": 2,
         "Terror Wing Path": 1,
-        "The Pillar of Ash": 4,
+        "The Pillar of Ash": 5,
         "Ameth'Aran": 1,
         "Bashal'Aran": 1,
         "Blackwood Den": 1,
@@ -2563,7 +2640,7 @@
         "Moonkin Caves": 1,
         "Remtravel's Excavation": 1,
         "Ruins of Mathystra": 1,
-        "The Long Wash": 1,
+        "The Long Wash": 3,
         "The Master's Glaive": 1,
         "Tower of Althalaxx": 1,
         "Twilight Shore": 1,
@@ -3250,29 +3327,29 @@
         "Caer Darrow": 1,
         "Ravenholdt Manor": 1,
         "Misty Reed Post": 1,
-        "Stormwind City": 6,
+        "Stormwind City": 8,
         "Grove of the Ancients": 3,
         "Go'Shek Farm": 1,
         "Hillsbrad": 1,
         "Dabyrie's Farmstead": 1,
         "Azurelode Mine": 1,
         "Westbrook Garrison": 1,
-        "Goldshire": 2,
+        "Goldshire": 3,
         "Lakeshire": 1,
         "Southshore": 1,
         "Darkshire": 1,
         "Rebel Camp": 1,
         "Sentinel Hill": 1,
         "Theramore Isle": 1,
-        "Menethil Harbor": 2,
+        "Menethil Harbor": 3,
         "Nethergarde Keep": 1,
         "Morgan's Vigil": 1,
         "Flame Crest": 1,
         "Faldir's Cove": 1,
         "Refuge Point": 1,
-        "Darnassus": 15,
+        "Darnassus": 17,
         "Aldrassil": 1,
-        "Rut'theran Village": 12,
+        "Rut'theran Village": 14,
         "Dolanaar": 1,
         "Maestra's Post": 1,
         "Astranaar": 2,
@@ -3281,7 +3358,7 @@
         "Silverwind Refuge": 1,
         "Silverwing Grove": 1,
         "Forest Song": 1,
-        "Auberdine": 7,
+        "Auberdine": 8,
         "Talrendis Point": 2,
         "Talonbranch Glade": 3,
         "Feathermoon Stronghold": 1,
@@ -3289,7 +3366,7 @@
         "Thalanaar": 1,
         "Stonetalon Peak": 1,
         "Aerie Peak": 1,
-        "Ironforge": 2,
+        "Ironforge": 3,
         "Thelsamar": 1,
         "Farstrider Lodge": 1,
         "Dun Garok": 1,
@@ -3403,9 +3480,9 @@
         }
       },
       "startDate": "2024-06-09T14:12:27.0144066+02:00",
-      "lastLoaded": "2024-06-17T04:12:04.3488263+02:00",
-      "lastPlayed": "2024-06-17T04:14:33.5774442+02:00",
-      "timePlayed": "09:26:20.7020511",
+      "lastLoaded": "2024-06-17T15:47:25.679144+02:00",
+      "lastPlayed": "2024-06-17T15:51:55.4082249+02:00",
+      "timePlayed": "10:01:14.7592790",
       "lastVisitedTalents": 1
     },
     {
@@ -3634,7 +3711,8 @@
                 "type": "Kill",
                 "name": "Mottled Boar",
                 "amount": 3,
-                "amountDone": 2
+                "amountDone": 3,
+                "status": "Done"
               }
             ]
           },
@@ -3703,8 +3781,8 @@
           }
         ],
         "completedQuests": [],
-        "level": 8,
-        "experience": 4619,
+        "level": 9,
+        "experience": 119,
         "uniquesGotten": [],
         "reputation": {
           "Southsea Pirates": 0,
@@ -3777,7 +3855,7 @@
         },
         "professionSkills": {},
         "learnedRecipes": {},
-        "unspentTalentPoints": 7,
+        "unspentTalentPoints": 8,
         "faction": "Undercity",
         "name": "Cornelius",
         "race": "Forsaken",
@@ -4022,13 +4100,13 @@
       },
       "siteProgress": {
         "Ring of Law": 2,
-        "Valley of Trials": 5
+        "Valley of Trials": 14
       },
       "commonsKilled": {
         "Burrowing Thundersnout": 1,
         "Dark Screecher": 1,
-        "Scorpid Worker": 3,
-        "Mottled Boar": 2
+        "Scorpid Worker": 10,
+        "Mottled Boar": 4
       },
       "raresKilled": {},
       "elitesKilled": {
@@ -4291,7 +4369,7 @@
         "Tiragarde Keep": 1,
         "Rocky Desert": 1,
         "Den Overhill": 1,
-        "Valley of Trials": 4,
+        "Valley of Trials": 6,
         "Addle's Stead": 1,
         "Brightwood Grove": 1,
         "Dawning Wood Catacombs": 1,
@@ -5039,9 +5117,9 @@
       "unlockedAreas": [],
       "vendorStock": {},
       "startDate": "2024-06-10T03:15:00.6242447+02:00",
-      "lastLoaded": "2024-06-15T18:38:01.0078618+02:00",
-      "lastPlayed": "2024-06-15T18:38:14.898145+02:00",
-      "timePlayed": "00:25:41.2243340",
+      "lastLoaded": "2024-06-17T15:47:18.8759016+02:00",
+      "lastPlayed": "2024-06-17T15:47:23.0965288+02:00",
+      "timePlayed": "00:26:40.7983856",
       "lastVisitedTalents": 2
     },
     {

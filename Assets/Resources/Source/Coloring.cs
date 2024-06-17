@@ -75,6 +75,7 @@ public static class Coloring
         { "Orange",         new Color32(185, 104, 057, 255) },
         { "LightOrange",    new Color32(168, 110, 038, 255) },
         { "Green",          new Color32(081, 181, 077, 255) },
+        { "Blue",           new Color32(094, 105, 255, 255) },
 
         //Class colors
         { "Druid",          new Color32(184, 090, 007, 255) },

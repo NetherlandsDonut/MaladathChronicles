@@ -165,7 +165,7 @@ public class Desktop : MonoBehaviour
             else ambience.volume += 0.002f;
         }
         if (loadSites != null && loadSites.Count > 0)
-            for (int i = 0; i < 100; i++)
+            for (int i = 0; i < 20; i++)
             {
                 titleScreenFunnyEffect = new();
                 var site = loadSites[0];

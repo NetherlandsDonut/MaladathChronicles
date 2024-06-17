@@ -119,6 +119,7 @@ public class SiteHostileArea : Site
             (h) => { CDesktop.cameraDestination = new Vector2(x, y); },
             (h) =>
             {
+                if (zone == "Teldrassil" && zone != FindSite(x => x.name == currentSave.currentSite).zone) return;
                 if (h == null) LeadPath();
                 else ExecutePath("HostileArea");
             },

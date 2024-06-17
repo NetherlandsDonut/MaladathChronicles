@@ -87,10 +87,11 @@ public class FloatingText : MonoBehaviour
                 }
         }
         var textBorder = new GameObject("TextBorder", typeof(SpriteRenderer));
-        textBorder.transform.parent = transform;
-        textBorder.transform.localPosition = new Vector3(newObject.transform.localPosition.x - 2, text.Contains("/") ? 10 : 9, -0.04f);
+        textBorder.transform.parent = newObject.transform;
+        textBorder.transform.localPosition = new Vector3(-2, 3, -0.04f);
         var xPlus = pixelList.Min(x => x.Item1);
         var yPlus = pixelList.Min(x => x.Item2);
+        if (yPlus == 1) textBorder.transform.localPosition -= new Vector3(0, 1, 0);
         var texture = new Texture2D(pixelList.Max(x => x.Item1) - xPlus + 5, pixelList.Max(x => x.Item2) - yPlus + 5, TextureFormat.ARGB32, true) { filterMode = FilterMode.Point };
         for (int i = 0; i < texture.width; i++)
             for (int j = 0; j < texture.height ; j++)

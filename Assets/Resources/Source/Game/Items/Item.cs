@@ -684,7 +684,11 @@ public class Item
                         if (Board.board.results.exclusiveItems.Contains(item.name))
                             Board.board.results.inventory.items.RemoveAll(x => Board.board.results.exclusiveItems.Contains(x.name));
                         if (Board.board.results.inventory.items.Count == 0)
+                        {
                             CloseDesktop("CombatResultsLoot");
+                            SwitchDesktop("CombatResults");
+                            Respawn("CombatResults");
+                        }
                         else
                         {
                             Respawn("Inventory");

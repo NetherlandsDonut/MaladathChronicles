@@ -2343,7 +2343,39 @@ public class Blueprint
             AddHeaderRegion(() =>
             {
                 AddLine("Combat Results", "", "Center");
-                AddSmallButton("OtherChart", (h) => { PlaySound("DesktopInstanceOpen"); SpawnDesktopBlueprint("CombatLog"); });
+                AddSmallButton("OtherClose", (h) =>
+                {
+                    var hard = Realm.realms.Find(x => x.name == settings.selectedRealm).hardcore;
+                    if (hard && board.results.result == "Lost")
+                    {
+                        CloseSave();
+                        SaveGames();
+                        CloseDesktop("CombatResults");
+                        CloseDesktop("Map");
+                        CloseDesktop("TitleScreen");
+                        SpawnDesktopBlueprint("TitleScreen");
+                    }
+                    else
+                    {
+                        if (area.instancePart)
+                        {
+                            CloseDesktop("Instance");
+                            SpawnDesktopBlueprint("Instance");
+                            Respawn("HostileArea");
+                            Respawn("HostileAreaProgress");
+                            Respawn("HostileAreaDenizens");
+                            Respawn("HostileAreaElites");
+                            Respawn("Chest");
+                            SetDesktopBackground(area.Background());
+                        }
+                        else
+                        {
+                            CloseDesktop("HostileArea");
+                            SpawnDesktopBlueprint("HostileArea");
+                        }
+                        CloseDesktop("CombatResults");
+                    }
+                });
             });
             AddPaddingRegion(() =>
             {
@@ -2398,13 +2430,22 @@ public class Blueprint
                         CloseDesktop("HostileArea");
                         SpawnDesktopBlueprint("HostileArea");
                     }
-                    CloseDesktop("CombatResults");
-                    if (board.results.inventory.items.Count > 0)
+                    if (board.results.result == "Won" && board.results.inventory.items.Count > 0)
                     {
                         PlaySound("DesktopInventoryOpen");
                         SpawnDesktopBlueprint("CombatResultsLoot");
                     }
+                    else CloseDesktop("CombatResults");
                 }
+            });
+        }),
+        new("CombatResultsChartButton", () => {
+            SetAnchor(-101, 58);
+            DisableShadows();
+            AddRegionGroup();
+            AddHeaderRegion(() =>
+            {
+                AddSmallButton("OtherChart", (h) => { PlaySound("DesktopInstanceOpen"); SpawnDesktopBlueprint("CombatLog"); });
             });
         }),
         new("CombatResultsMining", () => {
@@ -2452,6 +2493,13 @@ public class Blueprint
                         PrintLootItem(board.results.miningLoot.items[j]);
                 }
             );
+            var s = currentSave.player.professionSkills["Mining"];
+            if (!board.results.miningSkillChange && board.results.miningNode.Item2 + 50 >= s.Item1 && s.Item1 < professions.Find(x => x.name == "Mining").levels.FindAll(x => s.Item2.Contains(x.levelName)).Max(x => x.maxSkill))
+            {
+                board.results.miningSkillChange = true;
+                currentSave.player.professionSkills["Mining"] = (s.Item1 + 1, s.Item2);
+                SpawnFallingText(new Vector2(), "Mining increased to " + (s.Item1 + 1), "Blue");
+            }
         }),
         new("CombatResultsHerbalism", () => {
             if (board.results.result != "Won") return;
@@ -2498,6 +2546,13 @@ public class Blueprint
                         PrintLootItem(board.results.herbalismLoot.items[j]);
                 }
             );
+            var s = currentSave.player.professionSkills["Herbalism"];
+            if (!board.results.herbalismSkillChange && board.results.herb.Item2 + 50 >= s.Item1 && s.Item1 < professions.Find(x => x.name == "Herbalism").levels.FindAll(x => s.Item2.Contains(x.levelName)).Max(x => x.maxSkill))
+            {
+                board.results.herbalismSkillChange = true;
+                currentSave.player.professionSkills["Herbalism"] = (s.Item1 + 1, s.Item2);
+                SpawnFallingText(new Vector2(), "Herbalism increased to " + (s.Item1 + 1), "Blue");
+            }
         }),
         new("CombatResultsChart", () => {
             SetAnchor(-301, 142);
@@ -2594,6 +2649,14 @@ public class Blueprint
                             Respawn("CombatResultsHerbalism");
                         });
                     }
+                    else if (CDesktop.title == "DisenchantLoot")
+                    {
+                        AddLine("Disenchant spoils" + ":");
+                        AddSmallButton("OtherClose", (h) =>
+                        {
+                            CloseDesktop("DisenchantLoot");
+                        });
+                    }
                     else
                     {
                         AddLine(board.enemy.name + ":");
@@ -2601,8 +2664,22 @@ public class Blueprint
                         {
                             PlaySound("DesktopInventoryClose");
                             CloseDesktop("CombatResultsLoot");
+                            SwitchDesktop("CombatResults");
+                            Respawn("CombatResults");
                         });
                     }
+                }
+            );
+        }),
+        new("HerbalismLoot", () => {
+            SetAnchor(-92, -105);
+            AddRegionGroup();
+            SetRegionGroupWidth(182);
+            AddPaddingRegion(
+                () =>
+                {
+                    for (int j = 0; j < 4 && j < board.results.herbalismLoot.items.Count; j++)
+                        PrintLootItem(board.results.herbalismLoot.items[j]);
                 }
             );
         }),
@@ -4524,7 +4601,7 @@ public class Blueprint
             },
             (h) =>
             {
-                UnityEngine.Application.Quit();
+                Application.Quit();
             });
             AddPaddingRegion(() => { });
             var maladathIcon = new GameObject("MaladathIcon", typeof(SpriteRenderer));
@@ -4601,7 +4678,7 @@ public class Blueprint
             {
                 CloseSave();
                 SaveGames();
-                UnityEngine.Application.Quit();
+                Application.Quit();
             });
         }, true),
         new("GameSettings", () => {
@@ -5228,6 +5305,7 @@ public class Blueprint
             SpawnWindowBlueprint("MapToolbarStatusLeft");
             SpawnWindowBlueprint("MapToolbarStatusRight");
             SpawnWindowBlueprint("CombatResults");
+            SpawnWindowBlueprint("CombatResultsChartButton");
             SpawnWindowBlueprint("CombatResultsMining");
             SpawnWindowBlueprint("CombatResultsHerbalism");
             SpawnWindowBlueprint("ExperienceBarBorder");
@@ -5293,6 +5371,8 @@ public class Blueprint
             {
                 PlaySound("DesktopInventoryClose");
                 CloseDesktop("CombatResultsLoot");
+                SwitchDesktop("CombatResults");
+                Respawn("CombatResults");
             });
         }),
         new("MiningLoot", () =>

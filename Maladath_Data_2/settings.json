@@ -6,7 +6,7 @@
     "value": "True"
   },
   "music": {
-    "value": "True"
+    "value": "False"
   },
   "soundEffects": {
     "value": "True"
@@ -30,7 +30,7 @@
     "value": "True"
   },
   "fastCascading": {
-    "value": "True"
+    "value": "False"
   },
   "onlyHavingMaterials": {
     "value": "False"

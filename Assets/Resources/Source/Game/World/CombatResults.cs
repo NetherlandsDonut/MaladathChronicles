@@ -24,6 +24,8 @@ public class CombatResults
 
     public Inventory miningLoot;
 
+    public bool miningSkillChange;
+
     public void GenerateMiningNode(string zone, int level)
     {
         var find = Zone.zones.Find(x => x.name == zone);
@@ -54,6 +56,8 @@ public class CombatResults
     public (string, int) herb;
 
     public Inventory herbalismLoot;
+
+    public bool herbalismSkillChange;
 
     public void GenerateHerb(string zone, int level)
     {
