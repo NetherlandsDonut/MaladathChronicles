@@ -4524,7 +4524,7 @@ public class Blueprint
             },
             (h) =>
             {
-                Application.Quit();
+                UnityEngine.Application.Quit();
             });
             AddPaddingRegion(() => { });
             var maladathIcon = new GameObject("MaladathIcon", typeof(SpriteRenderer));
@@ -4551,6 +4551,8 @@ public class Blueprint
                     SpawnDesktopBlueprint("Map");
                     var find = FindSite(x => x.name == currentSave.currentSite);
                     if (find != null) CDesktop.cameraDestination = new Vector2(find.x, find.y);
+                    Cursor.cursor.transform.position += (Vector3)CDesktop.cameraDestination - CDesktop.screen.transform.position;
+                    CDesktop.screen.transform.localPosition = CDesktop.cameraDestination;
                 });
             }
             else
@@ -4599,7 +4601,7 @@ public class Blueprint
             {
                 CloseSave();
                 SaveGames();
-                Application.Quit();
+                UnityEngine.Application.Quit();
             });
         }, true),
         new("GameSettings", () => {
@@ -4617,7 +4619,7 @@ public class Blueprint
             AddRegionGroup();
             AddPaddingRegion(() =>
             {
-                AddLine("Visuals", "", "Center");
+                AddLine("Visuals", "HalfGray");
             });
             AddButtonRegion(() =>
             {
@@ -4641,7 +4643,7 @@ public class Blueprint
             });
             AddPaddingRegion(() =>
             {
-                AddLine("Sound", "", "Center");
+                AddLine("Sound", "HalfGray");
             });
             AddButtonRegion(() =>
             {

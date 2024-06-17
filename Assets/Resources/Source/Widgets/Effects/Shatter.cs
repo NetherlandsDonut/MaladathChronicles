@@ -83,6 +83,7 @@ public class Shatter : MonoBehaviour
                     var r = GetComponent<Rigidbody2D>();
                     r.gravityScale = 0;
                     r.velocity = Vector2.zero;
+                    Sound.PlaySound("Sparkle" + random.Next(1, 4), 0.3f);
                     r.AddRelativeForce(Random.insideUnitCircle * 240);
                     travelEnabled = false;
                 }

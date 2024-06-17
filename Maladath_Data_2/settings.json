@@ -1,12 +1,12 @@
 {
-  "selectedRealm": "Gehennas",
+  "selectedRealm": "Whitemane",
   "selectedRealmRanking": "Whitemane",
-  "selectedCharacter": "Zuxujen",
+  "selectedCharacter": "Allesha",
   "pixelPerfectVision": {
     "value": "True"
   },
   "music": {
-    "value": "False"
+    "value": "True"
   },
   "soundEffects": {
     "value": "True"
@@ -30,7 +30,7 @@
     "value": "True"
   },
   "fastCascading": {
-    "value": "False"
+    "value": "True"
   },
   "onlyHavingMaterials": {
     "value": "False"

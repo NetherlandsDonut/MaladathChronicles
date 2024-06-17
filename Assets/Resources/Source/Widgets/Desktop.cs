@@ -178,8 +178,6 @@ public class Desktop : MonoBehaviour
                 if (loadSites.Count == 0)
                 {
                     RemoveDesktopBackground();
-                    cursor.transform.position += (Vector3)cameraDestination - screen.transform.position;
-                    screen.transform.localPosition = cameraDestination;
                     SpawnWindowBlueprint("MapToolbarShadow");
                     SpawnWindowBlueprint("MapToolbarClockLeft");
                     SpawnWindowBlueprint("MapToolbar");
@@ -304,7 +302,7 @@ public class Desktop : MonoBehaviour
                             {
                                 var site = connection.sites.Find(x => x != queuedSiteOpen);
                                 if (!CDesktop.windows.Exists(x => x.title == "Site: " + site))
-                                    if (Respawn("Site: " + connection.sites.Find(x => x != queuedSiteOpen)))
+                                    if (!Respawn("Site: " + connection.sites.Find(x => x != queuedSiteOpen)))
                                         LBWindow.GetComponentsInChildren<Renderer>().ToList().ForEach(x => x.gameObject.AddComponent<FadeIn>());
                             }
                             queuedSiteOpen = "";

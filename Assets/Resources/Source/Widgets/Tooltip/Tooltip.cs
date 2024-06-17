@@ -21,6 +21,7 @@ public class Tooltip
         {
             Sound.PlaySound("DesktopTooltipShow", 0.2f);
             window = CDesktop.LBWindow;
+            //window.FadeIn();
         }
         else CloseWindow(CDesktop.LBWindow);
     }

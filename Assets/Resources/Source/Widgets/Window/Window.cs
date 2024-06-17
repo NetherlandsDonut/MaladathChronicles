@@ -41,6 +41,13 @@ public class Window : MonoBehaviour
         desktop.windows.Add(this);
     }
 
+    public void FadeIn()
+    {
+        var rs = GetComponentsInChildren<SpriteRenderer>().ToList();
+        foreach (var r in rs)
+            r.gameObject.AddComponent<FadeIn>().random = false;
+    }
+
     public int PlannedHeight(bool includeHeader = false)
     {
         return (regionGroups.Count > 0 ? regionGroups.Max(x => x.PlannedHeight()) : 0) + (includeHeader && headerGroup != null ? (headerGroup.setHeight != 0 ? headerGroup.setHeight : headerGroup.PlannedHeight()) : 0);

@@ -1271,6 +1271,7 @@
         "currentQuests": [],
         "completedQuests": [],
         "level": 1,
+        "experience": 20,
         "uniquesGotten": [],
         "reputation": {
           "Southsea Pirates": 0,
@@ -1459,7 +1460,9 @@
         }
       },
       "hour": 7,
-      "currentSite": "The Den",
+      "minute": 1,
+      "second": 24,
+      "currentSite": "Valley of Trials",
       "ringOfLaw": "Hedrum the Creeper",
       "forlornCloister": "Fallen Champion",
       "openedChests": {},
@@ -1468,15 +1471,16 @@
       "raresKilled": {},
       "elitesKilled": {},
       "siteVisits": {
-        "The Den": 1
+        "The Den": 1,
+        "Valley of Trials": 1
       },
       "unlockedAreas": [],
       "vendorStock": {},
       "banks": {},
       "startDate": "2024-06-16T19:13:02.835421+02:00",
-      "lastLoaded": "2024-06-17T00:22:03.9182063+02:00",
-      "lastPlayed": "2024-06-17T00:22:07.71662+02:00",
-      "timePlayed": "00:00:09.0629473"
+      "lastLoaded": "2024-06-17T04:00:06.7917495+02:00",
+      "lastPlayed": "2024-06-17T04:00:15.7672723+02:00",
+      "timePlayed": "00:03:44.6885055"
     },
     {
       "player": {
@@ -1705,9 +1709,9 @@
       "vendorStock": {},
       "banks": {},
       "startDate": "2024-06-16T22:46:56.054792+02:00",
-      "lastLoaded": "2024-06-16T23:29:53.3924603+02:00",
-      "lastPlayed": "2024-06-16T23:29:55.1060151+02:00",
-      "timePlayed": "00:00:01.7135548"
+      "lastLoaded": "2024-06-17T03:59:52.6253026+02:00",
+      "lastPlayed": "2024-06-17T04:00:02.1787172+02:00",
+      "timePlayed": "00:00:14.4909727"
     }
   ],
   "Whitemane": [
@@ -2550,7 +2554,7 @@
         "Ruins of Thaurissan": 1,
         "Slither Rock": 2,
         "Terror Wing Path": 1,
-        "The Pillar of Ash": 2,
+        "The Pillar of Ash": 4,
         "Ameth'Aran": 1,
         "Bashal'Aran": 1,
         "Blackwood Den": 1,
@@ -3399,9 +3403,9 @@
         }
       },
       "startDate": "2024-06-09T14:12:27.0144066+02:00",
-      "lastLoaded": "2024-06-16T16:25:47.7934134+02:00",
-      "lastPlayed": "2024-06-16T16:50:21.9821391+02:00",
-      "timePlayed": "09:23:30.2389704",
+      "lastLoaded": "2024-06-17T04:12:04.3488263+02:00",
+      "lastPlayed": "2024-06-17T04:14:33.5774442+02:00",
+      "timePlayed": "09:26:20.7020511",
       "lastVisitedTalents": 1
     },
     {

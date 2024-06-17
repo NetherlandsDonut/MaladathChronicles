@@ -938,14 +938,6 @@ public static class Root
                 CloseWindow("Complex");
                 if (f == "Add") Respawn("QuestAdd");
                 else if (f == "Turn") Respawn("QuestTurn");
-            },
-            null, (h) => () =>
-            {
-                if (CDesktop.windows.Exists(x => x.title == "Quest")) return;
-                if (CDesktop.windows.Exists(x => x.title == "QuestAdd")) return;
-                if (CDesktop.windows.Exists(x => x.title == "QuestTurn")) return;
-                SetAnchor(TopRight, -19, -38);
-                quest.Print();
             });
             var color = ColorQuestLevel(quest.questLevel);
             if (color != null) SetRegionBackgroundAsImage("SkillUp" + color);
