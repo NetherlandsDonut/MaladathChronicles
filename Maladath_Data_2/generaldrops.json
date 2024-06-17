@@ -318,7 +318,10 @@
     "inclusive": true,
     "dropStart": 9,
     "dropEnd": 25,
-    "dropCount": 1
+    "dropCount": 1,
+    "tags": [
+      "Bag"
+    ]
   },
   {
     "item": "Red Leather Bag",
@@ -381,7 +384,10 @@
     "inclusive": true,
     "dropStart": 1,
     "dropEnd": 17,
-    "dropCount": 1
+    "dropCount": 1,
+    "tags": [
+      "Bag"
+    ]
   },
   {
     "item": "Small Green Pouch",
@@ -686,7 +692,10 @@
     "inclusive": true,
     "dropStart": 36,
     "dropEnd": 50,
-    "dropCount": 1
+    "dropCount": 1,
+    "tags": [
+      "Scroll"
+    ]
   },
   {
     "item": "Scroll of Strength III",
@@ -716,7 +725,10 @@
     "inclusive": true,
     "dropStart": 46,
     "dropEnd": 60,
-    "dropCount": 1
+    "dropCount": 1,
+    "tags": [
+      "Scroll"
+    ]
   },
   {
     "item": "Scroll of Protection IV",
@@ -1461,7 +1473,7 @@
     "rarity": 100.0,
     "category": "Peacebloom",
     "dropStart": 1,
-    "dropEnd": 60,
+    "dropEnd": 29,
     "dropCount": 3,
     "tags": [
       "Main",
@@ -1476,7 +1488,7 @@
     "rarity": 100.0,
     "category": "Silverleaf",
     "dropStart": 1,
-    "dropEnd": 60,
+    "dropEnd": 29,
     "dropCount": 3,
     "tags": [
       "Main",
@@ -1491,7 +1503,7 @@
     "rarity": 100.0,
     "category": "Earthroot",
     "dropStart": 1,
-    "dropEnd": 60,
+    "dropEnd": 29,
     "dropCount": 3,
     "tags": [
       "Main",
@@ -1505,8 +1517,8 @@
     "item": "Mageroyal",
     "rarity": 100.0,
     "category": "Mageroyal",
-    "dropStart": 1,
-    "dropEnd": 60,
+    "dropStart": 6,
+    "dropEnd": 32,
     "dropCount": 3,
     "tags": [
       "Main",
@@ -1520,8 +1532,8 @@
     "item": "Swiftthistle",
     "rarity": 100.0,
     "category": "Mageroyal",
-    "dropStart": 1,
-    "dropEnd": 60,
+    "dropStart": 6,
+    "dropEnd": 42,
     "dropCount": 2,
     "tags": [
       "Herb",
@@ -1534,8 +1546,8 @@
     "item": "Briarthorn",
     "rarity": 100.0,
     "category": "Briarthorn",
-    "dropStart": 1,
-    "dropEnd": 60,
+    "dropStart": 9,
+    "dropEnd": 42,
     "dropCount": 3,
     "tags": [
       "Main",
@@ -1549,8 +1561,8 @@
     "item": "Swiftthistle",
     "rarity": 100.0,
     "category": "Briarthorn",
-    "dropStart": 1,
-    "dropEnd": 60,
+    "dropStart": 9,
+    "dropEnd": 42,
     "dropCount": 2,
     "tags": [
       "Herb",
@@ -1563,8 +1575,8 @@
     "item": "Stranglekelp",
     "rarity": 100.0,
     "category": "Stranglekelp",
-    "dropStart": 1,
-    "dropEnd": 60,
+    "dropStart": 9,
+    "dropEnd": 50,
     "dropCount": 3,
     "tags": [
       "Main",
@@ -1578,8 +1590,8 @@
     "item": "Bruiseweed",
     "rarity": 100.0,
     "category": "Bruiseweed",
-    "dropStart": 1,
-    "dropEnd": 60,
+    "dropStart": 9,
+    "dropEnd": 32,
     "dropCount": 3,
     "tags": [
       "Main",
@@ -1593,8 +1605,8 @@
     "item": "Wild Steelbloom",
     "rarity": 100.0,
     "category": "Wild Steelbloom",
-    "dropStart": 1,
-    "dropEnd": 60,
+    "dropStart": 11,
+    "dropEnd": 40,
     "dropCount": 3,
     "tags": [
       "Main",
@@ -1608,7 +1620,7 @@
     "item": "Grave Moss",
     "rarity": 100.0,
     "category": "Grave Moss",
-    "dropStart": 1,
+    "dropStart": 19,
     "dropEnd": 60,
     "dropCount": 3,
     "tags": [
@@ -1623,8 +1635,8 @@
     "item": "Kingsblood",
     "rarity": 100.0,
     "category": "Kingsblood",
-    "dropStart": 1,
-    "dropEnd": 60,
+    "dropStart": 11,
+    "dropEnd": 43,
     "dropCount": 3,
     "tags": [
       "Main",
@@ -1638,8 +1650,8 @@
     "item": "Liferoot",
     "rarity": 100.0,
     "category": "Liferoot",
-    "dropStart": 1,
-    "dropEnd": 60,
+    "dropStart": 19,
+    "dropEnd": 50,
     "dropCount": 3,
     "tags": [
       "Main",
@@ -1653,8 +1665,8 @@
     "item": "Fadeleaf",
     "rarity": 100.0,
     "category": "Fadeleaf",
-    "dropStart": 1,
-    "dropEnd": 60,
+    "dropStart": 25,
+    "dropEnd": 50,
     "dropCount": 3,
     "tags": [
       "Main",
@@ -1668,7 +1680,7 @@
     "item": "Goldthorn",
     "rarity": 100.0,
     "category": "Goldthorn",
-    "dropStart": 1,
+    "dropStart": 25,
     "dropEnd": 60,
     "dropCount": 3,
     "tags": [
@@ -1683,7 +1695,7 @@
     "item": "Khadgar's Whisker",
     "rarity": 100.0,
     "category": "Khadgar's Whisker",
-    "dropStart": 1,
+    "dropStart": 25,
     "dropEnd": 60,
     "dropCount": 3,
     "tags": [
@@ -1698,8 +1710,8 @@
     "item": "Wintersbite",
     "rarity": 100.0,
     "category": "Wintersbite",
-    "dropStart": 1,
-    "dropEnd": 60,
+    "dropStart": 27,
+    "dropEnd": 42,
     "dropCount": 3,
     "tags": [
       "Main",
@@ -1713,7 +1725,7 @@
     "item": "Firebloom",
     "rarity": 100.0,
     "category": "Firebloom",
-    "dropStart": 1,
+    "dropStart": 36,
     "dropEnd": 60,
     "dropCount": 3,
     "tags": [
@@ -1728,7 +1740,7 @@
     "item": "Purple Lotus",
     "rarity": 100.0,
     "category": "Purple Lotus",
-    "dropStart": 1,
+    "dropStart": 30,
     "dropEnd": 60,
     "dropCount": 2,
     "tags": [
@@ -1743,7 +1755,7 @@
     "item": "Wildvine",
     "rarity": 100.0,
     "category": "Purple Lotus",
-    "dropStart": 1,
+    "dropStart": 30,
     "dropEnd": 60,
     "dropCount": 2,
     "tags": [
@@ -1758,7 +1770,7 @@
     "item": "Arthas' Tears",
     "rarity": 100.0,
     "category": "Arthas' Tears",
-    "dropStart": 1,
+    "dropStart": 48,
     "dropEnd": 60,
     "dropCount": 3,
     "tags": [
@@ -1773,7 +1785,7 @@
     "item": "Sungrass",
     "rarity": 100.0,
     "category": "Sungrass",
-    "dropStart": 1,
+    "dropStart": 41,
     "dropEnd": 60,
     "dropCount": 3,
     "tags": [
@@ -1788,8 +1800,8 @@
     "item": "Blindweed",
     "rarity": 100.0,
     "category": "Blindweed",
-    "dropStart": 1,
-    "dropEnd": 60,
+    "dropStart": 35,
+    "dropEnd": 55,
     "dropCount": 3,
     "tags": [
       "Main",
@@ -1803,7 +1815,7 @@
     "item": "Ghost Mushroom",
     "rarity": 100.0,
     "category": "Ghost Mushroom",
-    "dropStart": 1,
+    "dropStart": 41,
     "dropEnd": 60,
     "dropCount": 3,
     "tags": [
@@ -1818,7 +1830,7 @@
     "item": "Gromsblood",
     "rarity": 100.0,
     "category": "Gromsblood",
-    "dropStart": 1,
+    "dropStart": 29,
     "dropEnd": 60,
     "dropCount": 3,
     "tags": [
@@ -1833,7 +1845,7 @@
     "item": "Golden Sansam",
     "rarity": 100.0,
     "category": "Golden Sansam",
-    "dropStart": 1,
+    "dropStart": 41,
     "dropEnd": 60,
     "dropCount": 3,
     "tags": [
@@ -1848,7 +1860,7 @@
     "item": "Dreamfoil",
     "rarity": 100.0,
     "category": "Dreamfoil",
-    "dropStart": 1,
+    "dropStart": 45,
     "dropEnd": 60,
     "dropCount": 3,
     "tags": [
@@ -1863,7 +1875,7 @@
     "item": "Plaguebloom",
     "rarity": 100.0,
     "category": "Plaguebloom",
-    "dropStart": 1,
+    "dropStart": 48,
     "dropEnd": 60,
     "dropCount": 3,
     "tags": [
@@ -1878,7 +1890,7 @@
     "item": "Icecap",
     "rarity": 100.0,
     "category": "Icecap",
-    "dropStart": 1,
+    "dropStart": 54,
     "dropEnd": 60,
     "dropCount": 3,
     "tags": [
@@ -1893,7 +1905,7 @@
     "item": "Black Lotus",
     "rarity": 100.0,
     "category": "Black Lotus",
-    "dropStart": 1,
+    "dropStart": 50,
     "dropEnd": 60,
     "dropCount": 1,
     "tags": [
@@ -1908,7 +1920,7 @@
     "item": "Mountain Silversage",
     "rarity": 100.0,
     "category": "Mountain Silversage",
-    "dropStart": 1,
+    "dropStart": 45,
     "dropEnd": 60,
     "dropCount": 3,
     "tags": [

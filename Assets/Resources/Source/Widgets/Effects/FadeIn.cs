@@ -6,15 +6,19 @@ public class FadeIn : MonoBehaviour
     public bool initialised, random = true;
     public SpriteRenderer render;
 
+    void Start()
+    {
+        render = GetComponent<SpriteRenderer>();
+        render.color = new Color(render.color.r, render.color.g, render.color.b, 0);
+    }
+
     void Update()
     {
         if (!initialised)
         {
             initialised = true;
-            render = GetComponent<SpriteRenderer>();
-            render.color = new Color(render.color.r, render.color.g, render.color.b, 0);
             if (!random) return;
-            else if (gameObject.name.Contains("PathDot")) counter = 0.25f;
+            else if (gameObject.name.Contains("PathDot")) counter = 0.2f;
             else
             {
                 var r = new System.Random((gameObject.transform.childCount == 0 ? gameObject.transform.parent : gameObject.transform).GetInstanceID());
@@ -26,7 +30,7 @@ public class FadeIn : MonoBehaviour
         {
             render.color = new Color(render.color.r, render.color.g, render.color.b, render.color.a + 0.1f);
             if (render.color.a == 1) Destroy(this);
-            counter = 0.005f;
+            counter = 0.015f;
         }
     }
 }

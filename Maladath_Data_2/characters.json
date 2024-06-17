@@ -2431,9 +2431,9 @@
         }
       },
       "hour": 9,
-      "minute": 52,
-      "second": 12,
-      "currentSite": "The Long Wash",
+      "minute": 58,
+      "second": 16,
+      "currentSite": "Wildbend River",
       "openedChests": {
         "Gnomeregan Outskirts": {
           "area": "Gnomeregan Outskirts",
@@ -3480,9 +3480,9 @@
         }
       },
       "startDate": "2024-06-09T14:12:27.0144066+02:00",
-      "lastLoaded": "2024-06-17T16:02:21.6312157+02:00",
-      "lastPlayed": "2024-06-17T16:02:39.542035+02:00",
-      "timePlayed": "10:02:18.9764315",
+      "lastLoaded": "2024-06-17T16:12:13.5701081+02:00",
+      "lastPlayed": "2024-06-17T16:13:29.0643468+02:00",
+      "timePlayed": "10:03:36.3192109",
       "lastVisitedTalents": 1
     },
     {
@@ -6361,7 +6361,7 @@
         "currentQuests": [],
         "completedQuests": [],
         "level": 4,
-        "experience": 1303,
+        "experience": 1343,
         "uniquesGotten": [],
         "reputation": {
           "Southsea Pirates": 0,
@@ -6693,9 +6693,9 @@
         }
       },
       "hour": 7,
-      "minute": 25,
-      "second": 12,
-      "currentSite": "Scarlet Monastery Grounds",
+      "minute": 31,
+      "second": 44,
+      "currentSite": "Balnir Farmstead",
       "ringOfLaw": "Anub'shiah",
       "openedChests": {
         "Coldridge Valley": {
@@ -6743,7 +6743,9 @@
         "Blackrock Mountain": 3,
         "Nilith Camp": 0,
         "The Sea of Cinders": 0,
-        "Scarlet Monastery Grounds": 3
+        "Scarlet Monastery Grounds": 3,
+        "Eastern Woods": 2,
+        "Balnir Farmstead": 1
       },
       "unlockedAreas": [
         "Map Chamber"
@@ -6751,9 +6753,9 @@
       "vendorStock": {},
       "banks": {},
       "startDate": "2024-06-14T18:07:06.2505989+02:00",
-      "lastLoaded": "2024-06-17T16:01:51.3113014+02:00",
-      "lastPlayed": "2024-06-17T16:01:53.6075709+02:00",
-      "timePlayed": "00:23:53.9652514"
+      "lastLoaded": "2024-06-17T16:48:47.6214801+02:00",
+      "lastPlayed": "2024-06-17T16:53:33.8253178+02:00",
+      "timePlayed": "00:29:36.3029289"
     },
     {
       "player": {
