@@ -1,16 +1,19 @@
+using System.Collections.Generic;
+
 using UnityEngine;
 
 using static GameSettings;
 
 public static class Sound
 {
+    public static Dictionary<string, AudioClip> sounds;
+
     //Plays a singular sound effect
     public static void PlaySound(string path, float volume = 0.5f)
     {
         if (!settings.soundEffects.Value() || soundsPlayedThisFrame > 4) return;
-        var temp = Resources.Load<AudioClip>("Sounds/" + path);
-        if (temp == null) return;
-        soundEffects.PlayOneShot(temp, volume);
+        if (!sounds.ContainsKey(path)) return;
+        soundEffects.PlayOneShot(sounds[path], volume);
         soundsPlayedThisFrame++;
     }
 

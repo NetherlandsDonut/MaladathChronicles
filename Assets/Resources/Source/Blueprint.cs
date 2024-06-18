@@ -1650,12 +1650,18 @@ public class Blueprint
                 {
                     var crafted = currentSave.player.Craft(recipe);
                     var skill = currentSave.player.professionSkills;
-                    if (recipe.skillUpYellow > skill[recipe.profession].Item1)
-                        skill[recipe.profession] = (skill[recipe.profession].Item1 + 1, skill[recipe.profession].Item2);
-                    else if (recipe.skillUpGreen > skill[recipe.profession].Item1 && Roll(75))
-                        skill[recipe.profession] = (skill[recipe.profession].Item1 + 1, skill[recipe.profession].Item2);
-                    else if (recipe.skillUpGray > skill[recipe.profession].Item1 && Roll(25))
-                        skill[recipe.profession] = (skill[recipe.profession].Item1 + 1, skill[recipe.profession].Item2);
+                    var isMaxed = skill[recipe.profession].Item1 == profession.levels.FindAll(x => skill[recipe.profession].Item2.Contains(x.levelName)).Max(x => x.maxSkill);
+                    if (!isMaxed)
+                    {
+                        var suc = false;
+                        if (recipe.skillUpYellow > skill[recipe.profession].Item1)
+                            (skill[recipe.profession], suc) = ((skill[recipe.profession].Item1 + 1, skill[recipe.profession].Item2), true);
+                        else if (recipe.skillUpGreen > skill[recipe.profession].Item1 && Roll(75))
+                            (skill[recipe.profession], suc) = ((skill[recipe.profession].Item1 + 1, skill[recipe.profession].Item2), true);
+                        else if (recipe.skillUpGray > skill[recipe.profession].Item1 && Roll(25))
+                            (skill[recipe.profession], suc) = ((skill[recipe.profession].Item1 + 1, skill[recipe.profession].Item2), true);
+                        if (suc) SpawnFallingText(new Vector2(0, 34), recipe.profession + " increased to " + skill[recipe.profession].Item1, "Blue");
+                    }
                     foreach (var item in crafted)
                     {
                         currentSave.player.inventory.AddItem(item);
@@ -2546,7 +2552,7 @@ public class Blueprint
             {
                 board.results.miningSkillChange = true;
                 currentSave.player.professionSkills["Mining"] = (s.Item1 + 1, s.Item2);
-                SpawnFallingText(new Vector2(), "Mining increased to " + (s.Item1 + 1), "Blue");
+                SpawnFallingText(new Vector2(0, 34), "Mining increased to " + (s.Item1 + 1), "Blue");
             }
         }),
         new("CombatResultsHerbalism", () => {
@@ -2599,7 +2605,7 @@ public class Blueprint
             {
                 board.results.herbalismSkillChange = true;
                 currentSave.player.professionSkills["Herbalism"] = (s.Item1 + 1, s.Item2);
-                SpawnFallingText(new Vector2(), "Herbalism increased to " + (s.Item1 + 1), "Blue");
+                SpawnFallingText(new Vector2(0, 34), "Herbalism increased to " + (s.Item1 + 1), "Blue");
             }
         }),
         new("DisenchantLoot", () => {
@@ -2618,7 +2624,7 @@ public class Blueprint
             {
                 enchantingSkillChange = true;
                 currentSave.player.professionSkills["Enchanting"] = (s.Item1 + 1, s.Item2);
-                SpawnFallingText(new Vector2(), "Enchanting increased to " + (s.Item1 + 1), "Blue");
+                SpawnFallingText(new Vector2(0, 34), "Enchanting increased to " + (s.Item1 + 1), "Blue");
             }
         }),
         new("CombatResultsChartButton", () => {
@@ -3003,14 +3009,14 @@ public class Blueprint
                     }
                 }
         }),
-        new("HostileAreaDenizens", () => 
+        new("HostileAreaDenizens", () =>
         {
             SetAnchor(TopLeft, 19, -95);
-            AddHeaderGroup();
+            AddRegionGroup();
             SetRegionGroupWidth(190);
             if (area.commonEncounters != null && area.commonEncounters.Count > 0)
                 foreach (var encounter in area.commonEncounters)
-                    AddPaddingRegion(() =>
+                    AddHeaderRegion(() =>
                     {
                         AddLine(encounter.who, "DarkGray", "Right");
                         var race = races.Find(x => x.name == encounter.who);
@@ -5741,7 +5747,8 @@ public class Blueprint
                     { "Order", 99 },
                     { "Shadow", 99 },
                 };
-                CDesktop.RebuildAll();
+                Respawn("PlayerBattleInfo");
+                board.UpdateResourceBars("Player", elements);
             });
             AddHotkey(PageDown, () => {
                 board.enemy.resources = new Dictionary<string, int>
@@ -5757,7 +5764,8 @@ public class Blueprint
                     { "Order", 99 },
                     { "Shadow", 99 },
                 };
-                CDesktop.RebuildAll();
+                Respawn("EnemyBattleInfo");
+                board.UpdateResourceBars("Enemy", elements);
             });
             AddHotkey(Escape, () =>
             {
