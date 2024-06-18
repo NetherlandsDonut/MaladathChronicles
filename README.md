@@ -423,6 +423,7 @@ v0.4.25
     11.04 Fixed transportation to work again
           Added shatter params to ChangeElements effect
 ```
+
 </details>
 
 <details>
@@ -670,4 +671,15 @@ v0.5.49
           Excluded Teldrassil from pathfinding while in other zones to avoid game freezing
           Fixed starting camera position when loading up a save
 ```
+</details>
+
+<details>
+
+<summary>Version history for <b>v0.6</b></summary>
+
+```
+v0.6.0
+    18.06 Added disenchanting items
+```
+
 </details>
