@@ -423,6 +423,7 @@ v0.4.25
     11.04 Fixed transportation to work again
           Added shatter params to ChangeElements effect
 ```
+
 </details>
 
 <details>
@@ -569,5 +570,116 @@ v0.5.29
           Profession skill raises now when crafting items
           Changed icon for enchanting recipes
           Moved level barriers required for riding to defines
+v0.5.30
+    25.05 Added enchanting
+          Split blueprint file into two separate to improve performance
+          Remade pagination system
+          Polished the crafting screen
+v0.5.31
+    26.05 Two new sites for Hilsbrad
+          Added unplayable goblin race
+v0.5.32
+    28.05 Redid character creation screen
+          Custom names now possible for new characters
+          Added center alignment to input lines and descriptions
+          Rounded camera borders
+v0.5.33
+    29.05 Huge improvements to performance in combat
+          Decreased the amount of windows
+          Made shatter effects decay smoothly
+          Added separate layers for shadows
+          Fixed headers not having static pagination
+v0.5.34
+    30.05 Added reputation standing colors
+v0.5.35
+    01.06 Base work of quests
+          Quest markers
+          Making progress in quests
+v0.5.36
+    02.06 Imported all quests from WoW
+v0.5.37
+    03.06 Quest markers for instances and complexes
+          Quest info in site tooltip
+          Quest log settings
+v0.5.38
+    04.06 Smoothly updating Fluid Bars
+          Quest tooltips now don't show parts of the quests that can't be done at the site
+          Added zone icons for quests
+v0.5.39
+    06.06 Changed the combat UI
+          Added new cooldown animation
+          Fixed talents not updating on changes
+          Removed collisions from buttons without interactions
+v0.5.40
+    07.06 Abilities with no cooldown no longer receive cooldown set to zero
+    08.06 Added quest marker over sites that offer new quests
+          Eight new sites for Eastern Kingdoms
+          Increased size of sites on map from 19x19 to 20x20
+          Added possibility of neutral non-faction towns
+          Many fixes to UI
+v0.5.41
+    09.06 Added a lot of new portraits
+          Removed instance wing headers
+          Unique drop mechanism for items
+          Indestructible mechanism for items
+v0.5.42
+    10.06 Added accepting and abandoning quests
+          Added a random boss to Ring of Law
+          Filled Stratholme
+v0.5.43
+    11.06 Added all nighttime visuals to the game
+          Added icon for teleport in Darnassus
+          Made player location and exclamation mark not overlap
+          Rearranged sprite folder
+          Made indestructible items not decay in buyback
+v0.5.44
+    12.06 Added unique backgrounds for each screen
+          Stopped respawning neighboring sites when traveling for no reason
+          Added a lot of rare enemies and portraits for them
+v0.5.45
+    13.06 Empty bag slots are no longer clickable
+          Rares no longer show up in area tooltip
+          Improved quest tooltips in sites
+          Finished adding all rare encounters
+          Added item rewards to quests
+          One new site for Westfall and one for Ashenvale
+v0.5.46
+    14.06 Added glow indicating that a quest can be turned in
+          One new site for Dun Morogh
+          Fixed crash on hovering over anything while traveling
+          Fixed alignment of icons in site tooltips
+          Shatter dots from elements collected on the board move to entity portrait
+          Adjusted layer of flying buffs
+          Missiles have a more funky trajectory now
+v0.5.47
+    15.06 Added turning in quests
+          New complex icon
+          Updated spec backgrounds a little
+          Disabled map padding when not in map
+          Made chest fit into instances and complexes
+          Removed limitation for max area amount in instances
+          Added level range displayed in complex tooltips
+          Added gray colored bars for quests and recipes
+v0.5.48
+    16.06 Added gathering herbs and mining ore
+v0.5.49
+    17.06 Added level ranges for herbs
+          Fixed two bags not having tags
+          Added sparkle sound when shatter effect touches portrait
+          Remade title screen moving effect
+          Combat results no longer close after taking all the loot
+          Excluded Teldrassil from pathfinding while in other zones to avoid game freezing
+          Fixed starting camera position when loading up a save
 ```
+</details>
+
+<details>
+
+<summary>Version history for <b>v0.6</b></summary>
+
+```
+v0.6.0
+    18.06 Added disenchanting items
+```
+
 </details>
