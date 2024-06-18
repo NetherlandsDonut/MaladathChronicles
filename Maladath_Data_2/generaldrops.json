@@ -1936,8 +1936,36 @@
     "rarity": 100.0,
     "category": "Disenchant Uncommon",
     "dropStart": 5,
-    "dropEnd": 25,
+    "dropEnd": 15,
     "dropCount": 3,
+    "tags": [
+      "Dust",
+      "CommonMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Enchanting",
+    "requiredSkill": 1,
+    "item": "Strange Dust",
+    "rarity": 100.0,
+    "category": "Disenchant Uncommon",
+    "dropStart": 16,
+    "dropEnd": 20,
+    "dropCount": 4,
+    "tags": [
+      "Dust",
+      "CommonMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Enchanting",
+    "requiredSkill": 1,
+    "item": "Strange Dust",
+    "rarity": 100.0,
+    "category": "Disenchant Uncommon",
+    "dropStart": 21,
+    "dropEnd": 25,
+    "dropCount": 5,
     "tags": [
       "Dust",
       "CommonMaterial"
@@ -1950,8 +1978,22 @@
     "rarity": 100.0,
     "category": "Disenchant Uncommon",
     "dropStart": 26,
-    "dropEnd": 35,
+    "dropEnd": 30,
     "dropCount": 3,
+    "tags": [
+      "Dust",
+      "CommonMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Enchanting",
+    "requiredSkill": 1,
+    "item": "Soul Dust",
+    "rarity": 100.0,
+    "category": "Disenchant Uncommon",
+    "dropStart": 31,
+    "dropEnd": 35,
+    "dropCount": 4,
     "tags": [
       "Dust",
       "CommonMaterial"
@@ -1964,8 +2006,22 @@
     "rarity": 100.0,
     "category": "Disenchant Uncommon",
     "dropStart": 36,
-    "dropEnd": 45,
+    "dropEnd": 40,
     "dropCount": 3,
+    "tags": [
+      "Dust",
+      "CommonMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Enchanting",
+    "requiredSkill": 1,
+    "item": "Vision Dust",
+    "rarity": 100.0,
+    "category": "Disenchant Uncommon",
+    "dropStart": 41,
+    "dropEnd": 45,
+    "dropCount": 4,
     "tags": [
       "Dust",
       "CommonMaterial"
@@ -1978,8 +2034,22 @@
     "rarity": 100.0,
     "category": "Disenchant Uncommon",
     "dropStart": 46,
-    "dropEnd": 55,
+    "dropEnd": 50,
     "dropCount": 3,
+    "tags": [
+      "Dust",
+      "CommonMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Enchanting",
+    "requiredSkill": 1,
+    "item": "Dream Dust",
+    "rarity": 100.0,
+    "category": "Disenchant Uncommon",
+    "dropStart": 51,
+    "dropEnd": 55,
+    "dropCount": 4,
     "tags": [
       "Dust",
       "CommonMaterial"
@@ -1994,6 +2064,20 @@
     "dropStart": 56,
     "dropEnd": 60,
     "dropCount": 3,
+    "tags": [
+      "Dust",
+      "CommonMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Enchanting",
+    "requiredSkill": 1,
+    "item": "Illusion Dust",
+    "rarity": 100.0,
+    "category": "Disenchant Uncommon",
+    "dropStart": 61,
+    "dropEnd": 999,
+    "dropCount": 4,
     "tags": [
       "Dust",
       "CommonMaterial"
@@ -2156,6 +2240,20 @@
   {
     "requiredProfession": "Enchanting",
     "requiredSkill": 1,
+    "item": "Greater Eternal Essence",
+    "rarity": 80.0,
+    "category": "Disenchant Uncommon",
+    "dropStart": 61,
+    "dropEnd": 999,
+    "dropCount": 2,
+    "tags": [
+      "Essence",
+      "CommonMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Enchanting",
+    "requiredSkill": 1,
     "item": "Small Glimmering Shard",
     "rarity": 100.0,
     "category": "Disenchant Rare",
@@ -2258,7 +2356,7 @@
     "rarity": 100.0,
     "category": "Disenchant Rare",
     "dropStart": 56,
-    "dropEnd": 60,
+    "dropEnd": 999,
     "dropCount": 1,
     "tags": [
       "Shard",
@@ -2269,10 +2367,23 @@
     "requiredProfession": "Enchanting",
     "requiredSkill": 1,
     "item": "Nexus Crystal",
+    "rarity": 0.5,
+    "category": "Disenchant Rare",
+    "dropStart": 56,
+    "dropEnd": 999,
+    "dropCount": 1,
+    "tags": [
+      "Shard"
+    ]
+  },
+  {
+    "requiredProfession": "Enchanting",
+    "requiredSkill": 1,
+    "item": "Nexus Crystal",
     "rarity": 100.0,
     "category": "Disenchant Epic",
     "dropStart": 56,
-    "dropEnd": 60,
+    "dropEnd": 999,
     "dropCount": 1,
     "tags": [
       "Shard"

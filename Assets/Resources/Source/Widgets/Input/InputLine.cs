@@ -841,7 +841,12 @@ public class InputLine : MonoBehaviour
             else if (foo.Value().StartsWith("additem "))
             {
                 var item = Item.items.Find(x => x.name.ToLower() == foo.Value()[8..].ToLower());
-                if (item != null) currentSave.player.inventory.AddItem(item.CopyItem(1));
+                if (item != null)
+                {
+                    var copy = item.CopyItem(1);
+                    copy.SetRandomEnchantment();
+                    currentSave.player.inventory.AddItem(copy);
+                }
             }
             foo.Set("");
         }

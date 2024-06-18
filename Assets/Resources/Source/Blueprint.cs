@@ -212,7 +212,7 @@ public class Blueprint
                     AddLine(board.enemy.name, "Black");
                     AddSmallButton("OtherSettings", (h) =>
                     {
-                        PlaySound("DesktopMenuOpen");
+                        PlaySound("DesktopMenuOpen", 0.4f);
                         SpawnDesktopBlueprint("GameMenu");
                     });
                 },
@@ -506,6 +506,7 @@ public class Blueprint
         }, true),
         new("ExperienceBarBorder", () => {
             SetAnchor(Bottom);
+            DisableShadows();
             AddRegionGroup();
             SetRegionGroupWidth(638);
             SetRegionGroupHeight(12);
@@ -2052,7 +2053,8 @@ public class Blueprint
                             AddSmallButton(item.icon,
                             (h) =>
                             {
-                                if (CDesktop.windows.Exists(x => x.title == "Inventory"))
+                                if (Cursor.cursor.color == "Pink") return;
+                                if (CDesktop.windows.Exists(x => x.title == "Inventory") && currentSave.player.inventory.CanAddItem(currentSave.player.equipment[slot]))
                                 {
                                     PlaySound(item.ItemSound("PutDown"), 0.6f);
                                     currentSave.player.Unequip(new() { slot });
@@ -2068,6 +2070,9 @@ public class Blueprint
                             });
                             if (settings.rarityIndicators.Value())
                                 AddSmallButtonOverlay("OtherRarity" + item.rarity + (settings.bigRarityIndicators.Value() ? "Big" : ""), 0, 2);
+                            if (Cursor.cursor.color == "Pink")
+                                if (!item.IsDisenchantable()) SetSmallButtonToGrayscale();
+                                else SetSmallButtonToRed();
                         }
                     );
                 else
@@ -2094,7 +2099,7 @@ public class Blueprint
                     SpawnWindowBlueprint("Inventory");
                     PlaySound("DesktopInventorySort", 0.2f);
                 });
-                if (!CDesktop.windows.Exists(x => x.title == "InventorySettings") && !CDesktop.windows.Exists(x => x.title == "BankSort") && !CDesktop.windows.Exists(x => x.title == "VendorSort") && !CDesktop.windows.Exists(x => x.title == "InventorySort"))
+                if (!CDesktop.windows.Exists(x => x.title == "ConfirmItemDestroy") && !CDesktop.windows.Exists(x => x.title == "ConfirmItemDisenchant") && !CDesktop.windows.Exists(x => x.title == "InventorySettings") && !CDesktop.windows.Exists(x => x.title == "BankSort") && !CDesktop.windows.Exists(x => x.title == "VendorSort") && !CDesktop.windows.Exists(x => x.title == "InventorySort"))
                     AddSmallButton("OtherSort", (h) =>
                     {
                         SpawnWindowBlueprint("InventorySort");
@@ -2105,7 +2110,7 @@ public class Blueprint
                     });
                 else
                     AddSmallButton("OtherSortOff");
-                if (!CDesktop.windows.Exists(x => x.title == "InventorySettings") && !CDesktop.windows.Exists(x => x.title == "BankSort") && !CDesktop.windows.Exists(x => x.title == "VendorSort") && !CDesktop.windows.Exists(x => x.title == "InventorySort"))
+                if (!CDesktop.windows.Exists(x => x.title == "ConfirmItemDestroy") && !CDesktop.windows.Exists(x => x.title == "ConfirmItemDisenchant") && !CDesktop.windows.Exists(x => x.title == "InventorySettings") && !CDesktop.windows.Exists(x => x.title == "BankSort") && !CDesktop.windows.Exists(x => x.title == "VendorSort") && !CDesktop.windows.Exists(x => x.title == "InventorySort"))
                     AddSmallButton("OtherSettings", (h) =>
                     {
                         SpawnWindowBlueprint("InventorySettings");
@@ -2306,7 +2311,7 @@ public class Blueprint
                 PlaySound("DesktopMenuClose");
                 currentSave.player.inventory.items.Remove(item);
                 CloseWindow("ConfirmItemDestroy");
-                CDesktop.RespawnAll();
+                Respawn("Inventory");
             });
             AddRegionGroup();
             SetRegionGroupWidth(91);
@@ -2318,6 +2323,46 @@ public class Blueprint
             {
                 PlaySound("DesktopMenuClose");
                 CloseWindow("ConfirmItemDestroy");
+                Respawn("Inventory");
+            });
+        }, true),
+        new("ConfirmItemDisenchant", () => {
+            SetAnchor(-92, 142);
+            AddHeaderGroup();
+            SetRegionGroupWidth(182);
+            AddPaddingRegion(() =>
+            {
+                AddLine("You are about to disenchant", "", "Center");
+                AddLine(item.name, item.rarity, "Center");
+            });
+            AddRegionGroup();
+            SetRegionGroupWidth(91);
+            AddButtonRegion(() =>
+            {
+                SetRegionBackground(ButtonRed);
+                AddLine("Proceed", "", "Center");
+            },
+            (h) =>
+            {
+                PlaySound("Disenchant");
+                currentSave.player.inventory.items.Remove(item);
+                CloseWindow("ConfirmItemDisenchant");
+                Respawn("Inventory");
+                enchantingSkillChange = false;
+                disenchantLoot = item.GenerateDisenchantLoot();
+                SpawnDesktopBlueprint("DisenchantLoot");
+            });
+            AddRegionGroup();
+            SetRegionGroupWidth(91);
+            AddButtonRegion(() =>
+            {
+                AddLine("Cancel", "", "Center");
+            },
+            (h) =>
+            {
+                PlaySound("DesktopMenuClose");
+                CloseWindow("ConfirmItemDisenchant");
+                Respawn("Inventory");
             });
         }, true),
         new("SplitItem", () => {
@@ -2439,14 +2484,17 @@ public class Blueprint
                 }
             });
         }),
-        new("CombatResultsChartButton", () => {
-            SetAnchor(-101, 58);
-            DisableShadows();
+        new("CombatResultsLoot", () => {
+            SetAnchor(-92, -105);
             AddRegionGroup();
-            AddHeaderRegion(() =>
-            {
-                AddSmallButton("OtherChart", (h) => { PlaySound("DesktopInstanceOpen"); SpawnDesktopBlueprint("CombatLog"); });
-            });
+            SetRegionGroupWidth(182);
+            AddPaddingRegion(
+                () =>
+                {
+                    for (int j = 0; j < 4 && j < board.results.inventory.items.Count; j++)
+                        PrintLootItem(board.results.inventory.items[j]);
+                }
+            );
         }),
         new("CombatResultsMining", () => {
             if (board.results.result != "Won") return;
@@ -2554,6 +2602,34 @@ public class Blueprint
                 SpawnFallingText(new Vector2(), "Herbalism increased to " + (s.Item1 + 1), "Blue");
             }
         }),
+        new("DisenchantLoot", () => {
+            SetAnchor(-92, -105);
+            AddRegionGroup();
+            SetRegionGroupWidth(182);
+            AddPaddingRegion(
+                () =>
+                {
+                    for (int j = 0; j < 4 && j < disenchantLoot.items.Count; j++)
+                        PrintLootItem(disenchantLoot.items[j]);
+                }
+            );
+            var s = currentSave.player.professionSkills["Enchanting"];
+            if (!enchantingSkillChange && s.Item1 < 70 && s.Item1 < professions.Find(x => x.name == "Enchanting").levels.FindAll(x => s.Item2.Contains(x.levelName)).Max(x => x.maxSkill))
+            {
+                enchantingSkillChange = true;
+                currentSave.player.professionSkills["Enchanting"] = (s.Item1 + 1, s.Item2);
+                SpawnFallingText(new Vector2(), "Enchanting increased to " + (s.Item1 + 1), "Blue");
+            }
+        }),
+        new("CombatResultsChartButton", () => {
+            SetAnchor(-101, 58);
+            DisableShadows();
+            AddRegionGroup();
+            AddHeaderRegion(() =>
+            {
+                AddSmallButton("OtherChart", (h) => { PlaySound("DesktopInstanceOpen"); SpawnDesktopBlueprint("CombatLog"); });
+            });
+        }),
         new("CombatResultsChart", () => {
             SetAnchor(-301, 142);
             AddHeaderGroup();
@@ -2610,18 +2686,6 @@ public class Blueprint
                 });
             });
         }, true),
-        new("CombatResultsLoot", () => {
-            SetAnchor(-92, -105);
-            AddRegionGroup();
-            SetRegionGroupWidth(182);
-            AddPaddingRegion(
-                () =>
-                {
-                    for (int j = 0; j < 4 && j < board.results.inventory.items.Count; j++)
-                        PrintLootItem(board.results.inventory.items[j]);
-                }
-            );
-        }),
         new("LootInfo", () => {
             SetAnchor(-92, -86);
             AddRegionGroup();
@@ -4516,7 +4580,7 @@ public class Blueprint
                 }
                 AddSmallButton("OtherSettings", (h) =>
                 {
-                    PlaySound("DesktopMenuOpen");
+                    PlaySound("DesktopMenuOpen", 0.4f);
                     SpawnDesktopBlueprint("GameMenu");
                 });
             });
@@ -4543,7 +4607,7 @@ public class Blueprint
                 AddLine("", "Gray");
                 AddLine("Maladath", "Epic", "Center");
                 AddLine("Chronicles", "Epic", "Center");
-                AddLine("0.5.9", "DimGray", "Center");
+                AddLine("0.6.0", "DimGray", "Center");
                 AddLine("", "Gray");
                 AddLine("", "Gray");
                 AddLine("", "Gray");
@@ -4646,6 +4710,11 @@ public class Blueprint
                 {
                     PlaySound("DesktopMenuClose");
                     CloseDesktop("GameMenu");
+                    if (CDesktop.title == "EquipmentScreen")
+                    {
+                        Respawn("PlayerEquipmentInfo");
+                        Respawn("Inventory");
+                    }
                 });
             });
             AddRegionGroup();
@@ -5230,7 +5299,7 @@ public class Blueprint
             }, false);
             AddHotkey(Escape, () =>
             {
-                PlaySound("DesktopMenuOpen");
+                PlaySound("DesktopMenuOpen", 0.4f);
                 SpawnDesktopBlueprint("GameMenu");
             });
             AddHotkey(Delete, () =>
@@ -5438,6 +5507,26 @@ public class Blueprint
             {
                 PlaySound("DesktopCloseChest");
                 CloseDesktop("ChestLoot");
+            });
+        }),
+        new("DisenchantLoot", () =>
+        {
+            SetDesktopBackground("Backgrounds/Leather");
+            SpawnWindowBlueprint("MapToolbarShadow");
+            SpawnWindowBlueprint("MapToolbarClockLeft");
+            SpawnWindowBlueprint("MapToolbar");
+            SpawnWindowBlueprint("MapToolbarClockRight");
+            SpawnWindowBlueprint("MapToolbarStatusLeft");
+            SpawnWindowBlueprint("MapToolbarStatusRight");
+            SpawnWindowBlueprint("PlayerEquipmentInfo");
+            SpawnWindowBlueprint("LootInfo");
+            SpawnWindowBlueprint("DisenchantLoot");
+            SpawnWindowBlueprint("Inventory");
+            SpawnWindowBlueprint("ExperienceBarBorder");
+            SpawnWindowBlueprint("ExperienceBar");
+            AddHotkey(Escape, () =>
+            {
+                CloseDesktop("DisenchantLoot");
             });
         }),
         new("Town", () => 
@@ -5672,7 +5761,7 @@ public class Blueprint
             });
             AddHotkey(Escape, () =>
             {
-                PlaySound("DesktopMenuOpen");
+                PlaySound("DesktopMenuOpen", 0.4f);
                 SpawnDesktopBlueprint("GameMenu");
             });
             AddHotkey(BackQuote, () => { SpawnDesktopBlueprint("DevPanel"); });
@@ -5694,7 +5783,7 @@ public class Blueprint
             fishingBoard.Reset();
             AddHotkey(Escape, () =>
             {
-                PlaySound("DesktopMenuOpen");
+                PlaySound("DesktopMenuOpen", 0.4f);
                 CloseDesktop("FishingGame");
             });
             //AddHotkey(KeypadMultiply, () => { board.EndCombat("Won"); });
@@ -5913,6 +6002,11 @@ public class Blueprint
                 {
                     PlaySound("DesktopMenuClose");
                     CloseDesktop("GameMenu");
+                    if (CDesktop.title == "EquipmentScreen")
+                    {
+                        Respawn("PlayerEquipmentInfo");
+                        Respawn("Inventory");
+                    }
                 }
             });
         }),

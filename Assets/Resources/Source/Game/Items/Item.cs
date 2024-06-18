@@ -22,7 +22,7 @@ public class Item
     {
         if (items == null) return;
         var origin = items.Find(x => x.name == name);
-        if (origin != this && origin.worldAbilities != null)
+        if (origin != null && origin != this && origin.worldAbilities != null)
             worldAbilities = origin.worldAbilities.ToList();
     }
 
@@ -221,6 +221,13 @@ public class Item
         return entity.inventory.money >= price && (faction == null || true); //true = rep
     }
 
+    public bool IsDisenchantable()
+    {
+        if (new List<string> { "Miscellaneous", "Trade Good", "Recipe", "Bag" }.Contains(type)) return false;
+        if (rarity != "Uncommon" && rarity != "Rare" && rarity != "Epic") return false;
+        return true;
+    }
+
     public bool CanEquip(Entity entity)
     {
         if (type == "Miscellaneous" || type == "Trade Good" || type == "Recipe")
@@ -370,6 +377,24 @@ public class Item
             else entity.inventory.items.Remove(this);
         }
         else currentSave.CallEvents(currentSave.player, new() { { "Trigger", "ItemUsed" }, { "ItemName", name } });
+    }
+
+    public Inventory GenerateDisenchantLoot()
+    {
+        var rarities = new List<string>() { "Uncommon" };
+        if (rarity == "Rare" || rarity == "Epic") rarities.Add("Rare");
+        if (rarity == "Epic") rarities.Add("Epic");
+        var drops = GeneralDrop.generalDrops.FindAll(x => x.dropStart <= item.ilvl && x.dropEnd >= item.ilvl && rarities.Any(y => x.category == "Disenchant " + y));
+        var inv = new Inventory(true);
+        if (drops.Count > 0)
+            foreach (var drop in drops)
+                if (Roll(drop.rarity))
+                {
+                    int amount = 1;
+                    for (int i = 1; i < drop.dropCount; i++) amount += Roll(50) ? 1 : 0;
+                    inv.AddItem(items.Find(x => x.name == drop.item).CopyItem(amount));
+                }
+        return inv;
     }
 
     public static void PrintBankItem(Item item)
@@ -535,9 +560,20 @@ public class Item
     public static void PrintInventoryItem(Item item)
     {
         AddBigButton(item.icon,
-            null,
             (h) =>
             {
+                if (!h.GetComponent<SpriteRenderer>().material.name.Contains("Gray") && Cursor.cursor.color == "Pink")
+                {
+                    Item.item = item;
+                    Cursor.cursor.ResetColor();
+                    PlaySound("DesktopMenuOpen", 0.4f);
+                    Respawn("PlayerEquipmentInfo");
+                    SpawnWindowBlueprint("ConfirmItemDisenchant");
+                }
+            },
+            (h) =>
+            {
+                if (Cursor.cursor.color == "Pink") return;
                 if (CDesktop.windows.Exists(x => x.title.StartsWith("Vendor")))
                 {
                     if (item.price > 0)
@@ -656,7 +692,7 @@ public class Item
             {
                 if (item.indestructible) return;
                 Item.item = item;
-                PlaySound("DesktopMenuOpen");
+                PlaySound("DesktopMenuOpen", 0.4f);
                 SpawnWindowBlueprint("ConfirmItemDestroy");
             }
         );
@@ -666,6 +702,8 @@ public class Item
             AddBigButtonOverlay(settings.newSlotIndicators.Value() ? "OtherItemNewSlot" : "OtherItemUpgrade", 0, 2);
         else if (settings.upgradeIndicators.Value() && item.CanEquip(currentSave.player) && currentSave.player.IsItemAnUpgrade(item))
             AddBigButtonOverlay("OtherItemUpgrade", 0, 2);
+        if (Cursor.cursor.color == "Pink" && !item.IsDisenchantable()) SetBigButtonToGrayscale();
+        else if (Cursor.cursor.color == "Pink") AddBigButtonOverlay("OtherGlowDisenchantable" + item.rarity, 0, 2);
         if (item.maxStack > 1) SpawnFloatingText(CDesktop.LBWindow.LBRegionGroup.LBRegion.transform.position + new Vector3(32, -27) + new Vector3(38, 0) * (currentSave.player.inventory.items.IndexOf(item) % 5), item.amount + "", "", "Right");
     }
 
@@ -727,6 +765,17 @@ public class Item
                             Respawn("HerbalismLoot");
                         }
                     }
+                    else if (CDesktop.title == "DisenchantLoot")
+                    {
+                        currentSave.player.inventory.AddItem(item);
+                        disenchantLoot.items.Remove(item);
+                        if (disenchantLoot.items.Count == 0)
+                        {
+                            CloseDesktop("DisenchantLoot");
+                            CDesktop.RespawnAll();
+                        }
+                        else Respawn("Inventory");
+                    }
                     else if (CDesktop.title == "ChestLoot")
                     {
                         currentSave.player.inventory.AddItem(item);
@@ -774,7 +823,7 @@ public class Item
             AddBigButtonOverlay(settings.newSlotIndicators.Value() ? "OtherItemNewSlot" : "OtherItemUpgrade", 0, 2);
         else if (settings.upgradeIndicators.Value() && item.CanEquip(currentSave.player) && currentSave.player.IsItemAnUpgrade(item))
             AddBigButtonOverlay("OtherItemUpgrade", 0, 2);
-        if (item.maxStack > 1) SpawnFloatingText(CDesktop.LBWindow.LBRegionGroup.LBRegion.transform.position + new Vector3(32, -27) + new Vector3(38, 0) * (CDesktop.title == "ChestLoot" ? currentSave.openedChests[SiteHostileArea.area.name].inventory : (CDesktop.title == "MiningLoot" ? Board.board.results.miningLoot : (CDesktop.title == "HerbalismLoot" ? Board.board.results.herbalismLoot : Board.board.results.inventory))).items.IndexOf(item), item.amount + "", "", "Right");
+        if (item.maxStack > 1) SpawnFloatingText(CDesktop.LBWindow.LBRegionGroup.LBRegion.transform.position + new Vector3(32, -27) + new Vector3(38, 0) * (CDesktop.title == "ChestLoot" ? currentSave.openedChests[SiteHostileArea.area.name].inventory : (CDesktop.title == "MiningLoot" ? Board.board.results.miningLoot : (CDesktop.title == "HerbalismLoot" ? Board.board.results.herbalismLoot : (CDesktop.title == "DisenchantLoot" ? disenchantLoot : Board.board.results.inventory)))).items.IndexOf(item), item.amount + "", "", "Right");
     }
 
     public static void PrintItemTooltip(Item item, bool compare = false, double priceMultiplier = 1)

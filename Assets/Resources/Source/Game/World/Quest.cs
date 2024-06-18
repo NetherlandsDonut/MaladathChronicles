@@ -148,7 +148,7 @@ public class Quest
                     });
                     AddSmallButton("OtherTrash", (h) =>
                     {
-                        PlaySound("DesktopMenuOpen");
+                        PlaySound("DesktopMenuOpen", 0.4f);
                         Respawn("QuestConfirmAbandon");
                         Respawn("QuestList");
                     });
@@ -195,6 +195,7 @@ public class Quest
                     if (CDesktop.windows.Exists(x => x.title == "CraftingSettings")) return;
                     Item.PrintItemTooltip(find, Input.GetKey(KeyCode.LeftShift));
                 });
+                if (find.type != "Miscellaneous" && find.type != "Trade Good" && find.type != "Recipe" && find.CanEquip(currentSave.player)) SetBigButtonToRed();
                 if (find.maxStack > 1) SpawnFloatingText(CDesktop.LBWindow.LBRegionGroup.LBRegion.transform.position + new Vector3(32, -27) + new Vector3(38, 0) * (rewards.Keys.ToList().IndexOf(item.Key) % 5), item.Value + "", "", "Right");
             }
         }

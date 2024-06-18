@@ -48,7 +48,7 @@ public class CombatResults
                 if (Roll(drop.rarity))
                 {
                     int amount = 1;
-                    for (int i = 1; i < drop.dropCount; i++) amount += Roll(10) ? 1 : 0;
+                    for (int i = 1; i < drop.dropCount; i++) amount += Roll(50) ? 1 : 0;
                     miningLoot.AddItem(Item.items.Find(x => x.name == drop.item).CopyItem(amount));
                 }
     }
@@ -81,7 +81,7 @@ public class CombatResults
                 if (Roll(drop.rarity))
                 {
                     int amount = 1;
-                    for (int i = 1; i < drop.dropCount; i++) amount += Roll(10) ? 1 : 0;
+                    for (int i = 1; i < drop.dropCount; i++) amount += Roll(50) ? 1 : 0;
                     herbalismLoot.AddItem(Item.items.Find(x => x.name == drop.item).CopyItem(amount));
                 }
     }

@@ -4,10 +4,11 @@ using static Root;
 
 public class Cursor : MonoBehaviour
 {
+    public string color;
     public SpriteRenderer render;
 
     void Awake() => UnityEngine.Cursor.visible = false;
-    void Start() => render = GetComponent<SpriteRenderer>();
+    void Start() => (render, color) = (GetComponent<SpriteRenderer>(), "None");
 
     void Update()
     {
@@ -16,6 +17,18 @@ public class Cursor : MonoBehaviour
         var curScreenSpace = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
         var curPosition = (Vector2)CDesktop.screen.ScreenToWorldPoint(curScreenSpace);
         transform.position = new Vector3(curPosition.x, curPosition.y, transform.position.z);
+    }
+
+    public void ResetColor()
+    {
+        render.color = Color.white;
+        color = "None";
+    }
+
+    public void SetColor(string color)
+    {
+        render.color = Coloring.colors[color];
+        this.color = color;
     }
 
     public void SetCursor(CursorType type)

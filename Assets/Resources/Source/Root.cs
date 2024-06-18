@@ -61,6 +61,8 @@ public static class Root
     public static List<Desktop> desktops;
     public static Desktop CDesktop, LBDesktop;
     public static List<Dictionary<string, string>> triggersCopy, effectsCopy;
+    public static bool enchantingSkillChange;
+    public static Inventory disenchantLoot;
 
     public static void Shuffle<T>(this IList<T> list)
     {
@@ -219,6 +221,7 @@ public static class Root
 
     public static void SwitchDesktop(string name)
     {
+        Cursor.cursor.ResetColor();
         if (CDesktop != null && CDesktop.title == name) return;
         var windows = CDesktop != null ? CDesktop.windows.Select(x => x.title).ToList() : null;
         if (mouseOver != null)
@@ -541,7 +544,24 @@ public static class Root
         if (price % 100 > 0 || price == 0) Foo("ItemCoinsCopper", price % 100 + "", "Copper"); else lacking++;
         AddRegionGroup();
         SetRegionGroupWidth(width - (3 - lacking) * 54);
-        AddPaddingRegion(() => { AddLine(""); });
+        AddPaddingRegion(() =>
+        {
+            AddLine("");
+            if (SaveGame.currentSave.player.professionSkills.ContainsKey("Enchanting") && CDesktop.LBWindow.title == "Inventory")
+                if (CDesktop.title == "EquipmentScreen")
+                    AddSmallButton(Cursor.cursor.color != "Pink" ? "ItemDisenchant" : "OtherCloseDisenchant", (h) =>
+                    {
+                        if (Cursor.cursor.color != "Pink")
+                            Cursor.cursor.SetColor("Pink");
+                        else Cursor.cursor.ResetColor();
+                        Respawn("PlayerEquipmentInfo");
+                    });
+                else
+                {
+                    AddSmallButton("ItemDisenchant");
+                    SetSmallButtonToGrayscale();
+                }
+        });
 
         void Foo(string icon, string text, string color)
         {
@@ -579,6 +599,13 @@ public static class Root
     #endregion
 
     #region SmallButtons
+
+    public static void SetSmallButtonToRed()
+    {
+        var region = CDesktop.LBWindow.LBRegionGroup.LBRegion;
+        var button = region.LBSmallButton.gameObject;
+        button.GetComponent<SpriteRenderer>().material = Resources.Load<Material>("Shaders/Red");
+    }
 
     public static void SetSmallButtonToGrayscale()
     {
