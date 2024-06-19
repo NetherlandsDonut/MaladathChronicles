@@ -51,16 +51,25 @@ public class SiteInstance : Site
     }
 
     //Suggested level range for the player to enter this instance
-    public (int, int) LevelRange()
+    private (int, int) LevelRange(List<string> localAreas)
     {
-        var localAreas = wings.SelectMany(x => x.areas.Select(y => y.ContainsKey("AreaName") ? y["AreaName"] : ""));
         var temp = areas.FindAll(x => localAreas.Contains(x.name));
         if (temp.Count() == 0) return (0, 0);
         return (temp.Min(x => x.recommendedLevel), temp.Max(x => x.recommendedLevel));
     }
 
+    //Suggested level range for the player to enter this instance
+    public (int, int) LevelRange(int wing = -1)
+    {
+        if (wing > -1 && wing < wings.Count) return LevelRange(wings[wing].areas.Select(x => x["AreaName"]).ToList());
+        return LevelRange(wings.SelectMany(x => x.areas.Select(y => y["AreaName"])).ToList());
+    }
+
     //Currently opened instance
     public static SiteInstance instance;
+
+    //Currently opened instance wing
+    public static InstanceWing wing;
 
     //EXTERNAL FILE: List containing all instances in-game
     public static List<SiteInstance> instances;
@@ -222,6 +231,19 @@ public class SiteInstance : Site
 
 public class InstanceWing
 {
+    //Name of the instance wing
     public string name;
+
+    //Areas during nighttime usually change visuals.
+    //Sites marked with this boolean as true keep it always the same.
+    public bool noNightVariant;
+
+    //List of all areas in this instance wing
     public List<Dictionary<string, string>> areas;
+
+    //Returns path to a texture that is the background visual of this site
+    public string Background()
+    {
+        return "Areas/Area" + SiteInstance.instance.name.Clean() + (SiteInstance.instance.wings.IndexOf(this) + 1) + (currentSave != null && currentSave.IsNight() && !noNightVariant ? "Night" : "");
+    }
 }
