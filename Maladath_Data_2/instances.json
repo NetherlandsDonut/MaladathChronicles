@@ -11,19 +11,13 @@
         "areas": [
           {
             "OpenByDefault": "True",
-            "AreaName": "The Broken Hall"
+            "AreaName": "Hall of Masks"
           },
           {
             "AreaName": "The Butchery"
           },
           {
             "AreaName": "Chamber of Blood"
-          },
-          {
-            "AreaName": "Den of the Caller"
-          },
-          {
-            "AreaName": "Hall of Masks"
           },
           {
             "AreaName": "Hall of Ritual"
@@ -46,9 +40,6 @@
             "AreaName": "Hall of the Cursed"
           },
           {
-            "AreaName": "The Pit of Sacrifice"
-          },
-          {
             "AreaName": "Lair of the Chosen"
           }
         ]
@@ -56,6 +47,9 @@
       {
         "name": "Nightmare Halls",
         "areas": [
+          {
+            "AreaName": "The Pit of Sacrifice"
+          },
           {
             "AreaName": "Sanctum of the Fallen God"
           },
@@ -898,7 +892,12 @@
           },
           {
             "AreaName": "Hall of Crafting"
-          },
+          }
+        ]
+      },
+      {
+        "name": "Shadowforge City",
+        "areas": [
           {
             "AreaName": "The Garrison"
           },
@@ -913,6 +912,9 @@
           },
           {
             "AreaName": "Summoners' Tomb"
+          },
+          {
+            "AreaName": "The Lyceum"
           },
           {
             "AreaName": "The Iron Hall"

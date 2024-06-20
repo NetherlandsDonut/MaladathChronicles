@@ -18569,8 +18569,8 @@
       {
         "type": "Area",
         "areaName": "Headmaster's Study",
-        "all": true,
-        "point": 2
+        "point": 2,
+        "all": true
       },
       {
         "type": "Treasure",
@@ -18743,8 +18743,8 @@
       {
         "type": "Area",
         "areaName": "Headmaster's Study",
-        "all": true,
-        "point": 2
+        "point": 2,
+        "all": true
       },
       {
         "type": "Treasure",
@@ -24816,7 +24816,7 @@
       },
       {
         "type": "Area",
-        "areaName": "Den of the Caller",
+        "areaName": "Hall of Ritual",
         "point": 2
       },
       {
@@ -24830,6 +24830,24 @@
     "zone": "Temple of Atal'Hakkar",
     "type": "HostileArea",
     "noNightVariant": true,
+    "commonEncounters": [
+      {
+        "who": "Nightmare Scalebane",
+        "levelMin": 51,
+        "levelMax": 52
+      },
+      {
+        "who": "Nightmare Wyrmkin",
+        "levelMin": 50,
+        "levelMax": 51
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Morphaz",
+        "levelMin": 52
+      }
+    ],
     "eliteEncounters": [
       {
         "who": "Shade of Eranikus",
@@ -24838,32 +24856,23 @@
       {
         "who": "Hazzas",
         "levelMin": 53
-      },
-      {
-        "who": "Morphaz",
-        "levelMin": 52
       }
     ],
-    "areaSize": 7,
+    "areaSize": 3,
     "progression": [
       {
         "type": "Boss",
         "bossName": "Shade of Eranikus",
-        "point": 2
+        "point": 3
       },
       {
         "type": "Boss",
         "bossName": "Hazzas",
-        "point": 4
-      },
-      {
-        "type": "Boss",
-        "bossName": "Morphaz",
-        "point": 6
+        "point": 2
       },
       {
         "type": "Treasure",
-        "point": 7
+        "point": 4
       }
     ]
   },
@@ -24953,6 +24962,11 @@
     "areaSize": 3,
     "progression": [
       {
+        "type": "Area",
+        "areaName": "The Butchery",
+        "point": 2
+      },
+      {
         "type": "Treasure",
         "point": 3
       }
@@ -24983,6 +24997,11 @@
     "areaSize": 3,
     "progression": [
       {
+        "type": "Area",
+        "areaName": "Hall of Bones",
+        "point": 2
+      },
+      {
         "type": "Treasure",
         "point": 3
       }
@@ -25000,14 +25019,9 @@
         "levelMax": 50
       },
       {
-        "who": "Murk Worm",
-        "levelMin": 47,
-        "levelMax": 48
-      },
-      {
         "who": "Saturated Ooze",
-        "levelMin": 47,
-        "levelMax": 48
+        "levelMin": 48,
+        "levelMax": 40
       },
       {
         "who": "Spawn of Hakkar",
@@ -25019,6 +25033,11 @@
       {
         "type": "Treasure",
         "point": 3
+      },
+      {
+        "type": "Area",
+        "areaName": "Pit of Refuse",
+        "point": 2
       }
     ]
   },
@@ -25070,7 +25089,7 @@
         "levelMin": 52
       }
     ],
-    "areaSize": 13,
+    "areaSize": 8,
     "progression": [
       {
         "type": "Boss",
@@ -25080,36 +25099,36 @@
       {
         "type": "Boss",
         "bossName": "Loro",
-        "point": 4
+        "point": 3
       },
       {
         "type": "Boss",
         "bossName": "Zolo",
-        "point": 6
+        "point": 4
       },
       {
         "type": "Boss",
         "bossName": "Hukku",
-        "point": 8
+        "point": 5
       },
       {
         "type": "Boss",
         "bossName": "Mijan",
-        "point": 10
+        "point": 6
       },
       {
         "type": "Boss",
         "bossName": "Zul'Lor",
-        "point": 12
+        "point": 7
       },
       {
         "type": "Area",
-        "areaName": "The Pit of Sacrifice",
-        "point": 12
+        "areaName": "Lair of the Chosen",
+        "point": 7
       },
       {
         "type": "Treasure",
-        "point": 13
+        "point": 8
       }
     ]
   },
@@ -25145,26 +25164,26 @@
         "levelMin": 53
       }
     ],
-    "areaSize": 5,
+    "areaSize": 4,
     "progression": [
       {
         "type": "Boss",
         "bossName": "Jammal'an the Propher",
-        "point": 2
+        "point": 3
       },
       {
         "type": "Boss",
         "bossName": "Ogom the Wretched",
-        "point": 4
+        "point": 2
       },
       {
         "type": "Area",
-        "areaName": "Sanctum of the Fallen God",
-        "point": 4
+        "areaName": "The Pit of Sacrifice",
+        "point": 3
       },
       {
         "type": "Treasure",
-        "point": 5
+        "point": 4
       }
     ]
   },
@@ -25176,9 +25195,14 @@
     "fishing": true,
     "commonEncounters": [
       {
+        "who": "Deep Lurker",
+        "levelMin": 49,
+        "levelMax": 50
+      },
+      {
         "who": "Murk Worm",
-        "levelMin": 47,
-        "levelMax": 48
+        "levelMin": 49,
+        "levelMax": 50
       }
     ],
     "eliteEncounters": [
@@ -25314,7 +25338,7 @@
         "levelMax": 50
       },
       {
-        "who": "Nightmare Scalebane",
+        "who": "Nightmare Wanderer",
         "levelMin": 49,
         "levelMax": 50
       }
@@ -25343,7 +25367,7 @@
       },
       {
         "type": "Area",
-        "areaName": "Lair of the Chosen",
+        "areaName": "Sanctum of the Fallen God",
         "point": 4
       },
       {
