@@ -6,6 +6,7 @@ using static GameSettings;
 
 public static class Sound
 {
+    //All sound effects loaded up into the memory
     public static Dictionary<string, AudioClip> sounds;
 
     //Plays a singular sound effect

@@ -204,7 +204,7 @@ public class Desktop : MonoBehaviour
                     do rSite = SiteHostileArea.areas[random.Next(SiteHostileArea.areas.Count)];
                     while (!pathsConnectedToSite.ContainsKey(rSite.name) || pathsConnectedToSite[rSite.name].All(x => x.points.Count < 15));
                     var foo = pathsConnectedToSite[rSite.name].Where(x => x.points.Count >= 15).ToList();
-                    titleScreenFunnyEffect = foo[random.Next(foo.Count)].points;
+                    titleScreenFunnyEffect = foo[random.Next(foo.Count)].points.ToList();
                     lastFunnyEffectTime = 0;
                     lastFunnyEffectPosition = screen.transform.localPosition = new Vector3(titleScreenFunnyEffect[0].Item1, titleScreenFunnyEffect[0].Item2);
                     SpawnTransition();

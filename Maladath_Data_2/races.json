@@ -1,8 +1,8 @@
 [
   {
     "name": "Nightmare Wanderer",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Dragonkin",
+    "subcategory": "Dragonspawn",
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitGreenDragonSpawn",
@@ -9791,7 +9791,7 @@
     "category": "Humanoid",
     "subcategory": "Human",
     "side": "Neutral",
-    "kind": "Elite",
+    "kind": "Rare",
     "portrait": "PortraitGreenDrake",
     "vitality": 3.0,
     "abilities": {}

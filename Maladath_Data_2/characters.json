@@ -2433,7 +2433,7 @@
       "hour": 9,
       "minute": 59,
       "second": 12,
-      "currentSite": "Temple of Atal'Hakkar",
+      "currentSite": "Bathran's Haunt",
       "openedChests": {
         "Gnomeregan Outskirts": {
           "area": "Gnomeregan Outskirts",
@@ -2617,7 +2617,7 @@
         "Witherbark Village": 1,
         "Western Grassland": 1,
         "Witherbark Caves": 1,
-        "Bathran's Haunt": 1,
+        "Bathran's Haunt": 4,
         "Bloodtooth Camp": 1,
         "Bough Shadow": 1,
         "Demon Fall Canyon": 1,
@@ -3582,9 +3582,9 @@
         }
       },
       "startDate": "2024-06-09T14:12:27.0144066+02:00",
-      "lastLoaded": "2024-06-20T01:36:28.2923745+02:00",
-      "lastPlayed": "2024-06-20T01:39:41.0266727+02:00",
-      "timePlayed": "11:09:42.6773751",
+      "lastLoaded": "2024-06-20T03:02:25.2931203+02:00",
+      "lastPlayed": "2024-06-20T03:04:35.1018747+02:00",
+      "timePlayed": "11:12:37.2900342",
       "lastVisitedTalents": 1
     },
     {
