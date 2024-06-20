@@ -323,7 +323,6 @@ public class Blueprint
                             foreach (var element in abilityObj.cost)
                                 board.log.elementsUsed.Inc(element.Key, element.Value);
                             board.temporaryElementsPlayer = new();
-                            h.window.desktop.RebuildAll();
                         }
                     },
                     null,
@@ -2635,7 +2634,7 @@ public class Blueprint
             {
                 AddSmallButton("OtherChart", (h) => { PlaySound("DesktopInstanceOpen"); SpawnDesktopBlueprint("CombatLog"); });
             });
-        }),
+        }, true),
         new("CombatResultsChart", () => {
             SetAnchor(-301, 142);
             AddHeaderGroup();
@@ -2830,10 +2829,7 @@ public class Blueprint
             }
             else PlayAmbience(instance.ambience);
             SetAnchor(TopRight, -19, -38);
-            var areas = instance.wings.SelectMany(x => x.areas).ToList();
-            var doPag = areas.Count() > 8;
-            AddRegionGroup(() => areas.Count, doPag ? 7 : 8);
-            if (doPag) SetRegionGroupHeight(186);
+            AddRegionGroup();
             SetRegionGroupWidth(190);
             AddHeaderRegion(() =>
             {
@@ -2843,15 +2839,17 @@ public class Blueprint
                 {
                     var title = CDesktop.title;
                     CloseDesktop(title);
-                    if (instance.complexPart)
-                        SpawnDesktopBlueprint("Complex");
+                    if (instance.complexPart) SpawnDesktopBlueprint("Complex");
                     else
                     {
                         PlaySound("DesktopInstanceClose");
                         SwitchDesktop("Map");
                     }
+                    instance = null;
+                    wing = null;
                 });
             });
+            if (CDesktop.windows.Exists(x => x.title == "InstanceWing")) return;
             AddPaddingRegion(() =>
             {
                 AddLine("Level range: ", "DarkGray");
@@ -2860,41 +2858,84 @@ public class Blueprint
                 AddText(" - ", "DarkGray");
                 AddText(range.Item2 + "", ColorEntityLevel(range.Item2));
             });
-            var regionGroup = CDesktop.LBWindow.LBRegionGroup;
-            for (int i = 0; i < (doPag ? 7 : 8); i++)
+            for (int i = 0; i < instance.wings.Count; i++)
             {
                 var index = i;
-                if (areas.Count() > index + (doPag ? 7 : 8) * regionGroup.pagination())
-                {
-                    var area = areas[index + (doPag ? 7 : 8) * regionGroup.pagination()];
-                    var find = SiteHostileArea.areas.Find(x => x.name == area["AreaName"]);
-                    if (find != null && (showAreasUnconditional || area.ContainsKey("OpenByDefault") && area["OpenByDefault"] == "True" || currentSave.unlockedAreas.Contains(find.name)))
-                        AddButtonRegion(() =>
-                        {
-                            AddLine(find.name);
-                            if (currentSave.siteProgress.ContainsKey(find.name) && find.areaSize == currentSave.siteProgress[find.name])
-                                SetRegionBackgroundAsImage("ClearedArea");
-                        },
-                        (h) =>
-                        {
-                            SiteHostileArea.area = find;
-                            Respawn("HostileArea");
-                            Respawn("HostileAreaProgress");
-                            Respawn("HostileAreaDenizens");
-                            Respawn("HostileAreaElites");
-                            Respawn("Chest");
-                            SetDesktopBackground(find.Background());
-                        });
-                    else AddHeaderRegion(() => AddLine("?", "DimGray"));
-                }
-                else if (doPag && areas.Count == index + (doPag ? 7 : 8) * regionGroup.pagination())
-                    AddPaddingRegion(() =>
+                var find = instance.wings[index];
+                if (showAreasUnconditional || find.areas.Any(x => x.ContainsKey("OpenByDefault") && x["OpenByDefault"] == "True" || currentSave.unlockedAreas.Contains(x["AreaName"])))
+                    AddButtonRegion(() =>
                     {
-                        SetRegionAsGroupExtender();
-                        AddLine("");
+                        AddLine(find.name);
+                        var allAreas = areas.FindAll(x => find.areas.Exists(y => y["AreaName"] == x.name));
+                        if (allAreas.All(x => currentSave.siteProgress.ContainsKey(x.name) && x.areaSize <= currentSave.siteProgress[x.name]))
+                            SetRegionBackgroundAsImage("ClearedArea");
+                    },
+                    (h) =>
+                    {
+                        wing = find;
+                        Respawn("InstanceWing");
+                        Respawn("Instance");
+                        SetDesktopBackground(wing.Background());
                     });
+                else AddHeaderRegion(() => AddLine("?", "DimGray"));
             }
-            if (doPag) AddPaginationLine(regionGroup);
+        }),
+        new("InstanceWing", () =>
+        {
+            SetAnchor(TopRight, -19, -57);
+            AddRegionGroup();
+            SetRegionGroupWidth(190);
+            AddPaddingRegion(() =>
+            {
+                AddLine(wing.name + ":", "Gray");
+                AddSmallButton("OtherReverse",
+                (h) =>
+                {
+                    wing = null;
+                    area = null;
+                    SetDesktopBackground(instance.Background());
+                    CloseWindow("HostileArea");
+                    CloseWindow("HostileAreaProgress");
+                    CloseWindow("HostileAreaDenizens");
+                    CloseWindow("HostileAreaElites");
+                    CloseWindow("Chest");
+                    CloseWindow("InstanceWing");
+                    Respawn("Instance");
+                    PlaySound("DesktopButtonClose");
+                });
+            });
+            AddPaddingRegion(() =>
+            {
+                AddLine("Level range: ", "DarkGray");
+                var range = instance.LevelRange(instance.wings.IndexOf(wing));
+                AddText(range.Item1 + "", ColorEntityLevel(range.Item1));
+                AddText(" - ", "DarkGray");
+                AddText(range.Item2 + "", ColorEntityLevel(range.Item2));
+            });
+            for (int i = 0; i < wing.areas.Count; i++)
+            {
+                var index = i;
+                var area = wing.areas[index];
+                var find = areas.Find(x => x.name == area["AreaName"]);
+                if (find != null && (showAreasUnconditional || area.ContainsKey("OpenByDefault") && area["OpenByDefault"] == "True" || currentSave.unlockedAreas.Contains(find.name)))
+                    AddButtonRegion(() =>
+                    {
+                        AddLine(find.name);
+                        if (currentSave.siteProgress.ContainsKey(find.name) && find.areaSize == currentSave.siteProgress[find.name])
+                            SetRegionBackgroundAsImage("ClearedArea");
+                    },
+                    (h) =>
+                    {
+                        SiteHostileArea.area = find;
+                        Respawn("HostileArea");
+                        Respawn("HostileAreaProgress");
+                        Respawn("HostileAreaDenizens");
+                        Respawn("HostileAreaElites");
+                        Respawn("Chest");
+                        SetDesktopBackground(find.Background());
+                    });
+                else AddHeaderRegion(() => AddLine("?", "DimGray"));
+            }
         }),
         new("InstanceQuestAvailable", () =>
         {
@@ -2933,6 +2974,7 @@ public class Blueprint
                     if (area.instancePart)
                     {
                         SetDesktopBackground(instance.Background());
+                        SetDesktopBackground(wing.Background());
                         CloseWindow(h.window);
                         CloseWindow("HostileAreaProgress");
                         CloseWindow("HostileAreaDenizens");
@@ -2982,10 +3024,13 @@ public class Blueprint
                     {
                         var progressions = area.progression.FindAll(x => x.point == index);
                         var printType = "";
-                        if (progressions.Exists(x => x.type == "Boss") && progressions.Exists(x => x.type == "Area")) printType = "BossArea";
+                        if (progressions.Exists(x => x.type == "Boss") && progressions.Exists(x => x.type == "Area" && x.all)) printType = "BossAreaAll";
+                        else if (progressions.Exists(x => x.type == "Boss") && progressions.Exists(x => x.type == "Area")) printType = "BossArea";
+                        else if (progressions.Exists(x => x.type == "Treasure") && progressions.Exists(x => x.type == "Area" && x.all)) printType = "TreasureAreaAll";
                         else if (progressions.Exists(x => x.type == "Treasure") && progressions.Exists(x => x.type == "Area")) printType = "TreasureArea";
                         else if (progressions.Exists(x => x.type == "Boss")) printType = "Boss";
                         else if (progressions.Exists(x => x.type == "Treasure")) printType = "Treasure";
+                        else if (progressions.Exists(x => x.type == "Area" && x.all)) printType = "AreaAll";
                         else if (progressions.Exists(x => x.type == "Area")) printType = "Area";
                         if (printType != "")
                         {
@@ -5639,6 +5684,7 @@ public class Blueprint
         new("Instance", () => 
         {
             SetDesktopBackground(instance.Background());
+            if (wing != null) SpawnWindowBlueprint("InstanceWing");
             SpawnWindowBlueprint("Instance");
             SpawnWindowBlueprint("InstanceQuestAvailable");
             SpawnWindowBlueprint("InstanceQuestDone");
@@ -5650,8 +5696,6 @@ public class Blueprint
             SpawnWindowBlueprint("MapToolbarStatusRight");
             SpawnWindowBlueprint("ExperienceBarBorder");
             SpawnWindowBlueprint("ExperienceBar");
-            //if (area != null && currentSave.siteProgress.ContainsKey(area.name) && area.progression.First(x => x.type == "Treasure").point == currentSave.siteProgress[area.name] && (!currentSave.openedChests.ContainsKey(area.name) || currentSave.openedChests[area.name].inventory.items.Count > 0))
-            //    SpawnWindowBlueprint("Chest");
             AddHotkey(Escape, () =>
             {
                 if (CloseWindow("HostileArea"))
@@ -5664,7 +5708,15 @@ public class Blueprint
                     CloseWindow("Chest");
                     PlaySound("DesktopButtonClose");
                     SetDesktopBackground(instance.Background());
+                    SetDesktopBackground(wing.Background());
                     SpawnWindowBlueprint("InstanceQuestAvailable");
+                }
+                else if (CloseWindow("InstanceWing"))
+                {
+                    wing = null;
+                    Respawn("Instance");
+                    PlaySound("DesktopButtonClose");
+                    SetDesktopBackground(instance.Background());
                 }
                 else if (instance.complexPart)
                 {
