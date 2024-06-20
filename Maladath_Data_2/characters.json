@@ -1875,8 +1875,8 @@
         "completedQuests": [
           40
         ],
-        "level": 17,
-        "experience": 13673,
+        "level": 18,
+        "experience": 10098,
         "uniquesGotten": [],
         "reputation": {
           "Southsea Pirates": 0,
@@ -1984,7 +1984,7 @@
             "Smelt Copper"
           ]
         },
-        "unspentTalentPoints": 9,
+        "unspentTalentPoints": 10,
         "faction": "Stormwind",
         "name": "Allesha",
         "race": "Human",
@@ -2433,7 +2433,7 @@
       "hour": 9,
       "minute": 59,
       "second": 12,
-      "currentSite": "Bathran's Haunt",
+      "currentSite": "Blackrock Mountain",
       "openedChests": {
         "Gnomeregan Outskirts": {
           "area": "Gnomeregan Outskirts",
@@ -2515,6 +2515,77 @@
             "bags": [],
             "ignoreSpaceChecks": true
           }
+        },
+        "The Lyceum": {
+          "area": "The Lyceum",
+          "inventory": {
+            "items": [
+              {
+                "rarity": "Uncommon",
+                "name": "Elegant Cloak of the Owl",
+                "icon": "itemmisccape06",
+                "randomEnchantment": true,
+                "type": "Back",
+                "source": "RareDrop",
+                "ilvl": 57,
+                "lvl": 52,
+                "armor": 37,
+                "amount": 1,
+                "maxStack": 1,
+                "price": 11069,
+                "stats": {
+                  "stats": {
+                    "Intellect": 15,
+                    "Spirit": 15
+                  }
+                }
+              },
+              {
+                "rarity": "Common",
+                "name": "Blindweed",
+                "icon": "itemmischerb14",
+                "type": "Trade Good",
+                "source": "RareDrop",
+                "ilvl": 47,
+                "lvl": 1,
+                "amount": 3,
+                "maxStack": 20,
+                "price": 375,
+                "stats": {
+                  "stats": {}
+                }
+              },
+              {
+                "rarity": "Common",
+                "name": "Golden Sansam",
+                "icon": "itemmischerbsansamroot",
+                "type": "Trade Good",
+                "ilvl": 52,
+                "lvl": 1,
+                "amount": 3,
+                "maxStack": 20,
+                "price": 100,
+                "stats": {
+                  "stats": {}
+                }
+              },
+              {
+                "rarity": "Common",
+                "name": "Major Mana Potion",
+                "icon": "itempotion76",
+                "type": "Miscellaneous",
+                "ilvl": 59,
+                "amount": 1,
+                "maxStack": 5,
+                "price": 1500,
+                "stats": {
+                  "stats": {}
+                }
+              }
+            ],
+            "bags": [],
+            "ignoreSpaceChecks": true
+          }
         }
       },
       "siteProgress": {
@@ -2530,7 +2601,8 @@
         "Hall of Ritual": 3,
         "Hall of Bones": 2,
         "Hall of Serpents": 2,
-        "Pit of Refuse": 2
+        "Pit of Refuse": 2,
+        "The Lyceum": 3
       },
       "commonsKilled": {
         "Deeprot Tangler": 1,
@@ -2546,7 +2618,8 @@
         "Mummified Atal'ai": 2,
         "Murk Spitter": 1,
         "Saturated Ooze": 2,
-        "Murk Worm": 2
+        "Murk Worm": 2,
+        "Anvilrage Flame Keeper": 3
       },
       "raresKilled": {
         "Gibblewilt": 1
@@ -3529,14 +3602,14 @@
         "Shadow Hold": 1,
         "Scholomance": 2,
         "Maraudon": 4,
-        "Stratholme": 10,
+        "Stratholme": 12,
         "Wailing Caverns": 1,
         "Uldaman": 5,
         "Razorfen Downs": 1,
         "Razorfen Kraul": 1,
         "The Deadmines": 1,
         "Blackfathom Deeps": 1,
-        "Dire Maul": 2,
+        "Dire Maul": 6,
         "Scarlet Monastery": 1,
         "Blackrock Depths": 1,
         "Lower Blackrock Spire": 1,
@@ -3548,7 +3621,7 @@
         "Blackwing Lair": 1,
         "Ruins of Ahn'Qiraj": 1,
         "Temple of Ahn'Qiraj": 1,
-        "Blackrock Mountain": 13,
+        "Blackrock Mountain": 16,
         "Jintha'Alor": 1,
         "Tyr's Hand": 1,
         "Hearthglen": 1,
@@ -3582,9 +3655,9 @@
         }
       },
       "startDate": "2024-06-09T14:12:27.0144066+02:00",
-      "lastLoaded": "2024-06-20T03:02:25.2931203+02:00",
-      "lastPlayed": "2024-06-20T03:04:35.1018747+02:00",
-      "timePlayed": "11:12:37.2900342",
+      "lastLoaded": "2024-06-20T04:28:39.5440802+02:00",
+      "lastPlayed": "2024-06-20T04:32:40.7912423+02:00",
+      "timePlayed": "11:26:28.0499429",
       "lastVisitedTalents": 1
     },
     {

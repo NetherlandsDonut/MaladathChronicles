@@ -872,7 +872,7 @@
     "noNightVariant": true,
     "wings": [
       {
-        "name": "Blackrock Depths",
+        "name": "Outer City",
         "areas": [
           {
             "OpenByDefault": "True",
@@ -912,9 +912,6 @@
           },
           {
             "AreaName": "Summoners' Tomb"
-          },
-          {
-            "AreaName": "The Lyceum"
           },
           {
             "AreaName": "The Iron Hall"

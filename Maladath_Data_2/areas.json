@@ -4666,12 +4666,12 @@
         "levelMin": 54
       }
     ],
-    "areaSize": 3,
+    "areaSize": 4,
     "progression": [
       {
         "type": "Boss",
         "bossName": "Bael'Gar",
-        "point": 2
+        "point": 3
       },
       {
         "type": "Area",
@@ -4680,7 +4680,7 @@
       },
       {
         "type": "Treasure",
-        "point": 3
+        "point": 4
       }
     ]
   },
@@ -4803,17 +4803,17 @@
       {
         "type": "Boss",
         "bossName": "Houndmaster Grebmar",
-        "point": 2
+        "point": 4
       },
       {
         "type": "Boss",
         "bossName": "Lord Roccor",
-        "point": 4
+        "point": 2
       },
       {
         "type": "Area",
         "areaName": "Ring of Law",
-        "point": 4
+        "point": 2
       },
       {
         "type": "Treasure",
@@ -6767,8 +6767,8 @@
     ]
   },
   {
-    "x": 5506,
-    "y": -3800,
+    "x": 5500,
+    "y": -3796,
     "name": "Ariden's Camp",
     "zone": "Deadwind Pass",
     "type": "HostileArea",
