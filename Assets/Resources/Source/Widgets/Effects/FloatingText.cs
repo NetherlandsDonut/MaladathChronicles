@@ -91,6 +91,7 @@ public class FloatingText : MonoBehaviour
         textBorder.transform.localPosition = new Vector3(-2, 3, -0.04f);
         var xPlus = pixelList.Min(x => x.Item1);
         var yPlus = pixelList.Min(x => x.Item2);
+        Debug.Log(text + ": " + yPlus);
         if (yPlus == 1) textBorder.transform.localPosition -= new Vector3(0, 1, 0);
         var texture = new Texture2D(pixelList.Max(x => x.Item1) - xPlus + 5, pixelList.Max(x => x.Item2) - yPlus + 5, TextureFormat.ARGB32, true) { filterMode = FilterMode.Point };
         for (int i = 0; i < texture.width; i++)

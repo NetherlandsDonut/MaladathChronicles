@@ -76,16 +76,22 @@ public class Starter : MonoBehaviour
         //This is the enemy cursor that indicates what actions the enemy is performing in their turn
         cursorEnemy = FindAnyObjectByType<CursorRemote>();
 
+        //Find all audio sources in the scene
+        var sources = FindObjectsByType<AudioSource>(FindObjectsInactive.Include, FindObjectsSortMode.None);
+
         //This is audio source for all quick and single sound effects.
         //Audio played through this medium cannot be stopped or changed in volume
-        soundEffects = cursor.GetComponent<AudioSource>();
+        soundEffects = sources.First(x => x.name == "SFX");
+
+        //All sound effects loaded up
+        sounds = Resources.LoadAll<AudioClip>("Sounds/").ToDictionary(x => x.name, x => x);
 
         //This is audio source for all music or ambience played in the background.
         //Tracks played through this medium are looped and can be changed in volume during playing
         //Whenever a new track is ought to be played throught these means it is first queued.
         //Queued track will force the current one to be smoothly silenced.
         //After that the queued track will starting playing again, smoothly increased in volume
-        ambience = FindObjectsByType<AudioSource>(FindObjectsInactive.Include, FindObjectsSortMode.None).First(x => x.name == "Ambience");
+        ambience = sources.First(x => x.name == "Ambience");
 
         //In case of Unity debugging set data directory
         //to that of the build so we don't have to store game data in two places
