@@ -1,6 +1,8 @@
 using System.Linq;
 using System.Collections.Generic;
 
+using static Root;
+
 public class Recipe
 {
     //Initialisation method to fill automatic values
@@ -9,6 +11,18 @@ public class Recipe
     {
         reagents ??= new();
         results ??= new();
+    }
+
+    //Provides an icon for the recipe in the interface
+    public string NameColor()
+    {
+        if (results.Count == 0) return "Gray";
+        else
+        {
+            var find = Item.items.Find(x => x.name == results.Keys.First());
+            if (find != null) return find.rarity;
+            return "Gray";
+        }
     }
 
     //Provides an icon for the recipe in the interface
@@ -27,6 +41,67 @@ public class Recipe
         }
     }
 
+    #region Description
+
+    public static void PrintRecipeTooltip(Entity forWho, Recipe recipe)
+    {
+        SetAnchor(-92, 142);
+        AddHeaderGroup();
+        SetRegionGroupWidth(182);
+        AddHeaderRegion(() =>
+        {
+            AddLine(recipe.name, recipe.NameColor());
+            AddSmallButton(recipe.Icon());
+        });
+        AddPaddingRegion(() =>
+        {
+            AddLine(recipe.profession + " " + Profession.professions.Find(x => x.name == recipe.profession).recipeType);
+        });
+        if (recipe.results.Count > 0)
+        {
+            AddHeaderRegion(() =>
+            {
+                AddLine("Results:", "DarkGray");
+            });
+            AddPaddingRegion(() =>
+            {
+                foreach (var result in recipe.results)
+                    AddLine(result.Key + " x" + result.Value);
+            });
+        }
+        else if (recipe.enchantment)
+        {
+            AddHeaderRegion(() =>
+            {
+                AddLine("Enchantment:", "DarkGray");
+            });
+            var e = Enchant.enchants.Find(x => x.name == recipe.name);
+            AddPaddingRegion(() =>
+            {
+                AddLine(e.type);
+                AddLine(e.Name());
+            });
+        }
+        AddHeaderRegion(() =>
+        {
+            AddLine("Reagents:", "DarkGray");
+        });
+        AddPaddingRegion(() =>
+        {
+            foreach (var reagent in recipe.reagents)
+                AddLine(reagent.Key + " x" + reagent.Value);
+        });
+        AddHeaderRegion(() =>
+        {
+            AddLine("Required skill: ", "DarkGray");
+            AddText(recipe.learnedAt + "", forWho.professionSkills.ContainsKey(recipe.profession) && recipe.learnedAt <= forWho.professionSkills[recipe.profession].Item1 ? "HalfGray" : "DangerousRed");
+        });
+        if (recipe.price > 0)
+            PrintPriceRegion(recipe.price);
+    }
+
+    #endregion
+
     //Name of this recipe
     public string name;
 
@@ -40,7 +115,7 @@ public class Recipe
     public int skillUpOrange, skillUpYellow, skillUpGreen, skillUpGray;
 
     //Price of training this recipe at a trainer
-    public int trainingCost;
+    public int price;
 
     //Indicates at what skill level of profession player can learn this recipe
     public int learnedAt;

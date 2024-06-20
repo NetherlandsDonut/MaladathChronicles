@@ -154,7 +154,7 @@ public class FutureEntity
         if (equipment.ContainsKey("Two Handed"))
         {
             var twohanded = equipment["Two Handed"];
-            return ((int)(twohanded.minDamage / twohanded.speed), (int)(twohanded.maxDamage / twohanded.speed));
+            return (Math.Round(twohanded.minDamage / twohanded.speed), Math.Round(twohanded.maxDamage / twohanded.speed));
         }
         else
         {
@@ -162,18 +162,18 @@ public class FutureEntity
             if (equipment.ContainsKey("Main Hand"))
             {
                 var mainHand = equipment["Main Hand"];
-                min += (int)(mainHand.minDamage / mainHand.speed);
-                max += (int)(mainHand.maxDamage / mainHand.speed);
+                min += Math.Round(mainHand.minDamage / mainHand.speed);
+                max += Math.Round(mainHand.maxDamage / mainHand.speed);
             }
             if (equipment.ContainsKey("Off Hand"))
             {
                 var offHand = equipment["Off Hand"];
                 min /= 1.5;
                 min /= 1.5;
-                min += offHand.minDamage / offHand.speed / 1.5;
-                max += offHand.maxDamage / offHand.speed / 1.5;
+                min += Math.Round(offHand.minDamage / offHand.speed) / 1.5;
+                max += Math.Round(offHand.maxDamage / offHand.speed) / 1.5;
             }
-            return ((int)min, (int)max);
+            return (Math.Round(min), Math.Round(max));
         }
     }
 

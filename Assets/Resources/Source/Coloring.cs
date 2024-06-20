@@ -8,12 +8,12 @@ public static class Coloring
     public static string ColorRequiredLevel(int level)
     {
         if (currentSave != null && currentSave.player != null && level > currentSave.player.level) return "DangerousRed";
-        else return "Gray";
+        else return "HalfGray";
     }
 
     public static string ColorProfessionRequiredSkill(string profession, int skill)
     {
-        if (currentSave.player.professionSkills.ContainsKey(profession) && skill <= currentSave.player.professionSkills[profession].Item1) return "DarkGray";
+        if (currentSave.player.professionSkills.ContainsKey(profession) && skill <= currentSave.player.professionSkills[profession].Item1) return "HalfGray";
         else return "DangerousRed";
     }
 

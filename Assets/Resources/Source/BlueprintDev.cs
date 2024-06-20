@@ -4499,7 +4499,7 @@ public static class BlueprintDev
                     {
                         SetRegionBackground(Button);
                         var foo = mountsSearch[index + 10 * regionGroup.pagination()];
-                        AddLine(foo.name);
+                        AddLine(foo.name, foo.speed == 7 ? "Rare" : "Epic");
                         AddSmallButton(foo.icon);
                     }
                     else
@@ -4641,8 +4641,8 @@ public static class BlueprintDev
             },
             (h) =>
             {
-                recipes = recipes.OrderByDescending(x => x.trainingCost).ToList();
-                recipesSearch = recipesSearch.OrderByDescending(x => x.trainingCost).ToList();
+                recipes = recipes.OrderByDescending(x => x.price).ToList();
+                recipesSearch = recipesSearch.OrderByDescending(x => x.price).ToList();
                 CloseWindow("RecipesSort");
                 Respawn("ObjectManagerRecipes");
                 PlaySound("DesktopInventorySort", 0.2f);

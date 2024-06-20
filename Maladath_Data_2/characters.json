@@ -2433,7 +2433,7 @@
       "hour": 9,
       "minute": 59,
       "second": 12,
-      "currentSite": "Blackrock Mountain",
+      "currentSite": "Stormwind City",
       "openedChests": {
         "Gnomeregan Outskirts": {
           "area": "Gnomeregan Outskirts",
@@ -3494,7 +3494,7 @@
         "Caer Darrow": 1,
         "Ravenholdt Manor": 1,
         "Misty Reed Post": 1,
-        "Stormwind City": 8,
+        "Stormwind City": 10,
         "Grove of the Ancients": 3,
         "Go'Shek Farm": 1,
         "Hillsbrad": 1,
@@ -3621,7 +3621,7 @@
         "Blackwing Lair": 1,
         "Ruins of Ahn'Qiraj": 1,
         "Temple of Ahn'Qiraj": 1,
-        "Blackrock Mountain": 16,
+        "Blackrock Mountain": 19,
         "Jintha'Alor": 1,
         "Tyr's Hand": 1,
         "Hearthglen": 1,
@@ -3655,9 +3655,9 @@
         }
       },
       "startDate": "2024-06-09T14:12:27.0144066+02:00",
-      "lastLoaded": "2024-06-20T04:28:39.5440802+02:00",
-      "lastPlayed": "2024-06-20T04:32:40.7912423+02:00",
-      "timePlayed": "11:26:28.0499429",
+      "lastLoaded": "2024-06-20T19:03:16.1027739+02:00",
+      "lastPlayed": "2024-06-20T19:03:17.6040542+02:00",
+      "timePlayed": "11:52:58.6952857",
       "lastVisitedTalents": 1
     },
     {
@@ -6535,9 +6535,11 @@
       "player": {
         "currentQuests": [],
         "completedQuests": [],
-        "level": 4,
-        "experience": 1343,
-        "uniquesGotten": [],
+        "level": 11,
+        "experience": 6840,
+        "uniquesGotten": [
+          "Seal of the Archmagus"
+        ],
         "reputation": {
           "Southsea Pirates": 0,
           "Razormane Tribe": 0,
@@ -6609,7 +6611,7 @@
         },
         "professionSkills": {},
         "learnedRecipes": {},
-        "unspentTalentPoints": 3,
+        "unspentTalentPoints": 10,
         "faction": "Ironforge",
         "name": "Dulfak",
         "race": "Dwarf",
@@ -6675,22 +6677,6 @@
               }
             },
             {
-              "rarity": "Poor",
-              "name": "Squire's Pants",
-              "icon": "itempants02",
-              "type": "Legs",
-              "armorClass": "Cloth",
-              "ilvl": 1,
-              "lvl": 1,
-              "armor": 2,
-              "amount": 1,
-              "maxStack": 1,
-              "price": 1,
-              "stats": {
-                "stats": {}
-              }
-            },
-            {
               "rarity": "Uncommon",
               "name": "Tigerseye",
               "icon": "itemmiscgemopal03",
@@ -6721,123 +6707,178 @@
               }
             },
             {
-              "rarity": "Common",
-              "name": "Mageweave Cloth",
-              "icon": "itemfabricmageweave01",
-              "type": "Trade Good",
-              "source": "Quest",
-              "ilvl": 40,
-              "lvl": 1,
-              "amount": 1,
-              "maxStack": 20,
-              "price": 250,
-              "stats": {
-                "stats": {}
-              }
-            },
-            {
-              "rarity": "Common",
-              "name": "Greater Healing Potion",
-              "icon": "itempotion52",
-              "type": "Miscellaneous",
-              "source": "Profession",
-              "ilvl": 31,
-              "amount": 1,
-              "maxStack": 5,
-              "price": 125,
-              "stats": {
-                "stats": {}
-              }
-            },
-            {
-              "rarity": "Common",
-              "name": "Scroll of Strength II",
-              "icon": "itemscroll02",
-              "type": "Miscellaneous",
-              "source": "RareDrop",
-              "ilvl": 35,
-              "amount": 1,
-              "maxStack": 5,
-              "price": 87,
-              "stats": {
-                "stats": {}
-              }
-            },
-            {
               "rarity": "Uncommon",
-              "name": "Aquamarine",
-              "icon": "itemmiscgemcrystal02",
-              "type": "Trade Good",
+              "name": "Glyphed Buckler",
+              "icon": "itemshield10",
+              "detailedType": "Shield",
+              "type": "Off Hand",
               "source": "RareDrop",
-              "ilvl": 45,
+              "ilvl": 39,
+              "lvl": 34,
+              "armor": 728,
+              "amount": 1,
+              "maxStack": 1,
+              "price": 6381,
+              "stats": {
+                "stats": {
+                  "Stamina": 4,
+                  "Spirit": 7
+                }
+              }
+            },
+            {
+              "rarity": "Common",
+              "name": "Squire's Boots",
+              "icon": "itemboots01",
+              "type": "Feet",
+              "ilvl": 1,
               "lvl": 1,
               "amount": 1,
-              "maxStack": 20,
-              "price": 1000,
+              "maxStack": 1,
+              "price": 1,
               "stats": {
                 "stats": {}
               }
             },
             {
-              "rarity": "Common",
-              "name": "Heavy Hide",
-              "icon": "itemmiscpeltwolfruin03",
-              "type": "Trade Good",
-              "source": "RareDrop",
-              "ilvl": 30,
-              "lvl": 1,
-              "amount": 2,
-              "maxStack": 10,
-              "price": 200,
+              "rarity": "Epic",
+              "name": "Cenarion Gloves",
+              "icon": "itemgauntlets07",
+              "type": "Hands",
+              "armorClass": "Leather",
+              "set": "Cenarion Raiment",
+              "source": "DirectDrop",
+              "ilvl": 66,
+              "lvl": 60,
+              "armor": 125,
+              "amount": 1,
+              "maxStack": 1,
+              "specs": [
+                "Druid"
+              ],
+              "price": 23055,
               "stats": {
-                "stats": {}
-              }
+                "stats": {
+                  "Intellect": 18,
+                  "Stamina": 17,
+                  "Spirit": 15
+                }
+              },
+              "droppedBy": [
+                "Shazzrah"
+              ]
             }
           ],
           "bags": []
         },
         "mounts": [],
         "equipment": {
-          "Main Hand": {
-            "rarity": "Common",
-            "name": "Pitted Defias Shortsword",
-            "icon": "itemsword04",
-            "detailedType": "Sword",
-            "type": "One Handed",
-            "source": "RareDrop",
-            "ilvl": 4,
-            "lvl": 1,
-            "minDamage": 2,
-            "maxDamage": 4,
+          "Back": {
+            "rarity": "Epic",
+            "name": "Fireproof Cloak",
+            "icon": "itemmisccape18",
+            "type": "Back",
+            "source": "DirectDrop",
+            "ilvl": 71,
+            "lvl": 60,
+            "armor": 54,
             "amount": 1,
             "maxStack": 1,
-            "price": 16,
-            "speed": 2.0,
+            "price": 32665,
             "stats": {
-              "stats": {}
-            }
+              "stats": {
+                "Intellect": 9,
+                "Stamina": 12,
+                "Spirit": 8
+              }
+            },
+            "droppedBy": [
+              "Majordomo Executus"
+            ]
           },
           "Feet": {
-            "rarity": "Common",
-            "name": "Squire's Boots",
-            "icon": "itemboots01",
+            "rarity": "Uncommon",
+            "name": "Mercurial Greaves of the Bear",
+            "icon": "itemboots02",
+            "randomEnchantment": true,
             "type": "Feet",
-            "ilvl": 1,
-            "lvl": 1,
+            "armorClass": "Mail",
+            "source": "RareDrop",
+            "ilvl": 61,
+            "lvl": 56,
+            "armor": 225,
             "amount": 1,
             "maxStack": 1,
-            "price": 1,
+            "price": 20168,
             "stats": {
-              "stats": {}
+              "stats": {
+                "Stamina": 17,
+                "Strength": 17
+              }
             }
           },
           "Chest": {
-            "rarity": "Common",
-            "name": "Squire's Shirt",
-            "icon": "itemshirt01",
+            "rarity": "Epic",
+            "name": "Lawbringer Chestguard",
+            "icon": "itemchestplate03",
             "type": "Chest",
+            "armorClass": "Plate",
+            "set": "Lawbringer Armor",
+            "source": "DirectDrop",
+            "ilvl": 66,
+            "lvl": 60,
+            "armor": 749,
+            "amount": 1,
+            "maxStack": 1,
+            "specs": [
+              "Paladin"
+            ],
+            "price": 37144,
+            "stats": {
+              "stats": {
+                "Strength": 8,
+                "Intellect": 21,
+                "Stamina": 26,
+                "Spirit": 13
+              }
+            },
+            "droppedBy": [
+              "Golemagg the Incinerator"
+            ]
+          },
+          "Main Hand": {
+            "rarity": "Epic",
+            "name": "Bonereaver's Edge",
+            "icon": "itemsword12",
+            "detailedType": "Sword",
+            "type": "Two Handed",
+            "source": "DirectDrop",
+            "ilvl": 77,
+            "lvl": 60,
+            "minDamage": 206,
+            "maxDamage": 310,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 196438,
+            "speed": 3.4,
+            "stats": {
+              "stats": {
+                "Stamina": 16
+              }
+            },
+            "droppedBy": [
+              "Ragnaros"
+            ]
+          },
+          "Legs": {
+            "rarity": "Poor",
+            "name": "Squire's Pants",
+            "icon": "itempants02",
+            "type": "Legs",
+            "armorClass": "Cloth",
             "ilvl": 1,
             "lvl": 1,
+            "armor": 2,
             "amount": 1,
             "maxStack": 1,
             "price": 1,
@@ -6845,23 +6886,68 @@
               "stats": {}
             }
           },
-          "Off Hand": {
+          "Wrists": {
             "rarity": "Uncommon",
-            "name": "Glyphed Buckler",
-            "icon": "itemshield10",
-            "detailedType": "Shield",
-            "type": "Off Hand",
+            "name": "Commander's Vambraces of the Gorilla",
+            "icon": "itembracer13",
+            "randomEnchantment": true,
+            "type": "Wrists",
+            "armorClass": "Plate",
             "source": "RareDrop",
-            "ilvl": 39,
-            "lvl": 34,
-            "armor": 728,
+            "ilvl": 59,
+            "lvl": 54,
+            "armor": 245,
             "amount": 1,
             "maxStack": 1,
-            "price": 6381,
+            "price": 7978,
             "stats": {
               "stats": {
-                "Stamina": 4,
-                "Spirit": 7
+                "Strength": 16,
+                "Intellect": 16
+              }
+            }
+          },
+          "Finger": {
+            "rarity": "Epic",
+            "name": "Seal of the Archmagus",
+            "icon": "itemjewelryring21",
+            "type": "Finger",
+            "source": "DirectDrop",
+            "ilvl": 70,
+            "lvl": 60,
+            "amount": 1,
+            "maxStack": 1,
+            "unique": true,
+            "price": 24648,
+            "stats": {
+              "stats": {
+                "Intellect": 11,
+                "Stamina": 11,
+                "Spirit": 11
+              }
+            },
+            "droppedBy": [
+              "Baron Geddon"
+            ]
+          },
+          "Hands": {
+            "rarity": "Uncommon",
+            "name": "Hyperion Gauntlets of the Gorilla",
+            "icon": "itemgauntlets03",
+            "randomEnchantment": true,
+            "type": "Hands",
+            "armorClass": "Plate",
+            "source": "RareDrop",
+            "ilvl": 62,
+            "lvl": 57,
+            "armor": 368,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 8865,
+            "stats": {
+              "stats": {
+                "Strength": 18,
+                "Intellect": 18
               }
             }
           }
@@ -6870,7 +6956,7 @@
       "hour": 7,
       "minute": 31,
       "second": 44,
-      "currentSite": "Balnir Farmstead",
+      "currentSite": "Blackrock Mountain",
       "ringOfLaw": "Anub'shiah",
       "openedChests": {
         "Coldridge Valley": {
@@ -6893,7 +6979,10 @@
       "siteProgress": {
         "Coldridge Valley": 3,
         "Dustwind Gulch": 3,
-        "Hall of the Keepers": 3
+        "Hall of the Keepers": 3,
+        "Ragnaros' Lair": 2,
+        "Sulfuran Summit": 5,
+        "The Lavafalls": 4
       },
       "commonsKilled": {
         "Burly Rockjaw Trogg": 2,
@@ -6901,11 +6990,22 @@
         "Ridge Stalker": 2,
         "Rabid Crag Coyote": 1,
         "Stonevault Pillager": 2,
-        "Stonevault Oracle": 1
+        "Stonevault Oracle": 1,
+        "Lava Surger": 2,
+        "Ancient Core Hound": 3,
+        "Core Rager": 2,
+        "Lava Reaver": 3,
+        "Firelord": 2
       },
       "raresKilled": {},
       "elitesKilled": {
-        "Revelosh": 1
+        "Revelosh": 1,
+        "Ragnaros": 1,
+        "Sulfuron Harbringer": 1,
+        "Golemagg the Incinerator": 1,
+        "Majordomo Executus": 1,
+        "Baron Geddon": 1,
+        "Shazzrah": 1
       },
       "siteVisits": {
         "Anvilmar": 1,
@@ -6915,7 +7015,7 @@
         "The Maker's Terrace": 0,
         "Uldaman": 2,
         "South Hillside": 0,
-        "Blackrock Mountain": 3,
+        "Blackrock Mountain": 5,
         "Nilith Camp": 0,
         "The Sea of Cinders": 0,
         "Scarlet Monastery Grounds": 3,
@@ -6923,14 +7023,16 @@
         "Balnir Farmstead": 1
       },
       "unlockedAreas": [
-        "Map Chamber"
+        "Map Chamber",
+        "Ragnaros' Lair",
+        "Sulfuran Summit"
       ],
       "vendorStock": {},
       "banks": {},
       "startDate": "2024-06-14T18:07:06.2505989+02:00",
-      "lastLoaded": "2024-06-17T16:48:47.6214801+02:00",
-      "lastPlayed": "2024-06-17T16:53:33.8253178+02:00",
-      "timePlayed": "00:29:36.3029289"
+      "lastLoaded": "2024-06-20T19:11:45.304332+02:00",
+      "lastPlayed": "2024-06-20T19:11:48.7292829+02:00",
+      "timePlayed": "00:35:28.2623181"
     },
     {
       "player": {

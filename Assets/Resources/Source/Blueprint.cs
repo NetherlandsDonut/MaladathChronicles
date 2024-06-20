@@ -514,7 +514,8 @@ public class Blueprint
 
         //Chest
         new("Chest", () => {
-            if (area == null || !currentSave.siteProgress.ContainsKey(area.name) || area.progression.First(x => x.type == "Treasure").point > currentSave.siteProgress[area.name] || currentSave.openedChests.ContainsKey(area.name) && currentSave.openedChests[area.name].inventory.items.Count == 0) return;
+            if (area == null || !currentSave.siteProgress.ContainsKey(area.name) || !area.progression.Any(x => x.type == "Treasure")) return;
+            if (area.progression.First(x => x.type == "Treasure").point > currentSave.siteProgress[area.name] || currentSave.openedChests.ContainsKey(area.name) && currentSave.openedChests[area.name].inventory.items.Count == 0) return;
             SetAnchor(259, -111);
             Chest.SpawnChestObject(new Vector2(0, 0), "Chest");
         }),
@@ -1379,7 +1380,7 @@ public class Blueprint
                         AddLine("Skill: ", "DarkGray");
                         AddText(currentSave.player.professionSkills[primary[index].name].Item1 + "", "Gray");
                         AddText(" / ", "DarkGray");
-                        AddText(primary[index].levels.FindAll(x => currentSave.player.professionSkills[primary[index].name].Item2.Contains(x.levelName)).Max(x => x.maxSkill) + "", "Gray");
+                        AddText(primary[index].levels.FindAll(x => currentSave.player.professionSkills[primary[index].name].Item2.Contains(x.name)).Max(x => x.maxSkill) + "", "Gray");
                         AddBigButton(primary[index].icon,
                         (h) =>
                         {
@@ -1416,7 +1417,7 @@ public class Blueprint
                         AddLine("Skill: ", "DarkGray");
                         AddText(currentSave.player.professionSkills[secondary[index].name].Item1 + "", "Gray");
                         AddText(" / ", "DarkGray");
-                        AddText(secondary[index].levels.FindAll(x => currentSave.player.professionSkills[secondary[index].name].Item2.Contains(x.levelName)).Max(x => x.maxSkill) + "", "Gray");
+                        AddText(secondary[index].levels.FindAll(x => currentSave.player.professionSkills[secondary[index].name].Item2.Contains(x.name)).Max(x => x.maxSkill) + "", "Gray");
                         AddBigButton(secondary[index].icon,
                         (h) =>
                         {
@@ -1649,7 +1650,7 @@ public class Blueprint
                 {
                     var crafted = currentSave.player.Craft(recipe);
                     var skill = currentSave.player.professionSkills;
-                    var isMaxed = skill[recipe.profession].Item1 == profession.levels.FindAll(x => skill[recipe.profession].Item2.Contains(x.levelName)).Max(x => x.maxSkill);
+                    var isMaxed = skill[recipe.profession].Item1 == profession.levels.FindAll(x => skill[recipe.profession].Item2.Contains(x.name)).Max(x => x.maxSkill);
                     if (!isMaxed)
                     {
                         var suc = false;
@@ -2547,7 +2548,7 @@ public class Blueprint
                 }
             );
             var s = currentSave.player.professionSkills["Mining"];
-            if (!board.results.miningSkillChange && board.results.miningNode.Item2 + 50 >= s.Item1 && s.Item1 < professions.Find(x => x.name == "Mining").levels.FindAll(x => s.Item2.Contains(x.levelName)).Max(x => x.maxSkill))
+            if (!board.results.miningSkillChange && board.results.miningNode.Item2 + 50 >= s.Item1 && s.Item1 < professions.Find(x => x.name == "Mining").levels.FindAll(x => s.Item2.Contains(x.name)).Max(x => x.maxSkill))
             {
                 board.results.miningSkillChange = true;
                 currentSave.player.professionSkills["Mining"] = (s.Item1 + 1, s.Item2);
@@ -2600,7 +2601,7 @@ public class Blueprint
                 }
             );
             var s = currentSave.player.professionSkills["Herbalism"];
-            if (!board.results.herbalismSkillChange && board.results.herb.Item2 + 50 >= s.Item1 && s.Item1 < professions.Find(x => x.name == "Herbalism").levels.FindAll(x => s.Item2.Contains(x.levelName)).Max(x => x.maxSkill))
+            if (!board.results.herbalismSkillChange && board.results.herb.Item2 + 50 >= s.Item1 && s.Item1 < professions.Find(x => x.name == "Herbalism").levels.FindAll(x => s.Item2.Contains(x.name)).Max(x => x.maxSkill))
             {
                 board.results.herbalismSkillChange = true;
                 currentSave.player.professionSkills["Herbalism"] = (s.Item1 + 1, s.Item2);
@@ -2619,7 +2620,7 @@ public class Blueprint
                 }
             );
             var s = currentSave.player.professionSkills["Enchanting"];
-            if (!enchantingSkillChange && s.Item1 < 70 && s.Item1 < professions.Find(x => x.name == "Enchanting").levels.FindAll(x => s.Item2.Contains(x.levelName)).Max(x => x.maxSkill))
+            if (!enchantingSkillChange && s.Item1 < 70 && s.Item1 < professions.Find(x => x.name == "Enchanting").levels.FindAll(x => s.Item2.Contains(x.name)).Max(x => x.maxSkill))
             {
                 enchantingSkillChange = true;
                 currentSave.player.professionSkills["Enchanting"] = (s.Item1 + 1, s.Item2);
@@ -2927,7 +2928,6 @@ public class Blueprint
                     CloseWindow("Chest");
                     CloseWindow("InstanceWing");
                     Respawn("Instance");
-                    PlaySound("DesktopButtonClose");
                 });
             });
             AddPaddingRegion(() =>
@@ -3504,6 +3504,7 @@ public class Blueprint
                     CloseWindow("Town");
                     SpawnWindowBlueprint("Vendor");
                     SpawnWindowBlueprint("Inventory");
+                    Respawn("PlayerMoney", true);
                     Respawn("ExperienceBarBorder");
                     Respawn("ExperienceBar");
                 });
@@ -3572,6 +3573,7 @@ public class Blueprint
                 {
                     CloseWindow("Vendor");
                     CloseWindow("Inventory");
+                    Respawn("PlayerMoney", true);
                     Respawn("Person");
                     PlaySound("DesktopInventoryClose");
                 });
@@ -3614,6 +3616,7 @@ public class Blueprint
                 {
                     CloseWindow("VendorBuyback");
                     CloseWindow("Inventory");
+                    Respawn("PlayerMoney", true);
                     Respawn("Person");
                     PlaySound("DesktopInventoryClose");
                 });
@@ -3735,7 +3738,7 @@ public class Blueprint
                     if (mounts.Count > index + 6 * regionGroup.pagination())
                     {
                         var mount = mounts[index + 6 * regionGroup.pagination()];
-                        AddLine(mount.name);
+                        AddLine(mount.name, mount.speed == 7 ? "Rare" : "Epic");
                         AddLine("Speed: ", "DarkGray");
                         AddText(mount.speed == 7 ? "Fast" : (mount.speed == 9 ? "Very Fast" : "Normal"));
                         AddBigButton(mount.icon,
@@ -3757,7 +3760,7 @@ public class Blueprint
                                 PrintMountTooltip(currentSave.player, mount);
                             }
                         );
-                        if (currentSave.player.level < (mount.speed == 7 ? defines.lvlRequiredFastMounts : defines.lvlRequiredVeryFastMounts)) SetBigButtonToRed();
+                        if (currentSave.player.level < (mount.speed == 7 ? defines.lvlRequiredFastMounts : defines.lvlRequiredVeryFastMounts)) { SetBigButtonToRed(); AddBigButtonOverlay("OtherGridBlurred"); }
                     }
                     else
                     {
@@ -3800,7 +3803,7 @@ public class Blueprint
                         if (mounts.Count > index + 6 * regionGroup.pagination())
                         {
                             var mount = mounts[index + 6 * regionGroup.pagination()];
-                            AddLine(mount.name);
+                            AddLine(mount.name, mount.speed == 7 ? "Rare" : "Epic");
                             AddLine("Speed: ", "DarkGray");
                             AddText(mount.speed == 7 ? "Fast" : (mount.speed == 9 ? "Very Fast" : "Normal"));
                             AddBigButton(mount.icon,
@@ -3810,6 +3813,7 @@ public class Blueprint
                                     if (currentSave.player.inventory.money >= mount.price)
                                     {
                                         currentSave.player.inventory.money -= mount.price;
+                                        Respawn("PlayerMoney", true);
                                         currentSave.player.mounts.Add(mount.name);
                                         Respawn("MountVendor");
                                         PlaySound("DesktopTransportPay");
@@ -3823,7 +3827,10 @@ public class Blueprint
                                 }
                             );
                             if (currentSave.player.level < (mount.speed == 7 ? defines.lvlRequiredFastMounts : defines.lvlRequiredVeryFastMounts))
+                            {
                                 SetBigButtonToRed();
+                                AddBigButtonOverlay("OtherGridBlurred");
+                            }
                         }
                         else if (mounts.Count == index + 6 * regionGroup.pagination())
                         {
@@ -3872,7 +3879,7 @@ public class Blueprint
         new("CurrentMount", () => {
             SetAnchor(-92, 142);
             AddHeaderGroup();
-            SetRegionGroupWidth(190);
+            SetRegionGroupWidth(182);
             AddHeaderRegion(() =>
             {
                 AddLine("Current mount:");
@@ -4118,7 +4125,7 @@ public class Blueprint
             var profession = professions.Find(x => x.name == type.profession);
             var levels = profession.levels.OrderBy(x => x.requiredSkill).ToList();
             if (currentSave.player.professionSkills.ContainsKey(profession.name))
-                levels = levels.FindAll(x => !currentSave.player.professionSkills[profession.name].Item2.Contains(x.levelName));
+                levels = levels.FindAll(x => !currentSave.player.professionSkills[profession.name].Item2.Contains(x.name));
             AddHeaderGroup(() => levels.Count, 6);
             SetRegionGroupWidth(190);
             SetRegionGroupHeight(288);
@@ -4147,7 +4154,7 @@ public class Blueprint
                     if (levels.Count > index + 6 * regionGroup.pagination())
                     {
                         var key = levels[index + 6 * regionGroup.pagination()];
-                        AddLine(key.levelName);
+                        AddLine(key.name);
                         AddLine("", "DarkGray");
                         if (key.requiredLevel > 0)
                         {
@@ -4164,16 +4171,18 @@ public class Blueprint
                             {
                                 var key = levels[index + 6 * regionGroup.pagination()];
 
-                                //If player is high enough level..
-                                if (currentSave.player.level >= key.requiredLevel)
+                                //If player is high enough level and has the money..
+                                if (currentSave.player.level >= key.requiredLevel && currentSave.player.inventory.money >= key.price)
                                 {
                                     //If has the profession and at a proper level..
                                     if (key.requiredSkill == 0 || currentSave.player.professionSkills.ContainsKey(type.profession) && currentSave.player.professionSkills[type.profession].Item1 >= key.requiredSkill)
                                     {
                                         //If doesnt have the level yet..
-                                        if (!currentSave.player.professionSkills.ContainsKey(type.profession) || currentSave.player.professionSkills.ContainsKey(type.profession) && !currentSave.player.professionSkills[type.profession].Item2.Contains(key.levelName))
+                                        if (!currentSave.player.professionSkills.ContainsKey(type.profession) || currentSave.player.professionSkills.ContainsKey(type.profession) && !currentSave.player.professionSkills[type.profession].Item2.Contains(key.name))
                                         {
                                             //Learn the level
+                                            currentSave.player.inventory.money -= key.price;
+                                            Respawn("PlayerMoney", true);
                                             if (!currentSave.player.professionSkills.ContainsKey(type.profession))
                                             {
                                                 currentSave.player.professionSkills.Add(type.profession, (1, new()));
@@ -4182,26 +4191,30 @@ public class Blueprint
                                                 foreach (var recipe in professions.Find(x => x.name == type.profession).defaultRecipes)
                                                     currentSave.player.LearnRecipe(type.profession, recipe);
                                             }
-                                            currentSave.player.professionSkills[type.profession].Item2.Add(key.levelName);
+                                            currentSave.player.professionSkills[type.profession].Item2.Add(key.name);
                                             Respawn(h.window.title);
                                             PlaySound("DesktopSkillLearned");
                                         }
                                     }
                                 }
+                            },
+                            null,
+                            (h) => () =>
+                            {
+                                var key = levels[index + 6 * regionGroup.pagination()];
+                                PrintProfessionLevelTooltip(currentSave.player, profession, key);
                             }
                         );
                         var can = false;
                         if (currentSave.player.level >= key.requiredLevel)
                             if (key.requiredSkill == 0 || currentSave.player.professionSkills.ContainsKey(type.profession) && currentSave.player.professionSkills[type.profession].Item1 >= key.requiredSkill)
-                                if (!currentSave.player.professionSkills.ContainsKey(type.profession) || currentSave.player.learnedRecipes.ContainsKey(type.profession) && !currentSave.player.professionSkills[type.profession].Item2.Contains(key.levelName))
+                                if (!currentSave.player.professionSkills.ContainsKey(type.profession) || currentSave.player.learnedRecipes.ContainsKey(type.profession) && !currentSave.player.professionSkills[type.profession].Item2.Contains(key.name))
                                     can = true;
                         if (!can)
                         {
-                            SetBigButtonToGrayscale();
+                            SetBigButtonToRed();
                             AddBigButtonOverlay("OtherGridBlurred");
                         }
-                        else
-                            AddBigButtonOverlay("OtherGlowLearnable");
                     }
                     else
                     {
@@ -4215,7 +4228,8 @@ public class Blueprint
         new("ProfessionRecipeTrainer", () => {
             SetAnchor(TopLeft, 19, -38);
             var type = personTypes.Find(x => x.type == person.type);
-            var recipes = Recipe.recipes.FindAll(x => x.profession == type.profession && x.trainingCost > 0 && (x.learnedAt <= type.skillCap || type.skillCap == 0));
+            var profession = professions.Find(x => x.name == type.profession);
+            var recipes = Recipe.recipes.FindAll(x => x.profession == type.profession && x.price > 0 && (x.learnedAt <= type.skillCap || type.skillCap == 0));
             if (currentSave.player.learnedRecipes.ContainsKey(type.profession))
                 recipes = recipes.FindAll(x => !currentSave.player.learnedRecipes[type.profession].Contains(x.name));
             AddHeaderGroup(() => recipes.Count, 6);
@@ -4229,7 +4243,7 @@ public class Blueprint
             });
             AddHeaderRegion(() =>
             {
-                AddLine("Learnable recipes:");
+                AddLine("Learnable " + profession.recipeType.ToLower() + (profession.recipeType.Last() == 's' ? ":" : "s:"), "Gray");
                 AddSmallButton("OtherClose", (h) =>
                 {
                     CloseWindow(h.window.title);
@@ -4246,7 +4260,7 @@ public class Blueprint
                     if (recipes.Count > index + 6 * regionGroup.pagination())
                     {
                         var key = recipes[index + 6 * regionGroup.pagination()];
-                        AddLine(key.name);
+                        AddLine(key.name, key.NameColor());
                         AddLine("", "DarkGray");
                         if (key.learnedAt > 0)
                         {
@@ -4258,13 +4272,15 @@ public class Blueprint
                             {
                                 var key = recipes[index + 6 * regionGroup.pagination()];
 
-                                //If has the profession and at a proper level..
-                                if (currentSave.player.professionSkills.ContainsKey(key.profession) && currentSave.player.professionSkills[key.profession].Item1 >= key.learnedAt)
+                                //If player has the money and has the profession and at a proper level..
+                                if (currentSave.player.inventory.money >= key.price && currentSave.player.professionSkills.ContainsKey(key.profession) && currentSave.player.professionSkills[key.profession].Item1 >= key.learnedAt)
                                 {
                                     //If doesnt have the recipe..
                                     if (!currentSave.player.learnedRecipes.ContainsKey(type.profession) || currentSave.player.learnedRecipes.ContainsKey(type.profession) && !currentSave.player.learnedRecipes[type.profession].Contains(key.name))
                                     {
                                         //Add the recipe
+                                        currentSave.player.inventory.money -= key.price;
+                                        Respawn("PlayerMoney", true);
                                         currentSave.player.LearnRecipe(key);
                                         Respawn(h.window.title);
                                         PlaySound("DesktopSkillLearned");
@@ -4274,10 +4290,10 @@ public class Blueprint
                             null,
                             (h) => () =>
                             {
-                                SetAnchor(Center);
                                 var key = recipes[index + 6 * regionGroup.pagination()];
-                                if (key.results.Count > 0)
-                                    PrintItemTooltip(items.Find(x => x.name == key.results.First().Key), Input.GetKey(KeyCode.LeftShift));
+                                if (Input.GetKey(LeftControl) && key.results.Count > 0)
+                                    PrintItemTooltip(items.Find(x => x.name == key.results.First().Key), Input.GetKey(LeftShift));
+                                else PrintRecipeTooltip(currentSave.player, key);
                             }
                         );
                         var can = false;
@@ -4286,11 +4302,9 @@ public class Blueprint
                                 can = true;
                         if (!can)
                         {
-                            SetBigButtonToGrayscale();
+                            SetBigButtonToRed();
                             AddBigButtonOverlay("OtherGridBlurred");
                         }
-                        else
-                            AddBigButtonOverlay("OtherGlowLearnable");
                     }
                     else
                     {
@@ -4300,6 +4314,14 @@ public class Blueprint
                 });
             }
             AddPaginationLine(regionGroup);
+        }),
+        new("PlayerMoney", () => {
+            if (CDesktop.windows.Exists(x => x.title == "Inventory")) return;
+            if (CDesktop.windows.Exists(x => x.title == "Quest")) return;
+            if (CDesktop.windows.Exists(x => x.title == "QuestAdd")) return;
+            if (CDesktop.windows.Exists(x => x.title == "QuestTurn")) return;
+            SetAnchor(BottomRight, -19, 35);
+            PrintPriceRegion(currentSave.player.inventory.money);
         }),
 
         //Fishing
@@ -4651,9 +4673,9 @@ public class Blueprint
             {
                 if (currentSave.player.unspentTalentPoints > 0)
                 {
-                    AddLine("You have ", "", "Right");
+                    AddLine("You have ", "Gray", "Right");
                     AddText(currentSave.player.unspentTalentPoints + "", "Uncommon");
-                    AddText(" talent point" + (currentSave.player.unspentTalentPoints == 1 ? "!" : "s!"));
+                    AddText(" talent point" + (currentSave.player.unspentTalentPoints == 1 ? "!" : "s!"), "Gray");
                 }
                 AddSmallButton("OtherSettings", (h) =>
                 {
@@ -5611,6 +5633,7 @@ public class Blueprint
             SetDesktopBackground(town.Background());
             SpawnWindowBlueprint("TownQuestAvailable");
             SpawnWindowBlueprint("TownQuestDone");
+            SpawnWindowBlueprint("PlayerMoney");
             SpawnWindowBlueprint("MapToolbarShadow");
             SpawnWindowBlueprint("MapToolbarClockLeft");
             SpawnWindowBlueprint("MapToolbar");
@@ -5649,6 +5672,7 @@ public class Blueprint
                         CloseWindow("Bank");
                         CloseWindow("Vendor");
                         CloseWindow("VendorBuyback");
+                        Respawn("PlayerMoney", true);
                         Respawn("Person");
                     }
                     else if (CloseWindow("MakeInnHome"))

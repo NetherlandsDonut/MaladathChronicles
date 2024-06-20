@@ -14,6 +14,7 @@ using static SiteTown;
 using static Coloring;
 using static GameSettings;
 using static PermanentEnchant;
+using static UnityEngine.Random;
 
 public class Item
 {
@@ -221,6 +222,12 @@ public class Item
         return entity.inventory.money >= price && (faction == null || true); //true = rep
     }
 
+    public bool IsWearable()
+    {
+        if (new List<string> { "Miscellaneous", "Trade Good", "Recipe", "Bag" }.Contains(type)) return false;
+        return true;
+    }
+
     public bool IsDisenchantable()
     {
         if (new List<string> { "Miscellaneous", "Trade Good", "Recipe", "Bag" }.Contains(type)) return false;
@@ -228,7 +235,7 @@ public class Item
         return true;
     }
 
-    public bool CanEquip(Entity entity)
+    public bool CanEquip(Entity entity, bool downgradeArmor = false)
     {
         if (type == "Miscellaneous" || type == "Trade Good" || type == "Recipe")
             return false;
@@ -237,7 +244,39 @@ public class Item
         if (type == "Bag")
             return entity.inventory.bags.Count < defines.maxBagsEquipped;
         else if (armorClass != null)
-            return entity.abilities.ContainsKey(armorClass + " Proficiency");
+        {
+            if (downgradeArmor)
+            {
+                if (armorClass == "Plate")
+                {
+                    if (entity.abilities.ContainsKey("Plate Proficiency")) return true;
+                    else return false;
+                }
+                if (armorClass == "Mail")
+                {
+                    if (entity.abilities.ContainsKey("Plate Proficiency")) return true;
+                    else if (entity.abilities.ContainsKey("Mail Proficiency")) return true;
+                    else return false;
+                }
+                if (armorClass == "Leather")
+                {
+                    if (entity.abilities.ContainsKey("Plate Proficiency")) return true;
+                    else if (entity.abilities.ContainsKey("Mail Proficiency")) return true;
+                    else if (entity.abilities.ContainsKey("Leather Proficiency")) return true;
+                    else return false;
+                }
+                if (armorClass == "Cloth")
+                {
+                    if (entity.abilities.ContainsKey("Plate Proficiency")) return true;
+                    else if (entity.abilities.ContainsKey("Mail Proficiency")) return true;
+                    else if (entity.abilities.ContainsKey("Leather Proficiency")) return true;
+                    else if (entity.abilities.ContainsKey("Cloth Proficiency")) return true;
+                    else return false;
+                }
+                return true;
+            }
+            else return entity.abilities.ContainsKey(armorClass + " Proficiency");
+        }
         else if (type == "Pouch")
             return entity.abilities.ContainsKey("Pouch Proficiency");
         else if (type == "Quiver")
@@ -340,7 +379,7 @@ public class Item
         {
             var mainHand = entity.GetItemInSlot("Main Hand");
             var offHand = entity.GetItemInSlot("Off Hand");
-            secondSlot = mainHand != null && mainHand.type != "Two Handed" && (offHand == null || offHand.ilvl <= mainHand.ilvl);
+            secondSlot = mainHand != null && mainHand.type != "Two Handed" && entity.abilities.ContainsKey("Dual Wielding Proficiency") && (offHand == null || offHand.ilvl <= mainHand.ilvl);
             if (secondSlot)
             {
                 if (mainHand != null && mainHand.type == "Two Handed")
@@ -666,7 +705,7 @@ public class Item
                 }
                 else
                 {
-                    if (item.CanEquip(currentSave.player))
+                    if (item.CanEquip(currentSave.player, true))
                     {
                         PlaySound(item.ItemSound("PickUp"), 0.6f);
                         item.Equip(currentSave.player);
@@ -831,17 +870,37 @@ public class Item
         SetAnchor(-92, 142);
         AddHeaderGroup();
         SetRegionGroupWidth(182);
+        if (Input.GetKey(KeyCode.LeftControl) && item.type == "Recipe")
+        {
+            var recipe = Recipe.recipes.Find(x => item.name.Contains(x.name));
+            if (recipe != null) item = items.Find(x => x.name == recipe.results.First().Key).CopyItem(recipe.results.First().Value);
+        }
         var split = item.name.Split(", ");
-        AddHeaderRegion(() => { AddLine(split[0], item.rarity); AddSmallButton(item.icon); });
+        AddHeaderRegion(() =>
+        {
+            AddLine(split[0], item.rarity);
+            AddSmallButton(item.icon);
+        });
         if (split.Length > 1) AddHeaderRegion(() => { AddLine("\"" + split[1] + "\"", item.rarity); });
         AddPaddingRegion(() =>
         {
             if (item.armorClass != null)
-                AddLine(item.armorClass + " " + item.type);
+            {
+                var copy = item.CopyItem(1);
+                copy.specs = null;
+                AddLine(item.armorClass + " ", currentSave != null && !copy.CanEquip(currentSave.player, true) ? "DangerousRed" : "Gray");
+                AddText(item.type);
+            }
             else if (item.maxDamage != 0)
             {
-                AddLine(item.type + " " + item.detailedType);
-                AddLine(item.minDamage + " - " + item.maxDamage + " Damage");
+                AddLine(item.type + " " + item.detailedType, currentSave != null && !currentSave.player.abilities.ContainsKey((new List<string> { "Polearm", "Staff", "Bow", "Crossbow", "Gun", "Dagger", "Fist Weapon", "Wand" }.Contains(item.detailedType) ? item.detailedType : item.type + " " + item.detailedType) + " Proficiency") ? "DangerousRed" : "Gray");
+                var a = Math.Round(item.minDamage / item.speed);
+                var b = Math.Round(item.maxDamage / item.speed);
+                AddLine(a + "", "Gray");
+                AddText(" - ", "HalfGray");
+                AddText(b + " Damage", "Gray");
+                AddLine("Average hit: ", "HalfGray");
+                AddText("" + Math.Round((a + b) / 2), "White");
             }
             else if (item.bagSpace != 0) AddLine(item.bagSpace + " Slot Bag");
             else if (item.type == "Recipe")
@@ -849,9 +908,9 @@ public class Item
                 var recipe = Recipe.recipes.Find(x => item.name.Contains(x.name));
                 AddLine(recipe.profession + " " + item.name.Split(':')[0].ToLower());
             }
+            else if (item.type == "Off Hand") AddLine(item.type + (item.detailedType != null ? " " + item.detailedType : ""), currentSave != null && !currentSave.player.abilities.ContainsKey(item.detailedType == "Shield" ? "Shield Proficiency" : "Off Hand Proficiency") ? "DangerousRed" : "Gray");
             else AddLine(item.type ?? "");
-            if (item.armor > 0)
-                AddLine(item.armor + " Armor");
+            if (item.armor > 0) AddLine(item.armor + " Armor");
         });
         if (item.stats != null && item.stats.stats.Count > 0)
             AddPaddingRegion(() =>
@@ -859,9 +918,14 @@ public class Item
                 foreach (var stat in item.stats.stats)
                     AddLine("+" + stat.Value + " " + stat.Key);
             });
-        var current = currentSave != null && currentSave.player.equipment.ContainsKey(item.type) ? currentSave.player.equipment[item.type] : null;
-        if (compare && item.CanEquip(currentSave.player))
+        if (compare && item.IsWearable())
         {
+            Item current = null;
+            if (currentSave != null)
+                if (currentSave.player.equipment.ContainsKey(item.type))
+                    current = currentSave.player.equipment[item.type];
+                else if (item.type == "Two Handed" || item.type == "One Handed")
+                    current = currentSave.player.equipment["Main Hand"];
             AddHeaderRegion(() =>
             {
                 AddLine("Stat changes on equip:", "DarkGray");
@@ -869,6 +933,30 @@ public class Item
             AddPaddingRegion(() =>
             {
                 var statsRecorded = new List<string>();
+                var a1 = item.armor;
+                var a2 = current == null ? 0 : current.armor;
+                if (a1 - a2 != 0)
+                {
+                    var balance = a1 - a2;
+                    AddLine((balance > 0 ? "+" : "") + balance, balance > 0 ? "Uncommon" : "DangerousRed");
+                    AddText(" Armor");
+                }
+                a1 = item.speed <= 0 ? 0 : (int)Math.Round((Math.Round(item.minDamage / item.speed) + Math.Round(item.maxDamage / item.speed)) / 2);
+                a2 = current == null || current.speed <= 0 ? 0 : (int)Math.Round((Math.Round(current.minDamage / current.speed) + Math.Round(current.maxDamage / current.speed)) / 2);
+                if (a1 - a2 != 0)
+                {
+                    var balance = a1 - a2;
+                    AddLine((balance > 0 ? "+" : "") + balance, balance > 0 ? "Uncommon" : "DangerousRed");
+                    AddText(" Damage");
+                }
+                a1 = item.block;
+                a2 = current == null ? 0 : current.block;
+                if (a1 - a2 != 0)
+                {
+                    var balance = a1 - a2;
+                    AddLine((balance > 0 ? "+" : "") + balance, balance > 0 ? "Uncommon" : "DangerousRed");
+                    AddText(" Block");
+                }
                 foreach (var stat in item.stats.stats)
                 {
                     statsRecorded.Add(stat.Key);

@@ -2,6 +2,8 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 
+using static Root;
+
 public class Profession
 {
     //Initialisation method to fill automatic values
@@ -10,6 +12,34 @@ public class Profession
     {
         maxLevel = levels.Max(x => x.maxSkill);
     }
+
+    #region Description
+
+    public static void PrintProfessionLevelTooltip(Entity forWho, Profession profession, ProfessionLevel level)
+    {
+        SetAnchor(-92, 142);
+        AddHeaderGroup();
+        SetRegionGroupWidth(182);
+        AddHeaderRegion(() =>
+        {
+            AddLine(level.name, "Gray");
+        });
+        AddPaddingRegion(() =>
+        {
+            AddBigButton(profession.icon);
+            if (forWho.level < level.requiredLevel || level.requiredSkill > 0 && !forWho.professionSkills.ContainsKey(profession.name) || level.requiredSkill > 0 && forWho.professionSkills[profession.name].Item1 < level.requiredSkill) { SetBigButtonToRed(); AddBigButtonOverlay("OtherGridBlurred"); }
+            AddLine("Required level: ", "DarkGray");
+            AddText(level.requiredLevel + "", Coloring.ColorRequiredLevel(level.requiredLevel));
+            if (level.requiredSkill > 0)
+            {
+                AddLine("Required skill: ", "DarkGray");
+                AddText(level.requiredSkill + "", !forWho.professionSkills.ContainsKey(profession.name) || forWho.professionSkills[profession.name].Item1 < level.requiredSkill ? "DangerousRed" : "HalfGray");
+            }
+        });
+        PrintPriceRegion(level.price);
+    }
+
+    #endregion
 
     //Profession name
     public string name;
@@ -46,10 +76,10 @@ public class Profession
 public class ProfessionLevel
 {
     //Name of the level
-    public string levelName;
+    public string name;
 
     //Cost of training this level at a trainer
-    public int trainingCost;
+    public int price;
 
     //Minimum required level of player to learn this level
     public int requiredLevel;

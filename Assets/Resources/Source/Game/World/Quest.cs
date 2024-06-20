@@ -135,6 +135,7 @@ public class Quest
                     AddSmallButton("OtherClose", (h) =>
                     {
                         CloseWindow("Quest");
+                        Respawn("PlayerMoney", true);
                         PlaySound("DesktopInstanceClose");
                     });
                     AddSmallButton("OtherTrashOff");
@@ -144,6 +145,7 @@ public class Quest
                     AddSmallButton("OtherClose", (h) =>
                     {
                         CloseWindow("Quest");
+                        Respawn("PlayerMoney", true);
                         PlaySound("DesktopInstanceClose");
                     });
                     AddSmallButton("OtherTrash", (h) =>
@@ -157,6 +159,7 @@ public class Quest
                 AddSmallButton("OtherClose", (h) =>
                 {
                     CloseWindow("Quest" + f);
+                    Respawn("PlayerMoney", true);
                     if (SiteComplex.complex != null) Respawn("Complex");
                     else if (SiteInstance.instance != null) Respawn("Instance");
                     PlaySound("DesktopInstanceClose");
@@ -195,7 +198,7 @@ public class Quest
                     if (CDesktop.windows.Exists(x => x.title == "CraftingSettings")) return;
                     Item.PrintItemTooltip(find, Input.GetKey(KeyCode.LeftShift));
                 });
-                if (find.type != "Miscellaneous" && find.type != "Trade Good" && find.type != "Recipe" && find.CanEquip(currentSave.player)) SetBigButtonToRed();
+                //if (find.type != "Miscellaneous" && find.type != "Trade Good" && find.type != "Recipe" && find.CanEquip(currentSave.player)) { SetBigButtonToRed(); AddBigButtonOverlay("OtherGridBlurred"); }
                 if (find.maxStack > 1) SpawnFloatingText(CDesktop.LBWindow.LBRegionGroup.LBRegion.transform.position + new Vector3(32, -27) + new Vector3(38, 0) * (rewards.Keys.ToList().IndexOf(item.Key) % 5), item.Value + "", "", "Right");
             }
         }
@@ -210,6 +213,7 @@ public class Quest
                 if (find != null) find.Respawn();
                 find = CDesktop.windows.Find(x => x.title.Contains("QuestDone"));
                 if (find != null) find.Respawn();
+                Respawn("PlayerMoney", true);
             });
         }
         if (f == "Add")
@@ -225,6 +229,7 @@ public class Quest
                     if (find != null) find.Respawn();
                     find = CDesktop.windows.Find(x => x.title.Contains("QuestDone"));
                     if (find != null) find.Respawn();
+                    Respawn("PlayerMoney", true);
                 }
                 else PlaySound("QuestFailed", 0.2f);
             });

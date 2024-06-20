@@ -536,17 +536,18 @@ public static class Root
 
     public static void PrintPriceRegion(int price)
     {
-        int width = CDesktop.LBWindow.LBRegionGroup.setWidth;
+        int width = CDesktop.LBWindow.LBRegionGroup == null ? 0 : CDesktop.LBWindow.LBRegionGroup.setWidth;
         var lacking = 0;
         if (price > 9999) Foo("ItemCoinsGold", price / 10000 + "", "Gold"); else lacking++;
         if (price / 100 % 100 > 0) Foo("ItemCoinsSilver", price / 100 % 100 + "", "Silver"); else lacking++;
         if (price % 100 > 0 || price == 0) Foo("ItemCoinsCopper", price % 100 + "", "Copper"); else lacking++;
+        if (width == 0) return;
         AddRegionGroup();
         SetRegionGroupWidth(width - (3 - lacking) * 54);
         AddPaddingRegion(() =>
         {
             AddLine("");
-            if (SaveGame.currentSave.player.professionSkills.ContainsKey("Enchanting") && CDesktop.LBWindow.title == "Inventory")
+            if (CDesktop.LBWindow.title == "Inventory" && SaveGame.currentSave.player.professionSkills.ContainsKey("Enchanting"))
                 if (CDesktop.title == "EquipmentScreen")
                     AddSmallButton(Cursor.cursor.color != "Pink" ? "ItemDisenchant" : "OtherCloseDisenchant", (h) =>
                     {
@@ -583,7 +584,7 @@ public static class Root
         var newObject = new GameObject("Line", typeof(Line));
         newObject.transform.parent = region.transform;
         newObject.GetComponent<Line>().Initialise(region, align);
-        AddText(text, color);
+        AddText(text, color == "" ? DefaultTextColorForRegion(region.backgroundType) : color);
     }
 
     public static string DefaultTextColorForRegion(RegionBackgroundType type)
@@ -792,7 +793,7 @@ public static class Root
         var newObject = new GameObject("Text", typeof(LineText));
         var line = CDesktop.LBWindow.LBRegionGroup.LBRegion.LBLine;
         newObject.transform.parent = line.transform;
-        newObject.GetComponent<LineText>().Initialise(line, text, color == "" ? DefaultTextColorForRegion(line.region.backgroundType) : color);
+        newObject.GetComponent<LineText>().Initialise(line, text, color == "" ? line.LBText.color : color);
     }
 
     public static void SpawnFloatingText(Vector2 position, string text = "", string color = "", string align = "Center")
@@ -964,6 +965,7 @@ public static class Root
                 CloseWindow("Complex");
                 if (f == "Add") Respawn("QuestAdd");
                 else if (f == "Turn") Respawn("QuestTurn");
+                Respawn("PlayerMoney", true);
             });
             var color = ColorQuestLevel(quest.questLevel);
             if (color != null) SetRegionBackgroundAsImage("SkillUp" + color);
@@ -978,7 +980,7 @@ public static class Root
         skillBar.transform.parent = CDesktop.LBWindow.transform;
         skillBar.transform.localPosition = new Vector3(x, y, 0);
         var thisBar = skillBar.GetComponent<FluidBar>();
-        thisBar.Initialise(150, () => profession.levels.Where(x => entity.professionSkills[profession.name].Item2.Contains(x.levelName)).Max(x => x.maxSkill), () => entity.professionSkills[profession.name].Item1, false);
+        thisBar.Initialise(150, () => profession.levels.Where(x => entity.professionSkills[profession.name].Item2.Contains(x.name)).Max(x => x.maxSkill), () => entity.professionSkills[profession.name].Item1, false);
         thisBar.UpdateFluidBar();
     }
 

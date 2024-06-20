@@ -14,28 +14,28 @@
     ],
     "levels": [
       {
-        "levelName": "Apprentice",
-        "trainingCost": 10,
+        "name": "Apprentice",
+        "price": 10,
         "requiredLevel": 5,
         "maxSkill": 75
       },
       {
-        "levelName": "Journeyman",
-        "trainingCost": 500,
+        "name": "Journeyman",
+        "price": 500,
         "requiredLevel": 10,
         "requiredSkill": 50,
         "maxSkill": 150
       },
       {
-        "levelName": "Expert",
-        "trainingCost": 5000,
+        "name": "Expert",
+        "price": 5000,
         "requiredLevel": 20,
         "requiredSkill": 125,
         "maxSkill": 225
       },
       {
-        "levelName": "Artisan",
-        "trainingCost": 50000,
+        "name": "Artisan",
+        "price": 50000,
         "requiredLevel": 35,
         "requiredSkill": 200,
         "maxSkill": 300
@@ -55,28 +55,28 @@
     ],
     "levels": [
       {
-        "levelName": "Apprentice",
-        "trainingCost": 10,
+        "name": "Apprentice",
+        "price": 10,
         "requiredLevel": 5,
         "maxSkill": 75
       },
       {
-        "levelName": "Journeyman",
-        "trainingCost": 500,
+        "name": "Journeyman",
+        "price": 500,
         "requiredLevel": 10,
         "requiredSkill": 50,
         "maxSkill": 150
       },
       {
-        "levelName": "Expert",
-        "trainingCost": 5000,
+        "name": "Expert",
+        "price": 5000,
         "requiredLevel": 20,
         "requiredSkill": 125,
         "maxSkill": 225
       },
       {
-        "levelName": "Artisan",
-        "trainingCost": 50000,
+        "name": "Artisan",
+        "price": 50000,
         "requiredLevel": 35,
         "requiredSkill": 200,
         "maxSkill": 300
@@ -95,28 +95,28 @@
     ],
     "levels": [
       {
-        "levelName": "Apprentice",
-        "trainingCost": 10,
+        "name": "Apprentice",
+        "price": 10,
         "requiredLevel": 5,
         "maxSkill": 75
       },
       {
-        "levelName": "Journeyman",
-        "trainingCost": 500,
+        "name": "Journeyman",
+        "price": 500,
         "requiredLevel": 10,
         "requiredSkill": 50,
         "maxSkill": 150
       },
       {
-        "levelName": "Expert",
-        "trainingCost": 5000,
+        "name": "Expert",
+        "price": 5000,
         "requiredLevel": 20,
         "requiredSkill": 125,
         "maxSkill": 225
       },
       {
-        "levelName": "Artisan",
-        "trainingCost": 50000,
+        "name": "Artisan",
+        "price": 50000,
         "requiredLevel": 35,
         "requiredSkill": 200,
         "maxSkill": 300
@@ -136,28 +136,28 @@
     ],
     "levels": [
       {
-        "levelName": "Apprentice",
-        "trainingCost": 10,
+        "name": "Apprentice",
+        "price": 10,
         "requiredLevel": 5,
         "maxSkill": 75
       },
       {
-        "levelName": "Journeyman",
-        "trainingCost": 500,
+        "name": "Journeyman",
+        "price": 500,
         "requiredLevel": 10,
         "requiredSkill": 50,
         "maxSkill": 150
       },
       {
-        "levelName": "Expert",
-        "trainingCost": 5000,
+        "name": "Expert",
+        "price": 5000,
         "requiredLevel": 20,
         "requiredSkill": 125,
         "maxSkill": 225
       },
       {
-        "levelName": "Artisan",
-        "trainingCost": 50000,
+        "name": "Artisan",
+        "price": 50000,
         "requiredLevel": 35,
         "requiredSkill": 200,
         "maxSkill": 300
@@ -176,28 +176,28 @@
     ],
     "levels": [
       {
-        "levelName": "Apprentice",
-        "trainingCost": 10,
+        "name": "Apprentice",
+        "price": 10,
         "requiredLevel": 5,
         "maxSkill": 75
       },
       {
-        "levelName": "Journeyman",
-        "trainingCost": 500,
+        "name": "Journeyman",
+        "price": 500,
         "requiredLevel": 10,
         "requiredSkill": 50,
         "maxSkill": 150
       },
       {
-        "levelName": "Expert",
-        "trainingCost": 5000,
+        "name": "Expert",
+        "price": 5000,
         "requiredLevel": 20,
         "requiredSkill": 125,
         "maxSkill": 225
       },
       {
-        "levelName": "Artisan",
-        "trainingCost": 50000,
+        "name": "Artisan",
+        "price": 50000,
         "requiredLevel": 35,
         "requiredSkill": 200,
         "maxSkill": 300
@@ -216,28 +216,28 @@
     ],
     "levels": [
       {
-        "levelName": "Apprentice",
-        "trainingCost": 10,
+        "name": "Apprentice",
+        "price": 10,
         "requiredLevel": 5,
         "maxSkill": 75
       },
       {
-        "levelName": "Journeyman",
-        "trainingCost": 500,
+        "name": "Journeyman",
+        "price": 500,
         "requiredLevel": 10,
         "requiredSkill": 50,
         "maxSkill": 150
       },
       {
-        "levelName": "Expert",
-        "trainingCost": 5000,
+        "name": "Expert",
+        "price": 5000,
         "requiredLevel": 20,
         "requiredSkill": 125,
         "maxSkill": 225
       },
       {
-        "levelName": "Artisan",
-        "trainingCost": 50000,
+        "name": "Artisan",
+        "price": 50000,
         "requiredLevel": 35,
         "requiredSkill": 200,
         "maxSkill": 300
@@ -254,28 +254,28 @@
     ],
     "levels": [
       {
-        "levelName": "Apprentice",
-        "trainingCost": 10,
+        "name": "Apprentice",
+        "price": 10,
         "requiredLevel": 5,
         "maxSkill": 75
       },
       {
-        "levelName": "Journeyman",
-        "trainingCost": 500,
+        "name": "Journeyman",
+        "price": 500,
         "requiredLevel": 10,
         "requiredSkill": 50,
         "maxSkill": 150
       },
       {
-        "levelName": "Expert",
-        "trainingCost": 5000,
+        "name": "Expert",
+        "price": 5000,
         "requiredLevel": 20,
         "requiredSkill": 125,
         "maxSkill": 225
       },
       {
-        "levelName": "Artisan",
-        "trainingCost": 50000,
+        "name": "Artisan",
+        "price": 50000,
         "requiredLevel": 35,
         "requiredSkill": 200,
         "maxSkill": 300
@@ -288,28 +288,28 @@
     "defaultRecipes": [],
     "levels": [
       {
-        "levelName": "Apprentice",
-        "trainingCost": 10,
+        "name": "Apprentice",
+        "price": 10,
         "requiredLevel": 5,
         "maxSkill": 75
       },
       {
-        "levelName": "Journeyman",
-        "trainingCost": 500,
+        "name": "Journeyman",
+        "price": 500,
         "requiredLevel": 10,
         "requiredSkill": 50,
         "maxSkill": 150
       },
       {
-        "levelName": "Expert",
-        "trainingCost": 5000,
+        "name": "Expert",
+        "price": 5000,
         "requiredLevel": 20,
         "requiredSkill": 125,
         "maxSkill": 225
       },
       {
-        "levelName": "Artisan",
-        "trainingCost": 50000,
+        "name": "Artisan",
+        "price": 50000,
         "requiredLevel": 35,
         "requiredSkill": 200,
         "maxSkill": 300
@@ -325,28 +325,28 @@
     ],
     "levels": [
       {
-        "levelName": "Apprentice",
-        "trainingCost": 10,
+        "name": "Apprentice",
+        "price": 10,
         "requiredLevel": 5,
         "maxSkill": 75
       },
       {
-        "levelName": "Journeyman",
-        "trainingCost": 500,
+        "name": "Journeyman",
+        "price": 500,
         "requiredLevel": 10,
         "requiredSkill": 50,
         "maxSkill": 150
       },
       {
-        "levelName": "Expert",
-        "trainingCost": 5000,
+        "name": "Expert",
+        "price": 5000,
         "requiredLevel": 20,
         "requiredSkill": 125,
         "maxSkill": 225
       },
       {
-        "levelName": "Artisan",
-        "trainingCost": 50000,
+        "name": "Artisan",
+        "price": 50000,
         "requiredLevel": 35,
         "requiredSkill": 200,
         "maxSkill": 300
@@ -360,28 +360,28 @@
     "defaultRecipes": [],
     "levels": [
       {
-        "levelName": "Apprentice",
-        "trainingCost": 10,
+        "name": "Apprentice",
+        "price": 10,
         "requiredLevel": 5,
         "maxSkill": 75
       },
       {
-        "levelName": "Journeyman",
-        "trainingCost": 500,
+        "name": "Journeyman",
+        "price": 500,
         "requiredLevel": 10,
         "requiredSkill": 50,
         "maxSkill": 150
       },
       {
-        "levelName": "Expert",
-        "trainingCost": 5000,
+        "name": "Expert",
+        "price": 5000,
         "requiredLevel": 20,
         "requiredSkill": 125,
         "maxSkill": 225
       },
       {
-        "levelName": "Artisan",
-        "trainingCost": 50000,
+        "name": "Artisan",
+        "price": 50000,
         "requiredLevel": 35,
         "requiredSkill": 200,
         "maxSkill": 300
@@ -398,28 +398,28 @@
     ],
     "levels": [
       {
-        "levelName": "Apprentice",
-        "trainingCost": 10,
+        "name": "Apprentice",
+        "price": 10,
         "requiredLevel": 5,
         "maxSkill": 75
       },
       {
-        "levelName": "Journeyman",
-        "trainingCost": 500,
+        "name": "Journeyman",
+        "price": 500,
         "requiredLevel": 10,
         "requiredSkill": 50,
         "maxSkill": 150
       },
       {
-        "levelName": "Expert",
-        "trainingCost": 5000,
+        "name": "Expert",
+        "price": 5000,
         "requiredLevel": 20,
         "requiredSkill": 125,
         "maxSkill": 225
       },
       {
-        "levelName": "Artisan",
-        "trainingCost": 50000,
+        "name": "Artisan",
+        "price": 50000,
         "requiredLevel": 35,
         "requiredSkill": 200,
         "maxSkill": 300
@@ -433,28 +433,28 @@
     "defaultRecipes": [],
     "levels": [
       {
-        "levelName": "Apprentice",
-        "trainingCost": 10,
+        "name": "Apprentice",
+        "price": 10,
         "requiredLevel": 5,
         "maxSkill": 75
       },
       {
-        "levelName": "Journeyman",
-        "trainingCost": 500,
+        "name": "Journeyman",
+        "price": 500,
         "requiredLevel": 10,
         "requiredSkill": 50,
         "maxSkill": 150
       },
       {
-        "levelName": "Expert",
-        "trainingCost": 5000,
+        "name": "Expert",
+        "price": 5000,
         "requiredLevel": 20,
         "requiredSkill": 125,
         "maxSkill": 225
       },
       {
-        "levelName": "Artisan",
-        "trainingCost": 50000,
+        "name": "Artisan",
+        "price": 50000,
         "requiredLevel": 35,
         "requiredSkill": 200,
         "maxSkill": 300

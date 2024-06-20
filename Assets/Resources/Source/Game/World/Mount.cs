@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using static Root;
 using static Defines;
 
-using static SaveGame;
-
 public class Mount
 {
     //Initialisation method to fill automatic values
@@ -29,25 +27,24 @@ public class Mount
     {
         SetAnchor(-92, CDesktop.windows.Exists(x => x.title == "CurrentMount") ? 47 : 142);
         AddHeaderGroup();
-        SetRegionGroupWidth(190);
+        SetRegionGroupWidth(182);
         AddHeaderRegion(() =>
         {
-            AddLine(mount.name, "Gray");
+            AddLine(mount.name, mount.speed == 7 ? "Rare" : "Epic");
         });
         AddPaddingRegion(() =>
         {
             AddBigButton(mount.icon);
-            if (currentSave.player.level < (mount.speed == 7 ? defines.lvlRequiredFastMounts : defines.lvlRequiredVeryFastMounts)) SetBigButtonToRed();
+            if (rider.level < (mount.speed == 7 ? defines.lvlRequiredFastMounts : defines.lvlRequiredVeryFastMounts)) { SetBigButtonToRed(); AddBigButtonOverlay("OtherGridBlurred"); }
             AddLine("Required level: ", "DarkGray");
             AddText((mount.speed == 7 ? defines.lvlRequiredFastMounts : defines.lvlRequiredVeryFastMounts) + "", Coloring.ColorRequiredLevel(mount.speed == 7 ? defines.lvlRequiredFastMounts : defines.lvlRequiredVeryFastMounts));
             AddLine("Speed: ", "DarkGray");
-            AddText(mount.speed == 7 ? "Fast" : (mount.speed == 9 ? "Very Fast" : "Normal"));
+            AddText(mount.speed == 7 ? "Fast" : (mount.speed == 9 ? "Very Fast" : "Normal"), "HalfGray");
         });
         PrintPriceRegion(mount.price);
     }
 
     #endregion
-
 
     //Name of the mount
     public string name;

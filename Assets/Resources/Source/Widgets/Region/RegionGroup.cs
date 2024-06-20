@@ -51,7 +51,7 @@ public class RegionGroup : MonoBehaviour
 
     public int AutoWidth()
     {
-        var regionMax = regions.Max(x => x.AutoWidth());
+        var regionMax = regions.Count == 0 ? 0 : regions.Max(x => x.AutoWidth());
         return setWidth != 0 ? setWidth : regionMax;
     }
 }

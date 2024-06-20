@@ -730,7 +730,7 @@ public class Entity
     public void EquipAllItems()
     {
         for (int i = inventory.items.Count - 1; i >= 0; i--)
-            if (inventory.items[i].CanEquip(this))
+            if (inventory.items[i].CanEquip(this, true))
                 inventory.items[i].Equip(this);
     }
 
@@ -987,7 +987,7 @@ public class Entity
         else if (equipment.ContainsKey("Two Handed"))
         {
             var twohanded = equipment["Two Handed"];
-            return (twohanded.minDamage / twohanded.speed, twohanded.maxDamage / twohanded.speed);
+            return (Math.Round(twohanded.minDamage / twohanded.speed), Math.Round(twohanded.maxDamage / twohanded.speed));
         }
         else
         {
@@ -995,8 +995,8 @@ public class Entity
             if (equipment.ContainsKey("Main Hand"))
             {
                 var mainHand = equipment["Main Hand"];
-                min += mainHand.minDamage / mainHand.speed;
-                max += mainHand.maxDamage / mainHand.speed;
+                min += Math.Round(mainHand.minDamage / mainHand.speed);
+                max += Math.Round(mainHand.maxDamage / mainHand.speed);
             }
             if (equipment.ContainsKey("Off Hand"))
             {
@@ -1005,11 +1005,11 @@ public class Entity
                 {
                     min /= 1.5;
                     min /= 1.5;
-                    min += offHand.minDamage / offHand.speed / 1.5;
-                    max += offHand.maxDamage / offHand.speed / 1.5;
+                    min += Math.Round(offHand.minDamage / offHand.speed) / 1.5;
+                    max += Math.Round(offHand.maxDamage / offHand.speed) / 1.5;
                 }
             }
-            return (min, max);
+            return (Math.Round(min), Math.Round(max));
         }
     }
 
