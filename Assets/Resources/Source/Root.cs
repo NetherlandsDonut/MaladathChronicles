@@ -173,9 +173,8 @@ public static class Root
         var find = desktops.Find(x => x.title == desktopName);
         if (find == null) return false;
         desktops.Remove(find);
-        if (find == CDesktop)
-            if (desktops.Count > 0) SwitchDesktop(desktops[0].title);
-            else CDesktop = null;
+        if (find == CDesktop && desktops.Count > 0)
+            SwitchDesktop(desktops[0].title);
         UnityEngine.Object.Destroy(find.gameObject);
         return true;
     }
@@ -225,8 +224,10 @@ public static class Root
         Cursor.cursor.ResetColor();
         if (CDesktop != null && CDesktop.title == name) return;
         var windows = CDesktop != null ? CDesktop.windows.Select(x => x.title).ToList() : null;
-        if (mouseOver != null) mouseOver.OnMouseExit();
-        if (CDesktop != null) CDesktop.gameObject.SetActive(false);
+        if (mouseOver != null)
+            mouseOver.OnMouseExit();
+        if (CDesktop != null)
+            CDesktop.gameObject.SetActive(false);
         var find = desktops.Find(x => x.title == name);
         if (find != null) CDesktop = find;
         if (CDesktop != null)
@@ -292,7 +293,7 @@ public static class Root
         var sprite = Resources.Load<Sprite>("Sprites/Fullscreen/" + texture);
         var temp = (followCamera ? CDesktop.screen.gameObject : CDesktop.gameObject).GetComponent<SpriteRenderer>();
         if (sprite == null) Debug.Log("ERROR 004: Desktop background not found: \"Sprites/Fullscreen/" + texture + "\"");
-        else if (temp.sprite != sprite)
+        if (temp.sprite != sprite)
         {
             SpawnTransition();
             temp.sprite = sprite;
@@ -480,7 +481,7 @@ public static class Root
     {
         AddPaddingRegion(() =>
         {
-            AddLine(CDesktop.LBWindow.title == "Instance" ? "Wing: " : "Page: ", "DarkGray");
+            AddLine("Page: ", "DarkGray");
             AddText(group.pagination() + 1 + "");
             AddText(" / ", "DarkGray");
             AddText(group.maxPagination() + "");

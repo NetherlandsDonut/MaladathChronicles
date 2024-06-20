@@ -7,7 +7,7 @@
     "type": "Dungeon",
     "wings": [
       {
-        "name": "Upper Temple",
+        "name": "Temple of Atal'Hakkar",
         "areas": [
           {
             "OpenByDefault": "True",
@@ -27,12 +27,7 @@
           },
           {
             "AreaName": "Hall of Ritual"
-          }
-        ]
-      },
-      {
-        "name": "Lower Temple",
-        "areas": [
+          },
           {
             "AreaName": "Hall of Bones"
           },
@@ -50,12 +45,7 @@
           },
           {
             "AreaName": "Lair of the Chosen"
-          }
-        ]
-      },
-      {
-        "name": "Nightmare Halls",
-        "areas": [
+          },
           {
             "AreaName": "Sanctum of the Fallen God"
           },
@@ -236,8 +226,7 @@
     "type": "Dungeon",
     "wings": [
       {
-        "name": "Upper Complex",
-        "noNightVariant": true,
+        "name": "Scholomance",
         "areas": [
           {
             "OpenByDefault": "True",
@@ -257,21 +246,15 @@
           },
           {
             "AreaName": "Laboratory"
-          }
-        ]
-      },
-      {
-        "name": "The Study",
-        "noNightVariant": true,
-        "areas": [
-          {
-            "AreaName": "The Coven"
           },
           {
             "AreaName": "Hall of Secrets"
           },
           {
             "AreaName": "Hall of the Damned"
+          },
+          {
+            "AreaName": "The Coven"
           },
           {
             "AreaName": "Vault of the Ravenian"
@@ -337,7 +320,6 @@
     "wings": [
       {
         "name": "Orange Crystal Caverns",
-        "noNightVariant": true,
         "areas": [
           {
             "OpenByDefault": "True",
@@ -350,7 +332,6 @@
       },
       {
         "name": "Purple Crystal Caverns",
-        "noNightVariant": true,
         "areas": [
           {
             "OpenByDefault": "True",
@@ -363,7 +344,6 @@
       },
       {
         "name": "Inner Maraudon",
-        "noNightVariant": true,
         "areas": [
           {
             "AreaName": "Poison Falls"
@@ -671,7 +651,7 @@
     "noNightVariant": true,
     "wings": [
       {
-        "name": "Submerged Caverns",
+        "name": "Blackfathom Deeps",
         "areas": [
           {
             "OpenByDefault": "True",
@@ -681,15 +661,10 @@
             "AreaName": "Shrine of Gelihast"
           },
           {
-            "AreaName": "Forgotten Pool"
-          }
-        ]
-      },
-      {
-        "name": "The Ruins",
-        "areas": [
-          {
             "AreaName": "Moonshrine Ruins"
+          },
+          {
+            "AreaName": "Forgotten Pool"
           },
           {
             "AreaName": "Moonshrine Sanctum"

@@ -1875,8 +1875,8 @@
         "completedQuests": [
           40
         ],
-        "level": 12,
-        "experience": 798,
+        "level": 11,
+        "experience": 2998,
         "uniquesGotten": [],
         "reputation": {
           "Southsea Pirates": 0,
@@ -1984,7 +1984,7 @@
             "Smelt Copper"
           ]
         },
-        "unspentTalentPoints": 4,
+        "unspentTalentPoints": 3,
         "faction": "Stormwind",
         "name": "Allesha",
         "race": "Human",
@@ -2431,9 +2431,9 @@
         }
       },
       "hour": 9,
-      "minute": 59,
-      "second": 12,
-      "currentSite": "Temple of Atal'Hakkar",
+      "minute": 58,
+      "second": 16,
+      "currentSite": "Wildbend River",
       "openedChests": {
         "Gnomeregan Outskirts": {
           "area": "Gnomeregan Outskirts",
@@ -2449,8 +2449,7 @@
         "Northern Tract": 1,
         "Gnomeregan Outskirts": 5,
         "The Pillar of Ash": 1,
-        "The Long Wash": 1,
-        "The Broken Hall": 3
+        "The Long Wash": 1
       },
       "commonsKilled": {
         "Deeprot Tangler": 1,
@@ -2458,8 +2457,7 @@
         "Snow Leopard": 3,
         "Leper Gnome": 1,
         "Blackrock Soldier": 1,
-        "Pygmy Tide Crawler": 1,
-        "Murk Slitherer": 3
+        "Pygmy Tide Crawler": 1
       },
       "raresKilled": {
         "Gibblewilt": 1
@@ -3105,7 +3103,7 @@
         "Southern Misty Reed Strand": 1,
         "Northern Misty Reed Strand": 1,
         "Misty Valley": 1,
-        "Pool of Tears": 3,
+        "Pool of Tears": 2,
         "Sorrowmurk": 1,
         "Splinterspear Junction": 1,
         "Stagalbog": 3,
@@ -3429,7 +3427,7 @@
         "The Harborage": 1,
         "Nesingwary's Expedition": 1,
         "Gurubashi Arena": 1,
-        "Temple of Atal'Hakkar": 3,
+        "Temple of Atal'Hakkar": 1,
         "The Stockade": 2,
         "Ragefire Chasm": 1,
         "Gnomeregan": 2,
@@ -3456,7 +3454,7 @@
         "Blackwing Lair": 1,
         "Ruins of Ahn'Qiraj": 1,
         "Temple of Ahn'Qiraj": 1,
-        "Blackrock Mountain": 13,
+        "Blackrock Mountain": 11,
         "Jintha'Alor": 1,
         "Tyr's Hand": 1,
         "Hearthglen": 1,
@@ -3482,9 +3480,9 @@
         }
       },
       "startDate": "2024-06-09T14:12:27.0144066+02:00",
-      "lastLoaded": "2024-06-19T15:34:58.0564528+02:00",
-      "lastPlayed": "2024-06-19T15:36:46.0634599+02:00",
-      "timePlayed": "10:09:30.1692898",
+      "lastLoaded": "2024-06-18T19:53:15.0430532+02:00",
+      "lastPlayed": "2024-06-18T19:53:24.6361128+02:00",
+      "timePlayed": "10:07:21.6163644",
       "lastVisitedTalents": 1
     },
     {
@@ -7195,11 +7193,9 @@
       "player": {
         "currentQuests": [],
         "completedQuests": [],
-        "level": 24,
-        "experience": 10580,
-        "uniquesGotten": [
-          "Murloc Skin Bag"
-        ],
+        "level": 11,
+        "experience": 4860,
+        "uniquesGotten": [],
         "reputation": {
           "Southsea Pirates": 0,
           "Razormane Tribe": 0,
@@ -7277,7 +7273,7 @@
             ]
           },
           "Enchanting": {
-            "Item1": 3,
+            "Item1": 1,
             "Item2": [
               "Apprentice"
             ]
@@ -7296,7 +7292,6 @@
             "Enchant Bracer - Minor Health"
           ]
         },
-        "unspentTalentPoints": 13,
         "faction": "Darnassus",
         "name": "Shyl'las",
         "race": "Night Elf",
@@ -7363,6 +7358,61 @@
               }
             },
             {
+              "rarity": "Poor",
+              "name": "Novice's Robe",
+              "icon": "itemchestcloth13",
+              "type": "Chest",
+              "armorClass": "Cloth",
+              "ilvl": 1,
+              "lvl": 1,
+              "armor": 3,
+              "amount": 1,
+              "maxStack": 1,
+              "price": 1,
+              "stats": {
+                "stats": {}
+              }
+            },
+            {
+              "rarity": "Poor",
+              "name": "Novice's Pants",
+              "icon": "itempants01",
+              "type": "Legs",
+              "armorClass": "Cloth",
+              "ilvl": 1,
+              "lvl": 1,
+              "armor": 2,
+              "amount": 1,
+              "maxStack": 1,
+              "price": 1,
+              "stats": {
+                "stats": {}
+              }
+            },
+            {
+              "rarity": "Epic",
+              "name": "Perdition's Blade",
+              "icon": "itemsword48",
+              "detailedType": "Dagger",
+              "type": "One Handed",
+              "source": "DirectDrop",
+              "ilvl": 77,
+              "lvl": 60,
+              "minDamage": 73,
+              "maxDamage": 137,
+              "amount": 1,
+              "maxStack": 1,
+              "unique": true,
+              "price": 148714,
+              "speed": 1.8,
+              "stats": {
+                "stats": {}
+              },
+              "droppedBy": [
+                "Ragnaros"
+              ]
+            },
+            {
               "rarity": "Uncommon",
               "name": "Gossamer Belt of the Eagle",
               "icon": "itembelt07",
@@ -7382,116 +7432,6 @@
                   "Intellect": 11
                 }
               }
-            },
-            {
-              "rarity": "Uncommon",
-              "name": "Greater Eternal Essence",
-              "icon": "itemenchantessenceeternallarge",
-              "type": "Trade Good",
-              "source": "RareDrop",
-              "ilvl": 55,
-              "lvl": 1,
-              "amount": 1,
-              "maxStack": 10,
-              "stats": {
-                "stats": {}
-              }
-            },
-            {
-              "rarity": "Rare",
-              "name": "Large Brilliant Shard",
-              "icon": "itemenchantshardbrilliantlarge",
-              "type": "Trade Good",
-              "ilvl": 55,
-              "lvl": 1,
-              "amount": 1,
-              "maxStack": 20,
-              "stats": {
-                "stats": {}
-              }
-            },
-            {
-              "rarity": "Epic",
-              "name": "Nexus Crystal",
-              "icon": "itemenchantshardnexuslarge",
-              "type": "Trade Good",
-              "source": "RareDrop",
-              "ilvl": 60,
-              "lvl": 1,
-              "amount": 1,
-              "maxStack": 20,
-              "stats": {
-                "stats": {}
-              }
-            },
-            {
-              "rarity": "Common",
-              "name": "Scroll of Intellect II",
-              "icon": "itemscroll01",
-              "type": "Miscellaneous",
-              "source": "RareDrop",
-              "ilvl": 30,
-              "amount": 1,
-              "maxStack": 5,
-              "price": 75,
-              "stats": {
-                "stats": {}
-              }
-            },
-            {
-              "rarity": "Rare",
-              "name": "Tortoise Armor",
-              "icon": "itemshirt06",
-              "type": "Chest",
-              "armorClass": "Mail",
-              "source": "DirectDrop",
-              "ilvl": 25,
-              "lvl": 20,
-              "armor": 311,
-              "amount": 1,
-              "maxStack": 1,
-              "price": 1872,
-              "stats": {
-                "stats": {}
-              },
-              "droppedBy": [
-                "Ghamoo-ra"
-              ]
-            },
-            {
-              "rarity": "Rare",
-              "name": "Large Glimmering Shard",
-              "icon": "itemenchantshardglimmeringlarge",
-              "type": "Trade Good",
-              "source": "RareDrop",
-              "ilvl": 25,
-              "lvl": 1,
-              "amount": 1,
-              "maxStack": 20,
-              "stats": {
-                "stats": {}
-              }
-            },
-            {
-              "rarity": "Rare",
-              "name": "Dark Advisor's Pendant",
-              "icon": "itemjewelrynecklace06",
-              "type": "Neck",
-              "source": "DirectDrop",
-              "ilvl": 61,
-              "lvl": 56,
-              "amount": 1,
-              "maxStack": 1,
-              "price": 31400,
-              "stats": {
-                "stats": {
-                  "Intellect": 7,
-                  "Stamina": 8
-                }
-              },
-              "droppedBy": [
-                "Vectus"
-              ]
             }
           ],
           "bags": []
@@ -7521,307 +7461,27 @@
       "hour": 7,
       "minute": 20,
       "second": 4,
-      "currentSite": "Scholomance",
+      "currentSite": "Ban'ethil Hollow",
       "ringOfLaw": "Grizzle",
       "forlornCloister": "Ironspine",
-      "openedChests": {
-        "Forgotten Pool": {
-          "area": "Forgotten Pool",
-          "inventory": {
-            "items": [
-              {
-                "rarity": "Uncommon",
-                "name": "Silver-thread Rod",
-                "icon": "itemwand07",
-                "type": "Off Hand",
-                "source": "RareDrop",
-                "ilvl": 31,
-                "lvl": 26,
-                "amount": 1,
-                "maxStack": 1,
-                "price": 2387,
-                "stats": {
-                  "stats": {
-                    "Stamina": 3,
-                    "Spirit": 5
-                  }
-                }
-              },
-              {
-                "rarity": "Common",
-                "name": "Grave Moss",
-                "icon": "itemmiscdust02",
-                "type": "Trade Good",
-                "ilvl": 24,
-                "lvl": 1,
-                "amount": 3,
-                "maxStack": 20,
-                "price": 25,
-                "stats": {
-                  "stats": {}
-                }
-              },
-              {
-                "rarity": "Common",
-                "name": "Iron Ore",
-                "icon": "itemoreiron01",
-                "type": "Trade Good",
-                "source": "RareDrop",
-                "ilvl": 30,
-                "lvl": 1,
-                "amount": 2,
-                "maxStack": 10,
-                "price": 150,
-                "stats": {
-                  "stats": {}
-                }
-              },
-              {
-                "rarity": "Common",
-                "name": "Scroll of Intellect II",
-                "icon": "itemscroll01",
-                "type": "Miscellaneous",
-                "source": "RareDrop",
-                "ilvl": 30,
-                "amount": 1,
-                "maxStack": 5,
-                "price": 75,
-                "stats": {
-                  "stats": {}
-                }
-              }
-            ],
-            "bags": [],
-            "ignoreSpaceChecks": true
-          }
-        },
-        "Shrine of Gelihast": {
-          "area": "Shrine of Gelihast",
-          "inventory": {
-            "items": [
-              {
-                "rarity": "Uncommon",
-                "name": "Sanguine Star",
-                "icon": "itemstaff23",
-                "type": "Off Hand",
-                "source": "RareDrop",
-                "ilvl": 28,
-                "lvl": 23,
-                "amount": 1,
-                "maxStack": 1,
-                "price": 1887,
-                "stats": {
-                  "stats": {
-                    "Stamina": 4,
-                    "Spirit": 4
-                  }
-                }
-              },
-              {
-                "rarity": "Uncommon",
-                "name": "Greater Magic Essence",
-                "icon": "itemenchantessencemagiclarge",
-                "type": "Trade Good",
-                "source": "RareDrop",
-                "ilvl": 15,
-                "lvl": 1,
-                "amount": 1,
-                "maxStack": 10,
-                "stats": {
-                  "stats": {}
-                }
-              },
-              {
-                "rarity": "Uncommon",
-                "name": "Shadowgem",
-                "icon": "itemmiscgemamethyst01",
-                "type": "Trade Good",
-                "source": "RareDrop",
-                "ilvl": 20,
-                "lvl": 1,
-                "amount": 1,
-                "maxStack": 20,
-                "price": 250,
-                "stats": {
-                  "stats": {}
-                }
-              },
-              {
-                "rarity": "Common",
-                "name": "Scroll of Intellect II",
-                "icon": "itemscroll01",
-                "type": "Miscellaneous",
-                "source": "RareDrop",
-                "ilvl": 30,
-                "amount": 1,
-                "maxStack": 5,
-                "price": 75,
-                "stats": {
-                  "stats": {}
-                }
-              }
-            ],
-            "bags": [],
-            "ignoreSpaceChecks": true
-          }
-        },
-        "Pool of Ask'ar": {
-          "area": "Pool of Ask'ar",
-          "inventory": {
-            "items": [
-              {
-                "rarity": "Uncommon",
-                "name": "Pathfinder Cloak of the Gorilla",
-                "icon": "itemmisccape01",
-                "randomEnchantment": true,
-                "type": "Back",
-                "source": "RareDrop",
-                "ilvl": 27,
-                "lvl": 22,
-                "armor": 20,
-                "amount": 1,
-                "maxStack": 1,
-                "price": 1016,
-                "stats": {
-                  "stats": {
-                    "Strength": 5,
-                    "Intellect": 5
-                  }
-                }
-              },
-              {
-                "rarity": "Common",
-                "name": "Swiftthistle",
-                "icon": "itemmischerb04",
-                "type": "Trade Good",
-                "source": "RareDrop",
-                "ilvl": 15,
-                "lvl": 1,
-                "amount": 1,
-                "maxStack": 20,
-                "price": 15,
-                "stats": {
-                  "stats": {}
-                }
-              },
-              {
-                "rarity": "Common",
-                "name": "Medium Leather",
-                "icon": "itemmiscleatherscrap05",
-                "type": "Trade Good",
-                "ilvl": 20,
-                "lvl": 1,
-                "amount": 1,
-                "maxStack": 20,
-                "price": 50,
-                "stats": {
-                  "stats": {}
-                }
-              },
-              {
-                "rarity": "Common",
-                "name": "Scroll of Intellect II",
-                "icon": "itemscroll01",
-                "type": "Miscellaneous",
-                "source": "RareDrop",
-                "ilvl": 30,
-                "amount": 1,
-                "maxStack": 5,
-                "price": 75,
-                "stats": {
-                  "stats": {}
-                }
-              }
-            ],
-            "bags": [],
-            "ignoreSpaceChecks": true
-          }
-        }
-      },
-      "siteProgress": {
-        "Pool of Ask'ar": 5,
-        "Shrine of Gelihast": 3,
-        "Forgotten Pool": 3,
-        "Reliquary": 2,
-        "Chamber of Summoning": 2,
-        "The Viewing Room": 2,
-        "The Coven": 2,
-        "Hall of Secrets": 2,
-        "Hall of the Damned": 2,
-        "Vault of the Ravenian": 2,
-        "The Shadow Vault": 2,
-        "Barov Family Vault": 2
-      },
-      "commonsKilled": {
-        "Mudrock Snapjaw": 1,
-        "Blackfathom Sea Witch": 3,
-        "Blackfathom Myrmidon": 2,
-        "Blindlight Oracle": 2,
-        "Blindlight Muckdweller": 1,
-        "Deep Pool Threshkin": 2,
-        "Skittering Crustacean": 1,
-        "Scholomance Acolyte": 1,
-        "Scholomance Neophyte": 1,
-        "Scholomance Necrolyte": 1,
-        "Scholomance Dark Summoner": 1,
-        "Scholomance Student": 2,
-        "Scholomance Adept": 1,
-        "Scholomance Occultist": 1,
-        "Reanimated Corpse": 1,
-        "Unstable Corpse": 1,
-        "Diseased Ghoul": 2,
-        "Splintered Skeleton": 2,
-        "Risen Bonewarder": 2,
-        "Risen Warrior": 2
-      },
+      "openedChests": {},
+      "siteProgress": {},
+      "commonsKilled": {},
       "raresKilled": {},
-      "elitesKilled": {
-        "Ghamoo-ra": 1,
-        "Lady Sarevess": 1,
-        "Gelihast": 1,
-        "Old Serra'kis": 1,
-        "Blood Steward of Kirtonos": 1,
-        "Kirtonos the Herald": 1,
-        "Vectus": 1,
-        "Instructor Malicia": 1,
-        "Lorekeeper Polkelt": 1,
-        "Doctor Theolen Krastinov": 1,
-        "The Ravenian": 1,
-        "Lady Illucia Barov": 1,
-        "Lord Alexei Barov": 1
-      },
+      "elitesKilled": {},
       "siteVisits": {
         "Aldrassil": 1,
         "Dolanaar": 0,
         "Darnassus": 1,
-        "Ban'ethil Hollow": 5,
-        "Blackfathom Deeps": 6,
-        "Scholomance": 7,
-        "Maraudon": 4
+        "Ban'ethil Hollow": 4
       },
-      "unlockedAreas": [
-        "Shrine of Gelihast",
-        "Forgotten Pool",
-        "Moonshrine Ruins",
-        "Chamber of Summoning",
-        "The Great Ossuary",
-        "Hall of Illusions",
-        "The Viewing Room",
-        "Laboratory",
-        "The Coven",
-        "Vault of the Ravenian",
-        "Hall of Secrets",
-        "Hall of the Damned",
-        "The Shadow Vault",
-        "Barov Family Vault",
-        "Headmaster's Study"
-      ],
+      "unlockedAreas": [],
       "vendorStock": {},
       "banks": {},
       "startDate": "2024-06-15T19:17:11.4512344+02:00",
-      "lastLoaded": "2024-06-19T19:45:36.9377237+02:00",
-      "lastPlayed": "2024-06-19T19:45:59.9111621+02:00",
-      "timePlayed": "00:51:50.1104329",
+      "lastLoaded": "2024-06-18T19:47:57.9954125+02:00",
+      "lastPlayed": "2024-06-18T19:48:05.5945041+02:00",
+      "timePlayed": "00:02:40.9268370",
       "lastVisitedTalents": 2
     }
   ]

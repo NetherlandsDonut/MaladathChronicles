@@ -293,31 +293,10 @@ public class Board
             //Unlock new areas
             foreach (var unlockArea in progression.FindAll(x => x.type == "Area"))
                 if (!currentSave.unlockedAreas.Contains(unlockArea.areaName) && progBosses.Count > 0 && progBosses.All(x => currentSave.elitesKilled.ContainsKey(x.bossName)))
-                    if (!unlockArea.all)
-                        currentSave.unlockedAreas.Add(unlockArea.areaName);
-                    else Foo(unlockArea);
+                    currentSave.unlockedAreas.Add(unlockArea.areaName);
             foreach (var unlockArea in nextProgression.FindAll(x => x.type == "Area"))
                 if (!currentSave.unlockedAreas.Contains(unlockArea.areaName) && nextProgBosses.Count == 0)
-                    if (!unlockArea.all)
-                        currentSave.unlockedAreas.Add(unlockArea.areaName);
-                    else Foo(unlockArea);
-
-            void Foo(AreaProgression unlockArea)
-            {
-                var temp = SiteInstance.instance.wings.SelectMany(x => x.areas).Select(x => areas.Find(y => y.name == x["AreaName"]));
-                var foo = temp.Select(x => (x.name, x.progression.Find(y => y.areaName == unlockArea.areaName))).ToList();
-                foo.RemoveAll(x => x.Item2 == null);
-                bool unlock = true;
-                foreach (var a in foo)
-                {
-                    var elite = temp.First(y => y.name == a.name).progression.Find(x => x.type == "Boss" && x.point == a.Item2.point);
-                    if (!currentSave.siteProgress.ContainsKey(a.name)) unlock = false;
-                    else if (elite != null) { if (elite != null && (a.Item2.point > currentSave.siteProgress[a.name] || a.Item2.point == currentSave.siteProgress[a.name] && !currentSave.elitesKilled.ContainsKey(elite.bossName))) unlock = false; }
-                    else if (elite == null) if (a.Item2.point > currentSave.siteProgress[a.name]) unlock = false;
-                    if (!unlock) break;
-                }
-                if (unlock) currentSave.unlockedAreas.Add(unlockArea.areaName);
-            }
+                    currentSave.unlockedAreas.Add(unlockArea.areaName);
 
             //Exit board view
             if (area != null && area.instancePart) SwitchDesktop("Instance");

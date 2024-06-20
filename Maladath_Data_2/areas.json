@@ -27,16 +27,16 @@
         "levelMin": 60
       }
     ],
-    "areaSize": 3,
+    "areaSize": 2,
     "progression": [
       {
         "type": "Boss",
         "bossName": "Jandice Barov",
-        "point": 2
+        "point": 1
       },
       {
         "type": "Treasure",
-        "point": 3
+        "point": 2
       }
     ]
   },
@@ -4397,6 +4397,11 @@
         "point": 2
       },
       {
+        "type": "Area",
+        "areaName": "Moonshrine Sanctum",
+        "point": 2
+      },
+      {
         "type": "Treasure",
         "point": 3
       }
@@ -4440,7 +4445,7 @@
       },
       {
         "type": "Area",
-        "areaName": "Moonshrine Sanctum",
+        "areaName": "Forgotten Pool",
         "point": 2
       },
       {
@@ -4574,11 +4579,6 @@
       {
         "type": "Boss",
         "bossName": "Gelihast",
-        "point": 2
-      },
-      {
-        "type": "Area",
-        "areaName": "Forgotten Pool",
         "point": 2
       },
       {
@@ -18569,7 +18569,6 @@
       {
         "type": "Area",
         "areaName": "Headmaster's Study",
-        "all": true,
         "point": 2
       },
       {
@@ -18615,17 +18614,7 @@
       },
       {
         "type": "Area",
-        "areaName": "The Great Ossuary",
-        "point": 2
-      },
-      {
-        "type": "Area",
         "areaName": "Hall of Illusions",
-        "point": 2
-      },
-      {
-        "type": "Area",
-        "areaName": "The Viewing Room",
         "point": 2
       },
       {
@@ -18667,6 +18656,11 @@
       {
         "type": "Boss",
         "bossName": "Rattlegore",
+        "point": 2
+      },
+      {
+        "type": "Area",
+        "areaName": "The Viewing Room",
         "point": 2
       },
       {
@@ -18742,8 +18736,7 @@
       },
       {
         "type": "Area",
-        "areaName": "Headmaster's Study",
-        "all": true,
+        "areaName": "The Coven",
         "point": 2
       },
       {
@@ -18757,32 +18750,17 @@
     "zone": "Scholomance",
     "type": "HostileArea",
     "noNightVariant": true,
-    "commonEncounters": [
-      {
-        "who": "Scholomance Necrolyte",
-        "levelMin": 60
-      },
-      {
-        "who": "Scholomance Necromancer",
-        "levelMin": 60
-      },
-      {
-        "who": "Scholomance Acolyte",
-        "levelMin": 60
-      }
-    ],
     "eliteEncounters": [
       {
         "who": "Darkmaster Gandling",
         "levelMin": 61
       }
     ],
-    "areaSize": 3,
+    "areaSize": 1,
     "progression": [
       {
         "type": "Boss",
-        "bossName": "Darkmaster Gandling",
-        "point": 2
+        "bossName": "Darkmaster Gandling"
       }
     ]
   },
@@ -18824,6 +18802,11 @@
       {
         "type": "Boss",
         "bossName": "Ras Frostwhisper",
+        "point": 2
+      },
+      {
+        "type": "Area",
+        "areaName": "Hall of Secrets",
         "point": 2
       },
       {
@@ -18915,7 +18898,7 @@
       },
       {
         "type": "Area",
-        "areaName": "Hall of Secrets",
+        "areaName": "Vault of the Ravenian",
         "point": 2
       },
       {
@@ -19030,16 +19013,6 @@
       {
         "type": "Area",
         "areaName": "Laboratory",
-        "point": 2
-      },
-      {
-        "type": "Area",
-        "areaName": "The Coven",
-        "point": 2
-      },
-      {
-        "type": "Area",
-        "areaName": "Vault of the Ravenian",
         "point": 2
       },
       {
