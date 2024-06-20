@@ -19,6 +19,7 @@ public class Window : MonoBehaviour
     public int xOffset, yOffset;
     public string title, layer;
     public WindowAnchor anchor;
+    public GameObject background;
     public GameObject[] shadows;
     public bool disabledShadows, disabledGeneralSprites, disabledCollisions, masked;
 

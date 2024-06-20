@@ -5141,12 +5141,8 @@ public static class BlueprintDev
             SpawnWindowBlueprint("PlayerBattleInfo");
             SpawnWindowBlueprint("LocationInfo");
             SpawnWindowBlueprint("EnemyBattleInfo");
-            var elements = new List<string> { "Fire", "Water", "Earth", "Air", "Frost", "Lightning", "Arcane", "Decay", "Order", "Shadow" };
-            foreach (var element in elements)
-            {
-                SpawnWindowBlueprint("Player" + element + "Resource");
-                SpawnWindowBlueprint("Enemy" + element + "Resource");
-            }
+            SpawnWindowBlueprint("PlayerResources");
+            SpawnWindowBlueprint("EnemyResources");
             board.Reset();
         }),
         new("ObjectManagerHostileAreas", () =>

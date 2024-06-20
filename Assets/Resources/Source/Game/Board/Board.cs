@@ -631,7 +631,7 @@ public class Board
         {
             bonusTurnStreak++;
             PlaySound("BonusMove" + (bonusTurnStreak > 4 ? 4 : bonusTurnStreak), 0.4f);
-            SpawnFallingText(new Vector2(0, 34), "Bonus Move", "White");
+            SpawnFallingText(new Vector2(0, 14), "Bonus Move", "White");
         }
         var types = list.Select(x => x.Item3 % 10).Distinct();
         var foo = types.ToDictionary(x => Resource(x), x => list.Sum(y => y.Item3 % 10 == x ? y.Item3 / 10 + 1 : 0));
