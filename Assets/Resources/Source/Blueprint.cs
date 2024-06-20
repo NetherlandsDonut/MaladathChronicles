@@ -2858,53 +2858,27 @@ public class Blueprint
                 AddText(" - ", "DarkGray");
                 AddText(range.Item2 + "", ColorEntityLevel(range.Item2));
             });
-            if (instance.wings.Count == 1)
-                for (int i = 0; i < instance.wings[0].areas.Count; i++)
-                {
-                    var index = i;
-                    var area = instance.wings[0].areas[index];
-                    var find = areas.Find(x => x.name == area["AreaName"]);
-                    if (find != null && (showAreasUnconditional || area.ContainsKey("OpenByDefault") && area["OpenByDefault"] == "True" || currentSave.unlockedAreas.Contains(find.name)))
-                        AddButtonRegion(() =>
-                        {
-                            AddLine(find.name);
-                            if (currentSave.siteProgress.ContainsKey(find.name) && find.areaSize == currentSave.siteProgress[find.name])
-                                SetRegionBackgroundAsImage("ClearedArea");
-                        },
-                        (h) =>
-                        {
-                            SiteHostileArea.area = find;
-                            Respawn("HostileArea");
-                            Respawn("HostileAreaProgress");
-                            Respawn("HostileAreaDenizens");
-                            Respawn("HostileAreaElites");
-                            Respawn("Chest");
-                            SetDesktopBackground(find.Background());
-                        });
-                    else AddHeaderRegion(() => AddLine("?", "DimGray"));
-                }
-            else
-                for (int i = 0; i < instance.wings.Count; i++)
-                {
-                    var index = i;
-                    var find = instance.wings[index];
-                    if (showAreasUnconditional || find.areas.Any(x => x.ContainsKey("OpenByDefault") && x["OpenByDefault"] == "True" || currentSave.unlockedAreas.Contains(x["AreaName"])))
-                        AddButtonRegion(() =>
-                        {
-                            AddLine(find.name);
-                            var allAreas = areas.FindAll(x => find.areas.Exists(y => y["AreaName"] == x.name));
-                            if (allAreas.All(x => currentSave.siteProgress.ContainsKey(x.name) && x.areaSize <= currentSave.siteProgress[x.name]))
-                                SetRegionBackgroundAsImage("ClearedArea");
-                        },
-                        (h) =>
-                        {
-                            wing = find;
-                            Respawn("InstanceWing");
-                            Respawn("Instance");
-                            SetDesktopBackground(wing.Background());
-                        });
-                    else AddHeaderRegion(() => AddLine("?", "DimGray"));
-                }
+            for (int i = 0; i < instance.wings.Count; i++)
+            {
+                var index = i;
+                var find = instance.wings[index];
+                if (showAreasUnconditional || find.areas.Any(x => x.ContainsKey("OpenByDefault") && x["OpenByDefault"] == "True" || currentSave.unlockedAreas.Contains(x["AreaName"])))
+                    AddButtonRegion(() =>
+                    {
+                        AddLine(find.name);
+                        var allAreas = areas.FindAll(x => find.areas.Exists(y => y["AreaName"] == x.name));
+                        if (allAreas.All(x => currentSave.siteProgress.ContainsKey(x.name) && x.areaSize <= currentSave.siteProgress[x.name]))
+                            SetRegionBackgroundAsImage("ClearedArea");
+                    },
+                    (h) =>
+                    {
+                        wing = find;
+                        Respawn("InstanceWing");
+                        Respawn("Instance");
+                        SetDesktopBackground(wing.Background());
+                    });
+                else AddHeaderRegion(() => AddLine("?", "DimGray"));
+            }
         }),
         new("InstanceWing", () =>
         {
@@ -3000,7 +2974,7 @@ public class Blueprint
                     if (area.instancePart)
                     {
                         SetDesktopBackground(instance.Background());
-                        if (wing != null) SetDesktopBackground(wing.Background());
+                        SetDesktopBackground(wing.Background());
                         CloseWindow(h.window);
                         CloseWindow("HostileAreaProgress");
                         CloseWindow("HostileAreaDenizens");
@@ -3082,17 +3056,17 @@ public class Blueprint
         }),
         new("HostileAreaDenizens", () =>
         {
-            if (area.commonEncounters == null || area.commonEncounters.Count == 0) return;
             SetAnchor(TopLeft, 19, -95);
             AddRegionGroup();
             SetRegionGroupWidth(190);
-            foreach (var encounter in area.commonEncounters)
-                AddHeaderRegion(() =>
-                {
-                    AddLine(encounter.who, "DarkGray", "Right");
-                    var race = races.Find(x => x.name == encounter.who);
-                    AddSmallButton(race == null ? "OtherUnknown" : race.portrait);
-                });
+            if (area.commonEncounters != null && area.commonEncounters.Count > 0)
+                foreach (var encounter in area.commonEncounters)
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine(encounter.who, "DarkGray", "Right");
+                        var race = races.Find(x => x.name == encounter.who);
+                        AddSmallButton(race == null ? "OtherUnknown" : race.portrait);
+                    });
         }),
         new("HostileAreaElites", () =>
         {

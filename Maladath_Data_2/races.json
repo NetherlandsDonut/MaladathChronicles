@@ -1,15 +1,5 @@
 [
   {
-    "name": "Nightmare Wanderer",
-    "category": "Humanoid",
-    "subcategory": "Human",
-    "side": "Neutral",
-    "kind": "Common",
-    "portrait": "PortraitGreenDragonSpawn",
-    "vitality": 1.0,
-    "abilities": {}
-  },
-  {
     "name": "Leper Gnome",
     "category": "Humanoid",
     "subcategory": "Gnome",

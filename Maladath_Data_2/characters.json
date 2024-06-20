@@ -1875,8 +1875,8 @@
         "completedQuests": [
           40
         ],
-        "level": 17,
-        "experience": 13673,
+        "level": 12,
+        "experience": 798,
         "uniquesGotten": [],
         "reputation": {
           "Southsea Pirates": 0,
@@ -1984,7 +1984,7 @@
             "Smelt Copper"
           ]
         },
-        "unspentTalentPoints": 9,
+        "unspentTalentPoints": 4,
         "faction": "Stormwind",
         "name": "Allesha",
         "race": "Human",
@@ -2442,79 +2442,6 @@
             "bags": [],
             "ignoreSpaceChecks": true
           }
-        },
-        "Hall of Ritual": {
-          "area": "Hall of Ritual",
-          "inventory": {
-            "items": [
-              {
-                "rarity": "Uncommon",
-                "name": "Hibernal Bracers",
-                "icon": "itembracer06",
-                "type": "Wrists",
-                "armorClass": "Cloth",
-                "source": "RareDrop",
-                "ilvl": 47,
-                "lvl": 42,
-                "armor": 27,
-                "amount": 1,
-                "maxStack": 1,
-                "price": 3594,
-                "stats": {
-                  "stats": {
-                    "Intellect": 10,
-                    "Stamina": 3
-                  }
-                }
-              },
-              {
-                "rarity": "Common",
-                "name": "Wildvine",
-                "icon": "itemmischerb03",
-                "type": "Trade Good",
-                "source": "RareDrop",
-                "ilvl": 40,
-                "lvl": 1,
-                "amount": 1,
-                "maxStack": 20,
-                "price": 5,
-                "stats": {
-                  "stats": {}
-                }
-              },
-              {
-                "rarity": "Common",
-                "name": "Solid Stone",
-                "icon": "itemstone10",
-                "type": "Trade Good",
-                "source": "Quest",
-                "ilvl": 35,
-                "lvl": 1,
-                "amount": 1,
-                "maxStack": 20,
-                "price": 100,
-                "stats": {
-                  "stats": {}
-                }
-              },
-              {
-                "rarity": "Common",
-                "name": "Scroll of Stamina III",
-                "icon": "itemscroll07",
-                "type": "Miscellaneous",
-                "source": "RareDrop",
-                "ilvl": 45,
-                "amount": 1,
-                "maxStack": 5,
-                "price": 112,
-                "stats": {
-                  "stats": {}
-                }
-              }
-            ],
-            "bags": [],
-            "ignoreSpaceChecks": true
-          }
         }
       },
       "siteProgress": {
@@ -2523,14 +2450,7 @@
         "Gnomeregan Outskirts": 5,
         "The Pillar of Ash": 1,
         "The Long Wash": 1,
-        "The Broken Hall": 3,
-        "Hall of Masks": 2,
-        "The Butchery": 2,
-        "Chamber of Blood": 2,
-        "Hall of Ritual": 3,
-        "Hall of Bones": 2,
-        "Hall of Serpents": 2,
-        "Pit of Refuse": 2
+        "The Broken Hall": 3
       },
       "commonsKilled": {
         "Deeprot Tangler": 1,
@@ -2539,24 +2459,12 @@
         "Leper Gnome": 1,
         "Blackrock Soldier": 1,
         "Pygmy Tide Crawler": 1,
-        "Murk Slitherer": 4,
-        "Fungal Ooze": 1,
-        "Enthralled Atal'ai": 5,
-        "Atal'ai Priest": 1,
-        "Mummified Atal'ai": 2,
-        "Murk Spitter": 1,
-        "Saturated Ooze": 2,
-        "Murk Worm": 2
+        "Murk Slitherer": 3
       },
       "raresKilled": {
         "Gibblewilt": 1
       },
-      "elitesKilled": {
-        "Veyzhak the Cannibal": 1,
-        "Kazkaz the Unholy": 1,
-        "Zekkis": 1,
-        "Atal'alarion": 1
-      },
+      "elitesKilled": {},
       "siteVisits": {
         "Northshire Abbey": 2,
         "Hall of Illusions": 1,
@@ -3521,7 +3429,7 @@
         "The Harborage": 1,
         "Nesingwary's Expedition": 1,
         "Gurubashi Arena": 1,
-        "Temple of Atal'Hakkar": 7,
+        "Temple of Atal'Hakkar": 3,
         "The Stockade": 2,
         "Ragefire Chasm": 1,
         "Gnomeregan": 2,
@@ -3565,15 +3473,7 @@
         "Riverpaw Camp": 3,
         "Gnomeregan Outskirts": 7
       },
-      "unlockedAreas": [
-        "The Butchery",
-        "Chamber of Blood",
-        "Hall of Ritual",
-        "Hall of Bones",
-        "Hall of Serpents",
-        "Pit of Refuse",
-        "Hall of the Cursed"
-      ],
+      "unlockedAreas": [],
       "vendorStock": {},
       "banks": {
         "Darnassus": {
@@ -3582,9 +3482,9 @@
         }
       },
       "startDate": "2024-06-09T14:12:27.0144066+02:00",
-      "lastLoaded": "2024-06-20T01:36:28.2923745+02:00",
-      "lastPlayed": "2024-06-20T01:39:41.0266727+02:00",
-      "timePlayed": "11:09:42.6773751",
+      "lastLoaded": "2024-06-19T15:34:58.0564528+02:00",
+      "lastPlayed": "2024-06-19T15:36:46.0634599+02:00",
+      "timePlayed": "10:09:30.1692898",
       "lastVisitedTalents": 1
     },
     {
@@ -7296,7 +7196,7 @@
         "currentQuests": [],
         "completedQuests": [],
         "level": 24,
-        "experience": 10600,
+        "experience": 10580,
         "uniquesGotten": [
           "Murloc Skin Bag"
         ],
@@ -7619,9 +7519,9 @@
         }
       },
       "hour": 7,
-      "minute": 26,
-      "second": 22,
-      "currentSite": "Razorfen Kraul",
+      "minute": 20,
+      "second": 4,
+      "currentSite": "Scholomance",
       "ringOfLaw": "Grizzle",
       "forlornCloister": "Ironspine",
       "openedChests": {
@@ -7897,10 +7797,7 @@
         "Ban'ethil Hollow": 5,
         "Blackfathom Deeps": 6,
         "Scholomance": 7,
-        "Maraudon": 4,
-        "Blackrock Mountain": 4,
-        "Razorfen Downs": 4,
-        "Razorfen Kraul": 1
+        "Maraudon": 4
       },
       "unlockedAreas": [
         "Shrine of Gelihast",
@@ -7922,9 +7819,9 @@
       "vendorStock": {},
       "banks": {},
       "startDate": "2024-06-15T19:17:11.4512344+02:00",
-      "lastLoaded": "2024-06-19T23:47:53.7476976+02:00",
-      "lastPlayed": "2024-06-19T23:50:09.7899999+02:00",
-      "timePlayed": "01:21:24.6073269",
+      "lastLoaded": "2024-06-19T19:45:36.9377237+02:00",
+      "lastPlayed": "2024-06-19T19:45:59.9111621+02:00",
+      "timePlayed": "00:51:50.1104329",
       "lastVisitedTalents": 2
     }
   ]
