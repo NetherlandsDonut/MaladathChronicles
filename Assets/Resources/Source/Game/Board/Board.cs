@@ -326,47 +326,53 @@ public class Board
             CDesktop.RespawnAll();
 
             //Drop items
-            var directDrop = enemyRace.droppedItems.Select(x => Item.items.Find(y => y.name == x)).Where(x => (!x.unique || !currentSave.player.uniquesGotten.Contains(x.name))).ToList();
-            var worldDrop = Item.items.FindAll(x => (x.dropRange == null && x.lvl >= enemy.level - 6 && x.lvl <= enemy.level || x.dropRange != null && enemy.level >= int.Parse(x.dropRange.Split('-')[0]) && enemy.level <= int.Parse(x.dropRange.Split('-')[1])) && x.source == "RareDrop");
-            var instance = area.instancePart ? SiteInstance.instances.Find(x => x.wings.Any(y => y.areas.Any(z => z["AreaName"] == area.name))) : null;
-            var zoneDrop = instance == null || instance.zoneDrop == null ? new() : Item.items.FindAll(x => instance.zoneDrop.Contains(x.name));
-            var everything = zoneDrop.Concat(worldDrop).Where(x => x.CanEquip(currentSave.player) && (!x.unique || !currentSave.player.uniquesGotten.Contains(x.name)));
-            var dropOther = directDrop.Where(x => (x.rarity == "Common" || x.rarity == "Poor") && (x.type == "Miscellaneous" || x.type == "Trade Good")).ToList();
-            var dropGray = everything.Where(x => x.rarity == "Poor").ToList();
-            var dropWhite = everything.Where(x => x.rarity == "Common").ToList();
-            var dropGreen = everything.Where(x => x.rarity == "Uncommon").ToList();
-            var dropBlue = everything.Where(x => x.rarity == "Rare").ToList();
-            var dropPurple = everything.Where(x => x.rarity == "Epic").ToList();
-            var equippable = directDrop.Where(x => x.CanEquip(currentSave.player)).ToList();
-            var notEquippable = directDrop.Where(x => !equippable.Contains(x) && x.type != "Miscellaneous" && x.type != "Trade Good").ToList();
-            if (equippable.Count + notEquippable.Count == 0)
+            var directDrop = enemyRace.droppedItems.Select(x => Item.items.Find(y => y.name == x)).Where(x => !x.unique || !currentSave.player.uniquesGotten.Contains(x.name)).ToList();
+            var wearableDirect = directDrop.Where(x => x.IsWearable()).ToList();
+            var equipableDirect = wearableDirect.Where(x => x.CanEquip(currentSave.player)).ToList();
+
+            //One wearable item drop with priority on something you can equip
+            if (equipableDirect.Count > 0)
             {
+                var item = equipableDirect[random.Next(equipableDirect.Count)];
+                results.inventory.AddItem(item.CopyItem());
+            }
+            if (wearableDirect.Count > 0)
+            {
+                var item = wearableDirect[random.Next(wearableDirect.Count)];
+                results.inventory.AddItem(item.CopyItem());
+            }
+            else
+            {
+                var worldDrop = Item.items.FindAll(x => (x.dropRange == null && x.lvl >= enemy.level - 6 && x.lvl <= enemy.level || x.dropRange != null && enemy.level >= int.Parse(x.dropRange.Split('-')[0]) && enemy.level <= int.Parse(x.dropRange.Split('-')[1])) && x.source == "RareDrop");
+                var instance = area.instancePart ? SiteInstance.instances.Find(x => x.wings.Any(y => y.areas.Any(z => z["AreaName"] == area.name))) : null;
+                var zoneDrop = instance == null || instance.zoneDrop == null ? new() : Item.items.FindAll(x => instance.zoneDrop.Contains(x.name));
+                var everything = zoneDrop.Concat(worldDrop).Where(x => x.CanEquip(currentSave.player) && (!x.unique || !currentSave.player.uniquesGotten.Contains(x.name)));
+                var dropGray = everything.Where(x => x.rarity == "Poor").ToList();
+                var dropWhite = everything.Where(x => x.rarity == "Common").ToList();
+                var dropGreen = everything.Where(x => x.rarity == "Uncommon").ToList();
+                var dropBlue = everything.Where(x => x.rarity == "Rare").ToList();
+                var dropPurple = everything.Where(x => x.rarity == "Epic").ToList();
                 if (dropPurple.Count > 0 && Roll(0.05))
                     results.inventory.AddItem(dropPurple[random.Next(dropPurple.Count)].CopyItem());
                 else if (dropBlue.Count > 0 && Roll(1))
                     results.inventory.AddItem(dropBlue[random.Next(dropBlue.Count)].CopyItem());
-                else if (dropGreen.Count > 0 && Roll(10))
+                else if (dropGreen.Count > 0 && Roll(8))
                     results.inventory.AddItem(dropGreen[random.Next(dropGreen.Count)].CopyItem());
                 else if (dropWhite.Count > 0 && Roll(5))
                     results.inventory.AddItem(dropWhite[random.Next(dropWhite.Count)].CopyItem());
                 else if (dropGray.Count > 0 && Roll(3))
                     results.inventory.AddItem(dropGray[random.Next(dropGray.Count)].CopyItem());
             }
-            else
+
+            //All the other guaranteed items
+            var otherDirect = directDrop.Except(wearableDirect).ToList();
+            if (otherDirect.Count > 0)
             {
-                var item = equippable.Count > 0 ? equippable[random.Next(equippable.Count)] : notEquippable[random.Next(notEquippable.Count)];
-                results.inventory.AddItem(item.CopyItem());
+                foreach (var item in otherDirect)
+                    results.inventory.AddItem(item.CopyItem());
             }
-            if (dropOther.Count > 2 && Roll(60))
-            {
-                results.inventory.AddItem(dropOther[random.Next(dropOther.Count)].CopyItem());
-                dropOther.Remove(results.inventory.items.Last());
-                if (Roll(40)) results.inventory.AddItem(dropOther[random.Next(dropOther.Count)].CopyItem());
-            }
-            else if (dropOther.Count > 1 && Roll(50))
-                results.inventory.AddItem(dropOther[random.Next(dropOther.Count)].CopyItem());
-            else if (dropOther.Count > 0 && Roll(40))
-                results.inventory.AddItem(dropOther[random.Next(dropOther.Count)].CopyItem());
+
+            //General drops
             var generalDrops = GeneralDrop.generalDrops.FindAll(x => x.DoesLevelFit(enemy.level) && (x.requiredProfession == null || (player.professionSkills.ContainsKey(x.requiredProfession) && (x.requiredSkill == 0 || x.requiredSkill <= player.professionSkills[x.requiredProfession].Item1))) && (x.category == null || x.category == enemy.Race().category) && x.inclusive);
             if (generalDrops.Count > 0)
                 foreach (var drop in generalDrops)

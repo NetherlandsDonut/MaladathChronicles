@@ -386,7 +386,7 @@ public class Item
         else if (type == "Recipe")
         {
             var recipe = Recipe.recipes.Find(x => name.Contains(x.name));
-            if (recipe != null) return entity.professionSkills.ContainsKey(recipe.profession) && entity.professionSkills[recipe.profession].Item1 >= recipe.learnedAt && entity.learnedRecipes.ContainsKey(recipe.name);
+            if (recipe != null) return entity.professionSkills.ContainsKey(recipe.profession) && entity.professionSkills[recipe.profession].Item1 >= recipe.learnedAt && !entity.learnedRecipes.ContainsKey(recipe.name);
             else Debug.Log("ERROR 007: Did not find a dedicated recipe to item: \"" + name + "\"");
         }
         return false;
@@ -497,8 +497,7 @@ public class Item
                             var amount = int.Parse(String.splitAmount.value == "" ? "0" : String.splitAmount.value);
                             if (amount <= 0) return;
                             PlaySound(item.ItemSound("PickUp"), 0.6f);
-                            if (amount > item.amount) amount = item.amount;
-                            if (amount == item.amount)
+                            if (amount >= item.amount)
                             {
                                 currentSave.player.inventory.AddItem(item);
                                 currentSave.banks[town.name].items.Remove(item);
@@ -941,14 +940,14 @@ public class Item
                 AddLine(a + "", "Gray");
                 AddText(" - ", "HalfGray");
                 AddText(b + " Damage", "Gray");
-                AddLine("Average hit: ", "HalfGray");
-                AddText("" + Math.Round((a + b) / 2), "White");
+                //AddLine("Average hit: ", "HalfGray");
+                //AddText("" + Math.Round((a + b) / 2), "White");
             }
             else if (item.bagSpace != 0) AddLine(item.bagSpace + " Slot Bag");
             else if (item.type == "Recipe")
             {
                 var recipe = Recipe.recipes.Find(x => item.name.Contains(x.name));
-                AddLine(recipe.profession + " " + item.name.Split(':')[0].ToLower());
+                AddLine(recipe.profession + " " + item.name.Split(':')[0].ToLower(), currentSave != null && currentSave.player.professionSkills.ContainsKey(recipe.profession) ? "Gray" : "DangerousRed");
             }
             else if (item.type == "Off Hand") AddLine(item.type + (item.detailedType != null ? " " + item.detailedType : ""), currentSave != null && !currentSave.player.abilities.ContainsKey(item.detailedType == "Shield" ? "Shield Proficiency" : "Off Hand Proficiency") ? "DangerousRed" : "Gray");
             else AddLine(item.type ?? "");
@@ -1098,7 +1097,7 @@ public class Item
             AddHeaderRegion(() =>
             {
                 AddLine("Required skill: ", "DarkGray");
-                AddText(recipe.learnedAt + "", currentSave.player.professionSkills.ContainsKey(recipe.profession) && recipe.learnedAt <= currentSave.player.professionSkills[recipe.profession].Item1 ? "DarkGray" : "DangerousRed");
+                AddText(recipe.learnedAt + "", currentSave.player.professionSkills.ContainsKey(recipe.profession) && recipe.learnedAt <= currentSave.player.professionSkills[recipe.profession].Item1 ? "Uncommon" : "DangerousRed");
             });
         }
         if (item.enchant != null)

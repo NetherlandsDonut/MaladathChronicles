@@ -669,6 +669,9 @@
         "areas": [
           {
             "OpenByDefault": "True",
+            "AreaName": "The Drowned Sacellum"
+          },
+          {
             "AreaName": "Pool of Ask'ar"
           },
           {

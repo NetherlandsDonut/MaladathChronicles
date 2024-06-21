@@ -5108,14 +5108,43 @@
                 "amount": 3
               }
             ]
+          },
+          {
+            "questID": 47,
+            "requiredLevel": 4,
+            "questLevel": 7,
+            "name": "Gold Dust Exchange",
+            "description": "Bring 4 Gold Dust to Remy \"Two Times\" in Goldshire. Gold Dust is gathered from Kobolds in Elwynn Forest.",
+            "siteStart": "Goldshire",
+            "siteEnd": "Goldshire",
+            "zone": "Elwynn Forest",
+            "races": [
+              "Gnome",
+              "Night Elf",
+              "Dwarf",
+              "Human"
+            ],
+            "rewards": {
+              "Bag of Marbles": 1
+            },
+            "reputationGain": {
+              "Stormwind": 250
+            },
+            "conditions": [
+              {
+                "type": "Item",
+                "name": "Gold Dust",
+                "amount": 4
+              }
+            ]
           }
         ],
         "completedQuests": [
           783,
           7
         ],
-        "level": 2,
-        "experience": 679,
+        "level": 5,
+        "experience": 217,
         "uniquesGotten": [],
         "reputation": {
           "Southsea Pirates": 0,
@@ -5186,9 +5215,22 @@
           "Bloodtooth Tribe": 0,
           "Bristleback Tribe": 0
         },
-        "professionSkills": {},
-        "learnedRecipes": {},
-        "unspentTalentPoints": 1,
+        "professionSkills": {
+          "Cooking": {
+            "Item1": 1,
+            "Item2": [
+              "Apprentice"
+            ]
+          }
+        },
+        "learnedRecipes": {
+          "Cooking": [
+            "Charred Wolf Meat",
+            "Roasted Boar Meat",
+            "Brilliant Smallfish"
+          ]
+        },
+        "unspentTalentPoints": 4,
         "faction": "Stormwind",
         "name": "Lenea",
         "race": "Human",
@@ -5231,7 +5273,7 @@
           }
         },
         "inventory": {
-          "money": 13,
+          "money": 222,
           "items": [
             {
               "rarity": "Common",
@@ -5250,18 +5292,49 @@
             },
             {
               "rarity": "Common",
-              "name": "Coarse Thread",
-              "icon": "itemfabriclinen03",
-              "detailedType": "Cloth",
-              "type": "Trade Good",
-              "ilvl": 5,
-              "lvl": 1,
-              "amount": 3,
-              "minutesLeft": 30,
-              "maxStack": 20,
-              "price": 2,
+              "name": "Pattern: Blue Linen Vest",
+              "icon": "itemscroll03",
+              "detailedType": "Scroll",
+              "type": "Recipe",
+              "amount": 1,
+              "maxStack": 1,
+              "price": 50,
               "stats": {
                 "stats": {}
+              }
+            },
+            {
+              "rarity": "Common",
+              "name": "Recipe: Longjaw Mud Snapper",
+              "icon": "itemscroll03",
+              "detailedType": "Scroll",
+              "type": "Recipe",
+              "amount": 1,
+              "maxStack": 1,
+              "price": 100,
+              "stats": {
+                "stats": {}
+              }
+            },
+            {
+              "rarity": "Uncommon",
+              "name": "Beaded Britches of the Owl",
+              "icon": "itempants02",
+              "randomEnchantment": true,
+              "type": "Legs",
+              "armorClass": "Cloth",
+              "source": "RareDrop",
+              "ilvl": 11,
+              "lvl": 6,
+              "armor": 18,
+              "amount": 1,
+              "maxStack": 1,
+              "price": 119,
+              "stats": {
+                "stats": {
+                  "Intellect": 3,
+                  "Spirit": 3
+                }
               }
             }
           ],
@@ -5353,8 +5426,7 @@
         }
       },
       "hour": 7,
-      "minute": 12,
-      "second": 8,
+      "minute": 56,
       "currentSite": "Goldshire",
       "ringOfLaw": "Eviscerator",
       "forlornCloister": "Azshir the Sleepless",
@@ -5366,14 +5438,63 @@
             "bags": [],
             "ignoreSpaceChecks": true
           }
+        },
+        "Crystal Lake": {
+          "area": "Crystal Lake",
+          "inventory": {
+            "items": [
+              {
+                "rarity": "Common",
+                "name": "Swiftthistle",
+                "icon": "itemmischerb04",
+                "detailedType": "Flowers",
+                "type": "Trade Good",
+                "source": "RareDrop",
+                "ilvl": 15,
+                "lvl": 1,
+                "amount": 1,
+                "maxStack": 20,
+                "price": 15,
+                "stats": {
+                  "stats": {}
+                }
+              },
+              {
+                "rarity": "Uncommon",
+                "name": "Malachite",
+                "icon": "itemmiscgememerald03",
+                "detailedType": "Gem",
+                "type": "Trade Good",
+                "source": "RareDrop",
+                "ilvl": 7,
+                "lvl": 1,
+                "amount": 1,
+                "maxStack": 20,
+                "price": 15,
+                "stats": {
+                  "stats": {}
+                }
+              }
+            ],
+            "bags": [],
+            "ignoreSpaceChecks": true
+          }
         }
       },
       "siteProgress": {
-        "Northshire Valley": 5
+        "Northshire Valley": 5,
+        "Saldean's Farm": 2,
+        "Defias Hideout": 2,
+        "Crystal Lake": 3
       },
       "commonsKilled": {
         "Young Wolf": 2,
-        "Kobold Vermin": 3
+        "Kobold Vermin": 3,
+        "Coyote": 1,
+        "Harvest Watcher": 1,
+        "Defias Overseer": 1,
+        "Defias Watchman": 1,
+        "Murloc Steamrunner": 3
       },
       "raresKilled": {},
       "elitesKilled": {},
@@ -5382,16 +5503,23 @@
         "Northshire Valley": 2,
         "Echo Ridge Mine": 0,
         "Northshire Vineyards": 1,
-        "Goldshire": 1
+        "Goldshire": 9,
+        "Jansen Stead": 0,
+        "Saldean's Farm": 2,
+        "Stendel's Pond": 0,
+        "Moonbrook": 0,
+        "The Deadmines": 1,
+        "Blackfathom Deeps": 5,
+        "Zoram'gar Outpost": 1,
+        "Crystal Lake": 1
       },
       "unlockedAreas": [],
       "vendorStock": {
         "Goldshire:Tharynn Bouden": [
           {
             "item": "Coarse Thread",
-            "amount": 17,
+            "amount": 20,
             "maxAmount": 20,
-            "minutesLeft": 10,
             "restockSpeed": 10
           },
           {
@@ -5444,20 +5572,59 @@
           },
           {
             "item": "Pattern: Blue Linen Vest",
-            "amount": 1,
             "maxAmount": 1,
+            "minutesLeft": 26,
             "restockSpeed": 30
           },
           {
             "item": "Recipe: Brilliant Smallfish",
-            "amount": 1,
             "maxAmount": 1,
+            "minutesLeft": 26,
             "restockSpeed": 30
           },
           {
             "item": "Recipe: Longjaw Mud Snapper",
-            "amount": 1,
             "maxAmount": 1,
+            "minutesLeft": 26,
+            "restockSpeed": 30
+          }
+        ],
+        "Goldshire:Toddrick": [
+          {
+            "item": "Tough Jerky",
+            "amount": 4,
+            "maxAmount": 5,
+            "minutesLeft": 26,
+            "restockSpeed": 30
+          },
+          {
+            "item": "Haunch of Meat",
+            "amount": 5,
+            "maxAmount": 5,
+            "restockSpeed": 30
+          },
+          {
+            "item": "Mutton Chop",
+            "amount": 5,
+            "maxAmount": 5,
+            "restockSpeed": 30
+          },
+          {
+            "item": "Wild Hog Shank",
+            "amount": 5,
+            "maxAmount": 5,
+            "restockSpeed": 30
+          },
+          {
+            "item": "Cured Ham Steak",
+            "amount": 5,
+            "maxAmount": 5,
+            "restockSpeed": 30
+          },
+          {
+            "item": "Roasted Quail",
+            "amount": 5,
+            "maxAmount": 5,
             "restockSpeed": 30
           }
         ]
@@ -5466,55 +5633,91 @@
       "buyback": {
         "items": [
           {
-            "rarity": "Common",
-            "name": "Trogg Dagger",
-            "icon": "itemshortblade08",
-            "detailedType": "Dagger",
+            "rarity": "Uncommon",
+            "name": "Defias Rapier",
+            "icon": "itemsword30",
+            "detailedType": "Sword",
             "type": "One Handed",
-            "source": "RareDrop",
-            "ilvl": 3,
-            "lvl": 1,
-            "minDamage": 1,
-            "maxDamage": 2,
+            "source": "DirectDrop",
+            "ilvl": 16,
+            "lvl": 11,
+            "minDamage": 9,
+            "maxDamage": 17,
             "amount": 1,
-            "minutesLeft": 30,
+            "minutesLeft": 26,
             "maxStack": 1,
-            "price": 10,
-            "speed": 1.5,
+            "price": 787,
+            "speed": 1.6,
             "stats": {
-              "stats": {}
-            }
+              "stats": {
+                "Agility": 2
+              }
+            },
+            "droppedBy": [
+              "Defias Watchman"
+            ]
           },
           {
             "rarity": "Common",
-            "name": "Copper Ore",
-            "icon": "itemorecopper01",
-            "detailedType": "Ore",
-            "type": "Trade Good",
+            "name": "Scroll of Spirit",
+            "icon": "itemscroll01",
+            "detailedType": "Scroll",
+            "type": "Miscellaneous",
             "source": "RareDrop",
             "ilvl": 10,
-            "lvl": 1,
-            "amount": 3,
+            "amount": 1,
             "minutesLeft": 30,
-            "maxStack": 10,
-            "price": 5,
+            "maxStack": 5,
+            "price": 25,
             "stats": {
               "stats": {}
             }
           },
           {
             "rarity": "Common",
-            "name": "Rough Stone",
-            "icon": "itemstone06",
-            "detailedType": "Rock",
+            "name": "Tough Jerky",
+            "icon": "itemmiscfood16",
+            "detailedType": "Food",
+            "type": "Miscellaneous",
+            "source": "Quest",
+            "ilvl": 5,
+            "amount": 1,
+            "minutesLeft": 30,
+            "maxStack": 20,
+            "price": 1,
+            "stats": {
+              "stats": {}
+            }
+          },
+          {
+            "rarity": "Common",
+            "name": "Linen Cloth",
+            "icon": "itemfabriclinen01",
+            "detailedType": "Cloth",
             "type": "Trade Good",
             "source": "RareDrop",
             "ilvl": 5,
             "lvl": 1,
-            "amount": 2,
+            "amount": 1,
             "minutesLeft": 30,
             "maxStack": 20,
-            "price": 2,
+            "price": 13,
+            "stats": {
+              "stats": {}
+            }
+          },
+          {
+            "rarity": "Common",
+            "name": "Scroll of Stamina",
+            "icon": "itemscroll07",
+            "detailedType": "Scroll",
+            "type": "Miscellaneous",
+            "source": "Quest",
+            "ilvl": 15,
+            "amount": 1,
+            "minutesLeft": 30,
+            "maxStack": 5,
+            "price": 37,
             "stats": {
               "stats": {}
             }
@@ -5524,9 +5727,9 @@
         "ignoreSpaceChecks": true
       },
       "startDate": "2024-06-21T03:00:56.9557934+02:00",
-      "lastLoaded": "2024-06-21T03:00:57.4880442+02:00",
-      "lastPlayed": "2024-06-21T03:04:18.8833961+02:00",
-      "timePlayed": "00:03:21.3953519"
+      "lastLoaded": "2024-06-21T13:40:47.8498002+02:00",
+      "lastPlayed": "2024-06-21T13:42:25.9606857+02:00",
+      "timePlayed": "00:24:08.3931938"
     }
   ]
 }

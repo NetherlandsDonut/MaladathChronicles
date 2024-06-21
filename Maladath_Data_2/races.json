@@ -1,5 +1,25 @@
 [
   {
+    "name": "Blindlight Murloc",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "side": "Neutral",
+    "kind": "Common",
+    "portrait": "PortraitMurlocWhite",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Murkshallow Snapclaw",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "side": "Neutral",
+    "kind": "Common",
+    "portrait": "PortraitMakruraBlue",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
     "name": "Nightmare Wanderer",
     "category": "Dragonkin",
     "subcategory": "Dragonspawn",
@@ -13779,7 +13799,7 @@
     "subcategory": "Naga",
     "side": "Neutral",
     "kind": "Elite",
-    "portrait": "PortraitNagaFemale",
+    "portrait": "PortraitNagaFemaleYellow",
     "vitality": 1.0,
     "abilities": {}
   },

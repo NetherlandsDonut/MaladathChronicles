@@ -963,8 +963,16 @@ public static class Root
                 Quest.quest = quest;
                 CloseWindow("Instance");
                 CloseWindow("Complex");
-                if (f == "Add") Respawn("QuestAdd");
-                else if (f == "Turn") Respawn("QuestTurn");
+                if (f == "Add")
+                {
+                    if (!Respawn("QuestAdd"))
+                        PlaySound("DesktopWriteQuest" + random.Next(1, 4));
+                }
+                else if (f == "Turn")
+                {
+                    if (!Respawn("QuestTurn"))
+                        PlaySound("DesktopWriteQuest" + random.Next(1, 4));
+                }
                 Respawn("PlayerMoney", true);
             });
             var color = ColorQuestLevel(quest.questLevel);
