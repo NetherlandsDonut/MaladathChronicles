@@ -12,7 +12,7 @@ public static class Sound
     //Plays a singular sound effect
     public static void PlaySound(string path, float volume = 0.5f)
     {
-        if (!settings.soundEffects.Value() || soundsPlayedThisFrame > 4) return;
+        if (!settings.soundEffects.Value() || soundsPlayedThisFrame > 5) return;
         if (!sounds.ContainsKey(path)) return;
         soundEffects.PlayOneShot(sounds[path], volume);
         soundsPlayedThisFrame++;

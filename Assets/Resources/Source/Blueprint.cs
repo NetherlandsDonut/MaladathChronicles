@@ -721,9 +721,9 @@ public class Blueprint
             });
             AddPaddingRegion(() =>
             {
-                AddLine("Type");
+                AddLine("Type", "HalfGray");
                 AddText(" DELETE ", "DangerousRed");
-                AddText("to confirm deletion");
+                AddText("to confirm deletion", "HalfGray");
             });
             AddPaddingRegion(() =>
             {
@@ -780,7 +780,7 @@ public class Blueprint
                 (h) =>
                 {
                     String.promptConfirm.Set("");
-                    CDesktop.RespawnAll();
+                    PlaySound("DesktopMenuOpen", 0.4f);
                     SpawnWindowBlueprint("ConfirmDeleteCharacter");
                     CDesktop.LBWindow.LBRegionGroup.LBRegion.inputLine.Activate();
                 });
@@ -2372,9 +2372,9 @@ public class Blueprint
             });
         }, true),
         new("SplitItem", () => {
-            SetAnchor(-115, 146);
+            SetAnchor(-92, 142);
             AddRegionGroup();
-            SetRegionGroupWidth(228);
+            SetRegionGroupWidth(182);
             AddHeaderRegion(() =>
             {
                 AddLine("Enter amount to pick up:");
@@ -5702,8 +5702,9 @@ public class Blueprint
                     {
                         PlaySound("DesktopInstanceClose");
                         person = null;
-                        Respawn("Town");
                         if (personCategory != null) Respawn("Persons");
+                        Respawn("Town");
+                        Respawn("Persons", true);
                     }
                     else if (CloseWindow("Persons"))
                     {

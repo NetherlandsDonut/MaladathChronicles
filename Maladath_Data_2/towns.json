@@ -486,6 +486,86 @@
         "type": "Journeyman Leatherworker"
       },
       {
+        "name": "Tharynn Bouden",
+        "gender": "Male",
+        "race": "Human",
+        "type": "Trade Goods",
+        "itemsSold": [
+          {
+            "item": "Coarse Thread",
+            "amount": 20,
+            "maxAmount": 20,
+            "restockSpeed": 10
+          },
+          {
+            "item": "Bleach",
+            "amount": 10,
+            "maxAmount": 10,
+            "restockSpeed": 20
+          },
+          {
+            "item": "Red Dye",
+            "amount": 10,
+            "maxAmount": 10,
+            "restockSpeed": 20
+          },
+          {
+            "item": "Blue Dye",
+            "amount": 10,
+            "maxAmount": 10,
+            "restockSpeed": 20
+          },
+          {
+            "item": "Mild Spices",
+            "amount": 20,
+            "maxAmount": 20,
+            "restockSpeed": 10
+          },
+          {
+            "item": "Weak Flux",
+            "amount": 10,
+            "maxAmount": 10,
+            "restockSpeed": 10
+          },
+          {
+            "item": "Empty Vial",
+            "amount": 20,
+            "maxAmount": 20,
+            "restockSpeed": 10
+          },
+          {
+            "item": "Salt",
+            "amount": 10,
+            "maxAmount": 10,
+            "restockSpeed": 10
+          },
+          {
+            "item": "Copper Rod",
+            "amount": 5,
+            "maxAmount": 5,
+            "restockSpeed": 20
+          },
+          {
+            "item": "Pattern: Blue Linen Vest",
+            "amount": 1,
+            "maxAmount": 1,
+            "restockSpeed": 30
+          },
+          {
+            "item": "Recipe: Brilliant Smallfish",
+            "amount": 1,
+            "maxAmount": 1,
+            "restockSpeed": 30
+          },
+          {
+            "item": "Recipe: Longjaw Mud Snapper",
+            "amount": 1,
+            "maxAmount": 1,
+            "restockSpeed": 30
+          }
+        ]
+      },
+      {
         "name": "Toddrick",
         "gender": "Male",
         "race": "Human",

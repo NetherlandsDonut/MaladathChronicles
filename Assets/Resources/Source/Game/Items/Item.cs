@@ -557,6 +557,7 @@ public class Item
                                 if (currentSave.player.inventory.money >= item.price * amount)
                                 {
                                     PlaySound("DesktopTransportPay");
+                                    currentSave.player.inventory.money -= item.price * amount;
                                     if (amount == item.amount)
                                     {
                                         item.minutesLeft = 0;
@@ -566,24 +567,22 @@ public class Item
                                     else
                                     {
                                         var newItem = item.CopyItem(amount);
-                                        currentSave.player.inventory.AddItem(newItem);
                                         newItem.minutesLeft = 0;
+                                        currentSave.player.inventory.AddItem(newItem);
                                         item.amount -= amount;
                                     }
-                                    currentSave.player.inventory.money -= item.price * amount;
                                     Respawn("Inventory");
                                     Respawn("VendorBuyback");
-                                    Respawn("ExperienceBarBorder");
-                                    Respawn("ExperienceBar");
                                 }
                             };
                         }
                         else if (currentSave.player.inventory.money >= item.price * item.amount)
                         {
                             PlaySound("DesktopTransportPay");
+                            var price = item.price * item.amount;
+                            currentSave.player.inventory.money -= price;
                             currentSave.buyback.items.Remove(item);
                             currentSave.player.inventory.AddItem(item);
-                            currentSave.player.inventory.money -= item.price * item.amount;
                             Respawn("Inventory");
                         }
                     }
@@ -608,8 +607,6 @@ public class Item
                                     currentSave.player.inventory.money -= item.price * amount * 4;
                                     Respawn("Inventory");
                                     Respawn("Vendor");
-                                    Respawn("ExperienceBarBorder");
-                                    Respawn("ExperienceBar");
                                 }
                             };
                         }
@@ -669,6 +666,7 @@ public class Item
                                 var amount = int.Parse(String.splitAmount.value == "" ? "0" : String.splitAmount.value);
                                 if (amount <= 0) return;
                                 PlaySound("DesktopTransportPay");
+                                PlaySound(item.ItemSound("PutDown"));
                                 if (amount > item.amount) amount = item.amount;
                                 currentSave.buyback ??= new(true);
                                 if (amount == item.amount)
@@ -697,6 +695,7 @@ public class Item
                         else
                         {
                             PlaySound("DesktopTransportPay");
+                            PlaySound(item.ItemSound("PutDown"));
                             currentSave.buyback ??= new(true);
                             currentSave.player.inventory.money += item.price * item.amount;
                             if (!item.indestructible)

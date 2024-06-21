@@ -426,6 +426,7 @@ public class Desktop : MonoBehaviour
                         }
                         else
                         {
+                            PlaySound("DesktopMenuClose");
                             inputDestination.Reset();
                             ExecuteQuit(inputDestination);
                             didSomething = true;
