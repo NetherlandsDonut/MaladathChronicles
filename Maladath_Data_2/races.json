@@ -9092,6 +9092,14 @@
     "portrait": "PortraitGoblin"
   },
   {
+    "name": "Broken",
+    "category": "Humanoid",
+    "subcategory": "Broken",
+    "side": "Neutral",
+    "previewSite": "The Harborage",
+    "portrait": "PortraitBroken"
+  },
+  {
     "name": "Venture Co. Deforester",
     "category": "Humanoid",
     "subcategory": "Goblin",

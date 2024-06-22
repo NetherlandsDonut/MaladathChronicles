@@ -26,12 +26,27 @@
   },
   {
     "type": "General Goods",
+    "icon": "ItemCrate06",
+    "category": "Vendor"
+  },
+  {
+    "type": "Trade Supplies",
+    "icon": "ItemCrate05",
+    "category": "Vendor"
+  },
+  {
+    "type": "Leatherworking Supplies",
+    "icon": "TradeLeatherworking",
+    "category": "Vendor"
+  },
+  {
+    "type": "Leatherworking & Tailoring Supplies",
     "icon": "ItemBox01",
     "category": "Vendor"
   },
   {
-    "type": "Trade Goods",
-    "icon": "ItemCrate05",
+    "type": "Tailoring Supplies",
+    "icon": "TradeTailoring",
     "category": "Vendor"
   },
   {
@@ -55,8 +70,43 @@
     "category": "Vendor"
   },
   {
+    "type": "Mail Armor Merchant",
+    "icon": "ItemChestChain",
+    "category": "Vendor"
+  },
+  {
+    "type": "Armor Crafter",
+    "icon": "ItemChestPlate01",
+    "category": "Vendor"
+  },
+  {
+    "type": "Shield Merchant",
+    "icon": "ItemShield04",
+    "category": "Vendor"
+  },
+  {
+    "type": "Mail & Plate Merchant",
+    "icon": "ItemChestPlate01",
+    "category": "Vendor"
+  },
+  {
+    "type": "Armorsmith",
+    "icon": "ItemChestPlate01",
+    "category": "Vendor"
+  },
+  {
+    "type": "Armorer",
+    "icon": "ItemChestPlate01",
+    "category": "Vendor"
+  },
+  {
+    "type": "Weaponsmith",
+    "icon": "ItemHammer17",
+    "category": "Vendor"
+  },
+  {
     "type": "Weapon Merchant",
-    "icon": "ItemAxe01",
+    "icon": "ItemHammer17",
     "category": "Vendor"
   },
   {
