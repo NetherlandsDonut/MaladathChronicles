@@ -83,6 +83,8 @@ public class Starter : MonoBehaviour
         //Audio played through this medium cannot be stopped or changed in volume
         soundEffects = sources.First(x => x.name == "SFX");
 
+        voiceLines = sources.First(x => x.name == "Voice");
+
         //All sound effects loaded up
         sounds = Resources.LoadAll<AudioClip>("Sounds/").ToDictionary(x => x.name, x => x);
 

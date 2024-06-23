@@ -1,12 +1,12 @@
 {
   "selectedRealm": "Whitemane",
   "selectedRealmRanking": "Whitemane",
-  "selectedCharacter": "Allesha",
+  "selectedCharacter": "Genevie",
   "pixelPerfectVision": {
     "value": "False"
   },
   "music": {
-    "value": "False"
+    "value": "True"
   },
   "soundEffects": {
     "value": "True"

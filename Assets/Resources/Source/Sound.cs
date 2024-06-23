@@ -21,11 +21,12 @@ public static class Sound
     //Plays a singular sound effect
     public static void PlayVoice(string path, float volume = 0.5f)
     {
-        if (!settings.soundEffects.Value() || soundsPlayedThisFrame > 5) return;
+        if (!settings.soundEffects.Value()) return;
         var find = sounds.Where(x => x.Key.StartsWith(path));
         if (find.Count() == 0) return;
-        soundEffects.PlayOneShot(find.ToList()[Root.random.Next(find.Count())].Value, volume);
-        soundsPlayedThisFrame++;
+        voiceLines.clip = find.ToList()[Root.random.Next(find.Count())].Value;
+        voiceLines.volume = volume;
+        voiceLines.Play();
     }
 
     //Plays new background ambience, in case of one already playing we queue them.
@@ -46,6 +47,9 @@ public static class Sound
 
     //Sound effect controller that plays sound effects
     public static AudioSource soundEffects;
+
+    //Sound effect controller that plays sound effects
+    public static AudioSource voiceLines;
 
     //Amount of falling element sounds played this frame
     //It is used to ensure that user's headphones are not

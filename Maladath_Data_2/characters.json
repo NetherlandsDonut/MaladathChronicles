@@ -2064,7 +2064,7 @@
               "ilvl": 5,
               "lvl": 1,
               "amount": 7,
-              "minutesLeft": 17,
+              "minutesLeft": 14,
               "maxStack": 20,
               "price": 2,
               "stats": {
@@ -2080,7 +2080,7 @@
               "ilvl": 10,
               "lvl": 1,
               "amount": 1,
-              "minutesLeft": 17,
+              "minutesLeft": 14,
               "maxStack": 10,
               "price": 5,
               "stats": {
@@ -2241,9 +2241,9 @@
         }
       },
       "hour": 10,
-      "minute": 16,
-      "second": 14,
-      "currentSite": "The Harborage",
+      "minute": 19,
+      "second": 58,
+      "currentSite": "Goldshire",
       "openedChests": {
         "Gnomeregan Outskirts": {
           "area": "Gnomeregan Outskirts",
@@ -3316,7 +3316,7 @@
         "Dabyrie's Farmstead": 1,
         "Azurelode Mine": 1,
         "Westbrook Garrison": 1,
-        "Goldshire": 8,
+        "Goldshire": 9,
         "Lakeshire": 1,
         "Southshore": 1,
         "Darkshire": 1,
@@ -3406,7 +3406,7 @@
         "Orgrimmar Legion Camp": 1,
         "Valor's Rest": 1,
         "Ironforge Brigade Outpost": 1,
-        "The Harborage": 3,
+        "The Harborage": 4,
         "Nesingwary's Expedition": 1,
         "Gurubashi Arena": 1,
         "Temple of Atal'Hakkar": 7,
@@ -3468,7 +3468,7 @@
             "item": "Coarse Thread",
             "amount": 13,
             "maxAmount": 20,
-            "minutesLeft": 7,
+            "minutesLeft": 4,
             "restockSpeed": 10
           },
           {
@@ -3709,6 +3709,172 @@
             "maxAmount": 2,
             "restockSpeed": 40
           }
+        ],
+        "The Harborage:Masat T'andr": [
+          {
+            "item": "Coarse Thread",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Fine Thread",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Black Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Red Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Green Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Salt",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Silken Thread",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Gray Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Yellow Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Purple Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Blue Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Orange Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Skinning Knife",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Heavy Silken Thread",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Pink Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Brilliant Red Cloak",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Well Oiled Cloak",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Rune Thread",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Pattern: Green Dragonscale Breastplate",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          }
+        ],
+        "Goldshire:Corina Steele": [
+          {
+            "item": "Gladius",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Tomahawk",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Cudgel",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Stiletto",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Two-handed Sword",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Large Axe",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Wooden Mallet",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Walking Stick",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          }
         ]
       },
       "banks": {
@@ -3851,7 +4017,7 @@
             "lvl": 4,
             "armor": 83,
             "amount": 1,
-            "minutesLeft": 17,
+            "minutesLeft": 14,
             "maxStack": 1,
             "price": 67,
             "stats": {
@@ -3869,7 +4035,7 @@
             "lvl": 4,
             "armor": 83,
             "amount": 1,
-            "minutesLeft": 17,
+            "minutesLeft": 14,
             "maxStack": 1,
             "price": 67,
             "stats": {
@@ -3887,7 +4053,7 @@
             "lvl": 4,
             "armor": 83,
             "amount": 1,
-            "minutesLeft": 17,
+            "minutesLeft": 14,
             "maxStack": 1,
             "price": 67,
             "stats": {
@@ -3906,7 +4072,7 @@
             "minDamage": 10,
             "maxDamage": 19,
             "amount": 1,
-            "minutesLeft": 17,
+            "minutesLeft": 14,
             "maxStack": 1,
             "price": 443,
             "speed": 1.4,
@@ -3924,7 +4090,7 @@
             "lvl": 1,
             "armor": 2,
             "amount": 1,
-            "minutesLeft": 17,
+            "minutesLeft": 14,
             "maxStack": 1,
             "price": 1,
             "stats": {
@@ -3940,7 +4106,7 @@
             "ilvl": 7,
             "lvl": 1,
             "amount": 1,
-            "minutesLeft": 17,
+            "minutesLeft": 14,
             "maxStack": 20,
             "price": 15,
             "stats": {
@@ -3956,7 +4122,7 @@
             "ilvl": 5,
             "lvl": 1,
             "amount": 20,
-            "minutesLeft": 17,
+            "minutesLeft": 14,
             "maxStack": 20,
             "price": 3,
             "stats": {
@@ -3972,7 +4138,7 @@
             "ilvl": 5,
             "lvl": 1,
             "amount": 20,
-            "minutesLeft": 17,
+            "minutesLeft": 14,
             "maxStack": 20,
             "price": 3,
             "stats": {
@@ -3987,7 +4153,7 @@
             "source": "RareDrop",
             "ilvl": 10,
             "amount": 1,
-            "minutesLeft": 17,
+            "minutesLeft": 14,
             "maxStack": 5,
             "price": 25,
             "stats": {
@@ -4003,7 +4169,7 @@
             "ilvl": 5,
             "lvl": 1,
             "amount": 1,
-            "minutesLeft": 17,
+            "minutesLeft": 14,
             "maxStack": 20,
             "price": 2,
             "stats": {
@@ -4015,9 +4181,9 @@
         "ignoreSpaceChecks": true
       },
       "startDate": "2024-06-09T14:12:27.0144066+02:00",
-      "lastLoaded": "2024-06-23T03:54:39.2699783+02:00",
-      "lastPlayed": "2024-06-23T03:54:54.4382825+02:00",
-      "timePlayed": "12:07:49.4607698",
+      "lastLoaded": "2024-06-23T04:23:08.7558783+02:00",
+      "lastPlayed": "2024-06-23T04:24:09.4581764+02:00",
+      "timePlayed": "12:09:13.9557291",
       "lastVisitedTalents": 1
     },
     {
@@ -6795,7 +6961,7 @@
         "race": "Forsaken",
         "spec": "Priest",
         "gender": "Female",
-        "homeLocation": "Shadow Grave",
+        "homeLocation": "Brill",
         "abilities": {
           "Staff Proficiency": 1,
           "Cloth Proficiency": 1,
@@ -6920,9 +7086,9 @@
         }
       },
       "hour": 7,
-      "minute": 8,
-      "second": 24,
-      "currentSite": "Undercity",
+      "minute": 12,
+      "second": 36,
+      "currentSite": "Brill",
       "ringOfLaw": "Ok'thor the Breaker",
       "forlornCloister": "Ironspine",
       "openedChests": {},
@@ -6932,10 +7098,10 @@
       "elitesKilled": {},
       "siteVisits": {
         "Shadow Grave": 1,
-        "Undercity": 7,
+        "Undercity": 10,
         "The Ruins of Lordaeron": 0,
         "Capital City Gates": 0,
-        "Brill": 3
+        "Brill": 4
       },
       "unlockedAreas": [],
       "vendorStock": {
@@ -7914,9 +8080,9 @@
         "ignoreSpaceChecks": true
       },
       "startDate": "2024-06-21T22:12:22.0553053+02:00",
-      "lastLoaded": "2024-06-22T19:37:34.9316364+02:00",
-      "lastPlayed": "2024-06-22T19:37:39.2793276+02:00",
-      "timePlayed": "00:04:04.2722824",
+      "lastLoaded": "2024-06-23T04:28:44.5545483+02:00",
+      "lastPlayed": "2024-06-23T04:30:57.6703404+02:00",
+      "timePlayed": "00:06:53.4541957",
       "lastVisitedTalents": 2
     }
   ]
