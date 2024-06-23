@@ -19,6 +19,8 @@ public class Person
         if (itemsSold != null)
             foreach (var stockItem in itemsSold)
                 stockItem.Initialise();
+        if (new List<string> { "GoblinFemale", "HighElfMale", "HighElfFemale", "Broken" }.Contains(race + gender)) voiceVariant = 1;
+        else voiceVariant = Root.random.Next(1, 4);
     }
 
     //Name of the person
@@ -28,7 +30,7 @@ public class Person
     public string gender;
 
     //Variant of the voice of the character
-    public string voiceVariant;
+    public int voiceVariant;
 
     //Race of the person
     public string race;
@@ -56,7 +58,7 @@ public class Person
     //Play a sound by this vendor
     public string VoiceLine(string type)
     {
-        return race + gender + 1 + type;
+        return race + gender + voiceVariant + type;
     }
 
     //Currently opened person
