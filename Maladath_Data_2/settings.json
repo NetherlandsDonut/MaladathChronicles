@@ -1,7 +1,7 @@
 {
   "selectedRealm": "Whitemane",
   "selectedRealmRanking": "Whitemane",
-  "selectedCharacter": "Shyl'las",
+  "selectedCharacter": "Allesha",
   "pixelPerfectVision": {
     "value": "False"
   },
@@ -9,7 +9,7 @@
     "value": "False"
   },
   "soundEffects": {
-    "value": "False"
+    "value": "True"
   },
   "rarityIndicators": {
     "value": "False"

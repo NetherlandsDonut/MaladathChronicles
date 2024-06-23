@@ -848,7 +848,7 @@ public static class Root
         {
             AddRegionGroup();
             SetRegionGroupWidth(600);
-            SetRegionGroupHeight(242);
+            SetRegionGroupHeight(243);
             AddPaddingRegion(() =>
             {
                 SetRegionBackground(ChartBackground);
@@ -861,7 +861,7 @@ public static class Root
             AddRegionGroup();
             var left = 600 - temp;
             SetRegionGroupWidth((int)Math.Floor(left / 2.0));
-            SetRegionGroupHeight(242);
+            SetRegionGroupHeight(243);
             AddPaddingRegion(() =>
             {
                 SetRegionBackground(ChartBackground);
@@ -869,7 +869,7 @@ public static class Root
             });
             AddRegionGroup();
             SetRegionGroupWidth(temp);
-            SetRegionGroupHeight(242);
+            SetRegionGroupHeight(243);
             AddPaddingRegion(() =>
             {
                 SetRegionAsGroupExtender();
@@ -886,7 +886,7 @@ public static class Root
             iconRow = CDesktop.LBWindow.LBRegionGroup.LBRegion;
             AddRegionGroup();
             SetRegionGroupWidth((int)Math.Ceiling(left / 2.0));
-            SetRegionGroupHeight(261);
+            SetRegionGroupHeight(262);
             AddPaddingRegion(() =>
             {
                 SetRegionBackground(ChartBackground);

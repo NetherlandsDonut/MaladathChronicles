@@ -2387,9 +2387,9 @@ public class Blueprint
 
         //Combat Results
         new("CombatResults", () => {
-            SetAnchor(Center);
+            SetAnchor(Center, 0, 11);
             AddRegionGroup();
-            SetRegionGroupWidth(200);
+            SetRegionGroupWidth(262);
             SetRegionGroupHeight(113);
             AddHeaderRegion(() =>
             {
@@ -2502,13 +2502,49 @@ public class Blueprint
                 }
             );
         }),
+        new("CombatResultsSkinning", () => {
+            if (board.results.result != "Won") return;
+            if (board.results.skinningNode.Item1 == null) return;
+            if (board.results.skinningLoot.items.Count == 0) return;
+            SetAnchor(Bottom, 0, 35);
+            AddRegionGroup();
+            SetRegionGroupWidth(186);
+            AddHeaderRegion(() =>
+            {
+                AddLine("Skinning");
+                AddSmallButton("TradeSkinning");
+            });
+            var can = currentSave.player.professionSkills.ContainsKey("Skinning") && board.results.skinningNode.Item2 <= currentSave.player.professionSkills["Skinning"].Item1;
+            AddPaddingRegion(() =>
+            {
+                var drop = GeneralDrop.generalDrops.Find(x => x.category == board.results.skinningNode.Item1 && x.tags.Contains("Main"));
+                var item = items.Find(x => x.name == drop.item);
+                AddLine(item.name);
+                AddLine("Required skill: ", "DarkGray");
+                AddText("" + board.results.skinningNode.Item2, can ? "Gray" : "DangerousRed");
+                AddBigButton(item.icon);
+            });
+            if (can)
+            {
+                AddButtonRegion(() =>
+                {
+                    AddLine("Gather");
+                },
+                (h) =>
+                {
+                    PlaySound("SkinGather" + random.Next(1, 4));
+                    SpawnDesktopBlueprint("SkinningLoot");
+                });
+            }
+            else AddPaddingRegion(() => AddLine("Gather", "DarkGray"));
+        }),
         new("CombatResultsMining", () => {
             if (board.results.result != "Won") return;
             if (board.results.miningNode.Item1 == null) return;
             if (board.results.miningLoot.items.Count == 0) return;
-            SetAnchor(TopLeft, 19, -141);
+            SetAnchor(BottomLeft, 19, 35);
             AddRegionGroup();
-            SetRegionGroupWidth(181);
+            SetRegionGroupWidth(188);
             AddHeaderRegion(() =>
             {
                 AddLine("Mining");
@@ -2559,9 +2595,9 @@ public class Blueprint
             if (board.results.result != "Won") return;
             if (board.results.herb.Item1 == null) return;
             if (board.results.herbalismLoot.items.Count == 0) return;
-            SetAnchor(TopRight, -19, -141);
+            SetAnchor(BottomRight, -19, 35);
             AddRegionGroup();
-            SetRegionGroupWidth(181);
+            SetRegionGroupWidth(188);
             AddHeaderRegion(() =>
             {
                 AddLine("Herbalism");
@@ -2608,6 +2644,25 @@ public class Blueprint
                 SpawnFallingText(new Vector2(0, 34), "Herbalism increased to " + (s.Item1 + 1), "Blue");
             }
         }),
+        new("SkinningLoot", () => {
+            SetAnchor(-92, -105);
+            AddRegionGroup();
+            SetRegionGroupWidth(182);
+            AddPaddingRegion(
+                () =>
+                {
+                    for (int j = 0; j < 4 && j < board.results.skinningLoot.items.Count; j++)
+                        PrintLootItem(board.results.skinningLoot.items[j]);
+                }
+            );
+            var s = currentSave.player.professionSkills["Skinning"];
+            if (!board.results.skinningSkillChange && board.results.skinningNode.Item2 + 50 >= s.Item1 && s.Item1 < professions.Find(x => x.name == "Skinning").levels.FindAll(x => s.Item2.Contains(x.name)).Max(x => x.maxSkill))
+            {
+                board.results.skinningSkillChange = true;
+                currentSave.player.professionSkills["Skinning"] = (s.Item1 + 1, s.Item2);
+                SpawnFallingText(new Vector2(0, 34), "Skinning increased to " + (s.Item1 + 1), "Blue");
+            }
+        }),
         new("DisenchantLoot", () => {
             SetAnchor(-92, -105);
             AddRegionGroup();
@@ -2628,7 +2683,7 @@ public class Blueprint
             }
         }),
         new("CombatResultsChartButton", () => {
-            SetAnchor(-101, 58);
+            SetAnchor(-132, 69);
             DisableShadows();
             AddRegionGroup();
             AddHeaderRegion(() =>
@@ -2717,6 +2772,16 @@ public class Blueprint
                             PlaySound("DesktopInventoryClose");
                             CloseDesktop("HerbalismLoot");
                             Respawn("CombatResultsHerbalism");
+                        });
+                    }
+                    else if (CDesktop.title == "SkinningLoot")
+                    {
+                        AddLine(board.enemy.name + ":");
+                        AddSmallButton("OtherClose", (h) =>
+                        {
+                            PlaySound("DesktopInventoryClose");
+                            CloseDesktop("SkinningLoot");
+                            Respawn("CombatResultsSkinning");
                         });
                     }
                     else if (CDesktop.title == "DisenchantLoot")
@@ -3221,6 +3286,7 @@ public class Blueprint
                                     Person.person = person;
                                     CloseWindow(h.window.title);
                                     Respawn("Person");
+                                    PlayVoice(person.VoiceLine("Greeting"));
                                     PlaySound("DesktopInstanceOpen");
                                 });
                             }
@@ -3239,6 +3305,7 @@ public class Blueprint
                                 Person.person = person;
                                 CloseWindow(h.window.title);
                                 Respawn("Person");
+                                PlayVoice(person.VoiceLine("Greeting"));
                                 PlaySound("DesktopInstanceOpen");
                             });
                         }
@@ -3499,6 +3566,7 @@ public class Blueprint
                 {
                     if (!currentSave.vendorStock.ContainsKey(town.name + ":" + person.name) && person.itemsSold != null && person.itemsSold.Count > 0)
                         currentSave.vendorStock.Add(town.name + ":" + person.name, person.ExportStock());
+                    PlayVoice(person.VoiceLine("Vendor"));
                     PlaySound("DesktopInventoryOpen");
                     CloseWindow(h.window);
                     CloseWindow("Town");
@@ -3515,6 +3583,7 @@ public class Blueprint
             },
             (h) =>
             {
+                PlayVoice(person.VoiceLine("Farewell"));
                 PlaySound("DesktopInstanceClose");
                 person = null;
                 CloseWindow(h.window);
@@ -3554,6 +3623,7 @@ public class Blueprint
                     Respawn("Person");
                     CloseWindow("Persons");
                     CloseWindow("Town");
+                    PlayVoice(person.VoiceLine("Greeting"));
                     PlaySound("DesktopInstanceOpen");
                 });
             }
@@ -5476,6 +5546,7 @@ public class Blueprint
             SpawnWindowBlueprint("CombatResultsChartButton");
             SpawnWindowBlueprint("CombatResultsMining");
             SpawnWindowBlueprint("CombatResultsHerbalism");
+            SpawnWindowBlueprint("CombatResultsSkinning");
             SpawnWindowBlueprint("ExperienceBarBorder");
             SpawnWindowBlueprint("ExperienceBar");
         }),
@@ -5585,6 +5656,28 @@ public class Blueprint
                 PlaySound("DesktopInventoryClose");
                 CloseDesktop("HerbalismLoot");
                 Respawn("CombatResultsHerbalism");
+            });
+        }),
+        new("SkinningLoot", () =>
+        {
+            SetDesktopBackground(board.area.Background());
+            SpawnWindowBlueprint("MapToolbarShadow");
+            SpawnWindowBlueprint("MapToolbarClockLeft");
+            SpawnWindowBlueprint("MapToolbar");
+            SpawnWindowBlueprint("MapToolbarClockRight");
+            SpawnWindowBlueprint("MapToolbarStatusLeft");
+            SpawnWindowBlueprint("MapToolbarStatusRight");
+            SpawnWindowBlueprint("PlayerEquipmentInfo");
+            SpawnWindowBlueprint("LootInfo");
+            SpawnWindowBlueprint("SkinningLoot");
+            SpawnWindowBlueprint("Inventory");
+            SpawnWindowBlueprint("ExperienceBarBorder");
+            SpawnWindowBlueprint("ExperienceBar");
+            AddHotkey(Escape, () =>
+            {
+                PlaySound("DesktopInventoryClose");
+                CloseDesktop("SkinningLoot");
+                Respawn("CombatResultsSkinning");
             });
         }),
         new("ChestLoot", () => 
@@ -5759,7 +5852,7 @@ public class Blueprint
                     CloseWindow("Chest");
                     PlaySound("DesktopButtonClose");
                     SetDesktopBackground(instance.Background());
-                    SetDesktopBackground(wing.Background());
+                    if (wing != null) SetDesktopBackground(wing.Background());
                     SpawnWindowBlueprint("InstanceQuestAvailable");
                 }
                 else if (CloseWindow("InstanceWing"))

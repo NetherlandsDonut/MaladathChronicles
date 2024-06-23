@@ -35,8 +35,28 @@
     "category": "Vendor"
   },
   {
+    "type": "Engineering Supplies & General Goods",
+    "icon": "TradeEngineering",
+    "category": "Vendor"
+  },
+  {
+    "type": "Engineering & Mining Supplies",
+    "icon": "TradeEngineering",
+    "category": "Vendor"
+  },
+  {
+    "type": "Engineering Supplies",
+    "icon": "TradeEngineering",
+    "category": "Vendor"
+  },
+  {
     "type": "Leatherworking Supplies",
     "icon": "TradeLeatherworking",
+    "category": "Vendor"
+  },
+  {
+    "type": "Enchanting Supplies",
+    "icon": "TradeEnchanting",
     "category": "Vendor"
   },
   {

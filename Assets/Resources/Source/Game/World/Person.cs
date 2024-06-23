@@ -27,6 +27,9 @@ public class Person
     //Gender of the person
     public string gender;
 
+    //Variant of the voice of the character
+    public string voiceVariant;
+
     //Race of the person
     public string race;
 
@@ -51,10 +54,9 @@ public class Person
     }
 
     //Play a sound by this vendor
-    public string VendorSound(bool welcome)
+    public string VoiceLine(string type)
     {
-        //BASE IT ON RACE AND BOOL
-        return "nosound";
+        return race + gender + 1 + type;
     }
 
     //Currently opened person

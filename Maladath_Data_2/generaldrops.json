@@ -76,12 +76,13 @@
     "requiredSkill": 1,
     "item": "Ruined Leather Scraps",
     "rarity": 50.0,
-    "category": "Beast",
+    "category": "Light Leather",
     "dropStart": 6,
     "dropEnd": 13,
     "dropCount": 2,
     "tags": [
-      "Leather"
+      "Leather",
+      "CommonMaterial"
     ]
   },
   {
@@ -89,11 +90,12 @@
     "requiredSkill": 50,
     "item": "Light Leather",
     "rarity": 50.0,
-    "category": "Beast",
+    "category": "Light Leather",
     "dropStart": 6,
     "dropEnd": 17,
     "dropCount": 2,
     "tags": [
+      "Main",
       "Leather",
       "CommonMaterial"
     ]
@@ -103,12 +105,12 @@
     "requiredSkill": 50,
     "item": "Light Hide",
     "rarity": 10.0,
-    "category": "Beast",
+    "category": "Light Leather",
     "dropStart": 11,
     "dropEnd": 25,
     "dropCount": 2,
     "tags": [
-      "Leather",
+      "Hide",
       "CommonMaterial"
     ]
   },
@@ -117,11 +119,12 @@
     "requiredSkill": 105,
     "item": "Medium Leather",
     "rarity": 50.0,
-    "category": "Beast",
+    "category": "Medium Leather",
     "dropStart": 16,
     "dropEnd": 35,
     "dropCount": 2,
     "tags": [
+      "Main",
       "Leather",
       "CommonMaterial"
     ]
@@ -131,12 +134,12 @@
     "requiredSkill": 105,
     "item": "Medium Hide",
     "rarity": 10.0,
-    "category": "Beast",
+    "category": "Medium Leather",
     "dropStart": 16,
     "dropEnd": 35,
     "dropCount": 2,
     "tags": [
-      "Leather",
+      "Hide",
       "CommonMaterial"
     ]
   },
@@ -145,11 +148,12 @@
     "requiredSkill": 150,
     "item": "Heavy Leather",
     "rarity": 50.0,
-    "category": "Beast",
+    "category": "Heavy Leather",
     "dropStart": 25,
     "dropEnd": 45,
     "dropCount": 2,
     "tags": [
+      "Main",
       "Leather",
       "CommonMaterial"
     ]
@@ -159,12 +163,12 @@
     "requiredSkill": 150,
     "item": "Heavy Hide",
     "rarity": 10.0,
-    "category": "Beast",
+    "category": "Heavy Leather",
     "dropStart": 25,
     "dropEnd": 45,
     "dropCount": 2,
     "tags": [
-      "Leather",
+      "Hide",
       "CommonMaterial"
     ]
   },
@@ -173,11 +177,12 @@
     "requiredSkill": 200,
     "item": "Thick Leather",
     "rarity": 50.0,
-    "category": "Beast",
+    "category": "Thick Leather",
     "dropStart": 36,
     "dropEnd": 60,
     "dropCount": 2,
     "tags": [
+      "Main",
       "Leather",
       "CommonMaterial"
     ]
@@ -187,12 +192,12 @@
     "requiredSkill": 200,
     "item": "Thick Hide",
     "rarity": 10.0,
-    "category": "Beast",
+    "category": "Thick Leather",
     "dropStart": 40,
     "dropEnd": 60,
     "dropCount": 2,
     "tags": [
-      "Leather",
+      "Hide",
       "CommonMaterial"
     ]
   },
@@ -201,11 +206,12 @@
     "requiredSkill": 250,
     "item": "Rugged Leather",
     "rarity": 50.0,
-    "category": "Beast",
+    "category": "Rugged Leather",
     "dropStart": 46,
     "dropEnd": 60,
     "dropCount": 2,
     "tags": [
+      "Main",
       "Leather",
       "CommonMaterial"
     ]
@@ -215,13 +221,41 @@
     "requiredSkill": 250,
     "item": "Rugged Hide",
     "rarity": 10.0,
-    "category": "Beast",
+    "category": "Rugged Leather",
     "dropStart": 46,
     "dropEnd": 60,
     "dropCount": 2,
     "tags": [
-      "Leather",
+      "Hide",
       "CommonMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Skinning",
+    "requiredSkill": 300,
+    "item": "Scale of Onyxia",
+    "rarity": 100.0,
+    "category": "Onyxia",
+    "dropStart": 60,
+    "dropEnd": 60,
+    "dropCount": 8,
+    "tags": [
+      "Main",
+      "Scale"
+    ]
+  },
+  {
+    "requiredProfession": "Skinning",
+    "requiredSkill": 300,
+    "item": "Pristine Hide of the Beast",
+    "rarity": 100.0,
+    "category": "The Beast",
+    "dropStart": 60,
+    "dropEnd": 60,
+    "dropCount": 1,
+    "tags": [
+      "Main",
+      "Hide"
     ]
   },
   {

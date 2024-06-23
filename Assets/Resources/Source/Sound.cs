@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-
+using System.Linq;
 using UnityEngine;
 
 using static GameSettings;
@@ -15,6 +15,16 @@ public static class Sound
         if (!settings.soundEffects.Value() || soundsPlayedThisFrame > 5) return;
         if (!sounds.ContainsKey(path)) return;
         soundEffects.PlayOneShot(sounds[path], volume);
+        soundsPlayedThisFrame++;
+    }
+
+    //Plays a singular sound effect
+    public static void PlayVoice(string path, float volume = 0.5f)
+    {
+        if (!settings.soundEffects.Value() || soundsPlayedThisFrame > 5) return;
+        var find = sounds.Where(x => x.Key.StartsWith(path));
+        if (find.Count() == 0) return;
+        soundEffects.PlayOneShot(find.ToList()[Root.random.Next(find.Count())].Value, volume);
         soundsPlayedThisFrame++;
     }
 

@@ -845,6 +845,22 @@ public class Item
                             Respawn("HerbalismLoot");
                         }
                     }
+                    else if (CDesktop.title == "SkinningLoot")
+                    {
+                        //PlaySound("SkinGather" + random.Next(1, 4));
+                        currentSave.player.inventory.AddItem(item);
+                        Board.board.results.skinningLoot.items.Remove(item);
+                        if (Board.board.results.skinningLoot.items.Count == 0)
+                        {
+                            CloseDesktop("SkinningLoot");
+                            Respawn("CombatResultsSkinning");
+                        }
+                        else
+                        {
+                            Respawn("Inventory");
+                            Respawn("SkinningLoot");
+                        }
+                    }
                     else if (CDesktop.title == "DisenchantLoot")
                     {
                         currentSave.player.inventory.AddItem(item);
@@ -903,7 +919,7 @@ public class Item
             AddBigButtonOverlay(settings.newSlotIndicators.Value() ? "OtherItemNewSlot" : "OtherItemUpgrade", 0, 2);
         else if (settings.upgradeIndicators.Value() && item.CanEquip(currentSave.player) && currentSave.player.IsItemAnUpgrade(item))
             AddBigButtonOverlay("OtherItemUpgrade", 0, 2);
-        if (item.maxStack > 1) SpawnFloatingText(CDesktop.LBWindow.LBRegionGroup.LBRegion.transform.position + new Vector3(32, -27) + new Vector3(38, 0) * (CDesktop.title == "ChestLoot" ? currentSave.openedChests[SiteHostileArea.area.name].inventory : (CDesktop.title == "MiningLoot" ? Board.board.results.miningLoot : (CDesktop.title == "HerbalismLoot" ? Board.board.results.herbalismLoot : (CDesktop.title == "DisenchantLoot" ? disenchantLoot : Board.board.results.inventory)))).items.IndexOf(item), item.amount + "", "", "Right");
+        if (item.maxStack > 1) SpawnFloatingText(CDesktop.LBWindow.LBRegionGroup.LBRegion.transform.position + new Vector3(32, -27) + new Vector3(38, 0) * (CDesktop.title == "ChestLoot" ? currentSave.openedChests[SiteHostileArea.area.name].inventory : (CDesktop.title == "MiningLoot" ? Board.board.results.miningLoot : (CDesktop.title == "HerbalismLoot" ? Board.board.results.herbalismLoot : (CDesktop.title == "DisenchantLoot" ? disenchantLoot : (CDesktop.title == "SkinningLoot" ? Board.board.results.skinningLoot : Board.board.results.inventory))))).items.IndexOf(item), item.amount + "", "", "Right");
     }
 
     public static void PrintItemTooltip(Item item, bool compare = false, double priceMultiplier = 1)

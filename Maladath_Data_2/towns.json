@@ -91,6 +91,118 @@
     "zone": "Western Plaguelands"
   },
   {
+    "people": [
+      {
+        "name": "Zan Shivsproket",
+        "gender": "Male",
+        "race": "Gnome",
+        "type": "Engineering Supplies",
+        "itemsSold": [
+        {
+          "item": "Weak Flux",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Mining Pick",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Strong Flux",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Rough Blasting Powder",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Copper Tube",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Copper Modulator",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Coarse Blasting Powder",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Bronze Tube",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Bronze Framework",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Gyrochronatom",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Wooden Stock",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Heavy Stock",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Silver Contact",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Blacksmith Hammer",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Schematic: Gnomish Cloaking Device",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Engineer's Ink",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Blank Parchment",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        }
+        ]
+      }
+    ],
     "x": 5388,
     "y": -1666,
     "name": "Ravenholdt Manor",
@@ -329,6 +441,178 @@
         "gender": "Male",
         "race": "Human",
         "type": "Auctioneer"
+      },
+      {
+        "name": "Billibub Cogspinner",
+        "gender": "Male",
+        "race": "Gnome",
+        "type": "Engineering Supplies",
+        "itemsSold": [
+        {
+          "item": "Weak Flux",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Mining Pick",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Strong Flux",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Rough Blasting Powder",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Copper Tube",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Copper Modulator",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Coarse Blasting Powder",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Bronze Tube",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Bronze Framework",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Gyrochronatom",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Wooden Stock",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Heavy Stock",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Silver Contact",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Blacksmith Hammer",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Engineer's Ink",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Blank Parchment",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        }
+        ]
+      },
+      {
+        "name": "Jessara Cordell",
+        "gender": "Female",
+        "race": "Human",
+        "type": "Enchanting Supplies",
+        "itemsSold": [
+        {
+          "item": "Simple Wood",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Copper Rod",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Formula: Enchant Chest - Minor Mana",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Lesser Magic Essence",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Strange Dust",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Star Wood",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Formula: Minor Mana Oil",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Formula: Lesser Wizard Oil",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Formula: Minor Wizard Oil",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Pattern: Enchanted Mageweave Pouch",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        }
+        ]
       },
       {
         "name": "Alexandra Bolero",
@@ -2325,6 +2609,116 @@
         "type": "Expert Blacksmith"
       },
       {
+        "name": "Herble Baubbletump",
+        "gender": "Male",
+        "race": "Gnome",
+        "type": "Engineering & Mining Supplies",
+        "itemsSold": [
+        {
+          "item": "Weak Flux",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Mining Pick",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Strong Flux",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Coal",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Rough Blasting Powder",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Copper Tube",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Copper Modulator",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Coarse Blasting Powder",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Bronze Tube",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Bronze Framework",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Gyrochronatom",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Wooden Stock",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Heavy Stock",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Silver Contact",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Blacksmith Hammer",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Engineer's Ink",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Blank Parchment",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        }
+        ]
+      },
+      {
         "name": "Sheri Zipstitch",
         "gender": "Female",
         "race": "Human",
@@ -3258,6 +3652,200 @@
         "type": "Fisherman"
       },
       {
+        "name": "Neal Allen",
+        "gender": "Male",
+        "race": "Human",
+        "type": "Engineering Supplies & General Goods",
+        "itemsSold": [
+        {
+          "item": "Refreshing Spring Water",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Ice Cold Milk",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Melon Juice",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Sharp Arrow",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Heavy Shot",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Weak Flux",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Mining Pick",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Razor Arrow",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Solid Shot",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Keen Throwing Knife",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Heavy Throwing Dagger",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Sharp Throwing Axe",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Deadly Throwing Axe",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Strong Flux",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Rough Blasting Powder",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Copper Tube",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Copper Modulator",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Coarse Blasting Powder",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Bronze Tube",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Bronze Framework",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Gyrochronatom",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Wooden Stock",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Heavy Stock",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Silver Contact",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Simple Wood",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Flint and Tinder",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Heavy Brown Bag",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Brown Leather Satchel",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Blacksmith Hammer",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Engineer's Ink",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Blank Parchment",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        }
+        ]
+      },
+      {
         "name": "Jennabink Powerseam",
         "gender": "Female",
         "race": "Gnome",
@@ -3685,6 +4273,116 @@
         "gender": "Male",
         "race": "Orc",
         "type": "Flight Master"
+      },
+      {
+        "name": "Yuka Screwspigot",
+        "gender": "Female",
+        "race": "Goblin",
+        "type": "Engineering Supplies",
+        "itemsSold": [
+        {
+          "item": "Weak Flux",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Mining Pick",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Strong Flux",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Rough Blasting Powder",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Copper Tube",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Copper Modulator",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Coarse Blasting Powder",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Bronze Tube",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Bronze Framework",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Gyrochronatom",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Wooden Stock",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Heavy Stock",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Silver Contact",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Blacksmith Hammer",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Schematic: Deadly Scope",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Engineer's Ink",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Blank Parchment",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        }
+        ]
       }
     ],
     "x": 5510,
@@ -4177,6 +4875,74 @@
         "gender": "Male",
         "race": "Night Elf",
         "type": "Auctioneer"
+      },
+      {
+        "name": "Vaean",
+        "gender": "Male",
+        "race": "Night Elf",
+        "type": "Enchanting Supplies",
+        "itemsSold": [
+        {
+          "item": "Simple Wood",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Copper Rod",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Formula: Enchant Chest - Minor Mana",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Lesser Magic Essence",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Strange Dust",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Star Wood",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Formula: Minor Mana Oil",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Formula: Lesser Wizard Oil",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Formula: Minor Wizard Oil",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Pattern: Enchanted Mageweave Pouch",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        }
+        ]
       },
       {
         "name": "Mythrin'dir",
@@ -7279,6 +8045,208 @@
         "type": "Auctioneer"
       },
       {
+        "name": "Gearcutter Cogspinner",
+        "gender": "Male",
+        "race": "Gnome",
+        "type": "Engineering Supplies",
+        "itemsSold": [
+        {
+          "item": "Weak Flux",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Mining Pick",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Strong Flux",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Rough Blasting Powder",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Copper Tube",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Copper Modulator",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Coarse Blasting Powder",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Bronze Tube",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Bronze Framework",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Gyrochronatom",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Wooden Stock",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Heavy Stock",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Silver Contact",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Blacksmith Hammer",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Schematic: Gnomish Universal Remote",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Engineer's Ink",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Blank Parchment",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Schematic: Thorium Grenade",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Schematic: Thorium Widget",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Schematic: Blue Firework",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        }
+        ]
+      },
+      {
+        "name": "Tilli Thistlefuzz",
+        "gender": "Female",
+        "race": "Gnome",
+        "type": "Enchanting Supplies",
+        "itemsSold": [
+        {
+          "item": "Simple Wood",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Copper Rod",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Formula: Enchant Chest - Minor Mana",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Formula: Enchant 2H Weapon - Lesser Intellect",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Lesser Magic Essence",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Strange Dust",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Star Wood",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Formula: Minor Mana Oil",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Formula: Lesser Wizard Oil",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Formula: Minor Wizard Oil",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Pattern: Enchanted Mageweave Pouch",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        }
+        ]
+      },
+      {
         "name": "Poranna Snowbraid",
         "gender": "Female",
         "race": "Dwarf",
@@ -8402,6 +9370,110 @@
         "type": "Journeyman Engineer"
       },
       {
+        "name": "Loslor Rudge",
+        "gender": "Male",
+        "race": "Dwarf",
+        "type": "Engineering Supplies",
+        "itemsSold": [
+        {
+          "item": "Weak Flux",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Mining Pick",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Strong Flux",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Rough Blasting Powder",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Copper Tube",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Copper Modulator",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Coarse Blasting Powder",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Bronze Tube",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Bronze Framework",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Gyrochronatom",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Wooden Stock",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Heavy Stock",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Silver Contact",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Blacksmith Hammer",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Engineer's Ink",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Blank Parchment",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        }
+        ]
+      },
+      {
         "name": "Golorn Frostbeard",
         "gender": "Male",
         "race": "Dwarf",
@@ -8771,6 +9843,208 @@
         "gender": "Male",
         "race": "Orc",
         "type": "Auctioneer"
+      },
+      {
+        "name": "Sovik",
+        "gender": "Male",
+        "race": "Orc",
+        "type": "Engineering Supplies",
+        "itemsSold": [
+        {
+          "item": "Weak Flux",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Mining Pick",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Strong Flux",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Rough Blasting Powder",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Copper Tube",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Copper Modulator",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Coarse Blasting Powder",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Bronze Tube",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Bronze Framework",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Gyrochronatom",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Wooden Stock",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Heavy Stock",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Silver Contact",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Blacksmith Hammer",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Engineer's Ink",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Blank Parchment",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Schematic: Thorium Grenade",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Schematic: Thorium Widget",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Schematic: Red Firework",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        }
+        ]
+      },
+      {
+        "name": "Kithas",
+        "gender": "Female",
+        "race": "Orc",
+        "type": "Enchanting Supplies",
+        "itemsSold": [
+        {
+          "item": "Simple Wood",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Copper Rod",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Formula: Enchant Chest - Minor Mana",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Formula: Enchant Chest - Lesser Mana",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Formula: Enchant 2H Weapon - Lesser Intellect",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Lesser Magic Essence",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Strange Dust",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Star Wood",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Formula: Minor Mana Oil",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Formula: Lesser Wizard Oil",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Formula: Minor Wizard Oil",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Pattern: Enchanted Mageweave Pouch",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        }
+        ]
       },
       {
         "name": "Borya",
@@ -10404,7 +11678,7 @@
       },
       {
         "name": "Breyk",
-        "gender": "male",
+        "gender": "Male",
         "race": "Orc",
         "type": "Flight Master"
       },
@@ -11418,6 +12692,86 @@
         "gender": "Male",
         "race": "Tauren",
         "type": "Auctioneer"
+      },
+      {
+        "name": "Nata Dawnstrider",
+        "gender": "Female",
+        "race": "Tauren",
+        "type": "Enchanting Supplies",
+        "itemsSold": [
+        {
+          "item": "Simple Wood",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Copper Rod",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Formula: Enchant Chest - Minor Mana",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Formula: Enchant 2H Weapon - Lesser Intellect",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Formula: Enchant Boots - Minor Agility",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Lesser Magic Essence",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Strange Dust",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Star Wood",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Formula: Minor Mana Oil",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Formula: Lesser Wizard Oil",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Formula: Minor Wizard Oil",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Pattern: Enchanted Mageweave Pouch",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        }
+        ]
       },
       {
         "name": "Shadi Mistrunner",
@@ -12592,7 +13946,7 @@
         "name": "Yonada",
         "gender": "Female",
         "race": "Tauren",
-        "type": "Tailoring & Leatherworking Supplies",
+        "type": "Leatherworking & Tailoring Supplies",
         "itemsSold": [
         {
           "item": "Coarse Thread",
@@ -13473,6 +14827,178 @@
         "gender": "Female",
         "race": "Forsaken",
         "type": "Auctioneer"
+      },
+      {
+        "name": "Elizabeth Van Talen",
+        "gender": "Female",
+        "race": "Forsaken",
+        "type": "Engineering Supplies",
+        "itemsSold": [
+        {
+          "item": "Weak Flux",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Mining Pick",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Strong Flux",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Rough Blasting Powder",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Copper Tube",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Copper Modulator",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Coarse Blasting Powder",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Bronze Tube",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Bronze Framework",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Gyrochronatom",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Wooden Stock",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Heavy Stock",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Silver Contact",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Blacksmith Hammer",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Engineer's Ink",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Blank Parchment",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        }
+        ]
+      },
+      {
+        "name": "Thaddeus Webb",
+        "gender": "Male",
+        "race": "Forsaken",
+        "type": "Enchanting Supplies",
+        "itemsSold": [
+        {
+          "item": "Simple Wood",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Copper Rod",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Formula: Enchant Chest - Minor Mana",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Lesser Magic Essence",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Strange Dust",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Star Wood",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Formula: Minor Mana Oil",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Formula: Lesser Wizard Oil",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Formula: Minor Wizard Oil",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Pattern: Enchanted Mageweave Pouch",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        }
+        ]
       },
       {
         "name": "Millie Gregorian",
@@ -15328,6 +16854,86 @@
         "type": "Journeyman Blacksmith"
       },
       {
+        "name": "Lilly",
+        "gender": "Female",
+        "race": "Forsaken",
+        "type": "Enchanting Supplies",
+        "itemsSold": [
+        {
+          "item": "Simple Wood",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Copper Rod",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Formula: Enchant Chest - Minor Mana",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Formula: Enchant Chest - Lesser Mana",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Lesser Magic Essence",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Strange Dust",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Star Wood",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Formula: Minor Mana Oil",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Formula: Lesser Wizard Oil",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Formula: Minor Wizard Oil",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Formula: Enchant 2H Weapon - Lesser Intellect",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Pattern: Enchanted Mageweave Pouch",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        }
+      ]
+      },
+      {
         "name": "Andrew Hilbert",
         "gender": "Male",
         "race": "Forsaken",
@@ -15499,6 +17105,104 @@
         "gender": "Male",
         "race": "Night Elf",
         "type": "Stable Master"
+      },
+      {
+        "name": "Kania",
+        "gender": "Female",
+        "race": "Night Elf",
+        "type": "Enchanting Supplies",
+        "itemsSold": [
+        {
+          "item": "Simple Wood",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Copper Rod",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Formula: Enchant Chest - Minor Mana",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Lesser Magic Essence",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Strange Dust",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Star Wood",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Formula: Enchant Cloak - Greater Fire Resistance",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Formula: Enchant Cloak - Greater Nature Resistance",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Formula: Minor Mana Oil",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Formula: Lesser Wizard Oil",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Formula: Lesser Mana Oil",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Formula: Wizard Oil",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Formula: Minor Wizard Oil",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Pattern: Enchanted Mageweave Pouch",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Pattern: Enchanted Runecloth Bag",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        }
+        ]
       },
       {
         "name": "Mishta",
@@ -16496,6 +18200,140 @@
         "type": "Auctioneer"
       },
       {
+        "name": "Xizzer Fizzbolt",
+        "gender": "Male",
+        "race": "Goblin",
+        "type": "Engineering Supplies",
+        "itemsSold": [
+        {
+          "item": "Weak Flux",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Mining Pick",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Strong Flux",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Rough Blasting Powder",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Copper Tube",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Copper Modulator",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Coarse Blasting Powder",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Bronze Tube",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Bronze Framework",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Gyrochronatom",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Wooden Stock",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Heavy Stock",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Silver Contact",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Blacksmith Hammer",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Engineer's Ink",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Blank Parchment",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Schematic: Masterwork Target Dummy",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Schematic: Thorium Tube",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Schematic: Delicate Arcanite Converter",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Schematic: Gyrofreeze Ice Reflector",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Schematic: Powerful Seaforium Charge",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        }
+        ]
+      },
+      {
         "name": "Qia",
         "gender": "Female",
         "race": "Goblin",
@@ -17182,10 +19020,121 @@
         "type": "Master Goblin Engineer"
       },
       {
+        "name": "Gagsprocket",
+        "gender": "Male",
+        "race": "Goblin",
+        "type": "Engineering Supplies",
+        "itemsSold": [
+        {
+          "item": "Weak Flux",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Mining Pick",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Strong Flux",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Rough Blasting Powder",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Copper Tube",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Copper Modulator",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Coarse Blasting Powder",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Bronze Tube",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Bronze Framework",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Gyrochronatom",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Wooden Stock",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Heavy Stock",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Silver Contact",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Blacksmith Hammer",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Engineer's Ink",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Blank Parchment",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Schematic: Green Firework",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        }
+        ]
+      },
+      {
         "name": "Ranik",
         "gender": "Male",
         "race": "Goblin",
-        "type": "Trade Supplies","itemsSold": [
+        "type": "Trade Supplies",
+        "itemsSold": [
         {
           "item": "Coarse Thread",
           "amount": 2,
@@ -17395,6 +19344,122 @@
         "gender": "Male",
         "race": "Goblin",
         "type": "Auctioneer"
+      },
+      {
+        "name": "Mazk Snipeshot",
+        "gender": "Male",
+        "race": "Goblin",
+        "type": "Engineering Supplies",
+        "itemsSold": [
+        {
+          "item": "Weak Flux",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Mining Pick",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Strong Flux",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Rough Blasting Powder",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Copper Tube",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Copper Modulator",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Coarse Blasting Powder",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Bronze Tube",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Bronze Framework",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Gyrochronatom",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Wooden Stock",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Heavy Stock",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Silver Contact",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Blacksmith Hammer",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Engineer's Ink",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Blank Parchment",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Schematic: Accurate Scope",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Schematic: Truesilver Transformer",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        }
+        ]
       },
       {
         "name": "Xizk Goodstitch",
@@ -17704,7 +19769,7 @@
         "name": "Zannok Hidepiercer",
         "gender": "Male",
         "race": "Night Elf",
-        "type": "Superior Leatherworker",
+        "type": "Leatherworking Supplies",
         "itemsSold": [
         {
           "item": "Coarse Thread",
@@ -17836,7 +19901,7 @@
         "name": "Masat T'andr",
         "gender": "Male",
         "race": "Broken",
-        "type": "Superior Leatherworker",
+        "type": "Leatherworking Supplies",
         "itemsSold": [
         {
           "item": "Coarse Thread",

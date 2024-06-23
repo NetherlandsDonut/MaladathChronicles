@@ -10,6 +10,7 @@ public class CombatResults
         this.result = result;
         inventory = new(true);
         exclusiveItems = new();
+        GenerateSkinningNode(level);
         GenerateMiningNode(zone, level);
         GenerateHerb(zone, level);
     }
@@ -19,6 +20,39 @@ public class CombatResults
 
     //Amount of experience awarded to the player
     public int experience;
+
+    public (string, int) skinningNode;
+
+    public Inventory skinningLoot;
+
+    public bool skinningSkillChange;
+
+    public void GenerateSkinningNode(int level)
+    {
+        if (!new List<string> { "Beast", "Dragonkin" }.Contains(Board.board.enemy.Race().category)) return;
+        var possibleNodes = GeneralDrop.generalDrops.FindAll(y => y.requiredProfession == "Skinning" && y.tags.Contains("Main")).ToList();
+        possibleNodes.RemoveAll(x => !x.DoesLevelFit(level));
+        if (possibleNodes.Count > 0)
+        {
+            var common = possibleNodes.Where(x => x.tags.Contains("CommonMaterial")).ToList();
+            var rare = possibleNodes.Where(x => x.tags.Contains("RareMaterial")).ToList();
+            GeneralDrop r = null;
+            if (possibleNodes.Any(x => x.category == Board.board.enemy.name)) r = possibleNodes.First(x => x.category == Board.board.enemy.name);
+            else if (rare.Count > 0 && Roll(possibleNodes.Count == 1 ? 5 : (possibleNodes.Count == 2 ? 4 : (possibleNodes.Count == 3 ? 3 : (possibleNodes.Count == 4 ? 2 : 1))))) r = rare[random.Next(rare.Count)];
+            else r = common[random.Next(common.Count)];
+            skinningNode = (r.category, r.requiredSkill);
+            var drops = GeneralDrop.generalDrops.FindAll(x => x.category == skinningNode.Item1 && x.DoesLevelFit(level));
+            skinningLoot = new Inventory(true);
+            if (drops.Count > 0)
+                foreach (var drop in drops)
+                    if (Roll(drop.rarity))
+                    {
+                        int amount = 1;
+                        for (int i = 1; i < drop.dropCount; i++) amount += Roll(50) ? 1 : 0;
+                        skinningLoot.AddItem(Item.items.Find(x => x.name == drop.item).CopyItem(amount));
+                    }
+        }
+    }
 
     public (string, int) miningNode;
 
@@ -40,17 +74,17 @@ public class CombatResults
             if (rare.Count > 0 && Roll(possibleNodes.Count == 1 ? 5 : (possibleNodes.Count == 2 ? 4 : (possibleNodes.Count == 3 ? 3 : (possibleNodes.Count == 4 ? 2 : 1))))) r = rare[random.Next(rare.Count)];
             else r = common[random.Next(common.Count)];
             miningNode = (r.category, r.requiredSkill);
+            var drops = GeneralDrop.generalDrops.FindAll(x => x.category == miningNode.Item1 && x.DoesLevelFit(level));
+            miningLoot = new Inventory(true);
+            if (drops.Count > 0)
+                foreach (var drop in drops)
+                    if (Roll(drop.rarity))
+                    {
+                        int amount = 1;
+                        for (int i = 1; i < drop.dropCount; i++) amount += Roll(50) ? 1 : 0;
+                        miningLoot.AddItem(Item.items.Find(x => x.name == drop.item).CopyItem(amount));
+                    }
         }
-        var drops = GeneralDrop.generalDrops.FindAll(x => x.category == miningNode.Item1 && x.DoesLevelFit(level));
-        miningLoot = new Inventory(true);
-        if (drops.Count > 0)
-            foreach (var drop in drops)
-                if (Roll(drop.rarity))
-                {
-                    int amount = 1;
-                    for (int i = 1; i < drop.dropCount; i++) amount += Roll(50) ? 1 : 0;
-                    miningLoot.AddItem(Item.items.Find(x => x.name == drop.item).CopyItem(amount));
-                }
     }
 
     public (string, int) herb;
@@ -73,17 +107,17 @@ public class CombatResults
             if (rare.Count > 0 && Roll(possibleNodes.Count == 1 ? 5 : (possibleNodes.Count == 2 ? 4 : (possibleNodes.Count == 3 ? 3 : (possibleNodes.Count == 4 ? 2 : 1))))) r = rare[random.Next(rare.Count)];
             else r = common[random.Next(common.Count)];
             herb = (r.category, r.requiredSkill);
+            var drops = GeneralDrop.generalDrops.FindAll(x => x.category == herb.Item1 && x.DoesLevelFit(level));
+            herbalismLoot = new Inventory(true);
+            if (drops.Count > 0)
+                foreach (var drop in drops)
+                    if (Roll(drop.rarity))
+                    {
+                        int amount = 1;
+                        for (int i = 1; i < drop.dropCount; i++) amount += Roll(50) ? 1 : 0;
+                        herbalismLoot.AddItem(Item.items.Find(x => x.name == drop.item).CopyItem(amount));
+                    }
         }
-        var drops = GeneralDrop.generalDrops.FindAll(x => x.category == herb.Item1 && x.DoesLevelFit(level));
-        herbalismLoot = new Inventory(true);
-        if (drops.Count > 0)
-            foreach (var drop in drops)
-                if (Roll(drop.rarity))
-                {
-                    int amount = 1;
-                    for (int i = 1; i < drop.dropCount; i++) amount += Roll(50) ? 1 : 0;
-                    herbalismLoot.AddItem(Item.items.Find(x => x.name == drop.item).CopyItem(amount));
-                }
     }
 
     //Dropped items from the enemy

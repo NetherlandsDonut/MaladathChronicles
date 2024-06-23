@@ -1875,8 +1875,8 @@
         "completedQuests": [
           40
         ],
-        "level": 18,
-        "experience": 10098,
+        "level": 19,
+        "experience": 398,
         "uniquesGotten": [],
         "reputation": {
           "Southsea Pirates": 0,
@@ -1959,6 +1959,12 @@
             "Item2": [
               "Apprentice"
             ]
+          },
+          "Skinning": {
+            "Item1": 3,
+            "Item2": [
+              "Apprentice"
+            ]
           }
         },
         "learnedRecipes": {
@@ -1982,9 +1988,10 @@
           ],
           "Mining": [
             "Smelt Copper"
-          ]
+          ],
+          "Skinning": []
         },
-        "unspentTalentPoints": 10,
+        "unspentTalentPoints": 11,
         "faction": "Stormwind",
         "name": "Allesha",
         "race": "Human",
@@ -2032,7 +2039,7 @@
           }
         },
         "inventory": {
-          "money": 789,
+          "money": 779,
           "items": [
             {
               "rarity": "Common",
@@ -2057,7 +2064,7 @@
               "ilvl": 5,
               "lvl": 1,
               "amount": 7,
-              "minutesLeft": 30,
+              "minutesLeft": 17,
               "maxStack": 20,
               "price": 2,
               "stats": {
@@ -2073,9 +2080,55 @@
               "ilvl": 10,
               "lvl": 1,
               "amount": 1,
-              "minutesLeft": 30,
+              "minutesLeft": 17,
               "maxStack": 10,
               "price": 5,
+              "stats": {
+                "stats": {}
+              }
+            },
+            {
+              "rarity": "Common",
+              "name": "Thick Hide",
+              "icon": "itemmiscpeltbearruin01",
+              "detailedType": "Organ",
+              "type": "Trade Good",
+              "source": "RareDrop",
+              "ilvl": 40,
+              "lvl": 1,
+              "amount": 2,
+              "maxStack": 10,
+              "price": 500,
+              "stats": {
+                "stats": {}
+              }
+            },
+            {
+              "rarity": "Common",
+              "name": "Scroll of Spirit IV",
+              "icon": "itemscroll01",
+              "detailedType": "Scroll",
+              "type": "Miscellaneous",
+              "source": "RareDrop",
+              "ilvl": 55,
+              "amount": 1,
+              "maxStack": 5,
+              "price": 100,
+              "stats": {
+                "stats": {}
+              }
+            },
+            {
+              "rarity": "Common",
+              "name": "Rugged Leather",
+              "icon": "itemmiscleatherscrap02",
+              "detailedType": "Leather",
+              "type": "Trade Good",
+              "ilvl": 50,
+              "lvl": 1,
+              "amount": 2,
+              "maxStack": 20,
+              "price": 500,
               "stats": {
                 "stats": {}
               }
@@ -2188,9 +2241,9 @@
         }
       },
       "hour": 10,
-      "minute": 3,
-      "second": 24,
-      "currentSite": "Goldshire",
+      "minute": 16,
+      "second": 14,
+      "currentSite": "The Harborage",
       "openedChests": {
         "Gnomeregan Outskirts": {
           "area": "Gnomeregan Outskirts",
@@ -2359,7 +2412,9 @@
         "Hall of Bones": 2,
         "Hall of Serpents": 2,
         "Pit of Refuse": 2,
-        "The Lyceum": 3
+        "The Lyceum": 3,
+        "Frozen Crossing": 1,
+        "The Broodmother's Lair": 2
       },
       "commonsKilled": {
         "Deeprot Tangler": 1,
@@ -2376,7 +2431,10 @@
         "Murk Spitter": 1,
         "Saturated Ooze": 2,
         "Murk Worm": 2,
-        "Anvilrage Flame Keeper": 3
+        "Anvilrage Flame Keeper": 3,
+        "Snow Tracker Wolf": 1,
+        "Onyxian Lair Guard": 1,
+        "Onyxian Warder": 1
       },
       "raresKilled": {
         "Gibblewilt": 1
@@ -2617,7 +2675,7 @@
         "Misty Pine Refuge": 1,
         "Northern Tract": 3,
         "Shimmer Ridge": 2,
-        "Frozen Crossing": 1,
+        "Frozen Crossing": 2,
         "The Grizzled Den": 1,
         "The Tundrid Hills": 2,
         "Bladefist Bay": 1,
@@ -3251,14 +3309,14 @@
         "Caer Darrow": 1,
         "Ravenholdt Manor": 1,
         "Misty Reed Post": 1,
-        "Stormwind City": 11,
+        "Stormwind City": 12,
         "Grove of the Ancients": 3,
         "Go'Shek Farm": 1,
         "Hillsbrad": 1,
         "Dabyrie's Farmstead": 1,
         "Azurelode Mine": 1,
         "Westbrook Garrison": 1,
-        "Goldshire": 7,
+        "Goldshire": 8,
         "Lakeshire": 1,
         "Southshore": 1,
         "Darkshire": 1,
@@ -3290,12 +3348,12 @@
         "Thalanaar": 1,
         "Stonetalon Peak": 1,
         "Aerie Peak": 1,
-        "Ironforge": 3,
+        "Ironforge": 6,
         "Thelsamar": 1,
         "Farstrider Lodge": 1,
         "Dun Garok": 1,
         "Brewnall Village": 1,
-        "Kharanos": 1,
+        "Kharanos": 3,
         "Amberstill Ranch": 1,
         "Anvilmar": 1,
         "Algaz Station": 1,
@@ -3348,7 +3406,7 @@
         "Orgrimmar Legion Camp": 1,
         "Valor's Rest": 1,
         "Ironforge Brigade Outpost": 1,
-        "The Harborage": 1,
+        "The Harborage": 3,
         "Nesingwary's Expedition": 1,
         "Gurubashi Arena": 1,
         "Temple of Atal'Hakkar": 7,
@@ -3372,7 +3430,7 @@
         "Lower Blackrock Spire": 1,
         "Upper Blackrock Spire": 1,
         "Zul'Farrak": 1,
-        "Onyxia's Lair": 1,
+        "Onyxia's Lair": 3,
         "Molten Core": 1,
         "Zul'Gurub": 1,
         "Blackwing Lair": 1,
@@ -3408,9 +3466,9 @@
         "Goldshire:Tharynn Bouden": [
           {
             "item": "Coarse Thread",
-            "amount": 12,
+            "amount": 13,
             "maxAmount": 20,
-            "minutesLeft": 10,
+            "minutesLeft": 7,
             "restockSpeed": 10
           },
           {
@@ -3478,6 +3536,178 @@
             "amount": 1,
             "maxAmount": 1,
             "restockSpeed": 30
+          }
+        ],
+        "Goldshire:Andrew Krighton": [
+          {
+            "item": "Light Mail Armor",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Light Mail Leggings",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Light Mail Bracers",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Light Mail Belt",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Light Mail Boots",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Light Mail Gloves",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Small Targe",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Dull Heater Shield",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          }
+        ],
+        "Ironforge:Poranna Snowbraid": [
+          {
+            "item": "Coarse Thread",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Fine Thread",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Bleach",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Black Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Red Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Green Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Silken Thread",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Gray Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Yellow Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Purple Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Blue Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Orange Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Heavy Silken Thread",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Pink Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Rune Thread",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Pattern: Lavender Mageweave Shirt",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Pattern: Pink Mageweave Shirt",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Pattern: Tuxedo Shirt",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Pattern: Tuxedo Pants",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Pattern: Tuxedo Jacket",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
           }
         ]
       },
@@ -3621,7 +3851,7 @@
             "lvl": 4,
             "armor": 83,
             "amount": 1,
-            "minutesLeft": 30,
+            "minutesLeft": 17,
             "maxStack": 1,
             "price": 67,
             "stats": {
@@ -3639,7 +3869,7 @@
             "lvl": 4,
             "armor": 83,
             "amount": 1,
-            "minutesLeft": 30,
+            "minutesLeft": 17,
             "maxStack": 1,
             "price": 67,
             "stats": {
@@ -3657,7 +3887,7 @@
             "lvl": 4,
             "armor": 83,
             "amount": 1,
-            "minutesLeft": 30,
+            "minutesLeft": 17,
             "maxStack": 1,
             "price": 67,
             "stats": {
@@ -3676,7 +3906,7 @@
             "minDamage": 10,
             "maxDamage": 19,
             "amount": 1,
-            "minutesLeft": 30,
+            "minutesLeft": 17,
             "maxStack": 1,
             "price": 443,
             "speed": 1.4,
@@ -3694,7 +3924,7 @@
             "lvl": 1,
             "armor": 2,
             "amount": 1,
-            "minutesLeft": 30,
+            "minutesLeft": 17,
             "maxStack": 1,
             "price": 1,
             "stats": {
@@ -3710,7 +3940,7 @@
             "ilvl": 7,
             "lvl": 1,
             "amount": 1,
-            "minutesLeft": 30,
+            "minutesLeft": 17,
             "maxStack": 20,
             "price": 15,
             "stats": {
@@ -3726,7 +3956,7 @@
             "ilvl": 5,
             "lvl": 1,
             "amount": 20,
-            "minutesLeft": 30,
+            "minutesLeft": 17,
             "maxStack": 20,
             "price": 3,
             "stats": {
@@ -3742,7 +3972,7 @@
             "ilvl": 5,
             "lvl": 1,
             "amount": 20,
-            "minutesLeft": 30,
+            "minutesLeft": 17,
             "maxStack": 20,
             "price": 3,
             "stats": {
@@ -3757,7 +3987,7 @@
             "source": "RareDrop",
             "ilvl": 10,
             "amount": 1,
-            "minutesLeft": 30,
+            "minutesLeft": 17,
             "maxStack": 5,
             "price": 25,
             "stats": {
@@ -3773,7 +4003,7 @@
             "ilvl": 5,
             "lvl": 1,
             "amount": 1,
-            "minutesLeft": 30,
+            "minutesLeft": 17,
             "maxStack": 20,
             "price": 2,
             "stats": {
@@ -3785,9 +4015,9 @@
         "ignoreSpaceChecks": true
       },
       "startDate": "2024-06-09T14:12:27.0144066+02:00",
-      "lastLoaded": "2024-06-21T02:39:39.2564516+02:00",
-      "lastPlayed": "2024-06-21T02:42:38.8512014+02:00",
-      "timePlayed": "12:02:44.3788735",
+      "lastLoaded": "2024-06-23T03:54:39.2699783+02:00",
+      "lastPlayed": "2024-06-23T03:54:54.4382825+02:00",
+      "timePlayed": "12:07:49.4607698",
       "lastVisitedTalents": 1
     },
     {
@@ -5021,7 +5251,7 @@
         "Razorfen Kraul": 2,
         "Rut'theran Village": 1,
         "Auberdine": 1,
-        "Grove of the Ancients": 3
+        "Grove of the Ancients": 4
       },
       "unlockedAreas": [
         "Shrine of Gelihast",
@@ -5655,9 +5885,9 @@
         "ignoreSpaceChecks": true
       },
       "startDate": "2024-06-15T19:17:11.4512344+02:00",
-      "lastLoaded": "2024-06-21T22:41:35.511574+02:00",
-      "lastPlayed": "2024-06-21T22:42:38.2683142+02:00",
-      "timePlayed": "01:22:32.6352074",
+      "lastLoaded": "2024-06-22T04:19:24.0523881+02:00",
+      "lastPlayed": "2024-06-22T04:19:31.66462+02:00",
+      "timePlayed": "01:22:40.2474393",
       "lastVisitedTalents": 2
     },
     {
@@ -6487,6 +6717,7 @@
         "currentQuests": [],
         "completedQuests": [],
         "level": 1,
+        "experience": 60,
         "uniquesGotten": [],
         "reputation": {
           "Southsea Pirates": 0,
@@ -6689,6 +6920,8 @@
         }
       },
       "hour": 7,
+      "minute": 8,
+      "second": 24,
       "currentSite": "Undercity",
       "ringOfLaw": "Ok'thor the Breaker",
       "forlornCloister": "Ironspine",
@@ -6699,7 +6932,10 @@
       "elitesKilled": {},
       "siteVisits": {
         "Shadow Grave": 1,
-        "Undercity": 4
+        "Undercity": 7,
+        "The Ruins of Lordaeron": 0,
+        "Capital City Gates": 0,
+        "Brill": 3
       },
       "unlockedAreas": [],
       "vendorStock": {
@@ -7010,18 +7246,678 @@
             "maxAmount": 2,
             "restockSpeed": 40
           }
+        ],
+        "Undercity:Joseph Moore": [
+          {
+            "item": "Coarse Thread",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Fine Thread",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Black Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Red Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Green Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Salt",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Silken Thread",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Gray Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Yellow Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Purple Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Blue Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Orange Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Skinning Knife",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Pattern: Green Whelp Bracers",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Heavy Silken Thread",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Pink Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Rune Thread",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Pattern: Barbaric Bracers",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          }
+        ],
+        "Undercity:Felicia Doan": [
+          {
+            "item": "Coarse Thread",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Fine Thread",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Bleach",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Red Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Green Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Mild Spices",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Hot Spices",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Weak Flux",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Mining Pick",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Dust of Decay",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Empty Vial",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Leaded Vial",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Strong Flux",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Soothing Spices",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Coal",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Salt",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Silken Thread",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Wooden Stock",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Heavy Stock",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Blacksmith Hammer",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Copper Rod",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Fishing Pole",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Blue Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Shiny Bauble",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Nightcrawlers",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Bright Baubles",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Skinning Knife",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Crystal Vial",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          }
+        ],
+        "Undercity:Millie Gregorian": [
+          {
+            "item": "Coarse Thread",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Fine Thread",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Bleach",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Black Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Red Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Green Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Silken Thread",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Gray Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Yellow Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Purple Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Pattern: Red Woolen Bag",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Blue Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Orange Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Pattern: Greater Adept's Robe",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Heavy Silken Thread",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Pink Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Pattern: Tuxedo Shirt",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Pattern: Tuxedo Pants",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Pattern: Tuxedo Jacket",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Rune Thread",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          }
+        ],
+        "Brill:Abigail Shiel": [
+          {
+            "item": "Coarse Thread",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Bleach",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Red Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Mild Spices",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Weak Flux",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Mining Pick",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Empty Vial",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Salt",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Blacksmith Hammer",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Copper Rod",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Fishing Pole",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Blue Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Shiny Bauble",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Skinning Knife",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Recipe: Crispy Bat Wing",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          }
+        ],
+        "Undercity:Thaddeus Webb": [
+          {
+            "item": "Simple Wood",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Copper Rod",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Formula: Enchant Chest - Minor Mana",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Lesser Magic Essence",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Strange Dust",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Star Wood",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Formula: Minor Mana Oil",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Formula: Lesser Wizard Oil",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Formula: Minor Wizard Oil",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Pattern: Enchanted Mageweave Pouch",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          }
+        ],
+        "Undercity:Elizabeth Van Talen": [
+          {
+            "item": "Weak Flux",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Mining Pick",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Strong Flux",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Rough Blasting Powder",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Copper Tube",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Copper Modulator",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Coarse Blasting Powder",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Bronze Tube",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Bronze Framework",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Gyrochronatom",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Wooden Stock",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Heavy Stock",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Silver Contact",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Blacksmith Hammer",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Engineer's Ink",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Blank Parchment",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          }
         ]
       },
-      "banks": {},
+      "banks": {
+        "Undercity": {
+          "items": [],
+          "bags": []
+        }
+      },
       "buyback": {
         "items": [],
         "bags": [],
         "ignoreSpaceChecks": true
       },
       "startDate": "2024-06-21T22:12:22.0553053+02:00",
-      "lastLoaded": "2024-06-21T22:41:29.3332553+02:00",
-      "lastPlayed": "2024-06-21T22:41:33.0198855+02:00",
-      "timePlayed": "00:00:37.2281305"
+      "lastLoaded": "2024-06-22T19:37:34.9316364+02:00",
+      "lastPlayed": "2024-06-22T19:37:39.2793276+02:00",
+      "timePlayed": "00:04:04.2722824",
+      "lastVisitedTalents": 2
     }
   ]
 }
