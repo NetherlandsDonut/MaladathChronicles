@@ -58,7 +58,7 @@ public class Person
     //Play a sound by this vendor
     public string VoiceLine(string type)
     {
-        return race + gender + voiceVariant + type;
+        return race.Clean() + gender + voiceVariant + type;
     }
 
     //Currently opened person

@@ -2064,7 +2064,7 @@
               "ilvl": 5,
               "lvl": 1,
               "amount": 7,
-              "minutesLeft": 14,
+              "minutesLeft": 9,
               "maxStack": 20,
               "price": 2,
               "stats": {
@@ -2080,7 +2080,7 @@
               "ilvl": 10,
               "lvl": 1,
               "amount": 1,
-              "minutesLeft": 14,
+              "minutesLeft": 9,
               "maxStack": 10,
               "price": 5,
               "stats": {
@@ -2241,9 +2241,9 @@
         }
       },
       "hour": 10,
-      "minute": 19,
-      "second": 58,
-      "currentSite": "Goldshire",
+      "minute": 24,
+      "second": 24,
+      "currentSite": "Darnassus",
       "openedChests": {
         "Gnomeregan Outskirts": {
           "area": "Gnomeregan Outskirts",
@@ -3309,14 +3309,14 @@
         "Caer Darrow": 1,
         "Ravenholdt Manor": 1,
         "Misty Reed Post": 1,
-        "Stormwind City": 12,
+        "Stormwind City": 13,
         "Grove of the Ancients": 3,
         "Go'Shek Farm": 1,
         "Hillsbrad": 1,
         "Dabyrie's Farmstead": 1,
         "Azurelode Mine": 1,
         "Westbrook Garrison": 1,
-        "Goldshire": 9,
+        "Goldshire": 10,
         "Lakeshire": 1,
         "Southshore": 1,
         "Darkshire": 1,
@@ -3329,7 +3329,7 @@
         "Flame Crest": 1,
         "Faldir's Cove": 1,
         "Refuge Point": 1,
-        "Darnassus": 17,
+        "Darnassus": 22,
         "Aldrassil": 1,
         "Rut'theran Village": 14,
         "Dolanaar": 1,
@@ -3348,7 +3348,7 @@
         "Thalanaar": 1,
         "Stonetalon Peak": 1,
         "Aerie Peak": 1,
-        "Ironforge": 6,
+        "Ironforge": 7,
         "Thelsamar": 1,
         "Farstrider Lodge": 1,
         "Dun Garok": 1,
@@ -3466,9 +3466,9 @@
         "Goldshire:Tharynn Bouden": [
           {
             "item": "Coarse Thread",
-            "amount": 13,
+            "amount": 14,
             "maxAmount": 20,
-            "minutesLeft": 4,
+            "minutesLeft": 9,
             "restockSpeed": 10
           },
           {
@@ -4017,7 +4017,7 @@
             "lvl": 4,
             "armor": 83,
             "amount": 1,
-            "minutesLeft": 14,
+            "minutesLeft": 9,
             "maxStack": 1,
             "price": 67,
             "stats": {
@@ -4035,7 +4035,7 @@
             "lvl": 4,
             "armor": 83,
             "amount": 1,
-            "minutesLeft": 14,
+            "minutesLeft": 9,
             "maxStack": 1,
             "price": 67,
             "stats": {
@@ -4053,7 +4053,7 @@
             "lvl": 4,
             "armor": 83,
             "amount": 1,
-            "minutesLeft": 14,
+            "minutesLeft": 9,
             "maxStack": 1,
             "price": 67,
             "stats": {
@@ -4072,7 +4072,7 @@
             "minDamage": 10,
             "maxDamage": 19,
             "amount": 1,
-            "minutesLeft": 14,
+            "minutesLeft": 9,
             "maxStack": 1,
             "price": 443,
             "speed": 1.4,
@@ -4090,7 +4090,7 @@
             "lvl": 1,
             "armor": 2,
             "amount": 1,
-            "minutesLeft": 14,
+            "minutesLeft": 9,
             "maxStack": 1,
             "price": 1,
             "stats": {
@@ -4106,7 +4106,7 @@
             "ilvl": 7,
             "lvl": 1,
             "amount": 1,
-            "minutesLeft": 14,
+            "minutesLeft": 9,
             "maxStack": 20,
             "price": 15,
             "stats": {
@@ -4122,7 +4122,7 @@
             "ilvl": 5,
             "lvl": 1,
             "amount": 20,
-            "minutesLeft": 14,
+            "minutesLeft": 9,
             "maxStack": 20,
             "price": 3,
             "stats": {
@@ -4138,7 +4138,7 @@
             "ilvl": 5,
             "lvl": 1,
             "amount": 20,
-            "minutesLeft": 14,
+            "minutesLeft": 9,
             "maxStack": 20,
             "price": 3,
             "stats": {
@@ -4153,7 +4153,7 @@
             "source": "RareDrop",
             "ilvl": 10,
             "amount": 1,
-            "minutesLeft": 14,
+            "minutesLeft": 9,
             "maxStack": 5,
             "price": 25,
             "stats": {
@@ -4169,7 +4169,7 @@
             "ilvl": 5,
             "lvl": 1,
             "amount": 1,
-            "minutesLeft": 14,
+            "minutesLeft": 9,
             "maxStack": 20,
             "price": 2,
             "stats": {
@@ -4181,9 +4181,9 @@
         "ignoreSpaceChecks": true
       },
       "startDate": "2024-06-09T14:12:27.0144066+02:00",
-      "lastLoaded": "2024-06-23T04:23:08.7558783+02:00",
-      "lastPlayed": "2024-06-23T04:24:09.4581764+02:00",
-      "timePlayed": "12:09:13.9557291",
+      "lastLoaded": "2024-06-23T15:14:03.927637+02:00",
+      "lastPlayed": "2024-06-23T15:14:35.1022896+02:00",
+      "timePlayed": "12:10:56.7274430",
       "lastVisitedTalents": 1
     },
     {
@@ -7101,7 +7101,7 @@
         "Undercity": 10,
         "The Ruins of Lordaeron": 0,
         "Capital City Gates": 0,
-        "Brill": 4
+        "Brill": 5
       },
       "unlockedAreas": [],
       "vendorStock": {
@@ -8080,9 +8080,9 @@
         "ignoreSpaceChecks": true
       },
       "startDate": "2024-06-21T22:12:22.0553053+02:00",
-      "lastLoaded": "2024-06-23T04:28:44.5545483+02:00",
-      "lastPlayed": "2024-06-23T04:30:57.6703404+02:00",
-      "timePlayed": "00:06:53.4541957",
+      "lastLoaded": "2024-06-23T15:11:59.2701622+02:00",
+      "lastPlayed": "2024-06-23T15:12:15.1625768+02:00",
+      "timePlayed": "00:07:09.3466103",
       "lastVisitedTalents": 2
     }
   ]

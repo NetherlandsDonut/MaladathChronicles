@@ -2,7 +2,7 @@
   {
     "name": "Blindlight Murloc",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Murloc",
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitMurlocWhite",
@@ -11,8 +11,8 @@
   },
   {
     "name": "Murkshallow Snapclaw",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Beast",
+    "subcategory": "Makrura",
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitMakruraBlue",
@@ -9094,7 +9094,7 @@
   {
     "name": "Broken",
     "category": "Humanoid",
-    "subcategory": "Broken",
+    "subcategory": "Human",
     "side": "Neutral",
     "previewSite": "The Harborage",
     "portrait": "PortraitBroken"
