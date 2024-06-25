@@ -801,7 +801,7 @@ public class Item
                         Board.board.results.inventory.items.Remove(item);
                         if (Board.board.results.exclusiveItems.Contains(item.name))
                             Board.board.results.inventory.items.RemoveAll(x => Board.board.results.exclusiveItems.Contains(x.name));
-                        if (Board.board.results.inventory.items.Count == 0)
+                        if (settings.autoCloseLoot.Value() && Board.board.results.inventory.items.Count == 0)
                         {
                             CloseDesktop("CombatResultsLoot");
                             SwitchDesktop("CombatResults");
@@ -818,7 +818,7 @@ public class Item
                         PlaySound("Mining" + random.Next(1, 6));
                         currentSave.player.inventory.AddItem(item);
                         Board.board.results.miningLoot.items.Remove(item);
-                        if (Board.board.results.miningLoot.items.Count == 0)
+                        if (settings.autoCloseLoot.Value() && Board.board.results.miningLoot.items.Count == 0)
                         {
                             CloseDesktop("MiningLoot");
                             Respawn("CombatResultsMining");
@@ -834,7 +834,7 @@ public class Item
                         PlaySound("HerbGather" + random.Next(1, 5));
                         currentSave.player.inventory.AddItem(item);
                         Board.board.results.herbalismLoot.items.Remove(item);
-                        if (Board.board.results.herbalismLoot.items.Count == 0)
+                        if (settings.autoCloseLoot.Value() && Board.board.results.herbalismLoot.items.Count == 0)
                         {
                             CloseDesktop("HerbalismLoot");
                             Respawn("CombatResultsHerbalism");
@@ -850,7 +850,7 @@ public class Item
                         //PlaySound("SkinGather" + random.Next(1, 4));
                         currentSave.player.inventory.AddItem(item);
                         Board.board.results.skinningLoot.items.Remove(item);
-                        if (Board.board.results.skinningLoot.items.Count == 0)
+                        if (settings.autoCloseLoot.Value() && Board.board.results.skinningLoot.items.Count == 0)
                         {
                             CloseDesktop("SkinningLoot");
                             Respawn("CombatResultsSkinning");
@@ -865,7 +865,7 @@ public class Item
                     {
                         currentSave.player.inventory.AddItem(item);
                         disenchantLoot.items.Remove(item);
-                        if (disenchantLoot.items.Count == 0)
+                        if (settings.autoCloseLoot.Value() && disenchantLoot.items.Count == 0)
                         {
                             CloseDesktop("DisenchantLoot");
                             CDesktop.RespawnAll();
@@ -876,7 +876,7 @@ public class Item
                     {
                         currentSave.player.inventory.AddItem(item);
                         currentSave.openedChests[SiteHostileArea.area.name].inventory.items.Remove(item);
-                        if (currentSave.openedChests[SiteHostileArea.area.name].inventory.items.Count == 0)
+                        if (settings.autoCloseLoot.Value() && currentSave.openedChests[SiteHostileArea.area.name].inventory.items.Count == 0)
                         {
                             if (SiteHostileArea.area.instancePart)
                             {

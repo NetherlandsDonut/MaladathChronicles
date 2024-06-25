@@ -1831,26 +1831,6 @@
             ]
           },
           {
-            "questID": 783,
-            "requiredLevel": 1,
-            "questLevel": 1,
-            "name": "A Threat Within",
-            "description": "Speak with Marshal McBride.",
-            "siteStart": "Northshire Abbey",
-            "siteEnd": "Northshire Abbey",
-            "zone": "Elwynn Forest",
-            "races": [
-              "Gnome",
-              "Night Elf",
-              "Dwarf",
-              "Human"
-            ],
-            "reputationGain": {
-              "Stormwind": 75
-            },
-            "conditions": []
-          },
-          {
             "questID": 35,
             "previous": 40,
             "requiredLevel": 7,
@@ -1870,14 +1850,78 @@
               "Stormwind": 75
             },
             "conditions": []
+          },
+          {
+            "questID": 7,
+            "previous": 783,
+            "requiredLevel": 1,
+            "questLevel": 2,
+            "name": "Kobold Camp Cleanup",
+            "description": "Kill 3 Kobold Vermin, then return to Marshal McBride.",
+            "siteStart": "Northshire Abbey",
+            "siteEnd": "Northshire Abbey",
+            "zone": "Elwynn Forest",
+            "races": [
+              "Gnome",
+              "Night Elf",
+              "Dwarf",
+              "Human"
+            ],
+            "reputationGain": {
+              "Stormwind": 250
+            },
+            "conditions": [
+              {
+                "type": "Kill",
+                "name": "Kobold Vermin",
+                "amount": 3
+              }
+            ]
+          },
+          {
+            "questID": 18,
+            "previous": 783,
+            "requiredLevel": 2,
+            "questLevel": 4,
+            "name": "Brotherhood of Thieves",
+            "description": "Bring a Red Burlap Bandana to Deputy Willem outside the Northshire Abbey.",
+            "siteStart": "Northshire Abbey",
+            "siteEnd": "Northshire Abbey",
+            "zone": "Elwynn Forest",
+            "races": [
+              "Gnome",
+              "Night Elf",
+              "Dwarf",
+              "Human"
+            ],
+            "rewards": {
+              "Militia Dagger": 1,
+              "Militia Hammer": 1,
+              "Militia Shortsword": 1,
+              "Militia Warhammer": 1,
+              "Militia Quarterstaff": 1
+            },
+            "reputationGain": {
+              "Stormwind": 250
+            },
+            "conditions": [
+              {
+                "type": "Item",
+                "name": "Red Burlap Bandana",
+                "amount": 1
+              }
+            ]
           }
         ],
         "completedQuests": [
-          40
+          40,
+          783
         ],
         "level": 20,
         "experience": 9678,
-        "uniquesGotten": [],
+        "uniquesGotten": [
+          "Garrick's Head"
+        ],
         "reputation": {
           "Southsea Pirates": 0,
           "Razormane Tribe": 0,
@@ -1955,7 +1999,7 @@
             ]
           },
           "Mining": {
-            "Item1": 5,
+            "Item1": 6,
             "Item2": [
               "Apprentice"
             ]
@@ -2126,7 +2170,7 @@
               "source": "RareDrop",
               "ilvl": 5,
               "lvl": 1,
-              "amount": 2,
+              "amount": 4,
               "maxStack": 20,
               "price": 2,
               "stats": {
@@ -2142,9 +2186,109 @@
               "source": "RareDrop",
               "ilvl": 10,
               "lvl": 1,
-              "amount": 1,
+              "amount": 2,
               "maxStack": 10,
               "price": 5,
+              "stats": {
+                "stats": {}
+              }
+            },
+            {
+              "rarity": "Common",
+              "name": "Red Burlap Bandana",
+              "icon": "itemmiscbandana03",
+              "detailedType": "Cloth",
+              "type": "Miscellaneous",
+              "source": "DirectDrop",
+              "ilvl": 1,
+              "amount": 2,
+              "maxStack": 20,
+              "stats": {
+                "stats": {}
+              },
+              "droppedBy": [
+                "Defias Thug"
+              ]
+            },
+            {
+              "rarity": "Common",
+              "name": "Small Brown Pouch",
+              "icon": "itemmiscbag09",
+              "type": "Bag",
+              "source": "GeneralDrop",
+              "ilvl": 5,
+              "lvl": 1,
+              "amount": 1,
+              "maxStack": 1,
+              "price": 125,
+              "bagSpace": 2,
+              "stats": {
+                "stats": {}
+              }
+            },
+            {
+              "rarity": "Common",
+              "name": "Garrick's Head",
+              "icon": "itemmischeadhuman01",
+              "detailedType": "Organ",
+              "type": "Miscellaneous",
+              "source": "DirectDrop",
+              "ilvl": 1,
+              "amount": 1,
+              "maxStack": 1,
+              "indestructible": true,
+              "unique": true,
+              "stats": {
+                "stats": {}
+              },
+              "droppedBy": [
+                "Garrick Padfoot"
+              ]
+            },
+            {
+              "rarity": "Common",
+              "name": "Linen Cloth",
+              "icon": "itemfabriclinen01",
+              "detailedType": "Cloth",
+              "type": "Trade Good",
+              "source": "RareDrop",
+              "ilvl": 5,
+              "lvl": 1,
+              "amount": 2,
+              "maxStack": 20,
+              "price": 13,
+              "stats": {
+                "stats": {}
+              }
+            },
+            {
+              "rarity": "Uncommon",
+              "name": "Tigerseye",
+              "icon": "itemmiscgemopal03",
+              "detailedType": "Gem",
+              "type": "Trade Good",
+              "source": "RareDrop",
+              "ilvl": 15,
+              "lvl": 1,
+              "amount": 1,
+              "maxStack": 20,
+              "price": 100,
+              "stats": {
+                "stats": {}
+              }
+            },
+            {
+              "rarity": "Common",
+              "name": "Peacebloom",
+              "icon": "itemmiscflower02",
+              "detailedType": "Flowers",
+              "type": "Trade Good",
+              "source": "RareDrop",
+              "ilvl": 5,
+              "lvl": 1,
+              "amount": 2,
+              "maxStack": 20,
+              "price": 10,
               "stats": {
                 "stats": {}
               }
@@ -2269,13 +2413,29 @@
             "stats": {
               "stats": {}
             }
+          },
+          "Back": {
+            "rarity": "Common",
+            "name": "Journeyman's Cloak",
+            "icon": "itemmisccape15",
+            "type": "Back",
+            "source": "RareDrop",
+            "ilvl": 8,
+            "lvl": 3,
+            "armor": 7,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 24,
+            "stats": {
+              "stats": {}
+            }
           }
         }
       },
       "hour": 11,
-      "minute": 42,
-      "second": 34,
-      "currentSite": "Echo Ridge Mine",
+      "minute": 45,
+      "second": 22,
+      "currentSite": "Northshire Vineyards",
       "openedChests": {
         "Gnomeregan Outskirts": {
           "area": "Gnomeregan Outskirts",
@@ -2428,6 +2588,14 @@
             "bags": [],
             "ignoreSpaceChecks": true
           }
+        },
+        "Northshire Vineyards": {
+          "area": "Northshire Vineyards",
+          "inventory": {
+            "items": [],
+            "bags": [],
+            "ignoreSpaceChecks": true
+          }
         }
       },
       "siteProgress": {
@@ -2449,7 +2617,8 @@
         "The Broodmother's Lair": 2,
         "The Riverbed": 3,
         "The Den of Flame": 3,
-        "Echo Ridge Mine": 1
+        "Echo Ridge Mine": 1,
+        "Northshire Vineyards": 3
       },
       "commonsKilled": {
         "Deeprot Tangler": 1,
@@ -2474,7 +2643,8 @@
         "Stormsnout": 1,
         "Firemane Scalebane": 2,
         "Firemane Ash Tail": 1,
-        "Kobold Laborer": 1
+        "Kobold Laborer": 1,
+        "Defias Thug": 4
       },
       "raresKilled": {
         "Gibblewilt": 1
@@ -2483,10 +2653,11 @@
         "Veyzhak the Cannibal": 1,
         "Kazkaz the Unholy": 1,
         "Zekkis": 1,
-        "Atal'alarion": 1
+        "Atal'alarion": 1,
+        "Garrick Padfoot": 1
       },
       "siteVisits": {
-        "Northshire Abbey": 2,
+        "Northshire Abbey": 3,
         "Hall of Illusions": 1,
         "Searing Blade Hideout": 1,
         "Main Chamber": 1,
@@ -2815,7 +2986,7 @@
         "Jasperlode Mine": 1,
         "Mirror Lake": 1,
         "Mirror Lake Orchard": 1,
-        "Northshire Vineyards": 1,
+        "Northshire Vineyards": 5,
         "Northshire Valley": 1,
         "Ridgepoint Tower": 1,
         "Stonefield Farm": 1,
@@ -4475,9 +4646,9 @@
         "ignoreSpaceChecks": true
       },
       "startDate": "2024-06-09T14:12:27.0144066+02:00",
-      "lastLoaded": "2024-06-25T04:14:31.8543161+02:00",
-      "lastPlayed": "2024-06-25T04:16:17.4056402+02:00",
-      "timePlayed": "13:54:12.2202344",
+      "lastLoaded": "2024-06-25T15:58:03.4000275+02:00",
+      "lastPlayed": "2024-06-25T15:58:53.9982375+02:00",
+      "timePlayed": "13:55:14.2928098",
       "lastVisitedTalents": 1
     },
     {

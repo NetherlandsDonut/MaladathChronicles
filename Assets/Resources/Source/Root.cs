@@ -812,8 +812,8 @@ public static class Root
         var newObject = new GameObject("FallingText", typeof(FloatingText));
         newObject.transform.parent = CDesktop.transform;
         newObject.transform.localPosition = position;
-        newObject.AddComponent<Rigidbody2D>().gravityScale = 2.5f;
-        newObject.AddComponent<Shatter>().Initiate(5);
+        newObject.AddComponent<Rigidbody2D>().gravityScale = 2.0f;
+        newObject.AddComponent<Shatter>().Initiate(7);
         var temp = newObject.GetComponent<FloatingText>();
         temp.Initialise(text, color == "" ? "Gray" : color, align);
     }
@@ -886,7 +886,7 @@ public static class Root
             iconRow = CDesktop.LBWindow.LBRegionGroup.LBRegion;
             AddRegionGroup();
             SetRegionGroupWidth((int)Math.Ceiling(left / 2.0));
-            SetRegionGroupHeight(262);
+            SetRegionGroupHeight(243);
             AddPaddingRegion(() =>
             {
                 SetRegionBackground(ChartBackground);

@@ -19,6 +19,7 @@ public class GameSettings
         onlyHavingMaterials ??= new Bool(false);
         onlySkillUp ??= new Bool(false);
         questLevel ??= new Bool(false);
+        autoCloseLoot ??= new Bool(false);
 
         rarityIndicators ??= new Bool(false);
         bigRarityIndicators ??= new Bool(false);
@@ -70,6 +71,9 @@ public class GameSettings
 
     //Tells whether the cascading process in boards will be fast or slow
     public Bool onlySkillUp;
+
+    //Tells whether the cascading process in boards will be fast or slow
+    public Bool autoCloseLoot;
 
     //EXTERNAL FILE: Collection of all settings in game
     public static GameSettings settings;

@@ -1,7 +1,9 @@
 using System.Linq;
 using System.Collections.Generic;
 
+using static Quest;
 using static Defines;
+using NUnit;
 
 //Iventory is a space for storing money and items
 //It's used by entities and banks
@@ -99,6 +101,8 @@ public class Inventory
     //Adds item to the inventory and automatically fills stacks
     public void AddItem(Item item)
     {
+        var sumBefore = items.Sum(x => x.name == item.name ? x.amount : 0);
+        var added = item.amount;
         var find = items.FindAll(x => x.name == item.name);
         foreach (var stack in find)
         {
@@ -109,6 +113,27 @@ public class Inventory
         }
         if (item.amount > 0 && (ignoreSpaceChecks || items.Count < BagSpace()))
             items.Add(item.CopyItem(item.amount));
+        if (SaveGame.currentSave.player.inventory == this)
+        {
+            var output = item.name + ": ";
+            foreach (var quest in SaveGame.currentSave.player.currentQuests)
+                foreach (var con in quest.conditions)
+                    if (con.type == "Item" && con.name == item.name)
+                    {
+                        foreach (var site in con.Where())
+                            if (!sitesToRespawn.Contains(site))
+                                sitesToRespawn.Add(site);
+                        if (sumBefore < con.amount)
+                        {
+                            if (output.EndsWith(" ")) output += sumBefore + added + "/" + con.amount;
+                            else output += ", " + sumBefore + added + "/" + con.amount;
+                        }
+                        var end = Site.FindSite(x => x.name == quest.siteEnd);
+                        if (!sitesToRespawn.Contains(end)) sitesToRespawn.Add(end);
+                    }
+            if (!output.EndsWith(" "))
+                Root.SpawnFallingText(new UnityEngine.Vector2(0, 34), output, "Yellow");
+        }
     }
 
     //Decays items that have duration left of their existance

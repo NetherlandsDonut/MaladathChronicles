@@ -217,20 +217,8 @@ public class Entity
         if (quest.conditions != null)
             foreach (var condition in quest.conditions)
                 if (!condition.IsDone())
-                {
-                    if (condition.type == "Visit")
-                        list.Add(Site.FindSite(x => x.name == condition.name));
-                    else if (condition.type == "Kill")
-                    {
-                        foreach (var common in SiteHostileArea.areas.Where(x => x.commonEncounters != null))
-                            if (common.commonEncounters.Exists(y => y.who == condition.name))
-                                list.Add(common);
-                        foreach (var elite in SiteHostileArea.areas.Where(x => x.eliteEncounters != null))
-                            if (elite.eliteEncounters.Exists(y => y.who == condition.name))
-                                list.Add(elite);
-                    }
-                }
-        return list;
+                    list.AddRange(condition.Where());
+        return list.Distinct().ToList();
     }
 
     //Check if any new quest can be got at a target site
@@ -302,7 +290,16 @@ public class Entity
                     }
                     else if (condition.type == "Item")
                     {
-                        if (site.chestBonus != null && site.chestBonus.ContainsKey(condition.name))
+                        var item = Item.items.Find(x => x.name == condition.name);
+                        if (item == null) Debug.Log("ERROR 015: Item for quest was not found: \"" + item.name + "\"");
+                        else if (item.droppedBy == null) { }
+                        else if (site.commonEncounters != null && site.commonEncounters.Any(x => item.droppedBy.Contains(x.who)))
+                            yes = true;
+                        else if (site.rareEncounters != null && site.rareEncounters.Any(x => item.droppedBy.Contains(x.who)))
+                            yes = true;
+                        else if (site.eliteEncounters != null && site.eliteEncounters.Any(x => item.droppedBy.Contains(x.who)))
+                            yes = true;
+                        else if (site.chestBonus != null && site.chestBonus.ContainsKey(condition.name))
                             yes = true;
                     }
                     if (yes)

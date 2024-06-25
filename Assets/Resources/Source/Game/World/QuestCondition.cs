@@ -37,6 +37,11 @@ public class QuestCondition
     {
         var list = new List<Site>();
         if (type == "Kill") list = SiteHostileArea.areas.FindAll(x => x.commonEncounters != null && x.commonEncounters.Exists(x => x.who == name) || x.rareEncounters != null && x.rareEncounters.Exists(x => x.who == name) || x.eliteEncounters != null && x.eliteEncounters.Exists(x => x.who == name)).Select(x => (Site)x).ToList();
+        else if (type == "Item")
+        {
+            var races = Item.items.Find(x => x.name == name).droppedBy;
+            list = SiteHostileArea.areas.FindAll(x => x.commonEncounters != null && x.commonEncounters.Any(x => races.Contains(x.who)) || x.rareEncounters != null && x.rareEncounters.Any(x => races.Contains(x.who)) || x.eliteEncounters != null && x.eliteEncounters.Any(x => races.Contains(x.who))).Select(x => (Site)x).ToList();
+        }
         else if (type == "Visit")
         {
             var find = Site.FindSite(x => x.name == name);
@@ -62,7 +67,11 @@ public class QuestCondition
         var line = "";
         var then = "";
         var where = markerButton ? Where() : new();
-        if (type == "Item") (line, then) = (name + ": ", amountDone + "/" + amount);
+        if (type == "Item")
+        {
+            var sum = currentSave.player.inventory.items.Sum(x => x.name == name ? x.amount : 0);
+            (line, then) = (name + ": ", (sum > amount ? amount : sum) + "/" + amount);
+        }
         else if (type == "Kill") (line, then) = (name + ": ", amountDone + "/" + amount);
         else if (type == "Visit") (line, then) = (name + " visited: ", (status == "Done" ? 1 : 0) + "/1");
         AddPaddingRegion(() =>

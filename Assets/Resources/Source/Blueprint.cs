@@ -531,6 +531,7 @@ public class Blueprint
                     {
                         PlaySound("DesktopCloseChest");
                         CloseDesktop("ChestLoot");
+                        Respawn("Chest");
                     });
                 }
             );
@@ -538,6 +539,7 @@ public class Blueprint
         new("ChestLoot", () => {
             SetAnchor(-92, -105);
             AddRegionGroup();
+            SetRegionGroupHeight(34);
             SetRegionGroupWidth(182);
             AddPaddingRegion(
                 () =>
@@ -2493,6 +2495,7 @@ public class Blueprint
         new("CombatResultsLoot", () => {
             SetAnchor(-92, -105);
             AddRegionGroup();
+            SetRegionGroupHeight(34);
             SetRegionGroupWidth(182);
             AddPaddingRegion(
                 () =>
@@ -2575,6 +2578,7 @@ public class Blueprint
         new("MiningLoot", () => {
             SetAnchor(-92, -105);
             AddRegionGroup();
+            SetRegionGroupHeight(34);
             SetRegionGroupWidth(182);
             AddPaddingRegion(
                 () =>
@@ -2628,6 +2632,7 @@ public class Blueprint
         new("HerbalismLoot", () => {
             SetAnchor(-92, -105);
             AddRegionGroup();
+            SetRegionGroupHeight(34);
             SetRegionGroupWidth(182);
             AddPaddingRegion(
                 () =>
@@ -2647,6 +2652,7 @@ public class Blueprint
         new("SkinningLoot", () => {
             SetAnchor(-92, -105);
             AddRegionGroup();
+            SetRegionGroupHeight(34);
             SetRegionGroupWidth(182);
             AddPaddingRegion(
                 () =>
@@ -2666,6 +2672,7 @@ public class Blueprint
         new("DisenchantLoot", () => {
             SetAnchor(-92, -105);
             AddRegionGroup();
+            SetRegionGroupHeight(34);
             SetRegionGroupWidth(182);
             AddPaddingRegion(
                 () =>
@@ -2803,18 +2810,6 @@ public class Blueprint
                             Respawn("CombatResults");
                         });
                     }
-                }
-            );
-        }),
-        new("HerbalismLoot", () => {
-            SetAnchor(-92, -105);
-            AddRegionGroup();
-            SetRegionGroupWidth(182);
-            AddPaddingRegion(
-                () =>
-                {
-                    for (int j = 0; j < 4 && j < board.results.herbalismLoot.items.Count; j++)
-                        PrintLootItem(board.results.herbalismLoot.items[j]);
                 }
             );
         }),
@@ -4776,7 +4771,7 @@ public class Blueprint
                 AddLine("", "Gray");
                 AddLine("Maladath", "Epic", "Center");
                 AddLine("Chronicles", "Epic", "Center");
-                AddLine("0.6.0", "DimGray", "Center");
+                AddLine("0.6.6", "DimGray", "Center");
                 AddLine("", "Gray");
                 AddLine("", "Gray");
                 AddLine("", "Gray");
@@ -4946,6 +4941,10 @@ public class Blueprint
                 settings.pixelPerfectVision.Invert();
                 CDesktop.RespawnAll();
             });
+            AddPaddingRegion(() =>
+            {
+                AddLine("Gameplay", "HalfGray");
+            });
             AddButtonRegion(() =>
             {
                 AddCheckbox(settings.fastCascading);
@@ -4954,6 +4953,16 @@ public class Blueprint
             (h) =>
             {
                 settings.fastCascading.Invert();
+                CDesktop.RespawnAll();
+            });
+            AddButtonRegion(() =>
+            {
+                AddCheckbox(settings.autoCloseLoot);
+                AddLine("Automatically close loot");
+            },
+            (h) =>
+            {
+                settings.autoCloseLoot.Invert();
                 CDesktop.RespawnAll();
             });
             AddPaddingRegion(() =>
@@ -5549,6 +5558,11 @@ public class Blueprint
             SpawnWindowBlueprint("CombatResultsSkinning");
             SpawnWindowBlueprint("ExperienceBarBorder");
             SpawnWindowBlueprint("ExperienceBar");
+            AddHotkey(Escape, () =>
+            {
+                PlaySound("DesktopInstanceClose");
+                CloseDesktop("CombatResults");
+            });
         }),
         new("CombatLog", () => 
         {
