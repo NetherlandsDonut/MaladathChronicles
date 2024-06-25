@@ -1099,12 +1099,12 @@ public class Entity
         else if (foo == "Scorpid") foo = "Silithid";
         else if (foo == "Larva") foo = "Borer";
         else if (foo == "Ooze") foo = "Slime";
-        else if (foo == "Qiraji Construct") foo = "Anubisath";
-        else if (foo == "Naga Siren") foo = "NagaFemale";
+        else if (foo == "QirajiConstruct") foo = "Anubisath";
+        else if (foo == "NagaSiren") foo = "NagaFemale";
         else if (foo == "Naga") foo = "NagaMale";
         else if (foo == "Sayaad") foo = "Succubus";
         else if (foo == "Imp") foo = "Grell";
-        else if (foo == "Fel Guard") foo = "DoomGuard";
+        else if (foo == "FelGuard") foo = "DoomGuard";
         return foo + gender + type;
     }
 

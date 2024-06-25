@@ -595,7 +595,7 @@
   {
     "name": "Baroness Anastari",
     "category": "Undead",
-    "subcategory": "Ghost",
+    "subcategory": "Banshee",
     "side": "Neutral",
     "kind": "Elite",
     "portrait": "PortraitBanshee",
@@ -605,7 +605,7 @@
   {
     "name": "Anguished Highborne",
     "category": "Undead",
-    "subcategory": "Ghost",
+    "subcategory": "Banshee",
     "faction": "Scourge",
     "side": "Hostile",
     "kind": "Common",
@@ -616,7 +616,7 @@
   {
     "name": "Highborne Apparition",
     "category": "Undead",
-    "subcategory": "Ghost",
+    "subcategory": "Banshee",
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitBanshee",
@@ -626,7 +626,7 @@
   {
     "name": "Death Singer",
     "category": "Undead",
-    "subcategory": "Ghost",
+    "subcategory": "Banshee",
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitBansheeBright",
@@ -636,7 +636,7 @@
   {
     "name": "Hate Shrieker",
     "category": "Undead",
-    "subcategory": "Ghost",
+    "subcategory": "Banshee",
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitBansheeBright",
@@ -646,7 +646,7 @@
   {
     "name": "Shrieking Banshee",
     "category": "Undead",
-    "subcategory": "Ghost",
+    "subcategory": "Banshee",
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitBansheeBright",
@@ -656,7 +656,7 @@
   {
     "name": "Torn Screamer",
     "category": "Undead",
-    "subcategory": "Ghost",
+    "subcategory": "Banshee",
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitBansheeBright",
@@ -670,7 +670,7 @@
   {
     "name": "Wailing Ancestor",
     "category": "Undead",
-    "subcategory": "Ghost",
+    "subcategory": "Banshee",
     "faction": "Scourge",
     "side": "Hostile",
     "kind": "Common",
@@ -681,7 +681,7 @@
   {
     "name": "Wailing Banshee",
     "category": "Undead",
-    "subcategory": "Ghost",
+    "subcategory": "Banshee",
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitBansheeVeryBright",
@@ -691,7 +691,7 @@
   {
     "name": "Wailing Death",
     "category": "Undead",
-    "subcategory": "Ghost",
+    "subcategory": "Banshee",
     "faction": "Scourge",
     "side": "Hostile",
     "kind": "Common",
@@ -702,7 +702,7 @@
   {
     "name": "Wailing Highborne",
     "category": "Undead",
-    "subcategory": "Ghost",
+    "subcategory": "Banshee",
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitBansheeVeryBright",
@@ -4463,7 +4463,7 @@
   {
     "name": "Coyote",
     "category": "Beast",
-    "subcategory": "Cat",
+    "subcategory": "Coyote",
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitCoyote",
@@ -4473,7 +4473,7 @@
   {
     "name": "Crag Coyote",
     "category": "Beast",
-    "subcategory": "Cat",
+    "subcategory": "Coyote",
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitCoyote",
@@ -4483,7 +4483,7 @@
   {
     "name": "Elder Crag Coyote",
     "category": "Beast",
-    "subcategory": "Cat",
+    "subcategory": "Coyote",
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitCoyote",
@@ -4493,7 +4493,7 @@
   {
     "name": "Prairie Stalker",
     "category": "Beast",
-    "subcategory": "Cat",
+    "subcategory": "Coyote",
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitCoyote",
@@ -4503,7 +4503,7 @@
   {
     "name": "Prairie Wolf",
     "category": "Beast",
-    "subcategory": "Cat",
+    "subcategory": "Coyote",
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitCoyote",
@@ -4513,7 +4513,7 @@
   {
     "name": "Prairie Wolf Alpha",
     "category": "Beast",
-    "subcategory": "Cat",
+    "subcategory": "Coyote",
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitCoyote",
@@ -4523,7 +4523,7 @@
   {
     "name": "Rabid Crag Coyote",
     "category": "Beast",
-    "subcategory": "Cat",
+    "subcategory": "Coyote",
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitCoyote",
@@ -4943,7 +4943,7 @@
   {
     "name": "Anub'shiah",
     "category": "Undead",
-    "subcategory": "Nerubian",
+    "subcategory": "Crypt Fiend",
     "faction": "Scourge",
     "side": "Hostile",
     "kind": "Elite",
@@ -4954,7 +4954,7 @@
   {
     "name": "Nerub'enkan",
     "category": "Undead",
-    "subcategory": "Nerubian",
+    "subcategory": "Crypt Fiend",
     "faction": "Scourge",
     "side": "Hostile",
     "kind": "Elite",
@@ -4965,7 +4965,7 @@
   {
     "name": "Tuten'kash",
     "category": "Undead",
-    "subcategory": "Nerubian",
+    "subcategory": "Crypt Fiend",
     "faction": "Scourge",
     "side": "Hostile",
     "kind": "Elite",
@@ -4976,7 +4976,7 @@
   {
     "name": "Nerubian Overseer",
     "category": "Undead",
-    "subcategory": "Nerubian",
+    "subcategory": "Crypt Fiend",
     "side": "Neutral",
     "kind": "Rare",
     "portrait": "PortraitCryptFiend",
@@ -4986,7 +4986,7 @@
   {
     "name": "Crypt Beast",
     "category": "Undead",
-    "subcategory": "Nerubian",
+    "subcategory": "Crypt Fiend",
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitCryptFiend",
@@ -4996,7 +4996,7 @@
   {
     "name": "Crypt Fiend",
     "category": "Undead",
-    "subcategory": "Nerubian",
+    "subcategory": "Crypt Fiend",
     "faction": "Scourge",
     "side": "Hostile",
     "kind": "Common",
@@ -5012,7 +5012,7 @@
   {
     "name": "Crypt Slayer",
     "category": "Undead",
-    "subcategory": "Nerubian",
+    "subcategory": "Crypt Fiend",
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitCryptFiend",
@@ -5022,7 +5022,7 @@
   {
     "name": "Crypt Walker",
     "category": "Undead",
-    "subcategory": "Nerubian",
+    "subcategory": "Crypt Fiend",
     "faction": "Scourge",
     "side": "Hostile",
     "kind": "Common",
@@ -5199,7 +5199,7 @@
   {
     "name": "Cursed Darkhound",
     "category": "Beast",
-    "subcategory": "Darkhound",
+    "subcategory": "Dark Hound",
     "faction": "Scourge",
     "side": "Hostile",
     "kind": "Common",
@@ -5210,7 +5210,7 @@
   {
     "name": "Decrepit Darkhound",
     "category": "Beast",
-    "subcategory": "Darkhound",
+    "subcategory": "Dark Hound",
     "faction": "Scourge",
     "side": "Hostile",
     "kind": "Common",
@@ -5221,7 +5221,7 @@
   {
     "name": "Servant of Ilgalar",
     "category": "Beast",
-    "subcategory": "Darkhound",
+    "subcategory": "Dark Hound",
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitDarkhound",
@@ -6617,7 +6617,7 @@
   {
     "name": "Sprite Darter",
     "category": "Dragonkin",
-    "subcategory": "Dragon",
+    "subcategory": "Faerie Dragon",
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitFaerieDragon",
@@ -6627,7 +6627,7 @@
   {
     "name": "Deviate Faerie Dragon",
     "category": "Dragonkin",
-    "subcategory": "Dragon",
+    "subcategory": "Faerie Dragon",
     "side": "Neutral",
     "kind": "Rare",
     "portrait": "PortraitFaerieDragon",
@@ -6637,7 +6637,7 @@
   {
     "name": "Nal'taszar",
     "category": "Dragonkin",
-    "subcategory": "Dragon",
+    "subcategory": "Faerie Dragon",
     "side": "Neutral",
     "kind": "Rare",
     "portrait": "PortraitFaerieDragon",
@@ -6647,7 +6647,7 @@
   {
     "name": "Eldreth Darter",
     "category": "Dragonkin",
-    "subcategory": "Dragon",
+    "subcategory": "Faerie Dragon",
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitFaerieDragon",
@@ -11913,7 +11913,7 @@
   {
     "name": "Silicate Feeder",
     "category": "Insect",
-    "subcategory": "Carrion",
+    "subcategory": "Larva",
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitLarva",
@@ -11923,7 +11923,7 @@
   {
     "name": "Silithid Larva",
     "category": "Insect",
-    "subcategory": "Carrion",
+    "subcategory": "Larva",
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitLarva",
@@ -11933,7 +11933,7 @@
   {
     "name": "Spewed Larva",
     "category": "Insect",
-    "subcategory": "Carrion",
+    "subcategory": "Larva",
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitLarva",
@@ -11943,7 +11943,7 @@
   {
     "name": "Borelgore",
     "category": "Insect",
-    "subcategory": "Carrion",
+    "subcategory": "Larva",
     "side": "Neutral",
     "kind": "Rare",
     "portrait": "PortraitLarvaYellow",
@@ -11953,7 +11953,7 @@
   {
     "name": "Carrion Devourer",
     "category": "Insect",
-    "subcategory": "Carrion",
+    "subcategory": "Larva",
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitLarvaYellow",
@@ -11963,7 +11963,7 @@
   {
     "name": "Carrion Grub",
     "category": "Insect",
-    "subcategory": "Carrion",
+    "subcategory": "Larva",
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitLarvaYellow",
@@ -13774,7 +13774,7 @@
   {
     "name": "Lady Sesspira",
     "category": "Humanoid",
-    "subcategory": "Naga",
+    "subcategory": "Naga Siren",
     "side": "Neutral",
     "kind": "Rare",
     "portrait": "PortraitNagaFemale",
@@ -13784,7 +13784,7 @@
   {
     "name": "Lady Szallah",
     "category": "Humanoid",
-    "subcategory": "Naga",
+    "subcategory": "Naga Siren",
     "side": "Neutral",
     "kind": "Rare",
     "portrait": "PortraitNagaFemale",
@@ -13794,7 +13794,7 @@
   {
     "name": "Stormscale Siren",
     "category": "Humanoid",
-    "subcategory": "Naga",
+    "subcategory": "Naga Siren",
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitNagaFemale",
@@ -13804,7 +13804,7 @@
   {
     "name": "Lady Sarevess",
     "category": "Humanoid",
-    "subcategory": "Naga",
+    "subcategory": "Naga Siren",
     "side": "Neutral",
     "kind": "Elite",
     "portrait": "PortraitNagaFemaleYellow",
@@ -13814,7 +13814,7 @@
   {
     "name": "Blackfathom Sea Witch",
     "category": "Humanoid",
-    "subcategory": "Naga",
+    "subcategory": "Naga Siren",
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitNagaFemale",
@@ -13824,7 +13824,7 @@
   {
     "name": "Daggerspine Siren",
     "category": "Humanoid",
-    "subcategory": "Naga",
+    "subcategory": "Naga Siren",
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitNagaFemale",
@@ -13834,7 +13834,7 @@
   {
     "name": "Daggerspine Sorceress",
     "category": "Humanoid",
-    "subcategory": "Naga",
+    "subcategory": "Naga Siren",
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitNagaFemale",
@@ -13844,7 +13844,7 @@
   {
     "name": "Hatecrest Screamer",
     "category": "Humanoid",
-    "subcategory": "Naga",
+    "subcategory": "Naga Siren",
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitNagaFemale",
@@ -13854,7 +13854,7 @@
   {
     "name": "Hatecrest Siren",
     "category": "Humanoid",
-    "subcategory": "Naga",
+    "subcategory": "Naga Siren",
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitNagaFemale",
@@ -13864,7 +13864,7 @@
   {
     "name": "Hatecrest Sorceress",
     "category": "Humanoid",
-    "subcategory": "Naga",
+    "subcategory": "Naga Siren",
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitNagaFemale",
@@ -13874,7 +13874,7 @@
   {
     "name": "Slitherblade Oracle",
     "category": "Humanoid",
-    "subcategory": "Naga",
+    "subcategory": "Naga Siren",
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitNagaFemale",
@@ -13884,7 +13884,7 @@
   {
     "name": "Slitherblade Seawitch",
     "category": "Humanoid",
-    "subcategory": "Naga",
+    "subcategory": "Naga Siren",
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitNagaFemale",
@@ -13894,7 +13894,7 @@
   {
     "name": "Spitelash Enchantress",
     "category": "Humanoid",
-    "subcategory": "Naga",
+    "subcategory": "Naga Siren",
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitNagaFemale",
@@ -13904,7 +13904,7 @@
   {
     "name": "Spitelash Siren",
     "category": "Humanoid",
-    "subcategory": "Naga",
+    "subcategory": "Naga Siren",
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitNagaFemale",
@@ -13914,7 +13914,7 @@
   {
     "name": "Stormscale Sorceress",
     "category": "Humanoid",
-    "subcategory": "Naga",
+    "subcategory": "Naga Siren",
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitNagaFemale",
@@ -13924,7 +13924,7 @@
   {
     "name": "Wrathtail Sorceress",
     "category": "Humanoid",
-    "subcategory": "Naga",
+    "subcategory": "Naga Siren",
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitNagaFemale",
@@ -13934,7 +13934,7 @@
   {
     "name": "Lady Vespira",
     "category": "Humanoid",
-    "subcategory": "Naga",
+    "subcategory": "Naga Siren",
     "side": "Neutral",
     "kind": "Rare",
     "portrait": "PortraitNagaFemaleBlue",
@@ -13944,7 +13944,7 @@
   {
     "name": "Lady Zephris",
     "category": "Humanoid",
-    "subcategory": "Naga",
+    "subcategory": "Naga Siren",
     "side": "Neutral",
     "kind": "Rare",
     "portrait": "PortraitNagaFemaleGreen",
@@ -13954,7 +13954,7 @@
   {
     "name": "Strashaz Sorceress",
     "category": "Humanoid",
-    "subcategory": "Naga",
+    "subcategory": "Naga Siren",
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitNagaFemaleGreen",
@@ -13964,7 +13964,7 @@
   {
     "name": "Lady Vespia",
     "category": "Humanoid",
-    "subcategory": "Naga",
+    "subcategory": "Naga Siren",
     "side": "Neutral",
     "kind": "Rare",
     "portrait": "PortraitNagaFemaleYellow",
@@ -17399,7 +17399,7 @@
   {
     "name": "Bloodhound",
     "category": "Beast",
-    "subcategory": "Darkhound",
+    "subcategory": "Dark Hound",
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitRedDarkhound",
@@ -19933,7 +19933,7 @@
   {
     "name": "Captain Dargol",
     "category": "Undead",
-    "subcategory": "Skeleton",
+    "subcategory": "Armored Skeleton",
     "faction": "Scourge",
     "side": "Hostile",
     "kind": "Elite",
@@ -19944,7 +19944,7 @@
   {
     "name": "Commander Felstrom",
     "category": "Undead",
-    "subcategory": "Skeleton",
+    "subcategory": "Armored Skeleton",
     "side": "Neutral",
     "kind": "Rare",
     "portrait": "PortraitSkeletalWarrior",
@@ -19954,7 +19954,7 @@
   {
     "name": "Lord Darkscythe",
     "category": "Undead",
-    "subcategory": "Skeleton",
+    "subcategory": "Armored Skeleton",
     "side": "Neutral",
     "kind": "Rare",
     "portrait": "PortraitSkeletalWarrior",
@@ -19964,7 +19964,7 @@
   {
     "name": "Black Guard",
     "category": "Undead",
-    "subcategory": "Skeleton",
+    "subcategory": "Armored Skeleton",
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitSkeletalWarrior",
@@ -19974,7 +19974,7 @@
   {
     "name": "Cracked Skull Soldier",
     "category": "Undead",
-    "subcategory": "Skeleton",
+    "subcategory": "Armored Skeleton",
     "faction": "Scourge",
     "side": "Hostile",
     "kind": "Common",
@@ -19985,7 +19985,7 @@
   {
     "name": "Hand of Ravenclaw",
     "category": "Undead",
-    "subcategory": "Skeleton",
+    "subcategory": "Armored Skeleton",
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitSkeletalWarrior",
@@ -19995,7 +19995,7 @@
   {
     "name": "Ravenclaw Guardian",
     "category": "Undead",
-    "subcategory": "Skeleton",
+    "subcategory": "Armored Skeleton",
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitSkeletalWarrior",
@@ -20005,7 +20005,7 @@
   {
     "name": "Ravenclaw Raider",
     "category": "Undead",
-    "subcategory": "Skeleton",
+    "subcategory": "Armored Skeleton",
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitSkeletalWarrior",
@@ -20015,7 +20015,7 @@
   {
     "name": "Risen Guard",
     "category": "Undead",
-    "subcategory": "Skeleton",
+    "subcategory": "Armored Skeleton",
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitSkeletalWarrior",
@@ -20025,7 +20025,7 @@
   {
     "name": "Scourge Soldier",
     "category": "Undead",
-    "subcategory": "Skeleton",
+    "subcategory": "Armored Skeleton",
     "faction": "Scourge",
     "side": "Hostile",
     "kind": "Common",
@@ -20040,7 +20040,7 @@
   {
     "name": "Scourge Warder",
     "category": "Undead",
-    "subcategory": "Skeleton",
+    "subcategory": "Armored Skeleton",
     "faction": "Scourge",
     "side": "Hostile",
     "kind": "Common",
@@ -20055,7 +20055,7 @@
   {
     "name": "Skeletal Flayer",
     "category": "Undead",
-    "subcategory": "Skeleton",
+    "subcategory": "Armored Skeleton",
     "faction": "Scourge",
     "side": "Hostile",
     "kind": "Common",
@@ -20066,7 +20066,7 @@
   {
     "name": "Skeletal Warder",
     "category": "Undead",
-    "subcategory": "Skeleton",
+    "subcategory": "Armored Skeleton",
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitSkeletalWarrior",
@@ -20076,7 +20076,7 @@
   {
     "name": "Skeletal Warlord",
     "category": "Undead",
-    "subcategory": "Skeleton",
+    "subcategory": "Armored Skeleton",
     "faction": "Scourge",
     "side": "Hostile",
     "kind": "Common",
@@ -20087,7 +20087,7 @@
   {
     "name": "Splinterbone Centurion",
     "category": "Undead",
-    "subcategory": "Skeleton",
+    "subcategory": "Armored Skeleton",
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitSkeletalWarrior",
@@ -20097,7 +20097,7 @@
   {
     "name": "Splinterbone Warrior",
     "category": "Undead",
-    "subcategory": "Skeleton",
+    "subcategory": "Armored Skeleton",
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitSkeletalWarrior",
@@ -20107,7 +20107,7 @@
   {
     "name": "Ironspine",
     "category": "Undead",
-    "subcategory": "Skeleton",
+    "subcategory": "Armored Skeleton",
     "side": "Neutral",
     "kind": "Elite",
     "portrait": "PortraitSkeletalWarriorYellow",
@@ -20117,7 +20117,7 @@
   {
     "name": "Mor'Ladim",
     "category": "Undead",
-    "subcategory": "Skeleton",
+    "subcategory": "Armored Skeleton",
     "side": "Neutral",
     "kind": "Elite",
     "portrait": "PortraitSkeletalWarriorYellow",
@@ -20127,7 +20127,7 @@
   {
     "name": "Ravenclaw Regent",
     "category": "Undead",
-    "subcategory": "Skeleton",
+    "subcategory": "Armored Skeleton",
     "side": "Neutral",
     "kind": "Rare",
     "portrait": "PortraitSkeletalWarriorYellow",
@@ -20137,7 +20137,7 @@
   {
     "name": "Ravenclaw Champion",
     "category": "Undead",
-    "subcategory": "Skeleton",
+    "subcategory": "Armored Skeleton",
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitSkeletalWarriorYellow",
@@ -20147,7 +20147,7 @@
   {
     "name": "Risen Warrior",
     "category": "Undead",
-    "subcategory": "Skeleton",
+    "subcategory": "Armored Skeleton",
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitSkeletalWarriorYellow",
@@ -20157,7 +20157,7 @@
   {
     "name": "Scourge Champion",
     "category": "Undead",
-    "subcategory": "Skeleton",
+    "subcategory": "Armored Skeleton",
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitSkeletalWarriorYellow",
@@ -20167,7 +20167,7 @@
   {
     "name": "Skeletal Raider",
     "category": "Undead",
-    "subcategory": "Skeleton",
+    "subcategory": "Armored Skeleton",
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitSkeletalWarriorYellow",
@@ -20177,7 +20177,7 @@
   {
     "name": "Skeletal Warrior",
     "category": "Undead",
-    "subcategory": "Skeleton",
+    "subcategory": "Armored Skeleton",
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitSkeletalWarriorYellow",
@@ -20187,7 +20187,7 @@
   {
     "name": "Splinterbone Captain",
     "category": "Undead",
-    "subcategory": "Skeleton",
+    "subcategory": "Armored Skeleton",
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitSkeletalWarriorYellow",
@@ -21809,8 +21809,8 @@
   },
   {
     "name": "Plated Stegodon",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Beast",
+    "subcategory": "Thunder Lizard",
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitThunderLizard",
@@ -21819,8 +21819,8 @@
   },
   {
     "name": "Stegodon",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Beast",
+    "subcategory": "Thunder Lizard",
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitThunderLizard",
@@ -21829,8 +21829,8 @@
   },
   {
     "name": "Thunder Lizard",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Beast",
+    "subcategory": "Thunder Lizard",
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitThunderLizard",
@@ -21839,8 +21839,8 @@
   },
   {
     "name": "Gruff",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Beast",
+    "subcategory": "Thunder Lizard",
     "side": "Neutral",
     "kind": "Rare",
     "portrait": "PortraitThunderLizardDark",
@@ -21849,8 +21849,8 @@
   },
   {
     "name": "Margol the Rager",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Beast",
+    "subcategory": "Thunder Lizard",
     "side": "Neutral",
     "kind": "Rare",
     "portrait": "PortraitThunderLizardDark",
@@ -21859,8 +21859,8 @@
   },
   {
     "name": "Burrowing Thundersnout",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Beast",
+    "subcategory": "Thunder Lizard",
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitThunderLizardDark",
@@ -21869,8 +21869,8 @@
   },
   {
     "name": "Spiked Stegodon",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Beast",
+    "subcategory": "Thunder Lizard",
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitThunderLizardDark",
@@ -21879,8 +21879,8 @@
   },
   {
     "name": "Thunderstomp",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Beast",
+    "subcategory": "Thunder Lizard",
     "side": "Neutral",
     "kind": "Rare",
     "portrait": "PortraitThunderLizardGreen",
@@ -21889,8 +21889,8 @@
   },
   {
     "name": "Skum",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Beast",
+    "subcategory": "Thunder Lizard",
     "side": "Neutral",
     "kind": "Elite",
     "portrait": "PortraitThunderLizardGreen",
@@ -21899,8 +21899,8 @@
   },
   {
     "name": "Lightning Hide",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Beast",
+    "subcategory": "Thunder Lizard",
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitThunderLizardGreen",
@@ -21909,8 +21909,8 @@
   },
   {
     "name": "Cliff Stormer",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Beast",
+    "subcategory": "Thunder Lizard",
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitThunderLizardRed",
@@ -21919,8 +21919,8 @@
   },
   {
     "name": "Raging Cliff Stormer",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Beast",
+    "subcategory": "Thunder Lizard",
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitThunderLizardRed",
@@ -21929,8 +21929,8 @@
   },
   {
     "name": "Raging Thunder Lizard",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Beast",
+    "subcategory": "Thunder Lizard",
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitThunderLizardRed",
@@ -21939,8 +21939,8 @@
   },
   {
     "name": "Stormsnout",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Beast",
+    "subcategory": "Thunder Lizard",
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitThunderLizardRed",
@@ -21949,8 +21949,8 @@
   },
   {
     "name": "Thunderhead",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Beast",
+    "subcategory": "Thunder Lizard",
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitThunderLizardRed",

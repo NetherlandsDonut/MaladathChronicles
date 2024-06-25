@@ -1875,8 +1875,8 @@
         "completedQuests": [
           40
         ],
-        "level": 19,
-        "experience": 11048,
+        "level": 20,
+        "experience": 9678,
         "uniquesGotten": [],
         "reputation": {
           "Southsea Pirates": 0,
@@ -1955,7 +1955,7 @@
             ]
           },
           "Mining": {
-            "Item1": 4,
+            "Item1": 5,
             "Item2": [
               "Apprentice"
             ]
@@ -1991,7 +1991,7 @@
           ],
           "Skinning": []
         },
-        "unspentTalentPoints": 11,
+        "unspentTalentPoints": 12,
         "faction": "Stormwind",
         "name": "Allesha",
         "race": "Human",
@@ -2100,6 +2100,54 @@
               "stats": {
                 "stats": {}
               }
+            },
+            {
+              "rarity": "Poor",
+              "name": "Thick Cloak",
+              "icon": "itemmisccape10",
+              "type": "Back",
+              "source": "RareDrop",
+              "ilvl": 46,
+              "lvl": 41,
+              "armor": 27,
+              "amount": 1,
+              "maxStack": 1,
+              "price": 2127,
+              "stats": {
+                "stats": {}
+              }
+            },
+            {
+              "rarity": "Common",
+              "name": "Rough Stone",
+              "icon": "itemstone06",
+              "detailedType": "Rock",
+              "type": "Trade Good",
+              "source": "RareDrop",
+              "ilvl": 5,
+              "lvl": 1,
+              "amount": 2,
+              "maxStack": 20,
+              "price": 2,
+              "stats": {
+                "stats": {}
+              }
+            },
+            {
+              "rarity": "Common",
+              "name": "Copper Ore",
+              "icon": "itemorecopper01",
+              "detailedType": "Ore",
+              "type": "Trade Good",
+              "source": "RareDrop",
+              "ilvl": 10,
+              "lvl": 1,
+              "amount": 1,
+              "maxStack": 10,
+              "price": 5,
+              "stats": {
+                "stats": {}
+              }
             }
           ],
           "bags": [
@@ -2131,6 +2179,22 @@
               "maxStack": 1,
               "price": 250,
               "bagSpace": 2,
+              "stats": {
+                "stats": {}
+              }
+            },
+            {
+              "rarity": "Common",
+              "name": "Red Leather Bag",
+              "icon": "itemmiscbag02",
+              "type": "Bag",
+              "source": "GeneralDrop",
+              "ilvl": 15,
+              "lvl": 1,
+              "amount": 1,
+              "maxStack": 1,
+              "price": 875,
+              "bagSpace": 3,
               "stats": {
                 "stats": {}
               }
@@ -2209,9 +2273,9 @@
         }
       },
       "hour": 11,
-      "minute": 4,
-      "second": 46,
-      "currentSite": "The Riverbed",
+      "minute": 42,
+      "second": 34,
+      "currentSite": "Echo Ridge Mine",
       "openedChests": {
         "Gnomeregan Outskirts": {
           "area": "Gnomeregan Outskirts",
@@ -2383,7 +2447,9 @@
         "The Lyceum": 3,
         "Frozen Crossing": 1,
         "The Broodmother's Lair": 2,
-        "The Riverbed": 2
+        "The Riverbed": 3,
+        "The Den of Flame": 3,
+        "Echo Ridge Mine": 1
       },
       "commonsKilled": {
         "Deeprot Tangler": 1,
@@ -2404,7 +2470,11 @@
         "Snow Tracker Wolf": 1,
         "Onyxian Lair Guard": 1,
         "Onyxian Warder": 1,
-        "Sunscale Scytheclaw": 2
+        "Sunscale Scytheclaw": 2,
+        "Stormsnout": 1,
+        "Firemane Scalebane": 2,
+        "Firemane Ash Tail": 1,
+        "Kobold Laborer": 1
       },
       "raresKilled": {
         "Gibblewilt": 1
@@ -2483,10 +2553,10 @@
         "Falfarren River": 1,
         "Fallen Sky Lake": 1,
         "Felfire Hill": 1,
-        "Fire Scar Shrine": 2,
+        "Fire Scar Shrine": 3,
         "Greenpaw Village": 1,
         "Iris Lake": 1,
-        "Lake Falathim": 1,
+        "Lake Falathim": 2,
         "Mystral Lake": 1,
         "Night Run": 1,
         "Shael'dryn Moonwell": 1,
@@ -2497,8 +2567,8 @@
         "Satyrnaar": 1,
         "The Dor'Danil Barrow Den": 1,
         "The Howling Vale": 1,
-        "The Shrine of Aessina": 1,
-        "The Zoram Strand": 1,
+        "The Shrine of Aessina": 2,
+        "The Zoram Strand": 3,
         "Thistlefur Village": 1,
         "Warsong Labor Camp": 1,
         "Warsong Lumber Camp": 2,
@@ -2593,7 +2663,7 @@
         "Remtravel's Excavation": 1,
         "Ruins of Mathystra": 1,
         "The Long Wash": 4,
-        "The Master's Glaive": 1,
+        "The Master's Glaive": 3,
         "Tower of Althalaxx": 1,
         "Twilight Shore": 1,
         "Twilight Vale": 2,
@@ -2698,10 +2768,10 @@
         "Dustwallow Bay": 2,
         "Sentry Point": 1,
         "Shady Rest Inn": 2,
-        "Stonemaul Ruins": 1,
+        "Stonemaul Ruins": 2,
         "The Dragonmurk": 1,
-        "The Den of Flame": 1,
-        "Northern Quagmire": 1,
+        "The Den of Flame": 2,
+        "Northern Quagmire": 3,
         "Southern Quagmire": 1,
         "Wyrmbog": 1,
         "Tidefury Cove": 1,
@@ -2735,7 +2805,7 @@
         "Zul'Mashar": 1,
         "Brackwell Pumpkin Patch": 1,
         "Eastvale Logging Camp": 1,
-        "Echo Ridge Mine": 1,
+        "Echo Ridge Mine": 2,
         "Fargodeep Mine": 1,
         "Crystal Lake": 2,
         "Forest's Edge": 1,
@@ -3120,8 +3190,8 @@
         "Baeldun Keep": 1,
         "Blackthorn Ridge": 1,
         "Boulder Lode Mine": 1,
-        "Bramblescar": 1,
-        "The Riverbed": 4,
+        "Bramblescar": 2,
+        "The Riverbed": 5,
         "Dreadmist Peak": 1,
         "Field of Giants": 1,
         "Fray Island": 1,
@@ -3197,7 +3267,7 @@
         "Lakkari Tar Pits": 1,
         "Terror Run": 1,
         "Southern Climb": 1,
-        "The Marshlands": 1,
+        "The Marshlands": 3,
         "Ironstone Plateau": 1,
         "The Slithering Scar": 1,
         "Crag of the Everliving": 1,
@@ -3436,9 +3506,8 @@
         "Goldshire:Tharynn Bouden": [
           {
             "item": "Coarse Thread",
-            "amount": 18,
+            "amount": 20,
             "maxAmount": 20,
-            "minutesLeft": 9,
             "restockSpeed": 10
           },
           {
@@ -4406,9 +4475,9 @@
         "ignoreSpaceChecks": true
       },
       "startDate": "2024-06-09T14:12:27.0144066+02:00",
-      "lastLoaded": "2024-06-24T17:44:07.5928985+02:00",
-      "lastPlayed": "2024-06-24T17:50:30.6125055+02:00",
-      "timePlayed": "13:48:12.6599381",
+      "lastLoaded": "2024-06-25T04:14:31.8543161+02:00",
+      "lastPlayed": "2024-06-25T04:16:17.4056402+02:00",
+      "timePlayed": "13:54:12.2202344",
       "lastVisitedTalents": 1
     },
     {
